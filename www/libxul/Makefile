@@ -3,9 +3,10 @@
 
 PORTNAME=	libxul
 DISTVERSION=	31.7.0
+PORTREVISION=	1
 CATEGORIES?=	www devel
 MASTER_SITES=	MOZILLA/firefox/releases/${DISTVERSION}esr/source \
-		https://ftp.mozilla.org/pub/mozilla.org/firefox/candidates/${DISTVERSION}esr-candidates/build2/source/
+		MOZILLA/firefox/candidates/${DISTVERSION}esr-candidates/build2/source
 DISTNAME=	firefox-${DISTVERSION}esr.source
 
 MAINTAINER?=	gecko@FreeBSD.org

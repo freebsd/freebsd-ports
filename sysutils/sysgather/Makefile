@@ -3,6 +3,7 @@
 
 PORTNAME=	sysgather
 DISTVERSION=	1.0pre10
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://devel.ringlet.net/sysutils/sysgather/
 
@@ -14,15 +15,19 @@ LICENSE=	BSD2CLAUSE
 BUILD_DEPENDS=	p5-Config-IniFiles>=0:${PORTSDIR}/devel/p5-Config-IniFiles
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-OPTIONS_DEFINE=	EXAMPLES
-
 USES=		perl5 shebangfix uidfix
 SHEBANG_FILES=	sysgather.pl
+
+OPTIONS_DEFINE=	EXAMPLES
 
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MEXAMPLES)
 MAKE_ENV+=	EXAMPLESDIR="${WRKDIR}"
 .endif
+
+post-install:
+	${MV} ${STAGEDIR}${PREFIX}/etc/sysgather.conf.default \
+		${STAGEDIR}${PREFIX}/etc/sysgather.conf.sample
 
 .include <bsd.port.mk>

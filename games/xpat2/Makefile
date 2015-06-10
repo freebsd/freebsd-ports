@@ -33,4 +33,8 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/xpat2.man
 
+post-install:
+	@${MKDIR} ${STAGEDIR}/var/games
+	${TOUCH} ${STAGEDIR}/var/games/xpat.log.sample
+
 .include <bsd.port.mk>

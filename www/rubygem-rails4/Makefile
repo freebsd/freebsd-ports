@@ -40,6 +40,7 @@ RUN_DEPENDS=	rubygem-actionmailer4>=${PORTVERSION}:${PORTSDIR}/mail/rubygem-acti
 		rubygem-sdoc>=0.4.1:${PORTSDIR}/devel/rubygem-sdoc \
 		rubygem-rdoc>=4.0.2:${PORTSDIR}/devel/rubygem-rdoc
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

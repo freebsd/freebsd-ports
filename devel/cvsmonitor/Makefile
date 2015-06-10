@@ -3,7 +3,7 @@
 
 PORTNAME=	cvsmonitor
 DISTVERSION=	0-6-3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20Stable
 
@@ -41,9 +41,11 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	patch run build
+SHEBANG_FILES=	*.pl
 
 # stolen from cvsweb
 .if !exists(${PREFIX}/www) && exists(${PREFIX}/share/apache)

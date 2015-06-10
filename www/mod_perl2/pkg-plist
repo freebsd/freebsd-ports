@@ -160,8 +160,8 @@ bin/mp2bug
 %%SITE_ARCH%%/ModPerl/Const.pm
 %%SITE_ARCH%%/ModPerl/FunctionMap.pm
 %%SITE_ARCH%%/ModPerl/Global.pm
-%%SITE_ARCH%%/ModPerl/InterpPool.pm
-%%SITE_ARCH%%/ModPerl/Interpreter.pm
+%%ITHREADS%%%%SITE_ARCH%%/ModPerl/InterpPool.pm
+%%ITHREADS%%%%SITE_ARCH%%/ModPerl/Interpreter.pm
 %%SITE_ARCH%%/ModPerl/MM.pm
 %%SITE_ARCH%%/ModPerl/Manifest.pm
 %%SITE_ARCH%%/ModPerl/MapUtil.pm
@@ -177,8 +177,8 @@ bin/mp2bug
 %%SITE_ARCH%%/ModPerl/StructureMap.pm
 %%SITE_ARCH%%/ModPerl/TestReport.pm
 %%SITE_ARCH%%/ModPerl/TestRun.pm
-%%SITE_ARCH%%/ModPerl/TiPool.pm
-%%SITE_ARCH%%/ModPerl/TiPoolConfig.pm
+%%ITHREADS%%%%SITE_ARCH%%/ModPerl/TiPool.pm
+%%ITHREADS%%%%SITE_ARCH%%/ModPerl/TiPoolConfig.pm
 %%SITE_ARCH%%/ModPerl/TypeMap.pm
 %%SITE_ARCH%%/ModPerl/Util.pm
 %%SITE_ARCH%%/ModPerl/WrapXS.pm
@@ -235,10 +235,10 @@ bin/mp2bug
 %%SITE_ARCH%%/auto/Apache2/typemap
 %%SITE_ARCH%%/auto/ModPerl/Const/Const.so
 %%SITE_ARCH%%/auto/ModPerl/Global/Global.so
-%%SITE_ARCH%%/auto/ModPerl/InterpPool/InterpPool.so
-%%SITE_ARCH%%/auto/ModPerl/Interpreter/Interpreter.so
-%%SITE_ARCH%%/auto/ModPerl/TiPool/TiPool.so
-%%SITE_ARCH%%/auto/ModPerl/TiPoolConfig/TiPoolConfig.so
+%%ITHREADS%%%%SITE_ARCH%%/auto/ModPerl/InterpPool/InterpPool.so
+%%ITHREADS%%%%SITE_ARCH%%/auto/ModPerl/Interpreter/Interpreter.so
+%%ITHREADS%%%%SITE_ARCH%%/auto/ModPerl/TiPool/TiPool.so
+%%ITHREADS%%%%SITE_ARCH%%/auto/ModPerl/TiPoolConfig/TiPoolConfig.so
 %%SITE_ARCH%%/auto/ModPerl/Util/Util.so
 %%SITE_ARCH%%/mod_perl2.pm
 %%PERL5_MAN3%%/APR.3.gz

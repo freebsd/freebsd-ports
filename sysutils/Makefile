@@ -818,6 +818,7 @@
     SUBDIR += rubygem-SyslogLogger
     SUBDIR += rubygem-backup
     SUBDIR += rubygem-bundler
+    SUBDIR += rubygem-bundler17
     SUBDIR += rubygem-bundler_ext
     SUBDIR += rubygem-capistrano
     SUBDIR += rubygem-capistrano-ext
@@ -852,6 +853,7 @@
     SUBDIR += rubygem-murder
     SUBDIR += rubygem-ohai
     SUBDIR += rubygem-parallel
+    SUBDIR += rubygem-puppet_forge
     SUBDIR += rubygem-rubyipmi
     SUBDIR += rubygem-shellany
     SUBDIR += rubygem-smart_proxy_chef

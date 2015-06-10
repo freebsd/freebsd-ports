@@ -1,14 +1,6 @@
---- get.c.orig	2000-06-21 19:15:41 UTC
-+++ get.c
-@@ -56,6 +56,7 @@
- #include <openssl/ssl.h>
- #include <openssl/bio.h>
- #endif
-+#include <openssl/opensslconf.h>
- 
- #include "sysdep.h"
- #include "bench.h"
-@@ -169,26 +170,22 @@ get(char *loc, NETPORT port, char *url, 
+--- src/get.c.orig	2000-06-21 19:15:41 UTC
++++ src/get.c
+@@ -169,27 +169,33 @@ get(char *loc, NETPORT port, char *url, 
        OpenSSL_add_all_algorithms();
        OpenSSL_add_ssl_algorithms();
  

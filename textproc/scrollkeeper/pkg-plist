@@ -95,50 +95,8 @@ share/locale/uk/LC_MESSAGES/scrollkeeper.mo
 share/locale/vi/LC_MESSAGES/scrollkeeper.mo
 share/locale/zh_CN/LC_MESSAGES/scrollkeeper.mo
 share/locale/zh_TW/LC_MESSAGES/scrollkeeper.mo
-@dirrm share/xml/scrollkeeper/dtds
-@dirrm share/xml/scrollkeeper
-@dirrmtry share/xml
-@dirrm share/scrollkeeper/stylesheets
-@dirrm share/scrollkeeper/doc/writing_scrollkeeper_omf_files/C
-@dirrm share/scrollkeeper/doc/writing_scrollkeeper_omf_files
-@dirrm share/scrollkeeper/doc
-@dirrm share/scrollkeeper/Templates/zh_TW
-@dirrm share/scrollkeeper/Templates/zh_CN
-@dirrm share/scrollkeeper/Templates/vi
-@dirrm share/scrollkeeper/Templates/uk
-@dirrm share/scrollkeeper/Templates/tr
-@dirrm share/scrollkeeper/Templates/sv
-@dirrm share/scrollkeeper/Templates/sr@Latn
-@dirrm share/scrollkeeper/Templates/sr
-@dirrm share/scrollkeeper/Templates/sl
-@dirrm share/scrollkeeper/Templates/sk
-@dirrm share/scrollkeeper/Templates/ru
-@dirrm share/scrollkeeper/Templates/ro
-@dirrm share/scrollkeeper/Templates/pt_BR
-@dirrm share/scrollkeeper/Templates/pl
-@dirrm share/scrollkeeper/Templates/no
-@dirrm share/scrollkeeper/Templates/nl
-@dirrm share/scrollkeeper/Templates/ko
-@dirrm share/scrollkeeper/Templates/kn
-@dirrm share/scrollkeeper/Templates/ja
-@dirrm share/scrollkeeper/Templates/it
-@dirrm share/scrollkeeper/Templates/hu
-@dirrm share/scrollkeeper/Templates/fr
-@dirrm share/scrollkeeper/Templates/es
-@dirrm share/scrollkeeper/Templates/el
-@dirrm share/scrollkeeper/Templates/de
-@dirrm share/scrollkeeper/Templates/da
-@dirrm share/scrollkeeper/Templates/cs
-@dirrm share/scrollkeeper/Templates/ca
-@dirrm share/scrollkeeper/Templates/be
-@dirrm share/scrollkeeper/Templates/az
-@dirrm share/scrollkeeper/Templates/am
-@dirrm share/scrollkeeper/Templates/C
-@dirrm share/scrollkeeper/Templates
-@dirrm share/scrollkeeper
-@dirrm share/omf/scrollkeeper
 @unexec rm -f /var/log/scrollkeeper.log 2>/dev/null || true
 @unexec rm -rf /var/db/scrollkeeper 2>/dev/null || true
 @unexec %%LOCALBASE%%/bin/xmlcatalog --noout --del %D/share/xml/scrollkeeper/dtds/scrollkeeper-omf.dtd %%LOCALBASE%%/share/xml/catalog.ports || true
 @exec touch -f /var/log/scrollkeeper.log
-@exec mkdir -p /var/db/scrollkeeper
+@dir /var/db/scrollkeeper

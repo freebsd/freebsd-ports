@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Module-Path
-PORTVERSION=	0.18
+PORTVERSION=	0.19
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,6 +11,8 @@ COMMENT=	Get the full path to a locally installed module
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+
+TEST_DEPENDS=	p5-Devel-FindPerl>0:${PORTSDIR}/devel/p5-Devel-FindPerl
 
 USES=		perl5
 USE_PERL5=	configure

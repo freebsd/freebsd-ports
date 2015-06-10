@@ -93,8 +93,7 @@ YELP_RUN_DEPENDS=	yelp:${PORTSDIR}/x11/yelp
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|"GNU strip"|"strip"| ; \
-		 s|-Wl,--as-needed|| ; \
+		's|-Wl,--as-needed|| ; \
 		 /^[[:blank:]]zlib/d ; \
 		 /webkit2gtk/s|-4.0|-3.0|' ${WRKSRC}/configure
 

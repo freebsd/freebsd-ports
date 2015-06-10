@@ -24,9 +24,10 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 
+CONFIGURE_ARGS=	-y
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
-CONFIGURE_ARGS=	-y
 
 .include <bsd.port.pre.mk>
 

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bisoncpp
-PORTVERSION=	4.09.02
+PORTVERSION=	4.10.01
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/bisonc%2B%2B/${PORTVERSION}
 DISTNAME=	bisonc++_${PORTVERSION}.orig
@@ -20,7 +20,7 @@ PORTDOCS=	*
 
 WRKSRC=		${WRKDIR}/bisonc++-${PORTVERSION}
 
-USE_GCC=	yes
+USE_GCC=	4.9+
 
 USES=		shebangfix
 

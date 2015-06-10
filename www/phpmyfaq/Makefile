@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phpmyfaq
-PORTVERSION=	2.8.19
+PORTVERSION=	2.8.22
 CATEGORIES=	www
 MASTER_SITES=	http://www.phpmyfaq.de/download/
 DISTNAME=	phpMyFAQ-${PORTVERSION}

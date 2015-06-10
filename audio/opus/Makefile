@@ -5,7 +5,7 @@ PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/opus/ \
-		MOZILLA_EXTENDED/opus
+		MOZILLA/opus
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	IETF audio codec

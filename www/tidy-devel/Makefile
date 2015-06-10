@@ -3,7 +3,7 @@
 
 PORTNAME?=	tidy
 DISTVERSION=	090315-cvs
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/thierry
 #MASTER_SITES=	http://tidy.sourceforge.net/src/%SUBDIR%/	\

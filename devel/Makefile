@@ -57,6 +57,7 @@
     SUBDIR += amd64-gcc
     SUBDIR += amd64-xtoolchain-gcc
     SUBDIR += android-tools-adb
+    SUBDIR += android-tools-fastboot
     SUBDIR += anjuta
     SUBDIR += anjuta-extras
     SUBDIR += antlr
@@ -1637,6 +1638,7 @@
     SUBDIR += p5-Cairo-GObject
     SUBDIR += p5-Calendar-Simple
     SUBDIR += p5-Callback-Frame
+    SUBDIR += p5-Canary-Stability
     SUBDIR += p5-Capture-Tiny
     SUBDIR += p5-Carp
     SUBDIR += p5-Carp-Always
@@ -4602,6 +4604,7 @@
     SUBDIR += rubygem-launchy
     SUBDIR += rubygem-launchy22
     SUBDIR += rubygem-librarian
+    SUBDIR += rubygem-librarianp
     SUBDIR += rubygem-libyajl2
     SUBDIR += rubygem-listen
     SUBDIR += rubygem-little-plugger

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tins
-PORTVERSION=	1.3.5
+PORTVERSION=	1.5.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,6 +11,7 @@ COMMENT=	Useful tools library in Ruby
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

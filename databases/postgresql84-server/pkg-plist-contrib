@@ -116,9 +116,3 @@ share/postgresql/contrib/uninstall_tsearch2.sql
 share/postgresql/contrib/uninstall_uuid-ossp.sql
 share/postgresql/contrib/uuid-ossp.sql
 share/postgresql/tsearch_data/xsyn_sample.rules
-@dirrmtry share/postgresql/tsearch_data
-@dirrmtry share/postgresql/contrib
-@dirrmtry share/postgresql
-@dirrmtry %%DOCSDIR%%/contrib
-@dirrmtry %%DOCSDIR%%
-@dirrmtry lib/postgresql

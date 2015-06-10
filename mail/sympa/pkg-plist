@@ -74,12 +74,12 @@ libexec/sympa/tpl2tt2.pl
 libexec/sympa/tt2.pm
 libexec/sympa/wwslib.pm
 @owner sympa
-libexec/sympa/bouncequeue
-libexec/sympa/familyqueue
-libexec/sympa/queue
-libexec/sympa/sympa_newaliases-wrapper
-libexec/sympa/sympa_soap_server-wrapper.fcgi
-libexec/sympa/wwsympa-wrapper.fcgi
+@(,,4755) libexec/sympa/bouncequeue
+@(,,4755) libexec/sympa/familyqueue
+@(,,4755) libexec/sympa/queue
+@(,,4750) libexec/sympa/sympa_newaliases-wrapper
+@(,,6755) libexec/sympa/sympa_soap_server-wrapper.fcgi
+@(,,6755) libexec/sympa/wwsympa-wrapper.fcgi
 @owner
 libexec/sympa/wwsympa.fcgi
 @group

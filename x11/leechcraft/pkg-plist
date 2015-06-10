@@ -515,10 +515,6 @@ share/man/man1/leechcraft.1.gz
 %%AGGREGATOR%%%%DATADIR%%/translations/leechcraft_aggregator_pl.qm
 %%AGGREGATOR%%%%DATADIR%%/translations/leechcraft_aggregator_ru_RU.qm
 %%AGGREGATOR%%%%DATADIR%%/translations/leechcraft_aggregator_uk_UA.qm
-%%AGGREGATOR%%@dirrm %%DATADIR%%/scripts/aggregator/recipes/qtscript
-%%AGGREGATOR%%@dirrm %%DATADIR%%/scripts/aggregator/recipes
-%%AGGREGATOR%%@dirrm %%DATADIR%%/scripts/aggregator
-%%AGGREGATOR%%@dirrm %%DATADIR%%/scripts
 %%ANHERO%%%%QT_BINDIR%%/lc_anhero_crashprocess
 %%ANHERO%%lib/leechcraft/plugins/libleechcraft_anhero.so
 %%ANHERO%%%%DATADIR%%/translations/leechcraft_anhero_ar.qm
@@ -551,9 +547,6 @@ share/man/man1/leechcraft.1.gz
 %%ANOTIFI%%%%DATADIR%%/translations/leechcraft_advancednotifications_es.qm
 %%ANOTIFI%%%%DATADIR%%/translations/leechcraft_advancednotifications_ru_RU.qm
 %%ANOTIFI%%%%DATADIR%%/translations/leechcraft_advancednotifications_uk_UA.qm
-%%ANOTIFI%%@dirrm %%DATADIR%%/qml/advancednotifications
-%%ANOTIFI%%@dirrm %%DATADIR%%/sounds/oxygen
-%%ANOTIFI%%@dirrm %%DATADIR%%/sounds
 %%AUSCRIE%%lib/leechcraft/plugins/libleechcraft_auscrie.so
 %%AUSCRIE%%%%DATADIR%%/translations/leechcraft_auscrie_de.qm
 %%AUSCRIE%%%%DATADIR%%/translations/leechcraft_auscrie_en.qm
@@ -1449,92 +1442,6 @@ share/man/man1/leechcraft.1.gz
 %%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_xtazy_es.qm
 %%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_xtazy_ru_RU.qm
 %%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_xtazy_uk_UA.qm
-%%AZOTH%%@dirrm include/leechcraft/interfaces/azoth
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/emoticons/native/Android
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/emoticons/native/Default
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/emoticons/native
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/emoticons
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/iconsets/activities/default
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/iconsets/activities
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/iconsets/affiliations/default
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/iconsets/affiliations/psi
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/iconsets/affiliations
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/iconsets/clients/default
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/iconsets/clients
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/iconsets/contactlist/Likey
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/iconsets/contactlist/oxygen
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/iconsets/contactlist
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/iconsets/moods/default
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/iconsets/moods
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/iconsets/system/default
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/iconsets/system
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/iconsets
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Clean/Contents/Resources/Incoming
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Clean/Contents/Resources/Outgoing
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Clean/Contents/Resources/images
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Clean/Contents/Resources
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Clean/Contents
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Clean
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/Incoming
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/Outgoing
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/Variants
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources/images
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Clear/Contents/Resources
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Clear/Contents
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Clear
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/Incoming
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/Outgoing
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/Variants
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources/images
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents/Resources
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle/Contents
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/GoneDark Polarized.AdiumMessageStyle
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Incoming
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Outgoing
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/Variants
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources/images
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents/Resources
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle/Contents
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/GoneDark.AdiumMessageStyle
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/Incoming
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/Outgoing
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/Variants
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources/images
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Hacker/Contents/Resources
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Hacker/Contents
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Hacker
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources/Incoming
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources/Outgoing
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources/Variants
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources/images
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Kopete/Contents/Resources
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Kopete/Contents
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium/Kopete
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/adium
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/Basic
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/Black
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/Black_cup
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/Gajim
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/Hello-LC
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/Lemon Night
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/Lime Dawn
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/Marine
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/Mint
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/Plazma
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/Rinc
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/Rinc_black
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/Slim
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/Term
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/another_black
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/black-and-white
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/darkness
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/hacker clone
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/hoar
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/streaky
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard/well
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles/standard
-%%AZOTH%%@dirrm %%DATADIR%%/azoth/styles
-%%AZOTH%%@dirrm %%DATADIR%%/azoth
 %%BLASQ%%lib/leechcraft/plugins/libleechcraft_blasq.so
 %%BLASQ%%lib/leechcraft/plugins/libleechcraft_blasq_deathnote.so
 %%BLASQ%%lib/leechcraft/plugins/libleechcraft_blasq_rappor.so
@@ -1552,7 +1459,6 @@ share/man/man1/leechcraft.1.gz
 %%BLASQ%%%%DATADIR%%/translations/leechcraft_blasq_spegnersi_ru_RU.qm
 %%BLASQ%%%%DATADIR%%/translations/leechcraft_blasq_vangog_en.qm
 %%BLASQ%%%%DATADIR%%/translations/leechcraft_blasq_vangog_ru_RU.qm
-%%BLASQ%%@dirrm %%DATADIR%%/qml/blasq
 %%BITTORRENT%%lib/leechcraft/plugins/libleechcraft_bittorrent.so
 %%BITTORRENT%%share/applications/leechcraft-bittorrent.desktop
 %%BITTORRENT%%%%DATADIR%%/settings/torrentsettings.xml
@@ -1586,7 +1492,6 @@ share/man/man1/leechcraft.1.gz
 %%BLOGIQUE%%%%DATADIR%%/translations/leechcraft_blogique_metida_en.qm
 %%BLOGIQUE%%%%DATADIR%%/translations/leechcraft_blogique_metida_ru_RU.qm
 %%BLOGIQUE%%%%DATADIR%%/translations/leechcraft_blogique_ru_RU.qm
-%%BLOGIQUE%%@dirrm %%DATADIR%%/qml/blogique
 %%CERTMGR%%lib/leechcraft/plugins/libleechcraft_certmgr.so
 %%CERTMGR%%%%DATADIR%%/settings/certmgrsettings.xml
 %%CERTMGR%%%%DATADIR%%/translations/leechcraft_certmgr_en.qm
@@ -1596,7 +1501,6 @@ share/man/man1/leechcraft.1.gz
 %%CPULOAD%%%%DATADIR%%/qml/cpuload/CpuLoadQuark.qml.manifest
 %%CPULOAD%%%%DATADIR%%/qml/cpuload/CpuLoadQuark.qml.settings
 %%CPULOAD%%%%DATADIR%%/qml/cpuload/Tooltip.qml
-%%CPULOAD%%@dirrm %%DATADIR%%/qml/cpuload
 %%CSTP%%lib/leechcraft/plugins/libleechcraft_cstp.so
 %%CSTP%%%%DATADIR%%/settings/cstpsettings.xml
 %%CSTP%%%%DATADIR%%/translations/leechcraft_cstp_ar.qm
@@ -1650,10 +1554,6 @@ share/man/man1/leechcraft.1.gz
 %%FENET%%%%DATADIR%%/translations/leechcraft_fenet_en.qm
 %%FENET%%%%DATADIR%%/translations/leechcraft_fenet_ru_RU.qm
 %%FENET%%share/xsessions/LCDE.desktop
-%%FENET%%@dirrm %%DATADIR%%/fenet/compositing
-%%FENET%%@dirrm %%DATADIR%%/fenet/wms
-%%FENET%%@dirrm %%DATADIR%%/fenet
-%%FENET%%@dirrm share/xsessions
 %%GACTS%%lib/leechcraft/plugins/libleechcraft_gacts.so
 %%GACTS%%%%DATADIR%%/translations/leechcraft_gacts_en.qm
 %%GACTS%%%%DATADIR%%/translations/leechcraft_gacts_ru_RU.qm
@@ -1676,7 +1576,6 @@ share/man/man1/leechcraft.1.gz
 %%GNOTIFI%%%%DATADIR%%/translations/leechcraft_gmailnotifier_it.qm
 %%GNOTIFI%%%%DATADIR%%/translations/leechcraft_gmailnotifier_ru_RU.qm
 %%GNOTIFI%%%%DATADIR%%/translations/leechcraft_gmailnotifier_uk_UA.qm
-%%GNOTIFI%%@dirrm %%DATADIR%%/qml/gmailnotifier
 %%HARBINGER%%lib/leechcraft/plugins/libleechcraft_harbinger.so
 %%HISTORYHOLDER%%lib/leechcraft/plugins/libleechcraft_historyholder.so
 %%HISTORYHOLDER%%%%DATADIR%%/translations/leechcraft_historyholder_ar.qm
@@ -1705,7 +1604,6 @@ share/man/man1/leechcraft.1.gz
 %%KBSWITCH%%%%DATADIR%%/settings/kbswitchsettings.xml
 %%KBSWITCH%%%%DATADIR%%/translations/leechcraft_kbswitch_en.qm
 %%KBSWITCH%%%%DATADIR%%/translations/leechcraft_kbswitch_ru_RU.qm
-%%KBSWITCH%%@dirrm %%DATADIR%%/qml/kbswitch
 %%KINOTIFY%%lib/leechcraft/plugins/libleechcraft_kinotify.so
 %%KINOTIFY%%%%DATADIR%%/kinotify/themes/notification/Adaptive/tmp.html
 %%KINOTIFY%%%%DATADIR%%/kinotify/themes/notification/Commie/img/back.png
@@ -1719,18 +1617,10 @@ share/man/man1/leechcraft.1.gz
 %%KINOTIFY%%%%DATADIR%%/translations/leechcraft_kinotify_it.qm
 %%KINOTIFY%%%%DATADIR%%/translations/leechcraft_kinotify_ru_RU.qm
 %%KINOTIFY%%%%DATADIR%%/translations/leechcraft_kinotify_uk_UA.qm
-%%KINOTIFY%%@dirrm %%DATADIR%%/kinotify/themes/notification/Adaptive
-%%KINOTIFY%%@dirrm %%DATADIR%%/kinotify/themes/notification/Commie/img
-%%KINOTIFY%%@dirrm %%DATADIR%%/kinotify/themes/notification/Commie
-%%KINOTIFY%%@dirrm %%DATADIR%%/kinotify/themes/notification
-%%KINOTIFY%%@dirrm %%DATADIR%%/kinotify/themes
-%%KINOTIFY%%@dirrm %%DATADIR%%/kinotify
 %%KNOWHOW%%lib/leechcraft/plugins/libleechcraft_knowhow.so
 %%KNOWHOW%%%%DATADIR%%/knowhow/tips/tips_en.xml
 %%KNOWHOW%%%%DATADIR%%/knowhow/tips/tips_ru.xml
 %%KNOWHOW%%%%DATADIR%%/settings/knowhowsettings.xml
-%%KNOWHOW%%@dirrm %%DATADIR%%/knowhow/tips
-%%KNOWHOW%%@dirrm %%DATADIR%%/knowhow
 %%KRIGSTASK%%lib/leechcraft/plugins/libleechcraft_krigstask.so
 %%KRIGSTASK%%%%DATADIR%%/qml/krigstask/Pager.qml
 %%KRIGSTASK%%%%DATADIR%%/qml/krigstask/TaskbarQuark.qml
@@ -1738,7 +1628,6 @@ share/man/man1/leechcraft.1.gz
 %%KRIGSTASK%%%%DATADIR%%/qml/krigstask/TaskbarQuark.qml.settings
 %%KRIGSTASK%%%%DATADIR%%/translations/leechcraft_krigstask_en.qm
 %%KRIGSTASK%%%%DATADIR%%/translations/leechcraft_krigstask_ru_RU.qm
-%%KRIGSTASK%%@dirrm %%DATADIR%%/qml/krigstask
 %%LACKMAN%%lib/leechcraft/plugins/libleechcraft_lackman.so
 %%LACKMAN%%%%DATADIR%%/settings/lackmansettings.xml
 %%LACKMAN%%%%DATADIR%%/translations/leechcraft_lackman_de.qm
@@ -1760,7 +1649,6 @@ share/man/man1/leechcraft.1.gz
 %%LAUNCHY%%%%DATADIR%%/qml/launchy/LaunchyQuark.qml.manifest
 %%LAUNCHY%%%%DATADIR%%/translations/leechcraft_launchy_en.qm
 %%LAUNCHY%%%%DATADIR%%/translations/leechcraft_launchy_ru_RU.qm
-%%LAUNCHY%%@dirrm %%DATADIR%%/qml/launchy
 %%LHTR%%lib/leechcraft/plugins/libleechcraft_lhtr.so
 %%LHTR%%%%DATADIR%%/settings/lhtrsettings.xml
 %%LHTR%%%%DATADIR%%/translations/leechcraft_lhtr_en.qm
@@ -1829,15 +1717,11 @@ share/man/man1/leechcraft.1.gz
 %%LMP%%%%DATADIR%%/translations/leechcraft_lmp_httstream_en.qm
 %%LMP%%%%DATADIR%%/translations/leechcraft_lmp_httstream_ru_RU.qm
 %%LMP%%%%DATADIR%%/translations/leechcraft_lmp_ru_RU.qm
-%%LMP%%@dirrm include/leechcraft/interfaces/lmp
-%%LMP%%@dirrm %%DATADIR%%/qml/lmp/brainslugz
-%%LMP%%@dirrm %%DATADIR%%/qml/lmp
 %%MELLONETRAY%%lib/leechcraft/plugins/libleechcraft_mellonetray.so
 %%MELLONETRAY%%%%DATADIR%%/qml/mellonetray/TrayQuark.qml
 %%MELLONETRAY%%%%DATADIR%%/qml/mellonetray/TrayQuark.qml.manifest
 %%MELLONETRAY%%%%DATADIR%%/translations/leechcraft_mellonetray_en.qm
 %%MELLONETRAY%%%%DATADIR%%/translations/leechcraft_mellonetray_ru_RU.qm
-%%MELLONETRAY%%@dirrmtry %%DATADIR%%/qml/mellonetray
 %%MONOCLE%%lib/leechcraft/plugins/libleechcraft_monocle.so
 %%MONOCLE%%lib/leechcraft/plugins/libleechcraft_monocle_dik.so
 %%MONOCLE%%lib/leechcraft/plugins/libleechcraft_monocle_fxb.so
@@ -1895,7 +1779,6 @@ share/man/man1/leechcraft.1.gz
 %%OORONEE%%%%DATADIR%%/qml/ooronee/OoroneeQuark.qml
 %%OORONEE%%%%DATADIR%%/qml/ooronee/OoroneeQuark.qml.manifest
 %%OORONEE%%%%DATADIR%%/settings/ooroneesettings.xml
-%%OORONEE%%@dirrm %%DATADIR%%/qml/ooronee
 %%PINTAB%%lib/leechcraft/plugins/libleechcraft_pintab.so
 %%PINTAB%%%%DATADIR%%/translations/leechcraft_pintab_en.qm
 %%PINTAB%%%%DATADIR%%/translations/leechcraft_pintab_ru_RU.qm
@@ -2012,9 +1895,6 @@ share/man/man1/leechcraft.1.gz
 %%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_speeddial_ru_RU.qm
 %%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_tt.qm
 %%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_uk_UA.qm
-%%POSHUKU%%@dirrm include/leechcraft/interfaces/poshuku
-%%POSHUKU%%@dirrm %%DATADIR%%/installed/poshuku
-%%POSHUKU%%@dirrm %%DATADIR%%/installed
 %%QROSP%%lib/leechcraft/plugins/libleechcraft_qrosp.so
 %%ROSENTHAL%%lib/leechcraft/plugins/libleechcraft_rosenthal.so
 %%ROSENTHAL%%%%DATADIR%%/settings/rosenthalsettings.xml
@@ -2036,7 +1916,6 @@ share/man/man1/leechcraft.1.gz
 %%SB2%%%%DATADIR%%/settings/sb2panelsettings.xml
 %%SB2%%%%DATADIR%%/translations/leechcraft_sb2_en.qm
 %%SB2%%%%DATADIR%%/translations/leechcraft_sb2_ru_RU.qm
-%%SB2%%@dirrm %%DATADIR%%/qml/sb2
 %%SCROBLIBRE%%lib/leechcraft/plugins/libleechcraft_scroblibre.so
 %%SCROBLIBRE%%%%DATADIR%%/settings/scroblibresettings.xml
 %%SCROBLIBRE%%%%DATADIR%%/translations/leechcraft_scroblibre_en.qm
@@ -2046,7 +1925,6 @@ share/man/man1/leechcraft.1.gz
 %%SECMAN%%lib/leechcraft/plugins/libleechcraft_secman_simplestorage.so
 %%SECMAN%%%%DATADIR%%/translations/leechcraft_secman_en.qm
 %%SECMAN%%%%DATADIR%%/translations/leechcraft_secman_ru_RU.qm
-%%SECMAN%%@dirrm include/leechcraft/interfaces/secman
 %%SEEKTHRU%%lib/leechcraft/plugins/libleechcraft_seekthru.so
 %%SEEKTHRU%%%%DATADIR%%/settings/seekthrusettings.xml
 %%SEEKTHRU%%%%DATADIR%%/translations/leechcraft_seekthru_ar.qm
@@ -2088,7 +1966,6 @@ share/man/man1/leechcraft.1.gz
 %%TPI%%%%DATADIR%%/qml/tpi/TPIQuark.qml
 %%TPI%%%%DATADIR%%/qml/tpi/TPIQuark.qml.manifest
 %%TPI%%%%DATADIR%%/qml/tpi/Tooltip.qml
-%%TPI%%@dirrm %%DATADIR%%/qml/tpi
 %%VGRABBER%%lib/leechcraft/plugins/libleechcraft_vgrabber.so
 %%VGRABBER%%%%DATADIR%%/settings/vgrabbersettings.xml
 %%VGRABBER%%%%DATADIR%%/translations/leechcraft_vgrabber_ar.qm
@@ -2115,99 +1992,3 @@ share/man/man1/leechcraft.1.gz
 %%XTAZY%%%%DATADIR%%/settings/xtazysettings.xml
 %%XTAZY%%%%DATADIR%%/translations/leechcraft_xtazy_en.qm
 %%XTAZY%%%%DATADIR%%/translations/leechcraft_xtazy_ru_RU.qm
-@dirrm include/leechcraft/interfaces/an
-@dirrm include/leechcraft/interfaces/core
-@dirrm include/leechcraft/interfaces/data
-@dirrm include/leechcraft/interfaces/devices
-@dirrm include/leechcraft/interfaces/media
-@dirrm include/leechcraft/interfaces
-@dirrm include/leechcraft/util/CMakeFiles/leechcraft-util.dir
-@dirrm include/leechcraft/util/CMakeFiles/leechcraft-util_automoc.dir
-@dirrm include/leechcraft/util/CMakeFiles
-@dirrm include/leechcraft/util/cmake
-@dirrm include/leechcraft/util/db/CMakeFiles/leechcraft-util-db.dir
-@dirrm include/leechcraft/util/db/CMakeFiles/leechcraft-util-db_automoc.dir
-@dirrm include/leechcraft/util/db/CMakeFiles
-@dirrm include/leechcraft/util/db
-@dirrm include/leechcraft/util/gui/CMakeFiles/leechcraft-util-gui.dir
-@dirrm include/leechcraft/util/gui/CMakeFiles/leechcraft-util-gui_automoc.dir
-@dirrm include/leechcraft/util/gui/CMakeFiles
-@dirrm include/leechcraft/util/gui
-@dirrm include/leechcraft/util/models/CMakeFiles/leechcraft-util-models.dir
-@dirrm include/leechcraft/util/models/CMakeFiles/leechcraft-util-models_automoc.dir
-@dirrm include/leechcraft/util/models/CMakeFiles
-@dirrm include/leechcraft/util/models
-@dirrm include/leechcraft/util/network/CMakeFiles/leechcraft-util-network.dir
-@dirrm include/leechcraft/util/network/CMakeFiles/leechcraft-util-network_automoc.dir
-@dirrm include/leechcraft/util/network/CMakeFiles
-@dirrm include/leechcraft/util/network
-@dirrm include/leechcraft/util/qml/CMakeFiles/leechcraft-util-qml.dir
-@dirrm include/leechcraft/util/qml/CMakeFiles/leechcraft-util-qml_automoc.dir
-@dirrm include/leechcraft/util/qml/CMakeFiles
-@dirrm include/leechcraft/util/qml
-@dirrm include/leechcraft/util/shortcuts/CMakeFiles/leechcraft-util-shortcuts.dir
-@dirrm include/leechcraft/util/shortcuts/CMakeFiles/leechcraft-util-shortcuts_automoc.dir
-@dirrm include/leechcraft/util/shortcuts/CMakeFiles
-@dirrm include/leechcraft/util/shortcuts
-@dirrm include/leechcraft/util/sll/CMakeFiles/leechcraft-util-sll.dir
-@dirrm include/leechcraft/util/sll/CMakeFiles/leechcraft-util-sll_automoc.dir
-@dirrm include/leechcraft/util/sll/CMakeFiles
-@dirrm include/leechcraft/util/sll/cmake
-@dirrm include/leechcraft/util/sll
-@dirrm include/leechcraft/util/svcauth/CMakeFiles/leechcraft-util-svcauth.dir
-@dirrm include/leechcraft/util/svcauth/CMakeFiles/leechcraft-util-svcauth_automoc.dir
-@dirrm include/leechcraft/util/svcauth/CMakeFiles
-@dirrm include/leechcraft/util/svcauth
-@dirrm include/leechcraft/util/sys/CMakeFiles/leechcraft-util-sys.dir
-@dirrm include/leechcraft/util/sys/CMakeFiles/leechcraft-util-sys_automoc.dir
-@dirrm include/leechcraft/util/sys/CMakeFiles
-@dirrm include/leechcraft/util/sys
-@dirrm include/leechcraft/util/tags/CMakeFiles/leechcraft-util-tags.dir
-@dirrm include/leechcraft/util/tags/CMakeFiles/leechcraft-util-tags_automoc.dir
-@dirrm include/leechcraft/util/tags/CMakeFiles
-@dirrm include/leechcraft/util/tags
-@dirrm include/leechcraft/util/x11/CMakeFiles/leechcraft-util-x11.dir
-@dirrm include/leechcraft/util/x11/CMakeFiles/leechcraft-util-x11_automoc.dir
-@dirrm include/leechcraft/util/x11/CMakeFiles
-@dirrm include/leechcraft/util/x11
-@dirrm include/leechcraft/util/xdg/CMakeFiles/leechcraft-util-xdg.dir
-@dirrm include/leechcraft/util/xdg/CMakeFiles/leechcraft-util-xdg_automoc.dir
-@dirrm include/leechcraft/util/xdg/CMakeFiles
-@dirrm include/leechcraft/util/xdg
-@dirrm include/leechcraft/util/xpc/CMakeFiles/leechcraft-util-xpc.dir
-@dirrm include/leechcraft/util/xpc/CMakeFiles/leechcraft-util-xpc_automoc.dir
-@dirrm include/leechcraft/util/xpc/CMakeFiles
-@dirrm include/leechcraft/util/xpc
-@dirrm include/leechcraft/util/xsd/CMakeFiles/leechcraft-util-xsd.dir
-@dirrm include/leechcraft/util/xsd/CMakeFiles/leechcraft-util-xsd_automoc.dir
-@dirrm include/leechcraft/util/xsd/CMakeFiles
-@dirrm include/leechcraft/util/xsd
-@dirrm include/leechcraft/util
-@dirrm include/leechcraft/xmlsettingsdialog
-@dirrm include/leechcraft
-@dirrmtry lib/leechcraft/plugins
-@dirrmtry lib/leechcraft
-@dirrm share/cmake/Modules
-@dirrm share/cmake
-@dirrmtry share/icons/hicolor/14x14/apps
-@dirrmtry share/icons/hicolor/14x14
-@dirrm %%DATADIR%%/cmake
-@dirrm %%DATADIR%%/global_icons/flags
-@dirrm %%DATADIR%%/global_icons
-@dirrm %%DATADIR%%/qml/common
-@dirrm %%DATADIR%%/qml/org/LC/common
-@dirrm %%DATADIR%%/qml/org/LC
-@dirrm %%DATADIR%%/qml/org
-@dirrm %%DATADIR%%/qml
-@dirrm %%DATADIR%%/settings
-@dirrm %%DATADIR%%/themes/Blue Silence
-@dirrm %%DATADIR%%/themes/Wonton Soup Cyan
-@dirrm %%DATADIR%%/themes/Zion Reversed
-@dirrm %%DATADIR%%/themes/crafty
-@dirrm %%DATADIR%%/themes/default
-@dirrm %%DATADIR%%/themes/pendruk
-@dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%/translations
-@dirrm %%DATADIR%%
-@dirrm share/man/man1
-@dirrm share/man

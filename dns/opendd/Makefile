@@ -3,7 +3,7 @@
 
 PORTNAME=	opendd
 PORTVERSION=	0.7.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://www.bsdmon.com/download/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -11,17 +11,17 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DynDNS client
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 OPTIONS_DEFINE=	OPENSSL RCNG DOCS
 OPTIONS_DEFAULT=	OPENSSL RCNG
 RCNG_DESC=	Install RC_NG script
 
-PORTDOCS=	COPYING COPYRIGHT README
+PORTDOCS=	README
 PLIST_FILES=	sbin/${PORTNAME} \
-		"@unexec if cmp -s %D/%%ETCDIR%%/${PORTNAME}.conf %D/%%ETCDIR%%/${PORTNAME}.conf.default; then ${RM} -f %D/%%ETCDIR%%/${PORTNAME}.conf; fi " \
-		"%%ETCDIR%%/${PORTNAME}.conf.default" \
-		"@exec [ -f %B/${PORTNAME}.conf ] || ${CP} %B/%f %B/${PORTNAME}.conf" \
-		"%%ETCDIR%%/${PORTNAME}.pem" \
-		"@dirrmtry %%ETCDIR%%"
+		"@sample(,,600) %%ETCDIR%%/${PORTNAME}.conf.sample" \
+		"%%ETCDIR%%/${PORTNAME}.pem"
 
 .include <bsd.port.options.mk>
 
@@ -36,7 +36,7 @@ LDFLAGS+=	-L${OPENSSLLIB}
 MAKE_ENV+=	"USE_SOCKET_SSL=yes"
 .endif
 
-pre-patch:
+post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKDIR}/${PORTNAME}.${PORTVERSION}
 
 post-patch:
@@ -58,9 +58,8 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
 	${MKDIR} ${STAGEDIR}${ETCDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${STAGEDIR}${ETCDIR}/${PORTNAME}.conf.default
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${STAGEDIR}${ETCDIR}/${PORTNAME}.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.pem ${STAGEDIR}${ETCDIR}
-	${CHMOD} 600 ${STAGEDIR}${ETCDIR}/${PORTNAME}.conf.default
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}

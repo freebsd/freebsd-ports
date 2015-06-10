@@ -1,4 +1,8 @@
 bin/tor-prompt
+%%PYTHON_SITELIBDIR%%/stem-1.4.0_dev-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/stem-1.4.0_dev-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/stem-1.4.0_dev-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/stem-1.4.0_dev-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/stem/__init__.py
 %%PYTHON_SITELIBDIR%%/stem/__init__.pyc
 %%PYTHON_SITELIBDIR%%/stem/__init__.pyo
@@ -17,6 +21,9 @@ bin/tor-prompt
 %%PYTHON_SITELIBDIR%%/stem/descriptor/extrainfo_descriptor.py
 %%PYTHON_SITELIBDIR%%/stem/descriptor/extrainfo_descriptor.pyc
 %%PYTHON_SITELIBDIR%%/stem/descriptor/extrainfo_descriptor.pyo
+%%PYTHON_SITELIBDIR%%/stem/descriptor/hidden_service_descriptor.py
+%%PYTHON_SITELIBDIR%%/stem/descriptor/hidden_service_descriptor.pyc
+%%PYTHON_SITELIBDIR%%/stem/descriptor/hidden_service_descriptor.pyo
 %%PYTHON_SITELIBDIR%%/stem/descriptor/microdescriptor.py
 %%PYTHON_SITELIBDIR%%/stem/descriptor/microdescriptor.pyc
 %%PYTHON_SITELIBDIR%%/stem/descriptor/microdescriptor.pyo
@@ -66,6 +73,9 @@ bin/tor-prompt
 %%PYTHON_SITELIBDIR%%/stem/response/__init__.py
 %%PYTHON_SITELIBDIR%%/stem/response/__init__.pyc
 %%PYTHON_SITELIBDIR%%/stem/response/__init__.pyo
+%%PYTHON_SITELIBDIR%%/stem/response/add_onion.py
+%%PYTHON_SITELIBDIR%%/stem/response/add_onion.pyc
+%%PYTHON_SITELIBDIR%%/stem/response/add_onion.pyo
 %%PYTHON_SITELIBDIR%%/stem/response/authchallenge.py
 %%PYTHON_SITELIBDIR%%/stem/response/authchallenge.pyc
 %%PYTHON_SITELIBDIR%%/stem/response/authchallenge.pyo
@@ -108,6 +118,7 @@ bin/tor-prompt
 %%PYTHON_SITELIBDIR%%/stem/util/ordereddict.py
 %%PYTHON_SITELIBDIR%%/stem/util/ordereddict.pyc
 %%PYTHON_SITELIBDIR%%/stem/util/ordereddict.pyo
+%%PYTHON_SITELIBDIR%%/stem/util/ports.cfg
 %%PYTHON_SITELIBDIR%%/stem/util/proc.py
 %%PYTHON_SITELIBDIR%%/stem/util/proc.pyc
 %%PYTHON_SITELIBDIR%%/stem/util/proc.pyo

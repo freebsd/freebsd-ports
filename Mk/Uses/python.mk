@@ -521,6 +521,10 @@ add-plist-post:
 # Fix for programs that build python from a GNU auto* environment
 CONFIGURE_ENV+=	PYTHON="${PYTHON_CMD}"
 
+# By default CMake picks up the highest available version of Python package.
+# Enforce the version required by the port or the default.
+CMAKE_ARGS+=	-DPython_ADDITIONAL_VERSIONS=${PYTHON_VER}
+
 # Python 3rd-party modules
 PYGAME=		${PYTHON_PKGNAMEPREFIX}game>0:${PORTSDIR}/devel/py-game
 PYNUMERIC=	${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric

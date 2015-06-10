@@ -3,7 +3,7 @@
 
 PORTNAME=	gmerlin
 PORTVERSION=	1.2.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multimedia framework
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
 		libgavl.so:${PORTSDIR}/multimedia/gavl \
@@ -26,6 +27,7 @@ CONFIGURE_ENV=	ac_cv_func_inotify_init=no
 CONFIGURE_ARGS=	--disable-v4l --disable-v4l2 --disable-v4lconvert \
 		--without-doxygen --with-cpuflags=none --disable-musicbrainz
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 INSTALL_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

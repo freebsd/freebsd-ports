@@ -1,6 +1,6 @@
---- F77.pm.orig	2010-12-31 19:53:06.000000000 -0600
-+++ F77.pm	2011-03-24 01:05:00.742862139 -0500
-@@ -351,9 +351,49 @@ $F77config{Aix}{DEFAULT}     = 'F77';
+--- F77.pm.orig	2015-06-07 20:28:59 UTC
++++ F77.pm
+@@ -343,9 +343,49 @@ $F77config{Aix}{DEFAULT}     = 'F77';
  
  ### FreeBSD ###
  
@@ -53,7 +53,7 @@
  
  ### VMS ###
  
-@@ -446,7 +486,8 @@ $Pkg: Will try system=Generic Compiler=$
+@@ -438,7 +478,8 @@ $Pkg: Will try system=Generic Compiler=$
  EOD
      	 $system   =
              $Config{cc} =~ /\bgcc/ && $^O =~ /MSWin32/i ? "MinGW"

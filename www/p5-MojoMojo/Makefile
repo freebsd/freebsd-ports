@@ -15,7 +15,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 # Please keep order as in Makefile.PL
-RUN_DEPENDS=	\
+BUILD_DEPENDS=	\
 	p5-Plack>=0.9974:${PORTSDIR}/www/p5-Plack \
 	p5-Algorithm-Diff>=1.1901:${PORTSDIR}/devel/p5-Algorithm-Diff \
 	p5-Algorithm-Merge>=0:${PORTSDIR}/devel/p5-Algorithm-Merge \
@@ -82,9 +82,10 @@ RUN_DEPENDS=	\
 	p5-YAML>=0.36:${PORTSDIR}/textproc/p5-YAML \
 	p5-Term-Prompt>=0:${PORTSDIR}/devel/p5-Term-Prompt \
 	p5-Text-Emoticon-MSN>=0:${PORTSDIR}/textproc/p5-Text-Emoticon-MSN
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-WWW-Mechanize-Catalyst>=0:${PORTSDIR}/devel/p5-Test-WWW-Mechanize-Catalyst
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

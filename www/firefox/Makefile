@@ -4,10 +4,11 @@
 PORTNAME=	firefox
 DISTVERSION=	38.0.5
 DISTVERSIONSUFFIX=.source
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
-		https://ftp.mozilla.org/pub/mozilla.org/${PORTNAME}/candidates/${DISTVERSION}-candidates/build4/source/
+		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build4/source
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla

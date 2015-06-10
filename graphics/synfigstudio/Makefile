@@ -33,7 +33,6 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		'/optimization_flags/s|CXXFLAGS=|#CXXFLAGS=| ; \
 		 /optimization_flags/s|CFLAGS=|#CFLAGS=| ; \
-		 s|"GNU strip"|"strip"| ; \
 		 /DATADIRNAME/s|lib|share| ; \
 		 s|<tr1/|<| ; \
 		 s|::tr1||' \

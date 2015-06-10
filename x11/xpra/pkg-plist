@@ -1,6 +1,7 @@
 bin/xpra
 bin/xpra_Xdummy
 bin/xpra_launcher
+share/appdata/xpra.appdata.xml
 @sample %%ETCDIR%%/xorg.conf.sample
 @sample %%ETCDIR%%/xpra.conf.sample
 %%PYTHON_SITELIBDIR%%/xpra/__init__.py

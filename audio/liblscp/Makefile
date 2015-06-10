@@ -18,8 +18,4 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|"GNU strip"|"strip"|' ${WRKSRC}/configure
-
 .include <bsd.port.mk>

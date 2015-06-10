@@ -27,8 +27,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,GREP "GNU strip",EGREP "GNU|elftoolchain",' \
-		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		'/^install-data-am/s|:.*|:|' ${WRKSRC}/scripts/Makefile.in
 

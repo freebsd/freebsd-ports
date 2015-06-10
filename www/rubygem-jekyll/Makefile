@@ -27,6 +27,7 @@ RUN_DEPENDS=	rubygem-classifier-reborn>=2.0:${PORTSDIR}/devel/rubygem-classifier
 		rubygem-safe_yaml>=1.0:${PORTSDIR}/devel/rubygem-safe_yaml \
 		rubygem-toml>=0.1.0:${PORTSDIR}/devel/rubygem-toml
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

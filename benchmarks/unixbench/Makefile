@@ -3,7 +3,7 @@
 
 PORTNAME=	unixbench
 PORTVERSION=	4.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://ftp.osuosl.org/pub/nslu2/sources/ \
 		http://www.tux.org/pub/tux/niemi/unixbench/
@@ -11,7 +11,8 @@ MASTER_SITES=	http://ftp.osuosl.org/pub/nslu2/sources/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BYTE magazine's Public Domain benchmark for UNIX
 
-USES=		tar:tgz
+USES=		shebangfix tar:tgz
+SHEBANG_FILES=	pgms/perlbench
 SUB_FILES=	unixbench
 MAKE_JOBS_UNSAFE=	yes
 

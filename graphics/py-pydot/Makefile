@@ -9,7 +9,7 @@ MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	stefan@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python interface to the Graphviz Dot language
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pyparsing.py:${PORTSDIR}/devel/py-parsing

@@ -1,0 +1,2 @@
+sbin/sqlbox
+@sample etc/sqlbox.conf.sample
