@@ -64,8 +64,8 @@ post-patch:
 		 s|/locales.conf|/locales.conf.sample|g ; \
 		 s|/pool.conf|/pool.conf.sample|g ; \
 		 s| common.h||g'
-	@${REINPLACE_CMD} -e 's|$$ODBC_INC/isql.h|$$ODBC_INC/libiodbc/isql.h|g ; \
-		 s|$$ODBC_INC/isqlext.h|$$ODBC_INC/libiodbc/isqlext.h|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|\(\$with_iodbc/include\)|\1/libiodbc|g' \
+		${WRKSRC}/configure.ac
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/interfaces ${STAGEDIR}${ETCDIR}/interfaces.sample
