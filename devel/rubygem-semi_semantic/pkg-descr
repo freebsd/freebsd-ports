@@ -1,0 +1,3 @@
+A Ruby library for parsing/formatting/comparing semi-semantic versions.
+
+WWW: https://github.com/pivotal-cf-experimental/semi_semantic

@@ -4744,6 +4744,7 @@
     SUBDIR += rubygem-ruport
     SUBDIR += rubygem-safe_yaml
     SUBDIR += rubygem-sdoc
+    SUBDIR += rubygem-semi_semantic
     SUBDIR += rubygem-sequel
     SUBDIR += rubygem-sequel3
     SUBDIR += rubygem-settingslogic
