@@ -17,9 +17,9 @@ SRCS+=	util_freebsd.c
 SRCS+=	centraldir.c
 SRCS+=	zipfile.c
 
-CFLAGS+=-I.
-CFLAGS+=-I../include
-CFLAGS+=-I../mkbootimg
+CFLAGS+=-I${.CURDIR}
+CFLAGS+=-I${.CURDIR}/../include
+CFLAGS+=-I${.CURDIR}/../mkbootimg
 
 LDADD+=	-lusb -lz
 DPADD+=	${LIBUSB} ${LIBZ}
