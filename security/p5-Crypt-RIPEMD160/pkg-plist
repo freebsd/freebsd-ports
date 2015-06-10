@@ -1,6 +1,6 @@
-%%PERL5_MAN3%%/Crypt::RIPEMD160.3.gz
-%%PERL5_MAN3%%/Crypt::RIPEMD160::MAC.3.gz
 %%SITE_ARCH%%/Crypt/RIPEMD160.pm
 %%SITE_ARCH%%/Crypt/RIPEMD160/MAC.pm
 %%SITE_ARCH%%/auto/Crypt/RIPEMD160/RIPEMD160.so
 %%SITE_ARCH%%/auto/Crypt/RIPEMD160/autosplit.ix
+%%PERL5_MAN3%%/Crypt::RIPEMD160.3.gz
+%%PERL5_MAN3%%/Crypt::RIPEMD160::MAC.3.gz
