@@ -1,6 +1,6 @@
---- docs/userguide/genuserguide.py.orig	2014-02-14 23:22:37.000000000 +0900
-+++ docs/userguide/genuserguide.py	2014-02-16 16:15:05.000000000 +0900
-@@ -8,7 +8,8 @@
+--- docs/userguide/genuserguide.py.orig	2014-02-14 14:22:37 UTC
++++ docs/userguide/genuserguide.py
+@@ -8,7 +8,8 @@ This module contains the script for buil
  """
  
  def run(pagesize=None, verbose=0, outDir=None):
