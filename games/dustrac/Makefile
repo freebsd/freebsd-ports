@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	dustrac
-PORTVERSION=	1.9.2
+PORTVERSION=	1.11.0
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/src
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	2D top-view racing game
@@ -18,6 +17,10 @@ CMAKE_ARGS=	-DReleaseBuild=on \
 		-DDATA_PATH=${DATADIR} \
 		-DDOC_PATH=${DOCSDIR}
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	juzzlin
+GH_PROJECT=	DustRacing2D
 
 OPTIONS_DEFINE=	DOCS
 
