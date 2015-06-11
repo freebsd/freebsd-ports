@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	43.0.2357.81
+PORTVERSION=	43.0.2357.124
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	chromium@FreeBSD.org
 COMMENT=	Google web browser based on WebKit
