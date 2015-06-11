@@ -27,6 +27,7 @@ BUILD_WRKSRC=	${WRKSRC}/fastboot
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 MAKEFILE=	${FILESDIR}/Makefile
 MAKE_ENV=	FILESDIR="${FILESDIR}" BINDIR="${PREFIX}/bin" \
+		MANDIR="${PREFIX}/man/man" \
 		LIBPCRE="${LOCALBASE}/lib/libpcre.a"
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -37,13 +38,13 @@ PORTDOCS=	fastboot_protocol.txt
 OPTIONS_DEFINE=	DOCS
 
 post-extract:
+	@${CP} ${_DISTDIR}/${DISTFILES:M*\:manpage:C/:.*//} \
+		${BUILD_WRKSRC}/${DISTFILES:M*\:manpage:C/\?.*//}
 # Adjust paths relative to core
 	@(cd ${WRKSRC_extras} && ${COPYTREE_SHARE} . ${WRKSRC})
 	@${MV} ${WRKSRC_libselinux} ${WRKSRC}/libselinux
 
 post-install:
-	${INSTALL_MAN} ${_DISTDIR}/${DISTFILES:M*\:manpage:C/:.*//} \
-		${STAGEDIR}${MAN1PREFIX}/man/man1/fastboot.1
 	(cd ${INSTALL_WRKSRC} && ${COPYTREE_SHARE} \
 		"${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
 
