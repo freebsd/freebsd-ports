@@ -3,7 +3,7 @@
 PORTNAME=	android-tools-fastboot
 DISTVERSIONPREFIX=	android-
 DISTVERSION=	5.1.1_r4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	https://anonscm.debian.org/cgit/android-tools/android-tools.git/plain/debian/:manpage
 DISTFILES=	fastboot.1?id=706e754:manpage
@@ -34,6 +34,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_FILES=	bin/fastboot \
 		man/man1/fastboot.1.gz
 PORTDOCS=	fastboot_protocol.txt
+SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS
 
