@@ -46,6 +46,7 @@ PLIST_SUB+=	WITH_MYSQL="@comment "
 
 .if ${PORT_OPTIONS:MPGSQL}
 USES+=		pgsql
+LIB_DEPENDS+=	lbpq.so.5:${PORTSDIR}/databases/postgresql-libpqxx
 CONFIGURE_ARGS+=--enable-pgsql
 PLIST_SUB+=	WITH_PGSQL=""
 .else
