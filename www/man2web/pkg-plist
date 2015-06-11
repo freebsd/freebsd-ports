@@ -3,4 +3,3 @@ etc/man2web.conf.default
 man/man1/man2web.1.gz
 man/man5/man2web.conf.5.gz
 %%CGIDIR%%/man2web
-@dirrmtry %%CGIDIR%%
