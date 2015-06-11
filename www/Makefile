@@ -1752,6 +1752,7 @@
     SUBDIR += qdecoder
     SUBDIR += qooxdoo
     SUBDIR += qt5-webchannel
+    SUBDIR += qt5-websockets
     SUBDIR += quickie
     SUBDIR += qupzilla-qt4
     SUBDIR += qupzilla-qt5
