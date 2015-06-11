@@ -1,0 +1,22 @@
+xen/pt: correctly handle PM status bit
+
+xen_pt_pmcsr_reg_write() needs an adjustment to deal with the RW1C
+nature of the not passed through bit 15 (PCI_PM_CTRL_PME_STATUS).
+
+This is a preparatory patch for XSA-131.
+
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Reviewed-by: Stefano Stabellini <stefano.stabellini@eu.citrix.com>
+
+--- a/hw/pass-through.c
++++ b/hw/pass-through.c
+@@ -3786,7 +3786,8 @@ static int pt_pmcsr_reg_write(struct pt_
+ 
+     /* create value for writing to I/O device register */
+     throughable_mask = ~reg->emu_mask & valid_mask;
+-    *value = PT_MERGE_VALUE(*value, dev_value, throughable_mask);
++    *value = PT_MERGE_VALUE(*value, dev_value & ~PCI_PM_CTRL_PME_STATUS,
++                            throughable_mask);
+ 
+     if (!ptdev->power_mgmt)
+         return 0;

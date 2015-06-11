@@ -1,0 +1,99 @@
+From f433bfafbaf7d8a41c4c27aa3e8e78b1ab900b69 Mon Sep 17 00:00:00 2001
+From: Ian Campbell <ian.campbell@citrix.com>
+Date: Fri, 20 Feb 2015 14:41:09 +0000
+Subject: [PATCH] tools: libxl: Explicitly disable graphics backends on qemu
+ cmdline
+
+By default qemu will try to create some sort of backend for the
+emulated VGA device, either SDL or VNC.
+
+However when the user specifies sdl=0 and vnc=0 in their configuration
+libxl was not explicitly disabling either backend, which could lead to
+one unexpectedly running.
+
+If either sdl=1 or vnc=1 is configured then both before and after this
+change only the backends which are explicitly enabled are configured,
+i.e. this issue only occurs when all backends are supposed to have
+been disabled.
+
+This affects qemu-xen and qemu-xen-traditional differently.
+
+If qemu-xen was compiled with SDL support then this would result in an
+SDL window being opened if $DISPLAY is valid, or a failure to start
+the guest if not. Passing "-display none" to qemu before any further
+-sdl options disables this default behaviour and ensures that SDL is
+only started if the libxl configuration demands it.
+
+If qemu-xen was compiled without SDL support then qemu would instead
+start a VNC server listening on ::1 (IPv6 localhost) or 127.0.0.1
+(IPv4 localhost) with IPv6 preferred if available. Explicitly pass
+"-vnc none" when vnc is not enabled in the libxl configuration to
+remove this possibility.
+
+qemu-xen-traditional would never start a vnc backend unless asked.
+However by default it will start an SDL backend, the way to disable
+this is to pass a -vnc option. In other words passing "-vnc none" will
+disable both vnc and sdl by default. sdl can then be reenabled if
+configured by subsequent use of the -sdl option.
+
+Tested with both qemu-xen and qemu-xen-traditional built with SDL
+support and:
+	xl cr # defaults
+	xl cr sdl=0 vnc=0
+	xl cr sdl=1 vnc=0
+	xl cr sdl=0 vnc=1
+	xl cr sdl=0 vnc=0 vga=\"none\"
+	xl cr sdl=0 vnc=0 nographic=1
+with both valid and invalid $DISPLAY.
+
+This is XSA-119.
+
+Reported-by: Sander Eikelenboom <linux@eikelenboom.it>
+Signed-off-by: Ian Campbell <ian.campbell@citrix.com>
+Acked-by: Ian Jackson <ian.jackson@eu.citrix.com>
+---
+ tools/libxl/libxl_dm.c | 21 +++++++++++++++++++--
+ 1 file changed, 19 insertions(+), 2 deletions(-)
+
+diff --git a/tools/libxl/libxl_dm.c b/tools/libxl/libxl_dm.c
+index 8599a6a..3b918c6 100644
+--- a/tools/libxl/libxl_dm.c
++++ b/tools/libxl/libxl_dm.c
+@@ -180,7 +180,14 @@ static char ** libxl__build_device_model_args_old(libxl__gc *gc,
+         if (libxl_defbool_val(vnc->findunused)) {
+             flexarray_append(dm_args, "-vncunused");
+         }
+-    }
++    } else
++        /*
++         * VNC is not enabled by default by qemu-xen-traditional,
++         * however passing -vnc none causes SDL to not be
++         * (unexpectedly) enabled by default. This is overridden by
++         * explicitly passing -sdl below as required.
++         */
++        flexarray_append_pair(dm_args, "-vnc", "none");
+ 
+     if (sdl) {
+         flexarray_append(dm_args, "-sdl");
+@@ -522,7 +529,17 @@ static char ** libxl__build_device_model_args_new(libxl__gc *gc,
+         }
+ 
+         flexarray_append(dm_args, vncarg);
+-    }
++    } else
++        /*
++         * Ensure that by default no vnc server is created.
++         */
++        flexarray_append_pair(dm_args, "-vnc", "none");
++
++    /*
++     * Ensure that by default no display backend is created. Further
++     * options given below might then enable more.
++     */
++    flexarray_append_pair(dm_args, "-display", "none");
+ 
+     if (sdl) {
+         flexarray_append(dm_args, "-sdl");
+-- 
+2.1.4
+
