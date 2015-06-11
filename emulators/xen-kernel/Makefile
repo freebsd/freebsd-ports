@@ -3,7 +3,7 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-kernel
 PORTVERSION=	4.5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/
 
@@ -25,7 +25,18 @@ ALL_TARGET=	build
 STRIP=		#
 WRKSRC_SUBDIR=	xen
 EXTRA_PATCHES=	${FILESDIR}/iommu_share_p2m_table.patch:-p2 \
-		${FILESDIR}/0001-x86-pvh-disable-posted-interrupts.patch:-p2
+		${FILESDIR}/0001-x86-pvh-disable-posted-interrupts.patch:-p2 \
+		${FILESDIR}/xsa117.patch:-p2 \
+		${FILESDIR}/xsa118-4.5-unstable-1.patch:-p2 \
+		${FILESDIR}/xsa118-4.5-unstable-2.patch:-p2 \
+		${FILESDIR}/xsa121.patch:-p2 \
+		${FILESDIR}/xsa122.patch:-p2 \
+		${FILESDIR}/xsa123.patch:-p2 \
+		${FILESDIR}/xsa125.patch:-p2 \
+		${FILESDIR}/xsa127-4.x.patch:-p2 \
+		${FILESDIR}/xsa132.patch:-p2 \
+		${FILESDIR}/xsa134.patch:-p2 \
+		${FILESDIR}/xsa136.patch:-p2
 
 .include <bsd.port.options.mk>
 

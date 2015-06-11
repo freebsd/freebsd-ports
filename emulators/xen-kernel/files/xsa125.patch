@@ -1,0 +1,71 @@
+From 98670acc98cad5aee0e0714694a64d3b96675c36 Mon Sep 17 00:00:00 2001
+From: Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>
+Date: Wed, 19 Nov 2014 12:57:11 -0500
+Subject: [PATCH] Limit XEN_DOMCTL_memory_mapping hypercall to only process up
+ to 64 GFNs (or less)
+
+Said hypercall for large BARs can take quite a while. As such
+we can require that the hypercall MUST break up the request
+in smaller values.
+
+Another approach is to add preemption to it - whether we do the
+preemption using hypercall_create_continuation or returning
+EAGAIN to userspace (and have it re-invocate the call) - either
+way the issue we cannot easily solve is that in 'map_mmio_regions'
+if we encounter an error we MUST call 'unmap_mmio_regions' for the
+whole BAR region.
+
+Since the preemption would re-use input fields such as nr_mfns,
+first_gfn, first_mfn - we would lose the original values -
+and only undo what was done in the current round (i.e. ignoring
+anything that was done prior to earlier preemptions).
+
+Unless we re-used the return value as 'EAGAIN|nr_mfns_done<<10' but
+that puts a limit (since the return value is a long) on the amount
+of nr_mfns that can provided.
+
+This patch sidesteps this problem by:
+ - Setting an hard limit of nr_mfns having to be 64 or less.
+ - Toolstack adjusts correspondingly to the nr_mfn limit.
+ - If the there is an error when adding the toolstack will call the
+   remove operation to remove the whole region.
+
+The need to break this hypercall down is for large BARs can take
+more than the guest (initial domain usually) time-slice. This has
+the negative result in that the guest is locked out for a long
+duration and is unable to act on any pending events.
+
+We also augment the code to return zero if nr_mfns instead
+of trying to the hypercall.
+
+Suggested-by: Jan Beulich <jbeulich@suse.com>
+Acked-by: Jan Beulich <jbeulich@suse.com>
+Signed-off-by: Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>
+Acked-by: Ian Campbell <ian.campbell@citrix.com>
+---
+[v50: Simplify loop]
+[v51: If max_batch_sz 1 (or less) we would return zero. Fix that]
+[v52: Handle nr_mfns being zero]
+[v53: Fix up return value]
+---
+ tools/libxc/xc_domain.c     | 46 +++++++++++++++++++++++++++++++++++++++++----
+ xen/common/domctl.c         |  5 +++++
+ xen/include/public/domctl.h |  1 +
+ 3 files changed, 48 insertions(+), 4 deletions(-)
+
+diff --git a/xen/common/domctl.c b/xen/common/domctl.c
+index d396cc4..c2e60a7 100644
+--- a/xen/common/domctl.c
++++ b/xen/common/domctl.c
+@@ -1027,6 +1027,11 @@ long do_domctl(XEN_GUEST_HANDLE_PARAM(xen_domctl_t) u_domctl)
+              (gfn + nr_mfns - 1) < gfn ) /* wrap? */
+             break;
+ 
++        ret = -E2BIG;
++        /* Must break hypercall up as this could take a while. */
++        if ( nr_mfns > 64 )
++            break;
++
+         ret = -EPERM;
+         if ( !iomem_access_permitted(current->domain, mfn, mfn_end) ||
+              !iomem_access_permitted(d, mfn, mfn_end) )
