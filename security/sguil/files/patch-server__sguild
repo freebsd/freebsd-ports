@@ -1,5 +1,5 @@
---- server/sguild.orig	2014-06-23 21:54:25.595758574 +0600
-+++ server/sguild	2014-06-23 21:59:48.122743440 +0600
+--- server/sguild.orig	2014-03-29 00:41:36 UTC
++++ server/sguild
 @@ -1,6 +1,4 @@
  #!/bin/sh
 -# Run tcl from users PATH \
@@ -7,7 +7,7 @@
  
  # $Id: sguild,v 1.194 2013/09/05 00:38:45 bamm Exp $ #
  
-@@ -221,7 +219,7 @@
+@@ -221,7 +219,7 @@ foreach arg $argv {
  ##################################
  
  # Do all priv account actions here.
@@ -16,7 +16,7 @@
  
  if { ![info exists LOG_PATH] } { set LOG_PATH /var/log/sguild }
  
-@@ -321,7 +319,7 @@
+@@ -321,7 +319,7 @@ if { [catch {package require tls} tlsErr
  # Check for certs
  if {![info exists CERTS_PATH]} {
  
@@ -25,7 +25,7 @@
  
  }
  
-@@ -351,13 +349,13 @@
+@@ -351,13 +349,13 @@ if {![file exists $KEY] || ![file readab
  
  if { ![info exists CONF_FILE] } {
    # No conf file specified check the defaults
@@ -42,7 +42,7 @@
      DisplayUsage $argv0
    }
  }
-@@ -484,8 +482,8 @@
+@@ -484,8 +482,8 @@ if { [info exists DISABLEUSER] && $DISAB
  # Load accessfile
  if { ![info exists ACCESS_FILE] } {
    # Check the defaults
@@ -53,7 +53,7 @@
    } elseif { [file exists ./sguild.access] } {
      set ACCESS_FILE "./sguild.access"
    } else {
-@@ -511,8 +509,8 @@
+@@ -511,8 +509,8 @@ if { [file exists $ACCESS_FILE] } {
  #}
  # Load email config file
  if { ![info exists EMAIL_FILE] } {
@@ -64,7 +64,7 @@
    } else {
      set EMAIL_FILE "./sguild.email"
    }
-@@ -524,8 +522,8 @@
+@@ -524,8 +522,8 @@ if { [file exists $EMAIL_FILE] } {
  }
  # Load global queries.
  if { ![info exists GLOBAL_QRY_FILE] } {
@@ -75,7 +75,7 @@
    } else {
      set GLOBAL_QRY_FILE "./sguild.queries"
    }
-@@ -537,8 +535,8 @@
+@@ -537,8 +535,8 @@ if { [file exists $GLOBAL_QRY_FILE] } {
  }
  # Load report queries.
  if { ![info exists REPORT_QRY_FILE] } {

@@ -1,6 +1,6 @@
---- client/sguil.tk.orig	2012-11-15 22:24:35.000000000 +0000
-+++ client/sguil.tk	2012-11-15 22:26:33.000000000 +0000
-@@ -88,7 +88,7 @@
+--- client/sguil.tk.orig	2014-03-29 00:41:36 UTC
++++ client/sguil.tk
+@@ -88,7 +88,7 @@ if [catch {package require smtp 1.4.3} s
  
  # Load iwidgets and namespaces
  if [catch {package require Iwidgets} iwidgetsVersion] {
@@ -9,7 +9,7 @@
      puts "The iwidgets package is part of the incr tcl extension and is"
      puts "available as a port/package most systems."
      puts "See http://www.tcltk.com/iwidgets/ for more info."
-@@ -2053,11 +2053,11 @@
+@@ -2069,11 +2069,11 @@ if { ![info exists CONF_FILE] } {
      set CONF_FILE $env(HOME)/sguil.conf
    } elseif { [file exists ./sguil.conf] } {
      set CONF_FILE ./sguil.conf

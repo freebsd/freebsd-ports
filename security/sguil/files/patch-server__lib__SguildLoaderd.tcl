@@ -1,6 +1,6 @@
---- server/lib/SguildLoaderd.tcl.orig	2012-10-12 21:07:19.000000000 +0000
-+++ server/lib/SguildLoaderd.tcl	2012-10-12 21:15:06.000000000 +0000
-@@ -220,7 +220,7 @@
+--- server/lib/SguildLoaderd.tcl.orig	2014-03-29 00:41:36 UTC
++++ server/lib/SguildLoaderd.tcl
+@@ -220,7 +220,7 @@ proc InitLoaderd {} {
      } else {
          # Make sure its a MERGE table and not the old monster
          set tableStatus [mysqlsel $LOADERD_DB_ID {SHOW TABLE STATUS LIKE 'sancp'} -flatlist]
