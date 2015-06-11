@@ -1,5 +1,5 @@
---- sensor/snort_agent.tcl.orig	2012-12-17 22:33:35.000000000 +0000
-+++ sensor/snort_agent.tcl	2012-12-17 22:39:39.000000000 +0000
+--- sensor/snort_agent.tcl.orig	2014-03-29 00:41:36 UTC
++++ sensor/snort_agent.tcl
 @@ -1,6 +1,4 @@
  #!/bin/sh
 -# Run tcl from users PATH \
@@ -7,7 +7,7 @@
  
  # $Id: snort_agent.tcl,v 1.9 2011/02/17 02:55:48 bamm Exp $ #
  
-@@ -680,13 +678,13 @@
+@@ -680,13 +678,13 @@ foreach arg $argv {
  }
  
  # Parse the config file here
@@ -24,7 +24,7 @@
  
      } elseif { [file exists ./snort_agent.conf] } {
  
-@@ -695,7 +693,7 @@
+@@ -695,7 +693,7 @@ if { ![info exists CONF_FILE] } {
      } else {
  
          puts "Couldn't determine where the snort_agent.tcl config file is"
