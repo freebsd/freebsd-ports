@@ -3,6 +3,7 @@
 PORTNAME=	android-tools-fastboot
 DISTVERSIONPREFIX=	android-
 DISTVERSION=	5.1.1_r4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://anonscm.debian.org/cgit/android-tools/android-tools.git/plain/debian/:manpage
 DISTFILES=	fastboot.1?id=706e754:manpage
@@ -31,6 +32,9 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_FILES=	bin/fastboot \
 		man/man1/fastboot.1.gz
+PORTDOCS=	fastboot_protocol.txt
+
+OPTIONS_DEFINE=	DOCS
 
 post-extract:
 # Adjust paths relative to core
@@ -40,5 +44,7 @@ post-extract:
 post-install:
 	${INSTALL_MAN} ${_DISTDIR}/${DISTFILES:M*\:manpage:C/:.*//} \
 		${STAGEDIR}${MAN1PREFIX}/man/man1/fastboot.1
+	(cd ${INSTALL_WRKSRC} && ${COPYTREE_SHARE} \
+		"${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
