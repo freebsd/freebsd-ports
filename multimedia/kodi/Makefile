@@ -2,7 +2,7 @@
 
 PORTNAME=	kodi
 DISTVERSION=	14.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	https://codeload.github.com/xbmc/xbmc/tar.gz/${DISTVERSION}-Helix?dummy=/ \
 		GH:ffmpeg
