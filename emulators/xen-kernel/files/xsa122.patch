@@ -1,0 +1,40 @@
+pre-fill structures for certain HYPERVISOR_xen_version sub-ops
+
+... avoiding to pass hypervisor stack contents back to the caller
+through space unused by the respective strings.
+
+This is CVE-2015-2045 / XSA-122.
+
+Signed-off-by: Aaron Adams <Aaron.Adams@nccgroup.com>
+Acked-by: Jan Beulich <jbeulich@suse.com>
+Acked-by: Ian Campbell <ian.campbell@citrix.com>
+
+--- a/xen/common/kernel.c
++++ b/xen/common/kernel.c
+@@ -240,6 +240,8 @@ DO(xen_version)(int cmd, XEN_GUEST_HANDL
+     case XENVER_extraversion:
+     {
+         xen_extraversion_t extraversion;
++
++        memset(extraversion, 0, sizeof(extraversion));
+         safe_strcpy(extraversion, xen_extra_version());
+         if ( copy_to_guest(arg, extraversion, ARRAY_SIZE(extraversion)) )
+             return -EFAULT;
+@@ -249,6 +251,8 @@ DO(xen_version)(int cmd, XEN_GUEST_HANDL
+     case XENVER_compile_info:
+     {
+         struct xen_compile_info info;
++
++        memset(&info, 0, sizeof(info));
+         safe_strcpy(info.compiler,       xen_compiler());
+         safe_strcpy(info.compile_by,     xen_compile_by());
+         safe_strcpy(info.compile_domain, xen_compile_domain());
+@@ -284,6 +288,8 @@ DO(xen_version)(int cmd, XEN_GUEST_HANDL
+     case XENVER_changeset:
+     {
+         xen_changeset_info_t chgset;
++
++        memset(chgset, 0, sizeof(chgset));
+         safe_strcpy(chgset, xen_changeset());
+         if ( copy_to_guest(arg, chgset, ARRAY_SIZE(chgset)) )
+             return -EFAULT;

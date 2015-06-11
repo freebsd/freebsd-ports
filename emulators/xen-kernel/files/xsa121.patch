@@ -1,0 +1,51 @@
+x86/HVM: return all ones on wrong-sized reads of system device I/O ports
+
+So far the value presented to the guest remained uninitialized.
+
+This is CVE-2015-2044 / XSA-121.
+
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Acked-by: Ian Campbell <ian.campbell@citrix.com>
+
+--- a/xen/arch/x86/hvm/i8254.c
++++ b/xen/arch/x86/hvm/i8254.c
+@@ -486,6 +486,7 @@ static int handle_pit_io(
+     if ( bytes != 1 )
+     {
+         gdprintk(XENLOG_WARNING, "PIT bad access\n");
++        *val = ~0;
+         return X86EMUL_OKAY;
+     }
+ 
+--- a/xen/arch/x86/hvm/pmtimer.c
++++ b/xen/arch/x86/hvm/pmtimer.c
+@@ -213,6 +213,7 @@ static int handle_pmt_io(
+     if ( bytes != 4 )
+     {
+         gdprintk(XENLOG_WARNING, "HVM_PMT bad access\n");
++        *val = ~0;
+         return X86EMUL_OKAY;
+     }
+     
+--- a/xen/arch/x86/hvm/rtc.c
++++ b/xen/arch/x86/hvm/rtc.c
+@@ -703,7 +703,8 @@ static int handle_rtc_io(
+ 
+     if ( bytes != 1 )
+     {
+-        gdprintk(XENLOG_WARNING, "HVM_RTC bas access\n");
++        gdprintk(XENLOG_WARNING, "HVM_RTC bad access\n");
++        *val = ~0;
+         return X86EMUL_OKAY;
+     }
+     
+--- a/xen/arch/x86/hvm/vpic.c
++++ b/xen/arch/x86/hvm/vpic.c
+@@ -331,6 +331,7 @@ static int vpic_intercept_pic_io(
+     if ( bytes != 1 )
+     {
+         gdprintk(XENLOG_WARNING, "PIC_IO bad access size %d\n", bytes);
++        *val = ~0;
+         return X86EMUL_OKAY;
+     }
+ 
