@@ -24,7 +24,8 @@ USES=		compiler desktop-file-utils fam:gamin libtool pathfix \
 USE_WX=		2.8
 WANT_UNICODE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG} --with-contrib-plugins=all
+CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG} --with-contrib-plugins=all \
+		--disable-pch
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 INSTALLS_ICONS=	yes
