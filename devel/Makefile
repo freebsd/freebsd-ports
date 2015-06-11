@@ -4750,6 +4750,7 @@
     SUBDIR += rubygem-ruport
     SUBDIR += rubygem-safe_yaml
     SUBDIR += rubygem-sdoc
+    SUBDIR += rubygem-semantic_puppet
     SUBDIR += rubygem-semi_semantic
     SUBDIR += rubygem-sequel
     SUBDIR += rubygem-sequel3
