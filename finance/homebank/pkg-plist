@@ -154,6 +154,8 @@ share/applications/homebank.desktop
 %%DATADIR%%/help/win-statistics.html
 %%DATADIR%%/help/win-trendtime.html
 %%DATADIR%%/help/win-vehiclecost.html
+%%DATADIR%%/icons/hicolor/16x16/actions/btn-collapse.png
+%%DATADIR%%/icons/hicolor/16x16/actions/btn-expand.png
 %%DATADIR%%/icons/hicolor/16x16/actions/hb-ope-auto.png
 %%DATADIR%%/icons/hicolor/16x16/actions/hb-ope-budget.png
 %%DATADIR%%/icons/hicolor/16x16/actions/hb-ope-cleared.png
