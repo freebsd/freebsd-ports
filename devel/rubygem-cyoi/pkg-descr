@@ -1,0 +1,4 @@
+A library to ask an end-user to choose an infrastructure (AWS, OpenStack, etc),
+region, and login credentials.
+
+WWW: https://github.com/drnic/cyoi
