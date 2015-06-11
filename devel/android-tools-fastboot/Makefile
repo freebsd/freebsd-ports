@@ -5,9 +5,10 @@ DISTVERSIONPREFIX=	android-
 DISTVERSION=	5.1.1_r4
 PORTREVISION=	3
 CATEGORIES=	devel
-MASTER_SITES=	https://anonscm.debian.org/cgit/android-tools/android-tools.git/plain/debian/:manpage
-DISTFILES=	fastboot.1?id=706e754:manpage
-EXTRACT_ONLY=	${DISTFILES:N*\:manpage:C/:.*//}
+MASTER_SITES=	https://anonscm.debian.org/cgit/android-tools/android-tools.git/plain/debian/:bashcomp,manpage
+DISTFILES=	bash_completion.d/fastboot?id=2b8cfec:bashcomp \
+		fastboot.1?id=706e754:manpage
+EXTRACT_ONLY=	${DISTFILES:N*\:bashcomp:N*\:manpage:C/:.*//}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Android Fastboot protocol CLI tool
@@ -32,11 +33,19 @@ MAKE_ENV=	FILESDIR="${FILESDIR}" BINDIR="${PREFIX}/bin" \
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_FILES=	bin/fastboot \
+		%%BASH%%etc/bash_completion.d/fastboot \
 		man/man1/fastboot.1.gz
 PORTDOCS=	fastboot_protocol.txt
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	BASH DOCS
+OPTIONS_SUB=	yes
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MBASH}
+LICENSE+=	MIT # debian/copyright
+.endif
 
 post-extract:
 	@${CP} ${_DISTDIR}/${DISTFILES:M*\:manpage:C/:.*//} \
@@ -46,6 +55,9 @@ post-extract:
 	@${MV} ${WRKSRC_libselinux} ${WRKSRC}/libselinux
 
 post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/${PLIST_FILES:M%%BASH%%*:C/%%.*%%//:H}
+	${INSTALL_DATA} ${_DISTDIR}/${DISTFILES:M*\:bashcomp:C/:.*//} \
+		${STAGEDIR}${PREFIX}/${PLIST_FILES:M%%BASH%%*:C/%%.*%%//}
 	(cd ${INSTALL_WRKSRC} && ${COPYTREE_SHARE} \
 		"${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
 
