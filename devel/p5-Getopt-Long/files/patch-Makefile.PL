@@ -1,14 +1,14 @@
---- Makefile.PL.orig	Fri May 24 17:51:36 2002
-+++ Makefile.PL	Fri May 24 17:52:52 2002
-@@ -5,6 +5,7 @@
- 
- require "./lib/Getopt/Long.pm";
+--- Makefile.PL.orig	2015-06-11 13:24:35.000000000 +0200
++++ Makefile.PL	2015-06-11 13:25:28.000000000 +0200
+@@ -12,6 +12,7 @@ use ExtUtils::MakeMaker 5.0;
+ use lib "./lib";
+ use Getopt::Long;
  my $version = $Getopt::Long::VERSION_STRING || $Getopt::Long::VERSION;
 +my $leave_alone = 1;
  
  sub MY::postamble {
      my $ret = "";
-@@ -18,7 +19,7 @@
+@@ -25,7 +26,7 @@ This manual page has a wrong name, and s
  I can add instructions to the Makefile to remove it when you
  install this version.
  EOD
@@ -17,7 +17,7 @@
  	if ( $ans =~ /^y/i ) {
  	    $ret .= <<EOD;
  install ::
-@@ -37,7 +38,7 @@
+@@ -44,7 +45,7 @@ These should be removed.
  I can add instructions to the Makefile to remove them when you
  install this version.
  EOD
@@ -26,12 +26,3 @@
  	if ( $ans =~ /^y/i ) {
  	    $ret .= <<EOD;
  install ::
-@@ -68,7 +69,7 @@
-         ABSTRACT => 'Module to handle parsing command line options',
-         ),
- 
--	INSTALLDIRS => 'perl',
-+	INSTALLDIRS => ($leave_alone ? 'site' : 'perl'),
- 	PM 	  => { "lib/newgetopt.pl"  => '$(INST_LIB)/newgetopt.pl',
- 		       "lib/Getopt/Long.pm" => '$(INST_LIB)/Getopt/Long.pm',
- #		       "perlcmdline.pod" => '$(INST_LIB)/pod/perlcmdline.pod',
