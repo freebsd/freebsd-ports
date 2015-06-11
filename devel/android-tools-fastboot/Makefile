@@ -3,7 +3,7 @@
 PORTNAME=	android-tools-fastboot
 DISTVERSIONPREFIX=	android-
 DISTVERSION=	5.1.1_r4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	https://anonscm.debian.org/cgit/android-tools/android-tools.git/plain/debian/:bashcomp,manpage
 DISTFILES=	bash_completion.d/fastboot?id=2b8cfec:bashcomp \
@@ -13,8 +13,11 @@ EXTRACT_ONLY=	${DISTFILES:N*\:bashcomp:N*\:manpage:C/:.*//}
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Android Fastboot protocol CLI tool
 
-LICENSE=	APACHE20 BSD2CLAUSE
+LICENSE=	APACHE20 BSD2CLAUSE PUBLIC_DOMAIN
 LICENSE_COMB=	multi
+LICENSE_NAME_PUBLIC_DOMAIN=	Public Domain
+LICENSE_FILE_PUBLIC_DOMAIN=	${WRKSRC}/libselinux/NOTICE
+LICENSE_PERMS_PUBLIC_DOMAIN=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
