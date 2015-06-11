@@ -4504,6 +4504,7 @@
     SUBDIR += rubygem-cri
     SUBDIR += rubygem-cucumber
     SUBDIR += rubygem-cucumber-core
+    SUBDIR += rubygem-cyoi
     SUBDIR += rubygem-daemon_controller
     SUBDIR += rubygem-daemons
     SUBDIR += rubygem-debug_inspector
