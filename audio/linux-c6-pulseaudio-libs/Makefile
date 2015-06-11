@@ -11,7 +11,7 @@ COMMENT=	Libraries for PulseAudio clients (Linux CentOS ${LINUX_DIST_VER})
 
 USE_LINUX=	c6
 USE_LINUX_RPM=	yes
-USE_LINUX_APPS=	dbuslibs libasyncns libsndfile xorglibs
+USE_LINUX_APPS=	dbuslibs libasyncns libsndfile tcp_wrappers-libs xorglibs
 
 RPMVERSION=	17.el6
 USE_LDCONFIG=	yes
