@@ -57,6 +57,7 @@
     SUBDIR += mldonkey-core
     SUBDIR += mldonkey-gui
     SUBDIR += namecoin
+    SUBDIR += namecoin-daemon
     SUBDIR += napshare
     SUBDIR += ncdc
     SUBDIR += opendchub
