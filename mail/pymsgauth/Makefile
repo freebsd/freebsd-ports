@@ -3,16 +3,21 @@
 
 PORTNAME=	pymsgauth
 PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail python
 MASTER_SITES=	http://pyropus.ca/software/pymsgauth/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatically process qsecretary confirmation requests
 
+LICENSE=	GPLv2 # only
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		python shebangfix
-SHEBANG_FILES=	pymsgauth-clean pymsgauth-confirm pymsgauth-mail
+SHEBANG_FILES=	pymsgauth-clean pymsgauth-confirm pymsgauth-mail \
+		ConfParser.py pymsgauth.py
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 SUB_FILES=	pkg-message
 
