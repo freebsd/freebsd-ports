@@ -1,0 +1,5 @@
+R10K provides a general purpose toolset for deploying Puppet environments
+and modules. It implements the Puppetfile format and provides a native
+implementation of Puppet dynamic environments.
+
+WWW: https://github.com/puppetlabs/r10k
