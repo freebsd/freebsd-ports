@@ -1,5 +1,5 @@
---- ./src/qt/configurenamedialog.h.orig	2013-10-29 13:38:10.000000000 +0000
-+++ ./src/qt/configurenamedialog.h	2014-01-18 23:12:20.925138619 +0000
+--- src/qt/configurenamedialog.h.orig	2014-12-18 14:47:02 UTC
++++ src/qt/configurenamedialog.h
 @@ -1,6 +1,9 @@
  #ifndef CONFIGURENAMEDIALOG_H
  #define CONFIGURENAMEDIALOG_H
