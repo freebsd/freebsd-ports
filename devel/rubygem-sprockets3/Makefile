@@ -5,6 +5,7 @@ PORTNAME=	sprockets
 PORTVERSION=	3.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
+PKGNAMESUFFIX=	3
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library that preprocesses and concatenates JavaScript files
