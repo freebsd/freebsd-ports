@@ -3,7 +3,7 @@
 
 PORTNAME=	netsurf
 PORTVERSION=	3.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	http://download.netsurf-browser.org/netsurf/releases/source-full/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-full-src
@@ -31,7 +31,7 @@ NSFB_VERSION=	0.1.0
 WRKSRC=		${WRKDIR}/${PORTNAME}-full-${PORTVERSION}
 
 DESKTOP_ENTRIES="NetSurf" "${COMMENT}" "${DATADIR}/${PORTNAME}.xpm" \
-		"${PORTNAME}" "" "true"
+		"${PORTNAME}" "" true
 
 OPTIONS_DEFINE=	GSTREAMER WEBP
 GSTREAMER_USE=		GSTREAMER=yes
@@ -66,7 +66,7 @@ do-configure:
 	@${CP} ${FILESDIR}/Makefile.config  ${WRKSRC}/src/netsurf-${PORTVERSION}
 .if empty(ICONV_LIB)
 	@${REINPLACE_CMD} '/NETSURF_USE_LIBICONV_PLUG/ s|NO|YES|' \
-		${WRKSRC}/src/netsurf-${PORTVERSION}/Makefile.config	
+		${WRKSRC}/src/netsurf-${PORTVERSION}/Makefile.config
 .endif
 .if ${PORT_OPTIONS:MGSTREAMER}
 	@${REINPLACE_CMD} '/NETSURF_USE_VIDEO/ s|NO|YES|' \
@@ -76,5 +76,8 @@ do-configure:
 	@${REINPLACE_CMD} '/NETSURF_USE_WEBP/ s|NO|YES|' \
 		${WRKSRC}/src/netsurf-${PORTVERSION}/Makefile.config
 .endif
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/netsurf
 
 .include <bsd.port.post.mk>
