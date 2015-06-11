@@ -4,7 +4,7 @@
 PORTNAME=	mixxx
 PORTVERSION=	1.11.0
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.mixxx.org/${PORTNAME}-${PORTVERSION}/
 
@@ -12,6 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DJ mixing application
 
 LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
 		libid3tag.so:${PORTSDIR}/audio/libid3tag \
@@ -70,6 +71,7 @@ post-patch:
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mixxx
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mixxx/plugins/*/*.so
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/mixxx/plugins/soundsource
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in Mixxx-Manual.pdf README README.macro

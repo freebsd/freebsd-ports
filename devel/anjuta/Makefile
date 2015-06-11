@@ -1,71 +1,81 @@
 # Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/devel/anjuta/Makefile,v 1.72 2012/12/13 20:33:05 kwm Exp $
 
 PORTNAME=	anjuta
-PORTVERSION=	2.32.1.1
-PORTREVISION=	15
+PORTVERSION=	3.14.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Integrated Development Environment for C and C++
 
 BUILD_DEPENDS=	autogen:${PORTSDIR}/devel/autogen \
-		bash:${PORTSDIR}/shells/bash \
-		p5-Locale-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libgladeui-1.so:${PORTSDIR}/devel/glade3 \
-		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique \
-		libgdl-1.so:${PORTSDIR}/x11-toolkits/gdl
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
+		itstool:${PORTSDIR}/textproc/itstool
+LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre \
+		libgdl-3.so:${PORTSDIR}/x11-toolkits/gdl
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme \
 		autogen:${PORTSDIR}/devel/autogen \
-		${LOCALBASE}/share/autotools:${PORTSDIR}/devel/autotools \
-		p5-Locale-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext \
-		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme \
-		exctags:${PORTSDIR}/devel/ctags \
-		gdb66:${PORTSDIR}/devel/gdb66 \
-		yelp:${PORTSDIR}/x11/yelp
+		automake>=0:${PORTSDIR}/devel/automake \
+		autoconf>=0:${PORTSDIR}/devel/autoconf \
+		libtool>=2.4:${PORTSDIR}/devel/libtool \
+		gdb>=7.3:${PORTSDIR}/devel/gdb \
+		gmake:${PORTSDIR}/devel/gmake \
+		yelp>=3.0.0:${PORTSDIR}/x11/yelp
 
-CONFLICTS=	anjuta-3.[0-9]*
-IGNORE=		Needs update after gnome 3 import
+USES=		bison desktop-file-utils gettext gmake libtool pathfix \
+		perl5 pkgconfig python shared-mime-info shebangfix tar:xz
+SHEBANG_FILES=	plugins/project-wizard/templates/js_minimal/src/main.js \
+		plugins/tools/scripts/find-fixmes.pl \
+		plugins/tools/scripts/translation-status.pl \
+		plugins/tools/scripts/prepare-changelog.pl
+SHEBANG_LANG+=	gjs
+gjs_OLD_CMD=	/usr/bin/gjs
+gjs_CMD=	${LOCALBASE}/bin/gjs
 
-USES=		desktop-file-utils gmake gettext libtool pathfix \
-		perl5 pkgconfig python shared-mime-info shebangfix tar:bzip2
-INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-INSTALL_TARGET=	install-strip
-USE_GNOME=	gnomeprefix vte gtksourceview2 libgda4
-USE_CSTD=	gnu89
+USE_LDCONFIG=	yes
+USE_GNOME=	gtksourceview3 intlhack libgda5 libwnck3 vte3
 GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-symbol-db-shm=/tmp \
-		--disable-vala \
-		--disable-graphviz \
-		--enable-introspection=no
-USE_LDCONFIG=	yes
-GCONF_SCHEMAS=	anjuta-build-basic-autotools-plugin.schemas \
-		anjuta-cvs-plugin.schemas \
-		anjuta-debug-manager.schemas \
-		anjuta-document-manager.schemas \
-		anjuta-editor-sourceview.schemas \
-		anjuta-language-cpp-java.schemas \
-		anjuta-message-manager-plugin.schemas \
-		anjuta-symbol-db.schemas \
-		anjuta-terminal-plugin.schemas \
-		file-manager.schemas \
-		preferences.schemas \
-		python-plugin-properties.schemas
-SHEBANG_FILES=	scripts/builder2schema.pl \
-		plugins/gbf-am/gbf-am-parse.in \
-		plugins/gbf-mkfile/gbf-mkfile-parse.in \
-		plugins/tools/scripts/*.pl
+		--disable-packagekit \
+		--enable-compile-warnings=minimum \
+		--enable-introspection=yes
+DOCSDIR=	share/doc/libanjuta
+INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	SVN DEVHELP DOCS
-OPTIONS_DEFAULT=DEVHELP
-DEVHELP_DESC=	Devhelp support
+GLIB_SCHEMAS=	org.gnome.anjuta.cvs.gschema.xml \
+		org.gnome.anjuta.document-manager.gschema.xml \
+		org.gnome.anjuta.file-manager.gschema.xml \
+		org.gnome.anjuta.gschema.xml \
+		org.gnome.anjuta.plugins.build.gschema.xml \
+		org.gnome.anjuta.plugins.cpp.gschema.xml \
+		org.gnome.anjuta.plugins.debug-manager.gschema.xml \
+		org.gnome.anjuta.plugins.git.gschema.xml \
+		org.gnome.anjuta.plugins.indent-c.gschema.xml \
+		org.gnome.anjuta.plugins.indent-python.gschema.xml \
+		org.gnome.anjuta.plugins.js.gschema.xml \
+		org.gnome.anjuta.plugins.message-manager.gschema.xml \
+		org.gnome.anjuta.plugins.parser-cxx.gschema.xml \
+		org.gnome.anjuta.plugins.project-wizard.gschema.xml \
+		org.gnome.anjuta.plugins.python.gschema.xml \
+		org.gnome.anjuta.plugins.run.gschema.xml \
+		org.gnome.anjuta.plugins.sourceview.gschema.xml \
+		org.gnome.anjuta.plugins.vala.gschema.xml \
+		org.gnome.anjuta.snippets.gschema.xml \
+		org.gnome.anjuta.starter.gschema.xml \
+		org.gnome.anjuta.symbol-db.gschema.xml \
+		org.gnome.anjuta.terminal.gschema.xml \
+		org.gnome.anjuta.tools.gschema.xml
+
+OPTIONS_DEFINE=	SVN DEVHELP VALA
+OPTIONS_DEFAULT=SVN DEVHELP VALA
+SVN_DESC=	Subversion plugin
+DEVHELP_DESC=	Devhelp plugin
+VALA_DESC=	Vala support
 
 .include <bsd.port.options.mk>
 
@@ -81,7 +91,7 @@ PLIST_SUB+=	SVN="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDEVHELP}
-LIB_DEPENDS+=	libdevhelp-2.so:${PORTSDIR}/devel/devhelp
+LIB_DEPENDS+=	libdevhelp-3.so:${PORTSDIR}/devel/devhelp
 PLIST_SUB+=	DEVHELP=""
 .else
 CONFIGURE_ARGS+=--disable-plugin-devhelp
@@ -91,21 +101,28 @@ CONFIGURE_ARGS+=--disable-plugin-devhelp
 PLIST_SUB+=	DEVHELP=""
 .endif
 
-post-patch:
-	@${RM} ${WRKSRC}/plugins/debug-manager/anjuta-debug-manager.schemas
+.if ${PORT_OPTIONS:MVALA}
+CONFIGURE_ARGS+=--enable-vala
+BUILD_DEPENDS+=	vala>=0.14.0:${PORTSDIR}/lang/vala
+RUN_DEPENDS+=	vala>=0.14.0:${PORTSDIR}/lang/vala
+PLIST_SUB+=	VALA=""
+.else
+CONFIGURE_ARGS+=--disable-vala
+PLIST_SUB+=	VALA="@comment "
+.endif
 
-post-configure:
+post-patch:
 	@${REINPLACE_CMD} -e 's|"make|"gmake|g' \
 		${WRKSRC}/plugins/build-basic-autotools/plugin.c
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-	    	${WRKSRC}/plugins/symbol-db/plugin.h \
-		${WRKSRC}/plugins/symbol-db/symbol-db-prefs.h
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in AUTHORS COPYING ChangeLog FUTURE INSTALL NEWS README \
-	doc/ScintillaDoc.html TODO
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
-.endfor
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${PREFIX}|g' \
+		${WRKSRC}/libanjuta/anjuta-utils.c
+	@${REINPLACE_CMD} -e 's|ac_ct_CXX" = "x"|CXX" = "x"|g' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|values.h|limits.h|g' \
+		${WRKSRC}/plugins/project-wizard/property.h \
+		${WRKSRC}/plugins/project-wizard/install.h
+	@${REINPLACE_CMD} -e 's|-fprofile-arcs||g' \
+		${WRKSRC}/libanjuta/tests/Makefile.in \
+		${WRKSRC}/libanjuta/tests/Makefile.am
 
 .include <bsd.port.mk>

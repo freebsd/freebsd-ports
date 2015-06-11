@@ -1,5 +1,5 @@
---- sensor/sancp_agent.tcl.orig	2012-12-17 22:43:39.000000000 +0000
-+++ sensor/sancp_agent.tcl	2012-12-17 22:44:56.000000000 +0000
+--- sensor/sancp_agent.tcl.orig	2014-03-29 00:41:36 UTC
++++ sensor/sancp_agent.tcl
 @@ -1,6 +1,4 @@
  #!/bin/sh
 -# Run tcl from users PATH \
@@ -7,7 +7,7 @@
  
  # $Id: sancp_agent.tcl,v 1.15 2011/03/10 22:03:33 bamm Exp $ #
  
-@@ -582,16 +580,16 @@
+@@ -582,16 +580,16 @@ foreach arg $argv {
    }
  }
  # Parse the config file here

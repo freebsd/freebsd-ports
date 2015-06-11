@@ -3,6 +3,7 @@
 
 PORTNAME=	meshlab
 PORTVERSION=	1.3.3
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/MeshLab%20v${PORTVERSION}/
 DISTNAME=	MeshLabSrc_AllInc_v${PORTVERSION:C|\.||g}
@@ -53,7 +54,7 @@ do-build:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/meshlab/plugins
-	cd ${WRKSRC}/distrib/plugins && ${COPYTREE_SHARE} \*.so ${STAGEDIR}${PREFIX}/lib/meshlab/plugins
+	cd ${WRKSRC}/distrib/plugins && ${INSTALL_LIB} *.so ${STAGEDIR}${PREFIX}/lib/meshlab/plugins
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/meshlab/shaders
 	cd ${WRKSRC}/distrib/shaders && ${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/lib/meshlab/shaders
 	${INSTALL_PROGRAM} ${WRKSRC}/distrib/meshlab ${STAGEDIR}${PREFIX}/lib/meshlab

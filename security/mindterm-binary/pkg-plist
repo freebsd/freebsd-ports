@@ -5,5 +5,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/mindterm-ssh.html
 share/java/mindterm/mindterm.jar
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/java/mindterm

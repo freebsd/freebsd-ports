@@ -282,7 +282,6 @@
     SUBDIR += gpicview
     SUBDIR += gplot
     SUBDIR += gpsmanshp
-    SUBDIR += gqview
     SUBDIR += gracula
     SUBDIR += grads
     SUBDIR += grafx2
@@ -834,6 +833,7 @@
     SUBDIR += py-opencv
     SUBDIR += py-openexr
     SUBDIR += py-opengl
+    SUBDIR += py-opengl-accelerate
     SUBDIR += py-openimageio
     SUBDIR += py-paint
     SUBDIR += py-pillow

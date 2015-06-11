@@ -2,17 +2,23 @@
 
 PORTNAME=	prosearch
 PORTVERSION=	0.19.4
+PORTREVISION=	1
 CATEGORIES=	net www
 MASTER_SITES=	http://pro.setun.net/search/download/ SF/pro-search/pro-search/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful file search
 
-USES=		perl5 tar:bzip2
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		perl5 shebangfix tar:bzip2
 USE_PERL5=	run
+SHEBANG_FILES=	crawler.pl web/index.cgi web/index.fcgi
 SUB_FILES=	pkg-message
 SUB_LIST=	SEARCHDIR=${SEARCHDIR}
 NO_BUILD=	yes
+NO_ARCH=	yes
 SEARCHDIR?=	www/search
 PLIST_SUB+=	SEARCHDIR=${SEARCHDIR} WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 

@@ -274,11 +274,3 @@
 %%PYTHON_SITELIBDIR%%/jToolkit/xml/taldom.py
 %%PYTHON_SITELIBDIR%%/jToolkit/xml/taldom.pyc
 %%PYTHON_SITELIBDIR%%/jToolkit/xml/taldom.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/jToolkit/data
-@dirrm %%PYTHON_SITELIBDIR%%/jToolkit/demo/tutorial
-@dirrm %%PYTHON_SITELIBDIR%%/jToolkit/demo
-@dirrm %%PYTHON_SITELIBDIR%%/jToolkit/test
-@dirrm %%PYTHON_SITELIBDIR%%/jToolkit/web
-@dirrm %%PYTHON_SITELIBDIR%%/jToolkit/widgets
-@dirrm %%PYTHON_SITELIBDIR%%/jToolkit/xml
-@dirrm %%PYTHON_SITELIBDIR%%/jToolkit

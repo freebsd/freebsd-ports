@@ -16,6 +16,7 @@ COMMENT=	Full vt220 compatible Java SSH-1 client (not only for websites)
 USES=		zip
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+NO_ARCH=	yes
 NO_CDROM=	Do not sell for profit
 
 OPTIONS_DEFINE=	DOCS

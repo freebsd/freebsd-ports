@@ -3,7 +3,7 @@
 
 PORTNAME=	nedi
 DISTVERSION=	1.0.w
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/w
 
@@ -18,9 +18,10 @@ RUN_DEPENDS=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 
 USES=		perl5 shebangfix tar:tgz
-SHEBANG_FILES=	*.pl
+SHEBANG_FILES=	*.pl html/inc/Devsend.pl
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 USE_PHP=	session snmp mysql
 WANT_PHP_WEB=	yes

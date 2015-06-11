@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	CPAN-Meta
-PORTVERSION=	2.150001
+PORTVERSION=	2.150005
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,6 +13,7 @@ COMMENT=	Distribution metadata for a CPAN dist
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

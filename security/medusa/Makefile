@@ -10,12 +10,15 @@ MASTER_SITES=	http://www.foofus.net/~jmk/tools/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Speedy, massively parallel, modular, login brute-forcer
 
-LIB_DEPENDS+=	libssh2.so:${PORTSDIR}/security/libssh2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libssh2.so:${PORTSDIR}/security/libssh2
 
 BROKEN_ia64=	Does not build on ia64
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--enable-module-ncp=no --enable-module-afp=no
+CONFIGURE_ARGS=	--enable-module-ncp=no --enable-module-afp=no
 
 OPTIONS_DEFINE=	SVN PGSQL DOCS
 OPTIONS_SUB=	yes

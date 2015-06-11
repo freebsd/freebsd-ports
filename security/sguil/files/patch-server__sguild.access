@@ -1,5 +1,5 @@
---- server/sguild.access.orig	2008-04-03 17:55:46.000000000 -0500
-+++ server/sguild.access	2008-04-03 17:56:50.000000000 -0500
+--- server/sguild.access.orig	2014-03-29 00:41:36 UTC
++++ server/sguild.access
 @@ -4,7 +4,8 @@
  # This file is used by sguild for access control. It is read upon init  #
  # or when sguild receives a HUP signal.                                 #

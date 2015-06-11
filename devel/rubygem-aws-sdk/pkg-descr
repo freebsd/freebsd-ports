@@ -1,0 +1,4 @@
+The official AWS SDK for Ruby. Provides both resource oriented interfaces and
+API clients for AWS services.
+
+WWW: http://github.com/aws/aws-sdk-ruby

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	JSON-Any
-PORTVERSION=	1.38
-PORTREVISION=	1
+PORTVERSION=	1.39
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,6 +22,8 @@ TEST_DEPENDS=	p5-Cpanel-JSON-XS>=0:${PORTSDIR}/converters/p5-Cpanel-JSON-XS \
 		p5-Test-Warnings>=0.009:${PORTSDIR}/devel/p5-Test-Warnings \
 		p5-Test-Without-Module>=0.17:${PORTSDIR}/devel/p5-Test-Without-Module
 
+DEPRECATED=	Deprecated by upstream
+
 # Author preference: Cpanel::JSON::XS > JSON::XS > JSON::PP > JSON > JSON::DWIW
 OPTIONS_DEFINE=	CPANEL JSON_XS JSON_PP JSON JSON_DWIW
 OPTIONS_DEFAULT=CPANEL
@@ -32,6 +33,7 @@ JSON_DWIW_DESC=	Use JSON::DWIW
 JSON_PP_DESC=	Use JSON::PP
 JSON_XS_DESC=	Use JSON::XS
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

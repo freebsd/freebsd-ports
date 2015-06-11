@@ -3,7 +3,7 @@
 
 PORTNAME=	Unicode-LineBreak
 PORTVERSION=	2014.06
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,6 +26,7 @@ USE_PERL5=	configure
 CONFIGURE_ARGS=	--with-bundled-sombok
 
 OPTIONS_DEFINE=	THAI
+OPTIONS_DEFAULT=THAI
 
 THAI_DESC=	Thai word segmentation support through libthai
 THAI_USES=	pkgconfig

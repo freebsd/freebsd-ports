@@ -38,4 +38,3 @@ man/man1/mfssetgoal.1.gz
 man/man1/mfssettrashtime.1.gz
 man/man1/mfstools.1.gz
 man/man8/mfsmount.8.gz
-@dirrmtry etc/mfs

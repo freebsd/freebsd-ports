@@ -3,7 +3,7 @@
 
 PORTNAME=	mp3stat
 PORTVERSION=	2.6.01
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	audio
 MASTER_SITES=	https://signal-lost.homeip.net/files/ \
 		http://www.sourcefiles.org/Multimedia/MP3/Tools/Processing/
@@ -53,14 +53,14 @@ post-patch:
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} mp3stat ${STAGEDIR}${PREFIX}/bin)
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/mp3stat
-	(cd ${WRKSRC}/ui/gtk && ${INSTALL_DATA} ui_gtk2.so \
+	(cd ${WRKSRC}/ui/gtk && ${INSTALL_LIB} ui_gtk2.so \
 		${STAGEDIR}${PREFIX}/lib/mp3stat)
-	(cd ${WRKSRC}/ui/console && ${INSTALL_DATA} ui_console.so \
+	(cd ${WRKSRC}/ui/console && ${INSTALL_LIB} ui_console.so \
 		${STAGEDIR}${PREFIX}/lib/mp3stat)
-	(cd ${WRKSRC}/input/mp3 && ${INSTALL_DATA} input_mp3.so \
+	(cd ${WRKSRC}/input/mp3 && ${INSTALL_LIB} input_mp3.so \
 		${STAGEDIR}${PREFIX}/lib/mp3stat)
 .if ${PORT_OPTIONS:MVORBIS}
-	(cd ${WRKSRC}/input/vorbis && ${INSTALL_DATA} input_vorb.so \
+	(cd ${WRKSRC}/input/vorbis && ${INSTALL_LIB} input_vorb.so \
 		${STAGEDIR}${PREFIX}/lib/mp3stat)
 .endif
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

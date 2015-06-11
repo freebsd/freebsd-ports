@@ -3,7 +3,7 @@
 
 PORTNAME=	redmine
 PORTVERSION=	2.6.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.redmine.org/releases/
 
@@ -22,7 +22,7 @@ RUN_DEPENDS=	rubygem-builder>=3.0.0:${PORTSDIR}/devel/rubygem-builder \
 		rubygem-rails>=3.2.16:${PORTSDIR}/www/rubygem-rails \
 		rubygem-rake>=0:${PORTSDIR}/devel/rubygem-rake \
 		rubygem-rbpdf>=0:${PORTSDIR}/print/rubygem-rbpdf \
-		rubygem-redcarpet>0:${PORTSDIR}/textproc/rubygem-redcarpet \
+		rubygem-redcarpet>=3.0:${PORTSDIR}/textproc/rubygem-redcarpet \
 		rubygem-request_store>=1.1.0:${PORTSDIR}/devel/rubygem-request_store \
 		rubygem-rubytree>=0:${PORTSDIR}/devel/rubygem-rubytree
 
@@ -69,7 +69,11 @@ RUN_DEPENDS+=	passenger-config:${PORTSDIR}/www/rubygem-passenger
 .endif
 
 post-extract:
-	${MV} ${WRKSRC}/config/settings.yml ${WRKSRC}/config/settings.yml-dist
+	@${RM} ${WRKSRC}/.hgignore ${WRKSRC}/.travis.yml
+	@${MV} ${WRKSRC}/config/settings.yml ${WRKSRC}/config/settings.yml-dist
+
+post-patch:
+	@${FIND} ${WRKSRC} -name '*.bak' -o -name '*.orig' -delete
 
 pre-install:
 	${MKDIR} ${WRKSRC}/public/plugin_assets
@@ -77,9 +81,7 @@ pre-install:
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
 	${MKDIR} ${STAGEDIR}${WWWDIR}/tmp/pids
-	cd ${WRKSRC} && \
-	${COPYTREE_SHARE} "*" ${STAGEDIR}${WWWDIR} "! ( -name *\.orig -o -name *\.bak )"
-	${FIND} ${WRKSRC}/script -type f -print | ${XARGS} ${CHMOD} 755
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
 
 post-install:
 	${TOUCH} ${STAGEDIR}${WWWDIR}/Gemfile.lock

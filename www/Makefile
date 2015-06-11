@@ -1755,6 +1755,7 @@
     SUBDIR += qdecoder
     SUBDIR += qooxdoo
     SUBDIR += qt5-webchannel
+    SUBDIR += qt5-websockets
     SUBDIR += quickie
     SUBDIR += qupzilla-qt4
     SUBDIR += qupzilla-qt5
@@ -1915,6 +1916,7 @@
     SUBDIR += rubygem-rack-ssl
     SUBDIR += rubygem-rack-test
     SUBDIR += rubygem-rack15
+    SUBDIR += rubygem-rack16
     SUBDIR += rubygem-rails
     SUBDIR += rubygem-rails4
     SUBDIR += rubygem-rails_autolink

@@ -16,6 +16,7 @@ RUN_DEPENDS=	rubygem-fog-core>=1.27:${PORTSDIR}/devel/rubygem-fog-core \
 		rubygem-fog-xml>=0.1:${PORTSDIR}/textproc/rubygem-fog-xml \
 		rubygem-ipaddress>=0.8:${PORTSDIR}/net/rubygem-ipaddress
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

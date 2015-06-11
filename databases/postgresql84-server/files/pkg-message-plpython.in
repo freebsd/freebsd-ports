@@ -1,3 +1,0 @@
-PL/Python has been installed. Check the createlang(l) manpage for more
-info. You can install PL/Python by using "createlang plpythonu" (it
-exists as an untrusted language only).

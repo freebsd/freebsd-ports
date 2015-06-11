@@ -10,6 +10,9 @@ MASTER_SITES=	http://labs.libre-entreprise.org/frs/download.php/547/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome program to check a page/website for broken links
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libgnet-2.0.so:${PORTSDIR}/net/gnet2
 
 OPTIONS_DEFINE=	CROCO TIDY CLAMAV GNUTLS

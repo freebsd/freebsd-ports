@@ -141,6 +141,7 @@
     SUBDIR += py-bsdconv
     SUBDIR += py-iconv
     SUBDIR += py-pisa
+    SUBDIR += py-rencode
     SUBDIR += py-unidecode
     SUBDIR += py-zfec
     SUBDIR += rcctools

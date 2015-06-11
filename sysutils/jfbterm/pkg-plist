@@ -7,7 +7,6 @@ man/man5/jfbterm.conf.5.gz
 share/misc/fonts/vt100-graphics.pcf.gz
 share/misc/jfbterm.termcap
 share/misc/jfbterm.terminfo
-@dirrmtry share/misc/fonts
 %%TERMCAP_ADD_RECORD%%
 %%TERMCAP_DEL_RECORD%%
 %%TIC%%

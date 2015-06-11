@@ -35,7 +35,9 @@ include/proftpd/fsio.h
 include/proftpd/ftp.h
 include/proftpd/glibc-glob.h
 include/proftpd/help.h
+include/proftpd/ident.h
 include/proftpd/inet.h
+include/proftpd/lastlog.h
 include/proftpd/libsupp.h
 include/proftpd/log.h
 include/proftpd/memcache.h
@@ -75,6 +77,7 @@ include/proftpd/throttle.h
 include/proftpd/timers.h
 include/proftpd/tpl.h
 include/proftpd/trace.h
+include/proftpd/utf8.h
 include/proftpd/var.h
 include/proftpd/version.h
 include/proftpd/xferlog.h
@@ -173,4 +176,5 @@ sbin/proftpd
 %%NLS%%share/locale/bg_BG/LC_MESSAGES/proftpd.mo
 %%NLS%%share/locale/fr_FR/LC_MESSAGES/proftpd.mo
 %%NLS%%share/locale/ko_KR/LC_MESSAGES/proftpd.mo
+@dir lib/proftpd
 @dir %%LOCALSTATEDIR%%/proftpd

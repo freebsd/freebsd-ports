@@ -1,6 +1,6 @@
---- server/lib/SguildMysqlMerge.tcl.orig	2012-10-12 21:18:22.000000000 +0000
-+++ server/lib/SguildMysqlMerge.tcl	2012-10-12 21:19:41.000000000 +0000
-@@ -9,7 +9,7 @@
+--- server/lib/SguildMysqlMerge.tcl.orig	2014-03-29 00:41:36 UTC
++++ server/lib/SguildMysqlMerge.tcl
+@@ -9,7 +9,7 @@ proc InitializeMysqlMergeTables {} {
          set tmpQry "SHOW TABLE STATUS LIKE '$tableName'"
          set tableStatus [mysqlsel $MAIN_DB_SOCKETID $tmpQry -flatlist]
  

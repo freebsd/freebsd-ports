@@ -48,7 +48,12 @@ PLIST_SUB+=	AP22=""
 
 # PR 200697
 # Test whether the system uses a multithreaded perl
+.if exists(${PERL})
 HAS_ITHREADS!=	${PERL} -e 'use Config; print $$Config{useithreads} ? 1 : 0'
+.else
+# ASsume true when building packages5.
+HAS_ITHREADS=	1
+.endif
 .if ${HAS_ITHREADS:M1}
 PLIST_SUB+=	ITHREADS=""
 .else

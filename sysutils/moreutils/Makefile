@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	moreutils
-PORTVERSION=	0.55
+PORTVERSION=	0.56
 CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
@@ -64,10 +64,10 @@ do-install:
 # require: docbook-xsl, libxml2, libxslt
 
 updateman: do-clean extract
-	${MV} ${WRKSRC}/parallel.docbook ${WRKSRC}/moreutils-parallel.docbook
 .for man in ${CANNED_MANPAGES:R}
 	${LOCALBASE}/bin/xmllint --noout --valid ${WRKSRC}/${man}.docbook && \
 	${LOCALBASE}/bin/xsltproc --output ${FILESDIR}/${man}.1 --param man.authors.section.enabled 0 ${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl ${WRKSRC}/${man}.docbook
 .endfor
+	${MV} ${FILESDIR}/parallel.1 ${FILESDIR}/moreutils-parallel.1
 
 .include <bsd.port.mk>

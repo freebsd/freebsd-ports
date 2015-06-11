@@ -57,6 +57,66 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="10a6d0aa-0b1c-11e5-bb90-002590263bf5">
+    <topic>libzmq4 -- V3 protocol handler vulnerable to downgrade attacks</topic>
+    <affects>
+      <package>
+	<name>libzmq4</name>
+	<range><ge>4.0.0</ge><lt>4.0.6</lt></range>
+	<range><ge>4.1.0</ge><lt>4.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+       <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Pieter Hintjens reports:</p>
+	<blockquote cite="https://github.com/zeromq/libzmq/issues/1273">
+	  <p>It is easy to bypass the security mechanism in 4.1.0 and 4.0.5 by
+	    sending a ZMTP v2 or earlier header. The library accepts such
+	    connections without applying its security mechanism.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-9721</cvename>
+      <url>https://github.com/zeromq/libzmq/issues/1273</url>
+      <mlist>http://www.openwall.com/lists/oss-security/2015/05/07/8</mlist>
+      <freebsdpr>200502</freebsdpr>
+    </references>
+    <dates>
+      <discovery>2014-12-04</discovery>
+      <entry>2015-06-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8fbd4187-0f18-11e5-b6a8-002590263bf5">
+    <topic>pgbouncer -- remote denial of service</topic>
+    <affects>
+      <package>
+	<name>pgbouncer</name>
+	<range><lt>1.5.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PgBouncer reports:</p>
+	<blockquote cite="https://pgbouncer.github.io/2015/04/pgbouncer-1-5-5/">
+	  <p>Fix remote crash - invalid packet order causes lookup of NULL pointer. Not
+	    exploitable, just DoS.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4054</cvename>
+      <url>https://pgbouncer.github.io/2015/04/pgbouncer-1-5-5/</url>
+      <mlist>http://www.openwall.com/lists/oss-security/2015/05/21/2</mlist>
+      <freebsdpr>200507</freebsdpr>
+    </references>
+    <dates>
+      <discovery>2015-04-08</discovery>
+      <entry>2015-06-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a40ec970-0efa-11e5-90e4-d050996490d0">
     <topic>cups -- multiple vulnerabilities</topic>
     <affects>

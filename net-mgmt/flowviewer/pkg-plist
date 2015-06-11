@@ -1,8 +1,10 @@
 %%FLOWVIEWERDIR%%/FV.cgi
 %%FLOWVIEWERDIR%%/FV_Relay.cgi
 %%FLOWVIEWERDIR%%/FlowGrapher.cgi
-%%FLOWVIEWERDIR%%/FlowGrapher_Colors
+%%FLOWVIEWERDIR%%/FlowGrapher_Analyze.cgi
+@sample %%FLOWVIEWERDIR%%/FlowGrapher_Colors.sample
 %%FLOWVIEWERDIR%%/FlowGrapher_Main.cgi
+@sample %%FLOWVIEWERDIR%%/FlowGrapher_Ports.sample
 %%FLOWVIEWERDIR%%/FlowGrapher_Replay.cgi
 %%FLOWVIEWERDIR%%/FlowGrapher_Sort.cgi
 %%FLOWVIEWERDIR%%/FlowMonitor.cgi
@@ -23,7 +25,7 @@
 %%FLOWVIEWERDIR%%/FlowViewer_CleanFiles
 %%FLOWVIEWERDIR%%/FlowViewer_CleanHostCache
 %%FLOWVIEWERDIR%%/FlowViewer_CleanSiLK
-%%FLOWVIEWERDIR%%/FlowViewer_Configuration.pm.sample
+@sample %%FLOWVIEWERDIR%%/FlowViewer_Configuration.pm.sample
 %%FLOWVIEWERDIR%%/FlowViewer_Main.cgi
 %%FLOWVIEWERDIR%%/FlowViewer_Replay.cgi
 %%FLOWVIEWERDIR%%/FlowViewer_Save.cgi
@@ -31,13 +33,14 @@
 %%FLOWVIEWERDIR%%/FlowViewer_Sort.cgi
 %%FLOWVIEWERDIR%%/FlowViewer_UI.pm
 %%FLOWVIEWERDIR%%/FlowViewer_Utilities.pm
-%%FLOWVIEWERDIR%%/NamedInterfaces_Devices.sample
-%%FLOWVIEWERDIR%%/NamedInterfaces_Exporters.sample
-%%FLOWVIEWERDIR%%/dscan.suppress.dst
-%%FLOWVIEWERDIR%%/dscan.suppress.src
+@sample %%FLOWVIEWERDIR%%/NamedInterfaces_Devices.sample
+@sample %%FLOWVIEWERDIR%%/NamedInterfaces_Exporters.sample
+@sample %%FLOWVIEWERDIR%%/dscan.suppress.dst.sample
+@sample %%FLOWVIEWERDIR%%/dscan.suppress.src.sample
 %%FLOWVIEWERDIR%%/tools/analyze_flowmonitor_debug
 %%FLOWVIEWERDIR%%/tools/analyze_netflow_packets
 %%FLOWVIEWERDIR%%/tools/convert_pre40_filters
+%%FLOWVIEWERDIR%%/tools/create_ports_file
 %%FLOWVIEWERDIR%%/tools/date_to_epoch_gm
 %%FLOWVIEWERDIR%%/tools/date_to_epoch_local
 %%FLOWVIEWERDIR%%/tools/epoch_to_date_gm

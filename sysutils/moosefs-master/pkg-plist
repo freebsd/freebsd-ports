@@ -28,8 +28,6 @@ share/mfscgi/index.html
 share/mfscgi/logomini.png
 share/mfscgi/mfs.cgi
 share/mfscgi/mfs.css
-@dirrmtry etc/mfs
-@dirrm share/mfscgi
 @owner mfs
 @group mfs
 /var/mfs/metadata.mfs.empty

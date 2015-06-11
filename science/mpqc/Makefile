@@ -3,7 +3,7 @@
 
 PORTNAME=	mpqc
 PORTVERSION=	2.3.1
-PORTREVISION=	25
+PORTREVISION=	26
 CATEGORIES=	science parallel
 MASTER_SITES=	SF
 
@@ -13,7 +13,8 @@ COMMENT=	Massively Parallel Quantum Computing library and program
 LIB_DEPENDS=	libint.so:${PORTSDIR}/science/libint
 
 GNU_CONFIGURE=	yes
-USES=		fortran gmake libtool perl5 tar:bzip2
+USES=		fortran gmake libtool perl5 shebangfix tar:bzip2
+SHEBANG_FILES=	src/bin/mpqc/ccarunproc src/bin/mpqc/mpqcrunproc
 USE_AUTOTOOLS=	autoconf
 USE_LDCONFIG=	yes
 

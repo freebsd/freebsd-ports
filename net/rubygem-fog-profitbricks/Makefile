@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-profitbricks
-PORTVERSION=	0.0.2
+PORTVERSION=	0.0.3
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -15,6 +15,7 @@ RUN_DEPENDS=	rubygem-fog-core>=0:${PORTSDIR}/devel/rubygem-fog-core \
 		rubygem-fog-xml>=0:${PORTSDIR}/textproc/rubygem-fog-xml \
 		rubygem-nokogiri>=0:${PORTSDIR}/textproc/rubygem-nokogiri
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

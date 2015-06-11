@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	autodie
-PORTVERSION=	2.26
+PORTVERSION=	2.27
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,11 +13,12 @@ COMMENT=	Replace functions with ones that succeed or die with lexical scope
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-BSD-Resource>0:${PORTSDIR}/devel/p5-BSD-Resource \
+TEST_DEPENDS=	p5-BSD-Resource>=0:${PORTSDIR}/devel/p5-BSD-Resource \
 		p5-IPC-System-Simple>=0.12:${PORTSDIR}/devel/p5-IPC-System-Simple \
-		p5-Import-Into>=0:${PORTSDIR}/devel/p5-Import-Into \
-		p5-Sub-Identify>0:${PORTSDIR}/devel/p5-Sub-Identify
+		p5-Import-Into>=1.002004:${PORTSDIR}/devel/p5-Import-Into \
+		p5-Sub-Identify>=0:${PORTSDIR}/devel/p5-Sub-Identify
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

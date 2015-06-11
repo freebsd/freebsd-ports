@@ -13,6 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Storing file data and synchronizing it among themselves
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/mfs-1.6.27
 USERS=		mfs

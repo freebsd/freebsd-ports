@@ -8,7 +8,6 @@
     SUBDIR += abby
     SUBDIR += acidrip
     SUBDIR += aegisub
-    SUBDIR += arista
     SUBDIR += asdcplib
     SUBDIR += assimp
     SUBDIR += atomicparsley

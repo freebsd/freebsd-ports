@@ -7609,3 +7609,29 @@ textproc/hgrep||2015-06-01|Has expired: Not needed any more, base grep has color
 www/diamanda||2015-06-01|Has expired: Broken for more than 6 months
 devel/py-ScriptTest|devel/py-scripttest|2015-06-01|Renamed upstream
 net/openmpi-devel||2015-06-09|Port older than net/openmpi
+databases/postgresql84-client||2015-06-10|Has expired: "EOL was reached in July 2014"
+databases/postgresql84-contrib||2015-06-10|Has expired: "EOL was reached in July 2014"
+databases/postgresql84-docs||2015-06-10|Has expired: "EOL was reached in July 2014"
+databases/postgresql84-plperl||2015-06-10|Has expired: "EOL was reached in July 2014"
+databases/postgresql84-plpython||2015-06-10|Has expired: "EOL was reached in July 2014"
+databases/postgresql84-pltcl||2015-06-10|Has expired: "EOL was reached in July 2014"
+deskutils/deskbar-applet||2015-06-10|Has expired: Broken since update to gnome3
+deskutils/gimmie||2015-06-10|Has expired: Broken since update to gnome3
+deskutils/glipper||2015-06-10|Has expired: Broken since update to gnome3
+deskutils/gnochm||2015-06-10|Has expired: Broken since update to gnome3
+deskutils/hamster-applet||2015-06-10|Has expired: Broken since update to gnome3
+deskutils/kupfer||2015-06-10|Has expired: Broken since update to gnome3
+deskutils/ontv||2015-06-10|Has expired: Broken since update to gnome3
+deskutils/timer-applet||2015-06-10|Has expired: Broken since update to gnome3
+editors/scribes||2015-06-10|Has expired: Broken since update to gnome3
+games/gweled||2015-06-10|Has expired: Broken since update to gnome3
+games/py-pychess||2015-06-10|Has expired: Broken since update to gnome3
+graphics/gqview||2015-06-10|Has expired: Unmaintained upstream, preferences dialog broken, use graphics/geeqie fork
+lang/gcc47-aux||2015-06-10|Has expired: GCC 4.7 branch closed June 2014, move to lang/gcc-aux
+multimedia/arista||2015-06-10|Has expired: Broken since update to gnome3
+net/service-discovery-applet||2015-06-10|Has expired: Broken since update to gnome3
+net/shaperprobe||2015-06-10|Has expired: broken with no known fix (PR 197327)
+print/gnome-specimen||2015-06-10|Has expired: Broken since update to gnome3
+x11-themes/gtk-aqualightblue-theme||2015-06-10|Has expired: Upstream disappeared
+x11-themes/gtk-flat-theme2||2015-06-10|Has expired: Upstream disappeared
+databases/postgresql84-server||2015-06-10|Has expired: "EOL was reached in July 2014"

@@ -6,12 +6,13 @@ PORTVERSION=	2.1
 PORTREVISION=	1
 CATEGORIES=	www deskutils
 MASTER_SITES=	SF
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Webbased iCal calendar viewer
 
+USES=		tar:tgz
 NO_BUILD=	yes
+NO_ARCH=	yes
 USE_PHP=	yes
 WRKSRC=		${WRKDIR}/iWebCal
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"

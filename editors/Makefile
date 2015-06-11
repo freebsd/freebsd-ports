@@ -224,7 +224,6 @@
     SUBDIR += py-room
     SUBDIR += rox-edit
     SUBDIR += scite
-    SUBDIR += scribes
     SUBDIR += se
     SUBDIR += semi
     SUBDIR += shed

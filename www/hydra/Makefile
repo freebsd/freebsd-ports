@@ -44,7 +44,7 @@ post-patch:
 .endfor
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	@${MKDIR} ${STAGEDIR}${ETCDIR} ${STAGEDIR}${LOGDIR}
 .for f in hydra.conf mime.types
 	(cd ${WRKSRC}/examples && ${INSTALL_DATA} ${f} \
 		${STAGEDIR}${ETCDIR}/${f}.sample)

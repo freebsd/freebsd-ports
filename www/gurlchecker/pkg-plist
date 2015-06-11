@@ -45,6 +45,3 @@ share/pixmaps/gurlchecker.png
 %%NLS%%share/locale/it/LC_MESSAGES/gurlchecker.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/gurlchecker.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/gurlchecker.mo
-@dirrm share/gurlchecker/ui
-@dirrm share/gurlchecker/stylesheets
-@dirrm share/gurlchecker

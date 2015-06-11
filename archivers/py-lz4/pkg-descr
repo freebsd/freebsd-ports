@@ -1,0 +1,3 @@
+Python binding for the lz4 compression library by Yann Collet.
+
+WWW: https://github.com/steeve/python-lz4

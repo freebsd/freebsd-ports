@@ -3,7 +3,7 @@
 
 PORTNAME=	http-analyze
 PORTVERSION=	2.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.rent-a-guru.de/pub/
 DIST_SUBDIR=	${PORTNAME}
@@ -17,8 +17,6 @@ COMMENT=	Fast Log-Analyzer for web servers
 
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:R}
 
 MAKE_ARGS=	HA_BINDIR="${PREFIX}/bin" HA_LIBDIR="${DATADIR}" \
@@ -30,10 +28,12 @@ ALL_TARGET=	${PORTNAME}
 CPPFLAGS+=	$$(gdlib-config --includes)
 LDFLAGS+=	$$(gdlib-config --ldflags) $$(gdlib-config --libs)
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .include <bsd.port.options.mk>
 
 do-install:
-	(cd ${WRKSRC}/src && ${INSTALL_DATA} http-analyze \
+	(cd ${WRKSRC}/src && ${INSTALL_PROGRAM} http-analyze \
 		${STAGEDIR}${PREFIX}/bin/http-analyze)
 	(cd ${WRKSRC}/man && ${INSTALL_MAN} http-analyze.man \
 		${STAGEDIR}${MANPREFIX}/man/man1/http-analyze.1)
