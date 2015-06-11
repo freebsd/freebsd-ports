@@ -2,7 +2,7 @@
 
 PORTNAME=	apache22
 PORTVERSION=	2.2.29
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
@@ -173,6 +173,12 @@ post-configure:
 		${REINPLACE_CMD} -e "s,%%FTPUSERS%%,$${FTPUSERS}," ${WRKSRC}/docs/conf/extra/httpd-userdir.conf
 	@${REINPLACE_CMD} -e "s,%%WWWOWN%%,${WWWOWN}," -e "s,%%WWWGRP%%,${WWWGRP}," ${WRKSRC}/docs/conf/httpd.conf
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/support/envvars-std
+
+pre-build:
+.if ${PORT_OPTIONS:MSSL}
+	@${ECHO_MSG}    "===>  Generating unique DH group to mitigate Logjam attack (this will take a while)"
+	(cd ${WRKSRC}/modules/ssl && ${SETENV} HOME=${WRKDIR} ${PERL} ssl_engine_dh.c)
+.endif
 
 post-install:
 	@${MKDIR} ${ETC_SUBDIRS:S|^|${STAGEDIR}${ETCDIR}/|}
