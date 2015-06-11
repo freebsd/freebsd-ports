@@ -140,26 +140,25 @@
 %%WWWDIR%%/viewmailheader.php
 %%WWWDIR%%/xtree/xtree-css.php
 %%WWWDIR%%/xtree/xtree.php
-@dirrm %%WWWDIR%%/include/datastores
-@dirrm %%WWWDIR%%/include
-@dirrm %%WWWDIR%%/locale/cs_CZ/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/cs_CZ
-@dirrm %%WWWDIR%%/locale/da_DK/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/da_DK
-@dirrm %%WWWDIR%%/locale/en_US/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/en_US
-@dirrm %%WWWDIR%%/locale/es_ES/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/es_ES
-@dirrm %%WWWDIR%%/locale/it_IT/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/it_IT
-@dirrm %%WWWDIR%%/locale
-@dirrm %%WWWDIR%%/themes/swarthy/css
-@dirrm %%WWWDIR%%/themes/swarthy/xtree
-@dirrm %%WWWDIR%%/themes/swarthy
-@dirrm %%WWWDIR%%/themes
-@dirrm %%WWWDIR%%/xtree
-@dirrm %%WWWDIR%%
-@owner root
-@group wheel
+@dir %%WWWDIR%%/include/datastores
+@dir %%WWWDIR%%/include
+@dir %%WWWDIR%%/locale/cs_CZ/LC_MESSAGES
+@dir %%WWWDIR%%/locale/cs_CZ
+@dir %%WWWDIR%%/locale/da_DK/LC_MESSAGES
+@dir %%WWWDIR%%/locale/da_DK
+@dir %%WWWDIR%%/locale/en_US/LC_MESSAGES
+@dir %%WWWDIR%%/locale/en_US
+@dir %%WWWDIR%%/locale/es_ES/LC_MESSAGES
+@dir %%WWWDIR%%/locale/es_ES
+@dir %%WWWDIR%%/locale/it_IT/LC_MESSAGES
+@dir %%WWWDIR%%/locale/it_IT
+@dir %%WWWDIR%%/locale
+@dir %%WWWDIR%%/themes/swarthy/css
+@dir %%WWWDIR%%/themes/swarthy/xtree
+@dir %%WWWDIR%%/themes/swarthy
+@dir %%WWWDIR%%/themes
+@dir %%WWWDIR%%/xtree
+@dir %%WWWDIR%%
+@owner
+@group
 %%PORTDOCS%%%%DOCSDIR%%/docs.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
