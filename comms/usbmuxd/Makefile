@@ -1,8 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	usbmuxd
-DISTVERSION=	1.0.9-alpha1
+DISTVERSION=	1.1.0
 CATEGORIES=	comms
+MASTER_SITES=	http://www.libimobiledevice.org/downloads/
 
 MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Daemon for multiplexing connections over USB to iPhone/iPod Touch
@@ -13,21 +14,17 @@ LICENSE_COMB=	dual
 LIB_DEPENDS=	libplist.so:${PORTSDIR}/devel/libplist \
 		libimobiledevice.so:${PORTSDIR}/comms/libimobiledevice
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	libimobiledevice
-GH_TAGNAME=	2f6d9d5
-
 USES=		autoreconf cpe libtool pathfix pkgconfig tar:bzip2
 CPE_VENDOR=	nikias_bassen
-CPE_VERSION=	${DISTVERSION:C/-.*//}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-systemd \
 		libusb_CFLAGS="-I/usr/include" \
 		libusb_LIBS="-lusb"
 
-PLIST_FILES=	sbin/usbmuxd
+PLIST_FILES=	man/man1/${PORTNAME}.1.gz \
+		sbin/${PORTNAME}
 
-PORTDOCS=	AUTHORS README
+PORTDOCS=	AUTHORS NEWS README
 
 OPTIONS_DEFINE=	DOCS
 
