@@ -1,0 +1,125 @@
+xen: properly gate host writes of modified PCI CFG contents
+
+The old logic didn't work as intended when an access spanned multiple
+fields (for example a 32-bit access to the location of the MSI Message
+Data field with the high 16 bits not being covered by any known field).
+Remove it and derive which fields not to write to from the accessed
+fields' emulation masks: When they're all ones, there's no point in
+doing any host write.
+
+This fixes a secondary issue at once: We obviously shouldn't make any
+host write attempt when already the host read failed.
+
+This is XSA-128.
+
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Reviewed-by: Stefano Stabellini <stefano.stabellini@eu.citrix.com>
+
+--- a/hw/pass-through.c
++++ b/hw/pass-through.c
+@@ -454,7 +454,7 @@ static struct pt_reg_info_tbl pt_emu_reg
+         .offset     = PCI_INTEL_OPREGION,
+         .size       = 4,
+         .init_val   = 0,
+-        .no_wb      = 1,
++        .emu_mask   = 0xFFFFFFFF,
+         .u.dw.read   = pt_intel_opregion_read,
+         .u.dw.write  = pt_intel_opregion_write,
+         .u.dw.restore  = NULL,
+@@ -657,7 +657,6 @@ static struct pt_reg_info_tbl pt_emu_reg
+         .init_val   = 0x00000000,
+         .ro_mask    = 0x00000003,
+         .emu_mask   = 0xFFFFFFFF,
+-        .no_wb      = 1,
+         .init       = pt_common_reg_init,
+         .u.dw.read  = pt_long_reg_read,
+         .u.dw.write = pt_msgaddr32_reg_write,
+@@ -670,7 +669,6 @@ static struct pt_reg_info_tbl pt_emu_reg
+         .init_val   = 0x00000000,
+         .ro_mask    = 0x00000000,
+         .emu_mask   = 0xFFFFFFFF,
+-        .no_wb      = 1,
+         .init       = pt_msgaddr64_reg_init,
+         .u.dw.read  = pt_long_reg_read,
+         .u.dw.write = pt_msgaddr64_reg_write,
+@@ -683,7 +681,6 @@ static struct pt_reg_info_tbl pt_emu_reg
+         .init_val   = 0x0000,
+         .ro_mask    = 0x0000,
+         .emu_mask   = 0xFFFF,
+-        .no_wb      = 1,
+         .init       = pt_msgdata_reg_init,
+         .u.w.read   = pt_word_reg_read,
+         .u.w.write  = pt_msgdata_reg_write,
+@@ -696,7 +693,6 @@ static struct pt_reg_info_tbl pt_emu_reg
+         .init_val   = 0x0000,
+         .ro_mask    = 0x0000,
+         .emu_mask   = 0xFFFF,
+-        .no_wb      = 1,
+         .init       = pt_msgdata_reg_init,
+         .u.w.read   = pt_word_reg_read,
+         .u.w.write  = pt_msgdata_reg_write,
+@@ -1524,7 +1520,7 @@ static void pt_pci_write_config(PCIDevic
+     uint32_t find_addr = address;
+     uint32_t real_offset = 0;
+     uint32_t valid_mask = 0xFFFFFFFF;
+-    uint32_t read_val = 0;
++    uint32_t read_val = 0, wb_mask;
+     uint8_t *ptr_val = NULL;
+     int emul_len = 0;
+     int index = 0;
+@@ -1597,7 +1593,10 @@ static void pt_pci_write_config(PCIDevic
+     {
+         PT_LOG("Error: pci_read_block failed. return value[%d].\n", ret);
+         memset((uint8_t *)&read_val, 0xff, len);
++        wb_mask = 0;
+     }
++    else
++        wb_mask = 0xFFFFFFFF >> ((4 - len) << 3);
+ 
+     /* pass directly to libpci for passthrough type register group */
+     if (reg_grp_entry == NULL)
+@@ -1620,6 +1619,11 @@ static void pt_pci_write_config(PCIDevic
+             valid_mask = (0xFFFFFFFF >> ((4 - emul_len) << 3));
+             valid_mask <<= ((find_addr - real_offset) << 3);
+             ptr_val = ((uint8_t *)&val + (real_offset & 3));
++            if (reg->emu_mask == (0xFFFFFFFF >> ((4 - reg->size) << 3))) {
++                wb_mask &= ~((reg->emu_mask
++                              >> ((find_addr - real_offset) << 3))
++                             << ((len - emul_len) << 3));
++            }
+ 
+             /* do emulation depend on register size */
+             switch (reg->size) {
+@@ -1677,8 +1681,19 @@ static void pt_pci_write_config(PCIDevic
+     val >>= ((address & 3) << 3);
+ 
+ out:
+-    if (!(reg && reg->no_wb)) {  /* unknown regs are passed through */
+-        ret = pci_write_block(pci_dev, address, (uint8_t *)&val, len);
++    for (index = 0; wb_mask; index += len) {
++        /* unknown regs are passed through */
++        while (!(wb_mask & 0xff)) {
++            index++;
++            wb_mask >>= 8;
++        }
++        len = 0;
++        do {
++            len++;
++            wb_mask >>= 8;
++        } while (wb_mask & 0xff);
++        ret = pci_write_block(pci_dev, address + index,
++                              (uint8_t *)&val + index, len);
+ 
+         if (!ret)
+             PT_LOG("Error: pci_write_block failed. return value[%d].\n", ret);
+--- a/hw/pass-through.h
++++ b/hw/pass-through.h
+@@ -372,8 +372,6 @@ struct pt_reg_info_tbl {
+     uint32_t ro_mask;
+     /* reg emulate field mask (ON:emu, OFF:passthrough) */
+     uint32_t emu_mask;
+-    /* no write back allowed */
+-    uint32_t no_wb;
+     /* emul reg initialize method */
+     conf_reg_init init;
+     union {

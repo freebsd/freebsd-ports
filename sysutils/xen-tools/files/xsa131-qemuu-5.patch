@@ -1,0 +1,22 @@
+xen/pt: mark all PCIe capability bits read-only
+
+xen_pt_emu_reg_pcie[]'s PCI_EXP_DEVCAP needs to cover all bits as read-
+only to avoid unintended write-back (just a precaution, the field ought
+to be read-only in hardware).
+
+This is a preparatory patch for XSA-131.
+
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Reviewed-by: Stefano Stabellini <stefano.stabellini@eu.citrix.com>
+
+--- a/hw/xen/xen_pt_config_init.c
++++ b/hw/xen/xen_pt_config_init.c
+@@ -873,7 +873,7 @@ static XenPTRegInfo xen_pt_emu_reg_pcie[
+         .offset     = PCI_EXP_DEVCAP,
+         .size       = 4,
+         .init_val   = 0x00000000,
+-        .ro_mask    = 0x1FFCFFFF,
++        .ro_mask    = 0xFFFFFFFF,
+         .emu_mask   = 0x10000000,
+         .init       = xen_pt_common_reg_init,
+         .u.dw.read  = xen_pt_long_reg_read,
