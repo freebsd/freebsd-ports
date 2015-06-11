@@ -11,8 +11,6 @@ COMMENT=	Python binding for the LZ4 compression library
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/nose/__init__.py:${PORTSDIR}/devel/py-nose
-
 USE_PYTHON=	autoplist distutils
 USES=		python
 
