@@ -3,7 +3,7 @@
 
 PORTNAME=	libgpod
 PORTVERSION=	0.8.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	SF/gtkpod/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
@@ -25,16 +25,24 @@ CONFIGURE_ARGS=	--disable-udev --without-hal \
 USE_CSTD=	gnu89
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DOCS IMOBILE MONO PYTHON
+OPTIONS_DEFINE=	DOCS IMOBILE PYTHON # MONO
 OPTIONS_DEFAULT=IMOBILE
 OPTIONS_SUB=	yes
 
 IMOBILE_DESC=	Apple iPhone/iPod Touch support
 
+IMOBILE_LIB_DEPENDS=	libimobiledevice.so:${PORTSDIR}/comms/libimobiledevice
+IMOBILE_CONFIGURE_ENV=	LIBUSB_CFLAGS=" " LIBUSB_LIBS="-lusb"
+IMOBILE_CONFIGURE_WITH=	libimobiledevice
+
+# Mono 4+ doesn't seem to be supported.
 MONO_USE=		GNOME=gtksharp20
 MONO_CONFIGURE_WITH=	mono
+CONFIGURE_ARGS+=	--without-mono
+PLIST_SUB+=		MONO="@comment "
 
 PYTHON_BUILD_DEPENDS=	swig2.0:${PORTSDIR}/devel/swig20 \
 			${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen
@@ -50,10 +58,6 @@ PORTDOCS=	ChangeLog NEWS README*
 
 .if ${PORT_OPTIONS:MIMOBILE}
 COMMENT:=	${COMMENT:S,iPod,&/iPhone,}
-LIB_DEPENDS+=	libimobiledevice.so:${PORTSDIR}/comms/libimobiledevice
-CONFIGURE_ENV+=	LIBUSB_CFLAGS=" " LIBUSB_LIBS="-lusb"
-.else
-CONFIGURE_ARGS+=--without-libimobiledevice
 .endif
 
 post-patch:
@@ -62,6 +66,9 @@ post-patch:
 		${WRKSRC}/tools/Makefile.in
 
 post-install:
+.if ! ${PORT_OPTIONS:MMONO}
+	@${RM} ${STAGEDIR}${PREFIX}/libdata/pkgconfig/libgpod-sharp.pc
+.endif
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
