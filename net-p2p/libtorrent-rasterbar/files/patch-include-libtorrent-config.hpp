@@ -1,9 +1,9 @@
---- include/libtorrent/config.hpp.orig	2014-08-15 06:51:56 UTC
+--- include/libtorrent/config.hpp.orig	2014-12-05 01:00:07 UTC
 +++ include/libtorrent/config.hpp
-@@ -184,12 +184,6 @@ POSSIBILITY OF SUCH DAMAGE.
- // execinfo.h is available in the MacOS X 10.5 SDK.
- #define TORRENT_USE_EXECINFO MAC_OS_X_VERSION_MIN_REQUIRED >= 1050
- #endif
+@@ -166,12 +166,6 @@ POSSIBILITY OF SUCH DAMAGE.
+ 
+ #endif // __APPLE__
+ 
 -#else
 -// FreeBSD has a reasonable iconv signature
 -// unless we're on glibc
