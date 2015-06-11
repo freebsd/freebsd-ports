@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-actionview>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-action
 		rubygem-rack16>=1.6:${PORTSDIR}/www/rubygem-rack16 \
 		rubygem-rack-test>=0.6.2:${PORTSDIR}/www/rubygem-rack-test \
 		rubygem-rails-html-sanitizer>=1.0:${PORTSDIR}/textproc/rubygem-rails-html-sanitizer \
-		rubygem-rails-dom-testing>=2.7.0:${PORTSDIR}/textproc/rubygem-rails-dom-testing
+		rubygem-rails-dom-testing>=1.0.5:${PORTSDIR}/textproc/rubygem-rails-dom-testing
 
 
 USE_RUBY=	yes
