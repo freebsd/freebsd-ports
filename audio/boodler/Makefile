@@ -3,7 +3,7 @@
 
 PORTNAME=	boodler
 PORTVERSION=	1.5.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.eblong.com/zarf/boodler/
 DISTFILES=	boodler-153.tar.gz boodler-snd-021902.tar.gz
@@ -23,7 +23,7 @@ CONFIGURE_SCRIPT=	configure.py
 CONFIGURE_ARGS=	--include ${LOCALBASE}/include --lib ${LOCALBASE}/lib
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-SHEBANG_FILES=	${CONFIGURE_SCRIPT}
+SHEBANG_FILES=	${CONFIGURE_SCRIPT} boodler.py
 python_CMD=	${PYTHON_CMD}
 SUB_FILES=	boodler-wrapper
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
