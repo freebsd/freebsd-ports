@@ -54,8 +54,8 @@ static int
 probe(struct usb_handle *h, ifc_match_func callback)
 {
 	struct usb_ifc_info info;
-	libusb_device_descriptor ddesc;
-	libusb_config_descriptor *pcfg;
+	struct libusb_device_descriptor ddesc;
+	struct libusb_config_descriptor *pcfg;
 	int i, j;
 
 	if (libusb_open(h->dev, &h->handle) < 0)
