@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libimobiledevice
-PORTVERSION=	1.1.6
+PORTVERSION=	1.2.0
 PORTREVISION?=	0
 CATEGORIES?=	comms
 MASTER_SITES=	http://www.${PORTNAME}.org/downloads/
@@ -38,7 +38,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's, *@ssl_requires@,,' \
-		${WRKSRC}/${PORTNAME}*.pc.in
+		${WRKSRC}/src/${PORTNAME}*.pc.in
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
