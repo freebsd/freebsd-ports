@@ -6,7 +6,7 @@ CATEGORIES=	converters devel python
 MASTER_SITES=	https://www.xpra.org/src/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	R-encoding and r-decoding implementation
 
 LICENSE=	GPLv3
