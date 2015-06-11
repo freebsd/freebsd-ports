@@ -815,6 +815,7 @@
     SUBDIR += ruby-quota
     SUBDIR += rubygem-SyslogLogger
     SUBDIR += rubygem-backup
+    SUBDIR += rubygem-bosh_cli
     SUBDIR += rubygem-bundler
     SUBDIR += rubygem-bundler17
     SUBDIR += rubygem-bundler_ext
