@@ -2,3 +2,5 @@ include/utf8proc.h
 lib/libutf8proc.a
 lib/libutf8proc.so
 lib/libutf8proc.so.1
+lib/libutf8proc.so.1.2
+lib/libutf8proc.so.1.2.0
