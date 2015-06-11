@@ -3814,6 +3814,7 @@
     SUBDIR += py-configparser
     SUBDIR += py-construct
     SUBDIR += py-country
+    SUBDIR += py-cov-core
     SUBDIR += py-coverage
     SUBDIR += py-crcmod
     SUBDIR += py-ctags
