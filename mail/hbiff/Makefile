@@ -8,7 +8,7 @@ CATEGORIES=	mail
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/misc/  \
 		LOCAL/obrien
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Replacement for xbiff that handles popup window with mail headers
 
 USE_XORG=	x11
