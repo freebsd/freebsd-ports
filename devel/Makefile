@@ -625,6 +625,7 @@
     SUBDIR += go-uuid
     SUBDIR += gob2
     SUBDIR += gobject-introspection
+    SUBDIR += godep
     SUBDIR += godot
     SUBDIR += goffice
     SUBDIR += goffice010
