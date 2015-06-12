@@ -1,13 +1,5 @@
 --- gtk/status_icon.c.orig	2015-05-13 14:47:31 UTC
 +++ gtk/status_icon.c
-@@ -25,7 +25,6 @@ Foundation, Inc., 59 Temple Place - Suit
- #endif
- 
- #if !defined(WIN32) && !defined(__APPLE__) && GLIB_CHECK_VERSION(2, 26, 0)
--#define STATUS_NOTIFIER_IS_USABLE 1
- #endif
- 
- #include "status_notifier.h"
 @@ -195,7 +194,7 @@ static LinphoneStatusIcon *_linphone_sta
  }
  
