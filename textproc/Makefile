@@ -1474,9 +1474,9 @@
     SUBDIR += source-highlight
     SUBDIR += sowing
     SUBDIR += spellutils
-    SUBDIR += spiff
     SUBDIR += sphinxsearch
     SUBDIR += sphinxsearch-devel
+    SUBDIR += spiff
     SUBDIR += sq-hunspell
     SUBDIR += sr-aspell
     SUBDIR += sr-hunspell
