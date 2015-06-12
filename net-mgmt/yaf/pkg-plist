@@ -80,6 +80,10 @@ lib/yaf/ethipplugin.a
 lib/yaf/ethipplugin.so
 lib/yaf/ethipplugin.so.1
 lib/yaf/ethipplugin.so.1.0.1
+lib/yaf/gh0stplugin.a
+lib/yaf/gh0stplugin.so
+lib/yaf/gh0stplugin.so.1
+lib/yaf/gh0stplugin.so.1.0.1
 lib/yaf/ircplugin.a
 lib/yaf/ircplugin.so
 lib/yaf/ircplugin.so.1
@@ -100,6 +104,10 @@ lib/yaf/mysqlplugin.a
 lib/yaf/mysqlplugin.so
 lib/yaf/mysqlplugin.so.1
 lib/yaf/mysqlplugin.so.1.0.1
+lib/yaf/netdgmplugin.a
+lib/yaf/netdgmplugin.so
+lib/yaf/netdgmplugin.so.1
+lib/yaf/netdgmplugin.so.1.0.1
 lib/yaf/nntpplugin.a
 lib/yaf/nntpplugin.so
 lib/yaf/nntpplugin.so.1
