@@ -695,7 +695,7 @@ MASTER_SITE_GNU+= \
 	ftp://ftp.gnu.org/gnu/%SUBDIR%/ \
 	http://www.gtlib.gatech.edu/pub/gnu/gnu/%SUBDIR%/ \
 	http://mirrors.kernel.org/gnu/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/GNU/%SUBDIR%/ \
+	ftp://ftp.kddlabs.co.jp/GNU/gnu/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/GNU/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.gnu.org/gnu/%SUBDIR%/ \
 	ftp://ftp.informatik.hu-berlin.de/pub/gnu/gnu/%SUBDIR%/ \
@@ -1234,7 +1234,6 @@ MASTER_SITE_SUNSITE+= \
 	ftp://ftp.nvg.ntnu.no/pub/mirrors/metalab.unc.edu/%SUBDIR%/ \
 	ftp://ftp.icm.edu.pl/pub/Linux/sunsite/%SUBDIR%/ \
 	ftp://ftp.cse.cuhk.edu.hk/pub4/Linux/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/Linux/metalab.unc.edu/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/Linux/sunsite/%SUBDIR%/ \
 	ftp://ftp.sun.ac.za/pub/mirrors/sunsite.unc.edu/pub/Linux/%SUBDIR%/
 .endif
