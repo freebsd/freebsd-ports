@@ -4,7 +4,7 @@
 
 PORTNAME=	rhythmbox
 PORTVERSION=	3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -35,6 +35,7 @@ GNU_CONFIGURE=	yes
 USE_GSTREAMER1=	flac lame jpeg cdparanoia vorbis
 CONFIGURE_ARGS=	--enable-vala \
 		--disable-gudev \
+		--without-webkit \
 		--enable-visualizer=no \
 		--disable-browser-plugin \
 		--with-libsecret=yes
@@ -49,8 +50,8 @@ PLIST_SUB+=	PYTVER=${PYTHON_VER:S/.//}
 GLIB_SCHEMAS=	org.gnome.rhythmbox.gschema.xml
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	BRASERO DAAP GRILO IPOD NOTIFY PYTHON LIRC MTP WEBKIT
-OPTIONS_DEFAULT=BRASERO NOTIFY PYTHON WEBKIT
+OPTIONS_DEFINE=	BRASERO DAAP GRILO IPOD NOTIFY PYTHON LIRC MTP
+OPTIONS_DEFAULT=BRASERO NOTIFY PYTHON
 BRASERO_DESC=	Brasero disc burning support
 BRASERO_CONFIGURE_ENABLE=brasero
 BRASERO_LIB_DEPENDS=	libbrasero-media3.so:${PORTSDIR}/sysutils/brasero
@@ -74,12 +75,20 @@ MTP_LIB_DEPENDS=	libmtp.so:${PORTSDIR}/multimedia/libmtp \
 PYTHON_CONFIGURE_ENABLE=	python
 PYTHON_USES=		python:3
 PYTHON_USE=		PYTVER=${PYTHON_VER:S/.//}
-WEBKIT_DESC=	HTML view support
-WEBKIT_CONFIGURE_WITH=	webkit
-WEBKIT_LIB_DEPENDS=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3
+PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libpeas>=0:${PREFIX}/devel/py3-libpeas
+# context plugin
+# webkit is for the context plugin, which is broken because
+# it needs textproc/py3-mako
+#WEBKIT_DESC=	HTML view support
+#WEBKIT_CONFIGURE_WITH=	webkit
+#WEBKIT_LIB_DEPENDS=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|{MOZILLA_PLUGINDIR|{MOZILLA_PLUGINDIR}|g' \
 		${WRKSRC}/configure
+
+# rbzeitgeist plugin needs py3-zeitgeist
+post-install:
+	@${RM} -rf ${STAGEDIR}${PREFIX}/lib/rhythmbox/plugins/rbzeitgeist
 
 .include <bsd.port.mk>
