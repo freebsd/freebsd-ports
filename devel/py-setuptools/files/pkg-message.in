@@ -1,7 +1,7 @@
-*********************************************************************
 
-    The script %%PREFIX%%/bin/easy_install was already installed
-    on your system, so only the script %%PREFIX%%/bin/easy_install-%%PYVER%%
-    has been added.
+*******************************************************************
 
-*********************************************************************
+  Only %%PREFIX%%/bin/easy_install-%%PYTHON_VER%% script has been installed
+  since Python %%PYTHON_VER%% is not the default Python version.
+
+*******************************************************************
