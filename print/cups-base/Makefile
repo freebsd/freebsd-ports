@@ -22,7 +22,7 @@ CONFLICTS=	LPRng-[0-9]*
 
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 
-USES+=		cpe gmake pkgconfig tar:bzip2
+USES+=		cpe gmake iconv pkgconfig tar:bzip2
 CPE_VENDOR=	apple
 DESTDIRNAME=	DSTROOT
 GNU_CONFIGURE=	yes
@@ -56,18 +56,18 @@ USERS=		cups
 # UNIQUENAME must be set before bsd.port.pre.mk so OPTIONSFILE can be included
 OPTIONS_SUB=		yes
 .if defined(CUPS_CLIENT)
-PORTREVISION=	1
+PORTREVISION=	2
 LICENSE=	LGPL21
 CUPS_SUFFIX=	-client
 OPTIONS_RADIO=		ZEROCONF
 OPTIONS_RADIO_ZEROCONF=	AVAHI MDNSRESPONDER
 OPTIONS_DEFAULT+=	MDNSRESPONDER
 .elif defined(CUPS_IMAGE)
-PORTREVISION=	1
+PORTREVISION=	2
 CUPS_SUFFIX=	-image
 LICENSE=	LGPL21
 .else
-PORTREVISION=	2
+PORTREVISION=	3
 CUPS_SUFFIX=	-base
 # No DOCS option.  Files are needed by web interface.
 OPTIONS_DEFINE=		DBUS ICONS LIBPAPER LIBUSB PAM XDG_OPEN
@@ -90,7 +90,6 @@ ZEROCONF_DESC=		Zeroconf support
 COMMENT2=	Library cups
 INSTALL_WRKSRC=	${WRKSRC}/cups
 PLIST=		${MASTERDIR}/pkg-plist.client
-USES+=		iconv
 LIBS+=		${ICONV_LIB}
 USE_LDCONFIG=	yes
 PKGMESSAGE=	${NONEXISTENT}
@@ -105,7 +104,6 @@ BUILD_DEPENDS+=	cups-client${PKGNAMESUFFIX2}>=${PORTVERSION}:${PORTSDIR}/${PKGCA
 COMMENT2=	Library cupsimage
 INSTALL_WRKSRC=	${WRKSRC}/filter
 PLIST=		${MASTERDIR}/pkg-plist.image
-USES+=		iconv
 USE_LDCONFIG=	yes
 PKGMESSAGE=	${NONEXISTENT}
 DESCR=		${MASTERDIR}/pkg-descr.image
@@ -215,6 +213,12 @@ SUB_LIST+=		ZEROCONF=""
 LIBS+=		-lssp_nonshared
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if empty(ICONV_LIB)
+CONFIGURE_ENV+=	ac_cv_search_libiconv_open=no
+.endif
+
 post-patch:
 .if ${ARCH} == "amd64"
 	@${REINPLACE_CMD} -e 's|@PIEFLAGS@||' ${WRKSRC}/Makedefs.in
@@ -313,4 +317,4 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/ulpt-cupsd.sh ${STAGEDIR}${PREFIX}/sbin/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
