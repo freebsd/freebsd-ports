@@ -45,24 +45,25 @@
 %%PORTNAME%%/agentless/ssh.exp
 %%PORTNAME%%/agentless/register_host.sh
 %%PORTNAME%%/agentless/su.exp
-@dirrmtry %%PORTNAME%%/agentless
-@dirrmtry %%PORTNAME%%/active-response/bin
-@dirrmtry %%PORTNAME%%/active-response
-@dirrmtry %%PORTNAME%%/etc/shared
-@dirrmtry %%PORTNAME%%/etc/
-@dirrmtry %%PORTNAME%%/var/run
-@dirrmtry %%PORTNAME%%/var
-@dirrmtry %%PORTNAME%%/queue/syscheck
-@dirrmtry %%PORTNAME%%/queue/rids
+@dir %%PORTNAME%%/agentless
+@dir %%PORTNAME%%/active-response/bin
+@dir %%PORTNAME%%/active-response
+@dir %%PORTNAME%%/etc/shared
+@dir %%PORTNAME%%/etc
+@dir %%PORTNAME%%/tmp
+@dir %%PORTNAME%%/var/run
+@dir %%PORTNAME%%/var
+@dir %%PORTNAME%%/queue/syscheck
+@dir %%PORTNAME%%/queue/rids
 @owner ossec
-@dirrmtry %%PORTNAME%%/queue/ossec
-@dirrmtry %%PORTNAME%%/queue/diff
+@dir %%PORTNAME%%/queue/ossec
+@dir %%PORTNAME%%/queue/diff
 @owner
-@dirrmtry %%PORTNAME%%/queue/alerts
-@dirrmtry %%PORTNAME%%/queue
-@dirrmtry %%PORTNAME%%/logs
-@dirrmtry %%PORTNAME%%/bin
+@dir %%PORTNAME%%/queue/alerts
+@dir %%PORTNAME%%/queue
+@dir %%PORTNAME%%/logs
+@dir %%PORTNAME%%/bin
 @owner ossec
-@dirrmtry %%PORTNAME%%/.ssh
+@dir %%PORTNAME%%/.ssh
 @owner
-@dirrmtry %%PORTNAME%%
+@dir %%PORTNAME%%
