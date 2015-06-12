@@ -26,7 +26,7 @@
 #
 # MAINTAINER: portmgr@FreeBSD.org
 
-.if !defined(_INCLUDE_USES_SHEBANGFIX_Mk)
+.if !defined(_INCLUDE_USES_SHEBANGFIX_MK)
 _INCLUDE_USES_SHEBANGFIX_MK=	yes
 
 bash_OLD_CMD?=	/bin/bash
