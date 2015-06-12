@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	linphone
-PORTVERSION=	3.8.2
+PORTVERSION=	3.8.3
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SAVANNAH/linphone/3.8.x/sources
@@ -12,7 +12,7 @@ COMMENT=	SIP client supporting voice/video calls and text messaging
 LIB_DEPENDS=	libbellesip.so:${PORTSDIR}/net/belle-sip \
 		libmediastreamer_base.so:${PORTSDIR}/net/mediastreamer \
 		libortp.so:${PORTSDIR}/net/ortp \
-		libpolarssl.so.8:${PORTSDIR}/security/polarssl13 \
+		libmbedtls.so.9:${PORTSDIR}/security/polarssl13 \
 		libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
 		libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
