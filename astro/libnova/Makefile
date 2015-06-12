@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/v%20${PORTVERSION}
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Astronomical Calculation Library
 
 USES=		autoreconf libtool

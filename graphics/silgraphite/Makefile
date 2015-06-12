@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Font engine for complex non-Roman writing systems
 
 OPTIONS_DEFINE=	FREETYPE

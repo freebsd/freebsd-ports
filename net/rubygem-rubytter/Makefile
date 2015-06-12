@@ -6,7 +6,7 @@ PORTVERSION=	1.5.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Twitter library
 
 RUN_DEPENDS=	rubygem-json>=1.1.3:${PORTSDIR}/devel/rubygem-json \

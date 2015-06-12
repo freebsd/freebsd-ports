@@ -6,7 +6,7 @@ PORTVERSION=	2.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby library for creating NFS safe lockfiles
 
 LICENSE=	RUBY

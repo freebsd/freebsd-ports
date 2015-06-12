@@ -6,7 +6,7 @@ PORTVERSION=	1.16.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Commandline option parser for Ruby that gets out of your way
 
 USE_RUBY=	yes

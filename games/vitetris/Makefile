@@ -6,7 +6,7 @@ PORTVERSION=	0.57
 CATEGORIES=	games
 MASTER_SITES=	http://victornils.net/tetris/
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Terminal-based Tetris clone in vein of Nintendo Tetris
 
 HAS_CONFIGURE=	yes

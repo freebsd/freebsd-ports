@@ -6,7 +6,7 @@ PORTVERSION=	1.2.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for ANSII color formatting like HTML for output in terminal
 
 LICENSE=	MIT

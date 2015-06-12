@@ -8,7 +8,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://wmfs.info/attachments/download/45/ \
 		http://cloud.github.com/downloads/xorg62/wmfs/
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Floating and tiling Window Manager From Scratch
 
 LICENSE=	BSD3CLAUSE

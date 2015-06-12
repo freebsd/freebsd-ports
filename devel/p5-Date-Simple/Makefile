@@ -8,7 +8,7 @@ CATEGORIES=		devel perl5
 MASTER_SITES=		CPAN
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		dhn@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Simple date object
 
 USES=		perl5

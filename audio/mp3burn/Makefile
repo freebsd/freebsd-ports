@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line tool to burn audio CDs from MP3, Ogg, Vorbis, FLAC files
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \

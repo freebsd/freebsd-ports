@@ -8,7 +8,7 @@ CATEGORIES=	devel lang
 MASTER_SITES=	SF/synfig/releases/${SYNFIG_VERSION}/source/
 DISTNAME=	ETL-${PORTVERSION}
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Voria Extended Class and Template Library
 
 OPTIONS_DEFINE=	DOCS

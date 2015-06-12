@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small Jabber console client
 
 LIB_DEPENDS=	libloudmouth-1.so:${PORTSDIR}/net-im/loudmouth

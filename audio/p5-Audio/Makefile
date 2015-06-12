@@ -8,7 +8,7 @@ CATEGORIES=	audio perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audio manipulation routines for perl
 
 BUILD_DEPENDS=	p5-Math-GSL>=0:${PORTSDIR}/math/p5-Math-GSL

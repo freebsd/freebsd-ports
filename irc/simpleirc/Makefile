@@ -8,7 +8,7 @@ MASTER_SITES=	http://dl.suckless.org/tools/ \
 		LOCAL/dhn
 DISTNAME=	sic-${PORTVERSION}
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extremely simple IRC client
 
 LICENSE=	MIT

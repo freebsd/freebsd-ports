@@ -6,7 +6,7 @@ PORTVERSION=	2.9
 CATEGORIES=	misc
 MASTER_SITES=	GNU
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for saying hello to the world and reading email
 
 USES=		charsetfix perl5
