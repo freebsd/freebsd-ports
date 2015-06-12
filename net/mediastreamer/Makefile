@@ -3,7 +3,7 @@
 
 PORTNAME=	mediastreamer
 PORTVERSION=	2.11.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	SAVANNAH/linphone/mediastreamer
 
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libortp.so:${PORTSDIR}/net/ortp \
 		libsrtp.so:${PORTSDIR}/net/libsrtp \
 		libbzrtp.so:${PORTSDIR}/security/libbzrtp \
-		libpolarssl.so.8:${PORTSDIR}/security/polarssl13
+		libmbedtls.so.9:${PORTSDIR}/security/polarssl13
 
 CONFLICTS_INSTALL=	linphone-base-[0-9]*
 

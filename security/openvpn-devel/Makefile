@@ -3,6 +3,7 @@
 
 PORTNAME=	openvpn
 DISTVERSION=	201516
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.secure-computing.net/pub/FreeBSD/ports/openvpn-devel/ \
 		ftp://ftp2.secure-computing.net/pub/FreeBSD/ports/openvpn-devel/
@@ -48,7 +49,7 @@ PW_SAVE_CONFIGURE_ENABLE=	password-save
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPOLARSSL}
-LIB_DEPENDS+=	libpolarssl.so.8:${PORTSDIR}/security/polarssl13
+LIB_DEPENDS+=	libmbedtls.so.9:${PORTSDIR}/security/polarssl13
 CONFIGURE_ARGS+=--with-crypto-library=polarssl
 .else
 USE_OPENSSL=	yes
