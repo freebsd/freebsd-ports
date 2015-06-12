@@ -6,7 +6,7 @@ PORTVERSION=	1.0.0
 CATEGORIES=	www security
 MASTER_SITES=	http://www.measurement-factory.com/tmp/ecap/
 
-MAINTAINER=	tmseck@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for module based network content analysis
 
 LICENSE=	BSD2CLAUSE
