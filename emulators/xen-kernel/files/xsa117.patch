@@ -1,0 +1,42 @@
+From 472dc9e627c8f1b9d7138b142a5b0838550a2072 Mon Sep 17 00:00:00 2001
+From: Julien Grall <julien.grall@linaro.org>
+Date: Fri, 23 Jan 2015 14:15:07 +0000
+Subject: [PATCH] xen/arm: vgic-v2: Don't crash the hypervisor if the SGI
+ target mode is invalid
+
+The GICv2 spec reserved the value 0b11 for GICD_SGIR.TargetListFilter.
+
+Even if it's an invalid value, a malicious guest could write this value
+and threfore crash the hypervisor.
+
+Replace the BUG() by logging the error and inject a data abort to the guest.
+
+This was introduced by commit ea37fd21110b6fbcf9257f814076a243d3873cb7
+"xen/arm: split vgic driver into generic and vgic-v2 driver".
+
+This is CVE-2015-0268 / XSA-117.
+
+Signed-off-by: Julien Grall <julien.grall@linaro.org>
+---
+ xen/arch/arm/vgic-v2.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/xen/arch/arm/vgic-v2.c b/xen/arch/arm/vgic-v2.c
+index 598bf06..9dc9a20 100644
+--- a/xen/arch/arm/vgic-v2.c
++++ b/xen/arch/arm/vgic-v2.c
+@@ -257,7 +257,10 @@ static int vgic_v2_to_sgi(struct vcpu *v, register_t sgir)
+         sgi_mode = SGI_TARGET_SELF;
+         break;
+     default:
+-        BUG();
++        printk(XENLOG_G_DEBUG
++               "%pv: vGICD: unhandled GICD_SGIR write %"PRIregister" with wrong mode\n",
++               v, sgir);
++        return 0;
+     }
+ 
+     return vgic_to_sgi(v, sgir, sgi_mode, virq, vcpu_mask);
+-- 
+2.1.4
+

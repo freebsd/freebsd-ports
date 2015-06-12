@@ -1,0 +1,4 @@
+Simple Faraday middleware that uses MultiJson to unobtrusively
+encode JSON requests and parse JSON responses.
+
+WWW: https://github.com/denro/faraday_middleware-multi_json

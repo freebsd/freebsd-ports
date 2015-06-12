@@ -991,6 +991,7 @@ lib32/wine/api-ms-win-core-localization-obsolete-l1-1-0.dll.so
 lib32/wine/api-ms-win-core-localregistry-l1-1-0.dll.so
 lib32/wine/api-ms-win-core-memory-l1-1-0.dll.so
 lib32/wine/api-ms-win-core-memory-l1-1-1.dll.so
+lib32/wine/api-ms-win-core-misc-l1-1-0.dll.so
 lib32/wine/api-ms-win-core-namedpipe-l1-1-0.dll.so
 lib32/wine/api-ms-win-core-namedpipe-l1-2-0.dll.so
 lib32/wine/api-ms-win-core-processenvironment-l1-1-0.dll.so
@@ -1229,6 +1230,7 @@ lib32/wine/fakedlls/api-ms-win-core-localization-obsolete-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-core-localregistry-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-core-memory-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-core-memory-l1-1-1.dll
+lib32/wine/fakedlls/api-ms-win-core-misc-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-core-namedpipe-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-core-namedpipe-l1-2-0.dll
 lib32/wine/fakedlls/api-ms-win-core-processenvironment-l1-1-0.dll
@@ -1522,6 +1524,7 @@ lib32/wine/fakedlls/mscat32.dll
 lib32/wine/fakedlls/mscms.dll
 lib32/wine/fakedlls/mscoree.dll
 lib32/wine/fakedlls/msctf.dll
+lib32/wine/fakedlls/msctfp.dll
 lib32/wine/fakedlls/msdaps.dll
 lib32/wine/fakedlls/msdmo.dll
 lib32/wine/fakedlls/msftedit.dll
@@ -1596,10 +1599,6 @@ lib32/wine/fakedlls/ntdll.dll
 lib32/wine/fakedlls/ntdsapi.dll
 lib32/wine/fakedlls/ntoskrnl.exe
 lib32/wine/fakedlls/ntprint.dll
-%%OSREL8-STAGING%%lib32/wine/fakedlls/null.sys
-%%OSREL9-STAGING%%lib32/wine/fakedlls/null.sys
-%%OSREL10-STAGING%%lib32/wine/fakedlls/null.sys
-%%OSREL11-STAGING%%lib32/wine/fakedlls/null.sys
 %%OSREL8-STAGING%%lib32/wine/fakedlls/nvapi.dll
 %%OSREL9-STAGING%%lib32/wine/fakedlls/nvapi.dll
 %%OSREL10-STAGING%%lib32/wine/fakedlls/nvapi.dll
@@ -2143,6 +2142,7 @@ lib32/wine/mscat32.dll.so
 lib32/wine/mscms.dll.so
 lib32/wine/mscoree.dll.so
 lib32/wine/msctf.dll.so
+lib32/wine/msctfp.dll.so
 lib32/wine/msdaps.dll.so
 lib32/wine/msdmo.dll.so
 lib32/wine/msftedit.dll.so
@@ -2217,10 +2217,6 @@ lib32/wine/ntdll.dll.so
 lib32/wine/ntdsapi.dll.so
 lib32/wine/ntoskrnl.exe.so
 lib32/wine/ntprint.dll.so
-%%OSREL8-STAGING%%lib32/wine/null.sys.so
-%%OSREL9-STAGING%%lib32/wine/null.sys.so
-%%OSREL10-STAGING%%lib32/wine/null.sys.so
-%%OSREL11-STAGING%%lib32/wine/null.sys.so
 %%OSREL8-STAGING%%lib32/wine/nvapi.dll.so
 %%OSREL9-STAGING%%lib32/wine/nvapi.dll.so
 %%OSREL10-STAGING%%lib32/wine/nvapi.dll.so

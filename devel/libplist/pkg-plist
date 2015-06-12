@@ -15,11 +15,11 @@ include/plist/plist++.h
 include/plist/plist.h
 lib/libplist++.a
 lib/libplist++.so
-lib/libplist++.so.2
-lib/libplist++.so.2.0.0
+lib/libplist++.so.3
+lib/libplist++.so.3.0.0
 lib/libplist.a
 lib/libplist.so
-lib/libplist.so.2
-lib/libplist.so.2.0.0
+lib/libplist.so.3
+lib/libplist.so.3.0.0
 libdata/pkgconfig/libplist++.pc
 libdata/pkgconfig/libplist.pc

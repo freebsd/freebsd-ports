@@ -3,8 +3,8 @@
 
 PORTNAME=	openssl
 PORTVERSION=	1.0.2
-DISTVERSIONSUFFIX=	a
-PORTREVISION=	1
+DISTVERSIONSUFFIX=	b
+PORTREVISION=	2
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/source/ \
 		ftp://ftp.openssl.org/source/ \
@@ -66,7 +66,7 @@ CPE_VERSION=	${PORTVERSION}${DISTVERSIONSUFFIX}
 .include <bsd.port.pre.mk>
 
 .if ${PREFIX} == /usr
-IGNORE=	OpenSSL can not be installed over the base version
+IGNORE=	OpenSSL can not be installed over the base version.
 .endif
 
 OPENSSLDIR?=	${PREFIX}/openssl
@@ -154,7 +154,7 @@ PATCHFILES+=	1001-crypto-hmac-support-EVP_MD_CTX_FLAG_ONESHOT-and-set-.patch:pad
 
 .if ${PORT_OPTIONS:MGMP}
 EXTRACONFIGURE+=	enable-gmp -I${LOCALBASE}/include
-IGNORE=	GMP is LGPLv3 and can not be linked
+IGNORE=	GMP is LGPLv3 and can not be linked.
 .else
 EXTRACONFIGURE+=	no-gmp
 .endif

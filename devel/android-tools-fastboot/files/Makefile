@@ -1,7 +1,6 @@
 # $FreeBSD$
 
 PROG=	fastboot
-NO_MAN=
 BINDIR?=/usr/bin
 
 SRCS+=	bootimg.c

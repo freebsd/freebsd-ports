@@ -2,15 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	strucchange
-DISTVERSION=	1.5-0
-PORTREVISION=	2
+DISTVERSION=	1.5-1
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Testing, Monitoring, and Dating Structural Changes
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	R-cran-zoo>0:${PORTSDIR}/math/R-cran-zoo \
 		R-cran-sandwich>0:${PORTSDIR}/math/R-cran-sandwich

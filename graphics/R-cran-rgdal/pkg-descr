@@ -1,5 +1,5 @@
 Provides bindings to Frank Warmerdam's Geospatial Data Abstraction
-Library (GDAL) (>= 1.6.3) and access to projection/transformation
+Library (GDAL) (>= 1.6.3, < 2) and access to projection/transformation
 operations from the PROJ.4 library. The GDAL and PROJ.4 libraries
 are external to the package, and, when installing the package from
 source, must be correctly installed first. Both GDAL raster and OGR

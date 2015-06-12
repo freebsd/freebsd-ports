@@ -1,0 +1,3 @@
+A fake libpulse.so library that mimics pulseaudio behavior for skype
+
+WWW: https://github.com/waterlaz/skype_oss_wrapper

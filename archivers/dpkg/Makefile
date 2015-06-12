@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dpkg
-PORTVERSION=	1.18.0
-PORTREVISION=	1
+PORTVERSION=	1.18.1
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	dpkg_${PORTVERSION}
@@ -29,7 +28,7 @@ SUB_FILES=	pkg-install pkg-deinstall
 SUB_LIST+=	DPKGDIR=${DPKGDIR}
 
 CONFIGURE_ARGS+=--with-admindir=${DPKGDIR} --libdir=${PREFIX}/libexec \
-		--program-transform-name="" --with-libintl-prefix=${LOCALBASE} \
+		--with-libintl-prefix=${LOCALBASE} \
 		--with-logdir=/var/log
 CONFIGURE_ENV+=	PERL_LIBDIR="${PREFIX}/${SITE_PERL_REL}"
 
@@ -38,10 +37,6 @@ OPTIONS_SUB=	yes
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
-
-post-patch:
-	@${REINPLACE_CMD} '/^LDFLAGS/ s|$$| -lmd|' \
-		${WRKSRC}/lib/dpkg/Makefile.in
 
 post-install:
 	(cd ${STAGEDIR}${DPKGDIR} && ${MKDIR} available diversions \

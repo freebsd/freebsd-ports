@@ -1,0 +1,142 @@
+xen: don't allow guest to control MSI mask register
+
+It's being used by the hypervisor. For now simply mimic a device not
+capable of masking, and fully emulate any accesses a guest may issue
+nevertheless as simple reads/writes without side effects.
+
+This is XSA-129.
+
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Reviewed-by: Stefano Stabellini <stefano.stabellini@eu.citrix.com>
+
+--- a/hw/pass-through.c
++++ b/hw/pass-through.c
+@@ -147,6 +147,10 @@ static uint32_t pt_msgaddr64_reg_init(st
+     struct pt_reg_info_tbl *reg, uint32_t real_offset);
+ static uint32_t pt_msgdata_reg_init(struct pt_dev *ptdev,
+     struct pt_reg_info_tbl *reg, uint32_t real_offset);
++static uint32_t pt_mask_reg_init(struct pt_dev *ptdev,
++    struct pt_reg_info_tbl *reg, uint32_t real_offset);
++static uint32_t pt_pending_reg_init(struct pt_dev *ptdev,
++    struct pt_reg_info_tbl *reg, uint32_t real_offset);
+ static uint32_t pt_msixctrl_reg_init(struct pt_dev *ptdev,
+     struct pt_reg_info_tbl *reg, uint32_t real_offset);
+ static uint32_t pt_header_type_reg_init(struct pt_dev *ptdev,
+@@ -644,7 +648,7 @@ static struct pt_reg_info_tbl pt_emu_reg
+         .size       = 2,
+         .init_val   = 0x0000,
+         .ro_mask    = 0xFF8E,
+-        .emu_mask   = 0x007F,
++        .emu_mask   = 0x017F,
+         .init       = pt_msgctrl_reg_init,
+         .u.w.read   = pt_word_reg_read,
+         .u.w.write  = pt_msgctrl_reg_write,
+@@ -698,6 +702,50 @@ static struct pt_reg_info_tbl pt_emu_reg
+         .u.w.write  = pt_msgdata_reg_write,
+         .u.w.restore  = NULL,
+     },
++    /* Mask reg (if PCI_MSI_FLAGS_MASK_BIT set, for 32-bit devices) */
++    {
++        .offset     = PCI_MSI_MASK_32,
++        .size       = 4,
++        .init_val   = 0x00000000,
++        .ro_mask    = 0xFFFFFFFF,
++        .emu_mask   = 0xFFFFFFFF,
++        .init       = pt_mask_reg_init,
++        .u.dw.read  = pt_long_reg_read,
++        .u.dw.write = pt_long_reg_write,
++    },
++    /* Mask reg (if PCI_MSI_FLAGS_MASK_BIT set, for 64-bit devices) */
++    {
++        .offset     = PCI_MSI_MASK_64,
++        .size       = 4,
++        .init_val   = 0x00000000,
++        .ro_mask    = 0xFFFFFFFF,
++        .emu_mask   = 0xFFFFFFFF,
++        .init       = pt_mask_reg_init,
++        .u.dw.read  = pt_long_reg_read,
++        .u.dw.write = pt_long_reg_write,
++    },
++    /* Pending reg (if PCI_MSI_FLAGS_MASK_BIT set, for 32-bit devices) */
++    {
++        .offset     = PCI_MSI_MASK_32 + 4,
++        .size       = 4,
++        .init_val   = 0x00000000,
++        .ro_mask    = 0xFFFFFFFF,
++        .emu_mask   = 0x00000000,
++        .init       = pt_pending_reg_init,
++        .u.dw.read  = pt_long_reg_read,
++        .u.dw.write = pt_long_reg_write,
++    },
++    /* Pending reg (if PCI_MSI_FLAGS_MASK_BIT set, for 64-bit devices) */
++    {
++        .offset     = PCI_MSI_MASK_64 + 4,
++        .size       = 4,
++        .init_val   = 0x00000000,
++        .ro_mask    = 0xFFFFFFFF,
++        .emu_mask   = 0x00000000,
++        .init       = pt_pending_reg_init,
++        .u.dw.read  = pt_long_reg_read,
++        .u.dw.write = pt_long_reg_write,
++    },
+     {
+         .size = 0,
+     },
+@@ -3023,6 +3071,42 @@ static uint32_t pt_msgdata_reg_init(stru
+         return PT_INVALID_REG;
+ }
+ 
++/* this function will be called twice (for 32 bit and 64 bit type) */
++/* initialize Mask register */
++static uint32_t pt_mask_reg_init(struct pt_dev *ptdev,
++        struct pt_reg_info_tbl *reg, uint32_t real_offset)
++{
++    uint32_t flags = ptdev->msi->flags;
++    uint32_t offset = reg->offset;
++
++    if (!(flags & PCI_MSI_FLAGS_MASK_BIT))
++        return PT_INVALID_REG;
++
++    if (offset == (flags & PCI_MSI_FLAGS_64BIT ?
++                   PCI_MSI_MASK_64 : PCI_MSI_MASK_32))
++        return reg->init_val;
++
++    return PT_INVALID_REG;
++}
++
++/* this function will be called twice (for 32 bit and 64 bit type) */
++/* initialize Pending register */
++static uint32_t pt_pending_reg_init(struct pt_dev *ptdev,
++        struct pt_reg_info_tbl *reg, uint32_t real_offset)
++{
++    uint32_t flags = ptdev->msi->flags;
++    uint32_t offset = reg->offset;
++
++    if (!(flags & PCI_MSI_FLAGS_MASK_BIT))
++        return PT_INVALID_REG;
++
++    if (offset == (flags & PCI_MSI_FLAGS_64BIT ?
++                   PCI_MSI_MASK_64 + 4 : PCI_MSI_MASK_32 + 4))
++        return reg->init_val;
++
++    return PT_INVALID_REG;
++}
++
+ /* initialize Message Control register for MSI-X */
+ static uint32_t pt_msixctrl_reg_init(struct pt_dev *ptdev,
+         struct pt_reg_info_tbl *reg, uint32_t real_offset)
+--- a/hw/pass-through.h
++++ b/hw/pass-through.h
+@@ -84,6 +84,12 @@
+ #define PCI_MSI_FLAGS_MASK_BIT  0x0100
+ #endif
+ 
++#ifndef PCI_MSI_MASK_32
++/* interrupt masking register */
++#define PCI_MSI_MASK_32     12
++#define PCI_MSI_MASK_64     16
++#endif
++
+ #ifndef PCI_EXP_TYPE_PCIE_BRIDGE
+ /* PCI/PCI-X to PCIE Bridge */
+ #define PCI_EXP_TYPE_PCIE_BRIDGE 0x8

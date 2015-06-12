@@ -1,0 +1,21 @@
+xen/MSI-X: disable logging by default
+
+... to avoid allowing the guest to cause the control domain's disk to
+fill.
+
+This is XSA-130.
+
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Reviewed-by: Stefano Stabellini <stefano.stabellini@eu.citrix.com>
+
+--- a/hw/pass-through.h
++++ b/hw/pass-through.h
+@@ -27,7 +27,7 @@
+ #include "qemu-timer.h"
+ 
+ /* Log acesss */
+-#define PT_LOGGING_ENABLED
++/* #define PT_LOGGING_ENABLED */
+ 
+ /* Print errors even if logging is disabled */
+ #define PT_ERR(_f, _a...)   fprintf(logfile, "%s: " _f, __func__, ##_a)

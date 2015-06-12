@@ -1,0 +1,75 @@
+xen/pt: mark reserved bits in PCI config space fields
+
+The adjustments are solely to make the subsequent patches work right
+(and hence make the patch set consistent), namely if permissive mode
+(introduced by the last patch) gets used (as both reserved registers
+and reserved fields must be similarly protected from guest access in
+default mode, but the guest should be allowed access to them in
+permissive mode).
+
+This is a preparatory patch for XSA-131.
+
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+
+--- a/hw/xen/xen_pt.h
++++ b/hw/xen/xen_pt.h
+@@ -101,6 +101,8 @@ struct XenPTRegInfo {
+     uint32_t offset;
+     uint32_t size;
+     uint32_t init_val;
++    /* reg reserved field mask (ON:reserved, OFF:defined) */
++    uint32_t res_mask;
+     /* reg read only field mask (ON:RO/ROS, OFF:other) */
+     uint32_t ro_mask;
+     /* reg emulate field mask (ON:emu, OFF:passthrough) */
+--- a/hw/xen/xen_pt_config_init.c
++++ b/hw/xen/xen_pt_config_init.c
+@@ -580,7 +580,7 @@ static XenPTRegInfo xen_pt_emu_reg_heade
+         .offset     = PCI_COMMAND,
+         .size       = 2,
+         .init_val   = 0x0000,
+-        .ro_mask    = 0xF880,
++        .res_mask   = 0xF880,
+         .emu_mask   = 0x0743,
+         .init       = xen_pt_common_reg_init,
+         .u.w.read   = xen_pt_word_reg_read,
+@@ -605,7 +605,8 @@ static XenPTRegInfo xen_pt_emu_reg_heade
+         .offset     = PCI_STATUS,
+         .size       = 2,
+         .init_val   = 0x0000,
+-        .ro_mask    = 0x06FF,
++        .res_mask   = 0x0007,
++        .ro_mask    = 0x06F8,
+         .emu_mask   = 0x0010,
+         .init       = xen_pt_status_reg_init,
+         .u.w.read   = xen_pt_word_reg_read,
+@@ -982,7 +983,8 @@ static XenPTRegInfo xen_pt_emu_reg_pm[] 
+         .offset     = PCI_PM_CTRL,
+         .size       = 2,
+         .init_val   = 0x0008,
+-        .ro_mask    = 0xE1FC,
++        .res_mask   = 0x00F0,
++        .ro_mask    = 0xE10C,
+         .emu_mask   = 0x810B,
+         .init       = xen_pt_common_reg_init,
+         .u.w.read   = xen_pt_word_reg_read,
+@@ -1278,7 +1280,8 @@ static XenPTRegInfo xen_pt_emu_reg_msi[]
+         .offset     = PCI_MSI_FLAGS,
+         .size       = 2,
+         .init_val   = 0x0000,
+-        .ro_mask    = 0xFF8E,
++        .res_mask   = 0xFE00,
++        .ro_mask    = 0x018E,
+         .emu_mask   = 0x017E,
+         .init       = xen_pt_msgctrl_reg_init,
+         .u.w.read   = xen_pt_word_reg_read,
+@@ -1456,7 +1459,8 @@ static XenPTRegInfo xen_pt_emu_reg_msix[
+         .offset     = PCI_MSI_FLAGS,
+         .size       = 2,
+         .init_val   = 0x0000,
+-        .ro_mask    = 0x3FFF,
++        .res_mask   = 0x3800,
++        .ro_mask    = 0x07FF,
+         .emu_mask   = 0x0000,
+         .init       = xen_pt_msixctrl_reg_init,
+         .u.w.read   = xen_pt_word_reg_read,

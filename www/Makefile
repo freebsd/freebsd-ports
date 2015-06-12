@@ -1541,6 +1541,7 @@
     SUBDIR += py-django-tastypie
     SUBDIR += py-django-threaded-multihost
     SUBDIR += py-django-tinymce
+    SUBDIR += py-django-voting
     SUBDIR += py-django14
     SUBDIR += py-django16
     SUBDIR += py-django17

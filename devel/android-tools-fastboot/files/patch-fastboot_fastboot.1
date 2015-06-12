@@ -1,0 +1,40 @@
+--- fastboot/fastboot.1.orig	2015-06-11 14:34:07 UTC
++++ fastboot/fastboot.1
+@@ -1,4 +1,4 @@
+-.TH fastboot
++.TH fastboot 1
+ .SH NAME
+ fastboot \- manipulate the non-volatile flash partitions
+ .SH SYNOPSIS
+@@ -21,9 +21,9 @@ fastboot is primarily used for installin
+ The partition should adhere to a specific layout. Fastboot was designed
+ for use with phones and tablets running the Android operating system.
+ .PP
+-To allow non-root user access to the devices, one might needed to add
+-udev rules file for the specific device and add the user to the 
+-appopriate group (typically the group is named \fIplugdev\fR).
++To allow non-root user access to the devices, one might need to adjust
++permissions via \fI/etc/devd/*.conf\fR file for a particular device or
++via \fI/etc/devfs.rules\fR for a particular user or group.
+ .PP
+ If the device is not connected, certain fastboot commands display the
+ output:
+@@ -176,9 +176,9 @@ Thie variable can be used to specify the
+ 
+ .fi
+ .SH DIAGNOSTICS
+-Make sure that the device is connected and is visible via \fIlsusb\fR. 
+-If the device is detected by `\fIlsusb\fR' and `\fIadb devices\fR' output
+-shows `\fI???????????? device\fR', then try reloading udev rules or
++Make sure that the device is connected and is visible via \fIusbconfig\fR.
++If the device is detected by `\fIusbconfig\fR' and `\fIadb devices\fR' output
++shows `\fI???????????? device\fR', then try restarting \fBdevd\fP(8) or
+ try disconnecting and connecting the cables.
+ .SH BUGS
+ The command name should have been chosen more carefully to reflect its
+@@ -190,4 +190,4 @@ was written by engineers at Google for t
+ Ramakrishnan Muthukrishnan wrote this manual page, originally for the
+ Debian Project, with a lot of suggestions from Raul Miller.
+ .SH SEE ALSO
+-\fBadb\fP(1), \fBudev\fP(7), \fBlsusb\fP(8)
++\fBadb\fP(1), \fBdevd.conf\fP(5), \fBdevfs.rules\fP(5), \fBusbconfig\fP(8)

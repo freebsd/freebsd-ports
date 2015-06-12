@@ -1,0 +1,71 @@
+xen/MSI-X: limit error messages resulting from bad guest behavior
+
+... to avoid allowing the guest to cause the control domain's disk to
+fill.
+
+The first message in pci_msix_write() can simply be deleted, as this
+is indeed bad guest behavior, but such out of bounds writes don't
+really need to be logged.
+
+The second one is more problematic, as there guest behavior may only
+appear to be wrong: For one, the old logic didn't take the mask-all bit
+into account. And then this shouldn't depend on host device state (i.e.
+the host may have masked the entry without the guest having done so).
+Plus these writes shouldn't be dropped even when an entry is unmasked.
+Instead, if they can't be made take effect right away, they should take
+effect on the next unmasking or enabling operation - the specification
+explicitly describes such caching behavior. Until we can validly drop
+the message (implementing such caching/latching behavior), issue the
+message just once per MSI-X table entry.
+
+Note that the log message in pci_msix_read() similar to the one being
+removed here is not an issue: "addr" being of unsigned type, and the
+maximum size of the MSI-X table being 32k, entry_nr simply can't be
+negative and hence the conditonal guarding issuing of the message will
+never be true.
+
+This is XSA-130.
+
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Reviewed-by: Stefano Stabellini <stefano.stabellini@eu.citrix.com>
+
+--- a/hw/xen/xen_pt.h
++++ b/hw/xen/xen_pt.h
+@@ -175,6 +175,7 @@ typedef struct XenPTMSIXEntry {
+     uint32_t data;
+     uint32_t vector_ctrl;
+     bool updated; /* indicate whether MSI ADDR or DATA is updated */
++    bool warned;  /* avoid issuing (bogus) warning more than once */
+ } XenPTMSIXEntry;
+ typedef struct XenPTMSIX {
+     uint32_t ctrl_offset;
+--- a/hw/xen/xen_pt_msi.c
++++ b/hw/xen/xen_pt_msi.c
+@@ -434,11 +434,10 @@ static void pci_msix_write(void *opaque,
+     XenPCIPassthroughState *s = opaque;
+     XenPTMSIX *msix = s->msix;
+     XenPTMSIXEntry *entry;
+-    int entry_nr, offset;
++    unsigned int entry_nr, offset;
+ 
+     entry_nr = addr / PCI_MSIX_ENTRY_SIZE;
+-    if (entry_nr < 0 || entry_nr >= msix->total_entries) {
+-        XEN_PT_ERR(&s->dev, "asked MSI-X entry '%i' invalid!\n", entry_nr);
++    if (entry_nr >= msix->total_entries) {
+         return;
+     }
+     entry = &msix->msix_entry[entry_nr];
+@@ -460,8 +459,11 @@ static void pci_msix_write(void *opaque,
+             + PCI_MSIX_ENTRY_VECTOR_CTRL;
+ 
+         if (msix->enabled && !(*vec_ctrl & PCI_MSIX_ENTRY_CTRL_MASKBIT)) {
+-            XEN_PT_ERR(&s->dev, "Can't update msix entry %d since MSI-X is"
+-                       " already enabled.\n", entry_nr);
++            if (!entry->warned) {
++                entry->warned = true;
++                XEN_PT_ERR(&s->dev, "Can't update msix entry %d since MSI-X is"
++                           " already enabled.\n", entry_nr);
++            }
+             return;
+         }
+ 

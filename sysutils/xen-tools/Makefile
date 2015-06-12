@@ -3,7 +3,7 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools
 PORTVERSION=	4.5.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/ \
 		http://code.coreboot.org/p/seabios/downloads/get/:seabios
@@ -46,6 +46,10 @@ QEMU_ARGS=	--disable-gtk \
 		--disable-tools \
 		--disable-curl \
 		--cxx=c++
+
+EXTRA_PATCHES=	${FILESDIR}/xsa119-unstable.patch:-p1 \
+		${FILESDIR}/xsa125.patch:-p1
+
 CONFIGURE_ARGS+=	--with-extra-qemuu-configure-args="${QEMU_ARGS}"
 SHEBANG_FILES=	tools/misc/xencov_split \
 		tools/misc/xen-ringwatch
@@ -71,6 +75,14 @@ post-patch:
 		${WRKSRC}/tools/libxl/libxl_dm.c \
 		${WRKSRC}/tools/qemu-xen-traditional/i386-dm/helper2.c \
 		${WRKSRC}/docs/man/*
+	@for p in ${FILESDIR}/*qemut*.patch; do \
+		${ECHO_CMD} "====> Applying $${p##*/}" ; \
+		patch -s -p1 -i $${p} -d ${WRKSRC}/tools/qemu-xen-traditional ; \
+	done
+	@for p in ${FILESDIR}/*qemuu*.patch; do \
+		${ECHO_CMD} "====> Applying $${p##*/}" ; \
+		patch -s -p1 -i $${p} -d ${WRKSRC}/tools/qemu-xen ; \
+	done
 
 post-install:
 	${MKDIR} ${STAGEDIR}/var/run/xen

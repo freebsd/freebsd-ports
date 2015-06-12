@@ -1,0 +1,81 @@
+xen/pt: add a few PCI config space field descriptions
+
+Since the next patch will turn all not explicitly described fields
+read-only by default, those fields that have guest writable bits need
+to be given explicit descriptors.
+
+This is a preparatory patch for XSA-131.
+
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+
+--- a/hw/pass-through.c
++++ b/hw/pass-through.c
+@@ -538,6 +538,16 @@ static struct pt_reg_info_tbl pt_emu_reg
+         .u.b.restore  = NULL,
+     },
+     {
++        .offset     = PCI_VPD_ADDR,
++        .size       = 2,
++        .ro_mask    = 0x0003,
++        .emu_mask   = 0x0003,
++        .init       = pt_common_reg_init,
++        .u.w.read   = pt_word_reg_read,
++        .u.w.write  = pt_word_reg_write,
++        .u.w.restore = pt_word_reg_restore,
++    },
++    {
+         .size = 0,
+     },
+ };
+@@ -599,6 +609,17 @@ static struct pt_reg_info_tbl pt_emu_reg
+         .u.w.write  = pt_word_reg_write,
+         .u.w.restore  = pt_word_reg_restore,
+     },
++    /* Device Status reg */
++    {
++        .offset     = PCI_EXP_DEVSTA,
++        .size       = 2,
++        .res_mask   = 0xFFC0,
++        .ro_mask    = 0x0030,
++        .init       = pt_common_reg_init,
++        .u.w.read   = pt_word_reg_read,
++        .u.w.write  = pt_word_reg_write,
++        .u.w.restore  = pt_word_reg_restore,
++    },
+     /* Link Control reg */
+     {
+         .offset     = PCI_EXP_LNKCTL,
+@@ -611,6 +632,16 @@ static struct pt_reg_info_tbl pt_emu_reg
+         .u.w.write  = pt_word_reg_write,
+         .u.w.restore  = pt_word_reg_restore,
+     },
++    /* Link Status reg */
++    {
++        .offset     = PCI_EXP_LNKSTA,
++        .size       = 2,
++        .ro_mask    = 0x3FFF,
++        .init       = pt_common_reg_init,
++        .u.w.read   = pt_word_reg_read,
++        .u.w.write  = pt_word_reg_write,
++        .u.w.restore = pt_word_reg_restore,
++    },
+     /* Device Control 2 reg */
+     {
+         .offset     = 0x28,
+--- a/hw/pass-through.h
++++ b/hw/pass-through.h
+@@ -105,6 +105,14 @@
+ #define PCI_EXP_TYPE_ROOT_EC     0xa
+ #endif
+ 
++#ifndef PCI_VPD_ADDR
++/* Vital Product Data */
++#define PCI_VPD_ADDR		2	/* Address to access (15 bits!) */
++#define  PCI_VPD_ADDR_MASK	0x7fff	/* Address mask */
++#define  PCI_VPD_ADDR_F		0x8000	/* Write 0, 1 indicates completion */
++#define PCI_VPD_DATA		4	/* 32-bits of data returned here */
++#endif
++
+ #ifndef PCI_ERR_UNCOR_MASK
+ /* Uncorrectable Error Mask */
+ #define PCI_ERR_UNCOR_MASK      8
