@@ -3,7 +3,7 @@
 
 PORTNAME=	modula3
 PORTVERSION=	5.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://downloads.dragonlace.net/m3/:boot
 DISTFILES=	${SRCDISTFILE} ${BOOTDIST}
@@ -28,7 +28,7 @@ ONLY_FOR_ARCHS=		amd64
 USE_GITHUB=	yes
 GH_ACCOUNT=	modula3
 GH_PROJECT=	cm3
-GH_TAGNAME=	1f5ad30
+GH_TAGNAME=	b2ce705
 
 USES=		gmake pgsql python:build
 USE_XORG=	xaw xmu xext xt sm ice x11
