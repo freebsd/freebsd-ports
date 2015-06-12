@@ -3,6 +3,7 @@
 
 PORTNAME=	curl
 PORTVERSION=	7.42.1
+PORTREVISION=	1
 CATEGORIES=	ftp www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		LOCAL/sunpoet
@@ -126,7 +127,7 @@ OPENSSL_LDFLAGS=	-L${OPENSSLLIB}
 OPENSSL_USE=		OPENSSL=yes
 POLARSSL_CONFIGURE_OFF=	--without-polarssl
 POLARSSL_CONFIGURE_ON=	--with-polarssl=${LOCALBASE}
-POLARSSL_LIB_DEPENDS=	libpolarssl.so.8:${PORTSDIR}/security/polarssl13
+POLARSSL_LIB_DEPENDS=	libmbedtls.so.9:${PORTSDIR}/security/polarssl13
 PROXY_CONFIGURE_OFF=	--disable-proxy
 PROXY_CONFIGURE_ON=	--enable-proxy
 RTMP_CONFIGURE_OFF=	--without-librtmp

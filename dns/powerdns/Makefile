@@ -2,6 +2,7 @@
 
 PORTNAME=	powerdns
 PORTVERSION=	3.4.4
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${PORTVERSION}
@@ -160,7 +161,7 @@ MODULES+=	opendbx
 .if ${PORT_OPTIONS:MPOLARSSL}
 CONFIGURE_ARGS+=	--without-system-polarssl
 .else
-LIB_DEPENDS+=		libpolarssl.so.8:${PORTSDIR}/security/polarssl13
+LIB_DEPENDS+=		libmbedtls.so.9:${PORTSDIR}/security/polarssl13
 .endif
 
 post-install:
