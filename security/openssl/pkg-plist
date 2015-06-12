@@ -1129,6 +1129,7 @@ man/man3/SSL_CIPHER_get_bits.3.gz
 man/man3/SSL_CIPHER_get_name.3.gz
 man/man3/SSL_CIPHER_get_version.3.gz
 man/man3/SSL_COMP_add_compression_method.3.gz
+man/man3/SSL_COMP_free_compression_methods.3.gz
 man/man3/SSL_CONF_CTX_clear_flags.3.gz
 man/man3/SSL_CONF_CTX_free.3.gz
 man/man3/SSL_CONF_CTX_new.3.gz
