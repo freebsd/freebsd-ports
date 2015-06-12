@@ -4,7 +4,7 @@
 
 PORTNAME=	totem
 PORTVERSION=	3.14.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -27,7 +27,8 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme \
 		gnome-settings-daemon>=2.91.0:${PORTSDIR}/sysutils/gnome-settings-daemon \
 		gnome-icon-theme-symbolic>=2.91.0:${PORTSDIR}/x11-themes/gnome-icon-theme-symbolic \
-		grilo-plugins>=0:${PORTSDIR}/net/grilo-plugins
+		grilo-plugins>=0:${PORTSDIR}/net/grilo-plugins \
+		${PYTHON_PKGNAMEPREFIX}libpeas>=0:${PORTSDIR}/devel/py3-libpeas
 
 USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
 		python:3 shebangfix tar:xz
