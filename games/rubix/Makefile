@@ -7,7 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://sed.free.fr/rubix/ \
 		http://mirror.mcx2.org/
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another Rubik's cube game with a rather interesting interface
 
 USES=		gmake tar:bzip2

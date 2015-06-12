@@ -6,7 +6,7 @@ PORTVERSION=	2012.06.18
 CATEGORIES=	math
 MASTER_SITES=	http://www.jjj.de/fxt/
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FFT code and related stuff
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

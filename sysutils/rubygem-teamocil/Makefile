@@ -6,7 +6,7 @@ PORTVERSION=	0.4.4
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Helps you to set up window and splits layouts for tmux
 
 USE_RUBY=	yes

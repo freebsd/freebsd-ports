@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple and fast XML to hash conversion
 
 USES=		perl5

@@ -7,7 +7,7 @@ CATEGORIES=	net-im
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Is a modification of XMPP/Jabber client Tkabber
 
 RUN_DEPENDS=	dtplite:${PORTSDIR}/devel/tcllib \

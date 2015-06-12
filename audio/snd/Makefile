@@ -8,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	ftp://ccrma-ftp.stanford.edu/pub/Lisp/ \
 		http://mirror.mcx2.org/
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multitracking sound editor and utilities
 
 OPTIONS_DEFINE=	FFTW3 GSL S7 LADSPA MOTIF GTK2 X11 DOCS EXAMPLES
