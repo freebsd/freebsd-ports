@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	ossec-hids
-PORTVERSION=	2.8.1
-PORTREVISION?=	1
+PORTVERSION=	2.8.2
+PORTREVISION?=	0
 CATEGORIES=	security
-MASTER_SITES=	http://www.ossec.net/files/ \
-		http://www.ossec.net/files/old/
+USE_GITHUB=	yes
+GH_ACCOUNT=	ossec
 PKGNAMESUFFIX=	-server
 
 MAINTAINER=	brd@FreeBSD.org
@@ -54,10 +54,12 @@ USES+=		pgsql
 .endif
 .endif
 
+STRIP_FILES=	ossec-luac agent_control ossec-lua ossec-dbd ossec-regex ossec-monitord ossec-makelists verify-agent-conf ossec-analysisd ossec-agentlessd syscheck_control ossec-execd manage_agents ossec-csyslogd ossec-syscheckd ossec-logtest ossec-authd ossec-logcollector list_agents ossec-maild clear_stats ossec-remoted ossec-reportd rootcheck_control syscheck_update
 .if defined(CLIENT_ONLY)
 SUB_LIST+=	PRECMD=:
 PKGNAMESUFFIX=	-client
 CONFLICTS=	ossec-hids-server-[0-9]* ossec-hids-local-[0-9]*
+STRIP_FILES=	agent-auth manage_agents ossec-agentd ossec-execd ossec-logcollector ossec-lua ossec-luac ossec-syscheckd
 .elif defined(LOCAL_ONLY)
 SUB_LIST+=	PRECMD=ossechids_start_precmd
 PKGNAMESUFFIX=	-local
@@ -106,6 +108,9 @@ do-install:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}/etc
+.for file in ${STRIP_FILES}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/ossec-hids/bin/${file}
+.endfor
 
 .if defined(CLIENT_ONLY)
 	@${CP} ${WRKSRC}/etc/ossec-agent.conf ${STAGEDIR}${PREFIX}/${PORTNAME}/etc/ossec.conf.sample
