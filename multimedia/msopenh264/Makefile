@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	msopenh264
-PORTVERSION=	0.1.1
+PORTVERSION=	1.0.0
 CATEGORIES=	multimedia net
 MASTER_SITES=	SAVANNAH/linphone/plugins/sources/
 
