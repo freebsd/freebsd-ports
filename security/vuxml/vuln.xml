@@ -57,6 +57,38 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c470db07-1098-11e5-b6a8-002590263bf5">
+    <topic>security/ossec-hids-* -- root escalation via syscheck feature</topic>
+    <affects>
+      <package>
+	<name>ossec-hids-server</name>
+	<name>ossec-hids-client</name>
+	<name>ossec-hids-local</name>
+	<range><ge>2.7</ge><lt>2.8.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OSSEC reports:</p>
+	<blockquote cite="http://www.ossec.net/?p=1198">
+	  <p>The CVE-2015-3222 vulnerability, which allows for root escalation
+	    via sys check has been fixed in OSSEC 2.8.2.  This issue does not
+	    affect agents.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3222</cvename>
+      <freebsdpr>ports/200801</freebsdpr>
+      <url>http://www.ossec.net/?p=1198</url>
+      <url>https://github.com/ossec/ossec-hids/releases/tag/2.8.2</url>
+    </references>
+    <dates>
+      <discovery>2015-06-11</discovery>
+      <entry>2015-06-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8305e215-1080-11e5-8ba2-000c2980a9f3">
     <topic>openssl -- multiple vulnerabilities</topic>
     <affects>
