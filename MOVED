@@ -7635,3 +7635,4 @@ print/gnome-specimen||2015-06-10|Has expired: Broken since update to gnome3
 x11-themes/gtk-aqualightblue-theme||2015-06-10|Has expired: Upstream disappeared
 x11-themes/gtk-flat-theme2||2015-06-10|Has expired: Upstream disappeared
 databases/postgresql84-server||2015-06-10|Has expired: "EOL was reached in July 2014"
+ftp/ncftp1||2015-06-12|Unfetchable
