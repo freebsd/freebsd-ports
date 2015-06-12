@@ -1773,6 +1773,9 @@ share/applications/gramps.desktop
 %%DATADIR%%/gui/editors/displaytabs/locationmodel.py
 %%DATADIR%%/gui/editors/displaytabs/locationmodel.pyc
 %%DATADIR%%/gui/editors/displaytabs/locationmodel.pyo
+%%DATADIR%%/gui/editors/displaytabs/mediaattrembedlist.py
+%%DATADIR%%/gui/editors/displaytabs/mediaattrembedlist.pyc
+%%DATADIR%%/gui/editors/displaytabs/mediaattrembedlist.pyo
 %%DATADIR%%/gui/editors/displaytabs/mediabackreflist.py
 %%DATADIR%%/gui/editors/displaytabs/mediabackreflist.pyc
 %%DATADIR%%/gui/editors/displaytabs/mediabackreflist.pyo
