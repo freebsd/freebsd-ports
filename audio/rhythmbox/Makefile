@@ -75,7 +75,7 @@ MTP_LIB_DEPENDS=	libmtp.so:${PORTSDIR}/multimedia/libmtp \
 PYTHON_CONFIGURE_ENABLE=	python
 PYTHON_USES=		python:3
 PYTHON_USE=		PYTVER=${PYTHON_VER:S/.//}
-PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libpeas>=0:${PREFIX}/devel/py3-libpeas
+PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libpeas>=0:${PORTSDIR}/devel/py3-libpeas
 # context plugin
 # webkit is for the context plugin, which is broken because
 # it needs textproc/py3-mako
