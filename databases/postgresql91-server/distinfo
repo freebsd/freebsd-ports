@@ -1,4 +1,4 @@
-SHA256 (postgresql/postgresql-9.1.17.tar.bz2) = ddddd0a250c4b415d2edbf90671808276f29d81ee01971806f8ec5f2beae16aa
-SIZE (postgresql/postgresql-9.1.17.tar.bz2) = 15817867
+SHA256 (postgresql/postgresql-9.1.18.tar.bz2) = 2726d526666904b454f87fe2ae54357c2ab9eb8aba299a4c904829b7598584a8
+SIZE (postgresql/postgresql-9.1.18.tar.bz2) = 15822081
 SHA256 (postgresql/pg-929-icu-2015-04-18.diff.gz) = 9aff1ba25fbe5892a3868bff516df685531c85901c360548e38bf2e5fa0e14ab
 SIZE (postgresql/pg-929-icu-2015-04-18.diff.gz) = 4469
