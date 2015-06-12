@@ -15,8 +15,6 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-rack>=1.0:${PORTSDIR}/www/rubygem-rack
 
-CONFLICTS_INSTALL=	rubygem-sprockets211-[0-9]* rubygem-sprockets-[0-9]*
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
