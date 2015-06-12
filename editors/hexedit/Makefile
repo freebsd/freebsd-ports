@@ -7,7 +7,7 @@ CATEGORIES=	editors
 MASTER_SITES=	http://rigaux.org/
 DISTFILES=	${DISTNAME}.src.tgz
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	View and edit files in hexadecimal or ASCII
 
 LICENSE=	GPLv2

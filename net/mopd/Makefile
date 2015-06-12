@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	LOCAL/obrien
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MOP Loader Daemon for netbooting DEC machines
 
 USES=		uidfix

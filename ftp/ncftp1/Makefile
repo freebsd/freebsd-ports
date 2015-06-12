@@ -7,7 +7,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/
 PKGNAMESUFFIX=	1
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FTP replacement with advanced user interface
 
 BROKEN=		Unfetchable
