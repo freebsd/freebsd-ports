@@ -64,6 +64,18 @@ Notes:
 	<name>openssl</name>
 	<range><lt>1.0.2_2</lt></range>
       </package>
+      <package>
+	<name>mingw32-openssl</name>
+	<range><ge>1.0.1</ge><lt>1.0.2b</lt></range>
+      </package>
+      <package>
+	<name>linux-c6-openssl</name>
+	<range><lt>1.0.2b</lt></range>
+      </package>
+      <package>
+	<name>libressl</name>
+	<range><lt>2.1.7</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -96,6 +108,7 @@ Notes:
     <dates>
       <discovery>2015-06-11</discovery>
       <entry>2015-06-11</entry>
+      <modified>2015-06-11</modified>
     </dates>
   </vuln>
 
