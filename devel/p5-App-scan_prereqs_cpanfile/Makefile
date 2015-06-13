@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	App-scan_prereqs_cpanfile
-PORTVERSION=	1.02
-PORTREVISION=	1
+PORTVERSION=	1.03
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +14,7 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
 	p5-Module-CPANfile>=0.9020:${PORTSDIR}/devel/p5-Module-CPANfile \
-	p5-Perl-PrereqScanner-Lite>=0.15:${PORTSDIR}/devel/p5-Perl-PrereqScanner-Lite
+	p5-Perl-PrereqScanner-Lite>=0.21:${PORTSDIR}/devel/p5-Perl-PrereqScanner-Lite
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5
