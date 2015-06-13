@@ -1,6 +1,6 @@
---- src/Makevars.orig	2013-12-07 17:47:48.000000000 +0900
-+++ src/Makevars	2013-12-09 16:36:18.000000000 +0900
-@@ -10,6 +10,9 @@
+--- src/Makevars.orig	2014-07-24 16:49:47 UTC
++++ src/Makevars
+@@ -10,6 +10,9 @@ PKG_LIBS = `$(R_HOME)/bin/Rscript -e "Rc
  ifeq ($(UNAME), SunOS)
  PKG_LIBS += -lkstat -lsendfile
  endif
