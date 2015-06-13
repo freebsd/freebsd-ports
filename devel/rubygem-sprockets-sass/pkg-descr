@@ -4,4 +4,4 @@ to be shared between files. So you'll try to use `@import`, and that'll also
 blow up in your face. `sprockets-sass` fixes all of this by creating a
 Sass::Importer that is Sprockets aware.
 
-WWW: https://rubygems.org/gems/sprockets-sass
+WWW: https://github.com/petebrowne/sprockets-sass
