@@ -17,6 +17,7 @@ RUN_DEPENDS=	rubygem-daemons>=1.1:${PORTSDIR}/devel/rubygem-daemons \
 		rubygem-multi_json>=1.3:${PORTSDIR}/devel/rubygem-multi_json \
 		rubygem-twitter>=5.5:${PORTSDIR}/net/rubygem-twitter
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
