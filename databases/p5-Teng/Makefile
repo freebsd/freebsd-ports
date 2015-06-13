@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Teng
-PORTVERSION=	0.25
-PORTREVISION=	1
+PORTVERSION=	0.28
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SATOH
@@ -26,7 +25,7 @@ RUN_DEPENDS=	\
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
 	p5-DBD-SQLite>=1.12:${PORTSDIR}/databases/p5-DBD-SQLite \
-	p5-Test-Mock-Guard>0:${PORTSDIR}/devel/p5-Test-Mock-Guard \
+	p5-Test-Mock-Guard>=0.10:${PORTSDIR}/devel/p5-Test-Mock-Guard \
 	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires \
 	p5-Test-SharedFork>=0.06:${PORTSDIR}/devel/p5-Test-SharedFork \
 	p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple \
