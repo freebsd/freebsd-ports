@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	List-MoreUtils
-DISTVERSION=	0.412
+DISTVERSION=	0.413
 CATEGORIES=	lang perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:REHSACK
@@ -21,7 +21,11 @@ USES=		perl5
 USE_PERL5=	configure
 
 post-stage:
-	${STRIP_CMD} \
-		${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/List/MoreUtils/MoreUtils.so
+	( \
+		cd ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/List/MoreUtils; \
+		${CHMOD} u+w MoreUtils.so; \
+		${STRIP_CMD} MoreUtils.so; \
+		${CHMOD} u-w MoreUtils.so; \
+	)
 
 .include <bsd.port.mk>
