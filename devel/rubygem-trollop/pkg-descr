@@ -1,7 +1,7 @@
-Trollop is a commandline option parser for Ruby that gets out of your way.
-One line of code per option is all you need to write. For that, you get a
-nice automatically-generated help page (fit to your screen size!), robust
-option parsing, command subcompletion, and sensible defaults for everything
-you don't specify.
+Trollop is a commandline option parser for Ruby that gets out of your way.  One
+line of code per option is all you need to write. For that, you get a nice
+automatically-generated help page (fit to your screen size!), robust option
+parsing, command subcompletion, and sensible defaults for everything you don't
+specify.
 
-WWW: http://rubygems.org/gems/trollop/
+WWW: http://manageiq.github.io/trollop/
