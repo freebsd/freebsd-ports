@@ -5,7 +5,7 @@ PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/opus/ \
-		${MASTER_SITE_MOZILLA_EXTENDED}
+		${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	opus
 
 MAINTAINER=	naddy@FreeBSD.org

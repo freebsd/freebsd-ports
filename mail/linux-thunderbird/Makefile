@@ -5,7 +5,7 @@ PORTNAME=	thunderbird
 DISTVERSION=	31.7.0
 CATEGORIES=	mail news net-im ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/linux-i686/en-US \
-		https://ftp.mozilla.org/pub/mozilla.org/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/linux-i686/en-US/
+		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/linux-i686/en-US
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
