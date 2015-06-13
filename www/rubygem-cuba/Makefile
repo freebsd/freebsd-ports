@@ -3,6 +3,7 @@
 
 PORTNAME=	cuba
 PORTVERSION=	3.4.0
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +12,9 @@ COMMENT=	Microframework for web applications
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-rack>=0:${PORTSDIR}/www/rubygem-rack
+RUN_DEPENDS=	rubygem-rack16>=0:${PORTSDIR}/www/rubygem-rack16
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
