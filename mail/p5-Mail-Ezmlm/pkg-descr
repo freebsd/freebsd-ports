@@ -1,7 +1,3 @@
-$Id: README,v 1.1 2000/01/26 06:08:13 guy Exp $
-
-Ezmlm.pm
-
 Object methods for ezmlm mailing lists.
 
 This software is beta release. As such, please treat it with the appropriate 
@@ -20,3 +16,5 @@ you use the full cantonical path for the qmail and ezmlm binaries.
 
 Documentation is in pod format. Please run perldoc Mail::Ezmlm after you have
 installed it.
+
+WWW: http://search.cpan.org/dist/Ezmlm/
