@@ -3,4 +3,4 @@ JavaScript source files. It takes any number of source files
 and preprocesses them line-by-line in order to build a single 
 concatenation. 
 
-WWW: http://getsprockets.org/
+WWW: https://github.com/rails/sprockets
