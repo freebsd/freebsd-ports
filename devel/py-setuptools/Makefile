@@ -12,6 +12,7 @@ COMMENT=	Python packages installer
 
 LICENSE=	PSFL
 
+NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
