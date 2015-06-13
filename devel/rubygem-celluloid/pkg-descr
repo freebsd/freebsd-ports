@@ -2,4 +2,4 @@ Celluloid enables people to build concurrent programs out of concurrent
 objects just as easily as they build sequential programs out of
 sequential objects.
 
-WWW: https://rubygems.org/gems/celluloid
+WWW: https://github.com/celluloid/celluloid
