@@ -1,4 +1,4 @@
-The packages provides palettes for drawing nice maps shaded according
-to a variable.
+Provides color schemes for maps (and other graphics) designed by
+Cynthia Brewer as described at http://colorbrewer2.org
 
-WWW:	http://cran.r-project.org/web/packages/RColorBrewer/
+WWW: http://cran.r-project.org/web/packages/RColorBrewer/
