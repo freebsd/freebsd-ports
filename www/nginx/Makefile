@@ -102,6 +102,7 @@ OPTIONS_DEFINE=	\
 	SLOWFS_CACHE \
 	SMALL_LIGHT \
 	SRCACHE \
+	STATSD \
 	UDPLOG \
 	XRID_HEADER \
 	XSS \
@@ -190,6 +191,7 @@ SFLOW_DESC=			3rd party sflow module
 SLOWFS_CACHE_DESC=		3rd party slowfs_cache module
 SMALL_LIGHT_DESC=		3rd party small_light module
 SRCACHE_DESC=			3rd party srcache module
+STATSD_DESC=			3rd party statsd module
 UDPLOG_DESC=			3rd party udplog (syslog) module
 XRID_HEADER_DESC=		3rd party x-rid header module
 XSS_DESC=			3rd party xss module
@@ -739,6 +741,14 @@ GH_ACCOUNT+=	openresty:srcache
 GH_PROJECT+=	srcache-nginx-module:srcache
 GH_TAGNAME+=	v${NGINX_SRCACHE_VERSION}:srcache
 CONFIGURE_ARGS+=--add-module=${WRKSRC_srcache}
+.endif
+
+.if ${PORT_OPTIONS:MSTATSD}
+NGINX_STATSD_VERSION=	b756a12
+GH_ACCOUNT+=	zebrafishlabs:statsd
+GH_PROJECT+=	nginx-statsd:statsd
+GH_TAGNAME+=	${NGINX_STATSD_VERSION}:statsd
+CONFIGURE_ARGS+=--add-module=${WRKSRC_statsd}
 .endif
 
 .if ${PORT_OPTIONS:MUDPLOG}
