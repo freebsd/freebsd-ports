@@ -99,6 +99,7 @@ OPTIONS_DEFINE=	\
 	SET_MISC \
 	SFLOW \
 	SLOWFS_CACHE \
+	SMALL_LIGHT \
 	SRCACHE \
 	UDPLOG \
 	XRID_HEADER \
@@ -185,6 +186,7 @@ RTMP_DESC=			3rd party rtmp module
 SET_MISC_DESC=			3rd party set_misc module
 SFLOW_DESC=			3rd party sflow module
 SLOWFS_CACHE_DESC=		3rd party slowfs_cache module
+SMALL_LIGHT_DESC=		3rd party small_light module
 SRCACHE_DESC=			3rd party srcache module
 UDPLOG_DESC=			3rd party udplog (syslog) module
 XRID_HEADER_DESC=		3rd party x-rid header module
@@ -706,6 +708,17 @@ DISTFILES+=	ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_VERSION}.tar.gz:slowfs_cache
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_VERSION}
 .endif
 
+.if ${PORT_OPTIONS:MSMALL_LIGHT}
+NGINX_SMALL_LIGHT_VERSION=	0.6.9
+LIB_DEPENDS+=	libMagickCore-6.so:${PORTSDIR}/graphics/ImageMagick \
+		libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick \
+		libpcre.so:${PORTSDIR}/devel/pcre
+GH_ACCOUNT+=	cubicdaiya:small_light
+GH_PROJECT+=	ngx_small_light:small_light
+GH_TAGNAME+=	v${NGINX_SMALL_LIGHT_VERSION}:small_light
+CONFIGURE_ARGS+=--add-module=${WRKSRC_small_light}
+.endif
+
 .if ${PORT_OPTIONS:MSRCACHE}
 NGINX_SRCACHE_VERSION=	0.29
 GH_ACCOUNT+=	openresty:srcache
@@ -902,6 +915,9 @@ pre-configure:
 	( cd ${WRKDIR}/modsecurity-${NGINX_MODSECURITY_VERSION} && \
 		CC="${CC}" ./${CONFIGURE_SCRIPT} --enable-standalone-module && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} )
+.endif
+.if ${PORT_OPTIONS:MSMALL_LIGHT}
+	( cd ${WRKSRC_small_light} && ./setup )
 .endif
 
 do-build:
