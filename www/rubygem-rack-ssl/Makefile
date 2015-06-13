@@ -3,6 +3,7 @@
 
 PORTNAME=	rack-ssl
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
@@ -12,8 +13,9 @@ COMMENT=	Rack middleware to force SSL/TLS
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-rack>=0:${PORTSDIR}/www/rubygem-rack
+RUN_DEPENDS=	rubygem-rack16>=0:${PORTSDIR}/www/rubygem-rack16
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
