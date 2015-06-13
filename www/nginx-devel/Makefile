@@ -83,6 +83,7 @@ OPTIONS_DEFINE=	\
 	HTTP_ZIP \
 	ARRAYVAR \
 	DRIZZLE \
+	DYNAMIC_UPSTREAM \
 	ENCRYPTSESSION \
 	FORMINPUT \
 	GRIDFS \
@@ -173,6 +174,7 @@ HTTP_UPSTREAM_STICKY_DESC=	3rd party upstream sticky module
 HTTP_ZIP_DESC=			3rd party http_zip module
 ARRAYVAR_DESC=			3rd party array_var module
 DRIZZLE_DESC=			3rd party drizzlie module
+DYNAMIC_UPSTREAM_DESC=		3rd party dynamic_upstream module
 ENCRYPTSESSION_DESC=		3rd party encrypted_session module
 FORMINPUT_DESC=			3rd party form_input module
 GRIDFS_DESC=			3rd party gridfs module
@@ -563,6 +565,14 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-openresty-drizzle-nginx-module-config \
 		${PATCHDIR}/extra-patch-ngx_http_drizzle_util.c
 .endif
 
+.if ${PORT_OPTIONS:MDYNAMIC_UPSTREAM}
+NGINX_DYNAMIC_UPSTREAM_VERSION=	0.1.0
+GH_ACCOUNT+=	cubicdaiya:dyn_upstream
+GH_PROJECT+=	ngx_dynamic_upstream:dyn_upstream
+GH_TAGNAME+=	v${NGINX_DYNAMIC_UPSTREAM_VERSION}:dyn_upstream
+CONFIGURE_ARGS+=--add-module=${WRKSRC_dyn_upstream}
+.endif
+
 .if ${PORT_OPTIONS:MARRAYVAR} || ${PORT_OPTIONS:MENCRYPTSESSION} || ${PORT_OPTIONS:MFORMINPUT} || ${PORT_OPTIONS:MICONV} || ${PORT_OPTIONS:MLUA} || ${PORT_OPTIONS:MSET_MISC}
 NGINX_DEVEL_KIT_VERSION=	0.2.19
 GH_ACCOUNT+=	simpl:devel_kit
@@ -902,6 +912,11 @@ post-patch:
 	@${REINPLACE_CMD} \
 		's!%%PREFIX%%!${LOCALBASE}!g' \
 		${WRKSRC_drizzle}/config
+.endif
+.if ${PORT_OPTIONS:MDYNAMIC_UPSTREAM}
+	@${REINPLACE_CMD} \
+		's!ngx_ngx_slab_alloc!ngx_slab_alloc!g' \
+		${WRKSRC_dyn_upstream}/src/ngx_inet_slab.c
 .endif
 # Respect CFLAGS by remove needless --std=c99 flag
 .if ${PORT_OPTIONS:MGRIDFS}
