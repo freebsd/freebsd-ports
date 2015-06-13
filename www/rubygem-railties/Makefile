@@ -20,6 +20,7 @@ RUN_DEPENDS=	rubygem-actionpack>=${PORTVERSION}:${PORTSDIR}/www/rubygem-actionpa
 
 CONFLICTS_INSTALL=	rubygem-railties4-[0-9]*
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
