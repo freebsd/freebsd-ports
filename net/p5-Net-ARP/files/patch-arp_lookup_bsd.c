@@ -1,6 +1,6 @@
---- arp_lookup_bsd.c.orig	2006-09-20 11:19:00.000000000 +0200
-+++ arp_lookup_bsd.c	2008-06-24 14:57:10.000000000 +0200
-@@ -18,6 +18,8 @@
+--- arp_lookup_bsd.c.orig	2009-05-23 11:11:58 UTC
++++ arp_lookup_bsd.c
+@@ -18,6 +18,8 @@ FOR A PARTICULAR PURPOSE. 
  See the GNU General Public License for more details. 
  */
  
