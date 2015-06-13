@@ -4,8 +4,8 @@
 # nls files not getting installed with nls=on. are they getting built?
 # sync port options with current software options
 
-PORTNAME=	avidemux26
-PORTVERSION=	${AVIDEMUX2_VERSION}
+PORTNAME=	avidemux
+PORTVERSION=	${AVIDEMUX_VERSION}
 CATEGORIES=	multimedia
 
 MAINTAINER=	multimedia@FreeBSD.org

@@ -1,16 +1,16 @@
 # $FreeBSD$
 
-PORTNAME=	avidemux26
-PORTVERSION=	${AVIDEMUX2_VERSION}
+PORTNAME=	avidemux
+PORTVERSION=	${AVIDEMUX_VERSION}
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	-qt4
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Simple GUI based video editor (QT4 UI)
 
-LIB_DEPENDS=	libADM6avutil.so.54:${PORTSDIR}/multimedia/avidemux26
+LIB_DEPENDS=	libADM6avutil.so.54:${PORTSDIR}/multimedia/avidemux
 
-MASTERDIR=	${.CURDIR}/../avidemux26
+MASTERDIR=	${.CURDIR}/../avidemux
 PLIST=		${.CURDIR}/pkg-plist
 
 .include "${MASTERDIR}/Makefile.common"
