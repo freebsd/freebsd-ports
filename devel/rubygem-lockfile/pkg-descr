@@ -1,8 +1,8 @@
-rlock creates NFS safe lockfiles. it can optionally run a program while
-holding the lock, ensuring lockfile removal on program exit. if a program
-is specified to be run rlock will spawn a background thread to kept the
-lockfile 'fresh' by touching it at a regular interval. in this way a lease
-is maintained on the lockfile and other processes attempting to obtain the
-lock can determine that it is in use.
+rlock creates NFS safe lockfiles. it can optionally run a program while holding
+the lock, ensuring lockfile removal on program exit. if a program is specified
+to be run rlock will spawn a background thread to kept the lockfile 'fresh' by
+touching it at a regular interval. in this way a lease is maintained on the
+lockfile and other processes attempting to obtain the lock can determine that it
+is in use.
 
 WWW: https://github.com/ahoward/lockfile
