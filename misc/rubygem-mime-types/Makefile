@@ -12,6 +12,7 @@ COMMENT=	Ruby gem which provides a mailcap-like MIME Content-Type lookup
 LICENSE=	ART20 GPLv2 GPLv3 MIT
 LICENSE_COMB=	dual
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
