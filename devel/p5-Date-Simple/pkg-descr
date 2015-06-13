@@ -1,13 +1,13 @@
 From Date::Simple(3) man page:
 
-Dates are complex enough without times and timezones.  This module may
-be used to create simple date objects.  It handles:
+Dates are complex enough without times and timezones. This module may be used to
+create simple date objects. It handles:
 
 Validation:
     Reject 1999-02-29 but accept 2000-02-29.
 Interval arithmetic:
-    How many days were between two given dates?  What date comes N days
-    after today?
+    How many days were between two given dates? What date comes N days after
+    today?
 Day-of-week calculation:
     What day of the week is a given date?
 
