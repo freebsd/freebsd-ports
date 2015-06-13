@@ -30,6 +30,8 @@ SHEBANG_LANG=	rackup
 rackup_OLD_CMD=	../../bin/rackup
 rackup_CMD=	${PREFIX}/bin/rackup
 
+PORTSCOUT=	limit:^1\.4
+
 PLIST_FILES=	bin/rackup
 
 .include <bsd.port.mk>
