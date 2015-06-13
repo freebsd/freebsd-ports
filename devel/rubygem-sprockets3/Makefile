@@ -15,6 +15,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-rack>=1.0:${PORTSDIR}/www/rubygem-rack
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
