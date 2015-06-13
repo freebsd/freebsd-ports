@@ -3,6 +3,7 @@
 
 PORTNAME=	sprockets
 PORTVERSION=	2.11.3
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	211
@@ -14,7 +15,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-hike>=1.2:${PORTSDIR}/devel/rubygem-hike \
 		rubygem-multi_json>=1.0:${PORTSDIR}/devel/rubygem-multi_json \
-		rubygem-rack>=1.0:${PORTSDIR}/www/rubygem-rack \
+		rubygem-rack16>=1.0:${PORTSDIR}/www/rubygem-rack16 \
 		rubygem-tilt1>=1.1:${PORTSDIR}/devel/rubygem-tilt1
 
 CONFLICTS_INSTALL=	rubygem-sprockets-[0-9]*
