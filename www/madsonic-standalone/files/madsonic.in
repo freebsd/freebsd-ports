@@ -51,18 +51,7 @@
 
 . /etc/rc.subr
 
-case $0 in
-/etc/rc*)
-	# during boot (shutdown) $0 is /etc/rc (/etc/rc.shutdown),
-	# so get the name of the script from $_file
-	name=$_file
-	;;
-*)
-	name=$0
-	;;
-esac
-
-name=${0##*/}
+name=madsonic
 rcvar=${name}_enable
 procname="%%JAVA%%"
 
