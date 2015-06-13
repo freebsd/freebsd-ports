@@ -74,6 +74,7 @@ OPTIONS_DEFINE=	\
 	HTTP_REDIS \
 	HTTP_RESPONSE \
 	HTTP_SUBS_FILTER \
+	HTTP_UPLOAD \
 	HTTP_UPLOAD_PROGRESS \
 	HTTP_UPSTREAM_FAIR \
 	HTTP_UPSTREAM_STICKY \
@@ -159,6 +160,7 @@ HTTP_PUSH_STREAM_DESC=		3rd party push stream module
 HTTP_REDIS_DESC=		3rd party http_redis module
 HTTP_RESPONSE_DESC=		3rd party http_response module
 HTTP_SUBS_FILTER_DESC=		3rd party subs filter module
+HTTP_UPLOAD_DESC=		3rd party upload module
 HTTP_UPLOAD_PROGRESS_DESC=	3rd party uploadprogress module
 HTTP_UPSTREAM_FAIR_DESC=	3rd party upstream fair module
 HTTP_UPSTREAM_STICKY_DESC=	3rd party upstream sticky module
@@ -486,6 +488,14 @@ CONFIGURE_ARGS+=--with-http_stub_status_module
 
 .if ${PORT_OPTIONS:MHTTP_SUB}
 CONFIGURE_ARGS+=--with-http_sub_module
+.endif
+
+.if ${PORT_OPTIONS:MHTTP_UPLOAD} 	 
+GIT_UPLOAD_VERSION= aba1e3f34c
+GH_ACCOUNT+=	vkholodkov:upload
+GH_PROJECT+=	nginx-upload-module:upload
+GH_TAGNAME+=	${GIT_UPLOAD_VERSION}:upload
+CONFIGURE_ARGS+=--add-module=${WRKSRC_upload}
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_UPLOAD_PROGRESS}
