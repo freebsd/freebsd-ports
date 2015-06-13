@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	RedisDB
-PORTVERSION=	2.36
-PORTREVISION=	1
+PORTVERSION=	2.43
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +13,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-RedisDB-Parser>=2.2:${PORTSDIR}/databases/p5-RedisDB-Parser \
+	p5-RedisDB-Parser>=2.21:${PORTSDIR}/databases/p5-RedisDB-Parser \
 	p5-Try-Tiny>0:${PORTSDIR}/lang/p5-Try-Tiny
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
