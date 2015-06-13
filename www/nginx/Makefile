@@ -55,6 +55,7 @@ OPTIONS_DEFINE=	\
 	SPDY \
 	THREADS \
 	WWW \
+	AJP \
 	CACHE_PURGE \
 	ECHO \
 	HEADERS_MORE \
@@ -143,6 +144,7 @@ MAIL_SSL_DESC=			Enable mail_ssl module
 SPDY_DESC=			Enable SPDY protocol support (SSL req.)
 THREADS_DESC=			Enable threads support
 WWW_DESC=			Enable html sample files
+AJP_DESC=			3rd party ajp module
 CACHE_PURGE_DESC=		3rd party cache_purge module
 ECHO_DESC=			3rd party echo module
 HEADERS_MORE_DESC=		3rd party headers_more module
@@ -331,6 +333,14 @@ CONFIGURE_ARGS+=--with-http_auth_request_module
 
 .if empty(PORT_OPTIONS:MHTTP_CACHE)
 CONFIGURE_ARGS+=--without-http-cache
+.endif
+
+.if ${PORT_OPTIONS:MAJP}
+NGINX_AJP_VERSION=	bf6cd93
+GH_ACCOUNT+=	yaoweibin:ajp
+GH_PROJECT+=	nginx_ajp_module:ajp
+GH_TAGNAME+=	${NGINX_AJP_VERSION}:ajp
+CONFIGURE_ARGS+=--add-module=${WRKSRC_ajp}
 .endif
 
 .if ${PORT_OPTIONS:MCACHE_PURGE}
