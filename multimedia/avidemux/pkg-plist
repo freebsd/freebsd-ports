@@ -1,8 +1,10 @@
+@mode 0755
 lib/libADM6avcodec.so.56
 lib/libADM6avformat.so.56
 lib/libADM6avutil.so.54
 lib/libADM6postproc.so.53
 lib/libADM6swscale.so.3
+@mode
 lib/libADM_core6.so
 lib/libADM_coreAudio6.so
 lib/libADM_coreImage6.so
