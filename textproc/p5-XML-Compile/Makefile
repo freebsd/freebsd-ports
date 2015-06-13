@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	XML-Compile
-PORTVERSION=	1.48
+PORTVERSION=	1.49
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,6 +19,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0.095:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-XML-Compile-Tester>=0.90:${PORTSDIR}/devel/p5-XML-Compile-Tester
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
