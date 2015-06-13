@@ -12,7 +12,7 @@ MASTER_SITES=	GH \
 PKGNAMESUFFIX?=	-sbruno
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		dtc-v1.4.0${EXTRACT_SUFX}:dtc
-DIST_SUBDIR=	qemu/${PORTVERSION}
+DIST_SUBDIR=	qemu/${PORTVERSION}b
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT?=	QEMU CPU Emulator - github bsd-user branch
@@ -20,7 +20,7 @@ COMMENT?=	QEMU CPU Emulator - github bsd-user branch
 USE_GITHUB=	yes
 GH_ACCOUNT=	seanbruno
 GH_PROJECT=	${PORTNAME}-bsd-user
-GH_TAGNAME=	3b9cd57
+GH_TAGNAME=	d715b14
 HAS_CONFIGURE=	yes
 USES=		gmake pkgconfig bison perl5 python:2,build
 USE_PERL5=	build
