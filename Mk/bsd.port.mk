@@ -2061,7 +2061,7 @@ ${lang}FLAGS+=	${${lang}FLAGS_${ARCH}}
 
 # Multiple make jobs support
 .if defined(DISABLE_MAKE_JOBS) || defined(MAKE_JOBS_UNSAFE)
-_MAKE_JOBS=		#
+_MAKE_JOBS?=		#
 MAKE_JOBS_NUMBER=	1
 .else
 .if defined(MAKE_JOBS_NUMBER)
