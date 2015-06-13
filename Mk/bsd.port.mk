@@ -3295,6 +3295,7 @@ do-patch:
 		*.Z|*.gz) ${GZCAT} $$i ;; \
 		*.bz2) ${BZCAT} $$i ;; \
 		*.xz) ${XZCAT} $$i ;; \
+		*.zip) ${UNZIP_NATIVE_CMD} -p $$i ;; \
 		*) ${CAT} $$i ;; \
 		esac | ${PATCH} ${PATCH_DIST_ARGS} `patch_dist_strip $$i` ; \
 	done )
@@ -3311,6 +3312,7 @@ do-patch:
 		*.Z|*.gz) ${GZCAT} $$patch_file ;; \
 		*.bz2) ${BZCAT} $$patch_file ;; \
 		*.xz) ${XZCAT} $$patch_file ;; \
+		*.zip) ${UNZIP_NATIVE_CMD} -p $$patch_file ;; \
 		*) ${CAT} $$patch_file ;; \
 		esac | ${PATCH} ${PATCH_ARGS} $$patch_strip ; \
 	done
