@@ -1,6 +1,6 @@
---- search.c.orig	Tue Nov  8 17:16:47 2005
-+++ search.c	Sat Jul 29 15:21:47 2006
-@@ -30,6 +30,18 @@
+--- search.c.orig	2008-11-07 15:50:57 UTC
++++ search.c
+@@ -30,6 +30,18 @@ static int searchA(char **string, int *s
    if (!ask_about_save_and_redisplay()) return FALSE;
    if (!displayMessageAndGetString(msg, last, tmp, tmp_size)) return FALSE;
  
