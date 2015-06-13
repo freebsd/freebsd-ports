@@ -406,6 +406,9 @@ MOZ_OPTIONS+=	--enable-strip --enable-install-strip
 # _MAKE_JOBS is only available after bsd.port.post.mk, thus cannot be
 # used in .mozconfig. And client.mk automatically uses -jN where N
 # is what multiprocessing.cpu_count() returns.
+.if defined(DISABLE_MAKE_JOBS) || defined(MAKE_JOBS_UNSAFE)
+MAKE_JOBS_NUMBER=	1
+.endif
 .if defined(MAKE_JOBS_NUMBER)
 MOZ_MAKE_FLAGS+=-j${MAKE_JOBS_NUMBER}
 .endif
