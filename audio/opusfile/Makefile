@@ -5,7 +5,7 @@ PORTVERSION=	0.6
 PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/opus/ \
-		${MASTER_SITE_MOZILLA_EXTENDED}
+		${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	opus
 
 MAINTAINER=	liangtai.s16@gmail.com

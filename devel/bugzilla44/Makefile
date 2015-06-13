@@ -3,7 +3,7 @@
 PORTNAME=	bugzilla
 PORTVERSION=	4.4.8
 CATEGORIES=	devel
-MASTER_SITES=	BUGZILLA
+MASTER_SITES=	MOZILLA
 MASTER_SITE_SUBDIR=	webtools webtools/archived
 
 MAINTAINER=	bz-ports@FreeBSD.org

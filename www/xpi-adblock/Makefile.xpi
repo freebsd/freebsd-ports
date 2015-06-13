@@ -58,8 +58,6 @@
 # xpi ports do not depend on their master applications. You can install an
 # extension before the app and run relink when the app is present.
 
-MASTER_SITE_MOZILLA_ADDONS=	http://addons.cdn.mozilla.net/user-media/%SUBDIR%/
-
 .ifndef MASTER_SITES
 MASTER_SITES?=	MOZILLA_ADDONS
 .ifdef XPI_NUM
