@@ -16,6 +16,7 @@ RUN_DEPENDS=	rubygem-actionpack4>=4.1.6:${PORTSDIR}/www/rubygem-actionpack4 \
 		rubygem-multi_json>=0:${PORTSDIR}/devel/rubygem-multi_json \
 		rubygem-request_store>=1.0.5:${PORTSDIR}/devel/rubygem-request_store
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
