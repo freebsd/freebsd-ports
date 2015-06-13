@@ -62,6 +62,7 @@ OPTIONS_DEFINE=	\
 	HTTP_ACCEPT_LANGUAGE \
 	HTTP_ACCESSKEY \
 	HTTP_AUTH_DIGEST \
+	HTTP_AUTH_KRB5 \
 	HTTP_AUTH_LDAP \
 	HTTP_AUTH_PAM \
 	HTTP_DAV_EXT \
@@ -150,6 +151,7 @@ HEADERS_MORE_DESC=		3rd party headers_more module
 HTTP_ACCEPT_LANGUAGE_DESC=	3rd party accept_language module
 HTTP_ACCESSKEY_DESC=		3rd party http_accesskey module
 HTTP_AUTH_DIGEST_DESC=		3rd party http_authdigest module
+HTTP_AUTH_KRB5_DESC=		3rd party http_auth_gss module
 HTTP_AUTH_LDAP_DESC=		3rd party http_auth_ldap module
 HTTP_AUTH_PAM_DESC=		3rd party http_auth_pam module
 HTTP_DAV_EXT_DESC=		3rd party webdav_ext module
@@ -294,6 +296,17 @@ GH_PROJECT+=	nginx-http-auth-digest:auth_digest
 GH_TAGNAME+=	${GIT_AUTH_DIGEST_VERSION}:auth_digest
 CONFIGURE_ARGS+=--add-module=${WRKSRC_auth_digest}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_auth_digest_module.c
+.endif
+
+.if ${PORT_OPTIONS:MHTTP_AUTH_KRB5}
+GIT_HTTP_AUTH_KRB5_VERSION=	29cb489
+GH_ACCOUNT+=	stnoonan:auth_krb5
+GH_PROJECT+=	spnego-http-auth-nginx-module:auth_krb5
+GH_TAGNAME+=	${GIT_HTTP_AUTH_KRB5_VERSION}:auth_krb5
+CONFIGURE_ARGS+=--add-module=${WRKSRC_auth_krb5}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-spnego-http-auth-nginx-module-config
+# TODO: Provide optional dependence on Kerberos implementations from ports
+USES+=	gssapi:base,flags
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_LDAP}
@@ -869,6 +882,11 @@ post-patch:
 	@${REINPLACE_CMD} 's!%%HTTP_PORT%%!${HTTP_PORT}!; \
 		s!%%PREFIX%%!${PREFIX}!' \
 		${WRKSRC}/conf/nginx.conf
+.if ${PORT_OPTIONS:MHTTP_AUTH_KRB5}
+	@${REINPLACE_CMD} \
+		's!%%GSSAPILIBS%%!${GSSAPILIBS}!' \
+		${WRKSRC_auth_krb5}/config
+.endif
 .if ${PORT_OPTIONS:MHTTP_ACCESSKEY}
 	@${REINPLACE_CMD} \
 		's!$$HTTP_ACCESSKEY_MODULE!ngx_http_accesskey_module!' \
