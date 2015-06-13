@@ -2,6 +2,7 @@
 
 PORTNAME=	grape
 PORTVERSION=	0.11.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +16,7 @@ RUN_DEPENDS=	rubygem-activesupport>=0:${PORTSDIR}/devel/rubygem-activesupport \
 		rubygem-hashie>=2.1.0:${PORTSDIR}/devel/rubygem-hashie \
 		rubygem-multi_json>=1.3.2:${PORTSDIR}/devel/rubygem-multi_json \
 		rubygem-multi_xml>=0.5.2:${PORTSDIR}/textproc/rubygem-multi_xml \
-		rubygem-rack>=1.3.0:${PORTSDIR}/www/rubygem-rack \
+		rubygem-rack16>=1.3.0:${PORTSDIR}/www/rubygem-rack16 \
 		rubygem-rack-accept>=0:${PORTSDIR}/www/rubygem-rack-accept \
 		rubygem-rack-mount>=0:${PORTSDIR}/www/rubygem-rack-mount\
 		rubygem-virtus>=1.0.0:${PORTSDIR}/devel/rubygem-virtus
