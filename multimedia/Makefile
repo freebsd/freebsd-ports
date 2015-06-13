@@ -15,8 +15,6 @@
     SUBDIR += audacious-plugins
     SUBDIR += audiopreview
     SUBDIR += avbin
-    SUBDIR += avidemux2
-    SUBDIR += avidemux2-plugins
     SUBDIR += avidemux26
     SUBDIR += avidemux26-cli
     SUBDIR += avidemux26-plugins
