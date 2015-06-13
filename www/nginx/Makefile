@@ -290,6 +290,7 @@ GH_ACCOUNT+=	samizdatco:auth_digest
 GH_PROJECT+=	nginx-http-auth-digest:auth_digest
 GH_TAGNAME+=	${GIT_AUTH_DIGEST_VERSION}:auth_digest
 CONFIGURE_ARGS+=--add-module=${WRKSRC_auth_digest}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_auth_digest_module.c
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_LDAP}
