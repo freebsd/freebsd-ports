@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Log-Handler
-PORTVERSION=	0.84
-PORTREVISION=	1
+PORTVERSION=	0.86
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,6 +18,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-Email-Date>=0:${PORTSDIR}/mail/p5-Email-Date
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
