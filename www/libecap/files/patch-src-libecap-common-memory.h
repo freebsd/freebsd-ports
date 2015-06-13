@@ -1,5 +1,5 @@
---- src/libecap/common/memory.h.orig	2010-05-26 01:27:41.000000000 +0400
-+++ src/libecap/common/memory.h	2014-09-12 15:06:36.000000000 +0400
+--- src/libecap/common/memory.h.orig	2014-10-02 04:05:24 UTC
++++ src/libecap/common/memory.h
 @@ -4,14 +4,23 @@
  #define LIBECAP__COMMON_MEMORY_H
  
