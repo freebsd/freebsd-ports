@@ -2,6 +2,7 @@
 
 PORTNAME=	omniauth
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ COMMENT=	Generalized Rack framework for multiple-provider authentication
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-hashie>=1.2:${PORTSDIR}/devel/rubygem-hashie \
-		rubygem-rack>=1.0:${PORTSDIR}/www/rubygem-rack
+		rubygem-rack16>=1.0:${PORTSDIR}/www/rubygem-rack16
 
 NO_ARCH=	yes
 USE_RUBY=	yes
