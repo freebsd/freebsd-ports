@@ -19,6 +19,7 @@ RUN_DEPENDS=	rubygem-bcrypt-ruby>=3.0:${PORTSDIR}/security/rubygem-bcrypt-ruby \
 		rubygem-stringex>=1.4:${PORTSDIR}/devel/rubygem-stringex \
 		rubygem-uuidtools>=2.1:${PORTSDIR}/devel/rubygem-uuidtools
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
