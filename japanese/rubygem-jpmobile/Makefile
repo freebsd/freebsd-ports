@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jpmobile
-PORTVERSION=	3.0.8
+PORTVERSION=	3.0.9
 CATEGORIES=	japanese www rubygems
 MASTER_SITES=	RG
 
@@ -31,16 +31,8 @@ OPTIONS_DEFAULT=	IPADDRESSES TERMINFO
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}rubygem-
 
-.if ${PORT_OPTIONS:MGEOKIT}
-RUN_DEPENDS+=	rubygem-geokit>=1.5.0:${PORTSDIR}/graphics/rubygem-geokit
-.endif
-
-.if ${PORT_OPTIONS:MIPADDRESSES}
-RUN_DEPENDS+=	ja-rubygem-jpmobile-ipaddresses>=0.0.1:${PORTSDIR}/japanese/rubygem-jpmobile-ipaddresses
-.endif
-
-.if ${PORT_OPTIONS:MTERMINFO}
-RUN_DEPENDS+=	ja-rubygem-jpmobile-terminfo>=0.0.2:${PORTSDIR}/japanese/rubygem-jpmobile-terminfo
-.endif
+GEOKIT_RUN_DEPENDS=	rubygem-geokit>=1.5.0:${PORTSDIR}/graphics/rubygem-geokit
+IPADDRESSES_RUN_DEPENDS=	ja-rubygem-jpmobile-ipaddresses>=0.0.1:${PORTSDIR}/japanese/rubygem-jpmobile-ipaddresses
+TERMINFO_RUN_DEPENDS=	ja-rubygem-jpmobile-terminfo>=0.0.2:${PORTSDIR}/japanese/rubygem-jpmobile-terminfo
 
 .include <bsd.port.post.mk>
