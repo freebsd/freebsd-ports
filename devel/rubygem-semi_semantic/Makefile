@@ -8,8 +8,11 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Library for parsing/formatting/comparing semi-semantic versions
 
+LICENSE=	APACHE20
+
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=yes
+RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
