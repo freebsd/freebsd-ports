@@ -13,8 +13,9 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-activesupport4>=4.2.1:${PORTSDIR}/devel/rubygem-activesupport4
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=yes
+RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
