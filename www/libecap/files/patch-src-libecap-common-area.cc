@@ -1,6 +1,6 @@
---- src/libecap/common/area.cc.orig	2010-12-17 21:08:50.000000000 +0300
-+++ src/libecap/common/area.cc	2014-09-12 15:11:20.000000000 +0400
-@@ -14,8 +14,8 @@
+--- src/libecap/common/area.cc.orig	2015-05-13 16:00:35 UTC
++++ src/libecap/common/area.cc
+@@ -14,8 +14,8 @@ const libecap::size_type libecap::nsize 
  
  
  libecap::Area libecap::Area::FromTempString(const std::string &tmp) {

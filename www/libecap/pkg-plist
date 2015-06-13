@@ -25,7 +25,3 @@ lib/libecap.so
 lib/libecap.so.3
 lib/libecap.so.3.0.0
 libdata/pkgconfig/libecap.pc
-@dirrm include/libecap/adapter
-@dirrm include/libecap/common
-@dirrm include/libecap/host
-@dirrm include/libecap
