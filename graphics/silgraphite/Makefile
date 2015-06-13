@@ -3,35 +3,25 @@
 
 PORTNAME=	silgraphite
 PORTVERSION=	2.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Font engine for complex non-Roman writing systems
 
 OPTIONS_DEFINE=	FREETYPE
-OPTIONS_DEFAULT=	FREETYPE
+OPTIONS_DEFAULT=FREETYPE
+OPTIONS_SUB=	yes
 
-USES=		libtool pkgconfig
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-xft --without-pangographite
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
+USES=		libtool pathfix pkgconfig
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MFREETYPE}
-LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2
-USES+=		iconv
-CONFIGURE_ARGS+=	--with-freetype
-PLIST_SUB+=	WITH_FREETYPE=""
-.else
-CONFIGURE_ARGS+=	--without-freetype
-PLIST_SUB+=	WITH_FREETYPE="@comment "
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|$${PREFIX}/libdata/pkgconfig|g' \
-		${WRKSRC}/engine/Makefile.in
+FREETYPE_CONFIGURE_WITH=freetype
+FREETYPE_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+FREETYPE_USES=		iconv
 
 .include <bsd.port.mk>
