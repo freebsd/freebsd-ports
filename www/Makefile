@@ -543,8 +543,8 @@
     SUBDIR += nginx-devel
     SUBDIR += nibbleblog
     SUBDIR += node
-    SUBDIR += node010
     SUBDIR += node-devel
+    SUBDIR += node010
     SUBDIR += nostromo
     SUBDIR += npapi-vlc
     SUBDIR += npapi-xine
@@ -1739,8 +1739,8 @@
     SUBDIR += py-webware-component
     SUBDIR += py-werkzeug
     SUBDIR += py-wikitools
-    SUBDIR += py-wsaccel
     SUBDIR += py-ws4py
+    SUBDIR += py-wsaccel
     SUBDIR += py-wsgiauth
     SUBDIR += py-wsgidav
     SUBDIR += py-zope.app.wsgi
@@ -1791,9 +1791,9 @@
     SUBDIR += rubygem-actionpack4
     SUBDIR += rubygem-activeresource
     SUBDIR += rubygem-activeresource4
-    SUBDIR += rubygem-acts_as_taggable
     SUBDIR += rubygem-acts-as-taggable-on
     SUBDIR += rubygem-acts-as-taggable-on3
+    SUBDIR += rubygem-acts_as_taggable
     SUBDIR += rubygem-addressable
     SUBDIR += rubygem-akami
     SUBDIR += rubygem-amazon-ecs
@@ -2161,9 +2161,9 @@
     SUBDIR += uzbl
     SUBDIR += validator
     SUBDIR += varnish
-    SUBDIR += varnish4
     SUBDIR += varnish-libvmod-header
     SUBDIR += varnish-nagios
+    SUBDIR += varnish4
     SUBDIR += vdr-plugin-live
     SUBDIR += vdradmin-am
     SUBDIR += vee

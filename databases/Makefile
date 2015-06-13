@@ -735,9 +735,9 @@
     SUBDIR += py-pgxnclient
     SUBDIR += py-pickledb
     SUBDIR += py-postgresql
+    SUBDIR += py-psycogreen
     SUBDIR += py-psycopg
     SUBDIR += py-psycopg2
-    SUBDIR += py-psycogreen
     SUBDIR += py-pyPgSQL
     SUBDIR += py-pyhs
     SUBDIR += py-pylibmc
@@ -855,9 +855,9 @@
     SUBDIR += rubygem-do_postgres
     SUBDIR += rubygem-do_sqlite3
     SUBDIR += rubygem-familia
+    SUBDIR += rubygem-globalid
     SUBDIR += rubygem-her
     SUBDIR += rubygem-hiredis
-    SUBDIR += rubygem-globalid
     SUBDIR += rubygem-jdbc-mysql
     SUBDIR += rubygem-leo_manager_client
     SUBDIR += rubygem-memcache
