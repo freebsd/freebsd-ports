@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-AVIDEMUX2_VERSION=	2.6.10
+AVIDEMUX_VERSION=	2.6.10
 MASTER_SITES=	\
 		SF/avidemux/avidemux/${PORTVERSION}
 DISTNAME=	avidemux_${PORTVERSION}
@@ -12,8 +12,6 @@ LIB_DEPENDS+=	libmad.so:${PORTSDIR}/audio/libmad \
 		libpng.so:${PORTSDIR}/graphics/png
 
 LICENSE=	GPLv2
-
-CONFLICTS=	avidemux2-*
 
 USE_GNOME=	libxml2
 USE_QT4=	# empty

@@ -15,10 +15,10 @@
     SUBDIR += audacious-plugins
     SUBDIR += audiopreview
     SUBDIR += avbin
-    SUBDIR += avidemux26
-    SUBDIR += avidemux26-cli
-    SUBDIR += avidemux26-plugins
-    SUBDIR += avidemux26-qt4
+    SUBDIR += avidemux
+    SUBDIR += avidemux-cli
+    SUBDIR += avidemux-plugins
+    SUBDIR += avidemux-qt4
     SUBDIR += avinfo
     SUBDIR += baka-mplayer
     SUBDIR += bangarang
