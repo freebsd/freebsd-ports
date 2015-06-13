@@ -3,6 +3,7 @@
 
 PORTNAME=	warden
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +12,9 @@ COMMENT=	Rack middleware that provides authentication for rack applications
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-rack>=1.0:${PORTSDIR}/www/rubygem-rack
+RUN_DEPENDS=	rubygem-rack16>=1.0:${PORTSDIR}/www/rubygem-rack16
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
