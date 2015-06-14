@@ -1,3 +1,4 @@
 %%SITE_PERL%%/HTML/ExtractContent.pm
 %%SITE_PERL%%/HTML/ExtractContent/Util.pm
 %%PERL5_MAN3%%/HTML::ExtractContent.3.gz
+%%PERL5_MAN3%%/HTML::ExtractContent::Util.3.gz
