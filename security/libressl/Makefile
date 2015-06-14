@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libressl
-PORTVERSION=	2.1.7
+PORTVERSION=	2.2.0
 CATEGORIES=	security devel
 MASTER_SITES=	OPENBSD/LibreSSL
 
