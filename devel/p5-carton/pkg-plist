@@ -4,6 +4,7 @@ man/man1/carton.1.gz
 %%PERL5_MAN3%%/Carton::Doc::Check.3.gz
 %%PERL5_MAN3%%/Carton::Doc::Exec.3.gz
 %%PERL5_MAN3%%/Carton::Doc::FAQ.3.gz
+%%PERL5_MAN3%%/Carton::Doc::Fatpack.3.gz
 %%PERL5_MAN3%%/Carton::Doc::Install.3.gz
 %%PERL5_MAN3%%/Carton::Doc::List.3.gz
 %%PERL5_MAN3%%/Carton::Doc::Show.3.gz
@@ -23,6 +24,7 @@ bin/carton
 %%SITE_PERL%%/Carton/Doc/Check.pod
 %%SITE_PERL%%/Carton/Doc/Exec.pod
 %%SITE_PERL%%/Carton/Doc/FAQ.pod
+%%SITE_PERL%%/Carton/Doc/Fatpack.pod
 %%SITE_PERL%%/Carton/Doc/Install.pod
 %%SITE_PERL%%/Carton/Doc/List.pod
 %%SITE_PERL%%/Carton/Doc/Show.pod
