@@ -17,6 +17,7 @@ RUN_DEPENDS=	rubygem-holidays>=1.0.3:${PORTSDIR}/devel/rubygem-holidays \
 		rubygem-open-uri-cached>=0:${PORTSDIR}/net/rubygem-open-uri-cached \
 		rubygem-prawn>=0:${PORTSDIR}/print/rubygem-prawn
 
+NO_ARCH=	yes
 USES=		shebangfix
 SHEBANG_FILES=	lib/ci/__buildscript.sh \
 		lib/ci/generate.sh \
