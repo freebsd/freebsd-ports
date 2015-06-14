@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Furl
-PORTVERSION=	3.05
-PORTREVISION=	1
+PORTVERSION=	3.07
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOKUHIROM
@@ -20,7 +19,7 @@ RUN_DEPENDS=	\
 	p5-Mozilla-CA>0:${PORTSDIR}/www/p5-Mozilla-CA
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
-		p5-Test-TCP>=0:${PORTSDIR}/devel/p5-Test-TCP \
+		p5-Test-TCP>=2.11:${PORTSDIR}/devel/p5-Test-TCP \
 		p5-Plack>0:${PORTSDIR}/www/p5-Plack \
 		p5-HTTP-Proxy>0:${PORTSDIR}/www/p5-HTTP-Proxy \
 		p5-Plack-Middleware-Deflater>0:${PORTSDIR}/www/p5-Plack-Middleware-Deflater \
