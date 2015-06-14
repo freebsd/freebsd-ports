@@ -3,11 +3,8 @@
 
 PORTNAME=	traingame
 PORTVERSION=	0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	SF/nemysisfreebsdp/${CATEGORIES}/:icons
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${PORTNAME}_icons${EXTRACT_SUFX}:icons
 
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Game about Trains
@@ -22,7 +19,7 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 USE_GITHUB=	yes
 GH_ACCOUNT=	nickg
 GH_PROJECT=	traingame
-GH_TAGNAME=	eacfbc3
+GH_TAGNAME=	cb6513e
 
 USES=		cmake compiler:c++11-lib dos2unix pkgconfig
 DOS2UNIX_GLOB=	*.mtl *.obj
@@ -37,23 +34,23 @@ PORTDOCS=	model_notes.txt models.gnuplot
 OPTIONS_DEFINE=	DOCS
 
 INSTALLS_ICONS=	yes
-ICON_SIZES=	32x32 48x48 64x64 72x72 96x96
+ICON_SIZES=	22x22 32x32 48x48 64x64 72x72 96x96 128x128 192x192
 
-SUB_FILES=	${PORTNAME} ${PORTNAME}-map pkg-message
+SUB_FILES=	${PORTNAME} pkg-message
 
 do-install:
-.for f in ${PORTNAME} ${PORTNAME}-map
-	${INSTALL_SCRIPT} ${WRKDIR}/${f} ${STAGEDIR}${PREFIX}/bin/
-.endfor
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}-map.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-map
+
 .for d in buildings engines fonts images layouts maps schemas trees waggons
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
 .endfor
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/TrainGame ${STAGEDIR}${DATADIR}/${PORTNAME}
-	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
 
 .for s in ${ICON_SIZES}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}_${s}.png \
+	${INSTALL_DATA} ${WRKSRC}/icons/${PORTNAME}_${s}.png \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/${PORTNAME}.png
 .endfor
 	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
