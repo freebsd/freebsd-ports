@@ -1,5 +1,5 @@
 bin/mp2bug
-%%APACHEETCDIR%%/modules.d/%%APMOD_FILE%%
+@sample %%APACHEETCDIR%%/modules.d/%%APMOD_FILE%%
 %%APACHEINCLUDEDIR%%/modperl_apr_perlio.h
 %%APACHEINCLUDEDIR%%/modperl_xs_sv_convert.h
 %%APACHEINCLUDEDIR%%/modperl_xs_typedefs.h
