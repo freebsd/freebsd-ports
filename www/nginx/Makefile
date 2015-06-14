@@ -57,6 +57,7 @@ OPTIONS_DEFINE=	\
 	WWW \
 	AJP \
 	CACHE_PURGE \
+	CLOJURE \
 	ECHO \
 	HEADERS_MORE \
 	HTTP_ACCEPT_LANGUAGE \
@@ -146,6 +147,7 @@ THREADS_DESC=			Enable threads support
 WWW_DESC=			Enable html sample files
 AJP_DESC=			3rd party ajp module
 CACHE_PURGE_DESC=		3rd party cache_purge module
+CLOJURE_DESC=			3rd party clojure module
 ECHO_DESC=			3rd party echo module
 HEADERS_MORE_DESC=		3rd party headers_more module
 HTTP_ACCEPT_LANGUAGE_DESC=	3rd party accept_language module
@@ -348,6 +350,21 @@ NGINX_CACHE_PURGE_VERSION=	2.3
 MASTER_SITES+=	http://labs.frickle.com/files/:cache_purge
 DISTFILES+=	ngx_cache_purge-${NGINX_CACHE_PURGE_VERSION}.tar.gz:cache_purge
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_cache_purge-${NGINX_CACHE_PURGE_VERSION}
+.endif
+
+.if ${PORT_OPTIONS:MCLOJURE}
+USE_JAVA=	yes
+JAVA_OS=	native
+JAVA_VERSION=	1.8
+JAVA_VENDOR=	openjdk
+JAVA_BUILD=	yes
+JAVA_RUN=	yes
+NGINX_CLOJURE_VERSION=	0.3.0
+GH_ACCOUNT+=	nginx-clojure:clojure
+GH_PROJECT+=	nginx-clojure:clojure
+GH_TAGNAME+=	v${NGINX_CLOJURE_VERSION}:clojure
+CONFIGURE_ARGS+=--add-module=${WRKSRC_clojure}/src/c
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-nginx-clojure-src-c-config
 .endif
 
 .if ${PORT_OPTIONS:MECHO}
@@ -903,6 +920,11 @@ post-patch:
 	@${REINPLACE_CMD} \
 		's!^inline!static inline!' \
 		${WRKDIR}/mod_zip-${NGINX_ZIP_VERSION}/ngx_http_zip_parsers.*
+.endif
+.if ${PORT_OPTIONS:MCLOJURE}
+	@${REINPLACE_CMD} \
+		's!%%JAVA_HOME%%!${JAVA_HOME}!g' \
+		${WRKSRC_clojure}/src/c/config
 .endif
 .if ${PORT_OPTIONS:MDRIZZLE}
 	@${REINPLACE_CMD} \
