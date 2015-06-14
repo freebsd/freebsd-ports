@@ -795,6 +795,7 @@
     SUBDIR += py-flask-httpauth
     SUBDIR += py-gnupg
     SUBDIR += py-gnutls
+    SUBDIR += py-gpsoauth
     SUBDIR += py-htpasswd
     SUBDIR += py-itsdangerous
     SUBDIR += py-kerberos
