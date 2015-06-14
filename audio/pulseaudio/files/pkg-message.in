@@ -9,10 +9,10 @@ To change the default sink (output):
 To change the default source (input):
 # pacmd set-default-source 3
 
-This can also be set in %%LOCALBASE%%/etc/pulse/default.pa
+This can also be set in %%PREFIX%%/etc/pulse/default.pa
 
 Replace the number '3' with the new default your want to set.
 
 
 The audio/freedesktop-sound-theme is needed if the default sound files
-are uncommented in the %%LOCALBASE%%/etc/pulse/default.pa file.
+are uncommented in the %%PREFIX%%/etc/pulse/default.pa file.
