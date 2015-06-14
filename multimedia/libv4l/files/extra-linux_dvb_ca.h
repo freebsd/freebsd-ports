@@ -1,6 +1,6 @@
---- dvb/ca.h.orig
-+++ dvb/ca.h
-@@ -80,9 +80,17 @@ typedef struct ca_pid {
+--- ../linux/dvb/ca.h.orig	2014-12-01 10:58:18.000000000 +0100
++++ ../linux/dvb/ca.h	2015-01-23 22:41:21.761540460 +0100
+@@ -80,9 +80,17 @@
  
  #define CA_RESET          _IO('o', 128)
  #define CA_GET_CAP        _IOR('o', 129, ca_caps_t)

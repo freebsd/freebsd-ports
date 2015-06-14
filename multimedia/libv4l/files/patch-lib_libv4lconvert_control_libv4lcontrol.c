@@ -1,6 +1,6 @@
---- libv4lconvert/control/libv4lcontrol.c.orig	2012-05-02 21:17:37.000000000 +0200
-+++ libv4lconvert/control/libv4lcontrol.c	2012-05-06 08:52:42.000000000 +0200
-@@ -345,6 +345,16 @@
+--- lib/libv4lconvert/control/libv4lcontrol.c.orig	2014-07-26 21:33:00.000000000 +0200
++++ lib/libv4lconvert/control/libv4lcontrol.c	2015-01-11 09:40:05.521158993 +0100
+@@ -361,6 +361,16 @@
  		unsigned short *vendor_id, unsigned short *product_id,
  		int *speed)
  {
@@ -17,7 +17,7 @@
  	FILE *f;
  	int i, minor;
  	struct stat st;
-@@ -434,6 +444,7 @@
+@@ -457,6 +467,7 @@
  		return 0; /* Should never happen */
  
  	return 1;
@@ -25,16 +25,3 @@
  }
  
  /*
-@@ -456,7 +456,12 @@
- 	while (isspace(*start)) start++;
- 	n = strlen(start);
- 	while (n > 0 && isspace(start[n-1])) --n;
-+#ifndef __FreeBSD__
- 	trimmed_dmi = strndupa(start, n);
-+#else
-+	trimmed_dmi = (char *)alloca(n + 1);
-+	strlcpy(trimmed_dmi, start, n + 1);
-+#endif
- 
- 	/* find trimmed value */
- 	for (entry_ptr = table_entries; *entry_ptr;  entry_ptr++) {

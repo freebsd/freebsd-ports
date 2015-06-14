@@ -1,0 +1,13 @@
+--- lib/Makefile.in.orig	2015-01-12 10:51:50.193906738 +0100
++++ lib/Makefile.in	2015-01-12 10:52:04.848018891 +0100
+@@ -77,8 +77,8 @@
+ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+-@LINUX_OS_TRUE@am__append_1 = \
+-@LINUX_OS_TRUE@	libdvbv5
++am__append_1 = \
++	libdvbv5
+ 
+ subdir = lib
+ DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am
