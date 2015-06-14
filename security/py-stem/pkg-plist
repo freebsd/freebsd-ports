@@ -1,8 +1,4 @@
 bin/tor-prompt
-%%PYTHON_SITELIBDIR%%/stem-1.4.0_dev-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/stem-1.4.0_dev-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/stem-1.4.0_dev-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/stem-1.4.0_dev-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/stem/__init__.py
 %%PYTHON_SITELIBDIR%%/stem/__init__.pyc
 %%PYTHON_SITELIBDIR%%/stem/__init__.pyo
