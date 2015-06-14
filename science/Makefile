@@ -149,6 +149,7 @@
     SUBDIR += py-pydicom
     SUBDIR += py-pysal
     SUBDIR += py-scikit-learn
+    SUBDIR += py-scikit-sparse
     SUBDIR += py-scimath
     SUBDIR += py-scipy
     SUBDIR += py-ws2300
