@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opencart
-PORTVERSION=	1.5.6.4
+PORTVERSION=	2.0.3.1
 CATEGORIES=	www misc
 
 MAINTAINER=	wen@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 USE_GITHUB=	yes
 GH_ACCOUNT=	opencart
 
-USE_PHP=	mysql gd session pcre
+USE_PHP=	mysqli curl mbstring gd zlib mcrypt session zip hash
 WRKSRC_SUBDIR=	upload
 
 NO_BUILD=	yes
@@ -21,33 +21,11 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
+post-patch:
+	${MV} ${WRKSRC}/config-dist.php ${WRKSRC}/config.php
+	${MV} ${WRKSRC}/admin/config-dist.php ${WRKSRC}/admin/config.php
+
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}' \
-		>> ${TMPPLIST}
-	@${CHMOD} -R 0755 ${STAGEDIR}${WWWDIR}/image/
-	@${ECHO_CMD} '@exec ${CHMOD} -R 0755 ${STAGEDIR}${WWWDIR}/image/' \
-		>> ${TMPPLIST}
-
-post-install:
-	@${CHMOD} -R 0755 ${STAGEDIR}${WWWDIR}/system/cache/
-	@${ECHO_CMD} '@exec ${CHMOD} -R 0755 ${STAGEDIR}${WWWDIR}/system/cache/' \
-		>> ${TMPPLIST}
-	@${CHMOD} -R 0755 ${STAGEDIR}${WWWDIR}/download/
-	@${ECHO_CMD} '@exec ${CHMOD} -R 0755 ${STAGEDIR}${WWWDIR}/download/' \
-		>> ${TMPPLIST}
-	@if [ ! -f ${STAGEDIR}${WWWDIR}/config.php ]; then \
-	        ${CP} -p ${STAGEDIR}${WWWDIR}/config-dist.php \
-		${STAGEDIR}${WWWDIR}/config.php; fi
-	@${CHMOD} 0755 ${STAGEDIR}${WWWDIR}/config.php
-	@${ECHO_CMD} '@exec ${CHMOD} 0755 ${STAGEDIR}${WWWDIR}/config.php' \
-		>> ${TMPPLIST}
-	@if [ ! -f ${STAGEDIR}${WWWDIR}/admin/config.php ]; then \
-	        ${CP} -p ${STAGEDIR}${WWWDIR}/admin/config-dist.php \
-		${STAGEDIR}${WWWDIR}/admin/config.php; fi
-	@${CHMOD} 0755 ${STAGEDIR}${WWWDIR}/admin/config.php
-	@${ECHO_CMD} '@exec ${CHMOD} 0755 ${STAGEDIR}${WWWDIR}/admin/config.php' \
-		>> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
