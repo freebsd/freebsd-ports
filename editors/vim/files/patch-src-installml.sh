@@ -1,6 +1,8 @@
---- src/installml.sh.orig	Sun Apr 30 08:48:53 2006
-+++ src/installml.sh	Mon Jun 19 03:36:37 2006
-@@ -55,12 +55,12 @@ if test $what = "install" -a \( -f $dest
+--- src/installml.sh.orig	2015-05-14 03:56:21 UTC
++++ src/installml.sh
+@@ -53,16 +53,16 @@ if test $what = "install" -a \( -f $dest
+    fi
+ 
     # ex
 -   if test ! -f $destdir/$exname.1 -a -f $destdir/$vimname.1; then
 -      echo creating link $destdir/$exname.1
@@ -21,7 +23,11 @@
 +   #   cd $destdir; ln -s $vimname.1 $viewname.1
 +   #fi
  
-@@ -121,10 +121,10 @@ if test $what = "uninstall"; then
+    # rvim
+    if test ! -f $destdir/$rvimname.1 -a -f $destdir/$vimname.1; then
+@@ -119,14 +119,14 @@ fi
+ if test $what = "uninstall"; then
+    echo Checking for Vim manual page links in $destdir...
  
 -   if test -L $destdir/$exname.1; then
 -      echo deleting $destdir/$exname.1
@@ -40,3 +46,5 @@
 +   #   rm -f $destdir/$viewname.1
 +   #fi
     if test -L $destdir/$rvimname.1; then
+       echo deleting $destdir/$rvimname.1
+       rm -f $destdir/$rvimname.1
