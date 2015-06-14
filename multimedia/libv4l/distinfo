@@ -1,2 +1,4 @@
-SHA256 (v4l-utils-0.8.8.tar.bz2) = 5fa4c6f4b6f5410de57271a03cc9a15f15195ef3fc05a8e42ecf507d6d70a87f
-SIZE (v4l-utils-0.8.8.tar.bz2) = 420888
+SHA256 (v4l-utils-1.6.3.tar.bz2) = 164abf5c1befcd27e8e6ef824a82d4015bdfb5d99ae82daa00e77d895ff9864c
+SIZE (v4l-utils-1.6.3.tar.bz2) = 1151081
+SHA256 (linux-3.16.7-dvb-headers.tar.xz) = 0ee217b243d52b8104e6b61bbf009bf84155573317720f41930af0a9ef50cdaa
+SIZE (linux-3.16.7-dvb-headers.tar.xz) = 11712
