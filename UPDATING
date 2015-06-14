@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150614:
+  AFFECTS: users of audio/libmusicbrainz5
+  AUTHOR: jhale@FreeBSD.org
+
+  libmusicbrainz5 has been updated to 5.1.0.  Please rebuild all ports that
+  depend on it.  PORTREVISIONS have been bumped on dependent ports.
+
+  If you use portmaster:
+        portmaster -w -r libmusicbrainz5
+  If you use portupgrade:
+        portupgrade -fr audio/libmusicbrainz5
+
 20150613:
   AFFECTS: users of multimedia/avidemux26-*
   AUTHOR: riggs@FreeBSD.org
