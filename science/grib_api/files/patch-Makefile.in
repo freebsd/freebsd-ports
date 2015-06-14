@@ -1,6 +1,6 @@
---- Makefile.in.orig	2014-07-07 19:30:11.000000000 +0800
-+++ Makefile.in	2014-08-26 23:53:36.193299212 +0800
-@@ -750,7 +750,7 @@
+--- Makefile.in.orig	2014-07-07 11:30:11 UTC
++++ Makefile.in
+@@ -754,7 +754,7 @@ distclean-libtool:
  	-rm -f libtool config.lt
  install-pkgconfigDATA: $(pkgconfig_DATA)
  	@$(NORMAL_INSTALL)
