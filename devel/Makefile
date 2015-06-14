@@ -3811,6 +3811,7 @@
     SUBDIR += py-colorama
     SUBDIR += py-colorlog
     SUBDIR += py-conditional
+    SUBDIR += py-configargparse
     SUBDIR += py-configobj
     SUBDIR += py-configparser
     SUBDIR += py-construct
