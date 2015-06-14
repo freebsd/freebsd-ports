@@ -4056,6 +4056,7 @@
     SUBDIR += py-pytest-xdist
     SUBDIR += py-python-jenkins
     SUBDIR += py-python-statsd
+    SUBDIR += py-python2-pythondialog
     SUBDIR += py-pythonbrew
     SUBDIR += py-pytrie
     SUBDIR += py-pytz
