@@ -3,20 +3,27 @@
 
 PORTNAME=	pydot
 PORTVERSION=	1.0.28
-#PORTREVISION=	0
 CATEGORIES=	graphics python
-MASTER_SITES=	GOOGLE_CODE
-PROJECTHOST=	${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python interface to the Graphviz Dot language
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pyparsing.py:${PORTSDIR}/devel/py-parsing
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyparsing.py:${PORTSDIR}/devel/py-parsing \
+LICENSE=	MIT
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}parsing>=0:${PORTSDIR}/devel/py-parsing
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}parsing>=0:${PORTSDIR}/devel/py-parsing \
 		dot:${PORTSDIR}/graphics/graphviz
 
+NO_ARCH=	yes
+USE_PYTHON=	autoplist distutils
 USES=		python
-USE_PYTHON=	distutils autoplist
+
+GH_ACCOUNT=	erocarrera
+GH_TAGNAME=	ec21a11
+USE_GITHUB=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|__version__ = .*|__version__ = '${PORTVERSION}'|" ${WRKSRC}/pydot.py
 
 .include <bsd.port.mk>
