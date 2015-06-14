@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Params-Validate
-PORTVERSION=	1.18
+PORTVERSION=	1.19
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,5 +21,10 @@ TEST_DEPENDS=	p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly \
 
 USES=		perl5
 USE_PERL5=	modbuild
+
+post-install:
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Params/Validate/XS/XS.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Params/Validate/XS/XS.so
+	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Params/Validate/XS/XS.so
 
 .include <bsd.port.mk>

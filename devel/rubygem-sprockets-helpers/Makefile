@@ -9,8 +9,11 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Asset path helpers for Sprockets 2.x applications
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-sprockets>=2.0:${PORTSDIR}/devel/rubygem-sprockets
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

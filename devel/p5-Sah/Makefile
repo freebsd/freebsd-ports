@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Sah
-PORTVERSION=	0.9.36
+PORTVERSION=	0.9.37
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PERLANCAR
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	p5-DefHash>=1.0.6:${PORTSDIR}/devel/p5-DefHash \
 		p5-File-ShareDir-Install>=0.06:${PORTSDIR}/devel/p5-File-ShareDir-Install
 RUN_DEPENDS=	p5-DefHash>=1.0.6:${PORTSDIR}/devel/p5-DefHash
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

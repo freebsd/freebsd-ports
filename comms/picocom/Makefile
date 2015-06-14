@@ -6,7 +6,7 @@ PORTVERSION=	1.7
 CATEGORIES=	comms
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dumb Terminal Emulator
 
 ALL_TARGET=	picocom

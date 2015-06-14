@@ -17,6 +17,7 @@ RUN_DEPENDS=	rubygem-gibbler>=0.8.6:${PORTSDIR}/devel/rubygem-gibbler \
 		rubygem-storable>=0.8.6:${PORTSDIR}/devel/rubygem-storable \
 		rubygem-uri-redis>=0.4.2:${PORTSDIR}/net/rubygem-uri-redis
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

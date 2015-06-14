@@ -8,7 +8,7 @@ CATEGORIES=	x11-fm
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/ \
 		http://mirror.4bit.ws/
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk+ based, file manager inspired by DirectoryOpus
 
 OPTIONS_DEFINE=	FAM DOCS

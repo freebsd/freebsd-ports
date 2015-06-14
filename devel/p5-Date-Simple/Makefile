@@ -1,17 +1,25 @@
 # Created by: Alexey V. Antipovsky <kemm@in-line.ru>
 # $FreeBSD$
 
-PORTNAME=		Date-Simple
-PORTVERSION=		3.03
-PORTREVISION=	1
-CATEGORIES=		devel perl5
-MASTER_SITES=		CPAN
-PKGNAMEPREFIX=		p5-
+PORTNAME=	Date-Simple
+PORTVERSION=	3.03
+PORTREVISION=	2
+CATEGORIES=	devel perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
 
-MAINTAINER=		dhn@FreeBSD.org
-COMMENT=		Simple date object
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Simple date object
 
-USES=		perl5
+LICENSE=	ART10 GPLv2 GPLv3
+LICENSE_COMB=	dual
+
 USE_PERL5=	configure
+USES=		perl5
+
+post-install:
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Date/Simple/Simple.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Date/Simple/Simple.so
+	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Date/Simple/Simple.so
 
 .include <bsd.port.mk>

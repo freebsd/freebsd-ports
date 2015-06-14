@@ -3,6 +3,7 @@
 
 PORTNAME=	pure-ftpd
 PORTVERSION=	1.0.39
+PORTREVISION=	1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://download.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \

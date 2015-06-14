@@ -1,8 +1,0 @@
-A video editor that allows editing of AVI, OGM, and MPEG videos. The MPEG
-support provides the ability to convert to DVD compliat PS streams. It
-contains various filters for deinterlacing, cropping, resizing, etc. Allows
-for cutting without re-encoding. Has the ability to re-encode and re-sample.
-Utilizes ECMAScript (aka. Javascript) to provide batch scripting and
-processing support.
-
-WWW: http://avidemux.org/

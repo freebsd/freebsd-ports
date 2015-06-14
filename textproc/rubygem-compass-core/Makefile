@@ -14,6 +14,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-multi_json>=1.0:${PORTSDIR}/devel/rubygem-multi_json \
 		rubygem-sass>=3.3.0:${PORTSDIR}/textproc/rubygem-sass
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

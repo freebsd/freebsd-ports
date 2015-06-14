@@ -3,6 +3,7 @@
 
 PORTNAME=	hdf5
 PORTVERSION=	1.8.15
+DISTVERSIONSUFFIX=	-patch1
 PORTREVISION=	1
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	http://www.hdfgroup.org/ftp/HDF5/current/src/ \
@@ -10,7 +11,6 @@ MASTER_SITES=	http://www.hdfgroup.org/ftp/HDF5/current/src/ \
 		http://www.hdfgroup.org/ftp/HDF5/releases/${DISTNAME}/src/ \
 		ftp://ftp.hdfgroup.org/HDF5/releases/${DISTNAME}/src/ \
 		LOCAL/sunpoet
-DISTNAME=	${PORTNAME}-${PORTVERSION}-patch1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Hierarchical Data Format library (from NCSA)
@@ -18,6 +18,8 @@ COMMENT=	Hierarchical Data Format library (from NCSA)
 LICENSE=	BSD4CLAUSE
 
 CONFLICTS_INSTALL=	hdf-4.[0-9]* hdf5-1.6.[0-9]*
+
+PORTSCOUT=	skipv:1.8.15-patch1
 
 OPTIONS_DEFINE=	DEBUG EXAMPLES FORTRAN SZIP
 OPTIONS_DEFAULT=SZIP

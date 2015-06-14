@@ -1,7 +1,7 @@
 # Created by: Valerio Daelli <valerio.daelli@gmail.com>
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	0
 COMMENT=	The client port of ossec-hids
 
 CLIENT_ONLY=	yes

@@ -14,6 +14,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-activesupport4>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport4 \
 		rubygem-multi_json>=1.2:${PORTSDIR}/devel/rubygem-multi_json
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

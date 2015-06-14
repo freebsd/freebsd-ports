@@ -14,6 +14,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-gems>=0.8.0:${PORTSDIR}/devel/rubygem-gems \
 		rubygem-lita>=2.6:${PORTSDIR}/net-im/rubygem-lita
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

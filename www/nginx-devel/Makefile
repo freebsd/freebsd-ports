@@ -56,12 +56,14 @@ OPTIONS_DEFINE=	\
 	STREAM_SSL \
 	THREADS \
 	WWW \
+	AJP \
 	CACHE_PURGE \
 	ECHO \
 	HEADERS_MORE \
 	HTTP_ACCEPT_LANGUAGE \
 	HTTP_ACCESSKEY \
 	HTTP_AUTH_DIGEST \
+	HTTP_AUTH_KRB5 \
 	HTTP_AUTH_LDAP \
 	HTTP_AUTH_PAM \
 	HTTP_DAV_EXT \
@@ -75,12 +77,14 @@ OPTIONS_DEFINE=	\
 	HTTP_REDIS \
 	HTTP_RESPONSE \
 	HTTP_SUBS_FILTER \
+	HTTP_UPLOAD \
 	HTTP_UPLOAD_PROGRESS \
 	HTTP_UPSTREAM_FAIR \
 	HTTP_UPSTREAM_STICKY \
 	HTTP_ZIP \
 	ARRAYVAR \
 	DRIZZLE \
+	DYNAMIC_UPSTREAM \
 	ENCRYPTSESSION \
 	FORMINPUT \
 	GRIDFS \
@@ -99,7 +103,9 @@ OPTIONS_DEFINE=	\
 	SET_MISC \
 	SFLOW \
 	SLOWFS_CACHE \
+	SMALL_LIGHT \
 	SRCACHE \
+	STATSD \
 	UDPLOG \
 	XRID_HEADER \
 	XSS \
@@ -142,12 +148,14 @@ STREAM_DESC=			Enable stream module
 STREAM_SSL_DESC=		Enable stream_ssl module (SSL req.)
 THREADS_DESC=			Enable threads support
 WWW_DESC=			Enable html sample files
+AJP_DESC=			3rd party ajp module
 CACHE_PURGE_DESC=		3rd party cache_purge module
 ECHO_DESC=			3rd party echo module
 HEADERS_MORE_DESC=		3rd party headers_more module
 HTTP_ACCEPT_LANGUAGE_DESC=	3rd party accept_language module
 HTTP_ACCESSKEY_DESC=		3rd party http_accesskey module
 HTTP_AUTH_DIGEST_DESC=		3rd party http_authdigest module
+HTTP_AUTH_KRB5_DESC=		3rd party http_auth_gss module
 HTTP_AUTH_LDAP_DESC=		3rd party http_auth_ldap module
 HTTP_AUTH_PAM_DESC=		3rd party http_auth_pam module
 HTTP_DAV_EXT_DESC=		3rd party webdav_ext module
@@ -162,12 +170,14 @@ HTTP_PUSH_STREAM_DESC=		3rd party push stream module
 HTTP_REDIS_DESC=		3rd party http_redis module
 HTTP_RESPONSE_DESC=		3rd party http_response module
 HTTP_SUBS_FILTER_DESC=		3rd party subs filter module
+HTTP_UPLOAD_DESC=		3rd party upload module
 HTTP_UPLOAD_PROGRESS_DESC=	3rd party uploadprogress module
 HTTP_UPSTREAM_FAIR_DESC=	3rd party upstream fair module
 HTTP_UPSTREAM_STICKY_DESC=	3rd party upstream sticky module
 HTTP_ZIP_DESC=			3rd party http_zip module
 ARRAYVAR_DESC=			3rd party array_var module
 DRIZZLE_DESC=			3rd party drizzlie module
+DYNAMIC_UPSTREAM_DESC=		3rd party dynamic_upstream module
 ENCRYPTSESSION_DESC=		3rd party encrypted_session module
 FORMINPUT_DESC=			3rd party form_input module
 GRIDFS_DESC=			3rd party gridfs module
@@ -186,7 +196,9 @@ RTMP_DESC=			3rd party rtmp module
 SET_MISC_DESC=			3rd party set_misc module
 SFLOW_DESC=			3rd party sflow module
 SLOWFS_CACHE_DESC=		3rd party slowfs_cache module
+SMALL_LIGHT_DESC=		3rd party small_light module
 SRCACHE_DESC=			3rd party srcache module
+STATSD_DESC=			3rd party statsd module
 UDPLOG_DESC=			3rd party udplog (syslog) module
 XRID_HEADER_DESC=		3rd party x-rid header module
 XSS_DESC=			3rd party xss module
@@ -289,6 +301,18 @@ GH_ACCOUNT+=	samizdatco:auth_digest
 GH_PROJECT+=	nginx-http-auth-digest:auth_digest
 GH_TAGNAME+=	${GIT_AUTH_DIGEST_VERSION}:auth_digest
 CONFIGURE_ARGS+=--add-module=${WRKSRC_auth_digest}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_auth_digest_module.c
+.endif
+
+.if ${PORT_OPTIONS:MHTTP_AUTH_KRB5}
+GIT_HTTP_AUTH_KRB5_VERSION=	29cb489
+GH_ACCOUNT+=	stnoonan:auth_krb5
+GH_PROJECT+=	spnego-http-auth-nginx-module:auth_krb5
+GH_TAGNAME+=	${GIT_HTTP_AUTH_KRB5_VERSION}:auth_krb5
+CONFIGURE_ARGS+=--add-module=${WRKSRC_auth_krb5}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-spnego-http-auth-nginx-module-config
+# TODO: Provide optional dependence on Kerberos implementations from ports
+USES+=	gssapi:base,flags
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_LDAP}
@@ -314,6 +338,14 @@ CONFIGURE_ARGS+=--with-http_auth_request_module
 
 .if empty(PORT_OPTIONS:MHTTP_CACHE)
 CONFIGURE_ARGS+=--without-http-cache
+.endif
+
+.if ${PORT_OPTIONS:MAJP}
+NGINX_AJP_VERSION=	bf6cd93
+GH_ACCOUNT+=	yaoweibin:ajp
+GH_PROJECT+=	nginx_ajp_module:ajp
+GH_TAGNAME+=	${NGINX_AJP_VERSION}:ajp
+CONFIGURE_ARGS+=--add-module=${WRKSRC_ajp}
 .endif
 
 .if ${PORT_OPTIONS:MCACHE_PURGE}
@@ -491,6 +523,14 @@ CONFIGURE_ARGS+=--with-http_stub_status_module
 CONFIGURE_ARGS+=--with-http_sub_module
 .endif
 
+.if ${PORT_OPTIONS:MHTTP_UPLOAD} 	 
+GIT_UPLOAD_VERSION= aba1e3f34c
+GH_ACCOUNT+=	vkholodkov:upload
+GH_PROJECT+=	nginx-upload-module:upload
+GH_TAGNAME+=	${GIT_UPLOAD_VERSION}:upload
+CONFIGURE_ARGS+=--add-module=${WRKSRC_upload}
+.endif
+
 .if ${PORT_OPTIONS:MHTTP_UPLOAD_PROGRESS}
 NGINX_UPLOADPROGRESS_VERSION=	0.9.0
 GH_ACCOUNT+=	masterzen:uploadprogress
@@ -535,6 +575,14 @@ GH_TAGNAME+=	v${NGINX_DRIZZLE_VERSION}:drizzle
 CONFIGURE_ARGS+=--add-module=${WRKSRC_drizzle}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-openresty-drizzle-nginx-module-config \
 		${PATCHDIR}/extra-patch-ngx_http_drizzle_util.c
+.endif
+
+.if ${PORT_OPTIONS:MDYNAMIC_UPSTREAM}
+NGINX_DYNAMIC_UPSTREAM_VERSION=	0.1.0
+GH_ACCOUNT+=	cubicdaiya:dyn_upstream
+GH_PROJECT+=	ngx_dynamic_upstream:dyn_upstream
+GH_TAGNAME+=	v${NGINX_DYNAMIC_UPSTREAM_VERSION}:dyn_upstream
+CONFIGURE_ARGS+=--add-module=${WRKSRC_dyn_upstream}
 .endif
 
 .if ${PORT_OPTIONS:MARRAYVAR} || ${PORT_OPTIONS:MENCRYPTSESSION} || ${PORT_OPTIONS:MFORMINPUT} || ${PORT_OPTIONS:MICONV} || ${PORT_OPTIONS:MLUA} || ${PORT_OPTIONS:MSET_MISC}
@@ -701,12 +749,31 @@ DISTFILES+=	ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_VERSION}.tar.gz:slowfs_cache
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_VERSION}
 .endif
 
+.if ${PORT_OPTIONS:MSMALL_LIGHT}
+NGINX_SMALL_LIGHT_VERSION=	0.6.9
+LIB_DEPENDS+=	libMagickCore-6.so:${PORTSDIR}/graphics/ImageMagick \
+		libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick \
+		libpcre.so:${PORTSDIR}/devel/pcre
+GH_ACCOUNT+=	cubicdaiya:small_light
+GH_PROJECT+=	ngx_small_light:small_light
+GH_TAGNAME+=	v${NGINX_SMALL_LIGHT_VERSION}:small_light
+CONFIGURE_ARGS+=--add-module=${WRKSRC_small_light}
+.endif
+
 .if ${PORT_OPTIONS:MSRCACHE}
 NGINX_SRCACHE_VERSION=	0.29
 GH_ACCOUNT+=	openresty:srcache
 GH_PROJECT+=	srcache-nginx-module:srcache
 GH_TAGNAME+=	v${NGINX_SRCACHE_VERSION}:srcache
 CONFIGURE_ARGS+=--add-module=${WRKSRC_srcache}
+.endif
+
+.if ${PORT_OPTIONS:MSTATSD}
+NGINX_STATSD_VERSION=	b756a12
+GH_ACCOUNT+=	zebrafishlabs:statsd
+GH_PROJECT+=	nginx-statsd:statsd
+GH_TAGNAME+=	${NGINX_STATSD_VERSION}:statsd
+CONFIGURE_ARGS+=--add-module=${WRKSRC_statsd}
 .endif
 
 .if ${PORT_OPTIONS:MUDPLOG}
@@ -845,6 +912,11 @@ post-patch:
 	@${REINPLACE_CMD} 's!%%HTTP_PORT%%!${HTTP_PORT}!; \
 		s!%%PREFIX%%!${PREFIX}!' \
 		${WRKSRC}/conf/nginx.conf
+.if ${PORT_OPTIONS:MHTTP_AUTH_KRB5}
+	@${REINPLACE_CMD} \
+		's!%%GSSAPILIBS%%!${GSSAPILIBS}!' \
+		${WRKSRC_auth_krb5}/config
+.endif
 .if ${PORT_OPTIONS:MHTTP_ACCESSKEY}
 	@${REINPLACE_CMD} \
 		's!$$HTTP_ACCESSKEY_MODULE!ngx_http_accesskey_module!' \
@@ -860,6 +932,11 @@ post-patch:
 	@${REINPLACE_CMD} \
 		's!%%PREFIX%%!${LOCALBASE}!g' \
 		${WRKSRC_drizzle}/config
+.endif
+.if ${PORT_OPTIONS:MDYNAMIC_UPSTREAM}
+	@${REINPLACE_CMD} \
+		's!ngx_ngx_slab_alloc!ngx_slab_alloc!g' \
+		${WRKSRC_dyn_upstream}/src/ngx_inet_slab.c
 .endif
 # Respect CFLAGS by remove needless --std=c99 flag
 .if ${PORT_OPTIONS:MGRIDFS}
@@ -911,6 +988,9 @@ pre-configure:
 	( cd ${WRKDIR}/modsecurity-${NGINX_MODSECURITY_VERSION} && \
 		CC="${CC}" ./${CONFIGURE_SCRIPT} --enable-standalone-module && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} )
+.endif
+.if ${PORT_OPTIONS:MSMALL_LIGHT}
+	( cd ${WRKSRC_small_light} && ./setup )
 .endif
 
 do-build:

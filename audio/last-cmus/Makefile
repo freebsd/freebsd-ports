@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-cmus
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}.py
 EXTRACT_SUFX=	# none
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cmus plugin for submitting songs into last.fm
 
 USES=		python

@@ -1,4 +1,4 @@
 Retrieve the binding of a method's caller. Can also retrieve bindings even
 further up the stack.
 
-WWW: http://github.com/banister/binding_of_caller
+WWW: https://github.com/banister/binding_of_caller

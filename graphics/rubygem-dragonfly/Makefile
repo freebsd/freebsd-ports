@@ -15,6 +15,7 @@ RUN_DEPENDS=	rubygem-addressable>=2.3:${PORTSDIR}/www/rubygem-addressable \
 		rubygem-multi_json>=1.0:${PORTSDIR}/devel/rubygem-multi_json \
 		rubygem-rack15>=1.3.0:${PORTSDIR}/www/rubygem-rack15
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

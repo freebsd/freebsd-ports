@@ -9,7 +9,7 @@ MASTER_SITES=	http://vitunes.org/files/ \
 		http://mirror.4bit.ws/ \
 		LOCAL/dhn
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses-based media player with vim-like keybinds
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer

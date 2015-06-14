@@ -57,8 +57,8 @@
     SUBDIR += hugo
     SUBDIR += hyperv-is
     SUBDIR += i386-wine
-    SUBDIR += i386-wine-staging
     SUBDIR += i386-wine-devel
+    SUBDIR += i386-wine-staging
     SUBDIR += ia64sim
     SUBDIR += ines
     SUBDIR += javatari
@@ -155,12 +155,12 @@
     SUBDIR += vmw
     SUBDIR += vxtools
     SUBDIR += wine
-    SUBDIR += wine-staging
     SUBDIR += wine-devel
     SUBDIR += wine-gecko
     SUBDIR += wine-gecko-devel
     SUBDIR += wine-mono
     SUBDIR += wine-mono-devel
+    SUBDIR += wine-staging
     SUBDIR += wxmupen64plus
     SUBDIR += x48
     SUBDIR += x49gp

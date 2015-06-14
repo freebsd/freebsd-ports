@@ -1,10 +1,9 @@
 Graphite is a project under development within SIL'ss Non-Roman Script
-Initiative and Language Software Development groups to provide
-rendering capabilities for complex non-Roman writing systems.  The
-original goal was a system for the Windows platform; the system has
-also been ported to Linux.  Graphite can be used to create "smart
-fonts" capable of displaying writing systems with various complex
-behaviors.  With respect to the Text Encoding Model, Graphite handles
-the "Rendering" aspect of writing system implementation.
+Initiative and Language Software Development groups to provide rendering
+capabilities for complex non-Roman writing systems.  The original goal was a
+system for the Windows platform; the system has also been ported to Linux.
+Graphite can be used to create "smart fonts" capable of displaying writing
+systems with various complex behaviors.  With respect to the Text Encoding
+Model, Graphite handles the "Rendering" aspect of writing system implementation.
 
 WWW: http://silgraphite.sourceforge.net/

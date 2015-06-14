@@ -3,6 +3,7 @@
 
 PORTNAME=	async_sinatra
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,9 +12,10 @@ COMMENT=	Sinatra plugin to provide async responses
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-rack>=1.4.1:${PORTSDIR}/www/rubygem-rack \
+RUN_DEPENDS=	rubygem-rack16>=1.4.1:${PORTSDIR}/www/rubygem-rack16 \
 		rubygem-sinatra>=1.3.2:${PORTSDIR}/www/rubygem-sinatra
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

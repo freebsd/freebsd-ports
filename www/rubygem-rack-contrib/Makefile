@@ -3,6 +3,7 @@
 
 PORTNAME=	rack-contrib
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +12,9 @@ COMMENT=	Contributed Rack Middleware and Utilities
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-rack>=0.9.1:${PORTSDIR}/www/rubygem-rack
+RUN_DEPENDS=	rubygem-rack16>=0.9.1:${PORTSDIR}/www/rubygem-rack16
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

@@ -6,7 +6,7 @@ PORTVERSION=	1.9.7
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.litech.org/radvd/dist/
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux/BSD IPv6 router advertisement daemon
 
 LIB_DEPENDS=	libdaemon.so:${PORTSDIR}/devel/libdaemon

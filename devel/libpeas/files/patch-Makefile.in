@@ -1,6 +1,6 @@
---- Makefile.in.orig	2012-05-25 22:12:44.000000000 +0200
-+++ Makefile.in	2012-05-25 22:12:52.000000000 +0200
-@@ -328,7 +328,7 @@
+--- Makefile.in.orig	2015-05-17 08:39:30.610386000 +0200
++++ Makefile.in	2015-05-17 08:41:22.473716000 +0200
+@@ -406,7 +406,7 @@
  top_srcdir = @top_srcdir@
  ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
  DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc --enable-glade-catalog

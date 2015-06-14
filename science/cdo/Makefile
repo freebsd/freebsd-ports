@@ -16,6 +16,8 @@ OPTIONS_DEFINE=	CGRIBEX HDF5 JASPER NETCDF PROJ SZIP UDUNITS
 OPTIONS_DEFAULT=CGRIBEX HDF5 JASPER NETCDF PROJ SZIP UDUNITS
 OPTIONS_SUB=	yes
 
+PORTSCOUT=	site:https://code.zmaw.de/projects/cdo/files
+
 CONFIGURE_ARGS=	--disable-cgribex \
 		--disable-data \
 		--disable-extra \

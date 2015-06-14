@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lita
-PORTVERSION=	4.3.2
-PORTREVISION=	1
+PORTVERSION=	4.4.2
 CATEGORIES=	net-im rubygems
 MASTER_SITES=	RG
 
@@ -24,6 +23,7 @@ RUN_DEPENDS=	redis>=0:${PORTSDIR}/databases/redis \
 		rubygem-redis-namespace>=1.3.0:${PORTSDIR}/databases/rubygem-redis-namespace \
 		rubygem-thor>=0.18.1:${PORTSDIR}/devel/rubygem-thor
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

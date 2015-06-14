@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ruby-bugzilla
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +12,7 @@ COMMENT=	Access to Bugzilla through WebService APIs in Ruby
 LICENSE=	LGPL3
 
 RUN_DEPENDS=	rubygem-gruff>=0:${PORTSDIR}/graphics/rubygem-gruff \
-    		rubygem-highline>=0:${PORTSDIR}/devel/rubygem-highline \
-		rubygem-rmagick>=0:${PORTSDIR}/graphics/rubygem-rmagick
+    		rubygem-highline>=0:${PORTSDIR}/devel/rubygem-highline
 
 NO_ARCH=	yes
 USE_RUBY=	yes

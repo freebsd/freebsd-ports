@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
 PKGNAMESUFFIX=	-nosound
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Free eartraining software
+COMMENT=	Free ear training software
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -31,10 +31,6 @@ NO_ARCH=	yes
 
 # Restrict to stable (even) versions, indicated by the second component.
 PORTSCOUT=	limitw:1,even
-
-OPTIONS_DEFINE=	GNOME
-
-GNOME_USE=	GNOME=pygnomeextras
 
 STYLESHEET=	${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl
 

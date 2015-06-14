@@ -17,6 +17,7 @@ RUN_DEPENDS=	rubygem-builder32>=2.1.2:${PORTSDIR}/devel/rubygem-builder32 \
 		rubygem-multi_json>=1.7.5:${PORTSDIR}/devel/rubygem-multi_json \
 		rubygem-multi_test>=0.1.2:${PORTSDIR}/devel/rubygem-multi_test
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

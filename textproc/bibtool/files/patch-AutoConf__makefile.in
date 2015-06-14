@@ -1,6 +1,6 @@
---- ./AutoConf/makefile.in.orig	2004-02-08 09:46:11.000000000 +0000
-+++ ./AutoConf/makefile.in	2014-01-25 23:08:47.000000000 +0000
-@@ -25,7 +25,7 @@
+--- AutoConf/makefile.in.orig	2015-02-09 19:29:03 UTC
++++ AutoConf/makefile.in
+@@ -23,7 +23,7 @@
  #  Configuration Section
  # =============================================================================
  # 
@@ -9,7 +9,7 @@
  exec_prefix = @exec_prefix@
  
  # -------------------------------------------------------
-@@ -42,7 +42,7 @@
+@@ -48,7 +48,7 @@ BINDIR     = @bindir@
  #  Additionally name the section of the man pages to use.
  #  This should be 1 (user commands), l (local), or n (new)
  # 
@@ -18,7 +18,7 @@
  MANSECT    = 1
  
  # -------------------------------------------------------
-@@ -67,7 +67,7 @@
+@@ -73,7 +73,7 @@ INCLUDEDIR = @includedir@/bibtool
  #  Name the C compiler
  # 
  
@@ -27,7 +27,7 @@
  
  # -------------------------------------------------------
  #  CFLAGS are the flags for the C compiler.
-@@ -78,7 +78,7 @@
+@@ -84,7 +84,7 @@ CC         = @CC@
  # 	   optimizer is turned on.
  # 
  
@@ -36,7 +36,7 @@
  # CFLAGS = -O
  #  GNU C
  # CFLAGS = -g -Wall
-@@ -461,7 +461,7 @@
+@@ -478,7 +478,7 @@ $(OFILES): $(MAKEFILE)
  #  Targets from the GNU Regular Expression Library.
  
  regex$(OBJ): $(REGEX_DIR)$(DIR_SEP)regex.c $(MAKEFILE)

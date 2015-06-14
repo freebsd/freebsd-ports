@@ -5,6 +5,28 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150613:
+  AFFECTS: users of multimedia/avidemux26-*
+  AUTHOR: riggs@FreeBSD.org
+
+  avidemux26 has been renamed to avidemux
+  If you are using binary pkg, 'pkg upgrade' will do the right thing.
+  Users of portmaster/portupgrade have to take a manual step:
+  Portmaster users:
+      portmaster -o multimedia/avidemux multimedia/avidemux26
+  Portupgrade users:
+      portupgrade -o multimedia/avidemux multimedia/avidemux26
+
+20150610:
+  AFFECTS: users of databases/postgresql84-server
+  AUTHOR: girgen@FreeBSD.org
+
+  PostgreSQL-8.4 EOL was reached in July 2014. To upgrade to a later version of
+  choice, you need to do a dump+restore of the database.
+  Please follow the instructions at:
+
+     http://www.postgresql.org/docs/8.4/static/install-upgrading.html
+
 20150527:
   AFFECTS: users of sysutils/xfce4-power-manager
   AUTHOR: olivierd@FreeBSD.org

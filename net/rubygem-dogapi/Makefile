@@ -13,6 +13,7 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	rubygem-multi_json>=0:${PORTSDIR}/devel/rubygem-multi_json
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

@@ -8,8 +8,11 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple settings solution that uses an ERB enabled YAML file
 
+LICENSE=	MIT
+
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=yes
+RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

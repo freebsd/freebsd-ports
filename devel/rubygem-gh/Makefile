@@ -19,6 +19,7 @@ RUN_DEPENDS=	rubygem-addressable>=0:${PORTSDIR}/www/rubygem-addressable \
 		rubygem-net-http-persistent>=2.7:${PORTSDIR}/www/rubygem-net-http-persistent \
 		rubygem-net-http-pipeline>=0:${PORTSDIR}/www/rubygem-net-http-pipeline
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

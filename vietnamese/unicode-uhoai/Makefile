@@ -8,7 +8,7 @@ CATEGORIES=	vietnamese x11-fonts
 MASTER_SITES=	LOCAL/obrien
 DISTNAME=	uhoaiw21
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unicode TrueType Font with UHoai Vietnamese encoding
 
 USES=		fonts zip:infozip

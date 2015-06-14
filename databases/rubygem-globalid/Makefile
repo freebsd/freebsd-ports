@@ -13,8 +13,8 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-activesupport4>=4.1.0:${PORTSDIR}/devel/rubygem-activesupport4
 
+NO_ARCH=	yes
 USE_RUBY=	yes
-USE_RAKE=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 

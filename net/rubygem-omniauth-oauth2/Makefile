@@ -15,6 +15,7 @@ RUN_DEPENDS=	rubygem-oauth2>=1.0:${PORTSDIR}/net/rubygem-oauth2 \
 		rubygem-multi_json>=1.3:${PORTSDIR}/devel/rubygem-multi_json \
 		rubygem-faraday>=0.8.0:${PORTSDIR}/www/rubygem-faraday
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

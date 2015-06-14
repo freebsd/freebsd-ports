@@ -29,5 +29,5 @@ bin/tkscope
 %%SITE_ARCH%%/auto/Audio/Data/solve_polynomial.al
 %%SITE_ARCH%%/auto/Audio/Play/autosplit.ix
 %%SITE_ARCH%%/auto/Audio/Play/freebsd/freebsd.so
-%%PERL5_MAN3%%/Audio::Play.3.gz
 %%PERL5_MAN3%%/Audio::Data.3.gz
+%%PERL5_MAN3%%/Audio::Play.3.gz

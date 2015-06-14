@@ -1,5 +1,5 @@
-%%SITE_ARCH%%/Audio/volume.pl
 %%SITE_ARCH%%/Audio/Mixer.pm
+%%SITE_ARCH%%/Audio/volume.pl
 %%SITE_ARCH%%/auto/Audio/Mixer/Mixer.so
 %%SITE_ARCH%%/auto/Audio/Mixer/autosplit.ix
 %%PERL5_MAN3%%/Audio::Mixer.3.gz

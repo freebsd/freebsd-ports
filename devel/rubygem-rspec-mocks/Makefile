@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspec-mocks
-PORTVERSION=	3.2.1
+PORTVERSION=	3.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,8 @@ COMMENT=	Rspec-mocks provides a test-double framework for rspec
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-rspec-support>=${PORTVERSION:R}:${PORTSDIR}/devel/rubygem-rspec-support
+RUN_DEPENDS=	rubygem-diff-lcs>=1.2.0:${PORTSDIR}/textproc/rubygem-diff-lcs \
+		rubygem-rspec-support>=${PORTVERSION:R}:${PORTSDIR}/devel/rubygem-rspec-support
 
 NO_ARCH=	yes
 USE_RUBY=	yes

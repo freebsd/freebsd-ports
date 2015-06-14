@@ -3,7 +3,7 @@
 
 PORTNAME=	mikutter
 PORTVERSION=	3.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im ruby
 MASTER_SITES=	http://mikutter.hachune.net/bin/ \
 		LOCAL/tota/${PORTNAME}
@@ -26,7 +26,8 @@ RUN_DEPENDS=	rubygem-gtk2>=2.2.5:${PORTSDIR}/x11-toolkits/rubygem-gtk2 \
 		rubygem-delayer>=0.0.2:${PORTSDIR}/devel/rubygem-delayer \
 		rubygem-gettext>=2.3.1:${PORTSDIR}/devel/rubygem-gettext \
 		rubygem-moneta>=0.7:${PORTSDIR}/devel/rubygem-moneta \
-		rubygem-nokogiri>=1.6.3.1:${PORTSDIR}/textproc/rubygem-nokogiri
+		rubygem-nokogiri>=1.6.3.1:${PORTSDIR}/textproc/rubygem-nokogiri \
+		rubygem-httpclient>=0:${PORTSDIR}/www/rubygem-httpclient
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
@@ -45,15 +46,13 @@ SUB_LIST=	RUBY_SITELIBDIR=${RUBY_SITELIBDIR}
 
 REINPLACE_ARGS=	-i ''
 
-OPTIONS_DEFINE=		DOCS HTTPCLIENT NOTIFY
-HTTPCLIENT_DESC=	httpclient support
+OPTIONS_DEFINE=		DOCS NOTIFY
 NOTIFY_DESC=		notify-send support
 
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
 .include <bsd.port.options.mk>
 
-HTTPCLIENT_RUN_DEPENDS=	rubygem-httpclient>=0:${PORTSDIR}/www/rubygem-httpclient
 NOTIFY_RUN_DEPENDS=	notify-send:${PORTSDIR}/devel/libnotify
 
 post-patch:

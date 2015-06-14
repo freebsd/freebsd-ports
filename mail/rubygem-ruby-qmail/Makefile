@@ -13,6 +13,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-rspec>=1.2.9:${PORTSDIR}/devel/rubygem-rspec
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

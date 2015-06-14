@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-tinymce
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.3
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,9 +12,9 @@ COMMENT=	Django application to use TinyMCE editor
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=0:${PORTSDIR}/www/py-django
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

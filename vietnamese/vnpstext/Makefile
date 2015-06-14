@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp.monash.edu.au/pub/vietnam/unix/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts 8-bit VISCII Vietnamese text into PostScript
 
 CFLAGS+=	-I../../include

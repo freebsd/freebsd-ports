@@ -72,6 +72,10 @@ probe(struct usb_handle *h, ifc_match_func callback)
 	info.dev_class = ddesc.bDeviceClass;
 	info.dev_subclass = ddesc.bDeviceSubClass;
 	info.dev_protocol = ddesc.bDeviceProtocol;
+	info.writable = 1;
+
+	snprintf(info.device_path, sizeof(info.device_path), "ugen%d.%d",
+		 libusb_get_bus_number(h->dev), libusb_get_device_address(h->dev));
 
 	if (ddesc.iSerialNumber != 0) {
 		libusb_get_string_descriptor_ascii(h->handle, ddesc.iSerialNumber,
