@@ -3,8 +3,10 @@
 
 PORTNAME=	grib_api
 PORTVERSION=	1.13.0
+PORTREVISION=	1
 CATEGORIES=	science
-MASTER_SITES=	https://software.ecmwf.int/wiki/download/attachments/3473437/
+MASTER_SITES=	https://software.ecmwf.int/wiki/download/attachments/3473437/ \
+		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	ECMWF API for WMO FM-92 GRIB messages
@@ -21,6 +23,7 @@ OPTIONS_DEFAULT=OPENJPEG
 CONFIGURE_ARGS=	--enable-pthread --with-netcdf=${LOCALBASE} --with-png-support
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
 USES=		libtool pathfix
 
 PORTDATA=	*

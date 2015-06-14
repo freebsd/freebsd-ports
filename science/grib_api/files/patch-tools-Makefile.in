@@ -1,6 +1,6 @@
---- tools/Makefile.in.orig	2014-07-07 19:30:11.000000000 +0800
-+++ tools/Makefile.in	2014-08-27 01:01:05.658020559 +0800
-@@ -45,10 +45,10 @@
+--- tools/Makefile.in.orig	2014-07-07 11:30:11 UTC
++++ tools/Makefile.in
+@@ -45,10 +45,10 @@ bin_PROGRAMS = grib_keys$(EXEEXT) grib_h
  	grib_cmp$(EXEEXT) grib_convert$(EXEEXT) grib_distance$(EXEEXT) \
  	grib_corruption_check$(EXEEXT) grib_compare$(EXEEXT) \
  	grib_list_keys$(EXEEXT) parser$(EXEEXT) grib_count$(EXEEXT) \
