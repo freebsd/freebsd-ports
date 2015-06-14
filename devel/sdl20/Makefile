@@ -2,7 +2,7 @@
 
 PORTNAME=	sdl2
 PORTVERSION=	2.0.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/release/
 DISTNAME=	SDL2-${PORTVERSION}
@@ -189,5 +189,8 @@ CONFIGURE_ARGS+=	--disable-video-x11 \
 post-patch:
 	 @${REINPLACE_CMD} -e '/ CheckInputEvents$$/d' \
 		-e 's/-liconv/${ICONV_LIB}/g' ${WRKSRC}/configure
+# Clang does not provide _m_prefetch
+	@${REINPLACE_CMD} 's/_m_prefetch/__builtin_prefetch/' \
+		${WRKSRC}/configure ${WRKSRC}/src/video/SDL_blit_A.c
 
 .include <bsd.port.mk>
