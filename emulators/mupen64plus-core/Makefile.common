@@ -1,7 +1,6 @@
 USES+=			dos2unix
 DOS2UNIX_GLOB=		*.c *.cpp *.h *.H *.ini *.conf
 
-DISTINFO_FILE=		${.CURDIR}/distinfo
 DISTNAME=		${PORTNAME}-bundle-src-${PORTVERSION}
 PATCHDIR=		${.CURDIR}/files
 BUILD_WRKSRC?=		${WRKSRC}/source/${PORTNAME}${PKGNAMESUFFIX}/projects/unix
