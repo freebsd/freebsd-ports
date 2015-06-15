@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	scales
-PORTVERSION=	0.2.4
-PORTREVISION=	1
+PORTVERSION=	0.2.5
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -11,12 +10,12 @@ COMMENT=	Scale functions for graphics
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	R-cran-RColorBrewer>=0:${PORTSDIR}/graphics/R-cran-RColorBrewer \
-		R-cran-stringr>=0:${PORTSDIR}/textproc/R-cran-stringr \
-		R-cran-dichromat>=0:${PORTSDIR}/graphics/R-cran-dichromat \
+RUN_DEPENDS=	R-cran-RColorBrewer>0:${PORTSDIR}/graphics/R-cran-RColorBrewer \
+		R-cran-dichromat>0:${PORTSDIR}/graphics/R-cran-dichromat \
+		R-cran-plyr>0:${PORTSDIR}/devel/R-cran-plyr \
 		R-cran-munsell>=0.2:${PORTSDIR}/graphics/R-cran-munsell \
-		R-cran-plyr>=1.2:${PORTSDIR}/devel/R-cran-plyr \
-		R-cran-labeling>=0:${PORTSDIR}/math/R-cran-labeling
+		R-cran-labeling>0:${PORTSDIR}/math/R-cran-labeling \
+		R-cran-Rcpp>0:${PORTSDIR}/devel/R-cran-Rcpp
 
 USES=	cran:auto-plist
 
