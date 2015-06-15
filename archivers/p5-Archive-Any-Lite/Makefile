@@ -22,6 +22,7 @@ TEST_DEPENDS=	p5-Parallel-ForkManager>=0:${PORTSDIR}/devel/p5-Parallel-ForkManag
 		p5-Test-Pod-Coverage>=1.04:${PORTSDIR}/devel/p5-Test-Pod-Coverage \
 		p5-Test-UseAllModules>=0.10:${PORTSDIR}/devel/p5-Test-UseAllModules
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
