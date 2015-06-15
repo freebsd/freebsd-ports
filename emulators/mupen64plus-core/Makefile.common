@@ -12,7 +12,8 @@ EXTRACT_AFTER_ARGS?=	"${DISTNAME}/source/${PORTNAME}-core/*" \
 
 .if ${PKGNAMESUFFIX} == "-core"
 LIB_DEPENDS+=		libfreetype.so:${PORTSDIR}/print/freetype2 \
-			libpng.so:${PORTSDIR}/graphics/png
+			libpng.so:${PORTSDIR}/graphics/png \
+			libminizip.so:${PORTSDIR}/archivers/minizip
 .else
 PLIST=			${WRKDIR}/pkg-plist
 .endif
