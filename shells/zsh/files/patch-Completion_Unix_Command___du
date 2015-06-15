@@ -1,0 +1,9 @@
+--- Completion/Unix/Command/_du.orig	2015-05-03 17:57:18 UTC
++++ Completion/Unix/Command/_du
+@@ -74,5 +74,5 @@ else
+   do
+     [[ $OSTYPE = $~pattern ]] && args+=( $arg )
+   done
+-  _arguments -s -A "-*" $args
++  _arguments -s -A "-*" $args '*:file:_files'
+ fi
