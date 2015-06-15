@@ -18,7 +18,6 @@ RUN_DEPENDS=	galculator>=0:${PORTSDIR}/math/galculator \
 		mpqc>=0:${PORTSDIR}/science/mpqc \
 		gnuplot>=0:${PORTSDIR}/math/gnuplot \
 		openaxiom>=0:${PORTSDIR}/math/open-axiom \
-		qgis>=0:${PORTSDIR}/graphics/qgis \
 		geoserver>=0:${PORTSDIR}/graphics/geoserver \
 		grass>=0:${PORTSDIR}/databases/grass
 
