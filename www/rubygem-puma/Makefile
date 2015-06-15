@@ -3,6 +3,7 @@
 
 PORTNAME=	puma
 PORTVERSION=	2.11.3
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ COMMENT=	Fast, multithreaded and highly concurrent ruby web server
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	rubygem-rack15>=1.1:${PORTSDIR}/www/rubygem-rack15
+RUN_DEPENDS=	rubygem-rack16>=1.1:${PORTSDIR}/www/rubygem-rack16
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
