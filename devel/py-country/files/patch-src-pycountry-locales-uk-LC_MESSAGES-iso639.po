@@ -1,0 +1,11 @@
+--- src/pycountry/locales/uk/LC_MESSAGES/iso639.po.orig	2015-06-13 11:08:41.000000000 +0300
++++ src/pycountry/locales/uk/LC_MESSAGES/iso639.po	2015-06-15 11:04:33.413969000 +0300
+@@ -1733,7 +1733,7 @@
+ 
+ #. name for tgl, tl
+ msgid "Tagalog"
+-msgstr "тагалог"
++msgstr "тагальська"
+ 
+ #. name for tha, th
+ msgid "Thai"
