@@ -12,6 +12,10 @@ COMMENT=	Digital audio CD extraction tool for accurate ripping
 
 LICENSE=	GPLv3
 
+BROKEN=		Does not build with newer rubygem-gettext
+DEPRECATED=	Does not build and is deprecated upstream
+EXPIRATION_DATE=	2015-07-15
+
 # cdparanoia is not really required for the build, but the port would not
 # configure without it (ideally, configure script should be fixed instead
 # of forcing this superfluous build dependency)
