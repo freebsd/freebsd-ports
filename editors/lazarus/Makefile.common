@@ -3,7 +3,12 @@
 EXTRACT_AFTER_ARGS=	${LCLDIR} ${PORTNAME}/packager/registration \
 				${PORTNAME}/components/lazutils ${PORTNAME}/components/ideintf \
 				${PORTNAME}/images ${PORTNAME}/components/synedit \
-				${PORTNAME}/components/lazcontrols
+				${PORTNAME}/components/lazcontrols 
+
+.if ${PKGNAMESUFFIX} == "-lcl-nogui"
+EXTRACT_AFTER_ARGS+=		${PORTNAME}/components/debuggerintf \
+				${PORTNAME}/components/lazdebuggergdbmi
+.endif
 
 PATCHDIR=	${.CURDIR}/files
 FILESDIR=	${.CURDIR}/files
@@ -22,13 +27,17 @@ BUILDSRC=	${WRKSRC}
 .if ${PKGNAMESUFFIX} != "-lcl-units"
 pre-build:
 	@${MKDIR} ${WRKSRC}/units/${BUILDNAME}
+	@${MKDIR} ${WRKDIR}/${PORTNAME}/components/debuggerintf/lib/${BUILDNAME}
 	@${MKDIR} ${WRKDIR}/${PORTNAME}/components/lazcontrols/lib/${BUILDNAME}
 	@${MKDIR} ${WRKDIR}/${PORTNAME}/components/ideintf/units/${BUILDNAME}
 	@${MKDIR} ${WRKDIR}/${PORTNAME}/components/synedit/units/${BUILDNAME}
+	@${MKDIR} ${WRKDIR}/${PORTNAME}/components/lazdebuggergdbmi/lib/${BUILDNAME}
 	@${LN} -s ${LOCALBASE}/share/${PORTNAME}-${PORTVERSION}/lcl/units/${BUILDNAME}/* ${WRKDIR}/${LCLDIR}/units/${BUILDNAME}/
+	@${LN} -s ${LOCALBASE}/share/${PORTNAME}-${PORTVERSION}/components/debuggerintf/lib/${BUILDNAME}/* ${WRKDIR}/${PORTNAME}/components/debuggerintf/lib/${BUILDNAME}/
 	@${LN} -s ${LOCALBASE}/share/${PORTNAME}-${PORTVERSION}/components/lazcontrols/lib/${BUILDNAME}/* ${WRKDIR}/${PORTNAME}/components/lazcontrols/lib/${BUILDNAME}/
 	@${LN} -s ${LOCALBASE}/share/${PORTNAME}-${PORTVERSION}/components/ideintf/units/${BUILDNAME}/* ${WRKDIR}/${PORTNAME}/components/ideintf/units/${BUILDNAME}/
 	@${LN} -s ${LOCALBASE}/share/${PORTNAME}-${PORTVERSION}/components/synedit/units/${BUILDNAME}/* ${WRKDIR}/${PORTNAME}/components/synedit/units/${BUILDNAME}/
+	@${LN} -s ${LOCALBASE}/share/${PORTNAME}-${PORTVERSION}/components/lazdebuggergdbmi/lib/${BUILDNAME}/* ${WRKDIR}/${PORTNAME}/components/lazdebuggergdbmi/lib/${BUILDNAME}/
 .endif
 
 do-build:
@@ -42,6 +51,12 @@ do-build:
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} LCL_PLATFORM=${LCL_INTERFACE}
 	@cd ${WRKDIR}/${PORTNAME}/components/synedit && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} LCL_PLATFORM=${LCL_INTERFACE}
+.if ${PKGNAMESUFFIX} == "-lcl-nogui"
+	@cd ${WRKDIR}/${PORTNAME}/components/debuggerintf && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} LCL_PLATFORM=${LCL_INTERFACE}
+	@cd ${WRKDIR}/${PORTNAME}/components/lazdebuggergdbmi && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} LCL_PLATFORM=${LCL_INTERFACE}
+.endif
 	@cd ${BUILDSRC} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} LCL_PLATFORM=${LCL_INTERFACE}
 
@@ -50,6 +65,12 @@ pre-install:
 
 	@cd ${WRKSRC}/units/${BUILDNAME}/${LCL_INTERFACE} && \
 		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/lcl/units/%%BUILDNAME%%/${LCL_INTERFACE}/|' -e 's|//|/|' >> ${PLIST}
+.if ${PKGNAMESUFFIX} == "-lcl-nogui"
+	@cd ${WRKDIR}/${PORTNAME}/components/debuggerintf/lib/${BUILDNAME}/ && \
+		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/components/debuggerintf/lib/%%BUILDNAME%%/|' -e 's|//|/|' >> ${PLIST}
+	@cd ${WRKDIR}/${PORTNAME}/components/lazdebuggergdbmi/lib/${BUILDNAME}/ && \
+		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/components/lazdebuggergdbmi/lib/%%BUILDNAME%%/|' -e 's|//|/|' >> ${PLIST}
+.endif
 	@cd ${WRKDIR}/${PORTNAME}/components/ideintf/units/${BUILDNAME}/${LCL_INTERFACE} && \
 		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/components/ideintf/units/%%BUILDNAME%%/${LCL_INTERFACE}/|' -e 's|//|/|' >> ${PLIST}
 	@cd ${WRKDIR}/${PORTNAME}/components/synedit/units/${BUILDNAME}/${LCL_INTERFACE} && \
@@ -59,12 +80,22 @@ pre-install:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/lcl/units/${BUILDNAME}/${LCL_INTERFACE}
+.if ${PKGNAMESUFFIX} == "-lcl-nogui"
+	@${MKDIR} ${STAGEDIR}${DATADIR}/components/debuggerintf/lib/${BUILDNAME}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/components/lazdebuggergdbmi/lib/${BUILDNAME}
+.endif
 	@${MKDIR} ${STAGEDIR}${DATADIR}/components/ideintf/units/${BUILDNAME}/${LCL_INTERFACE}
 	@${MKDIR} ${STAGEDIR}${DATADIR}/components/synedit/units/${BUILDNAME}/${LCL_INTERFACE}
 	@${MKDIR} ${STAGEDIR}${DATADIR}/components/lazcontrols/lib/${BUILDNAME}/${LCL_INTERFACE}
 
 	@cd ${WRKSRC}/units/${BUILDNAME}/${LCL_INTERFACE} && \
 		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/lcl/units/${BUILDNAME}/${LCL_INTERFACE}/{}" \;
+.if ${PKGNAMESUFFIX} == "-lcl-nogui"
+	@cd ${WRKDIR}/${PORTNAME}/components/debuggerintf/lib/${BUILDNAME} && \
+		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/components/debuggerintf/lib/${BUILDNAME}/{}" \;
+	@cd ${WRKDIR}/${PORTNAME}/components/lazdebuggergdbmi/lib/${BUILDNAME} && \
+		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/components/lazdebuggergdbmi/lib/${BUILDNAME}/{}" \;
+.endif
 	@cd ${WRKDIR}/${PORTNAME}/components/ideintf/units/${BUILDNAME}/${LCL_INTERFACE} && \
 		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/components/ideintf/units/${BUILDNAME}/${LCL_INTERFACE}/{}" \;
 	@cd ${WRKDIR}/${PORTNAME}/components/synedit/units/${BUILDNAME}/${LCL_INTERFACE} && \
