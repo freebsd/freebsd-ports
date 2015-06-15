@@ -79,6 +79,7 @@ BUILDDIR=		${WRKDIR}/build
 NEWBSDIR=		${WRKDIR}/newbs/bootstrap
 CFG_SCRIPT=		${WRKSRC}/configure
 REVFILE=		${WRKSRC}/gcc/REVISION
+PHASEFILE=		${WRKSRC}/gcc/DEV-PHASE
 BOOTSTRAP_PREFIX=	${WRKDIR}/bootstrap
 PKG_PREFIX=		${PREFIX}/${PORTNAME}
 MANPREFIX=		${PREFIX}/${PORTNAME}/share
@@ -194,6 +195,7 @@ ADA_CONFIG_ARGS+=	${EXTRA_CONFIG}
 post-extract:
 	# Personalize GNAT for each different machine
 	@${ECHO} "-=> GNAT AUX ${OS_LABEL4VERS}" > ${REVFILE}
+	@${ECHO} ${PHASE} > ${PHASEFILE}
 
 	# Apply required composite diff files
 .for suffix in ${APPLY_DIFFS}
@@ -278,6 +280,7 @@ do-install:
 	${MV} ${STAGEDIR}${PKG_PREFIX}/share ${WRKDIR}/moved_share
 #	Don't activate until this port builds gnatdroid
 #	Otherwise it will conflict with lang/gcc-aux
+#	Add "share" after {PORTNAME} on 3rd line of post-stage target
 #	${MKDIR} ${STAGEDIR}${PREFIX}/share/dejagnu/baseboards \
 #		${STAGEDIR}${PREFIX}/share/dejagnu/config
 #	${INSTALL_DATA} ${FILESDIR}/android.exp \
@@ -288,7 +291,7 @@ do-install:
 post-stage:
 	(cd ${STAGEDIR}${PKG_PREFIX}; ${FIND} * -type d -empty | \
 		${SORT} -dr | ${XARGS} ${RMDIR})
-	(cd ${STAGEDIR}${PREFIX}; ${FIND} ${PORTNAME} share \
+	(cd ${STAGEDIR}${PREFIX}; ${FIND} ${PORTNAME} \
 		\( -type f -or -type l \) | ${SORT} | ${SED} \
 		-e 's/\/man\/man[1578]\/.*[1578]$$/&.gz/' >> ${TMPPLIST})
 .if ${PORT_OPTIONS:MBOOTSTRAP}

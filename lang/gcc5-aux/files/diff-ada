@@ -739,21 +739,16 @@
  
 --- gcc/ada/gsocket.h.orig
 +++ gcc/ada/gsocket.h
-@@ -208,7 +208,13 @@
- #include <sys/select.h>
+@@ -209,6 +209,8 @@
  #endif
  
-+#ifdef __NetBSD__
-+#include <sys/select.h>
-+#endif
-+
  #if defined (_AIX) || defined (__FreeBSD__) || defined (__hpux__) || \
 +    defined (__DragonFly__) || \
 +    defined (__NetBSD__) || defined (__OpenBSD__) || \
      defined (_WIN32) || defined (__APPLE__) || defined (__ANDROID__)
  # define HAVE_THREAD_SAFE_GETxxxBYyyy 1
  
-@@ -241,7 +247,13 @@
+@@ -241,7 +243,13 @@
  # endif
  #endif
  
@@ -788,26 +783,7 @@
  {
    struct sigaction act;
  
-@@ -2070,6 +2070,18 @@
- 
- #include <signal.h>
- #include <unistd.h>
-+#include <time.h>
-+
-+#define netbsd_sigaction	sigaction
-+#define netbsd_sigaddset	sigaddset
-+#define netbsd_sigdelset	sigdelset
-+#define netbsd_sigemptyset	sigemptyset
-+#define netbsd_sigfillset	sigfillset
-+#define netbsd_sigismember	sigismember
-+#define netbsd_sigaltstack	sigaltstack
-+#define netbsd_nanosleep	nanosleep
-+#define netbsd_clock_gettime	clock_gettime
-+#define netbsd_gettimeofday	gettimeofday
- 
- static void
- __gnat_error_handler (int sig)
-@@ -2496,9 +2508,13 @@
+@@ -2496,9 +2496,13 @@
     initialization of the FP processor.  This version is used under INTERIX
     and WIN32.  */
  
@@ -2413,7 +2389,7 @@
    s-osinte.adb<s-osinte-freebsd.adb \
    s-osinte.ads<s-osinte-freebsd.ads \
    s-osprim.adb<s-osprim-posix.adb \
-@@ -1465,7 +1477,113 @@
+@@ -1465,6 +1477,110 @@
    mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
    GNATLIB_SHARED = gnatlib-shared-dual
  
@@ -2465,8 +2441,6 @@
 +# x86 NetBSD
 +ifeq ($(strip $(filter-out %86 netbsd%,$(target_cpu) $(target_os))),)
 +  LIBGNAT_TARGET_PAIRS = \
-+  a-exetim.adb<a-exetim-posix.adb \
-+  a-exetim.ads<a-exetim-default.ads \
 +  a-intnam.ads<a-intnam-netbsd.ads \
 +  g-socthi.adb<g-socthi-bsd.adb \
 +  s-trasym.adb<s-trasym-bsd.adb \
@@ -2483,12 +2457,13 @@
 +  $(X86_TARGET_PAIRS) \
 +  system.ads<system-netbsd-x86.ads
 +
++  TOOLS_TARGET_PAIRS = \
++  mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
 +  GNATLIB_SHARED = gnatlib-shared-dual
 +
 +  EXTRA_LIBGNAT_SRCS+= traceback_symbolic.c
 +  EXTRA_LIBGNAT_OBJS+= traceback_symbolic.o
 +  EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
-+  EXTRA_GNATRTL_TASKING_OBJS=a-exetim.o
 +
 +  EH_MECHANISM=-gcc
 +  THREADSLIB= -lpthread
@@ -2500,8 +2475,6 @@
 +# x86_64 NetBSD
 +ifeq ($(strip $(filter-out x86_64 netbsd%,$(target_cpu) $(target_os))),)
 +  LIBGNAT_TARGET_PAIRS = \
-+  a-exetim.adb<a-exetim-posix.adb \
-+  a-exetim.ads<a-exetim-default.ads \
 +  a-intnam.ads<a-intnam-netbsd.ads \
 +  g-socthi.adb<g-socthi-bsd.adb \
 +  s-trasym.adb<s-trasym-bsd.adb \
@@ -2518,15 +2491,15 @@
 +  $(X86_64_TARGET_PAIRS) \
 +  system.ads<system-netbsd-x86_64.ads
 +
++  TOOLS_TARGET_PAIRS = \
++  mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
 +  GNATLIB_SHARED = gnatlib-shared-dual
 +
 +  EXTRA_LIBGNAT_SRCS+= traceback_symbolic.c
 +  EXTRA_LIBGNAT_OBJS+= traceback_symbolic.o
    EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
-+  EXTRA_GNATRTL_TASKING_OBJS=a-exetim.o
  
    EH_MECHANISM=-gcc
-   THREADSLIB= -lpthread
 --- gnattools/configure.ac.orig
 +++ gnattools/configure.ac
 @@ -79,11 +79,27 @@
