@@ -32,7 +32,6 @@ libexec/cups/filter/imagetopdf
 libexec/cups/filter/imagetops
 libexec/cups/filter/imagetoraster
 libexec/cups/filter/pdftoijs
-libexec/cups/filter/pdftoippprinter
 libexec/cups/filter/pdftoopvp
 libexec/cups/filter/pdftopdf
 libexec/cups/filter/pdftops
@@ -41,6 +40,7 @@ libexec/cups/filter/pstopdf
 libexec/cups/filter/rastertoescpx
 libexec/cups/filter/rastertopclx
 libexec/cups/filter/rastertopdf
+libexec/cups/filter/sys5ippprinter
 libexec/cups/filter/textonly
 libexec/cups/filter/texttopdf
 libexec/cups/filter/texttops
