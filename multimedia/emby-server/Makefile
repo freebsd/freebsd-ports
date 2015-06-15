@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	emby-server
-PORTVERSION=	3.0.5621.4
+PORTVERSION=	3.0.5641.4
 CATEGORIES=	multimedia
 
 MAINTAINER=	woodsb02@gmail.com
 COMMENT=	Home media server built using mono and other open source technologies
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 LIB_DEPENDS=	libavformat.so:${PORTSDIR}/multimedia/ffmpeg \
 		libmediainfo.so:${PORTSDIR}/multimedia/libmediainfo \
