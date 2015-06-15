@@ -1,0 +1,22 @@
+Explicitly look for X11 when using it.
+
+This fixes the build with CMake 3.2, whose FindOpenGL.cmake stopped
+calling find_package(X11).
+
+Instead, do that ourselves when Q_WS_X11 is true, since that is when we
+already try to link against libX11.
+
+Sent upstream: https://github.com/cryos/avogadro/pull/13
+--- CMakeLists.txt
++++ CMakeLists.txt
+@@ -230,6 +230,10 @@ if(NOT Linguist_FOUND)
+   message(WARNING " Qt4 Linguist not found, please install it if you want Avogadro translations")
+ endif()
+ 
++if(Q_WS_X11)
++  find_package(X11 REQUIRED) # avogadro/src/main.cpp calls XInitThread().
++endif()
++
+ find_package(Eigen3) # find and setup Eigen3 if available
+ if(NOT EIGEN3_FOUND)
+    message(STATUS "Cannot find Eigen3, trying Eigen2")
