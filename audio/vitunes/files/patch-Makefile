@@ -1,13 +1,13 @@
---- Makefile.orig	2014-05-22 20:16:49.520071386 +0800
-+++ Makefile	2014-05-22 20:17:06.033081335 +0800
+--- Makefile.orig	2012-01-02 21:02:11 UTC
++++ Makefile
 @@ -40,8 +40,8 @@ clean:
  	rm -f vitunes vitunes.core vitunes-debug.log
  
  install: vitunes
 -	/usr/bin/install -c -m 0555 vitunes $(BINDIR)
 -	/usr/bin/install -c -m 0444 vitunes.1 $(MANDIR)
-+	/usr/bin/install -c -m 0555 vitunes $(DESTDIR)$(BINDIR)
-+	/usr/bin/install -c -m 0444 vitunes.1 $(DESTDIR)$(MANDIR)
++	${BSD_INSTALL_PROGRAM} -c -m 0555 vitunes $(DESTDIR)$(BINDIR)
++	${BSD_INSTALL_MAN} -c -m 0444 vitunes.1 $(DESTDIR)$(MANDIR)
  
  uninstall:
  	rm -f $(BINDIR)/vitunes
