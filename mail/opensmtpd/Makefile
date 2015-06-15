@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opensmtpd
-PORTVERSION=	5.4.5
+PORTVERSION=	5.4.6
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/ \
@@ -51,10 +51,5 @@ CA_BUNDLE_CONFIGURE_ON=	--with-ca-file=${LOCALBASE}/share/certs/ca-root-nss.crt
 CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 
 PAM_CONFIGURE_ON=	--with-pam --with-pam-service=smtpd
-
-post-patch:
-	@${FIND} ${WRKSRC} -type f -name 'Makefile.in' |${XARGS} ${TOUCH}
-	@${TOUCH} ${WRKSRC}/aclocal.m4 ${WRKSRC}/Makefile.in
-	@${TOUCH} ${WRKSRC}/config.h.in ${WRKSRC}/configure
 
 .include <bsd.port.mk>
