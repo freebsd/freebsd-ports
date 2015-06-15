@@ -21,6 +21,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		perl5 tar:bzip2
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/mp3burn
 
