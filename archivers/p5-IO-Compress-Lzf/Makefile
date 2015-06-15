@@ -19,6 +19,7 @@ BUILD_DEPENDS=	p5-Compress-LZF>=0:${PORTSDIR}/archivers/p5-Compress-LZF \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
