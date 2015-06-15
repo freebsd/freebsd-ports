@@ -69,8 +69,13 @@ post-patch:
 		${WRKSRC}/Jamfile
 
 post-install:
+.if defined(SLAVE_PORT) && ${SLAVE_PORT:tl} == "yes" && defined(USE_PYTHON)
+	${STRIP_CMD} \
+	${STAGEDIR}${PYTHON_SITELIBDIR}/libtorrent.so
+.else
 	${STRIP_CMD} \
 	${STAGEDIR}${PREFIX}/lib/libtorrent-rasterbar.so.${SHLIB_VER}
+.endif
 
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${DOCSDIR2}
