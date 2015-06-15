@@ -3,6 +3,7 @@
 
 PORTNAME=	libraw
 PORTVERSION=	0.16.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libraw.org/data/
 DISTNAME=	LibRaw-${PORTVERSION}
@@ -21,6 +22,7 @@ USES=		cpe pathfix pkgconfig libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-examples --disable-jasper
 CFLAGS+=	-fPIC
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DEMOSAIC_PACK_GPL2 DEMOSAIC_PACK_GPL3 DOCS EXAMPLES LCMS2 \
 		OPTIMIZED_CFLAGS OPENMP
