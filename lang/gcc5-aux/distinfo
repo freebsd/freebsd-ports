@@ -1,5 +1,5 @@
-SHA256 (gcc-5.1.0.tar.bz2) = b7dafdf89cbb0e20333dbf5b5349319ae06e3d1a30bf3515b5488f7e89dca5ad
-SIZE (gcc-5.1.0.tar.bz2) = 94954411
+SHA256 (gcc-5-20150609.tar.bz2) = 9154f0b0c4950cfb6dc802da8a35d02478029923a0c44f8ca963cd7ca9107885
+SIZE (gcc-5-20150609.tar.bz2) = 90768076
 SHA256 (ada-bootstrap.i386.freebsd.84.tar.bz2) = b410336cb0e71c8a29dd5f831a17b4b7282e7d590f452475a94c6a625cfc8846
 SIZE (ada-bootstrap.i386.freebsd.84.tar.bz2) = 39727003
 SHA256 (ada-bootstrap.i386.freebsd.100B.tar.bz2) = 7231209f2600275f554f788ad1d036cf633c4339ebd25bd479a5bb1ddcddedf3
