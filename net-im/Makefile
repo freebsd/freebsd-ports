@@ -146,6 +146,7 @@
     SUBDIR += rubygem-lita
     SUBDIR += rubygem-termtter
     SUBDIR += rubygem-tinder
+    SUBDIR += sayaka
     SUBDIR += sendxmpp
     SUBDIR += sigram
     SUBDIR += skype
