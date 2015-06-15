@@ -13,8 +13,7 @@ COMMENT=	VP8/VP9 Codec SDK
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		yasm:${PORTSDIR}/devel/yasm
+BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
 
 USES=		cpe gmake perl5 shebangfix tar:bzip2
 CPE_VENDOR=	john_koleszar
@@ -88,9 +87,5 @@ IGNORE=	no support for ${ARCH} the moment. testing/patches are welcome
 post-patch:
 	@${REINPLACE_CMD} 's|\(link_with_cc\)=gcc|\1=$${CC}|' \
 		${WRKSRC}/build/make/configure.sh
-	@${REINPLACE_CMD} -e 's|%%DESTDIR%%|${STAGEDIR}|g' \
-	       	${WRKSRC}/build/make/Makefile ${WRKSRC}/libs.mk
-	@${GREP} -Rl '^#!/bin/bash' ${WRKSRC} |${XARGS} ${REINPLACE_CMD} \
-		-e 's,#!/bin/bash,#!/usr/bin/env bash,g'
 
 .include <bsd.port.mk>
