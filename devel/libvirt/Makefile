@@ -42,7 +42,6 @@ NLS_CONFIGURE_ENABLE=	nls
 NLS_CONFIGURE_ON=	--with-libintl-prefix=${LOCALBASE}
 
 SASL_CONFIGURE_WITH=	sasl
-SASL_BUILD_DEPENDS=	sasl:${PORTSDIR}/security/cyrus-sasl2
 SASL_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 
 VARDIR=		/var
