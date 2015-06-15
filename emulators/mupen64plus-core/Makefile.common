@@ -1,6 +1,7 @@
 USES+=			dos2unix
 DOS2UNIX_GLOB=		*.c *.cpp *.h *.H *.ini *.conf
 
+DISTINFO_FILE=		${.CURDIR}/distinfo
 DISTNAME=		${PORTNAME}-bundle-src-${PORTVERSION}
 PATCHDIR=		${.CURDIR}/files
 BUILD_WRKSRC?=		${WRKSRC}/source/${PORTNAME}${PKGNAMESUFFIX}/projects/unix
@@ -27,7 +28,7 @@ LIB_DEPENDS+=		libboost_thread.so:${PORTSDIR}/devel/boost-libs
 .if ${PKGNAMESUFFIX} != "-core"
 post-patch:
 	@cd ${BUILD_WRKSRC} && ${REINPLACE_CMD} -e 's|gcc|${CC}|g' -e \
-		's|g++|${CXX}|g' Makefile
+		's|g++|${CXX}|g' -e 's|sdl-config|${SDL2_CONFIG}|g' Makefile
 .	if ${PKGNAMESUFFIX} == "-video-glide64mk2"
 		@cd ${WRKSRC}/source/${PORTNAME}${PKGNAMESUFFIX}/src && \
 			${REINPLACE_CMD} -e 's|#include <thread>||g' \
