@@ -1,5 +1,5 @@
---- common/devices/unixbluetooth.c.orig	2009-06-23 20:24:56.000000000 +0200
-+++ common/devices/unixbluetooth.c	2009-09-08 22:21:31.450731259 +0200
+--- common/devices/unixbluetooth.c.orig	2011-12-02 14:53:04 UTC
++++ common/devices/unixbluetooth.c
 @@ -51,7 +51,7 @@
  #ifdef HAVE_BLUETOOTH_NETGRAPH	/* FreeBSD / netgraph */
  
