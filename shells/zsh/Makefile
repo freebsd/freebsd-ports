@@ -3,7 +3,7 @@
 
 PORTNAME=	zsh
 PORTVERSION=	5.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	shells
 MASTER_SITES=	http://www.zsh.org/pub/ \
 		http://www.zsh.org/pub/:doc \
