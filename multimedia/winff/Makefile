@@ -14,12 +14,12 @@ COMMENT=	Convert your videos quickly, easily, and all at once
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	fpc:${PORTSDIR}/lang/fpc		\
-		lazbuild:${PORTSDIR}/editors/lazarus
+BUILD_DEPENDS=	lazbuild:${PORTSDIR}/editors/lazarus
 LIB_DEPENDS=	libavutil.so:${PORTSDIR}/multimedia/ffmpeg
 
 NO_WRKSUBDIR=	yes
-USE_GNOME=	gtk20
+USE_FPC=	yes
+USE_GNOME=	#
 _PORTNAME=	${PORTNAME:tl}
 DATADIR=	${PREFIX}/share/${_PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${_PORTNAME}
@@ -35,6 +35,38 @@ DESKTOP_ENTRIES=	"${PORTNAME}"	\
 LAZBUILD_CMD=	${LOCALBASE}/bin/lazbuild -d
 LAZARUS_VER=	1.4.0
 LAZARUS_DIR=	${LOCALBASE}/share/lazarus-${LAZARUS_VER}
+LCL_UNITS_DIR=	${LOCALBASE}/share/lazarus-${LAZARUS_VER}/lcl/units/${BUILDNAME}
+
+OPTIONS_SINGLE=		LCL
+OPTIONS_SINGLE_LCL=	GTK1 GTK2 QT4
+
+GTK1_DESC=		Use gtk12 interface
+GTK2_DESC=		Use gtk20 interface
+QT4_DESC=		Use qt4 interface
+
+OPTIONS_DEFAULT=	GTK2
+
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MGTK2}
+USE_FPC+=	gtk2
+USE_GNOME=	gtk20
+LCL_PLATFORM=	gtk2
+BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk2
+.endif
+
+.if ${PORT_OPTIONS:MGTK1}
+USE_FPC+=	gtk1
+USE_GNOME=	gtk12 gdkpixbuf
+LCL_PLATFORM=	gtk
+BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk
+.endif
+
+.if ${PORT_OPTIONS:MQT4}
+LIB_DEPENDS+=	libQt4Pas.so:${PORTSDIR}/x11-toolkits/qt4pas
+LCL_PLATFORM=	qt
+BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-qt
+.endif
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' ${WRKSRC}/unit1.pas
@@ -43,7 +75,7 @@ pre-configure:
 .endfor
 
 do-build:
-	cd ${WRKSRC} && ${LAZBUILD_CMD} --lazarusdir=${LAZARUS_DIR} -B winff.lpr
+	cd ${WRKSRC} && ${LAZBUILD_CMD} --ws=${LCL_PLATFORM} --lazarusdir=${LAZARUS_DIR} -B winff.lpr
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME:tl} ${STAGEDIR}${PREFIX}/bin
@@ -55,4 +87,4 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/*.pdf ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
