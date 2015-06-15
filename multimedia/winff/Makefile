@@ -32,7 +32,7 @@ DESKTOP_ENTRIES=	"${PORTNAME}"	\
 			"AudioVideo;"	\
 			true
 
-LAZBUILD_CMD=	${LOCALBASE}/bin/lazbuild
+LAZBUILD_CMD=	${LOCALBASE}/bin/lazbuild -d
 LAZARUS_VER=	1.4.0
 LAZARUS_DIR=	${LOCALBASE}/share/lazarus-${LAZARUS_VER}
 
