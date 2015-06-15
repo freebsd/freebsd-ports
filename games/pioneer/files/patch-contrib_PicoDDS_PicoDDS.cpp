@@ -1,5 +1,5 @@
---- contrib/PicoDDS/PicoDDS.cpp.orig	2014-08-28 18:02:26.000000000 +0400
-+++ contrib/PicoDDS/PicoDDS.cpp	2014-09-01 03:31:59.000000000 +0400
+--- contrib/PicoDDS/PicoDDS.cpp.orig	2015-06-07 21:44:10 UTC
++++ contrib/PicoDDS/PicoDDS.cpp
 @@ -48,6 +48,7 @@
  */
  

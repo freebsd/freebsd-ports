@@ -1,5 +1,5 @@
---- src/GameConfig.h.orig	2014-08-28 18:02:26.000000000 +0400
-+++ src/GameConfig.h	2014-09-01 03:51:12.000000000 +0400
+--- src/GameConfig.h.orig	2015-06-07 21:44:10 UTC
++++ src/GameConfig.h
 @@ -8,7 +8,8 @@
  
  class GameConfig : public IniConfig {
