@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	grib_api
-PORTVERSION=	1.13.0
-PORTREVISION=	1
+PORTVERSION=	1.13.1
 CATEGORIES=	science
 MASTER_SITES=	https://software.ecmwf.int/wiki/download/attachments/3473437/ \
 		LOCAL/sunpoet
@@ -19,6 +18,8 @@ LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf \
 OPTIONS_SINGLE=	JPEG
 OPTIONS_SINGLE_JPEG=	JASPER OPENJPEG
 OPTIONS_DEFAULT=OPENJPEG
+
+PORTSCOUT=	site:https://software.ecmwf.int/wiki/display/GRIB/Releases
 
 CONFIGURE_ARGS=	--enable-pthread --with-netcdf=${LOCALBASE} --with-png-support
 GNU_CONFIGURE=	yes

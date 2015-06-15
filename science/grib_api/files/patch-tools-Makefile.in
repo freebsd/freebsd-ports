@@ -1,6 +1,6 @@
---- tools/Makefile.in.orig	2014-07-07 11:30:11 UTC
+--- tools/Makefile.in.orig	2015-04-02 12:05:41 UTC
 +++ tools/Makefile.in
-@@ -45,10 +45,10 @@ bin_PROGRAMS = grib_keys$(EXEEXT) grib_h
+@@ -89,10 +89,10 @@ bin_PROGRAMS = grib_keys$(EXEEXT) grib_h
  	grib_cmp$(EXEEXT) grib_convert$(EXEEXT) grib_distance$(EXEEXT) \
  	grib_corruption_check$(EXEEXT) grib_compare$(EXEEXT) \
  	grib_list_keys$(EXEEXT) parser$(EXEEXT) grib_count$(EXEEXT) \
@@ -12,4 +12,4 @@
 +noinst_PROGRAMS = gaussian$(EXEEXT) grib_diff$(EXEEXT) grib1to2$(EXEEXT) \
  	mars_request$(EXEEXT) xref$(EXEEXT) all_keys$(EXEEXT)
  subdir = tools
- DIST_COMMON = $(noinst_HEADERS) $(srcdir)/Makefile.am \
+ DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
