@@ -3,7 +3,7 @@
 
 PORTNAME=	DBI-Shell
 PORTVERSION=	11.95
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,10 @@ RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-IO-Tee>=0:${PORTSDIR}/devel/p5-IO-Tee
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	lib/DBI/Shell/SQLMinus.pm
+perl_OLD_CMD=	perl
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
