@@ -20,3 +20,4 @@ share/icons/hicolor/scalable/mimetypes/application-vnd.leocad.svg
 %%DATADIR%%/library.bin
 share/mime/packages/leocad.xml
 share/pixmaps/leocad.png
+@comment @dir share/icons/hicolor/scalable/apps
