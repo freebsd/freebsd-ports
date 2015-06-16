@@ -5668,7 +5668,7 @@ share/icons/nuoveXT2/72x72/devices/system.png
 share/icons/nuoveXT2/72x72/devices/usbpendrive_unmount.png
 share/icons/nuoveXT2/72x72/devices/yast_HD.png
 share/icons/nuoveXT2/72x72/devices/yast_idetude.png
-share/icons/nuoveXT2/72x72/filesystems/.gitignore
+share/icons/nuoveXT2/72x72/filesystems/placeholder
 share/icons/nuoveXT2/72x72/filesystems/gnome-fs-directory.png
 share/icons/nuoveXT2/72x72/filesystems/gnome-fs-ftp.png
 share/icons/nuoveXT2/72x72/filesystems/gnome-fs-nfs.png
@@ -6328,7 +6328,7 @@ share/icons/nuoveXT2/96x96/devices/system.png
 share/icons/nuoveXT2/96x96/devices/usbpendrive_unmount.png
 share/icons/nuoveXT2/96x96/devices/yast_HD.png
 share/icons/nuoveXT2/96x96/devices/yast_idetude.png
-share/icons/nuoveXT2/96x96/filesystems/.gitignore
+share/icons/nuoveXT2/96x96/filesystems/placeholder
 share/icons/nuoveXT2/96x96/filesystems/gnome-fs-directory.png
 share/icons/nuoveXT2/96x96/filesystems/gnome-fs-ftp.png
 share/icons/nuoveXT2/96x96/filesystems/gnome-fs-nfs.png
