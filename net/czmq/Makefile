@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libzmq.so:${PORTSDIR}/net/libzmq4
 
-USES=		autoreconf libtool pathfix pkgconfig
+USES=		autoreconf libtool pkgconfig
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
