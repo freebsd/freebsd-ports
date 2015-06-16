@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_geoip2
-PORTVERSION=	1.2.9
-PORTREVISION=	1
+PORTVERSION=	1.2.10
 CATEGORIES=	www geography
 
 MAINTAINER=	jau@iki.fi
@@ -27,7 +26,7 @@ AP_LIB+=	${LOCALBASE}/lib -lGeoIP
 WRKSRC=		${WRKDIR}/geoip-api-${PORTNAME}-${PORTVERSION}
 
 SUB_FILES+=	pkg-message
-PORTDOCS=	Changes INSTALL README.md README.php
+PORTDOCS=	Changes INSTALL.md README.md README.php
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
