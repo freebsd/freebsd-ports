@@ -16,7 +16,7 @@ USES=		tar:bzip2
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 
-BROKEN_ia64=	Internal compiler error on ia64
+BROKEN_ia64=	internal compiler error on ia64
 
 PORTEXAMPLES=	ppccfg.example
 PLIST_FILES=	bin/ppc man/man1/ppc.1.gz %%DATADIR%%/video.x
@@ -36,6 +36,10 @@ SDL_CONFIGURE_OFF=	--enable-ui=x11
 USE_GCC=	yes
 .else
 CONFIGURE_ARGS+=	--enable-cpu=generic
+.endif
+
+.if ${ARCH} == "amd64" && ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+BROKEN=		does not build on FreeBSD < 10.x amd64
 .endif
 
 post-patch:
