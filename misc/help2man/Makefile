@@ -42,7 +42,7 @@ NLS_PLIST_FILES+=	man/${lang}/man1/help2man.1.gz \
 
 # Add temporary note of build failure caused by Perl infrastructure change in 20130612
 .if ${PORT_OPTIONS:MNLS}
-CONFIGURE_FAIL_MESSAGE=	Please read UPDATING entry 20130612 \(http://svnweb.freebsd.org/ports/head/UPDATING\?r1=320405\&r2=32067\) and PR/184276 \(http://www.freebsd.org/cgi/query-pr.cgi\?pr=ports/184276\) to fix your Perl installation if you got the error message \"configure: error: perl module Locale::gettext required\".
+CONFIGURE_FAIL_MESSAGE=	Please read UPDATING entry 20130612 \(http://svnweb.freebsd.org/ports/head/UPDATING\?r1=320405\&r2=320679\) and PR/184276 \(http://www.freebsd.org/cgi/query-pr.cgi\?pr=ports/184276\) to fix your Perl installation if you got the error message \"configure: error: perl module Locale::gettext required\".
 .endif
 
 post-patch:
