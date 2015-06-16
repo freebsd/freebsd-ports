@@ -5,10 +5,11 @@ PORTNAME=	zsh
 PORTVERSION=	5.0.8
 PORTREVISION=	2
 CATEGORIES=	shells
-MASTER_SITES=	http://www.zsh.org/pub/ \
-		http://www.zsh.org/pub/:doc \
+MASTER_SITES=	\
 		SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
-		SF/${PORTNAME}/${PORTNAME}-doc/${PORTVERSION}:doc
+		SF/${PORTNAME}/${PORTNAME}-doc/${PORTVERSION}:doc \
+		http://www.zsh.org/pub/:doc \
+		http://www.zsh.org/pub/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	bapt@FreeBSD.org
