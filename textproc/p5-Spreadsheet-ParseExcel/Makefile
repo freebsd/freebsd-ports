@@ -3,7 +3,7 @@
 
 PORTNAME=	Spreadsheet-ParseExcel
 PORTVERSION=	0.65
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
@@ -17,8 +17,11 @@ BUILD_DEPENDS=	p5-OLE-Storage_Lite>=0.19:${PORTSDIR}/devel/p5-OLE-Storage_Lite \
 		p5-Digest-Perl-MD5>=0:${PORTSDIR}/security/p5-Digest-Perl-MD5
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	sample/parse.pl \
+		sample/xls2csv.pl
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	EXAMPLES
 
