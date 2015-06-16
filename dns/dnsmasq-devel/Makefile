@@ -12,7 +12,7 @@ COMMENT=	Lightweight DNS forwarder, DHCP, and TFTP server
 
 LICENSE=	GPLv2
 
-#IGNORE=		build stable version instead, it is newer than this release candidate
+IGNORE=		build stable version instead, it is newer than this release candidate
 CONFLICTS_INSTALL=dnsmasq-2*
 
 PORTDOCS=	CHANGELOG CHANGELOG.archive FAQ doc.html setup.html
