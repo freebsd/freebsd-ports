@@ -12,7 +12,7 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon
 
-USES=		cmake
+USES=		cmake iconv:build
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
@@ -23,6 +23,8 @@ GH_TAGNAME=	release-${PORTVERSION}
 post-patch:
 	${REINPLACE_CMD} -e '/pkgconfig/s|$${LIB_INSTALL_DIR}|libdata|' \
 		 ${WRKSRC}/CMakeLists.txt
+	${REINPLACE_CMD} -e 's|%%ICONV_PREFIX%%|${ICONV_PREFIX}|g' \
+		 ${WRKSRC}/src/CMakeLists.txt
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		 ${WRKSRC}/cmake/modules/*.cmake
 	${RM} -f ${WRKSRC}/cmake/modules/FindLibXml2.cmake
