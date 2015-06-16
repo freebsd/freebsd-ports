@@ -6,4 +6,3 @@ etc/junkbuster/configfile.sample
 etc/junkbuster/forwardfile.sample
 etc/junkbuster/trustfile.sample
 man/man1/junkbuster.1.gz
-@dirrmtry etc/junkbuster
