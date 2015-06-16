@@ -3,6 +3,7 @@
 
 PORTNAME=	golem
 PORTVERSION=	0.0.6
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 
@@ -56,5 +57,7 @@ do-build:
 do-install:
 	@cd ${INSTALL_WRKSRC}; \
 		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/golem
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/golem/plugins/*.so
 
 .include <bsd.port.post.mk>
