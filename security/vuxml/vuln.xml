@@ -57,6 +57,55 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="25e0593d-13c0-11e5-9afb-3c970e169bc2">
+    <topic>tomcat -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>tomcat6</name>
+	<range><lt>6.0.44</lt></range>
+      </package>
+      <package>
+	<name>tomcat7</name>
+	<range><lt>7.0.55</lt></range>
+      </package>
+      <package>
+	<name>tomcat8</name>
+	<range><lt>8.0.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Apache Software Foundation reports:</p>
+	<blockquote cite="https://tomcat.apache.org/security-6.html#Fixed_in_Apache_Tomcat_6.0.44">
+	  <p>Low: Denial of Service CVE-2014-0230</p>
+	  <p>When a response for a request with a request body is
+	    returned to the user agent before the request body is
+	    fully read, by default Tomcat swallows the remaining
+	    request body so that the next request on the connection
+	    may be processed. There was no limit to the size of
+	    request body that Tomcat would swallow. This permitted
+	    a limited Denial of Service as Tomcat would never close
+	    the connection and a processing thread would remain
+	    allocated to the connection.</p>
+	  <p>Moderate: Security Manager bypass CVE-2014-7810</p>
+	  <p>Malicious web applications could use expression
+	    language to bypass the protections of a Security
+	    Manager as expressions were evaluated within a
+	    privileged code section.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0230</cvename>
+      <cvename>CVE-2014-7810</cvename>
+      <url>https://tomcat.apache.org/security-6.html#Fixed_in_Apache_Tomcat_6.0.44</url>
+    </references>
+    <dates>
+      <discovery>2015-05-12</discovery>
+      <entry>2015-06-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c470db07-1098-11e5-b6a8-002590263bf5">
     <topic>security/ossec-hids-* -- root escalation via syscheck feature</topic>
     <affects>
