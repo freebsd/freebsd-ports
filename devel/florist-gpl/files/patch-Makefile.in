@@ -1,18 +1,19 @@
---- Makefile.in.orig	2014-04-06 18:13:12.000000000 +0000
+--- Makefile.in.orig	2015-04-30 10:20:42 UTC
 +++ Makefile.in
-@@ -187,8 +187,12 @@ distclean:
- 
+@@ -171,7 +171,14 @@ distclean: clean
  # install floristlib
+ # make all files read-only to prevent recompilation
  install:
--	mkdir -p $(PREFIX)/lib/gnat
--	cp -pr floristlib $(PREFIX)/floristlib
--	cp -p florist.gpr $(PREFIX)/lib/gnat
+-	gprinstall -Pflorist $(PROJECT_FLAGS) -a -p --prefix=$(PREFIX) --sources-subdir=floristlib --lib-subdir=floristlib --link-lib-subdir=floristlib
+-	chmod a-w $(PREFIX)/floristlib/*
 +	mkdir -p $(DESTDIR)$(PREFIX)/lib/gnat \
 +		 $(DESTDIR)$(PREFIX)/lib/florist \
 +		 $(DESTDIR)$(PREFIX)/include/florist
-+	$(BSD_INSTALL_DATA) floristlib/*.ad[bs] $(DESTDIR)$(PREFIX)/include/florist
-+	$(BSD_INSTALL_DATA) floristlib/*.ali $(DESTDIR)$(PREFIX)/lib/florist
-+	$(BSD_INSTALL_DATA) floristlib/*.a $(DESTDIR)$(PREFIX)/lib/florist
-+	$(BSD_INSTALL_DATA) florist.gpr $(DESTDIR)$(PREFIX)/lib/gnat
++	$(BSD_INSTALL_DATA) gensrc/*.ad[bs] gensrc/threads/*.ad[bs] \
++		libsrc/*.ad[bs] libsrc/threads/*.ad[bs] \
++		$(DESTDIR)$(PREFIX)/include/florist
++	$(BSD_INSTALL_DATA) lib/*.ali $(DESTDIR)$(PREFIX)/lib/florist
++	$(BSD_INSTALL_DATA) lib/*.a $(DESTDIR)$(PREFIX)/lib/florist
++	$(BSD_INSTALL_DATA) ../florist.gpr $(DESTDIR)$(PREFIX)/lib/gnat
  
- .PHONY: install clean distclean regen
+ .PHONY: all install clean distclean regen floristlib force

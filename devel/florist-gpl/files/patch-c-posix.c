@@ -1,4 +1,4 @@
---- c-posix.c.orig	2014-04-06 18:13:12.000000000 +0000
+--- c-posix.c.orig	2015-04-30 10:20:43 UTC
 +++ c-posix.c
 @@ -721,6 +721,25 @@ typedef struct siginfo {
  

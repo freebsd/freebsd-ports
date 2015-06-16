@@ -1,6 +1,6 @@
---- c-posix-signals.c.orig	2014-04-06 18:13:12.000000000 +0000
+--- c-posix-signals.c.orig	2015-04-30 10:20:43 UTC
 +++ c-posix-signals.c
-@@ -467,9 +467,9 @@ int guess_nsigs () {
+@@ -468,9 +468,9 @@ int guess_nsigs () {
   */
  
  #if defined(__APPLE__)
@@ -12,7 +12,7 @@
  #endif
  
     sigset_t set;
-@@ -483,7 +483,7 @@ int guess_nsigs () {
+@@ -484,7 +484,7 @@ int guess_nsigs () {
        result = sigismember (&set, sig);
        if (result == 1) {
           last_good = sig;

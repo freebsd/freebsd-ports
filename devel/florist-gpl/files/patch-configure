@@ -1,6 +1,6 @@
---- configure.orig	2014-02-21 17:12:41.000000000 +0000
+--- configure.orig	2014-12-12 09:05:56 UTC
 +++ configure
-@@ -2757,10 +2757,18 @@ case ${UNAME_SYSTEM} in
+@@ -2849,10 +2849,18 @@ case ${UNAME_SYSTEM} in
      echo "Using Configuration for" ${UNAME_SYSTEM} ${UNAME_RELEASE};
      cp ./configs/pconfig.LynxOS ./pconfig.h.in;
      ;;
