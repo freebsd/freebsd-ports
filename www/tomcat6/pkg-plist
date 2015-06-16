@@ -279,8 +279,8 @@
 %%T%%/webapps/examples/WEB-INF/jsp/debug-taglib.tld
 %%T%%/webapps/examples/WEB-INF/jsp/example-taglib.tld
 %%T%%/webapps/examples/WEB-INF/jsp2/jsp2-example-taglib.tld
-%%T%%/webapps/examples/WEB-INF/lib/jstl.jar
-%%T%%/webapps/examples/WEB-INF/lib/standard.jar
+%%T%%/webapps/examples/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar
+%%T%%/webapps/examples/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar
 %%T%%/webapps/examples/WEB-INF/tags/displayProducts.tag
 %%T%%/webapps/examples/WEB-INF/tags/helloWorld.tag
 %%T%%/webapps/examples/WEB-INF/tags/panel.tag
