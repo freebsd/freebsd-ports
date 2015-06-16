@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	Log
-PORTVERSION=	1.12.8
+PORTVERSION=	1.12.9
 CATEGORIES=	sysutils www pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR logging utilities
 
-USES=	pear
+LICENSE=	MIT
+
+USES=		pear
 USE_PHP=	yes
 
 LATEST_LINK=	pear-Log
