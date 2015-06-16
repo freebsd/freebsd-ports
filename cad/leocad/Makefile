@@ -26,6 +26,8 @@ USE_QT4=	moc_build rcc_build uic_build iconengines_run imageformats_run \
 USE_GL=		glut
 USE_GNOME=	gtk20
 
+CXXFLAGS+=	-include ${WRKSRC}/common/lc_global.h
+
 PORTDOCS=	CREDITS.txt README.txt
 OPTIONS_DEFINE=	DOCS
 
