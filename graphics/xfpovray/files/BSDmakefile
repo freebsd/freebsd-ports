@@ -1,5 +1,6 @@
 PROG=	xfpovray
 NO_MAN=	nope
+NO_WERROR=	yes
 BINDIR=	${PREFIX}/bin
 CFLAGS+=-Iflx -I${LOCALBASE}/include -DHELP_DIR='"${DOCSDIR}"'
 LDADD+=	-L${LOCALBASE}/lib -lforms -lX11

@@ -17,7 +17,7 @@ RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray-meta
 USES=		tar:tgz uidfix
 USE_XORG=	x11 xext xpm
 MAKEFILE=	${FILESDIR}/BSDmakefile
-MAKE_ENV+=	DOCSDIR="${DOCSDIR}"
+MAKE_ENV=	DOCSDIR="${DOCSDIR}"
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g;" ${WRKSRC}/src/xfpovray.h
