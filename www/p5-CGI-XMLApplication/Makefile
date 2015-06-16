@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	CGI-XMLApplication
-PORTVERSION=	1.1.3
-PORTREVISION=	2
+PORTVERSION=	1.1.4
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,18 +10,20 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Object Oriented Interface for CGI Script Applications
 
-BUILD_DEPENDS=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
-		p5-XML-LibXSLT>=0:${PORTSDIR}/textproc/p5-XML-LibXSLT
+BUILD_DEPENDS=	p5-XML-LibXML>=1.1:${PORTSDIR}/textproc/p5-XML-LibXML \
+		p5-XML-LibXSLT>=1.08:${PORTSDIR}/textproc/p5-XML-LibXSLT
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
-USES=		perl5 shebangfix
-SHEBANG_FILES=	examples/*.pl
-USE_PERL5=	configure
 
 OPTIONS_DEFINE=	EXAMPLES
 
+NO_ARCH=	yes
+USE_PERL5=	configure
+USES=		perl5 shebangfix
+SHEBANG_FILES=	examples/*.pl
+
+PORTEXAMPLES=	*
+
 post-install:
-	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.pl ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.pm ${STAGEDIR}${EXAMPLESDIR}
