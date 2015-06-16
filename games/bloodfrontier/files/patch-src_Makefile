@@ -1,12 +1,12 @@
---- src/Makefile.orig	2009-11-25 14:52:58.000000000 +0300
-+++ src/Makefile	2013-09-14 03:43:17.632226100 +0400
+--- src/Makefile.orig	2009-11-25 11:52:58 UTC
++++ src/Makefile
 @@ -1,5 +1,4 @@
  #CXXFLAGS= -ggdb3
 -CXXFLAGS= -O3 -fomit-frame-pointer
  override CXXFLAGS+= -Wall -fsigned-char
  
  PLATFORM= $(shell uname -s)
-@@ -21,8 +20,8 @@
+@@ -21,8 +20,8 @@ WINDRES= windres
  CLIENT_INCLUDES= -DINTERFACE -DIRC $(INCLUDES) -Iinclude
  CLIENT_LIBS= -mwindows -lmingw32 -Llib -lSDLmain -lSDL -lSDL_image -lSDL_mixer -lzdll -lopengl32 -lenet -lws2_32 -lwinmm
  else
@@ -17,3 +17,12 @@
  endif
  ifeq ($(PLATFORM),Linux)
  CLIENT_LIBS+= -lrt
+@@ -82,8 +81,6 @@ CLIENT_OBJS= \
+ 	game/server.o \
+ 	game/stf.o \
+ 	game/weapons.o
+-	
+-CLIENT_PCH= shared/cube.h.gch engine/engine.h.gch game/game.h.gch
+ 
+ ifneq (,$(findstring MINGW,$(PLATFORM)))
+ SERVER_INCLUDES= -DSTANDALONE -DMASTERSERVER -DIRC $(INCLUDES) -Iinclude
