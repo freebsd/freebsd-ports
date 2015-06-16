@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tkabber
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	net-im ipv6 tcl tk
 MASTER_SITES=	http://files.jabber.ru/tkabber/
 
