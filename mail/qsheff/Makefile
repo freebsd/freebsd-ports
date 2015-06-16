@@ -17,6 +17,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/bin/ripmime:${PORTSDIR}/mail/ripmime
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+BROKEN_FreeBSD_8=	does not build on FreeBSD < 10.x
+BROKEN_FreeBSD_9=	does not build on FreeBSD < 10.x
+
 GNU_CONFIGURE=	yes
 
 USES=		qmail
