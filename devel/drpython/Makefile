@@ -38,7 +38,6 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|firefox|xdg-open|' ${WRKSRC}/drPreferences.py
 	@${REINPLACE_CMD} -e 's|%%PYTHON%%|${PYTHON_CMD}|' ${WRKSRC}/drpython.lin
-	cat ${WRKSRC}/drpython.lin
 
 pre-build:
 	@(cd ${WRKSRC}/docsrc && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} html)
