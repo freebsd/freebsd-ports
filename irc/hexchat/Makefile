@@ -20,6 +20,7 @@ CONFIGURE_ARGS+=--enable-openssl --enable-gtkfe --disable-sysinfo \
 		--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
+USE_OPENSSL=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lX11
@@ -51,6 +52,7 @@ DOAT_CONFIGURE_ENABLE=	doat
 FISHLIM_CONFIGURE_ENABLE=	fishlim
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
+NLS_USES_OFF=		gettext-tools # doesn't build otherwise
 NOTIFY_RUN_DEPENDS=	notify-send:${PORTSDIR}/devel/libnotify
 NOTIFY_CONFIGURE_ENABLE=	libnotify
 PERL_CONFIGURE_ENABLE=	perl
@@ -60,6 +62,12 @@ SOCKS_CONFIGURE_ENABLE=	socks
 TEXTFE_CONFIGURE_ENABLE=	textfe
 
 .include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+WITH_OPENSSL_PORT=	yes
+.endif
+
+.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MCA_BUNDLE}
 CA_BUNDLE=	"${LOCALBASE}/share/certs/ca-root-nss.crt"
@@ -93,4 +101,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/*.md ${STAGEDIR}${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
