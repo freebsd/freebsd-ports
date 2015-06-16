@@ -3,7 +3,7 @@
 
 PORTNAME=	grx
 PORTVERSION=	2.4.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://grx.gnu.de/download/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
@@ -74,6 +74,7 @@ post-patch:
 		${WRKSRC}/makedefs.grx
 
 post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgrx20X.so
 .for i in bin2c fnt2c xmodetest
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${i}
 .endfor
