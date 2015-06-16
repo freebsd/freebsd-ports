@@ -3,7 +3,7 @@
 
 PORTNAME=	lash
 PORTVERSION=	0.5.4
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	audio
 MASTER_SITES=	SAVANNAH
 
@@ -17,27 +17,32 @@ LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack \
 		libdssialsacompat.so:${PORTSDIR}/audio/libdssialsacompat \
 		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
 
-OPTIONS_DEFINE=	READLINE DOCS
-OPTIONS_DEFAULT=READLINE
-
 USES=		gmake pathfix pkgconfig libtool
 USE_GNOME=	gtk20 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsa-midi
 USE_LDCONFIG=	yes
 LIBS=		-luuid
+INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include/dssi -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+OPTIONS_DEFINE=	READLINE PYTHON DOCS
+OPTIONS_DEFAULT=READLINE
+OPTIONS_SUB=	yes
+
+PYTHON_DESC=	Build pylash
+PYTHON_USES=	python
+PYTHON_BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
+PYTHON_CONFIGURE_OFF=	--disable-pylash
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MREADLINE}
 USES+=		readline
-PLIST_SUB+=	READLINE=""
 .else
 CONFIGURE_ENV+=	vl_cv_lib_readline=no
-PLIST_SUB+=	READLINE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
