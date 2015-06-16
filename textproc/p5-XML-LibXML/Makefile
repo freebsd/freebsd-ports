@@ -29,7 +29,9 @@ PKGDEINSTALL=	${PKGINSTALL}
 
 CONFLICTS=	p5-XML-LibXML-XPathContext-[0-9]* p5-XML-LibXML-Common-[0-9]*
 
-post-stage:
+post-install:
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/XML/LibXML/LibXML.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/XML/LibXML/LibXML.so
+	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/XML/LibXML/LibXML.so
 
 .include <bsd.port.mk>
