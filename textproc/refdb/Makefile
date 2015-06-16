@@ -11,8 +11,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 MAINTAINER=	ohartman@zedat.fu-berlin.de
 COMMENT=	Bibliographic reference database
 
-BROKEN=		Fails to link
-
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libbtparse.so:${PORTSDIR}/textproc/btparse \
 		libdbi.so:${PORTSDIR}/databases/libdbi
@@ -23,6 +21,7 @@ INSTALL_TARGET=	install-strip
 PORTDOCS=	*
 
 CFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-lm
 
 CONFIGURE_ARGS=	--with-expat-lib=${LOCALBASE}/lib \
 		--with-classpath-root=${PREFIX}/share/java/classes \
