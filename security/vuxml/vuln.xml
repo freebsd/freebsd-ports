@@ -57,6 +57,73 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="eb8a8978-8dd5-49ce-87f4-49667b2166dd">
+    <topic>rubygem-rails -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>rubygem-activesupport</name>
+	<range><lt>3.2.22</lt></range>
+      </package>
+      <package>
+	<name>rubygem-activesupport4</name>
+	<range><lt>4.2.2</lt></range>
+      </package>
+      <package>
+	<name>rubygem-jquery-rails</name>
+	<range><lt>3.1.3</lt></range>
+      </package>
+      <package>
+	<name>rubygem-jquery-rails4</name>
+	<range><lt>4.0.4</lt></range>
+      </package>
+      <package>
+	<name>rubygem-rack</name>
+	<range><lt>1.4.6</lt></range>
+      </package>
+      <package>
+	<name>rubygem-rack15</name>
+	<range><lt>1.5.4</lt></range>
+      </package>
+      <package>
+	<name>rubygem-rack16</name>
+	<range><lt>1.6.2</lt></range>
+      </package>
+      <package>
+	<name>rubygem-rails</name>
+	<range><lt>3.2.22</lt></range>
+      </package>
+      <package>
+	<name>rubygem-rails4</name>
+	<range><lt>4.2.2</lt></range>
+      </package>
+      <package>
+	<name>rubygem-web-console</name>
+	<range><lt>2.1.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ruby on Rails blog:</p>
+	<blockquote cite="http://weblog.rubyonrails.org/2015/6/16/Rails-3-2-22-4-1-11-and-4-2-2-have-been-released-and-more/">
+	  <p>Rails 3.2.22, 4.1.11 and 4.2.2 have been released, along with web
+	    console and jquery-rails plugins and Rack 1.5.4 and 1.6.2.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1840</cvename>
+      <cvename>CVE-2015-3224</cvename>
+      <cvename>CVE-2015-3225</cvename>
+      <cvename>CVE-2015-3226</cvename>
+      <cvename>CVE-2015-3227</cvename>
+      <url>http://weblog.rubyonrails.org/2015/6/16/Rails-3-2-22-4-1-11-and-4-2-2-have-been-released-and-more/</url>
+    </references>
+    <dates>
+      <discovery>2015-06-16</discovery>
+      <entry>2015-06-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c67069dc-0986-11e5-bb90-002590263bf5">
     <topic>testdisk -- buffer overflow with malicious disk image</topic>
     <affects>
