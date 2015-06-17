@@ -1024,3 +1024,5 @@
 %%WWWDIR%%/catalog/ssl_check.php
 %%WWWDIR%%/catalog/stylesheet.css
 %%WWWDIR%%/catalog/tell_a_friend.php
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/catalog/download
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/catalog/pub

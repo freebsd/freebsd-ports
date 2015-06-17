@@ -3,7 +3,7 @@
 
 PORTNAME=	oscommerce
 DISTVERSION=	2.3.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.oscommerce.com/files/
@@ -18,6 +18,7 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 SUB_FILES=	pkg-message
 PORTDOCS=	CHANGELOG LICENSE STANDARD release_notes.pdf documentation.pdf
+PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 OPTIONS_DEFINE=	DOCS
 
