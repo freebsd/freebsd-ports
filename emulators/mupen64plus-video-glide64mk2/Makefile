@@ -10,7 +10,7 @@ LIB_DEPENDS=	libmupen64plus.so.2:${PORTSDIR}/emulators/mupen64plus-core \
 		libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
 USE_GL=		gl
-USE_SDL=	yes
+USE_SDL=	sdl2
 
 MASTERDIR=	${.CURDIR}/../mupen64plus-core
 
