@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Dancer-Plugin-Database-Core
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,6 +17,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=1.22:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=1.08:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
