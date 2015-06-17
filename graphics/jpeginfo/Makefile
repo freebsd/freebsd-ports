@@ -3,7 +3,7 @@
 
 PORTNAME=	jpeginfo
 PORTVERSION=	1.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.kokkonen.net/tjko/src/
 
@@ -18,5 +18,8 @@ LIBS+=		-L${LOCALBASE}/lib
 MAKE_ARGS=	mandir=${MANPREFIX}/man INSTALL_ROOT=${STAGEDIR}
 
 PLIST_FILES=	bin/jpeginfo man/man1/jpeginfo.1.gz
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/jpeginfo
 
 .include <bsd.port.mk>
