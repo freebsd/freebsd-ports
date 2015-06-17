@@ -30,7 +30,7 @@ LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES+=		gmake libtool pathfix pkgconfig
+USES+=		gmake iconv libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-libdvbv5 \
 		--disable-qv4l2 \
