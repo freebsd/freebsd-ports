@@ -60,7 +60,7 @@ do-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/samples && ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/{} \;
-	${FIND} -s ${STAGEDIR}${EXAMPLESDIR} -type d -empty -delete
+	${FIND} -d ${STAGEDIR}${EXAMPLESDIR} -type d -empty -exec ${RMDIR} {} \;
 	cd ${WRKSRC}/samples && ${FIND} . -type f -not -name '*.class' -exec ${INSTALL_DATA} {} ${STAGEDIR}${EXAMPLESDIR}/{} \;
 .endif
 
