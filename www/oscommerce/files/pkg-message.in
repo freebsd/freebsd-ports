@@ -3,9 +3,16 @@ POST-INSTALL CONFIGURATION FOR OSCOMMERCE:
 -----------------------------------------------------------------------------
 
 Congratulations!  You have installed oscommerce.
+
+To proceed with the installation, run: 
+	chmod 777 %%WWWDIR%%/catalog/includes/configure.php
+	chmod 777 %%WWWDIR%%/catalog/admin/includes/configure.php
+
 Once you've finished the rest of the installation, it is highly encouraged
 that you 
         chmod -R 000 %%WWWDIR%%/catalog/install
+	chmod 644 %%WWWDIR%%/catalog/includes/configure.php
+	chmod 644 %%WWWDIR%%/catalog/admin/includes/configure.php
 to disable the installation utilities. Then:
 
 1) Create a user and a database for oscommerce to store all
