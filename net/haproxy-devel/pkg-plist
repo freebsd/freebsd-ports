@@ -44,6 +44,8 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/internals/http-cookies.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/http-docs.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/http-parsing.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/lua_socket.fig
+%%PORTDOCS%%%%DOCSDIR%%/internals/lua_socket.pdf
 %%PORTDOCS%%%%DOCSDIR%%/internals/naming.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/pattern.dia
 %%PORTDOCS%%%%DOCSDIR%%/internals/pattern.pdf
