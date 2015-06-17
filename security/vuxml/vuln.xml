@@ -57,6 +57,77 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2438d4af-1538-11e5-a106-3c970e169bc2">
+    <topic>cURL -- Multiple Vulnerability</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><ge>7.40</ge><lt>7.43</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cURL reports:</p>
+	<blockquote cite="http://curl.haxx.se/docs/adv_20150617A.html">
+	  <p>libcurl can wrongly send HTTP credentials when re-using
+	    connections.</p>
+	  <p>libcurl allows applications to set credentials for the
+	    upcoming transfer with HTTP Basic authentication, like
+	    with CURLOPT_USERPWD for example. Name and password.
+	    Just like all other libcurl options the credentials
+	    are sticky and are kept associated with the "handle"
+	    until something is made to change the situation.</p>
+	  <p>Further, libcurl offers a curl_easy_reset() function
+	    that resets a handle back to its pristine state in
+	    terms of all settable options. A reset is of course
+	    also supposed to clear the credentials. A reset is
+	    typically used to clear up the handle and prepare
+	    it for a new, possibly unrelated, transfer.</p>
+	  <p>Within such a handle, libcurl can also store a
+	    set of previous connections in case a second transfer
+	    is requested to a host name for which an existing
+	    connection is already kept alive.</p>
+	  <p>With this flaw present, using the handle even
+	    after a reset would make libcurl accidentally use
+	    those credentials in a subseqent request if done
+	    to the same host name and connection as was
+	    previously accessed.</p>
+	  <p>An example case would be first requesting a password
+	    protected resource from one section of a web site, and
+	    then do a second request of a public resource from a
+	    completely different part of the site without
+	    authentication. This flaw would then inadvertently
+	    leak the credentials in the second request.</p>
+	</blockquote>
+	<blockquote cite="http://curl.haxx.se/docs/adv_20150617B.html">
+	  <p>libcurl can get tricked by a malicious SMB server to
+	    send off data it did not intend to.</p>
+	  <p>In libcurl's state machine function handling the SMB
+	    protocol (smb_request_state()), two length and offset
+	    values are extracted from data that has arrived over
+	    the network, and those values are subsequently used
+	    to figure out what data range to send back.</p>
+	  <p>The values are used and trusted without boundary
+	    checks and are just assumed to be valid. This allows
+	    carefully handicrafted packages to trick libcurl
+	    into responding and sending off data that was not
+	    intended. Or just crash if the values cause libcurl
+	    to access invalid memory.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3236</cvename>
+      <cvename>CVE-2015-3237</cvename>
+      <url>http://curl.haxx.se/docs/adv_20150617A.html</url>
+      <url>http://curl.haxx.se/docs/adv_20150617B.html</url>
+    </references>
+    <dates>
+      <discovery>2015-06-17</discovery>
+      <entry>2015-06-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="eb8a8978-8dd5-49ce-87f4-49667b2166dd">
     <topic>rubygem-rails -- multiple vulnerabilities</topic>
     <affects>
