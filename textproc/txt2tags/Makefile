@@ -3,14 +3,17 @@
 
 PORTNAME=	txt2tags
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert simply formatted text into markup (e.g., HTML)
 
-USES=		python:2 tar:tgz
+USES=		python:2 shebangfix tar:tgz
+SHEBANG_FILES=	extras/html-update.sh
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 PORTDOCS=	ChangeLog README userguide.pdf
 SAMPLE_DIRS=	css img module
