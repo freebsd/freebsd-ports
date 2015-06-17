@@ -14,6 +14,9 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	xterm:${PORTSDIR}/x11/xterm
 
+BROKEN_FreeBSD_8=	does not build on FreeBSD < 10.x
+BROKEN_FreeBSD_9=	does not build on FreeBSD < 10.x
+
 OPTIONS_DEFINE=	CSCOPE CLANG NLS
 CSCOPE_DESC=	CScope integration
 CLANG_DESC=	Clang code-completion
