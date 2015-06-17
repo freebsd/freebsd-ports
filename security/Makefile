@@ -812,6 +812,7 @@
     SUBDIR += py-paramiko
     SUBDIR += py-passlib
     SUBDIR += py-pbkdf2
+    SUBDIR += py-pgpdump
     SUBDIR += py-plaso
     SUBDIR += py-plone.app.openid
     SUBDIR += py-plone.keyring
