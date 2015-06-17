@@ -3,7 +3,7 @@
 
 PORTNAME=	namefix
 PORTVERSION=	4.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}.pl/${PORTVERSION}
 DISTNAME=	${PORTNAME}.pl_${PORTVERSION}
@@ -26,9 +26,11 @@ EXTRACT_AFTER_ARGS=	-bd -y >/dev/null 2>&1
 
 WRKSRC=		${WRKDIR}/${PORTNAME}.pl
 NO_BUILD=	yes
+NO_ARCH=	yes
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
+SHEBANG_FILES=	namefix-cli.pl namefix.pl
 
 do-configure:
 .for bin in ${PORTNAME} ${PORTNAME}-cli
