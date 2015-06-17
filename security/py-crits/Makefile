@@ -13,6 +13,8 @@ COMMENT=		Collaborative Research Into Threats
 LICENSE=		MIT
 LICENSE_FILE=		${WRKSRC}/LICENSE
 
+BROKEN=		Depends on conflicting versions of django
+
 USE_GITHUB=		yes
 GH_PROJECT=		crits
 
