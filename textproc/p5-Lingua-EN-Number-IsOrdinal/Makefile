@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Lingua-EN-Number-IsOrdinal
-PORTVERSION=	0.04
-PORTREVISION=	1
+PORTVERSION=	0.05
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,5 +21,6 @@ TEST_DEPENDS=	\
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	YES
 
 .include <bsd.port.mk>

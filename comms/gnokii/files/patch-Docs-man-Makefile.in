@@ -1,7 +1,7 @@
---- Docs/man/Makefile.in.orig  2008-02-23 17:36:56.000000000 +0100
-+++ Docs/man/Makefile.in       2008-02-23 17:52:50.000000000 +0100
-@@ -252,7 +252,7 @@
- target_vendor = @target_vendor@
+--- Docs/man/Makefile.in.orig	2015-06-15 14:14:28 UTC
++++ Docs/man/Makefile.in
+@@ -282,7 +282,7 @@ target_vendor = @target_vendor@
+ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
 -man_MANS = gnokii.1 sendsms.1 gnokiid.8 mgnokiidev.8 xgnokii.1x

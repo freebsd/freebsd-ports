@@ -652,7 +652,6 @@ sbin/grub-reboot
 sbin/grub-set-default
 sbin/grub-sparc64-setup
 share/grub/grub-mkconfig_lib
-share/grub/widthspec.h
 share/locale/ast/LC_MESSAGES/grub.mo
 share/locale/ca/LC_MESSAGES/grub.mo
 share/locale/da/LC_MESSAGES/grub.mo

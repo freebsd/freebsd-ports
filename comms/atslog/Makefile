@@ -3,7 +3,7 @@
 
 PORTNAME=	atslog
 PORTVERSION=	2.1.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	comms
 MASTER_SITES=	BERLIOS
 
@@ -21,7 +21,8 @@ WWWGD_DESC=	Graphic reports
 GNU_CONFIGURE=	yes
 USES=		perl5 shebangfix
 USE_RC_SUBR=	${PORTNAME}d
-SHEBANG_FILES=	include/atslogcleardb.pl.in include/atslogdb.pl.in
+SHEBANG_FILES=	data/sql/install-sql.pl \
+		include/atslogcleardb.pl.in include/atslogdb.pl.in
 PORTDOCS=	CHANGES ChangeLog DEINSTALL INSTALL LICENSE TODO UPDATING USAGE
 SUB_FILES=	pkg-message
 CONFIGS=	${PORTNAME}.conf.default ${PORTNAME}.conf.default.rus

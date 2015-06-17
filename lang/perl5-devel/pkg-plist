@@ -611,7 +611,7 @@ etc/perl5_version
 %%PRIV_LIB%%/autodie.pm
 %%PRIV_LIB%%/autodie/Scope/Guard.pm
 %%PRIV_LIB%%/autodie/Scope/GuardStack.pm
-%%PRIV_LIB%%/autodie/ScopeUtil.pm
+%%PRIV_LIB%%/autodie/Util.pm
 %%PRIV_LIB%%/autodie/exception.pm
 %%PRIV_LIB%%/autodie/exception/system.pm
 %%PRIV_LIB%%/autodie/hints.pm
@@ -1366,7 +1366,7 @@ etc/perl5_version
 %%MAN3%%/autodie.3.gz
 %%MAN3%%/autodie::Scope::Guard.3.gz
 %%MAN3%%/autodie::Scope::GuardStack.3.gz
-%%MAN3%%/autodie::ScopeUtil.3.gz
+%%MAN3%%/autodie::Util.3.gz
 %%MAN3%%/autodie::exception.3.gz
 %%MAN3%%/autodie::exception::system.3.gz
 %%MAN3%%/autodie::hints.3.gz

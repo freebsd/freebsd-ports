@@ -249,7 +249,7 @@
  }
 --- gcc/Makefile.in.orig
 +++ gcc/Makefile.in
-@@ -1156,7 +1156,6 @@
+@@ -1163,7 +1163,6 @@
  	insn-emit.o \
  	insn-extract.o \
  	insn-latencytab.o \
@@ -257,7 +257,7 @@
  	insn-opinit.o \
  	insn-output.o \
  	insn-peep.o \
-@@ -1511,6 +1510,7 @@
+@@ -1518,6 +1517,7 @@
    $(OBJS-libcommon-target) @TREEBROWSER@ main.o c-family/cppspec.o \
    $(COLLECT2_OBJS) $(EXTRA_GCC_OBJS) $(GCOV_OBJS) $(GCOV_DUMP_OBJS) \
    $(GCOV_TOOL_OBJS) $(GENGTYPE_OBJS) gcc-ar.o gcc-nm.o gcc-ranlib.o \
@@ -265,7 +265,7 @@
    lto-wrapper.o collect-utils.o
  
  # This lists all host object files, whether they are included in this
-@@ -1518,6 +1518,11 @@
+@@ -1525,6 +1525,11 @@
  ALL_HOST_OBJS = $(ALL_HOST_FRONTEND_OBJS) $(ALL_HOST_BACKEND_OBJS)
  
  BACKEND = libbackend.a main.o @TREEBROWSER@ libcommon-target.a libcommon.a \
@@ -277,7 +277,7 @@
  	$(CPPLIB) $(LIBDECNUMBER)
  
  # This is defined to "yes" if Tree checking is enabled, which roughly means
-@@ -2164,6 +2169,7 @@
+@@ -2171,6 +2176,7 @@
  
  insn-modes.c: s-modes; @true
  insn-modes.h: s-modes-h; @true
@@ -285,7 +285,7 @@
  min-insn-modes.c: s-modes-m; @true
  
  s-modes: build/genmodes$(build_exeext)
-@@ -2181,6 +2187,12 @@
+@@ -2188,6 +2194,12 @@
  	$(SHELL) $(srcdir)/../move-if-change tmp-min-modes.c min-insn-modes.c
  	$(STAMP) s-modes-m
  
@@ -298,7 +298,7 @@
  insn-preds.c: s-preds; @true
  tm-preds.h: s-preds-h; @true
  tm-constrs.h: s-constrs-h; @true
-@@ -3326,6 +3338,9 @@
+@@ -3333,6 +3345,9 @@
  	    ( cd $(DESTDIR)$(bindir) && \
  	      $(LN) $(GCC_INSTALL_NAME)$(exeext) $(FULL_DRIVER_NAME) ); \
  	  fi; \

@@ -1,14 +1,16 @@
 # $FreeBSD$
 
 PORTNAME=	Dist-Metadata
-PORTVERSION=	0.925
-PORTREVISION=	1
+PORTVERSION=	0.926
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for information about a perl module distribution
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
 	p5-Archive-Zip>=1.30:${PORTSDIR}/archivers/p5-Archive-Zip \
@@ -26,5 +28,6 @@ TEST_DEPENDS=	\
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	YES
 
 .include <bsd.port.mk>

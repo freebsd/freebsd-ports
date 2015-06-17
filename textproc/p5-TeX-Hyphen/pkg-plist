@@ -1,6 +1,8 @@
 %%PERL5_MAN3%%/TeX::Hyphen.3.gz
 %%PERL5_MAN3%%/TeX::Hyphen::czech.3.gz
 %%PERL5_MAN3%%/TeX::Hyphen::german.3.gz
+%%PERL5_MAN3%%/TeX::Hyphen::utf8.3.gz
 %%SITE_PERL%%/TeX/Hyphen.pm
 %%SITE_PERL%%/TeX/Hyphen/czech.pm
 %%SITE_PERL%%/TeX/Hyphen/german.pm
+%%SITE_PERL%%/TeX/Hyphen/utf8.pm

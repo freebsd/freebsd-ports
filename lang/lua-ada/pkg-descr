@@ -1,0 +1,8 @@
+These are bindings to a Lua library for Ada.  The gpr file is written for
+the version of Lua that is default on the system that builds the port.
+(see Mk/bsd.default-versions.mk)
+
+There is no documentation available, but two examples with sources are
+built and installed for illustration.
+
+WWW: http://github.com/AdaCore/ada-lua

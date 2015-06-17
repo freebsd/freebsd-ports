@@ -8,7 +8,6 @@ include/mupen64plus/m64p_vidext.h
 lib/libmupen64plus.so.2
 lib/libmupen64plus.so.2.0.0
 %%DATADIR%%/font.ttf
-%%DATADIR%%/mupen64plus.cht
 %%DATADIR%%/mupen64plus.ini
 %%DATADIR%%/mupencheat.txt
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	usbids
-PORTVERSION=	20150505
+PORTVERSION=	20150609
 CATEGORIES=	misc
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -12,6 +12,7 @@ COMMENT=	Database of all known IDs used in USB devices
 LICENSE=	BSD3CLAUSE GPLv2 GPLv3
 LICENSE_COMB=	dual
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 USES=		tar:xz
 

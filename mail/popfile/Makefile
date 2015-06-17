@@ -3,6 +3,7 @@
 
 PORTNAME=	popfile
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://getpopfile.org/downloads/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. archive
@@ -20,10 +21,12 @@ RUN_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 USES=		perl5 shebangfix zip
 USE_PERL5=	run
-SHEBANG_FILES=	popfile.pl
+SHEBANG_FILES=	bayes.pl insert.pl \
+		pipe.pl popfile.pl
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 SUB_FILES=	popfile.sh

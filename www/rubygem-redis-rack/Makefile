@@ -2,6 +2,7 @@
 
 PORTNAME=	redis-rack
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +11,7 @@ COMMENT=	Redis Store for Rack
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-rack15>=1.5:${PORTSDIR}/www/rubygem-rack15 \
+RUN_DEPENDS=	rubygem-rack16>=1.5:${PORTSDIR}/www/rubygem-rack16 \
 		rubygem-redis-store>=1.1.0:${PORTSDIR}/devel/rubygem-redis-store
 
 NO_ARCH=	yes

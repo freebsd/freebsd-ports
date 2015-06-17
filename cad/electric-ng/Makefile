@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	electric
-PORTVERSION=	9.05
-PORTREVISION=	1
+PORTVERSION=	9.06
 CATEGORIES=	cad java
 MASTER_SITES=	GNU/${PORTNAME:S/-ng//} \
 		http://www.staticfreesoft.com/:1 \

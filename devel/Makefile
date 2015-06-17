@@ -3811,6 +3811,7 @@
     SUBDIR += py-colorama
     SUBDIR += py-colorlog
     SUBDIR += py-conditional
+    SUBDIR += py-configargparse
     SUBDIR += py-configobj
     SUBDIR += py-configparser
     SUBDIR += py-construct
@@ -4044,6 +4045,7 @@
     SUBDIR += py-pympler
     SUBDIR += py-pymtbl
     SUBDIR += py-pyparsing15
+    SUBDIR += py-pyrfc3339
     SUBDIR += py-pyro
     SUBDIR += py-pyshapelib
     SUBDIR += py-pytemplate
@@ -4054,6 +4056,7 @@
     SUBDIR += py-pytest-xdist
     SUBDIR += py-python-jenkins
     SUBDIR += py-python-statsd
+    SUBDIR += py-python2-pythondialog
     SUBDIR += py-pythonbrew
     SUBDIR += py-pytrie
     SUBDIR += py-pytz

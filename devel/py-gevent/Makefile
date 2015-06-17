@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gevent
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,8 +12,8 @@ COMMENT=	Python co-routine networking library based on greenlet
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}greenlet>=0:${PORTSDIR}/devel/py-greenlet
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}greenlet>=0:${PORTSDIR}/devel/py-greenlet \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}greenlet>=0.4.7:${PORTSDIR}/devel/py-greenlet
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}greenlet>=0.4.7:${PORTSDIR}/devel/py-greenlet \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3
 
 USE_PYTHON=	autoplist distutils

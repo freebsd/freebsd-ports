@@ -3,15 +3,19 @@
 
 PORTNAME=	thales
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	irc
 MASTER_SITES=	GNU
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Thales -- An IRC to MySQL gateway
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake shebangfix
+SHEBANG_FILES=	examples/MRTG/thalesinfo.pl
 USE_MYSQL=	yes
 USE_RC_SUBR=	thales
 

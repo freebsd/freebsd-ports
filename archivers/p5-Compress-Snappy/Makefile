@@ -3,6 +3,7 @@
 
 PORTNAME=	Compress-Snappy
 PORTVERSION=	0.24
+PORTREVISION=	1
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,5 +18,10 @@ BUILD_DEPENDS=	p5-Devel-CheckLib>=0:${PORTSDIR}/devel/p5-Devel-CheckLib
 
 USE_PERL5=	configure
 USES=		perl5
+
+post-install:
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Compress/Snappy/Snappy.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Compress/Snappy/Snappy.so
+	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Compress/Snappy/Snappy.so
 
 .include <bsd.port.mk>

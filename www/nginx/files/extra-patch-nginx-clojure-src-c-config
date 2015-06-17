@@ -1,0 +1,25 @@
+--- ../nginx-clojure-0.3.0/src/c/config.orig	2014-12-11 16:52:18.000000000 +0300
++++ ../nginx-clojure-0.3.0/src/c/config	2015-06-14 14:19:27.064234000 +0300
+@@ -13,9 +13,13 @@
+     $ngx_addon_dir/ngx_http_clojure_socket.h \
+ "
+ 
++#freebsd
++JNI_HEADER_1="%%JAVA_HOME%%/include"
++JNI_HEADER_2="${JNI_HEADER_1}/freebsd"
++
+ #linux ubuntu
+-JNI_HEADER_1="/usr/lib/jvm/java-7-oracle/include"
+-JNI_HEADER_2="${JNI_HEADER_1}/linux"
++#JNI_HEADER_1="/usr/lib/jvm/java-7-oracle/include"
++#JNI_HEADER_2="${JNI_HEADER_1}/linux"
+ 
+ #linux centos
+ #JNI_HEADER_1="/usr/java/jdk1.6.0_45/include"
+@@ -43,6 +47,3 @@
+ #for easy debug on linux or macosx  
+ #CFLAGS="-g -O0 $CFLAGS"
+ 
+-if [ "$NGX_PLATFORM" != win32 ]; then
+-CORE_LIBS="$CORE_LIBS -ldl";
+-fi

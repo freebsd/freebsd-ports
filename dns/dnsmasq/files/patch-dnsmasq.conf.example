@@ -1,5 +1,5 @@
---- ./dnsmasq.conf.example.orig	2014-04-09 21:36:53.000000000 +0200
-+++ ./dnsmasq.conf.example	2014-04-15 19:32:54.000000000 +0200
+--- dnsmasq.conf.example.orig	2015-06-12 20:39:11 UTC
++++ dnsmasq.conf.example
 @@ -123,6 +123,12 @@
  # running another nameserver on the same machine.
  #bind-interfaces

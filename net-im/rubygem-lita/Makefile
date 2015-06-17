@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lita
-PORTVERSION=	4.4.2
+PORTVERSION=	4.4.3
 CATEGORIES=	net-im rubygems
 MASTER_SITES=	RG
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=	redis>=0:${PORTSDIR}/databases/redis \
 		rubygem-ice_nine>=0.11.0:${PORTSDIR}/devel/rubygem-ice_nine \
 		rubygem-multi_json>=1.7.7:${PORTSDIR}/devel/rubygem-multi_json \
 		rubygem-puma>=2.7.1:${PORTSDIR}/www/rubygem-puma \
-		rubygem-rack15>=1.5.2:${PORTSDIR}/www/rubygem-rack15 \
+		rubygem-rack16>=1.5.2:${PORTSDIR}/www/rubygem-rack16 \
 		rubygem-redis-namespace>=1.3.0:${PORTSDIR}/databases/rubygem-redis-namespace \
 		rubygem-thor>=0.18.1:${PORTSDIR}/devel/rubygem-thor
 

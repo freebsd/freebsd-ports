@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	clhep
-PORTVERSION=	2.2.0.6
+PORTVERSION=	2.2.0.8
 CATEGORIES=	science
 MASTER_SITES=	http://proj-clhep.web.cern.ch/proj-clhep/DISTRIBUTION/tarFiles/
 

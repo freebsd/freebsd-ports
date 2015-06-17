@@ -7,13 +7,13 @@ PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	http://f2.org/download/
 DISTNAME=	ijb-zlib-11
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP proxy server that eliminates ads
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
 
+USES=		tar:tgz
 ALL_TARGET=	# yes, an empty target.
 JDIR=		${PREFIX}/etc/junkbuster
 SUB_FILES=	junkbuster pkg-message

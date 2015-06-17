@@ -25,6 +25,11 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}${DISTNAME_SUFFIX}
 MAINTAINER=	ler@lerctr.org
 COMMENT=	Lists information about open files (similar to fstat(1))
 
+LICENSE=lsof
+LICENSE_NAME=lsof
+LICENSE_FILE=${FILESDIR}/LICENSE
+LICENSE_PERMS=	 dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 #Please leave the below line in for the next clean up.
 FIXUP_RELEASE=	YES
 .if defined(FIXUP_RELEASE)
@@ -33,7 +38,6 @@ DISTNAME_SUFFIX=.freebsd
 SRCBALL_NAME=	${DISTNAME:S/_W$//}_src
 WRKSRC=		${WRKDIR}/${DISTNAME}/${SRCBALL_NAME}
 .endif
-
 HAS_CONFIGURE=	yes
 
 USES=		shebangfix tar:bzip2

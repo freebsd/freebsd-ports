@@ -1,0 +1,11 @@
+--- configure.orig	2015-01-25 19:42:02.248041140 +0100
++++ configure	2015-01-25 19:42:14.503036421 +0100
+@@ -19876,7 +19876,7 @@
+   WITH_LIBV4L_FALSE=
+ fi
+ 
+- if test x$enable_v4l_utils != xno -a x$linux_os = xyes; then
++ if test x$enable_v4l_utils != xno; then
+   WITH_V4LUTILS_TRUE=
+   WITH_V4LUTILS_FALSE='#'
+ else

@@ -17,6 +17,8 @@ PLIST_FILES=	bin/flasm
 
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 
+MAKE_JOBS_UNSAFE=	yes
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/flasm ${STAGEDIR}${PREFIX}/bin
 

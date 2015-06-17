@@ -2,6 +2,7 @@
 
 PORTNAME=	spatialite-tools
 PORTVERSION=	4.2.0
+PORTREVISION=	1
 CATEGORIES=	databases geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 

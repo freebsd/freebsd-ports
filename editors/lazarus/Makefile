@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	lazarus
-PORTVERSION=	1.2.6
+PORTVERSION=	1.4.0
 DISTVERSIONSUFFIX=	-0
 PORTREVISION?=	0
 CATEGORIES=	editors devel
-MASTER_SITES=	SF/${PORTNAME}/Lazarus%20Zip%20_%20GZip/Lazarus%20${PORTVERSION} \
+MASTER_SITES=	SF/${PORTNAME}/Lazarus%20Zip%20_%20GZip/Lazarus%20${PORTVERSION:S/.0//} \
 		LOCAL/acm/freepascal
 DIST_SUBDIR=	freepascal
 
@@ -105,13 +105,15 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' -e 's|%%DATADIR%%|${DATADIR}|g' \
-			-e 's|tools: lcl|tools:|g' -e '2840d' -e '2842d' -e '2843d' -e '2844d' ${WRKSRC}/${MAKEFILE}
+			-e 's|tools: lcl|tools:|g' -e '3080d' -e '3082d' -e '3083d' -e '3084d' -e '3085d' -e '3086d' ${WRKSRC}/${MAKEFILE}
 
 pre-build:
-	@${LN} -s ${LOCALBASE}/share/${PORTNAME}-${PORTVERSION}/lcl/units ${WRKSRC}/lcl/units
-	@${LN} -s ${LOCALBASE}/share/${PORTNAME}-${PORTVERSION}/components/ideintf/units ${WRKSRC}/components/ideintf/units
-	@${LN} -s ${LOCALBASE}/share/${PORTNAME}-${PORTVERSION}/components/synedit/units ${WRKSRC}/components/synedit/units
-	@${LN} -s ${LOCALBASE}/share/${PORTNAME}-${PORTVERSION}/components/lazcontrols/lib ${WRKSRC}/components/lazcontrols/lib
+	@${LN} -sf ${LOCALBASE}/share/${PORTNAME}-${PORTVERSION}/lcl/units ${WRKSRC}/lcl/units
+	@${LN} -sf ${LOCALBASE}/share/${PORTNAME}-${PORTVERSION}/components/debuggerintf/lib ${WRKSRC}/components/debuggerintf/lib
+	@${LN} -sf ${LOCALBASE}/share/${PORTNAME}-${PORTVERSION}/components/ideintf/units ${WRKSRC}/components/ideintf/units
+	@${LN} -sf ${LOCALBASE}/share/${PORTNAME}-${PORTVERSION}/components/synedit/units ${WRKSRC}/components/synedit/units
+	@${LN} -sf ${LOCALBASE}/share/${PORTNAME}-${PORTVERSION}/components/lazcontrols/lib ${WRKSRC}/components/lazcontrols/lib
+	@${LN} -sf ${LOCALBASE}/share/${PORTNAME}-${PORTVERSION}/components/lazdebuggergdbmi/lib ${WRKSRC}/components/lazdebuggergdbmi/lib
 
 do-build:
 	@cd ${WRKSRC} && \

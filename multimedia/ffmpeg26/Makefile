@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ffmpeg
-PORTVERSION=	2.6.1
+PORTVERSION=	2.6.3
 PORTREVISION=	2
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -33,13 +33,13 @@ MAKE_ARGS+=	EXESUF="${FFMPEG_SUFFIX}"
 
 OPTIONS_DEFINE=	AACPLUS ALSA AMR_NB AMR_WB ASS CDIO CELT DEBUG DOCS FAAC \
 		FDK_AAC FFSERVER FONTCONFIG FREETYPE FREI0R GSM ICONV \
-		JACK LAME LIBBLURAY LIBV4L MODPLUG OPENAL OPENCV OPENJPEG \
+		JACK LAME LIBBLURAY LIBV4L MAH MODPLUG OPENAL OPENCV OPENJPEG \
 		OPTIMIZED_CFLAGS OPUS PULSEAUDIO RTMP SCHROEDINGER SDL SPEEX \
 		THEORA VAAPI VDPAU VO_AACENC VO_AMRWBENC VORBIS VPX \
 		X11GRAB X264 X265 XVID
 
 OPTIONS_DEFAULT=	FFSERVER FONTCONFIG FREETYPE FREI0R GNUTLS ICONV \
-			OPENCV SCHROEDINGER THEORA VORBIS VPX X264 XVID
+			MAH OPENCV SCHROEDINGER THEORA VORBIS VPX X264 XVID
 
 OPTIONS_SINGLE=		SSL
 OPTIONS_SINGLE_SSL=	GNUTLS OPENSSL
@@ -49,9 +49,12 @@ CDIO_DESC=	Audio CD grabbing with libcdio
 FDK_AAC_DESC=	AAC audio encoding via Fraunhofer FDK
 FFSERVER_DESC=	Build and install ffserver
 LIBV4L_DESC=	Video for Linux support
+MAH_DESC=	Enable memalign hack
 X11GRAB_DESC=	Enable x11 grabbing
 
 OPTIONS_SUB=	yes
+
+OPTIONS_EXCLUDE_DragonFly=	MAH
 
 # aacplus
 AACPLUS_LIB_DEPENDS=	libaacplus.so:${PORTSDIR}/audio/libaacplus
@@ -134,6 +137,9 @@ LIBV4L_LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
 LIBV4L_CONFIGURE_ENABLE=	libv4l2
 LIBV4L_CONFIGURE_OFF=		--disable-indev=v4l2 \
 				--disable-outdev=v4l2
+
+# memalign-hack
+MAH_CONFIGURE_ENABLE=	memalign-hack
 
 # modplug
 MODPLUG_LIB_DEPENDS=	libmodplug.so:${PORTSDIR}/audio/libmodplug
@@ -270,7 +276,6 @@ CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 		--enable-avfilter \
 		--enable-avresample \
 		--enable-pthreads \
-		--enable-memalign-hack \
 		--disable-libmfx \
 		--disable-libstagefright-h264 \
 		--disable-libutvideo \

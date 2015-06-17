@@ -1,7 +1,5 @@
 sbin/dnsmasq
-@unexec if cmp -s %D/etc/dnsmasq.conf %D/etc/dnsmasq.conf.example ; then rm -f %D/etc/dnsmasq.conf ; fi
-etc/dnsmasq.conf.example
-@exec if [ ! -f %D/etc/dnsmasq.conf ]; then cp -p %D/%F %B/dnsmasq.conf; fi
+@sample etc/dnsmasq.conf.sample
 man/man8/dnsmasq.8.gz
 %%DATADIR%%/trust-anchors.conf
 %%EXAMPLESDIR%%/dnslist/dhcp.css

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libzmq4
-PORTVERSION=	4.0.5
-PORTREVISION=	1
+PORTVERSION=	4.1.2
 CATEGORIES=	net
 MASTER_SITES=	http://download.zeromq.org/
 DISTNAME=	zeromq-${DISTVERSION}
@@ -15,23 +14,25 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	zmq-[0-9]* libzmq[^4]-[0-9]*
 
-USES=		libtool pathfix
+USES=		libtool pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-OPTIONS_DEFINE=	CURVE DEBUG PGM
+OPTIONS_DEFINE=		CURVE DEBUG PGM
 OPTIONS_DEFAULT=	CURVE PGM
 
 CURVE_DESC=	CURVE security mechanism via libsodium
 PGM_DESC=	Reliable multicast transport using PGM via OpenPGM
 
-CURVE_CONFIGURE_ON=	--with-libsodium=${LOCALBASE}
+CURVE_CONFIGURE_WITH=	libsodium
 CURVE_LIB_DEPENDS=	libsodium.so:${PORTSDIR}/security/libsodium
 
-DEBUG_CONFIGURE_ON=	--enable-debug
-PGM_CONFIGURE_ON=	--with-system-pgm
+DEBUG_CONFIGURE_ENABLE=	debug
+
+PGM_CONFIGURE_WITH=	pgm
 PGM_LIB_DEPENDS=	libpgm.so:${PORTSDIR}/net/openpgm
-PGM_USES=		pkgconfig
+
+CONFIGURE_ARGS+=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 
 CFLAGS+=	-Wno-long-long
 MAKE_ENV=	V=1

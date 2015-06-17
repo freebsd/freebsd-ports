@@ -3,7 +3,7 @@
 
 PORTNAME=	gawk
 PORTVERSION=	4.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	GNU
 
@@ -23,7 +23,7 @@ MPFR_CONFIGURE_OFF=	--without-gmp --without-mpfr
 INFO=		gawk gawkinet
 
 GNU_CONFIGURE=	yes
-USES=		iconv libtool makeinfo readline:port tar:xz
+USES=		iconv libtool makeinfo readline tar:xz
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} \
 		--with-libintl-prefix=${LOCALBASE} \
 		AWK=${AWK}

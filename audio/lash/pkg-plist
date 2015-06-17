@@ -12,6 +12,9 @@ lib/liblash.so.1.1.1
 lib/liblash.so.1
 lib/liblash.so
 lib/liblash.a
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/_lash.a
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/_lash.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/lash.py
 libdata/pkgconfig/lash-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%/lash-manual.html
 %%DATADIR%%/dtds/lash-project-1.0.dtd

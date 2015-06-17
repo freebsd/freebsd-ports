@@ -3,6 +3,7 @@
 
 PORTNAME=	tarantool
 PORTVERSION=	1.5.3
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://tarantool.org/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${TR_REV}-src
@@ -14,7 +15,7 @@ LICENSE=	BSD2CLAUSE
 
 TR_REV=		102-g2857a4e
 MAKE_JOBS_UNSAFE=yes
-USES=		cmake gettext gmake iconv perl5 compiler:c++11-lang
+USES=		cmake compiler:c++11-lang gettext gmake iconv perl5 readline
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
 SUB_FILES=	pkg-message

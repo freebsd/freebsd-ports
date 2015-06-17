@@ -1,5 +1,5 @@
-SHA256 (nginx-1.9.1.tar.gz) = 09f555fae694c0944f172b575ad239f56d40d14559d98e843de0a690f38c1dad
-SIZE (nginx-1.9.1.tar.gz) = 855402
+SHA256 (nginx-1.9.2.tar.gz) = 80b6425be14a005c8cb15115f3c775f4bc06bf798aa1affaee84ed9cf641ed78
+SIZE (nginx-1.9.2.tar.gz) = 860233
 SHA256 (nginx-accesskey-2.0.3.tar.gz) = d9e94321e78a02de16c57f3e048fd31059fd8116ed03d6de7180f435c52502b1
 SIZE (nginx-accesskey-2.0.3.tar.gz) = 2632
 SHA256 (kvspb-nginx-auth-ldap-928856aa95_GH0.tar.gz) = de21b7d9ef0953e96736f6b02d11236c46b138a0bc7889725e8b31f7482e67de
@@ -44,6 +44,8 @@ SHA256 (stnoonan-spnego-http-auth-nginx-module-29cb489_GH0.tar.gz) = 0b85a00e6e9
 SIZE (stnoonan-spnego-http-auth-nginx-module-29cb489_GH0.tar.gz) = 17546
 SHA256 (yaoweibin-nginx_ajp_module-bf6cd93_GH0.tar.gz) = 9e3f78ea73e2d606a95ee64fd3affa4c249f9b342e66b6b11b63061791f28316
 SIZE (yaoweibin-nginx_ajp_module-bf6cd93_GH0.tar.gz) = 109704
+SHA256 (nginx-clojure-nginx-clojure-v0.3.0_GH0.tar.gz) = 4f706195d358aeabed3a2f9ed0f412542ce3d17d4466cffb75f798e15fd79952
+SIZE (nginx-clojure-nginx-clojure-v0.3.0_GH0.tar.gz) = 472761
 SHA256 (openresty-echo-nginx-module-v0.57_GH0.tar.gz) = 8467237ca0fae74ca7a32fbd34fc6044df307098415d48068214c9c235695a07
 SIZE (openresty-echo-nginx-module-v0.57_GH0.tar.gz) = 65073
 SHA256 (openresty-headers-more-nginx-module-v0.26_GH0.tar.gz) = d6bdc51f9e778a3b23e41a51cae542c1467a1e5e55c1329a7ffc454be084fb6f

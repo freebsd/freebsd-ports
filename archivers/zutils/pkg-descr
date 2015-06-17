@@ -10,6 +10,7 @@ Zcmp - Decompresses and compares two files byte by byte.
 Zdiff - Decompresses and compares two files line by line.
 Zgrep - Decompresses and searches files for a regular expression.
 Ztest - Tests integrity of compressed files.
+Zupdate - Recompresses files to lzip format.
 
 The supported compressors are bzip2, gzip, lzip, and xz.
 

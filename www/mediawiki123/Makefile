@@ -15,9 +15,6 @@ LICENSE=	GPLv2
 
 CONFLICTS=	mediawiki119-[0-9]* mediawiki12[45]-[0-9]*
 
-DEPRECATED=		Please upgrade to mediawiki-1.25
-EXPIRATION_DATE=	2015-11-27
-
 USES=		shebangfix
 SHEBANG_FILES=	maintenance/dev/*.sh \
 		maintenance/hiphop/run-server

@@ -2,18 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	pdf2svg
-PORTVERSION=	0.2.2
-PORTREVISION=	3
+PORTVERSION=	0.2.3
+DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.cityinthesky.co.uk/wp-content/uploads/2013/10/
 
 MAINTAINER=	martin.dieringer@gmx.de
 COMMENT=	Convert PDF to SVG
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	db9052
+
 USES=		pkgconfig
-USE_GNOME=	cairo gtk20
+USE_GNOME=	cairo
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/pdf2svg

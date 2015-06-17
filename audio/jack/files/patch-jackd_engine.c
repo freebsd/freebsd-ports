@@ -1,6 +1,6 @@
---- jackd/engine.c.orig	2008-12-02 17:29:23.000000000 +0100
-+++ jackd/engine.c	2009-02-11 20:38:52.000000000 +0100
-@@ -1383,7 +1383,7 @@
+--- jackd/engine.c.orig	2013-11-30 17:04:00 UTC
++++ jackd/engine.c
+@@ -1415,7 +1415,7 @@ handle_external_client_request (jack_eng
  	if ((r = read (client->request_fd, &req, sizeof (req)))
  	    < (ssize_t) sizeof (req)) {
  		if (r == 0) {
@@ -9,7 +9,7 @@
  			/* poll is implemented using
  			   select (see the macosx/fakepoll
  			   code). When the socket is closed
-@@ -1396,7 +1396,7 @@
+@@ -1428,7 +1428,7 @@ handle_external_client_request (jack_eng
  			   and remove the client.
  			*/
  			jack_mark_client_socket_error (engine, fd);

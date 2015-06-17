@@ -411,6 +411,7 @@
     SUBDIR += w_scan
     SUBDIR += webcamd
     SUBDIR += win32-codecs
+    SUBDIR += winff
     SUBDIR += x264
     SUBDIR += x265
     SUBDIR += xanim

@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	observium
-PORTVERSION=	0.14.11.6000
-PORTREVISION=	2
+PORTVERSION=	0.15.06.6430
+PORTREVISION=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.observium.org/
 DISTNAME=	${PORTNAME}-community-latest
@@ -17,10 +17,37 @@ LICENSE=	GPLv3
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		python shebangfix
-SHEBANG_FILES=	mibs/process.pl html/js/makemini.pl \
-		scripts/watchmaillog/watchmaillog.pl \
-		scripts/agent-local/postgresql.pl \
-		scripts/removespikes.pl scripts/add_ds.pl
+SHEBANG_FILES=	html/js/makemini.pl \
+	mibs/process.pl \
+	scripts/agent-local/areca-hw \
+	scripts/agent-local/asterisk \
+	scripts/agent-local/bind \
+	scripts/agent-local/crashplan \
+	scripts/agent-local/edac \
+	scripts/agent-local/exim-mailqueue.sh \
+	scripts/agent-local/hdarray \
+	scripts/agent-local/ipmitool-sensor \
+	scripts/agent-local/ksm \
+	scripts/agent-local/lmsensors \
+	scripts/agent-local/postfix_mailgraph \
+	scripts/agent-local/postfix_qshape \
+	scripts/agent-local/postgresql.pl \
+	scripts/agent-local/sabnzbd-qstatus \
+	scripts/agent-local/temperature \
+	scripts/agent-local/vmwaretools \
+	scripts/agent-local/zimbra \
+	scripts/cron-hourly.sh \
+	scripts/cron-minute.sh \
+	scripts/cron.sh \
+	scripts/get-geshi.sh \
+	scripts/get-jpgraph.sh \
+	scripts/ifAlias scripts/rename-mibs.pl \
+	scripts/makecss.sh \
+	scripts/observium_agent \
+	scripts/removespikes.php scripts/rrdtoolx.py \
+	scripts/removespikes.pl scripts/add_ds.pl \
+	scripts/watchmaillog/watchmaillog.pl
+
 USE_PHP=	ctype filter gd json mcrypt mysql session snmp tokenizer xml
 WANT_PHP_CLI=	yes
 
@@ -84,33 +111,33 @@ post-patch:
 	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/poller-wrapper.py ${WRKSRC}/poller.php
 
 do-install:
-	@${MKDIR} ${STAGEDIR}/${WWWDIR}
+	${MKDIR} ${STAGEDIR}/${WWWDIR}
 .for dir in ${ROOT_DIRS}
-	@${MKDIR} ${STAGEDIR}/${WWWDIR}/${dir}
-	@cd ${WRKSRC}/${dir} && ${COPYTREE_SHARE} . ${STAGEDIR}/${WWWDIR}/${dir}
+	${MKDIR} ${STAGEDIR}/${WWWDIR}/${dir}
+	cd ${WRKSRC}/${dir} && ${COPYTREE_SHARE} . ${STAGEDIR}/${WWWDIR}/${dir}
 .endfor
 .for f in ${ROOT_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}/${WWWDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}/${WWWDIR}
 .endfor
 	# Create empty rrd dir writable by www
-	@${MKDIR} ${STAGEDIR}/${WWWDIR}/rrd
+	${MKDIR} ${STAGEDIR}/${WWWDIR}/rrd
 	# Files in scripts dir should be executable
-	@${FIND} ${STAGEDIR}/${WWWDIR}/scripts -type f -exec ${CHMOD} +x {} \;
+	${FIND} ${STAGEDIR}/${WWWDIR}/scripts -type f -exec ${CHMOD} +x {} \;
 	# Ensure PHP and Python scripts are executable
-	@${FIND} ${STAGEDIR}/${WWWDIR} -type f -name '*.py' -or -type f -name '*.php' -exec ${CHMOD} +x {} \;
+	${FIND} ${STAGEDIR}/${WWWDIR} -type f -name '*.py' -or -type f -name '*.php' -exec ${CHMOD} +x {} \;
 	# Rename for @sample
-	@${MV} ${STAGEDIR}/${WWWDIR}/config.php.default ${STAGEDIR}/${WWWDIR}/config.php.default.sample
+	${MV} ${STAGEDIR}/${WWWDIR}/config.php.default ${STAGEDIR}/${WWWDIR}/config.php.default.sample
 
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
+	${MKDIR} ${STAGEDIR}/${DOCSDIR}
 .for f in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}/${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}/${DOCSDIR}
 .endfor
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
 .for f in ${PORTEXAMPLES}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}/${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}/${EXAMPLESDIR}
 .endfor
 .endif
 

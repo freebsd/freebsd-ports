@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	testdisk
-PORTVERSION=	6.14
+PORTVERSION=	7.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cgsecurity.org/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -17,9 +17,13 @@ CPPFLAGS+=	-I${PREFIX}/include
 LDFLAGS+=	-L${PREFIX}/lib
 CONFIGURE_ARGS=	--without-ewf
 
-PLIST_FILES=	bin/fidentify bin/testdisk bin/photorec \
+PLIST_FILES=	bin/fidentify bin/photorec bin/testdisk \
 		man/man8/fidentify.8.gz man/man8/photorec.8.gz \
-		man/man8/testdisk.8.gz
+		man/man8/qphotorec.8.gz man/man8/testdisk.8.gz \
+		man/zh_CN/man8/fidentify.8.gz man/zh_CN/man8/photorec.8.gz \
+		man/zh_CN/man8/qphotorec.8.gz man/zh_CN/man8/testdisk.8.gz \
+		share/icons/hicolor/48x48/apps/qphotorec.png \
+		share/icons/hicolor/scalable/apps/qphotorec.svg
 
 PORTDOCS=	*
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	shapelib
 PORTVERSION=	1.3.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	devel geography
 MASTER_SITES=	http://download.osgeo.org/shapelib/ \
 		ftp://ftp.remotesensing.org/shapelib/ \
