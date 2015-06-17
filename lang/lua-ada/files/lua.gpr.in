@@ -1,0 +1,16 @@
+library project Lua is
+
+   for Languages use ("Ada");
+
+   for Source_Dirs use ("../../include/lua-ada");
+   for Library_Dir use "../../lib/lua-ada";
+   for Library_Name use "adalua";
+   for Library_Kind use "static";
+   for Externally_Built use "True";
+
+   package Linker is
+      for Linker_Options use ("-L%%PREFIX%%/lib", "-Wl,-R,%%PREFIX%%/lib",
+                              "-llua-%%LUA_VER%%);
+   end Linker;
+
+end Lua;

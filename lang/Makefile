@@ -141,6 +141,7 @@
     SUBDIR += linux-f10-libg2c
     SUBDIR += linux-f10-tcl85
     SUBDIR += linux-j
+    SUBDIR += lua-ada
     SUBDIR += lua-mode.el
     SUBDIR += lua51
     SUBDIR += lua52
