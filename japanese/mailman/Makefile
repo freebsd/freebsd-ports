@@ -3,7 +3,7 @@
 
 PORTNAME=	mailman
 PORTVERSION=	2.1.14.j7
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	japanese mail
 MASTER_SITES=	http://www.python.jp/doc/contrib/mailman/_static/ \
