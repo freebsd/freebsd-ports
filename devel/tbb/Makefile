@@ -3,11 +3,11 @@
 
 PORTNAME=	tbb
 PORTVERSION=	4.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://threadingbuildingblocks.org/sites/default/files/software_releases/source/ \
 		LOCAL/martymac
-DISTNAME=	${PORTNAME}${PORTVERSION:R:S/.//g}_20140724oss_src
+DISTNAME=	${PORTNAME}${PORTVERSION:R:S/.//g}_20150611oss_src
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Library that provides thread building blocks
