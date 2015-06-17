@@ -3,6 +3,7 @@
 
 PORTNAME=	linkchecker
 PORTVERSION=	9.3
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 DISTNAME=	LinkChecker-${PORTVERSION}
@@ -63,6 +64,7 @@ post-build:
 .endif
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/linkcheck/*/*.so
 .for i in 16 32 48 64 128
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${i}x${i}/apps
 	(cd ${WRKSRC}/doc/html && ${INSTALL_DATA} logo${i}x${i}.png \
