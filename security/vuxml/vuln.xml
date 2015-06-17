@@ -57,6 +57,46 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c67069dc-0986-11e5-bb90-002590263bf5">
+    <topic>testdisk -- buffer overflow with malicious disk image</topic>
+    <affects>
+      <package>
+	<name>testdisk</name>
+	<range><lt>7.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>CGSecurity TestDisk Changelog reports:</p>
+	<blockquote cite="http://www.cgsecurity.org/wiki/TestDisk_7.0_Release">
+	  <p>Various fix including security fix, thanks to:</p>
+	  <ul>
+	    <li><p>Coverity scan (Static Analysis of source code)</p></li>
+	    <li><p>afl-fuzz (security-oriented fuzzer).</p></li>
+	    <li><p>Denis Andzakovic from Security Assessment for reporting an
+	       exploitable Stack Buffer Overflow.</p></li>
+	  </ul>
+	</blockquote>
+	<p>Denis Andzakovic reports:</p>
+	<blockquote cite="http://www.security-assessment.com/files/documents/advisory/Testdisk%20Check_OS2MB%20Stack%20Buffer%20Overflow%20-%20Release.pdf">
+	  <p>A buffer overflow is triggered within the software when a malicious
+	    disk image is attempted to be recovered. This may be leveraged by an
+	    attacker to crash TestDisk and gain control of program execution. An
+	    attacker would have to coerce the victim to run TestDisk against
+	    their malicious image.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.cgsecurity.org/wiki/TestDisk_7.0_Release</url>
+      <url>http://www.security-assessment.com/files/documents/advisory/Testdisk%20Check_OS2MB%20Stack%20Buffer%20Overflow%20-%20Release.pdf</url>
+    </references>
+    <dates>
+      <discovery>2015-04-30</discovery>
+      <entry>2015-06-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="25e0593d-13c0-11e5-9afb-3c970e169bc2">
     <topic>tomcat -- multiple vulnerabilities</topic>
     <affects>
