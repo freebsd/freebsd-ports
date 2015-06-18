@@ -3,7 +3,7 @@
 
 PORTNAME=	lilypond
 PORTVERSION=	2.19.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v${PORTVERSION:R}/
 PKGNAMESUFFIX=	-devel
@@ -90,6 +90,8 @@ post-patch:
 .endif
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lilypond
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lilypond/${PORTVERSION}/python/midi.so
 	@${LN} -fs ${DATADIR}/${PORTVERSION} ${STAGEDIR}${DATADIR}/current
 
 .include <bsd.port.mk>
