@@ -3,7 +3,7 @@
 
 PORTNAME=	gtamsanalyzer
 PORTVERSION=	0.42
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	science gnustep
 MASTER_SITES=	SF/tamsys/gnustep%20tams/GTAMSAnalyzer%2${PORTVERSION}
 DISTNAME=	GTAMSAnalyzer.src.${PORTVERSION}
@@ -16,11 +16,14 @@ LICENSE=	GPLv2
 USES=		gnustep
 USE_GNUSTEP=	back build
 
-WRKSRC=	${WRKDIR}/${DISTNAME}/Source
+WRKSRC=		${WRKDIR}/${DISTNAME}/Source
 
 post-patch:
 	${RM} "${WRKSRC}/obj"
 	@${REINPLACE_CMD} '/^GNUSTEP_INSTALLATION_DIR/ s|=|=$$(DESTDIR)|' \
 		${WRKSRC}/GNUmakefile
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/GTAMSAnalyzer.app/GTAMSAnalyzer
 
 .include <bsd.port.mk>
