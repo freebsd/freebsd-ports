@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sidekiq
-PORTVERSION=	3.3.4
+PORTVERSION=	3.4.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -17,6 +17,7 @@ RUN_DEPENDS=	rubygem-celluloid>=0.16.0:${PORTSDIR}/devel/rubygem-celluloid \
 		rubygem-redis>=3.0.6:${PORTSDIR}/databases/rubygem-redis \
 		rubygem-redis-namespace>=1.3.1:${PORTSDIR}/databases/rubygem-redis-namespace
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
