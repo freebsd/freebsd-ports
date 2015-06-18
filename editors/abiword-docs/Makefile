@@ -3,7 +3,7 @@
 #   $MCom: ports/editors/abiword-docs/Makefile,v 1.1 2009/11/10 14:08:20 kwm Exp $
 
 PORTNAME=	abiword-docs
-PORTVERSION=	2.8.6
+PORTVERSION=	3.0.1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/abiword/${PORTVERSION}/source/
 DIST_SUBDIR=	AbiWord
