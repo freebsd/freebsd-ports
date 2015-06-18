@@ -3,7 +3,7 @@
 
 PORTNAME=	trytond_ldap_connection
 PORTVERSION=	2.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance python
 MASTER_SITES=	http://downloads.tryton.org/${PORTVERSION:R}/
 
@@ -13,7 +13,7 @@ COMMENT=	Tryton Application Platform (LDAP Connection Module)
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	trytond>=2.4.0:${PORTSDIR}/finance/trytond \
-		${PYTHON_PKGNAMEPREFIX}ldap2>=2.4.10:${PORTSDIR}/net/py-ldap2
+		${PYTHON_PKGNAMEPREFIX}ldap>=2.4.10:${PORTSDIR}/net/py-ldap
 
 CONFLICTS=	trytond28_ldap_connection-2.8.*
 

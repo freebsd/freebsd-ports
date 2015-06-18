@@ -1,11 +1,11 @@
 # $FreeBSD$
 
-PORTNAME=	ldap2
+PORTNAME=	ldap
 PORTVERSION=	2.4.19
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	python-ldap-${PORTVERSION}
+DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	LDAP module for python, for OpenLDAP2
@@ -30,7 +30,7 @@ OPTIONS_DEFINE=	SASL
 
 .if ${PORT_OPTIONS:MSASL}
 WANT_OPENLDAP_SASL=	yes
-CONFLICTS+=		openldap2[34]-client-2.*
+CONFLICTS+=		openldap24-client-2.*
 .endif
 
 do-configure:
