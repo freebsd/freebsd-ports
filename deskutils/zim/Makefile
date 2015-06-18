@@ -3,7 +3,7 @@
 
 PORTNAME=	zim
 PORTVERSION=	0.63
-CATEGORIES=	editors python
+CATEGORIES=	deskutils python
 MASTER_SITES=	http://www.zim-wiki.org/downloads/
 
 MAINTAINER=	rm@FreeBSD.org

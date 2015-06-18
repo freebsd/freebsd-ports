@@ -7638,3 +7638,4 @@ databases/postgresql84-server||2015-06-10|Has expired: "EOL was reached in July 
 ftp/ncftp1||2015-06-12|Unfetchable
 multimedia/avidemux2||2015-06-13|Branch no longer maintained upstream, use multimedia/avidemux26
 multimedia/avidemux26|multimedia/avidemux|2015-06-13|Renamed
+editors/zim|deskutils/zim|2015-06-13|Move to more appropriate category

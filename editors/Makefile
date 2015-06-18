@@ -266,7 +266,6 @@
     SUBDIR += yui
     SUBDIR += yzis
     SUBDIR += zile
-    SUBDIR += zim
     SUBDIR += zoinks
 
 .include <bsd.port.subdir.mk>
