@@ -2,7 +2,7 @@
 
 PORTNAME=	grr
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www gnustep
 MASTER_SITES=	SAVANNAH/gap
 DISTNAME=	Grr-${PORTVERSION}
@@ -10,9 +10,25 @@ DISTNAME=	Grr-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rss reader for GNUstep
 
+LICENSE=	GPLv3 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libRSSKit.so:${PORTSDIR}/www/rsskit
 
 USES=		gnustep
 USE_GNUSTEP=	back build
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/Grr.app/Grr \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/Grr.app/Resources/ArticleOperations.grrc/ArticleOperations \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/Grr.app/Resources/ArticleTable.grrc/ArticleTable \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/Grr.app/Resources/ArticleView.grrc/ArticleView \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/Grr.app/Resources/DatabaseOperations.grrc/DatabaseOperations \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/Grr.app/Resources/DatabaseTreeView.grrc/DatabaseTreeView \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/Grr.app/Resources/Fonts.grrc/Fonts \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/Grr.app/Resources/Proxy.grrc/Proxy \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/Grr.app/Resources/Searching.grrc/Searching \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/Grr.app/Resources/SubscriptionPanel.grrc/SubscriptionPanel \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/Grr.app/Resources/TreeDatabase.grrdb/TreeDatabase
 
 .include <bsd.port.mk>
