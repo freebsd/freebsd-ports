@@ -22,17 +22,14 @@ RUN_DEPENDS=	p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebookarchive
-
 GH_TAGNAME=	7359a09
 
-ACLOCAL_ARGS=	-I ./aclocal
-AUTOMAKE_ARGS=	-a
+USES=		autoreconf compiler gmake perl5 python
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-boost-filesystem=boost_filesystem \
 		--with-boost-system=boost_system \
 		PY_PREFIX="${PREFIX}"
-USE_AUTOTOOLS=	aclocal automake autoconf
 USE_RC_SUBR=	${PORTNAME}
-USES=		compiler gmake perl5 python
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/^AM_INIT_AUTOMAKE/#/' ${WRKSRC}/configure.ac
