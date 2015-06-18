@@ -3,7 +3,7 @@
 
 PORTNAME=	libtext-charwidth-perl
 PORTVERSION=	0.04
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
@@ -18,5 +18,10 @@ USE_PERL5=	configure
 
 post-extract:
 	@${MV} ${WRKSRC}.orig ${WRKSRC}
+
+post-install:
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Text/CharWidth/CharWidth.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Text/CharWidth/CharWidth.so
+	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Text/CharWidth/CharWidth.so
 
 .include <bsd.port.mk>
