@@ -416,6 +416,7 @@
     SUBDIR += p5-Iterator-DBI
     SUBDIR += p5-Jifty-DBI
     SUBDIR += p5-KyotoCabinet
+    SUBDIR += p5-LMDB_File
     SUBDIR += p5-MLDBM
     SUBDIR += p5-MLDBM-Sync
     SUBDIR += p5-MR-Tarantool
