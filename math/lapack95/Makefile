@@ -3,7 +3,7 @@
 
 PORTNAME=	lapack95
 PORTVERSION=	1.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	math
 MASTER_SITES=	NL
 DISTNAME=	${PORTNAME}
@@ -68,7 +68,7 @@ do-build:
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/lapack95.a ${STAGEDIR}${PREFIX}/lib/liblapack95.a
-	${INSTALL_DATA} ${WRKSRC}_SHARED/liblapack95.so.1 ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}_SHARED/liblapack95.so.1 ${STAGEDIR}${PREFIX}/lib
 	${LN} -sf liblapack95.so.1 ${STAGEDIR}${PREFIX}/lib/liblapack95.so
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/lapack95_modules
 	${INSTALL_DATA} ${WRKSRC}_SHARED/lapack95_modules/*.mod ${STAGEDIR}${PREFIX}/lib/lapack95_modules
