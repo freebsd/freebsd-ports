@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zim
-PORTVERSION=	0.62
+PORTVERSION=	0.63
 CATEGORIES=	editors python
 MASTER_SITES=	http://www.zim-wiki.org/downloads/
 
