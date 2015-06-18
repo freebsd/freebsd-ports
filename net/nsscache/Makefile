@@ -3,6 +3,7 @@
 
 PORTNAME=	nsscache
 PORTVERSION=	0.30
+PORTREVISION=	1
 DISTVERSIONPREFIX=	version/
 CATEGORIES=	net python
 
@@ -13,7 +14,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pycurl.so:${PORTSDIR}/ftp/py-curl \
-		${PYTHON_PKGNAMEPREFIX}ldap2>0:${PORTSDIR}/net/py-ldap2
+		${PYTHON_PKGNAMEPREFIX}ldap>0:${PORTSDIR}/net/py-ldap
 
 USES=		python:2
 USE_PYTHON=	autoplist distutils
