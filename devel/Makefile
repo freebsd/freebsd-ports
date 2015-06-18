@@ -58,6 +58,7 @@
     SUBDIR += amd64-xtoolchain-gcc
     SUBDIR += android-tools-adb
     SUBDIR += android-tools-fastboot
+    SUBDIR += android-tools-fastboot-devel
     SUBDIR += anjuta
     SUBDIR += anjuta-extras
     SUBDIR += antlr
