@@ -3,7 +3,7 @@
 
 PORTNAME=	lineak-xosdplugin
 PORTVERSION=	0.9
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	sysutils deskutils
 MASTER_SITES=	SF/lineak/lineak_xosdplugin/${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	lineak
@@ -24,6 +24,7 @@ CONFIGURE_ARGS=	ac_cv_path_xosd_config_script="${TRUE}" \
 		kde_cv_prog_cxx_fno_check_new=no
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	lib/lineakd/plugins/xosdplugin.so \
 		man/man1/lineak_xosdplugin.1.gz
