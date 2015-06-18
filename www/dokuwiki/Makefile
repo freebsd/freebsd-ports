@@ -3,7 +3,7 @@
 
 PORTNAME=	dokuwiki
 PORTVERSION=	${DIST_VER:S/${PORTNAME}//:S/-//g}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	http://download.dokuwiki.org/src/dokuwiki/
 DISTNAME=	${DIST_VER}
@@ -15,6 +15,7 @@ LICENSE=	GPLv2
 
 DIST_VER=	${PORTNAME}-2014-09-29
 USE_PHP=	gd mbstring openssl pcre session xml zlib
+NO_ARCH=	YES
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 
