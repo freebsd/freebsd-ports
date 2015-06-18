@@ -915,6 +915,7 @@
     SUBDIR += py-iplib
     SUBDIR += py-kombu
     SUBDIR += py-ldap2
+    SUBDIR += py-ldap3
     SUBDIR += py-ldaptor
     SUBDIR += py-libcloud
     SUBDIR += py-libdnet
