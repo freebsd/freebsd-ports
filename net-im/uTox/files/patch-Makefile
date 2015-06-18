@@ -1,4 +1,4 @@
---- Makefile.orig	2015-04-19 07:13:44 UTC
+--- Makefile.orig	2015-06-13 00:14:56 UTC
 +++ Makefile
 @@ -16,10 +16,6 @@ ifeq ($(V4LCONVERT), 1)
      DEPS += libv4lconvert
@@ -19,12 +19,3 @@
  endif
  
  ifeq ($(UNITY), 1)
-@@ -100,7 +97,7 @@ install: utox
- 	
- 	mkdir -p $(DESTDIR)$(PREFIX)/share/applications
- 	install -m 644 utox.desktop $(DESTDIR)$(PREFIX)/share/applications/utox.desktop
--	if [ "$UNITY" -eq "1" ]; then echo "X-MessagingMenu-UsesChatSection=true" >> $(DESTDIR)$(PREFIX)/share/applications/utox.desktop; fi
-+	if [ "$(UNITY)" -eq "1" ]; then echo "X-MessagingMenu-UsesChatSection=true" >> $(DESTDIR)$(PREFIX)/share/applications/utox.desktop; fi
- 	
- 	mkdir -p $(DESTDIR)$(PREFIX)/share/man/man1
- 	install -m 644 utox.1 $(DESTDIR)$(PREFIX)/share/man/man1/utox.1
