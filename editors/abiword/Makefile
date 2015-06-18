@@ -3,8 +3,7 @@
 #   $MCom: ports/editors/abiword/Makefile,v 1.13 2009/11/10 13:56:18 kwm Exp $
 
 PORTNAME=	abiword
-PORTVERSION=	2.8.6
-PORTREVISION=	10
+PORTVERSION=	3.0.1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/abiword/${PORTVERSION}/source/
 DIST_SUBDIR=	AbiWord
@@ -12,53 +11,58 @@ DIST_SUBDIR=	AbiWord
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Open-source, cross-platform WYSIWYG word processor
 
-LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libwv.so:${PORTSDIR}/textproc/wv \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libfribidi.so:${PORTSDIR}/converters/fribidi \
-		libpsiconv.so:${PORTSDIR}/converters/psiconv \
-		libgoffice-0.8.so:${PORTSDIR}/devel/goffice
-RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSerif.ttf:${PORTSDIR}/x11-fonts/dejavu
-
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		desktop-file-utils gettext gmake iconv libtool pathfix pkgconfig
-USE_GNOME=	libxml2 gtk20 librsvg2 libxslt
+LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
+		libpopt.so:${PORTSDIR}/devel/popt \
+		libpng.so:${PORTSDIR}/graphics/png \
+		libwv.so:${PORTSDIR}/textproc/wv \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libfribidi.so:${PORTSDIR}/converters/fribidi \
+		libgoffice-0.10.so:${PORTSDIR}/devel/goffice010
+RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSerif.ttf:${PORTSDIR}/x11-fonts/dejavu
+
+USES=		desktop-file-utils gmake iconv libtool pathfix pkgconfig
+USE_GNOME=	libxml2 gtk30 librsvg2 libxslt
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--without-gnomevfs --enable-plugins="${ABIWORD_PLUGINS}" \
-		enable_dynamic="yes" enable_static="no" \
-		--disable-collab-backend-telepathy \
-		--enable-collab-backend-sugar
+		--enable-shared="yes" --enable-static="no"
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
-ABIVERSION=	2.8
-PLIST_SUB+=	ABIVERSION=${ABIVERSION}
+PLIST_SUB+=	ABIVERSION=3.0
 
-OPTIONS_DEFINE=	DEBUG SPELLCHECK CLIPART TEMPLATES MATHVIEW \
-		OTS WP AIKSAURUS GRAMMAR PSION
-OPTIONS_DEFAULT=SPELLCHECK CLIPART TEMPLATES COLLAB
+OPTIONS_DEFINE=	AIKSAURUS CLIPART DEBUG MATHVIEW NLS OTS PSION \
+		TEMPLATES MATHVIEW WP
+OPTIONS_DEFAULT=CLIPART COLSERVICE COLSUGAR COLTCP SPELLCHECK TEMPLATES
+OPTIONS_SUB=	yes
 
-OPTIONS_GROUP=	COLLAB
-OPTIONS_GROUP_COLLAB=	COLXMPP
+OPTIONS_GROUP=	DICT COLLAB
+OPTIONS_GROUP_DICT=	GRAMMAR SPELLCHECK
+OPTIONS_GROUP_COLLAB=	COLFAKE COLSERVICE COLSIP COLSUGAR COLTCP COLTELEPATHY COLXMPP
 
-SPELLCHECK_DESC=	Spell checking support
+AIKSAURUS_DESC=		Thesaurus plugin
 CLIPART_DESC=		Include clipart
-TEMPLATES_DESC=		Include additional templates
 COLLAB_DESC=		Collaboration backend
-COLXMPP_DESC=		Collaboration jammer/XMPP backend
+COLFAKE_DESC=		Fake collaboration for debugging purposes only
+COLSERVICE_DESC=	Collaborate with AbiCollab.net webservice
+COLSIP_DESC=		Collaborate with the SIP/SIMPLE backend
+COLSUGAR_DESC=		Collaborate with the Sugar/OLPC environment
+COLTCP_DESC=		Collaborate with direct TCP peer to peer connections
+COLTELEPATHY_DESC=	Collaborate with the Telepathy backend (experimental)
+COLXMPP_DESC=		Collaborate with the Jabber/XMPP backend
+DICT_DESC=		Spelling and grammar checking
+GRAMMAR_DESC=		Grammar checking plugin (requires SPELLCHECK option)
 MATHVIEW_DESC=		MathML render plugin
 OTS_DESC=		Text Summarizer plugin
-WP_DESC=		WordPerfect img/doc import/export plugin
-AIKSAURUS_DESC=		Thesaurus plugin
-GRAMMAR_DESC=		Grammar checking plugin
 PSION_DESC=		Psion 5(MX) files convertion plugin
+SPELLCHECK_DESC=	Spell checking support
+TEMPLATES_DESC=		Include additional templates
+WP_DESC=		WordPerfect img/doc import/export plugin
 
 # check configure for ALL_PLUGINS for complete list
 ABIWORD_PLUGINS=	garble loadbindings opml xslfo bmp iscii sdw babelfish \
@@ -66,117 +70,92 @@ ABIWORD_PLUGINS=	garble loadbindings opml xslfo bmp iscii sdw babelfish \
 			goffice wmf kword mif wml s5 freetranslation gdict mht \
 			applix t602 docbook google eml hancom presentation \
 			clarisworks pdb urldict openwriter mswrite gimp \
-			passepartout collab eml
+			passepartout eml
 
 # opendocument enabled by default, rsvg plugin isn't needed on unix.
 # Plugins we don't support:
 # gda
 
+AIKSAURUS_LIB_DEPENDS=		libAiksaurusGTK-1.2.so:${PORTSDIR}/textproc/aiksaurus-gtk
+
+CLIPART_CONFIGURE_ENABLE=	clipart
+
+COLFAKE_CONFIGURE_ENABLE=	collab-backend-fake
+
+COLSERVICE_CONFIGURE_ENABLE=	collab-backend-service
+COLSERVICE_BUILD_DEPENDS=	${LOCALBASE}/include/asio.hpp:${PORTSDIR}/net/asio
+COLSERVICE_LIB_DEPENDS=		libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
+				libgnutls.so:${PORTSDIR}/security/gnutls
+COLSERVICE_RUN_DEPENDS=		${LOCALBASE}/include/asio.hpp:${PORTSDIR}/net/asio
+
+COLSIP_CONFIGURE_ENABLE=	collab-backend-sip
+
+COLSUGAR_CONFIGURE_ENABLE=	collab-backend-sugar
+COLSUGAR_LIB_DEPENDS=		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+
+COLTCP_CONFIGURE_ENABLE=	collab-backend-tcp
+COLTCP_BUILD_DEPENDS=		${LOCALBASE}/include/asio.hpp:${PORTSDIR}/net/asio
+COLTCP_RUN_DEPENDS=		${LOCALBASE}/include/asio.hpp:${PORTSDIR}/net/asio
+
+COLTELEPATHY_CONFIGURE_ENABLE=	collab-backend-telepathy
+COLTELEPATHY_LIB_DEPENDS=	libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib
+
+COLXMPP_CONFIGURE_ENABLE=	collab-backend-xmpp
+COLXMPP_LIB_DEPENDS=		libloudmouth-1.so:${PORTSDIR}/net-im/loudmouth
+
+DEBUG_CONFIGURE_ENABLE=		debug symbols
+
+GRAMMAR_LIB_DEPENDS=		liblink-grammar.so:${PORTSDIR}/textproc/link-grammar
+
+MATHVIEW_LIB_DEPENDS=		libmathview.so:${PORTSDIR}/x11-toolkits/gtkmathview
+
+NLS_USES=			gettext
+NLS_CONFIGURE_ENABLE=		nls
+
+OTS_LIB_DEPENDS=		libots-1.so:${PORTSDIR}/textproc/ots
+
+PSION_LIB_DEPENDS=		libpsiconv.so:${PORTSDIR}/converters/psiconv
+
+SPELLCHECK_LIB_DEPENDS=		libenchant.so:${PORTSDIR}/textproc/enchant
+SPELLCHECK_CONFIGURE_ENABLE=	spell
+
+TEMPLATES_CONFIGURE_ENABLE=	templates
+
+WP_USE=		gnome=libgsf
+WP_LIB_DEPENDS=	libwpg-0.2.so:${PORTSDIR}/graphics/libwpg \
+		libwpd-0.9.so:${PORTSDIR}/textproc/libwpd
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MMATHVIEW}
-LIB_DEPENDS+=	libmathview.so:${PORTSDIR}/x11-toolkits/gtkmathview
-ABIWORD_PLUGINS:=	${ABIWORD_PLUGINS} mathview
-PLIST_SUB+=	MATHVIEW=""
-.else
-PLIST_SUB+=	MATHVIEW="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MOTS}
-LIB_DEPENDS+=	libots-1.so:${PORTSDIR}/textproc/ots
-ABIWORD_PLUGINS:=	${ABIWORD_PLUGINS} ots
-PLIST_SUB+=	OTS=""
-.else
-PLIST_SUB+=	OTS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MWP}
-USE_GNOME+=	libgsf
-LIB_DEPENDS+=	libwpg-0.2.so:${PORTSDIR}/graphics/libwpg \
-		libwpd-0.9.so:${PORTSDIR}/textproc/libwpd
-ABIWORD_PLUGINS:=	${ABIWORD_PLUGINS} wpg wordperfect
-PLIST_SUB+=	WP=""
-.else
-PLIST_SUB+=	WP="@comment "
-.endif
-
 .if ${PORT_OPTIONS:MAIKSAURUS}
-LIB_DEPENDS+=	libAiksaurusGTK-1.2.so:${PORTSDIR}/textproc/aiksaurus-gtk
-ABIWORD_PLUGINS:=	${ABIWORD_PLUGINS} aiksaurus
-PLIST_SUB+=	AIKSAURUS=""
-.else
-PLIST_SUB+=	AIKSAURUS="@comment "
+ABIWORD_PLUGINS+=	aiksaurus
 .endif
 
-.if ${PORT_OPTIONS:MGRAMMAR}
-LIB_DEPENDS+=	liblink-grammar.so:${PORTSDIR}/textproc/link-grammar
-ABIWORD_PLUGINS:=	${ABIWORD_PLUGINS} grammar
-PLIST_SUB+=	GRAMMAR=""
-.else
-PLIST_SUB+=	GRAMMAR="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPSION}
-LIB_DEPENDS+=	libpsiconv.so:${PORTSDIR}/converters/psiconv
-ABIWORD_PLUGINS:=	${ABIWORD_PLUGINS} psion
-PLIST_SUB+=	PSION=""
-.else
-PLIST_SUB+=	PSION="@comment "
-.endif
-
-#.if ! ${PORT_OPTIONS:MCOLLAB} && ${PORT_OPTIONS:MCOLXMPP}
-#BROKEN=		Please enable the COLLAB option, the COLXMPP option need it.
-#.endif
-
-.if ${PORT_OPTIONS:MCOLXMPP}
-CONFIGURE_ARGS+=--enable-collab-backend-xmpp
-LIB_DEPENDS+=	libloudmouth-1.so:${PORTSDIR}/net-im/loudmouth
-.else
-CONFIGURE_ARGS+=--disable-collab-backend-xmpp
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-debug --enable-symbols
-.endif
-
-.if ${PORT_OPTIONS:MCOLLAB}
-CONFIGURE_ARGS+=--with-boost --enable-collab-backend-tcp \
-		--enable-collab-backend-service
-BUILD_DEPENDS+=	${LOCALBASE}/include/asio.hpp:${PORTSDIR}/net/asio
-LIB_DEPENDS+=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
-		libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
-		libgnutls.so:${PORTSDIR}/security/gnutls
-RUN_DEPENDS+=	${LOCALBASE}/include/asio.hpp:${PORTSDIR}/net/asio
+.if ${PORT_OPTIONS:MCOL*}
 PLIST_SUB+=		COLLAB=""
+ABIWORD_PLUGINS+=	collab
 .else
-CONFIGURE_ARGS+=--without-boost --disable-collab-backend-tcp \
-		--disable-collab-backend-service
 PLIST_SUB+=		COLLAB="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MSPELLCHECK}
-LIB_DEPENDS+=		libenchant.so:${PORTSDIR}/textproc/enchant
-CONFIGURE_ARGS+=	--enable-spell
-PLIST_SUB+=		DICT=""
-.else
-CONFIGURE_ARGS+=	--disable-spell
-PLIST_SUB+=		DICT="@comment "
+.if ${PORT_OPTIONS:MGRAMMAR}
+ABIWORD_PLUGINS+=	grammar
 .endif
 
-.if ${PORT_OPTIONS:MTEMPLATES}
-CONFIGURE_ARGS+=	--enable-templates
-PLIST_SUB+=		TEMPLATES=""
-.else
-CONFIGURE_ARGS+=	--disable-templates
-PLIST_SUB+=		TEMPLATES="@comment "
+.if ${PORT_OPTIONS:MMATHVIEW}
+ABIWORD_PLUGINS+=	mathview
 .endif
 
-.if ${PORT_OPTIONS:MCLIPART}
-CONFIGURE_ARGS+=	--enable-clipart
-PLIST_SUB+=		CLIPART=""
-.else
-CONFIGURE_ARGS+=	--disable-clipart
-PLIST_SUB+=		CLIPART="@comment "
+.if ${PORT_OPTIONS:MOTS}
+ABIWORD_PLUGINS+=	ots
+.endif
+
+.if ${PORT_OPTIONS:MPSION}
+ABIWORD_PLUGINS+=	psion
+.endif
+
+.if ${PORT_OPTIONS:MWP}
+ABIWORD_PLUGINS+=	wpg wordperfect
 .endif
 
 post-patch:
