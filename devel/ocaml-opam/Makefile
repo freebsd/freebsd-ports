@@ -3,19 +3,18 @@
 
 PORTNAME=	opam
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/ocaml/opam/releases/download/${DISTVERSION}/ \
 		http://github.com/ocaml/opam/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	opam-full-${DISTVERSION}
+DIST_SUBDIR=	opam-01
 
 MAINTAINER=	joris@giovannangeli.fr
 COMMENT=	Source-based package manager for OCaml
 
 LICENSE=	GPLv3
-
-# Temporary hack since the directory is named opam-full-1.2.2-rc2
-WRKSRC=		 ${WRKDIR}/${DISTNAME}-rc2
 
 USES=		gmake
 USE_OCAML=	yes
