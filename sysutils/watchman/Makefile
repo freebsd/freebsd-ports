@@ -32,6 +32,5 @@ PORTDOCS=	README.markdown
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^docdir = /d' ${WRKSRC}/Makefile.am
-	@${REINPLACE_CMD} -e '/timestamp=/s,%ld,%d,' ${WRKSRC}/root.c
 
 .include <bsd.port.mk>
