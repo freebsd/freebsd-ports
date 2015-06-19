@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	orthanc
-PORTVERSION=	0.8.6
+PORTVERSION=	0.9.0
 CATEGORIES=	science graphics net
 MASTER_SITES=	SF/orthancserver/:main \
 		http://www.montefiore.ulg.ac.be/~jodogne/Orthanc/ThirdPartyDownloads/:mongoose
@@ -16,6 +16,7 @@ COMMENT=	RESTful DICOM server for healthcare and medical research
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	gtest-config:${PORTSDIR}/devel/googletest
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libjsoncpp.so:${PORTSDIR}/devel/jsoncpp \
 		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
@@ -28,12 +29,10 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 CMAKE_ARGS=	-DDCMTK_LIBRARIES="dcmdsig;charls;dcmjpls" \
 		-DDCMTK_DICTIONARY_DIR="${LOCALBASE}/share/dcmtk" \
 		-DUSE_SYSTEM_MONGOOSE=OFF \
-		-DBUILD_UNIT_TESTS=OFF
+		-DUNIT_TESTS_WITH_HTTP_CONNEXIONS=OFF
 
 USES=		cmake:outsource python:build lua:51 dos2unix
 DOS2UNIX_FILES=	CMakeLists.txt
-CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/jsoncpp
-LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 USE_RC_SUBR=	orthanc
@@ -52,12 +51,34 @@ GROUPS=		orthanc
 post-extract:
 	${MKDIR} ${WRKSRC}/ThirdPartyDownloads
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/mongoose-3.8.tgz ${WRKSRC}/ThirdPartyDownloads
+	# Orthanc hardcodes /usr/local paths for libs and includes.
+	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/CMakeLists.txt
+
+# There is no way to disable building of test units without a patch, on other
+# hand it brings only one build dependency (devel/googletest) and running it was
+# helpful in early bug detection in Debian.
+# Some tests require connections to be made to the outside world, this is
+# definitely unsupported behaviour and therefor those tests are disabled with
+# cmake variable above (-DUNIT_TESTS_WITH_HTTP_CONNEXIONS=OFF).
+post-build:
+	@cd ${BUILD_WRKSRC} && ./UnitTests
 
 post-install:
 	${MKDIR} ${STAGEDIR}/var/db/orthanc/db/db-v5
 	${MKDIR} ${STAGEDIR}${DATADIR}/plugins
 	${MKDIR} ${STAGEDIR}${ETCDIR}
-	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-	${WRKSRC}/Resources/Configuration.json > ${STAGEDIR}${ETCDIR}/orthanc.json.sample
+	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/Resources/Configuration.json
+	${CP} ${WRKSRC}/Resources/Configuration.json ${STAGEDIR}${ETCDIR}/orthanc.json.sample
+	${STRIP_CMD} ${STAGEDIR}${DATADIR}/plugins/libServeFolders.so.0.9.0
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1001000
+IGNORE=	supported only on 10.1 by upstream, not all unit tests are passed
+.endif
+
+.if ${OSVERSION} > 1100000
+IGNORE=	unit tests are crashing, bug 200544
+.endif
+
+.include <bsd.port.post.mk>
