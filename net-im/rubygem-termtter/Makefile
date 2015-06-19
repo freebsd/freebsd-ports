@@ -3,6 +3,7 @@
 
 PORTNAME=	termtter
 PORTVERSION=	2.2.3
+PORTREVISION=	1
 CATEGORIES=	net-im rubygems
 MASTER_SITES=	RG
 
