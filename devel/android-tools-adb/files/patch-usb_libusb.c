@@ -9,3 +9,16 @@
  static libusb_context *ctx = NULL;
  
  struct usb_handle
+@@ -347,7 +347,11 @@ register_device(struct usb_handle *uh, c
+ 
+     adb_mutex_unlock(&usb_lock);
+ 
+-    register_usb_transport(usb, serial, NULL, 1); 
++    char devpath[64];
++    snprintf(devpath, sizeof(devpath), "ugen%d.%d",
++             uh->dev_bus, uh->dev_addr);
++
++    register_usb_transport(usb, serial, devpath, 1);
+ 
+     return (1);
+ }
