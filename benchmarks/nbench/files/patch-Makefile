@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Oct 18 00:07:05 2004
-+++ Makefile	Mon Oct 18 00:07:51 2004
+--- Makefile.orig	2004-12-30 02:23:30 UTC
++++ Makefile
 @@ -19,10 +19,10 @@ default: nbench
  # You should leave -static in the CFLAGS so that your sysinfo can be
  # compiled into the executable.
