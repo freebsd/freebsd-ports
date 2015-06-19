@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	autoprefixer-rails
-PORTVERSION=	5.1.11
+PORTVERSION=	5.2.0.1
 CATEGORIES=	textproc ruby
 MASTER_SITES=	RG
 
@@ -14,6 +14,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-execjs>=0:${PORTSDIR}/devel/rubygem-execjs \
 		rubygem-json>=0:${PORTSDIR}/devel/rubygem-json
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
