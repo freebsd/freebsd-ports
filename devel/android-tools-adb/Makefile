@@ -2,7 +2,8 @@
 
 PORTNAME=	android-tools-adb
 DISTVERSIONPREFIX=	android-
-DISTVERSION=	5.1.1_r4
+DISTVERSION?=	5.1.1_r4
+PORTREVISION?=	0
 CATEGORIES=	devel
 MASTER_SITES=	https://anonscm.debian.org/cgit/android-tools/android-tools.git/plain/debian/:bashcomp
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -18,10 +19,14 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	android
 GH_PROJECT=	platform_system_core
 
-USES=		uidfix
+CONFLICTS_INSTALL?=	${PORTNAME}-devel-*
+
+USES+=		uidfix
+.ifndef BUILD_WRKSRC
 WRKSRC_SUBDIR=	adb
+.endif
 MAKEFILE=	${FILESDIR}/Makefile
-MAKE_ENV=	BINDIR="${PREFIX}/bin"
+MAKE_ENV+=	BINDIR="${PREFIX}/bin"
 
 PLIST_FILES=	bin/adb \
 		%%BASH%%etc/bash_completion.d/adb
