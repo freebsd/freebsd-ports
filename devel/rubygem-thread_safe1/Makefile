@@ -14,6 +14,7 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	rubygem-atomic>=0:${PORTSDIR}/devel/rubygem-atomic
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
