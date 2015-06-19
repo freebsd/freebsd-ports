@@ -31,6 +31,7 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		xf86-input-synaptics>=0:${PORTSDIR}/x11-drivers/xf86-input-synaptics \
 		xf86-video-intel>=0:${PORTSDIR}/x11-drivers/xf86-video-intel \
 		dejavu>=0:${PORTSDIR}/x11-fonts/dejavu \
+		noto>=0:${PORTSDIR}/x11-fonts/noto \
 		xv:${PORTSDIR}/graphics/xv \
 		libvdpau>=0:${PORTSDIR}/multimedia/libvdpau \
 		rdesktop:${PORTSDIR}/net/rdesktop \
