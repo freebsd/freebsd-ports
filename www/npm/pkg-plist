@@ -832,14 +832,10 @@ lib/node_modules/npm/node_modules/inherits/inherits.js
 lib/node_modules/npm/node_modules/inherits/inherits_browser.js
 lib/node_modules/npm/node_modules/inherits/package.json
 lib/node_modules/npm/node_modules/inherits/test.js
-lib/node_modules/npm/node_modules/ini/.npmignore
 lib/node_modules/npm/node_modules/ini/LICENSE
 lib/node_modules/npm/node_modules/ini/README.md
 lib/node_modules/npm/node_modules/ini/ini.js
 lib/node_modules/npm/node_modules/ini/package.json
-lib/node_modules/npm/node_modules/ini/test/bar.js
-lib/node_modules/npm/node_modules/ini/test/fixtures/foo.ini
-lib/node_modules/npm/node_modules/ini/test/foo.js
 lib/node_modules/npm/node_modules/init-package-json/.npmignore
 lib/node_modules/npm/node_modules/init-package-json/.travis.yml
 lib/node_modules/npm/node_modules/init-package-json/LICENSE
@@ -1233,6 +1229,7 @@ lib/node_modules/npm/node_modules/normalize-package-data/test/basic.js
 lib/node_modules/npm/node_modules/normalize-package-data/test/consistency.js
 lib/node_modules/npm/node_modules/normalize-package-data/test/dependencies.js
 lib/node_modules/npm/node_modules/normalize-package-data/test/fixtures/async.json
+lib/node_modules/npm/node_modules/normalize-package-data/test/fixtures/badscripts.json
 lib/node_modules/npm/node_modules/normalize-package-data/test/fixtures/bcrypt.json
 lib/node_modules/npm/node_modules/normalize-package-data/test/fixtures/coffee-script.json
 lib/node_modules/npm/node_modules/normalize-package-data/test/fixtures/http-server.json
@@ -1247,6 +1244,7 @@ lib/node_modules/npm/node_modules/normalize-package-data/test/github-urls.js
 lib/node_modules/npm/node_modules/normalize-package-data/test/mixedcase-names.js
 lib/node_modules/npm/node_modules/normalize-package-data/test/normalize.js
 lib/node_modules/npm/node_modules/normalize-package-data/test/scoped.js
+lib/node_modules/npm/node_modules/normalize-package-data/test/scripts.js
 lib/node_modules/npm/node_modules/normalize-package-data/test/strict.js
 lib/node_modules/npm/node_modules/normalize-package-data/test/typo.js
 lib/node_modules/npm/node_modules/npm-cache-filename/LICENSE
@@ -1441,8 +1439,13 @@ lib/node_modules/npm/node_modules/opener/README.md
 lib/node_modules/npm/node_modules/opener/opener.js
 lib/node_modules/npm/node_modules/opener/package.json
 lib/node_modules/npm/node_modules/osenv/.npmignore
+lib/node_modules/npm/node_modules/osenv/.travis.yml
 lib/node_modules/npm/node_modules/osenv/LICENSE
 lib/node_modules/npm/node_modules/osenv/README.md
+lib/node_modules/npm/node_modules/osenv/node_modules/os-tmpdir/index.js
+lib/node_modules/npm/node_modules/osenv/node_modules/os-tmpdir/license
+lib/node_modules/npm/node_modules/osenv/node_modules/os-tmpdir/package.json
+lib/node_modules/npm/node_modules/osenv/node_modules/os-tmpdir/readme.md
 lib/node_modules/npm/node_modules/osenv/osenv.js
 lib/node_modules/npm/node_modules/osenv/package.json
 lib/node_modules/npm/node_modules/osenv/test/unix.js
