@@ -194,6 +194,8 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/App/Netdisco/Daemon/Worker/Poller/Nbtstat.pm
 %%SITE_PERL%%/App/Netdisco/Daemon/Worker/Scheduler.pm
 %%SITE_PERL%%/App/Netdisco/Environment.pm
+%%SITE_PERL%%/App/Netdisco/GenericDB.pm
+%%SITE_PERL%%/App/Netdisco/GenericDB/Result/Virtual/GenericReport.pm
 %%SITE_PERL%%/App/Netdisco/JobQueue.pm
 %%SITE_PERL%%/App/Netdisco/JobQueue/PostgreSQL.pm
 %%SITE_PERL%%/App/Netdisco/Manual/BSDInstall.pod
