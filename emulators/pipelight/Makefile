@@ -57,8 +57,11 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/wine:${PORTSDIR}/emulators/i386-wine-staging
 .endif
 
 pre-configure:
-		${LN} -s ${DISTDIR}/${DIST_SUBDIR}/pluginloader.tar.gz ${WRKSRC}/pluginloader-v${DISTVERSION}.tar.gz
-		${LN} -s ${DISTDIR}/${DIST_SUBDIR}/pluginloader.tar.gz.sig ${WRKSRC}/pluginloader-v${DISTVERSION}.tar.gz.sig
+	${LN} -s ${DISTDIR}/${DIST_SUBDIR}/pluginloader.tar.gz \
+		${WRKSRC}/pluginloader-v${DISTVERSION}.tar.gz
+	${LN} -s ${DISTDIR}/${DIST_SUBDIR}/pluginloader.tar.gz.sig \
+		${WRKSRC}/pluginloader-v${DISTVERSION}.tar.gz.sig
+	${MKDIR} ${WRKDIR}/.gnupg
 
 post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/pipelight/libpipelight.so
