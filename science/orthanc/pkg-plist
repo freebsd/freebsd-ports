@@ -5,8 +5,7 @@
 @sample(orthanc,orthanc,600) %%ETCDIR%%/orthanc.json.sample
 include/orthanc/OrthancCDatabasePlugin.h
 include/orthanc/OrthancCPlugin.h
-include/orthanc/OrthancCppClient.h
 include/orthanc/OrthancCppDatabasePlugin.h
-lib/libOrthancClient.so
-lib/libOrthancClient.so.0.8
+%%DATADIR%%/plugins/%%LUA_LIBDIR%%ServeFolders.so
+%%DATADIR%%/plugins/%%LUA_LIBDIR%%ServeFolders.so.0.9.0
 sbin/Orthanc
