@@ -14,10 +14,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	android
 GH_PROJECT=	platform_system_core
 
-USES=		gmake
+USES=		uidfix
 WRKSRC_SUBDIR=	adb
 MAKEFILE=	${FILESDIR}/Makefile
-MAKE_JOBS_UNSAFE=	yes
+MAKE_ENV=	BINDIR="${PREFIX}/bin"
 
 PLIST_FILES=	bin/adb
 
