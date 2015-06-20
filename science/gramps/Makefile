@@ -3,6 +3,7 @@
 
 PORTNAME=	gramps
 PORTVERSION=	3.4.9
+PORTREVISION=	1
 CATEGORIES=	science gnome python
 MASTER_SITES=	SF/${PORTNAME}/Stable/${PORTVERSION}
 
@@ -13,11 +14,11 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:${PORTSDIR}/databases/py-bsddb \
-		${PYTHON_PKGNAMEPREFIX}icu>=1.8:${PORTSDIR}/devel/py-icu \
-		${PYXML}
+		${PYTHON_PKGNAMEPREFIX}icu>=1.8:${PORTSDIR}/devel/py-icu
 
+NO_ARCH=	yes
 USE_BDB=	5+
-USES=		desktop-file-utils gettext shared-mime-info gmake python
+USES=		desktop-file-utils gettext shared-mime-info gmake python:2
 USE_GNOME=	pygtk2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-mime-install
