@@ -13,6 +13,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE image viewer
 
 BROKEN=		depends on imlib
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-07-21
 
 USE_GNOME=	imlib
 USE_KDE4=	kdelibs kdeprefix automoc4

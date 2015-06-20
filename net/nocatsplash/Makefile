@@ -13,6 +13,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open 802.11 Splash Screen
 
 BROKEN=		Broken pkg-install script, should use USERS and UIDs
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-07-21
 
 USE_GNOME=	glib12
 

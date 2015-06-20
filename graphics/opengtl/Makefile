@@ -13,6 +13,9 @@ COMMENT=	Graphics Transformation Languages
 LICENSE=	LGPL20
 
 BROKEN=		Depends on deleted devel/llvm32
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-07-21
+
 #LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 #		libLLVM-3.2.so:${PORTSDIR}/devel/llvm32
 
