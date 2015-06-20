@@ -6,7 +6,7 @@ PORTVERSION=	1.9.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	High-performance memory-resident database
 
 LICENSE=	BSD3CLAUSE
