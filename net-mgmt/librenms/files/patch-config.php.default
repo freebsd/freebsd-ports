@@ -1,0 +1,11 @@
+--- config.php.default.orig	2015-06-15 14:48:46 UTC
++++ config.php.default
+@@ -14,7 +14,7 @@ $config['memcached']['host']    = "local
+ $config['memcached']['port']    = 11211;
+ 
+ ### Locations - it is recommended to keep the default
+-#$config['install_dir']  = "/opt/librenms";
++$config['install_dir']  = "/usr/local/www/librenms";
+ 
+ ### This should *only* be set if you want to *force* a particular hostname/port
+ ### It will prevent the web interface being usable form any other hostname
