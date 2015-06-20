@@ -51,6 +51,7 @@ USE_QT4=	gui xml qmake moc rcc uic
 WX_COMPS=	wx wx:build wx:run python:build python:run
 USE_LDCONFIG=	yes
 PLIST_SUB+=	MAJOR_VERSION="3"
+PORTDOCS=	*
 
 OPTIONS_DEFINE=		USRP TESTING
 # Unfortunately building docs on i386 fails
@@ -117,37 +118,5 @@ post-patch:
 		${WRKSRC}/docs/doxygen/Doxyfile.in
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/cmake/Modules/FindPortaudio.cmake
-
-PLISTMAIN=	pkg-plist.main
-PLISTDIRS=	pkg-plist.dirs
-PLIST=	${WRKDIR}/.pkg-plist
-
-pre-install:
-	@${RM} -f ${PLIST}
-	@${CAT} ${PLISTMAIN} > ${PLIST}
-.if ${PORT_OPTIONS:MDOCS}
-	@cd ${WRKDIR}/.build/docs/doxygen && ${FIND} html -type f  | \
-	    ${SED} -e 's|html|%%PORTDOCS%%%%DOCSDIR%%/html|' \
-		| ${SORT} >> ${PLIST}
-	@cd ${WRKDIR}/.build/gr-trellis && ${FIND} doc -name \*.html -type f  | \
-	    ${SED} -e 's|doc|%%PORTDOCS%%%%DOCSDIR%%/html|' \
-		| ${SORT} >> ${PLIST}
-	@cd ${WRKDIR}/.build/docs/doxygen && ${FIND} xml -type f  | \
-	    ${SED} -e 's|xml|%%PORTDOCS%%%%DOCSDIR%%/xml|' \
-		| ${SORT} >> ${PLIST}
-	@cd ${WRKDIR}/.build/gr-trellis && ${FIND} doc -name \*.xml -type f  | \
-	    ${SED} -e 's|doc|%%PORTDOCS%%%%DOCSDIR%%/xml|' \
-		| ${SORT} >> ${PLIST}
-	@${CAT} ${PLISTDIRS} >> ${PLIST}
-	@cd ${WRKDIR}/.build/docs/doxygen && ${FIND} html -type d | ${SORT} -r | \
-	    ${SED} -e 's|html|%%PORTDOCS%%@dirrm %%DOCSDIR%%/html|' \
-		 >> ${PLIST}
-	@cd ${WRKDIR}/.build/docs/doxygen && ${FIND} xml -type d | ${SORT} -r | \
-	    ${SED} -e 's|xml|%%PORTDOCS%%@dirrm %%DOCSDIR%%/xml|' \
-		 >> ${PLIST}
-	@${ECHO_CMD} "%%PORTDOCS%%@dirrm %%DOCSDIR%%" >> ${PLIST}
-.else
-	@${CAT} ${PLISTDIRS} >> ${PLIST}
-.endif
 
 .include <bsd.port.post.mk>
