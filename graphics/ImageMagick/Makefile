@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.9.1-4
+DISTVERSION=	6.9.1-6
 PORTEPOCH=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.imagemagick.org/download/ \
@@ -45,8 +45,7 @@ CPE_VENDOR=	imagemagick
 SHEBANG_FILES=	www/source/examples.pl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKE=${MAKE_CMD}
-CONFIGURE_ARGS=	--without-dps \
-		--without-lcms
+CONFIGURE_ARGS=	--without-dps
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
 
@@ -291,7 +290,7 @@ CONFIGURE_ARGS+=	--without-lzma
 .if ${PORT_OPTIONS:MLCMS2}
 LIB_DEPENDS+=		liblcms2.so:${PORTSDIR}/graphics/lcms2
 .else
-CONFIGURE_ARGS+=	--without-lcms2
+CONFIGURE_ARGS+=	--without-lcms
 .endif
 
 # Freetype (TrueType Font) support
@@ -414,7 +413,7 @@ post-install: test
 
 test check:
 .if ${PORT_OPTIONS:MTESTS}
-	-cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} limits -m 20m ${MAKE} check
+	-cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} limits -m 20m ${MAKE} ${_MAKE_JOBS} check
 .endif
 
 .include <bsd.port.mk>
