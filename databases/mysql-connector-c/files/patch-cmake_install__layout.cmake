@@ -1,6 +1,6 @@
---- cmake/install_layout.cmake.orig	2013-12-23 20:24:06.000000000 +0100
-+++ cmake/install_layout.cmake	2014-01-31 15:09:54.000000000 +0100
-@@ -112,14 +112,14 @@
+--- cmake/install_layout.cmake.orig	2015-02-25 21:09:49 UTC
++++ cmake/install_layout.cmake
+@@ -112,14 +112,14 @@ FILE(GLOB plugin_tests
  #
  # STANDALONE layout
  #
