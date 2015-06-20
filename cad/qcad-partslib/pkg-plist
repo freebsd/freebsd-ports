@@ -1,2 +1,0 @@
-@exec mkdir -p share/qcad/library
-@comment The rest is auto-populated during install (thousands of items)
