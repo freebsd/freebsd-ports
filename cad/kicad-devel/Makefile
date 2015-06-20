@@ -158,29 +158,6 @@ PLIST_DIR_LIST=		lib/kicad
 PLIST_SHAREDDIR_LIST=	share/mimelnk/application \
 			share/mimelnk
 
-build-plist:
-	${RM} -f ${PLIST}
-	cd ${STAGEDIR}${PREFIX} && \
-		(ls ${PLIST_FILE_LIST}; ${FIND} ${PLIST_DIR_LIST} -type f) | \
-		${SORT} >> ${PLIST}
-	${FIND} ${STAGEDIR}${DATADIR} ${DOCSDIR} -type f | \
-		${SED} -e 's|${STAGEDIR}${DATADIR}|%%DATADIR%%|' \
-		-e 's|${STAGEDIR}${DOCSDIR}|%%DOCSDIR%%|' | ${SORT} >> ${PLIST}
-	cd ${STAGEDIR}${PREFIX} && \
-		${FIND} ${PLIST_DIR_LIST} -type d | \
-		${SORT} -r | ${SED} -e 's|^|@dirrm |' >> ${PLIST}
-.for subdir in ${PLIST_SHAREDDIR_LIST}
-	@${ECHO_CMD} '@unexec ${RMDIR} %D/${subdir} 2> /dev/null || true' >> ${PLIST}
-.endfor
-	${FIND} ${STAGEDIR}${DATADIR} ${STAGEDIR}${DOCSDIR} -type d | ${SORT} -r | \
-		${SED} -e 's|${STAGEDIR}${DATADIR}|%%DATADIR%%|' \
-			-e 's|${STAGEDIR}${DOCSDIR}|%%DOCSDIR%%|' \
-			-e 's|^|@dirrm |' >> ${PLIST}
+BROKEN_FreeBSD_8=	does not build: absence of strtoll(3)
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900000
-BROKEN=		does not build: absence of strtoll(3)
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
