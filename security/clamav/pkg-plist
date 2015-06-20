@@ -13,13 +13,13 @@ include/clamav.h
 include/clamav-config.h
 lib/libclamav.so
 lib/libclamav.so.6
-lib/libclamav.so.6.1.25
+lib/libclamav.so.6.1.26
 %%UNRAR%%lib/libclamunrar.so
 %%UNRAR%%lib/libclamunrar.so.6
-%%UNRAR%%lib/libclamunrar.so.6.1.25
+%%UNRAR%%lib/libclamunrar.so.6.1.26
 %%UNRAR%%lib/libclamunrar_iface.so
 %%UNRAR%%lib/libclamunrar_iface.so.6
-%%UNRAR%%lib/libclamunrar_iface.so.6.1.25
+%%UNRAR%%lib/libclamunrar_iface.so.6.1.26
 libdata/pkgconfig/libclamav.pc
 man/man1/clambc.1.gz
 man/man1/clamconf.1.gz
