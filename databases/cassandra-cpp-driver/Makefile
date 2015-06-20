@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cassandra-cpp-driver
-PORTVERSION=	1.0.2
+PORTVERSION=	2.0.1
 CATEGORIES=	databases
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -24,7 +24,8 @@ USE_OPENSSL=	yes
 
 PLIST_FILES=	include/cassandra.h \
 		lib/libcassandra.so \
-		lib/libcassandra.so.1 \
-		lib/libcassandra.so.1.0.2
+		lib/libcassandra.so.2 \
+		lib/libcassandra.so.2.0.1 \
+		lib/libcassandra_static.a
 
 .include <bsd.port.mk>
