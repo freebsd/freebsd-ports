@@ -57,6 +57,36 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="968d1e74-1740-11e5-a643-40a8f0757fb4">
+    <topic>p5-Dancer -- possible to abuse session cookie values</topic>
+    <affects>
+      <package>
+	<name>p5-Dancer</name>
+	<range><lt>1.3138</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Russell Jenkins reports:</p>
+	<blockquote cite="INSERT URL HERE">
+	  <p>It was possible to abuse session cookie values so that
+	    file-based session stores such as Dancer::Session::YAML or
+	    Dancer2::Session::YAML would attempt to read/write from
+	    any file on the filesystem with the same extension the
+	    file-based store uses, such as '*.yml' for the YAML
+	    stores.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.preshweb.co.uk/pipermail/dancer-users/2015-June/004621.html</url>
+    </references>
+    <dates>
+      <discovery>2015-06-12</discovery>
+      <entry>2015-06-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d605edb1-1616-11e5-a000-d050996490d0">
     <topic>drupal -- multiple vulnerabilities</topic>
     <affects>
