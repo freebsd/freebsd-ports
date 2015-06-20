@@ -193,7 +193,7 @@ do-texhash:
 		"${TEXHASHDIRS:S,^,%D/,}" >> ${TMPPLIST}
 	@for D in ${TEXHASHDIRS}; do \
 		${ECHO_CMD} "@rmtry $$D/ls-R"; \
-		${ECHO_CMD} "@dirrmtry $$D"; \
+		${ECHO_CMD} "@dir $$D"; \
 	done >> ${TMPPLIST}
 . else
 	@${ECHO_CMD} "@exec for D in ${TEXHASHDIRS:S,^,${PREFIX}/,}; do " \
