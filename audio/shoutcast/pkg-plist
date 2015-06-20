@@ -45,8 +45,6 @@ sbin/sc_serv
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sc_serv_public.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sc_serv_relay.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sc_serv_simple.conf
-%%SERVERSETUP%%@dirrm %%WWWDIR%%/setup
-%%SERVERSETUP%%@dirrm %%WWWDIR%%
 %%SERVERSETUP%%%%WWWDIR%%/setup.sh
 %%SERVERSETUP%%%%WWWDIR%%/setup/setup.js
 %%SERVERSETUP%%%%WWWDIR%%/setup/setup.html
