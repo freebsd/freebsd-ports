@@ -122,6 +122,10 @@ include/wine/windows/bits.h
 include/wine/windows/bits.idl
 include/wine/windows/bits1_5.h
 include/wine/windows/bits1_5.idl
+include/wine/windows/bits2_0.h
+include/wine/windows/bits2_0.idl
+include/wine/windows/bits2_5.h
+include/wine/windows/bits2_5.idl
 include/wine/windows/bits3_0.h
 include/wine/windows/bits3_0.idl
 include/wine/windows/bitsmsg.h
