@@ -1,7 +1,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/_sources/configuration.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/cookbook.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/development.txt
-%%PORTDOCS%%%%DOCSDIR%%/_sources/distribute_setuptools.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/index.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/installing.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/logic.txt
@@ -41,7 +40,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/configuration.html
 %%PORTDOCS%%%%DOCSDIR%%/cookbook.html
 %%PORTDOCS%%%%DOCSDIR%%/development.html
-%%PORTDOCS%%%%DOCSDIR%%/distribute_setuptools.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/installing.html
 %%PORTDOCS%%%%DOCSDIR%%/logic.html
