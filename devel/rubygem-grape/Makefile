@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	grape
-PORTVERSION=	0.11.0
-PORTREVISION=	1
+PORTVERSION=	0.12.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +10,7 @@ COMMENT=	Framework for rapid API development with great conventions
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-activesupport>=0:${PORTSDIR}/devel/rubygem-activesupport \
+RUN_DEPENDS=	rubygem-activesupport4>=0:${PORTSDIR}/devel/rubygem-activesupport4 \
 		rubygem-builder32>=0:${PORTSDIR}/devel/rubygem-builder32 \
 		rubygem-hashie>=2.1.0:${PORTSDIR}/devel/rubygem-hashie \
 		rubygem-multi_json>=1.3.2:${PORTSDIR}/devel/rubygem-multi_json \
