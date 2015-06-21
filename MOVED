@@ -7640,3 +7640,4 @@ multimedia/avidemux2||2015-06-13|Branch no longer maintained upstream, use multi
 multimedia/avidemux26|multimedia/avidemux|2015-06-13|Renamed
 editors/zim|deskutils/zim|2015-06-18|Move to more appropriate category
 net/py-ldap2|net/py-ldap|2015-06-18|Rename to better match upstream name
+erlang-mustache|erlang-bbmustache|2015-06-21|Renamed upstream

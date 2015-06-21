@@ -414,13 +414,13 @@
     SUBDIR += eric4
     SUBDIR += eric6
     SUBDIR += eris
+    SUBDIR += erlang-bbmustache
     SUBDIR += erlang-gen_leader
     SUBDIR += erlang-gen_smtp
     SUBDIR += erlang-getopt
     SUBDIR += erlang-gproc
     SUBDIR += erlang-ibrowse
     SUBDIR += erlang-msgpack
-    SUBDIR += erlang-mustache
     SUBDIR += erlang-protobuffs
     SUBDIR += erlang-recon
     SUBDIR += erlang-syslog
