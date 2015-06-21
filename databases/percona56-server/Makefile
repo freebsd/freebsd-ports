@@ -87,7 +87,8 @@ post-install:
 	@${MKDIR} ${STAGEDIR}/var/db/mysql
 
 .else
-USES+=		readline
+BUILD_DEPENDS+=	libedit>=0:${PORTSDIR}/devel/libedit
+RUN_DEPENDS+=	libedit>=0:${PORTSDIR}/devel/libedit
 .endif
 
 post-patch:
