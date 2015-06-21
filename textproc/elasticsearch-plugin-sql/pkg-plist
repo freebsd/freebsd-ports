@@ -415,4 +415,4 @@ lib/elasticsearch/plugins/sql/_site/vendor/jasmine-2.1.3/jasmine.js
 lib/elasticsearch/plugins/sql/_site/vendor/jasmine-2.1.3/jasmine_favicon.png
 lib/elasticsearch/plugins/sql/_site/vendor/jasmine-jquery/jasmine-jquery.js
 lib/elasticsearch/plugins/sql/_site/vendor/jquery/jquery-2.1.1.min.js
-lib/elasticsearch/plugins/sql/elasticsearch-sql-1.3.3.jar
+lib/elasticsearch/plugins/sql/elasticsearch-sql-1.3.4.jar
