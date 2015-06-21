@@ -1,18 +1,20 @@
---- makefile.orig	2015-01-17 20:16:06.330635290 +0300
-+++ makefile	2015-01-17 20:16:18.745634849 +0300
+--- makefile.orig	2013-04-12 16:31:19 UTC
++++ makefile
 @@ -1,5 +1,5 @@
  LIBNAME = lpeg
 -LUADIR = /usr/include/lua5.1/
-+LUADIR = %%INCDIR%%
++LUADIR ?= /usr/include/lua5.1/
  
  COPT = -O2
  # COPT = -DLPEG_DEBUG -g
-@@ -23,7 +23,7 @@
+@@ -22,8 +22,8 @@ CWARNS = -Wall -Wextra -pedantic \
+ # -Wunreachable-code \
  
  
- CFLAGS = $(CWARNS) $(COPT) -ansi -I$(LUADIR) -fPIC
+-CFLAGS = $(CWARNS) $(COPT) -ansi -I$(LUADIR) -fPIC
 -CC = gcc
-+CC? = gcc
++CFLAGS += $(CWARNS) $(COPT) -ansi -I$(LUADIR) -fPIC
++CC ?= gcc
  
  FILES = lpvm.o lpcap.o lptree.o lpcode.o lpprint.o
  
