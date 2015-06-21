@@ -248,6 +248,7 @@
     SUBDIR += clig
     SUBDIR += clisp-hyperspec
     SUBDIR += clojure-cider
+    SUBDIR += cloudabi-binutils
     SUBDIR += cmake
     SUBDIR += cmake-fedora
     SUBDIR += cmake-gui
