@@ -2,7 +2,7 @@
 # $FreeBSD$
 #   $MCom: ports/net/avahi-gtk/Makefile,v 1.9 2012/07/09 18:22:19 kwm Exp $
 
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 PKGNAMESUFFIX=	-gtk
 
@@ -26,14 +26,14 @@ MANPAGES=	bssh.1
 USE_GNOME+=	libglade2
 
 post-build:
-	@(cd ${WRKSRC}/avahi-discover-standalone; \
+	@(cd ${WRKSRC}/avahi-discover-standalone && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
 post-install:
-	@(cd ${WRKSRC}/avahi-discover-standalone; \
+	@(cd ${WRKSRC}/avahi-discover-standalone && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
-	${LN} -sf man/man1/bssh.1 ${STAGEDIR}${PREFIX}/man/man1/bvnc.1
-	${LN} -sf man/man1/bssh.1 ${STAGEDIR}${PREFIX}/man/man1/bshell.1
+	${LN} -sf bssh.1 ${STAGEDIR}${MANPREFIX}/man/man1/bvnc.1
+	${LN} -sf bssh.1 ${STAGEDIR}${MANPREFIX}/man/man1/bshell.1
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libavahi-ui.so.0
 
 .include "${MASTERDIR}/Makefile"
