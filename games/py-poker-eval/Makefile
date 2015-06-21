@@ -17,16 +17,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpoker-eval.so:${PORTSDIR}/games/poker-eval
 
-USES=		libtool pkgconfig python:2
-USE_AUTOTOOLS=	aclocal autoconf automake
-ACLOCAL_ARGS=	-I config
-AUTOMAKE_ARGS=	--add-missing
+USES=		autoreconf libtool pkgconfig python:2
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	PYTHON=""
 
 PLIST_SUB=	PYVER=${PYTHON_VER:S/./_/}
-
-post-configure:
-	@${INSTALL_SCRIPT} ${AUTOMAKE_DIR}/py-compile ${WRKSRC}/config
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_pokereval_2_7.so.1.0.0
