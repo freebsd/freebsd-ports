@@ -20,10 +20,10 @@ LIB_DEPENDS+=	libaacs.so:${PORTSDIR}/multimedia/libaacs \
 		libbdplus.so:${PORTSDIR}/multimedia/libbdplus
 
 INSTALL_TARGET=	install-strip
-USE_AUTOTOOLS=	autoconf aclocal automake
-USES=		iconv libtool pathfix pkgconfig tar:bzip2
+USES=		autoreconf iconv libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
+GNU_CONFIGURE=	yes
 
 .include "Makefile.include"
 
