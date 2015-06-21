@@ -1,7 +1,7 @@
 # $FreeBSD$
 
-PORTNAME=	mustache
-PORTVERSION=	0.3.2
+PORTNAME=	bbmustache
+PORTVERSION=	1.0.0
 DISTVERSIONPREFIX=v
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
@@ -21,23 +21,18 @@ GH_ACCOUNT=	soranoba
 
 ALL_TARGET=	compile
 
-.include <bsd.port.options.mk>
-
 post-extract:
 	@${RM} ${WRKSRC}/rebar.lock
 
 post-patch:
-	@${REINPLACE_CMD} -e "s/%%PORTVERSION%%/${PORTVERSION}/" ${WRKSRC}/src/mustache.app.src
-	@${RM} ${WRKSRC}/src/*.bak ${WRKSRC}/src/*.orig
+	@${REINPLACE_CMD} -e 's/{vsn, git}/{vsn,"${PORTVERSION}"}/' ${WRKSRC}/src/*.app.src
 
 post-build:
-	${LN} -s ${WRKSRC}/_build/default/lib/mustache/ebin ${WRKSRC}
+	${LN} -s ${WRKSRC}/_build/dev/lib/bbmustache/ebin ${WRKSRC}
 
 do-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
-.endif
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/ebin
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/src
