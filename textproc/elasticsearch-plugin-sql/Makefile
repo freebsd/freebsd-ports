@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sql
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 CATEGORIES=	textproc
 MASTER_SITES=	http://github.com/NLPchina/elasticsearch-sql/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	elasticsearch-plugin-
