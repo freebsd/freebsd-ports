@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	templates_parser
-PORTVERSION=	11.9.0.0
-PORTREVISION=	1
+PORTVERSION=	11.10.0.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 
@@ -17,9 +16,10 @@ BUILD_DEPENDS=	gprbuild:${PORTSDIR}/devel/gprbuild \
 RUN_DEPENDS=	xmlada>=4.4:${PORTSDIR}/textproc/xmlada
 
 USES=		ada gmake tar:bzip2
-MAKEFILE=	makefile
 DESTINC=	${STAGEDIR}${PREFIX}/include/templates_parser
+PLIST_SUB=	LIBVER=11.10.0w
 MAKE_ARGS+=	PROCESSORS=${MAKE_JOBS_NUMBER} \
+		ENABLE_SHARED=true \
 		HOST=${CONFIGURE_TARGET} \
 		TARGET=${CONFIGURE_TARGET} \
 		prefix=${PREFIX}
@@ -34,7 +34,7 @@ DOCS_BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
 do-build:
 	# Override build target to avoid -jX getting passed to makefile
 	# Parallel builds are handled with PROCESSORS setting
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} build
 .if ${PORT_OPTIONS:MDOCS}
 	cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} \
 		${MAKE_CMD} ${MAKE_ARGS} html
