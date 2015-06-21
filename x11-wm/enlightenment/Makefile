@@ -19,10 +19,9 @@ LIB_DEPENDS=	libefl.so:${PORTSDIR}/devel/efl \
 RUN_DEPENDS=	${LOCALBASE}/lib/evas/utils/evas_image_loader.svg:${PORTSDIR}/graphics/evas_generic_loaders-svg
 
 DIST_SUBDIR=	enlightenment
-USE_AUTOTOOLS=	autoconf aclocal
 GNU_CONFIGURE=	yes
-USES=		alias desktop-file-utils execinfo libtool pathfix iconv gmake \
-		pkgconfig tar:xz
+USES=		alias autoreconf desktop-file-utils execinfo libtool pathfix \
+		iconv gmake pkgconfig tar:xz
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 SUB_FILES=	pkg-message
