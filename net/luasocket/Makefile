@@ -15,10 +15,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	diegonehab
 GH_TAGNAME=	v3.0-rc1
 
-USES=		lua:51 gmake pkgconfig
+MAKE_ARGS=	LUA_VER=${LUA_VER}
+USES=		lua gmake pkgconfig
 
-CFLAGS+=    `pkgconf --cflags lua-${LUA_VER}`
-LDFLAGS+=   -shared  `pkgconf --libs lua-${LUA_VER}`
+CFLAGS+=	`pkgconf --cflags lua-${LUA_VER}`
+LDFLAGS+=	-shared  `pkgconf --libs lua-${LUA_VER}`
 
 OPTIONS_DEFINE=	DOCS
 
