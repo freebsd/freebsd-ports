@@ -1,6 +1,6 @@
---- mbmon.c.orig	2004-08-13 16:23:32.000000000 +0900
-+++ mbmon.c	2009-06-10 12:13:47.000000000 +0900
-@@ -315,7 +315,7 @@
+--- mbmon.c.orig	2015-05-28 10:06:29 UTC
++++ mbmon.c
+@@ -315,7 +315,7 @@ int main(int argc, char *argv[])
  
  	name = argv[0];
  #if !defined(LINUX) && defined(HAVE_SMBUS) && defined(SMBUS_IOCTL)
@@ -9,15 +9,15 @@
  #else
  	while ((ch = getopt(argc,argv,"VSIAfdDYe:p:c:T:F:tunNirhP:")) != -1) {
  #endif
-@@ -641,6 +641,7 @@
- 			fprintf(out, "%4d\n%4d\n%4d\n", rot1, rot2, rot3);
+@@ -642,6 +642,7 @@ int main(int argc, char *argv[])
  	}
+ 	fflush(out);
  	if (port) {
 +		fflush(out);
  #ifdef LOGGING
  		if (nfd)
  #endif
-@@ -659,6 +660,7 @@
+@@ -660,6 +661,7 @@ int main(int argc, char *argv[])
  	if (hostname_flag == 1) {
  		hostname(sh_flag);
  	}

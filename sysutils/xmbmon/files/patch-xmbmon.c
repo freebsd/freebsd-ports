@@ -1,5 +1,5 @@
---- xmbmon.c.orig	Thu Aug 12 06:37:03 2004
-+++ xmbmon.c	Wed Feb  1 20:44:54 2006
+--- xmbmon.c.orig	2004-08-12 04:37:03 UTC
++++ xmbmon.c
 @@ -23,16 +23,16 @@
  #define RES_NAME   "XMBmon"
  

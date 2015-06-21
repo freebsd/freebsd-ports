@@ -1,6 +1,6 @@
---- sens_winbond.c	Fri Jul  9 07:34:41 2004
-+++ sens_winbond.c	Wed May  3 16:43:40 2006
-@@ -245,6 +244,8 @@
+--- sens_winbond.c.orig	2004-07-09 05:34:41 UTC
++++ sens_winbond.c
+@@ -245,6 +245,8 @@ printf("DEBUG 49:0x%02X 58:0x%02X 4Fl:0x
  		case 0x20:	/* 0x20 (or 0x21) 627HF */
  		case 0x90:	/* 0x90 (or 0x91?) 627THF */
  		case 0x1A:	/* 0x1A (??)  627THF-A */

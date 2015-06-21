@@ -1,5 +1,5 @@
---- getMB-smb_ioctl.c.orig	Sat Jul  5 18:15:24 2003
-+++ getMB-smb_ioctl.c	Sat May 2 00:35:54 2015
+--- getMB-smb_ioctl.c.orig	2003-07-05 15:15:24 UTC
++++ getMB-smb_ioctl.c
 @@ -5,6 +5,7 @@
  #ifdef HAVE_SMBUS
  /* assume SMBus ioctl support, only for FreeBSD */
@@ -20,7 +20,7 @@
  
  #include "methods.h"
  
-@@ -42,10 +47,12 @@
+@@ -42,10 +47,12 @@ static char buf[128];
  
  static int OpenIO()
  {
@@ -34,7 +34,7 @@
  
  	if ((iosmb = open(smb_devfile, 000)) < 0) {
  		strcpy(buf, "ioctl(");
-@@ -125,7 +132,12 @@
+@@ -125,7 +132,12 @@ int smbioctl_readB(int slave, int addr)
  	char ret;
  	cmd.slave = slave;
  	cmd.cmd = addr;
@@ -47,7 +47,7 @@
  	if (ioctl(iosmb, SMB_READB, &cmd) == -1) {
  /*		strcpy(buf, "ioctl(");
  		strcat(buf, smb_devfile + 5);
-@@ -142,7 +154,11 @@
+@@ -142,7 +154,11 @@ void smbioctl_writeB(int slave, int addr
  	struct smbcmd cmd;
  	cmd.slave = slave;
  	cmd.cmd = addr;
@@ -59,7 +59,7 @@
  	if (ioctl(iosmb, SMB_WRITEB, &cmd) == -1) {
  		strcpy(buf, "ioctl(");
  		strcat(buf, smb_devfile + 5);
-@@ -158,7 +174,12 @@
+@@ -158,7 +174,12 @@ int smbioctl_readW(int smb_slave, int ad
  	short ret;
  	cmd.slave = smb_slave;
  	cmd.cmd = addr;
@@ -72,7 +72,7 @@
  	if (ioctl(iosmb, SMB_READW, &cmd) == -1) {
  /*		strcpy(buf, "ioctl(");
  		strcat(buf, smb_devfile + 5);
-@@ -175,7 +196,11 @@
+@@ -175,7 +196,11 @@ void smbioctl_writeW(int slave, int addr
  	struct smbcmd cmd;
  	cmd.slave = slave;
  	cmd.cmd = addr;

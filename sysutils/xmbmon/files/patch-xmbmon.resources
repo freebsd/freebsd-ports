@@ -1,6 +1,6 @@
---- xmbmon.resources.orig	Wed Feb  1 20:45:24 2006
-+++ xmbmon.resources	Wed Feb  1 20:45:36 2006
-@@ -8,7 +8,7 @@
+--- xmbmon.resources.orig	2003-06-08 14:25:18 UTC
++++ xmbmon.resources
+@@ -8,7 +8,7 @@ XMBmon*translations: #override \
  				<Key>Q: quit_proc()
  ! Add the followings to users default resources if one wishes
  XMBmon*geometry:	100x140
@@ -9,7 +9,7 @@
  XMBmon*count:	4
  XMBmon*sec:		20
  XMBmon*wsec:	1800
-@@ -32,5 +32,5 @@
+@@ -32,5 +32,5 @@ XMBmon*fahrn:	False
  XMBmon*probe:
  XMBmon*TyanTigerMP:	False
  XMBmon*label:
