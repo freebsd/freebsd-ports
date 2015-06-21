@@ -30,10 +30,8 @@ USE_SDL=	mixer net sdl
 USE_WX=		2.8
 WX_CONF_ARGS=	absolute
 WX_UNICODE=	yes
-USES=		dos2unix gmake iconv openal:al,alut perl5 pkgconfig
-USE_AUTOTOOLS=	aclocal automake autoconf
-ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
-AUTOMAKE_ARGS=	--add-missing --copy --force --foreign
+USES=		autoreconf dos2unix gmake iconv openal:al,alut perl5 pkgconfig
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR}
 
 DOS2UNIX_FILES=	src/client/GLEXT/GLFont2dFreeType.h \
