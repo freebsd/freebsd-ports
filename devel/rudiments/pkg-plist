@@ -25,7 +25,6 @@ include/rudiments/hostentry.h
 include/rudiments/inetsocketclient.h
 include/rudiments/inetsocketserver.h
 include/rudiments/inetsocketutil.h
-include/rudiments/intervaltimer.h
 include/rudiments/linkedlist.h
 include/rudiments/listener.h
 include/rudiments/logger.h
@@ -89,8 +88,6 @@ include/rudiments/private/inetsocketserver.h
 include/rudiments/private/inetsocketserverincludes.h
 include/rudiments/private/inetsocketutil.h
 include/rudiments/private/inetsocketutilincludes.h
-include/rudiments/private/intervaltimer.h
-include/rudiments/private/intervaltimerincludes.h
 include/rudiments/private/inttypes.h
 include/rudiments/private/linkedlist.h
 include/rudiments/private/linkedlistincludes.h
@@ -139,8 +136,6 @@ include/rudiments/private/serviceentry.h
 include/rudiments/private/serviceentryincludes.h
 include/rudiments/private/sharedmemory.h
 include/rudiments/private/sharedmemoryincludes.h
-include/rudiments/private/shmfile.h
-include/rudiments/private/shmfileincludes.h
 include/rudiments/private/signalclassesincludes.h
 include/rudiments/private/signalhandler.h
 include/rudiments/private/signalset.h
@@ -148,6 +143,7 @@ include/rudiments/private/singlylinkedlist.h
 include/rudiments/private/singlylinkedlistincludes.h
 include/rudiments/private/singlylinkedlistinlines.h
 include/rudiments/private/singlylinkedlistnode.h
+include/rudiments/private/snooze.h
 include/rudiments/private/snoozeincludes.h
 include/rudiments/private/socketclient.h
 include/rudiments/private/socketclientincludes.h
@@ -193,7 +189,6 @@ include/rudiments/serialportprofile.h
 include/rudiments/server.h
 include/rudiments/serviceentry.h
 include/rudiments/sharedmemory.h
-include/rudiments/shmfile.h
 include/rudiments/signalclasses.h
 include/rudiments/singlylinkedlist.h
 include/rudiments/snooze.h
