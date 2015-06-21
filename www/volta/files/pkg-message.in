@@ -2,8 +2,8 @@ To get volta up and running, you'll still need to do two things:
 
  - Enable url rewriting from within the squid configuration file.
 
- url_rewrite_children 10
  url_rewrite_program %%PREFIX%%/bin/volta -f %%PREFIX%%/etc/volta.db
+ url_rewrite_children 5 startup=1 idle=2 concurrency=50
 
  - Create a volta rule database! For detailed instructions, please
  reference %%DOCSDIR%%/README, or volta's website at:
