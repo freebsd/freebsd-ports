@@ -14,9 +14,9 @@ NO_CDROM=	Possible copyright infringement
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		gmake ncurses perl5
+USES=		autoreconf gmake ncurses perl5
 USE_PERL5=	build
-USE_AUTOTOOLS=	aclocal autoheader autoconf
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/lib \
 		--with-gtk=no
 MAKE_ENV=	VERBOSE=1
