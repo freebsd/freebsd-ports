@@ -16,8 +16,7 @@ LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libgpg-error.so:${PORTSDIR}/security/libgpg-error
 
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	autoconf aclocal automake
-USES=		tar:bzip2 pkgconfig libtool
+USES=		autoreconf tar:bzip2 pkgconfig libtool
 
 CONFIGURE_ARGS=	--without-libaacs
 
