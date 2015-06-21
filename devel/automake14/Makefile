@@ -16,7 +16,7 @@ MAINTAINER=	autotools@FreeBSD.org
 COMMENT=	GNU Standards-compliant Makefile generator (legacy 1.4)
 
 DEPRECATED=	Not used in the ports tree anymore
-EXPIRATION_DATE=	2015-06-21
+EXPIRATION_DATE=	2015-07-21
 
 RUN_DEPENDS=	${AUTOCONF_DEPENDS} \
 		automake-wrapper:${PORTSDIR}/devel/automake-wrapper
