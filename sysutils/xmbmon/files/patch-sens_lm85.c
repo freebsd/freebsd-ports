@@ -1,6 +1,6 @@
---- sens_lm85.c	Mon Oct 13 10:12:58 2003
-+++ sens_lm85.c	Wed Dec 21 15:37:56 2005
-@@ -53,7 +53,6 @@
+--- sens_lm85.c.orig	2003-10-13 07:12:58 UTC
++++ sens_lm85.c
+@@ -53,7 +53,6 @@ extern int numSMBSlave, canSMBSlave[128]
  #define ADM_24FAN(nr)	(0x28 + (nr))
  #define ADM_24FANDIV	0x47
  #define ADM_24MODE		0x16
@@ -8,7 +8,7 @@
  #define ADM_EXTRES1		0x76
  #define ADM_EXTRES2		0x77
  #define ADM_FANPPR		0x7B
-@@ -213,7 +212,7 @@
+@@ -213,7 +212,7 @@ ret0:
  static	float	lm85_temp( LM_METHODS *method, int no )
  {
  	int n, ne;
@@ -17,7 +17,7 @@
  
  	if (no < 0 || 2 < no)
  		return 0xFFFF;
-@@ -226,18 +225,20 @@
+@@ -226,18 +225,20 @@ static	float	lm85_temp( LM_METHODS *meth
  	} else if (lm85chipid >= ADM1027) {
  		ne = method->Read(ADM_EXTRES2);	
  		ext = 0.25 * ((ne >> ((no + 1) * 2)) & 0x03);
@@ -44,7 +44,7 @@
  }
  
  
-@@ -262,10 +263,20 @@
+@@ -262,10 +263,20 @@ static	float	lm85_volt(LM_METHODS *metho
  		return 0xFFFF;
  
  	if (lm85chipid >= ADM1027) {

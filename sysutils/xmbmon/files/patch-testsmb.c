@@ -1,6 +1,6 @@
---- testsmb.c	Thu Aug 12 07:34:48 2004
-+++ testsmb.c	Fri Dec 30 23:11:29 2005
-@@ -105,8 +105,9 @@
+--- testsmb.c.orig	2004-08-12 04:34:48 UTC
++++ testsmb.c
+@@ -105,8 +105,9 @@ int main()
  	case ID_AMD756:
  	case ID_AMD766:
  	case ID_AMD768:
@@ -11,7 +11,7 @@
  		break;
  	case ID_NFORCE:
  		smbus = &smbus_amd;
-@@ -116,9 +117,9 @@
+@@ -116,9 +117,9 @@ int main()
  		smbus = &smbus_ali;
  		fprintf(stderr, "ALi M1535D+ found.\n");
  		break;
@@ -23,7 +23,7 @@
  		break;
  	case ID_NFORCE2:
  		smbus = &smbus_amd8;
-@@ -126,7 +127,7 @@
+@@ -126,7 +127,7 @@ int main()
  		break;
  	default:
  		fprintf(stderr, "No known SMBus(I2C) chip found.\n");
@@ -32,7 +32,7 @@
  	}
  
  	if(OpenIO() == -1) return -1;
-@@ -141,7 +142,6 @@
+@@ -141,7 +142,6 @@ int main()
  	}
  	
  	CloseIO();
