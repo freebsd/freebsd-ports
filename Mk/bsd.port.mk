@@ -493,7 +493,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # Various directory definitions and variables to control them.
 # You rarely need to redefine any of these except WRKSRC and NO_WRKSUBDIR.
 #
-# LOCALBASE		- Where non-X11 ports install things.
+# LOCALBASE		- Where ports install things.
 #				  Default: /usr/local
 # LINUXBASE		- Where Linux ports install things.
 #				  Default: /compat/linux
