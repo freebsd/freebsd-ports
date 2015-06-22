@@ -448,9 +448,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Will be used to distinguish which linux
 #				  infrastructure ports should be used.
 #				  Valid values: 2.6.16.
-# AUTOMATIC_PLIST
-#				- Set to yes to enable automatic packing list generation.
-#				  Currently has no effect unless USE_LINUX_RPM is set.
 #
 # OVERRIDE_LINUX_BASE_PORT
 #				- This specifies the default linux base to use, for valid
