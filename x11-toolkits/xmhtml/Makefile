@@ -36,10 +36,7 @@ do-install:
 		${CPIO} --quiet -dump -R ${SHAREOWN}:${SHAREGRP} \
 		${STAGEDIR}${DOCSDIR})
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-.for i in book contrib examples
-	@(cd ${WRKSRC} && ${FIND} ${i} ! -name "*Makefile*" | \
-		${CPIO} --quiet -dump -R ${SHAREOWN}:${SHAREGRP} \
-		${STAGEDIR}${EXAMPLESDIR})
-.endfor
+	@(cd ${WRKSRC} && ${FIND} book contrib examples ! -type d ! -name "*Makefile*" | \
+		${PAX} -rw ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
