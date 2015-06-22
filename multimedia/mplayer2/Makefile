@@ -2,7 +2,7 @@
 
 PORTNAME=	mplayer2
 PORTVERSION=	${MPLAYER2_PORT_VERSION}
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	multimedia audio
 MASTER_SITES=	LOCAL/gblach/
 
@@ -139,7 +139,7 @@ CONFIGURE_ARGS+=	--disable-pulse
 .endif
 
 .if ${PORT_OPTIONS:MPORTAUDIO}
-LIB_DEPENDS+=		libportaudio.so:${PORTSDIR}/audio/portaudio2
+LIB_DEPENDS+=		libportaudio.so:${PORTSDIR}/audio/portaudio
 PORTAUDIOLIB=		-lportaudio
 .else
 CONFIGURE_ARGS+=	--disable-portaudio
