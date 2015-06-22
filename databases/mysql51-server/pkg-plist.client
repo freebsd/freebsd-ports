@@ -66,6 +66,3 @@ man/man1/mysqlslap.1.gz
 man/man1/mysqltest.1.gz
 share/aclocal/mysql.m4
 %%DATADIR%%/mysql_fix_privilege_tables.sql
-@dirrm include/mysql
-@dirrm lib/mysql
-@dirrm %%DATADIR%%

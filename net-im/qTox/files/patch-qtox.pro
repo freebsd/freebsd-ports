@@ -1,8 +1,8 @@
---- qtox.pro.orig	2015-04-27 03:03:27 UTC
+--- qtox.pro.orig	2015-06-12 10:53:59 UTC
 +++ qtox.pro
-@@ -433,6 +433,18 @@ SOURCES += \
-     src/profilelocker.cpp \
-     src/avatarbroadcaster.cpp
+@@ -483,6 +483,18 @@ SOURCES += \
+     src/widget/translator.cpp \
+     src/persistence/settingsserializer.cpp
  
 +unix {
 +    target.path  = $$PREFIX/bin
@@ -17,5 +17,5 @@
 +}
 +
  HEADERS += \
-     src/audio.h \
+     src/audio/audio.h \
      src/core/core.h \

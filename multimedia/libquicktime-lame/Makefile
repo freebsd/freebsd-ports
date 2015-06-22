@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libquicktime
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	-lame
 
@@ -36,6 +36,6 @@ CONFIGURE_ARGS+=	--with-lame \
 
 do-install:
 	@cd ${WRKSRC}/plugins/lame && ${SETENV} ${MAKE_ENV} \
-		${MAKE_CMD} install ${MAKE_ARGS}
+		${MAKE_CMD} ${INSTALL_TARGET} ${MAKE_ARGS}
 
 .include "${MASTERDIR}/Makefile"

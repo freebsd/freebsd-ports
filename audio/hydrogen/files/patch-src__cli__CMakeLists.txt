@@ -1,6 +1,6 @@
---- ./src/cli/CMakeLists.txt.orig	2014-06-19 06:38:04.000000000 +0930
-+++ ./src/cli/CMakeLists.txt	2014-08-13 02:18:54.938462662 +0930
-@@ -6,6 +6,7 @@
+--- src/cli/CMakeLists.txt.orig	2014-09-09 18:39:33 UTC
++++ src/cli/CMakeLists.txt
+@@ -6,6 +6,7 @@ INCLUDE_DIRECTORIES(
      ${CMAKE_BINARY_DIR}/src/core/include        # generated config.h
      ${QT_INCLUDES}
      ${LASH_INCLUDE_DIR}

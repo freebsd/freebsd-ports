@@ -12,11 +12,7 @@ COMMENT=	Framework for scalable cross-language services development
 
 LICENSE=	APACHE20
 
-USE_AUTOTOOLS=	autoconf autoheader:env aclocal automake
-ACLOCAL_ARGS=	-I${WRKSRC}/aclocal
-AUTOMAKE_ARGS=	--foreign --add-missing --copy
-
-USES=			gmake libtool pkgconfig
+USES=			autoreconf gmake libtool pkgconfig
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
 MAKE_JOBS_UNSAFE=	yes

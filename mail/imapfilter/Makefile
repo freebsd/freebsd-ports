@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	imapfilter
-PORTVERSION=	2.5.7
+PORTVERSION=	2.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 
@@ -42,6 +42,9 @@ MAKE_ARGS=	PREFIX=${PREFIX} \
 		SHAREDIR=${DATADIR} \
 		MANDIR=${MANPREFIX}/man \
 		LIBLUA=-llua-${LUA_VER}
+
+post-patch:
+	${REINPLACE_CMD} 's|-ldl ||' ${WRKSRC}/src/Makefile
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/imapfilter

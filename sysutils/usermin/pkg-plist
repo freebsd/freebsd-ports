@@ -143,6 +143,7 @@ lib/usermin/authentic-theme/buttons.cgi
 lib/usermin/authentic-theme/changelog.pl
 lib/usermin/authentic-theme/config
 lib/usermin/authentic-theme/images/__logo.png
+lib/usermin/authentic-theme/images/_empty.gif
 lib/usermin/authentic-theme/images/after.gif
 lib/usermin/authentic-theme/images/attach.gif
 lib/usermin/authentic-theme/images/before.gif
@@ -944,12 +945,19 @@ lib/usermin/authentic-theme/lang/pl
 lib/usermin/authentic-theme/lang/pl.UTF-8
 lib/usermin/authentic-theme/lang/pt
 lib/usermin/authentic-theme/lang/pt.UTF-8
+lib/usermin/authentic-theme/lang/ro_RO
+lib/usermin/authentic-theme/lang/ro_RO.UTF-8
 lib/usermin/authentic-theme/lang/ru
 lib/usermin/authentic-theme/lang/ru.UTF-8
 lib/usermin/authentic-theme/lang/zh_CN
 lib/usermin/authentic-theme/lang/zh_CN.UTF-8
 lib/usermin/authentic-theme/navigation.cgi
 lib/usermin/authentic-theme/session_login.cgi
+lib/usermin/authentic-theme/settings-editor_read.cgi
+lib/usermin/authentic-theme/settings-editor_write.cgi
+lib/usermin/authentic-theme/settings-upload.cgi
+lib/usermin/authentic-theme/settings-upload_save.cgi
+lib/usermin/authentic-theme/settings.cgi
 lib/usermin/authentic-theme/sysinfo.cgi
 lib/usermin/authentic-theme/theme.info
 lib/usermin/authentic-theme/unauthenticated/css/bootstrap.min.css
@@ -989,6 +997,10 @@ lib/usermin/authentic-theme/unauthenticated/fonts/roboto/owYYXKukxFDFjr0ZO8NXhz8
 lib/usermin/authentic-theme/unauthenticated/fonts/roboto/roboto.min.css
 lib/usermin/authentic-theme/unauthenticated/fonts/roboto/tZdhd9Zzj0I2MwoD56osIw.woff2
 lib/usermin/authentic-theme/unauthenticated/fonts/roboto/vxNK-E6B13CyehuDCmvQvw.woff
+lib/usermin/authentic-theme/unauthenticated/fonts/wbm-webfont.eot
+lib/usermin/authentic-theme/unauthenticated/fonts/wbm-webfont.svg
+lib/usermin/authentic-theme/unauthenticated/fonts/wbm-webfont.ttf
+lib/usermin/authentic-theme/unauthenticated/fonts/wbm-webfont.woff
 lib/usermin/authentic-theme/unauthenticated/js/autosizeinput.min.js
 lib/usermin/authentic-theme/unauthenticated/js/bootstrap.min.js
 lib/usermin/authentic-theme/unauthenticated/js/cgi.min.js
@@ -996,12 +1008,12 @@ lib/usermin/authentic-theme/unauthenticated/js/codemirror.min.js
 lib/usermin/authentic-theme/unauthenticated/js/default.min.js
 lib/usermin/authentic-theme/unauthenticated/js/fileinput.min.js
 lib/usermin/authentic-theme/unauthenticated/js/filtermatch.min.js
+lib/usermin/authentic-theme/unauthenticated/js/icheck.min.js
 lib/usermin/authentic-theme/unauthenticated/js/jquery.autocomplete.min.js
 lib/usermin/authentic-theme/unauthenticated/js/jquery.datatables.min.js
 lib/usermin/authentic-theme/unauthenticated/js/jquery.datatables.plugins.min.js
 lib/usermin/authentic-theme/unauthenticated/js/jquery.easypiechart.min.js
 lib/usermin/authentic-theme/unauthenticated/js/jquery.min.js
-lib/usermin/authentic-theme/unauthenticated/js/jquery.mousewheel.min.js
 lib/usermin/authentic-theme/unauthenticated/js/jquery.purl.min.js
 lib/usermin/authentic-theme/unauthenticated/js/jquery.scrollbar.min.js
 lib/usermin/authentic-theme/unauthenticated/js/loader.min.js
@@ -1093,6 +1105,7 @@ lib/usermin/authentic-theme/unauthenticated/js/tinymce/skins/lightgray/skin.min.
 lib/usermin/authentic-theme/unauthenticated/js/tinymce/themes/modern/theme.min.js
 lib/usermin/authentic-theme/unauthenticated/js/tinymce/tinymce.min.js
 lib/usermin/authentic-theme/unauthenticated/js/transition.min.js
+lib/usermin/authentic-theme/update
 lib/usermin/blue-theme/CHANGELOG
 lib/usermin/blue-theme/acl/images/convert.gif
 lib/usermin/blue-theme/acl/images/icon.gif
@@ -1427,6 +1440,7 @@ lib/usermin/blue-theme/iscsi-target/images/timeout.gif
 lib/usermin/blue-theme/jabber/images/icon.gif
 lib/usermin/blue-theme/krb5/images/icon.gif
 lib/usermin/blue-theme/lang/ca
+lib/usermin/blue-theme/lang/cz
 lib/usermin/blue-theme/lang/de
 lib/usermin/blue-theme/lang/en
 lib/usermin/blue-theme/lang/fr
@@ -3496,6 +3510,7 @@ lib/usermin/gray-theme/iscsi-target/images/timeout.gif
 lib/usermin/gray-theme/jabber/images/icon.gif
 lib/usermin/gray-theme/krb5/images/icon.gif
 lib/usermin/gray-theme/lang/ca
+lib/usermin/gray-theme/lang/cz
 lib/usermin/gray-theme/lang/de
 lib/usermin/gray-theme/lang/en
 lib/usermin/gray-theme/lang/fr

@@ -3,7 +3,7 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools
 PORTVERSION=	4.5.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/ \
 		http://code.coreboot.org/p/seabios/downloads/get/:seabios
@@ -48,7 +48,9 @@ QEMU_ARGS=	--disable-gtk \
 		--cxx=c++
 
 EXTRA_PATCHES=	${FILESDIR}/xsa119-unstable.patch:-p1 \
-		${FILESDIR}/xsa125.patch:-p1
+		${FILESDIR}/xsa125.patch:-p1 \
+		${FILESDIR}/0001-libelf-fix-elf_parse_bsdsyms-call.patch:-p1 \
+		${FILESDIR}/0002-libxc-fix-xc_dom_load_elf_symtab.patch:-p1
 
 CONFIGURE_ARGS+=	--with-extra-qemuu-configure-args="${QEMU_ARGS}"
 SHEBANG_FILES=	tools/misc/xencov_split \

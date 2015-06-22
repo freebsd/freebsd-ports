@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openra
-PORTVERSION=	20150424
+PORTVERSION=	20150614
 DISTVERSIONPREFIX=	release-
 CATEGORIES=	games
 # XXX Convert to USES=nuget or package dependencies instead
@@ -15,10 +15,10 @@ MASTER_SITES=	https://nuget.org/api/v2/package/StyleCopPlus.MSBuild/4.7.49.5?dum
 		https://nuget.org/api/v2/package/SharpFont/3.0.1?dummy=/:SharpFont \
 		https://nuget.org/api/v2/package/NUnit/2.6.4?dummy=/:NUnit \
 		https://nuget.org/api/v2/package/Mono.Nat/1.2.21?dummy=/:Mono_Nat \
-		https://nuget.org/api/v2/package/Moq/4.2.1502.0911?dummy=/:Moq \
 		https://nuget.org/api/v2/package/FuzzyLogicLibrary/1.2.0?dummy=/:FuzzyLogicLibrary \
 		https://github.com/${GH_ACCOUNT}/SDL2-CS/releases/download/20140407/:SDL2_CS \
-		https://github.com/${GH_ACCOUNT}/Eluant/releases/download/20140425/:Eluant
+		https://github.com/${GH_ACCOUNT}/Eluant/releases/download/20140425/:Eluant \
+		https://geolite.maxmind.com/download/geoip/database/:GeoLite2
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		StyleCopPlus.MSBuild-4.7.49.5.zip:StyleCopPlus \
 		StyleCop.MSBuild-4.7.49.0.zip:StyleCop \
@@ -30,11 +30,11 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		SharpFont-3.0.1.zip:SharpFont \
 		NUnit-2.6.4.zip:NUnit \
 		Mono.Nat-1.2.21.zip:Mono_Nat \
-		Moq-4.2.1502.0911.zip:Moq \
 		FuzzyLogicLibrary-1.2.0.zip:FuzzyLogicLibrary \
 		SDL2-CS.dll:SDL2_CS \
-		Eluant.dll:Eluant
-EXTRACT_ONLY=	${DISTFILES:C/:.*//:N*.dll}
+		Eluant.dll:Eluant \
+		GeoLite2-Country.mmdb.gz:GeoLite2
+EXTRACT_ONLY=	${DISTFILES:C/:.*//:N*.dll:N*.mmdb*}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Multiplayer re-envisioning of early RTS games by Westwood Studios
@@ -73,18 +73,19 @@ ZENITY_DESC=	Use native crash dialog
 
 .include <bsd.port.options.mk>
 
-post-patch:
-# XXX Move under post-extract once patch-SharpFont-3.0 is no longer needed
-	@${CP} -v ${DISTFILES:C/:.*//:M*.dll:S,^,${_DISTDIR}/,} \
-		${WRKSRC}/thirdparty
+post-extract:
+	@${MKDIR} ${WRKSRC}/thirdparty/download
+	@${CP} -v ${DISTFILES:C/:.*//:N*.tar*:N*.zip:S,^,${_DISTDIR}/,} \
+		${WRKSRC}/thirdparty/download
 	@for f in $$(${SED} -n 's/\.$$//; s,cp \./,,p' \
 			${WRKSRC}/thirdparty/fetch-thirdparty-deps.sh); do \
-		${MV} -v ${WRKDIR}/$${f#*/} ${WRKSRC}/thirdparty; \
+		${MV} -v ${WRKDIR}/$${f#*/} ${WRKSRC}/thirdparty/download; \
 	done
 
+post-patch:
 	${REINPLACE_CMD} -e 's/Linux/${OPSYS}/' \
 		-e '/CP_R/s,hicolor/,hicolor,' \
-		-e '/fetch-thirdparty-deps/d' \
+		-e '\,thirdparty/.*\.sh,d' \
 		-e 's/crashdialog/gamemonitor/' \
 		-e '/echo/!s/	@/	/' \
 		-e '/^mods:/s/$$/ version/' \
@@ -92,6 +93,7 @@ post-patch:
 		-e '/^test:/s/$$/ all/' \
 		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e '/linux/{ p; s//${OPSYS:tl}/; }' \
+		${WRKSRC}/thirdparty/download/*.config \
 		${WRKSRC}/thirdparty/*.config*
 	${SED} 's/@LIBLUA51@/liblua-${LUA_VER}.so/' \
 		${WRKSRC}/thirdparty/Eluant.dll.config.in \

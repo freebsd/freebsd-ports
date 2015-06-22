@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	doublecmd
-PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTVERSION=	0.6.3
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/${PORTNAME}/Double%20Commander%20Source
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -40,11 +39,6 @@ OPTIONS_DEFINE=		DOCS DEBUG
 OPTIONS_SINGLE=		LCL
 OPTIONS_SINGLE_LCL=	GTK2 QT4
 OPTIONS_GROUP=		WCX WDX WFX WLX DSX
-WCX_DESC=	Packer plugins
-WDX_DESC=	Content plugins
-WFX_DESC=	File system plugins
-WLX_DESC=	Lister plugins
-DSX_DESC=	Search plugins
 OPTIONS_GROUP_WCX=	WCX_CPIO \
 			WCX_DEB \
 			WCX_RPM \
@@ -60,6 +54,31 @@ OPTIONS_GROUP_WFX=	WFX_FTP \
 			WFX_SAMBA
 OPTIONS_GROUP_WLX=	WLX_MPLAYER
 OPTIONS_GROUP_DSX=	DSX_LOCATE
+
+WCX_DESC=	Packer plugins to work with archives
+WCX_CPIO_DESC=	CPIO format support
+WCX_DEB_DESC=	Debian package archive support
+WCX_RPM_DESC=	Red Hat package archive support
+WCX_UNBZ2_DESC=	BZIP2 format support
+WCX_UNRAR_DESC=	RAR format support
+WCX_ZIP_DESC=	ZIP format support
+
+WDX_DESC=	Plugins to display and search extended file attributes
+WDX_DEB_DESC=	Debian package file information
+WDX_RPM_DESC=	Red Hat package file information
+WDX_SCRIPTS_DESC=	Add support to use custom Lua scripts
+WDX_SVN_DESC=	Subversion repository information
+WDX_XPI_DESC=	Mozilla plugin file information
+
+WFX_DESC=	File system plugins
+WFX_FTP_DESC=	FTP protocol support
+WFX_SAMBA_DESC=	SMB protocol support
+
+WLX_DESC=	Internal viewer plugins
+WLX_MPLAYER_DESC=	Use MPlayer for multimedia files
+
+DSX_DESC=	Search plugins
+DSX_LOCATE_DESC=	Support locate command
 
 OPTIONS_DEFAULT=	GTK2 \
 			WCX_CPIO \

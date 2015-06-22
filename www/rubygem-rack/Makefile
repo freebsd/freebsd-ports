@@ -7,8 +7,7 @@
 # 	www/rubygem-actionpack
 
 PORTNAME=	rack
-PORTVERSION=	1.4.5
-PORTREVISION=	1
+PORTVERSION=	1.4.7
 PORTEPOCH=	3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG

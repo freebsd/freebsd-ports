@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dbus-tcl
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/dbus/${PORTVERSION}/
 DISTNAME=	dbus-${PORTVERSION}
@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
 		--exec-prefix=${PREFIX}
 
-PLIST_FILES=	lib/dbus/libdbus20.so.1 \
+PLIST_FILES=	lib/dbus/libdbus21.so.1 \
 		lib/dbus/pkgIndex.tcl \
 		man/mann/dbus.n.gz
 
@@ -32,6 +32,10 @@ PLIST_FILES=	lib/dbus/libdbus20.so.1 \
 .if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS=	dtplite:${PORTSDIR}/devel/tcllib
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e '/^INSTALL_PROGRAM/s|$$| -s|' \
+	    ${WRKSRC}/Makefile.in
 
 regression-test:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test

@@ -19,6 +19,7 @@ PROJECTHOST=	uniconvertor
 
 USES=		desktop-file-utils python
 USE_PYTHON=	distutils
+NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|' ${WRKSRC}/setup.py

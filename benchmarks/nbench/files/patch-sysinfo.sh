@@ -1,6 +1,6 @@
---- sysinfo.sh.orig	Mon Oct 18 00:03:53 2004
-+++ sysinfo.sh	Mon Oct 18 00:04:35 2004
-@@ -50,8 +50,8 @@
+--- sysinfo.sh.orig	2008-05-12 20:35:23 UTC
++++ sysinfo.sh
+@@ -65,8 +65,8 @@ rm -f sysinfo.crm sysinfoc.c hello
  
  # this bombs out on Ultrix which expect "cut -d"
  

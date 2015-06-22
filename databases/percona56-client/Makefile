@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	percona
+PORTREVISION=	1
 PKGNAMESUFFIX=	56-client
 
 COMMENT=	Multithreaded SQL database (client)

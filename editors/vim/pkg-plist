@@ -183,3 +183,4 @@ man/man1/xxd.1.gz
 %%NON_LITE%%%%NLS%%man/ru.UTF-8/man1/vimdiff.1.gz
 %%NON_LITE%%%%NLS%%man/ru.UTF-8/man1/vimtutor.1.gz
 %%NON_LITE%%%%NLS%%man/ru.UTF-8/man1/xxd.1.gz
+%%NO_NLS%%@dir %%DATADIR%%/%%VIM_VER%%/lang

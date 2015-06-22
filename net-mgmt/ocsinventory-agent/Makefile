@@ -2,10 +2,10 @@
 
 PORTNAME=	Ocsinventory
 PORTVERSION=	2.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://launchpad.net/ocsinventory-unix-agent/stable-2.1/${PORTVERSION}/+download/
+MASTER_SITES=	http://launchpad.net/ocsinventory-unix-agent/stable-${PORTVERSION:R}/${PORTVERSION}/+download/
 PKGNAMESUFFIX=	-Unix-Agent
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
@@ -15,12 +15,12 @@ COMMENT=	Keep track of the computers configuration and software
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	lspci:${PORTSDIR}/sysutils/pciutils \
-		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
+RUN_DEPENDS=	dmidecode:${PORTSDIR}/sysutils/dmidecode \
+		lspci:${PORTSDIR}/sysutils/pciutils \
 		p5-Net-IP>=0:${PORTSDIR}/net-mgmt/p5-Net-IP \
 		p5-Proc-Daemon>=0:${PORTSDIR}/devel/p5-Proc-Daemon \
-		dmidecode:${PORTSDIR}/sysutils/dmidecode \
-		p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5
+		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	postinst.pl

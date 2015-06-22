@@ -19,7 +19,6 @@ include/mysql-connector-c/my_dir.h
 include/mysql-connector-c/my_getopt.h
 include/mysql-connector-c/my_global.h
 include/mysql-connector-c/my_list.h
-include/mysql-connector-c/my_net.h
 include/mysql-connector-c/my_pthread.h
 include/mysql-connector-c/my_sys.h
 include/mysql-connector-c/my_xml.h
@@ -46,6 +45,7 @@ include/mysql-connector-c/mysql/psi/psi.h
 include/mysql-connector-c/mysql/psi/psi_base.h
 include/mysql-connector-c/mysql/psi/psi_memory.h
 include/mysql-connector-c/mysql/service_mysql_alloc.h
+include/mysql-connector-c/mysql/service_my_snprintf.h
 include/mysql-connector-c/mysql_com.h
 include/mysql-connector-c/mysql_com_server.h
 include/mysql-connector-c/mysql_embed.h

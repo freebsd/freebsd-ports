@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	calf
-PORTVERSION=	0.0.19
-PORTREVISION=	4
+PORTVERSION=	0.0.60
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -19,16 +18,16 @@ LIB_DEPENDS=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth \
 		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
 		libexpat.so:${PORTSDIR}/textproc/expat2
 
-USES=		gmake pkgconfig libtool
+USES=		compiler:c++11-lib gmake libtool pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
+INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=		LASH LV2 DOCS
+OPTIONS_DEFINE=		DOCS LASH LV2
 OPTIONS_DEFAULT=	LASH LV2
 OPTIONS_SUB=		yes
 
@@ -39,25 +38,23 @@ LV2_BUILD_DEPENDS=	lv2core>0:${PORTSDIR}/audio/lv2core
 LV2_RUN_DEPENDS=	lv2core>0:${PORTSDIR}/audio/lv2core
 LV2_CONFIGURE_WITH=	lv2
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc
+CXXFLAGS+=	-fno-inline -finline-functions-called-once
+.endif
 
 post-patch:
 	@${FIND} ${BUILD_WRKSRC} -name '*.cpp' | ${XARGS} ${REINPLACE_CMD} -e \
-		's|<malloc.h>|<stdlib.h>|'
+		's|<malloc.h>|<cstdlib>|'
 	@${REINPLACE_CMD} -e \
-		'/CXXFLAGS/s|-O3|| ; \
-		 /CXXFLAGS/s|-finline-functions-called-once||' \
+		's|"GNU strip"|"strip"| ; \
+		 /CXXFLAGS/s|-O3 .* -Wall|-Wall|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		'/AM_CXXFLAGS/s|-finline-limit=80|| ; \
 		 /calf.so/s|$$(pkglibdir)|../../calf|' \
 		${WRKSRC}/src/Makefile.in
-	@${REINPLACE_CMD} -e \
-		's|src\.size();|src->size();|' \
-		${WRKSRC}/src/calf/buffer.h
-	@${REINPLACE_CMD} -e \
-		's|data\[(1<<IntBits)+1\]|data[]|' \
-		${WRKSRC}/src/calf/fixed_point.h
 
 pre-build:
 .if ${PORT_OPTIONS:MLV2}
@@ -65,17 +62,14 @@ pre-build:
 	@(cd ${WRKSRC} && ${PAX} -rw . ${WRKDIR}/calfmakerdf)
 	@${REINPLACE_CMD} -e 's|\(PKGLIBDIR\).*|\1 "${STAGEDIR}${DATADIR}"|' \
 		${WRKDIR}/calfmakerdf/config.h
-	@(cd ${WRKDIR}/calfmakerdf/src && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
-		${MAKE_FLAGS} ${MAKEFILE} -j${MAKE_JOBS_NUMBER} ${MAKE_ARGS} \
-		calfmakerdf)
+	@(cd ${WRKDIR}/calfmakerdf/src && ${DO_MAKE_BUILD} calfmakerdf)
 .endif
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/calf/calf.so \
-		${STAGEDIR}${PREFIX}/lib/lv2/calf.lv2/calflv2gui.so
 .if ${PORT_OPTIONS:MLV2}
 	@(cd ${WRKDIR}/calfmakerdf/src && ./calfmakerdf -m ttl \
 		-p ${STAGEDIR}${PREFIX}/lib/lv2/calf.lv2)
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lv2/calf.lv2/calflv2gui.so
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

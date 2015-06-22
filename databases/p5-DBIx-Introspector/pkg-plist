@@ -3,5 +3,3 @@
 %%SITE_PERL%%/DBIx/Introspector/Driver.pm
 %%PERL5_MAN3%%/DBIx::Introspector.3.gz
 %%PERL5_MAN3%%/DBIx::Introspector::Advent.3.gz
-@dirrm %%SITE_PERL%%/DBIx/Introspector
-@dirrmtry %%SITE_PERL%%/DBIx

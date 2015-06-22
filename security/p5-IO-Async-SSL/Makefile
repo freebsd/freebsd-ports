@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	IO-Async-SSL
-PORTVERSION=	0.17
+PORTVERSION=	0.18
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PEVANS
@@ -21,6 +21,7 @@ TEST_DEPENDS=	${LOCALBASE}/bin/socat:${PORTSDIR}/net/socat \
 		p5-Test-Identity>=0:${PORTSDIR}/devel/p5-Test-Identity \
 		p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

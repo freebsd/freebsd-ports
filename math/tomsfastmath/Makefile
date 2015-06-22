@@ -11,12 +11,20 @@ COMMENT=	Portable fixed precision math library for fast exponentiations
 
 BROKEN_powerpc=	internal compiler error at src/mul/fp_mul_comba_48.c:398
 
-USES=		gmake tar:bzip2
+USES=		compiler:features gmake tar:bzip2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	makefile
 ALL_TARGET=	default
 
 PLIST_FILES=	include/tfm.h lib/libtfm.a
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == i386
+# on clang:
+# src/mul/fp_mul_comba.c:349:11: error: inline assembly requires more registers than available
+USE_GCC=	yes
+.endif
 
 # Unbreak against Clang ("cc" is not a register)
 post-patch:
@@ -25,4 +33,4 @@ post-patch:
 		${WRKSRC}/src/mul/fp_mul_comba.c \
 		${WRKSRC}/src/sqr/fp_sqr_comba.c
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

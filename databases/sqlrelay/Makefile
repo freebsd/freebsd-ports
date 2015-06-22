@@ -43,16 +43,16 @@ TOSTRIP=	bin/sqlr-start \
 		bin/sqlr-pwdenc \
 		bin/sqlr-status \
 		bin/sqlrsh \
-		lib/libsqlrutil-0.59.so.1.0.0 \
-		lib/libsqlrclient-0.59.so.1.0.0 \
-		lib/libsqlrclientwrapper-0.59.so.1.0.0 \
-		lib/libpqsqlrelay-0.59.so.1.0.0 \
-		lib/libmysql3sqlrelay-0.59.so.1.0.0 \
-		lib/libmysql40sqlrelay-0.59.so.1.0.0 \
-		lib/libmysql41sqlrelay-0.59.so.1.0.0 \
-		lib/libmysql50sqlrelay-0.59.so.1.0.0 \
-		lib/libmysql51sqlrelay-0.59.so.1.0.0 \
-		lib/libsqlrserver-0.59.so.1.0.0 \
+		lib/libsqlrutil-${SQLRELAY_PORTVERSION}.so.1.0.0 \
+		lib/libsqlrclient-${SQLRELAY_PORTVERSION}.so.1.0.0 \
+		lib/libsqlrclientwrapper-${SQLRELAY_PORTVERSION}.so.1.0.0 \
+		lib/libpqsqlrelay-${SQLRELAY_PORTVERSION}.so.1.0.0 \
+		lib/libmysql3sqlrelay-${SQLRELAY_PORTVERSION}.so.1.0.0 \
+		lib/libmysql40sqlrelay-${SQLRELAY_PORTVERSION}.so.1.0.0 \
+		lib/libmysql41sqlrelay-${SQLRELAY_PORTVERSION}.so.1.0.0 \
+		lib/libmysql50sqlrelay-${SQLRELAY_PORTVERSION}.so.1.0.0 \
+		lib/libmysql51sqlrelay-${SQLRELAY_PORTVERSION}.so.1.0.0 \
+		lib/libsqlrserver-${SQLRELAY_PORTVERSION}.so.1.0.0 \
 		libexec/sqlrelay/sqlrauth_default.so \
 		libexec/sqlrelay/sqlrauth_sqlrelay.so \
 		libexec/sqlrelay/sqlrconnection_router.so \

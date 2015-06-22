@@ -7,7 +7,7 @@
 # 	www/rubygem-innate
 
 PORTNAME=	rack
-PORTVERSION=	1.5.3
+PORTVERSION=	1.5.5
 PORTEPOCH=	4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG

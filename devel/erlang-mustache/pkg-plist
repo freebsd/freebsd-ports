@@ -1,5 +1,0 @@
-lib/erlang/lib/mustache-%%VERSION%%/ebin/mustache.app
-lib/erlang/lib/mustache-%%VERSION%%/ebin/mustache.beam
-lib/erlang/lib/mustache-%%VERSION%%/src/mustache.app.src
-lib/erlang/lib/mustache-%%VERSION%%/src/mustache.erl
-%%PORTDOCS%%%%DOCSDIR%%/README.md

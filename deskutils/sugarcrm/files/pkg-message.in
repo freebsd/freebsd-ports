@@ -29,8 +29,6 @@ Alias /sugarcrm %%WWWDIR%%
 <Directory %%WWWDIR%%>
 	AllowOverride None
 	Require all granted
-	Order allow,deny
-	Allow from all
 </Directory>
 
 4.  For full information on how to get the best out of Sugar Community

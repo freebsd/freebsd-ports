@@ -12,11 +12,10 @@ COMMENT=	Hacked version of a Links WWW browser
 
 LICENSE=	GPLv2
 
-USES=		execinfo
+USES=		autoreconf execinfo
 USE_OPENSSL=	yes
 USE_CSTD=	gnu89
-USE_AUTOTOOLS=	aclocal autoheader automake autoconf
-AUTOMAKE_ARGS=	--add-missing --copy
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ssl --without-pmshell --without-atheos --without-fb
 
 CFLAGS+=	-Wno-error=return-type

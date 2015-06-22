@@ -1,11 +1,11 @@
---- build/FreeBSD.inc.orig	2012-09-03 13:10:45.423760088 -0400
-+++ build/FreeBSD.inc	2012-09-03 13:13:15.765760027 -0400
-@@ -37,14 +37,14 @@
+--- build/FreeBSD.inc.orig	2015-06-11 14:18:55 UTC
++++ build/FreeBSD.inc
+@@ -29,14 +29,14 @@ ifndef arch
  endif
  
  ifndef runtime
--        gcc_version:=$(shell gcc -v 2>&1 | grep 'gcc version' | sed -e 's/^gcc version //' | sed -e 's/ .*$$//')
-+        gcc_version:=$(shell $(CC) -v 2>&1 | grep ' version' | sed -e 's/^.* version //' | sed -e 's/ .*$$//')
+-        gcc_version:=$(shell gcc -dumpversion)
++        gcc_version:=$(shell $(CC) -dumpversion)
          os_version:=$(shell uname -r)
          os_kernel_version:=$(shell uname -r | sed -e 's/-.*$$//')
          export runtime:=cc$(gcc_version)_kernel$(os_kernel_version)
@@ -13,12 +13,12 @@
  
 -native_compiler := gcc
 -export compiler ?= gcc
-+native_compiler := $(CC) 
++native_compiler := $(CC)
 +export compiler ?= $(CC)
  debugger ?= gdb
  
  CMD=$(SHELL) -c
-@@ -54,7 +54,7 @@
+@@ -46,7 +46,7 @@ RD?=rmdir
  MD?=mkdir -p
  NUL= /dev/null
  SLASH=/

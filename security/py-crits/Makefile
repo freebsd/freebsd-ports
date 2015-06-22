@@ -13,6 +13,8 @@ COMMENT=		Collaborative Research Into Threats
 LICENSE=		MIT
 LICENSE_FILE=		${WRKSRC}/LICENSE
 
+BROKEN=		Depends on conflicting versions of django
+
 USE_GITHUB=		yes
 GH_PROJECT=		crits
 
@@ -58,7 +60,7 @@ RUN_DEPENDS+=	7z:${PORTSDIR}/archivers/p7zip     \
 		${PYTHON_PKGNAMEPREFIX}requests1>=1.1.0_9:${PORTSDIR}/www/py-requests1     \
 		${PKGNAMEPREFIX}pillow>=2.4.0:${PORTSDIR}/graphics/py-pillow               \
 		${PYTHON_PKGNAMEPREFIX}parsing>=1.5.1:${PORTSDIR}/devel/py-parsing         \
-		${PYTHON_PKGNAMEPREFIX}ldap2>=2.4.15:${PORTSDIR}/net/py-ldap2              \
+		${PYTHON_PKGNAMEPREFIX}ldap>=2.4.15:${PORTSDIR}/net/py-ldap                \
 		${PYTHON_PKGNAMEPREFIX}magic>0:${PORTSDIR}/devel/py-magic                  \
 		${PYTHON_PKGNAMEPREFIX}mimeparse>=0.1.4:${PORTSDIR}/devel/py-mimeparse     \
 		${PYTHON_PKGNAMEPREFIX}cybox>=2.1.0.5:${PORTSDIR}/security/py-cybox        \

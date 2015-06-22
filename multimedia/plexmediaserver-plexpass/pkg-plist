@@ -425,6 +425,7 @@
 %%DATADIR%%/Resources/Plug-ins/HTbackdrops.bundle/Contents/Resources/attribution.png
 %%DATADIR%%/Resources/Plug-ins/HTbackdrops.bundle/Contents/Resources/icon-default.png
 %%DATADIR%%/Resources/Plug-ins/HTbackdrops.bundle/Contents/VERSION
+%%DATADIR%%/Resources/Plug-ins/HTbackdrops.bundle/README.md
 %%DATADIR%%/Resources/Plug-ins/IMDB.bundle/Contents/Code/__init__.py
 %%DATADIR%%/Resources/Plug-ins/IMDB.bundle/Contents/DefaultPrefs.json
 %%DATADIR%%/Resources/Plug-ins/IMDB.bundle/Contents/Info.plist
@@ -1341,6 +1342,8 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.foodnetwork/URL/Food Network/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.foratv/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.foratv/URL/ForaTV/ServiceCode.pys
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.fox/ServiceInfo.plist
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.fox/URL/FOX/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.foxnews/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.foxnews/URL/Fox News/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.freakonomics/ServiceInfo.plist

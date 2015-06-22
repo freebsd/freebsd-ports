@@ -3,7 +3,7 @@
 
 PORTNAME=	gps
 PORTVERSION=	6.1.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 PKGNAMESUFFIX=	-ide

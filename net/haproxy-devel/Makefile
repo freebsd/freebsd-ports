@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	haproxy
-DISTVERSION=	1.6-dev1
+DISTVERSION=	1.6-dev2
 CATEGORIES=	net www
 MASTER_SITES=	http://haproxy.1wt.eu/download/1.6/src/devel/
 PKGNAMESUFFIX=	-devel
+DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	The Reliable, High Performance TCP/HTTP Load Balancer
@@ -17,11 +18,16 @@ USES=		cpe gmake
 CONFLICTS=	haproxy-[1234567890]\*
 USE_RC_SUBR=	haproxy
 
-OPTIONS_DEFINE=		DOCS EXAMPLES LUA OPENSSL
+DEVICEATLAS_VERSION=	0.9
+DEVICEATLAS_DISTFILE= deviceatlas_c_${DEVICEATLAS_VERSION}
+DEVICEATLAS_REGISTRATION_URL= https://deviceatlas.com/deviceatlas-haproxy-module
+
+OPTIONS_DEFINE=		DOCS EXAMPLES LUA OPENSSL DEVICEATLAS
 OPTIONS_RADIO=		PCRE
 OPTIONS_RADIO_PCRE=	DPCRE SPCRE
 DPCRE_DESC=		Link dynamically
 SPCRE_DESC=		Link statically
+DEVICEATLAS_DESC=	DeviceAtlas Device Detection support
 OPTIONS_DEFAULT=	SPCRE OPENSSL
 
 .include <bsd.port.options.mk>
@@ -33,9 +39,23 @@ MAKE_ARGS=	TARGET=freebsd DEFINE=-DFREEBSD_PORTS USE_GETADDRINFO=1 \
 LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
 MAKE_ARGS+=	USE_PCRE=1 USE_PCRE_JIT=1
 .endif
+
 .if ${PORT_OPTIONS:MSPCRE}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libpcre.a:${PORTSDIR}/devel/pcre
 MAKE_ARGS+=	USE_STATIC_PCRE=1 USE_PCRE_JIT=1
+.endif
+
+.if ${PORT_OPTIONS:MDEVICEATLAS}
+.if !exists(${DISTDIR}/${DEVICEATLAS_DISTFILE}.zip)
+IGNORE?=	You must manually fetch the DeviceAtlas Device Detection C API from ${DEVICEATLAS_REGISTRATION_URL} and place it in ${DISTDIR} and then run make again
+.else
+RESTRICTED=	The redistribution of the DeviceAtlas Device Detection C API is not permitted
+DISTFILES+=	${DEVICEATLAS_DISTFILE}.zip
+MAKE_ARGS+=	USE_DEVICEATLAS=1 DEVICEATLAS_SRC=${WRKDIR}/deviceatlas-enterprise-c-${DEVICEATLAS_VERSION}
+.endif
+.if ! ${PORT_OPTIONS:MDPCRE} && ! ${PORT_OPTIONS:MSPCRE}
+IGNORE?=	Enable PCRE support to use DeviceAtlas
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MOPENSSL}

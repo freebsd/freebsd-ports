@@ -6,8 +6,10 @@ DISTVERSION?=	1.0.1
 PORTREVISION?=	3
 CATEGORIES=	emulators
 
+.ifndef PKGNAMESUFFIX
 PATCH_SITES=	https://projects.archlinux.org/svntogit/community.git/plain/trunk/
 PATCHFILES=	${PORTNAME}-ffmpeg.patch?id=f2b9251:-p1
+.endif
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	PSP emulator in C++ with dynarec JIT for x86, ARM, MIPS
@@ -27,6 +29,7 @@ CONFLICTS_INSTALL?=	${PORTNAME}-devel-[0-9]*
 USES=		compiler:c++11-lib pkgconfig
 USE_GL=		glu
 USE_SDL=	sdl2 # joystick
+CMAKE_ARGS=	-DUSE_SYSTEM_FFMPEG=on
 QMAKE_SOURCE_PATH=	${WRKSRC}/Qt/PPSSPPQt.pro
 QMAKE_ARGS=	CONFIG+="system_ffmpeg" LREL_TOOL="${LRELEASE}"
 NINJA_VERBOSE=	yes

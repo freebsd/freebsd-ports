@@ -732,6 +732,7 @@
     SUBDIR += pstacku
     SUBDIR += pstree
     SUBDIR += ptools
+    SUBDIR += puppet37
     SUBDIR += puppet
     SUBDIR += puppet-lint
     SUBDIR += puppet-mode.el

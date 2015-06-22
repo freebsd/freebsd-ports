@@ -17,6 +17,9 @@ MAINTAINER=	mutoh@openedu.org
 COMMENT=	Network Type Trainer client program
 
 BROKEN=		depends on imlib
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-07-21
+
 USE_GNOME=	imlib
 GNU_CONFIGURE=	yes
 

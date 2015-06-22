@@ -19,15 +19,12 @@ LIB_DEPENDS=	libpcap.so:${PORTSDIR}/net/libpcap \
 
 USE_GITHUB=	yes
 
-USE_AUTOTOOLS=	aclocal autoconf
+USES=		autoreconf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-pcap --enable-gsl
 
 post-patch:
 	@${RM} -rf ${WRKSRC}/build-aux
 	@${REINPLACE_CMD} -e 's|AC_LIB_RPATH||g' ${WRKSRC}/configure.ac
-
-pre-configure:
-	cd ${WRKSRC} && ${AUTORECONF} -i
 
 .include <bsd.port.mk>

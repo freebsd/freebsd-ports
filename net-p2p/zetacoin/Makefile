@@ -49,11 +49,10 @@ CLI_CONFIGURE_WITH=	cli
 TEST_CONFIGURE_ENABLE=	tests
 TEST_ALL_TARGET=	check
 
-AUTOMAKE_ARGS+=	--add-missing
-USE_AUTOTOOLS=	aclocal autoheader automake autoconf
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SSL_LIBS="-lssl" CRYPTO_LIBS="-lcrypto" SSL_CFLAGS="-I/usr/include" CRYPTO_CFLAGS="-I/usr/include"
 
-USES=		gmake
+USES=		autoreconf gmake
 USE_OPENSSL=	yes
 WANT_BDB_VER=	48
 

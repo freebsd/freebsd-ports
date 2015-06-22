@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zope.publisher
-PORTVERSION=	3.13.0
-PORTREVISION=	1
+PORTVERSION=	3.13.1
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +11,7 @@ MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Publishes Python objects on the web
 
 LICENSE=	ZPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.component>=0:${PORTSDIR}/devel/py-zope.component \
 		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:${PORTSDIR}/devel/py-zope.interface \
@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.component>=0:${PORTSDIR}/devel/py-zope.
 		${PYTHON_PKGNAMEPREFIX}zope.exceptions>=0:${PORTSDIR}/devel/py-zope.exceptions \
 		${PYTHON_PKGNAMEPREFIX}zope.i18n>=0:${PORTSDIR}/devel/py-zope.i18n
 
-USES=		python
-USE_PYTHON=	distutils autoplist
+USES=		python:2 zip
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

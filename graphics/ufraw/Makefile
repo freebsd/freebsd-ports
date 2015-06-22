@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ufraw
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libpng.so:${PORTSDIR}/graphics/png \
-		liblcms.so:${PORTSDIR}/graphics/lcms
+		liblcms2.so:${PORTSDIR}/graphics/lcms2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules --enable-extras

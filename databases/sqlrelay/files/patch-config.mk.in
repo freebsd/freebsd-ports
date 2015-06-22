@@ -9,12 +9,3 @@
  dotnetdir = $(libdir)
  libexecdir = @libexecdir@/sqlrelay
  bindir = @bindir@
-@@ -59,7 +59,7 @@ OBJ = lo
- TMPDIRCPPFLAG = -DTMP_DIR=\"$(tmpdir)\"
- DEBUGDIRCPPFLAG = -DDEBUG_DIR=\"$(debugdir)\"
- LOGDIRCPPFLAG = -DLOG_DIR=\"$(logdir)\"
--CONFIGFILECPPFLAG = -DDEFAULT_CONFIG_FILE=\"$(sysconfdir)/sqlrelay.conf\" -DDEFAULT_CONFIG_DIR=\"$(sysconfdir)/sqlrelay.conf.d\"
-+CONFIGFILECPPFLAG = -DDEFAULT_CONFIG_FILE=\"$(sysconfdir)/sqlrelay.conf\" -DDEFAULT_CONFIG_DIR=\"$(sysconfdir)/sqlrelay\"
- CACHEDIRCPPFLAG = -DCACHE_DIR=\"$(cachedir)\"
- 
- 

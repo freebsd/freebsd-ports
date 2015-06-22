@@ -3,7 +3,7 @@
 
 PORTNAME=	vim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7-4-738
+DISTVERSION=	7-4-752
 CATEGORIES?=	editors
 
 MAINTAINER?=	sunpoet@FreeBSD.org
@@ -162,6 +162,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/runtime/keymap/* ${STAGEDIR}${DATADIR}/${VIM_VER}/keymap/
 .endif
 	${INSTALL_DATA} ${FILESDIR}/vietnamese_viscii.vim ${STAGEDIR}${DATADIR}/${VIM_VER}/keymap/
-	${TOUCH} ${STAGEDIR}${DATADIR}/${VIM_VER}/lang/.keepme
 
 .include <bsd.port.post.mk>

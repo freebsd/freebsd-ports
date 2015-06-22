@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.kokkonen.net/tjko/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate listing and MD5, check jpegs for error, delete broken ones
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes

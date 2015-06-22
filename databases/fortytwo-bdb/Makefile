@@ -2,7 +2,7 @@
 
 PORTNAME=	bdb
 PORTVERSION=	0.2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases gnustep
 MASTER_SITES=	SF/fortytwo/Berkeley%20DB%20Wrapper%20%28BDB%29/${PORTVERSION}
 PKGNAMEPREFIX=	fortytwo-
@@ -30,6 +30,7 @@ ADDITIONAL_LDFLAGS+=	-L${BDB_LIB_DIR}
 OPTIONS_DEFINE=	DOCS
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/Local/Library/Frameworks/BDB.framework/Versions/0/libBDB.so
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKDIR}/BDB-0.2.0-api-ref && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 

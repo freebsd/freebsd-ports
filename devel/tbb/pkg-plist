@@ -20,6 +20,7 @@ include/tbb/concurrent_vector.h
 include/tbb/critical_section.h
 include/tbb/enumerable_thread_specific.h
 include/tbb/flow_graph.h
+include/tbb/global_control.h
 include/tbb/index.html
 include/tbb/internal/_aggregator_impl.h
 include/tbb/internal/_concurrent_queue_impl.h
@@ -36,6 +37,7 @@ include/tbb/internal/_mutex_padding.h
 include/tbb/internal/_range_iterator.h
 include/tbb/internal/_tbb_strings.h
 include/tbb/internal/_tbb_windef.h
+include/tbb/internal/_template_helpers.h
 include/tbb/internal/_x86_eliding_mutex_impl.h
 include/tbb/internal/_x86_rtm_rw_mutex_impl.h
 include/tbb/machine/gcc_armv7.h

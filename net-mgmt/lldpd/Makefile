@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lldpd
-PORTVERSION=	0.7.14
+PORTVERSION=	0.7.15
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://media.luffy.cx/files/${PORTNAME}/
 
@@ -17,7 +17,8 @@ USES=		libtool
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-privsep \
+CONFIGURE_ARGS=	--disable-doxygen-doc \
+		--enable-privsep \
 		--with-privsep-chroot=/var/empty \
 		--with-lldpd-ctl-socket=/var/run/lldpd.socket \
 		--with-lldpd-pid-file=/var/run/lldpd.pid \

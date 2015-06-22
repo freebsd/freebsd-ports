@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sprockets-helpers
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Asset path helpers for Sprockets 2.x applications
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-sprockets>=2.0:${PORTSDIR}/devel/rubygem-sprockets
+RUN_DEPENDS=	rubygem-sprockets3>=2.2:${PORTSDIR}/devel/rubygem-sprockets3
 
 NO_ARCH=	yes
 USE_RUBY=	yes

@@ -95,6 +95,7 @@
     SUBDIR += commons-utilities
     SUBDIR += compupic
     SUBDIR += converseen
+    SUBDIR += copperspice
     SUBDIR += cosmoplayer
     SUBDIR += crw
     SUBDIR += cthumb

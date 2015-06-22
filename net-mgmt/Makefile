@@ -93,6 +93,7 @@
     SUBDIR += kismet
     SUBDIR += lanmap
     SUBDIR += lg
+    SUBDIR += librenms
     SUBDIR += libsmi
     SUBDIR += lldpd
     SUBDIR += mbrowse

@@ -1,0 +1,11 @@
+LMDB_File is a Perl wrapper around the OpenLDAP's LMDB (Lightning
+Memory-Mapped Database) C library.
+
+LMDB is an ultra-fast, ultra-compact key-value data store developed
+by Symas for the OpenLDAP Project. See http://symas.com/mdb/ for details.
+
+LMDB_File provides full access to the complete C API, a thin Perl wrapper
+with an Object-Oriented interface and a simple Perl's tie interface
+compatible with others DBMs.
+
+WWW: http://search.cpan.org/dist/LMDB_File/

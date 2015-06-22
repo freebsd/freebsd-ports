@@ -53,7 +53,7 @@ GIT_DESC=	GIT support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLDAP}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ldap>=2.4.6:${PORTSDIR}/net/py-ldap2
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ldap>=2.4.6:${PORTSDIR}/net/py-ldap
 .endif
 
 .if ${PORT_OPTIONS:MGIT}

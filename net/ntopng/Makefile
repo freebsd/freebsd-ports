@@ -13,6 +13,8 @@ COMMENT=	Network monitoring tool with command line and web interfaces
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Fails to build
+
 LIB_DEPENDS=	librrd.so:${PORTSDIR}/databases/rrdtool \
 		libluajit-5.1.so:${PORTSDIR}/lang/luajit \
 		libndpi.so:${PORTSDIR}/net/ndpi \

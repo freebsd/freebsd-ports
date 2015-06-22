@@ -57,6 +57,436 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0f154810-16e4-11e5-a1cf-002590263bf5">
+    <topic>rubygem-paperclip -- validation bypass vulnerabilitiy</topic>
+    <affects>
+      <package>
+	<name>rubygem-paperclip</name>
+	<range><lt>4.2.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jon Yurek reports:</p>
+	<blockquote cite="https://github.com/thoughtbot/paperclip/commit/9aee4112f36058cd28d5fe4a006d6981bd1eda57">
+	  <p>Thanks to MORI Shingo of DeNA Co., Ltd. for reporting this.</p>
+	  <p>There is an issue where if an HTML file is uploaded with a .html
+	    extension, but the content type is listed as being `image/jpeg`,
+	    this will bypass a validation checking for images. But it will also
+	    pass the spoof check, because a file named .html and containing
+	    actual HTML passes the spoof check.</p>
+	  <p>This change makes it so that we also check the supplied content
+	    type. So even if the file contains HTML and ends with .html, it
+	    doesn't match the content type of `image/jpeg` and so it fails.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-2963</cvename>
+      <url>https://github.com/thoughtbot/paperclip/commit/9aee4112f36058cd28d5fe4a006d6981bd1eda57</url>
+      <url>https://robots.thoughtbot.com/paperclip-security-release</url>
+      <url>http://jvn.jp/en/jp/JVN83881261/index.html</url>
+    </references>
+    <dates>
+      <discovery>2015-06-05</discovery>
+      <entry>2015-06-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0da404ad-1891-11e5-a1cf-002590263bf5">
+    <topic>chicken -- Potential buffer overrun in string-translate*</topic>
+    <affects>
+      <package>
+	<name>chicken</name>
+	<range><lt>4.10.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>chicken developer Peter Bex reports:</p>
+	<blockquote cite="http://lists.nongnu.org/archive/html/chicken-announce/2015-06/msg00010.html">
+	  <p>Using gcc's Address Sanitizer, it was discovered that the string-translate*
+	    procedure from the data-structures unit can scan beyond the input string's
+	    length up to the length of the source strings in the map that's passed to
+	    string-translate*.	This issue was fixed in master 8a46020, and it will
+	    make its way into CHICKEN 4.10.</p>
+	  <p>This bug is present in all released versions of CHICKEN.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4556</cvename>
+      <mlist>http://lists.nongnu.org/archive/html/chicken-announce/2015-06/msg00010.html</mlist>
+      <mlist>http://lists.nongnu.org/archive/html/chicken-hackers/2015-06/msg00037.html</mlist>
+    </references>
+    <dates>
+      <discovery>2015-06-15</discovery>
+      <entry>2015-06-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e7b7f2b5-177a-11e5-ad33-f8d111029e6a">
+    <topic>chicken -- buffer overrun in substring-index[-ci]</topic>
+    <affects>
+      <package>
+	<name>chicken</name>
+	<range><lt>4.10.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>chicken developer Moritz Heidkamp reports:</p>
+	<blockquote cite="http://lists.gnu.org/archive/html/chicken-users/2015-01/msg00048.html">
+	  <p>The substring-index[-ci] procedures of the data-structures unit are
+	    vulnerable to a buffer overrun attack when passed an integer greater
+	    than zero as the optional START argument.</p>
+	  <p>As a work-around you can switch to SRFI 13's
+	    string-contains procedure which also returns the substring's index in
+	    case it is found.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-9651</cvename>
+      <mlist>http://lists.gnu.org/archive/html/chicken-users/2015-01/msg00048.html</mlist>
+      <mlist>http://lists.nongnu.org/archive/html/chicken-hackers/2014-12/txt2UqAS9CtvH.txt</mlist>
+    </references>
+    <dates>
+      <discovery>2015-01-12</discovery>
+      <entry>2015-06-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a3929112-181b-11e5-a1cf-002590263bf5">
+    <topic>cacti -- Multiple XSS and SQL injection vulerabilities</topic>
+    <affects>
+      <package>
+	<name>cacti</name>
+	<range><lt>0.8.8d</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Cacti Group, Inc. reports:</p>
+	<blockquote cite="http://www.cacti.net/release_notes_0_8_8d.php">
+	  <p>Important Security Fixes</p>
+	  <ul>
+	    <li>Multiple XSS and SQL injection vulerabilities</li>
+	  </ul>
+	  <p>Changelog</p>
+	  <ul>
+	    <li>bug: Fixed SQL injection VN: JVN#78187936 /
+	       TN:JPCERT#98968540</li>
+	    <li>bug#0002542: [FG-VD-15-017] Cacti Cross-Site Scripting
+	       Vulnerability Notification</li>
+	    <li>bug#0002571: SQL Injection and Location header injection from
+	       cdef id CVE-2015-4342</li>
+	    <li>bug#0002572: SQL injection in graph template</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4342</cvename>
+      <freebsdpr>ports/200963</freebsdpr>
+      <url>http://www.cacti.net/release_notes_0_8_8d.php</url>
+      <mlist>http://seclists.org/fulldisclosure/2015/Jun/19</mlist>
+    </references>
+    <dates>
+      <discovery>2015-06-09</discovery>
+      <entry>2015-06-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a0e74731-181b-11e5-a1cf-002590263bf5">
+    <topic>cacti -- multiple security vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>cacti</name>
+	<range><lt>0.8.8c</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Cacti Group, Inc. reports:</p>
+	<blockquote cite="http://www.cacti.net/release_notes_0_8_8c.php">
+	  <p>Important Security Fixes</p>
+	  <ul>
+	    <li>CVE-2013-5588 - XSS issue via installer or device editing</li>
+	    <li>CVE-2013-5589 - SQL injection vulnerability in device editing</li>
+	    <li>CVE-2014-2326 - XSS issue via CDEF editing</li>
+	    <li>CVE-2014-2327 - Cross-site request forgery (CSRF) vulnerability</li>
+	    <li>CVE-2014-2328 - Remote Command Execution Vulnerability in graph export</li>
+	    <li>CVE-2014-4002 - XSS issues in multiple files</li>
+	    <li>CVE-2014-5025 - XSS issue via data source editing</li>
+	    <li>CVE-2014-5026 - XSS issues in multiple files</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-5588</cvename>
+      <cvename>CVE-2013-5589</cvename>
+      <cvename>CVE-2014-2326</cvename>
+      <cvename>CVE-2014-2327</cvename>
+      <cvename>CVE-2014-2328</cvename>
+      <cvename>CVE-2014-4002</cvename>
+      <cvename>CVE-2014-5025</cvename>
+      <cvename>CVE-2014-5026</cvename>
+      <freebsdpr>ports/198586</freebsdpr>
+      <mlist>http://sourceforge.net/p/cacti/mailman/message/33072838/</mlist>
+      <url>http://www.cacti.net/release_notes_0_8_8c.php</url>
+    </references>
+    <dates>
+      <discovery>2014-11-23</discovery>
+      <entry>2015-06-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="968d1e74-1740-11e5-a643-40a8f0757fb4">
+    <topic>p5-Dancer -- possible to abuse session cookie values</topic>
+    <affects>
+      <package>
+	<name>p5-Dancer</name>
+	<range><lt>1.3138</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Russell Jenkins reports:</p>
+	<blockquote cite="INSERT URL HERE">
+	  <p>It was possible to abuse session cookie values so that
+	    file-based session stores such as Dancer::Session::YAML or
+	    Dancer2::Session::YAML would attempt to read/write from
+	    any file on the filesystem with the same extension the
+	    file-based store uses, such as '*.yml' for the YAML
+	    stores.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.preshweb.co.uk/pipermail/dancer-users/2015-June/004621.html</url>
+    </references>
+    <dates>
+      <discovery>2015-06-12</discovery>
+      <entry>2015-06-20</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d605edb1-1616-11e5-a000-d050996490d0">
+    <topic>drupal -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>drupal6</name>
+	<range><lt>6.36</lt></range>
+      </package>
+      <package>
+	<name>drupal7</name>
+	<range><lt>7.38</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Drupal development team reports:</p>
+	<blockquote cite="https://www.drupal.org/SA-CORE-2015-002">
+	  <h3>Impersonation (OpenID module - Drupal 6 and 7 - Critical)</h3>
+	  <p>A vulnerability was found in the OpenID module that allows
+	    a malicious user to log in as other users on the site,
+	    including administrators, and hijack their accounts.</p>
+	  <p>This vulnerability is mitigated by the fact that the victim
+	    must have an account with an associated OpenID identity from
+	    a particular set of OpenID providers (including, but not
+	    limited to, Verisign, LiveJournal, or StackExchange).</p>
+	  <h3>Open redirect (Field UI module - Drupal 7 - Less critical)</h3>
+	  <p>The Field UI module uses a "destinations" query string parameter
+	    in URLs to redirect users to new destinations after completing
+	    an action on a few administration pages. Under certain
+	    circumstances, malicious users can use this parameter to
+	    construct a URL that will trick users into being redirected
+	    to a 3rd party website, thereby exposing the users to potential
+	    social engineering attacks.</p>
+	  <p>This vulnerability is mitigated by the fact that only sites
+	    with the Field UI module enabled are affected.</p>
+	  <p>Drupal 6 core is not affected, but see the similar advisory
+	    for the Drupal 6 contributed CCK module:
+	    <a href="https://www.drupal.org/node/2507753">SA-CONTRIB-2015-126</a></p>
+	  <h3>Open redirect (Overlay module - Drupal 7 - Less critical)</h3>
+	  <p>The Overlay module displays administrative pages as a layer
+	    over the current page (using JavaScript), rather than replacing
+	    the page in the browser window. The Overlay module does not
+	    sufficiently validate URLs prior to displaying their contents,
+	    leading to an open redirect vulnerability.</p>
+	  <p>This vulnerability is mitigated by the fact that it can only
+	    be used against site users who have the "Access the administrative
+	    overlay" permission, and that the Overlay module must be enabled.</p>
+	  <h3>Information disclosure (Render cache system - Drupal 7
+	    - Less critical)</h3>
+	  <p>On sites utilizing Drupal 7's render cache system to cache
+	    content on the site by user role, private content viewed by
+	    user 1 may be included in the cache and exposed to non-privileged
+	    users.</p>
+	  <p>This vulnerability is mitigated by the fact that render caching
+	    is not used in Drupal 7 core itself (it requires custom code or
+	    the contributed <a href="https://www.drupal.org/project/render_cache">Render
+	      Cache</a> module to enable) and that it only affects sites that
+	    have user 1 browsing the live site. Exposure is also limited if an
+	    administrative role has been assigned to the user 1 account (which
+	    is done, for example, by the Standard install profile that ships
+	    with Drupal core).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3231</cvename>
+      <cvename>CVE-2015-3232</cvename>
+      <cvename>CVE-2015-3233</cvename>
+      <cvename>CVE-2015-3234</cvename>
+      <url>https://www.drupal.org/SA-CORE-2015-002</url>
+    </references>
+    <dates>
+      <discovery>2015-06-17</discovery>
+      <entry>2015-06-19</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2438d4af-1538-11e5-a106-3c970e169bc2">
+    <topic>cURL -- Multiple Vulnerability</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><ge>7.40</ge><lt>7.43</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cURL reports:</p>
+	<blockquote cite="http://curl.haxx.se/docs/adv_20150617A.html">
+	  <p>libcurl can wrongly send HTTP credentials when re-using
+	    connections.</p>
+	  <p>libcurl allows applications to set credentials for the
+	    upcoming transfer with HTTP Basic authentication, like
+	    with CURLOPT_USERPWD for example. Name and password.
+	    Just like all other libcurl options the credentials
+	    are sticky and are kept associated with the "handle"
+	    until something is made to change the situation.</p>
+	  <p>Further, libcurl offers a curl_easy_reset() function
+	    that resets a handle back to its pristine state in
+	    terms of all settable options. A reset is of course
+	    also supposed to clear the credentials. A reset is
+	    typically used to clear up the handle and prepare
+	    it for a new, possibly unrelated, transfer.</p>
+	  <p>Within such a handle, libcurl can also store a
+	    set of previous connections in case a second transfer
+	    is requested to a host name for which an existing
+	    connection is already kept alive.</p>
+	  <p>With this flaw present, using the handle even
+	    after a reset would make libcurl accidentally use
+	    those credentials in a subseqent request if done
+	    to the same host name and connection as was
+	    previously accessed.</p>
+	  <p>An example case would be first requesting a password
+	    protected resource from one section of a web site, and
+	    then do a second request of a public resource from a
+	    completely different part of the site without
+	    authentication. This flaw would then inadvertently
+	    leak the credentials in the second request.</p>
+	</blockquote>
+	<blockquote cite="http://curl.haxx.se/docs/adv_20150617B.html">
+	  <p>libcurl can get tricked by a malicious SMB server to
+	    send off data it did not intend to.</p>
+	  <p>In libcurl's state machine function handling the SMB
+	    protocol (smb_request_state()), two length and offset
+	    values are extracted from data that has arrived over
+	    the network, and those values are subsequently used
+	    to figure out what data range to send back.</p>
+	  <p>The values are used and trusted without boundary
+	    checks and are just assumed to be valid. This allows
+	    carefully handicrafted packages to trick libcurl
+	    into responding and sending off data that was not
+	    intended. Or just crash if the values cause libcurl
+	    to access invalid memory.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3236</cvename>
+      <cvename>CVE-2015-3237</cvename>
+      <url>http://curl.haxx.se/docs/adv_20150617A.html</url>
+      <url>http://curl.haxx.se/docs/adv_20150617B.html</url>
+    </references>
+    <dates>
+      <discovery>2015-06-17</discovery>
+      <entry>2015-06-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="eb8a8978-8dd5-49ce-87f4-49667b2166dd">
+    <topic>rubygem-rails -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>rubygem-activesupport</name>
+	<range><lt>3.2.22</lt></range>
+      </package>
+      <package>
+	<name>rubygem-activesupport4</name>
+	<range><lt>4.2.2</lt></range>
+      </package>
+      <package>
+	<name>rubygem-jquery-rails</name>
+	<range><lt>3.1.3</lt></range>
+      </package>
+      <package>
+	<name>rubygem-jquery-rails4</name>
+	<range><lt>4.0.4</lt></range>
+      </package>
+      <package>
+	<name>rubygem-rack</name>
+	<range><lt>1.4.6</lt></range>
+      </package>
+      <package>
+	<name>rubygem-rack15</name>
+	<range><lt>1.5.4</lt></range>
+      </package>
+      <package>
+	<name>rubygem-rack16</name>
+	<range><lt>1.6.2</lt></range>
+      </package>
+      <package>
+	<name>rubygem-rails</name>
+	<range><lt>3.2.22</lt></range>
+      </package>
+      <package>
+	<name>rubygem-rails4</name>
+	<range><lt>4.2.2</lt></range>
+      </package>
+      <package>
+	<name>rubygem-web-console</name>
+	<range><lt>2.1.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ruby on Rails blog:</p>
+	<blockquote cite="http://weblog.rubyonrails.org/2015/6/16/Rails-3-2-22-4-1-11-and-4-2-2-have-been-released-and-more/">
+	  <p>Rails 3.2.22, 4.1.11 and 4.2.2 have been released, along with web
+	    console and jquery-rails plugins and Rack 1.5.4 and 1.6.2.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1840</cvename>
+      <cvename>CVE-2015-3224</cvename>
+      <cvename>CVE-2015-3225</cvename>
+      <cvename>CVE-2015-3226</cvename>
+      <cvename>CVE-2015-3227</cvename>
+      <url>http://weblog.rubyonrails.org/2015/6/16/Rails-3-2-22-4-1-11-and-4-2-2-have-been-released-and-more/</url>
+    </references>
+    <dates>
+      <discovery>2015-06-16</discovery>
+      <entry>2015-06-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c67069dc-0986-11e5-bb90-002590263bf5">
     <topic>testdisk -- buffer overflow with malicious disk image</topic>
     <affects>
@@ -3126,6 +3556,10 @@ Notes:
 	<name>mailman-with-htdig</name>
 	<range><lt>2.1.20</lt></range>
       </package>
+      <package>
+	<name>ja-mailman</name>
+	<range><lt>2.1.14.j7_2,1</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -3147,6 +3581,7 @@ Notes:
     <dates>
       <discovery>2015-03-27</discovery>
       <entry>2015-04-09</entry>
+      <modified>2015-06-17</modified>
     </dates>
   </vuln>
 

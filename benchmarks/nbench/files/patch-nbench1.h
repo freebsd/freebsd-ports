@@ -1,6 +1,6 @@
---- nbench1.h.orig	Thu Dec 11 20:54:46 1997
-+++ nbench1.h	Wed Dec 17 08:28:11 1997
-@@ -352,7 +352,7 @@
+--- nbench1.h.orig	2004-12-30 02:15:18 UTC
++++ nbench1.h
+@@ -355,7 +355,7 @@ int learned;            /* flag--if TRUE
  ** The Neural Net test requires an input data file.
  ** The name is specified here.
  */
