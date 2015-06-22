@@ -4,7 +4,7 @@
 
 PORTNAME=	conduit
 PORTVERSION=	0.3.17
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	deskutils
 MASTER_SITES=	GNOME
 
@@ -13,19 +13,17 @@ COMMENT=	Synchronization application for GNOME
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/goocanvasmodule.so:${PORTSDIR}/graphics/py-goocanvas \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
-		xmlproc_parse:${PORTSDIR}/textproc/py-xml \
 		${PYTHON_PKGNAMEPREFIX}vobject>=0.4.8:${PORTSDIR}/deskutils/py-vobject \
 		${PYTHON_PKGNAMEPREFIX}dbus>0:${PORTSDIR}/devel/py-dbus
 LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/goocanvasmodule.so:${PORTSDIR}/graphics/py-goocanvas \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
-		xmlproc_parse:${PORTSDIR}/textproc/py-xml \
 		${PYTHON_PKGNAMEPREFIX}vobject>=0.4.8:${PORTSDIR}/deskutils/py-vobject \
 		${PYTHON_PKGNAMEPREFIX}dbus>0:${PORTSDIR}/devel/py-dbus \
 		xdg-open:${PORTSDIR}/devel/xdg-utils
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake pathfix pkgconfig python
+USES=		gettext gmake pathfix pkgconfig python:2
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
