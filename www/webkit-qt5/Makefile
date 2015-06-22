@@ -11,7 +11,6 @@ COMMENT=	Qt WebKit implementation
 
 LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libicui18n.so:${PORTSDIR}/devel/icu \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libwebp.so:${PORTSDIR}/graphics/webp
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
@@ -26,7 +25,7 @@ USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=	yes
 USE_SQLITE=	3
 USE_XORG=	x11 xcomposite xrender
-USES=		bison gmake gperf perl5 pkgconfig python:build qmake:outsource
+USES=		bison gmake gperf jpeg perl5 pkgconfig python:build qmake:outsource
 # Use flex(1) from ports.
 MAKE_ENV=	PATH="${LOCALBASE}/bin:${PATH}"
 # "all" builds many more targets. The default one is called "first" in

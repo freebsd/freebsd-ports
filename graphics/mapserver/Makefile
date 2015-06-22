@@ -15,10 +15,9 @@ LICENSE=		MIT
 LIB_DEPENDS=		libgd.so:${PORTSDIR}/graphics/gd \
 			libproj.so:${PORTSDIR}/graphics/proj \
 			libpng.so:${PORTSDIR}/graphics/png \
-			libjpeg.so:${PORTSDIR}/graphics/jpeg \
 			libgif.so:${PORTSDIR}/graphics/giflib
 
-USES=			cpe cmake:outsource
+USES=			cpe cmake:outsource jpeg
 CPE_VENDOR=		umn
 USE_GNOME=		libxml2
 LDFLAGS+=		-L${LOCALBASE} -pthread

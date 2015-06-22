@@ -57,8 +57,6 @@ CMAKE_ARGS+=	-DWITH_VIGRANUMPY=0
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
 # Vigra's CMakeLists.txt does not support disabling those so we hook them
 # as dependencies here unconditionally (without OPTIONS=) even though if
 # they are not present then Vigra/CMake will do without them (they are not
@@ -75,7 +73,7 @@ LIB_DEPENDS+=	libtiff.so:${PORTSDIR}/graphics/tiff
 .endif
 
 .if !defined(WITHOUT_VIGRA_JPEG)
-LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+USES+=		jpeg
 .endif
 
 .if !defined(WITHOUT_VIGRA_PNG)
@@ -100,4 +98,4 @@ post-patch:
 # FIXME: This is ugly
 	@${RM} ${WRKSRC}/include/vigra/*.orig
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

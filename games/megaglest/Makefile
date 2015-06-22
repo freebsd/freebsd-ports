@@ -12,7 +12,6 @@ MAINTAINER=	rnejdl@ringofsaturn.com
 COMMENT=	Open source 3D real-time strategy game
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libxerces-c.so:${PORTSDIR}/textproc/xerces-c3 \
 		libftgl.so:${PORTSDIR}/graphics/ftgl \
@@ -23,7 +22,7 @@ RUN_DEPENDS=	${DATADIR}/tutorials/2_basic_tutorial/2_basic_tutorial.xml:${PORTSD
 
 SUB_FILES=	pkg-message
 
-USES=		cmake compiler:c++11-lib display:build dos2unix lua \
+USES=		cmake compiler:c++11-lib display:build dos2unix jpeg lua \
 		openal:al,alut pkgconfig tar:xz
 USE_GL=		glew gl glu
 USE_SDL=	yes

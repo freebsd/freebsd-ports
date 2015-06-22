@@ -15,11 +15,10 @@ COMMENT=	Library for reading and writing GeoTIFF information tags
 LICENSE=	MIT
 
 LIB_DEPENDS=	libjbig.so:${PORTSDIR}/graphics/jbigkit \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libproj.so:${PORTSDIR}/graphics/proj \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
-USES=		libtool
+USES=		jpeg libtool
 CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--disable-doxygen-doc \
 		--disable-doxygen-dot \

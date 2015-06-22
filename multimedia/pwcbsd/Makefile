@@ -47,7 +47,7 @@ ALL_TARGET=	all
 .if ${PORT_OPTIONS:MPROGRAMS}
 ALL_TARGET+=	pwcview
 PROGRAMS=	pwcview
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+USES+=		jpeg
 USE_SDL=	sdl
 PLIST_SUB+=	PROGRAMS=""
 .else

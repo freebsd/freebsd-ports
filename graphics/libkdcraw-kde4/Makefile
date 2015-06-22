@@ -12,7 +12,6 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	LibRaw interface for KDE
 
 LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		liblcms.so:${PORTSDIR}/graphics/lcms \
 		libxml2.so:${PORTSDIR}/textproc/libxml2 \
 		libraw.so:${PORTSDIR}/graphics/libraw
@@ -21,7 +20,7 @@ CMAKE_ARGS+=	-DWITH_OpenMP:BOOL=False \
 		-DENABLE_RAWSPEED=True
 
 USE_KDE4=	automoc4 kdeprefix kdelibs
-USES=		cmake:outsource pkgconfig tar:xz
+USES=		cmake:outsource jpeg pkgconfig tar:xz
 USE_QT4=	corelib gui moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes
 

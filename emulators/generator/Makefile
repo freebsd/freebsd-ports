@@ -12,9 +12,7 @@ COMMENT=	SEGA Genesis emulator
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
-
-USES=		gmake
+USES=		gmake jpeg
 USE_GNOME=	gtk12
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes

@@ -43,7 +43,7 @@ OPENGL_CONFIGURE_ENABLE=3d
 XVIDEO_LIB_DEPENDS=	libXv.so:${PORTSDIR}/x11/libXv
 XVIDEO_CONFIGURE_OFF=	--disable-x11-xv --disable-x11-shm
 IPV6_CONFIGURE_ENABLE=	ipv6
-JPEG_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+JPEG_USES=		jpeg
 JPEG_CONFIGURE_ON=	--use-jpeg=local
 JPEG_CONFIGURE_OFF=	--use-jpeg=no
 PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png

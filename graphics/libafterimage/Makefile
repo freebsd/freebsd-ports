@@ -14,12 +14,11 @@ COMMENT=	Generic imaging library originally designed for AfterStep
 LICENSE=	LGPL21 # or later
 
 LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
-USES=		pkgconfig tar:bzip2
+USES=		jpeg pkgconfig tar:bzip2
 USE_XORG=	xext
 USE_GNOME=	librsvg2
 GNU_CONFIGURE=	yes

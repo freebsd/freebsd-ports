@@ -13,8 +13,6 @@ COMMENT=	Motion detection application
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
-
 OPTIONS_DEFINE=	FFMPEG MYSQL PGSQL DOCS EXAMPLES
 OPTIONS_SINGLE=	VIDEO
 OPTIONS_SINGLE_VIDEO=	BKTR PWCBSD
@@ -23,7 +21,7 @@ VIDEO_DESC=	Video capture driver. Choose one of BKTR or PWCBSD
 BKTR_DESC=	BKTR based TV capture cards
 PWCBSD_DESC=	PWCBSD based Webcams
 
-USES=		autoreconf gmake
+USES=		autoreconf gmake jpeg
 GNU_CONFIGURE=	yes
 
 USE_RC_SUBR=	${PORTNAME}

@@ -10,8 +10,7 @@ COMMENT=	Backends, filters and other software (was part of the core CUPS)
 
 BUILD_DEPENDS=	pdftops:${PORTSDIR}/graphics/poppler-utils
 RUN_DEPENDS=	pdftops:${PORTSDIR}/graphics/poppler-utils
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
+LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libijs.so:${PORTSDIR}/print/libijs \
 		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
@@ -24,7 +23,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpoppler.so:${PORTSDIR}/graphics/poppler
 
 MAKE_JOBS_UNSAFE=YES
-USES=		compiler:c++11-lib cpe libtool pathfix pkgconfig shebangfix tar:xz
+USES=		compiler:c++11-lib cpe jpeg libtool pathfix pkgconfig shebangfix tar:xz
 CPE_VENDOR=	linuxfoundation
 SHEBANG_FILES=	filter/textonly
 USE_GNOME=	glib20

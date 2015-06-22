@@ -39,8 +39,8 @@ NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
 FONTS_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 FONTS_CONFIGURE_ENABLE=	font-thumbnailer
-JPEG_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-	libexif.so:${PORTSDIR}/graphics/libexif
+JPEG_LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif
+JPEG_USES=		jpeg
 JPEG_CONFIGURE_ENABLE=	jpeg-thumbnailer
 FFMPEG_LIB_DEPENDS=	libffmpegthumbnailer.so:${PORTSDIR}/multimedia/ffmpegthumbnailer
 FFMPEG_CONFIGURE_ENABLE=	ffmpeg-thumbnailer

@@ -11,11 +11,9 @@ COMMENT?=	Gtk client and libraries for SPICE remote desktop servers
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
-
 USE_XORG=	pixman
 USE_GNOME=	gnomeprefix gtk20 gtk30 intltool introspection:build
-USES=		cpe gmake libtool pkgconfig tar:bzip2 pathfix
+USES=		cpe gmake jpeg libtool pkgconfig tar:bzip2 pathfix
 CPE_VENDOR=	redhat
 
 .if defined(SPICE_SLAVE)

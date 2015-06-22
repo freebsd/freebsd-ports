@@ -68,7 +68,7 @@ GRAPHVIZ_CONFIGURE_WITH=	graphviz
 JASPER_LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper
 JASPER_CONFIGURE_WITH=	jasper
 
-JPEG_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+JPEG_USES=		jpeg
 JPEG_CONFIGURE_WITH=	libjpeg
 
 LCMS2_LIB_DEPENDS=	liblcms2.so:${PORTSDIR}/graphics/lcms2

@@ -43,7 +43,7 @@ PNG_CONFIGURE_WITH=	png
 PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 JPEG_CONFIGURE_WITH=	jpeg
-JPEG_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+JPEG_USES=		jpeg
 
 TIFF_CONFIGURE_WITH=	tiff
 TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff

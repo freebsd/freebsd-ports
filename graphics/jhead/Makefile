@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.sentex.net/~mwandel/${PORTNAME}/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	EXIF JPEG header manipulation tool
 
-RUN_DEPENDS=	${LOCALBASE}/bin/jpegtran:${PORTSDIR}/graphics/jpeg
+USES=		jpeg:run
 
 OPTIONS_DEFINE=	DOCS
 

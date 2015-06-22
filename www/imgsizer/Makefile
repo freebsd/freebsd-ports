@@ -12,10 +12,9 @@ COMMENT=	Tool to autogenerate WIDTH and HEIGHT for IMG HTML tags
 
 LICENSE=	BSD4CLAUSE
 
-RUN_DEPENDS=	rdjpgcom:${PORTSDIR}/graphics/jpeg \
-		identify:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS=	identify:${PORTSDIR}/graphics/ImageMagick
 
-USES=		python
+USES=		jpeg:run python
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/imgsizer.1.gz

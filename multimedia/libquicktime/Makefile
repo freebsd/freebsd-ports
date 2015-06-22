@@ -78,7 +78,7 @@ CONFIGURE_ARGS+=	--without-libdv
 .endif
 
 .if ${PORT_OPTIONS:MJPEG}
-LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+USES+=		jpeg
 CONFIGURE_ARGS+=	--with-libjpeg
 .else
 CONFIGURE_ARGS+=	--without-libjpeg

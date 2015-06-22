@@ -29,8 +29,7 @@ LIB_DEPENDS=	libXm.so:${PORTSDIR}/x11-toolkits/open-motif \
 		libR.so:${PORTSDIR}/math/R \
 		libgsl.so:${PORTSDIR}/math/gsl \
 		libnetcdff.so:${PORTSDIR}/science/netcdf-fortran
-RUN_DEPENDS=	cjpeg:${PORTSDIR}/graphics/jpeg \
-		mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode \
+RUN_DEPENDS=	mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode \
 		whirlgif:${PORTSDIR}/graphics/whirlgif \
 		ppmtogif:${PORTSDIR}/graphics/netpbm \
 		endian:${PORTSDIR}/sysutils/endian \
@@ -40,7 +39,7 @@ CONFLICTS=	im-[0-9]* \
 		nifticlib-[0-9]* \
 		open-usp-tukubai-[0-9]*
 
-USES=		gettext iconv gmake motif perl5 shebangfix
+USES=		gettext iconv jpeg:run gmake motif perl5 shebangfix
 SHEBANG_FILES=	suma_change_spec 3dPAR2AFNI.pl
 
 # Some prereqs use gcc anyway

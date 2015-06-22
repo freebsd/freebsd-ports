@@ -12,8 +12,7 @@ COMMENT=	Generate listing and MD5, check jpegs for error, delete broken ones
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
-
+USES=		jpeg
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib

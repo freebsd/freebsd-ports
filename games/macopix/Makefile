@@ -15,7 +15,6 @@ LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
 LICENSE=	GPLv2 # or later
@@ -35,7 +34,7 @@ RESTRICTED_FILES=	\
 		macopix-mascot-marimite-euc-ja-2.20.tar.gz \
 		macopix-mascot-HxB-euc-ja-0.30.tar.gz
 
-USES=		gettext gmake iconv libtool pkgconfig
+USES=		gettext gmake iconv jpeg libtool pkgconfig
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 

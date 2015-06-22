@@ -13,13 +13,12 @@ COMMENT=	3D modeling/rendering/animation/gaming package
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
 USE_XORG=	x11 xext xmu
 USE_GL=		glew
-USES=		cmake:outsource compiler:features python:3.4 shebangfix
+USES=		cmake:outsource compiler:features jpeg python:3.4 shebangfix
 INSTALLS_ICONS=	yes
 CMAKE_ARGS=	-DWITH_PYTHON_INSTALL:BOOL=OFF \
 		-DWITH_PYTHON_INSTALL_NUMPY:BOOL=OFF \

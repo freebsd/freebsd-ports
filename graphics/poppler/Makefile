@@ -14,15 +14,14 @@ COMMENT?=	PDF rendering library
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	poppler-data>0:${PORTSDIR}/graphics/poppler-data
 
-USES=		cpe gmake libtool pathfix pkgconfig tar:xz
+USES=		cpe gmake jpeg libtool pathfix pkgconfig tar:xz
 CPE_VENDOR=	freedesktop
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes

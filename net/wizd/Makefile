@@ -11,14 +11,13 @@ DISTFILES=	wizd_sources_v${PORTVERSION}.zip simplicity_v1-2.zip
 MAINTAINER=	kikuchan@uranus.dti.ne.jp
 COMMENT=	Open-source media server for Syabas-based media players
 
-LIB_DEPENDS=	libdvdread.so:${PORTSDIR}/multimedia/libdvdread \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libdvdread.so:${PORTSDIR}/multimedia/libdvdread
 RUN_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
 DOS2UNIX_FILES=	Makefile nkfwrap/Makefile nkfwrap/nkfwrap_test.c \
 		wizd_http.c wizd_menu.c
 USE_RC_SUBR=	wizd
-USES=		dos2unix zip
+USES=		dos2unix jpeg zip
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
 post-patch:

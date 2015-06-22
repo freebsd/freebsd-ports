@@ -12,8 +12,7 @@ COMMENT=	Enlightenment Foundation Libraries
 LICENSE=	BSD2CLAUSE LGPL21
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libgif.so:${PORTSDIR}/graphics/giflib \
+LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
@@ -23,7 +22,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 
 DIST_SUBDIR=	enlightenment
 GNU_CONFIGURE=	yes
-USES=		autoreconf compiler:c++11-lib gettext-tools gmake libtool \
+USES=		autoreconf compiler:c++11-lib gettext-tools gmake jpeg libtool \
 		pathfix pkgconfig shared-mime-info tar:xz
 USE_XORG=	x11 xcursor xcomposite xdamage xext xinerama xp xrandr xtst xscrnsaver
 USE_LDCONFIG=	yes

@@ -14,10 +14,9 @@ COMMENT=	Graphical user interface toolkit for X Window System
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
 
-USES=		libtool
+USES=		jpeg libtool
 USE_XORG=	xpm
 USE_GL=		gl
 USE_LDCONFIG=	yes

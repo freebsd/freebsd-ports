@@ -16,12 +16,11 @@ COMMENT=	Powerful 2D plotting tool (successor of xmgr)
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libt1.so:${PORTSDIR}/devel/t1lib \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libXbae.so:${PORTSDIR}/x11-toolkits/xbae
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
-USES=		gmake motif
+USES=		gmake jpeg motif
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-grace-home=${DATADIR} \
 		--with-extra-incpath=${LOCALBASE}/include \

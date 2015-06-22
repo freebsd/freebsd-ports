@@ -12,9 +12,9 @@ COMMENT=	Thumb viewer application
 LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libpng.a:${PORTSDIR}/graphics/png \
-		${LOCALBASE}/lib/libtiff.a:${PORTSDIR}/graphics/tiff \
-		${LOCALBASE}/lib/libjpeg.a:${PORTSDIR}/graphics/jpeg
+		${LOCALBASE}/lib/libtiff.a:${PORTSDIR}/graphics/tiff
 
+USES=		jpeg:build
 USE_XORG=	xpm x11
 
 USE_GITHUB=	yes

@@ -11,10 +11,9 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Quake engine modification
 
 # Loads libraries at run-time, thus RUN_DEPENDS.
-RUN_DEPENDS=	${LOCALBASE}/lib/libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		${LOCALBASE}/lib/libvorbis.so:${PORTSDIR}/audio/libvorbis
+RUN_DEPENDS=	${LOCALBASE}/lib/libvorbis.so:${PORTSDIR}/audio/libvorbis
 
-USES=		gmake zip:infozip
+USES=		gmake jpeg zip:infozip
 USE_XORG=	xxf86dga xpm
 MAKE_ENV=	DP_FS_BASEDIR="${Q1DIR}" DP_LINK_JPEG=dlopen
 WRKSRC=		${WRKDIR}/${PORTNAME}

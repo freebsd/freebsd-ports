@@ -10,12 +10,11 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt plugins for several image formats
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libmng.so:${PORTSDIR}/graphics/libmng \
+LIB_DEPENDS=	libmng.so:${PORTSDIR}/graphics/libmng \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
-USES=		pkgconfig
+USES=		jpeg pkgconfig
 USE_QT4=	qmake_build moc_build rcc_build corelib gui svg xml
 QT_DIST=	yes
 

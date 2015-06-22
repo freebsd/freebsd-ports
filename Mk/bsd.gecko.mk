@@ -163,7 +163,7 @@ icu_MOZ_OPTIONS=		--with-system-icu --with-intl-api
 -jpeg_BUILD_DEPENDS=yasm:${PORTSDIR}/devel/yasm
 # XXX depends on ports/180159 or package flavor support
 #jpeg_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/libjpeg-turbo
-jpeg_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+jpeg_USES=		jpeg
 jpeg_MOZ_OPTIONS=	--with-system-jpeg=${LOCALBASE}
 
 nspr_LIB_DEPENDS=	libnspr4.so:${PORTSDIR}/devel/nspr
@@ -217,6 +217,7 @@ ${use:S/-/_WITHOUT_/}=	${TRUE}
 BUILD_DEPENDS+=	${${dep}_BUILD_DEPENDS}
 LIB_DEPENDS+=	${${dep}_LIB_DEPENDS}
 RUN_DEPENDS+=	${${dep}_RUN_DEPENDS}
+USES+=		${${dep}_USES}
 MOZ_OPTIONS+=	${${dep}_MOZ_OPTIONS}
 .else
 BUILD_DEPENDS+=	${-${dep}_BUILD_DEPENDS}

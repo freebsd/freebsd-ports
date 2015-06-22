@@ -20,7 +20,6 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/lib/libntl.a:${PORTSDIR}/math/ntl
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 		libpng.so:${PORTSDIR}/graphics/png \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpari.so:${PORTSDIR}/math/pari \
 		libmpfr.so:${PORTSDIR}/math/mpfr \
 		libgsl.so:${PORTSDIR}/math/gsl \
@@ -29,7 +28,7 @@ LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 NO_CDROM=	French documentation is for non-commercial use only
 
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils gettext gmake libtool shebangfix
+USES=		desktop-file-utils gettext gmake jpeg libtool shebangfix
 USE_GL=		gl
 USE_XORG=	x11 xcursor xft xi
 USE_TEX=	latex:build dvipsk:build

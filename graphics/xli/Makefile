@@ -11,12 +11,11 @@ DISTNAME=	xli_${PORTVERSION}+${XLI_SNAPVER:C/-//g}.orig
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Utilities to display images in X11
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 CONFLICTS_INSTALL=	xloadimage-*
 
-USES=		imake
+USES=		imake jpeg
 USE_XORG=	xi
 WRKSRC=		${WRKDIR}/xli-${XLI_SNAPVER}
 

@@ -28,7 +28,7 @@ PORTDOCS=	*
 
 JPEGICC_CONFIGURE_OFF=	--without-jpeg
 JPEGICC_CONFIGURE_ON=	--with-jpeg=${LOCALBASE}
-JPEGICC_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+JPEGICC_USES=		jpeg
 TIFFICC_CONFIGURE_OFF=	--without-tiff
 TIFFICC_CONFIGURE_ON=	--with-tiff=${LOCALBASE}
 TIFFICC_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff

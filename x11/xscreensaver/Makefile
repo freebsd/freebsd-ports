@@ -12,14 +12,13 @@ COMMENT=	Save your screen while you entertain your cat
 
 RUN_DEPENDS=	p5-libwww>0:${PORTSDIR}/www/p5-libwww \
 		giftopnm:${PORTSDIR}/graphics/netpbm
-LIB_DEPENDS=	libgle.so:${PORTSDIR}/graphics/gle \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libgle.so:${PORTSDIR}/graphics/gle
 
 DESTDIRNAME=	install_prefix
 
 CONFLICTS=	xscreensaver-gnome-[0-9]* xscreensaver-gnome-hacks-[0-9]*
 
-USES=		pkgconfig gettext gmake perl5
+USES=		gettext gmake jpeg perl5 pkgconfig
 USE_AUTOTOOLS=	autoconf
 USE_GL=		yes
 USE_GNOME=	gdkpixbuf2 gtk20 intltool libglade2 libxml2

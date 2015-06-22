@@ -15,10 +15,8 @@ COMMENT=	Library for manipulating raw images
 LICENSE=	LGPL21 CDDL
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
-
 USE_LDCONFIG=	yes
-USES=		cpe pathfix pkgconfig libtool
+USES=		cpe libtool jpeg pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-examples --disable-jasper
 CFLAGS+=	-fPIC

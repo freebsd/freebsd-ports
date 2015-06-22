@@ -10,12 +10,11 @@ MASTER_SITES=	http://www.edwinh.org/imageindex/release/ \
 MAINTAINER=	johnjen@reynoldsnet.org
 COMMENT=	Digital photo gallery tool
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
 		p5-Image-Info>=0:${PORTSDIR}/graphics/p5-Image-Info
 
-USES=		perl5
+USES=		jpeg perl5
 USE_PERL5=	run
 MAKE_ARGS+=	PERLPATH=${PERL} PREFIX=${STAGEDIR}${PREFIX}
 

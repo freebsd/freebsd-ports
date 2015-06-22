@@ -9,9 +9,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Tool to check and undelete partitions
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
-
-USES=		tar:bzip2
+USES=		jpeg tar:bzip2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${PREFIX}/include
 LDFLAGS+=	-L${PREFIX}/lib

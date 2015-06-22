@@ -13,9 +13,7 @@ COMMENT=	Extension to twm, with support for multiple virtual screens, etc
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
-
-USES=		imake tar:xz
+USES=		imake jpeg tar:xz
 USE_XORG=	xpm xmu
 
 pre-configure:

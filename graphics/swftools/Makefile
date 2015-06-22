@@ -14,13 +14,12 @@ COMMENT=	SWF manipulation and generation utilities
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libt1.so:${PORTSDIR}/devel/t1lib \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libgif.so:${PORTSDIR}/graphics/giflib \
 		libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
-USES=		gmake pkgconfig
+USES=		gmake jpeg pkgconfig
 USE_GL=		glut
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_lib_zzip_zzip_file_open=no

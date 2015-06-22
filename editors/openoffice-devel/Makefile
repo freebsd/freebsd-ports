@@ -50,7 +50,6 @@ LIB_DEPENDS=								\
 		libapr-1.so:${PORTSDIR}/devel/apr1			\
 		libcurl.so:${PORTSDIR}/ftp/curl				\
 		libcairo.so:${PORTSDIR}/graphics/cairo			\
-		libjpeg.so:${PORTSDIR}/graphics/jpeg			\
 		libpng.so:${PORTSDIR}/graphics/png			\
 		libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib	\
 		libgraphite.so:${PORTSDIR}/graphics/silgraphite		\
@@ -113,7 +112,7 @@ USE_PERL5=	build
 USE_XORG=	x11 ice xaw xau xext xrender xrandr \
 		xi xt xcursor xdamage xcomposite xfixes
 USES=		autoreconf:autoconf bison compiler cpe desktop-file-utils \
-		gmake perl5 pkgconfig python tar:${TARTYPE}
+		gmake jpeg perl5 pkgconfig python tar:${TARTYPE}
 WITHOUT_CPU_CFLAGS=	true
 MAKE_JOBS_SAFE=	yes
 CPE_PRODUCT=	${PORTNAME:S|apache-||}

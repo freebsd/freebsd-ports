@@ -10,7 +10,6 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE 4 universal document viewer
 
 LIB_DEPENDS=	libdjvulibre.so:${PORTSDIR}/graphics/djvulibre \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libkscreen.so:${PORTSDIR}/graphics/libkscreen \
 		libqca.so:${PORTSDIR}/devel/qca \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
@@ -25,7 +24,7 @@ USE_KDE4=	kdelibs kdeprefix automoc4 qimageblitz kactivities \
 		libkexiv2
 USE_QT4=	corelib declarative gui opengl xml \
 		qmake_build moc_build uic_build rcc_build
-USES=		cmake:outsource pkgconfig tar:xz
+USES=		cmake:outsource jpeg pkgconfig tar:xz
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DVI

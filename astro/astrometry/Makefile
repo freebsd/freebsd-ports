@@ -16,12 +16,11 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libcfitsio.so:${PORTSDIR}/astro/cfitsio \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libnetpbm.so:${PORTSDIR}/graphics/netpbm
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		gmake pkgconfig python tar:bzip2
+USES=		gmake jpeg pkgconfig python tar:bzip2
 USE_LDCONFIG=	${PREFIX}/${PORTNAME}/lib
 ALL_TARGET=	all extra
 MAKE_ENV=	INSTALL_DIR=${STAGEDIR}${PREFIX}/${PORTNAME}

@@ -271,7 +271,7 @@ gst_gsm_LIB_DEPENDS=	libgsm.so:${PORTSDIR}/audio/gsm
 gst_jack_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
 
 # jpeg
-gst_jpeg_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+gst_jpeg_USES=		jpeg
 
 # kate
 gst_kate_LIB_DEPENDS=	libkate.so:${PORTSDIR}/multimedia/libkate
@@ -428,6 +428,7 @@ gst_zbar_LIB_DEPENDS=	libzbar.so:${PORTSDIR}/graphics/zbar
 gst_${GST_PLUGIN}_BUILD_DEPENDS?=
 gst_${GST_PLUGIN}_LIB_DEPENDS?=
 gst_${GST_PLUGIN}_RUN_DEPENDS?=
+gst_${GST_PLUGIN}_USES?=
 gst_${GST_PLUGIN}_USE_XORG?=
 gst_${GST_PLUGIN}_PLIST_FILES?= \
 		${GST_LIB_DIR}/libgst${GST_PLUGIN}${GST_PLIST_SUFFIX}.so
@@ -445,6 +446,7 @@ gst_${GST_PLUGIN}_USE_GSTREAMER1?=
 BUILD_DEPENDS+=	${gst_${GST_PLUGIN}_BUILD_DEPENDS}
 LIB_DEPENDS+=	${gst_${GST_PLUGIN}_LIB_DEPENDS}
 RUN_DEPENDS+=	${gst_${GST_PLUGIN}_RUN_DEPENDS}
+USES+=		${gst_${GST_PLUGIN}_USES}
 PLIST_FILES=	${gst_${GST_PLUGIN}_PLIST_FILES}
 EXTRA_LIBS+=	${gst_${GST_PLUGIN}_EXTRA_LIBS}
 USE_XORG+=	${gst_${GST_PLUGIN}_USE_XORG}

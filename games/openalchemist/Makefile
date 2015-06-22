@@ -19,7 +19,6 @@ LICENSE_PERMS_CCbySA=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	libclanCore.so:${PORTSDIR}/devel/clanlib1 \
-	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 	libpng.so:${PORTSDIR}/graphics/png
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -29,7 +28,7 @@ USE_GNOME=	pygtk2
 USE_XORG=	xxf86vm xi x11 xmu xext xdamage xfixes xau xdmcp xt sm ice
 USE_GL=		gl glu
 USE_SDL=	sdl gfx
-USES=		autoreconf pkgconfig iconv shebangfix gmake
+USES=		autoreconf gmake iconv jpeg pkgconfig shebangfix
 SHEBANG_FILES=	openalchemist-config
 
 PORTDOCS=	AUTHORS ChangeLog README TODO

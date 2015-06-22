@@ -91,7 +91,7 @@ BUILD_DEPENDS+=	sqlite3>=3.7.12:${PORTSDIR}/databases/sqlite3
 .endif
 
 .if ${PORT_OPTIONS:MJPEG}
-LIB_DEPENDS+=   libjpeg.so:${PORTSDIR}/graphics/jpeg
+USES+=		jpeg
 .else
 MAKE_ARGS+=	JPEG=False
 .endif

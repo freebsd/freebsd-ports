@@ -13,7 +13,6 @@ COMMENT=	Google WebP image format conversion tool
 LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
@@ -31,7 +30,7 @@ CONFIGURE_ARGS=	--enable-libwebpdecoder \
 		--enable-libwebpmux \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 USE_LDCONFIG=	yes
-USES=		compiler:c11 libtool
+USES=		compiler:c11 jpeg libtool
 
 X11_CONFIGURE_OFF=	build_vwebp=no
 X11_CONFIGURE_ON=	build_vwebp=yes

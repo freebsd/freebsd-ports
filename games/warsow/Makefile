@@ -69,7 +69,7 @@ ALL_TARGET+=	ftlib
 . if ${PORT_OPTIONS:MREF_GL}
 USE_GL=		gl
 USE_XORG+=	xinerama
-LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+USES+=		jpeg
 ALL_TARGET+=	ref_gl
 . endif
 

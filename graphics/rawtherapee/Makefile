@@ -14,7 +14,6 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		libiptcdata.so:${PORTSDIR}/graphics/libiptcdata \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
@@ -23,7 +22,7 @@ LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
 		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3
 
-USES=		cmake:outsource pkgconfig compiler:features desktop-file-utils dos2unix tar:xz
+USES=		cmake:outsource compiler:features desktop-file-utils dos2unix jpeg pkgconfig tar:xz
 DOS2UNIX_REGEX=	.*\.(cc|h)
 USE_GNOME=	gtk20 glib20
 USE_LDCONFIG=	yes

@@ -13,14 +13,13 @@ COMMENT=	System dedicated to the visualization of huge graphs
 LICENSE=	LGPL3
 
 LIB_DEPENDS=	libquazip.so:${PORTSDIR}/archivers/quazip \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libOGDF.so:${PORTSDIR}/math/ogdf \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		cmake:outsource compiler:c++11-lib dos2unix execinfo python \
+USES=		cmake:outsource compiler:c++11-lib dos2unix execinfo jpeg python \
 		shebangfix
 SHEBANG_FILES=	tulip-config.in
 DOS2UNIX_FILES=	software/tulip/src/main.cpp

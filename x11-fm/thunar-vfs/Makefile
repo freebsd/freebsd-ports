@@ -15,7 +15,6 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libgamin-1.so:${PORTSDIR}/devel/gamin
 
@@ -23,8 +22,8 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk20 gdkpixbuf2 intltool intlhack
 USE_XFCE=	libexo
 USE_XORG=	x11
-USES=		gmake pathfix perl5 pkgconfig libtool desktop-file-utils \
-		gettext-tools xfce tar:bzip2
+USES=		desktop-file-utils gettext-tools gmake jpeg libtool pathfix perl5 pkgconfig \
+		xfce tar:bzip2
 
 CONFIGURE_ARGS=	--disable-debug --without-html-dir
 

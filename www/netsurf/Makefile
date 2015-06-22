@@ -16,7 +16,6 @@ LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png
 
 ALL_TARGET=	#empty
@@ -24,7 +23,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lssl -lcrypto -L${LOCALBASE}/lib ${ICONV_LIB}
 MAKE_ARGS=	HOST_CC="${CC}" CC="${CC}" CCOPT="" HOST="${OPSYS}" \
 		WARNFLAGS="" Q="" OPTCFLAGS="${CFLAGS}"
-USES=		bison gmake gperf pkgconfig iconv
+USES=		bison gmake gperf iconv jpeg pkgconfig
 USE_GNOME=	gtk20 librsvg2
 
 NSFB_VERSION=	0.1.0
