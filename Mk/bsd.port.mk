@@ -1637,10 +1637,8 @@ MAKE_SHELL?=	${SH}
 CONFIGURE_ENV+=	SHELL=${CONFIGURE_SHELL} CONFIG_SHELL=${CONFIGURE_SHELL}
 MAKE_ENV+=		SHELL=${MAKE_SHELL} NO_LINT=YES
 
-.if defined(PATCHFILES)
-.if ${PATCHFILES:M*.zip}x != x
+.if defined(PATCHFILES) && ${PATCHFILES:M*.zip}
 PATCH_DEPENDS+=		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
-.endif
 .endif
 
 # Check the compatibility layer for amd64/ia64
