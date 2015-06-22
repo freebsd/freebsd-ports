@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 
 LIB_DEPENDS=	libmpfr.so:${PORTSDIR}/math/mpfr
 
-USES=		compiler:c++11-lang
+USES=		compiler:openmp
 
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
@@ -27,10 +27,4 @@ post-build:
 	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000000
-BROKEN=		Doesn't build on FreeBSD 9 or older
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
