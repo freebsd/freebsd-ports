@@ -57,6 +57,92 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a3929112-181b-11e5-a1cf-002590263bf5">
+    <topic>cacti -- Multiple XSS and SQL injection vulerabilities</topic>
+    <affects>
+      <package>
+	<name>cacti</name>
+	<range><lt>0.8.8d</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Cacti Group, Inc. reports:</p>
+	<blockquote cite="http://www.cacti.net/release_notes_0_8_8d.php">
+	  <p>Important Security Fixes</p>
+	  <ul>
+	    <li>Multiple XSS and SQL injection vulerabilities</li>
+	  </ul>
+	  <p>Changelog</p>
+	  <ul>
+	    <li>bug: Fixed SQL injection VN: JVN#78187936 /
+	       TN:JPCERT#98968540</li>
+	    <li>bug#0002542: [FG-VD-15-017] Cacti Cross-Site Scripting
+	       Vulnerability Notification</li>
+	    <li>bug#0002571: SQL Injection and Location header injection from
+	       cdef id CVE-2015-4342</li>
+	    <li>bug#0002572: SQL injection in graph template</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4342</cvename>
+      <freebsdpr>ports/200963</freebsdpr>
+      <url>http://www.cacti.net/release_notes_0_8_8d.php</url>
+      <mlist>http://seclists.org/fulldisclosure/2015/Jun/19</mlist>
+    </references>
+    <dates>
+      <discovery>2015-06-09</discovery>
+      <entry>2015-06-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a0e74731-181b-11e5-a1cf-002590263bf5">
+    <topic>cacti -- multiple security vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>cacti</name>
+	<range><lt>0.8.8c</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Cacti Group, Inc. reports:</p>
+	<blockquote cite="http://www.cacti.net/release_notes_0_8_8c.php">
+	  <p>Important Security Fixes</p>
+	  <ul>
+	    <li>CVE-2013-5588 - XSS issue via installer or device editing</li>
+	    <li>CVE-2013-5589 - SQL injection vulnerability in device editing</li>
+	    <li>CVE-2014-2326 - XSS issue via CDEF editing</li>
+	    <li>CVE-2014-2327 - Cross-site request forgery (CSRF) vulnerability</li>
+	    <li>CVE-2014-2328 - Remote Command Execution Vulnerability in graph export</li>
+	    <li>CVE-2014-4002 - XSS issues in multiple files</li>
+	    <li>CVE-2014-5025 - XSS issue via data source editing</li>
+	    <li>CVE-2014-5026 - XSS issues in multiple files</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-5588</cvename>
+      <cvename>CVE-2013-5589</cvename>
+      <cvename>CVE-2014-2326</cvename>
+      <cvename>CVE-2014-2327</cvename>
+      <cvename>CVE-2014-2328</cvename>
+      <cvename>CVE-2014-4002</cvename>
+      <cvename>CVE-2014-5025</cvename>
+      <cvename>CVE-2014-5026</cvename>
+      <freebsdpr>ports/198586</freebsdpr>
+      <mlist>http://sourceforge.net/p/cacti/mailman/message/33072838/</mlist>
+      <url>http://www.cacti.net/release_notes_0_8_8c.php</url>
+    </references>
+    <dates>
+      <discovery>2014-11-23</discovery>
+      <entry>2015-06-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="968d1e74-1740-11e5-a643-40a8f0757fb4">
     <topic>p5-Dancer -- possible to abuse session cookie values</topic>
     <affects>
