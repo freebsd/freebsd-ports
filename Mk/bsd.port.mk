@@ -5254,15 +5254,12 @@ fake-pkg: create-manifest
 # Depend is generally meaningless for arbitrary ports, but if someone wants
 # one they can override this.  This is just to catch people who've gotten into
 # the habit of typing `make depend all install' as a matter of course.
-#
-.if !target(depend)
-depend:
-.endif
-
 # Same goes for tags
-.if !target(tags)
-tags:
+.for _t in depend tags
+.if !target(${_t})
+${_t}:
 .endif
+.endfor
 
 .if !defined(NOPRECIOUSMAKEVARS)
 # These won't change, so we can pass them through the environment
