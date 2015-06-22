@@ -3,7 +3,7 @@
 
 PORTNAME=	brickutils
 PORTVERSION=	0.1.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}-obsolete/ \
 		SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}-obsolete/:docs \
@@ -20,12 +20,12 @@ COMMENT=	Utility for building models with LEGO
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	${LOCALBASE}/share/ldraw/models/car.dat:${PORTSDIR}/cad/ldraw \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
-		${PYXML}
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 
 WRKSRC=		${WRKDIR}/BrickUtils-${PORTVERSION}
 
-USES=		python
+NO_ARCH=	yes
+USES=		python:2
 USE_GNOME=	pygtk2
 
 PORTDOCS=	*
