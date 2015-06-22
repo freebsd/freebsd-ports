@@ -958,6 +958,7 @@
     SUBDIR += py-soapy
     SUBDIR += py-speedtest-cli
     SUBDIR += py-suds
+    SUBDIR += py-terminado
     SUBDIR += py-tofu
     SUBDIR += py-tweepy
     SUBDIR += py-twistedPair
