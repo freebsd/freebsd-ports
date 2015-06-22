@@ -4,9 +4,8 @@
 PORTNAME=	warsow-data
 PORTVERSION=	1.51
 CATEGORIES=	games
-MASTER_SITES=	SF/warsow.mirror/Warsow%20${PORTVERSION} \
-		http://www.warsow.net:1337/~warsow/${PORTVERSION}/ \
-		http://www.warsow.eu/:mappack \
+MASTER_SITES=	http://update.warsow.net/mirror/:DEFAULT,mappack \
+		http://mirror.amdmi3.ru/distfiles/:DEFAULT,mappack \
 		LOCAL/nemysis/games:mappack
 DISTNAME=	warsow_${PORTVERSION}_unified
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -21,12 +20,9 @@ LICENSE_NAME_WARSOW=	Warsow Content License
 LICENSE_FILE_WARSOW=	${WRKSRC}/docs/license.txt
 LICENSE_PERMS_WARSOW=	dist-mirror pkg-mirror auto-accept
 
-# Game port is restricted to these architectures, so it makes no sense to
-# package game data port as well (even it is not being technically built)
-ONLY_FOR_ARCHS=	i386 amd64
-
 WRKSRC=		${WRKDIR}/warsow_15
 NO_BUILD=	yes
+NO_ARCH=	yes
 DATADIR=	${PREFIX}/share/warsow
 DOCSDIR=	${PREFIX}/share/doc/warsow
 
