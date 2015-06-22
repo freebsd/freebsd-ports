@@ -474,12 +474,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  If this is set to a list of files, these files will be
 #				  automatically added to ${SUB_FILES}, some %%VAR%%'s will
 #				  automatically be expanded, they will be installed in
-#				  ${PREFIX}/etc/rc.d and added to the packing list.
-# USE_RCORDER	- List of rc.d startup scripts to be called early in the boot
-#				  process. This acts exactly like USE_RC_SUBR except that
-#				  scripts are installed in /etc/rc.d.
-#				  Because local rc.d scripts are included in the base rcorder
-#				  this option is not needed unless the port installs in the base.
+#				  ${PREFIX}/etc/rc.d if ${PREFIX} is not /usr, otherwise they
+#				  will be installed in /etc/rc.d/ and added to the packing list.
 ##
 # USE_APACHE	- If set, this port relies on an apache webserver.
 #
@@ -5166,22 +5162,15 @@ add-plist-post:
 .endif
 
 .if !target(install-rc-script)
-.if defined(USE_RCORDER) || defined(USE_RC_SUBR) && ${USE_RC_SUBR:tu} != "YES"
-install-rc-script:
-.if defined(USE_RCORDER)
-	@${ECHO_MSG} "===> Staging early rc.d startup script(s)"
-	@for i in ${USE_RCORDER}; do \
-		${INSTALL_SCRIPT} ${WRKDIR}/$${i} ${STAGEDIR}/etc/rc.d/$${i%.sh}; \
-		${ECHO_CMD} "/etc/rc.d/$${i%.sh}" >> ${TMPPLIST}; \
-	done
-.endif
 .if defined(USE_RC_SUBR) && ${USE_RC_SUBR:tu} != "YES"
+install-rc-script:
 	@${ECHO_MSG} "===> Staging rc.d startup script(s)"
 	@for i in ${USE_RC_SUBR}; do \
-		${INSTALL_SCRIPT} ${WRKDIR}/$${i} ${STAGEDIR}${PREFIX}/etc/rc.d/$${i%.sh}; \
-		${ECHO_CMD} "${PREFIX}/etc/rc.d/$${i%.sh}" >> ${TMPPLIST}; \
+		_prefix=${PREFIX}; \
+		[ "${PREFIX}" = "/usr" ] && _prefix="" ; \
+		${INSTALL_SCRIPT} ${WRKDIR}/$${i} ${STAGEDIR}$${_prefix}/etc/rc.d/$${i%.sh}; \
+		${ECHO_CMD} "$${_prefix}/etc/rc.d/$${i%.sh}" >> ${TMPPLIST}; \
 	done
-.endif
 .endif
 .endif
 
