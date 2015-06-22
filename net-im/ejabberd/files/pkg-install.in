@@ -6,7 +6,7 @@ fi
 
 USERS_HOME="/var/spool/ejabberd"
 
-install -d -m 750 -o %%USERS%% -g %%GROUPS%% ${USERS_HOME} /var/log/ejabberd
+install -d -m 750 -o %%USERS%% -g %%GROUPS%% ${USERS_HOME} /var/log/ejabberd /var/run/ejabberdctl
 
 chown -R %%USERS%%:%%GROUPS%%  %%PREFIX%%/etc/%%PORTNAME%%
 chown -R %%USERS%%:%%GROUPS%%  %%PREFIX%%/lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%
