@@ -2,11 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	puppet
-PORTVERSION=	3.8.1
+PORTVERSION=	3.7.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
+PKGNAMESUFFIX=	37
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Configuration management framework written in Ruby
 
 LICENSE=	APACHE20
@@ -19,7 +20,7 @@ RUN_DEPENDS=	rubygem-facter>=0:${PORTSDIR}/sysutils/rubygem-facter \
 
 USES=		cpe
 CPE_VENDOR=	puppetlabs
-CONFLICTS_INSTALL=	puppet37-*
+CONFLICTS_INSTALL=	puppet-*
 NO_BUILD=	yes
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	iconv
@@ -32,33 +33,12 @@ SUB_FILES+=	pkg-message
 SUB_LIST=	RUBY=${RUBY}
 
 OPTIONS_DEFINE=		DOCS EXAMPLES
-OPTIONS_DEFAULT=	PACKAGE_ORIGIN
-OPTIONS_RADIO=		PATCHES
-OPTIONS_RADIO_PATCHES=	PACKAGE_ORIGIN PACKAGE_ROOT
-PACKAGE_ORIGIN_DESC=	Use port origin as package name
-PACKAGE_ROOT_DESC=	Use PACKAGEROOT instead of PACKAGESITE
-PATCHES_DESC=		Optional exclusive patches
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPACKAGE_ROOT}
-.if ! ${PORT_OPTIONS:MPACKAGE_ORIGIN}
-EXTRA_PATCHES+=	${FILESDIR}/optpatch-package_root
-.else
-BROKEN=	PACKAGE_ROOT option patch is incompatible with PACKAGE_ORIGIN patch.
-.endif
-.endif
 
 .include <bsd.port.pre.mk>
 
 # puppet 4.x should support ruby 2.2.x
 .if ${RUBY_VER} >= 2.2
 BROKEN=		Does not work with Ruby 2.2
-.endif
-
-.if ${PORT_OPTIONS:MPACKAGE_ORIGIN}
-EXTRA_PATCHES+=	${FILESDIR}/optpatch-package_origin
-RUN_DEPENDS+=	rubygem-bzip2-ruby>=0:${PORTSDIR}/archivers/rubygem-bzip2-ruby
 .endif
 
 post-patch:
@@ -78,12 +58,10 @@ post-patch:
 		${WRKSRC}/ext/rack/config.ru
 
 do-install:
-	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} ${RUBY} ${WRKSRC}/install.rb --no-configs --destdir=${STAGEDIR}
-
-post-install:
-	${MKDIR} ${STAGEDIR}${ETCDIR}/manifests
-	${MKDIR} ${STAGEDIR}${ETCDIR}/modules
-	${MKDIR} ${STAGEDIR}/var/puppet
+	${SETENV} ${MAKE_ENV}${RUBY} ${WRKSRC}/install.rb --no-configs --destdir=${STAGEDIR}
+	${MKDIR} ${STAGEDIR}${ETCDIR}/manifests ${STAGEDIR}${ETCDIR}/modules \
+		${STAGEDIR}/var/puppet ${STAGEDIR}${WWWDIR} \
+		${STAGEDIR}${DOCSDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/conf/auth.conf ${STAGEDIR}${ETCDIR}/auth.conf-dist
 	${RUBY} -I ${STAGEDIR}/${RUBY_SITELIBDIR} ${STAGEDIR}${PREFIX}/bin/puppet agent --genconfig \
 		--confdir=${ETCDIR} \
@@ -91,19 +69,8 @@ post-install:
 		--vardir=/var/puppet \
 		--logdir=/var/log/puppet \
 		> ${STAGEDIR}${ETCDIR}/puppet.conf-dist
-	@${ECHO} ${STAGEDIR}${RUBY_SITELIBDIR}/puppet.rb | \
-		${SED} 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
-	@${ECHO} ${STAGEDIR}${RUBY_SITELIBDIR}/semver.rb | \
-		${SED} 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${STAGEDIR}${RUBY_SITELIBDIR}/${PORTNAME} -type f | \
-		${SED} 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${STAGEDIR}${RUBY_SITELIBDIR}/${PORTNAME} -type d | ${SORT} -r | \
-		${SED} 's,^${STAGEDIR}${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	${INSTALL_DATA} ${WRKSRC}/ext/rack/config.ru ${STAGEDIR}${WWWDIR}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/ext/rack/example-passenger-vhost.conf ${STAGEDIR}${EXAMPLESDIR}
 
