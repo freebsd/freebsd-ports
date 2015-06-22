@@ -13,10 +13,9 @@ COMMENT=	Free program to do streaming video via the web
 
 LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
 
-USES=		libtool
+USES=		jpeg libtool
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

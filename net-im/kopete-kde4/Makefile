@@ -17,11 +17,10 @@ LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn \
 		libkleo.so:${PORTSDIR}/deskutils/kdepim4 \
 		libmeanwhile.so:${PORTSDIR}/net-im/meanwhile \
 		libv4l2.so:${PORTSDIR}/multimedia/libv4l \
-		libjasper.so:${PORTSDIR}/graphics/jasper \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg
+		libjasper.so:${PORTSDIR}/graphics/jasper
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
 
-USES=		cmake:outsource pkgconfig shebangfix tar:xz webplugin:native
+USES=		cmake:outsource jpeg pkgconfig shebangfix tar:xz webplugin:native
 USE_GNOME=	libxml2 libxslt
 USE_KDE4=	kdelibs kdeprefix pimlibs \
 		automoc4 qimageblitz

@@ -14,7 +14,6 @@ COMMENT=	Enhanced version of VNC
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENCE.TXT
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	showrgb:${PORTSDIR}/x11/rgb \
 		xauth:${PORTSDIR}/x11/xauth \
 		xorg-fonts>=7.2:${PORTSDIR}/x11-fonts/xorg-fonts
@@ -22,7 +21,7 @@ RUN_DEPENDS=	showrgb:${PORTSDIR}/x11/rgb \
 MAKE_JOBS_UNSAFE=	yes
 CONFLICTS=	tridiavnc-[0-9]* vnc-[0-9]*
 WRKSRC=		${WRKDIR}/vnc_unixsrc
-USES=		cpe imake shebangfix perl5 tar:bzip2
+USES=		cpe imake jpeg shebangfix perl5 tar:bzip2
 SHEBANG_FILES=	vncserver
 CFLAGS+=	-Wno-return-type
 USE_XORG=	xaw

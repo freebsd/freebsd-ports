@@ -13,14 +13,13 @@ COMMENT=	Simple painting program
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libgif.so:${PORTSDIR}/graphics/giflib \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
 USE_GNOME=	gtk20
-USES=		desktop-file-utils gmake iconv pkgconfig tar:bzip2
+USES=		desktop-file-utils gmake iconv jpeg pkgconfig tar:bzip2
 HAS_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MAN1PREFIX}/man/man1 \

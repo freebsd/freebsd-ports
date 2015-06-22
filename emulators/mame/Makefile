@@ -10,7 +10,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Multi Arcade Machine Emulator
 
 LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	liberation-fonts-ttf>=0:${PORTSDIR}/x11-fonts/liberation-fonts-ttf
@@ -25,7 +24,7 @@ GH_TAGNAME=	mame${PORTVERSION:S/.//}
 # base clang fails with signal during build (!)
 USE_GCC=	yes
 
-USES=		gmake pkgconfig python:2,build shebangfix
+USES=		gmake jpeg pkgconfig python:2,build shebangfix
 SHEBANG_FILES=	src/emu/cpu/m6502/m6502make.py \
 		src/emu/cpu/m6809/m6809make.py \
 		src/emu/cpu/mcs96/mcs96make.py \

@@ -72,7 +72,7 @@ PLIST_SUB+=	GLX="@comment "
 
 .if ${PORT_OPTIONS:MEYECANDY}
 DISTFILES+=	maxpak.pak
-LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+USES+=		jpeg
 USE_GL=		glu
 MAKE_ARGS+=	BUILD_QMAX=YES
 PLIST_SUB+=	QMAX=""

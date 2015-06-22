@@ -119,7 +119,7 @@ CMAKE_ARGS+=	-DWITH_JASPER:BOOL=Off
 .endif
 
 .if ${PORT_OPTIONS:MJPEG}
-LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+USES+=		jpeg
 CMAKE_ARGS+=	-DWITH_JPEG:BOOL=On
 .else
 CMAKE_ARGS+=	-DWITH_JPEG:BOOL=Off

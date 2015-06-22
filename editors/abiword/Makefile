@@ -18,12 +18,11 @@ LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
 		libpopt.so:${PORTSDIR}/devel/popt \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libwv.so:${PORTSDIR}/textproc/wv \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libfribidi.so:${PORTSDIR}/converters/fribidi \
 		libgoffice-0.10.so:${PORTSDIR}/devel/goffice010
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSerif.ttf:${PORTSDIR}/x11-fonts/dejavu
 
-USES=		desktop-file-utils gmake iconv libtool pathfix pkgconfig
+USES=		desktop-file-utils gmake iconv jpeg libtool pathfix pkgconfig
 USE_GNOME=	libxml2 gtk30 librsvg2 libxslt
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

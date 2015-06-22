@@ -12,12 +12,11 @@ MASTER_SITES=	http://vrml.cip.ica.uni-stuttgart.de/dune/
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Graphical VRML97 editor and animation tool
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 LICENSE=	GPLv2
 
-USES=		motif
+USES=		jpeg motif
 USE_XORG=	xft
 USE_GL=		gl glu glut
 USE_SDL=	sdl

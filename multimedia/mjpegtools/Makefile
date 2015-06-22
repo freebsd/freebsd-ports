@@ -13,11 +13,10 @@ COMMENT=	Set of tools to record/playback/edit videos in MPEG format
 LICENSE=	GPLv2 # (or later)
 
 BUILD_DEPENDS=	v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 CONFLICTS=	mplex-[0-9]*
 
-USES=		gmake libtool pathfix pkgconfig
+USES=		gmake jpeg libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

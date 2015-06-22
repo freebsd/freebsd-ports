@@ -27,7 +27,7 @@ PANGO_USE=	GNOME=pango
 GIF_CONFIGURE_WITH=	gif
 GIF_LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib
 JPEG_CONFIGURE_WITH=	jpeg
-JPEG_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+JPEG_USES=		jpeg
 PNG_CONFIGURE_WITH=	png
 PNG_LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
 PNM_CONFIGURE_WITH=	pnm

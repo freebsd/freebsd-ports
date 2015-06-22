@@ -13,15 +13,14 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Fast-paced, chaotic, and intense multiplayer first person shooter
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/gpl.txt
 
 MANUAL_PACKAGE_BUILD=	huge (880MiB)
 
-USES=		shebangfix zip:infozip
+USES=		jpeg shebangfix zip:infozip
 SHEBANG_FILES=	server/rcon.pl server/rcon2irc/rcon2irc.pl
 WRKSRC=		${WRKDIR}/Nexuiz
 BUILD_WRKSRC=	${WRKSRC}/sources/darkplaces

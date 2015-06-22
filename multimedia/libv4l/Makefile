@@ -24,13 +24,12 @@ WRKSRC=		${WRKDIR}/v4l-utils-${PORTVERSION}
 
 .if ${LIBV4L_SLAVE} != compat
 BUILD_DEPENDS+=	v4l_compat>=${PORTVERSION}:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libargp.so:${PORTSDIR}/devel/argp-standalone
+LIB_DEPENDS+=	libargp.so:${PORTSDIR}/devel/argp-standalone
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES+=		gmake iconv libtool pathfix pkgconfig
+USES+=		gmake iconv jpeg libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-libdvbv5 \
 		--disable-qv4l2 \

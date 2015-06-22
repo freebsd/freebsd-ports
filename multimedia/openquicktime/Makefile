@@ -14,11 +14,9 @@ COMMENT=	Portable library for handling Apple's QuickTime(TM) files
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
-
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
-USES=		gmake tar:tgz
+USES=		gmake jpeg tar:tgz
 USE_LDCONFIG=	yes
 PKGDEINSTALL=	${PKGINSTALL}
 

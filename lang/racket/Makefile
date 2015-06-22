@@ -18,7 +18,6 @@ COMMENT=	Interactive, integrated, graphical Scheme programming environment
 
 LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi	\
 		libcairo.so:${PORTSDIR}/graphics/cairo	\
-		libjpeg.so:${PORTSDIR}/graphics/jpeg	\
 		libpng.so:${PORTSDIR}/graphics/png
 
 MAKE_JOBS_UNSAFE=yes
@@ -36,7 +35,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
 WRKSRC=		${WRKDIR}/racket-${PORTVERSION}/src
-USES=		iconv libtool tar:tgz
+USES=		iconv jpeg libtool tar:tgz
 USE_LDCONFIG=	yes
 USE_GNOME=	pango
 USE_SQLITE=	3

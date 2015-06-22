@@ -19,9 +19,9 @@ COMMENT=	The Grid Analysis and Display System
 BUILD_DEPENDS=	${LOCALBASE}/lib/libudunits2.a:${PORTSDIR}/science/udunits \
 		${LOCALBASE}/lib/libsx.a:${PORTSDIR}/x11/libsx
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png
 
+USES=		jpeg
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV+=		SUPPLIBS="${LOCALBASE}"
 CONFIGURE_ARGS+=	--enable-dyn-supplibs \

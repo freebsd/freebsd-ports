@@ -53,7 +53,6 @@ LIB_DEPENDS+=	libboard.so:${PORTSDIR}/graphics/libboard
 
 . if !defined(WITH_DEBUG)
 LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png		\
-		libjpeg.so:${PORTSDIR}/graphics/jpeg		\
 		libtiff.so:${PORTSDIR}/graphics/tiff		\
 		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR	\
 		libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app	\
@@ -61,6 +60,7 @@ LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png		\
 		libopencv_legacy.so:${PORTSDIR}/graphics/opencv	\
 		libopencv_core.so:${PORTSDIR}/graphics/opencv-core\
 		libGraphicsMagick.so:${PORTSDIR}/graphics/GraphicsMagick
+USES+=		jpeg
 ALL_TARGET=	Mlinux
 . else
 ALL_TARGET=	dlinux

@@ -104,7 +104,7 @@ IMAGEMAGICK_LIB_DEPENDS=	libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick
 IMAGEMAGICK_CONFIGURE_ENABLE=	imagemagick
 IMAGEMAGICK_CONFIGURE_ON=	--with-imagemagick-prefix=${LOCALBASE}
 
-JPEG_LIB_DEPENDS=		libjpeg.so:${PORTSDIR}/graphics/jpeg
+JPEG_USES=			jpeg
 JPEG_CONFIGURE_ENABLE=		libjpeg
 JPEG_CONFIGURE_ON=		--with-libjpeg-prefix=${LOCALBASE}
 

@@ -12,10 +12,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OO, component based, framework for molecular dynamics (MD) simulations
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
 GNU_CONFIGURE=	yes
+USES=		jpeg
 USE_XORG=	xmu xt sm ice xext x11 xi
 
 # Hack to cure a misbehavior of the configure script

@@ -14,10 +14,9 @@ COMMENT=	Tools and library routines for working with TIFF images
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libjbig.so:${PORTSDIR}/graphics/jbigkit
+LIB_DEPENDS=	libjbig.so:${PORTSDIR}/graphics/jbigkit
 
-USES=		cpe libtool
+USES=		cpe jpeg libtool
 CPE_PRODUCT=	libtiff
 CPE_VERSION=	${DISTVERSION:C/[a-z]+//}
 CPE_UPDATE=	${DISTVERSION:C/[0-9.]+//}

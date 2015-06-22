@@ -12,12 +12,11 @@ MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	The wxWidgets GUI toolkit with GTK+ bindings
 
 LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png\
-		libjpeg.so:${PORTSDIR}/graphics/jpeg\
 		libtiff.so:${PORTSDIR}/graphics/tiff\
 		libexpat.so:${PORTSDIR}/textproc/expat2\
 		libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
 
-USES+=		compiler:c++11-lib iconv gmake pkgconfig tar:bzip2
+USES+=		compiler:c++11-lib gmake iconv jpeg pkgconfig tar:bzip2
 USE_XORG=	x11 sm xxf86vm xinerama
 USE_GL=		glu
 USE_GNOME=	gtk20

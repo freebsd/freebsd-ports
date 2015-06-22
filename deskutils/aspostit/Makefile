@@ -12,10 +12,8 @@ COMMENT=	AfterStep dockable version of XPostIt
 
 LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
-
 USE_XORG=	xpm xaw xext x11
-USES=		gmake
+USES=		gmake jpeg
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/aspostit man/man1/aspostit.1.gz

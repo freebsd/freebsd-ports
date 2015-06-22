@@ -13,9 +13,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DEMO_DISTFILE:S/$/:demo/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Development environment used to build 2D/3D/stereo graphics
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
-
-USES=		shebangfix perl5
+USES=		jpeg perl5 shebangfix
 SHEBANG_FILES=	doc/*.pl
 USE_GL=		glu
 USE_XORG=	xmu

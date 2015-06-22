@@ -15,12 +15,11 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
-USES=		cmake pkgconfig
+USES=		cmake jpeg pkgconfig
 USE_XORG=	ice sm x11 xau xcb xdmcp xext xft xmu xorg-server xrandr \
 		xrender xt
 USE_RC_SUBR=	slim

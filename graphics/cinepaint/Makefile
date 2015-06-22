@@ -15,7 +15,6 @@ LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
 		libftgl.so:${PORTSDIR}/graphics/ftgl \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		liblcms.so:${PORTSDIR}/graphics/lcms \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
@@ -26,7 +25,7 @@ OYRANOS_DESC=	ICC profile support via Oyranos
 PRINT_DESC=	Gutenprint (gimp-print) plugin
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf desktop-file-utils gettext gmake libtool \
+USES=		autoreconf desktop-file-utils gettext gmake jpeg libtool \
 		pkgconfig python
 USE_XORG=	xmu
 USE_GNOME=	gtk20

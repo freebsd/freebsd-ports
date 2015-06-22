@@ -13,10 +13,9 @@ COMMENT=	Motif widget set for displaying HTML 3.2 documents
 LICENSE=	LGPL20 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
-USES=		gmake libtool:build motif pkgconfig tar:tgz
+USES=		gmake jpeg libtool:build motif pkgconfig tar:tgz
 USE_XORG=	xft xmu xpm xt
 USE_LDCONFIG=	yes
 

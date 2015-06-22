@@ -12,15 +12,14 @@ COMMENT=	Gtk-based X11 frontend for SANE (Scanner Access Now Easy)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		liblcms.so:${PORTSDIR}/graphics/lcms
 BUILD_DEPENDS=	scanimage:${PORTSDIR}/graphics/sane-backends
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		gmake pkgconfig
+USES=		gmake jpeg pkgconfig
 USE_GNOME=	gtk20 gdkpixbuf2
 GNU_CONFIGURE=	yes
 

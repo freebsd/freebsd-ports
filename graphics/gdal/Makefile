@@ -16,7 +16,6 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libgeotiff.so:${PORTSDIR}/graphics/libgeotiff \
 		libgif.so:${PORTSDIR}/graphics/giflib \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libjson-c.so:${PORTSDIR}/devel/json-c \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
@@ -46,7 +45,7 @@ GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
-USES=		gmake tar:xz
+USES=		gmake jpeg tar:xz
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 PORTDATA=	*

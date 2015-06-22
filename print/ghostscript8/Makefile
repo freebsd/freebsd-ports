@@ -23,7 +23,6 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libjasper.so:${PORTSDIR}/graphics/jasper \
 		libjbig2dec.so:${PORTSDIR}/graphics/jbig2dec \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libpaper.so:${PORTSDIR}/print/libpaper \
 		libtiff.so:${PORTSDIR}/graphics/tiff
@@ -36,7 +35,7 @@ CONFLICTS_INSTALL= \
 		ghostscript9-agpl-[0-9]* \
 		ghostscript9-agpl-nox11-[0-9]*
 
-USES=		gmake pkgconfig tar:xz shebangfix
+USES=		gmake jpeg pkgconfig tar:xz shebangfix
 SHEBANG_FILES=	${WRKSRC}/lib/fixmswrd.pl
 WANT_GNOME=	yes
 USE_LDCONFIG=	yes

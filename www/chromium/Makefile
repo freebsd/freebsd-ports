@@ -40,7 +40,6 @@ LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libpci.so:${PORTSDIR}/devel/libpci \
 		libdrm.so:${PORTSDIR}/graphics/libdrm \
 		libicuuc.so:${PORTSDIR}/devel/icu \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libjsoncpp.so:${PORTSDIR}/devel/jsoncpp \
 		libnspr4.so:${PORTSDIR}/devel/nspr \
 		libpng.so:${PORTSDIR}/graphics/png \
@@ -56,7 +55,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/a
 		xdg-open:${PORTSDIR}/devel/xdg-utils
 
 ONLY_FOR_ARCHS=	i386 amd64
-USES=		bison compiler:c++11-lib cpe desktop-file-utils pkgconfig \
+USES=		bison compiler:c++11-lib cpe desktop-file-utils jpeg pkgconfig \
 		perl5 shebangfix ninja tar:xz python:2,build execinfo
 CPE_VENDOR=	google
 CPE_PRODUCT=	chrome

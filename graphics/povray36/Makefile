@@ -15,11 +15,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Persistence of Vision Ray Tracer
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg
+		libtiff.so:${PORTSDIR}/graphics/tiff
 
 USE_XORG=	x11
-USES=		gmake tar:bzip2
+USES=		gmake jpeg tar:bzip2
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS DOCS

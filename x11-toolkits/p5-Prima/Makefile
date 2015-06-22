@@ -13,7 +13,6 @@ COMMENT=	Extensible Perl toolkit for multi-platform GUI development
 LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
@@ -22,7 +21,7 @@ OPTIONS_DEFAULT=ICONV XFT
 
 CONFIGURE_ARGS=	EXTRA_CCFLAGS="${CFLAGS}" EXTRA_LDFLAGS="${LDFLAGS}" \
 		X11BASE=${LOCALBASE}
-USES=		perl5
+USES=		jpeg perl5
 USE_PERL5=	configure
 USE_XORG=	x11 xext xpm xrender
 MAKE_JOBS_UNSAFE=	yes

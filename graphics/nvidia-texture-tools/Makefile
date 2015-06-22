@@ -12,11 +12,10 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Texture Tools with support for DirectX 10 texture formats
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
 
-USES=		alias cmake
+USES=		alias cmake jpeg
 CMAKE_ARGS=	-DNVTT_SHARED=TRUE
 
 CFLAGS+=	-fPIC
