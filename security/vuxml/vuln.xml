@@ -57,6 +57,66 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="cdff0af2-1492-11e5-a1cf-002590263bf5">
+    <topic>php5 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>php5-dom</name>
+	<name>php5-ftp</name>
+	<name>php5-gd</name>
+	<name>php5-pgsql</name>
+	<range><lt>5.4.42</lt></range>
+      </package>
+      <package>
+	<name>php55-dom</name>
+	<name>php55-ftp</name>
+	<name>php55-gd</name>
+	<name>php55-pgsql</name>
+	<range><lt>5.5.26</lt></range>
+      </package>
+      <package>
+	<name>php56-dom</name>
+	<name>php56-ftp</name>
+	<name>php56-gd</name>
+	<name>php56-psql</name>
+	<range><lt>5.6.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PHP project reports:</p>
+	<blockquote cite="http://www.php.net/ChangeLog-5.php">
+	  <p>DOM and GD:</p>
+	  <ul>
+	    <li>Fixed bug #69719 (Incorrect handling of paths with NULs).</li>
+	  </ul>
+	  <p>FTP:</p>
+	  <ul>
+	    <li>Improved fix for bug #69545 (Integer overflow in ftp_genlist()
+	       resulting in heap overflow). (CVE-2015-4643)</li>
+	  </ul>
+	  <p>Postgres:</p>
+	  <ul>
+	    <li>Fixed bug #69667 (segfault in php_pgsql_meta_data).
+	      (CVE-2015-4644)</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4643</cvename>
+      <cvename>CVE-2015-4644</cvename>
+      <url>http://www.php.net/ChangeLog-5.php#5.4.42</url>
+      <url>http://www.php.net/ChangeLog-5.php#5.5.26</url>
+      <url>http://www.php.net/ChangeLog-5.php#5.6.10</url>
+      <mlist>http://openwall.com/lists/oss-security/2015/06/18/3</mlist>
+    </references>
+    <dates>
+      <discovery>2015-06-11</discovery>
+      <entry>2015-06-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a4460ac7-192c-11e5-9c01-bcaec55be5e5">
     <topic>devel/ipython -- remote execution</topic>
     <affects>
