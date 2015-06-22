@@ -4153,8 +4153,7 @@ fetch-urlall-list:
 .endif
 
 .if !target(fetch-url-list)
-fetch-url-list:
-	@cd ${.CURDIR} && ${MAKE} fetch-url-list-int
+fetch-url-list: fetch-url-list-int
 .endif
 
 # Generates patches.
