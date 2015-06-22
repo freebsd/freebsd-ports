@@ -647,6 +647,7 @@ man/man1/xpra_launcher.1.gz
 share/appdata/xpra.appdata.xml
 share/applications/xpra.desktop
 share/applications/xpra_launcher.desktop
+share/mime/packages/application-x-xpraconfig.xml
 share/pixmaps/xpra.png
 %%DATADIR%%/COPYING
 %%DATADIR%%/README
