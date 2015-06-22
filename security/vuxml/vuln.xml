@@ -57,6 +57,42 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0f154810-16e4-11e5-a1cf-002590263bf5">
+    <topic>rubygem-paperclip -- validation bypass vulnerabilitiy</topic>
+    <affects>
+      <package>
+	<name>rubygem-paperclip</name>
+	<range><lt>4.2.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jon Yurek reports:</p>
+	<blockquote cite="https://github.com/thoughtbot/paperclip/commit/9aee4112f36058cd28d5fe4a006d6981bd1eda57">
+	  <p>Thanks to MORI Shingo of DeNA Co., Ltd. for reporting this.</p>
+	  <p>There is an issue where if an HTML file is uploaded with a .html
+	    extension, but the content type is listed as being `image/jpeg`,
+	    this will bypass a validation checking for images. But it will also
+	    pass the spoof check, because a file named .html and containing
+	    actual HTML passes the spoof check.</p>
+	  <p>This change makes it so that we also check the supplied content
+	    type. So even if the file contains HTML and ends with .html, it
+	    doesn't match the content type of `image/jpeg` and so it fails.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-2963</cvename>
+      <url>https://github.com/thoughtbot/paperclip/commit/9aee4112f36058cd28d5fe4a006d6981bd1eda57</url>
+      <url>https://robots.thoughtbot.com/paperclip-security-release</url>
+      <url>http://jvn.jp/en/jp/JVN83881261/index.html</url>
+    </references>
+    <dates>
+      <discovery>2015-06-05</discovery>
+      <entry>2015-06-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0da404ad-1891-11e5-a1cf-002590263bf5">
     <topic>chicken -- Potential buffer overrun in string-translate*</topic>
     <affects>
