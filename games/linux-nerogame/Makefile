@@ -4,7 +4,7 @@
 PORTNAME=	nerogame
 PORTVERSION=	2.0
 CATEGORIES=	games linux
-MASTER_SITES=	SF/nero.mirror
+MASTER_SITES=	http://nn.cs.utexas.edu/nero/downloads/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	nero2_linux_i386
 
