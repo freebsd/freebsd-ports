@@ -37,7 +37,8 @@ post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}; \
-		${FIND} cli demos examples | ${PAX} -rw ${STAGEDIR}${EXAMPLESDIR}
+		${FIND} cli demos examples ! -type d \
+			| ${PAX} -rw ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
