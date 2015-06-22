@@ -2136,8 +2136,6 @@ MTREE_FILE_DEFAULT=yes
 MTREE_CMD?=	/usr/sbin/mtree
 MTREE_ARGS?=	-U ${MTREE_FOLLOWS_SYMLINKS} -f ${MTREE_FILE} -d -e -p
 
-READLINK_CMD?=	/usr/bin/readlink
-
 _SHAREMODE?=	0644
 
 # A few aliases for *-install targets
