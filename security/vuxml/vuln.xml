@@ -57,6 +57,42 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a4460ac7-192c-11e5-9c01-bcaec55be5e5">
+    <topic>devel/ipython -- remote execution</topic>
+    <affects>
+      <package>
+	<name>ipython</name>
+	<range><lt>3.2.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Kyle Kelley reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2015/q2/779">
+	  <p>Summary: JSON error responses from the IPython notebook REST API
+	  contained URL parameters and were incorrectly reported as text/html
+	  instead of application/json. The error messages included some of these
+	  URL params, resulting in a cross site scripting attack. This affects
+	  users on Mozilla Firefox but not Chromium/Google Chrome.</p>
+	  <p>API paths with issues:</p>
+	  <ul>
+	    <li>/api/contents (3.0-3.1)</li>
+	    <li>/api/notebooks (2.0-2.4, 3.0-3.1)</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4706</cvename>
+      <cvename>CVE-2015-4707</cvename>
+      <url>http://seclists.org/oss-sec/2015/q2/779</url>
+    </references>
+    <dates>
+      <discovery>2015-06-22</discovery>
+      <entry>2015-06-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d46ed7b8-1912-11e5-9fdf-00262d5ed8ee">
     <topic>www/chromium -- mulitple vulnerabilities</topic>
     <affects>
