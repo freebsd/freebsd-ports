@@ -1,6 +1,6 @@
---- configure.orig	2010-04-19 10:48:13.000000000 -0300
-+++ configure	2010-04-19 10:49:58.000000000 -0300
-@@ -13167,11 +13167,9 @@
+--- configure.orig	2015-06-22 10:06:05 UTC
++++ configure
+@@ -15705,8 +15705,7 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $pspp_cv_build_exeext" >&5
  $as_echo "$pspp_cv_build_exeext" >&6; }
    EXEEXT_FOR_BUILD=""
@@ -9,7 +9,4 @@
 +  test x"${pspp_cv_build_exeext}" != xno && EXEEXT_FOR_BUILD=${pspp_cv_build_exeext}
  fi
  
--
-   # Extract the first word of "perl", so it can be a program name with args.
- set dummy perl; ac_word=$2
- { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+ 
