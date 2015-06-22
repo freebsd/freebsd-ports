@@ -10,6 +10,12 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20150622:
+AUTHOR: bapt@FreeBSD.org
+
+  Remove USE_RCORDER, USE_RC_SUBR has been modified to support PREFIX=/usr
+  automatically
+
 20150529:
 AUTHOR: mat@FreeBSD.org
 
