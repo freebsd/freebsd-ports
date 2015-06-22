@@ -4,7 +4,6 @@
 PORTNAME=	perl
 #PORTVERSION=	${PERL_VERSION} # XXX
 DISTVERSION=	${GH_TAGNAME:C/^v//:C/-g[0-9a-f]*$//}
-PORTREVISION=	1
 CATEGORIES=	lang devel perl5
 # XXX
 MASTER_SITES=	LOCAL/mat/perl GH CPAN/../../src/5.0
@@ -27,7 +26,7 @@ CONFLICTS_INSTALL=	perl5.*-*
 USE_GITHUB=	yes
 GH_ACCOUNT=	Perl
 GH_PROJECT=	perl5
-GH_TAGNAME=	v5.22.0-125-g4b95171
+GH_TAGNAME=	v5.23.0-7-gd9fc04e
 
 OPTIONS_DEFINE=	DEBUG GDBM PERL_64BITINT PTHREAD \
 		MULTIPLICITY SITECUSTOMIZE
@@ -65,7 +64,7 @@ PERL_MALLOC_CONFIGURE_OFF=	-Dusemymalloc=n
 #PORTSCOUT=	limit:^${PERL_VER}.
 
 # Remember to update Mk/Uses/perl5.mk too.
-PERL_VERSION=	5.23.0
+PERL_VERSION=	5.23.1
 PERL_VER=	${PERL_VERSION:C/\.[0-9]+$//}
 PERL_ARCH=	mach
 SITE_PERL_REL?=	lib/perl5/site_perl
@@ -217,6 +216,8 @@ post-extract:
 	${LN} -s libperl.so.${PERL_VERSION} ${WRKSRC}/libperl.so
 	${LN} -s libperl.so.${PERL_VERSION} ${WRKSRC}/libperl.so.${PERL_VER}
 
+.if !defined(MAKING_PATCHES)
+# make clean patch makepatch MAKING_PATCHES=
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/Configure ${WRKSRC}/hints/freebsd.sh
@@ -227,6 +228,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%||g;' \
 		${WRKSRC}/hints/freebsd.sh
 .endif
+.endif # MAKING_PATCHES
 
 post-install:
 	${MKDIR} ${STAGEDIR}${SITE_MAN3}
