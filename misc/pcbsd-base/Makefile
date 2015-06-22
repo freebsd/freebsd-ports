@@ -30,7 +30,6 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		xorg>=0:${PORTSDIR}/x11/xorg \
 		xf86-input-synaptics>=0:${PORTSDIR}/x11-drivers/xf86-input-synaptics \
 		xf86-video-intel>=0:${PORTSDIR}/x11-drivers/xf86-video-intel \
-		dejavu>=0:${PORTSDIR}/x11-fonts/dejavu \
 		noto>=0:${PORTSDIR}/x11-fonts/noto \
 		droid-fonts-ttf>=0:${PORTSDIR}/x11-fonts/droid-fonts-ttf \
 		xv:${PORTSDIR}/graphics/xv \
@@ -81,7 +80,6 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		idesk:${PORTSDIR}/x11/idesk \
 		gtk2-qtcurve-theme>=0:${PORTSDIR}/x11-themes/qtcurve-gtk2 \
 		qt4-style-qtcurve>=0:${PORTSDIR}/x11-themes/qtcurve-qt4 \
-		webfonts>=0:${PORTSDIR}/x11-fonts/webfonts \
 		gtk-theme-switch>=0:${PORTSDIR}/x11/gtk-theme-switch2 \
 		foo2zjs>=0:${PORTSDIR}/print/foo2zjs \
 		linux_dvbwrapper-kmod>=0:${PORTSDIR}/multimedia/linux_dvbwrapper-kmod \
