@@ -57,6 +57,55 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d46ed7b8-1912-11e5-9fdf-00262d5ed8ee">
+    <topic>www/chromium -- mulitple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>43.0.2357.130</lt></range>
+      </package>
+      <package>
+	<!-- pcbsd -->
+	<name>chromium-npapi</name>
+	<range><lt>43.0.2357.130</lt></range>
+      </package>
+      <package>
+	<!-- pcbsd -->
+	<name>chromium-pulse</name>
+	<range><lt>43.0.2357.130</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/2015/06/chrome-stable-update.html">
+	  <p>4 security fixes in this release:</p>
+	  <ul>
+	    <li>[464922] High CVE-2015-1266: Scheme validation error in WebUI.
+	      Credit to anonymous.</li>
+	    <li>[494640] High CVE-2015-1268: Cross-origin bypass in Blink.
+	      Credit to Mariusz Mlynski.</li>
+	    <li>[497507] Medium CVE-2015-1267: Cross-origin bypass in Blink.
+	      Credit to anonymous.</li>
+	    <li>[461481] Medium CVE-2015-1269: Normalization error in HSTS/HPKP
+	      preload list. Credit to Mike Ruddy.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1266</cvename>
+      <cvename>CVE-2015-1267</cvename>
+      <cvename>CVE-2015-1268</cvename>
+      <cvename>CVE-2015-1269</cvename>
+      <url>http://googlechromereleases.blogspot.nl/2015/06/chrome-stable-update.html</url>
+    </references>
+    <dates>
+      <discovery>2015-06-22</discovery>
+      <entry>2015-06-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0f154810-16e4-11e5-a1cf-002590263bf5">
     <topic>rubygem-paperclip -- validation bypass vulnerabilitiy</topic>
     <affects>
