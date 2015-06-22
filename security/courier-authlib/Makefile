@@ -152,11 +152,7 @@ do-build:	#empty
 .else	# !defined(PKGNAMESUFFIX)
 
 .if ${AUTHMOD} == authbase
-.if defined(WITH_RCORDER)
-USE_RCORDER=	courier-authdaemond
-.else
 USE_RC_SUBR=	courier-authdaemond
-.endif
 
 pre-everything::
 	@${ECHO_CMD}
