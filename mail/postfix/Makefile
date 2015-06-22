@@ -100,14 +100,14 @@ MAKEFILEFLAGS+=	DEBUG=
 
 MAKEFILEFLAGS+=	CC="${CC}" OPT="${CFLAGS}"
 
+USE_RC_SUBR=	postfix
+
 .if ${PORT_OPTIONS:MINST_BASE}
 PKGNAMESUFFIX=	-base
 PREFIX=		/usr
 ETCDIR=		/etc/postfix
-USE_RCORDER=	postfix
 PLIST_SUB+=	BMAN="share/"
 .else
-USE_RC_SUBR=	postfix
 PLIST_SUB+=	BMAN=""
 .endif
 
