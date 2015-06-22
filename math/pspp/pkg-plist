@@ -12,6 +12,8 @@ lib/pspp/libpspp-%%VERSION%%.so
 lib/pspp/libpspp-core.a
 lib/pspp/libpspp-core.so
 lib/pspp/libpspp-core-%%VERSION%%.so
+man/man1/pspp.1.gz
+man/man1/psppire.1.gz
 man/man1/pspp-convert.1.gz
 man/man1/pspp-dump-sav.1.gz
 %%GUI%%share/appdata/pspp.appdata.xml
@@ -68,13 +70,16 @@ share/emacs/site-lisp/pspp-mode.el
 %%NLS%%share/locale/en_GB/LC_MESSAGES/pspp.mo
 %%NLS%%share/locale/es/LC_MESSAGES/pspp.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/pspp.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/pspp.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/pspp.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/pspp.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/pspp.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/pspp.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/pspp.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/pspp.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/pspp.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/pspp.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/pspp.mo
 %%GUI%%%%DATADIR%%/actions/16x16/analyze-bivariate-correlation.png
 %%GUI%%%%DATADIR%%/actions/16x16/analyze-compare-means.png
 %%GUI%%%%DATADIR%%/actions/16x16/analyze-descriptive-statistics.png
