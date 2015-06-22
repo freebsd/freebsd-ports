@@ -3,6 +3,7 @@
 
 PORTNAME=	soappy
 PORTVERSION=	0.12.0
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	SF/pywebsvcs/SOAP.py/${PORTVERSION}_rc1
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,12 +13,12 @@ DISTNAME=	SOAPpy-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SOAP implementation
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/fpconst.py:${PORTSDIR}/math/py-fpconst
-RUN_DEPENDS:=	${PYXML} \
-		${BUILD_DEPENDS}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fpconst>0:${PORTSDIR}/math/py-fpconst
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		python
-USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
+USES=		python:2
+USE_PYTHON=	autoplist distutils
 
 CONFLICTS=	py*-soappy-0.11.*
 
