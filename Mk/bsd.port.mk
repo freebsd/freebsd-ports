@@ -5089,33 +5089,21 @@ ${TMPPLIST}:
 ${TMPPLIST_SORT}: ${TMPPLIST}
 	@${SORT} -u ${TMPPLIST} >${TMPPLIST_SORT}
 
-.if !target(add-plist-docs)
-.if defined(PORTDOCS) && !defined(NOPORTDOCS)
-add-plist-docs:
-.for x in ${PORTDOCS}
+.for _type in EXAMPLES DOCS
+.if !target(add-plist-${_type:tl})
+.if defined(PORT${_type}) && !defined(NOPORT${_type})
+add-plist-${_type:tl}:
+.for x in ${PORT${_type}}
 	@if ${ECHO_CMD} "${x}"| ${AWK} '$$1 ~ /(\*|\||\[|\]|\?|\{|\}|\$$)/ { exit 1};'; then \
-		if [ ! -e ${STAGEDIR}${DOCSDIR}/${x} ]; then \
-		${ECHO_CMD} ${DOCSDIR}/${x} >> ${TMPPLIST}; \
+		if [ ! -e ${STAGEDIR}${${_type}DIR}/${x} ]; then \
+		${ECHO_CMD} ${${_type}DIR}/${x} >> ${TMPPLIST}; \
 	fi;fi
 .endfor
-	@${FIND} -P ${PORTDOCS:S/^/${STAGEDIR}${DOCSDIR}\//} ! -type d 2>/dev/null | \
+	@${FIND} -P ${PORT${_type}:S/^/${STAGEDIR}${${_type}DIR}\//} ! -type d 2>/dev/null | \
 		${SED} -ne 's,^${STAGEDIR},,p' >> ${TMPPLIST}
 .endif
 .endif
-
-.if !target(add-plist-examples)
-.if defined(PORTEXAMPLES) && !defined(NOPORTEXAMPLES)
-add-plist-examples:
-.for x in ${PORTEXAMPLES}
-	@if ${ECHO_CMD} "${x}"| ${AWK} '$$1 ~ /(\*|\||\[|\]|\?|\{|\}|\$$)/ { exit 1};'; then \
-		if [ ! -e ${STAGEDIR}${EXAMPLESDIR}/${x} ]; then \
-		${ECHO_CMD} ${EXAMPLESDIR}/${x} >> ${TMPPLIST}; \
-	fi;fi
 .endfor
-	@${FIND} -P ${PORTEXAMPLES:S/^/${STAGEDIR}${EXAMPLESDIR}\//} ! -type d 2>/dev/null | \
-		${SED} -ne 's,^${STAGEDIR},,p' >> ${TMPPLIST}
-.endif
-.endif
 
 .if !target(add-plist-data)
 .if defined(PORTDATA)
