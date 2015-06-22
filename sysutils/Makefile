@@ -760,6 +760,7 @@
     SUBDIR += py-power
     SUBDIR += py-psutil
     SUBDIR += py-psutil121
+    SUBDIR += py-ptyprocess
     SUBDIR += py-pytsk
     SUBDIR += py-queuelib
     SUBDIR += py-ranger
