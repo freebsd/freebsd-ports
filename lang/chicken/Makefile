@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	chicken
-PORTVERSION=	4.10.0r1
+PORTVERSION=	4.10.0.r1
+PORTEPOCH=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://code.call-cc.org/dev-snapshots/2015/06/07/
-DISTNAME=	${PORTNAME}-${PORTVERSION:r1=rc1}
+DISTNAME=	${PORTNAME}-${PORTVERSION:.r1=rc1}
 
 MAINTAINER=	vmagerya@gmail.com
 COMMENT=	Scheme-to-C compiler
