@@ -4316,8 +4316,7 @@ pre-repackage:
 # install package cookie
 
 .if !target(package-noinstall)
-package-noinstall:
-	@cd ${.CURDIR} && ${MAKE} package
+package-noinstall: package
 .endif
 
 ################################################################
