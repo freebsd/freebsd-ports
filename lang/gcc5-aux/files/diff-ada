@@ -903,6 +903,17 @@
     Gcc_Path : String_Access := null;
  
     Non_Empty_Node : constant Project_Node_Id := 1;
+--- gcc/ada/s-oscons-tmplt.c.orig
++++ gcc/ada/s-oscons-tmplt.c
+@@ -1014,7 +1014,7 @@
+ 
+ */
+ 
+-#if defined (__FreeBSD__) || defined (linux)
++#if defined (__FreeBSD__) || defined (linux) || defined (__DragonFly__)
+ # define PTY_Library "-lutil"
+ #else
+ # define PTY_Library ""
 --- gcc/ada/s-osinte-android.ads.orig
 +++ gcc/ada/s-osinte-android.ads
 @@ -597,11 +597,11 @@
