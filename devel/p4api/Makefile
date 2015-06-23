@@ -15,6 +15,8 @@ EXTRACT_ONLY=	${TAR_FILES}
 MAINTAINER=	gordon@FreeBSD.org
 COMMENT=	Perforce API (static libraries and header files)
 
+BROKEN=		checksum mismatch
+
 ONLY_FOR_ARCHS=	amd64 i386
 
 RESTRICTED=	Restricted distribution
