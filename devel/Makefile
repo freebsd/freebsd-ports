@@ -250,6 +250,7 @@
     SUBDIR += clojure-cider
     SUBDIR += cloudabi-binutils
     SUBDIR += cloudabi-cloudlibc
+    SUBDIR += cloudabi-compiler-rt
     SUBDIR += cmake
     SUBDIR += cmake-fedora
     SUBDIR += cmake-gui
