@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bootstrap-sass
-PORTVERSION=	3.3.4.1
+PORTVERSION=	3.3.5
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
