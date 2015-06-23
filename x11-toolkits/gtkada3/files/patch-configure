@@ -1,12 +1,23 @@
---- configure.orig	2014-05-18 00:52:57.000000000 +0000
+--- configure.orig	2015-06-01 14:38:18 UTC
 +++ configure
-@@ -2158,6 +2158,9 @@ fi
+@@ -2107,6 +2107,11 @@ fi
        ac_GNATLIB=`cd $ac_GNATDIR; ls libgnat-*.dll | sed 's,lib,,;s,.dll,,'`
        OS_SPECIFIC_LINK_OPTIONS=-Wl,-L$ac_GNATDIR,-l$ac_GNATLIB
        ;;
 +   *dragonfly*|*bsd*)
-+      TARGET_LFLAGS="-lm"
++      if test x$CAN_BUILD_SHARED = xyes ; then
++         BUILD_SHARED=yes
++      fi
 +      ;;
     *darwin*)
        SO_EXT=.dylib
-       if test x$CAN_BUILD_SHARED = xyes ; then
+       NEED_OBJECTIVE_C=yes
+@@ -3605,7 +3610,7 @@ $as_echo_n "checking for GTK - version >
+     GTK_CFLAGS=`$PKG_CONFIG $GTK --cflags`
+     GTK_LIBS=`$PKG_CONFIG $GTK gmodule-2.0 --libs`
+ 
+-            GTK_LIBS="$GTK_LIBS $LDFLAGS"
++            GTK_LIBS="$GTK_LIBS $LDFLAGS -lm -lX11"
+ 
+                     ac_save_CFLAGS="$CFLAGS"
+     ac_save_LIBS="$LIBS"

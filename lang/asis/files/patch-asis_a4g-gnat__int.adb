@@ -1,6 +1,6 @@
---- asis/a4g-gnat_int.adb.orig	2014-04-10 13:38:35.000000000 +0000
+--- asis/a4g-gnat_int.adb.orig	2015-05-06 10:56:06 UTC
 +++ asis/a4g-gnat_int.adb
-@@ -229,40 +229,10 @@ package body A4G.GNAT_Int is
+@@ -231,40 +231,10 @@ package body A4G.GNAT_Int is
        Opt.Tree_Read;
  
        if Strong_Version_Check then

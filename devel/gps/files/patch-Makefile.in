@@ -1,4 +1,4 @@
---- Makefile.in.orig	2014-05-23 17:24:28 UTC
+--- Makefile.in.orig	2014-11-13 18:15:57 UTC
 +++ Makefile.in
 @@ -3,16 +3,15 @@ MV              = mv
  MKDIR           = mkdir -p
@@ -24,24 +24,28 @@
  
  all default:
  	$(MAKE) -C gps default
-@@ -49,16 +48,6 @@ ifeq ($(OS),Windows_NT)
+@@ -49,20 +48,6 @@ ifeq ($(OS),Windows_NT)
  		share/plug-ins/_subversion_ \
  		> share/plug-ins/subversion_native_windows.py
  endif
 -	$(RM) -f $(sharedir)/gps/GPS_old
 -	$(RM) $(sharedir)/gps/library/*.py
+-	$(RM) $(sharedir)/gps/library/*.pyc
 -	$(RM) $(sharedir)/gps/library/*.xml
 -	$(RM) $(sharedir)/gps/plug-ins/*.py
+-	$(RM) $(sharedir)/gps/plug-ins/*.pyc
 -	$(RM) $(sharedir)/gps/plug-ins/*.xml
 -	$(RM) -r $(sharedir)/gps/plug-ins/spark
 -	$(RM) $(sharedir)/gps/support/core/*.py
+-	$(RM) $(sharedir)/gps/support/core/*.pyc
 -	$(RM) $(sharedir)/gps/support/ui/*.py
+-	$(RM) $(sharedir)/gps/support/ui/*.pyc
 -	${RM} ${sharedir}/gps/perspectives.xml
 -	$(RMDIR) $(sharedir)/gps/templates
  # update runtime.xml before copying the plug-ins files.
- 	(cd distrib; $(PERL) from_impunit.pl)
+ 	cd distrib; $(PERL) from_impunit.pl
  # update light icon set
-@@ -71,12 +60,11 @@ ifeq ($(OS),Windows_NT)
+@@ -75,10 +60,8 @@ ifeq ($(OS),Windows_NT)
  	$(MV) share/plug-ins/_subversion_ share/plug-ins/subversion.py
  	$(RM) share/plug-ins/subversion_native_windows.py
  endif
@@ -50,13 +54,9 @@
  	(cd share; tar cf - library/*.py) | (cd $(sharedir)/gps; tar xf -)
 -	(cd share; tar cf - library/GPS_old/*.py) | (cd $(sharedir)/gps; tar xf -)
  	(cd share; tar cf - support/) | (cd $(sharedir)/gps; tar xf -)
--	$(AWK) -f distrib/gnat_switches.awk < gnat/gnat_ugn.texi > $(sharedir)/gps/support/core/gnat_switches.py
-+	$(AWK) -f distrib/gnat_switches.awk < @UTILSHARE@/gnat_ugn.texi \
-+		> $(sharedir)/gps/support/core/gnat_switches.py
+ 	-$(AWK) -f distrib/gnat_switches.awk < gnat/gnat_ugn.texi > $(sharedir)/gps/support/core/gnat_switches.py
  	$(RM) $(sharedir)/gps/plug-ins/emacs.xml
- 	$(RM) $(sharedir)/gps/plug-ins/python_doc.py
- 	$(RM) $(sharedir)/gps/plug-ins/python_doc.pyc
-@@ -103,7 +91,7 @@ ifeq ($(OS),Windows_NT)
+@@ -108,11 +91,10 @@ ifeq ($(OS),Windows_NT)
  	$(INSTALL_PROGRAM) gnatlib/src/obj/gnatinspect.exe $(bindir)
  	$(MAKE) -C common/expect install
  else
@@ -65,3 +65,7 @@
  	$(INSTALL_PROGRAM) cli/obj/gnatdoc $(bindir)
  	$(INSTALL_PROGRAM) cli/obj/gps_cli $(bindir)
  	$(INSTALL_PROGRAM) spark/obj/gnatspark $(bindir)
+-	$(INSTALL_PROGRAM) gnatlib/src/obj/gnatinspect $(bindir)
+ endif
+ 
+ install-strip: install-common
