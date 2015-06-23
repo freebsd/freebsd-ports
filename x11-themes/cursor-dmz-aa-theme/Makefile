@@ -7,7 +7,7 @@ CATEGORIES=	x11-themes
 MASTER_SITES=	http://jimmac.musichall.cz/zip/
 DISTNAME=	vanilla-dmz-aa-${PORTVERSION}
 
-MAINTAINER=	flz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The DMZ AA style neutral scalable cursor theme
 
 USES=	tar:bzip2
@@ -17,7 +17,7 @@ WRKSRC=		${WRKDIR}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/icons/Vanilla-DMZ-AA/cursors
-	cd ${WRKSRC}/Vanilla-DMZ-AA/cursors \
-		&& ${FIND} * | ${CPIO} -pdmu ${STAGEDIR}${PREFIX}/lib/X11/icons/Vanilla-DMZ-AA/cursors
+	cd ${WRKSRC}/Vanilla-DMZ-AA/cursors; \
+		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/X11/icons/Vanilla-DMZ-AA/cursors
 
 .include <bsd.port.mk>
