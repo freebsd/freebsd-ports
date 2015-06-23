@@ -1,6 +1,6 @@
---- mk/smtpd/Makefile.in.orig
-+++ mk/smtpd/Makefile.in
-@@ -1796,11 +1796,7 @@
+--- mk/smtpd/Makefile.in.orig	2015-06-20 04:17:57.656811000 +0000
++++ mk/smtpd/Makefile.in	2015-06-20 04:19:53.711103000 +0000
+@@ -1366,11 +1366,7 @@ install-exec-hook: $(CONFIGFILES) $(MANP
  	$(MKDIR_P) $(DESTDIR)$(mandir)/$(mansubdir)5
  	$(MKDIR_P) $(DESTDIR)$(mandir)/$(mansubdir)8
  
