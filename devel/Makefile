@@ -3957,6 +3957,7 @@
     SUBDIR += py-libpeas
     SUBDIR += py-libplist
     SUBDIR += py-libvirt
+    SUBDIR += py-libzfs
     SUBDIR += py-ll-core
     SUBDIR += py-lock_file
     SUBDIR += py-lockfile
