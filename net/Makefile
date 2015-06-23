@@ -677,6 +677,7 @@
     SUBDIR += p5-Net-Subnet
     SUBDIR += p5-Net-Syslog
     SUBDIR += p5-Net-TCLink
+    SUBDIR += p5-Net-TacacsPlus
     SUBDIR += p5-Net-TcpDumpLog
     SUBDIR += p5-Net-Telnet
     SUBDIR += p5-Net-Telnet-Netscreen
