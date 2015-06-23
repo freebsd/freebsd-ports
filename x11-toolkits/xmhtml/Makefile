@@ -36,7 +36,7 @@ do-install:
 		${CPIO} --quiet -dump -R ${SHAREOWN}:${SHAREGRP} \
 		${STAGEDIR}${DOCSDIR})
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@(cd ${WRKSRC} && ${FIND} book contrib examples ! -type d ! -name "*Makefile*" | \
-		${PAX} -rw ${STAGEDIR}${EXAMPLESDIR})
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "book contrib examples" \
+		${STAGEDIR}${EXAMPLESDIR} "! -type d ! -name Makefile"
 
 .include <bsd.port.mk>
