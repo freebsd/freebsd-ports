@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	camlp5
-PORTVERSION=	6.12
+PORTVERSION=	6.13
 CATEGORIES=	devel
 MASTER_SITES=	http://camlp5.gforge.inria.fr/distrib/src/ \
 		http://cristal.inria.fr/~ddr/camlp5/distrib/src/ \
