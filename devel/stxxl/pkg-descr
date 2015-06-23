@@ -1,10 +1,8 @@
-STXXL: Standard Template Library for Extra Large Data Sets.
-
-The core of STXXL is an implementation of the C++ standard template
-library STL for external memory (out-of-core) computations, i. e.,
-STXXL implements containers and algorithms that can process huge
-volumes of data that only fit on disks. While the closeness to the
-STL supports ease of use and compatibility with existing applications,
-another design priority is high performance.
+STXXL is an implementation of the C++ standard template library STL
+for external memory (out-of-core) computations, i. e. STXXL implements
+containers and algorithms that can process huge volumes of data
+that only fit on disks.  While the closeness to the STL supports
+ease of use and compatibility with existing applications, another
+design priority is high performance.
 
 WWW: http://stxxl.sourceforge.net/
