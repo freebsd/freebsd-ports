@@ -3,6 +3,7 @@
 
 PORTNAME=	subliminal
 PORTVERSION=	0.7.5
+PORTREVISION=	1
 CATEGORIES=	multimedia python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -30,5 +31,10 @@ GH_TAGNAME=	ea1fe66
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist
+
+post-patch:
+	@${REINPLACE_CMD} -e 's;charade;chardet;g' \
+                ${WRKSRC}/subliminal/providers/*.py \
+		${WRKSRC}/requirements.txt
 
 .include <bsd.port.mk>
