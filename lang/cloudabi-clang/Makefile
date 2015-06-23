@@ -3,7 +3,7 @@
 
 PORTNAME=	cloudabi-clang
 PORTVERSION=	1.0
-CATEGORIES=	devel
+CATEGORIES=	lang
 MASTER_SITES=	# None
 DISTFILES=	# None
 
