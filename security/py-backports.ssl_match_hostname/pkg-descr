@@ -1,3 +1,0 @@
-This backport brings match_hostname() to users of earlier versions of Python.
-
-WWW: https://pypi.python.org/pypi/backports.ssl_match_hostname
