@@ -81,4 +81,7 @@ NOTEs as of 10Aug2014:
 2) The PERL paths in the Cacti PERL scripts have been updated to
    /usr/local/bin.
 
+Other Erratas:
+Mount linprocfs in /compat/linux/proc will alow most scripts to work.
+
 =======================================================================
