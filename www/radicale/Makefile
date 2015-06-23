@@ -3,7 +3,7 @@
 
 PORTNAME=		radicale
 PORTVERSION=		0.10
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		www python
 MASTER_SITES=		CHEESESHOP
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ COMMENT=		Python based CalDAV/CardDAV server
 
 LICENSE=		GPLv3
 
-USE_PYTHON=		distutils
+USE_PYTHON=		autoplist distutils
 PYDISTUTILS_PKGNAME=	Radicale
 
 USERS=			radicale
