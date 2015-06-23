@@ -18,11 +18,7 @@ INSTALLS_ICONS=	yes
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons
-	(cd ${WRKSRC} && ${FIND} matefaenza -name '*[^~]' | \
-		${CPIO} -pdu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${PREFIX}/share/icons)
-	(cd ${WRKSRC} && ${FIND} matefaenzadark -name '*[^~]' | \
-		${CPIO} -pdu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${PREFIX}/share/icons)
-	(cd ${WRKSRC} && ${FIND} matefaenzagray -name '*[^~]' | \
-		${CPIO} -pdu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${PREFIX}/share/icons)
+	cd ${WRKSRC}; ${COPYTREE_SHARE} "matefaenza matefaenzadark matefaenzagray" \
+		${STAGEDIR}${PREFIX}/share/icons "-name '*[^~]'"
 
 .include <bsd.port.mk>
