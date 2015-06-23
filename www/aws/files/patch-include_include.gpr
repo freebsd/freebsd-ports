@@ -1,10 +1,10 @@
---- include/include.gpr.orig	2014-05-15 19:48:07.000000000 +0000
+--- include/include.gpr.orig	2015-06-22 10:52:10 UTC
 +++ include/include.gpr
 @@ -31,6 +31,7 @@ library project Include is
  
     for Library_Name use "aws_include";
     for Library_Kind use Shared.Library_Type;
 +   for Library_Options use ("-R", "-Wl,-R,@ADDITIONAL_RPATH@");
+    for Leading_Library_Options use Shared.Leading_Library_Options;
  
     ---------
-    -- Ide --

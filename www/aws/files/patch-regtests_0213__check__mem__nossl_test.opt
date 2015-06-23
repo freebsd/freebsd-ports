@@ -1,4 +1,4 @@
---- regtests/0213_check_mem_nossl/test.opt.orig	2014-05-15 19:48:07.000000000 +0000
+--- regtests/0213_check_mem_nossl/test.opt.orig	2014-11-15 19:27:52 UTC
 +++ regtests/0213_check_mem_nossl/test.opt
 @@ -1,3 +1,11 @@
  !xmlada DEAD

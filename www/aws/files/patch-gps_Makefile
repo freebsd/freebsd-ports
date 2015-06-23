@@ -1,5 +1,5 @@
---- gps/makefile.orig	2014-05-15 19:48:07.000000000 +0000
-+++ gps/makefile
+--- gps/Makefile.orig	2015-06-22 10:52:10 UTC
++++ gps/Makefile
 @@ -20,7 +20,7 @@
  
  ALL_API = $(sort $(shell ls ../src/core/*.ads ../src/extended/*.ads \

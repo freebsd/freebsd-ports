@@ -1,4 +1,4 @@
---- docs/Makefile.in.orig	2014-05-18 00:53:01.000000000 +0000
+--- docs/Makefile.in.orig	2015-06-01 14:38:17 UTC
 +++ docs/Makefile.in
 @@ -4,14 +4,12 @@ CP=cp -p
  MKDIR=mkdir -p

@@ -1,5 +1,5 @@
---- makefile.orig	2014-05-15 19:48:07.000000000 +0000
-+++ makefile
+--- Makefile.orig	2015-06-22 10:52:10 UTC
++++ Makefile
 @@ -61,15 +61,14 @@ ALL_OPTIONS	= $(MAKE_OPT) SOCKET="$(SOCK
  	GPRBUILD="$(GPRBUILD)" ZLIB="$(ZLIB)" BDIR="$(BDIR)" \
  	prefix="$(prefix)" ENABLE_SHARED="$(ENABLE_SHARED)" \
@@ -18,7 +18,7 @@
  
  run_regtests:
  	echo ""
-@@ -343,4 +342,5 @@ gen_setup:
+@@ -347,4 +346,5 @@ gen_setup:
  setup: gen_setup setup_dir setup_modules setup_config setup_tp $(GEXT_MODULE)
  
  setup_tp:
