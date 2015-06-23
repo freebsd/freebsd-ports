@@ -18,6 +18,7 @@ RUN_DEPENDS=	rubygem-chunky_png>=1.2:${PORTSDIR}/graphics/rubygem-chunky_png \
 		rubygem-rb-inotify>=0.9:${PORTSDIR}/devel/rubygem-rb-inotify \
 		rubygem-sass>=3.3.13:${PORTSDIR}/textproc/rubygem-sass
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
