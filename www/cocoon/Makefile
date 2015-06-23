@@ -23,6 +23,7 @@ LATEST_LINK=	${APP_NAME}
 PLIST=		${WRKDIR}/pkg-plist
 PDISTNAME=	${PORTNAME}-${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/pkg-message
+NO_ARCH=	yes
 
 COCOON_LIB=	${JAVASHAREDIR}/${APP_NAME}
 PLIST_SUB+=	COCOON_LIB="${COCOON_LIB}"
@@ -112,10 +113,7 @@ post-build:
 	| ${SED} -e "s|^|${APP_NAME}/|" >> ${PLIST}
 
 	@cd ${WRKSRC} && ${FIND} -H -d ${COPYDIRS} -type d -empty \
-	| ${SED} -e "s|^|@exec mkdir -p %D/${APP_NAME}/|" >> ${PLIST}
-
-	@cd ${WRKSRC} && ${FIND} -H -d ${COPYDIRS} -type d \
-	| ${SED} -e "s|^|@dirrm ${APP_NAME}/|" >> ${PLIST}
+	| ${SED} -e "s|^|@dir ${APP_NAME}/|" >> ${PLIST}
 
 	@${CAT} ${MASTERDIR}/pkg-plist >> ${PLIST}
 
