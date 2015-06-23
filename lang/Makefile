@@ -40,6 +40,7 @@
     SUBDIR += clang36
     SUBDIR += clojure
     SUBDIR += clojure-mode.el
+    SUBDIR += cloudabi-clang
     SUBDIR += cmucl
     SUBDIR += cmucl-extra
     SUBDIR += cocor
