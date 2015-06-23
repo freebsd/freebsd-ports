@@ -20,7 +20,7 @@ BUILD_DEPENDS=	gprbuild>=20140417:${PORTSDIR}/devel/gprbuild \
 		templates_parser>11:${PORTSDIR}/textproc/templates_parser
 LIB_DEPENDS=	libgtkada.so:${PORTSDIR}/x11-toolkits/gtkada3
 RUN_DEPENDS=	rsvg-convert:${PORTSDIR}/graphics/librsvg2 \
-		gnatinspect::${PORTSDIR}/devel/gnatcoll \
+		gnatinspect:${PORTSDIR}/devel/gnatcoll \
 		gdb${PORTGDB}:${PORTSDIR}/devel/gdb \
 		${PYTHON_PKGNAMEPREFIX}pep8>0:${PORTSDIR}/devel/pep8 \
 		${PYTHON_PKGNAMEPREFIX}jedi>0:${PORTSDIR}/devel/py-jedi
