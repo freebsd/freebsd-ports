@@ -1,5 +1,5 @@
---- ./install/index.php.orig	2013-08-06 19:31:19.000000000 -0700
-+++ ./install/index.php	2014-08-11 18:45:19.000000000 -0700
+--- install/index.php.bak	2015-03-12 03:12:05.409276443 -0700
++++ install/index.php	2015-03-12 03:14:17.596295374 -0700
 @@ -267,7 +267,7 @@
  if (config_value_exists("path_cactilog")) {
  	$input["path_cactilog"]["default"] = read_config_option("path_cactilog");
