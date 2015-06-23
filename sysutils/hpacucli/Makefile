@@ -3,7 +3,7 @@
 
 PORTNAME=	hpacucli
 PORTVERSION=	7.50
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/brooks
 
@@ -24,7 +24,7 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${APP_PREFIX}
-	${CP} -a ${WRKSRC}/lib* ${STAGEDIR}${APP_PREFIX}
+	${INSTALL_LIB} ${WRKSRC}/lib*.so ${STAGEDIR}${APP_PREFIX}
 	${INSTALL_PROGRAM} ${WRKSRC}/.${PORTNAME} ${STAGEDIR}${PREFIX}/libexec
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
 
@@ -32,7 +32,7 @@ do-install:
 
 .if ${ARCH} == amd64
 USE_LDCONFIG32=	${APP_PREFIX}
-.  if ${OSVERSION} < 1000019
+.  if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000019
 BROKEN=		currently does not work on amd64 (see PR ports/128288)
 .  endif
 .else
