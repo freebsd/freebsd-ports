@@ -3,7 +3,7 @@
 
 PORTNAME=	gksu
 PORTVERSION=	2.0.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.debian.org/~kov/gksu/
 
@@ -14,8 +14,7 @@ LIB_DEPENDS=	libgksu2.so:${PORTSDIR}/sysutils/libgksu \
 		libnautilus-extension.so:${PORTSDIR}/x11-fm/nautilus \
 		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
 
-USES=		desktop-file-utils gettext-tools gmake libtool pathfix \
-		pkgconfig
+USES=		gettext-tools gmake libtool pathfix pkgconfig
 USE_GNOME=	gconf2 gnomeprefix gtk20 intlhack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
