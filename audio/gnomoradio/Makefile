@@ -1,24 +1,25 @@
 # Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
 
-PORTNAME=		gnomoradio
-PORTVERSION=		0.15.1
-PORTREVISION=	18
-CATEGORIES=		audio net
-MASTER_SITES=		SAVANNAH
+PORTNAME=	gnomoradio
+PORTVERSION=	0.15.1
+PORTREVISION=	19
+CATEGORIES=	audio net
+MASTER_SITES=	SAVANNAH
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		Program for finding and playing free music from the Internet
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Program for finding and playing free music from the Internet
 
-LIB_DEPENDS=		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-			libao.so:${PORTSDIR}/audio/libao
+LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libao.so:${PORTSDIR}/audio/libao
 
-USES=			pathfix pkgconfig libtool
-GNU_CONFIGURE=		yes
-USE_GNOME=		gconfmm26 gnomeprefix gtkmm24
-USE_LDCONFIG=		yes
+USES=		pathfix pkgconfig libtool
+GNU_CONFIGURE=	yes
+USE_GNOME=	gconfmm26 gnomeprefix gtkmm24
+USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 post-patch:
 	@${REINPLACE_CMD} '/^rainbow_get_LDADD =/s/$$/ $$(RAINBOW_LIBS)/' \
