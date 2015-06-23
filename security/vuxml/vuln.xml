@@ -57,6 +57,36 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f5225b23-192d-11e5-a1cf-002590263bf5">
+    <topic>rubygem-bson -- DoS and possible injection</topic>
+    <affects>
+      <package>
+	<name>rubygem-bson</name>
+	<range><lt>3.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Phill MV reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/06/06/1">
+	  <p>By submitting a specially crafted string to a service relying on
+	    the bson rubygem, an attacker may trigger denials of service or even
+	    inject data into victim's MongoDB instances.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4412</cvename>
+      <mlist>http://www.openwall.com/lists/oss-security/2015/06/06/1</mlist>
+      <url>http://sakurity.com/blog/2015/06/04/mongo_ruby_regexp.html</url>
+      <url>https://github.com/mongodb/bson-ruby/commit/976da329ff03ecdfca3030eb6efe3c85e6db9999</url>
+    </references>
+    <dates>
+      <discovery>2015-06-04</discovery>
+      <entry>2015-06-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cdff0af2-1492-11e5-a1cf-002590263bf5">
     <topic>php5 -- multiple vulnerabilities</topic>
     <affects>
