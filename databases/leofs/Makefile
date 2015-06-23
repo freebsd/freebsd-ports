@@ -15,6 +15,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/erlang17/bin/erlc:${PORTSDIR}/lang/erlang-runtim
 		${LOCALBASE}/bin/cmake:${PORTSDIR}/devel/cmake \
 		${LOCALBASE}/lib/libcheck.a:${PORTSDIR}/devel/libcheck
 
+BROKEN_i386=	does not build on i386
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	leo-project
 
