@@ -6,7 +6,7 @@
 #
 # Feature:      ada
 # Usage:        USES=ada
-# Valid ARGS:   47, 49, 5
+# Valid ARGS:   49, 5
 #
 # MAINTAINER: marino@FreeBSD.org
 
@@ -15,9 +15,7 @@ _INCLUDE_USES_ADA_MK=    yes
 
 CC= ada
 
-. if ${ada_ARGS:M47}
-ADAXX=	gcc47
-. elif ${ada_ARGS:M49}
+. if ${ada_ARGS:M49}
 ADAXX=	gcc
 . elif ${ada_ARGS:M5}
 ADAXX=	gcc5
