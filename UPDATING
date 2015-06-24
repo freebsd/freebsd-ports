@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150624:
+  AFFECTS: users of devel/p5-Test-Tester and devel/p5-Test-use-ok
+  AUTHOR: adamw@FreeBSD.org
+
+  The Test::Tester and Test::use::ok modules have been rolled into
+  devel/p5-Test-Simple, and are included in perl 5.22. The p5-Test-Tester
+  and p5-Test-use-ok modules will be removed in one month.
+
+  If you use either of those ports and have perl-5.22 installed:
+
+      pkg delete p5-Test-Tester p5-Test-use-ok
+
+  If you use either of those ports and have perl-5.20 or lower installed:
+
+      portmaster -o devel/p5-Test-Simple p5-Test-Tester
+      portmaster -o devel/p5-Test-Simple p5-Test-use-ok
+
 20150615:
   AFFECTS: users of security/libressl
   AUTHOR: brnrd@FreeBSD.org 
