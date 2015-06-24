@@ -1,0 +1,7 @@
+TkGate is a event driven digital circuit simulator with a tcl/tk-based
+graphical editor. TkGate supports a wide range of primitive circuit elements as
+well as user-defined modules for hierarchical design.
+
+The distribution comes with a number of tutorial and example circuits.
+
+WWW: http://tkgate.org/

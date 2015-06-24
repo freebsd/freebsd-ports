@@ -84,6 +84,7 @@
     SUBDIR += slffea
     SUBDIR += spice
     SUBDIR += sweethome3d
+    SUBDIR += tkgate
     SUBDIR += tochnog
     SUBDIR += transcalc
     SUBDIR += varkon
