@@ -12,6 +12,7 @@ LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
+		${LOCALBASE}/bin/git:${PORTSDIR}/devel/git \
 		sqlite3:${PORTSDIR}/databases/sqlite3
 RUN_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
