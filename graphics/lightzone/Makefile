@@ -3,8 +3,8 @@
 
 PORTNAME=	lightzone
 DISTVERSION=	4.1.1
+PORTREVISION=	1
 CATEGORIES=	graphics java
-MASTER_SITES=	GH
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	yuri@rawbw.com
@@ -38,20 +38,22 @@ JAVA_BUILD=	yes
 JAVA_RUN=	yes
 INSTALLS_ICONS=	yes
 
-DATADIR=	${PREFIX}/libexec/${PORTNAME}
-WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME}/linux
+LIBDIR=	${PREFIX}/lib/${PORTNAME}
+PLIST_SUB=	LIBDIR="${LIBDIR}"
+WRKSRC_SUBDIR=		linux
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|' -e 's|g++|${CXX}|' ${WRKSRC}/../lightcrafts/mk/platform.mk
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/products/lightzone
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/products/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 	@${MKDIR} ${STAGEDIR}${JAVASHAREDIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/products/*.jar ${STAGEDIR}${JAVASHAREDIR}/${PORTNAME}
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/products/LightZone-forkd ${STAGEDIR}${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/products/dcraw_lz ${STAGEDIR}${DATADIR}
-	${INSTALL_LIB} ${WRKSRC}/products/*.so ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${LIBDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/products/LightZone-forkd ${STAGEDIR}${LIBDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/products/dcraw_lz ${STAGEDIR}${LIBDIR}
+	${INSTALL_LIB} ${WRKSRC}/products/*.so ${STAGEDIR}${LIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/products/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications/
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} icons ${STAGEDIR}${PREFIX}/share/
 
