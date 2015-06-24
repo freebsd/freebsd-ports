@@ -1,6 +1,6 @@
---- installManPage.orig	2013-01-15 15:06:06.000000000 +0100
-+++ installManPage	2013-01-15 15:07:17.000000000 +0100
-@@ -100,7 +100,7 @@
+--- installManPage.orig	2015-03-06 15:13:58 UTC
++++ installManPage
+@@ -99,7 +99,7 @@ SrcDir=`dirname $ManPage`
  
  First=""
  for Target in $Names; do

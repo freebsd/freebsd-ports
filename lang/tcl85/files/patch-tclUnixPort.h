@@ -1,7 +1,7 @@
---- tclUnixPort.h.orig	2012-08-02 15:43:23.269506562 +0200
-+++ tclUnixPort.h	2012-08-02 15:43:25.167507612 +0200
-@@ -631,7 +631,9 @@
- EXTERN struct tm *TclpGmtime(CONST time_t *);
+--- tclUnixPort.h.orig	2015-02-12 15:13:16 UTC
++++ tclUnixPort.h
+@@ -625,7 +625,9 @@ typedef int socklen_t;
+ #  include <pthread.h>
  /* #define localtime(x)	TclpLocaltime(x)
   * #define gmtime(x)	TclpGmtime(x)    */
 -#   undef inet_ntoa
