@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-File
-PORTVERSION=	1.42
+PORTVERSION=	1.43
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +18,11 @@ TEST_DEPENDS=	p5-Test-utf8>=0:${PORTSDIR}/devel/p5-Test-utf8
 USES=		perl5
 USE_PERL5=	configure
 
-post-install:
-	${FIND} ${STAGEDIR} \( -name README.pod -o -name Test::README.3 \) -delete
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${PERL_LEVEL} < 502104
+BUILD_DEPENDS+=	p5-Test-Simple>=1.001.006:${PORTSDIR}/devel/p5-Test-Simple
+RUN_DEPENDS+=	p5-Test-Simple>=1.001.006:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
