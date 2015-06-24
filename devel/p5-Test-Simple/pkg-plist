@@ -5,7 +5,13 @@
 %%SITE_PERL%%/Test/Builder/Tester/Color.pm
 %%SITE_PERL%%/Test/More.pm
 %%SITE_PERL%%/Test/Simple.pm
+%%SITE_PERL%%/Test/Tester.pm
+%%SITE_PERL%%/Test/Tester/Capture.pm
+%%SITE_PERL%%/Test/Tester/CaptureRunner.pm
+%%SITE_PERL%%/Test/Tester/Delegate.pm
 %%SITE_PERL%%/Test/Tutorial.pod
+%%SITE_PERL%%/Test/use/ok.pm
+%%SITE_PERL%%/ok.pm
 %%PERL5_MAN3%%/Test::Builder.3.gz
 %%PERL5_MAN3%%/Test::Builder::IO::Scalar.3.gz
 %%PERL5_MAN3%%/Test::Builder::Module.3.gz
@@ -13,4 +19,9 @@
 %%PERL5_MAN3%%/Test::Builder::Tester::Color.3.gz
 %%PERL5_MAN3%%/Test::More.3.gz
 %%PERL5_MAN3%%/Test::Simple.3.gz
+%%PERL5_MAN3%%/Test::Tester.3.gz
+%%PERL5_MAN3%%/Test::Tester::Capture.3.gz
+%%PERL5_MAN3%%/Test::Tester::CaptureRunner.3.gz
 %%PERL5_MAN3%%/Test::Tutorial.3.gz
+%%PERL5_MAN3%%/Test::use::ok.3.gz
+%%PERL5_MAN3%%/ok.3.gz
