@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	ocurl
-PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTVERSION=	0.7.3
 CATEGORIES=	ftp
-MASTER_SITES=	https://forge.ocamlcore.org/frs/download.php/1463/ \
+MASTER_SITES=	https://forge.ocamlcore.org/frs/download.php/1521/ \
 		http://ygrek.org.ua/p/release/ocurl/
 PKGNAMEPREFIX=	ocaml-
 
@@ -27,7 +26,23 @@ USE_OCAML_FINDLIB=	yes
 USE_OCAML_LDCONFIG=	yes
 OCAML_PKGDIRS=		curl
 
+OPTIONS_DEFINE=	LWT
+OPTIONS_DEFAULT=LWT
+OPTIONS_SUB=	yes
+LWT_DESC=	Include threading support (ocaml-lwt)
+LWT_RUN_DEPENDS=${LOCALBASE}/${OCAML_SITELIBDIR}/lwt/lwt.a:${PORTSDIR}/devel/ocaml-lwt
+LWT_BUILD_DEPENDS=${LWT_RUN_DEPENDS}
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/curl/dllcurl-helper.so
+
+.include <bsd.port.options.mk>
+
+.if ! ${PORT_OPTIONS:MLWT}
+# Override auto-detection
+post-configure:
+	${REINPLACE_CMD} 's/(lwt,no)/(no,no)/' ${WRKSRC}/Makefile \
+		${WRKSRC}/examples/Makefile
+.endif
 
 .include <bsd.port.mk>
