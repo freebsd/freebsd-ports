@@ -2540,11 +2540,40 @@ Notes:
   </vuln>
 
   <vuln vid="57325ecf-facc-11e4-968f-b888e347c638">
-    <topic>dcraw, kodi, libraw, rawstudio, and ufraw -- integer overflow condition</topic>
+    <topic>dcraw -- integer overflow condition</topic>
     <affects>
+      <package>
+	<name>cinepaint</name>
+	<!-- no known fixed version -->
+	<range><ge>0.22.0</ge></range>
+      </package>
+      <package>
+	<name>darktable</name>
+	<range><lt>1.6.7</lt></range>
+      </package>
       <package>
 	<name>dcraw</name>
 	<range><ge>7.00</ge><lt>9.26</lt></range>
+      </package>
+      <package>
+	<name>dcraw-m</name>
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>exact-image</name>
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>flphoto</name>
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>freeimage</name>
+	<!-- no known fixed version -->
+	<range><ge>3.13.0</ge></range>
       </package>
       <package>
 	<name>kodi</name>
@@ -2553,6 +2582,21 @@ Notes:
       <package>
 	<name>libraw</name>
 	<range><lt>0.16.1</lt></range>
+      </package>
+      <package>
+	<name>lightzone</name>
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>netpbm</name>
+	<range><lt>10.47.56</lt></range>
+	<range><ge>10.70</ge><lt>10.70.06</lt></range>
+      </package>
+      <package>
+	<name>opengtl</name>
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
       </package>
       <package>
 	<name>rawstudio</name>
@@ -2583,11 +2627,12 @@ Notes:
       <url>http://www.ocert.org/advisories/ocert-2015-006.html</url>
       <url>https://github.com/rawstudio/rawstudio/commit/983bda1f0fa5fa86884381208274198a620f006e</url>
       <url>https://github.com/LibRaw/LibRaw/commit/4606c28f494a750892c5c1ac7903e62dd1c6fdb5</url>
+      <url>https://sourceforge.net/p/netpbm/code/2512/</url>
     </references>
     <dates>
       <discovery>2015-04-24</discovery>
       <entry>2015-05-15</entry>
-      <modified>2015-06-06</modified>
+      <modified>2015-06-24</modified>
     </dates>
   </vuln>
 
