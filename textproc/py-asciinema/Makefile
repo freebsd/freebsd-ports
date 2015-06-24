@@ -15,4 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.0.1:${PORTSDIR}/www/py-requests
 USES=		python
 USE_PYTHON=	distutils autoplist
 
+DEPRECATED=	use textproc/asciinema instead
+EXPIRATION_DATE=	2015-07-23
+
 .include <bsd.port.mk>
