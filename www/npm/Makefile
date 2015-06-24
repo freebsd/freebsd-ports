@@ -54,6 +54,7 @@ post-install:
 # require: bash, git, gmake, perl, node
 
 MS_DISTNAME=	${PORTNAME}-${MS_VERSION}
+MS_PLIST=	${WRKDIR}/.ms-pkg-plist
 MS_RELEASES=	${MS_WRKSRC}/releases
 MS_VERSION=	`${CAT} ${MS_VERSIONFILE}`
 MS_VERSIONFILE=	${MS_WRKSRC}/.version
@@ -64,6 +65,11 @@ GITHUB_RELEASES=https://github.com/${GITHUB_USER}/${GITHUB_PROJECT}/releases/lat
 GITHUB_TARBALL=	https://github.com/${GITHUB_USER}/${GITHUB_PROJECT}/archive/${GITHUB_VERSION}.tar.gz
 GITHUB_USER=	${PORTNAME}
 GITHUB_VERSION=	v${MS_VERSION}
+
+genplist: do-clean stage
+	@${MAKE_CMD} makeplist > ${MS_PLIST}
+	@${SED} -i '' '1 d; /^lib\/node_modules\/npm\/bin\/node-gyp-bin\/node-gyp$$/ s|^|@(,,755) |' ${MS_PLIST}
+	@${INSTALL} -m 600 ${MS_PLIST} ${PLIST}
 
 maketar: do-clean
 	@${MKDIR} ${MS_WRKSRC}/
