@@ -16,10 +16,15 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Data-Dump>=0:${PORTSDIR}/devel/p5-Data-Dump
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Refcount>=0:${PORTSDIR}/devel/p5-Test-Refcount \
-		p5-Test-Tester>=0.10.7:${PORTSDIR}/devel/p5-Test-Tester
+TEST_DEPENDS=	p5-Test-Refcount>=0:${PORTSDIR}/devel/p5-Test-Refcount
 
 USE_PERL5=	configure
 USES=		perl5
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502200
+TEST_DEPENDS+=  p5-Test-Simple>=1.001.014:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>

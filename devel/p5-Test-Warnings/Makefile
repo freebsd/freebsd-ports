@@ -15,10 +15,15 @@ LICENSE_COMB=	dual
 
 TEST_DEPENDS=	p5-CPAN-Meta-Check>=0.007:${PORTSDIR}/devel/p5-CPAN-Meta-Check \
 		p5-Capture-Tiny>=0:${PORTSDIR}/devel/p5-Capture-Tiny \
-		p5-Test-Kwalitee>=1.12:${PORTSDIR}/devel/p5-Test-Kwalitee \
-		p5-Test-Tester>=0.108:${PORTSDIR}/devel/p5-Test-Tester
+		p5-Test-Kwalitee>=1.12:${PORTSDIR}/devel/p5-Test-Kwalitee
 
 USE_PERL5=	configure
 USES=		perl5
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502200
+TEST_DEPENDS+=	p5-Test-Simple>=1.001.014:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>

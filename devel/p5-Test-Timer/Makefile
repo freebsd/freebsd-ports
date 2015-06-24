@@ -12,11 +12,16 @@ MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Perl test module to test/assert response times
 
 BUILD_DEPENDS=	p5-Error>=0:${PORTSDIR}/lang/p5-Error
-TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
-		p5-Test-Tester>=0:${PORTSDIR}/devel/p5-Test-Tester
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 RUN_DEPENDS=	p5-Error>=0:${PORTSDIR}/lang/p5-Error
 
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502200
+TEST_DEPENDS+=	p5-Test-Simple>=1.001.014:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
