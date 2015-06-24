@@ -27,7 +27,9 @@ lib/libtest-4e7c5e5c.so
 lib/rustlib/components
 lib/rustlib/etc/gdb_load_rust_pretty_printers.py
 lib/rustlib/etc/gdb_rust_pretty_printing.py
+lib/rustlib/manifest-rustc
 lib/rustlib/rust-installer-version
+lib/rustlib/uninstall.sh
 lib/rustlib/x86_64-unknown-freebsd/lib/liballoc-4e7c5e5c.rlib
 lib/rustlib/x86_64-unknown-freebsd/lib/libarena-4e7c5e5c.rlib
 lib/rustlib/x86_64-unknown-freebsd/lib/libarena-4e7c5e5c.so
