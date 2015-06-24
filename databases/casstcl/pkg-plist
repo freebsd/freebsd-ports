@@ -1,0 +1,13 @@
+include/casstcl.h
+include/casstcl_batch.h
+include/casstcl_cassandra.h
+include/casstcl_consistency.h
+include/casstcl_error.h
+include/casstcl_event.h
+include/casstcl_future.h
+include/casstcl_log.h
+include/casstcl_prepared.h
+include/casstcl_types.h
+lib/casstcl%%PORTVERSION%%/casstcl.tcl
+lib/casstcl%%PORTVERSION%%/libcasstcl.so.1
+lib/casstcl%%PORTVERSION%%/pkgIndex.tcl
