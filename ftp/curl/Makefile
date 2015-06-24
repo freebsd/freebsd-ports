@@ -3,6 +3,7 @@
 
 PORTNAME=	curl
 PORTVERSION=	7.43.0
+PORTREVISION=	1
 CATEGORIES=	ftp www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		LOCAL/sunpoet
@@ -161,11 +162,14 @@ IGNORE=		only supports LDAPS with SSL
 IGNORE=		only supports LIBSSH2 with OpenSSL
 .endif
 
-.if ${PORT_OPTIONS:MOPENSSL} && defined(OPENSSL_PORT) && ${OPENSSL_PORT} == "security/libressl"
+.if ${PORT_OPTIONS:MOPENSSL} && ( \
+	defined(WITH_OPENSSL_PORT) || \
+	(!defined(WITH_OPENSSL_BASE) && exists(${LOCALBASE}/lib/libcrypto.so)) || \
+	(defined(OPENSSL_PORT) && ${OPENSSL_PORT} == "security/libressl"))
 .if ${PORT_OPTIONS:MGSSAPI_BASE}
-IGNORE=		with GSSAPI_BASE, configure failed to detect OpenSSL/LibreSSL from ports and link against base OpenSSL
+IGNORE=		with GSSAPI_BASE, configure failed to detect OpenSSL/LibreSSL from ports and links against base OpenSSL
 .endif
-.if ${PORT_OPTIONS:MTLS_SRP}
+.if ${PORT_OPTIONS:MTLS_SRP} && defined(OPENSSL_PORT) && ${OPENSSL_PORT} == "security/libressl"
 IGNORE=		unsupported TLS-SRP in LibreSSL
 .endif
 .endif
