@@ -13,6 +13,8 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
+USES=		cpe
+CPE_VENDOR=	elasticsearch
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 JAVA_EXTRACT=	yes
