@@ -57,6 +57,47 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d02f6b01-1a3f-11e5-8bd6-c485083ca99c">
+    <topic>Adobe Flash Player -- critical vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-c6-flashplugin11</name>
+	<range><lt>11.2r202.466</lt></range>
+      </package>
+      <package>
+	<name>linux-f10-flashplugin11</name>
+	<range><lt>11.2r202.466</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="https://helpx.adobe.com/security/products/flash-player/apsb15-14.html">
+	  <p>
+	    Adobe has released security updates for Adobe Flash Player for
+	    Windows, Macintosh and Linux. These updates address a critical
+	    vulnerability (CVE-2015-3113) that could potentially allow an
+	    attacker to take control of the affected system.
+	  </p>
+	  <p>
+	    Adobe is aware of reports that CVE-2015-3113 is being actively
+	    exploited in the wild via limited, targeted attacks. Systems running
+	    Internet Explorer for Windows 7 and below, as well as Firefox on
+	    Windows XP, are known targets.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://helpx.adobe.com/security/products/flash-player/apsb15-14.html</url>
+      <cvename>CVE-2015-3113</cvename>
+    </references>
+    <dates>
+      <discovery>2015-06-23</discovery>
+      <entry>2015-06-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f5225b23-192d-11e5-a1cf-002590263bf5">
     <topic>rubygem-bson -- DoS and possible injection</topic>
     <affects>
