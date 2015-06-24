@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openssh
-DISTVERSION=	20150608
+DISTVERSION=	20150624
 PORTREVISION=	0
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://www.mindrot.org/openssh_snap/ \
