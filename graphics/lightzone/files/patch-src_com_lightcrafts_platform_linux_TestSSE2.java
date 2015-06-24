@@ -1,4 +1,4 @@
---- src/com/lightcrafts/platform/linux/TestSSE2.java.orig	2015-06-23 04:17:32 UTC
+--- src/com/lightcrafts/platform/linux/TestSSE2.java.orig	2015-06-02 13:25:15 UTC
 +++ src/com/lightcrafts/platform/linux/TestSSE2.java
 @@ -29,6 +29,8 @@ class TestSSE2 {
              regex = "^flags\t\t:.*sse2";
