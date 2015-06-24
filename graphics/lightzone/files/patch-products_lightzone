@@ -1,0 +1,13 @@
+--- products/lightzone.orig	2015-06-23 04:08:58 UTC
++++ products/lightzone
+@@ -15,8 +15,8 @@ elif [ "${PLATFORM}" = "SunOS" ]; then
+   totalmem=`expr $totalmem \* 1024`
+   usrdir=/usr
+ elif [ "${PLATFORM}" = "FreeBSD" ]; then
+-  totalmem=`dmesg | grep 'real memory' | sed -r 's/.* ([0-9]+) .*/\1/'`
+-  totalmem=`expr $totalmem / 1024`
++  totalmem=`sysctl -n hw.physmem`
++  totalmem=$(($totalmem / 1024))
+   usrdir=/usr/local
+ fi
+ 
