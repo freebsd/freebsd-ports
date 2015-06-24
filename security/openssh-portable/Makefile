@@ -79,6 +79,8 @@ TCP_WRAPPERS_CONFIGURE_WITH=	tcp-wrappers
 LIBEDIT_CONFIGURE_WITH=	libedit
 BSM_CONFIGURE_ON=	--with-audit=bsm
 
+ETCDIR?=		${PREFIX}/etc/ssh
+
 .include <bsd.port.pre.mk>
 
 PATCH_SITES+=		http://mirror.shatow.net/freebsd/${PORTNAME}/:DEFAULT,x509,hpn,gsskex
@@ -177,7 +179,6 @@ IGNORE=	Overwrite base option is no longer supported.
 .endif
 
 USE_RC_SUBR=		openssh
-ETCDIR=			${PREFIX}/etc/ssh
 
 # After all
 CONFIGURE_ARGS+=	--sysconfdir=${ETCDIR} --with-privsep-path=${EMPTYDIR}
