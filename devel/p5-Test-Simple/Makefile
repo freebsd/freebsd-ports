@@ -14,6 +14,8 @@ COMMENT=	Basic utilities for writing tests in perl
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+CONFLICTS=	p5-Test-Tester-[0-9]* p5-Test-use-ok-[0-9]*
+
 USES=		perl5
 USE_PERL5=	configure
 
