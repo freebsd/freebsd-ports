@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# PROVIDE: docker
+# REQUIRE: DAEMON
+# KEYWORD: nojail shutdown
+
+. /etc/rc.subr
+
+name="docker"
+rcvar="docker_enable"
+
+stop_cmd="docker_stop"
+start_cmd="docker_start"
+command="%%PREFIX%%/bin/docker"
+
+load_rc_config $name
+
+: ${docker_enable=NO}
+: ${docker_dir=/usr/docker}
+
+docker_start()
+{
+	if [ ! -d "$docker_dir" ] ; then
+		echo "Missing $docker_dir! Please create / mount a ZFS dataset at this location."
+		exit 1
+	fi
+	daemon -p /var/run/docker.pid ${command} -d -e jail -s zfs -g ${docker_dir} -D >/var/log/docker.log 2>/var/log/docker.log
+}
+
+docker_stop()
+{
+	if [ -e "/var/run/docker.pid" ] ; then
+		pkill -F /var/run/docker.pid 
+		rm /var/run/docker.pid
+	fi
+}
+
+run_rc_command "$1"
+

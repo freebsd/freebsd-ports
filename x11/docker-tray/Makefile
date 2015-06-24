@@ -1,7 +1,7 @@
 # Created by: Samy Al Bahra <samy@kerneled.org>
 # $FreeBSD$
 
-PORTNAME=	docker
+PORTNAME=	docker-tray
 PORTVERSION=	1.5
 PORTREVISION=	8
 CATEGORIES=	x11

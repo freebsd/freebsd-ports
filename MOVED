@@ -7641,3 +7641,4 @@ multimedia/avidemux26|multimedia/avidemux|2015-06-13|Renamed
 editors/zim|deskutils/zim|2015-06-18|Move to more appropriate category
 net/py-ldap2|net/py-ldap|2015-06-18|Rename to better match upstream name
 erlang-mustache|erlang-bbmustache|2015-06-21|Renamed upstream
+x11/docker|x11/docker-tray|2015-06-23|Rename to avoid conflict with sysutils/docker
