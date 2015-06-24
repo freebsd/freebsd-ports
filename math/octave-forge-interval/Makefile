@@ -29,7 +29,7 @@ post-build:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1000000 && ${ARCH} == "i386"
+.if ${OSVERSION} < 1000000 || ${ARCH} == "i386"
 BROKEN=		Doesn't build on FreeBSD 9 nor i386
 .endif
 
