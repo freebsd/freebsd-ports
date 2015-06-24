@@ -49,7 +49,6 @@ OPTIONS_EXCLUDE_DragonFly=	SCTP
 
 ERL_RELEASE=	18.0
 
-USES=		autoreconf gmake perl5
 USES=		gmake perl5
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
