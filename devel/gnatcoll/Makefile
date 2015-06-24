@@ -3,6 +3,7 @@
 
 PORTNAME=	gnatcoll
 PORTVERSION=	2015
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	${PORTNAME}-gpl-${PORTVERSION}-src
@@ -16,6 +17,7 @@ BUILD_DEPENDS=	gprbuild>=20120510:${PORTSDIR}/devel/gprbuild \
 		gnat_util>=20140422:${PORTSDIR}/lang/gnat_util
 LIB_DEPENDS=	libgtkada.so:${PORTSDIR}/x11-toolkits/gtkada3 \
 		libgmp.so:${PORTSDIR}/math/gmp
+RUN_DEPENDS=	gnat_util>=20140422:${PORTSDIR}/lang/gnat_util
 
 USES=		ada gmake pkgconfig python
 USE_GNOME=	pygobject3
