@@ -15,6 +15,8 @@ COMMENT=	Technology for engineering high-reliability s/w applications
 
 LICENSE=	GPLv3
 
+BROKEN=		brutally fails test suite - with ICE
+
 BUILD_DEPENDS=	gnatcoll>=2014:${PORTSDIR}/devel/gnatcoll
 RUN_DEPENDS=	gnatwhy3:${PORTSDIR}/math/why3-gpl \
 		alt-ergo:${PORTSDIR}/math/alt-ergo
