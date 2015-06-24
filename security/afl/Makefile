@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	afl
-PORTVERSION=	1.56b
+PORTVERSION=	1.80b
 CATEGORIES=	security
 MASTER_SITES=	http://lcamtuf.coredump.cx/afl/releases/
 
 MAINTAINER=	fk@fabiankeil.de
 COMMENT=	Fast instrumented fuzzer
+
+LICENSE=	APACHE20
 
 USES=		compiler gmake tar:tgz
 
