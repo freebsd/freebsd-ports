@@ -57,6 +57,59 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ad4d3871-1a0d-11e5-b43d-002590263bf5">
+    <topic>logstash-forwarder and logstash -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>logstash-forwarder</name>
+	<range><lt>0.4.0.20150507</lt></range>
+      </package>
+      <package>
+	<name>logstash</name>
+	<range><lt>1.4.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Elastic reports:</p>
+	<blockquote cite="https://www.elastic.co/blog/logstash-1-4-3-released">
+	  <p>The combination of Logstash Forwarder and Lumberjack input (and
+	    output) was vulnerable to the POODLE attack in SSLv3 protocol. We
+	    have disabled SSLv3 for this combination and set the minimum version
+	    to be TLSv1.0. We have added this vulnerability to our CVE page and
+	    are working on filling out the CVE.</p>
+	  <p>Thanks to Tray Torrance, Marc Chadwick, and David Arena for
+	    reporting this.</p>
+	  <p>An attacker could use the File output plugin with dynamic
+	    field references in the path option to traverse paths outside
+	    of Logstash directory. This technique could also be used to
+	    overwrite any files which can be accessed with permissions
+	    associated with Logstash user. This release sandboxes the
+	    paths which can be traversed using the configuration.
+	    We have also disallowed use of dynamic field references
+	    if the path options is pointing to an absolute path.
+	    [CVE-2015-4152].</p>
+	</blockquote>
+	<blockquote cite="https://www.elastic.co/blog/logstash-forwarder-0-4-0-released">
+	  <p>SSLv3 is no longer supported; TLS 1.0+ is required (compatible
+	    with Logstash 1.4.2+).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <!-- POODLE CVE pending -->
+      <cvename>CVE-2015-4152</cvename>
+      <freebsdpr>ports/201065</freebsdpr>
+      <freebsdpr>ports/201065</freebsdpr>
+      <url>https://www.elastic.co/blog/logstash-1-4-3-released</url>
+      <url>https://www.elastic.co/blog/logstash-forwarder-0-4-0-released</url>
+    </references>
+    <dates>
+      <discovery>2015-06-09</discovery>
+      <entry>2015-06-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d02f6b01-1a3f-11e5-8bd6-c485083ca99c">
     <topic>Adobe Flash Player -- critical vulnerabilities</topic>
     <affects>
