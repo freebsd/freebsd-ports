@@ -57,8 +57,81 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="24bde04f-1a10-11e5-b43d-002590263bf5">
+    <topic>logstash -- Directory traversal vulnerability in the file output plugin</topic>
+    <affects>
+      <package>
+	<name>logstash</name>
+	<range><lt>1.4.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Elastic reports:</p>
+	<blockquote cite="https://www.elastic.co/blog/logstash-1-4-3-released">
+	  <p>An attacker could use the File output plugin with dynamic field
+	    references in the path option to traverse paths outside of Logstash
+	    directory. This technique could also be used to overwrite any files
+	    which can be accessed with permissions associated with Logstash
+	    user. This release sandboxes the paths which can be traversed using
+	    the configuration. We have also disallowed use of dynamic field
+	    references if the path options is pointing to an absolute path.</p>
+	  <p>We have added this vulnerability to our CVE page and are working
+	    on filling out the CVE. We would like to thank Colin Coghill for
+	    reporting the issue and working with us on the resolution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4152</cvename>
+      <url>https://www.elastic.co/blog/logstash-1-4-3-released</url>
+      <url>https://www.elastic.co/community/security</url>
+    </references>
+    <dates>
+      <discovery>2015-06-09</discovery>
+      <entry>2015-06-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2184ccad-1a10-11e5-b43d-002590263bf5">
+    <topic>logstash -- Remote command execution in Logstash zabbix and nagios_nsca outputs</topic>
+    <affects>
+      <package>
+	<name>logstash</name>
+	<range><lt>1.4.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Elastic reports:</p>
+	<blockquote cite="https://www.elastic.co/blog/logstash-1-4-2">
+	  <p>The vulnerability impacts deployments that use the either the
+	    zabbix or the nagios_nsca outputs. In these cases, an attacker
+	    with an ability to send crafted events to any source of data for
+	    Logstash could execute operating system commands with the
+	    permissions of the Logstash process.</p>
+	  <p>Deployments that do not use the zabbix or the nagios_nsca outputs
+	    are not vulnerable and do not need to upgrade for this reason.</p>
+	  <p>We have added this vulnerability to our CVE page and are working
+	    on filling out the CVE.</p>
+	  <p>We would like to thank Jan Karwowski and Danila Borisiuk for
+	    reporting the issue and working with us on the resolution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-4326</cvename>
+      <url>https://www.elastic.co/blog/logstash-1-4-2</url>
+      <url>https://www.elastic.co/community/security</url>
+    </references>
+    <dates>
+      <discovery>2014-06-24</discovery>
+      <entry>2015-06-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ad4d3871-1a0d-11e5-b43d-002590263bf5">
-    <topic>logstash-forwarder and logstash -- multiple vulnerabilities</topic>
+    <topic>logstash-forwarder and logstash -- susceptibility to POODLE vulnerability</topic>
     <affects>
       <package>
 	<name>logstash-forwarder</name>
@@ -80,15 +153,6 @@ Notes:
 	    are working on filling out the CVE.</p>
 	  <p>Thanks to Tray Torrance, Marc Chadwick, and David Arena for
 	    reporting this.</p>
-	  <p>An attacker could use the File output plugin with dynamic
-	    field references in the path option to traverse paths outside
-	    of Logstash directory. This technique could also be used to
-	    overwrite any files which can be accessed with permissions
-	    associated with Logstash user. This release sandboxes the
-	    paths which can be traversed using the configuration.
-	    We have also disallowed use of dynamic field references
-	    if the path options is pointing to an absolute path.
-	    [CVE-2015-4152].</p>
 	</blockquote>
 	<blockquote cite="https://www.elastic.co/blog/logstash-forwarder-0-4-0-released">
 	  <p>SSLv3 is no longer supported; TLS 1.0+ is required (compatible
@@ -98,7 +162,6 @@ Notes:
     </description>
     <references>
       <!-- POODLE CVE pending -->
-      <cvename>CVE-2015-4152</cvename>
       <freebsdpr>ports/201065</freebsdpr>
       <freebsdpr>ports/201065</freebsdpr>
       <url>https://www.elastic.co/blog/logstash-1-4-3-released</url>
@@ -107,6 +170,7 @@ Notes:
     <dates>
       <discovery>2015-06-09</discovery>
       <entry>2015-06-24</entry>
+      <modified>2015-06-24</modified>
     </dates>
   </vuln>
 
