@@ -5,14 +5,18 @@ PORTNAME=	jaxml
 PORTVERSION=	3.02
 PORTREVISION=	1
 CATEGORIES=	textproc python
-MASTER_SITES=	CHEESESHOP \
-		http://www.librelogiciel.com/software/jaxml/tarballs/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module to generate XML easily
 
-USES=		python
-USE_PYTHON=	distutils autoplist
+LICENSE=	GPLv2
+
+PORTSCOUT=	skipv:23.01
+
+NO_ARCH=	yes
+USES=		python:2
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
