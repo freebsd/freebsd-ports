@@ -34,7 +34,7 @@ PORTDOCS=	Changelog Not_so_obvious_things.txt Readme.txt \
 OPTIONS_DEFINE=	DOCS DEBUG
 
 # Do not use unstable versions
-PORTSCOUT= skipv:14.3.0.6306
+PORTSCOUT=	site:http://sourceforge.net/projects/smplayer/files/SMPlayer/
 
 SUB_FILES=	pkg-message
 
