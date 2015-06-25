@@ -16,6 +16,8 @@ COMMENT=	Powerful syslogd replacement
 LIB_DEPENDS=	libevtlog.so:${PORTSDIR}/sysutils/eventlog \
 		libpcre.so:${PORTSDIR}/devel/pcre
 
+BROKEN_FreeBSD_9=	does not build
+
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng[0-9][0-9]-[0-9]* \
 		syslog-ng-devel-[0-9]*
