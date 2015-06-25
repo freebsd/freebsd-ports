@@ -30,6 +30,10 @@ DOXYGEN_CMAKE_ON=	-DWITH_DOC:BOOL=TRUE
 DOXYGEN_CMAKE_OFF=	-DWITH_DOC:BOOL=FALSE
 DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 
+.if defined(PACKAGE_BUILDING)
+OPTIONS_DEFAULT+=      DOXYGEN
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/add_subdirectory(tests)/ d' \
 			  -e '/add_subdirectory(tools)/ d' \
