@@ -20,6 +20,8 @@ LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libidn.so:${PORTSDIR}/dns/libidn \
 		libtinyxml.so:${PORTSDIR}/textproc/tinyxml
 
+BROKEN_FreeBSD_9=	does not build on FreeBSD 9.x (gcc segfault)
+
 INSTALLS_ICONS=	yes
 USES=		compiler:c++11-lib gmake pkgconfig tar:bzip2
 USE_SQLITE=	3
