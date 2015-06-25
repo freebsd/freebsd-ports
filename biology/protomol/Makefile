@@ -3,7 +3,7 @@
 
 PORTNAME=	protomol
 PORTVERSION=	2.0.3
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	biology
 MASTER_SITES=	SF/${PORTNAME}/ProtoMol/${PORTVERSION}
 DISTFILES=	${DISTNAME}-tar.gz
@@ -11,9 +11,20 @@ DISTFILES=	${DISTNAME}-tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OO, component based, framework for molecular dynamics (MD) simulations
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
+USES=		shebangfix
+SHEBANG_FILES=	examples/butane_4/procDihedralFile.awk \
+		examples/butane_4/cleanOutput.bash \
+		examples/butane_4/runButaneResults.sh \
+		examples/butane_4/runButaneTests.sh
+SHEBANG_LANG=	awk
+awk_OLD_CMD=	/usr/bin/gawk
+awk_CMD=	/usr/bin/awk # base awk works fine in this case
 GNU_CONFIGURE=	yes
 USES=		jpeg
 USE_XORG=	xmu xt sm ice xext x11 xi
