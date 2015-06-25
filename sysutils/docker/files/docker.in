@@ -17,6 +17,8 @@ load_rc_config $name
 
 : ${docker_enable=NO}
 : ${docker_dir=/usr/docker}
+: ${docker_nat_pf=YES}
+: ${docker_nat_iface=NONE}
 
 docker_start()
 {
@@ -24,14 +26,34 @@ docker_start()
 		echo "Missing $docker_dir! Please create / mount a ZFS dataset at this location."
 		exit 1
 	fi
+
+	echo "Starting docker..."
 	daemon -p /var/run/docker.pid ${command} -d -e jail -s zfs -g ${docker_dir} -D >/var/log/docker.log 2>/var/log/docker.log
+
+	# Check for NAT support via PF
+	# This is an ugly experimental hack for now, eventually will go away
+	if [ "${docker_nat_pf}" != "YES" ] ; then return ; fi
+
+	# Check if PF rules already loaded
+	pfctl -sr | grep -q 172.17
+	if [ $? -eq 0 ] ; then return ; fi
+
+	if [ "$docker_nat_iface" != "NONE" ] ; then
+		iface="$docker_nat_iface"
+	else
+		iface=`netstat -f inet -nrW | grep '^default' | awk '{ print $6 }'`
+	fi
+	echo "nat on $iface from 172.17.0.0/16 to any -> ($iface)" > /tmp/pf-nat-docker.$$
+	pfctl -f /tmp/pf-nat-docker.$$
+	pfctl -e
+	rm /tmp/pf-nat-docker.$$
 }
 
 docker_stop()
 {
+	echo "Stopping docker..."
 	if [ -e "/var/run/docker.pid" ] ; then
 		pkill -F /var/run/docker.pid 
-		rm /var/run/docker.pid
 	fi
 }
 
