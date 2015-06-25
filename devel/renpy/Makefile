@@ -4,8 +4,8 @@ PORTNAME=	renpy
 PORTVERSION=	6.99.4
 DISTVERSIONSUFFIX=-source
 CATEGORIES=	devel games
-MASTER_SITES=	http://www.renpy.org/dl/${PORTVERSION}/ \
-		GENTOO
+MASTER_SITES=	http://www.renpy.org/dl/${PORTVERSION}/
+#MASTER_SITES+=	GENTOO
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Framework for developing visual-novel type games
