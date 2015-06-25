@@ -42,6 +42,9 @@ CONFLICTS=	vsftpd-3* vsftpd${SSL_SUFFIX}${PKGNAMESUFFIX2}-3*
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 902001
 BUILD_DEPENDS+=	clang33:${PORTSDIR}/lang/clang33
 CC=		clang33
+.if ${ARCH} == i386
+BROKEN=		does not build on 9.x i386
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MRC_SCRIPT}
