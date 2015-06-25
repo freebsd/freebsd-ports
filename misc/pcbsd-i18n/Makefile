@@ -24,6 +24,15 @@ RUN_DEPENDS=	pcbsd-base>=0:${PORTSDIR}/misc/pcbsd-base \
 		ibus-table>=0:${PORTSDIR}/textproc/ibus-table \
 		fonts-indic>=0:${PORTSDIR}/x11-fonts/fonts-indic \
 		ko-baekmukfonts-ttf>=0:${PORTSDIR}/korean/baekmukfonts-ttf \
+		ar-aspell>=0:${PORTSDIR}/arabic/aspell \
+		fr-aspell>=0:${PORTSDIR}/french/aspell \
+		de-aspell>=0:${PORTSDIR}/german/aspell \
+		iw-aspell>=0:${PORTSDIR}/hebrew/aspell \
+		hu-aspell>=0:${PORTSDIR}/hungarian/aspell \
+		pl-aspell>=0:${PORTSDIR}/polish/aspell \
+		ru-aspell>=0:${PORTSDIR}/russian/aspell \
+		uk-aspell>=0:${PORTSDIR}/ukrainian/aspell \
+		vi-aspell>=0:${PORTSDIR}/vietnamese/aspell \
 		wqy>=0:${PORTSDIR}/x11-fonts/wqy 
 
 NO_BUILD=	yes

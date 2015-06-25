@@ -77,7 +77,6 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		mupdf:${PORTSDIR}/graphics/mupdf \
 		pciutils>=0:${PORTSDIR}/sysutils/pciutils \
 		gpg:${PORTSDIR}/security/gnupg \
-		idesk:${PORTSDIR}/x11/idesk \
 		gtk2-qtcurve-theme>=0:${PORTSDIR}/x11-themes/qtcurve-gtk2 \
 		qt4-style-qtcurve>=0:${PORTSDIR}/x11-themes/qtcurve-qt4 \
 		gtk-theme-switch>=0:${PORTSDIR}/x11/gtk-theme-switch2 \
@@ -97,18 +96,8 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		xsane:${PORTSDIR}/graphics/xsane \
 		libaacs>=0:${PORTSDIR}/multimedia/libaacs \
 		xbrightness>=0:${PORTSDIR}/x11/xbrightness \
-		fusefs-ext4fuse>=0:${PORTSDIR}/sysutils/fusefs-ext4fuse \
 		gstreamer-plugins-cdaudio>=0:${PORTSDIR}/audio/gstreamer-plugins-cdaudio \
 		gstreamer-plugins-cdparanoia>=0:${PORTSDIR}/audio/gstreamer-plugins-cdparanoia \
-		ar-aspell>=0:${PORTSDIR}/arabic/aspell \
-		fr-aspell>=0:${PORTSDIR}/french/aspell \
-		de-aspell>=0:${PORTSDIR}/german/aspell \
-		iw-aspell>=0:${PORTSDIR}/hebrew/aspell \
-		hu-aspell>=0:${PORTSDIR}/hungarian/aspell \
-		pl-aspell>=0:${PORTSDIR}/polish/aspell \
-		ru-aspell>=0:${PORTSDIR}/russian/aspell \
-		uk-aspell>=0:${PORTSDIR}/ukrainian/aspell \
-		vi-aspell>=0:${PORTSDIR}/vietnamese/aspell \
 		mosh:${PORTSDIR}/net/mosh \
 		x11vnc>=0:${PORTSDIR}/net/x11vnc \
 		ataidle>=0:${PORTSDIR}/sysutils/ataidle \
@@ -130,6 +119,7 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		openntpd>=0:${PORTSDIR}/net/openntpd \
 		socat>=0:${PORTSDIR}/net/socat \
 		tor>=0:${PORTSDIR}/security/tor \
+		docker:${PORTSDIR}/sysutils/docker \
 		zsh:${PORTSDIR}/shells/zsh
 
 NO_BUILD=	yes
