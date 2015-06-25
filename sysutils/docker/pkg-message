@@ -5,12 +5,6 @@ You will need to create a ZFS dataset on /usr/docker
 
 # zfs create -o mountpoint=/usr/docker <zroot>/docker 
 
-The docker can setup basic networking, but not nat, so we need to setup it manually
-
-# echo "nat on {you-external-interface} from 172.17.0.0/16 to any -> ({your-external-interface})" > /etc/pf.conf
-# pfctl -f /etc/pf.conf
-# pfctl -e
-
 And lastly enable the docker daemon
 # sysrc -f /etc/rc.conf docker_enable="YES"
 # service docker start
