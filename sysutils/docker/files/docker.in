@@ -27,6 +27,11 @@ docker_start()
 		exit 1
 	fi
 
+	if [ -e "/var/run/docker.pid" ] ; then
+		echo "Docker already running? /var/run/docker.pid"
+		exit 1
+	fi
+
 	echo "Starting docker..."
 	daemon -p /var/run/docker.pid ${command} -d -e jail -s zfs -g ${docker_dir} -D >/var/log/docker.log 2>/var/log/docker.log
 
@@ -51,8 +56,8 @@ docker_start()
 
 docker_stop()
 {
-	echo "Stopping docker..."
 	if [ -e "/var/run/docker.pid" ] ; then
+		echo "Stopping docker..."
 		pkill -F /var/run/docker.pid 
 	fi
 }
