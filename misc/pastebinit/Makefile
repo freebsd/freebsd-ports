@@ -2,7 +2,7 @@
 
 PORTNAME=	pastebinit
 PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc python
 MASTER_SITES=	https://launchpad.net/pastebinit/trunk/${PORTVERSION}/+download/
 
