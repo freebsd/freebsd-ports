@@ -3,6 +3,7 @@
 
 PORTNAME=	libzfs
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -24,6 +25,10 @@ USE_PYTHON=	autoplist distutils
 MAKE_ENV=	FREEBSD_SRC=${SRC_BASE}
 
 .include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3400
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}enum34>0:${PORTSDIR}/devel/py-enum34
+.endif
 
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=	requires kernel source files in ${SRC_BASE}
