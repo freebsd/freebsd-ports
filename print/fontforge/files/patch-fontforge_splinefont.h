@@ -1,6 +1,6 @@
---- fontforge/splinefont.h~
+--- fontforge/splinefont.h.orig	2015-06-12 20:48:13 UTC
 +++ fontforge/splinefont.h
-@@ -3547,7 +3547,11 @@ char * delimit_null(const char * input, 
+@@ -3548,7 +3548,11 @@ char * delimit_null(const char * input, 
  
  #include "ustring.h"
  
