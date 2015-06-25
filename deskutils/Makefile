@@ -191,6 +191,7 @@
     SUBDIR += plopfolio
     SUBDIR += preferences
     SUBDIR += py-khal
+    SUBDIR += py-bugwarrior
     SUBDIR += py-pycarddav
     SUBDIR += py-pystash
     SUBDIR += py-send2trash
