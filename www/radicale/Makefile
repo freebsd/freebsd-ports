@@ -15,7 +15,8 @@ COMMENT=		Python based CalDAV/CardDAV server
 LICENSE=		GPLv3
 
 USE_PYTHON=		autoplist distutils
-PYDISTUTILS_PKGNAME=	Radicale
+
+NO_ARCH=	yes
 
 USERS=			radicale
 GROUPS=			radicale
