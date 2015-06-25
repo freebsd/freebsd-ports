@@ -42,7 +42,6 @@
 %%PORTDOCS%%lib/erlang/lib/exmpp-%%VERSION%%/doc/html/index.html
 %%PORTDOCS%%lib/erlang/lib/exmpp-%%VERSION%%/doc/html/modules-frame.html
 %%PORTDOCS%%lib/erlang/lib/exmpp-%%VERSION%%/doc/html/overview-summary.html
-%%PORTDOCS%%lib/erlang/lib/exmpp-%%VERSION%%/doc/html/packages-frame.html
 %%PORTDOCS%%lib/erlang/lib/exmpp-%%VERSION%%/doc/html/stringprep.html
 %%PORTDOCS%%lib/erlang/lib/exmpp-%%VERSION%%/doc/html/stylesheet.css
 %%PORTDOCS%%lib/erlang/lib/exmpp-%%VERSION%%/doc/html/tls.html
