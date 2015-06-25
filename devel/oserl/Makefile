@@ -17,9 +17,9 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 USE_GITHUB=	yes
 GH_ACCOUNT=	iamaleksey
 
-DOS2UNIX_FILES=	Makefile
 USES=		dos2unix gmake iconv
 ALL_TARGET=	compile doc
+DOS2UNIX_GLOB=	Makefile *.hrl *.erl
 
 post-extract:
 # Trick rebar into locating the oserl include files (see also patch-rebar.config)
