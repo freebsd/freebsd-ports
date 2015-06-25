@@ -3993,6 +3993,7 @@
     SUBDIR += py-ocempgui
     SUBDIR += py-ode
     SUBDIR += py-odfpy
+    SUBDIR += py-offtrac
     SUBDIR += py-olefile
     SUBDIR += py-oletools
     SUBDIR += py-omnijson
