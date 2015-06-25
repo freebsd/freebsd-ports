@@ -35,11 +35,11 @@ lib/avfs/extfs/uc1541
 lib/avfs/extfs/ucab
 lib/avfs/extfs/ucpio
 lib/avfs/extfs/udar
+lib/avfs/extfs/uextrar
 lib/avfs/extfs/uha
 lib/avfs/extfs/uimg
 lib/avfs/extfs/ulha
 lib/avfs/extfs/upp
-lib/avfs/extfs/urar
 lib/avfs/extfs/uxdms
 lib/avfs/extfs/uxpk
 lib/avfs/extfs/uzip
