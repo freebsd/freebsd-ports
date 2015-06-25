@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	afl
-PORTVERSION=	1.80b
+PORTVERSION=	1.83b
 CATEGORIES=	security
 MASTER_SITES=	http://lcamtuf.coredump.cx/afl/releases/
 
-MAINTAINER=	fk@fabiankeil.de
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Fast instrumented fuzzer
 
 LICENSE=	APACHE20
