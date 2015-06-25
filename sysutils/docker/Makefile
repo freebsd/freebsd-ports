@@ -3,7 +3,7 @@
 
 PORTNAME=	docker
 PORTVERSION=	06232015
-CATEGORIES=	net-mgmt
+CATEGORIES=	sysutils
 
 MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	Docker containment system
@@ -26,7 +26,7 @@ PLIST_FILES=	bin/docker
 USE_RC_SUBR=	docker
 
 do-build:
-	@cd ${WRKSRC} && export AUTO_GOPATH=1 && ./hack/make.sh binary
+	@cd ${WRKSRC} && export AUTO_GOPATH=1 && export DOCKER_GITCOMMIT=${GH_TAGNAME} && ./hack/make.sh binary
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
