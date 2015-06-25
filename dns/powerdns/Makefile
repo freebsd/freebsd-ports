@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	powerdns
-PORTVERSION=	3.4.4
-PORTREVISION=	2
+PORTVERSION=	3.4.5
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${PORTVERSION}
@@ -14,9 +13,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libboost_serialization.so:${PORTSDIR}/devel/boost-libs
 
-CONFLICTS=	powerdns-devel-[2-3].[0-9]*
-
-USES=		gmake libtool lua pkgconfig tar:bzip2
+USES=		cpe gmake libtool lua pkgconfig tar:bzip2
 USE_LDCONFIG=	YES
 USE_SUBMAKE=	YES
 GNU_CONFIGURE=	YES
