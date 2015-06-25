@@ -16,9 +16,9 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 USE_GITHUB=	yes
 GH_ACCOUNT=	iamaleksey
 
-DOS2UNIX_FILES=	Makefile
 ALL_TARGET=	compile doc
 USES=		dos2unix gmake iconv:build
+DOS2UNIX_GLOB=	Makefile *.hrl *.erl
 
 post-extract:
 	@${REINPLACE_CMD} -e "s@&lt;@<@g" -e "s@&gt;@>@g" ${WRKSRC}/doc/*.ndoc
