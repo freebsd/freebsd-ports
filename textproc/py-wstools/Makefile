@@ -12,6 +12,7 @@ COMMENT=	WSDL parsing services for Python
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/docs/license.txt
 
+NO_ARCH=	yes
 USES=		python:2
 USE_PYTHON=	autoplist distutils
 
