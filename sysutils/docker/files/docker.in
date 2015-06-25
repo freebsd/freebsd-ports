@@ -19,7 +19,6 @@ load_rc_config $name
 : ${docker_dir=/usr/docker}
 : ${docker_nat_pf=YES}
 : ${docker_nat_iface=NONE}
-: ${docker_linux_version=2.6.32}
 
 docker_start()
 {
@@ -62,16 +61,6 @@ docker_start()
 	if [ $? -ne 0 -a -e "/boot/kernel/linux64.ko" ] ; then
 		kldload linux64
 	fi
-	
-	# Set linux version
-	kldstat | grep -q 'linux64'
-	if [ $? -eq 0 ] ; then
-		sysctl compat.linux.osrelease | grep -q "${docker_linux_version}"
-		if [ $? -ne 0 ] ; then
-			sysctl compat.linux.osrelease=${docker_linux_version}
-		fi
-	fi
-
 }
 
 docker_stop()
