@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: docker
-# REQUIRE: DAEMON
+# REQUIRE: DAEMON sysctl
 # KEYWORD: nojail shutdown
 
 . /etc/rc.subr
@@ -67,7 +67,7 @@ docker_start()
 	kldstat | grep -q 'linux64'
 	if [ $? -eq 0 ] ; then
 		sysctl compat.linux.osrelease | grep -q "${docker_linux_version}"
-		if [ $? -eq 0 ] ; then
+		if [ $? -ne 0 ] ; then
 			sysctl compat.linux.osrelease=${docker_linux_version}
 		fi
 	fi
