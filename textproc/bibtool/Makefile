@@ -10,6 +10,8 @@ DISTNAME=	BibTool-${PORTVERSION}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Command line manipulation of BibTeX files
 
+BROKEN_FreeBSD_9=	fails to extract
+
 USE_TEX=	latex:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-kpathsea
