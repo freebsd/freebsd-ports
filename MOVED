@@ -7642,3 +7642,4 @@ net/py-ldap2|net/py-ldap|2015-06-18|Rename to better match upstream name
 devel/erlang-mustache|devel/erlang-bbmustache|2015-06-21|Renamed upstream
 security/py-backports.ssl_match_hostname||2015-06-23|This functionality was backported to python 2.7.9
 dns/maradns1|dns/maradns|2015-06-23|Has expired: MaraDNS 1 end-of-life: June 21, 2015, use dns/maradns
+net/py-soappy-devel||2015-06-25|Please use net/py-soappy instead. It's fresher than -devel
