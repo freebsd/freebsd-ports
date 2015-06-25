@@ -18,7 +18,6 @@ lib/erlang/lib/recon-%%VERSION%%/src/recon_trace.erl
 %%PORTDOCS%%%%DOCSDIR%%/modules-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/overview-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/overview.edoc
-%%PORTDOCS%%%%DOCSDIR%%/packages-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/recon.html
 %%PORTDOCS%%%%DOCSDIR%%/recon_alloc.html
 %%PORTDOCS%%%%DOCSDIR%%/recon_lib.html

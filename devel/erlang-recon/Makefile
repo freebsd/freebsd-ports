@@ -26,6 +26,7 @@ post-patch:
 
 do-build:
 	@cd ${WRKSRC} && ./rebar compile doc
+	@${RM} ${WRKSRC}/doc/packages-frame.html
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
