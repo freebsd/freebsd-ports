@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	knot
-PORTVERSION=	1.6.3
-PORTREVISION=	1
+PORTVERSION=	1.6.4
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		http://dns-lab.com/downloads/knot-dns/
@@ -42,26 +41,20 @@ SUB_LIST+=	USERS="${USERS}" GROUPS="${GROUPS}"
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README THANKS
 
-OPTIONS_DEFINE=	DNSTAP FASTPARSER IDN LMDB
+OPTIONS_DEFINE=	DNSTAP IDN LMDB
 
 DNSTAP_DESC=		dnstap support (see dnstap.info)
-FASTPARSER_DESC=	Fast zone parser (demanding compilation)
-GOST_DESC=		Enable GOST ciphers (requires OpenSSL >= 1.0.0)
 LMDB_DESC=		Enable LMDB backend
 
 DNSTAP_CONFIGURE_ENABLE=	dnstap
 DNSTAP_LIB_DEPENDS=	libfstrm.so:${PORTSDIR}/devel/fstrm \
 			libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c
 
-FASTPARSER_CONFIGURE_ENABLE=	fastparser
-
 IDN_CONFIGURE_WITH=	libidn
 IDN_LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
 
 LMDB_CONFIGURE_ENABLE=	lmdb
 LMDB_LIB_DEPENDS=	liblmdb.so:${PORTSDIR}/databases/lmdb
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} 's|$$(INSTALL) -d $$(DESTDIR)/\@run_dir\@|#$$(INSTALL) -d $$(DESTDIR)/\@run_dir\@|' \
