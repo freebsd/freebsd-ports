@@ -9,8 +9,8 @@ MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BitTorrent Library written in C++
 
-CONFLICTS=	rblibtorrent-[0-9]* \
-		rblibtorrent-devel-[0-9]*
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c++11-lang libtool pathfix pkgconfig
 USE_OPENSSL=	yes
@@ -23,6 +23,8 @@ INSTALL_TARGET=	install-strip
 OPTIONS_DEFINE=	KQUEUE IPV6
 OPTIONS_DEFAULT=	KQUEUE
 KQUEUE_DESC=	Use kqueue(2) support
+KQUEUE_CONFIGURE_ON=	--with-kqueue
+IPV6_CONFIGURE_ON=	--enable-ipv6
 
 .include <bsd.port.pre.mk>
 
@@ -37,14 +39,6 @@ CONFIGURE_ARGS+=	--disable-instrumentation
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
 CXXFLAGS+=	-std=c++11
 EXTRA_PATCHES+=	${FILESDIR}/extra-clang
-.endif
-
-.if ${PORT_OPTIONS:MKQUEUE}
-CONFIGURE_ARGS+=	--with-kqueue
-.endif
-
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
 post-patch:
