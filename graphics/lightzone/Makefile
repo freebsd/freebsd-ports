@@ -18,15 +18,14 @@ BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
 		rsync:${PORTSDIR}/net/rsync \
 		tidy:${PORTSDIR}/www/tidy-lib \
 		autoconf:${PORTSDIR}/devel/autoconf
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
+LIB_DEPENDS=	liblcms2.so:${PORTSDIR}/graphics/lcms2 \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ktgw0316
 GH_PROJECT=	LightZone
 
-USES=		desktop-file-utils gmake pkgconfig
+USES=		desktop-file-utils gmake jpeg pkgconfig
 USE_ANT=	yes
 USE_JAVA=	yes
 USE_GCC=	yes
