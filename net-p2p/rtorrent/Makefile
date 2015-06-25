@@ -9,9 +9,13 @@ MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BitTorrent Client written in C++
 
-BUILD_DEPENDS=	libtorrent=0.13.4_2:${PORTSDIR}/net-p2p/libtorrent
-RUN_DEPENDS=	libtorrent=0.13.4_2:${PORTSDIR}/net-p2p/libtorrent
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
+		libtorrent.so.18:${PORTSDIR}/net-p2p/libtorrent
+
+BROKEN_arm=	does not configure on arm
 
 GNU_CONFIGURE=	yes
 USES=		compiler:c++11-lang pkgconfig
@@ -25,28 +29,17 @@ PORTDOCS=	README
 OPTIONS_DEFINE=	XMLRPC IPV6 DOCS EXAMPLES
 OPTIONS_DEFAULT=XMLRPC
 XMLRPC_DESC=	Compile with xmlrpc-c support
+IPV6_CONFIGURE_ON=	--enable-ipv6
+XMLRPC_LIB_DEPENDS=	libxmlrpc.so:${PORTSDIR}/net/xmlrpc-c-devel
+XMLRPC_CONFIGURE_ON=	--with-xmlrpc-c
+XMLRPC_CONFIGURE_OFF=	--with-xmlrpc-c=no
 
 .include <bsd.port.options.mk>
-
-.if ${ARCH} == arm
-BROKEN=		Does not configure on arm
-.endif
 
 # Workaround to build on >= 10.x
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
 CXXFLAGS+=	-std=c++11
 EXTRA_PATCHES+=	${FILESDIR}/extra-clang
-.endif
-
-.if ${PORT_OPTIONS:MXMLRPC}
-CONFIGURE_ARGS+=	--with-xmlrpc-c
-LIB_DEPENDS+=	libxmlrpc.so:${PORTSDIR}/net/xmlrpc-c-devel
-.else
-CONFIGURE_ARGS+=	--with-xmlrpc-c=no
-.endif
-
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
 post-patch:
