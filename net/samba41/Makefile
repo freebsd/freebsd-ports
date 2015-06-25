@@ -59,7 +59,7 @@ CONFIGURE_ARGS+=	--exec-prefix="${PREFIX}" \
 # Flags
 CONFIGURE_ENV+=		PTHREAD_LDFLAGS="-lpthread"
 
-USES=			cpe compiler waf fakeroot pkgconfig perl5 python:2 \
+USES=			cpe compiler waf pkgconfig perl5 python:2 \
 			execinfo readline iconv shebangfix
 USE_PERL5=		build
 USE_LDCONFIG=		${SAMBA4_LIBDIR}
