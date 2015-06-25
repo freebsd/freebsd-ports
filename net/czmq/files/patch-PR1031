@@ -1,0 +1,222 @@
+From 0a658bf1e793b73cbbe634f5f79ffe54a710bd82 Mon Sep 17 00:00:00 2001
+From: Pieter Hintjens <ph@imatix.com>
+Date: Sun, 21 Jun 2015 09:48:31 +0200
+Subject: [PATCH] Problem: someone added BOM headers to our sources
+
+Solution: burn this with fire
+
+Fixes #1030, #1029
+
+  https://github.com/zeromq/czmq/issues/1029
+  https://github.com/zeromq/czmq/issues/1028
+
+diff --git a/src/zactor.c b/src/zactor.c
+index c52df18..60477ee 100644
+--- src/zactor.c
++++ src/zactor.c
+@@ -1,4 +1,4 @@
+-﻿/*  =========================================================================
++/*  =========================================================================
+     zactor - simple actor framework
+ 
+     Copyright (c) the Contributors as noted in the AUTHORS file.
+diff --git a/src/zarmour.c b/src/zarmour.c
+index 1a16926..20d9b76 100644
+--- src/zarmour.c
++++ src/zarmour.c
+@@ -1,4 +1,4 @@
+-﻿/*  =========================================================================
++/*  =========================================================================
+     zarmour - armoured text encoding and decoding
+ 
+     Copyright (c) the Contributors as noted in the AUTHORS file.
+diff --git a/src/zauth.c b/src/zauth.c
+index bcb51b4..7e8e930 100644
+--- src/zauth.c
++++ src/zauth.c
+@@ -1,4 +1,4 @@
+-﻿/*  =========================================================================
++/*  =========================================================================
+     zauth - authentication for ZeroMQ security mechanisms
+ 
+     Copyright (c) the Contributors as noted in the AUTHORS file.
+diff --git a/src/zbeacon.c b/src/zbeacon.c
+index 353f8e0..9481839 100644
+--- src/zbeacon.c
++++ src/zbeacon.c
+@@ -1,4 +1,4 @@
+-﻿/*  =========================================================================
++/*  =========================================================================
+     zbeacon - LAN discovery and presence
+ 
+     Copyright (c) the Contributors as noted in the AUTHORS file.
+diff --git a/src/zcertstore.c b/src/zcertstore.c
+index e060fe5..3dea7ca 100644
+--- src/zcertstore.c
++++ src/zcertstore.c
+@@ -1,4 +1,4 @@
+-﻿/*  =========================================================================
++/*  =========================================================================
+     zcertstore - work with CURVE security certificate stores
+ 
+     Copyright (c) the Contributors as noted in the AUTHORS file.
+diff --git a/src/zchunk.c b/src/zchunk.c
+index b0eb870..f9b3028 100644
+--- src/zchunk.c
++++ src/zchunk.c
+@@ -1,4 +1,4 @@
+-﻿/*  =========================================================================
++/*  =========================================================================
+     zchunk - work with memory chunks
+ 
+     Copyright (c) the Contributors as noted in the AUTHORS file.
+diff --git a/src/zconfig.c b/src/zconfig.c
+index 8456422..9b30e4b 100644
+--- src/zconfig.c
++++ src/zconfig.c
+@@ -1,4 +1,4 @@
+-﻿/*  =========================================================================
++/*  =========================================================================
+     zconfig - work with config files written in rfc.zeromq.org/spec:4/ZPL.
+ 
+     Copyright (c) the Contributors as noted in the AUTHORS file.
+diff --git a/src/zdir.c b/src/zdir.c
+index b328799..6e4710c 100644
+--- src/zdir.c
++++ src/zdir.c
+@@ -1,4 +1,4 @@
+-﻿/*  =========================================================================
++/*  =========================================================================
+     zdir - work with file-system directories
+ 
+     -------------------------------------------------------------------------
+diff --git a/src/zdir_patch.c b/src/zdir_patch.c
+index d0931ed..a87c46e 100644
+--- src/zdir_patch.c
++++ src/zdir_patch.c
+@@ -1,4 +1,4 @@
+-﻿/*  =========================================================================
++/*  =========================================================================
+     zdir_patch - work with directory patches
+     A patch is a change to the directory (create/delete).
+ 
+diff --git a/src/zfile.c b/src/zfile.c
+index a4e47f3..1167c44 100644
+--- src/zfile.c
++++ src/zfile.c
+@@ -1,4 +1,4 @@
+-﻿/*  =========================================================================
++/*  =========================================================================
+     zfile - provides methods to work with files in a portable fashion.
+ 
+     Copyright (c) the Contributors as noted in the AUTHORS file.
+diff --git a/src/zframe.c b/src/zframe.c
+index ab92e63..f92169a 100644
+--- src/zframe.c
++++ src/zframe.c
+@@ -1,4 +1,4 @@
+-﻿/*  =========================================================================
++/*  =========================================================================
+     zframe - working with single message frames
+ 
+     Copyright (c) the Contributors as noted in the AUTHORS file.
+diff --git a/src/zhash.c b/src/zhash.c
+index 625ae20..647d27e 100644
+--- src/zhash.c
++++ src/zhash.c
+@@ -1,4 +1,4 @@
+-﻿/*  =========================================================================
++/*  =========================================================================
+     zhash - simple generic hash container
+ 
+     Copyright (c) the Contributors as noted in the AUTHORS file.
+diff --git a/src/zhashx.c b/src/zhashx.c
+index 74485a4..b3c91d1 100644
+--- src/zhashx.c
++++ src/zhashx.c
+@@ -1,4 +1,4 @@
+-﻿/*  =========================================================================
++/*  =========================================================================
+     zhashx - extended generic hash container
+ 
+     Copyright (c) the Contributors as noted in the AUTHORS file.
+diff --git a/src/zlistx.c b/src/zlistx.c
+index e88f94d..9798655 100644
+--- src/zlistx.c
++++ src/zlistx.c
+@@ -1,4 +1,4 @@
+-﻿/*  =========================================================================
++/*  =========================================================================
+     zlistx - extended generic list container
+ 
+     Copyright (c) the Contributors as noted in the AUTHORS file.
+diff --git a/src/zmonitor.c b/src/zmonitor.c
+index 413d9f6..54f572c 100644
+--- src/zmonitor.c
++++ src/zmonitor.c
+@@ -1,4 +1,4 @@
+-﻿/*  =========================================================================
++/*  =========================================================================
+     zmonitor - socket event monitor
+ 
+     Copyright (c) the Contributors as noted in the AUTHORS file.
+diff --git a/src/zmsg.c b/src/zmsg.c
+index ddf8175..5cd2524 100644
+--- src/zmsg.c
++++ src/zmsg.c
+@@ -1,4 +1,4 @@
+-﻿/*  =========================================================================
++/*  =========================================================================
+     zmsg - working with multipart messages
+ 
+     -------------------------------------------------------------------------
+diff --git a/src/zpoller.c b/src/zpoller.c
+index 0c3907f..8268387 100644
+--- src/zpoller.c
++++ src/zpoller.c
+@@ -1,4 +1,4 @@
+-﻿/*  =========================================================================
++/*  =========================================================================
+     zpoller - trivial socket poller class
+ 
+     Copyright (c) the Contributors as noted in the AUTHORS file.
+diff --git a/src/zproxy.c b/src/zproxy.c
+index 1e9f212..8d2e273 100644
+--- src/zproxy.c
++++ src/zproxy.c
+@@ -1,4 +1,4 @@
+-﻿/*  =========================================================================
++/*  =========================================================================
+     zproxy - run a steerable proxy in the background
+ 
+     Copyright (c) the Contributors as noted in the AUTHORS file.
+diff --git a/src/zsock.c b/src/zsock.c
+index a236f4b..9fcf4ed 100644
+--- src/zsock.c
++++ src/zsock.c
+@@ -1,4 +1,4 @@
+-﻿/*  =========================================================================
++/*  =========================================================================
+     zsock - high-level socket API that hides libzmq contexts and sockets
+ 
+     Copyright (c) the Contributors as noted in the AUTHORS file.
+diff --git a/src/zstr.c b/src/zstr.c
+index 968ca31..24971f4 100644
+--- src/zstr.c
++++ src/zstr.c
+@@ -1,4 +1,4 @@
+-﻿/*  =========================================================================
++/*  =========================================================================
+     zstr - sending and receiving strings
+ 
+     Copyright (c) the Contributors as noted in the AUTHORS file.
+diff --git a/src/zsys.c b/src/zsys.c
+index 4d0bb8a..fd91804 100644
+--- src/zsys.c
++++ src/zsys.c
+@@ -1,4 +1,4 @@
+-﻿/*  =========================================================================
++/*  =========================================================================
+     zsys - system-level methods
+ 
+     Copyright (c) the Contributors as noted in the AUTHORS file.
