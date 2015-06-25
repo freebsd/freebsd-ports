@@ -1,14 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	gproc
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Process dictionary for Erlang
 
-LICENSE=	ERLPL
+LICENSE=	EPLICENCE
 LICENSE_NAME=	Erlang Public License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
