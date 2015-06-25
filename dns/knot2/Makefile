@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	knot
-DISTVERSION=	2.0.0.r1
+DISTVERSION=	2.0.0-rc1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		http://dns-lab.com/downloads/knot-dns/
 PKGNAMESUFFIX=	2
-DISTNAME=	${PORTNAME}-2.0.0-rc1
 
 MAINTAINER=	freebsd@dns-lab.com
 COMMENT=	High performance authoritative-only DNS server
