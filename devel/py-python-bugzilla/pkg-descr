@@ -1,0 +1,12 @@
+This is a python module that provides a kinda pythonic interface to Bugzilla
+over XMLRPC.
+
+It was originally written specifically for Red Hat's Bugzilla instance, but
+it is intended to work with any Bugzilla instance. More usage the better, we
+would be happy to help get things working with the bugzilla instance you care
+about.
+
+It also includes a `bugzilla` command-line client which can be used for quick,
+ad-hoc bugzilla jiggery-pokery.
+
+WWW: https://fedorahosted.org/python-bugzilla/
