@@ -167,7 +167,7 @@ IGNORE=		only supports LIBSSH2 with OpenSSL
 	(!defined(WITH_OPENSSL_BASE) && exists(${LOCALBASE}/lib/libcrypto.so)) || \
 	(defined(OPENSSL_PORT) && ${OPENSSL_PORT} == "security/libressl"))
 .if ${PORT_OPTIONS:MGSSAPI_BASE}
-IGNORE=		with GSSAPI_BASE, configure failed to detect OpenSSL/LibreSSL from ports and links against base OpenSSL
+IGNORE=		GSSAPI_BASE is set, which is not compatible with OpenSSL/LibreSSL from ports. Unset it or do not use ports SSL.
 .endif
 .if ${PORT_OPTIONS:MTLS_SRP} && defined(OPENSSL_PORT) && ${OPENSSL_PORT} == "security/libressl"
 IGNORE=		unsupported TLS-SRP in LibreSSL
