@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	postgresql
-DISTVERSION?=	9.2.10
+DISTVERSION?=	9.2.13
 PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL
@@ -12,8 +12,6 @@ PKGNAMESUFFIX?=	${DISTVERSION:R:S/.//}${COMPONENT}
 MAINTAINER?=	pgsql@FreeBSD.org
 COMMENT?=	The most advanced open-source database available anywhere
 
-USES+=	cpe
-
 CONFLICTS?=	${PORTNAME}[^${PORTVERSION:R:R}]?-client* \
 		${PORTNAME}${COMPONENT}-[^${PORTVERSION:R:R}].* \
 		${PORTNAME}9[^${PORTVERSION:R:E}]-client* \
@@ -22,7 +20,7 @@ CONFLICTS?=	${PORTNAME}[^${PORTVERSION:R:R}]?-client* \
 WRKSRC=		${WRKDIR}/postgresql-${DISTVERSION}
 DIST_SUBDIR=	postgresql
 
-ICU_PATCHFILE?=	pg-928-icu-2014-06-09.diff.gz
+ICU_PATCHFILE?=	pg-929-icu-2015-04-18.diff.gz
 
 .if !defined(SLAVE_ONLY)
 UNIQUENAME?=	${PORTNAME}${DISTVERSION:R:S/.//}
@@ -31,7 +29,7 @@ UNIQUENAME?=	${PORTNAME}${DISTVERSION:R:S/.//}${PKGNAMESUFFIX}
 .endif
 
 PKGINSTALL?=	${PKGDIR}/pkg-install${COMPONENT}
-USES+=		tar:bzip2
+USES+=		tar:bzip2 cpe
 .if !defined(NO_BUILD)
 USES+=	gmake
 GNU_CONFIGURE=	yes
@@ -60,6 +58,7 @@ INSTALL_DIRS?=	src/timezone src/backend \
 		src/bin/pg_controldata src/bin/pg_resetxlog src/pl \
 		src/bin/pg_basebackup
 BUILD_DIRS?=	src/port ${INSTALL_DIRS}
+INSTALL_TARGET?=install-strip
 
 .if !defined(CLIENT_ONLY) && !defined(SLAVE_ONLY)
 SERVER_ONLY=	yes
@@ -201,8 +200,6 @@ CFLAGS+=	-O3 -funroll-loops
 .  if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=--enable-debug
 INSTALL_TARGET=	install
-.  else
-INSTALL_TARGET=	install-strip
 .  endif
 
 .if ${PORT_OPTIONS:MGSSAPI}

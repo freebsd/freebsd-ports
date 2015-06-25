@@ -1,13 +1,11 @@
 # Created by: Marc G. Fournier <scrappy@FreeBSD.org>
 # $FreeBSD$
 
-DISTVERSION?=	9.3.6
+DISTVERSION?=	9.3.9
 PORTREVISION?=	0
 PKGNAMESUFFIX?=	${DISTVERSION:R:S/.//}${COMPONENT}
 
 MAINTAINER?=	pgsql@FreeBSD.org
-
-USES+=	cpe
 
 INSTALL_DIRS?=	src/common src/timezone src/backend \
 		src/backend/utils/mb/conversion_procs \

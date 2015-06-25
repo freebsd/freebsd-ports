@@ -71,7 +71,10 @@ share/doc/postgresql/extension/timetravel.example
 %%DATADIR%%/extension/chkpass--1.0.sql
 %%DATADIR%%/extension/chkpass--unpackaged--1.0.sql
 %%DATADIR%%/extension/chkpass.control
+%%DATADIR%%/extension/citext--1.0--1.1.sql
 %%DATADIR%%/extension/citext--1.0.sql
+%%DATADIR%%/extension/citext--1.1--1.0.sql
+%%DATADIR%%/extension/citext--1.1.sql
 %%DATADIR%%/extension/citext--unpackaged--1.0.sql
 %%DATADIR%%/extension/citext.control
 %%DATADIR%%/extension/cube--1.0.sql
