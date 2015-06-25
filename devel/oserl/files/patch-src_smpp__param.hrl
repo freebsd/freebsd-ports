@@ -1,4 +1,4 @@
---- src/smpp_param.hrl.orig
+--- src/smpp_param.hrl.orig	2015-06-25 10:06:03 UTC
 +++ src/smpp_param.hrl
 @@ -159,7 +159,7 @@
  %% destination_addr
