@@ -35,6 +35,8 @@ LIB_DEPENDS=	libcppunit.so:${PORTSDIR}/devel/cppunit \
 		libgsl.so:${PORTSDIR}/math/gsl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+BROKEN_FreeBSD_9=	does not build on FreeBSD 9.x
+
 USES=		iconv cmake:outsource perl5 python:2.7 shebangfix
 SHEBANG_FILES=	grc/freedesktop/grc_setup_freedesktop.in
 CMAKE_ENV+=	LD_PRELOAD="${GCC_LIBS}/libstdc++.so:${GCC_LIBS}/libgcc_s.so.1" 
