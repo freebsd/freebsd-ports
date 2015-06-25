@@ -3,7 +3,7 @@
 
 PORTNAME=	xsane
 PORTVERSION=	0.999
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.xsane.org/download/
 
@@ -34,7 +34,7 @@ OPTIONS_DEFAULT=	GIMP
 
 OPTIONS_SUB=	yes
 
-GIMP_RUN_DEPENDS=	${LOCALBASE}/bin/gimp:${PORTSDIR}/graphics/gimp-app
+GIMP_LIB_DEPENDS=	libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app
 GIMP_CONFIGURE_ENABLE=	gimp2 gimp
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
