@@ -19,11 +19,12 @@ load_rc_config $name
 : ${docker_dir=/usr/docker}
 : ${docker_nat_pf=YES}
 : ${docker_nat_iface=NONE}
+: ${docker_linux_verision=2.6.32}
 
 docker_start()
 {
-	if [ ! -d "$docker_dir" ] ; then
-		echo "Missing $docker_dir! Please create / mount a ZFS dataset at this location."
+	if [ ! -d "${docker_dir}" ] ; then
+		echo "Missing ${docker_dir}! Please create / mount a ZFS dataset at this location."
 		exit 1
 	fi
 
@@ -43,15 +44,31 @@ docker_start()
 	pfctl -s nat 2>/dev/null | grep -q 172.17
 	if [ $? -eq 0 ] ; then return ; fi
 
-	if [ "$docker_nat_iface" != "NONE" ] ; then
-		iface="$docker_nat_iface"
+	if [ "${docker_nat_iface}" != "NONE" ] ; then
+		iface="${docker_nat_iface}"
 	else
 		iface=`netstat -f inet -nrW | grep '^default' | awk '{ print $6 }'`
 	fi
-	echo "nat on $iface from 172.17.0.0/16 to any -> ($iface)" > /tmp/pf-nat-docker.$$
+	echo "nat on ${iface} from 172.17.0.0/16 to any -> (${iface})" > /tmp/pf-nat-docker.$$
 	pfctl -f /tmp/pf-nat-docker.$$ 2>/dev/null
 	pfctl -e 2>/dev/null
 	rm /tmp/pf-nat-docker.$$
+
+	# Check for linux 64bit support and enable
+	kldstat | grep -q 'linux64'
+	if [ $? -ne 0 -a -e "/boot/kernel/linux64.ko" ] ; then
+		kldload linux64
+	fi
+	
+	# Set linux version
+	kldstat | grep -q 'linux64'
+	if [ $? -eq 0 ] ; then
+		sysctl compat.linux.osrelease | grep -q "${docker_linux_version}"
+		if [ $? -eq 0 ] ; then
+			sysctl compat.linux.osrelease=${docker_linux_version}
+		fi
+	fi
+
 }
 
 docker_stop()
