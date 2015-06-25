@@ -15,15 +15,13 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 
-USES=		gmake pkgconfig tar:xz
+USES=		execinfo gmake pkgconfig tar:xz
 USE_GNOME=	glib20 libxml2
 USE_GCC=	yes
 GNU_CONFIGURE=	yes
-
-.include <bsd.port.pre.mk>
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's|/etc/telegram-purple/server.pub|${PREFIX}/etc/telegram-purple/server.pub|g' \
 		 ${WRKSRC}/telegram-purple.c
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
