@@ -1,17 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	noto
-PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTVERSION=	1.0.4
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://www.google.com/get/noto/pkgs/
+MASTER_SITES=	https://noto-website.storage.googleapis.com/pkgs/
 
 DISTNAME=	${PORTNAME:S|n|N|}-hinted
 
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Google font family
 
-LICENSE=	APACHE20
+LICENSE=	APACHE20 OFL11
+LICENSE_COMB=	multi
 
 USES=		fonts zip
 NO_BUILD=	yes
