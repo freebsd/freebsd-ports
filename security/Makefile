@@ -1048,6 +1048,7 @@
     SUBDIR += unhide
     SUBDIR += unicornscan
     SUBDIR += unssh
+    SUBDIR += vault
     SUBDIR += vinetto
     SUBDIR += vlock
     SUBDIR += vlog
