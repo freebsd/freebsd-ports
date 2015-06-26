@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	HTML-FormHandler
-PORTVERSION=	0.40059
+PORTVERSION=	0.40061
 PORTEPOCH=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:GSHANK
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -42,8 +41,9 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle \
-		p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck \
-		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
+		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn \
+		p5-Type-Tiny>=0:${PORTSDIR}/devel/p5-Type-Tiny \
+		p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck
 
 USES=		perl5
 USE_PERL5=	configure
