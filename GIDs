@@ -234,6 +234,7 @@ dahdi:*:843:asterisk
 subsonic:*:844:
 fossy:*:901:www
 scanlogd:*:902:
+influxd:*:907:
 riemann:*:908:
 proxy65:*:909:
 bacula:*:910:
