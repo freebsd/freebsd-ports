@@ -573,6 +573,7 @@
     SUBDIR += gio-sharp
     SUBDIR += git
     SUBDIR += git-bzr-ng
+    SUBDIR += git-codereview
     SUBDIR += git-extras
     SUBDIR += git-lite
     SUBDIR += git-merge-changelog
