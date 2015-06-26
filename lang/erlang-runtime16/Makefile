@@ -29,21 +29,21 @@ MAKE_JOBS_UNSAFE=yes
 
 OPTIONS_DEFINE=	DOCS DTRACE GCC GS HIPE JAVA KQUEUE ODBC OPENSSL SCTP SMP THREADS WX
 
+DTRACE_DESC=	Enable DTrace support
 GCC_DESC=	Use current GCC
+GS_DESC=	Enable GS application (deprecated)
 HIPE_DESC=	Build native HiPE compiler
 KQUEUE_DESC=	Enable Kernel Poll (kqueue) support
 SCTP_DESC=	Enable SCTP support
 SMP_DESC=	Enable SMP support
 WX_DESC=	Enable WX application
-GS_DESC=	Enable GS application (deprecated)
-DTRACE_DESC=	Enable DTrace support
 
 OPTIONS_DEFAULT=KQUEUE OPENSSL SCTP SMP THREADS
 OPTIONS_EXCLUDE_DragonFly=	SCTP
 
 ERL_RELEASE=	R${PORTVERSION:S/.//g:tu:S/1$/-1/}
 
-USES=		autoreconf gmake perl5
+USES=		gmake perl5
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
