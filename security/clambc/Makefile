@@ -23,6 +23,8 @@ CONFIGURE_ARGS=	--enable-optimized --enable-targets=host-only \
 
 WRKSRC=		${WRKDIR}/clamav-bytecode-compiler-${DISTNAME}/obj
 
+MAKE_JOBS_UNSAFE=	yes
+
 post-extract:
 	@${MKDIR} ${WRKSRC}
 
