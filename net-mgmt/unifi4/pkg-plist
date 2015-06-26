@@ -1,9 +1,9 @@
 %%JAVASHAREDIR%%/unifi/bin/mongod
-%%JAVASHAREDIR%%/unifi/dl/firmware/BZ2/3.2.11.2915/firmware.bin
-%%JAVASHAREDIR%%/unifi/dl/firmware/U2HSR/3.2.11.2915/firmware.bin
-%%JAVASHAREDIR%%/unifi/dl/firmware/U7E/3.2.11.2915/firmware.bin
-%%JAVASHAREDIR%%/unifi/dl/firmware/U7P/3.2.11.2915/firmware.bin
-%%JAVASHAREDIR%%/unifi/dl/firmware/UGW3/4.2.7.4766114/upgrade.tar
+%%JAVASHAREDIR%%/unifi/dl/firmware/BZ2/3.2.12.2920/firmware.bin
+%%JAVASHAREDIR%%/unifi/dl/firmware/U2HSR/3.2.12.2920/firmware.bin
+%%JAVASHAREDIR%%/unifi/dl/firmware/U7E/3.2.12.2920/firmware.bin
+%%JAVASHAREDIR%%/unifi/dl/firmware/U7P/3.2.12.2920/firmware.bin
+%%JAVASHAREDIR%%/unifi/dl/firmware/UGW3/4.2.9.4778536/upgrade.tar
 %%JAVASHAREDIR%%/unifi/dl/firmware/US24P250/3.3.5.3734/firmware.bin
 %%JAVASHAREDIR%%/unifi/dl/firmware/bundles.json
 %%JAVASHAREDIR%%/unifi/lib/MRJAdapter.jar
