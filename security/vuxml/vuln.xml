@@ -57,6 +57,216 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="23232028-1ba4-11e5-b43d-002590263bf5">
+    <topic>elasticsearch -- security fix for shared file-system repositories</topic>
+    <affects>
+      <package>
+	<name>elasticsearch</name>
+	<range><ge>1.0.0</ge><lt>1.6.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Elastic reports:</p>
+	<blockquote cite="https://www.elastic.co/community/security">
+	  <p>Vulnerability Summary: All Elasticsearch versions from 1.0.0 to
+	    1.5.2 are vulnerable to an attack that uses Elasticsearch to modify
+	    files read and executed by certain other applications.</p>
+	  <p>Remediation Summary: Users should upgrade to 1.6.0. Alternately,
+	    ensure that other applications are not present on the system, or
+	    that Elasticsearch cannot write into areas where these applications
+	    would read.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4165</cvename>
+      <freebsdpr>ports/201008</freebsdpr>
+      <url>https://www.elastic.co/community/security</url>
+      <url>https://www.elastic.co/blog/elasticsearch-1-6-0-released</url>
+    </references>
+    <dates>
+      <discovery>2015-06-09</discovery>
+      <entry>2015-06-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a71e7440-1ba3-11e5-b43d-002590263bf5">
+    <topic>elasticsearch -- directory traversal attack with site plugins</topic>
+    <affects>
+      <package>
+	<name>elasticsearch</name>
+	<range><lt>1.4.5</lt></range>
+	<range><ge>1.5.0</ge><lt>1.5.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Elastic reports:</p>
+	<blockquote cite="https://www.elastic.co/community/security">
+	  <p>Vulnerability Summary: All Elasticsearch versions prior to 1.5.2
+	    and 1.4.5 are vulnerable to a directory traversal attack that allows
+	    an attacker to retrieve files from the server running Elasticsearch
+	    when one or more site plugins are installed, or when Windows is the
+	    server OS.</p>
+	  <p>Remediation Summary: Users should upgrade to 1.4.5 or 1.5.2. Users
+	    that do not want to upgrade can address the vulnerability by
+	    disabling site plugins. See the CVE description for additional
+	    options.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3337</cvename>
+      <bid>74353</bid>
+      <url>https://www.elastic.co/community/security</url>
+      <url>https://www.elastic.co/blog/elasticsearch-1-5-2-and-1-4-5-released</url>
+      <url>https://www.exploit-db.com/exploits/37054/</url>
+      <url>https://packetstormsecurity.com/files/131646/Elasticsearch-Directory-Traversal.html</url>
+      <url>http://www.securityfocus.com/archive/1/535385</url>
+    </references>
+    <dates>
+      <discovery>2015-04-27</discovery>
+      <entry>2015-06-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="026759e0-1ba3-11e5-b43d-002590263bf5">
+    <topic>elasticsearch -- remote OS command execution via Groovy scripting engine</topic>
+    <affects>
+      <package>
+	<name>elasticsearch</name>
+	<range><ge>1.3.0</ge><lt>1.3.8</lt></range>
+	<range><ge>1.4.0</ge><lt>1.4.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Elastic reports:</p>
+	<blockquote cite="https://www.elastic.co/community/security">
+	  <p>Vulnerability Summary: Elasticsearch versions 1.3.0-1.3.7 and
+	    1.4.0-1.4.2 have vulnerabilities in the Groovy scripting engine that
+	    were introduced in 1.3.0. The vulnerability allows an attacker to
+	    construct Groovy scripts that escape the sandbox and execute shell
+	    commands as the user running the Elasticsearch Java VM.</p>
+	  <p>Remediation Summary: Users should upgrade to 1.3.8 or 1.4.3. Users
+	    that do not want to upgrade can address the vulnerability by setting
+	    script.groovy.sandbox.enabled to false in elasticsearch.yml and
+	    restarting the node.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1427</cvename>
+      <bid>72585</bid>
+      <url>https://www.elastic.co/community/security</url>
+      <url>https://www.elastic.co/blog/elasticsearch-1-4-3-and-1-3-8-released</url>
+      <url>http://www.securityfocus.com/archive/1/archive/1/534689/100/0/threaded</url>
+      <url>https://packetstormsecurity.com/files/130368/Elasticsearch-1.3.7-1.4.2-Sandbox-Escape-Command-Execution.html</url>
+      <url>https://packetstormsecurity.com/files/130784/ElasticSearch-Unauthenticated-Remote-Code-Execution.html</url>
+    </references>
+    <dates>
+      <discovery>2015-02-11</discovery>
+      <entry>2015-06-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5951fb49-1ba2-11e5-b43d-002590263bf5">
+    <topic>elasticsearch -- cross site scripting vulnerability in the CORS functionality</topic>
+    <affects>
+      <package>
+	<name>elasticsearch</name>
+	<range><lt>1.4.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Elastic reports:</p>
+	<blockquote cite="https://www.elastic.co/community/security">
+	  <p>Vulnerability Summary: Elasticsearch versions 1.3.x and prior have
+	    a default configuration for CORS that allows an attacker to craft
+	    links that could cause a user's browser to send requests to
+	    Elasticsearch instances on their local network. These requests could
+	    cause data loss or compromise.</p>
+	  <p>Remediation Summary: Users should either set "http.cors.enabled" to
+	    false, or set "http.cors.allow-origin" to the value of the server
+	    that should be allowed access, such as localhost or a server hosting
+	    Kibana. Disabling CORS entirely with the former setting is more
+	    secure, but may not be suitable for all use cases.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-6439</cvename>
+      <bid>70233</bid>
+      <url>https://www.elastic.co/community/security</url>
+      <url>https://www.elastic.co/blog/elasticsearch-1-4-0-beta-released</url>
+      <url>https://packetstormsecurity.com/files/128556/Elasticsearch-1.3.x-CORS-Issue.html</url>
+      <url>http://www.securityfocus.com/archive/1/archive/1/533602/100/0/threaded</url>
+    </references>
+    <dates>
+      <discovery>2014-10-01</discovery>
+      <entry>2015-06-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="43ac9d42-1b9a-11e5-b43d-002590263bf5">
+    <topic>elasticsearch and logstash -- remote OS command execution via dynamic scripting</topic>
+    <affects>
+      <package>
+	<name>elasticsearch</name>
+	<range><lt>1.2.0</lt></range>
+      </package>
+      <package>
+	<name>logstash</name>
+	<range><lt>1.4.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Elastic reports:</p>
+	<blockquote cite="https://www.elastic.co/community/security">
+	  <p>Vulnerability Summary: In Elasticsearch versions 1.1.x and prior,
+	    dynamic scripting is enabled by default. This could allow an
+	    attacker to execute OS commands.</p>
+	  <p>Remediation Summary: Disable dynamic scripting.</p>
+	</blockquote>
+	<blockquote cite="https://www.elastic.co/blog/logstash-1-4-3-released">
+	  <p>Logstash 1.4.2 was bundled with Elasticsearch 1.1.1, which is
+	    vulnerable to CVE-2014-3120. These binaries are used in
+	    Elasticsearch output specifically when using the node protocol.
+	    Since a node client joins the Elasticsearch cluster, the attackers
+	    could use scripts to execute commands on the host OS using the node
+	    client's URL endpoint. With 1.4.3 release, we are packaging Logstash
+	    with Elasticsearch 1.5.2 binaries which by default disables the
+	    ability to run scripts. This also affects users who are using the
+	    configuration option embedded=&gt;true in the Elasticsearch output
+	    which starts a local embedded Elasticsearch cluster. This is
+	    typically used in development environment and proof of concept
+	    deployments. Regardless of this vulnerability, we strongly recommend
+	    not using embedded in production.</p>
+	  <p>Note that users of transport and http protocol are not vulnerable
+	    to this attack.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3120</cvename>
+      <bid>67731</bid>
+      <url>https://www.elastic.co/community/security</url>
+      <url>https://www.elastic.co/blog/elasticsearch-1-2-0-released</url>
+      <url>https://www.elastic.co/blog/logstash-1-4-3-released</url>
+      <url>https://www.exploit-db.com/exploits/33370/</url>
+      <url>http://bouk.co/blog/elasticsearch-rce/</url>
+      <url>http://www.rapid7.com/db/modules/exploit/multi/elasticsearch/script_mvel_rce</url>
+      <url>https://www.found.no/foundation/elasticsearch-security/#staying-safe-while-developing-with-elasticsearch</url>
+    </references>
+    <dates>
+      <discovery>2014-05-22</discovery>
+      <entry>2015-06-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="24bde04f-1a10-11e5-b43d-002590263bf5">
     <topic>logstash -- Directory traversal vulnerability in the file output plugin</topic>
     <affects>
