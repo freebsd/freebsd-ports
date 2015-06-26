@@ -55,6 +55,7 @@
     SUBDIR += ecl
     SUBDIR += elan
     SUBDIR += elixir
+    SUBDIR += elixir-mode.el
     SUBDIR += elk
     SUBDIR += emacs-lisp-intro
     SUBDIR += erlang

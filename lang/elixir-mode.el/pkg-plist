@@ -1,0 +1,6 @@
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTING.md
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%EMACS_SITE_LISPDIR%%/elixir-deprecated.el
+%%EMACS_SITE_LISPDIR%%/elixir-mode.el
+%%EMACS_SITE_LISPDIR%%/elixir-smie.el
