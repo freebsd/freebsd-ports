@@ -57,6 +57,42 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="acd5d037-1c33-11e5-be9c-6805ca1d3bb1">
+    <topic>qemu -- Heap overflow in QEMU PCNET controller, allowing guest to host escape (CVE-2015-3209)</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>0.11.1_20</lt></range>
+	<range><ge>0.12</ge><lt>2.3.0_2</lt></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<range><lt>2.3.50.g20150618_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The QEMU security team reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-135.html">
+	  <p>A guest which has access to an emulated PCNET network
+	    device (e.g. with "model=pcnet" in their VIF configuration)
+	    can exploit this vulnerability to take over the qemu
+	    process elevating its privilege to that of the qemu
+	    process.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://xenbits.xen.org/xsa/advisory-135.html</url>
+      <cvename>CVE-2015-3209</cvename>
+    </references>
+    <dates>
+      <discovery>2015-04-10</discovery>
+      <entry>2015-06-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="23232028-1ba4-11e5-b43d-002590263bf5">
     <topic>elasticsearch -- security fix for shared file-system repositories</topic>
     <affects>
