@@ -105,6 +105,8 @@
 %%FONTSDIR%%/NotoSansOldPersian-Regular.ttf
 %%FONTSDIR%%/NotoSansOldSouthArabian-Regular.ttf
 %%FONTSDIR%%/NotoSansOldTurkic-Regular.ttf
+%%FONTSDIR%%/NotoSansOriya-Bold.ttf
+%%FONTSDIR%%/NotoSansOriya-Regular.ttf
 %%FONTSDIR%%/NotoSansOsmanya-Regular.ttf
 %%FONTSDIR%%/NotoSansPhagsPa-Regular.ttf
 %%FONTSDIR%%/NotoSansPhoenician-Regular.ttf
@@ -130,9 +132,11 @@
 %%FONTSDIR%%/NotoSansTamil-Regular.ttf
 %%FONTSDIR%%/NotoSansTelugu-Bold.ttf
 %%FONTSDIR%%/NotoSansTelugu-Regular.ttf
+%%FONTSDIR%%/NotoSansThaana-Bold.ttf
 %%FONTSDIR%%/NotoSansThaana-Regular.ttf
 %%FONTSDIR%%/NotoSansThai-Bold.ttf
 %%FONTSDIR%%/NotoSansThai-Regular.ttf
+%%FONTSDIR%%/NotoSansTibetan-Regular.ttf
 %%FONTSDIR%%/NotoSansTifinagh-Regular.ttf
 %%FONTSDIR%%/NotoSansUgaritic-Regular.ttf
 %%FONTSDIR%%/NotoSansVai-Regular.ttf
