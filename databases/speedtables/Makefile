@@ -10,29 +10,25 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	High-performance memory-resident database
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libtclx8.4.so:${PORTSDIR}/lang/tclX \
 		libboost_graph.so:${PORTSDIR}/devel/boost-libs
 
-OPTIONS_DEFINE=	DOCS PGSQL
-PGSQL_CONFIGURE_ON=	--with-pgsql=${LOCALBASE}
-PGSQL_LIB_DEPENDS=	libpgtcl2.0.0.so:${PORTSDIR}/databases/postgresql94-pgtcl
-
-PORTDOCS=	*
-
-USES=		tcl
-
-USE_AUTOTOOLS=	autoconf
 USE_GITHUB=	yes
 GH_ACCOUNT=	flightaware
 
+USES=		autoreconf tcl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--exec-prefix=${PREFIX} \
 		--with-boost=${PREFIX} \
 		--with-tcl=${TCL_LIBDIR}
 
-pre-configure:
-	@cd ${WRKSRC} && ${AUTORECONF}
+PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS PGSQL
+PGSQL_CONFIGURE_ON=	--with-pgsql=${LOCALBASE}
+PGSQL_LIB_DEPENDS=	libpgtcl2.0.0.so:${PORTSDIR}/databases/postgresql94-pgtcl
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
