@@ -1,6 +1,6 @@
---- device/lib/Makefile.in.orig
+--- device/lib/Makefile.in.orig	2015-04-15 16:44:20 UTC
 +++ device/lib/Makefile.in
-@@ -501,27 +501,6 @@
+@@ -513,27 +513,6 @@ clean_intermediate-pic14:
  # ---------------------------------------------------
  install: all installdirs
  	[ ! -d "$(BUILDDIR)" ] || $(CP_U) -r $(BUILDDIR)/* $(sdcc_libdir)
@@ -28,7 +28,7 @@
  
  # Deleting all the installed files
  # --------------------------------
-@@ -541,13 +520,7 @@
+@@ -553,13 +532,7 @@ installcheck:
  # Creating installation directories
  # ---------------------------------
  installdirs:
