@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	apache-solr
-PORTVERSION=	4.10.4
+PORTVERSION=	5.2.1
 CATEGORIES=	textproc java
 MASTER_SITES=	APACHE/lucene/solr/${PORTVERSION}
 DISTNAME=	solr-${PORTVERSION}
@@ -12,10 +12,9 @@ COMMENT=	High performance search server built using Lucene Java
 
 LICENSE=	APACHE20
 
-CONFLICT=	apache-solr-3.6.*
+CONFLICT=	apache-solr3-* apache-solr-4*
 
-USES=		cpe shebangfix tar:tgz
-SHEBANG_FILES=	example/etc/create-solrtest.keystore.sh
+USES=		cpe tar:tgz
 JAVA_VERSION=	1.7+
 NO_BUILD=	yes
 NO_ARCH=	yes

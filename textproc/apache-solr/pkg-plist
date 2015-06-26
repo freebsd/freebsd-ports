@@ -1,5 +1,5 @@
-%%JAVAJARDIR%%/solr-%%PORTVERSION%%.war
 %%JAVAJARDIR%%/solr-analysis-extras-%%PORTVERSION%%.jar
+%%JAVAJARDIR%%/solr-analytics-%%PORTVERSION%%.jar
 %%JAVAJARDIR%%/solr-cell-%%PORTVERSION%%.jar
 %%JAVAJARDIR%%/solr-clustering-%%PORTVERSION%%.jar
 %%JAVAJARDIR%%/solr-core-%%PORTVERSION%%.jar
@@ -13,21 +13,19 @@
 %%JAVAJARDIR%%/solr-test-framework-%%PORTVERSION%%.jar
 %%JAVAJARDIR%%/solr-uima-%%PORTVERSION%%.jar
 %%JAVAJARDIR%%/solr-velocity-%%PORTVERSION%%.jar
-%%JAVAJARDIR%%/solrj-lib/commons-io-2.3.jar
-%%JAVAJARDIR%%/solrj-lib/httpclient-4.3.1.jar
-%%JAVAJARDIR%%/solrj-lib/httpcore-4.3.jar
-%%JAVAJARDIR%%/solrj-lib/httpmime-4.3.1.jar
-%%JAVAJARDIR%%/solrj-lib/noggit-0.5.jar
-%%JAVAJARDIR%%/solrj-lib/slf4j-api-1.7.6.jar
-%%JAVAJARDIR%%/solrj-lib/wstx-asl-3.2.7.jar
+%%JAVAJARDIR%%/solrj-lib/commons-io-2.4.jar
+%%JAVAJARDIR%%/solrj-lib/httpclient-4.4.1.jar
+%%JAVAJARDIR%%/solrj-lib/httpcore-4.4.1.jar
+%%JAVAJARDIR%%/solrj-lib/httpmime-4.4.1.jar
+%%JAVAJARDIR%%/solrj-lib/noggit-0.6.jar
+%%JAVAJARDIR%%/solrj-lib/slf4j-api-1.7.7.jar
+%%JAVAJARDIR%%/solrj-lib/stax2-api-3.1.4.jar
+%%JAVAJARDIR%%/solrj-lib/woodstox-core-asl-4.4.1.jar
 %%JAVAJARDIR%%/solrj-lib/zookeeper-3.4.6.jar
 %%JAVAJARDIR%%/test-framework/README.txt
 %%JAVAJARDIR%%/test-framework/lib/ant-1.8.2.jar
 %%JAVAJARDIR%%/test-framework/lib/junit-4.10.jar
-%%JAVAJARDIR%%/test-framework/lib/junit4-ant-2.1.6.jar
-%%JAVAJARDIR%%/test-framework/lib/randomizedtesting-runner-2.1.6.jar
+%%JAVAJARDIR%%/test-framework/lib/junit4-ant-2.1.13.jar
+%%JAVAJARDIR%%/test-framework/lib/randomizedtesting-runner-2.1.13.jar
 %%JAVAJARDIR%%/test-framework/lucene-libs/lucene-test-framework-%%PORTVERSION%%.jar
 %%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/example-DIH/solr/mail/lib
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/logs
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/solr/bin
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/solr-webapp
