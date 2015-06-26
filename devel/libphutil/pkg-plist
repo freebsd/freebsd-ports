@@ -238,8 +238,10 @@ lib/php/libphutil/src/internationalization/PhutilNumber.php
 lib/php/libphutil/src/internationalization/PhutilPerson.php
 lib/php/libphutil/src/internationalization/PhutilTranslation.php
 lib/php/libphutil/src/internationalization/PhutilTranslator.php
+lib/php/libphutil/src/internationalization/__tests__/PhutilLocaleTestCase.php
 lib/php/libphutil/src/internationalization/__tests__/PhutilPersonTest.php
 lib/php/libphutil/src/internationalization/__tests__/PhutilPhtTestCase.php
+lib/php/libphutil/src/internationalization/__tests__/PhutilTranslationTestCase.php
 lib/php/libphutil/src/internationalization/__tests__/PhutilTranslatorTestCase.php
 lib/php/libphutil/src/internationalization/locales/PhutilAllCapsEnglishLocale.php
 lib/php/libphutil/src/internationalization/locales/PhutilBritishEnglishLocale.php
@@ -561,6 +563,7 @@ lib/php/libphutil/src/readableserializer/__tests__/PhutilReadableSerializerTestC
 lib/php/libphutil/src/serviceprofiler/PhutilServiceProfiler.php
 lib/php/libphutil/src/sprites/PhutilSprite.php
 lib/php/libphutil/src/sprites/PhutilSpriteSheet.php
+lib/php/libphutil/src/symbols/PhutilClassMapQuery.php
 lib/php/libphutil/src/symbols/PhutilSymbolLoader.php
 lib/php/libphutil/src/symbols/exception/PhutilMissingSymbolException.php
 lib/php/libphutil/src/utils/AbstractDirectedGraph.php
