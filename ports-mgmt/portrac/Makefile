@@ -11,16 +11,19 @@ COMMENT=	Simple GUI tool for tracking port updates
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN_FreeBSD_9=	does not build (lacking c++11 support)
+
 PLIST_FILES=	bin/portrac \
 		share/portrac/portrac.png \
 		share/portrac/up-to-date.png \
 		share/portrac/updates-available.png
 
-USES=		qmake tar:bzip2
+USES=		compiler:c++11-lib qmake tar:bzip2
+USE_CXXSTD=	c++11
 USE_QT5=	widgets buildtools_build
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/portrac ${STAGEDIR}${PREFIX}/bin && \
+	${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/portrac ${STAGEDIR}${PREFIX}/bin && \
 		${MKDIR} ${STAGEDIR}${DATADIR} && \
 		${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/*.png ${STAGEDIR}${DATADIR}
 
