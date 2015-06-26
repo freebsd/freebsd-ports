@@ -56,7 +56,7 @@ X11RDP_RUN_DEPENDS=	X11rdp:${PORTSDIR}/x11-servers/x11rdp
 X11RDP_EXTRA_PATCHES=	${FILESDIR}/extra-patch-x11rdp_xrdp.ini
 # JP106 keymap
 JP106_PLIST_SUB=	JP106=""
-JP106_PLIST_SUB_OFF=	JP106="@comment"
+JP106_PLIST_SUB_OFF=	JP106="@comment "
 
 .include <bsd.port.options.mk>
 
