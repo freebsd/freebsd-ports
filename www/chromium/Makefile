@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	43.0.2357.125
+PORTVERSION=	43.0.2357.130
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # default, but needed to get distinfo correct if TEST is on
@@ -136,6 +136,8 @@ GCONF_USE=	GNOME=gconf2
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 
 TEST_DISTFILES=	${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}
+
+BROKEN_FreeBSD_8=	Does not compile, missing locale
 
 .include <bsd.port.options.mk>
 
