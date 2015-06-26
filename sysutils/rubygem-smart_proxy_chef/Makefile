@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smart_proxy_chef
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
