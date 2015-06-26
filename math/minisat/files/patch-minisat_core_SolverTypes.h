@@ -1,6 +1,6 @@
---- minisat/core/SolverTypes.h.orig	2014-03-31 11:50:09.479636337 +0100
-+++ minisat/core/SolverTypes.h	2014-03-31 11:50:32.079953517 +0100
-@@ -52,7 +52,7 @@
+--- minisat/core/SolverTypes.h.orig	2012-11-19 13:50:09 UTC
++++ minisat/core/SolverTypes.h
+@@ -52,7 +52,7 @@ struct Lit {
      int     x;
  
      // Use this as a constructor:
@@ -9,7 +9,7 @@
  
      bool operator == (Lit p) const { return x == p.x; }
      bool operator != (Lit p) const { return x != p.x; }
-@@ -60,7 +60,7 @@
+@@ -60,7 +60,7 @@ struct Lit {
  };
  
  
