@@ -1,6 +1,6 @@
---- Makefile.in.orig	2014-04-03 10:14:03.000000000 +0000
+--- Makefile.in.orig	2015-06-26 21:21:27 UTC
 +++ Makefile.in
-@@ -46,7 +46,6 @@ OCAMLLIB  = @OCAMLLIB@
+@@ -45,7 +45,6 @@ OCAMLLIB  = @OCAMLLIB@
  OCAMLINSTALLLIB  = $(DESTDIR)@OCAMLINSTALLLIB@
  OCAMLBEST = @OCAMLBEST@
  OCAMLVERSION = @OCAMLVERSION@
@@ -8,3 +8,19 @@
  COQC      = @COQC@
  COQDEP    = @COQDEP@
  CAMLP5O   = @CAMLP5O@
+@@ -638,12 +637,12 @@ SERVER_O:= $(addprefix src/tools/, $(add
+ opt: bin/why3server$(EXE)
+ 
+ bin/why3server$(EXE): $(SERVER_O)
+-	gcc -o $@ $^
++	$(CC) -o $@ $^
+ 
+ %.o: %.c %.h
+-	gcc -c -Wall -g -o $@ $<
++	$(CC) -c -Wall -g -o $@ $<
+ %.o: %.c
+-	gcc -c -Wall -g -o $@ $<
++	$(CC) -c -Wall -g -o $@ $<
+ 
+ src/tools/main.o:: src/tools/server-unix.c src/tools/server-win.c
+ 

@@ -1,8 +1,8 @@
---- src/tools/cpulimit.c.orig	2014-03-14 15:01:03.000000000 +0000
+--- src/tools/cpulimit.c.orig	2015-05-06 10:55:30 UTC
 +++ src/tools/cpulimit.c
-@@ -18,6 +18,7 @@
- #include <stdlib.h>
+@@ -19,6 +19,7 @@
  #include <unistd.h>
+ #include <signal.h>
  #include <errno.h>
 +#include <signal.h>
  #include <string.h>
