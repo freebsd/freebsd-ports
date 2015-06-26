@@ -20,18 +20,23 @@ load_rc_config $name
 minecraft_mem=${minecraft_mem:-"1024M"}
 minecraft_args=${minecraft_args:-""}
 
-extra_commands="console status"
+extra_commands="console status kill"
 start_cmd="${name}_start"
 stop_cmd="${name}_stop"
 console_cmd="${name}_console"
 status_cmd="${name}_status"
+kill_cmd="${name}_kill"
+
+is_running()
+{
+	pgrep -qu mcserver java
+	return $?
+}
 
 minecraft_start()
 {
-	pgrep -qu mcserver java
-	isrunning=$?
-	if [ ${isrunning} -eq 0 ]; then
-		echo "${name} already running."
+	if is_running; then
+		echo "${name} is already running."
 	else
 		echo "Starting ${name}."
 		cd %%PREFIX%%/minecraft-server
@@ -41,36 +46,32 @@ minecraft_start()
 
 minecraft_stop()
 {
-	pgrep -qu mcserver java
-	isrunning=$?
-	if [ ${isrunning} -eq 0 ]; then
+	if is_running; then
 		echo "Stopping ${name}."
 		su mcserver -c "%%LOCALBASE%%/bin/tmux send-keys -t ${name} \"stop\" ENTER"
 
 		i=0
 		while [ $i -lt 10 ]; do
 			i=$(($i + 1))
-			pgrep -qu mcserver java
-			stillrunning=$?
-			if [ ${stillrunning} -eq 0 ]; then
+			if is_running; then
 				sleep 1
 			else
-				echo "${name} stopped."
+				echo "${name} has been stopped."
 				return
 			fi
 		done
-		echo "ERROR: ${name} could not be stopped."
+		echo "WARN: ${name} could not be stopped or is taking longer than expected."
+		echo "WARN: To view the console, type 'service ${name} console'"
+		echo "WARN: To kill $[name}, type 'service ${name} kill'"
 	else
-		echo "${name} not running."
+		echo "${name} is not running."
 	fi
 }
 
 minecraft_console()
 {
-	pgrep -qu mcserver java
-	isrunning=$?
-	if [ ${isrunning} -ne 0 ]; then
-		echo "${name} not running."
+	if ! is_running; then
+		echo "${name} is not running."
 	else
 		export TERM=xterm
 		su mcserver -c "%%LOCALBASE%%/bin/tmux attach-session -t ${name}"
@@ -79,12 +80,20 @@ minecraft_console()
 
 minecraft_status()
 {
-	pgrep -qu mcserver java
-	isrunning=$?
-	if [ ${isrunning} -eq 0 ]; then
+	if is_running; then
 		echo "${name} is running."
 	else
 		echo "${name} is not running."
+	fi
+}
+
+minecraft_kill()
+{
+	if ! is_running; then
+		echo "${name} is not running."
+	else
+		pkill -KILL -u mcserver java
+		echo "${name} has been killed."
 	fi
 }
 
