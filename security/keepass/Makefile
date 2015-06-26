@@ -15,8 +15,6 @@ LICENSE=	GPLv2 # or later
 BUILD_DEPENDS=	icotool:${PORTSDIR}/graphics/icoutils
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libgdiplus.so:${PORTSDIR}/x11-toolkits/libgdiplus
-RUN_DEPENDS=	xdotool:${PORTSDIR}/x11/xdotool \
-		xsel:${PORTSDIR}/x11/xsel
 
 EXTRACT_AFTER_ARGS=	-d ${WRKDIR}/${DISTNAME}
 
@@ -25,12 +23,23 @@ DOS2UNIX_GLOB=	*.csproj *.sln
 INSTALLS_ICONS=	yes
 SUB_FILES=	${PORTNAME}.sh
 
+NO_ARCH=	yes
+
 DESKTOP_ENTRIES="KeePass" \
 		"${COMMENT}" \
 		"${PORTNAME}" \
 		"keepass.sh" \
 		"Utility;" \
 		true
+
+OPTIONS_DEFINE=	XDOTOOL XSEL
+XDOTOOL_DESC=	Use the xdotool utility for auto-typing passwords
+XSEL_DESC=	Use the xsel utility for clipboard copying
+
+OPTIONS_DEFAULT=	XDOTOOL XSEL
+
+XDOTOOL_RUN_DEPENDS=	xdotool:${PORTSDIR}/x11/xdotool
+XSEL_RUN_DEPENDS=	xsel:${PORTSDIR}/x11/xsel
 
 do-build:
 	# Extract icons
