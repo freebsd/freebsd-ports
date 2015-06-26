@@ -7,6 +7,7 @@
     SUBDIR += abcl
     SUBDIR += adacontrol
     SUBDIR += afnix
+    SUBDIR += alchemist.el
     SUBDIR += algol68g
     SUBDIR += alisp
     SUBDIR += angelscript
