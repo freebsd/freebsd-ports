@@ -8,6 +8,8 @@ CATEGORIES=	x11-toolkits haskell
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	wxHaskell C++ wrapper
 
+BROKEN_FreeBSD_9=	does not build
+
 USE_CABAL=	wxdirect>=0.90.1.0
 
 USES=		dos2unix
