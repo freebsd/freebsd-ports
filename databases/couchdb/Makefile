@@ -44,8 +44,6 @@ STRIP=	#empty
 
 INFO=		CouchDB
 
-OPTIONS_DEFINE=	DOCS
-
 .include <bsd.port.options.mk>
 
 # This stanza could be removed around version 1.7
