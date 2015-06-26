@@ -9,13 +9,12 @@ MASTER_SITES=	http://www.semprixd.com/shares/ports/
 MAINTAINER= 	ports@FreeBSD.org
 COMMENT=	Hash cracker that precomputes plaintext - ciphertext pairs in advance
 
+ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS_REASON=	uses x86 assembly
+
 USES=		dos2unix
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		does not compile on ia64, powerpc, or sparc64
-.endif
+OPTIONS_DEFINE=	EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -30,4 +29,4 @@ do-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/charset.txt ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
