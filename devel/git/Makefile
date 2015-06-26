@@ -3,6 +3,7 @@
 
 PORTNAME=	git
 PORTVERSION=	2.4.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -34,7 +35,8 @@ SHEBANG_FILES=	*.perl */*.perl */*/*.perl */*.pl */*/*.pl */*/*/*.pl \
 		contrib/hooks/update-paranoid \
 		contrib/credential/netrc/git-credential-netrc \
 		contrib/diff-highlight/diff-highlight \
-		contrib/buildsystems/generate contrib/contacts/git-contacts
+		contrib/buildsystems/generate contrib/contacts/git-contacts \
+		contrib/svn-fe/svnrdump_sim.py
 
 CONFIGURE_ARGS=	--enable-pthreads=-pthread ac_cv_header_libcharset_h=no
 
