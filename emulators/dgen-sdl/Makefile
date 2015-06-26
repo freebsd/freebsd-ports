@@ -12,7 +12,7 @@ COMMENT=	Wonderful Sega Genesis/MegaDrive emulator
 
 USE_SDL=	sdl
 USE_GL=		yes
-USES=		fmake
+USES=		gmake
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/dgen \
