@@ -1,0 +1,18 @@
+lib/ocaml/parmap/META
+lib/ocaml/parmap/bytearray.cmi
+lib/ocaml/parmap/bytearray.mli
+lib/ocaml/parmap/libparmap_stubs.a
+lib/ocaml/parmap/parmap.a
+lib/ocaml/parmap/parmap.cma
+lib/ocaml/parmap/parmap.cmi
+lib/ocaml/parmap/parmap.cmxa
+lib/ocaml/parmap/parmap.cmxs
+lib/ocaml/parmap/parmap.mli
+lib/ocaml/parmap/parmap_utils.cmi
+lib/ocaml/parmap/parmap_utils.mli
+lib/ocaml/parmap/setcore.cmi
+lib/ocaml/parmap/setcore.mli
+lib/ocaml/stublibs/dllparmap_stubs.so
+lib/ocaml/stublibs/dllparmap_stubs.so.owner
+man/man3/Parmap.3o.gz
+@dir %%OCAML_SITELIBDIR%%
