@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	edgar
-DISTVERSION=	1.20-1
+DISTVERSION=	1.21
 CATEGORIES=	games
-MASTER_SITES=	SF/legendof${PORTNAME}/${PORTVERSION:R}/
 PKGNAMEPREFIX=	legend-of-
 
 MAINTAINER=	nemysis@FreeBSD.org
@@ -12,12 +11,13 @@ COMMENT=	2D platform game with a persistent world
 
 LICENSE=	GPLv2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:S/-1//}
-
 USES=		gmake
 USE_SDL=	image mixer sdl ttf
 WITH_ZLIB=	yes
 MAKEFILE=	makefile
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	riksweeney
 
 PORTDOCS=	*
 
