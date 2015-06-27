@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	coccinelle
-DISTVERSION=	1.0.0-rc22
-PORTREVISION=	1
+DISTVERSION=	1.0.1
 CATEGORIES=	devel
 MASTER_SITES=	http://coccinelle.lip6.fr/distrib/
 
@@ -13,6 +12,9 @@ COMMENT=	Program matching and transformation engine
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
 
+BUILD_DEPENDS=	menhir:${PORTSDIR}/devel/menhir \
+		ocaml-parmap>=0:${PORTSDIR}/devel/ocaml-parmap \
+		ocaml-pcre>=0:${PORTSDIR}/devel/ocaml-pcre
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 USES=		gmake perl5 pkgconfig:build python tar:tgz
@@ -24,7 +26,8 @@ MAKE_ARGS=	PYTHON_VERSION=${PYTHON_VER}
 CONFIGURE_ENV=	PYVER=${PYTHON_VER} PYTHON=${PYTHON_CMD}
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${DATADIR}/spatch
-	${STRIP_CMD} ${STAGEDIR}${DATADIR}/*.so
+	# FIXME: Stripping spatch(1) breaks the executable.
+	# ${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/coccinelle/spatch
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/coccinelle/*.so
 
 .include <bsd.port.mk>
