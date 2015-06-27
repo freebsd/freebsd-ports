@@ -71,5 +71,6 @@ post-install:
 	(cd ${STAGEDIR}${PREFIX}/lib && \
 	  ${LN} -s gtkada/relocatable/libgtkada.so.3.8.3 libgtkada.so && \
 	  ${LN} -s gtkada/relocatable/libgtkada_gl.so.3.8.3 libgtkada_gl.so)
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gtkada/relocatable/lib*.so.3.8.3
 
 .include <bsd.port.mk>
