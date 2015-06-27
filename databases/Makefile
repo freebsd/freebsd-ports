@@ -53,8 +53,8 @@
     SUBDIR += dbtool
     SUBDIR += dbview
     SUBDIR += emma
-    SUBDIR += epgsql
-    SUBDIR += eredis
+    SUBDIR += erlang-epgsql
+    SUBDIR += erlang-eredis
     SUBDIR += erlang-mysql
     SUBDIR += evolution-data-server
     SUBDIR += fastdb

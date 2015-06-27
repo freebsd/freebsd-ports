@@ -117,7 +117,8 @@
     SUBDIR += echoping
     SUBDIR += empty
     SUBDIR += enet
-    SUBDIR += erlang_xmlrpc
+    SUBDIR += erlang-ranch
+    SUBDIR += erlang-xmlrpc
     SUBDIR += etrace
     SUBDIR += exabgp
     SUBDIR += exaddos
@@ -997,7 +998,6 @@
     SUBDIR += radsecproxy
     SUBDIR += radvd
     SUBDIR += raggle
-    SUBDIR += ranch
     SUBDIR += rdapper
     SUBDIR += rdesktop
     SUBDIR += rdist6

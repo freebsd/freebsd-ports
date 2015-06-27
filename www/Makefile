@@ -94,7 +94,6 @@
     SUBDIR += cocoon
     SUBDIR += codeigniter
     SUBDIR += coppermine
-    SUBDIR += cowboy
     SUBDIR += cplanet
     SUBDIR += cppcms
     SUBDIR += crawl
@@ -167,6 +166,10 @@
     SUBDIR += entrans
     SUBDIR += ephemera
     SUBDIR += epiphany
+    SUBDIR += erlang-cowboy
+    SUBDIR += erlang-mochiweb
+    SUBDIR += erlang-mochiweb-basho
+    SUBDIR += erlang-webmachine
     SUBDIR += erwn
     SUBDIR += eventum
     SUBDIR += extjs
@@ -417,8 +420,6 @@
     SUBDIR += mkapachepw
     SUBDIR += mknmz-wwwoffle
     SUBDIR += mnogosearch
-    SUBDIR += mochiweb
-    SUBDIR += mochiweb-basho
     SUBDIR += mod_amazon_proxy
     SUBDIR += mod_antiloris
     SUBDIR += mod_asn
@@ -2196,7 +2197,6 @@
     SUBDIR += webkit2-gtk3
     SUBDIR += weblint
     SUBDIR += weblint++
-    SUBDIR += webmachine
     SUBDIR += webpy
     SUBDIR += webreport
     SUBDIR += webresolve
