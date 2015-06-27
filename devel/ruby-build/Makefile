@@ -3,6 +3,7 @@
 PORTNAME=	ruby-build
 PORTVERSION=	20150519
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel ruby
 
 MAINTAINER=	meta+ports@vmeta.jp
@@ -11,10 +12,9 @@ COMMENT=	Compile and install different ruby versions
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl
-
-USES=	gmake
-USE_AUTOTOOL=	autoconf
+RUN_DEPENDS=	autoconf>0:${PORTSDIR}/devel/autoconf \
+		curl:${PORTSDIR}/ftp/curl \
+		gmake:${PORTSDIR}/devel/gmake
 
 OPTIONS_DEFINE=	RBENV
 RBENV_DESC=	Install rbenv for installation support
