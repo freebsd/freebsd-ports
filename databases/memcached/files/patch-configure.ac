@@ -1,0 +1,11 @@
+--- configure.ac.orig	2015-06-27 18:28:54 UTC
++++ configure.ac
+@@ -581,7 +581,7 @@ then
+ elif test "$GCC" = "yes"
+ then
+   GCC_VERSION=`$CC -dumpversion`
+-  CFLAGS="$CFLAGS -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls"
++  CFLAGS="$CFLAGS -Wall -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls"
+   case $GCC_VERSION in
+     4.4.*)
+     CFLAGS="$CFLAGS -fno-strict-aliasing"
