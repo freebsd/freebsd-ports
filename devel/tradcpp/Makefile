@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tradcpp
-PORTVERSION=	0.4
+PORTVERSION=	0.5.1
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.NetBSD.org/pub/NetBSD/misc/dholland/
 
