@@ -15,6 +15,8 @@ EXTRACT_ONLY=	${DISTFILES:C|:[^:]+$||:M*${EXTRACT_SUFX}}
 MAINTAINER=	horia@racoviceanu.com
 COMMENT=	Sans-serif and monospaced typeface for small screens
 
+BROKEN_FreeBSD_9=	fails to extract
+
 LICENSE=	OFL11
 
 USES=		fonts zip
