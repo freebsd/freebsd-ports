@@ -249,6 +249,9 @@
     SUBDIR += cloudabi-binutils
     SUBDIR += cloudabi-cloudlibc
     SUBDIR += cloudabi-compiler-rt
+    SUBDIR += cloudabi-libc++
+    SUBDIR += cloudabi-libc++abi
+    SUBDIR += cloudabi-libunwind
     SUBDIR += cmake
     SUBDIR += cmake-fedora
     SUBDIR += cmake-gui
