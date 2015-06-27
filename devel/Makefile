@@ -128,7 +128,6 @@
     SUBDIR += bbfreeze-loader
     SUBDIR += bcc
     SUBDIR += bcpp
-    SUBDIR += bear
     SUBDIR += beautifyphp
     SUBDIR += bennugd-core
     SUBDIR += bennugd-modules
@@ -265,7 +264,6 @@
     SUBDIR += colorgcc
     SUBDIR += colormake
     SUBDIR += commit-patch
-    SUBDIR += common_lib
     SUBDIR += commoncpp
     SUBDIR += compiler-rt
     SUBDIR += compiz-bcop
@@ -276,7 +274,6 @@
     SUBDIR += cook
     SUBDIR += courier-unicode
     SUBDIR += covtool
-    SUBDIR += cowlib
     SUBDIR += cpan-upload
     SUBDIR += cpan-upload-http
     SUBDIR += cpp-netlib
@@ -298,7 +295,6 @@
     SUBDIR += cut
     SUBDIR += cutils
     SUBDIR += cutter
-    SUBDIR += cuttlefish
     SUBDIR += cvs
     SUBDIR += cvs+ipv6
     SUBDIR += cvs-devel
@@ -417,16 +413,29 @@
     SUBDIR += eric6
     SUBDIR += eris
     SUBDIR += erlang-bbmustache
+    SUBDIR += erlang-bear
+    SUBDIR += erlang-common_lib
+    SUBDIR += erlang-cowlib
+    SUBDIR += erlang-cuttlefish
+    SUBDIR += erlang-esdl
+    SUBDIR += erlang-exmpp
+    SUBDIR += erlang-folsom
     SUBDIR += erlang-gen_leader
     SUBDIR += erlang-gen_smtp
     SUBDIR += erlang-getopt
+    SUBDIR += erlang-goldrush
     SUBDIR += erlang-gproc
     SUBDIR += erlang-ibrowse
+    SUBDIR += erlang-lager
+    SUBDIR += erlang-lager_syslog
+    SUBDIR += erlang-meck
     SUBDIR += erlang-msgpack
+    SUBDIR += erlang-neotoma
+    SUBDIR += erlang-oserl
+    SUBDIR += erlang-poolboy
     SUBDIR += erlang-protobuffs
     SUBDIR += erlang-recon
     SUBDIR += erlang-syslog
-    SUBDIR += esdl
     SUBDIR += etcd
     SUBDIR += etcdctl
     SUBDIR += etl
@@ -456,7 +465,6 @@
     SUBDIR += fmake
     SUBDIR += fnccheck
     SUBDIR += fnorb
-    SUBDIR += folsom
     SUBDIR += fortran-utils
     SUBDIR += fortytwo-encore
     SUBDIR += fossil
@@ -634,7 +642,6 @@
     SUBDIR += godot
     SUBDIR += goffice
     SUBDIR += goffice010
-    SUBDIR += goldrush
     SUBDIR += google-gdata
     SUBDIR += google-perftools
     SUBDIR += google-sparsehash
@@ -987,8 +994,6 @@
     SUBDIR += kimwitu
     SUBDIR += kyra
     SUBDIR += kyua
-    SUBDIR += lager
-    SUBDIR += lager_syslog
     SUBDIR += lasi
     SUBDIR += lcov
     SUBDIR += leaktracer
@@ -1340,7 +1345,6 @@
     SUBDIR += maven31
     SUBDIR += mcpp
     SUBDIR += mdds
-    SUBDIR += meck
     SUBDIR += memcheck
     SUBDIR += menhir
     SUBDIR += mercator
@@ -1400,7 +1404,6 @@
     SUBDIR += ndesk-dbus
     SUBDIR += ndesk-dbus-glib
     SUBDIR += ndesk-options
-    SUBDIR += neotoma
     SUBDIR += netscape-java40
     SUBDIR += newfile
     SUBDIR += newt
@@ -1475,7 +1478,6 @@
     SUBDIR += openzz
     SUBDIR += orc
     SUBDIR += osc
-    SUBDIR += oserl
     SUBDIR += ossp-al
     SUBDIR += ossp-cfg
     SUBDIR += ossp-ex
@@ -3649,7 +3651,6 @@
     SUBDIR += poco-devel
     SUBDIR += poco-ssl
     SUBDIR += ponscripter-sekai
-    SUBDIR += poolboy
     SUBDIR += popt
     SUBDIR += poslib
     SUBDIR += powerpc64-binutils
