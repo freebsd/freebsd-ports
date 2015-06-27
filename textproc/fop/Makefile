@@ -3,6 +3,7 @@
 
 PORTNAME=	fop
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	APACHE/xmlgraphics/fop/source/:fop \
 		SF/offo/offo-hyphenation/2.1:hyph
