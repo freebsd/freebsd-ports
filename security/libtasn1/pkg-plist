@@ -2,11 +2,10 @@ bin/asn1Coding
 bin/asn1Decoding
 bin/asn1Parser
 include/libtasn1.h
-info/libtasn1.info
 lib/libtasn1.a
 lib/libtasn1.so
 lib/libtasn1.so.6
-lib/libtasn1.so.6.3.2
+lib/libtasn1.so.6.4.2
 libdata/pkgconfig/libtasn1.pc
 man/man1/asn1Coding.1.gz
 man/man1/asn1Decoding.1.gz
@@ -16,6 +15,7 @@ man/man3/asn1_bit_der.3.gz
 man/man3/asn1_check_version.3.gz
 man/man3/asn1_copy_node.3.gz
 man/man3/asn1_create_element.3.gz
+man/man3/asn1_decode_simple_ber.3.gz
 man/man3/asn1_decode_simple_der.3.gz
 man/man3/asn1_delete_element.3.gz
 man/man3/asn1_delete_structure.3.gz
@@ -57,4 +57,3 @@ man/man3/asn1_write_value.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/libtasn1.html
 %%PORTDOCS%%%%DOCSDIR%%/libtasn1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/libtasn1.ps
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
