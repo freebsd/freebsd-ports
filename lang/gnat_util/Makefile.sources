@@ -37,6 +37,8 @@ GNAT_SRCS= \
 	fname-uf.ads \
 	fname.adb \
 	fname.ads \
+	get_scos.adb \
+	get_scos.ads \
 	gnatvsn.adb \
 	gnatvsn.ads \
 	hostparm.ads \
@@ -100,6 +102,8 @@ GNAT_SRCS= \
 	prj-util.ads \
 	prj.adb \
 	prj.ads \
+	put_scos.adb \
+	put_scos.ads \
 	repinfo.adb \
 	repinfo.ads \
 	restrict.adb \
@@ -109,6 +113,8 @@ GNAT_SRCS= \
 	scans.ads \
 	scng.adb \
 	scng.ads \
+	scos.adb \
+	scos.ads \
 	sdefault.ads \
 	sem_aux.adb \
 	sem_aux.ads \
