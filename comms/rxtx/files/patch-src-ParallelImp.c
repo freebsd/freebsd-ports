@@ -1,8 +1,6 @@
-$FreeBSD: /tmp/pcvs/ports/comms/rxtx/files/patch-src-ParallelImp.c,v 1.1 2011-09-17 14:55:56 pawel Exp $
-
---- src/ParallelImp.c.orig	Fri Apr  9 23:31:09 2004
-+++ src/ParallelImp.c	Fri Apr  9 23:35:01 2004
-@@ -222,9 +222,6 @@
+--- src/ParallelImp.c.orig	2008-11-27 20:01:48.000000000 +0000
++++ src/ParallelImp.c	2015-05-11 16:52:36.000000000 +0100
+@@ -265,9 +265,6 @@
  #if defined(__linux__)
  	return( status & LP_BUSY ? JNI_TRUE : JNI_FALSE );
  #endif
