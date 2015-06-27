@@ -41,10 +41,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-install:
 .if defined(PKGNAMESUFFIX)
-	${INSTALL_DATA} -d ${STAGEDIR}${PREFIX}/libexec/nagios/
+	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios/
 	${LN} -s ${PREFIX}/sbin/send_nsca ${STAGEDIR}${PREFIX}/libexec/nagios/send_nsca
 
-	${INSTALL_DATA} -d ${STAGEDIR}${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/contrib && ${INSTALL_DATA} ${PORTEXAMPLES} \
 		${STAGEDIR}${EXAMPLESDIR}
 
