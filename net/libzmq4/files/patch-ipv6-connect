@@ -1,0 +1,20 @@
+15f9ee19cb895f7fb7b6d09ec64d4b82717ee1aa
+diff --git src/socket_base.cpp src/socket_base.cpp
+index bddbaf2..79044b1 100644
+--- src/socket_base.cpp
++++ src/socket_base.cpp
+@@ -717,11 +717,12 @@ int zmq::socket_base_t::connect (const char *addr_)
+         //  Following code is quick and dirty check to catch obvious errors,
+         //  without trying to be fully accurate.
+         const char *check = address.c_str ();
+-        if (isalnum (*check) || isxdigit (*check)) {
++        if (isalnum (*check) || isxdigit (*check) || *check == '[') {
+             check++;
+             while (isalnum  (*check)
+                 || isxdigit (*check)
+-                || *check == '.' || *check == '-' || *check == ':'|| *check == ';')
++                || *check == '.' || *check == '-' || *check == ':'|| *check == ';'
++                || *check == ']')
+                 check++;
+         }
+         //  Assume the worst, now look for success
