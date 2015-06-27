@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libtasn1
-PORTVERSION=	4.2
+PORTVERSION=	4.5
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libtasn1
@@ -20,6 +20,7 @@ OPTIONS_DEFINE=	DOCS
 
 DOCS=		AUTHORS NEWS README THANKS doc/TODO \
 		doc/libtasn1.html doc/libtasn1.pdf doc/libtasn1.ps
+INFO=		libtasn1
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
