@@ -3,7 +3,7 @@
 
 PORTNAME=	freerdp
 PORTVERSION=	1.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net comms ipv6
 
 MAINTAINER=	ports@FreeBSD.org
@@ -68,6 +68,10 @@ X11_CMAKE_OFF=		-DWITH_X11=OFF -DWITH_XKBFILE=OFF
 X11_USE=		xorg=x11,xkbfile,xcursor,xextproto,xv,xinerama,xext,xcursor,xrandr,xi,xfixes
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDIRECTFB}
+BROKEN=		DIRECTFB no longer builds
+.endif
 
 post-extract:
 	${REINPLACE_CMD} -e 's|$${CMAKE_INSTALL_LIBDIR}/pkgconfig|libdata/pkgconfig|' \
