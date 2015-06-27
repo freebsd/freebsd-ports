@@ -13,6 +13,8 @@ COMMENT=	Fast secure hashing
 LICENSE=	CC0-1.0
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
+BROKEN_FreeBSD_9_amd64=	does not build
+
 B2VERSION=	20150529
 
 USES=		zip
