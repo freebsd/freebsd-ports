@@ -29,7 +29,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twiggy>0:${PORTSDIR}/devel/py-twiggy \
 		${PYTHON_PKGNAMEPREFIX}click>0:${PORTSDIR}/devel/py-click \
 		${PYTHON_PKGNAMEPREFIX}xdg>0:${PORTSDIR}/devel/py-xdg
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock \
-		${PYTHON_PKGNAMEPREFIX}unittest2>0:${PORTSDIR}/devel/py-mock \
+		${PYTHON_PKGNAMEPREFIX}unittest2>0:${PORTSDIR}/devel/py-unittest2 \
 		${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose
 
 USES=		python:2
