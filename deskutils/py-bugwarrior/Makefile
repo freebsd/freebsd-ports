@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bugwarrior
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	deskutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,8 +28,14 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twiggy>0:${PORTSDIR}/devel/py-twiggy \
 		${PYTHON_PKGNAMEPREFIX}lockfile>=0.9.1:${PORTSDIR}/devel/py-lockfile \
 		${PYTHON_PKGNAMEPREFIX}click>0:${PORTSDIR}/devel/py-click \
 		${PYTHON_PKGNAMEPREFIX}xdg>0:${PORTSDIR}/devel/py-xdg
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock \
+		${PYTHON_PKGNAMEPREFIX}unittest2>0:${PORTSDIR}/devel/py-mock \
+		${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose
 
 USES=		python:2
 USE_PYTHON=	autoplist concurrent distutils
+
+regression-test: build
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>
