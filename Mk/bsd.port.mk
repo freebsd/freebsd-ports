@@ -185,6 +185,11 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  release of ${OPSYS}, e.g BROKEN_FreeBSD_8
 #				  would affect all point releases of FreeBSD 8
 #				  unless TRYBROKEN is also set.
+# BROKEN_${OPSYS}_${OSREL:R}_${ARCH} -  Port is believed to be broken on a
+#				  single release of ${OPSYS} and specific architecture,
+#				  e.g BROKEN_FreeBSD_8_i386 would affect all point
+#				  releases of FreeBSD 8 in i386
+#				  unless TRYBROKEN is also set.
 # DEPRECATED	- Port is deprecated to install. Advisory only.
 # EXPIRATION_DATE
 #				- If DEPRECATED is set, determines a date when
@@ -2822,6 +2827,10 @@ IGNORE=		is marked as broken on ${ARCH}: ${BROKEN_${ARCH}}
 .elif defined(BROKEN_${OPSYS}_${OSREL:R})
 .if !defined(TRYBROKEN)
 IGNORE=		is marked as broken on ${OPSYS} ${OSREL}: ${BROKEN_${OPSYS}_${OSREL:R}}
+.endif
+.elif defined(BROKEN_${OPSYS}_${OSREL:R}_${ARCH})
+.if !defined(TRYBROKEN)
+IGNORE=		is marked as broken on ${OPSYS} ${OSREL} ${ARCH}: ${BROKEN_${OPSYS}_${OSREL:R}_${ARCH}}
 .endif
 .elif defined(BROKEN_${OPSYS})
 .if !defined(TRYBROKEN)
