@@ -1441,6 +1441,7 @@
     SUBDIR += ocaml-magic
     SUBDIR += ocaml-opam
     SUBDIR += ocaml-ounit
+    SUBDIR += ocaml-parmap
     SUBDIR += ocaml-pcre
     SUBDIR += ocaml-pomap
     SUBDIR += ocaml-ppx-tools
