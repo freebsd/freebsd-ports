@@ -11,6 +11,8 @@ COMMENT=	C++ libraries with a network/internet focus
 
 LICENSE=	BSL
 
+BROKEN_FreeBSD_9_i386=	does not build
+
 CONFLICTS=	poco-ssl-[0-9]*
 
 USES=		gmake tar:bzip2
