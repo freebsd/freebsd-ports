@@ -1,5 +1,5 @@
-SHA256 (syncthing-syncthing-inotify-v0.6.3_GH0.tar.gz) = d3af7c233c132660cdc752605ae7830b8cb56ba5f2426a11e461ef0046847ab1
-SIZE (syncthing-syncthing-inotify-v0.6.3_GH0.tar.gz) = 16930
+SHA256 (syncthing-syncthing-inotify-v0.6.5_GH0.tar.gz) = 430297896bb05396268fd29cc555eba6542b42263489784c9843f4daf625ac5c
+SIZE (syncthing-syncthing-inotify-v0.6.5_GH0.tar.gz) = 122439
 SHA256 (cenkalti-backoff-6c45d6b_GH0.tar.gz) = 53eb75fabaa046eae13cb2d7b94f88aa36ffae472db840f10982a4f53316ee23
 SIZE (cenkalti-backoff-6c45d6b_GH0.tar.gz) = 6397
 SHA256 (zillode-notify-f06b1e3_GH0.tar.gz) = da440711b1ffac58885d7c3d6a4889ac2b115dd13bff7c9b85b3beabb0a087c6
