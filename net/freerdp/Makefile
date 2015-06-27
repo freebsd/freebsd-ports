@@ -3,7 +3,7 @@
 
 PORTNAME=	freerdp
 PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net comms ipv6
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,7 +18,7 @@ USES=		alias cmake:outsource cpe execinfo pkgconfig compiler:c++11-lib
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeRDP
 GH_PROJECT=	${GH_ACCOUNT}
-GH_TAGNAME=	f5ff6e1
+GH_TAGNAME=	20878e50fe
 
 CPE_VENDOR=	freerdp_project
 
