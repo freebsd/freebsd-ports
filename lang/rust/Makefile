@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	lang
 MASTER_SITES=	http://static.rust-lang.org/dist/:src \
 		http://static.rust-lang.org/stage0-snapshots/:bootstrap
@@ -33,12 +32,13 @@ CONFLICTS_INSTALL=	rust-nightly
 
 RUST_SOURCE=	${DISTNAME}-src${EXTRACT_SUFX}
 RUST_BOOT=	rust-stage0-${RUST_BOOT_SIG}.tar.bz2
-RUST_BOOT_SIG=	2015-03-27-5520801-freebsd-x86_64-0910bbad35e213f679d0433884fd51398eb3bc8d
+RUST_BOOT_SIG=	2015-04-27-857ef6e-freebsd-x86_64-18925db56f6298cc190d1f41615ab5871de1dda0
 
 USES=		gmake python:2,build
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-valgrind --disable-docs \
-		--enable-clang --mandir=${MANPREFIX}/man
+		--enable-clang --mandir=${MANPREFIX}/man \
+		--release-channel=stable
 
 # Use LLVM from ports, instead of the copy shipped with rust.
 LLVM_VER=	36
