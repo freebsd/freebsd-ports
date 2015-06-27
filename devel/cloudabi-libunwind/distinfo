@@ -1,0 +1,4 @@
+SHA256 (libc++abi-0.240527.tar.xz) = 16b206bb5ad40fbd40f69f79c31924aa9efe7e01255f69962361f873f13b4c29
+SIZE (libc++abi-0.240527.tar.xz) = 507212
+SHA256 (libunwind-0.240527.tar.xz) = a921907dbdadbf86fbc9f0317f6a88707907e36be0ecce283cd46e45dfb16e0f
+SIZE (libunwind-0.240527.tar.xz) = 59036

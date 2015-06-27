@@ -1,0 +1,5 @@
+libc++ is an implementation of the C++ standard library maintained by
+the LLVM project. This package installs a copy of this library as part
+of the CloudABI toolchain.
+
+WWW: http://libcxx.llvm.org/

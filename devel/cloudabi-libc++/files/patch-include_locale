@@ -1,0 +1,18 @@
+--- include/locale.orig	2015-06-17 04:49:22 UTC
++++ include/locale
+@@ -1297,13 +1297,13 @@ __num_put<_CharT>::__widen_and_group_flo
+         *__oe++ = __ct.widen(*__nf++);
+         *__oe++ = __ct.widen(*__nf++);
+         for (__ns = __nf; __ns < __ne; ++__ns)
+-            if (!isxdigit_l(*__ns, _LIBCPP_GET_C_LOCALE))
++            if (!isxdigit(*__ns))
+                 break;
+     }
+     else
+     {
+         for (__ns = __nf; __ns < __ne; ++__ns)
+-            if (!isdigit_l(*__ns, _LIBCPP_GET_C_LOCALE))
++            if (!isdigit(*__ns))
+                 break;
+     }
+     if (__grouping.empty())
