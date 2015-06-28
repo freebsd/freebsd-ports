@@ -4329,176 +4329,32 @@ package-noinstall: package
 .if !target(depends)
 depends: pkg-depends extract-depends patch-depends lib-depends fetch-depends build-depends run-depends
 
-.if defined(ALWAYS_BUILD_DEPENDS)
-_DEPEND_ALWAYS=	1
-.else
-_DEPEND_ALWAYS=	0
-.endif
-
-_INSTALL_DEPENDS=	\
-		if [ -n "${USE_PACKAGE_DEPENDS}" -o -n "${USE_PACKAGE_DEPENDS_ONLY}" ]; then \
-			subpkgfile=`(cd $$dir; ${MAKE} $$depends_args -V PKGFILE)`; \
-			subpkgname=$${subpkgfile%-*} ; \
-			subpkgname=$${subpkgname\#\#*/} ; \
-			if [ -r "$${subpkgfile}" -a "$$target" = "${DEPENDS_TARGET}" ]; then \
-				${ECHO_MSG} "===>   Installing existing package $${subpkgfile}"; \
-				if [ $${subpkgname} = "pkg" ]; then \
-					[ -d ${WRKDIR} ] || ${MKDIR} ${WRKDIR} ; \
-					${TAR} xf $${subpkgfile} -C ${WRKDIR} -s ",/.*/,,g" "*/pkg-static" ; \
-					${WRKDIR}/pkg-static add $${subpkgfile}; \
-					${RM} -f ${WRKDIR}/pkg-static; \
-				else \
-					${PKG_ADD} -A $${subpkgfile}; \
-				fi; \
-			elif [ -n "${USE_PACKAGE_DEPENDS_ONLY}" -a "$${target}" = "${DEPENDS_TARGET}" ]; then \
-				${ECHO_MSG} "===>   ${PKGNAME} depends on package: $${subpkgfile} - not found"; \
-				${ECHO_MSG} "===>   USE_PACKAGE_DEPENDS_ONLY set - not building missing dependency from source"; \
-				exit 1; \
-			else \
-			  (cd $$dir; ${MAKE} -DINSTALLS_DEPENDS $$target $$depends_args) ; \
-			fi; \
-		elif [ -z "${STRICT_DEPENDS}" ]; then \
-			(cd $$dir; ${MAKE} -DINSTALLS_DEPENDS $$target $$depends_args) ; \
-		fi; \
-		${ECHO_MSG} "===>   Returning to build of ${PKGNAME}";
-
-.for deptype in PKG EXTRACT PATCH FETCH BUILD RUN
+.for deptype in PKG EXTRACT PATCH FETCH BUILD LIB RUN
 ${deptype:tl}-depends:
-.if defined(${deptype}_DEPENDS)
-.if !defined(NO_DEPENDS)
-	@set -e ; anynotfound=0; for i in `${ECHO_CMD} "${${deptype}_DEPENDS}"`; do \
-		prog=$${i%%:*}; \
-		if [ -z "$$prog" ]; then \
-			${ECHO_MSG} "Error: there is an empty port dependency in ${deptype}_DEPENDS."; \
-			break; \
-		fi; \
-		dir=`${ECHO_CMD} $$i | ${SED} -e 's/[^:]*://'`; \
-		if ${EXPR} "$$dir" : '.*:' > /dev/null; then \
-			target=$${dir##*:}; \
-			dir=$${dir%%:*}; \
-			if [ X${DEPENDS_PRECLEAN} != "X" ]; then \
-				target="clean $$target"; \
-				depends_args="$$depends_args NOCLEANDEPENDS=yes"; \
-			fi; \
-			if [ X${DEPENDS_CLEAN} != "X" ]; then \
-				target="$$target clean"; \
-				depends_args="$$depends_args NOCLEANDEPENDS=yes"; \
-			fi; \
-		else \
-			target="${DEPENDS_TARGET}"; \
-			depends_args="${DEPENDS_ARGS}"; \
-		fi; \
-		if ${EXPR} "$$prog" : \\/ >/dev/null; then \
-			if [ -e "$$prog" ]; then \
-				if [ "$$prog" = "${NONEXISTENT}" ]; then \
-					${ECHO_MSG} "Error: ${NONEXISTENT} exists.  Please remove it, and restart the build."; \
-					${FALSE}; \
-				else \
-					${ECHO_MSG} "===>   ${PKGNAME} depends on file: $$prog - found"; \
-					if [ ${_DEPEND_ALWAYS} = 1 ]; then \
-						${ECHO_MSG} "       (but building it anyway)"; \
-						notfound=1; \
-					else \
-						notfound=0; \
-					fi; \
-				fi; \
-			else \
-				${ECHO_MSG} "===>   ${PKGNAME} depends on file: $$prog - not found"; \
-				notfound=1; \
-			fi; \
-		else \
-			case $${prog} in \
-				*\>*|*\<*|*=*)	pkg=yes;; \
-				*)		pkg="";; \
-			esac; \
-			if [ "$$pkg" != "" ]; then \
-				if ${PKG_INFO} "$$prog" > /dev/null 2>&1 ; then \
-					${ECHO_MSG} "===>   ${PKGNAME} depends on package: $$prog - found"; \
-					if [ ${_DEPEND_ALWAYS} = 1 ]; then \
-						${ECHO_MSG} "       (but building it anyway)"; \
-						notfound=1; \
-					else \
-						notfound=0; \
-					fi; \
-				else \
-					${ECHO_MSG} "===>   ${PKGNAME} depends on package: $$prog - not found"; \
-					notfound=1; \
-				fi; \
-				if [ $$notfound != 0 ]; then \
-					inverse_dep=`${ECHO_CMD} $$prog | ${SED} \
-						-e 's/<=/=gt=/; s/</=ge=/; s/>=/=lt=/; s/>/=le=/' \
-						-e 's/=gt=/>/; s/=ge=/>=/; s/=lt=/</; s/=le=/<=/'`; \
-					pkg_info=`${PKG_INFO} -E "$$inverse_dep" 2>/dev/null || ${TRUE}`; \
-					if [ "$$pkg_info" != "" ]; then \
-						${ECHO_MSG} "===>   Found $$pkg_info, but you need to upgrade to $$prog."; \
-						exit 1; \
-					fi; \
-				fi; \
-			elif ${WHICH} "$$prog" > /dev/null 2>&1 ; then \
-				${ECHO_MSG} "===>   ${PKGNAME} depends on executable: $$prog - found"; \
-				if [ ${_DEPEND_ALWAYS} = 1 ]; then \
-					${ECHO_MSG} "       (but building it anyway)"; \
-					notfound=1; \
-				else \
-					notfound=0; \
-				fi; \
-			else \
-				${ECHO_MSG} "===>   ${PKGNAME} depends on executable: $$prog - not found"; \
-				notfound=1; \
-			fi; \
-		fi; \
-		if [ $$notfound != 0 ]; then \
-			if [ "$$prog" != "${NONEXISTENT}" ]; then \
-				anynotfound=1; \
-			fi; \
-			${ECHO_MSG} "===>    Verifying $$target for $$prog in $$dir"; \
-			if [ ! -d "$$dir" ]; then \
-				${ECHO_MSG} "     => No directory for $$prog.  Skipping.."; \
-			else \
-				${_INSTALL_DEPENDS} \
-			fi; \
-		fi; \
-	done; \
-	if [ -n "${STRICT_DEPENDS}" -a $${anynotfound} -eq 1 ]; then \
-		${ECHO_MSG} "===>   STRICT_DEPENDS set - Not installing missing dependencies."; \
-		${ECHO_MSG} "       This means a dependency is wrong since it was not satisfied in the ${deptype:tl}-depends phase."; \
-		exit 1; \
-	fi
-.endif
-.else
-	@${DO_NADA}
+.if defined(${deptype}_DEPENDS) && !defined(NO_DEPENDS)
+	@${SETENV} \
+		dp_RAWDEPENDS="${${deptype}_DEPENDS}" \
+		dp_DEPTYPE="${deptype}_DEPENDS" \
+		dp_DEPENDS_TARGET="${DEPENDS_TARGET}" \
+		dp_DEPENDS_PRECLEAN="${DEPENDS_PRECLEAN}" \
+		dp_DEPENDS_CLEAN="${DEPENDS_CLEAN}" \
+		dp_DEPENDS_ARGS="${DEPENDS_ARGS}" \
+		dp_USE_PACKAGE_DEPENDS="${USE_PACKAGE_DEPENDS}" \
+		dp_USE_PACKAGE_DEPENDS_ONLY="${USE_PACKAGE_DEPENDS_ONLY}" \
+		dp_PKG_ADD="${PKG_ADD}" \
+		dp_PKG_INFO="${PKG_INFO}" \
+		dp_WRKDIR="${WRKDIR}" \
+		dp_PKGNAME="${PKGNAME}" \
+		dp_STRICT_DEPENDS="${STRICT_DEPENDS}" \
+		dp_LOCALBASE="${LOCALBASE}" \
+		dp_LIB_DIRS="${LIB_DIRS}" \
+		dp_SH="${SH}" \
+		dp_SCRIPTSDIR="${SCRIPTSDIR}" \
+		dp_PORTSDIR="${PORTSDIR}" \
+		dp_MAKE="${MAKE}" \
+		${SH} ${SCRIPTSDIR}/do-depends.sh
 .endif
 .endfor
-
-lib-depends:
-.if defined(LIB_DEPENDS) && !defined(NO_DEPENDS)
-	@set -e ; \
-	anynotfound=0; for i in ${LIB_DEPENDS}; do \
-		lib=$${i%%:*} ; \
-		dir=$${i#*:}  ; \
-		target="${DEPENDS_TARGET}"; \
-		depends_args="${DEPENDS_ARGS}"; \
-		${ECHO_MSG}  -n "===>   ${PKGNAME} depends on shared library: $${lib}" ; \
-		libfile=`${SETENV} LIB_DIRS="${LIB_DIRS}" LOCALBASE="${LOCALBASE}" ${SH} ${SCRIPTSDIR}/find-lib.sh $${lib}` ; \
-		if [ -z "$${libfile}" ]; then \
-			anynotfound=1; \
-			${ECHO_MSG} " - not found"; \
-			${ECHO_MSG} "===>    Verifying for $$lib in $$dir"; \
-			if [ ! -d "$$dir" ] ; then \
-				${ECHO_MSG} "    => No directory for $$lib.  Skipping.."; \
-			else \
-				${_INSTALL_DEPENDS} \
-			fi ; \
-		else \
-			${ECHO_MSG} " - found ($${libfile})"; \
-		fi ; \
-	done; \
-	if [ -n "${STRICT_DEPENDS}" -a $${anynotfound} -eq 1 ]; then \
-		${ECHO_MSG} "===>   STRICT_DEPENDS set - Not installing missing dependencies."; \
-		${ECHO_MSG} "       This means a dependency is wrong since it was not satisfied in the lib-depends phase."; \
-		exit 1; \
-	fi
-.endif
 
 .endif
 
