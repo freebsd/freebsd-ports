@@ -3,6 +3,7 @@
 
 PORTNAME=	stringi
 DISTVERSION=	0.5-2
+PORTREVISION=	1
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -13,6 +14,6 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libicui18n.so:${PORTSDIR}/devel/icu
 
-USES=	cran:auto-plist
+USES=	cran:auto-plist pkgconfig:build
 
 .include <bsd.port.mk>
