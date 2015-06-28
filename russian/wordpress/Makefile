@@ -3,9 +3,9 @@
 
 PORTNAME=	wordpress
 PORTVERSION=	4.2.2
+DISTVERSIONSUFFIX=	-ru_RU
 CATEGORIES=	russian www
 MASTER_SITES=	http://ru.wordpress.org/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-ru_RU
 
 MAINTAINER=	9267096@gmail.com
 COMMENT=	State-of-the-art semantic personal publishing platform
