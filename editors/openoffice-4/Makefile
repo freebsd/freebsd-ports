@@ -102,7 +102,6 @@ USE_XORG=	x11 ice xaw xau xext xrender xrandr \
 USES=		autoreconf:autoconf bison compiler cpe desktop-file-utils \
 		gmake jpeg perl5 pkgconfig python tar:bzip2
 WITHOUT_CPU_CFLAGS=	true
-MAKE_JOBS_SAFE=	yes
 CPE_PRODUCT=	${PORTNAME:S|apache-||}
 CPE_VENDOR=	apache
 

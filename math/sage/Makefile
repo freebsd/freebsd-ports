@@ -37,7 +37,6 @@ pre-extract:
 PLIST_FILES=	bin/sage
 USE_TEX=	latex:build
 USES=		gmake iconv jpeg tk perl5
-MAKE_JOBS_SAFE=	yes
 
 # Optimization flags will be defined by the source
 CFLAGS:=	${CFLAGS:C/^-O.*$//}
