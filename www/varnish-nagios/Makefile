@@ -2,21 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	varnish-nagios
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.1.20140519
+PORTREVISION=	0
 CATEGORIES=	www
-MASTER_SITES=	http://repo.varnish-cache.org/source/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nagios plugin to check status of Varnish
 
-BUILD_DEPENDS=	${LOCALBASE}/include/varnish/varnishapi.h:${PORTSDIR}/www/varnish
+BUILD_DEPENDS=	varnish4>=0:${PORTSDIR}/www/varnish4
 
 LICENSE=	BSD2CLAUSE
 
 GNU_CONFIGURE=	yes
+CFLAGS+=	-lm
 
-USES=		pkgconfig
+USES=		autoreconf libtool pkgconfig
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	varnish
+GH_TAGNAME=	022fbf9
 
 PLIST_FILES=	libexec/nagios/check_varnish
 
