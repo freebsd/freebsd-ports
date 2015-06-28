@@ -7665,3 +7665,4 @@ www/webmachine|www/erlang-webmachine|2015-06-27|Renamed with erlang- prefix
 textproc/exmpp|devel/erlang-exmpp|2015-06-27|Moved to devel category, with erlang- prefix
 databases/eredis|databases/erlang-eredis|2015-06-27|Renamed with erlang- prefix
 databases/epgsql|databases/erlang-epgsql|2015-06-27|Renamed with erlang- prefix
+www/varnish|www/varnish4|2015-06-28|Has expired: EOL was reached in April 2015, use www/varnish4
