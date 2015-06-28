@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}-lib
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	High performance image processing libraries for Java
 
+BROKEN=		unfetchable
+
 USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
