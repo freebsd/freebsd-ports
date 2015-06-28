@@ -26,6 +26,19 @@
  
              when Gprexch.Library_Rpath_Options =>
                 Library_Rpath_Options_Table.Append
+@@ -1143,10 +1153,10 @@ begin
+ 
+                      Libgnat :=
+                        new String'
+-                         ("-lgnat-" & Line (6 .. Last));
++                         ("-lgnat-" & Line (6));
+                      Libgnarl :=
+                        new String'
+-                         ("-lgnarl-" & Line (6 .. Last));
++                         ("-lgnarl-" & Line (6));
+                   end if;
+ 
+                else
 @@ -2113,7 +2123,7 @@ begin
           Library_Switches_Table.Append
             (new String'("-L" & Imported_Library_Directories.Table (J).all));
