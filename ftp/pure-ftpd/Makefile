@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	1.0.40
+PORTVERSION=	1.0.41
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://download.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -62,7 +62,6 @@ LANG?=		english
 PAM_DIR?=	${EXAMPLESDIR}/pam
 PAM_TARGET?=	pure-ftpd
 PAM_TEMPL?=	${FILESDIR}/pam.conf.5
-TLS_CERTFILE?=	/etc/ssl/private/pure-ftpd.pem
 
 ANONDELETE_CPPFLAGS=	-DANON_CAN_DELETE
 ANONRENAME_CPPFLAGS=	-DANON_CAN_RENAME
@@ -80,8 +79,7 @@ PRIVSEP_CONFIGURE_WITH=	privsep
 SCRYPT_LIB_DEPENDS=	libsodium.so:${PORTSDIR}/security/libsodium
 SENDFILE_CONFIGURE_WITH=sendfile
 THROTTLING_CONFIGURE_WITH=	throttling
-TLS_CONFIGURE_OFF=	--without-tls
-TLS_CONFIGURE_ON=	--with-certfile=${TLS_CERTFILE} --with-tls
+TLS_CONFIGURE_WITH=	tls
 TLS_CPPFLAGS=		-I${OPENSSLINC}
 TLS_LDFLAGS=		-L${OPENSSLLIB}
 TLS_USE=		OPENSSL=yes
@@ -106,9 +104,6 @@ pre-fetch:
 	@${ECHO_MSG} "  english, french, french-funny, german, hungarian, italian, korean,"
 	@${ECHO_MSG} "  norwegian, polish, romanian, russian, simplified-chinese, slovak,"
 	@${ECHO_MSG} "  spanish, swedish, traditional-chinese, turkish"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "TLS_CERTFILE=/path/to/file (default: /etc/ssl/private/pure-ftpd.pem)"
-	@${ECHO_MSG} "- Custom location of certificate file for TLS"
 	@${ECHO_MSG} ""
 
 post-patch:
