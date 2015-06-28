@@ -52,6 +52,7 @@
     SUBDIR += algae
     SUBDIR += algotutor
     SUBDIR += alt-ergo
+    SUBDIR += alt-ergo-spark
     SUBDIR += analitza
     SUBDIR += ann
     SUBDIR += apc
