@@ -1,6 +1,6 @@
---- share/gprconfig/compilers.xml.orig	2014-03-21 10:41:06.000000000 +0000
+--- share/gprconfig/compilers.xml.orig	2015-04-28 15:02:41 UTC
 +++ share/gprconfig/compilers.xml
-@@ -657,16 +657,15 @@
+@@ -693,17 +693,15 @@
      </version>
      <languages>Ada</languages>
      <variable name="gcc_version">
@@ -12,8 +12,9 @@
 -       <directory group="default" >\.\./lib/gcc(-lib)?/$TARGET/$gcc_version/adalib/</directory>
 -       <directory group="default" contents="^rts-">\.\./lib/gcc(-lib)?/$TARGET/$gcc_version/ada_object_path</directory>
 -       <directory group="2" >\.\./lib/gcc(-lib)?/$TARGET/$gcc_version/rts-(.*)/adalib/</directory>
+-       <directory group="1" >\.\./$TARGET/lib/gnat/(.*)/adalib/</directory>
 +       <directory group="default">\.\./lib/gcc/$TARGET/$gcc_version/adalib</directory>
-+       <directory group="0">@AUXPREFIX@/lib/gcc/$TARGET/$gcc_version/adalib</directory>
++       <directory group="0">/usr/local/gcc5-aux/lib/gcc/$TARGET/$gcc_version/adalib</directory>
      </runtimes>
      <target>
 -      <external>${PREFIX}gcc -dumpmachine</external>
