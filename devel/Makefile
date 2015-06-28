@@ -252,6 +252,7 @@
     SUBDIR += cloudabi-libc++
     SUBDIR += cloudabi-libc++abi
     SUBDIR += cloudabi-libunwind
+    SUBDIR += cloudabi-toolchain
     SUBDIR += cmake
     SUBDIR += cmake-fedora
     SUBDIR += cmake-gui
