@@ -17,6 +17,7 @@ RUN_DEPENDS=	rubygem-actionpack4>=4:${PORTSDIR}/www/rubygem-actionpack4 \
 		rubygem-mime-types>0:${PORTSDIR}/misc/rubygem-mime-types \
 		rubygem-sanitize>=2.1:${PORTSDIR}/textproc/rubygem-sanitize
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
