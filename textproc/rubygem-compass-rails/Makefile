@@ -14,6 +14,7 @@ RUN_DEPENDS=	rubygem-compass>=1.0.0:${PORTSDIR}/textproc/rubygem-compass \
 		rubygem-sass-rails>=0:${PORTSDIR}/textproc/rubygem-sass-rails \
 		rubygem-sprockets>=0:${PORTSDIR}/devel/rubygem-sprockets
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
