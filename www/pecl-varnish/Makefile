@@ -6,7 +6,6 @@ PORTVERSION=	1.2.1
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	jim@ohlste.in
@@ -16,6 +15,7 @@ LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	varnish4>=0:${PORTSDIR}/www/varnish4
 
+USES=	tar:tgz
 USE_PHP=	hash
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
