@@ -3,18 +3,19 @@
 
 PORTNAME=	spook
 PORTVERSION=	20050207
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.litech.org/spook/dist/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mizhka@gmail.com
 COMMENT=	Embedded RTP/RTSP/HTTP video streamer
+
+LICENSE=	GPLv2
 
 # TODO: FireWire IIDC support (needs libraw1394, libdc1394).
 # TODO: Test with Luigi-ified V4L input drivers e.g. pwc, etc.
-
 OPTIONS_DEFINE=	JPEG MPEG4 V4L DOCS
-OPTIONS_DEFAULT=	JPEG V4L
+OPTIONS_DEFAULT=	MPEG4 V4L
 
 MPEG4_DESC=	MPEG4 encoding support
 V4L_DESC=	V4L input support
@@ -34,7 +35,7 @@ PORTDOCS=	*
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJPEG}
-USES+=			jpeg
+USES+=		jpeg
 CONFIGURE_ARGS+=	--enable-encoder-jpeg
 .endif
 
@@ -44,8 +45,9 @@ CONFIGURE_ARGS+=	--enable-encoder-mpeg4
 .endif
 
 .if ${PORT_OPTIONS:MV4L}
-BUILD_DEPENDS+=		${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
-CONFIGURE_ARGS+=	--enable-input-v4l
+LIB_DEPENDS+=		libv4l1.so:${PORTSDIR}/multimedia/libv4l
+BUILD_DEPENDS+=		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
+CONFIGURE_ARGS+=	--enable-input-v4l2 --enable-input-v4l
 .endif
 
 do-install:

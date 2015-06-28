@@ -1,6 +1,6 @@
---- tcp.c.orig	2008-09-02 14:40:15.000000000 +0100
-+++ tcp.c	2008-09-02 14:41:53.000000000 +0100
-@@ -454,7 +454,7 @@
+--- tcp.c.orig	2004-12-29 02:33:21 UTC
++++ tcp.c
+@@ -454,7 +454,7 @@ static void do_accept( struct event_info
  				strerror( errno ) );
  
  	i = 1;
