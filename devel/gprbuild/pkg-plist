@@ -14,6 +14,7 @@ share/gprconfig/cpp.xml
 share/gprconfig/cross.xml
 share/gprconfig/fortran.xml
 share/gprconfig/gnat.xml
+share/gprconfig/gnat_runtime.mapping
 share/gprconfig/gprconfig.xsd
 share/gprconfig/linker.xml
 share/gprconfig/nocompiler.xml
