@@ -17,6 +17,7 @@ RUN_DEPENDS=	rubygem-actionpack4>=4.0.1:${PORTSDIR}/www/rubygem-actionpack4 \
 		rubygem-html2haml>=1.0.1:${PORTSDIR}/www/rubygem-html2haml \
 		rubygem-railties4>=4.0.1:${PORTSDIR}/www/rubygem-railties4
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
