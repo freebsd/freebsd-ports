@@ -1,3 +1,4 @@
+%%OLD_PERL%%bin/encguess
 %%SITE_ARCH%%/Encode.pm
 %%SITE_ARCH%%/Encode/Alias.pm
 %%SITE_ARCH%%/Encode/Byte.pm
@@ -59,3 +60,4 @@
 %%PERL5_MAN3%%/Encode::Supported.3.gz
 %%PERL5_MAN3%%/Encode::Unicode::UTF7.3.gz
 %%PERL5_MAN3%%/encoding.3.gz
+%%OLD_PERL%%man/man1/encguess.1.gz
