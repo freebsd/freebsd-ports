@@ -5,6 +5,33 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150628:
+  AFFECTS: users of www/varnish, www/pecl-varnish,
+  www/varnish-libvmod-header, www/varnish-nagios
+  AUTHOR: feld@FreeBSD.org
+
+  Varnish 3.x has reached End of Life status and has been removed from
+  the ports tree. If you were using www/varnish we urge you to to update
+  to www/varnish4. The upgrade guide can be found here:
+
+  https://www.varnish-cache.org/docs/trunk/whats-new/upgrade-4.0.html
+  
+  www/varnish-libvmod-header and www/varnish-nagios have been updated to
+  versions that work with Varnish 4.x. You should not lose access to
+  this software.
+
+  www/pecl-varnish was updated to the latest release which has added
+  support for Varnish 4.x. Please note that it appears some
+  functionality has been lost. This is unfortunate but out of our
+  control. Details can be found here:
+
+  http://pecl.php.net/package-changelog.php?package=varnish
+
+  If for some reason you need www/varnish to exist in your ports tree
+  for a bit longer you may consider instead following the 2015Q2 branch.
+  Do note however that Varnish 3.x will not be receiving updates or
+  security patches from upstream.
+
 20150624:
   AFFECTS: users of devel/p5-Test-Tester and devel/p5-Test-use-ok
   AUTHOR: adamw@FreeBSD.org
