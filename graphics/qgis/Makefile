@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qgis
-PORTVERSION=	2.8.2
-PORTREVISION=	1
+PORTVERSION=	2.10.0
 CATEGORIES=	graphics geography
 
 MAINTAINER=	rhurlin@gwdg.de
@@ -24,7 +23,7 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME:tu}
-GH_TAGNAME=	1b929ef
+GH_TAGNAME=	5cd8d08
 
 USES=		cpe bison cmake fortran gmake python
 USE_SQLITE=	yes
@@ -33,8 +32,9 @@ USE_QT4=	gui svg xml network sql designer testlib linguist_build \
 
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=		GRASS POSTGIS PYTHON SERVER
+OPTIONS_DEFINE=		POSTGIS PYTHON GRASS SERVER DEBUG
 OPTIONS_DEFAULT=	POSTGIS PYTHON
+NO_OPTIONS_SORT=	yes
 SERVER_DESC=	Enable QGIS server
 
 .if !defined(MAINTAINER_MODE)
@@ -53,8 +53,8 @@ CXXFLAGS+=	-I${LOCALBASE}/include/flex
 .endif
 
 .if ${PORT_OPTIONS:MGRASS}
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900000
-BROKEN=		GRASS plugin not supported on FreeBSD 8.x (does not have utempter.h)
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+BROKEN=		GRASS plugin not supported on FreeBSD 8.x and 9.x
 .endif
 BUILD_DEPENDS+=	grass64:${PORTSDIR}/databases/grass \
 		${LOCALBASE}/lib/gdalplugins/gdal_GRASS.so:${PORTSDIR}/graphics/gdal-grass
@@ -113,5 +113,17 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gdal>=1.11.1:${PORTSDIR}/graphics/py-gdal \
 CMAKE_ARGS+=	-DWITH_BINDINGS:BOOL=FALSE
 PLIST_SUB+=	QGIS_PYTHON="@comment "
 .endif
+
+.if ${PORT_OPTIONS:MDEBUG}
+CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE=Debug
+PLIST_SUB+=	DEBUG=""
+.else
+CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE=Release
+PLIST_SUB+=	DEBUG="@comment "
+.endif
+
+pre-patch:
+	@${REINPLACE_CMD} -e 's|tr( "QGIS code revision" ) + QString( "</td><td><a href=\\"https://github.com/qgis/QGIS/commit/%1\\">%1</a></td>" ).arg( QGis::QGIS_DEV_VERSION )|tr( "QGIS code revision" ) + "</td><td>" + tr( "${GH_TAGNAME}" ) + "</td>"|g' \
+		${WRKSRC}/src/app/qgisapp.cpp
 
 .include <bsd.port.mk>
