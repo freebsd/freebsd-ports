@@ -2,29 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	libvmod-header
-DISTVERSION=	0.3-5
-PORTREVISION=	1
+DISTVERSION=	0.31
+PORTREVISION=	0
 CATEGORIES=	www
-MASTER_SITES=	http://anders.fupp.net/distfiles/
 PKGNAMEPREFIX=	varnish-
-#DISTNAME=	KristianLyng-${PORTNAME}-${VMOD_HEADER_HASH}
-#DISTFILES=	KristianLyng-${PORTNAME}-${DISTVERSION}-g${VMOD_HEADER_HASH}.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Varnish Module (vmod) for manipulation of duplicated headers
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	${LOCALBASE}/include/varnish/varnishapi.h:${PORTSDIR}/www/varnish \
+BUILD_DEPENDS=	varnish4>=4.0.2:${PORTSDIR}/www/varnish4 \
 		rst2man:${PORTSDIR}/textproc/py-docutils
 
-USES=		autoreconf gmake libtool pkgconfig
+USES=		autoreconf gmake libtool pkgconfig python:2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/varnish
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/varnish
 PLIST_FILES=	man/man3/vmod_header.3.gz lib/varnish/vmods/libvmod_header.so
-WRKSRC=		${WRKDIR}/${PORTNAME}-master
 INSTALL_TARGET=	install-strip
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	varnish
+GH_TAGNAME=	e87ac92
 
 .include <bsd.port.mk>
