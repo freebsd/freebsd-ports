@@ -2161,7 +2161,6 @@
     SUBDIR += uwsgitop
     SUBDIR += uzbl
     SUBDIR += validator
-    SUBDIR += varnish
     SUBDIR += varnish-libvmod-header
     SUBDIR += varnish-nagios
     SUBDIR += varnish4
