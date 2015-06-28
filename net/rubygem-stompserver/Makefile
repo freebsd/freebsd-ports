@@ -15,6 +15,7 @@ RUN_DEPENDS=	rubygem-daemons>=1.0.2:${PORTSDIR}/devel/rubygem-daemons \
 		rubygem-eventmachine>=0.7.2:${PORTSDIR}/devel/rubygem-eventmachine \
 		rubygem-hoe>=1.3.0:${PORTSDIR}/devel/rubygem-hoe
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
