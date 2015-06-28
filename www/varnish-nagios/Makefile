@@ -9,9 +9,9 @@ CATEGORIES=	www
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nagios plugin to check status of Varnish
 
-BUILD_DEPENDS=	varnish4>=0:${PORTSDIR}/www/varnish4
-
 LICENSE=	BSD2CLAUSE
+
+BUILD_DEPENDS=	varnish4>=0:${PORTSDIR}/www/varnish4
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-lm
