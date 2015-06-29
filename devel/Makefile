@@ -442,6 +442,7 @@
     SUBDIR += erlang-poolboy
     SUBDIR += erlang-protobuffs
     SUBDIR += erlang-providers
+    SUBDIR += erlang-rebar3_hex
     SUBDIR += erlang-recon
     SUBDIR += erlang-ssl_verify_hostname
     SUBDIR += erlang-syslog
