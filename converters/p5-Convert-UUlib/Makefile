@@ -3,7 +3,7 @@
 
 PORTNAME=	Convert-UUlib
 PORTVERSION=	1.40
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
@@ -16,15 +16,7 @@ COMMENT=	Perl5 interface to the uulib library (a.k.a. uudeview/uuenview)
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-OPTIONS_DEFINE=	DOCS
-
 USES=		perl5
 USE_PERL5=	configure
-
-PORTDOCS=	Changes README
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
