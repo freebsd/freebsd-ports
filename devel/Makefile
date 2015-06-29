@@ -442,6 +442,7 @@
     SUBDIR += erlang-protobuffs
     SUBDIR += erlang-providers
     SUBDIR += erlang-recon
+    SUBDIR += erlang-ssl_verify_hostname
     SUBDIR += erlang-syslog
     SUBDIR += etcd
     SUBDIR += etcdctl
