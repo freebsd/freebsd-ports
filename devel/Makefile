@@ -409,6 +409,7 @@
     SUBDIR += elfrc
     SUBDIR += elfsh
     SUBDIR += elftoaout
+    SUBDIR += elixir-conform
     SUBDIR += embb
     SUBDIR += epl.el
     SUBDIR += epm
