@@ -211,7 +211,6 @@
     SUBDIR += lmtp2nntp
     SUBDIR += lookout
     SUBDIR += lurker
-    SUBDIR += mail-notification
     SUBDIR += mail2sms
     SUBDIR += mailagent
     SUBDIR += maildirsync

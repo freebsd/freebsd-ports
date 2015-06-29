@@ -12,7 +12,6 @@
     SUBDIR += fbsdmon
     SUBDIR += genpatch
     SUBDIR += genplist
-    SUBDIR += gnome-packagekit
     SUBDIR += hs-porte
     SUBDIR += jailaudit
     SUBDIR += kpackagekit
