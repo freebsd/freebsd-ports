@@ -3,7 +3,7 @@
 
 PORTNAME=	mod_auth_kerb
 PORTVERSION=	5.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www
 MASTER_SITES=	SF/modauthkerb/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -34,5 +34,11 @@ GSSAPI_DESC=		Use Base version of GSS API
 GSSAPI_BASE_USES=	gssapi
 GSSAPI_HEIMDAL_USES=	gssapi:heimdal
 GSSAPI_MIT_USES=	gssapi:mit
+
+post-patch:
+.if !defined(HEIMDAL_HOME)
+	${REINPLACE_CMD} -e 's|@KRB5_LDFLAGS@|@KRB5_LDFLAGS@ -lgssapi_krb5|' \
+		${WRKSRC}/Makefile.in
+.endif
 
 .include <bsd.port.mk>
