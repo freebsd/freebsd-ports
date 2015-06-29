@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	elixir
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	lang
 
-MAINTAINER=	lwhsu@FreeBSD.org
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Functional, meta-programming aware language built on top of Erlang VM
 
 LICENSE=	APACHE20
