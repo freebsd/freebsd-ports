@@ -3,6 +3,7 @@
 
 PORTNAME=	ejabberd
 PORTVERSION=	15.06
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.process-one.net/downloads/${PORTNAME}/${PORTVERSION}/:p1 \
 		http://distfiles.pirateparty.in/ashish/:deps \
@@ -61,7 +62,7 @@ RIAK_CONFIGURE_ENABLE=	riak
 ICONV_CONFIGURE_ENABLE=	iconv
 REDIS_CONFIGURE_ENABLE=	redis
 SQLITE_CONFIGURE_ENABLE=sqlite
-TOOS_CONFIGURE_ENABLE=	tools
+TOOLS_CONFIGURE_ENABLE=	tools
 SQLITE_USE=		SQLITE=yes
 ICONV_USES=		iconv:wchar_t
 ICONV_LDFLAGS=		${ICONV_LIB}
