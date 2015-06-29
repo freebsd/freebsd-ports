@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xpra
-PORTVERSION=	0.15.1
+PORTVERSION=	0.15.2
 CATEGORIES=	x11
 MASTER_SITES=	http://xpra.org/src/
 
