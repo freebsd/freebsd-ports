@@ -24,6 +24,7 @@ rcvar=smokeping_enable
 
 extra_commands="status configtest reload"
 
+start_cmd="smokeping_start"
 status_cmd="smokeping_status"
 configtest_cmd="smokeping_configtest"
 reload_cmd="smokeping_reload"
@@ -41,43 +42,69 @@ command_args="--logfile=${smokeping_logfile}"
 pidfile="${smokeping_pidfile}"
 command_interpreter="%%PREFIX%%/bin/perl"
 
-smokeping_startprecmd()
+smokeping_check_pidfile()
 {
+	rc_pid=$(check_pidfile $pidfile $command)
+	if [ -z "${rc_pid}" ]; then
+		rc_pid=$(check_pidfile $pidfile $command $command_interpreter)
+	fi
+}
+
+smokeping_start()
+{
+	smokeping_check_pidfile
+	if [ -n "$rc_pid" ]; then
+		echo 1>&2 "${name} already running? (pid=$rc_pid)."
+		return 1
+	fi
+
 	if [ ! -e ${smokeping_logfile} ];
 	then
-		install -o %%USERS%% -g %%GROUPS%% /dev/null ${smokeping_logfile} || echo "ERROR: Could not initialize logfile at ${smokeping_logfile}.";
+		install -o ${smokeping_user} -g ${smokeping_group} -m 644 /dev/null ${smokeping_logfile} ||\
+			 echo "ERROR: Could not initialize logfile at ${smokeping_logfile}.";
 	fi
+
+	echo "Starting ${name}."
+	${command} ${smokeping_flags} ${command_args}
 }
 
 smokeping_status()
 {
-	rc_pid=$(check_pidfile $pidfile $command $command_interpreter)
+	smokeping_check_pidfile
 	if [ -z "$rc_pid" ]; then
-		_run_rc_notrunning
+		echo "${name} is not running."
+		return 1
 	else
 		echo "${name} is running as pid $rc_pid"
-        fi
+	fi
 }
 
 smokeping_configtest()
 {
-	/usr/local/bin/smokeping --check
+	${command} --check
 }
 
 smokeping_reload()
 {
-	/usr/local/bin/smokeping --reload
+	smokeping_check_pidfile
+	if [ -z "$rc_pid" ]; then
+		_run_rc_notrunning
+		return 1
+	else
+		${command} --reload
+	fi
 }
 
 smokeping_stop()
 {
-	rc_pid=$(check_pidfile $pidfile $command $command_interpreter)
+	smokeping_check_pidfile
 	if [ -z "$rc_pid" ]; then
 		_run_rc_notrunning
+		return 1
 	else
-		echo "Stopping ${name} (pid $rc_pid)."
-		kill -15 $rc_pid
-        fi
+		echo "Stopping ${name}."
+		kill -TERM $rc_pid
+	fi
 }
 
 load_rc_config $name
