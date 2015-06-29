@@ -17,8 +17,6 @@ USES=		perl5
 USE_PERL5=	configure
 
 post-install:
-	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Crypt/RIPEMD160/RIPEMD160.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Crypt/RIPEMD160/RIPEMD160.so
-	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Crypt/RIPEMD160/RIPEMD160.so
 
 .include <bsd.port.mk>

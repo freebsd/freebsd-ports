@@ -25,8 +25,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|dumbnet|dnet|g' ${WRKSRC}/Libdnet.xs
 
 post-install:
-	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Net/Libdnet/Libdnet.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Net/Libdnet/Libdnet.so
-	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Net/Libdnet/Libdnet.so
 
 .include <bsd.port.mk>

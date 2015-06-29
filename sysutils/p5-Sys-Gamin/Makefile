@@ -23,8 +23,6 @@ pre-configure:
 	${MV} ${WRKSRC}/monitor ${WRKSRC}/gamin-monitor
 
 post-install:
-	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Sys/Gamin/Gamin.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Sys/Gamin/Gamin.so
-	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Sys/Gamin/Gamin.so
 
 .include <bsd.port.mk>

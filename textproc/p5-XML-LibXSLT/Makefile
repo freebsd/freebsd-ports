@@ -22,8 +22,6 @@ USE_GNOME=	libxml2 libxslt
 USE_PERL5=	configure
 
 post-install:
-	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/XML/LibXSLT/LibXSLT.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/XML/LibXSLT/LibXSLT.so
-	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/XML/LibXSLT/LibXSLT.so
 
 .include <bsd.port.mk>

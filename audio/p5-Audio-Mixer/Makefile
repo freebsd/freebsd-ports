@@ -19,8 +19,6 @@ USES=		perl5 shebangfix
 SHEBANG_FILES=	volume.pl
 
 post-install:
-	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Audio/Mixer/Mixer.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Audio/Mixer/Mixer.so
-	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Audio/Mixer/Mixer.so
 
 .include <bsd.port.mk>
