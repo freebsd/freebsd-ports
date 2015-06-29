@@ -11,12 +11,11 @@ COMMENT=	NX X11 protocol compression libraries
 
 WRKSRC=		${WRKDIR}/nx-libs-${PORTVERSION}/${PORTNAME}
 
-USES=		gmake
+USES=		gmake jpeg
 USE_AUTOTOOLS=	autoconf
 USE_XORG=	xproto
 GNU_CONFIGURE=	yes
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,libdir}/nx,libdir},g" ${WRKSRC}/Makefile.in

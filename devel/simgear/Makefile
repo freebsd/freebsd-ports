@@ -15,13 +15,12 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
+LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libosg.so:${PORTSDIR}/graphics/osg
 
 USE_XORG=	ice sm x11 xext xi xt xmu
 USE_GL=		gl glu glut
-USES=		cmake compiler cpe openal:al,alut tar:bzip2
+USES=		cmake compiler cpe jpeg openal:al,alut tar:bzip2
 
 .include <bsd.port.pre.mk>
 

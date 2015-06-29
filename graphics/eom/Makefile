@@ -11,11 +11,10 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Eye of MATE image viewer
 
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 PORTSCOUT=	limitw:1,even
 
-USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
+USES=		desktop-file-utils gettext gmake jpeg libtool pathfix pkgconfig \
 		tar:xz
 USE_MATE=	desktop icontheme
 USE_XORG=	x11

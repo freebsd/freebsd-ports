@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	subliminal
-PORTVERSION=	0.7.4
-PORTREVISION=	2
+PORTVERSION=	0.7.5
+PORTREVISION=	1
 CATEGORIES=	multimedia python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/bs4/__init__.py:${PORTSDIR}/www/py-beautifulso
 		${PYTHON_PKGNAMEPREFIX}html5lib>=0.999:${PORTSDIR}/www/py-html5lib \
 		${PYTHON_PKGNAMEPREFIX}chardet>0:${PORTSDIR}/textproc/py-chardet \
 		${PYTHON_PKGNAMEPREFIX}pysrt>=1.0.1:${PORTSDIR}/textproc/py-pysrt \
-		${PYTHON_PKGNAMEPREFIX}babelfish>=0.4.0:${PORTSDIR}/devel/py-babelfish \
+		${PYTHON_PKGNAMEPREFIX}babelfish>=0.5:${PORTSDIR}/devel/py-babelfish \
 		${PYTHON_PKGNAMEPREFIX}dogpile.cache>=0.5.2:${PORTSDIR}/devel/py-dogpile.cache \
 		${PYTHON_PKGNAMEPREFIX}xdg>=0.25:${PORTSDIR}/devel/py-xdg \
 		${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six \
@@ -27,9 +27,14 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/bs4/__init__.py:${PORTSDIR}/www/py-beautifulso
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Diaoul
-GH_TAGNAME=	f41fc2b
+GH_TAGNAME=	ea1fe66
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist
+
+post-patch:
+	@${REINPLACE_CMD} -e 's;charade;chardet;g' \
+                ${WRKSRC}/subliminal/providers/*.py \
+		${WRKSRC}/requirements.txt
 
 .include <bsd.port.mk>

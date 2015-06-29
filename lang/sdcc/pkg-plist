@@ -18,9 +18,10 @@ bin/sdcclib
 %%UCSIM%%%%MCS51%%bin/sdcdbsrc.el
 bin/sdcpp
 bin/sdld
-bin/sdld6808
-bin/sdldgb
-bin/sdldz80
+%%HC08%%bin/sdld6808
+%%Z80%%bin/sdldgb
+%%STM8%%bin/sdldstm8
+%%Z80%%bin/sdldz80
 bin/sdnm
 bin/sdobjcopy
 bin/sdranlib

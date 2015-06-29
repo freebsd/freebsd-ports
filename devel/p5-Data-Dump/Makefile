@@ -3,6 +3,7 @@
 
 PORTNAME=	Data-Dump
 PORTVERSION=	1.23
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,16 +14,8 @@ COMMENT=	Pretty printing of data structures
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
-
-OPTIONS_DEFINE=	DOCS
-
-PORTDOCS=	Changes README
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 
 .include <bsd.port.mk>

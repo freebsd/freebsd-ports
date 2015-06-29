@@ -1,0 +1,10 @@
+--- include/cstdlib.orig	2015-06-24 08:46:34 UTC
++++ include/cstdlib
+@@ -118,7 +118,6 @@ using ::strtoul;
+ using ::strtoull;
+ #endif // _LIBCPP_HAS_NO_LONG_LONG
+ using ::rand;
+-using ::srand;
+ using ::calloc;
+ using ::free;
+ using ::malloc;

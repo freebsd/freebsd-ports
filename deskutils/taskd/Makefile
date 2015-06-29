@@ -14,7 +14,7 @@ LICENSE=	MIT
 LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-USES=		cmake:outsource shebangfix
+USES=		cmake:outsource compiler:c++11-lib shebangfix
 SHEBANG_FILES=	demo/client/case* \
 		demo/client/malformed* \
 		demo/client/run \

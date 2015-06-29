@@ -5593,7 +5593,6 @@ graphics/enfle||2014-03-08|Has expired: No more public distfiles
 audio/oggsplit||2014-03-08|Has expired: No more public distfiles
 devel/picasm||2014-03-08|Has expired: No more public distfiles
 databases/mysql-udf-preg||2014-03-08|Has expired: No more public distfiles
-devel/py-gitpython||2014-03-08|Has expired: No more public distfiles
 net/mars_nwe||2014-03-08|Has expired: No more public distfiles
 audio/fmio||2014-03-08|Has expired: No more public distfiles
 audio/libmtp|multimedia/libmtp|2014-03-09|Moved from audio to multimedia
@@ -6866,7 +6865,6 @@ sysutils/cromwell||2014-09-01|Not staged
 sysutils/cvsweb-converters||2014-09-01|Not staged
 sysutils/eroaster||2014-09-01|Not staged
 sysutils/freqsdwn||2014-09-01|Not staged
-sysutils/ganglia-webfrontend||2014-09-01|Not staged
 sysutils/gnomebaker||2014-09-01|Not staged
 sysutils/ispman||2014-09-01|Not staged
 sysutils/jailadmin||2014-09-01|Not staged
@@ -7640,5 +7638,32 @@ multimedia/avidemux2||2015-06-13|Branch no longer maintained upstream, use multi
 multimedia/avidemux26|multimedia/avidemux|2015-06-13|Renamed
 editors/zim|deskutils/zim|2015-06-18|Move to more appropriate category
 net/py-ldap2|net/py-ldap|2015-06-18|Rename to better match upstream name
-erlang-mustache|erlang-bbmustache|2015-06-21|Renamed upstream
 x11/docker|x11/docker-tray|2015-06-23|Rename to avoid conflict with sysutils/docker
+devel/erlang-mustache|devel/erlang-bbmustache|2015-06-21|Renamed upstream
+security/py-backports.ssl_match_hostname||2015-06-23|This functionality was backported to python 2.7.9
+dns/maradns1|dns/maradns|2015-06-23|Has expired: MaraDNS 1 end-of-life: June 21, 2015, use dns/maradns
+net/py-soappy-devel||2015-06-25|Please use net/py-soappy instead. It's fresher than -devel
+devel/armv6-freebsd10.0-xdev||2015-06-27|Not usable for the purpose it has been intended for
+devel/bear|devel/erlang-bear|2015-06-27|Renamed with erlang- prefix
+devel/common_lib|devel/erlang-common_lib|2015-06-27|Renamed with erlang- prefix
+devel/cowlib|devel/erlang-cowlib|2015-06-27|Renamed with erlang- prefix
+devel/cuttlefish|devel/erlang-cuttlefish|2015-06-27|Renamed with erlang- prefix
+devel/esdl|devel/erlang-esdl|2015-06-27|Renamed with erlang- prefix
+devel/folsom|devel/erlang-folsom|2015-06-27|Renamed with erlang- prefix
+devel/goldrush|devel/erlang-goldrush|2015-06-27|Renamed with erlang- prefix
+devel/lager_syslog|devel/erlang-lager_syslog|2015-06-27|Renamed with erlang- prefix
+devel/lager|devel/erlang-lager|2015-06-27|Renamed with erlang- prefix
+devel/meck|devel/erlang-meck|2015-06-27|Renamed with erlang- prefix
+devel/neotoma|devel/erlang-neotoma|2015-06-27|Renamed with erlang- prefix
+devel/oserl|devel/erlang-oserl|2015-06-27|Renamed with erlang- prefix
+devel/poolboy|devel/erlang-poolboy|2015-06-27|Renamed with erlang- prefix
+net/erlang_xmlrpc|net/erlang-xmlrpc|2015-06-27|Renamed with erlang- prefix
+net/ranch|net/erlang-ranch|2015-06-27|Renamed with erlang- prefix
+www/cowboy|www/erlang-cowboy|2015-06-27|Renamed with erlang- prefix
+www/mochiweb-basho|www/erlang-mochiweb-basho|2015-06-27|Renamed with erlang- prefix
+www/mochiweb|www/erlang-mochiweb|2015-06-27|Renamed with erlang- prefix
+www/webmachine|www/erlang-webmachine|2015-06-27|Renamed with erlang- prefix
+textproc/exmpp|devel/erlang-exmpp|2015-06-27|Moved to devel category, with erlang- prefix
+databases/eredis|databases/erlang-eredis|2015-06-27|Renamed with erlang- prefix
+databases/epgsql|databases/erlang-epgsql|2015-06-27|Renamed with erlang- prefix
+www/varnish|www/varnish4|2015-06-28|Has expired: EOL was reached in April 2015, use www/varnish4

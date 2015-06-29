@@ -17,10 +17,9 @@ LICENSE=	LGPL20 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg
+		libtiff.so:${PORTSDIR}/graphics/tiff
 
-USES=		cpe gmake libtool pathfix tar:bzip2
+USES=		cpe gmake jpeg libtool pathfix tar:bzip2
 CPE_VENDOR=	gnome
 USE_XORG=	xt xi x11
 USE_GNOME=	gtk12

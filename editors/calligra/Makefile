@@ -22,7 +22,6 @@ LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libwpg-0.2.so:${PORTSDIR}/graphics/libwpg \
 		libpoppler-qt4.so:${PORTSDIR}/graphics/poppler-qt4 \
 		libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15 \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libdcmdata.so:${PORTSDIR}/devel/dcmtk \
 		libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
@@ -43,7 +42,7 @@ USE_QT4=	corelib dbus designer_build gui opengl phonon porting_build \
 		qt3support qtestlib_build script sql svg webkit xml xmlpatterns \
 		moc_build qmake_build rcc_build uic_build uic3_build
 USE_SQLITE=	3
-USES=		cmake:outsource cpe compiler:c++11-lang iconv perl5 pkgconfig tar:xz\
+USES=		cmake:outsource cpe compiler:c++11-lang iconv jpeg perl5 pkgconfig tar:xz\
 		shared-mime-info
 CMAKE_ARGS=	-DCMAKE_INCLUDE_PATH:STRING="${QT_INCDIR} ${LOCALBASE}/include" \
 		-DPRODUCTSET:STRING="DESKTOP"

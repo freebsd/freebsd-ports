@@ -19,11 +19,10 @@ LICENSE_PERMS_unknown=	no-dist-sell no-pkg-sell
 LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libjasper.so:${PORTSDIR}/graphics/jasper \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libgif.so:${PORTSDIR}/graphics/giflib \
 		libpng.so:${PORTSDIR}/graphics/png
 
-USES=		pathfix libtool
+USES=		jpeg libtool pathfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mpeg2enc
 INSTALL_TARGET=	install-strip

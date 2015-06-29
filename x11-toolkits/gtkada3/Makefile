@@ -2,52 +2,49 @@
 # $FreeBSD$
 
 PORTNAME=	gtkada
-PORTVERSION=	3.8.3.1
-PORTREVISION=	1
+PORTVERSION=	3.8.3.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 PKGNAMESUFFIX=	3
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		gtkada-rm-${RM_VERSION}${EXTRACT_SUFX}
+DISTFILES=	gtkada-for-gps-6.1.1-src.tar.gz
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Ada graphical toolkit based on Gtk3 components
 
 LICENSE=	GPLv3
 
-USES=		ada gmake perl5 pkgconfig tar:bzip2
+BUILD_DEPENDS=	gprbuild:${PORTSDIR}/devel/gprbuild
+
+USES=		ada gmake perl5 pkgconfig
 USE_PERL5=	build
 USE_GNOME=	gtk30
 USE_GL=		gl glu
 GNU_CONFIGURE=	yes
-ALL_TARGET=	src
+ALL_TARGET=	tools static relocatable
 NO_MTREE=	yes
+WRKSRC=		${WRKDIR}/gtkada-gpl-2015-src
 PORTDOCS=	gtkada_rm gtkada_ug
 PORTEXAMPLES=	testgtk
 RM_VERSION=	3.8.3.0
+LDFLAGS=	-L${LOCALBASE}/lib
 
-MAKE_ARGS+=	PROCESSORS=${MAKE_JOBS_NUMBER} \
-		GL_SUPPORT=yes
+MAKE_ARGS=	PROCESSORS=${MAKE_JOBS_NUMBER}
 
 CONFLICTS_INSTALL=	gtkada-*
 
 CONFIGURE_ARGS+=	--with-GL=auto \
-			--disable-gtkextra
+			--enable-shared \
+			--enable-static
 
 OPTIONS_DEFINE=		DOCS NLS EXAMPLES DEBUG
+DOCS_BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
+DOCS_DISTFILES=		gtkada-rm-${RM_VERSION}.tar.bz2
+DOCS_ALL_TARGET=	docs
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=		gettext
+EXAMPLES_ALL_TARGET=	tests
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-CONFIGURE_ARGS+=	--enable-nls
-USES+=			gettext
-.else
-CONFIGURE_ARGS+=	--disable-nls
-.endif
 
 .if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-build=Debug
@@ -55,16 +52,8 @@ CONFIGURE_ARGS+=	--enable-build=Debug
 CONFIGURE_ARGS+=	--enable-build=Production
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
-ALL_TARGET+= docs
-.endif
-
-.if ${PORT_OPTIONS:MEXAMPLES}
-ALL_TARGET+= tests
-.endif
-
 post-extract:
-.if ${PORTVERSION} != ${RM_VERSION}
+.if ${PORT_OPTIONS:MDOCS}
 	${MV} ${WRKDIR}/gtkada-${RM_VERSION}/docs/* ${WRKSRC}/docs/
 .endif
 
@@ -76,7 +65,12 @@ do-build:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libdata
-	@${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig ${STAGEDIR}${PREFIX}/libdata/
-	${RM} -rf ${STAGEDIR}${PREFIX}/share/doc/gtkada/gtkada_ug/_sources
+	${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig ${STAGEDIR}${PREFIX}/libdata/
+	${RM} -r ${STAGEDIR}${PREFIX}/share/doc/gtkada/gtkada_ug/_sources
+	${RM} ${STAGEDIR}${PREFIX}/lib/libgtkada*
+	(cd ${STAGEDIR}${PREFIX}/lib && \
+	  ${LN} -s gtkada/relocatable/libgtkada.so.3.8.3 libgtkada.so && \
+	  ${LN} -s gtkada/relocatable/libgtkada_gl.so.3.8.3 libgtkada_gl.so)
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gtkada/relocatable/lib*.so.3.8.3
 
 .include <bsd.port.mk>

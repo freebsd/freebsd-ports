@@ -21,7 +21,6 @@ DOCS_BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html \
 			texi2pdf:${PORTSDIR}/print/texinfo
 
 LIB_DEPENDS+=	libtiff.so:${PORTSDIR}/graphics/tiff
-LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
 LIB_DEPENDS+=	libgif.so:${PORTSDIR}/graphics/giflib
 LIB_DEPENDS+=	libsndfile.so:${PORTSDIR}/audio/libsndfile
@@ -37,7 +36,7 @@ CONFIGURE_ARGS+=	--with-x
 CONFIGURE_ARGS+=	--with-x-include=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-x-include=${LOCALBASE}/lib
 
-USES=		gnustep pkgconfig
+USES=		gnustep jpeg pkgconfig
 USE_GNUSTEP=	base build
 USE_XORG=	x11 xt
 

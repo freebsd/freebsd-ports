@@ -1,6 +1,6 @@
---- thread.c.orig	2015-01-16 16:22:19.000000000 +0000
-+++ thread.c	2015-01-16 16:22:27.000000000 +0000
-@@ -409,7 +409,7 @@
+--- thread.c.orig	2015-04-20 05:34:19 UTC
++++ thread.c
+@@ -402,7 +402,7 @@ static void thread_libevent_process(int 
          conn *c = conn_new(item->sfd, item->init_state, item->event_flags,
                             item->read_buffer_size, item->transport, me->base);
          if (c == NULL) {

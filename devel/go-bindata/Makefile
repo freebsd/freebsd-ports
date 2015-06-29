@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	go-bindata
-PORTVERSION=	3.0.5
+PORTVERSION=	3.0.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -25,22 +25,22 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@cd ${WRKSRC} ; ${MKDIR} src/github.com/${GH_ACCOUNT}/${GH_PROJECT} ; \
-	${CP} -R CONTRIBUTING.md LICENSE README.md asset.go bytewriter.go \
+	${MV} CONTRIBUTING.md LICENSE README.md asset.go bytewriter.go \
 	config.go convert.go debug.go doc.go go-bindata release.go \
 	stringwriter.go testdata toc.go \
 	src/github.com/${GH_ACCOUNT}/${GH_PROJECT}
 
 do-build:
 	cd ${WRKSRC} ; \
-		${SETENV} GOPATH=${WRKSRC} go build -o ${PORTNAME}/${PORTNAME} ${PORTNAME}/main.go ${PORTNAME}/version.go
+		${SETENV} GOPATH=${WRKSRC} go install ./...
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}/${PORTNAME} \
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .if ${PORT_OPTIONS:MDOCS}
 .for x in ${PORTDOCS}
-	${INSTALL_MAN} ${WRKSRC}/${x} \
+	${INSTALL_MAN} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT}/${x} \
 		${STAGEDIR}${DOCSDIR}
 .endfor
 .endif

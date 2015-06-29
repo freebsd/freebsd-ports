@@ -1,0 +1,15 @@
+--- Makefile.in.orig	2015-02-09 10:42:28 UTC
++++ Makefile.in
+@@ -20,9 +20,9 @@ INSTALL = $(OCAMLFIND) install
+ UNINSTALL = $(OCAMLFIND) remove
+ else
+ export OCAMLLIBDIR := lib/ocaml
+-LIBDIR=$(DESTDIR)/$(OCAMLLIBDIR)
+-BINDIR=$(DESTDIR)/bin
+-MANDIR=$(DESTDIR)/man/man3
++LIBDIR=$(DESTDIR)$(prefix)/$(OCAMLLIBDIR)
++BINDIR=$(DESTDIR)$(exec_prefix)/bin
++MANDIR=$(DESTDIR)$(prefix)/man/man3
+ INSTALL = $(OCAMLFIND) install -destdir $(LIBDIR)
+ UNINSTALL = $(OCAMLFIND) remove -destdir $(LIBDIR)
+ endif

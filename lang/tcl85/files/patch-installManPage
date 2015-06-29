@@ -1,0 +1,11 @@
+--- installManPage.orig	2015-03-06 15:13:58 UTC
++++ installManPage
+@@ -99,7 +99,7 @@ SrcDir=`dirname $ManPage`
+ 
+ First=""
+ for Target in $Names; do
+-    Target=$Target.$Section$Suffix
++    Target=$Target$Suffix.$Section
+     rm -f $Dir/$Target $Dir/$Target.*
+     if test -z "$First" ; then
+ 	First=$Target

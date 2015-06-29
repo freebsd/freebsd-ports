@@ -17,7 +17,6 @@ LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
 		libenchant.so:${PORTSDIR}/textproc/enchant \
 		libgif.so:${PORTSDIR}/graphics/giflib \
 		libpng.so:${PORTSDIR}/graphics/png \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libhal.so:${PORTSDIR}/sysutils/hal \
 		libqca.so:${PORTSDIR}/devel/qca \
 		libHUpnp.so:${PORTSDIR}/net/hupnp \
@@ -36,7 +35,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicol
 USE_GNOME=	libxml2 libxslt
 USE_KDE4=	kdeprefix oxygen \
 		attica automoc4 ontologies soprano strigi
-USES=		cmake:outsource fam gettext perl5 shared-mime-info shebangfix tar:xz
+USES=		cmake:outsource fam gettext jpeg perl5 shared-mime-info shebangfix tar:xz
 USE_OPENSSL=	yes
 USE_QT4=	corelib dbus declarative designer_build gui \
 		network opengl phonon qt3support \

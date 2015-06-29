@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	migrate
-PORTVERSION=	3.6.9
+PORTVERSION=	3.6.11
 CATEGORIES=	biology
 MASTER_SITES=	http://popgen.sc.fsu.edu/currentversions/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -22,20 +22,9 @@ PORTDOCS=	HISTORY README README_PARALLEL_GENERAL ${PORTNAME}.html
 PORTEXAMPLES=	*
 EXTRACT_AFTER_ARGS=--exclude zlib
 
-# XXX should be converted to OptionsNG
-.if defined(WITH_THREAD_PRETTY)
-ALL_TARGET=	thread-pretty
-.elif defined(WITH_PRETTY)
-ALL_TARGET=	pretty
-.elif defined(WITH_THREAD)
-ALL_TARGET=	thread
-.else
-ALL_TARGET=	all
-.endif
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=			DOCS EXAMPLES THREAD
+THREAD_DESC=			Build with THREAD support
+THREAD_ALL_TARGET=		thread
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|="-O "|="$$CFLAGS"|g' ${WRKSRC}/configure

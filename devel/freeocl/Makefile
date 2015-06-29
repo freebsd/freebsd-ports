@@ -21,11 +21,13 @@ CONFLICTS=	ocl-icd[0-9]* opencl-icd[0-9]* pocl[0-9]*
 WRKSRC=		${WRKDIR}/FreeOCL-${PORTVERSION}-Source
 
 USE_GCC=	any
-USES=		cmake
+USES=		cmake compiler:c++11-lib
 USE_LDCONFIG=	yes
 
 CXXFLAGS+=	-pthread -std=gnu++0x
 CMAKE_ENV+=	FREEOCL_CXX_COMPILER="${CXX}"
+
+CFLAGS_i386=	-msse
 
 post-patch:
 		${REINPLACE_CMD} -e 's:%%PREFIX%%:${PREFIX}:g' ${WRKSRC}/src/icd/icd_loader.cpp \

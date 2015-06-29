@@ -57,6 +57,585 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="acd5d037-1c33-11e5-be9c-6805ca1d3bb1">
+    <topic>qemu -- Heap overflow in QEMU PCNET controller, allowing guest to host escape (CVE-2015-3209)</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>0.11.1_20</lt></range>
+	<range><ge>0.12</ge><lt>2.3.0_2</lt></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<range><lt>2.3.50.g20150618_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The QEMU security team reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-135.html">
+	  <p>A guest which has access to an emulated PCNET network
+	    device (e.g. with "model=pcnet" in their VIF configuration)
+	    can exploit this vulnerability to take over the qemu
+	    process elevating its privilege to that of the qemu
+	    process.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://xenbits.xen.org/xsa/advisory-135.html</url>
+      <cvename>CVE-2015-3209</cvename>
+    </references>
+    <dates>
+      <discovery>2015-04-10</discovery>
+      <entry>2015-06-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="23232028-1ba4-11e5-b43d-002590263bf5">
+    <topic>elasticsearch -- security fix for shared file-system repositories</topic>
+    <affects>
+      <package>
+	<name>elasticsearch</name>
+	<range><ge>1.0.0</ge><lt>1.6.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Elastic reports:</p>
+	<blockquote cite="https://www.elastic.co/community/security">
+	  <p>Vulnerability Summary: All Elasticsearch versions from 1.0.0 to
+	    1.5.2 are vulnerable to an attack that uses Elasticsearch to modify
+	    files read and executed by certain other applications.</p>
+	  <p>Remediation Summary: Users should upgrade to 1.6.0. Alternately,
+	    ensure that other applications are not present on the system, or
+	    that Elasticsearch cannot write into areas where these applications
+	    would read.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4165</cvename>
+      <freebsdpr>ports/201008</freebsdpr>
+      <url>https://www.elastic.co/community/security</url>
+      <url>https://www.elastic.co/blog/elasticsearch-1-6-0-released</url>
+    </references>
+    <dates>
+      <discovery>2015-06-09</discovery>
+      <entry>2015-06-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a71e7440-1ba3-11e5-b43d-002590263bf5">
+    <topic>elasticsearch -- directory traversal attack with site plugins</topic>
+    <affects>
+      <package>
+	<name>elasticsearch</name>
+	<range><lt>1.4.5</lt></range>
+	<range><ge>1.5.0</ge><lt>1.5.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Elastic reports:</p>
+	<blockquote cite="https://www.elastic.co/community/security">
+	  <p>Vulnerability Summary: All Elasticsearch versions prior to 1.5.2
+	    and 1.4.5 are vulnerable to a directory traversal attack that allows
+	    an attacker to retrieve files from the server running Elasticsearch
+	    when one or more site plugins are installed, or when Windows is the
+	    server OS.</p>
+	  <p>Remediation Summary: Users should upgrade to 1.4.5 or 1.5.2. Users
+	    that do not want to upgrade can address the vulnerability by
+	    disabling site plugins. See the CVE description for additional
+	    options.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3337</cvename>
+      <bid>74353</bid>
+      <url>https://www.elastic.co/community/security</url>
+      <url>https://www.elastic.co/blog/elasticsearch-1-5-2-and-1-4-5-released</url>
+      <url>https://www.exploit-db.com/exploits/37054/</url>
+      <url>https://packetstormsecurity.com/files/131646/Elasticsearch-Directory-Traversal.html</url>
+      <url>http://www.securityfocus.com/archive/1/535385</url>
+    </references>
+    <dates>
+      <discovery>2015-04-27</discovery>
+      <entry>2015-06-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="026759e0-1ba3-11e5-b43d-002590263bf5">
+    <topic>elasticsearch -- remote OS command execution via Groovy scripting engine</topic>
+    <affects>
+      <package>
+	<name>elasticsearch</name>
+	<range><ge>1.3.0</ge><lt>1.3.8</lt></range>
+	<range><ge>1.4.0</ge><lt>1.4.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Elastic reports:</p>
+	<blockquote cite="https://www.elastic.co/community/security">
+	  <p>Vulnerability Summary: Elasticsearch versions 1.3.0-1.3.7 and
+	    1.4.0-1.4.2 have vulnerabilities in the Groovy scripting engine that
+	    were introduced in 1.3.0. The vulnerability allows an attacker to
+	    construct Groovy scripts that escape the sandbox and execute shell
+	    commands as the user running the Elasticsearch Java VM.</p>
+	  <p>Remediation Summary: Users should upgrade to 1.3.8 or 1.4.3. Users
+	    that do not want to upgrade can address the vulnerability by setting
+	    script.groovy.sandbox.enabled to false in elasticsearch.yml and
+	    restarting the node.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1427</cvename>
+      <bid>72585</bid>
+      <url>https://www.elastic.co/community/security</url>
+      <url>https://www.elastic.co/blog/elasticsearch-1-4-3-and-1-3-8-released</url>
+      <url>http://www.securityfocus.com/archive/1/archive/1/534689/100/0/threaded</url>
+      <url>https://packetstormsecurity.com/files/130368/Elasticsearch-1.3.7-1.4.2-Sandbox-Escape-Command-Execution.html</url>
+      <url>https://packetstormsecurity.com/files/130784/ElasticSearch-Unauthenticated-Remote-Code-Execution.html</url>
+    </references>
+    <dates>
+      <discovery>2015-02-11</discovery>
+      <entry>2015-06-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5951fb49-1ba2-11e5-b43d-002590263bf5">
+    <topic>elasticsearch -- cross site scripting vulnerability in the CORS functionality</topic>
+    <affects>
+      <package>
+	<name>elasticsearch</name>
+	<range><lt>1.4.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Elastic reports:</p>
+	<blockquote cite="https://www.elastic.co/community/security">
+	  <p>Vulnerability Summary: Elasticsearch versions 1.3.x and prior have
+	    a default configuration for CORS that allows an attacker to craft
+	    links that could cause a user's browser to send requests to
+	    Elasticsearch instances on their local network. These requests could
+	    cause data loss or compromise.</p>
+	  <p>Remediation Summary: Users should either set "http.cors.enabled" to
+	    false, or set "http.cors.allow-origin" to the value of the server
+	    that should be allowed access, such as localhost or a server hosting
+	    Kibana. Disabling CORS entirely with the former setting is more
+	    secure, but may not be suitable for all use cases.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-6439</cvename>
+      <bid>70233</bid>
+      <url>https://www.elastic.co/community/security</url>
+      <url>https://www.elastic.co/blog/elasticsearch-1-4-0-beta-released</url>
+      <url>https://packetstormsecurity.com/files/128556/Elasticsearch-1.3.x-CORS-Issue.html</url>
+      <url>http://www.securityfocus.com/archive/1/archive/1/533602/100/0/threaded</url>
+    </references>
+    <dates>
+      <discovery>2014-10-01</discovery>
+      <entry>2015-06-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="43ac9d42-1b9a-11e5-b43d-002590263bf5">
+    <topic>elasticsearch and logstash -- remote OS command execution via dynamic scripting</topic>
+    <affects>
+      <package>
+	<name>elasticsearch</name>
+	<range><lt>1.2.0</lt></range>
+      </package>
+      <package>
+	<name>logstash</name>
+	<range><lt>1.4.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Elastic reports:</p>
+	<blockquote cite="https://www.elastic.co/community/security">
+	  <p>Vulnerability Summary: In Elasticsearch versions 1.1.x and prior,
+	    dynamic scripting is enabled by default. This could allow an
+	    attacker to execute OS commands.</p>
+	  <p>Remediation Summary: Disable dynamic scripting.</p>
+	</blockquote>
+	<blockquote cite="https://www.elastic.co/blog/logstash-1-4-3-released">
+	  <p>Logstash 1.4.2 was bundled with Elasticsearch 1.1.1, which is
+	    vulnerable to CVE-2014-3120. These binaries are used in
+	    Elasticsearch output specifically when using the node protocol.
+	    Since a node client joins the Elasticsearch cluster, the attackers
+	    could use scripts to execute commands on the host OS using the node
+	    client's URL endpoint. With 1.4.3 release, we are packaging Logstash
+	    with Elasticsearch 1.5.2 binaries which by default disables the
+	    ability to run scripts. This also affects users who are using the
+	    configuration option embedded=&gt;true in the Elasticsearch output
+	    which starts a local embedded Elasticsearch cluster. This is
+	    typically used in development environment and proof of concept
+	    deployments. Regardless of this vulnerability, we strongly recommend
+	    not using embedded in production.</p>
+	  <p>Note that users of transport and http protocol are not vulnerable
+	    to this attack.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3120</cvename>
+      <bid>67731</bid>
+      <url>https://www.elastic.co/community/security</url>
+      <url>https://www.elastic.co/blog/elasticsearch-1-2-0-released</url>
+      <url>https://www.elastic.co/blog/logstash-1-4-3-released</url>
+      <url>https://www.exploit-db.com/exploits/33370/</url>
+      <url>http://bouk.co/blog/elasticsearch-rce/</url>
+      <url>http://www.rapid7.com/db/modules/exploit/multi/elasticsearch/script_mvel_rce</url>
+      <url>https://www.found.no/foundation/elasticsearch-security/#staying-safe-while-developing-with-elasticsearch</url>
+    </references>
+    <dates>
+      <discovery>2014-05-22</discovery>
+      <entry>2015-06-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="24bde04f-1a10-11e5-b43d-002590263bf5">
+    <topic>logstash -- Directory traversal vulnerability in the file output plugin</topic>
+    <affects>
+      <package>
+	<name>logstash</name>
+	<range><lt>1.4.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Elastic reports:</p>
+	<blockquote cite="https://www.elastic.co/blog/logstash-1-4-3-released">
+	  <p>An attacker could use the File output plugin with dynamic field
+	    references in the path option to traverse paths outside of Logstash
+	    directory. This technique could also be used to overwrite any files
+	    which can be accessed with permissions associated with Logstash
+	    user. This release sandboxes the paths which can be traversed using
+	    the configuration. We have also disallowed use of dynamic field
+	    references if the path options is pointing to an absolute path.</p>
+	  <p>We have added this vulnerability to our CVE page and are working
+	    on filling out the CVE. We would like to thank Colin Coghill for
+	    reporting the issue and working with us on the resolution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4152</cvename>
+      <url>https://www.elastic.co/blog/logstash-1-4-3-released</url>
+      <url>https://www.elastic.co/community/security</url>
+    </references>
+    <dates>
+      <discovery>2015-06-09</discovery>
+      <entry>2015-06-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2184ccad-1a10-11e5-b43d-002590263bf5">
+    <topic>logstash -- Remote command execution in Logstash zabbix and nagios_nsca outputs</topic>
+    <affects>
+      <package>
+	<name>logstash</name>
+	<range><lt>1.4.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Elastic reports:</p>
+	<blockquote cite="https://www.elastic.co/blog/logstash-1-4-2">
+	  <p>The vulnerability impacts deployments that use the either the
+	    zabbix or the nagios_nsca outputs. In these cases, an attacker
+	    with an ability to send crafted events to any source of data for
+	    Logstash could execute operating system commands with the
+	    permissions of the Logstash process.</p>
+	  <p>Deployments that do not use the zabbix or the nagios_nsca outputs
+	    are not vulnerable and do not need to upgrade for this reason.</p>
+	  <p>We have added this vulnerability to our CVE page and are working
+	    on filling out the CVE.</p>
+	  <p>We would like to thank Jan Karwowski and Danila Borisiuk for
+	    reporting the issue and working with us on the resolution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-4326</cvename>
+      <url>https://www.elastic.co/blog/logstash-1-4-2</url>
+      <url>https://www.elastic.co/community/security</url>
+    </references>
+    <dates>
+      <discovery>2014-06-24</discovery>
+      <entry>2015-06-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ad4d3871-1a0d-11e5-b43d-002590263bf5">
+    <topic>logstash-forwarder and logstash -- susceptibility to POODLE vulnerability</topic>
+    <affects>
+      <package>
+	<name>logstash-forwarder</name>
+	<range><lt>0.4.0.20150507</lt></range>
+      </package>
+      <package>
+	<name>logstash</name>
+	<range><lt>1.4.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Elastic reports:</p>
+	<blockquote cite="https://www.elastic.co/blog/logstash-1-4-3-released">
+	  <p>The combination of Logstash Forwarder and Lumberjack input (and
+	    output) was vulnerable to the POODLE attack in SSLv3 protocol. We
+	    have disabled SSLv3 for this combination and set the minimum version
+	    to be TLSv1.0. We have added this vulnerability to our CVE page and
+	    are working on filling out the CVE.</p>
+	  <p>Thanks to Tray Torrance, Marc Chadwick, and David Arena for
+	    reporting this.</p>
+	</blockquote>
+	<blockquote cite="https://www.elastic.co/blog/logstash-forwarder-0-4-0-released">
+	  <p>SSLv3 is no longer supported; TLS 1.0+ is required (compatible
+	    with Logstash 1.4.2+).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <!-- POODLE CVE pending -->
+      <freebsdpr>ports/201065</freebsdpr>
+      <freebsdpr>ports/201065</freebsdpr>
+      <url>https://www.elastic.co/blog/logstash-1-4-3-released</url>
+      <url>https://www.elastic.co/blog/logstash-forwarder-0-4-0-released</url>
+    </references>
+    <dates>
+      <discovery>2015-06-09</discovery>
+      <entry>2015-06-24</entry>
+      <modified>2015-06-24</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="d02f6b01-1a3f-11e5-8bd6-c485083ca99c">
+    <topic>Adobe Flash Player -- critical vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-c6-flashplugin11</name>
+	<range><lt>11.2r202.466</lt></range>
+      </package>
+      <package>
+	<name>linux-f10-flashplugin11</name>
+	<range><lt>11.2r202.466</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="https://helpx.adobe.com/security/products/flash-player/apsb15-14.html">
+	  <p>
+	    Adobe has released security updates for Adobe Flash Player for
+	    Windows, Macintosh and Linux. These updates address a critical
+	    vulnerability (CVE-2015-3113) that could potentially allow an
+	    attacker to take control of the affected system.
+	  </p>
+	  <p>
+	    Adobe is aware of reports that CVE-2015-3113 is being actively
+	    exploited in the wild via limited, targeted attacks. Systems running
+	    Internet Explorer for Windows 7 and below, as well as Firefox on
+	    Windows XP, are known targets.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://helpx.adobe.com/security/products/flash-player/apsb15-14.html</url>
+      <cvename>CVE-2015-3113</cvename>
+    </references>
+    <dates>
+      <discovery>2015-06-23</discovery>
+      <entry>2015-06-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f5225b23-192d-11e5-a1cf-002590263bf5">
+    <topic>rubygem-bson -- DoS and possible injection</topic>
+    <affects>
+      <package>
+	<name>rubygem-bson</name>
+	<range><lt>3.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Phill MV reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/06/06/1">
+	  <p>By submitting a specially crafted string to a service relying on
+	    the bson rubygem, an attacker may trigger denials of service or even
+	    inject data into victim's MongoDB instances.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4412</cvename>
+      <mlist>http://www.openwall.com/lists/oss-security/2015/06/06/1</mlist>
+      <url>http://sakurity.com/blog/2015/06/04/mongo_ruby_regexp.html</url>
+      <url>https://github.com/mongodb/bson-ruby/commit/976da329ff03ecdfca3030eb6efe3c85e6db9999</url>
+    </references>
+    <dates>
+      <discovery>2015-06-04</discovery>
+      <entry>2015-06-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="cdff0af2-1492-11e5-a1cf-002590263bf5">
+    <topic>php5 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>php5-dom</name>
+	<name>php5-ftp</name>
+	<name>php5-gd</name>
+	<name>php5-pgsql</name>
+	<range><lt>5.4.42</lt></range>
+      </package>
+      <package>
+	<name>php55-dom</name>
+	<name>php55-ftp</name>
+	<name>php55-gd</name>
+	<name>php55-pgsql</name>
+	<range><lt>5.5.26</lt></range>
+      </package>
+      <package>
+	<name>php56-dom</name>
+	<name>php56-ftp</name>
+	<name>php56-gd</name>
+	<name>php56-psql</name>
+	<range><lt>5.6.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PHP project reports:</p>
+	<blockquote cite="http://www.php.net/ChangeLog-5.php">
+	  <p>DOM and GD:</p>
+	  <ul>
+	    <li>Fixed bug #69719 (Incorrect handling of paths with NULs).</li>
+	  </ul>
+	  <p>FTP:</p>
+	  <ul>
+	    <li>Improved fix for bug #69545 (Integer overflow in ftp_genlist()
+	       resulting in heap overflow). (CVE-2015-4643)</li>
+	  </ul>
+	  <p>Postgres:</p>
+	  <ul>
+	    <li>Fixed bug #69667 (segfault in php_pgsql_meta_data).
+	      (CVE-2015-4644)</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4643</cvename>
+      <cvename>CVE-2015-4644</cvename>
+      <url>http://www.php.net/ChangeLog-5.php#5.4.42</url>
+      <url>http://www.php.net/ChangeLog-5.php#5.5.26</url>
+      <url>http://www.php.net/ChangeLog-5.php#5.6.10</url>
+      <mlist>http://openwall.com/lists/oss-security/2015/06/18/3</mlist>
+    </references>
+    <dates>
+      <discovery>2015-06-11</discovery>
+      <entry>2015-06-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a4460ac7-192c-11e5-9c01-bcaec55be5e5">
+    <topic>devel/ipython -- remote execution</topic>
+    <affects>
+      <package>
+	<name>ipython</name>
+	<range><lt>3.2.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Kyle Kelley reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2015/q2/779">
+	  <p>Summary: JSON error responses from the IPython notebook REST API
+	  contained URL parameters and were incorrectly reported as text/html
+	  instead of application/json. The error messages included some of these
+	  URL params, resulting in a cross site scripting attack. This affects
+	  users on Mozilla Firefox but not Chromium/Google Chrome.</p>
+	  <p>API paths with issues:</p>
+	  <ul>
+	    <li>/api/contents (3.0-3.1)</li>
+	    <li>/api/notebooks (2.0-2.4, 3.0-3.1)</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4706</cvename>
+      <cvename>CVE-2015-4707</cvename>
+      <url>http://seclists.org/oss-sec/2015/q2/779</url>
+    </references>
+    <dates>
+      <discovery>2015-06-22</discovery>
+      <entry>2015-06-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d46ed7b8-1912-11e5-9fdf-00262d5ed8ee">
+    <topic>www/chromium -- mulitple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>43.0.2357.130</lt></range>
+      </package>
+      <package>
+	<!-- pcbsd -->
+	<name>chromium-npapi</name>
+	<range><lt>43.0.2357.130</lt></range>
+      </package>
+      <package>
+	<!-- pcbsd -->
+	<name>chromium-pulse</name>
+	<range><lt>43.0.2357.130</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/2015/06/chrome-stable-update.html">
+	  <p>4 security fixes in this release:</p>
+	  <ul>
+	    <li>[464922] High CVE-2015-1266: Scheme validation error in WebUI.
+	      Credit to anonymous.</li>
+	    <li>[494640] High CVE-2015-1268: Cross-origin bypass in Blink.
+	      Credit to Mariusz Mlynski.</li>
+	    <li>[497507] Medium CVE-2015-1267: Cross-origin bypass in Blink.
+	      Credit to anonymous.</li>
+	    <li>[461481] Medium CVE-2015-1269: Normalization error in HSTS/HPKP
+	      preload list. Credit to Mike Ruddy.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1266</cvename>
+      <cvename>CVE-2015-1267</cvename>
+      <cvename>CVE-2015-1268</cvename>
+      <cvename>CVE-2015-1269</cvename>
+      <url>http://googlechromereleases.blogspot.nl/2015/06/chrome-stable-update.html</url>
+    </references>
+    <dates>
+      <discovery>2015-06-22</discovery>
+      <entry>2015-06-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0f154810-16e4-11e5-a1cf-002590263bf5">
     <topic>rubygem-paperclip -- validation bypass vulnerabilitiy</topic>
     <affects>
@@ -98,7 +677,7 @@ Notes:
     <affects>
       <package>
 	<name>chicken</name>
-	<range><lt>4.10.0</lt></range>
+	<range><lt>4.10.0,1</lt></range>
       </package>
     </affects>
     <description>
@@ -116,12 +695,14 @@ Notes:
     </description>
     <references>
       <cvename>CVE-2015-4556</cvename>
+      <freebsdpr>ports/200980</freebsdpr>
       <mlist>http://lists.nongnu.org/archive/html/chicken-announce/2015-06/msg00010.html</mlist>
       <mlist>http://lists.nongnu.org/archive/html/chicken-hackers/2015-06/msg00037.html</mlist>
     </references>
     <dates>
       <discovery>2015-06-15</discovery>
       <entry>2015-06-22</entry>
+      <modified>2015-06-23</modified>
     </dates>
   </vuln>
 
@@ -130,7 +711,7 @@ Notes:
     <affects>
       <package>
 	<name>chicken</name>
-	<range><lt>4.10.0</lt></range>
+	<range><lt>4.10.0.r1,1</lt></range>
       </package>
     </affects>
     <description>
@@ -154,6 +735,7 @@ Notes:
     <dates>
       <discovery>2015-01-12</discovery>
       <entry>2015-06-22</entry>
+      <modified>2015-06-23</modified>
     </dates>
   </vuln>
 
@@ -2321,11 +2903,40 @@ Notes:
   </vuln>
 
   <vuln vid="57325ecf-facc-11e4-968f-b888e347c638">
-    <topic>dcraw, kodi, libraw, rawstudio, and ufraw -- integer overflow condition</topic>
+    <topic>dcraw -- integer overflow condition</topic>
     <affects>
+      <package>
+	<name>cinepaint</name>
+	<!-- no known fixed version -->
+	<range><ge>0.22.0</ge></range>
+      </package>
+      <package>
+	<name>darktable</name>
+	<range><lt>1.6.7</lt></range>
+      </package>
       <package>
 	<name>dcraw</name>
 	<range><ge>7.00</ge><lt>9.26</lt></range>
+      </package>
+      <package>
+	<name>dcraw-m</name>
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>exact-image</name>
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>flphoto</name>
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>freeimage</name>
+	<!-- no known fixed version -->
+	<range><ge>3.13.0</ge></range>
       </package>
       <package>
 	<name>kodi</name>
@@ -2334,6 +2945,21 @@ Notes:
       <package>
 	<name>libraw</name>
 	<range><lt>0.16.1</lt></range>
+      </package>
+      <package>
+	<name>lightzone</name>
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>netpbm</name>
+	<range><lt>10.47.56</lt></range>
+	<range><ge>10.70</ge><lt>10.70.06</lt></range>
+      </package>
+      <package>
+	<name>opengtl</name>
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
       </package>
       <package>
 	<name>rawstudio</name>
@@ -2364,11 +2990,12 @@ Notes:
       <url>http://www.ocert.org/advisories/ocert-2015-006.html</url>
       <url>https://github.com/rawstudio/rawstudio/commit/983bda1f0fa5fa86884381208274198a620f006e</url>
       <url>https://github.com/LibRaw/LibRaw/commit/4606c28f494a750892c5c1ac7903e62dd1c6fdb5</url>
+      <url>https://sourceforge.net/p/netpbm/code/2512/</url>
     </references>
     <dates>
       <discovery>2015-04-24</discovery>
       <entry>2015-05-15</entry>
-      <modified>2015-06-06</modified>
+      <modified>2015-06-24</modified>
     </dates>
   </vuln>
 

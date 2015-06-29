@@ -16,6 +16,8 @@ COMMENT=	GNU editing macros
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_FreeBSD_9=	does not build
+
 CONFLICTS=	emacs-19.* emacs21-[0-9]* emacs22-[0-9]* emacs23-[0-9]* \
 		emacs24-[0-9]* xemacs-[0-9]* xemacs-devel-[0-9]* \
 		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]* \
@@ -123,7 +125,7 @@ SCROLLBARS_CONFIGURE_WITH=	toolkit-scroll-bars
 
 SYNC_INPUT_CONFIGURE_WITH=	sync-input
 
-JPEG_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+JPEG_USES=		jpeg
 JPEG_CONFIGURE_WITH=	jpeg
 
 TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff

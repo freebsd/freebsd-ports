@@ -1,0 +1,15 @@
+--- configure.orig	2015-03-06 15:13:58 UTC
++++ configure
+@@ -7647,7 +7647,11 @@ fi
+ 
+ 	    ;;
+ 	FreeBSD-*)
+-	    # This configuration from FreeBSD Ports.
++	    # Version numbers are dot-stripped by system policy.
++	    TCL_TRIM_DOTS=`echo ${VERSION} | tr -d .`
++	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.a'
++	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.${SHLIB_VERSION}'
++	    TCL_LIB_VERSIONS_OK=nodots
+ 	    SHLIB_CFLAGS="-fPIC"
+ 	    SHLIB_LD="${CC} -shared"
+ 	    SHLIB_LD_LIBS="${SHLIB_LD_LIBS} -Wl,-soname,\$@"

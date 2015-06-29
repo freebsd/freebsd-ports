@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ffi
-PORTVERSION=	1.9.8
+PORTVERSION=	1.9.9
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
 
-USE_RAKE=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

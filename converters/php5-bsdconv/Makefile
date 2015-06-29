@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bsdconv
-PORTVERSION=	11.1.0
+PORTVERSION=	11.3.0
 CATEGORIES=	converters
 PKGNAMEPREFIX=	php5-
 

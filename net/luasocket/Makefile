@@ -16,7 +16,7 @@ GH_ACCOUNT=	diegonehab
 GH_TAGNAME=	v3.0-rc1
 
 MAKE_ARGS=	LUA_VER=${LUA_VER}
-USES=		lua gmake pkgconfig
+USES=		lua:51 gmake pkgconfig
 
 CFLAGS+=	`pkgconf --cflags lua-${LUA_VER}`
 LDFLAGS+=	-shared  `pkgconf --libs lua-${LUA_VER}`

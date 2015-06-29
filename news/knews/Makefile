@@ -10,14 +10,13 @@ MASTER_SITES=	LOCAL/dinoex
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Threaded nntp newsreader for X
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libcompface.so:${PORTSDIR}/mail/faces
 RUN_DEPENDS=	newsp:${PORTSDIR}/print/mp-letter
 
 LICENSE=	GPLv2
 
-USES=		imake
+USES=		imake jpeg
 USE_XORG=	xmu xpm xt sm ice xext x11
 MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 CC="${CC}" \
 		XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults  -f

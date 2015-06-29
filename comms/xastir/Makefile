@@ -12,11 +12,10 @@ COMMENT=	X Amateur Station Tracking and Information Reporting
 BUILD_DEPENDS=	xfontsel:${PORTSDIR}/x11-fonts/xfontsel
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake motif
+USES=		gettext gmake jpeg motif
 
 SUB_FILES=	pkg-message
 

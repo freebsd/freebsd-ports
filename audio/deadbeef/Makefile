@@ -81,8 +81,8 @@ LASTFM_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 LASTFM_CONFIGURE_OFF=	--disable-lfm
 
 ART_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-			libImlib2.so:${PORTSDIR}/graphics/imlib2 \
-			libjpeg.so:${PORTSDIR}/graphics/jpeg
+			libImlib2.so:${PORTSDIR}/graphics/imlib2
+ART_USES=		jpeg
 ART_CONFIGURE_OFF=	--disable-artwork --disable-artwork-imlib2
 
 EQ_CONFIGURE_OFF=	--disable-supereq

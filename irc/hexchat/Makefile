@@ -67,8 +67,6 @@ TEXTFE_CONFIGURE_ENABLE=	textfe
 WITH_OPENSSL_PORT=	yes
 .endif
 
-.include <bsd.port.pre.mk>
-
 .if ${PORT_OPTIONS:MCA_BUNDLE}
 CA_BUNDLE=	"${LOCALBASE}/share/certs/ca-root-nss.crt"
 .else
@@ -99,4 +97,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/*.md ${STAGEDIR}${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,3 +1,3 @@
-A SOAP implementation for python.
+SOAPpy provides tools for building SOAP clients and servers.
 
-WWW: http://pywebsvcs.sourceforge.net/
+WWW: https://github.com/kiorky/SOAPpy

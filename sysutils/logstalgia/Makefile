@@ -14,11 +14,10 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libftgl.so:${PORTSDIR}/graphics/ftgl \
 		libpng.so:${PORTSDIR}/graphics/png \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpcre.so:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		jpeg pkgconfig
 USE_SDL=	sdl image
 
 CFLAGS+=	-L${LOCALBASE}/lib

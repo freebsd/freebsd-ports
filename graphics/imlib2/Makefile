@@ -54,7 +54,7 @@ PLIST_SUB=	X11=""
 .endif
 
 .if ${PORT_OPTIONS:MJPEG}
-LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+USES+=		jpeg
 PLIST_SUB+=	JPEG=""
 .else
 CONFIGURE_ARGS+=	--without-jpeg

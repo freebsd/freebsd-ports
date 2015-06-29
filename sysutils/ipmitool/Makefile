@@ -30,6 +30,9 @@ PERIODIC_DIR=	etc/periodic/daily
 OPTIONS_DEFINE=	FREEIPMI DOCS
 FREEIPMI_DESC=	Enable support for freeipmi
 
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
+
 .if defined(WITH_DEBUG)
 CFLAGS+=	-ggdb -Wall
 .endif

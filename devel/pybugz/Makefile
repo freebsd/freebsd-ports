@@ -1,19 +1,22 @@
 # $FreeBSD$
 
 PORTNAME=	pybugz
-PORTVERSION=	0.10.1
-CATEGORIES=	devel
+PORTVERSION=	0.11.1
+CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	crees@FreeBSD.org
-COMMENT=	Command line tools for interacting with Bugzilla
+COMMENT=	Python command-line interface to bugzilla
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NO_ARCH=	yes
+
+USES=		python:3.3+
 USE_GITHUB=	yes
-GH_ACCOUNT=	williamh
+USE_PYTHON=	autoplist distutils
 
-USES=		python:2
-USE_PYTHON=	distutils autoplist
+GH_ACCOUNT=	williamh
 
 .include <bsd.port.mk>

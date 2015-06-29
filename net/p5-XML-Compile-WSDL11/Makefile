@@ -14,11 +14,12 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Log-Report>=1.05:${PORTSDIR}/devel/p5-Log-Report \
+		p5-XML-Compile>=1.48:${PORTSDIR}/textproc/p5-XML-Compile \
 		p5-XML-Compile-Cache>=1.03:${PORTSDIR}/textproc/p5-XML-Compile-Cache \
-		p5-XML-Compile-SOAP>=3.06:${PORTSDIR}/net/p5-XML-Compile-SOAP \
-		p5-XML-Compile>=1.48:${PORTSDIR}/textproc/p5-XML-Compile
+		p5-XML-Compile-SOAP>=3.06:${PORTSDIR}/net/p5-XML-Compile-SOAP
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

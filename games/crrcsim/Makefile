@@ -11,11 +11,10 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Model-airplane flight simulation program
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
-LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake jpeg
 USE_SDL=	sdl
 USE_GL=		gl glu
 

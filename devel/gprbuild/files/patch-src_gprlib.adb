@@ -1,9 +1,6 @@
-The brain-dead handling of Rpath continues in GPRBuild 2014
-Bring in the GPRBuild 2012/2013 fix again
-
---- src/gprlib.adb.orig	2014-04-17 09:50:17.000000000 +0000
+--- src/gprlib.adb.orig	2015-05-06 11:08:38 UTC
 +++ src/gprlib.adb
-@@ -408,6 +408,11 @@ procedure Gprlib is
+@@ -393,6 +393,11 @@ procedure Gprlib is
  
     Separate_Run_Path_Options : Boolean := False;
  
@@ -15,7 +12,7 @@ Bring in the GPRBuild 2012/2013 fix again
     Rpath : String_List_Access := null;
     --  Allocated only if Path Option is supported
  
-@@ -1040,7 +1045,12 @@ begin
+@@ -1011,7 +1016,12 @@ begin
                    Use_GNAT_Lib := False;
                 end if;
  
@@ -29,7 +26,20 @@ Bring in the GPRBuild 2012/2013 fix again
  
              when Gprexch.Library_Rpath_Options =>
                 Library_Rpath_Options_Table.Append
-@@ -2166,7 +2176,7 @@ begin
+@@ -1143,10 +1153,10 @@ begin
+ 
+                      Libgnat :=
+                        new String'
+-                         ("-lgnat-" & Line (6 .. Last));
++                         ("-lgnat-" & Line (6));
+                      Libgnarl :=
+                        new String'
+-                         ("-lgnarl-" & Line (6 .. Last));
++                         ("-lgnarl-" & Line (6));
+                   end if;
+ 
+                else
+@@ -2113,7 +2123,7 @@ begin
           Library_Switches_Table.Append
             (new String'("-L" & Imported_Library_Directories.Table (J).all));
  

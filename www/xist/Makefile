@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xist
-PORTVERSION=	5.13
+PORTVERSION=	5.13.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		http://ftp.livinglogic.de/xist/
@@ -14,9 +14,9 @@ COMMENT=	XML-based extensible HTML generator
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=3.4:${PORTSDIR}/devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}pillow>=2.6:${PORTSDIR}/graphics/py-pillow \
-		${PYTHON_PKGNAMEPREFIX}cssutils>=1.0:${PORTSDIR}/www/py-cssutils
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cssutils>=1.0:${PORTSDIR}/www/py-cssutils \
+		${PYTHON_PKGNAMEPREFIX}lxml>=3.4:${PORTSDIR}/devel/py-lxml \
+		${PYTHON_PKGNAMEPREFIX}pillow>=2.6:${PORTSDIR}/graphics/py-pillow
 
 USES=		python:3 tar:bzip2
 USE_PYTHON=	autoplist distutils

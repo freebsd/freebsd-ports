@@ -10,6 +10,8 @@ COMMENT=	Fast out-of-core learning system
 
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
+BROKEN_FreeBSD_9=	does not build
+
 USES=		compiler:c++11-lang libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

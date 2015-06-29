@@ -1,11 +1,11 @@
---- share/gprconfig/gnat.xml.orig	2013-09-16 15:29:28.000000000 +0000
+--- share/gprconfig/gnat.xml.orig	2014-10-13 22:03:37 UTC
 +++ share/gprconfig/gnat.xml
 @@ -63,7 +63,7 @@
     </config>
    </configuration>
  
 -  <!-- GNAT -->
-+  <!-- GNAT (tailored to lang/gcc-aux) -->
++  <!-- GNAT (tailored to lang/gcc5-aux) -->
    <configuration>
     &filter_gnat;
     <config>

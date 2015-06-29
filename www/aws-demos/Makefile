@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws
-PORTVERSION=	3.2.0.0
-PORTREVISION=	1
+PORTVERSION=	3.3.0.0
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 PKGNAMESUFFIX=	-demos
@@ -78,7 +77,7 @@ DEMO_DIRS+=	test_ldap
 post-patch:
 	@${REINPLACE_CMD} -e 's|@PREFIX@|${LOCALBASE}|g' \
 		${WRKSRC}/demos/test_ldap/test_ldap.gpr
-	@${REINPLACE_CMD} -e 's| setup_tp | |' ${WRKSRC}/makefile
+	@${REINPLACE_CMD} -e 's| setup_tp | |' ${WRKSRC}/Makefile
 
 do-configure:
 	${MKDIR} ${WRKSRC}/.build/native/debug/static/obj

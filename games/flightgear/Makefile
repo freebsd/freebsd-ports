@@ -17,8 +17,7 @@ COMMENT=	The FlightGear flight simulator
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
 		libosg.so:${PORTSDIR}/graphics/osg \
@@ -34,7 +33,7 @@ USE_GL=		gl glu glut
 USE_SQLITE=	3
 USE_QT5=	core buildtools qmake widgets
 
-USES=		cpe tar:bzip2 dos2unix cmake compiler openal:al,alut
+USES=		cpe dos2unix cmake compiler jpeg openal:al,alut tar:bzip2
 DOS2UNIX_REGEX=	.*\.(c|h|cxx|cpp|hxx|hpp)
 CMAKE_ARGS+=	-DENABLE_JS_SERVER:BOOL=ON \
 		-DSYSTEM_SQLITE:BOOL=ON \

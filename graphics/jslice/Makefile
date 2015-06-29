@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.pldaniels.com/jslice/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphics tool to split up a JPEG image and provide HTML for the slices
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+USES=		jpeg
 
 PLIST_FILES=	bin/jslice
 

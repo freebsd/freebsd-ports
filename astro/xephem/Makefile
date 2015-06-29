@@ -3,17 +3,16 @@
 
 PORTNAME=	xephem
 PORTVERSION=	3.7.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	# http://www.clearskyinstitute.com/xephem/
 
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	Interactive astronomical ephemeris program
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
-USES=		gmake motif
+USES=		gmake jpeg motif
 LDFLAGS+=	-lfontconfig
 USE_XORG=	xp xt xext xmu x11 xft
 MAKE_JOBS_UNSAFE=	yes
@@ -46,7 +45,7 @@ post-patch:
 		s|-O2 ||g'
 
 pre-build:
-	@${ECHO_CMD} 'XEphem.ShareDir: ${STAGEDIR}${PREFIX}/lib/X11/xephem' \
+	@${ECHO_CMD} 'XEphem.ShareDir: ${PREFIX}/lib/X11/xephem' \
 		> ${WRKSRC}/XEphem.ad
 
 pre-install:
@@ -56,13 +55,9 @@ pre-install:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xephem ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/XEphem.ad ${STAGEDIR}${PREFIX}/lib/X11/app-defaults/XEphem
-
-post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/xephem
-	${TAR} -C ${WRKSRC} -cf - auxil catalogs fifos fits gallery help lo \
-		| ${TAR} -C ${STAGEDIR}${PREFIX}/lib/X11/xephem --unlink -xf -
-	@${FIND} ${STAGEDIR}${PREFIX}/lib/X11/xephem \
-		| ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGROUP}
-	@${FIND} ${STAGEDIR}${PREFIX}/lib/X11/xephem -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+	@cd ${WRKSRC}; ${COPYTREE_SHARE} \
+		"auxil catalogs fifos fits gallery help lo" \
+		${STAGEDIR}${PREFIX}/lib/X11/xephem
 
 .include <bsd.port.post.mk>

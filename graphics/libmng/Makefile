@@ -11,8 +11,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-devel/${PORTVERSION} \
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Multiple-image Network Graphics (MNG) reference library
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		liblcms.so:${PORTSDIR}/graphics/lcms
+LIB_DEPENDS=	liblcms.so:${PORTSDIR}/graphics/lcms
 
 OPTIONS_DEFINE=	MNG_OPTIMIZE
 MNG_OPTIMIZE_DESC=	Use vendor's new optimization flags
@@ -20,7 +19,7 @@ MNG_OPTIMIZE_DESC=	Use vendor's new optimization flags
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 #USE_BZIP2=	yes	# Please, uncomment on next upgrade
 
-USES=		uidfix
+USES=		jpeg uidfix
 USE_LDCONFIG=	yes
 
 MNG_OPTIMIZE_MAKE_ARGS=	WITH_MNG_OPTIMIZE=true

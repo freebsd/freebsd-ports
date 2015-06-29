@@ -11,6 +11,9 @@ include/pd/s_stuff.h
 lib/pd/bin/pd
 lib/pd/bin/pd-watchdog
 %%PORTDOCS%%lib/pd/doc
+lib/pd/extra/bob~/bob~-help.pd
+lib/pd/extra/bob~/bob~.pd_linux
+lib/pd/extra/bob~/output~.pd
 lib/pd/extra/bonk~/bonk~-help.pd
 lib/pd/extra/bonk~/bonk~.pd_linux
 lib/pd/extra/bonk~/templates.txt

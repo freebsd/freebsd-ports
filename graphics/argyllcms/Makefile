@@ -13,12 +13,11 @@ COMMENT=	ICC compatible color management system
 LICENSE=	AGPLv3
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
 
 WRKSRC=		${WRKDIR}/Argyll_V${PORTVERSION}
 
-USES=		cpe zip
+USES=		cpe jpeg zip
 USE_XORG=	x11 xau xdmcp xext xinerama xrandr xscrnsaver xxf86vm 
 
 post-patch:

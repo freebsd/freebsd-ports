@@ -13,7 +13,6 @@ LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libharfbuzz.so:${PORTSDIR}/print/harfbuzz \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libxcb.so:${PORTSDIR}/x11/libxcb \
 		libxcb-image.so:${PORTSDIR}/x11/xcb-util-image \
@@ -23,6 +22,7 @@ LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libxkbcommon.so:${PORTSDIR}/x11/libxkbcommon
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
+USES=		jpeg
 USE_GL=		gl
 USE_GNOME=	glib20
 USE_QT5=	core dbus qmake_build buildtools_build

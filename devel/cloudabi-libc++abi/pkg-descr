@@ -1,0 +1,6 @@
+libc++abi is the C++ support library. It implements low-level language
+features such as type information, name demangling and thread-safe
+initialization of global storage. This port provides a copy of libc++abi
+built for CloudABI.
+
+WWW: http://libcxxabi.llvm.org/

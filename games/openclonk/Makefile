@@ -16,12 +16,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libogg.so:${PORTSDIR}/audio/libogg \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
-USES=		compiler:c++11-lib cmake desktop-file-utils iconv pkgconfig tar:bzip2
+USES=		compiler:c++11-lib cmake desktop-file-utils iconv jpeg pkgconfig tar:bzip2
 USE_GL=		glew
 USE_GNOME=	gtk20
 USE_SDL=	sdl mixer

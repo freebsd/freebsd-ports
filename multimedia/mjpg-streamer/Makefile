@@ -41,7 +41,7 @@ MJPEG_STREAMER_PLUGINS+=	input_testpicture.so
 
 .if ${PORT_OPTIONS:MUVC}
 MJPEG_STREAMER_PLUGINS+=	input_uvc.so
-LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+USES+=		jpeg
 .endif
 
 .if ${PORT_OPTIONS:MHTTP}

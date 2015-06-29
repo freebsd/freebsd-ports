@@ -28,7 +28,6 @@ LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1 \
 		libcairo.so:${PORTSDIR}/graphics/cairo \
 		libGLEW.so:${PORTSDIR}/graphics/glew \
 		libgraphite2.so:${PORTSDIR}/graphics/graphite2 \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
 		libcdr-0.1.so:${PORTSDIR}/graphics/libcdr01 \
 		libetonyek-0.1.so:${PORTSDIR}/graphics/libetonyek01 \
@@ -78,7 +77,7 @@ USE_OPENLDAP=	yes
 USE_PERL5=	build
 USE_QT4=	# empty but required
 USE_XORG=	xaw xrandr
-USES=		bison compiler:c++11-lang cpe gmake perl5 pkgconfig python shared-mime-info tar:xz
+USES=		bison compiler:c++11-lang cpe gmake jpeg perl5 pkgconfig python shared-mime-info tar:xz
 WANT_GNOME=	yes
 
 DISTFILES+=	${PORTNAME}-${LOVERSION}${EXTRACT_SUFX}

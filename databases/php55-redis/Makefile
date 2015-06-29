@@ -18,7 +18,7 @@ GH_PROJECT=	phpredis
 USE_PHP=	session
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
-DEFAULT_PHP_VER=55
+PHP_DEFAULT=	5.5
 
 PHP_MODNAME=	redis
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-ecloud
-PORTVERSION=	0.1.3
+PORTVERSION=	0.3.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 

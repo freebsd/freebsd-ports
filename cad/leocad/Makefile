@@ -15,12 +15,11 @@ COMMENT=	CAD program that uses bricks similar to those found in many toys
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		desktop-file-utils gmake pkgconfig qmake shared-mime-info
+USES=		desktop-file-utils gmake jpeg pkgconfig qmake shared-mime-info
 USE_QT4=	moc_build rcc_build uic_build iconengines_run imageformats_run \
 		corelib gui network opengl
 USE_GL=		glut

@@ -12,11 +12,11 @@ MAINTAINER?=	linimon@FreeBSD.org
 COMMENT?=	Generates plots and graphs from data
 
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libming.so:${PORTSDIR}/graphics/ming \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
+USES=		jpeg
 BUILD_WRKSRC=	${WRKSRC}/src
 
 FREETYPE_CONFIG?=	${LOCALBASE}/bin/freetype-config

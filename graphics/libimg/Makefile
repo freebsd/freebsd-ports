@@ -13,14 +13,13 @@ COMMENT=	Library of image format handlers for Tk4.1 and later
 
 BUILD_DEPENDS=	dtplite:${PORTSDIR}/devel/tcllib
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
 PLIST_SUB+=	SHLIB_NAME="${SHLIB_NAME}" \
 		SHLIB_LINK="${SHLIB_LINK}"
 
 WRKSRC=		${WRKDIR}/tkimg${PORTVERSION:R}
-USES=		tk tar:bzip2
+USES=		jpeg tk tar:bzip2
 
 # We don't need the bundled libraries:
 EXTRACT_AFTER_ARGS=	--exclude '*/libz/*' --exclude zlib \

@@ -9,12 +9,11 @@ MASTER_SITES=	SF/hpinkjet/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drivers and support resources for HP Inkjet Printers
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
-
 CONFLICTS=	hplip-[0-9]*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=		--disable-dependency-tracking
+USES=		jpeg
 USE_GHOSTSCRIPT_RUN=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -23,8 +23,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		automake:${PORTSDIR}/devel/automake \
 		autoconf:${PORTSDIR}/devel/autoconf
 LIB_DEPENDS=	libatlas.so:${PORTSDIR}/math/atlas \
-		liblapack.so:${PORTSDIR}/math/lapack \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg
+		liblapack.so:${PORTSDIR}/math/lapack
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 pre-extract:
@@ -37,8 +36,7 @@ pre-extract:
 
 PLIST_FILES=	bin/sage
 USE_TEX=	latex:build
-USES=		gmake iconv tk perl5
-MAKE_JOBS_SAFE=	yes
+USES=		gmake iconv jpeg tk perl5
 
 # Optimization flags will be defined by the source
 CFLAGS:=	${CFLAGS:C/^-O.*$//}

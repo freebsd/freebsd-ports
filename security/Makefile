@@ -775,7 +775,6 @@
     SUBDIR += py-Products.PluggableAuthService
     SUBDIR += py-RestrictedPython
     SUBDIR += py-SecretStorage
-    SUBDIR += py-backports.ssl_match_hostname
     SUBDIR += py-bcrypt
     SUBDIR += py-borg.localrole
     SUBDIR += py-cerealizer
@@ -1049,6 +1048,7 @@
     SUBDIR += unhide
     SUBDIR += unicornscan
     SUBDIR += unssh
+    SUBDIR += vault
     SUBDIR += vinetto
     SUBDIR += vlock
     SUBDIR += vlog

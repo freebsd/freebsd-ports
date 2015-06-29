@@ -1,5 +1,5 @@
---- filestate_freebsd.go.orig    1970-01-01 02:00:00.000000000 +0200
-+++ filestate_freebsd.go     2014-08-15 15:56:07.164481962 +0300
+--- filestate_freebsd.go.orig	2015-06-23 08:32:46 UTC
++++ filestate_freebsd.go
 @@ -0,0 +1,8 @@
 +package main
 +

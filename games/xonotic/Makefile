@@ -12,12 +12,11 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Fast-paced, chaotic, and intense multiplayer first person shooter
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg
+		libpng.so:${PORTSDIR}/graphics/png
 
 #MANUAL_PACKAGE_BUILD=	huge (930M)
 
-USES=		shebangfix zip:infozip
+USES=		jpeg shebangfix zip:infozip
 SHEBANG_FILES=	server/rcon.pl server/rcon2irc/rcon2irc.pl
 WRKSRC=		${WRKDIR}/Xonotic
 BUILD_WRKSRC=	${WRKSRC}/source/darkplaces

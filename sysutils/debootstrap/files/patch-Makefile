@@ -1,6 +1,14 @@
---- Makefile.orig	2011-08-10 11:59:34 UTC
+--- Makefile.orig	2015-05-19 09:35:39 UTC
 +++ Makefile
-@@ -13,17 +13,15 @@
+@@ -1,6 +1,6 @@
+ # avoid dpkg-dev dependency; fish out the version with sed
+ VERSION := $(shell sed 's/.*(\(.*\)).*/\1/; q' debian/changelog)
+-DATE := $(shell sed -n '/^ -- /{s/.*> \(.*\)/\1/p;q}' debian/changelog)
++DATE := $(shell sed -n '/^ -- /{s/.*> \(.*\)/\1/p;q;}' debian/changelog)
+ 
+ MAKEDEV ?= /sbin/MAKEDEV
+ 
+@@ -14,17 +14,15 @@ clean:
  	rm -f devices.tar.gz
  	rm -rf dev
  

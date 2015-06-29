@@ -17,11 +17,10 @@ LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
 		liblcms.so:${PORTSDIR}/graphics/lcms \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		liboyranos.so:${PORTSDIR}/graphics/oyranos
 
 MAKE_JOBS_UNSAFE=	yes
-USES=		desktop-file-utils gettext iconv pkgconfig tar:bzip2
+USES=		desktop-file-utils gettext iconv jpeg pkgconfig tar:bzip2
 HAS_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_XORG=	#

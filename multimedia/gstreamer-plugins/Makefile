@@ -57,7 +57,8 @@ CFLAGS+=	-I${LOCALBASE}/include
 DEFAULT_AUDIOSINK?=	osssink
 DEFAULT_AUDIOSRC?=	osssrc
 
-.include <bsd.port.pre.mk>
+# Include bsd.port.options.mk and not bsd.port.pre.mk to be able to use USES
+.include <bsd.port.options.mk>
 
 .if ${ARCH}=="i386"
 PLIST_SUB+=	I386=""
@@ -166,4 +167,4 @@ USE_GCC=	any
 .endif
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

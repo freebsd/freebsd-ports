@@ -2,6 +2,7 @@
 
 PORTNAME=	terraform
 PORTVERSION=	0.5.3
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	hashicorp-
@@ -30,14 +31,14 @@ GH_PROJECT=	atlas-go:atlasgo consul:consul errwrap:errwrap \
 		uuid:uuid mailgun:mailgun gophercloud:gophercloud winrmtest:winrmtest \
 		winrm:winrm winrmcp:winrmcp go-linereader:golinereader iso8601:iso8601 \
 		simplexml:simplexml packer:packer gouuid:gouuid go.uuid:suuid xmlpath:xmlpath circbuf:circbuf
-GH_TAGNAME=	6a87d5f:atlasgo 0aea1f0:consul 7554cd9:errwrap 88326f6:gocheckpoint fcdddc3:gomultierror \
-		999359b:goversion 513e04c:hcl b2e5585:yamux 76e2780:cli 61164e4:colorstring 6fc6626:copystructure \
-		1f6da4a:gohomedir bb4fbaf:mapstructure 0dd3f91:osext 45cbfd3:panicwrap 89d9b53:prefixedio eecf4c7:reflectwalk \
-		43d7c58:awssdkgo a98ad7e:goini c10c31b:crypto 19e280b:cloudflare b297522:cloudstack e966f00:digitalocean \
-		5578a8c:dnsmadeeasy bb806be:mergo 1e0c2b0:dnsimple f95d189:godocker b5adcc2:oauth2 589db58:net \
-		d56f328:apiclient faa320c:gcloud 594d483:heroku ca53cad:uuid 5b02e7e:mailgun fab1f3d:gophercloud \
-		3e9661c:winrmtest 1323390:winrm 743b1af:winrmcp 07bab5f:golinereader 2075bf1:iso8601 \
-		95ba304:simplexml 295f7a2:packer 179d4d0:gouuid 7c7f202:suuid 13f4951:xmlpath f092b4f:circbuf
+GH_TAGNAME=	6a87d5f:atlasgo 9417fd3:consul 7554cd9:errwrap 88326f6:gocheckpoint fcdddc3:gomultierror \
+		999359b:goversion 513e04c:hcl b2e5585:yamux 6cc8bc5:cli 61164e4:colorstring 6fc6626:copystructure \
+		1f6da4a:gohomedir 442e588:mapstructure 0dd3f91:osext 45cbfd3:panicwrap 89d9b53:prefixedio 242be0c:reflectwalk \
+		43d7c58:awssdkgo a98ad7e:goini c10c31b:crypto 19e280b:cloudflare f73f6ff:cloudstack e966f00:digitalocean \
+		5578a8c:dnsmadeeasy 2fcac99:mergo 1e0c2b0:dnsimple f95d189:godocker b5adcc2:oauth2 589db58:net \
+		d56f328:apiclient faa320c:gcloud 594d483:heroku ca53cad:uuid 5b02e7e:mailgun 9ad4137:gophercloud \
+		3e9661c:winrmtest 1323390:winrm 650a91d:winrmcp 07bab5f:golinereader 2075bf1:iso8601 \
+		95ba304:simplexml 350a5f8:packer 179d4d0:gouuid 7c7f202:suuid 13f4951:xmlpath f092b4f:circbuf
 
 STRIP=		# stripping can break go binaries
 

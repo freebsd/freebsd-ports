@@ -21,7 +21,6 @@ BUILD_DEPENDS=	p5-Moose>=0.40:${PORTSDIR}/devel/p5-Moose \
 		p5-URI-FromHash>=0:${PORTSDIR}/net/p5-URI-FromHash \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok
 
 USE_PERL5=	modbuildtiny
 USES=		perl5
@@ -30,6 +29,10 @@ USES=		perl5
 
 .if ${PERL_LEVEL} < 501800
 TEST_DEPENDS+=	p5-CPAN-Meta-Requirements>=2.120.900:${PORTSDIR}/devel/p5-CPAN-Meta-Requirements
+.endif
+
+.if ${PERL_LEVEL} < 502200
+TEST_DEPENDS+=	p5-Test-Simple>=1.001.014:${PORTSDIR}/devel/p5-Test-Simple
 .endif
 
 .include <bsd.port.post.mk>

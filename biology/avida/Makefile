@@ -30,11 +30,11 @@ DATA_FILES=	analyze.cfg avida.cfg default-gx.org \
 		instset-heads-sex.cfg instset-heads.cfg instset-smt.cfg \
 		instset-transsmt.cfg
 
-.include <bsd.port.pre.mk>
+BROKEN_ia64=	Does not compile: invokes i386 asm
+BROKEN_powerpc=	Does not compile: invokes i386 asm
+BROKEN_sparc64=	Does not compile: invokes i386 asm
 
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile: invokes i386 asm
-.endif
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "CMakeLists.txt" | ${XARGS} \
@@ -69,4 +69,4 @@ do-install:
 		${STAGEDIR}${DOCSDIR})
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

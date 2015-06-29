@@ -1,6 +1,6 @@
---- configure.ac.orig	2008-09-02 14:40:15.000000000 +0100
-+++ configure.ac	2008-09-02 14:41:51.000000000 +0100
-@@ -55,7 +55,7 @@
+--- configure.ac.orig	2005-02-08 02:23:54 UTC
++++ configure.ac
+@@ -55,7 +55,7 @@ AC_ARG_ENABLE(encoder-jpeg,
  	[enable_encoder_jpeg=auto])
  
  case $host in
@@ -9,3 +9,11 @@
  		if test x$enable_input_vdig = xyes; then
  			AC_MSG_ERROR([QuickTime digitizer support is only available on Mac OS X])
  		fi
+@@ -116,6 +116,7 @@ if test x$enable_input_v4l != xno; then
+ 		]]),
+ 	[
+ 		AC_MSG_RESULT(yes)
++		LIBS="-lv4l1 $LIBS"
+ 		build_input_v4l=true
+ 		AC_MSG_CHECKING([for pwc-ioctl.h in the kernel source tree])
+ 		if test -d $linux_source/drivers/usb/media; then

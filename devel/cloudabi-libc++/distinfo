@@ -1,0 +1,4 @@
+SHA256 (libc++-0.240527.tar.xz) = 6775bb5ef2cacc71cd40d70ce54d77237333cb9ea83f1d06e0fd10fe58561f44
+SIZE (libc++-0.240527.tar.xz) = 967240
+SHA256 (libc++abi-0.240527.tar.xz) = 16b206bb5ad40fbd40f69f79c31924aa9efe7e01255f69962361f873f13b4c29
+SIZE (libc++abi-0.240527.tar.xz) = 507212

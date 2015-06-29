@@ -14,6 +14,7 @@ man/man8/debootstrap.8.gz
 %%DATADIR%%/scripts/intrepid
 %%DATADIR%%/scripts/jaunty
 %%DATADIR%%/scripts/jessie
+%%DATADIR%%/scripts/jessie-kfreebsd
 %%DATADIR%%/scripts/karmic
 %%DATADIR%%/scripts/lenny
 %%DATADIR%%/scripts/lucid

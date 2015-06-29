@@ -22,16 +22,15 @@ MAKE_ENV=	MAKEOBJDIR=${WRKSRC}/obj
 
 .include "${.CURDIR}/Makefile.sources"
 
-.if defined(ADA_DEFAULT) && ${ADA_DEFAULT} == 5
-.include "${.CURDIR}/../gcc5-aux/Makefile.version"
-.else
+.if defined(ADA_DEFAULT) && ${ADA_DEFAULT} == 49
 .include "${.CURDIR}/../gcc-aux/Makefile.version"
+.else
+.include "${.CURDIR}/../gcc5-aux/Makefile.version"
 .endif
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/obj
-.for F in Makefile gnat_util.gpr sdefault_adb.gnat_util \
-	update_path.c set_std_prefix.c
+.for F in Makefile gnat_util.gpr sdefault_adb.gnat_util osint_scars.c
 	@${CP} ${FILESDIR}/${F} ${WRKSRC}/
 .endfor
 .for F in ${GNAT_SRCS}
@@ -46,7 +45,5 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/gcc/ada/gnat_ugn.texi \
 		${STAGEDIR}${DATADIR}
-	@(cd ${STAGEDIR}${PREFIX}; ${FIND} * \( -type f -or -type l \) | \
-		${SORT} >> ${TMPPLIST})
 
 .include <bsd.port.mk>

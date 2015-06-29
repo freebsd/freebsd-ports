@@ -16,14 +16,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
 		libogg.so:${PORTSDIR}/audio/libogg \
 		libcurl.so:${PORTSDIR}/ftp/curl \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg
+		libpng.so:${PORTSDIR}/graphics/png
 
 BROKEN_powerpc=		does not configure on powerpc
 BROKEN_FreeBSD_8=	does not build on 8.x
 
 USES=           alias cmake compiler:c++11-lib dos2unix gettext \
-		gmake openal:al pkgconfig tar:xz
+		gmake jpeg openal:al pkgconfig tar:xz
 USE_GL=		gl glu
 USE_SDL=	sdl
 USE_XORG=	x11 xext sm ice

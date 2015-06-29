@@ -113,6 +113,14 @@ MASTER_SITE_CHEESESHOP+= \
 	http://pypi.python.jp/${DISTNAME:S/${DISTVERSION}//:S/-//}/
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_COMP_SOURCES)
+MASTER_SITE_COMP_SOURCES+= \
+	http://ftp.isc.org/pub/usenet/comp.sources.%SUBDIR%/ \
+	http://ftp.funet.fi/pub/archive/comp.sources.%SUBDIR%/ \
+	http://ftp.sunet.se/pub/usenet/ftp.uu.net/comp.sources.%SUBDIR%/ \
+	http://ftp.fi.netbsd.org/pub/misc/archive/comp.sources.%SUBDIR%/
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_DEBIAN)
 MASTER_SITE_DEBIAN+= \
 	http://cdn.debian.net/debian/%SUBDIR%/ \

@@ -1,0 +1,26 @@
+--- products/lightzone.orig	2015-06-02 13:25:15 UTC
++++ products/lightzone
+@@ -15,19 +15,13 @@ elif [ "${PLATFORM}" = "SunOS" ]; then
+   totalmem=`expr $totalmem \* 1024`
+   usrdir=/usr
+ elif [ "${PLATFORM}" = "FreeBSD" ]; then
+-  totalmem=`dmesg | grep 'real memory' | sed -r 's/.* ([0-9]+) .*/\1/'`
+-  totalmem=`expr $totalmem / 1024`
+-  usrdir=/usr/local
++  totalmem=`sysctl -n hw.physmem`
++  totalmem=$(($totalmem / 1024))
++  usrdir=%%LOCALBASE%%
+ fi
+ 
+ pkgjavadir=${usrdir}/share/java/lightzone
+-if [ -d ${usrdir}/libexec/lightzone ]; then
+-  pkglibexecdir=${usrdir}/libexec/lightzone
+-elif [ -d ${usrdir}/lib64/lightzone ]; then
+-  pkglibexecdir=${usrdir}/lib64/lightzone
+-else
+-  pkglibexecdir=${usrdir}/lib/lightzone
+-fi
++pkglibexecdir=${usrdir}/lib/lightzone
+ 
+ classdir='/usr/share/java/javahelp/*:/usr/share/java/*:/usr/share/javahelp/lib/*:/usr/local/share/java/classes/*'
+ 

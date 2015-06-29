@@ -33,11 +33,7 @@ LN_FILES=	einsi fftns fftnsi ginsi linsi mafft-einsi mafft-fftns \
 		mafft-qinsi mafft-xinsi nwns nwnsi
 MAN1_FILES=	mafft.1 mafft-homologs.1
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not install on sparc64: depends on thread-local storage
-.endif
+BROKEN_sparc64=		Does not install on sparc64: depends on thread-local storage
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^PREFIX = .*$$||' \
@@ -71,4 +67,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/readme ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/license ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

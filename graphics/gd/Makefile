@@ -12,14 +12,13 @@ MASTER_SITES=	https://bitbucket.org/libgd/gd-libgd/downloads/ \
 MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT?=	Graphics library for fast creation of images
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
+LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
 CONFLICTS=	bazaar-1.*
 
-USES=		tar:xz pkgconfig pathfix libtool:keepla shebangfix
+USES=		jpeg libtool:keepla pathfix pkgconfig shebangfix tar:xz
 SHEBANG_FILES=	${WRKSRC}/src/bdftogd
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

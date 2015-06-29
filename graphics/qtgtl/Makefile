@@ -11,9 +11,6 @@ COMMENT=	Qt bindings for the Graphics Transformation Languages
 
 LICENSE=	LGPL20
 
-DEPRECATED=	Depends on broken and expiring graphics/opengtl
-EXPIRATION_DATE=	2015-07-21
-
 LIB_DEPENDS=	libGTLCore.so:${PORTSDIR}/graphics/opengtl
 
 USE_QT4=	corelib gui moc_build qmake_build rcc_build uic_build

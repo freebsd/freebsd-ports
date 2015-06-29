@@ -4,7 +4,7 @@
 PORTNAME=	Mail-SPF
 PORTVERSION=	2.9.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,14 +24,10 @@ TEST_DEPENDS=	p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod
 
 CONFLICTS_INSTALL=	p5-Mail-SPF-Query-[0-9]*
 
-OPTIONS_DEFINE=	DOCS
-
 CONFIGURE_ARGS=	--install_path sbin=${PREFIX}/sbin
+NO_ARCH=	yes
 USE_PERL5=	modbuild
 USES=		perl5 shebangfix
-
-DOCSDIR=	${PREFIX}/share/doc/p5-Mail-SPF
-PORTDOCS=	CHANGES README TODO
 
 SHEBANG_FILES=	bin/spfquery sbin/spfd
 
@@ -39,9 +35,5 @@ post-patch:
 	@${MV} ${WRKSRC}/sbin/spfd ${WRKSRC}/sbin/spfd.pl
 	@${MV} ${WRKSRC}/bin/spfquery ${WRKSRC}/bin/spfquery.pl
 	@${REINPLACE_CMD} -e 's|spfd|&.pl|; s|spfquery|&.pl|' ${WRKSRC}/Build.PL ${WRKSRC}/MANIFEST ${WRKSRC}/README
-
-post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

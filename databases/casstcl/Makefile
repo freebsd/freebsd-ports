@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	casstcl
-PORTVERSION=	2.4
+PORTVERSION=	2.7
+PORTREVISION=	1
 DISTVERSIONPREFIX=v
 CATEGORIES=	databases
 
@@ -22,10 +23,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	flightaware
 
 USE_LDCONFIG=	yes
-
-PLIST_FILES=	include/casstcl.h \
-		lib/casstcl2.4/casstcl.tcl \
-		lib/casstcl2.4/libcasstcl.so.1 \
-		lib/casstcl2.4/pkgIndex.tcl
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.mk>

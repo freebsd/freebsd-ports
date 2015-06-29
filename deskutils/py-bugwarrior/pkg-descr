@@ -1,0 +1,19 @@
+bugwarrior is a command line utility for updating your local taskwarrior
+database from your forge issue trackers.
+
+It currently supports the following remote resources:
+
+  * Github (api v3)
+  * Gitlab (api v3)
+  * BitBucket (Atlassian)
+  * Trac
+  * Bugzilla
+  * Megaplan
+  * Teamlab
+  * Redmine
+  * Jira (Atlassian)
+  * Activecollab (2.x and 4.x)
+  * Phabricator
+  * VersionOne
+
+WWW: https://github.com/ralphbean/bugwarrior

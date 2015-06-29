@@ -15,7 +15,8 @@ MASTERDIR=	${.CURDIR}/../mupen64plus-core
 
 OPTIONS_DEFINE=	#
 
-MAKE_ENV+=	SSE=none	
+USES+=		compiler:c++11-lang
+MAKE_ENV+=	SSE=none
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/${PORTNAME}
 LDFLAGS+=	-L${LOCALBASE}/lib
 

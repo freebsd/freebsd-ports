@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bsdconv
-PORTVERSION=	11.1.0
-PORTREVISION=	1
+PORTVERSION=	11.3.0
 CATEGORIES=	converters perl5
 PKGNAMEPREFIX=	p5-
 
@@ -23,5 +22,8 @@ USE_PERL5=	configure
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/Makefile.PL
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/bsdconv/bsdconv.so
 
 .include <bsd.port.mk>

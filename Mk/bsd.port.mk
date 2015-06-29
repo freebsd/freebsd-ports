@@ -185,6 +185,11 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  release of ${OPSYS}, e.g BROKEN_FreeBSD_8
 #				  would affect all point releases of FreeBSD 8
 #				  unless TRYBROKEN is also set.
+# BROKEN_${OPSYS}_${OSREL:R}_${ARCH} -  Port is believed to be broken on a
+#				  single release of ${OPSYS} and specific architecture,
+#				  e.g BROKEN_FreeBSD_8_i386 would affect all point
+#				  releases of FreeBSD 8 in i386
+#				  unless TRYBROKEN is also set.
 # DEPRECATED	- Port is deprecated to install. Advisory only.
 # EXPIRATION_DATE
 #				- If DEPRECATED is set, determines a date when
@@ -448,9 +453,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Will be used to distinguish which linux
 #				  infrastructure ports should be used.
 #				  Valid values: 2.6.16.
-# AUTOMATIC_PLIST
-#				- Set to yes to enable automatic packing list generation.
-#				  Currently has no effect unless USE_LINUX_RPM is set.
 #
 # OVERRIDE_LINUX_BASE_PORT
 #				- This specifies the default linux base to use, for valid
@@ -474,12 +476,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  If this is set to a list of files, these files will be
 #				  automatically added to ${SUB_FILES}, some %%VAR%%'s will
 #				  automatically be expanded, they will be installed in
-#				  ${PREFIX}/etc/rc.d and added to the packing list.
-# USE_RCORDER	- List of rc.d startup scripts to be called early in the boot
-#				  process. This acts exactly like USE_RC_SUBR except that
-#				  scripts are installed in /etc/rc.d.
-#				  Because local rc.d scripts are included in the base rcorder
-#				  this option is not needed unless the port installs in the base.
+#				  ${PREFIX}/etc/rc.d if ${PREFIX} is not /usr, otherwise they
+#				  will be installed in /etc/rc.d/ and added to the packing list.
 ##
 # USE_APACHE	- If set, this port relies on an apache webserver.
 #
@@ -500,7 +498,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # Various directory definitions and variables to control them.
 # You rarely need to redefine any of these except WRKSRC and NO_WRKSUBDIR.
 #
-# LOCALBASE		- Where non-X11 ports install things.
+# LOCALBASE		- Where ports install things.
 #				  Default: /usr/local
 # LINUXBASE		- Where Linux ports install things.
 #				  Default: /compat/linux
@@ -1641,10 +1639,8 @@ MAKE_SHELL?=	${SH}
 CONFIGURE_ENV+=	SHELL=${CONFIGURE_SHELL} CONFIG_SHELL=${CONFIGURE_SHELL}
 MAKE_ENV+=		SHELL=${MAKE_SHELL} NO_LINT=YES
 
-.if defined(PATCHFILES)
-.if ${PATCHFILES:M*.zip}x != x
+.if defined(PATCHFILES) && ${PATCHFILES:M*.zip}
 PATCH_DEPENDS+=		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
-.endif
 .endif
 
 # Check the compatibility layer for amd64/ia64
@@ -2139,8 +2135,6 @@ MTREE_FILE_DEFAULT=yes
 .endif
 MTREE_CMD?=	/usr/sbin/mtree
 MTREE_ARGS?=	-U ${MTREE_FOLLOWS_SYMLINKS} -f ${MTREE_FILE} -d -e -p
-
-READLINK_CMD?=	/usr/bin/readlink
 
 _SHAREMODE?=	0644
 
@@ -2833,6 +2827,10 @@ IGNORE=		is marked as broken on ${ARCH}: ${BROKEN_${ARCH}}
 .elif defined(BROKEN_${OPSYS}_${OSREL:R})
 .if !defined(TRYBROKEN)
 IGNORE=		is marked as broken on ${OPSYS} ${OSREL}: ${BROKEN_${OPSYS}_${OSREL:R}}
+.endif
+.elif defined(BROKEN_${OPSYS}_${OSREL:R}_${ARCH})
+.if !defined(TRYBROKEN)
+IGNORE=		is marked as broken on ${OPSYS} ${OSREL} ${ARCH}: ${BROKEN_${OPSYS}_${OSREL:R}_${ARCH}}
 .endif
 .elif defined(BROKEN_${OPSYS})
 .if !defined(TRYBROKEN)
@@ -4159,8 +4157,7 @@ fetch-urlall-list:
 .endif
 
 .if !target(fetch-url-list)
-fetch-url-list:
-	@cd ${.CURDIR} && ${MAKE} fetch-url-list-int
+fetch-url-list: fetch-url-list-int
 .endif
 
 # Generates patches.
@@ -4322,8 +4319,7 @@ pre-repackage:
 # install package cookie
 
 .if !target(package-noinstall)
-package-noinstall:
-	@cd ${.CURDIR} && ${MAKE} package
+package-noinstall: package
 .endif
 
 ################################################################
@@ -4333,176 +4329,32 @@ package-noinstall:
 .if !target(depends)
 depends: pkg-depends extract-depends patch-depends lib-depends fetch-depends build-depends run-depends
 
-.if defined(ALWAYS_BUILD_DEPENDS)
-_DEPEND_ALWAYS=	1
-.else
-_DEPEND_ALWAYS=	0
-.endif
-
-_INSTALL_DEPENDS=	\
-		if [ -n "${USE_PACKAGE_DEPENDS}" -o -n "${USE_PACKAGE_DEPENDS_ONLY}" ]; then \
-			subpkgfile=`(cd $$dir; ${MAKE} $$depends_args -V PKGFILE)`; \
-			subpkgname=$${subpkgfile%-*} ; \
-			subpkgname=$${subpkgname\#\#*/} ; \
-			if [ -r "$${subpkgfile}" -a "$$target" = "${DEPENDS_TARGET}" ]; then \
-				${ECHO_MSG} "===>   Installing existing package $${subpkgfile}"; \
-				if [ $${subpkgname} = "pkg" ]; then \
-					[ -d ${WRKDIR} ] || ${MKDIR} ${WRKDIR} ; \
-					${TAR} xf $${subpkgfile} -C ${WRKDIR} -s ",/.*/,,g" "*/pkg-static" ; \
-					${WRKDIR}/pkg-static add $${subpkgfile}; \
-					${RM} -f ${WRKDIR}/pkg-static; \
-				else \
-					${PKG_ADD} -A $${subpkgfile}; \
-				fi; \
-			elif [ -n "${USE_PACKAGE_DEPENDS_ONLY}" -a "$${target}" = "${DEPENDS_TARGET}" ]; then \
-				${ECHO_MSG} "===>   ${PKGNAME} depends on package: $${subpkgfile} - not found"; \
-				${ECHO_MSG} "===>   USE_PACKAGE_DEPENDS_ONLY set - not building missing dependency from source"; \
-				exit 1; \
-			else \
-			  (cd $$dir; ${MAKE} -DINSTALLS_DEPENDS $$target $$depends_args) ; \
-			fi; \
-		elif [ -z "${STRICT_DEPENDS}" ]; then \
-			(cd $$dir; ${MAKE} -DINSTALLS_DEPENDS $$target $$depends_args) ; \
-		fi; \
-		${ECHO_MSG} "===>   Returning to build of ${PKGNAME}";
-
-.for deptype in PKG EXTRACT PATCH FETCH BUILD RUN
+.for deptype in PKG EXTRACT PATCH FETCH BUILD LIB RUN
 ${deptype:tl}-depends:
-.if defined(${deptype}_DEPENDS)
-.if !defined(NO_DEPENDS)
-	@set -e ; anynotfound=0; for i in `${ECHO_CMD} "${${deptype}_DEPENDS}"`; do \
-		prog=$${i%%:*}; \
-		if [ -z "$$prog" ]; then \
-			${ECHO_MSG} "Error: there is an empty port dependency in ${deptype}_DEPENDS."; \
-			break; \
-		fi; \
-		dir=`${ECHO_CMD} $$i | ${SED} -e 's/[^:]*://'`; \
-		if ${EXPR} "$$dir" : '.*:' > /dev/null; then \
-			target=$${dir##*:}; \
-			dir=$${dir%%:*}; \
-			if [ X${DEPENDS_PRECLEAN} != "X" ]; then \
-				target="clean $$target"; \
-				depends_args="$$depends_args NOCLEANDEPENDS=yes"; \
-			fi; \
-			if [ X${DEPENDS_CLEAN} != "X" ]; then \
-				target="$$target clean"; \
-				depends_args="$$depends_args NOCLEANDEPENDS=yes"; \
-			fi; \
-		else \
-			target="${DEPENDS_TARGET}"; \
-			depends_args="${DEPENDS_ARGS}"; \
-		fi; \
-		if ${EXPR} "$$prog" : \\/ >/dev/null; then \
-			if [ -e "$$prog" ]; then \
-				if [ "$$prog" = "${NONEXISTENT}" ]; then \
-					${ECHO_MSG} "Error: ${NONEXISTENT} exists.  Please remove it, and restart the build."; \
-					${FALSE}; \
-				else \
-					${ECHO_MSG} "===>   ${PKGNAME} depends on file: $$prog - found"; \
-					if [ ${_DEPEND_ALWAYS} = 1 ]; then \
-						${ECHO_MSG} "       (but building it anyway)"; \
-						notfound=1; \
-					else \
-						notfound=0; \
-					fi; \
-				fi; \
-			else \
-				${ECHO_MSG} "===>   ${PKGNAME} depends on file: $$prog - not found"; \
-				notfound=1; \
-			fi; \
-		else \
-			case $${prog} in \
-				*\>*|*\<*|*=*)	pkg=yes;; \
-				*)		pkg="";; \
-			esac; \
-			if [ "$$pkg" != "" ]; then \
-				if ${PKG_INFO} "$$prog" > /dev/null 2>&1 ; then \
-					${ECHO_MSG} "===>   ${PKGNAME} depends on package: $$prog - found"; \
-					if [ ${_DEPEND_ALWAYS} = 1 ]; then \
-						${ECHO_MSG} "       (but building it anyway)"; \
-						notfound=1; \
-					else \
-						notfound=0; \
-					fi; \
-				else \
-					${ECHO_MSG} "===>   ${PKGNAME} depends on package: $$prog - not found"; \
-					notfound=1; \
-				fi; \
-				if [ $$notfound != 0 ]; then \
-					inverse_dep=`${ECHO_CMD} $$prog | ${SED} \
-						-e 's/<=/=gt=/; s/</=ge=/; s/>=/=lt=/; s/>/=le=/' \
-						-e 's/=gt=/>/; s/=ge=/>=/; s/=lt=/</; s/=le=/<=/'`; \
-					pkg_info=`${PKG_INFO} -E "$$inverse_dep" 2>/dev/null || ${TRUE}`; \
-					if [ "$$pkg_info" != "" ]; then \
-						${ECHO_MSG} "===>   Found $$pkg_info, but you need to upgrade to $$prog."; \
-						exit 1; \
-					fi; \
-				fi; \
-			elif ${WHICH} "$$prog" > /dev/null 2>&1 ; then \
-				${ECHO_MSG} "===>   ${PKGNAME} depends on executable: $$prog - found"; \
-				if [ ${_DEPEND_ALWAYS} = 1 ]; then \
-					${ECHO_MSG} "       (but building it anyway)"; \
-					notfound=1; \
-				else \
-					notfound=0; \
-				fi; \
-			else \
-				${ECHO_MSG} "===>   ${PKGNAME} depends on executable: $$prog - not found"; \
-				notfound=1; \
-			fi; \
-		fi; \
-		if [ $$notfound != 0 ]; then \
-			if [ "$$prog" != "${NONEXISTENT}" ]; then \
-				anynotfound=1; \
-			fi; \
-			${ECHO_MSG} "===>    Verifying $$target for $$prog in $$dir"; \
-			if [ ! -d "$$dir" ]; then \
-				${ECHO_MSG} "     => No directory for $$prog.  Skipping.."; \
-			else \
-				${_INSTALL_DEPENDS} \
-			fi; \
-		fi; \
-	done; \
-	if [ -n "${STRICT_DEPENDS}" -a $${anynotfound} -eq 1 ]; then \
-		${ECHO_MSG} "===>   STRICT_DEPENDS set - Not installing missing dependencies."; \
-		${ECHO_MSG} "       This means a dependency is wrong since it was not satisfied in the ${deptype:tl}-depends phase."; \
-		exit 1; \
-	fi
-.endif
-.else
-	@${DO_NADA}
+.if defined(${deptype}_DEPENDS) && !defined(NO_DEPENDS)
+	@${SETENV} \
+		dp_RAWDEPENDS="${${deptype}_DEPENDS}" \
+		dp_DEPTYPE="${deptype}_DEPENDS" \
+		dp_DEPENDS_TARGET="${DEPENDS_TARGET}" \
+		dp_DEPENDS_PRECLEAN="${DEPENDS_PRECLEAN}" \
+		dp_DEPENDS_CLEAN="${DEPENDS_CLEAN}" \
+		dp_DEPENDS_ARGS="${DEPENDS_ARGS}" \
+		dp_USE_PACKAGE_DEPENDS="${USE_PACKAGE_DEPENDS}" \
+		dp_USE_PACKAGE_DEPENDS_ONLY="${USE_PACKAGE_DEPENDS_ONLY}" \
+		dp_PKG_ADD="${PKG_ADD}" \
+		dp_PKG_INFO="${PKG_INFO}" \
+		dp_WRKDIR="${WRKDIR}" \
+		dp_PKGNAME="${PKGNAME}" \
+		dp_STRICT_DEPENDS="${STRICT_DEPENDS}" \
+		dp_LOCALBASE="${LOCALBASE}" \
+		dp_LIB_DIRS="${LIB_DIRS}" \
+		dp_SH="${SH}" \
+		dp_SCRIPTSDIR="${SCRIPTSDIR}" \
+		dp_PORTSDIR="${PORTSDIR}" \
+		dp_MAKE="${MAKE}" \
+		${SH} ${SCRIPTSDIR}/do-depends.sh
 .endif
 .endfor
-
-lib-depends:
-.if defined(LIB_DEPENDS) && !defined(NO_DEPENDS)
-	@set -e ; \
-	anynotfound=0; for i in ${LIB_DEPENDS}; do \
-		lib=$${i%%:*} ; \
-		dir=$${i#*:}  ; \
-		target="${DEPENDS_TARGET}"; \
-		depends_args="${DEPENDS_ARGS}"; \
-		${ECHO_MSG}  -n "===>   ${PKGNAME} depends on shared library: $${lib}" ; \
-		libfile=`${SETENV} LIB_DIRS="${LIB_DIRS}" LOCALBASE="${LOCALBASE}" ${SH} ${SCRIPTSDIR}/find-lib.sh $${lib}` ; \
-		if [ -z "$${libfile}" ]; then \
-			anynotfound=1; \
-			${ECHO_MSG} " - not found"; \
-			${ECHO_MSG} "===>    Verifying for $$lib in $$dir"; \
-			if [ ! -d "$$dir" ] ; then \
-				${ECHO_MSG} "    => No directory for $$lib.  Skipping.."; \
-			else \
-				${_INSTALL_DEPENDS} \
-			fi ; \
-		else \
-			${ECHO_MSG} " - found ($${libfile})"; \
-		fi ; \
-	done; \
-	if [ -n "${STRICT_DEPENDS}" -a $${anynotfound} -eq 1 ]; then \
-		${ECHO_MSG} "===>   STRICT_DEPENDS set - Not installing missing dependencies."; \
-		${ECHO_MSG} "       This means a dependency is wrong since it was not satisfied in the lib-depends phase."; \
-		exit 1; \
-	fi
-.endif
 
 .endif
 
@@ -5097,33 +4949,21 @@ ${TMPPLIST}:
 ${TMPPLIST_SORT}: ${TMPPLIST}
 	@${SORT} -u ${TMPPLIST} >${TMPPLIST_SORT}
 
-.if !target(add-plist-docs)
-.if defined(PORTDOCS) && !defined(NOPORTDOCS)
-add-plist-docs:
-.for x in ${PORTDOCS}
+.for _type in EXAMPLES DOCS
+.if !target(add-plist-${_type:tl})
+.if defined(PORT${_type}) && !defined(NOPORT${_type})
+add-plist-${_type:tl}:
+.for x in ${PORT${_type}}
 	@if ${ECHO_CMD} "${x}"| ${AWK} '$$1 ~ /(\*|\||\[|\]|\?|\{|\}|\$$)/ { exit 1};'; then \
-		if [ ! -e ${STAGEDIR}${DOCSDIR}/${x} ]; then \
-		${ECHO_CMD} ${DOCSDIR}/${x} >> ${TMPPLIST}; \
+		if [ ! -e ${STAGEDIR}${${_type}DIR}/${x} ]; then \
+		${ECHO_CMD} ${${_type}DIR}/${x} >> ${TMPPLIST}; \
 	fi;fi
 .endfor
-	@${FIND} -P ${PORTDOCS:S/^/${STAGEDIR}${DOCSDIR}\//} ! -type d 2>/dev/null | \
+	@${FIND} -P ${PORT${_type}:S/^/${STAGEDIR}${${_type}DIR}\//} ! -type d 2>/dev/null | \
 		${SED} -ne 's,^${STAGEDIR},,p' >> ${TMPPLIST}
 .endif
 .endif
-
-.if !target(add-plist-examples)
-.if defined(PORTEXAMPLES) && !defined(NOPORTEXAMPLES)
-add-plist-examples:
-.for x in ${PORTEXAMPLES}
-	@if ${ECHO_CMD} "${x}"| ${AWK} '$$1 ~ /(\*|\||\[|\]|\?|\{|\}|\$$)/ { exit 1};'; then \
-		if [ ! -e ${STAGEDIR}${EXAMPLESDIR}/${x} ]; then \
-		${ECHO_CMD} ${EXAMPLESDIR}/${x} >> ${TMPPLIST}; \
-	fi;fi
 .endfor
-	@${FIND} -P ${PORTEXAMPLES:S/^/${STAGEDIR}${EXAMPLESDIR}\//} ! -type d 2>/dev/null | \
-		${SED} -ne 's,^${STAGEDIR},,p' >> ${TMPPLIST}
-.endif
-.endif
 
 .if !target(add-plist-data)
 .if defined(PORTDATA)
@@ -5136,13 +4976,6 @@ add-plist-data:
 .endfor
 	@${FIND} -P ${PORTDATA:S/^/${STAGEDIR}${DATADIR}\//} ! -type d 2>/dev/null | \
 		${SED} -ne 's,^${STAGEDIR},,p' >> ${TMPPLIST}
-.endif
-.endif
-
-.if !target(add-plist-buildinfo)
-add-plist-buildinfo:
-.if defined(PACKAGE_BUILDING)
-	@${ECHO_CMD} "@comment Build details:  ${BUILDHOST}|${JAIL}|${BUILD}|${PORTSTREE}|${BUILDDATE}" >> ${TMPPLIST}
 .endif
 .endif
 
@@ -5166,22 +4999,15 @@ add-plist-post:
 .endif
 
 .if !target(install-rc-script)
-.if defined(USE_RCORDER) || defined(USE_RC_SUBR) && ${USE_RC_SUBR:tu} != "YES"
-install-rc-script:
-.if defined(USE_RCORDER)
-	@${ECHO_MSG} "===> Staging early rc.d startup script(s)"
-	@for i in ${USE_RCORDER}; do \
-		${INSTALL_SCRIPT} ${WRKDIR}/$${i} ${STAGEDIR}/etc/rc.d/$${i%.sh}; \
-		${ECHO_CMD} "/etc/rc.d/$${i%.sh}" >> ${TMPPLIST}; \
-	done
-.endif
 .if defined(USE_RC_SUBR) && ${USE_RC_SUBR:tu} != "YES"
+install-rc-script:
 	@${ECHO_MSG} "===> Staging rc.d startup script(s)"
 	@for i in ${USE_RC_SUBR}; do \
-		${INSTALL_SCRIPT} ${WRKDIR}/$${i} ${STAGEDIR}${PREFIX}/etc/rc.d/$${i%.sh}; \
-		${ECHO_CMD} "${PREFIX}/etc/rc.d/$${i%.sh}" >> ${TMPPLIST}; \
+		_prefix=${PREFIX}; \
+		[ "${PREFIX}" = "/usr" ] && _prefix="" ; \
+		${INSTALL_SCRIPT} ${WRKDIR}/$${i} ${STAGEDIR}$${_prefix}/etc/rc.d/$${i%.sh}; \
+		${ECHO_CMD} "$${_prefix}/etc/rc.d/$${i%.sh}" >> ${TMPPLIST}; \
 	done
-.endif
 .endif
 .endif
 
@@ -5288,15 +5114,12 @@ fake-pkg: create-manifest
 # Depend is generally meaningless for arbitrary ports, but if someone wants
 # one they can override this.  This is just to catch people who've gotten into
 # the habit of typing `make depend all install' as a matter of course.
-#
-.if !target(depend)
-depend:
-.endif
-
 # Same goes for tags
-.if !target(tags)
-tags:
+.for _t in depend tags
+.if !target(${_t})
+${_t}:
 .endif
+.endfor
 
 .if !defined(NOPRECIOUSMAKEVARS)
 # These won't change, so we can pass them through the environment

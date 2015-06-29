@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Encode
-PORTVERSION=	2.73
+PORTVERSION=	2.74
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DANKOGAI
@@ -19,13 +19,15 @@ USES=		perl5
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 502101
-PLIST_FILES+=	bin/encguess man/man1/encguess.1.gz
+.if ${PERL_LEVEL} < 502200
+PLIST_SUB+=	OLD_PERL=""
+.else
+PLIST_SUB+=	OLD_PERL="@comment "
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|bin/enc2xs||; s|bin/piconv||' ${WRKSRC}/Makefile.PL
-.if ${PERL_LEVEL} >= 502101
+.if ${PERL_LEVEL} >= 502200
 	@${REINPLACE_CMD} -e 's|bin/encguess||' ${WRKSRC}/Makefile.PL
 .endif
 

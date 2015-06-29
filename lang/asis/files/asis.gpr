@@ -1,0 +1,12 @@
+with "gnat_util";
+Library project Asis is
+
+   for Languages use ("Ada");
+
+   for Source_Dirs use ("../../include/asis");
+   for Library_Dir use "../../lib/asis";
+   for Library_Name use "asis";
+   for Library_Kind use "static";
+   for Externally_Built use "True";
+
+end Asis;

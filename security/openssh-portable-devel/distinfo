@@ -1,5 +1,5 @@
-SHA256 (openssh-SNAP-20150608.tar.gz) = a1824c8d78c652b18df6a03106e6e8cd4feae9db4512295636ceb9687a7ff631
-SIZE (openssh-SNAP-20150608.tar.gz) = 1467383
+SHA256 (openssh-SNAP-20150624.tar.gz) = 4dde67c6bf82562bd56320bf85513475778d91b685b2533834aff81452e977d1
+SIZE (openssh-SNAP-20150624.tar.gz) = 1468022
 SHA256 (openssh-6.8p1-sctp-2573.patch.gz) = 0348713ad4cb4463e90cf5202ed41c8f726d7d604f3f93922a9aa55b86abf04a
 SIZE (openssh-6.8p1-sctp-2573.patch.gz) = 8531
 SHA256 (openssh-6.8p1+x509-8.3.diff.gz) = 34dbefcce8509d3c876be3e7d8966455c7c3589a6872bdfb1f8ce3d133f4d304

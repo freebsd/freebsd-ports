@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rabbitmq
-PORTVERSION=	2.5.0
+PORTVERSION=	2.6.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.elasticsearch.org/elasticsearch/elasticsearch-river-rabbitmq/
 PKGNAMEPREFIX=	elasticsearch-river-

@@ -181,6 +181,7 @@ netmon:*:467:
 slurm:*:468:
 consul:*:469:
 serf:*:470:
+vault:*:471:
 _bbstored:*:505:
 radmind:*:506:
 skkserv:*:507:
@@ -234,6 +235,7 @@ dahdi:*:843:asterisk
 subsonic:*:844:
 fossy:*:901:www
 scanlogd:*:902:
+influxd:*:907:
 riemann:*:908:
 proxy65:*:909:
 bacula:*:910:

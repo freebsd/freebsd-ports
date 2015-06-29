@@ -3,6 +3,7 @@
 
 PORTNAME=	hercules
 PORTVERSION=	3.11
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://downloads.hercules-390.eu/
 
@@ -20,8 +21,9 @@ SHEBANG_FILES=	util/bldlvlck
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-optimization
+INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=		DOCS
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e \

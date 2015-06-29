@@ -1,0 +1,11 @@
+--- Makefile.orig	2014-06-30 12:03:05 UTC
++++ Makefile
+@@ -204,7 +204,7 @@ depend:	config.h
+ 	testgetroute.c testportinuse.c testasyncsendto.c
+ 
+ miniupnpd: config.h $(ALLOBJS)
+-	$(CC) $(CFLAGS) -o $@ $(ALLOBJS) $(LIBS)
++	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(ALLOBJS) $(LIBS)
+ 
+ # BSDmake :
+ #	$(CC) $(CFLAGS) -o $@ $> $(LIBS)

@@ -113,6 +113,7 @@ man/man1/melt.1.gz
 %%DATADIR%%/core/producer_melt.yml
 %%DATADIR%%/core/producer_melt_file.yml
 %%DATADIR%%/core/producer_noise.yml
+%%DATADIR%%/core/producer_tone.yml
 %%DATADIR%%/core/transition_composite.yml
 %%DATADIR%%/core/transition_luma.yml
 %%DATADIR%%/core/transition_matte.yml
@@ -220,6 +221,7 @@ man/man1/melt.1.gz
 %%DATADIR%%/plus/filter_invert.yml
 %%DATADIR%%/plus/filter_lift_gamma_gain.yml
 %%DATADIR%%/plus/filter_loudness.yml
+%%DATADIR%%/plus/filter_lumakey.yml
 %%DATADIR%%/plus/filter_rgblut.yml
 %%DATADIR%%/plus/filter_sepia.yml
 %%DATADIR%%/plus/producer_blipflash.yml
@@ -239,6 +241,8 @@ man/man1/melt.1.gz
 %%DATADIR%%/presets/consumer/avformat/Sony-PSP
 %%DATADIR%%/presets/consumer/avformat/Vorbis
 %%DATADIR%%/presets/consumer/avformat/WAV
+%%DATADIR%%/presets/consumer/avformat/WMA
+%%DATADIR%%/presets/consumer/avformat/WMV
 %%DATADIR%%/presets/consumer/avformat/XDCAM-HD422
 %%DATADIR%%/presets/consumer/avformat/atsc_1080i_50/DNxHD
 %%DATADIR%%/presets/consumer/avformat/atsc_1080i_5994/DNxHD
@@ -285,6 +289,7 @@ man/man1/melt.1.gz
 %%DATADIR%%/presets/consumer/avformat/lossless/MPEG-2
 %%DATADIR%%/presets/consumer/avformat/lossless/MPEG-4
 %%DATADIR%%/presets/consumer/avformat/lossless/ProRes
+%%DATADIR%%/presets/consumer/avformat/lossless/ProRes-Kostya
 %%DATADIR%%/presets/consumer/avformat/stills/BMP
 %%DATADIR%%/presets/consumer/avformat/stills/DPX
 %%DATADIR%%/presets/consumer/avformat/stills/JPEG
@@ -294,10 +299,13 @@ man/man1/melt.1.gz
 %%DATADIR%%/presets/consumer/avformat/stills/TIFF
 %%DATADIR%%/presets/consumer/avformat/vp9
 %%DATADIR%%/presets/consumer/avformat/webm
+%%DATADIR%%/presets/consumer/avformat/webm-pass1
 %%DATADIR%%/presets/consumer/avformat/x264-medium
 %%DATADIR%%/presets/consumer/avformat/x264-medium-baseline
 %%DATADIR%%/presets/consumer/avformat/x264-medium-main
 %%DATADIR%%/presets/consumer/avformat/x264-medium-pass1
+%%DATADIR%%/presets/consumer/avformat/x265-medium
+%%DATADIR%%/presets/consumer/avformat/x265-medium-pass1
 %%DATADIR%%/presets/filter/brightness/from_black
 %%DATADIR%%/presets/filter/brightness/to_black
 %%DATADIR%%/presets/filter/movit.blur/blur_in
@@ -347,6 +355,14 @@ man/man1/melt.1.gz
 %%DATADIR%%/profiles/qcif_15
 %%DATADIR%%/profiles/qcif_ntsc
 %%DATADIR%%/profiles/qcif_pal
+%%DATADIR%%/profiles/qhd_1440p_2398
+%%DATADIR%%/profiles/qhd_1440p_24
+%%DATADIR%%/profiles/qhd_1440p_25
+%%DATADIR%%/profiles/qhd_1440p_2997
+%%DATADIR%%/profiles/qhd_1440p_30
+%%DATADIR%%/profiles/qhd_1440p_50
+%%DATADIR%%/profiles/qhd_1440p_5994
+%%DATADIR%%/profiles/qhd_1440p_60
 %%DATADIR%%/profiles/quarter_15
 %%DATADIR%%/profiles/quarter_ntsc
 %%DATADIR%%/profiles/quarter_ntsc_wide
@@ -362,6 +378,14 @@ man/man1/melt.1.gz
 %%DATADIR%%/profiles/svcd_ntsc_wide
 %%DATADIR%%/profiles/svcd_pal
 %%DATADIR%%/profiles/svcd_pal_wide
+%%DATADIR%%/profiles/uhd_2160p_2398
+%%DATADIR%%/profiles/uhd_2160p_24
+%%DATADIR%%/profiles/uhd_2160p_25
+%%DATADIR%%/profiles/uhd_2160p_2997
+%%DATADIR%%/profiles/uhd_2160p_30
+%%DATADIR%%/profiles/uhd_2160p_50
+%%DATADIR%%/profiles/uhd_2160p_5994
+%%DATADIR%%/profiles/uhd_2160p_60
 %%DATADIR%%/profiles/vcd_ntsc
 %%DATADIR%%/profiles/vcd_pal
 %%QT4%%%%DATADIR%%/qt/producer_kdenlivetitle.yml

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	phabricator
-PORTVERSION=	20150602
+PORTVERSION=	20150626
 CATEGORIES=	devel
 PKGNAMEPREFIX=	php5-
 
@@ -40,7 +40,7 @@ NO_BUILD=	yes
 USE_RC_SUBR=	phd
 SUB_FILES=	pkg-message
 GH_ACCOUNT=	phacility
-GH_TAGNAME=	55c73b2
+GH_TAGNAME=	cee1835
 
 PHP_DESTDIR=	lib/php/phabricator
 

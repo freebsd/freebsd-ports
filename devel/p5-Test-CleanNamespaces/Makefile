@@ -23,7 +23,6 @@ BUILD_DEPENDS=	p5-File-Find-Rule>0:${PORTSDIR}/devel/p5-File-Find-Rule \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires \
-		p5-Test-Tester>0:${PORTSDIR}/devel/p5-Test-Tester \
 		p5-Test-Warnings>=0.009:${PORTSDIR}/devel/p5-Test-Warnings
 
 USES=		perl5
@@ -32,4 +31,10 @@ USE_PERL5=	configure
 PLIST_FILES=	%%SITE_PERL%%/Test/CleanNamespaces.pm \
 		%%PERL5_MAN3%%/Test::CleanNamespaces.3.gz
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502200
+TEST_DEPENDS+=	p5-Test-Simple>=1.001.014:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>

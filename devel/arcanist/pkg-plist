@@ -225,6 +225,7 @@ lib/php/arcanist/src/lint/linter/__tests__/nolint/nolint.lint-test
 lib/php/arcanist/src/lint/linter/__tests__/pep8/imports.lint-test
 lib/php/arcanist/src/lint/linter/__tests__/phlxhp/array-combine.lint-test
 lib/php/arcanist/src/lint/linter/__tests__/phlxhp/deprecated-function.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/phlxhp/extends-phobject.lint-test
 lib/php/arcanist/src/lint/linter/__tests__/phlxhp/pht.lint-test
 lib/php/arcanist/src/lint/linter/__tests__/phlxhp/ragged-classtree-edges.lint-test
 lib/php/arcanist/src/lint/linter/__tests__/phlxhp/xsprintf.lint-test
@@ -376,6 +377,7 @@ lib/php/arcanist/src/lint/linter/xhpast/ArcanistXHPASTLintNamingHook.php
 lib/php/arcanist/src/lint/linter/xhpast/ArcanistXHPASTLintSwitchHook.php
 lib/php/arcanist/src/lint/linter/xhpast/ArcanistXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/__tests__/ArcanistXHPASTLintNamingHookTestCase.php
+lib/php/arcanist/src/lint/linter/xhpast/__tests__/ArcanistXHPASTLinterRuleTestCase.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistAliasFunctionXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistArrayIndexSpacingXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistArraySeparatorXHPASTLinterRule.php

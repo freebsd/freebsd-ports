@@ -11,12 +11,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Themeable web picture album generator
 
 RUN_DEPENDS=	${LOCALBASE}/bin/pnmscale:${PORTSDIR}/graphics/netpbm \
-		${LOCALBASE}/bin/djpeg:${PORTSDIR}/graphics/jpeg \
 		${LOCALBASE}/bin/jhead:${PORTSDIR}/graphics/jhead \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
 
-USES=		perl5
+USES=		jpeg:run perl5
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-themedir=${DATADIR}
 CONFIGURE_ENV=	perl_path=${PERL}

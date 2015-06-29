@@ -37,9 +37,9 @@ PLIST_FILES+=	bin/fteqw-sv
 .endif
 
 .if ${PORT_OPTIONS:MGLCLIENT} || !empty(PORT_OPTIONS:MSDLCLIENT)
-LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
+USES+=		jpeg
 .endif
 
 .if ${PORT_OPTIONS:MGLCLIENT}

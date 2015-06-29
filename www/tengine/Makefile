@@ -454,12 +454,12 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upstream_fair-${NGINX_UPSTREAM_FAIR
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_VIDEO_THUMBEXTRACTOR}
-LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-			libavformat.so:${PORTSDIR}/multimedia/ffmpeg \
+LIB_DEPENDS+=	libavformat.so:${PORTSDIR}/multimedia/ffmpeg \
 			libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
 			libavutil.so:${PORTSDIR}/multimedia/ffmpeg \
 			libswscale.so:${PORTSDIR}/multimedia/ffmpeg \
 			libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick
+USES+=		jpeg
 NGINX_VIDEO_THUMBEXTRACTOR_VERSION=	0.2.0
 GH_ACCOUNT+=	wandenberg:videothumbextractor
 GH_PROJECT+=	nginx-video-thumbextractor-module:videothumbextractor

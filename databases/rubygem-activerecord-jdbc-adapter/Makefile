@@ -14,6 +14,7 @@ LICENSE=	BSD2CLAUSE
 RUN_DEPENDS=	jruby:${PORTSDIR}/lang/jruby \
 		rubygem-activerecord4>=2.2:${PORTSDIR}/databases/rubygem-activerecord4
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

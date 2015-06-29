@@ -1,0 +1,14 @@
+Elixir tooling integration into Emacs. Alchemist comes with a bunch
+of features:
+
+  - Mix integration
+  - Compile & Execution of Elixir code
+  - Inline code evaluation
+  - Documentation lookup
+  - Definition lookup
+  - Powerful IEx integration
+  - Smart code completion
+  - Elixir project management
+  - Integration with company-mode
+
+WWW: https://github.com/tonini/alchemist.el

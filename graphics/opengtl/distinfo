@@ -1,2 +1,4 @@
 SHA256 (OpenGTL-0.9.18.tar.bz2) = f094b3d2a1a60519975bb3badc05e704f2b93c7a3d2cb753041f2ff27cfcd9f8
 SIZE (OpenGTL-0.9.18.tar.bz2) = 536113
+SHA256 (opengtl-0.9.18-llvm-3.3.patch) = c43418bc039660ae86cb86b8b8175342793cb1361c699faa9b6342bc896e3d6c
+SIZE (opengtl-0.9.18-llvm-3.3.patch) = 27930

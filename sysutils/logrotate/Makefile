@@ -3,6 +3,7 @@
 
 PORTNAME=	logrotate
 PORTVERSION=	3.8.9
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://fedorahosted.org/releases/l/o/logrotate/
 
@@ -21,6 +22,7 @@ CPP=		${CC} -E
 post-install:
 	@${SED} -e 's|__PREFIX__|${PREFIX}|' \
 		< ${FILESDIR}/logrotate.conf.sample > ${STAGEDIR}${PREFIX}/etc/logrotate.conf.sample
+	@${MKDIR} ${STAGEDIR}${ETCDIR}.d
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${FILESDIR}/syslog.sample ${STAGEDIR}${EXAMPLESDIR}
 

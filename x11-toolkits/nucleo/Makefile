@@ -12,12 +12,11 @@ COMMENT=	Toolkit to explore video and human-computer interaction
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libexif.so:${PORTSDIR}/graphics/libexif \
+LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
-USES=		gmake libtool pathfix pkgconfig shebangfix tar:bzip2
+USES=		gmake jpeg libtool pathfix pkgconfig shebangfix tar:bzip2
 USE_GL=		glu
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-opencv

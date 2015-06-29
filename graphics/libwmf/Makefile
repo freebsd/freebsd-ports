@@ -13,8 +13,7 @@ COMMENT=	Tools and library for converting Microsoft WMF (windows metafile)
 LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
 CONFLICTS?=	libwmf-nox11-[0-9]*
@@ -24,7 +23,7 @@ CONFIGURE_ARGS=	--with-sys-gd=no \
 		--with-png=${LOCALBASE} --with-jpeg=${LOCALBASE} \
 		--with-gsfontdir=${LOCALBASE}/share/ghostscript/fonts
 INSTALL_TARGET=	install-strip
-USES=		libtool
+USES=		jpeg libtool
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 

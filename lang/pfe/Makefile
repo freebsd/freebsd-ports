@@ -10,6 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Implementation of ANSI Forth
 
+BROKEN_i386=	does not link
+
 GNU_CONFIGURE=	yes
 USES=		gmake perl5 libtool tar:bzip2
 USE_PERL5=	build

@@ -6,7 +6,7 @@
 #
 # Feature:      ada
 # Usage:        USES=ada
-# Valid ARGS:   47, 49, 5
+# Valid ARGS:   49, 5, run
 #
 # MAINTAINER: marino@FreeBSD.org
 
@@ -15,18 +15,20 @@ _INCLUDE_USES_ADA_MK=    yes
 
 CC= ada
 
-. if ${ada_ARGS:M47}
-ADAXX=	gcc47
-. elif ${ada_ARGS:M49}
+. if ${ada_ARGS:M49}
 ADAXX=	gcc
 . elif ${ada_ARGS:M5}
 ADAXX=	gcc5
 . else
-.  if defined(ADA_DEFAULT) && ${ADA_DEFAULT} == 5
-ADAXX=	gcc5
-.  else
+.  if defined(ADA_DEFAULT) && ${ADA_DEFAULT} == 49
 ADAXX=	gcc
+.  else
+ADAXX=	gcc5
 .  endif
+. endif
+
+. if ${ada_ARGS:Mrun}
+RUN_DEPENDS+=	${LOCALBASE}/${ADAXX}-aux/bin/ada:${PORTSDIR}/lang/${ADAXX}-aux
 . endif
 
 BUILD_DEPENDS+=	${LOCALBASE}/${ADAXX}-aux/bin/ada:${PORTSDIR}/lang/${ADAXX}-aux

@@ -1,8 +1,8 @@
---- tools/tools.gpr.orig	2014-05-15 19:48:07.000000000 +0000
+--- tools/tools.gpr.orig	2015-06-22 10:52:10 UTC
 +++ tools/tools.gpr
-@@ -29,8 +29,7 @@ project Tools is
-      (".", "../templates_parser/tools",
-       "../" & Shared.Target_Dir & "/setup/tsrc");
+@@ -27,8 +27,7 @@ project Tools is
+ 
+    for Source_Dirs use (".", "../templates_parser/tools");
  
 -   for Main use ("awsres.adb", "aws_password.adb", "templates2ada.adb",
 -                 "webxref.adb", "templatespp.adb");

@@ -9,6 +9,8 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ELDAPv3.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/XmppAddr.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/acl.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/adhoc.beam
+%%REDIS%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/basho_bench_driver_eredis.beam
+%%REDIS%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/basho_bench_driver_erldis.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/bitmap.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/cache_tab.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/cache_tab_sup.beam
@@ -85,6 +87,12 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/eldap_utils.beam
 %%PAM%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/epam_app.beam
 %%PAM%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/epam_sup.beam
 %%PAM%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/epam.beam
+%%REDIS%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/eredis.app
+%%REDIS%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/eredis.beam
+%%REDIS%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/eredis_client.beam
+%%REDIS%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/eredis_parser.beam
+%%REDIS%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/eredis_sub.beam
+%%REDIS%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/eredis_sub_client.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/esip.app
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/esip.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/esip_app.beam
@@ -154,11 +162,13 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/jlib.beam
 %%LAGER%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/lager_util.beam
 %%RIAK%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/meck.app
 %%RIAK%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/meck.beam
+%%RIAK%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/meck_args_matcher.beam
 %%RIAK%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/meck_code.beam
 %%RIAK%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/meck_code_gen.beam
 %%RIAK%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/meck_cover.beam
 %%RIAK%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/meck_expect.beam
 %%RIAK%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/meck_history.beam
+%%RIAK%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/meck_matcher.beam
 %%RIAK%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/meck_proc.beam
 %%RIAK%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/meck_ret_spec.beam
 %%RIAK%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/meck_util.beam
@@ -180,6 +190,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_ip_blacklist.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_irc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_irc_connection.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_last.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_mam.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_muc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_muc_admin.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_muc_log.beam
@@ -248,7 +259,6 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/p1_fsm.beam
 %%MYSQL%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/p1_mysql_sup.beam
 %%PAM%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/p1_pam.app
 %%PGSQL%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/p1_pgsql.app
-%%PAM%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/p1_prof.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/p1_server.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/p1_sha.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/p1_stringprep.app
@@ -298,6 +308,9 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/pubsub_subscription_odbc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/randoms.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/scram.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/shaper.beam
+%%SQLITE%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/sqlite3.app
+%%SQLITE%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/sqlite3.beam
+%%SQLITE%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/sqlite3_lib.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/str.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/stringprep.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/stringprep_app.beam
@@ -321,6 +334,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/xml_app.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/xml_gen.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/xml_stream.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/xml_sup.beam
+%%TOOLS%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/xmpp_codec.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/ELDAPv3.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/XmppAddr.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/adhoc.hrl
@@ -332,6 +346,8 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/%%PORTNAME%%_http.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/%%PORTNAME%%_sm.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/%%PORTNAME%%_web_admin.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/eldap.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/eredis.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/eredis_sub.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/esip.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/esip_lib.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/http_bind.hrl
@@ -351,6 +367,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/pubsub.hrl
 %%RIAK%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/riak_pb_kv_codec.hrl
 %%RIAK%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/riak_search_pb.hrl
 %%RIAK%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/riakc.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/sqlite3.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/stun.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/xml.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/xml_gen.hrl
@@ -367,6 +384,8 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/lib/ezlib_drv.so
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/lib/p1_sha.so
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/lib/p1_tls_drv.so
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/lib/p1_yaml.so
+%%SQLITE%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/lib/sqlite3_drv.so
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/lib/xml.so
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/lib/stringprep.so
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/ca.msg
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/cs.msg
@@ -394,20 +413,10 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/uk.msg
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/vi.msg
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/wa.msg
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/zh.msg
+%%SQLITE%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/sql/lite.sql
+%%SQLITE%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/sqlite3_drv.so
 sbin/%%PORTNAME%%ctl
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/dev.html
-%%PORTDOCS%%%%DOCSDIR%%/discorus.png
-%%PORTDOCS%%%%DOCSDIR%%/guide.html
-%%PORTDOCS%%%%DOCSDIR%%/guide.pdf
-%%PORTDOCS%%%%DOCSDIR%%/logo.png
-%%PORTDOCS%%%%DOCSDIR%%/msrl-dit-deep.png
-%%PORTDOCS%%%%DOCSDIR%%/msrl-dit-flat.png
-%%PORTDOCS%%%%DOCSDIR%%/msrl-roster-deep.png
-%%PORTDOCS%%%%DOCSDIR%%/msrl-roster-flat.png
-%%PORTDOCS%%%%DOCSDIR%%/webadmmain.png
-%%PORTDOCS%%%%DOCSDIR%%/webadmmainru.png
-%%PORTDOCS%%%%DOCSDIR%%/yozhikheader.png
 @dir /var/spool/ejabberd
 @dir /var/run/ejabberdctl
 @dir /var/log/ejabberd
