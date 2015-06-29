@@ -17,13 +17,14 @@ include/yara/re.h
 include/yara/rules.h
 include/yara/scan.h
 include/yara/sizedstr.h
+include/yara/stream.h
 include/yara/strutils.h
 include/yara/types.h
 include/yara/utils.h
 lib/libyara.a
 lib/libyara.so
 lib/libyara.so.3
-lib/libyara.so.3.3.0
+lib/libyara.so.3.4.0
 lib/pkgconfig/yara.pc
 man/man1/yara.1.gz
 man/man1/yarac.1.gz
