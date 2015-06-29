@@ -18,8 +18,6 @@ USE_PERL5=	configure
 USES=		perl5
 
 post-install:
-	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Date/Simple/Simple.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Date/Simple/Simple.so
-	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Date/Simple/Simple.so
 
 .include <bsd.port.mk>

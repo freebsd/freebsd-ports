@@ -20,8 +20,6 @@ USE_PERL5=	configure
 USES=		perl5
 
 post-install:
-	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Compress/Snappy/Snappy.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Compress/Snappy/Snappy.so
-	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Compress/Snappy/Snappy.so
 
 .include <bsd.port.mk>
