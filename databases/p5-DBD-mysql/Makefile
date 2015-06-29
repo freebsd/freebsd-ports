@@ -17,7 +17,7 @@ BUILD_DEPENDS=	p5-DBI>=1.08:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 
-CONFLICTS_INSTALL?=	p5-Mysql-modules-[0-9]* p5-DBD-mysql[45][0-9]-[0-9]*
+CONFLICTS_INSTALL?=	p5-DBD-mysql[45][0-9]-[0-9]*
 
 USE_MYSQL=	yes
 USE_PERL5=	configure
