@@ -3,7 +3,7 @@ $FreeBSD$
 
 --- ejabberdctl.template.orig
 +++ ejabberdctl.template
-@@ -72,10 +72,10 @@
+@@ -71,10 +71,10 @@
      EJABBERD_CONFIG_PATH=$ETC_DIR/ejabberd.yml
  fi
  if [ "$LOGS_DIR" = "" ] ; then
@@ -16,7 +16,7 @@ $FreeBSD$
  fi
  if [ "$EJABBERD_DOC_PATH" = "" ] ; then
      EJABBERD_DOC_PATH={{docdir}}
-@@ -89,10 +89,10 @@
+@@ -88,10 +88,10 @@
          EJABBERDDIR={{libdir}}/ejabberd
      fi
      if [ "$EJABBERD_EBIN_PATH" = "" ] ; then
@@ -29,12 +29,12 @@ $FreeBSD$
      fi
      if [ "$EJABBERD_BIN_PATH" = "" ] ; then
          EJABBERD_BIN_PATH=$EJABBERD_PRIV_PATH/bin
-@@ -279,7 +279,7 @@
+@@ -335,7 +335,7 @@
      # using flock if available. Expects a linux-style
      # flock that can lock a file descriptor.
      MAXCONNID=100
 -    CONNLOCKDIR={{localstatedir}}/lock/ejabberdctl
 +    CONNLOCKDIR={{localstatedir}}/run/ejabberdctl
-     FLOCK='/usr/bin/flock'
+     FLOCK=/usr/bin/flock
      if [ ! -x "$FLOCK" ] || [ ! -d "$CONNLOCKDIR" ] ; then
-         JOT='/usr/bin/jot'
+         JOT=/usr/bin/jot
