@@ -421,6 +421,7 @@
     SUBDIR += erlang-common_lib
     SUBDIR += erlang-cowlib
     SUBDIR += erlang-cuttlefish
+    SUBDIR += erlang-erlware_commons
     SUBDIR += erlang-esdl
     SUBDIR += erlang-exmpp
     SUBDIR += erlang-folsom
