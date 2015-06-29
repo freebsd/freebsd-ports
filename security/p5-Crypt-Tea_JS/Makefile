@@ -22,9 +22,7 @@ PORTEXAMPLES=	tea_demo.cgi
 PORTDATA=	Tea_JS.js
 
 post-install:
-	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Crypt/Tea_JS/Tea_JS.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Crypt/Tea_JS/Tea_JS.so
-	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Crypt/Tea_JS/Tea_JS.so
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/Tea_JS.js ${STAGEDIR}${DATADIR}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

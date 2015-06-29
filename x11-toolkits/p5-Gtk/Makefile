@@ -23,8 +23,6 @@ CONFIGURE_ARGS=	--without-guessing --lazy-load
 MAKE_JOBS_UNSAFE=	yes
 
 post-install:
-	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Gtk/Gtk.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Gtk/Gtk.so
-	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Gtk/Gtk.so
 
 .include <bsd.port.mk>

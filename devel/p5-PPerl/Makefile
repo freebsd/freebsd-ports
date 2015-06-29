@@ -19,11 +19,7 @@ USES=		perl5
 USE_PERL5=	configure
 
 post-install:
-	@${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PPerl/PPerl.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PPerl/PPerl.so
-	@${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PPerl/PPerl.so
-	@${CHMOD} u+w ${STAGEDIR}${PREFIX}/bin/pperl
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pperl
-	@${CHMOD} u-w ${STAGEDIR}${PREFIX}/bin/pperl
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PPerl/PPerl.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pperl
 
 .include <bsd.port.mk>
