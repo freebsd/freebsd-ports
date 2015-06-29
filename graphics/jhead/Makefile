@@ -10,11 +10,10 @@ MASTER_SITES=	http://www.sentex.net/~mwandel/${PORTNAME}/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	EXIF JPEG header manipulation tool
 
-USES=		jpeg:run
-
 OPTIONS_DEFINE=	DOCS
 
 MAKEFILE=	makefile
+USES=		jpeg:run
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
