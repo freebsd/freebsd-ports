@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pannon
+GH_TAGNAME=	5a228b0
 
 .include <bsd.port.pre.mk>
 
