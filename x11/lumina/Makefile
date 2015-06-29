@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	lumina
-PORTVERSION=	0.8.4
+PORTVERSION=	0.8.5
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11
 
 MAINTAINER=	kmoore@FreeBSD.org
-COMMENT=	Lumina Desktop Environment
+COMMENT=	Lumina Desktop Environment (0.8.5-devel)
 
 LICENSE=	BSD3CLAUSE
 
@@ -38,12 +38,12 @@ MAKE_JOBS_UNSAFE=yes
 USE_XORG=	x11 xcomposite xdamage xrender
 USE_XCB=		x11extras wm
 USE_LDCONFIG=	yes
-USE_QT5=	core gui network svg linguist multimedia imageformats \
+USE_QT5=	core gui network quick svg linguist multimedia imageformats \
 		buildtools x11extras
 USES=		qmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	pcbsd
-GH_TAGNAME=	v0.8.4-Release-P1
+GH_TAGNAME=	v0.8.5-devel-6.25.15
 
 QMAKE_ARGS=	CONFIG+="configure"
 
