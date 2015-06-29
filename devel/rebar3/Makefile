@@ -31,9 +31,9 @@ ZSH_PLIST_FILES=	share/zsh/site-functions/_rebar3
 
 post-extract:
 	@${CP} -R ${WRKDIR}/_build ${WRKSRC}/
-	@${RM} ${WRKSRC}/rebar.lock
 
 do-build:
+	@${RM} ${WRKSRC}/rebar.lock
 	@cd ${WRKSRC} && ./bootstrap
 
 do-install:
