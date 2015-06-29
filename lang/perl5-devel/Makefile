@@ -4,6 +4,7 @@
 PORTNAME=	perl
 #PORTVERSION=	${PERL_VERSION} # XXX
 DISTVERSION=	${GH_TAGNAME:C/^v//:C/-g[0-9a-f]*$//}
+PORTREVISION=	1
 CATEGORIES=	lang devel perl5
 # XXX
 MASTER_SITES=	LOCAL/mat/perl GH CPAN/../../src/5.0
