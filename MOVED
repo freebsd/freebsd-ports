@@ -7666,3 +7666,8 @@ textproc/exmpp|devel/erlang-exmpp|2015-06-27|Moved to devel category, with erlan
 databases/eredis|databases/erlang-eredis|2015-06-27|Renamed with erlang- prefix
 databases/epgsql|databases/erlang-epgsql|2015-06-27|Renamed with erlang- prefix
 www/varnish|www/varnish4|2015-06-28|Has expired: EOL was reached in April 2015, use www/varnish4
+audio/padevchooser||2015-06-29|Has expired: Broken for more than 6 months
+devel/xtla||2015-06-29|Has expired: Broken for more than 6 months
+mail/mail-notification||2015-06-29|Has expired: Broken for more than 6 months
+ports-mgmt/gnome-packagekit||2015-06-29|Has expired: Broken for more than 6 months
+sysutils/py-salt-api||2015-06-29|Has expired: Broken for more than 6 months
