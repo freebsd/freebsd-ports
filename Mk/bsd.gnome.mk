@@ -63,7 +63,7 @@ Gnome_Pre_Include=			bsd.gnome.mk
 #
 # INSTALLS_ICONS	- If a GTK+ port installs Freedesktop-style icons to
 #				${LOCALBASE}/share/icons, then you should use this
-#				macro. Using this macro insures that icons are cached
+#				macro. Using this macro ensures that icons are cached
 #				and will display correctly. This macro isn't needed
 #				for QT based applications, which use a different method.
 #
