@@ -1581,6 +1581,7 @@
     SUBDIR += p5-AppConfig
     SUBDIR += p5-AppConfig-Std
     SUBDIR += p5-Array-Group
+    SUBDIR += p5-Array-Heap
     SUBDIR += p5-Array-Iterator
     SUBDIR += p5-Array-Unique
     SUBDIR += p5-Array-Window
