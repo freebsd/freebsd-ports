@@ -439,6 +439,7 @@
     SUBDIR += erlang-oserl
     SUBDIR += erlang-poolboy
     SUBDIR += erlang-protobuffs
+    SUBDIR += erlang-providers
     SUBDIR += erlang-recon
     SUBDIR += erlang-syslog
     SUBDIR += etcd
