@@ -2,22 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	Memcached-libmemcached
-PORTVERSION=	0.44.06
-PORTREVISION=	1
+PORTVERSION=	1.001801
 CATEGORIES=	databases devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:TIMB
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Thin fast full interface to the libmemcached client API
+
+LIB_DEPENDS=	libmemcached.so:${PORTSDIR}/databases/libmemcached
 
 USES=		perl5
 USE_PERL5=	configure
 USE_LDCONFIG=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e '/my $$configure_args/ s|--disable-shared|& --without-memcached --disable-dtrace|' ${WRKSRC}/Makefile.PL
+post-extract:
+	@${RM} -r ${WRKDIR}/src
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD
+.if ${OSVERSION} > 1000000
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.PL-10
+.else
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.PL-9
+.endif
+.endif
+
+.include <bsd.port.post.mk>
