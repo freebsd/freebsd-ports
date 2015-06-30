@@ -19,6 +19,9 @@ GH_ACCOUNT=	uwiger
 post-patch:
 	@${REINPLACE_CMD} -e 's/{vsn, git}/{vsn,"${PORTVERSION}"}/' ${WRKSRC}/src/*.app.src
 
+do-build:
+	@cd ${WRKSRC} && ./rebar compile
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
