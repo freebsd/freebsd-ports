@@ -57,6 +57,44 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b19da422-1e02-11e5-b43d-002590263bf5">
+    <topic>cups-filters -- buffer overflow in texttopdf size allocation</topic>
+    <affects>
+      <package>
+	<name>cups-filters</name>
+	<range><lt>1.0.70</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Stefan Cornelius from Red Hat reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/06/26/4">
+	  <p>A heap-based buffer overflow was discovered in the way the
+	    texttopdf utility of cups-filters processed print jobs with a
+	    specially crafted line size. An attacker being able to submit
+	    print jobs could exploit this flaw to crash texttopdf or,
+	    possibly, execute arbitrary code.</p>
+	</blockquote>
+	<p>Till Kamppeter reports:</p>
+	<blockquote cite="http://bzr.linuxfoundation.org/loggerhead/openprinting/cups-filters/revision/7363">
+	  <p>texttopdf: Fixed buffer overflow on size allocation of texttopdf
+	    when working with extremely small line sizes, which causes the size
+	    calculation to result in 0 (CVE-2015-3258, thanks to Stefan
+	    Cornelius from Red Hat for the patch).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3258</cvename>
+      <mlist>http://www.openwall.com/lists/oss-security/2015/06/26/4</mlist>
+      <url>http://bzr.linuxfoundation.org/loggerhead/openprinting/cups-filters/revision/7363</url>
+    </references>
+    <dates>
+      <discovery>2015-06-26</discovery>
+      <entry>2015-06-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0d0f3050-1f69-11e5-9ba9-d050996490d0">
     <topic>ntp -- control message remote Deinal of Service vulnerability</topic>
     <affects>
