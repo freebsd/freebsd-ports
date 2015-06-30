@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: docker
-# REQUIRE: DAEMON sysctl
+# REQUIRE: DAEMON
 # KEYWORD: nojail shutdown
 
 . /etc/rc.subr
@@ -28,7 +28,7 @@ docker_start()
 	fi
 
 	if [ -e "/var/run/docker.pid" ] ; then
-		/bin/pgrep -F /var/run/docker.pid 2>/dev/null >/dev/null
+		pgrep -F /var/run/docker.pid 2>/dev/null >/dev/null
 		if [ $? -eq 0 ] ; then
 			echo "Docker already running? /var/run/docker.pid"
 			exit 1
@@ -36,11 +36,23 @@ docker_start()
 	fi
 
 	echo "Starting docker..."
-	/usr/sbin/daemon -p /var/run/docker.pid ${command} -d -e jail -s zfs -g ${docker_dir} -D >/var/log/docker.log 2>/var/log/docker.log
+	daemon -p /var/run/docker.pid ${command} -d -e jail -s zfs -g ${docker_dir} -D >/var/log/docker.log 2>/var/log/docker.log
+
+	# Check for linux 64bit support and enable
+	kldstat | grep -q 'linux64'
+	if [ $? -ne 0 -a -e "/boot/kernel/linux64.ko" ] ; then
+		kldload linux64
+	fi
 
 	# Check for NAT support via PF
 	# This is an ugly experimental hack for now, eventually will go away
 	if [ "${docker_nat_pf}" != "YES" ] ; then return ; fi
+
+	# Load PF if not already
+	kldstat | grep -q 'pf.ko'
+	if [ $? -ne 0 -a -e "/boot/kernel/pf.ko" ] ; then
+		kldload pf
+	fi
 
 	# Check if PF rules already loaded
 	/sbin/pfctl -s nat 2>/dev/null | grep -q 172.17
@@ -56,18 +68,13 @@ docker_start()
 	/sbin/pfctl -e 2>/dev/null
 	rm /tmp/pf-nat-docker.$$
 
-	# Check for linux 64bit support and enable
-	/sbin/kldstat | grep -q 'linux64'
-	if [ $? -ne 0 -a -e "/boot/kernel/linux64.ko" ] ; then
-		/sbin/kldload linux64
-	fi
 }
 
 docker_stop()
 {
 	if [ -e "/var/run/docker.pid" ] ; then
 		echo "Stopping docker..."
-		/bin/pkill -F /var/run/docker.pid 
+		pkill -F /var/run/docker.pid
 	fi
 }
 
