@@ -1,0 +1,18 @@
+--- bootstrap.orig	2015-06-29 12:47:25 UTC
++++ bootstrap
+@@ -30,7 +30,6 @@ main(_Args) ->
+ 
+     setup_env(),
+     os:putenv("REBAR_PROFILE", "bootstrap"),
+-    rebar3:run(["update"]),
+     {ok, State} = rebar3:run(["compile"]),
+     reset_env(),
+     os:putenv("REBAR_PROFILE", ""),
+@@ -60,7 +59,6 @@ main(_Args) ->
+ 
+ fetch_and_compile({Name, ErlFirstFiles}, Deps) ->
+     {Name, _, Repo} = lists:keyfind(Name, 1, Deps),
+-    ok = fetch(Repo, Name),
+     compile(Name, ErlFirstFiles).
+ 
+ fetch({pkg, Name, Vsn}, App) ->
