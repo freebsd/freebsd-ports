@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	elasticsearch
-PORTVERSION=	1.5.2
-PORTREVISION=	1
+PORTVERSION=	1.6.0
 CATEGORIES=	textproc java devel
 MASTER_SITES=	http://download.elasticsearch.org/${PORTNAME}/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
@@ -96,9 +95,9 @@ post-patch:
 	${SED} -i .bak -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/config/elasticsearch.yml
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/elasticsearch ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/elasticsearch
 .for f in ${CONFIG_FILES}
-	${INSTALL} -m 440 ${WRKSRC}/config/${f} ${STAGEDIR}${DATADIR}/${f}.sample
+	${INSTALL} -m 440 ${WRKSRC}/config/${f} ${STAGEDIR}${ETCDIR}/${f}.sample
 .endfor
 	${INSTALL_SCRIPT} ${WRKDIR}/elasticsearch-plugin ${STAGEDIR}${PREFIX}/bin/elasticsearch-plugin
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/elasticsearch
