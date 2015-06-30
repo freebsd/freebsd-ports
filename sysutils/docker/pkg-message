@@ -8,6 +8,3 @@ You will need to create a ZFS dataset on /usr/docker
 And lastly enable the docker daemon
 # sysrc -f /etc/rc.conf docker_enable="YES"
 # service docker start
-
-After creating / pulling a container, enable lo1 on it
-# docker run -it <container> ifconfig lo1 
