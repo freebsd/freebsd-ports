@@ -33,7 +33,7 @@ RUN_DEPENDS=	pcbsd-base>=0:${PORTSDIR}/misc/pcbsd-base \
 		ru-aspell>=0:${PORTSDIR}/russian/aspell \
 		uk-aspell>=0:${PORTSDIR}/ukrainian/aspell \
 		vi-aspell>=0:${PORTSDIR}/vietnamese/aspell \
-		wqy>=0:${PORTSDIR}/x11-fonts/wqy 
+		wqy-fonts>=0:${PORTSDIR}/x11-fonts/wqy 
 
 NO_BUILD=	yes
 
