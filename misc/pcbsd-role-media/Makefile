@@ -16,7 +16,7 @@ RUN_DEPENDS=	smplayer>=0:${PORTSDIR}/multimedia/smplayer \
 		aqualung>=0:${PORTSDIR}/audio/aqualung \
 		gtk-youtube-viewer>=0:${PORTSDIR}/multimedia/gtk-youtube-viewer \
 		vlc>=0:${PORTSDIR}/multimedia/vlc \
-		plex>=0:${PORTSDIR}/multimedia/plexhometheater
+		plexhometheater:${PORTSDIR}/multimedia/plexhometheater
 
 NO_BUILD=	yes
 

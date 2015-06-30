@@ -13,7 +13,7 @@ MAINTAINER=	joshms@pcbsd.org
 COMMENT=	Includes scientific applications
 
 RUN_DEPENDS=	galculator>=0:${PORTSDIR}/math/galculator \
-		avogrado>=0:${PORTSDIR}/science/avogadro \
+		avogadro:${PORTSDIR}/science/avogadro \
 		openbabel>=0:${PORTSDIR}/science/openbabel \
 		mpqc>=0:${PORTSDIR}/science/mpqc \
 		gnuplot>=0:${PORTSDIR}/math/gnuplot \

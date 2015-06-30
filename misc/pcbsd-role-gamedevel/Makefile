@@ -14,7 +14,7 @@ COMMENT=	Includes game development and modeling software
 
 RUN_DEPENDS=	blender>=0:${PORTSDIR}/graphics/blender \
 		autoq3d>=0:${PORTSDIR}/graphics/autoq3d \
-		AOI>=0:${PORTSDIR}/graphics/aoi
+		aoi:${PORTSDIR}/graphics/aoi
 
 NO_BUILD=	yes
 

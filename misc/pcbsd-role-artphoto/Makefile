@@ -13,7 +13,7 @@ MAINTAINER=	joshms@pcbsd.org
 COMMENT=	Includes art and photography software
 
 RUN_DEPENDS=	gimp>=0:${PORTSDIR}/graphics/gimp \
-		photoxx>=0:${PORTSDIR}/graphics/fotoxx \
+		fotoxx:${PORTSDIR}/graphics/fotoxx \
 		darktable>=0:${PORTSDIR}/graphics/darktable \
 		jalbum>=0:${PORTSDIR}/graphics/jalbum \
 		xpaint>=0:${PORTSDIR}/graphics/xpaint
