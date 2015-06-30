@@ -2,7 +2,7 @@
 
 PORTNAME=	libx86
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.codon.org.uk/~mjg59/libx86/downloads/	\
 		LOCAL/jkim
