@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2015-05-20 18:09:57 UTC
+--- CMakeLists.txt.orig	2015-06-30 18:06:02 UTC
 +++ CMakeLists.txt
-@@ -24,7 +24,7 @@ option( BUILD_SHARED_LIB "Set ON to buil
+@@ -42,7 +42,7 @@ option( BUILD_SHARED_LIB "Set OFF to NOT
  option( BUILD_TAB2SPACE  "Set ON to build utility app, tab2space" OFF )
  option( BUILD_SAMPLE_CODE "Set ON to build the sample code"       OFF )
  if (NOT MAN_INSTALL_DIR)
