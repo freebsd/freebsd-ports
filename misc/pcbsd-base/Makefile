@@ -112,7 +112,7 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		grub-mkconfig:${PORTSDIR}/sysutils/grub2-pcbsd \
 		grub2-efi>=0:${PORTSDIR}/sysutils/grub2-efi \
 		unrar:${PORTSDIR}/archivers/unrar \
-		p7zip:${PORTSDIR}/archivers/p7zip \
+		7z:${PORTSDIR}/archivers/p7zip \
 		avahi-browse:${PORTSDIR}/net/avahi-app \
 		anacron:${PORTSDIR}/sysutils/anacron \
 		vagrant>=0:${PORTSDIR}/sysutils/vagrant \
