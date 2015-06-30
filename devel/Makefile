@@ -434,6 +434,7 @@
     SUBDIR += erlang-goldrush
     SUBDIR += erlang-gproc
     SUBDIR += erlang-ibrowse
+    SUBDIR += erlang-jobs
     SUBDIR += erlang-jsx
     SUBDIR += erlang-lager
     SUBDIR += erlang-lager_syslog
