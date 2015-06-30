@@ -5509,7 +5509,7 @@
  
      // An entryName(path)->File map generated during "expand", it helps to
      // decide whether or not an existing entry in a jar file needs to be
-@@ -249,6 +250,16 @@
+@@ -250,6 +251,16 @@
                      }
                  }
              } else if (xflag) {
@@ -5526,10 +5526,10 @@
                  replaceFSC(files);
                  if (fname != null && files != null) {
                      extract(fname, files);
-@@ -921,6 +932,10 @@
-         ZipEntry rc = null;
-         String name = e.getName();
-         File f = new File(e.getName().replace('/', File.separatorChar));
+@@ -975,6 +986,10 @@
+             return rc;    // leading '/' or 'dot-dot' only path
+         }
+         File f = new File(name.replace('/', File.separatorChar));
 +        if (!f.getCanonicalPath().startsWith(cwd)) {
 +            output(formatMsg("out.ignore.entry", name));
 +            return null;
@@ -5537,7 +5537,7 @@
          if (e.isDirectory()) {
              if (f.exists()) {
                  if (!f.isDirectory()) {
-@@ -942,6 +957,10 @@
+@@ -996,6 +1011,10 @@
          } else {
              if (f.getParent() != null) {
                  File d = new File(f.getParent());
@@ -12620,20 +12620,24 @@
  
  /*
   * The fd table and the number of file descriptors
-@@ -281,7 +281,7 @@
+@@ -281,9 +281,7 @@
  
  int NET_RecvFrom(int s, void *buf, int len, unsigned int flags,
         struct sockaddr *from, int *fromlen) {
--    BLOCKING_IO_RETURN_INT( s, recvfrom(s, buf, len, flags, from, (socklen_t)fromlen) );
+-    socklen_t socklen = *fromlen;
+-    BLOCKING_IO_RETURN_INT( s, recvfrom(s, buf, len, flags, from, &socklen) );
+-    *fromlen = socklen;
 +    BLOCKING_IO_RETURN_INT( s, recvfrom(s, buf, len, flags, from, (socklen_t *)fromlen) );
  }
  
  int NET_Send(int s, void *msg, int len, unsigned int flags) {
-@@ -298,7 +298,7 @@
+@@ -300,9 +298,7 @@
  }
  
  int NET_Accept(int s, struct sockaddr *addr, int *addrlen) {
--    BLOCKING_IO_RETURN_INT( s, accept(s, addr, (socklen_t)addrlen) );
+-    socklen_t socklen = *addrlen;
+-    BLOCKING_IO_RETURN_INT( s, accept(s, addr, &socklen) );
+-    *addrlen = socklen;
 +    BLOCKING_IO_RETURN_INT( s, accept(s, addr, (socklen_t *)addrlen) );
  }
  
@@ -12690,16 +12694,7 @@
          /*
           * On Linux if we are connecting to a link-local address
           * we need to specify the interface in the scope_id (2.4 kernel only)
-@@ -1104,7 +1126,7 @@
-     }
- #endif
- 
--    rv = getsockopt(fd, level, opt, result, (socklen_t)len);
-+    rv = getsockopt(fd, level, opt, result, (socklen_t *)len);
-     if (rv < 0) {
-         return rv;
-     }
-@@ -1151,6 +1173,24 @@
+@@ -1160,6 +1182,24 @@
  #define IPTOS_PREC_MASK 0xe0
  #endif
  
@@ -12724,7 +12719,7 @@
      /*
       * IPPROTO/IP_TOS :-
       * 1. IPv6 on Solaris: no-op and will be set in flowinfo
-@@ -1183,6 +1223,10 @@
+@@ -1192,6 +1232,10 @@
          *iptos &= (IPTOS_TOS_MASK | IPTOS_PREC_MASK);
      }
  
@@ -12735,7 +12730,7 @@
      /*
       * SOL_SOCKET/{SO_SNDBUF,SO_RCVBUF} - On Solaris need to
       * ensure that value is <= max_buf as otherwise we get
-@@ -1230,6 +1274,84 @@
+@@ -1239,6 +1283,84 @@
      }
  #endif
  
@@ -13239,7 +13234,7 @@
                        "X11GD_InitXrandrFuncs: Could not open libXrandr.so.2");
 --- jdk/src/solaris/native/sun/awt/awt_InputMethod.c
 +++ jdk/src/solaris/native/sun/awt/awt_InputMethod.c
-@@ -69,7 +69,7 @@
+@@ -67,7 +67,7 @@
                                  XIMPreeditDrawCallbackStruct *);
  static void PreeditCaretCallback(XIC, XPointer,
                                   XIMPreeditCaretCallbackStruct *);
@@ -13248,7 +13243,7 @@
  static void StatusStartCallback(XIC, XPointer, XPointer);
  static void StatusDoneCallback(XIC, XPointer, XPointer);
  static void StatusDrawCallback(XIC, XPointer,
-@@ -83,7 +83,7 @@
+@@ -81,7 +81,7 @@
  #define PreeditDoneIndex        1
  #define PreeditDrawIndex        2
  #define PreeditCaretIndex       3
@@ -13257,7 +13252,7 @@
  #define StatusStartIndex        4
  #define StatusDoneIndex         5
  #define StatusDrawIndex         6
-@@ -101,14 +101,14 @@
+@@ -99,14 +99,14 @@
      (XIMProc)PreeditDoneCallback,
      (XIMProc)PreeditDrawCallback,
      (XIMProc)PreeditCaretCallback,
@@ -13274,7 +13269,7 @@
  #define MAX_STATUS_LEN  100
  typedef struct {
      Window   w;                /*status window id        */
-@@ -148,7 +148,7 @@
+@@ -146,7 +146,7 @@
  #endif /* XAWT */
      jobject     x11inputmethod; /* global ref to X11InputMethod instance */
                                  /* associated with the XIC */
@@ -13283,7 +13278,7 @@
      StatusWindow *statusWindow; /* our own status window  */
  #else
  #ifndef XAWT
-@@ -427,7 +427,7 @@
+@@ -425,7 +425,7 @@
  static void
  freeX11InputMethodData(JNIEnv *env, X11InputMethodData *pX11IMData)
  {
@@ -13292,7 +13287,7 @@
      if (pX11IMData->statusWindow != NULL){
          StatusWindow *sw = pX11IMData->statusWindow;
          XFreeGC(awt_display, sw->lightGC);
-@@ -533,7 +533,7 @@
+@@ -531,7 +531,7 @@
      pX11IMData = getX11InputMethodData(env, currentX11InputMethodInstance);
  
      if (pX11IMData == NULL) {
@@ -13301,7 +13296,7 @@
          return False;
  #else
          return result;
-@@ -541,7 +541,7 @@
+@@ -539,7 +539,7 @@
      }
  
      if ((ic = pX11IMData->current_ic) == (XIC)0){
@@ -13310,7 +13305,7 @@
          return False;
  #else
          return result;
-@@ -650,7 +650,7 @@
+@@ -648,7 +648,7 @@
      return result;
  }
  
@@ -13319,7 +13314,7 @@
  static StatusWindow *createStatusWindow(
  #ifdef XAWT
                                  Window parent) {
-@@ -994,7 +994,7 @@
+@@ -993,7 +993,7 @@
          }
      }
  }
@@ -13328,7 +13323,7 @@
  /*
   * Creates two XICs, one for active clients and the other for passive
   * clients. All information on those XICs are stored in the
-@@ -1051,7 +1051,7 @@
+@@ -1050,7 +1050,7 @@
          return FALSE ;
      }
  
@@ -13337,7 +13332,7 @@
      on_the_spot_styles |= XIMStatusNothing;
  
      /*kinput does not support XIMPreeditCallbacks and XIMStatusArea
-@@ -1064,7 +1064,7 @@
+@@ -1063,7 +1063,7 @@
              break;
          }
      }
@@ -13346,7 +13341,7 @@
  #ifdef XAWT
      on_the_spot_styles |= XIMStatusNothing;
  #else /* !XAWT */
-@@ -1087,7 +1087,7 @@
+@@ -1086,7 +1086,7 @@
          on_the_spot_styles |= XIMStatusNothing;
  
  #endif /* XAWT */
@@ -13355,7 +13350,7 @@
  
      for (i = 0; i < im_styles->count_styles; i++) {
          active_styles |= im_styles->supported_styles[i] & on_the_spot_styles;
-@@ -1135,7 +1135,7 @@
+@@ -1134,7 +1134,7 @@
                          NULL);
          if (preedit == (XVaNestedList)NULL)
              goto err;
@@ -13364,7 +13359,7 @@
          /*always try XIMStatusCallbacks for active client...*/
          {
              status = (XVaNestedList)XVaCreateNestedList(0,
-@@ -1157,7 +1157,7 @@
+@@ -1156,7 +1156,7 @@
              XFree((void *)status);
              XFree((void *)preedit);
          }
@@ -13373,16 +13368,16 @@
  #ifndef XAWT
          if (on_the_spot_styles & XIMStatusArea) {
              Widget parent;
-@@ -1185,7 +1185,7 @@
+@@ -1184,7 +1184,7 @@
          }
  #endif /* XAWT */
          XFree((void *)preedit);
 -#endif /* __linux__ */
 +#endif /* __linux__ || _ALLBSD_SOURCE */
          pX11IMData->ic_passive = XCreateIC(X11im,
-                                            XNClientWindow, XtWindow(w),
-                                            XNFocusWindow, XtWindow(w),
-@@ -1344,7 +1344,7 @@
+                                            XNClientWindow, w,
+                                            XNFocusWindow, w,
+@@ -1343,7 +1343,7 @@
  
  }
  
@@ -13391,7 +13386,7 @@
  static void
  StatusStartCallback(XIC ic, XPointer client_data, XPointer call_data)
  {
-@@ -1412,7 +1412,7 @@
+@@ -1411,7 +1411,7 @@
   finally:
      AWT_UNLOCK();
  }
@@ -13400,14 +13395,14 @@
  
  static void CommitStringCallback(XIC ic, XPointer client_data, XPointer call_data) {
      JNIEnv *env = GetJNIEnv();
-@@ -1514,14 +1514,14 @@
+@@ -1513,14 +1513,14 @@
  /* Use IMInstantiate call back only on Linux, as there is a bug in Solaris
     (4768335)
  */
 -#ifdef __linux__
 +#if defined(__linux__) || defined(_ALLBSD_SOURCE)
      registered = XRegisterIMInstantiateCallback(dpy, NULL, NULL,
-                      NULL, (XIMProc)OpenXIMCallback, NULL);
+                      NULL, (XIDProc)OpenXIMCallback, NULL);
      if (!registered) {
          /* directly call openXIM callback */
  #endif
@@ -13417,7 +13412,7 @@
      }
  #endif
  
-@@ -1585,13 +1585,13 @@
+@@ -1584,13 +1584,13 @@
  #endif /* XAWT */
      globalRef = (*env)->NewGlobalRef(env, this);
      pX11IMData->x11inputmethod = globalRef;
@@ -13434,10 +13429,10 @@
  
      pX11IMData->lookup_buf = 0;
      pX11IMData->lookup_buf_len = 0;
-@@ -1738,14 +1738,14 @@
+@@ -1737,14 +1737,14 @@
          setXICFocus(pX11IMData->current_ic, req);
          currentX11InputMethodInstance = pX11IMData->x11inputmethod;
-         currentFocusWindow =  XtWindow(w);
+         currentFocusWindow =  w;
 -#ifdef __linux__
 +#if defined(__linux__) || defined(_ALLBSD_SOURCE)
          if (active && pX11IMData->statusWindow && pX11IMData->statusWindow->on)
@@ -13451,7 +13446,7 @@
          onoffStatusWindow(pX11IMData, 0, False);
          if (pX11IMData->current_ic != NULL)
  #endif
-@@ -1762,7 +1762,7 @@
+@@ -1761,7 +1761,7 @@
  Java_sun_awt_X11InputMethod_turnoffStatusWindow(JNIEnv *env,
                                                  jobject this)
  {
@@ -13460,7 +13455,7 @@
      X11InputMethodData *pX11IMData;
      StatusWindow *statusWindow;
  
-@@ -1859,7 +1859,7 @@
+@@ -1858,7 +1858,7 @@
      X11InputMethodData *pX11IMData;
      XVaNestedList status;
  
@@ -13469,7 +13464,7 @@
        /*do nothing for linux? */
  #else
      AWT_LOCK();
-@@ -1965,7 +1965,7 @@
+@@ -1964,7 +1964,7 @@
  JNIEXPORT void JNICALL Java_sun_awt_X11_XInputMethod_adjustStatusWindow
    (JNIEnv *env, jobject this, jlong window)
  {
