@@ -13,9 +13,10 @@
 #				installed package to miss files.
 # MAILDROP_TRUSTED_USERS=<user> Specify users allowed to use the -d option
 # MAILDROP_LOG_COLUMNS	lenght of 'File:' line in log - 8; default: 72
+# MAILDROP_MBOX_DIR=<dir>	Specify DEFAULT mailbox location
 
 PORTNAME=	maildrop
-PORTVERSION=	2.8.2
+PORTVERSION=	2.8.3
 CATEGORIES=	mail
 MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
 
@@ -90,6 +91,10 @@ CONFIGURE_ARGS+=	--enable-maildrop-gid="${MAILDROP_SGID}"
 PLIST_SUB+=		MMODE='2755' MGID='${MAILDROP_SGID}' MUID='root'
 .else
 PLIST_SUB+=		MMODE='' MUID='root' MGID='mail'
+.endif
+
+.if defined(MAILDROP_MBOX_DIR)
+CONFIGURE_ARGS+=	--with-default-maildrop='${MAILDROP_MBOX_DIR}'
 .endif
 
 .if ${PORT_OPTIONS:MFAM}
