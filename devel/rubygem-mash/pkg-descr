@@ -1,6 +1,0 @@
-Mash is an extended Hash that gives simple pseudo-object functionality that
-can be built from hashes and easily extended. It is designed to be used in
-RESTful API libraries to provide easy object-like access to JSON and XML
-parsed hashes.
-
-WWW: https://github.com/mbleigh/mash
