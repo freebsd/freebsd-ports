@@ -1,0 +1,41 @@
+# $FreeBSD$
+
+PORTNAME=	jobs
+PORTVERSION=	0.3
+CATEGORIES=	devel
+PKGNAMEPREFIX=	erlang-
+
+MAINTAINER=	olgeni@FreeBSD.org
+COMMENT=	Job scheduler and load regulation for Erlang
+
+BUILD_DEPENDS=	erl:${PORTSDIR}/lang/erlang \
+		rebar:${PORTSDIR}/devel/rebar \
+		erlang-parse_trans>=0:${PORTSDIR}/devel/erlang-parse_trans
+RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
+
+PLIST_SUB=	VERSION="${PORTVERSION}"
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	uwiger
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/{vsn, git}/{vsn,"${PORTVERSION}"}/' ${WRKSRC}/src/*.app.src
+
+do-build:
+	@cd ${WRKSRC} && rebar compile
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/ebin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/include
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/src
+	${INSTALL_DATA} ${WRKSRC}/ebin/* ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/ebin
+	${INSTALL_DATA} ${WRKSRC}/src/* ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/src
+	${INSTALL_DATA} ${WRKSRC}/include/* ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/include
+
+.include <bsd.port.mk>
