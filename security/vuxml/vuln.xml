@@ -57,6 +57,46 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0d0f3050-1f69-11e5-9ba9-d050996490d0">
+    <topic>ntp -- control message remote Deinal of Service vulnerability</topic>
+    <affects>
+      <package>
+	<name>ntp</name>
+	<range><lt>4.2.8p3</lt></range>
+      </package>
+      <package>
+	<name>ntp-devel</name>
+	<range><lt>4.3.25</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ntp.org reports:</p>
+	<blockquote cite="http://support.ntp.org/bin/view/Main/SecurityNotice#June_2015_NTP_Security_Vulnerabi">
+	  <p>Under limited and specific circumstances an attacker can send a
+	    crafted packet to cause a vulnerable ntpd instance to crash.
+	    This requires each of the following to be true:</p>
+	  <ul>
+	    <li>ntpd set up to allow for remote configuration (not
+	      allowed by default), and</li>
+	    <li>knowledge of the configuration password, and</li>
+	    <li>access to a computer entrusted to perform remote
+	      configuration.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://bugs.ntp.org/show_bug.cgi?id=2853</url>
+      <url>https://www.kb.cert.org/vuls/id/668167</url>
+      <url>http://support.ntp.org/bin/view/Main/SecurityNotice#June_2015_NTP_Security_Vulnerabi</url>
+    </references>
+    <dates>
+      <discovery>2015-06-29</discovery>
+      <entry>2015-06-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="acd5d037-1c33-11e5-be9c-6805ca1d3bb1">
     <topic>qemu -- Heap overflow in QEMU PCNET controller, allowing guest to host escape (CVE-2015-3209)</topic>
     <affects>
