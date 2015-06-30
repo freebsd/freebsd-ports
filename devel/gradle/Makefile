@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gradle
-PORTVERSION=	2.1
+PORTVERSION=	2.4
 CATEGORIES=	devel java
 MASTER_SITES=	https://services.gradle.org/distributions/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
