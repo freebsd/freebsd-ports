@@ -17,9 +17,9 @@ RUN_DEPENDS=	galculator>=0:${PORTSDIR}/math/galculator \
 		openbabel>=0:${PORTSDIR}/science/openbabel \
 		mpqc>=0:${PORTSDIR}/science/mpqc \
 		gnuplot>=0:${PORTSDIR}/math/gnuplot \
-		openaxiom>=0:${PORTSDIR}/math/open-axiom \
+		open-axiom:${PORTSDIR}/math/open-axiom \
 		geoserver>=0:${PORTSDIR}/graphics/geoserver \
-		grass>=0:${PORTSDIR}/databases/grass
+		grass64:${PORTSDIR}/databases/grass
 
 NO_BUILD=	yes
 
