@@ -1869,6 +1869,7 @@
     SUBDIR += p5-Data-Miscellany
     SUBDIR += p5-Data-Model
     SUBDIR += p5-Data-Munge
+    SUBDIR += p5-Data-Object
     SUBDIR += p5-Data-ObjectDriver
     SUBDIR += p5-Data-OptList
     SUBDIR += p5-Data-Page-NoTotalEntries
