@@ -2,6 +2,7 @@
 
 PORTNAME=	rabbitmq
 PORTVERSION=	2.6.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.elasticsearch.org/elasticsearch/elasticsearch-river-rabbitmq/
 PKGNAMEPREFIX=	elasticsearch-river-
@@ -12,7 +13,7 @@ COMMENT=	ElasticSearch RabbitMQ River
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	elasticsearch>=1.5.0:${PORTSDIR}/textproc/elasticsearch
+RUN_DEPENDS=	elasticsearch>=1.6.0:${PORTSDIR}/textproc/elasticsearch
 
 USES=		zip
 
