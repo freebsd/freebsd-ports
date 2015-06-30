@@ -2,6 +2,7 @@
 
 PORTNAME=	cmake
 PORTVERSION=	3.2.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cmake.org/files/v3.2/
 PKGNAMESUFFIX=	-gui
