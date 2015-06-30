@@ -3864,6 +3864,7 @@
     SUBDIR += py-distorm
     SUBDIR += py-distutils-extra
     SUBDIR += py-django-tastypie-mongoengine
+    SUBDIR += py-django16-tastypie-mongoengine
     SUBDIR += py-docopt
     SUBDIR += py-dogpile.cache
     SUBDIR += py-dogpile.core
