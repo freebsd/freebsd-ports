@@ -12,12 +12,17 @@ COMMENT=	Create REST API for Django apps
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mimeparse>=0.1.4:${PORTSDIR}/devel/py-mimeparse \
+MY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mimeparse>=0.1.4:${PORTSDIR}/devel/py-mimeparse \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=2.1:${PORTSDIR}/devel/py-dateutil
-RUN_DEPENDS:=	${BUILD_DEPENDS} \
+
+BUILD_DEPENDS=	${MY_DEPENDS}
+
+RUN_DEPENDS?=	${MY_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}django>=1.5:${PORTSDIR}/www/py-django
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+
+CONFLICTS_INSTALL=	 ${PKGNAMEPREFIX}${PORTNAME}16
 
 .include <bsd.port.mk>
