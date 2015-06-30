@@ -16,7 +16,7 @@ LIB_DEPENDS=	libdotconf.so:${PORTSDIR}/devel/dotconf \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile
 
 USE_GNOME=	glib20 intltool
-USES=		alias gmake pathfix pkgconfig libtool
+USES=		alias gettext gmake pathfix pkgconfig libtool
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -33,9 +33,9 @@ ETCFILES=	clients/emacs.conf modules/pico-generic.conf \
 
 PORTDOCS=	ANNOUNCE AUTHORS ChangeLog FAQ NEWS README TODO
 
-INFO=		spd-say speech-dispatcher ssip
+INFO=		spd-say speech-dispatcher speech-dispatcher-cs ssip
 
-OPTIONS_DEFINE=	ALSA AO DOCS ESPEAK FESTIVAL FLITE NAS NLS \
+OPTIONS_DEFINE=	ALSA AO DOCS ESPEAK FESTIVAL FLITE NAS \
 		PULSEAUDIO PYTHON
 OPTIONS_DEFAULT=ESPEAK
 OPTIONS_SUB=	yes
@@ -61,8 +61,6 @@ FLITE_CONFIGURE_WITH=	flite
 NAS_LIB_DEPENDS=	libaudio.so:${PORTSDIR}/audio/nas
 NAS_CONFIGURE_WITH=	nas
 
-NLS_USES=		gettext
-
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 PULSEAUDIO_CONFIGURE_WITH=pulse
 
@@ -71,19 +69,9 @@ PYTHON_USES=		python:3
 PYTHON_USE=		PYTHON=py3kplist
 PYTHON_CONFIGURE_ENABLE=python
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-INFO+=		speech-dispatcher-cs
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '/SUBDIRS/ s/tests//' \
 		${WRKSRC}/src/Makefile.in
-.if ! ${PORT_OPTIONS:MNLS}
-	@${REINPLACE_CMD} -e '/SUBDIRS/ s/po//' \
-		${WRKSRC}/Makefile.in
-.endif
 
 post-install:
 .for f in ${ETCFILES}
@@ -93,8 +81,5 @@ post-install:
 	@${RMDIR} ${STAGEDIR}${DATADIR} || ${TRUE}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-.if ! ${PORT_OPTIONS:MNLS}
-	@${RM} -f ${STAGEDIR}${PREFIX}/${INFO_PATH}/speech-dispatcher-cs.info
-.endif
 
 .include <bsd.port.mk>

@@ -64,7 +64,7 @@ lib/speech-dispatcher/spd_oss.so
 %%PULSEAUDIO%%lib/speech-dispatcher/spd_pulse.a
 %%PULSEAUDIO%%lib/speech-dispatcher/spd_pulse.so
 libdata/pkgconfig/speech-dispatcher.pc
-%%NLS%%share/locale/cs/LC_MESSAGES/speech-dispatcher.mo
-%%NLS%%share/locale/hu/LC_MESSAGES/speech-dispatcher.mo
+share/locale/cs/LC_MESSAGES/speech-dispatcher.mo
+share/locale/hu/LC_MESSAGES/speech-dispatcher.mo
 share/sounds/speech-dispatcher/dummy-message.wav
 %%PYTHON%%share/sounds/speech-dispatcher/test.wav
