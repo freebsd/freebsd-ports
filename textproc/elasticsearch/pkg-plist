@@ -1,20 +1,12 @@
-@owner %%SEARCHUSER%%
-@group %%SEARCHGROUP%%
-@unexec if cmp  -s %D/%%DATADIR%%/elasticsearch.yml.sample %D/etc/elasticsearch/elasticsearch.yml; then rm -f %D/etc/elasticsearch/elasticsearch.yml; fi
-%%DATADIR%%/elasticsearch.yml.sample
-@exec if [ ! -f %D/etc/elasticsearch/elasticsearch.yml ] ; then cp -p %D/%F %D/etc/elasticsearch/elasticsearch.yml; fi
-@unexec if cmp  -s %D/%%DATADIR%%/logging.yml.sample %D/etc/elasticsearch/logging.yml; then rm -f %D/etc/elasticsearch/logging.yml; fi
-%%DATADIR%%/logging.yml.sample
-@exec if [ ! -f %D/etc/elasticsearch/logging.yml ] ; then cp -p %D/%F %D/etc/elasticsearch/logging.yml; fi
+@sample(%%SEARCHUSER%%,%%SEARCHGROUP%%,440) %%ETCDIR%%/elasticsearch.yml.sample
+@sample(%%SEARCHUSER%%,%%SEARCHGROUP%%,440) %%ETCDIR%%/logging.yml.sample
 @unexec if [ -d %%ELASTIC_LOGDIR%% ]; then echo "You should remove %%ELASTIC_LOGDIR%% if you don't need it any more."; fi
 @unexec if [ -d %%ELASTIC_DBDIR%% ]; then echo "You should remove %%ELASTIC_DBDIR%% if you don't need it any more."; fi
-@owner root
-@group wheel
 bin/elasticsearch-plugin
 lib/elasticsearch/antlr-runtime-3.5.jar
+lib/elasticsearch/apache-log4j-extras-1.2.17.jar
 lib/elasticsearch/asm-4.1.jar
 lib/elasticsearch/asm-commons-4.1.jar
-lib/elasticsearch/apache-log4j-extras-1.2.17.jar
 lib/elasticsearch/elasticsearch-%%PORTVERSION%%.jar
 lib/elasticsearch/groovy-all-2.4.0.jar
 lib/elasticsearch/jna-4.1.0.jar
@@ -40,4 +32,3 @@ lib/elasticsearch/sigar/%%SIGAR_LIBNAME%%
 %%PORTDOCS%%%%DOCSDIR%%/NOTICE.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.textile
 @dir lib/elasticsearch/plugins
-@dir %%ETCDIR%%
