@@ -17,6 +17,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-mime-types1>=1.16:${PORTSDIR}/misc/rubygem-mime-types1 \
 		rubygem-treetop>=1.4.8:${PORTSDIR}/devel/rubygem-treetop
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
