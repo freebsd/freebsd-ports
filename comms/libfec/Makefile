@@ -12,6 +12,8 @@ DISTNAME=	fec-${PORTVERSION}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Several forward error correction (FEC) decoders
 
+BROKEN=		produces unusable library
+
 MAKEFILE=	makefile
 
 GNU_CONFIGURE=	yes
