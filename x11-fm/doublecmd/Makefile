@@ -3,6 +3,7 @@
 
 PORTNAME=	doublecmd
 PORTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/${PORTNAME}/Double%20Commander%20Source
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -135,72 +136,72 @@ do-build:
 	doublecmd/doublecmd_common.lpk KASToolBar/kascomp.lpk \
 	viewer/viewerpackage.lpk gifanim/pkg_gifanim.lpk \
 	ZVDateTimeCtrls/zvdatetimectrls.lpk
-	@cd ${WRKSRC}/components && \
+	@cd ${WRKSRC}/components && ${SETENV} ${MAKE_ENV} \
 		${LAZBUILD_CMD} --lazarusdir=${LAZARUS_DIR} --ws=${LCL_PLATFORM} "${FILE}"
 .endfor
 
 .if ${PORT_OPTIONS:MWCX_CPIO}
-	@cd ${WRKSRC}/plugins && \
+	@cd ${WRKSRC}/plugins && ${SETENV} ${MAKE_ENV} \
 		${LAZBUILD_CMD} --lazarusdir=${LAZARUS_DIR} --ws=${LCL_PLATFORM} "wcx/cpio/src/cpio.lpi"
 .endif
 .if ${PORT_OPTIONS:MWCX_DEB}
-	@cd ${WRKSRC}/plugins && \
+	@cd ${WRKSRC}/plugins && ${SETENV} ${MAKE_ENV} \
 		${LAZBUILD_CMD} --lazarusdir=${LAZARUS_DIR} --ws=${LCL_PLATFORM} "wcx/deb/src/deb.lpi"
 .endif
 .if ${PORT_OPTIONS:MWCX_UNBZ2}
-	@cd ${WRKSRC}/plugins && \
+	@cd ${WRKSRC}/plugins && ${SETENV} ${MAKE_ENV} \
 		${LAZBUILD_CMD} --lazarusdir=${LAZARUS_DIR} --ws=${LCL_PLATFORM} "wcx/unbz2/src/unbz2.lpi"
 .endif
 .if ${PORT_OPTIONS:MWCX_RPM}
-	@cd ${WRKSRC}/plugins && \
+	@cd ${WRKSRC}/plugins && ${SETENV} ${MAKE_ENV} \
 		${LAZBUILD_CMD} --lazarusdir=${LAZARUS_DIR} --ws=${LCL_PLATFORM} "wcx/rpm/src/rpm.lpi"
 .endif
 .if ${PORT_OPTIONS:MWCX_UNRAR}
-	@cd ${WRKSRC}/plugins && \
+	@cd ${WRKSRC}/plugins && ${SETENV} ${MAKE_ENV} \
 		${LAZBUILD_CMD} --lazarusdir=${LAZARUS_DIR} --ws=${LCL_PLATFORM} "wcx/unrar/src/unrar.lpi"
 .endif
 .if ${PORT_OPTIONS:MWCX_ZIP}
-	@cd ${WRKSRC}/plugins && \
+	@cd ${WRKSRC}/plugins && ${SETENV} ${MAKE_ENV} \
 		${LAZBUILD_CMD} --lazarusdir=${LAZARUS_DIR} --ws=${LCL_PLATFORM} "wcx/zip/src/Zip.lpi"
 .endif
 
 .if ${PORT_OPTIONS:MWDX_RPM}
-	@cd ${WRKSRC}/plugins && \
+	@cd ${WRKSRC}/plugins && ${SETENV} ${MAKE_ENV} \
 		${LAZBUILD_CMD} --lazarusdir=${LAZARUS_DIR} --ws=${LCL_PLATFORM} "wdx/rpm_wdx/src/rpm_wdx.lpi"
 .endif
 .if ${PORT_OPTIONS:MWDX_DEB}
-	@cd ${WRKSRC}/plugins && \
+	@cd ${WRKSRC}/plugins && ${SETENV} ${MAKE_ENV} \
 		${LAZBUILD_CMD} --lazarusdir=${LAZARUS_DIR} --ws=${LCL_PLATFORM} "wdx/deb_wdx/src/deb_wdx.lpi"
 .endif
 .if ${PORT_OPTIONS:MWDX_SVN}
-	@cd ${WRKSRC}/plugins && \
+	@cd ${WRKSRC}/plugins && ${SETENV} ${MAKE_ENV} \
 		${LAZBUILD_CMD} --lazarusdir=${LAZARUS_DIR} --ws=${LCL_PLATFORM} "wdx/svn_wdx/src/svn_wdx.lpi"
 .endif
 .if ${PORT_OPTIONS:MWDX_XPI}
-	@cd ${WRKSRC}/plugins && \
+	@cd ${WRKSRC}/plugins && ${SETENV} ${MAKE_ENV} \
 		${LAZBUILD_CMD} --lazarusdir=${LAZARUS_DIR} --ws=${LCL_PLATFORM} "wdx/xpi_wdx/src/xpi_wdx.lpi"
 .endif
 
 .if ${PORT_OPTIONS:MWFX_FTP}
-	@cd ${WRKSRC}/plugins && \
+	@cd ${WRKSRC}/plugins && ${SETENV} ${MAKE_ENV} \
 		${LAZBUILD_CMD} --lazarusdir=${LAZARUS_DIR} --ws=${LCL_PLATFORM} "wfx/ftp/src/ftp.lpi"
 .endif
 .if ${PORT_OPTIONS:MWFX_SAMBA}
-	@cd ${WRKSRC}/plugins && \
+	@cd ${WRKSRC}/plugins && ${SETENV} ${MAKE_ENV} \
 		${LAZBUILD_CMD} --lazarusdir=${LAZARUS_DIR} --ws=${LCL_PLATFORM} "wfx/samba/src/samba.lpi"
 .endif
 
 .if ${PORT_OPTIONS:MWLX_MPLAYER}
-	@cd ${WRKSRC}/plugins && \
+	@cd ${WRKSRC}/plugins && ${SETENV} ${MAKE_ENV} \
 		${LAZBUILD_CMD} --lazarusdir=${LAZARUS_DIR} --ws=${LCL_PLATFORM} "wlx/WlxMplayer/src/wlxMplayer.lpi"
 .endif
 
 .if ${PORT_OPTIONS:MDSX_LOCATE}
-	@cd ${WRKSRC}/plugins && \
+	@cd ${WRKSRC}/plugins && ${SETENV} ${MAKE_ENV} \
 		${LAZBUILD_CMD} --lazarusdir=${LAZARUS_DIR} --ws=${LCL_PLATFORM} "dsx/DSXLocate/src/DSXLocate.lpi"
 .endif
 
-	@cd ${WRKSRC} && \
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		${LAZBUILD_CMD} --ws=${LCL_PLATFORM} --bm="${BUILD_MODE}" --lazarusdir=${LAZARUS_DIR} ${PROJECT_FILE}
 
 post-build:
