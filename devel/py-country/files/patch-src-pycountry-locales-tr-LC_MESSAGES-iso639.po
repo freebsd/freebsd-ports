@@ -1,6 +1,67 @@
---- src/pycountry/locales/tr/LC_MESSAGES/iso639.po.orig	2015-06-15 11:11:48.676628000 +0300
-+++ src/pycountry/locales/tr/LC_MESSAGES/iso639.po	2015-06-15 11:12:29.485109000 +0300
-@@ -914,7 +914,7 @@
+--- src/pycountry/locales/tr/LC_MESSAGES/iso639.po.orig	2015-07-01 16:56:56.999137000 +0300
++++ src/pycountry/locales/tr/LC_MESSAGES/iso639.po	2015-07-01 16:57:11.217321000 +0300
+@@ -9,13 +9,13 @@
+ #   Kemal Yilmaz <kyilmaz@uekae.tubitak.gov.tr>, 2001.
+ #   Alastair McKinstry <mckinstry@computer.org>, 2001.
+ #   Volkan Gezer <volkangezer@gmail.com>, 2013.
++#   Dmitry Sivachenko <trtrmitya@gmail.com>, 2015.
+ msgid ""
+ msgstr ""
+-"Project-Id-Version: iso_639\n"
+-"Report-Msgid-Bugs-To: Debian iso-codes team <pkg-isocodes-devel@lists.alioth."
+-"debian.org>\n"
++"Project-Id-Version: iso_639 3.57\n"
++"Report-Msgid-Bugs-To: Debian iso-codes team <pkg-isocodes-devel@lists.alioth.debian.org>\n"
+ "POT-Creation-Date: 2013-01-11 07:25+0100\n"
+-"PO-Revision-Date: 2013-08-01 23:39+0200\n"
++"PO-Revision-Date: 2015-06-23 12:03+0300\n"
+ "Last-Translator: Volkan Gezer <volkangezer@gmail.com>\n"
+ "Language-Team: Turkish <gnu-tr-u12a@lists.sourceforge.net>\n"
+ "Language: tr\n"
+@@ -111,8 +111,7 @@
+ 
+ #. name for arc
+ msgid "Official Aramaic (700-300 BCE); Imperial Aramaic (700-300 BCE)"
+-msgstr ""
+-"Resmi Arami Dili (700-300 M.Ö.); İmparatorluk Arami Dili (700-300 M.Ö.)"
++msgstr "Resmi Arami Dili (700-300 M.Ö.); İmparatorluk Arami Dili (700-300 M.Ö.)"
+ 
+ #. name for arg, an
+ msgid "Aragonese"
+@@ -372,12 +371,8 @@
+ msgstr "Cherokee (Kuzey Amerika yerlileri)"
+ 
+ #. name for chu, cu
+-msgid ""
+-"Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church "
+-"Slavonic"
+-msgstr ""
+-"Kilise Slavcası; Eski Slavca; Kilise Slavcası; Eski Bulgarca; Eski Kilise "
+-"Slavcası"
++msgid "Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic"
++msgstr "Kilise Slavcası; Eski Slavca; Kilise Slavcası; Eski Bulgarca; Eski Kilise Slavcası"
+ 
+ #. name for chv, cv
+ msgid "Chuvash"
+@@ -656,7 +651,7 @@
+ 
+ #. name for glg, gl
+ msgid "Galician"
+-msgstr "Galiçya dili"
++msgstr "Galiçyaca"
+ 
+ #. name for glv, gv
+ msgid "Manx"
+@@ -718,7 +713,7 @@
+ 
+ #. name for hat, ht
+ msgid "Haitian; Haitian Creole"
+-msgstr "Haiti dili"
++msgstr "Haiti dili; Haiti Creole dili"
+ 
+ #. name for hau, ha
+ msgid "Hausa"
+@@ -914,7 +909,7 @@
  
  #. name for kaz, kk
  msgid "Kazakh"
@@ -9,7 +70,7 @@
  
  #. name for kbd
  msgid "Kabardian"
-@@ -946,7 +946,7 @@
+@@ -946,7 +941,7 @@
  
  #. name for kir, ky
  msgid "Kirghiz; Kyrgyz"
@@ -18,7 +79,34 @@
  
  #. name for kmb
  msgid "Kimbundu"
-@@ -1756,7 +1756,7 @@
+@@ -1176,7 +1171,7 @@
+ 
+ #. name for mlg, mg
+ msgid "Malagasy"
+-msgstr "Malagasy"
++msgstr "Malgaşça"
+ 
+ # src/prefs.c:1124 src/prefs_callbacks.c:222 src/prefs_callbacks.c:396
+ #. name for mlt, mt
+@@ -1205,7 +1200,7 @@
+ 
+ #. name for mon, mn
+ msgid "Mongolian"
+-msgstr "Moğol Dili"
++msgstr "Moğolca"
+ 
+ #. name for mos
+ msgid "Mossi"
+@@ -1704,7 +1699,7 @@
+ 
+ #. name for swa, sw
+ msgid "Swahili"
+-msgstr "Swahili"
++msgstr "Svahili"
+ 
+ #. name for swe, sv
+ msgid "Swedish"
+@@ -1756,7 +1751,7 @@
  
  #. name for tgl, tl
  msgid "Tagalog"
@@ -27,3 +115,56 @@
  
  #. name for tha, th
  msgid "Thai"
+@@ -2003,3 +1998,52 @@
+ #. name for zza
+ msgid "Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki"
+ msgstr "Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki"
++
++#~ msgid "Artificial (Other)"
++#~ msgstr "Yapay (Diğer)"
++
++#~ msgid "Asturian; Bable"
++#~ msgstr "Asturyanca; Babel (İspanya)"
++
++#~ msgid "Baltic (Other)"
++#~ msgstr "Baltık (Diğer)"
++
++#~ msgid "Beja"
++#~ msgstr "Beja (Eritre, Sudan)"
++
++#~ msgid "Berber (Other)"
++#~ msgstr "Berberice (Diğer)"
++
++#~ msgid "Bihari"
++#~ msgstr "Bihari (Hindistan)"
++
++#~ msgid "Bantu (Other)"
++#~ msgstr "Bantu; Zaire dili (Diğer)"
++
++#~ msgid "Caucasian (Other)"
++#~ msgstr "Kafkas dilleri (Diğer)"
++
++#~ msgid "Celtic (Other)"
++#~ msgstr "Kelt dili (Diğer)"
++
++#~ msgid "Chipewyan"
++#~ msgstr "Chipewyan (Kuzey Amerika yerlileri)"
++
++#~ msgid "Cushitic (Other)"
++#~ msgstr "Cushitic; Etiyopya (Diğer)"
++
++#~ msgid "Dravidian (Other)"
++#~ msgstr "Dravidian (Diğer; Hindistan ve Sri Lanka)"
++
++#~ msgid "Finno-Ugrian (Other)"
++#~ msgstr "Fin-Ural (Diğer)"
++
++#~ msgid "Germanic (Other)"
++#~ msgstr "Germence (Diğer)"
++
++#, fuzzy
++#~ msgid "Norwegian Bokmål; Bokmål, Norwegian"
++#~ msgstr "Norveççe"
++
++#~ msgid "Aramaic"
++#~ msgstr "Aramice"
