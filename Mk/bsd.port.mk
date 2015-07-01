@@ -4368,35 +4368,12 @@ all-depends-list:
 	@${ALL-DEPENDS-LIST}
 
 ALL-DEPENDS-LIST= \
-	L="${_DEPEND_DIRS}";						\
-	checked="";							\
-	while [ -n "$$L" ]; do						\
-		l="";							\
-		for d in $$L; do					\
-			case $$checked in				\
-			$$d\ *|*\ $$d\ *|*\ $$d)			\
-				continue;;				\
-			esac;						\
-			checked="$$checked $$d";			\
-			if [ ! -d $$d ]; then				\
-				${ECHO_MSG} "${PKGNAME}: \"$$d\" non-existent -- dependency list incomplete" >&2; \
-				continue;				\
-			fi;						\
-			${ECHO_CMD} $$d;				\
-			if ! children=$$(cd $$d && ${MAKE} -V _DEPEND_DIRS); then\
-				${ECHO_MSG} "${PKGNAME}: \"$$d\" erroneous -- dependency list incomplete" >&2; \
-				continue;				\
-			fi;						\
-			for child in $$children; do			\
-				case "$$checked $$l" in			\
-				$$child\ *|*\ $$child\ *|*\ $$child)	\
-					continue;;			\
-				esac;					\
-				l="$$l $$child";			\
-			done;						\
-		done;							\
-		L=$$l;							\
-	done
+	@${SETENV} dp_ALLDEPENDS="${_UNIFIED_DEPENDS}" \
+			dp_PORTSDIR="${PORTSDIR}" \
+			dp_MAKE="${MAKE}" \
+			dp_PKGNAME="${PKGNAME}" \
+			dp_SCRIPTSDIR="${SCRIPTSDIR}" \
+			${SH} ${SCRIPTSDIR}/all-depends-list.sh
 
 CLEAN-DEPENDS-FULL= \
 	L="${_DEPEND_DIRS}";						\
