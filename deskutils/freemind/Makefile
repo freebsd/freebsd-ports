@@ -7,7 +7,7 @@ CATEGORIES=	deskutils editors java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-bin-max-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sergey.v.brunov@gmail.com
 COMMENT=	Free mind-mapping software written in Java
 
 LICENSE=	GPLv2
