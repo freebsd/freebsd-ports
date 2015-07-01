@@ -2,7 +2,7 @@
 
 PORTNAME=	libmemcached
 PORTVERSION=	1.0.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/1.0/${PORTVERSION}/+download/
 
@@ -21,7 +21,6 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-memcached \
 		--without-sphinx-build \
-		--with-pic \
 		--enable-libmemcachedprotocol
 
 LIBS+=		-L${LOCALBASE}/lib -lexecinfo
