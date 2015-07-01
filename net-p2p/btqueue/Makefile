@@ -13,6 +13,10 @@ COMMENT=	Alternative BitTorrent client with queuing functionality
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:${PORTSDIR}/databases/py-bsddb
 
+BROKEN=		Does not download anything
+DEPRECATED=	Runtime broken (does not download anything)
+EXPIRATION_DATE=	2015-08-01
+
 CONFLICTS=	py??-*[Bb]it[Tt]ornado* py??-*[Bb]it[Tt]orrent*
 USES=		python
 USE_PYTHON=	distutils
