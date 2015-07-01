@@ -12,26 +12,21 @@ COMMENT=	Program that applies ReplayGain to wave files
 
 LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 
+ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS_REASON=	uses x86 assembly
+
 USES=		gmake dos2unix zip
 DOS2UNIX_FILES=	audio.c wavegain.c
 
 PLIST_FILES=	bin/wavegain
 
-WRKSRC=	${WRKDIR}/WaveGain-${PORTVERSION}
+WRKSRC=		${WRKDIR}/WaveGain-${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|" ${WRKSRC}/Makefile.linux
-
-do-configure:
-	@cd ${WRKSRC} && ${CP} Makefile.linux Makefile
+do-build:
+	@cd ${WRKSRC} && ${CC} ${CFLAGS} *.c -o ${PORTNAME} \
+		-DHAVE_CONFIG_H -lm -lsndfile -L${LOCALBASE}/lib
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
