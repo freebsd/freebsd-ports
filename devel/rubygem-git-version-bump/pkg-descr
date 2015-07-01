@@ -1,0 +1,10 @@
+Maintain your program versions entirely within git. No local files required! All
+versioning information is stored using git tags.
+
+This gem contains a command-line tool and set of Rake tasks to increment and
+display your version numbers via git tags, and some associated Ruby code to use
+inside a gemspec or your program to retrieve the current version number, for use
+in builds and at runtime.
+
+WWW: https://github.com/mpalmer/git-version-bump
+RG:  https://rubygems.org/gems/git-version-bump
