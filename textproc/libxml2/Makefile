@@ -1,10 +1,9 @@
 # Created by: Yukihiro Nakai <Nakai@technologist.com>
 # $FreeBSD$
-#    $MCom: ports/trunk/textproc/libxml2/Makefile 19578 2014-04-25 21:50:30Z kwm $
 
 PORTNAME=	libxml2
 PORTVERSION=	2.9.2
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	ftp://xmlsoft.org/libxml2/ \
 		http://xmlsoft.org/sources/ \
