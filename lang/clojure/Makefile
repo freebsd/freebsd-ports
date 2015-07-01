@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	clojure
-PORTVERSION=	1.6.0
-PORTEPOCH=	2
+PORTVERSION=	1.7.0
 CATEGORIES=	lang lisp java
 MASTER_SITES=	http://repo1.maven.org/maven2/org/clojure/clojure/${PORTVERSION}/
 EXTRACT_SUFX=	.jar
