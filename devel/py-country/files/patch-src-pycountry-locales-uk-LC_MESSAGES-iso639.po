@@ -1,6 +1,69 @@
---- src/pycountry/locales/uk/LC_MESSAGES/iso639.po.orig	2015-06-13 11:08:41.000000000 +0300
-+++ src/pycountry/locales/uk/LC_MESSAGES/iso639.po	2015-06-15 11:04:33.413969000 +0300
-@@ -1733,7 +1733,7 @@
+--- src/pycountry/locales/uk/LC_MESSAGES/iso639.po.orig	2015-07-01 16:58:38.118973000 +0300
++++ src/pycountry/locales/uk/LC_MESSAGES/iso639.po	2015-07-01 16:58:46.465074000 +0300
+@@ -4,14 +4,13 @@
+ #
+ # Copyright ©
+ #
+-# Yuri Chornoivan <yurchor@ukr.net>, 2010, 2012, 2013.
++# Yuri Chornoivan <yurchor@ukr.net>, 2010, 2012, 2013, 2015.
+ msgid ""
+ msgstr ""
+-"Project-Id-Version: iso_639\n"
+-"Report-Msgid-Bugs-To: Debian iso-codes team <pkg-isocodes-devel@lists.alioth."
+-"debian.org>\n"
++"Project-Id-Version: iso_639 3.57\n"
++"Report-Msgid-Bugs-To: Debian iso-codes team <pkg-isocodes-devel@lists.alioth.debian.org>\n"
+ "POT-Creation-Date: 2013-01-11 07:25+0100\n"
+-"PO-Revision-Date: 2013-03-04 18:37+0200\n"
++"PO-Revision-Date: 2015-06-14 08:39+0300\n"
+ "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+ "Language-Team: Ukrainian <translation-team-uk@lists.sourceforge.net>\n"
+ "Language: uk\n"
+@@ -19,8 +18,7 @@
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
+ "X-Generator: Lokalize 1.5\n"
+-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
++"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+ 
+ #. name for aar, aa
+ msgid "Afar"
+@@ -108,8 +106,7 @@
+ 
+ #. name for arc
+ msgid "Official Aramaic (700-300 BCE); Imperial Aramaic (700-300 BCE)"
+-msgstr ""
+-"офіційна арамейська (700-300 до н.е.); імперська арамейська (700-300 до н.е.)"
++msgstr "офіційна арамейська (700-300 до н.е.); імперська арамейська (700-300 до н.е.)"
+ 
+ #. name for arg, an
+ msgid "Aragonese"
+@@ -309,7 +306,7 @@
+ 
+ #. name for cat, ca
+ msgid "Catalan; Valencian"
+-msgstr "каталонська; валенсійська"
++msgstr "каталанська; валенсійська"
+ 
+ #. name for cau
+ msgid "Caucasian languages"
+@@ -368,12 +365,8 @@
+ msgstr "черокі"
+ 
+ #. name for chu, cu
+-msgid ""
+-"Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church "
+-"Slavonic"
+-msgstr ""
+-"церковнослов’янська; давньослов’янська; давньоболгарська; "
+-"давньоцерковнослов’янська"
++msgid "Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic"
++msgstr "церковнослов’янська; давньослов’янська; давньоболгарська; давньоцерковнослов’янська"
+ 
+ #. name for chv, cv
+ msgid "Chuvash"
+@@ -1733,7 +1726,7 @@
  
  #. name for tgl, tl
  msgid "Tagalog"
