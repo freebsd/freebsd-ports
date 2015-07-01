@@ -4368,7 +4368,7 @@ all-depends-list:
 	@${ALL-DEPENDS-LIST}
 
 ALL-DEPENDS-LIST= \
-	@${SETENV} dp_ALLDEPENDS="${_UNIFIED_DEPENDS}" \
+	${SETENV} dp_ALLDEPENDS="${_UNIFIED_DEPENDS}" \
 			dp_PORTSDIR="${PORTSDIR}" \
 			dp_MAKE="${MAKE}" \
 			dp_PKGNAME="${PKGNAME}" \
