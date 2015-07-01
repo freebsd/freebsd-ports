@@ -57,6 +57,46 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2a8b7d21-1ecc-11e5-a4a5-002590263bf5">
+    <topic>wesnoth -- disclosure of .pbl files with lowercase, uppercase, and mixed-case extension</topic>
+    <affects>
+      <package>
+	<name>wesnoth</name>
+	<range><lt>1.12.4,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ignacio R. Morelle reports:</p>
+	<blockquote cite="http://forums.wesnoth.org/viewtopic.php?t=42776">
+	  <p>As mentioned in the Wesnoth 1.12.4 and Wesnoth 1.13.1 release
+	    announcements, a security vulnerability targeting add-on authors
+	    was found (bug #23504) which allowed a malicious user to obtain
+	    add-on server passphrases from the client's .pbl files and transmit
+	    them over the network, or store them in saved game files intended
+	    to be shared by the victim. This vulnerability affects all existing
+	    releases up to and including versions 1.12.2 and 1.13.0.
+	    Additionally, version 1.12.3 included only a partial fix that failed
+	    to guard users against attempts to read from .pbl files with an
+	    uppercase or mixed-case extension. CVE-2015-5069 and CVE-2015-5070
+	    have been assigned to the vulnerability affecting .pbl files with a
+	    lowercase extension, and .pbl files with an uppercase or mixed-case
+	    extension, respectively.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5069</cvename>
+      <cvename>CVE-2015-5070</cvename>
+      <url>http://forums.wesnoth.org/viewtopic.php?t=42776</url>
+      <url>http://forums.wesnoth.org/viewtopic.php?t=42775</url>
+    </references>
+    <dates>
+      <discovery>2015-06-28</discovery>
+      <entry>2015-07-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b19da422-1e02-11e5-b43d-002590263bf5">
     <topic>cups-filters -- buffer overflow in texttopdf size allocation</topic>
     <affects>
