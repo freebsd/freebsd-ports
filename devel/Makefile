@@ -410,6 +410,7 @@
     SUBDIR += elfsh
     SUBDIR += elftoaout
     SUBDIR += elixir-conform
+    SUBDIR += elixir-decimal
     SUBDIR += elixir-exrm
     SUBDIR += elixir-plug
     SUBDIR += elixir-poison
