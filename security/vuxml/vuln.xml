@@ -3071,8 +3071,7 @@ Notes:
       </package>
       <package>
 	<name>netpbm</name>
-	<range><lt>10.47.56</lt></range>
-	<range><ge>10.70</ge><lt>10.70.06</lt></range>
+	<range><lt>10.35.96</lt></range>
       </package>
       <package>
 	<name>opengtl</name>
@@ -3113,7 +3112,7 @@ Notes:
     <dates>
       <discovery>2015-04-24</discovery>
       <entry>2015-05-15</entry>
-      <modified>2015-06-24</modified>
+      <modified>2015-07-01</modified>
     </dates>
   </vuln>
 
