@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	relx
-PORTVERSION=	3.0.0
-PORTREVISION=	1
+PORTVERSION=	3.1.0
 DISTVERSIONPREFIX=v
 CATEGORIES=	devel
 MASTER_SITES+=	http://olgeni.olgeni.com/~olgeni/distfiles/:deps \
@@ -42,10 +41,10 @@ pre-build:
 	@${MKDIR} ${WRKSRC}/_build/default/lib
 	@${MKDIR} ${WRKSRC}/_build/default/plugins
 .for lib in bbmustache erlware_commons getopt providers
-	@${LN} -s ${PREFIX}/lib/erlang/lib/$(lib)-* ${WRKSRC}/_build/default/lib/$(lib)
+	@${LN} -s ${PREFIX}/lib/erlang/lib/${lib}-* ${WRKSRC}/_build/default/lib/${lib}
 .endfor
 .for plugin in jsx rebar3_hex ssl_verify_hostname
-	@${LN} -s ${PREFIX}/lib/erlang/lib/$(plugin)-* ${WRKSRC}/_build/default/plugins/$(plugin)
+	@${LN} -s ${PREFIX}/lib/erlang/lib/${plugin}-* ${WRKSRC}/_build/default/plugins/${plugin}
 .endfor
 
 do-build:
@@ -53,6 +52,9 @@ do-build:
 	@cd ${WRKSRC} && HOME=${WRKDIR} rebar3 compile
 	@${RM} ${WRKSRC}/rebar.lock
 	@cd ${WRKSRC} && HOME=${WRKDIR} rebar3 escriptize
+
+post-build:
+	@${LN} -s ${WRKSRC}/_build/dev/lib/${PORTNAME}/ebin ${WRKSRC}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
