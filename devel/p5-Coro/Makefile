@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Coro
-PORTVERSION=	6.43
+PORTVERSION=	6.46
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -13,15 +13,15 @@ COMMENT=	Coroutine process abstraction for perl
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${RUN_DEPENDS} \
-		p5-Canary-Stability>=0:${PORTSDIR}/devel/p5-Canary-Stability
-RUN_DEPENDS=	p5-AnyEvent>=7:${PORTSDIR}/devel/p5-AnyEvent \
+BUILD_DEPENDS=	p5-AnyEvent>=7:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-AnyEvent-AIO>=1.0:${PORTSDIR}/devel/p5-AnyEvent-AIO \
 		p5-EV>=4:${PORTSDIR}/devel/p5-EV \
 		p5-Event>=1.08:${PORTSDIR}/devel/p5-Event \
 		p5-Guard>=0.5:${PORTSDIR}/devel/p5-Guard \
 		p5-IO-AIO>=3.1:${PORTSDIR}/devel/p5-IO-AIO \
 		p5-common-sense>=0:${PORTSDIR}/devel/p5-common-sense
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS+=	p5-Canary-Stability>=0:${PORTSDIR}/devel/p5-Canary-Stability
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
