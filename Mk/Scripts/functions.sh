@@ -139,3 +139,17 @@ parse_plist() {
 		esac
 	done
 }
+
+validate_env() {
+	local envfault
+	for i ; do
+		if ! (eval ": \${${i}?}" ) >/dev/null; then
+			envfault="${envfault}${envfault:+" "}${i}"
+		fi
+	done
+	if [ -n "${envfault}" ]; then
+		echo "Environment variable ${envfault} undefined. Aborting." \
+		| fmt >&2
+		exit 1
+	fi
+}
