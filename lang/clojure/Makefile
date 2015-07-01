@@ -8,7 +8,7 @@ MASTER_SITES=	http://repo1.maven.org/maven2/org/clojure/clojure/${PORTVERSION}/
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	jan0sch@gmx.net
+MAINTAINER=	jan0sch@mykolab.com
 COMMENT=	Dynamic programming language for the JVM
 
 LICENSE=	EPL
