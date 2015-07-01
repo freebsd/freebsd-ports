@@ -12,7 +12,6 @@ COMMENT=	Character map for GNUstep
 
 LICENSE=	GPLv2
 
-BROKEN=		Newer version does not work with recent objective C
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		gnustep
 USE_GNUSTEP=	back build

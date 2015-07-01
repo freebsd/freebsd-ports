@@ -1,3 +1,4 @@
+@dir GNUstep/Local/Library/Frameworks/GNUMail.framework/Versions/%%MAJORVERSION%%/Headers
 GNUstep/Local/Applications/GNUMail.app/GNUMail
 GNUstep/Local/Applications/GNUMail.app/Resources/AddressBook_32.tiff
 GNUstep/Local/Applications/GNUMail.app/Resources/AddressManager_32.tiff
@@ -176,6 +177,27 @@ GNUstep/Local/Library/ApplicationSupport/GNUMail/Compose.prefs/Compose
 GNUstep/Local/Library/ApplicationSupport/GNUMail/Compose.prefs/Resources/Info-gnustep.plist
 GNUstep/Local/Library/ApplicationSupport/GNUMail/Compose.prefs/Resources/MailIcon_create.tiff
 GNUstep/Local/Library/ApplicationSupport/GNUMail/Compose.prefs/stamp.make
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Emoticon.bundle/Emoticon
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Emoticon.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Emoticon.bundle/Resources/emoticon-face1.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Emoticon.bundle/Resources/emoticon-face10.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Emoticon.bundle/Resources/emoticon-face11.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Emoticon.bundle/Resources/emoticon-face13.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Emoticon.bundle/Resources/emoticon-face14.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Emoticon.bundle/Resources/emoticon-face15.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Emoticon.bundle/Resources/emoticon-face19.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Emoticon.bundle/Resources/emoticon-face2.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Emoticon.bundle/Resources/emoticon-face3.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Emoticon.bundle/Resources/emoticon-face4.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Emoticon.bundle/Resources/emoticon-face5.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Emoticon.bundle/Resources/emoticon-face6.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Emoticon.bundle/Resources/emoticon-face8.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Emoticon.bundle/Resources/emoticon-face9.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Emoticon.bundle/stamp.make
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Face.bundle/Face
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Face.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Face.bundle/Resources/stamp.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/Face.bundle/stamp.make
 GNUstep/Local/Library/ApplicationSupport/GNUMail/Filtering.prefs/Filtering
 GNUstep/Local/Library/ApplicationSupport/GNUMail/Filtering.prefs/Resources/Filtering.tiff
 GNUstep/Local/Library/ApplicationSupport/GNUMail/Filtering.prefs/Resources/Info-gnustep.plist
@@ -191,6 +213,21 @@ GNUstep/Local/Library/ApplicationSupport/GNUMail/MIME.prefs/MIME
 GNUstep/Local/Library/ApplicationSupport/GNUMail/MIME.prefs/Resources/Info-gnustep.plist
 GNUstep/Local/Library/ApplicationSupport/GNUMail/MIME.prefs/Resources/mime.tiff
 GNUstep/Local/Library/ApplicationSupport/GNUMail/MIME.prefs/stamp.make
+GNUstep/Local/Library/ApplicationSupport/GNUMail/PGP.bundle/PGP
+GNUstep/Local/Library/ApplicationSupport/GNUMail/PGP.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/ApplicationSupport/GNUMail/PGP.bundle/Resources/clear_20.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/PGP.bundle/Resources/clear_48.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/PGP.bundle/Resources/encrypted_20.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/PGP.bundle/Resources/encrypted_48.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/PGP.bundle/Resources/encrypted_80.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/PGP.bundle/Resources/pgp-mail.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/PGP.bundle/Resources/signed+encrypted_80.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/PGP.bundle/Resources/signed_20.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/PGP.bundle/Resources/signed_48.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/PGP.bundle/Resources/signed_80.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/PGP.bundle/Resources/unsigned_20.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/PGP.bundle/Resources/unsigned_48.tiff
+GNUstep/Local/Library/ApplicationSupport/GNUMail/PGP.bundle/stamp.make
 GNUstep/Local/Library/ApplicationSupport/GNUMail/Receiving.prefs/Receiving
 GNUstep/Local/Library/ApplicationSupport/GNUMail/Receiving.prefs/Resources/Info-gnustep.plist
 GNUstep/Local/Library/ApplicationSupport/GNUMail/Receiving.prefs/Resources/MailIcon_retrieve.tiff
@@ -222,4 +259,3 @@ GNUstep/Local/Library/Libraries/libGNUMail.so
 GNUstep/Local/Library/Libraries/libGNUMail.so.%%MAJORVERSION%%
 GNUstep/Local/Library/Libraries/libGNUMail.so.%%VERSION%%
 GNUstep/Local/Tools/GNUMail
-@dir GNUstep/Local/Library/Frameworks/GNUMail.framework/Versions/%%MAJORVERSION%%/Headers

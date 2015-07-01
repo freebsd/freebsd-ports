@@ -10,8 +10,9 @@
 .if !defined(_INCLUDE_USES_OBJC_MK)
 _INCLUDE_USES_OBJC_MK=	yes
 
-.if !empty(objc_ARGS)
-IGNORE=	USES=objc takes no arguments
+objc_ARGS?=
+.if !empty(objc_ARGS) && ! ${objc_ARGS:Mcompiler}
+IGNORE=	USES=objc only accepts no arguments or 'compiler'
 .endif
 
 _CCVERSION!=	${CC} --version
@@ -56,9 +57,11 @@ LDFLAGS+=	-B${LOCALBASE}/bin
 .endif
 .endif
 
+.if ! ${objc_ARGS:Mcompiler}
 LIB_DEPENDS+=	libobjc.so.4.6:${PORTSDIR}/lang/libobjc2
 OBJCFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+.endif
 CONFIGURE_ENV+=	OBJC="${CC}" OBJCFLAGS="${OBJCFLAGS}"
 MAKE_ENV+=	OBJC="${CC}" OBJCFLAGS="${OBJCFLAGS}"
 

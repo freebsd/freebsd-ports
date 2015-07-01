@@ -7,22 +7,30 @@ CATEGORIES=	misc gnustep
 MASTER_SITES=	GNUSTEP/usr-apps
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GNUstep example applications
 
-BROKEN=		Not converted to USES=gnustep
-
-USE_GNUSTEP=	yes
-USE_GNUSTEP_BACK=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_INSTALL=	yes
-USE_GL=		yes
+USES=	gnustep
+USE_GNUSTEP=	back build
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_GNUSTEP_MAKE_DIRS+=	. gui/Finger gui/GFractal gui/HostAddress gui/MyGL
-MAKE_ENV+=	GNUSTEP_INSTALLATION_DIR=${GNUSTEP_LOCAL_ROOT}
 
 post-patch:
 	${REINPLACE_CMD} -e 's|^//|#|' \
 		${WRKSRC}/gui/GFractal/GNUmakefile
+
+do-build:
+.for i in ${USE_GNUSTEP_MAKE_DIRS}
+	@(cd ${BUILD_WRKSRC}/${i}; . ${GNUSTEP_MAKEFILES}/GNUstep.sh; \
+	   ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
+.endfor
+
+# ---------------------------------------------------------------------------
+# source GNUstep.sh
+#
+do-install:
+.for i in ${USE_GNUSTEP_MAKE_DIRS}
+	@(cd ${INSTALL_WRKSRC}/${i}; . ${GNUSTEP_MAKEFILES}/GNUstep.sh; \
+	    ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
+.endfor
 
 .include <bsd.port.mk>
