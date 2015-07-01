@@ -411,6 +411,7 @@
     SUBDIR += elftoaout
     SUBDIR += elixir-conform
     SUBDIR += elixir-exrm
+    SUBDIR += elixir-plug
     SUBDIR += elixir-poison
     SUBDIR += embb
     SUBDIR += epl.el
