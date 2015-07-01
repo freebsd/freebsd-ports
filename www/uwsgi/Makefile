@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	uwsgi
-PORTVERSION=	2.0.10
+PORTVERSION=	2.0.11
 CATEGORIES=	www python
 MASTER_SITES=	http://projects.unbit.it/downloads/
 
