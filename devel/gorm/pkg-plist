@@ -352,7 +352,6 @@ GNUstep/System/Library/Headers/GormObjCHeaderParser/OCIVar.h
 GNUstep/System/Library/Headers/GormObjCHeaderParser/OCIVarDecl.h
 GNUstep/System/Library/Headers/GormObjCHeaderParser/OCMethod.h
 GNUstep/System/Library/Headers/GormObjCHeaderParser/ParserFunctions.h
-GNUstep/System/Library/Headers/GormPrefs/GormColorsPref.h
 GNUstep/System/Library/Headers/GormPrefs/GormGeneralPref.h
 GNUstep/System/Library/Headers/GormPrefs/GormGuidelinePref.h
 GNUstep/System/Library/Headers/GormPrefs/GormHeadersPref.h
@@ -386,12 +385,12 @@ GNUstep/System/Library/Libraries/libGorm.so
 GNUstep/System/Library/Libraries/libGorm.so.1
 GNUstep/System/Library/Libraries/libGorm.so.1.1.0
 GNUstep/System/Library/Libraries/libGormCore.so
+GNUstep/System/Library/Libraries/libGormCore.so.%%VERSION%%
 GNUstep/System/Library/Libraries/libGormCore.so.1
-GNUstep/System/Library/Libraries/libGormCore.so.1.2.20
 GNUstep/System/Library/Libraries/libGormObjCHeaderParser.so
 GNUstep/System/Library/Libraries/libGormObjCHeaderParser.so.1
 GNUstep/System/Library/Libraries/libGormObjCHeaderParser.so.1.1.0
 GNUstep/System/Library/Libraries/libGormPrefs.so
+GNUstep/System/Library/Libraries/libGormPrefs.so.%%VERSION%%
 GNUstep/System/Library/Libraries/libGormPrefs.so.1
-GNUstep/System/Library/Libraries/libGormPrefs.so.1.2.20
 GNUstep/System/Tools/Gorm
