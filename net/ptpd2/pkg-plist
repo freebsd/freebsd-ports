@@ -4,3 +4,7 @@ man/man5/ptpd2.conf.5.gz
 %%ETCDIR%%/client-e2e-8023.conf.sample
 %%ETCDIR%%/client-e2e-pcap.conf.sample
 %%ETCDIR%%/client-e2e-socket.conf.sample
+%%DATADIR%%/PTPBASE-MIB.txt
+%%DATADIR%%/leap-seconds.list.28dec2015
+%%DATADIR%%/ptpd2.conf.default-full
+%%DATADIR%%/ptpd2.conf.minimal
