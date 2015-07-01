@@ -1,3 +1,8 @@
-EDoc extension for generating Github-flavored Markdown.
+Jobs is a job scheduler for load regulation of Erlang applications.
 
-WWW: https://github.com/uwiger/edown
+It provides a queueing framework where each queue can be configured
+for throughput rate, credit pool and feedback compensation. Queues
+can be added and modified at runtime, and customizable "samplers"
+propagate load status across all nodes in the system.
+
+WWW: https://github.com/uwiger/jobs
