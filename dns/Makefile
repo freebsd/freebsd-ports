@@ -50,6 +50,7 @@
     SUBDIR += dnswall
     SUBDIR += doc
     SUBDIR += dualserver
+    SUBDIR += erlang-idna
     SUBDIR += ez-ipupdate
     SUBDIR += fastresolve
     SUBDIR += firedns
