@@ -7674,3 +7674,4 @@ devel/rubygem-mash|devel/rubgem-hashie|2015-06-30|Has expired: Deprecated by ups
 net/rubygem-bunny060|net/rubygem-bunny|2015-06-30|Has expired: Use net/rubygem-bunny instead
 security/rubygem-hmac|security/rubygem-ruby-hmac|2015-06-30|Has expired: Duplicate of security/rubygem-ruby-hmac
 www/ruby-amazon|www/ruby-aws|2015-06-30|Has expired: Rendered obsolete by upstream since Amazon shut down access to AWS API v3 (2008-03-31). Use www/ruby-aws instead
+net/ntp-rc||2015-06-30|Has gone GA
