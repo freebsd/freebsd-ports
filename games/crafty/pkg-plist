@@ -12,10 +12,9 @@ lib/crafty/crafty.hlp
 %%PORTDOCS%%%%DOCSDIR%%/crafty.doc.ps
 %%PORTDOCS%%%%DOCSDIR%%/bitmaps.tgz
 %%PORTDOCS%%%%DOCSDIR%%/sound.zip
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @mode 775
 @group nogroup
-@dirrm lib/crafty/cpf
-@dirrm lib/crafty
+@dir lib/crafty/cpf
+@dir lib/crafty
 @mode
 @group wheel
