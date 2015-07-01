@@ -8,7 +8,7 @@ CATEGORIES=	net-im
 MASTER_SITES=	http://download.skype.com/linux/
 PKGNAMESUFFIX=	4
 
-MAINTAINER=	xmj@FreeBSD.org
+MAINTAINER=	xmj@chaot.net
 COMMENT=	P2P VoIP software
 
 RUN_DEPENDS=	${LINUXBASE}/lib/skype_oss_wrapper/libpulse.so.0:${PORTSDIR}/audio/linux-skype_oss_wrapper
