@@ -1,6 +1,6 @@
---- sshprocess.h.orig	2011-11-25 21:08:10.000000000 +0900
-+++ sshprocess.h	2011-12-20 01:56:29.000000000 +0900
-@@ -17,6 +17,12 @@
+--- src/sshprocess.h.orig	2015-05-26 19:13:12 UTC
++++ src/sshprocess.h
+@@ -18,6 +18,12 @@
  #ifndef SSHPROCESS_H
  #define SSHPROCESS_H
  
@@ -12,4 +12,4 @@
 +#endif
  #include <libssh/libssh.h>
  #include <QObject>
- 
+ #include <QProcess>
