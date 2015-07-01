@@ -31,7 +31,7 @@ WITH_RCDIR?=	~/
 WITH_TBDIR?=	${PREFIX}/lib/crafty/TB
 WITH_PERSDIR?=	${PREFIX}/lib/crafty/cpf
 
-OPT=		-DCPUS=4 -DHASHSTATS -DTRACE -DBOOKDIR=\\\"${WITH_BOOKDIR}\\\" \
+OPT=		-DHASHSTATS -DTRACE -DBOOKDIR=\\\"${WITH_BOOKDIR}\\\" \
 		-DLOGDIR=\\\"${WITH_LOGDIR}\\\" \
 		-DRCDIR=\\\"${WITH_RCDIR}\\\" \
 		-DTBDIR=\\\"${WITH_TBDIR}\\\" \
@@ -42,22 +42,17 @@ OPTIONS_DEFAULT=DOCS
 OPTIONS_SUB=	yes
 BOOK_DESC=	Include (default) opening book
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386"
-# The i386 assembly is currently broken - disable for this version
-#OPT+=		-DINLINE32
-.elif ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64
-.endif
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
 DOCFILES=	crafty.doc.ascii crafty.doc.ps
 DISTFILES+=	${DOCFILES:S/$/:doc/}
 UTILS=		bitmaps.tgz sound.zip
 DISTFILES+=	${UTILS:S/$/:utils/}
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+OPT+=		-DCPUS=4
+.else
+OPT+=		-DCPUS=1 # disables x86 assembler
 .endif
 
 .if ${PORT_OPTIONS:MBOOK}
@@ -85,10 +80,8 @@ do-install:
 .endif
 	${INSTALL_DATA} ${WRKSRC}/books.bin ${WRKSRC}/crafty.hlp \
 		${STAGEDIR}${PREFIX}/lib/crafty
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${DOCFILES} ${UTILS} \
 		${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.post.mk>
