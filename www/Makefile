@@ -167,6 +167,7 @@
     SUBDIR += ephemera
     SUBDIR += epiphany
     SUBDIR += erlang-cowboy
+    SUBDIR += erlang-hackney
     SUBDIR += erlang-mochiweb
     SUBDIR += erlang-mochiweb-basho
     SUBDIR += erlang-webmachine
