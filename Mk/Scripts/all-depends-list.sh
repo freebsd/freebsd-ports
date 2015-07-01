@@ -26,7 +26,7 @@ check_dep() {
 			*\ ${d}\ *) continue ;; # Already checked
 		esac
 		checked="${checked} ${d}"
-		if [ ! -d ]; then
+		if [ ! -d ${d} ]; then
 			echo "${dp_PKGNAME}: \"${d}\" non-existent -- dependency list incomplete" >&2
 			continue
 		fi
