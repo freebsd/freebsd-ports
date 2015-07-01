@@ -803,6 +803,7 @@
     SUBDIR += pstoedit
     SUBDIR += pstoepsi
     SUBDIR += pure-gl
+    SUBDIR += py-pyganim
     SUBDIR += py-PyX
     SUBDIR += py-PyX12
     SUBDIR += py-aafigure

@@ -1,0 +1,10 @@
+Pyganim (pronounced like "pig" and "animation") is a Python module for Pygame
+that makes it easy to add sprite animations to your Pygame game programs.
+Pyganim works with Python 2 and Python 3.
+
+The mascot of Pyganim is a red vitruvian pig.
+
+Pyganim was written by Al Sweigart and released under a "Simplified BSD"
+license. Contact Al with any questions/bug reports: al@inventwithpython.com
+
+WWW: http://inventwithpython.com/pyganim
