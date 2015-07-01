@@ -57,6 +57,36 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9c7177ff-1fe1-11e5-9a01-bcaec565249c">
+    <topic>libxml2 -- Enforce the reader to run in constant memory</topic>
+    <affects>
+      <package>
+	<name>libxml2</name>
+	<range><lt>2.9.2_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Daniel Veilland reports:</p>
+	<blockquote cite="https://git.gnome.org/browse/libxml2/commit/?id=213f1fe0d76d30eaed6e5853057defc43e6df2c9">
+	  <p>Enforce the reader to run in constant memory. One of the
+	    operation on the reader could resolve entities leading to
+	    the classic expansion issue. Make sure the buffer used for
+	    xmlreader operation is bounded. Introduce a new allocation
+	    type for the buffers for this effect.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1819</cvename>
+      <url>https://git.gnome.org/browse/libxml2/commit/?id=213f1fe0d76d30eaed6e5853057defc43e6df2c9</url>
+    </references>
+    <dates>
+      <discovery>2015-04-14</discovery>
+      <entry>2015-07-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2a8b7d21-1ecc-11e5-a4a5-002590263bf5">
     <topic>wesnoth -- disclosure of .pbl files with lowercase, uppercase, and mixed-case extension</topic>
     <affects>
