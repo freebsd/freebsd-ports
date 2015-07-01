@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	exrm
-PORTVERSION=	0.17.2
-PORTREVISION=	1
+PORTVERSION=	0.17.3
 CATEGORIES=	devel
 PKGNAMEPREFIX=	elixir-
 
@@ -12,6 +11,7 @@ COMMENT=	Automatically generate releases for Elixir projects
 LICENSE=	MIT
 
 BUILD_DEPENDS=	elixir:${PORTSDIR}/lang/elixir \
+		relx>=3.1.0:${PORTSDIR}/devel/relx \
 		elixir-conform>=0:${PORTSDIR}/devel/elixir-conform
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
@@ -25,7 +25,6 @@ do-build:
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/elixir/lib/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/elixir/lib/${PORTNAME}/ebin
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/elixir/lib/${PORTNAME}/lib
