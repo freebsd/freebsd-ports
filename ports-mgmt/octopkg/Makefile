@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	aarnt
 
-USE_QT5=	core gui network svg linguist \
+USE_QT5=	core concurrent gui network linguist svg \
 		buildtools x11extras
 USES=		qmake tar:xz
 PLIST_FILES=	bin/octopkg
