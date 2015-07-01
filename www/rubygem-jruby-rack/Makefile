@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jruby-rack
-PORTVERSION=	1.1.18
+PORTVERSION=	1.1.19
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -13,6 +13,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	jruby:${PORTSDIR}/lang/jruby
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
