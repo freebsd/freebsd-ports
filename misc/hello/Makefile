@@ -2,35 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	hello
-PORTVERSION=	2.9
+PORTVERSION=	2.10
 CATEGORIES=	misc
 MASTER_SITES=	GNU
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for saying hello to the world and reading email
 
-USES=		charsetfix perl5
+LICENSE=	GPLv3 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		charsetfix gmake perl5
 USE_PERL5=	build
-GNU_CONFIGURE=	YES
+GNU_CONFIGURE=	yes
 
 INFO=		hello
 
-OPTIONS_DEFINE=	NLS
+OPTIONS_DEFINE=		NLS
+OPTIONS_SUB=		yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-pre-install:
-	${CHMOD} a+x ${WRKSRC}/build-aux/install-sh
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
+NLS_CPPFLAGS=		-I${LOCALBASE}/include
+NLS_LDFLAGS=		-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
