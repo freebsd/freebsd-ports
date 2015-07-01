@@ -99,7 +99,7 @@ do-configure:
 		${FALSE}; \
 	fi
 	# This step helps non-i386 systems and is harmless on i386
-	-${LN} -s ix86_FreeBSD.mak ${WRKDIR}/$d/config/systems/${ARCH}_unknown.mak
+	-${LN} -s ix86_FreeBSD.mak ${WRKDIR}/$d/config/systems/${ARCH:S/armv6/arm/}_unknown.mak
 .endfor
 	${REINPLACE_CMD} \
 	    -e '/^CFLAGS *=/s|$$| ${CFLAGS}|' \
@@ -111,13 +111,11 @@ do-configure:
 		${LN} -s gcc_defaults.mak ${WRKDIR}/speech_tools/config/compilers/${CC}.mak
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}/lib/voices/english/
-	@${MKDIR} ${STAGEDIR}${DATADIR}/lib/voices/spanish/
-	@${MKDIR} ${STAGEDIR}${DATADIR}/lib/dicts
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${CHMOD} -R u+w,a+r,og-w ${FESTIVAL}/lib
 	${FIND} ${FESTIVAL}/lib -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	${FIND} ${FESTIVAL} -type f -name *.orig -delete
-	cd ${FESTIVAL} && ${CP} -pPR lib examples ${STAGEDIR}${DATADIR}
+	${CP} -pPR ${FESTIVAL}/lib ${FESTIVAL}/examples ${STAGEDIR}${DATADIR}
 	${RM} -rf ${STAGEDIR}${DATADIR}/lib/etc/Makefile ${STAGEDIR}${DATADIR}/lib/etc/*FreeBSD* \
 	    ${STAGEDIR}${DATADIR}/lib/etc/*unknown
 	${INSTALL_PROGRAM} ${FESTIVAL}/lib/etc/*/audsp ${STAGEDIR}${PREFIX}/libexec
