@@ -16,8 +16,6 @@ BUILD_DEPENDS=	elixir:${PORTSDIR}/lang/elixir \
 		erlang-neotoma>=0:${PORTSDIR}/devel/erlang-neotoma
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PLIST_SUB=	VERSION="${PORTVERSION}"
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	bitwalker
 
