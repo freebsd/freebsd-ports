@@ -8,7 +8,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://swfdec.freedesktop.org/download/swfdec-mozilla/0.8/
 DISTNAME=	swfdec-mozilla-${PORTVERSION}
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flash rendering plugin
 
 LIB_DEPENDS=	libswfdec-0.8.so:${PORTSDIR}/graphics/swfdec

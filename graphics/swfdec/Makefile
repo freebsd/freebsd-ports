@@ -8,7 +8,7 @@ PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://swfdec.freedesktop.org/download/swfdec/0.8/
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flash Rendering Library
 
 LIB_DEPENDS=	liboil-0.3.so:${PORTSDIR}/devel/liboil \
