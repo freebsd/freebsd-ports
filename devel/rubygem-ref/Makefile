@@ -10,6 +10,8 @@ COMMENT=	Library with refs across runtimes (MRI, REE, YARV, ...)
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

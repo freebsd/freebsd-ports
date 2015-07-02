@@ -12,6 +12,8 @@ COMMENT=	Maps are ordered hashes with many features
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

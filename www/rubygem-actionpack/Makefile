@@ -21,6 +21,8 @@ RUN_DEPENDS=	rubygem-activemodel>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-a
 		rubygem-rack-test>=0.6.1:${PORTSDIR}/www/rubygem-rack-test \
 		rubygem-sprockets22>=2.2.1:${PORTSDIR}/devel/rubygem-sprockets22
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

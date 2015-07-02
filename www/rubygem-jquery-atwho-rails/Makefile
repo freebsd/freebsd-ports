@@ -10,6 +10,8 @@ COMMENT=	jQuery plugin that implement GitHub-like mentions
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

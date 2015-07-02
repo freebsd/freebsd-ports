@@ -13,6 +13,8 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-hitimes>=1.2.1:${PORTSDIR}/devel/rubygem-hitimes
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

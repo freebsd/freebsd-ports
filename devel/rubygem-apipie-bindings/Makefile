@@ -17,6 +17,8 @@ RUN_DEPENDS=	rubygem-awesome_print>=1.1.0:${PORTSDIR}/devel/rubygem-awesome_prin
 		rubygem-oauth>=0.4.7:${PORTSDIR}/net/rubygem-oauth \
 		rubygem-rest-client>=1.6.7:${PORTSDIR}/www/rubygem-rest-client
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

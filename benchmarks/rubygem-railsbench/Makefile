@@ -13,6 +13,8 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	rubygem-hoe>=2.4.0:${PORTSDIR}/devel/rubygem-hoe
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

@@ -16,6 +16,8 @@ RUN_DEPENDS=	rubygem-eventmachine>=0.12.8:${PORTSDIR}/devel/rubygem-eventmachine
 		rubygem-http_parser.rb>=0.5.1:${PORTSDIR}/net/rubygem-http_parser.rb \
 		rubygem-simple_oauth>=0.1.4:${PORTSDIR}/net/rubygem-simple_oauth
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

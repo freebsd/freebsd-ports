@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	hhyou@cs.nctu.edu.tw
 COMMENT=	Ruby compatible Zip library
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

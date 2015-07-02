@@ -12,7 +12,9 @@ COMMENT=	Rainbows and unicorns
 RUN_DEPENDS=	rubygem-trollop>=1.9:${PORTSDIR}/devel/rubygem-trollop \
 		rubygem-paint>=0.8.5:${PORTSDIR}/devel/rubygem-paint
 
-USE_RUBY=	yes
+NO_ARCH=	yes
+
+nUSE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 

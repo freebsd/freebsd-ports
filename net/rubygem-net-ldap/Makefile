@@ -12,6 +12,8 @@ COMMENT=	Pure Ruby LDAP support library with most client features
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License.rdoc
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

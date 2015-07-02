@@ -14,6 +14,8 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	foreman-proxy>=1.8.0:${PORTSDIR}/net/foreman-proxy \
 		rubygem-chef-api>0:${PORTSDIR}/sysutils/rubygem-chef-api
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

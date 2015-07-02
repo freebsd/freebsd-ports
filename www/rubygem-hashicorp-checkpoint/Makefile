@@ -11,6 +11,8 @@ COMMENT=	Internal HashiCorp service to check version information
 
 LICENSE=	MPL
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

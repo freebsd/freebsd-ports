@@ -12,6 +12,8 @@ COMMENT=	Version 2 of this library intended to aid working with deprecated code
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

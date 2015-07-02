@@ -14,6 +14,8 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-actionpack>=${PORTVERSION}:${PORTSDIR}/www/rubygem-actionpack \
 		rubygem-mail25>=2.5.4:${PORTSDIR}/mail/rubygem-mail25
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

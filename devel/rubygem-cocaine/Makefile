@@ -13,6 +13,8 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-climate_control>=0.0.3:${PORTSDIR}/devel/rubygem-climate_control
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

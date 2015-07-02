@@ -13,6 +13,8 @@ LICENSE=	MIT
 
 DEPRECATED=	Deprecated by upstream in latest version (0.3.0)
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=yes

@@ -17,6 +17,8 @@ RUN_DEPENDS=	rubygem-bcrypt>=3.0:${PORTSDIR}/security/rubygem-bcrypt \
 		rubygem-thread_safe>=0.1:${PORTSDIR}/devel/rubygem-thread_safe \
 		rubygem-warden>=1.2.3:${PORTSDIR}/devel/rubygem-warden
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

@@ -11,6 +11,8 @@ COMMENT=	Allows for parsing and returning cookies in Ruby HTTP client code
 
 LICENSE=	BSD2CLAUSE
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

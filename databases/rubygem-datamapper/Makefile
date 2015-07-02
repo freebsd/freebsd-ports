@@ -22,6 +22,8 @@ RUN_DEPENDS=	rubygem-dm-aggregates>=${PORTVERSION}:${PORTSDIR}/databases/rubygem
 		rubygem-dm-types>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-dm-types \
 		rubygem-dm-validations>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-dm-validations
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

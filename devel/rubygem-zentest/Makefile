@@ -14,6 +14,8 @@ COMMENT=	Ruby Unit Testing Utility
 LICENSE=	MIT
 
 GEM_NAME=	${DISTNAME}
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

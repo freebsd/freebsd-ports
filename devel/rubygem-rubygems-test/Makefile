@@ -14,6 +14,8 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-rake>=0.8.7:${PORTSDIR}/devel/rubygem-rake
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

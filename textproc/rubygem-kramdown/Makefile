@@ -11,6 +11,8 @@ COMMENT=	Yet-another-markdown-parser but fast, pure Ruby
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

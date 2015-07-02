@@ -18,6 +18,8 @@ RUN_DEPENDS=	rubygem-builder32>=0:${PORTSDIR}/devel/rubygem-builder32 \
 		rubygem-nesty>=0:${PORTSDIR}/devel/rubygem-nesty \
 		rubygem-sinatra>=1.2.7:${PORTSDIR}/www/rubygem-sinatra
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

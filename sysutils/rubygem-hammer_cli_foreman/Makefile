@@ -16,6 +16,8 @@ RUN_DEPENDS=	rubygem-apipie-bindings>=0.0.11:${PORTSDIR}/devel/rubygem-apipie-bi
 		rubygem-hammer_cli>=0.2.0:${PORTSDIR}/sysutils/rubygem-hammer_cli \
 		rubygem-rest-client>=1.6.7:${PORTSDIR}/www/rubygem-rest-client
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

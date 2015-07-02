@@ -18,6 +18,8 @@ RUN_DEPENDS=	rubygem-devise>=1.3:${PORTSDIR}/devel/rubygem-devise \
 		rubygem-dm-serializer>=1.0.2:${PORTSDIR}/databases/rubygem-dm-serializer \
 		rubygem-dm-timestamps>=1.0.2:${PORTSDIR}/databases/rubygem-dm-timestamps
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

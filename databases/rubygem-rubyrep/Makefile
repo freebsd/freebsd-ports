@@ -17,6 +17,8 @@ RUN_DEPENDS=	flog>=0:${PORTSDIR}/sysutils/flog \
 		rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport \
 		rubygem-activerecord>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-activerecord
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

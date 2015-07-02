@@ -19,6 +19,8 @@ RUN_DEPENDS=	rubygem-backports>=2.0:${PORTSDIR}/devel/rubygem-backports \
 		rubygem-sinatra>=1.4:${PORTSDIR}/www/rubygem-sinatra \
 		rubygem-tilt1>=1.3:${PORTSDIR}/devel/rubygem-tilt1
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

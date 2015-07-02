@@ -11,6 +11,8 @@ COMMENT=	CSS left-to-right to right-to-left converter
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

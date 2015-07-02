@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Data backend for Hiera that returns whole files
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

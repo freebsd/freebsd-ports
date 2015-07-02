@@ -40,6 +40,8 @@ RUN_DEPENDS=	rubygem-actionmailer>=${PORTVERSION}:${PORTSDIR}/mail/rubygem-actio
 # XXX: and thus rdoc
 NOPORTDOCS=	yes
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBY_RDOC=	yes
 USE_RUBYGEMS=	yes

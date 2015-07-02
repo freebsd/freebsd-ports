@@ -18,6 +18,8 @@ RUN_DEPENDS=	rubygem-highline>=1.6.1:${PORTSDIR}/devel/rubygem-highline \
 		rubygem-versionomy>=0.4.4:${PORTSDIR}/devel/rubygem-versionomy \
 		${LOCALBASE}/bin/vim:${PORTSDIR}/editors/vim-lite
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

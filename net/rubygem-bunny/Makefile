@@ -13,6 +13,8 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-amq-protocol>=1.9.2:${PORTSDIR}/net/rubygem-amq-protocol
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

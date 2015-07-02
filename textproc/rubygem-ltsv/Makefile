@@ -8,6 +8,8 @@ MASTER_SITES=	RG
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Parser / Dumper for LTSV
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

@@ -14,6 +14,8 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-coffee-script-source>=0:${PORTSDIR}/devel/rubygem-coffee-script-source \
 		rubygem-execjs>=0:${PORTSDIR}/devel/rubygem-execjs
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

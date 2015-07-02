@@ -10,6 +10,8 @@ COMMENT=	High-level IO library for command-line interfaces
 
 LICENSE=	GPLv2
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

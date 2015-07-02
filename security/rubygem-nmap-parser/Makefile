@@ -13,6 +13,8 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

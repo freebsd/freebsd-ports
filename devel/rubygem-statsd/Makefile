@@ -13,6 +13,8 @@ RUN_DEPENDS=	rubygem-erubis>=2.6.6:${PORTSDIR}/www/rubygem-erubis \
 		rubygem-eventmachine>=0.12.10:${PORTSDIR}/devel/rubygem-eventmachine \
 		rubygem-mongo>=1.2.4:${PORTSDIR}/devel/rubygem-mongo
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

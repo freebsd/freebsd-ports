@@ -13,6 +13,8 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-mail>=2.0:${PORTSDIR}/mail/rubygem-mail
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

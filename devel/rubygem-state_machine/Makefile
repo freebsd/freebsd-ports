@@ -11,6 +11,8 @@ COMMENT=	Support for creating state machines for attributes on any Ruby class
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

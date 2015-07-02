@@ -12,6 +12,8 @@ COMMENT=	Core of Rubygem-prawn
 LICENSE=	GPLv2 RUBY
 LICENSE_COMB=	dual
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

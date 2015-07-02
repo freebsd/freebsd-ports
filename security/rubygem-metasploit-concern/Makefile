@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-activesupport>=3.0.0:${PORTSDIR}/devel/rubygem-activesupport \
 		rubygem-railties>=3.0.0:${PORTSDIR}/www/rubygem-railties
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

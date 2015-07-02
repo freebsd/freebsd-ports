@@ -13,6 +13,8 @@ LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	rubygem-unf_ext>=0:${PORTSDIR}/textproc/rubygem-unf_ext
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

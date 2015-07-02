@@ -12,6 +12,8 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-thor>=0.14:${PORTSDIR}/devel/rubygem-thor
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

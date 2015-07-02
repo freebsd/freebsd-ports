@@ -11,6 +11,8 @@ COMMENT=	CSS parser based on the CSS Syntax Level 3 draft
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

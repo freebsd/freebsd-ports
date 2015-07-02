@@ -11,6 +11,8 @@ COMMENT=	i18n tool to translate your Ruby application
 
 LICENSE=	LGPL3
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

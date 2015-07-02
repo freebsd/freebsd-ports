@@ -15,6 +15,8 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-builder32>=0:${PORTSDIR}/devel/rubygem-builder32 \
 		rubygem-public_suffix>=0:${PORTSDIR}/dns/rubygem-public_suffix
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

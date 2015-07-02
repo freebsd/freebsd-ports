@@ -14,6 +14,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-polyglot>=0.3:${PORTSDIR}/devel/rubygem-polyglot
 
 NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

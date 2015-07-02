@@ -13,6 +13,8 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-colored>=1.2:${PORTSDIR}/textproc/rubygem-colored
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
