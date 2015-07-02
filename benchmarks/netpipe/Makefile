@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	NetPIPE
-PORTVERSION=	3.7.1
+PORTVERSION=	3.7.2
 CATEGORIES=	benchmarks net
-MASTER_SITES=	http://www.scl.ameslab.gov/Projects/Netpipe/code/
+MASTER_SITES=	http://bitspjoule.org/netpipe/code/
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Self-scaling network benchmark
@@ -12,7 +12,6 @@ COMMENT=	Self-scaling network benchmark
 # The default port builds and installs only the TCP version of
 # netpipe(1).  The sources support many other variants.
 
-BROKEN=		Unfetchable
 PORTDOCS=	README netpipe_paper.ps
 PLIST_FILES=	bin/NPtcp bin/NPtcp6 man/man1/netpipe.1.gz
 
