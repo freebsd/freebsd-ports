@@ -73,7 +73,7 @@ do-install-elixir:
 		${MKDIR} ${STAGEDIR}${ELIXIR_APP_ROOT}/priv; \
 		cd ${WRKSRC}/priv && ${COPYTREE_SHARE} \* ${STAGEDIR}${ELIXIR_APP_ROOT}/priv; \
 	fi
-.if MIX_DOC_FILES != "" || MIX_DOC_DIRS != ""
+.if ${MIX_DOC_FILES} != "" || ${MIX_DOC_DIRS} != ""
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .endif
 .for file in ${MIX_DOC_FILES}
