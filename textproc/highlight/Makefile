@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	highlight
-PORTVERSION=	3.18
+PORTVERSION=	3.22
 PORTEPOCH=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
@@ -12,7 +12,7 @@ COMMENT=	Customizable syntax highlighter
 
 BUILD_DEPENDS=	boost-libs>0:${PORTSDIR}/devel/boost-libs
 
-USES=		gmake lua:52 pkgconfig tar:bzip2
+USES=		dos2unix gmake lua:52 pkgconfig tar:bzip2
 MAKEFILE=	makefile
 MAKE_ARGS=	CXX="${CXX}" \
 		CFLAGS="${CXXFLAGS} ${CPPFLAGS} -DHAVE_DECL_GETOPT" \
