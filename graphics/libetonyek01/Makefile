@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libetonyek
-PORTVERSION=	0.1.1
-PORTREVISION=	1
+PORTVERSION=	0.1.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://dev-www.libreoffice.org/src/${PORTNAME}/
 PKGNAMESUFFIX=	01
