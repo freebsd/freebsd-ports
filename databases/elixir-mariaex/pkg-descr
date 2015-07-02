@@ -1,0 +1,3 @@
+A database driver for MariaDB and MySQL written in pure Elixir.
+
+WWW: https://github.com/xerions/mariaex
