@@ -18,5 +18,5 @@ GH_ACCOUNT=	bitwalker
 MIX_BUILD_DEPS=	devel/erlang-neotoma
 MIX_RUN_DEPS:=	${MIX_BUILD_DEPS}
 
-.include "${PORTSDIR}/lang/elixir/bsd.elixir.mk"
+.include "${.CURDIR}/../../lang/elixir/bsd.elixir.mk"
 .include <bsd.port.mk>

@@ -17,5 +17,5 @@ GH_ACCOUNT=	phoenixframework
 MIX_BUILD_DEPS=	devel/elixir-plug
 MIX_RUN_DEPS:=	${MIX_BUILD_DEPS}
 
-.include "${PORTSDIR}/lang/elixir/bsd.elixir.mk"
+.include "${.CURDIR}/../../lang/elixir/bsd.elixir.mk"
 .include <bsd.port.mk>

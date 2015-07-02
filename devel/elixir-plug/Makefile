@@ -14,5 +14,5 @@ LICENSE=	APACHE20
 USE_GITHUB=	yes
 GH_ACCOUNT=	elixir-lang
 
-.include "${PORTSDIR}/lang/elixir/bsd.elixir.mk"
+.include "${.CURDIR}/../../lang/elixir/bsd.elixir.mk"
 .include <bsd.port.mk>
