@@ -67,7 +67,7 @@ do-install-elixir:
 	@${MKDIR} ${STAGEDIR}${ELIXIR_APP_ROOT}/lib
 	cd ${WRKSRC}/lib && ${COPYTREE_SHARE} \* ${STAGEDIR}${ELIXIR_APP_ROOT}/lib
 	@${MKDIR} ${STAGEDIR}${ELIXIR_APP_ROOT}/ebin
-	${INSTALL_DATA} ${WRKSRC}/_build/${MIX_BUILD_NAME}/lib/${PORTNAME}/ebin/* \
+	${INSTALL_DATA} ${WRKSRC}/_build/${MIX_BUILD_NAME}/lib/${ELIXIR_APP_NAME}/ebin/* \
 		${STAGEDIR}${ELIXIR_APP_ROOT}/ebin
 	if [ -d ${WRKSRC}/priv ]; then \
 		${MKDIR} ${STAGEDIR}${ELIXIR_APP_ROOT}/priv; \
