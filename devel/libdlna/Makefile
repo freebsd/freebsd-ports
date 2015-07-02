@@ -25,6 +25,8 @@ CONFIGURE_ARGS+=	--prefix="${PREFIX}" --disable-optimize \
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+BROKEN=		Does not build with ffmpeg-2.7
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's#\(PKGCONFIG_DIR = \).*#\1${STAGEDIR}${PREFIX}/libdata/pkgconfig#' \
