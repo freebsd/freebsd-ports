@@ -13,5 +13,5 @@ LICENSE=	ISCL
 USE_GITHUB=	yes
 GH_ACCOUNT=	devinus
 
-.include "${PORTSDIR}/lang/elixir/bsd.elixir.mk"
+.include "${.CURDIR}/../../lang/elixir/bsd.elixir.mk"
 .include <bsd.port.mk>

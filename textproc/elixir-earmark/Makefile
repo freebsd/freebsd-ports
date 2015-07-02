@@ -15,5 +15,5 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pragdave
 GH_TAGNAME=	07914f5
 
-.include "${PORTSDIR}/lang/elixir/bsd.elixir.mk"
+.include "${.CURDIR}/../../lang/elixir/bsd.elixir.mk"
 .include <bsd.port.mk>
