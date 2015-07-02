@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	liborcus
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.2
 CATEGORIES=	devel misc
 MASTER_SITES=	http://kohei.us/files/orcus/src/
 
