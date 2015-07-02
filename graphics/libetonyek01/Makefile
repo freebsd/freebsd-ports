@@ -12,8 +12,10 @@ COMMENT=	Library to interpret and import Apple Keynote presentations
 LICENSE=	LGPL21 MPL
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
-		librevenge-0.0.so:${PORTSDIR}/textproc/librevenge \
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/config.hpp:${PORTSDIR}/devel/boost-libs \
+		${LOCALBASE}/include/mdds/flat_segment_tree.hpp:${PORTSDIR}/devel/mdds \
+		${LOCALBASE}/include/glm/glm.hpp:${PORTSDIR}/math/glm
+LIB_DEPENDS=	librevenge-0.0.so:${PORTSDIR}/textproc/librevenge \
 		libxml2.so:${PORTSDIR}/textproc/libxml2
 
 OPTIONS_DEFINE=	TEST
