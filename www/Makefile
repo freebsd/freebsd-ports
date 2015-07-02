@@ -161,6 +161,7 @@
     SUBDIR += elgg
     SUBDIR += elinks
     SUBDIR += eliom
+    SUBDIR += elixir-maru
     SUBDIR += elixir-phoenix
     SUBDIR += emacs-w3m
     SUBDIR += encode-explorer
