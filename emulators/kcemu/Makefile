@@ -38,4 +38,6 @@ DESKTOP_ENTRIES="KCemu" "${COMMENT}" \
 		"${LOCALBASE}/share/KCemu/icons/kcemu-icon.png" "kcemu" \
 		"System;Emulator;" "true"
 
+BROKEN=		Does not build with ffmpeg-2.7
+
 .include <bsd.port.mk>

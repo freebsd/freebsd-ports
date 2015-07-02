@@ -1,11 +1,11 @@
---- libavformat/udp.c.orig	2009-05-15 17:24:45.000000000 +0200
-+++ libavformat/udp.c	2009-05-15 17:27:17.000000000 +0200
-@@ -45,6 +45,8 @@
- #define IN6_IS_ADDR_MULTICAST(a) (((uint8_t *) (a))[0] == 0xff)
- #endif
+--- libavformat/udp.c.orig	2015-06-19 20:44:53 UTC
++++ libavformat/udp.c
+@@ -71,6 +71,8 @@
+ #define UDP_MAX_PKT_SIZE 65536
+ #define UDP_HEADER_SIZE 8
  
 +#define IPPROTO_IPV6 41
 +
- typedef struct {
+ typedef struct UDPContext {
+     const AVClass *class;
      int udp_fd;
-     int ttl;
