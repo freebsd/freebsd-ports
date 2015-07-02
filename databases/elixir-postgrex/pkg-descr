@@ -1,0 +1,3 @@
+A database driver for PostgreSQL written in pure Elixir.
+
+WWW: https://github.com/ericmj/postgrex
