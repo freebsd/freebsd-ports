@@ -26,7 +26,7 @@ OPTIONS_DEFAULT=	GTK2
 
 GTK2_USE=		GNOME=gtk20,libwnck
 GTK2_CONFIGURE_ON=	--enable-wnck --disable-wnck3
-GTK3_USE=		GNOME=gtk30,libwnck3
+GTK3_USE=		GNOME=gtk20,gtk30,libwnck3
 GTK3_CONFIGURE_ON=	--enable-gtk3 --enable-wnck3 --disable-wnck
 
 CONFIGURE_ARGS=	--disable-gksu
