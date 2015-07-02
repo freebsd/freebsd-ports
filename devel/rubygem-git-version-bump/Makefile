@@ -11,6 +11,7 @@ COMMENT=	Manage your app version entirely via git tags
 
 LICENSE=	GPLv3
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
