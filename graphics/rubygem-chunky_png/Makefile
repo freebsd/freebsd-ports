@@ -12,6 +12,8 @@ COMMENT=	Ruby library to read and write PNG images
 LICENSE=	MIT
 
 USE_RAKE=	yes
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

@@ -13,6 +13,8 @@ COMMENT=	Redis store for OpenID
 RUN_DEPENDS=	rubygem-redis>=0:${PORTSDIR}/databases/rubygem-redis \
 		rubygem-ruby-openid>=0:${PORTSDIR}/net/rubygem-ruby-openid
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

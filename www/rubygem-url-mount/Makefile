@@ -11,6 +11,8 @@ COMMENT=	Glue to allow mounted rack applications to know where they're mounted
 
 RUN_DEPENDS=	rubygem-rack>=0:${PORTSDIR}/www/rubygem-rack
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

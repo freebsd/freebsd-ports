@@ -17,6 +17,8 @@ RUN_DEPENDS=	rubygem-actionpack>=3.1:${PORTSDIR}/www/rubygem-actionpack \
 
 PORTSCOUT=	limit:0.4
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

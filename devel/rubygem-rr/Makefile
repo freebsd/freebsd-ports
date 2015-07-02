@@ -10,6 +10,8 @@ COMMENT=	Double framework with lots of double techniques and terse syntax
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

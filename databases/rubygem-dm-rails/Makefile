@@ -17,6 +17,8 @@ RUN_DEPENDS=	rubygem-actionpack>=3.0:${PORTSDIR}/www/rubygem-actionpack \
 		rubygem-dm-core>=1.2.0:${PORTSDIR}/databases/rubygem-dm-core \
 		rubygem-railties>=3.0:${PORTSDIR}/www/rubygem-railties
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

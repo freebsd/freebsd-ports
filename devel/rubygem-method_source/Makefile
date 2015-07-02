@@ -11,6 +11,8 @@ COMMENT=	Tool to retrieve the sourcecode for a method
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

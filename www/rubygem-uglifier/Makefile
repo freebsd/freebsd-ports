@@ -14,6 +14,8 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-execjs>=0.3.0:${PORTSDIR}/devel/rubygem-execjs \
 		rubygem-json>=1.8.0:${PORTSDIR}/devel/rubygem-json
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

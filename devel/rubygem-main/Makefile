@@ -17,6 +17,8 @@ RUN_DEPENDS=	rubygem-arrayfields>=4.7.4:${PORTSDIR}/devel/rubygem-arrayfields \
 		rubygem-fattr>=2.2.0:${PORTSDIR}/devel/rubygem-fattr \
 		rubygem-map>=5.1.0:${PORTSDIR}/devel/rubygem-map
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

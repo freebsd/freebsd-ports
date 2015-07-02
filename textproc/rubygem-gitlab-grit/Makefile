@@ -16,6 +16,8 @@ RUN_DEPENDS=	rubygem-charlock_holmes>=0.6:${PORTSDIR}/textproc/rubygem-charlock_
 		rubygem-mime-types1>=1.15:${PORTSDIR}/misc/rubygem-mime-types1 \
 		rubygem-posix-spawn>=0.3:${PORTSDIR}/devel/rubygem-posix-spawn
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

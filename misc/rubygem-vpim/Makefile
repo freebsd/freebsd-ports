@@ -12,6 +12,8 @@ COMMENT=	Pure Ruby library for decoding and encoding vCard and iCalendar data
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

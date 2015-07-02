@@ -15,6 +15,8 @@ LICENSE=	MIT
 
 PORTSCOUT=	limit:^1\.7\.[0-9]*
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

@@ -11,6 +11,8 @@ COMMENT=	Ruby 1.9 backports for 1.8
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

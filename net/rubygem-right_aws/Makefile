@@ -14,6 +14,8 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-right_http_connection>=1.2.5:${PORTSDIR}/net/rubygem-right_http_connection
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

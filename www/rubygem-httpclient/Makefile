@@ -11,6 +11,8 @@ COMMENT=	Yet another HTTP client implementation by NaHi
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

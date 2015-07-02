@@ -14,6 +14,8 @@ LICENSE_NAME_NEWRELIC=	New Relic License
 LICENSE_FILE_NEWRELIC=	${WRKSRC}/LICENSE
 LICENSE_PERMS_NEWRELIC=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

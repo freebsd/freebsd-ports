@@ -16,6 +16,8 @@ RUN_DEPENDS=	rubygem-activemodel>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-a
 		rubygem-arel3>=3.0.3:${PORTSDIR}/databases/rubygem-arel3 \
 		rubygem-tzinfo03>=0.3.29:${PORTSDIR}/devel/rubygem-tzinfo03
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

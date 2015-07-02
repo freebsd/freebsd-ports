@@ -14,6 +14,8 @@ LICENSE=	LGPL21
 
 RUN_DEPENDS=	rubygem-ruby-sdl-ffi>=0.1.0:${PORTSDIR}/devel/rubygem-ruby-sdl-ffi
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

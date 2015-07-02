@@ -11,6 +11,8 @@ COMMENT=	Assist Ruby developers in working with Google Data APIs
 
 LICENSE=	APACHE20
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

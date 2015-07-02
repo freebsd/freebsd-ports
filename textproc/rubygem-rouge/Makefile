@@ -11,6 +11,8 @@ COMMENT=	Simple, easy-to-extend drop-in replacement for pygments
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

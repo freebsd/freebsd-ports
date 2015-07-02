@@ -18,6 +18,8 @@ RUN_DEPENDS=	rubygem-bones>=2.5.0:${PORTSDIR}/devel/rubygem-bones \
 		rubygem-loquacious>=1.3.0:${PORTSDIR}/devel/rubygem-loquacious \
 		rubygem-rspec>=1.2.2:${PORTSDIR}/devel/rubygem-rspec
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 USE_RAKE=	yes

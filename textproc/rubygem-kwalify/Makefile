@@ -11,6 +11,8 @@ COMMENT=	Parser, schema validator, and data binding tool for YAML and JSON
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

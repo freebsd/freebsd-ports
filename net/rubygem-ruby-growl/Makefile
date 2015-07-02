@@ -14,6 +14,8 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	rubygem-uuid>=2.3.5:${PORTSDIR}/devel/rubygem-uuid
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

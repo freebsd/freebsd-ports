@@ -16,6 +16,7 @@ RUN_DEPENDS=	jruby:${PORTSDIR}/lang/jruby \
 		rubygem-jdbc-mysql>=5.1.22:${PORTSDIR}/databases/rubygem-jdbc-mysql
 
 NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

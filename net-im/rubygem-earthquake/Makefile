@@ -21,6 +21,8 @@ RUN_DEPENDS=	rubygem-activesupport>=0:${PORTSDIR}/devel/rubygem-activesupport \
 		rubygem-slop>=3.4.0:${PORTSDIR}/devel/rubygem-slop \
 		rubygem-twitter-stream>=0:${PORTSDIR}/net/rubygem-twitter-stream
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

@@ -12,6 +12,8 @@ COMMENT=	Ruby library to render PDF documents
 LICENSE=	GPLv2 GPLv3 RUBY
 LICENSE_COMB=	dual
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

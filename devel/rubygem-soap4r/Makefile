@@ -13,6 +13,8 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	rubygem-httpclient>=2.1.1:${PORTSDIR}/www/rubygem-httpclient
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

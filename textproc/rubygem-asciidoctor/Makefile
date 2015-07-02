@@ -11,6 +11,8 @@ COMMENT=	Fast, open source text processor and publishing toolchain
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.adoc
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

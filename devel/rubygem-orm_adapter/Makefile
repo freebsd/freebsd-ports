@@ -11,6 +11,8 @@ COMMENT=	Provides a single point of entry for using basic features of ruby ORMs
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

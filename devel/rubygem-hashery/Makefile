@@ -11,6 +11,8 @@ COMMENT=	Hashery is a tight collection of Hash-like classes
 
 LICENSE=	BSD2CLAUSE
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

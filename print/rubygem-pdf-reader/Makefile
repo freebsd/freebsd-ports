@@ -18,6 +18,8 @@ RUN_DEPENDS=	rubygem-afm>=0.2.0:${PORTSDIR}/print/rubygem-afm \
 		rubygem-ruby-rc4>=0:${PORTSDIR}/security/rubygem-ruby-rc4 \
 		rubygem-ttfunk>=0:${PORTSDIR}/print/rubygem-ttfunk
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

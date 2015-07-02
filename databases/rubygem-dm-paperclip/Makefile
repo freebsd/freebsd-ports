@@ -16,6 +16,8 @@ RUN_DEPENDS=	rubygem-dm-core>=1.2.0:${PORTSDIR}/databases/rubygem-dm-core \
 		rubygem-dm-validations>=1.2.0:${PORTSDIR}/databases/rubygem-dm-validations \
 		rubygem-extlib>=0:${PORTSDIR}/devel/rubygem-extlib
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

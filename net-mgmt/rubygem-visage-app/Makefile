@@ -17,6 +17,8 @@ RUN_DEPENDS=	rubygem-errand>=0.7.3:${PORTSDIR}/devel/rubygem-errand \
 		rubygem-tilt>=1.3.3:${PORTSDIR}/devel/rubygem-tilt \
 		rubygem-yajl-ruby>=1.1.0:${PORTSDIR}/devel/rubygem-yajl-ruby
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
