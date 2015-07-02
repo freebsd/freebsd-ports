@@ -1,5 +1,7 @@
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Block.BlockQuote.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Block.Code.beam
+lib/elixir/lib/earmark/ebin/Elixir.Earmark.Block.FnDef.beam
+lib/elixir/lib/earmark/ebin/Elixir.Earmark.Block.FnList.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Block.Heading.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Block.Html.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Block.HtmlOther.beam
@@ -14,11 +16,13 @@ lib/elixir/lib/earmark/ebin/Elixir.Earmark.Block.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.CLI.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Context.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Helpers.beam
+lib/elixir/lib/earmark/ebin/Elixir.Earmark.HtmlRenderer.EarmarkError.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.HtmlRenderer.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Inline.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Line.Blank.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Line.BlockQuote.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Line.Fence.beam
+lib/elixir/lib/earmark/ebin/Elixir.Earmark.Line.FnDef.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Line.Heading.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Line.HtmlCloseTag.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Line.HtmlComment.beam
