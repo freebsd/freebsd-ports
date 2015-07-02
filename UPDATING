@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150702:
+  AFFECTS: users of net/ptpd2-devel
+  AUTHOR: skreuzer@FreeBSD.org
+
+  net/ptpd2 has been upgraded to version 2.3.1
+  net/ptpd2-devel is now deprecated and has been removed
+
+  If using portupgrade:
+  # portupgrade -o net/ptpd2 net/ptpd2-devel
+
+  If using portmaster:
+  # portmaster -o net/ptpd2 net/ptpd2-devel
+
 20150628:
   AFFECTS: users of www/varnish, www/pecl-varnish,
   www/varnish-libvmod-header, www/varnish-nagios

@@ -890,7 +890,6 @@
     SUBDIR += proxychains-ng
     SUBDIR += prtunnel
     SUBDIR += ptpd2
-    SUBDIR += ptpd2-devel
     SUBDIR += ptunnel
     SUBDIR += pure-sockets
     SUBDIR += pvm
