@@ -13,6 +13,10 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-devise>=3.2:${PORTSDIR}/devel/rubygem-devise
 
+SLAVEDIRS=	devel/rubygem-devise-async-rails4
+
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

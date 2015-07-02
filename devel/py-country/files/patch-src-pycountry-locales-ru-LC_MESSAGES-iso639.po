@@ -1,6 +1,78 @@
---- src/pycountry/locales/ru/LC_MESSAGES/iso639.po.orig	2015-06-15 11:05:12.588800000 +0300
-+++ src/pycountry/locales/ru/LC_MESSAGES/iso639.po	2015-06-15 11:05:23.124279000 +0300
-@@ -1743,7 +1743,7 @@
+--- src/pycountry/locales/ru/LC_MESSAGES/iso639.po.orig	2015-07-01 16:58:54.381698000 +0300
++++ src/pycountry/locales/ru/LC_MESSAGES/iso639.po	2015-07-01 16:59:06.083343000 +0300
+@@ -15,22 +15,21 @@
+ # Nikolai Prokoschenko <nikolai@prokoschenko.de>, 2004.
+ # Mikhail Zabaluev <mhz@altlinux.org>, 2006.
+ # Yuri Kozlov <yuray@komyakino.ru>, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2012, 2013.
++# Dmitry Sivachenko <trtrmitya@gmail.com>, 2015.
+ msgid ""
+ msgstr ""
+-"Project-Id-Version: iso_639\n"
+-"Report-Msgid-Bugs-To: Debian iso-codes team <pkg-isocodes-devel@lists.alioth."
+-"debian.org>\n"
++"Project-Id-Version: iso_639 3.57\n"
++"Report-Msgid-Bugs-To: Debian iso-codes team <pkg-isocodes-devel@lists.alioth.debian.org>\n"
+ "POT-Creation-Date: 2013-01-11 07:25+0100\n"
+-"PO-Revision-Date: 2013-03-05 21:18+0400\n"
+-"Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
++"PO-Revision-Date: 2015-06-23 10:08+0300\n"
++"Last-Translator: Dmitry Sivachenko <trtrmitya@gmail.com>\n"
+ "Language-Team: Russian <gnu@mx.ru>\n"
+ "Language: ru\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
+ "X-Generator: Lokalize 1.4\n"
+-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
++"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+ 
+ #. name for aar, aa
+ msgid "Afar"
+@@ -118,9 +117,7 @@
+ 
+ #. name for arc
+ msgid "Official Aramaic (700-300 BCE); Imperial Aramaic (700-300 BCE)"
+-msgstr ""
+-"официальный арамейский (700-300 д.н.э.); имперский арамейский (700-300 д.н."
+-"э.)"
++msgstr "официальный арамейский (700-300 д.н.э.); имперский арамейский (700-300 д.н.э.)"
+ 
+ #. name for arg, an
+ msgid "Aragonese"
+@@ -379,11 +376,8 @@
+ msgstr "чероки"
+ 
+ #. name for chu, cu
+-msgid ""
+-"Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church "
+-"Slavonic"
+-msgstr ""
+-"церковнославянский; старославянский; староболгарский; староцерковнославянский"
++msgid "Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic"
++msgstr "церковнославянский; старославянский; староболгарский; староцерковнославянский"
+ 
+ #. name for chv, cv
+ msgid "Chuvash"
+@@ -719,7 +713,7 @@
+ 
+ #. name for hat, ht
+ msgid "Haitian; Haitian Creole"
+-msgstr "гаитянский; креольский гаитянский"
++msgstr "гаитянский; гаитянский креольский"
+ 
+ #. name for hau, ha
+ msgid "Hausa"
+@@ -1023,7 +1017,7 @@
+ 
+ #. name for lat, la
+ msgid "Latin"
+-msgstr "латинский"
++msgstr "латынь"
+ 
+ #. name for lav, lv
+ msgid "Latvian"
+@@ -1743,7 +1737,7 @@
  
  #. name for tgl, tl
  msgid "Tagalog"

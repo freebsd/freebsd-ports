@@ -14,6 +14,8 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-actionpack>=3.0.0:${PORTSDIR}/www/rubygem-actionpack \
 		rubygem-activesupport>=3.0.0:${PORTSDIR}/devel/rubygem-activesupport
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

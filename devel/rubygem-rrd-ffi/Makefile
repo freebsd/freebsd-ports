@@ -14,6 +14,8 @@ RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool \
 		rubygem-activesupport>=0:${PORTSDIR}/devel/rubygem-activesupport \
 		rubygem-ffi>=0:${PORTSDIR}/devel/rubygem-ffi
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

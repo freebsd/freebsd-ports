@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Spreadsheet-Read
-PORTVERSION=	0.54
-PORTREVISION=	1
+PORTVERSION=	0.61
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:HMBRAND
@@ -16,10 +15,10 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-IO-stringy>0:${PORTSDIR}/devel/p5-IO-stringy \
-		p5-Text-CSV_XS>0:${PORTSDIR}/textproc/p5-Text-CSV_XS \
-		p5-Text-CSV>0:${PORTSDIR}/textproc/p5-Text-CSV \
-		p5-Spreadsheet-ReadSXC>0:${PORTSDIR}/textproc/p5-Spreadsheet-ReadSXC \
-		p5-Spreadsheet-ParseExcel>0:${PORTSDIR}/textproc/p5-Spreadsheet-ParseExcel
+		p5-Text-CSV_XS>=0.71:${PORTSDIR}/textproc/p5-Text-CSV_XS \
+		p5-Text-CSV>=1.33:${PORTSDIR}/textproc/p5-Text-CSV \
+		p5-Spreadsheet-ReadSXC>=0.20:${PORTSDIR}/textproc/p5-Spreadsheet-ReadSXC \
+		p5-Spreadsheet-ParseExcel>=0.13:${PORTSDIR}/textproc/p5-Spreadsheet-ParseExcel
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-NoWarnings>0:${PORTSDIR}/devel/p5-Test-NoWarnings
 

@@ -10,6 +10,8 @@ COMMENT=	Ruby framework to parse analyze and forge PDF documents
 
 LICENSE=	LGPL3
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=yes

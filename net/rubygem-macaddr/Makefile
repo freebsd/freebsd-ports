@@ -14,6 +14,8 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	rubygem-systemu>=2.6.2:${PORTSDIR}/devel/rubygem-systemu
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

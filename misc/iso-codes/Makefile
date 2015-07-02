@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	iso-codes
-PORTVERSION=	3.57
+PORTVERSION=	3.59
 CATEGORIES=	misc
 MASTER_SITES=	http://pkg-isocodes.alioth.debian.org/downloads/
 
@@ -11,7 +11,7 @@ COMMENT=	Lists of the country, language, and currency iso names
 
 LICENSE=	LGPL21
 
-USES=		pathfix gettext gmake tar:xz
+USES=		gettext gmake pathfix tar:xz
 GNU_CONFIGURE=	yes
 NO_ARCH=	yes
 

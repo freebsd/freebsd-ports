@@ -120,6 +120,7 @@ share/pixmaps/electrum.png
 %%PYTHON_SITELIBDIR%%/electrum/wordlist/japanese.txt
 %%PYTHON_SITELIBDIR%%/electrum/wordlist/portuguese.txt
 %%PYTHON_SITELIBDIR%%/electrum/wordlist/spanish.txt
+%%PYTHON_SITELIBDIR%%/electrum/www/index.html
 %%PYTHON_SITELIBDIR%%/electrum/x509.py
 %%PYTHON_SITELIBDIR%%/electrum/x509.pyc
 %%PYTHON_SITELIBDIR%%/electrum/x509.pyo
@@ -132,6 +133,9 @@ share/pixmaps/electrum.png
 %%PYTHON_SITELIBDIR%%/electrum_gui/gtk.py
 %%PYTHON_SITELIBDIR%%/electrum_gui/gtk.pyc
 %%PYTHON_SITELIBDIR%%/electrum_gui/gtk.pyo
+%%PYTHON_SITELIBDIR%%/electrum_gui/jsonrpc.py
+%%PYTHON_SITELIBDIR%%/electrum_gui/jsonrpc.pyc
+%%PYTHON_SITELIBDIR%%/electrum_gui/jsonrpc.pyo
 %%PYTHON_SITELIBDIR%%/electrum_gui/qt/__init__.py
 %%PYTHON_SITELIBDIR%%/electrum_gui/qt/__init__.pyc
 %%PYTHON_SITELIBDIR%%/electrum_gui/qt/__init__.pyo

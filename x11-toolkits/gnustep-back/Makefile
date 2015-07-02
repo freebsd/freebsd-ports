@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnustep-back
-PORTVERSION=	0.24.0
-PORTREVISION=	5
+PORTVERSION=	0.24.1
 CATEGORIES=	x11-toolkits gnustep
 MASTER_SITES=	GNUSTEP/core
 

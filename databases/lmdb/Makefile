@@ -2,28 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	lmdb
-PORTVERSION=	0.9.14
-PORTREVISION=	1
+PORTVERSION=	0.9.15
 CATEGORIES=	databases
-MASTER_SITES=	LOCAL/delphij
-#		https://gitorious.org/${GO_ACCOUNT}/${GO_PROJECT}/archive/${GO_TAGNAME}.tar.gz?dummy=
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	OpenLDAP Lightning Memory-Mapped Database
 
+LICENSE=	OPENLDAP
+LICENSE_NAME=	OpenLDAP Public License
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 # XXX FreeBSD does not implement O_DSYNC and fdatasync at this time.
 CFLAGS+=	-DMDB_DSYNC=O_SYNC -Dfdatasync=fsync
-WRKSRC=		${WRKDIR}/mdb-mdb/libraries/liblmdb
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME:tu}_${PORTVERSION}/libraries/liblmdb
 MAKE_ENV+=	CC="${CC}"
 MAKE_ENV+=	XCFLAGS="${CFLAGS} -pthread" prefix="${PREFIX}" INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 MAKE_ENV+=	INSTALL_LIB="${INSTALL_LIB}" INSTALL_DATA="${INSTALL_DATA}" INSTALL_MAN="${INSTALL_MAN}"
 
 USE_LDCONFIG=	yes
 
-GO_ACCOUNT=	mdb
-GO_PROJECT=	mdb
-GO_TAGNAME=	${PORTNAME:tu}_${PORTVERSION}
-FETCH_ARGS?=	-o ${DISTDIR}/${DISTFILES}
+USE_GITHUB=	yes
+GH_ACCOUNT=	${PORTNAME:tu}
+GH_TAGNAME=	${PORTNAME:tu}_${PORTVERSION}
 
 MDB_APPS=	copy dump load stat
 

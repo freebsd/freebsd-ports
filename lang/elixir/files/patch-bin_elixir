@@ -1,0 +1,20 @@
+--- bin/elixir.orig	2015-06-29 07:56:28 UTC
++++ bin/elixir
+@@ -97,4 +97,16 @@ if [ -z "$ERL_PATH" ]; then
+   fi
+ fi
+ 
+-exec "$ERL_PATH" -pa "$SCRIPT_PATH"/../lib/*/ebin $ELIXIR_ERL_OPTIONS $ERL -extra "$@"
++if [ -n "$ELIXIR_HIDDEN" ]; then
++  CODE_PATH=""
++
++  for lib in $(cd "$SCRIPT_PATH"/../lib/ && ls); do
++    if ! (echo "$lib" | grep -E "$ELIXIR_HIDDEN" >/dev/null 2>&1); then
++      CODE_PATH="$CODE_PATH "$SCRIPT_PATH"/../lib/$lib/ebin"
++    fi
++  done
++
++  exec "$ERL_PATH" -pa $CODE_PATH $ELIXIR_ERL_OPTIONS $ERL -extra "$@"
++else
++  exec "$ERL_PATH" -pa "$SCRIPT_PATH"/../lib/*/ebin $ELIXIR_ERL_OPTIONS $ERL -extra "$@"
++fi

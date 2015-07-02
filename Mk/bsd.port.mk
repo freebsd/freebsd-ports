@@ -4368,35 +4368,12 @@ all-depends-list:
 	@${ALL-DEPENDS-LIST}
 
 ALL-DEPENDS-LIST= \
-	L="${_DEPEND_DIRS}";						\
-	checked="";							\
-	while [ -n "$$L" ]; do						\
-		l="";							\
-		for d in $$L; do					\
-			case $$checked in				\
-			$$d\ *|*\ $$d\ *|*\ $$d)			\
-				continue;;				\
-			esac;						\
-			checked="$$checked $$d";			\
-			if [ ! -d $$d ]; then				\
-				${ECHO_MSG} "${PKGNAME}: \"$$d\" non-existent -- dependency list incomplete" >&2; \
-				continue;				\
-			fi;						\
-			${ECHO_CMD} $$d;				\
-			if ! children=$$(cd $$d && ${MAKE} -V _DEPEND_DIRS); then\
-				${ECHO_MSG} "${PKGNAME}: \"$$d\" erroneous -- dependency list incomplete" >&2; \
-				continue;				\
-			fi;						\
-			for child in $$children; do			\
-				case "$$checked $$l" in			\
-				$$child\ *|*\ $$child\ *|*\ $$child)	\
-					continue;;			\
-				esac;					\
-				l="$$l $$child";			\
-			done;						\
-		done;							\
-		L=$$l;							\
-	done
+	${SETENV} dp_ALLDEPENDS="${_UNIFIED_DEPENDS}" \
+			dp_PORTSDIR="${PORTSDIR}" \
+			dp_MAKE="${MAKE}" \
+			dp_PKGNAME="${PKGNAME}" \
+			dp_SCRIPTSDIR="${SCRIPTSDIR}" \
+			${SH} ${SCRIPTSDIR}/all-depends-list.sh
 
 CLEAN-DEPENDS-FULL= \
 	L="${_DEPEND_DIRS}";						\
@@ -5721,33 +5698,33 @@ _SANITY_SEQ=	post-chroot pre-everything check-makefile \
 _PKG_DEP=		check-sanity
 _PKG_SEQ=		pkg-depends
 _FETCH_DEP=		pkg
-_FETCH_SEQ=		fetch-depends pre-fetch pre-fetch-script \
-				do-fetch fetch-specials post-fetch post-fetch-script
+_FETCH_SEQ=		fetch-depends pre-fetch ${_OPTIONS_pre_fetch} pre-fetch-script \
+				do-fetch fetch-specials post-fetch ${_OPTIONS_post_fetch} post-fetch-script
 _EXTRACT_DEP=	fetch
 _EXTRACT_SEQ=	check-build-conflicts extract-message checksum extract-depends \
-				clean-wrkdir ${WRKDIR} pre-extract pre-extract-script do-extract \
-				post-extract post-extract-script
+				clean-wrkdir ${WRKDIR} pre-extract ${_OPTIONS_pre_extract} pre-extract-script do-extract \
+				post-extract ${_OPTIONS_post_extract} post-extract-script
 _PATCH_DEP=		extract
 _PATCH_SEQ=		ask-license patch-message patch-depends pathfix dos2unix fix-shebang \
-				pre-patch \
-				pre-patch-script do-patch charsetfix-post-patch post-patch post-patch-script
+				pre-patch ${_OPTIONS_pre_patch} \
+				pre-patch-script do-patch charsetfix-post-patch post-patch ${_OPTIONS_post_patch} post-patch-script
 _CONFIGURE_DEP=	patch
 _CONFIGURE_SEQ=	build-depends lib-depends configure-message \
-				pre-configure pre-configure-script \
+				pre-configure ${_OPTIONS_pre_configure} pre-configure-script \
 				run-autotools do-autoreconf patch-libtool run-autotools-fixup do-configure \
-				post-configure post-configure-script
+				post-configure ${_OPTIONS_post_configure} post-configure-script
 _BUILD_DEP=		configure
-_BUILD_SEQ=		build-message pre-build pre-build-script do-build \
-				post-build post-build-script
+_BUILD_SEQ=		build-message pre-build ${_OPTIONS_pre_build} pre-build-script do-build \
+				post-build ${_OPTIONS_post_build} post-build-script
 
 _STAGE_DEP=		build
-_STAGE_SEQ=		stage-message stage-dir run-depends lib-depends apply-slist pre-install generate-plist \
+_STAGE_SEQ=		stage-message stage-dir run-depends lib-depends apply-slist pre-install ${_OPTIONS_pre_install} ${_OPTIONS_pre_stage} generate-plist \
 				pre-su-install
 # ${POST_PLIST} must be after anything that modifies TMPPLIST
 _STAGE_SEQ+=	create-users-groups do-install \
 				kmod-post-install fix-perl-things \
-				webplugin-post-install post-install post-install-script \
-				move-uniquefiles patch-lafiles post-stage compress-man \
+				webplugin-post-install post-install ${_OPTIONS_post_install} post-install-script \
+				move-uniquefiles patch-lafiles post-stage ${_OPTIONS_post_stage} compress-man \
 				install-rc-script install-ldconfig-file install-license \
 				install-desktop-entries add-plist-info add-plist-docs \
 				add-plist-examples add-plist-data add-plist-post \
@@ -5760,7 +5737,7 @@ _INSTALL_SEQ=	install-message run-depends lib-depends check-already-installed
 _INSTALL_SUSEQ=	fake-pkg security-check
 
 _PACKAGE_DEP=	stage
-_PACKAGE_SEQ=	package-message pre-package pre-package-script do-package post-package-script
+_PACKAGE_SEQ=	package-message pre-package ${_OPTIONS_pre_package} pre-package-script do-package ${_OPTIONS_post_package} post-package-script
 
 # Enforce order for -jN builds
 

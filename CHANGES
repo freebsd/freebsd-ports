@@ -10,6 +10,38 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20150701:
+AUTHOR: mat@FreeBSD.org
+
+  Make option target helpers have been added, it allows replacing:
+
+    .include <bsd.port.options.mk>
+
+    post-patch:
+      ${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+	${WRKSRC}/Configure ${WRKSRC}/hints/freebsd.sh
+    .if ${PORT_OPTIONS:MPTHREAD}
+      ${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|-lpthread|g;' \
+	${WRKSRC}/hints/freebsd.sh
+    .else
+      ${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%||g;' \
+	${WRKSRC}/hints/freebsd.sh
+    .endif
+
+  with:
+
+    post-patch:
+      ${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+	${WRKSRC}/Configure ${WRKSRC}/hints/freebsd.sh
+
+    post-patch-PTHREAD-on:
+      ${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|-lpthread|g;' \
+	${WRKSRC}/hints/freebsd.sh
+
+    post-patch-PTHREAD-off:
+      ${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%||g;' \
+	${WRKSRC}/hints/freebsd.sh
+
 20150622:
 AUTHOR: bapt@FreeBSD.org
 

@@ -13,6 +13,8 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	rubygem-bson1>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-bson1
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

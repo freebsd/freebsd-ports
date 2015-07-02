@@ -13,6 +13,8 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	rubygem-blockenspiel>=0.4.5:${PORTSDIR}/devel/rubygem-blockenspiel
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

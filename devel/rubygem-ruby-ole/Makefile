@@ -11,6 +11,8 @@ COMMENT=	Library for easy read/write access to OLE compound documents
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

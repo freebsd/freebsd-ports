@@ -16,6 +16,8 @@ RUN_DEPENDS=	rubygem-locale>=2.0.5:${PORTSDIR}/devel/rubygem-locale \
 		rubygem-text>=1.3.0:${PORTSDIR}/textproc/rubygem-text
 
 USES=	shebangfix
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

@@ -66,9 +66,7 @@ pre-install:
 
 .if ${PORT_OPTIONS:MPERL}
 	( cd ${WRKSRC}/Flowd-perl && ${MAKE_CMD} install )
-	@${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Flowd/Flowd.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Flowd/Flowd.so
-	@${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Flowd/Flowd.so
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}

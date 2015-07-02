@@ -13,6 +13,8 @@ RUN_DEPENDS=	rubygem-http-cookie>=1.0.2:${PORTSDIR}/www/rubygem-http-cookie \
 		rubygem-mime-types>=1.16:${PORTSDIR}/misc/rubygem-mime-types \
 		rubygem-netrc>=0.7:${PORTSDIR}/net/rubygem-netrc
 
+NO_ARCH=	yes
+
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
 RUBYGEM_AUTOPLIST=	yes

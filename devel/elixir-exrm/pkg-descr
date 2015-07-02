@@ -1,0 +1,8 @@
+This project's goal is to make releases with Elixir projects a
+breeze. It is composed of a mix task, and build files required to
+successfully take your Elixir project and perform a release build,
+and a simplified configuration mechanism which integrates with your
+current configuration and makes it easy for your operations group
+to configure the release once deployed.
+
+WWW: https://github.com/bitwalker/exrm

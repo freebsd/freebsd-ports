@@ -11,6 +11,8 @@ COMMENT=	Place to hide private instance variables in your Ruby objects
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

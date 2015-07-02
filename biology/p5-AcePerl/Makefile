@@ -32,10 +32,7 @@ post-patch:
 	  > ${WRKSRC}/acelib/wmake/FREEBSD_DEF
 
 post-install:
-.for f in Freesubs/Freesubs.so RPC/RPC.so
-	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Ace/${f}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Ace/${f}
-	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Ace/${f}
-.endfor
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Ace/Freesubs/Freesubs.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Ace/RPC/RPC.so
 
 .include <bsd.port.post.mk>

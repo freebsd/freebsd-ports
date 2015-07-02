@@ -15,6 +15,8 @@ RUN_DEPENDS=	rubygem-activemodel>=3.2.0:${PORTSDIR}/databases/rubygem-activemode
 		rubygem-json>=1.7:${PORTSDIR}/devel/rubygem-json \
 		rubygem-mime-types>=1.16:${PORTSDIR}/misc/rubygem-mime-types
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

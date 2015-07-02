@@ -10,6 +10,8 @@ COMMENT=	Build and package Ruby extensions (C, Java) using Rake
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RAKE=	yes
 USE_RUBYGEMS=	yes

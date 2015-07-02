@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	courier-unicode
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	devel mail
 MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
 

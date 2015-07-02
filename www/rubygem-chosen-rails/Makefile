@@ -15,6 +15,8 @@ RUN_DEPENDS=	rubygem-coffee-rails>=3.2:${PORTSDIR}/devel/rubygem-coffee-rails \
 		rubygem-railties>=3.0:${PORTSDIR}/www/rubygem-railties \
 		rubygem-sass-rails>=3.2:${PORTSDIR}/textproc/rubygem-sass-rails
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

@@ -11,6 +11,8 @@ COMMENT=	Ruby implementation of Douglas Crockford's JSMin JavaScript minifier
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

@@ -1,3 +1,4 @@
+
 GNUstep/Local/Applications/FTP.app/FTP
 GNUstep/Local/Applications/FTP.app/Resources/FTP.desktop
 GNUstep/Local/Applications/FTP.app/Resources/FTP.gorm/arrow_left.tiff
@@ -6,6 +7,10 @@ GNUstep/Local/Applications/FTP.app/Resources/FTP.gorm/data.classes
 GNUstep/Local/Applications/FTP.app/Resources/FTP.gorm/data.info
 GNUstep/Local/Applications/FTP.app/Resources/FTP.gorm/objects.gorm
 GNUstep/Local/Applications/FTP.app/Resources/FTP_icon_gs.tif
+GNUstep/Local/Applications/FTP.app/Resources/GetName.gorm/FTP_icon_gs.tif
+GNUstep/Local/Applications/FTP.app/Resources/GetName.gorm/data.classes
+GNUstep/Local/Applications/FTP.app/Resources/GetName.gorm/data.info
+GNUstep/Local/Applications/FTP.app/Resources/GetName.gorm/objects.gorm
 GNUstep/Local/Applications/FTP.app/Resources/Info-gnustep.plist
 GNUstep/Local/Applications/FTP.app/Resources/arrow_left.tiff
 GNUstep/Local/Applications/FTP.app/Resources/arrow_right.tiff

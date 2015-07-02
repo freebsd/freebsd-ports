@@ -52,6 +52,9 @@
     SUBDIR += dbow
     SUBDIR += dbtool
     SUBDIR += dbview
+    SUBDIR += elixir-ecto
+    SUBDIR += elixir-mariaex
+    SUBDIR += elixir-postgrex
     SUBDIR += emma
     SUBDIR += erlang-epgsql
     SUBDIR += erlang-eredis

@@ -11,6 +11,8 @@ COMMENT=	Some useful extensions to the Ruby String class
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

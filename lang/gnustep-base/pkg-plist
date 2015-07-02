@@ -6,12 +6,15 @@ GNUstep/System/Library/DTDs/gsdoc-1_0_1.dtd
 GNUstep/System/Library/DTDs/gsdoc-1_0_1.rnc
 GNUstep/System/Library/DTDs/gsdoc-1_0_2.dtd
 GNUstep/System/Library/DTDs/gsdoc-1_0_3.dtd
+GNUstep/System/Library/DTDs/gsdoc-1_0_4.dtd
 GNUstep/System/Library/DTDs/plist-0_9.dtd
+GNUstep/System/Library/Documentation/man/man1/HTMLLinker.1.gz
 GNUstep/System/Library/Documentation/man/man1/autogsdoc.1.gz
 GNUstep/System/Library/Documentation/man/man1/cvtenc.1.gz
 GNUstep/System/Library/Documentation/man/man1/defaults.1.gz
 GNUstep/System/Library/Documentation/man/man1/gdnc.1.gz
 GNUstep/System/Library/Documentation/man/man1/gspath.1.gz
+GNUstep/System/Library/Documentation/man/man1/make_strings.1.gz
 GNUstep/System/Library/Documentation/man/man1/pldes.1.gz
 GNUstep/System/Library/Documentation/man/man1/sfparse.1.gz
 GNUstep/System/Library/Documentation/man/man1/xmlparse.1.gz
@@ -122,10 +125,11 @@ GNUstep/System/Library/Headers/Foundation/NSURLProtectionSpace.h
 GNUstep/System/Library/Headers/Foundation/NSURLProtocol.h
 GNUstep/System/Library/Headers/Foundation/NSURLRequest.h
 GNUstep/System/Library/Headers/Foundation/NSURLResponse.h
+GNUstep/System/Library/Headers/Foundation/NSUUID.h
 GNUstep/System/Library/Headers/Foundation/NSUndoManager.h
 GNUstep/System/Library/Headers/Foundation/NSUserDefaults.h
+GNUstep/System/Library/Headers/Foundation/NSUserNotification.h
 GNUstep/System/Library/Headers/Foundation/NSUtilities.h
-GNUstep/System/Library/Headers/Foundation/NSUUID.h
 GNUstep/System/Library/Headers/Foundation/NSValue.h
 GNUstep/System/Library/Headers/Foundation/NSValueTransformer.h
 GNUstep/System/Library/Headers/Foundation/NSXMLDTD.h
@@ -147,7 +151,6 @@ GNUstep/System/Library/Headers/GNUstepBase/GSIMap.h
 GNUstep/System/Library/Headers/GNUstepBase/GSLocale.h
 GNUstep/System/Library/Headers/GNUstepBase/GSLock.h
 GNUstep/System/Library/Headers/GNUstepBase/GSMime.h
-GNUstep/System/Library/Headers/GNUstepBase/NSNetServices+GNUstepBase.h
 GNUstep/System/Library/Headers/GNUstepBase/GSObjCRuntime.h
 GNUstep/System/Library/Headers/GNUstepBase/GSUnion.h
 GNUstep/System/Library/Headers/GNUstepBase/GSVersionMacros.h
@@ -161,6 +164,7 @@ GNUstep/System/Library/Headers/GNUstepBase/NSDebug+GNUstepBase.h
 GNUstep/System/Library/Headers/GNUstepBase/NSFileHandle+GNUstepBase.h
 GNUstep/System/Library/Headers/GNUstepBase/NSLock+GNUstepBase.h
 GNUstep/System/Library/Headers/GNUstepBase/NSMutableString+GNUstepBase.h
+GNUstep/System/Library/Headers/GNUstepBase/NSNetServices+GNUstepBase.h
 GNUstep/System/Library/Headers/GNUstepBase/NSNumber+GNUstepBase.h
 GNUstep/System/Library/Headers/GNUstepBase/NSObject+GNUstepBase.h
 GNUstep/System/Library/Headers/GNUstepBase/NSProcessInfo+GNUstepBase.h
@@ -179,6 +183,7 @@ GNUstep/System/Library/Headers/gnustep/unicode/nextstep.h
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/English.lproj/Localizable.strings
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/Esperanto.lproj/Localizable.strings
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/French.lproj/Localizable.strings
+GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/GSTLS/ca-certificates.crt
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/German.lproj/Localizable.strings
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/Info-gnustep.plist
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/Italian.lproj/Localizable.strings
@@ -207,11 +212,6 @@ GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/create-abbrevs.m
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/create-regions.m
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/nstimezone.m
-GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/GSTLS/ca-certificates.crt
-GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Creston
-GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Khandyga
-GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Ust-Nera
-GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Europe/Busingen
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/regions
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Africa/Abidjan
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Africa/Accra
@@ -280,8 +280,8 @@ GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Argentina/La_Rioja
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Argentina/Mendoza
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Argentina/Rio_Gallegos
-GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Argentina/San_Juan
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Argentina/Salta
+GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Argentina/San_Juan
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Argentina/San_Luis
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Argentina/Tucuman
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Argentina/Ushuaia
@@ -311,6 +311,7 @@ GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Coral_Harbour
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Cordoba
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Costa_Rica
+GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Creston
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Cuiaba
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Curacao
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Danmarkshavn
@@ -386,8 +387,8 @@ GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/North_Dakota/Beulah
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/North_Dakota/Center
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/North_Dakota/New_Salem
-GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Panama
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Ojinaga
+GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Panama
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Pangnirtung
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Paramaribo
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America/Phoenix
@@ -433,13 +434,14 @@ GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Antarctica/Casey
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Antarctica/Davis
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Antarctica/DumontDUrville
-GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Antarctica/Mawson
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Antarctica/Macquarie
+GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Antarctica/Mawson
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Antarctica/McMurdo
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Antarctica/Palmer
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Antarctica/Rothera
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Antarctica/South_Pole
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Antarctica/Syowa
+GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Antarctica/Troll
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Antarctica/Vostok
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Arctic/Longyearbyen
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Aden
@@ -458,6 +460,7 @@ GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Bishkek
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Brunei
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Calcutta
+GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Chita
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Choibalsan
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Chongqing
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Chungking
@@ -485,6 +488,7 @@ GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Kashgar
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Kathmandu
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Katmandu
+GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Khandyga
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Kolkata
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Krasnoyarsk
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Kuala_Lumpur
@@ -508,15 +512,13 @@ GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Qyzylorda
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Rangoon
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Riyadh
-GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Riyadh87
-GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Riyadh88
-GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Riyadh89
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Saigon
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Sakhalin
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Samarkand
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Seoul
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Shanghai
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Singapore
+GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Srednekolymsk
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Taipei
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Tashkent
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Tbilisi
@@ -529,6 +531,7 @@ GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Ulaanbaatar
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Ulan_Bator
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Urumqi
+GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Ust-Nera
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Vientiane
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Vladivostok
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia/Yakutsk
@@ -637,6 +640,7 @@ GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Europe/Brussels
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Europe/Bucharest
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Europe/Budapest
+GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Europe/Busingen
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Europe/Chisinau
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Europe/Copenhagen
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Europe/Dublin
@@ -746,9 +750,6 @@ GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Mexico/BajaNorte
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Mexico/BajaSur
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Mexico/General
-GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Mideast/Riyadh87
-GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Mideast/Riyadh88
-GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Mideast/Riyadh89
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/NZ
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/NZ-CHAT
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Navajo
@@ -756,6 +757,7 @@ GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/PST8PDT
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Pacific/Apia
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Pacific/Auckland
+GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Pacific/Bougainville
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Pacific/Chatham
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Pacific/Chuuk
 GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Pacific/Easter

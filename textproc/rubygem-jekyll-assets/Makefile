@@ -19,6 +19,8 @@ RUN_DEPENDS=	rubygem-fastimage>=1.6:${PORTSDIR}/graphics/rubygem-fastimage \
 		rubygem-sprockets-helpers>=0:${PORTSDIR}/devel/rubygem-sprockets-helpers \
 		rubygem-sprockets-sass>=0:${PORTSDIR}/devel/rubygem-sprockets-sass
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

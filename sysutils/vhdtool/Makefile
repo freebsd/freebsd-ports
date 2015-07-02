@@ -11,12 +11,17 @@ COMMENT=	Convert raw disk images to VHD files
 
 LICENSE=	GPLv2
 
-USE_LDCONFIG=	yes
 LIB_DEPENDS=	libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
+
+USE_LDCONFIG=	yes
+
 CFLAGS+=	-I${LOCALBASE}/include \
 		-L${LOCALBASE}/lib \
 		-I${LOCALBASE}/lib \
 		-luuid
+
+DEPRECATED=	Use mkimg(1) instead
+EXPIRATION_DATE=2015-07-31
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README

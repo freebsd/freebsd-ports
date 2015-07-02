@@ -13,6 +13,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	xjflyttp@gmail.com
 COMMENT=	FTP daemon that aims to be "very secure". Extended build
 
+BROKEN_FreeBSD_9_i386=	does not link
+
 LICENSE=	GPLv2
 
 UPSTREAMVERSION=3.0.2

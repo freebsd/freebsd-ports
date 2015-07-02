@@ -17,6 +17,8 @@ RUN_DEPENDS=	rubygem-highline>=1.5:${PORTSDIR}/devel/rubygem-highline \
 		rubygem-sqlite3>=1.3:${PORTSDIR}/databases/rubygem-sqlite3 \
 		rubygem-trollop>=1.13:${PORTSDIR}/devel/rubygem-trollop
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

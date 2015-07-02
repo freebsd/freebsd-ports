@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	icecast2
-PORTVERSION=	2.4.1
+PORTVERSION=	2.4.2
 PORTEPOCH=	1
 CATEGORIES=	audio net ipv6
 MASTER_SITES=	http://downloads.xiph.org/releases/icecast/:source \

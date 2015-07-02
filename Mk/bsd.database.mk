@@ -7,7 +7,7 @@ Database_Post_Include=		bsd.database.mk
 Database_Include_MAINTAINER=	ports@FreeBSD.org
 
 # This file contains some routines to interact with different databases, such
-# as MySQL, PostgreSQL, and Berkley DB.  To include this file, define macro
+# as MySQL and Berkley DB.  To include this file, define macro
 # USE_[DATABASE], for example USE_MYSQL.  Defining macro like
 # USE_[DATABASE]_VER or WANT_[DATABASE]_VER will include this file as well.
 #

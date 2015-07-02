@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nori
-PORTVERSION=	1.0.3
+PORTVERSION=	2.6.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,11 +10,12 @@ MAINTAINER=	joe@thrallingpenguin.com
 COMMENT=	Library for converting XML to Hash syntax
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+NO_ARCH=	yes
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-
-PORTSCOUT=	limit:^1\.0\.
 
 .include <bsd.port.mk>

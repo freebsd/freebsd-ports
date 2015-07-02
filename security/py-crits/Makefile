@@ -4,6 +4,7 @@
 PORTNAME=		crits
 PORTVERSION=		3.1.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=		1
 CATEGORIES=		security
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
@@ -12,8 +13,6 @@ COMMENT=		Collaborative Research Into Threats
 
 LICENSE=		MIT
 LICENSE_FILE=		${WRKSRC}/LICENSE
-
-BROKEN=		Depends on conflicting versions of django
 
 USE_GITHUB=		yes
 GH_PROJECT=		crits
@@ -45,8 +44,8 @@ RUN_DEPENDS+=	7z:${PORTSDIR}/archivers/p7zip     \
 		${PYTHON_PKGNAMEPREFIX}pymongo>=2.7.1:${PORTSDIR}/databases/pymongo        \
 		${PYTHON_PKGNAMEPREFIX}defusedxml>=0.4.1:${PORTSDIR}/devel/py-defusedxml   \
 		${PYTHON_PKGNAMEPREFIX}django16>=1.6.5:${PORTSDIR}/www/py-django16         \
-		${PYTHON_PKGNAMEPREFIX}django-tastypie>=0.11.0:${PORTSDIR}/www/py-django-tastypie \
-		${PYTHON_PKGNAMEPREFIX}django-tastypie-mongoengine>=0.4.5:${PORTSDIR}/devel/py-django-tastypie-mongoengine \
+		${PYTHON_PKGNAMEPREFIX}django-tastypie16>0:${PORTSDIR}/www/py-django16-tastypie \
+		${PYTHON_PKGNAMEPREFIX}django-tastypie-mongoengine16>=0.4.5:${PORTSDIR}/devel/py-django16-tastypie-mongoengine \
 		${PYTHON_PKGNAMEPREFIX}mongoengine>=0.8.7:${PORTSDIR}/devel/py-mongoengine \
 		${PYTHON_PKGNAMEPREFIX}pydeep>=0.2:${PORTSDIR}/security/py-pydeep          \
 		${PYTHON_PKGNAMEPREFIX}pefile>=1.2.10.114:${PORTSDIR}/devel/py-pefile      \

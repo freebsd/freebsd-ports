@@ -11,6 +11,8 @@ COMMENT=	Extracts token delimited entities from arbitrary inputs
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

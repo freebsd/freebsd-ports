@@ -13,6 +13,8 @@ RUN_DEPENDS=	rubygem-simple-rss>=1.1:${PORTSDIR}/www/rubygem-simple-rss \
 		rubygem-hpricot>=0.6:${PORTSDIR}/www/rubygem-hpricot \
 		rubygem-hoe>=1.5.0:${PORTSDIR}/devel/rubygem-hoe
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

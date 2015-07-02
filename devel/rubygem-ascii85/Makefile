@@ -13,6 +13,8 @@ COMMENT=	Encode/decode Adobe's binary-to-text encoding of the same name
 LICENSE=	MIT
 
 GEM_NAME=	${DISTNAME}
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

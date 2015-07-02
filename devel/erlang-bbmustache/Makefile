@@ -21,14 +21,14 @@ GH_ACCOUNT=	soranoba
 
 ALL_TARGET=	compile
 
-post-extract:
-	@${RM} ${WRKSRC}/rebar.lock
-
 post-patch:
 	@${REINPLACE_CMD} -e 's/{vsn, git}/{vsn,"${PORTVERSION}"}/' ${WRKSRC}/src/*.app.src
 
+pre-build:
+	@${RM} ${WRKSRC}/rebar.lock
+
 post-build:
-	${LN} -s ${WRKSRC}/_build/dev/lib/bbmustache/ebin ${WRKSRC}
+	@${LN} -s ${WRKSRC}/_build/dev/lib/${PORTNAME}/ebin ${WRKSRC}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

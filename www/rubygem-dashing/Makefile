@@ -25,6 +25,8 @@ RUN_DEPENDS=	rubygem-sass32>=3.2.12:${PORTSDIR}/textproc/rubygem-sass32 \
 		rubygem-rake>=10.3.2:${PORTSDIR}/devel/rubygem-rake \
 		rubygem-bundler>=1.7.3:${PORTSDIR}/sysutils/rubygem-bundler
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnumail
-PORTVERSION=	1.2.0
-PORTREVISION=	6
+PORTVERSION=	1.2.2
 CATEGORIES=	mail gnustep
 MASTER_SITES=	http://download.gna.org/gnustep-nonfsf/
 DISTNAME=	GNUMail-${PORTVERSION}

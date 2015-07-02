@@ -12,6 +12,8 @@ COMMENT=	ScrAPI toolkit for Ruby
 BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/tidy-1.1.2.gemspec:${PORTSDIR}/textproc/rubygem-tidy \
 		tidy:${PORTSDIR}/www/tidy-lib
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 USE_LDCONFIG=	yes

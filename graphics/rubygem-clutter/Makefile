@@ -16,6 +16,8 @@ RUN_DEPENDS=	rubygem-cairo-gobject>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-cai
 		rubygem-gobject-introspection>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-gobject-introspection \
 		rubygem-pango>=${PORTVERSION}:${PORTSDIR}/x11-toolkits/rubygem-pango
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

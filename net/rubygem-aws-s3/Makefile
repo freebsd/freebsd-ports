@@ -13,6 +13,8 @@ RUN_DEPENDS=	rubygem-xml-simple>=0:${PORTSDIR}/textproc/rubygem-xml-simple \
 		rubygem-builder>=0:${PORTSDIR}/devel/rubygem-builder \
 		rubygem-mime-types>=0:${PORTSDIR}/misc/rubygem-mime-types
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

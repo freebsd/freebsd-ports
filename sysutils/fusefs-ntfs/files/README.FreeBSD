@@ -43,9 +43,9 @@ and reduces disk load.
 3. Mounting at startup with /etc/fstab
 ==============================================================================
 
-To mount at startup you need to have the following line in /etc/rc.conf:
+To mount at startup you need to have the following line in /boot/loader.conf:
 
-fusefs_enable="YES"
+fuse_load="YES"
 
 Then create the following symlink:
 
@@ -104,6 +104,8 @@ useful for testing purposes and in practice has no use.
 ==============================================================================
 5. Known issues
 ==============================================================================
+
+For mkntfs(8) -F must be used to allow non-block device to be processed.
 
 When reading/writting the same file repeatedly while doing many simultaneous
 operations on different files sometimes the former one fails: read(2) returns

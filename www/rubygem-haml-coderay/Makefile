@@ -14,6 +14,8 @@ LICENSE=	ISCL
 RUN_DEPENDS=	rubygem-coderay>=0:${PORTSDIR}/textproc/rubygem-coderay \
 		rubygem-haml>=0:${PORTSDIR}/www/rubygem-haml
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

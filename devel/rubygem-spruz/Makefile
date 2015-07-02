@@ -11,6 +11,8 @@ COMMENT=	Small Ruby library of mixed utils/extensions
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

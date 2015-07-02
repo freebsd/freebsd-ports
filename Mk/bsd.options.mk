@@ -135,6 +135,7 @@ _OPTIONS_FLAGS= ALL_TARGET CATEGORIES CFLAGS CONFIGURE_ENV CONFLICTS \
 		MAKE_ENV PATCHFILES PATCH_SITES PLIST_DIRS PLIST_DIRSTRY \
 		PLIST_FILES PLIST_SUB SUB_FILES SUB_LIST USES
 _OPTIONS_DEPENDS=	PKG FETCH EXTRACT PATCH BUILD LIB RUN
+_OPTIONS_TARGETS=	fetch extract patch configure build install package stage
 
 # Set the default values for the global options, as defined by portmgr
 .if !defined(NOPORTDOCS)
@@ -410,6 +411,12 @@ WITH_DEBUG=	yes
 ALL_OPTIONS=	${OPTIONS_DEFINE}
 .endif
 
+.for target in ${_OPTIONS_TARGETS}
+.for prepost in pre post
+_OPTIONS_${prepost}_${target}?=
+.endfor
+.endfor
+
 .for opt in ${COMPLETE_OPTIONS_LIST} ${OPTIONS_SLAVE} ${OPTIONS_EXCLUDE_${ARCH}} ${OPTIONS_EXCLUDE}
 # PLIST_SUB
 PLIST_SUB?=
@@ -463,6 +470,11 @@ ${flags}+=	${${opt}_${flags}}
 ${deptype}_DEPENDS+=	${${opt}_${deptype}_DEPENDS}
 .      endif
 .    endfor
+.    for target in ${_OPTIONS_TARGETS}
+.      for prepost in pre post
+_OPTIONS_${prepost}_${target}+= ${prepost}-${target}-${opt}-on
+.      endfor
+.    endfor
 .  else
 .    if defined(${opt}_USE_OFF)
 .      for option in ${${opt}_USE_OFF}
@@ -494,6 +506,11 @@ ${flags}+=	${${opt}_${flags}_OFF}
 .      if defined(${opt}_${deptype}_DEPENDS_OFF)
 ${deptype}_DEPENDS+=	${${opt}_${deptype}_DEPENDS_OFF}
 .      endif
+.    endfor
+.    for target in ${_OPTIONS_TARGETS}
+.      for prepost in pre post
+_OPTIONS_${prepost}_${target}+= ${prepost}-${target}-${opt}-off
+.      endfor
 .    endfor
 .  endif
 .endfor

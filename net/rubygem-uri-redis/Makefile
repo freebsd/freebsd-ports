@@ -11,6 +11,8 @@ COMMENT=	Support for parsing redis://host:port/dbindex/keyname
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

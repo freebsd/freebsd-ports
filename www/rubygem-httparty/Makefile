@@ -14,6 +14,8 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-json>=1.8:${PORTSDIR}/devel/rubygem-json \
 		rubygem-multi_xml>=0.5.2:${PORTSDIR}/textproc/rubygem-multi_xml
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

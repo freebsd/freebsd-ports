@@ -6,6 +6,6 @@
 include/orthanc/OrthancCDatabasePlugin.h
 include/orthanc/OrthancCPlugin.h
 include/orthanc/OrthancCppDatabasePlugin.h
-%%DATADIR%%/plugins/%%LUA_LIBDIR%%ServeFolders.so
-%%DATADIR%%/plugins/%%LUA_LIBDIR%%ServeFolders.so.0.9.0
+%%DATADIR%%/plugins/libServeFolders.so
+%%DATADIR%%/plugins/libServeFolders.so.0.9.0
 sbin/Orthanc

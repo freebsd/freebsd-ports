@@ -16,6 +16,8 @@ RUN_DEPENDS=	rubygem-buftok>=0.2:${PORTSDIR}/devel/rubygem-buftok \
 		rubygem-http_parser.rb>=0.6:${PORTSDIR}/net/rubygem-http_parser.rb \
 		rubygem-simple_oauth>=0.2:${PORTSDIR}/net/rubygem-simple_oauth
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

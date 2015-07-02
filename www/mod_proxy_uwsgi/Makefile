@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_proxy_uwsgi
-PORTVERSION=	2.0.10
+PORTVERSION=	2.0.11
 CATEGORIES=	www
 MASTER_SITES=	http://projects.unbit.it/downloads/
 DISTNAME=	uwsgi-${PORTVERSION}

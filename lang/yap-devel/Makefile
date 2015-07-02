@@ -3,7 +3,7 @@
 
 PORTNAME=	yap
 PORTVERSION=	6.3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://www.dcc.fc.up.pt/~vsc/Yap/
 PKGNAMESUFFIX=	-devel
@@ -13,6 +13,8 @@ COMMENT=	High-performance Prolog compiler
 
 LICENSE=	ART20 LGPL3
 LICENSE_COMB=	dual
+
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
 CONFLICTS=	yap-6.2.*
 
@@ -28,12 +30,19 @@ DOCS_INSTALL_TARGET=	install install_docs
 MYDDAS_LIB_DEPENDS=		libiodbc.so:${PORTSDIR}/databases/libiodbc
 MYDDAS_CONFIGURE_ENABLE=	myddas myddas-top-level
 
+LDFLAGS+=	-L${LOCALBASE}/lib
+MAKE_ENV=	PKGLDFLAGS="${LDFLAGS}"
+
 STRIP=	#none
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-max-performance --disable-clpbn-bp
-USES=		gmake
+USES=		gmake shebangfix
+SHEBANG_FILES=	packages/http/examples/demo_inetd
+SHEBANG_LANG=	swipl
+swipl_OLD_CMD=	/usr/bin/swipl
+swipl_CMD=	${LOCALBASE}/bin/swipl # installed by lang/swi-pl
 USE_GCC=	any
 
 EXTRACT_CMD=	${GZIP_CMD}

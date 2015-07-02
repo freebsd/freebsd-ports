@@ -11,6 +11,8 @@ COMMENT=	Ruby wrapper for posting to slack webhooks
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

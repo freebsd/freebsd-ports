@@ -155,6 +155,7 @@
     SUBDIR += enchant
     SUBDIR += eo-aspell
     SUBDIR += eqe
+    SUBDIR += erlang-edown
     SUBDIR += es-aspell
     SUBDIR += es-hunspell
     SUBDIR += es-hyphen

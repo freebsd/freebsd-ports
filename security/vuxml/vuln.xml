@@ -57,6 +57,154 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9c7177ff-1fe1-11e5-9a01-bcaec565249c">
+    <topic>libxml2 -- Enforce the reader to run in constant memory</topic>
+    <affects>
+      <package>
+	<name>libxml2</name>
+	<range><lt>2.9.2_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Daniel Veilland reports:</p>
+	<blockquote cite="https://git.gnome.org/browse/libxml2/commit/?id=213f1fe0d76d30eaed6e5853057defc43e6df2c9">
+	  <p>Enforce the reader to run in constant memory. One of the
+	    operation on the reader could resolve entities leading to
+	    the classic expansion issue. Make sure the buffer used for
+	    xmlreader operation is bounded. Introduce a new allocation
+	    type for the buffers for this effect.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1819</cvename>
+      <url>https://git.gnome.org/browse/libxml2/commit/?id=213f1fe0d76d30eaed6e5853057defc43e6df2c9</url>
+    </references>
+    <dates>
+      <discovery>2015-04-14</discovery>
+      <entry>2015-07-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2a8b7d21-1ecc-11e5-a4a5-002590263bf5">
+    <topic>wesnoth -- disclosure of .pbl files with lowercase, uppercase, and mixed-case extension</topic>
+    <affects>
+      <package>
+	<name>wesnoth</name>
+	<range><lt>1.12.4,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ignacio R. Morelle reports:</p>
+	<blockquote cite="http://forums.wesnoth.org/viewtopic.php?t=42776">
+	  <p>As mentioned in the Wesnoth 1.12.4 and Wesnoth 1.13.1 release
+	    announcements, a security vulnerability targeting add-on authors
+	    was found (bug #23504) which allowed a malicious user to obtain
+	    add-on server passphrases from the client's .pbl files and transmit
+	    them over the network, or store them in saved game files intended
+	    to be shared by the victim. This vulnerability affects all existing
+	    releases up to and including versions 1.12.2 and 1.13.0.
+	    Additionally, version 1.12.3 included only a partial fix that failed
+	    to guard users against attempts to read from .pbl files with an
+	    uppercase or mixed-case extension. CVE-2015-5069 and CVE-2015-5070
+	    have been assigned to the vulnerability affecting .pbl files with a
+	    lowercase extension, and .pbl files with an uppercase or mixed-case
+	    extension, respectively.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5069</cvename>
+      <cvename>CVE-2015-5070</cvename>
+      <url>http://forums.wesnoth.org/viewtopic.php?t=42776</url>
+      <url>http://forums.wesnoth.org/viewtopic.php?t=42775</url>
+    </references>
+    <dates>
+      <discovery>2015-06-28</discovery>
+      <entry>2015-07-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b19da422-1e02-11e5-b43d-002590263bf5">
+    <topic>cups-filters -- buffer overflow in texttopdf size allocation</topic>
+    <affects>
+      <package>
+	<name>cups-filters</name>
+	<range><lt>1.0.70</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Stefan Cornelius from Red Hat reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/06/26/4">
+	  <p>A heap-based buffer overflow was discovered in the way the
+	    texttopdf utility of cups-filters processed print jobs with a
+	    specially crafted line size. An attacker being able to submit
+	    print jobs could exploit this flaw to crash texttopdf or,
+	    possibly, execute arbitrary code.</p>
+	</blockquote>
+	<p>Till Kamppeter reports:</p>
+	<blockquote cite="http://bzr.linuxfoundation.org/loggerhead/openprinting/cups-filters/revision/7363">
+	  <p>texttopdf: Fixed buffer overflow on size allocation of texttopdf
+	    when working with extremely small line sizes, which causes the size
+	    calculation to result in 0 (CVE-2015-3258, thanks to Stefan
+	    Cornelius from Red Hat for the patch).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3258</cvename>
+      <mlist>http://www.openwall.com/lists/oss-security/2015/06/26/4</mlist>
+      <url>http://bzr.linuxfoundation.org/loggerhead/openprinting/cups-filters/revision/7363</url>
+    </references>
+    <dates>
+      <discovery>2015-06-26</discovery>
+      <entry>2015-06-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0d0f3050-1f69-11e5-9ba9-d050996490d0">
+    <topic>ntp -- control message remote Deinal of Service vulnerability</topic>
+    <affects>
+      <package>
+	<name>ntp</name>
+	<range><lt>4.2.8p3</lt></range>
+      </package>
+      <package>
+	<name>ntp-devel</name>
+	<range><lt>4.3.25</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ntp.org reports:</p>
+	<blockquote cite="http://support.ntp.org/bin/view/Main/SecurityNotice#June_2015_NTP_Security_Vulnerabi">
+	  <p>Under limited and specific circumstances an attacker can send a
+	    crafted packet to cause a vulnerable ntpd instance to crash.
+	    This requires each of the following to be true:</p>
+	  <ul>
+	    <li>ntpd set up to allow for remote configuration (not
+	      allowed by default), and</li>
+	    <li>knowledge of the configuration password, and</li>
+	    <li>access to a computer entrusted to perform remote
+	      configuration.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://bugs.ntp.org/show_bug.cgi?id=2853</url>
+      <url>https://www.kb.cert.org/vuls/id/668167</url>
+      <url>http://support.ntp.org/bin/view/Main/SecurityNotice#June_2015_NTP_Security_Vulnerabi</url>
+    </references>
+    <dates>
+      <discovery>2015-06-29</discovery>
+      <entry>2015-06-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="acd5d037-1c33-11e5-be9c-6805ca1d3bb1">
     <topic>qemu -- Heap overflow in QEMU PCNET controller, allowing guest to host escape (CVE-2015-3209)</topic>
     <affects>
@@ -2953,8 +3101,7 @@ Notes:
       </package>
       <package>
 	<name>netpbm</name>
-	<range><lt>10.47.56</lt></range>
-	<range><ge>10.70</ge><lt>10.70.06</lt></range>
+	<range><lt>10.35.96</lt></range>
       </package>
       <package>
 	<name>opengtl</name>
@@ -2995,7 +3142,7 @@ Notes:
     <dates>
       <discovery>2015-04-24</discovery>
       <entry>2015-05-15</entry>
-      <modified>2015-06-24</modified>
+      <modified>2015-07-01</modified>
     </dates>
   </vuln>
 

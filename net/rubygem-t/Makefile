@@ -19,6 +19,8 @@ RUN_DEPENDS=	rubygem-geokit>=1.8.3:${PORTSDIR}/graphics/rubygem-geokit \
 		rubygem-thor>=0.19.1:${PORTSDIR}/devel/rubygem-thor \
 		rubygem-twitter>=5.13:${PORTSDIR}/net/rubygem-twitter
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

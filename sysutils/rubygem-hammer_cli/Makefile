@@ -24,6 +24,8 @@ RUN_DEPENDS=	rubygem-apipie-bindings>=0.0.10:${PORTSDIR}/devel/rubygem-apipie-bi
 		rubygem-rest-client>=1.6.7:${PORTSDIR}/www/rubygem-rest-client \
 		rubygem-table_print>=1.5.1:${PORTSDIR}/devel/rubygem-table_print
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

@@ -531,13 +531,13 @@ MASTER_SITE_GITHUB_CLOUD+=	http://cloud.github.com/downloads/%SUBDIR%
 .  if !defined(MASTER_SITES) || !${MASTER_SITES:MGH} && !${MASTER_SITES:MGHC} && !${USE_GITHUB:Mnodefault}
 MASTER_SITES+=	GH
 .  endif
-_GH_ACCOUNT_DEFAULT=	${PORTNAME}
-GH_ACCOUNT?=	${_GH_ACCOUNT_DEFAULT}
-_GH_PROJECT_DEFAULT=	${PORTNAME}
-GH_PROJECT?=	${_GH_PROJECT_DEFAULT}
+GH_ACCOUNT_DEFAULT=	${PORTNAME}
+GH_ACCOUNT?=	${GH_ACCOUNT_DEFAULT}
+GH_PROJECT_DEFAULT=	${PORTNAME}
+GH_PROJECT?=	${GH_PROJECT_DEFAULT}
 # Use full PREFIX/SUFFIX and converted DISTVERSION
-_GH_TAGNAME_DEFAULT=	${DISTVERSIONFULL}
-GH_TAGNAME?=	${_GH_TAGNAME_DEFAULT}
+GH_TAGNAME_DEFAULT=	${DISTVERSIONFULL}
+GH_TAGNAME?=	${GH_TAGNAME_DEFAULT}
 # Iterate over GH_ACCOUNT, GH_PROJECT and GH_TAGNAME to extract groups
 _GITHUB_GROUPS= DEFAULT
 .for _A in ${GH_ACCOUNT}
@@ -554,10 +554,10 @@ check-makevars::
 .      if !${_GITHUB_GROUPS:M${_group}}
 _GITHUB_GROUPS+=	${_group}
 .       endif
-_GH_ACCOUNT_${_group}=	${_A:C@^(.*):[^/:]+$@\1@}
+GH_ACCOUNT_${_group}=	${_A:C@^(.*):[^/:]+$@\1@}
 .    endfor
 .  else
-_GH_ACCOUNT_DEFAULT=	${_A:C@^(.*):[^/:]+$@\1@}
+GH_ACCOUNT_DEFAULT=	${_A:C@^(.*):[^/:]+$@\1@}
 .  endif
 .endfor
 .for _P in ${GH_PROJECT}
@@ -574,10 +574,10 @@ check-makevars::
 .      if !${_GITHUB_GROUPS:M${_group}}
 _GITHUB_GROUPS+=	${_group}
 .       endif
-_GH_PROJECT_${_group}=	${_P:C@^(.*):[^/:]+$@\1@}
+GH_PROJECT_${_group}=	${_P:C@^(.*):[^/:]+$@\1@}
 .    endfor
 .  else
-_GH_PROJECT_DEFAULT=	${_P:C@^(.*):[^/:]+$@\1@}
+GH_PROJECT_DEFAULT=	${_P:C@^(.*):[^/:]+$@\1@}
 .  endif
 .endfor
 .for _T in ${GH_TAGNAME}
@@ -594,17 +594,17 @@ check-makevars::
 .      if !${_GITHUB_GROUPS:M${_group}}
 _GITHUB_GROUPS+=	${_group}
 .       endif
-_GH_TAGNAME_${_group}=	${_T:C@^(.*):[^/:]+$@\1@}
+GH_TAGNAME_${_group}=	${_T:C@^(.*):[^/:]+$@\1@}
 .    endfor
 .  else
-_GH_TAGNAME_DEFAULT=	${_T:C@^(.*):[^/:]+$@\1@}
+GH_TAGNAME_DEFAULT=	${_T:C@^(.*):[^/:]+$@\1@}
 .  endif
 .endfor
 # Put the default values back into the variables so that the *default* behavior
 # is not changed.
-GH_ACCOUNT:=	${_GH_ACCOUNT_DEFAULT}
-GH_PROJECT:=	${_GH_PROJECT_DEFAULT}
-GH_TAGNAME:=	${_GH_TAGNAME_DEFAULT}
+GH_ACCOUNT:=	${GH_ACCOUNT_DEFAULT}
+GH_PROJECT:=	${GH_PROJECT_DEFAULT}
+GH_TAGNAME:=	${GH_TAGNAME_DEFAULT}
 .  if defined(GH_TAGNAME)
 GH_TAGNAME_SANITIZED=	${GH_TAGNAME:S,/,-,}
 # Github silently converts tags starting with v to not have v in the filename
@@ -638,32 +638,16 @@ DISTFILES+=	${DISTNAME}${_GITHUB_EXTRACT_SUFX}
 # entries with the correct group and create {WRKSRC,DISTNAME,DISTFILES}_group
 # helper variables.
 .  for _group in ${_GITHUB_GROUPS:NDEFAULT}
-.if defined(_GH_ACCOUNT_${_group})
-_a_tmp=	${_GH_ACCOUNT_${_group}}
-.else
-_a_tmp=	${_GH_ACCOUNT_DEFAULT}
-.endif
-.if defined(_GH_PROJECT_${_group})
-_p_tmp=	${_GH_PROJECT_${_group}}
-.else
-_p_tmp=	${_GH_PROJECT_DEFAULT}
-.endif
-.if defined(_GH_TAGNAME_${_group})
-_t_tmp=	${_GH_TAGNAME_${_group}}
-.else
-_t_tmp=	${_GH_TAGNAME_DEFAULT}
-.endif
-# starting with 10+:
-#_a_tmp=	${_GH_ACCOUNT_${_group}:U${_GH_ACCOUNT_DEFAULT}}
-#_p_tmp=	${_GH_PROJECT_${_group}:U${_GH_PROJECT_DEFAULT}}
-#_t_tmp=	${_GH_TAGNAME_${_group}:U${_GH_TAGNAME_DEFAULT}}
-_t_tmp_s=	${_t_tmp:S,/,-,}
-_t_tmp_e=	${_t_tmp_s:C/^[vV]([0-9])/\1/}
-DISTNAME_${_group}:=	${_a_tmp}-${_p_tmp}-${_t_tmp_s}
+GH_ACCOUNT_${_group}?=	${GH_ACCOUNT_DEFAULT}
+GH_PROJECT_${_group}?=	${GH_PROJECT_DEFAULT}
+GH_TAGNAME_${_group}?=	${GH_TAGNAME_DEFAULT}
+GH_TAGNAME_${_group}_SANITIZED=	${GH_TAGNAME_${_group}:S,/,-,}
+GH_TAGNAME_${_group}_EXTRACT=	${GH_TAGNAME_${_group}_SANITIZED:C/^[vV]([0-9])/\1/}
+DISTNAME_${_group}:=	${GH_ACCOUNT_${_group}}-${GH_PROJECT_${_group}}-${GH_TAGNAME_${_group}_SANITIZED}
 DISTFILE_${_group}:=	${DISTNAME_${_group}}_GH${_GITHUB_REV}${_GITHUB_EXTRACT_SUFX}
 DISTFILES:=	${DISTFILES} ${DISTFILE_${_group}}:${_group}
-MASTER_SITES:=	${MASTER_SITES} ${MASTER_SITE_GITHUB:S@%SUBDIR%@${_a_tmp}/${_p_tmp}/tar.gz/${_t_tmp}?dummy=/:${_group}@}
-WRKSRC_${_group}:=	${WRKDIR}/${_p_tmp}-${_t_tmp_e}
+MASTER_SITES:=	${MASTER_SITES} ${MASTER_SITE_GITHUB:S@%SUBDIR%@${GH_ACCOUNT_${_group}}/${GH_PROJECT_${_group}}/tar.gz/${GH_TAGNAME_${_group}}?dummy=/:${_group}@}
+WRKSRC_${_group}:=	${WRKDIR}/${GH_PROJECT_${_group}}-${GH_TAGNAME_${_group}_EXTRACT}
 .  endfor
 .endif
 .endif

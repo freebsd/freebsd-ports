@@ -75,7 +75,7 @@ TEST_DRV_CONFIGURE_ENABLE=	test
 pre-configure:
 .if ${PORT_OPTIONS:MCLIENT_ONLY} && ( ${PORT_OPTIONS:MAPCSMART_DRV} || \
 	${PORT_OPTIONS:MAPCDUMB_DRV} || ${PORT_OPTIONS:MPCNET_DRV} || \
-	${PORT_OPTIONS:MPOWERFLUTE} || ${PORT_OPTIONS:MUSB} || \
+	${PORT_OPTIONS:MUSB} || \
 	${PORT_OPTIONS:MSNMP_DRV} || ${PORT_OPTIONS:MTEST_DRV} )
 	@${ECHO_CMD} "It doesn't make sense to build drivers if all you want is"
 	@${ECHO_CMD} "the client; please do make config and select either"

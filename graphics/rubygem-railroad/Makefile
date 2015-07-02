@@ -12,6 +12,8 @@ COMMENT=	Class diagrams generator for Ruby on Rails applications
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

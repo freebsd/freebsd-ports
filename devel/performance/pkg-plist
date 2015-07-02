@@ -14,6 +14,8 @@ GNUstep/Local/Library/Documentation/Performance/GSThroughput.gsdoc
 GNUstep/Local/Library/Documentation/Performance/GSThroughput.html
 GNUstep/Local/Library/Documentation/Performance/GSTicker.gsdoc
 GNUstep/Local/Library/Documentation/Performance/GSTicker.html
+GNUstep/Local/Library/Documentation/Performance/GSUniqued.gsdoc
+GNUstep/Local/Library/Documentation/Performance/GSUniqued.html
 GNUstep/Local/Library/Documentation/Performance/OrderedSymbolDeclarations.plist
 GNUstep/Local/Library/Documentation/Performance/Performance.igsdoc
 GNUstep/Local/Library/Documentation/Performance/dependencies
@@ -25,6 +27,7 @@ GNUstep/Local/Library/Headers/Performance/GSSkipMutableArray.h
 GNUstep/Local/Library/Headers/Performance/GSThreadPool.h
 GNUstep/Local/Library/Headers/Performance/GSThroughput.h
 GNUstep/Local/Library/Headers/Performance/GSTicker.h
+GNUstep/Local/Library/Headers/Performance/GSUniqued.h
 GNUstep/Local/Library/Libraries/libPerformance.so
-GNUstep/Local/Library/Libraries/libPerformance.so.0.4
-GNUstep/Local/Library/Libraries/libPerformance.so.0.4.0
+GNUstep/Local/Library/Libraries/libPerformance.so.%%VERSION%%
+GNUstep/Local/Library/Libraries/libPerformance.so.0.5

@@ -11,6 +11,8 @@ COMMENT=	Subexec spawns a subprocess with an optional timeout
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
