@@ -149,6 +149,7 @@ lib/erlang/lib/cowboy-%%VERSION%%/src/cowboy_websocket_handler.erl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ssl_hello_world/src/toppage_handler.erl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/static_world/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/static_world/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/static_world/priv/index.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/static_world/priv/small.mp4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/static_world/priv/small.ogv
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/static_world/priv/test.txt
