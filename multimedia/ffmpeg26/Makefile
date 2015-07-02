@@ -19,6 +19,9 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 
 UNIQUENAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
+DEPRECATED=		2.6 branch is outdated, use multimedia/ffmpeg instead
+EXPIRATION_DATE=	2015-07-31
+
 HAS_CONFIGURE=	yes
 CONFIGURE_LOG=	config.err
 USES=		cpe gmake pkgconfig perl5 tar:bzip2
