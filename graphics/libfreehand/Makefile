@@ -11,8 +11,8 @@ COMMENT=	Library providing ability to interpret and import Adobe/Macromedia draw
 LICENSE=	LGPL21 MPL GPLv2
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libicudata.so:${PORTSDIR}/devel/icu \
-		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
+BUILD_DEPENDS=	icu-config:${PORTSDIR}/devel/icu
+LIB_DEPENDS=	liblcms2.so:${PORTSDIR}/graphics/lcms2 \
 		librevenge-0.0.so:${PORTSDIR}/textproc/librevenge
 
 GNU_CONFIGURE=	yes
