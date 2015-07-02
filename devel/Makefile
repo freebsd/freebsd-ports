@@ -415,6 +415,7 @@
     SUBDIR += elixir-lager_logger
     SUBDIR += elixir-plug
     SUBDIR += elixir-poison
+    SUBDIR += elixir-tzdata
     SUBDIR += embb
     SUBDIR += epl.el
     SUBDIR += epm
