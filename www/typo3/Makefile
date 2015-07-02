@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	typo3
-PORTVERSION=	7.2.0
-PORTREVISION=	1
+PORTVERSION=	7.3.1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION}
 
@@ -14,8 +13,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		cpe shebangfix
-SHEBANG_FILES=	typo3/sysext/core/Build/Scripts/xlfcheck.sh \
-		typo3/sysext/mediace/Resources/Contrib/flowplayer/plugins/flowplayer.captions/example/flvtool2-cuepoints.sh
+SHEBANG_FILES=	typo3/sysext/core/Build/Scripts/xlfcheck.sh
 NO_BUILD=	yes
 NO_ARCH=	yes
 USE_PHP=	ctype fileinfo filter hash json mysqli openssl pcre session soap xml
