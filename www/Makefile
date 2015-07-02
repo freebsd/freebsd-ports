@@ -163,6 +163,7 @@
     SUBDIR += eliom
     SUBDIR += elixir-maru
     SUBDIR += elixir-phoenix
+    SUBDIR += elixir-phoenix_ecto
     SUBDIR += emacs-w3m
     SUBDIR += encode-explorer
     SUBDIR += entrans

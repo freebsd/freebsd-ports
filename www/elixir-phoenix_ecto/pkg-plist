@@ -1,0 +1,14 @@
+lib/elixir/lib/phoenix_ecto/ebin/Elixir.Phoenix.Ecto.beam
+lib/elixir/lib/phoenix_ecto/ebin/Elixir.Plug.Exception.Ecto.CastError.beam
+lib/elixir/lib/phoenix_ecto/ebin/Elixir.Plug.Exception.Ecto.NoResultsError.beam
+lib/elixir/lib/phoenix_ecto/ebin/Elixir.Poison.Encoder.Decimal.beam
+lib/elixir/lib/phoenix_ecto/ebin/Elixir.Poison.Encoder.Ecto.Changeset.beam
+lib/elixir/lib/phoenix_ecto/ebin/Elixir.Poison.Encoder.Ecto.Date.beam
+lib/elixir/lib/phoenix_ecto/ebin/Elixir.Poison.Encoder.Ecto.DateTime.beam
+lib/elixir/lib/phoenix_ecto/ebin/Elixir.Poison.Encoder.Ecto.Time.beam
+lib/elixir/lib/phoenix_ecto/ebin/phoenix_ecto.app
+lib/elixir/lib/phoenix_ecto/lib/phoenix_ecto.ex
+lib/elixir/lib/phoenix_ecto/lib/phoenix_ecto/html.ex
+lib/elixir/lib/phoenix_ecto/lib/phoenix_ecto/json.ex
+lib/elixir/lib/phoenix_ecto/lib/phoenix_ecto/plug.ex
+%%PORTDOCS%%%%DOCSDIR%%/README.md
