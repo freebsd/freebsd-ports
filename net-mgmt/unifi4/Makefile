@@ -5,7 +5,8 @@ PORTNAME=	unifi4
 PORTVERSION=	4.6.6
 PORTREVISION=	0
 CATEGORIES=	net-mgmt java
-MASTER_SITES=	http://dl.ubnt.com/unifi/${PORTVERSION}-${UBNT_BUILD}/
+MASTER_SITES=	http://dl.ubnt.com/unifi/${PORTVERSION}-${UBNT_BUILD}/ \
+		https://www.ubnt.com/downloads/unifi/${PORTVERSION}/
 DISTNAME=	UniFi.unix
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
