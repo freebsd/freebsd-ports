@@ -1,0 +1,4 @@
+Ecto is a domain specific language for writing queries and interacting
+with databases in Elixir.
+
+WWW: https://github.com/elixir-lang/ecto
