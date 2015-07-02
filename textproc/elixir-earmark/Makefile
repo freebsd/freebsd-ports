@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	earmark
-PORTVERSION=	0.1.8
+PORTVERSION=	0.1.17
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 PKGNAMEPREFIX=	elixir-
@@ -13,6 +13,7 @@ LICENSE=	APACHE20
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pragdave
+GH_TAGNAME=	07914f5
 
 .include "${PORTSDIR}/lang/elixir/bsd.elixir.mk"
 .include <bsd.port.mk>
