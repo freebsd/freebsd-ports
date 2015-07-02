@@ -16,7 +16,7 @@ LIB_DEPENDS=	liblcms2.so:${PORTSDIR}/graphics/lcms2 \
 		librevenge-0.0.so:${PORTSDIR}/textproc/librevenge
 
 GNU_CONFIGURE=	yes
-USES=	gperf perl5 libtool pathfix pkgconfig tar:xz
+USES=	compiler:c++11-lang gperf perl5 libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 CONFIGURE_ARGS=	--disable-werror --without-docs
