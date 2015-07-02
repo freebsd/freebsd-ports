@@ -416,6 +416,7 @@
     SUBDIR += elixir-plug
     SUBDIR += elixir-poison
     SUBDIR += elixir-timex
+    SUBDIR += elixir-timex-interval
     SUBDIR += elixir-tzdata
     SUBDIR += embb
     SUBDIR += epl.el
