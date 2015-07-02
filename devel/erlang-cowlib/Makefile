@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cowlib
-PORTVERSION=	1.0.0
+PORTVERSION=	1.3.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 

@@ -7,8 +7,10 @@ lib/erlang/lib/cowlib-%%VERSION%%/ebin/cow_mimetypes.beam
 lib/erlang/lib/cowlib-%%VERSION%%/ebin/cow_multipart.beam
 lib/erlang/lib/cowlib-%%VERSION%%/ebin/cow_qs.beam
 lib/erlang/lib/cowlib-%%VERSION%%/ebin/cow_spdy.beam
+lib/erlang/lib/cowlib-%%VERSION%%/ebin/cow_ws.beam
 lib/erlang/lib/cowlib-%%VERSION%%/ebin/cowlib.app
 lib/erlang/lib/cowlib-%%VERSION%%/include/cow_inline.hrl
+lib/erlang/lib/cowlib-%%VERSION%%/include/cow_parse.hrl
 lib/erlang/lib/cowlib-%%VERSION%%/src/cow_cookie.erl
 lib/erlang/lib/cowlib-%%VERSION%%/src/cow_date.erl
 lib/erlang/lib/cowlib-%%VERSION%%/src/cow_http.erl
@@ -20,4 +22,5 @@ lib/erlang/lib/cowlib-%%VERSION%%/src/cow_multipart.erl
 lib/erlang/lib/cowlib-%%VERSION%%/src/cow_qs.erl
 lib/erlang/lib/cowlib-%%VERSION%%/src/cow_spdy.erl
 lib/erlang/lib/cowlib-%%VERSION%%/src/cow_spdy.hrl
+lib/erlang/lib/cowlib-%%VERSION%%/src/cow_ws.erl
 lib/erlang/lib/cowlib-%%VERSION%%/src/cowlib.app.src
