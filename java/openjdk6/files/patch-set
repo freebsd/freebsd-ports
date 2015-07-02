@@ -1936,44 +1936,74 @@
  }
 --- hotspot/src/os/bsd/vm/vmError_bsd.cpp
 +++ hotspot/src/os/bsd/vm/vmError_bsd.cpp
-@@ -34,6 +34,12 @@
+@@ -33,30 +33,50 @@
+ #include <sys/syscall.h>
  #include <unistd.h>
  #include <signal.h>
- 
 +#ifdef __FreeBSD__
-+#define	GDB_LAUNCHER	"gdb /proc/%d/file %d"
-+#else
-+#define	GDB_LAUNCHER	"gdb /proc/%d/exe %d"
++#include <limits.h>
++#include <sys/sysctl.h>
 +#endif
 +
++#define GDB_CMD "gdb"
++
++static void set_debugger(char *buf, int buflen) {
++  int pid = os::current_process_id();
++#ifdef __FreeBSD__
++  char cmd[PATH_MAX+1];
++  int name[4] = { CTL_KERN, KERN_PROC, KERN_PROC_PATHNAME, pid };
++  size_t len = sizeof(cmd);
++  if (sysctl(name, 4, cmd, &len, NULL, 0) == 0 && len > 0) {
++    cmd[len] = '\0';
++    jio_snprintf(buf, buflen, "%s %s %d", GDB_CMD, cmd, pid);
++  } else
++#endif
++  jio_snprintf(buf, buflen, "%s /proc/%d/file %d", GDB_CMD, pid, pid);
++}
+ 
  void VMError::show_message_box(char *buf, int buflen) {
    bool yes;
    do {
-@@ -44,7 +50,7 @@
+-    error_string(buf, buflen);
+-    int len = (int)strlen(buf);
++    intx tid = os::current_thread_id();
++    set_debugger(buf, buflen);
++    int len = (int)strlen(buf) + 1;
++    char *msg = &buf[len];
++    error_string(msg, buflen - len);
++    len += (int)strlen(msg);
+     char *p = &buf[len];
+ 
      jio_snprintf(p, buflen - len,
                 "\n\n"
                 "Do you want to debug the problem?\n\n"
 -               "To debug, run 'gdb /proc/%d/exe %d'; then switch to thread " INTX_FORMAT " (" INTPTR_FORMAT ")\n"
-+               "To debug, run '" GDB_LAUNCHER "'; then switch to thread " INTX_FORMAT " (" INTPTR_FORMAT ")\n"
-                "Enter 'yes' to launch gdb automatically (PATH must include gdb)\n"
+-               "Enter 'yes' to launch gdb automatically (PATH must include gdb)\n"
++               "To debug, run '%s'; then switch to thread " INTX_FORMAT " (" INTPTR_FORMAT ")\n"
++               "Enter 'yes' to launch " GDB_CMD " automatically (PATH must include " GDB_CMD ")\n"
                 "Otherwise, press RETURN to abort...",
-                os::current_process_id(), os::current_process_id(),
-@@ -54,7 +60,7 @@
+-               os::current_process_id(), os::current_process_id(),
+-               os::current_thread_id(), os::current_thread_id());
++               buf, tid, tid);
+ 
+-    yes = os::message_box("Unexpected Error", buf);
++    yes = os::message_box("Unexpected Error", msg);
  
      if (yes) {
        // yes, user asked VM to launch debugger
 -      jio_snprintf(buf, buflen, "gdb /proc/%d/exe %d",
-+      jio_snprintf(buf, buflen, GDB_LAUNCHER,
-                    os::current_process_id(), os::current_process_id());
- 
+-                   os::current_process_id(), os::current_process_id());
+-
        os::fork_and_exec(buf);
+       yes = false;
+     }
 --- hotspot/src/os/posix/launcher/java_md.c
 +++ hotspot/src/os/posix/launcher/java_md.c
 @@ -35,6 +35,9 @@
  #include <sys/stat.h>
  #include <unistd.h>
  #include <sys/types.h>
-+#ifndef _SC_PHYS_PAGES
++#ifdef __FreeBSD__
 +#include <sys/sysctl.h>
 +#endif
  
@@ -1999,31 +2029,26 @@
          strcat(new_runpath, ":");
          strcat(new_runpath, runpath);
        }
-@@ -992,9 +995,13 @@
-             }
-         }
-     }
--#elif defined(__linux__)
-+#elif defined(__linux__) || defined(_ALLBSD_SOURCE)
-     {
-+#ifdef __FreeBSD__
-+        const char* self = "/proc/curproc/file";
-+#else
-         const char* self = "/proc/self/exe";
-+#endif
-         char buf[PATH_MAX+1];
-         int len = readlink(self, buf, PATH_MAX);
-         if (len >= 0) {
-@@ -1002,7 +1009,7 @@
+@@ -1002,7 +1005,17 @@
              exec_path = JLI_StringDup(buf);
          }
      }
 -#else /* !__sun && !__linux */
-+#else /* !__sun && !__linux && !_ALLBSD_SOURCE */
++#elif defined(__FreeBSD__)
++    {
++        char buf[PATH_MAX+1];
++        int name[4] = { CTL_KERN, KERN_PROC, KERN_PROC_PATHNAME, -1 };
++        size_t len = sizeof(buf);
++        if (sysctl(name, 4, buf, &len, NULL, 0) == 0 && len > 0) {
++            buf[len] = '\0';
++            exec_path = JLI_StringDup(buf);
++        }
++    }
++#else /* !__sun && !__linux && !__FreeBSD__ */
      {
          /* Not implemented */
      }
-@@ -1100,6 +1107,7 @@
+@@ -1100,6 +1113,7 @@
  /* Compute physical memory by asking the OS */
  uint64_t
  physical_memory(void) {
@@ -2031,7 +2056,7 @@
    const uint64_t pages     = (uint64_t) sysconf(_SC_PHYS_PAGES);
    const uint64_t page_size = (uint64_t) sysconf(_SC_PAGESIZE);
    const uint64_t result    = pages * page_size;
-@@ -1111,6 +1119,28 @@
+@@ -1111,6 +1125,28 @@
             "  physical memory: " UINT64_FORMAT " (%.3fGB)\n",
             pages, page_size, result, result / (double) GB);
    }
@@ -2060,7 +2085,7 @@
    return result;
  }
  
-@@ -1271,7 +1301,7 @@
+@@ -1271,7 +1307,7 @@
  #endif
  }
  
@@ -2069,7 +2094,7 @@
  
  #ifdef i586
  /*
-@@ -1450,7 +1480,7 @@
+@@ -1450,7 +1486,7 @@
  
  #endif /* __sun && i586 */
  
@@ -2078,7 +2103,7 @@
  
  /* The definition of a server-class machine for linux-i586 */
  jboolean
-@@ -1481,7 +1511,7 @@
+@@ -1481,7 +1517,7 @@
    return result;
  }
  
@@ -2087,7 +2112,7 @@
  
  #if defined(_ALLBSD_SOURCE) && defined(i586)
  
-@@ -1508,7 +1538,7 @@
+@@ -1508,7 +1544,7 @@
      }
    }
    if (_launcher_debug) {
@@ -2096,7 +2121,7 @@
             (result == JNI_TRUE ? "true" : "false"));
    }
    return result;
-@@ -1672,7 +1702,7 @@
+@@ -1672,7 +1708,7 @@
      while (dp != NULL) {
          cp = strchr(dp, (int)':');
          if (cp != NULL)
@@ -2105,7 +2130,7 @@
          if ((target = ProcessDir(info, dp)) != NULL)
              break;
          dp = cp;
-@@ -1931,8 +1961,8 @@
+@@ -1931,8 +1967,8 @@
  #define MAX_PID_STR_SZ   20
  
  void SetJavaLauncherPlatformProps() {
@@ -8559,15 +8584,13 @@
  #include <dirent.h>
  #include <dlfcn.h>
  #include <fcntl.h>
-@@ -34,17 +35,33 @@
+@@ -34,17 +35,31 @@
  #include <sys/stat.h>
  #include <unistd.h>
  #include <sys/types.h>
 +#if defined(_ALLBSD_SOURCE)
-+#include <sys/time.h>
-+#endif
-+#ifndef _SC_PHYS_PAGES
 +#include <sys/sysctl.h>
++#include <sys/time.h>
 +#endif
 +
  #include "manifest_info.h"
@@ -8592,9 +8615,9 @@
 +#define LD_LIBRARY_PATH "LD_LIBRARY_PATH"
 +#endif
  
- /*
-  * If a processor / os combination has the ability to run binaries of
-@@ -75,14 +92,31 @@
+ #define JRE_ERROR1      "Error: Could not find Java SE Runtime Environment."
+ #define JRE_ERROR11     "Error: Path length exceeds maximum length (PATH_MAX)"
+@@ -79,14 +94,31 @@
  #endif
  
  /* pointer to environment */
@@ -8628,7 +8651,7 @@
  static const char *user_dir     = "/java";
  #else /* Solaris */
  static const char *system_dir   = "/usr/jdk";
-@@ -404,10 +438,10 @@
+@@ -408,10 +440,10 @@
         * If not on Solaris, assume only a single LD_LIBRARY_PATH
         * variable.
         */
@@ -8641,7 +8664,7 @@
        /*
         * On linux, if a binary is running as sgid or suid, glibc sets
         * LD_LIBRARY_PATH to the empty string for security purposes.  (In
-@@ -423,6 +457,22 @@
+@@ -427,6 +459,22 @@
        if((getgid() != getegid()) || (getuid() != geteuid()) ) {
          return;
        }
@@ -8664,7 +8687,7 @@
  #endif
  
        /* runpath contains current effective LD_LIBRARY_PATH setting */
-@@ -431,7 +481,7 @@
+@@ -435,7 +483,7 @@
        new_runpath = JLI_MemAlloc( ((runpath!=NULL)?strlen(runpath):0) +
                                2*strlen(jrepath) + 2*strlen(arch) +
                                strlen(jvmpath) + 52);
@@ -8673,7 +8696,7 @@
  
  
        /*
-@@ -446,7 +496,7 @@
+@@ -450,7 +498,7 @@
  
          /* jvmpath, ((running != wanted)?((wanted==64)?"/"LIBARCH64NAME:"/.."):""), */
  
@@ -8682,7 +8705,7 @@
                  "%s:"
                  "%s/lib/%s:"
                  "%s/../lib/%s",
-@@ -721,7 +771,7 @@
+@@ -725,7 +773,7 @@
  jboolean
  GetApplicationHome(char *buf, jint bufsize)
  {
@@ -8691,31 +8714,26 @@
      char *execname = GetExecname();
      if (execname) {
          strncpy(buf, execname, bufsize-1);
-@@ -878,9 +928,13 @@
-             }
-         }
-     }
--#elif defined(__linux__)
-+#elif defined(__linux__) || defined(_ALLBSD_SOURCE)
-     {
-+#ifdef __FreeBSD__
-+        const char* self = "/proc/curproc/file";
-+#else
-         const char* self = "/proc/self/exe";
-+#endif
-         char buf[PATH_MAX+1];
-         int len = readlink(self, buf, PATH_MAX);
-         if (len >= 0) {
-@@ -888,7 +942,7 @@
+@@ -892,7 +940,17 @@
              exec_path = JLI_StringDup(buf);
          }
      }
 -#else /* !__sun && !__linux */
-+#else /* !__sun && !__linux && !_ALLBSD_SOURCE */
++#elif defined(__FreeBSD__)
++    {
++        char buf[PATH_MAX+1];
++        int name[4] = { CTL_KERN, KERN_PROC, KERN_PROC_PATHNAME, -1 };
++        size_t len = sizeof(buf);
++        if (sysctl(name, 4, buf, &len, NULL, 0) == 0 && len > 0) {
++            buf[len] = '\0';
++            exec_path = JLI_StringDup(buf);
++        }
++    }
++#else /* !__sun && !__linux && !__FreeBSD__ */
      {
          /* Not implemented */
      }
-@@ -977,6 +1031,7 @@
+@@ -981,6 +1039,7 @@
  /* Compute physical memory by asking the OS */
  uint64_t
  physical_memory(void) {
@@ -8723,7 +8741,7 @@
    const uint64_t pages     = (uint64_t) sysconf(_SC_PHYS_PAGES);
    const uint64_t page_size = (uint64_t) sysconf(_SC_PAGESIZE);
    const uint64_t result    = pages * page_size;
-@@ -988,6 +1043,28 @@
+@@ -992,6 +1051,28 @@
             "  physical memory: " UINT64_FORMAT " (%.3fGB)\n",
             pages, page_size, result, result / (double) GB);
    }
@@ -8752,7 +8770,7 @@
    return result;
  }
  
-@@ -1083,7 +1160,7 @@
+@@ -1087,7 +1168,7 @@
  
  #endif /* __sun && i586 */
  
@@ -8761,7 +8779,7 @@
  
  /*
   * A utility method for asking the CPU about itself.
-@@ -1148,7 +1225,7 @@
+@@ -1152,7 +1233,7 @@
  #endif
  }
  
@@ -8770,7 +8788,7 @@
  
  #ifdef i586
  /*
-@@ -1360,6 +1437,39 @@
+@@ -1364,6 +1445,39 @@
  
  #endif /* __linux__ && i586 */
  
@@ -8810,7 +8828,7 @@
  /* Dispatch to the platform-specific definition of "server-class" */
  jboolean
  ServerClassMachine(void) {
-@@ -1374,6 +1484,8 @@
+@@ -1378,6 +1492,8 @@
    result = solaris_i586_ServerClassMachine();
  #elif defined(__linux__) && defined(i586)
    result = linux_i586_ServerClassMachine();
@@ -8819,7 +8837,7 @@
  #else
    if (_launcher_debug) {
      printf("ServerClassMachine: returns default value of %s\n",
-@@ -1514,7 +1626,7 @@
+@@ -1518,7 +1634,7 @@
      while (dp != NULL) {
          cp = strchr(dp, (int)':');
          if (cp != NULL)
@@ -8828,7 +8846,7 @@
          if ((target = ProcessDir(info, dp)) != NULL)
              break;
          dp = cp;
-@@ -1692,9 +1804,29 @@
+@@ -1696,9 +1812,29 @@
      return(borrowed_unsetenv(name));
  }
  
@@ -8859,7 +8877,7 @@
  
  static void* hSplashLib = NULL;
  
-@@ -1722,13 +1854,15 @@
+@@ -1747,13 +1883,15 @@
      return "%lld";
  }
  
@@ -8877,7 +8895,7 @@
      pthread_t tid;
      pthread_attr_t attr;
      pthread_attr_init(&attr);
-@@ -1741,7 +1875,7 @@
+@@ -1766,7 +1904,7 @@
      if (pthread_create(&tid, &attr, (void *(*)(void*))continuation, (void*)args) == 0) {
        void * tmp;
        pthread_join(tid, &tmp);
@@ -8886,7 +8904,7 @@
      } else {
       /*
        * Continue execution in current thread if for some reason (e.g. out of
-@@ -1759,25 +1893,23 @@
+@@ -1784,25 +1922,23 @@
      if (thr_create(NULL, stack_size, (void *(*)(void *))continuation, args, flags, &tid) == 0) {
        void * tmp;
        thr_join(tid, NULL, &tmp);
