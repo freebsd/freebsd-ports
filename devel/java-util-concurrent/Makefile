@@ -12,6 +12,9 @@ DISTNAME=	concurrent
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility classes for concurrent Java programming
 
+DEPRECATED=	Included in all current JDKs by default
+EXPIRATION_DATE=2015-08-03
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 
