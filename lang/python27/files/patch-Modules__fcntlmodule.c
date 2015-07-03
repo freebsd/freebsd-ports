@@ -1,6 +1,6 @@
 --- ./Modules/fcntlmodule.c.orig	2014-07-03 21:57:10.429953240 +1000
 +++ ./Modules/fcntlmodule.c	2014-07-03 21:59:36.517210444 +1000
-@@ -98,20 +98,15 @@
+@@ -98,20 +98,15 @@ fcntl_ioctl(PyObject *self, PyObject *ar
  {
  #define IOCTL_BUFSZ 1024
      int fd;
@@ -24,7 +24,7 @@
      int arg;
      int ret;
      char *str;
-@@ -119,7 +114,7 @@
+@@ -119,7 +114,7 @@ fcntl_ioctl(PyObject *self, PyObject *ar
      int mutate_arg = 1;
      char buf[IOCTL_BUFSZ+1];  /* argument plus NUL byte */
  
@@ -33,7 +33,7 @@
                           conv_descriptor, &fd, &code,
                           &str, &len, &mutate_arg)) {
          char *arg;
-@@ -170,7 +165,7 @@
+@@ -170,7 +165,7 @@ fcntl_ioctl(PyObject *self, PyObject *ar
      }
  
      PyErr_Clear();
@@ -42,7 +42,7 @@
                           conv_descriptor, &fd, &code, &str, &len)) {
          if (len > IOCTL_BUFSZ) {
              PyErr_SetString(PyExc_ValueError,
-@@ -192,7 +187,7 @@
+@@ -192,7 +187,7 @@ fcntl_ioctl(PyObject *self, PyObject *ar
      PyErr_Clear();
      arg = 0;
      if (!PyArg_ParseTuple(args,
