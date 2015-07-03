@@ -83,6 +83,7 @@
     SUBDIR += scotch
     SUBDIR += slffea
     SUBDIR += spice
+    SUBDIR += stepcode
     SUBDIR += sweethome3d
     SUBDIR += tkgate
     SUBDIR += tochnog
