@@ -412,6 +412,7 @@
     SUBDIR += elixir-conform
     SUBDIR += elixir-decimal
     SUBDIR += elixir-dialyze
+    SUBDIR += elixir-exjsx
     SUBDIR += elixir-exrm
     SUBDIR += elixir-lager_logger
     SUBDIR += elixir-plug
