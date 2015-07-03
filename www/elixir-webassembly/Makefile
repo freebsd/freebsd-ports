@@ -11,8 +11,8 @@ COMMENT=	DSL for creating HTML structure straight with Elixir blocks.
 
 LICENSE=	BSD2CLAUSE
 
+USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	herenowcoder
 
-.include "${.CURDIR}/../../lang/elixir/bsd.elixir.mk"
 .include <bsd.port.mk>

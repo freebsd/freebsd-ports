@@ -11,8 +11,8 @@ COMMENT=	Time zone data for Elixir
 
 LICENSE=	MIT
 
+USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	lau
 
-.include "${.CURDIR}/../../lang/elixir/bsd.elixir.mk"
 .include <bsd.port.mk>

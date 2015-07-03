@@ -11,8 +11,8 @@ COMMENT=	Mix dialyzer task
 
 LICENSE=	APACHE20
 
+USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	fishcakez
 
-.include "${.CURDIR}/../../lang/elixir/bsd.elixir.mk"
 .include <bsd.port.mk>

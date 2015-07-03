@@ -12,6 +12,7 @@ COMMENT=	Web framework for Elixir
 
 LICENSE=	MIT
 
+USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	phoenixframework
 
@@ -29,5 +30,4 @@ MIX_RUN_DEPS:=	${MIX_BUILD_DEPS}
 MIX_EXTRA_APPS=	installer
 MIX_EXTRA_DIRS=	installer/lib installer/templates
 
-.include "${.CURDIR}/../../lang/elixir/bsd.elixir.mk"
 .include <bsd.port.mk>

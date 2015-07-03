@@ -10,8 +10,8 @@ COMMENT=	Pure Elixir JSON library
 
 LICENSE=	ISCL
 
+USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	devinus
 
-.include "${.CURDIR}/../../lang/elixir/bsd.elixir.mk"
 .include <bsd.port.mk>
