@@ -3,7 +3,7 @@
 
 PORTNAME=	libdlna
 PORTVERSION=	0.2.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	http://libdlna.geexbox.org/releases/ \
 		LOCAL/ehaupt
@@ -24,8 +24,6 @@ CONFIGURE_ARGS+=	--prefix="${PREFIX}" --disable-optimize \
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-BROKEN=		Does not build with ffmpeg-2.7
 
 post-patch:
 	@${REINPLACE_CMD} -e \
