@@ -1,5 +1,5 @@
---- tunip.c.orig	Tue Sep 21 15:20:40 1999
-+++ tunip.c	Thu Jul 20 04:26:39 2006
+--- tunip.c.orig	1999-09-21 22:20:40 UTC
++++ tunip.c
 @@ -35,6 +35,8 @@
  #include <unistd.h>
  #include <fcntl.h>
@@ -26,7 +26,7 @@
  #define _PATH_DEV_RANDOM	"/dev/random"
  
  #ifdef USE_ETHERTAP
-@@ -100,6 +104,7 @@
+@@ -100,6 +104,7 @@ struct ethtap_header ethtap;
  #endif
  
  unsigned char buf[MAX_HEADER+MAX_PACKET];
@@ -34,8 +34,19 @@
  
  typedef union {
      MD5_CTX md5;
-@@ -131,7 +136,9 @@
- 	des_key_schedule k3;
+@@ -124,14 +129,16 @@ typedef struct hash_method {
+ 
+ typedef union {
+     BF_KEY bf;
+-    des_key_schedule des;
++    DES_key_schedule des;
+     struct {
+-	des_key_schedule k1;
+-	des_key_schedule k2;
+-	des_key_schedule k3;
++	DES_key_schedule k1;
++	DES_key_schedule k2;
++	DES_key_schedule k3;
      } des3;
      CAST_KEY cast;
 +#ifndef NO_IDEA
@@ -44,7 +55,7 @@
  } crypt_key;
  
  typedef struct crypt_method {
-@@ -304,12 +311,14 @@
+@@ -304,12 +311,14 @@ void cast_cbc_encrypt(unsigned char *iv,
  void cast_cbc_decrypt(unsigned char *iv, crypt_key *dk,
  		      unsigned char *ct, unsigned int len);
  int cast_setkey(unsigned char *b, unsigned int len, crypt_key *k);
@@ -59,7 +70,7 @@
  void my_des_cbc_encrypt(unsigned char *iv, crypt_key *ek,
  			unsigned char *t, unsigned int len);
  void my_des_cbc_decrypt(unsigned char *iv, crypt_key *dk,
-@@ -379,14 +388,20 @@
+@@ -379,14 +388,20 @@ hash_method_t hash_ripemd160 = {
  
  hash_method_t *hash_list = &hash_ripemd160;
  
@@ -80,7 +91,7 @@
      "cast_cbc", 8, 8,
      cast_cbc_encrypt, cast_cbc_decrypt,
      cast_setkey, cast_setkey
-@@ -704,13 +719,22 @@
+@@ -704,13 +719,22 @@ void tun_new(struct tun_method *this,
   */
  int tun_send_ip(struct tun_method *this, struct encap_method *encap, int fd)
  {
@@ -104,7 +115,7 @@
      sent = write(fd, encap->buf, encap->buflen);
      if (sent != encap->buflen)
          syslog(LOG_ERR, "truncated in: %d -> %d\n", encap->buflen, sent);
-@@ -1120,6 +1144,7 @@
+@@ -1120,6 +1144,7 @@ void config_read(FILE *cf)
  	    }
  	} else if (strcmp(arg, "if") == 0) {
  	    int fd;
@@ -112,7 +123,7 @@
  	    struct sa_desc *local_sa, *remote_sa;
  	    struct peer_desc *peer;
  
-@@ -1128,6 +1153,7 @@
+@@ -1128,6 +1153,7 @@ void config_read(FILE *cf)
  		perror(arg);
  		continue;
  	    }
@@ -120,7 +131,7 @@
  
  	    local_sa = NULL;
  	    remote_sa = NULL;
-@@ -1974,6 +2000,7 @@
+@@ -1974,6 +2000,7 @@ int cast_setkey(unsigned char *b, unsign
      return 0;
  }
  
@@ -128,7 +139,7 @@
  void my_idea_cbc_encrypt(unsigned char *iv, crypt_key *ek,
  			 unsigned char *t, unsigned int len)
  {
-@@ -2002,6 +2029,7 @@
+@@ -2002,11 +2029,12 @@ int my_idea_set_decrypt_key(unsigned cha
      idea_set_decrypt_key(&k->idea, &k->idea);
      return 0;
  }
@@ -136,7 +147,66 @@
  
  void my_des_cbc_encrypt(unsigned char *iv, crypt_key *ek,
  			unsigned char *t, unsigned int len)
-@@ -2081,6 +2109,11 @@
+ {
+-    des_cbc_encrypt(t, t, len, ek->des, iv, DES_ENCRYPT);
++    DES_cbc_encrypt(t, t, len, &ek->des, iv, DES_ENCRYPT);
+ }
+ 
+ void my_des_cbc_decrypt(unsigned char *iv, crypt_key *dk,
+@@ -2018,7 +2046,7 @@ void my_des_cbc_decrypt(unsigned char *i
+     for (i = 0; i < len; i++) printf(" %02x", ct[i]);
+     printf("\n");
+ #endif
+-    des_cbc_encrypt(ct, ct, len, dk->des, iv, DES_DECRYPT);
++    DES_cbc_encrypt(ct, ct, len, &dk->des, iv, DES_DECRYPT);
+ #if 0
+     printf("%d bytes after decrypt\n", len);
+     for (i = 0; i < len; i++) printf(" %02x", ct[i]);
+@@ -2029,23 +2057,23 @@ void my_des_cbc_decrypt(unsigned char *i
+ int my_des_setkey(unsigned char *b, unsigned int len, crypt_key *k)
+ {
+     if (len == 8)
+-	return des_set_key(b, k->des);
++	return DES_set_key(b, &k->des);
+     return -1;
+ }
+ 
+ void my_des3_cbc_encrypt(unsigned char *iv, crypt_key *ek,
+ 			 unsigned char *t, unsigned int len)
+ {
+-    des_ede3_cbc_encrypt(t, t, len,
+-			 ek->des3.k1, ek->des3.k2, ek->des3.k3,
++    DES_ede3_cbc_encrypt(t, t, len,
++			 &ek->des3.k1, &ek->des3.k2, &ek->des3.k3,
+ 			 iv, DES_ENCRYPT);
+ }
+ 
+ void my_des3_cbc_decrypt(unsigned char *iv, crypt_key *dk,
+ 			 unsigned char *ct, unsigned int len)
+ {
+-    des_ede3_cbc_encrypt(ct, ct, len,
+-			 dk->des3.k1, dk->des3.k2, dk->des3.k3,
++    DES_ede3_cbc_encrypt(ct, ct, len,
++			 &dk->des3.k1, &dk->des3.k2, &dk->des3.k3,
+ 			 iv, DES_DECRYPT);
+ }
+ 
+@@ -2054,11 +2082,11 @@ int my_des3_setkey(unsigned char *b, uns
+     if (len != 24)
+ 	return -1;
+ 
+-    if (des_set_key(b, k->des3.k1) != 0)
++    if (DES_set_key(b, &k->des3.k1) != 0)
+ 	return -1;
+-    if (des_set_key(b+8, k->des3.k2) != 0)
++    if (DES_set_key(b+8, &k->des3.k2) != 0)
+ 	return -1;
+-    if (des_set_key(b+16, k->des3.k3) != 0)
++    if (DES_set_key(b+16, &k->des3.k3) != 0)
+ 	return -1;
+ 
+     return 0;
+@@ -2081,6 +2109,11 @@ int null_setkey(unsigned char *b, unsign
      return 0;
  }
  
@@ -148,7 +218,7 @@
  int main(int argc, char **argv)
  {
      time_t t;
-@@ -2088,9 +2121,14 @@
+@@ -2088,9 +2121,14 @@ int main(int argc, char **argv)
      int pack, i;
      struct sockaddr_in from;
      struct stat sb;
@@ -163,7 +233,7 @@
      openlog ("pipsecd", LOG_PID, LOG_DAEMON);
      syslog (LOG_NOTICE, "pipsecd starting");
  
-@@ -2113,7 +2151,21 @@
+@@ -2113,7 +2151,21 @@ int main(int argc, char **argv)
      if (encap_icmp_new(&encap_meth[ENCAP_ICMP], IPPROTO_ICMP) == -1)
  	exit(1);
  
@@ -186,7 +256,7 @@
      if (f == NULL) {
  	perror("configuration file");
  	exit(1);
-@@ -2123,8 +2175,8 @@
+@@ -2123,8 +2175,8 @@ int main(int argc, char **argv)
      fclose(f);
  
      /* Execute startup script, if any */
