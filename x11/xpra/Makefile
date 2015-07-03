@@ -3,6 +3,7 @@
 
 PORTNAME=	xpra
 PORTVERSION=	0.15.2
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://xpra.org/src/
 
