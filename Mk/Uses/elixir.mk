@@ -1,6 +1,12 @@
 # $FreeBSD$
 #
-# bsd.elixir.mk - Helper for Elixir applications
+# Handle Elixir related ports
+#
+# Feature:	elixir
+# Usage:	USES=elixir
+# Valid ARGS:	does not require args
+#
+# Additional variables:
 #
 # ELIXIR_APP_NAME	- Elixir app name as installed in Elixir's lib directory
 # ELIXIR_APP_ROOT	- Root directory for this Elixir app
@@ -9,7 +15,7 @@
 # MIX_CMD		- The "mix" command
 # MIX_COMPILE		- The "mix" command used to compile an Elixir app
 # MIX_BUILD_DEPS	- List of BUILD_DEPENDS in category/portname format
-# 			  (commonly referenced to as "deps" in Erlang and Elixir)
+# 			(commonly referenced to as "deps" in Erlang and Elixir)
 # MIX_RUN_DEPS		- List of RUN_DEPENDS in category/portname format
 # MIX_DOC_DIRS		- Extra doc directories to be installed in DOCSDIR
 # MIX_DOC_FILES		- Extra doc files to be installed in DOCSDIR (usually README.md)
@@ -18,6 +24,15 @@
 # MIX_EXTRA_APPS	- List of sub-applications to be built, if any
 # MIX_EXTRA_DIRS	- List of extra directories to be installed in ELIXIR_APP_ROOT
 # MIX_EXTRA_FILES	- List of extra files to be installed in ELIXIR_APP_ROOT
+#
+# MAINTAINER: olgeni@FreeBSD.org
+
+.if !defined(_INCLUDE_USES_ELIXIR_MK)
+_INCLUDE_USES_ELIXIR_MK=yes
+
+.if !empty(elixir_ARGS)
+IGNORE=	USES=elixir does not require args
+.endif
 
 ELIXIR_APP_NAME?=	${PORTNAME}
 ELIXIR_APP_ROOT?=	${PREFIX}/lib/elixir/lib/${ELIXIR_APP_NAME}
@@ -93,3 +108,5 @@ do-install-elixir:
 	${INSTALL_DATA} ${WRKSRC}/${app}/_build/${MIX_BUILD_NAME}/lib/*/ebin/* \
 		${STAGEDIR}${ELIXIR_APP_ROOT}/ebin
 .endfor
+
+.endif #!defined(_INCLUDE_USES_ELIXIR_MK)
