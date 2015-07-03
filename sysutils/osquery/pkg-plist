@@ -3,10 +3,7 @@ bin/osqueryi
 include/osquery/config.h
 include/osquery/core.h
 include/osquery/database.h
-include/osquery/database/db_handle.h
-include/osquery/database/query.h
-include/osquery/database/results.h
-include/osquery/enrollment.h
+include/osquery/enroll.h
 include/osquery/events.h
 include/osquery/extensions.h
 include/osquery/filesystem.h

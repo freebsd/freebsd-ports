@@ -1,9 +1,0 @@
---- kernel/linux/.gitignore.orig	2015-05-05 00:16:41 UTC
-+++ kernel/linux/.gitignore
-@@ -1,6 +0,0 @@
--Module.symvers
--modules.order
--.tmp_versions*
--*.cmd
--*.mod.c
--*.ko
