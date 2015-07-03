@@ -22,7 +22,7 @@ DISTINFO_FILE=	${PORTSDIR}/lang/python${PYTHON_SUFFIX}/distinfo
 WRKSRC=		${WRKDIR}/Python-${PORTVERSION}/Tools/scripts
 
 SCRIPT_FILES=	byteyears checkpyc copytime crlf dutree \
-		ftpmirror lfcr ptags untabify
+		lfcr ptags untabify
 PYLIB_FILES=	tabnanny timeit
 PLIST_FILES=	${SCRIPT_FILES:C/^.*/bin\/&/g} ${PYLIB_FILES:C/^.*/bin\/&/g}
 
