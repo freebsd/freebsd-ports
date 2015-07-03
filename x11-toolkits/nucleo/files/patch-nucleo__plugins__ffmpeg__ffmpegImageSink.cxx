@@ -1,6 +1,6 @@
---- nucleo/plugins/ffmpeg/ffmpegImageSink.cxx.orig
-+++ nucleo/plugins/ffmpeg/ffmpegImageSink.cxx
-@@ -118,11 +118,11 @@
+--- nucleo/plugins/ffmpeg/ffmpegImageSink.cxx.orig	2009-05-25 14:53:15.000000000 +0200
++++ nucleo/plugins/ffmpeg/ffmpegImageSink.cxx	2015-07-03 23:24:23.255152399 +0200
+@@ -118,11 +118,11 @@ namespace nucleo {
  
      output_format = 0 ;
      if (uri.scheme=="mpegts-udp") {
@@ -15,7 +15,22 @@
      } 
  
      std::string message ;
-@@ -190,7 +190,7 @@
+@@ -156,12 +156,13 @@ namespace nucleo {
+     snprintf(format_context->filename, sizeof(format_context->filename), 
+ 		   "%s", filename.c_str()) ;
+  
+-    vstream = av_new_stream(format_context, FREEPLAYER_VIDEO_PID) ;
++    vstream = avformat_new_stream(format_context, NULL) ;
+     if (!vstream) {
+ 	 std::cerr << "ffmpegImageSink: unable to create the AVStream" << std::endl ;
+ 	 stop() ;
+ 	 return false ;
+     }
++    vstream -> id = FREEPLAYER_VIDEO_PID;
+ 
+     // ----------------
+ 
+@@ -190,7 +191,7 @@ namespace nucleo {
  
      AVCodecContext *codec_context = vstream->codec ;
      codec_context->codec_id = output_format->video_codec ;
@@ -24,7 +39,7 @@
      codec_context->pix_fmt = PIX_FMT_YUV420P ;
      codec_context->width = img->getWidth() ;  // must be a multiple of two
      codec_context->height = img->getHeight() ; // must be a multiple of two
-@@ -210,12 +210,7 @@
+@@ -210,12 +211,7 @@ namespace nucleo {
  	   || !strcmp(format_context->oformat->name, "3gp"))
  	 codec_context->flags |= CODEC_FLAG_GLOBAL_HEADER ;
  
@@ -38,7 +53,7 @@
  
      // ------------------
  
-@@ -225,7 +220,7 @@
+@@ -225,7 +221,7 @@ namespace nucleo {
  	 return false ;
      }
  
@@ -47,7 +62,7 @@
  	 std::cerr << "ffmpegImageSink: could not open codec" << std::endl ;
  	 vstream->codec = 0 ;
  	 return false ;
-@@ -235,7 +230,7 @@
+@@ -235,7 +231,7 @@ namespace nucleo {
  
      if (filename!="") {
  	 sender = 0 ;
@@ -56,7 +71,7 @@
  	   std::cerr << "ffmpegImageSink: could not open " << filename << std::endl ;
  	   return false ;
  	 }
-@@ -245,17 +240,17 @@
+@@ -245,17 +241,17 @@ namespace nucleo {
  	 int port = uri.port ;
  	 if (!port) port = 1234 ;
  	 sender = new UdpSender(uri.host.c_str(), port) ;
@@ -77,7 +92,7 @@
  
      video_outbuf_size = 256*1024 ; // FIXME ?
      video_outbuf = new uint8_t [video_outbuf_size] ;
-@@ -346,7 +341,7 @@
+@@ -346,7 +342,7 @@ namespace nucleo {
      pkt.size = out_size ;
      if (cctx->coded_frame) {
  	 pkt.pts = pkt.dts = pts ;
@@ -86,7 +101,7 @@
      }
      if (av_write_frame(format_context, &pkt) != 0) {
  	 // std::cerr << "ffmpegImageSink: error while writing video frame" << std::endl ;
-@@ -372,7 +367,7 @@
+@@ -372,7 +368,7 @@ namespace nucleo {
  	 if (vstream->codec) {
  	   avcodec_close(vstream->codec) ;
  	   av_write_trailer(format_context) ;
