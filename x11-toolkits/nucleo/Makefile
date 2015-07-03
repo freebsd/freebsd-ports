@@ -57,10 +57,6 @@ QT4_MAKE_ARGS=		QT4MOC="${MOC}"
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MFFMPEG}
-BROKEN=		Does not build with ffmpeg-2.7
-.endif
-
 .if ! ${PORT_OPTIONS:MAVAHI} && ! ${PORT_OPTIONS:MMDNSRESPONDER}
 CONFIGURE_ARGS+=	--without-dns-sd
 .endif
