@@ -1351,7 +1351,7 @@ Notes:
       </package>
       <package>
 	<name>linux-c6-openssl</name>
-	<range><lt>1.0.2b</lt></range>
+	<range><lt>1.0.1e_6</lt></range>
       </package>
       <package>
 	<name>libressl</name>
@@ -1389,7 +1389,7 @@ Notes:
     <dates>
       <discovery>2015-06-11</discovery>
       <entry>2015-06-11</entry>
-      <modified>2015-06-11</modified>
+      <modified>2015-07-03</modified>
     </dates>
   </vuln>
 
