@@ -3,7 +3,7 @@
 
 PORTNAME=	rancid
 PORTVERSION=	2.3.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.shrubbery.net/pub/rancid/
 
@@ -31,7 +31,6 @@ NEWERCONFIG_FILES2=	etc/lg.conf
 NEWCONFIG_FILES=	rancid.conf lg.conf
 
 OPTIONS_DEFINE=		SVN
-OPTIONS_DEFAULT=
 
 SVN_DESC=		Use Subversion instead of CVS
 
