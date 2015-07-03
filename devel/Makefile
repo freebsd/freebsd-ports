@@ -411,6 +411,7 @@
     SUBDIR += elftoaout
     SUBDIR += elixir-conform
     SUBDIR += elixir-decimal
+    SUBDIR += elixir-dialyze
     SUBDIR += elixir-exrm
     SUBDIR += elixir-lager_logger
     SUBDIR += elixir-plug
