@@ -3,7 +3,7 @@
 
 PORTNAME=	libvisual
 PORTVERSION=	0.4.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 PKGNAMESUFFIX=	04
@@ -11,8 +11,7 @@ PKGNAMESUFFIX=	04
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Abstraction library that sits between apps and visual plugin
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	LGPL21 # or any later version
 
 USES=		gettext libtool:keepla pathfix pkgconfig
 GNU_CONFIGURE=	yes
