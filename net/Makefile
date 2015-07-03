@@ -907,7 +907,6 @@
     SUBDIR += py-ec2-cli-tools
     SUBDIR += py-eventlet
     SUBDIR += py-gntp
-    SUBDIR += py-google
     SUBDIR += py-gspread
     SUBDIR += py-gspreadsheet
     SUBDIR += py-impacket
