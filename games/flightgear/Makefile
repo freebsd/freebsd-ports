@@ -33,7 +33,7 @@ USE_GL=		gl glu glut
 USE_SQLITE=	3
 USE_QT5=	core buildtools qmake widgets
 
-USES=		cpe dos2unix cmake compiler jpeg openal:al,alut tar:bzip2
+USES=		alias cpe dos2unix cmake compiler jpeg openal:al,alut tar:bzip2
 DOS2UNIX_REGEX=	.*\.(c|h|cxx|cpp|hxx|hpp)
 CMAKE_ARGS+=	-DENABLE_JS_SERVER:BOOL=ON \
 		-DSYSTEM_SQLITE:BOOL=ON \

@@ -25,7 +25,7 @@ RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
 		qpress:${PORTSDIR}/archivers/qpress
 
 # autotool is in use for 5.1 builds
-USES=		autoreconf:build cpe gettext cmake iconv libtool perl5
+USES=		alias autoreconf:build cpe gettext cmake iconv libtool perl5
 CPE_VENDOR=	percona
 
 PLIST_FILES=	bin/xtrabackup bin/xbstream bin/innobackupex bin/xbcrypt

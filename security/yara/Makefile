@@ -13,7 +13,7 @@ GH_ACCOUNT=	plusvic
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		autoreconf libtool
+USES=		alias autoreconf libtool
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

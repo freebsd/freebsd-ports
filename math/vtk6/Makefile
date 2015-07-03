@@ -28,7 +28,7 @@ UNIQUENAME=	${PKGBASE}
 CONFLICTS=	vtk-4*
 USE_LDCONFIG=	${PREFIX}/lib/vtk-${VTK_SHORT_VER}
 USE_XORG=	xt
-USES=		cmake:outsource jpeg
+USES=		alias cmake:outsource jpeg
 CXXFLAGS+=	-I${LOCALBASE}/include
 
 VTK_SHORT_VER=	${PORTVERSION:R}
