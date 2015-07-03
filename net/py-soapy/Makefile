@@ -14,6 +14,9 @@ LICENSE=	PSFL
 
 RUN_DEPENDS=	${PYXML}
 
+DEPRECATED=	Abandonware depending on ancient py-xml. Please use net/py-soappy instead
+EXPIRATION_DATE=	2015-08-01
+
 USES=		python
 USE_PYTHON=	distutils
 
