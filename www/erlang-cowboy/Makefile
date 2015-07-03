@@ -11,9 +11,9 @@ COMMENT=	Small, fast and modular HTTP server written in Erlang
 LICENSE=	ISCL
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang \
-		erlang-cowlib>=1.0.0:${PORTSDIR}/devel/erlang-cowlib
+		erlang-cowlib>=1.0.0:${PORTSDIR}/www/erlang-cowlib
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang \
-		erlang-cowlib>=1.0.0:${PORTSDIR}/devel/erlang-cowlib \
+		erlang-cowlib>=1.0.0:${PORTSDIR}/www/erlang-cowlib \
 		erlang-ranch>=1.0.0:${PORTSDIR}/net/erlang-ranch
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
