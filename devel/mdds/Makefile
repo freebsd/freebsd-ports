@@ -14,6 +14,7 @@ LICENSE=	MIT
 PROJECTHOST=	multidimalgorithm
 
 USES=		tar:bzip2
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 do-configure:
