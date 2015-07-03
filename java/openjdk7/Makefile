@@ -58,7 +58,7 @@ JDK_SRC_DISTFILE=	${PORTNAME}-${JDK_MAJOR_VERSION}u${JDK_MINOR_VERSION}-fcs-src-
 ANT_VERSION=		1.9.4
 ANT_DISTFILE=		apache-ant-${ANT_VERSION}-bin
 
-LATEST_LINK=		openjdk7
+LATEST_LINK?=		openjdk7
 
 LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
