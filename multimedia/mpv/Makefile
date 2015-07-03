@@ -4,6 +4,7 @@
 PORTNAME=	mpv
 PORTVERSION=	0.9.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://ftp.waf.io/pub/release/:1 \
@@ -16,7 +17,7 @@ COMMENT=	Free and open-source general-purpose video player
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libavcodec26.so:${PORTSDIR}/multimedia/ffmpeg26 \
+LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
 		libass.so:${PORTSDIR}/multimedia/libass \
 		libdvdread.so:${PORTSDIR}/multimedia/libdvdread \
 		libdvdnav.so:${PORTSDIR}/multimedia/libdvdnav
@@ -32,7 +33,7 @@ USE_XORG=	x11 xv xxf86vm
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
-CPPFLAGS+=	-I.. -I${LOCALBASE}/include/ffmpeg26 -I${LOCALBASE}/include
+CPPFLAGS+=	-I.. -I${LOCALBASE}/include/ffmpeg -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
