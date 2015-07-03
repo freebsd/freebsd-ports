@@ -1,6 +1,6 @@
---- src/profiles.c.orig	2012-10-30 14:12:10.000000000 -0600
-+++ src/profiles.c	2012-10-30 14:13:49.000000000 -0600
-@@ -204,14 +204,24 @@
+--- src/profiles.c.orig	2007-11-26 21:47:43.000000000 +0100
++++ src/profiles.c	2015-07-03 22:44:50.380315167 +0200
+@@ -204,14 +204,24 @@ av_profile_get_codecs (AVFormatContext *
  
    for (i = 0; i < ctx->nb_streams; i++)
    {
@@ -25,7 +25,7 @@
      {
        video_stream = i;
        continue;
-@@ -280,7 +290,7 @@
+@@ -280,14 +290,14 @@ dlna_guess_media_profile (dlna_t *dlna, 
    if (!dlna->inited)
      dlna = dlna_init ();
    
@@ -34,7 +34,15 @@
    {
      if (dlna->verbosity)
        fprintf (stderr, "can't open file: %s\n", filename);
-@@ -334,7 +344,7 @@
+     return NULL;
+   }
+ 
+-  if (av_find_stream_info (ctx) < 0)
++  if (avformat_find_stream_info (ctx, NULL) < 0)
+   {
+     if (dlna->verbosity)
+       fprintf (stderr, "can't find stream info\n");
+@@ -334,7 +344,7 @@ dlna_guess_media_profile (dlna_t *dlna, 
      p = p->next;
    }
  
