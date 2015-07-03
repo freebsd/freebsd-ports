@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	osquery
-PORTVERSION=	1.4.5
-PORTREVISION=	2
+PORTVERSION=	1.4.7
 CATEGORIES=	sysutils
 
 MAINTAINER=	zi@FreeBSD.org
@@ -30,7 +29,8 @@ LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs \
 		libicuuc.so:${PORTSDIR}/devel/icu
 
 USES=		cmake:outsource gmake libtool python:build compiler:c++11-lib
-CMAKE_ENV+=	OSQUERY_BUILD_VERSION="${PORTVERSION}" HOME="${WRKDIR}" SKIP_TESTS="yes"
+CMAKE_ENV+=	OSQUERY_BUILD_VERSION="${PORTVERSION}" HOME="${WRKDIR}" \
+		SKIP_TESTS="yes" CC="${CC}" CXX="${CXX}"
 CMAKE_ARGS+=	-DFREEBSD=awesome -DCMAKE_SYSTEM_NAME="FreeBSD"
 BLDDIR=		${WRKDIR}/.build/${PORTNAME}
 USE_RC_SUBR=	${PORTNAME}d
