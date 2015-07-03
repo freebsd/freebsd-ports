@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	LOCAL/nik
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Converts the output of "vidcontrol -p" to PNG
 
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
