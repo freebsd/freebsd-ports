@@ -3,7 +3,6 @@
 
 PORTNAME=	octave-forge-ltfat
 PORTVERSION=	2.0.1
-PORTEVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -16,15 +15,13 @@ LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libportaudio.so:${PORTSDIR}/audio/portaudio \
 		libcblas.so:${PORTSDIR}/math/cblas
 
-BROKEN=		Installation has unresolved issues
-
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
 OCTSRC=		${OCTAVE_PKGNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
-MAKEFILE=	Makefile_unix
+GNU_CONFIGURE=	yes
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
