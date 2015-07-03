@@ -3,7 +3,7 @@
 
 PORTNAME=	kcemu
 PORTVERSION=	0.5.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/KCemu/KCemu-${PORTVERSION}
 DISTNAME=	KCemu-${PORTVERSION}
@@ -37,7 +37,5 @@ CONFIGURE_ARGS+=--disable-libmp3lame \
 DESKTOP_ENTRIES="KCemu" "${COMMENT}" \
 		"${LOCALBASE}/share/KCemu/icons/kcemu-icon.png" "kcemu" \
 		"System;Emulator;" "true"
-
-BROKEN=		Does not build with ffmpeg-2.7
 
 .include <bsd.port.mk>
