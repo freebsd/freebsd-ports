@@ -57,6 +57,45 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bf1d9331-21b6-11e5-86ff-14dae9d210b8">
+    <topic>cups-filters -- texttopdf integer overflow</topic>
+    <affects>
+      <package>
+	<name>cups-filters</name>
+	<range><lt>1.0.71</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Stefan Cornelius from Red Hat reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/07/03/2">
+	  <p>An integer overflow flaw leading to a heap-based buffer overflow was
+	    discovered in the way the texttopdf utility of cups-filter processed
+	    print jobs with a specially crafted line size. An attacker being able
+	    to submit print jobs could exploit this flaw to crash texttopdf or,
+	    possibly, execute arbitrary code with the privileges of the 'lp' user.</p>
+	</blockquote>
+	<p>Tim Waugh reports:</p>
+	<blockquote cite="http://bzr.linuxfoundation.org/loggerhead/openprinting/cups-filters/revision/7365">
+	  <p>The Page allocation is moved into textcommon.c, where it does all the
+	    necessary checking: lower-bounds for CVE-2015-3258 and upper-bounds
+	    for CVE-2015-3259 due to integer overflows for the calloc() call
+	    initialising Page[0] and the memset() call in texttopdf.c's
+	    WritePage() function zeroing the entire array.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3279</cvename>
+      <url>https://access.redhat.com/security/cve/CVE-2015-3279</url>
+      <url>http://bzr.linuxfoundation.org/loggerhead/openprinting/cups-filters/revision/7365</url>
+    </references>
+    <dates>
+      <discovery>2015-07-03</discovery>
+      <entry>2015-07-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9c7177ff-1fe1-11e5-9a01-bcaec565249c">
     <topic>libxml2 -- Enforce the reader to run in constant memory</topic>
     <affects>
