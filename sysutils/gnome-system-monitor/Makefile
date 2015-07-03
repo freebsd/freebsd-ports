@@ -16,7 +16,7 @@ BUILD_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme \
 LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop
 RUN_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme
 
-USES=		gettext gmake pathfix pkgconfig tar:xz
+USES=		alias gettext gmake pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix gtkmm30 intlhack librsvg2 libwnck3
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
