@@ -2,7 +2,7 @@
 
 PORTNAME=	calligra
 PORTVERSION=	${CALLIGRA_VERSION}
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	editors kde
 MASTER_SITES=	KDE/${CALLIGRA_BRANCH}/${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	KDE
@@ -26,7 +26,7 @@ LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libgsl.so:${PORTSDIR}/math/gsl \
-		libwps-0.2.so:${PORTSDIR}/textproc/libwps \
+		libwps-0.2.so:${PORTSDIR}/textproc/libwps02 \
 		libvisio-0.0.so:${PORTSDIR}/textproc/libvisio \
 		libOpenColorIO.so:${PORTSDIR}/graphics/opencolorio
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:${PORTSDIR}/math/eigen2

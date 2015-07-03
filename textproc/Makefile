@@ -394,6 +394,7 @@
     SUBDIR += libwpd
     SUBDIR += libwpd010
     SUBDIR += libwps
+    SUBDIR += libwps02
     SUBDIR += libwps03
     SUBDIR += libxdiff
     SUBDIR += libxml++26
