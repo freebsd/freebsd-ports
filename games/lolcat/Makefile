@@ -14,11 +14,10 @@ RUN_DEPENDS=	rubygem-trollop>=1.9:${PORTSDIR}/devel/rubygem-trollop \
 
 NO_ARCH=	yes
 
-nUSE_RUBY=	yes
+USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-post-install:
-	${ECHO_CMD} "bin/lolcat" >> ${TMPPLIST}
+PLIST_FILES=	bin/lolcat
 
 .include <bsd.port.mk>
