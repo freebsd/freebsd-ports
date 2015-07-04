@@ -6,7 +6,7 @@ MASTER_SITES=	http://code.x2go.org/releases/source/nx-libs/
 CATEGORIES=	x11 devel
 DISTNAME=	nx-libs-${PORTVERSION}-lite
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NX X11 protocol compression libraries
 
 WRKSRC=		${WRKDIR}/nx-libs-${PORTVERSION}/${PORTNAME}
