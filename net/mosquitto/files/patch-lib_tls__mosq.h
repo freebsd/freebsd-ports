@@ -1,6 +1,6 @@
---- lib/tls_mosq.h.orig	2014-10-08 21:50:07 UTC
+--- lib/tls_mosq.h.orig	2015-05-07 13:21:22 UTC
 +++ lib/tls_mosq.h
-@@ -33,8 +33,9 @@ POSSIBILITY OF SUCH DAMAGE.
+@@ -20,8 +20,9 @@ Contributors:
  #ifdef WITH_TLS
  
  #include <openssl/ssl.h>

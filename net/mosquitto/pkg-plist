@@ -14,9 +14,6 @@ lib/libmosquitto.so.%%PORTVERSION%%
 lib/libmosquittopp.so
 lib/libmosquittopp.so.1
 lib/libmosquittopp.so.%%PORTVERSION%%
-%%NOPYTHON%%%%PYTHON_SITELIBDIR%%/mosquitto-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info
-%%NOPYTHON%%%%PYTHON_SITELIBDIR%%/mosquitto.py
-%%NOPYTHON%%%%PYTHON_SITELIBDIR%%/mosquitto.pyc
 man/man1/mosquitto_passwd.1.gz
 man/man1/mosquitto_pub.1.gz
 man/man1/mosquitto_sub.1.gz
