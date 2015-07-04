@@ -382,7 +382,7 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_echo}
 .endif
 
 .if ${PORT_OPTIONS:MHEADERS_MORE}
-NGINX_HEADERS_MORE_VERSION=	0.26
+NGINX_HEADERS_MORE_VERSION=	0.261
 GH_ACCOUNT+=	openresty:headers_more
 GH_PROJECT+=	headers-more-nginx-module:headers_more
 GH_TAGNAME+=	v${NGINX_HEADERS_MORE_VERSION}:headers_more
