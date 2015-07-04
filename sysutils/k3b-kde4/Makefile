@@ -3,7 +3,7 @@
 
 PORTNAME=	k3b
 PORTVERSION=	2.0.2
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	sysutils multimedia kde
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
@@ -93,11 +93,5 @@ TAGLIB_CMAKE_OFF=	-DK3B_ENABLE_TAGLIB:BOOL=OFF
 
 TRANSCODE_DESC=		Misc: Transcode (DVD ripping)
 TRANSCODE_RUN_DEPENDS=	transcode:${PORTSDIR}/multimedia/transcode
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MFFMPEG}
-BROKEN=		Does not build with ffmpeg-2.7
-.endif
 
 .include <bsd.port.mk>
