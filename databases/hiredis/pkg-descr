@@ -16,4 +16,4 @@ any Redis version >= 1.2.0.
 The library comes with multiple APIs. There is the synchronous API, the
 asynchronous API and the reply parsing API.
 
-WWW: https://github.com/antirez/hiredis
+WWW: https://github.com/redis/hiredis/
