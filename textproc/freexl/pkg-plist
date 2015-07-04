@@ -2,5 +2,5 @@ include/freexl.h
 lib/libfreexl.a
 lib/libfreexl.so
 lib/libfreexl.so.1
-lib/libfreexl.so.1.0.0
+lib/libfreexl.so.1.1.0
 libdata/pkgconfig/freexl.pc
