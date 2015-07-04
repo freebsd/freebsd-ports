@@ -1,8 +1,0 @@
-%%PYTHON_SITELIBDIR%%/__pycache__/drv_libxml2.cpython-%%PYTVER%%.pyc
-%%PYTHON_SITELIBDIR%%/__pycache__/drv_libxml2.cpython-%%PYTVER%%.pyo
-%%PYTHON_SITELIBDIR%%/__pycache__/libxml2.cpython-%%PYTVER%%.pyc
-%%PYTHON_SITELIBDIR%%/__pycache__/libxml2.cpython-%%PYTVER%%.pyo
-%%PYTHON_SITELIBDIR%%/drv_libxml2.py
-%%PYTHON_SITELIBDIR%%/libxml2.py
-%%PYTHON_SITELIBDIR%%/libxml2mod.so
-
