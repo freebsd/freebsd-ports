@@ -3,7 +3,7 @@
 
 PORTNAME=	amqp-utils
 PORTVERSION=	0.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	rubygem-amqp>=0.7.1:${PORTSDIR}/net/rubygem-amqp \
 		rubygem-heredoc_unindent>=1.1.2:${PORTSDIR}/textproc/rubygem-heredoc_unindent \
 		rubygem-json>=1.5:${PORTSDIR}/devel/rubygem-json \
 		rubygem-msgpack>=0.4.5:${PORTSDIR}/devel/rubygem-msgpack \
-		rubygem-trollop>=1.16.2:${PORTSDIR}/devel/rubygem-trollop
+		rubygem-trollop1>=1.16.2:${PORTSDIR}/devel/rubygem-trollop1
 
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
