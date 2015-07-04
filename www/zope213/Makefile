@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zope213
-PORTVERSION=	2.13.22
-PORTREVISION=	1
+PORTVERSION=	2.13.23
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 DISTNAME=	Zope2-${PORTVERSION}
@@ -12,6 +11,7 @@ MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Object-based web application platform Version 2.13
 
 LICENSE=	ZPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}AccessControl>=2.13.2:${PORTSDIR}/security/py-AccessControl \
 		${PYTHON_PKGNAMEPREFIX}Acquisition>=0:${PORTSDIR}/devel/py-Acquisition \
@@ -80,7 +80,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}AccessControl>=2.13.2:${PORTSDIR}/security/p
 		${PYTHON_PKGNAMEPREFIX}Products.StandardCacheManagers>=0:${PORTSDIR}/devel/py-Products.StandardCacheManagers \
 		${PYTHON_PKGNAMEPREFIX}manuel>=0:${PORTSDIR}/devel/py-manuel
 
-USES=		python:2 zip
+USES=		python:2
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
