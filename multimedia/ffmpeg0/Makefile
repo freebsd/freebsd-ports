@@ -3,7 +3,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	0.7.16
-PORTREVISION=	9
+PORTREVISION=	10
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -118,7 +118,7 @@ SPEEX_CONFIGURE_ENABLE=		libspeex
 THEORA_LIB_DEPENDS=		libtheora.so:${PORTSDIR}/multimedia/libtheora
 THEORA_CONFIGURE_ENABLE=	libtheora
 
-X11GRAB_USE=		XORG=x11,xent,xfixes
+X11GRAB_USE=		XORG=x11,xext,xfixes
 X11GRAB_CONFIGURE_ON=	--enable-x11grab
 
 X264_LIB_DEPENDS=	libx264.so:${PORTSDIR}/multimedia/libx264
