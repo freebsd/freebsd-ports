@@ -1,5 +1,5 @@
---- ../passenger-5.0.11/build/nginx.rb.orig	2013-10-27 02:00:00.000000000 +0400
-+++ ../passenger-5.0.11/build/nginx.rb	2015-03-07 06:07:38.000000000 +0300
+--- ../passenger-5.0.13/build/nginx.rb.orig	2013-10-27 02:00:00.000000000 +0400
++++ ../passenger-5.0.13/build/nginx.rb	2015-03-07 06:07:38.000000000 +0300
 @@ -32,6 +32,7 @@
  desc "Build Nginx support files"
  task :nginx => [
