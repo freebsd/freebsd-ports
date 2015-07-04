@@ -3,7 +3,7 @@
 
 PORTNAME=	libobjc2
 PORTVERSION=	1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang devel gnustep
 USE_GITHUB=	yes
 GH_ACCOUNT=	gnustep
