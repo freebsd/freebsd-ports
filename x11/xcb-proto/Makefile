@@ -11,8 +11,16 @@ COMMENT=	The X protocol C-language Binding (XCB) protocol
 
 USE_GNOME=	libxml2:build
 XORG_CAT=	proto
-USES=		python:2
+USES=		python
 
 DATADIR=	${PREFIX}/share/xcb
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_MAJOR_VER} == 3
+PLIST_SUB+=	PYTHON_SUFFIX=${PYTHON_SUFFIX} PY3="" PY2="@comment "
+.else
+PLIST_SUB+=	PY2="" PY3="@comment "
+.endif
+
+.include <bsd.port.post.mk>
