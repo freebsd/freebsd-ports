@@ -416,6 +416,7 @@
     SUBDIR += elixir-exjsx
     SUBDIR += elixir-exrm
     SUBDIR += elixir-lager_logger
+    SUBDIR += elixir-msgpax
     SUBDIR += elixir-plug
     SUBDIR += elixir-poison
     SUBDIR += elixir-timex
