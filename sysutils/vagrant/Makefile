@@ -3,6 +3,7 @@
 
 PORTNAME=	vagrant
 PORTVERSION=	1.7.2
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils rubygems devel
 
@@ -19,7 +20,7 @@ RUN_DEPENDS=	rubygem-bundler17>=1.5.3:${PORTSDIR}/sysutils/rubygem-bundler17 \
 		rubygem-erubis>=2.7.0:${PORTSDIR}/www/rubygem-erubis \
 		rubygem-hashicorp-checkpoint>=0.1.4:${PORTSDIR}/www/rubygem-hashicorp-checkpoint \
 		rubygem-i18n>=0.6.9:${PORTSDIR}/devel/rubygem-i18n \
-		rubygem-listen>=2.8.0:${PORTSDIR}/devel/rubygem-listen \
+		rubygem-listen2>=2.8.0:${PORTSDIR}/devel/rubygem-listen2 \
 		rubygem-log4r>=1.1.10:${PORTSDIR}/sysutils/rubygem-log4r \
 		rubygem-net-scp>=1.1.0:${PORTSDIR}/security/rubygem-net-scp \
 		rubygem-net-sftp>=2.1:${PORTSDIR}/security/rubygem-net-sftp \

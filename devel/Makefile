@@ -4673,6 +4673,7 @@
     SUBDIR += rubygem-librarianp
     SUBDIR += rubygem-libyajl2
     SUBDIR += rubygem-listen
+    SUBDIR += rubygem-listen2
     SUBDIR += rubygem-little-plugger
     SUBDIR += rubygem-locale
     SUBDIR += rubygem-lockfile
