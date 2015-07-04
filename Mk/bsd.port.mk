@@ -4344,7 +4344,6 @@ ${deptype:tl}-depends:
 # Dependency lists: both build and runtime, recursive.  Print out directory names.
 
 _UNIFIED_DEPENDS=${PKG_DEPENDS} ${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} ${RUN_DEPENDS}
-_DEPEND_DIRS=	${_UNIFIED_DEPENDS:C,^[^:]*:([^:]*).*$,\1,}
 _DEPEND_SPECIALS=	${_UNIFIED_DEPENDS:M*\:*\:*:C,^[^:]*:([^:]*):.*$,\1,}
 
 all-depends-list:
@@ -4358,95 +4357,24 @@ ALL-DEPENDS-LIST= \
 			dp_SCRIPTSDIR="${SCRIPTSDIR}" \
 			${SH} ${SCRIPTSDIR}/all-depends-list.sh
 
-CLEAN-DEPENDS-FULL= \
-	L="${_DEPEND_DIRS}";						\
-	checked="";							\
-	while [ -n "$$L" ]; do						\
-		l="";							\
-		for d in $$L; do					\
-			case $$checked in				\
-			$$d\ *|*\ $$d\ *|*\ $$d)			\
-				continue;;				\
-			esac;						\
-			checked="$$checked $$d";			\
-			if [ ! -d $$d ]; then				\
-				${ECHO_MSG} "${PKGNAME}: \"$$d\" non-existent -- dependency list incomplete" >&2; \
-				continue;				\
-			fi;						\
-			if ! children=$$(cd $$d && ${MAKE} -V WRKDIR -V _DEPEND_DIRS); then \
-				${ECHO_MSG} "${PKGNAME}: \"$$d\" erroneous -- dependency list incomplete" >&2; \
-				continue;				\
-			fi;						\
-			state=0;					\
-			for child in $$children; do			\
-				case $$state in				\
-				0)					\
-					if [ -d $$child ]; then 	\
-						${ECHO_CMD} $$d;	\
-					fi;				\
-					state=1;;			\
-				1)					\
-					case "$$checked $$l" in		\
-					$$child\ *|*\ $$child\ *|*\ $$child) \
-						continue;;		\
-					esac;				\
-					l="$$l $$child";;		\
-				esac;					\
-			done;						\
-		done;							\
-		L=$$l;							\
-	done
-
-CLEAN-DEPENDS-LIMITED= \
-	L="${_DEPEND_DIRS}";						\
-	checked="";							\
-	while [ -n "$$L" ]; do						\
-		l="";							\
-		for d in $$L; do					\
-			case $$checked in				\
-			$$d\ *|*\ $$d\ *|*\ $$d)			\
-				continue;;				\
-			esac;						\
-			checked="$$checked $$d";			\
-			if [ ! -d $$d ]; then				\
-				${ECHO_MSG} "${PKGNAME}: \"$$d\" non-existent -- dependency list incomplete" >&2; \
-				continue;				\
-			fi;						\
-			if ! children=$$(cd $$d && ${MAKE} -V WRKDIR -V _DEPEND_DIRS); then \
-				${ECHO_MSG} "${PKGNAME}: \"$$d\" erroneous -- dependency list incomplete" >&2; \
-				continue;				\
-			fi;						\
-			state=0;					\
-			for child in $$children; do			\
-				case $$state in				\
-				0)					\
-					if [ ! -d $$child ]; then 	\
-						break;		\
-					fi;				\
-					state=1;			\
-					${ECHO_CMD} $$d;;		\
-				1)					\
-					case "$$checked $$l" in		\
-					$$child\ *|*\ $$child\ *|*\ $$child) \
-						continue;;		\
-					esac;				\
-					l="$$l $$child";;		\
-				esac;					\
-			done;						\
-		done;							\
-		L=$$l;							\
-	done
+CLEAN-DEPENDS-LIST= \
+	${SETENV} dp_ALLDEPENDS="${_UNIFIED_DEPENDS}" \
+			dp_PORTSDIR="${PORTSDIR}" \
+			dp_MAKE="${MAKE}" \
+			dp_PKGNAME="${PKGNAME}" \
+			dp_SCRIPTSDIR="${SCRIPTSDIR}" \
+			${SH} ${SCRIPTSDIR}/clean-depends-list.sh
 
 .if !target(clean-depends)
 clean-depends:
-	@for dir in $$(${CLEAN-DEPENDS-FULL}); do \
+	@for dir in $$(${CLEAN-DEPENDS-LIST} full); do \
 		(cd $$dir; ${MAKE} NOCLEANDEPENDS=yes clean); \
 	done
 .endif
 
 .if !target(limited-clean-depends)
 limited-clean-depends:
-	@for dir in $$(${CLEAN-DEPENDS-LIMITED}); do \
+	@for dir in $$(${CLEAN-DEPENDS-LIST} limited); do \
 		(cd $$dir; ${MAKE} NOCLEANDEPENDS=yes clean); \
 	done
 .endif
