@@ -21,6 +21,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 USES=		compiler:c++11-lib gmake
+MAKE_ARGS=	DISABLE_WARNING_AS_ERROR=1
 
 GH_ACCOUNT=	facebook
 USE_GITHUB=	yes
