@@ -1,0 +1,50 @@
+--- bin/gscan2pdf.orig	2015-06-16 20:04:47 UTC
++++ bin/gscan2pdf
+@@ -78,7 +78,6 @@ use Fcntl qw(:flock)
+ use Log::Log4perl;
+ use Try::Tiny;
+ use Data::Dumper;
+-use Linux::Distribution qw(distribution_name distribution_version);
+ use Filesys::Df;
+ use English qw( -no_match_vars )
+   ;    # for $PERL_VERSION, $PROGRAM_NAME, $EVAL_ERROR, $ERRNO
+@@ -122,7 +121,7 @@ my $VERSION   = '1.3.1';
+ my $border = 1;
+ 
+ # Set up domain for gettext (internationalisation)
+-# Expects /usr/share/locale/LANGUAGE/LC_MESSAGES/$prog_name.mo
++# Expects /usr/local/share/locale/LANGUAGE/LC_MESSAGES/$prog_name.mo
+ # or whatever is set by $d->dir([NEWDIR]);
+ my $d      = Locale::gettext->domain($prog_name);
+ my $d_sane = Locale::gettext->domain('sane-backends');
+@@ -147,19 +146,6 @@ read_config_file($rc);
+ 
+ set_up_test_mode();
+ 
+-if ( my $distro = distribution_name() ) {
+-    my $version = distribution_version();
+-    if ( defined $version ) {
+-        $version = ", version $version";
+-    }
+-    else {
+-        $version = $EMPTY;
+-    }
+-    $logger->info("You are running $distro$version");
+-}
+-else {
+-    $logger->info('Distribution unknown');
+-}
+ $logger->info("Perl version $PERL_VERSION");
+ $logger->info("Glib-Perl version $Glib::VERSION");
+ $logger->info( 'Built for Glib ' . join $DOT, Glib->GET_VERSION_INFO );
+@@ -200,8 +186,8 @@ Gscan2pdf::Document->set_paper_sizes( $S
+ # Create icons for rotate buttons
+ my $iconfactory;
+ my $iconpath;
+-if ( -d '/usr/share/gscan2pdf' ) {
+-    $iconpath = '/usr/share/gscan2pdf';
++if ( -d '/usr/local/share/gscan2pdf' ) {
++    $iconpath = '/usr/local/share/gscan2pdf';
+ }
+ else {
+     $iconpath = 'icons';
