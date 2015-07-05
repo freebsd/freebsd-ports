@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	trytond
-PORTVERSION=	2.4.8
-PORTREVISION=	1
+PORTVERSION=	2.4.16
 CATEGORIES=	finance python
 MASTER_SITES=	http://downloads.tryton.org/${PORTVERSION:R}/
 
@@ -21,6 +20,9 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/mx/__init__.py:${PORTSDIR}/lang/py-mx-base \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:${PORTSDIR}/devel/py-dateutil
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+DEPRECATED=	Upstream project no longer supports the Tryton 2.4 series
+EXPIRATION_DATE=	2015-08-05
 
 CONFLICTS=	trytond28-2.8.*
 

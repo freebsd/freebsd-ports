@@ -16,6 +16,9 @@ RUN_DEPENDS=	trytond>=2.4.0:${PORTSDIR}/finance/trytond \
 		trytond_timesheet>=2.4.0:${PORTSDIR}/finance/trytond_timesheet \
 		trytond_party>=2.4.0:${PORTSDIR}/finance/trytond_party
 
+DEPRECATED=	Upstream project no longer supports the Tryton 2.4 series
+EXPIRATION_DATE=	2015-08-05
+
 CONFLICTS=	trytond28_project-2.8.*
 
 USES=		python

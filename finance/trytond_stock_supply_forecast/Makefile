@@ -16,6 +16,9 @@ RUN_DEPENDS=	trytond>=2.4.0:${PORTSDIR}/finance/trytond \
 		trytond_stock_supply>=2.4.0:${PORTSDIR}/finance/trytond_stock_supply \
 		trytond_stock_forecast>=2.4.0:${PORTSDIR}/finance/trytond_stock_forecast
 
+DEPRECATED=	Upstream project no longer supports the Tryton 2.4 series
+EXPIRATION_DATE=	2015-08-05
+
 CONFLICTS=	trytond28_stock_supply_forecast-2.8.*
 
 USES=		python

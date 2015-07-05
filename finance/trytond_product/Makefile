@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	trytond_product
-PORTVERSION=	2.4.1
-PORTREVISION=	1
+PORTVERSION=	2.4.3
 CATEGORIES=	finance python
 MASTER_SITES=	http://downloads.tryton.org/${PORTVERSION:R}/
 
@@ -13,6 +12,9 @@ COMMENT=	Tryton Application Platform (Product Module)
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	trytond>=2.4.0:${PORTSDIR}/finance/trytond
+
+DEPRECATED=	Upstream project no longer supports the Tryton 2.4 series
+EXPIRATION_DATE=	2015-08-05
 
 CONFLICTS=	trytond28_product-2.8.*
 
