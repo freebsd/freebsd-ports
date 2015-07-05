@@ -4,7 +4,7 @@
 PORTNAME=	mpv
 PORTVERSION=	0.9.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://ftp.waf.io/pub/release/:1 \
@@ -67,7 +67,8 @@ BS2B_CONFIGURE_ENABLE=		libbs2b
 ENCA_LIB_DEPENDS=		libenca.so:${PORTSDIR}/converters/enca
 ENCA_CONFIGURE_ENABLE=		enca
 
-LADSPA_LIB_DEPENDS=		ladspa/amp.so:${PORTSDIR}/audio/ladspa
+LADSPA_BUILD_DEPENDS=		${LOCALBASE}/lib/ladspa/amp.so:${PORTSDIR}/audio/ladspa
+LADSPA_RUN_DEPENDS=		${LOCALBASE}/lib/ladspa/amp.so:${PORTSDIR}/audio/ladspa
 LADSPA_CONFIGURE_ENABLE=	ladspa
 
 LCMS2_LIB_DEPENDS=		liblcms2.so:${PORTSDIR}/graphics/lcms2
