@@ -35,6 +35,7 @@
     SUBDIR += p5-cyrillic
     SUBDIR += rubygem-russian
     SUBDIR += rubygem-rutils
+    SUBDIR += rux
     SUBDIR += stardict-bars
     SUBDIR += stardict-computer
     SUBDIR += stardict-dal
