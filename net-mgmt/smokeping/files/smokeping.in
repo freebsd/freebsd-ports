@@ -65,7 +65,7 @@ smokeping_start()
 	fi
 
 	echo "Starting ${name}."
-	${command} ${smokeping_flags} ${command_args}
+	su -m ${smokeping_user} -c "sh -c '${command} ${smokeping_flags} ${command_args}'"
 }
 
 smokeping_status()
