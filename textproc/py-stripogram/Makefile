@@ -2,19 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	stripogram
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	textproc python
-MASTER_SITES=	SF/squishdot/strip-o-gram/${PORTVERSION}
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	stripogram-1-4
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converting HTML to Plain Text and stripping specified tags from HTML
 
-WRKSRC=		${WRKDIR}/stripogram
+DEPRECATED=	Discontinued, author discourages to use it
+EXPIRATION_DATE=	2015-08-05
 
-USES=		python
-USE_PYTHON=	distutils autoplist
+USES=		python:2
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
