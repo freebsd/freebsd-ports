@@ -11,6 +11,9 @@ COMMENT=	Message creator and parser for the NTLM authentication
 
 LICENSE=	MIT
 
+DEPRECATED=	not used by other ports anymore
+EXPIRATION_DATE=	2015-07-20
+
 NO_ARCH=	yes
 
 USE_RUBY=	yes
