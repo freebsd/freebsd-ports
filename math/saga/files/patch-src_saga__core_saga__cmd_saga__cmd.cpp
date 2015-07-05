@@ -1,5 +1,5 @@
---- src/saga_core/saga_cmd/saga_cmd.cpp.orig	2014-03-28 16:06:55.000000000 +0100
-+++ src/saga_core/saga_cmd/saga_cmd.cpp	2014-03-28 16:09:04.000000000 +0100
+--- src/saga_core/saga_cmd/saga_cmd.cpp.orig	2015-02-26 07:51:10 UTC
++++ src/saga_core/saga_cmd/saga_cmd.cpp
 @@ -65,6 +65,7 @@
  
  #include <wx/app.h>
@@ -8,7 +8,7 @@
  
  #include "callback.h"
  
-@@ -164,7 +165,7 @@
+@@ -164,7 +165,7 @@ _except(1)
  //---------------------------------------------------------
  bool		Run(int argc, char *argv[])
  {
