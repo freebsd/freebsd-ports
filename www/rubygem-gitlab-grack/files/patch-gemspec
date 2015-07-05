@@ -1,4 +1,4 @@
---- gitlab-grack.gemspec.orig	2015-05-23 23:58:53 UTC
+--- gitlab-grack.gemspec.orig	2015-07-04 12:20:32 UTC
 +++ gitlab-grack.gemspec
 @@ -11,8 +11,7 @@ Gem::Specification.new do |s|
    s.date = "2015-04-22"
@@ -8,5 +8,14 @@
 -  s.files = [".gitignore", ".gitmodules", ".travis.yml", "CHANGELOG", "Gemfile", "Gemfile.lock", "README.md", "Rakefile", "bin/console", "bin/testserver", "examples/dispatch.fcgi", "grack.gemspec", "install.txt", "lib/grack.rb", "lib/grack/auth.rb", "lib/grack/bundle.rb", "lib/grack/git.rb", "lib/grack/server.rb", "lib/grack/version.rb", "tests/main_test.rb"]
 +  s.files = [".gitignore", ".gitmodules", ".travis.yml", "CHANGELOG", "Gemfile", "Gemfile.lock", "README.md", "Rakefile", "examples/dispatch.fcgi", "grack.gemspec", "install.txt", "lib/grack.rb", "lib/grack/auth.rb", "lib/grack/bundle.rb", "lib/grack/git.rb", "lib/grack/server.rb", "lib/grack/version.rb", "tests/main_test.rb"]
    s.homepage = "https://github.com/gitlabhq/grack"
-   s.rubygems_version = "2.4.7"
+   s.rubygems_version = "2.4.8"
    s.summary = "Ruby/Rack Git Smart-HTTP Server Handler"
+@@ -22,7 +21,7 @@ Gem::Specification.new do |s|
+     s.specification_version = 4
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+-      s.add_runtime_dependency(%q<rack>, ["~> 1.5.1"])
++      s.add_runtime_dependency(%q<rack>, ["~> 1.5"])
+       s.add_development_dependency(%q<mocha>, ["~> 0.11"])
+     else
+       s.add_dependency(%q<rack>, ["~> 1.5.1"])
