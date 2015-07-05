@@ -3,6 +3,7 @@
 
 PORTNAME=	qTox
 PORTVERSION=	0.150614
+PORTREVISION=	1
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	yuri@rawbw.com
@@ -14,7 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l
 LIB_DEPENDS=	libtoxcore.so:${PORTSDIR}/net-im/tox \
 		libopencv_highgui.so:${PORTSDIR}/graphics/opencv \
 		libopencv_core.so:${PORTSDIR}/graphics/opencv-core \
-		libavcodec26.so:${PORTSDIR}/multimedia/ffmpeg26 \
+		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
 		libvpx.so:${PORTSDIR}/multimedia/libvpx \
 		libfilteraudio.so:${PORTSDIR}/audio/libfilteraudio \
 		libsodium.so:${PORTSDIR}/security/libsodium \
@@ -29,8 +30,6 @@ USE_GNOME=	glib20 gtk20 cairo gdkpixbuf2
 USE_XORG=	x11 xscrnsaver
 USE_QT5=	core gui network xml opengl sql sql-sqlite3_run widgets svg \
 		concurrent buildtools_build linguisttools_build
-CXXFLAGS+=	-I${LOCALBASE}/include/ffmpeg26
-LDFLAGS+=	-L${LOCALBASE}/lib/ffmpeg26
 
 PLIST_FILES=	bin/qtox \
 		share/applications/qTox.desktop
@@ -48,8 +47,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|INCLUDEPATH += "/usr/lib64|INCLUDEPATH += "${LOCALBASE}/lib|' \
 		${WRKSRC}/qtox.pro
 	@${REINPLACE_CMD} -e 's|INCLUDEPATH += "/usr/lib|INCLUDEPATH += "${LOCALBASE}/lib|' \
-		${WRKSRC}/qtox.pro
-	@${REINPLACE_CMD} -e 's|-lavformat -lavdevice -lavcodec -lavutil -lswscale|-lavformat26 -lavdevice26 -lavcodec26 -lavutil26 -lswscale26|' \
 		${WRKSRC}/qtox.pro
 
 pre-configure:
