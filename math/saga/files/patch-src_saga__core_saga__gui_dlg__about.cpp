@@ -1,5 +1,5 @@
---- src/saga_core/saga_gui/dlg_about.cpp.orig	2014-09-04 20:46:26.000000000 +0200
-+++ src/saga_core/saga_gui/dlg_about.cpp	2014-09-04 21:11:43.000000000 +0200
+--- src/saga_core/saga_gui/dlg_about.cpp.orig	2015-04-30 11:42:32 UTC
++++ src/saga_core/saga_gui/dlg_about.cpp
 @@ -65,6 +65,7 @@
  #include <saga_api/clipper.hpp>
  
@@ -8,7 +8,7 @@
  
  #include "helper.h"
  
-@@ -246,7 +247,19 @@
+@@ -246,7 +247,19 @@ wxString CDLG_About::_Get_Version(void)
  		#elif	defined(__GNUWIN32__)
  			"Gnu-Win32 compiler"
  		#elif	defined(__GNUG__)
@@ -19,7 +19,7 @@
 +				"Gnu C++ 4.9"
 +			#elif wxCHECK_GCC_VERSION(4,8)
 +				"Gnu C++ 4.8"
-+			#elif wxCHECK_GCC_VERSION(4,7)
++		#elif wxCHECK_GCC_VERSION(4,7)
 +				"Gnu C++ 4.7"
 +			#elif wxCHECK_GCC_VERSION(4,6)
 +				"Gnu C++ 4.6"

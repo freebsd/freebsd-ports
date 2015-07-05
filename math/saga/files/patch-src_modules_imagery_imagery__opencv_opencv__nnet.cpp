@@ -1,5 +1,5 @@
---- src/modules/imagery/imagery_opencv/opencv_nnet.cpp.orig	2013-10-24 19:04:27.000000000 +0200
-+++ src/modules/imagery/imagery_opencv/opencv_nnet.cpp	2013-10-24 19:06:05.000000000 +0200
+--- src/modules/imagery/imagery_opencv/opencv_nnet.cpp.orig	2015-02-26 07:51:59 UTC
++++ src/modules/imagery/imagery_opencv/opencv_nnet.cpp
 @@ -60,8 +60,8 @@
  
  //---------------------------------------------------------

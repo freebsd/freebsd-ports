@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	saga
-PORTVERSION=	2.1.4
-PORTREVISION=	1
+PORTVERSION=	2.2.0
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]*$//}/SAGA%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -40,6 +39,7 @@ WX_UNICODE=	yes
 
 DESKTOP_ENTRIES=	"SAGA GIS" "${COMMENT}" "${DATADIR}/saga.png" \
 			"saga_gui" "Science;Geoscience;Math;" true
+INSTALLS_ICONS=	yes
 DOS2UNIX_GLOB=	*.cpp *.h
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
@@ -81,7 +81,7 @@ post-patch:
 		${WRKSRC}/src/modules/imagery/imagery_opencv/Makefile.am
 	@${REINPLACE_CMD} -e 's|\[cv\]|\[opencv_core\]|' \
 		${WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e 's|wxString(SAGA_VERSION) + "\\n"|wxString(SAGA_VERSION) + " (SVN r2316)" + "\\n"|' \
+	@${REINPLACE_CMD} -e 's|wxString(SAGA_VERSION) + "\\n"|wxString(SAGA_VERSION) + " (SVN r2537)" + "\\n"|' \
 		${WRKSRC}/src/saga_core/saga_gui/dlg_about.cpp
 .if ${ARCH} == "powerpc"
 	@${REINPLACE_CMD} -e 's|typedef unsigned long	DWORD;|typedef unsigned int	DWORD;|' \
@@ -102,7 +102,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/saga_core/saga_gui/res/saga.lng.txt ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/src/saga_core/saga_gui/res/saga.ger.txt ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/src/saga_core/saga_gui/res/saga.png ${STAGEDIR}${DATADIR}
-	${CHMOD} -R a+rw ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/src/saga_core/saga_gui/res/saga.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsaga_api-${PORTVERSION}.so

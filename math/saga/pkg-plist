@@ -56,6 +56,7 @@ lib/saga/libgrid_spline.so
 lib/saga/libgrid_tools.so
 lib/saga/libgrid_visualisation.so
 lib/saga/libimagery_classification.so
+lib/saga/libimagery_maxent.so
 lib/saga/libimagery_opencv.so
 lib/saga/libimagery_photogrammetry.so
 lib/saga/libimagery_segmentation.so
@@ -110,9 +111,13 @@ man/man1/saga_gui.1.gz
 share/appdata/saga.appdata.xml
 share/applications/saga.desktop
 share/pixmaps/saga.png
+@mode 0777
+@dir %%DATADIR%%
+@mode 0666
 %%DATADIR%%/saga.ger.txt
 %%DATADIR%%/saga.lng.txt
+%%DATADIR%%/saga_tip.txt
+@mode
 %%DATADIR%%/saga.png
 %%DATADIR%%/saga_prj.dic
 %%DATADIR%%/saga_prj.srs
-%%DATADIR%%/saga_tip.txt
