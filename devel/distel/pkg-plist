@@ -1,4 +1,3 @@
-lib/erlang/lib/distel
 lib/erlang/lib/distel-%%VERSION%%/ebin/distel.beam
 lib/erlang/lib/distel-%%VERSION%%/ebin/distel_ie.beam
 lib/erlang/lib/distel-%%VERSION%%/ebin/fdoc.beam
@@ -45,5 +44,5 @@ lib/erlang/lib/distel-%%VERSION%%/src/otp_doc.erl
 %%EMACS_SITE_LISPDIR%%/distel/erl-test.el
 %%EMACS_SITE_LISPDIR%%/distel/erl.el
 %%EMACS_SITE_LISPDIR%%/distel/erlext.el
+%%EMACS_SITE_LISPDIR%%/distel/mcase.el
 %%EMACS_SITE_LISPDIR%%/distel/net-fsm.el
-%%EMACS_SITE_LISPDIR%%/distel/patmatch.el
