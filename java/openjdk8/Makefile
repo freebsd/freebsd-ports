@@ -221,6 +221,9 @@ post-extract:
 	    ${WRKSRC}/nashorn/test/script/jfx/kaleidoscope/golden/bsd.png
 	@${CP} ${FILESDIR}/nashorn-test-script-jfx-spread-golden-bsd.png \
 	    ${WRKSRC}/nashorn/test/script/jfx/spread/golden/bsd.png
+.if ${PORT_OPTIONS:MTEST}
+	@${LN} -sf ${WRKDIR}/jtreg/linux/bin ${WRKDIR}/jtreg/
+.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
