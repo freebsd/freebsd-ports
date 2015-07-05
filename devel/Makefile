@@ -443,7 +443,6 @@
     SUBDIR += erlang-getopt
     SUBDIR += erlang-goldrush
     SUBDIR += erlang-gproc
-    SUBDIR += erlang-ibrowse
     SUBDIR += erlang-jobs
     SUBDIR += erlang-jsx
     SUBDIR += erlang-lager

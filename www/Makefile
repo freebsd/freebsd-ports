@@ -175,6 +175,7 @@
     SUBDIR += erlang-cowboy
     SUBDIR += erlang-cowlib
     SUBDIR += erlang-hackney
+    SUBDIR += erlang-ibrowse
     SUBDIR += erlang-mochiweb
     SUBDIR += erlang-mochiweb-basho
     SUBDIR += erlang-webmachine
