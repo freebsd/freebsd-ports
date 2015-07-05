@@ -1,5 +1,5 @@
---- ../nginx-clojure-0.3.0/src/c/config.orig	2014-12-11 16:52:18.000000000 +0300
-+++ ../nginx-clojure-0.3.0/src/c/config	2015-06-14 14:19:27.064234000 +0300
+--- ../nginx-clojure-0.4.0/src/c/config.orig	2014-12-11 16:52:18.000000000 +0300
++++ ../nginx-clojure-0.4.0/src/c/config	2015-06-14 14:19:27.064234000 +0300
 @@ -13,9 +13,13 @@
      $ngx_addon_dir/ngx_http_clojure_socket.h \
  "
