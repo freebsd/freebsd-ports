@@ -6,7 +6,7 @@ PORTVERSION=	1.8.2
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.theforeman.org/foreman-proxy/
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	mmoll@FreeBSD.org
 COMMENT=	Foreman Proxy Agent
 
 LICENSE=	GPLv3
