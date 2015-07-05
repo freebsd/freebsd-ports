@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	trytond_calendar
-PORTVERSION=	2.4.3
-PORTREVISION=	1
+PORTVERSION=	2.4.4
 CATEGORIES=	finance python
 MASTER_SITES=	http://downloads.tryton.org/${PORTVERSION:R}/
 
@@ -17,6 +16,9 @@ RUN_DEPENDS=	trytond>=2.4.0:${PORTSDIR}/finance/trytond \
 		${PYTHON_PKGNAMEPREFIX}PyWebDAV>=0:${PORTSDIR}/www/py-pywebdav \
 		${PYTHON_PKGNAMEPREFIX}pytz>=0:${PORTSDIR}/devel/py-pytz \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:${PORTSDIR}/devel/py-dateutil
+
+DEPRECATED=	Upstream project no longer supports the Tryton 2.4 series
+EXPIRATION_DATE=	2015-08-05
 
 CONFLICTS=	trytond28_calendar-2.8.*
 

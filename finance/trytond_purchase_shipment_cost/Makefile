@@ -17,6 +17,9 @@ RUN_DEPENDS=	trytond>=2.4.0:${PORTSDIR}/finance/trytond \
 		trytond_currency>=2.4.0:${PORTSDIR}/finance/trytond_currency \
 		trytond_stock>=2.4.0:${PORTSDIR}/finance/trytond_stock
 
+DEPRECATED=	Upstream project no longer supports the Tryton 2.4 series
+EXPIRATION_DATE=	2015-08-05
+
 CONFLICTS=	trytond28_purchase_shipment_cost-2.8.*
 
 USES=		python
