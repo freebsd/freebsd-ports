@@ -3,6 +3,7 @@
 
 PORTNAME=	gscan2pdf
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -36,6 +37,7 @@ RUN_DEPENDS:=	p5-Archive-Tar>0:${PORTSDIR}/archivers/p5-Archive-Tar \
 		unpaper:${PORTSDIR}/graphics/unpaper \
 		p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-Gtk2-Ex-PodViewer>0.17:${PORTSDIR}/x11-toolkits/p5-Gtk2-Ex-PodViewer \
+		p5-Filesys-Df>0.92:${PORTSDIR}/sysutils/p5-Filesys-Df \
 		${BUILD_DEPENDS}
 
 NO_ARCH=	yes
@@ -62,7 +64,5 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|$$sharedir/man|$$prefixdir/man| ; \
 		 s|1p|1|' ${WRKSRC}/Makefile.PL
-	@${REINPLACE_CMD} -e \
-		's|/usr/share|${PREFIX}/share|g' ${WRKSRC}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
