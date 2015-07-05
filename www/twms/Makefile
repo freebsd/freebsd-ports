@@ -19,6 +19,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyproj/__init__.py:${PORTSDIR}/graphics/py-pyp
 
 USES=		python tar:bzip2
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 TWMS_USER?=	twms
 TWMS_GROUP?=	twms
