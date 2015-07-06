@@ -1,0 +1,11 @@
+--- tests/Makefile.am.orig	2015-07-02 13:50:20 UTC
++++ tests/Makefile.am
+@@ -1,7 +1,7 @@
+ # Common CPPFLAGS
+ AM_CPPFLAGS = -I$(top_srcdir) -I$(top_builddir)
+ 
+-AM_CFLAGS = -I$(top_srcdir) -I$(top_builddir) $(DEP_CFLAGS) $(BABL_CFLAGS) -lm
++AM_CFLAGS = -I$(top_srcdir) -I$(top_builddir) $(DEP_CFLAGS) $(BABL_CFLAGS) -lm -lcompat
+ 
+ DEPS = $(top_builddir)/.libs/libspiro.la
+ 
