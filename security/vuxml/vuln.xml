@@ -57,6 +57,194 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="72fccfdf-2061-11e5-a4a5-002590263bf5">
+    <topic>ansible -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ansible</name>
+	<range><lt>1.9.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ansible, Inc. reports:</p>
+	<blockquote cite="http://www.ansible.com/security">
+	  <p>Ensure that hostnames match certificate names when using HTTPS -
+	    resolved in Ansible 1.9.2</p>
+	  <p>Improper symlink handling in zone, jail, and chroot connection
+	    plugins could lead to escape from confined environment - resolved
+	    in Ansible 1.9.2</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3908</cvename>
+      <url>http://www.ansible.com/security</url>
+      <url>https://raw.githubusercontent.com/ansible/ansible/v1.9.2-1/CHANGELOG.md</url>
+    </references>
+    <dates>
+      <discovery>2015-06-25</discovery>
+      <entry>2015-07-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e308c61a-2060-11e5-a4a5-002590263bf5">
+    <topic>ansible -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ansible</name>
+	<range><lt>1.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ansible, Inc. reports:</p>
+	<blockquote cite="http://www.ansible.com/security">
+	  <p>Arbitrary execution from data from compromised remote hosts or
+	    local data when using a legacy Ansible syntax - resolved in
+	    Ansible 1.7</p>
+	  <p>ansible-galaxy command when used on local tarballs (and not
+	    galaxy.ansible.com) can install a malformed tarball if so provided
+	    - resolved in Ansible 1.7</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.ansible.com/security</url>
+      <url>https://raw.githubusercontent.com/ansible/ansible/devel/CHANGELOG.md</url>
+    </references>
+    <dates>
+      <discovery>2014-08-06</discovery>
+      <entry>2015-07-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9dae9d62-205f-11e5-a4a5-002590263bf5">
+    <topic>ansible -- code execution from compromised remote host data or untrusted local data</topic>
+    <affects>
+      <package>
+	<name>ansible</name>
+	<range><lt>1.6.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ansible, Inc. reports:</p>
+	<blockquote cite="http://www.ansible.com/security">
+	  <p>Arbitrary execution from data from compromised remote hosts or
+	    untrusted local data - resolved in Ansible 1.6.7</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-4966</cvename>
+      <bid>68794</bid>
+      <url>http://www.ansible.com/security</url>
+      <url>https://raw.githubusercontent.com/ansible/ansible/devel/CHANGELOG.md</url>
+    </references>
+    <dates>
+      <discovery>2014-07-21</discovery>
+      <entry>2015-07-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2c493ac8-205e-11e5-a4a5-002590263bf5">
+    <topic>ansible -- remote code execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>ansible</name>
+	<range><lt>1.6.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ansible, Inc. reports:</p>
+	<blockquote cite="http://www.ansible.com/security">
+	  <p>Incomplete Fix Remote Code Execution Vulnerability - Fixed in
+	    Ansible 1.6.4</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-4678</cvename>
+      <bid>68335</bid>
+      <url>http://www.ansible.com/security</url>
+      <url>https://raw.githubusercontent.com/ansible/ansible/devel/CHANGELOG.md</url>
+    </references>
+    <dates>
+      <discovery>2014-06-25</discovery>
+      <entry>2015-07-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a6a9f9d5-205c-11e5-a4a5-002590263bf5">
+    <topic>ansible -- local symlink exploits</topic>
+    <affects>
+      <package>
+	<name>ansible</name>
+	<range><lt>1.2.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MITRE reports:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4259">
+	  <p>runner/connection_plugins/ssh.py in Ansible before 1.2.3, when
+	    using ControlPersist, allows local users to redirect a ssh session
+	    via a symlink attack on a socket file with a predictable name in
+	    /tmp/.</p>
+	</blockquote>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4260">
+	  <p>lib/ansible/playbook/__init__.py in Ansible 1.2.x before 1.2.3,
+	    when playbook does not run due to an error, allows local users to
+	    overwrite arbitrary files via a symlink attack on a retry file with
+	    a predictable name in /var/tmp/ansible/.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-4259</cvename>
+      <cvename>CVE-2013-4260</cvename>
+      <url>http://www.ansible.com/security</url>
+      <url>https://groups.google.com/forum/#!topic/ansible-project/UVDYW0HGcNg</url>
+    </references>
+    <dates>
+      <discovery>2013-08-21</discovery>
+      <entry>2015-07-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a478421e-2059-11e5-a4a5-002590263bf5">
+    <topic>ansible -- enable host key checking in paramiko connection type</topic>
+    <affects>
+      <package>
+	<name>ansible</name>
+	<range><lt>1.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ansible changelog reports:</p>
+	<blockquote cite="https://raw.githubusercontent.com/ansible/ansible/devel/CHANGELOG.md">
+	  <p>Host key checking is on by default.  Disable it if you like by
+	    adding host_key_checking=False in the [default] section of
+	    /etc/ansible/ansible.cfg or ~/ansible.cfg or by exporting
+	    ANSIBLE_HOST_KEY_CHECKING=False.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-2233</cvename>
+      <url>https://raw.githubusercontent.com/ansible/ansible/devel/CHANGELOG.md</url>
+      <url>http://www.ansible.com/security</url>
+      <url>https://github.com/ansible/ansible/issues/857</url>
+    </references>
+    <dates>
+      <discovery>2012-08-13</discovery>
+      <entry>2015-07-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d7b9a28d-238c-11e5-86ff-14dae9d210b8">
     <topic>bitcoin -- denial of service</topic>
     <affects>
