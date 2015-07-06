@@ -67,7 +67,6 @@ lib/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_socket_server.erl
 lib/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_util.erl
 lib/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_websocket.erl
 lib/erlang/lib/mochiweb-%%VERSION%%/src/reloader.erl
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES.md
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hmac_api/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hmac_api/hmac_api.hrl

@@ -15,6 +15,9 @@ lib/erlang/lib/xmlrpc-%%VERSION%%/src/xmlrpc_encode.erl
 lib/erlang/lib/xmlrpc-%%VERSION%%/src/xmlrpc_http.erl
 lib/erlang/lib/xmlrpc-%%VERSION%%/src/xmlrpc_util.erl
 man/man3/erlang_xmlrpc.3.gz
+%%PORTDOCS%%%%DOCSDIR%%/xmlrpc.pdf
+%%PORTDOCS%%%%DOCSDIR%%/xmlrpc.ps
+%%PORTDOCS%%%%DOCSDIR%%/xmlrpc.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/BankClient.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/DateClient.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/EchoClient.java

@@ -38,6 +38,7 @@ lib/erlang/lib/cowboy-%%VERSION%%/src/cowboy_sub_protocol.erl
 lib/erlang/lib/cowboy-%%VERSION%%/src/cowboy_sup.erl
 lib/erlang/lib/cowboy-%%VERSION%%/src/cowboy_websocket.erl
 lib/erlang/lib/cowboy-%%VERSION%%/src/cowboy_websocket_handler.erl
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/chunked_hello_world/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/chunked_hello_world/README.md
