@@ -10,22 +10,11 @@ COMMENT=	Fast event stream processing library for Erlang
 
 LICENSE=	ISCL
 
-BUILD_DEPENDS=	erl:${PORTSDIR}/lang/erlang \
-		rebar:${PORTSDIR}/devel/rebar
-RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
-
-PLIST_SUB=	VERSION="${PORTVERSION}"
-
+USES=		erlang:rebar
 USE_GITHUB=	yes
 GH_ACCOUNT=	DeadZen
 
-do-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.org ${STAGEDIR}${DOCSDIR}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/ebin
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/src
-	${INSTALL_DATA} ${WRKSRC}/ebin/* ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/ebin
-	${INSTALL_DATA} ${WRKSRC}/src/* ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/src
+post-build:
+	@${RM} -r ${WRKSRC}/priv
 
 .include <bsd.port.mk>
