@@ -4529,6 +4529,7 @@
     SUBDIR += rubygem-cairo-gobject
     SUBDIR += rubygem-capybara
     SUBDIR += rubygem-celluloid
+    SUBDIR += rubygem-celluloid-essentials
     SUBDIR += rubygem-celluloid-io
     SUBDIR += rubygem-cf-uaa-lib
     SUBDIR += rubygem-childprocess
