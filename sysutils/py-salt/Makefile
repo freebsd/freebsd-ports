@@ -52,7 +52,7 @@ PYDISTUTILS_INSTALLARGS+=\
 		--salt-base-pillar-roots-dir=${ETCDIR}/pillar \
 		--salt-base-master-roots-dir=${ETCDIR}/salt-master \
 		--salt-logs-dir=/var/log/salt \
-		--salt-pidfile-dir=/var/run \
+		--salt-pidfile-dir=/var/run
 
 USE_RC_SUBR=	salt_master \
 		salt_minion \
