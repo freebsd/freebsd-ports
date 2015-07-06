@@ -21,8 +21,6 @@ USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	wooga
 
-.include <bsd.port.options.mk>
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
