@@ -14,6 +14,8 @@ COMMENT=	Perl module to display 3D data using OpenGL, GLU, GLUT, and GLX
 
 MANUAL_PACKAGE_BUILD=	needs the X server it will be used with to build
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 CONFIGURE_ARGS=	interface=FREEGLUT
 USES=		perl5 display:configure
 USE_PERL5=	configure
