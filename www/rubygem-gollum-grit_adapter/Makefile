@@ -14,7 +14,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-gitlab-grit>=2.7.1:${PORTSDIR}/textproc/rubygem-gitlab-grit
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

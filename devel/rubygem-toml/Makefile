@@ -15,7 +15,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-parslet>=1.5.0:${PORTSDIR}/textproc/rubygem-parslet
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
