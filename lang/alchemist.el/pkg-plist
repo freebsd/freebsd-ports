@@ -22,6 +22,7 @@
 %%EMACS_SITE_LISPDIR%%/server/case.exs
 %%EMACS_SITE_LISPDIR%%/server/completer.exs
 %%EMACS_SITE_LISPDIR%%/server/informant.exs
+%%EMACS_SITE_LISPDIR%%/server/run.exs
 %%EMACS_SITE_LISPDIR%%/server/server.exs
 %%EMACS_SITE_LISPDIR%%/server/source.exs
 %%EMACS_SITE_LISPDIR%%/server/utils.exs
