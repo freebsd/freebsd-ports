@@ -18,6 +18,7 @@
     SUBDIR += lsknobs
     SUBDIR += managepkg
     SUBDIR += mkreadmes
+    SUBDIR += octopkg
     SUBDIR += p5-FreeBSD-Portindex
     SUBDIR += p5-FreeBSD-Ports
     SUBDIR += p5-FreeBSD-Ports-INDEXhash
