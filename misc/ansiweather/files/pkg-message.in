@@ -1,0 +1,9 @@
+************************************************************************
+
+ The default config file is ~/.ansiweatherrc. The environment variable
+ ANSIWEATHERRC can be set to override this.
+
+ The file %%EXAMPLESDIR%%/ansiweatherrc.example
+ contains all available configuration variables.
+
+************************************************************************
