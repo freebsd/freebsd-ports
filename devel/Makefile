@@ -4533,6 +4533,7 @@
     SUBDIR += rubygem-celluloid-extras
     SUBDIR += rubygem-celluloid-fsm
     SUBDIR += rubygem-celluloid-io
+    SUBDIR += rubygem-celluloid-pool
     SUBDIR += rubygem-cf-uaa-lib
     SUBDIR += rubygem-childprocess
     SUBDIR += rubygem-chronic
