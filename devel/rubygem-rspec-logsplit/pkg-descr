@@ -1,0 +1,5 @@
+This RSpec plugin allows you to change the logger for your library for each
+separate example. This gives the ability to see the log output for each specific
+test.
+
+WWW: https://github.com/abstractive/rspec-logsplit
