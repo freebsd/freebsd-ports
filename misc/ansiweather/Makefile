@@ -9,9 +9,9 @@ COMMENT=	Shell script for displaying the current weather in your terminal
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${LOCALBASE}/bin/jq:${PORTSDIR}/textproc/jq \
-		${LOCALBASE}/bin/curl:${PORTSDIR}/ftp/curl \
-		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
+RUN_DEPENDS=	jq:${PORTSDIR}/textproc/jq \
+		curl:${PORTSDIR}/ftp/curl \
+		bash:${PORTSDIR}/shells/bash \
 		gprintf:${PORTSDIR}/sysutils/coreutils
 
 USE_GITHUB=	yes
