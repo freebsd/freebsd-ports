@@ -47,9 +47,7 @@ post-patch:
 
 post-install:
 	${LN} -s libshp.so.1 ${STAGEDIR}${PREFIX}/lib/libshp.so
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/web/*.html ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.post.mk>
