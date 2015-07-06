@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-builder32>=0:${PORTSDIR}/devel/rubygem-builder32 \
 		rubygem-xml-simple>=0:${PORTSDIR}/textproc/rubygem-xml-simple
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-little-plugger>=1.1:${PORTSDIR}/devel/rubygem-little-plugge
 		rubygem-rake>=10.0:${PORTSDIR}/devel/rubygem-rake
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

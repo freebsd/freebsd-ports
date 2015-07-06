@@ -23,7 +23,6 @@ RUN_DEPENDS=	rubygem-addressable>=2.3:${PORTSDIR}/www/rubygem-addressable \
 		rubygem-simple_oauth>=0.3.0:${PORTSDIR}/net/rubygem-simple_oauth
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

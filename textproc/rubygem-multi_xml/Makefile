@@ -15,7 +15,6 @@ OPTIONS_DEFINE=	NOKOGIRI
 NOKOGIRI_DESC=	Nokogiri is a HTML, XML, SAX, and Reader parser
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

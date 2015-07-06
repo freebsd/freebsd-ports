@@ -12,7 +12,6 @@ COMMENT=	Lightweight and flexible library for writing command-line apps in Ruby
 LICENSE=	MIT
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
