@@ -9,6 +9,7 @@
     SUBDIR += amanda-perl-wrapper
     SUBDIR += amanda-server
     SUBDIR += amfm
+    SUBDIR += ansiweather
     SUBDIR += apparix
     SUBDIR += artikulate
     SUBDIR += asbutton
