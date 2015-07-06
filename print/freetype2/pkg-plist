@@ -18,6 +18,7 @@ include/freetype2/ftchapters.h
 include/freetype2/ftcid.h
 include/freetype2/fterrdef.h
 include/freetype2/fterrors.h
+include/freetype2/ftfntfmt.h
 include/freetype2/ftgasp.h
 include/freetype2/ftglyph.h
 include/freetype2/ftgxval.h
@@ -40,11 +41,10 @@ include/freetype2/ftsnames.h
 include/freetype2/ftstroke.h
 include/freetype2/ftsynth.h
 include/freetype2/ftsystem.h
-include/freetype2/ftttdrv.h
 include/freetype2/fttrigon.h
+include/freetype2/ftttdrv.h
 include/freetype2/fttypes.h
 include/freetype2/ftwinfnt.h
-include/freetype2/ftxf86.h
 include/freetype2/t1tables.h
 include/freetype2/ttnameid.h
 include/freetype2/tttables.h
@@ -53,7 +53,7 @@ include/freetype2/ttunpat.h
 lib/libfreetype.a
 lib/libfreetype.so
 lib/libfreetype.so.6
-lib/libfreetype.so.6.11.4
+lib/libfreetype.so.6.12.0
 libdata/pkgconfig/freetype2.pc
 man/man1/freetype-config.1.gz
 share/aclocal/freetype2.m4
