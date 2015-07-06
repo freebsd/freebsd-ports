@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	orthanc
-PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTVERSION=	0.9.1
 CATEGORIES=	science graphics net www
 MASTER_SITES=	http://orthanc-server.com/downloads/get.php?path=/orthanc/:main \
 		http://www.montefiore.ulg.ac.be/~jodogne/Orthanc/ThirdPartyDownloads/:mongoose
@@ -61,7 +60,7 @@ post-extract:
 	${MKDIR} ${WRKSRC}/ThirdPartyDownloads
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/mongoose-3.8.tgz ${WRKSRC}/ThirdPartyDownloads
 	# Orthanc hardcodes /usr/local paths for libs and includes.
-	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/CMakeLists.txt
+	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/Resources/CMake/Compiler.cmake
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/Resources/CMake/JsonCppConfiguration.cmake
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/Resources/CMake/SQLiteConfiguration.cmake
 
@@ -80,7 +79,7 @@ post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/Resources/Configuration.json
 	${CP} ${WRKSRC}/Resources/Configuration.json ${STAGEDIR}${ETCDIR}/orthanc.json.sample
-	${STRIP_CMD} ${STAGEDIR}${DATADIR}/plugins/libServeFolders.so.0.9.0
+	${STRIP_CMD} ${STAGEDIR}${DATADIR}/plugins/libServeFolders.so.${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
