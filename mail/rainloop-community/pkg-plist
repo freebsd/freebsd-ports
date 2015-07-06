@@ -366,7 +366,6 @@
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Plugins/Helper.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Plugins/Manager.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Plugins/Property.php
-%%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Prem/Provider.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Providers/AbstractProvider.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Providers/AddressBook.php
 %%WWWDIR%%/rainloop/v/%%VER%%/app/libraries/RainLoop/Providers/AddressBook/AddressBookInterface.php
