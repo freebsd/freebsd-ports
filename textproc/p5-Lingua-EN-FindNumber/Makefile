@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Lingua-EN-FindNumber
-PORTVERSION=	1.30
-PORTREVISION=	1
+PORTVERSION=	1.31
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,6 +18,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=1:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
