@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	emby-server
-PORTVERSION=	3.0.5641.4
+PORTVERSION=	3.0.5641.5
 CATEGORIES=	multimedia
 
 MAINTAINER=	woodsb02@gmail.com
@@ -20,7 +20,7 @@ CONFLICTS_INSTALL=	mediabrowser
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	MediaBrowser
-GH_PROJECT=	MediaBrowser
+GH_PROJECT=	Emby
 
 USES=		mono pkgconfig
 
