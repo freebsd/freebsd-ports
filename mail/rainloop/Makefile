@@ -42,7 +42,7 @@ OPTIONS_RADIO_DB=	MYSQL PGSQL SQLITE
 OPTIONS_DEFAULT=	SQLITE
 
 MYSQL_USE=	PHP=pdo_mysql
-PGSQL_USE=	PHP=pdo_pqsql
+PGSQL_USE=	PHP=pdo_pgsql
 SQLITE_USE=	PHP=pdo_sqlite
 
 .include <bsd.port.options.mk>
