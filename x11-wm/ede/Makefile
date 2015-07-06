@@ -3,7 +3,7 @@
 
 PORTNAME=	ede
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF \
 		SF/${PORTNAME}/${PORTNAME}lib/${PORTVERSION}:edelib
@@ -15,8 +15,6 @@ COMMENT=	Equinox Desktop Environment
 
 LICENSE=	GPLv2 LGPL20
 LICENSE_COMB=	multi
-
-BROKEN=		Fails to link, tries to use internal fltk symbols
 
 BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen \
 		jam:${PORTSDIR}/devel/jam
@@ -30,14 +28,14 @@ USES=		fam gettext iconv:translit pathfix pkgconfig python:2 \
 SHEBANG_FILES=	doc/asciidoc/asciidoc.py
 python_OLD_CMD=	${SETENV} python
 python_CMD=	${PYTHON_CMD}
-USE_XORG=	xcomposite xft xinerama xpm xrandr
+USE_XORG=	xcomposite xft xinerama xkbfile xpm xrandr
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PEKWM_CXXFLAGS="${CXXFLAGS}" \
 		PKG_CONFIG_PATH="${EDELIB_WRKSRC}/pc"
 CONFIGURE_ARGS=	--with-edelib-path=${EDELIB_WRKSRC} \
 		--with-fltk-path=${LOCALBASE}
-INSTALL_ICONS=	yes
+INSTALLS_ICONS=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -55,6 +53,9 @@ EDELIB_VERSION=	${PORTVERSION}
 EDELIB_DISTNAME=${EDELIB_NAME}-${EDELIB_VERSION}
 EDELIB_DISTFILE=${EDELIB_DISTNAME}${EXTRACT_SUFX}
 EDELIB_WRKSRC=	${WRKDIR}/${EDELIB_DISTNAME}
+
+post-extract:
+	@${LN} -sf ${EDELIB_WRKSRC} ${WRKDIR}/${EDELIB_NAME}
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -89,6 +90,10 @@ pre-configure:
 		CC="${CC}" CXX="${CXX}" \
 		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
 		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}")
+
+post-configure:
+	@${REINPLACE_CMD} -e \
+		's|#define ICONV_CONST 1|#undef ICONV_CONST|' ${WRKSRC}/config.h
 
 pre-build:
 	@(cd ${EDELIB_WRKSRC} \
