@@ -1,0 +1,11 @@
+Modern user interface.
+Complete support of IMAP and SMTP protocols including SSL and STARTTLS.
+Minimalistic resources requirements.
+Direct access to mail server is used (mails are not stored locally
+on web server).
+Allows for adding multiple accounts to primary one, simultaneous
+access to different accounts in different browser tabs is supported.
+Additional identities.
+Administrative panel for configuring main options...
+
+WWW: http://rainloop.net/
