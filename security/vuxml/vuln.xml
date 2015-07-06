@@ -57,6 +57,38 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d7b9a28d-238c-11e5-86ff-14dae9d210b8">
+    <topic>bitcoin -- denial of service</topic>
+    <affects>
+      <package>
+	<name>bitcoin</name>
+	<range><lt>10.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gregory Maxwell reports:</p>
+	<blockquote cite="http://bitcoin-development.narkive.com/tO8M0R0j/upcoming-dos-vulnerability-announcements-for-bitcoin-core">
+	  <p>On July 7th I will be making public details of several
+	    serious denial of service vulnerabilities which have fixed in recent
+	    versions of Bitcoin Core, including including CVE-2015-3641.
+
+	    I strongly recommend anyone running production nodes exposed to inbound
+	    connections from the internet upgrade to 0.10.2 as soon as possible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3641</cvename>
+      <url>http://bitcoin-development.narkive.com/tO8M0R0j/upcoming-dos-vulnerability-announcements-for-bitcoin-core</url>
+      <url>https://en.bitcoin.it/wiki/Common_Vulnerabilities_and_Exposures</url>
+    </references>
+    <dates>
+      <discovery>2015-06-27</discovery>
+      <entry>2015-07-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="864e6f75-2372-11e5-86ff-14dae9d210b8">
     <topic>node -- denial of service</topic>
     <affects>
