@@ -1,5 +1,5 @@
---- ./pekwm/Observable.cc.orig	2012-05-18 12:51:49.000000000 +0000
-+++ ./pekwm/Observable.cc	2014-01-05 16:56:43.000000000 +0000
+--- pekwm/Observable.cc.orig	2014-06-21 21:24:41 UTC
++++ pekwm/Observable.cc
 @@ -10,10 +10,12 @@
  #include "config.h"
  #endif // HAVE_CONFIG_H
@@ -14,7 +14,7 @@
  
  /**
   * Notify all observers.
-@@ -21,11 +23,10 @@
+@@ -21,11 +23,10 @@ using SLIST_NAMESPACE::slist;
  void
  Observable::notifyObservers(Observation *observation)
  {
@@ -30,7 +30,7 @@
      }
  }
  
-@@ -35,7 +36,7 @@
+@@ -35,7 +36,7 @@ Observable::notifyObservers(Observation 
  void
  Observable::addObserver(Observer *observer)
  {
@@ -39,7 +39,7 @@
  }
  
  /**
-@@ -44,7 +45,5 @@
+@@ -44,7 +45,5 @@ Observable::addObserver(Observer *observ
  void
  Observable::removeObserver(Observer *observer)
  {
