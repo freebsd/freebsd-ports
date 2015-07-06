@@ -482,6 +482,7 @@
 %%ETCDIR%%/errors/es-pr
 %%ETCDIR%%/errors/es-py
 %%ETCDIR%%/errors/es-sv
+%%ETCDIR%%/errors/es-us
 %%ETCDIR%%/errors/es-uy
 %%ETCDIR%%/errors/es-ve
 %%ETCDIR%%/errors/es/ERR_ACCESS_DENIED
