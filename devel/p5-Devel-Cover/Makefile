@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Devel-Cover
-PORTVERSION=	1.18
+PORTVERSION=	1.19
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,8 +13,7 @@ COMMENT=	Code coverage metrics for Perl
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
-		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
+TEST_DEPENDS=	p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences
 
 USES=		perl5
 USE_PERL5=	configure
