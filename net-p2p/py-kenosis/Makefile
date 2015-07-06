@@ -13,6 +13,9 @@ COMMENT=	Fully-distributed p2p RPC system built on top of XMLRPC
 
 LICENSE=	MIT
 
+DEPRECATED=	Fails to run with modern python
+EXPIRATION_DATE=2015-08-07
+
 RUN_DEPENDS=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/xmlrpclib.py:${PORTSDIR}/net/py-xmlrpclib
 
 USES=		python
