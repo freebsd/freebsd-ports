@@ -44,12 +44,12 @@ SNAPPY=		0
 
 post-patch:
 	@${REINPLACE_CMD} -e '/PLATFORM_IS_LITTLE_ENDIAN/ s|__|_|g' ${WRKSRC}/port/port_posix.h
-.if !${PORT_OPTIONS:MGPERFTOOLS}
+
+post-patch-GPERFTOOLS-off:
 	@${REINPLACE_CMD} -e 's| -ltcmalloc||' ${WRKSRC}/build_detect_platform
-.endif
-.if !${PORT_OPTIONS:MSNAPPY}
+
+post-patch-SNAPPY-off:
 	@${REINPLACE_CMD} -e 's| -DSNAPPY||; s| -lsnappy||' ${WRKSRC}/build_detect_platform
-.endif
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/leveldb/ ${STAGEDIR}${PREFIX}/include/memenv/ ${STAGEDIR}${DATADIR}/
