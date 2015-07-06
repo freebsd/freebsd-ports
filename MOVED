@@ -7680,3 +7680,4 @@ net/py-google||2015-07-03|Google no longer supports the SOAP API for search
 devel/erlang-ibrowse|www/erlang-ibrowse|2015-07-05|Move to www where it belongs
 multimedia/ffmpeg23|multimedia/ffmpeg|2015-07-05|Obsolete since recent upstream upgrade of main ffmpeg port. Use multimedia/ffmpeg instead.
 multimedia/ffmpeg26|multimedia/ffmpeg|2015-07-05|Obsolete since recent upstream upgrade of main ffmpeg port. Use multimedia/ffmpeg instead.
+x11/docker|x11/docker-tray|2015-07-06|Renamed
