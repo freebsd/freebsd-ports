@@ -250,7 +250,7 @@ Notes:
     <affects>
       <package>
 	<name>bitcoin</name>
-	<range><lt>10.0.2</lt></range>
+	<range><lt>0.10.2</lt></range>
       </package>
     </affects>
     <description>
