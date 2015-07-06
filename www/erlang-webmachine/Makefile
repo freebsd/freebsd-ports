@@ -21,8 +21,7 @@ USE_GITHUB=     yes
 GH_ACCOUNT=     basho
 
 post-patch:
-	@${REINPLACE_CMD} -e "s/{vsn, git}/{vsn,\"${PORTVERSION}\"}/" ${WRKSRC}/src/webmachine.app.src
-	@${RM} ${WRKSRC}/src/*.bak
+	@${REINPLACE_CMD} -i '' -e 's/{ *vsn, git *}/{vsn, "${PORTVERSION}"}/' ${WRKSRC}/src/*.app.src
 	@${RM} ${WRKSRC}/demo/priv/www/uploads/.gitignore
 
 do-install:

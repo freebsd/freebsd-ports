@@ -17,7 +17,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	uwiger
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/{vsn, git}/{vsn,"${PORTVERSION}"}/' ${WRKSRC}/src/*.app.src
+	@${RM} ${WRKSRC}/src/*.orig
+	@${REINPLACE_CMD} -i '' -e 's/{ *vsn, git *}/{vsn, "${PORTVERSION}"}/' ${WRKSRC}/src/*.app.src
 
 do-build:
 	@cd ${WRKSRC} && ./rebar compile

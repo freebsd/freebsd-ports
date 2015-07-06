@@ -23,9 +23,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	basho
 
 post-patch:
-	@${REINPLACE_CMD} -e "s/%%PORTVERSION%%/${PORTVERSION}/" ${WRKSRC}/src/cuttlefish.app.src
+	@${REINPLACE_CMD} -i '' -e 's/{ *vsn, git *}/{vsn, "${PORTVERSION}"}/' ${WRKSRC}/src/*.app.src
 	@${REINPLACE_CMD} -e "s@%%LOCALBASE%%@${LOCALBASE}@" ${WRKSRC}/src/cuttlefish_escript.erl
-	@${RM} ${WRKSRC}/src/*.bak ${WRKSRC}/src/*.orig
+	@${RM} ${WRKSRC}/src/*.orig
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

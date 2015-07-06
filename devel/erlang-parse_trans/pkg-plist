@@ -10,7 +10,6 @@ lib/erlang/lib/parse_trans-%%VERSION%%/include/exprecs.hrl
 lib/erlang/lib/parse_trans-%%VERSION%%/src/ct_expand.erl
 lib/erlang/lib/parse_trans-%%VERSION%%/src/exprecs.erl
 lib/erlang/lib/parse_trans-%%VERSION%%/src/parse_trans.app.src
-lib/erlang/lib/parse_trans-%%VERSION%%/src/parse_trans.app.src.bak
 lib/erlang/lib/parse_trans-%%VERSION%%/src/parse_trans.erl
 lib/erlang/lib/parse_trans-%%VERSION%%/src/parse_trans_codegen.erl
 lib/erlang/lib/parse_trans-%%VERSION%%/src/parse_trans_mod.erl

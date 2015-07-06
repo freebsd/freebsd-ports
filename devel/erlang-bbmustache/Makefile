@@ -22,7 +22,7 @@ GH_ACCOUNT=	soranoba
 ALL_TARGET=	compile
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/{vsn, git}/{vsn,"${PORTVERSION}"}/' ${WRKSRC}/src/*.app.src
+	@${REINPLACE_CMD} -i '' -e 's/{ *vsn, git *}/{vsn, "${PORTVERSION}"}/' ${WRKSRC}/src/*.app.src
 
 pre-build:
 	@${RM} ${WRKSRC}/rebar.lock

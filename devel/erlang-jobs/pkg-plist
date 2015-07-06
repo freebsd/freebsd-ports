@@ -14,7 +14,6 @@ lib/erlang/lib/jobs-%%VERSION%%/ebin/jobs_server.beam
 lib/erlang/lib/jobs-%%VERSION%%/ebin/jobs_stateful_simple.beam
 lib/erlang/lib/jobs-%%VERSION%%/include/jobs.hrl
 lib/erlang/lib/jobs-%%VERSION%%/src/jobs.app.src
-lib/erlang/lib/jobs-%%VERSION%%/src/jobs.app.src.bak
 lib/erlang/lib/jobs-%%VERSION%%/src/jobs.erl
 lib/erlang/lib/jobs-%%VERSION%%/src/jobs_app.erl
 lib/erlang/lib/jobs-%%VERSION%%/src/jobs_info.erl

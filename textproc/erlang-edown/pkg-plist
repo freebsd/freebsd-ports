@@ -8,7 +8,6 @@ lib/erlang/lib/edown-%%VERSION%%/priv/scripts/check_edown.script
 lib/erlang/lib/edown-%%VERSION%%/priv/scripts/rebar.config.script
 lib/erlang/lib/edown-%%VERSION%%/priv/scripts/remove_deps.script
 lib/erlang/lib/edown-%%VERSION%%/src/edown.app.src
-lib/erlang/lib/edown-%%VERSION%%/src/edown.app.src.bak
 lib/erlang/lib/edown-%%VERSION%%/src/edown_doclet.erl
 lib/erlang/lib/edown-%%VERSION%%/src/edown_layout.erl
 lib/erlang/lib/edown-%%VERSION%%/src/edown_lib.erl
