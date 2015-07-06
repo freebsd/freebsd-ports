@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freetype2
-PORTVERSION=	2.5.5
+PORTVERSION=	2.6
 CATEGORIES=	print
 MASTER_SITES=	http://savannah.nongnu.org/download/freetype/ \
 		SF/freetype/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}/ \
