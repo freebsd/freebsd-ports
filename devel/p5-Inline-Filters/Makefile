@@ -17,6 +17,7 @@ BUILD_DEPENDS=	p5-Inline>=0.42:${PORTSDIR}/devel/p5-Inline \
 		p5-Inline-C>=0.76:${PORTSDIR}/devel/p5-Inline-C
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
