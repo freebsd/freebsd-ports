@@ -57,6 +57,89 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="150d1538-23fa-11e5-a4a5-002590263bf5">
+    <topic>squid -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><ge>3.5</ge><lt>3.5.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Amos Jeffries, Squid-3 release manager, reports:</p>
+	<blockquote cite="http://openwall.com/lists/oss-security/2015/07/06/8">
+	  <p>Due to incorrect handling of peer responses in a hierarchy of 2 or
+	    more proxies remote clients (or scripts run on a client) are able to
+	    gain unrestricted access through a gateway proxy to its backend
+	    proxy.</p>
+	  <p>If the two proxies have differing levels of security this could
+	    lead to authentication bypass or unprivileged access to supposedly
+	    secure resources.</p>
+	  <p>Squid up to and including 3.5.5 are apparently vulnerable to DoS
+	    attack from malicious clients using repeated TLS renegotiation
+	    messages. This has not been verified as it also seems to require
+	    outdated (0.9.8l and older) OpenSSL libraries.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <mlist>http://openwall.com/lists/oss-security/2015/07/06/8</mlist>
+    </references>
+    <dates>
+      <discovery>2015-07-06</discovery>
+      <entry>2015-07-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b6da24da-23f7-11e5-a4a5-002590263bf5">
+    <topic>squid -- client-first SSL-bump does not correctly validate X509 server certificate</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><ge>3.5</ge><lt>3.5.4</lt></range>
+	<range><ge>3.4</ge><lt>3.4.13</lt></range>
+      </package>
+      <package>
+	<name>squid33</name>
+	<range><ge>3.3</ge><lt>3.3.14</lt></range>
+      </package>
+      <package>
+	<name>squid32</name>
+	<range><ge>3.2</ge><lt>3.2.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Squid security advisory 2015:1 reports:</p>
+	<blockquote cite="http://www.squid-cache.org/Advisories/SQUID-2015_1.txt">
+	  <p>Squid configured with client-first SSL-bump does not correctly
+	    validate X509 server certificate domain / hostname fields.</p>
+	  <p>The bug is important because it allows remote servers to bypass
+	    client certificate validation. Some attackers may also be able
+	    to use valid certificates for one domain signed by a global
+	    Certificate Authority to abuse an unrelated domain.</p>
+	  <p>However, the bug is exploitable only if you have configured
+	    Squid to perform SSL Bumping with the "client-first" or "bump"
+	    mode of operation.</p>
+	  <p>Sites that do not use SSL-Bump are not vulnerable.</p>
+	  <p>All Squid built without SSL support are not vulnerable to the
+	    problem.</p>
+	</blockquote>
+	<p>The FreeBSD port does not use SSL by default and is not vulnerable
+	  in the default configuration.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3455</cvename>
+      <url>http://www.squid-cache.org/Advisories/SQUID-2015_1.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-05-01</discovery>
+      <entry>2015-07-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="72fccfdf-2061-11e5-a4a5-002590263bf5">
     <topic>ansible -- multiple vulnerabilities</topic>
     <affects>
