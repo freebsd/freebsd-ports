@@ -23,6 +23,7 @@ TEST_REPORTER_DESC=	Send reports to cpan-testers
 CONFIGURE_ARGS=	AUTOINSTALL=1
 INSTALL_TARGET=	pure_install
 MAKE_JOBS_UNSAFE=	yes
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
