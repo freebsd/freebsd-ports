@@ -64,6 +64,10 @@ Notes:
 	<name>node</name>
 	<range><lt>0.12.6</lt></range>
       </package>
+      <package>
+	<name>node-devel</name>
+	<range><lt>0.12.6</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
