@@ -26,6 +26,7 @@ BUILD_DEPENDS+=	p5-File-ShareDir-Install>=0.06:${PORTSDIR}/devel/p5-File-ShareDi
 
 CONFLICTS_INSTALL=	p5-Inline-0.[0-5]*
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
