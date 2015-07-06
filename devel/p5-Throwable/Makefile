@@ -18,6 +18,7 @@ RUN_DEPENDS=	p5-Devel-StackTrace>=1.32:${PORTSDIR}/devel/p5-Devel-StackTrace \
 		p5-Moo>=1.000001:${PORTSDIR}/devel/p5-Moo
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
