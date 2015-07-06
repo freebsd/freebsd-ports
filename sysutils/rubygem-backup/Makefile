@@ -37,6 +37,7 @@ RUN_DEPENDS=	rubygem-builder32>=3.2.2:${PORTSDIR}/devel/rubygem-builder32 \
 		rubygem-treetop>=1.4.14:${PORTSDIR}/devel/rubygem-treetop \
 		rubygem-twitter>=4.8.1:${PORTSDIR}/net/rubygem-twitter
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
