@@ -36,6 +36,18 @@ lib/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_util.beam
 lib/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_websocket.beam
 lib/erlang/lib/mochiweb-%%VERSION%%/ebin/reloader.beam
 lib/erlang/lib/mochiweb-%%VERSION%%/include/internal.hrl
+lib/erlang/lib/mochiweb-%%VERSION%%/priv/skel/Makefile
+lib/erlang/lib/mochiweb-%%VERSION%%/priv/skel/priv/www/index.html
+lib/erlang/lib/mochiweb-%%VERSION%%/priv/skel/src/Makefile
+lib/erlang/lib/mochiweb-%%VERSION%%/priv/skel/src/skel.app
+lib/erlang/lib/mochiweb-%%VERSION%%/priv/skel/src/skel.erl
+lib/erlang/lib/mochiweb-%%VERSION%%/priv/skel/src/skel.hrl
+lib/erlang/lib/mochiweb-%%VERSION%%/priv/skel/src/skel_app.erl
+lib/erlang/lib/mochiweb-%%VERSION%%/priv/skel/src/skel_deps.erl
+lib/erlang/lib/mochiweb-%%VERSION%%/priv/skel/src/skel_sup.erl
+lib/erlang/lib/mochiweb-%%VERSION%%/priv/skel/src/skel_web.erl
+lib/erlang/lib/mochiweb-%%VERSION%%/priv/skel/start-dev.sh
+lib/erlang/lib/mochiweb-%%VERSION%%/priv/skel/start.sh
 lib/erlang/lib/mochiweb-%%VERSION%%/src/Makefile
 lib/erlang/lib/mochiweb-%%VERSION%%/src/mochifmt.erl
 lib/erlang/lib/mochiweb-%%VERSION%%/src/mochifmt_records.erl
@@ -75,7 +87,6 @@ lib/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_sup.erl
 lib/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_util.erl
 lib/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_websocket.erl
 lib/erlang/lib/mochiweb-%%VERSION%%/src/reloader.erl
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hmac_api/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hmac_api/hmac_api.hrl

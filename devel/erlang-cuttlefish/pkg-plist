@@ -24,6 +24,7 @@ lib/erlang/lib/cuttlefish-%%VERSION%%/ebin/cuttlefish_validator.beam
 lib/erlang/lib/cuttlefish-%%VERSION%%/ebin/cuttlefish_variable.beam
 lib/erlang/lib/cuttlefish-%%VERSION%%/ebin/cuttlefish_vmargs.beam
 lib/erlang/lib/cuttlefish-%%VERSION%%/ebin/lager_stderr_backend.beam
+lib/erlang/lib/cuttlefish-%%VERSION%%/priv/erlang_vm.schema
 lib/erlang/lib/cuttlefish-%%VERSION%%/src/conf_parse.erl
 lib/erlang/lib/cuttlefish-%%VERSION%%/src/conf_parse.peg
 lib/erlang/lib/cuttlefish-%%VERSION%%/src/cuttlefish.app.src

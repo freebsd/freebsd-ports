@@ -1,3 +1,5 @@
+lib/erlang/lib/eredis-%%VERSION%%/ebin/basho_bench_driver_eredis.beam
+lib/erlang/lib/eredis-%%VERSION%%/ebin/basho_bench_driver_erldis.beam
 lib/erlang/lib/eredis-%%VERSION%%/ebin/eredis.app
 lib/erlang/lib/eredis-%%VERSION%%/ebin/eredis.beam
 lib/erlang/lib/eredis-%%VERSION%%/ebin/eredis_client.beam
@@ -6,6 +8,9 @@ lib/erlang/lib/eredis-%%VERSION%%/ebin/eredis_sub.beam
 lib/erlang/lib/eredis-%%VERSION%%/ebin/eredis_sub_client.beam
 lib/erlang/lib/eredis-%%VERSION%%/include/eredis.hrl
 lib/erlang/lib/eredis-%%VERSION%%/include/eredis_sub.hrl
+lib/erlang/lib/eredis-%%VERSION%%/priv/basho_bench_eredis.config
+lib/erlang/lib/eredis-%%VERSION%%/priv/basho_bench_eredis_pipeline.config
+lib/erlang/lib/eredis-%%VERSION%%/priv/basho_bench_erldis.config
 lib/erlang/lib/eredis-%%VERSION%%/src/basho_bench_driver_eredis.erl
 lib/erlang/lib/eredis-%%VERSION%%/src/basho_bench_driver_erldis.erl
 lib/erlang/lib/eredis-%%VERSION%%/src/eredis.app.src
