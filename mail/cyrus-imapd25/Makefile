@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cyrus-imapd
-PORTVERSION=	2.5.3
+PORTVERSION=	2.5.4
 #PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/ \
@@ -231,8 +231,8 @@ post-install:
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-#	@${MKDIR} ${STAGEDIR}${DOCSDIR}/man
-#	@${MKDIR} ${STAGEDIR}${DOCSDIR}/text
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/man
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/text
 .for f in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/doc/${f}.html ${STAGEDIR}${DOCSDIR}
 	@${ECHO_CMD} share/doc/${PORTNAME}/${f}.html >>${TMPPLIST}
@@ -249,11 +249,11 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}
 	@${ECHO_CMD} share/doc/${PORTNAME}/${f} >>${TMPPLIST}
 .endfor
-#.for f in ${DOCS}
-#	@${INSTALL_DATA} ${WRKSRC}/doc/text/${f} \
-#		${STAGEDIR}${DOCSDIR}/text
-#	@${ECHO_CMD} share/doc/${PORTNAME}/text/${f} >>${TMPPLIST}
-#.endfor
+.for f in ${DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/doc/text/${f} \
+		${STAGEDIR}${DOCSDIR}/text
+	@${ECHO_CMD} share/doc/${PORTNAME}/text/${f} >>${TMPPLIST}
+.endfor
 .endif
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${INSTALL_DATA} ${FILESDIR}/imapd.conf \
