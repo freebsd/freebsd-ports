@@ -359,6 +359,7 @@
     SUBDIR += import-pictures
     SUBDIR += impressive
     SUBDIR += inkscape
+    SUBDIR += intel-backlight
     SUBDIR += intergif
     SUBDIR += inventor
     SUBDIR += ipe
