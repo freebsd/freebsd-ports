@@ -18,8 +18,6 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 USE_GITHUB=	yes
 GH_ACCOUNT=	ferd
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -i '' -e "s@%%LOCALBASE%%@${LOCALBASE}@" ${WRKSRC}/script/app_deps.erl
 
