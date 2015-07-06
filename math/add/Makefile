@@ -2,15 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	add
-PORTVERSION=	20140105
+PORTVERSION=	20150704
 CATEGORIES=	math
 MASTER_SITES=	ftp://dickey.his.com/add/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Full-screen editing calculator
 
 GNU_CONFIGURE=	yes
+USES=		tar:tgz
 MAKEFILE=	makefile
 
 do-install:
