@@ -21,8 +21,7 @@ GH_ACCOUNT=	ferd
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e "s@%%LOCALBASE%%@${LOCALBASE}@" ${WRKSRC}/script/app_deps.erl
-	@${RM} ${WRKSRC}/script/*.bak ${WRKSRC}/script/*.orig
+	@${REINPLACE_CMD} -i '' -e "s@%%LOCALBASE%%@${LOCALBASE}@" ${WRKSRC}/script/app_deps.erl
 
 do-build:
 	@cd ${WRKSRC} && ./rebar compile doc

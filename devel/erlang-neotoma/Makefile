@@ -24,8 +24,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	seancribbs
 
 post-patch:
-	@${REINPLACE_CMD} -e "s/%%PORTVERSION%%/${PORTVERSION}/" ${WRKSRC}/src/neotoma.app.src
-	@${RM} ${WRKSRC}/src/*.bak ${WRKSRC}/src/*.orig
+	@${REINPLACE_CMD} -i '' -e 's/{ *vsn, git *}/{vsn, "${PORTVERSION}"}/' ${WRKSRC}/src/*.app.src
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

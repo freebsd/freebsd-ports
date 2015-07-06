@@ -22,8 +22,7 @@ WRKSRC=		${WRKDIR}/xmlrpc-${PORTVERSION}
 PORTDOCS=	*
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|XMERL_PATH=.*|XMERL_PATH=${LOCALBASE}/lib/erlang/lib/xmerl|g' ${WRKSRC}/src/Makefile
-	@${RM} ${WRKSRC}/src/Makefile.bak ${WRKSRC}/src/*.orig
+	@${REINPLACE_CMD} -i '' -e 's|XMERL_PATH=.*|XMERL_PATH=${LOCALBASE}/lib/erlang/lib/xmerl|g' ${WRKSRC}/src/Makefile
 
 do-build:
 	@cd ${WRKSRC}/src && ${MAKE_CMD}

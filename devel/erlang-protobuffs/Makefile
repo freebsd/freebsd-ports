@@ -23,8 +23,7 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e "s/%%PORTVERSION%%/${PORTVERSION}/" ${WRKSRC}/src/protobuffs.app.src
-	@${RM} ${WRKSRC}/src/*.bak ${WRKSRC}/src/*.orig
+	@${REINPLACE_CMD} -i '' -e 's/{ *vsn, git *}/{vsn, "${PORTVERSION}"}/' ${WRKSRC}/src/*.app.src
 
 do-install:
 .if ${PORT_OPTIONS:MDOCS}
