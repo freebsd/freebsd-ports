@@ -4,7 +4,7 @@
 #
 # Feature:	erlang
 # Usage:	USES=erlang
-# Valid ARGS:	rebar, rebar3, or none (custom build)
+# Valid ARGS:	rebar, rebar3, or no argument (custom build)
 #
 # Additional variables:
 #
