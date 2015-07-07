@@ -119,7 +119,7 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		openntpd>=0:${PORTSDIR}/net/openntpd \
 		socat>=0:${PORTSDIR}/net/socat \
 		tor>=0:${PORTSDIR}/security/tor \
-		docker:${PORTSDIR}/sysutils/docker \
+		docker:${PORTSDIR}/sysutils/docker-freebsd \
 		zsh:${PORTSDIR}/shells/zsh
 
 NO_BUILD=	yes

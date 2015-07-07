@@ -34,7 +34,7 @@ RUN_DEPENDS=	pc-updatemanager:${PORTSDIR}/sysutils/pcbsd-utils \
 		anacron:${PORTSDIR}/sysutils/anacron \
 		grub-mkconfig:${PORTSDIR}/sysutils/grub2-pcbsd \
 		grub2-efi>=0:${PORTSDIR}/sysutils/grub2-efi \
-		docker:${PORTSDIR}/sysutils/docker \
+		docker:${PORTSDIR}/sysutils/docker-freebsd \
 		openntpd>=0:${PORTSDIR}/net/openntpd
 
 NO_BUILD=	yes
