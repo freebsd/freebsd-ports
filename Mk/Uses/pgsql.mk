@@ -128,10 +128,10 @@ LIB_DEPENDS+=	libpq.so.${PGSQL${PGSQL_VER_NODOT}_LIBVER}:${PORTSDIR}/databases/p
 _USE_PGSQL_DEP=		client contrib docs pgtcl pltcl plperl server
 _USE_PGSQL_DEP_client=	psql
 _USE_PGSQL_DEP_contrib=	pgbench
-_USE_PGSQL_DEP_docs=	postgresql${PGSQL_VER}-docs>0
+_USE_PGSQL_DEP_docs=	postgresql${PGSQL_VER_NODOT}-docs>0
 _USE_PGSQL_DEP_pgtcl=	${LOCALBASE}/lib/pgtcl/pkgIndex.tcl
-_USE_PGSQL_DEP_plperl=	postgresql${PGSQL_VER}-plperl>0
-_USE_PGSQL_DEP_pltcl=	postgresql${PGSQL_VER}-pltcl>0
+_USE_PGSQL_DEP_plperl=	postgresql${PGSQL_VER_NODOT}-plperl>0
+_USE_PGSQL_DEP_pltcl=	postgresql${PGSQL_VER_NODOT}-pltcl>0
 _USE_PGSQL_DEP_server=	postgres
 .    if defined(WANT_PGSQL)
 .      for depend in ${_USE_PGSQL_DEP}
