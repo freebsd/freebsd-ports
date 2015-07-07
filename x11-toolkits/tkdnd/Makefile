@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tkdnd
-PORTVERSION=	2.7
+PORTVERSION=	2.8
 CATEGORIES=	x11-toolkits tk
 MASTER_SITES=	SF/${PORTNAME}/TkDND/TkDND%20${PORTVERSION}/
 DISTNAME=	${PORTNAME}${PORTVERSION}-src
@@ -25,6 +25,6 @@ USE_LDCONFIG=	${PREFIX}/lib/${TKPKG}
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 
 post-install:
-	@${INSTALL_MAN} ${WRKSRC}/doc/tkDND.n ${STAGEDIR}/${PREFIX}/man/mann/${MANN}
+	${INSTALL_MAN} ${WRKSRC}/doc/tkDND.n ${STAGEDIR}/${PREFIX}/man/mann/${MANN}
 
 .include <bsd.port.mk>
