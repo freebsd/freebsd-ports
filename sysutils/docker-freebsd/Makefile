@@ -11,12 +11,11 @@ COMMENT=	Docker containment system
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go \
-		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
-		${LOCALBASE}/bin/git:${PORTSDIR}/devel/git \
+BUILD_DEPENDS=	go>=1.4:${PORTSDIR}/lang/go \
+		bash:${PORTSDIR}/shells/bash \
 		sqlite3:${PORTSDIR}/databases/sqlite3
-RUN_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go \
-		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
+RUN_DEPENDS=	go>=1.4:${PORTSDIR}/lang/go \
+		bash:${PORTSDIR}/shells/bash \
 		sqlite3:${PORTSDIR}/databases/sqlite3
 
 USE_GITHUB=	yes
@@ -32,6 +31,6 @@ do-build:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL} ${WRKSRC}/bundles/latest/binary/docker ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/bundles/latest/binary/docker ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
