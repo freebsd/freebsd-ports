@@ -13,7 +13,7 @@ COMMENT=	Perl extension for the SANE (Scanner Access Now Easy) Project
 
 BUILD_DEPENDS=	p5-ExtUtils-Depends>=0:${PORTSDIR}/devel/p5-ExtUtils-Depends \
 		p5-ExtUtils-PkgConfig>=0:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
-		${LOCALBASE}/bin/sane-config:${PORTSDIR}/graphics/sane-backends
+		sane-config:${PORTSDIR}/graphics/sane-backends
 
 USES=		perl5
 USE_PERL5=	configure

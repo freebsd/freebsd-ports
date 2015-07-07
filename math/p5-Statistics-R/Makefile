@@ -14,8 +14,8 @@ COMMENT=	Controls the R interpreter through Perl
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/R:${PORTSDIR}/math/R
-RUN_DEPENDS=	${LOCALBASE}/bin/R:${PORTSDIR}/math/R \
+BUILD_DEPENDS=	R:${PORTSDIR}/math/R
+RUN_DEPENDS=	R:${PORTSDIR}/math/R \
 		p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run \
 		p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common
 
