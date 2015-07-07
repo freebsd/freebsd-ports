@@ -1,0 +1,5 @@
+The pyscard smartcard library is a framework for building smart card
+aware applications in Python. The smartcard module is built on top of
+the PCSC API Python wrapper module.
+
+WWW: http://pyscard.sourceforge.net/
