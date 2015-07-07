@@ -62,13 +62,16 @@ Notes:
     <affects>
       <package>
 	<name>bind910</name>
-	<name>bind910-base</name>
 	<range><lt>9.10.2_6</lt></range>
       </package>
       <package>
 	<name>bind99</name>
-	<name>bind99-base</name>
 	<range><lt>9.9.7_5</lt></range>
+      </package>
+      <package>
+	<name>bind910-base</name>
+	<name>bind99-base</name>
+	<range><gt>0</gt></range>
       </package>
       <package>
 	<name>FreeBSD</name>
@@ -99,6 +102,7 @@ Notes:
     <dates>
       <discovery>2015-07-07</discovery>
       <entry>2015-07-07</entry>
+      <modified>2015-07-07</modified>
     </dates>
   </vuln>
 
