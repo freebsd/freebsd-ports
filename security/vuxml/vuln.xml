@@ -57,6 +57,42 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="cbfa8bd7-24b6-11e5-86ff-14dae9d210b8">
+    <topic>haproxy -- information leak vulnerability</topic>
+    <affects>
+      <package>
+       <name>haproxy</name>
+       <range><ge>1.5.0</ge><lt>1.5.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>HAProxy reports:</p>
+       <blockquote cite="http://www.haproxy.org/news.html">
+	    <p>A vulnerability was found when HTTP pipelining is used. In
+	    some cases, a client might be able to cause a buffer alignment issue and
+	    retrieve uninitialized memory contents that exhibit data from a past
+	    request or session. I want to address sincere congratulations to Charlie
+	    Smurthwaite of aTech Media for the really detailed traces he provided
+	    which made it possible to find the cause of this bug. Every user of
+	    1.5-dev, 1.5.x or 1.6-dev must upgrade to 1.5.14 or latest 1.6-dev
+	    snapshot to fix this issue, or use the backport of the fix provided by
+	    their operating system vendors. CVE-2015-3281 was assigned to this bug.</p>
+      </blockquote>
+     </body>
+    </description>
+    <references>
+      <url>http://www.haproxy.org/news.html</url>
+      <url>http://git.haproxy.org/?p=haproxy-1.5.git;a=commit;h=7ec765568883b2d4e5a2796adbeb492a22ec9bd4</url>
+      <mlist>http://seclists.org/oss-sec/2015/q3/61</mlist>
+      <cvename>CVE-2015-3281</cvename>
+    </references>
+    <dates>
+      <discovery>2015-07-02</discovery>
+      <entry>2015-07-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="038a5808-24b3-11e5-b0c8-bf4d8935d4fa">
     <topic>roundcube - multiple vulnerabilities</topic>
     <affects>
