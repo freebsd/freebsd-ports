@@ -57,6 +57,51 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c93533a3-24f1-11e5-8b74-3c970e169bc2">
+    <topic>bind -- denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>bind910</name>
+	<name>bind910-base</name>
+	<range><lt>9.10.2_6</lt></range>
+      </package>
+      <package>
+	<name>bind99</name>
+	<name>bind99-base</name>
+	<range><lt>9.9.7_5</lt></range>
+      </package>
+      <package>
+	<name>FreeBSD</name>
+	<range><gt>9.3</gt><lt>9.3_19</lt></range>
+	<range><gt>8.4</gt><lt>8.4_33</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ISC reports:</p>
+	<blockquote cite="https://kb.isc.org/article/AA-01267/">
+	  <p>A very uncommon combination of zone data has been found
+	    that triggers a bug in BIND, with the result that named
+	    will exit with a "REQUIRE" failure in name.c when validating
+	    the data returned in answer to a recursive query.</p>
+	  <p>A recursive resolver that is performing DNSSEC validation
+	    can be deliberately terminated by any attacker who can
+	    cause a query to be performed against a maliciously
+	    constructed zone.  This will result in a denial of
+	    service to clients who rely on that resolver.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4620</cvename>
+      <url>https://kb.isc.org/article/AA-01267/</url>
+    </references>
+    <dates>
+      <discovery>2015-07-07</discovery>
+      <entry>2015-07-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cbfa8bd7-24b6-11e5-86ff-14dae9d210b8">
     <topic>haproxy -- information leak vulnerability</topic>
     <affects>
