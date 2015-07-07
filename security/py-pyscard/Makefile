@@ -20,7 +20,7 @@ BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13 \
 		pcsc-lite>0:${PORTSDIR}/devel/pcsc-lite
 RUN_DEPENDS=	pcsc-lite>0:${PORTSDIR}/devel/pcsc-lite
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 PYDISTUTILS_BUILD_TARGET=       build_ext
