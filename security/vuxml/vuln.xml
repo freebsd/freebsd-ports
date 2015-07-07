@@ -532,10 +532,12 @@ Notes:
       <cvename>CVE-2015-3279</cvename>
       <url>https://access.redhat.com/security/cve/CVE-2015-3279</url>
       <url>http://bzr.linuxfoundation.org/loggerhead/openprinting/cups-filters/revision/7365</url>
+      <mlist>http://osdir.com/ml/opensource-software-security/2015-07/msg00021.html</mlist>
     </references>
     <dates>
       <discovery>2015-07-03</discovery>
       <entry>2015-07-03</entry>
+      <modified>2015-07-07</modified>
     </dates>
   </vuln>
 
