@@ -57,6 +57,45 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="038a5808-24b3-11e5-b0c8-bf4d8935d4fa">
+    <topic>roundcube - multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>roundcube</name>
+       <range><ge>1.1.0,1</ge><lt>1.1.2,1</lt></range>
+       <range><lt>1.0.6,1</lt></range>
+      </package>
+    </affects>
+    <description>
+     <body xmlns="http://www.w3.org/1999/xhtml">
+      <p>Roundcube reports:</p>
+      <blockquote cite="https://roundcube.net/news/2015/06/05/updates-1.1.2-and-1.0.6-released/">
+	    <p>We just published updates to both stable versions 1.0 and
+	    1.1 after fixing many minor bugs and adding some security improvements
+	    to the 1.1 release branch. Version 1.0.6 comes with cherry-picked fixes
+	    from the more recent version to ensure proper long term support
+	    especially in regards of security and compatibility.
+
+	    The security-related fixes in particular are:
+
+	    * XSS vulnerability in _mbox argument
+	    * security improvement in contact photo handling
+	    * potential info disclosure from temp directory</p>
+      </blockquote>
+     </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5381</cvename>
+      <cvename>CVE-2015-5383</cvename>
+      <mlist>http://openwall.com/lists/oss-security/2015/07/06/10</mlist>
+      <url>https://roundcube.net/news/2015/06/05/updates-1.1.2-and-1.0.6-released/</url>
+    </references>
+    <dates>
+      <discovery>2015-05-30</discovery>
+      <entry>2015-07-7</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="543b5939-2067-11e5-a4a5-002590263bf5">
     <topic>turnserver -- SQL injection vulnerability</topic>
     <affects>
