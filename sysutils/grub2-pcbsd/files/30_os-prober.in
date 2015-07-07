@@ -32,10 +32,6 @@ if [ ! -e "/usr/local/sbin/beadm" ] ; then exit 0; fi
 check_ntfs_part()
 {
    local disk="$1"
-   fs_label=`grub-probe --device /dev/${disk} --target=fs_label 2>/dev/null`
-
-   # Check for common windows NTFS labels for bootable partitions
-   if [ "$fs_label" != "System Reserved" -a "$fs_label" != "SYSTEM RESERVED" -a "$fs_label" != "eMachines" -a "$fs_label" != "OS" -a "$fs_label" != "SYSTEM" -a "$fs_label" != "SYSTEM_DRV" ] ; then return; fi
 
    fs_uuid=`grub-probe --device /dev/${disk} --target=fs_uuid 2>/dev/null`
    if [ -z "$fs_uuid" ] ; then
