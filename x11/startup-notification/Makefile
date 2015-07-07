@@ -1,10 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/x11/startup-notification/Makefile,v 1.10 2010/07/21 18:04:43 mezz Exp $
 
 PORTNAME=	startup-notification
 PORTVERSION=	0.12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.freedesktop.org/software/startup-notification/releases/
 DIST_SUBDIR=	gnome2
@@ -15,7 +14,7 @@ COMMENT=	Library that supports startup notification spec from freedesktop.org
 LIB_DEPENDS=	libxcb-util.so:${PORTSDIR}/x11/xcb-util
 
 USE_XORG=	x11
-USES=		gmake libtool:keepla pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
