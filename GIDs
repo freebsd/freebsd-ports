@@ -317,6 +317,7 @@ hive:*:992:
 kannel:*:993:
 rcynic:*:994:
 rpkirtr:*:995:
+tarantool:*:996:
 ebnetd:*:999:
 nogroup:*:65533:
 nobody:*:65534:

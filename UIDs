@@ -326,5 +326,6 @@ hive:*:992:992::0:0:Apache Hive user:/nonexistent:/usr/sbin/nologin
 kannel:*:993:993::0:0:Kannel User:/nonexistent:/usr/sbin/nologin
 rcynic:*:994:994::0:0:RPKI validation system:/nonexistent:/usr/sbin/nologin
 rpkirtr:*:995:995::0:0:RPKI router server:/nonexistent:/usr/sbin/nologin
+tarantool:*:996:996::0:0:Tarantool Daemon:/nonexistent:/usr/sbin/nologin
 ebnetd:*:999:999::0:0:EBNETD:/nonexistent:/usr/sbin/nologin
 nobody:*:65534:65534::0:0:Unprivileged user:/nonexistent:/usr/sbin/nologin
