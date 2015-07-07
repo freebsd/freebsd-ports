@@ -12,7 +12,6 @@ COMMENT=	Marshal Ruby classes into and out of multiple formats
 LICENSE=	MIT
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	trytond_stock
-PORTVERSION=	2.4.6
-PORTREVISION=	1
+PORTVERSION=	2.4.11
 CATEGORIES=	finance python
 MASTER_SITES=	http://downloads.tryton.org/${PORTVERSION:R}/
 
@@ -17,6 +16,9 @@ RUN_DEPENDS=	trytond>=2.4.0:${PORTSDIR}/finance/trytond \
 		trytond_product>=2.4.0:${PORTSDIR}/finance/trytond_product \
 		trytond_company>=2.4.0:${PORTSDIR}/finance/trytond_company \
 		trytond_currency>=2.4.0:${PORTSDIR}/finance/trytond_currency
+
+DEPRECATED=	Upstream project no longer supports the Tryton 2.4 series
+EXPIRATION_DATE=	2015-08-05
 
 CONFLICTS=	trytond28_stock-2.8.*
 

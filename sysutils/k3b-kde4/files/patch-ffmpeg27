@@ -1,0 +1,11 @@
+--- plugins/decoder/ffmpeg/k3bffmpegwrapper.cpp.orig	2011-01-15 21:47:29.000000000 +0100
++++ plugins/decoder/ffmpeg/k3bffmpegwrapper.cpp	2015-07-04 07:21:54.284708677 +0200
+@@ -159,7 +159,7 @@ void K3bFFMpegFile::close()
+     }
+ 
+     if( d->formatContext ) {
+-        ::av_close_input_file( d->formatContext );
++        ::avformat_close_input( &d->formatContext );
+         d->formatContext = 0;
+     }
+ }

@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.361 2015/05/17 21:39:49 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.366 2015/07/06 14:48:28 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 16;
-my $micro = 4;
+my $micro = 5;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -967,7 +967,7 @@ sub check_depends_syntax {
 		$j = $1;
 		$seen_depends{$j}++;
 		if ($j ne 'DEPENDS' &&
-			$i =~ /^\${([A-Z_]+DEPENDS)}\s*$/ &&
+			$i =~ /^\$\{([A-Z_]+DEPENDS)}\s*$/ &&
 			$seen_depends{$1} &&
 			$j ne $1)
 		{
@@ -987,7 +987,7 @@ sub check_depends_syntax {
 
 			print "OK: checking dependency value for $j.\n"
 				if ($verbose);
-			if ($k =~ /\${((PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|TEST_|FETCH_)*DEPENDS)}/) {
+			if ($k =~ /\$\{((PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|TEST_|FETCH_)*DEPENDS)}/) {
 				&perror("WARN", $file, -1, "do not set $j to $k. ".
 					"Instead, explicity list out required $j dependencies.");
 			}
@@ -1016,7 +1016,7 @@ sub check_depends_syntax {
 			}
 
 			# Check for ${SITE_PERL} in depends
-			if ($m{'dep'} =~ m|^(\${SITE_PERL}/.*)$|) {
+			if ($m{'dep'} =~ m|^(\$\{SITE_PERL}/.*)$|) {
 				&perror("WARN", $file, -1, "dependency to $1 ".
 					"listed in $j. consider using p5-Example-Package-Name>=0.  See ".
 					"http://www.freebsd.org/doc/en/books/porters-handbook/using-perl.html".
@@ -1038,7 +1038,7 @@ sub check_depends_syntax {
 			}
 
 			# check USES=gmake
-			if ($m{'dep'} =~ /^(gmake|\${GMAKE})$/) {
+			if ($m{'dep'} =~ /^(gmake|\$\{GMAKE})$/) {
 				&perror("WARN", $file, -1, "dependency to $1 ".
 					"listed in $j. consider using ".
 					"USES[+]=gmake.");
@@ -1074,7 +1074,7 @@ sub check_depends_syntax {
 			}
 
 			# check for PREFIX
-			if ($m{'dep'} =~ /\${PREFIX}/) {
+			if ($m{'dep'} =~ /\$\{PREFIX}/) {
 				&perror("FATAL", $file, -1, "\${PREFIX} must not be ".
 					"contained in *_DEPENDS. ".
 					"use \${LOCALBASE} instead.");
@@ -1103,7 +1103,7 @@ sub check_depends_syntax {
 
 			# Check port dir existence
 			$k = $m{'dir'};
-			$k =~ s/\${PORTSDIR}/$ENV{'PORTSDIR'}/;
+			$k =~ s/\$\{PORTSDIR}/$ENV{'PORTSDIR'}/;
 			$k =~ s/\$[\({]PORTSDIR[\)}]/$ENV{'PORTSDIR'}/;
 			if (! -d $k) {
 				&perror("WARN", $file, -1, "no port directory $k ".
@@ -1240,7 +1240,7 @@ sub checkmakefile {
 	#
 	if ($parenwarn) {
 		print "OK: checking for empty(\${VARIABLE}).\n" if ($verbose);
-		if ($whole =~ /empty\(\${[\w\d]+/) {
+		if ($whole =~ /empty\(\$\{[\w\d]+/) {
 			my $lineno = &linenumber($`);
 			&perror("WARN", $file, $lineno, "use empty(VARIABLE), instead of ".
 				"empty(\${VARIABLE}).");
@@ -1532,7 +1532,7 @@ sub checkmakefile {
 	#
 	print "OK: checking DESKTOP_ENTRIES for \${TRUE}/\${FALSE}.\n" if ($verbose);
 	$desktop_entries = &get_makevar_raw('DESKTOP_ENTRIES');
-	if ($desktop_entries =~ /\${TRUE}/ or $desktop_entries =~ /\${FALSE}/ or
+	if ($desktop_entries =~ /\$\{TRUE}/ or $desktop_entries =~ /\$\{FALSE}/ or
 	    $desktop_entries =~ /\"true\"/ or $desktop_entries =~ /\"false\"/) {
 		&perror("FATAL", $file, -1, "Use true/false (without quotes) instead of \${TRUE}/\${FALSE} in DESKTOP_ENTRIES.");
 	}
@@ -1612,6 +1612,13 @@ sub checkmakefile {
 			"with a lowercase letter and end without a period.");
 	}
 
+	if ($whole =~ /\nBROKEN[+?]=[ \t]+[^a-z \t]/ ||
+		$whole =~ /^BROKEN[+?]?=[ \t]+.*\.$/m) {
+		my $lineno = &linenumber($`);
+		&perror("WARN", $file, $lineno, "BROKEN messages should begin ".
+			"with a lowercase letter and end without a period.");
+	}
+
 	#
 	# whole file: PKGNAME
 	#
@@ -1640,7 +1647,7 @@ sub checkmakefile {
 	# whole file: Check if USES is sorted
 	#
 	print "OK: checking to see if USES is sorted.\n" if ($verbose);
-	while ($whole =~ /\nUSES.=\s*(.+)\n/g) {
+	while ($whole =~ /\nUSES.?=\s*(.+)\n/g) {
 		my $lineno = &linenumber($`);
 		my $srex = $1;
 		my @suses = sort(split / /, $srex);
@@ -1905,7 +1912,7 @@ xargs xmkmf
 	#
 	print "OK: checking for compression arguments passed to \${GZIP_CMD}.\n"
 		if ($verbose);
-	if ($j =~ /\${GZIP_CMD}\s+-(\w+(\s+-)?)*(\d)/) {
+	if ($j =~ /\$\{GZIP_CMD}\s+-(\w+(\s+-)?)*(\d)/) {
 		my $lineno = &linenumber($`);
 		&perror("WARN", $file, $lineno, "possible use of \"\${GZIP_CMD} -$3\" ".
 			"found. \${GZIP_CMD} includes \"-\${GZIP}\" which ".
@@ -1916,7 +1923,7 @@ xargs xmkmf
 	# whole file: ${CHMOD} used
 	#
 	print "OK: checking for \${CHMOD}.\n" if ($verbose);
-	if ($j =~ /\n\s*\${CHMOD}/) {
+	if ($j =~ /\n\s*\$\{CHMOD}/) {
 		my $lineno = &linenumber($`);
 		&perror("WARN", $file, $lineno, "possible use of \"\${CHMOD}\" ".
 			"found. Use @(owner,group,mode) syntax or \@owner/\@group ".
@@ -1927,7 +1934,7 @@ xargs xmkmf
 	# whole file: ${INSTALL} -o | -g used
 	#
 	print "OK: checking for \${INSTALL} -o | -g.\n" if ($verbose);
-	if ($j =~ /\n\s*\${INSTALL}(.*-\b(o|g)\b.*)/) {
+	if ($j =~ /\n\s*\$\{INSTALL}(.*-\b(o|g)\b.*)/) {
 		my $lineno = &linenumber($`);
 		&perror("WARN", $file, $lineno, "possible use of \"\${INSTALL} -o | -g\" ".
 			"found. Use @(owner,group,mode) syntax or \@owner/\@group ".
@@ -1939,7 +1946,7 @@ xargs xmkmf
 	#
 	print "OK: checking for \${MKDIR} -p.\n"
 		if ($verbose);
-	if ($j =~ /\${MKDIR}\s+-p/) {
+	if ($j =~ /\$\{MKDIR}\s+-p/) {
 		my $lineno = &linenumber($`);
 		&perror("WARN", $file, $lineno, "possible use of \"\${MKDIR} -p\" ".
 			"found. \${MKDIR} includes ".
@@ -1963,7 +1970,7 @@ xargs xmkmf
 	#
 	print "OK: checking for instances of \${MACHINE_ARCH} being test.\n"
 		if ($verbose);
-	if ($j =~ /\${MACHINE_ARCH}\s*[!=]=/) {
+	if ($j =~ /\$\{MACHINE_ARCH}\s*[!=]=/) {
 		my $lineno = &linenumber($`);
 		&perror("FATAL", $file, $lineno, "MACHINE_ARCH should never be tested ".
 			"directly; use ARCH instead.");
@@ -1987,7 +1994,7 @@ xargs xmkmf
 	#
 	# whole file: ${LOCALBASE}/lib/perl5/site_perl
 	#
-	if ($j =~ m'\${(?:LOCALBASE|PREFIX)}/lib/perl5/site_perl') {
+	if ($j =~ m'\$\{(?:LOCALBASE|PREFIX)}/lib/perl5/site_perl') {
 		my $lineno = &linenumber($`);
 		if ($1 !~ /PREFIX/) {
 			&perror("WARN", $file, $lineno, "possible use of \"\${LOCALBASE}/lib/perl5/site_perl\" ".
@@ -2001,13 +2008,13 @@ xargs xmkmf
 	#
 	# whole file: check for misuse of STAGE with SITE_PERL and SITE_ARCH
 	#
-	if ($j =~ m'\${STAGEDIR}\${SITE_PERL}') {
+	if ($j =~ m'\$\{STAGEDIR}\$\{SITE_PERL}') {
 		my $lineno = &linenumber($`);
 		&perror("WARN", $file, $lineno, "\${STAGEDIR}\${SITE_PERL} should be ".
 			"replaced by \${STAGEDIR}\${PREFIX}/\${SITE_PERL_REL}.");
 	}
 
-	if ($j =~ m'\${STAGEDIR}\${SITE_ARCH}') {
+	if ($j =~ m'\$\{STAGEDIR}\$\{SITE_ARCH}') {
 		my $lineno = &linenumber($`);
 		&perror("WARN", $file, $lineno, "\${STAGEDIR}\${SITE_ARCH} should be ".
 			"replaced by \${STAGEDIR}\${PREFIX}/\${SITE_ARCH_REL}.");
@@ -2067,7 +2074,7 @@ xargs xmkmf
 	#
 	# whole file: check for USE_ANT and USES=gmake both defined
 	#
-	if ($use_ant && $makevar{USES} !~ /\bgmake\b/) {
+	if ($use_ant && $makevar{USES} =~ /\bgmake\b/) {
 		&perror("WARN", $file, -1, "a port shall not define both USE_ANT ".
 			"and USES[+]=gmake");
 	}
@@ -2844,7 +2851,7 @@ MAINTAINER COMMENT
 	$tmp = $sections[$idx] // '';
 
 	# Check for direct assignment of BUILD_DEPENDS to RUN_DEPENDS.
-	if ($tmp =~ /\nRUN_DEPENDS=[ \t]*\${BUILD_DEPENDS}/) {
+	if ($tmp =~ /\nRUN_DEPENDS=[ \t]*\$\{BUILD_DEPENDS}/) {
 		&perror("FATAL", $file, -1, "RUN_DEPENDS should not be set to ".
 			"\${BUILD_DEPENDS} as \${BUILD_DEPENDS} includes other ".
 			"implicit dependencies.  Instead, copy the explicit dependencies ".
@@ -2956,7 +2963,7 @@ TEST_DEPENDS FETCH_DEPENDS DEPENDS_TARGET
 
 	# various MAN'uals related checks
 	if ($makevar{USE_PERL5} =~ /\b(configure|modbuild|modbuildtiny)\b/
-		&& $tmp =~ /\nMAN3PREFIX=\s*\${PREFIX}\/lib\/perl5\/\${PERL_VER/) {
+		&& $tmp =~ /\nMAN3PREFIX=\s*\$\{PREFIX}\/lib\/perl5\/\$\{PERL_VER/) {
 		&perror("WARN", $file, -1, "MAN3PREFIX is ".
 			"\"\${PREFIX}/lib/perl5/\${PERL_VERSION}\" ".
 			"when USE_PERL5=configure|modbuild|modbuildtiny is set.  You do not need to specify it.");

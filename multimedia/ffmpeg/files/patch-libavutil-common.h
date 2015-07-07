@@ -1,8 +1,8 @@
---- libavutil/common.h.orig	2010-07-07 19:27:45.000000000 +0200
-+++ libavutil/common.h	2010-08-01 22:27:42.964629491 +0200
-@@ -36,6 +36,10 @@
- #include <string.h>
- #include "attributes.h"
+--- libavutil/common.h.orig	2015-06-19 20:44:53 UTC
++++ libavutil/common.h
+@@ -49,6 +49,10 @@
+ #   define AV_NE(be, le) (le)
+ #endif
  
 +#ifndef	UINT64_C
 +#define	UINT64_C(c)	(c ## UL)

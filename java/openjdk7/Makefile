@@ -3,6 +3,7 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${PORT_MINOR_VERSION}.${PORT_BUILD_NUMBER}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}u${JDK_MINOR_VERSION}/promoted/b${JDK_BUILD_NUMBER}/ \
@@ -18,8 +19,8 @@ DISTFILES=	${JDK_SRC_DISTFILE}${EXTRACT_SUFX} \
 EXTRACT_ONLY=	${JDK_SRC_DISTFILE}${EXTRACT_SUFX} \
 		${ANT_DISTFILE}${EXTRACT_SUFX}
 
-MAINTAINER=	glewis@FreeBSD.org
-COMMENT=	Java Development Kit 7
+MAINTAINER?=	glewis@FreeBSD.org
+COMMENT?=	Java Development Kit 7
 
 LICENSE=	GPLv2
 
@@ -29,11 +30,21 @@ USES=		compiler dos2unix iconv gmake zip
 USE_XORG+=	x11 xext xi xrender xt xtst
 MAKE_ARGS=	CC=${CC:Q} CXX=${CXX:Q} HOST_CC=${CC:Q}
 
-OPTIONS_DEFINE=		DEBUG POLICY TZUPDATE
+OPTIONS_DEFINE=		POLICY TZUPDATE
 OPTIONS_DEFAULT=	POLICY TZUPDATE
 DEBUG_DESC=		Enable extra debugging info
 POLICY_DESC=		Install the Unlimited Strength Policy Files
 TZUPDATE_DESC=		Update the time zone data
+
+JAVAVMS_COMMENT=	OpenJDK${JDK_MAJOR_VERSION}
+
+.if !defined(BUILD_JRE)
+OPTIONS_DEFINE+=	DEBUG
+INSTALLDIR=	${PREFIX}/${PORTNAME}${JDK_MAJOR_VERSION}
+.else
+JAVAVMS_COMMENT+=	JRE
+INSTALLDIR=	${PREFIX}/${PORTNAME}${JDK_MAJOR_VERSION}-jre
+.endif
 
 PORT_MINOR_VERSION=	80
 PORT_BUILD_NUMBER=	15
@@ -47,7 +58,7 @@ JDK_SRC_DISTFILE=	${PORTNAME}-${JDK_MAJOR_VERSION}u${JDK_MINOR_VERSION}-fcs-src-
 ANT_VERSION=		1.9.4
 ANT_DISTFILE=		apache-ant-${ANT_VERSION}-bin
 
-LATEST_LINK=		openjdk7
+LATEST_LINK?=		openjdk7
 
 LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
@@ -61,7 +72,6 @@ RUN_DEPENDS+=	javavm:${PORTSDIR}/java/javavmwrapper \
 DOS2UNIX_FILES=	jdk/src/share/classes/com/sun/org/apache/xml/internal/security/resource/xmlsecurity_en.properties
 
 OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}
-INSTALLDIR=	${PREFIX}/${PORTNAME}${JDK_MAJOR_VERSION}
 
 NOPRECIOUSMAKEVARS=	yes
 
@@ -148,22 +158,39 @@ post-patch:
 .if ${PORT_OPTIONS:MTZUPDATE}
 pre-install:
 	@# Update time zones
+.if !defined(BUILD_JRE)
 	@${RM} -rf ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/jre/lib/zi
 	@${LN} -s -f ${LOCALBASE}/share/java/zi \
-		${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/jre/lib
+	    ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/jre/lib
+.else
+	@${RM} -rf ${WRKSRC}/build/${OPENJDK_OSARCH}/j2re-image/lib/zi
+	@${LN} -s -f ${LOCALBASE}/share/java/zi \
+	    ${WRKSRC}/build/${OPENJDK_OSARCH}/j2re-image/lib
+.endif
 .endif
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${INSTALLDIR}
-	@cd ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image && \
-		${PAX} -rw . ${STAGEDIR}${INSTALLDIR}
-	@${INSTALL_DATA} ${WRKSRC}/build/${OPENJDK_OSARCH}/btjars/compilefontconfig.jar ${WRKSRC}/build/${OPENJDK_OSARCH}/btjars/javazic.jar ${STAGEDIR}${INSTALLDIR}/jre/lib/
-	@${INSTALL_DATA} ${FILESDIR}/cacerts ${STAGEDIR}${INSTALLDIR}/jre/lib/security/cacerts
+.if !defined(BUILD_JRE)
+	cd ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image && \
+	    ${PAX} -rw . ${STAGEDIR}${INSTALLDIR}
+	${INSTALL_DATA} \
+	    ${WRKSRC}/build/${OPENJDK_OSARCH}/btjars/compilefontconfig.jar \
+	    ${WRKSRC}/build/${OPENJDK_OSARCH}/btjars/javazic.jar \
+	    ${STAGEDIR}${INSTALLDIR}/jre/lib/
+	${INSTALL_DATA} ${FILESDIR}/cacerts \
+	    ${STAGEDIR}${INSTALLDIR}/jre/lib/security/cacerts
+.else
+	cd ${WRKSRC}/build/${OPENJDK_OSARCH}/j2re-image && \
+	    ${PAX} -rw . ${STAGEDIR}${INSTALLDIR}
+	${INSTALL_DATA} ${FILESDIR}/cacerts \
+	    ${STAGEDIR}${INSTALLDIR}/lib/security/cacerts
+.endif
 	@${ECHO} "@unexec ${LOCALBASE}/bin/unregistervm ${INSTALLDIR}/bin/java" >> ${TMPPLIST}
 	@${FIND} -s ${STAGEDIR}${INSTALLDIR} -not -type d | ${SORT} | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
 	@${FIND} ${STAGEDIR}${INSTALLDIR} -type d -empty | ${SORT} -r | \
 		${SED} -e 's,^${STAGEDIR}${PREFIX}/,@dir ,' >> ${TMPPLIST}
-	@${ECHO} "@exec ${LOCALBASE}/bin/registervm '${INSTALLDIR}/bin/java # OpenJDK${JDK_MAJOR_VERSION}'" >> ${TMPPLIST}
+	@${ECHO} "@exec ${LOCALBASE}/bin/registervm '${INSTALLDIR}/bin/java # ${JAVAVMS_COMMENT}'" >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>

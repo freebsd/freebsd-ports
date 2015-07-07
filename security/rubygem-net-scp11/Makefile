@@ -13,6 +13,9 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-net-ssh27=2.7.0,2:${PORTSDIR}/security/rubygem-net-ssh27
 
+DEPRECATED=	not used by other ports anymore
+EXPIRATION_DATE=	2015-07-20
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

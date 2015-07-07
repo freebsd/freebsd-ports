@@ -14,6 +14,7 @@ LICENSE=	BSD3CLAUSE
 
 USES=		ada dos2unix gmake tar:tgz
 DOS2UNIX_FILES=	Makefile build/libsparkcrypto.gpr \
+		src/shared/generic/lsc-byteswap64.ads \
 		src/shared/generic/lsc-types.ads
 SPARKARCH:=	${ARCH:S/amd64/x86_64/:S/i386/i686/}
 ALL_TARGET=	all build

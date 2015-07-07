@@ -2,23 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	lwt
-PORTVERSION=	2.4.8
-PORTREVISION=	2
+PORTVERSION=	2.5.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Cooperative threading library for OCaml
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	ocsigen
-
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=		${SA_DIR}/react/react.a:${PORTSDIR}/devel/ocaml-react \
-			${SA_DIR}/ssl/ssl.a:${PORTSDIR}/security/ocaml-ssl
-RUN_DEPENDS=		${SA_DIR}/react/react.a:${PORTSDIR}/devel/ocaml-react \
-			${SA_DIR}/ssl/ssl.a:${PORTSDIR}/security/ocaml-ssl
+BUILD_DEPENDS=	${SA_DIR}/react/react.a:${PORTSDIR}/devel/ocaml-react \
+		${SA_DIR}/ssl/ssl.a:${PORTSDIR}/security/ocaml-ssl
+RUN_DEPENDS=	${SA_DIR}/react/react.a:${PORTSDIR}/devel/ocaml-react \
+		${SA_DIR}/ssl/ssl.a:${PORTSDIR}/security/ocaml-ssl
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	ocsigen
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -39,7 +38,7 @@ CONFIGURE_ARGS=		--destdir "${STAGEDIR}" \
 			--disable-glib
 
 DOCSDIR=		${PREFIX}/share/doc/ocaml/${PORTNAME}
-SA_DIR=         	${PREFIX}/${OCAML_SITELIBDIR}
+SA_DIR=			${PREFIX}/${OCAML_SITELIBDIR}
 
 OPTIONS_DEFINE=		DOCS
 

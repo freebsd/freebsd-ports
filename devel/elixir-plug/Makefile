@@ -11,8 +11,8 @@ COMMENT=	Composable modules for Elixir web applications
 
 LICENSE=	APACHE20
 
+USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	elixir-lang
 
-.include "${PORTSDIR}/lang/elixir/bsd.elixir.mk"
 .include <bsd.port.mk>

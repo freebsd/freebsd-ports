@@ -201,7 +201,7 @@
     SUBDIR += djmount
     SUBDIR += dmg2img
     SUBDIR += dmidecode
-    SUBDIR += docker
+    SUBDIR += docker-freebsd
     SUBDIR += doinkd
     SUBDIR += dolly
     SUBDIR += downtime
@@ -996,7 +996,10 @@
     SUBDIR += ttyload
     SUBDIR += tw_cli
     SUBDIR += tzdialog
+    SUBDIR += u-boot-bananapi
     SUBDIR += u-boot-beaglebone
+    SUBDIR += u-boot-cubieboard
+    SUBDIR += u-boot-cubieboard2
     SUBDIR += u-boot-cubox-hummingboard
     SUBDIR += u-boot-duovero
     SUBDIR += u-boot-pandaboard

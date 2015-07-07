@@ -1,0 +1,11 @@
+--- fog.gemspec.orig	2015-07-03 07:51:47 UTC
++++ fog.gemspec
+@@ -34,7 +34,7 @@ Gem::Specification.new do |s|
+       s.add_runtime_dependency(%q<fog-atmos>, [">= 0"])
+       s.add_runtime_dependency(%q<fog-aws>, [">= 0.6.0"])
+       s.add_runtime_dependency(%q<fog-brightbox>, ["~> 0.4"])
+-      s.add_runtime_dependency(%q<fog-ecloud>, ["= 0.1.1"])
++      s.add_runtime_dependency(%q<fog-ecloud>, [">= 0.1.1"])
+       s.add_runtime_dependency(%q<fog-google>, [">= 0.0.2"])
+       s.add_runtime_dependency(%q<fog-local>, [">= 0"])
+       s.add_runtime_dependency(%q<fog-powerdns>, [">= 0.1.1"])

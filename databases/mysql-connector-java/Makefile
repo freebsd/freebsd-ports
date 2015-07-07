@@ -3,7 +3,7 @@
 
 
 PORTNAME=	mysql-connector-java
-PORTVERSION=	5.1.35
+PORTVERSION=	5.1.36
 CATEGORIES=	databases java
 MASTER_SITES=	MYSQL/Connector-J
 
@@ -19,7 +19,7 @@ CPE_VENDOR=	oracle
 CPE_PRODUCT=	mysql_connector_j
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.6 1.7
 BUILDDIR=	${WRKDIR}/${DISTNAME}
 APIDOCSDIR=	${STAGEDIR}${DOCSDIR}/javadoc
 SRCDIR=		${WRKDIR}/${DISTNAME}/src

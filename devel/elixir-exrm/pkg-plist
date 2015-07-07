@@ -18,6 +18,7 @@ lib/elixir/lib/exrm/lib/mix/tasks/release.clean.ex
 lib/elixir/lib/exrm/lib/mix/tasks/release.ex
 lib/elixir/lib/exrm/lib/mix/tasks/release.plugins.ex
 lib/elixir/lib/exrm/priv/rel/files/boot
+lib/elixir/lib/exrm/priv/rel/files/boot.bat
 lib/elixir/lib/exrm/priv/rel/files/nodetool
 lib/elixir/lib/exrm/priv/rel/files/release_definition.txt
 lib/elixir/lib/exrm/priv/rel/files/sys.config

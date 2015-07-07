@@ -1,0 +1,3 @@
+An adapter for using Timex DateTimes with Ecto.
+
+WWW: https://github.com/bitwalker/timex_ecto

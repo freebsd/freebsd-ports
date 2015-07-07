@@ -11,8 +11,8 @@ COMMENT=	Arbitrary precision decimal arithmetic for Elixir
 
 LICENSE=	APACHE20
 
+USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	ericmj
 
-.include "${PORTSDIR}/lang/elixir/bsd.elixir.mk"
 .include <bsd.port.mk>

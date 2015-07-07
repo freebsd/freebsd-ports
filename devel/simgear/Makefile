@@ -20,7 +20,7 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 
 USE_XORG=	ice sm x11 xext xi xt xmu
 USE_GL=		gl glu glut
-USES=		cmake compiler cpe jpeg openal:al,alut tar:bzip2
+USES=		alias cmake compiler cpe jpeg openal:al,alut tar:bzip2
 
 .include <bsd.port.pre.mk>
 

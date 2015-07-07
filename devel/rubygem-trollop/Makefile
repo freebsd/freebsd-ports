@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	trollop
-PORTVERSION=	1.16.2
+PORTVERSION=	2.1.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

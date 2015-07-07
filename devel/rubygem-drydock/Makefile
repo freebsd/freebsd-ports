@@ -12,7 +12,6 @@ COMMENT=	Build seaworthy command-line apps with a powerful Ruby DSL
 LICENSE=	MIT
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

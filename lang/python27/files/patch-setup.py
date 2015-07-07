@@ -7,7 +7,7 @@
 
 --- setup.py.orig	2014-06-30 04:05:48.000000000 +0200
 +++ setup.py	2014-07-26 14:51:29.000000000 +0200
-@@ -15,6 +15,7 @@
+@@ -15,6 +15,7 @@ from distutils.core import Extension, se
  from distutils.command.build_ext import build_ext
  from distutils.command.install import install
  from distutils.command.install_lib import install_lib
@@ -15,7 +15,7 @@
  from distutils.spawn import find_executable
  
  cross_compiling = "_PYTHON_HOST_PLATFORM" in os.environ
-@@ -33,7 +34,7 @@
+@@ -33,7 +34,7 @@ host_platform = get_platform()
  COMPILED_WITH_PYDEBUG = ('--with-pydebug' in sysconfig.get_config_var("CONFIG_ARGS"))
  
  # This global variable is used to hold the list of modules to be disabled.
@@ -24,7 +24,7 @@
  
  def add_dir_to_list(dirlist, dir):
      """Add the directory 'dir' to the list 'dirlist' (at the front) if
-@@ -1212,7 +1213,7 @@
+@@ -1214,7 +1215,7 @@ class PyBuildExt(build_ext):
                  sysroot = macosx_sdk_root()
                  f = os.path.join(sysroot, f[1:])
  
@@ -33,7 +33,7 @@
              data = open(f).read()
              m = re.search(r"#s*define\s+HASHVERSION\s+2\s*", data)
              if m is not None:
-@@ -1551,7 +1552,7 @@
+@@ -1553,7 +1554,7 @@ class PyBuildExt(build_ext):
              macros = dict()
              libraries = []
  
@@ -42,7 +42,7 @@
              # FreeBSD's P1003.1b semaphore support is very experimental
              # and has many known problems. (as of June 2008)
              macros = dict()
-@@ -1602,9 +1603,10 @@
+@@ -1604,9 +1605,10 @@ class PyBuildExt(build_ext):
          else:
              missing.append('linuxaudiodev')
  
@@ -56,7 +56,7 @@
              exts.append( Extension('ossaudiodev', ['ossaudiodev.c']) )
          else:
              missing.append('ossaudiodev')
-@@ -2176,6 +2178,22 @@
+@@ -2178,6 +2180,22 @@ class PyBuildInstallLib(install_lib):
      def is_chmod_supported(self):
          return hasattr(os, 'chmod')
  
@@ -79,7 +79,7 @@
  SUMMARY = """
  Python is an interpreted, interactive, object-oriented programming
  language. It is often compared to Tcl, Perl, Scheme or Java.
-@@ -2221,7 +2239,9 @@
+@@ -2223,7 +2241,9 @@ def main():
            platforms = ["Many"],
  
            # Build info
@@ -90,7 +90,7 @@
                        'install_lib':PyBuildInstallLib},
            # The struct module is defined here, because build_ext won't be
            # called unless there's at least one extension module defined.
-@@ -2229,8 +2249,7 @@
+@@ -2231,8 +2251,7 @@ def main():
  
            # Scripts to install
            scripts = ['Tools/scripts/pydoc', 'Tools/scripts/idle',

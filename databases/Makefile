@@ -55,6 +55,7 @@
     SUBDIR += elixir-ecto
     SUBDIR += elixir-mariaex
     SUBDIR += elixir-postgrex
+    SUBDIR += elixir-timex_ecto
     SUBDIR += emma
     SUBDIR += erlang-epgsql
     SUBDIR += erlang-eredis

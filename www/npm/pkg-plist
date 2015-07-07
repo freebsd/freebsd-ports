@@ -1196,6 +1196,7 @@ lib/node_modules/npm/node_modules/node-gyp/node_modules/tar/test/zz-cleanup.js
 lib/node_modules/npm/node_modules/node-gyp/package.json
 lib/node_modules/npm/node_modules/node-gyp/src/win_delay_load_hook.c
 lib/node_modules/npm/node_modules/nopt/.npmignore
+lib/node_modules/npm/node_modules/nopt/.travis.yml
 lib/node_modules/npm/node_modules/nopt/LICENSE
 lib/node_modules/npm/node_modules/nopt/README.md
 lib/node_modules/npm/node_modules/nopt/bin/nopt.js
@@ -1454,6 +1455,7 @@ lib/node_modules/npm/node_modules/path-is-inside/README.md
 lib/node_modules/npm/node_modules/path-is-inside/lib/path-is-inside.js
 lib/node_modules/npm/node_modules/path-is-inside/package.json
 lib/node_modules/npm/node_modules/read-installed/.npmignore
+lib/node_modules/npm/node_modules/read-installed/.travis.yml
 lib/node_modules/npm/node_modules/read-installed/LICENSE
 lib/node_modules/npm/node_modules/read-installed/README.md
 lib/node_modules/npm/node_modules/read-installed/node_modules/debuglog/LICENSE
@@ -1494,6 +1496,7 @@ lib/node_modules/npm/node_modules/read-installed/test/fixtures/grandparent-peer/
 lib/node_modules/npm/node_modules/read-installed/test/fixtures/package.json
 lib/node_modules/npm/node_modules/read-installed/test/grandparent-peer-dev.js
 lib/node_modules/npm/node_modules/read-installed/test/grandparent-peer.js
+lib/node_modules/npm/node_modules/read-installed/test/issue-40.js
 lib/node_modules/npm/node_modules/read-installed/test/linked-dep-dev-deps-extraneous.js
 lib/node_modules/npm/node_modules/read-installed/test/noargs.js
 lib/node_modules/npm/node_modules/read-installed/test/peer-dep-at-latest.js

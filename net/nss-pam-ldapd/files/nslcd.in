@@ -80,10 +80,11 @@ nslcd_stop()
 
 nslcd_findpid()
 {
-	if ! checkyesno nslcd_supervisor && $(%%PREFIX%%/sbin/nslcd -c && pgrep -F /var/run/nslcd.pid > /dev/null); then
-		mypid=$(cat /var/run/nslcd.pid) 
-	else
-		mypid=$(pgrep -f "daemon: %%PREFIX%%/sbin/nslcd")
+	if %%PREFIX%%/sbin/nslcd -c && pgrep -q -F %%NSLCD_PIDFILE%%; then
+		mypid=$(cat %%NSLCD_PIDFILE%%) 
+		if checkyesno nslcd_supervisor; then
+			mypid=$(pgrep -f "daemon: %%PREFIX%%/sbin/nslcd\[${mypid}\]")
+		fi
 	fi
 }
 

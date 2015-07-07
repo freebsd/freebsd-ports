@@ -1,6 +1,6 @@
 --- Modules/_ctypes/libffi/configure.orig	2014-12-16 08:10:12.000000000 +0100
 +++ Modules/_ctypes/libffi/configure	2014-12-16 08:10:40.000000000 +0100
-@@ -7526,7 +7526,7 @@
+@@ -7526,7 +7526,7 @@ mips64*-*linux*)
    rm -rf conftest*
    ;;
  

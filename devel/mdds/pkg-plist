@@ -29,6 +29,7 @@ include/mdds/quad_node.hpp
 include/mdds/rectangle_set.hpp
 include/mdds/rectangle_set_def.inl
 include/mdds/segment_tree.hpp
+include/mdds/segment_tree_def.inl
 include/mdds/sorted_string_map.hpp
 include/mdds/sorted_string_map_def.inl
 libdata/pkgconfig/mdds.pc

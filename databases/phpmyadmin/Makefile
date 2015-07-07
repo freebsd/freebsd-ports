@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	phpMyAdmin
-DISTVERSION=	4.4.10
+DISTVERSION=	4.4.11
 CATEGORIES=	databases www
-MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${DISTVERSION}
+MASTER_SITES=	https://files.phpmyadmin.net/${PORTNAME}/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
 
 MAINTAINER=	matthew@FreeBSD.org
@@ -80,7 +80,6 @@ post-patch:
 	for emptydir in $$( ${FIND} . -type d -empty -print ) ; do \
 	    ${ECHO} "@dir(,,)$${emptydir}"	     >>${PLIST} ; \
 	done ; \
-
 
 do-install:
 	cd ${WRKSRC} ; \

@@ -13,6 +13,9 @@ COMMENT=	General parsing module for Python
 
 LICENSE=	MIT
 
+DEPRECATED=	Not used in the ports tree anymore
+EXPIRATION_DATE=	2015-08-03
+
 USES=		python:2
 USE_PYTHON=	distutils autoplist
 

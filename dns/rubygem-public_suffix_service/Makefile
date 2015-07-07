@@ -12,7 +12,6 @@ COMMENT=	Parse and decompose domain names into TLD, domain, and subdomains
 LICENSE=	MIT
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

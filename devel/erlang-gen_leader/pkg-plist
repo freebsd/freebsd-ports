@@ -1,7 +1,6 @@
 lib/erlang/lib/gen_leader-%%VERSION%%/ebin/gen_leader.app
 lib/erlang/lib/gen_leader-%%VERSION%%/ebin/gen_leader.beam
-lib/erlang/lib/gen_leader-%%VERSION%%/include/gen_leader.app
-lib/erlang/lib/gen_leader-%%VERSION%%/include/gen_leader.beam
+lib/erlang/lib/gen_leader-%%VERSION%%/include/gen_leader_specs.hrl
 lib/erlang/lib/gen_leader-%%VERSION%%/src/Makefile
 lib/erlang/lib/gen_leader-%%VERSION%%/src/gen_leader.erl
 %%PORTDOCS%%%%DOCSDIR%%/README.markdown

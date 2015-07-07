@@ -2,6 +2,7 @@
 
 PORTNAME=	tkgate
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://highsecure.ru/distfiles/ \
 		http://cdn.bitbucket.org/starling13/tkgate/downloads/
@@ -13,7 +14,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES+=	iconv:build,lib tk:build,run
+USES+=		iconv:translit tk:build,run
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/wish|${WISH}|g' ${WRKSRC}/scripts/tree.tcl

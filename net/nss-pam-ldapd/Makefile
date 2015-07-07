@@ -3,7 +3,7 @@
 
 PORTNAME=		nss-pam-ldapd
 PORTVERSION=		0.8.14
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		net
 MASTER_SITES=		http://arthurdejong.org/nss-pam-ldapd/ \
     			http://mirrors.rit.edu/zi/
@@ -66,7 +66,8 @@ CONFIGURE_ARGS+=	--with-ldap-conf-file=${PREFIX}/etc/${CONFIG_FILE}
 PLIST_SUB+=		CONFIG="${CONFIG_FILE}" \
 			PAM_LDAP_SHMAJOR="${PAM_LDAP_SHMAJOR}" \
 			NSS_LDAP_SHMAJOR="${NSS_LDAP_SHMAJOR}"
-SUB_LIST+=		CONFIG_FILE="${PREFIX}/etc/${CONFIG_FILE}"
+SUB_LIST+=		CONFIG_FILE="${PREFIX}/etc/${CONFIG_FILE}" \
+			NSLCD_PIDFILE="${NSLCD_PIDFILE}"
 
 .if empty(PORT_OPTIONS:MKERBEROS)
 CONFIGURE_ARGS+=	--disable-kerberos

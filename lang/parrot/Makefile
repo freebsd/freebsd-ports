@@ -48,7 +48,4 @@ post-install:
 		${STAGEDIR}${PREFIX}/lib/libparrot.so.${PORTVERSION} \
 		${STAGEDIR}${PREFIX}/lib/parrot/${PORTVERSION}/dynext/*.so
 
-regression-test test: build
-	(cd ${WRKSRC} && ${MAKE} test)
-
 .include <bsd.port.mk>

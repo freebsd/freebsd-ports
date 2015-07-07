@@ -1,6 +1,6 @@
---- qt/mainwin.cc.orig	2014-07-21 14:31:59.381934558 +0100
-+++ qt/mainwin.cc	2014-07-21 14:35:42.020934743 +0100
-@@ -1165,8 +1165,8 @@
+--- qt/mainwin.cc.orig	2014-07-01 17:09:14 UTC
++++ qt/mainwin.cc
+@@ -1165,8 +1165,8 @@ TrMainWindow :: openTorrent ()
    QCheckBox * b = new QCheckBox (tr ("Show &options dialog"));
    b->setChecked (myPrefs.getBool (Prefs::OPTIONS_PROMPT));
    b->setObjectName (SHOW_OPTIONS_CHECKBOX_NAME);
@@ -11,7 +11,7 @@
      {
        l = new QGridLayout;
        d->setLayout (l);
-@@ -1313,8 +1313,8 @@
+@@ -1313,8 +1313,8 @@ TrMainWindow :: removeTorrents (const bo
    msgBox.setDefaultButton (QMessageBox::Cancel);
    msgBox.setIcon (QMessageBox::Question);
    // hack needed to keep the dialog from being too narrow

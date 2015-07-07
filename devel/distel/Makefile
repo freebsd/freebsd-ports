@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	distel
-PORTVERSION=	2012.05.28
-PORTREVISION=	3
+PORTVERSION=	4.0.7
 CATEGORIES=	devel elisp
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -12,7 +11,6 @@ BUILD_DEPENDS+=	erlc:${PORTSDIR}/lang/erlang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	massemanet
-GH_TAGNAME=	ecc8581
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
@@ -21,28 +19,25 @@ USE_EMACS=	yes
 DISTEL_DOCS=	AUTHORS ChangeLog INSTALL INSTALL.WIN32 NEWS README README.ie-session
 DISTEL_ROOT=	${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}
 
-OPTIONS_DEFINE=	DOCS
-
 do-build:
 	@${MKDIR} ${WRKSRC}/ebin
 	@cd ${WRKSRC} && erlc -W0 -o ebin/ +debug_info src/*.erl
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/elisp/*el ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/elisp/*el ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@for FILE in ${DISTEL_DOCS}; do \
+	for FILE in ${DISTEL_DOCS}; do \
 		${INSTALL_DATA} ${WRKSRC}/$${FILE} ${STAGEDIR}${DOCSDIR}; \
 	done
-	@${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
-	@${INSTALL_DATA} ${WRKSRC}/doc/distel/*.html ${STAGEDIR}${DOCSDIR}/html
+	${INSTALL_DATA} ${WRKSRC}/doc/distel/*.html ${STAGEDIR}${DOCSDIR}/html
 
 	@${MKDIR} ${STAGEDIR}${DISTEL_ROOT}/src
 	@${MKDIR} ${STAGEDIR}${DISTEL_ROOT}/ebin
-	@${INSTALL_DATA} ${WRKSRC}/src/*.erl ${STAGEDIR}${DISTEL_ROOT}/src
-	@${INSTALL_DATA} ${WRKSRC}/ebin/*.beam ${STAGEDIR}${DISTEL_ROOT}/ebin
-	@${LN} -sf ${DISTNAME} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/src/*.erl ${STAGEDIR}${DISTEL_ROOT}/src
+	${INSTALL_DATA} ${WRKSRC}/ebin/*.beam ${STAGEDIR}${DISTEL_ROOT}/ebin
 
 .include <bsd.port.mk>

@@ -1,25 +1,40 @@
-From 9463ec0004f1bddc49c05ed8e38430a4ce1738fb Mon Sep 17 00:00:00 2001
-From: Janne Grunau <janne-x264@jannau.net>
-Date: Sun, 20 Jul 2014 13:40:28 +0200
-Subject: [PATCH] arm/ppc: use $CC as default assembler
-
---- configure.orig	2014-08-27 20:45:08 UTC
+--- configure.orig	2015-06-29 20:45:09 UTC
 +++ configure
-@@ -648,7 +648,7 @@ case $host_cpu in
-         ARCH="PPC"
-         if [ $asm = auto ] ; then
-             define HAVE_ALTIVEC
--            AS="${AS-${cross_prefix}gcc}"
-+            AS="${AS-${CC}}"
-             if [ $SYS = MACOSX ] ; then
-                 CFLAGS="$CFLAGS -faltivec -fastf -mcpu=G4"
-             else
-@@ -674,7 +674,7 @@ case $host_cpu in
-                 LDFLAGS="$LDFLAGS -arch armv7"
-             fi
-         else
--            AS="${AS-${cross_prefix}gcc}"
-+            AS="${AS-${CC}}"
+@@ -639,7 +639,7 @@ case $host_cpu in
+             ASFLAGS="$ASFLAGS -f elf"
          fi
          ;;
-     s390|s390x)
+-    x86_64)
++    x86_64|amd64)
+         ARCH="X86_64"
+         AS="yasm"
+         AS_EXT=".asm"
+@@ -678,7 +678,7 @@ case $host_cpu in
+     sparc)
+         ARCH="SPARC"
+         ;;
+-    mips|mipsel|mips64|mips64el)
++    mips|mipsel|mips64|mips64el|mipsn32)
+         ARCH="MIPS"
+         ;;
+     arm*)
+@@ -695,7 +695,7 @@ case $host_cpu in
+             AS="${AS-${CC}}"
+         fi
+         ;;
+-    aarch64)
++    aarch64|arm64)
+         ARCH="AARCH64"
+         if [ "$SYS" = MACOSX ] ; then
+             AS="${AS-${SRCPATH}/tools/gas-preprocessor.pl -arch aarch64 -- ${CC}}"
+@@ -1089,10 +1089,6 @@ if cc_check '' -Wshadow ; then
+     CFLAGS="-Wshadow $CFLAGS"
+ fi
+ 
+-if cc_check '' -Wmaybe-uninitialized ; then
+-    CFLAGS="-Wno-maybe-uninitialized $CFLAGS"
+-fi
+-
+ if [ $compiler = ICC -o $compiler = ICL ] ; then
+     if cc_check 'extras/intel_dispatcher.h' '' 'x264_intel_dispatcher_override();' ; then
+         define HAVE_INTEL_DISPATCHER

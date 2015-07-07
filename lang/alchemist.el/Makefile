@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	alchemist.el
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	lang
 
@@ -15,9 +15,9 @@ RUN_DEPENDS=	elixir-mode.el>=0:${PORTSDIR}/lang/elixir-mode.el
 USE_GITHUB=	yes
 GH_ACCOUNT=	tonini
 
-USE_EMACS=	yes
-
+NO_ARCH=	yes
 NO_BUILD=	yes
+USE_EMACS=	yes
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/server

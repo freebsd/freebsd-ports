@@ -7,6 +7,7 @@ PORTREVISION=	8
 CATEGORIES=	x11
 MASTER_SITES=	http://offload2.icculus.org:9090/openbox/2/docker/ \
 		http://offload1.icculus.org:9090/openbox/2/docker/
+DISTNAME=	docker-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockapp with support for GNOME2 and KDE3 tray icons

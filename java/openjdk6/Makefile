@@ -3,6 +3,7 @@
 
 PORTNAME=	openjdk6
 PORTVERSION=	b35
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	APACHE/ant/binaries/:ant \

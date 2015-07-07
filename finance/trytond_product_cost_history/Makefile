@@ -15,6 +15,9 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	trytond>=2.4.0:${PORTSDIR}/finance/trytond \
 		trytond_product>=2.4.0:${PORTSDIR}/finance/trytond_product
 
+DEPRECATED=	Upstream project no longer supports the Tryton 2.4 series
+EXPIRATION_DATE=	2015-08-05
+
 CONFLICTS=	trytond28_product_cost_history-2.8.*
 
 USES=		python

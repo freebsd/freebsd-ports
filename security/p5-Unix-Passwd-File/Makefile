@@ -25,6 +25,7 @@ TEST_DEPENDS=	p5-Class-Load>=0:${PORTSDIR}/devel/p5-Class-Load \
 		p5-File-chdir>=0:${PORTSDIR}/devel/p5-File-chdir \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

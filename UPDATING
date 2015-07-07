@@ -6,6 +6,20 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20150702:
+  AFFECTS: users of multimedia/ffmpeg
+  AUTHOR: riggs@FreeBSD.org
+
+  ffmpeg has been updated to the latest version from the 2.7 branch.
+  If you are using binary pkg, 'pkg upgrade' will do the right thing.
+  Users of portmaster/portupgrade must rebuild all ports that depend
+  on it.
+
+  Portmaster users:
+      portmaster -w -r ffmpeg
+  Portupgrade users:
+      portupgrade -fr multimedia/ffmpeg
+
+20150702:
   AFFECTS: users of net/ptpd2-devel
   AUTHOR: skreuzer@FreeBSD.org
 

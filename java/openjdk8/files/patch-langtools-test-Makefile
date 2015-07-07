@@ -1,0 +1,11 @@
+--- langtools/test/Makefile	Tue May 05 18:06:51 2015 -0700
++++ langtools/test/Makefile	Sat Jul 04 15:31:54 2015 -0700
+@@ -36,7 +36,7 @@
+     ARCH=i586
+   endif
+ endif
+-ifneq ($(findstring $(OSNAME), BSD), )
++ifneq ($(findstring BSD, $(OSNAME)), )
+   PLATFORM = bsd
+   JT_PLATFORM = linux
+   ARCH = $(shell uname -p)

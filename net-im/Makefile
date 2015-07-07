@@ -54,6 +54,8 @@
     SUBDIR += ktp-kded-integration-module
     SUBDIR += ktp-send-file
     SUBDIR += ktp-text-ui
+    SUBDIR += libaccounts-glib
+    SUBDIR += libaccounts-qt5
     SUBDIR += libjreen
     SUBDIR += libnice
     SUBDIR += libnice-gst010

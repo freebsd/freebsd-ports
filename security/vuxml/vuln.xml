@@ -57,6 +57,490 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="cbfa8bd7-24b6-11e5-86ff-14dae9d210b8">
+    <topic>haproxy -- information leak vulnerability</topic>
+    <affects>
+      <package>
+       <name>haproxy</name>
+       <range><ge>1.5.0</ge><lt>1.5.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>HAProxy reports:</p>
+       <blockquote cite="http://www.haproxy.org/news.html">
+	    <p>A vulnerability was found when HTTP pipelining is used. In
+	    some cases, a client might be able to cause a buffer alignment issue and
+	    retrieve uninitialized memory contents that exhibit data from a past
+	    request or session. I want to address sincere congratulations to Charlie
+	    Smurthwaite of aTech Media for the really detailed traces he provided
+	    which made it possible to find the cause of this bug. Every user of
+	    1.5-dev, 1.5.x or 1.6-dev must upgrade to 1.5.14 or latest 1.6-dev
+	    snapshot to fix this issue, or use the backport of the fix provided by
+	    their operating system vendors. CVE-2015-3281 was assigned to this bug.</p>
+      </blockquote>
+     </body>
+    </description>
+    <references>
+      <url>http://www.haproxy.org/news.html</url>
+      <url>http://git.haproxy.org/?p=haproxy-1.5.git;a=commit;h=7ec765568883b2d4e5a2796adbeb492a22ec9bd4</url>
+      <mlist>http://seclists.org/oss-sec/2015/q3/61</mlist>
+      <cvename>CVE-2015-3281</cvename>
+    </references>
+    <dates>
+      <discovery>2015-07-02</discovery>
+      <entry>2015-07-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="038a5808-24b3-11e5-b0c8-bf4d8935d4fa">
+    <topic>roundcube - multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>roundcube</name>
+       <range><ge>1.1.0,1</ge><lt>1.1.2,1</lt></range>
+       <range><lt>1.0.6,1</lt></range>
+      </package>
+    </affects>
+    <description>
+     <body xmlns="http://www.w3.org/1999/xhtml">
+      <p>Roundcube reports:</p>
+      <blockquote cite="https://roundcube.net/news/2015/06/05/updates-1.1.2-and-1.0.6-released/">
+	    <p>We just published updates to both stable versions 1.0 and
+	    1.1 after fixing many minor bugs and adding some security improvements
+	    to the 1.1 release branch. Version 1.0.6 comes with cherry-picked fixes
+	    from the more recent version to ensure proper long term support
+	    especially in regards of security and compatibility.
+
+	    The security-related fixes in particular are:
+
+	    * XSS vulnerability in _mbox argument
+	    * security improvement in contact photo handling
+	    * potential info disclosure from temp directory</p>
+      </blockquote>
+     </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5381</cvename>
+      <cvename>CVE-2015-5383</cvename>
+      <mlist>http://openwall.com/lists/oss-security/2015/07/06/10</mlist>
+      <url>https://roundcube.net/news/2015/06/05/updates-1.1.2-and-1.0.6-released/</url>
+    </references>
+    <dates>
+      <discovery>2015-05-30</discovery>
+      <entry>2015-07-7</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="543b5939-2067-11e5-a4a5-002590263bf5">
+    <topic>turnserver -- SQL injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>turnserver</name>
+	<range><lt>4.4.5.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Oleg Moskalenko reports:</p>
+	<blockquote cite="http://turnserver.open-sys.org/downloads/v4.4.5.3/ChangeLog">
+	  <p>SQL injection security hole fixed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://turnserver.open-sys.org/downloads/v4.4.5.3/ChangeLog</url>
+      <mlist>https://groups.google.com/d/msg/turn-server-project-rfc5766-turn-server/Dj3MmgyZX1o/ZaFo3zvxIw0J</mlist>
+    </references>
+    <dates>
+      <discovery>2015-06-20</discovery>
+      <entry>2015-07-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="150d1538-23fa-11e5-a4a5-002590263bf5">
+    <topic>squid -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><ge>3.5</ge><lt>3.5.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Amos Jeffries, Squid-3 release manager, reports:</p>
+	<blockquote cite="http://openwall.com/lists/oss-security/2015/07/06/8">
+	  <p>Due to incorrect handling of peer responses in a hierarchy of 2 or
+	    more proxies remote clients (or scripts run on a client) are able to
+	    gain unrestricted access through a gateway proxy to its backend
+	    proxy.</p>
+	  <p>If the two proxies have differing levels of security this could
+	    lead to authentication bypass or unprivileged access to supposedly
+	    secure resources.</p>
+	  <p>Squid up to and including 3.5.5 are apparently vulnerable to DoS
+	    attack from malicious clients using repeated TLS renegotiation
+	    messages. This has not been verified as it also seems to require
+	    outdated (0.9.8l and older) OpenSSL libraries.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <mlist>http://openwall.com/lists/oss-security/2015/07/06/8</mlist>
+    </references>
+    <dates>
+      <discovery>2015-07-06</discovery>
+      <entry>2015-07-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b6da24da-23f7-11e5-a4a5-002590263bf5">
+    <topic>squid -- client-first SSL-bump does not correctly validate X509 server certificate</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><ge>3.5</ge><lt>3.5.4</lt></range>
+	<range><ge>3.4</ge><lt>3.4.13</lt></range>
+      </package>
+      <package>
+	<name>squid33</name>
+	<range><ge>3.3</ge><lt>3.3.14</lt></range>
+      </package>
+      <package>
+	<name>squid32</name>
+	<range><ge>3.2</ge><lt>3.2.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Squid security advisory 2015:1 reports:</p>
+	<blockquote cite="http://www.squid-cache.org/Advisories/SQUID-2015_1.txt">
+	  <p>Squid configured with client-first SSL-bump does not correctly
+	    validate X509 server certificate domain / hostname fields.</p>
+	  <p>The bug is important because it allows remote servers to bypass
+	    client certificate validation. Some attackers may also be able
+	    to use valid certificates for one domain signed by a global
+	    Certificate Authority to abuse an unrelated domain.</p>
+	  <p>However, the bug is exploitable only if you have configured
+	    Squid to perform SSL Bumping with the "client-first" or "bump"
+	    mode of operation.</p>
+	  <p>Sites that do not use SSL-Bump are not vulnerable.</p>
+	  <p>All Squid built without SSL support are not vulnerable to the
+	    problem.</p>
+	</blockquote>
+	<p>The FreeBSD port does not use SSL by default and is not vulnerable
+	  in the default configuration.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3455</cvename>
+      <url>http://www.squid-cache.org/Advisories/SQUID-2015_1.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-05-01</discovery>
+      <entry>2015-07-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="72fccfdf-2061-11e5-a4a5-002590263bf5">
+    <topic>ansible -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ansible</name>
+	<range><lt>1.9.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ansible, Inc. reports:</p>
+	<blockquote cite="http://www.ansible.com/security">
+	  <p>Ensure that hostnames match certificate names when using HTTPS -
+	    resolved in Ansible 1.9.2</p>
+	  <p>Improper symlink handling in zone, jail, and chroot connection
+	    plugins could lead to escape from confined environment - resolved
+	    in Ansible 1.9.2</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3908</cvename>
+      <url>http://www.ansible.com/security</url>
+      <url>https://raw.githubusercontent.com/ansible/ansible/v1.9.2-1/CHANGELOG.md</url>
+    </references>
+    <dates>
+      <discovery>2015-06-25</discovery>
+      <entry>2015-07-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e308c61a-2060-11e5-a4a5-002590263bf5">
+    <topic>ansible -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ansible</name>
+	<range><lt>1.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ansible, Inc. reports:</p>
+	<blockquote cite="http://www.ansible.com/security">
+	  <p>Arbitrary execution from data from compromised remote hosts or
+	    local data when using a legacy Ansible syntax - resolved in
+	    Ansible 1.7</p>
+	  <p>ansible-galaxy command when used on local tarballs (and not
+	    galaxy.ansible.com) can install a malformed tarball if so provided
+	    - resolved in Ansible 1.7</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.ansible.com/security</url>
+      <url>https://raw.githubusercontent.com/ansible/ansible/devel/CHANGELOG.md</url>
+    </references>
+    <dates>
+      <discovery>2014-08-06</discovery>
+      <entry>2015-07-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9dae9d62-205f-11e5-a4a5-002590263bf5">
+    <topic>ansible -- code execution from compromised remote host data or untrusted local data</topic>
+    <affects>
+      <package>
+	<name>ansible</name>
+	<range><lt>1.6.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ansible, Inc. reports:</p>
+	<blockquote cite="http://www.ansible.com/security">
+	  <p>Arbitrary execution from data from compromised remote hosts or
+	    untrusted local data - resolved in Ansible 1.6.7</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-4966</cvename>
+      <bid>68794</bid>
+      <url>http://www.ansible.com/security</url>
+      <url>https://raw.githubusercontent.com/ansible/ansible/devel/CHANGELOG.md</url>
+    </references>
+    <dates>
+      <discovery>2014-07-21</discovery>
+      <entry>2015-07-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2c493ac8-205e-11e5-a4a5-002590263bf5">
+    <topic>ansible -- remote code execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>ansible</name>
+	<range><lt>1.6.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ansible, Inc. reports:</p>
+	<blockquote cite="http://www.ansible.com/security">
+	  <p>Incomplete Fix Remote Code Execution Vulnerability - Fixed in
+	    Ansible 1.6.4</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-4678</cvename>
+      <bid>68335</bid>
+      <url>http://www.ansible.com/security</url>
+      <url>https://raw.githubusercontent.com/ansible/ansible/devel/CHANGELOG.md</url>
+    </references>
+    <dates>
+      <discovery>2014-06-25</discovery>
+      <entry>2015-07-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a6a9f9d5-205c-11e5-a4a5-002590263bf5">
+    <topic>ansible -- local symlink exploits</topic>
+    <affects>
+      <package>
+	<name>ansible</name>
+	<range><lt>1.2.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MITRE reports:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4259">
+	  <p>runner/connection_plugins/ssh.py in Ansible before 1.2.3, when
+	    using ControlPersist, allows local users to redirect a ssh session
+	    via a symlink attack on a socket file with a predictable name in
+	    /tmp/.</p>
+	</blockquote>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4260">
+	  <p>lib/ansible/playbook/__init__.py in Ansible 1.2.x before 1.2.3,
+	    when playbook does not run due to an error, allows local users to
+	    overwrite arbitrary files via a symlink attack on a retry file with
+	    a predictable name in /var/tmp/ansible/.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-4259</cvename>
+      <cvename>CVE-2013-4260</cvename>
+      <url>http://www.ansible.com/security</url>
+      <url>https://groups.google.com/forum/#!topic/ansible-project/UVDYW0HGcNg</url>
+    </references>
+    <dates>
+      <discovery>2013-08-21</discovery>
+      <entry>2015-07-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a478421e-2059-11e5-a4a5-002590263bf5">
+    <topic>ansible -- enable host key checking in paramiko connection type</topic>
+    <affects>
+      <package>
+	<name>ansible</name>
+	<range><lt>1.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ansible changelog reports:</p>
+	<blockquote cite="https://raw.githubusercontent.com/ansible/ansible/devel/CHANGELOG.md">
+	  <p>Host key checking is on by default.  Disable it if you like by
+	    adding host_key_checking=False in the [default] section of
+	    /etc/ansible/ansible.cfg or ~/ansible.cfg or by exporting
+	    ANSIBLE_HOST_KEY_CHECKING=False.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-2233</cvename>
+      <url>https://raw.githubusercontent.com/ansible/ansible/devel/CHANGELOG.md</url>
+      <url>http://www.ansible.com/security</url>
+      <url>https://github.com/ansible/ansible/issues/857</url>
+    </references>
+    <dates>
+      <discovery>2012-08-13</discovery>
+      <entry>2015-07-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d7b9a28d-238c-11e5-86ff-14dae9d210b8">
+    <topic>bitcoin -- denial of service</topic>
+    <affects>
+      <package>
+	<name>bitcoin</name>
+	<range><lt>0.10.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gregory Maxwell reports:</p>
+	<blockquote cite="http://bitcoin-development.narkive.com/tO8M0R0j/upcoming-dos-vulnerability-announcements-for-bitcoin-core">
+	  <p>On July 7th I will be making public details of several
+	    serious denial of service vulnerabilities which have fixed in recent
+	    versions of Bitcoin Core, including including CVE-2015-3641.
+
+	    I strongly recommend anyone running production nodes exposed to inbound
+	    connections from the internet upgrade to 0.10.2 as soon as possible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3641</cvename>
+      <url>http://bitcoin-development.narkive.com/tO8M0R0j/upcoming-dos-vulnerability-announcements-for-bitcoin-core</url>
+      <url>https://en.bitcoin.it/wiki/Common_Vulnerabilities_and_Exposures</url>
+    </references>
+    <dates>
+      <discovery>2015-06-27</discovery>
+      <entry>2015-07-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="864e6f75-2372-11e5-86ff-14dae9d210b8">
+    <topic>node -- denial of service</topic>
+    <affects>
+      <package>
+	<name>node</name>
+	<range><lt>0.12.6</lt></range>
+      </package>
+      <package>
+	<name>node-devel</name>
+	<range><lt>0.12.6</lt></range>
+      </package>
+      <package>
+	<name>iojs</name>
+	<range><lt>2.3.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>node reports:</p>
+	<blockquote cite="http://blog.nodejs.org/2015/07/03/node-v0-12-6-stable/">
+	  <p>This release of Node.js fixes a bug that triggers an
+	    out-of-band write in V8's utf-8 decoder. This bug impacts all Buffer to
+	    String conversions. This is an important security update as this bug can
+	    be used to cause a denial of service attack.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://blog.nodejs.org/2015/07/03/node-v0-12-6-stable/</url>
+      <url>https://github.com/joyent/node/commit/78b0e30954111cfaba0edbeee85450d8cbc6fdf6</url>
+      <url>https://github.com/nodejs/io.js/commit/030f8045c706a8c3925ec7cb3184fdfae4ba8676</url>
+    </references>
+    <dates>
+      <discovery>2015-07-03</discovery>
+      <entry>2015-07-06</entry>
+      <modified>2015-07-06</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="bf1d9331-21b6-11e5-86ff-14dae9d210b8">
+    <topic>cups-filters -- texttopdf integer overflow</topic>
+    <affects>
+      <package>
+	<name>cups-filters</name>
+	<range><lt>1.0.71</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Stefan Cornelius from Red Hat reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/07/03/2">
+	  <p>An integer overflow flaw leading to a heap-based buffer overflow was
+	    discovered in the way the texttopdf utility of cups-filter processed
+	    print jobs with a specially crafted line size. An attacker being able
+	    to submit print jobs could exploit this flaw to crash texttopdf or,
+	    possibly, execute arbitrary code with the privileges of the 'lp' user.</p>
+	</blockquote>
+	<p>Tim Waugh reports:</p>
+	<blockquote cite="http://bzr.linuxfoundation.org/loggerhead/openprinting/cups-filters/revision/7365">
+	  <p>The Page allocation is moved into textcommon.c, where it does all the
+	    necessary checking: lower-bounds for CVE-2015-3258 and upper-bounds
+	    for CVE-2015-3259 due to integer overflows for the calloc() call
+	    initialising Page[0] and the memset() call in texttopdf.c's
+	    WritePage() function zeroing the entire array.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3279</cvename>
+      <url>https://access.redhat.com/security/cve/CVE-2015-3279</url>
+      <url>http://bzr.linuxfoundation.org/loggerhead/openprinting/cups-filters/revision/7365</url>
+      <mlist>http://osdir.com/ml/opensource-software-security/2015-07/msg00021.html</mlist>
+    </references>
+    <dates>
+      <discovery>2015-07-03</discovery>
+      <entry>2015-07-03</entry>
+      <modified>2015-07-07</modified>
+    </dates>
+  </vuln>
+
   <vuln vid="9c7177ff-1fe1-11e5-9a01-bcaec565249c">
     <topic>libxml2 -- Enforce the reader to run in constant memory</topic>
     <affects>
@@ -1351,7 +1835,7 @@ Notes:
       </package>
       <package>
 	<name>linux-c6-openssl</name>
-	<range><lt>1.0.2b</lt></range>
+	<range><lt>1.0.1e_6</lt></range>
       </package>
       <package>
 	<name>libressl</name>
@@ -1389,7 +1873,7 @@ Notes:
     <dates>
       <discovery>2015-06-11</discovery>
       <entry>2015-06-11</entry>
-      <modified>2015-06-11</modified>
+      <modified>2015-07-03</modified>
     </dates>
   </vuln>
 

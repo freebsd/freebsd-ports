@@ -1,9 +1,0 @@
-FFmpeg is a complete, cross-platform solution to record, convert and stream
-audio and video. It includes libavcodec - the leading audio/video codec
-library.
-
-This version is a legacy version from the 2.3 release branch. It is
-intended to be used by ports which absolutely have to depend on deprecated
-APIs that have been removed in 2.4 or later releases.
-
-WWW: http://ffmpeg.org/

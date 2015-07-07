@@ -1,0 +1,4 @@
+This port provides supervisors, supervision groups, and supervision trees for
+Celluloid.
+
+WWW: https://github.com/celluloid/celluloid-supervision

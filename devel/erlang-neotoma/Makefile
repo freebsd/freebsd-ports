@@ -11,33 +11,18 @@ COMMENT=	Erlang library and packrat parser-generator
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	erl:${PORTSDIR}/lang/erlang
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-
-SUB_FILES+=	neotoma
+SUB_FILES+=	${PORTNAME}
 SUB_LIST+=	PORTNAME=${PORTNAME} \
 		PORTVERSION=${PORTVERSION}
 
-PLIST_SUB=	VERSION="${PORTVERSION}"
-
+USES=		erlang:rebar
 USE_GITHUB=	yes
 GH_ACCOUNT=	seancribbs
 
-post-patch:
-	@${REINPLACE_CMD} -e "s/%%PORTVERSION%%/${PORTVERSION}/" ${WRKSRC}/src/neotoma.app.src
-	@${RM} ${WRKSRC}/src/*.bak ${WRKSRC}/src/*.orig
+REBAR_TARGETS=	compile escriptize
 
-do-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.textile ${STAGEDIR}${DOCSDIR}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/ebin
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/priv
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/src
-	${INSTALL_DATA} ${WRKSRC}/ebin/* ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/ebin
-	${INSTALL_DATA} ${WRKSRC}/priv/* ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/priv
-	${INSTALL_DATA} ${WRKSRC}/src/* ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/src
-	${INSTALL_SCRIPT} ${WRKSRC}/neotoma ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}
-	${INSTALL_SCRIPT} ${WRKDIR}/neotoma ${STAGEDIR}${PREFIX}/bin
+post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${ERL_APP_ROOT}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

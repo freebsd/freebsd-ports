@@ -18,7 +18,7 @@ GH_PROJECT=	torsocks
 GH_TAGNAME=	96f7a0d
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf gmake libtool
+USES=		alias autoreconf gmake libtool
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 

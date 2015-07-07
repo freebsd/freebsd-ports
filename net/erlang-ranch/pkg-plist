@@ -24,6 +24,15 @@ lib/erlang/lib/ranch-%%VERSION%%/src/ranch_ssl.erl
 lib/erlang/lib/ranch-%%VERSION%%/src/ranch_sup.erl
 lib/erlang/lib/ranch-%%VERSION%%/src/ranch_tcp.erl
 lib/erlang/lib/ranch-%%VERSION%%/src/ranch_transport.erl
+%%PORTDOCS%%%%DOCSDIR%%/embedded.md
+%%PORTDOCS%%%%DOCSDIR%%/internals.md
+%%PORTDOCS%%%%DOCSDIR%%/introduction.md
+%%PORTDOCS%%%%DOCSDIR%%/listeners.md
+%%PORTDOCS%%%%DOCSDIR%%/parsers.md
+%%PORTDOCS%%%%DOCSDIR%%/protocols.md
+%%PORTDOCS%%%%DOCSDIR%%/ssl_auth.md
+%%PORTDOCS%%%%DOCSDIR%%/toc.md
+%%PORTDOCS%%%%DOCSDIR%%/transports.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tcp_echo/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tcp_echo/README.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tcp_echo/relx.config

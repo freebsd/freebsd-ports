@@ -148,6 +148,8 @@
     SUBDIR += elasticsearch-plugin-marvel
     SUBDIR += elasticsearch-plugin-sql
     SUBDIR += elasticsearch-river-rabbitmq
+    SUBDIR += elixir-earmark
+    SUBDIR += elixir-ex_doc
     SUBDIR += emacs-wiki
     SUBDIR += en-aspell
     SUBDIR += en-hunspell
@@ -392,6 +394,7 @@
     SUBDIR += libwpd
     SUBDIR += libwpd010
     SUBDIR += libwps
+    SUBDIR += libwps02
     SUBDIR += libwps03
     SUBDIR += libxdiff
     SUBDIR += libxml++26

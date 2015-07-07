@@ -297,8 +297,8 @@ fix-perl-things:
 	@${RMDIR} -p ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH} 2>/dev/null || :
 
 .if !target(regression-test)
-TEST_ARGS+=	${MAKE_ARGS}
-TEST_ENV+=	${MAKE_ENV}
+TEST_ARGS?=	${MAKE_ARGS}
+TEST_ENV?=	${MAKE_ENV}
 TEST_TARGET?=	test
 TEST_WRKSRC?=	${BUILD_WRKSRC}
 .if !target(test)

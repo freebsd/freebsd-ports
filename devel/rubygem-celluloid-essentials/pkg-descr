@@ -1,0 +1,4 @@
+This port provides internally used tools, and superstructural dependencies of
+Celluloid.
+
+WWW: https://github.com/celluloid/celluloid-essentials

@@ -6825,7 +6825,6 @@ print/scribus-devel||2014-09-01|Not staged
 russian/libcyrillic||2014-09-01|Not staged
 russian/prawda||2014-09-01|Not staged
 russian/pscyr||2014-09-01|Not staged
-russian/rux||2014-09-01|Not staged
 russian/tac+ia||2014-09-01|Not staged
 science/2dhf||2014-09-01|Not staged
 science/abinit||2014-09-01|Not staged
@@ -7677,3 +7676,10 @@ security/rubygem-hmac|security/rubygem-ruby-hmac|2015-06-30|Has expired: Duplica
 www/ruby-amazon|www/ruby-aws|2015-06-30|Has expired: Rendered obsolete by upstream since Amazon shut down access to AWS API v3 (2008-03-31). Use www/ruby-aws instead
 net/ntp-rc||2015-06-30|Has gone GA
 net/ptpd2-devel|net/ptpd2|2015-07-02|Development version no longer necessary
+devel/erlang-cowlib|www/erlang-cowlib|2015-07-03|Move to www where it belongs
+net/py-google||2015-07-03|Google no longer supports the SOAP API for search
+devel/erlang-ibrowse|www/erlang-ibrowse|2015-07-05|Move to www where it belongs
+multimedia/ffmpeg23|multimedia/ffmpeg|2015-07-05|Obsolete since recent upstream upgrade of main ffmpeg port. Use multimedia/ffmpeg instead.
+multimedia/ffmpeg26|multimedia/ffmpeg|2015-07-05|Obsolete since recent upstream upgrade of main ffmpeg port. Use multimedia/ffmpeg instead.
+x11/docker|x11/docker-tray|2015-07-06|Renamed
+sysutils/docker|sysutils/docker-freebsd|2015-07-07|Renamed

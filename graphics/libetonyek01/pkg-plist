@@ -1,12 +1,12 @@
+bin/key2raw
+bin/key2text
+bin/key2xhtml
 bin/numbers2csv
 bin/numbers2raw
 bin/numbers2text
 bin/pages2html
 bin/pages2raw
 bin/pages2text
-bin/key2raw
-bin/key2text
-bin/key2xhtml
 include/libetonyek-0.1/libetonyek/EtonyekDocument.h
 include/libetonyek-0.1/libetonyek/libetonyek.h
 lib/libetonyek-0.1.so
