@@ -173,7 +173,6 @@
     SUBDIR += telepathy-sofiasip
     SUBDIR += tkabber
     SUBDIR += tkabber-plugins
-    SUBDIR += tkabbur
     SUBDIR += tox
     SUBDIR += toxic
     SUBDIR += ttytter

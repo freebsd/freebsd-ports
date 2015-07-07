@@ -168,7 +168,6 @@
     SUBDIR += figurine
     SUBDIR += flam3
     SUBDIR += flasm
-    SUBDIR += fli2gif
     SUBDIR += flphoto
     SUBDIR += fly
     SUBDIR += fortytwo
