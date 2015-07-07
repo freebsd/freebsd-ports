@@ -7682,3 +7682,5 @@ multimedia/ffmpeg23|multimedia/ffmpeg|2015-07-05|Obsolete since recent upstream 
 multimedia/ffmpeg26|multimedia/ffmpeg|2015-07-05|Obsolete since recent upstream upgrade of main ffmpeg port. Use multimedia/ffmpeg instead.
 x11/docker|x11/docker-tray|2015-07-06|Renamed
 sysutils/docker|sysutils/docker-freebsd|2015-07-07|Renamed
+graphics/fli2gif||2015-07-07|Has expired: No public distfiles
+net-im/tkabbur||2015-07-07|Has expired: Upstream development ceased since 2008
