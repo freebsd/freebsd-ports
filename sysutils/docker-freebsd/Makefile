@@ -1,7 +1,7 @@
 # Created by: kmoore@FreeBSD.org
 # $FreeBSD$
 
-PORTNAME=	docker
+PORTNAME=	docker-freebsd
 PORTVERSION=	06252015
 CATEGORIES=	sysutils
 
@@ -21,6 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kvasdopil
+GH_PROJECT=	docker
 GH_TAGNAME=	582db78
 
 PLIST_FILES=	bin/docker
