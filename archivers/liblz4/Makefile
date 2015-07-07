@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lz4
-PORTVERSION=	130
+PORTVERSION=	131
 DISTVERSIONPREFIX=	r
 CATEGORIES=	archivers
 PKGNAMEPREFIX=	lib
@@ -21,7 +21,7 @@ USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 
 ALL_TARGET=	default		# don't remove this
-SO_VER=		1.7.0
+SO_VER=		1.7.1
 PLIST_SUB+=	SO_VER=${SO_VER} SO_VER_MAJ=${SO_VER:R:R}
 
 post-patch:
