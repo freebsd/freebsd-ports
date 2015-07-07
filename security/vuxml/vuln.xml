@@ -57,6 +57,32 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="543b5939-2067-11e5-a4a5-002590263bf5">
+    <topic>turnserver -- SQL injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>turnserver</name>
+	<range><lt>4.4.5.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Oleg Moskalenko reports:</p>
+	<blockquote cite="http://turnserver.open-sys.org/downloads/v4.4.5.3/ChangeLog">
+	  <p>SQL injection security hole fixed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://turnserver.open-sys.org/downloads/v4.4.5.3/ChangeLog</url>
+      <mlist>https://groups.google.com/d/msg/turn-server-project-rfc5766-turn-server/Dj3MmgyZX1o/ZaFo3zvxIw0J</mlist>
+    </references>
+    <dates>
+      <discovery>2015-06-20</discovery>
+      <entry>2015-07-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="150d1538-23fa-11e5-a4a5-002590263bf5">
     <topic>squid -- multiple vulnerabilities</topic>
     <affects>
