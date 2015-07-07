@@ -56,15 +56,15 @@ bin/soapui.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/popular-apis/Google-Maps-soapui-project.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/popular-apis/Twitter-soapui-project.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/popular-apis/YouTube-soapui-project.xml
+%%DATADIR%%/bin/SoapUI-Spashscreen.png
 %%DATADIR%%/bin/ext/readme.txt
 %%DATADIR%%/bin/installationcomplete.sh
 %%DATADIR%%/bin/loadtestrunner.sh
 %%DATADIR%%/bin/mockservicerunner.sh
 %%DATADIR%%/bin/securitytestrunner.sh
-%%DATADIR%%/bin/soapui-5.1.3.jar
+%%DATADIR%%/bin/soapui-5.2.0.jar
 %%DATADIR%%/bin/soapui-errors.log
 %%DATADIR%%/bin/soapui-log4j.xml
-%%DATADIR%%/bin/soapui-splash.png
 %%DATADIR%%/bin/soapui.log
 %%DATADIR%%/bin/soapui.sh
 %%DATADIR%%/bin/starter-page.html
@@ -74,7 +74,8 @@ bin/soapui.sh
 %%DATADIR%%/bin/updateinstallation.sh
 %%DATADIR%%/bin/wargenerator.sh
 %%DATADIR%%/lib/activation-1.1.jar
-%%DATADIR%%/lib/analytics-core-5.1.3-os.jar
+%%DATADIR%%/lib/analytics-core-5.2.0.jar
+%%DATADIR%%/lib/animal-sniffer-annotations-1.11.jar
 %%DATADIR%%/lib/bcprov-jdk15-144.jar
 %%DATADIR%%/lib/binding-2.0.1.jar
 %%DATADIR%%/lib/cajo-1.142.jar
@@ -107,6 +108,7 @@ bin/soapui.sh
 %%DATADIR%%/lib/httpcore-nio-4.1.1.jar
 %%DATADIR%%/lib/httpmime-4.1.1.jar
 %%DATADIR%%/lib/i4jruntime-5.1.14.jar
+%%DATADIR%%/lib/javassist-3.16.1-GA.jar
 %%DATADIR%%/lib/jaxen-1.1-beta-8.jar
 %%DATADIR%%/lib/jcifs-1.2.9.jar
 %%DATADIR%%/lib/jdom-1.0.jar
@@ -135,8 +137,9 @@ bin/soapui.sh
 %%DATADIR%%/lib/org.apache.oltu.oauth2.client-0.31.jar
 %%DATADIR%%/lib/org.apache.oltu.oauth2.common-0.31.jar
 %%DATADIR%%/lib/org.apache.oltu.oauth2.httpclient4-0.31.jar
-%%DATADIR%%/lib/out-app-analytics-provider-5.1.3-os.jar
+%%DATADIR%%/lib/out-app-analytics-provider-5.2.0.jar
 %%DATADIR%%/lib/proxy-vole-20131209.jar
+%%DATADIR%%/lib/reflections-0.9.9-RC1.jar
 %%DATADIR%%/lib/rsyntaxtextarea-2.5.0.jar
 %%DATADIR%%/lib/sac-1.3.jar
 %%DATADIR%%/lib/saxon-9.1.0.8j.jar
