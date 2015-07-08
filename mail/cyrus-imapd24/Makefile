@@ -121,6 +121,7 @@ PLIST_FILES+=	cyrus/bin/compile_sieve
 .if ${PORT_OPTIONS:MAUTOSIEVE}
 AUTOSIEVE_VERSION=	0.6.0
 PATCHFILES+=	${PORTNAME}-2.4.12-autosieve-${AUTOSIEVE_VERSION}.patch
+BROKEN=		Not buildable with autosieve patch
 .endif
 
 .if ${PORT_OPTIONS:MBDB}
