@@ -355,7 +355,6 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${MYDOCS} ${STAGEDIR}${DOCSDIR})
 	${MKDIR} ${STAGEDIR}/var/squid/logs
-	${RMDIR} ${STAGEDIR}/var/run/squid
 
 .include <bsd.port.pre.mk>
 
