@@ -46,7 +46,7 @@
     SUBDIR += dgs
     SUBDIR += dmenu
     SUBDIR += dmxproto
-    SUBDIR += docker
+    SUBDIR += docker-tray
     SUBDIR += dri2proto
     SUBDIR += dri3proto
     SUBDIR += dxpc
