@@ -143,7 +143,7 @@ Notes:
   </vuln>
 
   <vuln vid="038a5808-24b3-11e5-b0c8-bf4d8935d4fa">
-    <topic>roundcube - multiple vulnerabilities</topic>
+    <topic>roundcube -- multiple vulnerabilities</topic>
     <affects>
       <package>
        <name>roundcube</name>
@@ -177,7 +177,7 @@ Notes:
     </references>
     <dates>
       <discovery>2015-05-30</discovery>
-      <entry>2015-07-7</entry>
+      <entry>2015-07-07</entry>
     </dates>
   </vuln>
 
