@@ -159,12 +159,12 @@ Notes:
 	    1.1 after fixing many minor bugs and adding some security improvements
 	    to the 1.1 release branch. Version 1.0.6 comes with cherry-picked fixes
 	    from the more recent version to ensure proper long term support
-	    especially in regards of security and compatibility.
-
-	    The security-related fixes in particular are:
-
-	    * XSS vulnerability in _mbox argument
-	    * security improvement in contact photo handling
+	    especially in regards of security and compatibility.<br/>
+	    <br/>
+	    The security-related fixes in particular are:<br/>
+	    <br/>
+	    * XSS vulnerability in _mbox argument<br/>
+	    * security improvement in contact photo handling<br/>
 	    * potential info disclosure from temp directory</p>
       </blockquote>
      </body>
