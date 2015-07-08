@@ -18,9 +18,13 @@ PHP_DEFAULT=	5.4
 PHP_MODNAME=	${PORTNAME}
 GH_PROJECT=	${PORTNAME}-php
 GH_ACCOUNT=	tarantool
-GH_TAGNAME=	d88ac7b
-TR_VER=		20131031
+GH_TAGNAME=	3f24c5e
+TR_VER=		20150708
 
 CONFIGURE_ARGS+=	--with-tarantool
+
+.if ${OSVERSION} < 900000
+IGNORE=	does not support FreeBSD versions < 9.0
+.endif
 
 .include <bsd.port.mk>
