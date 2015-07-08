@@ -1,0 +1,11 @@
+--- gui/Makefile.am.orig	2014-12-09 10:52:31 UTC
++++ gui/Makefile.am
+@@ -50,6 +50,8 @@ vanubi_SOURCES = \
+ vanubi_LDADD = \
+ 	../libvanubi/libvanubi@PACKAGE_SUFFIX@.la \
+ 	$(VANUBI_LIBS) \
++	-lexecinfo \
++	-lX11 \
+ 	$(NULL)
+ 
+ EXTRA_DIST = $(vanubi_VALASOURCES)
