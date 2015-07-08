@@ -57,6 +57,42 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="348bfa69-25a2-11e5-ade1-0011d823eebd">
+    <topic>Adobe Flash Player -- critical vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-c6-flashplugin11</name>
+	<range><lt>11.2r202.481</lt></range>
+      </package>
+      <package>
+	<name>linux-f10-flashplugin11</name>
+	<range><lt>11.2r202.481</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="https://helpx.adobe.com/security/products/flash-player/apsb15-16.html">
+	  <p>
+	    Adobe has released security updates for Adobe Flash Player. These
+	    updates address critical vulnerabilities that could potentially
+	    allow an attacker to take control of the affected system. Adobe is
+	    aware of a report that an exploit targeting CVE-2015-5119 has been
+	    publicly published.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://helpx.adobe.com/security/products/flash-player/apsb15-16.html</url>
+      <cvename>CVE-2015-5119</cvename>
+    </references>
+    <dates>
+      <discovery>2015-07-07</discovery>
+      <entry>2015-07-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c93533a3-24f1-11e5-8b74-3c970e169bc2">
     <topic>bind -- denial of service vulnerability</topic>
     <affects>
