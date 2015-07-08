@@ -1251,6 +1251,7 @@
     SUBDIR += libtap
     SUBDIR += libtar
     SUBDIR += libtecla
+    SUBDIR += libtermkey
     SUBDIR += libthai
     SUBDIR += libtifiles2
     SUBDIR += libtool
