@@ -1,5 +1,5 @@
---- ./src/doc/CMakeLists.txt.orig	2013-11-26 05:11:29.000000000 +1030
-+++ ./src/doc/CMakeLists.txt	2013-11-28 23:57:11.961491397 +1030
+--- src/doc/CMakeLists.txt.orig	2015-03-10 21:57:05 UTC
++++ src/doc/CMakeLists.txt
 @@ -1,11 +1,11 @@
  set (public_docs osl-languagespec.pdf)
  # Some day: CLA-INDIVIDUAL CLA-CORPORATE
