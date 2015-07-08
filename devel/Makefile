@@ -409,6 +409,7 @@
     SUBDIR += elfrc
     SUBDIR += elfsh
     SUBDIR += elftoaout
+    SUBDIR += elixir-bson
     SUBDIR += elixir-calendar
     SUBDIR += elixir-conform
     SUBDIR += elixir-decimal
