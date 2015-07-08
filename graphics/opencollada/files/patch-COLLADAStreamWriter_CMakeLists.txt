@@ -1,0 +1,10 @@
+--- COLLADAStreamWriter/CMakeLists.txt.orig	2015-07-05 08:26:06 UTC
++++ COLLADAStreamWriter/CMakeLists.txt
+@@ -65,6 +65,7 @@ set(INST_SRC
+ 	include/COLLADASWSource.h
+ 	include/COLLADASWStreamWriter.h
+ 	include/COLLADASWSurfaceInitOption.h
++	include/COLLADASWTagType.h
+ 	include/COLLADASWTechnique.h
+ 	include/COLLADASWTechniqueFX.h
+ 	include/COLLADASWTexture.h
