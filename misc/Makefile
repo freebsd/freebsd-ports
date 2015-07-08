@@ -74,6 +74,7 @@
     SUBDIR += dvorakng
     SUBDIR += e2fsprogs-libblkid
     SUBDIR += e2fsprogs-libuuid
+    SUBDIR += elixir-uuid
     SUBDIR += elscreen
     SUBDIR += esniper
     SUBDIR += estic
