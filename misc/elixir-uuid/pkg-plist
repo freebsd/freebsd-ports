@@ -1,0 +1,4 @@
+lib/elixir/lib/uuid/ebin/Elixir.UUID.beam
+lib/elixir/lib/uuid/ebin/uuid.app
+lib/elixir/lib/uuid/lib/uuid.ex
+%%PORTDOCS%%%%DOCSDIR%%/README.md
