@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libc++
-PORTVERSION=	0.240527
+PORTVERSION=	0.241676
 CATEGORIES=	devel
 MASTER_SITES=	https://nuxi.nl/distfiles/libc++/:libcxx \
 		https://nuxi.nl/distfiles/libc++abi/:libcxxabi
