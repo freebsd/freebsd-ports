@@ -309,6 +309,7 @@ include/opencollada/COLLADAStreamWriter/COLLADASWShader.h
 include/opencollada/COLLADAStreamWriter/COLLADASWSource.h
 include/opencollada/COLLADAStreamWriter/COLLADASWStreamWriter.h
 include/opencollada/COLLADAStreamWriter/COLLADASWSurfaceInitOption.h
+include/opencollada/COLLADAStreamWriter/COLLADASWTagType.h
 include/opencollada/COLLADAStreamWriter/COLLADASWTechnique.h
 include/opencollada/COLLADAStreamWriter/COLLADASWTechniqueFX.h
 include/opencollada/COLLADAStreamWriter/COLLADASWTexture.h
