@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	copperspice
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.copperspice.com/copperspice/source/
 
@@ -10,8 +10,6 @@ MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Modern cross-platform C++ GUI library (derived from Qt 4.8)
 
 LICENSE=	LGPL21
-
-BROKEN_FreeBSD=	F10 q_emitSignals unable to register method pointer
 
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 LIB_DEPENDS=	libaudio.so:${PORTSDIR}/audio/nas \
