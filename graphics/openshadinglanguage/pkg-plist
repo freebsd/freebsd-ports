@@ -21,13 +21,9 @@ include/OSL/oslversion.h
 include/OSL/rendererservices.h
 include/OSL/shaderglobals.h
 lib/liboslcomp.so
-lib/liboslcomp.so.1
 lib/liboslexec.so
-lib/liboslexec.so.1
 lib/liboslquery.so
-lib/liboslquery.so.1
 lib/libtestshade.so
-lib/libtestshade.so.1
 %%DATADIR%%/CHANGES
 %%DATADIR%%/INSTALL
 %%DATADIR%%/LICENSE

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openshadinglanguage
-PORTVERSION=	1.5.12
+PORTVERSION=	1.6.6
 DISTVERSIONPREFIX=	Release-
 CATEGORIES=	graphics devel
 
@@ -39,11 +39,5 @@ CXXFLAGS+=	-I${LOCALBASE}/include/flex
 post-patch:
 	@${REINPLACE_CMD} -e 's,/bin/bash,/bin/sh,' \
 		${WRKSRC}/src/liboslexec/serialize-bc.bash
-
-post-install:
-.for LNAME in oslcomp oslexec oslquery testshade
-	${MV} ${STAGEDIR}${PREFIX}/lib/lib${LNAME}.so ${STAGEDIR}${PREFIX}/lib/lib${LNAME}.so.1
-	${LN} -s lib${LNAME}.so.1 ${STAGEDIR}${PREFIX}/lib/lib${LNAME}.so
-.endfor
 
 .include <bsd.port.mk>
