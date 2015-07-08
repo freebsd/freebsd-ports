@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	blender
-PORTVERSION=	2.74
+PORTVERSION=	2.75
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -18,7 +18,8 @@ LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 
 USE_XORG=	x11 xext xmu
 USE_GL=		glew
-USES=		cmake:outsource compiler:features jpeg python:3.4 shebangfix
+USES=		cmake:outsource compiler:features desktop-file-utils \
+		jpeg python:3.4 shebangfix
 INSTALLS_ICONS=	yes
 CMAKE_ARGS=	-DWITH_PYTHON_INSTALL:BOOL=OFF \
 		-DWITH_PYTHON_INSTALL_NUMPY:BOOL=OFF \
@@ -30,7 +31,7 @@ SHEBANG_FILES=	release/bin/blender-thumbnailer.py \
 		release/scripts/modules/bl_i18n_utils/utils_rtl.py \
 		release/scripts/modules/blend_render_info.py
 
-BL_VERSION=	2.74
+BL_VERSION=	2.75
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 OUTDIR=		${INSTALL_WRKSRC}/bin/${BL_VERSION}
 
@@ -147,8 +148,7 @@ XF86VMODE_USE=			XORG=xi,xxf86vm
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDEBUG}
-CMAKE_BUILD_TYPE=	Debug
+.if defined(WITH_DEBUG)
 CMAKE_ARGS+=		-DWITH_GHOST_DEBUG:BOOL=ON
 .endif
 

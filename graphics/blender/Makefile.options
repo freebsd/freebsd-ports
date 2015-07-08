@@ -9,7 +9,6 @@ OPTIONS_DEFINE=		\
 	COMPOSITOR 	\
 	CYCLES 		\
 	CYCLESOSL 	\
-	DEBUG		\
 	DDS 		\
 	FFMPEG 		\
 	FFTW3 		\
