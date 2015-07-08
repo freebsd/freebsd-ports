@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	mogilefs-client
-PORTVERSION=	3.8.0
+PORTVERSION=	3.9.0
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	MogileFS client library for Ruby
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 NO_ARCH=	yes
 
