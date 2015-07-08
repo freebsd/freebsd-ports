@@ -1,0 +1,10 @@
+lib/elixir/lib/joken/ebin/Elixir.Joken.Config.beam
+lib/elixir/lib/joken/ebin/Elixir.Joken.Token.beam
+lib/elixir/lib/joken/ebin/Elixir.Joken.Utils.beam
+lib/elixir/lib/joken/ebin/Elixir.Joken.beam
+lib/elixir/lib/joken/ebin/joken.app
+lib/elixir/lib/joken/lib/joken.ex
+lib/elixir/lib/joken/lib/joken/config.ex
+lib/elixir/lib/joken/lib/joken/token.ex
+lib/elixir/lib/joken/lib/joken/utils.ex
+%%PORTDOCS%%%%DOCSDIR%%/README.md
