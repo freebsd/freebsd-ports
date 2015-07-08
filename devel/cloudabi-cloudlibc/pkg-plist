@@ -7,6 +7,7 @@ x86_64-unknown-cloudabi/include/_/struct/iovec.h
 x86_64-unknown-cloudabi/include/_/struct/timespec.h
 x86_64-unknown-cloudabi/include/_/types.h
 x86_64-unknown-cloudabi/include/aio.h
+x86_64-unknown-cloudabi/include/argdata.h
 x86_64-unknown-cloudabi/include/arpa/inet.h
 x86_64-unknown-cloudabi/include/assert.h
 x86_64-unknown-cloudabi/include/complex.h
