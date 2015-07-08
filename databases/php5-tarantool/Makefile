@@ -23,8 +23,10 @@ TR_VER=		20150708
 
 CONFIGURE_ARGS+=	--with-tarantool
 
+.include <bsd.port.pre.mk>
+
 .if ${OSVERSION} < 900000
 IGNORE=	does not support FreeBSD versions < 9.0
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
