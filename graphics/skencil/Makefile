@@ -12,6 +12,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a/alpha_rev/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive drawing program
 
+DEPRECATED=	Project is abandoned and was overtaken by sK1 fork
+EXPIRATION_DATE=2015-08-08
+
 LICENSE=	LGPL20
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
