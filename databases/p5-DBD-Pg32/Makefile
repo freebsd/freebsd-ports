@@ -13,7 +13,7 @@ MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Provides access to PostgreSQL databases through the DBI
 
 DEPRECATED=	Use databases/p5-DBD-Pg instead, compatability probles are fixed
-EXPIRY=		20150908
+EXPIRATION_DATE=	2015-07-22
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
