@@ -73,7 +73,6 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		gutenprint-foomatic>=0:${PORTSDIR}/print/gutenprint-foomatic \
 		system-config-printer:${PORTSDIR}/print/system-config-printer \
 		numlockx:${PORTSDIR}/x11/numlockx \
-		swapexd:${PORTSDIR}/sysutils/swapexd \
 		mupdf:${PORTSDIR}/graphics/mupdf \
 		pciutils>=0:${PORTSDIR}/sysutils/pciutils \
 		gpg:${PORTSDIR}/security/gnupg \
@@ -98,13 +97,11 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		xbrightness>=0:${PORTSDIR}/x11/xbrightness \
 		gstreamer-plugins-cdaudio>=0:${PORTSDIR}/audio/gstreamer-plugins-cdaudio \
 		gstreamer-plugins-cdparanoia>=0:${PORTSDIR}/audio/gstreamer-plugins-cdparanoia \
-		mosh:${PORTSDIR}/net/mosh \
 		x11vnc>=0:${PORTSDIR}/net/x11vnc \
 		ataidle>=0:${PORTSDIR}/sysutils/ataidle \
 		tk84>=0:${PORTSDIR}/x11-toolkits/tk84 \
 		tk85>=0:${PORTSDIR}/x11-toolkits/tk85 \
 		tk86>=0:${PORTSDIR}/x11-toolkits/tk86 \
-		panicmail>=0:${PORTSDIR}/sysutils/panicmail \
 		pulseaudio>=0:${PORTSDIR}/audio/pulseaudio \
 		paprefs>=0:${PORTSDIR}/audio/paprefs \
 		pavucontrol>=0:${PORTSDIR}/audio/pavucontrol \
@@ -115,12 +112,9 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		7z:${PORTSDIR}/archivers/p7zip \
 		avahi-browse:${PORTSDIR}/net/avahi-app \
 		anacron:${PORTSDIR}/sysutils/anacron \
-		vagrant>=0:${PORTSDIR}/sysutils/vagrant \
 		openntpd>=0:${PORTSDIR}/net/openntpd \
 		socat>=0:${PORTSDIR}/net/socat \
-		tor>=0:${PORTSDIR}/security/tor \
-		docker:${PORTSDIR}/sysutils/docker-freebsd \
-		zsh:${PORTSDIR}/shells/zsh
+		tor>=0:${PORTSDIR}/security/tor
 
 NO_BUILD=	yes
 
