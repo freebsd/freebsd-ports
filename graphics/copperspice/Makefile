@@ -40,6 +40,8 @@ PLIST_SUB=	SHORT_VER=0 LONG_VER=0.0.0
 MAKE_JOBS_UNSAFE=	yes
 WITH_OPENSSL_PORT=	yes
 
+BROKEN_amd64=		QBuffer::_q_emitSignals Unable to register method\
+			pointer, verify signal/slot (qrc_macresources.cpp)
 BROKEN_FreeBSD_8=	error: 'to_string' is not a member of 'std'
 BROKEN_FreeBSD_9=	error: 'to_string' is not a member of 'std'
 BROKEN_i386=		qx11embed_x11.cpp:470:20: non-constant-expression\
