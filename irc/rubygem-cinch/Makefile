@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cinch
-PORTVERSION=	2.2.5
+PORTVERSION=	2.2.6
 CATEGORIES=	irc rubygems
 MASTER_SITES=	RG
 
