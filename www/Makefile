@@ -165,6 +165,7 @@
     SUBDIR += eliom
     SUBDIR += elixir-httpoison
     SUBDIR += elixir-httpotion
+    SUBDIR += elixir-joken
     SUBDIR += elixir-maru
     SUBDIR += elixir-phoenix
     SUBDIR += elixir-phoenix_ecto

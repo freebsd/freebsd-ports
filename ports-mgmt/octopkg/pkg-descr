@@ -1,3 +1,5 @@
-OctoPkg is a powerful pkgng GUI front-end written in Qt
+OctoPkg is a graphical front-end to the pkg-ng package manager. OctoPkg enables
+users to search for, install, remove and upgrade pkg-ng packages through a
+simple GUI interface.
 
 WWW: https://octopkg.wordpress.com/

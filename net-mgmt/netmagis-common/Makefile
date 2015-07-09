@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	netmagis
-DISTVERSION?=	2.2.2
-PORTREVISION?=	1
+PORTVERSION?=	2.3.0
 CATEGORIES?=	net-mgmt
 MASTER_SITES=	http://netmagis.org/files/
 PKGNAMESUFFIX?=	-common
@@ -11,50 +10,26 @@ PKGNAMESUFFIX?=	-common
 MAINTAINER?=	pdagog@gmail.com
 COMMENT?=	Netmagis common infrastructure
 
-# Portlint barfs about a MASTERDIR variable if the LICENSE block is defined (black magic?)
-#LICENSE=	CECILL-B
-#LICENSE_NAME=	CeCILL-B Free Software License Agreement
-#LICENSE_FILE=	${WRKSRC}/LICENSE
-#LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-
-USES=		tcl:85+ pgsql:9.1+
-WANT_PGSQL=	pgtcl
+LICENSE=	CECILL-B
+LICENSE_NAME=	CeCILL-B Free Software License Agreement
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS+=	dtplite:${PORTSDIR}/devel/tcllib
 
-.if ${PKGNAMESUFFIX} != -common
-RUN_DEPENDS+=	netmagis-config:${PORTSDIR}/net-mgmt/netmagis-common
-.endif
+USES+=		pgsql:9.1+ tcl:85+
+WANT_PGSQL+=	pgtcl
 
-.if ${PKGNAMESUFFIX} == -database
-RUN_DEPENDS+=	pwgen:${PORTSDIR}/sysutils/pwgen
-WANT_PGSQL+=	server
-.endif
+SLAVEDIRS= net-mgmt/netmagis-common \
+	net-mgmt/netmagis-database \
+	net-mgmt/netmagis-detecteq \
+	net-mgmt/netmagis-metro \
+	net-mgmt/netmagis-servers \
+	net-mgmt/netmagis-topo \
+	net-mgmt/netmagis-utils \
+	net-mgmt/netmagis-www
 
-.if ${PKGNAMESUFFIX} == -www
-USE_TEX=	tex
-RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz \
-		pwgen:${PORTSDIR}/sysutils/pwgen
-.endif
-
-.if ${PKGNAMESUFFIX} == -topo
-USE_RC_SUBR=	topographd toposendd
-SUB_LIST=	TCLSH=${TCLSH}
-RUN_DEPENDS+=	rancid-run:${PORTSDIR}/net-mgmt/rancid \
-		fping:${PORTSDIR}/net/fping
-.endif
-
-.if ${PKGNAMESUFFIX} == -metro
-USES+=		perl5
-
-RUN_DEPENDS+=	p5-DBD-Pg>0:${PORTSDIR}/databases/p5-DBD-Pg \
-		p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
-		p5-SNMP_Session>=0:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
-		p5-RRDTool-OO>=0:${PORTSDIR}/devel/p5-RRDTool-OO
-
-USES+=		shebangfix
-SHEBANG_FILES=	metro/bin/metrocreatedb metro/bin/metropoller metro/bin/metropoller-run
-.endif
+NO_ARCH=	yes
 
 # Variables used in netmagis Makefiles
 MAKE_ARGS+=	DESTDIR=${STAGEDIR}${DESTDIR} PREFIX=${PREFIX}
@@ -74,10 +49,6 @@ post-patch:
 		${REINPLACE_CMD} -E 's,cd(.+) (;|&&) make,$$(MAKE) -C\1,'
 	@${REINPLACE_CMD} -E 's,cd (.+) ; (ln -s en ),\2\1/,' \
 		${WRKSRC}/www/Makefile
-
-.if !target(post-install)
-post-install:
-	@${DO_NADA}
-.endif
+	${REINPLACE_CMD} '/NMVARDIR/s/$$(PREFIX)//' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

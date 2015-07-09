@@ -2,17 +2,17 @@
 # $FreeBSD: head/net/citrix_ica/Makefile 364689 2014-08-12 10:13:54Z marino $
 
 PORTNAME=	citrix_ica
-PORTVERSION=	12.1
-PORTREVISION=	3
+PORTVERSION=	13.2.0
 CATEGORIES=	net comms linux
 MASTER_SITES=	#
-DISTNAME=	linuxx86_12.1.0.203066
+DISTNAME=	linuxx86-13.2.0.322243
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Citrix(R) Presentation Server(TM) client
 
 ONLY_FOR_ARCHS=	i386 amd64
 USES=		webplugin:linux
+WEBPLUGIN_DIR=	${PREFIX}/ICAClient
 WEBPLUGIN_FILES=	npica.so
 USE_LINUX=	yes
 USE_LINUX_APPS=	alsalib gtk2 openmotif
@@ -37,7 +37,7 @@ SUB_LIST=	CDIR=${CDIR}
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=May not be redistributed due to licensing. Please visit http://www.citrix.com/downloads/citrix-receiver/receivers-by-platform/receiver-for-linux-121.html to accept their license and download ${DISTFILES} into ${DISTDIR}
+IGNORE=May not be redistributed due to licensing. Please visit http://www.citrix.com/downloads/citrix-receiver/linux/receiver-for-linux-13-2.html accept their license and download ${DISTFILES} into ${DISTDIR}
 .endif
 
 pre-fetch:

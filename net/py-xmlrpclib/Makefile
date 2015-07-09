@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python implementation of the XML-RPC protocol
 
+DEPRECATED=	This is part of standard library since python 2.2
+EXPIRATION_DATE=2015-08-07
+
 USES=		python zip
 
 DOCSDIR=	${PREFIX}/share/doc/py-xmlrpclib

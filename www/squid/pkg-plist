@@ -2176,6 +2176,7 @@ sbin/purge
 sbin/squid
 sbin/squidclient
 @dir(squid,squid,750) /var/log/squid
+@dir(squid,squid,750) /var/run/squid
 @dir(squid,squid,750) /var/squid
 @dir(squid,squid,750) /var/squid/cache
 @dir(squid,squid,750) /var/squid/logs

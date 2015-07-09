@@ -1,4 +1,4 @@
---- Makefile.in.orig	2015-06-11 09:26:06 UTC
+--- Makefile.in.orig	2015-07-05 11:31:09 UTC
 +++ Makefile.in
 @@ -200,10 +200,10 @@ DIST_COMMON = $(srcdir)/src/tools/uic/Ma
  @OSTYPE_WIN_TRUE@am__append_19 = -I$(top_srcdir)/mkspecs/win32-g++
@@ -324,15 +324,6 @@
  am_lib_libCsCore1_la_OBJECTS = $(am__objects_1) \
  	src/corelib/animation/lib_libCsCore1_la-qabstractanimation.lo \
  	src/corelib/animation/lib_libCsCore1_la-qvariantanimation.lo \
-@@ -1676,7 +1665,7 @@ am__lib_libCsGui1_la_SOURCES_DIST = src/
- 	src/gui/widgets/qmacnativewidget_mac.mm \
- 	src/gui/widgets/qmainwindowlayout_mac.mm \
- 	src/gui/widgets/qmenu_mac.mm src/gui/widgets/qmenubar_x11.cpp
--@OSTYPE_DARWIN_TRUE@am__objects_19 = src/gui/mac/lib_libCsGui1_la-qrc_macresources.lo
-+@OSTYPE_FREEBSD_TRUE@am__objects_19 = src/gui/mac/lib_libCsGui1_la-qrc_macresources.lo
- @OSTYPE_WIN_TRUE@am__objects_20 = src/gui/accessible/lib_libCsGui1_la-qaccessible_win.lo
- @OSTYPE_LINUX_TRUE@am__objects_21 = src/gui/accessible/lib_libCsGui1_la-qaccessible_unix.lo \
- @OSTYPE_LINUX_TRUE@	src/gui/accessible/lib_libCsGui1_la-qaccessiblebridge.lo
 @@ -1813,8 +1802,6 @@ am__objects_31 =
  @OSTYPE_WIN_TRUE@	src/gui/styles/lib_libCsGui1_la-qwindowsvistastyle.lo
  @X11_TRUE@am__objects_45 =  \
@@ -413,7 +404,7 @@
  @BUILD_MYSQL_PLUGIN_TRUE@lib_qsqlmysql4_la_DEPENDENCIES =  \
  @BUILD_MYSQL_PLUGIN_TRUE@	lib/libCsCore1.la lib/libCsSql1.la
  am__lib_qsqlmysql4_la_SOURCES_DIST =  \
-@@ -7689,39 +7651,12 @@ PHONON_HEADERS_INSTALLED = \
+@@ -7697,39 +7659,12 @@ PHONON_HEADERS_INSTALLED = \
  
  @OSTYPE_LINUX_TRUE@lib_phonon_gstreamer_la_LDFLAGS = $(AM_LDFLAGS) -avoid-version -no-undefined -module $(GSTREAMER_LIBS) $(GSTREAMER_AUDIO_LIBS)
  @OSTYPE_LINUX_TRUE@lib_phonon_gstreamer_la_LIBADD = lib/libCsCore1.la lib/libCsGui1.la lib/libCsPhonon1.la
@@ -458,7 +449,7 @@
  lib_libCsScript1_la_SOURCES = src/script/api/qscriptclass.cpp \
  	src/script/api/qscriptclasspropertyiterator.cpp \
  	src/script/api/qscriptcontext.cpp \
-@@ -9649,7 +9584,7 @@ src/corelib/thread/lib_libCsCore1_la-qth
+@@ -9661,7 +9596,7 @@ src/corelib/thread/lib_libCsCore1_la-qth
  src/corelib/thread/lib_libCsCore1_la-qwaitcondition_unix.lo:  \
  	src/corelib/thread/$(am__dirstamp) \
  	src/corelib/thread/$(DEPDIR)/$(am__dirstamp)
@@ -467,7 +458,7 @@
  	src/corelib/thread/$(am__dirstamp) \
  	src/corelib/thread/$(DEPDIR)/$(am__dirstamp)
  src/corelib/tools/$(am__dirstamp):
-@@ -15163,7 +15098,7 @@ distclean-compile:
+@@ -15175,7 +15110,7 @@ distclean-compile:
  @AMDEP_TRUE@@am__include@ @am__quote@src/corelib/thread/$(DEPDIR)/lib_libCsCore1_la-qatomic.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@src/corelib/thread/$(DEPDIR)/lib_libCsCore1_la-qmutex.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@src/corelib/thread/$(DEPDIR)/lib_libCsCore1_la-qmutex_linux.Plo@am__quote@
@@ -476,7 +467,7 @@
  @AMDEP_TRUE@@am__include@ @am__quote@src/corelib/thread/$(DEPDIR)/lib_libCsCore1_la-qmutex_win.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@src/corelib/thread/$(DEPDIR)/lib_libCsCore1_la-qmutexpool.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@src/corelib/thread/$(DEPDIR)/lib_libCsCore1_la-qreadwritelock.Plo@am__quote@
-@@ -18361,12 +18296,12 @@ src/corelib/thread/lib_libCsCore1_la-qwa
+@@ -18373,12 +18308,12 @@ src/corelib/thread/lib_libCsCore1_la-qwa
  @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
  @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_libCsCore1_la_CXXFLAGS) $(CXXFLAGS) -c -o src/corelib/thread/lib_libCsCore1_la-qwaitcondition_unix.lo `test -f 'src/corelib/thread/qwaitcondition_unix.cpp' || echo '$(srcdir)/'`src/corelib/thread/qwaitcondition_unix.cpp
  
@@ -494,7 +485,7 @@
  
  src/corelib/tools/lib_libCsCore1_la-qarraydata.lo: src/corelib/tools/qarraydata.cpp
  @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(lib_libCsCore1_la_CXXFLAGS) $(CXXFLAGS) -MT src/corelib/tools/lib_libCsCore1_la-qarraydata.lo -MD -MP -MF src/corelib/tools/$(DEPDIR)/lib_libCsCore1_la-qarraydata.Tpo -c -o src/corelib/tools/lib_libCsCore1_la-qarraydata.lo `test -f 'src/corelib/tools/qarraydata.cpp' || echo '$(srcdir)/'`src/corelib/tools/qarraydata.cpp
-@@ -28974,7 +28909,7 @@ clean-cs:
+@@ -28994,7 +28929,7 @@ clean-cs:
  
  install-data-hook: webkit-headers
  	mkdir -p $(includedir)

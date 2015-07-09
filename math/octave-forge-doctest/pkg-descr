@@ -1,0 +1,14 @@
+The octave-forge package is the result of The GNU Octave Repositry project,
+which is intended to be a central location for custom scripts, functions and
+extensions for GNU Octave. contains the source for all the functions plus
+build and install scripts.
+
+This is doctest.
+
+ The Octave-Forge Doctest package finds specially-formatted blocks of
+ example code within documentation files. It then executes the code and
+ confirms the output is correct. This can be useful as part of a testing
+ framework or simply to ensure that documentation stays up-to-date during
+ software development.
+
+WWW: http://octave.sourceforge.net/

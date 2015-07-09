@@ -1,0 +1,11 @@
+--- common/netmagis.conf.sample.orig	2015-07-08 01:06:07 UTC
++++ common/netmagis.conf.sample
+@@ -170,7 +170,7 @@ metrohost	metro.example.com
+ ##############################################################################
+ 
+ rancidcmd	/usr/local/bin/rancid-run
+-ranciddir	/usr/local/var/rancid/mygroup	# group base directory
++ranciddir	/var/rancid/mygroup	# group base directory
+ 
+ # how to send commands on equipments
+ # -u user on equipment (modconf here)

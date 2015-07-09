@@ -149,6 +149,7 @@ lib/netmagis/tmpl/en/l3.html
 lib/netmagis/tmpl/en/listof.html
 lib/netmagis/tmpl/en/listof.tex
 lib/netmagis/tmpl/en/lnet.html
+lib/netmagis/tmpl/en/login.html
 lib/netmagis/tmpl/en/lusers.html
 lib/netmagis/tmpl/en/mac.html
 lib/netmagis/tmpl/en/macindex.html
@@ -168,7 +169,6 @@ lib/netmagis/tmpl/en/mod-view.html
 lib/netmagis/tmpl/en/net-list.html
 lib/netmagis/tmpl/en/net-list.tex
 lib/netmagis/tmpl/en/net.html
-lib/netmagis/tmpl/en/perm.html
 lib/netmagis/tmpl/en/pga-ok.html
 lib/netmagis/tmpl/en/pgaacc-add1.html
 lib/netmagis/tmpl/en/pgaacc-choice.html
@@ -188,11 +188,14 @@ lib/netmagis/tmpl/en/pgarlm-index.html
 lib/netmagis/tmpl/en/pgarlm-list.html
 lib/netmagis/tmpl/en/pgarlm-modedit.html
 lib/netmagis/tmpl/en/pgarlm-modsel.html
+lib/netmagis/tmpl/en/profile.html
 lib/netmagis/tmpl/en/search.html
+lib/netmagis/tmpl/en/start.html
 lib/netmagis/tmpl/en/statorg.html
 lib/netmagis/tmpl/en/statuser.html
 lib/netmagis/tmpl/en/topolist.html
 lib/netmagis/tmpl/en/topotop.html
+lib/netmagis/tmpl/en/who.html
 lib/netmagis/tmpl/fr/add-alias.html
 lib/netmagis/tmpl/fr/add-exist.html
 lib/netmagis/tmpl/fr/add-host.html
@@ -254,6 +257,7 @@ lib/netmagis/tmpl/fr/l3.html
 lib/netmagis/tmpl/fr/listof.html
 lib/netmagis/tmpl/fr/listof.tex
 lib/netmagis/tmpl/fr/lnet.html
+lib/netmagis/tmpl/fr/login.html
 lib/netmagis/tmpl/fr/lusers.html
 lib/netmagis/tmpl/fr/mac.html
 lib/netmagis/tmpl/fr/macindex.html
@@ -273,7 +277,6 @@ lib/netmagis/tmpl/fr/mod-view.html
 lib/netmagis/tmpl/fr/net-list.html
 lib/netmagis/tmpl/fr/net-list.tex
 lib/netmagis/tmpl/fr/net.html
-lib/netmagis/tmpl/fr/perm.html
 lib/netmagis/tmpl/fr/pga-ok.html
 lib/netmagis/tmpl/fr/pgaacc-add1.html
 lib/netmagis/tmpl/fr/pgaacc-choice.html
@@ -293,11 +296,14 @@ lib/netmagis/tmpl/fr/pgarlm-index.html
 lib/netmagis/tmpl/fr/pgarlm-list.html
 lib/netmagis/tmpl/fr/pgarlm-modedit.html
 lib/netmagis/tmpl/fr/pgarlm-modsel.html
+lib/netmagis/tmpl/fr/profile.html
 lib/netmagis/tmpl/fr/search.html
 lib/netmagis/tmpl/fr/statorg.html
+lib/netmagis/tmpl/fr/start.html
 lib/netmagis/tmpl/fr/statuser.html
 lib/netmagis/tmpl/fr/topolist.html
 lib/netmagis/tmpl/fr/topotop.html
+lib/netmagis/tmpl/fr/who.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/httpd.conf
 %%WWWDIR%%/add
 %%WWWDIR%%/admgrp
@@ -321,6 +327,7 @@ lib/netmagis/tmpl/fr/topotop.html
 %%WWWDIR%%/l2
 %%WWWDIR%%/l3
 %%WWWDIR%%/lnet
+%%WWWDIR%%/login
 %%WWWDIR%%/lusers
 %%WWWDIR%%/mac
 %%WWWDIR%%/macindex
@@ -329,12 +336,14 @@ lib/netmagis/tmpl/fr/topotop.html
 %%WWWDIR%%/metro
 %%WWWDIR%%/mod
 %%WWWDIR%%/net
-%%WWWDIR%%/perm
 %%WWWDIR%%/pgaacc
 %%WWWDIR%%/pgaindex
 %%WWWDIR%%/pgapasswd
 %%WWWDIR%%/pgarealm
+%%WWWDIR%%/profile
 %%WWWDIR%%/search
+%%WWWDIR%%/start
 %%WWWDIR%%/statorg
 %%WWWDIR%%/statuser
 %%WWWDIR%%/topotop
+%%WWWDIR%%/who

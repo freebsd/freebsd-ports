@@ -2,7 +2,7 @@
 
 PORTNAME=	web2c
 PORTVERSION=	20140525
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2014/
 PKGNAMEPREFIX=	tex-
@@ -57,7 +57,10 @@ INFO=	web2c
 pre-configure:
 	for D in libs/xpdf libs/cairo; do \
 		cd ${WRKDIR}/${DISTNAME}/$$D && \
-		${SETENV} ${CONFIGURE_ENV} ${SH} ${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}; \
+		${SETENV} CC="${CC}" CPP="${CPP}" CXX="${CXX}" \
+			CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" CXXFLAGS="${CXXFLAGS}" \
+			LDFLAGS="${LDFLAGS}" LIBS="${LIBS}" \
+			${CONFIGURE_ENV} ${SH} ${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}; \
 	done
 
 .include <bsd.port.mk>

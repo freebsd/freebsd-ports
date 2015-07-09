@@ -12,6 +12,9 @@ PKGNAMESUFFIX=	32
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Provides access to PostgreSQL databases through the DBI
 
+DEPRECATED=	Use databases/p5-DBD-Pg instead, compatability probles are fixed
+EXPIRATION_DATE=	2015-07-22
+
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 

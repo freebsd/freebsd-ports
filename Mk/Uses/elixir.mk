@@ -62,22 +62,17 @@ RUN_DEPENDS+=	${depend:T}>=0:${PORTSDIR}/${depend}
 .endfor
 
 .if !target(do-build)
-do-build: do-build-elixir
-.endif
-
-.if !target(do-install)
-do-install: do-install-elixir
-.endif
-
-do-build-elixir:
+do-build:
 	@${RM} -f ${WRKSRC}/mix.lock
 	@cd ${WRKSRC} && ${MIX_COMPILE}
 .for app in ${MIX_EXTRA_APPS}
 	@${RM} -f ${WRKSRC}/${app}/mix.lock
 	@cd ${WRKSRC}/${app} && ${MIX_COMPILE}
 .endfor
+.endif # .if !target(do-build)
 
-do-install-elixir:
+.if !target(do-install)
+do-install:
 	@${MKDIR} ${STAGEDIR}${ELIXIR_APP_ROOT}
 	@${MKDIR} ${STAGEDIR}${ELIXIR_APP_ROOT}/lib
 	cd ${WRKSRC}/lib && ${COPYTREE_SHARE} \* ${STAGEDIR}${ELIXIR_APP_ROOT}/lib
@@ -108,5 +103,6 @@ do-install-elixir:
 	${INSTALL_DATA} ${WRKSRC}/${app}/_build/${MIX_BUILD_NAME}/lib/*/ebin/* \
 		${STAGEDIR}${ELIXIR_APP_ROOT}/ebin
 .endfor
+.endif # .if !target(do-install)
 
 .endif #!defined(_INCLUDE_USES_ELIXIR_MK)
