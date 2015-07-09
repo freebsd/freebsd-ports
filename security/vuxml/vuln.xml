@@ -57,6 +57,102 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="37ed8e9c-2651-11e5-86ff-14dae9d210b8">
+    <topic>django -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py27-django</name>
+	<range><ge>1.4.0</ge><lt>1.4.21</lt></range>
+      </package>
+      <package>
+	<name>py32-django</name>
+	<range><ge>1.4.0</ge><lt>1.4.21</lt></range>
+      </package>
+      <package>
+	<name>py33-django</name>
+	<range><ge>1.4.0</ge><lt>1.4.21</lt></range>
+      </package>
+      <package>
+	<name>py34-django</name>
+	<range><ge>1.4.0</ge><lt>1.4.21</lt></range>
+      </package>
+      <package>
+	<name>py27-django</name>
+	<range><ge>1.7.0</ge><lt>1.7.9</lt></range>
+      </package>
+      <package>
+	<name>py32-django</name>
+	<range><ge>1.7.0</ge><lt>1.7.9</lt></range>
+      </package>
+      <package>
+	<name>py33-django</name>
+	<range><ge>1.7.0</ge><lt>1.7.9</lt></range>
+      </package>
+      <package>
+	<name>py34-django</name>
+	<range><ge>1.7.0</ge><lt>1.7.9</lt></range>
+      </package>
+      <package>
+	<name>py27-django</name>
+	<range><ge>1.8.0</ge><lt>1.8.3</lt></range>
+      </package>
+      <package>
+	<name>py32-django</name>
+	<range><ge>1.8.0</ge><lt>1.8.3</lt></range>
+      </package>
+      <package>
+	<name>py33-django</name>
+	<range><ge>1.8.0</ge><lt>1.8.3</lt></range>
+      </package>
+      <package>
+	<name>py34-django</name>
+	<range><ge>1.8.0</ge><lt>1.8.3</lt></range>
+      </package>
+      <package>
+	<name>py27-django-devel</name>
+	<range><lt>20150730,1</lt></range>
+      </package>
+      <package>
+	<name>py32-django-devel</name>
+	<range><lt>20150730,1</lt></range>
+      </package>
+      <package>
+	<name>py33-django-devel</name>
+	<range><lt>20150730,1</lt></range>
+      </package>
+      <package>
+	<name>py34-django-devel</name>
+	<range><lt>20150730,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tim Graham reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2015/jul/08/security-releases/">
+	  <p>In accordance with our security release policy, the Django
+	    team is issuing multiple releases -- Django 1.4.21, 1.7.9, and 1.8.3.
+	    These releases are now available on PyPI and our download page. These
+	    releases address several security issues detailed below. We encourage
+	    all users of Django to upgrade as soon as possible. The Django master
+	    branch has also been updated.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.djangoproject.com/weblog/2015/jul/08/security-releases/</url>
+      <url>https://github.com/django/django/commit/df049ed77a4db67e45db5679bfc76a85d2a26680</url>
+      <url>https://github.com/django/django/commit/014247ad1922931a2f17beaf6249247298e9dc44</url>
+      <url>https://github.com/django/django/commit/17d3a6d8044752f482453f5906026eaf12c39e8e</url>
+      <cvename>CVE-2015-5143</cvename>
+      <cvename>CVE-2015-5144</cvename>
+      <cvename>CVE-2015-5145</cvename>
+    </references>
+    <dates>
+      <discovery>2015-06-10</discovery>
+      <entry>2015-07-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="348bfa69-25a2-11e5-ade1-0011d823eebd">
     <topic>Adobe Flash Player -- critical vulnerabilities</topic>
     <affects>
