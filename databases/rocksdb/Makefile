@@ -25,6 +25,8 @@ USES=		compiler:c++11-lib gmake
 GH_ACCOUNT=	facebook
 USE_GITHUB=	yes
 
+BROKEN_DragonFly=	does not build on DragonFly BSD using GCC with -Werror
+
 PROGRAMS=	db_bench db_repl_stress db_sanity_test db_stress ldb sst_dump table_reader_bench
 
 .include <bsd.port.pre.mk>
