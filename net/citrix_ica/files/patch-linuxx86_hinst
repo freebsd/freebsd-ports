@@ -1,6 +1,14 @@
---- linuxx86/hinst.orig	2012-04-13 14:57:24.000000000 +0000
-+++ linuxx86/hinst	2013-01-02 04:11:06.000000000 +0000
-@@ -105,7 +105,7 @@
+--- linuxx86/hinst.orig	2015-06-26 11:30:10 UTC
++++ linuxx86/hinst
+@@ -1,4 +1,7 @@
+ #!/bin/sh
++
++#set -x
++
+ ###############################################################################
+ #
+ #	Name:		util_tr.sh
+@@ -105,7 +108,7 @@ then
  fi
  
  #  Install in here by default.
@@ -9,7 +17,7 @@
  
  #  Default CDROM mount point
  DefaultCDSourceDir=/cdrom
-@@ -1475,7 +1475,7 @@
+@@ -1460,7 +1463,7 @@ REQUIRE_LICENSE=
  set_require_ICA_license()
  {
      REQUIRE_LICENSE=
@@ -18,27 +26,27 @@
      then
  	TRY1=`"$ECHO_CMD" -l`
  	sleep 1
-@@ -1498,14 +1498,14 @@
+@@ -1483,14 +1486,14 @@ set_license()
  	# a license file.
  
  	if [ -n "$SU_INSTALL" ] ; then
 -	    create_dir /etc/icalicense
-+	    create_dir %%PREFIX%%/etc/icalicense
++            create_dir %%PREFIX%%/etc/icalicense
  
 -	    if [ ! -f /etc/icalicense/clientlicense ]
-+	    if [ ! -f %%PREFIX%%/etc/icalicense/clientlicense ]
++            if [ ! -f %%PREFIX%%/etc/icalicense/clientlicense ]
  	    then
 -		    "$ECHO_CMD" -l >/etc/icalicense/clientlicense
 +		    "$ECHO_CMD" -l > %%PREFIX%%/etc/icalicense/clientlicense
  	    fi
 -	    chmod 444 /etc/icalicense/clientlicense
 -	    chmod 555 /etc/icalicense
-+	    chmod 444 %%PREFIX%%/etc/icalicense/clientlicense
-+	    chmod 555 %%PREFIX%%/etc/icalicense
++            chmod 444 %%PREFIX%%/etc/icalicense/clientlicense
++            chmod 555 %%PREFIX%%/etc/icalicense
  	fi
  }
  ###############################################################################
-@@ -1548,7 +1548,7 @@
+@@ -1533,7 +1536,7 @@ install_ICA_client()
  
  	echo_no_nl "$instica4"
  
@@ -47,16 +55,7 @@
  	if [ "$ANSWER" != "$INSTALLER_YES" ]
  	then
  		"$ECHO_CMD" $instica5
-@@ -1570,7 +1570,7 @@
- 	rm $EULA
- 
- 	if
--		eula_acceptance_menu
-+		true
- 	then
- 		# EULA accepted - continue with installation
- 		:
-@@ -1589,9 +1589,8 @@
+@@ -1557,9 +1560,8 @@ install_ICA_client()
  
  		if [ "$PORT" != "uclibc" ]
  		then 
@@ -67,7 +66,7 @@
  	else
  	   COR_SELECTED=false
  	fi
-@@ -1899,7 +1898,7 @@
+@@ -1774,7 +1776,7 @@ setCDSourceDir()
  	while [ "$got_directory" = "false" ]
  	do
  		echo_no_nl "$dirutil1a $ICAInstDir] $dirutil1b"
@@ -76,7 +75,7 @@
  		if [ "x$newCDSourceDir" != "x" ]
  		then
  			CDSourceDir="$newCDSourceDir"
-@@ -1971,7 +1970,7 @@
+@@ -1846,7 +1848,7 @@ setICAInstDir()
  	while [ "$got_directory" = "false" ]
  	do
  		echo_no_nl "$dirutil4a $ICAInstDir] $dirutil4b"
@@ -85,7 +84,7 @@
  		if [ "`echo x$newICAInstDir | tolower`" = "x$INSTALLER_QUIT" ]
  		then
  			FAIL_MSG=$dirutil13
-@@ -2567,7 +2566,7 @@
+@@ -2436,7 +2438,7 @@ install_packages(){
  	then
  		:
  	else
@@ -94,7 +93,7 @@
  		return 
  	fi
  
-@@ -2641,7 +2640,7 @@
+@@ -2510,7 +2512,7 @@ install_packages(){
  		fi
  	fi
  
@@ -103,7 +102,7 @@
  }
  
  #!/bin/sh
-@@ -2787,26 +2786,19 @@
+@@ -2651,26 +2653,18 @@ esac
  
  netscape_integrate()
  {
@@ -124,7 +123,6 @@
 -	|| test "$MOZILLA_HOME" != "" -a -d "$MOZILLA_HOME"\
 -	|| test "$EXTRA_BROWSERS" != ""
 -    then
-+
 +    case ${FOUND_NS} in
 +    TRUE)
    	user_echo $integrate_netscape3
@@ -135,19 +133,17 @@
  	user_prompt "$integrate_netscape2"
   	getyesno $INSTALLER_NO
  	if [ "$ANSWER" = "$INSTALLER_YES" ]
-@@ -2815,9 +2807,9 @@
+@@ -2679,7 +2673,8 @@ netscape_integrate()
  	else
    		user_echo $integrate_netscape6
  	fi
+-    fi
 +	;;
 +    esac
-     fi
--  fi
--
+   fi
+ 
    # Create utility script files in install root.
-   create_wfica_script
-   create_wfica_assoc_script
-@@ -4422,8 +4414,9 @@
+@@ -4403,8 +4398,8 @@ main_install_menu(){
  		    "$ECHO_CMD" $menus5
  		    return 0
  		fi
@@ -155,11 +151,10 @@
 -		do
 +		#while true
 +		#do
-+		{
  			#
  			# Get the Function the user wants to perform
  			#
-@@ -4437,7 +4430,7 @@
+@@ -4418,7 +4413,7 @@ main_install_menu(){
  			fi
  			echo_no_nl "$menus2 1-$menuItems [$keyDefault]: "
  			
@@ -168,13 +163,12 @@
  
  			if test "x$keynum" = "x"
  			then 
-@@ -4502,7 +4495,8 @@
+@@ -4483,7 +4478,7 @@ main_install_menu(){
  				# After any action make exit the default
  				keyDefault=3
  			fi
 -		done
 +		#done
-+		}
  }
  
  
