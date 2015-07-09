@@ -57,6 +57,42 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="075952fe-267e-11e5-9d03-3c970e169bc2">
+    <topic>openssl -- alternate chains certificate forgery vulnerability</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><ge>1.0.2_2</ge><lt>1.0.2_4</lt></range>
+      </package>
+      <package>
+	<name>mingw32-openssl</name>
+	<range><ge>1.0.2b</ge><lt>1.0.2d</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenSSL reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv_20150709.txt">
+	  <p>During certificate verification, OpenSSL (starting from version
+	    1.0.1n and 1.0.2b) will attempt to find an alternative certificate
+	    chain if the first attempt to build such a chain fails. An error
+	    in the implementation of this logic can mean that an attacker could
+	    cause certain checks on untrusted certificates to be bypassed,
+	    such as the CA flag, enabling them to use a valid leaf certificate
+	    to act as a CA and "issue" an invalid certificate.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1793</cvename>
+      <url>https://www.openssl.org/news/secadv_20150709.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-07-09</discovery>
+      <entry>2015-07-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="37ed8e9c-2651-11e5-86ff-14dae9d210b8">
     <topic>django -- multiple vulnerabilities</topic>
     <affects>
