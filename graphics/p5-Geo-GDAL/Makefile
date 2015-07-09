@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	Geo-GDAL
-PORTVERSION=	1.11.2
-PORTREVISION=	3
+PORTVERSION=	2.0.0
 CATEGORIES=	graphics perl5
-MASTER_SITES=	http://download.osgeo.org/gdal/ \
-		ftp://ftp.remotesensing.org/pub/gdal/ \
+MASTER_SITES=	http://download.osgeo.org/gdal/${PORTVERSION}/ \
+		ftp://ftp.remotesensing.org/pub/gdal/${PORTVERSION}/ \
 		LOCAL/sunpoet
 PKGNAMEPREFIX=	p5-
 DISTNAME=	gdal-${PORTVERSION}
@@ -27,7 +26,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|(const char \*)""|(char \*)""|' ${WRKSRC}/gdal_wrap.cpp ${WRKSRC}/ogr_wrap.cpp
 
 post-install:
-	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Geo/GDAL/Const/Const.so ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Geo/*/*.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Geo/GDAL/Const/Const.so ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Geo/*/*.so
 
 .include <bsd.port.mk>
