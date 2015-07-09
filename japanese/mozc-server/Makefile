@@ -3,7 +3,7 @@
 
 PORTNAME=	mozc
 PORTVERSION=	2.16.2051.102
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese
 MASTER_SITES=	LOCAL/hrs
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -27,7 +27,7 @@ USES=		compiler:c++11-lang pkgconfig iconv:wchar_t gmake \
 
 BUILD_MOZC_LIST?=	mozc_server
 
-.if   ${BUILD_MOZC_LIST:Mmozc_server} == "mozc_server"
+.if ${BUILD_MOZC_LIST:Mmozc_server} == "mozc_server"
 PKGNAMEPREFIX=	ja-
 PKGNAMESUFFIX=	-server
 
@@ -124,7 +124,7 @@ post-configure: ${WRKSRC}/mozcmake
 .endif
 
 # mozc_server
-.if ${BUILD_MOZC_LIST:Mmozc_server} == "mozc_server" || defined(makesum)
+.if ${BUILD_MOZC_LIST:Mmozc_server} == "mozc_server" || make(makesum)
 GYP_OPTIONS+=	--noqt
 GYP_DEFINES+=	use_libibus=0 \
 		enable_gtk_renderer=0
@@ -251,6 +251,58 @@ do-install-ibus_mozc:
 	    ${STAGEDIR}${DATADIR}/icons/product_icon.png
 .endif
 
+# uim_mozc
+.if ${BUILD_MOZC_LIST:Muim_mozc} == "uim_mozc" || make(makesum)
+#USE_GITHUB=	yes	# XXX
+GH_ACCOUNT=	e-kato
+GH_PROJECT=	macuim
+GH_TAGNAME=	v0.6.16.2
+DISTFILES+=	${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME}_GH0${EXTRACT_SUFX}:gh
+EXTRACT_ONLY+=	${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME}_GH0${EXTRACT_SUFX}
+MASTER_SITES+=	https://codeload.github.com/${GH_ACCOUNT}/${GH_PROJECT}/tar.gz/${GH_TAGNAME}?dummy=/:gh
+WRKSRC_MU=	${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME:C/^v//}
+
+LIB_DEPENDS+=	libuim.so:${PORTSDIR}/textproc/uim
+RUN_DEPENDS+=	mozc_server:${PORTSDIR}/japanese/mozc-server \
+		mozc_tool:${PORTSDIR}/japanese/mozc-tool
+GYP_OPTIONS+=	--noqt
+GYP_DEFINES+=	use_libibus=0 \
+		enable_gtk_renderer=0
+
+PLIST_FILES+=	lib/uim/plugin/libuim-mozc.so \
+		%%DATADIR%%/mozc.scm \
+		%%DATADIR%%/mozc-custom.scm \
+		%%DATADIR%%/mozc-key-custom.scm \
+		%%DATADIR%%/pixmaps/mozc.png \
+		"@exec ${LOCALBASE}/bin/uim-module-manager --register mozc" \
+		"@unexec ${LOCALBASE}/bin/uim-module-manager --unregister mozc"
+
+post-extract-uim_mozc:
+	${LN} -s ${WRKSRC_MU}/Mozc/uim ${WRKSRC}/unix
+	${REINPLACE_CMD} -e "s,/usr/lib/mozc,${LOCALBASE}/libexec," \
+	    ${WRKSRC_MU}/Mozc/scm/mozc-custom.scm
+
+post-extract: post-extract-uim_mozc
+
+do-build-uim_mozc:
+	${BUILD_MOZC_CMD_BUILD} \
+	    unix/uim/uim.gyp:uim-mozc
+
+do-install-uim_mozc:
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/uim/plugin
+	${INSTALL_PROGRAM} \
+	    ${WRKSRC}/out_linux/${BUILD_MODE}/libuim-mozc.so \
+	    ${STAGEDIR}${PREFIX}/lib/uim/plugin
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC_MU}/Mozc/scm && \
+	    ${INSTALL_DATA} mozc.scm mozc-custom.scm mozc-key-custom.scm \
+	    ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}/pixmaps
+	${INSTALL_DATA} \
+	    ${WRKSRC}/data/images/product_icon_32bpp-128.png \
+	    ${STAGEDIR}${DATADIR}/pixmaps/mozc.png
+.endif
+
 # fcitx_mozc
 .if ${BUILD_MOZC_LIST:Mfcitx_mozc} == "fcitx_mozc" || make(makesum)
 PATCH_SITES=	http://download.fcitx-im.org/fcitx-mozc/
@@ -261,7 +313,6 @@ PATCH_DIST_STRIP=-p2
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-unix-fcitx-eim.cc \
 		${PATCHDIR}/extra-patch-unix-fcitx-mozc_response_parser.cc \
 		${PATCHDIR}/extra-patch-unix-fcitx-surrounding_text_util.cc
-
 GYP_OPTIONS+=	--noqt
 GYP_DEFINES+=	use_libibus=0 \
 		enable_gtk_renderer=0
