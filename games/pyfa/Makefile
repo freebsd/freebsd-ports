@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyfa
-PORTVERSION=	1.11.0
+PORTVERSION=	1.13.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games python
 
@@ -30,8 +30,7 @@ WX_COMPS=	python:run
 WX_UNICODE=	yes
 
 OPTIONS_DEFINE=		DPSGRAPHING
-DPSGRAPHING_DESC=	DPS graphing (requires NumPy and matplotlib)
-OPTIONS_DEFAULT=	DPSGRAPHING
+DPSGRAPHING_DESC=	DPS graphing (requires NumPy and matplotlib. need fix)
 
 DPSGRAPHING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:${PORTSDIR}/math/py-matplotlib \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:${PORTSDIR}/math/py-numpy \
