@@ -4,7 +4,7 @@
 #
 
 # PROVIDE: puppetmaster
-# REQUIRE: NETWORK
+# REQUIRE: LOGIN
 
 # Add the following lines to /etc/rc.conf to enable the puppetmaster:
 #
