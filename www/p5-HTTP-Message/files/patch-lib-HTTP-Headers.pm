@@ -1,6 +1,6 @@
---- lib/HTTP/Headers.pm.orig	2013-04-08 11:36:07.000000000 -0400
-+++ lib/HTTP/Headers.pm	2013-04-08 11:42:27.000000000 -0400
-@@ -150,7 +150,7 @@
+--- lib/HTTP/Headers.pm.orig	2015-07-09 00:23:53 UTC
++++ lib/HTTP/Headers.pm
+@@ -151,7 +151,7 @@ sub _header
      my($self, $field, $val, $op) = @_;
  
      Carp::croak("Illegal field name '$field'")
