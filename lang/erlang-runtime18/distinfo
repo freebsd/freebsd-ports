@@ -6,3 +6,5 @@ SHA256 (erlang/otp_doc_html_18.0.tar.gz) = e5a766f68406f5025f921ec32e8959937189e
 SIZE (erlang/otp_doc_html_18.0.tar.gz) = 33857396
 SHA256 (erlang/patch-otp-18.0.1) = 9769b66cd0c385f40365e58c44970e38a1707e9544c797394203add744c2ea0b
 SIZE (erlang/patch-otp-18.0.1) = 5727
+SHA256 (erlang/patch-otp-18.0.2) = 2c6ca53c50b05586f04503b4691a0eadff4941b4acc75e72f0b963ee840cced5
+SIZE (erlang/patch-otp-18.0.2) = 32063

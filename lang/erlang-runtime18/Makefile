@@ -16,7 +16,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	http://olgeni.olgeni.com/~olgeni/distfiles/ \
 		LOCAL/olgeni
-PATCHFILES=	patch-otp-18.0.1
+PATCHFILES=	patch-otp-18.0.1 patch-otp-18.0.2
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Functional programming language from Ericsson
@@ -45,7 +45,7 @@ SMP_DESC=	Enable SMP support
 WX_DESC=	Enable WX application
 
 OPTIONS_DEFAULT=KQUEUE OPENSSL SCTP SMP THREADS
-OPTIONS_EXCLUDE_DragonFly=	SCTP
+OPTIONS_EXCLUDE_DragonFly=	HIPE SCTP
 
 ERL_RELEASE=	18.0
 
@@ -200,8 +200,12 @@ post-install:
 		-C ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}
 
 	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-7.0/* \
-		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-7.0.1
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-7.0.2
 	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-7.0
+
+	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/runtime_tools-1.9/* \
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/runtime_tools-1.9.1
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/runtime_tools-1.9
 
 	${INSTALL_DATA} ${WRKSRC}/lib/dialyzer/doc/*.txt \
 		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/dialyzer-*/doc/
