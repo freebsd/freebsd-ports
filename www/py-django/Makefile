@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django
-PORTVERSION=	1.8.2
+PORTVERSION=	1.8.3
 CATEGORIES=	www python
 MASTER_SITES=	https://www.djangoproject.com/m/releases/${PORTVERSION}/ \
 		CHEESESHOP
@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Django-${PORTVERSION}
 DIST_SUBDIR=	python
 
-MAINTAINER=	lwhsu@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	High-level Python Web framework
 
 LICENSE=	BSD3CLAUSE
