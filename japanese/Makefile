@@ -274,6 +274,7 @@
     SUBDIR += today
     SUBDIR += tomoe
     SUBDIR += uim-anthy
+    SUBDIR += uim-mozc
     SUBDIR += uim-tomoe-gtk
     SUBDIR += vera-fpw
     SUBDIR += vftool
