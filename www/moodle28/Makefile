@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	moodle
-PORTVERSION=	2.8.6
+PORTVERSION=	2.8.7
 CATEGORIES=	www
 MASTER_SITES=	SF/moodle/Moodle/stable28/
 PKGNAMESUFFIX=	${PKGORIGIN:T:S/moodle//}
@@ -15,17 +15,18 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/intl.so:${PORTSDIR}/devel/pecl-intl
 RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/intl.so:${PORTSDIR}/devel/pecl-intl
 
-CONFLICTS=	moodle27-2.7.[0-9]* moodle29-2.9
+CONFLICTS=	moodle27-2.7.[0-9]* moodle29-2.9.[0-9]*
 
 USES=		tar:tgz
 USE_PHP=	session gd pcre mbstring iconv tokenizer curl xml xmlrpc ctype \
-		soap openssl simplexml spl dom json zip zlib hash
+		soap openssl simplexml spl dom json zip zlib hash opcache
 WRKSRC=		${WRKDIR}/moodle
 
-OPTIONS_DEFINE=	MYSQL PGSQL MSSQL LDAP MIMETEX
-OPTIONS_DEFAULT=MYSQL
-MSSQL_DESC=	MS SQL Server support
-MIMETEX_DESC=	mimeTeX filter functionality support
+OPTIONS_SINGLE=		BACKEND
+OPTIONS_SINGLE_BACKEND=	MYSQL PGSQL MSSQL
+OPTIONS_DEFINE=		LDAP MIMETEX
+OPTIONS_DEFAULT=	MYSQL
+MIMETEX_DESC=		mimeTeX filter functionality support
 
 .include <bsd.port.options.mk>
 
@@ -59,11 +60,12 @@ MOODLEDIR?=	www/moodle
 MOODLEDATADIR?=	moodledata
 
 pre-install:
+	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s?${WRKSRC}?${MOODLEDIR}?g" >>${PLIST}
+	@${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s?${WRKSRC}?@dir ${MOODLEDIR}?g" >> ${PLIST}
+
 	@${ECHO_CMD} "@owner ${WWWOWN}" >> ${PLIST}
 	@${ECHO_CMD} "@group ${WWWGRP}" >> ${PLIST}
 	@${ECHO_CMD} "@mode 755" >> ${PLIST}
-	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s?${WRKSRC}?${MOODLEDIR}?g" >>${PLIST}
-	@${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s?${WRKSRC}?@dir ${MOODLEDIR}?g" >> ${PLIST}
 	@${ECHO} @dir ${MOODLEDATADIR} >> ${PLIST}
 	@${ECHO_CMD} "@mode" >> ${PLIST}
 	@${ECHO_CMD} "@group" >> ${PLIST}
