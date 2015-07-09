@@ -577,11 +577,12 @@ Notes:
       <url>http://blog.nodejs.org/2015/07/03/node-v0-12-6-stable/</url>
       <url>https://github.com/joyent/node/commit/78b0e30954111cfaba0edbeee85450d8cbc6fdf6</url>
       <url>https://github.com/nodejs/io.js/commit/030f8045c706a8c3925ec7cb3184fdfae4ba8676</url>
+      <cvename>CVE-2015-5380</cvename>
     </references>
     <dates>
       <discovery>2015-07-03</discovery>
       <entry>2015-07-06</entry>
-      <modified>2015-07-06</modified>
+      <modified>2015-07-09</modified>
     </dates>
   </vuln>
 
