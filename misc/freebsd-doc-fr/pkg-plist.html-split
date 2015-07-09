@@ -437,7 +437,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/audit-administration.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/audit-config.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/audit-inline-glossary.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/audit-install.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/audit.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/backup-basics.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/backup-strategies.html
@@ -639,8 +638,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/outgoing-only.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/packages-using.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/permissions.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/pgpkeys-core.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/pgpkeys-developers.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/pgpkeys.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ports-broken.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ports-finding-applications.html
