@@ -110,19 +110,19 @@ Notes:
       </package>
       <package>
 	<name>py27-django-devel</name>
-	<range><lt>20150730,1</lt></range>
+	<range><le>20150531,1</le></range>
       </package>
       <package>
 	<name>py32-django-devel</name>
-	<range><lt>20150730,1</lt></range>
+	<range><le>20150531,1</le></range>
       </package>
       <package>
 	<name>py33-django-devel</name>
-	<range><lt>20150730,1</lt></range>
+	<range><le>20150531,1</le></range>
       </package>
       <package>
 	<name>py34-django-devel</name>
-	<range><lt>20150730,1</lt></range>
+	<range><le>20150531,1</le></range>
       </package>
     </affects>
     <description>
