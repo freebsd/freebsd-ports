@@ -3,6 +3,7 @@
 
 PORTNAME=	gdal-grass
 PORTVERSION=	1.11.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.osgeo.org/gdal/
 
