@@ -3,6 +3,7 @@
 
 PORTNAME=	syncthing-cli
 PORTVERSION=	0.1.0.2015062701
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	swills@FreeBSD.org
@@ -15,7 +16,7 @@ GH_ACCOUNT=	syncthing AudriusButkevicius:audrius
 GH_PROJECT=	syncthing:st cli:audrius
 GH_TAGNAME=	eba2fb7 v${SYNCTHING_VER}:st 7f561c7:audrius
 
-SYNCTHING_VER=	0.11.10
+SYNCTHING_VER=	0.11.13
 
 PLIST_FILES=	bin/syncthing-cli
 
