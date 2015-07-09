@@ -3,7 +3,7 @@
 
 PORTNAME=	osmium
 PORTVERSION=	git20130522
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	astro geography devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
