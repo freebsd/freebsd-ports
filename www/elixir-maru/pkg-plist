@@ -37,6 +37,7 @@ lib/elixir/lib/maru/ebin/Elixir.Maru.Router.Resource.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Router.Validator.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Router.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Supervisor.beam
+lib/elixir/lib/maru/ebin/Elixir.Maru.Test.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Utils.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Validations.AllowBlank.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Validations.AtLeastOneOf.beam
@@ -69,6 +70,7 @@ lib/elixir/lib/maru/lib/maru/router.ex
 lib/elixir/lib/maru/lib/maru/router/endpoint.ex
 lib/elixir/lib/maru/lib/maru/router/path.ex
 lib/elixir/lib/maru/lib/maru/supervisor.ex
+lib/elixir/lib/maru/lib/maru/test.ex
 lib/elixir/lib/maru/lib/maru/utils.ex
 lib/elixir/lib/maru/lib/maru/validations.ex
 lib/elixir/lib/maru/lib/mix/tasks/routers.ex
