@@ -23,7 +23,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/cups/printing-cups-configuring-printers.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/cups/printing-cups-configuring-server.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/cups/printing-cups-install.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/cups/printing-cups-ports-knobs.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/cups/printing-cups-troubleshooting.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/cups/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/compairing-bsd-and-linux.html
@@ -94,7 +93,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/next-steps.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/other-useful-commands.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/other.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/new-users/printing-files-from-dos.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/your-working-environment.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pam/index.html
@@ -157,16 +155,13 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/acknowledgments.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/admin.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/advanced.html
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/all-about-zfs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/applications.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/bibliography.html
-%%DOCSDIR%%/%%DOCLANG%%/books/faq/commercial.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-drives.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-kbd-mice.html
-%%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-memory.html
-%%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-networking.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-other.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-processors.html
-%%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-sound.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/disks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/funnies.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/hardware.html
