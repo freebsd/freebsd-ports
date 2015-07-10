@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	relx
-PORTVERSION=	3.3.0
-DISTVERSIONPREFIX=v
+PORTVERSION=	3.3.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 MASTER_SITES+=	http://olgeni.olgeni.com/~olgeni/distfiles/:deps \
 		LOCAL/olgeni:deps
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		relx-cache-3.tar.gz:deps
+		relx-cache-4.tar.gz:deps
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Sane, simple release creation for Erlang
@@ -27,8 +27,11 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
+# Use either erlware or tsloughter, depending on who actually
+# published the package on hex.pm
 USE_GITHUB=	yes
-GH_ACCOUNT=	erlware
+GH_ACCOUNT=	tsloughter
+GH_TAGNAME=	0b04cf0
 
 # rebar3 insists on downloading dependencies, and some kind of package
 # index into the user's HOME. We need to trick it into behaving by
