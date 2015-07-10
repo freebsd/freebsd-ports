@@ -1155,6 +1155,7 @@ man/man3/SSL_CTX_ctrl.3.gz
 man/man3/SSL_CTX_flush_sessions.3.gz
 man/man3/SSL_CTX_free.3.gz
 man/man3/SSL_CTX_get0_chain_certs.3.gz
+man/man3/SSL_CTX_get0_param.3.gz
 man/man3/SSL_CTX_get_cert_store.3.gz
 man/man3/SSL_CTX_get_client_CA_list.3.gz
 man/man3/SSL_CTX_get_client_cert_cb.3.gz
@@ -1205,6 +1206,7 @@ man/man3/SSL_CTX_set1_chain.3.gz
 man/man3/SSL_CTX_set1_chain_cert_store.3.gz
 man/man3/SSL_CTX_set1_curves.3.gz
 man/man3/SSL_CTX_set1_curves_list.3.gz
+man/man3/SSL_CTX_set1_param.3.gz
 man/man3/SSL_CTX_set1_verify_cert_store.3.gz
 man/man3/SSL_CTX_set_cert_cb.3.gz
 man/man3/SSL_CTX_set_cert_store.3.gz
@@ -1283,6 +1285,7 @@ man/man3/SSL_do_handshake.3.gz
 man/man3/SSL_flush_sessions.3.gz
 man/man3/SSL_free.3.gz
 man/man3/SSL_get0_chain_certs.3.gz
+man/man3/SSL_get0_param.3.gz
 man/man3/SSL_get1_curves.3.gz
 man/man3/SSL_get_SSL_CTX.3.gz
 man/man3/SSL_get_accept_state.3.gz
@@ -1342,6 +1345,7 @@ man/man3/SSL_set1_chain.3.gz
 man/man3/SSL_set1_chain_cert_store.3.gz
 man/man3/SSL_set1_curves.3.gz
 man/man3/SSL_set1_curves_list.3.gz
+man/man3/SSL_set1_param.3.gz
 man/man3/SSL_set1_verify_cert_store.3.gz
 man/man3/SSL_set_bio.3.gz
 man/man3/SSL_set_cert_cb.3.gz
