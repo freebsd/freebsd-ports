@@ -1,6 +1,6 @@
---- src/condor_io/condor_crypt_3des.cpp.orig	2014-12-09 23:15:18.000000000 +0100
-+++ src/condor_io/condor_crypt_3des.cpp	2015-02-28 19:38:25.216863132 +0100
-@@ -35,9 +35,9 @@
+--- src/condor_io/condor_crypt_3des.cpp.orig	2015-04-07 15:10:11 UTC
++++ src/condor_io/condor_crypt_3des.cpp
+@@ -35,9 +35,9 @@ Condor_Crypt_3des :: Condor_Crypt_3des(c
  	unsigned char * keyData = k.getPaddedKeyData(24);
  	ASSERT(keyData);
  
@@ -13,7 +13,7 @@
  
      // initialize ivsec
      resetState();
-@@ -71,9 +71,9 @@
+@@ -71,9 +71,9 @@ bool Condor_Crypt_3des :: encrypt(unsign
      output = (unsigned char *) malloc(input_len);
  
      if (output) {
@@ -26,7 +26,7 @@
          return true;   
      }
      else {
-@@ -95,9 +95,9 @@
+@@ -95,9 +95,9 @@ bool Condor_Crypt_3des :: decrypt(unsign
      if (output) {
          output_len = input_len;
  

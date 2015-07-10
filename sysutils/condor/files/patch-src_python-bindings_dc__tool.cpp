@@ -1,5 +1,5 @@
---- src/python-bindings/dc_tool.cpp.orig	2014-11-26 11:22:10.000000000 -0600
-+++ src/python-bindings/dc_tool.cpp	2014-12-27 16:40:45.000000000 -0600
+--- src/python-bindings/dc_tool.cpp.orig	2015-04-07 15:10:11 UTC
++++ src/python-bindings/dc_tool.cpp
 @@ -7,6 +7,21 @@
  # include <pyport.h>
  # endif

@@ -1,6 +1,6 @@
---- src/condor_sysapi/idle_time.cpp.orig	2014-11-26 11:22:10.000000000 -0600
-+++ src/condor_sysapi/idle_time.cpp	2014-12-27 16:42:00.000000000 -0600
-@@ -205,19 +205,28 @@
+--- src/condor_sysapi/idle_time.cpp.orig	2015-04-07 15:10:11 UTC
++++ src/condor_sysapi/idle_time.cpp
+@@ -205,19 +205,28 @@ calc_idle_time_cpp( time_t & m_idle, tim
  	return;
  }
  

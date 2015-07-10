@@ -1,11 +1,11 @@
---- build/cmake/CondorPackageConfig.cmake.orig	2013-09-19 15:12:10.000000000 -0500
-+++ build/cmake/CondorPackageConfig.cmake	2013-10-20 12:04:52.000000000 -0500
+--- build/cmake/CondorPackageConfig.cmake.orig	2015-04-07 15:10:11 UTC
++++ build/cmake/CondorPackageConfig.cmake
 @@ -1,3 +1,4 @@
 +
   ###############################################################
   #
   # Copyright 2011 Red Hat, Inc.
-@@ -170,6 +171,23 @@
+@@ -174,6 +175,23 @@ if(${OS_NAME} STREQUAL "DARWIN")
  	# enable if we desire native packaging.
  	# set ( CPACK_GENERATOR "${CPACK_GENERATOR};PackageMaker" ) ;
  	# set (CPACK_OSX_PACKAGE_VERSION)
