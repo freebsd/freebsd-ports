@@ -57,6 +57,32 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c93c9395-25e1-11e5-a4a5-002590263bf5">
+    <topic>wpa_supplicant -- WPS_NFC option payload length validation vulnerability</topic>
+    <affects>
+      <package>
+	<name>wpa_supplicant</name>
+	<range><lt>2.4_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jouni Malinen reports:</p>
+	<blockquote cite="http://w1.fi/security/2015-5/incomplete-wps-and-p2p-nfc-ndef-record-payload-length-validation.txt">
+	  <p>Incomplete WPS and P2P NFC NDEF record payload length
+	    validation. (2015-5)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://w1.fi/security/2015-5/incomplete-wps-and-p2p-nfc-ndef-record-payload-length-validation.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-07-08</discovery>
+      <entry>2015-07-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="075952fe-267e-11e5-9d03-3c970e169bc2">
     <topic>openssl -- alternate chains certificate forgery vulnerability</topic>
     <affects>
