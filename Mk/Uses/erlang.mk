@@ -129,7 +129,7 @@ do-install-erlang:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${ERL_DOCS}
 	if [ -d "${WRKSRC}/${file}" ]; then \
-		cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${STAGEDIR}${DOCSDIR}; \
+		cd ${WRKSRC} && ${COPYTREE_SHARE} ${file} ${STAGEDIR}${DOCSDIR}; \
 	else \
 		${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}; \
 	fi
