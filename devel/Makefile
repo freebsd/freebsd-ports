@@ -433,6 +433,7 @@
     SUBDIR += eris
     SUBDIR += erlang-bbmustache
     SUBDIR += erlang-bear
+    SUBDIR += erlang-clique
     SUBDIR += erlang-common_lib
     SUBDIR += erlang-cuttlefish
     SUBDIR += erlang-erlware_commons
