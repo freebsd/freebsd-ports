@@ -1,4 +1,4 @@
-bin/xscreensaver
+@(,,4755) bin/xscreensaver
 bin/xscreensaver-command
 bin/xscreensaver-demo
 bin/xscreensaver-getimage
@@ -17,6 +17,7 @@ bin/xscreensaver-hacks/atlantis
 bin/xscreensaver-hacks/attraction
 bin/xscreensaver-hacks/atunnel
 bin/xscreensaver-hacks/barcode
+bin/xscreensaver-hacks/binaryring
 bin/xscreensaver-hacks/blaster
 bin/xscreensaver-hacks/blinkbox
 bin/xscreensaver-hacks/blitspin
@@ -35,6 +36,7 @@ bin/xscreensaver-hacks/carousel
 bin/xscreensaver-hacks/ccurve
 bin/xscreensaver-hacks/celtic
 bin/xscreensaver-hacks/circuit
+bin/xscreensaver-hacks/cityflow
 bin/xscreensaver-hacks/cloudlife
 bin/xscreensaver-hacks/companioncube
 bin/xscreensaver-hacks/compass
@@ -77,6 +79,7 @@ bin/xscreensaver-hacks/fuzzyflakes
 bin/xscreensaver-hacks/galaxy
 bin/xscreensaver-hacks/gears
 bin/xscreensaver-hacks/geodesic
+bin/xscreensaver-hacks/geodesicgears
 bin/xscreensaver-hacks/gflux
 bin/xscreensaver-hacks/glblur
 bin/xscreensaver-hacks/glcells
@@ -161,6 +164,7 @@ bin/xscreensaver-hacks/queens
 bin/xscreensaver-hacks/rd-bomb
 bin/xscreensaver-hacks/ripples
 bin/xscreensaver-hacks/rocks
+bin/xscreensaver-hacks/romanboy
 bin/xscreensaver-hacks/rorschach
 bin/xscreensaver-hacks/rotzoomer
 bin/xscreensaver-hacks/rubik
@@ -177,6 +181,7 @@ bin/xscreensaver-hacks/sonar
 %%SETUID_HACKS%%@mode
 bin/xscreensaver-hacks/speedmine
 bin/xscreensaver-hacks/spheremonics
+bin/xscreensaver-hacks/splitflap
 bin/xscreensaver-hacks/spotlight
 bin/xscreensaver-hacks/sproingies
 bin/xscreensaver-hacks/squiral
@@ -206,6 +211,7 @@ bin/xscreensaver-hacks/wander
 bin/xscreensaver-hacks/webcollage
 bin/xscreensaver-hacks/webcollage-helper
 bin/xscreensaver-hacks/whirlwindwarp
+bin/xscreensaver-hacks/winduprobot
 bin/xscreensaver-hacks/wormhole
 bin/xscreensaver-hacks/xanalogtv
 bin/xscreensaver-hacks/xflame
@@ -237,6 +243,7 @@ man/man6/atlantis.6.gz
 man/man6/attraction.6.gz
 man/man6/atunnel.6.gz
 man/man6/barcode.6.gz
+man/man6/binaryring.6.gz
 man/man6/blaster.6.gz
 man/man6/blinkbox.6.gz
 man/man6/blitspin.6.gz
@@ -255,6 +262,7 @@ man/man6/carousel.6.gz
 man/man6/ccurve.6.gz
 man/man6/celtic.6.gz
 man/man6/circuit.6.gz
+man/man6/cityflow.6.gz
 man/man6/cloudlife.6.gz
 man/man6/companioncube.6.gz
 man/man6/compass.6.gz
@@ -297,6 +305,7 @@ man/man6/fuzzyflakes.6.gz
 man/man6/galaxy.6.gz
 man/man6/gears.6.gz
 man/man6/geodesic.6.gz
+man/man6/geodesicgears.6.gz
 man/man6/gflux.6.gz
 man/man6/glblur.6.gz
 man/man6/glcells.6.gz
@@ -376,6 +385,7 @@ man/man6/pyro.6.gz
 man/man6/qix.6.gz
 man/man6/quasicrystal.6.gz
 man/man6/queens.6.gz
+man/man6/romanboy.6.gz
 man/man6/rd-bomb.6.gz
 man/man6/ripples.6.gz
 man/man6/rocks.6.gz
@@ -393,6 +403,7 @@ man/man6/slip.6.gz
 man/man6/sonar.6.gz
 man/man6/speedmine.6.gz
 man/man6/spheremonics.6.gz
+man/man6/splitflap.6.gz
 man/man6/spotlight.6.gz
 man/man6/sproingies.6.gz
 man/man6/squiral.6.gz
@@ -421,6 +432,7 @@ man/man6/voronoi.6.gz
 man/man6/wander.6.gz
 man/man6/webcollage.6.gz
 man/man6/whirlwindwarp.6.gz
+man/man6/winduprobot.6.gz
 man/man6/wormhole.6.gz
 man/man6/xanalogtv.6.gz
 man/man6/xflame.6.gz
@@ -436,29 +448,29 @@ share/applications/xscreensaver-lock.desktop
 share/applications/xscreensaver-properties.desktop
 share/applications/xscreensaver-start.desktop
 share/applications/xscreensaver-stop.desktop
-share/locale/ca/LC_MESSAGES/xscreensaver.mo
-share/locale/da/LC_MESSAGES/xscreensaver.mo
-share/locale/de/LC_MESSAGES/xscreensaver.mo
-share/locale/es/LC_MESSAGES/xscreensaver.mo
-share/locale/et/LC_MESSAGES/xscreensaver.mo
-share/locale/fi/LC_MESSAGES/xscreensaver.mo
-share/locale/fr/LC_MESSAGES/xscreensaver.mo
-share/locale/hu/LC_MESSAGES/xscreensaver.mo
-share/locale/it/LC_MESSAGES/xscreensaver.mo
-share/locale/ja/LC_MESSAGES/xscreensaver.mo
-share/locale/ko/LC_MESSAGES/xscreensaver.mo
-share/locale/nb/LC_MESSAGES/xscreensaver.mo
-share/locale/nl/LC_MESSAGES/xscreensaver.mo
-share/locale/pl/LC_MESSAGES/xscreensaver.mo
-share/locale/pt/LC_MESSAGES/xscreensaver.mo
-share/locale/pt_BR/LC_MESSAGES/xscreensaver.mo
-share/locale/ru/LC_MESSAGES/xscreensaver.mo
-share/locale/sk/LC_MESSAGES/xscreensaver.mo
-share/locale/sv/LC_MESSAGES/xscreensaver.mo
-share/locale/vi/LC_MESSAGES/xscreensaver.mo
-share/locale/wa/LC_MESSAGES/xscreensaver.mo
-share/locale/zh_CN/LC_MESSAGES/xscreensaver.mo
-share/locale/zh_TW/LC_MESSAGES/xscreensaver.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/xscreensaver.mo
+%%NLS%%share/locale/da/LC_MESSAGES/xscreensaver.mo
+%%NLS%%share/locale/de/LC_MESSAGES/xscreensaver.mo
+%%NLS%%share/locale/es/LC_MESSAGES/xscreensaver.mo
+%%NLS%%share/locale/et/LC_MESSAGES/xscreensaver.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/xscreensaver.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/xscreensaver.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/xscreensaver.mo
+%%NLS%%share/locale/it/LC_MESSAGES/xscreensaver.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/xscreensaver.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/xscreensaver.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/xscreensaver.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/xscreensaver.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/xscreensaver.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/xscreensaver.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/xscreensaver.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/xscreensaver.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/xscreensaver.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/xscreensaver.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/xscreensaver.mo
+%%NLS%%share/locale/wa/LC_MESSAGES/xscreensaver.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/xscreensaver.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/xscreensaver.mo
 share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/README
 %%DATADIR%%/config/abstractile.xml
@@ -473,6 +485,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/attraction.xml
 %%DATADIR%%/config/atunnel.xml
 %%DATADIR%%/config/barcode.xml
+%%DATADIR%%/config/binaryring.xml
 %%DATADIR%%/config/blaster.xml
 %%DATADIR%%/config/blinkbox.xml
 %%DATADIR%%/config/blitspin.xml
@@ -491,6 +504,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/ccurve.xml
 %%DATADIR%%/config/celtic.xml
 %%DATADIR%%/config/circuit.xml
+%%DATADIR%%/config/cityflow.xml
 %%DATADIR%%/config/cloudlife.xml
 %%DATADIR%%/config/companioncube.xml
 %%DATADIR%%/config/compass.xml
@@ -533,6 +547,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/galaxy.xml
 %%DATADIR%%/config/gears.xml
 %%DATADIR%%/config/geodesic.xml
+%%DATADIR%%/config/geodesicgears.xml
 %%DATADIR%%/config/gflux.xml
 %%DATADIR%%/config/glblur.xml
 %%DATADIR%%/config/glcells.xml
@@ -616,6 +631,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/rd-bomb.xml
 %%DATADIR%%/config/ripples.xml
 %%DATADIR%%/config/rocks.xml
+%%DATADIR%%/config/romanboy.xml
 %%DATADIR%%/config/rorschach.xml
 %%DATADIR%%/config/rotzoomer.xml
 %%DATADIR%%/config/rubik.xml
@@ -630,6 +646,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/sonar.xml
 %%DATADIR%%/config/speedmine.xml
 %%DATADIR%%/config/spheremonics.xml
+%%DATADIR%%/config/splitflap.xml
 %%DATADIR%%/config/spotlight.xml
 %%DATADIR%%/config/sproingies.xml
 %%DATADIR%%/config/squiral.xml
@@ -658,6 +675,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/wander.xml
 %%DATADIR%%/config/webcollage.xml
 %%DATADIR%%/config/whirlwindwarp.xml
+%%DATADIR%%/config/winduprobot.xml
 %%DATADIR%%/config/wormhole.xml
 %%DATADIR%%/config/xanalogtv.xml
 %%DATADIR%%/config/xaos.xml
@@ -680,7 +698,3 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/glade/screensaver-power.png
 %%DATADIR%%/glade/screensaver-snap.png
 %%DATADIR%%/glade/xscreensaver-demo.glade2
-@dirrmtry bin/xscreensaver-hacks
-@dirrmtry %%DATADIR%%/config
-@dirrmtry %%DATADIR%%/glade
-@dirrmtry %%DATADIR%%
