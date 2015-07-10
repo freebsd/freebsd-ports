@@ -3,18 +3,19 @@
 
 PORTNAME=	tarantool
 PORTVERSION=	1.6.5
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://tarantool.org/dist/master/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${TR_REV}-src
 
 MAINTAINER=	vg@FreeBSD.org
-COMMENT=	High performance key/value storage server
+COMMENT=	NoSQL database running in a Lua application server
 
 LICENSE=	BSD2CLAUSE
 
 TR_REV=		238-g74f3d65
 MAKE_JOBS_UNSAFE=yes
-USES=		cmake compiler:c++11-lang gmake perl5 readline
+USES=		cmake compiler:c++11-lang gettext gmake perl5 readline
 USE_GCC=	4.9+ # clang bug PR/201270
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
