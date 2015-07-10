@@ -1,0 +1,29 @@
+------------
+How to start
+------------
+
++ For existing `mewest` user, backup and/or delete the database
+  (`~/Mail/casket`)
+
+  - Since "mailestd" can work with the old database, so OK to skip deleting
+    `~/Mail/casket`, but remark that `V` will not work against the mails
+    which are indexed by `mewest`.   To make `V` work against them, delete
+    the database in advance.
+
++ Add the below line to `.mew.el` to let Mew use "Hyper Estrairer" for
+  search.
+
+      ((setq mew-search-method 'est)
+
++ Add the below lines to `~/.emacs` use use the "mailest" instead of
+  existing "mewest".
+
+      (defvar mew-prog-est        "mew-mailest")
+      (defvar mew-prog-est-update "mew-mailest")
+      (defvar mew-prog-cmew       "cmew-mailest")
+      (defvar mew-prog-smew       "smew-mailest")
+      (defvar mew-id-db-file      ".mailest.sock")
+
++ Try `km`, `kM`, `k/`, `k?`, `V` in Mew.  See
+  http://mew.org/en/info/release/mew_6.html#dbsearch for search commands
+  in Mew.
