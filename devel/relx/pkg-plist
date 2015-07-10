@@ -58,3 +58,5 @@ lib/erlang/lib/relx-%%VERSION%%/src/rlx_state.erl
 lib/erlang/lib/relx-%%VERSION%%/src/rlx_topo.erl
 lib/erlang/lib/relx-%%VERSION%%/src/rlx_util.erl
 %%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/relx.config
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/relx_simple.config
