@@ -30,8 +30,7 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 # Use either erlware or tsloughter, depending on who actually
 # published the package on hex.pm
 USE_GITHUB=	yes
-GH_ACCOUNT=	tsloughter
-GH_TAGNAME=	0b04cf0
+GH_ACCOUNT=	erlware
 
 # rebar3 insists on downloading dependencies, and some kind of package
 # index into the user's HOME. We need to trick it into behaving by
