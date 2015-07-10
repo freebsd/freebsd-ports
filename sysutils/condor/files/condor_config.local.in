@@ -27,14 +27,23 @@ COLLECTOR_NAME = Condor pool at $(CONDOR_HOST)
 ############################################################################
 # Location of logs, job output, etc.
 # Put this on a local partition with plenty of space for job output.
-# Default is $(TILDE) = /home/condor.
+# $(TILDE) = /home/condor.
 
 LOCAL_DIR               = $(TILDE)
 
-# /home is often shared by cluster compute nodes, so log files would collide
+# If /home is shared by cluster compute nodes, log files would collide
 # when using $(TILDE).  Put LOCAL_DIR on some other large, local partition.
 
 # LOCAL_DIR               = /usr/condor
+
+############################################################################
+# Use dynamic provisioning to allow multicore jobs (e.g. openmp) on
+# hosts with multiple cores available to HTCondor.
+
+NUM_SLOTS=1
+NUM_SLOTS_TYPE_1=1
+SLOT_TYPE_1=100%
+SLOT_TYPE_1_PARTITIONABLE=true
 
 ############################################################################
 # When is this machine willing to start a job? 
@@ -43,13 +52,13 @@ LOCAL_DIR               = $(TILDE)
 # START = TRUE
 
 # For compute hosts used primarily for other purposes
-START = (KeyboardIdle > 15 * 60) && ((LoadAvg - CondorLoadAvg) <= 0.3)
+START = (KeyboardIdle > 15 * 60) && ((LoadAvg - CondorLoadAvg) <= 0.5)
 
 # For VM host, assuming we only want to run jobs in the VM
 # START = False
 
 # For VM guest, run jobs only when the host is not being used by owner
-# START = ( HOST_KeyboardIdle > 150 ) && ( HOST_LoadAvg <= 0.3 ) )
+# START = ( HOST_KeyboardIdle > 150 ) && ( HOST_LoadAvg <= 0.5 ) )
 
 ############################################################################
 # When to suspend a job?
@@ -63,7 +72,7 @@ SUSPEND = FALSE
 # PREEMPT = FALSE
 
 # Compute host used mainly for non-Condor activities
-PREEMPT = (KeyboardIdle < 60) || (LoadAvg - CondorLoadAvg > 0.3)
+PREEMPT = (KeyboardIdle < 60) || (LoadAvg - CondorLoadAvg > 0.5)
 
 ############################################################################
 # When to instantaneously kill a preempting job
@@ -88,7 +97,7 @@ KILL = FALSE
 # Central manager
 # DAEMON_LIST = MASTER, COLLECTOR, NEGOTIATOR, SCHEDD
 
-# Submit/execute host
+# Submit and execute host
 # DAEMON_LIST = MASTER, SCHEDD, STARTD
 # DAEMON_LIST = MASTER, SCHEDD, STARTD, SHARED_PORT
 
