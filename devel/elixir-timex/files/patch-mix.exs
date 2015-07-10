@@ -1,13 +1,12 @@
---- mix.exs.orig	2015-07-02 22:58:50 UTC
+--- mix.exs.orig	2015-07-10 07:31:12 UTC
 +++ mix.exs
-@@ -23,9 +23,7 @@ defmodule Timex.Mixfile do
+@@ -6,8 +6,7 @@ defmodule Timex.Mixfile do
+       version: "0.16.1",
+       elixir: "~> 1.0.0",
+       description: "A date/time library for Elixir",
+-      package: package,
+-      deps: deps ]
++      package: package]
+ 
    end
  
-   def deps do
--    [{:tzdata, "~> 0.1.6"},
--     {:earmark, "~> 0.1", only: :dev},
--     {:ex_doc, "~> 0.5", only: :dev}]
-+    []
-   end
- 
- end
