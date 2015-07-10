@@ -1,7 +1,7 @@
 # Created by: Alexander Nedotsukov <bland@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	nvidia-settings
+PORTNAME=	nvidia-settings-340
 PORTVERSION=	340.76
 CATEGORIES=	x11
 MASTER_SITES=	ftp://download.nvidia.com/XFree86/nvidia-settings/ \
