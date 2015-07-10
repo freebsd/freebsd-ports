@@ -402,37 +402,33 @@ Notes:
   </vuln>
 
   <vuln vid="150d1538-23fa-11e5-a4a5-002590263bf5">
-    <topic>squid -- multiple vulnerabilities</topic>
+    <topic>squid -- Improper Protection of Alternate Path with CONNECT requests</topic>
     <affects>
       <package>
 	<name>squid</name>
-	<range><ge>3.5</ge><lt>3.5.6</lt></range>
+	<range><lt>3.5.6</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Amos Jeffries, Squid-3 release manager, reports:</p>
-	<blockquote cite="http://openwall.com/lists/oss-security/2015/07/06/8">
-	  <p>Due to incorrect handling of peer responses in a hierarchy of 2 or
-	    more proxies remote clients (or scripts run on a client) are able to
-	    gain unrestricted access through a gateway proxy to its backend
-	    proxy.</p>
-	  <p>If the two proxies have differing levels of security this could
-	    lead to authentication bypass or unprivileged access to supposedly
-	    secure resources.</p>
-	  <p>Squid up to and including 3.5.5 are apparently vulnerable to DoS
-	    attack from malicious clients using repeated TLS renegotiation
-	    messages. This has not been verified as it also seems to require
-	    outdated (0.9.8l and older) OpenSSL libraries.</p>
+	<p>Squid security advisory 2015:2 reports:</p>
+	<blockquote cite="http://www.squid-cache.org/Advisories/SQUID-2015_2.txt">
+	  <p>Squid configured with cache_peer and operating on explicit proxy
+	    traffic does not correctly handle CONNECT method peer responses.</p>
+	  <p>The bug is important because it allows remote clients to bypass
+	    security in an explicit gateway proxy.</p>
+	  <p>However, the bug is exploitable only if you have configured
+	    cache_peer to receive CONNECT requests.</p>
 	</blockquote>
       </body>
     </description>
     <references>
-      <mlist>http://openwall.com/lists/oss-security/2015/07/06/8</mlist>
+      <url>http://www.squid-cache.org/Advisories/SQUID-2015_2.txt</url>
     </references>
     <dates>
       <discovery>2015-07-06</discovery>
       <entry>2015-07-06</entry>
+      <modified>2015-07-10</modified>
     </dates>
   </vuln>
 
