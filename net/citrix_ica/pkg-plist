@@ -497,7 +497,7 @@
 %%WEBPLUGIN_DIR%%/util/sunraymac.sh
 %%WEBPLUGIN_DIR%%/util/what
 %%WEBPLUGIN_DIR%%/util/xcapture
-%%WEBPLUGIN_DIR%%/wfica
+@(,,00555) %%WEBPLUGIN_DIR%%/wfica
 bin/wfcmgr
 bin/wfica
 etc/icalicense/clientlicense
