@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	cmsmadesimple
-PORTVERSION=	1.9.1
+PORTVERSION=	1.12
 CATEGORIES=	www
-MASTER_SITES=	http://s3.amazonaws.com/cmsms/downloads/6491/
+MASTER_SITES=	http://s3.amazonaws.com/cmsms/downloads/12553/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-full
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Simple Open Source CMS
+
+LICENSE=	GPLv2
 
 USE_PHP=	mysql tokenizer gd
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -16,46 +18,30 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 WRKSRC=		${WRKDIR}
-CMS_DIRS=	admin doc images install lib \
+CMS_DIRS=	admin doc install lib \
 		modules plugins tmp uploads
 CMS_FILES=	favicon_cms.ico fileloc.php include.php \
 		index.php moduleinterface.php \
-		soap.php stylesheet.css \
-		stylesheet.php version.php
+		version.php
 WRITABLE_DIRS=	tmp tmp/templates_c tmp/cache \
 		uploads uploads/images modules
 
 .include <bsd.port.pre.mk>
+
 post-extract:
-	@cd ${WRKSRC} && ${RM} -f config.php
+	cd ${WRKSRC} && ${RM} -f config.php
 
 do-install:
 .for i in ${CMS_DIRS}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${STAGEDIR}${WWWDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${STAGEDIR}${WWWDIR}
 .endfor
 .for i in ${CMS_FILES}
-	@cd ${WRKSRC} && ${CP} ${i} ${STAGEDIR}${WWWDIR}/${i}
+	cd ${WRKSRC} && ${CP} ${i} ${STAGEDIR}${WWWDIR}/${i}
 .endfor
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
-	@${CHMOD} -R 755 ${STAGEDIR}${WWWDIR}
 
-	@if [ ! -f ${STAGEDIR}${WWWDIR}/config.php ]; then \
+	${FIND} ${STAGEDIR}${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHOWN} ${WWWOWN}:${WWWGRP}
+
+	if [ ! -f ${STAGEDIR}${WWWDIR}/config.php ]; then \
 	${TOUCH} ${STAGEDIR}${WWWDIR}/config.php ; fi
-
-post-install:
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' \
-		>> ${TMPPLIST}
-	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${WWWDIR}' \
-		>> ${TMPPLIST}
-
-.for i in ${WRITABLE_DIRS}
-	@${CHMOD} 775 ${STAGEDIR}${WWWDIR}/${i}
-	@${ECHO_CMD} '@exec ${CHMOD} 775 ${WWWDIR}/${i}' \
-		>> ${TMPPLIST}
-.endfor
-
-	@${CHMOD} 666 ${STAGEDIR}${WWWDIR}/config.php
-	@${ECHO_CMD} '@exec ${CHMOD} 666 ${WWWDIR}/config.php' \
-		>> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
