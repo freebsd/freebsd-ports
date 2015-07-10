@@ -159,6 +159,7 @@
     SUBDIR += eo-aspell
     SUBDIR += eqe
     SUBDIR += erlang-edown
+    SUBDIR += erlang-yamerl
     SUBDIR += es-aspell
     SUBDIR += es-hunspell
     SUBDIR += es-hyphen
