@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	web-console
-PORTVERSION=	2.1.3
+PORTVERSION=	2.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
