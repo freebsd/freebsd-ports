@@ -57,6 +57,61 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7313b0e3-27b4-11e5-a15a-50af736ef1c0">
+    <topic>pivotx -- Multiple unrestricted file upload vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>pivotx</name>
+	<range><lt>2.3.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Pivotx reports:</p>
+	<blockquote cite="http://pivotx.net/page/security">
+	  <p>Multiple unrestricted file upload vulnerabilities in fileupload.php
+	    in PivotX before 2.3.9 allow remote authenticated users to execute
+	    arbitrary PHP code by uploading a file with a (1) .php or (2) .php#
+	    extension, and then accessing it via unspecified vectors.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0341</cvename>
+    </references>
+    <dates>
+      <discovery>2014-04-15</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="14d846d6-27b3-11e5-a15a-50af736ef1c0">
+    <topic>pivotx -- cross-site scripting (XSS) vulnerability</topic>
+    <affects>
+      <package>
+	<name>pivotx</name>
+	<range><lt>2.3.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>pivotx reports:</p>
+	<blockquote cite="http://pivotx.net/page/security">
+	  <p>cross-site scripting (XSS) vulnerability in the nickname (and
+	    possibly the email) field. Mitigated by the fact that an attacker
+	    must have a PivotX account.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0341</cvename>
+    </references>
+    <dates>
+      <discovery>2014-04-15</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c93c9395-25e1-11e5-a4a5-002590263bf5">
     <topic>wpa_supplicant -- WPS_NFC option payload length validation vulnerability</topic>
     <affects>
