@@ -6,6 +6,7 @@ PORTVERSION=	340.76
 CATEGORIES=	x11
 MASTER_SITES=	ftp://download.nvidia.com/XFree86/nvidia-settings/ \
 		ftp://download1.nvidia.com/XFree86/nvidia-settings/
+DISTNAME=	nvidia-settings-${PORTVERSION}
 
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	Display Control Panel for X NVidia driver

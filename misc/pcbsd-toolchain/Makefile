@@ -10,6 +10,8 @@ DISTFILES=
 MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	PC-BSD Development Utilities
 
+USES=		python
+
 RUN_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx \
 		${PYTHON_PKGNAMEPREFIX}sphinx-intl>=0:${PORTSDIR}/textproc/py-sphinx-intl \
 		${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>=0:${PORTSDIR}/textproc/py-sphinx_rtd_theme \
