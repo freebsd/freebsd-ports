@@ -752,6 +752,7 @@
     SUBDIR += py-filelike
     SUBDIR += py-glances
     SUBDIR += py-halite
+    SUBDIR += py-honcho
     SUBDIR += py-iowait
     SUBDIR += py-nagiosplugin
     SUBDIR += py-ploy
