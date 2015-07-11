@@ -6302,7 +6302,6 @@ misc/c-hey||2014-07-24|Has expired: Fails to build with new utmpx
 misc/wminfo||2014-07-24|Has expired: Fails to build with new utmpx
 net/sendfile||2014-07-24|Has expired: Fails to build with new utmpx
 net-im/centericq||2014-07-24|Has expired: Fails to build with new utmpx
-security/chkrootkit||2014-07-24|Has expired: Fails to build with new utmpx
 security/openfwtk||2014-07-24|Has expired: Fails to build with new utmpx
 security/pam_alreadyloggedin||2014-07-24|Has expired: Fails to build with new utmpx
 security/srp||2014-07-24|Has expired: Fails to build with new utmpx

@@ -1,0 +1,24 @@
+ Chkrootkit is a tool to locally check for signs of a rootkit.
+ -------------------------------------------------------------
+
+ It contains:
+
+ * chkrootkit: a shell script that checks system binaries for
+   rootkit modification.
+ * ifpromisc.c: checks if the network interface is in promiscuous
+   mode.
+ * chklastlog.c: checks for lastlog deletions.
+ * chkwtmp.c: checks for wtmp deletions.
+ * check_wtmpx.c: checks for wtmpx deletions.  (Solaris only)
+ * chkproc.c: checks for signs of LKM trojans.
+ * chkdirs.c: checks for signs of LKM trojans.
+ * strings.c: quick and dirty strings replacement.
+ * chkutmp.c: checks for utmp deletions.
+
+ For an updated list of rootkits, worms and LKMs detected by
+ chkrootkit please visit: http://www.chkrootkit.org/
+
+Nelson Murilo <nelson@pangeia.com.br>
+Klaus Steding-Jessen <jessen@nic.br>
+
+WWW: http://www.chkrootkit.org/
