@@ -57,6 +57,610 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f1deed23-27ec-11e5-a4a5-002590263bf5">
+    <topic>xen-tools -- xl command line config handling stack overflow</topic>
+    <affects>
+      <package>
+	<name>xen-tools</name>
+	<range><ge>4.1</ge><lt>4.5.0_8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-137.html">
+	  <p>The xl command line utility mishandles long configuration values
+	    when passed as command line arguments, with a buffer overrun.</p>
+	  <p>A semi-trusted guest administrator or controller, who is intended
+	    to be able to partially control the configuration settings for a
+	    domain, can escalate their privileges to that of the whole host.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3259</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-137.html</url>
+    </references>
+    <dates>
+      <discovery>2015-07-07</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8c31b288-27ec-11e5-a4a5-002590263bf5">
+    <topic>xen-kernel -- vulnerability in the iret hypercall handler</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><ge>3.1</ge><lt>4.5.0_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-136.html">
+	  <p>A buggy loop in Xen's compat_iret() function iterates the wrong way
+	    around a 32-bit index.  Any 32-bit PV guest kernel can trigger this
+	    vulnerability by attempting a hypercall_iret with EFLAGS.VM set.</p>
+	  <p>Given the use of __get/put_user(), and that the virtual addresses
+	    in question are contained within the lower canonical half, the guest
+	    cannot clobber any hypervisor data.  Instead, Xen will take up to
+	    2^33 pagefaults, in sequence, effectively hanging the host.</p>
+	  <p>Malicious guest administrators can cause a denial of service
+	    affecting the whole system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4164</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-136.html</url>
+    </references>
+    <dates>
+      <discovery>2015-06-11</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="80e846ff-27eb-11e5-a4a5-002590263bf5">
+    <topic>xen-kernel -- GNTTABOP_swap_grant_ref operation misbehavior</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><ge>4.2</ge><lt>4.5.0_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-134.html">
+	  <p>With the introduction of version 2 grant table operations, a
+	    version check became necessary for most grant table related
+	    hypercalls.  The GNTTABOP_swap_grant_ref call was lacking such a
+	    check.  As a result, the subsequent code behaved as if version 2 was
+	    in use, when a guest issued this hypercall without a prior
+	    GNTTABOP_setup_table or GNTTABOP_set_version.</p>
+	  <p>The effect is a possible NULL pointer dereferences.  However, this
+	    cannot be exploited to elevate privileges of the attacking domain,
+	    as the maximum memory address that can be wrongly accessed this way
+	    is bounded to far below the start of hypervisor memory.</p>
+	  <p>Malicious or buggy guest domain kernels can mount a denial of
+	    service attack which, if successful, can affect the whole system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4163</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-134.html</url>
+    </references>
+    <dates>
+      <discovery>2015-06-11</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ce658051-27ea-11e5-a4a5-002590263bf5">
+    <topic>xen-kernel -- Information leak through XEN_DOMCTL_gettscinfo</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><ge>4.0</ge><lt>4.5.0_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-132.html">
+	  <p>The handler for XEN_DOMCTL_gettscinfo failed to initialize a
+	    padding field subsequently copied to guest memory.</p>
+	  <p>A similar leak existed in XEN_SYSCTL_getdomaininfolist, which is
+	    being addressed here regardless of that operation being declared
+	    unsafe for disaggregation by XSA-77.</p>
+	  <p>Malicious or buggy stub domain kernels or tool stacks otherwise
+	    living outside of Domain0 may be able to read sensitive data
+	    relating to the hypervisor or other guests not under the control of
+	    that domain.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3340</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-132.html</url>
+    </references>
+    <dates>
+      <discovery>2015-04-20</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3d657340-27ea-11e5-a4a5-002590263bf5">
+    <topic>xen-tools -- Unmediated PCI register access in qemu</topic>
+    <affects>
+      <package>
+	<name>xen-tools</name>
+	<range><ge>3.3</ge><lt>4.5.0_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-131.html">
+	  <p>Qemu allows guests to not only read, but also write all parts of
+	    the PCI config space (but not extended config space) of passed
+	    through PCI devices not explicitly dealt with for (partial)
+	    emulation purposes.</p>
+	  <p>Since the effect depends on the specific purpose of the the config
+	    space field, it's not possbile to give a general statement about the
+	    exact impact on the host or other guests.  Privilege escalation,
+	    host crash (Denial of Service), and leaked information all cannot be
+	    excluded.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4106</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-131.html</url>
+    </references>
+    <dates>
+      <discovery>2015-06-02</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="cbe1a0f9-27e9-11e5-a4a5-002590263bf5">
+    <topic>xen-tools -- Guest triggerable qemu MSI-X pass-through error messages</topic>
+    <affects>
+      <package>
+	<name>xen-tools</name>
+	<range><ge>3.3</ge><lt>4.5.0_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-130.html">
+	  <p>Device model code dealing with guest PCI MSI-X interrupt management
+	    activities logs messages on certain (supposedly) invalid guest
+	    operations.</p>
+	  <p>A buggy or malicious guest repeatedly invoking such operations may
+	    result in the host disk to fill up, possibly leading to a Denial of
+	    Service.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4105</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-130.html</url>
+    </references>
+    <dates>
+      <discovery>2015-06-02</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4db8a0f4-27e9-11e5-a4a5-002590263bf5">
+    <topic>xen-tools -- PCI MSI mask bits inadvertently exposed to guests</topic>
+    <affects>
+      <package>
+	<name>xen-tools</name>
+	<range><ge>3.3</ge><lt>4.5.0_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-129.html">
+	  <p>The mask bits optionally available in the PCI MSI capability
+	    structure are used by the hypervisor to occasionally suppress
+	    interrupt delivery.  Unprivileged guests were, however, nevertheless
+	    allowed direct control of these bits.</p>
+	  <p>Interrupts may be observed by Xen at unexpected times, which may
+	    lead to a host crash and therefore a Denial of Service.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4104</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-129.html</url>
+    </references>
+    <dates>
+      <discovery>2015-06-02</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="af38cfec-27e7-11e5-a4a5-002590263bf5">
+    <topic>xen-tools -- Potential unintended writes to host MSI message data field via qemu</topic>
+    <affects>
+      <package>
+	<name>xen-tools</name>
+	<range><ge>3.3</ge><lt>4.5.0_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-128.html">
+	  <p>Logic is in place to avoid writes to certain host config space
+	    fields when the guest must nevertheless be able to access their
+	    virtual counterparts. A bug in how this logic deals with accesses
+	    spanning multiple fields allows the guest to write to the host MSI
+	    message data field.</p>
+	  <p>While generally the writes write back the values previously read,
+	    their value in config space may have got changed by the host between
+	    the qemu read and write. In such a case host side interrupt handling
+	    could become confused, possibly losing interrupts or allowing
+	    spurious interrupt injection into other guests.</p>
+	  <p>Certain untrusted guest administrators may be able to confuse host
+	    side interrupt handling, leading to a Denial of Service.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4103</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-128.html</url>
+    </references>
+    <dates>
+      <discovery>2015-06-02</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="103a47d5-27e7-11e5-a4a5-002590263bf5">
+    <topic>xen-kernel -- Certain domctl operations may be abused to lock up the host</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><ge>4.3</ge><lt>4.5.0_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-127.html">
+	  <p>XSA-77 put the majority of the domctl operations on a list
+	    excepting them from having security advisories issued for them if
+	    any effects their use might have could hamper security. Subsequently
+	    some of them got declared disaggregation safe, but for a small
+	    subset this was not really correct: Their (mis-)use may result in
+	    host lockups.</p>
+	  <p>As a result, the potential security benefits of toolstack
+	    disaggregation are not always fully realised.</p>
+	  <p>Domains deliberately given partial management control may be able
+	    to deny service to the entire host.</p>
+	  <p>As a result, in a system designed to enhance security by radically
+	    disaggregating the management, the security may be reduced.  But,
+	    the security will be no worse than a non-disaggregated design.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-2751</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-127.html</url>
+    </references>
+    <dates>
+      <discovery>2015-03-31</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="79f401cd-27e6-11e5-a4a5-002590263bf5">
+    <topic>xen-tools -- Unmediated PCI command register access in qemu</topic>
+    <affects>
+      <package>
+	<name>xen-tools</name>
+	<range><ge>3.3</ge><lt>4.5.0_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-126.html">
+	  <p>HVM guests are currently permitted to modify the memory and I/O
+	    decode bits in the PCI command register of devices passed through to
+	    them. Unless the device is an SR-IOV virtual function, after
+	    disabling one or both of these bits subsequent accesses to the MMIO
+	    or I/O port ranges would - on PCI Express devices - lead to
+	    Unsupported Request responses. The treatment of such errors is
+	    platform specific.</p>
+	  <p>Furthermore (at least) devices under control of the Linux pciback
+	    driver in the host are handed to guests with the aforementioned bits
+	    turned off.  This means that such accesses can similarly lead to
+	    Unsupported Request responses until these flags are set as needed by
+	    the guest.</p>
+	  <p>In the event that the platform surfaces aforementioned UR responses
+	    as Non-Maskable Interrupts, and either the OS is configured to treat
+	    NMIs as fatal or (e.g. via ACPI's APEI) the platform tells the OS to
+	    treat these errors as fatal, the host would crash, leading to a
+	    Denial of Service.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-2756</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-126.html</url>
+    </references>
+    <dates>
+      <discovery>2015-03-31</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d40c66cb-27e4-11e5-a4a5-002590263bf5">
+    <topic>xen-kernel and xen-tools -- Long latency MMIO mapping operations are not preemptible</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><lt>4.5.0_3</lt></range>
+      </package>
+      <package>
+	<name>xen-tools</name>
+	<range><lt>4.5.0_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-125.html">
+	  <p>The XEN_DOMCTL_memory_mapping hypercall allows long running
+	    operations without implementing preemption.</p>
+	  <p>This hypercall is used by the device model as part of the emulation
+	    associated with configuration of PCI devices passed through to HVM
+	    guests and is therefore indirectly exposed to those guests.</p>
+	  <p>This can cause a physical CPU to become busy for a significant
+	    period, leading to a host denial of service in some cases.</p>
+	  <p>If a host denial of service is not triggered then it may instead be
+	    possible to deny service to the domain running the device model,
+	    e.g. domain 0.</p>
+	  <p>This hypercall is also exposed more generally to all toolstacks.
+	    However the uses of it in libxl based toolstacks are not believed
+	    to open up any avenue of attack from an untrusted guest. Other
+	    toolstacks may be vulnerable however.</p>
+	  <p>The vulnerability is exposed via HVM guests which have a PCI device
+	    assigned to them. A malicious HVM guest in such a configuration can
+	    mount a denial of service attack affecting the whole system via its
+	    associated device model (qemu-dm).</p>
+	  <p>A guest is able to trigger this hypercall via operations which it
+	    is legitimately expected to perform, therefore running the device
+	    model as a stub domain does not offer protection against the host
+	    denial of service issue. However it does offer some protection
+	    against secondary issues such as denial of service against dom0.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-2752</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-125.html</url>
+    </references>
+    <dates>
+      <discovery>2015-03-31</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="83a28417-27e3-11e5-a4a5-002590263bf5">
+    <topic>xen-kernel -- Hypervisor memory corruption due to x86 emulator flaw</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><lt>4.5.0_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-123.html">
+	  <p>Instructions with register operands ignore eventual segment
+	    overrides encoded for them. Due to an insufficiently conditional
+	    assignment such a bogus segment override can, however, corrupt a
+	    pointer used subsequently to store the result of the instruction.</p>
+	  <p>A malicious guest might be able to read sensitive data relating to
+	    other guests, or to cause denial of service on the host. Arbitrary
+	    code execution, and therefore privilege escalation, cannot be
+	    excluded.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-2151</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-123.html</url>
+    </references>
+    <dates>
+      <discovery>2015-03-10</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ef9d041e-27e2-11e5-a4a5-002590263bf5">
+    <topic>xen-kernel -- Information leak through version information hypercall</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><lt>4.5.0_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-122.html">
+	  <p>The code handling certain sub-operations of the
+	    HYPERVISOR_xen_version hypercall fails to fully initialize all
+	    fields of structures subsequently copied back to guest memory. Due
+	    to this hypervisor stack contents are copied into the destination of
+	    the operation, thus becoming visible to the guest.</p>
+	  <p>A malicious guest might be able to read sensitive data relating to
+	    other guests.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-2045</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-122.html</url>
+    </references>
+    <dates>
+      <discovery>2015-03-05</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5023f559-27e2-11e5-a4a5-002590263bf5">
+    <topic>xen-kernel -- Information leak via internal x86 system device emulation</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><lt>4.5.0_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-121.html">
+	  <p>Emulation routines in the hypervisor dealing with certain system
+	    devices check whether the access size by the guest is a supported
+	    one. When the access size is unsupported these routines failed to
+	    set the data to be returned to the guest for read accesses, so that
+	    hypervisor stack contents are copied into the destination of the
+	    operation, thus becoming visible to the guest.</p>
+	  <p>A malicious HVM guest might be able to read sensitive data relating
+	    to other guests.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-2044</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-121.html</url>
+    </references>
+    <dates>
+      <discovery>2015-03-05</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0d732fd1-27e0-11e5-a4a5-002590263bf5">
+    <topic>xen-tools -- HVM qemu unexpectedly enabling emulated VGA graphics backends</topic>
+    <affects>
+      <package>
+	<name>xen-tools</name>
+	<range><lt>4.5.0_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-119.html">
+	  <p>When instantiating an emulated VGA device for an x86 HVM guest qemu
+	    will by default enable a backend to expose that device, either SDL
+	    or VNC depending on the version of qemu and the build time
+	    configuration.</p>
+	  <p>The libxl toolstack library does not explicitly disable these
+	    default backends when they are not enabled, leading to an unexpected
+	    backend running.</p>
+	  <p>If either SDL or VNC is explicitly enabled in the guest
+	    configuration then only the expected backends will be enabled.</p>
+	  <p>This affects qemu-xen and qemu-xen-traditional differently.</p>
+	  <p>If qemu-xen was compiled with SDL support then this would result in
+	    an SDL window being opened if $DISPLAY is valid, or a failure to
+	    start the guest if not.</p>
+	  <p>If qemu-xen was compiled without SDL support then qemu would
+	    instead start a VNC server listening on ::1 (IPv6 localhost) or
+	    127.0.0.1 (IPv4 localhost) with IPv6 preferred if available. A VNC
+	    password will not be configured even if one is present in the guest
+	    configuration.</p>
+	  <p>qemu-xen-traditional will never start a vnc backend unless
+	    explicitly configured. However by default it will start an SDL
+	    backend if it was built with SDL support and $DISPLAY is valid.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-2152</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-119.html</url>
+    </references>
+    <dates>
+      <discovery>2015-03-13</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="912cb7f7-27df-11e5-a4a5-002590263bf5">
+    <topic>xen-kernel -- arm: vgic: incorrect rate limiting of guest triggered logging</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><ge>4.4</ge><lt>4.5.0_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-118.html">
+	  <p>On ARM systems the code which deals with virtualising the GIC
+	    distributor would, under various circumstances, log messages on a
+	    guest accessible code path without appropriate rate limiting.</p>
+	  <p>A malicious guest could cause repeated logging to the hypervisor
+	    console, leading to a Denial of Service attack.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1563</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-118.html</url>
+    </references>
+    <dates>
+      <discovery>2015-01-29</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="785c86b1-27d6-11e5-a4a5-002590263bf5">
+    <topic>xen-kernel -- arm: vgic-v2: GICD_SGIR is not properly emulated</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><ge>4.5</ge><lt>4.5.0_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-117.html">
+	  <p>When decoding a guest write to a specific register in the virtual
+	    interrupt controller Xen would treat an invalid value as a critical
+	    error and crash the host.</p>
+	  <p>By writing an invalid value to the GICD.SGIR register a guest can
+	    crash the host, resulting in a Denial of Service attack.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0268</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-117.html</url>
+    </references>
+    <dates>
+      <discovery>2015-02-12</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7313b0e3-27b4-11e5-a15a-50af736ef1c0">
     <topic>pivotx -- Multiple unrestricted file upload vulnerabilities</topic>
     <affects>
