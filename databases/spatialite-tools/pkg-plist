@@ -8,8 +8,10 @@ bin/spatialite_network
 bin/spatialite_osm_filter
 bin/spatialite_osm_map
 bin/spatialite_osm_net
+bin/spatialite_osm_overpass
 bin/spatialite_osm_raw
 bin/spatialite_tool
 bin/spatialite_xml_collapse
 bin/spatialite_xml_load
 bin/spatialite_xml_print
+bin/spatialite_xml_validator
