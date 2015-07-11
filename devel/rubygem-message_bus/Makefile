@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	message_bus
-PORTVERSION=	1.0.14
+PORTVERSION=	1.0.16
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
