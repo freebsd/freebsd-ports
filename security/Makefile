@@ -56,6 +56,7 @@
     SUBDIR += chaosreader
     SUBDIR += checkpassword
     SUBDIR += checkpassword-pam
+    SUBDIR += chkrootkit
     SUBDIR += chntpw
     SUBDIR += chroot_safe
     SUBDIR += chrootuid
