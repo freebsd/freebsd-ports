@@ -1601,6 +1601,10 @@ Notes:
 	<name>qemu-sbruno</name>
 	<range><lt>2.3.50.g20150618_1</lt></range>
       </package>
+      <package>
+	<name>xen-tools</name>
+	<range><lt>4.5.0_6</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -1621,6 +1625,7 @@ Notes:
     <dates>
       <discovery>2015-04-10</discovery>
       <entry>2015-06-26</entry>
+      <modified>2015-07-11</modified>
     </dates>
   </vuln>
 
