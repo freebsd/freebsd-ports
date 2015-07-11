@@ -3,7 +3,7 @@
 
 PORTNAME=	mousepad
 PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors xfce
 MASTER_SITES=	XFCE/src/apps/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
 GNU_CONFIGURE=	yes
-USES=	desktop-file-utils gettext gmake libtool pkgconfig perl5 tar:bzip2
+USES=	desktop-file-utils gettext gmake libtool perl5 pkgconfig tar:bzip2
 USE_GNOME=	glib20 intltool intlhack
 
 OPTIONS_DEFINE=	GTK3
