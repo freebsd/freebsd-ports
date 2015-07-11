@@ -55,6 +55,7 @@ esac
 [ -z "${fossil_listenall}" ] && fossil_args="${fossil_args} --localhost"
 [ -n "${fossil_files}" ] && fossil_args="${fossil_args} --files '${fossil_files}'"
 [ -n "${fossil_notfound}" ] && fossil_args="${fossil_args} --notfound \"${fossil_notfound}\""
+[ -n "${fossil_repolist}" ] && fossil_args="${fossil_args} --repolist"
 
 command_args="-f -p ${pidfile} ${procname} server -P ${fossil_port} ${fossil_args} ${fossil_directory}"
 
