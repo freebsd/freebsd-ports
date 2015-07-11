@@ -412,6 +412,7 @@
     SUBDIR += elixir-bson
     SUBDIR += elixir-calendar
     SUBDIR += elixir-conform
+    SUBDIR += elixir-csv
     SUBDIR += elixir-decimal
     SUBDIR += elixir-dialyze
     SUBDIR += elixir-exactor
