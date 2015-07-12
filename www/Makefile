@@ -360,6 +360,7 @@
     SUBDIR += jspwiki
     SUBDIR += jtoolkit
     SUBDIR += junkbuster
+    SUBDIR += kanboard
     SUBDIR += kannel
     SUBDIR += kannel-sqlbox
     SUBDIR += kcgi
