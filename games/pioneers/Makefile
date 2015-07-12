@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	games gnome
 MASTER_SITES=	SF/pio/Source/
 
-MAINTAINER=	stefan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internet playable version of the Settlers of Catan
 
 LICENSE=	GPLv2
