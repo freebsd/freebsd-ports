@@ -38,7 +38,8 @@ QUICK GUIDE TO ADDING A NEW ENTRY
 3. use 'make validate' to verify syntax correctness (you might need to install
    textproc/libxml2 for parser, and this port for catalogs)
 4. fix any errors
-5. profit!
+5. use 'make VID=xxx-yyy-zzz html' to emit the entry's html file for formatting review
+6. profit!
 
 Additional tests can be done this way:
  $ env PKG_DBDIR=/usr/ports/security/vuxml pkg audit py26-django-1.6
