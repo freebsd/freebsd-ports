@@ -14,9 +14,9 @@ LICENSE_FILE_ISCL=	${WRKSRC}/LICENSE.ISCL
 LICENSE_FILE_LGPL21=	${WRKSRC}/LICENSE.LGPL21
 
 LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2 \
-		libqdbm.so:${PORTSDIR}/databases/qdbm
-RUN_DEPENDS=	mewl:${PORTSDIR}/mail/mew \
-		estcmd:${PORTSDIR}/textproc/hyperestraier
+		libqdbm.so:${PORTSDIR}/databases/qdbm \
+		libestraier.so:${PORTSDIR}/textproc/hyperestraier
+RUN_DEPENDS=	mewl:${PORTSDIR}/mail/mew
 
 USES=		iconv
 USE_EMACS=	yes
