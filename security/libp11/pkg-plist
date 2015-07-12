@@ -9,4 +9,3 @@ libdata/pkgconfig/libp11.pc
 %%EXAMPLESDIR%%/auth.c
 %%EXAMPLESDIR%%/decrypt.c
 %%EXAMPLESDIR%%/getrandom.c
-@dirrm %%EXAMPLESDIR%%
