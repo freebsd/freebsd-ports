@@ -3,7 +3,7 @@
 
 PORTNAME=	libvmod-header
 DISTVERSION=	0.31
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	varnish-
 
@@ -15,7 +15,7 @@ LICENSE=	BSD2CLAUSE
 BUILD_DEPENDS=	varnish4>=4.0.2:${PORTSDIR}/www/varnish4 \
 		rst2man:${PORTSDIR}/textproc/py-docutils
 
-USES=		autoreconf gmake libtool pkgconfig python:2
+USES=		autoreconf gmake libtool pkgconfig python:2,build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/varnish
