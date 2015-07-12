@@ -1,18 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	mod_wsgi
-PORTVERSION=	3.5
+PORTVERSION=	4.4.13
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
-PKGNAMESUFFIX=	3
+PKGNAMESUFFIX=	4
 
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Python WSGI adapter module for Apache
 
 LICENSE=	APACHE20
 
-CONFLICTS_INSTALL=${PKGNAMEPREFIX}mod_wsgi2.* mod_wsgi2.* \
-		${PKGNAMEPREFIX}mod_wsgi-2.* mod_wsgi-2.*
+CONFLICTS_INSTALL=${PKGNAMEPREFIX}mod_wsgi3.* mod_wsgi3.*
 
 PROJECTHOST=	modwsgi
 
@@ -24,7 +23,10 @@ GH_ACCOUNT=	GrahamDumpleton
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-apxs="${APXS}" --with-python="${PYTHON_CMD}"
 
-SUB_FILES=	pkg-message
+SUB_FILES=	pkg-message ${APMOD_FILE}
+APMOD_FILE=	270_${PORTNAME}.conf.sample
+PLIST_SUB+=	APMOD_FILE=${APMOD_FILE}
+
 
 pre-everything::
 	@${ECHO_MSG} "======================= ATTENTION! ======================"
@@ -34,4 +36,8 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "========================================================="
 
+post-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/modules.d
+	${INSTALL_DATA} ${WRKDIR}/${APMOD_FILE} ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/modules.d
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/${PORTNAME}.so
 .include <bsd.port.mk>

@@ -1,0 +1,9 @@
+## $FreeBSD$
+## vim: set filetype=apache:
+##
+## module file for mod_wsgi
+##
+## PROVIDE: mod_wsgi
+## REQUIRE:
+
+#LoadModule wsgi_module        %%APACHEMODDIR%%/mod_wsgi.so
