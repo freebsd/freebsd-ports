@@ -7,7 +7,6 @@ bin/wblg-new.py
 %%PYTHON_SITELIBDIR%%/lib/ezt.pyc
 %%PYTHON_SITELIBDIR%%/lib/__init__.pyo
 %%PYTHON_SITELIBDIR%%/lib/ezt.pyo
-@dirrmtry %%PYTHON_SITELIBDIR%%/lib
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/my.wblg
@@ -18,10 +17,3 @@ bin/wblg-new.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/templates/entry.ezt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/templates/feed.ezt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/templates/index.ezt
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/src/templates
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/src/swa/one-entry
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/src/swa
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/src/static
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/src
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
