@@ -43,17 +43,3 @@ share/locale/ur_PK/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/xfce4/panel/plugins/smartbookmark.desktop
-@dirrmtry share/xfce4/panel/plugins
-@dirrmtry share/xfce4/panel
-@dirrmtry share/xfce4
-@dirrmtry share/locale/ur_PK/LC_MESSAGES
-@dirrmtry share/locale/ur_PK
-@dirrmtry share/locale/ur/LC_MESSAGES
-@dirrmtry share/locale/ur
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry lib/xfce4/panel/plugins
-@dirrmtry lib/xfce4/panel
-@dirrmtry lib/xfce4
