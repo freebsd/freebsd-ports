@@ -1,14 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	relx
-PORTVERSION=	3.3.1
+PORTVERSION=	3.3.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES+=	http://olgeni.olgeni.com/~olgeni/distfiles/:deps \
 		LOCAL/olgeni:deps
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		relx-cache-4.tar.gz:deps
+		relx-cache-5.tar.gz:deps
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Sane, simple release creation for Erlang
