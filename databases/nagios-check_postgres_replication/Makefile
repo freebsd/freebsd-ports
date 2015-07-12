@@ -12,13 +12,17 @@ EXTRACT_SUFX=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nagios plugin to check the lag between a postgresql replica and master
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nagiosplugin>=0:${PORTSDIR}/sysutils/py-nagiosplugin \
 		${PYTHON_PKGNAMEPREFIX}psycopg2>=0:${PORTSDIR}/databases/py-psycopg2
 
-USES=	pgsql python
-
-NO_WRKSUBDIR=	yes
+NO_ARCH=	yes
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
+USES=		pgsql python
+
+PLIST_FILES=	libexec/nagios/check_postgres_replication
 
 do-extract:
 	${MKDIR} ${WRKDIR}
