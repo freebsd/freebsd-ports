@@ -2,12 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	PHP_Archive
-PORTVERSION=	0.11.4
-CATEGORIES=	archivers
+PORTVERSION=	0.12.0
+CATEGORIES=	archivers pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create and Use PHP Archive files
 
-USES=	pear
+LICENSE=	PHP301
+
+NO_ARCH=	yes
+USES=		pear
 
 .include <bsd.port.mk>
