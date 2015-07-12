@@ -4,6 +4,7 @@ lib/elixir/lib/csv/ebin/Elixir.CSV.Encode.Any.beam
 lib/elixir/lib/csv/ebin/Elixir.CSV.Encode.BitString.beam
 lib/elixir/lib/csv/ebin/Elixir.CSV.Encode.beam
 lib/elixir/lib/csv/ebin/Elixir.CSV.Encoder.beam
+lib/elixir/lib/csv/ebin/Elixir.CSV.Lexer.EncodingError.beam
 lib/elixir/lib/csv/ebin/Elixir.CSV.Lexer.beam
 lib/elixir/lib/csv/ebin/Elixir.CSV.Parser.SyntaxError.beam
 lib/elixir/lib/csv/ebin/Elixir.CSV.Parser.beam
