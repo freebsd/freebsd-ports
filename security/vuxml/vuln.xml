@@ -5001,11 +5001,11 @@ Notes:
     <affects>
       <package>
 	<name>powerdns</name>
-	<range><lt>3.4.4</lt></range>
+	<range><lt>3.4.5</lt></range>
       </package>
       <package>
 	<name>powerdns-recursor</name>
-	<range><lt>3.7.2</lt></range>
+	<range><lt>3.7.3</lt></range>
       </package>
     </affects>
     <description>
@@ -5022,11 +5022,15 @@ Notes:
     </description>
     <references>
       <cvename>CVE-2015-1868</cvename>
+      <cvename>CVE-2015-5470</cvename>
       <url>https://doc.powerdns.com/md/security/powerdns-advisory-2015-01/</url>
+      <url>https://doc.powerdns.com/md/security/powerdns-advisory-2015-01/</url>
+      <mlist>http://www.openwall.com/lists/oss-security/2015/07/10/8</mlist>
     </references>
     <dates>
       <discovery>2015-04-23</discovery>
       <entry>2015-05-01</entry>
+      <modified>2015-07-12</modified>
     </dates>
   </vuln>
 
