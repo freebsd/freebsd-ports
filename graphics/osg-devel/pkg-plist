@@ -258,6 +258,7 @@ include/osgAnimation/TimelineAnimationManager
 include/osgAnimation/UpdateBone
 include/osgAnimation/UpdateMaterial
 include/osgAnimation/UpdateMatrixTransform
+include/osgAnimation/UpdateUniform
 include/osgAnimation/Vec3Packed
 include/osgAnimation/VertexInfluence
 include/osgDB/Archive
