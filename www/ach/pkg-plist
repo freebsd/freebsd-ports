@@ -250,29 +250,27 @@
 %%WWWDIR%%/xml_hypothesis.php
 @mode
 @mode 755
-@dirrm %%WWWDIR%%/parts
-@dirrm %%WWWDIR%%/js/src
-@dirrm %%WWWDIR%%/js/overlib/Mini
-@dirrm %%WWWDIR%%/js/overlib
-@dirrm %%WWWDIR%%/js/lib
-@dirrm %%WWWDIR%%/js
-@dirrm %%WWWDIR%%/imports
-@dirrm %%WWWDIR%%/images/user
-@dirrm %%WWWDIR%%/images/icons
-@dirrm %%WWWDIR%%/images
-@dirrm %%WWWDIR%%/help/images
-@dirrm %%WWWDIR%%/help
-@dirrm %%WWWDIR%%/css
-@dirrm %%WWWDIR%%/code/nusoap/samples
-@dirrm %%WWWDIR%%/code/nusoap/lib
-@dirrm %%WWWDIR%%/code/nusoap
-@dirrm %%WWWDIR%%/code/frameworks
-@dirrm %%WWWDIR%%/code
-@dirrm %%WWWDIR%%/auth
-@dirrm %%WWWDIR%%/ajax
-@dirrm %%WWWDIR%%
+@dir %%WWWDIR%%/parts
+@dir %%WWWDIR%%/js/src
+@dir %%WWWDIR%%/js/overlib/Mini
+@dir %%WWWDIR%%/js/overlib
+@dir %%WWWDIR%%/js/lib
+@dir %%WWWDIR%%/js
+@dir %%WWWDIR%%/imports
+@dir %%WWWDIR%%/images/user
+@dir %%WWWDIR%%/images/icons
+@dir %%WWWDIR%%/images
+@dir %%WWWDIR%%/help/images
+@dir %%WWWDIR%%/help
+@dir %%WWWDIR%%/css
+@dir %%WWWDIR%%/code/nusoap/samples
+@dir %%WWWDIR%%/code/nusoap/lib
+@dir %%WWWDIR%%/code/nusoap
+@dir %%WWWDIR%%/code/frameworks
+@dir %%WWWDIR%%/code
+@dir %%WWWDIR%%/auth
+@dir %%WWWDIR%%/ajax
+@dir %%WWWDIR%%
 @mode
 @owner
 @group
-@exec mkdir -p %D/%%WWWDIR%%/imports
-@exec mkdir -p %D/%%WWWDIR%%/images/user
