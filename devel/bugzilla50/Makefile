@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bugzilla
-PORTVERSION=	4.4.9
-PORTREVISION=	1
+PORTVERSION=	5.0
 CATEGORIES=	devel
 MASTER_SITES=	MOZILLA/webtools MOZILLA/webtools/archived
 
@@ -18,8 +17,10 @@ RUN_DEPENDS=	\
 		p5-DateTime-TimeZone>=1.64:${PORTSDIR}/devel/p5-DateTime-TimeZone \
 		p5-DateTime>=0.75:${PORTSDIR}/devel/p5-DateTime \
 		p5-Email-MIME>=1.904:${PORTSDIR}/mail/p5-Email-MIME \
-		p5-Email-Send>=2.04:${PORTSDIR}/mail/p5-Email-Send \
+		p5-Email-Sender>=1.300011:${PORTSDIR}/mail/p5-Email-Sender \
 		p5-Encode-Detect>=0:${PORTSDIR}/converters/p5-Encode-Detect \
+		p5-File-Slurp>=9999.13:${PORTSDIR}/devel/p5-File-Slurp \
+		p5-JSON-XS>=2.01:${PORTSDIR}/converters/p5-JSON-XS \
 		p5-List-MoreUtils>=0.32:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Math-Random-ISAAC>=1.001:${PORTSDIR}/math/p5-Math-Random-ISAAC \
 		p5-Template-Toolkit>=2.24:${PORTSDIR}/www/p5-Template-Toolkit \
@@ -60,7 +61,7 @@ RUN_DEPENDS+=	p5-DBD-mysql>=4.0001:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USES+=		pgsql
+USES+=		pgsql:91+
 RUN_DEPENDS+=	p5-DBD-Pg>=3.4.2:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
@@ -99,8 +100,7 @@ RUN_DEPENDS+=	p5-Email-MIME-Attachment-Stripper>=0:${PORTSDIR}/mail/p5-Email-MIM
 
 .if ${PORT_OPTIONS:MMAIL_QUEUEING}
 RUN_DEPENDS+=	p5-TheSchwartz>=1.10:${PORTSDIR}/devel/p5-TheSchwartz \
-		p5-Daemon-Generic>=0:${PORTSDIR}/net/p5-Daemon-Generic \
-		p5-File-Slurp>=9999.13:${PORTSDIR}/devel/p5-File-Slurp
+		p5-Daemon-Generic>=0:${PORTSDIR}/net/p5-Daemon-Generic
 .endif
 
 .if ${PORT_OPTIONS:MMOVE_BUGZ}
@@ -114,7 +114,7 @@ RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 
 # Note: XML-RPC and JSON-RPC are deprecated in favor of REST
 # and will likely be removed in the Bugzilla 7.0 release.
-.if ${PORT_OPTIONS:MXMLRPC} || ${PORT_OPTIONS:MJSONRPC}
+.if ${PORT_OPTIONS:MXMLRPC} || ${PORT_OPTIONS:MJSONRPC} || ${PORT_OPTIONS:MREST}
 RUN_DEPENDS+=	p5-Test-Taint>=1.06:${PORTSDIR}/devel/p5-Test-Taint
 .endif
 
@@ -125,9 +125,8 @@ RUN_DEPENDS+=	p5-XMLRPC-Lite>=0.712:${PORTSDIR}/net/p5-XMLRPC-Lite
 RUN_DEPENDS+=	p5-SOAP-Lite>=0.712:${PORTSDIR}/net/p5-SOAP-Lite
 .endif
 
-.if ${PORT_OPTIONS:MJSONRPC}
-RUN_DEPENDS+=	p5-JSON-RPC>=0:${PORTSDIR}/devel/p5-JSON-RPC \
-		p5-JSON-XS>=2.0:${PORTSDIR}/converters/p5-JSON-XS
+.if ${PORT_OPTIONS:MJSONRPC} || ${PORT_OPTIONS:MREST}
+RUN_DEPENDS+=	p5-JSON-RPC>=0:${PORTSDIR}/devel/p5-JSON-RPC
 .endif
 
 .if ${PORT_OPTIONS:MMODPERL}
@@ -165,21 +164,26 @@ RUN_DEPENDS+=	p5-File-MimeInfo>=0.16:${PORTSDIR}/devel/p5-File-MimeInfo \
 		p5-IO-stringy>=2.110:${PORTSDIR}/devel/p5-IO-stringy
 .endif
 
+.if ${PORT_OPTIONS:MMEMCACHED}
+RUN_DEPENDS+=	p5-Cache-Memcached>=1.30:${PORTSDIR}/databases/p5-Cache-Memcached
+.endif
+
 post-extract:
+# The docs_urlbase parameter has been removed. If documentation has not been
+# compiled locally, the "Help" links and other documentation links will
+# redirect to bugzilla.readthedocs.org automatically.
+	${RM} -r ${WRKSRC}/docs
 	${RM} -r ${WRKSRC}/.git
 	${RM} ${WRKSRC}/.bzrignore ${WRKSRC}/.gitignore ${WRKSRC}/.gitrev \
-		${WRKSRC}/docs/en/README.docs ${WRKSRC}/docs/en/html/Bugzilla-Guide.proc \
-		${WRKSRC}/.travis.yml ${WRKSRC}/Build.PL ${WRKSRC}/MANIFEST.SKIP \
-		${WRKSRC}/taskgraph.json
+		${WRKSRC}/.travis.yml ${WRKSRC}/Build.PL ${WRKSRC}/MANIFEST.SKIP
 
 post-patch:
 	${REINPLACE_CMD} -e 's/apache/www/' ${WRKSRC}/Bugzilla/Install/Localconfig.pm
-	${REINPLACE_CMD} -e 's|/opt/bugzilla|${WWWDIR}|' ${WRKSRC}/importxml.pl \
-		${WRKSRC}/docs/en/html/api/importxml.html
-	${FIND} ${WRKSRC} -type f \( -name \*.cgi -o -name \*.html -o -name \*.pl -o -name \*.pm -o -name \*.t -o -name \*.txt -o -name \*.xml \) \
+	${REINPLACE_CMD} -e 's|/opt/bugzilla|${WWWDIR}|' ${WRKSRC}/importxml.pl
+	${FIND} ${WRKSRC} -type f \( -name \*.cgi -o -name \*.pl -o -name \*.pm -o -name \*.t \) \
 		-exec ${SED} -i '' -e "s=/usr/bin/perl=${PERL}=g; \
-			s!/usr/lib/sendmail!/usr/sbin/sendmail!g; \
-			s!/var/www/html/bugzilla!${WWWDIR}!" {} \+
+			s!/usr/lib/sendmail!/usr/sbin/sendmail!g;" {} \+
+
 .if ${PORT_OPTIONS:MPGSQL} && ! ${PORT_OPTIONS:MMYSQL}
 	${REINPLACE_CMD} -e "s/'mysql'/'Pg'/" ${WRKSRC}/Bugzilla/Install/Localconfig.pm
 .endif
@@ -197,8 +201,6 @@ do-install:	.SILENT
 .endfor
 	${TAR} -C ${WRKSRC} -cf - Bugzilla template | ${TAR} --unlink -C ${STAGEDIR}${WWWDIR} -xf -
 	@${MKDIR} ${EMPTY_DIRS_LIST:S!^!${STAGEDIR}${WWWDIR}/!}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .if ${PORT_OPTIONS:MCONTRIB}
 	@${MKDIR} ${STAGEDIR}${WWWDIR}/contrib

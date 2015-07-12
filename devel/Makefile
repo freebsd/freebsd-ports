@@ -159,6 +159,7 @@
     SUBDIR += bsdowl
     SUBDIR += bufferpool
     SUBDIR += bugzilla44
+    SUBDIR += bugzilla50
     SUBDIR += build
     SUBDIR += buildbot
     SUBDIR += buildbot-slave

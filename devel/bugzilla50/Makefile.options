@@ -2,7 +2,6 @@
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=		\
-	DOCS		\
 	MODPERL
 
 OPTIONS_GROUP=	UI DBBACKEND REPORTING ATTACHMENT EMAIL WEBSERVICE AUTH ADMIN
@@ -23,7 +22,8 @@ OPTIONS_GROUP_AUTH=	\
 OPTIONS_GROUP_DBBACKEND= \
 	MYSQL		\
 	PGSQL		\
-	SQLITE
+	SQLITE		\
+	MEMCACHED
 
 OPTIONS_GROUP_EMAIL= 	\
 	INBOUND_EMAIL	\
@@ -38,7 +38,8 @@ OPTIONS_GROUP_REPORTING= \
 
 OPTIONS_GROUP_WEBSERVICE= \
 	XMLRPC		\
-	JSONRPC
+	JSONRPC		\
+	REST
 
 OPTIONS_GROUP_UI= 	\
 	PATCH_VIEWER	\
@@ -51,6 +52,8 @@ OPTIONS_DEFAULT=	\
 	MORE_HTML	\
 	PATCH_VIEWER
 
+# Note: XML-RPC and JSON-RPC are deprecated in favor of REST and 
+# will likely be removed in the Bugzilla 7.0 release. 
 BMP2PNG_DESC=		BMP Attachments to PNGs
 CHARTING_MODULES_DESC=	Bug charting support
 CONTRIB_DESC=		Install user-contributed scripts
@@ -63,9 +66,11 @@ MIME_SNIFF_DESC=	Sniff MIME type of attachments
 MORE_HTML_DESC=		More HTML in Product/Group Descriptions
 MOVE_BUGZ_DESC=		Move Bugs Between Installations
 PATCH_VIEWER_DESC=	Patch Viewer
+REST_DESC=		REST Interface
 SMTP_AUTH_DESC=		SMTP Authentication
 SMTP_SSL_DESC=		SSL Support for SMTP
 XMLRPC_DESC=		XML-RPC Interface
+MEMCACHED_DESC=		Memcached Support
 
 # Option group description
 ADMIN_DESC=		Administration
