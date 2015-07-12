@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Data-Structure-Util
-PORTVERSION=	0.15
-PORTREVISION=	2
+PORTVERSION=	0.16
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,9 +10,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	nistor@snickers.org
 COMMENT=	Perl5 module to change the nature of data within a structure
 
-BUILD_DEPENDS=	p5-Clone>=0:${PORTSDIR}/devel/p5-Clone \
-		p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
+TEST_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod
+
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
