@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmlcopyeditor
-PORTVERSION=	1.2.0.11
-PORTREVISION=	4
+PORTVERSION=	1.2.1.3
 CATEGORIES=	editors
 MASTER_SITES=	SF/xml-copy-editor/${PORTNAME}-linux/${PORTVERSION}
 
@@ -12,14 +11,7 @@ COMMENT=	Fast validating XML editor
 
 LICENSE=	GPLv2
 
-USE_WX=		2.8+
-WX_COMPS=	wx contrib
-WX_CONF_ARGS=	absolute
-WX_UNICODE=	yes
-USES=		gettext iconv dos2unix libtool
-GNU_CONFIGURE=	yes
-
-BUILD_DEPENDS+=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	libxerces-c.so.3:${PORTSDIR}/textproc/xerces-c3 \
 		libxslt.so:${PORTSDIR}/textproc/libxslt \
 		libaspell.so:${PORTSDIR}/textproc/aspell \
@@ -27,7 +19,13 @@ LIB_DEPENDS=	libxerces-c.so.3:${PORTSDIR}/textproc/xerces-c3 \
 		libxml2.so:${PORTSDIR}/textproc/libxml2 \
 		libexpat.so:${PORTSDIR}/textproc/expat2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_WX=		2.8+
+WX_COMPS=	wx contrib
+WX_CONF_ARGS=	absolute
+WX_UNICODE=	yes
+USES=		dos2unix gettext gmake iconv libtool
+USE_GNOME=	intltool
+GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/libxml2
