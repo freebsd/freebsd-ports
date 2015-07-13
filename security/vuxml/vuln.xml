@@ -58,6 +58,50 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="379788f3-2900-11e5-a4a5-002590263bf5">
+    <topic>freeradius -- insufficent CRL application vulnerability</topic>
+    <affects>
+      <package>
+	<name>freeradius2</name>
+	<range><lt>2.2.8</lt></range>
+      </package>
+      <package>
+	<name>freeradius3</name>
+	<range><lt>3.0.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>oCERT reports:</p>
+	<blockquote cite="http://www.ocert.org/advisories/ocert-2015-008.html">
+	  <p>The FreeRADIUS server relies on OpenSSL to perform certificate
+	    validation, including Certificate Revocation List (CRL) checks. The
+	    FreeRADIUS usage of OpenSSL, in CRL application, limits the checks
+	    to leaf certificates, therefore not detecting revocation of
+	    intermediate CA certificates.</p>
+	  <p>An unexpired client certificate, issued by an intermediate CA with
+	    a revoked certificate, is therefore accepted by FreeRADIUS.</p>
+	  <p>Specifically sets the X509_V_FLAG_CRL_CHECK flag for leaf
+	    certificate CRL checks, but does not use X509_V_FLAG_CRL_CHECK_ALL
+	    for CRL checks on the complete trust chain.</p>
+	  <p>The FreeRADIUS project advises that the recommended configuration
+	    is to use self-signed CAs for all EAP-TLS methods.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4680</cvename>
+      <freebsdpr>ports/201058</freebsdpr>
+      <freebsdpr>ports/201059</freebsdpr>
+      <url>http://www.ocert.org/advisories/ocert-2015-008.html</url>
+      <url>http://freeradius.org/security.html</url>
+    </references>
+    <dates>
+      <discovery>2015-06-22</discovery>
+      <entry>2015-07-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f1deed23-27ec-11e5-a4a5-002590263bf5">
     <topic>xen-tools -- xl command line config handling stack overflow</topic>
     <affects>
