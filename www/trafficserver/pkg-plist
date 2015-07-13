@@ -1,5 +1,8 @@
 @unexec if [ ! -s %D/%%ETCDIR%%/proxy.pac ]; then rm -f %D/%%ETCDIR%%/proxy.pac; fi
 bin/traffic_cop
+bin/traffic_crashlog
+bin/traffic_ctl
+bin/traffic_layout
 bin/traffic_line
 bin/traffic_logcat
 bin/traffic_logstats
@@ -7,40 +10,42 @@ bin/traffic_manager
 bin/traffic_sac
 bin/traffic_server
 bin/traffic_top
+bin/traffic_via
 bin/trafficserver
 bin/tspush
 bin/tstop
 bin/tsxs
 %%ETCDIR%%/trafficserver-release
-@owner www
-@group www
-%%ETCDIR%%/body_factory/default/.body_factory_info
-%%ETCDIR%%/body_factory/default/README
-%%ETCDIR%%/body_factory/default/access#denied
-%%ETCDIR%%/body_factory/default/access#proxy_auth_required
-%%ETCDIR%%/body_factory/default/access#redirect_url
-%%ETCDIR%%/body_factory/default/access#ssl_forbidden
-%%ETCDIR%%/body_factory/default/cache#not_in_cache
-%%ETCDIR%%/body_factory/default/cache#read_error
-%%ETCDIR%%/body_factory/default/congestion#retryAfter
-%%ETCDIR%%/body_factory/default/connect#dns_failed
-%%ETCDIR%%/body_factory/default/connect#failed_connect
-%%ETCDIR%%/body_factory/default/connect#hangup
-%%ETCDIR%%/body_factory/default/default
-%%ETCDIR%%/body_factory/default/interception#no_host
-%%ETCDIR%%/body_factory/default/redirect#moved_temporarily
-%%ETCDIR%%/body_factory/default/request#cycle_detected
-%%ETCDIR%%/body_factory/default/request#invalid_content_length
-%%ETCDIR%%/body_factory/default/request#no_content_length
-%%ETCDIR%%/body_factory/default/request#no_host
-%%ETCDIR%%/body_factory/default/request#scheme_unsupported
-%%ETCDIR%%/body_factory/default/request#syntax_error
-%%ETCDIR%%/body_factory/default/response#bad_response
-%%ETCDIR%%/body_factory/default/response#bad_version
-%%ETCDIR%%/body_factory/default/timeout#activity
-%%ETCDIR%%/body_factory/default/timeout#inactivity
-%%ETCDIR%%/body_factory/default/transcoding#unsupported
-%%ETCDIR%%/body_factory/default/urlrouting#no_mapping
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
+@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/.body_factory_info
+@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/README
+@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/access#denied
+@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/access#proxy_auth_required
+@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/access#redirect_url
+@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/access#ssl_forbidden
+@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/cache#not_in_cache
+@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/cache#read_error
+@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/congestion#retryAfter
+@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/connect#dns_failed
+@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/connect#failed_connect
+@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/connect#hangup
+@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/default
+@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/interception#no_host
+@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/redirect#moved_permanently
+@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/redirect#moved_temporarily
+@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/request#cycle_detected
+@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/request#invalid_content_length
+@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/request#no_content_length
+@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/request#no_host
+@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/request#scheme_unsupported
+@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/request#syntax_error
+@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/response#bad_response
+@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/response#bad_version
+@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/timeout#activity
+@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/timeout#inactivity
+@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/transcoding#unsupported
+@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/urlrouting#no_mapping
 @sample %%ETCDIR%%/cache.config.sample
 @sample %%ETCDIR%%/cluster.config.sample
 @sample %%ETCDIR%%/congestion.config.sample
@@ -62,8 +67,6 @@ bin/tsxs
 @sample %%ETCDIR%%/update.config.sample
 @sample %%ETCDIR%%/vaddrs.config.sample
 @sample %%ETCDIR%%/volume.config.sample
-@owner root
-@group wheel
 include/atscppapi/Async.h
 include/atscppapi/AsyncHttpFetch.h
 include/atscppapi/AsyncTimer.h
@@ -92,24 +95,26 @@ include/atscppapi/Url.h
 include/atscppapi/noncopyable.h
 include/atscppapi/shared_ptr.h
 include/atscppapi/utils.h
-include/ts/apidefs.h     
+include/ts/apidefs.h
 include/ts/experimental.h
 include/ts/mgmtapi.h
 include/ts/remap.h
 include/ts/ts.h
 lib/libatscppapi.so
 lib/libatscppapi.so.5
-lib/libatscppapi.so.5.0.1
+lib/libatscppapi.so.%%PORTVERSION%%
+lib/libtsconfig.so
+lib/libtsconfig.so.5
+lib/libtsconfig.so.%%PORTVERSION%%
 lib/libtsmgmt.so
 lib/libtsmgmt.so.5
-lib/libtsmgmt.so.5.0.1
-lib/libtsmgmtshare.so
-lib/libtsmgmtshare.so.5
-lib/libtsmgmtshare.so.5.0.1
+lib/libtsmgmt.so.%%PORTVERSION%%
 lib/libtsutil.so
 lib/libtsutil.so.5
-lib/libtsutil.so.5.0.1
+lib/libtsutil.so.%%PORTVERSION%%
+libdata/pkgconfig/trafficserver.pc
 libexec/trafficserver/AsyncHttpFetch.so
+libexec/trafficserver/AsyncHttpFetchStreaming.so
 libexec/trafficserver/AsyncTimer.so
 libexec/trafficserver/ClientRedirect.so
 libexec/trafficserver/ClientRequest.so
@@ -145,47 +150,13 @@ libexec/trafficserver/tcpinfo.so
 %%PERL5_MAN3%%/Apache::TS.3.gz
 %%PERL5_MAN3%%/Apache::TS::AdminClient.3.gz
 %%PERL5_MAN3%%/Apache::TS::Config::Records.3.gz
-%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_alarms.1
-%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_cache-stats.1
-%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_cache.1
-%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_cluster.1
-%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_dns-resolver.1
-%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_dns-stats.1
-%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_hostdb-stats.1
-%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_hostdb.1
-%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_http-stats.1
-%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_http-trans-stats.1
-%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_http.1
-%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_icp-stats.1
-%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_icp.1
-%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_logging-stats.1
-%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_logging.1
-%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_network.1
-%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_parent.1
-%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_port-tunnels.1
-%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_proxy-stats.1
-%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_proxy.1
-%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_remap.1
-%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_scheduled-update.1
-%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_security.1
-%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_socks.1
-%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_ssl.1
-%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_status.1
-%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_version.1
-%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_virtual-ip.1
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/trafficshell
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm libexec/trafficserver
-@dirrm include/ts
-@dirrm include/atscppapi
-@owner www
-@group www
-@dirrm %%ETCDIR%%/body_factory/default
-@dirrmtry %%ETCDIR%%/body_factory
-@dirrmtry %%ETCDIR%%/snapshots
-@dirrmtry %%ETCDIR%%
-@dirrmtry /var/cache/trafficserver
-@dirrmtry /var/log/trafficserver
-@dirrmtry /var/run/trafficserver
-@owner root
-@group wheel
+@dir(,,) libexec/trafficserver
+@dir(,,) include/ts
+@dir(,,) include/atscppapi
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/snapshots
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%
+@dir(%%WWWOWN%%,%%WWWGRP%%,) /var/cache/trafficserver
+@dir(%%WWWOWN%%,%%WWWGRP%%,) /var/log/trafficserver
+@dir(%%WWWOWN%%,%%WWWGRP%%,) /var/run/trafficserver
