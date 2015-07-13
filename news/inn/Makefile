@@ -1,12 +1,10 @@
 # Created by: torstenb
 # $FreeBSD$
 
-PORTNAME?=	inn
-PORTVERSION?=	2.5.4
-PORTREVISION?=	2
+PORTNAME=	inn
+PORTVERSION=	2.5.5
 CATEGORIES=	news ipv6
-# Master distribution broken
-MASTER_SITES?=	ISC/${PORTNAME}
+MASTER_SITES=	ISC/${PORTNAME}
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	InterNetNews -- the Internet meets Netnews
@@ -26,9 +24,9 @@ CPE_VENDOR=	isc
 
 CONFLICTS?=	inn-stable-[0-9]* inn-current-[0-9]*
 
-OPTIONS_DEFINE=		KERBEROS SASL KEYWORDS BERKELEYDB OPENSSL \
-			TAGGED_HASH LARGE_FILES GNUPG
-OPTIONS_DEFAULT=	KEYWORDS
+OPTIONS_DEFINE=		BERKELEYDB GNUPG KERBEROS SASL KEYWORDS \
+			LARGE_FILES OPENSSL TAGGED_HASH
+OPTIONS_DEFAULT=	BERKELEYDB GNUPG KEYWORDS OPENSSL LARGE_FILES
 OPTIONS_SUB=		yes
 
 KERBEROS_DESC=		Enable Kerberos v5 (for auth_krb5)
@@ -121,26 +119,25 @@ RUN_DEPENDS+=		gpg:${PORTSDIR}/security/gnupg
 .endif
 
 PORTDOCS=	CONTRIBUTORS HACKING INSTALL LICENSE MANIFEST NEWS README TODO
-HEADERS=	clibrary.h config.h dbz.h libinn.h storage.h
 
-
-TO_BE_STRIPPED=	bin/auth/resolv/domain bin/auth/resolv/ident \
-		bin/auth/passwd/ckpasswd bin/auth/passwd/radius bin/rnews.libexec/decode \
-		bin/rnews.libexec/encode bin/tdx-util bin/innd bin/nnrpd \
-		bin/innfeed bin/imapfeed bin/buffindexed_d bin/convdate bin/expire \
-		bin/expireover bin/fastrm bin/grephistory bin/makedbz bin/makehistory \
-		bin/prunehistory bin/ctlinnd bin/getlist bin/inews bin/innconfval \
-		bin/ovdb_init bin/ovdb_monitor bin/ovdb_server bin/ovdb_stat bin/rnews \
-		bin/sm bin/actsync bin/archive bin/batcher bin/buffchan bin/cvtbatch \
-		bin/filechan bin/inndf bin/innxmit bin/innxbatch bin/ninpaths bin/nntpget \
-		bin/overchan bin/shlock bin/shrinkfile bin/tinyleaf
+TO_BE_STRIPPED=	bin/auth/resolv/domain bin/actsync bin/archive \
+	bin/auth/passwd/ckpasswd bin/auth/passwd/radius bin/auth/resolv/ident \
+	bin/batcher bin/buffchan bin/buffindexed_d bin/convdate bin/ctlinnd \
+	bin/cvtbatch bin/expire bin/expireover bin/fastrm bin/filechan \
+	bin/getlist bin/grephistory bin/imapfeed bin/inews bin/innbind \
+	bin/innconfval bin/innd bin/inndf bin/innfeed bin/innxbatch \
+	bin/innxmit bin/makedbz bin/makehistory bin/ninpaths bin/nnrpd \
+	bin/nntpget bin/ovdb_init bin/ovdb_monitor bin/ovdb_server \
+	bin/ovdb_stat bin/overchan bin/prunehistory bin/rnews \
+	bin/rnews.libexec/decode bin/rnews.libexec/encode bin/shlock \
+	bin/shrinkfile bin/sm bin/tdx-util bin/tinyleaf
 
 CONFIG_FILES=	actsync.cfg actsync.ign buffindexed.conf control.ctl \
 		control.ctl.local cycbuff.conf \
 		distrib.pats distributions \
 		expire.ctl localgroups incoming.conf inn.conf innfeed.conf \
-		innreport.conf innshellvars.local innshellvars.pl.local innshellvars.tcl.local \
-		innwatch.ctl moderators news2mail.cf \
+		innreport.conf innshellvars.local innshellvars.pl.local \
+		innshellvars.tcl.local innwatch.ctl moderators news2mail.cf \
 		newsfeeds nocem.ctl \
 		nnrpd.track nntpsend.ctl ovdb.conf \
 		passwd.nntp readers.conf send-uucp.cf \
