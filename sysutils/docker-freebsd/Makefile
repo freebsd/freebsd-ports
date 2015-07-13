@@ -26,9 +26,7 @@ GH_TAGNAME=	582db78
 PLIST_FILES=	bin/docker
 USE_RC_SUBR=	docker
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900044
-BROKEN=		This port works only on FreeBSD 9 and newer
-.endif
+BROKEN_FreeBSD_8=	This port works only on FreeBSD 9 and newer
 
 do-build:
 	@cd ${WRKSRC} && export AUTO_GOPATH=1 && export DOCKER_GITCOMMIT=${GH_TAGNAME} && ./hack/make.sh binary
