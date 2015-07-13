@@ -421,6 +421,7 @@
     SUBDIR += elixir-exjsx
     SUBDIR += elixir-exrm
     SUBDIR += elixir-hex
+    SUBDIR += elixir-inflex
     SUBDIR += elixir-lager_logger
     SUBDIR += elixir-msgpax
     SUBDIR += elixir-plug
