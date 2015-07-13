@@ -3,7 +3,7 @@
 
 PORTNAME=	kdepim
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -25,7 +25,10 @@ CONFLICTS_INSTALL=	kdepim44-4.*
 USE_GNOME=	libxml2 libxslt:build
 USE_KDE4=	kdelibs kdeprefix pimlibs kactivities \
 		akonadi automoc4 soprano nepomuk-widgets baloo
-USES=		cmake:outsource gmake iconv tar:xz
+USES=		cmake:outsource gmake iconv shebangfix tar:xz
+SHEBANG_FILES=	agents/mailfilteragent/kconf_update/migrate-kmail-filters.pl \
+		kalarm/*.pl kmail/kconf_update/*.pl \
+		libkpgp/kconf_update/kpgp-3.1-upgrade-address-data.pl
 USE_OPENLDAP=	yes
 USE_QT4=	corelib dbus declarative designer_build gui network opengl \
 		qt3support script sql webkit xml \
