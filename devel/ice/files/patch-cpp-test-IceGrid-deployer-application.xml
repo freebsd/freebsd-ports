@@ -1,0 +1,17 @@
+--- cpp/test/IceGrid/deployer/application.xml.orig	2015-07-04 13:28:10.449020996 +0200
++++ cpp/test/IceGrid/deployer/application.xml	2015-07-04 13:28:22.486946996 +0200
+@@ -178,10 +178,10 @@
+   	  <object identity="${server}" type="::Test"/>
+         </adapter>
+ 
+-        <log path="${test.dir}/log1.txt"/>
+-        <log path="${test.dir}/log2.txt"/>
+-        <log path="${test.dir}/log3.txt"/>
+-        <log path="${test.dir}/log4.txt"/>
++        <log path="${test.dir}/db/log1.txt"/>
++        <log path="${test.dir}/db/log2.txt"/>
++        <log path="${test.dir}/db/log3.txt"/>
++        <log path="${test.dir}/db/log4.txt"/>
+         <env>MY_ENV_VARIABLE=12</env>
+         <env>MY_UNIX_COMPOSED_VARIABLE=BAR;$MY_FOO</env>
+         <env>MY_WINDOWS_COMPOSED_VARIABLE=BAR;%MY_FOO%</env>

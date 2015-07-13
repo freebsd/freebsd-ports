@@ -1,5 +1,5 @@
---- py/test/Ice/info/AllTests.py.orig	2013-03-11 15:19:47.000000000 +0000
-+++ py/test/Ice/info/AllTests.py	2013-05-20 14:25:56.860196743 +0000
+--- python/test/Ice/info/AllTests.py.orig	2015-06-27 10:55:33.131456669 +0000
++++ python/test/Ice/info/AllTests.py	2015-06-27 10:52:58.191276825 +0000
 @@ -7,12 +7,31 @@
  #
  # **********************************************************************
@@ -30,13 +30,13 @@
 +def isFreeBSDJail():
 +    return isFreeBSD() and sysctl("security.jail.jailed")
 +
- def allTests(communicator, collocated):
+ def allTests(communicator):
      sys.stdout.write("testing proxy endpoint information... ")
      sys.stdout.flush()
-@@ -67,12 +86,12 @@
- 
+@@ -74,12 +93,12 @@
      ipEndpoint = endpoints[0].getInfo()
-     test(ipEndpoint.type() == Ice.TCPEndpointType or ipEndpoint.type() == 2)
+     test(ipEndpoint.type() == Ice.TCPEndpointType or ipEndpoint.type() == 2 or ipEndpoint.type() == 4 or
+          ipEndpoint.type() == 5)
 -    test(ipEndpoint.host == defaultHost)
 +    test(ipEndpoint.host == defaultHost or isFreeBSDJail())
      test(ipEndpoint.port > 0)
@@ -48,7 +48,7 @@
      test(udpEndpoint.datagram())
      test(udpEndpoint.port > 0)
  
-@@ -108,7 +127,7 @@
+@@ -115,7 +134,7 @@
      ipinfo = base.ice_getConnection().getEndpoint().getInfo()
      test(ipinfo.port == 12010)
      test(not ipinfo.compress)
@@ -57,7 +57,7 @@
  
      ctx = testIntf.getEndpointInfoAsContext()
      test(ctx["host"] == ipinfo.host)
-@@ -118,7 +137,7 @@
+@@ -125,7 +144,7 @@
  
      udp = base.ice_datagram().ice_getConnection().getEndpoint().getInfo()
      test(udp.port == 12010)
@@ -66,14 +66,14 @@
  
      print("ok")
  
-@@ -129,8 +148,8 @@
-     test(not info.incoming)
+@@ -140,8 +159,8 @@
      test(len(info.adapterName) == 0)
      test(info.remotePort == 12010)
--    test(info.remoteAddress == defaultHost)
--    test(info.localAddress == defaultHost)
-+    test(info.remoteAddress == defaultHost or isFreeBSDJail())
-+    test(info.localAddress == defaultHost or isFreeBSDJail())
+     if defaultHost == '127.0.0.1':
+-        test(info.remoteAddress == defaultHost)
+-        test(info.localAddress == defaultHost)
++        test(info.remoteAddress == defaultHost or isFreeBSDJail())
++        test(info.localAddress == defaultHost or isFreeBSDJail())
+     test(info.rcvSize >= 1024)
+     test(info.sndSize >= 2048)
  
-     ctx = testIntf.getConnectionInfoAsContext()
-     test(ctx["incoming"] == "true")

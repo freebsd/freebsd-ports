@@ -1,5 +1,5 @@
---- py/modules/IcePy/Types.h.orig	2015-01-18 15:25:04.917707935 +0100
-+++ py/modules/IcePy/Types.h	2015-01-18 15:24:54.689631935 +0100
+--- python/modules/IcePy/Types.h.orig	2015-01-18 15:25:04.917707935 +0100
++++ python/modules/IcePy/Types.h	2015-01-18 15:24:54.689631935 +0100
 @@ -69,6 +69,50 @@
      std::map<PyObject*, int> objects;
  };
