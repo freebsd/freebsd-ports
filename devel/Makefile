@@ -416,6 +416,7 @@
     SUBDIR += elixir-csv
     SUBDIR += elixir-decimal
     SUBDIR += elixir-dialyze
+    SUBDIR += elixir-estree
     SUBDIR += elixir-exactor
     SUBDIR += elixir-exjsx
     SUBDIR += elixir-exrm
