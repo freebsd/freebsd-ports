@@ -125,12 +125,6 @@ post-patch:
 		s|%%INSTALL_DATA%%|${INSTALL_DATA}|g; \
 		s|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/php/config/Make.rules.php
-.if empty(ICONV_LIB)
-	# native iconv detected
-	@${REINPLACE_CMD} \
-		-e 's|<iconv.h>|</usr/include/iconv.h>|g;' \
-		${WRKSRC}/cpp/include/IceUtil/IconvStringConverter.h
-.endif
 
 .if ${PORT_OPTIONS:MTESTS}
 TEST_CMD=		@cd ${BUILD_WRKSRC} && ${PYTHON_CMD} ./allTests.py
