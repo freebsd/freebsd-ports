@@ -19,8 +19,10 @@
 # MIX_RUN_DEPS		- List of RUN_DEPENDS in category/portname format
 # MIX_DOC_DIRS		- Extra doc directories to be installed in DOCSDIR
 # MIX_DOC_FILES		- Extra doc files to be installed in DOCSDIR (usually README.md)
+# MIX_ENV		- Environment for the Mix build (same format as MAKE_ENV)
 # MIX_ENV_NAME		- Name of the Mix build environment, usually "prod"
 # MIX_BUILD_NAME	- Name of the build output in _build/, usually ${MIX_ENV_NAME}
+# MIX_TARGET		- Name of the Mix target, usually "compile"
 # MIX_EXTRA_APPS	- List of sub-applications to be built, if any
 # MIX_EXTRA_DIRS	- List of extra directories to be installed in ELIXIR_APP_ROOT
 # MIX_EXTRA_FILES	- List of extra files to be installed in ELIXIR_APP_ROOT
@@ -39,13 +41,15 @@ ELIXIR_APP_ROOT?=	${PREFIX}/lib/elixir/lib/${ELIXIR_APP_NAME}
 ELIXIR_HIDDEN?=		"^${PORTNAME}$$"
 ELIXIR_LOCALE?=		en_US.UTF-8
 MIX_CMD?=		${LOCALBASE}/bin/mix
-MIX_COMPILE?=		LANG=${ELIXIR_LOCALE} MIX_ENV=${MIX_ENV_NAME} ELIXIR_HIDDEN=${ELIXIR_HIDDEN} ${MIX_CMD} compile
+MIX_COMPILE?=		${SETENV} ${MIX_ENV} LANG=${ELIXIR_LOCALE} MIX_ENV=${MIX_ENV_NAME} ELIXIR_HIDDEN=${ELIXIR_HIDDEN} ${MIX_CMD} ${MIX_TARGET}
 MIX_BUILD_DEPS?=
 MIX_RUN_DEPS?=
 MIX_DOC_DIRS?=
 MIX_DOC_FILES?=		README.md
+MIX_ENV?=
 MIX_ENV_NAME?=		prod
 MIX_BUILD_NAME?=	prod
+MIX_TARGET?=		compile
 MIX_EXTRA_APPS?=
 MIX_EXTRA_DIRS?=
 MIX_EXTRA_FILES?=
