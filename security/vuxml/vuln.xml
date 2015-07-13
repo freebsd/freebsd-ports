@@ -58,6 +58,41 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5a1d5d74-29a0-11e5-86ff-14dae9d210b8">
+    <topic>php -- arbitrary code execution</topic>
+    <affects>
+      <package>
+	<name>php56</name>
+	<range><lt>5.6.11</lt></range>
+      </package>
+      <package>
+	<name>php55</name>
+	<range><lt>5.5.27</lt></range>
+      </package>
+      <package>
+	<name>php5</name>
+	<range><lt>5.4.43</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cmb reports:</p>
+	<blockquote cite="https://bugs.php.net/bug.php?id=69768">
+	  <p>When delayed variable substitution is enabled (can be set in the
+	    Registry, for instance), !ENV! works similar to %ENV%, and the
+	    value of the environment variable ENV will be subsituted.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://bugs.php.net/bug.php?id=69768</url>
+    </references>
+    <dates>
+      <discovery>2015-06-07</discovery>
+      <entry>2015-07-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="36bd352d-299b-11e5-86ff-14dae9d210b8">
     <topic>mysql -- SSL Downgrade</topic>
     <affects>
@@ -97,7 +132,7 @@ Notes:
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Duo Security reports:</p>
-	<blockquote cite="INSERT URL HERE">
+	<blockquote cite="https://www.duosecurity.com/blog/backronym-mysql-vulnerability">
 	  <p>Researchers have identified a serious vulnerability in some
 	    versions of Oracle’s MySQL database product that allows an attacker to
 	    strip SSL/TLS connections of their security wrapping transparently.</p>
