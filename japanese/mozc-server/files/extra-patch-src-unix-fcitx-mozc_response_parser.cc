@@ -1,5 +1,14 @@
---- unix/fcitx/mozc_response_parser.cc.orig	2014-08-31 07:00:01.000000000 +0900
-+++ unix/fcitx/mozc_response_parser.cc	2014-08-31 07:00:45.000000000 +0900
+--- src/unix/fcitx/mozc_response_parser.cc.orig	2015-07-13 04:56:54.572997000 +0900
++++ src/unix/fcitx/mozc_response_parser.cc	2015-07-13 04:58:15.160661000 +0900
+@@ -36,7 +36,7 @@
+ #include "base/logging.h"
+ #include "base/process.h"
+ #include "base/util.h"
+-#include "session/commands.pb.h"
++#include "protocol/commands.pb.h"
+ #include "unix/fcitx/fcitx_mozc.h"
+ #include "unix/fcitx/surrounding_text_util.h"
+ #include <fcitx/candidate.h>
 @@ -235,11 +235,13 @@
      }
  }

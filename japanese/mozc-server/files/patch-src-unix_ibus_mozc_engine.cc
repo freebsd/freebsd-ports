@@ -1,5 +1,5 @@
---- unix/ibus/mozc_engine.cc.orig	2014-08-31 03:35:19.000000000 +0900
-+++ unix/ibus/mozc_engine.cc	2014-08-31 04:04:15.000000000 +0900
+--- src/unix/ibus/mozc_engine.cc.orig	2014-08-31 03:35:19.000000000 +0900
++++ src/unix/ibus/mozc_engine.cc	2014-08-31 04:04:15.000000000 +0900
 @@ -224,7 +224,7 @@
    }
  

@@ -1,5 +1,5 @@
---- ipc/ipc_path_manager.cc.orig	2013-03-29 13:33:26.000000000 +0900
-+++ ipc/ipc_path_manager.cc	2013-04-27 15:21:52.000000000 +0900
+--- src/ipc/ipc_path_manager.cc.orig	2013-03-29 13:33:26.000000000 +0900
++++ src/ipc/ipc_path_manager.cc	2013-04-27 15:21:52.000000000 +0900
 @@ -276,7 +276,7 @@
    *ipc_name = kIPCPrefix;
  #endif  // OS_WIN

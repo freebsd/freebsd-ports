@@ -1,15 +1,15 @@
---- gyp/common.gypi.orig	2015-02-15 04:18:51.000000000 +0900
-+++ gyp/common.gypi	2015-02-17 18:08:07.000000000 +0900
+--- src/gyp/common.gypi.orig	2015-06-07 16:16:23.000000000 +0900
++++ src/gyp/common.gypi	2015-07-13 04:02:55.631402000 +0900
 @@ -161,9 +161,9 @@
        ['target_platform=="Linux"', {
          # enable_gtk_renderer represents if mozc_renderer is supported on Linux
          # or not.
 -        'compiler_target': 'clang',
 +        'compiler_target': '<(compiler_target)',
-         'compiler_target_version_int': 305,  # Clang 3.5 or higher
+         'compiler_target_version_int': 304,  # Clang 3.4 or higher
 -        'compiler_host': 'clang',
 +        'compiler_host': '<(compiler_host)',
-         'compiler_host_version_int': 305,  # Clang 3.5 or higher
+         'compiler_host_version_int': 304,  # Clang 3.4 or higher
          'enable_gtk_renderer%': 1,
        }, {  # else
 @@ -208,6 +208,14 @@
@@ -27,7 +27,7 @@
      # Represents the directory where the source code of protobuf is
      # extracted. This value is ignored when 'use_libprotobuf' is 1.
      'protobuf_root': '<(third_party_dir)/protobuf',
-@@ -621,17 +629,20 @@
+@@ -641,17 +649,20 @@
            ['compiler_target=="clang"', {
              'cflags': [
                '-Wtype-limits',
@@ -51,7 +51,7 @@
              ],
            }],
          ],
-@@ -641,17 +652,20 @@
+@@ -661,17 +672,20 @@
            ['compiler_host=="clang"', {
              'cflags': [
                '-Wtype-limits',
@@ -75,7 +75,7 @@
              ],
            }],
          ],
-@@ -744,16 +758,27 @@
+@@ -764,16 +778,27 @@
        ['OS=="linux"', {
          'defines': [
            'OS_LINUX',
