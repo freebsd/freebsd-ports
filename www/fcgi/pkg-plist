@@ -43,6 +43,3 @@ man/man3/FCGI_StartFilterData.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/omi-logo.gif
 %%PORTDOCS%%%%DOCSDIR%%/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/www5-api-workshop.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/fastcgi-prog-guide
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/fastcgi-whitepaper
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
