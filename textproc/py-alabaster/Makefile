@@ -11,8 +11,6 @@ COMMENT=	Modified Kr Sphinx theme
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.1:${PORTSDIR}/textproc/py-sphinx
-
 USES=		python
 USE_PYTHON=	distutils autoplist
 
