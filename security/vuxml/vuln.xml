@@ -58,6 +58,39 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="af7fbd91-29a1-11e5-86ff-14dae9d210b8">
+    <topic>php -- use after free vulnerability</topic>
+    <affects>
+      <package>
+	<name>php56</name>
+	<range><lt>5.6.11</lt></range>
+      </package>
+      <package>
+	<name>php55</name>
+	<range><lt>5.5.27</lt></range>
+      </package>
+      <package>
+	<name>php5</name>
+	<range><lt>5.4.43</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Symeon Paraschoudis reports:</p>
+	<blockquote cite="https://bugs.php.net/bug.php?id=69970">
+	  <p>Use-after-free vulnerability in spl_recursive_it_move_forward_ex()</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://bugs.php.net/bug.php?id=69970</url>
+    </references>
+    <dates>
+      <discovery>2015-06-30</discovery>
+      <entry>2015-07-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5a1d5d74-29a0-11e5-86ff-14dae9d210b8">
     <topic>php -- arbitrary code execution</topic>
     <affects>
