@@ -72,8 +72,8 @@ Notes:
 	<range><lt>5.5.27</lt></range>
       </package>
       <package>
-	<name>php54-mysql</name>
-	<name>php54-mysqli</name>
+	<name>php5-mysql</name>
+	<name>php5-mysqli</name>
 	<range><lt>5.4.43</lt></range>
       </package>
       <package>
