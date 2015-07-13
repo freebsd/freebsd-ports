@@ -58,6 +58,48 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="81326883-2905-11e5-a4a5-002590263bf5">
+    <topic>devel/ipython -- CSRF possible remote execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>ipython</name>
+	<range><ge>0.12</ge><lt>3.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Kyle Kelley reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2015/q3/92">
+	  <p>Summary: POST requests exposed via the IPython REST API are
+	    vulnerable to cross-site request forgery (CSRF). Web pages on
+	    different domains can make non-AJAX POST requests to known IPython
+	    URLs, and IPython will honor them. The user's browser will
+	    automatically send IPython cookies along with the requests. The
+	    response is blocked by the Same-Origin Policy, but the request
+	    isn't.</p>
+	  <p>API paths with issues:</p>
+	  <ul>
+	    <li>POST /api/contents/&lt;path&gt;/&lt;file&gt;</li>
+	    <li>POST /api/contents/&lt;path&gt;/&lt;file&gt;/checkpoints</li>
+	    <li>POST /api/contents/&lt;path&gt;/&lt;file&gt;/checkpoints/&lt;checkpoint_id&gt;</li>
+	    <li>POST /api/kernels</li>
+	    <li>POST /api/kernels/&lt;kernel_id&gt;/&lt;action&gt;</li>
+	    <li>POST /api/sessions</li>
+	    <li>POST /api/clusters/&lt;cluster_id&gt;/&lt;action&gt;</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://seclists.org/oss-sec/2015/q3/92</url>
+      <url>http://ipython.org/ipython-doc/3/whatsnew/version3.html#ipython-3-2-1</url>
+    </references>
+    <dates>
+      <discovery>2015-07-12</discovery>
+      <entry>2015-07-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="379788f3-2900-11e5-a4a5-002590263bf5">
     <topic>freeradius -- insufficent CRL application vulnerability</topic>
     <affects>
