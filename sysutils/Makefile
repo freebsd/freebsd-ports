@@ -134,6 +134,7 @@
     SUBDIR += clone
     SUBDIR += clonehdd
     SUBDIR += cloop-utils
+    SUBDIR += cloudabi-utils
     SUBDIR += clsync
     SUBDIR += cmdwatch
     SUBDIR += cmockery2
