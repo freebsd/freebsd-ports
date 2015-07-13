@@ -10,7 +10,5 @@
 %%PYTHON_SITELIBDIR%%/profiles/views.py
 %%PYTHON_SITELIBDIR%%/profiles/views.pyc
 %%PYTHON_SITELIBDIR%%/profiles/views.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/profiles
 %%PORTDOCS%%%%DOCSDIR%%/overview.txt
 %%PORTDOCS%%%%DOCSDIR%%/views.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
