@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pinentry
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.5
 PORTREVISION?=	0
 CATEGORIES=	security
 MASTER_SITES=	GNUPG/pinentry
@@ -86,7 +86,6 @@ CONFIGURE_ARGS+=--disable-pinentry-qt4
 .endif
 
 .if ${PINENTRY_GUI} == "gtk2"
-OPTIONS_DEFAULT+=	LIBSECRET
 USE_GNOME+=	gtk20
 PLIST_FILES=	bin/pinentry-gtk-2
 .else
