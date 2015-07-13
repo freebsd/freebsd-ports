@@ -3,7 +3,7 @@
 
 PORTNAME=	rrdtool
 PORTVERSION=	1.4.8
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	databases graphics
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 
@@ -17,7 +17,8 @@ CONFLICTS=	rrdtool10-* rrdtool12-*
 USE_RC_SUBR=	rrdcached
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig shebangfix
+SHEBANG_FILES=	examples/rrdcached/rrdcached-size.pl
 USE_GNOME=	glib20 libxml2
 INSTALL_TARGET=	install-strip
 
