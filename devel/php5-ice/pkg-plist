@@ -43,8 +43,6 @@ share/pear/Ice/PropertiesF.php
 share/pear/Ice/Router.php
 share/pear/Ice/RouterF.php
 share/pear/Ice/SliceChecksumDict.php
-share/pear/Ice/Stats.php
-share/pear/Ice/StatsF.php
 share/pear/Ice/Version.php
 share/pear/IceBox.php
 share/pear/IceBox/IceBox.php
