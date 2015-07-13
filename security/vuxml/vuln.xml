@@ -1377,6 +1377,9 @@ Notes:
       </package>
       <package>
 	<name>v8</name>
+	<range><le>3.18.5</le></range>
+      </package>
+      <package>
 	<name>v8-devel</name>
 	<range><le>3.27.7_2</le></range>
       </package>
