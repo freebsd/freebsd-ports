@@ -3,12 +3,12 @@
 
 PORTNAME=	lumina
 PORTVERSION=	0.8.5
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	x11
 
 MAINTAINER=	kmoore@FreeBSD.org
-COMMENT=	Lumina Desktop Environment (0.8.5-devel)
+COMMENT=	Lumina Desktop Environment (0.8.5-release)
 
 LICENSE=	BSD3CLAUSE
 
@@ -43,7 +43,7 @@ USE_QT5=	core gui network quick svg linguist multimedia imageformats \
 USES=		qmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	pcbsd
-GH_TAGNAME=	v0.8.5-devel-6.25.15
+GH_TAGNAME=	v0.8.5-Release
 
 QMAKE_ARGS=	CONFIG+="configure"
 
