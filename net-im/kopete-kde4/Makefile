@@ -2,7 +2,7 @@
 
 PORTNAME=	kopete
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -30,8 +30,9 @@ USE_SQLITE=	yes
 USE_XORG=	x11 xdamage xext xscrnsaver xtst
 USE_LDCONFIG=	yes
 
-SHEBANG_FILES=	${WRKSRC}/protocols/winpopup/winpopup-install \
-		${WRKSRC}/protocols/winpopup/winpopup-send
+SHEBANG_FILES=	protocols/winpopup/winpopup-install \
+		protocols/winpopup/winpopup-send \
+		kopete/kconf_update/*.pl
 
 WEBPLUGIN_NAME=	# empty
 WEBPLUGIN_FILES=	skypebuttons.so
