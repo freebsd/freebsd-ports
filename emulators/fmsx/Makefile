@@ -5,7 +5,8 @@ PORTNAME=	fmsx
 PORTVERSION=	4.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://fms.komkon.org/fMSX/:code \
-		http://fms.komkon.org/fMSX/src/:rom
+		http://fms.komkon.org/fMSX/src/:rom \
+		http://mirror.amdmi3.ru/distfiles/:code # delete me
 DISTFILES=	fMSX40.zip:code \
 		MSX.ROM:rom MSX2.ROM:rom MSX2EXT.ROM:rom MSX2P.ROM:rom \
 		MSX2PEXT.ROM:rom FMPAC.ROM:rom DISK.ROM:rom MSXDOS2.ROM:rom \
