@@ -3,5 +3,3 @@ bin/jspacker
 %%DATADIR%%/Pack.pm
 %%DATADIR%%/ParseMaster.pm
 %%DATADIR%%/jsPacker.pl
-@dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
