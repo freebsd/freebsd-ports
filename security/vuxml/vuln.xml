@@ -58,6 +58,67 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="36bd352d-299b-11e5-86ff-14dae9d210b8">
+    <topic>mysql -- SSL Downgrade</topic>
+    <affects>
+      <package>
+	<name>php56-mysql</name>
+	<name>php56-mysqli</name>
+	<range><lt>5.6.11</lt></range>
+      </package>
+      <package>
+	<name>php55-mysql</name>
+	<name>php55-mysqli</name>
+	<range><lt>5.5.27</lt></range>
+      </package>
+      <package>
+	<name>php54-mysql</name>
+	<name>php54-mysqli</name>
+	<range><lt>5.4.43</lt></range>
+      </package>
+      <package>
+	<name>mariadb-server</name>
+	<name>mysql51-server</name>
+	<name>mysql55-server</name>
+	<name>mysql56-server</name>
+	<name>percona55-server</name>
+	<name>percona56-server</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>mariadb55</name>
+	<range><lt>5.5.44</lt></range>
+      </package>
+      <package>
+	<name>mariadb10</name>
+	<range><lt>10.0.20</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Duo Security reports:</p>
+	<blockquote cite="INSERT URL HERE">
+	  <p>Researchers have identified a serious vulnerability in some
+	    versions of Oracle’s MySQL database product that allows an attacker to
+	    strip SSL/TLS connections of their security wrapping transparently.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://bugs.php.net/bug.php?id=69669</url>
+      <url>https://www.duosecurity.com/blog/backronym-mysql-vulnerability</url>
+      <url>http://www.ocert.org/advisories/ocert-2015-003.html</url>
+      <url>https://mariadb.atlassian.net/browse/MDEV-7937</url>
+      <url>https://mariadb.com/kb/en/mariadb/mariadb-10020-changelog/</url>
+      <url>https://mariadb.com/kb/en/mariadb/mariadb-5544-changelog/</url>
+      <cvename>CVE-2015-3152</cvename>
+    </references>
+    <dates>
+      <discovery>2015-03-20</discovery>
+      <entry>2015-07-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="81326883-2905-11e5-a4a5-002590263bf5">
     <topic>devel/ipython -- CSRF possible remote execution vulnerability</topic>
     <affects>
