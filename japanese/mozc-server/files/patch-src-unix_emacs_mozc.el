@@ -1,5 +1,5 @@
---- unix/emacs/mozc.el.orig	2015-02-15 04:18:31.000000000 +0900
-+++ unix/emacs/mozc.el	2015-02-19 04:01:46.000000000 +0900
+--- src/unix/emacs/mozc.el.orig	2015-02-15 04:18:31.000000000 +0900
++++ src/unix/emacs/mozc.el	2015-02-19 04:01:46.000000000 +0900
 @@ -1538,7 +1538,7 @@
  
  ;;;; Communication with Mozc server through the helper process

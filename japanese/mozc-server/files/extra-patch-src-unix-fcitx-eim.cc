@@ -1,5 +1,5 @@
---- unix/fcitx/eim.cc.orig	2014-08-31 06:48:00.000000000 +0900
-+++ unix/fcitx/eim.cc	2014-08-31 06:48:11.000000000 +0900
+--- src/unix/fcitx/eim.cc.orig	2014-08-31 06:48:00.000000000 +0900
++++ src/unix/fcitx/eim.cc	2014-08-31 06:48:11.000000000 +0900
 @@ -176,7 +176,9 @@
              // clear candidate table
              FcitxCandidateWordReset(candList);

@@ -1,5 +1,5 @@
---- unix/ibus/gen_mozc_xml.py.orig	2015-02-15 04:18:31.000000000 +0900
-+++ unix/ibus/gen_mozc_xml.py	2015-02-22 02:00:23.000000000 +0900
+--- src/unix/ibus/gen_mozc_xml.py.orig	2015-02-15 04:18:31.000000000 +0900
++++ src/unix/ibus/gen_mozc_xml.py	2015-02-22 02:00:23.000000000 +0900
 @@ -67,7 +67,7 @@
  # Information to generate <engines> part of mozc.xml for IBus 1.5 or later.
  IBUS_1_5_ENGINE_COMMON_PROPS = {

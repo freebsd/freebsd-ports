@@ -1,5 +1,5 @@
---- build_mozc.py.orig	2015-02-15 04:18:52.000000000 +0900
-+++ build_mozc.py	2015-02-19 03:40:47.000000000 +0900
+--- src/build_mozc.py.orig	2015-02-15 04:18:52.000000000 +0900
++++ src/build_mozc.py	2015-02-19 03:40:47.000000000 +0900
 @@ -357,6 +357,11 @@
    parser.add_option('--version_file', dest='version_file',
                      help='use the specified version template file',

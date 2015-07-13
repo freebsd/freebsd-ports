@@ -1,5 +1,5 @@
---- unix/fcitx/surrounding_text_util.cc.orig	2014-08-31 07:02:14.000000000 +0900
-+++ unix/fcitx/surrounding_text_util.cc	2014-08-31 07:03:49.000000000 +0900
+--- src/unix/fcitx/surrounding_text_util.cc.orig	2014-08-31 07:02:14.000000000 +0900
++++ src/unix/fcitx/surrounding_text_util.cc	2014-08-31 07:03:49.000000000 +0900
 @@ -32,7 +32,9 @@
  #include <limits>
  #include <string>

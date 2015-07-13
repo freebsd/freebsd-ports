@@ -1,5 +1,5 @@
---- third_party/gyp/gyp.orig	2014-08-31 04:28:46.000000000 +0900
-+++ third_party/gyp/gyp	2014-08-31 04:28:50.000000000 +0900
+--- src/third_party/gyp/gyp.orig	2014-08-31 04:28:46.000000000 +0900
++++ src/third_party/gyp/gyp	2014-08-31 04:28:50.000000000 +0900
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh

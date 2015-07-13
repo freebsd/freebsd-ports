@@ -1,5 +1,5 @@
---- server/mozc_server.cc.orig	2013-03-29 13:33:26.000000000 +0900
-+++ server/mozc_server.cc	2013-04-27 15:18:29.000000000 +0900
+--- src/server/mozc_server.cc.orig	2013-03-29 13:33:26.000000000 +0900
++++ src/server/mozc_server.cc	2013-04-27 15:18:29.000000000 +0900
 @@ -32,6 +32,9 @@
  #ifdef OS_WIN
  #include <windows.h>

@@ -1,5 +1,5 @@
---- base/mutex.cc.orig	2013-03-29 13:33:43.000000000 +0900
-+++ base/mutex.cc	2013-04-27 15:37:37.000000000 +0900
+--- src/base/mutex.cc.orig	2013-03-29 13:33:43.000000000 +0900
++++ src/base/mutex.cc	2013-04-27 15:37:37.000000000 +0900
 @@ -296,7 +296,7 @@
    // PTHREAD_MUTEX_RECURSIVE_NP but Mac OS X 10.5 does not
    pthread_mutexattr_t attr;

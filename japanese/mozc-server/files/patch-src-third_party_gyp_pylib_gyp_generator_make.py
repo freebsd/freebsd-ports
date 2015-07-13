@@ -1,5 +1,5 @@
---- third_party/gyp/pylib/gyp/generator/make.py.orig	2013-02-26 11:59:54.000000000 +0900
-+++ third_party/gyp/pylib/gyp/generator/make.py	2013-05-03 21:08:15.000000000 +0900
+--- src/third_party/gyp/pylib/gyp/generator/make.py.orig	2013-02-26 11:59:54.000000000 +0900
++++ src/third_party/gyp/pylib/gyp/generator/make.py	2013-05-03 21:08:15.000000000 +0900
 @@ -259,7 +259,7 @@
  #   export LINK=g++
  #
