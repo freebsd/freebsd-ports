@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	inflex
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 PKGNAMEPREFIX=	elixir-
 
@@ -13,6 +14,5 @@ LICENSE=	APACHE20
 USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	nurugger07
-GH_TAGNAME=	81581fe
 
 .include <bsd.port.mk>
