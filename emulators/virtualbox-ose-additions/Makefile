@@ -158,11 +158,8 @@ post-patch:
 .endif
 
 pre-build:
-	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|' \
-		${WRKSRC}/env.sh \
-		${WRKSRC}/src/VBox/Additions/freebsd/Installer/vboxguest.sh
-	cd ${WRKSRC} && ${SH} env.sh && \
-	    ${KMK_CONFIG} ${LOCALBASE}/bin/kmk ${KMK_FLAGS}
+	cd ${WRKSRC} && \
+	    ${SH} -c '. env.sh && ${KMK_CONFIG} ${LOCALBASE}/bin/kmk ${KMK_FLAGS}'
 
 do-install:
 	${MKDIR} ${STAGEDIR}${KMODDIR}
