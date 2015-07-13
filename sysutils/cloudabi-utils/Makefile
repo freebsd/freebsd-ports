@@ -17,7 +17,7 @@ LIB_DEPENDS=	libyaml.so:${PORTSDIR}/textproc/libyaml
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	CloudABI has not yet been ported to other architectures
 
-USES=		tar:xz
+USES=		compiler:c11 tar:xz
 
 PLIST_FILES=	bin/cloudabi-run \
 		libexec/cloudabi-reexec \
