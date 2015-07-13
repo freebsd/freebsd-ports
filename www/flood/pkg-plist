@@ -13,6 +13,3 @@ bin/flood
 %%PORTDOCS%%%%DOCSDIR%%/docbook/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/docbook/flood.xml
 %%PORTDOCS%%%%DOCSDIR%%/README
-@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docbook
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
