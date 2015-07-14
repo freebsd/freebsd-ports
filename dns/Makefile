@@ -134,6 +134,7 @@
     SUBDIR += p5-Net-LibIDN
     SUBDIR += p5-Net-Nslookup
     SUBDIR += p5-Net-RBLClient
+    SUBDIR += p5-Net-RNDC
     SUBDIR += p5-POE-Component-Client-DNS
     SUBDIR += p5-POE-Component-Client-DNS-Recursive
     SUBDIR += p5-POE-Component-Client-DNSBL
