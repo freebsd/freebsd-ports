@@ -44,6 +44,7 @@ shebangonefile() {
 	/usr/bin/env) ;;
 	/usr/bin/nawk) ;;
 	/usr/bin/sed) ;;
+	/usr/sbin/dtrace) ;;
 	*)
 		err "'${interp}' is an invalid shebang you need USES=shebangfix for '${f#${STAGEDIR}${PREFIX}/}'"
 		rc=1
