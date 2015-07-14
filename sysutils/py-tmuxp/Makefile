@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tmuxp
-PORTVERSION=	0.1.12
+PORTVERSION=	0.9.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,9 +15,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argcomplete>=0:${PORTSDIR}/devel/py-argcomplete \
 		${PYTHON_PKGNAMEPREFIX}kaptan>=0.5.7:${PORTSDIR}/devel/py-kaptan \
+		${PYTHON_PKGNAMEPREFIX}colorama>=0.3.3:${PORTSDIR}/devel/py-colorama \
 		tmux:${PORTSDIR}/sysutils/tmux
 
-USES=		python
+USES=		python:2
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
