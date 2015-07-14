@@ -1,0 +1,10 @@
+--- src/lib/arch/CMakeLists.txt.orig	2015-05-26 15:56:21 UTC
++++ src/lib/arch/CMakeLists.txt
+@@ -49,6 +49,6 @@ endif()
+ 
+ add_library(arch STATIC ${sources})
+ 
+-if (UNIX)
++if (UNIX AND NOT ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
+ 	target_link_libraries(arch dl ${libs})
+ endif()

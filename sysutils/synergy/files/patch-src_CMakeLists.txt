@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2015-05-26 15:56:21 UTC
++++ src/CMakeLists.txt
+@@ -18,6 +18,7 @@ add_subdirectory(lib)
+ add_subdirectory(cmd)
+ add_subdirectory(micro)
+ 
+-if (NOT ${CMAKE_SYSTEM_NAME} MATCHES "IRIX")
++if (NOT ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD"
++    AND NOT ${CMAKE_SYSTEM_NAME} MATCHES "IRIX")
+ 	add_subdirectory(test)
+ endif()
