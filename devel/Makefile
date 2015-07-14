@@ -4055,6 +4055,7 @@
     SUBDIR += py-pbr
     SUBDIR += py-pefile
     SUBDIR += py-period
+    SUBDIR += py-pex
     SUBDIR += py-phabricator
     SUBDIR += py-phpserialize
     SUBDIR += py-pika
