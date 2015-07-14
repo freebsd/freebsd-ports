@@ -19,7 +19,6 @@ lib/elixir/lib/exprotobuf/lib/exprotobuf/define_enum.ex
 lib/elixir/lib/exprotobuf/lib/exprotobuf/define_message.ex
 lib/elixir/lib/exprotobuf/lib/exprotobuf/encoder.ex
 lib/elixir/lib/exprotobuf/lib/exprotobuf/field.ex
-lib/elixir/lib/exprotobuf/lib/exprotobuf/field.ex.orig
 lib/elixir/lib/exprotobuf/lib/exprotobuf/parser.ex
 lib/elixir/lib/exprotobuf/lib/exprotobuf/utils.ex
 %%PORTDOCS%%%%DOCSDIR%%/README.md
