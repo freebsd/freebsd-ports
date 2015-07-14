@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	synergy
-PORTVERSION=	1.6.2
+PORTVERSION=	1.7.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	kevlo@FreeBSD.org
@@ -14,6 +14,9 @@ USES=		cmake cpe
 CPE_VENDOR=	synergy-foss
 USE_XORG=	ice xtst x11 sm
 USE_GITHUB=	yes
+
+DISTVERSIONPREFIX=	v
+DISTVERSIONSUFFIX=	-stable
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
@@ -29,9 +32,10 @@ PORTEXAMPLES=	synergy.conf.example synergy.conf.example-basic \
 OPTIONS_DEFINE=	EXAMPLES
 
 post-extract:
-	cd ${WRKSRC}/ext/
-	${MKDIR} ${WRKSRC}/ext/cryptopp562
-	(cd ${WRKSRC}/ext/cryptopp562 && ${TAR} xfz ${WRKSRC}/ext/cryptopp562.zip)
+	cp ${WRKSRC}/LICENSE ${WRKSRC}/COPYING
+	${MKDIR} -p ${WRKSRC}/ext/gmock-1.6.0 ${WRKSRC}/ext/gtest-1.6.0
+	(cd ${WRKSRC}/ext/gmock-1.6.0 && ${TAR} xfz ../gmock-1.6.0.zip)
+	(cd ${WRKSRC}/ext/gtest-1.6.0 && ${TAR} xfz ../gtest-1.6.0.zip)
 
 do-install:
 .for f in synergyc synergyd synergys
