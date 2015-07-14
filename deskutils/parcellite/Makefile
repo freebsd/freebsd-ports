@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
-USES=		gmake pkgconfig
+USES=		gettext-tools gmake pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 
@@ -25,7 +25,7 @@ OPTIONS_DEFINE= DOCS NLS
 OPTIONS_SUB=	yes
 
 NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=	gettext
+NLS_USES=	gettext-runtime
 
 SUB_FILES=	pkg-message
 
