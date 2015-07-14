@@ -58,6 +58,41 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8d2d6bbd-2a02-11e5-a0af-bcaec565249c">
+    <topic>Adobe Flash Player -- critical vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-c6-flashplugin11</name>
+	<range><lt>0</lt></range>
+      </package>
+      <package>
+	<name>linux-f10-flashplugin11</name>
+	<range><lt>0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="https://helpx.adobe.com/security/products/flash-player/apsa15-04.html">
+	  <p>Critical vulnerabilities (CVE-2015-5122, CVE-2015-5123) have
+	    been identified. Successful exploitation could cause a crash
+	    and potentially allow an attacker to take control of the
+	    affected system. Adobe is aware of reports that exploits
+	    targeting these vulnerabilities have been published publicly.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5122</cvename>
+      <cvename>CVE-2015-5123</cvename>
+      <url>https://helpx.adobe.com/security/products/flash-player/apsa15-04.html</url>
+    </references>
+    <dates>
+      <discovery>2015-07-10</discovery>
+      <entry>2015-07-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3d39e927-29a2-11e5-86ff-14dae9d210b8">
     <topic>php -- use-after-free vulnerability</topic>
     <affects>
