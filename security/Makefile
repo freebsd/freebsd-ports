@@ -111,6 +111,7 @@
     SUBDIR += duo
     SUBDIR += easy-rsa
     SUBDIR += easypg
+    SUBDIR += elixir-comeonin
     SUBDIR += engine_pkcs11
     SUBDIR += expiretable
     SUBDIR += f-prot
