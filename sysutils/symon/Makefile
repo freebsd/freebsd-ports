@@ -3,7 +3,7 @@
 
 PORTNAME=	symon
 PORTVERSION=	2.86
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://wpd.home.xs4all.nl/symon/philes/ \
 		LOCAL/uqs
@@ -13,7 +13,8 @@ COMMENT=	Performance and information monitoring tool
 
 SUB_FILES=	pkg-message
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	client/getsymonitem.pl
 USE_PERL5=	build
 MAKE_JOBS_UNSAFE=	yes
 
