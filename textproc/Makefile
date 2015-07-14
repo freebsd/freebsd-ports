@@ -192,7 +192,6 @@
     SUBDIR += ga-aspell
     SUBDIR += gastex
     SUBDIR += gd-aspell
-    SUBDIR += gdict
     SUBDIR += gdome2
     SUBDIR += gl-aspell
     SUBDIR += gladtex
