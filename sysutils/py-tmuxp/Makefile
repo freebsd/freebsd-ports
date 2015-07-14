@@ -18,6 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argcomplete>=0:${PORTSDIR}/devel/py-argcompl
 		${PYTHON_PKGNAMEPREFIX}colorama>=0.3.3:${PORTSDIR}/devel/py-colorama \
 		tmux:${PORTSDIR}/sysutils/tmux
 
+NO_ARCH=	yes
 USES=		python:2
 USE_PYTHON=	autoplist distutils
 
