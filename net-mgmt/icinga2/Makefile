@@ -73,6 +73,13 @@ PGSQL_USES=	pgsql
 OPTIONS_SUB=	yes
 
 .include <bsd.port.options.mk>
+
+.if ! ${PORT_OPTIONS:MMYSQL} && ! ${PORT_OPTIONS:MPGSQL}
+PLIST_SUB+=	DBBACKEND="@comment "
+.else
+PLIST_SUB+=	DBBACKEND=""
+.endif
+
 .if ${OSVERSION} < 1000033
 BUILD_DEPENDS+=	flex>=2.5.31:${PORTSDIR}/textproc/flex
 CMAKE_ARGS+=	-DFLEX_EXECUTABLE:STRING=${LOCALBASE}/bin/flex
