@@ -1112,19 +1112,6 @@
     Gcc_Path : String_Access := null;
  
     Non_Empty_Node : constant Project_Node_Id := 1;
---- gcc/ada/s-osinte-android.ads.orig
-+++ gcc/ada/s-osinte-android.ads
-@@ -595,8 +595,8 @@
-    type time_t is new long;
- 
-    type timespec is record
--      tv_sec  : time_t;
--      tv_nsec : long;
-+      ts_sec  : time_t;
-+      ts_nsec : long;
-    end record;
-    pragma Convention (C, timespec);
- 
 --- /dev/null
 +++ gcc/ada/s-osinte-dragonfly.adb
 @@ -0,0 +1,116 @@
