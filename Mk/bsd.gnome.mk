@@ -216,7 +216,9 @@ atk_LIB_DEPENDS=	libatk-1.0.so:${PORTSDIR}/accessibility/atk
 atk_DETECT=		${LOCALBASE}/libdata/pkgconfig/atk.pc
 atk_USE_GNOME_IMPL=	glib20
 
+dconf_BUILD_DEPENDS=	dconf:${PORTSDIR}/devel/dconf
 dconf_LIB_DEPENDS=	libdconf.so:${PORTSDIR}/devel/dconf
+dconf_RUN_DEPENDS=	dconf:${PORTSDIR}/devel/dconf
 dconf_DETECT=		${LOCALBASE}/libdata/pkgconfig/dconf.pc
 dconf_USE_GNOME_IMPL=	glib20
 
