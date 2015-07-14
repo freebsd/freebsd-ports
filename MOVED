@@ -7688,3 +7688,4 @@ devel/p5-Test-TempDir|devel/p5-Test-TempDir-Tiny|2015-07-14|Has expired: Use dev
 x11-toolkits/fpc-gtk1||2015-07-14|Development has been discontinued
 graphics/fpc-fpgtk||2015-07-14|Development has been discontinued
 editors/lazarus-lcl-gtk||2015-07-14|Development has been discontinued
+x11/gmessage||2015-07-14|Upstream has disappeared and development ceased
