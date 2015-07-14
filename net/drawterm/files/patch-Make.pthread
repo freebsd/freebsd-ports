@@ -1,6 +1,6 @@
---- Make.pthread.orig	2009-08-26 00:44:41.000000000 -0500
-+++ Make.pthread	2012-02-15 14:04:26.020899861 -0600
-@@ -4,14 +4,14 @@
+--- Make.pthread.orig	2009-08-26 05:44:41 UTC
++++ Make.pthread
+@@ -4,14 +4,14 @@ PTHREAD=-pthread -DPTHREAD
  AR=ar
  AS=no-as-here
  RANLIB=ranlib
