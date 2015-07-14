@@ -449,6 +449,7 @@
     SUBDIR += erlang-gen_smtp
     SUBDIR += erlang-getopt
     SUBDIR += erlang-goldrush
+    SUBDIR += erlang-gpb
     SUBDIR += erlang-gproc
     SUBDIR += erlang-jobs
     SUBDIR += erlang-jsx
