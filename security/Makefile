@@ -992,7 +992,6 @@
     SUBDIR += srm
     SUBDIR += ssdeep
     SUBDIR += ssh-copy-id
-    SUBDIR += ssh-gui
     SUBDIR += ssh-multiadd
     SUBDIR += ssh_askpass_gtk2
     SUBDIR += sshblock
