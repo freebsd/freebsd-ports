@@ -6,6 +6,7 @@
     SUBDIR += 2bsd-diff
     SUBDIR += R-cran-R2HTML
     SUBDIR += R-cran-XML
+    SUBDIR += R-cran-pystr
     SUBDIR += R-cran-stringi
     SUBDIR += R-cran-stringr
     SUBDIR += R-cran-xtable
