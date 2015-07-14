@@ -63,11 +63,11 @@ Notes:
     <affects>
       <package>
 	<name>linux-c6-flashplugin11</name>
-	<range><lt>0</lt></range>
+	<range><ge>0</ge></range>
       </package>
       <package>
 	<name>linux-f10-flashplugin11</name>
-	<range><lt>0</lt></range>
+	<range><ge>0</ge></range>
       </package>
     </affects>
     <description>
