@@ -7685,3 +7685,6 @@ net-im/tkabbur||2015-07-07|Has expired: Upstream development ceased since 2008
 www/mod_wsgi3|www/mod_wsgi4|2015-07-12|Renamed to reflect new version
 archivers/pear-PHP_Archiv|archivers/pear-PHP_Archive|2015-07-12|Fix path
 devel/p5-Test-TempDir|devel/p5-Test-TempDir-Tiny|2015-07-14|Has expired: Use devel/p5-Test-TempDir-Tiny instead
+x11-toolkits/fpc-gtk1||2015-07-14|Development has been discontinued
+graphics/fpc-fpgtk||2015-07-14|Development has been discontinued
+editors/lazarus-lcl-gtk||2015-07-14|Development has been discontinued
