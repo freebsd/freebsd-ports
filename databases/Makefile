@@ -52,6 +52,7 @@
     SUBDIR += dbow
     SUBDIR += dbtool
     SUBDIR += dbview
+    SUBDIR += elixir-calecto
     SUBDIR += elixir-ecto
     SUBDIR += elixir-mariaex
     SUBDIR += elixir-mongo
