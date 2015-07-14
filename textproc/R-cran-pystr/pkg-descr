@@ -1,0 +1,4 @@
+String operations the Python way - a package for those of us who miss Python's
+string methods while we're working in R.
+
+WWW: http://cran.r-project.org/web/pystr/
