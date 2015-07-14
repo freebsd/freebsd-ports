@@ -47,4 +47,7 @@ GH_TAGNAME=	v0.8.5-Release
 
 QMAKE_ARGS=	CONFIG+="configure"
 
+post-install:
+	${RM} -rf ${STAGEDIR}${PREFIX}/share/Lumina-DE/i18n
+
 .include <bsd.port.mk>
