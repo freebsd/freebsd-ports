@@ -3,7 +3,7 @@
 
 PORTNAME=	ndpmon
 PORTVERSION=	1.4.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-1.4/
 
@@ -29,7 +29,8 @@ PLIST_SUB+=	PY=""
 PLIST_SUB+=	PY="@comment "
 .endif
 
-USES=		perl5 tar:tgz
+USES=		perl5 shebangfix tar:tgz
+SHEBANG_FILES=	demopipeprogram.pl.sample
 USE_PERL5=	run
 USE_GNOME=	libxml2
 USE_RC_SUBR=	ndpmonitor
