@@ -2,6 +2,7 @@
 
 PORTNAME=	zope213
 PORTVERSION=	2.13.22
+PORTREVISION=	1
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 DISTNAME=	Zope2-${PORTVERSION}
@@ -80,12 +81,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}AccessControl>=2.13.2:${PORTSDIR}/security/p
 		${PYTHON_PKGNAMEPREFIX}manuel>=0:${PORTSDIR}/devel/py-manuel
 
 USES=		python:2 zip
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
-SUB_FILES=	instance-message package-pkg-message pkg-message
-SUB_LIST=	ZOPEINSTANCEBASE=${ZOPEINSTANCEBASE} \
-		ZOPE_USER=${ZOPE_USER} \
+SUB_FILES=	pkg-message
+SUB_LIST=	ZOPE_USER=${ZOPE_USER} \
 		ZOPEINSTANCEDIR=${ZOPEINSTANCEDIR}
 
 USE_RC_SUBR=		${PORTNAME}
@@ -93,30 +93,9 @@ ZOPE_USER?=		www
 ZOPEINSTANCEBASE?=	${PREFIX}/www/Zope213
 ZOPEINSTANCEDIR?=	${ZOPEINSTANCEBASE}/${ZOPEINSTANCENAME}
 
-.if defined(BATCH)
-ISBATCH=	--user admin:test123
-.else
-ISBATCH=	""
-.endif
-
-.if defined(INSTANCENAME)
-ZOPEINSTANCENAME=	${INSTANCENAME}
-.endif
-
-instance:
-	@${LOCALBASE}/bin/mkzopeinstance --dir ${ZOPEINSTANCEDIR} ${ISBATCH}
-	@${CHOWN} ${ZOPE_USER}:${ZOPE_USER} ${ZOPEINSTANCEDIR}/var
-	@${CHOWN} ${ZOPE_USER}:${ZOPE_USER} ${ZOPEINSTANCEDIR}/log
-	@${SED} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/zope.conf_changes \
-		| ${PATCH} --silent ${ZOPEINSTANCEDIR}/etc/zope.conf
-	@${RM} ${ZOPEINSTANCEDIR}/etc/zope.conf.orig
-	@${CAT} ${WRKDIR}/instance-message
-
-post-install:
-	@${CAT} ${WRKDIR}/pkg-message
-
-pre-package:
-	@${INSTALL_DATA} ${WRKDIR}/package-pkg-message ${PKGMESSAGE}
+post-patch:
+	@${REINPLACE_CMD} -e 's/#.*effective-user chrism/effective-user ${ZOPE_USER}/' \
+		${WRKSRC}/src/Zope2/utilities/skel/etc/zope.conf.in
+	@${RM} ${WRKSRC}/src/Zope2/utilities/skel/etc/zope.conf.in.bak
 
 .include <bsd.port.mk>
