@@ -58,11 +58,14 @@ do-install:
 
 .else # !defined(PINENTRY_GUI)
 PKGNAMESUFFIX=	-${PINENTRY_GUI}
-LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
+LIB_DEPENDS=	libassuan.so:${PORTSDIR}/security/libassuan \
+		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libksba.so:${PORTSDIR}/security/libksba
 
 USES+=		iconv gmake pkgconfig
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-pinentry-emacs \
+		--disable-pinentry-gnome3
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
