@@ -154,6 +154,7 @@
     SUBDIR += evas_generic_loaders-svg
     SUBDIR += evas_generic_loaders-xcf
     SUBDIR += evince
+    SUBDIR += evince-lite
     SUBDIR += evolvotron
     SUBDIR += exact-image
     SUBDIR += exif
