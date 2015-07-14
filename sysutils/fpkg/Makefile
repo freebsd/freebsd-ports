@@ -15,7 +15,7 @@ COMMENT=	Package Tool Wrapper for FreeBSD
 
 BROKEN=		does not support pkg(8)
 DEPRECATED=	Does not support pkg(8)
-EXPIRATION_DATE=	20150815
+EXPIRATION_DATE=	2015-08-15
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	fpkg
