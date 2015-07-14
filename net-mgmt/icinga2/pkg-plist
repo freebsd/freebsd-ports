@@ -42,7 +42,7 @@ lib/icinga2/libchecker.so
 lib/icinga2/libcli.so
 lib/icinga2/libcompat.so
 lib/icinga2/libconfig.so
-%%MYSQL%%%%PGSQL%%llib/icinga2/libdb_ido.so
+%%DBBACKEND%%lib/icinga2/libdb_ido.so
 %%MYSQL%%lib/icinga2/libdb_ido_mysql.so
 %%PGSQL%%lib/icinga2/libdb_ido_pgsql.so
 lib/icinga2/libexecvpe.so
