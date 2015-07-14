@@ -1,3 +1,4 @@
+lib/elixir/lib/csv/ebin/Elixir.CSV.Decoder.StreamError.beam
 lib/elixir/lib/csv/ebin/Elixir.CSV.Decoder.beam
 lib/elixir/lib/csv/ebin/Elixir.CSV.Defaults.beam
 lib/elixir/lib/csv/ebin/Elixir.CSV.Encode.Any.beam
