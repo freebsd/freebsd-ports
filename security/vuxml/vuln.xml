@@ -62,11 +62,11 @@ Notes:
     <topic>Adobe Flash Player -- critical vulnerabilities</topic>
     <affects>
       <package>
-	<name>linux-c6-flashplugin11</name>
+	<name>linux-c6-flashplugin</name>
 	<range><ge>0</ge></range>
       </package>
       <package>
-	<name>linux-f10-flashplugin11</name>
+	<name>linux-f10-flashplugin</name>
 	<range><ge>0</ge></range>
       </package>
     </affects>
@@ -1162,11 +1162,11 @@ Notes:
     <topic>Adobe Flash Player -- critical vulnerabilities</topic>
     <affects>
       <package>
-	<name>linux-c6-flashplugin11</name>
+	<name>linux-c6-flashplugin</name>
 	<range><lt>11.2r202.481</lt></range>
       </package>
       <package>
-	<name>linux-f10-flashplugin11</name>
+	<name>linux-f10-flashplugin</name>
 	<range><lt>11.2r202.481</lt></range>
       </package>
     </affects>
@@ -2253,11 +2253,11 @@ Notes:
     <topic>Adobe Flash Player -- critical vulnerabilities</topic>
     <affects>
       <package>
-	<name>linux-c6-flashplugin11</name>
+	<name>linux-c6-flashplugin</name>
 	<range><lt>11.2r202.466</lt></range>
       </package>
       <package>
-	<name>linux-f10-flashplugin11</name>
+	<name>linux-f10-flashplugin</name>
 	<range><lt>11.2r202.466</lt></range>
       </package>
     </affects>
@@ -3087,11 +3087,11 @@ Notes:
     <topic>Adobe Flash Player -- critical vulnerabilities</topic>
     <affects>
       <package>
-	<name>linux-c6-flashplugin11</name>
+	<name>linux-c6-flashplugin</name>
 	<range><lt>11.2r202.466</lt></range>
       </package>
       <package>
-	<name>linux-f10-flashplugin11</name>
+	<name>linux-f10-flashplugin</name>
 	<range><lt>11.2r202.466</lt></range>
       </package>
     </affects>
@@ -4883,11 +4883,11 @@ Notes:
     <topic>Adobe Flash Player -- critical vulnerabilities</topic>
     <affects>
       <package>
-	<name>linux-c6-flashplugin11</name>
+	<name>linux-c6-flashplugin</name>
 	<range><le>11.2r202.457</le></range>
       </package>
       <package>
-	<name>linux-f10-flashplugin11</name>
+	<name>linux-f10-flashplugin</name>
 	<range><le>11.2r202.457</le></range>
       </package>
     </affects>
@@ -5814,11 +5814,11 @@ Notes:
     <topic>Adobe Flash Player -- critical vulnerabilities</topic>
     <affects>
       <package>
-	<name>linux-c6-flashplugin11</name>
+	<name>linux-c6-flashplugin</name>
 	<range><le>11.2r202.451</le></range>
       </package>
       <package>
-	<name>linux-f10-flashplugin11</name>
+	<name>linux-f10-flashplugin</name>
 	<range><le>11.2r202.451</le></range>
       </package>
     </affects>
@@ -6844,11 +6844,11 @@ Notes:
     <topic>Adobe Flash Player -- critical vulnerabilities</topic>
     <affects>
       <package>
-	<name>linux-c6-flashplugin11</name>
+	<name>linux-c6-flashplugin</name>
 	<range><le>11.2r202.442</le></range>
       </package>
       <package>
-	<name>linux-f10-flashplugin11</name>
+	<name>linux-f10-flashplugin</name>
 	<range><le>11.2r202.442</le></range>
       </package>
     </affects>
@@ -8221,11 +8221,11 @@ Notes:
     <topic>Adobe Flash Player -- critical vulnerability</topic>
     <affects>
       <package>
-	<name>linux-c6-flashplugin11</name>
+	<name>linux-c6-flashplugin</name>
 	<range><le>11.2r202.438</le></range>
       </package>
       <package>
-	<name>linux-f10-flashplugin11</name>
+	<name>linux-f10-flashplugin</name>
 	<range><le>11.2r202.438</le></range>
       </package>
     </affects>
@@ -8436,11 +8436,11 @@ Notes:
     <topic>Adobe Flash Player -- multiple vulnerabilities</topic>
     <affects>
       <package>
-	<name>linux-c6-flashplugin11</name>
+	<name>linux-c6-flashplugin</name>
 	<range><lt>11.2r202.429</lt></range>
       </package>
       <package>
-	<name>linux-f10-flashplugin11</name>
+	<name>linux-f10-flashplugin</name>
 	<range><lt>11.2r202.429</lt></range>
       </package>
     </affects>
@@ -11167,11 +11167,11 @@ Notes:
     <topic>Flash player -- Multiple security vulnerabilities in www/linux-*-flashplugin11</topic>
     <affects>
       <package>
-	<name>linux-f10-flashplugin11</name>
+	<name>linux-f10-flashplugin</name>
 	<range><lt>11.2r202.400</lt></range>
       </package>
       <package>
-	<name>linux-c6-flashplugin11</name>
+	<name>linux-c6-flashplugin</name>
 	<range><lt>11.2r202.400</lt></range>
       </package>
     </affects>
