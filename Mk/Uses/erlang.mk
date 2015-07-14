@@ -79,17 +79,19 @@ do-install: do-install-erlang
 
 post-patch-erlang:
 	@${FIND} ${WRKSRC} -name .gitignore -delete
-# Attempt to remove all traces of {vsn, git}; replace with actual PORTVERSION
+# Attempt to remove all traces of {vsn, ....}; replace with actual PORTVERSION
 	@if [ -f ${WRKSRC}/src/${ERL_APP_NAME}.app.src ]; then \
-		${REINPLACE_CMD} -i '' -e 's/{ *vsn, *git *}/{vsn, "${PORTVERSION}"}/' \
+		${REINPLACE_CMD} -i '' -e 's/{ *vsn,.*}/{vsn, "${PORTVERSION}"}/' \
 			${WRKSRC}/src/${ERL_APP_NAME}.app.src; \
 	fi
 	@if [ -f ${WRKSRC}/ebin/${ERL_APP_NAME}.app ]; then \
-		${REINPLACE_CMD} -i '' -e 's/{ *vsn, *git *}/{vsn, "${PORTVERSION}"}/' \
+		${REINPLACE_CMD} -i '' -e 's/{ *vsn,.*}/{vsn, "${PORTVERSION}"}/' \
 			${WRKSRC}/ebin/${ERL_APP_NAME}.app; \
 	fi
 	@${GREP} -l "%%LOCALBASE%%" $$(${FIND} ${WRKSRC}) \
 		| ${XARGS} ${REINPLACE_CMD} -i '' -e "s@%%LOCALBASE%%@${LOCALBASE}@"
+	@${GREP} -l "%%PORTVERSION%%" $$(${FIND} ${WRKSRC}) \
+		| ${XARGS} ${REINPLACE_CMD} -i '' -e "s@%%PORTVERSION%%@${PORTVERSION}@"
 # Always try to build with the system version of rebar and rebar3
 	@if [ -f ${WRKSRC}/rebar.config ]; then \
 		${REINPLACE_CMD} -i '' -e "s@./rebar3@${REBAR3_CMD}@; s@./rebar@${REBAR_CMD}@" \
