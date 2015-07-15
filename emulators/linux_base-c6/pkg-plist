@@ -802,6 +802,7 @@ usr/lib/libpcrecpp.so.0
 usr/lib/libpcrecpp.so.0.0.0
 usr/lib/libpcreposix.so.0
 usr/lib/libpcreposix.so.0.0.0
+usr/lib/librt.so.1
 usr/lib/libslang.so.2
 usr/lib/libslang.so.2.2.1
 usr/lib/libstdc++-3-libc6.2-2-2.10.0.so
