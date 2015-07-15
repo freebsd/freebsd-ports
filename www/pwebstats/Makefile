@@ -17,6 +17,7 @@ RUN_DEPENDS=	fly:${PORTSDIR}/graphics/fly
 USES=		perl5
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/pwebstats/
