@@ -58,6 +58,109 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ca139c7f-2a8c-11e5-a4a5-002590263bf5">
+    <topic>libwmf -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libwmf</name>
+	<range><lt>0.2.8.4_14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mitre reports:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0941">
+	  <p>Multiple buffer overflows in the gd graphics library (libgd) 2.0.21
+	    and earlier may allow remote attackers to execute arbitrary code via
+	    malformed image files that trigger the overflows due to improper
+	    calls to the gdMalloc function, a different set of vulnerabilities
+	    than CVE-2004-0990.</p>
+	</blockquote>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0455">
+	  <p>Buffer overflow in the gdImageStringFTEx function in gdft.c in GD
+	    Graphics Library 2.0.33 and earlier allows remote attackers to cause
+	    a denial of service (application crash) and possibly execute
+	    arbitrary code via a crafted string with a JIS encoded font.</p>
+	</blockquote>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2756">
+	  <p>The gdPngReadData function in libgd 2.0.34 allows user-assisted
+	    attackers to cause a denial of service (CPU consumption) via a
+	    crafted PNG image with truncated data, which causes an infinite loop
+	    in the png_read_info function in libpng.</p>
+	</blockquote>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3472">
+	  <p>Integer overflow in gdImageCreateTrueColor function in the GD
+	    Graphics Library (libgd) before 2.0.35 allows user-assisted remote
+	    attackers to have unspecified attack vectors and impact.</p>
+	</blockquote>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3473">
+	  <p>The gdImageCreateXbm function in the GD Graphics Library (libgd)
+	    before 2.0.35 allows user-assisted remote attackers to cause a
+	    denial of service (crash) via unspecified vectors involving a
+	    gdImageCreate failure.</p>
+	</blockquote>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3477">
+	  <p>The (a) imagearc and (b) imagefilledarc functions in GD Graphics
+	    Library (libgd) before 2.0.35 allow attackers to cause a denial of
+	    service (CPU consumption) via a large (1) start or (2) end angle
+	    degree value.</p>
+	</blockquote>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3546">
+	  <p>The _gdGetColors function in gd_gd.c in PHP 5.2.11 and 5.3.x before
+	    5.3.1, and the GD Graphics Library 2.x, does not properly verify a
+	    certain colorsTotal structure member, which might allow remote
+	    attackers to conduct buffer overflow or buffer over-read attacks via
+	    a crafted GD file, a different vulnerability than CVE-2009-3293.
+	    NOTE: some of these details are obtained from third party
+	    information.</p>
+	</blockquote>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0848">
+	  <p>Heap-based buffer overflow in libwmf 0.2.8.4 allows remote
+	    attackers to cause a denial of service (crash) or possibly execute
+	    arbitrary code via a crafted BMP image.</p>
+	</blockquote>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-4695">
+	  <p>meta.h in libwmf 0.2.8.4 allows remote attackers to cause a denial
+	    of service (out-of-bounds read) via a crafted WMF file.</p>
+	</blockquote>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-4696">
+	  <p>Use-after-free vulnerability in libwmf 0.2.8.4 allows remote
+	    attackers to cause a denial of service (crash) via a crafted WMF
+	    file to the (1) wmf2gd or (2) wmf2eps command.</p>
+	</blockquote>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-4588">
+	  <p>Heap-based buffer overflow in the DecodeImage function in libwmf
+	    0.2.8.4 allows remote attackers to cause a denial of service (crash)
+	    or possibly execute arbitrary code via a crafted "run-length count"
+	    in an image in a WMF file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>11663</bid>
+      <bid>22289</bid>
+      <bid>24089</bid>
+      <bid>24651</bid>
+      <bid>36712</bid>
+      <freebsdpr>ports/201513</freebsdpr>
+      <cvename>CVE-2004-0941</cvename>
+      <cvename>CVE-2007-0455</cvename>
+      <cvename>CVE-2007-2756</cvename>
+      <cvename>CVE-2007-3472</cvename>
+      <cvename>CVE-2007-3473</cvename>
+      <cvename>CVE-2007-3477</cvename>
+      <cvename>CVE-2009-3546</cvename>
+      <cvename>CVE-2015-0848</cvename>
+      <cvename>CVE-2015-4695</cvename>
+      <cvename>CVE-2015-4696</cvename>
+      <cvename>CVE-2015-4588</cvename>
+    </references>
+    <dates>
+      <discovery>2004-10-12</discovery>
+      <entry>2015-07-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a12494c1-2af4-11e5-86ff-14dae9d210b8">
     <topic>apache24 -- multiple vulnerabilities</topic>
     <affects>
