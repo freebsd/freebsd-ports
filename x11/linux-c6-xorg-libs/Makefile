@@ -3,8 +3,9 @@
 
 PORTNAME=	xorg-libs
 PORTVERSION=	7.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 linux
+MASTER_SITES=	CENTOS_LINUX CENTOS_LINUX_UPDATES
 DISTFILES=	libICE-1.0.6-1.el6.${LINUX_RPM_ARCH}.rpm \
 		libSM-1.2.1-2.el6.${LINUX_RPM_ARCH}.rpm \
 		libX11-1.6.0-2.2.el6.${LINUX_RPM_ARCH}.rpm \
@@ -18,7 +19,7 @@ DISTFILES=	libICE-1.0.6-1.el6.${LINUX_RPM_ARCH}.rpm \
 		libXevie-1.0.3-4.el6.${LINUX_RPM_ARCH}.rpm \
 		libXext-1.3.2-2.1.el6.${LINUX_RPM_ARCH}.rpm \
 		libXfixes-5.0.1-2.1.el6.${LINUX_RPM_ARCH}.rpm \
-		libXfont-1.4.5-3.el6_5.${LINUX_RPM_ARCH}.rpm \
+		libXfont-1.4.5-4.el6_6.${LINUX_RPM_ARCH}.rpm \
 		libXft-2.3.1-2.el6.${LINUX_RPM_ARCH}.rpm \
 		libXi-1.7.2-2.2.el6.${LINUX_RPM_ARCH}.rpm \
 		libXinerama-1.1.3-2.1.el6.${LINUX_RPM_ARCH}.rpm \
@@ -54,7 +55,7 @@ SRC_DISTFILES=	libICE-1.0.6-1.el6.src.rpm \
 		libXevie-1.0.3-4.el6.src.rpm \
 		libXext-1.3.2-2.1.el6.src.rpm \
 		libXfixes-5.0.1-2.1.el6.src.rpm \
-		libXfont-1.4.5-3.el6_5.src.rpm \
+		libXfont-1.4.5-4.el6_6.src.rpm \
 		libXft-2.3.1-2.el6.src.rpm \
 		libXi-1.7.2-2.2.el6.src.rpm \
 		libXinerama-1.1.3-2.1.el6.src.rpm \
