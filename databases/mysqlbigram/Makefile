@@ -8,7 +8,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://mysqlbigram.googlepages.com/
 DISTNAME=	bi_gram-src-${PORTVERSION}
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple n-gram (bi-gram) fulltext parser plugin for MySQL
 
 LICENSE=	LGPL21
