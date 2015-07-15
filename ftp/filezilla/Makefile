@@ -48,7 +48,7 @@ CONFIGURE_ARGS+=	--disable-manualupdatecheck
 .include <bsd.port.pre.mk>
 
 .if ${CHOSEN_COMPILER_TYPE} == "gcc"
-BROKEN=		GCC dies with Internal Compiler Error
+BROKEN_FreeBSD=		GCC dies with Internal Compiler Error
 .if ${ARCH} == i386 && ! ${CFLAGS:M-march=*}
 # needed for __atomic_exchange_8, __atmoic_fetch_add_8, __atomic_store_8
 CFLAGS+=	-march=i586
