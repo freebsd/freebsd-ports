@@ -1,6 +1,4 @@
 bin/atril
-bin/atril-previewer
-bin/atril-thumbnailer
 include/atril/1.5.0/atril-document.h
 include/atril/1.5.0/atril-view.h
 include/atril/1.5.0/libdocument/ev-annotation.h
@@ -49,9 +47,9 @@ include/atril/1.5.0/libview/ev-view-presentation.h
 include/atril/1.5.0/libview/ev-view-type-builtins.h
 include/atril/1.5.0/libview/ev-view.h
 %%COMICS%%lib/atril/3/backends/comicsdocument.atril-backend
+%%COMICS%%lib/atril/3/backends/libcomicsdocument.so
 %%DJVU%%lib/atril/3/backends/djvudocument.atril-backend
 %%DVI%%lib/atril/3/backends/dvidocument.atril-backend
-%%COMICS%%lib/atril/3/backends/libcomicsdocument.so
 %%DJVU%%lib/atril/3/backends/libdjvudocument.so
 %%DVI%%lib/atril/3/backends/libdvidocument.so
 lib/atril/3/backends/libpdfdocument.so
@@ -62,9 +60,6 @@ lib/atril/3/backends/pdfdocument.atril-backend
 lib/atril/3/backends/psdocument.atril-backend
 lib/atril/3/backends/tiffdocument.atril-backend
 %%XPS%%lib/atril/3/backends/xpsdocument.atril-backend
-%%CAJA%%lib/caja/extensions-2.0/libatril-properties-page.so
-lib/girepository-1.0/AtrilDocument-1.5.0.typelib
-lib/girepository-1.0/AtrilView-1.5.0.typelib
 lib/libatrildocument.so
 lib/libatrildocument.so.3
 lib/libatrildocument.so.%%GTK3_VERSION%%
@@ -74,13 +69,9 @@ lib/libatrilview.so.%%GTK3_VERSION%%
 libdata/pkgconfig/atril-document-1.5.0.pc
 libdata/pkgconfig/atril-view-1.5.0.pc
 libexec/atril-convert-metadata
-libexec/atrild
-man/man1/atril-previewer.1.gz
-man/man1/atril-thumbnailer.1.gz
 man/man1/atril.1.gz
 share/MateConf/gsettings/atril.convert
 share/applications/atril.desktop
-%%DATADIR%%/atril-previewer-ui.xml
 %%DATADIR%%/atril-toolbar.xml
 %%DATADIR%%/atril-ui.xml
 %%DATADIR%%/hand-open.png
@@ -123,9 +114,6 @@ share/applications/atril.desktop
 %%DATADIR%%/icons/hicolor/scalable/actions/object-rotate-left.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/object-rotate-right.svg
 %%DATADIR%%/icons/hicolor/scalable/mimetypes/x-office-presentation.svg
-share/dbus-1/services/org.mate.atril.Daemon.service
-share/gir-1.0/AtrilDocument-1.5.0.gir
-share/gir-1.0/AtrilView-1.5.0.gir
 share/gtk-doc/html/atril/EggFindBar.html
 share/gtk-doc/html/atril/EvFileMonitor.html
 share/gtk-doc/html/atril/EvHistory.html
@@ -409,4 +397,3 @@ share/locale/wa/LC_MESSAGES/atril.mo
 share/locale/zh_CN/LC_MESSAGES/atril.mo
 share/locale/zh_HK/LC_MESSAGES/atril.mo
 share/locale/zh_TW/LC_MESSAGES/atril.mo
-share/thumbnailers/atril.thumbnailer
