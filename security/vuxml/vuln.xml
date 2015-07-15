@@ -73,7 +73,7 @@ Notes:
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Adobe reports:</p>
-	<blockquote cite="https://helpx.adobe.com/security/products/flash-player/apsa15-18.html">
+	<blockquote cite="https://helpx.adobe.com/security/products/flash-player/apsb15-18.html">
 	  <p>Critical vulnerabilities (CVE-2015-5122, CVE-2015-5123) have
 	    been identified. Successful exploitation could cause a crash
 	    and potentially allow an attacker to take control of the
@@ -85,7 +85,7 @@ Notes:
     <references>
       <cvename>CVE-2015-5122</cvename>
       <cvename>CVE-2015-5123</cvename>
-      <url>https://helpx.adobe.com/security/products/flash-player/apsa15-18.html</url>
+      <url>https://helpx.adobe.com/security/products/flash-player/apsb15-18.html</url>
     </references>
     <dates>
       <discovery>2015-07-10</discovery>
