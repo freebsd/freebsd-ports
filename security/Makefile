@@ -1027,6 +1027,7 @@
     SUBDIR += swatch
     SUBDIR += switzerland
     SUBDIR += symbion-sslproxy
+    SUBDIR += tclgpg
     SUBDIR += tclsasl
     SUBDIR += tcpcrypt
     SUBDIR += tinc
