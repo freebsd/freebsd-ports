@@ -3,6 +3,7 @@
 PORTNAME=	virtualmin
 PORTVERSION=	4.16
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/download/virtualmin/
 DISTNAME=	virtual-server-${PORTVERSION}.gpl
@@ -15,6 +16,8 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	${LOCALBASE}/lib/webmin/webmin-init:${PORTSDIR}/sysutils/webmin
 
+USES=		shebangfix
+SHEBANG_FILES=	*.cgi
 NO_ARCH=	yes
 NO_BUILD=	yes
 PORTSCOUT=	skipv:4.152,1.432
