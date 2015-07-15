@@ -5,9 +5,6 @@ PORTNAME=	compiz-fusion
 PORTVERSION=	0.8.8
 PORTREVISION=	1
 CATEGORIES=	x11-wm
-MASTER_SITES=	# none
-DISTFILES=	# none
-EXTRACT_ONLY=	# none
 
 MAINTAINER=	freebsd-ports@dan.me.uk
 COMMENT=	Metaport of compiz-fusion
@@ -17,9 +14,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:${PORTSDIR}/x11-wm/compiz 
 		${LOCALBASE}/lib/compiz/libanimation.so:${PORTSDIR}/x11-wm/compiz-plugins-main \
 		${LOCALBASE}/bin/ccsm:${PORTSDIR}/x11-wm/ccsm
 
-NO_BUILD=	yes
-NO_INSTALL=	yes
-NO_MTREE=	yes
+USES=		metaport
 
 OPTIONS_DEFINE=	EXTRA UNSUP EMERALD GCONF
 OPTIONS_DEFAULT=	GCONF EXTRA EMERALD
