@@ -57,10 +57,14 @@ include/atril/1.5.0/libview/ev-view.h
 lib/atril/3/backends/libpdfdocument.so
 lib/atril/3/backends/libpsdocument.so
 lib/atril/3/backends/libtiffdocument.so
+%%XPS%%lib/atril/3/backends/libxpsdocument.so
 lib/atril/3/backends/pdfdocument.atril-backend
 lib/atril/3/backends/psdocument.atril-backend
 lib/atril/3/backends/tiffdocument.atril-backend
+%%XPS%%lib/atril/3/backends/xpsdocument.atril-backend
 %%CAJA%%lib/caja/extensions-2.0/libatril-properties-page.so
+lib/girepository-1.0/AtrilDocument-1.5.0.typelib
+lib/girepository-1.0/AtrilView-1.5.0.typelib
 lib/libatrildocument.so
 lib/libatrildocument.so.3
 lib/libatrildocument.so.%%GTK3_VERSION%%
@@ -120,6 +124,8 @@ share/applications/atril.desktop
 %%DATADIR%%/icons/hicolor/scalable/actions/object-rotate-right.svg
 %%DATADIR%%/icons/hicolor/scalable/mimetypes/x-office-presentation.svg
 share/dbus-1/services/org.mate.atril.Daemon.service
+share/gir-1.0/AtrilDocument-1.5.0.gir
+share/gir-1.0/AtrilView-1.5.0.gir
 share/gtk-doc/html/atril/EggFindBar.html
 share/gtk-doc/html/atril/EvFileMonitor.html
 share/gtk-doc/html/atril/EvHistory.html
