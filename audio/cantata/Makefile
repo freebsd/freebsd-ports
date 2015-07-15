@@ -2,7 +2,7 @@
 
 PORTNAME=		cantata
 PORTVERSION=		1.5.1
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		audio kde
 MASTER_SITES=		https://drive.google.com/uc?export=download&id=0Bzghs6gQWi60UktwaTRMTjRIUW8&dummy=
 
@@ -23,7 +23,8 @@ CMAKE_ARGS=		-DENABLE_QT5:BOOL=TRUE	\
 			-DLCONVERT_EXECUTABLE:STRING=${QT_BINDIR}/lconvert \
 			-DLRELEASE_EXECUTABLE:STRING=${QT_BINDIR}/lrelease
 
-USES=			cmake:outsource cpe pkgconfig tar:bzip2
+USES=			cmake:outsource cpe pkgconfig shebangfix tar:bzip2
+SHEBANG_FILES=		dynamic/cantata-dynamic cantata-remote.cmake
 CPE_VENDOR=		craig_drummond
 USE_LDCONFIG=		yes
 
