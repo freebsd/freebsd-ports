@@ -3435,6 +3435,7 @@ Notes:
     <references>
       <url>https://github.com/htacg/tidy-html5/issues/217</url>
       <url>http://seclists.org/oss-sec/2015/q2/633</url>
+      <url>http://seclists.org/oss-sec/2015/q3/116</url>
       <cvename>CVE-2015-5522</cvename>
       <cvename>CVE-2015-5523</cvename>
     </references>
