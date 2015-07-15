@@ -8,7 +8,7 @@ MASTER_SITES=		http://swupdate.openvpn.net/community/releases/ \
 			http://build.openvpn.net/downloads/releases/
 
 MAINTAINER=		mandree@FreeBSD.org
-COMMENT=		Secure IP/Ethernet tunnel daemon
+COMMENT?=		Secure IP/Ethernet tunnel daemon
 
 LICENSE=		GPLv2
 
@@ -34,7 +34,7 @@ OPTIONS_SINGLE_SSL=	OPENSSL POLARSSL
 PW_SAVE_DESC=		Interactive passwords may be read from a file
 PKCS11_DESC=		Use security/pkcs11-helper
 EASYRSA_DESC=		Install security/easy-rsa RSA helper package
-POLARSSL_DESC=		SSL/TLS support via PolarSSL
+POLARSSL_DESC=		SSL/TLS support via PolarSSL 1.2
 X509ALTUSERNAME_DESC=	Enable --x509-username-field (only with OpenSSL)
 
 EASYRSA_RUN_DEPENDS=	easy-rsa>=0:${PORTSDIR}/security/easy-rsa
