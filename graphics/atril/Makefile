@@ -3,7 +3,7 @@
 
 PORTNAME=	atril
 PORTVERSION=	1.8.1
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES=	graphics print mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -23,7 +23,7 @@ SLAVEPORT?=	no
 
 USES=		desktop-file-utils gettext gmake libtool pathfix \
 		pkgconfig tar:xz
-USE_MATE=	icontheme
+USE_MATE=	desktop icontheme
 USE_XORG=	sm
 USE_GNOME=	cairo gtk20 intlhack libxml2
 USE_LDCONFIG=	yes
