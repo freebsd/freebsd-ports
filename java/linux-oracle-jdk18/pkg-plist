@@ -1982,12 +1982,11 @@
 %%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.core/cache/binary/com.oracle.jmc.executable.gtk.linux.x86_5.5.0
 %%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.core/cache/binary/org.eclipse.rcp_root_4.4.0.v20141007-2301
 %%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.engine/.settings/org.eclipse.equinox.p2.artifact.repository.prefs
-%%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.engine/.settings/org.eclipse.equinox.p2.metadata.repository.prefs
 %%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.engine/profileRegistry/JMC.profile/.lock
-%%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.engine/profileRegistry/JMC.profile/1423862892533.profile.gz
-%%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.engine/profileRegistry/JMC.profile/1423862892876.profile.gz
-%%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.engine/profileRegistry/JMC.profile/1423862910036.profile.gz
-%%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.engine/profileRegistry/JMC.profile/1423862913577.profile.gz
+%%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.engine/profileRegistry/JMC.profile/1423497018512.profile.gz
+%%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.engine/profileRegistry/JMC.profile/1423497018885.profile.gz
+%%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.engine/profileRegistry/JMC.profile/1423497034170.profile.gz
+%%T%%/lib/missioncontrol/p2/org.eclipse.equinox.p2.engine/profileRegistry/JMC.profile/1423497037100.profile.gz
 %%T%%/lib/missioncontrol/plugins/com.ibm.icu_52.1.0.v201404241930.jar
 %%T%%/lib/missioncontrol/plugins/com.jrockit.mc.alert.ja_5.5.0.165303.jar
 %%T%%/lib/missioncontrol/plugins/com.jrockit.mc.alert.zh_CN_5.5.0.165303.jar
