@@ -9944,6 +9944,10 @@ Notes:
 	<name>flac</name>
 	<range><lt>1.3.0_3</lt></range>
       </package>
+      <package>
+	<name>linux-c6-flac</name>
+	<range><lt>1.2.1_3</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -9967,6 +9971,7 @@ Notes:
     <dates>
       <discovery>2014-11-25</discovery>
       <entry>2014-11-25</entry>
+      <modified>2015-07-15</modified>
     </dates>
   </vuln>
 
