@@ -4,6 +4,7 @@
 PORTNAME=	iocage
 PORTVERSION=	1.6.6
 CATEGORIES=	sysutils
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	kmoore@freebsd.org
 COMMENT=	Full featured, no dependency Jail container manager - devel build

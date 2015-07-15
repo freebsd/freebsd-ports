@@ -71,7 +71,6 @@
     SUBDIR += gdkxft
     SUBDIR += gdm
     SUBDIR += glproto
-    SUBDIR += gmessage
     SUBDIR += gmrun
     SUBDIR += gnome-clipboard-daemon
     SUBDIR += gnome-desktop

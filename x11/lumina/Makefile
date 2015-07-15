@@ -3,12 +3,11 @@
 
 PORTNAME=	lumina
 PORTVERSION=	0.8.5
-PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	x11
 
 MAINTAINER=	kmoore@FreeBSD.org
-COMMENT=	Lumina Desktop Environment (0.8.5-release)
+COMMENT=	Lumina Desktop Environment
 
 LICENSE=	BSD3CLAUSE
 
