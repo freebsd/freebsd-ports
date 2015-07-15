@@ -58,6 +58,34 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d3216606-2b47-11e5-a668-080027ef73ec">
+    <topic>PolarSSL -- Security Fix Backports</topic>
+    <affects>
+      <package>
+	<name>polarssl</name>
+	<range><lt>1.2.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Paul Bakker reports:</p>
+	<blockquote cite="https://tls.mbed.org/tech-updates/releases/polarssl-1.2.14-released">
+	  <p>PolarSSL 1.2.14 fixes one remotely-triggerable issues that was
+	    found by the Codenomicon Defensics tool, one potential remote crash
+	    and countermeasures against the "Lucky 13 strikes back" cache-based
+	    attack.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://tls.mbed.org/tech-updates/releases/polarssl-1.2.14-released</url>
+    </references>
+    <dates>
+      <discovery>2015-06-26</discovery>
+      <entry>2015-07-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ca139c7f-2a8c-11e5-a4a5-002590263bf5">
     <topic>libwmf -- multiple vulnerabilities</topic>
     <affects>
