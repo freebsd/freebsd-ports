@@ -1,9 +1,10 @@
 # Created by: Johannes Meixner <xmj@chaot.net>
 # $FreeBSD$
 
-PORTNAME=	iocage-devel
+PORTNAME=	iocage
 PORTVERSION=	1.6.6
 CATEGORIES=	sysutils
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	kmoore@freebsd.org
 COMMENT=	Full featured, no dependency Jail container manager - devel build
@@ -14,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	pannon
 GH_TAGNAME=	52a68cf
-GH_PROJECT=	iocage
 
 .include <bsd.port.pre.mk>
 
