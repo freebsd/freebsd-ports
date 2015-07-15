@@ -3,6 +3,7 @@
 
 PORTNAME=	porttools
 PORTVERSION=	1.05
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	skreuzer@FreeBSD.org
