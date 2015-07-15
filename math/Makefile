@@ -554,6 +554,7 @@
     SUBDIR += py-bitmath
     SUBDIR += py-bitvector
     SUBDIR += py-bottleneck
+    SUBDIR += py-colormath
     SUBDIR += py-cryptominisat
     SUBDIR += py-fastcluster
     SUBDIR += py-ffc
