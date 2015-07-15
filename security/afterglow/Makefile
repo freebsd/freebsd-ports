@@ -3,21 +3,31 @@
 
 PORTNAME=	afterglow
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	security graphics net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/AfterGlow%201.x/${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Collection of graph-generating scripts
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/GPL
 
 RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz \
 		p5-Text-CSV>=0:${PORTSDIR}/textproc/p5-Text-CSV \
 		p5-Crypt-Rijndael>=0:${PORTSDIR}/security/p5-Crypt-Rijndael \
 		p5-IP-Anonymous>=0:${PORTSDIR}/net/p5-IP-Anonymous
 
+USES=		shebangfix
+SHEBANG_FILES=	data/generate.pl \
+		src/perl/charts/*.pl \
+		src/perl/graph/afterglow.pl \
+		src/perl/loganalysis/*.pl \
+		src/perl/loganalysis/*.sh \
+		src/perl/parsers/*.pl
 PORTSCOUT=	skipv:2.0
 NO_BUILD=	yes
+NO_ARCH=	yes
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
