@@ -73,18 +73,3 @@ lib/libgtkhtml-2.so
 lib/libgtkhtml-2.so.0
 lib/libgtkhtml-2.so.0.0.0
 libdata/pkgconfig/libgtkhtml-2.0.pc
-@dirrm include/gtkhtml-2.0/libgtkhtml/view
-@dirrm include/gtkhtml-2.0/libgtkhtml/util
-@dirrm include/gtkhtml-2.0/libgtkhtml/layout/html
-@dirrm include/gtkhtml-2.0/libgtkhtml/layout
-@dirrm include/gtkhtml-2.0/libgtkhtml/graphics
-@dirrm include/gtkhtml-2.0/libgtkhtml/dom/views
-@dirrm include/gtkhtml-2.0/libgtkhtml/dom/traversal
-@dirrm include/gtkhtml-2.0/libgtkhtml/dom/html
-@dirrm include/gtkhtml-2.0/libgtkhtml/dom/events
-@dirrm include/gtkhtml-2.0/libgtkhtml/dom/core
-@dirrm include/gtkhtml-2.0/libgtkhtml/dom
-@dirrm include/gtkhtml-2.0/libgtkhtml/document
-@dirrm include/gtkhtml-2.0/libgtkhtml/css
-@dirrm include/gtkhtml-2.0/libgtkhtml
-@dirrm include/gtkhtml-2.0
