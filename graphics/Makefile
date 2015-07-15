@@ -47,6 +47,7 @@
     SUBDIR += argyllcms
     SUBDIR += asciio
     SUBDIR += atril
+    SUBDIR += atril-lite
     SUBDIR += autopano-sift-c
     SUBDIR += autoq3d
     SUBDIR += autotrace
