@@ -6,16 +6,11 @@ PORTNAME=	gstreamer-plugins-all
 PORTVERSION=	1.3.${GST_VERSION}.${GST_SHLIB_VERSION}
 PORTREVISION=	15
 CATEGORIES=	multimedia
-MASTER_SITES=	# empty
-DISTFILES=	# empty
-EXTRACT_ONLY=	# empty
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Meta-port of all gstreamer plugins with options
 
-NO_BUILD=	yes
-NO_INSTALL=	yes
-NO_MTREE=	yes
+USES=		metaport
 USE_GSTREAMER=	yes
 
 .include "${.CURDIR}/../../Mk/bsd.gstreamer.mk"
