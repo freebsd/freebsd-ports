@@ -73,7 +73,7 @@ Notes:
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Adobe reports:</p>
-	<blockquote cite="https://helpx.adobe.com/security/products/flash-player/apsa15-04.html">
+	<blockquote cite="https://helpx.adobe.com/security/products/flash-player/apsa15-18.html">
 	  <p>Critical vulnerabilities (CVE-2015-5122, CVE-2015-5123) have
 	    been identified. Successful exploitation could cause a crash
 	    and potentially allow an attacker to take control of the
@@ -85,11 +85,12 @@ Notes:
     <references>
       <cvename>CVE-2015-5122</cvename>
       <cvename>CVE-2015-5123</cvename>
-      <url>https://helpx.adobe.com/security/products/flash-player/apsa15-04.html</url>
+      <url>https://helpx.adobe.com/security/products/flash-player/apsa15-18.html</url>
     </references>
     <dates>
       <discovery>2015-07-10</discovery>
       <entry>2015-07-14</entry>
+      <modified>2015-07-15</modified>
     </dates>
   </vuln>
 
@@ -6805,8 +6806,12 @@ Notes:
 	<range><lt>1.5.1</lt></range>
       </package>
       <package>
-	<name>libXfont</name>
-	<range><ge>1.4.99</ge><lt>1.5.1</lt></range>
+	<name>linux-c6-xorg-libs</name>
+	<range><ge>*</ge></range>
+      </package>
+      <package>
+	<name>linux-f10-xorg-libs</name>
+	<range><ge>*</ge></range>
       </package>
     </affects>
     <description>
@@ -6837,6 +6842,7 @@ Notes:
     <dates>
       <discovery>2015-03-17</discovery>
       <entry>2015-03-18</entry>
+      <modified>2015-07-15</modified>
     </dates>
   </vuln>
 
@@ -13624,6 +13630,14 @@ Notes:
 	<name>libXfont</name>
 	<range><lt>1.4.7_3</lt></range>
       </package>
+      <package>
+	<name>linux-c6-xorg-libs</name>
+	<range><lt>7.4_2</lt></range>
+      </package>
+      <package>
+	<name>linux-f10-xorg-libs</name>
+	<range><ge>*</ge></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -13655,6 +13669,7 @@ Notes:
     <dates>
       <discovery>2014-05-13</discovery>
       <entry>2014-05-13</entry>
+      <modified>2015-07-15</modified>
     </dates>
   </vuln>
 
