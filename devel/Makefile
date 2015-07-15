@@ -4023,6 +4023,7 @@
     SUBDIR += py-more-itertools
     SUBDIR += py-mox
     SUBDIR += py-msgpack
+    SUBDIR += py-multipledispatch
     SUBDIR += py-mwlib
     SUBDIR += py-mwlib.ext
     SUBDIR += py-mwlib.rl
