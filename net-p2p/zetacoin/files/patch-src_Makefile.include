@@ -1,6 +1,4 @@
-diff --git a/src/Makefile.include b/src/Makefile.include
-index 2fc6cd7..cdd16f5 100644
---- a/src/Makefile.include
+--- src/Makefile.include.orig	2014-12-12 22:22:31 UTC
 +++ src/Makefile.include
 @@ -40,18 +40,18 @@ $(LIBBITCOINQT):
  ui_%.h: %.ui
