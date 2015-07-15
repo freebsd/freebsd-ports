@@ -3,8 +3,9 @@
 
 PORTNAME=	libxml2
 PORTVERSION=	2.7.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc linux
+MASTER_SITES=	CENTOS_LINUX_UPDATES
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Library providing XML and HTML support (Linux CentOS ${LINUX_DIST_VER})
@@ -14,7 +15,7 @@ CONFLICTS=	linux-libxml2-[0-9]* linux-f8-libxml2-[0-9]*
 USE_LINUX=	c6
 USE_LINUX_RPM=	yes
 
-RPMVERSION=	14.el6_5.2
+RPMVERSION=	17.el6_6.1
 BRANDELF_DIRS=	usr/bin
 USE_LDCONFIG=	yes
 
