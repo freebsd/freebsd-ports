@@ -3,10 +3,9 @@
 
 PORTNAME=	c6
 PORTVERSION=	6.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	emulators linux
-MASTER_SITES=	http://mirror.centos.org/centos/6/os/i386/Packages/ \
-		http://mirror.centos.org/centos/6/updates/i386/Packages/
+MASTER_SITES=	CENTOS_LINUX CENTOS_LINUX_UPDATES
 PKGNAMEPREFIX=	linux_base-
 DISTFILES=	${PRE_BIN_DISTFILES} ${BIN_DISTFILES} ${SRC_DISTFILES}
 EXTRACT_ONLY=	${BIN_DISTFILES}
@@ -27,34 +26,34 @@ BIN_DISTFILES=	basesystem-10.0-4.el6.noarch.rpm \
 		bash-4.1.2-29.el6.${LINUX_RPM_ARCH}.rpm \
 		bzip2-1.0.5-7.el6_0.${LINUX_RPM_ARCH}.rpm \
 		bzip2-libs-1.0.5-7.el6_0.${LINUX_RPM_ARCH}.rpm \
+		centos-release-6-6.el6.centos.12.2.${LINUX_RPM_ARCH}.rpm \
 		compat-db43-4.3.29-15.el6.${LINUX_RPM_ARCH}.rpm \
 		compat-libstdc++-33-3.2.3-69.el6.${LINUX_RPM_ARCH}.rpm \
 		compat-libstdc++-296-2.96-144.el6.${LINUX_RPM_ARCH}.rpm \
 		coreutils-8.4-37.el6.${LINUX_RPM_ARCH}.rpm \
-		db4-4.7.25-18.el6_4.${LINUX_RPM_ARCH}.rpm \
+		db4-4.7.25-19.el6_6.${LINUX_RPM_ARCH}.rpm \
 		e2fsprogs-1.41.12-21.el6.${LINUX_RPM_ARCH}.rpm \
 		e2fsprogs-libs-1.41.12-21.el6.${LINUX_RPM_ARCH}.rpm \
 		elfutils-0.158-3.2.el6.${LINUX_RPM_ARCH}.rpm \
-		centos-release-6-6.el6.centos.12.2.${LINUX_RPM_ARCH}.rpm \
 		findutils-4.4.2-6.el6.${LINUX_RPM_ARCH}.rpm \
-		freetype-2.3.11-14.el6_3.1.${LINUX_RPM_ARCH}.rpm \
+		freetype-2.3.11-15.el6_6.1.${LINUX_RPM_ARCH}.rpm \
 		gamin-0.1.10-9.el6.${LINUX_RPM_ARCH}.rpm \
 		gdbm-1.8.0-36.el6.${LINUX_RPM_ARCH}.rpm \
 		glib2-2.28.8-4.el6.${LINUX_RPM_ARCH}.rpm \
-		glibc-2.12-1.149.el6_6.5.${LINUX_RPM_ARCH}.rpm \
-		glibc-common-2.12-1.149.el6_6.5.${LINUX_RPM_ARCH}.rpm \
+		glibc-2.12-1.149.el6_6.9.${LINUX_RPM_ARCH}.rpm \
+		glibc-common-2.12-1.149.el6_6.9.${LINUX_RPM_ARCH}.rpm \
 		gmp-4.3.1-7.el6_2.2.${LINUX_RPM_ARCH}.rpm \
 		grep-2.6.3-6.el6.${LINUX_RPM_ARCH}.rpm \
 		info-4.13a-8.el6.${LINUX_RPM_ARCH}.rpm \
 		keyutils-1.4-5.el6.${LINUX_RPM_ARCH}.rpm \
 		keyutils-libs-1.4-5.el6.${LINUX_RPM_ARCH}.rpm \
-		krb5-libs-1.10.3-33.el6.${LINUX_RPM_ARCH}.rpm \
+		krb5-libs-1.10.3-37.el6_6.${LINUX_RPM_ARCH}.rpm \
 		less-436-13.el6.${LINUX_RPM_ARCH}.rpm \
 		libacl-2.2.49-6.el6.${LINUX_RPM_ARCH}.rpm \
 		libattr-2.4.44-7.el6.${LINUX_RPM_ARCH}.rpm \
 		libblkid-2.17.2-12.18.el6.${LINUX_RPM_ARCH}.rpm \
-		libcom_err-1.41.12-21.el6.${LINUX_RPM_ARCH}.rpm \
 		libcap-2.16-5.5.el6.${LINUX_RPM_ARCH}.rpm \
+		libcom_err-1.41.12-21.el6.${LINUX_RPM_ARCH}.rpm \
 		libgcc-4.4.7-11.el6.${LINUX_RPM_ARCH}.rpm \
 		libidn-1.18-2.el6.${LINUX_RPM_ARCH}.rpm \
 		libselinux-2.0.94-5.8.el6.${LINUX_RPM_ARCH}.rpm \
@@ -75,32 +74,29 @@ BIN_DISTFILES=	basesystem-10.0-4.el6.noarch.rpm \
 		zlib-1.2.3-29.el6.${LINUX_RPM_ARCH}.rpm
 
 .if defined(PACKAGE_BUILDING)
-MASTER_SITES+=	http://vault.centos.org/${LINUX_DIST_VER}/os/Source/SPackages/ \
-		http://vault.centos.org/${LINUX_DIST_VER}/updates/Source/SPackages/:updates
-
 SRC_DISTFILES=	basesystem-10.0-4.el6.src.rpm \
 		bash-4.1.2-29.el6.src.rpm \
 		bzip2-1.0.5-7.el6_0.src.rpm \
-		coreutils-8.4-37.el6.src.rpm \
+		centos-release-6-6.el6.centos.12.2.src.rpm \
 		compat-db-4.6.21-15.el6.src.rpm \
 		compat-gcc-296-2.96-144.el6.src.rpm \
 		compat-gcc-32-3.2.3-69.el6.src.rpm \
-		db4-4.7.25-18.el6_4.src.rpm \
+		coreutils-8.4-37.el6.src.rpm \
+		db4-4.7.25-19.el6_6.src.rpm \
 		e2fsprogs-1.41.12-21.el6.src.rpm \
 		elfutils-0.158-3.2.el6.src.rpm \
-		centos-release-6-6.el6.centos.12.2.src.rpm \
 		filesystem-2.4.30-3.el6.src.rpm \
 		findutils-4.4.2-6.el6.src.rpm \
-		freetype-2.3.11-14.el6_3.1.src.rpm \
+		freetype-2.3.11-15.el6_6.1.src.rpm \
 		gamin-0.1.10-9.el6.src.rpm \
 		gdbm-1.8.0-36.el6.src.rpm \
 		glib2-2.28.8-4.el6.src.rpm \
-		glibc-2.12-1.149.el6.src.rpm \
+		glibc-2.12-1.149.el6_6.9.src.rpm \
 		gmp-4.3.1-7.el6_2.2.src.rpm \
 		grep-2.6.3-6.el6.src.rpm \
 		texinfo-4.13a-8.el6.src.rpm \
 		keyutils-1.4-5.el6.src.rpm \
-		krb5-1.10.3-33.el6.src.rpm \
+		krb5-1.10.3-37.el6_6.src.rpm \
 		less-436-13.el6.src.rpm \
 		acl-2.2.49-6.el6.src.rpm \
 		attr-2.4.44-7.el6.src.rpm \
@@ -137,13 +133,6 @@ USES=	shebangfix
 SHEBANG_FILES=	bin/redhat_lsb_init sbin/mount.tmpfs
 # bash scripts need to work in chroot /compat/linux, so use env instead.
 bash_CMD=	/usr/bin/env bash
-
-# TODO:
-# - move master sites to bsd.sites.mk
-# - add 2-3 mirrors from each country (http://www.centos.org/modules/tinycontent/index.php?id=31)
-# - look for updates in the updates folder of the CentOS mirrors
-
-EXTRACT_ONLY=		${BIN_DISTFILES}
 
 .include <bsd.port.pre.mk>
 
@@ -249,6 +238,7 @@ do-install:
 	@${LN} -sf ../usr/bin/expr ${STAGEDIR}${PREFIX}/bin/expr
 	@${LN} -sf ../usr/bin/test ${STAGEDIR}${PREFIX}/bin/test
 	@${LN} -sf ../usr/bin/uuidgen ${STAGEDIR}${PREFIX}/bin/uuidgen
+	@${LN} -sf ../../lib/librt.so.1 ${STAGEDIR}${PREFIX}/usr/lib/librt.so.1
 	@${CHMOD} 755 ${STAGEDIR}${PREFIX}/var/lock ${STAGEDIR}${PREFIX}/var/spool/mail
 #
 # Let some linux applications (e.g. print/acroread8) print with default settings
