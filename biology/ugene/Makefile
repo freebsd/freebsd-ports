@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ugene
-DISTVERSION=	1.16.2
+DISTVERSION=	1.17.0
 CATEGORIES=	biology science
 MASTER_SITES=	http://ugene.unipro.ru/downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} QueryDesigner_UserManual.pdf \
@@ -66,17 +66,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|/usr/bin/env bash|' \
 		${WRKSRC}/src/gen_bin_script.cmd \
 		${WRKSRC}/installer/_common_data/ugene
-	@${REINPLACE_CMD} -e '/readproc\.h/d' \
-		${WRKSRC}/src/corelibs/U2Core/src/globals/AppResources.cpp
 	@${REINPLACE_CMD} -e 's|-bit version|& for ${OPSYS}|' \
 		${WRKSRC}/src/ugeneui/src/main_window/AboutDialogController.cpp
-	@${REINPLACE_CMD} -e '/ifdef/s|Q_OS_LINUX|Q_OS_UNIX|' \
-		${WRKSRC}/src/corelibs/U2Test/src/gui_tests/GUITestLauncher.cpp
+	@${REINPLACE_CMD} -e '/unix_not_mac/,+11d' \
+		${WRKSRC}/src/corelibs/U2Core/U2Core.pri
 .for x in ugenecl ugeneui plugins_checker
 	@${ECHO_CMD} 'LIBS += -lexecinfo' >> ${WRKSRC}/src/${x}/${x}.pro
 .endfor
-# remove BOM that gcc4.2 trips upon
-	@env LANG=C ${REINPLACE_CMD} -e 's,^...,,' \
-		${WRKSRC}/src/include/U2Formats/MysqlUpgradeTask.h
 
 .include <bsd.port.post.mk>
