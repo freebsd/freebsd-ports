@@ -427,6 +427,7 @@
     SUBDIR += elixir-msgpax
     SUBDIR += elixir-plug
     SUBDIR += elixir-poison
+    SUBDIR += elixir-quantum
     SUBDIR += elixir-timex
     SUBDIR += elixir-timex-interval
     SUBDIR += elixir-tzdata
