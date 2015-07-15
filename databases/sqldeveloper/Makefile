@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqldeveloper
-PORTVERSION=	4.1.0.19.07
+PORTVERSION=	4.1.1.19.59
 DISTVERSIONSUFFIX=-no-jre
 CATEGORIES=	databases java
 MASTER_SITES=	#http://www.oracle.com/technetwork/developer-tools/sql-developer/overview/index.html
@@ -47,7 +47,7 @@ do-install:
 
 .for d in configuration dataminer dropins dvt equinox \
     external ide javavm jdbc jdev jlib jviews modules \
-    netbeans ords rdbms sleepycat sqlcl sqldeveloper sqlj svnkit
+    netbeans ords rdbms sleepycat sqldeveloper sqlj svnkit
 	${ECHO_MSG} -n ">> Installing data directory '${d}'..."
 	cd ${WRKSRC} && ${FIND} ${d} -type d \
 		-exec ${MKDIR} ${STAGEDIR}/${DATADIR}/\{} \;

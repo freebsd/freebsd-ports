@@ -2,6 +2,7 @@
 
 PORTNAME=	rebar3
 PORTVERSION=	20150630
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES+=	LOCAL/olgeni:pkg \
 		http://olgeni.olgeni.com/~olgeni/distfiles/:pkg \
@@ -26,6 +27,7 @@ GH_ACCOUNT=	rebar
 GH_TAGNAME=	4f98106
 
 PLIST_FILES=	bin/${PORTNAME}
+PORTEXAMPLES=	rebar.config.sample
 
 BASH_PLIST_FILES=	share/bash-completion/completions/rebar3
 ZSH_PLIST_FILES=	share/zsh/site-functions/_rebar3
@@ -49,7 +51,7 @@ post-extract:
 	@${MKDIR} ${REBAR_PACKAGES}
 	@${TAR} xfz ${DISTDIR}/rebar3-packages-1${EXTRACT_SUFX} -C ${REBAR_PACKAGES}
 .for _dep in ${REBAR_DEPS}
-	@${INSTALL_DATA} ${DISTDIR}/${_dep}.tar ${REBAR_PACKAGES}
+	${INSTALL_DATA} ${DISTDIR}/${_dep}.tar ${REBAR_PACKAGES}
 .endfor
 .for _dep in ${REBAR_DEPS}
 	@${MKDIR} ${WRKSRC}/_build/default/lib/${_dep:C/-.*//}
@@ -72,5 +74,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/priv/shell-completion/zsh/_rebar3 \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions/
 .endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/rebar.config.sample ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

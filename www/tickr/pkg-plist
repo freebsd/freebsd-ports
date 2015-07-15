@@ -5,5 +5,3 @@ share/pixmaps/tickr/tickr-icon.xpm
 share/pixmaps/tickr/tickr-logo.png
 share/pixmaps/tickr/tickr-rss-icon.png
 %%DATADIR%%/tickr-url-list
-@dirrmtry share/pixmaps/tickr
-@dirrmtry %%DATADIR%%

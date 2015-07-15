@@ -3,7 +3,7 @@
 
 PORTNAME=	unifi4
 PORTVERSION=	4.6.6
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/${PORTVERSION}-${UBNT_BUILD}/ \
 		https://www.ubnt.com/downloads/unifi/${PORTVERSION}/
@@ -24,7 +24,7 @@ USES=		cpe zip
 CPE_VENDOR=	ubnt
 CPE_PRODUCT=	unifi_controller
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.8
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk bsdjava
 JAVA_RUN=	yes

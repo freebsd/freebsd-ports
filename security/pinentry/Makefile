@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pinentry
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.5
 PORTREVISION?=	0
 CATEGORIES=	security
 MASTER_SITES=	GNUPG/pinentry
@@ -58,11 +58,14 @@ do-install:
 
 .else # !defined(PINENTRY_GUI)
 PKGNAMESUFFIX=	-${PINENTRY_GUI}
-LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
+LIB_DEPENDS=	libassuan.so:${PORTSDIR}/security/libassuan \
+		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libksba.so:${PORTSDIR}/security/libksba
 
 USES+=		iconv gmake pkgconfig
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-pinentry-emacs \
+		--disable-pinentry-gnome3
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -86,7 +89,6 @@ CONFIGURE_ARGS+=--disable-pinentry-qt4
 .endif
 
 .if ${PINENTRY_GUI} == "gtk2"
-OPTIONS_DEFAULT+=	LIBSECRET
 USE_GNOME+=	gtk20
 PLIST_FILES=	bin/pinentry-gtk-2
 .else

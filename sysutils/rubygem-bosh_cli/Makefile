@@ -2,6 +2,7 @@
 
 PORTNAME=	bosh_cli
 PORTVERSION=	1.2941.0
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -10,9 +11,9 @@ COMMENT=	BOSH CLI
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	rubygem-blobstore_client>=1.2941.0:${PORTSDIR}/devel/rubygem-blobstore_client \
-		rubygem-bosh_common>=1.2941.0:${PORTSDIR}/devel/rubygem-bosh_common \
-		rubygem-bosh-template>=1.2941.0:${PORTSDIR}/devel/rubygem-bosh-template \
+RUN_DEPENDS=	rubygem-blobstore_client>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-blobstore_client \
+		rubygem-bosh_common>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-bosh_common \
+		rubygem-bosh-template>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-bosh-template \
 		rubygem-cf-uaa-lib>=3.2.1:${PORTSDIR}/devel/rubygem-cf-uaa-lib \
 		rubygem-highline>=1.6.2:${PORTSDIR}/devel/rubygem-highline \
 		rubygem-httpclient>=2.4.0:${PORTSDIR}/www/rubygem-httpclient \

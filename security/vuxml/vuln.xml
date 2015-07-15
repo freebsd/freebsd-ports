@@ -38,7 +38,8 @@ QUICK GUIDE TO ADDING A NEW ENTRY
 3. use 'make validate' to verify syntax correctness (you might need to install
    textproc/libxml2 for parser, and this port for catalogs)
 4. fix any errors
-5. profit!
+5. use 'make VID=xxx-yyy-zzz html' to emit the entry's html file for formatting review
+6. profit!
 
 Additional tests can be done this way:
  $ env PKG_DBDIR=/usr/ports/security/vuxml pkg audit py26-django-1.6
@@ -57,15 +58,1115 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8d2d6bbd-2a02-11e5-a0af-bcaec565249c">
+    <topic>Adobe Flash Player -- critical vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-c6-flashplugin</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>linux-f10-flashplugin</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="https://helpx.adobe.com/security/products/flash-player/apsa15-04.html">
+	  <p>Critical vulnerabilities (CVE-2015-5122, CVE-2015-5123) have
+	    been identified. Successful exploitation could cause a crash
+	    and potentially allow an attacker to take control of the
+	    affected system. Adobe is aware of reports that exploits
+	    targeting these vulnerabilities have been published publicly.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5122</cvename>
+      <cvename>CVE-2015-5123</cvename>
+      <url>https://helpx.adobe.com/security/products/flash-player/apsa15-04.html</url>
+    </references>
+    <dates>
+      <discovery>2015-07-10</discovery>
+      <entry>2015-07-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3d39e927-29a2-11e5-86ff-14dae9d210b8">
+    <topic>php -- use-after-free vulnerability</topic>
+    <affects>
+      <package>
+	<name>php56-sqlite3</name>
+	<range><lt>5.6.11</lt></range>
+      </package>
+      <package>
+	<name>php55-sqlite3</name>
+	<range><lt>5.5.27</lt></range>
+      </package>
+      <package>
+	<name>php5-sqlite3</name>
+	<range><lt>5.4.43</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Symeon Paraschoudis reports:</p>
+	<blockquote cite="https://bugs.php.net/bug.php?id=69972">
+	  <p>Use-after-free vulnerability in sqlite3SafetyCheckSickOrOk()</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://bugs.php.net/bug.php?id=69972</url>
+    </references>
+    <dates>
+      <discovery>2015-06-30</discovery>
+      <entry>2015-07-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="af7fbd91-29a1-11e5-86ff-14dae9d210b8">
+    <topic>php -- use-after-free vulnerability</topic>
+    <affects>
+      <package>
+	<name>php56</name>
+	<range><lt>5.6.11</lt></range>
+      </package>
+      <package>
+	<name>php55</name>
+	<range><lt>5.5.27</lt></range>
+      </package>
+      <package>
+	<name>php5</name>
+	<range><lt>5.4.43</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Symeon Paraschoudis reports:</p>
+	<blockquote cite="https://bugs.php.net/bug.php?id=69970">
+	  <p>Use-after-free vulnerability in spl_recursive_it_move_forward_ex()</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://bugs.php.net/bug.php?id=69970</url>
+    </references>
+    <dates>
+      <discovery>2015-06-30</discovery>
+      <entry>2015-07-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5a1d5d74-29a0-11e5-86ff-14dae9d210b8">
+    <topic>php -- arbitrary code execution</topic>
+    <affects>
+      <package>
+	<name>php56</name>
+	<range><lt>5.6.11</lt></range>
+      </package>
+      <package>
+	<name>php55</name>
+	<range><lt>5.5.27</lt></range>
+      </package>
+      <package>
+	<name>php5</name>
+	<range><lt>5.4.43</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cmb reports:</p>
+	<blockquote cite="https://bugs.php.net/bug.php?id=69768">
+	  <p>When delayed variable substitution is enabled (can be set in the
+	    Registry, for instance), !ENV! works similar to %ENV%, and the
+	    value of the environment variable ENV will be subsituted.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://bugs.php.net/bug.php?id=69768</url>
+    </references>
+    <dates>
+      <discovery>2015-06-07</discovery>
+      <entry>2015-07-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="36bd352d-299b-11e5-86ff-14dae9d210b8">
+    <topic>mysql -- SSL Downgrade</topic>
+    <affects>
+      <package>
+	<name>php56-mysql</name>
+	<name>php56-mysqli</name>
+	<range><lt>5.6.11</lt></range>
+      </package>
+      <package>
+	<name>php55-mysql</name>
+	<name>php55-mysqli</name>
+	<range><lt>5.5.27</lt></range>
+      </package>
+      <package>
+	<name>php5-mysql</name>
+	<name>php5-mysqli</name>
+	<range><lt>5.4.43</lt></range>
+      </package>
+      <package>
+	<name>mariadb-server</name>
+	<name>mysql51-server</name>
+	<name>mysql55-server</name>
+	<name>mysql56-server</name>
+	<name>percona55-server</name>
+	<name>percona56-server</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>mariadb55</name>
+	<range><lt>5.5.44</lt></range>
+      </package>
+      <package>
+	<name>mariadb10</name>
+	<range><lt>10.0.20</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Duo Security reports:</p>
+	<blockquote cite="https://www.duosecurity.com/blog/backronym-mysql-vulnerability">
+	  <p>Researchers have identified a serious vulnerability in some
+	    versions of Oracle’s MySQL database product that allows an attacker to
+	    strip SSL/TLS connections of their security wrapping transparently.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://bugs.php.net/bug.php?id=69669</url>
+      <url>https://www.duosecurity.com/blog/backronym-mysql-vulnerability</url>
+      <url>http://www.ocert.org/advisories/ocert-2015-003.html</url>
+      <url>https://mariadb.atlassian.net/browse/MDEV-7937</url>
+      <url>https://mariadb.com/kb/en/mariadb/mariadb-10020-changelog/</url>
+      <url>https://mariadb.com/kb/en/mariadb/mariadb-5544-changelog/</url>
+      <cvename>CVE-2015-3152</cvename>
+    </references>
+    <dates>
+      <discovery>2015-03-20</discovery>
+      <entry>2015-07-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="81326883-2905-11e5-a4a5-002590263bf5">
+    <topic>devel/ipython -- CSRF possible remote execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>ipython</name>
+	<range><ge>0.12</ge><lt>3.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Kyle Kelley reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2015/q3/92">
+	  <p>Summary: POST requests exposed via the IPython REST API are
+	    vulnerable to cross-site request forgery (CSRF). Web pages on
+	    different domains can make non-AJAX POST requests to known IPython
+	    URLs, and IPython will honor them. The user's browser will
+	    automatically send IPython cookies along with the requests. The
+	    response is blocked by the Same-Origin Policy, but the request
+	    isn't.</p>
+	  <p>API paths with issues:</p>
+	  <ul>
+	    <li>POST /api/contents/&lt;path&gt;/&lt;file&gt;</li>
+	    <li>POST /api/contents/&lt;path&gt;/&lt;file&gt;/checkpoints</li>
+	    <li>POST /api/contents/&lt;path&gt;/&lt;file&gt;/checkpoints/&lt;checkpoint_id&gt;</li>
+	    <li>POST /api/kernels</li>
+	    <li>POST /api/kernels/&lt;kernel_id&gt;/&lt;action&gt;</li>
+	    <li>POST /api/sessions</li>
+	    <li>POST /api/clusters/&lt;cluster_id&gt;/&lt;action&gt;</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://seclists.org/oss-sec/2015/q3/92</url>
+      <url>http://ipython.org/ipython-doc/3/whatsnew/version3.html#ipython-3-2-1</url>
+    </references>
+    <dates>
+      <discovery>2015-07-12</discovery>
+      <entry>2015-07-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="379788f3-2900-11e5-a4a5-002590263bf5">
+    <topic>freeradius -- insufficent CRL application vulnerability</topic>
+    <affects>
+      <package>
+	<name>freeradius2</name>
+	<range><lt>2.2.8</lt></range>
+      </package>
+      <package>
+	<name>freeradius3</name>
+	<range><lt>3.0.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>oCERT reports:</p>
+	<blockquote cite="http://www.ocert.org/advisories/ocert-2015-008.html">
+	  <p>The FreeRADIUS server relies on OpenSSL to perform certificate
+	    validation, including Certificate Revocation List (CRL) checks. The
+	    FreeRADIUS usage of OpenSSL, in CRL application, limits the checks
+	    to leaf certificates, therefore not detecting revocation of
+	    intermediate CA certificates.</p>
+	  <p>An unexpired client certificate, issued by an intermediate CA with
+	    a revoked certificate, is therefore accepted by FreeRADIUS.</p>
+	  <p>Specifically sets the X509_V_FLAG_CRL_CHECK flag for leaf
+	    certificate CRL checks, but does not use X509_V_FLAG_CRL_CHECK_ALL
+	    for CRL checks on the complete trust chain.</p>
+	  <p>The FreeRADIUS project advises that the recommended configuration
+	    is to use self-signed CAs for all EAP-TLS methods.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4680</cvename>
+      <freebsdpr>ports/201058</freebsdpr>
+      <freebsdpr>ports/201059</freebsdpr>
+      <url>http://www.ocert.org/advisories/ocert-2015-008.html</url>
+      <url>http://freeradius.org/security.html</url>
+    </references>
+    <dates>
+      <discovery>2015-06-22</discovery>
+      <entry>2015-07-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f1deed23-27ec-11e5-a4a5-002590263bf5">
+    <topic>xen-tools -- xl command line config handling stack overflow</topic>
+    <affects>
+      <package>
+	<name>xen-tools</name>
+	<range><ge>4.1</ge><lt>4.5.0_8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-137.html">
+	  <p>The xl command line utility mishandles long configuration values
+	    when passed as command line arguments, with a buffer overrun.</p>
+	  <p>A semi-trusted guest administrator or controller, who is intended
+	    to be able to partially control the configuration settings for a
+	    domain, can escalate their privileges to that of the whole host.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3259</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-137.html</url>
+    </references>
+    <dates>
+      <discovery>2015-07-07</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8c31b288-27ec-11e5-a4a5-002590263bf5">
+    <topic>xen-kernel -- vulnerability in the iret hypercall handler</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><ge>3.1</ge><lt>4.5.0_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-136.html">
+	  <p>A buggy loop in Xen's compat_iret() function iterates the wrong way
+	    around a 32-bit index.  Any 32-bit PV guest kernel can trigger this
+	    vulnerability by attempting a hypercall_iret with EFLAGS.VM set.</p>
+	  <p>Given the use of __get/put_user(), and that the virtual addresses
+	    in question are contained within the lower canonical half, the guest
+	    cannot clobber any hypervisor data.  Instead, Xen will take up to
+	    2^33 pagefaults, in sequence, effectively hanging the host.</p>
+	  <p>Malicious guest administrators can cause a denial of service
+	    affecting the whole system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4164</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-136.html</url>
+    </references>
+    <dates>
+      <discovery>2015-06-11</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="80e846ff-27eb-11e5-a4a5-002590263bf5">
+    <topic>xen-kernel -- GNTTABOP_swap_grant_ref operation misbehavior</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><ge>4.2</ge><lt>4.5.0_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-134.html">
+	  <p>With the introduction of version 2 grant table operations, a
+	    version check became necessary for most grant table related
+	    hypercalls.  The GNTTABOP_swap_grant_ref call was lacking such a
+	    check.  As a result, the subsequent code behaved as if version 2 was
+	    in use, when a guest issued this hypercall without a prior
+	    GNTTABOP_setup_table or GNTTABOP_set_version.</p>
+	  <p>The effect is a possible NULL pointer dereferences.  However, this
+	    cannot be exploited to elevate privileges of the attacking domain,
+	    as the maximum memory address that can be wrongly accessed this way
+	    is bounded to far below the start of hypervisor memory.</p>
+	  <p>Malicious or buggy guest domain kernels can mount a denial of
+	    service attack which, if successful, can affect the whole system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4163</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-134.html</url>
+    </references>
+    <dates>
+      <discovery>2015-06-11</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ce658051-27ea-11e5-a4a5-002590263bf5">
+    <topic>xen-kernel -- Information leak through XEN_DOMCTL_gettscinfo</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><ge>4.0</ge><lt>4.5.0_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-132.html">
+	  <p>The handler for XEN_DOMCTL_gettscinfo failed to initialize a
+	    padding field subsequently copied to guest memory.</p>
+	  <p>A similar leak existed in XEN_SYSCTL_getdomaininfolist, which is
+	    being addressed here regardless of that operation being declared
+	    unsafe for disaggregation by XSA-77.</p>
+	  <p>Malicious or buggy stub domain kernels or tool stacks otherwise
+	    living outside of Domain0 may be able to read sensitive data
+	    relating to the hypervisor or other guests not under the control of
+	    that domain.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3340</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-132.html</url>
+    </references>
+    <dates>
+      <discovery>2015-04-20</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3d657340-27ea-11e5-a4a5-002590263bf5">
+    <topic>xen-tools -- Unmediated PCI register access in qemu</topic>
+    <affects>
+      <package>
+	<name>xen-tools</name>
+	<range><ge>3.3</ge><lt>4.5.0_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-131.html">
+	  <p>Qemu allows guests to not only read, but also write all parts of
+	    the PCI config space (but not extended config space) of passed
+	    through PCI devices not explicitly dealt with for (partial)
+	    emulation purposes.</p>
+	  <p>Since the effect depends on the specific purpose of the the config
+	    space field, it's not possbile to give a general statement about the
+	    exact impact on the host or other guests.  Privilege escalation,
+	    host crash (Denial of Service), and leaked information all cannot be
+	    excluded.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4106</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-131.html</url>
+    </references>
+    <dates>
+      <discovery>2015-06-02</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="cbe1a0f9-27e9-11e5-a4a5-002590263bf5">
+    <topic>xen-tools -- Guest triggerable qemu MSI-X pass-through error messages</topic>
+    <affects>
+      <package>
+	<name>xen-tools</name>
+	<range><ge>3.3</ge><lt>4.5.0_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-130.html">
+	  <p>Device model code dealing with guest PCI MSI-X interrupt management
+	    activities logs messages on certain (supposedly) invalid guest
+	    operations.</p>
+	  <p>A buggy or malicious guest repeatedly invoking such operations may
+	    result in the host disk to fill up, possibly leading to a Denial of
+	    Service.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4105</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-130.html</url>
+    </references>
+    <dates>
+      <discovery>2015-06-02</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4db8a0f4-27e9-11e5-a4a5-002590263bf5">
+    <topic>xen-tools -- PCI MSI mask bits inadvertently exposed to guests</topic>
+    <affects>
+      <package>
+	<name>xen-tools</name>
+	<range><ge>3.3</ge><lt>4.5.0_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-129.html">
+	  <p>The mask bits optionally available in the PCI MSI capability
+	    structure are used by the hypervisor to occasionally suppress
+	    interrupt delivery.  Unprivileged guests were, however, nevertheless
+	    allowed direct control of these bits.</p>
+	  <p>Interrupts may be observed by Xen at unexpected times, which may
+	    lead to a host crash and therefore a Denial of Service.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4104</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-129.html</url>
+    </references>
+    <dates>
+      <discovery>2015-06-02</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="af38cfec-27e7-11e5-a4a5-002590263bf5">
+    <topic>xen-tools -- Potential unintended writes to host MSI message data field via qemu</topic>
+    <affects>
+      <package>
+	<name>xen-tools</name>
+	<range><ge>3.3</ge><lt>4.5.0_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-128.html">
+	  <p>Logic is in place to avoid writes to certain host config space
+	    fields when the guest must nevertheless be able to access their
+	    virtual counterparts. A bug in how this logic deals with accesses
+	    spanning multiple fields allows the guest to write to the host MSI
+	    message data field.</p>
+	  <p>While generally the writes write back the values previously read,
+	    their value in config space may have got changed by the host between
+	    the qemu read and write. In such a case host side interrupt handling
+	    could become confused, possibly losing interrupts or allowing
+	    spurious interrupt injection into other guests.</p>
+	  <p>Certain untrusted guest administrators may be able to confuse host
+	    side interrupt handling, leading to a Denial of Service.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4103</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-128.html</url>
+    </references>
+    <dates>
+      <discovery>2015-06-02</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="103a47d5-27e7-11e5-a4a5-002590263bf5">
+    <topic>xen-kernel -- Certain domctl operations may be abused to lock up the host</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><ge>4.3</ge><lt>4.5.0_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-127.html">
+	  <p>XSA-77 put the majority of the domctl operations on a list
+	    excepting them from having security advisories issued for them if
+	    any effects their use might have could hamper security. Subsequently
+	    some of them got declared disaggregation safe, but for a small
+	    subset this was not really correct: Their (mis-)use may result in
+	    host lockups.</p>
+	  <p>As a result, the potential security benefits of toolstack
+	    disaggregation are not always fully realised.</p>
+	  <p>Domains deliberately given partial management control may be able
+	    to deny service to the entire host.</p>
+	  <p>As a result, in a system designed to enhance security by radically
+	    disaggregating the management, the security may be reduced.  But,
+	    the security will be no worse than a non-disaggregated design.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-2751</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-127.html</url>
+    </references>
+    <dates>
+      <discovery>2015-03-31</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="79f401cd-27e6-11e5-a4a5-002590263bf5">
+    <topic>xen-tools -- Unmediated PCI command register access in qemu</topic>
+    <affects>
+      <package>
+	<name>xen-tools</name>
+	<range><ge>3.3</ge><lt>4.5.0_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-126.html">
+	  <p>HVM guests are currently permitted to modify the memory and I/O
+	    decode bits in the PCI command register of devices passed through to
+	    them. Unless the device is an SR-IOV virtual function, after
+	    disabling one or both of these bits subsequent accesses to the MMIO
+	    or I/O port ranges would - on PCI Express devices - lead to
+	    Unsupported Request responses. The treatment of such errors is
+	    platform specific.</p>
+	  <p>Furthermore (at least) devices under control of the Linux pciback
+	    driver in the host are handed to guests with the aforementioned bits
+	    turned off.  This means that such accesses can similarly lead to
+	    Unsupported Request responses until these flags are set as needed by
+	    the guest.</p>
+	  <p>In the event that the platform surfaces aforementioned UR responses
+	    as Non-Maskable Interrupts, and either the OS is configured to treat
+	    NMIs as fatal or (e.g. via ACPI's APEI) the platform tells the OS to
+	    treat these errors as fatal, the host would crash, leading to a
+	    Denial of Service.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-2756</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-126.html</url>
+    </references>
+    <dates>
+      <discovery>2015-03-31</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d40c66cb-27e4-11e5-a4a5-002590263bf5">
+    <topic>xen-kernel and xen-tools -- Long latency MMIO mapping operations are not preemptible</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><lt>4.5.0_3</lt></range>
+      </package>
+      <package>
+	<name>xen-tools</name>
+	<range><lt>4.5.0_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-125.html">
+	  <p>The XEN_DOMCTL_memory_mapping hypercall allows long running
+	    operations without implementing preemption.</p>
+	  <p>This hypercall is used by the device model as part of the emulation
+	    associated with configuration of PCI devices passed through to HVM
+	    guests and is therefore indirectly exposed to those guests.</p>
+	  <p>This can cause a physical CPU to become busy for a significant
+	    period, leading to a host denial of service in some cases.</p>
+	  <p>If a host denial of service is not triggered then it may instead be
+	    possible to deny service to the domain running the device model,
+	    e.g. domain 0.</p>
+	  <p>This hypercall is also exposed more generally to all toolstacks.
+	    However the uses of it in libxl based toolstacks are not believed
+	    to open up any avenue of attack from an untrusted guest. Other
+	    toolstacks may be vulnerable however.</p>
+	  <p>The vulnerability is exposed via HVM guests which have a PCI device
+	    assigned to them. A malicious HVM guest in such a configuration can
+	    mount a denial of service attack affecting the whole system via its
+	    associated device model (qemu-dm).</p>
+	  <p>A guest is able to trigger this hypercall via operations which it
+	    is legitimately expected to perform, therefore running the device
+	    model as a stub domain does not offer protection against the host
+	    denial of service issue. However it does offer some protection
+	    against secondary issues such as denial of service against dom0.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-2752</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-125.html</url>
+    </references>
+    <dates>
+      <discovery>2015-03-31</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="83a28417-27e3-11e5-a4a5-002590263bf5">
+    <topic>xen-kernel -- Hypervisor memory corruption due to x86 emulator flaw</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><lt>4.5.0_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-123.html">
+	  <p>Instructions with register operands ignore eventual segment
+	    overrides encoded for them. Due to an insufficiently conditional
+	    assignment such a bogus segment override can, however, corrupt a
+	    pointer used subsequently to store the result of the instruction.</p>
+	  <p>A malicious guest might be able to read sensitive data relating to
+	    other guests, or to cause denial of service on the host. Arbitrary
+	    code execution, and therefore privilege escalation, cannot be
+	    excluded.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-2151</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-123.html</url>
+    </references>
+    <dates>
+      <discovery>2015-03-10</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ef9d041e-27e2-11e5-a4a5-002590263bf5">
+    <topic>xen-kernel -- Information leak through version information hypercall</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><lt>4.5.0_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-122.html">
+	  <p>The code handling certain sub-operations of the
+	    HYPERVISOR_xen_version hypercall fails to fully initialize all
+	    fields of structures subsequently copied back to guest memory. Due
+	    to this hypervisor stack contents are copied into the destination of
+	    the operation, thus becoming visible to the guest.</p>
+	  <p>A malicious guest might be able to read sensitive data relating to
+	    other guests.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-2045</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-122.html</url>
+    </references>
+    <dates>
+      <discovery>2015-03-05</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5023f559-27e2-11e5-a4a5-002590263bf5">
+    <topic>xen-kernel -- Information leak via internal x86 system device emulation</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><lt>4.5.0_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-121.html">
+	  <p>Emulation routines in the hypervisor dealing with certain system
+	    devices check whether the access size by the guest is a supported
+	    one. When the access size is unsupported these routines failed to
+	    set the data to be returned to the guest for read accesses, so that
+	    hypervisor stack contents are copied into the destination of the
+	    operation, thus becoming visible to the guest.</p>
+	  <p>A malicious HVM guest might be able to read sensitive data relating
+	    to other guests.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-2044</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-121.html</url>
+    </references>
+    <dates>
+      <discovery>2015-03-05</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0d732fd1-27e0-11e5-a4a5-002590263bf5">
+    <topic>xen-tools -- HVM qemu unexpectedly enabling emulated VGA graphics backends</topic>
+    <affects>
+      <package>
+	<name>xen-tools</name>
+	<range><lt>4.5.0_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-119.html">
+	  <p>When instantiating an emulated VGA device for an x86 HVM guest qemu
+	    will by default enable a backend to expose that device, either SDL
+	    or VNC depending on the version of qemu and the build time
+	    configuration.</p>
+	  <p>The libxl toolstack library does not explicitly disable these
+	    default backends when they are not enabled, leading to an unexpected
+	    backend running.</p>
+	  <p>If either SDL or VNC is explicitly enabled in the guest
+	    configuration then only the expected backends will be enabled.</p>
+	  <p>This affects qemu-xen and qemu-xen-traditional differently.</p>
+	  <p>If qemu-xen was compiled with SDL support then this would result in
+	    an SDL window being opened if $DISPLAY is valid, or a failure to
+	    start the guest if not.</p>
+	  <p>If qemu-xen was compiled without SDL support then qemu would
+	    instead start a VNC server listening on ::1 (IPv6 localhost) or
+	    127.0.0.1 (IPv4 localhost) with IPv6 preferred if available. A VNC
+	    password will not be configured even if one is present in the guest
+	    configuration.</p>
+	  <p>qemu-xen-traditional will never start a vnc backend unless
+	    explicitly configured. However by default it will start an SDL
+	    backend if it was built with SDL support and $DISPLAY is valid.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-2152</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-119.html</url>
+    </references>
+    <dates>
+      <discovery>2015-03-13</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="912cb7f7-27df-11e5-a4a5-002590263bf5">
+    <topic>xen-kernel -- arm: vgic: incorrect rate limiting of guest triggered logging</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><ge>4.4</ge><lt>4.5.0_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-118.html">
+	  <p>On ARM systems the code which deals with virtualising the GIC
+	    distributor would, under various circumstances, log messages on a
+	    guest accessible code path without appropriate rate limiting.</p>
+	  <p>A malicious guest could cause repeated logging to the hypervisor
+	    console, leading to a Denial of Service attack.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1563</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-118.html</url>
+    </references>
+    <dates>
+      <discovery>2015-01-29</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="785c86b1-27d6-11e5-a4a5-002590263bf5">
+    <topic>xen-kernel -- arm: vgic-v2: GICD_SGIR is not properly emulated</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><ge>4.5</ge><lt>4.5.0_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-117.html">
+	  <p>When decoding a guest write to a specific register in the virtual
+	    interrupt controller Xen would treat an invalid value as a critical
+	    error and crash the host.</p>
+	  <p>By writing an invalid value to the GICD.SGIR register a guest can
+	    crash the host, resulting in a Denial of Service attack.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0268</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-117.html</url>
+    </references>
+    <dates>
+      <discovery>2015-02-12</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7313b0e3-27b4-11e5-a15a-50af736ef1c0">
+    <topic>pivotx -- Multiple unrestricted file upload vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>pivotx</name>
+	<range><lt>2.3.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Pivotx reports:</p>
+	<blockquote cite="http://pivotx.net/page/security">
+	  <p>Multiple unrestricted file upload vulnerabilities in fileupload.php
+	    in PivotX before 2.3.9 allow remote authenticated users to execute
+	    arbitrary PHP code by uploading a file with a (1) .php or (2) .php#
+	    extension, and then accessing it via unspecified vectors.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0341</cvename>
+    </references>
+    <dates>
+      <discovery>2014-04-15</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="14d846d6-27b3-11e5-a15a-50af736ef1c0">
+    <topic>pivotx -- cross-site scripting (XSS) vulnerability</topic>
+    <affects>
+      <package>
+	<name>pivotx</name>
+	<range><lt>2.3.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>pivotx reports:</p>
+	<blockquote cite="http://pivotx.net/page/security">
+	  <p>cross-site scripting (XSS) vulnerability in the nickname (and
+	    possibly the email) field. Mitigated by the fact that an attacker
+	    must have a PivotX account.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0341</cvename>
+    </references>
+    <dates>
+      <discovery>2014-04-15</discovery>
+      <entry>2015-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c93c9395-25e1-11e5-a4a5-002590263bf5">
+    <topic>wpa_supplicant -- WPS_NFC option payload length validation vulnerability</topic>
+    <affects>
+      <package>
+	<name>wpa_supplicant</name>
+	<range><lt>2.4_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jouni Malinen reports:</p>
+	<blockquote cite="http://w1.fi/security/2015-5/incomplete-wps-and-p2p-nfc-ndef-record-payload-length-validation.txt">
+	  <p>Incomplete WPS and P2P NFC NDEF record payload length
+	    validation. (2015-5)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://w1.fi/security/2015-5/incomplete-wps-and-p2p-nfc-ndef-record-payload-length-validation.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-07-08</discovery>
+      <entry>2015-07-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="075952fe-267e-11e5-9d03-3c970e169bc2">
+    <topic>openssl -- alternate chains certificate forgery vulnerability</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><ge>1.0.2_2</ge><lt>1.0.2_4</lt></range>
+      </package>
+      <package>
+	<name>mingw32-openssl</name>
+	<range><ge>1.0.2b</ge><lt>1.0.2d</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenSSL reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv_20150709.txt">
+	  <p>During certificate verification, OpenSSL (starting from version
+	    1.0.1n and 1.0.2b) will attempt to find an alternative certificate
+	    chain if the first attempt to build such a chain fails. An error
+	    in the implementation of this logic can mean that an attacker could
+	    cause certain checks on untrusted certificates to be bypassed,
+	    such as the CA flag, enabling them to use a valid leaf certificate
+	    to act as a CA and "issue" an invalid certificate.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1793</cvename>
+      <url>https://www.openssl.org/news/secadv_20150709.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-07-09</discovery>
+      <entry>2015-07-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="37ed8e9c-2651-11e5-86ff-14dae9d210b8">
+    <topic>django -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py27-django</name>
+	<range><ge>1.4.0</ge><lt>1.4.21</lt></range>
+      </package>
+      <package>
+	<name>py32-django</name>
+	<range><ge>1.4.0</ge><lt>1.4.21</lt></range>
+      </package>
+      <package>
+	<name>py33-django</name>
+	<range><ge>1.4.0</ge><lt>1.4.21</lt></range>
+      </package>
+      <package>
+	<name>py34-django</name>
+	<range><ge>1.4.0</ge><lt>1.4.21</lt></range>
+      </package>
+      <package>
+	<name>py27-django</name>
+	<range><ge>1.7.0</ge><lt>1.7.9</lt></range>
+      </package>
+      <package>
+	<name>py32-django</name>
+	<range><ge>1.7.0</ge><lt>1.7.9</lt></range>
+      </package>
+      <package>
+	<name>py33-django</name>
+	<range><ge>1.7.0</ge><lt>1.7.9</lt></range>
+      </package>
+      <package>
+	<name>py34-django</name>
+	<range><ge>1.7.0</ge><lt>1.7.9</lt></range>
+      </package>
+      <package>
+	<name>py27-django</name>
+	<range><ge>1.8.0</ge><lt>1.8.3</lt></range>
+      </package>
+      <package>
+	<name>py32-django</name>
+	<range><ge>1.8.0</ge><lt>1.8.3</lt></range>
+      </package>
+      <package>
+	<name>py33-django</name>
+	<range><ge>1.8.0</ge><lt>1.8.3</lt></range>
+      </package>
+      <package>
+	<name>py34-django</name>
+	<range><ge>1.8.0</ge><lt>1.8.3</lt></range>
+      </package>
+      <package>
+	<name>py27-django-devel</name>
+	<range><le>20150531,1</le></range>
+      </package>
+      <package>
+	<name>py32-django-devel</name>
+	<range><le>20150531,1</le></range>
+      </package>
+      <package>
+	<name>py33-django-devel</name>
+	<range><le>20150531,1</le></range>
+      </package>
+      <package>
+	<name>py34-django-devel</name>
+	<range><le>20150531,1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tim Graham reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2015/jul/08/security-releases/">
+	  <p>In accordance with our security release policy, the Django
+	    team is issuing multiple releases -- Django 1.4.21, 1.7.9, and 1.8.3.
+	    These releases are now available on PyPI and our download page. These
+	    releases address several security issues detailed below. We encourage
+	    all users of Django to upgrade as soon as possible. The Django master
+	    branch has also been updated.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.djangoproject.com/weblog/2015/jul/08/security-releases/</url>
+      <url>https://github.com/django/django/commit/df049ed77a4db67e45db5679bfc76a85d2a26680</url>
+      <url>https://github.com/django/django/commit/014247ad1922931a2f17beaf6249247298e9dc44</url>
+      <url>https://github.com/django/django/commit/17d3a6d8044752f482453f5906026eaf12c39e8e</url>
+      <cvename>CVE-2015-5143</cvename>
+      <cvename>CVE-2015-5144</cvename>
+      <cvename>CVE-2015-5145</cvename>
+    </references>
+    <dates>
+      <discovery>2015-06-10</discovery>
+      <entry>2015-07-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="348bfa69-25a2-11e5-ade1-0011d823eebd">
     <topic>Adobe Flash Player -- critical vulnerabilities</topic>
     <affects>
       <package>
-	<name>linux-c6-flashplugin11</name>
+	<name>linux-c6-flashplugin</name>
 	<range><lt>11.2r202.481</lt></range>
       </package>
       <package>
-	<name>linux-f10-flashplugin11</name>
+	<name>linux-f10-flashplugin</name>
 	<range><lt>11.2r202.481</lt></range>
       </package>
     </affects>
@@ -244,37 +1345,33 @@ Notes:
   </vuln>
 
   <vuln vid="150d1538-23fa-11e5-a4a5-002590263bf5">
-    <topic>squid -- multiple vulnerabilities</topic>
+    <topic>squid -- Improper Protection of Alternate Path with CONNECT requests</topic>
     <affects>
       <package>
 	<name>squid</name>
-	<range><ge>3.5</ge><lt>3.5.6</lt></range>
+	<range><lt>3.5.6</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Amos Jeffries, Squid-3 release manager, reports:</p>
-	<blockquote cite="http://openwall.com/lists/oss-security/2015/07/06/8">
-	  <p>Due to incorrect handling of peer responses in a hierarchy of 2 or
-	    more proxies remote clients (or scripts run on a client) are able to
-	    gain unrestricted access through a gateway proxy to its backend
-	    proxy.</p>
-	  <p>If the two proxies have differing levels of security this could
-	    lead to authentication bypass or unprivileged access to supposedly
-	    secure resources.</p>
-	  <p>Squid up to and including 3.5.5 are apparently vulnerable to DoS
-	    attack from malicious clients using repeated TLS renegotiation
-	    messages. This has not been verified as it also seems to require
-	    outdated (0.9.8l and older) OpenSSL libraries.</p>
+	<p>Squid security advisory 2015:2 reports:</p>
+	<blockquote cite="http://www.squid-cache.org/Advisories/SQUID-2015_2.txt">
+	  <p>Squid configured with cache_peer and operating on explicit proxy
+	    traffic does not correctly handle CONNECT method peer responses.</p>
+	  <p>The bug is important because it allows remote clients to bypass
+	    security in an explicit gateway proxy.</p>
+	  <p>However, the bug is exploitable only if you have configured
+	    cache_peer to receive CONNECT requests.</p>
 	</blockquote>
       </body>
     </description>
     <references>
-      <mlist>http://openwall.com/lists/oss-security/2015/07/06/8</mlist>
+      <url>http://www.squid-cache.org/Advisories/SQUID-2015_2.txt</url>
     </references>
     <dates>
       <discovery>2015-07-06</discovery>
       <entry>2015-07-06</entry>
+      <modified>2015-07-10</modified>
     </dates>
   </vuln>
 
@@ -547,7 +1644,7 @@ Notes:
   </vuln>
 
   <vuln vid="864e6f75-2372-11e5-86ff-14dae9d210b8">
-    <topic>node -- denial of service</topic>
+    <topic>node, iojs, and v8 -- denial of service</topic>
     <affects>
       <package>
 	<name>node</name>
@@ -560,6 +1657,14 @@ Notes:
       <package>
 	<name>iojs</name>
 	<range><lt>2.3.3</lt></range>
+      </package>
+      <package>
+	<name>v8</name>
+	<range><le>3.18.5</le></range>
+      </package>
+      <package>
+	<name>v8-devel</name>
+	<range><le>3.27.7_2</le></range>
       </package>
     </affects>
     <description>
@@ -577,11 +1682,13 @@ Notes:
       <url>http://blog.nodejs.org/2015/07/03/node-v0-12-6-stable/</url>
       <url>https://github.com/joyent/node/commit/78b0e30954111cfaba0edbeee85450d8cbc6fdf6</url>
       <url>https://github.com/nodejs/io.js/commit/030f8045c706a8c3925ec7cb3184fdfae4ba8676</url>
+      <url>https://codereview.chromium.org/1226493003</url>
+      <cvename>CVE-2015-5380</cvename>
     </references>
     <dates>
       <discovery>2015-07-03</discovery>
       <entry>2015-07-06</entry>
-      <modified>2015-07-06</modified>
+      <modified>2015-07-10</modified>
     </dates>
   </vuln>
 
@@ -787,6 +1894,10 @@ Notes:
 	<name>qemu-sbruno</name>
 	<range><lt>2.3.50.g20150618_1</lt></range>
       </package>
+      <package>
+	<name>xen-tools</name>
+	<range><lt>4.5.0_6</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -807,6 +1918,7 @@ Notes:
     <dates>
       <discovery>2015-04-10</discovery>
       <entry>2015-06-26</entry>
+      <modified>2015-07-11</modified>
     </dates>
   </vuln>
 
@@ -1141,11 +2253,11 @@ Notes:
     <topic>Adobe Flash Player -- critical vulnerabilities</topic>
     <affects>
       <package>
-	<name>linux-c6-flashplugin11</name>
+	<name>linux-c6-flashplugin</name>
 	<range><lt>11.2r202.466</lt></range>
       </package>
       <package>
-	<name>linux-f10-flashplugin11</name>
+	<name>linux-f10-flashplugin</name>
 	<range><lt>11.2r202.466</lt></range>
       </package>
     </affects>
@@ -1841,6 +2953,14 @@ Notes:
 	<name>tomcat8</name>
 	<range><lt>8.0.9</lt></range>
       </package>
+      <package>
+	<name>hadoop2</name>
+	<range><le>2.6.0</le></range>
+      </package>
+      <package>
+	<name>oozie</name>
+	<range><le>4.1.0</le></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -1872,6 +2992,7 @@ Notes:
     <dates>
       <discovery>2015-05-12</discovery>
       <entry>2015-06-16</entry>
+      <modified>2015-07-13</modified>
     </dates>
   </vuln>
 
@@ -1966,11 +3087,11 @@ Notes:
     <topic>Adobe Flash Player -- critical vulnerabilities</topic>
     <affects>
       <package>
-	<name>linux-c6-flashplugin11</name>
+	<name>linux-c6-flashplugin</name>
 	<range><lt>11.2r202.466</lt></range>
       </package>
       <package>
-	<name>linux-f10-flashplugin11</name>
+	<name>linux-f10-flashplugin</name>
 	<range><lt>11.2r202.466</lt></range>
       </package>
     </affects>
@@ -3762,11 +4883,11 @@ Notes:
     <topic>Adobe Flash Player -- critical vulnerabilities</topic>
     <affects>
       <package>
-	<name>linux-c6-flashplugin11</name>
+	<name>linux-c6-flashplugin</name>
 	<range><le>11.2r202.457</le></range>
       </package>
       <package>
-	<name>linux-f10-flashplugin11</name>
+	<name>linux-f10-flashplugin</name>
 	<range><le>11.2r202.457</le></range>
       </package>
     </affects>
@@ -4181,11 +5302,11 @@ Notes:
     <affects>
       <package>
 	<name>powerdns</name>
-	<range><lt>3.4.4</lt></range>
+	<range><lt>3.4.5</lt></range>
       </package>
       <package>
 	<name>powerdns-recursor</name>
-	<range><lt>3.7.2</lt></range>
+	<range><lt>3.7.3</lt></range>
       </package>
     </affects>
     <description>
@@ -4202,11 +5323,14 @@ Notes:
     </description>
     <references>
       <cvename>CVE-2015-1868</cvename>
+      <cvename>CVE-2015-5470</cvename>
       <url>https://doc.powerdns.com/md/security/powerdns-advisory-2015-01/</url>
+      <mlist>http://www.openwall.com/lists/oss-security/2015/07/10/8</mlist>
     </references>
     <dates>
       <discovery>2015-04-23</discovery>
       <entry>2015-05-01</entry>
+      <modified>2015-07-12</modified>
     </dates>
   </vuln>
 
@@ -4690,11 +5814,11 @@ Notes:
     <topic>Adobe Flash Player -- critical vulnerabilities</topic>
     <affects>
       <package>
-	<name>linux-c6-flashplugin11</name>
+	<name>linux-c6-flashplugin</name>
 	<range><le>11.2r202.451</le></range>
       </package>
       <package>
-	<name>linux-f10-flashplugin11</name>
+	<name>linux-f10-flashplugin</name>
 	<range><le>11.2r202.451</le></range>
       </package>
     </affects>
@@ -5720,11 +6844,11 @@ Notes:
     <topic>Adobe Flash Player -- critical vulnerabilities</topic>
     <affects>
       <package>
-	<name>linux-c6-flashplugin11</name>
+	<name>linux-c6-flashplugin</name>
 	<range><le>11.2r202.442</le></range>
       </package>
       <package>
-	<name>linux-f10-flashplugin11</name>
+	<name>linux-f10-flashplugin</name>
 	<range><le>11.2r202.442</le></range>
       </package>
     </affects>
@@ -7097,11 +8221,11 @@ Notes:
     <topic>Adobe Flash Player -- critical vulnerability</topic>
     <affects>
       <package>
-	<name>linux-c6-flashplugin11</name>
+	<name>linux-c6-flashplugin</name>
 	<range><le>11.2r202.438</le></range>
       </package>
       <package>
-	<name>linux-f10-flashplugin11</name>
+	<name>linux-f10-flashplugin</name>
 	<range><le>11.2r202.438</le></range>
       </package>
     </affects>
@@ -7312,11 +8436,11 @@ Notes:
     <topic>Adobe Flash Player -- multiple vulnerabilities</topic>
     <affects>
       <package>
-	<name>linux-c6-flashplugin11</name>
+	<name>linux-c6-flashplugin</name>
 	<range><lt>11.2r202.429</lt></range>
       </package>
       <package>
-	<name>linux-f10-flashplugin11</name>
+	<name>linux-f10-flashplugin</name>
 	<range><lt>11.2r202.429</lt></range>
       </package>
     </affects>
@@ -10043,11 +11167,11 @@ Notes:
     <topic>Flash player -- Multiple security vulnerabilities in www/linux-*-flashplugin11</topic>
     <affects>
       <package>
-	<name>linux-f10-flashplugin11</name>
+	<name>linux-f10-flashplugin</name>
 	<range><lt>11.2r202.400</lt></range>
       </package>
       <package>
-	<name>linux-c6-flashplugin11</name>
+	<name>linux-c6-flashplugin</name>
 	<range><lt>11.2r202.400</lt></range>
       </package>
     </affects>

@@ -23,4 +23,5 @@ man/man5/porttools.5.gz
 %%DATADIR%%/tmpl/p5/Makefile.tmpl
 %%DATADIR%%/tmpl/pear/Makefile.tmpl
 %%DATADIR%%/tmpl/py/Makefile.tmpl
+%%DATADIR%%/tmpl/rubygem/Makefile.tmpl
 %%DATADIR%%/util_diff

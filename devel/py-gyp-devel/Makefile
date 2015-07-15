@@ -11,13 +11,13 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	daichi@FreeBSD.org
 COMMENT=	Generate Your Projects
 
-USES=		python
-USE_PYTHON=	distutils autoplist
+LICENSE=	BSD3CLAUSE
 
-.include <bsd.port.pre.mk>
+USES=		python:2
+USE_PYTHON=	autoplist distutils
 
 pre-configure:
 	${REINPLACE_CMD} -e 's/linux/${OPSYS:tl}/;s|gcc|${CC}|;s|g++|${CXX}|' \
 	${WRKSRC}/pylib/gyp/generator/make.py
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

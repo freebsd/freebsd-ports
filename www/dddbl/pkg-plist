@@ -9,8 +9,3 @@
 %%DATADIR%%/inc/database.func.php
 %%DATADIR%%/inc/exceptions/QueryException.class.php
 %%DATADIR%%/inc/exceptions/UnexpectedParameterTypeException.class.php
-@dirrm %%DATADIR%%
-@dirrm %%DATADIR%%/handler
-@dirrm %%DATADIR%%/inc/
-@dirrm %%DATADIR%%/inc/exceptions
-

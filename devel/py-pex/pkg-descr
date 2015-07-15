@@ -1,0 +1,7 @@
+PEX files are self-contained executable Python virtual environments.
+
+More specifically, they are carefully constructed zip files with a
+#!/usr/bin/env python and special __main__.py that allows you to interact with
+the PEX runtime
+
+WWW: https://pex.readthedocs.org/en/latest/

@@ -1,0 +1,9 @@
+To activate uim-mozc, please add the following into ~/.xinitrc,
+~/.xsession, or ~/.kde4/env (for KDE4):
+
+export GTK_IM_MODULE=uim
+export QT_IM_MODULE=uim
+export XMODIFIERS=@im=uim
+export XIM=uim
+%%PREFIX%%/bin/mozc start
+uim-xim &

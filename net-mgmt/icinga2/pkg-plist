@@ -18,8 +18,8 @@ etc/bash_completion.d/icinga2
 @sample %%ETCDIR%%/features-available/gelf.conf.sample
 @sample %%ETCDIR%%/features-available/graphite.conf.sample
 @sample %%ETCDIR%%/features-available/icingastatus.conf.sample
-%%MYSQL%%@sample(icinga,icinga,0640) %%ETCDIR%%/features-available/ido-mysql.conf.sample
-%%PGSQL%%@sample(icinga,icinga,0640) %%ETCDIR%%/features-available/ido-pgsql.conf.sample
+%%MYSQL%%@sample(%%ICINGA2USER%%,%%ICINGA2GROUP%%,0640) %%ETCDIR%%/features-available/ido-mysql.conf.sample
+%%PGSQL%%@sample(%%ICINGA2USER%%,%%ICINGA2GROUP%%,0640) %%ETCDIR%%/features-available/ido-pgsql.conf.sample
 @sample %%ETCDIR%%/features-available/livestatus.conf.sample
 @sample %%ETCDIR%%/features-available/mainlog.conf.sample
 @sample %%ETCDIR%%/features-available/notification.conf.sample
@@ -42,7 +42,7 @@ lib/icinga2/libchecker.so
 lib/icinga2/libcli.so
 lib/icinga2/libcompat.so
 lib/icinga2/libconfig.so
-lib/icinga2/libdb_ido.so
+%%DBBACKEND%%lib/icinga2/libdb_ido.so
 %%MYSQL%%lib/icinga2/libdb_ido_mysql.so
 %%PGSQL%%lib/icinga2/libdb_ido_pgsql.so
 lib/icinga2/libexecvpe.so
@@ -78,8 +78,8 @@ sbin/icinga2
 %%PORTDOCS%%%%DOCSDIR%%/markdown/21-debug.md
 %%PORTDOCS%%%%DOCSDIR%%/markdown/22-appendix.md
 %%PORTDOCS%%%%DOCSDIR%%/markdown/3-monitoring-basics.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/4-advanced-topics.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/5-configuring-icinga-2.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/4-configuring-icinga-2.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/5-advanced-topics.md
 %%PORTDOCS%%%%DOCSDIR%%/markdown/6-object-types.md
 %%PORTDOCS%%%%DOCSDIR%%/markdown/7-icinga-template-library.md
 %%PORTDOCS%%%%DOCSDIR%%/markdown/8-cli-commands.md
@@ -94,39 +94,41 @@ sbin/icinga2
 %%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.1.0.sql
 %%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.2.0.sql
 %%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.3.0.sql
-%%DATADIR%%/include/command-icinga.conf
-%%DATADIR%%/include/command-nscp-local.conf
-%%DATADIR%%/include/command-plugins-manubulon.conf
-%%DATADIR%%/include/command-plugins.conf
-%%DATADIR%%/include/command.conf
+@sample %%DATADIR%%/include/command-icinga.conf.sample
+@sample %%DATADIR%%/include/command-nscp-local.conf.sample
+@sample %%DATADIR%%/include/command-plugins-manubulon.conf.sample
+@sample %%DATADIR%%/include/command-plugins.conf.sample
+@sample %%DATADIR%%/include/command.conf.sample
 %%DATADIR%%/include/hangman
 %%DATADIR%%/include/itl
 %%DATADIR%%/include/manubulon
 %%DATADIR%%/include/nscp
 %%DATADIR%%/include/plugins
 %%DATADIR%%/include/plugins-contrib
-%%DATADIR%%/include/plugins-contrib.d/databases.conf
-%%DATADIR%%/include/plugins-contrib.d/ipmi.conf
-%%DATADIR%%/include/plugins-contrib.d/network-components.conf
-%%DATADIR%%/include/plugins-contrib.d/operating-system.conf
-%%DATADIR%%/include/plugins-contrib.d/virtualization.conf
-%%DATADIR%%/include/plugins-contrib.d/vmware.conf
-%%DATADIR%%/include/plugins-contrib.d/web.conf
-%%DATADIR%%/include/timeperiod.conf
+@sample %%DATADIR%%/include/plugins-contrib.d/databases.conf.sample
+@sample %%DATADIR%%/include/plugins-contrib.d/ipmi.conf.sample
+@sample %%DATADIR%%/include/plugins-contrib.d/network-components.conf.sample
+@sample %%DATADIR%%/include/plugins-contrib.d/operating-system.conf.sample
+@sample %%DATADIR%%/include/plugins-contrib.d/virtualization.conf.sample
+@sample %%DATADIR%%/include/plugins-contrib.d/vmware.conf.sample
+@sample %%DATADIR%%/include/plugins-contrib.d/web.conf.sample
+@sample %%DATADIR%%/include/timeperiod.conf.sample
+@sample %%DATADIR%%/include/command-plugins-windows.conf.sample
+%%DATADIR%%/include/windows-plugins
 @dir %%ETCDIR%%/pki
-@dir /var/cache/icinga2
-@dir /var/lib/icinga2/api/log
-@dir /var/lib/icinga2/api/repository
-@dir /var/lib/icinga2/api/zones
-@dir /var/lib/icinga2/api
-@dir /var/lib/icinga2
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/cache/icinga2
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/lib/icinga2/api/log
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/lib/icinga2/api/repository
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/lib/icinga2/api/zones
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/lib/icinga2/api
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/lib/icinga2
 @dir /var/lib
-@dir /var/log/icinga2/compat/archives
-@dir /var/log/icinga2/compat
-@dir /var/log/icinga2/crash
-@dir /var/log/icinga2
-@dir /var/run/icinga2/cmd
-@dir /var/run/icinga2
-@dir /var/spool/icinga2/perfdata
-@dir /var/spool/icinga2/tmp
-@dir /var/spool/icinga2
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/log/icinga2/compat/archives
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/log/icinga2/compat
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/log/icinga2/crash
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/log/icinga2
+@dir(%%ICINGA2USER%%,%%WWWGRP%%,2750) /var/run/icinga2/cmd
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/run/icinga2
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/spool/icinga2/perfdata
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/spool/icinga2/tmp
+@dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/spool/icinga2

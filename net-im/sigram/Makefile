@@ -22,6 +22,8 @@ USE_QT5=	core gui network opengl xml widgets buildtools_build graphicaleffects \
 USES=		compiler:c++11-lib openal:soft qmake
 QMAKE_ARGS+=	target.path=${LOCALBASE}/bin
 
+BROKEN=		No longer connects to Telegram network, appears abandonded
+
 .include <bsd.port.pre.mk>
 
 post-install:

@@ -215,6 +215,7 @@
     SUBDIR += mailagent
     SUBDIR += maildirsync
     SUBDIR += maildrop
+    SUBDIR += mailest
     SUBDIR += mailfmt
     SUBDIR += mailfront
     SUBDIR += mailgraph

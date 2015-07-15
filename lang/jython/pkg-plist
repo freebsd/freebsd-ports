@@ -1351,7 +1351,7 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/test/test_ctypes.py
 %%JYTHON_DIR%%/Lib/test/test_curses.py
 %%JYTHON_DIR%%/Lib/test/test_datetime.py
-%%JYTHON_DIR%%//Lib/test/test_datetime_jy.py
+%%JYTHON_DIR%%/Lib/test/test_datetime_jy.py
 %%JYTHON_DIR%%/Lib/test/test_dbm.py
 %%JYTHON_DIR%%/Lib/test/test_decimal.py
 %%JYTHON_DIR%%/Lib/test/test_decimal_jy.py

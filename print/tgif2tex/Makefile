@@ -12,6 +12,10 @@ COMMENT=	Converting texts in figure by tgif to LaTeX commands
 
 LICENSE=	GPLv2
 
+USES=		perl5 shebangfix
+USE_PERL5=	run
+SHEBANG_FILES=	tgif2tex
+NO_BUILD=	yes
 PLIST_FILES=	bin/tgif2tex
 PORTDOCS=	how-to-use.dvi how-to-use.ps how-to-use.tex \
 		example.obj example.tex \
@@ -22,14 +26,7 @@ PORTDOCS=	how-to-use.dvi how-to-use.ps how-to-use.tex \
 		sample2.2.dps sample2.2.tps \
 		sample2.3.dps sample2.3.tps \
 		sample2.dvi sample2.tex sample2.obj sample2.ps
-
 OPTIONS_DEFINE=	DOCS
-
-USES=		perl5 shebangfix
-USE_PERL5=	run
-NO_BUILD=	yes
-
-SHEBANG_FILES=	tgif2tex
 
 post-patch:
 	${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE}," ${WRKSRC}/tgif2tex

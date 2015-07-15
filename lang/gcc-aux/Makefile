@@ -116,7 +116,7 @@ DISTFILES=	\
 
 .if ${PORT_OPTIONS:MFORT} && !${PORT_OPTIONS:MBOOTSTRAP}
 LANGS+=		fortran
-APPLY_DIFFS+=	fortran
+#APPLY_DIFFS+=	fortran
 EXTRA_CONFIG+=	--enable-libquadmath
 .else
 EXTRA_CONFIG+=	--disable-libquadmath

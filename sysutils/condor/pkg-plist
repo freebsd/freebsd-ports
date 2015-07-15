@@ -42,9 +42,10 @@ bin/condor_vacate_job
 bin/condor_version
 bin/condor_wait
 bin/condor_who
+@sample etc/condor_config.sample
+@sample etc/condor_config.local.sample
 %%ETCDIR%%/condor
 %%ETCDIR%%/condor_config
-%%ETCDIR%%/condor_config.local
 %%ETCDIR%%/examples/README
 %%ETCDIR%%/examples/condor.boot.generic
 %%ETCDIR%%/examples/condor.boot.rpm
@@ -126,7 +127,7 @@ lib/condor_ssh_to_job_sshd_config_template
 lib/libchirp_client.a
 lib/libclassad.a
 lib/libcondorapi.a
-lib/libpyclassad%%PYTHON_VER%%_8_2_6.a
+lib/libpyclassad%%PYTHON_VER%%_8_2_8.a
 lib/python/classad.so
 lib/python/htcondor.so
 lib/scimark2lib.jar

@@ -1,6 +1,0 @@
-%%SITE_PERL%%/Test/TempDir.pm
-%%SITE_PERL%%/Test/TempDir/Factory.pm
-%%SITE_PERL%%/Test/TempDir/Handle.pm
-%%PERL5_MAN3%%/Test::TempDir.3.gz
-%%PERL5_MAN3%%/Test::TempDir::Factory.3.gz
-%%PERL5_MAN3%%/Test::TempDir::Handle.3.gz

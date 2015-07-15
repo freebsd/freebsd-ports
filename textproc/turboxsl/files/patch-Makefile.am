@@ -1,0 +1,10 @@
+--- Makefile.am.orig	2015-07-03 03:01:10.000000000 +0900
++++ Makefile.am	2015-07-10 04:11:03.293694000 +0900
+@@ -8,6 +8,6 @@
+ 
+ bin_SCRIPTS = turboxsl-config
+ 
+-pkgconfigdir=$(libdir)/pkgconfig
++pkgconfigdir=$(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = libturboxsl.pc
+ 

@@ -1,26 +1,13 @@
---- cpp.orig/Makefile	2013-03-11 15:19:46.000000000 +0000
-+++ cpp/Makefile	2013-05-19 22:06:57.713280491 +0000
-@@ -11,11 +11,22 @@
+--- cpp/Makefile.orig	2015-06-23 15:30:20.000000000 +0000
++++ cpp/Makefile	2015-06-27 09:35:22.892599446 +0000
+@@ -13,8 +13,8 @@
  
- include $(top_srcdir)/config/Make.rules
+ SUBDIRS		= config src include
  
--SUBDIRS		= config src include test
-+SUBDIRS		= config src include
-+
+-ifneq ($(MAKECMDGOALS),install)
+-    SUBDIRS		:= $(SUBDIRS) test
 +ifeq ($(NOTESTS),)
-+SUBDIRS		:= $(SUBDIRS) test
-+endif
- 
- ifeq ($(shell uname | grep MINGW),)
-+ifeq ($(NODEMOS),)
- SUBDIRS		:= $(SUBDIRS) demo
++	SUBDIRS		:= $(SUBDIRS) test
  endif
-+endif
-+
-+ifeq ($(NOICEDOCS),)
-+SUBDIRS		:= $(SUBDIRS) doc
-+endif
-+
  
- INSTALL_SUBDIRS	= $(install_bindir) $(install_libdir) $(install_includedir) $(install_configdir)
- 
+ INSTALL_SUBDIRS	= $(install_bindir) $(install_libdir)$(cpp11libdirsuffix) $(install_includedir) \

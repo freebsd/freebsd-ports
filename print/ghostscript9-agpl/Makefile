@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ghostscript
-PORTVERSION=	9.15
-PORTREVISION=	1
+PORTVERSION=	9.16
 CATEGORIES=	print
 MASTER_SITES=	http://downloads.ghostscript.com/public/:gs_srcs \
 		SF/ghostscript/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
@@ -33,10 +32,9 @@ CONFLICTS_INSTALL= \
 		ghostscript[789]-[0-9]* \
 		ghostscript[789]-nox11-[0-9]*
 
-USES=		gmake jpeg pkgconfig:build tar:bzip2
+USES=		gmake jpeg pkgconfig:build autoreconf tar:bzip2
 WANT_GNOME=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 
 MAKE_ENV=	CFLAGS_STANDARD="${CFLAGS}" \

@@ -1,7 +1,5 @@
 
-Sample condor_config and condor_config.local files are available in
-%%ETCDIR%%.  Copy them to %%PREFIX%%/etc and edit condor_config.local to taste
-to get started.
+Edit %%PREFIX%%/etc/condor_config.local to taste to get started.
 
 Settings in condor_config.local override the defaults in condor_config.
 Use condor_config as a reference, and make all changes to condor_config.local.

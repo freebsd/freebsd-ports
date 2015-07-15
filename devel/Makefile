@@ -159,6 +159,7 @@
     SUBDIR += bsdowl
     SUBDIR += bufferpool
     SUBDIR += bugzilla44
+    SUBDIR += bugzilla50
     SUBDIR += build
     SUBDIR += buildbot
     SUBDIR += buildbot-slave
@@ -412,11 +413,16 @@
     SUBDIR += elixir-bson
     SUBDIR += elixir-calendar
     SUBDIR += elixir-conform
+    SUBDIR += elixir-csv
     SUBDIR += elixir-decimal
     SUBDIR += elixir-dialyze
+    SUBDIR += elixir-estree
     SUBDIR += elixir-exactor
     SUBDIR += elixir-exjsx
+    SUBDIR += elixir-exprotobuf
     SUBDIR += elixir-exrm
+    SUBDIR += elixir-hex
+    SUBDIR += elixir-inflex
     SUBDIR += elixir-lager_logger
     SUBDIR += elixir-msgpax
     SUBDIR += elixir-plug
@@ -433,6 +439,7 @@
     SUBDIR += eris
     SUBDIR += erlang-bbmustache
     SUBDIR += erlang-bear
+    SUBDIR += erlang-clique
     SUBDIR += erlang-common_lib
     SUBDIR += erlang-cuttlefish
     SUBDIR += erlang-erlware_commons
@@ -443,6 +450,7 @@
     SUBDIR += erlang-gen_smtp
     SUBDIR += erlang-getopt
     SUBDIR += erlang-goldrush
+    SUBDIR += erlang-gpb
     SUBDIR += erlang-gproc
     SUBDIR += erlang-jobs
     SUBDIR += erlang-jsx
@@ -458,6 +466,7 @@
     SUBDIR += erlang-providers
     SUBDIR += erlang-rebar3_hex
     SUBDIR += erlang-recon
+    SUBDIR += erlang-sbroker
     SUBDIR += erlang-ssl_verify_hostname
     SUBDIR += erlang-syslog
     SUBDIR += etcd
@@ -3158,7 +3167,6 @@
     SUBDIR += p5-Test-TCP
     SUBDIR += p5-Test-TableDriven
     SUBDIR += p5-Test-Taint
-    SUBDIR += p5-Test-TempDir
     SUBDIR += p5-Test-TempDir-Tiny
     SUBDIR += p5-Test-Tester
     SUBDIR += p5-Test-Time
@@ -3605,6 +3613,7 @@
     SUBDIR += pecl-swoole
     SUBDIR += pecl-sync
     SUBDIR += pecl-test_helpers
+    SUBDIR += pecl-trace
     SUBDIR += pecl-uopz
     SUBDIR += pecl-uploadprogress
     SUBDIR += pecl-uri_template
@@ -4045,6 +4054,7 @@
     SUBDIR += py-pbr
     SUBDIR += py-pefile
     SUBDIR += py-period
+    SUBDIR += py-pex
     SUBDIR += py-phabricator
     SUBDIR += py-phpserialize
     SUBDIR += py-pika

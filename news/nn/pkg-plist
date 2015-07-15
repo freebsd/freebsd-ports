@@ -48,5 +48,3 @@ man/man1/nnusage.1m.gz
 man/man1/nnview.1.gz
 man/man8/nnmaster.8.gz
 man/man8/nnspew.8.gz
-@dirrm lib/nn/help
-@dirrm lib/nn

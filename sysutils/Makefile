@@ -134,6 +134,7 @@
     SUBDIR += clone
     SUBDIR += clonehdd
     SUBDIR += cloop-utils
+    SUBDIR += cloudabi-utils
     SUBDIR += clsync
     SUBDIR += cmdwatch
     SUBDIR += cmockery2
@@ -404,6 +405,7 @@
     SUBDIR += installwatch
     SUBDIR += intel-pcm
     SUBDIR += iocage
+    SUBDIR += iocage-devel
     SUBDIR += iogen
     SUBDIR += iograph
     SUBDIR += ioping
@@ -754,6 +756,7 @@
     SUBDIR += py-filelike
     SUBDIR += py-glances
     SUBDIR += py-halite
+    SUBDIR += py-honcho
     SUBDIR += py-iowait
     SUBDIR += py-nagiosplugin
     SUBDIR += py-ploy

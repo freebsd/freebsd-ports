@@ -6,6 +6,7 @@
     SUBDIR += 2bsd-diff
     SUBDIR += R-cran-R2HTML
     SUBDIR += R-cran-XML
+    SUBDIR += R-cran-pystr
     SUBDIR += R-cran-stringi
     SUBDIR += R-cran-stringr
     SUBDIR += R-cran-xtable
@@ -159,6 +160,7 @@
     SUBDIR += eo-aspell
     SUBDIR += eqe
     SUBDIR += erlang-edown
+    SUBDIR += erlang-yamerl
     SUBDIR += es-aspell
     SUBDIR += es-hunspell
     SUBDIR += es-hyphen
@@ -191,7 +193,6 @@
     SUBDIR += ga-aspell
     SUBDIR += gastex
     SUBDIR += gd-aspell
-    SUBDIR += gdict
     SUBDIR += gdome2
     SUBDIR += gl-aspell
     SUBDIR += gladtex
@@ -1540,6 +1541,7 @@
     SUBDIR += translate-toolkit
     SUBDIR += ts-hunspell
     SUBDIR += tth
+    SUBDIR += turboxsl
     SUBDIR += txt2html
     SUBDIR += txt2man
     SUBDIR += txt2tags

@@ -25,9 +25,3 @@ man/man8/c-icap-mods-sguardDB.8.gz
 %%DATADIR%%/templates/virus_scan/en/VIR_MODE_TAIL
 %%DATADIR%%/templates/virus_scan/en/VIR_MODE_VIRUS_FOUND
 %%DATADIR%%/templates/virus_scan/en/VIRUS_FOUND
-@dirrm %%DATADIR%%/templates/srv_url_check/en
-@dirrm %%DATADIR%%/templates/srv_url_check
-@dirrm %%DATADIR%%/templates/virus_scan/en
-@dirrm %%DATADIR%%/templates/virus_scan
-@dirrmtry %%DATADIR%%/templates
-@dirrmtry %%DATADIR%%

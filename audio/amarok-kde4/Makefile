@@ -3,7 +3,7 @@
 
 PORTNAME=	amarok
 PORTVERSION=	2.8.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 
@@ -31,7 +31,8 @@ USE_QT4=	corelib dbus designer gui network opengl \
 		phonon script sql svg webkit xml \
 		qmake_build moc_build rcc_build uic_build
 USE_XORG=	x11
-USES=		cmake pkgconfig shared-mime-info tar:bzip2
+USES=		cmake pkgconfig shared-mime-info shebangfix tar:bzip2
+SHEBANG_FILES=	src/kconf_update/amarok-2.4.1-tokens_syntax_update.pl
 USE_LDCONFIG=	yes
 
 BROKEN_sparc64=	does not build (GCC-related error)
