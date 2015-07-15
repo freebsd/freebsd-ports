@@ -1,7 +1,7 @@
 # Created by: Johannes Meixner <xmj@chaot.net>
 # $FreeBSD$
 
-PORTNAME=	iocage
+PORTNAME=	iocage-devel
 PORTVERSION=	1.6.6
 CATEGORIES=	sysutils
 
@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	pannon
 GH_TAGNAME=	52a68cf
+GH_PROJECT=	iocage
 
 .include <bsd.port.pre.mk>
 
