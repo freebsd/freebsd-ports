@@ -13,19 +13,20 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfm-gtk.so:${PORTSDIR}/x11/libfm
 
-USES=		desktop-file-utils gmake pkgconfig gettext-tools libtool \
-	autoreconf tar:xz
+USES=		autoreconf desktop-file-utils gettext gmake libtool pkgconfig \
+		tar:xz
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk20 intltool intlhack
 USE_XORG=	x11
 
 CONFIGURE_ARGS=--with-gtk=2
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	AUTHORS NEWS
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
-NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
