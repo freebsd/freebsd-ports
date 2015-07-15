@@ -3,14 +3,13 @@
 
 PORTNAME=	cyrus-sasl2
 PORTVERSION=	2.1.23
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security linux
 DISTNAME=	cyrus-sasl-lib-${PORTVERSION}-${RPMVERSION}
+MASTER_SITES=	CENTOS_LINUX_UPDATES
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer) (Linux CentOS ${LINUX_DIST_VER})
-
-#DISTNAME=	cyrus-sasl-lib-${PORTVERSION}-${RPMVERSION}
 
 ONLY_FOR_ARCHS=	i386 amd64
 .if defined(PACKAGE_BUILDING)
@@ -19,7 +18,7 @@ SRC_DISTFILES=	cyrus-sasl-${PORTVERSION}-${RPMVERSION}.src.rpm
 
 USE_LINUX=	c6
 USE_LINUX_RPM=	yes
-RPMVERSION=	15.el6
+RPMVERSION=	15.el6_6.2
 USE_LDCONFIG=	yes
 BRANDELF_FILES=	usr/sbin/sasldblistusers2 usr/sbin/saslpasswd2
 DESCR=	${.CURDIR}/../cyrus-sasl2/pkg-descr
