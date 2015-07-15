@@ -58,6 +58,49 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a12494c1-2af4-11e5-86ff-14dae9d210b8">
+    <topic>apache24 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><lt>2.4.16</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jim Jagielski reports:</p>
+	<blockquote cite="https://mail-archives.apache.org/mod_mbox/www-announce/201507.mbox/%3CAA5C882C-A9C3-46B9-9320-5040A2152E83@apache.org%3E">
+	  <p>CVE-2015-3183 (cve.mitre.org)
+	    core: Fix chunk header parsing defect.
+	    Remove apr_brigade_flatten(), buffering and duplicated code from
+	    the HTTP_IN filter, parse chunks in a single pass with zero copy.
+	    Limit accepted chunk-size to 2^63-1 and be strict about chunk-ext
+	    authorized characters.</p>
+	  <p>CVE-2015-3185 (cve.mitre.org)
+	    Replacement of ap_some_auth_required (unusable in Apache httpd 2.4)
+	    with new ap_some_authn_required and ap_force_authn hook.</p>
+	  <p>CVE-2015-0253 (cve.mitre.org)
+	    core: Fix a crash with ErrorDocument 400 pointing to a local URL-path
+	    with the INCLUDES filter active, introduced in 2.4.11. PR 57531.</p>
+	  <p>CVE-2015-0228 (cve.mitre.org)
+	    mod_lua: A maliciously crafted websockets PING after a script
+	    calls r:wsupgrade() can cause a child process crash.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <mlist>https://mail-archives.apache.org/mod_mbox/www-announce/201507.mbox/%3CAA5C882C-A9C3-46B9-9320-5040A2152E83@apache.org%3E</mlist>
+      <cvename>CVE-2015-3183</cvename>
+      <cvename>CVE-2015-3185</cvename>
+      <cvename>CVE-2015-0253</cvename>
+      <cvename>CVE-2015-0228</cvename>
+    </references>
+    <dates>
+      <discovery>2015-02-04</discovery>
+      <entry>2015-07-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8d2d6bbd-2a02-11e5-a0af-bcaec565249c">
     <topic>Adobe Flash Player -- critical vulnerabilities</topic>
     <affects>
