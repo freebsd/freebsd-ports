@@ -10620,6 +10620,14 @@ Notes:
 	<name>libxml2</name>
 	<range><lt>2.9.2</lt></range>
       </package>
+      <package>
+	<name>linux-c6-libxml2</name>
+	<range><lt>2.7.6_2</lt></range>
+      </package>
+      <package>
+	<name>linux-f10-libxml2</name>
+	<range><ge>*</ge></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -10643,6 +10651,7 @@ Notes:
     <dates>
       <discovery>2014-10-16</discovery>
       <entry>2014-10-18</entry>
+      <modified>2015-07-15</modified>
     </dates>
   </vuln>
 
@@ -13833,7 +13842,15 @@ Notes:
     <affects>
       <package>
 	<name>libxml2</name>
-	<range><le>2.8.0_5</le></range>
+	<range><lt>2.9.1</lt></range>
+      </package>
+      <package>
+	<name>linux-c6-libxml2</name>
+	<range><lt>2.7.6_2</lt></range>
+      </package>
+      <package>
+	<name>linux-f10-libxml2</name>
+	<range><ge>*</ge></range>
       </package>
     </affects>
     <description>
@@ -13857,6 +13874,7 @@ Notes:
     <dates>
       <discovery>2013-04-11</discovery>
       <entry>2013-07-10</entry>
+      <modified>2015-07-15</modified>
     </dates>
   </vuln>
 
@@ -13865,7 +13883,15 @@ Notes:
     <affects>
       <package>
 	<name>libxml2</name>
-	<range><le>2.8.0_5</le></range>
+	<range><lt>2.9.1</lt></range>
+      </package>
+      <package>
+	<name>linux-c6-libxml2</name>
+	<range><lt>2.7.6_2</lt></range>
+      </package>
+      <package>
+	<name>linux-f10-libxml2</name>
+	<range><ge>*</ge></range>
       </package>
     </affects>
     <description>
@@ -13893,6 +13919,7 @@ Notes:
     <dates>
       <discovery>2013-12-03</discovery>
       <entry>2014-05-06</entry>
+      <modified>2015-07-15</modified>
     </dates>
   </vuln>
 
