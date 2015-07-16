@@ -45,6 +45,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/extend_example.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/quixote-demo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/quixote-demo-2
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/advocacy
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
