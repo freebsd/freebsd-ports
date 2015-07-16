@@ -335,6 +335,7 @@
     SUBDIR += masscan
     SUBDIR += massh
     SUBDIR += matrixssl
+    SUBDIR += mbedtls
     SUBDIR += mcrypt
     SUBDIR += md4coll
     SUBDIR += md5coll
