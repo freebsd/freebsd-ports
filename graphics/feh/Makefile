@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	feh
-PORTVERSION=	2.12
-PORTREVISION=	1
+PORTVERSION=	2.13.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://feh.finalrewind.org/ \
 		LOCAL/uqs
@@ -18,7 +17,7 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libImlib2.so:${PORTSDIR}/graphics/imlib2
 
 USE_XORG=	x11 xt xinerama
-USES=		cpe gmake perl5 tar:bzip2 shebangfix desktop-file-utils
+USES=		cpe desktop-file-utils gmake perl5 shebangfix tar:bzip2
 CPE_VENDOR=	daniel_friesel
 USE_PERL5=	run
 
