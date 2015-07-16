@@ -58,6 +58,41 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="67b3fef2-2bea-11e5-86ff-14dae9d210b8">
+    <topic>groovy -- remote execution of untrusted code</topic>
+    <affects>
+      <package>
+	<name>groovy</name>
+	<range><ge>1.7.0</ge><lt>2.4.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Cédric Champeau reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2015/q3/121">
+	  <p>Description</p>
+	  <p>When an application has Groovy on the classpath and that
+	    it uses standard Java serialization mechanim to communicate
+	    between servers, or to store local data, it is possible for
+	    an attacker to bake a special serialized object that will
+	    execute code directly when deserialized. All applications
+	    which rely on serialization and do not isolate the code which
+	    deserializes objects are subject to this vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <mlist>http://seclists.org/oss-sec/2015/q3/121</mlist>
+      <url>http://groovy-lang.org/security.html</url>
+      <url>https://issues.apache.org/jira/browse/GROOVY-7504</url>
+      <cvename>CVE-2015-3253</cvename>
+    </references>
+    <dates>
+      <discovery>2015-07-09</discovery>
+      <entry>2015-07-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a928960a-2bdc-11e5-86ff-14dae9d210b8">
     <topic>libav -- divide by zero</topic>
     <affects>
