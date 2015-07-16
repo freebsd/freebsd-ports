@@ -85,11 +85,6 @@ IGNORE=		Ghostscript-agpl is only available in version 9
 _GS_NOX11_SUFFIX=	-nox11
 .endif
 
-.endif # _INCLUDE_USES_GHOSTSCRIPT_MK
-
-.if defined(_POSTMKINCLUDED) && !defined(_INCLUDE_USES_GHOSTSCRIPT_POST_MK)
-_INCLUDE_USES_GHOSTSCRIPT_POST_MK=   yes
-
 # dependencies
 _GS_PORT=	ghostscript${_GS_SELECTED}${_GS_AGPL_SUFFIX}${_GS_NOX11_SUFFIX}
 
@@ -100,5 +95,4 @@ BUILD_DEPENDS+=	${_GS_PORT}>=0:${PORTSDIR}/print/${_GS_PORT}
 RUN_DEPENDS+=	${_GS_PORT}>=0:${PORTSDIR}/print/${_GS_PORT}
 .endif
 
-
-.endif
+.endif # _INCLUDE_USES_GHOSTSCRIPT_MK
