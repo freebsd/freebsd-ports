@@ -7,7 +7,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://mlmmj.org/releases/ \
 		LOCAL/brix
 
-MAINTAINER=	xi@borderworlds.dk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mailing list managing made joyful
 
 LICENSE=	MIT
