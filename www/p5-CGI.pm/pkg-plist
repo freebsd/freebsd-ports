@@ -28,7 +28,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/save_state.cgi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tryit.cgi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wilogo.gif
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PERL5_MAN3%%/CGI.3.gz
 %%PERL5_MAN3%%/CGI::Apache.3.gz
 %%PERL5_MAN3%%/CGI::Carp.3.gz
