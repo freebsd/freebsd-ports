@@ -82,7 +82,7 @@ index 9bbc129..e72944a 100644
  
    /* This should never happen. */
    if ((unsigned int) avail > stm->buffer_size) {
-@@ -355,17 +361,67 @@ alsa_refill_stream(cubeb_stream * stm)
+@@ -359,10 +365,11 @@ alsa_refill_stream(cubeb_stream * stm)
    if (got < 0) {
      pthread_mutex_unlock(&stm->mutex);
      stm->state_callback(stm, stm->user_ptr, CUBEB_STATE_ERROR);
@@ -90,15 +90,19 @@ index 9bbc129..e72944a 100644
      return ERROR;
    }
    if (got > 0) {
--    snd_pcm_sframes_t wrote = WRAP(snd_pcm_writei)(stm->pcm, p, got);
+-    snd_pcm_sframes_t wrote;
++    snd_pcm_sframes_t wrote, towrite = got;
+ 
+     if (stm->params.format == CUBEB_SAMPLE_FLOAT32NE) {
+       float * b = (float *) p;
+@@ -375,14 +382,62 @@ alsa_refill_stream(cubeb_stream * stm)
+         b[i] *= stm->volume;
+       }
+     }
+-    wrote = WRAP(snd_pcm_writei)(stm->pcm, p, got);
 -    if (wrote == -EPIPE) {
 -      WRAP(snd_pcm_recover)(stm->pcm, wrote, 1);
 -      wrote = WRAP(snd_pcm_writei)(stm->pcm, p, got);
--    }
--    assert(wrote >= 0 && wrote == got);
--    stm->write_position += wrote;
--    gettimeofday(&stm->last_activity, NULL);
-+    snd_pcm_sframes_t wrote, towrite = got;
 +    for (;;) {
 +      wrote = WRAP(snd_pcm_writei)(stm->pcm, p,
 +        towrite > avail ? avail : towrite);
@@ -154,7 +158,10 @@ index 9bbc129..e72944a 100644
 +      if (towrite == wrote)
 +        break;
 +      towrite -= wrote;
-+    }
+     }
+-    assert(wrote >= 0 && wrote == got);
+-    stm->write_position += wrote;
+-    gettimeofday(&stm->last_activity, NULL);
    }
    if (got != avail) {
      long buffer_fill = stm->buffer_size - (avail - got);
