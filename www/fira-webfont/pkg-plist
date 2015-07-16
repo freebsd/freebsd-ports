@@ -105,7 +105,38 @@
 %%WWWDIR_REL%%/woff/FiraSans-UltraItalic.woff
 %%WWWDIR_REL%%/woff/FiraSans-UltraLight.woff
 %%WWWDIR_REL%%/woff/FiraSans-UltraLightItalic.woff
-@dirrm %%WWWDIR_REL%%/eot
-@dirrm %%WWWDIR_REL%%/ttf
-@dirrm %%WWWDIR_REL%%/woff
-@dirrm %%WWWDIR_REL%%
+%%WWWDIR_REL%%/woff2/FiraMono-Bold.woff2
+%%WWWDIR_REL%%/woff2/FiraMono-Medium.woff2
+%%WWWDIR_REL%%/woff2/FiraMono-Regular.woff2
+%%WWWDIR_REL%%/woff2/FiraSans-Bold.woff2
+%%WWWDIR_REL%%/woff2/FiraSans-BoldItalic.woff2
+%%WWWDIR_REL%%/woff2/FiraSans-Book.woff2
+%%WWWDIR_REL%%/woff2/FiraSans-BookItalic.woff2
+%%WWWDIR_REL%%/woff2/FiraSans-Eight.woff2
+%%WWWDIR_REL%%/woff2/FiraSans-EightItalic.woff2
+%%WWWDIR_REL%%/woff2/FiraSans-ExtraBold.woff2
+%%WWWDIR_REL%%/woff2/FiraSans-ExtraBoldItalic.woff2
+%%WWWDIR_REL%%/woff2/FiraSans-ExtraLight.woff2
+%%WWWDIR_REL%%/woff2/FiraSans-ExtraLightItalic.woff2
+%%WWWDIR_REL%%/woff2/FiraSans-Four.woff2
+%%WWWDIR_REL%%/woff2/FiraSans-FourItalic.woff2
+%%WWWDIR_REL%%/woff2/FiraSans-Hair.woff2
+%%WWWDIR_REL%%/woff2/FiraSans-HairItalic.woff2
+%%WWWDIR_REL%%/woff2/FiraSans-Heavy.woff2
+%%WWWDIR_REL%%/woff2/FiraSans-HeavyItalic.woff2
+%%WWWDIR_REL%%/woff2/FiraSans-Italic.woff2
+%%WWWDIR_REL%%/woff2/FiraSans-Light.woff2
+%%WWWDIR_REL%%/woff2/FiraSans-LightItalic.woff2
+%%WWWDIR_REL%%/woff2/FiraSans-Medium.woff2
+%%WWWDIR_REL%%/woff2/FiraSans-MediumItalic.woff2
+%%WWWDIR_REL%%/woff2/FiraSans-Regular.woff2
+%%WWWDIR_REL%%/woff2/FiraSans-SemiBold.woff2
+%%WWWDIR_REL%%/woff2/FiraSans-SemiBoldItalic.woff2
+%%WWWDIR_REL%%/woff2/FiraSans-Thin.woff2
+%%WWWDIR_REL%%/woff2/FiraSans-ThinItalic.woff2
+%%WWWDIR_REL%%/woff2/FiraSans-Two.woff2
+%%WWWDIR_REL%%/woff2/FiraSans-TwoItalic.woff2
+%%WWWDIR_REL%%/woff2/FiraSans-Ultra.woff2
+%%WWWDIR_REL%%/woff2/FiraSans-UltraItalic.woff2
+%%WWWDIR_REL%%/woff2/FiraSans-UltraLight.woff2
+%%WWWDIR_REL%%/woff2/FiraSans-UltraLightItalic.woff2
