@@ -58,6 +58,33 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a928960a-2bdc-11e5-86ff-14dae9d210b8">
+    <topic>libav -- divide by zero</topic>
+    <affects>
+      <package>
+	<name>libav</name>
+	<range><lt>11.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Agostino Sarubbo reports:</p>
+	<blockquote cite="https://blogs.gentoo.org/ago/2015/07/16/libav-divide-by-zero-in-ff_h263_decode_mba/">
+	  <p>libav: divide-by-zero in ff_h263_decode_mba()</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://blogs.gentoo.org/ago/2015/07/16/libav-divide-by-zero-in-ff_h263_decode_mba/</url>
+      <url>https://git.libav.org/?p=libav.git;a=commitdiff;h=0a49a62f998747cfa564d98d36a459fe70d3299b;hp=6f4cd33efb5a9ec75db1677d5f7846c60337129f</url>
+      <cvename>CVE-2015-5479</cvename>
+    </references>
+    <dates>
+      <discovery>2015-06-21</discovery>
+      <entry>2015-07-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="44d9daee-940c-4179-86bb-6e3ffd617869">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
