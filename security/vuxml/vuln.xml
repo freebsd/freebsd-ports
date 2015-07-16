@@ -58,6 +58,34 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5c399624-2bef-11e5-86ff-14dae9d210b8">
+    <topic>zenphoto -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>zenphoto</name>
+	<range><lt>1.4.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>zenphoto reports:</p>
+	<blockquote cite="http://www.zenphoto.org/news/zenphoto-1.4.9">
+	  <p>Fixes several SQL Injection, XSS and path traversal
+	    security issues</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.zenphoto.org/news/zenphoto-1.4.9</url>
+      <mlist>http://seclists.org/oss-sec/2015/q3/123</mlist>
+      <url>https://github.com/zenphoto/zenphoto/pull/935</url>
+    </references>
+    <dates>
+      <discovery>2015-05-24</discovery>
+      <entry>2015-07-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="67b3fef2-2bea-11e5-86ff-14dae9d210b8">
     <topic>groovy -- remote execution of untrusted code</topic>
     <affects>
