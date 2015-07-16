@@ -4,6 +4,7 @@
 PORTNAME=	tkabber-plugins
 PORTVERSION=	1.1.2
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	net-im tcl tk
 MASTER_SITES=	http://files.jabber.ru/tkabber/
 
@@ -12,7 +13,7 @@ COMMENT=	External Plugins for Tkabber
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	tkabber==1.1.2:${PORTSDIR}/net-im/tkabber
+RUN_DEPENDS=	tkabber==1.1.2_1:${PORTSDIR}/net-im/tkabber
 
 USES=		tar:xz
 
