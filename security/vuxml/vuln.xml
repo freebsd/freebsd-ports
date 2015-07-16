@@ -126,7 +126,7 @@ Notes:
     <affects>
       <package>
 	<name>libav</name>
-	<range><lt>11.5</lt></range>
+	<range><le>11.3_2</le></range>
       </package>
     </affects>
     <description>
