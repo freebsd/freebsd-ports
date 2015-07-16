@@ -16,7 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/fonts/std.ja_JP/Ryumin-Light.gs7:${PORTSDIR}/jap
 		${LOCALBASE}/share/ghostscript/Resource/CIDFont/Ryumin-Light:${PORTSDIR}/print/ghostscript7-commfont
 
 # set these forcibly
-USE_GHOSTSCRIPT_RUN=	7
+USES=		ghostscript:7,run
 NO_BUILD=		yes
 DEPENDS_ARGS+=		-DA4
 

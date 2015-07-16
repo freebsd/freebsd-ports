@@ -13,7 +13,7 @@ COMMENT=	Converter from DVI to SVG
 LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
-USE_GHOSTSCRIPT_RUN=	yes
+USES=		ghostscript:run
 USE_TEX=	base texmf texhash
 ALL_TARGET=	# empty
 # workaround for svgfonts.c not including kpathsea/c-auto.h

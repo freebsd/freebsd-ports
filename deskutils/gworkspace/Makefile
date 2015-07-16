@@ -23,7 +23,7 @@ MAKE_ENV+=	GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
 PLIST_SUB+=	PDFVIEW="@comment "
 .else
 PLIST_SUB+=	PDFVIEW=""
-USE_GHOSTSCRIPT=	yes
+USES+=		ghostscript
 .endif
 
 pre-configure:

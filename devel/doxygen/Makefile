@@ -65,7 +65,7 @@ IGNORE=		PDFDOCS option requires HTMLDOCS and LATEX options to be set
 .endif
 
 .if ${PORT_OPTIONS:MPDFDOCS}
-USE_GHOSTSCRIPT_BUILD=	yes
+USES+=		ghostscript:build
 .endif
 
 .if ${PORT_OPTIONS:MQT4}

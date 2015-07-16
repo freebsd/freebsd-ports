@@ -40,7 +40,7 @@ PDF_DESC=	Experimental PDF renderer
 FREETYPE_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 FREETYPE_CONFIGURE_WITH=freetype=linked
 
-GHOSTSCRIPT_USE=	GHOSTSCRIPT=yes
+GHOSTSCRIPT_USES=	ghostscript
 GHOSTSCRIPT_CONFIGURE_WITH=	gs=yes
 
 ICONV_USES=		iconv

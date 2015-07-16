@@ -57,6 +57,7 @@ FREETYPE_CONFIGURE_WITH=freetype
 FREETYPE_LIB_DEPENDS=	libttf.so:${PORTSDIR}/print/freetype
 
 GHOSTSCRIPT_CONFIGURE_WITH= gs
+GHOSTSCRIPT_USES=	ghostscript
 
 GTK2_CONFIGURE_WITH=	liblgtk2
 GTK2_BUILD_DEPENDS=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
@@ -66,10 +67,6 @@ GTK2_RUN_DEPENDS=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
 
 .if ${PORT_OPTIONS:MXPM}
 USE_XORG=	xpm
-.endif
-
-.if ${PORT_OPTIONS:MGHOSTSCRIPT}
-USE_GHOSTSCRIPT=	yes
 .endif
 
 do-configure:

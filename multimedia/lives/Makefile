@@ -41,12 +41,12 @@ RUN_DEPENDS=	${LOCALBASE}/bin/analyseplugin:${PORTSDIR}/audio/ladspa \
 
 WRKSRC=		${WRKDIR}/${DISTNAME:tl}
 
-USES=		libtool pathfix perl5 pkgconfig python shebangfix tar:bzip2
+USES=		ghostscript:run libtool pathfix perl5 pkgconfig python \
+		shebangfix tar:bzip2
 SHEBANG_FILES=	build-lives-rfx-plugin build-lives-rfx-plugin-multi \
 		smogrify tools/autolives.pl
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
-USE_GHOSTSCRIPT_RUN=	yes
 USE_GNOME=	gtk30
 USE_LDCONFIG=	yes
 

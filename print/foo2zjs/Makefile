@@ -17,8 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/foomatic/db/oldprinterids:${PORTSDIR}/print/foom
 		gsed:${PORTSDIR}/textproc/gsed
 
 PROJECTHOST=	bsdistfiles
-USE_GHOSTSCRIPT=yes
-USES=		gmake shebangfix
+USES=		ghostscript gmake shebangfix
 SHEBANG_FILES=	msexpand
 SUB_FILES=	pkg-message ${DEVDCONF_FILE}
 EXTRAFILES=	msexpand getweb

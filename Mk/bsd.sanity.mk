@@ -47,6 +47,10 @@ DEV_ERROR+=	"USE_KDELIBS_VER is unsupported"
 DEV_ERROR+=	"USE_QT_VER is unsupported"
 .endif
 
+.if defined(USE_GHOSTSCRIPT) || defined(USE_GHOSTSCRIPT_BUILD) || defined(USE_GHOSTSCRIPT_RUN)
+DEV_ERROR+=	"USE_GHOSTSCRIPT is unsupported, please use USES=ghostscript instead"
+.endif
+
 .if !empty(LIB_DEPENDS:M*/../*)
 DEV_ERROR+=	"LIB_DEPENDS contains unsupported relative path to dependency"
 .endif

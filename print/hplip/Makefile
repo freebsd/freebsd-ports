@@ -21,8 +21,8 @@ RUN_DEPENDS=	espgs:${PORTSDIR}/print/cups-pstoraster \
 CONFLICTS_INSTALL=	hpijs-[0-9]*
 
 INSTALL_TARGET=	install-strip
-USES=		dos2unix jpeg libtool pkgconfig python shebangfix
-USE_GHOSTSCRIPT_RUN=	yes
+USES=		dos2unix ghostscript:run jpeg libtool pkgconfig python \
+		shebangfix
 USE_GNOME=	pygobject
 USE_LDCONFIG=	yes
 

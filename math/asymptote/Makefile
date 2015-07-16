@@ -34,9 +34,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USES=		gmake perl5 python tar:tgz
+USES=		ghostscript gmake perl5 python tar:tgz
 USE_AUTOTOOLS=	autoconf aclocal
-USE_GHOSTSCRIPT=yes
 USE_GL=	glut
 USE_PERL5=	build
 USE_TEX=	dvipsk formats

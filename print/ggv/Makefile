@@ -14,9 +14,8 @@ COMMENT=	GNOME 2 ghostscript viewer
 
 INSTALLS_OMF=	yes
 USE_GNOME=	gnomeprefix intlhack libgnomeui
-USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
-		tar:bzip2
-USE_GHOSTSCRIPT=yes
+USES=		desktop-file-utils gettext ghostscript gmake libtool \
+		pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lm

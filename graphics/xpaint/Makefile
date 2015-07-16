@@ -21,9 +21,8 @@ RUN_DEPENDS=	psselect:${PORTSDIR}/print/psutils \
 		bash:${PORTSDIR}/shells/bash
 
 USE_XORG=	xft xmu xpm
-USE_GHOSTSCRIPT_RUN=yes
 GNU_CONFIGURE=	yes
-USES=		jpeg libtool:build shebangfix tar:bzip2
+USES=		ghostscript:run jpeg libtool:build shebangfix tar:bzip2
 SHEBANG_FILES=	share/bin/imgmerge share/bin/xpaint_ocr
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 \

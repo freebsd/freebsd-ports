@@ -18,9 +18,8 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 RUN_DEPENDS+=	epstool:${PORTSDIR}/graphics/epstool \
 		pstotext:${PORTSDIR}/print/pstotext
 
-USES=		cpe
+USES=		cpe ghostscript
 USE_GNOME=	gtk12
-USE_GHOSTSCRIPT=yes
 
 MAKE_JOBS_UNSAFE=	yes
 

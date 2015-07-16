@@ -342,27 +342,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # CXXFLAGS_${ARCH}
 #				 Append the cxxflags to CXXFLAGS only on the specified architecture
 ##
-# USE_GHOSTSCRIPT
-#				- If set, this port needs ghostscript to both
-#				  build and run.  If a number is specified,
-#				  the specified version will be used.
-#				  The valid value is '7', '8', or '9' in that case.
-# USE_GHOSTSCRIPT_BUILD
-#				- If set, this port needs ghostscript to build.
-# USE_GHOSTSCRIPT_RUN
-#				- If set, this port needs ghostscript to run.
-# GHOSTSCRIPT_PORT
-#				- The port that provides postscript functionality.
-#				  Some installations may wish to override the default
-#				  to specify a version without X11 and/or localized
-#				  versions for their nationality.
-#				  Default: print/ghostscript9
-# WITH_GHOSTSCRIPT_VER
-#				- If set, the specified version of ghostscript will be
-#				  used.  The valid value is "7", "8", or "9".  Note that
-#				  this is for users, not for port maintainers.  This
-#				  should not be used in Makefile.
-##
 # USE_GL		- A list of Mesa or GL related dependencies needed by the port.
 #				  Supported components are: egl, glesv2, glut, glu, glw, and gl.
 #				  If set to "yes", this is equivalent to "glu". Note that
@@ -1925,58 +1904,6 @@ ${_f}_ARGS:=	${f:C/^[^\:]*(\:|\$)//:S/,/ /g}
 .if defined(GNU_CONFIGURE)
 CONFIGURE_ARGS+=--x-libraries=${LOCALBASE}/lib --x-includes=${LOCALBASE}/include
 .endif
-.endif
-
-# Set the default for the installation of Postscript(TM)-
-# compatible functionality.
-.if !defined(USE_GHOSTSCRIPT)
-.	if defined(USE_GHOSTSCRIPT_BUILD)
-_USE_GHOSTSCRIPT=	${USE_GHOSTSCRIPT_BUILD}
-.	elif defined(USE_GHOSTSCRIPT_RUN)
-_USE_GHOSTSCRIPT=	${USE_GHOSTSCRIPT_RUN}
-.	endif
-.else
-_USE_GHOSTSCRIPT=	${USE_GHOSTSCRIPT}
-.endif
-
-.if defined(WITH_GHOSTSCRIPT_VER) && !empty(WITH_GHOSTSCRIPT_VER:M[789])
-_USE_GHOSTSCRIPT_DEFAULT_VER=	${WITH_GHOSTSCRIPT_VER}
-.else
-_USE_GHOSTSCRIPT_DEFAULT_VER=	9
-.endif
-
-.if defined(_USE_GHOSTSCRIPT)
-.	if !defined(WITHOUT_X11)
-_USE_GHOSTSCRIPT_PKGNAME_SUFFIX=
-.	else
-_USE_GHOSTSCRIPT_PKGNAME_SUFFIX=-nox11
-.	endif
-.	if !empty(_USE_GHOSTSCRIPT:M[789])
-_USE_GHOSTSCRIPT_VER=${_USE_GHOSTSCRIPT:M[789]}
-.	else
-_USE_GHOSTSCRIPT_VER=${_USE_GHOSTSCRIPT_DEFAULT_VER}
-.	endif
-.else
-_USE_GHOSTSCRIPT_VER=${_USE_GHOSTSCRIPT_DEFAULT_VER}
-.endif
-
-# Sanity check
-.if defined(_USE_GHOSTSCRIPT) && defined(WITH_GHOSTSCRIPT_VER)
-.	if empty(WITH_GHOSTSCRIPT_VER:M[789])
-.		error You set an invalid value "${WITH_GHOSTSCRIPT_VER}" in WITH_GHOSTSCRIPT_VER.  Abort.
-.	elif ${_USE_GHOSTSCRIPT_VER} != ${WITH_GHOSTSCRIPT_VER}
-.		error You set WITH_GHOSTSCRIPT_VER as ${WITH_GHOSTSCRIPT_VER} but ${PKGNAME} requires print/ghostscript${_USE_GHOSTSCRIPT_VER}.  Abort.
-.	endif
-.endif
-
-GHOSTSCRIPT_PORT?=	print/ghostscript${_USE_GHOSTSCRIPT_VER}${_USE_GHOSTSCRIPT_PKGNAME_SUFFIX}
-
-# Set up the ghostscript dependencies.
-.if defined(USE_GHOSTSCRIPT) || defined(USE_GHOSTSCRIPT_BUILD)
-BUILD_DEPENDS+=	gs:${PORTSDIR}/${GHOSTSCRIPT_PORT}
-.endif
-.if defined(USE_GHOSTSCRIPT) || defined(USE_GHOSTSCRIPT_RUN)
-RUN_DEPENDS+=	gs:${PORTSDIR}/${GHOSTSCRIPT_PORT}
 .endif
 
 # Macro for doing in-place file editing using regexps

@@ -26,8 +26,7 @@ GTK2_DESC=	Use GTK2 instead of MOTIF
 WRKSRC=		${WRKDIR}/Ted-${PORTVERSION}
 
 USE_XORG=	xext xft
-USES=		iconv
-USE_GHOSTSCRIPT_RUN=	yes
+USES=		ghostscript:run iconv
 GNU_CONFIGURE=	yes
 MAKE_ENV=	DEF_AFMDIR="-DAFMDIR=\"\\\"${AFMDIR}/\\\"\"" \
 		DEF_INDDIR="-DINDDIR=\"\\\"${INDDIR}/\\\"\"" \
