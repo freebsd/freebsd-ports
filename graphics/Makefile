@@ -11,6 +11,8 @@
     SUBDIR += IPA
     SUBDIR += ImageMagick
     SUBDIR += ImageMagick-nox11
+    SUBDIR += ImageMagick7
+    SUBDIR += ImageMagick7-nox11
     SUBDIR += O2-tools
     SUBDIR += OpenEXR
     SUBDIR += R-cran-GDD
