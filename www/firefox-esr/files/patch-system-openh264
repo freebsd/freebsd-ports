@@ -34,7 +34,7 @@ diff --git dom/media/gmp/GMPParent.cpp dom/media/gmp/GMPParent.cpp
 index aa60acf..90878ca 100644
 --- dom/media/gmp/GMPParent.cpp
 +++ dom/media/gmp/GMPParent.cpp
-@@ -93,22 +93,15 @@
+@@ -90,23 +90,16 @@
    mService = aService;
    mDirectory = aPluginDir;
  
@@ -42,18 +42,19 @@ index aa60acf..90878ca 100644
 -  // where <gmp-plugin-id> should be gmp-gmpopenh264
 -  nsCOMPtr<nsIFile> parent;
 -  nsresult rv = aPluginDir->GetParent(getter_AddRefs(parent));
+-  if (NS_FAILED(rv)) {
+-    return rv;
+-  }
+-  nsAutoString parentLeafName;
+-  rv = parent->GetLeafName(parentLeafName);
 +  nsAutoString leafname;
 +  nsresult rv = aPluginDir->GetLeafName(leafname);
    if (NS_FAILED(rv)) {
      return rv;
    }
--  nsAutoString parentLeafName;
--  rv = parent->GetLeafName(parentLeafName);
--  if (NS_FAILED(rv)) {
--    return rv;
--  }
--  LOGD("%s: for %s", __FUNCTION__, NS_LossyConvertUTF16toASCII(parentLeafName).get());
-+  LOGD("%s: for %s", __FUNCTION__, NS_LossyConvertUTF16toASCII(leafname).get());
+   LOGD(("%s::%s: %p for %s", __CLASS__, __FUNCTION__, this,
+-       NS_LossyConvertUTF16toASCII(parentLeafName).get()));
++       NS_LossyConvertUTF16toASCII(leafname).get()));
  
 -  MOZ_ASSERT(parentLeafName.Length() > 4);
 -  mName = Substring(parentLeafName, 4);
@@ -124,7 +125,7 @@ index 1f3a0b1..93517be 100644
    if (this._plugin.isEME) {
      Preferences.observe(GMPPrefs.KEY_EME_ENABLED,
                          this.onPrefEMEGlobalEnabledChanged, this);
-@@ -134,17 +133,14 @@
+@@ -120,17 +119,14 @@
    optionsType: AddonManager.OPTIONS_TYPE_INLINE,
    get optionsURL() { return this._plugin.optionsURL; },
  
@@ -142,9 +143,9 @@ index 1f3a0b1..93517be 100644
      return this._gmpPath;
    },
 -
-   get missingKey() {
-     return this._plugin.missingKey;
-   },
+   get id() { return this._plugin.id; },
+   get type() { return "plugin"; },
+   get isGMPlugin() { return true; },
 @@ -141,8 +137,13 @@
    get description() { return this._plugin.description; },
    get fullDescription() { return this._plugin.fullDescription; },
