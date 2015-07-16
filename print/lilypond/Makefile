@@ -47,8 +47,8 @@ INFO=		internals \
 		lilypond-web \
 		music-glossary
 
-USES=		bison:build gettext gmake pkgconfig perl5 python:-3
-USE_GHOSTSCRIPT=9
+USES=		bison:build gettext ghostscript:9 gmake pkgconfig perl5 \
+		python:-3
 USE_TEX=	latex
 USE_PERL5=	build
 USE_GNOME=	pango

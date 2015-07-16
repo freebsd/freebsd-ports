@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX class for writing transparencies
 
 NO_BUILD=	yes
-USE_GHOSTSCRIPT_RUN=	yes
+USES=		ghostscript:run
 USE_TEX=	latex
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 

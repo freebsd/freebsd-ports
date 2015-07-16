@@ -29,9 +29,8 @@ LIB_DEPENDS=	libicuio.so:${PORTSDIR}/devel/icu \
 CONFLICTS_INSTALL=	texlive-texmf-201[23]*
 
 USE_TEX=	web2c kpathsea ptexenc texhash-bootstrap
-USES=		gmake pkgconfig perl5 shebangfix tar:xz
+USES=		ghostscript gmake pkgconfig perl5 shebangfix tar:xz
 USE_AUTOTOOLS=	autoconf
-USE_GHOSTSCRIPT=yes
 USE_PERL5=	run
 USE_LDCONFIG=	yes
 # during build phase gnu configure is run a lot
