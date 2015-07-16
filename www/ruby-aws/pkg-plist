@@ -30,7 +30,3 @@
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/tag_lookup1
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/transaction_lookup1
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/vehicle_search
-@dirrmtry %%RUBY_SITELIBDIR%%/amazon/aws
-@dirrmtry %%RUBY_SITELIBDIR%%/amazon
-%%PORTDOCS%%@dirrmtry %%RUBY_MODDOCDIR%%
-%%PORTEXAMPLES%%@dirrmtry %%RUBY_MODEXAMPLESDIR%%
