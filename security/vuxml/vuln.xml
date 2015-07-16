@@ -58,6 +58,122 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="44d9daee-940c-4179-86bb-6e3ffd617869">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>39.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>39.0,1</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.36</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.36</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>31.8.0,1</lt></range>
+	<range><ge>38.0,1</ge><lt>38.1.0,1</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><lt>31.8.0</lt></range>
+	<range><ge>38.0</ge><lt>38.1.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>31.8.0</lt></range>
+	<range><ge>38.0</ge><lt>38.1.0</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>31.8.0</lt></range>
+	<range><ge>38.0</ge><lt>38.1.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/advisories/">
+	  <p>MFSA 2015-59 Miscellaneous memory safety hazards (rv:39.0
+	    / rv:31.8 / rv:38.1)</p>
+	  <p>MFSA 2015-60 Local files or privileged URLs in pages can
+	    be opened into new tabs</p>
+	  <p>MFSA 2015-61 Type confusion in Indexed Database
+	    Manager</p>
+	  <p>MFSA 2015-62 Out-of-bound read while computing an
+	    oscillator rendering range in Web Audio</p>
+	  <p>MFSA 2015-63 Use-after-free in Content Policy due to
+	    microtask execution error</p>
+	  <p>MFSA 2015-64 ECDSA signature validation fails to handle
+	    some signatures correctly</p>
+	  <p>MFSA 2015-65 Use-after-free in workers while using
+	    XMLHttpRequest</p>
+	  <p>MFSA 2015-66 Vulnerabilities found through code
+	    inspection</p>
+	  <p>MFSA 2015-67 Key pinning is ignored when overridable
+	    errors are encountered</p>
+	  <p>MFSA 2015-68 OS X crash reports may contain entered key
+	    press information</p>
+	  <p>MFSA 2015-69 Privilege escalation through internal
+	    workers</p>
+	  <p>MFSA 2015-70 NSS accepts export-length DHE keys with
+	    regular DHE cipher suites</p>
+	  <p>MFSA 2015-71 NSS incorrectly permits skipping of
+	    ServerKeyExchange</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-2721</cvename>
+      <cvename>CVE-2015-2722</cvename>
+      <cvename>CVE-2015-2724</cvename>
+      <cvename>CVE-2015-2725</cvename>
+      <cvename>CVE-2015-2726</cvename>
+      <cvename>CVE-2015-2727</cvename>
+      <cvename>CVE-2015-2728</cvename>
+      <cvename>CVE-2015-2729</cvename>
+      <cvename>CVE-2015-2730</cvename>
+      <cvename>CVE-2015-2731</cvename>
+      <cvename>CVE-2015-2733</cvename>
+      <cvename>CVE-2015-2734</cvename>
+      <cvename>CVE-2015-2735</cvename>
+      <cvename>CVE-2015-2736</cvename>
+      <cvename>CVE-2015-2737</cvename>
+      <cvename>CVE-2015-2738</cvename>
+      <cvename>CVE-2015-2739</cvename>
+      <cvename>CVE-2015-2740</cvename>
+      <cvename>CVE-2015-2741</cvename>
+      <cvename>CVE-2015-2742</cvename>
+      <cvename>CVE-2015-2743</cvename>
+      <cvename>CVE-2015-4000</cvename>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-59/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-60/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-61/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-62/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-63/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-64/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-65/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-66/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-67/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-68/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-69/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-70/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-71/</url>
+    </references>
+    <dates>
+      <discovery>2015-07-02</discovery>
+      <entry>2015-07-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d3216606-2b47-11e5-a668-080027ef73ec">
     <topic>PolarSSL -- Security Fix Backports</topic>
     <affects>
