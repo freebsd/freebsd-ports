@@ -17,7 +17,7 @@ man/man5/recoll.conf.5.gz
 %%QT4%%share/applications/recoll-searchgui.desktop
 %%QT4%%share/icons/hicolor/48x48/apps/recoll.png
 %%QT4%%share/pixmaps/recoll.png
-%%DATADIR%%/doc/docbook.css
+%%DATADIR%%/doc/docbook-xsl.css
 %%DATADIR%%/doc/usermanual.html
 %%DATADIR%%/examples/fields
 %%DATADIR%%/examples/fragbuts.xml
@@ -31,9 +31,11 @@ man/man5/recoll.conf.5.gz
 %%DATADIR%%/filters/hotrecoll.py
 %%DATADIR%%/filters/msodump.zip
 %%DATADIR%%/filters/ppt-dump.py
+%%DATADIR%%/filters/rcl7z
 %%DATADIR%%/filters/rclabw
 %%DATADIR%%/filters/rclaptosidman
 %%DATADIR%%/filters/rclaudio
+%%DATADIR%%/filters/rclcheckneedretry.sh
 %%DATADIR%%/filters/rclchm
 %%DATADIR%%/filters/rclconfig.py
 %%DATADIR%%/filters/rcldia
@@ -109,6 +111,7 @@ man/man5/recoll.conf.5.gz
 %%DATADIR%%/images/video.png
 %%DATADIR%%/images/wordprocessing.png
 %%DATADIR%%/translations/recoll_cs.qm
+%%DATADIR%%/translations/recoll_da.qm
 %%DATADIR%%/translations/recoll_de.qm
 %%DATADIR%%/translations/recoll_el.qm
 %%DATADIR%%/translations/recoll_es.qm
