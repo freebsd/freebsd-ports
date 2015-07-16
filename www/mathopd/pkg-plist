@@ -9,4 +9,3 @@ sbin/mathopd
 %%PORTDOCS%%%%DOCSDIR%%/running.txt
 %%PORTDOCS%%%%DOCSDIR%%/sample.cfg
 %%PORTDOCS%%%%DOCSDIR%%/syntax.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
