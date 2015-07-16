@@ -19,6 +19,9 @@ GH_TAGNAME=		93e1fe4
 PLIST_FILES=		bin/intel_backlight
 PORTEXAMPLES=		isl_backlight.sh
 
+ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS_REASON=	This hardware is only found on Intel x86 systems
+
 do-build:
 	cd ${WRKSRC} && \
 	${CC} ${CFLAGS} -o intel_backlight -I${PREFIX}/include \
