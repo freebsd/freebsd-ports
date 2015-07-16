@@ -86,17 +86,3 @@ sbin/indexer
 sbin/splitter
 man/man1/indexer.1.gz
 man/man5/indexer.conf.5.gz
-@dirrmtry %%DATADIR%%/create/ibase
-@dirrmtry %%DATADIR%%/create/msql
-@dirrmtry %%DATADIR%%/create/mssql
-@dirrmtry %%DATADIR%%/create/mysql
-@dirrmtry %%DATADIR%%/create/oracle
-@dirrmtry %%DATADIR%%/create/pgsql
-@dirrmtry %%DATADIR%%/create/solid
-@dirrmtry %%DATADIR%%/create/stopwords
-@dirrmtry %%DATADIR%%/create/sybase
-@dirrmtry %%DATADIR%%/create/virtuoso
-@dirrmtry %%DATADIR%%/create
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry etc/udmsearch
