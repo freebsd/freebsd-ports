@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	asunder
-PORTVERSION=	2.6
+PORTVERSION=	2.7
 CATEGORIES=	audio
 MASTER_SITES=	http://littlesvr.ca/asunder/releases/
 
@@ -16,13 +16,13 @@ LIB_DEPENDS=	libcddb.so:${PORTSDIR}/audio/libcddb
 RUN_DEPENDS=	${LOCALBASE}/bin/cdparanoia:${PORTSDIR}/audio/cdparanoia
 
 OPTIONS_DEFINE=	LAME OGG FLAC OPUS WAVPACK APE WINDOWS_CHARS NLS DOCS
-OPTIONS_DEFAULT=	LAME OGG FLAC
+OPTIONS_DEFAULT=	OGG FLAC
 OPTIONS_SUB=	yes
 
 WINDOWS_CHARS_DESC=	Allow Windows special chars in filenames
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake desktop-file-utils pkgconfig tar:bzip2
+USES=		desktop-file-utils gettext gmake pkgconfig tar:bzip2
 USE_GNOME=	gtk20 glib20 intltool intlhack
 
 PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README TODO
