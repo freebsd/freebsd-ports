@@ -2,14 +2,13 @@
 
 PORTNAME=	latex-beamer
 PORTVERSION=	3.36
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	https://bitbucket.org/rivanvx/beamer/get/
 DISTNAME=	version-${PORTVERSION:S/./-/}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	LaTeX class to create a beamer presentation
-
-RUN_DEPENDS=	${LOCALBASE}/${TEXMFDISTDIR}/tex/latex/pgf/basiclayer/pgf.sty:${PORTSDIR}/print/latex-pgf
 
 USES=		tar:bz2
 USE_TEX=	texmf latex texhash
