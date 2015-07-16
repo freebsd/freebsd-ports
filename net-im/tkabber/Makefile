@@ -3,6 +3,7 @@
 
 PORTNAME=	tkabber
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	net-im ipv6 tcl tk
 MASTER_SITES=	http://files.jabber.ru/tkabber/
 
@@ -14,7 +15,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	tcllib>=1.2:${PORTSDIR}/devel/tcllib \
 		bwidget>=1.4:${PORTSDIR}/x11-toolkits/bwidget
 
-OPTIONS_DEFINE=	DOCS EXAMPLES IPV6 SOUND TDOM TKCON TKTRAY TLS
+OPTIONS_DEFINE=	DOCS EXAMPLES IPV6 SOUND TDOM TKCON TKTRAY TLS GNUPG
 OPTIONS_DEFAULT=	TLS
 
 CONFLICTS=	tkabber-devel-[0-9]*
@@ -31,6 +32,7 @@ TKCON_RUN_DEPENDS=	tkcon>=2.3:${PORTSDIR}/devel/tkcon
 TKTRAY_DESC=	Install x11-toolkits/tktray for system tray support
 TKTRAY_RUN_DEPENDS=	tktray>=1.3:${PORTSDIR}/x11-toolkits/tktray
 TLS_RUN_DEPENDS=	tcltls>=1.4.1:${PORTSDIR}/devel/tcltls
+GNUPG_RUN_DEPENDS=	tclgpg>0:${PORTSDIR}/security/tclgpg
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 NO_BUILD=	yes
