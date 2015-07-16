@@ -1,0 +1,11 @@
+--- utils/Makefile.orig	2015-07-16 19:56:54 UTC
++++ utils/Makefile
+@@ -4,7 +4,7 @@ include $(depth)/mk/sysconf
+ # Use a static link for some of the utility programs so that they can be
+ # executed independantly of the installed version of recoll. None of them
+ # are part of the official distrib anyway
+-LIBRECOLL = ../lib/librecoll.a
++LIBRECOLL = ../lib/librecoll.a -liconv
+ 
+ PROGS = pxattr trclosefrom trecrontab \
+       trnetcon trcopyfile trcircache trmd5 trreadfile trfileudi \
