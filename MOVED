@@ -7692,3 +7692,4 @@ x11/gmessage||2015-07-14|Upstream has disappeared and development ceased
 security/ssh-guid||2015-07-14|Development ceased, broken with modern ssh
 textproc/gdict||2015-07-14|Development ceased, unusable
 print/pup||2015-07-14|Development ceased, unusable
+audio/rubyripper||2015-07-16|Has expired: Does not build and is deprecated upstream
