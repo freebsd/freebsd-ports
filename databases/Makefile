@@ -54,6 +54,7 @@
     SUBDIR += dbview
     SUBDIR += elixir-calecto
     SUBDIR += elixir-ecto
+    SUBDIR += elixir-ecto_migrate
     SUBDIR += elixir-mariaex
     SUBDIR += elixir-mongo
     SUBDIR += elixir-postgrex
