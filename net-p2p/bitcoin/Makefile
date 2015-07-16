@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bitcoin
-PORTVERSION=	0.10.2
+PORTVERSION=	0.11.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-p2p finance
 
@@ -71,7 +71,7 @@ WALLET_USE=			BDB=48
 
 GH_ACCOUNT=	bitcoin
 
-CONFIGURE_ARGS?= --without-libs \
+CONFIGURE_ARGS?=	--without-libs \
 			--disable-reduce-exports \
 			--with-gui \
 			--without-daemon \
