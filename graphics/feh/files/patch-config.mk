@@ -1,6 +1,6 @@
---- config.mk.orig	2013-02-14 00:04:00.993386340 +0100
-+++ config.mk	2013-02-14 00:04:51.942387392 +0100
-@@ -6,12 +6,12 @@
+--- config.mk.orig	2015-05-24 09:46:21 UTC
++++ config.mk
+@@ -6,12 +6,12 @@ PREFIX ?= /usr/local
  
  # Directories for manuals, executables, docs, data, etc.
  main_dir = ${DESTDIR}${PREFIX}
