@@ -137,6 +137,7 @@
 %%MACRODIR%%/ax_check_gl.m4
 %%MACRODIR%%/ax_check_glu.m4
 %%MACRODIR%%/ax_check_glut.m4
+%%MACRODIR%%/ax_check_glx.m4
 %%MACRODIR%%/ax_check_gnu_make.m4
 %%MACRODIR%%/ax_check_icu.m4
 %%MACRODIR%%/ax_check_java_home.m4
@@ -167,11 +168,18 @@
 %%MACRODIR%%/ax_check_typedef.m4
 %%MACRODIR%%/ax_check_uname_syscall.m4
 %%MACRODIR%%/ax_check_user.m4
+%%MACRODIR%%/ax_check_vscript.m4
 %%MACRODIR%%/ax_check_zlib.m4
 %%MACRODIR%%/ax_code_coverage.m4
 %%MACRODIR%%/ax_compare_version.m4
 %%MACRODIR%%/ax_compile_check_sizeof.m4
+%%MACRODIR%%/ax_compiler_flags.m4
+%%MACRODIR%%/ax_compiler_flags_cflags.m4
+%%MACRODIR%%/ax_compiler_flags_cxxflags.m4
+%%MACRODIR%%/ax_compiler_flags_gir.m4
+%%MACRODIR%%/ax_compiler_flags_ldflags.m4
 %%MACRODIR%%/ax_compiler_vendor.m4
+%%MACRODIR%%/ax_compiler_version.m4
 %%MACRODIR%%/ax_compute_relative_paths.m4
 %%MACRODIR%%/ax_compute_standard_relative_paths.m4
 %%MACRODIR%%/ax_cond_with_level.m4
@@ -199,6 +207,7 @@
 %%MACRODIR%%/ax_cxx_dynamic_cast.m4
 %%MACRODIR%%/ax_cxx_enum_computations.m4
 %%MACRODIR%%/ax_cxx_enum_computations_with_cast.m4
+%%MACRODIR%%/ax_cxx_erase_iterator_type.m4
 %%MACRODIR%%/ax_cxx_exceptions.m4
 %%MACRODIR%%/ax_cxx_explicit.m4
 %%MACRODIR%%/ax_cxx_explicit_instantiations.m4
@@ -326,6 +335,7 @@
 %%MACRODIR%%/ax_gcc_warn_unused_result.m4
 %%MACRODIR%%/ax_gcc_x86_avx_xgetbv.m4
 %%MACRODIR%%/ax_gcc_x86_cpuid.m4
+%%MACRODIR%%/ax_generate_changelog.m4
 %%MACRODIR%%/ax_have_adns.m4
 %%MACRODIR%%/ax_have_epoll.m4
 %%MACRODIR%%/ax_have_opengl.m4
@@ -334,6 +344,7 @@
 %%MACRODIR%%/ax_have_select.m4
 %%MACRODIR%%/ax_include_strcasecmp.m4
 %%MACRODIR%%/ax_install_files.m4
+%%MACRODIR%%/ax_is_release.m4
 %%MACRODIR%%/ax_java_check_class.m4
 %%MACRODIR%%/ax_java_options.m4
 %%MACRODIR%%/ax_jni_include_dir.m4
@@ -394,6 +405,7 @@
 %%MACRODIR%%/ax_perl_ext_flags.m4
 %%MACRODIR%%/ax_perl_module_version.m4
 %%MACRODIR%%/ax_pgsql_priv_root.m4
+%%MACRODIR%%/ax_pkg_check_modules.m4
 %%MACRODIR%%/ax_pkg_mico.m4
 %%MACRODIR%%/ax_pkg_swig.m4
 %%MACRODIR%%/ax_prefix_config_h.m4
@@ -416,6 +428,7 @@
 %%MACRODIR%%/ax_prog_fig2dev.m4
 %%MACRODIR%%/ax_prog_flex.m4
 %%MACRODIR%%/ax_prog_guile_version.m4
+%%MACRODIR%%/ax_prog_haxe_version.m4
 %%MACRODIR%%/ax_prog_hla.m4
 %%MACRODIR%%/ax_prog_hla_opt.m4
 %%MACRODIR%%/ax_prog_httpd.m4
@@ -510,6 +523,7 @@
 %%MACRODIR%%/ax_try_run_java.m4
 %%MACRODIR%%/ax_type_socklen_t.m4
 %%MACRODIR%%/ax_upload.m4
+%%MACRODIR%%/ax_valgrind_check.m4
 %%MACRODIR%%/ax_var_timezone_externals.m4
 %%MACRODIR%%/ax_very_nice.m4
 %%MACRODIR%%/ax_warning_default_aclocaldir.m4
@@ -526,7 +540,7 @@
 %%MACRODIR%%/ax_xsdcxx.m4
 %%MACRODIR%%/ax_xtra_classpath.m4
 %%MACRODIR%%/ax_zoneinfo.m4
-share/autoconf-archive/AUTHORS
-share/autoconf-archive/COPYING
-share/autoconf-archive/COPYING.EXCEPTION
-share/autoconf-archive/README
+%%DATADIR%%/AUTHORS
+%%DATADIR%%/COPYING
+%%DATADIR%%/COPYING.EXCEPTION
+%%DATADIR%%/README
