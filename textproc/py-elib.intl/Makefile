@@ -15,7 +15,10 @@ GH_ACCOUNT=	dieterv
 GH_TAGNAME=	d09997c
 USE_GITHUB=	yes
 
+PORTSCOUT=	ignore:1
+
+NO_ARCH=	yes
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
