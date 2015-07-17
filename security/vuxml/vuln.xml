@@ -1748,11 +1748,12 @@ Notes:
     </description>
     <references>
       <url>http://www.squid-cache.org/Advisories/SQUID-2015_2.txt</url>
+      <cvename>CVE-2015-5400</cvename>
     </references>
     <dates>
       <discovery>2015-07-06</discovery>
       <entry>2015-07-06</entry>
-      <modified>2015-07-10</modified>
+      <modified>2015-07-17</modified>
     </dates>
   </vuln>
 
