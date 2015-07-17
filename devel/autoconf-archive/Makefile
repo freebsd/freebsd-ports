@@ -11,7 +11,7 @@ MAINTAINER=	mkamm@gmx.net
 COMMENT=	Set of useful GNU Autoconf macros
 
 USES=		makeinfo tar:xz
-DISTDATE=	2014.10.15
+DISTDATE=	2015.02.24
 GNU_CONFIGURE=	yes
 INFO=		${PORTNAME}
 
