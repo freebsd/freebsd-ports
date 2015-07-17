@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	git
-PORTVERSION=	2.4.5
-PORTREVISION=	1
+PORTVERSION=	2.4.6
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -17,7 +16,7 @@ COMMENT?=	Distributed source code management tool
 
 LICENSE=	GPLv2
 
-CONFLICTS?=	git-subversion-[0-9]* git-lite-[0-9]*
+CONFLICTS_INSTALL?=	git-subversion-[0-9]* git-lite-[0-9]*
 
 USERS=		git_daemon
 GROUPS=		git_daemon
