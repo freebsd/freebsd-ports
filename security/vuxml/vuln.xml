@@ -63,6 +63,10 @@ Notes:
     <affects>
       <package>
 	<name>apache22</name>
+	<name>apache22-event-mpm</name>
+	<name>apache22-itk-mpm</name>
+	<name>apache22-peruser-mpm</name>
+	<name>apache22-worker-mpm</name>
 	<range><lt>2.2.31</lt></range>
       </package>
     </affects>
