@@ -1,3 +1,5 @@
+bin/protoc-erl
+lib/erlang/lib/gpb-%%VERSION%%/bin/protoc-erl
 lib/erlang/lib/gpb-%%VERSION%%/ebin/gpb.app
 lib/erlang/lib/gpb-%%VERSION%%/ebin/gpb.beam
 lib/erlang/lib/gpb-%%VERSION%%/ebin/gpb_codegen.beam
