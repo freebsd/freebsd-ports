@@ -806,6 +806,7 @@
     SUBDIR += rename
     SUBDIR += renameutils
     SUBDIR += reoback
+    SUBDIR += reptyr
     SUBDIR += respond
     SUBDIR += retail
     SUBDIR += rfstool
