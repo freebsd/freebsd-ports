@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sudo
-DISTVERSION=	1.8.13
+DISTVERSION=	1.8.14
 CATEGORIES=	security
 MASTER_SITES=	SUDO
 
@@ -85,8 +85,6 @@ post-patch:
 		${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's,$$(srcdir)/sudoers2ldif $$(DESTDIR)$$(docdir),$$(srcdir)/sudoers2ldif $$(DESTDIR)$$(bindir),' \
 		${WRKSRC}/plugins/sudoers/Makefile.in
-	@${REINPLACE_CMD} -e '/^exampledir *=/ s,=.*,= $$(datarootdir)/examples/$$(PACKAGE_TARNAME),' \
-		${WRKSRC}/examples/Makefile.in
 .if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e 's/mkinstalldirs $$(DESTDIR)$$(docdir)/mkinstalldirs/' \
 			  -e '/for f in $$(OTHER_DOCS); do/d;/@LDAP@for f in $$(OTHER_DOCS_LDAP); do/d' \

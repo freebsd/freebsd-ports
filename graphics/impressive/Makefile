@@ -21,8 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opengl>=0:${PORTSDIR}/graphics/py-opengl \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
 		${PYGAME}
 
-USES=		python
-USE_GHOSTSCRIPT_RUN=	yes
+USES=		ghostscript:run python
 NO_BUILD=	yes
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz

@@ -2,7 +2,6 @@
 
 PORTNAME=	ca_root_nss
 PORTVERSION=	${VERSION_NSS}
-PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	MOZILLA/security/nss/releases/${DISTNAME:tu:C/[-.]/_/g}_RTM/src
 DISTNAME=	nss-${VERSION_NSS}${NSS_SUFFIX}
@@ -18,7 +17,7 @@ OPTIONS_DEFAULT=	ETCSYMLINK
 OPTIONS_SUB=		yes
 
 ETCSYMLINK_DESC=	Add symlink to /etc/ssl/cert.pem
-ETCSYMLINK_CONFLICTS=	ca-roots-[0-9]*
+ETCSYMLINK_CONFLICTS_INSTALL=	ca-roots-[0-9]*
 
 USES=		perl5
 USE_PERL5=	build
@@ -33,7 +32,7 @@ PLIST_SUB+=	CERTDIR=${CERTDIR}
 # !!!  Please DO NOT submit patches for new version until it has !!!
 # !!!  been committed there first.                               !!!
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-VERSION_NSS=	3.19.1
+VERSION_NSS=	3.19.2
 #NSS_SUFFIX=	.with.ckbi.1.98
 CERTDATA_TXT_PATH=	nss-${VERSION_NSS}/nss/lib/ckfw/builtins/certdata.txt
 BUNDLE_PROCESSOR=	MAca-bundle.pl

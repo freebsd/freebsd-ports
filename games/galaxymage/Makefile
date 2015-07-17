@@ -17,6 +17,10 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric/_numpy.so:${PORTSDIR}/math/py-numeric 
 		${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game \
 		${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl
 
+BROKEN=		Does not start
+DEPRECATED=	Runtime broken and abandoned upstream
+EXPIRATION_DATE=	2015-08-16
+
 USES=		gettext python:run twisted
 NO_BUILD=	yes
 

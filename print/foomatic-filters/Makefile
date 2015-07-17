@@ -15,9 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
 
-USES=		autoreconf perl5 pkgconfig
-USE_GHOSTSCRIPT=yes
-SUB_FILES=	foomatic-rip-wrapper
+USES=		autoreconf ghostscript perl5 pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_A2PS=${LOCALBASE}/bin/a2ps \
 		ac_cv_path_CUPS=${LOCALBASE}/libexec/cups \

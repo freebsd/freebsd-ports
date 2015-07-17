@@ -100,5 +100,3 @@ man/man1/perlbal.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/pool-parameters.txt
 %%PORTDOCS%%%%DOCSDIR%%/reproxying.txt
 %%PORTDOCS%%%%DOCSDIR%%/service-parameters.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/hacking
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

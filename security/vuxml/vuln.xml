@@ -58,6 +58,240 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5c399624-2bef-11e5-86ff-14dae9d210b8">
+    <topic>zenphoto -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>zenphoto</name>
+	<range><lt>1.4.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>zenphoto reports:</p>
+	<blockquote cite="http://www.zenphoto.org/news/zenphoto-1.4.9">
+	  <p>Fixes several SQL Injection, XSS and path traversal
+	    security issues</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.zenphoto.org/news/zenphoto-1.4.9</url>
+      <mlist>http://seclists.org/oss-sec/2015/q3/123</mlist>
+      <url>https://github.com/zenphoto/zenphoto/pull/935</url>
+    </references>
+    <dates>
+      <discovery>2015-05-24</discovery>
+      <entry>2015-07-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="67b3fef2-2bea-11e5-86ff-14dae9d210b8">
+    <topic>groovy -- remote execution of untrusted code</topic>
+    <affects>
+      <package>
+	<name>groovy</name>
+	<range><ge>1.7.0</ge><lt>2.4.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Cédric Champeau reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2015/q3/121">
+	  <p>Description</p>
+	  <p>When an application has Groovy on the classpath and that
+	    it uses standard Java serialization mechanim to communicate
+	    between servers, or to store local data, it is possible for
+	    an attacker to bake a special serialized object that will
+	    execute code directly when deserialized. All applications
+	    which rely on serialization and do not isolate the code which
+	    deserializes objects are subject to this vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <mlist>http://seclists.org/oss-sec/2015/q3/121</mlist>
+      <url>http://groovy-lang.org/security.html</url>
+      <url>https://issues.apache.org/jira/browse/GROOVY-7504</url>
+      <cvename>CVE-2015-3253</cvename>
+    </references>
+    <dates>
+      <discovery>2015-07-09</discovery>
+      <entry>2015-07-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a928960a-2bdc-11e5-86ff-14dae9d210b8">
+    <topic>libav -- divide by zero</topic>
+    <affects>
+      <package>
+	<name>libav</name>
+	<range><le>11.3_2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Agostino Sarubbo reports:</p>
+	<blockquote cite="https://blogs.gentoo.org/ago/2015/07/16/libav-divide-by-zero-in-ff_h263_decode_mba/">
+	  <p>libav: divide-by-zero in ff_h263_decode_mba()</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://blogs.gentoo.org/ago/2015/07/16/libav-divide-by-zero-in-ff_h263_decode_mba/</url>
+      <url>https://git.libav.org/?p=libav.git;a=commitdiff;h=0a49a62f998747cfa564d98d36a459fe70d3299b;hp=6f4cd33efb5a9ec75db1677d5f7846c60337129f</url>
+      <cvename>CVE-2015-5479</cvename>
+    </references>
+    <dates>
+      <discovery>2015-06-21</discovery>
+      <entry>2015-07-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="44d9daee-940c-4179-86bb-6e3ffd617869">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>39.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>39.0,1</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.36</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.36</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>31.8.0,1</lt></range>
+	<range><ge>38.0,1</ge><lt>38.1.0,1</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><lt>31.8.0</lt></range>
+	<range><ge>38.0</ge><lt>38.1.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>31.8.0</lt></range>
+	<range><ge>38.0</ge><lt>38.1.0</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>31.8.0</lt></range>
+	<range><ge>38.0</ge><lt>38.1.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/advisories/">
+	  <p>MFSA 2015-59 Miscellaneous memory safety hazards (rv:39.0
+	    / rv:31.8 / rv:38.1)</p>
+	  <p>MFSA 2015-60 Local files or privileged URLs in pages can
+	    be opened into new tabs</p>
+	  <p>MFSA 2015-61 Type confusion in Indexed Database
+	    Manager</p>
+	  <p>MFSA 2015-62 Out-of-bound read while computing an
+	    oscillator rendering range in Web Audio</p>
+	  <p>MFSA 2015-63 Use-after-free in Content Policy due to
+	    microtask execution error</p>
+	  <p>MFSA 2015-64 ECDSA signature validation fails to handle
+	    some signatures correctly</p>
+	  <p>MFSA 2015-65 Use-after-free in workers while using
+	    XMLHttpRequest</p>
+	  <p>MFSA 2015-66 Vulnerabilities found through code
+	    inspection</p>
+	  <p>MFSA 2015-67 Key pinning is ignored when overridable
+	    errors are encountered</p>
+	  <p>MFSA 2015-68 OS X crash reports may contain entered key
+	    press information</p>
+	  <p>MFSA 2015-69 Privilege escalation through internal
+	    workers</p>
+	  <p>MFSA 2015-70 NSS accepts export-length DHE keys with
+	    regular DHE cipher suites</p>
+	  <p>MFSA 2015-71 NSS incorrectly permits skipping of
+	    ServerKeyExchange</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-2721</cvename>
+      <cvename>CVE-2015-2722</cvename>
+      <cvename>CVE-2015-2724</cvename>
+      <cvename>CVE-2015-2725</cvename>
+      <cvename>CVE-2015-2726</cvename>
+      <cvename>CVE-2015-2727</cvename>
+      <cvename>CVE-2015-2728</cvename>
+      <cvename>CVE-2015-2729</cvename>
+      <cvename>CVE-2015-2730</cvename>
+      <cvename>CVE-2015-2731</cvename>
+      <cvename>CVE-2015-2733</cvename>
+      <cvename>CVE-2015-2734</cvename>
+      <cvename>CVE-2015-2735</cvename>
+      <cvename>CVE-2015-2736</cvename>
+      <cvename>CVE-2015-2737</cvename>
+      <cvename>CVE-2015-2738</cvename>
+      <cvename>CVE-2015-2739</cvename>
+      <cvename>CVE-2015-2740</cvename>
+      <cvename>CVE-2015-2741</cvename>
+      <cvename>CVE-2015-2742</cvename>
+      <cvename>CVE-2015-2743</cvename>
+      <cvename>CVE-2015-4000</cvename>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-59/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-60/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-61/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-62/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-63/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-64/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-65/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-66/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-67/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-68/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-69/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-70/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-71/</url>
+    </references>
+    <dates>
+      <discovery>2015-07-02</discovery>
+      <entry>2015-07-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d3216606-2b47-11e5-a668-080027ef73ec">
+    <topic>PolarSSL -- Security Fix Backports</topic>
+    <affects>
+      <package>
+	<name>polarssl</name>
+	<range><lt>1.2.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Paul Bakker reports:</p>
+	<blockquote cite="https://tls.mbed.org/tech-updates/releases/polarssl-1.2.14-released">
+	  <p>PolarSSL 1.2.14 fixes one remotely-triggerable issues that was
+	    found by the Codenomicon Defensics tool, one potential remote crash
+	    and countermeasures against the "Lucky 13 strikes back" cache-based
+	    attack.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://tls.mbed.org/tech-updates/releases/polarssl-1.2.14-released</url>
+    </references>
+    <dates>
+      <discovery>2015-06-26</discovery>
+      <entry>2015-07-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ca139c7f-2a8c-11e5-a4a5-002590263bf5">
     <topic>libwmf -- multiple vulnerabilities</topic>
     <affects>
@@ -209,11 +443,11 @@ Notes:
     <affects>
       <package>
 	<name>linux-c6-flashplugin</name>
-	<range><ge>0</ge></range>
+	<range><lt>11.2r202.491</lt></range>
       </package>
       <package>
 	<name>linux-f10-flashplugin</name>
-	<range><ge>0</ge></range>
+	<range><lt>11.2r202.491</lt></range>
       </package>
     </affects>
     <description>
@@ -236,7 +470,7 @@ Notes:
     <dates>
       <discovery>2015-07-10</discovery>
       <entry>2015-07-14</entry>
-      <modified>2015-07-15</modified>
+      <modified>2015-07-16</modified>
     </dates>
   </vuln>
 
@@ -1887,6 +2121,14 @@ Notes:
 	<name>libxml2</name>
 	<range><lt>2.9.2_3</lt></range>
       </package>
+      <package>
+	<name>linux-c6-libxml2</name>
+	<range><ge>*</ge></range>
+      </package>
+      <package>
+	<name>linux-f10-libxml2</name>
+	<range><ge>*</ge></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -1907,6 +2149,7 @@ Notes:
     <dates>
       <discovery>2015-04-14</discovery>
       <entry>2015-07-01</entry>
+      <modified>2015-07-15</modified>
     </dates>
   </vuln>
 
@@ -9944,6 +10187,10 @@ Notes:
 	<name>flac</name>
 	<range><lt>1.3.0_3</lt></range>
       </package>
+      <package>
+	<name>linux-c6-flac</name>
+	<range><lt>1.2.1_3</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -9967,6 +10214,7 @@ Notes:
     <dates>
       <discovery>2014-11-25</discovery>
       <entry>2014-11-25</entry>
+      <modified>2015-07-15</modified>
     </dates>
   </vuln>
 
@@ -10615,6 +10863,14 @@ Notes:
 	<name>libxml2</name>
 	<range><lt>2.9.2</lt></range>
       </package>
+      <package>
+	<name>linux-c6-libxml2</name>
+	<range><lt>2.7.6_2</lt></range>
+      </package>
+      <package>
+	<name>linux-f10-libxml2</name>
+	<range><ge>*</ge></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -10638,6 +10894,7 @@ Notes:
     <dates>
       <discovery>2014-10-16</discovery>
       <entry>2014-10-18</entry>
+      <modified>2015-07-15</modified>
     </dates>
   </vuln>
 
@@ -13828,7 +14085,15 @@ Notes:
     <affects>
       <package>
 	<name>libxml2</name>
-	<range><le>2.8.0_5</le></range>
+	<range><lt>2.9.1</lt></range>
+      </package>
+      <package>
+	<name>linux-c6-libxml2</name>
+	<range><lt>2.7.6_2</lt></range>
+      </package>
+      <package>
+	<name>linux-f10-libxml2</name>
+	<range><ge>*</ge></range>
       </package>
     </affects>
     <description>
@@ -13852,6 +14117,7 @@ Notes:
     <dates>
       <discovery>2013-04-11</discovery>
       <entry>2013-07-10</entry>
+      <modified>2015-07-15</modified>
     </dates>
   </vuln>
 
@@ -13860,7 +14126,15 @@ Notes:
     <affects>
       <package>
 	<name>libxml2</name>
-	<range><le>2.8.0_5</le></range>
+	<range><lt>2.9.1</lt></range>
+      </package>
+      <package>
+	<name>linux-c6-libxml2</name>
+	<range><lt>2.7.6_2</lt></range>
+      </package>
+      <package>
+	<name>linux-f10-libxml2</name>
+	<range><ge>*</ge></range>
       </package>
     </affects>
     <description>
@@ -13888,6 +14162,7 @@ Notes:
     <dates>
       <discovery>2013-12-03</discovery>
       <entry>2014-05-06</entry>
+      <modified>2015-07-15</modified>
     </dates>
   </vuln>
 

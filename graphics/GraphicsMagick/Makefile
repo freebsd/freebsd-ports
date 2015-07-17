@@ -21,9 +21,8 @@ LIB_DEPENDS=	libjbig.so:${PORTSDIR}/graphics/jbigkit		\
 
 PORTSCOUT=	limit:^1\.3\.
 
-USES=		iconv jpeg libtool tar:bzip2
+USES=		ghostscript iconv jpeg libtool tar:bzip2
 USE_GNOME=	libxml2
-USE_GHOSTSCRIPT=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_LIBS="-lpthread"
 CONFIGURE_ARGS=	--without-perl --enable-shared --enable-static \

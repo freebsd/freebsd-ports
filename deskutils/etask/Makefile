@@ -14,7 +14,7 @@ COMMENT=	Manage your projects or tasks within GNU Emacs
 RUN_DEPENDS=	xpdf:${PORTSDIR}/graphics/xpdf
 
 USE_EMACS=	yes
-USE_GHOSTSCRIPT_RUN=	yes
+USES=		ghostscript:run
 USE_TEX=	latex dvipsk
 
 LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}

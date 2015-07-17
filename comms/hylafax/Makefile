@@ -15,9 +15,8 @@ LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
 		libjbig.so:${PORTSDIR}/graphics/jbigkit
 
 MAKE_JOBS_UNSAFE=	yes
-USE_GHOSTSCRIPT=yes
 HAS_CONFIGURE=	yes
-USES=		fakeroot jpeg
+USES=		fakeroot ghostscript jpeg
 
 CONFIGURE_ARGS=	--with-INSTALL="" \
 		--with-LIBTIFF="-L${LOCALBASE}/lib -ltiff -ljpeg" \

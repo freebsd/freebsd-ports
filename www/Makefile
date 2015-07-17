@@ -163,6 +163,7 @@
     SUBDIR += elgg
     SUBDIR += elinks
     SUBDIR += eliom
+    SUBDIR += elixir-html_entities
     SUBDIR += elixir-httpoison
     SUBDIR += elixir-httpotion
     SUBDIR += elixir-joken

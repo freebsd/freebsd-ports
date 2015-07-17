@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netmagis
+PORTREVISION=	1
 PKGNAMESUFFIX=	-metro
 
 COMMENT=	Netmagis metrology module
@@ -13,7 +14,9 @@ RUN_DEPENDS+=	netmagis-config:${PORTSDIR}/net-mgmt/netmagis-common \
 		p5-RRDTool-OO>=0:${PORTSDIR}/devel/p5-RRDTool-OO
 
 USES=		perl5 shebangfix
-SHEBANG_FILES=	metro/bin/metrocreatedb metro/bin/metropoller metro/bin/metropoller-run metro/ws/gengraph
+SHEBANG_FILES=	metro/bin/metrocreatedb metro/bin/metropoller metro/bin/metropoller-run \
+		metro/lib/plugins/plugin-ipmac metro/lib/plugins/plugin-portmac \
+		metro/ws/gengraph
 
 MASTERDIR=	${.CURDIR}/../netmagis-common
 

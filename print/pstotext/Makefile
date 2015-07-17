@@ -18,7 +18,7 @@ LICENSE_NAME=	End User License Agreement
 LICENSE_FILE=	${WRKSRC}/pstotext.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USE_GHOSTSCRIPT_RUN=	yes
+USES=		ghostscript:run
 
 SUB_LIST=	LICENSE=${LICENSE} \
 		LICENSE_DIR=${_LICENSE_DIR}

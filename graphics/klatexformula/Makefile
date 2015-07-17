@@ -10,11 +10,11 @@ COMMENT=	Convert LaTeX formula to image
 
 BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man
 
-USES=		cmake:outsource desktop-file-utils shared-mime-info
+USES=		cmake:outsource desktop-file-utils ghostscript:run \
+		shared-mime-info
 USE_QT4=	gui xml dbus designer_build linguisttools_build \
 		qmake_build moc_build rcc_build uic_build
 USE_TEX=	latex dvipsk
-USE_GHOSTSCRIPT_RUN=	yes
 CMAKE_ARGS=	-DQT_QMAKE_EXECUTABLE_FINDQT=${QMAKE} \
 		-DKLF_BUILD_KTEXTEDITORPLUGIN=off \
 		-DKLF_INSTALL_POST_UPDATEMIMEDATABASE=off \

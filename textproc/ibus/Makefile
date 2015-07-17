@@ -3,7 +3,7 @@
 
 PORTNAME=	ibus
 PORTVERSION=	1.5.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/ \
 		http://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/
@@ -14,10 +14,12 @@ COMMENT=	Intelligent Input Bus for Linux / Unix OS
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.0:${PORTSDIR}/devel/py-dbus
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.0:${PORTSDIR}/devel/py-dbus \
+		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.0:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:${PORTSDIR}/devel/py-notify \
 		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
+		${LOCALBASE}/share/xml/iso-codes/iso_639.xml:${PORTSDIR}/misc/iso-codes \
 		setxkbmap:${PORTSDIR}/x11/setxkbmap
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
@@ -32,12 +34,11 @@ CONFIGURE_ARGS=	--disable-tests --with-html-dir=${PREFIX}/share/doc
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	ISOCODES NLS GTK2 GTK3 VALA GINTRO PYTHON_LIB DOCS XIM ENGINE
+OPTIONS_DEFINE=	NLS GTK2 GTK3 VALA GINTRO PYTHON_LIB DOCS XIM ENGINE
 OPTIONS_RADIO=	CONFIG
 OPTIONS_RADIO_CONFIG=	GCONF DCONF
-OPTIONS_DEFAULT=	ISOCODES NLS GTK2 GTK3 VALA GINTRO PYTHON_LIB DCONF XIM ENGINE
+OPTIONS_DEFAULT=	NLS GTK2 GTK3 VALA GINTRO PYTHON_LIB DCONF XIM ENGINE
 
-ISOCODES_DESC=	Use isocodecs
 GTK2_DESC=	Install GTK2 client
 GTK3_DESC=	Install GTK3 client and panel
 VALA_DESC=	Install vala binding
@@ -49,10 +50,6 @@ XIM_DESC=	Install XIM server
 ENGINE_DESC=	Install ibus simple engine
 CPE_VENDOR=	ibus_project
 
-ISOCODES_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
-ISOCODES_RUN_DEPENDS=	${LOCALBASE}/share/xml/iso-codes/iso_639.xml:${PORTSDIR}/misc/iso-codes
-ISOCODES_CONFIGURE_OFF=	--disable-iso-codes-check
-
 NLS_USES=		gettext
 NLS_USES_OFF=		gettext-tools
 NLS_CONFIGURE_ENABLE=	nls
@@ -60,9 +57,10 @@ NLS_CONFIGURE_ENABLE=	nls
 GTK2_USE=		GNOME=gtk20
 GTK2_CONFIGURE_ENABLE=	gtk2
 
-GTK3_USE=		GNOME=gtk30
+GTK3_USE=		GNOME=gtk30 XORG=x11
 GTK3_CONFIGURE_ENABLE=	gtk3 libnotify
 GTK3_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+GTK3_LIBS=		-lX11
 
 VALA_BUILD_DEPENDS=	vala>=0.20:${PORTSDIR}/lang/vala
 VALA_CONFIGURE_ENABLE=	vala
@@ -86,6 +84,12 @@ DOCS_CONFIGURE_ENABLE=	gtk-doc-html
 XIM_CONFIGURE_ENABLE=	xim
 
 ENGINE_CONFIGURE_ENABLE=	engine
+
+.include <bsd.port.options.mk>
+
+.if empty(PORT_OPTIONS:MGINTRO) && !empty(PORT_OPTIONS:MVALA)
+BROKEN=		Vala bindings require GObject Introspection
+.endif
 
 .include <bsd.port.pre.mk>
 

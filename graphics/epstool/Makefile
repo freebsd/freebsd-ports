@@ -12,9 +12,7 @@ COMMENT=	Create or extract preview bitmaps in EPS files
 
 LICENSE=	GPLv2
 
-USE_GHOSTSCRIPT_RUN=	yes
-
-USES=		gmake
+USES=		ghostscript:run gmake
 MAKEFILE=	makefile
 MAKE_ARGS=	MAKE="${MAKE_CMD}" GSCDEBUG="" CC="${CC}" CCAUX="${CC}" \
 		CLINK="${CC} ${LDFLAGS}" LINK="${CC} ${LDFLAGS}" EPSLIB="" \

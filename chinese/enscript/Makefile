@@ -14,7 +14,7 @@ EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 PLIST=		${WRKDIR}/pkg-plist
 PKGMESSAGE=	${.CURDIR}/pkg-message
 
-USE_GHOSTSCRIPT_RUN=	yes
+USES+=		ghostscript:run
 
 post-patch:
 	@${ECHO_CMD} "share/enscript/README.BIG5" > ${WRKDIR}/pkg-plist

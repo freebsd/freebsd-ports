@@ -218,12 +218,12 @@ index a962553..1f780f4 100644
    assert(p);
  
    pthread_mutex_unlock(&stm->mutex);
-@@ -313,10 +360,10 @@ alsa_refill_stream(cubeb_stream * stm)
-     return ERROR;
-   }
-   if (got > 0) {
--    snd_pcm_sframes_t wrote = snd_pcm_writei(stm->pcm, p, got);
-+    snd_pcm_sframes_t wrote = WRAP(snd_pcm_writei)(stm->pcm, p, got);
+@@ -327,10 +374,10 @@ alsa_refill_stream(cubeb_stream * stm)
+         b[i] *= stm->volume;
+       }
+     }
+-    wrote = snd_pcm_writei(stm->pcm, p, got);
++    wrote = WRAP(snd_pcm_writei)(stm->pcm, p, got);
      if (wrote == -EPIPE) {
 -      snd_pcm_recover(stm->pcm, wrote, 1);
 -      wrote = snd_pcm_writei(stm->pcm, p, got);
@@ -533,42 +533,51 @@ index a962553..1f780f4 100644
    assert((nfds_t) r == stm->nfds);
  
    r = pthread_cond_init(&stm->cond, NULL);
-@@ -937,12 +1043,12 @@ alsa_get_max_channel_count(cubeb * ctx, uint32_t * max_channels)
+@@ -895,7 +1001,7 @@ alsa_stream_destroy(cubeb_stream * stm)
+   pthread_mutex_lock(&stm->mutex);
+   if (stm->pcm) {
+     if (stm->state == DRAINING) {
+-      snd_pcm_drain(stm->pcm);
++      WRAP(snd_pcm_drain)(stm->pcm);
+     }
+     alsa_locked_pcm_close(stm->pcm);
+     stm->pcm = NULL;
+@@ -938,12 +1044,12 @@ alsa_get_max_channel_count(cubeb * ctx, uint32_t * max_channels)
      return CUBEB_ERROR;
    }
  
--  rv = snd_pcm_hw_params_any(stm->pcm, hw_params);
-+  rv = WRAP(snd_pcm_hw_params_any)(stm->pcm, hw_params);
-   if (rv < 0) {
+-  r = snd_pcm_hw_params_any(stm->pcm, hw_params);
++  r = WRAP(snd_pcm_hw_params_any)(stm->pcm, hw_params);
+   if (r < 0) {
      return CUBEB_ERROR;
    }
  
--  rv = snd_pcm_hw_params_get_channels_max(hw_params, max_channels);
-+  rv = WRAP(snd_pcm_hw_params_get_channels_max)(hw_params, max_channels);
-   if (rv < 0) {
+-  r = snd_pcm_hw_params_get_channels_max(hw_params, max_channels);
++  r = WRAP(snd_pcm_hw_params_get_channels_max)(hw_params, max_channels);
+   if (r < 0) {
      return CUBEB_ERROR;
    }
-@@ -962,34 +1068,34 @@ alsa_get_preferred_sample_rate(cubeb * ctx, uint32_t * rate) {
+@@ -963,34 +1069,34 @@ alsa_get_preferred_sample_rate(cubeb * ctx, uint32_t * rate) {
  
    /* get a pcm, disabling resampling, so we get a rate the
     * hardware/dmix/pulse/etc. supports. */
--  rv = snd_pcm_open(&pcm, "", SND_PCM_STREAM_PLAYBACK | SND_PCM_NO_AUTO_RESAMPLE, 0);
-+  rv = WRAP(snd_pcm_open)(&pcm, "", SND_PCM_STREAM_PLAYBACK | SND_PCM_NO_AUTO_RESAMPLE, 0);
-   if (rv < 0) {
+-  r = snd_pcm_open(&pcm, "default", SND_PCM_STREAM_PLAYBACK | SND_PCM_NO_AUTO_RESAMPLE, 0);
++  r = WRAP(snd_pcm_open)(&pcm, "default", SND_PCM_STREAM_PLAYBACK | SND_PCM_NO_AUTO_RESAMPLE, 0);
+   if (r < 0) {
      return CUBEB_ERROR;
    }
  
--  rv = snd_pcm_hw_params_any(pcm, hw_params);
-+  rv = WRAP(snd_pcm_hw_params_any)(pcm, hw_params);
-   if (rv < 0) {
+-  r = snd_pcm_hw_params_any(pcm, hw_params);
++  r = WRAP(snd_pcm_hw_params_any)(pcm, hw_params);
+   if (r < 0) {
 -    snd_pcm_close(pcm);
 +    WRAP(snd_pcm_close)(pcm);
      return CUBEB_ERROR;
    }
  
--  rv = snd_pcm_hw_params_get_rate(hw_params, rate, &dir);
-+  rv = WRAP(snd_pcm_hw_params_get_rate)(hw_params, rate, &dir);
-   if (rv >= 0) {
+-  r = snd_pcm_hw_params_get_rate(hw_params, rate, &dir);
++  r = WRAP(snd_pcm_hw_params_get_rate)(hw_params, rate, &dir);
+   if (r >= 0) {
      /* There is a default rate: use it. */
 -    snd_pcm_close(pcm);
 +    WRAP(snd_pcm_close)(pcm);
@@ -578,9 +587,9 @@ index a962553..1f780f4 100644
    /* Use a common rate, alsa may adjust it based on hw/etc. capabilities. */
    *rate = 44100;
  
--  rv = snd_pcm_hw_params_set_rate_near(pcm, hw_params, rate, NULL);
-+  rv = WRAP(snd_pcm_hw_params_set_rate_near)(pcm, hw_params, rate, NULL);
-   if (rv < 0) {
+-  r = snd_pcm_hw_params_set_rate_near(pcm, hw_params, rate, NULL);
++  r = WRAP(snd_pcm_hw_params_set_rate_near)(pcm, hw_params, rate, NULL);
+   if (r < 0) {
 -    snd_pcm_close(pcm);
 +    WRAP(snd_pcm_close)(pcm);
      return CUBEB_ERROR;
@@ -634,7 +643,7 @@ new file mode 100644
 index 0000000..5e38e27
 --- /dev/null
 +++ media/libcubeb/src/cubeb_oss.c
-@@ -0,0 +1,397 @@
+@@ -0,0 +1,402 @@
 +/*
 + * Copyright © 2014 Mozilla Foundation
 + *
@@ -1030,7 +1039,12 @@ index 0000000..5e38e27
 +  .stream_start = oss_stream_start,
 +  .stream_stop = oss_stream_stop,
 +  .stream_get_position = oss_stream_get_position,
-+  .stream_get_latency = oss_stream_get_latency
++  .stream_get_latency = oss_stream_get_latency,
++  .stream_set_volume = oss_stream_set_volume,
++  .stream_set_panning = oss_stream_set_panning,
++  .stream_get_current_device = NULL,
++  .stream_device_destroy = NULL,
++  .stream_register_device_changed_callback = NULL
 +};
 diff --git media/libcubeb/src/moz.build media/libcubeb/src/moz.build
 index 8b7a0dd..31212ce 100644
@@ -1056,36 +1070,33 @@ index 8b7a0dd..31212ce 100644
 +CFLAGS += CONFIG['MOZ_OSS_CFLAGS']
  CFLAGS += CONFIG['MOZ_ALSA_CFLAGS']
  CFLAGS += CONFIG['MOZ_PULSEAUDIO_CFLAGS']
-diff --git media/webrtc/signaling/test/Makefile.in media/webrtc/signaling/test/Makefile.in
+diff --git media/webrtc/signaling/test/moz.build media/webrtc/signaling/test/moz.build
 index 991f03f..3d99eb5 100644
---- media/webrtc/signaling/test/Makefile.in
-+++ media/webrtc/signaling/test/Makefile.in
-@@ -26,9 +26,9 @@ ifdef JS_SHARED_LIBRARY
- LIBS += $(MOZ_JS_LIBS)
- endif
+--- media/webrtc/signaling/test/moz.build
++++ media/webrtc/signaling/test/moz.build
+@@ -112,8 +112,8 @@ if CONFIG['JS_SHARED_LIBRARY']:
+ OS_LIBS += CONFIG['MOZ_WEBRTC_X11_LIBS']
+ OS_LIBS += CONFIG['REALTIME_LIBS']
  
--ifdef MOZ_ALSA
-+ifdef MOZ_OSS
- LIBS += \
--  $(MOZ_ALSA_LIBS) \
-+  $(MOZ_OSS_LIBS) \
-   $(NULL)
- endif
+-if CONFIG['MOZ_ALSA']:
+-    OS_LIBS += CONFIG['MOZ_ALSA_LIBS']
++if CONFIG['MOZ_OSS']:
++    OS_LIBS += CONFIG['MOZ_OSS_LIBS']
  
-diff --git toolkit/library/libxul.mk toolkit/library/libxul.mk
+ if CONFIG['MOZ_NATIVE_JPEG']:
+     OS_LIBS += CONFIG['MOZ_JPEG_LIBS']
+diff --git toolkit/library/moz.build toolkit/library/moz.build
 index e191f13..4fb268a 100644
---- toolkit/library/libxul.mk
-+++ toolkit/library/libxul.mk
-@@ -146,9 +146,9 @@ OS_LIBS += $(call EXPAND_LIBNAME,secur32
- endif
- endif
+--- toolkit/library/moz.build
++++ toolkit/library/moz.build
+@@ -234,8 +234,8 @@ if CONFIG['MOZ_NATIVE_LIBVPX']:
+ if not CONFIG['MOZ_TREE_PIXMAN']:
+     OS_LIBS += CONFIG['MOZ_PIXMAN_LIBS']
  
--ifdef MOZ_ALSA
--EXTRA_DSO_LDOPTS += $(MOZ_ALSA_LIBS)
--endif
-+ifdef MOZ_OSS
-+EXTRA_DSO_LDOPTS += $(MOZ_OSS_LIBS)
-+endif
+-if CONFIG['MOZ_ALSA']:
+-    OS_LIBS += CONFIG['MOZ_ALSA_LIBS']
++if CONFIG['MOZ_OSS']:
++    OS_LIBS += CONFIG['MOZ_OSS_LIBS']
  
- ifdef HAVE_CLOCK_MONOTONIC
- EXTRA_DSO_LDOPTS += $(REALTIME_LIBS)
+ if CONFIG['HAVE_CLOCK_MONOTONIC']:
+     OS_LIBS += CONFIG['REALTIME_LIBS']

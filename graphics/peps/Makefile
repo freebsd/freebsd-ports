@@ -11,7 +11,7 @@ MASTER_SITES=	http://peps.redprince.net/peps/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts EPS images to anti-aliased bitmaps
 
-USE_GHOSTSCRIPT_RUN=	yes
+USES=		ghostscript:run
 MAKE_ENV=	GSPATH="${LOCALBASE}/bin/gs" GZPATH="/usr/bin/gzip" \
 		ETC="${PREFIX}/etc"
 

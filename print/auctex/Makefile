@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 
 NOT_FOR_ARCHS=	ia64
 USE_TEX=	latex
-USE_GHOSTSCRIPT=yes
+USES=		ghostscript
 USE_EMACS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lispdir=${PREFIX}/${LISPDIR} \

@@ -15,8 +15,7 @@ LICENSE=	GPLv3
 LIB_DEPENDS+=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 
 GNU_CONFIGURE=	yes
-USE_GHOSTSCRIPT=yes
-USES=		desktop-file-utils gmake
+USES=		desktop-file-utils ghostscript gmake
 PLIST_FILES=	bin/flpsed \
 		man/man1/flpsed.1.gz \
 		share/applications/flpsed.desktop \

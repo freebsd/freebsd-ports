@@ -12,6 +12,7 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Classes that extend/augment the Java Collections Framework
 
 USE_JAVA=	yes
+JAVA_VERSION=	1.6 1.7
 USE_ANT=	yes
 
 ALL_TARGET=	jar

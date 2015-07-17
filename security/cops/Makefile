@@ -13,6 +13,7 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	System secureness checker
 
 USES=		perl5 shebangfix
+USE_PERL5=	run
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/.//g}+
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	reconfig

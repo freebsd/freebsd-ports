@@ -118,6 +118,3 @@
 %%DATADIR%%/sysplugins/smarty_resource_recompiled.php
 %%DATADIR%%/sysplugins/smarty_resource_uncompiled.php
 %%DATADIR%%/sysplugins/smarty_security.php
-@dirrm %%DATADIR%%/sysplugins
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%

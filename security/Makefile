@@ -335,6 +335,7 @@
     SUBDIR += masscan
     SUBDIR += massh
     SUBDIR += matrixssl
+    SUBDIR += mbedtls
     SUBDIR += mcrypt
     SUBDIR += md4coll
     SUBDIR += md5coll
@@ -1027,6 +1028,7 @@
     SUBDIR += swatch
     SUBDIR += switzerland
     SUBDIR += symbion-sslproxy
+    SUBDIR += tclgpg
     SUBDIR += tclsasl
     SUBDIR += tcpcrypt
     SUBDIR += tinc

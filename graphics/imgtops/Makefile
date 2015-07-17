@@ -15,8 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
 
-USES=			python
-USE_GHOSTSCRIPT_RUN=	yes
+USES=			ghostscript:run python
 USE_PYTHON=		distutils
 
 post-install:

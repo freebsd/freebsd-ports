@@ -9,4 +9,3 @@ lib/libhtp-0.2.so.1.0.2
 lib/libhtp.a
 lib/libhtp.so
 libdata/pkgconfig/htp.pc
-@dirrm include/htp
