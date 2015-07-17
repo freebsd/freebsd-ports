@@ -85,6 +85,7 @@ Notes:
     <references>
       <url>http://www.apache.org/dist/httpd/Announcement2.2.html</url>
       <url>https://github.com/apache/httpd/commit/29779fd08c18b18efc5e640d74cbe297c7ec007e</url>
+      <cvename>CVE-2015-3183</cvename>
     </references>
     <dates>
       <discovery>2015-06-24</discovery>
