@@ -58,6 +58,36 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="29083f8e-2ca8-11e5-86ff-14dae9d210b8">
+    <topic>apache22 -- chunk header parsing defect</topic>
+    <affects>
+      <package>
+	<name>apache22</name>
+	<range><lt>2.2.31</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Apache Foundation reports:</p>
+	<blockquote cite="http://www.apache.org/dist/httpd/Announcement2.2.html">
+	  <p>CVE-2015-3183 core: Fix chunk header parsing defect. Remove
+	    apr_brigade_flatten(), buffering and duplicated code from the HTTP_IN
+	    filter, parse chunks in a single pass with zero copy. Limit accepted
+	    chunk-size to 2^63-1 and be strict about chunk-ext authorized
+	    characters.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.apache.org/dist/httpd/Announcement2.2.html</url>
+      <url>https://github.com/apache/httpd/commit/29779fd08c18b18efc5e640d74cbe297c7ec007e</url>
+    </references>
+    <dates>
+      <discovery>2015-06-24</discovery>
+      <entry>2015-07-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5c399624-2bef-11e5-86ff-14dae9d210b8">
     <topic>zenphoto -- multiple vulnerabilities</topic>
     <affects>
