@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pdf-core
-PORTVERSION=	0.5.1
+PORTVERSION=	0.6.0
 CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 
