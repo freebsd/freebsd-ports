@@ -443,11 +443,11 @@ Notes:
     <affects>
       <package>
 	<name>linux-c6-flashplugin</name>
-	<range><ge>0</ge></range>
+	<range><lt>11.2r202.491</lt></range>
       </package>
       <package>
 	<name>linux-f10-flashplugin</name>
-	<range><ge>0</ge></range>
+	<range><lt>11.2r202.491</lt></range>
       </package>
     </affects>
     <description>
@@ -470,7 +470,7 @@ Notes:
     <dates>
       <discovery>2015-07-10</discovery>
       <entry>2015-07-14</entry>
-      <modified>2015-07-15</modified>
+      <modified>2015-07-16</modified>
     </dates>
   </vuln>
 
