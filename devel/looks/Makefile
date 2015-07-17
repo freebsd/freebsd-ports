@@ -2,16 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	looks
-DISTVERSION=	2_5_2
-PORTREVISION=	1
+DISTVERSION=	2_6_0
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.jgoodies.com/download/libraries/${PORTNAME}/
 DISTNAME=	jgoodies-${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	makc@FreeBSD.org
-COMMENT=	JGoodies Looks improve the appearance of your Java applications
-
-OPTIONS_DEFINE=	DOCS
+COMMENT=	Improved appearance for Java Swing applications
 
 LICENSE=	BSD3CLAUSE
 
@@ -29,11 +26,13 @@ PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE} \
 DOCFILES=	README.html RELEASE-NOTES.txt
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/${JARFILE} ${STAGEDIR}${JAVAJARDIR}
 	${LN} -sf ${JARFILE} ${STAGEDIR}${JAVAJARDIR}/looks.jar
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${DOCFILES:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-	@(cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${DOCFILES:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
