@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MaxMind-DB-Writer
-PORTVERSION=	0.100003
+PORTVERSION=	0.100004
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MAXMIND
@@ -26,7 +26,7 @@ BUILD_DEPENDS=	p5-Data-Dumper-Concise>=0:${PORTSDIR}/devel/p5-Data-Dumper-Concis
 		p5-MooseX-StrictConstructor>=0:${PORTSDIR}/devel/p5-MooseX-StrictConstructor \
 		p5-Net-Works>=0.20:${PORTSDIR}/net/p5-Net-Works \
 		p5-Sereal-Decoder>=0:${PORTSDIR}/converters/p5-Sereal-Decoder \
-		p5-Sereal-Encoder>=0:${PORTSDIR}/converters/p5-Sereal-Encoder \
+		p5-Sereal-Encoder>=3.002:${PORTSDIR}/converters/p5-Sereal-Encoder \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
