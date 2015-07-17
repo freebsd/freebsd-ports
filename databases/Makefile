@@ -130,6 +130,7 @@
     SUBDIR += leo_center
     SUBDIR += leofs
     SUBDIR += leveldb
+    SUBDIR += levigo
     SUBDIR += libdbi
     SUBDIR += libdbi-drivers
     SUBDIR += libdrizzle
