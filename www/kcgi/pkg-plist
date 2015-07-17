@@ -24,6 +24,7 @@ man/man3/kmalloc.3.gz
 man/man3/kutil_urlencode.3.gz
 man/man3/kvalid_string.3.gz
 man/man8/kfcgi.8.gz
+sbin/kfcgi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-fcgi.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/template.xml
