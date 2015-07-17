@@ -11,7 +11,6 @@ COMMENT=	Perform backup operations on remote and local environment
 
 LICENSE=	MIT
 
-# rubygem-mini_portile>=0.6.2:${PORTSDIR}/devel/rubygem-mini_portile
 RUN_DEPENDS=	rubygem-CFPropertyList>=2.3.1:${PORTSDIR}/devel/rubygem-CFPropertyList \
 		rubygem-addressable>=2.3.5:${PORTSDIR}/www/rubygem-addressable \
 		rubygem-atomic>=1.1.14:${PORTSDIR}/devel/rubygem-atomic \
