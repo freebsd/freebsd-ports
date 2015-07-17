@@ -2,6 +2,7 @@
 %%SITE_PERL%%/Data/Object/Array.pm
 %%SITE_PERL%%/Data/Object/Class.pm
 %%SITE_PERL%%/Data/Object/Code.pm
+%%SITE_PERL%%/Data/Object/Exception.pm
 %%SITE_PERL%%/Data/Object/Float.pm
 %%SITE_PERL%%/Data/Object/Hash.pm
 %%SITE_PERL%%/Data/Object/Integer.pm
