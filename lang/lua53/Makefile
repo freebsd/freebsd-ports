@@ -3,6 +3,7 @@
 
 PORTNAME=	lua
 PORTVERSION=	5.3.1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.lua.org/ftp/
 PKGNAMESUFFIX=	53
@@ -13,7 +14,7 @@ COMMENT=	Small, compilable scripting language providing easy access to C code
 LICENSE=	MIT
 
 LUA_VER=	5.3
-LIB_DEPENDS=	libedit.so:${PORTSDIR}/devel/libedit
+LIB_DEPENDS=	libedit.so.0:${PORTSDIR}/devel/libedit
 USE_LDCONFIG=	yes
 
 # Overriding __MAKE_CONF makes sure that we don't re-parse
