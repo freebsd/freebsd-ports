@@ -3,7 +3,7 @@
 
 PORTNAME=	foomatic-filters
 PORTVERSION=	4.0.17
-PORTREVISION=	3
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://www.openprinting.org/download/foomatic/
 
@@ -76,8 +76,5 @@ post-patch:
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/foomatic-rip
-	mv ${STAGEDIR}${PREFIX}/libexec/cups/filter/foomatic-rip ${STAGEDIR}${PREFIX}/libexec/cups/filter/foomatic-rip.exec
-	${INSTALL_SCRIPT} ${WRKDIR}/foomatic-rip-wrapper ${STAGEDIR}${PREFIX}/libexec/cups/filter/foomatic-rip
-	@${REINPLACE_CMD} -i '' -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${STAGEDIR}${PREFIX}/libexec/cups/filter/foomatic-rip
 
 .include <bsd.port.mk>
