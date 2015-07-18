@@ -1,5 +1,5 @@
---- Makefile.orig	2013-09-07 11:00:59.000000000 +0800
-+++ Makefile	2013-09-07 11:01:29.000000000 +0800
+--- Makefile.orig	2015-05-26 17:46:56 UTC
++++ Makefile
 @@ -21,7 +21,7 @@ PG_VERSION_NUM := $(shell cat `$(PG_CONF
  		   | perl -ne 'print $$1 and exit if /PG_VERSION_NUM\s+(\d+)/')
  
