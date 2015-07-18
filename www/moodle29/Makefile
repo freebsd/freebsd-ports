@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	moodle
-PORTVERSION=	2.9
+PORTVERSION=	2.9.1
 CATEGORIES=	www
 MASTER_SITES=	SF/moodle/Moodle/stable29/
 PKGNAMESUFFIX=	${PKGORIGIN:T:S/moodle//}
@@ -19,13 +19,14 @@ CONFLICTS=	moodle27-2.7.[0-9]* moodle28-2.8.[0-9]*
 
 USES=		tar:tgz
 USE_PHP=	session gd pcre mbstring iconv tokenizer curl xml xmlrpc ctype \
-		soap openssl simplexml spl dom json zip zlib hash
+		soap openssl simplexml spl dom json zip zlib hash opcache
 WRKSRC=		${WRKDIR}/moodle
 
-OPTIONS_DEFINE=	MYSQL PGSQL MSSQL LDAP MIMETEX
-OPTIONS_DEFAULT=MYSQL
-MSSQL_DESC=	MS SQL Server support
-MIMETEX_DESC=	mimeTeX filter functionality support
+OPTIONS_SINGLE=		BACKEND
+OPTIONS_SINGLE_BACKEND=	MYSQL PGSQL MSSQL
+OPTIONS_DEFINE=		LDAP MIMETEX
+OPTIONS_DEFAULT=	MYSQL
+MIMETEX_DESC=		mimeTeX filter functionality support
 
 .include <bsd.port.options.mk>
 
@@ -62,12 +63,15 @@ pre-install:
 	@${ECHO_CMD} "@owner ${WWWOWN}" >> ${PLIST}
 	@${ECHO_CMD} "@group ${WWWGRP}" >> ${PLIST}
 	@${ECHO_CMD} "@mode 755" >> ${PLIST}
-	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s?${WRKSRC}?${MOODLEDIR}?g" >>${PLIST}
-	@${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s?${WRKSRC}?@dir ${MOODLEDIR}?g" >> ${PLIST}
 	@${ECHO} @dir ${MOODLEDATADIR} >> ${PLIST}
 	@${ECHO_CMD} "@mode" >> ${PLIST}
 	@${ECHO_CMD} "@group" >> ${PLIST}
 	@${ECHO_CMD} "@owner" >> ${PLIST}
+
+#  Here for safety I do not set moodle diretory 0755 permission
+#  It require user write config.php manually then.
+	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s?${WRKSRC}?${MOODLEDIR}?g" >>${PLIST}
+	@${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s?${WRKSRC}?@dir ${MOODLEDIR}?g" >> ${PLIST}
 
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${MOODLEDIR}
