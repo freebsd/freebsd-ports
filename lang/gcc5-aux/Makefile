@@ -255,22 +255,22 @@ test-ada:
 test-cxx:
 	# libstdc++ testsuite will break every time, for TRUE to continue
 	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} \
-		${MAKE_CMD} -sk check-c++ || true
+		${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -sk check-c++ || true
 
 test-c:
 	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} \
-		${MAKE_CMD} -sk check-c
+		${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -sk check-c
 
 test-fortran:
 .  if ${PORT_OPTIONS:MFORT}
 	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} \
-		${MAKE_CMD} -sk check-fortran
+		${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -sk check-fortran
 .  endif
 
 test-objc:
 .  if ${PORT_OPTIONS:MOBJC}
 	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} \
-		${MAKE_CMD} -sk check-objc
+		${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -sk check-objc
 .  endif
 .endif
 
