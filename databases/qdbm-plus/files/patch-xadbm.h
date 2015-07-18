@@ -1,6 +1,6 @@
---- xadbm.h.orig	2006-01-01 08:23:58.000000000 +0300
-+++ xadbm.h	2015-01-28 23:44:53.000000000 +0300
-@@ -72,21 +72,21 @@
+--- xadbm.h.orig	2006-01-01 05:23:58 UTC
++++ xadbm.h
+@@ -72,21 +72,21 @@ private:
   * @param latter the latter datum.
   * @return reference to a temporary instance.
   */
