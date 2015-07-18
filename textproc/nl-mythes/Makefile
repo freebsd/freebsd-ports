@@ -14,6 +14,7 @@ COMMENT=	Dutch thesaurus
 
 LICENSE=	BSD3CLAUSE
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
