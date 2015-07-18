@@ -3,7 +3,7 @@
 PORTNAME=	openra
 PORTVERSION=	20150614
 DISTVERSIONPREFIX=	release-
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 # XXX Convert to USES=nuget or package dependencies instead
 MASTER_SITES=	https://nuget.org/api/v2/package/StyleCopPlus.MSBuild/4.7.49.5?dummy=/:StyleCopPlus \
@@ -51,7 +51,6 @@ GH_PROJECT=	OpenRA
 NO_ARCH=	yes
 USES=		gmake lua:51,run mono openal:soft
 USE_SDL=	sdl2
-INSTALLS_ICONS=	yes
 MAKE_ENV=	prefix="${PREFIX}"
 MAKE_ARGS=	VERSION="${GH_TAGNAME}"
 INSTALL_TARGET=	install-all install-linux-shortcuts
