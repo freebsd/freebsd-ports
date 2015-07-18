@@ -1,12 +1,12 @@
 # $FreeBSD$
 
-DISTVERSION=	m-preview-122
-DISTVERSIONSUFFIX=	-g53d504f
+DISTVERSION=	m-preview-190
+DISTVERSIONSUFFIX=	-g683790a
 PORTREVISION=	0
 PKGNAMESUFFIX=	-devel
 
-GH_TAGNAME=	m-preview-36-gb9408ad:extras \
-		m-preview-1-g06d4551:libselinux
+GH_TAGNAME=	m-preview-100-gdece0f9:extras \
+		m-preview-6-g6d0b91b:libselinux
 
 CONFLICTS_INSTALL=	${PORTNAME}-[0-9]*
 
