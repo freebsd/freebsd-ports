@@ -14,6 +14,7 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
 
 ALL_TARGET=	myspell
+NO_ARCH=	yes
 USE_PERL5=	build
 USES=		gmake iconv:build shebangfix perl5 tar:tgz
 SHEBANG_FILES=	bin/*.pl

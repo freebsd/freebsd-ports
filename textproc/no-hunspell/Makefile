@@ -15,6 +15,7 @@ LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
 USES=		zip
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	%%DATADIR%%/nb_NO.aff \

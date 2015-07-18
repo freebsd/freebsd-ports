@@ -15,6 +15,7 @@ COMMENT=	Serbian hunspell dictionaries
 
 LICENSE=	GPLv2
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/dictionaries
 
