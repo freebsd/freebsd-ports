@@ -429,6 +429,7 @@
     SUBDIR += elixir-poison
     SUBDIR += elixir-quantum
     SUBDIR += elixir-red_black_tree
+    SUBDIR += elixir-sorted_set
     SUBDIR += elixir-timex
     SUBDIR += elixir-timex-interval
     SUBDIR += elixir-tzdata
