@@ -162,6 +162,11 @@ Notes:
       <url>http://www.zenphoto.org/news/zenphoto-1.4.9</url>
       <mlist>http://seclists.org/oss-sec/2015/q3/123</mlist>
       <url>https://github.com/zenphoto/zenphoto/pull/935</url>
+      <cvename>CVE-2015-5591</cvename>
+      <cvename>CVE-2015-5592</cvename>
+      <cvename>CVE-2015-5593</cvename>
+      <cvename>CVE-2015-5594</cvename>
+      <cvename>CVE-2015-5595</cvename>
     </references>
     <dates>
       <discovery>2015-05-24</discovery>
