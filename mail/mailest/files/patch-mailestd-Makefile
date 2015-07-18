@@ -1,6 +1,6 @@
---- mailestd/Makefile.orig	2015-05-27 12:18:27.000000000 +0900
-+++ mailestd/Makefile	2015-06-05 16:09:10.228594000 +0900
-@@ -2,9 +2,9 @@
+--- mailestd/Makefile.orig	2015-06-06 10:45:32 UTC
++++ mailestd/Makefile
+@@ -2,9 +2,9 @@ MAILESTD_MT=	#
  
  PROG=		mailestd
  SRCS=		bytebuf.c mailestd.c mailestctl.c parse.y parser.c
@@ -12,7 +12,7 @@
  LDFLAGS=	-L${LOCALBASE}/lib
  LDADD=		-lestraier -levent -lqdbm
  DPADD=		${LIBESTRAIER} ${LIBEVENT} ${LIBQDBM}
-@@ -21,13 +21,7 @@
+@@ -21,13 +21,7 @@ LDADD+=		-lpthread
  DPADD+=		${LIBPTHREAD}
  .endif
  
