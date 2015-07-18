@@ -6,8 +6,9 @@ PORTVERSION=	0.82
 PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://cvsup.theplanet.com/distfiles/ \
-		http://mark.foster.cc/pub/freebsd/ports/distfiles/
+MASTER_SITES=	http://mark.foster.cc/pub/freebsd/ports/distfiles/ \
+		LOCAL/feld
+MASTER_SITES=	LOCAL/feld
 
 MAINTAINER=	mark@foster.cc
 COMMENT=	Easy to use CD Ripping and MP3 Encoding tool
@@ -15,7 +16,6 @@ COMMENT=	Easy to use CD Ripping and MP3 Encoding tool
 RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		dagrab:${PORTSDIR}/audio/dagrab
 
-BROKEN=		Fails to fetch
 USES=		perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	cd2mp3
