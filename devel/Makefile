@@ -428,6 +428,7 @@
     SUBDIR += elixir-plug
     SUBDIR += elixir-poison
     SUBDIR += elixir-quantum
+    SUBDIR += elixir-red_black_tree
     SUBDIR += elixir-timex
     SUBDIR += elixir-timex-interval
     SUBDIR += elixir-tzdata
