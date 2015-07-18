@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	p4ftpd
-PORTVERSION=	2014.2.962050
+PORTVERSION=	2015.1.1024208
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.perforce.com/perforce/${P4VERSION}/bin.${PLATFORM}/ \
 		http://filehost.perforce.com/perforce/${P4VERSION}/bin.${PLATFORM}/
@@ -12,12 +12,6 @@ EXTRACT_ONLY=	# none
 
 MAINTAINER=	gordon@FreeBSD.org
 COMMENT=	Perforce server
-
-ONLY_FOR_ARCHS=	amd64 i386
-
-P4VERSION=	r${PORTVERSION:S/^20//:C/\.[0-9]+$//}
-DIST_SUBDIR=	perforce/${PORTVERSION}/bin.${PLATFORM}
-DISTINFO_FILE=	${MASTERDIR}/distinfo.${PLATFORM}
 
 RESTRICTED=	Restricted distribution
 
@@ -39,8 +33,5 @@ GROUPS=	p4admin
 
 do-install:
 	${INSTALL_PROGRAM} ${_DISTDIR}/p4ftpd ${STAGEDIR}${PREFIX}/sbin/
-	@${ECHO_CMD} "@exec ${TOUCH} ${P4LOG}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec ${CHOWN} p4admin:p4admin ${P4LOG}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec ${CHMOD} 640 ${P4LOG}" >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
