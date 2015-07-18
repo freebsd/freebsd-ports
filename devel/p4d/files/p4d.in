@@ -41,5 +41,13 @@ load_rc_config $name
 command="%%PREFIX%%/sbin/p4d"
 command_args="-r ${p4d_root} -p ${p4d_port} -v ${p4d_debug} -L ${p4d_log} -d ${p4d_args} > /dev/null 2>&1 &"
 p4d_user="p4admin"
+start_precmd="p4d_prestart"
+
+p4d_prestart()
+{
+	if [ ! -f "${p4d_log}" ]; then
+		install -o p4admin -g p4admin -m 0640 /dev/null ${p4d_log}
+	fi
+}
 
 run_rc_command "$1"
