@@ -629,20 +629,11 @@ Notes:
 	<range><lt>5.4.43</lt></range>
       </package>
       <package>
-	<name>mariadb-server</name>
-	<name>mysql51-server</name>
-	<name>mysql55-server</name>
-	<name>mysql56-server</name>
-	<name>percona55-server</name>
-	<name>percona56-server</name>
-	<range><ge>0</ge></range>
-      </package>
-      <package>
-	<name>mariadb55</name>
+	<name>mariadb55-client</name>
 	<range><lt>5.5.44</lt></range>
       </package>
       <package>
-	<name>mariadb10</name>
+	<name>mariadb10-client</name>
 	<range><lt>10.0.20</lt></range>
       </package>
     </affects>
@@ -668,6 +659,7 @@ Notes:
     <dates>
       <discovery>2015-03-20</discovery>
       <entry>2015-07-13</entry>
+      <modified>2015-07-18</modified>
     </dates>
   </vuln>
 
