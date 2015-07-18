@@ -3,6 +3,7 @@
 
 PORTNAME=	reptyr
 PORTVERSION=	0.6.3a
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	andoriyu@gmail.com
@@ -36,7 +37,5 @@ post-install:
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d/reptyr
 .endif
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/reptyr
-	${GZIP_CMD} ${STAGEDIR}${PREFIX}/share/man/man1/reptyr.1
-	${GZIP_CMD} ${STAGEDIR}${PREFIX}/share/man/fr/man1/reptyr.1
 
 .include <bsd.port.post.mk>
