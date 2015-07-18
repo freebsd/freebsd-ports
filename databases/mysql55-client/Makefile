@@ -9,7 +9,7 @@ COMMENT=	Multithreaded SQL database (client)
 
 MASTERDIR=	${.CURDIR}/../mysql55-server
 
-PKGMESSAGE=	mustnotexist
+PKGMESSAGE=	${.CURDIR}/pkg-message
 PATCHDIR=	${.CURDIR}/files
 PLIST=		${.CURDIR}/pkg-plist
 
