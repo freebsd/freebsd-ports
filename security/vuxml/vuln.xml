@@ -633,7 +633,7 @@ Notes:
 	<range><lt>5.5.44</lt></range>
       </package>
       <package>
-	<name>mariadb10-client</name>
+	<name>mariadb100-client</name>
 	<range><lt>10.0.20</lt></range>
       </package>
     </affects>
