@@ -1,5 +1,5 @@
---- src/zlog/src/rule.c.orig	2015-07-10 03:32:15.578671000 +0900
-+++ src/zlog/src/rule.c	2015-07-10 03:35:22.106690000 +0900
+--- src/zlog/src/rule.c.orig	2015-07-02 18:01:10 UTC
++++ src/zlog/src/rule.c
 @@ -8,12 +8,12 @@
  
  #include "fmacros.h"

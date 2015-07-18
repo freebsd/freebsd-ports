@@ -1,6 +1,6 @@
---- configure.ac.orig	2015-07-10 03:45:40.793312000 +0900
-+++ configure.ac	2015-07-10 03:45:53.160053000 +0900
-@@ -23,14 +23,6 @@
+--- configure.ac.orig	2015-07-02 18:01:10 UTC
++++ configure.ac
+@@ -23,14 +23,6 @@ AC_SUBST(XSLT_LIBS)
  AC_SUBST(EXTRA_LIBS)
  AC_SUBST(M_LIBS)
  

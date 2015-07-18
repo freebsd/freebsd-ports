@@ -1,6 +1,6 @@
---- Makefile.am.orig	2015-07-03 03:01:10.000000000 +0900
-+++ Makefile.am	2015-07-10 04:11:03.293694000 +0900
-@@ -8,6 +8,6 @@
+--- Makefile.am.orig	2015-07-02 18:01:10 UTC
++++ Makefile.am
+@@ -8,6 +8,6 @@ ACLOCAL_AMFLAGS = -I m4
  
  bin_SCRIPTS = turboxsl-config
  
