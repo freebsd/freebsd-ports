@@ -1,0 +1,29 @@
+--- configure.orig	2010-08-04 17:15:20 UTC
++++ configure
+@@ -1934,7 +1934,7 @@ fi
+ if test "$enable_iconv" = "yes"
+ then
+   MYDEFS="$MYDEFS -DMYICONV"
+-  MGWLIBS="-liconv $MGWLIBS"
++  MGWLIBS="$ICONV_LIB $MGWLIBS"
+   enables="$enables (iconv)"
+   isiconv="yes"
+ fi
+@@ -3047,7 +3047,7 @@ if test "${ac_cv_lib_iconv_main+set}" = 
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-liconv  $LIBS"
++LIBS="$ICONV_LIB  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -3076,7 +3076,7 @@ if test "x$ac_cv_lib_iconv_main" = x""ye
+ #define HAVE_LIBICONV 1
+ _ACEOF
+ 
+-  LIBS="-liconv $LIBS"
++  LIBS="$ICONV_LIB $LIBS"
+ 
+ fi
+ 
