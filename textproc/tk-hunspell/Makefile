@@ -14,6 +14,7 @@ COMMENT=	Turkmen hunspell dictionaries
 
 LICENSE=	GPLv3
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/dictionaries
 

@@ -13,6 +13,7 @@ COMMENT=	Russian hunspell dictionaries
 LICENSE=	LGPL3
 
 USES=		zip
+NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 PROJECTHOST=	hunspell-ru

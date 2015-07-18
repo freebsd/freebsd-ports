@@ -15,6 +15,7 @@ COMMENT=	Spanish hunspell dictionaries
 LICENSE=	GPLv3 LGPL3 MPL
 LICENSE_COMB=	dual
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
