@@ -1,5 +1,5 @@
---- src/zlog/src/event.c.orig	2015-07-10 03:29:45.286866000 +0900
-+++ src/zlog/src/event.c	2015-07-10 03:29:59.614232000 +0900
+--- src/zlog/src/event.c.orig	2015-07-02 18:01:10 UTC
++++ src/zlog/src/event.c
 @@ -7,6 +7,7 @@
   */
  

@@ -1,5 +1,5 @@
---- src/zlog/src/zc_xplatform.h.orig	2015-07-10 03:35:37.045763000 +0900
-+++ src/zlog/src/zc_xplatform.h	2015-07-10 03:35:49.501573000 +0900
+--- src/zlog/src/zc_xplatform.h.orig	2015-07-02 18:01:10 UTC
++++ src/zlog/src/zc_xplatform.h
 @@ -9,6 +9,7 @@
  #define __zc_xplatform_h
  
