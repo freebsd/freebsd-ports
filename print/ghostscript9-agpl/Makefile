@@ -2,6 +2,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	9.16
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://downloads.ghostscript.com/public/:gs_srcs \
 		SF/ghostscript/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
@@ -32,7 +33,7 @@ CONFLICTS_INSTALL= \
 		ghostscript[789]-[0-9]* \
 		ghostscript[789]-nox11-[0-9]*
 
-USES=		gmake jpeg pkgconfig:build autoreconf tar:bzip2
+USES=		gmake jpeg pkgconfig:build autoreconf tar:bzip2 iconv
 WANT_GNOME=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -44,14 +45,13 @@ CONFIGURE_ENV=	${MAKE_ENV}
 CONFIGURE_ARGS=	--disable-compile-inits \
 		--enable-contrib \
 		--enable-dynamic \
+		--with-libiconv=native \
 		--with-system-libtiff \
 		--with-ijs \
 		--with-libidn \
-		--without-jasper \
 		--with-libpaper \
 		--with-drivers=""
 CPPFLAGS+=	-DUPD_SIGNAL=0 -I. \
-		-I${WRKSRC}/lcms2/include \
 		-I${LOCALBASE}/include/libpng \
 		-I${WRKSRC}/openjpeg/src/lib/openjp2 \
 		-I${LOCALBASE}/include
@@ -71,7 +71,7 @@ OPTIONS_SUB=	yes
 FONTCONFIG_DESC=Enable fontconfig support
 NO_OPTIONS_SORT=yes
 
-EXCLUDE_DIRS=	freetype jbig2dec jpeg expat jasper lcms libpng tiff zlib
+EXCLUDE_DIRS=	freetype jbig2dec jpeg expat lcms2 libpng tiff zlib
 
 .include "Makefile.drivers"
 .include <bsd.port.options.mk>
