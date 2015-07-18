@@ -31,7 +31,7 @@ CONFLICTS_INSTALL?=	${PORTNAME}-devel-*
 USES+=		uidfix
 BUILD_WRKSRC=	${WRKSRC}/fastboot
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
-MAKEFILE=	${.CURDIR}/files/Makefile # XXX ?= when bmake-only
+MAKEFILE=	${FILESDIR}/Makefile
 MAKE_ENV=	FILESDIR="${FILESDIR}" BINDIR="${PREFIX}/bin" \
 		MANDIR="${PREFIX}/man/man" \
 		LIBPCRE="${LOCALBASE}/lib/libpcre.a"

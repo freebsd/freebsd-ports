@@ -11,8 +11,8 @@ SRCS+=	protocol.cpp
 SRCS+=	util.cpp
 
 .PATH:	${FILESDIR}
-SRCS+=	usb_freebsd.c
-SRCS+=	util_freebsd.c
+SRCS+=	usb_freebsd.cpp
+SRCS+=	util_freebsd.cpp
 
 # required by libziparchive
 .PATH: ${.CURDIR}/../base
