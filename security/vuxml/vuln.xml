@@ -58,6 +58,42 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8b1f53f3-2da5-11e5-86ff-14dae9d210b8">
+    <topic>php-phar -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>php55-phar</name>
+	<range><lt>5.5.27</lt></range>
+      </package>
+      <package>
+	<name>php5-phar</name>
+	<range><lt>5.4.43</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p> reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2015/q3/141">
+	  <p>Segfault in Phar::convertToData on invalid file.</p>
+	  <p>Buffer overflow and stack smashing error in phar_fix_filepath.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <mlist>http://seclists.org/oss-sec/2015/q3/141</mlist>
+      <url>https://bugs.php.net/bug.php?id=69958</url>
+      <url>http://git.php.net/?p=php-src.git;a=commit;h=bf58162ddf970f63502837f366930e44d6a992cf</url>
+      <url>https://bugs.php.net/bug.php?id=69923</url>
+      <url>http://git.php.net/?p=php-src.git;a=commit;h=6dedeb40db13971af45276f80b5375030aa7e76f</url>
+      <cvename>CVE-2015-5589</cvename>
+      <cvename>CVE-2015-5590</cvename>
+    </references>
+    <dates>
+      <discovery>2015-06-24</discovery>
+      <entry>2015-07-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="43891162-2d5e-11e5-a4a5-002590263bf5">
     <topic>moodle -- multiple vulnerabilities</topic>
     <affects>
@@ -171,6 +207,7 @@ Notes:
     <dates>
       <discovery>2015-05-24</discovery>
       <entry>2015-07-16</entry>
+      <modified>2015-07-18</modified>
     </dates>
   </vuln>
 
