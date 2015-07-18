@@ -58,6 +58,54 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="43891162-2d5e-11e5-a4a5-002590263bf5">
+    <topic>moodle -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>moodle27</name>
+	<range><lt>2.7.9</lt></range>
+      </package>
+      <package>
+	<name>moodle28</name>
+	<range><lt>2.8.7</lt></range>
+      </package>
+      <package>
+	<name>moodle29</name>
+	<range><lt>2.9.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Marina Glancy reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2015/q3/94">
+	  <p>MSA-15-0026: Possible phishing when redirecting to external site
+	    using referer header. (CVE-2015-3272)</p>
+	  <p>MSA-15-0027: Capability 'mod/forum:canposttomygroups' is not
+	    respected when using 'Post a copy to all groups' in forum
+	    (CVE-2015-3273)</p>
+	  <p>MSA-15-0028: Possible XSS through custom text profile fields in Web
+	    Services (CVE-2015-3274)</p>
+	  <p>MSA-15-0029: Javascript injection in SCORM module (CVE-2015-3275)
+	    </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3272</cvename>
+      <cvename>CVE-2015-3273</cvename>
+      <cvename>CVE-2015-3274</cvename>
+      <cvename>CVE-2015-3275</cvename>
+      <mlist>http://seclists.org/oss-sec/2015/q3/94</mlist>
+      <url>https://docs.moodle.org/dev/Moodle_2.7.9_release_notes</url>
+      <url>https://docs.moodle.org/dev/Moodle_2.8.7_release_notes</url>
+      <url>https://docs.moodle.org/dev/Moodle_2.7.9_release_notes</url>
+    </references>
+    <dates>
+      <discovery>2015-07-06</discovery>
+      <entry>2015-07-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="29083f8e-2ca8-11e5-86ff-14dae9d210b8">
     <topic>apache22 -- chunk header parsing defect</topic>
     <affects>
