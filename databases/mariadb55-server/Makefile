@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	5.5.41
+PORTVERSION=	5.5.43
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/mariadb/${PORTNAME}-${PORTVERSION}/source/ \
 		http://mirrors.supportex.net/mariadb/${PORTNAME}-${PORTVERSION}/source/ \
@@ -119,7 +119,7 @@ CMAKE_ARGS+=	-DWITH_JEMALLOC="no"
 
 # Server segfaults on i386 when built with clang >= 3.4
 .if ${ARCH} == 'i386' && ${OSVERSION} >= 1001000
-USE_GCC=        yes
+USE_GCC=	yes
 .endif
 
 post-patch:
