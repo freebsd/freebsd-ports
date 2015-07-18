@@ -1,13 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	percona
+PORTREVISION=	1
 PKGNAMESUFFIX=	55-client
 
 COMMENT=	Multithreaded SQL database (client)
 
 MASTERDIR=	${.CURDIR}/../percona55-server
 
-PKGMESSAGE=	mustnotexist
+PKGMESSAGE=	${.CURDIR}/pkg-message
 PATCHDIR=	${.CURDIR}/files
 PLIST=		${.CURDIR}/pkg-plist
 
