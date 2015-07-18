@@ -1,0 +1,11 @@
+--- configure.ac.orig	2015-01-20 14:30:22 UTC
++++ configure.ac
+@@ -427,6 +427,8 @@ AC_CHECK_HEADER([$SSLDIR/include/openssl
+     [Define to 1 if you have <ocsp.h> header file.])],
+     [AC_MSG_WARN([OpenSSL ocsp header not found])])
+ 
++AC_CHECK_LIB(crypto, RAND_egd, AC_DEFINE(HAVE_RAND_EGD, 1, [Define if the libcrypto has RAND_egd]))
++
+ if test "$use_fips" = "auto"; then
+     AC_CHECK_FUNCS(FIPS_mode_set, [
+         AC_DEFINE([USE_FIPS], [1], [Define to 1 to enable OpenSSL FIPS support])
