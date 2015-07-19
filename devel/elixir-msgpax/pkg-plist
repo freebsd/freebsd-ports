@@ -1,4 +1,7 @@
-lib/elixir/lib/msgpax/ebin/Elixir.Msgpax.Binary.beam
+lib/elixir/lib/msgpax/ebin/Elixir.Inspect.Msgpax.Bin.beam
+lib/elixir/lib/msgpax/ebin/Elixir.Inspect.Msgpax.Ext.beam
+lib/elixir/lib/msgpax/ebin/Elixir.Msgpax.Bin.beam
+lib/elixir/lib/msgpax/ebin/Elixir.Msgpax.Ext.beam
 lib/elixir/lib/msgpax/ebin/Elixir.Msgpax.PackError.beam
 lib/elixir/lib/msgpax/ebin/Elixir.Msgpax.Packer.Atom.beam
 lib/elixir/lib/msgpax/ebin/Elixir.Msgpax.Packer.BitString.beam
@@ -6,7 +9,8 @@ lib/elixir/lib/msgpax/ebin/Elixir.Msgpax.Packer.Float.beam
 lib/elixir/lib/msgpax/ebin/Elixir.Msgpax.Packer.Integer.beam
 lib/elixir/lib/msgpax/ebin/Elixir.Msgpax.Packer.List.beam
 lib/elixir/lib/msgpax/ebin/Elixir.Msgpax.Packer.Map.beam
-lib/elixir/lib/msgpax/ebin/Elixir.Msgpax.Packer.Msgpax.Binary.beam
+lib/elixir/lib/msgpax/ebin/Elixir.Msgpax.Packer.Msgpax.Bin.beam
+lib/elixir/lib/msgpax/ebin/Elixir.Msgpax.Packer.Msgpax.Ext.beam
 lib/elixir/lib/msgpax/ebin/Elixir.Msgpax.Packer.beam
 lib/elixir/lib/msgpax/ebin/Elixir.Msgpax.UnpackError.beam
 lib/elixir/lib/msgpax/ebin/Elixir.Msgpax.Unpacker.Transform.beam
@@ -14,6 +18,8 @@ lib/elixir/lib/msgpax/ebin/Elixir.Msgpax.Unpacker.beam
 lib/elixir/lib/msgpax/ebin/Elixir.Msgpax.beam
 lib/elixir/lib/msgpax/ebin/msgpax.app
 lib/elixir/lib/msgpax/lib/msgpax.ex
+lib/elixir/lib/msgpax/lib/msgpax/bin.ex
+lib/elixir/lib/msgpax/lib/msgpax/ext.ex
 lib/elixir/lib/msgpax/lib/msgpax/packer.ex
 lib/elixir/lib/msgpax/lib/msgpax/unpacker.ex
 %%PORTDOCS%%%%DOCSDIR%%/README.md
