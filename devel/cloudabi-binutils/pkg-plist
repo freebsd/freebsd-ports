@@ -46,3 +46,13 @@ x86_64-unknown-cloudabi/lib/ldscripts/elf_x86_64_cloudabi.xsc
 x86_64-unknown-cloudabi/lib/ldscripts/elf_x86_64_cloudabi.xsw
 x86_64-unknown-cloudabi/lib/ldscripts/elf_x86_64_cloudabi.xu
 x86_64-unknown-cloudabi/lib/ldscripts/elf_x86_64_cloudabi.xw
+x86_64-unknown-cloudabi/bin/ar
+x86_64-unknown-cloudabi/bin/as
+x86_64-unknown-cloudabi/bin/ld
+x86_64-unknown-cloudabi/bin/ld.bfd
+x86_64-unknown-cloudabi/bin/nm
+x86_64-unknown-cloudabi/bin/objcopy
+x86_64-unknown-cloudabi/bin/objdump
+x86_64-unknown-cloudabi/bin/ranlib
+x86_64-unknown-cloudabi/bin/size
+x86_64-unknown-cloudabi/bin/strip

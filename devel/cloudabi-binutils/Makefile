@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PKGNAMEPREFIX=	cloudabi-
+PORTREVISION=	1
 
 MAINTAINER=	ed@FreeBSD.org
 COMMENT=	GNU Binutils for CloudABI cross-development
