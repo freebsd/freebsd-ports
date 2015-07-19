@@ -95,10 +95,10 @@ post-install:
 		 ! -name saves ! -name log.txt")
 	${CHMOD} +x ${STAGEDIR}${DATADIR}/renpy.py
 	${CHMOD} -R u+w ${STAGEDIR}${DATADIR}/templates
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \
 		. ${STAGEDIR}${DOCSDIR} \
 		"! -name *.orig ! -name *.bak")
-.endif
 
 .include <bsd.port.mk>
