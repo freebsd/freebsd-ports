@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	texlive
-PORTVERSION=	20140525
-PORTREVISION=	4
+PORTVERSION=	20150523
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.tug.org/historic/systems/texlive/2014/
+MASTER_SITES=	ftp://ftp.tug.org/historic/systems/texlive/2015/
 PKGNAMESUFFIX=	-texmf
 DISTNAME=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}
 DIST_SUBDIR=	TeX
@@ -12,15 +11,16 @@ DIST_SUBDIR=	TeX
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	TeX Live Typesetting System, texmf Tree
 
-CONFLICTS_INSTALL=	texlive-base-201[23]*
+CONFLICTS_INSTALL=	texlive-base-201[234]*
 
 USES=		tar:xz
-USE_TEX=	base texhash
+USE_TEX=	base tlmgr:run texhash
 TEXHASHDIRS=	${TEXMFDIR} ${TEXMFDISTDIR}
 NO_BUILD=	yes
 NO_WRKSRC=	yes
 
 EXCLUDE_FILES=	\*/doc/man \
+	texmf-dist/ls-R \
 	texmf-dist/bibtex/csf/base \
 	texmf-dist/doc \
 	texmf-dist/dvipdfm \
@@ -80,6 +80,7 @@ EXCLUDE_FILES=	\*/doc/man \
 	texmf-dist/web2c/fmtutil.cnf \
 	texmf-dist/web2c/texmf.cnf \
 	texmf-dist/web2c/updmap-hdr.cfg \
+	texmf-dist/web2c/updmap.cfg \
 	texmf-dist/xdvi \
 	texmf-dist/scripts/a2ping/a2ping.pl \
 	texmf-dist/scripts/accfonts/mkt1font \
@@ -92,6 +93,7 @@ EXCLUDE_FILES=	\*/doc/man \
 	texmf-dist/scripts/bundledoc/arlatex \
 	texmf-dist/scripts/bundledoc/bundledoc \
 	texmf-dist/scripts/cachepic/cachepic.tlu \
+	texmf-dist/scripts/cjk-gs-integrate/cjk-gs-integrate.pl \
 	texmf-dist/scripts/checkcites/checkcites.lua \
 	texmf-dist/scripts/context/perl/mptopdf.pl \
 	texmf-dist/scripts/context/stubs/unix/context \
@@ -103,6 +105,9 @@ EXCLUDE_FILES=	\*/doc/man \
 	texmf-dist/scripts/context/stubs/unix/texmfstart \
 	texmf-dist/scripts/context/lua \
 	texmf-dist/scripts/convbkmk/convbkmk.rb \
+	texmf-dist/scripts/crossrefware/bibdoiadd.pl \
+	texmf-dist/scripts/crossrefware/bibzbladd.pl \
+	texmf-dist/scripts/crossrefware/ltx2crossrefxml.pl \
 	texmf-dist/scripts/ctanify/ctanify \
 	texmf-dist/scripts/ctanupload/ctanupload.pl \
 	texmf-dist/scripts/de-macro/de-macro \
@@ -120,6 +125,7 @@ EXCLUDE_FILES=	\*/doc/man \
 	texmf-dist/scripts/fontools/autoinst \
 	texmf-dist/scripts/fontools/ot2kpx \
 	texmf-dist/scripts/fragmaster/fragmaster.pl \
+	texmf-dist/scripts/getmap/getmapdl.lua \
 	texmf-dist/scripts/glossaries/makeglossaries \
 	texmf-dist/scripts/installfont/installfont-tl \
 	texmf-dist/scripts/jfontmaps/kanji-config-updmap-sys.sh \
@@ -184,6 +190,7 @@ EXCLUDE_FILES=	\*/doc/man \
 	texmf-dist/scripts/pst2pdf/pst2pdf.pl \
 	texmf-dist/scripts/ptex2pdf/ptex2pdf.lua \
 	texmf-dist/scripts/purifyeps/purifyeps \
+	texmf-dist/scripts/pygmentex/pygmentex.py \
 	texmf-dist/scripts/pythontex/depythontex.py \
 	texmf-dist/scripts/pythontex/pythontex.py \
 	texmf-dist/scripts/rubik/rubikrotation.pl \
@@ -213,7 +220,7 @@ EXCLUDE_FILES=	\*/doc/man \
 	texmf-dist/scripts/texlive/dvired.sh \
 	texmf-dist/scripts/texlive/e2pall.pl \
 	texmf-dist/scripts/texlive/fmtutil-sys.sh \
-	texmf-dist/scripts/texlive/fmtutil.sh \
+	texmf-dist/scripts/texlive/fmtutil.pl \
 	texmf-dist/scripts/texlive/fontinst.sh \
 	texmf-dist/scripts/texlive/kpsetool.sh \
 	texmf-dist/scripts/texlive/kpsewhere.sh \
@@ -235,7 +242,8 @@ EXCLUDE_FILES=	\*/doc/man \
 	texmf-dist/scripts/typeoutfileinfo/typeoutfileinfo.sh \
 	texmf-dist/scripts/ulqda/ulqda.pl \
 	texmf-dist/scripts/urlbst/urlbst \
-	texmf-dist/scripts/vpe/vpe.pl
+	texmf-dist/scripts/vpe/vpe.pl \
+	texmf-dist/scripts/yplan/yplan
 
 EXTRACT_AFTER_ARGS=| ${TAR} xf - ${EXCLUDE_FILES:S,^,--exclude ${DISTNAME}/,}
 
@@ -246,7 +254,7 @@ do-install:
 	${CAT} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} \
 		${EXTRACT_AFTER_ARGS} -C ${STAGEDIR}${PREFIX}/share \
 		--strip-components 1 --no-same-permission --no-same-owner
-	${REINPLACE_CMD} -i '' 's/\\def\\magyar@sugg@ie@low#1#2#3/\\def\\magyar@sugg@ie@low\\protect #1#2#3/' ${STAGEDIR}${PREFIX}/share/texmf-dist/tex/latex/babel-hungarian/magyar.ldf
+	${REINPLACE_CMD} -i '' 's/\\def\\magyar@sugg@ie@low#1#2#3/\\def\\magyar@sugg@ie@low\\protect #1#2#3/' ${STAGEDIR}${PREFIX}/share/texmf-dist/tex/generic/babel-hungarian/magyar.ldf
 	${MKDIR} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/doc
 	${TOUCH} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/doc/.keep_me
 	${MKDIR} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/source

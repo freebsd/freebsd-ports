@@ -1,5 +1,5 @@
---- texk/xdvik/texmf/XDvi.orig	2014-09-02 18:41:34.000000000 +0900
-+++ texk/xdvik/texmf/XDvi	2015-01-31 21:03:10.000000000 +0900
+--- texk/xdvik/texmf/XDvi.orig	2012-03-28 14:46:30 UTC
++++ texk/xdvik/texmf/XDvi
 @@ -21,7 +21,7 @@
  !!! and greater flexibility for shrink values. Generating MF fonts shouldn't be an
  !!! issue when using T1lib.
@@ -9,7 +9,7 @@
  
  !!! This should be the best choice for modern displays with large color depth.
  *thorough: true
-@@ -118,14 +118,14 @@
+@@ -118,14 +118,14 @@ Ctrl<Btn5Down>:set-shrink-factor(-)\n\
  
  
  !!! help topics label for Xaw
@@ -26,7 +26,7 @@
  
  !!! time the mouse needs to stay on a button until tooltips pop up,
  !!! in milliseconds; set to a negative value to disable:
-@@ -133,11 +133,22 @@
+@@ -133,11 +133,22 @@ Ctrl<Btn5Down>:set-shrink-factor(-)\n\
  
  
  !!!------------------------------------------------------------------------------
@@ -51,7 +51,7 @@
  
  !!! Motif fonts. Meaning of the tags is:
  !!! NORMAL: Ordinary text, labels etc.
-@@ -147,11 +158,11 @@
+@@ -147,11 +158,11 @@ Ctrl<Btn5Down>:set-shrink-factor(-)\n\
  !!! TOPIC_HEADING: Heading for help text in help window
  !!!
  *fontList: \

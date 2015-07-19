@@ -1,5 +1,5 @@
---- /dev/null	2015-01-31 21:35:05.000000000 +0900
-+++ texk/xdvik/READMEs/README.xdvik18f-j1.0.patch	2015-01-31 21:02:18.000000000 +0900
+--- texk/xdvik/READMEs/README.xdvik18f-j1.0.patch.orig	2015-07-19 18:49:41 UTC
++++ texk/xdvik/READMEs/README.xdvik18f-j1.0.patch
 @@ -0,0 +1,103 @@
 +*このパッチについて
 +  このパッチ (xdvik18f-j1.0.patch) は xdvik18f を日本語対応にするため

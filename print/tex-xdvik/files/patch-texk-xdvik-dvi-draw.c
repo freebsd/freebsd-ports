@@ -1,6 +1,6 @@
---- texk/xdvik/dvi-draw.c.orig	2014-09-02 18:41:34.000000000 +0900
-+++ texk/xdvik/dvi-draw.c	2015-01-31 21:02:18.000000000 +0900
-@@ -56,6 +56,9 @@
+--- texk/xdvik/dvi-draw.c.orig	2013-09-01 05:55:44 UTC
++++ texk/xdvik/dvi-draw.c
+@@ -56,6 +56,9 @@ in xdvi.c.
  #include "statusline.h"
  #include "hypertex.h"
  #include "special.h"
@@ -10,7 +10,7 @@
  #include "my-snprintf.h"
  #include "kpathsea/tex-file.h"
  #include "mag.h"
-@@ -531,8 +534,8 @@
+@@ -531,8 +534,8 @@ print_char(ubyte ch, struct glyph *g)
  }
  
  static const char *dvi_table1[] = {
@@ -21,7 +21,7 @@
      "RIGHT2", "RIGHT3", "RIGHT4", "W0", "W1", "W2", "W3", "W4",
      "X0", "X1", "X2", "X3", "X4", "DOWN1", "DOWN2", "DOWN3",
      "DOWN4", "Y0", "Y1", "Y2", "Y3", "Y4", "Z0", "Z1",
-@@ -542,7 +545,12 @@
+@@ -542,7 +545,12 @@ static const char *dvi_table1[] = {
  static const char *dvi_table2[] = {
      "FNT1", "FNT2", "FNT3", "FNT4", "XXX1", "XXX2", "XXX3", "XXX4",
      "FNTDEF1", "FNTDEF2", "FNTDEF3", "FNTDEF4", "PRE", "POST", "POSTPOST",
@@ -35,7 +35,7 @@
  };
  
  static void
-@@ -667,6 +675,146 @@
+@@ -667,6 +675,146 @@ sample(bmUnitT *bits, int bytes_wide, in
      return n;
  }
  
@@ -182,7 +182,7 @@
  static void
  shrink_glyph(struct glyph *g)
  {
-@@ -757,6 +905,89 @@
+@@ -757,6 +905,89 @@ shrink_glyph(struct glyph *g)
  	print_bitmap(&g->bitmap2);
  }
  
@@ -272,7 +272,7 @@
  #ifdef	GREY
  
  #ifdef RGB_ANTI_ALIASING
-@@ -970,6 +1201,7 @@
+@@ -970,6 +1201,7 @@ shrink_glyph_grey(struct glyph *g)
  				 BMBITS, 0);
  	size = g->image2->bytes_per_line * g->bitmap2.h;
  	g->pixmap2 = g->image2->data = xmalloc(size != 0 ? size : 1);
@@ -280,7 +280,7 @@
      }
      /* ... and the pixmap used for globals.gc.fore2: */
      if (globals.gc.fore2 != NULL && g->pixmap2_gc2 == NULL) {
-@@ -1283,8 +1515,13 @@
+@@ -1283,8 +1515,13 @@ static ubyte scantable[256] = {
      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
      1, 2,	/* SET1,SET2 (128,129) */
@@ -295,7 +295,7 @@
      M1, 0, 0, 1, 2, 3, 4, 0, 1, 2,	/* EOP,PUSH,POP,RIGHT1-4,W0M2 (140-149) */
      3, 4, 0, 1, 2, 3, 4, 1, 2, 3,	/* W3-4,X0-4,DOWN1-3 (150-159) */
      4, 0, 1, 2, 3, 4, 0, 1, 2, 3,	/* DOWN4,Y0-4,Z0-3 (160-169) */
-@@ -1337,9 +1574,11 @@
+@@ -1337,9 +1574,11 @@ spcl_scan(Boolean (*spcl_proc)(char *str
  		ch = xone(fp);
  		xskip(fp, (long)ch + (long)xone(fp));
  		break;
@@ -307,7 +307,7 @@
  	    case M5:	/* doesn't belong */
  		dvi_fmt_error("spcl_scan: shouldn't happen: %s encountered",
  			      dvi_table2[ch - (FNTNUM0 + 64)]);
-@@ -1453,6 +1692,46 @@
+@@ -1453,6 +1692,46 @@ prescan(FILE *fp)
   *	Routines to print characters.
   */
  
@@ -354,7 +354,7 @@
  setcharRetvalT
  set_char(
  #ifdef TEXXET
-@@ -1461,9 +1740,6 @@
+@@ -1461,9 +1740,6 @@ set_char(
  	 wide_ubyte ch)
  {
      struct glyph *g;
@@ -364,7 +364,7 @@
  
      if (ch > maxchar)
  	realloc_font(currinf.fontp, (wide_ubyte)ch);
-@@ -1497,14 +1773,41 @@
+@@ -1497,14 +1773,41 @@ set_char(
  	    print_char((ubyte) ch, g);
  	currinf.fontp->timestamp = ++current_timestamp;
      }
@@ -409,7 +409,7 @@
  	
  #ifdef RGB_ANTI_ALIASING
  	if (currwin.shrinkfactor == -1) {
-@@ -1546,9 +1849,9 @@
+@@ -1546,9 +1849,9 @@ set_char(
  #ifdef TEXXET
      }
      if (cmd == PUT1 || (resource.omega && cmd == PUT2))
@@ -422,7 +422,7 @@
      return;
  #else
      return g->dvi_adv;
-@@ -1603,6 +1906,33 @@
+@@ -1603,6 +1906,33 @@ set_empty_char(
  #endif
  }
  
@@ -456,7 +456,7 @@
  setcharRetvalT
  load_n_set_char(
  #ifdef TEXXET
-@@ -1650,7 +1980,7 @@
+@@ -1650,7 +1980,7 @@ set_vf_char(
      wide_ubyte oldmaxchar;
      static ubyte c;
  #ifdef TEXXET
@@ -465,7 +465,7 @@
  #endif
  
      if (ch > maxchar)
-@@ -1666,9 +1996,9 @@
+@@ -1666,9 +1996,9 @@ set_vf_char(
  #endif
      }
  #ifdef TEXXET
@@ -478,7 +478,7 @@
      if (scan_frame == NULL) {
  #endif
  	oldinfo = currinf;
-@@ -1693,9 +2023,9 @@
+@@ -1693,9 +2023,9 @@ set_vf_char(
  #ifdef TEXXET
      }
      if (cmd == PUT1 || (resource.omega && cmd == PUT2))
@@ -491,7 +491,7 @@
      return;
  #else
      return m->dvi_adv;
-@@ -1813,9 +2143,64 @@
+@@ -1813,9 +2143,64 @@ set_no_char(
   *	Set rule.  Arguments are coordinates of lower left corner.
   */
  
@@ -556,7 +556,7 @@
  #ifdef TEXXET
      put_rule(PXL_H - (currinf.dir < 0 ? w - 1 : 0), PXL_V - h + 1,
  	     (unsigned int)w, (unsigned int)h);
-@@ -1860,7 +2245,7 @@
+@@ -1860,7 +2245,7 @@ draw_part(FILE *fp, struct frame *minfra
  #ifdef TEXXET
  	    (*currinf.set_char_p) (ch, ch);
  #else
@@ -565,7 +565,7 @@
  #endif
  	}
  	else if (FNTNUM0 <= ch && ch <= (ubyte) (FNTNUM0 + 63)) {
-@@ -1877,7 +2262,7 @@
+@@ -1877,7 +2262,7 @@ draw_part(FILE *fp, struct frame *minfra
  #else
  		a = (*currinf.set_char_p) (xone(fp));
  		if (ch != PUT1)
@@ -574,7 +574,7 @@
  #endif
  		break;
  
-@@ -1892,7 +2277,39 @@
+@@ -1892,7 +2277,39 @@ draw_part(FILE *fp, struct frame *minfra
  #else
  		    a = (*currinf.set_char_p) (xnum(fp, 2));
  		    if (ch != PUT2)
@@ -615,7 +615,7 @@
  #endif
  		}
  		break;
-@@ -1910,7 +2327,7 @@
+@@ -1910,7 +2327,7 @@ draw_part(FILE *fp, struct frame *minfra
  		    ) {
  		    set_rule(pixel_round(xspell_conv(a)), pixel_round(b));
  		}
@@ -624,7 +624,7 @@
  		break;
  
  	    case PUTRULE:
-@@ -1934,6 +2351,9 @@
+@@ -1934,6 +2351,9 @@ draw_part(FILE *fp, struct frame *minfra
  		DVI_V = OFFSET_Y;
  		PXL_V = pixel_conv(DVI_V);
  		WW = XX = YY = ZZ = 0;
@@ -634,7 +634,7 @@
  		break;
  
  	    case EOP:
-@@ -2028,7 +2448,7 @@
+@@ -2028,7 +2448,7 @@ draw_part(FILE *fp, struct frame *minfra
  	    case RIGHT2:
  	    case RIGHT3:
  	    case RIGHT4:
@@ -643,7 +643,7 @@
  		break;
  
  	    case W1:
-@@ -2037,7 +2457,7 @@
+@@ -2037,7 +2457,7 @@ draw_part(FILE *fp, struct frame *minfra
  	    case W4:
  		WW = xspell_conv(xsnum(fp, ch - W0));
  	    case W0:
@@ -652,7 +652,7 @@
  		break;
  
  	    case X1:
-@@ -2046,15 +2466,14 @@
+@@ -2046,15 +2466,14 @@ draw_part(FILE *fp, struct frame *minfra
  	    case X4:
  		XX = xspell_conv(xsnum(fp, ch - X0));
  	    case X0:
@@ -670,7 +670,7 @@
  		break;
  
  	    case Y1:
-@@ -2063,8 +2482,7 @@
+@@ -2063,8 +2482,7 @@ draw_part(FILE *fp, struct frame *minfra
  	    case Y4:
  		YY = xspell_conv(xsnum(fp, ch - Y0));
  	    case Y0:
@@ -680,7 +680,7 @@
  		break;
  
  	    case Z1:
-@@ -2073,8 +2491,7 @@
+@@ -2073,8 +2491,7 @@ draw_part(FILE *fp, struct frame *minfra
  	    case Z4:
  		ZZ = xspell_conv(xsnum(fp, ch - Z0));
  	    case Z0:
@@ -690,7 +690,7 @@
  		break;
  
  	    case FNT1:
-@@ -2121,6 +2538,11 @@
+@@ -2121,6 +2538,11 @@ draw_part(FILE *fp, struct frame *minfra
  		dvi_fmt_error("%s:%d: draw_part: shouldn't happen: %s encountered",
  			      __FILE__, __LINE__, dvi_table2[ch - (FNTNUM0 + 64)]);
  		break;
@@ -702,7 +702,7 @@
  
  	    default:
  		dvi_fmt_error("%s:%d: draw_part: unknown op-code %d", __FILE__, __LINE__, ch);
-@@ -2311,7 +2733,7 @@
+@@ -2311,7 +2733,7 @@ draw_page(void)
      psp.endpage();
  #endif
      if (currwin.win == mane.win && resource.postscript != 1) {
@@ -711,7 +711,7 @@
      }
      if (search_have_match(current_page)) {
  	/* highlight search match */
-@@ -2921,7 +3343,15 @@
+@@ -2921,7 +3343,15 @@ do_char(wide_ubyte ch,
      last_dvi_h1 = DVI_H;
      last_u_glyph = u_glyph;
      last_pxl_v = pxl_v1;
@@ -727,7 +727,7 @@
      last_x = x2;
  }
  
-@@ -2935,6 +3365,10 @@
+@@ -2935,6 +3365,10 @@ text_do_char(FILE *fp, struct scan_info 
  	    return 0;	/* error; we'll catch it later */
  	maxchar = currinf.fontp->maxchar;
  	currinf.set_char_p = currinf.fontp->set_char_p;
@@ -738,7 +738,7 @@
      }
  
      if (currinf.set_char_p == set_empty_char)
-@@ -2962,10 +3396,6 @@
+@@ -2962,10 +3396,6 @@ text_do_char(FILE *fp, struct scan_info 
  	}
  	maxchar = currinf.fontp->maxchar;
  	currinf.set_char_p = currinf.fontp->set_char_p;
@@ -749,7 +749,7 @@
      }
  
      if (currinf.set_char_p == set_char) {
-@@ -2993,25 +3423,56 @@
+@@ -2993,25 +3423,56 @@ text_do_char(FILE *fp, struct scan_info 
  	}
  #ifdef TEXXET
  	if (geom_scan_frame == NULL) {
@@ -760,11 +760,12 @@
 +	    PUSH_POSITION;
 +	    if (! TATE && currinf.dir < 0)
 +		moveH(1, -g->dvi_adv);
-+#endif
-+	    x = G_PXL_H - g->x;
-+	    y = PXL_V - g->y;
-+	    do_char(ch, currinf, info, PXL_V, y, x, x + g->bitmap.w - 1, g);
-+#ifdef TEXXET
+ #endif
+ 	    x = G_PXL_H - g->x;
+ 	    y = PXL_V - g->y;
+ 	    do_char(ch, currinf, info, PXL_V, y, x, x + g->bitmap.w - 1, g);
+ #ifdef TEXXET
+-	    DVI_H = dvi_h_sav;
 +	    POP_POSITION;
 +	}
 +#endif
@@ -789,12 +790,11 @@
 +	    PUSH_POSITION;
 +	    if (! TATE && currinf.dir < 0)
 +		moveH(1, -g->dvi_adv);
- #endif
- 	    x = G_PXL_H - g->x;
- 	    y = PXL_V - g->y;
- 	    do_char(ch, currinf, info, PXL_V, y, x, x + g->bitmap.w - 1, g);
- #ifdef TEXXET
--	    DVI_H = dvi_h_sav;
++#endif
++	    x = G_PXL_H - g->x;
++	    y = PXL_V - g->y;
++	    do_char(ch, currinf, info, PXL_V, y, x, x + g->bitmap.w - 1, g);
++#ifdef TEXXET
 +	    POP_POSITION;
  	}
  #endif
@@ -811,7 +811,7 @@
  #endif
  
  	if (ch > maxchar)
-@@ -3019,9 +3480,9 @@
+@@ -3019,9 +3480,9 @@ text_do_char(FILE *fp, struct scan_info 
  	if ((m = &currinf.fontp->macro[ch])->pos == NULL)
  	    return 0;	/* catch the error later */
  #ifdef TEXXET
@@ -824,7 +824,7 @@
  	if (geom_scan_frame == NULL) {
  #endif
  	    oldinfo = currinf;
-@@ -3037,7 +3498,7 @@
+@@ -3037,7 +3498,7 @@ text_do_char(FILE *fp, struct scan_info 
  	    currinf = oldinfo;
  	    maxchar = oldmaxchar;
  #ifdef TEXXET
@@ -833,7 +833,7 @@
  	}
  #endif
  	return DIR * m->dvi_adv;
-@@ -3049,6 +3510,11 @@
+@@ -3049,6 +3510,11 @@ text_do_char(FILE *fp, struct scan_info 
      return 0;
  }
  
@@ -845,7 +845,7 @@
  /*
   *	Handle a character in geometric scanning routine.
   */
-@@ -3064,6 +3530,10 @@
+@@ -3064,6 +3530,10 @@ geom_do_char(FILE *fp, struct scan_info 
  	    return 0;	/* error; we'll catch it later */
  	maxchar = currinf.fontp->maxchar;
  	currinf.set_char_p = currinf.fontp->set_char_p;
@@ -856,7 +856,7 @@
      }
  
      if (currinf.set_char_p == set_empty_char)
-@@ -3091,10 +3561,6 @@
+@@ -3091,10 +3561,6 @@ geom_do_char(FILE *fp, struct scan_info 
  	}
  	maxchar = currinf.fontp->maxchar;
  	currinf.set_char_p = currinf.fontp->set_char_p;
@@ -867,7 +867,7 @@
      }
  
      if (currinf.set_char_p == set_char) {
-@@ -3122,27 +3588,58 @@
+@@ -3122,27 +3588,58 @@ geom_do_char(FILE *fp, struct scan_info 
  	}
  #ifdef TEXXET
  	if (geom_scan_frame == NULL) {
@@ -893,7 +893,7 @@
 +    else if (currinf.set_char_p == set_char2) {
 +	struct glyph *g;
 +	long x, y;
- 
++
 +	g = currinf.fontp->kglyph[ch];
 +	if (g == NULL || g->bitmap.bits == NULL) {
 +	    (*currinf.fontp->read_char)(currinf.fontp, ch);
@@ -901,8 +901,9 @@
 +	    free_bitmap2(g);
 +	    g->tdir = currinf.fontp->dir;
 +	}
-+
-+#ifdef TEXXET
+ 
+ #ifdef TEXXET
+-	    DVI_H = dvi_h_sav;
 +	if (geom_scan_frame == NULL) {
 +	    DEFINE_POSITION_VAL;
 +	    PUSH_POSITION;
@@ -913,8 +914,7 @@
 +	    y = PXL_V - g->y;
 +	    g_info->geom_box(info, x, y,
 +			     x + g->bitmap.w - 1, y + g->bitmap.h - 1);
- #ifdef TEXXET
--	    DVI_H = dvi_h_sav;
++#ifdef TEXXET
 +	    POP_POSITION;
  	}
  #endif
@@ -931,7 +931,7 @@
  #endif
  
  	if (ch > maxchar)
-@@ -3150,9 +3647,9 @@
+@@ -3150,9 +3647,9 @@ geom_do_char(FILE *fp, struct scan_info 
  	if ((m = &currinf.fontp->macro[ch])->pos == NULL)
  	    return 0;	/* catch the error later */
  #ifdef TEXXET
@@ -944,7 +944,7 @@
  	if (geom_scan_frame == NULL) {
  #endif
  	    oldinfo = currinf;
-@@ -3168,7 +3665,7 @@
+@@ -3168,7 +3665,7 @@ geom_do_char(FILE *fp, struct scan_info 
  	    currinf = oldinfo;
  	    maxchar = oldmaxchar;
  #ifdef TEXXET
@@ -953,7 +953,7 @@
  	}
  #endif
  	return DIR * m->dvi_adv;
-@@ -3188,21 +3685,35 @@
+@@ -3188,21 +3685,35 @@ static void
  geom_do_rule(struct scan_info *info, long h, long w)
  {
      long x, y;
@@ -995,7 +995,7 @@
  #endif
  }
  
-@@ -3232,7 +3743,7 @@
+@@ -3232,7 +3743,7 @@ geom_scan_part(long(*char_proc)(FILE *, 
      for (;;) {
  	ch = xone(fp);
  	if (ch <= (ubyte)(SETCHAR0 + 127))
@@ -1004,7 +1004,7 @@
  	else if (FNTNUM0 <= ch && ch <= (ubyte) (FNTNUM0 + 63)) {
  	    change_font((unsigned long)(ch - FNTNUM0));
  	}
-@@ -3244,7 +3755,7 @@
+@@ -3244,7 +3755,7 @@ geom_scan_part(long(*char_proc)(FILE *, 
  	    case PUT1:
  		a = char_proc(fp, info, xone(fp));
  		if (ch != PUT1)
@@ -1013,7 +1013,7 @@
  		break;
  
  	    case SET2:
-@@ -3258,7 +3769,39 @@
+@@ -3258,7 +3769,39 @@ geom_scan_part(long(*char_proc)(FILE *, 
  #else
  		    a = char_proc(fp, info, xnum(fp, 2));
  		    if (ch != PUT2)
@@ -1054,7 +1054,7 @@
  #endif
  		}
  		break;
-@@ -3278,7 +3821,7 @@
+@@ -3278,7 +3821,7 @@ geom_scan_part(long(*char_proc)(FILE *, 
  		    if (info->geom_special != NULL)
  			geom_do_rule(info, xspell_conv(a), b);
  		}
@@ -1063,7 +1063,7 @@
  		break;
  
  	    case PUTRULE:
-@@ -3399,7 +3942,7 @@
+@@ -3399,7 +3942,7 @@ geom_scan_part(long(*char_proc)(FILE *, 
  	    case RIGHT2:
  	    case RIGHT3:
  	    case RIGHT4:
@@ -1072,7 +1072,7 @@
  		break;
  
  	    case W1:
-@@ -3408,7 +3951,7 @@
+@@ -3408,7 +3951,7 @@ geom_scan_part(long(*char_proc)(FILE *, 
  	    case W4:
  		WW = xspell_conv(xsnum(fp, ch - W0));
  	    case W0:
@@ -1081,7 +1081,7 @@
  		break;
  
  	    case X1:
-@@ -3417,15 +3960,14 @@
+@@ -3417,15 +3960,14 @@ geom_scan_part(long(*char_proc)(FILE *, 
  	    case X4:
  		XX = xspell_conv(xsnum(fp, ch - X0));
  	    case X0:
@@ -1099,7 +1099,7 @@
  		break;
  
  	    case Y1:
-@@ -3434,8 +3976,7 @@
+@@ -3434,8 +3976,7 @@ geom_scan_part(long(*char_proc)(FILE *, 
  	    case Y4:
  		YY = xspell_conv(xsnum(fp, ch - Y0));
  	    case Y0:
@@ -1109,7 +1109,7 @@
  		break;
  
  	    case Z1:
-@@ -3444,8 +3985,7 @@
+@@ -3444,8 +3985,7 @@ geom_scan_part(long(*char_proc)(FILE *, 
  	    case Z4:
  		ZZ = xspell_conv(xsnum(fp, ch - Z0));
  	    case Z0:
@@ -1119,7 +1119,7 @@
  		break;
  
  	    case FNT1:
-@@ -3482,6 +4022,12 @@
+@@ -3482,6 +4022,12 @@ geom_scan_part(long(*char_proc)(FILE *, 
  		xskip(fp, a + (long)xone(fp));
  		break;
  

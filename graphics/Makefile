@@ -513,6 +513,7 @@
     SUBDIR += libpano13
     SUBDIR += libpcd
     SUBDIR += libpgf
+    SUBDIR += libpotrace
     SUBDIR += libprojectm
     SUBDIR += libpuzzle
     SUBDIR += libqrencode

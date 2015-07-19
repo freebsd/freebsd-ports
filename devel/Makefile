@@ -5037,6 +5037,8 @@
     SUBDIR += tesla
     SUBDIR += tevent
     SUBDIR += tex-kpathsea
+    SUBDIR += tex-libtexlua
+    SUBDIR += tex-libtexluajit
     SUBDIR += tex-web2c
     SUBDIR += thrift
     SUBDIR += thrift-c_glib

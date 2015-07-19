@@ -1,5 +1,5 @@
---- /dev/null	2015-01-31 21:35:05.000000000 +0900
-+++ texk/xdvik/ptexmap.h	2015-01-31 21:02:18.000000000 +0900
+--- texk/xdvik/ptexmap.h.orig	2015-07-19 18:49:42 UTC
++++ texk/xdvik/ptexmap.h
 @@ -0,0 +1,27 @@
 +#ifndef PTEXMAP_H_
 +#define PTEXMAP_H_

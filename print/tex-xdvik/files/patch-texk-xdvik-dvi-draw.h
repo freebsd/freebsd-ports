@@ -1,6 +1,6 @@
---- texk/xdvik/dvi-draw.h.orig	2014-09-02 18:41:34.000000000 +0900
-+++ texk/xdvik/dvi-draw.h	2015-01-31 21:02:18.000000000 +0900
-@@ -82,6 +82,11 @@
+--- texk/xdvik/dvi-draw.h.orig	2013-04-05 00:14:54 UTC
++++ texk/xdvik/dvi-draw.h
+@@ -82,6 +82,11 @@ extern void src_parse(const char *str, i
  #define XX      currinf.data.x
  #define YY      currinf.data.y
  #define ZZ      currinf.data.z
@@ -12,7 +12,7 @@
  
  extern void draw_page(void);
  extern void source_reverse_search(int, int, wide_bool);
-@@ -120,6 +125,13 @@
+@@ -120,6 +125,13 @@ extern setcharRetvalT set_char(
  			       wide_ubyte cmd,
  #endif
  			       wide_ubyte ch);

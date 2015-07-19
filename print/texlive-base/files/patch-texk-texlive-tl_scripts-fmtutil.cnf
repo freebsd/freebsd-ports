@@ -1,6 +1,6 @@
---- texk/texlive/tl_scripts/fmtutil.cnf.orig	2014-04-28 22:32:21.000000000 +0900
-+++ texk/texlive/tl_scripts/fmtutil.cnf	2014-08-21 00:15:56.000000000 +0900
-@@ -36,80 +36,80 @@
+--- texk/texlive/tl_scripts/fmtutil.cnf.orig	2015-05-05 22:32:32 UTC
++++ texk/texlive/tl_scripts/fmtutil.cnf
+@@ -37,80 +37,80 @@
  
  #
  # from aleph:
@@ -118,7 +118,7 @@
  #
  # from t2:
  #! cyramstex pdftex language.dat -translate-file=cp227.tcx *cyramstx.ini
-@@ -117,20 +117,20 @@
+@@ -118,20 +118,20 @@ platex eptex language.dat *platex.ini
  #! cyrtexinfo pdftex language.dat -translate-file=cp227.tcx *cyrtxinf.ini
  #
  # from tex:

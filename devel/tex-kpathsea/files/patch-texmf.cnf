@@ -1,5 +1,5 @@
---- texmf.cnf.orig	2014-04-23 06:07:54.000000000 +0900
-+++ texmf.cnf	2014-08-20 21:50:36.000000000 +0900
+--- texmf.cnf.orig	2015-04-12 15:20:30 UTC
++++ texmf.cnf
 @@ -51,7 +51,7 @@
  % Redistributors will probably want $SELFAUTODIR/share, i.e., /usr/share.
  % Kpathsea sets SELFAUTOLOC (the directory with the binary),
@@ -9,7 +9,7 @@
  
  % The main tree of distributed packages and programs:
  TEXMFDIST = $TEXMFROOT/texmf-dist
-@@ -61,7 +61,7 @@
+@@ -61,7 +61,7 @@ TEXMFDIST = $TEXMFROOT/texmf-dist
  TEXMFMAIN = $TEXMFDIST
  
  % Local additions to the distribution trees.
@@ -18,7 +18,7 @@
  
  % TEXMFSYSVAR, where *-sys store cached runtime data.
  TEXMFSYSVAR = $TEXMFROOT/texmf-var
-@@ -713,7 +713,7 @@
+@@ -722,7 +722,7 @@ hash_extra = 600000
  pool_size = 6250000
  % Minimum pool space after TeX's own strings; must be at least
  % 25000 less than pool_size, but doesn't need to be nearly that large.
@@ -27,7 +27,7 @@
  % Maximum number of strings.
  max_strings = 500000
  % min pool space left after loading .fmt
-@@ -723,7 +723,7 @@
+@@ -732,7 +732,7 @@ pool_free = 47500
  % expansion works by writing material into the buffer and reparsing the
  % line.  As a consequence, certain constructs require the buffer to be
  % very large, even though most documents can be handled with a small value.
@@ -36,7 +36,7 @@
  
  % Hyphenation trie.  The maximum possible is 4194303 (ssup_trie_size in
  % the sources), but we don't need that much.  The value here suffices
-@@ -734,7 +734,7 @@
+@@ -743,7 +743,7 @@ trie_size = 1000000
  
  hyph_size = 8191        % prime number of hyphenation exceptions, >610, <32767.
                          % http://primes.utm.edu/curios/page.php/8191.html

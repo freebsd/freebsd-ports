@@ -9,5 +9,4 @@
 %%SITE_PERL%%/TeXLive/TLUtils.pm
 %%SITE_PERL%%/TeXLive/TLWinGoo.pm
 %%SITE_PERL%%/TeXLive/TeXCatalogue.pm
-%%TEXMFDISTDIR%%/web2c/fmtutil-hdr.cnf
-%%TEXMFDISTDIR%%/web2c/updmap-hdr.cfg
+%%TEXMFDISTDIR%%/.texlive-tlmgr
