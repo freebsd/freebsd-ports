@@ -1183,8 +1183,8 @@
 %%PYTHON_SITELIBDIR%%/salt/states/apache.pyc
 %%PYTHON_SITELIBDIR%%/salt/states/apache_module.py
 %%PYTHON_SITELIBDIR%%/salt/states/apache_module.pyc
-%%PYTHON_SITELIBDIR%%/salt/states/apt.py
-%%PYTHON_SITELIBDIR%%/salt/states/apt.pyc
+%%PYTHON_SITELIBDIR%%/salt/states/aptpkg.py
+%%PYTHON_SITELIBDIR%%/salt/states/aptpkg.pyc
 %%PYTHON_SITELIBDIR%%/salt/states/archive.py
 %%PYTHON_SITELIBDIR%%/salt/states/archive.pyc
 %%PYTHON_SITELIBDIR%%/salt/states/artifactory.py
