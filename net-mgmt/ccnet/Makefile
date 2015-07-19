@@ -4,7 +4,7 @@ PORTNAME=	ccnet
 PORTVERSION=	4.0.6
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-server
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-mgmt devel
 
 MAINTAINER=	yan_jingfeng@yahoo.com
@@ -32,11 +32,11 @@ USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/event2
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/event2
+CONFIGURE_ENV=	SSL_CFLAGS="${OPENSSLINC}" SSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-server --enable-ldap
 INSTALL_TARGET=	install-strip
 
-WITH_OPENSSL_PORT=	yes
 USE_OPENSSL=	yes
 
 HAIWENDIR=	www/haiwen
