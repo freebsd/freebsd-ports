@@ -2,7 +2,7 @@
 
 PORTNAME=	seafile
 PORTVERSION=	4.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-server
 CATEGORIES=	net-mgmt devel
@@ -27,13 +27,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eggtestinfo>0:${PORTSDIR}/devel/py-eggtestin
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
 
-USES=		autoreconf iconv libtool pathfix pkgconfig python:2 shebangfix
+USES=		autoreconf iconv libarchive libtool pathfix pkgconfig python:2 \
+		shebangfix
 SHEBANG_FILES=	scripts/*.sh scripts/upgrade/*.sh
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	SSL_CFLAGS="${OPENSSLINC}" SSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto" \
-		LIBARCHIVE_CFLAGS="-I/usr/include" LIBARCHIVE_LIBS="-larchive"
+CONFIGURE_ENV=	SSL_CFLAGS="${OPENSSLINC}" SSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
 
 PATHFIX_MAKEFILEIN=	Makefile.am
 
