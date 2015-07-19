@@ -22,7 +22,7 @@ LIB_DEPENDS=	libattica.so:${PORTSDIR}/x11-toolkits/attica \
 		liblastfm.so:${PORTSDIR}/audio/liblastfm \
 		libqca.so:${PORTSDIR}/devel/qca \
 		libqjson.so:${PORTSDIR}/devel/qjson \
-		libqtkeychain.so:${PORTSDIR}/security/qtkeychain \
+		libqtkeychain.so:${PORTSDIR}/security/qtkeychain-qt4 \
 		libquazip.so:${PORTSDIR}/archivers/quazip \
 		libtag.so:${PORTSDIR}/audio/taglib
 
