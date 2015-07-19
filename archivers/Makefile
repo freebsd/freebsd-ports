@@ -159,6 +159,7 @@
     SUBDIR += ppmd-7z
     SUBDIR += ppunpack
     SUBDIR += pxz
+    SUBDIR += py-attic
     SUBDIR += py-liblzma
     SUBDIR += py-librtfcomp
     SUBDIR += py-lz4
