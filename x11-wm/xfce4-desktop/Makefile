@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-desktop
-PORTVERSION=	4.12.2
+PORTVERSION=	4.12.3
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	XFCE/src/xfce/xfdesktop/${PORTVERSION:R}/
 DISTNAME=	xfdesktop-${PORTVERSION}
@@ -21,8 +21,9 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	glib20 gtk20 intltool intlhack libwnck
 USE_XFCE=	garcon
-USES=	pkgconfig gmake gettext-tools xfce tar:bzip2
+USES=	gettext-tools gmake pkgconfig tar:bzip2 xfce
 USE_XORG=	x11 sm
+INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS+=--enable-gio-unix \
 	--enable-notifications
