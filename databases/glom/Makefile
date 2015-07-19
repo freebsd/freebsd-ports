@@ -24,7 +24,7 @@ RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
 		libgda5-postgresql>=0:${PORTSDIR}/databases/libgda5-postgresql
 
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils gettext gmake libtool pathfix \
+USES=		desktop-file-utils gettext gmake libarchive libtool pathfix \
 		pgsql pkgconfig python shared-mime-info tar:xz
 WANT_PGSQL=	server
 USE_GNOME=	gnomedocutils gnomeprefix intlhack pygobject3 libxml2 \
@@ -41,10 +41,6 @@ INSTALLS_ICONS=	yes
 
 #PLIST_SUB+=	VERSION=${PORTVERSION:R}
 PLIST_SUB+=	VERSION=1.26
-
-.if ! exists(/usr/libdata/pkgconfig/libarchive.pc)
-LIB_DEPENDS+=	libarchive.so.13:${PORTSDIR}/archivers/libarchive
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-update-mime-database|true|g' \
