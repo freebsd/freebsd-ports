@@ -1,6 +1,6 @@
---- texk/xdvik/xdvi.h.orig	2014-09-02 18:41:34.000000000 +0900
-+++ texk/xdvik/xdvi.h	2015-01-31 21:02:18.000000000 +0900
-@@ -168,7 +168,7 @@
+--- texk/xdvik/xdvi.h.orig	2014-04-03 01:17:13 UTC
++++ texk/xdvik/xdvi.h
+@@ -168,7 +168,7 @@ in xdvi.c.
  #include <X11/Intrinsic.h>
  
  #if HAVE_XI21
@@ -9,7 +9,7 @@
  #endif
  
  #ifndef MAXPATHLEN
-@@ -285,6 +285,10 @@
+@@ -285,6 +285,10 @@ extern unsigned long time_start, time_en
  #  define OPEN_MODE_ARGS const char *, const char *
  #endif
  
@@ -20,7 +20,7 @@
  #ifndef __LINE__
  #  define __LINE__ 0
  #endif
-@@ -335,6 +339,9 @@
+@@ -335,6 +339,9 @@ struct frame {
      struct framedata {
  	long dvi_h, dvi_v, w, x, y, z;
  	int pxl_v;
@@ -30,7 +30,7 @@
      } data;
      struct frame *next, *prev;
  };
-@@ -493,7 +500,7 @@
+@@ -493,7 +500,7 @@ extern struct x_resources {
  #endif
      Boolean	freetype;
  #if HAVE_XI21
@@ -39,7 +39,7 @@
  #endif
      const char *src_pos;
      const char *find_string;
-@@ -625,6 +632,9 @@
+@@ -625,6 +632,9 @@ extern struct x_resources {
      /* bitmask of current search window settings */
      unsigned int    search_window_defaults;
      /*     char *    _scroll_pages; */
@@ -49,7 +49,7 @@
      char       *help_general;
      char       *help_hypertex;
      char       *help_othercommands;
-@@ -964,47 +974,46 @@
+@@ -964,47 +974,46 @@ extern unsigned int color_list_max;	/* a
  extern Boolean color_warned;
  #endif /* COLOR */
  

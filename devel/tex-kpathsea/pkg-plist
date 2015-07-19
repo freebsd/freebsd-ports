@@ -73,5 +73,6 @@ man/man1/texhash.1.gz
 lib/libkpathsea.a
 lib/libkpathsea.so
 lib/libkpathsea.so.6
-lib/libkpathsea.so.6.2.0
+lib/libkpathsea.so.6.2.1
+libdata/pkgconfig/kpathsea.pc
 %%TEXMFDISTDIR%%/web2c/texmf.cnf

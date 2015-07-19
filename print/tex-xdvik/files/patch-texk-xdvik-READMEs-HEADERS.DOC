@@ -1,5 +1,5 @@
---- /dev/null	2015-01-31 21:35:05.000000000 +0900
-+++ texk/xdvik/READMEs/HEADERS.DOC	2015-01-31 21:02:18.000000000 +0900
+--- texk/xdvik/READMEs/HEADERS.DOC.orig	2015-07-19 18:49:41 UTC
++++ texk/xdvik/READMEs/HEADERS.DOC
 @@ -0,0 +1,170 @@
 +Path: tkyex1.phys.s.u-tokyo.ac.jp!news.u-tokyo.ac.jp!eccnews!ecc-s401!s31514
 +From: s31514@secc.ecc.u-tokyo.ac.jp (s31514)

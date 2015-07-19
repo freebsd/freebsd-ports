@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	ptexenc
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	print
-MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2014/
+MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2015/
 PKGNAMEPREFIX=	tex-
-DISTNAME=	texlive-20140525-source
+DISTNAME=	texlive-20150521-source
 DIST_SUBDIR=	TeX
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -22,5 +22,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-system-kpathsea \
 		--with-kpathsea-includes=${LOCALBASE}/include \
 		--with-kpathsea-libdir=${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

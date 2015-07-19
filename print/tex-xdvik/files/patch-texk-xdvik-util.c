@@ -1,6 +1,6 @@
---- texk/xdvik/util.c.orig	2014-09-02 18:41:34.000000000 +0900
-+++ texk/xdvik/util.c	2015-01-31 21:02:18.000000000 +0900
-@@ -215,6 +215,7 @@
+--- texk/xdvik/util.c.orig	2014-04-08 18:43:12 UTC
++++ texk/xdvik/util.c
+@@ -215,6 +215,7 @@ struct debug_string_options debug_option
      {  DBG_GUI,		"gui",		", " },
      {  DBG_FIND,	"find",		", " },
      {  DBG_FILES,	"files",	", " },
@@ -8,7 +8,7 @@
      {  DBG_ALL,		"all",		"\n" },
      /* end marker */
      {  0,		NULL,		NULL }
-@@ -708,6 +709,38 @@
+@@ -708,6 +709,38 @@ alloc_bitmap(struct bitmap *bitmap)
      bitmap->bits = xmalloc(size != 0 ? size : 1);
  }
  
@@ -47,7 +47,7 @@
  
  #ifndef HAVE_MEMICMP
  /*
-@@ -1581,6 +1614,8 @@
+@@ -1581,6 +1614,8 @@ put_str_int_hash(hashTableT *hashtable, 
  }
  
  
@@ -56,7 +56,7 @@
  /*
   *	General AVL tree mechanism.  Search for a node, and return it if found.
   *	Otherwise insert a node.
-@@ -1712,6 +1747,8 @@
+@@ -1712,6 +1747,8 @@ avladd(const char *key, size_t key_len, 
  	return ap;
  }
  

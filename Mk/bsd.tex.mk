@@ -22,7 +22,9 @@ TEX_MAINTAINER=	hrs@FreeBSD.org
 #  web2c:	WEB2C toolchain and TeX engines
 #  kpathsea:	kpathsea library
 #  ptexenc:	character code conversion library for pTeX
-#  infra:	tlmgr dependency (Perl modules)
+#  tlmgr:	tlmgr dependency (Perl modules)
+#  texlua:	texlua52 library
+#  texluajit:	texluajit library
 #
 #  dvipsk:	dvipsk
 #  dvipdfmx:	DVIPDFMx
@@ -88,9 +90,9 @@ _USE_TEX_SOURCE_PKGNAME=texlive-texmf-source
 _USE_TEX_DOCS_DEP=	${LOCALBASE}/${TEXMFDISTDIR}/doc/texlive/texlive-en/README
 _USE_TEX_DOCS_PORT=	print/${_USE_TEX_DOCS_PKGNAME}
 _USE_TEX_DOCS_PKGNAME=	texlive-docs
-_USE_TEX_INFRA_DEP=	${LOCALBASE}/${TEXMFDISTDIR}/web2c/fmtutil-hdr.cnf
-_USE_TEX_INFRA_PORT=	print/${_USE_TEX_INFRA_PKGNAME}
-_USE_TEX_INFRA_PKGNAME=	texlive-infra
+_USE_TEX_TLMGR_DEP=	${LOCALBASE}/${TEXMFDISTDIR}/.texlive-tlmgr
+_USE_TEX_TLMGR_PORT=	print/${_USE_TEX_TLMGR_PKGNAME}
+_USE_TEX_TLMGR_PKGNAME=	texlive-tlmgr
 _USE_TEX_DVIPSK_DEP=	dvips
 _USE_TEX_DVIPSK_PORT=	print/${_USE_TEX_DVIPSK_PKGNAME}
 _USE_TEX_DVIPSK_PKGNAME=tex-dvipsk
@@ -123,6 +125,12 @@ _USE_TEX_KPATHSEA_PKGNAME=tex-kpathsea
 _USE_TEX_PTEXENC_DEP=	libptexenc.so
 _USE_TEX_PTEXENC_PORT=	print/${_USE_TEX_PTEXENC_PKGNAME}
 _USE_TEX_PTEXENC_PKGNAME=tex-ptexenc
+_USE_TEX_TEXLUA_DEP=	libtexlua52.so
+_USE_TEX_TEXLUA_PORT=	devel/${_USE_TEX_TEXLUA_PKGNAME}
+_USE_TEX_TEXLUA_PKGNAME=tex-libtexlua
+_USE_TEX_TEXLUAJIT_DEP=	libtexluajit.so
+_USE_TEX_TEXLUAJIT_PORT=	devel/${_USE_TEX_TEXLUAJIT_PKGNAME}
+_USE_TEX_TEXLUAJIT_PKGNAME=tex-libtexluajit
 _USE_TEX_FORMATS_DEP=	${LOCALBASE}/${TEXMFVARDIR}/web2c/tex/tex.fmt
 _USE_TEX_FORMATS_PORT=	print/${_USE_TEX_FORMATS_PKGNAME}
 _USE_TEX_FORMATS_PKGNAME=tex-formats
@@ -136,11 +144,11 @@ _USE_TEX_XETEX_DEP=	xetex
 _USE_TEX_XETEX_PORT=	print/${_USE_TEX_XETEX_PKGNAME}
 _USE_TEX_XETEX_PKGNAME=	tex-xetex
 
-_USE_TEX_FULLLIST=	texmf>=20140525_2 base>=20140525_1 \
-		web2c infra \
+_USE_TEX_FULLLIST=	texmf>=20150523 base>=20150521 \
+		web2c tlmgr:run \
 		formats aleph xetex jadetex luatex xmltex ptex \
 		dvipsk dvipdfmx xdvik \
-		kpathsea:lib ptexenc:lib
+		kpathsea:lib ptexenc:lib texlua:lib texluajit:lib
 
 .if !empty(USE_TEX:tu:MFULL)
 USE_TEX:=	${USE_TEX:tu:NFULL} ${_USE_TEX_FULLLIST:tu}
@@ -238,6 +246,7 @@ do-fmtutil-$F:
 	${RM} ${TEXHASHDIRS:S,^,${STAGEDIR}${PREFIX}/,:S,$,/ls-R,} \
 	    ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/web2c/texmf.cnf
 	${RMDIR} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/web2c || ${TRUE}
+	${RMDIR} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR} || ${TRUE}
 _PLIST_FILES+=	${TEX_FORMAT_${F:tu}_FILES}
 _PLIST_DIRSTRY+=${TEX_FORMAT_${F:tu}_DIRS}
 _PLIST_FILES+=	${TEX_FORMAT_${F:tu}_BIN}
