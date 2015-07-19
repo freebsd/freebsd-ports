@@ -2,7 +2,7 @@
 
 PORTNAME=	ftwin
 PORTVERSION=	0.8.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://files.etoilebsd.net/ftwin/ \
 		http://download.meroware.org/ftwin/
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1 \
 		libpcre.so:${PORTSDIR}/devel/pcre \
 		libpuzzle.so:${PORTSDIR}/graphics/libpuzzle
 
-USES=		autoreconf tar:bzip2
+USES=		autoreconf libarchive tar:bzip2
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
