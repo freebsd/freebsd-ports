@@ -16,7 +16,6 @@ BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
 LIB_DEPENDS=	libsearpc.so:${PORTSDIR}/devel/libsearpc \
 		libevhtp.so:${PORTSDIR}/www/libevhtp \
 		libzdb.so:${PORTSDIR}/databases/libzdb \
-		libcrypto.so:${PORTSDIR}/security/openssl \
 		libcurl.so:${PORTSDIR}/ftp/curl \
 		libinotify.so:${PORTSDIR}/devel/libinotify \
 		libccnet.so:${PORTSDIR}/net-mgmt/ccnet
