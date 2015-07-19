@@ -16,9 +16,11 @@ bin/bg5+pdflatex
 bin/bg5conv
 bin/bg5latex
 bin/bg5pdflatex
+bin/bibdoiadd
 bin/bibexport
 bin/bibtex8
 bin/bibtexu
+bin/bibzbladd
 bin/bundledoc
 bin/cachepic
 bin/cef5conv
@@ -34,6 +36,7 @@ bin/cfftot1
 bin/checkcites
 bin/chktex
 bin/chkweb
+bin/cjk-gs-integrate
 bin/context
 bin/contextjit
 bin/convbkmk
@@ -77,12 +80,14 @@ bin/exceltex
 bin/extconv
 bin/fig4latex
 bin/findhyph
+bin/fixmsxpart
 bin/fmtutil
 bin/fmtutil-sys
 bin/fontinst
 bin/fragmaster
 bin/gbklatex
 bin/gbkpdflatex
+bin/getmapdl
 bin/gsftopk
 bin/hbf2gf
 bin/ht
@@ -114,6 +119,7 @@ bin/lily-image-commands
 bin/lily-rebuild-pdfs
 bin/listbib
 bin/listings-ext.sh
+bin/ltx2crossrefxml
 bin/ltxfileinfo
 bin/ltximg
 bin/lua2dox_filter
@@ -132,13 +138,13 @@ bin/mk4ht
 bin/mkgrkindex
 bin/mkindex
 bin/mkjobtexmf
-bin/mkluatexfontdb
 bin/mkpic
 bin/mkt1font
 bin/mktexfmt
 bin/mmafm
 bin/mmpfb
 bin/mptopdf
+bin/msxlint
 bin/mtxrun
 bin/mtxrunjit
 bin/multibibliography
@@ -183,6 +189,7 @@ bin/pslatex
 bin/pst2pdf
 bin/ptex2pdf
 bin/purifyeps
+bin/pygmentex
 bin/pythontex
 bin/repstopdf
 bin/rpdfcrop
@@ -237,6 +244,7 @@ bin/vlna
 bin/vpe
 bin/vpl2ovp
 bin/vpl2vpl
+bin/yplan
 man/man1/afm2pl.1.gz
 man/man1/allcm.1.gz
 man/man1/allec.1.gz
@@ -274,6 +282,7 @@ man/man1/dvisvgm.1.gz
 man/man1/dvitodvi.1.gz
 man/man1/e2pall.1.gz
 man/man1/extconv.1.gz
+man/man1/fixmsxpart.1.gz
 man/man1/fmtutil-sys.1.gz
 man/man1/fmtutil.1.gz
 man/man1/fontinst.1.gz
@@ -287,6 +296,7 @@ man/man1/mkindex.1.gz
 man/man1/mktexfmt.1.gz
 man/man1/mmafm.1.gz
 man/man1/mmpfb.1.gz
+man/man1/msxlint.1.gz
 man/man1/otfinfo.1.gz
 man/man1/otftotfm.1.gz
 man/man1/pdfclose.1.gz
@@ -342,6 +352,7 @@ man/man5/updmap.cfg.5.gz
 %%TEXMFDISTDIR%%/scripts/bundledoc/bundledoc
 %%TEXMFDISTDIR%%/scripts/cachepic/cachepic.tlu
 %%TEXMFDISTDIR%%/scripts/checkcites/checkcites.lua
+%%TEXMFDISTDIR%%/scripts/cjk-gs-integrate/cjk-gs-integrate.pl
 %%TEXMFDISTDIR%%/scripts/context/perl/mptopdf.pl
 %%TEXMFDISTDIR%%/scripts/context/stubs/unix/context
 %%TEXMFDISTDIR%%/scripts/context/stubs/unix/contextjit
@@ -351,6 +362,9 @@ man/man5/updmap.cfg.5.gz
 %%TEXMFDISTDIR%%/scripts/context/stubs/unix/texexec
 %%TEXMFDISTDIR%%/scripts/context/stubs/unix/texmfstart
 %%TEXMFDISTDIR%%/scripts/convbkmk/convbkmk.rb
+%%TEXMFDISTDIR%%/scripts/crossrefware/bibdoiadd.pl
+%%TEXMFDISTDIR%%/scripts/crossrefware/bibzbladd.pl
+%%TEXMFDISTDIR%%/scripts/crossrefware/ltx2crossrefxml.pl
 %%TEXMFDISTDIR%%/scripts/ctanify/ctanify
 %%TEXMFDISTDIR%%/scripts/ctanupload/ctanupload.pl
 %%TEXMFDISTDIR%%/scripts/de-macro/de-macro
@@ -368,6 +382,7 @@ man/man5/updmap.cfg.5.gz
 %%TEXMFDISTDIR%%/scripts/fontools/autoinst
 %%TEXMFDISTDIR%%/scripts/fontools/ot2kpx
 %%TEXMFDISTDIR%%/scripts/fragmaster/fragmaster.pl
+%%TEXMFDISTDIR%%/scripts/getmap/getmapdl.lua
 %%TEXMFDISTDIR%%/scripts/glossaries/makeglossaries
 %%TEXMFDISTDIR%%/scripts/installfont/installfont-tl
 %%TEXMFDISTDIR%%/scripts/jfontmaps/kanji-config-updmap-sys.sh
@@ -432,6 +447,7 @@ man/man5/updmap.cfg.5.gz
 %%TEXMFDISTDIR%%/scripts/pst2pdf/pst2pdf.pl
 %%TEXMFDISTDIR%%/scripts/ptex2pdf/ptex2pdf.lua
 %%TEXMFDISTDIR%%/scripts/purifyeps/purifyeps
+%%TEXMFDISTDIR%%/scripts/pygmentex/pygmentex.py
 %%TEXMFDISTDIR%%/scripts/pythontex/depythontex.py
 %%TEXMFDISTDIR%%/scripts/pythontex/pythontex.py
 %%TEXMFDISTDIR%%/scripts/rubik/rubikrotation.pl
@@ -461,7 +477,7 @@ man/man5/updmap.cfg.5.gz
 %%TEXMFDISTDIR%%/scripts/texlive/dvired.sh
 %%TEXMFDISTDIR%%/scripts/texlive/e2pall.pl
 %%TEXMFDISTDIR%%/scripts/texlive/fmtutil-sys.sh
-%%TEXMFDISTDIR%%/scripts/texlive/fmtutil.sh
+%%TEXMFDISTDIR%%/scripts/texlive/fmtutil.pl
 %%TEXMFDISTDIR%%/scripts/texlive/fontinst.sh
 %%TEXMFDISTDIR%%/scripts/texlive/ps2frag.sh
 %%TEXMFDISTDIR%%/scripts/texlive/pslatex.sh
@@ -482,6 +498,7 @@ man/man5/updmap.cfg.5.gz
 %%TEXMFDISTDIR%%/scripts/ulqda/ulqda.pl
 %%TEXMFDISTDIR%%/scripts/urlbst/urlbst
 %%TEXMFDISTDIR%%/scripts/vpe/vpe.pl
+%%TEXMFDISTDIR%%/scripts/yplan/yplan
 %%TEXMFDISTDIR%%/web2c/fmtutil.cnf
 %%FMTUTIL_CNF%%
 %%TEXMFCONFIGDIR%%/.keep_me

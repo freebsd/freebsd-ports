@@ -1,5 +1,5 @@
---- /dev/null	2015-01-31 21:35:05.000000000 +0900
-+++ texk/xdvik/READMEs/ChangeLog.xdvik20c-j1.0	2015-01-31 21:02:18.000000000 +0900
+--- texk/xdvik/READMEs/ChangeLog.xdvik20c-j1.0.orig	2015-07-19 18:49:41 UTC
++++ texk/xdvik/READMEs/ChangeLog.xdvik20c-j1.0
 @@ -0,0 +1,34 @@
 +xdvik20c-j1.0p0.patch 変更履歴
 +                                     筑波大学 社会工学研究科 中右 浩二

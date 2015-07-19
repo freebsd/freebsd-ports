@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	texlive
-PORTVERSION=	20140525
+PORTVERSION=	20150523
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.tug.org/historic/systems/texlive/2014/
+MASTER_SITES=	ftp://ftp.tug.org/historic/systems/texlive/2015/
 PKGNAMESUFFIX=	-docs
 DISTNAME=	${PORTNAME}-${PORTVERSION}-texmf
 DIST_SUBDIR=	TeX
@@ -41,8 +41,8 @@ do-extract:
 
 do-install:
 	${CAT} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} \
-		${EXTRACT_AFTER_ARGS} -C ${STAGEDIR}${PREFIX}/share \
-		--strip-components 1 --no-same-permission --no-same-owner \
-		${DISTNAME}/texmf-dist/doc
+	    ${EXTRACT_AFTER_ARGS} -C ${STAGEDIR}${PREFIX}/share \
+	    --strip-components 1 --no-same-permission --no-same-owner \
+	    ${DISTNAME}/texmf-dist/doc
 
 .include <bsd.port.mk>

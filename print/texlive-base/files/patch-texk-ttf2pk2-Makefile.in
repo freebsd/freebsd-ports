@@ -1,7 +1,7 @@
---- texk/ttf2pk2/Makefile.in.orig	2012-04-26 20:02:04.000000000 +0900
-+++ texk/ttf2pk2/Makefile.in	2013-05-22 14:39:41.000000000 +0900
-@@ -88,9 +88,7 @@
- CONFIG_HEADER = c-auto.h
+--- texk/ttf2pk2/Makefile.in.orig	2015-03-12 14:42:02 UTC
++++ texk/ttf2pk2/Makefile.in
+@@ -115,9 +115,7 @@ mkinstalldirs = $(install_sh) -d
+ CONFIG_HEADER = config.h
  CONFIG_CLEAN_FILES =
  CONFIG_CLEAN_VPATH_FILES =
 -am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)" \
@@ -9,18 +9,18 @@
 -	"$(DESTDIR)$(mapdatadir)" "$(DESTDIR)$(sfddatadir)"
 +am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)"
  PROGRAMS = $(bin_PROGRAMS)
- am__objects_1 = errormsg.$(OBJEXT) filesrch.$(OBJEXT) \
+ am__objects_1 = errormsg.$(OBJEXT) filesrch.$(OBJEXT) ftlib.$(OBJEXT) \
  	ligkern.$(OBJEXT) newobj.$(OBJEXT) parse.$(OBJEXT) \
-@@ -1006,7 +1004,7 @@
+@@ -1321,7 +1319,7 @@ check-am: all-am
  check: check-am
- all-am: Makefile $(PROGRAMS) $(MANS) $(DATA) c-auto.h
+ all-am: Makefile $(PROGRAMS) $(MANS) $(DATA) config.h
  installdirs:
 -	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(cfgdatadir)" "$(DESTDIR)$(encdatadir)" "$(DESTDIR)$(mapdatadir)" "$(DESTDIR)$(sfddatadir)"; do \
 +	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)"; do \
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
  install: install-am
-@@ -1063,8 +1061,7 @@
+@@ -1381,8 +1379,7 @@ info: info-am
  
  info-am:
  
