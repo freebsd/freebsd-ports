@@ -71,8 +71,6 @@ ZENITY_RUN_DEPENDS=xdg-open:${PORTSDIR}/devel/xdg-utils \
 		zenity:${PORTSDIR}/x11/zenity
 ZENITY_DESC=	Use native crash dialog
 
-.include <bsd.port.options.mk>
-
 post-extract:
 	@${MKDIR} ${WRKSRC}/thirdparty/download
 	@${CP} -v ${DISTFILES:C/:.*//:N*.tar*:N*.zip:S,^,${_DISTDIR}/,} \
@@ -102,19 +100,15 @@ post-patch:
 	${REINPLACE_CMD} -e 's/"BSD"/"${OPSYS}"/' \
 		${WRKSRC}/OpenRA.Game/Platform.cs
 
-post-build:
-.if ${PORT_OPTIONS:MDOCS}
+post-build-DOCS-on:
 	@${ECHO_MSG} Generating HTML documentation...
 	@for f in ${WRKSRC}/*.md; do \
 		${ECHO_MSG} markdown $$f -\> $${f%.md}.html; \
 		markdown $$f >$${f%.md}.html; \
 	done
-.endif
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
 		"${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
-.endif
 
 .include <bsd.port.mk>
