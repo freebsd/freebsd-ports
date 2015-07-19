@@ -69,6 +69,9 @@ lib/emby-server/dashboard-ui/apiclient/wakeonlan.js
 lib/emby-server/dashboard-ui/appservices.html
 lib/emby-server/dashboard-ui/autoorganizelog.html
 lib/emby-server/dashboard-ui/autoorganizetv.html
+lib/emby-server/dashboard-ui/bower_components/fastclick/lib/fastclick.js
+lib/emby-server/dashboard-ui/bower_components/jquery/dist/jquery.min.js
+lib/emby-server/dashboard-ui/bower_components/requirejs/require.js
 lib/emby-server/dashboard-ui/bower_components/swipebox/src/css/swipebox.min.css
 lib/emby-server/dashboard-ui/bower_components/swipebox/src/img/icons.png
 lib/emby-server/dashboard-ui/bower_components/swipebox/src/img/icons.svg
@@ -87,6 +90,7 @@ lib/emby-server/dashboard-ui/channelslatest.html
 lib/emby-server/dashboard-ui/cinemamodeconfiguration.html
 lib/emby-server/dashboard-ui/collections.html
 lib/emby-server/dashboard-ui/connectlogin.html
+lib/emby-server/dashboard-ui/cordova/actionsheet.js
 lib/emby-server/dashboard-ui/cordova/android/androidcredentials.js
 lib/emby-server/dashboard-ui/cordova/android/appstorage.js
 lib/emby-server/dashboard-ui/cordova/android/filesystem.js
@@ -103,7 +107,6 @@ lib/emby-server/dashboard-ui/cordova/externalplayer.js
 lib/emby-server/dashboard-ui/cordova/filesystem.js
 lib/emby-server/dashboard-ui/cordova/iap.js
 lib/emby-server/dashboard-ui/cordova/imagestore.js
-lib/emby-server/dashboard-ui/cordova/ios/actionsheet.js
 lib/emby-server/dashboard-ui/cordova/ios/orientation.js
 lib/emby-server/dashboard-ui/cordova/registrationservices.js
 lib/emby-server/dashboard-ui/cordova/remotecontrols.js
@@ -262,10 +265,7 @@ lib/emby-server/dashboard-ui/dlnaprofile.html
 lib/emby-server/dashboard-ui/dlnaprofiles.html
 lib/emby-server/dashboard-ui/dlnaserversettings.html
 lib/emby-server/dashboard-ui/dlnasettings.html
-lib/emby-server/dashboard-ui/editcollectionitems.html
-lib/emby-server/dashboard-ui/edititemimages.html
 lib/emby-server/dashboard-ui/edititemmetadata.html
-lib/emby-server/dashboard-ui/edititemsubtitles.html
 lib/emby-server/dashboard-ui/encodingsettings.html
 lib/emby-server/dashboard-ui/episodes.html
 lib/emby-server/dashboard-ui/favicon.ico
@@ -519,7 +519,6 @@ lib/emby-server/dashboard-ui/themes/ios.css
 lib/emby-server/dashboard-ui/thirdparty/browser.js
 lib/emby-server/dashboard-ui/thirdparty/cast_sender.js
 lib/emby-server/dashboard-ui/thirdparty/emby-icons.html
-lib/emby-server/dashboard-ui/thirdparty/fastclick.js
 lib/emby-server/dashboard-ui/thirdparty/filesystem.js
 lib/emby-server/dashboard-ui/thirdparty/fontawesome/css/font-awesome.css
 lib/emby-server/dashboard-ui/thirdparty/fontawesome/css/font-awesome.css.map
@@ -531,7 +530,6 @@ lib/emby-server/dashboard-ui/thirdparty/fontawesome/fonts/fontawesome-webfont.tt
 lib/emby-server/dashboard-ui/thirdparty/fontawesome/fonts/fontawesome-webfont.woff
 lib/emby-server/dashboard-ui/thirdparty/fontawesome/fonts/fontawesome-webfont.woff2
 lib/emby-server/dashboard-ui/thirdparty/headroom.js
-lib/emby-server/dashboard-ui/thirdparty/jquery-2.1.1.min.js
 lib/emby-server/dashboard-ui/thirdparty/jquery.unveil-custom.js
 lib/emby-server/dashboard-ui/thirdparty/jquerymobile-1.4.5/images/ajax-loader.gif
 lib/emby-server/dashboard-ui/thirdparty/jquerymobile-1.4.5/images/icons-png/action-black.png
@@ -750,7 +748,7 @@ lib/emby-server/dashboard-ui/thirdparty/jstree3.0.8/themes/default/style.css
 lib/emby-server/dashboard-ui/thirdparty/jstree3.0.8/themes/default/style.min.css
 lib/emby-server/dashboard-ui/thirdparty/jstree3.0.8/themes/default/throbber.gif
 lib/emby-server/dashboard-ui/thirdparty/paper-button-style.css
-lib/emby-server/dashboard-ui/thirdparty/require.js
+lib/emby-server/dashboard-ui/thirdparty/paper-ie10.css
 lib/emby-server/dashboard-ui/thirdparty/social-share-kit-1.0.4/dist/css/social-share-kit.css
 lib/emby-server/dashboard-ui/thirdparty/social-share-kit-1.0.4/dist/fonts/social-share-kit.eot
 lib/emby-server/dashboard-ui/thirdparty/social-share-kit-1.0.4/dist/fonts/social-share-kit.svg
