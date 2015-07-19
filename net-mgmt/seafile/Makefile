@@ -2,6 +2,7 @@
 
 PORTNAME=	seafile
 PORTVERSION=	4.0.6
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-server
 CATEGORIES=	net-mgmt devel
@@ -16,7 +17,6 @@ LIB_DEPENDS=	libsearpc.so:${PORTSDIR}/devel/libsearpc \
 		libevhtp.so:${PORTSDIR}/www/libevhtp \
 		libzdb.so:${PORTSDIR}/databases/libzdb \
 		libcrypto.so:${PORTSDIR}/security/openssl \
-		libarchive.so.13:${PORTSDIR}/archivers/libarchive \
 		libcurl.so:${PORTSDIR}/ftp/curl \
 		libinotify.so:${PORTSDIR}/devel/libinotify \
 		libccnet.so:${PORTSDIR}/net-mgmt/ccnet
@@ -33,8 +33,9 @@ SHEBANG_FILES=	scripts/*.sh scripts/upgrade/*.sh
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
+CONFIGURE_ENV=	SSL_CFLAGS="${OPENSSLINC}" SSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto" \
+		LIBARCHIVE_CFLAGS="-I/usr/include" LIBARCHIVE_LIBS="-larchive"
 
-WITH_OPENSSL_PORT=	yes
 PATHFIX_MAKEFILEIN=	Makefile.am
 
 CONFIGURE_ARGS=	--enable-server
