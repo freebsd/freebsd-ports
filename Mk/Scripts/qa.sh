@@ -103,7 +103,7 @@ baselibs() {
 			err "Bad linking on ${f} please add USES=libarchive"
 			rc=1
 			;;
-		/usr/lib/libedit*)
+		/lib/libedit*)
 			err "Bad linking on ${f} please add USES=libedit"
 			rc=1
 			;;
