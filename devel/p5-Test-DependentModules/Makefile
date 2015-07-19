@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-DependentModules
-PORTVERSION=	0.20
-PORTREVISION=	1
+PORTVERSION=	0.21
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,6 +25,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-File-Copy-Recursive>=0:${PORTSDIR}/devel/p5-File-Copy-Recursive \
 		p5-Module-Build-Tiny>=0:${PORTSDIR}/devel/p5-Module-Build-Tiny
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
