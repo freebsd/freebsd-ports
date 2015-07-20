@@ -4541,7 +4541,6 @@
     SUBDIR += rubygem-buftok
     SUBDIR += rubygem-bugspots
     SUBDIR += rubygem-builder
-    SUBDIR += rubygem-builder31
     SUBDIR += rubygem-builder32
     SUBDIR += rubygem-byebug
     SUBDIR += rubygem-caesars
@@ -4884,7 +4883,6 @@
     SUBDIR += rubygem-tilt
     SUBDIR += rubygem-tilt1
     SUBDIR += rubygem-timers
-    SUBDIR += rubygem-timers1
     SUBDIR += rubygem-tins
     SUBDIR += rubygem-tins0
     SUBDIR += rubygem-toml
