@@ -190,6 +190,7 @@
     SUBDIR += p5-Date-Japanese-Holiday
     SUBDIR += p5-DateTime-Calendar-Japanese-Era
     SUBDIR += p5-DateTime-Format-Japanese
+    SUBDIR += p5-Encode-EUCJPASCII
     SUBDIR += p5-Encode-EUCJPMS
     SUBDIR += p5-Encode-ISO2022
     SUBDIR += p5-Encode-JP-Emoji
