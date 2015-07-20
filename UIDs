@@ -47,7 +47,7 @@ mud:*:97:97::0:0:MUD Owner:/nonexistent:/bin/sh
 msql:*:98:98::0:0:mSQL-2 pseudo-user:/var/db/msqldb:/bin/sh
 rscsi:*:99:99::0:0:Remote SCSI:/usr/local/rscsi:/usr/local/sbin/rscsi
 squid:*:100:100::0:0:squid caching-proxy pseudo user:/var/squid:/usr/sbin/nologin
-quagga:*:101:101::0:0:Quagga route daemon pseudo user:/usr/local/etc/quagga:/usr/sbin/nologin
+quagga:*:101:101::0:0:Quagga route daemon pseudo user:/var/empty:/usr/sbin/nologin
 ganglia:*:102:102::0:0:Ganglia User:/nonexistent:/usr/sbin/nologin
 sgeadmin:*:103:103::0:0:Sun Grid Engine Admin:/nonexistent:/usr/sbin/nologin
 slimserv:*:104:104::0:0:Slim Devices SlimServer pseudo-user:/nonexistent:/usr/sbin/nologin
