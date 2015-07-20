@@ -14,7 +14,7 @@ LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GNOME=	gtk20 intlhack
-USES=		tar:xz iconv gmake pkgconfig
+USES=		gmake iconv pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	NLS DEBUG DOCKLET NOTIFIER LIBNOTIFY NANCY MOUSE EXTERNAL IPLOOKUP PROXY
@@ -56,7 +56,7 @@ CONFIGURE_ARGS+=--disable-notifier
 
 .if ${PORT_OPTIONS:MLIBNOTIFY}
 CONFIGURE_ARGS+=--enable-libnotify
-LIB_DEPENDS+=	libnotifa.soy:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=	libnotify.so:${PORTSDIR}/devel/libnotify
 .endif
 
 .if empty(PORT_OPTIONS:MNANCY)
