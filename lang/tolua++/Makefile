@@ -3,7 +3,7 @@
 
 PORTNAME=	tolua++
 PORTVERSION=	1.0.93
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang devel
 MASTER_SITES=	http://www.codenix.com/~tolua/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -30,16 +30,13 @@ BROKEN=		Does not install on sparc64-9
 post-patch:
 	@${REINPLACE_CMD} -e "s|'lualib',||; s|lua|lua-${LUA_VER}|g" ${WRKSRC}/config_posix.py
 
-post-build:
-	${STRIP_CMD} ${WRKSRC}/lib/libtolua++.so
-
 do-install:
 	${MKDIR} ${STAGEDIR}${TGT_BINDIR} ${STAGEDIR}${TGT_INCDIR} ${STAGEDIR}${TGT_LIBDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/tolua++ ${STAGEDIR}${TGT_BINDIR}
 	${LN} -sf tolua++ ${STAGEDIR}${PREFIX}/bin/tolua++-${LUA_VER}
 	${INSTALL_DATA} ${WRKSRC}/include/tolua++.h ${STAGEDIR}${TGT_INCDIR}
 	${INSTALL_DATA} ${WRKSRC}/lib/libtolua++.a ${STAGEDIR}${TGT_LIBDIR}
-	${INSTALL_DATA} ${WRKSRC}/lib/libtolua++.so ${STAGEDIR}${TGT_LIBDIR}
-	${INSTALL_DATA} ${WRKSRC}/lib/libtolua++.so ${STAGEDIR}${PREFIX}/lib/libtolua++-${LUA_VER}.so
+	${INSTALL_LIB} ${WRKSRC}/lib/libtolua++.so ${STAGEDIR}${TGT_LIBDIR}
+	${INSTALL_LIB} ${WRKSRC}/lib/libtolua++.so ${STAGEDIR}${PREFIX}/lib/libtolua++-${LUA_VER}.so
 
 .include <bsd.port.mk>
