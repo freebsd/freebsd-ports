@@ -58,6 +58,50 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0bfda05f-2e6f-11e5-a4a5-002590263bf5">
+    <topic>cacti -- Multiple XSS and SQL injection vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>cacti</name>
+	<range><lt>0.8.8e</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Cacti Group, Inc. reports:</p>
+	<blockquote cite="http://www.cacti.net/release_notes_0_8_8e.php">
+	  <p>Important Security Fixes</p>
+	  <ul>
+	    <li>Multiple XSS and SQL injection vulnerabilities</li>
+	    <li>CVE-2015-4634 - SQL injection in graphs.php</li>
+	  </ul>
+	  <p>Changelog</p>
+	  <ul>
+	    <li>bug: Fixed various SQL Injection vectors</li>
+	    <li>bug#0002574: SQL Injection Vulnerabilities in graph items and
+	       graph template items</li>
+	    <li>bug#0002577: CVE-2015-4634 - SQL injection in graphs.php</li>
+	    <li>bug#0002579: SQL Injection Vulnerabilities in data sources</li>
+	    <li>bug#0002580: SQL Injection in cdef.php</li>
+	    <li>bug#0002582: SQL Injection in data_templates.php</li>
+	    <li>bug#0002583: SQL Injection in graph_templates.php</li>
+	    <li>bug#0002584: SQL Injection in host_templates.php</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4634</cvename>
+      <freebsdpr>ports/201702</freebsdpr>
+      <url>http://www.cacti.net/release_notes_0_8_8e.php</url>
+      <mlist>http://seclists.org/oss-sec/2015/q3/150</mlist>
+    </references>
+    <dates>
+      <discovery>2015-07-12</discovery>
+      <entry>2015-07-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8b1f53f3-2da5-11e5-86ff-14dae9d210b8">
     <topic>php-phar -- multiple vulnerabilities</topic>
     <affects>
