@@ -1,14 +1,14 @@
 --- jdk/make/lib/ServiceabilityLibraries.gmk.orig	2015-07-18 14:43:00.000000000 -0700
 +++ jdk/make/lib/ServiceabilityLibraries.gmk	2015-07-18 14:44:25.000000000 -0700
-@@ -269,7 +269,7 @@
-     CFLAGS := $(LIBINSTRUMENT_CFLAGS), \
-     CFLAGS_debug := -DJPLIS_LOGGING, \
-     CFLAGS_release := -DNO_JPLIS_LOGGING, \
--    CFLAGS_bsd := $(BSD_ICONV_CFLAGS), \
-+    CFLAGS_bsd := %%ICONV_CPPFLAGS%%, \
-     MAPFILE := $(JDK_TOPDIR)/make/mapfiles/libinstrument/mapfile-vers, \
-     LDFLAGS := $(LDFLAGS_JDKLIB) \
-         $(call SET_SHARED_LIBRARY_ORIGIN) \
+@@ -255,7 +255,7 @@
+   endif
+   BSD_ICONV_CFLAGS:= -I$(PACKAGE_PATH)/include
+   ifneq ($(OPENJDK_TARGET_OS_VENDOR), openbsd)
+-    BSD_ICONV_CFLAGS += -DLIBICONV_PLUG
++    BSD_ICONV_CFLAGS += %%ICONV_CPPFLAGS%%
+   endif
+ endif
+ 
 @@ -283,7 +283,7 @@
      LDFLAGS_SUFFIX_solaris := $(LIBZ) -L $(INSTALL_LIBRARIES_HERE)/jli -ljli $(LIBDL) -lc, \
      LDFLAGS_SUFFIX_linux := $(LIBZ) -L $(INSTALL_LIBRARIES_HERE)/jli -ljli $(LIBDL), \
