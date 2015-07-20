@@ -4,7 +4,7 @@
 PORTNAME=	mlan3
 PORTVERSION=	1.00
 CATEGORIES=	comms
-MASTER_SITES=	files.maximintegrated.com/sia_bu/public/
+MASTER_SITES=	http://files.maximintegrated.com/sia_bu/public/
 DISTNAME=	owpd300b
 
 MAINTAINER=	portmaster@bsdforge.com
