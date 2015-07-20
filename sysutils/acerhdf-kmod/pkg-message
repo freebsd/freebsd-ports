@@ -1,0 +1,11 @@
+The acerhdf fan control is disabled by default.  To enable it add the
+following settings to /boot/loader.conf
+
+   acerhdf_load="YES"
+   
+and to /etc/sysctl.conf
+
+   dev.acerhdf.0.enabled=1
+
+Refer to acerhdf(4) for additonal settings.  Choose wisely and be
+careful that your system does not overheat!

@@ -13,6 +13,7 @@
     SUBDIR += abgx360
     SUBDIR += abgx360gui
     SUBDIR += accountsservice
+    SUBDIR += acerhdf-kmod
     SUBDIR += acpi_call
     SUBDIR += acpica-tools
     SUBDIR += acts
