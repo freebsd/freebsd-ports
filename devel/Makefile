@@ -192,6 +192,7 @@
     SUBDIR += caf
     SUBDIR += calibrator
     SUBDIR += capstone
+    SUBDIR += cargo
     SUBDIR += cask
     SUBDIR += catch
     SUBDIR += cbind
