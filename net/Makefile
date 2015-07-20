@@ -115,6 +115,7 @@
     SUBDIR += e169-stats
     SUBDIR += easysoap
     SUBDIR += echoping
+    SUBDIR += elixir-oauth2
     SUBDIR += empty
     SUBDIR += enet
     SUBDIR += erlang-ranch
