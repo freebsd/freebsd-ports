@@ -2,6 +2,7 @@
 
 PORTNAME=	ptex
 PORTVERSION=	3.6
+PORTREVISION=	1
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2015/
 PKGNAMEPREFIX=	ja-tex-
@@ -14,7 +15,7 @@ EXTRACT_ONLY=	texlive-${DISTVERSION_TEXLIVE_SOURCE}-source${EXTRACT_SUFX}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	ASCII Japanese pTeX
 
-USES=		tar:xz gmake
+USES=		tar:xz gmake pkgconfig
 USE_TEX=	kpathsea web2c ptexenc texmf formats fmtutil
 USE_XORG=	pixman
 USE_GNOME=	cairo

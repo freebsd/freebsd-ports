@@ -2,7 +2,7 @@
 
 PORTNAME=	aleph
 PORTVERSION=	1.15.2.1.r.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2015/
 PKGNAMEPREFIX=	tex-
@@ -15,7 +15,7 @@ EXTRACT_ONLY=	texlive-${DISTVERSION_TEXLIVE_SOURCE}-source${EXTRACT_SUFX}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	TeX Engine including Omega and e-TeX features
 
-USES=		gmake tar:xz
+USES=		gmake tar:xz pkgconfig
 USE_TEX=	kpathsea web2c texmf formats fmtutil
 USE_XORG=	pixman
 USE_GNOME=	cairo
