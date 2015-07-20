@@ -7696,3 +7696,8 @@ audio/rubyripper||2015-07-16|Has expired: Does not build and is deprecated upstr
 ports-mgmt/vulnerability-test-port||2015-07-19|Useless after portaudit retirement
 print/texlive-infra|print/texlive-tlmgr|2015-07-20|Renamed
 print/cm-super||2015-07-20|Obsolete
+devel/rubygem-builder31||2015-07-20|Has expired: not used by other ports anymore
+devel/rubygem-timers1||2015-07-20|Has expired: not used by other ports anymore
+net/rubygem-rubyntlm01||2015-07-20|Has expired: not used by other ports anymore
+security/rubygem-net-scp11||2015-07-20|Has expired: not used by other ports anymore
+security/rubygem-net-ssh27||2015-07-20|Has expired: not used by other ports anymore
