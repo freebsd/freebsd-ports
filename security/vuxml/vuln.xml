@@ -232,7 +232,7 @@ Notes:
 	<name>apache22-itk-mpm</name>
 	<name>apache22-peruser-mpm</name>
 	<name>apache22-worker-mpm</name>
-	<range><lt>2.2.31</lt></range>
+	<range><le>2.2.29_5</le></range>
       </package>
     </affects>
     <description>
