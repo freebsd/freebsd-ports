@@ -58,6 +58,42 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8a1d0e63-1e07-11e5-b43d-002590263bf5">
+    <topic>pcre -- Heap Overflow Vulnerability in find_fixedlength()</topic>
+    <affects>
+      <package>
+	<name>pcre</name>
+	<range><le>8.37_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Venustech ADLAB reports:</p>
+	<blockquote cite="https://bugs.exim.org/show_bug.cgi?id=1651">
+	  <p>PCRE library is prone to a vulnerability which leads to Heap
+	    Overflow. During subpattern calculation of a malformed regular
+	    expression, an offset that is used as an array index is fully
+	    controlled and can be large enough so that unexpected heap
+	    memory regions are accessed.</p>
+	  <p>One could at least exploit this issue to read objects nearby of
+	    the affected application's memory.</p>
+	  <p>Such information disclosure may also be used to bypass memory
+	    protection method such as ASLR.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5073</cvename>
+      <url>https://bugs.exim.org/show_bug.cgi?id=1651</url>
+      <url>http://vcs.pcre.org/pcre?view=revision&amp;revision=1571</url>
+      <mlist>http://www.openwall.com/lists/oss-security/2015/06/26/1</mlist>
+    </references>
+    <dates>
+      <discovery>2015-06-23</discovery>
+      <entry>2015-06-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0bfda05f-2e6f-11e5-a4a5-002590263bf5">
     <topic>cacti -- Multiple XSS and SQL injection vulnerabilities</topic>
     <affects>
