@@ -1,0 +1,11 @@
+Text::Levenshtein::Damerau returns the true Damerau Levenshtein edit distance of
+strings with adjacent transpositions. Useful for fuzzy matching, DNA variation
+metrics, and fraud detection.
+
+Text::Levenshtein::Damerau defaults to using Pure Perl
+Text::Levenshtein::Damerau::PP, but has an XS addon
+Text::Levenshtein::Damerau::XS for massive speed imrovements. Works correctly
+with utf8 if backend supports it; known to work with
+Text::Levenshtein::Damerau::PP and Text::Levenshtein::Damerau::XS.
+
+WWW: http://search.cpan.org/dist/Text-Levenshtein-Damerau/
