@@ -65,18 +65,23 @@ _GS_RUN_DEP=	yes
 .undef _GS_AGPL_SUFFIX
 .undef _GS_SELECTED
 .for V in ${_GS_ARGS} ${GHOSTSCRIPT_DEFAULT}
-.if ${V:M9}
+_V=${V}
+.if ${_V:M9}
 _GS_SELECTED?=		9
-.elif ${V:M9.06}
+.elif ${_V:M9.06}
 _GS_SELECTED?=		9
-.elif ${V:M9.16}
+.elif ${_V:M9.16}
 _GS_SELECTED?=		9
 _GS_AGPL_SUFFIX?=	-agpl
-.elif ${V:Magpl} && defined(_GS_SELECTED) && !empty(_GS_SELECTED:N9)
+.elif ${_V:Magpl} && defined(_GS_SELECTED)
+.if ${_GS_SELECTED:M9}
+_GS_AGPL_SUFFIX?=	-agpl
+.else
 IGNORE=		Ghostscript-agpl is only available in version 9
-.elif ${V:M8}
+.endif
+.elif ${_V:M8}
 _GS_SELECTED?=		8
-.elif ${V:M7}
+.elif ${_V:M7}
 _GS_SELECTED?=		7
 .endif
 .endfor
