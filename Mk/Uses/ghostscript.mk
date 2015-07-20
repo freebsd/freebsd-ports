@@ -29,11 +29,11 @@
 _INCLUDE_USES_GHOSTSCRIPT_MK=	yes
 
 # allowed versions
-_GS_VERSION=	7 8 9
+_GS_VERSION=	7 8 9 9.06 9.16
 
 _GS_ARGS=		${ghostscript_ARGS}
 
-.if ${_GS_ARGS:N[789]:Nnox11:Nagpl:Nbuild:Nrun}
+.if ${_GS_ARGS:N[789]:N9.06:N9.16:Nnox11:Nagpl:Nbuild:Nrun}
 IGNORE=		Unknown ghostscript argument ${_GS_ARGS}
 .endif
 
@@ -62,22 +62,26 @@ _GS_BUILD_DEP=	yes
 _GS_RUN_DEP=	yes
 .endif
 
-_GS_SELECTED=	${GHOSTSCRIPT_DEFAULT}
-.if ${_GS_ARGS:M9}
-_GS_SELECTED:=		9
-.elif ${_GS_ARGS:M8}
-_GS_SELECTED:=		8
-.elif ${_GS_ARGS:M7}
-_GS_SELECTED:=		7
-.endif
-
 .undef _GS_AGPL_SUFFIX
-.if ${_GS_ARGS:Magpl}
-. if ${_GS_SELECTED} == "9"
-_GS_AGPL_SUFFIX=	-agpl
-. else
+.undef _GS_SELECTED
+.for V in ${_GS_ARGS} ${GHOSTSCRIPT_DEFAULT}
+.if ${V:M9}
+_GS_SELECTED?=		9
+.elif ${V:M9.06}
+_GS_SELECTED?=		9
+.elif ${V:M9.16}
+_GS_SELECTED?=		9
+_GS_AGPL_SUFFIX?=	-agpl
+.elif ${V:Magpl} && defined(_GS_SELECTED) && !empty(_GS_SELECTED:N9)
 IGNORE=		Ghostscript-agpl is only available in version 9
-. endif
+.elif ${V:M8}
+_GS_SELECTED?=		8
+.elif ${V:M7}
+_GS_SELECTED?=		7
+.endif
+.endfor
+.if !defined(_GS_SELECTED)
+IGNORE=		Invalid ghostscript argument or GHOSTSCRIPT_DEFAULT
 .endif
 
 .undef _GS_NOX11_SUFFIX
