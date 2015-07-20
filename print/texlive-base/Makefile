@@ -2,6 +2,7 @@
 
 PORTNAME=	texlive
 PORTVERSION=	20150521
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2015/
 PKGNAMESUFFIX=	-base
@@ -15,7 +16,7 @@ RUN_DEPENDS=	psbook:${PORTSDIR}/print/psutils
 LIB_DEPENDS=	libicuio.so:${PORTSDIR}/devel/icu \
 		libt1.so:${PORTSDIR}/devel/t1lib \
 		libTECkit.so:${PORTSDIR}/textproc/teckit \
-		libgraphite.so:${PORTSDIR}/graphics/silgraphite \
+		libgraphite2.so:${PORTSDIR}/graphics/graphite2 \
 		libgd.so:${PORTSDIR}/graphics/gd \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libttf.so:${PORTSDIR}/print/freetype \
@@ -77,7 +78,7 @@ CONFIGURE_ARGS= --disable-native-texlive-build \
 		--with-freetype2-libdir=${LOCALBASE}/lib \
 		--with-system-cairo \
 		--with-system-gd \
-		--with-system-graphite \
+		--with-system-graphite2 \
 		--with-system-pixman \
 		--with-system-poppler \
 		--with-system-t1lib \
