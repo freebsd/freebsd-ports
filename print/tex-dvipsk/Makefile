@@ -2,6 +2,7 @@
 
 PORTNAME=	dvipsk
 PORTVERSION=	5.995
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2015/
 PKGNAMEPREFIX=	tex-
@@ -18,7 +19,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpaper.so:${PORTSDIR}/print/libpaper
 
-USES=		gmake tar:xz
+USES=		gmake tar:xz pkgconfig
 USE_TEX=	kpathsea web2c texmf texhash
 TEXHASHDIRS=	${TEXMFDISTDIR}
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
