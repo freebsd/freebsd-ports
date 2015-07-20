@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bitlbee
-PORTVERSION=	3.4
+PORTVERSION=	3.4.1
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/ \
 		LOCAL/brix
