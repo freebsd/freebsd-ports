@@ -7695,3 +7695,4 @@ print/pup||2015-07-14|Development ceased, unusable
 audio/rubyripper||2015-07-16|Has expired: Does not build and is deprecated upstream
 ports-mgmt/vulnerability-test-port||2015-07-19|Useless after portaudit retirement
 print/texlive-infra|print/texlive-tlmgr|2015-07-20|Renamed
+print/cm-super||2015-07-20|Obsolete
