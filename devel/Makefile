@@ -3199,6 +3199,7 @@
     SUBDIR += p5-Test-use-ok
     SUBDIR += p5-Test-utf8
     SUBDIR += p5-Text-Levenshtein
+    SUBDIR += p5-Text-Levenshtein-Damerau
     SUBDIR += p5-Text-LevenshteinXS
     SUBDIR += p5-Text-Outdent
     SUBDIR += p5-Text-vFile-asData
