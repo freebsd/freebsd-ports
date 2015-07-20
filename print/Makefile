@@ -105,6 +105,7 @@
     SUBDIR += kover
     SUBDIR += kpdftool
     SUBDIR += latex-beamer
+    SUBDIR += latex-biber
     SUBDIR += latex-ltablex
     SUBDIR += latex-resume
     SUBDIR += latex2rtf
