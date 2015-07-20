@@ -178,11 +178,12 @@ Notes:
       <mlist>http://seclists.org/oss-sec/2015/q3/94</mlist>
       <url>https://docs.moodle.org/dev/Moodle_2.7.9_release_notes</url>
       <url>https://docs.moodle.org/dev/Moodle_2.8.7_release_notes</url>
-      <url>https://docs.moodle.org/dev/Moodle_2.7.9_release_notes</url>
+      <url>https://docs.moodle.org/dev/Moodle_2.9.1_release_notes</url>
     </references>
     <dates>
       <discovery>2015-07-06</discovery>
       <entry>2015-07-18</entry>
+      <modified>2015-07-19</modified>
     </dates>
   </vuln>
 
