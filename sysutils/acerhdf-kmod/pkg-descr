@@ -1,0 +1,12 @@
+The acerhdf kernel module allows you to control the fans of some of
+the Acer Aspire One netbook models.  This includes the models Acer
+AO521, Acer AO531h, Acer AO751h Acer Aspire 1410, Acer Aspire 1810T,
+Acer Aspire 1810TZ, Acer Aspire 1825PTZ, Acer Aspire 5315, Acer Aspire
+5739G, Acer Aspire 5755G, Acer Aspire One 753, Acer Aspire One A110,
+Acer Aspire One A150, Acer Extensa 5420, Acer LT-10Q, Acer TM8573T,
+Acer TravelMate 7730G, Gateway AOA110, Gateway AOA150, Gateway LT31,
+Packard Bell AOA110, Packard Bell AOA150, Packard Bell DOA150, Packard
+Bell DOTMA, Packard Bell DOTMU, Packard Bell DOTVR46, and Packard Bell
+ENBFT.
+
+WWW: https://github.com/t6/kmod-acerhdf
