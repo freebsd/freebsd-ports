@@ -448,7 +448,6 @@
     SUBDIR += ksaneplugin
     SUBDIR += ksnapshot
     SUBDIR += kudu
-    SUBDIR += kuickshow-kde4
     SUBDIR += l2p
     SUBDIR += laternamagica
     SUBDIR += lcdtest
@@ -976,7 +975,6 @@
     SUBDIR += skanlite
     SUBDIR += skencil
     SUBDIR += sketch
-    SUBDIR += sng
     SUBDIR += springgraph
     SUBDIR += squish
     SUBDIR += sswf
