@@ -413,6 +413,7 @@
     SUBDIR += sloccount
     SUBDIR += sls
     SUBDIR += smssend
+    SUBDIR += solarized
     SUBDIR += spamcalc
     SUBDIR += sshbuddy
     SUBDIR += sssnips
