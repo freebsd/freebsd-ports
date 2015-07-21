@@ -7716,3 +7716,6 @@ devel/rubygem-timers1||2015-07-20|Has expired: not used by other ports anymore
 net/rubygem-rubyntlm01||2015-07-20|Has expired: not used by other ports anymore
 security/rubygem-net-scp11||2015-07-20|Has expired: not used by other ports anymore
 security/rubygem-net-ssh27||2015-07-20|Has expired: not used by other ports anymore
+graphics/kuickshow-kde4||2015-07-21|Has expired: Broken for more than 6 months
+graphics/sng||2015-07-21|Has expired: Broken for more than 6 months
+japanese/netype||2015-07-21|Has expired: Broken for more than 6 months
