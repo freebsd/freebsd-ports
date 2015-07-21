@@ -72,7 +72,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/pkgconfig/s,$${LIBDIR},&data,' \
 		${WRKSRC}/waflib/TaskGen.py
 
-.if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG) && !defined(INSTALL_STRIPPED)
+.if !defined(WITH_DEBUG) || defined(WITHOUT_DEBUG) || defined(INSTALL_STRIPPED)
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so
 .  for b in mfcc notes onset pitch quiet track
