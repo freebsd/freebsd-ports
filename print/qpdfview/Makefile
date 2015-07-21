@@ -12,8 +12,8 @@ COMMENT=	Tabbed DjVu/PDF/PS document viewer
 LICENSE=	GPLv2
 
 USES=		desktop-file-utils pkgconfig qmake
-USE_QT4=	corelib dbus gui imageformats_run linguist_build moc_build \
-		rcc_build sql sql-sqlite3_run svg xml
+USE_QT4=	corelib dbus gui imageformats_run linguisttools_build \
+		moc_build rcc_build sql sql-sqlite3_run svg xml
 USE_LDCONFIG=	yes
 QMAKE_ARGS+=	QMAKE_CFLAGS_RELEASE="" QMAKE_CXXFLAGS_RELEASE=""
 QMAKE_SOURCE_PATH=	${PORTNAME}.pro
