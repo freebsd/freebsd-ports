@@ -175,7 +175,6 @@
     SUBDIR += navi2ch
     SUBDIR += ne
     SUBDIR += nethack34
-    SUBDIR += netype
     SUBDIR += newosaka
     SUBDIR += ng
     SUBDIR += ng-canna
