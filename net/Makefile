@@ -541,6 +541,7 @@
     SUBDIR += p5-Net-Amazon-S3
     SUBDIR += p5-Net-Amazon-Signature
     SUBDIR += p5-Net-Amazon-Signature-V3
+    SUBDIR += p5-Net-Amazon-Signature-V4
     SUBDIR += p5-Net-Amazon-Thumbnail
     SUBDIR += p5-Net-Analysis
     SUBDIR += p5-Net-Appliance-Phrasebook
