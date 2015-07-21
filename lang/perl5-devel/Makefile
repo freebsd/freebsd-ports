@@ -186,11 +186,6 @@ PKGINSTALL=	${WRKDIR}/use.perl
 PKGDEINSTALL=	${WRKDIR}/use.perl
 .endif
 
-.if ${PORT_OPTIONS:MDEBUG}
-STRIP=
-STRIP_CMD=	${TRUE}
-.endif
-
 # XXX
 # No need to spam logs, or make me wait
 .if !defined(PACKAGE_BUILDING) && !defined(PERL_DEV_SHUT_UP)
@@ -221,13 +216,12 @@ post-extract:
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/Configure ${WRKSRC}/hints/freebsd.sh
-.if ${PORT_OPTIONS:MPTHREAD}
+post-patch-PTHREAD-on:
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|-lpthread|g;' \
 		${WRKSRC}/hints/freebsd.sh
-.else
+post-patch-PTHREAD-off:
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%||g;' \
 		${WRKSRC}/hints/freebsd.sh
-.endif
 .endif # MAKING_PATCHES
 
 post-install:

@@ -161,11 +161,6 @@ PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
 		PRIV_LIB=${_PRIV_LIB} \
 		ARCH_LIB=${_ARCH_LIB}
 
-.if ${PORT_OPTIONS:MDEBUG}
-STRIP=
-STRIP_CMD=	${TRUE}
-.endif
-
 .if ${OSVERSION} >= 900022
 PLIST_SUB+=	MANCONF=""
 .else
@@ -184,13 +179,15 @@ post-extract:
 	${LN} -s libperl.so.${PERL_VERSION} ${WRKSRC}/libperl.so
 	${LN} -s libperl.so.${PERL_VERSION} ${WRKSRC}/libperl.so.${PERL_VER}
 
+.if !defined(MAKING_PATCHES)
+# make clean patch makepatch MAKING_PATCHES=
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/Configure ${WRKSRC}/hints/freebsd.sh
-.if ${PORT_OPTIONS:MPTHREAD}
+post-patch-PTHREAD-on:
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|-lpthread|g;' \
 		${WRKSRC}/hints/freebsd.sh
-.else
+post-patch-PTHREAD-off:
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%||g;' \
 		${WRKSRC}/hints/freebsd.sh
 .endif
