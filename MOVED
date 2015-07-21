@@ -4857,6 +4857,7 @@ math/matharray||2013-08-28|Does not build with recent GNUstep
 net/netclasses||2013-08-28|Does not build with recent GNUstep
 sysutils/burn||2013-08-28|Does not build with recent GNUstep
 www/webserver||2013-08-28|Does not build with recent GNUstep
+www/webservices||2013-08-28|Does not build with recent GNUstep
 x11-toolkits/gnustep-art||2013-08-28|Does not build with recent GNUstep
 x11-toolkits/gnustep-cairo|x11-toolkits/gnustep-back|2013-08-28|Removed deprecated back ends
 x11-toolkits/gnustep-xdps||2013-08-28|Does not build with recent GNUstep
