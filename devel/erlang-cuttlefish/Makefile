@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cuttlefish
-PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTVERSION=	2.0.4
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
@@ -16,8 +15,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	basho
 
 REBAR_TARGETS=	compile escriptize
-ERL_BUILD_DEPS=	devel/erlang-lager \
-		devel/erlang-getopt \
+ERL_BUILD_DEPS=	devel/erlang-getopt \
+		devel/erlang-lager \
 		devel/erlang-neotoma
 ERL_RUN_DEPS:=	${ERL_BUILD_DEPS}
 
