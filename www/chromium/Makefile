@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	43.0.2357.132
+PORTVERSION=	43.0.2357.134
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # default, but needed to get distinfo correct if TEST is on
@@ -73,6 +73,7 @@ GYP_DEFINES+=	\
 		linux_breakpad=0 \
 		linux_use_heapchecker=0 \
 		linux_strip_binary=1 \
+		use_aura=1 \
 		test_isolation_mode=noop \
 		disable_nacl=1 \
 		enable_extensions=1 \
