@@ -3103,6 +3103,7 @@ www/p5-Apache-DBI-mp2|www/p5-Apache-DBI|2012-01-01|This sub-port is no longer ne
 editors/ged||2012-01-04|Removed: Use ed from base instead
 ftp/proftpd-devel||2012-01-04|Removed
 devel/ruby-thrift|devel/rubygem-thrift|2012-01-04|Renamed: now a rubygems module
+x11-wm/cl-stumpwm||2012-01-04|Abandoned copy of x11-wm/stumpwm
 www/knowledgekit||2012-01-06|Development seems stalled. Last release is from 1999. Doesn't works with Zope 2.13
 www/znavigator||2012-01-06|Development seems stalled. Last release is from 2000
 www/zope-FileSystemSite||2012-01-06|Doesn't work with modern Zope versions
@@ -4959,6 +4960,7 @@ x11-toolkits/guile-gtk||2013-10-05|EOLed upstream for very long
 textproc/gxmlviewer||2013-10-05|Depends on EOLed gnome1
 comms/mlan|comms/mlan3|2013-10-05|Project is obsoleted by newer API
 graphics/gnomeiconedit||2013-10-05|Depends on EOLed gnome1
+games/bombermaze||2013-10-05|Depends on EOLed gnome1
 games/glife||2013-10-05|Depends on EOLed gnome1
 emulators/visualos||2013-10-05|Depends on EOLed gnome1
 editors/xmleditor||2013-10-05|Depends on EOLed gnome1
@@ -5146,6 +5148,7 @@ textproc/stardict2||2013-11-07|Has expired: Newer version available in ports: te
 devel/pure-stlvec|devel/pure-stllib|2013-11-07|Removed: Use devel/pure-stllib instead
 textproc/lexxia||2013-11-07|Removed no public distfile available anymore
 textproc/docproj-nojadetex||2013-11-07|Removed
+textproc/p5-XML-Hadler-HTMLWriter|textproc/p5-XML-Handler-HTMLWriter|2013-11-07|Removed
 games/frozenbubble|games/frozen-bubble|2013-11-08|Renamed to match upstream naming
 biology/dotter|biology/seqtools|2013-11-10|Replaced with biology/seqtools
 games/nil||2013-11-11|Removed: long unmaintained, fails to build
@@ -5163,6 +5166,7 @@ audio/gmpeg-devel||2013-11-17|Removed, no active development for more than 8 yea
 graphics/gqview-devel||2013-11-17|Removed, no active development for more than 8 years
 textproc/stardict2-dictd_mova|textproc/stardict-dictd_mova|2013-11-17|Renamed
 textproc/stardict2-quick|textproc/stardict-quick|2013-11-17|Renamed
+security/ksecrets||2013-11-17|Defunct
 x11-toolkits/libgnomeuimm|x11-toolkits/libgnomeuimm26|2013-11-18|Older version; has no consumers in the ports tree
 devel/libglademm|devel/libglademm24|2013-11-18|Older version; has no consumers in the ports tree
 graphics/libgnomecanvasmm|graphics/libgnomecanvasmm26|2013-11-18|Older version; has no consumers in the ports tree
@@ -5328,6 +5332,7 @@ www/notftp||2014-01-01|Has expired: distfile unfetchable
 www/mod_lisp2||2014-01-01|Has expired: distfile unfetchable
 irc/xchat-gnome||2014-01-02|Has expired: broken and no release since 2009
 net-mgmt/unifi|net-mgmt/unifi3|2014-01-02|Rename to unifi3; unifi2 is coming to ports tree as well
+sysutils/rubygem-rubyimpi|sysutils/rubygem-rubyipmi|2014-01-02|Renamed
 www/codeigniter17|www/codeigniter|2014-01-04|Unsupported upstream, consider using newer version
 net-im/xfce4-messenger-plugin||2014-01-04|Has expired: Deprecated and no update for 7 years
 multimedia/xfce4-media|multimedia/xfce4-parole|2014-01-04|Has expired: Upstream development dead, use multimedia/xfce4-parole instead
@@ -6009,7 +6014,7 @@ devel/lua-redis-parser||2014-04-18|Has expired: Broken for more than 6 months
 biology/finchtv||2014-04-18|Has expired: Broken for more than 6 months
 net-im/ari-yahoo||2014-04-18|Has expired: Broken for more than 1 year (http://www.icculus.org/ari-yahoo/)
 www/sams||2014-04-21|Depends on PHP 4 which was removed two years ago
-x11-toolkits/vdkbuidler||2014-04-22|Abandonware, not stage friendly
+x11-toolkits/vdkbuilder||2014-04-22|Abandonware, not stage friendly
 emulators/mupen64-sdlinput|emulators/mupen64plus-input-sdl|2014-04-24|Has expired: Use mupen64plus instead
 emulators/mupen64-sdlaudio|emulators/mupen64plus-audio-sdl|2014-04-24|Has expired: Use mupen64plus instead
 emulators/mupen64-tr64||2014-04-24|Has expired: Use mupen64plus instead
@@ -6287,7 +6292,7 @@ japanese/latex2html||2014-07-23|Depends on decomissioned teTeX
 japanese/platex209||2014-07-23|Depends on decomissioned teTeX
 japanese/platex-jsclasses||2014-07-23|Depends on decomissioned teTeX
 japanese/platex-otf||2014-07-23|Depends on decomissioned teTeX
-japanese/ptex|japanese/tex-ptex|2014-07-23|Use TeXLive version
+japanese/jadetex-ptex|japanese/tex-ptex|2014-07-23|Use TeXLive version
 japanese/dvipsk|print/tex-dvipsk|2014-07-23|Use TeXLive version
 print/dvipsk-tetex|print/tex-dvipsk|2014-07-23|Use TeXLive version
 print/dvipdfmx|print/tex-dvipdfmx|2014-07-23|Use TeXLive version
@@ -7079,10 +7084,13 @@ databases/ruby-dbi|databases/rubygem-dbi|2014-09-21|Replaced by rubygem-dbi
 databases/ruby-dbd_mysql|databases/rubygem-dbd-mysql|2014-09-21|Replaced by rubygem-dbd-mysql
 databases/ruby-dbd_pg|databases/rubygem-dbd-pg|2014-09-21|Replaced by rubygem-dbd-pg
 databases/ruby-dbd_sqlite|databases/rubygem-dbd-sqlite3|2014-09-21|Replaced by rubygem-dbd-sqlite3
+databases/ruby-dbd-sqlite||2014-09-21|Dysfunctional
 textproc/ruby-amatch|textproc/rubygem-amatch|2014-09-21|Replaced by textproc/rubygem-amatch
+databases/rubygem-aspectr|devel/rubygem-aspectr|2014-09-21|Change category
 graphics/libggi||2014-09-22|Has expired: Unmaintained upstream
 devel/libgii||2014-09-22|Has expired: Unmaintained upstream
 graphics/fpc-ggi||2014-09-22|Has expired: Unmaintained upstream
+graphics/linux-sdl_ttf||2014-09-22|Replaced by graphics/linux-*-sdl_ttf
 www/mediawiki121||2014-09-23|Has expired: Not maintained upstream
 sysutils/rubygem-chef-expander||2014-09-25|Has expired: Depends on broken rubygem-dep_selector
 sysutils/rubygem-chef-server||2014-09-25|Has expired: Depends on broken rubygem-dep_selector
@@ -7090,6 +7098,7 @@ sysutils/rubygem-chef-solr||2014-09-25|Has expired: Depends on broken rubygem-de
 www/rubygem-chef-server-webui||2014-09-25|Has expired: Depends on broken rubygem-dep_selector
 www/rubygem-chef-server-api||2014-09-25|Has expired: Depends on broken rubygem-dep_selector
 databases/freetds-msdblib||2014-09-27|No longer required, now covered by databases/freetds
+sysutils/rubgem-bundler_ext|sysutils/rubygem-bundler_ext|2014-09-27|Renamed
 archivers/rpm5||2014-09-28|Has expired: Broken for more than 6 months
 devel/cocaine-core||2014-09-28|Has expired: Broken for more than 6 months
 graphics/ruby-tgif||2014-09-28|Has expired: Broken for more than 6 months
@@ -7116,6 +7125,7 @@ editors/mlview||2014-10-03|Removed, because x11-toolkits/eel was removed
 textproc/gnome-translate||2014-10-03|Removed, because x11-toolkits/eel was removed
 x11/avant-window-navigator-gnome||2014-10-03|Removed doesn't build with update gnome-desktop
 www/moodle25||2014-10-05|Has expired: Upstream support ended
+astro/openmap||2014-10-07|Ten years out of date
 ports-mgmt/portaudit||2014-10-13|portaudit expired when pkg_tools did, use pkg audit
 ports-mgmt/portaudit-db||2014-10-13|portaudit expired
 ports-mgmt/kports-qt4||2014-10-13|portaudit expired
@@ -7168,7 +7178,7 @@ misc/xmonad-log-applet||2014-11-19|Depends on removed gnome-panel
 net/gnome-netstatus||2014-11-19|Depends on removed gnome-panel
 security/seahorse-plugins||2014-11-19|Removed, not used in GNOME 3
 sysutils/gnome-system-tools||2014-11-19|Depends on removed nautilus2
-sysutils/tacker-client|sysutils/tracker|2014-11-19|Merged into sysutils/tracker
+sysutils/tracker-client|sysutils/tracker|2014-11-19|Merged into sysutils/tracker
 sysutils/tracker-gnome|sysutils/tracker|2014-11-19|Merged into sysutils/tracker
 sysutils/tracker-libtrackergtk|sysutils/tracker|2014-11-19|Merged into sysutils/tracker
 www/epiphany-extensions||2014-11-19|Removed, not used in GNOME 3
@@ -7191,7 +7201,7 @@ x11/gnome2-lite||2014-11-19|GNOME 2 was removed
 x11/gnome2-power-tools||2014-11-19|GNOME 2 was removed
 x11/xfce4-xfapplet-plugin||2014-11-19|Depends on removed gnome-panel
 net-im/telegram-cli||2014-11-19|Duplicate of net-im/tg
-emulation/wine-doors||2014-11-19|Abandonware, depends on non existing USE_GNOME components
+emulators/wine-doors||2014-11-19|Abandonware, depends on non existing USE_GNOME components
 x11/gtstarter||2014-11-19|Abandonware, depends on non existing USE_GNOME components
 sysutils/serpentine||2014-11-19|Abandonware, depends on non existing USE_GNOME components
 sysutils/pessulus||2014-11-19|Abandonware, depends on non existing USE_GNOME components
@@ -7694,7 +7704,7 @@ x11-toolkits/fpc-gtk1||2015-07-14|Development has been discontinued
 graphics/fpc-fpgtk||2015-07-14|Development has been discontinued
 editors/lazarus-lcl-gtk||2015-07-14|Development has been discontinued
 x11/gmessage||2015-07-14|Upstream has disappeared and development ceased
-security/ssh-guid||2015-07-14|Development ceased, broken with modern ssh
+security/ssh-gui||2015-07-14|Development ceased, broken with modern ssh
 textproc/gdict||2015-07-14|Development ceased, unusable
 print/pup||2015-07-14|Development ceased, unusable
 audio/rubyripper||2015-07-16|Has expired: Does not build and is deprecated upstream
