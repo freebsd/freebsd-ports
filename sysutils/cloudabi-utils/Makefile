@@ -23,8 +23,12 @@ PLIST_FILES=	bin/cloudabi-run \
 		libexec/cloudabi-reexec \
 		man/man1/cloudabi-run.1.gz
 
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
 do-build:
 	@cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} \
 		PREFIX=${LOCALBASE} \
 		CLOUDABI_CC=${LOCALBASE}/bin/x86_64-unknown-cloudabi-cc \
 		${SH} build
@@ -34,4 +38,10 @@ do-install:
 		PREFIX=${STAGEDIR}${PREFIX} \
 		${SH} install
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1000100
+IGNORE=		CloudABI will never support this version of FreeBSD
+.endif
+
+.include <bsd.port.post.mk>
