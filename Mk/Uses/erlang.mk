@@ -94,7 +94,7 @@ post-patch-erlang:
 		| ${XARGS} ${REINPLACE_CMD} -i '' -e "s@%%PORTVERSION%%@${PORTVERSION}@"
 # Always try to build with the system version of rebar and rebar3
 	@if [ -f ${WRKSRC}/rebar.config ]; then \
-		${REINPLACE_CMD} -i '' -e "s@./rebar3@${REBAR3_CMD}@; s@./rebar@${REBAR_CMD}@" \
+		${REINPLACE_CMD} -i '' -e "s@\./rebar3@${REBAR3_CMD}@; s@\./rebar@${REBAR_CMD}@" \
 			${WRKSRC}/rebar.config; \
 	fi
 	@${RM} -f ${WRKSRC}/src/*.orig ${WRKSRC}/include/*.orig
