@@ -24,6 +24,8 @@ BUILD_DEPENDS+=	v4l_compat>=1.0.20110720:${PORTSDIR}/multimedia/v4l_compat \
 LIB_DEPENDS+=	libgstreamer-0.10.so:${PORTSDIR}/multimedia/gstreamer \
 		liborc-0.4.so:${PORTSDIR}/devel/orc
 
+PORTSCOUT=	limit:0\.10\..*
+
 CFLAGS:=	${CFLAGS} -O2 -Wno-format
 
 BASE_PORTVERSION=	0.10.36
