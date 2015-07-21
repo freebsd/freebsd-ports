@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	docker-freebsd
-PORTVERSION=	06252015
+PORTVERSION=	20150625
 CATEGORIES=	sysutils
 
 MAINTAINER=	kmoore@FreeBSD.org
