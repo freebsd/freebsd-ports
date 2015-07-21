@@ -758,6 +758,7 @@
     SUBDIR += p5-String-Tokenizer
     SUBDIR += p5-String-Truncate
     SUBDIR += p5-String-Urandom
+    SUBDIR += p5-String-Util
     SUBDIR += p5-Syntax-Highlight-Engine-Kate
     SUBDIR += p5-Syntax-Highlight-Perl-Improved
     SUBDIR += p5-TOML
