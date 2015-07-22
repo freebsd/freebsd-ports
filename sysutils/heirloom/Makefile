@@ -28,10 +28,6 @@ OPTIONS_DEFINE=	DOCS
 EXTRA_PATCHES=	${FILESDIR}/extra-utmpx
 .endif
 
-.if ${ARCH} == "powerpc"
-BROKEN=		does not compile on ${ARCH}
-.endif
-
 SH2FIX=		maninst.sh genintro.sh crossln.sh
 
 DOC_FILES=	CHANGES LICENSE/COPYING LICENSE/LICENSE LICENSE/LUCENT \
@@ -54,7 +50,7 @@ pre-configure:
 # XXX: hack to avoid inner race (for -jX builds); should be fixed properly
 # one day (e.g. by factoring out special target in the top makefile)
 pre-build:
-	${MAKE} -C ${WRKSRC}/libcommon -f Makefile.mk headers
+	${MAKE_CMD} -C ${WRKSRC}/libcommon -f Makefile.mk headers
 
 post-install: install-doc
 
