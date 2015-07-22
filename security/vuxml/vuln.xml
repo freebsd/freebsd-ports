@@ -893,12 +893,14 @@ Notes:
       </body>
     </description>
     <references>
+      <cvename>CVE-2015-5607</cvename>
       <url>http://seclists.org/oss-sec/2015/q3/92</url>
       <url>http://ipython.org/ipython-doc/3/whatsnew/version3.html#ipython-3-2-1</url>
     </references>
     <dates>
       <discovery>2015-07-12</discovery>
       <entry>2015-07-13</entry>
+      <modified>2015-07-22</modified>
     </dates>
   </vuln>
 
