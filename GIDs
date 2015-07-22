@@ -94,6 +94,7 @@ trircd:*:154:
 xorp:*:155:
 monetdb:*:156:
 barman:*:157:
+nocat:*:159:
 sfs:*:171:
 agk:*:172:
 polipo:*:173:
