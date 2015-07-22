@@ -2,6 +2,7 @@
 
 PORTNAME=	cacti
 PORTVERSION=	0.8.8f${PATCHLEVEL}
+PORTREVISION=	1
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://www.cacti.net/downloads/ \
 		ftp://ftpmirror.uk/freebsd-ports/cacti/
