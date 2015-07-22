@@ -12,3 +12,4 @@ share/nocat/htdocs/images/auth_logo.gif
 sbin/splashd
 sbin/ghttpd
 etc/nocat.conf
+@dir libexec/nocat
