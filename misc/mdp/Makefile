@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mdp
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	misc
 
 MAINTAINER=	neel@neelc.org
