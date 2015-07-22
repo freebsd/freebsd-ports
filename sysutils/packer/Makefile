@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	packer
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -36,13 +36,13 @@ GH_PROJECT=	cli:cli go-fs:gofs go-vnc:govnc iochan:iochan \
 		toolkit:toolkit winrm:winrm simplexml:simplexml xmlpath:xmlpath \
 		winrmcp:winrmcp iso8601:iso8601 winrmtest:winrmtest
 GH_TAGNAME=	8102d0e:cli a34c1b9:gofs 723ed98:govnc 87b45ff:iochan \
-		2caf8ef:mapstructure 162146f:multistep 0dd3f91:osext \
+		281073e:mapstructure 162146f:multistep 0dd3f91:osext \
 		45cbfd3:panicwrap 89d9b53:prefixedio eecf4c7:reflectwalk \
-		1b40363:atlas 88326f6:checkpoint 56912fb:gomultierror \
-		fa3f638:msgpack 999359b:version b2e5585:yamux a09229c:apiclient \
-		547ef5a:goquerystr 469e9fb:awssdkgo cc04154:crypto d9558e5:net \
-		8914e50:oauth2 ea925a0:fsnotify feda659:gcloud e2a34fa:godo \
-		a98ad7e:goini f956c6c:gophercloud 967f522:gosshold \
+		785958f:atlas 88326f6:checkpoint 56912fb:gomultierror \
+		fa3f638:msgpack 999359b:version 8e00b30:yamux 18450f4:apiclient \
+		547ef5a:goquerystr 2a6648c:awssdkgo 7d5b0be:crypto 446d52d:net \
+		8914e50:oauth2 ea925a0:fsnotify f925ac6:gcloud e2a34fa:godo \
+		a98ad7e:goini e83aa01:gophercloud 967f522:gosshold \
 		179d4d0:gouuid ac974c6:hlink 4bdd4b0:lz4 284d0fc:xxhash \
 		49eeca5:pgzip afe1e2d:suuid 4b368d1:tail dd63297:tomb \
 		5bff591:toolkit 1323390:winrm 95ba304:simplexml 13f4951:xmlpath \
