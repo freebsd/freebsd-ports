@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cloudlibc
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	devel
 MASTER_SITES=	https://nuxi.nl/distfiles/cloudlibc/
 PKGNAMEPREFIX=	cloudabi-
@@ -25,7 +25,8 @@ do-build:
 
 do-install:
 	@cd ${WRKSRC} && \
-		PREFIX=${STAGEDIR}${PREFIX}/x86_64-unknown-cloudabi \
+		DESTDIR=${STAGEDIR} \
+		PREFIX=${PREFIX}/x86_64-unknown-cloudabi \
 		${SH} install
 
 .include <bsd.port.mk>
