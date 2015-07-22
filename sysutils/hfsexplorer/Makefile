@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	hfsexplorer
-PORTVERSION=	0.22.1
+PORTVERSION=	0.23
 CATEGORIES=	sysutils java
-MASTER_SITES=	SF/catacombae/HFSExplorer/${PORTVERSION}/
-DISTNAME=	${PORTNAME}-0_21-src
 
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	HFSExplorer read Mac-formatted harddisks and disk images
@@ -18,20 +16,24 @@ DESKTOP_ENTRIES="hfsexplorer" "reader Mac-formatted harddisk" \
 		"${DATADIR}/res/icon.png" "${PORTNAME}" \
 		"System;Utility;Java;" false
 
-USES=		zip
+USE_GITHUB=	yes
+GH_PROJECT=	${PORTNAME}
+GH_ACCOUNT=	unsound
+GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 OPTIONS_DEFINE= DOCS
 NO_ARCH=	yes
-WRKSRC=		${WRKDIR}
+WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_PROJECT}-${DISTVERSION}
 
 .include <bsd.port.options.mk>
 
 do-configure:
-	@cd ${WRKSRC}/dist && ${REINPLACE_CMD} -e 's|lib/|${DATADIR}/lib/|g' \
+	@cd ${WRKSRC}/dist/bin && ${REINPLACE_CMD} -e 's|BASEDIR=".*"|BASEDIR="${DATADIR}/lib"|g' \
 		hfsx.sh resview.sh unhfs.sh
-	@${REINPLACE_CMD} -e 's|lib|${DATADIR}/lib|g' \
-		${WRKSRC}/dist/runfsb.sh
+	@${REINPLACE_CMD} -e 's|BASEDIR=".*"|BASEDIR="${DATADIR}/lib"|g' \
+		${WRKSRC}/dist/bin/hfsexplorer.sh
 
 do-build:
 	@cd ${WRKSRC} && ${SH} buildall.sh
@@ -46,9 +48,9 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/lib
 	@${MKDIR} ${STAGEDIR}${DATADIR}/res
 .for f in hfsx.sh resview.sh unhfs.sh
-	@cd ${WRKSRC} && ${INSTALL_SCRIPT} dist/${f} ${STAGEDIR}${PREFIX}/bin
+	@cd ${WRKSRC} && ${INSTALL_SCRIPT} dist/bin/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	@cd ${WRKSRC} && ${INSTALL_SCRIPT} dist/runfsb.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@cd ${WRKSRC} && ${INSTALL_SCRIPT} dist/bin/hfsexplorer.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@cd ${WRKSRC} && ${INSTALL_DATA} dist/lib/*.jar ${STAGEDIR}${DATADIR}/lib
 	@cd ${WRKSRC} && ${INSTALL_DATA} dist/res/icon.png ${STAGEDIR}${DATADIR}/res
 
