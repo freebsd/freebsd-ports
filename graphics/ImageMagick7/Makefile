@@ -384,7 +384,7 @@ INSTALL_TARGET=	install-strip
 USE_GHOSTSCRIPT_BUILD=yes
 .endif
 
-.if ${USER} == kwm
+.if defined(USER) && ${USER} == kwm
 upload:
 	scp ${DISTDIR}/${DISTNAME}.tar.xz \
 		kwm@freefall.freebsd.org:public_distfiles/
