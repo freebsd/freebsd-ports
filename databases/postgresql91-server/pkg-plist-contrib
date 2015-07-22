@@ -175,9 +175,3 @@ share/doc/postgresql/extension/timetravel.example
 %%DATADIR%%/extension/xml2.control
 %%DATADIR%%/tsearch_data/unaccent.rules
 %%DATADIR%%/tsearch_data/xsyn_sample.rules
-@dir %%DATADIR%%/tsearch_data
-@dir %%DATADIR%%/extension
-@dir %%DATADIR%%
-@dir %%DOCSDIR%%/extension
-@dir %%DOCSDIR%%
-@dir lib/postgresql
