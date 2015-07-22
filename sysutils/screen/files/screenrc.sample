@@ -8,4 +8,3 @@ vbell off
 shell -$SHELL
 logtstamp on
 logtstamp after 1
-logfile flush
