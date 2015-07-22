@@ -1,4 +1,4 @@
-# Created by: Pietro Cerutti <gahr@FreeBSD.org>
+# Created by: gahr
 # $FreeBSD$
 
 PORTNAME=	libgroove
