@@ -167,7 +167,7 @@ IGNORE=	need userland DTrace support found in FreeBSD 9.0
 .  endif
 
 .  if defined (SERVER_ONLY)
-LDAP_CONFIGURE_WITH=	with-ldap
+LDAP_CONFIGURE_WITH=	ldap
 LDAP_USE=		OPENLDAP=yes
 .  endif
 
