@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cloudabi-utils
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	https://nuxi.nl/distfiles/cloudabi-utils/
 
@@ -29,13 +29,14 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 do-build:
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} \
-		PREFIX=${LOCALBASE} \
+		PREFIX=${PREFIX} \
 		CLOUDABI_CC=${LOCALBASE}/bin/x86_64-unknown-cloudabi-cc \
 		${SH} build
 
 do-install:
 	@cd ${WRKSRC} && \
-		PREFIX=${STAGEDIR}${PREFIX} \
+		DESTDIR=${STAGEDIR} \
+		PREFIX=${PREFIX} \
 		${SH} install
 
 .include <bsd.port.pre.mk>

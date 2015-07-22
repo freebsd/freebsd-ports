@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	compiler-rt
-DISTVERSION=	0.241676
+DISTVERSION=	0.242897
 CATEGORIES=	devel
 MASTER_SITES=	https://nuxi.nl/distfiles/compiler-rt/
 PKGNAMEPREFIX=	cloudabi-
