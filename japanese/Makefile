@@ -197,6 +197,7 @@
     SUBDIR += p5-HTML-MobileJp
     SUBDIR += p5-Jcode
     SUBDIR += p5-Lingua-JA-Kana
+    SUBDIR += p5-Lingua-JA-Moji
     SUBDIR += p5-Lingua-JA-Numbers
     SUBDIR += p5-Lingua-JA-Regular-Unicode
     SUBDIR += p5-Lingua-JA-Summarize-Extract
