@@ -73,37 +73,43 @@ MAKE_ENV=	PATH=${PREFIX}/bin:${PATH}
 CONFIGURE_ENV+=	PATH=${PREFIX}/bin:${PATH}
 .endif
 
+.if defined(SERVER_ONLY)
+OPTIONS_DEFINE=	DTRACE LDAP INTDATE TZDATA
+LDAP_DESC=	Build with LDAP authentication support
+DTRACE_DESC=	Build with DTrace probes
+TZDATA_DESC=	Use internal timezone database
+XML_DESC=	Build with XML data type
+
+# See http://people.freebsd.org/~girgen/postgresql-icu/README.html for more info
+OPTIONS_DEFINE+=	ICU
+ICU_DESC=	Use ICU for unicode collation
+
+# See http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/76999 for more info
+# (requires dump/restore if modified.)
+OPTIONS_DEFINE+=	INTDATE
+INTDATE_DESC=	Builds with 64-bit date/time type
+OPTIONS_DEFAULT=	XML TZDATA INTDATE
+.endif
+
 .if !defined(SLAVE_ONLY)
-OPTIONS_DEFINE+=	NLS DTRACE PAM LDAP GSSAPI OPTIMIZED_CFLAGS XML TZDATA DEBUG
+OPTIONS_DEFINE+=	NLS PAM GSSAPI OPTIMIZED_CFLAGS DEBUG
 OPTIONS_RADIO= KRB5
 OPTIONS_RADIO_KRB5= MIT_KRB5 HEIMDAL_KRB5
 
 KRB5_DESC=       Build with kerberos provider support
 NLS_DESC=	Use internationalized messages
-DTRACE_DESC=	Build with DTrace probes (server only)
 PAM_DESC=	Build with PAM Support
-LDAP_DESC=	Build with LDAP authentication support (server only)
 MIT_KRB5_DESC=	Build with MIT kerberos support
 HEIMDAL_KRB5_DESC=	Builds with Heimdal kerberos
 GSSAPI_DESC=	Build with GSSAPI support
 OPTIMIZED_CFLAGS_DESC=	Builds with compiler optimizations (-O3)
-XML_DESC=	Build with XML data type (server)
-TZDATA_DESC=	Use internal timezone database (server)
 DEBUG_DESC=	Builds with debugging symbols
 
-# See http://people.freebsd.org/~girgen/postgresql-icu/README.html for more info
-OPTIONS_DEFINE+=	ICU
-ICU_DESC=	Use ICU for unicode collation (server)
-
-# See http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/76999 for more info
-# (requires dump/restore if modified.)
-OPTIONS_DEFINE+=	INTDATE
-INTDATE_DESC=	Builds with 64-bit date/time type (server)
 
 OPTIONS_DEFINE+=	SSL
 SSL_DESC=	Build with OpenSSL support
 
-OPTIONS_DEFAULT=	NLS XML TZDATA INTDATE SSL
+OPTIONS_DEFAULT+=	NLS SSL
 .endif # !SLAVE_ONLY
 
 .if defined(CLIENT_ONLY)
