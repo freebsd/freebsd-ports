@@ -157,7 +157,7 @@ USE_TEX:=	${USE_TEX:tu:NFULL} ${_USE_TEX_FULLLIST:tu}
 .for _UU in ${USE_TEX:tu}
 _U:=	${_UU}	# ugly but necessary in for loop
 _VOP:=
-. if !empty(_U:tu:MKPATHSEA) || !empty(_U:tu:MPTEXENC)
+. if !empty(_U:tu:MKPATHSEA) || !empty(_U:tu:MPTEXENC) || !empty(_U:tu:MTEXLUA) || !empty(_U:tu:MTEXLUAJIT)
 _U:=	${_U}:lib
 . endif
 . if !empty(_U:M*[<>=]*)
