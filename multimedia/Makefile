@@ -168,6 +168,7 @@
     SUBDIR += libcec
     SUBDIR += libdc1394
     SUBDIR += libdca
+    SUBDIR += libde265
     SUBDIR += libdv
     SUBDIR += libdvbcsa
     SUBDIR += libdvbpsi
