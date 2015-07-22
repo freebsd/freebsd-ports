@@ -23,12 +23,6 @@ ICU_PATCHFILE?=	pg-929-icu-2015-04-18.diff.gz
 
 OPTIONS_SUB=	yes
 
-.if !defined(SLAVE_ONLY)
-UNIQUENAME?=	${PORTNAME}${DISTVERSION:R:S/.//}
-.else # Contrib has different options from -client/-server
-UNIQUENAME?=	${PORTNAME}${DISTVERSION:R:S/.//}${PKGNAMESUFFIX}
-.endif
-
 PKGINSTALL?=	${PKGDIR}/pkg-install${COMPONENT}
 USES+=		tar:bzip2 cpe
 .if !defined(NO_BUILD)
