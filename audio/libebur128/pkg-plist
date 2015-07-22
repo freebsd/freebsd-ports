@@ -1,5 +1,5 @@
 include/ebur128.h
 lib/libebur128.a
 lib/libebur128.so
-lib/libebur128.so.%%VER1%%
-lib/libebur128.so.%%VER3%%
+lib/libebur128.so.1
+lib/libebur128.so.1.0.1
