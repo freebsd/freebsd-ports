@@ -58,6 +58,32 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="95eee71d-3068-11e5-a9b5-bcaec565249c">
+    <topic>gdk-pixbuf2 -- heap overflow and DoS affecting Firefox and other programs</topic>
+    <affects>
+      <package>
+	<name>gdk-pixbuf2</name>
+	<range><lt>2.31.2_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>gustavo.grieco@imag.fr reports:</p>
+	<blockquote cite="https://bugzilla.gnome.org/show_bug.cgi?id=752297">
+	  <p>We found a heap overflow and a DoS in the gdk-pixbuf
+	    implementation triggered by the scaling of a malformed bmp.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://bugzilla.gnome.org/show_bug.cgi?id=752297</url>
+    </references>
+    <dates>
+      <discovery>2015-07-12</discovery>
+      <entry>2015-07-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8a1d0e63-1e07-11e5-b43d-002590263bf5">
     <topic>pcre -- Heap Overflow Vulnerability in find_fixedlength()</topic>
     <affects>
