@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gscan2pdf
-PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTVERSION=	1.3.2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -42,7 +41,7 @@ RUN_DEPENDS:=	p5-Archive-Tar>0:${PORTSDIR}/archivers/p5-Archive-Tar \
 
 NO_ARCH=	yes
 
-USES=		gettext gmake perl5
+USES=		gettext gmake perl5 tar:xz
 USE_GNOME=	gtk20 librsvg2
 USE_PERL5=	configure
 
