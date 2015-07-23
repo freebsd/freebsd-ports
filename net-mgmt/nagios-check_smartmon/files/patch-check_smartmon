@@ -1,20 +1,26 @@
---- ./check_smartmon.orig	2010-03-18 18:56:53.000000000 +0100
-+++ ./check_smartmon	2010-04-23 22:53:13.000000000 +0200
-@@ -229,11 +229,14 @@
-         # fi
+--- check_smartmon.orig	2015-07-22 17:32:58 UTC
++++ check_smartmon
+@@ -59,7 +59,7 @@ def parseCmdLine(args):
+                         metavar="LEVEL", help="set verbosity level to LEVEL; defaults to 0 (quiet), \
+                                         possible values go up to 3")
+         parser.add_option("-t", "--type", action="store", dest="devtype", default="ata", metavar="DEVTYPE",
+-                        help="type of device (ATA|SCSI)")
++                        help="type of device (ata|scsi)")
+         parser.add_option("-w", "--warning-threshold", metavar="TEMP", action="store",
+                         type="int", dest="warningThreshold", default=55,
+                         help="set temperature warning threshold to given temperature (defaults to 55)")
+@@ -291,10 +291,10 @@ if __name__ == "__main__":
+         vprint(2, "Get device type")
+         devtype = options.devtype
+         if not devtype:
+-                devtype = "ATA"
+-
+-        if device_re.search( device ):
+-                devtype = "scsi"
++                if device_re.search( device ):
++                        devtype = "scsi"
++                else:
++                        devtype = "ata"
  
-         if temperature > criticalThreshold:
--                return (2, "CRITICAL: device temperature (%d) exceeds critical temperature threshold (%s)" % (temperature, criticalThreshold))
-+                return (2, "CRITICAL: device temperature (%d) exceeds critical temperature threshold (%s)|TEMP=%d;%d;%d;" 
-+			% (temperature, criticalThreshold, temperature, warningThreshold, criticalThreshold))
-         elif temperature > warningThreshold:
--                return (1, "WARNING: device temperature (%d) exceeds warning temperature threshold (%s)" % (temperature, warningThreshold))
-+                return (1, "WARNING: device temperature (%d) exceeds warning temperature threshold (%s)|TEMP=%d;%d;%d;" 
-+			% (temperature, warningThreshold, temperature, warningThreshold, criticalThreshold))
-         else:
--                return (0, "OK: device is functional and stable (temperature: %d)" % temperature)
-+                return (0, "OK: device is functional and stable (temperature: %d)|TEMP=%d;%d;%d;" 
-+			% (temperature,  temperature, warningThreshold, criticalThreshold))
-         # fi
- # end
+         vprint(1, "Device type: %s" % devtype)
  
