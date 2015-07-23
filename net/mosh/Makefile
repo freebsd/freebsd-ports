@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mosh
-PORTVERSION=	1.2.4
-PORTREVISION=	1
+PORTVERSION=	1.2.5
 CATEGORIES=	net
 MASTER_SITES=	http://mosh.mit.edu/ \
 		http://mirrors.rit.edu/zi/
@@ -22,7 +21,7 @@ CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" OPENSSL_LIBS="-L${OPENSSLLIB} -
 		TINFO_CFLAGS="-I/usr/include"
 INSTALL_TARGET=	install-strip
 USE_OPENSSL=	yes
-USES=		pkgconfig perl5
+USES=		autoreconf:autoconf perl5 pkgconfig
 
 LATEST_LINK=	mosh-term
 
