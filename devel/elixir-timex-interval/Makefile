@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	timex-interval
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	elixir-
 
@@ -12,10 +12,11 @@ LICENSE=	APACHE20
 
 USES=		elixir
 USE_GITHUB=	yes
-GH_ACCOUNT=	bitwalker
+GH_ACCOUNT=	atabary
 
 ELIXIR_APP_NAME=timex_interval
 MIX_BUILD_DEPS=	devel/elixir-timex
 MIX_RUN_DEPS:=	${MIX_BUILD_DEPS}
+MIX_REWRITE=	yes
 
 .include <bsd.port.mk>
