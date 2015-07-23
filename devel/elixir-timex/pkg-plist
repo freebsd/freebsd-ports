@@ -8,8 +8,8 @@ lib/elixir/lib/timex/ebin/Elixir.Access.Timex.Parse.ZoneInfo.Parser.Zone.beam
 lib/elixir/lib/timex/ebin/Elixir.Timex.Date.Convert.Timex.DateTime.beam
 lib/elixir/lib/timex/ebin/Elixir.Timex.Date.Convert.beam
 lib/elixir/lib/timex/ebin/Elixir.Timex.Date.beam
+lib/elixir/lib/timex/ebin/Elixir.Timex.DateFormat.beam
 lib/elixir/lib/timex/ebin/Elixir.Timex.DateTime.beam
-lib/elixir/lib/timex/ebin/Elixir.Timex.Format.DateTime.DateFormat.beam
 lib/elixir/lib/timex/ebin/Elixir.Timex.Format.DateTime.Directive.beam
 lib/elixir/lib/timex/ebin/Elixir.Timex.Format.DateTime.Formats.Regex.beam
 lib/elixir/lib/timex/ebin/Elixir.Timex.Format.DateTime.Formats.beam
@@ -40,8 +40,8 @@ lib/elixir/lib/timex/ebin/Elixir.Timex.beam
 lib/elixir/lib/timex/ebin/timex.app
 lib/elixir/lib/timex/lib/date/date.ex
 lib/elixir/lib/timex/lib/date/date_convert.ex
+lib/elixir/lib/timex/lib/date/date_format.ex
 lib/elixir/lib/timex/lib/date/datetime.ex
-lib/elixir/lib/timex/lib/format/datetime/dateformat.ex
 lib/elixir/lib/timex/lib/format/datetime/directive.ex
 lib/elixir/lib/timex/lib/format/datetime/formats.ex
 lib/elixir/lib/timex/lib/format/datetime/formatter.ex
