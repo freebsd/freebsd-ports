@@ -1,6 +1,6 @@
---- shibboleth.spec.in.orig	2013-06-16 21:43:47.000000000 +0200
-+++ shibboleth.spec.in	2013-07-29 14:42:22.887422969 +0200
-@@ -59,7 +59,7 @@
+--- shibboleth.spec.in.orig	2015-07-20 21:31:32.000000000 +0200
++++ shibboleth.spec.in	2015-07-22 17:45:15.000000000 +0200
+@@ -71,7 +71,7 @@
  %if "%{_vendor}" == "suse"
  %define pkgdocdir %{_docdir}/shibboleth
  %else
@@ -9,7 +9,7 @@
  %endif
  
  %description
-@@ -203,14 +203,6 @@
+@@ -275,14 +275,6 @@
  /sbin/ldconfig
  %endif
  
@@ -18,7 +18,7 @@
 -if [ -f sp-key.pem ] ; then
 -	%{__chown} %{runuser}:%{runuser} sp-key.pem sp-cert.pem 2>/dev/null || :
 -else
--	sh ./keygen.sh -b -u %{runuser} -g %{runuser}
+-	/bin/sh ./keygen.sh -b -u %{runuser} -g %{runuser}
 -fi
 -
  # Fix ownership of log files (even on new installs, if they're left from an older one).
