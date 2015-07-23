@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--enable-bzip --enable-lzo --enable-zlib \
 		--enable-iconv --enable-pthread
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-fPIC -fsigned-char
-LIBS+=		-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib ${ICONV_LIB}
 MAKE_ARGS=	MYDATADIR="${DOCSDIR}" MYDOCS="${PORTDOCS}" \
 		MYPCDIR="${PREFIX}/libdata/pkgconfig"
 INSTALL_TARGET=	install-strip
