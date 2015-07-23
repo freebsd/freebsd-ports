@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	maru
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 PKGNAMEPREFIX=	elixir-
@@ -19,6 +19,5 @@ MIX_BUILD_DEPS=	devel/elixir-plug \
 		devel/elixir-poison \
 		www/erlang-cowboy
 MIX_RUN_DEPS:=	${MIX_BUILD_DEPS}
-MIX_DOC_DIRS=	guide
 
 .include <bsd.port.mk>
