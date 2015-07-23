@@ -28,18 +28,18 @@
 _INCLUDE_USES_GHOSTSCRIPT_MK=	yes
 
 # allowed versions
-_GS_VERSION=	7 8 9 9.06 9.16 agpl
+_GS_VERSION=	7 8 9 agpl
 
 _GS_ARGS=		${ghostscript_ARGS}
 
-.if ${_GS_ARGS:N[789]:N9.06:N9.16:Nnox11:Nbuild:Nrun}
+.if ${_GS_ARGS:N[789]:Nnox11:Nbuild:Nrun}
 IGNORE?=	Unknown ghostscript argument ${_GS_ARGS}
 .endif
 
 # Determine version number of Ghostscript to use
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 
-.if ${GHOSTSCRIPT_DEFAULT:N[789]:N9.06:N9.16:Nagpl}
+.if ${GHOSTSCRIPT_DEFAULT:N[789]:Nagpl}
 IGNORE?=	Invalid GHOSTSCRIPT_DEFAULT value: ${GHOSTSCRIPT_DEFAULT}, please select one of ${_GS_VERSION}
 .endif
 
@@ -67,11 +67,6 @@ _GS_RUN_DEP=	yes
 _V=${V}
 .if ${_V:M9}
 _GS_SELECTED?=		9
-.elif ${_V:M9.06}
-_GS_SELECTED?=		9
-.elif ${_V:M9.16}
-_GS_SELECTED?=		9
-_GS_AGPL_SUFFIX?=	-agpl
 .elif ${_V:Magpl}
 _GS_AGPL_SUFFIX?=	-agpl
 .if defined(_GS_SELECTED) && ${_GS_SELECTED:N9}
