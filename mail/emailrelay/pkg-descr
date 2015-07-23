@@ -1,0 +1,11 @@
+E-MailRelay is a simple SMTP proxy and store-and-forward message transfer
+agent (MTA).  When running as a proxy all e-mail messages can be passed
+through a user-defined program, such as a spam filter, which can drop, re-
+address or edit messages as they pass through.  When running as a store-
+and-forward MTA incoming messages are stored in a local spool directory,
+and then forwarded to the next SMTP server on request.
+
+E-MailRelay can also run as a POP3 server.  Messages received over SMTP
+can be automatically dropped into several independent POP3 mailboxes.
+
+WWW: http://emailrelay.sourceforge.net/
