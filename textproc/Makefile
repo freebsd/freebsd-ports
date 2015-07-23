@@ -1175,7 +1175,6 @@
     SUBDIR += py-Tempita
     SUBDIR += py-acora
     SUBDIR += py-alabaster
-    SUBDIR += py-asciinema
     SUBDIR += py-asv
     SUBDIR += py-bugzillatools
     SUBDIR += py-chardet
