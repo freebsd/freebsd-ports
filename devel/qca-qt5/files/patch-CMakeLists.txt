@@ -1,0 +1,63 @@
+--- CMakeLists.txt.orig	2014-11-06 08:15:45 UTC
++++ CMakeLists.txt
+@@ -170,8 +170,8 @@ else( QCA_INSTALL_IN_QT_PREFIX )
+   set(QCA_BINARY_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/bin" CACHE PATH "Directory where qca plugins will install")
+   set(QCA_LIBRARY_INSTALL_DIR "${LIB_INSTALL_DIR}" CACHE PATH "Directory where qca library will install")
+   set(QCA_FEATURE_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/mkspecs/features" CACHE PATH "Directory where qca feature file will install")
+-  set(QCA_INCLUDE_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/include" CACHE PATH "Directory where qca public headers will install")
+-  set(QCA_PRIVATE_INCLUDE_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/include" CACHE PATH "Directory where qca headers will install")
++  set(QCA_INCLUDE_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/include/qca-${QCA_SUFFIX}" CACHE PATH "Directory where qca public headers will install")
++  set(QCA_PRIVATE_INCLUDE_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/include/qca-${QCA_SUFFIX}" CACHE PATH "Directory where qca headers will install")
+   set(QCA_DOC_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/share/doc/${QCA_LIB_NAME}/html" CACHE PATH "Directory where qca documentation will install")
+   set(QCA_MAN_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/share/man" CACHE PATH "Directory where qca man pages will install")
+ endif( QCA_INSTALL_IN_QT_PREFIX )
+@@ -262,13 +262,13 @@ message(STATUS "Checking for certstore..
+ if( WIN32 )
+ # USE BUILTIN
+ else ( WIN32 )
+-  if ( ENV{QC_CERTSTORE_PATH} )
+-    if(EXISTS ENV{QC_CERTSTORE_PATH})
++  if ( DEFINED ENV{QC_CERTSTORE_PATH} )
++    if(EXISTS $ENV{QC_CERTSTORE_PATH})
+       set( qca_CERTSTORE $ENV{QC_CERTSTORE_PATH})
+-    else(EXISTS ENV{QC_CERTSTORE_PATH})
++    else(EXISTS $ENV{QC_CERTSTORE_PATH})
+       # path to try
+-    endif(EXISTS ENV{QC_CERTSTORE_PATH})
+-  else( ENV{QC_CERTSTORE_PATH} )
++    endif(EXISTS $ENV{QC_CERTSTORE_PATH})
++  else( DEFINED ENV{QC_CERTSTORE_PATH} )
+     set( toTry
+       "/etc/ssl/certs/ca-certificates.crt"
+       "/usr/share/ssl/cert.pem"
+@@ -282,7 +282,7 @@ else ( WIN32 )
+         set( qca_CERTSTORE ${_current_try})
+       endif(EXISTS ${_current_try})
+     endforeach (_current_try)
+-  endif( ENV{QC_CERTSTORE_PATH} )
++  endif( DEFINED ENV{QC_CERTSTORE_PATH} )
+ endif(WIN32)
+ 
+ if (qca_CERTSTORE)
+@@ -374,7 +374,7 @@ include(CMakePackageConfigHelpers)
+ configure_package_config_file(
+   "${CMAKE_CURRENT_SOURCE_DIR}/QcaConfig.cmake.in"
+   "${CMAKE_CURRENT_BINARY_DIR}/lib/cmake/Qca/QcaConfig.cmake"
+-  INSTALL_DESTINATION ${QCA_LIBRARY_INSTALL_DIR}/cmake/Qca
++  INSTALL_DESTINATION ${QCA_LIBRARY_INSTALL_DIR}/cmake/Qca-${QCA_SUFFIX}
+ )
+ write_basic_config_version_file("${CMAKE_CURRENT_BINARY_DIR}/lib/cmake/Qca/QcaConfigVersion.cmake" VERSION ${QCA_LIB_VERSION_STRING} COMPATIBILITY AnyNewerVersion)
+ 
+@@ -434,10 +434,10 @@ if(NOT DEVELOPER_MODE)
+   endif()
+   message("")
+ 
+-  install(EXPORT QCATargets DESTINATION ${QCA_LIBRARY_INSTALL_DIR}/cmake/Qca FILE QcaTargets.cmake)
++  install(EXPORT QCATargets DESTINATION ${QCA_LIBRARY_INSTALL_DIR}/cmake/Qca-${QCA_SUFFIX} FILE QcaTargets.cmake)
+   install(FILES
+     "${CMAKE_CURRENT_BINARY_DIR}/lib/cmake/Qca/QcaConfig.cmake"
+     "${CMAKE_CURRENT_BINARY_DIR}/lib/cmake/Qca/QcaConfigVersion.cmake"
+-    DESTINATION ${QCA_LIBRARY_INSTALL_DIR}/cmake/Qca
++    DESTINATION ${QCA_LIBRARY_INSTALL_DIR}/cmake/Qca-${QCA_SUFFIX}
+     )
+ endif()
