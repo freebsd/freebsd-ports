@@ -14,6 +14,7 @@ MAINTAINER=	gordon@FreeBSD.org
 COMMENT=	Perforce client
 
 RESTRICTED=	Restricted distribution
+BROKEN=	Unfetchable
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
