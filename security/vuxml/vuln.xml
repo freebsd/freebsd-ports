@@ -57,6 +57,54 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b202e4ce-3114-11e5-aa32-0026551a22dc">
+    <topic>shibboleth-sp -- DoS vulnerability</topic>
+    <affects>
+      <package>
+	<name>xmltooling</name>
+	<range><lt>1.5.5</lt></range>
+      </package>
+      <package>
+	<name>opensaml2</name>
+	<range><lt>2.5.5</lt></range>
+      </package>
+      <package>
+	<name>shibboleth-sp</name>
+	<range><lt>2.5.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Shibboleth consortium reports:</p>
+	<blockquote cite="http://shibboleth.net/community/advisories/secadv_20150721.txt">
+	  <p>
+	    Shibboleth SP software crashes on well-formed but invalid XML.
+	  </p>
+	  <p>
+	    The Service Provider software contains a code path with an uncaught
+	    exception that can be triggered by an unauthenticated attacker by
+	    supplying well-formed but schema-invalid XML in the form of SAML
+	    metadata or SAML protocol messages. The result is a crash and so
+	    causes a denial of service.
+	  </p>
+	  <p>
+	    You must rebuild opensaml and shibboleth with xmltooling-1.5.5 or
+	    later. The easiest way to do so is to update the whole chain including
+	    shibboleth-2.5.5 an opensaml2.5.5.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://shibboleth.net/community/advisories/secadv_20150721.txt</url>
+      <cvename>CVE-2015-2684</cvename>
+    </references>
+    <dates>
+      <discovery>2015-07-21</discovery>
+      <entry>2015-07-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8e887b71-d769-11e4-b1c2-20cf30e32f6d">
     <topic>subversion -- DoS vulnerabilities</topic>
     <affects>
