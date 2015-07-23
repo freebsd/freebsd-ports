@@ -110,7 +110,15 @@ TK_CONFIGURE_ON=	--with-tk-library=${LOCALBASE}/lib \
 TK_USES=	tk
 TK_USE=		XORG=x11
 
+.if !exists(/usr/include/omp.h)
+CONFIGURE_ARGS+=	--without-openmp
+.endif
+
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MOCAML} && empty(PORT_OPTIONS:MGUI)
+IGNORE=	with OCAML option requies GUI. Please rerun 'make config' and select GUI
+.endif
 
 .if ${PORT_OPTIONS:MGUI}
 USE_JAVA=	yes
