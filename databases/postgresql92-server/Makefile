@@ -136,6 +136,13 @@ INTDATE_CONFIGURE_OFF=--disable-integer-datetimes
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
 
+LDAP_CONFIGURE_WITH=	ldap
+LDAP_USE=		OPENLDAP=yes
+
+OPTIMIZED_CFLAGS_CFLAGS=	-O3 -funroll-loops
+
+DEBUG_CONFIGURE_ENABLE=	debug
+
 PLIST_SUB+=	PG_USER=${PG_USER} \
 		PG_GROUP=${PG_GROUP}
 SUB_LIST+=	PG_GROUP=${PG_GROUP} \
@@ -165,16 +172,6 @@ LDFLAGS+=-lelf
 IGNORE=	need userland DTrace support found in FreeBSD 9.0
 .    endif
 .  endif
-
-.  if defined (SERVER_ONLY)
-LDAP_CONFIGURE_WITH=	ldap
-LDAP_USE=		OPENLDAP=yes
-.  endif
-
-
-OPTIMIZED_CFLAGS_CFLAGS=	-O3 -funroll-loops
-
-DEBUG_CONFIGURE_ENABLE=	debug
 
 .if ${PORT_OPTIONS:MGSSAPI}
 CONFIGURE_ARGS+=--with-gssapi
