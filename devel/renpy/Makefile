@@ -3,6 +3,7 @@
 PORTNAME=	renpy
 PORTVERSION=	6.99.5
 DISTVERSIONSUFFIX=-sdk
+PORTREVISION=	1
 CATEGORIES=	devel games
 MASTER_SITES=	http://www.renpy.org/dl/${PORTVERSION}/
 #MASTER_SITES+=	GENTOO
@@ -31,7 +32,8 @@ PORTSCOUT=	site:http://www.renpy.org/dl/release/
 USES=		python:2.7 shebangfix tar:bz2
 USE_PYTHON=	autoplist distutils
 USE_SDL=	sdl2
-EXTRACT_AFTER_ARGS=--exclude gen --exclude '*.py[co]' --exclude 'pythonlib*'
+EXCLUDE=	gen 'module/*.py[co]' 'renpy/*.py[co]'
+EXTRACT_AFTER_ARGS=${EXCLUDE:S,^,--exclude ,}
 SHEBANG_FILES=	renpy.py launcher/game/tkaskdir.py
 python_OLD_CMD=	/usr/bin/env python
 python_CMD=	${PYTHON_CMD}
