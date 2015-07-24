@@ -63,6 +63,9 @@ Notes:
     <affects>
       <package>
 	<name>wordpress</name>
+	<range><lt>4.2.3,1</lt></range>
+      </package>
+      <package>
 	<name>de-wordpress</name>
 	<name>ja-wordpress</name>
 	<name>ru-wordpress</name>
