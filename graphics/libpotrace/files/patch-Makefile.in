@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2013-02-20 00:49:08 UTC
++++ Makefile.in
+@@ -259,7 +259,7 @@ top_srcdir = @top_srcdir@
+ # unsure why automake/autoconf does not automatically distribute libtool
+ EXTRA_DIST = README-WIN libtool
+ ACLOCAL_AMFLAGS = -I m4
+-SUBDIRS = src doc check
++SUBDIRS = src
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
+ 

@@ -13,6 +13,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Tswana hunspell dictionaries
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/dictionaries
 

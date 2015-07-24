@@ -1,5 +1,5 @@
---- texk/xdvik/dvi.h.orig	2014-09-02 18:41:34.000000000 +0900
-+++ texk/xdvik/dvi.h	2015-01-31 21:02:18.000000000 +0900
+--- texk/xdvik/dvi.h.orig	2001-04-18 14:24:42 UTC
++++ texk/xdvik/dvi.h
 @@ -5,9 +5,13 @@
  #define	SETCHAR0	0
  #define	SET1		128

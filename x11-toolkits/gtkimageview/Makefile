@@ -8,7 +8,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	LOCAL/kwm
 # http://trac.bjourne.webfactional.com/
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple image viewer widget
 
 GNU_CONFIGURE=	yes

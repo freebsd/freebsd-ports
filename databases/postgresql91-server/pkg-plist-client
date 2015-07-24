@@ -498,54 +498,16 @@ include/postgresql/server/windowapi.h
 include/sqlda-compat.h
 include/sqlda-native.h
 include/sqlda.h
-@dir include/postgresql/server/utils
-@dir include/postgresql/server/tsearch/dicts
-@dir include/postgresql/server/tsearch
-@dir include/postgresql/server/tcop
-@dir include/postgresql/server/storage
-@dir include/postgresql/server/snowball/libstemmer
-@dir include/postgresql/server/snowball
-@dir include/postgresql/server/rewrite
-@dir include/postgresql/server/replication
-@dir include/postgresql/server/regex
-@dir include/postgresql/server/postmaster
-@dir include/postgresql/server/portability
-@dir include/postgresql/server/port/win32_msvc/sys
-@dir include/postgresql/server/port/win32_msvc
-@dir include/postgresql/server/port/win32/sys
-@dir include/postgresql/server/port/win32/netinet
-@dir include/postgresql/server/port/win32/arpa
-@dir include/postgresql/server/port/win32
-@dir include/postgresql/server/port
-@dir include/postgresql/server/parser
-@dir include/postgresql/server/optimizer
-@dir include/postgresql/server/nodes
-@dir include/postgresql/server/mb
-@dir include/postgresql/server/libpq
-@dir include/postgresql/server/lib
-@dir include/postgresql/server/foreign
-@dir include/postgresql/server/executor
-@dir include/postgresql/server/commands
-@dir include/postgresql/server/catalog
-@dir include/postgresql/server/bootstrap
-@dir include/postgresql/server/access
-@dir include/postgresql/server
 include/libpq/libpq-fs.h
-@dir include/libpq
 include/postgresql/internal/libpq/pqcomm.h
-@dir include/postgresql/internal/libpq
 include/postgresql/informix/esql/datetime.h
 include/postgresql/informix/esql/decimal.h
 include/postgresql/informix/esql/sqltypes.h
-@dir include/postgresql/informix/esql
-@dir include/postgresql/informix
 include/postgresql/internal/c.h
 include/postgresql/internal/libpq-int.h
 include/postgresql/internal/postgres_fe.h
 include/postgresql/internal/port.h
 include/postgresql/internal/pqexpbuffer.h
-@dir include/postgresql/internal
-@dir include/postgresql
 include/ecpg_informix.h
 include/ecpgerrno.h
 include/ecpglib.h
@@ -581,11 +543,6 @@ lib/postgresql/pgxs/src/Makefile.global
 lib/postgresql/pgxs/src/Makefile.port
 lib/postgresql/pgxs/src/Makefile.shlib
 lib/postgresql/pgxs/src/nls-global.mk
-@dir lib/postgresql/pgxs/src/makefiles
-@dir lib/postgresql/pgxs/config
-@dir lib/postgresql/pgxs/src
-@dir lib/postgresql/pgxs
-@dir lib/postgresql
 man/man1/clusterdb.1.gz
 man/man1/createdb.1.gz
 man/man1/createlang.1.gz
@@ -823,104 +780,102 @@ man/man7/VACUUM.7.gz
 man/man7/VALUES.7.gz
 man/man7/WITH.7.gz
 %%DOCSDIR%%/README-client
-@dir %%DOCSDIR%%
 %%DATADIR%%/pg_service.conf.sample
 %%DATADIR%%/psqlrc.sample
-@dir %%DATADIR%%
-%%GETTEXT%%share/locale/cs/LC_MESSAGES/ecpg-9.1.mo
-%%GETTEXT%%share/locale/cs/LC_MESSAGES/ecpglib6-9.1.mo
-%%GETTEXT%%share/locale/cs/LC_MESSAGES/libpq5-9.1.mo
-%%GETTEXT%%share/locale/cs/LC_MESSAGES/pg_config-9.1.mo
-%%GETTEXT%%share/locale/cs/LC_MESSAGES/pg_dump-9.1.mo
-%%GETTEXT%%share/locale/cs/LC_MESSAGES/pgscripts-9.1.mo
-%%GETTEXT%%share/locale/cs/LC_MESSAGES/psql-9.1.mo
-%%GETTEXT%%share/locale/de/LC_MESSAGES/ecpg-9.1.mo
-%%GETTEXT%%share/locale/de/LC_MESSAGES/ecpglib6-9.1.mo
-%%GETTEXT%%share/locale/de/LC_MESSAGES/libpq5-9.1.mo
-%%GETTEXT%%share/locale/de/LC_MESSAGES/pg_config-9.1.mo
-%%GETTEXT%%share/locale/de/LC_MESSAGES/pg_dump-9.1.mo
-%%GETTEXT%%share/locale/de/LC_MESSAGES/pgscripts-9.1.mo
-%%GETTEXT%%share/locale/de/LC_MESSAGES/psql-9.1.mo
-%%GETTEXT%%share/locale/es/LC_MESSAGES/ecpg-9.1.mo
-%%GETTEXT%%share/locale/es/LC_MESSAGES/ecpglib6-9.1.mo
-%%GETTEXT%%share/locale/es/LC_MESSAGES/libpq5-9.1.mo
-%%GETTEXT%%share/locale/es/LC_MESSAGES/pg_config-9.1.mo
-%%GETTEXT%%share/locale/es/LC_MESSAGES/pg_dump-9.1.mo
-%%GETTEXT%%share/locale/es/LC_MESSAGES/pgscripts-9.1.mo
-%%GETTEXT%%share/locale/es/LC_MESSAGES/psql-9.1.mo
-%%GETTEXT%%share/locale/fr/LC_MESSAGES/ecpg-9.1.mo
-%%GETTEXT%%share/locale/fr/LC_MESSAGES/ecpglib6-9.1.mo
-%%GETTEXT%%share/locale/fr/LC_MESSAGES/libpq5-9.1.mo
-%%GETTEXT%%share/locale/fr/LC_MESSAGES/pg_config-9.1.mo
-%%GETTEXT%%share/locale/fr/LC_MESSAGES/pg_dump-9.1.mo
-%%GETTEXT%%share/locale/fr/LC_MESSAGES/pgscripts-9.1.mo
-%%GETTEXT%%share/locale/fr/LC_MESSAGES/psql-9.1.mo
-%%GETTEXT%%share/locale/it/LC_MESSAGES/ecpg-9.1.mo
-%%GETTEXT%%share/locale/it/LC_MESSAGES/ecpglib6-9.1.mo
-%%GETTEXT%%share/locale/it/LC_MESSAGES/libpq5-9.1.mo
-%%GETTEXT%%share/locale/it/LC_MESSAGES/pg_config-9.1.mo
-%%GETTEXT%%share/locale/it/LC_MESSAGES/pg_dump-9.1.mo
-%%GETTEXT%%share/locale/it/LC_MESSAGES/pgscripts-9.1.mo
-%%GETTEXT%%share/locale/it/LC_MESSAGES/psql-9.1.mo
-%%GETTEXT%%share/locale/ja/LC_MESSAGES/ecpg-9.1.mo
-%%GETTEXT%%share/locale/ja/LC_MESSAGES/ecpglib6-9.1.mo
-%%GETTEXT%%share/locale/ja/LC_MESSAGES/libpq5-9.1.mo
-%%GETTEXT%%share/locale/ja/LC_MESSAGES/pg_config-9.1.mo
-%%GETTEXT%%share/locale/ja/LC_MESSAGES/pg_dump-9.1.mo
-%%GETTEXT%%share/locale/ja/LC_MESSAGES/pgscripts-9.1.mo
-%%GETTEXT%%share/locale/ja/LC_MESSAGES/psql-9.1.mo
-%%GETTEXT%%share/locale/ko/LC_MESSAGES/ecpg-9.1.mo
-%%GETTEXT%%share/locale/ko/LC_MESSAGES/libpq5-9.1.mo
-%%GETTEXT%%share/locale/ko/LC_MESSAGES/pg_config-9.1.mo
-%%GETTEXT%%share/locale/ko/LC_MESSAGES/pg_dump-9.1.mo
-%%GETTEXT%%share/locale/ko/LC_MESSAGES/pgscripts-9.1.mo
-%%GETTEXT%%share/locale/nb/LC_MESSAGES/pg_config-9.1.mo
-%%GETTEXT%%share/locale/pl/LC_MESSAGES/ecpg-9.1.mo
-%%GETTEXT%%share/locale/pl/LC_MESSAGES/ecpglib6-9.1.mo
-%%GETTEXT%%share/locale/pl/LC_MESSAGES/libpq5-9.1.mo
-%%GETTEXT%%share/locale/pl/LC_MESSAGES/pg_config-9.1.mo
-%%GETTEXT%%share/locale/pl/LC_MESSAGES/pg_dump-9.1.mo
-%%GETTEXT%%share/locale/pl/LC_MESSAGES/pgscripts-9.1.mo
-%%GETTEXT%%share/locale/pl/LC_MESSAGES/psql-9.1.mo
-%%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/ecpg-9.1.mo
-%%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/ecpglib6-9.1.mo
-%%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/libpq5-9.1.mo
-%%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/pg_config-9.1.mo
-%%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/pg_dump-9.1.mo
-%%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/pgscripts-9.1.mo
-%%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/psql-9.1.mo
-%%GETTEXT%%share/locale/ro/LC_MESSAGES/pg_config-9.1.mo
-%%GETTEXT%%share/locale/ro/LC_MESSAGES/pgscripts-9.1.mo
-%%GETTEXT%%share/locale/ru/LC_MESSAGES/ecpg-9.1.mo
-%%GETTEXT%%share/locale/ru/LC_MESSAGES/ecpglib6-9.1.mo
-%%GETTEXT%%share/locale/ru/LC_MESSAGES/libpq5-9.1.mo
-%%GETTEXT%%share/locale/ru/LC_MESSAGES/pg_config-9.1.mo
-%%GETTEXT%%share/locale/ru/LC_MESSAGES/pg_dump-9.1.mo
-%%GETTEXT%%share/locale/ru/LC_MESSAGES/pgscripts-9.1.mo
-%%GETTEXT%%share/locale/ru/LC_MESSAGES/psql-9.1.mo
-%%GETTEXT%%share/locale/sv/LC_MESSAGES/libpq5-9.1.mo
-%%GETTEXT%%share/locale/sv/LC_MESSAGES/pg_config-9.1.mo
-%%GETTEXT%%share/locale/sv/LC_MESSAGES/pg_dump-9.1.mo
-%%GETTEXT%%share/locale/sv/LC_MESSAGES/pgscripts-9.1.mo
-%%GETTEXT%%share/locale/ta/LC_MESSAGES/pg_config-9.1.mo
-%%GETTEXT%%share/locale/ta/LC_MESSAGES/pgscripts-9.1.mo
-%%GETTEXT%%share/locale/tr/LC_MESSAGES/ecpg-9.1.mo
-%%GETTEXT%%share/locale/tr/LC_MESSAGES/ecpglib6-9.1.mo
-%%GETTEXT%%share/locale/tr/LC_MESSAGES/libpq5-9.1.mo
-%%GETTEXT%%share/locale/tr/LC_MESSAGES/pg_config-9.1.mo
-%%GETTEXT%%share/locale/tr/LC_MESSAGES/pg_dump-9.1.mo
-%%GETTEXT%%share/locale/tr/LC_MESSAGES/pgscripts-9.1.mo
-%%GETTEXT%%share/locale/tr/LC_MESSAGES/psql-9.1.mo
-%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/ecpg-9.1.mo
-%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/ecpglib6-9.1.mo
-%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/libpq5-9.1.mo
-%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_config-9.1.mo
-%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_dump-9.1.mo
-%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pgscripts-9.1.mo
-%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/psql-9.1.mo
-%%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/ecpg-9.1.mo
-%%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/libpq5-9.1.mo
-%%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/pg_config-9.1.mo
-%%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/pg_dump-9.1.mo
-%%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/pgscripts-9.1.mo
-%%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/psql-9.1.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/ecpg-9.1.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/ecpglib6-9.1.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/libpq5-9.1.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/pg_config-9.1.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/pg_dump-9.1.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/pgscripts-9.1.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/psql-9.1.mo
+%%NLS%%share/locale/de/LC_MESSAGES/ecpg-9.1.mo
+%%NLS%%share/locale/de/LC_MESSAGES/ecpglib6-9.1.mo
+%%NLS%%share/locale/de/LC_MESSAGES/libpq5-9.1.mo
+%%NLS%%share/locale/de/LC_MESSAGES/pg_config-9.1.mo
+%%NLS%%share/locale/de/LC_MESSAGES/pg_dump-9.1.mo
+%%NLS%%share/locale/de/LC_MESSAGES/pgscripts-9.1.mo
+%%NLS%%share/locale/de/LC_MESSAGES/psql-9.1.mo
+%%NLS%%share/locale/es/LC_MESSAGES/ecpg-9.1.mo
+%%NLS%%share/locale/es/LC_MESSAGES/ecpglib6-9.1.mo
+%%NLS%%share/locale/es/LC_MESSAGES/libpq5-9.1.mo
+%%NLS%%share/locale/es/LC_MESSAGES/pg_config-9.1.mo
+%%NLS%%share/locale/es/LC_MESSAGES/pg_dump-9.1.mo
+%%NLS%%share/locale/es/LC_MESSAGES/pgscripts-9.1.mo
+%%NLS%%share/locale/es/LC_MESSAGES/psql-9.1.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/ecpg-9.1.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/ecpglib6-9.1.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/libpq5-9.1.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/pg_config-9.1.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/pg_dump-9.1.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/pgscripts-9.1.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/psql-9.1.mo
+%%NLS%%share/locale/it/LC_MESSAGES/ecpg-9.1.mo
+%%NLS%%share/locale/it/LC_MESSAGES/ecpglib6-9.1.mo
+%%NLS%%share/locale/it/LC_MESSAGES/libpq5-9.1.mo
+%%NLS%%share/locale/it/LC_MESSAGES/pg_config-9.1.mo
+%%NLS%%share/locale/it/LC_MESSAGES/pg_dump-9.1.mo
+%%NLS%%share/locale/it/LC_MESSAGES/pgscripts-9.1.mo
+%%NLS%%share/locale/it/LC_MESSAGES/psql-9.1.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/ecpg-9.1.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/ecpglib6-9.1.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/libpq5-9.1.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/pg_config-9.1.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/pg_dump-9.1.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/pgscripts-9.1.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/psql-9.1.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/ecpg-9.1.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/libpq5-9.1.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/pg_config-9.1.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/pg_dump-9.1.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/pgscripts-9.1.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/pg_config-9.1.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/ecpg-9.1.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/ecpglib6-9.1.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/libpq5-9.1.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/pg_config-9.1.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/pg_dump-9.1.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/pgscripts-9.1.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/psql-9.1.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/ecpg-9.1.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/ecpglib6-9.1.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/libpq5-9.1.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/pg_config-9.1.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/pg_dump-9.1.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/pgscripts-9.1.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/psql-9.1.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/pg_config-9.1.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/pgscripts-9.1.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/ecpg-9.1.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/ecpglib6-9.1.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/libpq5-9.1.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/pg_config-9.1.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/pg_dump-9.1.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/pgscripts-9.1.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/psql-9.1.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/libpq5-9.1.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/pg_config-9.1.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/pg_dump-9.1.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/pgscripts-9.1.mo
+%%NLS%%share/locale/ta/LC_MESSAGES/pg_config-9.1.mo
+%%NLS%%share/locale/ta/LC_MESSAGES/pgscripts-9.1.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/ecpg-9.1.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/ecpglib6-9.1.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/libpq5-9.1.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/pg_config-9.1.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/pg_dump-9.1.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/pgscripts-9.1.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/psql-9.1.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/ecpg-9.1.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/ecpglib6-9.1.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/libpq5-9.1.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_config-9.1.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_dump-9.1.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/pgscripts-9.1.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/psql-9.1.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/ecpg-9.1.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/libpq5-9.1.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/pg_config-9.1.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/pg_dump-9.1.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/pgscripts-9.1.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/psql-9.1.mo

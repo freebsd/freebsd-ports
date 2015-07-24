@@ -19,7 +19,7 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/pinentry
 
 OPTIONS_SINGLE=	FRONTEND
-OPTIONS_SINGLE_FRONTEND=	TTY NCURSES GTK2 QT4
+OPTIONS_SINGLE_FRONTEND=	TTY NCURSES GTK2 QT4 GNOME3
 OPTIONS_DEFAULT=	TTY
 
 FRONTEND_DESC=	Default frontend
@@ -44,6 +44,10 @@ QT4_DESC=	Qt 4 frontend
 PINENTRY_QT4=	pinentry-qt4
 QT4_RUN_DEPENDS=	${PINENTRY_QT4}:${PORTSDIR}/security/pinentry-qt4
 
+GNOME3_DESC=	GNOME 3 frontend
+PINENTRY_GNOME3=	pinentry-gnome3
+GNOME3_RUN_DEPENDS=	${PINENTRY_GNOME3}:${PORTSDIR}/security/pinentry-gnome3
+
 .include <bsd.port.options.mk>
 
 .for gui in ${OPTIONS_SINGLE_FRONTEND}
@@ -64,8 +68,7 @@ LIB_DEPENDS=	libassuan.so:${PORTSDIR}/security/libassuan \
 
 USES+=		iconv gmake pkgconfig
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-pinentry-emacs \
-		--disable-pinentry-gnome3
+CONFIGURE_ARGS=	--disable-pinentry-emacs
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -75,6 +78,14 @@ OPTIONS_DEFINE=	LIBSECRET
 LIBSECRET_DESC=	Saving the passphrase with libsecret
 LIBSECRET_CONFIGURE_ENABLE=	libsecret
 LIBSECRET_LIB_DEPENDS=	libsecret-1.so:${PORTSDIR}/security/libsecret
+
+.if ${PINENTRY_GUI} == "gnome3"
+USE_GNOME+=	gtk20
+LIB_DEPENDS+=	libgcr-base-3.so:${PORTSDIR}/security/gcr
+PLIST_FILES=	bin/pinentry-gnome3
+.else
+CONFIGURE_ARGS+=--disable-pinentry-gnome3
+.endif
 
 .if ${PINENTRY_GUI} == "qt4"
 USES+=		compiler:c++11-lib

@@ -4,7 +4,7 @@ diff --git config/Makefile.in config/Makefile.in
 index 14bfc0d..5383399 100644
 --- mozilla/config/Makefile.in
 +++ mozilla/config/Makefile.in
-@@ -77,6 +77,8 @@ export:: $(export-preqs)
+@@ -75,6 +75,8 @@ export:: $(export-preqs)
  		-DMOZ_NATIVE_LIBEVENT=$(MOZ_NATIVE_LIBEVENT) \
  		-DMOZ_NATIVE_LIBVPX=$(MOZ_NATIVE_LIBVPX) \
  		-DMOZ_NATIVE_ICU=$(MOZ_NATIVE_ICU) \
@@ -17,7 +17,7 @@ diff --git config/system-headers config/system-headers
 index 18e8703..bdc5f82 100644
 --- mozilla/config/system-headers
 +++ mozilla/config/system-headers
-@@ -1145,3 +1145,11 @@ unicode/utypes.h
+@@ -1357,3 +1357,11 @@ unicode/utypes.h
  #endif
  libutil.h
  unwind.h
@@ -33,7 +33,7 @@ diff --git configure.in configure.in
 index ac38f40..87536b7 100644
 --- mozilla/configure.in
 +++ mozilla/configure.in
-@@ -8032,6 +8032,52 @@ if test "$USE_FC_FREETYPE"; then
+@@ -7986,6 +7986,49 @@ if test "$USE_FC_FREETYPE"; then
  fi
  
  dnl ========================================================
@@ -46,16 +46,15 @@ index ac38f40..87536b7 100644
 +MOZ_NATIVE_HARFBUZZ=)
 +
 +if test -n "$MOZ_NATIVE_HARFBUZZ"; then
-+    PKG_CHECK_MODULES(MOZ_HARFBUZZ, harfbuzz >= 0.9.25)
++    PKG_CHECK_MODULES(MOZ_HARFBUZZ, harfbuzz >= 0.9.34)
 +fi
 +
 +AC_SUBST(MOZ_NATIVE_HARFBUZZ)
-+AC_SUBST(MOZ_HARFBUZZ_CFLAGS)
-+AC_SUBST(MOZ_HARFBUZZ_LIBS)
 +
 +dnl ========================================================
 +dnl Check for graphite2
 +dnl ========================================================
++
 +MOZ_ARG_WITH_BOOL(system-graphite2,
 +[  --with-system-graphite2 Use system graphite2 (located with pkgconfig)],
 +MOZ_NATIVE_GRAPHITE2=1,
@@ -79,27 +78,58 @@ index ac38f40..87536b7 100644
 +fi
 +
 +AC_SUBST(MOZ_NATIVE_GRAPHITE2)
-+AC_SUBST(MOZ_GRAPHITE2_CFLAGS)
-+AC_SUBST(MOZ_GRAPHITE2_LIBS)
 +
 +dnl ========================================================
  dnl Check for pixman and cairo
  dnl ========================================================
  
-diff --git content/base/src/moz.build content/base/src/moz.build
-index d4f6380..0ee55df 100644
---- mozilla/content/base/src/moz.build
-+++ mozilla/content/base/src/moz.build
-@@ -179,6 +179,9 @@ SOURCES += [
+diff --git dom/base/moz.build dom/base/moz.build
+index a660ba4..6b2f602 100644
+--- mozilla/dom/base/moz.build
++++ mozilla/dom/base/moz.build
+@@ -196,6 +196,9 @@ SOURCES += [
      'nsObjectLoadingContent.cpp',
  ]
  
 +if CONFIG['MOZ_NATIVE_HARFBUZZ']:
-+    SOURCES['nsContentUtils.cpp'].flags += [CONFIG['MOZ_HARFBUZZ_CFLAGS']]
++    SOURCES['nsContentUtils.cpp'].flags += CONFIG['MOZ_HARFBUZZ_CFLAGS']
 +
  EXTRA_COMPONENTS += [
      'contentAreaDropListener.js',
      'contentAreaDropListener.manifest',
+diff --git gfx/graphite2/moz-gr-update.sh gfx/graphite2/moz-gr-update.sh
+index f3d76ea..a9e7fb6 100644
+--- mozilla/gfx/graphite2/moz-gr-update.sh
++++ mozilla/gfx/graphite2/moz-gr-update.sh
+@@ -23,8 +23,14 @@ echo "\nSee" $0 "for update procedure.\n" >> gfx/graphite2/README.mozilla
+ find gfx/graphite2/ -name "*.cpp" -exec perl -p -i -e "s/<cstdio>/<stdio.h>/;s/Windows.h/windows.h/;" {} \;
+ find gfx/graphite2/ -name "*.h" -exec perl -p -i -e "s/<cstdio>/<stdio.h>/;s/Windows.h/windows.h/;" {} \;
+ 
++# closest tag/release to require for system version
++TAG=$(cd ../graphitedev/ && hg parents --template {latesttag})
++
++perl -p -i -e "s/[0-9]+\,[0-9]+\,[0-9]+/$TAG/ and tr/./,/ \
++  if /GR2_VERSION_REQUIRE/" configure.in
++
+ # summarize what's been touched
+-echo Updated to $CHANGESET.
++echo Updated to $CHANGESET \($TAG for --with-system-graphite2\)
+ echo Here is what changed in the gfx/graphite2 directory:
+ echo
+ 
+diff --git gfx/harfbuzz/README-mozilla gfx/harfbuzz/README-mozilla
+index ca57d16..1ce21fe 100644
+--- mozilla/gfx/harfbuzz/README-mozilla
++++ mozilla/gfx/harfbuzz/README-mozilla
+@@ -21,3 +21,8 @@ In addition, the src/Makefile.in file here is NOT from upstream, nor is it
+ generated from src/Makefile.am (the original harfbuzz version); it is a mozilla-
+ specific makefile that is maintained by hand. It should only need updating when
+ new source files or exported headers are added in harfbuzz.
++
++The in-tree copy may be omitted during build by --with-system-harfbuzz.
++Make sure to keep pkg-config version check within configure.in in sync
++with checkout version or increment latest tag by one if it's not based
++on upstream release.
 diff --git gfx/moz.build gfx/moz.build
 index 519aa46..6929751 100644
 --- mozilla/gfx/moz.build
@@ -126,83 +156,87 @@ index 519aa46..6929751 100644
      'ots/src',
      'thebes',
      'ipc',
-diff --git gfx/skia/Makefile.in gfx/skia/Makefile.in
-index ee0efb2..98e169d6f 100644
---- mozilla/gfx/skia/Makefile.in
-+++ mozilla/gfx/skia/Makefile.in
-@@ -15,6 +15,10 @@ ifeq (qt,$(MOZ_WIDGET_TOOLKIT))
- OS_CXXFLAGS += $(MOZ_CAIRO_CFLAGS) $(MOZ_PANGO_CFLAGS) $(CAIRO_FT_CFLAGS)
- endif
+diff --git gfx/skia/generate_mozbuild.py gfx/skia/generate_mozbuild.py
+index 28fa6b5..240dced 100755
+--- mozilla/gfx/skia/generate_mozbuild.py
++++ mozilla/gfx/skia/generate_mozbuild.py
+@@ -140,6 +140,9 @@ if CONFIG['GNU_CXX']:
+     if not CONFIG['CLANG_CXX']:
+         CXXFLAGS += ['-Wno-logical-op']
  
-+ifdef MOZ_NATIVE_HARFBUZZ
-+OS_CXXFLAGS += $(MOZ_HARFBUZZ_CFLAGS)
-+endif
++if CONFIG['MOZ_NATIVE_HARFBUZZ']:
++    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
 +
- include $(topsrcdir)/config/rules.mk
+ if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('gtk2', 'gtk3', 'android', 'gonk', 'qt'):
+     CXXFLAGS += CONFIG['MOZ_CAIRO_CFLAGS']
+     CXXFLAGS += CONFIG['CAIRO_FT_CFLAGS']
+diff --git gfx/skia/moz.build gfx/skia/moz.build
+index 1d0c2f9..adb8941 100644
+--- mozilla/gfx/skia/moz.build
++++ mozilla/gfx/skia/moz.build
+@@ -968,6 +968,9 @@ if CONFIG['GNU_CXX']:
+     if not CONFIG['CLANG_CXX']:
+         CXXFLAGS += ['-Wno-logical-op']
  
- ifeq ($(CPU_ARCH)_$(GNU_CC),arm_1)
-diff --git gfx/thebes/Makefile.in gfx/thebes/Makefile.in
-index 45c36ae..79d32cf 100644
---- mozilla/gfx/thebes/Makefile.in
-+++ mozilla/gfx/thebes/Makefile.in
-@@ -13,6 +13,14 @@ DEFINES := $(filter-out -DUNICODE,$(DEFINES))
- CXXFLAGS += $(MOZ_CAIRO_CFLAGS) $(TK_CFLAGS)
- CFLAGS += $(MOZ_CAIRO_CFLAGS) $(TK_CFLAGS)
++if CONFIG['MOZ_NATIVE_HARFBUZZ']:
++    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
++
+ if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('gtk2', 'gtk3', 'android', 'gonk', 'qt'):
+     CXXFLAGS += CONFIG['MOZ_CAIRO_CFLAGS']
+     CXXFLAGS += CONFIG['CAIRO_FT_CFLAGS']
+diff --git gfx/thebes/moz.build gfx/thebes/moz.build
+index d5852fa..aeeab25 100644
+--- mozilla/gfx/thebes/moz.build
++++ mozilla/gfx/thebes/moz.build
+@@ -278,6 +278,12 @@ CXXFLAGS += CONFIG['TK_CFLAGS']
+ CFLAGS += CONFIG['MOZ_CAIRO_CFLAGS']
+ CFLAGS += CONFIG['TK_CFLAGS']
  
-+ifdef MOZ_NATIVE_GRAPHITE2
-+CXXFLAGS += $(MOZ_GRAPHITE2_CFLAGS)
-+endif
++if CONFIG['MOZ_NATIVE_HARFBUZZ']:
++    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
 +
-+ifdef MOZ_NATIVE_HARFBUZZ
-+CXXFLAGS += $(MOZ_HARFBUZZ_CFLAGS)
-+endif
++if CONFIG['MOZ_NATIVE_GRAPHITE2']:
++    CXXFLAGS += CONFIG['MOZ_GRAPHITE2_CFLAGS']
 +
- ifeq ($(MOZ_WIDGET_TOOLKIT),android)
- CXXFLAGS += $(CAIRO_FT_CFLAGS)
- endif
-diff --git intl/unicharutil/util/Makefile.in intl/unicharutil/util/Makefile.in
-index f6b9f7c..60863f4 100644
---- mozilla/intl/unicharutil/util/Makefile.in
-+++ mozilla/intl/unicharutil/util/Makefile.in
-@@ -21,3 +21,7 @@ ifdef _MSC_VER
- OS_COMPILE_CXXFLAGS += -Zl
- OS_COMPILE_CFLAGS += -Zl
- endif
-+
-+ifdef MOZ_NATIVE_HARFBUZZ
-+CXXFLAGS += $(MOZ_HARFBUZZ_CFLAGS)
-+endif
-diff --git netwerk/dns/Makefile.in netwerk/dns/Makefile.in
-index 1cacbd7..f5d72bb 100644
---- mozilla/netwerk/dns/Makefile.in
-+++ mozilla/netwerk/dns/Makefile.in
-@@ -5,6 +5,10 @@
+ if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('android', 'gonk', 'qt'):
+     CXXFLAGS += CONFIG['CAIRO_FT_CFLAGS']
  
- include $(topsrcdir)/config/rules.mk
+diff --git intl/unicharutil/util/moz.build intl/unicharutil/util/moz.build
+index d736943..41a931f 100644
+--- mozilla/intl/unicharutil/util/moz.build
++++ mozilla/intl/unicharutil/util/moz.build
+@@ -37,3 +37,6 @@ if CONFIG['_MSC_VER']:
  
-+ifdef MOZ_NATIVE_HARFBUZZ
-+CXXFLAGS += $(MOZ_HARFBUZZ_CFLAGS)
-+endif
+ if CONFIG['ENABLE_INTL_API']:
+     CXXFLAGS += CONFIG['MOZ_ICU_CFLAGS']
 +
- # Generate the include file containing compact, static definitions
- # for effective TLD data.
- etld_data.inc: $(srcdir)/prepare_tlds.py $(srcdir)/effective_tld_names.dat
-diff --git toolkit/library/libxul.mk toolkit/library/libxul.mk
++if CONFIG['MOZ_NATIVE_HARFBUZZ']:
++    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
+diff --git netwerk/dns/moz.build netwerk/dns/moz.build
+index 0b0717a..2e665c9 100644
+--- mozilla/netwerk/dns/moz.build
++++ mozilla/netwerk/dns/moz.build
+@@ -64,3 +64,6 @@ GENERATED_FILES = [
+ LOCAL_INCLUDES += [
+     '/netwerk/base',
+ ]
++
++if CONFIG['MOZ_NATIVE_HARFBUZZ']:
++    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
+diff --git toolkit/library/moz.build toolkit/library/moz.build
 index 67f0db9..d42137a 100644
---- mozilla/toolkit/library/libxul.mk
-+++ mozilla/toolkit/library/libxul.mk
-@@ -89,6 +89,14 @@ ifndef MOZ_TREE_PIXMAN
- EXTRA_DSO_LDOPTS += $(MOZ_PIXMAN_LIBS)
- endif
+--- mozilla/toolkit/library/moz.build
++++ mozilla/toolkit/library/moz.build
+@@ -187,6 +187,12 @@ if CONFIG['MOZ_NATIVE_LIBVPX']:
+ if not CONFIG['MOZ_TREE_PIXMAN']:
+     OS_LIBS += CONFIG['MOZ_PIXMAN_LIBS']
  
-+ifdef MOZ_NATIVE_GRAPHITE2
-+EXTRA_DSO_LDOPTS += $(MOZ_GRAPHITE2_LIBS)
-+endif
++if CONFIG['MOZ_NATIVE_GRAPHITE2']:
++    OS_LIBS += CONFIG['MOZ_GRAPHITE2_LIBS']
 +
-+ifdef MOZ_NATIVE_HARFBUZZ
-+EXTRA_DSO_LDOPTS += $(MOZ_HARFBUZZ_LIBS)
-+endif
++if CONFIG['MOZ_NATIVE_HARFBUZZ']:
++    OS_LIBS += CONFIG['MOZ_HARFBUZZ_LIBS']
 +
- ifdef MOZ_DMD
- EXTRA_DSO_LDOPTS += $(call EXPAND_LIBNAME_PATH,dmd,$(DIST)/lib)
- endif
+ if CONFIG['MOZ_OSS']:
+     OS_LIBS += CONFIG['MOZ_OSS_LIBS']
+ 

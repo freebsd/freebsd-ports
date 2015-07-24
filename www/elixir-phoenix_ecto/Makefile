@@ -1,8 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	phoenix_ecto
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	elixir-
 
@@ -17,7 +18,9 @@ GH_ACCOUNT=	phoenixframework
 
 MIX_BUILD_DEPS=	databases/elixir-ecto \
 		devel/elixir-plug \
-		devel/elixir-poison
+		devel/elixir-poison \
+		www/elixir-phoenix_html
 MIX_RUN_DEPS:=	${MIX_BUILD_DEPS}
+MIX_REWRITE=	yes
 
 .include <bsd.port.mk>

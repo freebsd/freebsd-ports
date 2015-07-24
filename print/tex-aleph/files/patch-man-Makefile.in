@@ -1,6 +1,6 @@
---- man/Makefile.in.orig	2014-05-05 06:46:28.000000000 +0900
-+++ man/Makefile.in	2014-08-21 12:59:46.000000000 +0900
-@@ -402,10 +402,10 @@
+--- man/Makefile.in.orig	2015-03-09 10:53:09 UTC
++++ man/Makefile.in
+@@ -428,10 +428,10 @@ top_srcdir = @top_srcdir@
  wlibs = @wlibs@
  x_ext_lib = @x_ext_lib@
  x_tool_libs = @x_tool_libs@
@@ -13,7 +13,7 @@
  EXTRA_DIST = $(bootstrap_man_sources) $(web_man_sources) tex.man \
  	mf.man mpost.man etex.man $(pdftex_man_sources) luatex.man \
  	$(otangle_man_sources) aleph.man $(misc_man_sources) \
-@@ -414,7 +414,7 @@
+@@ -440,7 +440,7 @@ EXTRA_DIST = $(bootstrap_man_sources) $(
  bootstrap_man_sources = ctie.man cweb.man tangle.man tie.man
  
  # Symlinks within $(man1dir): FILE:LINK indicates LINK.1->FILE.1

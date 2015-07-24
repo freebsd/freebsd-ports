@@ -12,6 +12,8 @@ EXTRACT_ONLY=
 MAINTAINER=	phil@philpep.org
 COMMENT=	Upload files to omploader.org
 
+DEPRECATED=	omploader.org is down for many years
+EXPIRATION_DATE=	2015-08-20
 RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 USE_RUBY=	yes

@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150720:
+  AFFECTS: users of print/texlive-base and other TeXLive packages
+  AUTHOR: hrs@FreeBSD.org
+
+  TeXLive in Ports Collection has been updated to TL2015.  To upgrade
+  installed old packages, upgrading of "tex-*" packages is required.
+
+  If you have a problem with upgrading, please send it to
+  freebsd-tex@FreeBSD.org and/or file a PR.
+
 20150711:
   AFFECTS: users of graphics/gdal
   AUTHOR: sunpoet@FreeBSD.org

@@ -3,63 +3,44 @@
 
 PORTNAME=	qdbm
 PORTVERSION=	1.8.78
-PORTREVISION?=	3
+PORTREVISION=	4
 CATEGORIES=	databases
 MASTER_SITES=	http://fallabs.com/qdbm/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT?=	Quick Database Manager
+MAINTAINER=	hrs@FreeBSD.org
+COMMENT=	Quick Database Manager
+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2
 
+USES=		iconv
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-
-.if !defined(SLAVEPORT)
-LICENSE=	LGPL21 # or later
-LICENSE_FILE=	${WRKSRC}/COPYING
-
-USES+=		iconv
+CONFIGURE_ENV=	ac_cv_lib_iconv_main=yes
 CONFIGURE_ARGS=	--enable-bzip --enable-lzo --enable-zlib \
-		--enable-iconv \
-		--enable-pthread
+		--enable-iconv --enable-pthread
 CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+CFLAGS+=	-fPIC -fsigned-char
+LIBS+=		-L${LOCALBASE}/lib ${ICONV_LIB}
 MAKE_ARGS=	MYDATADIR="${DOCSDIR}" MYDOCS="${PORTDOCS}" \
 		MYPCDIR="${PREFIX}/libdata/pkgconfig"
-
+INSTALL_TARGET=	install-strip
 PORTDOCS=	ChangeLog NEWS
 
 post-patch:
 .if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
 	@${REINPLACE_CMD} 's/-DNDEBUG//' ${WRKSRC}/Makefile.in
 .endif
-	@${REINPLACE_CMD} 's/-liconv/${ICONV_LIB}/' ${WRKSRC}/configure
 
 post-build:
-	(cd ${WRKSRC}/lab && ${MAKE} CC="${CC}" CFLAGS="${CFLAGS}" \
-		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
-		fmtcnv031127)
+	cd ${WRKSRC}/lab && ${MAKE} CC="${CC}" CFLAGS="${CFLAGS}" \
+	    CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
+	    fmtcnv031127
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lab/fmtcnv031127 ${STAGEDIR}${PREFIX}/bin
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
-
-.else
-
-LIB_DEPENDS+=	libqdbm.so:${PORTSDIR}/databases/qdbm
-
-post-patch:
-.if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
-	@${REINPLACE_CMD} 's/-DNDEBUG//' ${WRKSRC}/Makefile.in
-.endif
-	@${REINPLACE_CMD} -e 's/-liconv//' -e 's/-lstdc++//' ${WRKSRC}/configure
-.if ${SLAVEPORT} == "ruby"
-	@${REINPLACE_CMD} '/iconv/d' ${WRKSRC}/curia/extconf.rb \
-		${WRKSRC}/depot/extconf.rb ${WRKSRC}/villa/extconf.rb
-.endif
-
-.endif # !defined(SLAVEPORT)
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libqdbm.so.14.14.0
 
 .include <bsd.port.mk>

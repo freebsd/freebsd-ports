@@ -13,6 +13,7 @@
     SUBDIR += abgx360
     SUBDIR += abgx360gui
     SUBDIR += accountsservice
+    SUBDIR += acerhdf-kmod
     SUBDIR += acpi_call
     SUBDIR += acpica-tools
     SUBDIR += acts
@@ -808,6 +809,7 @@
     SUBDIR += rename
     SUBDIR += renameutils
     SUBDIR += reoback
+    SUBDIR += reptyr
     SUBDIR += respond
     SUBDIR += retail
     SUBDIR += rfstool

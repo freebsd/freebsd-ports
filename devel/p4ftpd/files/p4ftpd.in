@@ -40,5 +40,13 @@ load_rc_config $name
 
 command="%%PREFIX%%/sbin/p4ftpd"
 command_args="-l ${p4ftpd_listen} -p ${p4ftpd_port} -v ${p4ftpd_debug} -L ${p4ftpd_log} -d -u p4admin ${p4ftpd_args} > /dev/null 2>&1 &"
+start_precmd="p4ftpd_prestart"
+
+p4ftpd_prestart()
+{
+        if [ ! -f "${p4ftpd_log}" ]; then
+                install -o p4admin -g p4admin -m 0640 /dev/null ${p4ftpd_log}
+        fi
+}
 
 run_rc_command "$1"

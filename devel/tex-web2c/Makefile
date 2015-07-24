@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	web2c
-PORTVERSION=	20140525
-PORTREVISION=	2
+PORTVERSION=	20150521
 CATEGORIES=	devel
-MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2014/
+MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2015/
 PKGNAMEPREFIX=	tex-
 DISTNAME=	texlive-${PORTVERSION}-source
 DIST_SUBDIR=	TeX
@@ -14,17 +13,18 @@ COMMENT=	TeX implementation translating WEB to C
 
 LIB_DEPENDS=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15 \
 		libpng.so:${PORTSDIR}/graphics/png \
-		libzzip.so:${PORTSDIR}/devel/zziplib
+		libzzip.so:${PORTSDIR}/devel/zziplib \
+		libmpfr.so:${PORTSDIR}/math/mpfr
 
-USE_TEX=	kpathsea
+USES=		pkgconfig gmake libtool tar:xz
+USE_TEX=	kpathsea ptexenc
 USE_XORG=	pixman
-USES=		pkgconfig gmake tar:xz
-EXTRACT_AFTER_ARGS=	${EXTRACT_FILES}
-EXTRACT_FILES=	${DISTNAME}/build-aux \
-		${DISTNAME}/libs/xpdf \
-		${DISTNAME}/libs/cairo \
-		${DISTNAME}/libs/pixman \
-		${DISTNAME}/texk/web2c
+USE_GNOME=	cairo
+USE_LDCONFIG=	yes
+EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
+EXTRACT_FILES=	build-aux \
+		libs/xpdf \
+		texk/web2c
 WRKSRC=		${WRKDIR}/${DISTNAME}/texk/web2c
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OBSDCOMPAT_INCLUDES=-I${WRKSRC}/../../libs/obsdcompat
@@ -38,24 +38,20 @@ CONFIGURE_ARGS=	--disable-luatex \
 		--disable-euptex \
 		--with-x=no \
 		--without-mf-x-toolkit \
-		--with-system-icu \
-		--with-icu-includes=${LOCALBASE}/include \
-		--with-icu-libdir=${LOCALBASE}/lib \
-		--with-system-kpathsea \
-		--with-kpathsea-includes=${LOCALBASE}/include \
-		--with-kpathsea-libdir=${LOCALBASE}/lib \
-		--with-system-libpng \
-		--with-libpng-includes=${LOCALBASE}/include \
-		--with-libpng-libdir=${LOCALBASE}/lib \
-		--with-system-pixman \
 		--with-system-zlib \
 		--with-system-zziplib
+.for L in pixman cairo gmp mpfr libpng icu kpathsea ptexenc
+CONFIGURE_ARGS+=--with-system-$L \
+		--with-$L-include=${LOCALBASE}/include \
+		--with-$L-libdir=${LOCALBASE}/lib
+.endfor
 CFLAGS+=	-I${LOCALBASE}/include
+INSTALL_TARGET=	install-strip
 
 INFO=	web2c
 
 pre-configure:
-	for D in libs/xpdf libs/cairo; do \
+	for D in libs/xpdf; do \
 		cd ${WRKDIR}/${DISTNAME}/$$D && \
 		${SETENV} CC="${CC}" CPP="${CPP}" CXX="${CXX}" \
 			CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" CXXFLAGS="${CXXFLAGS}" \

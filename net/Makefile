@@ -115,6 +115,8 @@
     SUBDIR += e169-stats
     SUBDIR += easysoap
     SUBDIR += echoping
+    SUBDIR += elixir-kafka_ex
+    SUBDIR += elixir-oauth2
     SUBDIR += empty
     SUBDIR += enet
     SUBDIR += erlang-ranch
@@ -538,6 +540,8 @@
     SUBDIR += p5-Net-Amazon-MechanicalTurk
     SUBDIR += p5-Net-Amazon-S3
     SUBDIR += p5-Net-Amazon-Signature
+    SUBDIR += p5-Net-Amazon-Signature-V3
+    SUBDIR += p5-Net-Amazon-Signature-V4
     SUBDIR += p5-Net-Amazon-Thumbnail
     SUBDIR += p5-Net-Analysis
     SUBDIR += p5-Net-Appliance-Phrasebook
@@ -1103,7 +1107,6 @@
     SUBDIR += rubygem-ruby-openid
     SUBDIR += rubygem-ruby-yadis
     SUBDIR += rubygem-rubyntlm
-    SUBDIR += rubygem-rubyntlm01
     SUBDIR += rubygem-rubytter
     SUBDIR += rubygem-rudy
     SUBDIR += rubygem-rye

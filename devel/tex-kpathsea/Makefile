@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	kpathsea
-PORTVERSION=	6.2.0
-PORTREVISION=	1
+PORTVERSION=	6.2.1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2014/
+MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2015/
 PKGNAMEPREFIX=	tex-
-DISTNAME=	texlive-20140525-source
+DISTNAME=	texlive-20150521-source
 DIST_SUBDIR=	TeX
 
 MAINTAINER=	hrs@FreeBSD.org

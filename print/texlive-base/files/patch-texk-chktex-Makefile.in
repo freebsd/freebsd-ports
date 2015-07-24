@@ -1,8 +1,8 @@
---- texk/chktex/Makefile.in.orig	2013-12-26 00:37:50.000000000 +0900
-+++ texk/chktex/Makefile.in	2014-08-21 00:21:15.000000000 +0900
-@@ -123,10 +123,8 @@
+--- texk/chktex/Makefile.in.orig	2015-04-13 09:45:32 UTC
++++ texk/chktex/Makefile.in
+@@ -119,10 +119,8 @@ mkinstalldirs = $(install_sh) -d
  CONFIG_HEADER = config.h
- CONFIG_CLEAN_FILES = deweb.pl
+ CONFIG_CLEAN_FILES = ChkTeX.t deweb.pl
  CONFIG_CLEAN_VPATH_FILES =
 -am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(bindir)" \
 -	"$(DESTDIR)$(texmfdir)" "$(DESTDIR)$(texmfdir)" \
@@ -13,7 +13,7 @@
  PROGRAMS = $(bin_PROGRAMS)
  am__chktex_SOURCES_DIST = @CHKTEX_TREE@/ChkTeX.c \
  	@CHKTEX_TREE@/ChkTeX.h @CHKTEX_TREE@/FindErrs.c \
-@@ -1379,7 +1377,7 @@
+@@ -1405,7 +1403,7 @@ check-am: all-am
  check: check-am
  all-am: Makefile $(PROGRAMS) $(SCRIPTS) $(MANS) $(DATA) config.h
  installdirs:
@@ -22,14 +22,14 @@
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
  install: install-am
-@@ -1443,8 +1441,8 @@
+@@ -1469,9 +1467,7 @@ info: info-am
  
  info-am:
  
--install-data-am: install-configDATA install-dist_pdfdocDATA \
--	install-man install-nodist_texmfSCRIPTS install-texmfSCRIPTS
-+install-data-am: \
-+	install-man
+-install-data-am: install-configDATA install-man \
+-	install-nodist_texmfSCRIPTS install-pdfdocDATA \
+-	install-texmfSCRIPTS
++install-data-am: install-man
  	@$(NORMAL_INSTALL)
  	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
  install-dvi: install-dvi-am

@@ -3,7 +3,7 @@
 
 PORTNAME=	xdvik
 PORTVERSION=	22.87
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	SF/xdvi/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	tex-
@@ -14,14 +14,14 @@ COMMENT=	DVI Previewer(kpathsearch) for X
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libpaper.so:${PORTSDIR}/print/libpaper
-RUN_DEPENDS=	tex-dvipsk>=5.994_1:${PORTSDIR}/print/tex-dvipsk
+RUN_DEPENDS=	tex-dvipsk>=5.995:${PORTSDIR}/print/tex-dvipsk
 
 USES=		iconv gmake motif
 USE_TEX=	web2c kpathsea texmf texhash
 TEXHASHDIRS=	${TEXMFDISTDIR}
 USE_XORG=	ice sm x11 xmu xpm xt xi
 WRKSRC=		${WRKDIR}/${DISTNAME}/texk/xdvik
-PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}	
+PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared \
 		--datarootdir=${LOCALBASE}/share \

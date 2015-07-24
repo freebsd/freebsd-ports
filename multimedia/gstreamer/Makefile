@@ -14,6 +14,8 @@ COMMENT=	Development framework for creating media applications
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+PORTSCOUT=	limit:0\.10\..*
+
 CFLAGS:=	${CFLAGS} -O2 -Wno-format
 USES=		bison gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_GNOME=	glib20 introspection libxml2

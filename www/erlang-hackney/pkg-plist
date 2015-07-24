@@ -2,6 +2,7 @@ lib/erlang/lib/hackney-%%VERSION%%/ebin/hackney.app
 lib/erlang/lib/hackney-%%VERSION%%/ebin/hackney.beam
 lib/erlang/lib/hackney-%%VERSION%%/ebin/hackney_app.beam
 lib/erlang/lib/hackney-%%VERSION%%/ebin/hackney_bstr.beam
+lib/erlang/lib/hackney-%%VERSION%%/ebin/hackney_cacerts.beam
 lib/erlang/lib/hackney-%%VERSION%%/ebin/hackney_connect.beam
 lib/erlang/lib/hackney-%%VERSION%%/ebin/hackney_cookie.beam
 lib/erlang/lib/hackney-%%VERSION%%/ebin/hackney_date.beam
@@ -48,6 +49,8 @@ lib/erlang/lib/hackney-%%VERSION%%/src/hackney_client/hackney_request.erl
 lib/erlang/lib/hackney-%%VERSION%%/src/hackney_client/hackney_response.erl
 lib/erlang/lib/hackney-%%VERSION%%/src/hackney_client/hackney_stream.erl
 lib/erlang/lib/hackney-%%VERSION%%/src/hackney_client/hackney_util.erl
+lib/erlang/lib/hackney-%%VERSION%%/src/hackney_connect/hackney_cacerts.erl
+lib/erlang/lib/hackney-%%VERSION%%/src/hackney_connect/hackney_cacerts.erl.src
 lib/erlang/lib/hackney-%%VERSION%%/src/hackney_connect/hackney_connect.erl
 lib/erlang/lib/hackney-%%VERSION%%/src/hackney_connect/hackney_http_connect.erl
 lib/erlang/lib/hackney-%%VERSION%%/src/hackney_connect/hackney_pool.erl

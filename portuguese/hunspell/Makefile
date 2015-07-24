@@ -18,6 +18,7 @@ COMMENT=	Portuguese hunspell dictionaries
 # - pt_BR is licensed under LGPL3 and MPL.
 LICENSE=	MPL
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/hunspell-pt_PT-${PORTVERSION}
 

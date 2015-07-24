@@ -2,7 +2,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/alchemist-refcard.pdf
 %%PORTDOCS%%%%DOCSDIR%%/alchemist-refcard.tex
-%%EMACS_SITE_LISPDIR%%/alchemist-buffer.el
 %%EMACS_SITE_LISPDIR%%/alchemist-company.el
 %%EMACS_SITE_LISPDIR%%/alchemist-compile.el
 %%EMACS_SITE_LISPDIR%%/alchemist-complete.el
@@ -15,6 +14,8 @@
 %%EMACS_SITE_LISPDIR%%/alchemist-message.el
 %%EMACS_SITE_LISPDIR%%/alchemist-mix.el
 %%EMACS_SITE_LISPDIR%%/alchemist-project.el
+%%EMACS_SITE_LISPDIR%%/alchemist-refcard.el
+%%EMACS_SITE_LISPDIR%%/alchemist-report.el
 %%EMACS_SITE_LISPDIR%%/alchemist-server.el
 %%EMACS_SITE_LISPDIR%%/alchemist-test-mode.el
 %%EMACS_SITE_LISPDIR%%/alchemist-utils.el

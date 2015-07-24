@@ -58,6 +58,353 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c80b27a2-3165-11e5-8a1d-14dae9d210b8">
+    <topic>wordpress -- XSS vulnerability</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<name>de-wordpress</name>
+	<name>ja-wordpress</name>
+	<name>ru-wordpress</name>
+	<name>zh-wordpress-zh_CH</name>
+	<name>zh-wordpress-zh_TW</name>
+	<range><lt>4.2.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gary Pendergast reports:</p>
+	<blockquote cite="https://wordpress.org/news/2015/07/wordpress-4-2-3/">
+	  <p>WordPress versions 4.2.2 and earlier are affected by a
+	    cross-site scripting vulnerability, which could allow users with the
+	    Contributor or Author role to compromise a site. This was reported by
+	    Jon Cave and fixed by Robert Chapin, both of the WordPress security
+	    team.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://wordpress.org/news/2015/07/wordpress-4-2-3/</url>
+    </references>
+    <dates>
+      <discovery>2015-07-23</discovery>
+      <entry>2015-07-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4caf01e2-30e6-11e5-a4a5-002590263bf5">
+    <topic>libidn -- out-of-bounds read issue with invalid UTF-8 input</topic>
+    <affects>
+      <package>
+	<name>libidn</name>
+	<range><lt>1.3.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Simon Josefsson reports:</p>
+	<blockquote cite="http://git.savannah.gnu.org/cgit/libidn.git/plain/NEWS?id=libidn-1-31">
+	  <p>stringprep_utf8_to_ucs4 now rejects invalid UTF-8. This function
+	    has always been documented to not validate that the input UTF-8
+	    string is actually valid UTF-8...
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-2059</cvename>
+      <url>http://git.savannah.gnu.org/cgit/libidn.git/plain/NEWS?id=libidn-1-31</url>
+    </references>
+    <dates>
+      <discovery>2015-02-09</discovery>
+      <entry>2015-07-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9dd761ff-30cb-11e5-a4a5-002590263bf5">
+    <topic>sox -- memory corruption vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>sox</name>
+	<range><le>14.4.2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Michele Spagnuolo, Google Security Team, reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2015/q3/167">
+	  <p>The write heap buffer overflows are related to ADPCM handling in
+	    WAV files, while the read heap buffer overflow is while opening a
+	    .VOC.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://seclists.org/oss-sec/2015/q3/167</url>
+    </references>
+    <dates>
+      <discovery>2015-07-22</discovery>
+      <entry>2015-07-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="92cda470-30cb-11e5-a4a5-002590263bf5">
+    <topic>sox -- input sanitization errors</topic>
+    <affects>
+      <package>
+	<name>sox</name>
+	<range><lt>14.4.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>oCERT reports:</p>
+	<blockquote cite="http://www.ocert.org/advisories/ocert-2014-010.html">
+	  <p>The sox command line tool is affected by two heap-based buffer
+	    overflows, respectively located in functions start_read() and
+	    AdpcmReadBlock().</p>
+	  <p>A specially crafted wav file can be used to trigger the
+	    vulnerabilities.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>71774</bid>
+      <cvename>CVE-2014-8145</cvename>
+      <url>http://www.ocert.org/advisories/ocert-2014-010.html</url>
+    </references>
+    <dates>
+      <discovery>2014-11-20</discovery>
+      <entry>2015-07-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="95eee71d-3068-11e5-a9b5-bcaec565249c">
+    <topic>gdk-pixbuf2 -- heap overflow and DoS affecting Firefox and other programs</topic>
+    <affects>
+      <package>
+	<name>gdk-pixbuf2</name>
+	<range><lt>2.31.2_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>gustavo.grieco@imag.fr reports:</p>
+	<blockquote cite="https://bugzilla.gnome.org/show_bug.cgi?id=752297">
+	  <p>We found a heap overflow and a DoS in the gdk-pixbuf
+	    implementation triggered by the scaling of a malformed bmp.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://bugzilla.gnome.org/show_bug.cgi?id=752297</url>
+    </references>
+    <dates>
+      <discovery>2015-07-12</discovery>
+      <entry>2015-07-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8a1d0e63-1e07-11e5-b43d-002590263bf5">
+    <topic>pcre -- Heap Overflow Vulnerability in find_fixedlength()</topic>
+    <affects>
+      <package>
+	<name>pcre</name>
+	<range><le>8.37_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Venustech ADLAB reports:</p>
+	<blockquote cite="https://bugs.exim.org/show_bug.cgi?id=1651">
+	  <p>PCRE library is prone to a vulnerability which leads to Heap
+	    Overflow. During subpattern calculation of a malformed regular
+	    expression, an offset that is used as an array index is fully
+	    controlled and can be large enough so that unexpected heap
+	    memory regions are accessed.</p>
+	  <p>One could at least exploit this issue to read objects nearby of
+	    the affected application's memory.</p>
+	  <p>Such information disclosure may also be used to bypass memory
+	    protection method such as ASLR.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5073</cvename>
+      <url>https://bugs.exim.org/show_bug.cgi?id=1651</url>
+      <url>http://vcs.pcre.org/pcre?view=revision&amp;revision=1571</url>
+      <mlist>http://www.openwall.com/lists/oss-security/2015/06/26/1</mlist>
+    </references>
+    <dates>
+      <discovery>2015-06-23</discovery>
+      <entry>2015-06-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0bfda05f-2e6f-11e5-a4a5-002590263bf5">
+    <topic>cacti -- Multiple XSS and SQL injection vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>cacti</name>
+	<range><lt>0.8.8e</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Cacti Group, Inc. reports:</p>
+	<blockquote cite="http://www.cacti.net/release_notes_0_8_8e.php">
+	  <p>Important Security Fixes</p>
+	  <ul>
+	    <li>Multiple XSS and SQL injection vulnerabilities</li>
+	    <li>CVE-2015-4634 - SQL injection in graphs.php</li>
+	  </ul>
+	  <p>Changelog</p>
+	  <ul>
+	    <li>bug: Fixed various SQL Injection vectors</li>
+	    <li>bug#0002574: SQL Injection Vulnerabilities in graph items and
+	       graph template items</li>
+	    <li>bug#0002577: CVE-2015-4634 - SQL injection in graphs.php</li>
+	    <li>bug#0002579: SQL Injection Vulnerabilities in data sources</li>
+	    <li>bug#0002580: SQL Injection in cdef.php</li>
+	    <li>bug#0002582: SQL Injection in data_templates.php</li>
+	    <li>bug#0002583: SQL Injection in graph_templates.php</li>
+	    <li>bug#0002584: SQL Injection in host_templates.php</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4634</cvename>
+      <freebsdpr>ports/201702</freebsdpr>
+      <url>http://www.cacti.net/release_notes_0_8_8e.php</url>
+      <mlist>http://seclists.org/oss-sec/2015/q3/150</mlist>
+    </references>
+    <dates>
+      <discovery>2015-07-12</discovery>
+      <entry>2015-07-20</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8b1f53f3-2da5-11e5-86ff-14dae9d210b8">
+    <topic>php-phar -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>php55-phar</name>
+	<range><lt>5.5.27</lt></range>
+      </package>
+      <package>
+	<name>php5-phar</name>
+	<range><lt>5.4.43</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p> reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2015/q3/141">
+	  <p>Segfault in Phar::convertToData on invalid file.</p>
+	  <p>Buffer overflow and stack smashing error in phar_fix_filepath.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <mlist>http://seclists.org/oss-sec/2015/q3/141</mlist>
+      <url>https://bugs.php.net/bug.php?id=69958</url>
+      <url>http://git.php.net/?p=php-src.git;a=commit;h=bf58162ddf970f63502837f366930e44d6a992cf</url>
+      <url>https://bugs.php.net/bug.php?id=69923</url>
+      <url>http://git.php.net/?p=php-src.git;a=commit;h=6dedeb40db13971af45276f80b5375030aa7e76f</url>
+      <cvename>CVE-2015-5589</cvename>
+      <cvename>CVE-2015-5590</cvename>
+    </references>
+    <dates>
+      <discovery>2015-06-24</discovery>
+      <entry>2015-07-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="43891162-2d5e-11e5-a4a5-002590263bf5">
+    <topic>moodle -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>moodle27</name>
+	<range><lt>2.7.9</lt></range>
+      </package>
+      <package>
+	<name>moodle28</name>
+	<range><lt>2.8.7</lt></range>
+      </package>
+      <package>
+	<name>moodle29</name>
+	<range><lt>2.9.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Marina Glancy reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2015/q3/94">
+	  <p>MSA-15-0026: Possible phishing when redirecting to external site
+	    using referer header. (CVE-2015-3272)</p>
+	  <p>MSA-15-0027: Capability 'mod/forum:canposttomygroups' is not
+	    respected when using 'Post a copy to all groups' in forum
+	    (CVE-2015-3273)</p>
+	  <p>MSA-15-0028: Possible XSS through custom text profile fields in Web
+	    Services (CVE-2015-3274)</p>
+	  <p>MSA-15-0029: Javascript injection in SCORM module (CVE-2015-3275)
+	    </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3272</cvename>
+      <cvename>CVE-2015-3273</cvename>
+      <cvename>CVE-2015-3274</cvename>
+      <cvename>CVE-2015-3275</cvename>
+      <mlist>http://seclists.org/oss-sec/2015/q3/94</mlist>
+      <url>https://docs.moodle.org/dev/Moodle_2.7.9_release_notes</url>
+      <url>https://docs.moodle.org/dev/Moodle_2.8.7_release_notes</url>
+      <url>https://docs.moodle.org/dev/Moodle_2.9.1_release_notes</url>
+    </references>
+    <dates>
+      <discovery>2015-07-06</discovery>
+      <entry>2015-07-18</entry>
+      <modified>2015-07-19</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="29083f8e-2ca8-11e5-86ff-14dae9d210b8">
+    <topic>apache22 -- chunk header parsing defect</topic>
+    <affects>
+      <package>
+	<name>apache22</name>
+	<name>apache22-event-mpm</name>
+	<name>apache22-itk-mpm</name>
+	<name>apache22-peruser-mpm</name>
+	<name>apache22-worker-mpm</name>
+	<range><le>2.2.29_5</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Apache Foundation reports:</p>
+	<blockquote cite="http://www.apache.org/dist/httpd/Announcement2.2.html">
+	  <p>CVE-2015-3183 core: Fix chunk header parsing defect. Remove
+	    apr_brigade_flatten(), buffering and duplicated code from the HTTP_IN
+	    filter, parse chunks in a single pass with zero copy. Limit accepted
+	    chunk-size to 2^63-1 and be strict about chunk-ext authorized
+	    characters.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.apache.org/dist/httpd/Announcement2.2.html</url>
+      <url>https://github.com/apache/httpd/commit/29779fd08c18b18efc5e640d74cbe297c7ec007e</url>
+      <cvename>CVE-2015-3183</cvename>
+    </references>
+    <dates>
+      <discovery>2015-06-24</discovery>
+      <entry>2015-07-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5c399624-2bef-11e5-86ff-14dae9d210b8">
     <topic>zenphoto -- multiple vulnerabilities</topic>
     <affects>
@@ -79,10 +426,16 @@ Notes:
       <url>http://www.zenphoto.org/news/zenphoto-1.4.9</url>
       <mlist>http://seclists.org/oss-sec/2015/q3/123</mlist>
       <url>https://github.com/zenphoto/zenphoto/pull/935</url>
+      <cvename>CVE-2015-5591</cvename>
+      <cvename>CVE-2015-5592</cvename>
+      <cvename>CVE-2015-5593</cvename>
+      <cvename>CVE-2015-5594</cvename>
+      <cvename>CVE-2015-5595</cvename>
     </references>
     <dates>
       <discovery>2015-05-24</discovery>
       <entry>2015-07-16</entry>
+      <modified>2015-07-18</modified>
     </dates>
   </vuln>
 
@@ -594,20 +947,11 @@ Notes:
 	<range><lt>5.4.43</lt></range>
       </package>
       <package>
-	<name>mariadb-server</name>
-	<name>mysql51-server</name>
-	<name>mysql55-server</name>
-	<name>mysql56-server</name>
-	<name>percona55-server</name>
-	<name>percona56-server</name>
-	<range><ge>0</ge></range>
-      </package>
-      <package>
-	<name>mariadb55</name>
+	<name>mariadb55-client</name>
 	<range><lt>5.5.44</lt></range>
       </package>
       <package>
-	<name>mariadb10</name>
+	<name>mariadb100-client</name>
 	<range><lt>10.0.20</lt></range>
       </package>
     </affects>
@@ -633,6 +977,7 @@ Notes:
     <dates>
       <discovery>2015-03-20</discovery>
       <entry>2015-07-13</entry>
+      <modified>2015-07-18</modified>
     </dates>
   </vuln>
 
@@ -669,12 +1014,14 @@ Notes:
       </body>
     </description>
     <references>
+      <cvename>CVE-2015-5607</cvename>
       <url>http://seclists.org/oss-sec/2015/q3/92</url>
       <url>http://ipython.org/ipython-doc/3/whatsnew/version3.html#ipython-3-2-1</url>
     </references>
     <dates>
       <discovery>2015-07-12</discovery>
       <entry>2015-07-13</entry>
+      <modified>2015-07-22</modified>
     </dates>
   </vuln>
 
@@ -1748,11 +2095,12 @@ Notes:
     </description>
     <references>
       <url>http://www.squid-cache.org/Advisories/SQUID-2015_2.txt</url>
+      <cvename>CVE-2015-5400</cvename>
     </references>
     <dates>
       <discovery>2015-07-06</discovery>
       <entry>2015-07-06</entry>
-      <modified>2015-07-10</modified>
+      <modified>2015-07-17</modified>
     </dates>
   </vuln>
 

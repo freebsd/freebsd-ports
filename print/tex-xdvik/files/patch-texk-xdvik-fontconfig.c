@@ -1,5 +1,5 @@
---- /dev/null	2015-01-31 21:35:05.000000000 +0900
-+++ texk/xdvik/fontconfig.c	2015-01-31 21:02:18.000000000 +0900
+--- texk/xdvik/fontconfig.c.orig	2015-07-19 18:49:42 UTC
++++ texk/xdvik/fontconfig.c
 @@ -0,0 +1,92 @@
 +#include "xdvi-config.h"
 +#include "xdvi.h"

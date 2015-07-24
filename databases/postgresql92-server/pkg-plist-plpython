@@ -10,6 +10,3 @@
 %%PYTHON3%%%%DATADIR%%/extension/plpython3u.control
 %%PYTHON3%%%%DATADIR%%/extension/plpython3u--1.0.sql
 %%PYTHON3%%%%DATADIR%%/extension/plpython3u--unpackaged--1.0.sql
-@dir %%DATADIR%%/extension
-@dir lib/postgresql
-@dir %%DOCSDIR%%

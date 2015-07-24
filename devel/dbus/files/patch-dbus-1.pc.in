@@ -1,8 +1,0 @@
---- dbus-1.pc.in.orig	2012-06-05 13:17:45.000000000 +0200
-+++ dbus-1.pc.in	2012-06-18 00:26:56.000000000 +0200
-@@ -14,4 +14,4 @@
- Version: @VERSION@
- Libs: -L${libdir} -ldbus-1
- Libs.private: @LIBDBUS_LIBS@
--Cflags: -I${includedir}/dbus-1.0 -I${libdir}/dbus-1.0/include
-+Cflags: -I${includedir}/dbus-1.0 -I${includedir}/dbus-1.0/include

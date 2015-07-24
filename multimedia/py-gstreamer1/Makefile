@@ -15,6 +15,8 @@ COMMENT=	Python bindings for Gstreamer
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+PORTSCOUT=	limitw:1,even
+
 USES=		gmake libtool pathfix pkgconfig python tar:xz
 USE_GNOME=	pygobject3
 USE_GSTREAMER1=	yes

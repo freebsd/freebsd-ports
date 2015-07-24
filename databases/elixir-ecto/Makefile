@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ecto
-PORTVERSION=	0.13.1
+PORTVERSION=	0.14.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 PKGNAMEPREFIX=	elixir-
@@ -17,7 +17,9 @@ GH_ACCOUNT=	elixir-lang
 
 MIX_BUILD_NAME=	shared
 MIX_BUILD_DEPS=	devel/elixir-decimal \
+		devel/elixir-poison \
 		devel/erlang-poolboy
 MIX_RUN_DEPS:=	${MIX_BUILD_DEPS}
+MIX_REWRITE=	yes
 
 .include <bsd.port.mk>
