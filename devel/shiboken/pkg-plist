@@ -59,15 +59,16 @@ libdata/pkgconfig/shiboken.pc
 %%PORTDOCS%%%%DOCSDIR%%/_static/basic.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/bg_header.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/bg_topo.jpg
+%%PORTDOCS%%%%DOCSDIR%%/_static/classic.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/comment-bright.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/comment-close.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/comment.png
-%%PORTDOCS%%%%DOCSDIR%%/_static/default.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/doctools.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/down-pressed.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/down.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/fakebar.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/file.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/jquery-1.11.1.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/jquery.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/logo_python.jpg
 %%PORTDOCS%%%%DOCSDIR%%/_static/logo_qt.png
@@ -79,6 +80,7 @@ libdata/pkgconfig/shiboken.pc
 %%PORTDOCS%%%%DOCSDIR%%/_static/relbar_bg.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/searchtools.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/sidebar.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/underscore-1.3.1.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/underscore.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/up-pressed.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/up.png
