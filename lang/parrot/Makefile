@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	parrot
-PORTVERSION=	7.3.0
+PORTVERSION=	7.6.0
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/supported/${PORTVERSION}/ \
 		LOCAL/sunpoet
