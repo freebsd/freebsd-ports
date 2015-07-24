@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	marvel
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.3.1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://download.elasticsearch.org/elasticsearch/marvel/
 PKGNAMEPREFIX=	elasticsearch-plugin-
@@ -21,13 +20,14 @@ RUN_DEPENDS:=	elasticsearch>=0.90.9:${PORTSDIR}/textproc/elasticsearch
 
 NO_BUILD=	yes
 LEGAL_TEXT=	${LICENSE_NAME_COMMERCIAL}
+PLIST_SUB=	VERSION=${PORTVERSION}
 
 do-extract:
-	${MKDIR} ${WRKSRC}
+	@${MKDIR} ${WRKSRC}
 	( cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS} )
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/elasticsearch/plugins/marvel
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/elasticsearch/plugins/marvel
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} _site ${STAGEDIR}${PREFIX}/lib/elasticsearch/plugins/marvel
 	@cd ${WRKSRC} && ${INSTALL_DATA} marvel-${PORTVERSION}.jar ${STAGEDIR}${PREFIX}/lib/elasticsearch/plugins/marvel
 
