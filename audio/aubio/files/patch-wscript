@@ -25,7 +25,7 @@
  
      # build documentation from source files using doxygen
 -    if bld.env['DOXYGEN']:
-+    if bld.env['DOXYGEN'] and not ctx.options.disable_doxygen:
++    if bld.env['DOXYGEN'] and not bld.options.disable_doxygen:
          bld( name = 'doxygen', rule = 'doxygen ${SRC} > /dev/null',
                  source = 'doc/web.cfg',
                  cwd = 'doc')
