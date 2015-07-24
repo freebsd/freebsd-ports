@@ -140,12 +140,21 @@ for _line in ${dp_RAWDEPENDS} ; do
 		fi
 	fi
 
-	case ${pattern} in
-	*\>*|*\<*|*=*) fct=find_package ;;
-	lib*.so*)      fct=find_lib ;;
-	/nonexistent)  fct=false ;;
-	/*)            fct=find_file ;;
-	*)             fct=find_file_path ;;
+	case ${dp_DEPTYPE} in
+	  LIB_DEPENDS)
+	    case ${pattern} in
+	      lib*.so*)      fct=find_lib ;;
+	      *)
+		echo "Error: pattern ${pattern} in LIB_DEPENDS is not valid"
+		exit 1 ;;
+	    esac ;;
+	  *)
+	    case ${pattern} in
+	      *\>*|*\<*|*=*) fct=find_package ;;
+	      /nonexistent)  fct=false ;;
+	      /*)            fct=find_file ;;
+	      *)             fct=find_file_path ;;
+	    esac ;;
 	esac
 	if ${fct} "${pattern}" ; then
 		continue
