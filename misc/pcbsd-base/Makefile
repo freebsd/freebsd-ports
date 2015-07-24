@@ -35,6 +35,9 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		xv:${PORTSDIR}/graphics/xv \
 		libvdpau>=0:${PORTSDIR}/multimedia/libvdpau \
 		rdesktop:${PORTSDIR}/net/rdesktop \
+		gtk2-qtcurve-theme>=0:${PORTSDIR}/x11-themes/qtcurve-gtk2 \
+		qt4-style-qtcurve>=0:${PORTSDIR}/x11-themes/qtcurve-qt4 \
+		gtk-theme-switch>=0:${PORTSDIR}/x11/gtk-theme-switch2 \
 		alsa-lib>=0:${PORTSDIR}/audio/alsa-lib \
 		nspluginwrapper:${PORTSDIR}/www/nspluginwrapper \
 		linux_base-c6>=0:${PORTSDIR}/emulators/linux_base-c6 \
