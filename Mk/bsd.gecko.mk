@@ -161,8 +161,8 @@ icu_LIB_DEPENDS=		libicui18n.so:${PORTSDIR}/devel/icu
 icu_MOZ_OPTIONS=		--with-system-icu --with-intl-api
 
 -jpeg_BUILD_DEPENDS=yasm:${PORTSDIR}/devel/yasm
-# XXX depends on ports/180159 or package flavor support
-#jpeg_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/libjpeg-turbo
+# XXX JCS_EXTENSIONS API is currently disabled by r371283
+# XXX Remove files/patch-ijg-libjpeg once -turbo is default
 jpeg_USES=		jpeg
 jpeg_MOZ_OPTIONS=	--with-system-jpeg=${LOCALBASE}
 
