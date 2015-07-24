@@ -2,7 +2,7 @@
 
 PORTNAME=	texlive
 PORTVERSION=	20150521
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	TEX_CTAN/systems/texlive/Source/
 PKGNAMESUFFIX=	-base
@@ -19,6 +19,7 @@ LIB_DEPENDS=	libicuio.so:${PORTSDIR}/devel/icu \
 		libgraphite2.so:${PORTSDIR}/graphics/graphite2 \
 		libgd.so:${PORTSDIR}/graphics/gd \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libharfbuzz.so:${PORTSDIR}/print/harfbuzz \
 		libttf.so:${PORTSDIR}/print/freetype \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libzzip.so:${PORTSDIR}/devel/zziplib \
@@ -61,6 +62,7 @@ CONFIGURE_ARGS= --disable-native-texlive-build \
 		--with-freetype2-includes=${LOCALBASE}/include/freetype2 \
 		--with-freetype2-libdir=${LOCALBASE}/lib \
 		--with-system-cairo \
+		--with-system-harfbuzz \
 		--with-system-gd \
 		--with-system-graphite2 \
 		--with-system-pixman \
