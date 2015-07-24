@@ -332,6 +332,7 @@
     SUBDIR += libproxy-perl
     SUBDIR += libproxy-python
     SUBDIR += libproxy-webkit
+    SUBDIR += librdkafka
     SUBDIR += librouteros
     SUBDIR += librsync
     SUBDIR += librsync1
