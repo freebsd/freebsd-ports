@@ -85,10 +85,13 @@ Notes:
     </description>
     <references>
       <url>https://wordpress.org/news/2015/07/wordpress-4-2-3/</url>
+      <cvename>CVE-2015-5622</cvename>
+      <cvename>CVE-2015-5623</cvename>
     </references>
     <dates>
       <discovery>2015-07-23</discovery>
       <entry>2015-07-23</entry>
+      <modified>2015-07-24</modified>
     </dates>
   </vuln>
 
