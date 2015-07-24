@@ -2,7 +2,7 @@
 
 PORTNAME=	texlive
 PORTVERSION=	20150523
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.tug.org/historic/systems/texlive/2015/:texmf \
 		LOCAL/hrs:latex
@@ -19,7 +19,7 @@ CONFLICTS_INSTALL=	texlive-base-201[234]* \
 			texlive-texmf-201[234]*
 
 USES=		tar:xz
-USE_TEX=	base tlmgr:run texhash
+USE_TEX=	base:extract,build,run tlmgr:run texhash
 TEXHASHDIRS=	${TEXMFDIR} ${TEXMFDISTDIR}
 NO_BUILD=	yes
 NO_WRKSRC=	yes
