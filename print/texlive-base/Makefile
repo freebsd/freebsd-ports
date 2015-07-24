@@ -4,7 +4,7 @@ PORTNAME=	texlive
 PORTVERSION=	20150521
 PORTREVISION=	1
 CATEGORIES=	print
-MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2015/
+MASTER_SITES=	TEX_CTAN/systems/texlive/Source/
 PKGNAMESUFFIX=	-base
 DISTNAME=	${PORTNAME}-${DISTVERSION}-source
 DIST_SUBDIR=	TeX
@@ -40,24 +40,8 @@ EXCLUDE_FILES=	${DISTNAME}/texk/web2c \
 		${DISTNAME}/texk/xdvik \
 		${DISTNAME}/texk/dvipdfm-x \
 		${DISTNAME}/texk/dvipsk \
-		${DISTNAME}/libs/freetype2 \
-		${DISTNAME}/libs/gd \
-		${DISTNAME}/libs/gmp \
-		${DISTNAME}/libs/graphite2 \
-		${DISTNAME}/libs/icu \
-		${DISTNAME}/libs/lua52 \
-		${DISTNAME}/libs/luajit \
-		${DISTNAME}/libs/libpaper \
-		${DISTNAME}/libs/libpng \
-		${DISTNAME}/libs/mpfr \
-		${DISTNAME}/libs/pixman \
-		${DISTNAME}/libs/poppler \
-		${DISTNAME}/libs/teckit \
-		${DISTNAME}/libs/xpdf \
-		${DISTNAME}/libs/zlib \
-		${DISTNAME}/libs/zziplib \
-		${DISTNAME}/utils/t1utils \
-		${DISTNAME}/libs/potrace
+		${DISTNAME}/libs \
+		${DISTNAME}/utils/t1utils
 EXTRACT_AFTER_ARGS=	${EXCLUDE_FILES:S,^,--exclude ,}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --disable-native-texlive-build \
