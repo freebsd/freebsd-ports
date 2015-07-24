@@ -31,6 +31,10 @@ BUILD_DEPENDS+=	openssl>=1.0:${PORTSDIR}/security/openssl
 RUN_DEPENDS+=	openssl>=1.0:${PORTSDIR}/security/openssl
 .endif
 
+.if defined(PACKAGE_BUILDING) && ${PYTHON_VER} != ${PYTHON_DEFAULT}
+IGNORE=	you have python ${PYTHON_DEFAULT} set as the default, and this needs ${PYTHON_VER}
+.endif
+
 regression-test: build
 	${SETENV} PYTHONPATH="${PYDISTUTILS_BUILDPATH}:${PYTHONPATH}" \
 	  ${PYTHON_CMD} -m attic.testsuite.run
