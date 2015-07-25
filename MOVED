@@ -7736,3 +7736,4 @@ amd64-binutils||2015-07-25|No real use
 amd64-gcc||2015-07-25|No real use
 amd64-xtoolchain-gcc||2015-07-25|No real use
 devel/p5-Test-Tester|devel/p5-Test-Simple|2015-07-25|Has expired: Part of p5-Test-Simple (use that instead), and included in perl 5.22
+devel/p5-Test-use-ok|devel/p5-Test-Simple|2015-07-25|Has expired: Part of devel/p5-Test-Simple (use that instead), and included in perl 5.22
