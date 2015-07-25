@@ -15,6 +15,7 @@ RUN_DEPENDS=	rubygem-charlock_holmes>=0.7.3:${PORTSDIR}/textproc/rubygem-charloc
 		rubygem-mime-types>=1.19:${PORTSDIR}/misc/rubygem-mime-types \
 		rubygem-rugged>=0.22.0b4:${PORTSDIR}/devel/rubygem-rugged
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
