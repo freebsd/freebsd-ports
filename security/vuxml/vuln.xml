@@ -58,6 +58,107 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9d732078-32c7-11e5-b263-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>44.0.2403.89</lt></range>
+      </package>
+      <package>
+	<!-- pcbsd -->
+	<name>chromium-npapi</name>
+	<range><lt>44.0.2403.89</lt></range>
+      </package>
+      <package>
+	<!-- pcbsd -->
+	<name>chromium-pulse</name>
+	<range><lt>44.0.2403.89</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>43 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[446032] High CVE-2015-1271: Heap-buffer-overflow in pdfium.
+	      Credit to cloudfuzzer.</li>
+	    <li>[459215] High CVE-2015-1273: Heap-buffer-overflow in pdfium.
+	      Credit to makosoft.</li>
+	    <li>[461858] High CVE-2015-1274: Settings allowed executable files
+	      to run immediately after download. Credit to andrewm.bpi.</li>
+	    <li>[462843] High CVE-2015-1275: UXSS in Chrome for Android. Credit
+	      to WangTao(neobyte) of Baidu X-Team.</li>
+	    <li>[472614] High CVE-2015-1276: Use-after-free in IndexedDB.
+	      Credit to Collin Payne.</li>
+	    <li>[483981] High CVE-2015-1279: Heap-buffer-overflow in pdfium.
+	      Credit to mlafon.</li>
+	    <li>[486947] High CVE-2015-1280: Memory corruption in skia. Credit
+	      to cloudfuzzer.</li>
+	    <li>[487155] High CVE-2015-1281: CSP bypass. Credit to Masato
+	      Kinugawa.</li>
+	    <li>[487928] High CVE-2015-1282: Use-after-free in pdfium. Credit
+	      to Chamal de Silva.</li>
+	    <li>[492052] High CVE-2015-1283: Heap-buffer-overflow in expat.
+	      Credit to sidhpurwala.huzaifa.</li>
+	    <li>[493243] High CVE-2015-1284: Use-after-free in blink. Credit to
+	      Atte Kettunen of OUSPG.</li>
+	    <li>[504011] High CVE-2015-1286: UXSS in blink. Credit to
+	      anonymous.</li>
+	    <li>[505374] High CVE-2015-1290: Memory corruption in V8. Credit to
+	      Yongjun Liu of NSFOCUS Security Team.</li>
+	    <li>[419383] Medium CVE-2015-1287: SOP bypass with CSS. Credit to
+	      filedescriptor.</li>
+	    <li>[444573] Medium CVE-2015-1270: Uninitialized memory read in
+	      ICU. Credit to Atte Kettunen of OUSPG.</li>
+	    <li>[451456] Medium CVE-2015-1272: Use-after-free related to
+	      unexpected GPU process termination. Credit to Chamal de
+	      Silva.</li>
+	    <li>[479743] Medium CVE-2015-1277: Use-after-free in accessibility.
+	      Credit to SkyLined.</li>
+	    <li>[482380] Medium CVE-2015-1278: URL spoofing using pdf files.
+	      Credit to Chamal de Silva.</li>
+	    <li>[498982] Medium CVE-2015-1285: Information leak in XSS auditor.
+	      Credit to gazheyes.</li>
+	    <li>[479162] Low CVE-2015-1288: Spell checking dictionaries fetched
+	      over HTTP. Credit to mike@michaelruddy.com.</li>
+	    <li>[512110] CVE-2015-1289: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1270</cvename>
+      <cvename>CVE-2015-1271</cvename>
+      <cvename>CVE-2015-1272</cvename>
+      <cvename>CVE-2015-1273</cvename>
+      <cvename>CVE-2015-1274</cvename>
+      <cvename>CVE-2015-1275</cvename>
+      <cvename>CVE-2015-1276</cvename>
+      <cvename>CVE-2015-1277</cvename>
+      <cvename>CVE-2015-1278</cvename>
+      <cvename>CVE-2015-1279</cvename>
+      <cvename>CVE-2015-1280</cvename>
+      <cvename>CVE-2015-1281</cvename>
+      <cvename>CVE-2015-1282</cvename>
+      <cvename>CVE-2015-1283</cvename>
+      <cvename>CVE-2015-1284</cvename>
+      <cvename>CVE-2015-1285</cvename>
+      <cvename>CVE-2015-1286</cvename>
+      <cvename>CVE-2015-1287</cvename>
+      <cvename>CVE-2015-1288</cvename>
+      <cvename>CVE-2015-1289</cvename>
+      <cvename>CVE-2015-1290</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2015-07-21</discovery>
+      <entry>2015-07-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b202e4ce-3114-11e5-aa32-0026551a22dc">
    <topic>shibboleth-sp -- DoS vulnerability</topic>
    <affects>
