@@ -33,8 +33,8 @@
 -	$(INSTALL) -b -m 664 $(INSTALL_OPTS) config/idomod.cfg-sample $(DESTDIR)$(CFGDIR)
 -	$(INSTALL) -b -m 664 $(INSTALL_OPTS) config/idoutils.cfg-sample $(DESTDIR)$(CFGDIR)/modules
 -	$(INSTALL) -b -m 664 $(INSTALL_OPTS) config/ido2db_check_proc.cfg $(DESTDIR)$(CFGDIR)/objects/ido2db_check_proc.cfg
-+	$(INSTALL) -b -m 664 $(INSTALL_OPTS) config/ido2db.cfg-sample $(DESTDIR)$(CFGDIR)/ido2db.cfg.sample
-+	$(INSTALL) -b -m 664 $(INSTALL_OPTS) config/idomod.cfg-sample $(DESTDIR)$(CFGDIR)/idomod.cfg.sample
-+	$(INSTALL) -b -m 664 $(INSTALL_OPTS) config/idoutils.cfg-sample $(DESTDIR)$(CFGDIR)/modules/idoutils.cfg.sample
-+	$(INSTALL) -b -m 664 $(INSTALL_OPTS) config/ido2db_check_proc.cfg $(DESTDIR)$(CFGDIR)/objects/ido2db_check_proc.cfg.sample
++	$(INSTALL) -b -m 644 $(INSTALL_OPTS) config/ido2db.cfg-sample $(DESTDIR)$(CFGDIR)/ido2db.cfg.sample
++	$(INSTALL) -b -m 644 $(INSTALL_OPTS) config/idomod.cfg-sample $(DESTDIR)$(CFGDIR)/idomod.cfg.sample
++	$(INSTALL) -b -m 644 $(INSTALL_OPTS) config/idoutils.cfg-sample $(DESTDIR)$(CFGDIR)/modules/idoutils.cfg.sample
++	$(INSTALL) -b -m 644 $(INSTALL_OPTS) config/ido2db_check_proc.cfg $(DESTDIR)$(CFGDIR)/objects/ido2db_check_proc.cfg.sample
  
