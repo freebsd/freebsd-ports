@@ -7731,4 +7731,4 @@ graphics/sng||2015-07-21|Has expired: Broken for more than 6 months
 japanese/netype||2015-07-21|Has expired: Broken for more than 6 months
 databases/p5-DBD-Pg32|databases/p5-DBD-Pg|2015-07-22|Has expired: Use databases/p5-DBD-Pg instead, compatability probles are fixed
 textproc/py-asciinema|textproc/asciinema|2015-07-23|Has expired: use textproc/asciinema instead
-devel/libiomp5-devel|devel/llvm-devel|2015-73-24|Merged with devel/llvm-devel
+devel/libiomp5-devel|devel/llvm-devel|2015-07-24|Merged with devel/llvm-devel
