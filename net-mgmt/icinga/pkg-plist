@@ -33,7 +33,7 @@ libexec/icinga/eventhandlers/enable_notifications
 libexec/icinga/eventhandlers/redundancy-scenario1/handle-master-host-event
 libexec/icinga/eventhandlers/redundancy-scenario1/handle-master-proc-event
 libexec/icinga/eventhandlers/submit_check_result
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/apache22/icinga.conf.sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/apache2/icinga.conf.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/config/ido2db.cfg-sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/config/ido2db.cfg-sample.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/config/ido2db_check_proc.cfg
@@ -156,6 +156,7 @@ libexec/icinga/eventhandlers/submit_check_result
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/scripts/prepsql.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/scripts/upgradedb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/scripts/upgradedb.in
+@mode 755
 %%ICINGAWWWDIR%%/cgi-bin/avail.cgi
 %%ICINGAWWWDIR%%/cgi-bin/cmd.cgi
 %%ICINGAWWWDIR%%/cgi-bin/config.cgi
@@ -170,6 +171,7 @@ libexec/icinga/eventhandlers/submit_check_result
 %%ICINGAWWWDIR%%/cgi-bin/summary.cgi
 %%ICINGAWWWDIR%%/cgi-bin/tac.cgi
 %%ICINGAWWWDIR%%/cgi-bin/trends.cgi
+@mode
 %%ICINGAWWWDIR%%/docs/de/about.html
 %%ICINGAWWWDIR%%/docs/de/activechecks.html
 %%ICINGAWWWDIR%%/docs/de/adaptive.html
