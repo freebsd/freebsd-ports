@@ -22,6 +22,7 @@ BAD_GST_ALL_PLUGINS+= \
 		flite \
 		gme \
 		gsm \
+		hls \
 		kate \
 		libmms \
 		librfb \
@@ -266,6 +267,10 @@ gst_gme_LIB_DEPENDS=	libgme.so:${PORTSDIR}/audio/libgme
 
 # gsm
 gst_gsm_LIB_DEPENDS=	libgsm.so:${PORTSDIR}/audio/gsm
+
+# hls
+gst_hls_LIB_DEPENDS=	libnettle.so:${PORTSDIR}/security/nettle
+gst_hls_PLIST_FILES=	${GST_LIB_DIR}/libgstfragmented.so
 
 # jack
 gst_jack_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
