@@ -7735,3 +7735,4 @@ devel/libiomp5-devel|devel/llvm-devel|2015-07-24|Merged with devel/llvm-devel
 amd64-binutils||2015-07-25|No real use
 amd64-gcc||2015-07-25|No real use
 amd64-xtoolchain-gcc||2015-07-25|No real use
+devel/p5-Test-Tester|devel/p5-Test-Simple|2015-07-25|Has expired: Part of p5-Test-Simple (use that instead), and included in perl 5.22

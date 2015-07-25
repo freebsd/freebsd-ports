@@ -3172,7 +3172,6 @@
     SUBDIR += p5-Test-TableDriven
     SUBDIR += p5-Test-Taint
     SUBDIR += p5-Test-TempDir-Tiny
-    SUBDIR += p5-Test-Tester
     SUBDIR += p5-Test-Time
     SUBDIR += p5-Test-Timer
     SUBDIR += p5-Test-TinyMocker
