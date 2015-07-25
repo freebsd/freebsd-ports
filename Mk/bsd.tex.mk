@@ -157,7 +157,16 @@ USE_TEX:=	${USE_TEX:tu:NFULL} ${_USE_TEX_FULLLIST:tu}
 .for _UU in ${USE_TEX:tu}
 _U:=	${_UU}	# ugly but necessary in for loop
 _VOP:=
-. if !empty(_U:tu:MKPATHSEA) || !empty(_U:tu:MPTEXENC) || !empty(_U:tu:MTEXLUA) || !empty(_U:tu:MTEXLUAJIT)
+. if !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MTEXMF) && empty(_U:M*[<>=]*)
+_U:=	${_U}>=20150523
+. endif
+. if !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MBASE) && empty(_U:M*[<>=]*)
+_U:=	${_U}>=20150521
+. endif
+. if !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MKPATHSEA) || \
+     !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MPTEXENC) || \
+     !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MTEXLUA) || \
+     !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MTEXLUAJIT)
 _U:=	${_U}:lib
 . endif
 . if !empty(_U:M*[<>=]*)
@@ -166,8 +175,9 @@ _VOP:=	${_U:C/^[^<>=]*//:C/\:.*$//}
 . if empty(_U:M*\:*)
 _C:=	BUILD RUN
 . else
-_C:=	${_U:C/.*://:S/,/ /g}
+_C:=	${_U:C/.*://:S/,/ /g:C/[<>=][^\:]*//g}
 . endif
+#. warning DEBUG: ${_U}: _VOP=${_VOP}, _C=${_C}
 . for _CC in ${_C:tu}
 _V:=${_UU:C/[<>=][^\:]*//:C/\:.*$//}
 .  if defined(_USE_TEX_${_V}_PORT)
