@@ -22,9 +22,11 @@ TEX_MAINTAINER=	hrs@FreeBSD.org
 #  web2c:	WEB2C toolchain and TeX engines
 #  kpathsea:	kpathsea library
 #  ptexenc:	character code conversion library for pTeX
+#  basic:	basic TeX engines including tex and pdftex
 #  tlmgr:	tlmgr dependency (Perl modules)
 #  texlua:	texlua52 library
 #  texluajit:	texluajit library
+#  synctex:	synctex library
 #
 #  dvipsk:	dvipsk
 #  dvipdfmx:	DVIPDFMx
@@ -102,6 +104,9 @@ _USE_TEX_XDVIK_PKGNAME=	tex-xdvik
 _USE_TEX_DVIPDFMX_DEP=	dvipdfmx
 _USE_TEX_DVIPDFMX_PORT=	print/${_USE_TEX_DVIPDFMX_PKGNAME}
 _USE_TEX_DVIPDFMX_PKGNAME=tex-dvipdfmx
+_USE_TEX_BASIC_DEP=	tex
+_USE_TEX_BASIC_PORT=	print/${_USE_TEX_BASIC_PKGNAME}
+_USE_TEX_BASIC_PKGNAME=	tex-basic-engines
 .for _L in TEX LATEX PDFTEX
 _USE_TEX_${_L}_DEP=	${_USE_TEX_FORMATS_DEP}
 _USE_TEX_${_L}_PORT=	${_USE_TEX_FORMATS_PORT}
@@ -134,6 +139,9 @@ _USE_TEX_TEXLUAJIT_PKGNAME=tex-libtexluajit
 _USE_TEX_FORMATS_DEP=	${LOCALBASE}/${TEXMFVARDIR}/web2c/tex/tex.fmt
 _USE_TEX_FORMATS_PORT=	print/${_USE_TEX_FORMATS_PKGNAME}
 _USE_TEX_FORMATS_PKGNAME=tex-formats
+_USE_TEX_SYNCTEX_DEP=	libsynctex.so
+_USE_TEX_SYNCTEX_PORT=	devel/${_USE_TEX_SYNCTEX_PKGNAME}
+_USE_TEX_SYNCTEX_PKGNAME=tex-synctex
 _USE_TEX_ALEPH_DEP=	aleph
 _USE_TEX_ALEPH_PORT=	print/${_USE_TEX_ALEPH_PKGNAME}
 _USE_TEX_ALEPH_PKGNAME=	tex-aleph
@@ -146,9 +154,9 @@ _USE_TEX_XETEX_PKGNAME=	tex-xetex
 
 _USE_TEX_FULLLIST=	texmf>=20150523 base>=20150521 \
 		web2c tlmgr:run \
-		formats aleph xetex jadetex luatex xmltex ptex \
+		basic formats aleph xetex jadetex luatex xmltex ptex \
 		dvipsk dvipdfmx xdvik \
-		kpathsea:lib ptexenc:lib texlua:lib texluajit:lib
+		kpathsea:lib ptexenc:lib texlua:lib texluajit:lib synctex:lib
 
 .if !empty(USE_TEX:tu:MFULL)
 USE_TEX:=	${USE_TEX:tu:NFULL} ${_USE_TEX_FULLLIST:tu}
@@ -166,7 +174,8 @@ _U:=	${_U}>=20150521
 . if !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MKPATHSEA) || \
      !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MPTEXENC) || \
      !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MTEXLUA) || \
-     !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MTEXLUAJIT)
+     !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MTEXLUAJIT) || \
+     !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MSYNCTEX)
 _U:=	${_U}:lib
 . endif
 . if !empty(_U:M*[<>=]*)

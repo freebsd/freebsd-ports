@@ -2,6 +2,7 @@
 
 PORTNAME=	xetex
 PORTVERSION=	0.99992
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2015/
 PKGNAMEPREFIX=	tex-
@@ -18,13 +19,11 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libgraphite2.so:${PORTSDIR}/graphics/graphite2 \
 		libicuio.so:${PORTSDIR}/devel/icu \
 		libharfbuzz.so:${PORTSDIR}/print/harfbuzz \
-		libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15 \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libpoppler.so:${PORTSDIR}/graphics/poppler \
-		libTECkit.so:${PORTSDIR}/textproc/teckit \
-		libzzip.so:${PORTSDIR}/devel/zziplib
+		libTECkit.so:${PORTSDIR}/textproc/teckit
 
-USES=		pkgconfig gmake tar:xz
+USES=		pkgconfig tar:xz
 USE_TEX=	kpathsea web2c texmf formats fmtutil
 USE_XORG=	pixman
 USE_GNOME=	cairo
@@ -53,12 +52,11 @@ EXTRACT_FILES_TEXMF= \
 	texmf-dist/tex/generic/xetexconfig/unicode-letters.tex
 WRKSRC=		${WRKDIR}/${DISTNAME}/texk/web2c
 GNU_CONFIGURE=	yes
-EXCLUDE_ENGINES=aleph etex pdftex luatex luajittex mf mf-nowin mp ptex eptex \
-		uptex euptex tex synctex
+EXCLUDE_ENGINES=aleph etex pdftex luatex luajittex mf mf-nowin \
+		ptex eptex uptex euptex \
+		otangle mp pmp upmp web2c web-progs tex synctex
 CONFIGURE_ARGS=	${EXCLUDE_ENGINES:S/^/--disable-/} \
 		--enable-xetex \
-		--enable-web2c \
-		--disable-web-progs \
 		--with-system-freetype2 \
 		--with-freetype2-includes=${LOCALBASE}/include/freetype2 \
 		--with-freetype2-libdir=${LOCALBASE}/lib \
@@ -82,9 +80,10 @@ MAKE_JOBS_UNSAFE=	yes
 TEX_FORMATS=	xetex
 
 pre-configure:
-	for D in libs/harfbuzz libs/xpdf; do \
+	for D in libs/xpdf; do \
 		cd ${WRKDIR}/${DISTNAME}/$$D && \
-		${SETENV} ${CONFIGURE_ENV} ${SH} ${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}; \
+		    ${SETENV} ${CONFIGURE_ENV} ${SH} ${CONFIGURE_SCRIPT} \
+			${CONFIGURE_ARGS}; \
 	done
 
 pre-install:
