@@ -12,7 +12,7 @@ COMMENT?=	Protect hosts from brute force attacks against ssh and other services
 
 LICENSE=	BSD2CLAUSE
 
-CONFLICTS?=	sshguard-ipfilter-1.* sshguard-ipfw-1.* sshguard-pf-1.*
+CONFLICTS?=	sshguard-ipfilter-1.* sshguard-ipfw-1.* sshguard-pf-1.* sshguard-null-1.*
 
 USES=		autoreconf tar:xz
 
