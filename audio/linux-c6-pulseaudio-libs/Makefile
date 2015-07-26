@@ -18,7 +18,7 @@ USE_LDCONFIG=	yes
 
 DOCSDIR=	${PREFIX}/usr/share/doc/pulseaudio-${PORTVERSION}
 DESCR=		${.CURDIR}/../pulseaudio/pkg-descr
-SRC_DISTFILES=	pulseaudio-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}:SOURCE
+SRC_DISTFILES=	pulseaudio-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}
 
 post-extract:
 	@${RM} -r ${WRKSRC}/usr/bin ${WRKSRC}/etc/rc.d ${WRKSRC}/etc/sysconfig

@@ -3,7 +3,6 @@
 
 PORTNAME=	sdl_ttf
 PORTVERSION=	2.0.11
-PORTREVISION=	1
 CATEGORIES=	graphics linux
 MASTER_SITES=	EPEL
 DISTNAME=	SDL_ttf-${PORTVERSION}-${RPMVERSION}
@@ -25,6 +24,8 @@ USE_LDCONFIG=	yes
 DOCSDIR=	${PREFIX}/usr/share/doc/${LINUX_NAME}-${PORTVERSION}
 PORTDOCS=	CHANGES COPYING README
 
+PLIST_FILES=	usr/lib/libSDL_ttf-2.0.so.0 \
+	usr/lib/libSDL_ttf-2.0.so.0.10.1
 DESCR=		${.CURDIR}/../linux-f10-sdl_ttf/pkg-descr
 
 .include <bsd.port.mk>
