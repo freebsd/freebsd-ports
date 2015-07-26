@@ -1,6 +1,6 @@
---- gr-trellis/doc/CMakeLists.txt.orig	2012-04-21 15:12:41.000000000 -0500
-+++ gr-trellis/doc/CMakeLists.txt	2014-03-02 20:20:28.000000000 -0500
-@@ -32,12 +32,14 @@
+--- gr-trellis/doc/CMakeLists.txt.orig	2015-05-12 09:39:44 UTC
++++ gr-trellis/doc/CMakeLists.txt
+@@ -32,12 +32,14 @@ add_custom_command(
          ${CMAKE_CURRENT_SOURCE_DIR}/gr-trellis.xml
  )
  add_custom_target(gr_trellis_html ALL DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/gr-trellis.html)
@@ -15,7 +15,7 @@
  endif(XMLTO_EXECUTABLE)
  
  ########################################################################
-@@ -65,9 +67,11 @@
+@@ -65,9 +67,11 @@ add_custom_target(gr_trellis_xml ALL DEP
      ${CMAKE_CURRENT_BINARY_DIR}/test_tcm.py.xml
      ${CMAKE_CURRENT_BINARY_DIR}/test_viterbi_equalization1.py.xml
  )
