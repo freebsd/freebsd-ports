@@ -3,7 +3,7 @@
 
 PORTNAME=	expat
 PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -18,8 +18,6 @@ RPMVERSION=	11.el6_2
 BRANDELF_FILES=	usr/bin/xmlwf
 USE_LDCONFIG=	yes
 
-PLIST_FILES=	lib/libexpat.so.1 lib/libexpat.so.1.5.2 \
-		usr/bin/xmlwf usr/share/man/man1/xmlwf.1.gz
 DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	COPYING README
 DESCR=		${.CURDIR}/../${PORTNAME}2/pkg-descr
