@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	leofs
-PORTVERSION=	1.2.11
+PORTVERSION=	1.2.12
 CATEGORIES=	databases
 DIST_SUBDIR=	${PORTNAME}
 
@@ -90,14 +90,14 @@ LEOFS_DEPS=	\
 	leo-project/leo_logger=1.1.6:leo_logger \
 	leo-project/leo_mcerl=0.6.0:leo_mcerl \
 	leo-project/leo_mq=1.3.11:leo_mq \
-	leo-project/leo_object_storage=1.2.8:leo_object_storage \
+	leo-project/leo_object_storage=1.2.9:leo_object_storage \
 	leo-project/leo_ordning_reda=1.1.0:leo_ordning_reda \
 	leo-project/leo_pod=0.6.4:leo_pod \
 	leo-project/leo_redundant_manager=1.9.15:leo_redundant_manager \
 	leo-project/leo_rpc=0.10.2:leo_rpc \
 	leo-project/leo_s3_libs=1.1.8:leo_s3_libs \
 	leo-project/leo_statistics=1.1.6:leo_statistics \
-	leo-project/leo_watchdog=0.10.1:leo_watchdog \
+	leo-project/leo_watchdog=0.10.2:leo_watchdog \
 	leo-project/libcutil=0.4.3:libcutil \
 	leo-project/nfs_rpc_server=0.2.3:nfs_rpc_server \
 	leo-project/savanna_agent=0.4.9:savanna_agent \
