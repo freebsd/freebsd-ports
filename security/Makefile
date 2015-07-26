@@ -1000,6 +1000,7 @@
     SUBDIR += sshguard
     SUBDIR += sshguard-ipfilter
     SUBDIR += sshguard-ipfw
+    SUBDIR += sshguard-null
     SUBDIR += sshguard-pf
     SUBDIR += sshit
     SUBDIR += sshpass
