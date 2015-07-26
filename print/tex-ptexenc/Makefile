@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--enable-kanji-iconv \
 		--with-system-kpathsea \
 		--with-kpathsea-includes=${LOCALBASE}/include \
 		--with-kpathsea-libdir=${LOCALBASE}/lib
-LIBS+=		${ICONV_LIB}
+LIBS+=		-L${ICONV_PREFIX}/lib ${ICONV_LIB}
 CPPFLAGS+=	-I${ICONV_PREFIX}/include
 INSTALL_TARGET=	install-strip
 
