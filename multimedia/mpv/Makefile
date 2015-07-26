@@ -4,7 +4,7 @@
 PORTNAME=	mpv
 PORTVERSION=	0.9.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://ftp.waf.io/pub/release/:1 \
@@ -104,8 +104,7 @@ SMB_CONFIGURE_ENABLE=		libsmbclient
 CACA_LIB_DEPENDS=		libcaca.so:${PORTSDIR}/graphics/libcaca
 CACA_CONFIGURE_ENABLE=		caca
 
-OPENGL_USE=			XORG=glproto
-OPENGL_LIB_DEPENDS=		libGL.so:${PORTSDIR}/graphics/libGL
+OPENGL_USE=			GL=gl
 OPENGL_CONFIGURE_ENABLE=	gl
 
 VAAPI_LIB_DEPENDS=		libva.so:${PORTSDIR}/multimedia/libva
