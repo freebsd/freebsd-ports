@@ -279,6 +279,7 @@
     SUBDIR += htdig
     SUBDIR += html
     SUBDIR += html-pretty
+    SUBDIR += html-xml-utils
     SUBDIR += html2fo
     SUBDIR += html2tex
     SUBDIR += html2text
