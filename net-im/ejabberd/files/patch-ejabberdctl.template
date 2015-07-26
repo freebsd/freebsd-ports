@@ -12,7 +12,7 @@ $FreeBSD$
  fi
  if [ "$SPOOL_DIR" = "" ] ; then
 -    SPOOL_DIR={{localstatedir}}/lib/ejabberd
-+    SPOOLDIR=/var/spool/ejabberd
++    SPOOL_DIR=/var/spool/ejabberd
  fi
  if [ "$EJABBERD_DOC_PATH" = "" ] ; then
      EJABBERD_DOC_PATH={{docdir}}
