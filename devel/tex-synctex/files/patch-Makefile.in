@@ -1,0 +1,40 @@
+--- Makefile.in.orig	2015-04-17 04:53:45.000000000 +0900
++++ Makefile.in	2015-07-25 22:52:31.390521000 +0900
+@@ -99,8 +99,8 @@
+ 	pdftex$(EXEEXT) ttf2afm$(EXEEXT) pdftosrc$(EXEEXT) \
+ 	luatex$(EXEEXT) luajittex$(EXEEXT) txt2zlib$(EXEEXT) \
+ 	xetex$(EXEEXT) $(am__EXEEXT_4) aleph$(EXEEXT) synctex$(EXEEXT)
+-bin_PROGRAMS = tangle$(EXEEXT) ctangle$(EXEEXT) $(am__EXEEXT_5) \
+-	ctie$(EXEEXT) cweave$(EXEEXT) tie$(EXEEXT) $(am__EXEEXT_6) \
++bin_PROGRAMS = $(am__EXEEXT_5) \
++	$(am__EXEEXT_6) \
+ 	$(am__EXEEXT_7) $(am__EXEEXT_8) $(am__EXEEXT_9) \
+ 	$(am__EXEEXT_10) $(am__EXEEXT_11) $(am__EXEEXT_12) \
+ 	$(am__EXEEXT_13) $(am__EXEEXT_14) $(am__EXEEXT_15) \
+@@ -108,7 +108,7 @@
+ 	$(am__EXEEXT_19) $(am__EXEEXT_20) $(am__EXEEXT_21) \
+ 	$(am__EXEEXT_22) $(am__EXEEXT_23) $(am__EXEEXT_24) \
+ 	$(am__EXEEXT_25) $(am__EXEEXT_26) $(am__EXEEXT_27)
+-noinst_PROGRAMS = tangleboot$(EXEEXT) ctangleboot$(EXEEXT) \
++noinst_PROGRAMS = \
+ 	$(am__EXEEXT_37) $(am__EXEEXT_38) $(am__EXEEXT_39) \
+ 	$(am__EXEEXT_40) $(am__EXEEXT_41) $(am__EXEEXT_42)
+ check_PROGRAMS = $(am__EXEEXT_28) $(am__EXEEXT_29) $(am__EXEEXT_30) \
+@@ -2081,7 +2081,7 @@
+ AM_CXXFLAGS = ## $(WARNING_CXXFLAGS)
+ AM_OBJCXXFLAGS = ## $(WARNING_OBJCXXFLAGS)
+ version = $(WEB2CVERSION)
+-SUBDIRS = doc lib man web2c . window omegafonts otps
++SUBDIRS = lib man .
+ proglib = lib/lib.a
+ EXTRA_LIBRARIES = libmf.a libmputil.a libmplib.a libkanji.a \
+ 	libukanji.a libpdftex.a libluasocket.a libluajitsocket.a \
+@@ -3557,7 +3557,7 @@
+ 
+ nodist_libsynctex_a_SOURCES = $(libsynctex_la_SOURCES)
+ syncincludedir = ${includedir}/synctex
+-pkgconfigdir = ${libdir}/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ @SYNCTEX_TRUE@syncinclude_HEADERS = \
+ @SYNCTEX_TRUE@	synctexdir/synctex_parser.h \
+ @SYNCTEX_TRUE@	synctexdir/synctex_parser_utils.h

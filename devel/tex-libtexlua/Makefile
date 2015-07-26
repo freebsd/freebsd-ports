@@ -3,7 +3,7 @@
 PORTNAME=	libtexlua
 PORTVERSION=	5.2.4
 CATEGORIES=	devel
-MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2015/
+MASTER_SITES=	TEX_CTAN/systems/texlive/Source/
 PKGNAMEPREFIX=	tex-
 DISTNAME=	texlive-20150521-source
 DIST_SUBDIR=	TeX

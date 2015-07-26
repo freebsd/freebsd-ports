@@ -229,6 +229,7 @@
     SUBDIR += t1utils
     SUBDIR += tex
     SUBDIR += tex-aleph
+    SUBDIR += tex-basic-engines
     SUBDIR += tex-dvipdfmx
     SUBDIR += tex-dvipsk
     SUBDIR += tex-formats
