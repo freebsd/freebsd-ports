@@ -2,6 +2,7 @@
 
 PORTNAME=	synctex
 PORTVERSION=	1.17.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	TEX_CTAN/systems/texlive/Source/
 PKGNAMEPREFIX=	tex-
@@ -16,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/synctexdir/README.txt
 
 CONFLICTS=	tex-web2c-20150521
 USES=		libtool pkgconfig tar:xz
-USE_TEX=	yes
+USE_TEX=	kpathsea
 USE_LDCONFIG=	yes
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
 EXTRACT_FILES=	build-aux texk/web2c
