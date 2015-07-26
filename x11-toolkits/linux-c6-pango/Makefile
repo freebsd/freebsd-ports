@@ -3,7 +3,7 @@
 
 PORTNAME=	pango
 PORTVERSION=	1.28.1
-PORTREVISION=	2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -17,13 +17,7 @@ USE_LINUX=	c6
 USE_LINUX_APPS=	cairo expat fontconfig xorglibs
 USE_LINUX_RPM=	yes
 RPMVERSION=	10.el6
-
-.if "${OVERRIDE_LINUX_BASE_PORT}" == "c6_64"
-BRANDELF_FILES=	usr/bin/pango-querymodules-64
-.else
 BRANDELF_FILES=	usr/bin/pango-querymodules-32
-.endif
-
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
