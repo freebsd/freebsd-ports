@@ -2,8 +2,9 @@
 
 PORTNAME=	web2c
 PORTVERSION=	20150521
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2015/
+MASTER_SITES=	TEX_CTAN/systems/texlive/Source/
 PKGNAMEPREFIX=	tex-
 DISTNAME=	texlive-${PORTVERSION}-source
 DIST_SUBDIR=	TeX
@@ -16,7 +17,7 @@ LIB_DEPENDS=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15 \
 		libzzip.so:${PORTSDIR}/devel/zziplib \
 		libmpfr.so:${PORTSDIR}/math/mpfr
 
-USES=		pkgconfig gmake libtool tar:xz
+USES=		pkgconfig libtool tar:xz
 USE_TEX=	kpathsea ptexenc
 USE_XORG=	pixman
 USE_GNOME=	cairo
@@ -27,15 +28,18 @@ EXTRACT_FILES=	build-aux \
 		texk/web2c
 WRKSRC=		${WRKDIR}/${DISTNAME}/texk/web2c
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	OBSDCOMPAT_INCLUDES=-I${WRKSRC}/../../libs/obsdcompat
 CONFIGURE_ARGS=	--disable-luatex \
 		--disable-luajittex \
 		--disable-xetex \
 		--disable-aleph \
 		--disable-ptex \
+		--disable-tex \
+		--disable-latex \
+		--disable-pdftex \
 		--disable-eptex \
 		--disable-uptex \
 		--disable-euptex \
+		--disable-synctex \
 		--with-x=no \
 		--without-mf-x-toolkit \
 		--with-system-zlib \
