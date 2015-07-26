@@ -1,0 +1,4 @@
+SHA256 (rpm/x86_64/centos/6.6/sqlite-3.6.20-1.el6.x86_64.rpm) = 359d8f3d2de7dabcbfe4cec80657ebc3c954852e17d2086a23debdf5409873cd
+SIZE (rpm/x86_64/centos/6.6/sqlite-3.6.20-1.el6.x86_64.rpm) = 308488
+SHA256 (rpm/x86_64/centos/6.6/sqlite-3.6.20-1.el6.src.rpm) = f75ce08d6f66259df76adcb4a5551f6bc7b530ed524eb3da13689ffd475b34bd
+SIZE (rpm/x86_64/centos/6.6/sqlite-3.6.20-1.el6.src.rpm) = 5324043

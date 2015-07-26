@@ -1,3 +1,2 @@
-The port installs CentOS 6.6 Mesa libGL runtime libraries and DRI drivers.
-
-WWW: http://www.centos.org
+The port installs Linux Fedora 10 Mesa libGL runtime libraries
+and DRI drivers.

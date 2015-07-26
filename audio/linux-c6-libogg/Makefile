@@ -3,7 +3,7 @@
 
 PORTNAME=	libogg
 PORTVERSION=	1.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -18,7 +18,6 @@ USE_LINUX_RPM=	yes
 RPMVERSION=	2.1.el6
 USE_LDCONFIG=	yes
 
-PLIST_FILES=	usr/lib/libogg.so.0 usr/lib/libogg.so.0.6.0
 DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	AUTHORS CHANGES COPYING README
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
