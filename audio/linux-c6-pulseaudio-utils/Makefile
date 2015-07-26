@@ -19,6 +19,6 @@ USE_LDCONFIG=	yes
 DOCSDIR=	${PREFIX}/usr/share/doc/pulseaudio-${PORTVERSION}
 DESCR=		${PORTSDIR}/audio/pulseaudio/pkg-descr
 
-SRC_DISTFILES=	pulseaudio-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}
+SRC_DISTFILES=	pulseaudio-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}:SOURCE
 
 .include <bsd.port.mk>

@@ -3,6 +3,7 @@
 
 PORTNAME=	libsigc++20
 PORTVERSION=	2.2.4.2
+PORTREVISION=	1
 CATEGORIES=	devel linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -16,7 +17,6 @@ USE_LINUX_RPM=	yes
 RPMVERSION=	1.el6
 USE_LDCONFIG=	yes
 
-PLIST_FILES=	usr/lib/libsigc-2.0.so.0.0.0 usr/lib/libsigc-2.0.so.0
 DOCSDIR=	usr/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README TODO
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr

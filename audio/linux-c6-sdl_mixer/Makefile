@@ -3,6 +3,7 @@
 
 PORTNAME=	sdl_mixer
 PORTVERSION=	1.2.12
+PORTREVISION=	2
 CATEGORIES=	audio linux
 MASTER_SITES=	EPEL
 DISTNAME=	SDL_mixer-${PORTVERSION}-${RPMVERSION}
@@ -22,8 +23,7 @@ RPMVERSION=	1.el6
 BRANDELF_FILES=	usr/bin/playmus usr/bin/playwave
 USE_LDCONFIG=	yes
 
-PLIST_FILES=	usr/bin/playmus usr/lib/libSDL_mixer-1.2.so.0 \
-		usr/bin/playwave usr/lib/libSDL_mixer-1.2.so.0.12.0
+DOCSDIR=	${PREFIX}/usr/share/doc/${LINUX_NAME}-${PORTVERSION}
 DOCSDIR=	${PREFIX}/usr/share/doc/${LINUX_NAME}-${PORTVERSION}
 PORTDOCS=	CHANGES COPYING README
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
