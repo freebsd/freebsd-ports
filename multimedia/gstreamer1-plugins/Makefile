@@ -137,18 +137,9 @@ post-patch:
 .endif
 .if ${DIST} != ugly
 	@${FIND} ${WRKSRC}/ext ${WRKSRC}/sys -name Makefile.in | \
-	${XARGS} -n 10 ${REINPLACE_CMD} -e \
-	'/la_DEPENDENCIES/,/am__DEPENDENCIES/s,$$(top_builddir)/gst-libs/.*.la,,' -e \
-	's|$$(top_builddir)/gst-libs/gst/tag/libgsttag-@GST_API_VERSION@.la|-lgsttag-${VERSION}|; \
-	s|$$(top_builddir)/gst-libs/gst/audio/libgstaudio-@GST_API_VERSION@.la|-lgstaudio-${VERSION}|; \
-	s|$$(top_builddir)/gst-libs/gst/pbutils/libgstpbutils-@GST_API_VERSION@.la|-lgstpbutils-${VERSION}|; \
-	s|$$(top_builddir)/gst-libs/gst/riff/libgstriff-@GST_API_VERSION@.la|-lgstriff-${VERSION}|; \
-	s|$$(top_builddir)/gst-libs/gst/signalprocessor/libgstsignalprocessor-@GST_API_VERSION@.la|-lgstsignalprocessor-${VERSION}|; \
-	s|$$(top_builddir)/gst-libs/gst/video/libgstbasevideo-@GST_API_VERSION@.la|-lgstbasevideo-${VERSION}|; \
-	s|$$(top_builddir)/gst-libs/gst/video/libgstvideo-@GST_API_VERSION@.la|-lgstvideo-${VERSION}|; \
-	s|$$(top_builddir)/gst-libs/gst/base/libgstbadbase-@GST_API_VERSION@.la|-lgstbadbase-${VERSION}|; \
-	s|$$(top_builddir)/gst-libs/gst/uridownloader/libgsturidownloader-@GST_API_VERSION@.la|-lgsturidownloader-${VERSION}|; \
-	s|$$(top_builddir)/gst-libs/gst/video/libgstbadvideo-@GST_API_VERSION@.la|-lgstbadvideo-${VERSION}|'
+	${XARGS} -n 10 ${REINPLACE_CMD} \
+	-e '/la_DEPENDENCIES/,/am__DEPENDENCIES/s,$$(top_builddir)/gst-libs/[^[:space:]]*\.la,,' \
+	-e 's|$$(top_builddir)/gst-libs/[^[:space:]]*/lib\([^/[:space:]]*\)\.la|-l\1|'
 .endif
 
 # workaround a crash in clang 3.3 crash llvm bug # 15840
