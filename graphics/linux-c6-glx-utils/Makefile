@@ -3,7 +3,6 @@
 
 PORTNAME=	glx-utils
 PORTVERSION=	10.1.2
-PORTREVISION=	1
 CATEGORIES=	graphics linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -23,8 +22,11 @@ NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-dr
 			linux-c6-libGLU>0:${PORTSDIR}/graphics/linux-c6-libGLU
 NVIDIA_GL_USE_OFF=	linux_apps=dri
 
+PLIST_FILES=	usr/bin/glxgears usr/bin/glxinfo \
+		usr/bin/xdriinfo usr/share/man/man1/xdriinfo.1.gz
+
 .if defined(PACKAGE_BUILDING)
-SRC_DISTFILES=	mesa-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}:SOURCE
+SRC_DISTFILES=	mesa-10.1.2-2.el6.src.rpm
 .endif
 
 .include <bsd.port.mk>
