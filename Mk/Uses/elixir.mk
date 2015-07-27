@@ -72,7 +72,7 @@ RUN_DEPENDS+=	${depend:T}>=0:${PORTSDIR}/${depend}
 .if !target(do-build)
 do-build:
 .if ${MIX_REWRITE} != ""
-	@${REINPLACE_CMD} -i '' -E -e "s@{.*(only|optional): .*},?@@; s@{ *:([a-zA-Z0-9_]+), *(github:|\"~).*}@{ :\1, path: \"${ELIXIR_LIB_ROOT}/\\1\", compile: false }@" ${WRKSRC}/mix.exs
+	@${REINPLACE_CMD} -i '' -E -e "s@{.*(only|optional): .*},?@@; s@{ *:([a-zA-Z0-9_]+), *(github:|\").*}@{ :\1, path: \"${ELIXIR_LIB_ROOT}/\\1\", compile: false }@" ${WRKSRC}/mix.exs
 .endif
 	@${RM} -f ${WRKSRC}/mix.lock
 	@cd ${WRKSRC} && ${MIX_COMPILE}
