@@ -17,15 +17,6 @@
  
  	/* X.509 Standard Options */
  #ifdef OPENSSL_FIPS
-@@ -277,7 +278,7 @@ fill_default_server_options(ServerOption
- 	if (options->key_regeneration_time == -1)
- 		options->key_regeneration_time = 3600;
- 	if (options->permit_root_login == PERMIT_NOT_SET)
--		options->permit_root_login = PERMIT_YES;
-+		options->permit_root_login = PERMIT_NO;
- 	if (options->ignore_rhosts == -1)
- 		options->ignore_rhosts = 1;
- 	if (options->ignore_user_known_hosts == -1)
 @@ -287,7 +288,7 @@ fill_default_server_options(ServerOption
  	if (options->print_lastlog == -1)
  		options->print_lastlog = 1;
