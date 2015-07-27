@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-settings-daemon
-PORTVERSION=	1.8.2
-PORTREVISION=	1
+PORTVERSION=	1.10.1
 CATEGORIES=	sysutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -30,14 +29,15 @@ USE_LDCONFIG=	yes
 USE_GSTREAMER=	good
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-dbus-services=${PREFIX}/share/dbus-1/services \
-		--disable-static \
-		--disable-pulse
+		--with-gtk=2.0 \
+		--disable-static
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml \
+		org.mate.SettingsDaemon.plugins.a11y-settings.gschema.xml \
 		org.mate.SettingsDaemon.plugins.background.gschema.xml \
 		org.mate.SettingsDaemon.plugins.clipboard.gschema.xml \
 		org.mate.SettingsDaemon.plugins.datetime.gschema.xml \
@@ -55,8 +55,13 @@ GLIB_SCHEMAS=	org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml \
 		org.mate.SettingsDaemon.plugins.xsettings.gschema.xml \
 		org.mate.applications-at.gschema.xml \
 		org.mate.font-rendering.gschema.xml \
-		org.mate.keybindings.gschema.xml \
 		org.mate.peripherals-smartcard.gschema.xml \
 		org.mate.peripherals-touchpad.gschema.xml
+
+OPTIONS_DEFINE=	PULSEAUDIO
+OPTIONS_SUB=	yes
+
+PULSEAUDIO_CONFIGURE_ENABLE=	pulseaudio
+PULSEAUDIO_LIB_DEPENDS=		libpulse.so:${PORTSDIR}/audio/pulseaudio
 
 .include <bsd.port.mk>

@@ -370,6 +370,7 @@
     SUBDIR += liblo
     SUBDIR += liblscp
     SUBDIR += libmad
+    SUBDIR += libmatemixer
     SUBDIR += libmikmod
     SUBDIR += libmodplug
     SUBDIR += libmp3-archive-perl

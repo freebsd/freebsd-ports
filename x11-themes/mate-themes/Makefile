@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	mate-themes
-PORTVERSION=	1.8.1
+PORTVERSION=	1.10.2
 CATEGORIES=	x11-themes mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
+DISTNAME=	${PORTNAME}-gtk3.14-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Collection of themes and icons for MATE

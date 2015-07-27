@@ -24,6 +24,7 @@ man/man1/caja-connect-server.1.gz
 man/man1/caja-file-management-properties.1.gz
 man/man1/caja.1.gz
 share/MateConf/gsettings/caja.convert
+share/appdata/caja.appdata.xml
 share/applications/caja-autorun-software.desktop
 share/applications/caja-browser.desktop
 share/applications/caja-computer.desktop
@@ -136,6 +137,7 @@ share/locale/en@shaw/LC_MESSAGES/caja.mo
 share/locale/en_AU/LC_MESSAGES/caja.mo
 share/locale/en_CA/LC_MESSAGES/caja.mo
 share/locale/en_GB/LC_MESSAGES/caja.mo
+share/locale/en_US/LC_MESSAGES/caja.mo
 share/locale/eo/LC_MESSAGES/caja.mo
 share/locale/es/LC_MESSAGES/caja.mo
 share/locale/et/LC_MESSAGES/caja.mo
@@ -155,6 +157,7 @@ share/locale/hi/LC_MESSAGES/caja.mo
 share/locale/hr/LC_MESSAGES/caja.mo
 share/locale/hu/LC_MESSAGES/caja.mo
 share/locale/hy/LC_MESSAGES/caja.mo
+share/locale/ia/LC_MESSAGES/caja.mo
 share/locale/id/LC_MESSAGES/caja.mo
 share/locale/ig/LC_MESSAGES/caja.mo
 share/locale/io/LC_MESSAGES/caja.mo

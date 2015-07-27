@@ -1,5 +1,5 @@
---- command/Makefile.in.orig	2014-04-14 17:31:14.000000000 +0200
-+++ command/Makefile.in	2014-04-14 17:32:42.000000000 +0200
+--- command/Makefile.in.orig	2014-12-05 12:31:21.926018134 +0100
++++ command/Makefile.in	2014-12-05 12:31:38.632017015 +0100
 @@ -78,7 +78,7 @@
  POST_UNINSTALL = :
  build_triplet = @build@
@@ -9,7 +9,7 @@
  subdir = command
  DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
  	$(top_srcdir)/depcomp
-@@ -98,18 +98,19 @@
+@@ -98,19 +98,20 @@
  am__installdirs = "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(appletsdir)" \
  	"$(DESTDIR)$(servicedir)"
  PROGRAMS = $(libexec_PROGRAMS)
@@ -19,8 +19,9 @@
 +	mate_command_applet-command.$(OBJEXT)
 +mate_command_applet_OBJECTS = $(am_mate_command_applet_OBJECTS)
  am__DEPENDENCIES_1 =
--command_applet_DEPENDENCIES = $(am__DEPENDENCIES_1)
-+mate_command_applet_DEPENDENCIES = $(am__DEPENDENCIES_1)
+-command_applet_DEPENDENCIES = $(am__DEPENDENCIES_1) \
++mate_command_applet_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1)
  AM_V_lt = $(am__v_lt_@AM_V@)
  am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
  am__v_lt_0 = --silent
@@ -35,7 +36,7 @@
  AM_V_P = $(am__v_P_@AM_V@)
  am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
  am__v_P_0 = false
-@@ -144,8 +145,8 @@
+@@ -145,8 +146,8 @@
  am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
  am__v_CCLD_0 = @echo "  CCLD    " $@;
  am__v_CCLD_1 = 
@@ -46,22 +47,20 @@
  am__can_run_installinfo = \
    case $$AM_UPDATE_INFO_DIR in \
      n|no|NO) false;; \
-@@ -447,10 +448,10 @@
- 	-DMATELOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
+@@ -444,9 +445,9 @@
  	$(DISABLE_DEPRECATED_CFLAGS)
  
--APPLET_LOCATION = $(libexecdir)/command-applet
+ APPLET_LOCATION = $(libexecdir)/command-applet
 -command_applet_SOURCES = command.c
--command_applet_LDADD = $(MATE_APPLETS4_LIBS)
+-command_applet_LDADD = $(MATE_APPLETS4_LIBS) $(MATEDESKTOP_LIBS)
 -command_applet_CFLAGS = $(WARN_CFLAGS)
-+APPLET_LOCATION = $(libexecdir)/mate-command-applet
 +mate_command_applet_SOURCES = command.c
-+mate_command_applet_LDADD = $(MATE_APPLETS4_LIBS)
++mate_command_applet_LDADD = $(MATE_APPLETS4_LIBS) $(MATEDESKTOP_LIBS)
 +mate_command_applet_CFLAGS = $(WARN_CFLAGS)
  appletsdir = $(datadir)/mate-panel/applets
  applets_in_files = org.mate.applets.CommandApplet.mate-panel-applet.in
  applets_DATA = $(applets_in_files:.mate-panel-applet.in=.mate-panel-applet)
-@@ -548,9 +549,9 @@
+@@ -544,9 +545,9 @@
  	echo " rm -f" $$list; \
  	rm -f $$list
  
@@ -74,7 +73,7 @@
  
  mostlyclean-compile:
  	-rm -f *.$(OBJEXT)
-@@ -558,7 +559,7 @@
+@@ -554,7 +555,7 @@
  distclean-compile:
  	-rm -f *.tab.c
  
@@ -83,7 +82,7 @@
  
  .c.o:
  @am__fastdepCC_TRUE@	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-@@ -581,19 +582,19 @@
+@@ -577,19 +578,19 @@
  @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
  @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LTCOMPILE) -c -o $@ $<
  
