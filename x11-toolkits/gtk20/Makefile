@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtk
-PORTVERSION=	2.24.27
+PORTVERSION=	2.24.28
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME/sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -49,7 +49,7 @@ DEBUG_CONFIGURE_ON=	--enable-debug=yes
 
 .include <bsd.port.options.mk>
 
-PLIST_SUB+=	LIBGAILVER=18.0.1 LIBGVER=0.2400.27
+PLIST_SUB+=	LIBGAILVER=18.0.1 LIBGVER=0.2400.28
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|[{]libdir[}]/locale|{datadir}/locale|g' \
