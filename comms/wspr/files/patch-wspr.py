@@ -1,6 +1,6 @@
---- wspr.py.orig	2014-12-14 19:16:10.079628932 -0500
-+++ wspr.py	2014-12-14 19:16:18.894628427 -0500
-@@ -50,7 +50,7 @@
+--- wspr.py.orig	2015-07-27 16:22:02 UTC
++++ wspr.py
+@@ -50,7 +50,7 @@ from WsprMod import g
  import Pmw
  from WsprMod import palettes
  from math import log10
