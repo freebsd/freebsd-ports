@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtk-update-icon-cache
-PORTVERSION=	2.24.27
+PORTVERSION=	2.24.28
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME/sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DISTNAME=	gtk+-${PORTVERSION}
