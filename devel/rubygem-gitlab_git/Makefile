@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab_git
-PORTVERSION=	7.1.13
+PORTVERSION=	7.2.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

@@ -15,10 +15,8 @@ EXTRACT_ONLY=	texlive-${DISTVERSION_TEXLIVE_SOURCE}-source${EXTRACT_SUFX}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	ASCII Japanese pTeX
 
-USES=		tar:xz gmake pkgconfig
+USES=		tar:xz pkgconfig
 USE_TEX=	kpathsea web2c ptexenc texmf formats fmtutil
-USE_XORG=	pixman
-USE_GNOME=	cairo
 TEXHASHDIRS=	${TEXMFDISTDIR} ${TEXMFVARDIR}
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
 EXTRACT_FILES=	build-aux \
@@ -68,18 +66,15 @@ EXTRACT_FILES_TEXMF= \
 	texmf-dist/fonts/cmap/uptex
 WRKSRC=		${WRKDIR}/${DISTNAME}/texk/web2c
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	OBSDCOMPAT_INCLUDES=-I${WRKSRC}/../../libs/obsdcompat
-EXCLUDE_ENGINES= aleph etex luatex luajittex pdftex mf mf-nowin mp xetex tex \
-		 synctex
+EXCLUDE_ENGINES=aleph etex pdftex luatex luajittex mf mf-nowin \
+		otangle mp pmp upmp web2c web-progs xetex tex synctex
 CONFIGURE_ARGS=	${EXCLUDE_ENGINES:S/^/--disable-/} \
 		--enable-ptex \
 		--enable-eptex \
 		--enable-uptex \
 		--enable-euptex \
-		--enable-web2c \
-		--enable-web-progs \
 		--with-system-zlib
-.for L in cairo gmp kpathsea libpng mpfr pixman ptexenc icu
+.for L in kpathsea ptexenc
 CONFIGURE_ARGS+=--with-system-$L \
 		--with-$L-include=${LOCALBASE}/include \
 		--with-$L-libdir=${LOCALBASE}/lib
@@ -91,7 +86,8 @@ TEX_FORMATS=	ptex uptex
 pre-configure:
 	for D in libs/xpdf; do \
 		cd ${WRKDIR}/${DISTNAME}/$$D && \
-		${SETENV} ${CONFIGURE_ENV} ${SH} ${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}; \
+		${SETENV} ${CONFIGURE_ENV} ${SH} ${CONFIGURE_SCRIPT} \
+		    ${CONFIGURE_ARGS}; \
 	done
 
 pre-install:

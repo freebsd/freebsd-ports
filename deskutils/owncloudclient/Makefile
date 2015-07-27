@@ -3,7 +3,7 @@
 
 PORTNAME=	owncloudclient
 PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://download.owncloud.com/desktop/stable/
 

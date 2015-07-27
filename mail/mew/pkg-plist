@@ -7,8 +7,6 @@ bin/mewencode
 bin/mewest
 bin/mewl
 bin/smew
-@comment info/mew.info
-@comment %%PORTDOCS%%info/mew.ja.info
 man/man1/cmew.1.gz
 man/man1/incm.1.gz
 man/man1/mew-pinentry.1.gz
@@ -18,28 +16,6 @@ man/man1/mewencode.1.gz
 man/man1/mewest.1.gz
 man/man1/mewl.1.gz
 man/man1/smew.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/00api
-%%PORTDOCS%%%%DOCSDIR%%/00changes.0
-%%PORTDOCS%%%%DOCSDIR%%/00changes.1
-%%PORTDOCS%%%%DOCSDIR%%/00changes.2
-%%PORTDOCS%%%%DOCSDIR%%/00changes.3
-%%PORTDOCS%%%%DOCSDIR%%/00changes.4.1
-%%PORTDOCS%%%%DOCSDIR%%/00changes.4.2
-%%PORTDOCS%%%%DOCSDIR%%/00changes.5.1
-%%PORTDOCS%%%%DOCSDIR%%/00changes.5.2
-%%PORTDOCS%%%%DOCSDIR%%/00changes.6.1
-%%PORTDOCS%%%%DOCSDIR%%/00changes.6.2
-%%PORTDOCS%%%%DOCSDIR%%/00changes.6.3
-%%PORTDOCS%%%%DOCSDIR%%/00changes.6.4
-%%PORTDOCS%%%%DOCSDIR%%/00changes.6.5
-%%PORTDOCS%%%%DOCSDIR%%/00changes.6.6
-%%PORTDOCS%%%%DOCSDIR%%/00copyright
-%%PORTDOCS%%%%DOCSDIR%%/00copyright.ja
-%%PORTDOCS%%%%DOCSDIR%%/00diff
-%%PORTDOCS%%%%DOCSDIR%%/00readme
-%%PORTDOCS%%%%DOCSDIR%%/dot.emacs
-%%PORTDOCS%%%%DOCSDIR%%/dot.mew
-%%PORTDOCS%%%%DOCSDIR%%/dot.theme
 %%EMACS_SITE_LISPDIR%%/mew/etc/Mew.img
 %%EMACS_SITE_LISPDIR%%/mew/etc/Mew.png
 %%EMACS_SITE_LISPDIR%%/mew/etc/Mew.xbm

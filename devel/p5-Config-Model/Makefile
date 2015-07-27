@@ -39,6 +39,7 @@ TEST_DEPENDS=	p5-Config-Model-Tester>=2.046:${PORTSDIR}/devel/p5-Config-Model-Te
 		p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle \
 		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	modbuild
 

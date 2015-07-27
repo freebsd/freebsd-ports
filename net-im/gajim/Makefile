@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gajim
-PORTVERSION=	0.16.1
+PORTVERSION=	0.16.2
 CATEGORIES=	net-im
 MASTER_SITES=	http://gajim.org/downloads/0.16/
 
@@ -17,6 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0:${PORTSDIR}/security/py-openssl \
 		${PYTHON_PKGNAMEPREFIX}asn1>=0:${PORTSDIR}/devel/py-asn1 \
 		${PYTHON_PKGNAMEPREFIX}nbxmpp>0:${PORTSDIR}/net-im/py-nbxmpp
 
+NO_ARCH=	yes
 USES=		cpe dos2unix gmake pathfix python:2 tar:bzip2
 USE_GNOME=	intltool pygtk2
 USE_XORG=	x11 xext xscrnsaver

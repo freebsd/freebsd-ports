@@ -2,7 +2,7 @@
 
 PORTNAME=	aleph
 PORTVERSION=	1.15.2.1.r.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2015/
 PKGNAMEPREFIX=	tex-
@@ -15,7 +15,10 @@ EXTRACT_ONLY=	texlive-${DISTVERSION_TEXLIVE_SOURCE}-source${EXTRACT_SUFX}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	TeX Engine including Omega and e-TeX features
 
-USES=		gmake tar:xz pkgconfig
+LIB_DEPENDS=	libmpfr.so:${PORTSDIR}/math/mpfr \
+		libpng.so:${PORTSDIR}/graphics/png
+
+USES=		tar:xz pkgconfig
 USE_TEX=	kpathsea web2c texmf formats fmtutil
 USE_XORG=	pixman
 USE_GNOME=	cairo
@@ -37,20 +40,11 @@ EXTRACT_FILES_TEXMF= \
 	texmf-dist/tex/lambda
 WRKSRC=		${WRKDIR}/${DISTNAME}/texk/web2c
 GNU_CONFIGURE=	yes
-EXCLUDE_ENGINES=etex luatex luajittex pdftex mf mf-nowin ptex eptex uptex \
-		euptex xetex tex synctex
+EXCLUDE_ENGINES=etex pdftex luatex luajittex mf mf-nowin \
+		ptex eptex uptex euptex \
+		otangle mp pmp upmp web2c web-progs xetex tex synctex
 CONFIGURE_ARGS=	${EXCLUDE_ENGINES:S/^/--disable-/} \
 		--enable-aleph \
-		--enable-otangle \
-		--disable-mp \
-		--enable-web2c \
-		--disable-web-progs \
-		--with-system-freetype2 \
-		--with-freetype2-includes=${LOCALBASE}/include/freetype2 \
-		--with-freetype2-libdir=${LOCALBASE}/lib \
-		--with-system-poppler \
-		--with-system-t1lib \
-		--with-system-zziplib \
 		--with-system-zlib
 .for L in cairo gmp kpathsea libpng mpfr pixman ptexenc
 CONFIGURE_ARGS+=--with-system-$L \

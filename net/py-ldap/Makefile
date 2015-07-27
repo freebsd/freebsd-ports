@@ -22,7 +22,8 @@ WANT_OPENLDAP_VER=	24
 
 REPLACE_ARGS=	-e 's,/opt/openldap-RE24/lib,${LOCALBASE}/lib,' \
 		-e 's,/opt/openldap-RE24/include,${LOCALBASE}/include,' \
-		-e 's,/usr/include/sasl,${LOCALBASE}/include/sasl,'
+		-e 's,/usr/include/sasl,${LOCALBASE}/include/sasl,' \
+		-e 's,/usr/local,${LOCALBASE},'
 
 OPTIONS_DEFINE=	SASL
 

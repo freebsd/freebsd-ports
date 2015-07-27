@@ -54,14 +54,14 @@ FONTLIST=	NanumBarunGothic \
 		NanumMyeongjoEcoExtraBold \
 		NanumMyeongjoExtraBold \
 		NanumPen
-FONTFILES=	${FONTLIST:S/$/.${FONTTYPE}/}
+FONTFILES=	${FONTLIST:S|$|.${FONTTYPE}|}
 
 PLIST_FILES=	${FONTFILES:S|^|${FONTSDIR}/|}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}
 .for f in ${FONTFILES}
-	${INSTALL_DATA} ${f:S|^|${WRKDIR}/|} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${f} ${STAGEDIR}${FONTSDIR}
 .endfor
 
 .include <bsd.port.mk>

@@ -2,6 +2,7 @@
 
 PORTNAME=	texlive
 PORTVERSION=	20150523
+PORTREVISION=	1
 CATEGORIES=	print perl5
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2015/
 PKGNAMESUFFIX=	-tlmgr
@@ -10,6 +11,8 @@ DIST_SUBDIR=	TeX
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	TeXLive manager modules
+
+CONFLICTS=	texlive-infra-[0-9]*
 
 USES=		perl5 tar:xz
 USE_PERL5=	run

@@ -58,11 +58,196 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c470bcc7-33fe-11e5-a4a5-002590263bf5">
+    <topic>logstash -- SSL/TLS vulnerability with Lumberjack input</topic>
+    <affects>
+      <package>
+	<name>logstash</name>
+	<range><lt>1.4.4</lt></range>
+	<range><ge>1.5.0</ge><lt>1.5.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Elastic reports:</p>
+	<blockquote cite="https://www.elastic.co/community/security">
+	  <p>Vulnerability Summary: All Logstash versions prior to 1.5.2 that
+	    use Lumberjack input (in combination with Logstash Forwarder agent)
+	    are vulnerable to a SSL/TLS security issue called the FREAK attack.
+	    This allows an attacker to intercept communication and access secure
+	    data. Users should upgrade to 1.5.3 or 1.4.4.</p>
+	  <p>Remediation Summary: Users that do not want to upgrade can address
+	    the vulnerability by disabling the Lumberjack input.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5378</cvename>
+      <url>https://www.elastic.co/community/security</url>
+    </references>
+    <dates>
+      <discovery>2015-07-22</discovery>
+      <entry>2015-07-27</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9d732078-32c7-11e5-b263-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>44.0.2403.89</lt></range>
+      </package>
+      <package>
+	<!-- pcbsd -->
+	<name>chromium-npapi</name>
+	<range><lt>44.0.2403.89</lt></range>
+      </package>
+      <package>
+	<!-- pcbsd -->
+	<name>chromium-pulse</name>
+	<range><lt>44.0.2403.89</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>43 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[446032] High CVE-2015-1271: Heap-buffer-overflow in pdfium.
+	      Credit to cloudfuzzer.</li>
+	    <li>[459215] High CVE-2015-1273: Heap-buffer-overflow in pdfium.
+	      Credit to makosoft.</li>
+	    <li>[461858] High CVE-2015-1274: Settings allowed executable files
+	      to run immediately after download. Credit to andrewm.bpi.</li>
+	    <li>[462843] High CVE-2015-1275: UXSS in Chrome for Android. Credit
+	      to WangTao(neobyte) of Baidu X-Team.</li>
+	    <li>[472614] High CVE-2015-1276: Use-after-free in IndexedDB.
+	      Credit to Collin Payne.</li>
+	    <li>[483981] High CVE-2015-1279: Heap-buffer-overflow in pdfium.
+	      Credit to mlafon.</li>
+	    <li>[486947] High CVE-2015-1280: Memory corruption in skia. Credit
+	      to cloudfuzzer.</li>
+	    <li>[487155] High CVE-2015-1281: CSP bypass. Credit to Masato
+	      Kinugawa.</li>
+	    <li>[487928] High CVE-2015-1282: Use-after-free in pdfium. Credit
+	      to Chamal de Silva.</li>
+	    <li>[492052] High CVE-2015-1283: Heap-buffer-overflow in expat.
+	      Credit to sidhpurwala.huzaifa.</li>
+	    <li>[493243] High CVE-2015-1284: Use-after-free in blink. Credit to
+	      Atte Kettunen of OUSPG.</li>
+	    <li>[504011] High CVE-2015-1286: UXSS in blink. Credit to
+	      anonymous.</li>
+	    <li>[505374] High CVE-2015-1290: Memory corruption in V8. Credit to
+	      Yongjun Liu of NSFOCUS Security Team.</li>
+	    <li>[419383] Medium CVE-2015-1287: SOP bypass with CSS. Credit to
+	      filedescriptor.</li>
+	    <li>[444573] Medium CVE-2015-1270: Uninitialized memory read in
+	      ICU. Credit to Atte Kettunen of OUSPG.</li>
+	    <li>[451456] Medium CVE-2015-1272: Use-after-free related to
+	      unexpected GPU process termination. Credit to Chamal de
+	      Silva.</li>
+	    <li>[479743] Medium CVE-2015-1277: Use-after-free in accessibility.
+	      Credit to SkyLined.</li>
+	    <li>[482380] Medium CVE-2015-1278: URL spoofing using pdf files.
+	      Credit to Chamal de Silva.</li>
+	    <li>[498982] Medium CVE-2015-1285: Information leak in XSS auditor.
+	      Credit to gazheyes.</li>
+	    <li>[479162] Low CVE-2015-1288: Spell checking dictionaries fetched
+	      over HTTP. Credit to mike@michaelruddy.com.</li>
+	    <li>[512110] CVE-2015-1289: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1270</cvename>
+      <cvename>CVE-2015-1271</cvename>
+      <cvename>CVE-2015-1272</cvename>
+      <cvename>CVE-2015-1273</cvename>
+      <cvename>CVE-2015-1274</cvename>
+      <cvename>CVE-2015-1275</cvename>
+      <cvename>CVE-2015-1276</cvename>
+      <cvename>CVE-2015-1277</cvename>
+      <cvename>CVE-2015-1278</cvename>
+      <cvename>CVE-2015-1279</cvename>
+      <cvename>CVE-2015-1280</cvename>
+      <cvename>CVE-2015-1281</cvename>
+      <cvename>CVE-2015-1282</cvename>
+      <cvename>CVE-2015-1283</cvename>
+      <cvename>CVE-2015-1284</cvename>
+      <cvename>CVE-2015-1285</cvename>
+      <cvename>CVE-2015-1286</cvename>
+      <cvename>CVE-2015-1287</cvename>
+      <cvename>CVE-2015-1288</cvename>
+      <cvename>CVE-2015-1289</cvename>
+      <cvename>CVE-2015-1290</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2015-07-21</discovery>
+      <entry>2015-07-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b202e4ce-3114-11e5-aa32-0026551a22dc">
+   <topic>shibboleth-sp -- DoS vulnerability</topic>
+   <affects>
+     <package>
+	<name>xmltooling</name>
+	<range><lt>1.5.5</lt></range>
+     </package>
+     <package>
+	<name>opensaml2</name>
+	<range><lt>2.5.5</lt></range>
+     </package>
+     <package>
+	<name>shibboleth-sp</name>
+	<range><lt>2.5.5</lt></range>
+     </package>
+   </affects>
+   <description>
+     <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Shibboleth consortium reports:</p>
+	<blockquote cite="http://shibboleth.net/community/advisories/secadv_20150721.txt">
+	  <p>
+	    Shibboleth SP software crashes on well-formed but invalid XML.
+	  </p>
+	  <p>
+	    The Service Provider software contains a code path with an uncaught
+	    exception that can be triggered by an unauthenticated attacker by
+	    supplying well-formed but schema-invalid XML in the form of SAML
+	    metadata or SAML protocol messages. The result is a crash and so
+	    causes a denial of service.
+	  </p>
+	  <p>
+	    You must rebuild opensaml and shibboleth with xmltooling-1.5.5 or
+	    later. The easiest way to do so is to update the whole chain including
+	    shibboleth-2.5.5 an opensaml2.5.5.
+	  </p>
+	</blockquote>
+     </body>
+   </description>
+   <references>
+     <url>http://shibboleth.net/community/advisories/secadv_20150721.txt</url>
+     <cvename>CVE-2015-2684</cvename>
+   </references>
+   <dates>
+     <discovery>2015-07-21</discovery>
+     <entry>2015-07-23</entry>
+   </dates>
+ </vuln>
+
   <vuln vid="c80b27a2-3165-11e5-8a1d-14dae9d210b8">
     <topic>wordpress -- XSS vulnerability</topic>
     <affects>
       <package>
 	<name>wordpress</name>
+	<range><lt>4.2.3,1</lt></range>
+      </package>
+      <package>
 	<name>de-wordpress</name>
 	<name>ja-wordpress</name>
 	<name>ru-wordpress</name>
@@ -85,10 +270,13 @@ Notes:
     </description>
     <references>
       <url>https://wordpress.org/news/2015/07/wordpress-4-2-3/</url>
+      <cvename>CVE-2015-5622</cvename>
+      <cvename>CVE-2015-5623</cvename>
     </references>
     <dates>
       <discovery>2015-07-23</discovery>
       <entry>2015-07-23</entry>
+      <modified>2015-07-24</modified>
     </dates>
   </vuln>
 

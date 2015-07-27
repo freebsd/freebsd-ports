@@ -8,6 +8,7 @@ share/stendhal/doc/LICENSE-images.txt
 share/stendhal/doc/Licenses/BSD.txt
 share/stendhal/doc/Licenses/CC0-1.0.txt
 share/stendhal/doc/Licenses/CC-BY-3.0.txt
+share/stendhal/doc/Licenses/GPL-3.0.txt
 share/stendhal/doc/Licenses/MIT.txt
 share/stendhal/lib/EasyMockLicense.html
 share/stendhal/lib/license-apache-2.0.txt
@@ -21,7 +22,6 @@ share/stendhal/lib/marauroa.jar
 share/stendhal/lib/LICENSES.txt
 share/stendhal/lib/NOTICE.txt
 @dir share/stendhal/log
-
 %%CLIENT%%bin/stendhal
 %%CLIENT%%man/man1/stendhal.1.gz
 %%CLIENT%%share/pixmaps/stendhal.png
@@ -33,7 +33,6 @@ share/stendhal/lib/NOTICE.txt
 %%CLIENT%%share/stendhal/lib/stendhal-music-data.jar
 %%CLIENT%%share/stendhal/lib/stendhal-sound-data.jar
 %%CLIENT%%share/stendhal/lib/stendhal.jar
-
 %%SERVER%%bin/stendhal-server
 %%SERVER%%man/man1/stendhal-server.1.gz
 %%SERVER%%share/stendhal/data/conf/admins.txt

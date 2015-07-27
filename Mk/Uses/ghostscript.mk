@@ -84,19 +84,23 @@ _GS_SELECTED?=		7
 IGNORE?=	Invalid ghostscript argument or GHOSTSCRIPT_DEFAULT
 .endif
 
-.undef _GS_NOX11_SUFFIX
-.if ${_GS_ARGS:Mnox11} || defined(WITHOUT_X11)
-_GS_NOX11_SUFFIX=	-nox11
-.endif
-
 # dependencies
 _GS_PORT=	ghostscript${_GS_SELECTED}${_GS_AGPL_SUFFIX}${_GS_NOX11_SUFFIX}
 
+.undef _GS_NOX11_SUFFIX
+.if ${_GS_ARGS:Mnox11} || \
+    (defined(OPTIONS_DEFINE) && defined(PORT_OPTIONS) && \
+     ${OPTIONS_DEFINE:MX11} && ${PORT_OPTIONS:MX11} == "")
+# XXX
+#DEPENDS_ARGS+=	print_${_GS_PORT}_UNSET_FORCE+=X11
+_GS_NOX11_SUFFIX=	-nox11
+.endif
+
 .if defined(_GS_BUILD_DEP)
-BUILD_DEPENDS+=	${_GS_PORT}>=0:${PORTSDIR}/print/${_GS_PORT}
+BUILD_DEPENDS+=	gs:${PORTSDIR}/print/${_GS_PORT}
 .endif
 .if defined(_GS_RUN_DEP)
-RUN_DEPENDS+=	${_GS_PORT}>=0:${PORTSDIR}/print/${_GS_PORT}
+RUN_DEPENDS+=	gs:${PORTSDIR}/print/${_GS_PORT}
 .endif
 
 .endif # _INCLUDE_USES_GHOSTSCRIPT_MK

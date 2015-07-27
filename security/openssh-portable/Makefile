@@ -77,6 +77,7 @@ PAM_CONFIGURE_WITH=	pam
 TCP_WRAPPERS_CONFIGURE_WITH=	tcp-wrappers
 
 LIBEDIT_CONFIGURE_WITH=	libedit
+LIBEDIT_USES=		libedit
 BSM_CONFIGURE_ON=	--with-audit=bsm
 
 ETCDIR?=		${PREFIX}/etc/ssh

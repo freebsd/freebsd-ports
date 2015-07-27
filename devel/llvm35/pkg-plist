@@ -999,6 +999,7 @@ llvm%%LLVM_SUFFIX%%/share/llvm/cmake/TableGen.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/genindex.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/jquery-1.11.1.js
 %%PORTDOCS%%%%DOCSDIR%%/html/jquery.js
 %%PORTDOCS%%%%DOCSDIR%%/html/lines.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/linpack-pc.png
@@ -1055,6 +1056,7 @@ llvm%%LLVM_SUFFIX%%/share/llvm/cmake/TableGen.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/searchtools.js
 %%PORTDOCS%%%%DOCSDIR%%/html/tblgen.html
 %%PORTDOCS%%%%DOCSDIR%%/html/tblgen.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/underscore-1.3.1.js
 %%PORTDOCS%%%%DOCSDIR%%/html/underscore.js
 %%PORTDOCS%%%%DOCSDIR%%/html/up-pressed.png
 %%PORTDOCS%%%%DOCSDIR%%/html/up.png

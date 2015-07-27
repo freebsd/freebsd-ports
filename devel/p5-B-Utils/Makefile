@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	B-Utils
-PORTVERSION=	0.25
-PORTREVISION=	1
+PORTVERSION=	0.27
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:JJORE
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -19,5 +17,8 @@ BUILD_DEPENDS=	p5-ExtUtils-Depends>=0.301:${PORTSDIR}/devel/p5-ExtUtils-Depends
 
 USES=		perl5
 USE_PERL5=	configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/B/Utils/Utils.so
 
 .include <bsd.port.mk>

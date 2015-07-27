@@ -780,6 +780,7 @@
     SUBDIR += py-Products.PluggableAuthService
     SUBDIR += py-RestrictedPython
     SUBDIR += py-SecretStorage
+    SUBDIR += py-artifacts
     SUBDIR += py-bcrypt
     SUBDIR += py-borg.localrole
     SUBDIR += py-cerealizer
@@ -999,6 +1000,7 @@
     SUBDIR += sshguard
     SUBDIR += sshguard-ipfilter
     SUBDIR += sshguard-ipfw
+    SUBDIR += sshguard-null
     SUBDIR += sshguard-pf
     SUBDIR += sshit
     SUBDIR += sshpass

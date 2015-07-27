@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fluentd
-PORTVERSION=	0.10.53
-PORTREVISION=	1
+PORTVERSION=	0.10.61
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -29,6 +28,7 @@ USE_RC_SUBR=	fluentd
 USERS=		fluentd
 GROUPS=		fluentd
 SUB_LIST+=	USER=${USERS} GROUP=${GROUPS} RUBY=${RUBY}
+NO_ARCH=	YES
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/fluentd/plugin

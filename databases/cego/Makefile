@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cego
-PORTVERSION=	2.23.11
+PORTVERSION=	2.23.12
 CATEGORIES=	databases
 MASTER_SITES=	http://www.lemke-it.com/
 
@@ -20,7 +20,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 USE_LDCONFIG=	yes
 
-USES=		ncurses readline libtool shebangfix
+USES=		libtool ncurses readline shebangfix
 SHEBANG_FILES=	tools/cgbackup tools/cgrecover
 
 USERS=		cego

@@ -2,9 +2,9 @@
 
 PORTNAME=	texlive
 PORTVERSION=	20150521
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
-MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2015/
+MASTER_SITES=	TEX_CTAN/systems/texlive/Source/
 PKGNAMESUFFIX=	-base
 DISTNAME=	${PORTNAME}-${DISTVERSION}-source
 DIST_SUBDIR=	TeX
@@ -19,6 +19,7 @@ LIB_DEPENDS=	libicuio.so:${PORTSDIR}/devel/icu \
 		libgraphite2.so:${PORTSDIR}/graphics/graphite2 \
 		libgd.so:${PORTSDIR}/graphics/gd \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libharfbuzz.so:${PORTSDIR}/print/harfbuzz \
 		libttf.so:${PORTSDIR}/print/freetype \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libzzip.so:${PORTSDIR}/devel/zziplib \
@@ -28,7 +29,7 @@ LIB_DEPENDS=	libicuio.so:${PORTSDIR}/devel/icu \
 CONFLICTS_INSTALL=	texlive-texmf-201[234]*
 
 USE_TEX=	web2c kpathsea ptexenc tlmgr texhash-bootstrap
-USES=		ghostscript gmake pkgconfig perl5 shebangfix tar:xz
+USES=		ghostscript pkgconfig perl5 shebangfix tar:xz
 USE_PERL5=	run
 USE_LDCONFIG=	yes
 # during build phase gnu configure is run a lot
@@ -40,24 +41,8 @@ EXCLUDE_FILES=	${DISTNAME}/texk/web2c \
 		${DISTNAME}/texk/xdvik \
 		${DISTNAME}/texk/dvipdfm-x \
 		${DISTNAME}/texk/dvipsk \
-		${DISTNAME}/libs/freetype2 \
-		${DISTNAME}/libs/gd \
-		${DISTNAME}/libs/gmp \
-		${DISTNAME}/libs/graphite2 \
-		${DISTNAME}/libs/icu \
-		${DISTNAME}/libs/lua52 \
-		${DISTNAME}/libs/luajit \
-		${DISTNAME}/libs/libpaper \
-		${DISTNAME}/libs/libpng \
-		${DISTNAME}/libs/mpfr \
-		${DISTNAME}/libs/pixman \
-		${DISTNAME}/libs/poppler \
-		${DISTNAME}/libs/teckit \
-		${DISTNAME}/libs/xpdf \
-		${DISTNAME}/libs/zlib \
-		${DISTNAME}/libs/zziplib \
-		${DISTNAME}/utils/t1utils \
-		${DISTNAME}/libs/potrace
+		${DISTNAME}/libs \
+		${DISTNAME}/utils/t1utils
 EXTRACT_AFTER_ARGS=	${EXCLUDE_FILES:S,^,--exclude ,}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --disable-native-texlive-build \
@@ -77,6 +62,7 @@ CONFIGURE_ARGS= --disable-native-texlive-build \
 		--with-freetype2-includes=${LOCALBASE}/include/freetype2 \
 		--with-freetype2-libdir=${LOCALBASE}/lib \
 		--with-system-cairo \
+		--with-system-harfbuzz \
 		--with-system-gd \
 		--with-system-graphite2 \
 		--with-system-pixman \

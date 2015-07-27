@@ -2,6 +2,7 @@
 
 PORTNAME=	luatex
 PORTVERSION=	0.80.0
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2015/
 PKGNAMEPREFIX=	tex-
@@ -14,19 +15,16 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Extended version of pdfTeX using Lua
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libgraphite.so:${PORTSDIR}/graphics/silgraphite \
-		libicuio.so:${PORTSDIR}/devel/icu \
-		libpng.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libpoppler.so:${PORTSDIR}/graphics/poppler \
-		libTECkit.so:${PORTSDIR}/textproc/teckit \
+		libmpfr.so:${PORTSDIR}/math/mpfr \
 		libzzip.so:${PORTSDIR}/devel/zziplib
 
 USE_TEX=	kpathsea web2c texmf formats texlua texluajit fmtutil
 USE_XORG=	pixman
 USE_GONME=	cairo
 USE_LDCONFIG=	yes
-USES=		pkgconfig tar:xz gmake libtool
+USES=		pkgconfig tar:xz libtool
 TEXHASHDIRS=	${TEXMFDISTDIR} ${TEXMFVARDIR}
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
 EXTRACT_FILES=	build-aux \
@@ -62,25 +60,16 @@ EXTRACT_FILES_TEXMF= \
 	texmf-dist/tex/lualatex
 WRKSRC=		${WRKDIR}/${DISTNAME}/texk/web2c
 GNU_CONFIGURE=	yes
-EXCLUDE_ENGINES=aleph etex pdftex mf mf-nowin mp ptex eptex uptex euptex \
-		xetex tex synctex
+EXCLUDE_ENGINES=aleph etex pdftex mf mf-nowin \
+		ptex eptex uptex euptex \
+		otangle mp pmp upmp web2c web-progs xetex tex synctex
 CONFIGURE_ARGS=	${EXCLUDE_ENGINES:S/^/--disable-/} \
 		--enable-luatex \
 		--enable-luajittex \
-		--enable-web2c \
-		--disable-web-progs \
-		--with-system-freetype2 \
-		--with-freetype2-includes=${LOCALBASE}/include/freetype2 \
-		--with-freetype2-libdir=${LOCALBASE}/lib \
-		--with-system-gd \
 		--with-system-poppler \
-		--with-system-t1lib \
-		--with-system-teckit \
-		--with-teckit-includes=${LOCALBASE}/include/teckit \
-		--with-teckit-libdir=${LOCALBASE}/lib \
-		--with-system-zziplib \
-		--with-system-zlib
-.for L in cairo gmp kpathsea libpng mpfr pixman ptexenc icu
+		--with-system-zlib \
+		--with-system-zziplib
+.for L in cairo gmp kpathsea libpng mpfr pixman ptexenc
 CONFIGURE_ARGS+=--with-system-$L \
 		--with-$L-include=${LOCALBASE}/include \
 		--with-$L-libdir=${LOCALBASE}/lib
@@ -97,7 +86,8 @@ post-extract:
 pre-configure:
 	for D in libs/xpdf; do \
 		cd ${WRKDIR}/${DISTNAME}/$$D && \
-		${SETENV} ${CONFIGURE_ENV} ${SH} ${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}; \
+		${SETENV} ${CONFIGURE_ENV} ${SH} ${CONFIGURE_SCRIPT} \
+		    ${CONFIGURE_ARGS}; \
 	done
 
 pre-install:

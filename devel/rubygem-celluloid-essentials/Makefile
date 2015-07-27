@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	celluloid-essentials
-PORTVERSION=	0.20.1
+PORTVERSION=	0.20.1.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

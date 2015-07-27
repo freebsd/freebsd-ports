@@ -53,9 +53,6 @@
     SUBDIR += allegro
     SUBDIR += allegro-devel
     SUBDIR += alog
-    SUBDIR += amd64-binutils
-    SUBDIR += amd64-gcc
-    SUBDIR += amd64-xtoolchain-gcc
     SUBDIR += android-tools-adb
     SUBDIR += android-tools-adb-devel
     SUBDIR += android-tools-fastboot
@@ -1148,7 +1145,6 @@
     SUBDIR += libical
     SUBDIR += libical-glib
     SUBDIR += libinotify
-    SUBDIR += libiomp5-devel
     SUBDIR += libiqxmlrpc
     SUBDIR += libisofs
     SUBDIR += libixp
@@ -3176,7 +3172,6 @@
     SUBDIR += p5-Test-TableDriven
     SUBDIR += p5-Test-Taint
     SUBDIR += p5-Test-TempDir-Tiny
-    SUBDIR += p5-Test-Tester
     SUBDIR += p5-Test-Time
     SUBDIR += p5-Test-Timer
     SUBDIR += p5-Test-TinyMocker
@@ -3200,7 +3195,6 @@
     SUBDIR += p5-Test-YAML
     SUBDIR += p5-Test-YAML-Meta
     SUBDIR += p5-Test-YAML-Valid
-    SUBDIR += p5-Test-use-ok
     SUBDIR += p5-Test-utf8
     SUBDIR += p5-Text-Levenshtein
     SUBDIR += p5-Text-Levenshtein-Damerau
@@ -4147,6 +4141,7 @@
     SUBDIR += py-qt4-scripttools
     SUBDIR += py-qt4-test
     SUBDIR += py-rauth
+    SUBDIR += py-raven
     SUBDIR += py-repl
     SUBDIR += py-repoze.lru
     SUBDIR += py-repoze.tm2
@@ -4202,6 +4197,7 @@
     SUBDIR += py-speaklater
     SUBDIR += py-sqlcc
     SUBDIR += py-statgrab
+    SUBDIR += py-stdnum
     SUBDIR += py-stevedore
     SUBDIR += py-stsci.distutils
     SUBDIR += py-subversion
@@ -5048,6 +5044,7 @@
     SUBDIR += tex-kpathsea
     SUBDIR += tex-libtexlua
     SUBDIR += tex-libtexluajit
+    SUBDIR += tex-synctex
     SUBDIR += tex-web2c
     SUBDIR += thrift
     SUBDIR += thrift-c_glib
