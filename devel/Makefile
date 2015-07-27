@@ -3338,6 +3338,7 @@
     SUBDIR += p5-constant-defer
     SUBDIR += p5-constant-lexical
     SUBDIR += p5-cpan-listchanges
+    SUBDIR += p5-curry
     SUBDIR += p5-enum
     SUBDIR += p5-ex-lib
     SUBDIR += p5-experimental
