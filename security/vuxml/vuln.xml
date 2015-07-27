@@ -58,6 +58,39 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c470bcc7-33fe-11e5-a4a5-002590263bf5">
+    <topic>logstash -- SSL/TLS vulnerability with Lumberjack input</topic>
+    <affects>
+      <package>
+	<name>logstash</name>
+	<range><lt>1.4.4</lt></range>
+	<range><ge>1.5.0</ge><lt>1.5.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Elastic reports:</p>
+	<blockquote cite="https://www.elastic.co/community/security">
+	  <p>Vulnerability Summary: All Logstash versions prior to 1.5.2 that
+	    use Lumberjack input (in combination with Logstash Forwarder agent)
+	    are vulnerable to a SSL/TLS security issue called the FREAK attack.
+	    This allows an attacker to intercept communication and access secure
+	    data. Users should upgrade to 1.5.3 or 1.4.4.</p>
+	  <p>Remediation Summary: Users that do not want to upgrade can address
+	    the vulnerability by disabling the Lumberjack input.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5378</cvename>
+      <url>https://www.elastic.co/community/security</url>
+    </references>
+    <dates>
+      <discovery>2015-07-22</discovery>
+      <entry>2015-07-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9d732078-32c7-11e5-b263-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
