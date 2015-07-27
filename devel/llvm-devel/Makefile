@@ -3,6 +3,7 @@
 
 PORTNAME=	llvm
 PORTVERSION=	3.8.d20150720
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	\
     http://github.com/llvm-mirror/llvm/archive/${LLVM_COMMIT}.tar.gz?dummy=/ \
@@ -39,8 +40,10 @@ OPENMP_NAME=	openmp-${OPENMP_COMMIT}
 
 WRKSRC=		${WRKDIR}/${LLVM_NAME}
 
-OPTIONS_DEFINE=	CLANG DOCS LIT OPENMP
-OPTIONS_DEFAULT=	CLANG LIT OPENMP
+OPTIONS_DEFINE=	CLANG DOCS LIT
+OPTIONS_DEFINE_amd64=	OPENMP
+OPTIONS_DEFAULT=	CLANG LIT
+OPTIONS_DEFAULT_amd64=	OPENMP
 OPTIONS_SUB=	yes
 
 CLANG_DESC=	Build clang
@@ -121,6 +124,10 @@ USES+=			python
 LIT_COMMANDS=		lit llvm-lit FileCheck
 .else
 USES+=			python:build
+.endif
+
+.if ! ${OPTIONS_DEFINE:MOPENMP}
+PLIST_SUB+=	OPENMP="@comment "
 .endif
 
 MAN1SRCS+=	bugpoint.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
