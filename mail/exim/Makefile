@@ -3,7 +3,6 @@
 
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
-PORTREVISION?=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	EXIM/exim4/:exim
 DISTNAME=	${PORTNAME}-${EXIM_VERSION}
@@ -48,6 +47,7 @@ EMBEDDED_PERL_USE=	perl5=run,build
 EXIMON_USE=	xorg=x11,xaw,xt
 GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 ICONV_USES=	iconv:lib,build
+INTERNATIONAL_LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
 MYSQL_USE=	mysql=yes
 OPENLDAP_USE=	openldap=yes
 PGSQL_USES=	pgsql
@@ -57,8 +57,6 @@ SA_EXIM_RUN_DEPENDS=	${LOCALBASE}/bin/spamc:${PORTSDIR}/mail/spamassassin
 SPF_LIB_DEPENDS=	libspf2.so:${PORTSDIR}/mail/libspf2
 SQLITE_USE=	sqlite=yes
 SQLITE_USES=	pkgconfig
-XCLIENT_EXTRA_PATCHES=	${FILESDIR}/extra-patch-xclient
-RSPAMD_EXTRA_PATCHES=	${FILESDIR}/extra-patch-rspamd
 
 .include <bsd.port.options.mk>
 
@@ -97,7 +95,7 @@ MASTER_SITES+=	http://marc.merlins.org/linux/exim/files/:sa_exim \
 DISTFILES+=	sa-exim-${SA_EXIM_VERSION}.tar.gz:sa_exim
 .endif
 
-EXIM_VERSION=	4.85
+EXIM_VERSION=	4.86
 SA_EXIM_VERSION=4.2
 EXIM_INSTALL_ARG+=	"-no_chown" "-no_symlink"
 
@@ -218,6 +216,17 @@ SEDLIST+=	-e 's,^\# (EXPERIMENTAL_DANE=),\1,'
 
 .if ${PORT_OPTIONS:MEVENT}
 SEDLIST+=	-e 's,^\# (EXPERIMENTAL_EVENT=),\1,'
+.endif
+
+.if ${PORT_OPTIONS:MINTERNATIONAL}
+SEDLIST+=	-e 's,^\# (EXPERIMENTAL_INTERNATIONAL=),\1,' \
+		-e 's,XX_IDN_LIBS_XX,-L${LOCALBASE}/lib -lidn,'
+.else
+SEDLIST+=	-e 's,XX_IDN_LIBS_XX,,'
+.endif
+
+.if ${PORT_OPTIONS:MSOCKS}
+SEDLIST+=	-e 's,^\# (EXPERIMENTAL_SOCKS=),\1,'
 .endif
 
 .if !${PORT_OPTIONS:MPRDR}
