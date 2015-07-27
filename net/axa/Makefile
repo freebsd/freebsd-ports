@@ -2,6 +2,7 @@
 
 PORTNAME=	axa
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	net dns
 MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 
@@ -19,7 +20,7 @@ LIB_DEPENDS=	libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c \
 RUN_DEPENDS=	sie-nmsg>0:${PORTSDIR}/net/sie-nmsg
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pathfix pkgconfig
+USES=		gmake libtool libedit pathfix pkgconfig
 CONFIGURE_SHELL=	${LOCALBASE}/bin/bash
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
