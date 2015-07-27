@@ -10,15 +10,6 @@
  #Port 22
  #AddressFamily any
  #ListenAddress 0.0.0.0
-@@ -41,7 +44,7 @@
- # Authentication:
- 
- #LoginGraceTime 2m
--#PermitRootLogin yes
-+#PermitRootLogin no
- #StrictModes yes
- #MaxAuthTries 6
- #MaxSessions 10
 @@ -50,8 +53,7 @@
  #PubkeyAuthentication yes
  
