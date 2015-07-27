@@ -15,6 +15,8 @@ BUILD_DEPENDS=	git:${PORTSDIR}/devel/git \
 		dash.el>0:${PORTSDIR}/devel/dash.el
 RUN_DEPENDS=	dash.el>0:${PORTSDIR}/devel/dash.el
 
+BROKEN_FreeBSD_9=	does not build
+
 USE_GITHUB=	yes
 
 USES=		gmake makeinfo
