@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sx
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://cdn.skylable.com/source/
 
