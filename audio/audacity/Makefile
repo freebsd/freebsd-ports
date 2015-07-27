@@ -3,6 +3,7 @@
 
 PORTNAME=	audacity
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-minsrc-${PORTVERSION}
@@ -62,7 +63,8 @@ CONFIGURE_ARGS+=	--disable-sse
 DEBUG_CONFIGURE_WITH=	debug
 
 FFMPEG_CONFIGURE_WITH=	ffmpeg
-FFMPEG_RUN_DEPENDS=     ${LOCALBASE}/bin/ffmpeg:${PORTSDIR}/multimedia/ffmpeg
+FFMPEG_RUN_DEPENDS=	${LOCALBASE}/bin/ffmpeg:${PORTSDIR}/multimedia/ffmpeg
+FFMPEG_LIB_DEPENDS=	libavformat.so:${PORTSDIR}/multimedia/ffmpeg
 FFMPEG_CFLAGS=		-I${LOCALBASE}/include/ffmpeg
 FFMPEG_CPPFLAGS=	-I${LOCALBASE}/include/ffmpeg
 FFMPEG_CXXFLAGS=	-I${LOCALBASE}/include/ffmpeg
