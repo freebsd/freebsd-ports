@@ -58,6 +58,34 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5b74a5bc-348f-11e5-ba05-c80aa9043978">
+    <topic>OpenSSH -- MaxAuthTries limit bypass via duplicates in KbdInteractiveDevices</topic>
+    <affects>
+      <package>
+	<name>openssh-portable</name>
+	<range><lt>6.9.p1_2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="https://access.redhat.com/security/cve/CVE-2015-5600">
+	  <p>It was discovered that the OpenSSH sshd daemon did not check the
+	    list of keyboard-interactive authentication methods for duplicates.
+	    A remote attacker could use this flaw to bypass the MaxAuthTries
+	    limit, making it easier to perform password guessing attacks.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://access.redhat.com/security/cve/CVE-2015-5600</url>
+      <cvename>CVE-2015-5600</cvename>
+    </references>
+    <dates>
+      <discovery>2015-07-21</discovery>
+      <entry>2015-07-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c470bcc7-33fe-11e5-a4a5-002590263bf5">
     <topic>logstash -- SSL/TLS vulnerability with Lumberjack input</topic>
     <affects>
