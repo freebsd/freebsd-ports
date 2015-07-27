@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-OPTIONS_UNSET=	X11
+DEPENDS_ARGS+=	print_ghostscript9_UNSET_FORCE+=X11
 
 MASTERDIR=	${.CURDIR}/../ghostscript9
 
