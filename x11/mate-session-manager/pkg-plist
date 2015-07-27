@@ -1,7 +1,9 @@
 bin/mate-session
+bin/mate-session-inhibit
 bin/mate-session-properties
 bin/mate-session-save
 bin/mate-wm
+man/man1/mate-session-inhibit.1.gz
 man/man1/mate-session-properties.1.gz
 man/man1/mate-session-save.1.gz
 man/man1/mate-session.1.gz

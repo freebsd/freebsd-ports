@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-utils
-PORTVERSION=	1.8.1
+PORTVERSION=	1.10.1
 CATEGORIES=	deskutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -24,6 +24,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-maintainer-flags=no \
 		--disable-gtk-doc \
+		--with-gtk=2.0 \
 		--with-html-dir=${PREFIX}/share/doc
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
