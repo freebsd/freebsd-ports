@@ -1,41 +1,42 @@
---- Makefile.in.orig	2014-06-20 18:58:03.000000000 -0400
-+++ Makefile.in	2014-07-24 16:14:06.000000000 -0400
-@@ -25,7 +25,7 @@
+--- Makefile.in.orig	2015-07-27 16:22:02 UTC
++++ Makefile.in
+@@ -25,7 +25,8 @@ SHELL		:=	@SHELL@
  MKDIR		:=	@MKDIR@
  
  # Install locations
 -INATALL		:=	install
 +INSTALL		:=	install
++PREFIX		:=	@PREFIX@
  BINDIR		:=	@BINDIR@
  DOCDIR		:=	@DOCDIR@
  HOMEDIR		:=	@HOMEDIR@
-@@ -50,6 +50,8 @@
+@@ -45,7 +46,7 @@ F2PY		:=	@F2PY@
+ 
+ # Libs and Flags
+ LIBS		:=	@LIBS@
+-CPPFLAGS	+=	${DEFS}
++CPPFLAGS	:=	@CPPFLAGS@
+ LDFLAGS		+=	@LDFLAGS@
  CFLAGS		+=	@CFLAGS@
  FFLAGS		+=	@FFLAGS@
- FCOPT		+=	@FCOPT@
-+PORTAUDIO_INCLUDE = 	@PORTAUDIO_INCLUDE@
-+PORTAUDIO_LIBDIR =	@PORTAUDIO_LIBDIR@
- 
- # Config Definitions
- DEFS		:=	@DEFS@
-@@ -71,24 +73,24 @@
+@@ -71,24 +72,24 @@ all:	libwspr.a thnix.o WsprMod/w.so fmte
  
  # Default Rules
  %.o: %.c
 -	${CC} ${CPPFLAGS} ${CFLAGS} -c $<
-+	${CC} ${PORTAUDIO_INCLUDE} ${CFLAGS} ${CPPFLAGS} -c $<
++	${CC} ${CFLAGS} ${CPPFLAGS} ${DEFS} -c $<
  %.o: %.f
 -	${FC} ${FFLAGS} -c $<
-+	${FC} ${PORTAUDIO_INCLUDE} ${CFLAGS} ${FFLAGS} -c $<
++	${FC} ${DEFS} ${CFLAGS} ${FFLAGS} -c $<
  %.o: %.F
 -	${FC} ${FFLAGS} -c $<
-+	${FC} ${PORTAUDIO_INCLUDE} ${CFLAGS} ${FFLAGS} -c $<
++	${FC} ${DEFS} ${CFLAGS} ${FFLAGS} -c $<
  %.o: %.f90
 -	${FC} ${FFLAGS} -c $<
-+	${FC} ${PORTAUDIO_INCLUDE} ${CFLAGS} ${FFLAGS} -c $<
++	${FC} ${DEFS} ${CFLAGS} ${FFLAGS} -c $<
  %.o: %.F90
 -	${FC} ${FFLAGS} -c $<
-+	${FC} ${PORTAUDIO_INCLUDE} ${CFLAGS} ${FFLAGS} -c $<
++	${FC} ${DEFS} ${CFLAGS} ${FFLAGS} -c $<
  
  # Objects
  OBJS1 = wspr0.o wspr0init.o wspr0_rx.o wspr0_tx.o thnix_stub.o
@@ -50,7 +51,7 @@
  
  OBJS3 = azdist.o ccf2.o chklevel.o db.o decode.o decode162.o deg2grid.o \
  	encode232.o fano232.o fchisq.o fil1.o flat3.o four2a.o\
-@@ -105,21 +107,22 @@
+@@ -105,21 +106,22 @@ OBJS3 = azdist.o ccf2.o chklevel.o db.o 
  
  # Build Library: libwspr.a
  libwspr.a: ${OBJS3} acom1.f90 acom2.f90
@@ -78,7 +79,7 @@
  
  # SRC for w.so
  F2PYSRCS = wspr1.f90 getfile.f90 paterminate.f90 audiodev.f90
-@@ -127,7 +130,7 @@
+@@ -127,30 +129,34 @@ F2PYSRCS = wspr1.f90 getfile.f90 patermi
  # Build W.SO & MV to WsprMod/
  WsprMod/w.so:	libwspr.a ${F2PYSRCS} acom1.f90 
  	${F2PY} -c --quiet --fcompiler=${FCV} --f77exec=${FC} --f90exec=${FC} \
@@ -87,7 +88,11 @@
  	${MV} w*.so WsprMod/w.so
  
  # Install target wspr
-@@ -137,20 +140,23 @@
+ install:
+-	@clear
++# tput has no TERM under automated install
++#	@clear
+ 	@echo '-----------------------------------'
  	@echo "      Installing ${PROGRAM}"
  	@echo '-----------------------------------'
  	@echo ''
@@ -108,7 +113,7 @@
 +	@${MKDIR} -p ${DESTDIR}${DOCDIR}/examples
 +	@${MKDIR} -p ${DESTDIR}${SHARED}/save/Samples
 +	@${MKDIR} -p ${DESTDIR}${WSPRLIB}/WsprMod
-+	@install -m 555 fmtest fcal fmeasure fmtave wspr0 wsprcode ${DESTDIR}${BINDIR}
++	@install -m 655 fmtest fcal fmeasure fmtave wspr0 wsprcode ${DESTDIR}${BINDIR}
 +	@strip ${DESTDIR}${BINDIR}/fmtest ${DESTDIR}${BINDIR}/fcal \
 +		${DESTDIR}${BINDIR}/fmeasure ${DESTDIR}${BINDIR}/fmtave \
 +		${DESTDIR}${BINDIR}/wspr0 ${DESTDIR}${BINDIR}/wsprcode
