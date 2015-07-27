@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-DEPENDS_ARGS+=	print_ghostscript9-agpl_UNSET_FORCE+=X11
+OPTIONS_EXCLUDE=	X11
 
 MASTERDIR=	${.CURDIR}/../ghostscript9-agpl
 
