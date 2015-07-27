@@ -548,9 +548,9 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  /* OLD API */
  extern struct ssh *active_state;
  #include "opacket.h"
---- work.clean/openssh-6.8p1/readconf.c	2015-04-01 22:07:18.135435000 -0500
-+++ work/openssh-6.8p1/readconf.c	2015-04-03 15:10:44.188916000 -0500
-@@ -154,6 +154,12 @@
+--- work/openssh-6.9p1/readconf.c.orig	2015-07-27 13:32:13.169218000 -0500
++++ work/openssh-6.9p1/readconf.c	2015-07-27 13:33:00.429332000 -0500
+@@ -153,6 +153,12 @@ typedef enum {
  	oTunnel, oTunnelDevice, oLocalCommand, oPermitLocalCommand,
  	oVisualHostKey, oUseRoaming,
  	oKexAlgorithms, oIPQoS, oRequestTTY, oIgnoreUnknown, oProxyUseFdpass,
@@ -563,10 +563,10 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	oCanonicalDomains, oCanonicalizeHostname, oCanonicalizeMaxDots,
  	oCanonicalizeFallbackLocal, oCanonicalizePermittedCNAMEs,
  	oStreamLocalBindMask, oStreamLocalBindUnlink, oRevokedHostKeys,
-@@ -276,6 +282,16 @@
- 	{ "fingerprinthash", oFingerprintHash },
+@@ -277,6 +283,16 @@ static struct {
  	{ "updatehostkeys", oUpdateHostkeys },
  	{ "hostbasedkeytypes", oHostbasedKeyTypes },
+ 	{ "pubkeyacceptedkeytypes", oPubkeyAcceptedKeyTypes },
 +#ifdef NONE_CIPHER_ENABLED
 +	{ "noneenabled", oNoneEnabled },
 +	{ "noneswitch", oNoneSwitch },
@@ -580,7 +580,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	{ "ignoreunknown", oIgnoreUnknown },
  
  	{ NULL, oBadOption }
-@@ -917,6 +933,44 @@
+@@ -906,6 +922,44 @@ parse_time:
  		intptr = &options->check_host_ip;
  		goto parse_flag;
  
@@ -625,7 +625,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	case oVerifyHostKeyDNS:
  		intptr = &options->verify_host_key_dns;
  		multistate_ptr = multistate_yesnoask;
-@@ -1678,6 +1732,16 @@
+@@ -1665,6 +1719,16 @@ initialize_options(Options * options)
  	options->ip_qos_interactive = -1;
  	options->ip_qos_bulk = -1;
  	options->request_tty = -1;
@@ -642,7 +642,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	options->proxy_use_fdpass = -1;
  	options->ignored_unknown = NULL;
  	options->num_canonical_domains = 0;
-@@ -1838,6 +1902,35 @@
+@@ -1826,6 +1890,35 @@ fill_default_options(Options * options)
  		options->server_alive_interval = 0;
  	if (options->server_alive_count_max == -1)
  		options->server_alive_count_max = 3;
