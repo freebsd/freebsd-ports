@@ -85,12 +85,15 @@ IGNORE?=	Invalid ghostscript argument or GHOSTSCRIPT_DEFAULT
 .endif
 
 # dependencies
-_GS_PORT=	ghostscript${_GS_SELECTED}${_GS_AGPL_SUFFIX}
+_GS_PORT=	ghostscript${_GS_SELECTED}${_GS_AGPL_SUFFIX}${_GS_NOX11_SUFFIX}
 
+.undef _GS_NOX11_SUFFIX
 .if ${_GS_ARGS:Mnox11} || \
     (defined(OPTIONS_DEFINE) && defined(PORT_OPTIONS) && \
      ${OPTIONS_DEFINE:MX11} && ${PORT_OPTIONS:MX11} == "")
-DEPENDS_ARGS+=	print_${_GS_PORT}_UNSET_FORCE+=X11
+# XXX
+#DEPENDS_ARGS+=	print_${_GS_PORT}_UNSET_FORCE+=X11
+_GS_NOX11_SUFFIX=	-nox11
 .endif
 
 .if defined(_GS_BUILD_DEP)
