@@ -654,6 +654,7 @@ etc/perl5_version
 %%ARCH_LIB%%/CORE/cop.h
 %%ARCH_LIB%%/CORE/cv.h
 %%ARCH_LIB%%/CORE/dosish.h
+%%ARCH_LIB%%/CORE/dquote_inline.h
 %%ARCH_LIB%%/CORE/ebcdic_tables.h
 %%ARCH_LIB%%/CORE/embed.h
 %%ARCH_LIB%%/CORE/embedvar.h
@@ -667,6 +668,7 @@ etc/perl5_version
 %%ARCH_LIB%%/CORE/hv_func.h
 %%ARCH_LIB%%/CORE/inline.h
 %%ARCH_LIB%%/CORE/intrpvar.h
+%%ARCH_LIB%%/CORE/invlist_inline.h
 %%ARCH_LIB%%/CORE/iperlsys.h
 %%ARCH_LIB%%/CORE/keywords.h
 %%ARCH_LIB%%/CORE/l1_char_class_tab.h
@@ -1446,6 +1448,7 @@ etc/perl5_version
 %%PRIV_LIB%%/pod/perl5220delta.pod
 %%PRIV_LIB%%/pod/perl5230delta.pod
 %%PRIV_LIB%%/pod/perl5231delta.pod
+%%PRIV_LIB%%/pod/perl5232delta.pod
 %%PRIV_LIB%%/pod/perl561delta.pod
 %%PRIV_LIB%%/pod/perl56delta.pod
 %%PRIV_LIB%%/pod/perl581delta.pod
@@ -2112,6 +2115,7 @@ man/man1/perl5202delta.1.gz
 man/man1/perl5220delta.1.gz
 man/man1/perl5230delta.1.gz
 man/man1/perl5231delta.1.gz
+man/man1/perl5232delta.1.gz
 man/man1/perl561delta.1.gz
 man/man1/perl56delta.1.gz
 man/man1/perl581delta.1.gz
