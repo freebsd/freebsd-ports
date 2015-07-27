@@ -7737,3 +7737,5 @@ amd64-gcc||2015-07-25|No real use
 amd64-xtoolchain-gcc||2015-07-25|No real use
 devel/p5-Test-Tester|devel/p5-Test-Simple|2015-07-25|Has expired: Part of p5-Test-Simple (use that instead), and included in perl 5.22
 devel/p5-Test-use-ok|devel/p5-Test-Simple|2015-07-25|Has expired: Part of devel/p5-Test-Simple (use that instead), and included in perl 5.22
+math/mate-calc||2015-07-27|Not part of MATE 1.10. Instead galculator is used
+x11/mate-dialogs||2015-07-27|Not part of MATE 1.10

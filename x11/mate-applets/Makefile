@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-applets
-PORTVERSION=	1.8.1
+PORTVERSION=	1.10.3
 CATEGORIES=	x11 mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -23,7 +23,7 @@ RUN_DEPENDS=	gucharmap:${PORTSDIR}/deskutils/gucharmap
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake libtool pathfix pkgconfig python tar:xz
+USES=		autoreconf:build gettext gmake libtool pathfix pkgconfig python tar:xz
 USE_MATE=	desktop icontheme libmateweather panel polkit settingsdaemon
 USE_XORG=	x11
 USE_GNOME=	gdkpixbuf2 gtksourceview2 introspection:build \

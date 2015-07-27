@@ -1,0 +1,32 @@
+# $FreeBSD$
+
+PORTNAME=	libmatemixer
+PORTVERSION=	1.10.0
+CATEGORIES=	audio mate
+MASTER_SITES=	MATE
+DIST_SUBDIR=	mate
+
+MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Mixer library for MATE desktop
+
+LICENSE=	LGPL21
+
+USES=		gettext libtool pathfix pkgconfig tar:xz
+USE_GNOME=	glib20 intltool	
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-null \
+		--enable-oss \
+		--disable-gtk-doc \
+		--disable-gtk-doc-html \
+		--disable-gtk-doc-pdf
+INSTALL_TARGET=	install-strip
+
+OPTIONS_DEFINE=		PULSEAUDIO ALSA
+OPTIONS_SUB=		yes
+
+PULSEAUDIO_CONFIGURE_ENABLE=	pulseaudio
+PULSEAUDIO_LIB_DEPENDS=		libpulse.so:${PORTSDIR}/audio/pulseaudio
+ALSA_CONFIGURE_ENABLE=		alsa
+ALSA_LIB_DEPENDS=		libasound.so:${PORTSDIR}/audio/alsa-lib
+
+.include <bsd.port.mk>
