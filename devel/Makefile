@@ -2499,6 +2499,7 @@
     SUBDIR += p5-Method-Signatures-Simple
     SUBDIR += p5-Minilla
     SUBDIR += p5-Minion
+    SUBDIR += p5-Mixin-Event-Dispatch
     SUBDIR += p5-Mixin-Linewise
     SUBDIR += p5-Mknod
     SUBDIR += p5-Mo
