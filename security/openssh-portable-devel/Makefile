@@ -3,7 +3,7 @@
 
 PORTNAME=	openssh
 DISTVERSION=	20150624
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://www.mindrot.org/openssh_snap/ \
 		OPENBSD/OpenSSH/portable
@@ -79,7 +79,10 @@ PAM_CONFIGURE_WITH=	pam
 TCP_WRAPPERS_CONFIGURE_WITH=	tcp-wrappers
 
 LIBEDIT_CONFIGURE_WITH=	libedit
+LIBEDIT_USES=		libedit
 BSM_CONFIGURE_ON=	--with-audit=bsm
+
+ETCDIR?=		${PREFIX}/etc/ssh
 
 .include <bsd.port.pre.mk>
 
@@ -179,7 +182,6 @@ IGNORE=	Overwrite base option is no longer supported.
 .endif
 
 USE_RC_SUBR=		openssh
-ETCDIR=			${PREFIX}/etc/ssh
 
 # After all
 CONFIGURE_ARGS+=	--sysconfdir=${ETCDIR} --with-privsep-path=${EMPTYDIR}
