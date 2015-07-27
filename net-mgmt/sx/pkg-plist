@@ -14,9 +14,9 @@ bin/sxvol
 %%SXSERVER%%%%ETCDIR%%/sxserver/fastcgi_params
 %%SXSERVER%%%%ETCDIR%%/sxserver/sxhttpd.conf.default
 include/sx.h
-lib/libsx.so
-lib/libsx.so.2
-lib/libsx.so.2.0.0
+lib/libsxclient.so
+lib/libsxclient.so.2
+lib/libsxclient.so.2.0.0
 lib/sxclient/libsxf_aes256-15.so
 lib/sxclient/libsxf_aes256.so
 lib/sxclient/libsxf_attribs-12.so
@@ -43,6 +43,7 @@ man/man1/sxacl-userclone.1.gz
 man/man1/sxacl-userdel.1.gz
 man/man1/sxacl-usergetkey.1.gz
 man/man1/sxacl-userlist.1.gz
+man/man1/sxacl-usermod.1.gz
 man/man1/sxacl-usernewkey.1.gz
 man/man1/sxacl-volperm.1.gz
 man/man1/sxacl-volshow.1.gz
