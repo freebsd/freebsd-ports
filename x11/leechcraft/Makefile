@@ -3,23 +3,29 @@
 
 PORTNAME=	leechcraft
 PORTVERSION=	0.6.70
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.leechcraft.org/LeechCraft/0.6.70/
 
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Cross-platform modular live environment
 
+LICENSE=	BSL
+LICENSE_FILE=	${WRKDIR}/${DISTNAME}/LICENSE
+
 LIB_DEPENDS=	libqwt6.so:${PORTSDIR}/x11-toolkits/qwt6 \
+		libpcre.so:${PORTSDIR}/devel/pcre \
 		libboost_program_options.so:${PORTSDIR}/devel/boost-libs
 
 #LC_REV=		1526-g7fdb92a
 INSTALLS_ICONS=	yes
 MAKE_JOBS_UNSAFE=yes
 USE_LDCONFIG=	yes
-USES=		tar:xz cmake gettext
-USE_QT4=	corelib dbus gui linguist moc network qmake rcc script sql \
-		sql-sqlite3 svg uic xml
+USES=		cmake pkgconfig tar:xz
+USE_QT4=	corelib declarative gui network script sql sql-sqlite3_run \
+		webkit xml qmake_build moc_build rcc_build uic_build \
+		linguisttools_build
+USE_XORG=	x11
 CMAKE_ARGS+=	-DENABLE_LADS=OFF \
 		-DENABLE_SYNCER=OFF \
 		-DLEECHCRAFT_VERSION=${PORTVERSION}
@@ -65,28 +71,23 @@ AZOTH_LIB_DEPENDS=	libQtMultimediaKit.so:${PORTSDIR}/multimedia/qt4-mobility \
 			libotr.so:${PORTSDIR}/security/libotr \
 			libpurple.so:${PORTSDIR}/net-im/libpurple \
 			libqca.so:${PORTSDIR}/devel/qca \
-			libqjson.so:${PORTSDIR}/devel/qjson \
 			libqxmpp.so:${PORTSDIR}/net-im/qxmpp \
 			libspeex.so:${PORTSDIR}/audio/speex
 AZOTH_USES=		desktop-file-utils
-AZOTH_USE=		qt4=webkit
 
 BITTORRENT_DESC=	Full-featured BitTorrent client plugin
 BITTORRENT_CMAKE_ON=	-DENABLE_TORRENT:BOOL=true
 BITTORRENT_CMAKE_OFF=	-DENABLE_TORRENT:BOOL=false
 BITTORRENT_LIB_DEPENDS=	libtorrent-rasterbar.so:${PORTSDIR}/net-p2p/libtorrent-rasterbar
-BITTORRENT_USES=	pkgconfig
 
 BLASQ_DESC=		Cloud image storage services client (like Flickr or Picasa)
 BLASQ_CMAKE_ON=		-DENABLE_BLASQ:BOOL=true
 BLASQ_CMAKE_OFF=	-DENABLE_BLASQ:BOOL=false
-BLASQ_LIB_DEPENDS=	libkqoauth.so:${PORTSDIR}/security/kqoauth \
-			libqjson.so:${PORTSDIR}/devel/qjson
+BLASQ_LIB_DEPENDS=	libkqoauth.so:${PORTSDIR}/security/kqoauth
 
 BLOGIQUE_DESC=		Blogging client
 BLOGIQUE_CMAKE_ON=	-DENABLE_BLOGIQUE:BOOL=true
 BLOGIQUE_CMAKE_OFF=	-DENABLE_BLOGIQUE:BOOL=false
-BLOGIQUE_USE=		qt4=webkit
 
 CERTMGR_DESC=		SSL certificates manager
 CERTMGR_CMAKE_ON=	-DENABLE_CERTMGR:BOOL=true
@@ -151,7 +152,6 @@ HOTSENSORS_CMAKE_OFF=	-DENABLE_HOTSENSORS:BOOL=false
 HOTSTREAMS_DESC=	Provides some cool radio streams to music players like LMP
 HOTSTREAMS_CMAKE_ON=	-DENABLE_HOTSTREAMS:BOOL=true
 HOTSTREAMS_CMAKE_OFF=	-DENABLE_HOTSTREAMS:BOOL=false
-HOTSTREAMS_LIB_DEPENDS=	libqjson.so:${PORTSDIR}/devel/qjson
 
 HTTHARE_DESC=		Simple HTTP server
 HTTHARE_CMAKE_ON=	-DENABLE_HTTHARE:BOOL=true
@@ -164,12 +164,11 @@ IMGASTE_CMAKE_OFF=	-DENABLE_IMGASTE:BOOL=false
 KBSWITCH_DESC=		Provides plugin- or tab-grained keyboard layout control
 KBSWITCH_CMAKE_ON=	-DENABLE_KBSWITCH:BOOL=true
 KBSWITCH_CMAKE_OFF=	-DENABLE_KBSWITCH:BOOL=false
-KBSWITCH_USE=		xorg=x11,xkbfile
+KBSWITCH_USE=		xorg=xkbfile
 
 KINOTIFY_DESC=		Fancy visual notifications
 KINOTIFY_CMAKE_ON=	-DENABLE_KINOTIFY:BOOL=true
 KINOTIFY_CMAKE_OFF=	-DENABLE_KINOTIFY:BOOL=false
-KINOTIFY_USE=		qt4=webkit
 
 KNOWHOW_DESC=		KnowHow, plugin for showing Tips of the Day
 KNOWHOW_CMAKE_ON=	-DENABLE_KNOWHOW:BOOL=true
@@ -178,7 +177,7 @@ KNOWHOW_CMAKE_OFF=	-DENABLE_KNOWHOW:BOOL=false
 KRIGSTASK_DESC=		The taskbar quark
 KRIGSTASK_CMAKE_ON=	-DENABLE_KRIGSTASK:BOOL=true
 KRIGSTASK_CMAKE_OFF=	-DENABLE_KRIGSTASK:BOOL=false
-KRIGSTASK_USE=		xorg=x11,xcomposite
+KRIGSTASK_USE=		xorg=xcomposite
 
 LACKMAN_DESC=		Package Manager for extensions, scripts, themes etc
 LACKMAN_CMAKE_ON=	-DENABLE_LACKMAN:BOOL=true
@@ -205,15 +204,16 @@ LHTR_DESC=		LeechCraft HTML Text editoR component
 LHTR_CMAKE_ON=		-DENABLE_LHTR:BOOL=true
 LHTR_CMAKE_OFF=		-DENABLE_LHTR:BOOL=false
 LHTR_BUILD_DEPENDS=	tidy:${PORTSDIR}/www/tidy-devel
-LHTR_USE=		qt4=webkit
 
 LIZNOO_DESC=		UPower-based power manager
 LIZNOO_CMAKE_ON=	-DENABLE_LIZNOO:BOOL=true
 LIZNOO_CMAKE_OFF=	-DENABLE_LIZNOO:BOOL=false
 
 LMP_DESC=		LeechCraft Media Player, Phonon-based audio/video player
-LMP_CMAKE_ON=		-DENABLE_LMP:BOOL=true
+LMP_CMAKE_ON=		-DENABLE_LMP:BOOL=true \
+			-DUSE_GSTREAMER_10:BOOL=false
 LMP_CMAKE_OFF=		-DENABLE_LMP:BOOL=false
+LMP_USE=		GSTREAMER=yes
 LMP_LIB_DEPENDS=	libguess.so:${PORTSDIR}/textproc/libguess \
 			libtag.so:${PORTSDIR}/audio/taglib
 
@@ -242,7 +242,6 @@ NETSTOREMANAGER_DESC=		Supporting and managing Internet data storages like Yande
 NETSTOREMANAGER_CMAKE_ON=	-DENABLE_NETSTOREMANAGER:BOOL=true \
 				-DENABLE_NETSTOREMANAGER_INOTIFY:BOOL=false
 NETSTOREMANAGER_CMAKE_OFF=	-DENABLE_NETSTOREMANAGER:BOOL=false
-NETSTOREMANAGER_LIB_DEPENDS=	libqjson.so:${PORTSDIR}/devel/qjson
 
 NETWORKMONITOR_DESC=		NetworkMonitor watches HTTP requests in
 NETWORKMONITOR_CMAKE_ON=	-DENABLE_NETWORKMONITOR:BOOL=true
@@ -280,8 +279,6 @@ POPISHU_LIB_DEPENDS=	libqscintilla2.so:${PORTSDIR}/devel/qscintilla2
 POSHUKU_DESC=		The full-featured web browser plugin
 POSHUKU_CMAKE_ON=	-DENABLE_POSHUKU:BOOL=true
 POSHUKU_CMAKE_OFF=	-DENABLE_POSHUKU:BOOL=false
-POSHUKU_LIB_DEPENDS=	libqjson.so:${PORTSDIR}/devel/qjson
-POSHUKU_USE=		qt4=webkit
 
 QROSP_DESC=		Scrpting support for LeechCraft via Qross
 QROSP_CMAKE_ON=		-DENABLE_QROSP:BOOL=true
@@ -369,6 +366,26 @@ OPTIONS_DEFAULT=AGGREGATOR ANHERO ANOTIFI AUSCRIE AZOTH BLASQ BLOGIQUE CERTMGR \
 		TEXTOGROOSE TOUCHSTREAMS TPI VGRABBER VROOBY VTYULC XPROXY XTAZY
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MAZOTH}   || ${PORT_OPTIONS:MDBUSMANAGER} || \
+    ${PORT_OPTIONS:MLAUGHTY} || ${PORT_OPTIONS:MLIZNOO} || \
+    ${PORT_OPTIONS:MLMP}     || ${PORT_OPTIONS:MSYSNOTIFY} || \
+    ${PORT_OPTIONS:MVROOBY}  || ${PORT_OPTIONS:MXTAZY}
+USE_QT4+=	dbus
+.endif
+
+.if ${PORT_OPTIONS:MBLASQ} || ${PORT_OPTIONS:MBLOGIQUE} || \
+    ${PORT_OPTIONS:MLACKMAN}
+USE_QT4+=	xmlpatterns
+.endif
+
+.if ${PORT_OPTIONS:MAZOTH} || ${PORT_OPTIONS:MBLASQ} || \
+    ${PORT_OPTIONS:MFENET} || ${PORT_OPTIONS:MHOTSTREAMS} || \
+    ${PORT_OPTIONS:MNETSTOREMANAGER} || ${PORT_OPTIONS:MPOSHUKU} || \
+    ${PORT_OPTIONS:MQROSP} || ${PORT_OPTIONS:MSB2} || \
+    ${PORT_OPTIONS:MTOUCHSTREAMS}
+LIB_DEPENDS+=	libqjson.so:${PORTSDIR}/devel/qjson
+.endif
 
 .if ${PORT_OPTIONS:MELEEMINATOR}
 BROKEN=		Eleeminator has not supported yet (not ported qtermwidget)
