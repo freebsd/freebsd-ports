@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150726:
+  AFFECTS: users of ukrainian/monacofonts
+  AUTHOR: mi@aldan.algebra.com
+
+  The destination-directory used by monacofonts port was altered.
+  The fonts-location changed from koi8u-monaco/ to koi8-u-monaco/
+
+  Users are advised to modify the path set in their xorg.conf files.
+
 20150720:
   AFFECTS: users of print/texlive-base and other TeXLive packages
   AUTHOR: hrs@FreeBSD.org
