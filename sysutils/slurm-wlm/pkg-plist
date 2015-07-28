@@ -506,7 +506,6 @@ sbin/slurmstepd
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/slurm_logo.png
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/slurm_ug_agenda.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/slurm_ug_cfp.html
-%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/slurm_ug_registration.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/slurmctld_plugstack.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/slurmstyles.css
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/sponsors.gif

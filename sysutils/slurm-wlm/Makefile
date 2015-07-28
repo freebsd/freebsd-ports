@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	slurm
-PORTVERSION=	14.11.6
-PORTREVISION=	1
+PORTVERSION=	14.11.8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.schedmd.com/download/latest/ \
 		http://www.schedmd.com/download/archive/ \
- 		http://www.schedmd.com/download/development/
-PKGNAMESUFFIX=	-hpc
+		http://www.schedmd.com/download/development/
+PKGNAMESUFFIX=	-wlm
 
 MAINTAINER=	jrm@ftfl.ca
 COMMENT=	Simple Linux Utility for Resource Management
@@ -29,7 +28,7 @@ USE_LDCONFIG=	yes
 USE_RC_SUBR=	slurmctld slurmd
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool perl5 python tar:bz2
+USES=		gmake libtool perl5 pkgconfig python tar:bz2
 GTK2_USE=	GNOME=glib20,gtk20
 MYSQL_USE=	MYSQL=yes
 CFLAGS+=	-I${WRKSRC}/slurm -I${LOCALBASE}/include
@@ -46,11 +45,6 @@ GTK2_DESC=	Build GUI config tool sview
 # #include <pty.h> with appropriate headers will therefore not work, so instead
 # add a pty.h for the build.
 post-patch:
-.if ! ${PORT_OPTIONS:MGTK2}
-	${REINPLACE_CMD} \
-		-e 's|min_gtk_version=2.7.1|min_gtk_version=200.7.1|g' \
-		${WRKSRC}/configure
-.endif
 	${CP} ${FILESDIR}/pty.h ${WRKSRC}/slurm
 	${REINPLACE_CMD} \
 		-e 's|/usr/bin/env python|${PYTHON_CMD}|g' \
