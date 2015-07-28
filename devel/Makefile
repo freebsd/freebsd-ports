@@ -409,6 +409,7 @@
     SUBDIR += elftoaout
     SUBDIR += elixir-bson
     SUBDIR += elixir-calendar
+    SUBDIR += elixir-combine
     SUBDIR += elixir-conform
     SUBDIR += elixir-coverex
     SUBDIR += elixir-csv
