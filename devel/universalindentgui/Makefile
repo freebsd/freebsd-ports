@@ -3,7 +3,7 @@
 
 PORTNAME=	universalindentgui
 PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SF/universalindent/uigui/UniversalIndentGUI_${PORTVERSION}
 
@@ -12,7 +12,10 @@ COMMENT=	Graphical UI for multiple source code indent/format/beautify tools
 
 LIB_DEPENDS=	libqscintilla2.so:${PORTSDIR}/devel/qscintilla2
 
-USES=		dos2unix qmake
+USES=		dos2unix qmake shebangfix
+SHEBANG_FILES=	indenters/pindent.py \
+		indenters/rbeautify.rb \
+		indenters/ruby_formatter.rb
 USE_QT4=	moc_build uic_build rcc_build \
 		linguist_build network script gui
 
