@@ -1,6 +1,6 @@
---- chrome/browser/net/cookie_store_util.cc.orig	2015-04-14 18:31:21.000000000 -0400
-+++ chrome/browser/net/cookie_store_util.cc	2015-04-28 10:11:34.004175000 -0400
-@@ -120,7 +120,7 @@
+--- chrome/browser/net/cookie_store_util.cc.orig	2015-07-21 21:42:54.358730000 -0400
++++ chrome/browser/net/cookie_store_util.cc	2015-07-21 21:43:07.938330000 -0400
+@@ -85,7 +85,7 @@
        new ChromeCookieMonsterDelegate(profile));
  }
  
