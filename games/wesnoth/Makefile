@@ -3,6 +3,7 @@
 PORTNAME=	wesnoth
 PORTVERSION=	1.12.4
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTNAME}-${PORTVERSION} \
 		http://files.wesnoth.org/ \
@@ -24,7 +25,11 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lboost_system
 
 USE_SDL=	image mixer net ttf
 USE_GNOME=	pango
-USES=		cmake cpe pkgconfig tar:bzip2
+USES=		cmake cpe pkgconfig shebangfix tar:bzip2
+SHEBANG_FILES=	data/tools/campaign2wiki.py \
+		data/tools/castle-cutter/mk-castle.sh \
+		data/tools/terrain2wiki.py \
+		data/tools/unit_tree/update-wmlunits
 CPE_VENDOR=	${PORTNAME}
 CPE_PRODUCT=	battle_for_wesnoth
 CMAKE_ARGS=	-DMANDIR="man" -DENABLE_STRICT_COMPILATION=off
