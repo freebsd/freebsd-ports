@@ -3,11 +3,12 @@
 
 PORTNAME=	llvm
 PORTVERSION=	3.8.d20150720
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel lang
 MASTER_SITES=	\
     http://github.com/llvm-mirror/llvm/archive/${LLVM_COMMIT}.tar.gz?dummy=/ \
     http://github.com/llvm-mirror/clang/archive/${CLANG_COMMIT}.tar.gz?dummy=/:clang \
+    http://github.com/llvm-mirror/lldb/archive/${LLDB_COMMIT}.tar.gz?dummy=/:lldb
     http://github.com/llvm-mirror/openmp/archive/${OPENMP_COMMIT}.tar.gz?dummy=/:openmp
 DISTFILES=	${LLVM_NAME}.tar.gz
 PKGNAMESUFFIX=	-devel
@@ -32,17 +33,19 @@ CMAKE_ARGS=	-DBUILD_SHARED_LIBS=ON
 
 LLVM_COMMIT=	4f50f9eba412b6c0d5e7a9616dfe7699a07cf17b
 CLANG_COMMIT=	dc9de2d1a510a8b7b95610d338e89f1f91d3ecdf
+LLDB_COMMIT=	6160cbd3d3bcbbc409bf48a67ee097672256b03f
 OPENMP_COMMIT=	50be853810d64cf7ba61a0ee7281ce82672af972
 
 LLVM_NAME=	${PORTNAME}-${LLVM_COMMIT}
 CLANG_NAME=	clang-${CLANG_COMMIT}
+LLDB_NAME=	lldb-${LLDB_COMMIT}
 OPENMP_NAME=	openmp-${OPENMP_COMMIT}
 
 WRKSRC=		${WRKDIR}/${LLVM_NAME}
 
-OPTIONS_DEFINE=	CLANG DOCS LIT
+OPTIONS_DEFINE=	CLANG DOCS LIT LLDB
 OPTIONS_DEFINE_amd64=	OPENMP
-OPTIONS_DEFAULT=	CLANG LIT
+OPTIONS_DEFAULT=	CLANG LIT LLDB
 OPTIONS_DEFAULT_amd64=	OPENMP
 OPTIONS_SUB=	yes
 
@@ -51,6 +54,7 @@ CLANG_EXTRA_PATCHES= ${PATCHDIR}/clang-patch-tools_clang_lib_Headers_CMakeLists.
 CLANG_DISTFILES=	${CLANG_NAME}.tar.gz:clang
 CLANG_CONFLICTS_INSTALL=	clang-devel-3.[1234567]*
 LIT_DESC=	Install lit and FileCheck test tools (requires python)
+LLDB_DISTFILES=		${LLDB_NAME}.tar.gz:lldb
 OPENMP_DISTFILES=	${OPENMP_NAME}.tar.gz:openmp
 OPENMP_CONFLICTS_INSTALL=	libiomp5-devel-*
 
@@ -113,22 +117,31 @@ CMAKE_ARGS+=	-DCLANG_DEFAULT_OPENMP_RUNTIME=libomp
 
 .if ${PORT_OPTIONS:MDOCS}
 PORTDOCS+=	llvm
-CMAKE_ARGS+=		-DLLVM_ENABLE_SPHINX=ON \
-			-DSPHINX_WARNINGS_AS_ERRORS=OFF \
-			-DLLVM_BUILD_DOCS=ON
+CMAKE_ARGS+=	-DLLVM_ENABLE_SPHINX=ON \
+		-DSPHINX_WARNINGS_AS_ERRORS=OFF \
+		-DLLVM_BUILD_DOCS=ON
 .endif
 
 .if ${PORT_OPTIONS:MLIT}
-MAN1SRCS+=		lit.1 FileCheck.1
-USES+=			python
-LIT_COMMANDS=		lit llvm-lit FileCheck
-.else
-USES+=			python:build
+MAN1SRCS+=	lit.1 FileCheck.1
+_USES_PYTHON=	python
+LIT_COMMANDS=	lit llvm-lit FileCheck
+.endif
+
+.if ${PORT_OPTIONS:MLLDB}
+COMMANDS+=	argdumper \
+		lldb \
+		lldb-mi \
+		lldb-server
+_USES_PYTHON=	python
 .endif
 
 .if ! ${OPTIONS_DEFINE:MOPENMP}
 PLIST_SUB+=	OPENMP="@comment "
 .endif
+
+_USES_PYTHON?=	python:build
+USES+=		${_USES_PYTHON}
 
 MAN1SRCS+=	bugpoint.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 		llvm-bcanalyzer.1 llvm-build.1 llvm-config.1 llvm-cov.1 \
@@ -149,6 +162,9 @@ BROKEN=	GCC failing on 8.x
 post-extract:
 .if ${PORT_OPTIONS:MCLANG}
 	${MV} ${WRKDIR}/${CLANG_NAME} ${PATCH_WRKSRC}/tools/clang
+.endif
+.if ${PORT_OPTIONS:MLLDB}
+	${MV} ${WRKDIR}/${LLDB_NAME} ${PATCH_WRKSRC}/tools/lldb
 .endif
 .if ${PORT_OPTIONS:MOPENMP}
 	${MV} ${WRKDIR}/${OPENMP_NAME} ${PATCH_WRKSRC}/tools/openmp
@@ -210,6 +226,9 @@ post-install:
 .endif
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/
+.if ${PORT_OPTIONS:MLLDB}
+	${RM} ${STAGEDIR}${LLVM_PREFIX}/lib/python*/site-packages/lib
+.endif
 
 TEST_CMD=	'(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} LD_LIBRARY_PATH=${WRKSRC}/Release/lib ${MAKE_CMD} check-local-lit)'
 regression-test: ${BUILD_COOKIE}
@@ -240,7 +259,7 @@ build-plist:
 #	${FIND} ${STAGEDIR}${DOCSDIR} -type f | \
 #	    ${SED} -e 's|${STAGEDIR}${DOCSDIR}|%%PORTDOCS%%%%DOCSDIR%%|' | \
 #	    ${SORT} >> ${PLIST}.tmp
-	awk '{if ($$0 ~ /clang/ && $$0 !~ /omp.h/) {printf "%%%%CLANG%%%%"} if ($$0 ~ /lib.*omp/) {printf "%%%%OPENMP%%%%"} print}' ${PLIST}.tmp >> ${PLIST}
+	awk '{if ($$0 ~ /clang/ && $$0 !~ /omp.h/) {printf "%%%%CLANG%%%%"} if ($$0 ~ /(argdumper|lldb)/) {printf "%%%%LLDB%%%%"} if ($$0 ~ /lib.*omp/) {printf "%%%%OPENMP%%%%"} print}' ${PLIST}.tmp >> ${PLIST}
 	${RM} -f ${PLIST}.tmp
 
 .include <bsd.port.post.mk>
