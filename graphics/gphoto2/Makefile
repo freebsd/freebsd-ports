@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gphoto2
-PORTVERSION=	2.5.6
+PORTVERSION=	2.5.8
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/gphoto/${PORTVERSION}
 
@@ -10,6 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line frontend to libgphoto2
 
 LICENSE=	GPLv2
+#LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 		libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
@@ -31,11 +32,11 @@ AALIB_CONFIGURE_WITH=	aalib
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 NLS_CPPFLAGS=		-I${LOCALBASE}/include
-NLS_LIBS=		-L${LOCALBASE}/lib -lintl
+NLS_LDFLAGS=		-L${LOCALBASE}/lib -lintl
 READLINE_USES=		readline
 READLINE_CONFIGURE_WITH=readline
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} NEWS ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
