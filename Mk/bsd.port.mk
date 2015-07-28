@@ -141,7 +141,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 # MASTER_SITE_BACKUP
 #				- Backup location(s) for distribution files and patch
-#				  files if not found locally and ${MASTER_SITES}/${PATCH_SITES}
+#				  files if not found locally and ${MASTER_SITES}/${PATCH_SITES}.
+#				  This should *not* be changed.
 #				  Default:
 #				  http://distcache.FreeBSD.org/ports-distfiles/${DIST_SUBDIR}/
 # MASTER_SITE_OVERRIDE

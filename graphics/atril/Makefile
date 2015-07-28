@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	atril
-PORTVERSION=	1.8.1
-PORTREVISION?=	6
+PORTVERSION=	1.10.1
+PORTREVISION?=	2
 CATEGORIES=	graphics print mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -23,13 +23,12 @@ SLAVEPORT?=	no
 
 USES=		desktop-file-utils gettext gmake libtool pathfix \
 		pkgconfig tar:xz
-USE_MATE=	icontheme
+USE_MATE=	desktop icontheme
 USE_XORG=	sm
 USE_GNOME=	cairo gtk20 intlhack libxml2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk=2.0 \
-		--disable-introspection \
 		--disable-static
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -39,14 +38,12 @@ INSTALL_TARGET=	install-strip
 .if ${SLAVEPORT} == lite
 CONFIGURE_ARGS+=--disable-thumbnailer \
 		--disable-previewer
-.else
-USE_MATE+=	desktop
 .endif
 
 GLIB_SCHEMAS=	org.mate.Atril.gschema.xml
 
-OPTIONS_DEFINE=	CAJA COMICS DJVU DVI KEYRING T1LIB XPS
-OPTIONS_DEFAULT=CAJA COMICS KEYRING XPS
+OPTIONS_DEFINE=	CAJA COMICS DJVU DVI EPUB KEYRING T1LIB XPS
+OPTIONS_DEFAULT=CAJA COMICS EPUB KEYRING XPS
 DVI_DESC=	DVI viewer support
 T1LIB_DESC=	T1LIB for TYPE1 fonts to DVI (Enables DVI)
 CAJA_DESC=	Caja plugin
@@ -54,6 +51,7 @@ KEYRING_DESC=	Keyring support
 COMICS_DESC=	Comic book archives support
 DJVU_DESC=	DJVU support
 XPS_DESC=	XPS support
+EPUB_DESC=	Epub support
 
 OPTIONS_SUB=	yes
 
@@ -66,6 +64,8 @@ KEYRING_CONFIGURE_WITH=	keyring
 KEYRING_LIB_DEPENDS=	libsecret-1.so:${PORTSDIR}/security/libsecret
 XPS_CONFIGURE_ENABLE=	xps
 XPS_LIB_DEPENDS=	libgxps.so:${PORTSDIR}/graphics/libgxps
+EPUB_CONFIGURE_ENABLE=	epub
+EPUB_LIB_DEPENDS=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
 
 .include <bsd.port.options.mk>
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	rsstail
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.vanheusden.com/${PORTNAME}/
 
@@ -21,7 +22,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^CFLAGS/ s|=|+=|; /^LDFLAGS/ s|=|+=|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e '/^CFLAGS/ s|=|+=|; /^LDFLAGS/ s|=|+=|; s|-liconv|${ICONV_LIB}|' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pluma
-PORTVERSION=	1.8.1
-PORTREVISION=	1
+PORTVERSION=	1.10.2
 CATEGORIES=	editors mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -21,12 +20,14 @@ PORTSCOUT=	limitw:1,even
 
 USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
 		python:2 shebangfix tar:xz
+USE_MATE=	desktop
 USE_XORG=	sm x11
 USE_GNOME=	gtk20 gtksourceview2 gvfs intlhack libxml2 \
 		pygobject pygtk2 pygtksourceview
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc \
+		--with-gtk=2.0 \
 		--with-html-dir=${PREFIX}/share/doc
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

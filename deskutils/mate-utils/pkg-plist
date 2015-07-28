@@ -34,6 +34,10 @@ share/MateConf/gsettings/mate-disk-usage-analyzer.convert
 share/MateConf/gsettings/mate-screenshot.convert
 share/MateConf/gsettings/mate-search-tool.convert
 share/MateConf/gsettings/mate-system-log.convert
+share/appdata/mate-dictionary.appdata.xml
+share/appdata/mate-disk-usage-analyzer.appdata.xml
+share/appdata/mate-screenshot.appdata.xml
+share/appdata/mate-search-tool.appdata.xml
 share/applications/mate-dictionary.desktop
 share/applications/mate-disk-usage-analyzer.desktop
 share/applications/mate-screenshot.desktop

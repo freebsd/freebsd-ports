@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eom
-PORTVERSION=	1.8.1
+PORTVERSION=	1.10.3
 CATEGORIES=	graphics mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -20,8 +20,9 @@ USE_MATE=	desktop icontheme
 USE_XORG=	x11
 USE_GNOME=	gdkpixbuf2 glib20 gtk20 librsvg2 libxml2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-gtk-doc \
+CONFIGURE_ARGS+=	--disable-gtk-doc \
 		--with-html-dir=${PREFIX}/share/doc \
+		--with-gtk=2.0 \
 		--disable-python \
 		--without-cms
 INSTALLS_ICONS=	yes
@@ -29,7 +30,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
-GLIB_SCHEMAS=	org.mate.eom.gschema.xml
+GLIB_SCHEMAS=	org.mate.eom.gschema.xml \
+		org.mate.eom.enums.xml
 
 OPTIONS_DEFINE=	EXIF EXEMPI
 OPTIONS_DEFAULT=EXIF EXEMPI

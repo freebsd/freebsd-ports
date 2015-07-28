@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rofi
-PORTVERSION=	0.15.5
+PORTVERSION=	0.15.7
 CATEGORIES=	x11
 
 MAINTAINER=	nomoo@nomoo.ru

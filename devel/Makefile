@@ -102,7 +102,6 @@
     SUBDIR += autogen
     SUBDIR += automake
     SUBDIR += automake-wrapper
-    SUBDIR += automake14
     SUBDIR += automoc4
     SUBDIR += autotools
     SUBDIR += avalon-framework
@@ -410,6 +409,7 @@
     SUBDIR += elftoaout
     SUBDIR += elixir-bson
     SUBDIR += elixir-calendar
+    SUBDIR += elixir-combine
     SUBDIR += elixir-conform
     SUBDIR += elixir-coverex
     SUBDIR += elixir-csv
@@ -456,6 +456,7 @@
     SUBDIR += erlang-gproc
     SUBDIR += erlang-jobs
     SUBDIR += erlang-jsx
+    SUBDIR += erlang-jsxd
     SUBDIR += erlang-lager
     SUBDIR += erlang-lager_syslog
     SUBDIR += erlang-meck
@@ -2499,6 +2500,7 @@
     SUBDIR += p5-Method-Signatures-Simple
     SUBDIR += p5-Minilla
     SUBDIR += p5-Minion
+    SUBDIR += p5-Mixin-Event-Dispatch
     SUBDIR += p5-Mixin-Linewise
     SUBDIR += p5-Mknod
     SUBDIR += p5-Mo
@@ -3337,6 +3339,7 @@
     SUBDIR += p5-constant-defer
     SUBDIR += p5-constant-lexical
     SUBDIR += p5-cpan-listchanges
+    SUBDIR += p5-curry
     SUBDIR += p5-enum
     SUBDIR += p5-ex-lib
     SUBDIR += p5-experimental

@@ -1,0 +1,3 @@
+%%SITE_PERL%%/curry.pm
+%%SITE_PERL%%/curry/weak.pm
+%%PERL5_MAN3%%/curry.3.gz

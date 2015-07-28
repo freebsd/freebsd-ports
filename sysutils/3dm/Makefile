@@ -15,6 +15,8 @@ COMMENT=	3ware RAID controller monitoring daemon and web server
 
 RESTRICTED=	Source recipient must acknowledge license. Reproduction or redistribution prohibited. See http://www.lsi.com/Pages/user/eula.aspx
 
+BROKEN=		does not fetch
+
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES}
 
 USE_RC_SUBR=	3dm2

@@ -881,6 +881,7 @@
     SUBDIR += rubygem-sys-uptime
     SUBDIR += rubygem-teamocil
     SUBDIR += rubygem-winrm
+    SUBDIR += rubygem-winrm-fs
     SUBDIR += rubygem-yell
     SUBDIR += rundeck
     SUBDIR += runit
