@@ -924,7 +924,7 @@
     SUBDIR += sleuthkit
     SUBDIR += sloth
     SUBDIR += slst
-    SUBDIR += slurm-hpc
+    SUBDIR += slurm-wlm
     SUBDIR += smartmontools
     SUBDIR += smp_utils
     SUBDIR += snap
