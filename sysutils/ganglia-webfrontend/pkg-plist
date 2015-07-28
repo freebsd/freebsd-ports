@@ -1,6 +1,3 @@
-@owner %%WWWOWN%%
-@group %%WWWGRP%%
-@mode 0644
 @sample %%DATADIR%%/conf/default.json.sample
 @sample %%DATADIR%%/conf/event_color.json.sample
 @sample %%DATADIR%%/conf/events.json.sample
@@ -1102,6 +1099,8 @@
 %%WWWDIR%%/version.php
 %%WWWDIR%%/view_content.php
 %%WWWDIR%%/views_view.php
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 @mode 0755
 @dir %%DATADIR%%/dwoo/cache
 @dir %%DATADIR%%/dwoo/compiled
