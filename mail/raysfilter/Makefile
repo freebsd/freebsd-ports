@@ -9,7 +9,10 @@ DISTNAME=	rays-filter-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Configurable filter for Sendmail Milter
 
-USES=		shebangfix 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/GNU-public-licence.txt
+
+USES=		shebangfix
 CTARGETS+=	rays-filter
 CFLAGS+=	-Wall
 LIBS+=		-lpthread
