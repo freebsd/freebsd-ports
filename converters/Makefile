@@ -56,6 +56,7 @@
     SUBDIR += p5-Convert-ASCII-Armour
     SUBDIR += p5-Convert-ASN1
     SUBDIR += p5-Convert-BER
+    SUBDIR += p5-Convert-Base32
     SUBDIR += p5-Convert-Bencode
     SUBDIR += p5-Convert-Bencode_XS
     SUBDIR += p5-Convert-BinHex
