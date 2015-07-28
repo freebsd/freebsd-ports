@@ -1,0 +1,72 @@
+#!/bin/sh
+#
+# PROVIDE: seahub
+# REQUIRE: LOGIN cleanvar
+# KEYWORD: shutdown
+#
+
+#
+# Add the following lines to /etc/rc.conf to enable seahub:
+#
+# seahub_enable (bool):		Set to "NO" by default.
+#				Set it to "YES" to enable seahub.
+# seahub_fastcgi (bool):	Set to "NO" by default.
+#				Set to "YES" to start the fastcgi mode.
+# seahub_port	(str):		Default is 8000.
+# seahub_path	(str):		Set to "" by default will use the path
+#				/usr/local/www/haiwen/seahub-server.
+#				Set it to a different path. 
+
+. /etc/rc.subr
+
+name="seahub"
+rcvar=seahub_enable
+
+load_rc_config $name
+
+start_cmd="${name}_start"
+restart_cmd="${name}_restart"
+stop_cmd="${name}_stop"
+
+: ${seahub_path:=%%PREFIX%%/www/haiwen/seafile-server}
+: ${seahub_port:=8000}
+
+command="$seahub_path/seahub.sh"
+
+seahub_start()
+{
+	echo ${seahub_path}
+	echo ${seahub_port}
+
+	if checkyesno ${name}_enable; then
+		if checkyesno ${name}_fastcgi; then
+			echo "Starting seahub service fastcgi mode"
+			$command start-fastcgi ${seahub_port}
+		else
+			echo "Starting seahub service"
+			$command start ${seahub_port} %{seahub_port}
+		fi
+	else
+		return 0 
+	fi
+}
+
+seahub_stop()
+{
+	echo "Stoping seahub service"
+	$command stop
+}
+
+seahub_restart()
+{
+	if checkyesno ${name}_fastcgi; then
+		echo "Restarting seahub service fastcgi mode"
+		$command restart-fastcgi ${seahub_port}
+	else
+		echo "Restarting seahub service"
+		$command restart ${seahub_port}
+	fi
+}
+
+load_rc_config $name
+run_rc_command "$1"
