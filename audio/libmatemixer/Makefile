@@ -2,6 +2,7 @@
 
 PORTNAME=	libmatemixer
 PORTVERSION=	1.10.0
+PORTREVISION=	1
 CATEGORIES=	audio mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -11,8 +12,8 @@ COMMENT=	Mixer library for MATE desktop
 
 LICENSE=	LGPL21
 
-USES=		gettext libtool pathfix pkgconfig tar:xz
-USE_GNOME=	glib20 intltool	
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USE_GNOME=	glib20 intlhack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-null \
 		--enable-oss \
