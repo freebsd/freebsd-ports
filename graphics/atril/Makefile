@@ -23,7 +23,7 @@ SLAVEPORT?=	no
 
 USES=		desktop-file-utils gettext gmake libtool pathfix \
 		pkgconfig tar:xz
-USE_MATE=	icontheme
+USE_MATE=	desktop icontheme
 USE_XORG=	sm
 USE_GNOME=	cairo gtk20 intlhack libxml2
 USE_LDCONFIG=	yes
@@ -38,8 +38,6 @@ INSTALL_TARGET=	install-strip
 .if ${SLAVEPORT} == lite
 CONFIGURE_ARGS+=--disable-thumbnailer \
 		--disable-previewer
-.else
-USE_MATE+=	desktop
 .endif
 
 GLIB_SCHEMAS=	org.mate.Atril.gschema.xml
@@ -62,7 +60,7 @@ CAJA_USE=		MATE=caja
 DJVU_LIB_DEPENDS=	libdjvulibre.so:${PORTSDIR}/graphics/djvulibre
 DJVU_CONFIGURE_ENABLE=	djvu
 COMICS_CONFIGURE_ENABLE=	comics
-KEYRING_CONFIGURE_ENABLE=	keyring
+KEYRING_CONFIGURE_WITH=	keyring
 KEYRING_LIB_DEPENDS=	libsecret-1.so:${PORTSDIR}/security/libsecret
 XPS_CONFIGURE_ENABLE=	xps
 XPS_LIB_DEPENDS=	libgxps.so:${PORTSDIR}/graphics/libgxps
