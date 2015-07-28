@@ -3,7 +3,7 @@
 
 PORTNAME=	geeqie
 PORTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -43,7 +43,7 @@ LCMS_CONFIGURE_ENABLE=	lcms
 LIRC_LIB_DEPENDS=	liblirc_client.so:${PORTSDIR}/comms/lirc
 LIRC_CONFIGURE_ENABLE=	lirc
 
-GPS_LIB_DEPENDS=	libchamplain-0.8.so:${PORTSDIR}/graphics/libchamplain
+GPS_LIB_DEPENDS=	libchamplain-0.8.so:${PORTSDIR}/graphics/libchamplain08
 GPS_CONFIGURE_ENABLE=	gps
 
 post-patch:
