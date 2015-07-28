@@ -23,6 +23,7 @@ RUN_DEPENDS+=	curl>=7.24.0_2:${PORTSDIR}/ftp/curl
 .endif
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS
