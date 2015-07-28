@@ -58,6 +58,49 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="731cdeaa-3564-11e5-9970-14dae9d210b8">
+    <topic>bind -- denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>bind910</name>
+	<range><lt>9.10.2P3</lt></range>
+      </package>
+      <package>
+	<name>bind99</name>
+	<range><lt>9.9.7P2</lt></range>
+      </package>
+      <package>
+	<name>bind910-base</name>
+	<name>bind99-base</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>FreeBSD</name>
+	<range><gt>9.3</gt><le>9.3_20</le></range>
+	<range><gt>8.4</gt><le>8.4_34</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ISC reports:</p>
+	<blockquote cite="https://kb.isc.org/article/AA-01272/">
+	  <p>An error in the handling of TKEY queries can be exploited
+	    by an attacker for use as a denial-of-service vector, as a constructed
+	    packet can use the defect to trigger a REQUIRE assertion failure,
+	    causing BIND to exit.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5477</cvename>
+      <url>https://kb.isc.org/article/AA-01272/</url>
+    </references>
+    <dates>
+      <discovery>2015-07-21</discovery>
+      <entry>2015-07-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5b74a5bc-348f-11e5-ba05-c80aa9043978">
     <topic>OpenSSH -- MaxAuthTries limit bypass via duplicates in KbdInteractiveDevices</topic>
     <affects>
