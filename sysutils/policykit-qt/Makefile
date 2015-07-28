@@ -17,7 +17,7 @@ USE_LDCONFIG=	yes
 USE_KDE4=	automoc4
 USE_QT4=	corelib dbus gui network svg xml  \
 		qmake_build moc_build rcc_build uic_build
-USES=		cmake gettext tar:bzip2
+USES=		cmake gettext pkgconfig tar:bzip2
 
 PORTSCOUT=	limit:^0
 
