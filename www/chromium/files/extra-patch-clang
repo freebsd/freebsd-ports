@@ -135,8 +135,8 @@
                            base::Bind(&DecryptingVideoDecoderTest::DecryptorSet,
                                       base::Unretained(this))));
    EXPECT_CALL(*this, DecryptorSet(_)).Times(0);
---- third_party/hunspell/src/hunspell/affentry.hxx	2015-04-15 00:31:35.000000000 +0200
-+++ third_party/hunspell/src/hunspell/affentry.hxx	2015-04-18 22:04:39.000000000 +0200
+--- third_party/hunspell_new/src/hunspell/affentry.hxx.orig 2015-07-21 18:46:37.322427000 -0400
++++ third_party/hunspell_new/src/hunspell/affentry.hxx  2015-07-21 18:48:02.034251000 -0400
 @@ -27,7 +27,7 @@
    struct hentry *      checkword(const char * word, int len, char in_compound, 
                              const FLAG needflag = FLAG_NULL);
@@ -213,9 +213,9 @@
  
    tasks_.erase(it, tasks_.end());
  
---- third_party/webrtc/modules/audio_coding/main/acm2/audio_coding_module_impl.cc	2015-04-15 00:32:17.000000000 +0200
-+++ third_party/webrtc/modules/audio_coding/main/acm2/audio_coding_module_impl.cc	2015-04-18 22:13:27.000000000 +0200
-@@ -961,7 +961,7 @@
+--- third_party/webrtc/modules/audio_coding/main/acm2/audio_coding_module_impl.cc.orig  2015-07-21 18:53:32.511953000 -0400
++++ third_party/webrtc/modules/audio_coding/main/acm2/audio_coding_module_impl.cc   2015-07-21 18:54:56.010341000 -0400
+@@ -989,7 +989,7 @@
  
  const AudioEncoder* AudioCodingImpl::GetSenderInfo() const {
    FATAL() << "Not implemented yet.";
@@ -224,7 +224,7 @@
  }
  
  const CodecInst* AudioCodingImpl::GetSenderCodecInst() {
-@@ -980,7 +980,7 @@
+@@ -1009,7 +1009,7 @@
  
  const ReceiverInfo* AudioCodingImpl::GetReceiverInfo() const {
    FATAL() << "Not implemented yet.";
