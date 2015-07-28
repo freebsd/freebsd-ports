@@ -105,17 +105,28 @@
                              const char* suffix, const char* mode) {
    EmbeddedVector<char, 256> filename;
    SmartArrayPointer<char> function_name;
---- v8/src/compiler/graph-visualizer.h.orig	2015-04-28 22:29:10.000000000 +0200
-+++ v8/src/compiler/graph-visualizer.h	2015-05-02 21:34:40.659733000 +0200
-@@ -5,6 +5,7 @@
+--- third_party/ffmpeg/libavutil/autorename_libavutil_cpu.c.orig	2015-07-24 22:27:11.000000000 +0200
++++ third_party/ffmpeg/libavutil/autorename_libavutil_cpu.c	2015-07-26 17:38:40.937606000 +0200
+@@ -37,6 +37,7 @@
+ #if HAVE_SYS_PARAM_H
+ #include <sys/param.h>
+ #endif
++#define __BSD_VISIBLE 1
+ #include <sys/types.h>
+ #include <sys/sysctl.h>
+ #endif
+--- v8/src/compiler/graph-visualizer.h.orig	2015-07-24 22:28:03.000000000 +0200
++++ v8/src/compiler/graph-visualizer.h	2015-07-26 18:37:45.488253000 +0200
+@@ -5,7 +5,7 @@
  #ifndef V8_COMPILER_GRAPH_VISUALIZER_H_
  #define V8_COMPILER_GRAPH_VISUALIZER_H_
  
+-#include <stdio.h>
 +#include <cstdio>
  #include <iosfwd>
  
  namespace v8 {
-@@ -20,7 +21,7 @@
+@@ -21,7 +21,7 @@
  class Schedule;
  class SourcePositionTable;
  

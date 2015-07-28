@@ -1,7 +1,7 @@
---- device/usb/usb_service_impl.h.orig	2015-04-19 16:22:47.000000000 +0200
-+++ device/usb/usb_service_impl.h	2015-04-19 21:10:55.000000000 +0200
-@@ -10,7 +10,13 @@
- #include "base/single_thread_task_runner.h"
+--- device/usb/usb_service_impl.h.orig	2015-07-15 16:30:04.000000000 -0400
++++ device/usb/usb_service_impl.h	2015-07-22 07:42:23.863097000 -0400
+@@ -11,7 +11,13 @@
+ #include "base/message_loop/message_loop.h"
  #include "device/usb/usb_context.h"
  #include "device/usb/usb_device_impl.h"
 +#if defined(OS_FREEBSD)
@@ -12,11 +12,11 @@
 +#endif
 +
  
- namespace device {
+ #if defined(OS_WIN)
+ #include "base/scoped_observer.h"
+@@ -92,11 +98,13 @@
  
-@@ -38,11 +44,13 @@
-   // Adds a new UsbDevice to the devices_ map based on the given libusb device.
-   scoped_refptr<UsbDeviceImpl> AddDevice(PlatformUsbDevice platform_device);
+   void RemoveDevice(scoped_refptr<UsbDeviceImpl> device);
  
 +#if !defined(OS_FREEBSD)
    // Handle hotplug events from libusb.
@@ -26,15 +26,15 @@
                                           void* user_data);
 +#endif
    // These functions release a reference to the provided platform device.
-   void OnDeviceAdded(PlatformUsbDevice platform_device);
-   void OnDeviceRemoved(PlatformUsbDevice platform_device);
-@@ -63,7 +71,9 @@
+   void OnPlatformDeviceAdded(PlatformUsbDevice platform_device);
+   void OnPlatformDeviceRemoved(PlatformUsbDevice platform_device);
+@@ -112,7 +120,9 @@
    // connected instead of only when a full enumeration is requested.
    // TODO(reillyg): Support this on all platforms. crbug.com/411715
-   bool hotplug_enabled_;
+   bool hotplug_enabled_ = false;
 +#if !defined(OS_FREEBSD)
    libusb_hotplug_callback_handle hotplug_handle_;
 +#endif
  
-   // The map from unique IDs to UsbDevices.
-   typedef std::map<uint32, scoped_refptr<UsbDeviceImpl>> DeviceMap;
+   // Enumeration callbacks are queued until an enumeration completes.
+   bool enumeration_ready_ = false;
