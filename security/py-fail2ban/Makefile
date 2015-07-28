@@ -2,6 +2,7 @@
 
 PORTNAME=	fail2ban
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,7 +15,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 
 USE_GITHUB=	yes
 
-USES=		python
+USES=		python shebangfix
+SHEBANG_FILES=	config/filter.d/ignorecommands/apache-fakegooglebot
 USE_PYTHON=	distutils py3kplist
 
 USE_RC_SUBR=	fail2ban
