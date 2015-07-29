@@ -2,7 +2,7 @@
 
 PORTNAME=	libarchive
 PORTVERSION=	3.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://libarchive.org/downloads/
@@ -10,19 +10,20 @@ MASTER_SITES=	http://libarchive.org/downloads/
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Library to create and read several streaming archive formats
 
-OPTIONS_DEFINE=	LIBXML2 LZO NETTLE
-OPTIONS_DEFAULT=LIBXML2 LZO
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
-LIBXML2_DESC=	Support writing xar via libxml2
+OPTIONS_DEFINE=	LZO NETTLE
+OPTIONS_DEFAULT=LZO
+
 LZO_DESC=	Support lzo compression via liblzo2
 NETTLE_DESC=	Use Nettle instead of OpenSSL
 
 USES=		cpe libtool pathfix
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-PATCH_STRIP=	-p1
 
-CONFIGURE_ARGS+=	--without-expat
+CONFIGURE_ARGS=	--without-xml2
 
 PLIST_FILES=	bin/bsdcpio \
 		bin/bsdtar \
@@ -78,11 +79,6 @@ CFLAGS+=	"-I${LOCALBASE}/include"
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 LDFLAGS+=	"-L${LOCALBASE}/lib"
 
-LIBXML2_USE=		GNOME=libxml2
-LIBXML2_CONFIGURE_WITH=	xml2
-LIBXML2_CFLAGS=		-DHAVE_BSDXML_H=1
-LIBXML2_LDFLAGS=	-lbsdxml
-
 LZO_LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2
 LZO_CONFIGURE_WITH=	lzo2
 
@@ -93,6 +89,6 @@ NETTLE_USE_OFF=		OPENSSL=yes
 NETTLE_CONFIGURE_OFF=	--with-openssl
 
 check:
-	(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} check)
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check)
 
 .include <bsd.port.mk>
