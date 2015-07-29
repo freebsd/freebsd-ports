@@ -23,7 +23,7 @@ SLAVEPORT?=	no
 
 USES=		desktop-file-utils gettext gmake libtool pathfix \
 		pkgconfig tar:xz
-USE_MATE=	desktop icontheme
+USE_MATE=	icontheme
 USE_XORG=	sm
 USE_GNOME=	cairo gtk20 intlhack libxml2
 USE_LDCONFIG=	yes
@@ -37,7 +37,10 @@ INSTALL_TARGET=	install-strip
 
 .if ${SLAVEPORT} == lite
 CONFIGURE_ARGS+=--disable-thumbnailer \
+		--without-matedesktop \
 		--disable-previewer
+.else
+USE_MATE+=	desktop
 .endif
 
 GLIB_SCHEMAS=	org.mate.Atril.gschema.xml
