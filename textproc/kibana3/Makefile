@@ -5,6 +5,7 @@ PORTNAME=	kibana
 PORTVERSION=	3.1.2
 CATEGORIES=	textproc www
 MASTER_SITES=	http://download.elasticsearch.org/kibana/kibana/
+PKGNAMESUFFIX=	3
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Browser based analytics and search interface to ElasticSearch
