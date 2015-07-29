@@ -60,6 +60,9 @@ post-patch:
 		${WRKSRC}/src/jessie/Makefile.in
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/why3* \
+		${STAGEDIR}${PREFIX}/lib/why3/plugins/*.cmxs \
+		${STAGEDIR}${PREFIX}/lib/why3/why3-cpulimit
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/manual.pdf ${STAGEDIR}${DOCSDIR}
