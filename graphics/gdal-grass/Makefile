@@ -17,6 +17,9 @@ LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal \
 		libgrass_gis.so:${PORTSDIR}/databases/grass
 RUN_DEPENDS=	grass>=6:${PORTSDIR}/databases/grass
 
+DEPRECATED=	Superseded by gdal-2.0.0
+EXPIRATION_DATE=2015-10-30
+
 USES=		gmake
 USE_GCC=	yes	# from databases/grass
 GNU_CONFIGURE=	yes
