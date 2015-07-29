@@ -115,5 +115,6 @@ sbin/ovsdb-server
 @dir /var/db/openvswitch
 @dir /var/lib/openvswitch/pki
 @dir /var/lib/openvswitch
+@dir /var/lib
 @dir /var/log/openvswitch
 @dir /var/run/openvswitch
