@@ -1,5 +1,7 @@
 bin/libpng-config
 bin/libpng16-config
+bin/png-fix-itxt
+bin/pngfix
 include/libpng16/png.h
 include/libpng16/pngconf.h
 include/libpng16/pnglibconf.h
@@ -8,8 +10,6 @@ include/pngconf.h
 include/pnglibconf.h
 lib/libpng.a
 lib/libpng.so
-lib/libpng/libpng16-%%CMAKE_BUILD_TYPE%%.cmake
-lib/libpng/libpng16.cmake
 lib/libpng16.a
 lib/libpng16.so
 lib/libpng16.so.16
