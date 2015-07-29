@@ -1,0 +1,11 @@
+%%DATADIR%%/close.sh
+%%DATADIR%%/help.sh
+%%DATADIR%%/inprog.sh
+%%DATADIR%%/login.sh
+%%DATADIR%%/take.sh
+%%DATADIR%%/version.sh
+%%PYBUGZ%%%%DATADIR%%/pybugz/close.sh
+%%PYBUGZ%%%%DATADIR%%/pybugz/inprog.sh
+%%PYBUGZ%%%%DATADIR%%/pybugz/login.sh
+%%PYBUGZ%%%%DATADIR%%/pybugz/take.sh
+bin/bz
