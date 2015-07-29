@@ -1,19 +1,5 @@
 bin/harp
-%%AAC%%lib/libharpaac.a
-%%AAC%%lib/libharpaac.so
-%%FLAC%%lib/libharpflac.a
-%%FLAC%%lib/libharpflac.so
-%%MP3%%lib/libharpmp3.a
-%%MP3%%lib/libharpmp3.so
-%%SHOUTCAST%%lib/libharpstream.a
-%%SHOUTCAST%%lib/libharpstream.so
-%%VORBIS%%lib/libharpvorbis.a
-%%VORBIS%%lib/libharpvorbis.so
-%%AAC%%%%DATADIR%%/libharpaac.sql
-%%FLAC%%%%DATADIR%%/libharpflac.sql
-%%MP3%%%%DATADIR%%/libharpmp3.sql
-%%SHOUTCAST%%%%DATADIR%%/libharpstream.sql
-%%VORBIS%%%%DATADIR%%/libharpvorbis.sql
 man/man1/harp.1.gz
 %%DATADIR%%/create.sql
 %%DATADIR%%/defaults.conf
+@dir %%DATADIR%%
