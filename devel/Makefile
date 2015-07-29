@@ -417,6 +417,7 @@
     SUBDIR += elixir-dialyze
     SUBDIR += elixir-estree
     SUBDIR += elixir-exactor
+    SUBDIR += elixir-excoveralls
     SUBDIR += elixir-exjsx
     SUBDIR += elixir-exprotobuf
     SUBDIR += elixir-exrm
