@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openvswitch
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.2
 CATEGORIES=	net
 MASTER_SITES=	http://openvswitch.org/releases/
 
@@ -10,6 +10,9 @@ MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Production quality, multilayer virtual switch
 
 LICENSE=	APACHE20
+
+BROKEN_FreeBSD_8=	does not build on FreeBSD < 10.x
+BROKEN_FreeBSD_9=	does not build on FreeBSD < 10.x
 
 USES=		cpe gmake libtool perl5 pkgconfig python
 USE_OPENSSL=	yes
