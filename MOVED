@@ -7732,12 +7732,13 @@ japanese/netype||2015-07-21|Has expired: Broken for more than 6 months
 databases/p5-DBD-Pg32|databases/p5-DBD-Pg|2015-07-22|Has expired: Use databases/p5-DBD-Pg instead, compatability probles are fixed
 textproc/py-asciinema|textproc/asciinema|2015-07-23|Has expired: use textproc/asciinema instead
 devel/libiomp5-devel|devel/llvm-devel|2015-07-24|Merged with devel/llvm-devel
-amd64-binutils||2015-07-25|No real use
-amd64-gcc||2015-07-25|No real use
-amd64-xtoolchain-gcc||2015-07-25|No real use
+devel/amd64-binutils||2015-07-25|No real use
+devel/amd64-gcc||2015-07-25|No real use
+devel/amd64-xtoolchain-gcc||2015-07-25|No real use
 devel/p5-Test-Tester|devel/p5-Test-Simple|2015-07-25|Has expired: Part of p5-Test-Simple (use that instead), and included in perl 5.22
 devel/p5-Test-use-ok|devel/p5-Test-Simple|2015-07-25|Has expired: Part of devel/p5-Test-Simple (use that instead), and included in perl 5.22
 math/mate-calc||2015-07-27|Not part of MATE 1.10. Instead galculator is used
 x11/mate-dialogs||2015-07-27|Not part of MATE 1.10
 devel/automake14||2015-07-27|Has expired: Not used in the ports tree anymore
 sysutils/slurm-hpc|sysutils/slurm-wlm|2015-07-28|Upstream is standardizing on the name "slurm-wlm"
+textproc/kibana|textproc/kibana3|2015-07-29|Moved to leave place for a kibana-4 port
