@@ -335,7 +335,7 @@
     SUBDIR += jshon
     SUBDIR += kdiff3
     SUBDIR += kenlm
-    SUBDIR += kibana
+    SUBDIR += kibana3
     SUBDIR += kmfl-european-latin
     SUBDIR += kmfl-khmer
     SUBDIR += kmfl-sil-ezra
