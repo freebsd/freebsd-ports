@@ -3,6 +3,7 @@
 
 PORTNAME=	openvswitch
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://openvswitch.org/releases/
 
@@ -11,7 +12,8 @@ COMMENT=	Production quality, multilayer virtual switch
 
 LICENSE=	APACHE20
 
-USES=		cpe gmake libtool perl5 pkgconfig python
+USES=		cpe gmake libtool perl5 pkgconfig python shebangfix
+SHEBANG_FILES=	vtep/ovs-vtep
 USE_OPENSSL=	yes
 USE_LDCONFIG=   yes
 GNU_CONFIGURE=	yes

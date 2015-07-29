@@ -112,6 +112,7 @@ sbin/ovsdb-server
 %%DATADIR%%/scripts/ovs-vtep
 %%DATADIR%%/vswitch.ovsschema
 %%DATADIR%%/vtep.ovsschema
+@dir /var/db/openvswitch
 @dir /var/lib/openvswitch/pki
 @dir /var/lib/openvswitch
 @dir /var/lib
