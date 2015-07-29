@@ -33,9 +33,8 @@ USES=		python shebangfix
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist concurrent distutils
 
-SHEBANG_FILES=		pip/__init__.py
-python_OLD_CMD=        ${SETENV} python
-python_CMD=		${PYTHON_CMD}
+SHEBANG_FILES=	pip/__init__.py
+python_OLD_CMD=	/usr/bin/env python
 
 GH_ACCOUNT=	pypa
 

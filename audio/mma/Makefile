@@ -31,7 +31,6 @@ USES=		python shebangfix
 WRKDOC=	${WRKDIR}/${PORTNAME}-pdf-${DISTVERSION:S,a,,}
 WRKSRC=	${WRKDIR}/${PORTNAME}-bin-${DISTVERSION}
 
-python_CMD=	${PYTHON_CMD}
 python_OLD_CMD=	/usr/bin/env python
 
 .include <bsd.port.options.mk>

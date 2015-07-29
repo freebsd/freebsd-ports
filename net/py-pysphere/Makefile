@@ -18,7 +18,6 @@ USE_PYTHON=	distutils autoplist
 
 SHEBANG_LANG=	python
 python_OLD_CMD=	/usr/bin/env python
-python_CMD=	${PYTHON_CMD}
 SHEBANG_FILES= *.py \
 	       pysphere/ZSI/*.py \
 	       pysphere/ZSI/generate/*.py \

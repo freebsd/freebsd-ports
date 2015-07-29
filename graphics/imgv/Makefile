@@ -24,7 +24,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		python:run shebangfix
 SHEBANG_FILES=	imgv.py
 python_OLD_CMD=	/usr/bin/env python
-python_CMD=	${PYTHON_CMD}
 
 post-patch:
 	@${REINPLACE_CMD} -e \

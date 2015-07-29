@@ -28,7 +28,6 @@ USES=		cpe gmake python:build shebangfix
 USE_RC_SUBR=	rabbitmq
 SHEBANG_FILES=	calculate-relative plugins-src/rabbitmq-amqp1.0/codegen.py
 python_OLD_CMD=	.*python
-python_CMD=	${PYTHON_CMD}
 
 USERS=		rabbitmq
 GROUPS=		rabbitmq
