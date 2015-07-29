@@ -3,7 +3,7 @@
 
 PORTNAME=	heartbeat
 PORTVERSION=	2.1.4
-PORTREVISION=	25
+PORTREVISION=	26
 CATEGORIES=	sysutils
 #MASTER_SITES=	http://hg.linux-ha.org/lha-2.1/archive/STABLE-2.1.4.tar.bz2
 MASTER_SITES=	LOCAL/kuriyama/heartbeat
@@ -25,7 +25,11 @@ BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
 USES=		autoreconf cpe gettext gmake libtool perl5 pkgconfig python tar:bzip2 \
 		shebangfix
-SHEBANG_FILES=	ldirectord/ldirectord.in
+SHEBANG_FILES=	ldirectord/ldirectord.in \
+		lib/plugins/stonith/external/ibmrsa-telnet \
+		lib/plugins/stonith/external/vmware \
+		lib/plugins/stonith/external/xen0-ha-dom0-stonith-helper \
+		lib/plugins/stonith/external/xen0-ha.in
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
