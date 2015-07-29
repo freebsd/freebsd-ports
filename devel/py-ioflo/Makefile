@@ -18,6 +18,5 @@ NO_ARCH=	yes
 
 SHEBANG_FILES=	scripts/ioflo
 python_OLD_CMD=	/usr/bin/env python
-python_CMD=	${PYTHON_CMD}
 
 .include <bsd.port.mk>
