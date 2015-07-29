@@ -42,7 +42,6 @@ SUB_FILES=	pkg-message
 SUB_LIST+=	USER=${USERS}
 
 python_OLD_CMD=	/usr/bin/env python
-python_CMD=	${PYTHON_CMD}
 
 SHEBANG_FILES=	bin/calendarserver_* \
 		bin/icalendar_split \

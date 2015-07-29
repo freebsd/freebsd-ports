@@ -33,6 +33,5 @@ INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--enable-gtk2-module=no
 GLIB_SCHEMAS=	org.gnome.caribou.gschema.xml \
 		org.gnome.antler.gschema.xml
-python_CMD=	${PYTHON_CMD}
 
 .include <bsd.port.mk>

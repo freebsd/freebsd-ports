@@ -24,7 +24,6 @@ CONFIGURE_ARGS=	--include ${LOCALBASE}/include --lib ${LOCALBASE}/lib
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 SHEBANG_FILES=	${CONFIGURE_SCRIPT} boodler.py
-python_CMD=	${PYTHON_CMD}
 SUB_FILES=	boodler-wrapper
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 

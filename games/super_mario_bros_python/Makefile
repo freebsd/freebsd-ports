@@ -25,7 +25,6 @@ WRKSRC=		${WRKDIR}/Super-Mario-Bros-Python-v${DISTVERSION}release
 USES=		shebangfix python:2 zip
 SHEBANG_FILES=	gamelib/*.py start.py
 python_OLD_CMD=	/usr/bin/env python
-python_CMD?=	${PYTHON_CMD}
 
 PORTDOCS=	changelog.txt readme.txt
 OPTIONS_DEFINE=	DOCS
