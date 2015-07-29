@@ -5,13 +5,6 @@ PORTNAME=	llvm
 PORTVERSION=	3.8.d20150720
 PORTREVISION=	3
 CATEGORIES=	devel lang
-MASTER_SITES=	\
-    http://github.com/llvm-mirror/llvm/archive/${LLVM_COMMIT}.tar.gz?dummy=/ \
-    http://github.com/llvm-mirror/clang/archive/${CLANG_COMMIT}.tar.gz?dummy=/:clang \
-    http://github.com/llvm-mirror/lld/archive/${LLD_COMMIT}.tar.gz?dummy=/:lld \
-    http://github.com/llvm-mirror/lldb/archive/${LLDB_COMMIT}.tar.gz?dummy=/:lldb \
-    http://github.com/llvm-mirror/openmp/archive/${OPENMP_COMMIT}.tar.gz?dummy=/:openmp
-DISTFILES=	${LLVM_NAME}.tar.gz
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	brooks@FreeBSD.org
@@ -32,19 +25,15 @@ SUB_LIST=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
 CMAKE_INSTALL_PREFIX=	${LLVM_PREFIX}
 CMAKE_ARGS=	-DBUILD_SHARED_LIBS=ON
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	llvm-mirror
+GH_TAGNAME=	${LLVM_COMMIT}
+
 LLVM_COMMIT=	4f50f9eba412b6c0d5e7a9616dfe7699a07cf17b
 CLANG_COMMIT=	dc9de2d1a510a8b7b95610d338e89f1f91d3ecdf
 LLD_COMMIT=	3002cb875e292930a1a8f375f00b36abd1a4a83a
 LLDB_COMMIT=	6160cbd3d3bcbbc409bf48a67ee097672256b03f
 OPENMP_COMMIT=	50be853810d64cf7ba61a0ee7281ce82672af972
-
-LLVM_NAME=	${PORTNAME}-${LLVM_COMMIT}
-CLANG_NAME=	clang-${CLANG_COMMIT}
-LLD_NAME=	lld-${LLD_COMMIT}
-LLDB_NAME=	lldb-${LLDB_COMMIT}
-OPENMP_NAME=	openmp-${OPENMP_COMMIT}
-
-WRKSRC=		${WRKDIR}/${LLVM_NAME}
 
 OPTIONS_DEFINE=	CLANG DOCS LIT LLD LLDB
 OPTIONS_DEFINE_amd64=	OPENMP
@@ -54,17 +43,21 @@ OPTIONS_SUB=	yes
 
 CLANG_DESC=	Build clang
 CLANG_EXTRA_PATCHES= ${PATCHDIR}/clang-patch-tools_clang_lib_Headers_CMakeLists.txt
-CLANG_DISTFILES=	${CLANG_NAME}.tar.gz:clang
 CLANG_CONFLICTS_INSTALL=	clang-devel-3.[1234567]*
+_CLANG_GH_PROJECT=	clang:clang
+_CLANG_GH_TAGNAME=	${CLANG_COMMIT}:clang
 LIT_DESC=		Install lit and FileCheck test tools
 LLD_DESC=		Install lld, the LLVM linker
-LLD_DISTFILES=		${LLD_NAME}.tar.gz:lld
+_LLD_GH_PROJECT=		lld:lld
+_LLD_GH_TAGNAME=		${LLD_COMMIT}:lld
 LLDB_DESC=		Install lldb, the LLVM debugger
 LLDB_BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
-LLDB_DISTFILES=		${LLDB_NAME}.tar.gz:lldb
+_LLDB_GH_PROJECT=	lldb:lldb
+_LLDB_GH_TAGNAME=	${LLDB_COMMIT}:lldb
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
-OPENMP_DISTFILES=	${OPENMP_NAME}.tar.gz:openmp
 OPENMP_CONFLICTS_INSTALL=	libiomp5-devel-*
+_OPENMP_GH_PROJECT=	openmp:openmp
+_OPENMP_GH_TAGNAME=	${OPENMP_COMMIT}:openmp
 
 OPTIONS_SUB=	yes
 
@@ -121,6 +114,8 @@ COMMANDS+=	clang \
 MAN1SRCS+=	clang.1
 PORTDOCS+=	clang
 CMAKE_ARGS+=	-DCLANG_DEFAULT_OPENMP_RUNTIME=libomp
+GH_PROJECT+=	${_CLANG_GH_PROJECT}
+GH_TAGNAME+=	${_CLANG_GH_TAGNAME}
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -139,6 +134,8 @@ LIT_COMMANDS=	lit llvm-lit FileCheck
 .if ${PORT_OPTIONS:MLLD}
 COMMANDS+=	lld
 PORTDOCS+=	lld
+GH_PROJECT+=	${_LLD_GH_PROJECT}
+GH_TAGNAME+=	${_LLD_GH_TAGNAME}
 .endif
 
 .if ${PORT_OPTIONS:MLLDB}
@@ -147,10 +144,16 @@ COMMANDS+=	argdumper \
 		lldb-mi \
 		lldb-server
 _USES_PYTHON=	python
+GH_PROJECT+=	${_LLDB_GH_PROJECT}
+GH_TAGNAME+=	${_LLDB_GH_TAGNAME}
 .endif
 
 .if ! ${OPTIONS_DEFINE:MOPENMP}
-PLIST_SUB+=	OPENMP="@comment "
+# Hack to disable OPENMP in plist of unsupported architectures
+PLIST_SUB+=    OPENMP="@comment "
+.else
+GH_PROJECT+=	${_OPENMP_GH_PROJECT}
+GH_TAGNAME+=	${_OPENMP_GH_TAGNAME}
 .endif
 
 _USES_PYTHON?=	python:build
@@ -174,16 +177,16 @@ BROKEN=	GCC failing on 8.x
 
 post-extract:
 .if ${PORT_OPTIONS:MCLANG}
-	${MV} ${WRKDIR}/${CLANG_NAME} ${PATCH_WRKSRC}/tools/clang
+	${MV} ${WRKSRC_clang} ${PATCH_WRKSRC}/tools/clang
 .endif
 .if ${PORT_OPTIONS:MLLD}
-	${MV} ${WRKDIR}/${LLD_NAME} ${PATCH_WRKSRC}/tools/lld
+	${MV} ${WRKSRC_lld} ${PATCH_WRKSRC}/tools/lld
 .endif
 .if ${PORT_OPTIONS:MLLDB}
-	${MV} ${WRKDIR}/${LLDB_NAME} ${PATCH_WRKSRC}/tools/lldb
+	${MV} ${WRKSRC_lldb} ${PATCH_WRKSRC}/tools/lldb
 .endif
 .if ${PORT_OPTIONS:MOPENMP}
-	${MV} ${WRKDIR}/${OPENMP_NAME} ${PATCH_WRKSRC}/tools/openmp
+	${MV} ${WRKSRC_openmp} ${PATCH_WRKSRC}/tools/openmp
 .endif
 
 post-patch:
