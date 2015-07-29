@@ -3,6 +3,7 @@
 
 PORTNAME=	notmuch
 PORTVERSION=	0.20.2
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://notmuchmail.org/releases/
 
@@ -11,7 +12,8 @@ COMMENT=	Thread-based email index, search, and tagging application
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
+BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx \
+		c++filt:${PORTSDIR}/devel/binutils
 LIB_DEPENDS=	libgmime-2.6.so:${PORTSDIR}/mail/gmime26 \
 		libxapian.so:${PORTSDIR}/databases/xapian-core \
 		libtalloc.so:${PORTSDIR}/devel/talloc
