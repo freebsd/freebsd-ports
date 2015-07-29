@@ -3,6 +3,7 @@
 
 PORTNAME=	fontforge
 DISTVERSION=	20150612
+PORTREVISION=	1
 CATEGORIES=	print
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -25,7 +26,9 @@ LIB_DEPENDS=	libuninameslist.so:${PORTSDIR}/textproc/libuninameslist \
 USE_GITHUB=	yes
 
 USES=		autoreconf:build desktop-file-utils execinfo gettext gmake iconv \
-		jpeg libtool pkgconfig python shared-mime-info
+		jpeg libtool pkgconfig python shared-mime-info shebangfix
+SHEBANG_FILES=	pycontrib/gdraw/__init__.py \
+		pycontrib/gdraw/gdraw.py
 USE_XORG=	x11 xi ice xkbui
 USE_GNOME=	glib20 gtk20 libxml2 pango
 
