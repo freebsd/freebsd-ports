@@ -10,7 +10,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line frontend to libgphoto2
 
 LICENSE=	GPLv2
-#LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 		libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
@@ -37,6 +36,6 @@ READLINE_USES=		readline
 READLINE_CONFIGURE_WITH=readline
 
 post-install:
-	(cd ${WRKSRC} && ${INSTALL_DATA} NEWS ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
