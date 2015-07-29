@@ -10,14 +10,13 @@ MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Tools to test a PCSC driver, card, or reader
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENCE
 
 LIB_DEPENDS=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite
 RUN_DEPENDS=	p5-PCSC-Card>=0:${PORTSDIR}/devel/p5-PCSC-Card \
 		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2
 
 USES=		gmake pkgconfig
-
-.include <bsd.port.pre.mk>
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pcsc_scan \
@@ -35,4 +34,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/smartcard_list.txt \
 		${STAGEDIR}/${PREFIX}/share/pcsc
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
