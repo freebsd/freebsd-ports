@@ -7742,3 +7742,4 @@ x11/mate-dialogs||2015-07-27|Not part of MATE 1.10
 devel/automake14||2015-07-27|Has expired: Not used in the ports tree anymore
 sysutils/slurm-hpc|sysutils/slurm-wlm|2015-07-28|Upstream is standardizing on the name "slurm-wlm"
 textproc/kibana|textproc/kibana3|2015-07-29|Moved to leave place for a kibana-4 port
+lang/clang-cheri|devel/llvm-cheri|2015-07-30|Moved to devel/llvm-cheri to match other LLVM ports
