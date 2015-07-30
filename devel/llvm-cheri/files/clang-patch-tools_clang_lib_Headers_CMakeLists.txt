@@ -1,7 +1,15 @@
---- tools/clang/lib/Headers/CMakeLists.txt.orig	2014-11-13 09:02:37 UTC
+--- tools/clang/lib/Headers/CMakeLists.txt.orig	2015-07-21 15:57:35 UTC
 +++ tools/clang/lib/Headers/CMakeLists.txt
-@@ -37,20 +37,12 @@
-   rtmintrin.h
+@@ -30,7 +30,6 @@ set(files
+   Intrin.h
+   inttypes.h
+   iso646.h
+-  limits.h
+   lzcntintrin.h
+   mm3dnow.h
+   mmintrin.h
+@@ -45,20 +44,12 @@ set(files
+   s390intrin.h
    shaintrin.h
    smmintrin.h
 -  stdalign.h

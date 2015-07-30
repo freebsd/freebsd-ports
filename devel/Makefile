@@ -1321,6 +1321,7 @@
     SUBDIR += linux_libusb
     SUBDIR += lion
     SUBDIR += llnextgen
+    SUBDIR += llvm-cheri
     SUBDIR += llvm-devel
     SUBDIR += llvm33
     SUBDIR += llvm34
