@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freebsd-bugzilla-cli
-PORTVERSION=	0.0.1
+PORTVERSION=	0.0.2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	GH
 
@@ -24,6 +24,7 @@ DATADIR=	${PREFIX}/share/bz
 USE_GITHUB=	yes
 GH_ACCOUNT=	pgollucci
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 .include <bsd.port.mk>
