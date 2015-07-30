@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openipmi
-PORTVERSION=	2.0.19
-PORTREVISION=	4
+PORTVERSION=	2.0.21
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/OpenIPMI%202.0%20Library
 DISTNAME=	OpenIPMI-${PORTVERSION}
@@ -123,5 +122,14 @@ PLIST_SUB+=		GLIB20="@comment "
 post-patch:
 	@${REINPLACE_CMD} '/libOpenIPMIutils_la_LIBADD =/s/$$/ -lexecinfo/' \
 		${WRKSRC}/utils/Makefile.in
+	@${REINPLACE_CMD} 's|malloc.h|stdlib.h|' \
+		${WRKSRC}/lanserv/sdrcomp/sdrcomp.c \
+		${WRKSRC}/lanserv/extcmd.c \
+		${WRKSRC}/lanserv/bmc_app.c \
+		${WRKSRC}/lanserv/bmc_storage.c \
+		${WRKSRC}/lanserv/bmc_picmg.c \
+		${WRKSRC}/lanserv/bmc_sensor.c
+	@${REINPLACE_CMD} 's|-ldl||' \
+		${WRKSRC}/lanserv/Makefile.in
 
 .include <bsd.port.mk>
