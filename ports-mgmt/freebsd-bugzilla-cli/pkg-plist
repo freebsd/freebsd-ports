@@ -6,6 +6,7 @@
 %%DATADIR%%/login.sh
 %%DATADIR%%/overto.sh
 %%DATADIR%%/patch.sh
+%%DATADIR%%/submit.sh
 %%DATADIR%%/take.sh
 %%DATADIR%%/version.sh
 %%PYBUGZ%%%%DATADIR%%/pybugz/close.sh
@@ -14,5 +15,6 @@
 %%PYBUGZ%%%%DATADIR%%/pybugz/login.sh
 %%PYBUGZ%%%%DATADIR%%/pybugz/overto.sh
 %%PYBUGZ%%%%DATADIR%%/pybugz/patch.sh
+%%PYBUGZ%%%%DATADIR%%/pybugz/submit.sh
 %%PYBUGZ%%%%DATADIR%%/pybugz/take.sh
 bin/bz
