@@ -1,0 +1,6 @@
+When you first run PocketMine-MP it will run a configuration wizard,
+connect to the console and run through it.
+
+- The service has been installed with the name 'pocketmine'
+- To see the interactive console, type service pocketmine console
+

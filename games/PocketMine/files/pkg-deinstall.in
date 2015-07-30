@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+    exit 0
+fi
+
+echo
+echo "NOTE: The game world has not been deleted. It is still in"
+echo "/var/db/pocketmine. If it is no longer required, it will"
+echo "need to be manually deleted."

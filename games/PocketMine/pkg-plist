@@ -1,3 +1,4 @@
+@dir share/PocketMine-MP/plugins
 share/PocketMine-MP/CONTRIBUTING.md
 share/PocketMine-MP/LICENSE
 share/PocketMine-MP/README.md
@@ -855,4 +856,3 @@ share/PocketMine-MP/src/spl/stubs/pthreads.php
 share/PocketMine-MP/src/spl/stubs/uopz.php
 share/PocketMine-MP/src/spl/stubs/weakref.php
 share/PocketMine-MP/src/spl/stubs/yaml.php
-share/PocketMine-MP/start.sh

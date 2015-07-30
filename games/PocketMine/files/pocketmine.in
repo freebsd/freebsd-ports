@@ -1,0 +1,104 @@
+#!/bin/sh
+#
+# $FreeBSD$
+# PROVIDE: pocketmine
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# rc.conf variables:
+# pocketmine_enable (Default: NO)
+# pocketmine_args (Default: "")
+. /etc/rc.subr
+
+name=pocketmine
+rcvar=pocketmine_enable
+desc="Dedicated server for the game MineCraft PE"
+
+load_rc_config $name
+
+pocketmine_data=${pocketmine_data:-"/var/db/pocketmine"}
+pocketmine_args=${pocketmine_args:-""}
+
+extra_commands="console status kill"
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+console_cmd="${name}_console"
+status_cmd="${name}_status"
+kill_cmd="${name}_kill"
+
+is_running()
+{
+	pgrep -qu pocketmine php
+	return $?
+}
+
+pocketmine_start()
+{
+	if is_running; then
+		echo "${name} is already running."
+	else
+		echo "Starting ${name}."
+		if [ ! -d "${pocketmine_data}" ]; then
+			mkdir "${pocketmine_data}"
+			chown %%USERS%%:%%USERS%% "${pocketmine_data}"
+		fi
+		cd "%%LOCALBASE%%/share/PocketMine-MP"
+		ulimit -c 0 # paper over segfault on exit
+		su %%USERS%% -c "cd %%LOCALBASE%%/share/PocketMine-MP; %%LOCALBASE%%/bin/tmux new-session -s pocketmine -d '%%LOCALBASE%%/bin/php src/pocketmine/PocketMine.php --data=${pocketmine_data} ${pocketmine_args}'"
+	fi
+}
+
+pocketmine_stop()
+{
+	if is_running; then
+		echo "Stopping ${name}."
+		su pocketmine -c "%%LOCALBASE%%/bin/tmux send-keys -t ${name} \"stop\" ENTER"
+
+		i=0
+		while [ $i -lt 10 ]; do
+			i=$(($i + 1))
+			if is_running; then
+				sleep 1
+			else
+				echo "${name} has been stopped."
+				return
+			fi
+		done
+		echo "WARN: ${name} could not be stopped or is taking longer than expected."
+		echo "WARN: To view the console, type 'service ${name} console'"
+		echo "WARN: To kill $[name}, type 'service ${name} kill'"
+	else
+		echo "${name} is not running."
+	fi
+}
+
+pocketmine_console()
+{
+	if ! is_running; then
+		echo "${name} is not running."
+	else
+		export TERM=xterm
+		su pocketmine -c "%%LOCALBASE%%/bin/tmux attach-session -t ${name}"
+	fi
+}
+
+pocketmine_status()
+{
+	if is_running; then
+		echo "${name} is running."
+	else
+		echo "${name} is not running."
+	fi
+}
+
+pocketmine_kill()
+{
+	if ! is_running; then
+		echo "${name} is not running."
+	else
+		pkill -KILL -u pocketmine java
+		echo "${name} has been killed."
+	fi
+}
+
+run_rc_command "$1"
