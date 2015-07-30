@@ -1,10 +1,8 @@
-Low Level Virtual Machine (LLVM) is:
-- A compilation strategy designed to enable effective program
-  optimization across the entire lifetime of a program.
-- A virtual instruction set.
-- A compiler infrastructure.
-- LLVM does not imply things that you would expect from a high-level
-  virtual machine. It does not require garbage collection or run-time
-  code generation.
+The LLVM Project is a collection of modular and reusable compiler and
+toolchain technologies.
+
+This port includes Clang (a C/C++/Objective-C compiler), LLD (a linker),
+LLDB (a debugger), an OpenMP runtime library, and the LLVM infrastructure
+these are built on.
 
 WWW:	http://llvm.org/
