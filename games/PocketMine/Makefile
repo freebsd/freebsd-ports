@@ -1,9 +1,12 @@
 # Created by: Daniel O'Connor <darius@dons.net.au.
 # $FreeBSD$
 
-PORTNAME=       PocketMine-MP
+PORTNAME=       PocketMine
 PORTVERSION=    1.4.1
 CATEGORIES=     games
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}-MP/releases/download/${PORTVERSION}/
+DISTNAME=	${PORTNAME}-MP_${PORTVERSION}
+EXTRACT_SUFX=	.phar
 
 MAINTAINER=     darius@dons.net.au
 COMMENT=        Minecraft PE server
@@ -16,9 +19,6 @@ RUN_DEPENDS=	${LOCALBASE}/include/php/ext/pthreads/config.h:${PORTSDIR}/devel/pe
 		tmux:${PORTSDIR}/sysutils/tmux
 
 USE_RC_SUBR=	pocketmine
-
-DISTFILES=	${PORTNAME}_${PORTVERSION}.phar
-MASTER_SITES=	https://github.com/PocketMine/${PORTNAME}/releases/download/${PORTVERSION}/
 
 USE_PHP=        bcmath curl json phar sockets sqlite3 zlib
 
@@ -34,6 +34,6 @@ SUB_LIST=	USERS=${USERS}
 do-install:
 	@${MKDIR} ${STAGEDIR}/${LOCALBASE}/share/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}/${LOCALBASE}/share/${PORTNAME}/plugins
-	@${CP} ${DISTDIR}/${DISTFILES} ${STAGEDIR}/${LOCALBASE}/share/${PORTNAME}/${PORTNAME}.phar
+	@${CP} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ${STAGEDIR}/${LOCALBASE}/share/${PORTNAME}/${PORTNAME}.phar
 
 .include <bsd.port.mk>

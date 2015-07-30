@@ -43,7 +43,7 @@ pocketmine_start()
 			chown %%USERS%%:%%USERS%% "${pocketmine_data}"
 		fi
 		ulimit -c 0 # paper over segfault on exit
-		su %%USERS%% -c "cd %%LOCALBASE%%/share/PocketMine-MP; %%LOCALBASE%%/bin/tmux new-session -s pocketmine -d '%%LOCALBASE%%/bin/php %%LOCALBASE%%/share/PocketMine-MP/PocketMine-MP.phar --data=${pocketmine_data} ${pocketmine_args}'"
+		su %%USERS%% -c "%%LOCALBASE%%/bin/tmux new-session -s pocketmine -d 'cd %%LOCALBASE%%/share/PocketMine; %%LOCALBASE%%/bin/php PocketMine.phar --data=${pocketmine_data} ${pocketmine_args}'"
 	fi
 }
 
