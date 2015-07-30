@@ -244,14 +244,12 @@ build-plist:
 	${FIND} ${STAGEDIR}${LLVM_PREFIX} -type f -o -type l | \
 	    ${GREP} -v 'lit$$' | ${GREP} -v 'FileCheck$$' | \
 	    ${GREP} -v man/man1 | ${SED} -e 's|${STAGEDIR}${PREFIX}/||' \
-	    -e 's|${PORTVERSION}|%%PORTVERSION%%|' | \
+	    -e 's|${PORTVERSION}|%%PORTVERSION%%|' \
+	    -e 's|release.cmake|%%CMAKE_BUILD_TYPE%%.cmake|' | \
 	    ${SORT} >> ${PLIST}.tmp
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/lit${LLVM_SUFFIX} -type f | \
 	    ${SED} -e 's|${STAGEDIR}${PYTHON_SITELIBDIR}|%%LIT%%%%PYTHON_SITELIBDIR%%|' | \
 	    ${SORT} >> ${PLIST}.tmp
-#	${FIND} ${STAGEDIR}${DOCSDIR} -type f | \
-#	    ${SED} -e 's|${STAGEDIR}${DOCSDIR}|%%PORTDOCS%%%%DOCSDIR%%|' | \
-#	    ${SORT} >> ${PLIST}.tmp
 	awk '{if ($$0 ~ /clang/ && $$0 !~ /omp.h/) {printf "%%%%CLANG%%%%"} if ($$0 ~ /lld/ && $$0 !~ /lldb/) {printf "%%%%LLD%%%%"} if ($$0 ~ /(argdumper|lldb)/) {printf "%%%%LLDB%%%%"} if ($$0 ~ /lib.*omp/) {printf "%%%%OPENMP%%%%"} print}' ${PLIST}.tmp >> ${PLIST}
 	${RM} -f ${PLIST}.tmp
 
