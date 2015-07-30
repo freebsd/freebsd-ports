@@ -21,7 +21,13 @@
        sharedcccompopts="-fPIC"
        mksharedlib="$bytecc -shared"
        bytecclinkopts="$bytecclinkopts -Wl,-E"
-@@ -766,6 +767,7 @@ if test $with_sharedlibs = "yes"; then
+@@ -761,11 +758,13 @@ if test $with_sharedlibs = "yes"; then
+       fi;;
+     x86_64-*-darwin*)             natdynlink=true;;
+     powerpc*-*-linux*)            natdynlink=true;;
++    powerpc*-*-freebsd*)          natdynlink=true;;
+     sparc*-*-linux*)              natdynlink=true;;
+     i686-*-kfreebsd*)             natdynlink=true;;
      x86_64-*-kfreebsd*)           natdynlink=true;;
      i[3456]86-*-freebsd*)         natdynlink=true;;
      x86_64-*-freebsd*)            natdynlink=true;;
@@ -29,7 +35,15 @@
      i[3456]86-*-openbsd*)         natdynlink=true;;
      x86_64-*-openbsd*)            natdynlink=true;;
      i[3456]86-*-netbsd*)          natdynlink=true;;
-@@ -833,6 +835,7 @@ case "$target" in
+@@ -815,6 +814,7 @@ case "$target" in
+   i[3456]86-*-gnu*)             arch=i386; system=gnu;;
+   i[3456]86-*-mingw*)           arch=i386; system=mingw;;
+   powerpc*-*-linux*)            arch=power; model=ppc; system=elf;;
++  powerpc-*-freebsd*)           arch=power; model=ppc; system=bsd_elf;;
+   powerpc-*-netbsd*)            arch=power; model=ppc; system=elf;;
+   powerpc-*-openbsd*)           arch=power; model=ppc; system=bsd_elf;;
+   powerpc-*-rhapsody*)          arch=power; model=ppc; system=rhapsody;;
+@@ -833,6 +833,7 @@ case "$target" in
    zaurus*-*-openbsd*)           arch=arm; system=bsd;;
    x86_64-*-linux*)              arch=amd64; system=linux;;
    x86_64-*-gnu*)                arch=amd64; system=gnu;;
