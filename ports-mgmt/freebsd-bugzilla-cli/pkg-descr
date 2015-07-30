@@ -3,6 +3,7 @@ ports.  Provides a consistent API which can have pluggable backends.
 
 Supported Commands:
  bz login
+ bz submit
  bz take
  bz inprog
  bz get
@@ -10,8 +11,5 @@ Supported Commands:
  bz close
 
  bz overto
-
-Soon:
- bz submit
 
 WWW: https://github.com/pgollucci/freebsd-bugzilla-cli
