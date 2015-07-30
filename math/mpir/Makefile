@@ -2,22 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	mpir
-DISTVERSION=	2.7.0-alpha12
+PORTVERSION=	2.7.0
 CATEGORIES=	math
-MASTER_SITES=	http://www.mpir.org/
+MASTER_SITES=	http://mpir.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiprecision integer library
 
 LICENSE=	LGPL3
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
+#LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 USES=		libtool tar:bzip2
-USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--enable-cxx
-INSTALL_TARGET+=install-strip
+CONFIGURE_ARGS=	--enable-cxx
+INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
 
 MPIR_VERSION=	10.6.0
 MPIRXX_VERSION=	4.4.0
@@ -42,6 +41,6 @@ post-install:
 	    ${STAGEDIR}${PREFIX}/lib/libmpirxx.so.${MPIRXX_VERSION:R:R}
 
 regression-test:
-	${MAKE} -C ${WRKSRC} check
+	${MAKE_CMD} -C ${WRKSRC} check
 
 .include <bsd.port.mk>
