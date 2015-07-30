@@ -1,3 +1,2 @@
 lib/security/pam_p11_opensc.so
 lib/security/pam_p11_openssh.so
-@dirrmtry lib/security
