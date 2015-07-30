@@ -473,7 +473,3 @@ man/man1/mhonarc.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ssbg75.jpg
 %%PORTDOCS%%%%DOCSDIR%%/stampwb2.png
 %%PORTDOCS%%%%DOCSDIR%%/up.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/resources
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/rcfileexs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/faq
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
