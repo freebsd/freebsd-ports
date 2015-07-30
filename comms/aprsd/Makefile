@@ -18,7 +18,7 @@ SUB_FILES=	pkg-message pkg-deinstall
 USE_RC_SUBR=	aprsd
 
 USERS=	aprsd tnc
-GROUPS=	aprsd tnc
+GROUPS=	aprsd dialer tnc
 APRSD_RC_USER=	aprsd
 APRSD_RC_GROUP=	aprsd
 

@@ -16,7 +16,7 @@ proxy:*:62:
 authpf:*:63:
 uucp:*:66:
 xten:*:67:
-dialer:*:68:
+dialer:*:68:aprsd
 network:*:69:
 pgsql:*:70:
 ircd:*:72:
