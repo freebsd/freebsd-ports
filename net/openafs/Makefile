@@ -1,7 +1,6 @@
 # $FreeBSD$
 
 PORTNAME=	openafs
-PORTREVISION=	1
 DISTVERSION=	${AFS_DISTVERSION}.${DBVERSION:S/-//g}
 CATEGORIES=	net
 MASTER_SITES=	http://dl.central.org/dl/openafs/${AFS_DISTVERSION}/:openafs \
@@ -22,7 +21,7 @@ LICENSE_NAME=	IBM Public License Version 1.0
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-AFS_DISTVERSION=	1.6.10
+AFS_DISTVERSION=	1.6.13
 DBVERSION=	2013-01-28
 
 USES=		cpe kmod tar:bzip2
