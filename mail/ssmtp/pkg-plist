@@ -3,4 +3,4 @@
 @(,ssmtp,640) etc/ssmtp/ssmtp.conf.sample
 man/man5/ssmtp.conf.5.gz
 man/man8/ssmtp.8.gz
-@dirrmtry(,ssmtp,750) etc/ssmtp
+@dir(,ssmtp,750) etc/ssmtp
