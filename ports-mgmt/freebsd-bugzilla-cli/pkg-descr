@@ -1,4 +1,17 @@
 CLI utilities and wrappers for FreeBSD's bugzilla instance with emphasis on 
 ports.  Provides a consistent API which can have pluggable backends.
 
+Supported Commands:
+ bz login
+ bz take
+ bz inprog
+ bz get
+ bz patch
+ bz close
+
+ bz overto
+
+Soon:
+ bz submit
+
 WWW: https://github.com/pgollucci/freebsd-bugzilla-cli
