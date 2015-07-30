@@ -3,6 +3,7 @@
 
 PORTNAME=	supybot
 PORTVERSION=	0.83.4.1
+PORTREVISION=	1
 CATEGORIES=	irc python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Supybot-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,24 +12,21 @@ DISTNAME=	Supybot-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Supybot - A Superb Python IRC bot
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USES=		python tar:bzip2
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGVERSION=	0.83.1+darcs
 PYDISTUTILS_EGGINFO=	supybot-${PORTVERSION}-py${PYTHON_VER}.egg-info
-
-DOCS=	ACKS ChangeLog INSTALL LICENSE README RELNOTES
-
-MAN1=	supybot.1 supybot-adduser.1 supybot-wizard.1 supybot-botchk.1 \
-	supybot-plugin-create.1 supybot-plugin-doc.1
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-.for f in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/docs/man/${f} ${STAGEDIR}${MAN1PREFIX}/man/man1
-.endfor
+	${INSTALL_MAN} ${WRKSRC}/docs/man/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in ${DOCS}
+.for f in ACKS ChangeLog README RELNOTES
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/docs/GETTING_STARTED ${STAGEDIR}${DOCSDIR}
