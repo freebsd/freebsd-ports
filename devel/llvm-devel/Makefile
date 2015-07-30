@@ -3,7 +3,7 @@
 
 PORTNAME=	llvm
 PORTVERSION=	3.8.d20150720
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-devel
 
@@ -165,7 +165,9 @@ MAN1SRCS+=	bugpoint.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 		llvm-extract.1 llvm-lib.1 llvm-link.1 llvm-nm.1 \
 		llvm-profdata.1 llvm-readobj.1 llvm-stress.1 llvm-symbolizer.1 \
 		opt.1 tblgen.1
+.if ${PORT_OPTIONS:MDOCS}
 PLIST_FILES+=	${MAN1SRCS:S|^|man/man1/|:S|.1$|${LLVM_SUFFIX}.1.gz|}
+.endif
 
 NOT_FOR_ARCH=	ia64
 
@@ -196,10 +198,6 @@ post-patch:
 	    ${WRKSRC}/utils/lit/lit.py ${WRKSRC}/utils/lit/lit/*.py
 
 post-install:
-#	${MV} ${STAGEDIR}${LLVM_PREFIX}/lib/${LIBNAME} \
-#	    ${STAGEDIR}${LLVM_PREFIX}/lib/${LIBNAME}.0
-#	${LN} -sf ${LIBNAME}.0 ${STAGEDIR}${LLVM_PREFIX}/lib/${LIBNAME}
-#	${STRIP_CMD} ${STRIP_LIBS:S|^|${STAGEDIR}${LLVM_PREFIX}/lib/|}
 .if ${PORT_OPTIONS:MCLANG}
 	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/clang \
 	    ${STAGEDIR}${LLVM_PREFIX}/bin/clang-cpp
@@ -245,9 +243,9 @@ post-install:
 	${MV} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/${_man} \
 	    ${STAGEDIR}${MANPREFIX}/man/man1/${_man:R}${LLVM_SUFFIX}.1
 .endfor
-.endif
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/
+.endif
 .if ${PORT_OPTIONS:MLLDB}
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/lib/python*/site-packages/lib
 .endif
@@ -278,9 +276,6 @@ build-plist:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/lit${LLVM_SUFFIX} -type f | \
 	    ${SED} -e 's|${STAGEDIR}${PYTHON_SITELIBDIR}|%%LIT%%%%PYTHON_SITELIBDIR%%|' | \
 	    ${SORT} >> ${PLIST}.tmp
-#	${FIND} ${STAGEDIR}${DOCSDIR} -type f | \
-#	    ${SED} -e 's|${STAGEDIR}${DOCSDIR}|%%PORTDOCS%%%%DOCSDIR%%|' | \
-#	    ${SORT} >> ${PLIST}.tmp
 	awk '{if ($$0 ~ /clang/ && $$0 !~ /omp.h/) {printf "%%%%CLANG%%%%"} if ($$0 ~ /lld/ && $$0 !~ /lldb/) {printf "%%%%LLD%%%%"} if ($$0 ~ /(argdumper|lldb)/) {printf "%%%%LLDB%%%%"} if ($$0 ~ /lib.*omp/) {printf "%%%%OPENMP%%%%"} print}' ${PLIST}.tmp >> ${PLIST}
 	${RM} -f ${PLIST}.tmp
 
