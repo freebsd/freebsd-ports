@@ -14,25 +14,44 @@
 %%WWWDIR%%/automatic_addressbook_backend.php
 %%WWWDIR%%/composer.json
 %%WWWDIR%%/config/config.inc.php.dist
+%%WWWDIR%%/localization/az_AZ.inc
 %%WWWDIR%%/localization/bg_BG.inc
+%%WWWDIR%%/localization/br.inc
+%%WWWDIR%%/localization/bs_BA.inc
+%%WWWDIR%%/localization/ca_ES.inc
+%%WWWDIR%%/localization/cs_CZ.inc
+%%WWWDIR%%/localization/cy_GB.inc
+%%WWWDIR%%/localization/de_CH.inc
 %%WWWDIR%%/localization/de_DE.inc
 %%WWWDIR%%/localization/el_GR.inc
 %%WWWDIR%%/localization/en_EN.inc
+%%WWWDIR%%/localization/en_GB.inc
 %%WWWDIR%%/localization/en_US.inc
 %%WWWDIR%%/localization/es_ES.inc
+%%WWWDIR%%/localization/et_EE.inc
+%%WWWDIR%%/localization/fa_IR.inc
+%%WWWDIR%%/localization/fi_FI.inc
 %%WWWDIR%%/localization/fr_FR.inc
 %%WWWDIR%%/localization/gl_ES.inc
+%%WWWDIR%%/localization/he_IL.inc
 %%WWWDIR%%/localization/hu_HU.inc
 %%WWWDIR%%/localization/it_IT.inc
+%%WWWDIR%%/localization/ja_JP.inc
 %%WWWDIR%%/localization/lt_LT.inc
+%%WWWDIR%%/localization/nb_NB.inc
 %%WWWDIR%%/localization/nl_NL.inc
 %%WWWDIR%%/localization/pl_PL.inc
+%%WWWDIR%%/localization/pt_BR.inc
 %%WWWDIR%%/localization/pt_BR.php
+%%WWWDIR%%/localization/pt_PT.inc
 %%WWWDIR%%/localization/ru_RU.inc
+%%WWWDIR%%/localization/sk_SK.inc
+%%WWWDIR%%/localization/sv_SE.inc
+%%WWWDIR%%/localization/tr_TR.inc
 %%WWWDIR%%/localization/vi_VN.inc
 %%WWWDIR%%/localization/zh_CN.inc
+%%WWWDIR%%/localization/zh_TW.inc
 %%WWWDIR%%/package.xml
-@dirrm %%WWWDIR%%/localization
-@dirrm %%WWWDIR%%/SQL
-@dirrmtry %%WWWDIR%%/config
-@dirrmtry %%WWWDIR%%
+@dir %%WWWDIR%%/localization
+@dir %%WWWDIR%%/SQL
+@dir %%WWWDIR%%/config
