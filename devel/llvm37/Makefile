@@ -40,6 +40,13 @@ CLANG_DESC=	Build clang
 CLANG_EXTRA_PATCHES= ${PATCHDIR}/clang-patch-tools_clang_lib_Headers_CMakeLists.txt
 CLANG_CONFLICTS_INSTALL=	clang-devel-3.[1234567]*
 CLANG_DISTFILES=	cfe-${DISTVERSION}.src${EXTRACT_SUFX}
+CLANG_CMAKE_ON=		-DCLANG_DEFAULT_OPENMP_RUNTIME=libomp
+CLANG_PORTDOCS=		clang
+DOCS_PORTDOCS=		llvm
+DOCS_CMAKE_ON=		-DLLVM_ENABLE_SPHINX=ON \
+			-DSPHINX_WARNINGS_AS_ERRORS=OFF \
+			-DLLVM_BUILD_DOCS=ON
+DOCS_PLIST_FILES=	${MAN1SRCS:S|^|man/man1/|:S|.1$|${LLVM_SUFFIX}.1.gz|}
 LIT_DESC=		Install lit and FileCheck test tools
 LLD_DESC=		Install lld, the LLVM linker
 LLD_DISTFILES=		lld-${DISTVERSION}.src${EXTRACT_SUFX}
@@ -47,7 +54,6 @@ LLDB_DESC=		Install lldb, the LLVM debugger
 LLDB_BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 LLDB_DISTFILES=		lldb-${DISTVERSION}.src${EXTRACT_SUFX}
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
-OPENMP_CONFLICTS_INSTALL=	libiomp5-devel-*
 OPENMP_DISTFILES=	openmp-${DISTVERSION}.src${EXTRACT_SUFX}
 
 # Emulate USE_GITHUB's ${WRKSRC_tag} to reduce diffs to ../llvm-devel
@@ -108,17 +114,6 @@ COMMANDS+=	clang \
 		clang-cpp \
 		clang-format
 MAN1SRCS+=	clang.1
-PORTDOCS+=	clang
-CMAKE_ARGS+=	-DCLANG_DEFAULT_OPENMP_RUNTIME=libomp
-GH_PROJECT+=	${_CLANG_GH_PROJECT}
-GH_TAGNAME+=	${_CLANG_GH_TAGNAME}
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-PORTDOCS+=	llvm
-CMAKE_ARGS+=	-DLLVM_ENABLE_SPHINX=ON \
-		-DSPHINX_WARNINGS_AS_ERRORS=OFF \
-		-DLLVM_BUILD_DOCS=ON
 .endif
 
 .if ${PORT_OPTIONS:MLIT}
@@ -130,8 +125,6 @@ LIT_COMMANDS=	lit llvm-lit FileCheck
 .if ${PORT_OPTIONS:MLLD}
 COMMANDS+=	lld
 PORTDOCS+=	lld
-GH_PROJECT+=	${_LLD_GH_PROJECT}
-GH_TAGNAME+=	${_LLD_GH_TAGNAME}
 .endif
 
 .if ${PORT_OPTIONS:MLLDB}
@@ -140,16 +133,12 @@ COMMANDS+=	argdumper \
 		lldb-mi \
 		lldb-server
 _USES_PYTHON=	python
-GH_PROJECT+=	${_LLDB_GH_PROJECT}
-GH_TAGNAME+=	${_LLDB_GH_TAGNAME}
 .endif
 
 .if ! ${OPTIONS_DEFINE:MOPENMP}
 # Hack to disable OPENMP in plist of unsupported architectures
 PLIST_SUB+=    OPENMP="@comment "
 .else
-GH_PROJECT+=	${_OPENMP_GH_PROJECT}
-GH_TAGNAME+=	${_OPENMP_GH_TAGNAME}
 .endif
 
 _USES_PYTHON?=	python:build
@@ -161,9 +150,6 @@ MAN1SRCS+=	bugpoint.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 		llvm-extract.1 llvm-link.1 llvm-nm.1 \
 		llvm-profdata.1 llvm-readobj.1 llvm-stress.1 llvm-symbolizer.1 \
 		opt.1 tblgen.1
-.if ${PORT_OPTIONS:MDOCS}
-PLIST_FILES+=	${MAN1SRCS:S|^|man/man1/|:S|.1$|${LLVM_SUFFIX}.1.gz|}
-.endif
 
 NOT_FOR_ARCH=	ia64
 
@@ -173,19 +159,17 @@ NOT_FOR_ARCH=	ia64
 BROKEN=	GCC failing on 8.x
 .endif
 
-post-extract:
-.if ${PORT_OPTIONS:MCLANG}
+post-extract-CLANG-on:
 	${MV} ${WRKSRC_clang} ${PATCH_WRKSRC}/tools/clang
-.endif
-.if ${PORT_OPTIONS:MLLD}
+
+post-extract-LLD-on:
 	${MV} ${WRKSRC_lld} ${PATCH_WRKSRC}/tools/lld
-.endif
-.if ${PORT_OPTIONS:MLLDB}
+
+post-extract-LLDB-on:
 	${MV} ${WRKSRC_lldb} ${PATCH_WRKSRC}/tools/lldb
-.endif
-.if ${PORT_OPTIONS:MOPENMP}
+
+post-extract-OPENMP-on:
 	${MV} ${WRKSRC_openmp} ${PATCH_WRKSRC}/tools/openmp
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|import lit|import lit${LLVM_SUFFIX}|' \
@@ -195,18 +179,34 @@ post-patch:
 
 post-install:
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/llvm/MC/MCAnalysis
-.if ${PORT_OPTIONS:MCLANG}
-	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/clang \
-	    ${STAGEDIR}${LLVM_PREFIX}/bin/clang-cpp
-.endif
 	${INSTALL_SCRIPT} ${WRKDIR}/llvm-wrapper.sh \
 	    ${STAGEDIR}${PREFIX}/bin/${FIRST_COMMAND}${LLVM_SUFFIX}
 .for command in ${COMMANDS:C/^/XXXX/1:NXXXX*}
-	test -e ${STAGEDIR}${LLVM_PREFIX}/bin/${command}
 	${LN} -f ${STAGEDIR}${PREFIX}/bin/${FIRST_COMMAND}${LLVM_SUFFIX} \
 	    ${STAGEDIR}${PREFIX}/bin/${command}${LLVM_SUFFIX}
 .endfor
-.if ${PORT_OPTIONS:MLIT}
+
+post-install-DOCS-on:
+	${MV} ${STAGEDIR}${LLVM_PREFIX}/share/doc ${STAGEDIR}${DOCSDIR}
+.for _man in ${MAN1SRCS}
+	${MV} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/${_man} \
+	    ${STAGEDIR}${MANPREFIX}/man/man1/${_man:R}${LLVM_SUFFIX}.1
+.endfor
+.if ! ${PORT_OPTIONS:MLIT}
+	${RM} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/lit.1
+	${RM} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/FileCheck.1
+.endif
+	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/
+	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/
+
+post-install-LLDB-on:
+	${RM} ${STAGEDIR}${LLVM_PREFIX}/lib/python*/site-packages/lib
+
+post-install-CLANG-on:
+	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/clang \
+	   ${STAGEDIR}${LLVM_PREFIX}/bin/clang-cpp
+
+post-install-LIT-on:
 	${INSTALL_SCRIPT} ${PATCH_WRKSRC}/utils/lit/lit.py \
 	    ${STAGEDIR}${LLVM_PREFIX}/bin/lit
 	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/lit \
@@ -222,30 +222,6 @@ post-install:
 	    ${STAGEDIR}${LLVM_PREFIX}/bin/
 	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/FileCheck \
 	    ${STAGEDIR}${PREFIX}/bin/FileCheck${LLVM_SUFFIX}
-.else
-	${RM} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/lit.1
-	${RM} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/FileCheck.1
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${MV} ${STAGEDIR}${LLVM_PREFIX}/share/doc/llvm ${STAGEDIR}${DOCSDIR}
-.if ${PORT_OPTIONS:MCLANG}
-	${MV} ${STAGEDIR}${LLVM_PREFIX}/share/doc/clang ${STAGEDIR}${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MLLD}
-	${MV} ${STAGEDIR}${LLVM_PREFIX}/share/doc/lld ${STAGEDIR}${DOCSDIR}
-.endif
-	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/doc
-.for _man in ${MAN1SRCS}
-	${MV} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/${_man} \
-	    ${STAGEDIR}${MANPREFIX}/man/man1/${_man:R}${LLVM_SUFFIX}.1
-.endfor
-	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/
-	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/
-.endif
-.if ${PORT_OPTIONS:MLLDB}
-	${RM} ${STAGEDIR}${LLVM_PREFIX}/lib/python*/site-packages/lib
-.endif
 
 TEST_CMD=	'(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} LD_LIBRARY_PATH=${WRKSRC}/Release/lib ${MAKE_CMD} check-local-lit)'
 regression-test: ${BUILD_COOKIE}
@@ -278,5 +254,10 @@ build-plist:
 #	    ${SORT} >> ${PLIST}.tmp
 	awk '{if ($$0 ~ /clang/ && $$0 !~ /omp.h/) {printf "%%%%CLANG%%%%"} if ($$0 ~ /lld/ && $$0 !~ /lldb/) {printf "%%%%LLD%%%%"} if ($$0 ~ /(argdumper|lldb)/) {printf "%%%%LLDB%%%%"} if ($$0 ~ /lib.*omp/) {printf "%%%%OPENMP%%%%"} print}' ${PLIST}.tmp >> ${PLIST}
 	${RM} -f ${PLIST}.tmp
+
+check-commands:
+.for command in ${COMMANDS}
+	test -e ${STAGEDIR}${LLVM_PREFIX}/bin/${command}
+.endfor
 
 .include <bsd.port.post.mk>
