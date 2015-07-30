@@ -6,8 +6,8 @@ PORTVERSION=	0.2.6
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-DIST_SUBDIR=	PECL
 DISTNAME=	Weakref-${PORTVERSION}
+DIST_SUBDIR=	PECL
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Weakref class
@@ -20,6 +20,6 @@ USE_PHP=	pcre
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
 
-CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.mk>
