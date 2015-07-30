@@ -1,4 +1,5 @@
 @comment common files list
+bin/ipmi_sim
 bin/ipmi_ui
 bin/ipmicmd
 bin/ipmilan
@@ -6,7 +7,11 @@ bin/ipmish
 bin/openipmicmd
 bin/openipmish
 bin/rmcp_ping
+bin/sdrcomp
 bin/solterm
+etc/ipmi/ipmisim1.emu
+etc/ipmi/lan.conf
+include/OpenIPMI/extcmd.h
 include/OpenIPMI/internal/ilist.h
 include/OpenIPMI/internal/ipmi_control.h
 include/OpenIPMI/internal/ipmi_domain.h
@@ -47,15 +52,21 @@ include/OpenIPMI/ipmi_sdr.h
 include/OpenIPMI/ipmi_smi.h
 include/OpenIPMI/ipmi_sol.h
 include/OpenIPMI/ipmi_solparm.h
+include/OpenIPMI/ipmi_string.h
 include/OpenIPMI/ipmi_tcl.h
 include/OpenIPMI/ipmi_types.h
 include/OpenIPMI/ipmi_ui.h
 include/OpenIPMI/ipmi_user.h
 include/OpenIPMI/ipmiif.h
 include/OpenIPMI/lanserv.h
+include/OpenIPMI/mcserv.h
+include/OpenIPMI/msg.h
 include/OpenIPMI/mxp.h
 include/OpenIPMI/os_handler.h
+include/OpenIPMI/persist.h
 include/OpenIPMI/selector.h
+include/OpenIPMI/serserv.h
+include/OpenIPMI/serv.h
 lib/libIPMIlanserv.a
 lib/libIPMIlanserv.so
 lib/libIPMIlanserv.so.0
@@ -90,12 +101,15 @@ libdata/pkgconfig/OpenIPMIposix.pc
 libdata/pkgconfig/OpenIPMIpthread.pc
 libdata/pkgconfig/OpenIPMIui.pc
 libdata/pkgconfig/OpenIPMIutils.pc
+man/man1/ipmi_sim.1.gz
 man/man1/ipmi_ui.1.gz
 man/man1/openipmicmd.1.gz
 man/man1/openipmigui.1.gz
 man/man1/openipmish.1.gz
 man/man1/rmcp_ping.1.gz
 man/man1/solterm.1.gz
+man/man5/ipmi_lan.5.gz
+man/man5/ipmi_sim_cmd.5.gz
 man/man7/ipmi_cmdlang.7.gz
 man/man7/openipmi_conparms.7.gz
 man/man8/ipmilan.8.gz
