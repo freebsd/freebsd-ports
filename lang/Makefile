@@ -33,7 +33,6 @@
     SUBDIR += chicken
     SUBDIR += cint
     SUBDIR += cjs
-    SUBDIR += clang-cheri
     SUBDIR += clang-devel
     SUBDIR += clang33
     SUBDIR += clang34
