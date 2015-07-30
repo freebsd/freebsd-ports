@@ -248,7 +248,8 @@ build-plist:
 	${FIND} ${STAGEDIR}${LLVM_PREFIX} -type f -o -type l | \
 	    ${GREP} -v 'lit$$' | ${GREP} -v 'FileCheck$$' | \
 	    ${GREP} -v man/man1 | ${SED} -e 's|${STAGEDIR}${PREFIX}/||' \
-	    -e 's|${PORTVERSION}|%%PORTVERSION%%|' | \
+	    -e 's|${PORTVERSION}|%%PORTVERSION%%|' \
+	    -e 's|release.cmake|%%CMAKE_BUILD_TYPE%%.cmake|' | \
 	    ${SORT} >> ${PLIST}.tmp
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/lit${LLVM_SUFFIX} -type f | \
 	    ${SED} -e 's|${STAGEDIR}${PYTHON_SITELIBDIR}|%%LIT%%%%PYTHON_SITELIBDIR%%|' | \
