@@ -2,4 +2,3 @@
 %%PLUGDIR%%/README
 %%PLUGDIR%%/config.inc.php.dist
 %%PLUGDIR%%/login_info.php
-@dirrmtry %%PLUGDIR%%
