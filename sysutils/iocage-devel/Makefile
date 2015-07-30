@@ -3,7 +3,7 @@
 
 PORTNAME=	iocage
 PORTVERSION=	1.6.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pannon
-GH_TAGNAME=	31e7a81
+GH_TAGNAME=	cc25e4
 
 .include <bsd.port.pre.mk>
 
