@@ -18,6 +18,7 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	roundcube>=0.8:${PORTSDIR}/mail/roundcube
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 WWWDIR=		${PREFIX}/www/roundcube/plugins/sauserprefs
 
