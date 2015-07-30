@@ -283,12 +283,12 @@ NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 # XXX once WITH_DEBUG is not magic any more, do remove the :NDEBUG from here.
 .for opt in ${ALL_OPTIONS:NDEBUG}
 .if defined(WITH_${opt})
-OPTIONS_WARNINGS+= "WITH_${opt}"
+OPTIONS_WARNINGS+=	"WITH_${opt}"
 OPTIONS_WARNINGS_SET+=	${opt}
 PORT_OPTIONS+=	${opt}
 .endif
 .if defined(WITHOUT_${opt})
-OPTIONS_WARNINGS+= "WITHOUT_${opt}"
+OPTIONS_WARNINGS+=	"WITHOUT_${opt}"
 OPTIONS_WARNINGS_UNSET+=	${opt}
 PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
 .endif
@@ -474,7 +474,7 @@ ${deptype}_DEPENDS+=	${${opt}_${deptype}_DEPENDS}
 .    endfor
 .    for target in ${_OPTIONS_TARGETS}
 .      for prepost in pre post
-_OPTIONS_${prepost}_${target}+= ${prepost}-${target}-${opt}-on
+_OPTIONS_${prepost}_${target}+=	${prepost}-${target}-${opt}-on
 .      endfor
 .    endfor
 .  else
@@ -511,7 +511,7 @@ ${deptype}_DEPENDS+=	${${opt}_${deptype}_DEPENDS_OFF}
 .    endfor
 .    for target in ${_OPTIONS_TARGETS}
 .      for prepost in pre post
-_OPTIONS_${prepost}_${target}+= ${prepost}-${target}-${opt}-off
+_OPTIONS_${prepost}_${target}+=	${prepost}-${target}-${opt}-off
 .      endfor
 .    endfor
 .  endif
