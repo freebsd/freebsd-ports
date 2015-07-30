@@ -39,7 +39,7 @@ check_dep() {
 		if [ -d ${1} ]; then
 			echo ${d}
 		elif [ "$arg" = "limited" ]; then
-			break
+			continue
 		fi
 		shift
 		check_dep $@
