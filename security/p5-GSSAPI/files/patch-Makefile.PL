@@ -1,12 +1,11 @@
 --- Makefile.PL.orig	2010-04-24 12:37:38 UTC
 +++ Makefile.PL
-@@ -12,8 +12,7 @@ my @whichcand = qw(/bin/which /usr/bin/w
+@@ -210,7 +210,7 @@ sub find_krb5config_cmd {
+    my $r = undef;
+    unless ($expl_path) {
+       #my $whichcmd =  find_which_command() || die 'cannot locate which command';
+-      $r = `which krb5-config 2>/dev/null`;
++      $r = '%%KRB5CONF%%';
  
- my @KRB5_CONFIG_TRIES = (
- 
--    '/usr/kerberos/bin/krb5-config',   # for use with CentOS,  as suggested by Mark Hedges in https://rt.cpan.org/Ticket/Display.html?id=48732
--    '/usr/bin/krb5-config',            # always worth a try ;-)
-+    '%%KRB5CONF%%',      # for use with FreeBSD
- 
- );
- 
+       chomp $r;
+       unless ( $r ) {
