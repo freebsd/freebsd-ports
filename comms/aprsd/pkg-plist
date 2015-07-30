@@ -5,7 +5,6 @@ etc/aprsd/RESTORE.TNC.samp
 etc/aprsd/aprsd.conf.samp
 etc/aprsd/user.deny.samp
 etc/aprsd/welcome.txt.samp
-etc/rc.d/aprsd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/chkaprsd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/udp_example
 %%PORTDOCS%%%%DOCSDIR%%/aprsddoc.html
