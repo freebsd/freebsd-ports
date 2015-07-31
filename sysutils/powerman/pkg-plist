@@ -73,4 +73,4 @@ sbin/httppower
 sbin/plmpower
 sbin/powermand
 sbin/vpcd
-@dir /var/run/powerman
+@dir(daemon,,) /var/run/powerman
