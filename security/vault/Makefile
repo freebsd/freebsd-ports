@@ -2,6 +2,7 @@
 
 PORTNAME=	vault
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -18,7 +19,7 @@ STRIP=		# stripping can break go binaries
 USE_RC_SUBR=	vault
 
 USERS=		vault
-GRUOPS=		vault
+GROUPS=		vault
 
 PLIST_FILES=	bin/${PORTNAME}
 
