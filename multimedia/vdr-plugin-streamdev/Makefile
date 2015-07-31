@@ -3,6 +3,7 @@
 
 PORTNAME=	vdr-plugin-streamdev
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/1580/:release \
 		LOCAL/nox:snapshot
@@ -13,7 +14,8 @@ COMMENT=	Video Disk Recorder - stream device plugin
 
 RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 
-USES=		tar:tgz
+USES=		shebangfix tar:tgz
+SHEBANG_FILES=	streamdev-server/externremux.sh
 PORTDOCS=	COPYING README HISTORY
 HAVE_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
