@@ -40,7 +40,7 @@ WANT_UNICODE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-LIBS+=		-lgeos_c
+LIBS+=		-lgeos_c -lsqlite3
 
 PLIST_FILES=	bin/LibreAtlas
 
