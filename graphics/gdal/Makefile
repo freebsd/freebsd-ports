@@ -61,7 +61,7 @@ CURL_CONFIGURE_OFF=	--with-curl=no
 CURL_CONFIGURE_ON=	--with-curl=${LOCALBASE}/bin/curl-config
 CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 ECW_CONFIGURE_OFF=	--with-ecw=no
-ECW_CONFIGURE_ON=	--with-ecw=${LOCALBASE}
+ECW_CONFIGURE_ON=	--with-ecw=yes
 ECW_LIB_DEPENDS=	libNCSEcw.so:${PORTSDIR}/graphics/libecwj2
 EXPAT_CONFIGURE_OFF=	--with-expat=no
 EXPAT_CONFIGURE_ON=	--with-expat=${LOCALBASE}
