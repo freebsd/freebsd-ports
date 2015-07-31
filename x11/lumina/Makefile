@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	lumina
-PORTVERSION=	0.8.5
-PORTREVISION=	3
+PORTVERSION=	0.8.6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11
 
 MAINTAINER=	kmoore@FreeBSD.org
-COMMENT=	Lumina Desktop Environment (0.8.5-release)
+COMMENT=	Lumina Desktop Environment (0.8.6-release)
 
 LICENSE=	BSD3CLAUSE
 
@@ -43,11 +43,8 @@ USE_QT5=	core gui network quick svg linguist multimedia imageformats \
 USES=		qmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	pcbsd
-GH_TAGNAME=	v0.8.5-Release
+GH_TAGNAME=	v0.8.6-Release
 
-QMAKE_ARGS=	CONFIG+="configure"
-
-post-install:
-	${RM} -rf ${STAGEDIR}${PREFIX}/share/Lumina-DE/i18n
+QMAKE_ARGS=	CONFIG+="configure NO_I18N"
 
 .include <bsd.port.mk>
