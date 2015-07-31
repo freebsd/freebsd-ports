@@ -23,6 +23,8 @@ SUB_FILES=	hdb
 PORTDOCS=	README README.licenses README.unixthanks license.txt
 
 BROKEN=		Does not fetch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-08-31
 
 .include <bsd.port.pre.mk>
 

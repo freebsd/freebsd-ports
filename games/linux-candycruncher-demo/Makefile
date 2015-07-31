@@ -25,6 +25,8 @@ LIBFILES=	libcrypto.so.0.9.8 libgrapple-0.9.so.2 liblua.so liblualib.so \
 		libssl.so.0.9.8
 
 BROKEN=		Does not fetch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-08-31
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
