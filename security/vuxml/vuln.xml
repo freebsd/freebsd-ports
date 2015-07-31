@@ -58,6 +58,36 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="381183e8-3798-11e5-9970-14dae9d210b8">
+    <topic>net-snmp -- snmp_pdu_parse() function incomplete initialization</topic>
+    <affects>
+      <package>
+	<name>net-snmp</name>
+	<range><le>5.7.3_7</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Qinghao Tang reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2015/q2/116">
+	  <p>Incompletely initialized vulnerability exists in the function
+	    ‘snmp_pdu_parse()’ of ‘snmp_api.c', and remote attackers can cause memory
+	    leak, DOS and possible command executions by sending malicious packets.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://seclists.org/oss-sec/2015/q2/116</url>
+      <url>http://sourceforge.net/p/net-snmp/code/ci/f23bcd3ac6ddee5d0a48f9703007ccc738914791/</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=1212408</url>
+      <cvename>CVE-2015-5621</cvename>
+    </references>
+    <dates>
+      <discovery>2015-04-11</discovery>
+      <entry>2015-07-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="731cdeaa-3564-11e5-9970-14dae9d210b8">
     <topic>bind -- denial of service vulnerability</topic>
     <affects>
