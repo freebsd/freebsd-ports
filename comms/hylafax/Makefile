@@ -3,7 +3,7 @@
 
 PORTNAME=	hylafax
 PORTVERSION=	6.0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.hylafax.org/source/
 
@@ -75,12 +75,12 @@ post-patch:
 		-e 's,/usr/local,${LOCALBASE},g' \
 		-e 's,-ljbig,-L${LOCALBASE}/lib &,' \
 		${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's,-O hfaxd.conf,-O hfaxd.conf-dist,' \
+	${REINPLACE_CMD} -e 's,-O hfaxd.conf,-O hfaxd.conf.sample,' \
 		${WRKSRC}/hfaxd/Makefile.in
-	${REINPLACE_CMD} -e 's,hosts.hfaxd,hosts.hfaxd-dist,' \
+	${REINPLACE_CMD} -e 's,hosts.hfaxd,hosts.hfaxd.sample,' \
 		${WRKSRC}/etc/Makefile.in
-	${REINPLACE_CMD} -e 's,-O typerules,-O typerules-dist,' \
-		-e 's,-O pagesizes,-O pagesizes-dist -src pagesizes,' \
+	${REINPLACE_CMD} -e 's,-O typerules,-O typerules.sample,' \
+		-e 's,-O pagesizes,-O pagesizes.sample -src pagesizes,' \
 		${WRKSRC}/libhylafax/Makefile.in
 
 pre-install:
