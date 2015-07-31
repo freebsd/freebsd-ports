@@ -1,4 +1,5 @@
 %%DATADIR%%/_util.sh
+%%DATADIR%%/_version.sh
 %%DATADIR%%/close.sh
 %%DATADIR%%/comment.sh
 %%DATADIR%%/get.sh
