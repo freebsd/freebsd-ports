@@ -55,6 +55,7 @@ share/appcafe/html/images/working.gif
 share/appcafe/html/include/Mobile_Detect.php
 share/appcafe/html/include/header.php
 share/appcafe/html/include/functions.php
+share/appcafe/html/include/functions-config.php
 share/appcafe/html/include/footer.php
 share/appcafe/html/include/globals.php
 share/appcafe/html/include/leftmenu.php
@@ -68,12 +69,13 @@ share/appcafe/html/pages/appinfo.php
 share/appcafe/html/pages/dispatcher.php
 share/appcafe/html/pages/error.php
 share/appcafe/html/pages/exportpbis.php
-share/appcafe/html/pages/jails.php
-share/appcafe/html/pages/jailcreate.php
-share/appcafe/html/pages/jailinfo.php
+share/appcafe/html/pages/plugins.php
+share/appcafe/html/pages/pluginconfig.php
+share/appcafe/html/pages/plugininfo.php
 share/appcafe/html/pages/main.php
 share/appcafe/html/pages/notifier.php
 share/appcafe/html/pages/sysapp.php
+share/appcafe/html/pages/sysplugins.php
 share/appcafe/html/js/appcafe.js
 share/appcafe/html/js/cssmenu.js
 share/appcafe/html/js/doubletaptogo.js
