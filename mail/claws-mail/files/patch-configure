@@ -1,6 +1,23 @@
---- configure.orig	2013-12-14 14:13:44.125318907 +0100
-+++ configure	2013-12-14 14:15:18.705347095 +0100
-@@ -21459,7 +21459,6 @@
+--- configure.orig	2015-07-19 11:19:39 UTC
++++ configure
+@@ -20652,7 +20652,7 @@ $as_echo "#define HAVE_LIBSOUP_GNOME 1" 
+ fi
+ 
+ 
+-
++OLDLIBS=$LIBS
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for archive_read_new in -larchive" >&5
+ $as_echo_n "checking for archive_read_new in -larchive... " >&6; }
+ if ${ac_cv_lib_archive_archive_read_new+:} false; then :
+@@ -20697,6 +20697,7 @@ else
+   HAVE_ARCHIVE=no
+ 
+ fi
++LIBS=$OLDLIBS
+ 
+ 
+ 
+@@ -21553,7 +21554,6 @@ $as_echo "$as_me: WARNING: python-config
  		if test x"$platform_win32" = xno; then
  			# libpython.so
  			PYTHON_SHARED_LIB="libpython${PYTHON_VERSION}.so"
