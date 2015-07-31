@@ -3,6 +3,7 @@
 
 PORTNAME=	vagrant
 PORTVERSION=	1.7.4
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils rubygems devel
 
@@ -34,6 +35,10 @@ RUN_DEPENDS=	rubygem-bundler>=1.5.3:${PORTSDIR}/sysutils/rubygem-bundler \
 USE_GITHUB=	yes
 GH_ACCOUNT=	mitchellh
 
+USES=		shebangfix
+SHEBANG_FILES=	scripts/bintray_upload.sh \
+		scripts/website_push_docs.sh \
+		scripts/website_push_www.sh
 USE_RUBY=	yes
 GEMFILES=	vagrant-${PORTVERSION}.gem
 RUBYGEMBIN=	gem${RUBY_SUFFIX}
@@ -41,6 +46,7 @@ PLIST_SUB+=	GEMS_DIR="lib/ruby/gems/${RUBY_VER}/" \
 		GEM_BASE_DIR="lib/ruby/gems/${RUBY_VER}/gems" \
 		DOC_DIR="lib/ruby/gems/${RUBY_VER}/doc" \
 		PORTVERSION="${PORTVERSION}"
+NO_ARCH=	yes
 
 RUBYGEM_ARGS=	--no-ri --no-rdoc -l --no-update-sources \
 		--install-dir ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER} \
