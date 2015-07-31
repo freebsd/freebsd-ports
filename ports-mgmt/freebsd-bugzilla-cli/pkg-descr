@@ -12,5 +12,6 @@ Supported Commands:
  bz close
 
  bz overto
+ bz timeout
 
 WWW: https://github.com/pgollucci/freebsd-bugzilla-cli
