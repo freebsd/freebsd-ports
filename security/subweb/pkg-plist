@@ -1,3 +1,2 @@
 bin/subweb
 %%PORTDOCS%%share/doc/subweb/README
-%%PORTDOCS%%@dirrm share/doc/subweb
