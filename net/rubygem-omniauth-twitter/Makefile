@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	omniauth-twitter
-PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
