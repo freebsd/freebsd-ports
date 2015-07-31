@@ -3,6 +3,7 @@
 
 PORTNAME=	xpra
 PORTVERSION=	0.15.3
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://xpra.org/src/
 
@@ -26,6 +27,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/lz4.so:${PORTSDIR}/archivers/py-lz4 \
 		ssh-askpass:${PORTSDIR}/security/openssh-askpass \
 		setxkbmap:${PORTSDIR}/x11/setxkbmap \
 		xauth:${PORTSDIR}/x11/xauth \
+		xkbcomp:${PORTSDIR}/x11/xkbcomp \
+		${LOCALBASE}/share/X11/xkb/rules/base:${PORTSDIR}/x11/xkeyboard-config \
 		Xvfb:${PORTSDIR}/x11-servers/xorg-vfbserver \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2 \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/gtkgl/__init__.py:${PORTSDIR}/x11-toolkits/py-gtkglext
