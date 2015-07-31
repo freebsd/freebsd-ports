@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lumina-i18n
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.6
 CATEGORIES=	x11
 
 MAINTAINER=	kmoore@FreeBSD.org
@@ -17,7 +17,7 @@ NO_BUILD=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pcbsd
-GH_TAGNAME=	v0.8.5-Release
+GH_TAGNAME=	v0.8.6-Release
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/Lumina-DE/i18n
