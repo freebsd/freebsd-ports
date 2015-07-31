@@ -12,7 +12,7 @@ COMMENT=	Clang for CloudABI
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	clang-devel:${PORTSDIR}/lang/clang-devel \
+RUN_DEPENDS=	clang-devel:${PORTSDIR}/devel/llvm-devel \
 		x86_64-unknown-cloudabi-ld:${PORTSDIR}/devel/cloudabi-binutils
 
 NO_BUILD=	yes
