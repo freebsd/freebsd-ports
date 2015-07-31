@@ -3503,7 +3503,7 @@ Notes:
     <affects>
       <package>
 	<name>chicken</name>
-	<range><lt>4.10.0,1</lt></range>
+	<range><lt>4.10.0.r2,1</lt></range>
       </package>
     </affects>
     <description>
@@ -3524,11 +3524,12 @@ Notes:
       <freebsdpr>ports/200980</freebsdpr>
       <mlist>http://lists.nongnu.org/archive/html/chicken-announce/2015-06/msg00010.html</mlist>
       <mlist>http://lists.nongnu.org/archive/html/chicken-hackers/2015-06/msg00037.html</mlist>
+      <mlist>http://lists.nongnu.org/archive/html/chicken-announce/2015-07/msg00001.html</mlist>
     </references>
     <dates>
       <discovery>2015-06-15</discovery>
       <entry>2015-06-22</entry>
-      <modified>2015-06-23</modified>
+      <modified>2015-07-31</modified>
     </dates>
   </vuln>
 
