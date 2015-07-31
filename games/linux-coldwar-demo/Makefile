@@ -25,6 +25,8 @@ OPTIONS_DEFINE=	NVIDIA DOCS
 NVIDIA_DESC=	Enable nvidia graphics driver support
 
 BROKEN=		Does not fetch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-08-31
 
 .include <bsd.port.options.mk>
 
