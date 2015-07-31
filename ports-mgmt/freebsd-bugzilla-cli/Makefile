@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freebsd-bugzilla-cli
-PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTVERSION=	0.3.0
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	GH
 
