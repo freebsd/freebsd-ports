@@ -21,7 +21,6 @@
 %%PYBUGZ%%%%DATADIR%%/pybugz/inprog.sh
 %%PYBUGZ%%%%DATADIR%%/pybugz/login.sh
 %%PYBUGZ%%%%DATADIR%%/pybugz/overto.sh
-%%PYBUGZ%%%%DATADIR%%/pybugz/patch.sh
 %%PYBUGZ%%%%DATADIR%%/pybugz/search.sh
 %%PYBUGZ%%%%DATADIR%%/pybugz/submit.sh
 %%PYBUGZ%%%%DATADIR%%/pybugz/take.sh
