@@ -97,7 +97,6 @@ share/applications/pcbugreport.desktop
 share/applications/pccontrol.desktop
 share/applications/pc-pdfviewer.desktop
 share/applications/pcsyskeyboard.desktop
-share/applications/warden.desktop
 share/applications/softmanager.desktop
 share/apps/ksplash/Themes/pcbsd10/1024x768/background.png
 share/apps/ksplash/Themes/pcbsd10/1280x1024/background.png
@@ -139,7 +138,6 @@ share/pcbsd/icons/input-keyboard.png
 share/pcbsd/icons/ldap.png
 share/pcbsd/icons/mythtv.png
 share/pcbsd/icons/pc-bootconfig.png
-share/pcbsd/icons/pc-dmconf.png
 share/pcbsd/icons/pcbsd-handbook.png
 share/pcbsd/icons/preferences-desktop-theme.png
 share/pcbsd/icons/preferences-desktop.png
@@ -269,7 +267,6 @@ share/pcbsd/pc-controlpanel/items/tools/flash-player-properties.desktop
 share/pcbsd/pc-controlpanel/items/tools/kde-kcmdf.desktop
 share/pcbsd/pc-controlpanel/items/tools/lifepreserver.desktop
 share/pcbsd/pc-controlpanel/items/tools/pcbugreport.desktop
-share/pcbsd/pc-controlpanel/items/tools/warden.desktop
 share/pcbsd/pc-controlpanel/items/tools/x11vnc.desktop
 share/pcbsd/pc-hwdetect/agp.xml
 share/pcbsd/pc-hwdetect/audio.xml
@@ -464,7 +461,9 @@ share/pcbsd/xorg-gui/templates/header/vmware.xorg.conf
 share/pcbsd/xorg-gui/templates/header/vmwlegacy.xorg.conf
 share/pcbsd/xorg-gui/templates/header/xorg.conf.generic
 share/pcbsd/xorg-gui/templates/scripts/README
+share/pcbsd/xstartup/disable-beep.sh
 share/pcbsd/xstartup/enable-ibus.sh
+share/pcbsd/xstartup/enable-xprofile.sh
 share/pcbsd/xstartup/gpg-agent.sh
 share/pcbsd/xstartup/ssh-agent.sh
 share/wallpapers/FreeBSD/a_1280x1024.jpg
@@ -513,5 +512,3 @@ share/wallpapers/pcbsd10-default/contents/images/1920x1200.jpg
 share/wallpapers/pcbsd10-default/contents/images/800x600.jpg
 share/wallpapers/pcbsd10-default/contents/screenshot.jpg
 share/wallpapers/pcbsd10-default/metadata.desktop
-share/warden/bin/warden-gui
-share/warden/images/warden.png
