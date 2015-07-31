@@ -3,6 +3,7 @@
 
 PORTNAME=	osmo
 PORTVERSION=	0.2.12
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}-pim/${PORTNAME}-pim/${PORTNAME}-${PORTVERSION}
 
@@ -10,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Personal organizer
 
 LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libical.so:${PORTSDIR}/devel/libical \
 		libnotify.so:${PORTSDIR}/devel/libnotify \
@@ -17,11 +19,10 @@ LIB_DEPENDS=	libical.so:${PORTSDIR}/devel/libical \
 		libgtkspell.so:${PORTSDIR}/textproc/gtkspell \
 		libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
 
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake libarchive pkgconfig
 USE_GNOME=	gtk20 libxml2
 USE_SQLITE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBARCHIVE_CFLAGS=" " LIBARCHIVE_LIBS="-larchive"
 INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
