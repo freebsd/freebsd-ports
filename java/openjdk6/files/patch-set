@@ -1108,7 +1108,13 @@
  # include <signal.h>
  # include <errno.h>
  # include <dlfcn.h>
-@@ -131,6 +130,19 @@
+@@ -126,11 +125,25 @@
+ # include <sys/shm.h>
+ #ifndef __APPLE__
+ # include <link.h>
++# include <stdlib.h>
+ #endif
+ # include <stdint.h>
  # include <inttypes.h>
  # include <sys/ioctl.h>
  
@@ -1128,7 +1134,7 @@
  #if defined(__FreeBSD__) || defined(__NetBSD__)
  # include <elf.h>
  #endif
-@@ -162,8 +174,10 @@
+@@ -162,8 +175,10 @@
  #endif
  
  int (*os::Bsd::_clock_gettime)(clockid_t, struct timespec *) = NULL;
@@ -1140,7 +1146,7 @@
  Mutex* os::Bsd::_createThread_lock = NULL;
  #endif
  pthread_t os::Bsd::_main_thread;
-@@ -171,7 +185,11 @@
+@@ -171,7 +186,11 @@
  #ifndef _ALLBSD_SOURCE
  bool os::Bsd::_is_floating_stack = false;
  bool os::Bsd::_is_NPTL = false;
@@ -1152,7 +1158,7 @@
  const char * os::Bsd::_glibc_version = NULL;
  const char * os::Bsd::_libpthread_version = NULL;
  #endif
-@@ -205,6 +223,28 @@
+@@ -205,6 +224,28 @@
  
  julong os::Bsd::available_memory() {
  #ifdef _ALLBSD_SOURCE
@@ -1181,7 +1187,7 @@
    // XXXBSD: this is just a stopgap implementation
    return physical_memory() >> 2;
  #else
-@@ -221,6 +261,17 @@
+@@ -221,6 +262,17 @@
  }
  
  julong os::allocatable_physical_memory(julong size) {
@@ -1199,7 +1205,7 @@
  #ifdef _LP64
    return size;
  #else
-@@ -308,16 +359,22 @@
+@@ -308,16 +360,22 @@
  #define COMPILER_VARIANT "client"
  #endif
  
@@ -1226,7 +1232,7 @@
    int rslt = syscall(SYS_gettid);
    if (rslt == -1) {
       // old kernel, no NPTL support
-@@ -325,6 +382,7 @@
+@@ -325,6 +383,7 @@
    } else {
       return (pid_t)rslt;
    }
@@ -1234,7 +1240,7 @@
  }
  
  // Most versions of bsd have a bug where the number of processors are
-@@ -337,7 +395,35 @@
+@@ -337,7 +396,35 @@
                       "environment on Bsd when /proc filesystem is not mounted.";
  #endif
  
@@ -1271,7 +1277,7 @@
  void os::Bsd::initialize_system_info() {
    int mib[2];
    size_t len;
-@@ -452,7 +538,7 @@
+@@ -452,7 +539,7 @@
   *        7: The default directories, normally /lib and /usr/lib.
   */
  #ifndef DEFAULT_LIBPATH
@@ -1280,7 +1286,7 @@
  #endif
  
  #define EXTENSIONS_DIR  "/lib/ext"
-@@ -997,7 +1083,7 @@
+@@ -997,7 +1084,7 @@
      return NULL;
    }
  
@@ -1289,7 +1295,7 @@
  #ifdef __APPLE__
    // thread_id is mach thread on macos
    osthread->set_thread_id(::mach_thread_self());
-@@ -1009,6 +1095,7 @@
+@@ -1009,6 +1096,7 @@
    // thread_id is kernel thread id (similar to Solaris LWP id)
    osthread->set_thread_id(os::Bsd::gettid());
  
@@ -1297,7 +1303,7 @@
    if (UseNUMA) {
      int lgrp_id = os::numa_get_group_id();
      if (lgrp_id != -1) {
-@@ -1016,6 +1103,7 @@
+@@ -1016,6 +1104,7 @@
      }
    }
  #endif
@@ -1305,7 +1311,7 @@
    // initialize signal mask for this thread
    os::Bsd::hotspot_sigmask(thread);
  
-@@ -1105,7 +1193,7 @@
+@@ -1105,7 +1194,7 @@
      // let pthread_create() pick the default value.
    }
  
@@ -1314,7 +1320,7 @@
    // glibc guard page
    pthread_attr_setguardsize(&attr, os::Bsd::default_guard_size(thr_type));
  #endif
-@@ -1194,7 +1282,7 @@
+@@ -1194,7 +1283,7 @@
    }
  
    // Store pthread info into the OSThread
@@ -1323,7 +1329,7 @@
  #ifdef __APPLE__
    osthread->set_thread_id(::mach_thread_self());
  #else
-@@ -1630,7 +1718,10 @@
+@@ -1630,7 +1719,10 @@
  }
  #endif
  
@@ -1335,7 +1341,7 @@
  #ifndef SYS_clock_getres
  
  #if defined(IA32) || defined(AMD64)
-@@ -1644,6 +1735,7 @@
+@@ -1644,6 +1736,7 @@
  #else
  #define sys_clock_getres(x,y)  ::syscall(SYS_clock_getres, x, y)
  #endif
@@ -1343,7 +1349,7 @@
  
  void os::Bsd::fast_thread_clock_init() {
    if (!UseBsdPosixThreadCPUClocks) {
-@@ -1817,8 +1909,10 @@
+@@ -1814,8 +1907,10 @@
  }
  
  intx os::current_thread_id() {
@@ -1355,7 +1361,7 @@
  #else
    return (intx)::pthread_self();
  #endif
-@@ -2341,14 +2435,16 @@
+@@ -2338,14 +2433,16 @@
  }
  
  void os::print_os_info_brief(outputStream* st) {
@@ -1374,7 +1380,7 @@
  
    os::Posix::print_uname_info(st);
  
-@@ -2366,7 +2462,23 @@
+@@ -2363,7 +2460,23 @@
    st->print("Memory:");
    st->print(" %dk page", os::vm_page_size()>>10);
  
@@ -1399,7 +1405,7 @@
    // values in struct sysinfo are "unsigned long"
    struct sysinfo si;
    sysinfo(&si);
-@@ -2376,17 +2488,22 @@
+@@ -2373,17 +2486,22 @@
              os::physical_memory() >> 10);
    st->print("(" UINT64_FORMAT "k free)",
              os::available_memory() >> 10);
@@ -1424,7 +1430,7 @@
    st->cr();
  }
  
-@@ -2399,7 +2516,7 @@
+@@ -2396,7 +2514,7 @@
  
  const char *fpe_names[] = { "FPE0", "FPE_INTDIV", "FPE_INTOVF", "FPE_FLTDIV",
                            "FPE_FLTOVF", "FPE_FLTUND", "FPE_FLTRES",
@@ -1433,7 +1439,7 @@
  
  const char *segv_names[] = { "SEGV0", "SEGV_MAPERR", "SEGV_ACCERR" };
  
-@@ -2425,7 +2542,7 @@
+@@ -2422,7 +2540,7 @@
      st->print(", si_addr=" PTR_FORMAT, si->si_addr);
      break;
    case SIGFPE:
@@ -1442,7 +1448,7 @@
      st->print(", si_addr=" PTR_FORMAT, si->si_addr);
      break;
    case SIGSEGV:
-@@ -2533,10 +2650,17 @@
+@@ -2531,10 +2649,17 @@
          jrelib_p = buf + len;
  
          // Add the appropriate library subdir
@@ -1460,7 +1466,7 @@
  
          // Add the appropriate client or server subdir
          len = strlen(buf);
-@@ -2752,7 +2876,7 @@
+@@ -2752,7 +2877,7 @@
        if (::write(fd, "", 1) == 1) {
          mmap(base, size,
               PROT_READ|PROT_WRITE|PROT_EXEC,
@@ -1469,7 +1475,7 @@
        }
      }
      ::close(fd);
-@@ -2815,7 +2939,7 @@
+@@ -2815,7 +2940,7 @@
  }
  
  void os::free_memory(char *addr, size_t bytes, size_t alignment_hint) {
@@ -1478,7 +1484,7 @@
  }
  
  void os::numa_make_global(char *addr, size_t bytes) {
-@@ -2962,7 +3086,7 @@
+@@ -2962,7 +3087,7 @@
    return ::mprotect(addr, size, PROT_NONE) == 0;
  #else
    uintptr_t res = (uintptr_t) ::mmap(addr, size, PROT_NONE,
@@ -1487,7 +1493,7 @@
    return res  != (uintptr_t) MAP_FAILED;
  #endif
  }
-@@ -2989,15 +3113,16 @@
+@@ -2989,15 +3114,16 @@
    char * addr;
    int flags;
  
@@ -1508,7 +1514,7 @@
                         flags, -1, 0);
  
    if (addr != MAP_FAILED) {
-@@ -3244,9 +3369,11 @@
+@@ -3242,9 +3368,11 @@
  #endif
  
  char* os::reserve_memory_special(size_t bytes, char* req_addr, bool exec) {
@@ -1520,7 +1526,7 @@
  
    key_t key = IPC_PRIVATE;
    char *addr;
-@@ -3321,11 +3448,19 @@
+@@ -3319,11 +3447,19 @@
  // with SysV SHM the entire memory region must be allocated as shared
  // memory.
  bool os::can_commit_large_page_memory() {
@@ -1540,7 +1546,7 @@
  }
  
  // Reserve memory at an arbitrary address, only if that area is
-@@ -3654,8 +3789,8 @@
+@@ -3652,8 +3788,8 @@
    return OS_OK;
  #else
    int ret = setpriority(PRIO_PROCESS, thread->osthread()->thread_id(), newpri);
@@ -1550,7 +1556,7 @@
  }
  
  OSReturn os::get_native_priority(const Thread* const thread, int *priority_ptr) {
-@@ -4171,7 +4306,7 @@
+@@ -4169,7 +4305,7 @@
    }
  }
  
@@ -1559,7 +1565,7 @@
  // This is the fastest way to get thread cpu time on Bsd.
  // Returns cpu time (user+sys) for any thread, not only for current.
  // POSIX compliant clocks are implemented in the kernels 2.6.16+.
-@@ -4188,6 +4323,7 @@
+@@ -4186,6 +4322,7 @@
  }
  #endif
  
@@ -1567,7 +1573,7 @@
  /////
  // glibc on Bsd platform uses non-documented flag
  // to indicate, that some special sort of signal
-@@ -4198,6 +4334,7 @@
+@@ -4196,6 +4333,7 @@
  #undef SIGNIFICANT_SIGNAL_MASK
  #endif
  #define SIGNIFICANT_SIGNAL_MASK (~0x04000000)
@@ -1575,7 +1581,7 @@
  
  static const char* get_signal_handler_name(address handler,
                                             char* buf, int buflen) {
-@@ -4222,8 +4359,10 @@
+@@ -4220,8 +4358,10 @@
  
    sigaction(sig, NULL, &sa);
  
@@ -1586,7 +1592,7 @@
  
    st->print("%s: ", os::exception_name(sig, buf, buflen));
  
-@@ -4245,7 +4384,11 @@
+@@ -4243,7 +4383,11 @@
    // May be, handler was resetted by VMError?
    if(rh != NULL) {
      handler = rh;
@@ -1598,7 +1604,7 @@
    }
  
    st->print(", sa_flags="   PTR32_FORMAT, sa.sa_flags);
-@@ -4320,7 +4463,9 @@
+@@ -4318,7 +4462,9 @@
    os_sigaction(sig, (struct sigaction*)NULL, &act);
  
  
@@ -1608,7 +1614,7 @@
  
    address thisHandler = (act.sa_flags & SA_SIGINFO)
      ? CAST_FROM_FN_PTR(address, act.sa_sigaction)
-@@ -4381,6 +4526,14 @@
+@@ -4379,6 +4525,14 @@
  
  extern bool signal_name(int signo, char* buf, size_t len);
  
@@ -1623,7 +1629,7 @@
  const char* os::exception_name(int exception_code, char* buf, size_t size) {
    if (0 < exception_code && exception_code <= SIGRTMAX) {
      // signal
-@@ -4450,7 +4603,7 @@
+@@ -4448,7 +4602,7 @@
  // this is called _after_ the global arguments have been parsed
  jint os::init_2(void)
  {
@@ -1632,7 +1638,7 @@
    Bsd::fast_thread_clock_init();
  #endif
  
-@@ -4634,6 +4787,20 @@
+@@ -4632,6 +4786,20 @@
  
  int os::active_processor_count() {
  #ifdef _ALLBSD_SOURCE
@@ -1653,7 +1659,7 @@
    return _processor_count;
  #else
    // Bsd doesn't yet have a (official) notion of processor sets,
-@@ -5033,7 +5200,7 @@
+@@ -5031,7 +5199,7 @@
    return munmap(addr, bytes) == 0;
  }
  
@@ -1662,7 +1668,7 @@
  static jlong slow_thread_cpu_time(Thread *thread, bool user_sys_cpu_time);
  
  static clockid_t thread_cpu_clockid(Thread* thread) {
-@@ -5057,7 +5224,7 @@
+@@ -5055,7 +5223,7 @@
  jlong os::current_thread_cpu_time() {
  #ifdef __APPLE__
    return os::thread_cpu_time(Thread::current(), true /* user + sys */);
@@ -1671,7 +1677,7 @@
    if (os::Bsd::supports_fast_thread_cpu_time()) {
      return os::Bsd::fast_thread_cpu_time(CLOCK_THREAD_CPUTIME_ID);
    } else {
-@@ -5068,7 +5235,7 @@
+@@ -5066,7 +5234,7 @@
  }
  
  jlong os::thread_cpu_time(Thread* thread) {
@@ -1680,7 +1686,7 @@
    // consistent with what current_thread_cpu_time() returns
    if (os::Bsd::supports_fast_thread_cpu_time()) {
      return os::Bsd::fast_thread_cpu_time(thread_cpu_clockid(thread));
-@@ -5081,7 +5248,7 @@
+@@ -5079,7 +5247,7 @@
  jlong os::current_thread_cpu_time(bool user_sys_cpu_time) {
  #ifdef __APPLE__
    return os::thread_cpu_time(Thread::current(), user_sys_cpu_time);
@@ -1689,7 +1695,7 @@
    if (user_sys_cpu_time && os::Bsd::supports_fast_thread_cpu_time()) {
      return os::Bsd::fast_thread_cpu_time(CLOCK_THREAD_CPUTIME_ID);
    } else {
-@@ -5110,7 +5277,7 @@
+@@ -5108,7 +5276,7 @@
    } else {
      return ((jlong)tinfo.user_time.seconds * 1000000000) + ((jlong)tinfo.user_time.microseconds * (jlong)1000);
    }
@@ -1698,7 +1704,7 @@
    if (user_sys_cpu_time && os::Bsd::supports_fast_thread_cpu_time()) {
      return os::Bsd::fast_thread_cpu_time(thread_cpu_clockid(thread));
    } else {
-@@ -5119,12 +5286,15 @@
+@@ -5117,12 +5285,15 @@
  #endif
  }
  
@@ -1715,7 +1721,7 @@
    static bool proc_pid_cpu_avail = true;
    static bool proc_task_unchecked = true;
    static const char *proc_stat_path = "/proc/%d/stat";
-@@ -5208,6 +5378,7 @@
+@@ -5206,6 +5377,7 @@
    } else {
      return (jlong)user_time * (1000000000 / clock_tics_per_sec);
    }
@@ -1723,7 +1729,7 @@
  }
  #endif
  
-@@ -5226,7 +5397,7 @@
+@@ -5224,7 +5396,7 @@
  }
  
  bool os::is_thread_cpu_time_supported() {
@@ -1732,6 +1738,37 @@
    return true;
  #elif defined(_ALLBSD_SOURCE)
    return false;
+@@ -5799,3 +5971,30 @@
+ 
+     return true;
+ }
++
++// Get the default path to the core file
++// Returns the length of the string
++int os::get_core_path(char *buffer, size_t bufferSize) {
++#ifdef __APPLE__
++  jio_snprintf(buffer, bufferSize, "/cores/core.%d", current_process_id());
++#else
++  const char *p = get_current_directory(buffer, bufferSize);
++
++  if (p == NULL) {
++    assert(p != NULL, "failed to get current directory");
++    return 0;
++  }
++
++  const char *q = getprogname();
++
++  if (q == NULL) {
++    assert(q != NULL, "failed to get progname");
++    return 0;
++  }
++
++  const int n = strlen(buffer);
++
++  jio_snprintf(buffer + n, bufferSize - n, "/%s.core", q);
++#endif
++  return strlen(buffer);
++}
 --- hotspot/src/os/bsd/vm/os_bsd.hpp
 +++ hotspot/src/os/bsd/vm/os_bsd.hpp
 @@ -56,9 +56,11 @@
@@ -2141,6 +2178,40 @@
      const char *substr = "-Dsun.java.launcher.pid=";
      char *pid_prop_str = (char *)JLI_MemAlloc(strlen(substr) + MAX_PID_STR_SZ + 1);
      sprintf(pid_prop_str, "%s%d", substr, getpid());
+--- hotspot/src/os/posix/vm/os_posix.cpp
++++ hotspot/src/os/posix/vm/os_posix.cpp
+@@ -33,19 +33,18 @@
+ 
+ // Check core dump limit and report possible place where core can be found
+ void os::check_or_create_dump(void* exceptionRecord, void* contextRecord, char* buffer, size_t bufferSize) {
++  int n;
+   struct rlimit rlim;
+-  static char cwd[O_BUFLEN];
+   bool success;
+ 
+-  get_current_directory(cwd, sizeof(cwd));
++  n = get_core_path(buffer, bufferSize);
+ 
+   if (getrlimit(RLIMIT_CORE, &rlim) != 0) {
+-    jio_snprintf(buffer, bufferSize, "%s/core or core.%d (may not exist)", cwd, current_process_id());
++    jio_snprintf(buffer + n, bufferSize - n, " (may not exist)");
+     success = true;
+   } else {
+     switch(rlim.rlim_cur) {
+       case RLIM_INFINITY:
+-        jio_snprintf(buffer, bufferSize, "%s/core or core.%d", cwd, current_process_id());
+         success = true;
+         break;
+       case 0:
+@@ -53,7 +52,7 @@
+         success = false;
+         break;
+       default:
+-        jio_snprintf(buffer, bufferSize, "%s/core or core.%d (max size %lu kB). To ensure a full core dump, try \"ulimit -c unlimited\" before starting Java again", cwd, current_process_id(), (unsigned long)(rlim.rlim_cur >> 10));
++        jio_snprintf(buffer + n, bufferSize - n, " (max size %lu kB). To ensure a full core dump, try \"ulimit -c unlimited\" before starting Java again", (unsigned long)(rlim.rlim_cur >> 10));
+         success = true;
+         break;
+     }
 --- hotspot/src/os_cpu/bsd_x86/vm/globals_bsd_x86.hpp
 +++ hotspot/src/os_cpu/bsd_x86/vm/globals_bsd_x86.hpp
 @@ -42,7 +42,6 @@
@@ -2985,6 +3056,19 @@
      return ptr;
    }
  };
+--- hotspot/src/share/vm/runtime/os.hpp
++++ hotspot/src/share/vm/runtime/os.hpp
+@@ -636,6 +636,10 @@
+   // On Windows this will create an actual minidump, on Linux/Solaris it will simply check core dump limits
+   static void check_or_create_dump(void* exceptionRecord, void* contextRecord, char* buffer, size_t bufferSize);
+ 
++  // Get the default path to the core file
++  // Returns the length of the string
++  static int get_core_path(char* buffer, size_t bufferSize);
++
+   // JVMTI & JVM monitoring and management support
+   // The thread_cpu_time() and current_thread_cpu_time() are only
+   // supported if is_thread_cpu_time_supported() returns true.
 --- hotspot/src/share/vm/runtime/park.cpp
 +++ hotspot/src/share/vm/runtime/park.cpp
 @@ -140,7 +140,7 @@
@@ -3246,24 +3330,15 @@
  ifeq ($(PLATFORM), linux)
 --- jdk/make/com/sun/jmx/Makefile
 +++ jdk/make/com/sun/jmx/Makefile
-@@ -102,16 +102,7 @@
+@@ -102,7 +102,7 @@
  # when available, we need to run with latest rmic version available. rmic 
  # launch tool not built at this stage but we can invoke via rmi class.
  
 -RMIC_JAVA = $(OUTPUTDIR)/bin/java
--# need to treat 64bit solaris differently
--ifeq ($(PLATFORM)-$(LIBARCH), solaris-amd64)
--RMIC_JAVA = $(OUTPUTDIR)/bin/amd64/java
--endif
--ifeq ($(PLATFORM)-$(LIBARCH), solaris-sparcv9)
--RMIC_JAVA = $(OUTPUTDIR)/bin/sparcv9/java
--endif
--
--RMIC = $(RMIC_JAVA) $(JAVA_TOOLS_FLAGS) -cp $(OUTPUTDIR)/classes sun.rmi.rmic.Main
-+RMIC = $(BOOT_JAVA_CMD) -cp $(OUTPUTDIR)/classes sun.rmi.rmic.Main
- 
- $(CLASSDESTDIR)/%_Stub.class: $(CLASSDESTDIR)/%.class
- 	$(prep-target)
++RMIC_JAVA = $(BOOTDIR)/bin/java
+ # need to treat 64bit solaris differently
+ ifeq ($(PLATFORM)-$(LIBARCH), solaris-amd64)
+ RMIC_JAVA = $(OUTPUTDIR)/bin/amd64/java
 --- jdk/make/com/sun/security/auth/module/Makefile
 +++ jdk/make/com/sun/security/auth/module/Makefile
 @@ -70,7 +70,7 @@
@@ -8687,16 +8762,16 @@
  #endif
  
        /* runpath contains current effective LD_LIBRARY_PATH setting */
-@@ -435,7 +483,7 @@
-       new_runpath = JLI_MemAlloc( ((runpath!=NULL)?strlen(runpath):0) +
+@@ -436,7 +484,7 @@
                                2*strlen(jrepath) + 2*strlen(arch) +
-                               strlen(jvmpath) + 52);
+                               strlen(jvmpath) + 52;
+       new_runpath = JLI_MemAlloc(new_runpath_size);
 -      newpath = new_runpath + strlen("LD_LIBRARY_PATH=");
 +      newpath = new_runpath + strlen(LD_LIBRARY_PATH "=");
  
  
        /*
-@@ -450,7 +498,7 @@
+@@ -451,7 +499,7 @@
  
          /* jvmpath, ((running != wanted)?((wanted==64)?"/"LIBARCH64NAME:"/.."):""), */
  
@@ -8705,7 +8780,7 @@
                  "%s:"
                  "%s/lib/%s:"
                  "%s/../lib/%s",
-@@ -725,7 +773,7 @@
+@@ -737,7 +785,7 @@
  jboolean
  GetApplicationHome(char *buf, jint bufsize)
  {
@@ -8714,7 +8789,7 @@
      char *execname = GetExecname();
      if (execname) {
          strncpy(buf, execname, bufsize-1);
-@@ -892,7 +940,17 @@
+@@ -904,7 +952,17 @@
              exec_path = JLI_StringDup(buf);
          }
      }
@@ -8733,7 +8808,7 @@
      {
          /* Not implemented */
      }
-@@ -981,6 +1039,7 @@
+@@ -993,6 +1051,7 @@
  /* Compute physical memory by asking the OS */
  uint64_t
  physical_memory(void) {
@@ -8741,7 +8816,7 @@
    const uint64_t pages     = (uint64_t) sysconf(_SC_PHYS_PAGES);
    const uint64_t page_size = (uint64_t) sysconf(_SC_PAGESIZE);
    const uint64_t result    = pages * page_size;
-@@ -992,6 +1051,28 @@
+@@ -1004,6 +1063,28 @@
             "  physical memory: " UINT64_FORMAT " (%.3fGB)\n",
             pages, page_size, result, result / (double) GB);
    }
@@ -8770,7 +8845,7 @@
    return result;
  }
  
-@@ -1087,7 +1168,7 @@
+@@ -1099,7 +1180,7 @@
  
  #endif /* __sun && i586 */
  
@@ -8779,7 +8854,7 @@
  
  /*
   * A utility method for asking the CPU about itself.
-@@ -1152,7 +1233,7 @@
+@@ -1164,7 +1245,7 @@
  #endif
  }
  
@@ -8788,7 +8863,7 @@
  
  #ifdef i586
  /*
-@@ -1364,6 +1445,39 @@
+@@ -1376,6 +1457,39 @@
  
  #endif /* __linux__ && i586 */
  
@@ -8828,7 +8903,7 @@
  /* Dispatch to the platform-specific definition of "server-class" */
  jboolean
  ServerClassMachine(void) {
-@@ -1378,6 +1492,8 @@
+@@ -1390,6 +1504,8 @@
    result = solaris_i586_ServerClassMachine();
  #elif defined(__linux__) && defined(i586)
    result = linux_i586_ServerClassMachine();
@@ -8837,7 +8912,7 @@
  #else
    if (_launcher_debug) {
      printf("ServerClassMachine: returns default value of %s\n",
-@@ -1518,7 +1634,7 @@
+@@ -1530,7 +1646,7 @@
      while (dp != NULL) {
          cp = strchr(dp, (int)':');
          if (cp != NULL)
@@ -8846,7 +8921,7 @@
          if ((target = ProcessDir(info, dp)) != NULL)
              break;
          dp = cp;
-@@ -1696,9 +1812,29 @@
+@@ -1708,9 +1824,29 @@
      return(borrowed_unsetenv(name));
  }
  
@@ -8877,7 +8952,7 @@
  
  static void* hSplashLib = NULL;
  
-@@ -1747,13 +1883,15 @@
+@@ -1759,13 +1895,15 @@
      return "%lld";
  }
  
@@ -8895,7 +8970,7 @@
      pthread_t tid;
      pthread_attr_t attr;
      pthread_attr_init(&attr);
-@@ -1766,7 +1904,7 @@
+@@ -1778,7 +1916,7 @@
      if (pthread_create(&tid, &attr, (void *(*)(void*))continuation, (void*)args) == 0) {
        void * tmp;
        pthread_join(tid, &tmp);
@@ -8904,7 +8979,7 @@
      } else {
       /*
        * Continue execution in current thread if for some reason (e.g. out of
-@@ -1784,25 +1922,23 @@
+@@ -1796,25 +1934,23 @@
      if (thr_create(NULL, stack_size, (void *(*)(void *))continuation, args, flags, &tid) == 0) {
        void * tmp;
        thr_join(tid, NULL, &tmp);
