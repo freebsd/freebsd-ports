@@ -13,5 +13,4 @@ man/man1/stoken.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/libstoken-test.c
 %%PORTDOCS%%%%DOCSDIR%%/sdtid-test.pl
 %%X11%%share/pixmaps/stoken-gui.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 libdata/pkgconfig/stoken.pc
