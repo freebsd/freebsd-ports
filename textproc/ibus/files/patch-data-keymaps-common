@@ -1,6 +1,6 @@
---- data/keymaps/common.orig	2010-10-20 19:27:43.000000000 +0800
-+++ data/keymaps/common	2011-06-16 05:39:55.000000000 +0800
-@@ -85,14 +85,14 @@
+--- data/keymaps/common.orig	2014-09-16 02:55:34 UTC
++++ data/keymaps/common
+@@ -85,14 +85,14 @@ keycode 86 = less
      shift altgr keycode 86 = brokenbar
  keycode 87 = F11
  keycode 88 = F12

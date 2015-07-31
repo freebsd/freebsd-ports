@@ -1,6 +1,6 @@
---- gr-audio/lib/CMakeLists.txt.orig	2014-07-02 21:09:41.000000000 -0400
-+++ gr-audio/lib/CMakeLists.txt	2014-08-02 14:55:41.000000000 -0400
-@@ -184,7 +184,15 @@
+--- gr-audio/lib/CMakeLists.txt.orig	2015-05-12 09:39:44 UTC
++++ gr-audio/lib/CMakeLists.txt
+@@ -203,7 +203,15 @@ add_library(gnuradio-audio SHARED ${gr_a
  target_link_libraries(gnuradio-audio ${gr_audio_libs})
  GR_LIBRARY_FOO(gnuradio-audio RUNTIME_COMPONENT "audio_runtime" DEVEL_COMPONENT "audio_devel")
  
@@ -16,4 +16,4 @@
 +endif()
  
  if(ENABLE_STATIC_LIBS)
-   add_library(gnuradio-audio_static STATIC ${gr_audio_sources})
+   if(ENABLE_GR_CTRLPORT)

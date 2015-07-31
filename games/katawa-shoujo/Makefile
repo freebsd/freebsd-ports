@@ -1,8 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	katawa-shoujo
-PORTVERSION=	1.3
-DISTVERSIONSUFFIX=-[linux-x86][FCF758CC]
+PORTVERSION=	1.3.1
+DISTVERSIONSUFFIX=-[linux-x86][18161880]
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://dl.katawa-shoujo.com/gold_${PORTVERSION}/:game \
 		GENTOO:icon
@@ -24,7 +25,6 @@ RUN_DEPENDS=	renpy:${PORTSDIR}/devel/renpy
 USES=		tar:bz2
 NO_ARCH=	yes
 NO_BUILD=	yes
-INSTALLS_ICONS=	yes
 WRKSRC=		${WRKDIR}/Katawa\ Shoujo-${PORTVERSION}-linux
 PORTDATA=	*
 PORTDOCS=	*.pdf

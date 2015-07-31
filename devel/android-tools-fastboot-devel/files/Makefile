@@ -4,15 +4,15 @@ PROG_CXX=fastboot
 BINDIR?=/usr/bin
 
 SRCS+=	bootimg_utils.cpp
-SRCS+=	engine.c
+SRCS+=	engine.cpp
 SRCS+=	fastboot.cpp
-SRCS+=	fs.c
-SRCS+=	protocol.c
-SRCS+=	util.c
+SRCS+=	fs.cpp
+SRCS+=	protocol.cpp
+SRCS+=	util.cpp
 
 .PATH:	${FILESDIR}
-SRCS+=	usb_freebsd.c
-SRCS+=	util_freebsd.c
+SRCS+=	usb_freebsd.cpp
+SRCS+=	util_freebsd.cpp
 
 # required by libziparchive
 .PATH: ${.CURDIR}/../base
@@ -47,7 +47,9 @@ SRCS+=	init.c
 SRCS+=	label.c
 SRCS+=	label_android_property.c
 SRCS+=	label_file.c
+SRCS+=	label_support.c
 CFLAGS.init.c+=		-DDARWIN # statfs
+CFLAGS.label_file.c+=	-D_WITH_GETLINE
 
 # required by fastboot and ext4_utils
 .PATH:	${.CURDIR}/../libsparse

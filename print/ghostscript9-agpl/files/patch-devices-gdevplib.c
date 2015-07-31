@@ -1,11 +1,11 @@
---- devices/gdevplib.c.orig	2012-02-08 17:48:47.000000000 +0900
-+++ devices/gdevplib.c	2012-02-13 01:23:46.000000000 +0900
-@@ -151,7 +151,11 @@
+--- devices/gdevplib.c.orig	2015-03-30 17:21:24.000000000 +0900
++++ devices/gdevplib.c	2015-07-14 08:51:50.711673000 +0900
+@@ -156,7 +156,11 @@
  
  #ifdef  TESTING_WITH_NO_BAND_DONOR
  
 +#if !defined(__FreeBSD__)
- #include <malloc.h>
+ #include <malloc_.h>
 +#else
 +#include <stdlib.h>
 +#endif

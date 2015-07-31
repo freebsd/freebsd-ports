@@ -13,19 +13,18 @@ MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	PHP extension for Puzzle library to find similar pictures
 
 LICENSE=	BSD2CLAUSE
-LICENSE_FILES=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC:H:H}/COPYING
 
 LIB_DEPENDS=	libpuzzle.so:${PORTSDIR}/graphics/libpuzzle \
 		libgd.so:${PORTSDIR}/graphics/gd
 
 USES=		tar:bzip2
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/php/${PORTNAME}
-
 USE_PHP=	yes
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 USE_PHP_BUILD=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/php/${PORTNAME}
 
 pre-install:
 	@${STRIP_CMD} ${WRKSRC}/modules/libpuzzle.so

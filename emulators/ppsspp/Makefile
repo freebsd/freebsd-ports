@@ -3,7 +3,7 @@
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v
 DISTVERSION?=	1.0.1
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	emulators
 
 .ifndef PKGNAMESUFFIX
@@ -33,7 +33,6 @@ CMAKE_ARGS=	-DUSE_SYSTEM_FFMPEG=on
 QMAKE_SOURCE_PATH=	${WRKSRC}/Qt/PPSSPPQt.pro
 QMAKE_ARGS=	CONFIG+="system_ffmpeg" LREL_TOOL="${LRELEASE}"
 NINJA_VERBOSE=	yes
-INSTALLS_ICONS=	yes
 
 OPTIONS_DEFAULT=QT5
 OPTIONS_SINGLE=	GUI
@@ -71,19 +70,7 @@ post-patch:
 		${WRKSRC}/Qt/Settings.pri
 
 do-install:
-.if ! ${PORT_OPTIONS:MQT*}
-# cmake doesn't pack assets into the app unlike qmake
-# XXX Convert to ${PORTDATA:N${PORTNAME}} once fmake is EOL
-	(cd ${INSTALL_WRKSRC} && ${COPYTREE_SHARE} \
-		"${PORTDATA:Nppsspp}" ${STAGEDIR}${DATADIR})
-# Install the app alongside assets to avoid warnings with GetExeDirectory()
-	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/${PORTNAME:tu}* \
-		${STAGEDIR}${DATADIR}/${PORTNAME}
-	${LN} -sf ${DATADIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-.else
-	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/${PORTNAME} \
-		${STAGEDIR}${PREFIX}/bin
-.endif
+# XXX Vendor install is incomplete
 	${INSTALL_DATA} ${WRKSRC}/debian/${PORTNAME}.desktop \
 		${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_MAN} ${WRKSRC}/debian/${PORTNAME}.1 \
@@ -93,5 +80,19 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
 	${INSTALL_DATA} ${WRKSRC}/assets/unix-icons/icon-512.svg \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${PORTNAME}.svg
+
+post-install-SDL-on:
+# cmake doesn't pack assets into the app unlike qmake
+# XXX Convert to ${PORTDATA:N${PORTNAME}} once fmake is EOL
+	(cd ${INSTALL_WRKSRC} && ${COPYTREE_SHARE} \
+		"${PORTDATA:Nppsspp}" ${STAGEDIR}${DATADIR})
+# Install the app alongside assets to avoid warnings with GetExeDirectory()
+	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/${PORTNAME:tu}* \
+		${STAGEDIR}${DATADIR}/${PORTNAME}
+	${LN} -sf ${DATADIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+
+post-install-SDL-off:
+	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

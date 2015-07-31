@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	powermanga
-PORTVERSION=	0.93
-PORTREVISION=	2
+PORTVERSION=	0.93.1
 CATEGORIES=	games
 MASTER_SITES=	http://linux.tlk.fr/games/Powermanga/download/ \
 		http://mirror.amdmi3.ru/distfiles/

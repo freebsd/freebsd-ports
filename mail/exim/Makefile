@@ -3,7 +3,6 @@
 
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
-PORTREVISION?=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	EXIM/exim4/:exim
 DISTNAME=	${PORTNAME}-${EXIM_VERSION}
@@ -48,6 +47,7 @@ EMBEDDED_PERL_USE=	perl5=run,build
 EXIMON_USE=	xorg=x11,xaw,xt
 GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 ICONV_USES=	iconv:lib,build
+INTERNATIONAL_LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
 MYSQL_USE=	mysql=yes
 OPENLDAP_USE=	openldap=yes
 PGSQL_USES=	pgsql
@@ -57,8 +57,6 @@ SA_EXIM_RUN_DEPENDS=	${LOCALBASE}/bin/spamc:${PORTSDIR}/mail/spamassassin
 SPF_LIB_DEPENDS=	libspf2.so:${PORTSDIR}/mail/libspf2
 SQLITE_USE=	sqlite=yes
 SQLITE_USES=	pkgconfig
-XCLIENT_EXTRA_PATCHES=	${FILESDIR}/extra-patch-xclient
-RSPAMD_EXTRA_PATCHES=	${FILESDIR}/extra-patch-rspamd
 
 .include <bsd.port.options.mk>
 
@@ -97,7 +95,7 @@ MASTER_SITES+=	http://marc.merlins.org/linux/exim/files/:sa_exim \
 DISTFILES+=	sa-exim-${SA_EXIM_VERSION}.tar.gz:sa_exim
 .endif
 
-EXIM_VERSION=	4.85
+EXIM_VERSION=	4.86
 SA_EXIM_VERSION=4.2
 EXIM_INSTALL_ARG+=	"-no_chown" "-no_symlink"
 
@@ -121,7 +119,6 @@ PORT_OPTIONS+=	EXIMON
 PKGMESSAGE=	${WRKDIR}/pkg-message
 EXIM_INSTALL_ARG+=	"eximon" "eximon.bin"
 .endif # !EXIMON_ONLY
-
 
 PORTDOC_BASE=	ACKNOWLEDGMENTS NOTICE README.UPDATING
 PORTDOC_FILES=	ChangeLog Exim3.upgrade Exim4.upgrade NewStuff \
@@ -221,6 +218,17 @@ SEDLIST+=	-e 's,^\# (EXPERIMENTAL_DANE=),\1,'
 SEDLIST+=	-e 's,^\# (EXPERIMENTAL_EVENT=),\1,'
 .endif
 
+.if ${PORT_OPTIONS:MINTERNATIONAL}
+SEDLIST+=	-e 's,^\# (EXPERIMENTAL_INTERNATIONAL=),\1,' \
+		-e 's,XX_IDN_LIBS_XX,-L${LOCALBASE}/lib -lidn,'
+.else
+SEDLIST+=	-e 's,XX_IDN_LIBS_XX,,'
+.endif
+
+.if ${PORT_OPTIONS:MSOCKS}
+SEDLIST+=	-e 's,^\# (EXPERIMENTAL_SOCKS=),\1,'
+.endif
+
 .if !${PORT_OPTIONS:MPRDR}
 SEDLIST+=	-e 's,^\# (DISABLE_PRDR=),\1,'
 .endif
@@ -243,7 +251,6 @@ SEDLIST+= -e 's,XX_DMARC_LIBS_XX,,'
 .if ${PORT_OPTIONS:MWISHLIST}
 EXTRA_PATCHES+=	`${FIND} ${PATCHDIR} -name 'wishlist-*.patch'`
 .endif
-
 
 .if ${PORT_OPTIONS:MFIXED_NEVER_USERS}
 SEDLIST+=	-e 's,^(FIXED_NEVER_USERS=).*,\1${WITH_FIXED_NEVER_USERS:S/,/\\,/g},'
@@ -574,24 +581,24 @@ post-install:
 .endfor
 .endif
 	@${MKDIR} -m 750 ${STAGEDIR}${LOGDIR}
-	@${INSTALL_MAN} ${WRKSRC}/doc/exim.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/doc/exim.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKDIR}/POST-INSTALL-NOTES ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKDIR}/POST-INSTALL-NOTES.clamd ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/POST-INSTALL-NOTES ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/POST-INSTALL-NOTES.clamd ${STAGEDIR}${DOCSDIR}
 .for docfile in ${PORTDOC_BASE}
-	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${docfile} ${STAGEDIR}${DOCSDIR}
 .endfor
 .for docfile in ${PORTDOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${docfile} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${docfile} ${STAGEDIR}${DOCSDIR}
 .endfor
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for example in ${PORT_EXAMPLES}
-	@${INSTALL_SCRIPT} ${WRKSRC}/build-${OPSYS}-${ARCH}/${example} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/build-${OPSYS}-${ARCH}/${example} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 .endif
 .if ${PORT_OPTIONS:MSA_EXIM}
-	@${INSTALL_DATA} ${WRKDIR}/sa-exim-${SA_EXIM_VERSION}/sa-exim.conf \
+	${INSTALL_DATA} ${WRKDIR}/sa-exim-${SA_EXIM_VERSION}/sa-exim.conf \
 		${STAGEDIR}${PREFIX}/etc/exim/sa-exim.conf.sample
 .endif
 

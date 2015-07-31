@@ -3,7 +3,7 @@
 
 PORTNAME=	foomatic-filters
 PORTVERSION=	4.0.17
-PORTREVISION=	3
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://www.openprinting.org/download/foomatic/
 
@@ -15,9 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
 
-USES=		autoreconf perl5 pkgconfig
-USE_GHOSTSCRIPT=yes
-SUB_FILES=	foomatic-rip-wrapper
+USES=		autoreconf ghostscript perl5 pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_A2PS=${LOCALBASE}/bin/a2ps \
 		ac_cv_path_CUPS=${LOCALBASE}/libexec/cups \
@@ -78,8 +76,5 @@ post-patch:
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/foomatic-rip
-	mv ${STAGEDIR}${PREFIX}/libexec/cups/filter/foomatic-rip ${STAGEDIR}${PREFIX}/libexec/cups/filter/foomatic-rip.exec
-	${INSTALL_SCRIPT} ${WRKDIR}/foomatic-rip-wrapper ${STAGEDIR}${PREFIX}/libexec/cups/filter/foomatic-rip
-	@${REINPLACE_CMD} -i '' -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${STAGEDIR}${PREFIX}/libexec/cups/filter/foomatic-rip
 
 .include <bsd.port.mk>

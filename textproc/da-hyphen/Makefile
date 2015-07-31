@@ -15,6 +15,7 @@ COMMENT=	Danish hyphenation rules
 LICENSE=	LGPL21
 
 USES=		zip
+NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sudo
-DISTVERSION=	1.8.13
+PORTVERSION=	1.8.14p3
 CATEGORIES=	security
 MASTER_SITES=	SUDO
 
@@ -85,15 +85,6 @@ post-patch:
 		${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's,$$(srcdir)/sudoers2ldif $$(DESTDIR)$$(docdir),$$(srcdir)/sudoers2ldif $$(DESTDIR)$$(bindir),' \
 		${WRKSRC}/plugins/sudoers/Makefile.in
-	@${REINPLACE_CMD} -e '/^exampledir *=/ s,=.*,= $$(datarootdir)/examples/$$(PACKAGE_TARNAME),' \
-		${WRKSRC}/examples/Makefile.in
-.if empty(PORT_OPTIONS:MDOCS)
-	@${REINPLACE_CMD} -e 's/mkinstalldirs $$(DESTDIR)$$(docdir)/mkinstalldirs/' \
-			  -e '/for f in $$(OTHER_DOCS); do/d;/@LDAP@for f in $$(OTHER_DOCS_LDAP); do/d' \
-		${WRKSRC}/doc/Makefile.in
-	@${REINPLACE_CMD} -e 's/$$(DESTDIR)$$(sudoersdir) $$(DESTDIR)$$(docdir)/$$(DESTDIR)$$(sudoersdir)/' \
-		${WRKSRC}/plugins/sudoers/Makefile.in
-.endif
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/pam.conf ${STAGEDIR}${PREFIX}/etc/pam.d/sudo.default

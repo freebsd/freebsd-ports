@@ -91,4 +91,3 @@ man/man1/mogstored.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/memcache-support.txt
 %%PORTDOCS%%%%DOCSDIR%%/pluggable-replication-policies.txt
 %%PORTDOCS%%%%DOCSDIR%%/testing.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

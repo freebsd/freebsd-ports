@@ -1,7 +1,7 @@
 # Created by: Nik Clayton <nik@FreeBSD.org>
 # $FreeBSD$
 
-OPTIONS_UNSET=  X11
+print_ghostscript8-nox11_UNSET_FORCE+=	X11
 
 MASTERDIR=	${.CURDIR}/../ghostscript8
 

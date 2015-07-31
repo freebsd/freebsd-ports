@@ -1,6 +1,6 @@
---- texk/xdvik/configure.orig	2014-09-02 18:41:34.000000000 +0900
-+++ texk/xdvik/configure	2015-01-31 21:02:18.000000000 +0900
-@@ -667,6 +667,7 @@
+--- texk/xdvik/configure.orig	2014-04-13 03:58:38 UTC
++++ texk/xdvik/configure
+@@ -667,6 +667,7 @@ X_CFLAGS
  XMKMF
  LIBOBJS
  ALLOCA
@@ -8,7 +8,7 @@
  PS_DEF
  CPP
  OTOOL64
-@@ -13309,6 +13310,20 @@
+@@ -13309,6 +13310,20 @@ $as_echo "#define A4 1" >>confdefs.h
  
  fi
  
@@ -29,7 +29,7 @@
  ac_config_headers="$ac_config_headers c-auto.h:c-auto.in"
  
  
-@@ -18409,6 +18424,82 @@
+@@ -18409,6 +18424,82 @@ ${top_builddir}/../../libs/freetype2/fre
  	cd ${top_builddir}/../../libs/freetype2 && $(MAKE) $(AM_MAKEFLAGS) rebuild'
  fi
  

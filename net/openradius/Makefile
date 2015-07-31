@@ -3,7 +3,7 @@
 
 PORTNAME=	openradius
 PORTVERSION=	0.9.12c
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://evbergen.home.xs4all.nl/openradius/download/ \
 		http://www.mirrors.wiretapped.net/security/authentication/radius/openradius/
@@ -23,7 +23,10 @@ CC?=		gcc
 CXX?=		g++
 MAKE_ENV=	INST_PREFIX=${STAGEDIR}
 
-USES=		gmake
+USES=		gmake shebangfix
+SHEBANG_FILES=	modules/ascfile/ascfile \
+		modules/radsql/radsql \
+		modules/unixpasswd/unixpasswd
 USE_RC_SUBR=	openradius
 SUB_LIST=	LOGFILE="${LOGFILE}"
 

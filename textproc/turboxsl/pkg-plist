@@ -1,0 +1,8 @@
+bin/turboxsl-config
+bin/turboxsltproc
+include/turboxsl/turboxsl.h
+lib/libturboxsl.so
+lib/libturboxsl.so.0
+lib/libturboxsl.so.0.0.0
+lib/libturboxsl.a
+libdata/pkgconfig/libturboxsl.pc

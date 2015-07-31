@@ -52,7 +52,10 @@
     SUBDIR += dbow
     SUBDIR += dbtool
     SUBDIR += dbview
+    SUBDIR += elixir-calecto
     SUBDIR += elixir-ecto
+    SUBDIR += elixir-ecto_migrate
+    SUBDIR += elixir-geo
     SUBDIR += elixir-mariaex
     SUBDIR += elixir-mongo
     SUBDIR += elixir-postgrex
@@ -128,6 +131,7 @@
     SUBDIR += leo_center
     SUBDIR += leofs
     SUBDIR += leveldb
+    SUBDIR += levigo
     SUBDIR += libdbi
     SUBDIR += libdbi-drivers
     SUBDIR += libdrizzle
@@ -302,7 +306,6 @@
     SUBDIR += p5-DBD-ODBC
     SUBDIR += p5-DBD-Oracle
     SUBDIR += p5-DBD-Pg
-    SUBDIR += p5-DBD-Pg32
     SUBDIR += p5-DBD-PgLite
     SUBDIR += p5-DBD-PgPP
     SUBDIR += p5-DBD-SQLite

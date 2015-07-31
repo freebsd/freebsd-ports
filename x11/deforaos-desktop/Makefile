@@ -5,9 +5,6 @@ PORTNAME=	desktop
 PORTVERSION=	0.1
 PORTREVISION=	1
 CATEGORIES=	x11
-MASTER_SITES=	# none
-DISTFILES=	# none
-EXTRACT_ONLY=	# none
 PKGNAMEPREFIX=	deforaos-
 
 MAINTAINER=	olivier@cochard.me
@@ -26,10 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/keyboard:${PORTSDIR}/x11/deforaos-keyboard \
 		${LOCALBASE}/bin/editor:${PORTSDIR}/editors/deforaos-editor \
 		${LOCALBASE}/bin/phone:${PORTSDIR}/comms/deforaos-phone
 
-NO_BUILD=	yes
-NO_MTREE=	yes
-
-do-install:
+USES=		metaport
 
 pre-everything::
 	@${ECHO_MSG} "This is a meta-port, meaning that it just depends on its subparts of the port."

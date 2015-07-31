@@ -3,6 +3,7 @@
 PORTNAME=	ponscripter-sekai
 PORTVERSION=	0.0.6
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel games
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -34,7 +35,7 @@ PORTDOCS=	BUGS CHANGES MANUAL README TODO
 PLIST_FILES=	bin/ponscr \
 		share/emacs/site-lisp/ponscripter-mode.el
 
-OPTIONS_DEFINE=	MANPAGES
+OPTIONS_DEFINE=	DOCS MANPAGES
 OPTIONS_DEFAULT=MANPAGES
 
 MANPAGES_BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto
@@ -44,34 +45,30 @@ MANPAGES_PLIST_FILES=\
 	man/man7/ponscr-syntax.7.gz \
 	man/man7/ponscripter.7.gz
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e '/^ifdef DEBUG/,/^$$/d' \
 		-e 's/$$STRIPFLAG/${STRIP}/' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's/$$(LIBS)/$$(LDFLAGS) &/' \
 		${WRKSRC}/src/Makefile.ponscripter
-.if ! ${PORT_OPTIONS:MMANPAGES}
+
+post-patch-MANPAGES-off:
 	@${REINPLACE_CMD} -i .manpages.bak \
 		-e '/install-man/d' \
 		-e 's/xmlto/${FALSE}/' \
 		${WRKSRC}/configure
-.endif
 
-post-build:
-.if ${PORT_OPTIONS:MMANPAGES}
+post-build-MANPAGES-on:
 	# Remove extraneous whitespace to unbreak manpage syntax
 	${REINPLACE_CMD} -e 's/^[[:space:]]*//; /^$$/d' \
 		${WRKSRC}/doc/*.[0-9]
-.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/misc/ponscripter-mode.el \
 		${STAGEDIR}${PREFIX}/share/emacs/site-lisp
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
 		"${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
-.endif
 
 .include <bsd.port.mk>

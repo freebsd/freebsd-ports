@@ -22,12 +22,4 @@
 %%WWWDIR%%/themes/default/images/xml.gif
 %%WWWDIR%%/themes/default/index.tmpl
 %%WWWDIR%%/themes/default/style.css
-@dirrm %%WWWDIR%%/themes/default/images
-@dirrm %%WWWDIR%%/themes/default
-@dirrm %%WWWDIR%%/themes
-@dirrm %%WWWDIR%%/examples
-@dirrm %%WWWDIR%%/docs
-@dirrm %%WWWDIR%%/data
-@dirrm %%WWWDIR%%/Blogsum
-@dirrm %%WWWDIR%%
-@exec mkdir -p %D/%%WWWDIR%%/data
+@dir %%WWWDIR%%/data

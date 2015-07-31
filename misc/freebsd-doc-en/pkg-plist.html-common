@@ -26,6 +26,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/hubs/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/ldap-auth/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-emulation/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/mailing-list-faq/docbook.css

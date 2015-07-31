@@ -28,9 +28,8 @@ RUN_DEPENDS=	links:${PORTSDIR}/www/links1 \
 		p5-XML-Parser>=2.41:${PORTSDIR}/textproc/p5-XML-Parser \
 		zip:${PORTSDIR}/archivers/zip
 
-USES=		perl5
+USES=		ghostscript:run perl5
 USE_PERL5=	run
-USE_GHOSTSCRIPT_RUN=	yes
 DEPENDS_ARGS+=	BATCH=yes
 NO_BUILD=	yes
 
@@ -72,7 +71,7 @@ RUN_DEPENDS+=	${FONTS_CJK}
 .endif
 
 .if !${PORT_OPTIONS:MX11}
-DEPENDS_ARGS+=	WITHOUT_X11=${WITHOUT_X11}
+DEPENDS_ARGS+=	OPTIONS_UNSET_FORCE+=X11
 .endif
 
 # generate MINIMALDOCPORTS for src/release/Makefile.inc.docports.

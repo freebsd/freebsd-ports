@@ -31,4 +31,3 @@ man/man1/otr_remac.1.gz
 man/man1/otr_sesskeys.1.gz
 man/man1/otr_toolkit.1.gz
 share/aclocal/libotr.m4
-@dirrm include/libotr

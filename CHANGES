@@ -10,6 +10,13 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20150716:
+AUTHOR:	kwm@FreeBSD.org
+
+  USE_GHOSTSCRIPT was replaced by USES=ghostscript. The ghostscript USES
+  accepts version, build, run, nox11 and for version 9 the agpl argument.
+  If no version is specified, the default 9 for GHOSTSCRIPT_DEFAULT is honored.
+
 20150701:
 AUTHOR: mat@FreeBSD.org
 

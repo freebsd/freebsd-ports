@@ -1,6 +1,6 @@
---- texk/xdvik/gui/help-window.c.orig	2014-09-02 18:41:34.000000000 +0900
-+++ texk/xdvik/gui/help-window.c	2015-01-31 21:02:18.000000000 +0900
-@@ -314,6 +314,9 @@
+--- texk/xdvik/gui/help-window.c.orig	2013-03-31 05:28:21 UTC
++++ texk/xdvik/gui/help-window.c
+@@ -314,6 +314,9 @@ initialize_items(struct topic_info *info
  #if FREETYPE
  	"- freetype2 (direct rendering of PS fonts) enabled\n",
  #endif

@@ -1,6 +1,6 @@
---- ./src/serialize.h.orig	2013-09-24 01:50:35.661706153 +0000
-+++ ./src/serialize.h	2013-09-24 01:50:52.913703572 +0000
-@@ -895,19 +895,6 @@
+--- src/serialize.h.orig	2013-10-13 13:51:25 UTC
++++ src/serialize.h
+@@ -809,19 +809,6 @@ public:
      iterator insert(iterator it, const char& x=char()) { return vch.insert(it, x); }
      void insert(iterator it, size_type n, const char& x) { vch.insert(it, n, x); }
  

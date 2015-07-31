@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-core
-PORTVERSION=	2.0.41
+PORTVERSION=	2.0.48
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ COMMENT=	AWS SDK for Ruby - Core
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	rubygem-builder>=3.0:${PORTSDIR}/devel/rubygem-builder \
+RUN_DEPENDS=	rubygem-builder32>=3.0:${PORTSDIR}/devel/rubygem-builder32 \
 		rubygem-jmespath>=1.0:${PORTSDIR}/devel/rubygem-jmespath \
 		rubygem-multi_json>=1.0:${PORTSDIR}/devel/rubygem-multi_json
 

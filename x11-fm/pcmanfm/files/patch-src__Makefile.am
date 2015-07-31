@@ -1,13 +1,16 @@
---- ./src/Makefile.am.orig	2014-01-06 23:55:25.000000000 +0000
-+++ ./src/Makefile.am	2014-02-23 09:58:26.669238176 +0000
-@@ -49,3 +49,10 @@
- 	$(XLIB_LIBS) \
+--- src/Makefile.am.orig	2014-05-16 16:51:21 UTC
++++ src/Makefile.am
+@@ -50,6 +50,13 @@ pcmanfm_LDADD = \
  	$(FM_LIBS) \
  	$(NULL)
-+
+ 
 +# create plugins' directory anyway
 +install-exec-hook:
 +	$(MKDIR_P) $(DESTDIR)$(libdir)/pcmanfm
 +
 +uninstall-hook:
 +	-rmdir $(DESTDIR)$(libdir)/pcmanfm
++
+ # prepare modules directory
+ install-exec-local:
+ 	$(MKDIR_P) "$(DESTDIR)$(libdir)/pcmanfm"

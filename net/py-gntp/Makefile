@@ -3,7 +3,7 @@
 PORTNAME=	gntp
 PORTVERSION=	0.8
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -20,8 +20,6 @@ OPTIONS_DEFINE=	DOCS
 USE_GITHUB=	yes
 USES=		python:2
 USE_PYTHON=	distutils autoplist
-
-.include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>
 

@@ -6,20 +6,20 @@ Written by:	Martin Blapp <mbr@freebsd.org>
 Apache OpenOffice %%AOOTAG%% will soon be installed in
 %%PREFIX%%/%%EXECBASE%%
 
-1. User installation
+1. Scanner interface
 --------------------
+To enable the scanner interface, install the sane-backends package.
 
-Just type "%%EXECBASE%%" after you have successfully
-installed the package. If there is no installed
-.openoffice.org directory in your home directory, the
-setup installs the "%%AOOUDIR%%" folder.
+2. User installation
+--------------------
+Just type "%%EXECBASE%%" after you have successfully installed
+the package.  If there is no installed .openoffice.org directory in your
+home directory, the setup installs the "%%AOOUDIR%%" folder.
 
-2. Starting Apache OpenOffice
+3. Starting Apache OpenOffice
 -----------------------------
-
-There are some wrappers installed for faster startup.
-Add "%%PREFIX%%/bin/" to your PATH and you will be able
-to use them.
+There are some wrappers installed for faster startup.  Add "%%PREFIX%%/bin/"
+to your PATH and you will be able to use them.
 
 %%PREFIX%%/bin/%%EXECBASE%%
 %%PREFIX%%/bin/%%EXECBASE%%-sbase
@@ -31,11 +31,10 @@ to use them.
 %%PREFIX%%/bin/%%EXECBASE%%-spadmin
 %%PREFIX%%/bin/%%EXECBASE%%-swriter
 
-OO.org does need $LANG to be set to a suitable value.
+OpenOffice does need $LANG to be set to a suitable value.
 
-3. If you run into problems
+4. If you run into problems
 --------------------------------------------------
-If you somehow run into problems, please remove the already
-installed "%%AOOUDIR%%" directory in your home directory,
-then  redo the user installation and the problems should go
-away.
+If you somehow run into problems, please remove the already installed
+"%%AOOUDIR%%" directory in your home directory, then redo the
+user installation and the problems should go away.

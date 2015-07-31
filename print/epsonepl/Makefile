@@ -13,8 +13,7 @@ COMMENT=	Printer filter for EPSON EPL-5700L etc
 
 LIB_DEPENDS=	libijs.so:${PORTSDIR}/print/libijs
 
-USES=		uidfix tar:tgz
-USE_GHOSTSCRIPT_RUN=	yes
+USES=		ghostscript:run uidfix tar:tgz
 
 MAKEFILE=	${FILESDIR}/Makefile
 SUB_FILES=	pkg-message

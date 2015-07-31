@@ -1,25 +1,23 @@
-# Created by: gahr
+# Created by: Pietro Cerutti <gahr@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libebur128
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of the EBU R128 loudness standard
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libspeexdsp.so:${PORTSDIR}/audio/speexdsp
-
-USES=		cmake:outsource pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jiixyj
 
-PLIST_SUB+=	VER1=${PORTVERSION:R:R} \
-		VER3=${PORTVERSION}
+USES=		cmake:outsource pkgconfig
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

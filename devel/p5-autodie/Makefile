@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	autodie
-PORTVERSION=	2.28
+PORTVERSION=	2.29
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:PJF
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -16,6 +17,7 @@ LICENSE_COMB=	dual
 TEST_DEPENDS=	p5-BSD-Resource>=0:${PORTSDIR}/devel/p5-BSD-Resource \
 		p5-IPC-System-Simple>=0.12:${PORTSDIR}/devel/p5-IPC-System-Simple \
 		p5-Import-Into>=1.002004:${PORTSDIR}/devel/p5-Import-Into \
+		p5-Module-Runtime>=0:${PORTSDIR}/devel/p5-Module-Runtime \
 		p5-Sub-Identify>=0:${PORTSDIR}/devel/p5-Sub-Identify
 
 NO_ARCH=	yes

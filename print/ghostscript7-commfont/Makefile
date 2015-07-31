@@ -23,7 +23,7 @@ PLIST_SUB=	GS_RESDIR="${GS_RESDIR}"
 PKGMESSAGE=	${WRKDIR}/pkg-message
 DEPENDS_ARGS+=	-DA4
 # set these forcibly
-USE_GHOSTSCRIPT_RUN=7
+USES=		ghostscript:7,run
 
 CONFLICTS_INSTALL= \
 		ghostscript8-[0-9]* \

@@ -2,7 +2,7 @@
 
 PORTNAME=	libav
 PORTVERSION=	11.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://libav.org/releases/
 
@@ -18,27 +18,26 @@ WANT_SDL=	yes
 USE_PERL5=	build
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ARGS+=	--prefix="${PREFIX}" \
-			--libdir="${PREFIX}/lib/${PORTNAME}" \
-			--shlibdir="${PREFIX}/lib/${PORTNAME}" \
-			--incdir="${PREFIX}/include/${PORTNAME}" \
-			--mandir="${PREFIX}/man" \
-			--datadir="${DATADIR}" \
-			--extra-ldflags="-L${LOCALBASE}/lib" \
-			--enable-pthreads \
-			--enable-shared \
-			--enable-runtime-cpudetect \
-			--disable-debug \
-			--cc="${CC}"
+CONFIGURE_ARGS=	--prefix="${PREFIX}" \
+		--libdir="${PREFIX}/lib/${PORTNAME}" \
+		--shlibdir="${PREFIX}/lib/${PORTNAME}" \
+		--incdir="${PREFIX}/include/${PORTNAME}" \
+		--mandir="${PREFIX}/man" \
+		--datadir="${DATADIR}" \
+		--extra-ldflags="-L${LOCALBASE}/lib" \
+		--enable-pthreads \
+		--enable-shared \
+		--enable-runtime-cpudetect \
+		--disable-debug \
+		--cc="${CC}"
 
 OPTIONS_DEFINE=	ALSA AMR_NB AMR_WB BZIP2 CDIO FAAC FDK_AAC DOCS FREETYPE \
 		FREI0R GNUTLS GSM ILBC JACK LAME OPENCV OPENJPEG OPENSSL \
 		OPUS PULSEAUDIO RTMP SCHROEDINGER SPEEX THEORA V4L VAAPI \
 		VDPAU VO_AACENC VO_AMRWBENC VORBIS VPX WAVPACK WEBP X11GRAB \
 		X264 XVID ZLIB
-
-OPTIONS_DEFAULT=	BZIP2 FREETYPE FREI0R GNUTLS OPENCV SCHROEDINGER \
-			THEORA VO_AACENC VORBIS VPX X264 XVID ZLIB
+OPTIONS_DEFAULT=BZIP2 FREETYPE FREI0R GNUTLS OPENCV SCHROEDINGER \
+		THEORA VO_AACENC VORBIS VPX X264 XVID ZLIB
 
 FDK_AAC_DESC=	AAC audio encoding via Fraunhofer FDK
 ILBC_DESC=	iLBC en/decoding via libilbc
@@ -63,6 +62,8 @@ CDIO_CONFIGURE_ENABLE=		libcdio
 # --enable-libdc1394
 # DC1394_LIB_DEPENDS=		libdc1394.so:${PORTSDIR}/multimedia/libdc1394
 # DC1394_CONFIGURE_ENABLE=	libdc1394
+
+DOCS_BUILD_DEPENDS=		texi2html:${PORTSDIR}/textproc/texi2html
 
 FREI0R_BUILD_DEPENDS=		${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
 FREI0R_CONFIGURE_ENABLE=	frei0r
@@ -99,6 +100,7 @@ OPENJPEG_LIB_DEPENDS=		libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15
 OPENJPEG_CONFIGURE_ENABLE=	libopenjpeg
 
 OPENSSL_CONFIGURE_ENABLE=	openssl
+OPENSSL_USE=		OPENSSL=yes
 
 OPUS_LIB_DEPENDS=		libopus.so:${PORTSDIR}/audio/opus
 OPUS_CONFIGURE_ENABLE=		libopus
@@ -155,16 +157,6 @@ XVID_LIB_DEPENDS=		libxvidcore.so:${PORTSDIR}/multimedia/xvid
 XVID_CONFIGURE_ENABLE=		libxvid
 
 ZLIB_CONFIGURE_ENABLE=		zlib
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=		texi2html:${PORTSDIR}/textproc/texi2html
-.endif
-
-.if ${PORT_OPTIONS:MOPENSSL}
-USE_OPENSSL=	yes
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -230,10 +222,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$$(LIBDIR)/pkgconfig|${STAGEDIR}${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/library.mak
 
-post-configure:
-.if !${PORT_OPTIONS:MDOCS}
+post-configure-DOCS-off:
 	@${REINPLACE_CMD} -e 's|CONFIG_TEXI2HTML=yes|!CONFIG_TEXI2HTML=yes|' ${WRKSRC}/config.mak
-.endif
 
 post-stage:
 .for a in bin/avconv bin/avprobe lib/libav/libavdevice.so.55.0.0\

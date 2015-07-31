@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	bitlbee
-PORTVERSION=	3.4
+PORTVERSION=	3.4.1
+PORTREVISION=	2
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/ \
 		LOCAL/brix
@@ -19,7 +20,7 @@ PORTDOCS=	AUTHORS CHANGES CREDITS FAQ README
 PORTEXAMPLES=	bitlbee.conf motd.txt
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig python:build
 USE_RC_SUBR=	bitlbee
 USE_GNOME=	glib20
 OPTIONS_SUB=	yes

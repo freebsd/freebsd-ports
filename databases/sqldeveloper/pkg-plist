@@ -2,6 +2,9 @@ bin/sqldeveloper
 %%DATADIR%%/configuration/bundles.info
 %%DATADIR%%/configuration/oracle.datamodeler.bundles.info
 %%DATADIR%%/configuration/oracle.ide.sqldev.bundles.info
+%%DATADIR%%/dataminer/demos/workflows/apply workflow.xml
+%%DATADIR%%/dataminer/demos/workflows/build_workflow.xml
+%%DATADIR%%/dataminer/demos/workflows/codegen_workflow.xml
 %%DATADIR%%/dataminer/scripts/XMLSchema.xsd
 %%DATADIR%%/dataminer/scripts/alterDBRestrictSession.sql
 %%DATADIR%%/dataminer/scripts/alterDBUnRestrictSession.sql
@@ -255,6 +258,7 @@ bin/sqldeveloper
 %%DATADIR%%/ide/extensions/oracle.ide.bookmarks.jar
 %%DATADIR%%/ide/extensions/oracle.ide.ceditor-bookmarks.jar
 %%DATADIR%%/ide/extensions/oracle.ide.ceditor-find.jar
+%%DATADIR%%/ide/extensions/oracle.ide.ceditor-macro.jar
 %%DATADIR%%/ide/extensions/oracle.ide.ceditor-saveactions.jar
 %%DATADIR%%/ide/extensions/oracle.ide.ceditor-tint.jar
 %%DATADIR%%/ide/extensions/oracle.ide.ceditor.jar
@@ -1236,12 +1240,14 @@ bin/sqldeveloper
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/security/package-use.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/servlet/ErrorResponseHandler.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/servlet/FilterOrder.html
+%%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/servlet/ForwardedRequests.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/servlet/HasDynamicAuthorization.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/servlet/HasGetMethod.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/servlet/HttpServletBase.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/servlet/SupportsPatch.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/servlet/class-use/ErrorResponseHandler.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/servlet/class-use/FilterOrder.html
+%%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/servlet/class-use/ForwardedRequests.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/servlet/class-use/HasDynamicAuthorization.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/servlet/class-use/HasGetMethod.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/servlet/class-use/HttpServletBase.html
@@ -1288,7 +1294,6 @@ bin/sqldeveloper
 %%DATADIR%%/ords/examples/getting-started/rest-connection-1.png
 %%DATADIR%%/ords/examples/getting-started/rest-connection-2.png
 %%DATADIR%%/ords/examples/plugins/lib/javax.inject.jar
-%%DATADIR%%/ords/examples/plugins/lib/ojdbc6-12.1.0.1.0.jar
 %%DATADIR%%/ords/examples/plugins/lib/ojdbc6-12.1.0.2.0.jar
 %%DATADIR%%/ords/examples/plugins/lib/plugin-api.jar
 %%DATADIR%%/ords/examples/plugins/lib/servlet-api-2.5.jar
@@ -1300,15 +1305,6 @@ bin/sqldeveloper
 %%DATADIR%%/ords/examples/plugins/plugin-echo-cmd/src/EchoCommand.java
 %%DATADIR%%/ords/examples/plugins/plugin-echo-cmd/src/EchoMessages.java
 %%DATADIR%%/ords/examples/plugins/plugin-echo-cmd/src/EchoMessages.properties
-%%DATADIR%%/ords/examples/plugins/plugin-echo-cmd/src/EchoMessages_de.properties
-%%DATADIR%%/ords/examples/plugins/plugin-echo-cmd/src/EchoMessages_es.properties
-%%DATADIR%%/ords/examples/plugins/plugin-echo-cmd/src/EchoMessages_fr.properties
-%%DATADIR%%/ords/examples/plugins/plugin-echo-cmd/src/EchoMessages_it.properties
-%%DATADIR%%/ords/examples/plugins/plugin-echo-cmd/src/EchoMessages_ja.properties
-%%DATADIR%%/ords/examples/plugins/plugin-echo-cmd/src/EchoMessages_ko.properties
-%%DATADIR%%/ords/examples/plugins/plugin-echo-cmd/src/EchoMessages_pt_BR.properties
-%%DATADIR%%/ords/examples/plugins/plugin-echo-cmd/src/EchoMessages_zh_CN.properties
-%%DATADIR%%/ords/examples/plugins/plugin-echo-cmd/src/EchoMessages_zh_TW.properties
 %%DATADIR%%/ords/examples/soda/getting-started/POList.json
 %%DATADIR%%/ords/examples/soda/getting-started/QBE.1.json
 %%DATADIR%%/ords/examples/soda/getting-started/QBE.2.json
@@ -1322,16 +1318,6 @@ bin/sqldeveloper
 %%DATADIR%%/rdbms/jlib/ojdi.jar
 %%DATADIR%%/rdbms/jlib/xdb6.jar
 %%DATADIR%%/sleepycat/je-3.3.98/lib/je-3.3.98.jar
-%%DATADIR%%/sqlcl/lib/SQLinForm.jar
-%%DATADIR%%/sqlcl/lib/jline-2.12.1.jar
-%%DATADIR%%/sqlcl/lib/jsch.jar
-%%DATADIR%%/sqlcl/lib/ojdbc6.jar
-%%DATADIR%%/sqlcl/lib/oracle.dbtools-common.jar
-%%DATADIR%%/sqlcl/lib/orai18n-mapping.jar
-%%DATADIR%%/sqlcl/lib/orai18n-utility.jar
-%%DATADIR%%/sqlcl/lib/orai18n.jar
-%%DATADIR%%/sqlcl/lib/xdb6.jar
-%%DATADIR%%/sqlcl/lib/xmlparserv2.jar
 %%DATADIR%%/sqldeveloper/bin/SQLDeveloperIcons.icns
 %%DATADIR%%/sqldeveloper/bin/common.boot
 %%DATADIR%%/sqldeveloper/bin/jdk.conf
@@ -1344,7 +1330,6 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/bin/splash.gif
 %%DATADIR%%/sqldeveloper/bin/splash.png
 %%DATADIR%%/sqldeveloper/bin/sql
-%%DATADIR%%/sqldeveloper/bin/sqlcli.sh
 %%DATADIR%%/sqldeveloper/bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/bin/sqldeveloper-Darwin.conf
 %%DATADIR%%/sqldeveloper/bin/sqldeveloper-debug.conf

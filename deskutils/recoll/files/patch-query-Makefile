@@ -1,0 +1,11 @@
+--- query/Makefile.orig	2015-07-16 19:59:24 UTC
++++ query/Makefile
+@@ -13,7 +13,7 @@ wasaparse.tab.cpp : wasaparse.y
+ XADUMP_OBJS= xadump.o 
+ xadump : $(XADUMP_OBJS)
+ 	$(CXX) $(ALL_CXXFLAGS) -o xadump $(XADUMP_OBJS) \
+-	       $(depth)/lib/librecoll.a $(LIBICONV) $(LIBXAPIAN) $(LIBSYS)
++	       $(depth)/lib/librecoll.a -liconv $(LIBICONV) $(LIBXAPIAN) $(LIBSYS)
+ xadump.o : xadump.cpp 
+ 	$(CXX) $(ALL_CXXFLAGS) -c xadump.cpp
+ 

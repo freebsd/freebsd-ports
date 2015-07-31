@@ -55,30 +55,12 @@ esac
 [ -z "${fossil_listenall}" ] && fossil_args="${fossil_args} --localhost"
 [ -n "${fossil_files}" ] && fossil_args="${fossil_args} --files '${fossil_files}'"
 [ -n "${fossil_notfound}" ] && fossil_args="${fossil_args} --notfound \"${fossil_notfound}\""
+[ -n "${fossil_repolist}" ] && fossil_args="${fossil_args} --repolist"
 
 command_args="-f -p ${pidfile} ${procname} server -P ${fossil_port} ${fossil_args} ${fossil_directory}"
 
-fossil_setfib()
-{
-        if command -v check_namevarlist > /dev/null 2>&1; then
-                check_namevarlist fib && return 0
-        fi
-
-        ${SYSCTL} net.fibs >/dev/null 2>&1 || return 0
-
-        fossil_fib=${fossil_fib:-"NONE"}
-        case "$fossil_fib" in
-        [Nn][Oo][Nn][Ee])
-                ;;
-        *)
-                command="setfib -F ${fossil_fib} ${command}"
-                ;;
-        esac
-}
-
 fossil_precmd()
 {
-        fossil_setfib
         install -d -o root -g wheel -m 1777 /var/run/fossil
 }
 

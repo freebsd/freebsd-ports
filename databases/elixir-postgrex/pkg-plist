@@ -15,9 +15,12 @@ lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Result.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Time.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Timestamp.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.TypeInfo.beam
+lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.TypeServer.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Types.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Utils.beam
+lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.beam
 lib/elixir/lib/postgrex/ebin/postgrex.app
+lib/elixir/lib/postgrex/lib/postgrex.ex
 lib/elixir/lib/postgrex/lib/postgrex/binary_utils.ex
 lib/elixir/lib/postgrex/lib/postgrex/builtins.ex
 lib/elixir/lib/postgrex/lib/postgrex/connection.ex
@@ -32,6 +35,7 @@ lib/elixir/lib/postgrex/lib/postgrex/messages.ex
 lib/elixir/lib/postgrex/lib/postgrex/protocol.ex
 lib/elixir/lib/postgrex/lib/postgrex/result.ex
 lib/elixir/lib/postgrex/lib/postgrex/type_info.ex
+lib/elixir/lib/postgrex/lib/postgrex/type_server.ex
 lib/elixir/lib/postgrex/lib/postgrex/types.ex
 lib/elixir/lib/postgrex/lib/postgrex/utils.ex
 %%PORTDOCS%%%%DOCSDIR%%/README.md

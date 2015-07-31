@@ -301,6 +301,7 @@
     SUBDIR += p5-Business-ISBN
     SUBDIR += p5-Business-ISBN-Data
     SUBDIR += p5-Business-ISIN
+    SUBDIR += p5-Business-ISMN
     SUBDIR += p5-Business-ISSN
     SUBDIR += p5-Business-UPS
     SUBDIR += p5-Chatbot-Eliza
@@ -409,6 +410,7 @@
     SUBDIR += py-osd
     SUBDIR += py-pexpect
     SUBDIR += py-progressbar
+    SUBDIR += py-progressbar231
     SUBDIR += py-qt4-demo
     SUBDIR += py-qt4-doc
     SUBDIR += py-yolk
@@ -449,6 +451,7 @@
     SUBDIR += sloccount
     SUBDIR += sls
     SUBDIR += smssend
+    SUBDIR += solarized
     SUBDIR += spamcalc
     SUBDIR += sshbuddy
     SUBDIR += sssnips

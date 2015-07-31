@@ -1,0 +1,225 @@
+/*
+ * Copyright 2003-2009 Jacques Vidrine and contributors. All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are
+ * met:
+ *
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+ * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE FOR
+ * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+ * GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+ * IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+ * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+body {
+  background: #ffffff;
+  font-family: verdana, "bitstream vera sans", arial, helvetica, sans-serif;
+}
+h1.title {
+  color: #208020;
+}
+h2.section {
+  color: #208020;
+}
+
+h1.title0 {
+  margin-bottom: 0em;
+  color: #208020;
+}
+p.subtitle {
+  margin-top: 0em;
+  color: #208020;
+  font-size: small;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* The blurb in the upper-right corner. */
+.blurb {
+  color: #40A040;
+  font-size: small;
+  font-style: italic;
+  border: thin solid #40A040;
+  text-align: center;
+  width: 9em;
+  float: right;
+  padding: 2px;
+}
+div.blurb A:link, div.blurb A:visited, div.blurb A:hover {
+  text-decoration: none;
+  color: #40A040;
+}
+
+/* The link from the package page to FreshPorts.org. */
+div.freshportslink {
+  color: #AD0040;
+  font-size: small;
+  font-style: italic;
+  text-align: left;
+  padding: 0px 2px 2px 2px;
+}
+div.freshportslink a:link, div.freshportslink a:visited,
+div.freshportslink a:hover {
+  border: thin solid #AD0040;
+  text-decoration: none;
+  color: #AD0040;
+  padding: 2px;
+}
+
+/* The link from the CVE page to cve.mitre.org. */
+div.cvelink {
+  color: #AD0040;
+  font-size: small;
+  font-style: italic;
+  text-align: left;
+  padding: 0px 2px 2px 2px;
+}
+div.cvelink a:link, div.cvelink a:visited, div.cvelink a:hover {
+  border: thin solid #AD0040;
+  text-decoration: none;
+  color: #AD0040;
+  padding: 2px;
+}
+
+/* Most links are black unless the mouse is over them. */
+A:link, A:visited {
+  text-decoration: none;
+  color: #000000;
+}
+A:hover {
+  text-decoration: underline;
+  color: #802020;
+}
+
+/* Some links should be more visible. */
+A:link.vis, A:visited.vis {
+  text-decoration: none;
+  color: #0000ef;
+}
+
+/* Links in the ``embedded'' HTML look a bit different. */
+div.embed A:link {
+  text-decoration: underline;
+  color: #6b69ff;
+}
+div.embed A:visited {
+  text-decoration: underline;
+  color: #840084;
+}
+div.embed A:hover {
+  text-decoration: underline;
+  color: #ff0000;
+}
+div.citation A:link {
+  text-decoration: none;
+  color: #6b69ff;
+}
+div.citation A:visited {
+  text-decoration: none;
+  color: #840084;
+}
+div.citation A:hover {
+  text-decoration: none;
+  color: #ff0000;
+}
+
+/* Simple list tables */
+table.list {
+  border: thin solid #000000;
+}
+table.list thead td {
+  text-align: center;
+  background: #000000;
+  color: #ffffff;
+}
+
+/* Label/content tables */
+td.label {
+  font-weight: bold;
+  padding-right: 0.75em;
+  padding-left: 0.75em;
+  background-color: #c6d3de;
+  white-space: nowrap;
+}
+td.content {
+  padding-right: 0.75em;
+  padding-left: 0.75em;
+  background: #e5ffe5;
+}
+
+/* The navigation bar */
+tbody.nav td {
+  border: thin solid black;
+  padding: 3pt;
+}
+
+/* Our common table style */
+table.common thead th {
+  padding-right: 0.75em;
+  padding-left: 0.75em;
+  background-color: #c6d3de;
+  white-space: nowrap;
+}
+table.common tbody td {
+  padding-right: 0.75em;
+  padding-left: 0.75em;
+  background: #e5ffe5;
+}
+table.common tbody td.group {
+  background: #c5ffc5;
+  white-space: nowrap;
+}
+
+/* Blockquotes */
+blockquote {
+  background: #F0F0F0;
+  border-left: #CCCCCC 0.5em solid;
+  border-right: #CCCCCC 1px dashed;
+  border-top: #CCCCCC 1px dashed;
+  border-bottom: #CCCCCC 1px dashed;
+}
+div.citation {
+  font-size: small;
+  font-style: italic;
+  text-align: right;
+}
+
+/* Various attributes */
+.package {
+  font-family: "monaco", "andale mono", "courier new", monospace;
+}
+.vid {
+  font-family: "monaco", "andale mono", "courier new", monospace;
+}
+.copyright {
+  font-size: small;
+  font-style: italic;
+}
+.email {
+  font-family: "monaco", "andale mono", "courier new", monospace;
+}
+.hide {
+  display: none;
+}
+.note {
+  font-size: small;
+  font-style: italic;
+  color: #801010;
+}
+.date, .cvename {
+  white-space: nowrap;
+}
+

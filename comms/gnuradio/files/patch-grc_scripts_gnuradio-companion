@@ -1,8 +1,8 @@
---- grc/scripts/gnuradio-companion.orig	2014-03-27 14:30:40.047953899 -0400
-+++ grc/scripts/gnuradio-companion	2014-03-27 14:31:24.523952302 -0400
-@@ -18,6 +18,10 @@
- Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA
- """
+--- grc/scripts/gnuradio-companion.orig	2015-05-12 09:39:44 UTC
++++ grc/scripts/gnuradio-companion
+@@ -22,6 +22,10 @@ import os
+ import sys
+ import optparse
  
 +# XXX workaround to make sure we import gcc47's libgcc_s.so not
 +# the older one from base:

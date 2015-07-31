@@ -134,7 +134,7 @@
     SUBDIR += pear-Horde_Compress
     SUBDIR += pear-Horde_Compress_Fast
     SUBDIR += pear-Horde_Pack
-    SUBDIR += pear-PHP_Archiv
+    SUBDIR += pear-PHP_Archive
     SUBDIR += pecl-lzf
     SUBDIR += pecl-phk
     SUBDIR += pecl-rar
@@ -159,6 +159,7 @@
     SUBDIR += ppmd-7z
     SUBDIR += ppunpack
     SUBDIR += pxz
+    SUBDIR += py-attic
     SUBDIR += py-liblzma
     SUBDIR += py-librtfcomp
     SUBDIR += py-lz4

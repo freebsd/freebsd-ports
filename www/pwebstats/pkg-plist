@@ -84,11 +84,3 @@ etc/pwebstats/utilities/ns-splitter.pl
 etc/pwebstats/utilities/rotatelogs.sh
 etc/pwebstats/utilities/run-up.sh
 etc/pwebstats/utilities/squid2common.pl
-@dirrm etc/pwebstats/utilities
-@dirrm etc/pwebstats/templates/old-images
-@dirrm etc/pwebstats/templates/images/dates
-@dirrm etc/pwebstats/templates/images
-@dirrm etc/pwebstats/templates/domains
-@dirrm etc/pwebstats/templates
-@dirrm etc/pwebstats/conf
-@dirrm etc/pwebstats

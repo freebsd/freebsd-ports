@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Nov 15 18:25:30 2005
-+++ Makefile	Tue Nov 15 18:25:59 2005
+--- Makefile.orig	2006-03-21 02:46:28 UTC
++++ Makefile
 @@ -1,8 +1,10 @@
 +all:	dhcprelay
 +

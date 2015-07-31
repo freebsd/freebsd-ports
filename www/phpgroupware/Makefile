@@ -13,6 +13,7 @@ USE_PHP=	yes
 WANT_PHP_MOD=	yes
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 do-install:
 		@${MKDIR} ${STAGEDIR}${PREFIX}/www/data-dist/phpgroupware

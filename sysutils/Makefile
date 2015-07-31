@@ -13,6 +13,7 @@
     SUBDIR += abgx360
     SUBDIR += abgx360gui
     SUBDIR += accountsservice
+    SUBDIR += acerhdf-kmod
     SUBDIR += acpi_call
     SUBDIR += acpica-tools
     SUBDIR += acts
@@ -123,6 +124,7 @@
     SUBDIR += cfengine34
     SUBDIR += cfengine35
     SUBDIR += cfengine36
+    SUBDIR += cfengine37
     SUBDIR += chgrep
     SUBDIR += cinnamon-control-center
     SUBDIR += cinnamon-settings-daemon
@@ -134,6 +136,7 @@
     SUBDIR += clone
     SUBDIR += clonehdd
     SUBDIR += cloop-utils
+    SUBDIR += cloudabi-utils
     SUBDIR += clsync
     SUBDIR += cmdwatch
     SUBDIR += cmockery2
@@ -404,6 +407,7 @@
     SUBDIR += installwatch
     SUBDIR += intel-pcm
     SUBDIR += iocage
+    SUBDIR += iocage-devel
     SUBDIR += iogen
     SUBDIR += iograph
     SUBDIR += ioping
@@ -754,6 +758,7 @@
     SUBDIR += py-filelike
     SUBDIR += py-glances
     SUBDIR += py-halite
+    SUBDIR += py-honcho
     SUBDIR += py-iowait
     SUBDIR += py-nagiosplugin
     SUBDIR += py-ploy
@@ -805,6 +810,7 @@
     SUBDIR += rename
     SUBDIR += renameutils
     SUBDIR += reoback
+    SUBDIR += reptyr
     SUBDIR += respond
     SUBDIR += retail
     SUBDIR += rfstool
@@ -875,6 +881,7 @@
     SUBDIR += rubygem-sys-uptime
     SUBDIR += rubygem-teamocil
     SUBDIR += rubygem-winrm
+    SUBDIR += rubygem-winrm-fs
     SUBDIR += rubygem-yell
     SUBDIR += rundeck
     SUBDIR += runit

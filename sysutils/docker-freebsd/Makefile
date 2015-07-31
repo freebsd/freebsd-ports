@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	docker-freebsd
-PORTVERSION=	06252015
+PORTVERSION=	20150625
 CATEGORIES=	sysutils
 
 MAINTAINER=	kmoore@FreeBSD.org
@@ -25,6 +25,8 @@ GH_TAGNAME=	582db78
 
 PLIST_FILES=	bin/docker
 USE_RC_SUBR=	docker
+
+BROKEN_FreeBSD_8=	This port works only on FreeBSD 9 and newer
 
 do-build:
 	@cd ${WRKSRC} && export AUTO_GOPATH=1 && export DOCKER_GITCOMMIT=${GH_TAGNAME} && ./hack/make.sh binary

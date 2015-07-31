@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	filezilla
-PORTVERSION=	3.11.0.1
+PORTVERSION=	3.12.0.2
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/FileZilla_Client/${PORTVERSION}
 DISTNAME=	FileZilla_${PORTVERSION}_src
@@ -19,8 +19,6 @@ LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libgnutls.so:${PORTSDIR}/security/gnutls \
 		libidn.so:${PORTSDIR}/dns/libidn \
 		libtinyxml.so:${PORTSDIR}/textproc/tinyxml
-
-BROKEN_FreeBSD_9=	does not build on FreeBSD 9.x (gcc segfault)
 
 INSTALLS_ICONS=	yes
 USES=		compiler:c++11-lib gmake pkgconfig tar:bzip2
@@ -49,8 +47,8 @@ CONFIGURE_ARGS+=	--disable-manualupdatecheck
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-# can't count on Clang having lic++ before 10, so compiler uses selects gcc
+.if ${CHOSEN_COMPILER_TYPE} == "gcc"
+BROKEN_FreeBSD=		GCC dies with Internal Compiler Error
 .if ${ARCH} == i386 && ! ${CFLAGS:M-march=*}
 # needed for __atomic_exchange_8, __atmoic_fetch_add_8, __atomic_store_8
 CFLAGS+=	-march=i586

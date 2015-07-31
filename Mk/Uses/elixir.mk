@@ -9,18 +9,22 @@
 # Additional variables:
 #
 # ELIXIR_APP_NAME	- Elixir app name as installed in Elixir's lib directory
+# ELIXIR_LIB_ROOT	- Elixir default library path
 # ELIXIR_APP_ROOT	- Root directory for this Elixir app
 # ELIXIR_HIDDEN		- Applications to be hidden from the code path; usually ${PORTNAME}
 # ELIXIR_LOCALE		- An UTF-8 locale to be used by Elixir during builds (any UTF-8 locale is good)
 # MIX_CMD		- The "mix" command
 # MIX_COMPILE		- The "mix" command used to compile an Elixir app
+# MIX_REWRITE		- Automatically replace Mix dependencies with code paths
 # MIX_BUILD_DEPS	- List of BUILD_DEPENDS in category/portname format
-# 			(commonly referenced to as "deps" in Erlang and Elixir)
+#			(commonly referenced to as "deps" in Erlang and Elixir)
 # MIX_RUN_DEPS		- List of RUN_DEPENDS in category/portname format
 # MIX_DOC_DIRS		- Extra doc directories to be installed in DOCSDIR
 # MIX_DOC_FILES		- Extra doc files to be installed in DOCSDIR (usually README.md)
+# MIX_ENV		- Environment for the Mix build (same format as MAKE_ENV)
 # MIX_ENV_NAME		- Name of the Mix build environment, usually "prod"
 # MIX_BUILD_NAME	- Name of the build output in _build/, usually ${MIX_ENV_NAME}
+# MIX_TARGET		- Name of the Mix target, usually "compile"
 # MIX_EXTRA_APPS	- List of sub-applications to be built, if any
 # MIX_EXTRA_DIRS	- List of extra directories to be installed in ELIXIR_APP_ROOT
 # MIX_EXTRA_FILES	- List of extra files to be installed in ELIXIR_APP_ROOT
@@ -35,17 +39,21 @@ IGNORE=	USES=elixir does not require args
 .endif
 
 ELIXIR_APP_NAME?=	${PORTNAME}
+ELIXIR_LIB_ROOT?=	${LOCALBASE}/lib/elixir/lib
 ELIXIR_APP_ROOT?=	${PREFIX}/lib/elixir/lib/${ELIXIR_APP_NAME}
-ELIXIR_HIDDEN?=		"^${PORTNAME}$$"
+ELIXIR_HIDDEN?=		"^${ELIXIR_APP_NAME}$$"
 ELIXIR_LOCALE?=		en_US.UTF-8
 MIX_CMD?=		${LOCALBASE}/bin/mix
-MIX_COMPILE?=		LANG=${ELIXIR_LOCALE} MIX_ENV=${MIX_ENV_NAME} ELIXIR_HIDDEN=${ELIXIR_HIDDEN} ${MIX_CMD} compile
+MIX_COMPILE?=		${SETENV} ${MIX_ENV} LANG=${ELIXIR_LOCALE} MIX_ENV=${MIX_ENV_NAME} ELIXIR_HIDDEN=${ELIXIR_HIDDEN} ${MIX_CMD} ${MIX_TARGET}
+MIX_REWRITE?=
 MIX_BUILD_DEPS?=
 MIX_RUN_DEPS?=
 MIX_DOC_DIRS?=
 MIX_DOC_FILES?=		README.md
+MIX_ENV?=
 MIX_ENV_NAME?=		prod
 MIX_BUILD_NAME?=	prod
+MIX_TARGET?=		compile
 MIX_EXTRA_APPS?=
 MIX_EXTRA_DIRS?=
 MIX_EXTRA_FILES?=
@@ -63,6 +71,9 @@ RUN_DEPENDS+=	${depend:T}>=0:${PORTSDIR}/${depend}
 
 .if !target(do-build)
 do-build:
+.if ${MIX_REWRITE} != ""
+	@${REINPLACE_CMD} -i '' -E -e "s@{.*(only|optional): .*},?@@; s@{ *:([a-zA-Z0-9_]+), *(github:|\").*}@{ :\1, path: \"${ELIXIR_LIB_ROOT}/\\1\", compile: false }@" ${WRKSRC}/mix.exs
+.endif
 	@${RM} -f ${WRKSRC}/mix.lock
 	@cd ${WRKSRC} && ${MIX_COMPILE}
 .for app in ${MIX_EXTRA_APPS}

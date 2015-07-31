@@ -75,6 +75,7 @@ FIRST_COMMAND=	${COMMANDS:C/^/XXXX/1:MXXXX*:C/^XXXX//}
 
 .include <bsd.port.pre.mk>
 
+BROKEN_armv6=	fails to link
 .if ${CHOSEN_COMPILER_TYPE} == "gcc"
 BROKEN=	build errors when C++11 compiler is gcc
 .endif

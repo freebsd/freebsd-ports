@@ -196,7 +196,7 @@ USES+=			readline
 .else # LIBR_SLAVEPORT
 
 .if ${PORT_OPTIONS:MGHOSTSCRIPT}
-USE_GHOSTSCRIPT_RUN=	yes
+USES+=			ghostscript
 .endif
 
 .if ${PORT_OPTIONS:MJPEG}

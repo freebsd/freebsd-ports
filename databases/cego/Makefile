@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cego
-PORTVERSION=	2.23.8
+PORTVERSION=	2.23.12
 CATEGORIES=	databases
 MASTER_SITES=	http://www.lemke-it.com/
 
@@ -9,6 +9,7 @@ MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Relational and transactional database system
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	liblfcbase.so:${PORTSDIR}/devel/lfcbase \
 		liblfcxml.so:${PORTSDIR}/devel/lfcxml
@@ -19,10 +20,11 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 USE_LDCONFIG=	yes
 
-USES=		ncurses readline libtool
+USES=		libtool ncurses readline shebangfix
+SHEBANG_FILES=	tools/cgbackup tools/cgrecover
 
-USERS=	cego
-GROUPS=	cego
+USERS=		cego
+GROUPS=		cego
 
 PLIST_SUB+=	USER=${USERS}
 

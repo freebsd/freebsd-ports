@@ -65,7 +65,6 @@
     SUBDIR += symports
     SUBDIR += tinderbox
     SUBDIR += tinderbox-devel
-    SUBDIR += vulnerability-test-port
     SUBDIR += wanted-ports
     SUBDIR += xps
 

@@ -109,6 +109,7 @@
     SUBDIR += elm
     SUBDIR += elmo
     SUBDIR += elmo-devel
+    SUBDIR += emailrelay
     SUBDIR += emil
     SUBDIR += enma
     SUBDIR += eps
@@ -215,6 +216,7 @@
     SUBDIR += mailagent
     SUBDIR += maildirsync
     SUBDIR += maildrop
+    SUBDIR += mailest
     SUBDIR += mailfmt
     SUBDIR += mailfront
     SUBDIR += mailgraph

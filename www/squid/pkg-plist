@@ -2171,6 +2171,7 @@ man/man8/ext_unix_group_acl.8.gz
 %%AUTH_SMB%%man/man8/ext_wbinfo_group_acl.8.gz
 %%AUTH_KERB%%man/man8/negotiate_kerberos_auth.8.gz
 man/man8/squid.8.gz
+%%SSL_CRTD%%man/man8/ssl_crtd.8.gz
 man/man8/storeid_file_rewrite.8.gz
 sbin/purge
 sbin/squid

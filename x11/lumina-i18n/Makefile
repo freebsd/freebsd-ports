@@ -6,7 +6,7 @@ PORTVERSION=	0.8.6
 CATEGORIES=	x11
 
 MAINTAINER=	kmoore@FreeBSD.org
-COMMENT=	Lumina Desktop Environment Localization Files
+COMMENT=	Lumina desktop environment localization files
 
 LICENSE=	BSD3CLAUSE
 

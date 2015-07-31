@@ -12,7 +12,7 @@ MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Open source clone of Dune II
 
 LICENSE=	GPLv2
-LICENSE_FILES=	COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		tar:bzip2 compiler:c++11-lib
 USE_AUTOTOOLS=	autoconf

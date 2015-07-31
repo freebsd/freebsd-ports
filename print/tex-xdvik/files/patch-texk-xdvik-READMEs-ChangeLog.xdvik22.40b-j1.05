@@ -1,5 +1,5 @@
---- /dev/null	2015-01-31 21:35:05.000000000 +0900
-+++ texk/xdvik/READMEs/ChangeLog.xdvik22.40b-j1.05	2015-01-31 21:02:18.000000000 +0900
+--- texk/xdvik/READMEs/ChangeLog.xdvik22.40b-j1.05.orig	2015-07-19 18:49:41 UTC
++++ texk/xdvik/READMEs/ChangeLog.xdvik22.40b-j1.05
 @@ -0,0 +1,69 @@
 +/* ******************* *
 + *  xdvik-jp 変更履歴  *

@@ -16,6 +16,7 @@ LDFLAGS+=	-pthread
 USES=		cmake:outsource compiler:c++11-lang
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
+BROKEN_FreeBSD_8=	"undefined reference to `iswalpha_l'"
 
 OPTIONS_DEFINE=	DEBUG TEST STATIC
 OPTIONS_RADIO=	LOG_LEVEL
@@ -57,10 +58,7 @@ regression-test: build
 # require clang & libc++
 BUILD_DEPENDS+=	${LOCALBASE}/bin/clang34:${PORTSDIR}/lang/clang34 \
 		${LOCALBASE}/lib/c++/libstdc++.so:${PORTSDIR}/devel/libc++
-CC=	clang34
-CXX=	clang++34
-CXXFLAGS+=	-stdlib=libc++ -I${LOCALBASE}/include/c++/v1
-CPP=	clang-cpp34
+CXXFLAGS+=	-stdlib=libc++ -I${LOCALBASE}/include/c++/v1 -L${LOCALBASE}/lib
 .endif
 
 .include <bsd.port.mk>

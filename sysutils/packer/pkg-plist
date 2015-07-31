@@ -4,6 +4,7 @@ bin/packer-builder-amazon-ebs
 bin/packer-builder-amazon-instance
 bin/packer-builder-digitalocean
 bin/packer-builder-docker
+bin/packer-builder-file
 bin/packer-builder-googlecompute
 bin/packer-builder-null
 bin/packer-builder-openstack
@@ -27,7 +28,11 @@ bin/packer-provisioner-ansible-local
 bin/packer-provisioner-chef-client
 bin/packer-provisioner-chef-solo
 bin/packer-provisioner-file
+bin/packer-provisioner-powershell
 bin/packer-provisioner-puppet-masterless
 bin/packer-provisioner-puppet-server
 bin/packer-provisioner-salt-masterless
 bin/packer-provisioner-shell
+bin/packer-provisioner-shell-local
+bin/packer-provisioner-windows-restart
+bin/packer-provisioner-windows-shell

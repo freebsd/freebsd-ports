@@ -3,6 +3,7 @@
 
 PORTNAME=	rebar
 PORTVERSION=	2.6.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -18,6 +19,7 @@ OPTIONS_DEFINE=	BASH ZSH
 USE_GITHUB=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
+PORTEXAMPLES=	rebar.config.sample
 
 BASH_PLIST_FILES=	share/bash-completion/completions/rebar
 ZSH_PLIST_FILES=	share/zsh/site-functions/_rebar
@@ -36,5 +38,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/priv/shell-completion/zsh/_rebar \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions/
 .endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/rebar.config.sample ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

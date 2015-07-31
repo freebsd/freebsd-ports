@@ -4,10 +4,5 @@ man/man1/pgp2.1.gz
 share/pgp/pgp.hlp
 share/pgp/pgpdoc1.txt
 share/pgp/pgpdoc2.txt
-@unexec if cmp -s %D/share/pgp/language.txt %D/share/pgp/language.txt-dist; then rm -f %D/share/pgp/language.txt; fi
-share/pgp/language.txt-dist
-@exec [ ! -f %B/language.txt ] && cp %B/%f %B/language.txt
-@unexec if cmp -s %D/share/pgp/config.txt %D/share/pgp/config.txt-dist; then rm -f %D/share/pgp/config.txt; fi
-share/pgp/config.txt-dist
-@exec [ ! -f %B/config.txt ] && cp %B/%f %B/config.txt
-@dirrm share/pgp
+@sample share/pgp/language.txt.sample
+@sample share/pgp/config.txt.sample

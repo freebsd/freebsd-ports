@@ -4,7 +4,7 @@
 PORTNAME=		bash
 PATCHLEVEL=		39
 PORTVERSION=		4.3.${PATCHLEVEL:S/^0//g}
-PORTREVISION?=		1
+PORTREVISION?=		2
 CATEGORIES=		shells
 MASTER_SITES=		GNU/${PORTNAME}
 DISTNAME=		${PORTNAME}-${PORTVERSION:R}
@@ -54,7 +54,7 @@ CONFIGURE_ARGS+=	--without-bash-malloc \
 			--disable-rpath \
 			--enable-disabled-builtins
 
-CFLAGS+=		-DUSE_MKTEMP=1
+CFLAGS+=		-DUSE_MKTEMP=1 -DUSE_MKSTEMP=1
 
 .if empty(PKGNAMESUFFIX)
 CONFLICTS+=		bash-static-[0-9]*

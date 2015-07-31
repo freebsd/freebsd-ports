@@ -1,6 +1,6 @@
---- texk/xdvik/dvi-init.c.orig	2014-09-02 18:41:34.000000000 +0900
-+++ texk/xdvik/dvi-init.c	2015-01-31 21:03:09.000000000 +0900
-@@ -31,6 +31,10 @@
+--- texk/xdvik/dvi-init.c.orig	2013-04-05 00:14:54 UTC
++++ texk/xdvik/dvi-init.c
+@@ -31,6 +31,10 @@ in xdvi.c.
  
  #include "dvi-init.h"
  #include "dvi-draw.h"
@@ -11,7 +11,7 @@
  #include "util.h"
  #include "x_util.h"
  #include "exit-handlers.h"
-@@ -53,6 +57,9 @@
+@@ -53,6 +57,9 @@ in xdvi.c.
  #include "statusline.h"
  #include "events.h"
  #include "font-open.h"
@@ -21,7 +21,7 @@
  
  #if FREETYPE
  # include FT_SIZES_H
-@@ -67,6 +74,10 @@
+@@ -67,6 +74,10 @@ in xdvi.c.
  #define	VF_PRE		247
  #define	VF_ID_BYTE	202
  #define	VF_MAGIC	((VF_PRE << 8) | VF_ID_BYTE)
@@ -32,7 +32,7 @@
  
  /* font stuff */
  struct font *tn_table[TNTABLELEN];
-@@ -170,8 +181,22 @@
+@@ -170,8 +181,22 @@ static void
  delete_glyphs(struct font *fontp)
  {
      struct glyph *g;
@@ -55,7 +55,7 @@
  	if (g->bitmap2.bits) {
  	    free(g->bitmap2.bits);
  	    g->bitmap2.bits = NULL;
-@@ -283,7 +308,23 @@
+@@ -283,7 +308,23 @@ free_unused_fonts(void)
  		}
  		else {
  		    delete_glyphs(fontp);
@@ -79,7 +79,7 @@
  		}
  		free((char *)fontp);
  	    }
-@@ -324,7 +365,11 @@
+@@ -324,7 +365,11 @@ reset_colors(void)
  	struct glyph *g;
  
  	for (f = font_head; f != NULL; f = f->next)
@@ -92,7 +92,7 @@
  		for (g = f->glyph; g <= f->glyph + f->maxchar; ++g)
  		    g->fg = NULL;
      }
-@@ -447,6 +492,10 @@
+@@ -447,6 +492,10 @@ load_font(struct font *fontp
       * appear before the main window comes up ...
       */
  
@@ -103,7 +103,7 @@
      fontp->file = font_open(
  #if DELAYED_MKTEXPK
  			    load_font_now,
-@@ -511,6 +560,12 @@
+@@ -511,6 +560,12 @@ load_font(struct font *fontp
      fontp->fsize = size_found;
      fontp->timestamp = ++current_timestamp;
      fontp->maxchar = maxchar = 255;
@@ -116,7 +116,7 @@
      fontp->set_char_p = set_char;
      magic = get_bytes(fontp->file, 2);
  
-@@ -529,6 +584,13 @@
+@@ -529,6 +584,13 @@ load_font(struct font *fontp
  	else
  	    (void)read_VF_index(fontp, (wide_bool)hushcs);
  	break;
@@ -130,7 +130,7 @@
      default:
  	XDVI_FATAL((stderr, "Cannot recognize format for font file %s",
  	  fontp->filename));
-@@ -783,7 +845,13 @@
+@@ -783,7 +845,13 @@ process_preamble(FILE *fp, dviErrFlagT *
  	TRACE_FILES((stderr, "process_preamble: fp = %p, errflag = %d, returning False", (void *)fp, *errflag));
  	return False;
      }
@@ -145,7 +145,7 @@
  	*errflag = WRONG_DVI_VERSION;
  	TRACE_FILES((stderr, "process_preamble: fp = %p, errflag = %d, returning False", (void *)fp, *errflag));
  	return False;
-@@ -845,7 +913,12 @@
+@@ -845,7 +913,12 @@ find_postamble(FILE *fp, dviErrFlagT *er
  	fseek(fp, --pos, SEEK_SET);
  	byte = get_byte(fp);
      }
@@ -159,7 +159,7 @@
  	*errflag = WRONG_DVI_VERSION;
  	TRACE_FILES((stderr, "find_postamble: returning FALSE"));
  	return False;
-@@ -865,9 +938,14 @@
+@@ -865,9 +938,14 @@ set_paper_type(const char *arg)
      char temp[21];
      const char **p;
      char *q;
@@ -175,7 +175,7 @@
      if (*arg == '+') {
  	++arg;
  	ignore_papersize_specials = True;
-@@ -884,6 +962,57 @@
+@@ -884,6 +962,57 @@ set_paper_type(const char *arg)
  	    break;
      }
      arg = temp;
@@ -233,7 +233,7 @@
      /* perform substitutions */
      for (p = paper_types; p < paper_types + paper_types_size; p += 2) {
  	if (strcmp(temp, *p) == 0) {
-@@ -898,6 +1027,7 @@
+@@ -898,6 +1027,7 @@ set_paper_type(const char *arg)
      m_paper_unshrunk_h = atopix(arg1 + 1, False);
  
      globals.grid_paper_unit = atopixunit(arg);

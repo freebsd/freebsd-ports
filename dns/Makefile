@@ -109,6 +109,7 @@
     SUBDIR += p5-DNS-Zone
     SUBDIR += p5-DNS-ZoneParse
     SUBDIR += p5-Data-Validate-Domain
+    SUBDIR += p5-IO-Async-Resolver-DNS
     SUBDIR += p5-Mozilla-PublicSuffix
     SUBDIR += p5-Net-Amazon-Route53
     SUBDIR += p5-Net-Bonjour
@@ -134,6 +135,7 @@
     SUBDIR += p5-Net-LibIDN
     SUBDIR += p5-Net-Nslookup
     SUBDIR += p5-Net-RBLClient
+    SUBDIR += p5-Net-RNDC
     SUBDIR += p5-POE-Component-Client-DNS
     SUBDIR += p5-POE-Component-Client-DNS-Recursive
     SUBDIR += p5-POE-Component-Client-DNSBL

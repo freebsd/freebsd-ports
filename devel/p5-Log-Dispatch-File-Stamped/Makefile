@@ -3,7 +3,7 @@
 
 PORTNAME=	Log-Dispatch-File-Stamped
 PORTVERSION=	0.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,9 +21,11 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Path-Tiny>0:${PORTSDIR}/devel/p5-Path-Tiny \
 		p5-Test-CheckDeps>=0.002:${PORTSDIR}/devel/p5-Test-CheckDeps \
 		p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep \
-		p5-Test-TempDir>0:${PORTSDIR}/devel/p5-Test-TempDir
+		p5-Test-TempDir-Tiny>0:${PORTSDIR}/devel/p5-Test-TempDir-Tiny
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

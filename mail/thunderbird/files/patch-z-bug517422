@@ -4,7 +4,7 @@ diff --git config/Makefile.in config/Makefile.in
 index 5383399..0410004 100644
 --- mozilla/config/Makefile.in
 +++ mozilla/config/Makefile.in
-@@ -79,6 +79,13 @@ export:: $(export-preqs)
+@@ -77,6 +77,14 @@ export:: $(export-preqs)
  		-DMOZ_NATIVE_ICU=$(MOZ_NATIVE_ICU) \
  		-DMOZ_NATIVE_GRAPHITE2=$(MOZ_NATIVE_GRAPHITE2) \
  		-DMOZ_NATIVE_HARFBUZZ=$(MOZ_NATIVE_HARFBUZZ) \
@@ -12,6 +12,7 @@ index 5383399..0410004 100644
 +		-DMOZ_NATIVE_THEORA=$(MOZ_NATIVE_THEORA) \
 +		-DMOZ_NATIVE_VORBIS=$(MOZ_NATIVE_VORBIS) \
 +		-DMOZ_NATIVE_TREMOR=$(MOZ_NATIVE_TREMOR) \
++		-DMOZ_NATIVE_CELT=$(MOZ_NATIVE_CELT) \
 +		-DMOZ_NATIVE_OPUS=$(MOZ_NATIVE_OPUS) \
 +		-DMOZ_NATIVE_SPEEX=$(MOZ_NATIVE_SPEEX) \
 +		-DMOZ_NATIVE_SOUNDTOUCH=$(MOZ_NATIVE_SOUNDTOUCH) \
@@ -22,13 +23,16 @@ diff --git config/external/moz.build config/external/moz.build
 index f67c5c7..eb909ce 100644
 --- mozilla/config/external/moz.build
 +++ mozilla/config/external/moz.build
-@@ -15,13 +15,19 @@ if CONFIG['MOZ_UPDATER']:
-     if not CONFIG['MOZ_NATIVE_BZ2']:
-         external_dirs += ['modules/libbz2']
+@@ -19,10 +19,19 @@ if CONFIG['MOZ_UPDATER']:
+ # There's no "native brotli" yet, but probably in the future...
+ external_dirs += ['modules/brotli']
  
 -if CONFIG['MOZ_VORBIS']:
 +if not CONFIG['MOZ_NATIVE_OGG']:
 +    external_dirs += ['media/libogg']
++
++if not CONFIG['MOZ_NATIVE_CELT'] or not CONFIG['MOZ_NATIVE_OPUS']:
++    external_dirs += ['media/libopus']
 +
 +if not CONFIG['MOZ_NATIVE_THEORA']:
 +    external_dirs += ['media/libtheora']
@@ -40,12 +44,8 @@ index f67c5c7..eb909ce 100644
 +if CONFIG['MOZ_TREMOR'] and not CONFIG['MOZ_NATIVE_TREMOR']:
      external_dirs += ['media/libtremor']
  
--if CONFIG['MOZ_OPUS']:
-+if CONFIG['MOZ_OPUS'] and not CONFIG['MOZ_NATIVE_OPUS']:
-     external_dirs += ['media/libopus']
- 
  if CONFIG['MOZ_WEBM']:
-@@ -36,13 +42,15 @@ if CONFIG['MOZ_VPX'] and not CONFIG['MOZ_NATIVE_LIBVPX']:
+@@ -37,15 +46,16 @@ if CONFIG['MOZ_VPX'] and not CONFIG['MOZ
  if not CONFIG['MOZ_NATIVE_PNG']:
      external_dirs += ['media/libpng']
  
@@ -59,35 +59,35 @@ index f67c5c7..eb909ce 100644
      'media/kiss_fft',
      'media/libcubeb',
 -    'media/libogg',
+-    'media/libopus',
 -    'media/libtheora',
 -    'media/libspeex_resampler',
+     'media/libstagefright',
 -    'media/libsoundtouch',
  ]
  
- PARALLEL_DIRS += ['../../' + i for i in external_dirs]
+ DIRS += ['../../' + i for i in external_dirs]
 diff --git config/system-headers config/system-headers
 index bef567c..9807c29 100644
 --- mozilla/config/system-headers
 +++ mozilla/config/system-headers
-@@ -1050,8 +1050,6 @@ X11/Xutil.h
- xpt_struct.h
- xpt_xdr.h
+@@ -1263,7 +1263,6 @@ X11/Xlocale.h
+ X11/Xos.h
+ X11/Xutil.h
  zmouse.h
--speex/speex_resampler.h
 -soundtouch/SoundTouch.h
  #if MOZ_NATIVE_PNG==1
  png.h
  #endif
-@@ -1119,6 +1117,8 @@ ogg/ogg.h
+@@ -1325,6 +1324,7 @@ vorbis/codec.h
+ theora/theoradec.h
+ tremor/ivorbiscodec.h
+ speex/speex_resampler.h
++soundtouch/SoundTouch.h
+ ogg/ogg.h
  ogg/os_types.h
  nestegg/nestegg.h
- cubeb/cubeb.h
-+speex/speex_resampler.h
-+soundtouch/SoundTouch.h
- #endif
- gst/gst.h
- gst/app/gstappsink.h
-@@ -1155,3 +1155,29 @@ graphite2/Segment.h
+@@ -1365,3 +1365,35 @@ graphite2/Segment.h
  harfbuzz/hb-ot.h
  harfbuzz/hb.h
  #endif
@@ -105,6 +105,12 @@ index bef567c..9807c29 100644
 +#if MOZ_NATIVE_TREMOR==1
 +tremor/ivorbiscodec.h
 +#endif
++#if MOZ_NATIVE_CELT==1
++celt.h
++celt_header.h
++celt/celt.h
++celt/celt_header.h
++#endif
 +#if MOZ_NATIVE_OPUS==1
 +opus.h
 +opus_multistream.h
@@ -121,7 +127,7 @@ diff --git configure.in configure.in
 index 87db361..7947626 100644
 --- mozilla/configure.in
 +++ mozilla/configure.in
-@@ -5211,6 +5211,63 @@ if test "${ac_cv_c_attribute_aligned}" != "0"; then
+@@ -5223,6 +5223,157 @@ if test "${ac_cv_c_attribute_aligned}" !
  fi
  
  dnl ========================================================
@@ -144,8 +150,6 @@ index 87db361..7947626 100644
 +fi
 +
 +AC_SUBST(MOZ_NATIVE_OGG)
-+AC_SUBST(MOZ_OGG_CFLAGS)
-+AC_SUBST(MOZ_OGG_LIBS)
 +
 +dnl ========================================================
 +dnl Check for libvorbis
@@ -161,8 +165,6 @@ index 87db361..7947626 100644
 +fi
 +
 +AC_SUBST(MOZ_NATIVE_VORBIS)
-+AC_SUBST(MOZ_VORBIS_CFLAGS)
-+AC_SUBST(MOZ_VORBIS_LIBS)
 +
 +dnl ========================================================
 +dnl Check for integer-only libvorbis aka tremor
@@ -178,17 +180,25 @@ index 87db361..7947626 100644
 +fi
 +
 +AC_SUBST(MOZ_NATIVE_TREMOR)
-+AC_SUBST(MOZ_TREMOR_CFLAGS)
-+AC_SUBST(MOZ_TREMOR_LIBS)
 +
 +dnl ========================================================
- dnl = Disable Opus audio codec support
- dnl ========================================================
- MOZ_ARG_DISABLE_BOOL(opus,
-@@ -5219,6 +5274,97 @@ MOZ_ARG_DISABLE_BOOL(opus,
-     MOZ_OPUS=1)
- 
- dnl ========================================================
++dnl Check for libcelt
++dnl ========================================================
++
++MOZ_ARG_WITH_BOOL(system-celt,
++[  --with-system-celt      Use system libcelt (located with pkgconfig)],
++MOZ_NATIVE_CELT=1,
++MOZ_NATIVE_CELT=)
++
++if test -n "$MOZ_NATIVE_CELT"; then
++    PKG_CHECK_MODULES(MOZ_CELT, celt)
++else
++    MOZ_CELT_CFLAGS='-I$(topsrcdir)/media/libopus'
++fi
++
++AC_SUBST(MOZ_NATIVE_CELT)
++
++dnl ========================================================
 +dnl Check for libopus
 +dnl ========================================================
 +
@@ -204,8 +214,6 @@ index 87db361..7947626 100644
 +fi
 +
 +AC_SUBST(MOZ_NATIVE_OPUS)
-+AC_SUBST(MOZ_OPUS_CFLAGS)
-+AC_SUBST(MOZ_OPUS_LIBS)
 +
 +dnl ========================================================
 +dnl Check for libtheora
@@ -221,8 +229,6 @@ index 87db361..7947626 100644
 +fi
 +
 +AC_SUBST(MOZ_NATIVE_THEORA)
-+AC_SUBST(MOZ_THEORA_CFLAGS)
-+AC_SUBST(MOZ_THEORA_LIBS)
 +
 +dnl ========================================================
 +dnl Check for libspeex resampler
@@ -238,8 +244,6 @@ index 87db361..7947626 100644
 +fi
 +
 +AC_SUBST(MOZ_NATIVE_SPEEX)
-+AC_SUBST(MOZ_SPEEX_CFLAGS)
-+AC_SUBST(MOZ_SPEEX_LIBS)
 +
 +dnl ========================================================
 +dnl Check for libsoundtouch
@@ -276,19 +280,17 @@ index 87db361..7947626 100644
 +fi
 +
 +AC_SUBST(MOZ_NATIVE_SOUNDTOUCH)
-+AC_SUBST(MOZ_SOUNDTOUCH_CFLAGS)
-+AC_SUBST(MOZ_SOUNDTOUCH_LIBS)
 +
 +dnl ========================================================
  dnl = Disable VP8 decoder support
  dnl ========================================================
  MOZ_ARG_DISABLE_BOOL(webm,
-diff --git content/media/AudioStream.h content/media/AudioStream.h
+diff --git dom/media/AudioStream.h dom/media/AudioStream.h
 index 085676d..00c54fb 100644
---- mozilla/content/media/AudioStream.h
-+++ mozilla/content/media/AudioStream.h
-@@ -26,7 +26,7 @@ public:
- };
+--- mozilla/dom/media/AudioStream.h
++++ mozilla/dom/media/AudioStream.h
+@@ -17,7 +17,7 @@
+ #include "CubebUtils.h"
  
  namespace soundtouch {
 -class SoundTouch;
@@ -296,177 +298,265 @@ index 085676d..00c54fb 100644
  }
  
  namespace mozilla {
-diff --git content/media/Makefile.in content/media/Makefile.in
-index fd34449..c6c42c8 100644
---- mozilla/content/media/Makefile.in
-+++ mozilla/content/media/Makefile.in
-@@ -6,3 +6,31 @@ include $(topsrcdir)/config/rules.mk
+diff --git dom/media/moz.build dom/media/moz.build
+index 7526cff..e0a0ca0 100644
+--- mozilla/dom/media/moz.build
++++ mozilla/dom/media/moz.build
+@@ -212,3 +212,24 @@ if CONFIG['ANDROID_VERSION'] > '15':
  
- CFLAGS   += $(GSTREAMER_CFLAGS)
- CXXFLAGS += $(GSTREAMER_CFLAGS)
+ CFLAGS += CONFIG['GSTREAMER_CFLAGS']
+ CXXFLAGS += CONFIG['GSTREAMER_CFLAGS']
 +
-+ifdef MOZ_NATIVE_OGG
-+CXXFLAGS += $(MOZ_OGG_CFLAGS)
-+endif
++if CONFIG['MOZ_NATIVE_OGG']:
++    CXXFLAGS += CONFIG['MOZ_OGG_CFLAGS']
 +
-+ifdef MOZ_NATIVE_THEORA
-+CXXFLAGS += $(MOZ_THEORA_CFLAGS)
-+endif
++if CONFIG['MOZ_NATIVE_THEORA']:
++    CXXFLAGS += CONFIG['MOZ_THEORA_CFLAGS']
 +
-+ifdef MOZ_NATIVE_VORBIS
-+CXXFLAGS += $(MOZ_VORBIS_CFLAGS)
-+endif
++if CONFIG['MOZ_NATIVE_VORBIS']:
++    CXXFLAGS += CONFIG['MOZ_VORBIS_CFLAGS']
 +
-+ifdef MOZ_NATIVE_TREMOR
-+CXXFLAGS += $(MOZ_TREMOR_CFLAGS)
-+endif
++if CONFIG['MOZ_NATIVE_TREMOR']:
++    CXXFLAGS += CONFIG['MOZ_TREMOR_CFLAGS']
 +
-+ifdef MOZ_NATIVE_OPUS
-+CXXFLAGS += $(MOZ_OPUS_CFLAGS)
-+endif
++if CONFIG['MOZ_NATIVE_OPUS']:
++    CXXFLAGS += CONFIG['MOZ_OPUS_CFLAGS']
 +
-+ifdef MOZ_NATIVE_SPEEX
-+CXXFLAGS += $(MOZ_SPEEX_CFLAGS)
-+endif
++if CONFIG['MOZ_NATIVE_SPEEX']:
++    CXXFLAGS += CONFIG['MOZ_SPEEX_CFLAGS']
 +
-+ifdef MOZ_NATIVE_SOUNDTOUCH
-+CXXFLAGS += $(MOZ_SOUNDTOUCH_CFLAGS)
-+endif
-diff --git media/libcubeb/src/Makefile.in media/libcubeb/src/Makefile.in
-index 4c14494..1cb98e2 100644
---- mozilla/media/libcubeb/src/Makefile.in
-+++ mozilla/media/libcubeb/src/Makefile.in
-@@ -9,3 +9,7 @@ CFLAGS += \
-         $(MOZ_ALSA_CFLAGS) \
-         $(MOZ_PULSEAUDIO_CFLAGS) \
-         $(NULL)
++if CONFIG['MOZ_NATIVE_SOUNDTOUCH']:
++    CXXFLAGS += CONFIG['MOZ_SOUNDTOUCH_CFLAGS']
+diff --git media/libcubeb/src/moz.build media/libcubeb/src/moz.build
+index 944744d..9a7c8c0 100644
+--- mozilla/media/libcubeb/src/moz.build
++++ mozilla/media/libcubeb/src/moz.build
+@@ -65,6 +65,9 @@ if CONFIG['GKMEDIAS_SHARED_LIBRARY']:
+ 
+ FINAL_LIBRARY = 'gkmedias'
+ 
++if CONFIG['MOZ_NATIVE_SPEEX']:
++    SOURCES['cubeb_resampler.cpp'].flags += CONFIG['MOZ_SPEEX_CFLAGS']
 +
-+ifdef MOZ_NATIVE_SPEEX
-+CFLAGS += $(MOZ_SPEEX_CFLAGS)
-+endif
-diff --git media/libtheora/Makefile.in media/libtheora/Makefile.in
-new file mode 100644
-index 0000000..1f02dc0
---- /dev/null
-+++ mozilla/media/libtheora/Makefile.in
-@@ -0,0 +1,9 @@
-+# This Source Code Form is subject to the terms of the Mozilla Public
-+# License, v. 2.0. If a copy of the MPL was not distributed with this
-+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ if CONFIG['MOZ_WIDGET_TOOLKIT'] == 'gonk':
+     CFLAGS += [
+         '-I%s/%s' % (CONFIG['ANDROID_SOURCE'], d) for d in [
+diff --git media/libogg/README_MOZILLA media/libogg/README_MOZILLA
+index 0833e4d..7ece97b 100644
+--- mozilla/media/libogg/README_MOZILLA
++++ mozilla/media/libogg/README_MOZILLA
+@@ -6,3 +6,6 @@ The svn revision number used was r17287.
+ The int-types.patch address a bug that config_types.h generated from
+ Linux platform can't be used on OpenSolaris directly see Mozilla bug
+ 449754
 +
-+include $(topsrcdir)/config/rules.mk
++The in-tree copy may be omitted during build by --with-system-ogg.
++Keep version in configure.in in sync on updates.
+diff --git media/libopus/README_MOZILLA media/libopus/README_MOZILLA
+index 2d85c9f..d3fb9f8 100644
+--- mozilla/media/libopus/README_MOZILLA
++++ mozilla/media/libopus/README_MOZILLA
+@@ -9,3 +9,6 @@ files after the copy step.
+ The upstream repository is https://git.xiph.org/opus.git
+ 
+ The git tag/revision used was v1.1.
 +
-+ifdef MOZ_NATIVE_OGG
-+CFLAGS += $(MOZ_OGG_CFLAGS)
-+endif
-diff --git media/libtremor/Makefile.in media/libtremor/Makefile.in
-new file mode 100644
-index 0000000..1f02dc0
---- /dev/null
-+++ mozilla/media/libtremor/Makefile.in
-@@ -0,0 +1,9 @@
-+# This Source Code Form is subject to the terms of the Mozilla Public
-+# License, v. 2.0. If a copy of the MPL was not distributed with this
-+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
++The in-tree copy may be omitted during build by --with-system-opus.
++So, keep its pkg-config version check within configure.in in sync on updates.
+diff --git media/libsoundtouch/README_MOZILLA media/libsoundtouch/README_MOZILLA
+index bfd4b1a..15b158d 100644
+--- mozilla/media/libsoundtouch/README_MOZILLA
++++ mozilla/media/libsoundtouch/README_MOZILLA
+@@ -6,3 +6,5 @@ The whole library is not used, only the relevant files are imported in the tree,
+ using the script `update.sh`. Some changes have been made to the files, using
+ the patch `moz-libsoundtouch.patch`. We also use a custom soundtouch_config.h.
+ 
++The in-tree copy may be omitted during build by --with-system-soundtouch.
++Keep version in configure.in in sync on updates.
+diff --git media/libspeex_resampler/README_MOZILLA media/libspeex_resampler/README_MOZILLA
+index 7f6b1bb..e830300 100644
+--- mozilla/media/libspeex_resampler/README_MOZILLA
++++ mozilla/media/libspeex_resampler/README_MOZILLA
+@@ -3,3 +3,6 @@ This source is from the Speex DSP library
+ 
+ It consists in the audio resampling code (resampler.c) and its header files
+ dependancies, imported into the tree using the update.sh script.
 +
-+include $(topsrcdir)/config/rules.mk
++The in-tree copy may be omitted during build by --with-system-speex.
++Keep version in configure.in in sync on updates.
+diff --git media/libtheora/README_MOZILLA media/libtheora/README_MOZILLA
+index d48dbfa..f08a2ed 100644
+--- mozilla/media/libtheora/README_MOZILLA
++++ mozilla/media/libtheora/README_MOZILLA
+@@ -3,3 +3,6 @@ using the update.sh script. The changes made were those applied by update.sh,
+ the addition/update of Makefile.in files for the Mozilla build system.
+ 
+ The subversion revision used was r17578.
 +
-+ifdef MOZ_NATIVE_OGG
-+CFLAGS += $(MOZ_OGG_CFLAGS)
-+endif
-diff --git media/libvorbis/Makefile.in media/libvorbis/Makefile.in
-new file mode 100644
-index 0000000..1f02dc0
---- /dev/null
-+++ mozilla/media/libvorbis/Makefile.in
-@@ -0,0 +1,9 @@
-+# This Source Code Form is subject to the terms of the Mozilla Public
-+# License, v. 2.0. If a copy of the MPL was not distributed with this
-+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
++The in-tree copy may be omitted during build by --with-system-theora.
++Keep version in configure.in in sync on updates.
+diff --git media/libtheora/moz.build media/libtheora/moz.build
+index 14265b1..3069e99 100644
+--- mozilla/media/libtheora/moz.build
++++ mozilla/media/libtheora/moz.build
+@@ -93,3 +93,5 @@ if CONFIG['GNU_AS']:
+         if CONFIG['OS_TARGET'] == 'Android':
+             DEFINES['__linux__'] = True
+ 
++if CONFIG['MOZ_NATIVE_OGG']:
++    CFLAGS += CONFIG['MOZ_OGG_CFLAGS']
+diff --git media/libtremor/README_MOZILLA media/libtremor/README_MOZILLA
+index ee67b53..3f34a09 100644
+--- mozilla/media/libtremor/README_MOZILLA
++++ mozilla/media/libtremor/README_MOZILLA
+@@ -5,3 +5,6 @@ Makefile.in files for the Mozilla build system.
+ 
+ The upstream release used was http://svn.xiph.org/trunk/Tremor/
+ The subversion revision used was r17547.
 +
-+include $(topsrcdir)/config/rules.mk
++The in-tree copy may be omitted during build by --with-system-tremor.
++Keep version in configure.in in sync on updates.
+diff --git media/libtremor/moz.build media/libtremor/moz.build
+index 31831ba..a03d576 100644
+--- mozilla/media/libtremor/moz.build
++++ mozilla/media/libtremor/moz.build
+@@ -6,3 +6,5 @@
+ 
+ DIRS += ['include/tremor', 'lib']
+ 
++if CONFIG['MOZ_NATIVE_OGG']:
++    CFLAGS += CONFIG['MOZ_OGG_CFLAGS']
+diff --git media/libvorbis/README_MOZILLA media/libvorbis/README_MOZILLA
+index 7c7454c..55baedd 100644
+--- mozilla/media/libvorbis/README_MOZILLA
++++ mozilla/media/libvorbis/README_MOZILLA
+@@ -8,3 +8,6 @@ https://svn.xiph.org/tags/vorbis/libvorbis-1.3.4@19059
+ 
+ Some files are renamed during the copy to prevent clashes with object
+ file names with other Mozilla libraries.
 +
-+ifdef MOZ_NATIVE_OGG
-+CFLAGS += $(MOZ_OGG_CFLAGS)
-+endif
-diff --git media/webrtc/signaling/test/Makefile.in media/webrtc/signaling/test/Makefile.in
++The in-tree copy may be omitted during build by --with-system-vorbis.
++Keep version in configure.in in sync on updates.
+diff --git media/libvorbis/moz.build media/libvorbis/moz.build
+index 919b99e..cc776f7 100644
+--- mozilla/media/libvorbis/moz.build
++++ mozilla/media/libvorbis/moz.build
+@@ -55,3 +55,6 @@ FINAL_LIBRARY = 'gkmedias'
+ # Suppress warnings in third-party code.
+ if CONFIG['GNU_CC']:
+     CFLAGS += ['-Wno-uninitialized']
++
++if CONFIG['MOZ_NATIVE_OGG']:
++    CFLAGS += CONFIG['MOZ_OGG_CFLAGS']
+diff --git media/webrtc/signaling/test/moz.build media/webrtc/signaling/test/moz.build
 index bbc971c..6ed7e41 100644
---- mozilla/media/webrtc/signaling/test/Makefile.in
-+++ mozilla/media/webrtc/signaling/test/Makefile.in
-@@ -48,6 +48,12 @@ LIBS += \
-   $(NULL)
- endif
+--- mozilla/media/webrtc/signaling/test/moz.build
++++ mozilla/media/webrtc/signaling/test/moz.build
+@@ -127,6 +127,9 @@ if CONFIG['MOZ_ALSA']:
+ if CONFIG['MOZ_NATIVE_JPEG']:
+     OS_LIBS += CONFIG['MOZ_JPEG_LIBS']
  
-+ifdef MOZ_NATIVE_OPUS
-+LIBS += \
-+  $(MOZ_OPUS_LIBS) \
-+  $(NULL)
-+endif
++if CONFIG['MOZ_NATIVE_OPUS']:
++    OS_LIBS += CONFIG['MOZ_OPUS_LIBS']
 +
- ifdef MOZ_NATIVE_LIBVPX
- LIBS += \
-   $(MOZ_LIBVPX_LIBS) \
+ if CONFIG['MOZ_NATIVE_LIBVPX']:
+     OS_LIBS += CONFIG['MOZ_LIBVPX_LIBS']
+ 
 diff --git media/webrtc/trunk/webrtc/modules/audio_coding/codecs/opus/opus.gypi media/webrtc/trunk/webrtc/modules/audio_coding/codecs/opus/opus.gypi
 index 00e77e7..55f48ab 100644
 --- mozilla/media/webrtc/trunk/webrtc/modules/audio_coding/codecs/opus/opus.gypi
 +++ mozilla/media/webrtc/trunk/webrtc/modules/audio_coding/codecs/opus/opus.gypi
-@@ -14,9 +14,9 @@
+@@ -17,18 +17,11 @@
        'conditions': [
          ['build_with_mozilla==1', {
            # Mozilla provides its own build of the opus library.
 -          'include_dirs': [
 -            '/media/libopus/include',
--           ]
+-            '/media/libopus/src',
+-            '/media/libopus/celt',
 +          'cflags_mozilla': [
++            '$(filter -I%, $(MOZ_CELT_CFLAGS))/celt',
 +            '$(MOZ_OPUS_CFLAGS)',
-+          ],
++            '$(filter -I%, $(MOZ_OPUS_CFLAGS))/../src',
+           ],
+-          'direct_dependent_settings': {
+-            'include_dirs': [
+-              '/media/libopus/include',
+-              '/media/libopus/src',
+-              '/media/libopus/celt',
+-            ],
+-          },
          }, {
            'dependencies': [
              '<(DEPTH)/third_party/opus/opus.gyp:opus'
-diff --git toolkit/library/libxul.mk toolkit/library/libxul.mk
+diff --git media/webrtc/trunk/webrtc/modules/audio_coding/neteq/neteq.gypi media/webrtc/trunk/webrtc/modules/audio_coding/neteq/neteq.gypi
+index 00e77e7..55f48ab 100644
+--- mozilla/media/webrtc/trunk/webrtc/modules/audio_coding/neteq/neteq.gypi
++++ mozilla/media/webrtc/trunk/webrtc/modules/audio_coding/neteq/neteq.gypi
+@@ -84,19 +84,11 @@
+           ],
+ 	}],
+         ['build_with_mozilla==1', {
+-          'include_dirs': [
+-            # Need Opus header files for the audio classifier.
+-            '<(DEPTH)/../../../media/opus/celt',
+-#            '<(DEPTH)/third_party/opus/src/src',
++          'cflags_mozilla': [
++            '$(filter -I%, $(MOZ_CELT_CFLAGS))/celt',
++            '$(MOZ_OPUS_CFLAGS)',
++            '$(filter -I%, $(MOZ_OPUS_CFLAGS))/../src',
+           ],
+-          'direct_dependent_settings': {
+-            'include_dirs': [
+-              '../../../../../../media/opus/celt',
+-              # Need Opus header files for the audio classifier.
+-              '<(DEPTH)/../../../media/opus/celt',
+-#              '<(DEPTH)/third_party/opus/src/src',
+-            ],
+-          },
+         }],
+       ],
+       'sources': [
+diff --git toolkit/library/moz.build toolkit/library/moz.build
 index d42137a..695e75a8 100644
---- mozilla/toolkit/library/libxul.mk
-+++ mozilla/toolkit/library/libxul.mk
-@@ -77,6 +77,34 @@ ifdef MOZ_NATIVE_HUNSPELL
- EXTRA_DSO_LDOPTS += $(MOZ_HUNSPELL_LIBS)
- endif
+--- mozilla/toolkit/library/moz.build
++++ mozilla/toolkit/library/moz.build
+@@ -178,6 +178,30 @@ if CONFIG['MOZ_NATIVE_PNG']:
+ if CONFIG['MOZ_NATIVE_HUNSPELL']:
+     OS_LIBS += CONFIG['MOZ_HUNSPELL_LIBS']
  
-+ifdef MOZ_NATIVE_OGG
-+EXTRA_DSO_LDOPTS += $(MOZ_OGG_LIBS)
-+endif
++if CONFIG['MOZ_NATIVE_OGG']:
++    OS_LIBS += CONFIG['MOZ_OGG_LIBS']
 +
-+ifdef MOZ_NATIVE_THEORA
-+EXTRA_DSO_LDOPTS += $(MOZ_THEORA_LIBS)
-+endif
++if CONFIG['MOZ_NATIVE_THEORA']:
++    OS_LIBS += CONFIG['MOZ_THEORA_LIBS']
 +
-+ifdef MOZ_NATIVE_VORBIS
-+EXTRA_DSO_LDOPTS += $(MOZ_VORBIS_LIBS)
-+endif
++if CONFIG['MOZ_NATIVE_VORBIS']:
++    OS_LIBS += CONFIG['MOZ_VORBIS_LIBS']
 +
-+ifdef MOZ_NATIVE_TREMOR
-+EXTRA_DSO_LDOPTS += $(MOZ_TREMOR_LIBS)
-+endif
++if CONFIG['MOZ_NATIVE_TREMOR']:
++    OS_LIBS += CONFIG['MOZ_TREMOR_LIBS']
 +
-+ifdef MOZ_NATIVE_OPUS
-+EXTRA_DSO_LDOPTS += $(MOZ_OPUS_LIBS)
-+endif
++if CONFIG['MOZ_NATIVE_CELT']:
++    OS_LIBS += CONFIG['MOZ_CELT_LIBS']
 +
-+ifdef MOZ_NATIVE_SPEEX
-+EXTRA_DSO_LDOPTS += $(MOZ_SPEEX_LIBS)
-+endif
++if CONFIG['MOZ_NATIVE_OPUS']:
++    OS_LIBS += CONFIG['MOZ_OPUS_LIBS']
 +
-+ifdef MOZ_NATIVE_SOUNDTOUCH
-+EXTRA_DSO_LDOPTS += $(MOZ_SOUNDTOUCH_LIBS)
-+endif
++if CONFIG['MOZ_NATIVE_SPEEX']:
++    OS_LIBS += CONFIG['MOZ_SPEEX_LIBS']
 +
- ifdef MOZ_NATIVE_LIBEVENT
- EXTRA_DSO_LDOPTS += $(MOZ_LIBEVENT_LIBS)
- endif
-diff --git xpcom/build/nsXPComInit.cpp xpcom/build/nsXPComInit.cpp
++if CONFIG['MOZ_NATIVE_SOUNDTOUCH']:
++    OS_LIBS += CONFIG['MOZ_SOUNDTOUCH_LIBS']
++
+ if CONFIG['MOZ_NATIVE_LIBEVENT']:
+     OS_LIBS += CONFIG['MOZ_LIBEVENT_LIBS']
+ 
+diff --git xpcom/build/XPCOMInit.cpp xpcom/build/XPCOMInit.cpp
 index 2cf281e..6d7af0e 100644
---- mozilla/xpcom/build/nsXPComInit.cpp
-+++ mozilla/xpcom/build/nsXPComInit.cpp
-@@ -130,7 +130,9 @@ extern nsresult nsStringInputStreamConstructor(nsISupports *, REFNSIID, void **)
+--- mozilla/xpcom/build/XPCOMInit.cpp
++++ mozilla/xpcom/build/XPCOMInit.cpp
+@@ -138,7 +138,9 @@ extern nsresult nsStringInputStreamConstructor(nsISupports*, REFNSIID, void**);
  #include "mozilla/VisualEventTracer.h"
  #endif
  
@@ -476,17 +566,17 @@ index 2cf281e..6d7af0e 100644
  #if defined(MOZ_VPX) && !defined(MOZ_VPX_NO_MEM_REPORTING)
  #include "vpx_mem/vpx_mem.h"
  #endif
-@@ -571,11 +573,13 @@ NS_InitXPCOM2(nsIServiceManager* *result,
-     // this oddness.
-     mozilla::SetICUMemoryFunctions();
+@@ -651,11 +653,13 @@ NS_InitXPCOM2(nsIServiceManager** aResult,
+   // this oddness.
+   mozilla::SetICUMemoryFunctions();
  
 +#ifndef MOZ_OGG_NO_MEM_REPORTING
-     // Do the same for libogg.
-     ogg_set_mem_functions(OggReporter::CountingMalloc,
-                           OggReporter::CountingCalloc,
-                           OggReporter::CountingRealloc,
-                           OggReporter::CountingFree);
+   // Do the same for libogg.
+   ogg_set_mem_functions(OggReporter::CountingMalloc,
+                         OggReporter::CountingCalloc,
+                         OggReporter::CountingRealloc,
+                         OggReporter::CountingFree);
 +#endif
  
  #if defined(MOZ_VPX) && !defined(MOZ_VPX_NO_MEM_REPORTING)
-     // And for VPX.
+   // And for VPX.

@@ -1,6 +1,18 @@
---- CMakeLists.txt.orig	2014-07-08 17:32:11.000000000 -0400
-+++ CMakeLists.txt	2014-07-29 18:41:58.000000000 -0400
-@@ -139,6 +139,14 @@
+--- CMakeLists.txt.orig	2015-05-12 09:39:44 UTC
++++ CMakeLists.txt
+@@ -29,6 +29,11 @@ cmake_minimum_required(VERSION 2.6)
+ project(gnuradio CXX C)
+ enable_testing()
+ 
++cmake_policy(SET CMP0026 OLD)
++cmake_policy(SET CMP0043 OLD)
++cmake_policy(SET CMP0045 OLD)
++cmake_policy(SET CMP0046 OLD)
++
+ #make sure our local CMake Modules path comes first
+ list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_SOURCE_DIR}/cmake/Modules)
+ 
+@@ -144,6 +149,14 @@ string(REPLACE "\n" " \\n" COMPILER_INFO
  ########################################################################
  include(GrPlatform) #define LIB_SUFFIX
  set(GR_RUNTIME_DIR      bin)
@@ -15,7 +27,7 @@
  set(GR_LIBRARY_DIR      lib${LIB_SUFFIX})
  set(GR_INCLUDE_DIR      include)
  set(GR_DATA_DIR         share)
-@@ -199,6 +207,42 @@
+@@ -228,6 +241,42 @@ add_custom_target(uninstall
  include(GrBoost)
  
  ########################################################################
@@ -58,7 +70,7 @@
  # Enable python component
  ########################################################################
  find_package(PythonLibs 2)
-@@ -283,11 +327,13 @@
+@@ -353,11 +402,13 @@ GR_LOGGING()
  ########################################################################
  # Distribute the README file
  ########################################################################

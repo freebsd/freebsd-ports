@@ -1,0 +1,3 @@
+A sorted set library for Elixir, implementing the Set protocol.
+
+WWW: https://github.com/SenecaSystems/sorted_set

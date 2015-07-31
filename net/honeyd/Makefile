@@ -3,7 +3,7 @@
 
 PORTNAME=	honeyd
 PORTVERSION=	1.5c
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net
 MASTER_SITES=	http://www.honeyd.org/uploads/ \
 		http://www.citi.umich.edu/u/provos/honeyd/
@@ -12,12 +12,14 @@ MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Simulate virtual network hosts (honeypots)
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2 \
 		libdnet.so:${PORTSDIR}/net/libdnet \
 		libpcre.so:${PORTSDIR}/devel/pcre
 
-USES=		libtool
+USES=		libtool shebangfix
+SHEBANG_FILES=	scripts/*.pl scripts/snmp/*.pl
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libdnet=${LOCALBASE} \

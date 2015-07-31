@@ -38,11 +38,3 @@
 %%DATADIR%%/plugins/shortcode/yahoobuzz.sh
 %%DATADIR%%/plugins/shortcode/youtube.sh
 %%DATADIR%%/plugins/z001_articles_text.off
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-@dirrmtry %%DATADIR%%/lang/de
-@dirrmtry %%DATADIR%%/lang/es
-@dirrmtry %%DATADIR%%/lang/fr
-@dirrmtry %%DATADIR%%/lang/tr
-@dirrmtry %%DATADIR%%

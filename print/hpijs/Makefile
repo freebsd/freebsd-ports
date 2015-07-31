@@ -13,8 +13,7 @@ CONFLICTS=	hplip-[0-9]*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=		--disable-dependency-tracking
-USES=		jpeg
-USE_GHOSTSCRIPT_RUN=	yes
+USES=		ghostscript:run jpeg
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

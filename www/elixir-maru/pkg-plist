@@ -75,5 +75,3 @@ lib/elixir/lib/maru/lib/maru/utils.ex
 lib/elixir/lib/maru/lib/maru/validations.ex
 lib/elixir/lib/maru/lib/mix/tasks/routers.ex
 %%PORTDOCS%%%%DOCSDIR%%/README.md
-%%PORTDOCS%%%%DOCSDIR%%/guide/getting_started.md
-%%PORTDOCS%%%%DOCSDIR%%/guide/router.md

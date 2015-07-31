@@ -90,7 +90,7 @@ GNOMEUI_USE=	GNOME=libgnomeui
 SMYRNA_USE=	GNOME=libglade2 GL=glut
 GVEDIT_USE=	qt4=qmake_build,moc_build,rcc_build,uic_build \
 		qt4=linguist_build,corelib,gui
-GHOSTSCRIPT_USE=GHOSTSCRIPT=yes
+GHOSTSCRIPT_USES=ghostscript
 PERL_USES=	perl5
 PHP_USE=	PHP=yes PHP_BUILD=yes
 PYTHON_USES=	python:2.7,build

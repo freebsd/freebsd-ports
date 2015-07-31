@@ -3,6 +3,7 @@
 
 PORTNAME=	phamm
 PORTVERSION=	0.5.18
+PORTREVISION=	1
 CATEGORIES=	net www
 MASTER_SITES=	http://open.rhx.it/phamm/
 
@@ -12,8 +13,10 @@ COMMENT=	Front-end written in PHP to manage virtual service
 NO_BUILD=	yes
 USE_PHP=	gettext ldap openssl pcre session
 
-USES=		gettext
-
+USES=		gettext shebangfix
+SHEBANG_FILES=	po/update-all-mo.sh \
+		tools/*.sh tools/*.pl \
+		tools/ldap-schema-manage
 PHAMMDIR?=	www/${PORTNAME}
 SCHEMADIR=	${WRKSRC}/schema
 
@@ -24,8 +27,6 @@ PLIST_SUB=	PHAMMDIR=${PHAMMDIR}
 PORTDOCS=	CHANGELOG INSTALL README LICENSE THANKS
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.pre.mk>
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${PHAMMDIR}
@@ -42,4 +43,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

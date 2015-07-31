@@ -3103,6 +3103,7 @@ www/p5-Apache-DBI-mp2|www/p5-Apache-DBI|2012-01-01|This sub-port is no longer ne
 editors/ged||2012-01-04|Removed: Use ed from base instead
 ftp/proftpd-devel||2012-01-04|Removed
 devel/ruby-thrift|devel/rubygem-thrift|2012-01-04|Renamed: now a rubygems module
+x11-wm/cl-stumpwm||2012-01-04|Abandoned copy of x11-wm/stumpwm
 www/knowledgekit||2012-01-06|Development seems stalled. Last release is from 1999. Doesn't works with Zope 2.13
 www/znavigator||2012-01-06|Development seems stalled. Last release is from 2000
 www/zope-FileSystemSite||2012-01-06|Doesn't work with modern Zope versions
@@ -3629,6 +3630,7 @@ lang/spidermonkey|lang/spidermonkey17|2012-09-01|Moved to allow for addition of 
 cad/gtkwave3|cad/gtkwave|2012-09-04|There is only one version of this now
 multimedia/x264-devel||2012-09-07|Has expired: x264 github development makes this port obsolete
 audio/holyshout||2012-09-07|Has expired: upstream has disappeared
+devel/R-cran-survival||2012-09-12|Part of R
 japanese/postgresql73-man||2012-09-13|There no according PostgreSQL version in the tree anymore
 japanese/postgresql74-man||2012-09-13|There no according PostgreSQL version in the tree anymore
 japanese/postgresql80-man||2012-09-13|There no according PostgreSQL version in the tree anymore
@@ -3914,6 +3916,7 @@ java/linux-sun-jre15|java/linux-sun-jre16|2012-12-10|Has expired: EOLed upstream
 java/linux-sun-jdk15|java/linux-sun-jdk16|2012-12-10|Has expired: EOLed upstream since October 2009
 java/jdk15-doc|java/jdk16-doc|2012-12-10|Has expired: EOLed upstream since October 2009
 science/py-openbabel||2012-12-11|Merged to science/openbabel
+www/moodle2|www/moodle23|2012-12-11|Renamed
 deskutils/horde-hermes|deskutils/horde3-hermes|2012-12-12|Rename of old horde apps
 deskutils/horde-klutz|deskutils/horde3-klutz|2012-12-12|Rename of old horde apps
 devel/horde-chora|devel/horde3-chora|2012-12-12|Rename of old horde apps
@@ -4033,6 +4036,7 @@ net/samba4-devel|net/samba4|2013-02-18|Renamed to reflect maturity of upstream v
 net/libnet-devel|net/libnet|2013-02-18|Renamed to stable branch
 x11-fm/tkdesk||2013-02-19|Obsolete and unmaintained, doesn't run
 textproc/libmspub|print/libmspub|2013-02-21|Duplicate of print/libmspub
+x11-drivers/xf86-video-intel29||2013-02-21|No longer supported
 emulators/bsnes|emulators/higan|2013-02-22|Renamed upstream
 sysutils/fio|benchmarks/fio|2013-02-22|Moved to benchmarks category
 japanese/MT|www/MT|2013-02-23|Remove, because it was merged into main www/MT
@@ -4143,6 +4147,7 @@ finance/p5-PFProAPI||2013-03-18|Removed: upstream no longer exists
 finance/p5-Business-OnlinePayment-PayflowPro||2013-03-18|Removed: upstream no longer exists
 www/nspluginwrapper-devel||2013-03-19|Removed: superseded by www/nspluginwrapper
 french/eficas_doc||2013-03-19|Removed: eficas is now able to open the documentation through a web browser so the PDF files are no longer included
+archivers/zpaq|archivers/paq|2013-03-20|Part of archivers/paq
 editors/openoffice.org-vcltesttool||2013-03-21|Removed: no longer used for OpenOffice QA
 editors/openoffice-3-devel|editors/openoffice-devel|2013-03-21|Renamed to match current version number
 devel/geany-plugin-gdb||2013-03-21|Removed from geany plugins distribution
@@ -4195,6 +4200,7 @@ print/lprps-a4|print/lprps|2013-04-27|Merged into print/lprps
 graphics/jpeg2ps-letter|graphics/jpeg2ps|2013-04-27|Merged into graphics/jpeg2ps
 graphics/jpeg2ps-a4|graphics/jpeg2ps|2013-04-27|Merged into graphics/jpeg2ps
 print/a2ps-letter|print/a2ps|2013-04-27|Merged into print/a2ps
+print/a2ps-letterdj|print/a2ps|2013-04-27|Merged into print/a2ps
 print/a2ps-a4|print/a2ps|2013-04-27|Merged into print/a2ps
 print/html2ps-letter|print/html2ps|2013-04-28|Merged into print/html2ps
 print/html2ps-a4|print/html2ps|2013-04-28|Merged into print/html2ps
@@ -4857,11 +4863,13 @@ math/matharray||2013-08-28|Does not build with recent GNUstep
 net/netclasses||2013-08-28|Does not build with recent GNUstep
 sysutils/burn||2013-08-28|Does not build with recent GNUstep
 www/webserver||2013-08-28|Does not build with recent GNUstep
+www/webservices||2013-08-28|Does not build with recent GNUstep
 x11-toolkits/gnustep-art||2013-08-28|Does not build with recent GNUstep
 x11-toolkits/gnustep-cairo|x11-toolkits/gnustep-back|2013-08-28|Removed deprecated back ends
 x11-toolkits/gnustep-xdps||2013-08-28|Does not build with recent GNUstep
 x11-toolkits/gtoolkit||2013-08-28|Does not build with recent GNUstep
 x11-toolkits/renaissance||2013-08-28|Does not build with recent GNUstep
+mail/pear-Horde_Imsp|databases/pear-Horde_Imsp|2013-08-28|Duplicate
 devel/g2c||2013-08-29|Has expired: Not supported upstream anymore
 devel/bugzilla3|devel/bugzilla42|2013-08-30|EOL: Please update to a supported version
 german/bugzilla3|german/bugzilla42|2013-08-30|EOL: Please update to a supported version
@@ -4958,6 +4966,7 @@ x11-toolkits/guile-gtk||2013-10-05|EOLed upstream for very long
 textproc/gxmlviewer||2013-10-05|Depends on EOLed gnome1
 comms/mlan|comms/mlan3|2013-10-05|Project is obsoleted by newer API
 graphics/gnomeiconedit||2013-10-05|Depends on EOLed gnome1
+games/bombermaze||2013-10-05|Depends on EOLed gnome1
 games/glife||2013-10-05|Depends on EOLed gnome1
 emulators/visualos||2013-10-05|Depends on EOLed gnome1
 editors/xmleditor||2013-10-05|Depends on EOLed gnome1
@@ -4975,7 +4984,7 @@ net/gnome-vnc||2013-10-05|Depends on EOLed gnome1
 news/grn||2013-10-05|Depends on EOLed gnome1
 security/fpm||2013-10-05|Depends on EOLed gnome1
 sysutils/xsu||2013-10-05|Depends on EOLed gnome1
-securty/fwbuilder-devel||2013-10-05|Appears not to be actively developed anymore
+security/fwbuilder-devel||2013-10-05|Appears not to be actively developed anymore
 devel/libglade||2013-10-07|Component of the obsolete gnome1
 databases/gnome-db||2013-10-07|Component of the obsolete gnome1
 databases/libgda||2013-10-07|Component of the obsolete gnome1
@@ -5145,6 +5154,7 @@ textproc/stardict2||2013-11-07|Has expired: Newer version available in ports: te
 devel/pure-stlvec|devel/pure-stllib|2013-11-07|Removed: Use devel/pure-stllib instead
 textproc/lexxia||2013-11-07|Removed no public distfile available anymore
 textproc/docproj-nojadetex||2013-11-07|Removed
+textproc/p5-XML-Hadler-HTMLWriter|textproc/p5-XML-Handler-HTMLWriter|2013-11-07|Removed
 games/frozenbubble|games/frozen-bubble|2013-11-08|Renamed to match upstream naming
 biology/dotter|biology/seqtools|2013-11-10|Replaced with biology/seqtools
 games/nil||2013-11-11|Removed: long unmaintained, fails to build
@@ -5155,13 +5165,15 @@ graphics/mesagl||2013-11-14|Old unmaintained version. Use graphics/libosmesa ins
 editors/xxe||2013-11-15|Has expired: XXE becomes unfetchable every 3-4 months as distfile is replaced with new version.  This high-maintenance port requires a maintainer to avoid removal
 editors/xml2rfc-xxe||2013-11-15|Has expired: Depends on editors/xxe, which is due to be removed due to lack of maintainer
 devel/perltidy|devel/p5-Perl-Tidy|2013-11-15|Renamed to match upstream naming
+net/p5-Script-isAperlScript|devel/p5-Script-isAperlScript|2013-11-15|Duplicate
 math/vtk|math/vtk5|2013-11-17|Removed, EOLed
 net-im/decibel||2013-11-17|Has expired: Deprecated and unsupported upstream for many years, not used by anything
 databases/postgresql-libpq++||2013-11-17|Has expired: Not maintained upstream for 10+ years
-audio/gmpeg-devel||2013-11-17|Removed, no active development for more than 8 years
+audio/gqmpeg-devel||2013-11-17|Removed, no active development for more than 8 years
 graphics/gqview-devel||2013-11-17|Removed, no active development for more than 8 years
 textproc/stardict2-dictd_mova|textproc/stardict-dictd_mova|2013-11-17|Renamed
 textproc/stardict2-quick|textproc/stardict-quick|2013-11-17|Renamed
+security/ksecrets||2013-11-17|Defunct
 x11-toolkits/libgnomeuimm|x11-toolkits/libgnomeuimm26|2013-11-18|Older version; has no consumers in the ports tree
 devel/libglademm|devel/libglademm24|2013-11-18|Older version; has no consumers in the ports tree
 graphics/libgnomecanvasmm|graphics/libgnomecanvasmm26|2013-11-18|Older version; has no consumers in the ports tree
@@ -5327,6 +5339,7 @@ www/notftp||2014-01-01|Has expired: distfile unfetchable
 www/mod_lisp2||2014-01-01|Has expired: distfile unfetchable
 irc/xchat-gnome||2014-01-02|Has expired: broken and no release since 2009
 net-mgmt/unifi|net-mgmt/unifi3|2014-01-02|Rename to unifi3; unifi2 is coming to ports tree as well
+sysutils/rubygem-rubyimpi|sysutils/rubygem-rubyipmi|2014-01-02|Renamed
 www/codeigniter17|www/codeigniter|2014-01-04|Unsupported upstream, consider using newer version
 net-im/xfce4-messenger-plugin||2014-01-04|Has expired: Deprecated and no update for 7 years
 multimedia/xfce4-media|multimedia/xfce4-parole|2014-01-04|Has expired: Upstream development dead, use multimedia/xfce4-parole instead
@@ -5339,6 +5352,7 @@ www/qt4-webkit|www/webkit-qt4|2014-01-06|Renamed to unify with Qt 5
 x11/qt4-opengl|graphics/qt4-opengl|2014-01-06|Moved to unify with Qt 5
 graphics/wings-devel|graphics/wings|2014-01-07|Obsoleted by the main port
 devel/llvm|devel/llvm32|2014-01-08|Has expired: Migrate to devel/llvm32 or newer
+devel/reflex|textproc/reflex|2014-01-08|Duplicate
 devel/hs-hat||2014-01-09|Upstream has vanished
 devel/hs-hdoc||2014-01-09|Removed
 devel/hs-idoc||2014-01-09|Removed
@@ -5373,6 +5387,7 @@ math/octave-forge-image-acquisition||2014-01-27|Depends on multimedia/libv4l whi
 lang/racket-textual|lang/racket-minimal|2014-01-27|Renamed upstream
 mail/pop-before-smtp||2014-01-27|Removed
 graphics/glfw-devel||2014-01-28|Removed
+devel/py-ua-parser|devel/py-ua_parser|2014-01-28|Reflect module name
 french/ispell|french/aspell|2014-01-29|Removed, consider using aspell instead
 german/ispell|german/aspell|2014-01-29|Removed, consider using aspell instead
 german/ispell-alt|german/aspell|2014-01-29|Removed, consider using aspell instead
@@ -6008,7 +6023,7 @@ devel/lua-redis-parser||2014-04-18|Has expired: Broken for more than 6 months
 biology/finchtv||2014-04-18|Has expired: Broken for more than 6 months
 net-im/ari-yahoo||2014-04-18|Has expired: Broken for more than 1 year (http://www.icculus.org/ari-yahoo/)
 www/sams||2014-04-21|Depends on PHP 4 which was removed two years ago
-x11-toolkits/vdkbuidler||2014-04-22|Abandonware, not stage friendly
+x11-toolkits/vdkbuilder||2014-04-22|Abandonware, not stage friendly
 emulators/mupen64-sdlinput|emulators/mupen64plus-input-sdl|2014-04-24|Has expired: Use mupen64plus instead
 emulators/mupen64-sdlaudio|emulators/mupen64plus-audio-sdl|2014-04-24|Has expired: Use mupen64plus instead
 emulators/mupen64-tr64||2014-04-24|Has expired: Use mupen64plus instead
@@ -6266,7 +6281,6 @@ print/latex-feynmf|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLi
 print/latex-chapterfolder|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
 print/latex-cjk|print/texlive-base|2014-07-23|Has been incorporated in TeXLive
 print/latex-aastex|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
-print/latex-beamer|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
 print/latex-biblatex|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
 print/latex-biblist|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
 print/latex-bytefield|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
@@ -6287,7 +6301,7 @@ japanese/latex2html||2014-07-23|Depends on decomissioned teTeX
 japanese/platex209||2014-07-23|Depends on decomissioned teTeX
 japanese/platex-jsclasses||2014-07-23|Depends on decomissioned teTeX
 japanese/platex-otf||2014-07-23|Depends on decomissioned teTeX
-japanese/ptex|japanese/tex-ptex|2014-07-23|Use TeXLive version
+japanese/jadetex-ptex|japanese/tex-ptex|2014-07-23|Use TeXLive version
 japanese/dvipsk|print/tex-dvipsk|2014-07-23|Use TeXLive version
 print/dvipsk-tetex|print/tex-dvipsk|2014-07-23|Use TeXLive version
 print/dvipdfmx|print/tex-dvipdfmx|2014-07-23|Use TeXLive version
@@ -6302,7 +6316,6 @@ misc/c-hey||2014-07-24|Has expired: Fails to build with new utmpx
 misc/wminfo||2014-07-24|Has expired: Fails to build with new utmpx
 net/sendfile||2014-07-24|Has expired: Fails to build with new utmpx
 net-im/centericq||2014-07-24|Has expired: Fails to build with new utmpx
-security/chkrootkit||2014-07-24|Has expired: Fails to build with new utmpx
 security/openfwtk||2014-07-24|Has expired: Fails to build with new utmpx
 security/pam_alreadyloggedin||2014-07-24|Has expired: Fails to build with new utmpx
 security/srp||2014-07-24|Has expired: Fails to build with new utmpx
@@ -6388,7 +6401,6 @@ www/hs-wai-test||2014-08-10|Removed: Deprecated in favor of wai-extra
 devel/rubygem-foreman_api||2014-08-11|Removed: Deprecated by upstream
 security/termlog||2014-08-11|Has expired: Fails to build with new utmpx, unstaged, maintainer timeout
 games/linux-americasarmy||2014-08-13|Removed: Unsupported by upstream, distfile unavailable
-net/rsmb|net/mosquitto|2014-08-13|Superseded by net/mosquitto
 devel/kyua-atf-compat|devel/kyua|2014-08-14|Upstream merged all components into devel/kyua
 devel/kyua-cli|devel/kyua|2014-08-14|Upstream merged all components into devel/kyua
 devel/kyua-testers|devel/kyua|2014-08-14|Upstream merged all components into devel/kyua
@@ -6426,6 +6438,7 @@ news/husky-hpucode||2014-08-19|Obsolete due to husky-*-devel => husky-* migratio
 news/husky-msged||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
 news/husky-nltools||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
 news/husky-sqpack||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
+net/rsmb|net/mosquitto|2014-08-19|Superseded by net/mosquitto
 deskutils/horde3-hermes||2014-08-20|Has expired: EOL in April 2012
 deskutils/horde3-klutz||2014-08-20|Has expired: EOL in April 2012
 deskutils/horde3-kronolith||2014-08-20|Has expired: EOL in April 2012
@@ -7080,10 +7093,13 @@ databases/ruby-dbi|databases/rubygem-dbi|2014-09-21|Replaced by rubygem-dbi
 databases/ruby-dbd_mysql|databases/rubygem-dbd-mysql|2014-09-21|Replaced by rubygem-dbd-mysql
 databases/ruby-dbd_pg|databases/rubygem-dbd-pg|2014-09-21|Replaced by rubygem-dbd-pg
 databases/ruby-dbd_sqlite|databases/rubygem-dbd-sqlite3|2014-09-21|Replaced by rubygem-dbd-sqlite3
+databases/ruby-dbd-sqlite||2014-09-21|Dysfunctional
 textproc/ruby-amatch|textproc/rubygem-amatch|2014-09-21|Replaced by textproc/rubygem-amatch
+databases/rubygem-aspectr|devel/rubygem-aspectr|2014-09-21|Change category
 graphics/libggi||2014-09-22|Has expired: Unmaintained upstream
 devel/libgii||2014-09-22|Has expired: Unmaintained upstream
 graphics/fpc-ggi||2014-09-22|Has expired: Unmaintained upstream
+graphics/linux-sdl_ttf||2014-09-22|Replaced by graphics/linux-*-sdl_ttf
 www/mediawiki121||2014-09-23|Has expired: Not maintained upstream
 sysutils/rubygem-chef-expander||2014-09-25|Has expired: Depends on broken rubygem-dep_selector
 sysutils/rubygem-chef-server||2014-09-25|Has expired: Depends on broken rubygem-dep_selector
@@ -7091,6 +7107,7 @@ sysutils/rubygem-chef-solr||2014-09-25|Has expired: Depends on broken rubygem-de
 www/rubygem-chef-server-webui||2014-09-25|Has expired: Depends on broken rubygem-dep_selector
 www/rubygem-chef-server-api||2014-09-25|Has expired: Depends on broken rubygem-dep_selector
 databases/freetds-msdblib||2014-09-27|No longer required, now covered by databases/freetds
+sysutils/rubgem-bundler_ext|sysutils/rubygem-bundler_ext|2014-09-27|Renamed
 archivers/rpm5||2014-09-28|Has expired: Broken for more than 6 months
 devel/cocaine-core||2014-09-28|Has expired: Broken for more than 6 months
 graphics/ruby-tgif||2014-09-28|Has expired: Broken for more than 6 months
@@ -7117,6 +7134,7 @@ editors/mlview||2014-10-03|Removed, because x11-toolkits/eel was removed
 textproc/gnome-translate||2014-10-03|Removed, because x11-toolkits/eel was removed
 x11/avant-window-navigator-gnome||2014-10-03|Removed doesn't build with update gnome-desktop
 www/moodle25||2014-10-05|Has expired: Upstream support ended
+astro/openmap||2014-10-07|Ten years out of date
 ports-mgmt/portaudit||2014-10-13|portaudit expired when pkg_tools did, use pkg audit
 ports-mgmt/portaudit-db||2014-10-13|portaudit expired
 ports-mgmt/kports-qt4||2014-10-13|portaudit expired
@@ -7169,7 +7187,7 @@ misc/xmonad-log-applet||2014-11-19|Depends on removed gnome-panel
 net/gnome-netstatus||2014-11-19|Depends on removed gnome-panel
 security/seahorse-plugins||2014-11-19|Removed, not used in GNOME 3
 sysutils/gnome-system-tools||2014-11-19|Depends on removed nautilus2
-sysutils/tacker-client|sysutils/tracker|2014-11-19|Merged into sysutils/tracker
+sysutils/tracker-client|sysutils/tracker|2014-11-19|Merged into sysutils/tracker
 sysutils/tracker-gnome|sysutils/tracker|2014-11-19|Merged into sysutils/tracker
 sysutils/tracker-libtrackergtk|sysutils/tracker|2014-11-19|Merged into sysutils/tracker
 www/epiphany-extensions||2014-11-19|Removed, not used in GNOME 3
@@ -7192,7 +7210,7 @@ x11/gnome2-lite||2014-11-19|GNOME 2 was removed
 x11/gnome2-power-tools||2014-11-19|GNOME 2 was removed
 x11/xfce4-xfapplet-plugin||2014-11-19|Depends on removed gnome-panel
 net-im/telegram-cli||2014-11-19|Duplicate of net-im/tg
-emulation/wine-doors||2014-11-19|Abandonware, depends on non existing USE_GNOME components
+emulators/wine-doors||2014-11-19|Abandonware, depends on non existing USE_GNOME components
 x11/gtstarter||2014-11-19|Abandonware, depends on non existing USE_GNOME components
 sysutils/serpentine||2014-11-19|Abandonware, depends on non existing USE_GNOME components
 sysutils/pessulus||2014-11-19|Abandonware, depends on non existing USE_GNOME components
@@ -7372,6 +7390,7 @@ security/openssh-portable-base||2015-01-01|Has expired: Overwrite-base option/po
 devel/cedet||2015-01-01|Has expired: Fails to build, use Emacs' builtin cedet package instead
 devel/ecb||2015-01-01|Has expired: does not work with newer Emacs versions, use the elpa package instead
 devel/rubygem-little_plugger|devel/rubygem-little-plugger|2015-01-05|Rename to match our rubygems naming
+misc/nagios-base-logos||2015-01-05|Included in nagios distribution
 ports-mgmt/portcheckout||2015-01-06|Has expired: Uses ports cvs repo, which is long gone
 ports-mgmt/pkg_trackinst||2015-01-06|Has expired: Does not support pkgng, generates incorrect pkg-plist
 ports-mgmt/pkg_remove||2015-01-06|Has expired: Does not support pkgng
@@ -7633,7 +7652,11 @@ x11-themes/gtk-flat-theme2||2015-06-10|Has expired: Upstream disappeared
 databases/postgresql84-server||2015-06-10|Has expired: "EOL was reached in July 2014"
 ftp/ncftp1||2015-06-12|Unfetchable
 multimedia/avidemux2||2015-06-13|Branch no longer maintained upstream, use multimedia/avidemux26
+multimedia/avidemux2-plugins||2015-06-13|Branch no longer maintained upstream, use multimedia/avidemux26
 multimedia/avidemux26|multimedia/avidemux|2015-06-13|Renamed
+multimedia/avidemux26-cli|multimedia/avidemux-cli|2015-06-13|Renamed
+multimedia/avidemux26-plugins|multimedia/avidemux-plugins|2015-06-13|Renamed
+multimedia/avidemux26-qt4|multimedia/avidemux-qt4|2015-06-13|Renamed
 editors/zim|deskutils/zim|2015-06-18|Move to more appropriate category
 net/py-ldap2|net/py-ldap|2015-06-18|Rename to better match upstream name
 x11/docker|x11/docker-tray|2015-06-23|Rename to avoid conflict with sysutils/docker
@@ -7670,7 +7693,7 @@ devel/xtla||2015-06-29|Has expired: Broken for more than 6 months
 mail/mail-notification||2015-06-29|Has expired: Broken for more than 6 months
 ports-mgmt/gnome-packagekit||2015-06-29|Has expired: Broken for more than 6 months
 sysutils/py-salt-api||2015-06-29|Has expired: Broken for more than 6 months
-devel/rubygem-mash|devel/rubgem-hashie|2015-06-30|Has expired: Deprecated by upstream. Use devel/rubygem-hashie instead
+devel/rubygem-mash|devel/rubygem-hashie|2015-06-30|Has expired: Deprecated by upstream. Use devel/rubygem-hashie instead
 net/rubygem-bunny060|net/rubygem-bunny|2015-06-30|Has expired: Use net/rubygem-bunny instead
 security/rubygem-hmac|security/rubygem-ruby-hmac|2015-06-30|Has expired: Duplicate of security/rubygem-ruby-hmac
 www/ruby-amazon|www/ruby-aws|2015-06-30|Has expired: Rendered obsolete by upstream since Amazon shut down access to AWS API v3 (2008-03-31). Use www/ruby-aws instead
@@ -7679,9 +7702,42 @@ net/ptpd2-devel|net/ptpd2|2015-07-02|Development version no longer necessary
 devel/erlang-cowlib|www/erlang-cowlib|2015-07-03|Move to www where it belongs
 net/py-google||2015-07-03|Google no longer supports the SOAP API for search
 devel/erlang-ibrowse|www/erlang-ibrowse|2015-07-05|Move to www where it belongs
-multimedia/ffmpeg23|multimedia/ffmpeg|2015-07-05|Obsolete since recent upstream upgrade of main ffmpeg port. Use multimedia/ffmpeg instead.
-multimedia/ffmpeg26|multimedia/ffmpeg|2015-07-05|Obsolete since recent upstream upgrade of main ffmpeg port. Use multimedia/ffmpeg instead.
+multimedia/ffmpeg23|multimedia/ffmpeg|2015-07-05|Obsolete since recent upstream upgrade of main ffmpeg port. Use multimedia/ffmpeg instead
+multimedia/ffmpeg26|multimedia/ffmpeg|2015-07-05|Obsolete since recent upstream upgrade of main ffmpeg port. Use multimedia/ffmpeg instead
 x11/docker|x11/docker-tray|2015-07-06|Renamed
 sysutils/docker|sysutils/docker-freebsd|2015-07-07|Renamed
 graphics/fli2gif||2015-07-07|Has expired: No public distfiles
 net-im/tkabbur||2015-07-07|Has expired: Upstream development ceased since 2008
+www/mod_wsgi3|www/mod_wsgi4|2015-07-12|Renamed to reflect new version
+archivers/pear-PHP_Archiv|archivers/pear-PHP_Archive|2015-07-12|Fix path
+devel/p5-Test-TempDir|devel/p5-Test-TempDir-Tiny|2015-07-14|Has expired: Use devel/p5-Test-TempDir-Tiny instead
+x11-toolkits/fpc-gtk1||2015-07-14|Development has been discontinued
+graphics/fpc-fpgtk||2015-07-14|Development has been discontinued
+editors/lazarus-lcl-gtk||2015-07-14|Development has been discontinued
+x11/gmessage||2015-07-14|Upstream has disappeared and development ceased
+security/ssh-gui||2015-07-14|Development ceased, broken with modern ssh
+textproc/gdict||2015-07-14|Development ceased, unusable
+print/pup||2015-07-14|Development ceased, unusable
+audio/rubyripper||2015-07-16|Has expired: Does not build and is deprecated upstream
+ports-mgmt/vulnerability-test-port||2015-07-19|Useless after portaudit retirement
+print/texlive-infra|print/texlive-tlmgr|2015-07-20|Renamed
+print/cm-super||2015-07-20|Obsolete
+devel/rubygem-builder31||2015-07-20|Has expired: not used by other ports anymore
+devel/rubygem-timers1||2015-07-20|Has expired: not used by other ports anymore
+net/rubygem-rubyntlm01||2015-07-20|Has expired: not used by other ports anymore
+security/rubygem-net-scp11||2015-07-20|Has expired: not used by other ports anymore
+security/rubygem-net-ssh27||2015-07-20|Has expired: not used by other ports anymore
+graphics/kuickshow-kde4||2015-07-21|Has expired: Broken for more than 6 months
+graphics/sng||2015-07-21|Has expired: Broken for more than 6 months
+japanese/netype||2015-07-21|Has expired: Broken for more than 6 months
+databases/p5-DBD-Pg32|databases/p5-DBD-Pg|2015-07-22|Has expired: Use databases/p5-DBD-Pg instead, compatability probles are fixed
+textproc/py-asciinema|textproc/asciinema|2015-07-23|Has expired: use textproc/asciinema instead
+devel/libiomp5-devel|devel/llvm-devel|2015-07-24|Merged with devel/llvm-devel
+amd64-binutils||2015-07-25|No real use
+amd64-gcc||2015-07-25|No real use
+amd64-xtoolchain-gcc||2015-07-25|No real use
+devel/p5-Test-Tester|devel/p5-Test-Simple|2015-07-25|Has expired: Part of p5-Test-Simple (use that instead), and included in perl 5.22
+devel/p5-Test-use-ok|devel/p5-Test-Simple|2015-07-25|Has expired: Part of devel/p5-Test-Simple (use that instead), and included in perl 5.22
+math/mate-calc||2015-07-27|Not part of MATE 1.10. Instead galculator is used
+x11/mate-dialogs||2015-07-27|Not part of MATE 1.10
+devel/automake14||2015-07-27|Has expired: Not used in the ports tree anymore

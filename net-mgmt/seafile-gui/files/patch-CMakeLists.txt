@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2015-01-28 22:35:49.000000000 -0500
-+++ CMakeLists.txt	2015-01-28 22:42:26.000000000 -0500
-@@ -85,7 +85,7 @@
+--- CMakeLists.txt.orig	2015-02-05 08:43:51 UTC
++++ CMakeLists.txt
+@@ -98,7 +98,7 @@ IF(USE_QT5)
        SET(USE_QT_LIBRARIES ${USE_QT_LIBRARIES} "WebKit" "WebKitWidgets")
        ADD_DEFINITIONS(-DHAVE_SHIBBOLETH_SUPPORT)
      ENDIF()
@@ -9,7 +9,7 @@
        SET(USE_QT_LIBRARIES ${USE_QT_LIBRARIES} "DBus")
      ENDIF()
      FIND_PACKAGE(Qt5 REQUIRED ${USE_QT_LIBRARIES})
-@@ -100,7 +100,7 @@
+@@ -113,7 +113,7 @@ ELSE()
        SET(QtWebKit "QtWebKit")
        ADD_DEFINITIONS(-DHAVE_SHIBBOLETH_SUPPORT)
      ENDIF()
@@ -18,3 +18,12 @@
          SET(QtDBus "QtDBus")
      ENDIF()
      FIND_PACKAGE(Qt4 REQUIRED QtCore QtGui QtNetwork ${QtDBus} ${QtWebKit})
+@@ -263,7 +263,7 @@ PKG_CHECK_MODULES(LIBCCNET REQUIRED libc
+ 
+ PKG_CHECK_MODULES(LIBSEARPC REQUIRED libsearpc>=1.0)
+ 
+-PKG_CHECK_MODULES(OPENSSL REQUIRED openssl>=0.98)
++#PKG_CHECK_MODULES(OPENSSL REQUIRED openssl>=0.98)
+ 
+ PKG_CHECK_MODULES(LIBSEAFILE REQUIRED libseafile>=1.7)
+ ####################

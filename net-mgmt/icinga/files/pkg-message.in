@@ -11,10 +11,12 @@
   install and configure one to finish off your Icinga installation.
 
   A sample Apache 2.x configuration is installed as
-  %%PREFIX%%/%%EXAMPLESDIR%%/apache22/icinga.conf-sample
+  %%PREFIX%%/%%EXAMPLESDIR%%/apache2/icinga.conf-sample
 
   If you like to use database backend with IDOutils the SQL scripts to
   setup the database have been installed in
   %%PREFIX%%/%%EXAMPLESDIR%%/idoutils/db/.
+  You also need to install databases/libdbi-drivers to connect to a
+  database.
 
 *************************************************************************

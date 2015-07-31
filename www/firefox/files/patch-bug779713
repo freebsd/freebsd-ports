@@ -65,13 +65,11 @@ index d317766..ddb13da 100644
  #  if __has_extension(cxx_constexpr)
  #    define MOZ_HAVE_CXX11_CONSTEXPR
  #  endif
-@@ -84,6 +88,9 @@
- #  endif
- #elif defined(__GNUC__)
+@@ -86,6 +90,7 @@
  #  if defined(__GXX_EXPERIMENTAL_CXX0X__) || __cplusplus >= 201103L
-+#    if MOZ_GCC_VERSION_AT_LEAST(4, 8, 0)
+ #    define MOZ_HAVE_CXX11_CONSTEXPR
+ #    if MOZ_GCC_VERSION_AT_LEAST(4, 8, 0)
 +#      define MOZ_HAVE_CXX11_ALIGNAS
-+#    endif
- #      define MOZ_HAVE_CXX11_CONSTEXPR
- #      define MOZ_HAVE_EXPLICIT_CONVERSION
- #  endif
+ #      define MOZ_HAVE_CXX11_CONSTEXPR_IN_TEMPLATES
+ #    endif
+ #    define MOZ_HAVE_EXPLICIT_CONVERSION

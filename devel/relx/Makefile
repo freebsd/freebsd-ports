@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	relx
-PORTVERSION=	3.3.0
-DISTVERSIONPREFIX=v
+PORTVERSION=	3.4.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 MASTER_SITES+=	http://olgeni.olgeni.com/~olgeni/distfiles/:deps \
 		LOCAL/olgeni:deps
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		relx-cache-3.tar.gz:deps
+		relx-cache-6.tar.gz:deps
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Sane, simple release creation for Erlang
@@ -27,6 +27,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
+# Use either erlware or tsloughter, depending on who actually
+# published the package on hex.pm
 USE_GITHUB=	yes
 GH_ACCOUNT=	erlware
 
@@ -69,5 +71,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/_build/default/lib/relx/ebin/* ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/ebin
 	cd ${WRKSRC}/priv && ${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/priv
 	${INSTALL_SCRIPT} ${WRKSRC}/_build/default/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

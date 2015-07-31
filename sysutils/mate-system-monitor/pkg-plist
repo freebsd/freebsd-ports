@@ -1,6 +1,7 @@
 bin/mate-system-monitor
 man/man1/mate-system-monitor.1.gz
 share/MateConf/gsettings/mate-system-monitor.convert
+share/appdata/mate-system-monitor.appdata.xml
 share/applications/mate-system-monitor.desktop
 share/help/C/mate-system-monitor/figures/addColumn.png
 share/help/C/mate-system-monitor/figures/changePriority.png

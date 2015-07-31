@@ -1,6 +1,6 @@
---- src/condor_power/power_state.cpp.orig	2014-12-26 11:28:32.000000000 -0600
-+++ src/condor_power/power_state.cpp	2014-12-26 17:17:04.000000000 -0600
-@@ -57,7 +57,8 @@
+--- src/condor_power/power_state.cpp.orig	2015-04-07 15:10:11 UTC
++++ src/condor_power/power_state.cpp
+@@ -57,7 +57,8 @@ enum
  	E_ARGCNT  = -6,  /* too few/many arguments */
  	E_NOREST  = -7,  /* failed to switch the machine's power state */
  	E_CLASSAD = -8,  /* error in class-ad (errno = %d) */
@@ -10,7 +10,7 @@
  };
  
  /**	Error messages */
-@@ -72,7 +73,8 @@
+@@ -72,7 +73,8 @@ static const char *errmsgs[] = {
    /* E_ARGCNT   -6 */  "wrong number of arguments.\n",
    /* E_NOREST   -7 */  "failed to switch the machine's power state.\n",
    /* E_CLASSAD  -8 */  "error in class-ad (errno = %d).\n",
@@ -20,7 +20,7 @@
  };
  
  /**	Typedefs */
-@@ -257,6 +259,8 @@
+@@ -257,6 +259,8 @@ main( int argc, const char *argv[] )
  	/**	Create the hibernation mechanism. */
  # if ( HIBERNATOR_TYPE_DEFINED )
  	hibernator = new RealHibernator;

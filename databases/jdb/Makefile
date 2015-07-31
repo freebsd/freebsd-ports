@@ -3,7 +3,7 @@
 
 PORTNAME=	jdb
 PORTVERSION=	1.14
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://www.isi.edu/~johnh/SOFTWARE/JDB/
 
@@ -17,7 +17,7 @@ SHEBANG_FILES=	db2dcliff dbcol dbcolcreate dbcoldefine dbcoldiff dbcolhisto \
 		dbcolize dbcolmerge dbcolmovingstats dbcolmultiscale \
 		dbcolneaten dbcolpercentile dbcolrename dbcolscorrelate \
 		dbcolsplittocols dbcolsplittorows dbcolstats dbcoltighten \
-		dbfilesplit dbformmail dbjoin dblistize dbrow dbmultistats \
+		dbfilesplit dbformmail dbjoin dblib.pl dblistize dbrow dbmultistats \
 		dbrecolize dbrowaccumulate dbrowdiff dbrowenumerate dbroweval \
 		dbrowsplituniq dbrowuniq dbsort dbstats dbstripcomments \
 		dbstripextraheaders dbstripleadingspace db_to_html_table \

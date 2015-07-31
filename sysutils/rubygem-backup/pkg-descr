@@ -6,5 +6,5 @@ storage protocols/services, syncers, compressors, encryptors and notifiers which
 you can mix and match. It was built with modularity, extensibility and
 simplicity in mind.
 
-WWW: https://github.com/meskyanichi/backup
+WWW: https://github.com/backup/backup
 RG:  https://rubygems.org/gems/backup

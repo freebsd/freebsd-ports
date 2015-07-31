@@ -137,30 +137,3 @@ share/setup/openchangedb/oc_provision_openchange_init.ldif
 share/setup/openchangedb/oc_provision_openchange_mailbox.ldif
 share/setup/profiles/oc_profiles_init.ldif
 share/setup/profiles/oc_profiles_schema.ldif
-@dirrm share/setup/profiles
-@dirrm share/setup/openchangedb
-@dirrm share/setup/mapistore
-@dirrm share/setup
-@dirrm share/%%SAMBA%%/setup/AD
-@dirrm share/openchange/pictures
-@dirrm share/openchange
-@dirrm share/mapitest/lzxpress
-@dirrm share/mapitest/lzfu
-@dirrm share/mapitest
-@dirrm modules/dcerpc_mapiproxy_server
-@dirrm modules/dcerpc_mapiproxy
-@dirrmtry modules
-@dirrm lib/shared-modules/dcerpc_server
-@dirrm %%PYTHON_SITELIBDIR%%/openchange/web/auth
-@dirrm %%PYTHON_SITELIBDIR%%/openchange/web
-@dirrm %%PYTHON_SITELIBDIR%%/openchange/utils
-@dirrm %%PYTHON_SITELIBDIR%%/openchange/tests
-@dirrm %%PYTHON_SITELIBDIR%%/openchange
-@dirrm lib/nagios
-@dirrm include/mapistore
-@dirrm include/libocpf
-@dirrm include/libmapiadmin
-@dirrm include/libmapi/socket
-@dirrm include/libmapi
-%%BOOST%%@dirrm include/libmapi++
-@dirrm include/gen_ndr

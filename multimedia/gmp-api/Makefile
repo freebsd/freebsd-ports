@@ -2,8 +2,7 @@
 
 PORTNAME=	gmp-api
 DISTVERSIONPREFIX=	Firefox
-DISTVERSION=	38 # tracking www/firefox
-PORTREVISION=	1
+DISTVERSION=	39 # tracking www/firefox
 CATEGORIES=	multimedia
 
 MAINTAINER=	gecko@FreeBSD.org

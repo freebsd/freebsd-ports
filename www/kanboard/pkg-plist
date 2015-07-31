@@ -1,0 +1,1492 @@
+@owner %%KANBOARD_USERNAME%%
+@group %%KANBOARD_GROUPNAME%%
+%%WWWDIR%%/LICENSE
+%%WWWDIR%%/app/.htaccess
+%%WWWDIR%%/app/Action/Base.php
+%%WWWDIR%%/app/Action/CommentCreation.php
+%%WWWDIR%%/app/Action/TaskAssignCategoryColor.php
+%%WWWDIR%%/app/Action/TaskAssignCategoryLabel.php
+%%WWWDIR%%/app/Action/TaskAssignColorCategory.php
+%%WWWDIR%%/app/Action/TaskAssignColorColumn.php
+%%WWWDIR%%/app/Action/TaskAssignColorUser.php
+%%WWWDIR%%/app/Action/TaskAssignCurrentUser.php
+%%WWWDIR%%/app/Action/TaskAssignSpecificUser.php
+%%WWWDIR%%/app/Action/TaskAssignUser.php
+%%WWWDIR%%/app/Action/TaskClose.php
+%%WWWDIR%%/app/Action/TaskCreation.php
+%%WWWDIR%%/app/Action/TaskDuplicateAnotherProject.php
+%%WWWDIR%%/app/Action/TaskEmail.php
+%%WWWDIR%%/app/Action/TaskLogMoveAnotherColumn.php
+%%WWWDIR%%/app/Action/TaskMoveAnotherProject.php
+%%WWWDIR%%/app/Action/TaskMoveColumnAssigned.php
+%%WWWDIR%%/app/Action/TaskMoveColumnCategoryChange.php
+%%WWWDIR%%/app/Action/TaskMoveColumnUnAssigned.php
+%%WWWDIR%%/app/Action/TaskOpen.php
+%%WWWDIR%%/app/Action/TaskUpdateStartDate.php
+%%WWWDIR%%/app/Api/Action.php
+%%WWWDIR%%/app/Api/App.php
+%%WWWDIR%%/app/Api/Base.php
+%%WWWDIR%%/app/Api/Board.php
+%%WWWDIR%%/app/Api/Category.php
+%%WWWDIR%%/app/Api/Comment.php
+%%WWWDIR%%/app/Api/File.php
+%%WWWDIR%%/app/Api/Link.php
+%%WWWDIR%%/app/Api/Project.php
+%%WWWDIR%%/app/Api/ProjectPermission.php
+%%WWWDIR%%/app/Api/Subtask.php
+%%WWWDIR%%/app/Api/Swimlane.php
+%%WWWDIR%%/app/Api/Task.php
+%%WWWDIR%%/app/Api/TaskLink.php
+%%WWWDIR%%/app/Api/User.php
+%%WWWDIR%%/app/Auth/Base.php
+%%WWWDIR%%/app/Auth/Database.php
+%%WWWDIR%%/app/Auth/GitHub.php
+%%WWWDIR%%/app/Auth/Google.php
+%%WWWDIR%%/app/Auth/Ldap.php
+%%WWWDIR%%/app/Auth/RememberMe.php
+%%WWWDIR%%/app/Auth/ReverseProxy.php
+%%WWWDIR%%/app/Console/Base.php
+%%WWWDIR%%/app/Console/LocaleComparator.php
+%%WWWDIR%%/app/Console/LocaleSync.php
+%%WWWDIR%%/app/Console/ProjectDailySummaryCalculation.php
+%%WWWDIR%%/app/Console/ProjectDailySummaryExport.php
+%%WWWDIR%%/app/Console/SubtaskExport.php
+%%WWWDIR%%/app/Console/TaskExport.php
+%%WWWDIR%%/app/Console/TaskOverdueNotification.php
+%%WWWDIR%%/app/Console/TransitionExport.php
+%%WWWDIR%%/app/Controller/Action.php
+%%WWWDIR%%/app/Controller/Analytic.php
+%%WWWDIR%%/app/Controller/App.php
+%%WWWDIR%%/app/Controller/Auth.php
+%%WWWDIR%%/app/Controller/Base.php
+%%WWWDIR%%/app/Controller/Board.php
+%%WWWDIR%%/app/Controller/Budget.php
+%%WWWDIR%%/app/Controller/Calendar.php
+%%WWWDIR%%/app/Controller/Category.php
+%%WWWDIR%%/app/Controller/Column.php
+%%WWWDIR%%/app/Controller/Comment.php
+%%WWWDIR%%/app/Controller/Config.php
+%%WWWDIR%%/app/Controller/Currency.php
+%%WWWDIR%%/app/Controller/Export.php
+%%WWWDIR%%/app/Controller/Feed.php
+%%WWWDIR%%/app/Controller/File.php
+%%WWWDIR%%/app/Controller/Hourlyrate.php
+%%WWWDIR%%/app/Controller/Ical.php
+%%WWWDIR%%/app/Controller/Link.php
+%%WWWDIR%%/app/Controller/Project.php
+%%WWWDIR%%/app/Controller/Projectinfo.php
+%%WWWDIR%%/app/Controller/Subtask.php
+%%WWWDIR%%/app/Controller/Swimlane.php
+%%WWWDIR%%/app/Controller/Task.php
+%%WWWDIR%%/app/Controller/Tasklink.php
+%%WWWDIR%%/app/Controller/Timer.php
+%%WWWDIR%%/app/Controller/Timetable.php
+%%WWWDIR%%/app/Controller/Timetableday.php
+%%WWWDIR%%/app/Controller/Timetableextra.php
+%%WWWDIR%%/app/Controller/Timetableoff.php
+%%WWWDIR%%/app/Controller/Timetableweek.php
+%%WWWDIR%%/app/Controller/Twofactor.php
+%%WWWDIR%%/app/Controller/User.php
+%%WWWDIR%%/app/Controller/Webhook.php
+%%WWWDIR%%/app/Core/Base.php
+%%WWWDIR%%/app/Core/Cache.php
+%%WWWDIR%%/app/Core/EmailClient.php
+%%WWWDIR%%/app/Core/Helper.php
+%%WWWDIR%%/app/Core/HttpClient.php
+%%WWWDIR%%/app/Core/Markdown.php
+%%WWWDIR%%/app/Core/MemoryCache.php
+%%WWWDIR%%/app/Core/Paginator.php
+%%WWWDIR%%/app/Core/Request.php
+%%WWWDIR%%/app/Core/Response.php
+%%WWWDIR%%/app/Core/Router.php
+%%WWWDIR%%/app/Core/Security.php
+%%WWWDIR%%/app/Core/Session.php
+%%WWWDIR%%/app/Core/Template.php
+%%WWWDIR%%/app/Core/Tool.php
+%%WWWDIR%%/app/Core/Translator.php
+%%WWWDIR%%/app/Event/AuthEvent.php
+%%WWWDIR%%/app/Event/CommentEvent.php
+%%WWWDIR%%/app/Event/FileEvent.php
+%%WWWDIR%%/app/Event/GenericEvent.php
+%%WWWDIR%%/app/Event/SubtaskEvent.php
+%%WWWDIR%%/app/Event/TaskEvent.php
+%%WWWDIR%%/app/Helper/App.php
+%%WWWDIR%%/app/Helper/Asset.php
+%%WWWDIR%%/app/Helper/Datetime.php
+%%WWWDIR%%/app/Helper/File.php
+%%WWWDIR%%/app/Helper/Form.php
+%%WWWDIR%%/app/Helper/Subtask.php
+%%WWWDIR%%/app/Helper/Task.php
+%%WWWDIR%%/app/Helper/Text.php
+%%WWWDIR%%/app/Helper/Url.php
+%%WWWDIR%%/app/Helper/User.php
+%%WWWDIR%%/app/Integration/BitbucketWebhook.php
+%%WWWDIR%%/app/Integration/GithubWebhook.php
+%%WWWDIR%%/app/Integration/GitlabWebhook.php
+%%WWWDIR%%/app/Integration/HipchatWebhook.php
+%%WWWDIR%%/app/Integration/Jabber.php
+%%WWWDIR%%/app/Integration/Mailgun.php
+%%WWWDIR%%/app/Integration/Postmark.php
+%%WWWDIR%%/app/Integration/Sendgrid.php
+%%WWWDIR%%/app/Integration/SlackWebhook.php
+%%WWWDIR%%/app/Integration/Smtp.php
+%%WWWDIR%%/app/Library/password.php
+%%WWWDIR%%/app/Locale/da_DK/translations.php
+%%WWWDIR%%/app/Locale/de_DE/translations.php
+%%WWWDIR%%/app/Locale/es_ES/translations.php
+%%WWWDIR%%/app/Locale/fi_FI/translations.php
+%%WWWDIR%%/app/Locale/fr_FR/translations.php
+%%WWWDIR%%/app/Locale/hu_HU/translations.php
+%%WWWDIR%%/app/Locale/it_IT/translations.php
+%%WWWDIR%%/app/Locale/ja_JP/translations.php
+%%WWWDIR%%/app/Locale/nl_NL/translations.php
+%%WWWDIR%%/app/Locale/pl_PL/translations.php
+%%WWWDIR%%/app/Locale/pt_BR/translations.php
+%%WWWDIR%%/app/Locale/ru_RU/translations.php
+%%WWWDIR%%/app/Locale/sr_Latn_RS/translations.php
+%%WWWDIR%%/app/Locale/sv_SE/translations.php
+%%WWWDIR%%/app/Locale/th_TH/translations.php
+%%WWWDIR%%/app/Locale/tr_TR/translations.php
+%%WWWDIR%%/app/Locale/zh_CN/translations.php
+%%WWWDIR%%/app/Model/Acl.php
+%%WWWDIR%%/app/Model/Action.php
+%%WWWDIR%%/app/Model/Authentication.php
+%%WWWDIR%%/app/Model/Base.php
+%%WWWDIR%%/app/Model/Board.php
+%%WWWDIR%%/app/Model/Budget.php
+%%WWWDIR%%/app/Model/Category.php
+%%WWWDIR%%/app/Model/Color.php
+%%WWWDIR%%/app/Model/Comment.php
+%%WWWDIR%%/app/Model/Config.php
+%%WWWDIR%%/app/Model/Currency.php
+%%WWWDIR%%/app/Model/DateParser.php
+%%WWWDIR%%/app/Model/File.php
+%%WWWDIR%%/app/Model/HourlyRate.php
+%%WWWDIR%%/app/Model/LastLogin.php
+%%WWWDIR%%/app/Model/Link.php
+%%WWWDIR%%/app/Model/Notification.php
+%%WWWDIR%%/app/Model/Project.php
+%%WWWDIR%%/app/Model/ProjectActivity.php
+%%WWWDIR%%/app/Model/ProjectAnalytic.php
+%%WWWDIR%%/app/Model/ProjectDailySummary.php
+%%WWWDIR%%/app/Model/ProjectDuplication.php
+%%WWWDIR%%/app/Model/ProjectIntegration.php
+%%WWWDIR%%/app/Model/ProjectPermission.php
+%%WWWDIR%%/app/Model/Subtask.php
+%%WWWDIR%%/app/Model/SubtaskExport.php
+%%WWWDIR%%/app/Model/SubtaskForecast.php
+%%WWWDIR%%/app/Model/SubtaskTimeTracking.php
+%%WWWDIR%%/app/Model/Swimlane.php
+%%WWWDIR%%/app/Model/Task.php
+%%WWWDIR%%/app/Model/TaskCreation.php
+%%WWWDIR%%/app/Model/TaskDuplication.php
+%%WWWDIR%%/app/Model/TaskExport.php
+%%WWWDIR%%/app/Model/TaskFilter.php
+%%WWWDIR%%/app/Model/TaskFinder.php
+%%WWWDIR%%/app/Model/TaskLink.php
+%%WWWDIR%%/app/Model/TaskModification.php
+%%WWWDIR%%/app/Model/TaskPermission.php
+%%WWWDIR%%/app/Model/TaskPosition.php
+%%WWWDIR%%/app/Model/TaskStatus.php
+%%WWWDIR%%/app/Model/TaskValidator.php
+%%WWWDIR%%/app/Model/Timetable.php
+%%WWWDIR%%/app/Model/TimetableDay.php
+%%WWWDIR%%/app/Model/TimetableExtra.php
+%%WWWDIR%%/app/Model/TimetableOff.php
+%%WWWDIR%%/app/Model/TimetableWeek.php
+%%WWWDIR%%/app/Model/Transition.php
+%%WWWDIR%%/app/Model/User.php
+%%WWWDIR%%/app/Model/UserSession.php
+%%WWWDIR%%/app/Model/Webhook.php
+%%WWWDIR%%/app/Schema/Mysql.php
+%%WWWDIR%%/app/Schema/Postgres.php
+%%WWWDIR%%/app/Schema/Sqlite.php
+%%WWWDIR%%/app/ServiceProvider/ClassProvider.php
+%%WWWDIR%%/app/ServiceProvider/DatabaseProvider.php
+%%WWWDIR%%/app/ServiceProvider/EventDispatcherProvider.php
+%%WWWDIR%%/app/ServiceProvider/LoggingProvider.php
+%%WWWDIR%%/app/Subscriber/AuthSubscriber.php
+%%WWWDIR%%/app/Subscriber/BootstrapSubscriber.php
+%%WWWDIR%%/app/Subscriber/NotificationSubscriber.php
+%%WWWDIR%%/app/Subscriber/ProjectActivitySubscriber.php
+%%WWWDIR%%/app/Subscriber/ProjectDailySummarySubscriber.php
+%%WWWDIR%%/app/Subscriber/ProjectModificationDateSubscriber.php
+%%WWWDIR%%/app/Subscriber/RecurringTaskSubscriber.php
+%%WWWDIR%%/app/Subscriber/SubtaskTimeTrackingSubscriber.php
+%%WWWDIR%%/app/Subscriber/TaskMovedDateSubscriber.php
+%%WWWDIR%%/app/Subscriber/TransitionSubscriber.php
+%%WWWDIR%%/app/Subscriber/WebhookSubscriber.php
+%%WWWDIR%%/app/Template/action/event.php
+%%WWWDIR%%/app/Template/action/index.php
+%%WWWDIR%%/app/Template/action/params.php
+%%WWWDIR%%/app/Template/action/remove.php
+%%WWWDIR%%/app/Template/analytic/burndown.php
+%%WWWDIR%%/app/Template/analytic/cfd.php
+%%WWWDIR%%/app/Template/analytic/layout.php
+%%WWWDIR%%/app/Template/analytic/sidebar.php
+%%WWWDIR%%/app/Template/analytic/tasks.php
+%%WWWDIR%%/app/Template/analytic/users.php
+%%WWWDIR%%/app/Template/app/dashboard.php
+%%WWWDIR%%/app/Template/app/forbidden.php
+%%WWWDIR%%/app/Template/app/notfound.php
+%%WWWDIR%%/app/Template/app/projects.php
+%%WWWDIR%%/app/Template/app/subtasks.php
+%%WWWDIR%%/app/Template/app/tasks.php
+%%WWWDIR%%/app/Template/auth/index.php
+%%WWWDIR%%/app/Template/board/assignee.php
+%%WWWDIR%%/app/Template/board/category.php
+%%WWWDIR%%/app/Template/board/comments.php
+%%WWWDIR%%/app/Template/board/description.php
+%%WWWDIR%%/app/Template/board/files.php
+%%WWWDIR%%/app/Template/board/filters.php
+%%WWWDIR%%/app/Template/board/index.php
+%%WWWDIR%%/app/Template/board/public.php
+%%WWWDIR%%/app/Template/board/show.php
+%%WWWDIR%%/app/Template/board/subtasks.php
+%%WWWDIR%%/app/Template/board/swimlane.php
+%%WWWDIR%%/app/Template/board/task_footer.php
+%%WWWDIR%%/app/Template/board/task_menu.php
+%%WWWDIR%%/app/Template/board/task_private.php
+%%WWWDIR%%/app/Template/board/task_public.php
+%%WWWDIR%%/app/Template/board/tasklinks.php
+%%WWWDIR%%/app/Template/budget/breakdown.php
+%%WWWDIR%%/app/Template/budget/create.php
+%%WWWDIR%%/app/Template/budget/index.php
+%%WWWDIR%%/app/Template/budget/remove.php
+%%WWWDIR%%/app/Template/budget/sidebar.php
+%%WWWDIR%%/app/Template/calendar/show.php
+%%WWWDIR%%/app/Template/calendar/sidebar.php
+%%WWWDIR%%/app/Template/category/edit.php
+%%WWWDIR%%/app/Template/category/index.php
+%%WWWDIR%%/app/Template/category/remove.php
+%%WWWDIR%%/app/Template/column/edit.php
+%%WWWDIR%%/app/Template/column/index.php
+%%WWWDIR%%/app/Template/column/remove.php
+%%WWWDIR%%/app/Template/comment/create.php
+%%WWWDIR%%/app/Template/comment/edit.php
+%%WWWDIR%%/app/Template/comment/forbidden.php
+%%WWWDIR%%/app/Template/comment/remove.php
+%%WWWDIR%%/app/Template/comment/show.php
+%%WWWDIR%%/app/Template/config/about.php
+%%WWWDIR%%/app/Template/config/api.php
+%%WWWDIR%%/app/Template/config/application.php
+%%WWWDIR%%/app/Template/config/board.php
+%%WWWDIR%%/app/Template/config/calendar.php
+%%WWWDIR%%/app/Template/config/integrations.php
+%%WWWDIR%%/app/Template/config/layout.php
+%%WWWDIR%%/app/Template/config/project.php
+%%WWWDIR%%/app/Template/config/sidebar.php
+%%WWWDIR%%/app/Template/config/webhook.php
+%%WWWDIR%%/app/Template/currency/index.php
+%%WWWDIR%%/app/Template/event/comment_create.php
+%%WWWDIR%%/app/Template/event/comment_update.php
+%%WWWDIR%%/app/Template/event/events.php
+%%WWWDIR%%/app/Template/event/subtask_create.php
+%%WWWDIR%%/app/Template/event/subtask_update.php
+%%WWWDIR%%/app/Template/event/task_assignee_change.php
+%%WWWDIR%%/app/Template/event/task_close.php
+%%WWWDIR%%/app/Template/event/task_create.php
+%%WWWDIR%%/app/Template/event/task_move_column.php
+%%WWWDIR%%/app/Template/event/task_move_position.php
+%%WWWDIR%%/app/Template/event/task_move_swimlane.php
+%%WWWDIR%%/app/Template/event/task_open.php
+%%WWWDIR%%/app/Template/event/task_update.php
+%%WWWDIR%%/app/Template/export/sidebar.php
+%%WWWDIR%%/app/Template/export/subtasks.php
+%%WWWDIR%%/app/Template/export/summary.php
+%%WWWDIR%%/app/Template/export/tasks.php
+%%WWWDIR%%/app/Template/export/transitions.php
+%%WWWDIR%%/app/Template/feed/project.php
+%%WWWDIR%%/app/Template/feed/user.php
+%%WWWDIR%%/app/Template/file/new.php
+%%WWWDIR%%/app/Template/file/open.php
+%%WWWDIR%%/app/Template/file/remove.php
+%%WWWDIR%%/app/Template/file/screenshot.php
+%%WWWDIR%%/app/Template/file/show.php
+%%WWWDIR%%/app/Template/hourlyrate/index.php
+%%WWWDIR%%/app/Template/hourlyrate/remove.php
+%%WWWDIR%%/app/Template/layout.php
+%%WWWDIR%%/app/Template/link/create.php
+%%WWWDIR%%/app/Template/link/edit.php
+%%WWWDIR%%/app/Template/link/index.php
+%%WWWDIR%%/app/Template/link/remove.php
+%%WWWDIR%%/app/Template/notification/comment_create.php
+%%WWWDIR%%/app/Template/notification/comment_update.php
+%%WWWDIR%%/app/Template/notification/file_create.php
+%%WWWDIR%%/app/Template/notification/footer.php
+%%WWWDIR%%/app/Template/notification/subtask_create.php
+%%WWWDIR%%/app/Template/notification/subtask_update.php
+%%WWWDIR%%/app/Template/notification/task_assignee_change.php
+%%WWWDIR%%/app/Template/notification/task_close.php
+%%WWWDIR%%/app/Template/notification/task_create.php
+%%WWWDIR%%/app/Template/notification/task_move_column.php
+%%WWWDIR%%/app/Template/notification/task_move_position.php
+%%WWWDIR%%/app/Template/notification/task_move_swimlane.php
+%%WWWDIR%%/app/Template/notification/task_open.php
+%%WWWDIR%%/app/Template/notification/task_overdue.php
+%%WWWDIR%%/app/Template/notification/task_update.php
+%%WWWDIR%%/app/Template/project/disable.php
+%%WWWDIR%%/app/Template/project/dropdown.php
+%%WWWDIR%%/app/Template/project/duplicate.php
+%%WWWDIR%%/app/Template/project/edit.php
+%%WWWDIR%%/app/Template/project/enable.php
+%%WWWDIR%%/app/Template/project/index.php
+%%WWWDIR%%/app/Template/project/integrations.php
+%%WWWDIR%%/app/Template/project/layout.php
+%%WWWDIR%%/app/Template/project/new.php
+%%WWWDIR%%/app/Template/project/remove.php
+%%WWWDIR%%/app/Template/project/share.php
+%%WWWDIR%%/app/Template/project/show.php
+%%WWWDIR%%/app/Template/project/sidebar.php
+%%WWWDIR%%/app/Template/project/users.php
+%%WWWDIR%%/app/Template/projectinfo/activity.php
+%%WWWDIR%%/app/Template/projectinfo/search.php
+%%WWWDIR%%/app/Template/projectinfo/tasks.php
+%%WWWDIR%%/app/Template/subtask/create.php
+%%WWWDIR%%/app/Template/subtask/edit.php
+%%WWWDIR%%/app/Template/subtask/icons.php
+%%WWWDIR%%/app/Template/subtask/remove.php
+%%WWWDIR%%/app/Template/subtask/restriction_change_status.php
+%%WWWDIR%%/app/Template/subtask/show.php
+%%WWWDIR%%/app/Template/swimlane/edit.php
+%%WWWDIR%%/app/Template/swimlane/index.php
+%%WWWDIR%%/app/Template/swimlane/remove.php
+%%WWWDIR%%/app/Template/swimlane/table.php
+%%WWWDIR%%/app/Template/task/activity.php
+%%WWWDIR%%/app/Template/task/changes.php
+%%WWWDIR%%/app/Template/task/close.php
+%%WWWDIR%%/app/Template/task/comments.php
+%%WWWDIR%%/app/Template/task/details.php
+%%WWWDIR%%/app/Template/task/duplicate.php
+%%WWWDIR%%/app/Template/task/duplicate_project.php
+%%WWWDIR%%/app/Template/task/edit.php
+%%WWWDIR%%/app/Template/task/edit_description.php
+%%WWWDIR%%/app/Template/task/edit_recurrence.php
+%%WWWDIR%%/app/Template/task/layout.php
+%%WWWDIR%%/app/Template/task/move_project.php
+%%WWWDIR%%/app/Template/task/new.php
+%%WWWDIR%%/app/Template/task/open.php
+%%WWWDIR%%/app/Template/task/public.php
+%%WWWDIR%%/app/Template/task/recurring_info.php
+%%WWWDIR%%/app/Template/task/remove.php
+%%WWWDIR%%/app/Template/task/show.php
+%%WWWDIR%%/app/Template/task/show_description.php
+%%WWWDIR%%/app/Template/task/sidebar.php
+%%WWWDIR%%/app/Template/task/table.php
+%%WWWDIR%%/app/Template/task/time.php
+%%WWWDIR%%/app/Template/task/time_tracking.php
+%%WWWDIR%%/app/Template/task/timesheet.php
+%%WWWDIR%%/app/Template/task/transitions.php
+%%WWWDIR%%/app/Template/tasklink/create.php
+%%WWWDIR%%/app/Template/tasklink/edit.php
+%%WWWDIR%%/app/Template/tasklink/remove.php
+%%WWWDIR%%/app/Template/tasklink/show.php
+%%WWWDIR%%/app/Template/timetable/index.php
+%%WWWDIR%%/app/Template/timetable_day/index.php
+%%WWWDIR%%/app/Template/timetable_day/remove.php
+%%WWWDIR%%/app/Template/timetable_extra/index.php
+%%WWWDIR%%/app/Template/timetable_extra/remove.php
+%%WWWDIR%%/app/Template/timetable_off/index.php
+%%WWWDIR%%/app/Template/timetable_off/remove.php
+%%WWWDIR%%/app/Template/timetable_week/index.php
+%%WWWDIR%%/app/Template/timetable_week/remove.php
+%%WWWDIR%%/app/Template/twofactor/check.php
+%%WWWDIR%%/app/Template/twofactor/disable.php
+%%WWWDIR%%/app/Template/twofactor/index.php
+%%WWWDIR%%/app/Template/user/calendar.php
+%%WWWDIR%%/app/Template/user/edit.php
+%%WWWDIR%%/app/Template/user/external.php
+%%WWWDIR%%/app/Template/user/index.php
+%%WWWDIR%%/app/Template/user/last.php
+%%WWWDIR%%/app/Template/user/layout.php
+%%WWWDIR%%/app/Template/user/new.php
+%%WWWDIR%%/app/Template/user/notifications.php
+%%WWWDIR%%/app/Template/user/password.php
+%%WWWDIR%%/app/Template/user/remove.php
+%%WWWDIR%%/app/Template/user/sessions.php
+%%WWWDIR%%/app/Template/user/share.php
+%%WWWDIR%%/app/Template/user/show.php
+%%WWWDIR%%/app/Template/user/sidebar.php
+%%WWWDIR%%/app/Template/user/timesheet.php
+%%WWWDIR%%/app/check_setup.php
+%%WWWDIR%%/app/common.php
+%%WWWDIR%%/app/constants.php
+%%WWWDIR%%/app/functions.php
+%%WWWDIR%%/assets/css/app.css
+%%WWWDIR%%/assets/css/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%WWWDIR%%/assets/css/images/ui-bg_flat_75_ffffff_40x100.png
+%%WWWDIR%%/assets/css/images/ui-bg_glass_55_fbf9ee_1x400.png
+%%WWWDIR%%/assets/css/images/ui-bg_glass_65_ffffff_1x400.png
+%%WWWDIR%%/assets/css/images/ui-bg_glass_75_dadada_1x400.png
+%%WWWDIR%%/assets/css/images/ui-bg_glass_75_e6e6e6_1x400.png
+%%WWWDIR%%/assets/css/images/ui-bg_glass_95_fef1ec_1x400.png
+%%WWWDIR%%/assets/css/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+%%WWWDIR%%/assets/css/images/ui-icons_222222_256x240.png
+%%WWWDIR%%/assets/css/images/ui-icons_2e83ff_256x240.png
+%%WWWDIR%%/assets/css/images/ui-icons_454545_256x240.png
+%%WWWDIR%%/assets/css/images/ui-icons_888888_256x240.png
+%%WWWDIR%%/assets/css/images/ui-icons_cd0a0a_256x240.png
+%%WWWDIR%%/assets/css/print.css
+%%WWWDIR%%/assets/css/src/activity.css
+%%WWWDIR%%/assets/css/src/alert.css
+%%WWWDIR%%/assets/css/src/base.css
+%%WWWDIR%%/assets/css/src/board.css
+%%WWWDIR%%/assets/css/src/button.css
+%%WWWDIR%%/assets/css/src/comment.css
+%%WWWDIR%%/assets/css/src/confirm.css
+%%WWWDIR%%/assets/css/src/dashboard.css
+%%WWWDIR%%/assets/css/src/dropdown.css
+%%WWWDIR%%/assets/css/src/form.css
+%%WWWDIR%%/assets/css/src/header.css
+%%WWWDIR%%/assets/css/src/links.css
+%%WWWDIR%%/assets/css/src/listing.css
+%%WWWDIR%%/assets/css/src/markdown.css
+%%WWWDIR%%/assets/css/src/pagination.css
+%%WWWDIR%%/assets/css/src/popover.css
+%%WWWDIR%%/assets/css/src/print.css
+%%WWWDIR%%/assets/css/src/responsive.css
+%%WWWDIR%%/assets/css/src/sidebar.css
+%%WWWDIR%%/assets/css/src/subtask.css
+%%WWWDIR%%/assets/css/src/table.css
+%%WWWDIR%%/assets/css/src/task.css
+%%WWWDIR%%/assets/css/src/title.css
+%%WWWDIR%%/assets/css/src/tooltip.css
+%%WWWDIR%%/assets/css/vendor/c3.min.css
+%%WWWDIR%%/assets/css/vendor/chosen.min.css
+%%WWWDIR%%/assets/css/vendor/font-awesome.min.css
+%%WWWDIR%%/assets/css/vendor/fullcalendar.min.css
+%%WWWDIR%%/assets/css/vendor/jquery-ui.min.css
+%%WWWDIR%%/assets/css/vendor/jquery-ui.theme.min.css
+%%WWWDIR%%/assets/fonts/FontAwesome.otf
+%%WWWDIR%%/assets/fonts/fontawesome-webfont.eot
+%%WWWDIR%%/assets/fonts/fontawesome-webfont.svg
+%%WWWDIR%%/assets/fonts/fontawesome-webfont.ttf
+%%WWWDIR%%/assets/fonts/fontawesome-webfont.woff
+%%WWWDIR%%/assets/fonts/fontawesome-webfont.woff2
+%%WWWDIR%%/assets/img/chosen-sprite.png
+%%WWWDIR%%/assets/img/chosen-sprite@2x.png
+%%WWWDIR%%/assets/img/favicon.png
+%%WWWDIR%%/assets/img/gitlab-icon.png
+%%WWWDIR%%/assets/img/gravatar-icon.png
+%%WWWDIR%%/assets/img/hipchat-icon.png
+%%WWWDIR%%/assets/img/icon.svg
+%%WWWDIR%%/assets/img/jabber-icon.png
+%%WWWDIR%%/assets/img/mailgun-icon.png
+%%WWWDIR%%/assets/img/postmark-icon.png
+%%WWWDIR%%/assets/img/sendgrid-icon.png
+%%WWWDIR%%/assets/img/touch-icon-ipad-retina.png
+%%WWWDIR%%/assets/img/touch-icon-ipad.png
+%%WWWDIR%%/assets/img/touch-icon-iphone-retina.png
+%%WWWDIR%%/assets/img/touch-icon-iphone.png
+%%WWWDIR%%/assets/js/app.js
+%%WWWDIR%%/assets/js/src/analytic.js
+%%WWWDIR%%/assets/js/src/base.js
+%%WWWDIR%%/assets/js/src/board.js
+%%WWWDIR%%/assets/js/src/calendar.js
+%%WWWDIR%%/assets/js/src/dashboard.js
+%%WWWDIR%%/assets/js/src/screenshot.js
+%%WWWDIR%%/assets/js/src/swimlane.js
+%%WWWDIR%%/assets/js/vendor/c3.min.js
+%%WWWDIR%%/assets/js/vendor/chosen.jquery.min.js
+%%WWWDIR%%/assets/js/vendor/d3.v3.min.js
+%%WWWDIR%%/assets/js/vendor/dropit.min.js
+%%WWWDIR%%/assets/js/vendor/fullcalendar.min.js
+%%WWWDIR%%/assets/js/vendor/jquery-1.11.1.min.js
+%%WWWDIR%%/assets/js/vendor/jquery-ui.min.js
+%%WWWDIR%%/assets/js/vendor/jquery.ui.touch-punch.min.js
+%%WWWDIR%%/assets/js/vendor/lang/ar-ma.js
+%%WWWDIR%%/assets/js/vendor/lang/ar-sa.js
+%%WWWDIR%%/assets/js/vendor/lang/ar-tn.js
+%%WWWDIR%%/assets/js/vendor/lang/ar.js
+%%WWWDIR%%/assets/js/vendor/lang/bg.js
+%%WWWDIR%%/assets/js/vendor/lang/ca.js
+%%WWWDIR%%/assets/js/vendor/lang/cs.js
+%%WWWDIR%%/assets/js/vendor/lang/da.js
+%%WWWDIR%%/assets/js/vendor/lang/de-at.js
+%%WWWDIR%%/assets/js/vendor/lang/de.js
+%%WWWDIR%%/assets/js/vendor/lang/el.js
+%%WWWDIR%%/assets/js/vendor/lang/en-au.js
+%%WWWDIR%%/assets/js/vendor/lang/en-ca.js
+%%WWWDIR%%/assets/js/vendor/lang/en-gb.js
+%%WWWDIR%%/assets/js/vendor/lang/es.js
+%%WWWDIR%%/assets/js/vendor/lang/fa.js
+%%WWWDIR%%/assets/js/vendor/lang/fi.js
+%%WWWDIR%%/assets/js/vendor/lang/fr-ca.js
+%%WWWDIR%%/assets/js/vendor/lang/fr.js
+%%WWWDIR%%/assets/js/vendor/lang/he.js
+%%WWWDIR%%/assets/js/vendor/lang/hi.js
+%%WWWDIR%%/assets/js/vendor/lang/hr.js
+%%WWWDIR%%/assets/js/vendor/lang/hu.js
+%%WWWDIR%%/assets/js/vendor/lang/id.js
+%%WWWDIR%%/assets/js/vendor/lang/is.js
+%%WWWDIR%%/assets/js/vendor/lang/it.js
+%%WWWDIR%%/assets/js/vendor/lang/ja.js
+%%WWWDIR%%/assets/js/vendor/lang/ko.js
+%%WWWDIR%%/assets/js/vendor/lang/lt.js
+%%WWWDIR%%/assets/js/vendor/lang/lv.js
+%%WWWDIR%%/assets/js/vendor/lang/nl.js
+%%WWWDIR%%/assets/js/vendor/lang/pl.js
+%%WWWDIR%%/assets/js/vendor/lang/pt-br.js
+%%WWWDIR%%/assets/js/vendor/lang/pt.js
+%%WWWDIR%%/assets/js/vendor/lang/ro.js
+%%WWWDIR%%/assets/js/vendor/lang/ru.js
+%%WWWDIR%%/assets/js/vendor/lang/sk.js
+%%WWWDIR%%/assets/js/vendor/lang/sl.js
+%%WWWDIR%%/assets/js/vendor/lang/sr-cyrl.js
+%%WWWDIR%%/assets/js/vendor/lang/sr.js
+%%WWWDIR%%/assets/js/vendor/lang/sv.js
+%%WWWDIR%%/assets/js/vendor/lang/th.js
+%%WWWDIR%%/assets/js/vendor/lang/tr.js
+%%WWWDIR%%/assets/js/vendor/lang/uk.js
+%%WWWDIR%%/assets/js/vendor/lang/vi.js
+%%WWWDIR%%/assets/js/vendor/lang/zh-cn.js
+%%WWWDIR%%/assets/js/vendor/lang/zh-tw.js
+%%WWWDIR%%/assets/js/vendor/moment.min.js
+%%WWWDIR%%/assets/js/vendor/mousetrap-global-bind.min.js
+%%WWWDIR%%/assets/js/vendor/mousetrap.min.js
+%%WWWDIR%%/config.default.php
+%%WWWDIR%%/data/.htaccess
+%%WWWDIR%%/index.php
+%%WWWDIR%%/jsonrpc.php
+%%WWWDIR%%/kanboard
+%%WWWDIR%%/robots.txt
+%%WWWDIR%%/vendor/autoload.php
+%%WWWDIR%%/vendor/christian-riesen/base32/.scrutinizer.yml
+%%WWWDIR%%/vendor/christian-riesen/base32/LICENSE
+%%WWWDIR%%/vendor/christian-riesen/base32/build.xml
+%%WWWDIR%%/vendor/christian-riesen/base32/phpunit.xml.dist
+%%WWWDIR%%/vendor/christian-riesen/base32/src/Base32.php
+%%WWWDIR%%/vendor/christian-riesen/otp/LICENSE
+%%WWWDIR%%/vendor/christian-riesen/otp/example/index.php
+%%WWWDIR%%/vendor/christian-riesen/otp/phpunit.xml.dist
+%%WWWDIR%%/vendor/christian-riesen/otp/src/Otp/GoogleAuthenticator.php
+%%WWWDIR%%/vendor/christian-riesen/otp/src/Otp/Otp.php
+%%WWWDIR%%/vendor/christian-riesen/otp/src/Otp/OtpInterface.php
+%%WWWDIR%%/vendor/composer/ClassLoader.php
+%%WWWDIR%%/vendor/composer/autoload_classmap.php
+%%WWWDIR%%/vendor/composer/autoload_files.php
+%%WWWDIR%%/vendor/composer/autoload_namespaces.php
+%%WWWDIR%%/vendor/composer/autoload_psr4.php
+%%WWWDIR%%/vendor/composer/autoload_real.php
+%%WWWDIR%%/vendor/composer/installed.json
+%%WWWDIR%%/vendor/eluceo/ical/.scrutinizer.yml
+%%WWWDIR%%/vendor/eluceo/ical/LICENSE
+%%WWWDIR%%/vendor/eluceo/ical/examples/example1.php
+%%WWWDIR%%/vendor/eluceo/ical/examples/example2.php
+%%WWWDIR%%/vendor/eluceo/ical/examples/example3.php
+%%WWWDIR%%/vendor/eluceo/ical/examples/example4.php
+%%WWWDIR%%/vendor/eluceo/ical/examples/example5.php
+%%WWWDIR%%/vendor/eluceo/ical/src/Eluceo/iCal/Component.php
+%%WWWDIR%%/vendor/eluceo/ical/src/Eluceo/iCal/Component/Alarm.php
+%%WWWDIR%%/vendor/eluceo/ical/src/Eluceo/iCal/Component/Calendar.php
+%%WWWDIR%%/vendor/eluceo/ical/src/Eluceo/iCal/Component/Event.php
+%%WWWDIR%%/vendor/eluceo/ical/src/Eluceo/iCal/Component/Timezone.php
+%%WWWDIR%%/vendor/eluceo/ical/src/Eluceo/iCal/Component/TimezoneRule.php
+%%WWWDIR%%/vendor/eluceo/ical/src/Eluceo/iCal/ParameterBag.php
+%%WWWDIR%%/vendor/eluceo/ical/src/Eluceo/iCal/Property.php
+%%WWWDIR%%/vendor/eluceo/ical/src/Eluceo/iCal/Property/ArrayValue.php
+%%WWWDIR%%/vendor/eluceo/ical/src/Eluceo/iCal/Property/Event/Attendees.php
+%%WWWDIR%%/vendor/eluceo/ical/src/Eluceo/iCal/Property/Event/RecurrenceRule.php
+%%WWWDIR%%/vendor/eluceo/ical/src/Eluceo/iCal/Property/StringValue.php
+%%WWWDIR%%/vendor/eluceo/ical/src/Eluceo/iCal/Property/ValueInterface.php
+%%WWWDIR%%/vendor/eluceo/ical/src/Eluceo/iCal/PropertyBag.php
+%%WWWDIR%%/vendor/erusev/parsedown/LICENSE.txt
+%%WWWDIR%%/vendor/erusev/parsedown/Parsedown.php
+%%WWWDIR%%/vendor/erusev/parsedown/phpunit.xml.dist
+%%WWWDIR%%/vendor/fabiang/xmpp/CHANGELOG.md
+%%WWWDIR%%/vendor/fabiang/xmpp/LICENSE.md
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Client.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Connection/AbstractConnection.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Connection/ConnectionInterface.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Connection/Socket.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Connection/SocketConnectionInterface.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Event/Event.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Event/EventInterface.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Event/EventManager.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Event/EventManagerAwareInterface.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Event/EventManagerInterface.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Event/XMLEvent.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Event/XMLEventInterface.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/EventListener/AbstractEventListener.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/EventListener/BlockingEventListenerInterface.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/EventListener/EventListenerInterface.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/EventListener/Logger.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/EventListener/Stream/AbstractSessionEvent.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/EventListener/Stream/Authentication.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/EventListener/Stream/Authentication/AuthenticationInterface.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/EventListener/Stream/Authentication/DigestMd5.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/EventListener/Stream/Authentication/Plain.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/EventListener/Stream/Bind.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/EventListener/Stream/Roster.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/EventListener/Stream/Session.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/EventListener/Stream/StartTls.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/EventListener/Stream/Stream.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/EventListener/Stream/StreamError.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Exception/ErrorException.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Exception/ExceptionInterface.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Exception/InvalidArgumentException.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Exception/OutOfRangeException.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Exception/RuntimeException.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Exception/SocketException.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Exception/Stream/AuthenticationErrorException.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Exception/Stream/StreamErrorException.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Exception/TimeoutException.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Exception/XMLParserException.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Options.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/OptionsAwareInterface.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Protocol/DefaultImplementation.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Protocol/ImplementationInterface.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Protocol/Message.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Protocol/Presence.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Protocol/ProtocolImplementationInterface.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Protocol/Roster.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Protocol/User/User.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Stream/SocketClient.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Stream/XMLStream.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Util/ErrorHandler.php
+%%WWWDIR%%/vendor/fabiang/xmpp/src/Util/XML.php
+%%WWWDIR%%/vendor/fguillot/json-rpc/LICENSE
+%%WWWDIR%%/vendor/fguillot/json-rpc/src/JsonRPC/Client.php
+%%WWWDIR%%/vendor/fguillot/json-rpc/src/JsonRPC/Server.php
+%%WWWDIR%%/vendor/fguillot/picodb/LICENSE
+%%WWWDIR%%/vendor/fguillot/picodb/lib/PicoDb/Condition.php
+%%WWWDIR%%/vendor/fguillot/picodb/lib/PicoDb/Database.php
+%%WWWDIR%%/vendor/fguillot/picodb/lib/PicoDb/Driver/Base.php
+%%WWWDIR%%/vendor/fguillot/picodb/lib/PicoDb/Driver/Mysql.php
+%%WWWDIR%%/vendor/fguillot/picodb/lib/PicoDb/Driver/Postgres.php
+%%WWWDIR%%/vendor/fguillot/picodb/lib/PicoDb/Driver/Sqlite.php
+%%WWWDIR%%/vendor/fguillot/picodb/lib/PicoDb/Hashtable.php
+%%WWWDIR%%/vendor/fguillot/picodb/lib/PicoDb/SQLException.php
+%%WWWDIR%%/vendor/fguillot/picodb/lib/PicoDb/Schema.php
+%%WWWDIR%%/vendor/fguillot/picodb/lib/PicoDb/Table.php
+%%WWWDIR%%/vendor/fguillot/simple-validator/LICENSE
+%%WWWDIR%%/vendor/fguillot/simple-validator/src/SimpleValidator/Base.php
+%%WWWDIR%%/vendor/fguillot/simple-validator/src/SimpleValidator/Validator.php
+%%WWWDIR%%/vendor/fguillot/simple-validator/src/SimpleValidator/Validators/Alpha.php
+%%WWWDIR%%/vendor/fguillot/simple-validator/src/SimpleValidator/Validators/AlphaNumeric.php
+%%WWWDIR%%/vendor/fguillot/simple-validator/src/SimpleValidator/Validators/Date.php
+%%WWWDIR%%/vendor/fguillot/simple-validator/src/SimpleValidator/Validators/Email.php
+%%WWWDIR%%/vendor/fguillot/simple-validator/src/SimpleValidator/Validators/Equals.php
+%%WWWDIR%%/vendor/fguillot/simple-validator/src/SimpleValidator/Validators/Exists.php
+%%WWWDIR%%/vendor/fguillot/simple-validator/src/SimpleValidator/Validators/GreaterThan.php
+%%WWWDIR%%/vendor/fguillot/simple-validator/src/SimpleValidator/Validators/InArray.php
+%%WWWDIR%%/vendor/fguillot/simple-validator/src/SimpleValidator/Validators/Integer.php
+%%WWWDIR%%/vendor/fguillot/simple-validator/src/SimpleValidator/Validators/Ip.php
+%%WWWDIR%%/vendor/fguillot/simple-validator/src/SimpleValidator/Validators/Length.php
+%%WWWDIR%%/vendor/fguillot/simple-validator/src/SimpleValidator/Validators/MacAddress.php
+%%WWWDIR%%/vendor/fguillot/simple-validator/src/SimpleValidator/Validators/MaxLength.php
+%%WWWDIR%%/vendor/fguillot/simple-validator/src/SimpleValidator/Validators/MinLength.php
+%%WWWDIR%%/vendor/fguillot/simple-validator/src/SimpleValidator/Validators/NotEquals.php
+%%WWWDIR%%/vendor/fguillot/simple-validator/src/SimpleValidator/Validators/NotInArray.php
+%%WWWDIR%%/vendor/fguillot/simple-validator/src/SimpleValidator/Validators/Numeric.php
+%%WWWDIR%%/vendor/fguillot/simple-validator/src/SimpleValidator/Validators/Range.php
+%%WWWDIR%%/vendor/fguillot/simple-validator/src/SimpleValidator/Validators/Required.php
+%%WWWDIR%%/vendor/fguillot/simple-validator/src/SimpleValidator/Validators/Unique.php
+%%WWWDIR%%/vendor/fguillot/simple-validator/src/SimpleValidator/Validators/Version.php
+%%WWWDIR%%/vendor/fguillot/simpleLogger/LICENSE
+%%WWWDIR%%/vendor/fguillot/simpleLogger/src/SimpleLogger/Base.php
+%%WWWDIR%%/vendor/fguillot/simpleLogger/src/SimpleLogger/File.php
+%%WWWDIR%%/vendor/fguillot/simpleLogger/src/SimpleLogger/Logger.php
+%%WWWDIR%%/vendor/fguillot/simpleLogger/src/SimpleLogger/Syslog.php
+%%WWWDIR%%/vendor/lusitanian/oauth/.scrutinizer.yml
+%%WWWDIR%%/vendor/lusitanian/oauth/LICENSE
+%%WWWDIR%%/vendor/lusitanian/oauth/examples/amazon.php
+%%WWWDIR%%/vendor/lusitanian/oauth/examples/bitbucket.php
+%%WWWDIR%%/vendor/lusitanian/oauth/examples/bitly.php
+%%WWWDIR%%/vendor/lusitanian/oauth/examples/bootstrap.php
+%%WWWDIR%%/vendor/lusitanian/oauth/examples/box.php
+%%WWWDIR%%/vendor/lusitanian/oauth/examples/buffer.php
+%%WWWDIR%%/vendor/lusitanian/oauth/examples/dailymotion.php
+%%WWWDIR%%/vendor/lusitanian/oauth/examples/dropbox.php
+%%WWWDIR%%/vendor/lusitanian/oauth/examples/etsy.php
+%%WWWDIR%%/vendor/lusitanian/oauth/examples/facebook.php
+%%WWWDIR%%/vendor/lusitanian/oauth/examples/fitbit.php
+%%WWWDIR%%/vendor/lusitanian/oauth/examples/flickr.php
+%%WWWDIR%%/vendor/lusitanian/oauth/examples/foursquare.php
+%%WWWDIR%%/vendor/lusitanian/oauth/examples/github.php
+%%WWWDIR%%/vendor/lusitanian/oauth/examples/google.php
+%%WWWDIR%%/vendor/lusitanian/oauth/examples/harvest.php
+%%WWWDIR%%/vendor/lusitanian/oauth/examples/init.example.php
+%%WWWDIR%%/vendor/lusitanian/oauth/examples/instagram.php
+%%WWWDIR%%/vendor/lusitanian/oauth/examples/linkedin.php
+%%WWWDIR%%/vendor/lusitanian/oauth/examples/mailchimp.php
+%%WWWDIR%%/vendor/lusitanian/oauth/examples/microsoft.php
+%%WWWDIR%%/vendor/lusitanian/oauth/examples/paypal.php
+%%WWWDIR%%/vendor/lusitanian/oauth/examples/pocket.php
+%%WWWDIR%%/vendor/lusitanian/oauth/examples/reddit.php
+%%WWWDIR%%/vendor/lusitanian/oauth/examples/runkeeper.php
+%%WWWDIR%%/vendor/lusitanian/oauth/examples/scoopit.php
+%%WWWDIR%%/vendor/lusitanian/oauth/examples/soundcloud.php
+%%WWWDIR%%/vendor/lusitanian/oauth/examples/tumblr.php
+%%WWWDIR%%/vendor/lusitanian/oauth/examples/twitter.php
+%%WWWDIR%%/vendor/lusitanian/oauth/examples/ustream.php
+%%WWWDIR%%/vendor/lusitanian/oauth/examples/yahoo.php
+%%WWWDIR%%/vendor/lusitanian/oauth/phpunit.xml.dist
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/AutoLoader.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Consumer/Credentials.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Consumer/CredentialsInterface.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Exception/Exception.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Http/Client/AbstractClient.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Http/Client/ClientInterface.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Http/Client/CurlClient.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Http/Client/StreamClient.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Http/Exception/TokenResponseException.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Http/Uri/Uri.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Http/Uri/UriFactory.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Http/Uri/UriFactoryInterface.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Http/Uri/UriInterface.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Service/AbstractService.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Service/ServiceInterface.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Storage/Exception/AuthorizationStateNotFoundException.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Storage/Exception/StorageException.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Storage/Exception/TokenNotFoundException.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Storage/Memory.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Storage/Redis.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Storage/Session.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Storage/SymfonySession.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Storage/TokenStorageInterface.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Token/AbstractToken.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Token/Exception/ExpiredTokenException.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Token/TokenInterface.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Service/AbstractService.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Service/BitBucket.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Service/Etsy.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Service/FitBit.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Service/Flickr.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Service/ScoopIt.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Service/ServiceInterface.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Service/Tumblr.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Service/Twitter.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Service/Xing.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Service/Yahoo.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Signature/Exception/UnsupportedHashAlgorithmException.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Signature/Signature.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Signature/SignatureInterface.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Token/StdOAuth1Token.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Token/TokenInterface.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/AbstractService.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Amazon.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Bitly.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Box.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Buffer.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Dailymotion.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Dropbox.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Exception/InvalidAccessTypeException.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Exception/InvalidAuthorizationStateException.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Exception/InvalidScopeException.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Exception/MissingRefreshTokenException.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Facebook.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Foursquare.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/GitHub.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Google.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Harvest.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Heroku.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Instagram.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Linkedin.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Mailchimp.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Microsoft.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Paypal.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Pocket.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Reddit.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/RunKeeper.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Salesforce.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/ServiceInterface.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/SoundCloud.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Ustream.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Vkontakte.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Yammer.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Token/StdOAuth2Token.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Token/TokenInterface.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/ServiceFactory.php
+%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/bootstrap.php
+%%WWWDIR%%/vendor/nickcernis/html-to-markdown/HTML_To_Markdown.php
+%%WWWDIR%%/vendor/nickcernis/html-to-markdown/LICENSE
+%%WWWDIR%%/vendor/nickcernis/html-to-markdown/circle.yml
+%%WWWDIR%%/vendor/nickcernis/html-to-markdown/demo/index.php
+%%WWWDIR%%/vendor/pimple/pimple/CHANGELOG
+%%WWWDIR%%/vendor/pimple/pimple/LICENSE
+%%WWWDIR%%/vendor/pimple/pimple/ext/pimple/config.m4
+%%WWWDIR%%/vendor/pimple/pimple/ext/pimple/config.w32
+%%WWWDIR%%/vendor/pimple/pimple/ext/pimple/php_pimple.h
+%%WWWDIR%%/vendor/pimple/pimple/ext/pimple/pimple.c
+%%WWWDIR%%/vendor/pimple/pimple/ext/pimple/pimple_compat.h
+%%WWWDIR%%/vendor/pimple/pimple/phpunit.xml.dist
+%%WWWDIR%%/vendor/pimple/pimple/src/Pimple/Container.php
+%%WWWDIR%%/vendor/pimple/pimple/src/Pimple/ServiceProviderInterface.php
+%%WWWDIR%%/vendor/pimple/pimple/src/Pimple/Tests/Fixtures/Invokable.php
+%%WWWDIR%%/vendor/pimple/pimple/src/Pimple/Tests/Fixtures/NonInvokable.php
+%%WWWDIR%%/vendor/pimple/pimple/src/Pimple/Tests/Fixtures/PimpleServiceProvider.php
+%%WWWDIR%%/vendor/pimple/pimple/src/Pimple/Tests/Fixtures/Service.php
+%%WWWDIR%%/vendor/pimple/pimple/src/Pimple/Tests/PimpleServiceProviderInterfaceTest.php
+%%WWWDIR%%/vendor/pimple/pimple/src/Pimple/Tests/PimpleTest.php
+%%WWWDIR%%/vendor/psr/log/LICENSE
+%%WWWDIR%%/vendor/psr/log/Psr/Log/AbstractLogger.php
+%%WWWDIR%%/vendor/psr/log/Psr/Log/InvalidArgumentException.php
+%%WWWDIR%%/vendor/psr/log/Psr/Log/LogLevel.php
+%%WWWDIR%%/vendor/psr/log/Psr/Log/LoggerAwareInterface.php
+%%WWWDIR%%/vendor/psr/log/Psr/Log/LoggerAwareTrait.php
+%%WWWDIR%%/vendor/psr/log/Psr/Log/LoggerInterface.php
+%%WWWDIR%%/vendor/psr/log/Psr/Log/LoggerTrait.php
+%%WWWDIR%%/vendor/psr/log/Psr/Log/NullLogger.php
+%%WWWDIR%%/vendor/psr/log/Psr/Log/Test/LoggerInterfaceTest.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/.gitattributes
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/CHANGES
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/LICENSE
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/README
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/VERSION
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Attachment.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/ByteStream/AbstractFilterableInputStream.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/ByteStream/ArrayByteStream.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/ByteStream/FileByteStream.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/ByteStream/TemporaryFileByteStream.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterReader.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterReader/GenericFixedWidthReader.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterReader/UsAsciiReader.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterReader/Utf8Reader.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterReaderFactory.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterReaderFactory/SimpleCharacterReaderFactory.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterStream.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterStream/ArrayCharacterStream.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterStream/NgCharacterStream.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/ConfigurableSpool.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/DependencyContainer.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/DependencyException.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/EmbeddedFile.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Encoder.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Encoder/Base64Encoder.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Encoder/QpEncoder.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Encoder/Rfc2231Encoder.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Encoding.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/CommandEvent.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/CommandListener.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/Event.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/EventDispatcher.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/EventListener.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/EventObject.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/ResponseEvent.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/ResponseListener.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/SendEvent.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/SendListener.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/SimpleEventDispatcher.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/TransportChangeEvent.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/TransportChangeListener.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/TransportExceptionEvent.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/TransportExceptionListener.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/FailoverTransport.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/FileSpool.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/FileStream.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Filterable.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Image.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/InputByteStream.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/IoException.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/KeyCache.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/KeyCache/ArrayKeyCache.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/KeyCache/DiskKeyCache.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/KeyCache/KeyCacheInputStream.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/KeyCache/NullKeyCache.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/KeyCache/SimpleKeyCacheInputStream.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/LoadBalancedTransport.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/MailTransport.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mailer.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mailer/ArrayRecipientIterator.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mailer/RecipientIterator.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/MemorySpool.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Message.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Attachment.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/CharsetObserver.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/ContentEncoder.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/ContentEncoder/Base64ContentEncoder.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/ContentEncoder/NativeQpContentEncoder.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/ContentEncoder/PlainContentEncoder.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/ContentEncoder/QpContentEncoder.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/ContentEncoder/QpContentEncoderProxy.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/ContentEncoder/RawContentEncoder.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/EmbeddedFile.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/EncodingObserver.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Grammar.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Header.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/HeaderEncoder.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/HeaderEncoder/Base64HeaderEncoder.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/HeaderEncoder/QpHeaderEncoder.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/HeaderFactory.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/HeaderSet.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Headers/AbstractHeader.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Headers/DateHeader.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Headers/IdentificationHeader.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Headers/MailboxHeader.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Headers/OpenDKIMHeader.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Headers/ParameterizedHeader.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Headers/PathHeader.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Headers/UnstructuredHeader.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Message.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/MimeEntity.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/MimePart.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/ParameterizedHeader.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/SimpleHeaderFactory.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/SimpleHeaderSet.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/SimpleMessage.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/SimpleMimeEntity.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/MimePart.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/NullTransport.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/OutputByteStream.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/AntiFloodPlugin.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/BandwidthMonitorPlugin.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Decorator/Replacements.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/DecoratorPlugin.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/ImpersonatePlugin.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Logger.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/LoggerPlugin.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Loggers/ArrayLogger.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Loggers/EchoLogger.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/MessageLogger.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Pop/Pop3Connection.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Pop/Pop3Exception.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/PopBeforeSmtpPlugin.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/RedirectingPlugin.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Reporter.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/ReporterPlugin.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Reporters/HitReporter.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Reporters/HtmlReporter.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Sleeper.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/ThrottlerPlugin.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Timer.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Preferences.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/ReplacementFilterFactory.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/RfcComplianceException.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/SendmailTransport.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/SignedMessage.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signer.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers/BodySigner.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers/DKIMSigner.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers/DomainKeySigner.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers/HeaderSigner.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers/OpenDKIMSigner.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers/SMimeSigner.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/SmtpTransport.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Spool.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/SpoolTransport.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/StreamFilter.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/StreamFilters/ByteArrayReplacementFilter.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/StreamFilters/StringReplacementFilter.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/StreamFilters/StringReplacementFilterFactory.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/SwiftException.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/AbstractSmtpTransport.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/Esmtp/Auth/CramMd5Authenticator.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/Esmtp/Auth/LoginAuthenticator.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/Esmtp/Auth/NTLMAuthenticator.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/Esmtp/Auth/PlainAuthenticator.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/Esmtp/Auth/XOAuth2Authenticator.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/Esmtp/AuthHandler.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/Esmtp/Authenticator.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/EsmtpHandler.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/EsmtpTransport.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/FailoverTransport.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/IoBuffer.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/LoadBalancedTransport.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/MailInvoker.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/MailTransport.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/NullTransport.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/SendmailTransport.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/SimpleMailInvoker.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/SmtpAgent.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/SpoolTransport.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/StreamBuffer.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/TransportException.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Validate.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/dependency_maps/cache_deps.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/dependency_maps/message_deps.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/dependency_maps/mime_deps.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/dependency_maps/transport_deps.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/mime_types.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/preferences.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/swift_init.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/swift_required.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/swift_required_pear.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/swiftmailer_generate_mimes_config.php
+%%WWWDIR%%/vendor/swiftmailer/swiftmailer/phpunit.xml.dist
+%%WWWDIR%%/vendor/symfony/console/Application.php
+%%WWWDIR%%/vendor/symfony/console/CHANGELOG.md
+%%WWWDIR%%/vendor/symfony/console/Command/Command.php
+%%WWWDIR%%/vendor/symfony/console/Command/HelpCommand.php
+%%WWWDIR%%/vendor/symfony/console/Command/ListCommand.php
+%%WWWDIR%%/vendor/symfony/console/ConsoleEvents.php
+%%WWWDIR%%/vendor/symfony/console/Descriptor/ApplicationDescription.php
+%%WWWDIR%%/vendor/symfony/console/Descriptor/Descriptor.php
+%%WWWDIR%%/vendor/symfony/console/Descriptor/DescriptorInterface.php
+%%WWWDIR%%/vendor/symfony/console/Descriptor/JsonDescriptor.php
+%%WWWDIR%%/vendor/symfony/console/Descriptor/MarkdownDescriptor.php
+%%WWWDIR%%/vendor/symfony/console/Descriptor/TextDescriptor.php
+%%WWWDIR%%/vendor/symfony/console/Descriptor/XmlDescriptor.php
+%%WWWDIR%%/vendor/symfony/console/Event/ConsoleCommandEvent.php
+%%WWWDIR%%/vendor/symfony/console/Event/ConsoleEvent.php
+%%WWWDIR%%/vendor/symfony/console/Event/ConsoleExceptionEvent.php
+%%WWWDIR%%/vendor/symfony/console/Event/ConsoleTerminateEvent.php
+%%WWWDIR%%/vendor/symfony/console/Formatter/OutputFormatter.php
+%%WWWDIR%%/vendor/symfony/console/Formatter/OutputFormatterInterface.php
+%%WWWDIR%%/vendor/symfony/console/Formatter/OutputFormatterStyle.php
+%%WWWDIR%%/vendor/symfony/console/Formatter/OutputFormatterStyleInterface.php
+%%WWWDIR%%/vendor/symfony/console/Formatter/OutputFormatterStyleStack.php
+%%WWWDIR%%/vendor/symfony/console/Helper/DebugFormatterHelper.php
+%%WWWDIR%%/vendor/symfony/console/Helper/DescriptorHelper.php
+%%WWWDIR%%/vendor/symfony/console/Helper/DialogHelper.php
+%%WWWDIR%%/vendor/symfony/console/Helper/FormatterHelper.php
+%%WWWDIR%%/vendor/symfony/console/Helper/Helper.php
+%%WWWDIR%%/vendor/symfony/console/Helper/HelperInterface.php
+%%WWWDIR%%/vendor/symfony/console/Helper/HelperSet.php
+%%WWWDIR%%/vendor/symfony/console/Helper/InputAwareHelper.php
+%%WWWDIR%%/vendor/symfony/console/Helper/ProcessHelper.php
+%%WWWDIR%%/vendor/symfony/console/Helper/ProgressBar.php
+%%WWWDIR%%/vendor/symfony/console/Helper/ProgressHelper.php
+%%WWWDIR%%/vendor/symfony/console/Helper/QuestionHelper.php
+%%WWWDIR%%/vendor/symfony/console/Helper/SymfonyQuestionHelper.php
+%%WWWDIR%%/vendor/symfony/console/Helper/Table.php
+%%WWWDIR%%/vendor/symfony/console/Helper/TableCell.php
+%%WWWDIR%%/vendor/symfony/console/Helper/TableHelper.php
+%%WWWDIR%%/vendor/symfony/console/Helper/TableSeparator.php
+%%WWWDIR%%/vendor/symfony/console/Helper/TableStyle.php
+%%WWWDIR%%/vendor/symfony/console/Input/ArgvInput.php
+%%WWWDIR%%/vendor/symfony/console/Input/ArrayInput.php
+%%WWWDIR%%/vendor/symfony/console/Input/Input.php
+%%WWWDIR%%/vendor/symfony/console/Input/InputArgument.php
+%%WWWDIR%%/vendor/symfony/console/Input/InputAwareInterface.php
+%%WWWDIR%%/vendor/symfony/console/Input/InputDefinition.php
+%%WWWDIR%%/vendor/symfony/console/Input/InputInterface.php
+%%WWWDIR%%/vendor/symfony/console/Input/InputOption.php
+%%WWWDIR%%/vendor/symfony/console/Input/StringInput.php
+%%WWWDIR%%/vendor/symfony/console/LICENSE
+%%WWWDIR%%/vendor/symfony/console/Logger/ConsoleLogger.php
+%%WWWDIR%%/vendor/symfony/console/Output/BufferedOutput.php
+%%WWWDIR%%/vendor/symfony/console/Output/ConsoleOutput.php
+%%WWWDIR%%/vendor/symfony/console/Output/ConsoleOutputInterface.php
+%%WWWDIR%%/vendor/symfony/console/Output/NullOutput.php
+%%WWWDIR%%/vendor/symfony/console/Output/Output.php
+%%WWWDIR%%/vendor/symfony/console/Output/OutputInterface.php
+%%WWWDIR%%/vendor/symfony/console/Output/StreamOutput.php
+%%WWWDIR%%/vendor/symfony/console/Question/ChoiceQuestion.php
+%%WWWDIR%%/vendor/symfony/console/Question/ConfirmationQuestion.php
+%%WWWDIR%%/vendor/symfony/console/Question/Question.php
+%%WWWDIR%%/vendor/symfony/console/Resources/bin/hiddeninput.exe
+%%WWWDIR%%/vendor/symfony/console/Shell.php
+%%WWWDIR%%/vendor/symfony/console/Style/OutputStyle.php
+%%WWWDIR%%/vendor/symfony/console/Style/StyleInterface.php
+%%WWWDIR%%/vendor/symfony/console/Style/SymfonyStyle.php
+%%WWWDIR%%/vendor/symfony/console/Tester/ApplicationTester.php
+%%WWWDIR%%/vendor/symfony/console/Tester/CommandTester.php
+%%WWWDIR%%/vendor/symfony/console/Tests/ApplicationTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Command/CommandTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Command/HelpCommandTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Command/ListCommandTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Descriptor/AbstractDescriptorTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Descriptor/JsonDescriptorTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Descriptor/MarkdownDescriptorTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Descriptor/ObjectsProvider.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Descriptor/TextDescriptorTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Descriptor/XmlDescriptorTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/BarBucCommand.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/DescriptorApplication1.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/DescriptorApplication2.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/DescriptorCommand1.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/DescriptorCommand2.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/DummyOutput.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Foo1Command.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Foo2Command.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Foo3Command.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Foo4Command.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Foo5Command.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/FooCommand.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/FooSubnamespaced1Command.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/FooSubnamespaced2Command.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/FoobarCommand.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_0.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_1.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_2.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_3.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_4.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_5.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_6.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_7.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_0.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_1.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_2.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_3.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_4.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_5.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_6.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_7.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/TestCommand.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_1.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_1.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_1.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_1.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_2.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_2.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_2.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_2.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_astext1.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_astext2.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_asxml1.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_asxml2.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_gethelp.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_renderexception1.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_renderexception2.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_renderexception3.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_renderexception3decorated.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_renderexception4.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_renderexception_doublewidth1.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_renderexception_doublewidth1decorated.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_renderexception_doublewidth2.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_run1.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_run2.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_run3.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_run4.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/command_1.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/command_1.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/command_1.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/command_1.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/command_2.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/command_2.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/command_2.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/command_2.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/command_astext.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/command_asxml.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/definition_astext.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/definition_asxml.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_1.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_1.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_1.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_1.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_2.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_2.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_2.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_2.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_3.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_3.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_3.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_3.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_4.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_4.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_4.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_4.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_definition_1.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_definition_1.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_definition_1.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_definition_1.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_definition_2.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_definition_2.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_definition_2.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_definition_2.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_definition_3.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_definition_3.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_definition_3.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_definition_3.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_definition_4.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_definition_4.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_definition_4.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_definition_4.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_1.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_1.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_1.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_1.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_2.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_2.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_2.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_2.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_3.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_3.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_3.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_3.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_4.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_4.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_4.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_4.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_5.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_5.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_5.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_5.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Formatter/OutputFormatterStyleStackTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Formatter/OutputFormatterStyleTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Formatter/OutputFormatterTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Helper/FormatterHelperTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Helper/HelperSetTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Helper/LegacyDialogHelperTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Helper/LegacyProgressHelperTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Helper/LegacyTableHelperTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Helper/ProcessHelperTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Helper/ProgressBarTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Helper/QuestionHelperTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Helper/TableStyleTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Helper/TableTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Input/ArgvInputTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Input/ArrayInputTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Input/InputArgumentTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Input/InputDefinitionTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Input/InputOptionTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Input/InputTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Input/StringInputTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Logger/ConsoleLoggerTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Output/ConsoleOutputTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Output/NullOutputTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Output/OutputTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Output/StreamOutputTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Style/SymfonyStyleTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Tester/ApplicationTesterTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Tester/CommandTesterTest.php
+%%WWWDIR%%/vendor/symfony/console/phpunit.xml.dist
+%%WWWDIR%%/vendor/symfony/event-dispatcher/CHANGELOG.md
+%%WWWDIR%%/vendor/symfony/event-dispatcher/ContainerAwareEventDispatcher.php
+%%WWWDIR%%/vendor/symfony/event-dispatcher/Debug/TraceableEventDispatcher.php
+%%WWWDIR%%/vendor/symfony/event-dispatcher/Debug/TraceableEventDispatcherInterface.php
+%%WWWDIR%%/vendor/symfony/event-dispatcher/Debug/WrappedListener.php
+%%WWWDIR%%/vendor/symfony/event-dispatcher/DependencyInjection/RegisterListenersPass.php
+%%WWWDIR%%/vendor/symfony/event-dispatcher/Event.php
+%%WWWDIR%%/vendor/symfony/event-dispatcher/EventDispatcher.php
+%%WWWDIR%%/vendor/symfony/event-dispatcher/EventDispatcherInterface.php
+%%WWWDIR%%/vendor/symfony/event-dispatcher/EventSubscriberInterface.php
+%%WWWDIR%%/vendor/symfony/event-dispatcher/GenericEvent.php
+%%WWWDIR%%/vendor/symfony/event-dispatcher/ImmutableEventDispatcher.php
+%%WWWDIR%%/vendor/symfony/event-dispatcher/LICENSE
+%%WWWDIR%%/vendor/symfony/event-dispatcher/Tests/AbstractEventDispatcherTest.php
+%%WWWDIR%%/vendor/symfony/event-dispatcher/Tests/ContainerAwareEventDispatcherTest.php
+%%WWWDIR%%/vendor/symfony/event-dispatcher/Tests/Debug/TraceableEventDispatcherTest.php
+%%WWWDIR%%/vendor/symfony/event-dispatcher/Tests/DependencyInjection/RegisterListenersPassTest.php
+%%WWWDIR%%/vendor/symfony/event-dispatcher/Tests/EventDispatcherTest.php
+%%WWWDIR%%/vendor/symfony/event-dispatcher/Tests/EventTest.php
+%%WWWDIR%%/vendor/symfony/event-dispatcher/Tests/GenericEventTest.php
+%%WWWDIR%%/vendor/symfony/event-dispatcher/Tests/ImmutableEventDispatcherTest.php
+%%WWWDIR%%/vendor/symfony/event-dispatcher/phpunit.xml.dist
+@dir %%WWWDIR%%/
+@dir %%WWWDIR%%/app
+@dir %%WWWDIR%%/app/Action
+@dir %%WWWDIR%%/app/Api
+@dir %%WWWDIR%%/app/Auth
+@dir %%WWWDIR%%/app/Console
+@dir %%WWWDIR%%/app/Controller
+@dir %%WWWDIR%%/app/Core
+@dir %%WWWDIR%%/app/Event
+@dir %%WWWDIR%%/app/Helper
+@dir %%WWWDIR%%/app/Integration
+@dir %%WWWDIR%%/app/Library
+@dir %%WWWDIR%%/app/Locale
+@dir %%WWWDIR%%/app/Locale/da_DK
+@dir %%WWWDIR%%/app/Locale/de_DE
+@dir %%WWWDIR%%/app/Locale/es_ES
+@dir %%WWWDIR%%/app/Locale/fi_FI
+@dir %%WWWDIR%%/app/Locale/fr_FR
+@dir %%WWWDIR%%/app/Locale/hu_HU
+@dir %%WWWDIR%%/app/Locale/it_IT
+@dir %%WWWDIR%%/app/Locale/ja_JP
+@dir %%WWWDIR%%/app/Locale/nl_NL
+@dir %%WWWDIR%%/app/Locale/pl_PL
+@dir %%WWWDIR%%/app/Locale/pt_BR
+@dir %%WWWDIR%%/app/Locale/ru_RU
+@dir %%WWWDIR%%/app/Locale/sr_Latn_RS
+@dir %%WWWDIR%%/app/Locale/sv_SE
+@dir %%WWWDIR%%/app/Locale/th_TH
+@dir %%WWWDIR%%/app/Locale/tr_TR
+@dir %%WWWDIR%%/app/Locale/zh_CN
+@dir %%WWWDIR%%/app/Model
+@dir %%WWWDIR%%/app/Schema
+@dir %%WWWDIR%%/app/ServiceProvider
+@dir %%WWWDIR%%/app/Subscriber
+@dir %%WWWDIR%%/app/Template
+@dir %%WWWDIR%%/app/Template/action
+@dir %%WWWDIR%%/app/Template/analytic
+@dir %%WWWDIR%%/app/Template/app
+@dir %%WWWDIR%%/app/Template/auth
+@dir %%WWWDIR%%/app/Template/board
+@dir %%WWWDIR%%/app/Template/budget
+@dir %%WWWDIR%%/app/Template/calendar
+@dir %%WWWDIR%%/app/Template/category
+@dir %%WWWDIR%%/app/Template/column
+@dir %%WWWDIR%%/app/Template/comment
+@dir %%WWWDIR%%/app/Template/config
+@dir %%WWWDIR%%/app/Template/currency
+@dir %%WWWDIR%%/app/Template/event
+@dir %%WWWDIR%%/app/Template/export
+@dir %%WWWDIR%%/app/Template/feed
+@dir %%WWWDIR%%/app/Template/file
+@dir %%WWWDIR%%/app/Template/hourlyrate
+@dir %%WWWDIR%%/app/Template/link
+@dir %%WWWDIR%%/app/Template/notification
+@dir %%WWWDIR%%/app/Template/project
+@dir %%WWWDIR%%/app/Template/projectinfo
+@dir %%WWWDIR%%/app/Template/subtask
+@dir %%WWWDIR%%/app/Template/swimlane
+@dir %%WWWDIR%%/app/Template/task
+@dir %%WWWDIR%%/app/Template/tasklink
+@dir %%WWWDIR%%/app/Template/timetable
+@dir %%WWWDIR%%/app/Template/timetable_day
+@dir %%WWWDIR%%/app/Template/timetable_extra
+@dir %%WWWDIR%%/app/Template/timetable_off
+@dir %%WWWDIR%%/app/Template/timetable_week
+@dir %%WWWDIR%%/app/Template/twofactor
+@dir %%WWWDIR%%/app/Template/user
+@dir %%WWWDIR%%/assets
+@dir %%WWWDIR%%/assets/css
+@dir %%WWWDIR%%/assets/css/images
+@dir %%WWWDIR%%/assets/css/src
+@dir %%WWWDIR%%/assets/css/vendor
+@dir %%WWWDIR%%/assets/fonts
+@dir %%WWWDIR%%/assets/img
+@dir %%WWWDIR%%/assets/js
+@dir %%WWWDIR%%/assets/js/src
+@dir %%WWWDIR%%/assets/js/vendor
+@dir %%WWWDIR%%/assets/js/vendor/lang
+@dir %%WWWDIR%%/data
+@dir %%WWWDIR%%/vendor
+@dir %%WWWDIR%%/vendor/christian-riesen
+@dir %%WWWDIR%%/vendor/christian-riesen/base32
+@dir %%WWWDIR%%/vendor/christian-riesen/base32/src
+@dir %%WWWDIR%%/vendor/christian-riesen/otp
+@dir %%WWWDIR%%/vendor/christian-riesen/otp/example
+@dir %%WWWDIR%%/vendor/christian-riesen/otp/src
+@dir %%WWWDIR%%/vendor/christian-riesen/otp/src/Otp
+@dir %%WWWDIR%%/vendor/composer
+@dir %%WWWDIR%%/vendor/eluceo
+@dir %%WWWDIR%%/vendor/eluceo/ical
+@dir %%WWWDIR%%/vendor/eluceo/ical/examples
+@dir %%WWWDIR%%/vendor/eluceo/ical/src
+@dir %%WWWDIR%%/vendor/eluceo/ical/src/Eluceo
+@dir %%WWWDIR%%/vendor/eluceo/ical/src/Eluceo/iCal
+@dir %%WWWDIR%%/vendor/eluceo/ical/src/Eluceo/iCal/Component
+@dir %%WWWDIR%%/vendor/eluceo/ical/src/Eluceo/iCal/Property
+@dir %%WWWDIR%%/vendor/eluceo/ical/src/Eluceo/iCal/Property/Event
+@dir %%WWWDIR%%/vendor/erusev
+@dir %%WWWDIR%%/vendor/erusev/parsedown
+@dir %%WWWDIR%%/vendor/fabiang
+@dir %%WWWDIR%%/vendor/fabiang/xmpp
+@dir %%WWWDIR%%/vendor/fabiang/xmpp/src
+@dir %%WWWDIR%%/vendor/fabiang/xmpp/src/Connection
+@dir %%WWWDIR%%/vendor/fabiang/xmpp/src/Event
+@dir %%WWWDIR%%/vendor/fabiang/xmpp/src/EventListener
+@dir %%WWWDIR%%/vendor/fabiang/xmpp/src/EventListener/Stream
+@dir %%WWWDIR%%/vendor/fabiang/xmpp/src/EventListener/Stream/Authentication
+@dir %%WWWDIR%%/vendor/fabiang/xmpp/src/Exception
+@dir %%WWWDIR%%/vendor/fabiang/xmpp/src/Exception/Stream
+@dir %%WWWDIR%%/vendor/fabiang/xmpp/src/Protocol
+@dir %%WWWDIR%%/vendor/fabiang/xmpp/src/Protocol/User
+@dir %%WWWDIR%%/vendor/fabiang/xmpp/src/Stream
+@dir %%WWWDIR%%/vendor/fabiang/xmpp/src/Util
+@dir %%WWWDIR%%/vendor/fguillot
+@dir %%WWWDIR%%/vendor/fguillot/json-rpc
+@dir %%WWWDIR%%/vendor/fguillot/json-rpc/src
+@dir %%WWWDIR%%/vendor/fguillot/json-rpc/src/JsonRPC
+@dir %%WWWDIR%%/vendor/fguillot/picodb
+@dir %%WWWDIR%%/vendor/fguillot/picodb/lib
+@dir %%WWWDIR%%/vendor/fguillot/picodb/lib/PicoDb
+@dir %%WWWDIR%%/vendor/fguillot/picodb/lib/PicoDb/Driver
+@dir %%WWWDIR%%/vendor/fguillot/simple-validator
+@dir %%WWWDIR%%/vendor/fguillot/simple-validator/src
+@dir %%WWWDIR%%/vendor/fguillot/simple-validator/src/SimpleValidator
+@dir %%WWWDIR%%/vendor/fguillot/simple-validator/src/SimpleValidator/Validators
+@dir %%WWWDIR%%/vendor/fguillot/simpleLogger
+@dir %%WWWDIR%%/vendor/fguillot/simpleLogger/src
+@dir %%WWWDIR%%/vendor/fguillot/simpleLogger/src/SimpleLogger
+@dir %%WWWDIR%%/vendor/lusitanian
+@dir %%WWWDIR%%/vendor/lusitanian/oauth
+@dir %%WWWDIR%%/vendor/lusitanian/oauth/examples
+@dir %%WWWDIR%%/vendor/lusitanian/oauth/src
+@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth
+@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common
+@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Consumer
+@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Exception
+@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Http
+@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Http/Client
+@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Http/Exception
+@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Http/Uri
+@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Service
+@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Storage
+@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Storage/Exception
+@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Token
+@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Token/Exception
+@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1
+@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Service
+@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Signature
+@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Signature/Exception
+@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Token
+@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2
+@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service
+@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Exception
+@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Token
+@dir %%WWWDIR%%/vendor/nickcernis
+@dir %%WWWDIR%%/vendor/nickcernis/html-to-markdown
+@dir %%WWWDIR%%/vendor/nickcernis/html-to-markdown/demo
+@dir %%WWWDIR%%/vendor/pimple
+@dir %%WWWDIR%%/vendor/pimple/pimple
+@dir %%WWWDIR%%/vendor/pimple/pimple/ext
+@dir %%WWWDIR%%/vendor/pimple/pimple/ext/pimple
+@dir %%WWWDIR%%/vendor/pimple/pimple/src
+@dir %%WWWDIR%%/vendor/pimple/pimple/src/Pimple
+@dir %%WWWDIR%%/vendor/pimple/pimple/src/Pimple/Tests
+@dir %%WWWDIR%%/vendor/pimple/pimple/src/Pimple/Tests/Fixtures
+@dir %%WWWDIR%%/vendor/psr
+@dir %%WWWDIR%%/vendor/psr/log
+@dir %%WWWDIR%%/vendor/psr/log/Psr
+@dir %%WWWDIR%%/vendor/psr/log/Psr/Log
+@dir %%WWWDIR%%/vendor/psr/log/Psr/Log/Test
+@dir %%WWWDIR%%/vendor/swiftmailer
+@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer
+@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib
+@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes
+@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift
+@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/ByteStream
+@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterReader
+@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterReaderFactory
+@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterStream
+@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Encoder
+@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events
+@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/KeyCache
+@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mailer
+@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime
+@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/ContentEncoder
+@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/HeaderEncoder
+@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Headers
+@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins
+@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Decorator
+@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Loggers
+@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Pop
+@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Reporters
+@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers
+@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/StreamFilters
+@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport
+@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/Esmtp
+@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/Esmtp/Auth
+@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/dependency_maps
+@dir %%WWWDIR%%/vendor/symfony
+@dir %%WWWDIR%%/vendor/symfony/console
+@dir %%WWWDIR%%/vendor/symfony/console/Command
+@dir %%WWWDIR%%/vendor/symfony/console/Descriptor
+@dir %%WWWDIR%%/vendor/symfony/console/Event
+@dir %%WWWDIR%%/vendor/symfony/console/Formatter
+@dir %%WWWDIR%%/vendor/symfony/console/Helper
+@dir %%WWWDIR%%/vendor/symfony/console/Input
+@dir %%WWWDIR%%/vendor/symfony/console/Logger
+@dir %%WWWDIR%%/vendor/symfony/console/Output
+@dir %%WWWDIR%%/vendor/symfony/console/Question
+@dir %%WWWDIR%%/vendor/symfony/console/Resources
+@dir %%WWWDIR%%/vendor/symfony/console/Resources/bin
+@dir %%WWWDIR%%/vendor/symfony/console/Style
+@dir %%WWWDIR%%/vendor/symfony/console/Tester
+@dir %%WWWDIR%%/vendor/symfony/console/Tests
+@dir %%WWWDIR%%/vendor/symfony/console/Tests/Command
+@dir %%WWWDIR%%/vendor/symfony/console/Tests/Descriptor
+@dir %%WWWDIR%%/vendor/symfony/console/Tests/Fixtures
+@dir %%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style
+@dir %%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle
+@dir %%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command
+@dir %%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output
+@dir %%WWWDIR%%/vendor/symfony/console/Tests/Formatter
+@dir %%WWWDIR%%/vendor/symfony/console/Tests/Helper
+@dir %%WWWDIR%%/vendor/symfony/console/Tests/Input
+@dir %%WWWDIR%%/vendor/symfony/console/Tests/Logger
+@dir %%WWWDIR%%/vendor/symfony/console/Tests/Output
+@dir %%WWWDIR%%/vendor/symfony/console/Tests/Style
+@dir %%WWWDIR%%/vendor/symfony/console/Tests/Tester
+@dir %%WWWDIR%%/vendor/symfony/event-dispatcher
+@dir %%WWWDIR%%/vendor/symfony/event-dispatcher/Debug
+@dir %%WWWDIR%%/vendor/symfony/event-dispatcher/DependencyInjection
+@dir %%WWWDIR%%/vendor/symfony/event-dispatcher/Tests
+@dir %%WWWDIR%%/vendor/symfony/event-dispatcher/Tests/Debug
+@dir %%WWWDIR%%/vendor/symfony/event-dispatcher/Tests/DependencyInjection

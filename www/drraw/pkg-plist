@@ -9,5 +9,3 @@
 %%WWWDIR%%/icons/link.gif
 %%WWWDIR%%/icons/text.gif
 %%WWWDIR%%/icons/unknown.gif
-@dirrm %%WWWDIR%%/icons
-@dirrm %%WWWDIR%%

@@ -17,7 +17,7 @@ RUN_DEPENDS=	pc-updatemanager:${PORTSDIR}/sysutils/pcbsd-utils \
 		${LOCALBASE}/share/pcbsd/scripts/functions.sh:${PORTSDIR}/sysutils/pcbsd-libsh \
 		lpreserver:${PORTSDIR}/sysutils/life-preserver \
 		warden:${PORTSDIR}/sysutils/warden \
-		iocage:${PORTSDIR}/sysutils/iocage \
+		iocage:${PORTSDIR}/sysutils/iocage-devel \
 		pbi:${PORTSDIR}/sysutils/pbi-manager \
 		beadm:${PORTSDIR}/sysutils/beadm \
 		sudo:${PORTSDIR}/security/sudo \

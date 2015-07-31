@@ -3,6 +3,7 @@
 
 PORTNAME=	magicrescue
 PORTVERSION=	1.1.9
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.itu.dk/people/jobr/magicrescue/release/ \
 		LOCAL/ehaupt
@@ -11,13 +12,14 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	File recovery tool which recovers deleted files from a block device
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		perl5 shebangfix
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_PERL5=	run
 
-SHEBANG_FILES=	magicsort
+SHEBANG_FILES=	magicsort tools/gimp-resave.pl
 
 OPTIONS_DEFINE=	DOCS
 

@@ -398,15 +398,14 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  			return check[i].bugs;
  		}
  	}
---- work.clean/openssh-6.8p1/compat.h	2015-03-17 00:49:20.000000000 -0500
-+++ work/openssh-6.8p1/compat.h	2015-04-03 16:39:34.780416000 -0500
-@@ -60,7 +60,10 @@
- #define SSH_NEW_OPENSSH		0x04000000
- #define SSH_BUG_DYNAMIC_RPORT	0x08000000
+--- work/openssh/compat.h.orig	2015-05-29 03:27:21.000000000 -0500
++++ work/openssh/compat.h	2015-06-02 09:55:04.208681000 -0500
+@@ -62,6 +62,9 @@
  #define SSH_BUG_CURVE25519PAD	0x10000000
  #define SSH_BUG_HOSTKEYS	0x20000000
+ #define SSH_BUG_DHGEX_LARGE	0x40000000
 +#ifdef HPN_ENABLED
-+#define SSH_BUG_LARGEWINDOW     0x40000000
++#define SSH_BUG_LARGEWINDOW     0x80000000
 +#endif
  
  void     enable_compat13(void);
@@ -718,12 +717,12 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	struct timeval tv[2];
  
  #define	atime	tv[0]
---- work.clean/openssh-6.8p1/servconf.c	2015-04-01 22:07:18.142441000 -0500
-+++ work/openssh-6.8p1/servconf.c	2015-04-03 16:32:16.114236000 -0500
-@@ -160,6 +160,14 @@
- 	options->revoked_keys_file = NULL;
- 	options->trusted_user_ca_keys = NULL;
+--- work/openssh/servconf.c.orig	2015-05-29 03:27:21.000000000 -0500
++++ work/openssh/servconf.c	2015-06-02 09:56:36.041601000 -0500
+@@ -163,6 +163,14 @@ initialize_server_options(ServerOptions 
  	options->authorized_principals_file = NULL;
+ 	options->authorized_principals_command = NULL;
+ 	options->authorized_principals_command_user = NULL;
 +#ifdef NONE_CIPHER_ENABLED
 +	options->none_enabled = -1;
 +#endif
@@ -735,7 +734,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	options->ip_qos_interactive = -1;
  	options->ip_qos_bulk = -1;
  	options->version_addendum = NULL;
-@@ -326,6 +334,57 @@
+@@ -329,6 +337,57 @@ fill_default_server_options(ServerOption
  	}
  	if (options->permit_tun == -1)
  		options->permit_tun = SSH_TUNMODE_NO;
@@ -793,7 +792,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	if (options->ip_qos_interactive == -1)
  		options->ip_qos_interactive = IPTOS_LOWDELAY;
  	if (options->ip_qos_bulk == -1)
-@@ -401,6 +460,12 @@
+@@ -406,6 +465,12 @@ typedef enum {
  	sUsePrivilegeSeparation, sAllowAgentForwarding,
  	sHostCertificate,
  	sRevokedKeys, sTrustedUserCAKeys, sAuthorizedPrincipalsFile,
@@ -803,10 +802,10 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +#ifdef HPN_ENABLED
 +	sTcpRcvBufPoll, sHPNDisabled, sHPNBufferSize,
 +#endif
+ 	sAuthorizedPrincipalsCommand, sAuthorizedPrincipalsCommandUser,
  	sKexAlgorithms, sIPQoS, sVersionAddendum,
  	sAuthorizedKeysCommand, sAuthorizedKeysCommandUser,
- 	sAuthenticationMethods, sHostKeyAgent, sPermitUserRC,
-@@ -529,6 +594,14 @@
+@@ -537,6 +602,14 @@ static struct {
  	{ "revokedkeys", sRevokedKeys, SSHCFG_ALL },
  	{ "trustedusercakeys", sTrustedUserCAKeys, SSHCFG_ALL },
  	{ "authorizedprincipalsfile", sAuthorizedPrincipalsFile, SSHCFG_ALL },
@@ -821,7 +820,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	{ "kexalgorithms", sKexAlgorithms, SSHCFG_GLOBAL },
  	{ "ipqos", sIPQoS, SSHCFG_ALL },
  	{ "authorizedkeyscommand", sAuthorizedKeysCommand, SSHCFG_ALL },
-@@ -1113,6 +1186,25 @@
+@@ -1156,6 +1229,25 @@ process_server_config_line(ServerOptions
  		intptr = &options->ignore_user_known_hosts;
  		goto parse_flag;
  

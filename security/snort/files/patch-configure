@@ -1,0 +1,11 @@
+--- configure.orig	2015-07-23 18:22:50 UTC
++++ configure
+@@ -12,6 +12,8 @@
+ ## M4sh Initialization. ##
+ ## -------------------- ##
+ 
++HOME=/dev/null
++
+ # Be more Bourne compatible
+ DUALCASE=1; export DUALCASE # for MKS sh
+ if test -n "${ZSH_VERSION+set}" && (emulate sh) >/dev/null 2>&1; then :

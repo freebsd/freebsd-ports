@@ -19,7 +19,7 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		syscache:${PORTSDIR}/sysutils/pcbsd-syscache \
 		lpreserver:${PORTSDIR}/sysutils/life-preserver \
 		warden:${PORTSDIR}/sysutils/warden \
-		iocage:${PORTSDIR}/sysutils/iocage \
+		iocage:${PORTSDIR}/sysutils/iocage-devel \
 		pbi:${PORTSDIR}/sysutils/pbi-manager \
 		appcafe-setpass:${PORTSDIR}/sysutils/pcbsd-appweb \
 		git:${PORTSDIR}/devel/git \
@@ -35,6 +35,9 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		xv:${PORTSDIR}/graphics/xv \
 		libvdpau>=0:${PORTSDIR}/multimedia/libvdpau \
 		rdesktop:${PORTSDIR}/net/rdesktop \
+		gtk2-qtcurve-theme>=0:${PORTSDIR}/x11-themes/qtcurve-gtk2 \
+		qt4-style-qtcurve>=0:${PORTSDIR}/x11-themes/qtcurve-qt4 \
+		gtk-theme-switch>=0:${PORTSDIR}/x11/gtk-theme-switch2 \
 		alsa-lib>=0:${PORTSDIR}/audio/alsa-lib \
 		nspluginwrapper:${PORTSDIR}/www/nspluginwrapper \
 		linux_base-c6>=0:${PORTSDIR}/emulators/linux_base-c6 \
@@ -76,9 +79,6 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		mupdf:${PORTSDIR}/graphics/mupdf \
 		pciutils>=0:${PORTSDIR}/sysutils/pciutils \
 		gpg:${PORTSDIR}/security/gnupg \
-		gtk2-qtcurve-theme>=0:${PORTSDIR}/x11-themes/qtcurve-gtk2 \
-		qt4-style-qtcurve>=0:${PORTSDIR}/x11-themes/qtcurve-qt4 \
-		gtk-theme-switch>=0:${PORTSDIR}/x11/gtk-theme-switch2 \
 		foo2zjs>=0:${PORTSDIR}/print/foo2zjs \
 		linux_dvbwrapper-kmod>=0:${PORTSDIR}/multimedia/linux_dvbwrapper-kmod \
 		xvkbd:${PORTSDIR}/x11/xvkbd \

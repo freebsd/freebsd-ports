@@ -3,7 +3,7 @@
 
 PORTNAME=	pcre
 PORTVERSION=	8.37
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
 		ftp://ftp.csx.cam.ac.uk/pub/software/programming/${PORTNAME}/ \
@@ -29,6 +29,7 @@ OPTIONS_DEFAULT=	STACK_RECURSION
 STACK_RECURSION_DESC=	Use the stack for recursion during matching
 
 LIBEDIT_CONFIGURE_ENABLE=	pcretest-libedit
+LIBEDIT_USES=			libedit
 
 READLINE_USES=			readline
 READLINE_CONFIGURE_ENABLE=	pcretest-libreadline
@@ -49,11 +50,6 @@ PORTDOCS=	*
 # prone to segfaults from stack exhaustion when matching certain patterns
 .if !${PORT_OPTIONS:MSTACK_RECURSION}
 CONFIGURE_ARGS+=	--disable-stack-for-recursion
-.endif
-
-# libedit
-.if ${PORT_OPTIONS:MLIBEDIT}
-CFLAGS+=	-I /usr/include/edit
 .endif
 
 # Optional knobs that accept positive integer parameters (see pcrebuild(3)):

@@ -144,6 +144,10 @@ include/wine/windows/bits.h
 include/wine/windows/bits.idl
 include/wine/windows/bits1_5.h
 include/wine/windows/bits1_5.idl
+include/wine/windows/bits2_0.h
+include/wine/windows/bits2_0.idl
+include/wine/windows/bits2_5.h
+include/wine/windows/bits2_5.idl
 include/wine/windows/bits3_0.h
 include/wine/windows/bits3_0.idl
 include/wine/windows/bitsmsg.h
@@ -253,7 +257,11 @@ include/wine/windows/dde.rh
 include/wine/windows/ddeml.h
 include/wine/windows/ddk/compstui.h
 include/wine/windows/ddk/csq.h
+include/wine/windows/ddk/hidclass.h
+include/wine/windows/ddk/hidpi.h
+include/wine/windows/ddk/hidport.h
 include/wine/windows/ddk/hidsdi.h
+include/wine/windows/ddk/hidtypes.h
 include/wine/windows/ddk/imm.h
 include/wine/windows/ddk/mountmgr.h
 include/wine/windows/ddk/ntddcdvd.h
@@ -1106,6 +1114,8 @@ lib32/wine/d3dcompiler_40.dll.so
 lib32/wine/d3dcompiler_41.dll.so
 lib32/wine/d3dcompiler_42.dll.so
 lib32/wine/d3dcompiler_43.dll.so
+lib32/wine/d3dcompiler_46.dll.so
+lib32/wine/d3dcompiler_47.dll.so
 lib32/wine/d3dim.dll.so
 lib32/wine/d3drm.dll.so
 lib32/wine/d3dx10_33.dll.so
@@ -1142,6 +1152,7 @@ lib32/wine/d3dx9_41.dll.so
 lib32/wine/d3dx9_42.dll.so
 lib32/wine/d3dx9_43.dll.so
 lib32/wine/d3dxof.dll.so
+lib32/wine/davclnt.dll.so
 lib32/wine/dbgeng.dll.so
 lib32/wine/dbghelp.dll.so
 lib32/wine/dciman32.dll.so
@@ -1345,6 +1356,8 @@ lib32/wine/fakedlls/d3dcompiler_40.dll
 lib32/wine/fakedlls/d3dcompiler_41.dll
 lib32/wine/fakedlls/d3dcompiler_42.dll
 lib32/wine/fakedlls/d3dcompiler_43.dll
+lib32/wine/fakedlls/d3dcompiler_46.dll
+lib32/wine/fakedlls/d3dcompiler_47.dll
 lib32/wine/fakedlls/d3dim.dll
 lib32/wine/fakedlls/d3drm.dll
 lib32/wine/fakedlls/d3dx10_33.dll
@@ -1381,6 +1394,7 @@ lib32/wine/fakedlls/d3dx9_41.dll
 lib32/wine/fakedlls/d3dx9_42.dll
 lib32/wine/fakedlls/d3dx9_43.dll
 lib32/wine/fakedlls/d3dxof.dll
+lib32/wine/fakedlls/davclnt.dll
 lib32/wine/fakedlls/dbgeng.dll
 lib32/wine/fakedlls/dbghelp.dll
 lib32/wine/fakedlls/dciman32.dll
@@ -1453,6 +1467,7 @@ lib32/wine/fakedlls/hal.dll
 lib32/wine/fakedlls/hh.exe
 lib32/wine/fakedlls/hhctrl.ocx
 lib32/wine/fakedlls/hid.dll
+lib32/wine/fakedlls/hidclass.sys
 lib32/wine/fakedlls/hlink.dll
 lib32/wine/fakedlls/hnetcfg.dll
 lib32/wine/fakedlls/hostname.exe
@@ -1545,6 +1560,7 @@ lib32/wine/fakedlls/msls31.dll
 lib32/wine/fakedlls/msnet32.dll
 lib32/wine/fakedlls/mspatcha.dll
 lib32/wine/fakedlls/msrle32.dll
+lib32/wine/fakedlls/msscript.ocx
 lib32/wine/fakedlls/mssign32.dll
 lib32/wine/fakedlls/mssip32.dll
 lib32/wine/fakedlls/mstask.dll
@@ -1883,6 +1899,7 @@ lib32/wine/hal.dll.so
 lib32/wine/hh.exe.so
 lib32/wine/hhctrl.ocx.so
 lib32/wine/hid.dll.so
+lib32/wine/hidclass.sys.so
 lib32/wine/hlink.dll.so
 lib32/wine/hnetcfg.dll.so
 lib32/wine/hostname.exe.so
@@ -1978,6 +1995,7 @@ lib32/wine/libgdi32.def
 lib32/wine/libgdiplus.def
 lib32/wine/libglu32.def
 lib32/wine/libhid.def
+lib32/wine/libhidclass.def
 lib32/wine/libhlink.def
 lib32/wine/libhtmlhelp.def
 lib32/wine/libieframe.def
@@ -2163,6 +2181,7 @@ lib32/wine/msls31.dll.so
 lib32/wine/msnet32.dll.so
 lib32/wine/mspatcha.dll.so
 lib32/wine/msrle32.dll.so
+lib32/wine/msscript.ocx.so
 lib32/wine/mssign32.dll.so
 lib32/wine/mssip32.dll.so
 lib32/wine/mstask.dll.so

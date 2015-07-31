@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlware_commons
-PORTVERSION=	0.13.0
+PORTVERSION=	0.15.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
@@ -14,6 +14,5 @@ LICENSE=	MIT
 USES=		erlang:rebar
 USE_GITHUB=	yes
 GH_ACCOUNT=	erlware
-GH_TAGNAME=	cbe494b
 
 .include <bsd.port.mk>

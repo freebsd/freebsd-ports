@@ -1,0 +1,17 @@
+--- configure.ac.orig	2015-07-02 18:01:10 UTC
++++ configure.ac
+@@ -23,14 +23,6 @@ AC_SUBST(XSLT_LIBS)
+ AC_SUBST(EXTRA_LIBS)
+ AC_SUBST(M_LIBS)
+ 
+-dnl These are for debug -O2 disabling 
+-CPPFLAGS="${CXXFLAGS}"
+-CXXFLAGS="${CPPFLAGS}"
+-CFLAGS=""
+-AC_SUBST(CXXFLAGS)
+-AC_SUBST(CPPFLAGS)
+-AC_SUBST(CLAGS)
+-
+ AC_OUTPUT([
+ Makefile
+ libturboxsl.pc

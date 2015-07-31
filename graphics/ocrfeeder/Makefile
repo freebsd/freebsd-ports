@@ -24,9 +24,9 @@ RUN_DEPENDS:=	${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml \
 
 NO_ARCH=	yes
 
-USES=		desktop-file-utils gettext gmake pkgconfig python tar:xz
+USES=		desktop-file-utils gettext ghostscript gmake pkgconfig \
+		python tar:xz
 USE_GNOME=	gnomedocutils gtk30 librsvg2 pygobject3
-USE_GHOSTSCRIPT=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules
 

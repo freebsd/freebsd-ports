@@ -3,7 +3,7 @@
 
 PORTNAME?=	postgresql
 DISTVERSION?=	9.2.13
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL/source/v${DISTVERSION}
 PKGNAMESUFFIX?=	${DISTVERSION:R:S/.//}${COMPONENT}
@@ -21,11 +21,7 @@ DIST_SUBDIR=	postgresql
 
 ICU_PATCHFILE?=	pg-929-icu-2015-04-18.diff.gz
 
-.if !defined(SLAVE_ONLY)
-UNIQUENAME?=	${PORTNAME}${DISTVERSION:R:S/.//}
-.else # Contrib has different options from -client/-server
-UNIQUENAME?=	${PORTNAME}${DISTVERSION:R:S/.//}${PKGNAMESUFFIX}
-.endif
+OPTIONS_SUB=	yes
 
 PKGINSTALL?=	${PKGDIR}/pkg-install${COMPONENT}
 USES+=		tar:bzip2 cpe
@@ -77,54 +73,83 @@ MAKE_ENV=	PATH=${PREFIX}/bin:${PATH}
 CONFIGURE_ENV+=	PATH=${PREFIX}/bin:${PATH}
 .endif
 
+.if defined(SERVER_ONLY)
+OPTIONS_DEFINE=	DTRACE LDAP INTDATE TZDATA
+LDAP_DESC=	Build with LDAP authentication support
+DTRACE_DESC=	Build with DTrace probes
+TZDATA_DESC=	Use internal timezone database
+XML_DESC=	Build with XML data type
+
+# See http://people.freebsd.org/~girgen/postgresql-icu/README.html for more info
+OPTIONS_DEFINE+=	ICU
+ICU_DESC=	Use ICU for unicode collation
+
+# See http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/76999 for more info
+# (requires dump/restore if modified.)
+OPTIONS_DEFINE+=	INTDATE
+INTDATE_DESC=	Builds with 64-bit date/time type
+OPTIONS_DEFAULT=	XML TZDATA INTDATE
+.endif
+
 .if !defined(SLAVE_ONLY)
-OPTIONS_DEFINE+=	NLS DTRACE PAM LDAP GSSAPI OPTIMIZED_CFLAGS XML TZDATA DEBUG
+OPTIONS_DEFINE+=	NLS PAM GSSAPI OPTIMIZED_CFLAGS DEBUG
 OPTIONS_RADIO= KRB5
 OPTIONS_RADIO_KRB5= MIT_KRB5 HEIMDAL_KRB5
 
 KRB5_DESC=       Build with kerberos provider support
 NLS_DESC=	Use internationalized messages
-DTRACE_DESC=	Build with DTrace probes (server only)
 PAM_DESC=	Build with PAM Support
-LDAP_DESC=	Build with LDAP authentication support (server only)
 MIT_KRB5_DESC=	Build with MIT kerberos support
 HEIMDAL_KRB5_DESC=	Builds with Heimdal kerberos
 GSSAPI_DESC=	Build with GSSAPI support
 OPTIMIZED_CFLAGS_DESC=	Builds with compiler optimizations (-O3)
-XML_DESC=	Build with XML data type (server)
-TZDATA_DESC=	Use internal timezone database (server)
 DEBUG_DESC=	Builds with debugging symbols
 
-# See http://people.freebsd.org/~girgen/postgresql-icu/README.html for more info
-OPTIONS_DEFINE+=	ICU
-ICU_DESC=	Use ICU for unicode collation (server)
-
-# See http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/76999 for more info
-# (requires dump/restore if modified.)
-OPTIONS_DEFINE+=	INTDATE
-INTDATE_DESC=	Builds with 64-bit date/time type (server)
 
 OPTIONS_DEFINE+=	SSL
 SSL_DESC=	Build with OpenSSL support
 
-OPTIONS_DEFAULT=	NLS XML TZDATA INTDATE SSL
+OPTIONS_DEFAULT+=	NLS SSL
 .endif # !SLAVE_ONLY
 
-.include <bsd.port.options.mk>
-
 .if defined(CLIENT_ONLY)
-.  if ${PORT_OPTIONS:MLIBEDIT}
-CONFIGURE_ARGS+=--with-libedit-preferred
-LIB_DEPENDS=    libedit.so.0:${PORTSDIR}/devel/libedit
-.  else
-USES+=		readline
-.  endif
+LIBEDIT_CONFIGURE_ON+=--with-libedit-preferred
+LIBEDIT_USES=		libedit
+LIBEDIT_USES_OFF=		readline
 .endif # CLIENT_ONLY
 
-.if ${PORT_OPTIONS:MSSL}
-USE_OPENSSL=	yes
-CONFIGURE_ARGS+=--with-openssl
-.endif
+SSL_USE=	OPENSSL=yes
+SSL_CONFIGURE_WITH=openssl
+
+OSSP_UUID_BUILD_DEPENDS=	${LOCALBASE}/lib/libuuid.a:${PORTSDIR}/misc/ossp-uuid
+OSSP_UUID_CONFIGURE_WITH=	ossp-uuid
+
+PAM_CONFIGURE_WITH=	pam
+
+XML_CONFIGURE_WITH=	libxml
+XML_LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
+
+TZDATA_CONFIGURE_OFF=--with-system-tzdata=/usr/share/zoneinfo
+
+INTDATE_CONFIGURE_OFF=--disable-integer-datetimes
+
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=	gettext
+
+LDAP_CONFIGURE_WITH=	ldap
+LDAP_USE=		OPENLDAP=yes
+
+OPTIMIZED_CFLAGS_CFLAGS=	-O3 -funroll-loops
+
+DEBUG_CONFIGURE_ENABLE=	debug
+
+PLIST_SUB+=	PG_USER=${PG_USER} \
+		PG_GROUP=${PG_GROUP}
+SUB_LIST+=	PG_GROUP=${PG_GROUP} \
+		PG_USER=${PG_USER} \
+		PG_UID=${PG_UID}
+
+.include <bsd.port.options.mk>
 
 .if !defined(SLAVE_ONLY)
 .  if ( defined(SERVER_ONLY) && ${PORT_OPTIONS:MICU} ) || make(makesum)
@@ -136,14 +161,6 @@ LIB_DEPENDS+=	libicudata.so:${PORTSDIR}/devel/icu
 .  endif
 .endif # !SLAVE_ONLY
 
-.if ${PORT_OPTIONS:MOSSP_UUID}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libuuid.a:${PORTSDIR}/misc/ossp-uuid
-CONFIGURE_ARGS+=--with-ossp-uuid
-PLIST_SUB+=	OSSP=""
-.else
-PLIST_SUB+=	OSSP="@comment "
-.endif
-
 .if !defined(SLAVE_ONLY)
 
 PATCH_DIST_STRIP=-p1
@@ -154,51 +171,6 @@ LDFLAGS+=-lelf
 .    if ${OSVERSION} < 900021
 IGNORE=	need userland DTrace support found in FreeBSD 9.0
 .    endif
-.  endif
-
-.  if ${PORT_OPTIONS:MPAM}
-CONFIGURE_ARGS+=--with-pam
-.  endif
-
-.  if ${PORT_OPTIONS:MLDAP}
-.    if defined (SERVER_ONLY)
-CONFIGURE_ARGS+=--with-ldap
-USE_OPENLDAP=	yes
-.    endif
-.  endif
-
-.  if ${PORT_OPTIONS:MXML}
-CONFIGURE_ARGS+=--with-libxml
-LIB_DEPENDS+=	libxml2.so:${PORTSDIR}/textproc/libxml2
-.  endif
-
-.  if ${PORT_OPTIONS:MTZDATA}
-PLIST_SUB+=	TZDATA=""
-.  else
-CONFIGURE_ARGS+=--with-system-tzdata=/usr/share/zoneinfo
-PLIST_SUB+=	TZDATA="@comment "
-.  endif
-
-.  if empty(PORT_OPTIONS:MINTDATE)
-CONFIGURE_ARGS+=--disable-integer-datetimes
-.  endif
-
-.  if ${PORT_OPTIONS:MNLS}
-CONFIGURE_ARGS+=--enable-nls
-PLIST_SUB+=	GETTEXT=""
-USES+=	gettext
-.  else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	GETTEXT="@comment "
-.  endif
-
-.  if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-CFLAGS+=	-O3 -funroll-loops
-.  endif
-
-.  if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=--enable-debug
-INSTALL_TARGET=	install
 .  endif
 
 .if ${PORT_OPTIONS:MGSSAPI}
@@ -232,12 +204,6 @@ CONFIGURE_ARGS+=--with-krb5
 .  endif
 
 .endif # !SLAVE_ONLY
-
-PLIST_SUB+=	PG_USER=${PG_USER} \
-		PG_GROUP=${PG_GROUP}
-SUB_LIST+=	PG_GROUP=${PG_GROUP} \
-		PG_USER=${PG_USER} \
-		PG_UID=${PG_UID}
 
 # For testing files in FILESDIR
 .include <bsd.port.pre.mk>

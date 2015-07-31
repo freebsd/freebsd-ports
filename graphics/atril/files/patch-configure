@@ -1,0 +1,149 @@
+--- configure.orig	2015-07-28 09:49:10.059868000 +0200
++++ configure	2015-07-28 09:53:49.981847000 +0200
+@@ -22224,14 +22224,14 @@
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"webkit-\$WEBKIT_API_VERSION >= \$WEBKIT_REQUIRED \\
+-	    libxml-2.0 >= \$LIBXML_REQUIRED zlib\""; } >&5
++	    libxml-2.0 >= \$LIBXML_REQUIRED \""; } >&5
+   ($PKG_CONFIG --exists --print-errors "webkit-$WEBKIT_API_VERSION >= $WEBKIT_REQUIRED \
+-	    libxml-2.0 >= $LIBXML_REQUIRED zlib") 2>&5
++	    libxml-2.0 >= $LIBXML_REQUIRED ") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+   pkg_cv_EPUB_CFLAGS=`$PKG_CONFIG --cflags "webkit-$WEBKIT_API_VERSION >= $WEBKIT_REQUIRED \
+-	    libxml-2.0 >= $LIBXML_REQUIRED zlib" 2>/dev/null`
++	    libxml-2.0 >= $LIBXML_REQUIRED " 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
+@@ -22244,14 +22244,14 @@
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"webkit-\$WEBKIT_API_VERSION >= \$WEBKIT_REQUIRED \\
+-	    libxml-2.0 >= \$LIBXML_REQUIRED zlib\""; } >&5
++	    libxml-2.0 >= \$LIBXML_REQUIRED \""; } >&5
+   ($PKG_CONFIG --exists --print-errors "webkit-$WEBKIT_API_VERSION >= $WEBKIT_REQUIRED \
+-	    libxml-2.0 >= $LIBXML_REQUIRED zlib") 2>&5
++	    libxml-2.0 >= $LIBXML_REQUIRED ") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+   pkg_cv_EPUB_LIBS=`$PKG_CONFIG --libs "webkit-$WEBKIT_API_VERSION >= $WEBKIT_REQUIRED \
+-	    libxml-2.0 >= $LIBXML_REQUIRED zlib" 2>/dev/null`
++	    libxml-2.0 >= $LIBXML_REQUIRED " 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
+@@ -22273,10 +22273,10 @@
+ fi
+         if test $_pkg_short_errors_supported = yes; then
+ 	        EPUB_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "webkit-$WEBKIT_API_VERSION >= $WEBKIT_REQUIRED \
+-	    libxml-2.0 >= $LIBXML_REQUIRED zlib" 2>&1`
++	    libxml-2.0 >= $LIBXML_REQUIRED " 2>&1`
+         else
+ 	        EPUB_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "webkit-$WEBKIT_API_VERSION >= $WEBKIT_REQUIRED \
+-	    libxml-2.0 >= $LIBXML_REQUIRED zlib" 2>&1`
++	    libxml-2.0 >= $LIBXML_REQUIRED " 2>&1`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$EPUB_PKG_ERRORS" >&5
+@@ -22305,14 +22305,14 @@
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"webkit2gtk-\$WEBKIT_API_VERSION >= \$WEBKIT_REQUIRED \\
+-	    libxml-2.0 >= \$LIBXML_REQUIRED zlib\""; } >&5
++	    libxml-2.0 >= \$LIBXML_REQUIRED \""; } >&5
+   ($PKG_CONFIG --exists --print-errors "webkit2gtk-$WEBKIT_API_VERSION >= $WEBKIT_REQUIRED \
+-	    libxml-2.0 >= $LIBXML_REQUIRED zlib") 2>&5
++	    libxml-2.0 >= $LIBXML_REQUIRED ") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+   pkg_cv_EPUB_CFLAGS=`$PKG_CONFIG --cflags "webkit2gtk-$WEBKIT_API_VERSION >= $WEBKIT_REQUIRED \
+-	    libxml-2.0 >= $LIBXML_REQUIRED zlib" 2>/dev/null`
++	    libxml-2.0 >= $LIBXML_REQUIRED " 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
+@@ -22325,14 +22325,14 @@
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"webkit2gtk-\$WEBKIT_API_VERSION >= \$WEBKIT_REQUIRED \\
+-	    libxml-2.0 >= \$LIBXML_REQUIRED zlib\""; } >&5
++	    libxml-2.0 >= \$LIBXML_REQUIRED \""; } >&5
+   ($PKG_CONFIG --exists --print-errors "webkit2gtk-$WEBKIT_API_VERSION >= $WEBKIT_REQUIRED \
+-	    libxml-2.0 >= $LIBXML_REQUIRED zlib") 2>&5
++	    libxml-2.0 >= $LIBXML_REQUIRED ") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+   pkg_cv_EPUB_LIBS=`$PKG_CONFIG --libs "webkit2gtk-$WEBKIT_API_VERSION >= $WEBKIT_REQUIRED \
+-	    libxml-2.0 >= $LIBXML_REQUIRED zlib" 2>/dev/null`
++	    libxml-2.0 >= $LIBXML_REQUIRED " 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
+@@ -22354,10 +22354,10 @@
+ fi
+         if test $_pkg_short_errors_supported = yes; then
+ 	        EPUB_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "webkit2gtk-$WEBKIT_API_VERSION >= $WEBKIT_REQUIRED \
+-	    libxml-2.0 >= $LIBXML_REQUIRED zlib" 2>&1`
++	    libxml-2.0 >= $LIBXML_REQUIRED " 2>&1`
+         else
+ 	        EPUB_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "webkit2gtk-$WEBKIT_API_VERSION >= $WEBKIT_REQUIRED \
+-	    libxml-2.0 >= $LIBXML_REQUIRED zlib" 2>&1`
++	    libxml-2.0 >= $LIBXML_REQUIRED " 2>&1`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$EPUB_PKG_ERRORS" >&5
+@@ -22388,14 +22388,14 @@
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"webkit2gtk-\$WEBKIT_API_VERSION >= \$WEBKIT_REQUIRED \\
+-	       libxml-2.0 >= \$LIBXML_REQUIRED zlib\""; } >&5
++	       libxml-2.0 >= \$LIBXML_REQUIRED \""; } >&5
+   ($PKG_CONFIG --exists --print-errors "webkit2gtk-$WEBKIT_API_VERSION >= $WEBKIT_REQUIRED \
+-	       libxml-2.0 >= $LIBXML_REQUIRED zlib") 2>&5
++	       libxml-2.0 >= $LIBXML_REQUIRED ") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+   pkg_cv_EPUB_CFLAGS=`$PKG_CONFIG --cflags "webkit2gtk-$WEBKIT_API_VERSION >= $WEBKIT_REQUIRED \
+-	       libxml-2.0 >= $LIBXML_REQUIRED zlib" 2>/dev/null`
++	       libxml-2.0 >= $LIBXML_REQUIRED " 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
+@@ -22408,14 +22408,14 @@
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"webkit2gtk-\$WEBKIT_API_VERSION >= \$WEBKIT_REQUIRED \\
+-	       libxml-2.0 >= \$LIBXML_REQUIRED zlib\""; } >&5
++	       libxml-2.0 >= \$LIBXML_REQUIRED \""; } >&5
+   ($PKG_CONFIG --exists --print-errors "webkit2gtk-$WEBKIT_API_VERSION >= $WEBKIT_REQUIRED \
+-	       libxml-2.0 >= $LIBXML_REQUIRED zlib") 2>&5
++	       libxml-2.0 >= $LIBXML_REQUIRED ") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+   pkg_cv_EPUB_LIBS=`$PKG_CONFIG --libs "webkit2gtk-$WEBKIT_API_VERSION >= $WEBKIT_REQUIRED \
+-	       libxml-2.0 >= $LIBXML_REQUIRED zlib" 2>/dev/null`
++	       libxml-2.0 >= $LIBXML_REQUIRED " 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
+@@ -22437,10 +22437,10 @@
+ fi
+         if test $_pkg_short_errors_supported = yes; then
+ 	        EPUB_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "webkit2gtk-$WEBKIT_API_VERSION >= $WEBKIT_REQUIRED \
+-	       libxml-2.0 >= $LIBXML_REQUIRED zlib" 2>&1`
++	       libxml-2.0 >= $LIBXML_REQUIRED " 2>&1`
+         else
+ 	        EPUB_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "webkit2gtk-$WEBKIT_API_VERSION >= $WEBKIT_REQUIRED \
+-	       libxml-2.0 >= $LIBXML_REQUIRED zlib" 2>&1`
++	       libxml-2.0 >= $LIBXML_REQUIRED " 2>&1`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$EPUB_PKG_ERRORS" >&5

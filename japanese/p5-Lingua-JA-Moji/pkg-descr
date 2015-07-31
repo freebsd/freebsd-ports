@@ -1,0 +1,10 @@
+This module provides methods to convert different written forms of
+Japanese into one another.  It enables conversion between romanized
+Japanese, hiragana, and katakana.  It also includes a number of
+unusual encodings such as Japanese braille and morse code, as well as
+conversions between Japanese and Cyrillic and Hangul.  It also handles
+conversion between the Chinese characters (kanji) used before and
+after the character reforms of 1949, as well as the various bracketed
+and circled forms of kana and kanji.
+
+WWW: http://search.cpan.org/dist/Lingua-JA-Moji/

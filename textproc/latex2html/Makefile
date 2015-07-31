@@ -15,8 +15,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	ja-latex2html-[0-9]*
 
-USES=		perl5
-USE_GHOSTSCRIPT=yes
+USES=		ghostscript perl5
 USE_TEX=	latex dvipsk texhash
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-perl=${PERL} \

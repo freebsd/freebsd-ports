@@ -26,7 +26,7 @@ RUN_DEPENDS=	\
 		p5-TimeDate>=2.23:${PORTSDIR}/devel/p5-TimeDate \
 		p5-URI>=1.55:${PORTSDIR}/net/p5-URI
 
-USES=		perl5 cpe
+USES=		cpe perl5
 USE_PERL5=	run
 
 CPE_VENDOR=	mozilla
@@ -98,7 +98,6 @@ RUN_DEPENDS+=	p5-Email-MIME-Attachment-Stripper>=0:${PORTSDIR}/mail/p5-Email-MIM
 .endif
 
 .if ${PORT_OPTIONS:MMAIL_QUEUEING}
-# p5-File-Slurp will be a default dependency in the next release
 RUN_DEPENDS+=	p5-TheSchwartz>=1.10:${PORTSDIR}/devel/p5-TheSchwartz \
 		p5-Daemon-Generic>=0:${PORTSDIR}/net/p5-Daemon-Generic \
 		p5-File-Slurp>=9999.13:${PORTSDIR}/devel/p5-File-Slurp
@@ -113,6 +112,8 @@ RUN_DEPENDS+=	p5-MIME-Tools>=5.406:${PORTSDIR}/mail/p5-MIME-Tools \
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .endif
 
+# Note: XML-RPC and JSON-RPC are deprecated in favor of REST
+# and will likely be removed in the Bugzilla 7.0 release.
 .if ${PORT_OPTIONS:MXMLRPC} || ${PORT_OPTIONS:MJSONRPC}
 RUN_DEPENDS+=	p5-Test-Taint>=1.06:${PORTSDIR}/devel/p5-Test-Taint
 .endif
@@ -125,7 +126,6 @@ RUN_DEPENDS+=	p5-SOAP-Lite>=0.712:${PORTSDIR}/net/p5-SOAP-Lite
 .endif
 
 .if ${PORT_OPTIONS:MJSONRPC}
-# p5-JSON-XS will be a default dependency in the next release
 RUN_DEPENDS+=	p5-JSON-RPC>=0:${PORTSDIR}/devel/p5-JSON-RPC \
 		p5-JSON-XS>=2.0:${PORTSDIR}/converters/p5-JSON-XS
 .endif
@@ -166,8 +166,8 @@ RUN_DEPENDS+=	p5-File-MimeInfo>=0.16:${PORTSDIR}/devel/p5-File-MimeInfo \
 .endif
 
 post-extract:
-	${RM} -rf ${WRKSRC}/.git
-	${RM} -f ${WRKSRC}/.bzrignore ${WRKSRC}/.gitignore ${WRKSRC}/.gitrev \
+	${RM} -r ${WRKSRC}/.git
+	${RM} ${WRKSRC}/.bzrignore ${WRKSRC}/.gitignore ${WRKSRC}/.gitrev \
 		${WRKSRC}/docs/en/README.docs ${WRKSRC}/docs/en/html/Bugzilla-Guide.proc \
 		${WRKSRC}/.travis.yml ${WRKSRC}/Build.PL ${WRKSRC}/MANIFEST.SKIP \
 		${WRKSRC}/taskgraph.json

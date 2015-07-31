@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=		Ice
-PORTVERSION=		3.5.1
-PORTREVISION=		7
+PORTVERSION=		3.6.0
 CATEGORIES=		devel
-MASTER_SITES=		http://download.zeroc.com/Ice/3.5/
 
 MAINTAINER=		freebsd@grem.de
 COMMENT=		Modern alternative to object middleware such as CORBA/COM/DCOM/COM+
@@ -24,10 +22,9 @@ LIB_DEPENDS+=		libIce.so.${LIB_VRS}:${PORTSDIR}/devel/ice
 PLIST_SUB+=		LIB_VERSION="${PORTVERSION}" LIB_VRS="${LIB_VRS}"
 .endif
 
-OPTIONS_DEFINE?=	DEBUG DEMOS DOCS TESTS
-OPTIONS_DEFAULT?=	DEMOS TESTS
+OPTIONS_DEFINE?=	DEBUG TESTS
+OPTIONS_DEFAULT?=	TESTS
 TESTS_DESC?=		Build and run tests (requires lang/python)
-DEMOS_DESC?=		Build demos
 
 .include <bsd.port.options.mk>
 
@@ -35,7 +32,10 @@ USES+=			iconv gmake
 
 .if ${PORT_OPTIONS:MTESTS} && ${SLAVE_PORT} == "no"
 USES+=			python:build
+BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}passlib>0:${PORTSDIR}/security/py-passlib
 .endif
+
+WRKSRC=			${WRKDIR}/ice-${PORTVERSION}
 
 USE_BDB=		yes
 WANT_BDB_VER=		5
@@ -43,21 +43,19 @@ INVALID_BDB_VER=	40 41 42 43 44 46 47 48 6
 USE_LDCONFIG=		yes
 BUILD_WRKSRC?=		${WRKSRC}/cpp
 INSTALL_WRKSRC?=	${WRKSRC}/cpp
+USE_GITHUB=		yes
+GH_ACCOUNT=		zeroc-ice
+GH_TAGNAME=		v3.6.0
+
 
 CFLAGS+=		-ftemplate-depth-128 -fPIC -DPIC -Wall -D_REENTRANT -I${LOCALBASE}/include
-.if ${PORT_OPTIONS:MDEBUG}
-CFLAGS+=		-g
-.else
+
+.if !${PORT_OPTIONS:MDEBUG}
 CFLAGS+=		-DNDEBUG
 .endif
 
-.if ${ARCH} == "ia64"
-BROKEN=			does not compile on ia64
-.endif
-
-.if ${ARCH} == "sparc64"
-BROKEN=			fails to link
-.endif
+BROKEN_ia64=		Does not compile on ${ARCH}
+BROKEN_sparc64=		Does not compile on ${ARCH}
 
 .if ((${ARCH} != i386) && (${ARCH} != powerpc))
 MAKE_ENV+=		LP64=yes
@@ -67,12 +65,8 @@ MAKE_ENV+=		LP64=yes
 MAKE_ENV+=		NOTESTS=yes
 .endif
 
-.if !${PORT_OPTIONS:MDEMOS}
-MAKE_ENV+=		NODEMOS=yes
-.endif
-
-.if !${PORT_OPTIONS:MDOCS}
-MAKE_ENV+=		NOICEDOCS=yes
+.if ${SLAVE_PORT} == "no"
+MAKE_ENV+=		LD_LIBRARY_PATH=${WRKSRC}/cpp/lib:$$LD_LIBRARY_PATH
 .endif
 
 .include <bsd.port.pre.mk>
@@ -117,17 +111,16 @@ post-patch:
 		${WRKSRC}/cpp/config/Make.rules
 	@${REINPLACE_CMD} '/install_configdir/d' \
 		${WRKSRC}/cpp/config/Make.rules
-	@${REINPLACE_CMD} 's|INSTALL_PROGRAM|INSTALL_DATA|g' \
-		${WRKSRC}/cpp/src/ca/Makefile
 	@${REINPLACE_CMD} '/LICENSE/s/prefix/install_slicedir/; \
 		s|%%INSTALL_PROGRAM%%|${INSTALL_PROGRAM}|g; ' \
 		${WRKSRC}/config/Make.common.rules
 	@${REINPLACE_CMD} 's|%%INSTALL_PROGRAM%%|${INSTALL_PROGRAM}|g; \
 		s|%%INSTALL_DATA%%|${INSTALL_DATA}|g; \
 		s|%%ICONV_LIB%%|${ICONV_LIB}|g; \
+		s|%%PYTHON_CMD%%|${PYTHON_CMD}|g; \
 		s|%%PYTHON_SITELIBDIR%%|${STAGEDIR}${PYSITEDIR}|g; \
 		s|%%PREFIX%%|${PREFIX}|g ; \
-		s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/py/config/Make.rules
+		s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/python/config/Make.rules
 	@${REINPLACE_CMD} 's|%%INSTALL_PROGRAM%%|${INSTALL_PROGRAM}|g; \
 		s|%%INSTALL_DATA%%|${INSTALL_DATA}|g; \
 		s|%%PREFIX%%|${PREFIX}|g ; \
@@ -139,6 +132,11 @@ check regression-test test: build
 	${TEST_CMD}
 
 pre-install: regression-test
+.endif
+
+.if ${SLAVE_PORT} == "no"
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.*
 .endif
 
 .include <bsd.port.post.mk>
