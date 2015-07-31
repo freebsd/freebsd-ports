@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	winrm-fs
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -20,5 +20,7 @@ NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+
+PLIST_FILES=	bin/rwinrmcp
 
 .include <bsd.port.mk>
