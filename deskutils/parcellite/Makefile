@@ -21,11 +21,15 @@ USE_GNOME=	gtk20
 
 PORTDOCS=	AUTHORS ChangeLog README
 
+LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-lgio-2.0
+
 OPTIONS_DEFINE= DOCS NLS
 OPTIONS_SUB=	yes
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext-runtime
+NLS_LIBS=	-lintl
 
 SUB_FILES=	pkg-message
 
