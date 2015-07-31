@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scilab
-PORTVERSION=	5.5.0
-PORTREVISION=	3
+PORTVERSION=	5.5.2
 CATEGORIES=	math cad java
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX}
@@ -36,6 +35,8 @@ CONFIGURE_ENV=	BLAS_LIBS="${BLASLIB}" LAPACK_LIBS="${LAPACKLIB}"
 MAKE_ENV=	LANG=en_US.UTF-8 \
 		LC_ALL=en_US.UTF-8
 INSTALL_TARGET=	install-strip
+
+PLIST_SUB=	SHLIB_VER=${PORTVERSION}
 
 OPTIONS_DEFINE=	GUI OCAML TK
 OPTIONS_RADIO=	BLAS
@@ -169,8 +170,7 @@ post-patch:
 .endif
 
 pre-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}/.atoms
-	@${TOUCH} ${STAGEDIR}${DATADIR}/.atoms/.keep_me
+	${MKDIR} ${STAGEDIR}${DATADIR}/.atoms
 
 post-install:
 	@# Remove empty dirs in DATADIR/modules - they will be removed by the
