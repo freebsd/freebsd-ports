@@ -1,7 +1,7 @@
---- rpython/rtyper/tool/rffi_platform.py~	2011-11-19 09:44:54.000000000 +0200
-+++ rpython/rtyper/tool/rffi_platform.py	2011-11-23 20:17:30.000000000 +0200
-@@ -805,7 +805,9 @@
-         includes=['gc.h']
+--- rpython/rtyper/tool/rffi_platform.py.orig	2015-05-31 07:19:51 UTC
++++ rpython/rtyper/tool/rffi_platform.py
+@@ -854,7 +854,9 @@ def configure_boehm(platform=None):
+         platform = None
      else:
          library_dir = ''
 -        libraries = ['gc', 'dl']
