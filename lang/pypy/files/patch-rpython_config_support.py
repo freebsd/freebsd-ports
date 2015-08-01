@@ -1,6 +1,6 @@
---- ./rpython/config/support.py~	2013-12-16 12:34:17.000000000 +0200
-+++ ./rpython/config/support.py	2013-12-16 12:33:52.000000000 +0200
-@@ -8,7 +8,9 @@
+--- rpython/config/support.py.orig	2015-05-31 07:19:51 UTC
++++ rpython/config/support.py
+@@ -8,7 +8,9 @@ def detect_number_of_processors(filename
      if os.environ.get('MAKEFLAGS'):
          return 1    # don't override MAKEFLAGS.  This will call 'make' without any '-j' option
      if sys.platform == 'darwin':
@@ -11,7 +11,7 @@
      elif not sys.platform.startswith('linux'):
          return 1    # implement me
      try:
-@@ -26,11 +28,10 @@
+@@ -26,11 +28,10 @@ def detect_number_of_processors(filename
      except:
          return 1 # we really don't want to explode here, at worst we have 1
  
