@@ -3,7 +3,6 @@ bin/bshell
 bin/bssh
 bin/bvnc
 lib/libavahi-ui.a
-lib/libavahi-ui.la
 lib/libavahi-ui.so
 lib/libavahi-ui.so.0
 lib/libavahi-ui.so.0.1.4
