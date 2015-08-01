@@ -19,7 +19,6 @@ include/cairomm-1.0/cairomm/win32_font.h
 include/cairomm-1.0/cairomm/win32_surface.h
 include/cairomm-1.0/cairomm/xlib_surface.h
 lib/cairomm-1.0/include/cairommconfig.h
-lib/libcairomm-1.0.la
 lib/libcairomm-1.0.so
 lib/libcairomm-1.0.so.1
 lib/libcairomm-1.0.so.1.4.0
