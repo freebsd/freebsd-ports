@@ -1,5 +1,0 @@
-SOAPy is a SOAP-1.1 library for Python which uses WSDL and SDL documents to
-discover SOAP-based service APIs. It also includes an XML Schema parser which
-can parse a subset of the XML Schema standard.
-
-WWW: http://soapy.sourceforge.net

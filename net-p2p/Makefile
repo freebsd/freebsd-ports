@@ -12,7 +12,6 @@
     SUBDIR += bitmessage
     SUBDIR += bnbt
     SUBDIR += btpd
-    SUBDIR += btqueue
     SUBDIR += btsync
     SUBDIR += cpuminer
     SUBDIR += createtorrent
