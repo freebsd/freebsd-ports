@@ -1,8 +1,7 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/net/avahi-gtk/Makefile,v 1.9 2012/07/09 18:22:19 kwm Exp $
 
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 PKGNAMESUFFIX=	-gtk
 
