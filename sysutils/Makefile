@@ -1044,7 +1044,6 @@
     SUBDIR += vagrant
     SUBDIR += vbetool
     SUBDIR += vcp
-    SUBDIR += vhdtool
     SUBDIR += videogen
     SUBDIR += vii
     SUBDIR += vils

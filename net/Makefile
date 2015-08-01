@@ -960,7 +960,6 @@
     SUBDIR += py-smb
     SUBDIR += py-smbpasswd
     SUBDIR += py-soappy
-    SUBDIR += py-soapy
     SUBDIR += py-speedtest-cli
     SUBDIR += py-suds
     SUBDIR += py-terminado
