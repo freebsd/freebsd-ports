@@ -7743,3 +7743,10 @@ devel/automake14||2015-07-27|Has expired: Not used in the ports tree anymore
 sysutils/slurm-hpc|sysutils/slurm-wlm|2015-07-28|Upstream is standardizing on the name "slurm-wlm"
 textproc/kibana|textproc/kibana3|2015-07-29|Moved to leave place for a kibana-4 port
 lang/clang-cheri|devel/llvm-cheri|2015-07-30|Moved to devel/llvm-cheri to match other LLVM ports
+japanese/p5-Acme-Lou||2015-08-01|Has expired: Needs ja-p5-Text-MeCab that does not work with 5.18 or above
+mail/maildirsync||2015-08-01|Has expired: Requires an unsupported version of Perl
+mail/qar-bufo||2015-08-01|Has expired: Requires an unsupported version of Perl
+net/py-soapy|net/py-soappy|2015-08-01|Has expired: Abandonware depending on ancient py-xml. Please use net/py-soappy instead
+net-p2p/btqueue||2015-08-01|Has expired: Runtime broken (does not download anything)
+sysutils/vhdtool||2015-08-01|Has expired: Use mkimg(1) instead
+www/rubygem-modernizr||2015-08-01|Has expired: This gem has been removed from rubygems.org by upstream

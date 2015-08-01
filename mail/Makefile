@@ -215,7 +215,6 @@
     SUBDIR += lurker
     SUBDIR += mail2sms
     SUBDIR += mailagent
-    SUBDIR += maildirsync
     SUBDIR += maildrop
     SUBDIR += mailest
     SUBDIR += mailfmt
@@ -515,7 +514,6 @@
     SUBDIR += pymsgauth
     SUBDIR += pysieved
     SUBDIR += pyzor
-    SUBDIR += qar-bufo
     SUBDIR += qconfirm
     SUBDIR += qgmailnotifier
     SUBDIR += qmail

@@ -184,7 +184,6 @@
     SUBDIR += nkf
     SUBDIR += ochusha
     SUBDIR += onew
-    SUBDIR += p5-Acme-Lou
     SUBDIR += p5-Date-Japanese-Era
     SUBDIR += p5-Date-Japanese-Holiday
     SUBDIR += p5-DateTime-Calendar-Japanese-Era
