@@ -4,6 +4,7 @@
 
 PORTNAME=	telepathy-mission-control
 PORTVERSION=	5.16.3
+PORTREVISION=	1
 CATEGORIES=	net-im devel
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/telepathy-mission-control/
 
