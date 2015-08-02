@@ -13,7 +13,7 @@ COMMENT=	Gnome program to deal with hashfiles
 LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_GNOME=	pygnome2
+USE_GNOME=	pygnome2 intltool
 USES=		desktop-file-utils gettext gmake python shared-mime-info
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-update-mime-database

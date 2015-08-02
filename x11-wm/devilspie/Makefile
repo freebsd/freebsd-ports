@@ -12,7 +12,7 @@ COMMENT=	Window manipulation tool
 
 OPTIONS_DEFINE=	DOCS
 
-USE_GNOME=	libwnck
+USE_GNOME=	libwnck intltool
 GNU_CONFIGURE=	yes
 USES=		pkgconfig gettext gmake
 CPPFLAGS+=	-I${LOCALBASE}/include

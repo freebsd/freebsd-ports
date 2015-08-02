@@ -13,7 +13,7 @@ COMMENT=	Management utility for the PureFTPd
 LICENSE=	GPLv2
 
 USES=		fam gettext gmake pathfix pkgconfig
-USE_GNOME=	libglade2
+USE_GNOME=	intltool libglade2
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 

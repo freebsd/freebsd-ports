@@ -17,7 +17,7 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
 		shared-mime-info
-USE_GNOME=	gtkmm24
+USE_GNOME=	gtkmm24 intltool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-update-mimedb
 INSTALL_TARGET=	install-strip

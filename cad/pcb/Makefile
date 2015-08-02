@@ -22,6 +22,7 @@ CONFLICTS=	gts-[0-9]*
 
 USE_AUTOTOOLS=	autoconf
 USES=		gmake pkgconfig tk:run shared-mime-info desktop-file-utils
+USE_GNOME=	intltool
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	INSTALL_DATA="${BSD_INSTALL_DATA}"

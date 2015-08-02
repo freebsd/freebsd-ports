@@ -18,7 +18,7 @@ LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
 		libcurl.so:${PORTSDIR}/ftp/curl
 
 USES=		desktop-file-utils gettext gmake iconv pathfix pkgconfig
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 intltool
 USE_SQLITE=	yes
 GNU_CONFIGURE=	yes
 # Cannot enable -Werror yet: Clang does not like the code `printf(_("..."))',

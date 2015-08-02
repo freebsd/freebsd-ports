@@ -25,7 +25,7 @@ USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig shared-mime-in
 SHEBANG_FILES=	autotools/intltool-merge
 # Fails to build with GCC 4.9, cf. PR 196849.
 USE_GCC=	4.8
-USE_GNOME=	libgnomecanvas
+USE_GNOME=	intltool libgnomecanvas
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules \
 		--enable-osspcm=/dev/dsp \

@@ -15,7 +15,7 @@ RUN_DEPENDS=	py*-zope.interface>=0:${PORTSDIR}/devel/py-zope.interface \
 		${PYTHON_SITELIBDIR}/goocanvasmodule.so:${PORTSDIR}/graphics/py-goocanvas
 
 USES=		gettext gmake pkgconfig python tar:bzip2
-USE_GNOME=	pygtk2
+USE_GNOME=	intltool pygtk2
 USE_GSTREAMER=	gnonlin python good
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes

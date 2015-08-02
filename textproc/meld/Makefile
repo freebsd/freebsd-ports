@@ -18,7 +18,7 @@ USES=		desktop-file-utils gettext python:2 shared-mime-info \
 		shebangfix tar:xz
 SHEBANG_FILES=	bin/meld
 USE_PYTHON=	distutils
-USE_GNOME=	gtksourceview3 pygobject3
+USE_GNOME=	gtksourceview3 pygobject3 intltool
 GLIB_SCHEMAS=	org.gnome.meld.gschema.xml
 PYDISTUTILS_INSTALLNOSINGLE=	yes
 PYDISTUTILS_INSTALL_TARGET=	--no-update-icon-cache --no-compile-schemas install
