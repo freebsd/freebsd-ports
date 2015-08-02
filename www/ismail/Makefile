@@ -10,6 +10,9 @@ MASTER_SITES=	http://az.semmy.ru/ISMail/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP-based webmail client
 
+DEPRECATED=	Development has been discontinued for many years
+EXPIRATION_DATE=	2015-08-08
+
 WRKSRC=		${WRKDIR}
 
 NO_BUILD=	yes
