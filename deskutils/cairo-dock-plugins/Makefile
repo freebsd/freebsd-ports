@@ -2,7 +2,7 @@
 
 PORTNAME=	cairo-dock-plugins
 PORTVERSION=	3.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 
 MAINTAINER=	fidaj@ukr.net
@@ -155,7 +155,7 @@ XFCE_INTEGRATION_LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif
 XFCE_INTEGRATION_CMAKE_ON=	-Denable-xfce-integration:BOOL=TRUE
 XFCE_INTEGRATION_CMAKE_OFF=	-Denable-xfce-integration:BOOL=FALSE
 
-ZEITGEIST_LIB_DEPENDS=	libzeitgeist-1.0.so:${PORTSDIR}/sysutils/libzeitgeist
+ZEITGEIST_LIB_DEPENDS=	libzeitgeist-2.0.so:${PORTSDIR}/sysutils/zeitgeist
 ZEITGEIST_CMAKE_ON=	-Denable-recent-events:BOOL=TRUE
 ZEITGEIST_CMAKE_OFF=	-Denable-recent-events:BOOL=FALSE
 

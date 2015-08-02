@@ -472,7 +472,6 @@
     SUBDIR += libsunacl
     SUBDIR += liburcu
     SUBDIR += libutempter
-    SUBDIR += libzeitgeist
     SUBDIR += life-preserver
     SUBDIR += lineak-defaultplugin
     SUBDIR += lineak-xosdplugin
