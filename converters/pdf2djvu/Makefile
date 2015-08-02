@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pdf2djvu
-PORTVERSION=	0.7.17
-PORTREVISION=	4
+PORTVERSION=	0.7.21
 CATEGORIES=	converters
-MASTER_SITES=	GOOGLE_CODE
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+MASTER_SITES=	https://bitbucket.org/jwilk/pdf2djvu/downloads/
 
 MAINTAINER=	darcsis@gmail.com
 COMMENT=	Pdf2djvu creates DjVu files from PDF files
@@ -18,11 +16,9 @@ LIB_DEPENDS=	libpoppler.so:${PORTSDIR}/graphics/poppler \
 		libdjvulibre.so:${PORTSDIR}/graphics/djvulibre
 
 GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lang gmake pkgconfig
+USES=		compiler:c++11-lang gmake pkgconfig tar:xz
 
 PLIST_FILES=	bin/pdf2djvu man/man1/pdf2djvu.1.gz
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.options.mk>
 
