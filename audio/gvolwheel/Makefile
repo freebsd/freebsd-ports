@@ -17,7 +17,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 USES=		gmake iconv pkgconfig
-USE_GNOME=	gtk30
+USE_GNOME=	gtk30 intltool
 
 PORTDOCS=	AUTHORS ChangeLog README
 

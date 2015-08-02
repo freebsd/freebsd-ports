@@ -22,7 +22,7 @@ LIB_DEPENDS=	libmenu-cache.so:${PORTSDIR}/x11/menu-cache \
 SLAVEDIRS=	${CATEGORIES}/${PORTNAME}-extra
 
 USES=		gettext-tools gmake libtool pathfix pkgconfig tar:xz
-USE_GNOME=	glib20
+USE_GNOME=	glib20 intltool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --disable-static

@@ -24,6 +24,7 @@ CONFIGURE_ARGS=	--disable-festival \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
+USE_GNOME=	intltool
 
 PROJECTHOST=	stardict-3
 

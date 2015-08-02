@@ -25,7 +25,7 @@ MAKE_JOB_UNSAFE=yes
 INSTALLS_ICONS=	yes
 USES=		gmake libtool:keepla pkgconfig tar:bzip2 gettext
 GNU_CONFIGURE=	yes
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 intltool
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 

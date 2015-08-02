@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>0:${PORTSDIR}/audio/py-mutagen
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>0:${PORTSDIR}/audio/py-mutagen
 
 USE_PYTHON=	distutils autoplist
-USE_GNOME=	pygtk2
+USE_GNOME=	intltool pygtk2
 USES=		display gettext python
 PYDISTUTILS_INSTALLNOSINGLE=	yes
 

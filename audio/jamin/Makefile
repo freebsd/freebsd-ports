@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
 
 GNU_CONFIGURE=	yes
 USES=		desktop-file-utils gmake libtool pkgconfig shared-mime-info
-USE_GNOME=	gtk20 libxml2
+USE_GNOME=	gtk20 intltool libxml2
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ladspa/jamincont_1912.so

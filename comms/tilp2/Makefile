@@ -17,7 +17,7 @@ LIB_DEPENDS=	libticables2.so:${PORTSDIR}/comms/libticables2	\
 		libticonv.so:${PORTSDIR}/converters/libticonv
 
 USES=		desktop-file-utils gmake pkgconfig shared-mime-info tar:bzip2
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 intltool
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

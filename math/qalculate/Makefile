@@ -18,7 +18,7 @@ RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 		wget:${PORTSDIR}/ftp/wget
 
 USES=		gettext gmake
-USE_GNOME=	libglade2 libgnome
+USE_GNOME=	intltool libglade2 libgnome
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib

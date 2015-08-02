@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	--enable-opengl --enable-libcdio
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-USE_GNOME=	gtk30 glib20
+USE_GNOME=	gtk30 intltool glib20
 USE_XORG=	x11 xv xext xxf86vm xtst
 USE_SDL=	sdl
 USE_GL=	gl

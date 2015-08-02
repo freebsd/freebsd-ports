@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext \
 
 USE_GL=		gl
 USE_SDL=	sdl
-USE_GNOME=	gtk20 libglade2
+USE_GNOME=	gtk20 intltool libglade2
 USES=		autoreconf desktop-file-utils dos2unix gettext gmake pkgconfig
 DOS2UNIX_FILES=	src/utils/task.cpp
 

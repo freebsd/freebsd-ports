@@ -18,7 +18,7 @@ LIB_DEPENDS=	libvlc.so:${PORTSDIR}/multimedia/vlc \
 		libnotify.so:${PORTSDIR}/devel/libnotify
 
 USES=		gmake iconv libtool pkgconfig
-USE_GNOME=	gtk30
+USE_GNOME=	gtk30 intltool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk=3.0
 CFLAGS+=	-Wno-return-type -w

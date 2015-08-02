@@ -12,7 +12,7 @@ COMMENT=	GTK+ passwords manager for system and network administrators
 RUN_DEPENDS+=	gpgv2:${PORTSDIR}/security/gnupg
 
 USES=		desktop-file-utils gettext gmake pkgconfig tar:xz
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 intltool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk2
 CPPFLAGS+=	-I${LOCALBASE}/include
