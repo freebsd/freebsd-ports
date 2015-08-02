@@ -60,6 +60,7 @@ lib/idjc/site-packages/idjc/utils.pyo
 lib/python2.7/site-packages/idjcmonitor.py
 lib/python2.7/site-packages/idjcmonitor.pyc
 lib/python2.7/site-packages/idjcmonitor.pyo
+share/appdata/idjc.appdata.xml
 share/applications/idjc.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS.gz
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.gz
@@ -67,6 +68,7 @@ share/applications/idjc.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README.gz
 %%DATADIR%%/add3.png
 %%DATADIR%%/advance.png
+%%DATADIR%%/buildinfo
 %%DATADIR%%/classic_cross.png
 %%DATADIR%%/control_c.png
 %%DATADIR%%/control_k.png
@@ -104,15 +106,8 @@ share/applications/idjc.desktop
 %%DATADIR%%/speedicon.png
 %%DATADIR%%/stop.png
 %%DATADIR%%/volume2.png
-share/locale/fr/LC_MESSAGES/idjc.mo
-share/locale/it/LC_MESSAGES/idjc.mo
-man/fr/man1/idjc-auto.1.gz
-man/fr/man1/idjc-ls.1.gz
-man/fr/man1/idjc-new.1.gz
-man/fr/man1/idjc-noauto.1.gz
-man/fr/man1/idjc-rm.1.gz
-man/fr/man1/idjc-run.1.gz
-man/fr/man1/idjc.1.gz
+%%NLS%%share/locale/fr/LC_MESSAGES/idjc.mo
+%%NLS%%share/locale/it/LC_MESSAGES/idjc.mo
 man/man1/idjc-auto.1.gz
 man/man1/idjc-ls.1.gz
 man/man1/idjc-new.1.gz
