@@ -22,6 +22,12 @@ USE_LDCONFIG=	yes
 USES=	gmake perl5
 GNU_CONFIGURE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000 && ${ARCH} == "i386"
+CFLAGS+=	-march=pentium
+.endif
+
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/rdkafka.pc  ${STAGEDIR}${PREFIX}/libdata/pkgconfig/librdkafka.pc
 
@@ -29,4 +35,4 @@ post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librdkafka.so.1
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librdkafka++.so.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
