@@ -3,6 +3,7 @@
 
 PORTNAME=	netxms
 PORTVERSION=	1.2.17
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.netxms.org/download/ \
 		http://www.netxms.org/download/archive/

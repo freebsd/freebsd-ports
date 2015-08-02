@@ -3,6 +3,7 @@
 
 PORTNAME=	cinnamon-control-center
 PORTVERSION=	2.4.2
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 DIST_SUBDIR=	gnome3
 

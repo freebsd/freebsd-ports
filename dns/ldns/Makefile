@@ -3,7 +3,7 @@
 
 PORTNAME=	ldns
 PORTVERSION=	1.6.17
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/ldns/ \
 		LOCAL/ehaupt

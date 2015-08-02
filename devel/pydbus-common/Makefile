@@ -3,7 +3,7 @@
 
 PORTNAME=	dbus
 PORTVERSION=	1.2.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	devel gnome python
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus-python/
 PKGNAMEPREFIX?=	py

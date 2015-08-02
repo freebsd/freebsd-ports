@@ -3,7 +3,7 @@
 
 PORTNAME=	avahi
 PORTVERSION=	0.6.31
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES?=	net dns
 MASTER_SITES=	http://www.avahi.org/download/
 PKGNAMESUFFIX?=	-app

@@ -3,8 +3,9 @@
 
 PORTNAME=	calf
 PORTVERSION=	0.0.60
+PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	SF
+MASTER_SITES=	http://calf-studio-gear.org/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audio plug-in pack for LV2 and JACK environments
@@ -12,13 +13,11 @@ COMMENT=	Audio plug-in pack for LV2 and JACK environments
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	fftw3>0:${PORTSDIR}/math/fftw3
 LIB_DEPENDS=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth \
 		libjack.so:${PORTSDIR}/audio/jack \
-		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
 		libexpat.so:${PORTSDIR}/textproc/expat2
 
-USES=		compiler:c++11-lib gmake libtool pkgconfig
+USES=		autoreconf compiler:c++11-lang gmake libtool pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -41,35 +40,11 @@ LV2_CONFIGURE_WITH=	lv2
 .include <bsd.port.pre.mk>
 
 .if ${CHOSEN_COMPILER_TYPE} == gcc
-CXXFLAGS+=	-fno-inline -finline-functions-called-once
+CXXFLAGS+=	-finline-limit=80 -finline-functions -finline-functions-called-once
 .endif
 
 post-patch:
-	@${FIND} ${BUILD_WRKSRC} -name '*.cpp' | ${XARGS} ${REINPLACE_CMD} -e \
-		's|<malloc.h>|<cstdlib>|'
-	@${REINPLACE_CMD} -e \
-		's|"GNU strip"|"strip"| ; \
-		 /CXXFLAGS/s|-O3 .* -Wall|-Wall|' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
-		'/AM_CXXFLAGS/s|-finline-limit=80|| ; \
-		 /calf.so/s|$$(pkglibdir)|../../calf|' \
-		${WRKSRC}/src/Makefile.in
-
-pre-build:
-.if ${PORT_OPTIONS:MLV2}
-	@${MKDIR} ${WRKDIR}/calfmakerdf
-	@(cd ${WRKSRC} && ${PAX} -rw . ${WRKDIR}/calfmakerdf)
-	@${REINPLACE_CMD} -e 's|\(PKGLIBDIR\).*|\1 "${STAGEDIR}${DATADIR}"|' \
-		${WRKDIR}/calfmakerdf/config.h
-	@(cd ${WRKDIR}/calfmakerdf/src && ${DO_MAKE_BUILD} calfmakerdf)
-.endif
-
-post-install:
-.if ${PORT_OPTIONS:MLV2}
-	@(cd ${WRKDIR}/calfmakerdf/src && ./calfmakerdf -m ttl \
-		-p ${STAGEDIR}${PREFIX}/lib/lv2/calf.lv2)
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lv2/calf.lv2/calflv2gui.so
-.endif
+	@${REINPLACE_CMD} '/<malloc.h>/d' \
+		${WRKSRC}/src/ctl_knob.cpp ${WRKSRC}/src/ctl_tube.cpp
 
 .include <bsd.port.post.mk>

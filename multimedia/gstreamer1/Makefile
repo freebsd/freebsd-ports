@@ -3,6 +3,7 @@
 
 PORTNAME=	gstreamer1
 PORTVERSION=	1.4.5
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/
 DISTNAME=	${PORTNAME:S/1//}-${PORTVERSION}

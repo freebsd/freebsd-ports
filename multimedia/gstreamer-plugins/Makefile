@@ -6,7 +6,7 @@ PORTNAME=	gstreamer
 PORTVERSION?=	${BASE_PORTVERSION}
 # When chasing a shared library for a plug-in bump the PORTREVISION in the 
 # plug-in port instead, like ${category}/gstreamer-plugin-${PLUGIN}.
-PORTREVISION?=	5
+PORTREVISION?=	6
 PORTEPOCH=	3
 CATEGORIES?=	multimedia audio
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-plugins-base/:base \

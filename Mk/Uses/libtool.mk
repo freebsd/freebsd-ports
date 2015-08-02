@@ -32,6 +32,12 @@ patch-libtool:
 		-e '/gcc_dir=\\`/s/gcc /$$CC /'				\
 		-e '/gcc_ver=\\`/s/gcc /$$CC /'				\
 		-e '/link_all_deplibs[0-9A-Z_]*=/s/=unknown/=no/'	\
+		-e '/archive_expsym_cmds[0-9A-Z_]*=.$$CC.*-retain-/ {	\
+		    s/-retain-symbols-file/-version-script/;		\
+		    s/$$export_symbols/$$lib-ver/;			\
+		    s/$$CC/echo "{ global:" > $$lib-ver~		\
+		    sed -e "s|$$|;|" < $$export_symbols >> $$lib-ver~	\
+		    echo "local: *; };" >> $$lib-ver~&/; }'		\
 		-e '/objformat=/s/echo aout/echo elf/'			\
 		-e '/STRIP -V/s/"GNU strip"/"strip"/'			\
 		-e "/freebsd-elf\\*)/,/;;/ {				\

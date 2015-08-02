@@ -3,7 +3,7 @@
 
 PORTNAME=	scim-m17n
 PORTVERSION=	0.2.3
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	textproc
 MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION} \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/

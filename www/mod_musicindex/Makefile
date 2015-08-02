@@ -3,7 +3,7 @@
 
 PORTNAME=	mod_musicindex
 PORTVERSION=	1.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www audio
 MASTER_SITES=	http://hacks.slashdirt.org/musicindex/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}

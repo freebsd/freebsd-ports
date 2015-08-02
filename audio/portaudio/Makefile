@@ -3,7 +3,7 @@
 
 PORTNAME=	portaudio
 DISTVERSION=	19_20140130
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.portaudio.com/archives/
 DISTNAME=	pa_stable_v${DISTVERSION}
