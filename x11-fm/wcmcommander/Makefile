@@ -38,10 +38,6 @@ SSH_CMAKE_OFF=		-DWITH_LIBSSH2=OFF
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900000
-BROKEN=		does not build on 8.x (lack of long long support)
-.endif
-
 .if ${COMPILER_TYPE} == gcc
 CXXFLAGS+=	-D_GLIBCXX_USE_C99 # gcc c++11 support is broken on FreeBSD
 .endif

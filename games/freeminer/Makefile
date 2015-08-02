@@ -64,10 +64,6 @@ LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900000
-BROKEN=		does not build on 8.x (lack of long long support)
-.endif
-
 .if ${PORT_OPTIONS:MCLIENT} && ${PORT_OPTIONS:MSOUND}
 USES+=		openal
 LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
