@@ -363,7 +363,11 @@ PLIST_SUB+=		PANGO="@comment "
 
 # PDF (Adobe Portable Document Format) support
 .if ${PORT_OPTIONS:MPDF}
+. if ${PORT_OPTIONS:MX11}
 USES+=		ghostscript
+. else
+USES+=		ghostscript:nox11
+. endif
 .endif
 
 .if ! ${PORT_OPTIONS:MX11}
@@ -386,7 +390,11 @@ INSTALL_TARGET=	install-strip
 .endif
 
 .if ${PORT_OPTIONS:MTESTS}
+. if ${PORT_OPTIONS:MX11}
 USES+=		ghostscript:build
+. else
+USES+=		ghostscript:build,nox11
+. endif
 .endif
 
 .if defined(USER) && ${USER} == kwm
