@@ -20,7 +20,7 @@ LIB_DEPENDS=	libgtkglextmm-x11-1.2.so:${PORTSDIR}/x11-toolkits/gtkglextmm \
 		libzip.so:${PORTSDIR}/archivers/libzip \
 
 USES=		autoreconf gmake libtool perl5 pkgconfig
-USE_GNOME=	gtkmm24 libxml++26
+USE_GNOME=	gtkmm24 intltool libxml++26
 USE_GL=		gl
 USE_PERL5=	build
 GNU_CONFIGURE=	yes

@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/_pynotify.so:${PORTSDIR}/deve
 
 GNU_CONFIGURE=	yes
 USES=		libtool gettext gmake pkgconfig python
-USE_GNOME=	pygtk2
+USE_GNOME=	intltool pygtk2
 
 LOCALBASE_REPLACE_FILES= \
 		engine/engine.py \

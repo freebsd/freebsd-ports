@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libproxy.so:${PORTSDIR}/net/libproxy
 
 USES=		gmake desktop-file-utils libtool pkgconfig tar:xz
-USE_GNOME=	gtk20 libxml2
+USE_GNOME=	gtk20 intltool libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-openssl --enable-gtkfe --disable-sysinfo \
 		--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig

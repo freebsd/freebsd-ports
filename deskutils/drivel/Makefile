@@ -18,7 +18,7 @@ OPTIONS_DEFAULT=	GTKSPELL
 GTKSPELL_DESC=	Enable GtkSpell support
 
 USES=		desktop-file-utils gettext gmake libtool shared-mime-info pkgconfig tar:bzip2
-USE_GNOME=	gconf2 gnomedocutils gnomevfs2 gtksourceview2
+USE_GNOME=	gconf2 gnomedocutils gnomevfs2 gtksourceview2 intltool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-error-on-warning
 INSTALLS_ICONS=	yes

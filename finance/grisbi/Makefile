@@ -16,7 +16,7 @@ LIB_DEPENDS=	libofx.so:${PORTSDIR}/finance/libofx
 
 USES=		tar:bzip2 desktop-file-utils gmake iconv pkgconfig shared-mime-info
 GNU_CONFIGURE=	yes
-USE_GNOME=	gtk20 glib20 libxml2
+USE_GNOME=	gtk20 glib20 intltool libxml2
 USE_OPENSSL=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto"

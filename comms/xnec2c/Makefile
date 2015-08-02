@@ -17,7 +17,7 @@ LIB_DEPENDS=	libccm.so:${PORTSDIR}/math/ccmath
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake pkgconfig tar:bzip2
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 intltool
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes

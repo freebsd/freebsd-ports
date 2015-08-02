@@ -21,7 +21,7 @@ PIDGIN_SLAVE=	yes
 WITH_GTKUI=	yes
 
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomeprefix gtk20
+USE_GNOME=	gnomeprefix gtk20 intltool
 USE_XORG=	xscrnsaver sm
 WANT_GNOME=	yes
 CONFIGURE_ARGS=	--disable-consoleui \

@@ -13,7 +13,7 @@ COMMENT=	Popup style message communication tool for GNOME2
 LICENSE=	GPLv2 # (or later)
 
 USES=		gettext gmake pathfix pkgconfig
-USE_GNOME=	gnomeprefix libgnomeui
+USE_GNOME=	gnomeprefix intltool libgnomeui
 USE_GSTREAMER=	vorbis
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes

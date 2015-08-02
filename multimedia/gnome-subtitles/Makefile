@@ -16,7 +16,7 @@ LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
 
 USES=		cpe gmake mono pkgconfig libtool desktop-file-utils
 CPE_VENDOR=	pedro_castro
-USE_GNOME=	gnomeprefix gtksharp20 gnomesharp20 gnomedocutils
+USE_GNOME=	gnomeprefix gtksharp20 gnomesharp20 gnomedocutils intltool
 USE_GSTREAMER1=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

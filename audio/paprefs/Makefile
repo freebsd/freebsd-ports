@@ -16,7 +16,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 USES=		gmake pkgconfig
-USE_GNOME=	gconfmm26 gnomeprefix
+USE_GNOME=	gconfmm26 gnomeprefix intltool
 
 CONFIGURE_ARGS=	--disable-lynx
 
