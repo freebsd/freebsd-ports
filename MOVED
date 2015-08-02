@@ -7750,3 +7750,4 @@ net/py-soapy|net/py-soappy|2015-08-01|Has expired: Abandonware depending on anci
 net-p2p/btqueue||2015-08-01|Has expired: Runtime broken (does not download anything)
 sysutils/vhdtool||2015-08-01|Has expired: Use mkimg(1) instead
 www/rubygem-modernizr||2015-08-01|Has expired: This gem has been removed from rubygems.org by upstream
+sysutils/libzeitgeist|sysutils/zeitgeist|2015-07-26|Merged into zeitgeist
