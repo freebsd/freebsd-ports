@@ -131,6 +131,7 @@
     SUBDIR += kdeplasma-addons
     SUBDIR += kruler
     SUBDIR += ksshaskpass
+    SUBDIR += ladon
     SUBDIR += launchy
     SUBDIR += libgcal
     SUBDIR += libopensync-plugin-file
