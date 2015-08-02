@@ -3,6 +3,7 @@
 
 PORTNAME=	pcbsd-utils-qt5
 PORTVERSION=	1438365531
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	kmoore@FreeBSD.org

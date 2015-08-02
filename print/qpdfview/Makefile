@@ -3,6 +3,7 @@
 
 PORTNAME=	qpdfview
 PORTVERSION=	0.4.14
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	https://launchpad.net/qpdfview/trunk/0.4.14/+download/
 
