@@ -3,7 +3,7 @@
 
 PORTNAME=	swfdec-plugin
 PORTVERSION=	0.8.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	http://swfdec.freedesktop.org/download/swfdec-mozilla/0.8/
 DISTNAME=	swfdec-mozilla-${PORTVERSION}

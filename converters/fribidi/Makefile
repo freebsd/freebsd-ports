@@ -3,7 +3,7 @@
 
 PORTNAME=	fribidi
 PORTVERSION=	0.19.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	converters
 MASTER_SITES=	http://fribidi.org/download/
 

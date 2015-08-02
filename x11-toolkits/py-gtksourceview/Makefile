@@ -3,7 +3,7 @@
 
 PORTNAME=	gtksourceview
 PORTVERSION=	2.10.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits gnome python
 MASTER_SITES=	GNOME/sources/pygtksourceview/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
