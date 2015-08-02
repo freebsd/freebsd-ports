@@ -3,7 +3,7 @@
 
 PORTNAME=	folks
 PORTVERSION=	0.10.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	GNOME
 
@@ -13,7 +13,7 @@ COMMENT=	library to aggregates people from multiple sources
 BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala
 LIB_DEPENDS=	libgee-0.8.so:${PORTSDIR}/devel/libgee \
 		libgcr-3.so:${PORTSDIR}/security/gcr \
-		libzeitgeist-1.0.so:${PORTSDIR}/sysutils/libzeitgeist \
+		libzeitgeist-2.0.so:${PORTSDIR}/sysutils/zeitgeist \
 		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib
 
 CONFLICTS=	folks-0.4.[0-9]*
