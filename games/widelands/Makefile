@@ -40,12 +40,6 @@ DESKTOP_ENTRIES="Widelands" \
 		"Game;StrategyGame;" \
 		""
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900000
-IGNORE=		doesn't build on 8.x
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/cmake/Modules/*.cmake
