@@ -3,6 +3,7 @@
 
 PORTNAME=	apache-solr
 PORTVERSION=	5.2.1
+PORTREVISION=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	APACHE/lucene/solr/${PORTVERSION}
 DISTNAME=	solr-${PORTVERSION}
@@ -29,7 +30,10 @@ CPE_VENDOR=	apache
 
 do-install:
 	cd ${WRKSRC}/dist && ${COPYTREE_SHARE} . ${STAGEDIR}${JAVAJARDIR}
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/example && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/server && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/solr ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/post ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
