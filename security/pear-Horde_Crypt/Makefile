@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Crypt
-PORTVERSION=	2.5.3
+PORTVERSION=	2.6.0
 CATEGORIES=	security www pear
 PKGNAMEPREFIX=	pear-
 
