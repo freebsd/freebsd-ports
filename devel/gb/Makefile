@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gb
-PORTVERSION=	0.0.0.2015062801
+PORTVERSION=	0.0.0.2015080301
 CATEGORIES=	devel
 
 MAINTAINER=	swills@FreeBSD.org
@@ -11,7 +11,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	constabulary
-GH_TAGNAME=	d14e213
+GH_TAGNAME=	04254de
 
 PLIST_FILES=	bin/gb bin/gb-vendor
 
@@ -25,9 +25,10 @@ post-extract:
 	@cd ${WRKSRC} ; ${MKDIR} src/github.com/${GH_ACCOUNT}/${GH_PROJECT} ; \
 		${MV} .gitignore LICENSE README.md build.go build_test.go \
 		cgo.go cgo14.go cgo15.go cmd context.go context_test.go \
-		defaultcc.go defaultcc_bsd.go gb.go gb_test.go gc.go gc14.go \
-		gc15.go install.go log.go package.go package_test.go project.go \
-		src.go stdlib.go target.go testdata wercker.yml \
+		defaultcc.go defaultcc_bsd.go example_test.go gb.go gb_test.go \
+		gc.go gc14.go gc15.go install.go log.go package.go \
+		package_test.go project.go src.go stdlib.go target.go testdata \
+		vendor wercker.yml \
 		src/github.com/${GH_ACCOUNT}/${GH_PROJECT}
 
 do-build:
