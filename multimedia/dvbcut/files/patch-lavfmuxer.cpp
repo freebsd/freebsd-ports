@@ -1,6 +1,6 @@
---- src/lavfmuxer.cpp~	2013-06-16 11:57:51.000000000 +0200
-+++ src/lavfmuxer.cpp	2013-11-29 22:24:36.075415060 +0100
-@@ -40,6 +40,10 @@
+--- src/lavfmuxer.cpp.orig	2013-06-16 09:57:51 UTC
++++ src/lavfmuxer.cpp
+@@ -40,6 +40,10 @@ extern "C" {
  	#define CODEC_TYPE_AUDIO AVMEDIA_TYPE_AUDIO
  #endif
  
