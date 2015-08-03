@@ -986,7 +986,6 @@
     SUBDIR += jam
     SUBDIR += jansson
     SUBDIR += java-findbugs
-    SUBDIR += java-util-concurrent
     SUBDIR += javolution
     SUBDIR += jclassinfo
     SUBDIR += jcmdline
@@ -4110,7 +4109,6 @@
     SUBDIR += py-pymarc
     SUBDIR += py-pympler
     SUBDIR += py-pymtbl
-    SUBDIR += py-pyparsing15
     SUBDIR += py-pyrfc3339
     SUBDIR += py-pyro
     SUBDIR += py-pyshapelib
