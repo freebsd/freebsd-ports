@@ -1,6 +1,8 @@
 # Created by: Kris Moore <kmoore@FreeBSD.org>
 # $FreeBSD$
 
+PKGNAMESUFFIX=	-staging
+
 COMMENT=	Wine built with the Staging patchset
 
 SLAVE_PORT=	wine-devel
@@ -15,5 +17,3 @@ PLIST=		${MASTERDIR}/pkg-plist
 USE_AUTOTOOLS=	autoconf:env
 
 .include "${MASTERDIR}/Makefile"
-
-PKGNAMESUFFIX=	-staging
