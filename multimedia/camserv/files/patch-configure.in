@@ -1,8 +1,11 @@
---- configure.in.orig	2002-05-13 03:06:12.000000000 +0900
-+++ configure.in	2014-01-04 04:57:50.000000000 +0900
-@@ -12,12 +12,12 @@
- AM_ACLOCAL_INCLUDE(macros)
+--- configure.in.orig	2002-05-12 18:06:12 UTC
++++ configure.in
+@@ -9,15 +9,13 @@ AM_INIT_AUTOMAKE(camserv,$CAMSERV_VER_MA
+ AM_CONFIG_HEADER(include/camserv_config.h:config.in)
+ AM_MAINTAINER_MODE
  
+-AM_ACLOCAL_INCLUDE(macros)
+-
  AC_PROG_CC
 -AC_LIBLTDL_CONVENIENCE
 +AC_LIBLTDL_INSTALLABLE
@@ -16,7 +19,7 @@
  
  AC_CHECK_LIB(m,sqrt)
  AC_CHECK_LIB(jpeg,jpeg_start_compress)
-@@ -55,7 +55,7 @@
+@@ -55,7 +53,7 @@ AC_PATH_PROG(GDKPIXBUF_CONFIG,gdk-pixbuf
  if test "$GDKPIXBUF_CONFIG"x != "x"; then
  	GDKPIXBUF_VERSION=`$GDKPIXBUF_CONFIG --version`
  	case "$GDKPIXBUF_VERSION" in
@@ -25,7 +28,7 @@
  		 GDKPIXBUF_CFLAGS=`$GDKPIXBUF_CONFIG --cflags`
  		 GDKPIXBUF_LIBS=`$GDKPIXBUF_CONFIG --libs`
  		 CFLAGS="$CFLAGS $GDKPIXBUF_CFLAGS"
-@@ -93,7 +93,7 @@
+@@ -93,7 +91,7 @@ AC_CHECK_HEADERS(linux/videodev.h,
  [video_v4l=yes],[video_v4l=no])
  AM_CONDITIONAL(VIDEO_V4L, test $video_v4l = yes)
  
