@@ -30,15 +30,6 @@ OPTIONS_RADIO_MPI=	OPENMPI MPICH2
 OPTIONS_DEFAULT=	${MPI_DEFAULT}
 OPENMPI_DESC=		MPI support (with OpenMPI)
 
-OPENMPI_BUILD_DEPENDS=	${LOCALBASE}/mpi/openmpi/bin/mpiCC:${PORTSDIR}/net/openmpi
-OPENMPI_RUN_DEPENDS=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
-OPENMPI_CONFIGURE_ENV=	MPICXX=${LOCALBASE}/mpi/openmpi/bin/mpiCC
-OPENMPI_CFLAGS=		-I${LOCALBASE}/mpi/openmpi/include
-
-MPICH2_LIB_DEPENDS=	libmpich.so.8:${PORTSDIR}/net/mpich2
-MPICH2_CONFIGURE_ENV=	MPICXX=${LOCALBASE}/bin/mpicc
-MPICH2_CFLAGS=		-I${LOCALBASE}/include
-
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD
@@ -55,6 +46,19 @@ PLIST_SUB+=		MPI="" NOMPI="@comment "
 .else
 CONFIGURE_ARGS+=	--without-mpi
 PLIST_SUB+=		MPI="@comment " NOMPI=""
+.endif
+
+.if ${PORT_OPTIONS:MMPICH2}
+LIB_DEPENDS+=	libmpich.so.8:${PORTSDIR}/net/mpich2
+CONFIGURE_ENV+=	MPICXX=${LOCALBASE}/bin/mpicc
+CFLAGS+=	-I${LOCALBASE}/include
+.endif
+
+.if ${PORT_OPTIONS:MOPENMPI}
+BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpiCC:${PORTSDIR}/net/openmpi
+RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
+CONFIGURE_ENV+=	MPICXX=${LOCALBASE}/mpi/openmpi/bin/mpiCC
+CFLAGS+=	-I${LOCALBASE}/mpi/openmpi/include
 .endif
 
 .include <bsd.port.post.mk>
