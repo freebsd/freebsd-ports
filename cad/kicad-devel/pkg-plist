@@ -1369,6 +1369,8 @@ share/icons/hicolor/scalable/mimetypes/application-x-pcbnew-project.svg
 %%DATADIR%%/modules/packages3d/Displays_7-Segment.3dshapes/7SegmentLED_LTS6760_LTS6780.wrl
 %%DATADIR%%/modules/packages3d/Displays_7-Segment.3dshapes/7SegmentLED_SBC18-11EGWA.wings
 %%DATADIR%%/modules/packages3d/Displays_7-Segment.3dshapes/7SegmentLED_SBC18-11EGWA.wrl
+%%DATADIR%%/modules/packages3d/Displays_7-Segment.3dshapes/Cx56-12.fcstd
+%%DATADIR%%/modules/packages3d/Displays_7-Segment.3dshapes/Cx56-12.wrl
 %%DATADIR%%/modules/packages3d/Displays_7-Segment.3dshapes/MAN3640A.wings
 %%DATADIR%%/modules/packages3d/Displays_7-Segment.3dshapes/MAN3640A.wrl
 %%DATADIR%%/modules/packages3d/Divers.3dshapes/2PIN_6mm.wings
@@ -2331,6 +2333,8 @@ share/icons/hicolor/scalable/mimetypes/application-x-pcbnew-project.svg
 %%DATADIR%%/modules/packages3d/Potentiometers.3dshapes/Potentiometer_Bourns_3339W_Angular_ScrewFront.wrl
 %%DATADIR%%/modules/packages3d/Potentiometers.3dshapes/Potentiometer_Triwood_RM-065.wings
 %%DATADIR%%/modules/packages3d/Potentiometers.3dshapes/Potentiometer_Triwood_RM-065.wrl
+%%DATADIR%%/modules/packages3d/Power_Packages_SMD.3dshapes/PowerSO-20.wings
+%%DATADIR%%/modules/packages3d/Power_Packages_SMD.3dshapes/PowerSO-20.wrl
 %%DATADIR%%/modules/packages3d/Power_Packages_SMD.3dshapes/SOT-669_LFPAK.wings
 %%DATADIR%%/modules/packages3d/Power_Packages_SMD.3dshapes/SOT-669_LFPAK.wrl
 %%DATADIR%%/modules/packages3d/Power_Packages_SMD.3dshapes/SOT-669_LFPAK_ThermalVias-1.wings
