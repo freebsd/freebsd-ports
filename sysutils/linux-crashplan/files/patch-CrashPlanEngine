@@ -1,6 +1,6 @@
---- scripts/CrashPlanEngine.orig	2013-04-08 20:36:04.000000000 -0300
-+++ scripts/CrashPlanEngine	2013-09-23 10:54:57.806062403 -0300
-@@ -11,7 +11,7 @@
+--- scripts/CrashPlanEngine
++++ scripts/CrashPlanEngine
+@@ -11,7 +11,7 @@ standard_startup() {
  	
  	cd $TARGETDIR
  		
@@ -9,7 +9,7 @@
  	
  	if [[ $! -gt 0 ]]; then
  		echo $! > $PIDFILE
-@@ -80,7 +80,7 @@
+@@ -80,7 +80,7 @@ do_startup() {
  }
  
  _findpid() {
@@ -18,13 +18,3 @@
  }
  
  SCRIPT=$(ls -l $0 | awk '{ print $NF }')
-@@ -91,7 +91,8 @@
- DESC="CrashPlan Engine"
- NAME=CrashPlanEngine
- DAEMON=$TARGETDIR/lib/com.backup42.desktop.jar
--PIDFILE="$TARGETDIR/${NAME}.pid"
-+PIDFILE="/var/run/${NAME}.pid"
-+: ${LOGDIR=/var/log/crashplan}
- 
- if [[ -f $TARGETDIR/install.vars ]]; then
- 	. $TARGETDIR/install.vars
