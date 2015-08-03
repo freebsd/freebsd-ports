@@ -10,7 +10,7 @@
 %%DATADIR%%/overto.sh
 %%DATADIR%%/patch.sh
 %%DATADIR%%/search.sh
-%%DATADIR%%/submit.sh
+%%DATADIR%%/port_submit.sh
 %%DATADIR%%/take.sh
 %%DATADIR%%/timeout.sh
 %%DATADIR%%/top.sh
@@ -23,7 +23,7 @@
 %%PYBUGZ%%%%DATADIR%%/pybugz/login.sh
 %%PYBUGZ%%%%DATADIR%%/pybugz/overto.sh
 %%PYBUGZ%%%%DATADIR%%/pybugz/search.sh
-%%PYBUGZ%%%%DATADIR%%/pybugz/submit.sh
+%%PYBUGZ%%%%DATADIR%%/pybugz/port_submit.sh
 %%PYBUGZ%%%%DATADIR%%/pybugz/take.sh
 %%PYBUGZ%%%%DATADIR%%/pybugz/timeout.sh
 %%PYBUGZ%%%%DATADIR%%/pybugz/top.sh
