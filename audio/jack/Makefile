@@ -3,7 +3,7 @@
 
 PORTNAME=	jackit
 PORTVERSION=	0.124.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://jackaudio.org/downloads/
 DISTNAME=	jack-audio-connection-kit-${PORTVERSION}
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile \
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake pathfix pkgconfig libtool:keepla
+USES=		gmake pathfix pkgconfig libtool
 USE_BDB=	48+
 
 CONFIGURE_ARGS=	--disable-portaudio \
