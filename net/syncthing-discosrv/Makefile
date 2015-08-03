@@ -3,7 +3,7 @@
 
 PORTNAME=	syncthing-discosrv
 PORTVERSION=	0.0.0.2015062601
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	swills@FreeBSD.org
@@ -16,7 +16,7 @@ GH_ACCOUNT=	syncthing golang:gc
 GH_PROJECT=	discosrv syncthing:st groupcache:gc
 GH_TAGNAME=	4c705ff v${SYNCTHING_VER}:st 604ed57:gc
 
-SYNCTHING_VER=	0.11.13
+SYNCTHING_VER=	0.11.18
 
 PLIST_FILES=	bin/syncthing-discosrv
 
