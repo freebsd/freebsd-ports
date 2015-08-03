@@ -2,5 +2,5 @@ SHA256 (syncthing-discosrv-0.0.0.2015062601-4c705ff_GH0.tar.gz) = 231d5456e4fd32
 SIZE (syncthing-discosrv-0.0.0.2015062601-4c705ff_GH0.tar.gz) = 5227
 SHA256 (golang-groupcache-604ed57_GH0.tar.gz) = 691b695141404ea5903a490a0abfdc5b89591eb654166a364b65a5785fc85b65
 SIZE (golang-groupcache-604ed57_GH0.tar.gz) = 24198
-SHA256 (syncthing-syncthing-v0.11.13_GH0.tar.gz) = dae242d1210a4cdc21dc624a7abec324b8634c07d673059662ffb795c8405671
-SIZE (syncthing-syncthing-v0.11.13_GH0.tar.gz) = 3363523
+SHA256 (syncthing-syncthing-v0.11.18_GH0.tar.gz) = fd93392687e545e2b779d10754e24cd49ecbfc03cabaceac381b5a3e69693be6
+SIZE (syncthing-syncthing-v0.11.18_GH0.tar.gz) = 3391683
