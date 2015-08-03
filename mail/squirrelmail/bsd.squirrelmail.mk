@@ -45,6 +45,7 @@ USE_PERL5+=	run
 .endif
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
 USE_PHP?=	yes
 WANT_PHP_WEB=	yes
