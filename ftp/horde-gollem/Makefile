@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gollem
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.4
 CATEGORIES=	ftp www pear
 PKGNAMEPREFIX=	horde-
 
