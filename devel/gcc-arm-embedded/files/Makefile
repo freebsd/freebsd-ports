@@ -224,6 +224,7 @@ build-binutils:
 	 --htmldir=${DOC_PREFIX}/html \
 	 --pdfdir=${DOC_PREFIX}/pdf \
 	 --disable-nls \
+	 --disable-werror \
 	 --enable-interwork \
 	 --enable-plugins \
 	 --with-sysroot=${INTERIM_PREFIX}/${TARGET} \
