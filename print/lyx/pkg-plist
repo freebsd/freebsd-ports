@@ -26,7 +26,8 @@ man/man1/tex2lyx.1.gz
 %%NLS%%share/locale/nl/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/nn/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/lyx.mo
-%%NLS%%share/locale/pt/LC_MESSAGES/lyx.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/lyx.mo
+%%NLS%%share/locale/pt_PT/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/lyx.mo
@@ -255,6 +256,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/examples/Literate.lyx
 %%DATADIR%%/examples/MultilingualCaptions.lyx
 %%DATADIR%%/examples/PDF-comment.lyx
+%%DATADIR%%/examples/PDF-form.lyx
 %%DATADIR%%/examples/R-S-statements.lyx
 %%DATADIR%%/examples/aa_sample.lyx
 %%DATADIR%%/examples/aas_sample.lyx
@@ -289,8 +291,10 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/examples/da/splash.lyx
 %%DATADIR%%/examples/de/Braille.lyx
 %%DATADIR%%/examples/de/Dezimal.lyx
+%%DATADIR%%/examples/de/FeynmanDiagrams.lyx
 %%DATADIR%%/examples/de/ItemizeBullets.lyx
 %%DATADIR%%/examples/de/Lebenslauf.lyx
+%%DATADIR%%/examples/de/MultilingualCaptions.lyx
 %%DATADIR%%/examples/de/beamer-article.lyx
 %%DATADIR%%/examples/de/beamer.lyx
 %%DATADIR%%/examples/de/beispiel_gelyxt.lyx
@@ -325,6 +329,8 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/examples/fr/FeynmanDiagrams.lyx
 %%DATADIR%%/examples/fr/Foils.lyx
 %%DATADIR%%/examples/fr/ListesPuces.lyx
+%%DATADIR%%/examples/fr/MultilingualCaptions.lyx
+%%DATADIR%%/examples/fr/PDF-comment.lyx
 %%DATADIR%%/examples/fr/beamer-article.lyx
 %%DATADIR%%/examples/fr/beamer.lyx
 %%DATADIR%%/examples/fr/exemple-powerdot.lyx
@@ -1010,6 +1016,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/images/math/blacktriangledown.png
 %%DATADIR%%/images/math/blacktriangleleft.png
 %%DATADIR%%/images/math/blacktriangleright.png
+%%DATADIR%%/images/math/boldsymbol.png
 %%DATADIR%%/images/math/bot.png
 %%DATADIR%%/images/math/bowtie.png
 %%DATADIR%%/images/math/bowtie2.png
@@ -1339,12 +1346,15 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/images/math/mapstochar.png
 %%DATADIR%%/images/math/mapstochar2.png
 %%DATADIR%%/images/math/mars.png
+%%DATADIR%%/images/math/mathbb.png
 %%DATADIR%%/images/math/mathbb_C.png
 %%DATADIR%%/images/math/mathbb_H.png
 %%DATADIR%%/images/math/mathbb_N.png
 %%DATADIR%%/images/math/mathbb_Q.png
 %%DATADIR%%/images/math/mathbb_R.png
 %%DATADIR%%/images/math/mathbb_Z.png
+%%DATADIR%%/images/math/mathbf.png
+%%DATADIR%%/images/math/mathcal.png
 %%DATADIR%%/images/math/mathcal_F.png
 %%DATADIR%%/images/math/mathcal_H.png
 %%DATADIR%%/images/math/mathcal_L.png
@@ -1352,12 +1362,18 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/images/math/mathcircumflex.png
 %%DATADIR%%/images/math/mathclap.png
 %%DATADIR%%/images/math/mathdollar.png
+%%DATADIR%%/images/math/mathfrak.png
+%%DATADIR%%/images/math/mathit.png
 %%DATADIR%%/images/math/mathllap.png
 %%DATADIR%%/images/math/mathparagraph.png
 %%DATADIR%%/images/math/mathring.png
 %%DATADIR%%/images/math/mathrlap.png
+%%DATADIR%%/images/math/mathrm.png
 %%DATADIR%%/images/math/mathrm_T.png
+%%DATADIR%%/images/math/mathscr.png
 %%DATADIR%%/images/math/mathsection.png
+%%DATADIR%%/images/math/mathsf.png
+%%DATADIR%%/images/math/mathtt.png
 %%DATADIR%%/images/math/matrix.png
 %%DATADIR%%/images/math/measuredangle.png
 %%DATADIR%%/images/math/mercury.png
@@ -1615,6 +1631,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/images/math/tau.png
 %%DATADIR%%/images/math/taurus.png
 %%DATADIR%%/images/math/textdegree.png
+%%DATADIR%%/images/math/textrm.png
 %%DATADIR%%/images/math/textrm_AA.png
 %%DATADIR%%/images/math/textrm_O.png
 %%DATADIR%%/images/math/therefore.png
@@ -2088,6 +2105,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/layouts/numrevtex.inc
 %%DATADIR%%/layouts/paper.layout
 %%DATADIR%%/layouts/pdfcomment.module
+%%DATADIR%%/layouts/pdfform.module
 %%DATADIR%%/layouts/powerdot.layout
 %%DATADIR%%/layouts/recipebook.layout
 %%DATADIR%%/layouts/report.layout
@@ -2249,6 +2267,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/scripts/bash_completion
 %%DATADIR%%/scripts/clean_dvi.py
 %%DATADIR%%/scripts/convertDefault.py
+%%DATADIR%%/scripts/convert_pdf.py
 %%DATADIR%%/scripts/csv2lyx.py
 %%DATADIR%%/scripts/date.py
 %%DATADIR%%/scripts/ext_copy.py
@@ -2306,6 +2325,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/templates/g-brief-en.lyx
 %%DATADIR%%/templates/g-brief2.lyx
 %%DATADIR%%/templates/hollywood.lyx
+%%DATADIR%%/templates/ja_beamer-conference-ornate-20min.lyx
 %%DATADIR%%/templates/kluwer.lyx
 %%DATADIR%%/templates/koma-letter2.lyx
 %%DATADIR%%/templates/letter.lyx
