@@ -1,15 +1,6 @@
---- runtime/stream.c.orig	2015-05-19 08:53:40 UTC
+--- runtime/stream.c.orig	2015-06-30 12:26:24 UTC
 +++ runtime/stream.c
-@@ -1063,7 +1063,7 @@ tryTTYRecover(strm_t *pThis, int err)
- {
- 	DEFiRet;
- 	ISOBJ_TYPE_assert(pThis, strm);
--	if(err == ERR_TTYHUP) {
-+	if(err == ERR_TTYHUP || err == ENXIO) {
- 		close(pThis->fd);
- 		CHKiRet(doPhysOpen(pThis));
- 	}
-@@ -1089,12 +1089,30 @@ doWriteCall(strm_t *pThis, uchar *pBuf, 
+@@ -1097,12 +1097,30 @@ doWriteCall(strm_t *pThis, uchar *pBuf, 
  	char *pWriteBuf;
  	DEFiRet;
  	ISOBJ_TYPE_assert(pThis, strm);
