@@ -15,8 +15,8 @@ LICENSE=	GPLv2
 USES=		gmake tar:bzip2
 
 pre-patch:
-		${REINPLACE_CMD} 's/gcc/${CC}/' ${WRKSRC}/Makefile
-		${REINPLACE_CMD} 's/`pkg-config --libs --cflags libusb-1.0`/-lusb/' ${WRKSRC}/Makefile
+		${REINPLACE_CMD} 's|gcc|${CC}|' ${WRKSRC}/Makefile
+		${REINPLACE_CMD} 's|`pkg-config --libs --cflags libusb-1.0`|-lusb|' ${WRKSRC}/Makefile
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/usb_modeswitch ${STAGEDIR}${PREFIX}/sbin
