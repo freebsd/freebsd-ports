@@ -87,7 +87,7 @@ pre-build:
 
 post-install:
 .if ${PYTHON_REL} >= 3000
-	@${PY2TO3_CMD} ${PY2TO3_ARGS} ${STAGEDIR}${WRKSRC}/doc
+	@${PY2TO3_CMD} ${PY2TO3_ARGS} ${WRKSRC}/doc
 .endif
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${AL_PORTDOCS}
