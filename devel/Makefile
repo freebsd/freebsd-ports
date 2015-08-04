@@ -4068,6 +4068,7 @@
     SUBDIR += py-period
     SUBDIR += py-pex
     SUBDIR += py-phabricator
+    SUBDIR += py-phonenumbers
     SUBDIR += py-phpserialize
     SUBDIR += py-pika
     SUBDIR += py-pip
