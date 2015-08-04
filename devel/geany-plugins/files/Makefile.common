@@ -13,7 +13,7 @@ EXTRA_PATCHES=  ${.CURDIR}/../../devel/geany-plugins/files/extrapatch-configure
 
 GNU_CONFIGURE=	yes
 USES+=		gettext-tools gmake libtool pkgconfig tar:bzip2
-USE_GNOME+=	gtk20
+USE_GNOME+=	gtk20 intltool
 
 # geany-plugins-l10n is not a plugin, thus special treatment
 .if ${PORTNAME} == "geany-plugins-l10n"
