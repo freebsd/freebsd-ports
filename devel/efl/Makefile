@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	efl
-PORTVERSION=	1.13.2
+PORTVERSION=	1.15.0
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/libs/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Enlightenment Foundation Libraries
 
 LICENSE=	BSD2CLAUSE LGPL21
@@ -108,12 +108,7 @@ PLIST_SUB+=			AUDIO="@comment "
 
 .if ${PORT_OPTIONS:MSSL}
 USE_OPENSSL=			yes
-. if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1001000
-EXTRA_PATCHES+=			${FILESDIR}/extra-patch-configure.ac
-CONFIGURE_ENV+=			ECORE_CON_CFLAGS="-I${OPENSSLINC} -L${OPENSSLLIB}" ECORE_CON_LIBS="-lssl"
-. else
 WITH_OPENSSL_PORT=		yes
-. endif
 .else
 CONFIGURE_ARGS+=		--with-crypto=none
 .endif

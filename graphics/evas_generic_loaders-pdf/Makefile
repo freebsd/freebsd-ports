@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pdf
-PORTVERSION=	1.13.2
-PORTREVISION=	1
+PORTVERSION=	1.15.0
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/libs/${PKGNAMEPREFIX:S/-//}/
 PKGNAMEPREFIX=	evas_generic_loaders-
