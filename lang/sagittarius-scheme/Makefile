@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sagittarius
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.6
 CATEGORIES=	lang
 MASTER_SITES=	http://distfiles.pirateparty.in/ashish/ \
 		LOCAL/ashish
