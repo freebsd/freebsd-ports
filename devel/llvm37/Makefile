@@ -50,7 +50,7 @@ DOCS_PLIST_FILES=	${MAN1SRCS:S|^|man/man1/|:S|.1$|${LLVM_SUFFIX}.1.gz|}
 LIT_DESC=		Install lit and FileCheck test tools
 LLD_DESC=		Install lld, the LLVM linker
 LLD_DISTFILES=		lld-${DISTVERSION}.src${EXTRACT_SUFX}
-LLDB_DESC=		Install lldb, the LLVM debugger
+LLDB_DESC=		Install lldb, the LLVM debugger (ignored on 9.x)
 LLDB_BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 LLDB_DISTFILES=		lldb-${DISTVERSION}.src${EXTRACT_SUFX}
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
@@ -155,8 +155,9 @@ NOT_FOR_ARCH=	ia64
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 900000
-BROKEN=	GCC failing on 8.x
+.if ${COMPILER_TYPE} != clang
+# Evil hack around gcc48 not providing a usable c++11 environment on 9.x
+PLIST_SUB:=	${PLIST_SUB:NLLDB=*} LLDB="@comment "
 .endif
 
 post-extract-CLANG-on:
@@ -166,7 +167,9 @@ post-extract-LLD-on:
 	${MV} ${WRKSRC_lld} ${PATCH_WRKSRC}/tools/lld
 
 post-extract-LLDB-on:
+.if ${COMPILER_TYPE} == clang
 	${MV} ${WRKSRC_lldb} ${PATCH_WRKSRC}/tools/lldb
+.endif
 
 post-extract-OPENMP-on:
 	${MV} ${WRKSRC_openmp} ${PATCH_WRKSRC}/tools/openmp
@@ -200,7 +203,9 @@ post-install-DOCS-on:
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/
 
 post-install-LLDB-on:
+.if ${COMPILER_TYPE} == clang
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/lib/python*/site-packages/lib
+.endif
 
 post-install-CLANG-on:
 	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/clang \
