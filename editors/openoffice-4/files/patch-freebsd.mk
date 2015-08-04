@@ -1,4 +1,4 @@
---- solenv/gbuild/platform/freebsd.mk.orig	2014-09-19 18:16:41 UTC
+--- solenv/gbuild/platform/freebsd.mk.orig	2014-02-25 08:33:29 UTC
 +++ solenv/gbuild/platform/freebsd.mk
 @@ -96,6 +96,7 @@ gb_CXXFLAGS := \
  	-fvisibility-inlines-hidden \
