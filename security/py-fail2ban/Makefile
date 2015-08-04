@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fail2ban
-PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTVERSION=	0.9.3
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,6 +9,7 @@ MAINTAINER=	theis@gmx.at
 COMMENT=	Scans log files and bans IP that makes too many password failures
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 
