@@ -5,7 +5,6 @@ PORTVERSION=	1.4.12
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	GH
 
 MAINTAINER=	sue@iwmt.org
 COMMENT=	Encoder/decoder library for DEC SIXEL graphics
