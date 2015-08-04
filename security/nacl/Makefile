@@ -23,9 +23,9 @@ HOSTNAME_CMD?=	/bin/hostname -s
 MYARCH=		${ARCH:S/i386/x86/:S/powerpc/ppc/}
 
 post-patch:
-	@${REINPLACE_CMD} -i -e "s/$$/ -fPIC/" ${WRKSRC}/okcompilers/c
-	@${REINPLACE_CMD} -i -e "s/gcc/${CC}/" ${WRKSRC}/okcompilers/c
-	@${REINPLACE_CMD} -i -e "s/c++/${CXX}/" ${WRKSRC}/okcompilers/cpp
+	@${REINPLACE_CMD} -i -e "s|$$| -fPIC|" ${WRKSRC}/okcompilers/c
+	@${REINPLACE_CMD} -i -e "s|gcc|${CC}|" ${WRKSRC}/okcompilers/c
+	@${REINPLACE_CMD} -i -e "s|c++|${CXX}|" ${WRKSRC}/okcompilers/cpp
 
 pre-build:
 	${RM} -rf ${WRKSRC}/crypto_onetimeauth/poly1305/amd64
