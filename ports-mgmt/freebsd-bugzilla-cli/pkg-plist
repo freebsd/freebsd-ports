@@ -2,6 +2,7 @@
 %%DATADIR%%/_version.sh
 %%DATADIR%%/close.sh
 %%DATADIR%%/comment.sh
+%%DATADIR%%/edit.sh
 %%DATADIR%%/get.sh
 %%DATADIR%%/help.sh
 %%DATADIR%%/init.sh
@@ -17,6 +18,7 @@
 %%DATADIR%%/version.sh
 %%PYBUGZ%%%%DATADIR%%/pybugz/comment.sh
 %%PYBUGZ%%%%DATADIR%%/pybugz/close.sh
+%%PYBUGZ%%%%DATADIR%%/pybugz/edit.sh
 %%PYBUGZ%%%%DATADIR%%/pybugz/get.sh
 %%PYBUGZ%%%%DATADIR%%/pybugz/init.sh
 %%PYBUGZ%%%%DATADIR%%/pybugz/inprog.sh
