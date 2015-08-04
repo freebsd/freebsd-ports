@@ -2,6 +2,7 @@
 
 PORTNAME=	libmusicbrainz
 PORTVERSION=	5.1.0
+DISTVERSIONPREFIX=	release-
 CATEGORIES=	audio
 PKGNAMESUFFIX=	5
 
@@ -18,7 +19,6 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	metabrainz
-GH_TAGNAME=	release-${PORTVERSION}
 
 post-patch:
 	${REINPLACE_CMD} -e '/pkgconfig/s|$${LIB_INSTALL_DIR}|libdata|' \
