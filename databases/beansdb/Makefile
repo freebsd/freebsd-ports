@@ -5,7 +5,6 @@ PORTNAME=	beansdb
 PORTVERSION=	0.6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
-MASTER_SITES=	GH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another distributed key-value storage system from Douban Inc
