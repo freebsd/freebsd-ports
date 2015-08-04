@@ -826,6 +826,7 @@
     SUBDIR += rubygem-activemodel4
     SUBDIR += rubygem-activemodel41
     SUBDIR += rubygem-activerecord
+    SUBDIR += rubygem-activerecord41
     SUBDIR += rubygem-activerecord-jdbc-adapter
     SUBDIR += rubygem-activerecord-jdbcmysql-adapter
     SUBDIR += rubygem-activerecord-mysql-adapter
