@@ -4,7 +4,6 @@
 PORTNAME=	librdkafka
 PORTVERSION=	0.8.6
 CATEGORIES=	net
-DISTNAME=	${GH_ACCOUNT}-${PORTNAME}-${PORTVERSION}-${GH_TAGNAME}
 
 MAINTAINER=	xnasx@yandex.ru
 COMMENT=	Apache Kafka C/C++ library

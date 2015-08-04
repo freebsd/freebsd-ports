@@ -3,6 +3,7 @@
 
 PORTNAME=	lmdb
 PORTVERSION=	0.9.15
+DISTVERSIONPREFIX=	${PORTNAME:tu}_
 CATEGORIES=	databases
 
 MAINTAINER=	delphij@FreeBSD.org
@@ -24,7 +25,6 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tu}
-GH_TAGNAME=	${PORTNAME:tu}_${PORTVERSION}
 
 MDB_APPS=	copy dump load stat
 
