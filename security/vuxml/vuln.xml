@@ -58,6 +58,38 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="da451130-365d-11e5-a4a5-002590263bf5">
+    <topic>xen-tools -- QEMU heap overflow flaw with certain ATAPI commands</topic>
+    <affects>
+      <package>
+	<name>xen-tools</name>
+	<range><lt>4.5.0_9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-138.html">
+	  <p>A heap overflow flaw was found in the way QEMU's IDE subsystem
+	    handled I/O buffer access while processing certain ATAPI
+	    commands.</p>
+	  <p>A privileged guest user in a guest with CDROM drive enabled could
+	    potentially use this flaw to execute arbitrary code on the host
+	    with the privileges of the host's QEMU process corresponding to
+	    the guest.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5154</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-138.html</url>
+    </references>
+    <dates>
+      <discovery>2015-07-27</discovery>
+      <entry>2015-08-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4622635f-37a1-11e5-9970-14dae9d210b8">
     <topic>net-snmp -- snmptrapd crash</topic>
     <affects>
