@@ -1,0 +1,20 @@
+# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	whoseip
+PORTVERSION=	1.00
+CATEGORIES=	dns
+MASTER_SITES=	ftp://download.gnu.org.ua/pub/release/dnstools/
+
+MAINTAINER=	danfe@FreeBSD.org
+COMMENT=	Get information about IP addresses: country code and network
+
+LICENSE=	GPLv3
+
+RUN_DEPENDS=	p5-Net-CIDR>0:${PORTSDIR}/net-mgmt/p5-Net-CIDR \
+		p5-Data-UUID>0:${PORTSDIR}/devel/p5-Data-UUID
+
+USES=		perl5
+USE_PERL5=	configure
+
+.include <bsd.port.mk>

@@ -188,6 +188,7 @@
     SUBDIR += vizone
     SUBDIR += walker
     SUBDIR += wdns
+    SUBDIR += whoseip
     SUBDIR += wrapsrv
     SUBDIR += yadifa
     SUBDIR += zkt
