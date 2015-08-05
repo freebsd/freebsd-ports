@@ -1,12 +1,15 @@
---- svtools/Library_svt.mk.orig	2014-02-25 00:28:36.000000000 -0800
-+++ svtools/Library_svt.mk	2014-08-04 21:40:00.000000000 -0700
-@@ -76,6 +76,9 @@
+--- svtools/Library_svt.mk.orig	2014-09-19 17:47:52 UTC
++++ svtools/Library_svt.mk
+@@ -76,6 +76,12 @@ $(eval $(call gb_Library_add_linked_libs
  $(eval $(call gb_Library_set_ldflags,svt,\
  	$$(filter-out -L/usr/lib/jvm%,$$(LDFLAGS)) \
  ))
++ifeq ($(OS),FREEBSD)
++# JDK jpeg library on FreeBSD lives under ${JAVA_HOME}/jre/lib/${ARCH}/
 +$(eval $(call gb_Library_set_ldflags,svt,\
-+	$$(shell echo $$(LDFLAGS) | sed 's/ -L[^ ]*\/jre\/lib\/[^ ]*//g') \
++	$$(filter-out -L$$(JAVA_HOME)/jre/lib/%,$$(LDFLAGS)) \
 +))
++endif
  ifeq ($(GUIBASE),os2)
  # YD FIXME above is not working... needs ldflags hack...
  $(eval $(call gb_Library_set_ldflags,svt,\

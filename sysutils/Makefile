@@ -473,7 +473,6 @@
     SUBDIR += libsunacl
     SUBDIR += liburcu
     SUBDIR += libutempter
-    SUBDIR += libzeitgeist
     SUBDIR += life-preserver
     SUBDIR += lineak-defaultplugin
     SUBDIR += lineak-xosdplugin
@@ -926,7 +925,7 @@
     SUBDIR += sleuthkit
     SUBDIR += sloth
     SUBDIR += slst
-    SUBDIR += slurm-hpc
+    SUBDIR += slurm-wlm
     SUBDIR += smartmontools
     SUBDIR += smp_utils
     SUBDIR += snap
@@ -1046,7 +1045,6 @@
     SUBDIR += vagrant
     SUBDIR += vbetool
     SUBDIR += vcp
-    SUBDIR += vhdtool
     SUBDIR += videogen
     SUBDIR += vii
     SUBDIR += vils

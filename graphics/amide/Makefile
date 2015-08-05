@@ -17,7 +17,7 @@ GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
 MAKE_JOBS_UNSAFE=	yes
 USES=		gettext gmake pkgconfig tar:tgz
-USE_GNOME=	gtk20 libgnomecanvas libgnomeui libxml2 gnomedocutils
+USE_GNOME=	gtk20 intltool libgnomecanvas libgnomeui libxml2 gnomedocutils
 INSTALLS_OMF=	yes
 
 OPTIONS_DEFINE=	CODEC DCMTK GSL NLS VOLPACK XMEDCON

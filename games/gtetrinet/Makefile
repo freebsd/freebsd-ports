@@ -15,7 +15,7 @@ LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		pathfix gettext gmake pkgconfig tar:bzip2
-USE_GNOME=	esound gnomeprefix libgnomeui
+USE_GNOME=	esound gnomeprefix intltool libgnomeui
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

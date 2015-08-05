@@ -1,0 +1,43 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: aprsd
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf
+# aprsd_enable="YES"
+# aprsd_root="YES" or aprsd_root="NO"
+
+. /etc/rc.subr
+
+name=aprsd
+rcvar=aprsd_enable
+load_rc_config $name
+
+: ${aprsd_enable=NO}
+: ${aprsd_root=NO}
+: ${aprsd_user=%%APRSD_RC_USER%%}
+: ${aprsd_group=%%APRSD_RC_GROUP%%}
+
+command=%%LOCALBASE%%/bin/aprsd
+start_precmd=aprsd_pre
+stop_cmd=aprsd_stop
+pidfile=/var/run/aprsd.pid
+
+aprsd_pre()
+{
+	if [ ${aprsd_root} != "YES" ]; then
+		echo "Starting aprs server as user ${APRSD_RC_USER}:${APRSD_RC_GROUP}."
+		install -o ${APRSD_RC_USER} -g ${APRSD_RC_GROUP} /dev/null ${pidfile}
+		chown -R ${APRSD_RC_USER}:${APRSD_RC_GROUP} /var/log/aprsd
+	else   
+		echo "Starting aprs server as root."
+		install -o root -g wheel /dev/null ${pidfile}
+                chown -R root:wheel /var/log/aprsd
+	fi
+	return 0
+}
+
+run_rc_command "$1"

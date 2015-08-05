@@ -25,7 +25,6 @@ CMAKE_ARGS=	-DWITH_PYTHON_INSTALL:BOOL=OFF \
 		-DWITH_PYTHON_INSTALL_NUMPY:BOOL=OFF \
 		-DWITH_INSTALL_PORTABLE:BOOL=FALSE
 
-python_CMD=	${PYTHON_CMD}
 SHEBANG_FILES=	release/bin/blender-thumbnailer.py \
 		release/scripts/modules/bl_i18n_utils/merge_po.py \
 		release/scripts/modules/bl_i18n_utils/utils_rtl.py \

@@ -29,6 +29,8 @@ share/locale/fa/LC_MESSAGES/nautilus-sendto.mo
 share/locale/fi/LC_MESSAGES/nautilus-sendto.mo
 share/locale/fr/LC_MESSAGES/nautilus-sendto.mo
 share/locale/fur/LC_MESSAGES/nautilus-sendto.mo
+share/locale/ga/LC_MESSAGES/nautilus-sendto.mo
+share/locale/gd/LC_MESSAGES/nautilus-sendto.mo
 share/locale/gl/LC_MESSAGES/nautilus-sendto.mo
 share/locale/gu/LC_MESSAGES/nautilus-sendto.mo
 share/locale/he/LC_MESSAGES/nautilus-sendto.mo
@@ -39,6 +41,7 @@ share/locale/it/LC_MESSAGES/nautilus-sendto.mo
 share/locale/ja/LC_MESSAGES/nautilus-sendto.mo
 share/locale/ka/LC_MESSAGES/nautilus-sendto.mo
 share/locale/kg/LC_MESSAGES/nautilus-sendto.mo
+share/locale/kk/LC_MESSAGES/nautilus-sendto.mo
 share/locale/km/LC_MESSAGES/nautilus-sendto.mo
 share/locale/kn/LC_MESSAGES/nautilus-sendto.mo
 share/locale/ko/LC_MESSAGES/nautilus-sendto.mo
@@ -79,7 +82,3 @@ share/locale/vi/LC_MESSAGES/nautilus-sendto.mo
 share/locale/zh_CN/LC_MESSAGES/nautilus-sendto.mo
 share/locale/zh_HK/LC_MESSAGES/nautilus-sendto.mo
 share/locale/zh_TW/LC_MESSAGES/nautilus-sendto.mo
-@dirrmtry share/locale/kg/LC_MESSAGES
-@dirrmtry share/locale/kg
-@dirrmtry share/locale/fur/LC_MESSAGES
-@dirrmtry share/locale/fur

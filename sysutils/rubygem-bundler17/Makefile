@@ -13,6 +13,9 @@ COMMENT=	Tool that manages gem dependencies for ruby applications
 
 LICENSE=	MIT
 
+DEPRECATED=	not used by other ports anymore
+EXPIRATION_DATE=	2015-08-12
+
 PORTSCOUT=	limit:^1\.7\.[0-9]*
 
 NO_ARCH=	yes

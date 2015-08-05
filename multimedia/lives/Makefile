@@ -47,7 +47,7 @@ SHEBANG_FILES=	build-lives-rfx-plugin build-lives-rfx-plugin-multi \
 		smogrify tools/autolives.pl
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
-USE_GNOME=	gtk30
+USE_GNOME=	gtk30 intltool
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--disable-ldvgrab

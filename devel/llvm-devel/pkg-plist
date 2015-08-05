@@ -2403,7 +2403,7 @@ llvm-devel/share/llvm/cmake/HandleLLVMStdlib.cmake
 llvm-devel/share/llvm/cmake/LLVM-Config.cmake
 llvm-devel/share/llvm/cmake/LLVMConfig.cmake
 llvm-devel/share/llvm/cmake/LLVMConfigVersion.cmake
-llvm-devel/share/llvm/cmake/LLVMExports-release.cmake
+llvm-devel/share/llvm/cmake/LLVMExports-%%CMAKE_BUILD_TYPE%%.cmake
 llvm-devel/share/llvm/cmake/LLVMExports.cmake
 llvm-devel/share/llvm/cmake/LLVMProcessSources.cmake
 llvm-devel/share/llvm/cmake/TableGen.cmake

@@ -1,9 +1,8 @@
-# Created by: Gustau Perez <gustau.perez@gmail.com>
+# Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#    $MCom: ports/branches/GNOME_3_12/deskutils/nautilus-sendto/Makefile 19571 2014-04-25 18:12:46Z kwm $
 
 PORTNAME=	nautilus-sendto
-PORTVERSION=	3.8.0
+PORTVERSION=	3.8.2
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -16,6 +15,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -Wno-error=format-nonliteral
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

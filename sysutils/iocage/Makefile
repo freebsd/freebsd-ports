@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	iocage
-PORTVERSION=	1.6.2
+PORTVERSION=	1.7.1
+DISTVERSIONPREFIX=v
 CATEGORIES=	sysutils
 
 MAINTAINER=	robak@FreeBSD.org
@@ -12,8 +13,6 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	pannon
-GH_TAGNAME=	5a228b0
 
 .include <bsd.port.pre.mk>
 

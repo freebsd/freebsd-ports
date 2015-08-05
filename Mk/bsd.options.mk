@@ -105,9 +105,10 @@
 #
 # For each of:
 # ALL_TARGET CATEGORIES CFLAGS CONFIGURE_ENV CONFLICTS CONFLICTS_BUILD
-# CONFLICTS_INSTALL CPPFLAGS CXXFLAGS DISTFILES EXTRA_PATCHES INFO
-# INSTALL_TARGET LDFLAGS LIBS MAKE_ARGS MAKE_ENV PATCHFILES PATCH_SITES
-# PLIST_DIRS PLIST_DIRSTRY PLIST_FILES PLIST_SUB SUB_FILES SUB_LIST USES,
+# CONFLICTS_INSTALL CPPFLAGS CXXFLAGS DISTFILES EXTRA_PATCHES GH_ACCOUNT
+# GH_PROJECT GH_TAGNAME INFO INSTALL_TARGET LDFLAGS LIBS MAKE_ARGS MAKE_ENV
+# PATCHFILES PATCH_SITES PLIST_DIRS PLIST_DIRSTRY PLIST_FILES PLIST_SUB
+# PORTDOCS SUB_FILES SUB_LIST USES,
 # defining ${opt}_${variable} will add its content to the actual variable when
 # the option is enabled.  Defining ${opt}_${variable}_OFF will add its content
 # to the actual variable when the option is disabled.
@@ -129,11 +130,12 @@ OPTIONS_NAME?=	${PKGORIGIN:S/\//_/}
 OPTIONSFILE?=	${PORT_DBDIR}/${UNIQUENAME}/options
 OPTIONS_FILE?=	${PORT_DBDIR}/${OPTIONS_NAME}/options
 
-_OPTIONS_FLAGS= ALL_TARGET CATEGORIES CFLAGS CONFIGURE_ENV CONFLICTS \
+_OPTIONS_FLAGS=	ALL_TARGET CATEGORIES CFLAGS CONFIGURE_ENV CONFLICTS \
 		CONFLICTS_BUILD CONFLICTS_INSTALL CPPFLAGS CXXFLAGS DISTFILES \
-		EXTRA_PATCHES INFO INSTALL_TARGET LDFLAGS LIBS MAKE_ARGS \
-		MAKE_ENV PATCHFILES PATCH_SITES PLIST_DIRS PLIST_DIRSTRY \
-		PLIST_FILES PLIST_SUB SUB_FILES SUB_LIST USES
+		EXTRA_PATCHES GH_ACCOUNT GH_PROJECT GH_TAGNAME INFO \
+		INSTALL_TARGET LDFLAGS LIBS MAKE_ARGS MAKE_ENV PATCHFILES \
+		PATCH_SITES PLIST_DIRS PLIST_DIRSTRY PLIST_FILES PLIST_SUB \
+		PORTDOCS SUB_FILES SUB_LIST USES
 _OPTIONS_DEPENDS=	PKG FETCH EXTRACT PATCH BUILD LIB RUN
 _OPTIONS_TARGETS=	fetch extract patch configure build install package stage
 
@@ -281,12 +283,12 @@ NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 # XXX once WITH_DEBUG is not magic any more, do remove the :NDEBUG from here.
 .for opt in ${ALL_OPTIONS:NDEBUG}
 .if defined(WITH_${opt})
-OPTIONS_WARNINGS+= "WITH_${opt}"
+OPTIONS_WARNINGS+=	"WITH_${opt}"
 OPTIONS_WARNINGS_SET+=	${opt}
 PORT_OPTIONS+=	${opt}
 .endif
 .if defined(WITHOUT_${opt})
-OPTIONS_WARNINGS+= "WITHOUT_${opt}"
+OPTIONS_WARNINGS+=	"WITHOUT_${opt}"
 OPTIONS_WARNINGS_UNSET+=	${opt}
 PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
 .endif
@@ -472,7 +474,7 @@ ${deptype}_DEPENDS+=	${${opt}_${deptype}_DEPENDS}
 .    endfor
 .    for target in ${_OPTIONS_TARGETS}
 .      for prepost in pre post
-_OPTIONS_${prepost}_${target}+= ${prepost}-${target}-${opt}-on
+_OPTIONS_${prepost}_${target}+=	${prepost}-${target}-${opt}-on
 .      endfor
 .    endfor
 .  else
@@ -509,7 +511,7 @@ ${deptype}_DEPENDS+=	${${opt}_${deptype}_DEPENDS_OFF}
 .    endfor
 .    for target in ${_OPTIONS_TARGETS}
 .      for prepost in pre post
-_OPTIONS_${prepost}_${target}+= ${prepost}-${target}-${opt}-off
+_OPTIONS_${prepost}_${target}+=	${prepost}-${target}-${opt}-off
 .      endfor
 .    endfor
 .  endif

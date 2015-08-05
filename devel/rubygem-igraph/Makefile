@@ -14,6 +14,8 @@ LICENSE=	LGPL21
 BUILD_DEPENDS=	${LOCALBASE}/include/igraph/igraph.h:${PORTSDIR}/math/igraph
 
 BROKEN=		does not build with igraph-0.7.1
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-08-31
 
 CONFIGURE_ARGS=	--with-igraph-include=${LOCALBASE}/include/igraph \
 		--without-igraph-lib=${LOCALBASE}/lib

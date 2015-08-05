@@ -2,7 +2,7 @@
 
 PORTNAME=	link-grammar
 PORTVERSION=	4.7.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.abisource.com/downloads/${PORTNAME}/${PORTVERSION}/
 

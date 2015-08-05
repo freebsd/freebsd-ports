@@ -5,7 +5,6 @@ PORTNAME=	torsocks
 PORTVERSION=	2.0.0
 CATEGORIES=	net security
 MASTER_SITES=	GH
-DISTNAME=	${GH_ACCOUNT}-${PORTNAME}-${GH_TAGNAME}
 
 MAINTAINER=	yuri@rawbw.com
 COMMENT=	Easy way to make any app work through Tor

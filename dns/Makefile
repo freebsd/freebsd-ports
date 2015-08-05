@@ -185,9 +185,11 @@
     SUBDIR += unbound
     SUBDIR += updatedd
     SUBDIR += validns
+    SUBDIR += vhostcname
     SUBDIR += vizone
     SUBDIR += walker
     SUBDIR += wdns
+    SUBDIR += whoseip
     SUBDIR += wrapsrv
     SUBDIR += yadifa
     SUBDIR += zkt

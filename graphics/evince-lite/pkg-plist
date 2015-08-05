@@ -130,6 +130,7 @@ share/applications/evince.desktop
 %%DATADIR%%/icons/hicolor/48x48/actions/view-page-facing.png
 %%DATADIR%%/icons/hicolor/scalable/actions/object-rotate-left.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/object-rotate-right.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/evince-symbolic.svg
 %%DATADIR%%/icons/hicolor/scalable/mimetypes/x-office-presentation.svg
 share/gtk-doc/html/evince/EggFindBar.html
 share/gtk-doc/html/evince/EvFileMonitor.html
@@ -320,6 +321,7 @@ share/help/C/evince/print-2sided.page
 share/help/C/evince/print-booklet.page
 share/help/C/evince/print-differentsize.page
 share/help/C/evince/print-order.page
+share/help/C/evince/print-pagescaling.page
 share/help/C/evince/print-select.page
 share/help/C/evince/printing.page
 share/help/C/evince/reload.page
@@ -401,6 +403,7 @@ share/help/bg/evince/print-2sided.page
 share/help/bg/evince/print-booklet.page
 share/help/bg/evince/print-differentsize.page
 share/help/bg/evince/print-order.page
+share/help/bg/evince/print-pagescaling.page
 share/help/bg/evince/print-select.page
 share/help/bg/evince/printing.page
 share/help/bg/evince/reload.page
@@ -482,6 +485,7 @@ share/help/ca/evince/print-2sided.page
 share/help/ca/evince/print-booklet.page
 share/help/ca/evince/print-differentsize.page
 share/help/ca/evince/print-order.page
+share/help/ca/evince/print-pagescaling.page
 share/help/ca/evince/print-select.page
 share/help/ca/evince/printing.page
 share/help/ca/evince/reload.page
@@ -563,6 +567,7 @@ share/help/cs/evince/print-2sided.page
 share/help/cs/evince/print-booklet.page
 share/help/cs/evince/print-differentsize.page
 share/help/cs/evince/print-order.page
+share/help/cs/evince/print-pagescaling.page
 share/help/cs/evince/print-select.page
 share/help/cs/evince/printing.page
 share/help/cs/evince/reload.page
@@ -644,6 +649,7 @@ share/help/da/evince/print-2sided.page
 share/help/da/evince/print-booklet.page
 share/help/da/evince/print-differentsize.page
 share/help/da/evince/print-order.page
+share/help/da/evince/print-pagescaling.page
 share/help/da/evince/print-select.page
 share/help/da/evince/printing.page
 share/help/da/evince/reload.page
@@ -725,6 +731,7 @@ share/help/de/evince/print-2sided.page
 share/help/de/evince/print-booklet.page
 share/help/de/evince/print-differentsize.page
 share/help/de/evince/print-order.page
+share/help/de/evince/print-pagescaling.page
 share/help/de/evince/print-select.page
 share/help/de/evince/printing.page
 share/help/de/evince/reload.page
@@ -806,6 +813,7 @@ share/help/el/evince/print-2sided.page
 share/help/el/evince/print-booklet.page
 share/help/el/evince/print-differentsize.page
 share/help/el/evince/print-order.page
+share/help/el/evince/print-pagescaling.page
 share/help/el/evince/print-select.page
 share/help/el/evince/printing.page
 share/help/el/evince/reload.page
@@ -887,6 +895,7 @@ share/help/en_GB/evince/print-2sided.page
 share/help/en_GB/evince/print-booklet.page
 share/help/en_GB/evince/print-differentsize.page
 share/help/en_GB/evince/print-order.page
+share/help/en_GB/evince/print-pagescaling.page
 share/help/en_GB/evince/print-select.page
 share/help/en_GB/evince/printing.page
 share/help/en_GB/evince/reload.page
@@ -968,6 +977,7 @@ share/help/es/evince/print-2sided.page
 share/help/es/evince/print-booklet.page
 share/help/es/evince/print-differentsize.page
 share/help/es/evince/print-order.page
+share/help/es/evince/print-pagescaling.page
 share/help/es/evince/print-select.page
 share/help/es/evince/printing.page
 share/help/es/evince/reload.page
@@ -1049,6 +1059,7 @@ share/help/eu/evince/print-2sided.page
 share/help/eu/evince/print-booklet.page
 share/help/eu/evince/print-differentsize.page
 share/help/eu/evince/print-order.page
+share/help/eu/evince/print-pagescaling.page
 share/help/eu/evince/print-select.page
 share/help/eu/evince/printing.page
 share/help/eu/evince/reload.page
@@ -1130,6 +1141,7 @@ share/help/fi/evince/print-2sided.page
 share/help/fi/evince/print-booklet.page
 share/help/fi/evince/print-differentsize.page
 share/help/fi/evince/print-order.page
+share/help/fi/evince/print-pagescaling.page
 share/help/fi/evince/print-select.page
 share/help/fi/evince/printing.page
 share/help/fi/evince/reload.page
@@ -1211,6 +1223,7 @@ share/help/fr/evince/print-2sided.page
 share/help/fr/evince/print-booklet.page
 share/help/fr/evince/print-differentsize.page
 share/help/fr/evince/print-order.page
+share/help/fr/evince/print-pagescaling.page
 share/help/fr/evince/print-select.page
 share/help/fr/evince/printing.page
 share/help/fr/evince/reload.page
@@ -1292,6 +1305,7 @@ share/help/gl/evince/print-2sided.page
 share/help/gl/evince/print-booklet.page
 share/help/gl/evince/print-differentsize.page
 share/help/gl/evince/print-order.page
+share/help/gl/evince/print-pagescaling.page
 share/help/gl/evince/print-select.page
 share/help/gl/evince/printing.page
 share/help/gl/evince/reload.page
@@ -1373,6 +1387,7 @@ share/help/hu/evince/print-2sided.page
 share/help/hu/evince/print-booklet.page
 share/help/hu/evince/print-differentsize.page
 share/help/hu/evince/print-order.page
+share/help/hu/evince/print-pagescaling.page
 share/help/hu/evince/print-select.page
 share/help/hu/evince/printing.page
 share/help/hu/evince/reload.page
@@ -1454,6 +1469,7 @@ share/help/id/evince/print-2sided.page
 share/help/id/evince/print-booklet.page
 share/help/id/evince/print-differentsize.page
 share/help/id/evince/print-order.page
+share/help/id/evince/print-pagescaling.page
 share/help/id/evince/print-select.page
 share/help/id/evince/printing.page
 share/help/id/evince/reload.page
@@ -1535,6 +1551,7 @@ share/help/it/evince/print-2sided.page
 share/help/it/evince/print-booklet.page
 share/help/it/evince/print-differentsize.page
 share/help/it/evince/print-order.page
+share/help/it/evince/print-pagescaling.page
 share/help/it/evince/print-select.page
 share/help/it/evince/printing.page
 share/help/it/evince/reload.page
@@ -1616,6 +1633,7 @@ share/help/ja/evince/print-2sided.page
 share/help/ja/evince/print-booklet.page
 share/help/ja/evince/print-differentsize.page
 share/help/ja/evince/print-order.page
+share/help/ja/evince/print-pagescaling.page
 share/help/ja/evince/print-select.page
 share/help/ja/evince/printing.page
 share/help/ja/evince/reload.page
@@ -1697,6 +1715,7 @@ share/help/ko/evince/print-2sided.page
 share/help/ko/evince/print-booklet.page
 share/help/ko/evince/print-differentsize.page
 share/help/ko/evince/print-order.page
+share/help/ko/evince/print-pagescaling.page
 share/help/ko/evince/print-select.page
 share/help/ko/evince/printing.page
 share/help/ko/evince/reload.page
@@ -1778,6 +1797,7 @@ share/help/lv/evince/print-2sided.page
 share/help/lv/evince/print-booklet.page
 share/help/lv/evince/print-differentsize.page
 share/help/lv/evince/print-order.page
+share/help/lv/evince/print-pagescaling.page
 share/help/lv/evince/print-select.page
 share/help/lv/evince/printing.page
 share/help/lv/evince/reload.page
@@ -1859,6 +1879,7 @@ share/help/nl/evince/print-2sided.page
 share/help/nl/evince/print-booklet.page
 share/help/nl/evince/print-differentsize.page
 share/help/nl/evince/print-order.page
+share/help/nl/evince/print-pagescaling.page
 share/help/nl/evince/print-select.page
 share/help/nl/evince/printing.page
 share/help/nl/evince/reload.page
@@ -1940,6 +1961,7 @@ share/help/oc/evince/print-2sided.page
 share/help/oc/evince/print-booklet.page
 share/help/oc/evince/print-differentsize.page
 share/help/oc/evince/print-order.page
+share/help/oc/evince/print-pagescaling.page
 share/help/oc/evince/print-select.page
 share/help/oc/evince/printing.page
 share/help/oc/evince/reload.page
@@ -2021,6 +2043,7 @@ share/help/pt_BR/evince/print-2sided.page
 share/help/pt_BR/evince/print-booklet.page
 share/help/pt_BR/evince/print-differentsize.page
 share/help/pt_BR/evince/print-order.page
+share/help/pt_BR/evince/print-pagescaling.page
 share/help/pt_BR/evince/print-select.page
 share/help/pt_BR/evince/printing.page
 share/help/pt_BR/evince/reload.page
@@ -2102,6 +2125,7 @@ share/help/ru/evince/print-2sided.page
 share/help/ru/evince/print-booklet.page
 share/help/ru/evince/print-differentsize.page
 share/help/ru/evince/print-order.page
+share/help/ru/evince/print-pagescaling.page
 share/help/ru/evince/print-select.page
 share/help/ru/evince/printing.page
 share/help/ru/evince/reload.page
@@ -2183,6 +2207,7 @@ share/help/sl/evince/print-2sided.page
 share/help/sl/evince/print-booklet.page
 share/help/sl/evince/print-differentsize.page
 share/help/sl/evince/print-order.page
+share/help/sl/evince/print-pagescaling.page
 share/help/sl/evince/print-select.page
 share/help/sl/evince/printing.page
 share/help/sl/evince/reload.page
@@ -2264,6 +2289,7 @@ share/help/sr/evince/print-2sided.page
 share/help/sr/evince/print-booklet.page
 share/help/sr/evince/print-differentsize.page
 share/help/sr/evince/print-order.page
+share/help/sr/evince/print-pagescaling.page
 share/help/sr/evince/print-select.page
 share/help/sr/evince/printing.page
 share/help/sr/evince/reload.page
@@ -2345,6 +2371,7 @@ share/help/sv/evince/print-2sided.page
 share/help/sv/evince/print-booklet.page
 share/help/sv/evince/print-differentsize.page
 share/help/sv/evince/print-order.page
+share/help/sv/evince/print-pagescaling.page
 share/help/sv/evince/print-select.page
 share/help/sv/evince/printing.page
 share/help/sv/evince/reload.page
@@ -2426,6 +2453,7 @@ share/help/te/evince/print-2sided.page
 share/help/te/evince/print-booklet.page
 share/help/te/evince/print-differentsize.page
 share/help/te/evince/print-order.page
+share/help/te/evince/print-pagescaling.page
 share/help/te/evince/print-select.page
 share/help/te/evince/printing.page
 share/help/te/evince/reload.page
@@ -2507,6 +2535,7 @@ share/help/uk/evince/print-2sided.page
 share/help/uk/evince/print-booklet.page
 share/help/uk/evince/print-differentsize.page
 share/help/uk/evince/print-order.page
+share/help/uk/evince/print-pagescaling.page
 share/help/uk/evince/print-select.page
 share/help/uk/evince/printing.page
 share/help/uk/evince/reload.page
@@ -2588,6 +2617,7 @@ share/help/vi/evince/print-2sided.page
 share/help/vi/evince/print-booklet.page
 share/help/vi/evince/print-differentsize.page
 share/help/vi/evince/print-order.page
+share/help/vi/evince/print-pagescaling.page
 share/help/vi/evince/print-select.page
 share/help/vi/evince/printing.page
 share/help/vi/evince/reload.page
@@ -2669,6 +2699,7 @@ share/help/zh_CN/evince/print-2sided.page
 share/help/zh_CN/evince/print-booklet.page
 share/help/zh_CN/evince/print-differentsize.page
 share/help/zh_CN/evince/print-order.page
+share/help/zh_CN/evince/print-pagescaling.page
 share/help/zh_CN/evince/print-select.page
 share/help/zh_CN/evince/printing.page
 share/help/zh_CN/evince/reload.page
@@ -2750,6 +2781,7 @@ share/help/zh_HK/evince/print-2sided.page
 share/help/zh_HK/evince/print-booklet.page
 share/help/zh_HK/evince/print-differentsize.page
 share/help/zh_HK/evince/print-order.page
+share/help/zh_HK/evince/print-pagescaling.page
 share/help/zh_HK/evince/print-select.page
 share/help/zh_HK/evince/printing.page
 share/help/zh_HK/evince/reload.page
@@ -2831,6 +2863,7 @@ share/help/zh_TW/evince/print-2sided.page
 share/help/zh_TW/evince/print-booklet.page
 share/help/zh_TW/evince/print-differentsize.page
 share/help/zh_TW/evince/print-order.page
+share/help/zh_TW/evince/print-pagescaling.page
 share/help/zh_TW/evince/print-select.page
 share/help/zh_TW/evince/printing.page
 share/help/zh_TW/evince/reload.page
@@ -2866,6 +2899,7 @@ share/locale/bg/LC_MESSAGES/evince.mo
 share/locale/bn/LC_MESSAGES/evince.mo
 share/locale/bn_IN/LC_MESSAGES/evince.mo
 share/locale/br/LC_MESSAGES/evince.mo
+share/locale/bs/LC_MESSAGES/evince.mo
 share/locale/ca/LC_MESSAGES/evince.mo
 share/locale/ca@valencia/LC_MESSAGES/evince.mo
 share/locale/cs/LC_MESSAGES/evince.mo
@@ -2893,6 +2927,7 @@ share/locale/he/LC_MESSAGES/evince.mo
 share/locale/hi/LC_MESSAGES/evince.mo
 share/locale/hu/LC_MESSAGES/evince.mo
 share/locale/id/LC_MESSAGES/evince.mo
+share/locale/is/LC_MESSAGES/evince.mo
 share/locale/it/LC_MESSAGES/evince.mo
 share/locale/ja/LC_MESSAGES/evince.mo
 share/locale/ka/LC_MESSAGES/evince.mo

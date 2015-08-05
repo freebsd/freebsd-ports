@@ -18,7 +18,7 @@ RUN_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme
 
 USES=		desktop-file-utils gmake libtool pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
-USE_GNOME=	gconf2 gnomeprefix libglade2
+USE_GNOME=	gconf2 gnomeprefix libglade2 intltool
 USE_LDCONFIG=	yes
 MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 

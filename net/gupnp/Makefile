@@ -26,7 +26,6 @@ USE_CSTD=	c11
 USES=		compiler:c11 gmake libtool pathfix pkgconfig python:run shebangfix tar:xz
 
 SHEBANG_FILES=	tools/gupnp-binding-tool
-python_CMD=	${PYTHON_CMD}
 
 .include <bsd.port.pre.mk>
 

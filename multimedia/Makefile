@@ -32,6 +32,7 @@
     SUBDIR += clipgrab
     SUBDIR += clive
     SUBDIR += clutter-gst
+    SUBDIR += clutter-gst3
     SUBDIR += cuse4bsd-kmod
     SUBDIR += cx88
     SUBDIR += deforaos-player

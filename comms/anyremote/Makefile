@@ -3,7 +3,7 @@
 
 PORTNAME=	anyremote
 PORTVERSION=	6.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	SF
 
@@ -13,7 +13,8 @@ COMMENT=	Remote control service over Bluetooth, infrared, or TCP/IP networking
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		alias iconv pkgconfig
+USES=		alias iconv pkgconfig shebangfix
+SHEBANG_FILES=	cfg-data/Utils/imdb-mf.sh
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

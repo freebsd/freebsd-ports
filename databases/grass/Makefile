@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	grass
-PORTVERSION=	6.4.4
-PORTREVISION=	6
+PORTVERSION=	6.4.5
 PORTEPOCH=	2
 CATEGORIES=	databases geography
 MASTER_SITES=	http://grass.osgeo.org/%SUBDIR%/ \
@@ -22,7 +21,8 @@ MASTER_SITE_SUBDIR=	grass64/source
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source Geographical Information System (GIS)
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/GPL.TXT
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal \
@@ -33,8 +33,8 @@ LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-USES=		fortran gettext gmake iconv jpeg perl5 pkgconfig python:2 readline \
-		shebangfix tk
+USES=		fortran gettext gmake iconv jpeg perl5 pkgconfig python:2 \
+		readline shebangfix tk
 SHEBANG_FILES=	scripts/i.spectral/i.spectral \
 		scripts/r.tileset/r.tileset
 PATCH_TCL_SCRIPTS=lib/init/init.sh
@@ -74,13 +74,16 @@ PLIST_SUB=	GRASS_INST_DIR="${GRASS_INST_DIR}" \
 
 BROKEN_sparc64=		Does not configure on sparc64
 
-OPTIONS_DEFINE=		ATLAS FFMPEG MOTIF MYSQL ODBC PGSQL SQLITE
+OPTIONS_DEFINE=		ATLAS FFMPEG MOTIF
+OPTIONS_MULTI=		DB
+OPTIONS_MULTI_DB=	MYSQL ODBC PGSQL SQLITE
 OPTIONS_DEFAULT=	PGSQL
 OPTIONS_SUB=		yes
 
 ATLAS_DESC=		Use ATLAS for BLAS and LAPACK
 ATLAS_USES=		blaslapack:atlas
 ATLAS_USES_OFF=		blaslapack
+DB_DESC=		Database support
 FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 FFMPEG_CONFIGURE_ON=	--with-ffmpeg \
 			--with-ffmpeg-includes="${LOCALBASE}/include/libavcodec \
@@ -108,12 +111,12 @@ SQLITE_CONFIGURE_ON=	--with-sqlite
 GRASS_INST_DIR=	${PORTNAME}-${PORTVERSION}
 .endif
 
-pre-configure:
-	${REINPLACE_CMD} -e \
-		's|-lblas|${BLASLIB}| ; \
-		 s|-llapack|${LAPACKLIB}| ; \
-		 s|g2c|f2c|' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e \
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|-lblas|${BLASLIB}|g ; \
+		 s|-llapack|${LAPACKLIB}|g ; \
+		 s|g2c|f2c|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
 		's|make -C|$$(MAKE) -C| ; \
 		 /^BINDIR/s|=.*|=	$${DESTDIR}$${UNIX_BIN}| ; \
 		 /test /s| $${INST_DIR}| $${DESTDIR}$${INST_DIR}|g ; \
@@ -121,10 +124,10 @@ pre-configure:
 		 /chmod /s| $${INST_DIR}| $${DESTDIR}$${INST_DIR}|g ; \
 		 /tar /s| $${INST_DIR}| $${DESTDIR}$${INST_DIR}|g ; \
 		 s|> $${INST_DIR}|> $${DESTDIR}$${INST_DIR}|' ${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e \
+	@${REINPLACE_CMD} -e \
 		's|^CC=.*|CC?=cc| ; \
 		 s|^CFLAGS=.*|CFLAGS+=-fno-common|' ${WRKSRC}/gem/Makefile
-	${REINPLACE_CMD} -e \
+	@${REINPLACE_CMD} -e \
 		's|= python|= ${PYTHON_CMD:T}|' ${WRKSRC}/include/Make/Platform.make.in
 
 post-install:
@@ -144,5 +147,8 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${GRASS_INST_DIR}/etc/nviz2.2/nviz
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${GRASS_INST_DIR}/lib/libgrass_*.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${GRASS_INST_DIR}/tools/g.echo
+
+post-install-MOTIF-on:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${GRASS_INST_DIR}/bin/xganim
 
 .include <bsd.port.mk>

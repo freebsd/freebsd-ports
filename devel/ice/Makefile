@@ -3,6 +3,7 @@
 
 PORTNAME=		Ice
 PORTVERSION=		3.6.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=		devel
 
 MAINTAINER=		freebsd@grem.de
@@ -45,7 +46,6 @@ BUILD_WRKSRC?=		${WRKSRC}/cpp
 INSTALL_WRKSRC?=	${WRKSRC}/cpp
 USE_GITHUB=		yes
 GH_ACCOUNT=		zeroc-ice
-GH_TAGNAME=		v3.6.0
 
 
 CFLAGS+=		-ftemplate-depth-128 -fPIC -DPIC -Wall -D_REENTRANT -I${LOCALBASE}/include

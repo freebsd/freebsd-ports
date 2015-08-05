@@ -1,9 +1,8 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/gsettings-desktop-schemas/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	gsettings-desktop-schemas
-PORTVERSION=	3.14.1
+PORTVERSION=	3.16.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -14,6 +13,8 @@ COMMENT=	Collection of globally shared GSetting schemas
 LICENSE=	LGPL21
 
 RUN_DEPENDS=	${LOCALBASE}/etc/fonts/conf.avail/31-cantarell.conf:${PORTSDIR}/x11-fonts/cantarell-fonts
+
+PORTSCOUT=	limitw:1,even
 
 USES=		gettext gmake pathfix perl5 pkgconfig tar:xz
 USE_PERL5=	build
@@ -35,15 +36,16 @@ GLIB_SCHEMAS=	org.gnome.desktop.a11y.applications.gschema.xml \
 		org.gnome.desktop.input-sources.gschema.xml \
 		org.gnome.desktop.interface.gschema.xml \
 		org.gnome.desktop.lockdown.gschema.xml \
-		org.gnome.desktop.notifications.gschema.xml \
 		org.gnome.desktop.media-handling.gschema.xml \
+		org.gnome.desktop.notifications.gschema.xml \
+		org.gnome.desktop.peripherals.gschema.xml \
 		org.gnome.desktop.privacy.gschema.xml \
-		org.gnome.desktop.search-providers.gschema.xml \
 		org.gnome.desktop.screensaver.gschema.xml \
+		org.gnome.desktop.search-providers.gschema.xml \
 		org.gnome.desktop.session.gschema.xml \
 		org.gnome.desktop.sound.gschema.xml \
-		org.gnome.desktop.thumbnailers.gschema.xml \
 		org.gnome.desktop.thumbnail-cache.gschema.xml \
+		org.gnome.desktop.thumbnailers.gschema.xml \
 		org.gnome.desktop.wm.keybindings.gschema.xml \
 		org.gnome.desktop.wm.preferences.gschema.xml \
 		org.gnome.system.locale.gschema.xml \

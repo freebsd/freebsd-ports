@@ -22,10 +22,10 @@ USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/CFLAG/CFLAGS/' -e 's/make/$$(MAKE)/' \
+	@${REINPLACE_CMD} -e 's|CFLAG|CFLAGS|' -e 's|make|$$(MAKE)|' \
 		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's/gcc/${CC}/' -e 's/LIBS=/&${LDFLAGS} /' \
-		-e 's/CFLAGS=/&${CPPFLAGS} ${CFLAGS} /' \
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|' -e 's|LIBS=|&${LDFLAGS} |' \
+		-e 's|CFLAGS=|&${CPPFLAGS} ${CFLAGS} |' \
 		${WRKSRC}/Makefile ${WRKSRC}/hzconvert/Makefile
 
 post-install:

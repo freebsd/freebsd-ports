@@ -3,7 +3,7 @@
 
 PORTNAME=	libaacplus
 PORTVERSION=	2.0.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	http://tipok.org.ua/downloads/media/aacplus/libaacplus/ \
 		ftp://ftp.3gpp.org/Specs/archive/26_series/26.410/:site2 \

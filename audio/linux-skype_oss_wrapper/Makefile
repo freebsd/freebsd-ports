@@ -3,6 +3,7 @@
 
 PORTNAME=	skype_oss_wrapper
 PORTVERSION=	0.1.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	audio linux
 PKGNAMEPREFIX=	linux-
 
@@ -16,7 +17,6 @@ BUILD_DEPENDS=	${LINUXBASE}/usr/bin/gcc:${PORTSDIR}/devel/linux-c6-devtools
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	s3erios
-GH_TAGNAME=	v${PORTVERSION}
 
 USE_LINUX=	yes
 USE_LINUX_PREFIX=	yes

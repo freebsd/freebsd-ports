@@ -202,6 +202,8 @@ include/wine/windows/d3drmobj.h
 include/wine/windows/d3drmwin.h
 include/wine/windows/d3dtypes.h
 include/wine/windows/d3dvec.inl
+%%STAGING%%include/wine/windows/d3dx10core.h
+%%STAGING%%include/wine/windows/d3dx10core.idl
 include/wine/windows/d3dx9.h
 include/wine/windows/d3dx9anim.h
 include/wine/windows/d3dx9core.h
@@ -213,6 +215,7 @@ include/wine/windows/d3dx9shader.h
 include/wine/windows/d3dx9shape.h
 include/wine/windows/d3dx9tex.h
 include/wine/windows/d3dx9xof.h
+include/wine/windows/davclnt.h
 include/wine/windows/dbccmd.idl
 include/wine/windows/dbcses.idl
 include/wine/windows/dbdsad.idl
@@ -326,6 +329,7 @@ include/wine/windows/gameux.idl
 include/wine/windows/gdiplus.h
 include/wine/windows/gdipluscolor.h
 include/wine/windows/gdipluscolormatrix.h
+%%STAGING%%include/wine/windows/gdipluseffects.h
 include/wine/windows/gdiplusenums.h
 include/wine/windows/gdiplusflat.h
 include/wine/windows/gdiplusgpstubs.h
@@ -379,6 +383,8 @@ include/wine/windows/inputscope.h
 include/wine/windows/inputscope.idl
 include/wine/windows/inseng.h
 include/wine/windows/inseng.idl
+include/wine/windows/inspectable.h
+include/wine/windows/inspectable.idl
 include/wine/windows/intshcut.h
 include/wine/windows/ipexport.h
 include/wine/windows/iphlpapi.h
@@ -496,6 +502,7 @@ include/wine/windows/netcon.h
 include/wine/windows/netcon.idl
 include/wine/windows/netfw.h
 include/wine/windows/netfw.idl
+include/wine/windows/netioapi.h
 include/wine/windows/netlistmgr.h
 include/wine/windows/netlistmgr.idl
 include/wine/windows/nldef.h
@@ -709,6 +716,7 @@ include/wine/windows/wbemdisp.h
 include/wine/windows/wbemdisp.idl
 include/wine/windows/wbemprov.h
 include/wine/windows/wbemprov.idl
+include/wine/windows/webservices.h
 include/wine/windows/werapi.h
 include/wine/windows/wfext.h
 include/wine/windows/wia.h
@@ -1935,7 +1943,6 @@ lib/wine/libuserenv.def
 lib/wine/libusp10.def
 lib/wine/libuuid.a
 lib/wine/libuxtheme.def
-%%STAGING%%lib/wine/libvcomp.def
 lib/wine/libvdmdbg.def
 lib/wine/libversion.def
 lib/wine/libwebservices.def

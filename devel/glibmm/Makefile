@@ -1,9 +1,8 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/glibmm/Makefile 19944 2014-10-15 05:33:09Z gusi $
 
 PORTNAME=	glibmm
-PORTVERSION=	2.42.0
+PORTVERSION=	2.44.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
@@ -13,8 +12,9 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ interfaces for glib2
 
 USES+=		tar:xz
+PORTSCOUT?=	limitw:1,even
 
-PLIST_SUB=	VERSION="2.4" API_VERSION="2.4"
+PLIST_SUB=	VERSION="2.4"
 
 .if !defined(REFERENCE_PORT)
 

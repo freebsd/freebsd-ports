@@ -12,5 +12,6 @@ COMMENT=	Perl scripts to assist in the generation and application of patches
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

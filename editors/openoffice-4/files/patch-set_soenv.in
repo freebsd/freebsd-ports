@@ -1,6 +1,6 @@
---- set_soenv.in.orig	2015-01-17 23:35:07.000000000 -0800
-+++ set_soenv.in	2015-02-23 16:02:44.000000000 -0800
-@@ -359,7 +359,7 @@
+--- set_soenv.in.orig	2014-06-06 06:58:10 UTC
++++ set_soenv.in
+@@ -359,7 +359,7 @@ elsif ( $platform =~ m/kfreebsd/ ) 
  elsif ( $platform =~ m/freebsd/ ) 
  {     $BIG_SVX        = "TRUE";
        $COM            = "GCC";
@@ -9,7 +9,7 @@
        $CVER           = "C300";
        $GUI            = "UNX";
        $GUIBASE        = "unx";
-@@ -2617,26 +2617,37 @@
+@@ -2575,26 +2575,37 @@ sub GetCorrectPath
  	my @originalPairs = @_;
  	my @pairs = @originalPairs;
  	my @Path = split /$ps/, $oldPath;
@@ -51,7 +51,7 @@
  		    $to_append = 0;
  		    last;
  		} else {
-@@ -2644,7 +2655,7 @@
+@@ -2602,7 +2613,7 @@ sub GetCorrectPath
  		}
  	    }
  	    if ($to_append) {
@@ -60,7 +60,7 @@
  	    }
  	}
  
-@@ -2654,14 +2665,14 @@
+@@ -2612,14 +2623,14 @@ sub GetCorrectPath
  	    my $cmd = shift @pairs;
  	    my $realpath;
  

@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libpeas
-PORTVERSION=	1.12.1
-PORTREVISION?=	2
+PORTVERSION=	1.14.0
+PORTREVISION?=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -32,17 +32,6 @@ LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS+=--disable-glade-catalog
 PLIST=          ${.CURDIR}/pkg-plist
-
-.if ${LIBPEAS_SLAVE} == no
-OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	SEED
-OPTIONS_DEFAULT=SEED
-SEED_DESC=	JavaScript support based on webkit-gtk3
-SEED_LIB_DEPENDS=	libseed-gtk3.so:${PORTSDIR}/devel/seed
-SEED_CONFIGURE_ENABLE=	seed
-.else
-CONFIGURE_ARGS+=	--disable-seed
-.endif
 
 .if ${LIBPEAS_SLAVE} == python2
 USES+=		python:2

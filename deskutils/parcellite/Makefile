@@ -17,15 +17,19 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
 USES=		gettext-tools gmake pkgconfig
 GNU_CONFIGURE=	yes
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 intltool
 
 PORTDOCS=	AUTHORS ChangeLog README
+
+LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-lgio-2.0
 
 OPTIONS_DEFINE= DOCS NLS
 OPTIONS_SUB=	yes
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext-runtime
+NLS_LIBS=	-lintl
 
 SUB_FILES=	pkg-message
 

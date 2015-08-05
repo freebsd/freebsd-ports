@@ -23,7 +23,7 @@ OPTIONS_DEFAULT=	NLS
 #VTE_DESC=	Terminal Widget
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	glib20 gtk30 libglade2 gtksourceview3 gdkpixbuf2
+USE_GNOME=	glib20 gtk30 intltool libglade2 gtksourceview3 gdkpixbuf2
 USES=		desktop-file-utils gmake libtool pkgconfig tar:xz
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes

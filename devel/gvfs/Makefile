@@ -1,10 +1,9 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/gvfs/Makefile 19827 2014-08-24 08:15:41Z gusi $
 
 PORTNAME=	gvfs
-PORTVERSION=	1.20.3
-PORTREVISION=	3
+PORTVERSION=	1.24.1
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -21,13 +20,12 @@ LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 PORTSCOUT=	limitw:1,even
 
 USES=		gettext gmake libarchive libtool pathfix pkgconfig tar:xz
-USE_GNOME=	glib20 gnomeprefix intlhack intltool libxslt:build
+USE_GNOME=	glib20 intlhack libxslt:build
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-obexftp \
-		--disable-bluray \
-		--disable-afc
+		--disable-bluray
 
 CONFIGURE_ARGS+=\
 		--disable-gudev \
@@ -37,7 +35,6 @@ CONFIGURE_ARGS+=\
 		--disable-udev \
 		--disable-goa \
 		--disable-keyring \
-		--disable-bluray \
 		--disable-libmtp \
 		--disable-gtk
 
@@ -46,11 +43,12 @@ INSTALL_TARGET=	install-strip
 GLIB_SCHEMAS=	org.gnome.system.gvfs.enums.xml
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	AVAHI SAMBA GPHOTO2 CDDA HAL FUSE
+OPTIONS_DEFINE=	AVAHI SAMBA GPHOTO2 CDDA HAL FUSE AFC
 OPTIONS_DEFAULT=AVAHI SAMBA GPHOTO2 CDDA HAL FUSE
 CDDA_DESC=	CDDA (enables HAL)
 GPHOTO2_DESC=	Gphoto 2 camera support (enables HAL)
 SAMBA_DESC=	Samba support
+AFC_DESC=	Apple device support
 
 FUSE_USES=	fuse
 FUSE_CONFIGURE_ENABLE=	fuse
@@ -66,6 +64,10 @@ GPHOTO2_CONFIGURE_ENABLE=	gphoto2
 
 AVAHI_LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
 AVAHI_CONFIGURE_ENABLE=	avahi
+
+AFC_LIB_DEPENDS=	libimobiledevice.so:${PORTSDIR}/comms/libimobiledevice \
+			libplist.so:${PORTSDIR}/devel/libplist
+AFC_CONFIGURE_ENABLE=	afc
 
 .include <bsd.port.options.mk>
 
@@ -92,6 +94,5 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/remote-volume-monitors
-	${TOUCH} ${STAGEDIR}${DATADIR}/remote-volume-monitors/.keep
 
 .include <bsd.port.mk>

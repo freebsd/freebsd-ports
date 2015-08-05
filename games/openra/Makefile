@@ -3,7 +3,7 @@
 PORTNAME=	openra
 PORTVERSION=	20150614
 DISTVERSIONPREFIX=	release-
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 # XXX Convert to USES=nuget or package dependencies instead
 MASTER_SITES=	https://nuget.org/api/v2/package/StyleCopPlus.MSBuild/4.7.49.5?dummy=/:StyleCopPlus \
@@ -49,7 +49,8 @@ USE_GITHUB=	yes
 GH_PROJECT=	OpenRA
 
 NO_ARCH=	yes
-USES=		gmake lua:51,run mono openal:soft
+USES=		gmake lua:51,run mono openal:soft shebangfix
+SHEBANG_FILES=	launch-dedicated.sh
 USE_SDL=	sdl2
 MAKE_ENV=	prefix="${PREFIX}"
 MAKE_ARGS=	VERSION="${GH_TAGNAME}"

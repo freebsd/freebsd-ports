@@ -1,4 +1,4 @@
 This plugin inserts headers containing some download information: UIDL,
-Sylpheeds account name, POP server, user ID and retrieval time.
+Claws Mail's account name, POP server, user ID and retrieval time.
 
 WWW: http://www.claws-mail.org/plugins.php

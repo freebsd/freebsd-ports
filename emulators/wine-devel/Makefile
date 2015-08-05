@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	1.7.47
+DISTVERSION=	1.7.48
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
 		http://ibiblio.org/pub/linux/system/emulators/wine/
-PKGNAMESUFFIX=	-devel
+PKGNAMESUFFIX?=	-devel
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER?=	gerald@FreeBSD.org

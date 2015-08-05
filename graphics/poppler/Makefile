@@ -1,9 +1,8 @@
 # Created by: marcus@FreeBSD.org
 # $FreeBSD$
-#   $MCom: ports/graphics/poppler/Makefile,v 1.84 2013/03/12 14:53:49 kwm Exp $
 
 PORTNAME=	poppler
-PORTVERSION=	0.30.0
+PORTVERSION=	0.34.0
 PORTREVISION?=	0
 CATEGORIES=	graphics print
 MASTER_SITES=	http://poppler.freedesktop.org/
@@ -33,9 +32,6 @@ CONFIGURE_ARGS=	--enable-zlib \
 		--disable-static
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-# see https://bugs.freedesktop.org/show_bug.cgi?id=72499
-CPPFLAGS+=	 -D__LONG_LONG_SUPPORTED
 
 INSTALL_TARGET=	install-strip
 
@@ -126,7 +122,6 @@ CONFIGURE_ARGS+=--disable-libopenjpeg
 .endif # end of options
 
 post-patch:
-	@${REINPLACE_CMD} '/CXXFLAGS.*-ansi/d' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-fno-check-new||g' ${WRKSRC}/configure
 
 post-install:

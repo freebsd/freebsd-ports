@@ -3,8 +3,8 @@
 
 PORTNAME=	qbittorrent
 PORTVERSION=	3.2.0
+DISTVERSIONPREFIX=	release-
 CATEGORIES=	net-p2p ipv6
-MASTER_SITES=	GH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Bittorrent client using Qt4 and libtorrent-rasterbar
@@ -18,7 +18,6 @@ LIB_DEPENDS=	libtorrent-rasterbar.so:${PORTSDIR}/net-p2p/libtorrent-rasterbar \
 USE_GITHUB=	yes
 GH_ACCOUNT=	qBittorrent
 GH_PROJECT=	qBittorrent
-GH_TAGNAME=	release-${PORTVERSION}
 
 USES=		compiler:c++11-lang execinfo pkgconfig tar:xz
 USE_QT4=	corelib network qmake_build linguisttools_build moc_build \

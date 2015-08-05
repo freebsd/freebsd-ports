@@ -3,6 +3,7 @@
 
 PORTNAME=	npm
 PORTVERSION=	2.13.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -23,7 +24,13 @@ MAKE_ARGS=	npm_config_prefix=${STAGEDIR}${PREFIX}
 NO_ARCH=	yes
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ''
-USES=		cpe python:2 tar:xz
+SHEBANG_FILES=	lib/utils/completion.sh \
+		node_modules/request/node_modules/node-uuid/benchmark/bench.sh \
+		scripts/clean-old.sh \
+		scripts/release.sh \
+		scripts/relocate.sh \
+		test/update-test.sh
+USES=		cpe python:2 shebangfix tar:xz
 
 MANPREFIX=	${PREFIX}/lib/node_modules/npm
 

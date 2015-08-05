@@ -33,6 +33,4 @@
 %%SQUIRRELDIR%%/plugins/sasql/setup.php
 %%SQUIRRELDIR%%/plugins/sasql/start_section.inc.php
 %%SQUIRRELDIR%%/plugins/sasql/version
-@dirrm %%SQUIRRELDIR%%/plugins/sasql/contrib
-@dirrm %%SQUIRRELDIR%%/plugins/sasql/
 @exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin sasql; fi

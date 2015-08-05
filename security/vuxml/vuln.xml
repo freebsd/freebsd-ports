@@ -58,6 +58,146 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="da451130-365d-11e5-a4a5-002590263bf5">
+    <topic>xen-tools -- QEMU heap overflow flaw with certain ATAPI commands</topic>
+    <affects>
+      <package>
+	<name>xen-tools</name>
+	<range><lt>4.5.0_9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-138.html">
+	  <p>A heap overflow flaw was found in the way QEMU's IDE subsystem
+	    handled I/O buffer access while processing certain ATAPI
+	    commands.</p>
+	  <p>A privileged guest user in a guest with CDROM drive enabled could
+	    potentially use this flaw to execute arbitrary code on the host
+	    with the privileges of the host's QEMU process corresponding to
+	    the guest.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5154</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-138.html</url>
+    </references>
+    <dates>
+      <discovery>2015-07-27</discovery>
+      <entry>2015-08-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4622635f-37a1-11e5-9970-14dae9d210b8">
+    <topic>net-snmp -- snmptrapd crash</topic>
+    <affects>
+      <package>
+	<name>net-snmp</name>
+	<range><ge>5.7.0</ge><le>5.7.2.1</le></range>
+	<range><ge>5.6.0</ge><le>5.6.2.1</le></range>
+	<range><ge>5.5.0</ge><le>5.5.2.1</le></range>
+	<range><ge>5.4.0</ge><le>5.4.4</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Murray McAllister reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2014/q3/473">
+	  <p>A remote denial-of-service flaw was found in the way
+	    snmptrapd handled certain SNMP traps when started with the
+	    "-OQ" option. If an attacker sent an SNMP trap containing a
+	    variable with a NULL type where an integer variable type was
+	    expected, it would cause snmptrapd to crash.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://seclists.org/oss-sec/2014/q3/473</url>
+      <url>http://sourceforge.net/p/net-snmp/code/ci/7f4a7b891332899cea26e95be0337aae01648742/</url>
+      <url>https://sourceforge.net/p/net-snmp/official-patches/48/</url>
+      <cvename>CVE-2014-3565</cvename>
+    </references>
+    <dates>
+      <discovery>2014-07-31</discovery>
+      <entry>2015-07-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="381183e8-3798-11e5-9970-14dae9d210b8">
+    <topic>net-snmp -- snmp_pdu_parse() function incomplete initialization</topic>
+    <affects>
+      <package>
+	<name>net-snmp</name>
+	<range><le>5.7.3_7</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Qinghao Tang reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2015/q2/116">
+	  <p>Incompletely initialized vulnerability exists in the function
+	    ‘snmp_pdu_parse()’ of ‘snmp_api.c', and remote attackers can cause memory
+	    leak, DOS and possible command executions by sending malicious packets.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://seclists.org/oss-sec/2015/q2/116</url>
+      <url>http://sourceforge.net/p/net-snmp/code/ci/f23bcd3ac6ddee5d0a48f9703007ccc738914791/</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=1212408</url>
+      <cvename>CVE-2015-5621</cvename>
+    </references>
+    <dates>
+      <discovery>2015-04-11</discovery>
+      <entry>2015-07-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="731cdeaa-3564-11e5-9970-14dae9d210b8">
+    <topic>bind -- denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>bind910</name>
+	<range><lt>9.10.2P3</lt></range>
+      </package>
+      <package>
+	<name>bind99</name>
+	<range><lt>9.9.7P2</lt></range>
+      </package>
+      <package>
+	<name>bind910-base</name>
+	<name>bind99-base</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>FreeBSD</name>
+	<range><gt>9.3</gt><le>9.3_20</le></range>
+	<range><gt>8.4</gt><le>8.4_34</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ISC reports:</p>
+	<blockquote cite="https://kb.isc.org/article/AA-01272/">
+	  <p>An error in the handling of TKEY queries can be exploited
+	    by an attacker for use as a denial-of-service vector, as a constructed
+	    packet can use the defect to trigger a REQUIRE assertion failure,
+	    causing BIND to exit.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5477</cvename>
+      <url>https://kb.isc.org/article/AA-01272/</url>
+    </references>
+    <dates>
+      <discovery>2015-07-21</discovery>
+      <entry>2015-07-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5b74a5bc-348f-11e5-ba05-c80aa9043978">
     <topic>OpenSSH -- MaxAuthTries limit bypass via duplicates in KbdInteractiveDevices</topic>
     <affects>
@@ -313,7 +453,7 @@ Notes:
     <affects>
       <package>
 	<name>libidn</name>
-	<range><lt>1.3.1</lt></range>
+	<range><lt>1.31</lt></range>
       </package>
     </affects>
     <description>
@@ -334,6 +474,7 @@ Notes:
     <dates>
       <discovery>2015-02-09</discovery>
       <entry>2015-07-23</entry>
+      <modified>2015-08-03</modified>
     </dates>
   </vuln>
 
@@ -3460,7 +3601,7 @@ Notes:
     <affects>
       <package>
 	<name>chicken</name>
-	<range><lt>4.10.0,1</lt></range>
+	<range><lt>4.10.0.r2,1</lt></range>
       </package>
     </affects>
     <description>
@@ -3481,11 +3622,12 @@ Notes:
       <freebsdpr>ports/200980</freebsdpr>
       <mlist>http://lists.nongnu.org/archive/html/chicken-announce/2015-06/msg00010.html</mlist>
       <mlist>http://lists.nongnu.org/archive/html/chicken-hackers/2015-06/msg00037.html</mlist>
+      <mlist>http://lists.nongnu.org/archive/html/chicken-announce/2015-07/msg00001.html</mlist>
     </references>
     <dates>
       <discovery>2015-06-15</discovery>
       <entry>2015-06-22</entry>
-      <modified>2015-06-23</modified>
+      <modified>2015-07-31</modified>
     </dates>
   </vuln>
 

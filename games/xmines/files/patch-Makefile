@@ -15,7 +15,7 @@
 +INCLUDE = ${LOCALBASE}/include
 +LIBRARY = ${LOCALBASE}/lib
 +BIN = ${PREFIX}/bin
-+SCOREFILES = ${PREFIX}/share/xmines
++SCOREFILES = /var/games
  
  .c.o:
  	$(CC) $(CFLAGS) -I $(INCLUDE) -c $<
@@ -37,5 +37,5 @@
 -	install -g games -o games -m 0664  scores/scores $(SCOREFILES)/xbomb-scores
 -	install -g games -o games -m 2755 xbombs $(BIN) 
 +	mkdir -p ${DESTDIR}$(SCOREFILES)
-+	${INSTALL} -m 0666 scores/scores ${DESTDIR}$(SCOREFILES)/scores
-+	${INSTALL} -s -m 0755 xmines ${DESTDIR}$(BIN)
++	${BSD_INSTALL_DATA} scores/scores ${DESTDIR}$(SCOREFILES)/xmines-scores.sample
++	${BSD_INSTALL_PROGRAM} xmines ${DESTDIR}$(BIN)

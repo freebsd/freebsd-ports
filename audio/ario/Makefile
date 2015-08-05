@@ -27,7 +27,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 USES=		gmake libtool pkgconfig
 USE_LDCONFIG=	yes
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 intltool
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 

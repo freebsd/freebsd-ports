@@ -16,7 +16,7 @@ LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
 
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig desktop-file-utils
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 intltool
 USE_GSTREAMER=	good mad gconf
 INSTALLS_ICONS=	yes
 

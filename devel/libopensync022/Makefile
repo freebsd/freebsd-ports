@@ -3,7 +3,7 @@
 
 PORTNAME=	libopensync
 PORTVERSION=	0.22
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.opensync.org/download/releases/${PORTVERSION}/
 PKGNAMESUFFIX=	022
@@ -18,6 +18,7 @@ GNU_CONFIGURE=	yes
 USES=		libtool pathfix pkgconfig python tar:bzip2
 USE_GNOME=	glib20 libxml2
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 CONFLICTS=	libopensync-0.[3-9]*
 

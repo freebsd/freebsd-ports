@@ -3,7 +3,7 @@
 
 PORTNAME=	vqregister
 PORTVERSION=	2.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail www
 MASTER_SITES=	http://www.inter7.com/vqregister/
 
@@ -13,18 +13,21 @@ COMMENT=	Admin-configurable email user signup CGI
 BUILD_DEPENDS=	vpopmail>0:${PORTSDIR}/mail/vpopmail
 RUN_DEPENDS=	vpopmail>0:${PORTSDIR}/mail/vpopmail
 
-USES=		fakeroot
 USE_APACHE_RUN=	22+
 VPOPMAIL_DIR?=	${LOCALBASE}/vpopmail
 
 USE_MYSQL=	yes
 MAKE_ENV=	VDIR=${VPOPMAIL_DIR} WWWDIR=${STAGEDIR}${WWWDIR}
 
+USERS=		vpopmail
+GROUPS=		vchkpw
+
 DOCS=		CONFIG CONTRIBUTORS FORM HISTORY TEMPLATE
 
 OPTIONS_DEFINE=	DOCS
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${WWWDIR}/${PORTNAME}.cgi
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR})
 

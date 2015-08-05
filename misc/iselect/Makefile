@@ -3,27 +3,33 @@
 
 PORTNAME=	iselect
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	OSSP/tool/iselect
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive Selection Tool
 
-OPTIONS_DEFINE=	SLANG EXAMPLES
-SLANG_DESC=	Link with slang
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		shebangfix
+SHEBANG_FILES=	example/gotourl/gotourl \
+		example/ilogin/ilogin \
+		example/melm/melm \
+		example/mtin/mtin \
+		example/scvs/scvs
+perl_OLD_CMD=	/sw/bin/perl
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/iselect man/man1/iselect.1.gz
 PORTEXAMPLES=	*
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSLANG}
-LIB_DEPENDS+=	libslang.so:${PORTSDIR}/devel/libslang2
-CONFIGURE_ARGS+=	--with-incdir=${LOCALBASE}/include \
+OPTIONS_DEFINE=	SLANG EXAMPLES
+SLANG_DESC=	Link with slang
+SLANG_LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2
+SLANG_CONFIGURE_ON=	--with-incdir=${LOCALBASE}/include \
 			--with-libdir=${LOCALBASE}/lib
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g' ${WRKSRC}/configure

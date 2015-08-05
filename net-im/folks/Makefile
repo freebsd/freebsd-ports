@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	folks
-PORTVERSION=	0.10.1
+PORTVERSION=	0.11.0
 CATEGORIES=	net-im
 MASTER_SITES=	GNOME
 
@@ -12,15 +12,14 @@ COMMENT=	library to aggregates people from multiple sources
 BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala
 LIB_DEPENDS=	libgee-0.8.so:${PORTSDIR}/devel/libgee \
 		libgcr-3.so:${PORTSDIR}/security/gcr \
-		libzeitgeist-1.0.so:${PORTSDIR}/sysutils/libzeitgeist \
+		libzeitgeist-2.0.so:${PORTSDIR}/sysutils/zeitgeist \
 		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib
 
 CONFLICTS=	folks-0.4.[0-9]*
 
 USE_LDCONFIG=	yes
 USES=		gettext libtool gmake pathfix pkgconfig tar:xz
-USE_GNOME=	evolutiondataserver3 intlhack \
-		introspection:build
+USE_GNOME=	evolutiondataserver3 intlhack introspection:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-bluez-backend
 CPPFLAGS+=	-I${LOCALBASE}/include -Wno-error=deprecated-declarations
@@ -29,7 +28,7 @@ INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.freedesktop.folks.gschema.xml
 
-PLIST_SUB=	LIBVER=25 VERSION=42 LIBVERLONG=25.17.3
+PLIST_SUB=	LIBVER=25 VERSION=43 LIBVERLONG=25.18.0
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	SOCIALWEB TRACKER

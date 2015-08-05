@@ -1,5 +1,6 @@
 bin/gnome-contacts
 libexec/gnome-contacts-search-provider
+%%MANPAGES%%man/man1/gnome-contacts.1.gz
 share/appdata/org.gnome.Contacts.appdata.xml
 share/applications/org.gnome.Contacts.desktop
 share/dbus-1/services/org.gnome.Contacts.SearchProvider.service
@@ -12,6 +13,7 @@ share/locale/ast/LC_MESSAGES/gnome-contacts.mo
 share/locale/be/LC_MESSAGES/gnome-contacts.mo
 share/locale/bg/LC_MESSAGES/gnome-contacts.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-contacts.mo
+share/locale/bs/LC_MESSAGES/gnome-contacts.mo
 share/locale/ca/LC_MESSAGES/gnome-contacts.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-contacts.mo
 share/locale/cs/LC_MESSAGES/gnome-contacts.mo
@@ -36,6 +38,7 @@ share/locale/he/LC_MESSAGES/gnome-contacts.mo
 share/locale/hi/LC_MESSAGES/gnome-contacts.mo
 share/locale/hu/LC_MESSAGES/gnome-contacts.mo
 share/locale/id/LC_MESSAGES/gnome-contacts.mo
+share/locale/is/LC_MESSAGES/gnome-contacts.mo
 share/locale/it/LC_MESSAGES/gnome-contacts.mo
 share/locale/ja/LC_MESSAGES/gnome-contacts.mo
 share/locale/ko/LC_MESSAGES/gnome-contacts.mo

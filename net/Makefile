@@ -930,6 +930,7 @@
     SUBDIR += py-msrplib
     SUBDIR += py-ndg_httpsclient
     SUBDIR += py-netaddr
+    SUBDIR += py-netif
     SUBDIR += py-netifaces
     SUBDIR += py-netlib
     SUBDIR += py-netstring
@@ -959,7 +960,6 @@
     SUBDIR += py-smb
     SUBDIR += py-smbpasswd
     SUBDIR += py-soappy
-    SUBDIR += py-soapy
     SUBDIR += py-speedtest-cli
     SUBDIR += py-suds
     SUBDIR += py-terminado

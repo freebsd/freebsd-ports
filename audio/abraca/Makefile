@@ -16,7 +16,7 @@ RUN_DEPENDS=	gnome-themes-standard>=3.0.0:${PORTSDIR}/x11-themes/gnome-themes-st
 		gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme
 
 USES=		pkgconfig waf tar:bzip2
-USE_GNOME=	gtk30
+USE_GNOME=	gtk30 intltool
 
 MAKE_ARGS=	MANDIR=${MANPREFIX}/man
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \

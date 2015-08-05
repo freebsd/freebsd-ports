@@ -20,7 +20,6 @@ CONFLICTS=	varnish-2.* varnish-3.*
 USES=		autoreconf cpe gmake libtool pkgconfig python:2,build readline shebangfix
 SHEBANG_FILES=	lib/libvcc/vmodtool.py
 python_OLD_CMD=	/usr/bin/env python
-python_CMD=	${PYTHON_CMD}
 CPE_VENDOR=	varnish-cache
 CFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes

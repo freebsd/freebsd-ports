@@ -4,6 +4,7 @@
 
 PORTNAME=	granite
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	https://launchpadlibrarian.net/176306383/ \
 	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION:R}/+download/

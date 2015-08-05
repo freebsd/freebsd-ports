@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.9.1-9
+DISTVERSION=	6.9.1-10
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.imagemagick.org/download/ \
@@ -356,7 +357,11 @@ PLIST_SUB+=		PANGO="@comment "
 
 # PDF (Adobe Portable Document Format) support
 .if ${PORT_OPTIONS:MPDF}
+. if ${PORT_OPTIONS:MX11}
 USES+=			ghostscript
+. else
+USES+=			ghostscript:nox11
+. endif
 .endif
 
 .if ! ${PORT_OPTIONS:MX11}
@@ -379,7 +384,11 @@ INSTALL_TARGET=	install-strip
 .endif
 
 .if ${PORT_OPTIONS:MTESTS}
+. if ${PORT_OPTIONS:MX11}
 USES+=		ghostscript:build
+. else
+USES+=		ghostscript:build,nox11
+. endif
 .endif
 
 post-patch:

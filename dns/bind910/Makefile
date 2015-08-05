@@ -8,7 +8,7 @@ PORTVERSION=	${ISCVERSION:S/-P/P/}
 PORTREVISION=	0
 .else
 # dns/bind910 here
-PORTREVISION=	5
+PORTREVISION=	1
 .endif
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
@@ -21,7 +21,7 @@ COMMENT?=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	ISCL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.10.2-P2
+ISCVERSION=	9.10.2-P3
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -58,7 +58,8 @@ OPTIONS_RADIO_GOSTDEF=	GOST GOST_ASN1
 
 .if !defined(BIND_TOOLS_SLAVE)
 OPTIONS_DEFAULT+=	RRL
-OPTIONS_DEFINE+=	LINKS RPZ_NSIP RPZ_NSDNAME RRL DOCS NEWSTATS GEOIP
+OPTIONS_DEFINE+=	LINKS RPZ_NSIP RPZ_NSDNAME RRL DOCS NEWSTATS GEOIP \
+			MINCACHE
 OPTIONS_GROUP=		DLZ
 OPTIONS_GROUP_DLZ=	DLZ_POSTGRESQL DLZ_MYSQL DLZ_BDB \
 			DLZ_LDAP DLZ_FILESYSTEM DLZ_STUB
@@ -81,6 +82,7 @@ GOST_DESC=		GOST raw keys (new default)
 GOST_ASN1_DESC=		GOST using ASN.1
 PYTHON_DESC=		Build with Python utilities
 START_LATE_DESC=	Start BIND late in the boot process
+MINCACHE_DESC=		Use the mincachettl patch
 
 LINKS_DESC=		Create conf file symlinks in ${PREFIX}
 NEWSTATS_DESC=		Enable alternate xml statistics channel format
@@ -98,6 +100,7 @@ GSSAPI_BASE_DESC=	Using Heimdal in base
 GSSAPI_HEIMDAL_DESC=	Using security/heimdal
 GSSAPI_MIT_DESC=	Using security/krb5
 GSSAPI_NONE_DESC=	Disable
+MINCACHE_EXTRA_PATCHES=	${FILESDIR}/extrapatch-bind-min-override-ttl
 
 .if !defined(BIND_TOOLS_SLAVE)
 CONFLICTS+=		bind-tools-9.*

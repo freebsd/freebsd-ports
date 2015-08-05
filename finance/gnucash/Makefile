@@ -61,7 +61,7 @@ USE_XORG=	x11
 USES=		compiler:c++11-lib desktop-file-utils gettext gmake libtool perl5 \
 		pkgconfig shebangfix tar:bzip2
 INSTALLS_ICONS=	yes
-USE_GNOME+=	gtk20 libgnomecanvas libxml2 libxslt:build
+USE_GNOME+=	gtk20 intltool libgnomecanvas libxml2 libxslt:build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

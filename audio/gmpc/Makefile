@@ -22,7 +22,7 @@ LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd \
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake libtool pathfix pkgconfig
-USE_GNOME=	glib20 gtk20 libglade2
+USE_GNOME=	glib20 gtk20 intltool libglade2
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--enable-system-libsexy
 CPPFLAGS+=	-I${LOCALBASE}/include

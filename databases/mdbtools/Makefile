@@ -3,7 +3,7 @@
 
 PORTNAME=	mdbtools
 PORTVERSION=	0.7.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases
 
 MAINTAINER=	rhurlin@gwdg.de

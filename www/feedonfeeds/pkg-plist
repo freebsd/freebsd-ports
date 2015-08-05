@@ -54,10 +54,3 @@
 %%DATADIR%%/add.php
 %%DATADIR%%/delete.php
 %%DATADIR%%/favicon.php
-@dirrm %%DATADIR%%/prototype
-@dirrm %%DATADIR%%/image
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/classes
-@dirrm %%DATADIR%%/simplepie
-@dirrmtry %%DATADIR%%
-@dirrmtry www/data

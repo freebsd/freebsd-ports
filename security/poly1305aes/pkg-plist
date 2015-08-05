@@ -30,4 +30,3 @@ include/poly1305/poly1305aes_ppro.h
 include/poly1305/poly1305aes_sparc.h
 lib/cpucycles.a
 lib/poly1305aes.a
-@dirrmtry include/poly1305

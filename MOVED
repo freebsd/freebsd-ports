@@ -7733,11 +7733,89 @@ japanese/netype||2015-07-21|Has expired: Broken for more than 6 months
 databases/p5-DBD-Pg32|databases/p5-DBD-Pg|2015-07-22|Has expired: Use databases/p5-DBD-Pg instead, compatability probles are fixed
 textproc/py-asciinema|textproc/asciinema|2015-07-23|Has expired: use textproc/asciinema instead
 devel/libiomp5-devel|devel/llvm-devel|2015-07-24|Merged with devel/llvm-devel
-amd64-binutils||2015-07-25|No real use
-amd64-gcc||2015-07-25|No real use
-amd64-xtoolchain-gcc||2015-07-25|No real use
+devel/amd64-binutils||2015-07-25|No real use
+devel/amd64-gcc||2015-07-25|No real use
+devel/amd64-xtoolchain-gcc||2015-07-25|No real use
 devel/p5-Test-Tester|devel/p5-Test-Simple|2015-07-25|Has expired: Part of p5-Test-Simple (use that instead), and included in perl 5.22
 devel/p5-Test-use-ok|devel/p5-Test-Simple|2015-07-25|Has expired: Part of devel/p5-Test-Simple (use that instead), and included in perl 5.22
 math/mate-calc||2015-07-27|Not part of MATE 1.10. Instead galculator is used
 x11/mate-dialogs||2015-07-27|Not part of MATE 1.10
 devel/automake14||2015-07-27|Has expired: Not used in the ports tree anymore
+sysutils/slurm-hpc|sysutils/slurm-wlm|2015-07-28|Upstream is standardizing on the name "slurm-wlm"
+textproc/kibana|textproc/kibana3|2015-07-29|Moved to leave place for a kibana-4 port
+lang/clang-cheri|devel/llvm-cheri|2015-07-30|Moved to devel/llvm-cheri to match other LLVM ports
+japanese/p5-Acme-Lou||2015-08-01|Has expired: Needs ja-p5-Text-MeCab that does not work with 5.18 or above
+mail/maildirsync||2015-08-01|Has expired: Requires an unsupported version of Perl
+mail/qar-bufo||2015-08-01|Has expired: Requires an unsupported version of Perl
+net/py-soapy|net/py-soappy|2015-08-01|Has expired: Abandonware depending on ancient py-xml. Please use net/py-soappy instead
+net-p2p/btqueue||2015-08-01|Has expired: Runtime broken (does not download anything)
+sysutils/vhdtool||2015-08-01|Has expired: Use mkimg(1) instead
+www/rubygem-modernizr||2015-08-01|Has expired: This gem has been removed from rubygems.org by upstream
+sysutils/libzeitgeist|sysutils/zeitgeist|2015-07-26|Merged into zeitgeist
+devel/java-util-concurrent||2015-08-03|Has expired: Included in all current JDKs by default
+devel/py-pyparsing15||2015-08-03|Has expired: Not used in the ports tree anymore
+finance/tryton||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_account||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_account_be||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_account_invoice||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_account_invoice_history||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_account_invoice_line_standalone||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_account_product||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_account_statement||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_account_stock_anglo_saxon||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_account_stock_continental||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_analytic_account||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_analytic_invoice||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_analytic_purchase||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_analytic_sale||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_calendar||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_calendar_classification||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_calendar_scheduling||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_calendar_todo||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_carrier||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_carrier_percentage||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_carrier_weight||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_company||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_company_work_time||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_country||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_currency||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_dashboard||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_ldap_authentication||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_ldap_connection||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_party||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_party_siret||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_party_vcarddav||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_product||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_product_cost_fifo||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_product_cost_history||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_product_measurements||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_product_price_list||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_production||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_project||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_project_plan||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_project_revenue||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_purchase||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_purchase_invoice_line_standalone||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_purchase_shipment_cost||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_sale||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_sale_opportunity||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_sale_price_list||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_sale_shipment_cost||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_stock||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_stock_forecast||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_stock_inventory_location||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_stock_location_sequence||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_stock_lot||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_stock_product_location||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_stock_split||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_stock_supply||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_stock_supply_day||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_stock_supply_forecast||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_stock_supply_production||2015-08-05|No more supported upstream, use tryton 2.8 instead
+finance/trytond_timesheet||2015-08-05|No more supported upstream, use tryton 2.8 instead
+textproc/py-stripogram||2015-08-05|Discontinued, author discourages to use it
+french/trytond_account_fr||2015-08-05|No more supported upstream, use tryton 2.8 instead
+german/trytond_account_de_skr03||2015-08-05|No more supported upstream, use tryton 2.8 instead
+www/trytond_google_maps||2015-08-05|No more supported upstream, use tryton 2.8 instead
+devel/appdata-tools|devel/appstream-glib|2015-08-05|Replaced by appstream-glib

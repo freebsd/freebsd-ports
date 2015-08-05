@@ -15,6 +15,7 @@ COMMENT=	Nagios plug-in to get geom(8) components status
 USES=		perl5 shebangfix
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+NO_ARCH=	yes
 PATCH_STRIP=	-p1
 
 SHEBANG_FILES=	check_geom

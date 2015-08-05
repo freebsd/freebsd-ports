@@ -19,7 +19,7 @@ USES=		gettext gmake pkgconfig shebangfix
 SHEBANG_FILES=	scripts/mab2vcard scripts/sync-evolution.sh \
 		scripts/sync-knotes.sh scripts/sync-ldif.sh \
 		scripts/sync-palm-jppy.py
-USE_GNOME=	gtk20 libglade2
+USE_GNOME=	gtk20 intltool libglade2
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 

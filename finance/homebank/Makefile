@@ -14,7 +14,7 @@ LIB_DEPENDS=	libosp.so:${PORTSDIR}/textproc/opensp
 
 GNU_CONFIGURE=	yes
 USES=		desktop-file-utils gettext gmake pkgconfig shared-mime-info
-USE_GNOME=	gtk30
+USE_GNOME=	gtk30 intltool
 INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

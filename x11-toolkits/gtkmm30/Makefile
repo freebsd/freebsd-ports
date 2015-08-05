@@ -1,9 +1,8 @@
 # Created by: Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-toolkits/gtkmm30/Makefile 19949 2014-10-15 06:25:06Z gusi $
 
 PORTNAME=	gtkmm
-PORTVERSION=	3.14.0
+PORTVERSION=	3.16.0
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
@@ -30,7 +29,7 @@ LIBS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-documentation
 INSTALL_TARGET=	install-strip
 
-PLIST_SUB=	VERSION="3.0" API_VERSION="3.0"
+PLIST_SUB=	API_VERSION="3.0"
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/tests//' \

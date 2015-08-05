@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150805:
+  AFFECTS: users of sysutils/tracker
+  AUTHOR: kwm@FreeBSD.org
+
+  The new tracker version does not build if the old version is installed.
+
+  # pkg delete -f tracker
+
+  After use your upgrade tool of choice.
+
+20150802:
+  AFFECTS: users of mail/opensmtpd
+  AUTHOR: ashish@FreeBSD.org
+
+  After upgrading, you will need to review all your configuration, as
+  there are some configuration changes between 5.4.x and 5.7.1.
+
 20150726:
   AFFECTS: users of ukrainian/monacofonts
   AUTHOR: mi@aldan.algebra.com

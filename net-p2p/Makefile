@@ -12,7 +12,6 @@
     SUBDIR += bitmessage
     SUBDIR += bnbt
     SUBDIR += btpd
-    SUBDIR += btqueue
     SUBDIR += btsync
     SUBDIR += cpuminer
     SUBDIR += createtorrent
@@ -49,6 +48,7 @@
     SUBDIR += linuxdcpp
     SUBDIR += litecoin
     SUBDIR += litecoin-daemon
+    SUBDIR += litecoin-utils
     SUBDIR += lopster
     SUBDIR += microdc2
     SUBDIR += minder

@@ -323,6 +323,7 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/help/phases.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/revisions.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/revsets.txt
+%%PYTHON_SITELIBDIR%%/mercurial/help/scripting.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/subrepos.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/templates.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/urls.txt
@@ -380,9 +381,6 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/i18n.py
 %%PYTHON_SITELIBDIR%%/mercurial/i18n.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/i18n.pyo
-%%PYTHON_SITELIBDIR%%/mercurial/ignore.py
-%%PYTHON_SITELIBDIR%%/mercurial/ignore.pyc
-%%PYTHON_SITELIBDIR%%/mercurial/ignore.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/keepalive.py
 %%PYTHON_SITELIBDIR%%/mercurial/keepalive.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/keepalive.pyo
@@ -458,6 +456,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/posix.py
 %%PYTHON_SITELIBDIR%%/mercurial/posix.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/posix.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/progress.py
+%%PYTHON_SITELIBDIR%%/mercurial/progress.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/progress.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/pushkey.py
 %%PYTHON_SITELIBDIR%%/mercurial/pushkey.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/pushkey.pyo
@@ -578,6 +579,7 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/templates/map-cmdline.compact
 %%PYTHON_SITELIBDIR%%/mercurial/templates/map-cmdline.default
 %%PYTHON_SITELIBDIR%%/mercurial/templates/map-cmdline.phases
+%%PYTHON_SITELIBDIR%%/mercurial/templates/map-cmdline.status
 %%PYTHON_SITELIBDIR%%/mercurial/templates/map-cmdline.xml
 %%PYTHON_SITELIBDIR%%/mercurial/templates/monoblue/bookmarks.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/monoblue/branches.tmpl

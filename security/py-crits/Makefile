@@ -35,7 +35,7 @@ RUN_DEPENDS+=	7z:${PORTSDIR}/archivers/p7zip     \
 		${PYTHON_PKGNAMEPREFIX}curl>0:${PORTSDIR}/ftp/py-curl                 \
 		${PYTHON_PKGNAMEPREFIX}pydot>=0:${PORTSDIR}/graphics/py-pydot         \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml               \
-		${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:${PORTSDIR}/devel/py-setuptools \
+		${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:${PORTSDIR}/devel/py-setuptools${PYTHON_SUFFIX} \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:${PORTSDIR}/math/py-numpy                   \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:${PORTSDIR}/math/py-matplotlib         \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml                    \

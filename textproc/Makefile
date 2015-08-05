@@ -335,7 +335,7 @@
     SUBDIR += jshon
     SUBDIR += kdiff3
     SUBDIR += kenlm
-    SUBDIR += kibana
+    SUBDIR += kibana3
     SUBDIR += kmfl-european-latin
     SUBDIR += kmfl-khmer
     SUBDIR += kmfl-sil-ezra
@@ -1243,7 +1243,6 @@
     SUBDIR += py-sphinxcontrib-adadomain
     SUBDIR += py-sphinxcontrib-bitbucket
     SUBDIR += py-sphinxcontrib-httpdomain
-    SUBDIR += py-stripogram
     SUBDIR += py-syck
     SUBDIR += py-texttable
     SUBDIR += py-tinycss

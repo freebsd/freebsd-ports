@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	evince
-PORTVERSION=	3.14.2
+PORTVERSION=	3.16.1
 PORTREVISION?=	1
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME
@@ -21,6 +21,7 @@ RUN_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme \
 		adwaita-icon-theme>=0:${PORTSDIR}/x11-themes/adwaita-icon-theme \
 		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
+PORTSCOUT=	limitw:1,even
 SLAVEPORT?=	no
 
 USES=		compiler:c++11-lib desktop-file-utils gettext gmake libtool \

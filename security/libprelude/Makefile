@@ -3,7 +3,7 @@
 
 PORTNAME=	libprelude
 PORTVERSION=	1.0.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/attachments/download/241/
 

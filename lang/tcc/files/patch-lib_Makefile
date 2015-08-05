@@ -1,4 +1,4 @@
---- lib/Makefile.orig	2015-07-21 22:05:25 UTC
+--- lib/Makefile.orig	2013-02-15 14:24:00 UTC
 +++ lib/Makefile
 @@ -40,7 +40,7 @@ native : TCC = $(TOP)/tcc$(EXESUF)
  cross : TCC = $(TOP)/$(TARGET)-tcc$(EXESUF)

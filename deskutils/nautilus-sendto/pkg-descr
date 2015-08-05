@@ -1,5 +1,8 @@
-GNOME Online Miners provides a set of crawlers that go through your online content 
-and index them locally in Tracker. It has miners for Facebook, Flickr, 
-Google, ownCloud and SkyDrive.
+This command will open the default mailer after having attached the files mentioned
+on the command-line. If a directory is passed instead of files, it will have been
+zipped up before being attached.
 
-WWW: https://wiki.gnome.org/Projects/GnomeOnlineMiners
+The application is intented to integrate with nautilus and is
+written for the GNOME graphical desktop.
+
+WWW: https://github.com/GNOME/nautilus-sendto

@@ -43,7 +43,7 @@ PLIST_SUB+=	DESKTOPDIR="${DESKTOPDIR:S,${PREFIX}/,,}"
 USES=		autoreconf:build desktop-file-utils gettext gmake libtool \
 		pkgconfig python:2
 USE_GITHUB=	yes
-USE_GNOME=	gtk20 pygnome2
+USE_GNOME=	gtk20 pygnome2 intltool
 
 .include <bsd.port.options.mk>
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION}
-PORTREVISION=	9
+PORTREVISION=	11
 CATEGORIES=	editors java
 MASTER_SITES=	APACHE/openoffice/${PORTVERSION}/source \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \
@@ -15,6 +15,7 @@ PKGNAMEPREFIX=		${LANG_PKGNAME}-
 PKGNAMESUFFIX=		-${LANG_SUFFIX}
 .endif
 DISTFILES=	${OOOSRC} unowinreg.dll:unoreg ${EXTSRC}:extsrc
+DIST_SUBDIR=	openoffice
 EXTRACT_ONLY=	${OOOSRC}
 
 MAINTAINER=	office@FreeBSD.org
@@ -22,7 +23,28 @@ MAINTAINER=	office@FreeBSD.org
 #Frequent Patch submitters should optionally sign Apache iCLA
 COMMENT=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
 
-LICENSE=	APACHE20
+LICENSE=		APACHE20 ADOBE BSD3CLAUSE BSD4CLAUSE BSL ICU MIT MPL \
+			PSFL TWAIN W3C
+LICENSE_COMB=		multi
+LICENSE_NAME_ADOBE=	Adobe Systems Incorporated license
+LICENSE_NAME_ICU=	ICU License
+LICENSE_NAME_TWAIN=	TWAIN Working Group license
+LICENSE_NAME_W3C=	W3C license
+LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE_ALv2
+LICENSE_FILE_ADOBE=	${WRKSRC}/LICENSE_ADOBE
+LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/LICENSE_BSD3CLAUSE
+LICENSE_FILE_BSD4CLAUSE=	${WRKSRC}/LICENSE_BSD4CLAUSE
+LICENSE_FILE_BSL=	${WRKSRC}/LICENSE_BSL
+LICENSE_FILE_ICU=	${WRKSRC}/LICENSE_ICU
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE_MIT
+LICENSE_FILE_MPL=	${WRKSRC}/LICENSE_MPL
+LICENSE_FILE_PSFL=	${WRKSRC}/LICENSE_PSFL
+LICENSE_FILE_TWAIN=	${WRKSRC}/LICENSE_TWAIN
+LICENSE_FILE_W3C=	${WRKSRC}/LICENSE_W3C
+LICENSE_PERMS_ADOBE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS_ICU=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS_TWAIN=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS_W3C=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=								\
 		p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip	\
@@ -31,11 +53,13 @@ BUILD_DEPENDS=								\
 		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip	\
 		zip:${PORTSDIR}/archivers/zip				\
 		ant:${PORTSDIR}/devel/apache-ant			\
+		${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs \
 		dmake:${PORTSDIR}/devel/dmake				\
 		epm:${PORTSDIR}/devel/epm				\
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf		\
 		imake:${PORTSDIR}/devel/imake				\
 		gpatch:${PORTSDIR}/devel/patch				\
+		${LOCALBASE}/include/sane/sane.h:${PORTSDIR}/graphics/sane-backends \
 		${LOCALBASE}/bin/vigra-config:${PORTSDIR}/graphics/vigra \
 		${JAVALIBDIR}/commons-httpclient.jar:${PORTSDIR}/java/jakarta-commons-httpclient \
 		${JAVALIBDIR}/commons-lang.jar:${PORTSDIR}/java/jakarta-commons-lang \
@@ -46,10 +70,12 @@ BUILD_DEPENDS=								\
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 LIB_DEPENDS=								\
 		libapr-1.so:${PORTSDIR}/devel/apr1			\
+		libnspr4.so:${PORTSDIR}/devel/nspr			\
 		libcurl.so:${PORTSDIR}/ftp/curl				\
 		libcairo.so:${PORTSDIR}/graphics/cairo			\
 		libpng.so:${PORTSDIR}/graphics/png			\
 		libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib	\
+		libgraphite.so:${PORTSDIR}/graphics/silgraphite		\
 		libCoinMP.so:${PORTSDIR}/math/coinmp			\
 		libfreetype.so:${PORTSDIR}/print/freetype2		\
 		libnss3.so:${PORTSDIR}/security/nss			\
@@ -59,8 +85,8 @@ LIB_DEPENDS=								\
 		libtextcat.so:${PORTSDIR}/textproc/libtextcat		\
 		libmythes-1.2.so:${PORTSDIR}/textproc/mythes		\
 		librdf.so:${PORTSDIR}/textproc/redland			\
-		libserf-1.so:${PORTSDIR}/www/serf
-#		libgraphite.so:${PORTSDIR}/graphics/silgraphite
+		libserf-1.so:${PORTSDIR}/www/serf			\
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=								\
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 		${JAVALIBDIR}/commons-httpclient.jar:${PORTSDIR}/java/jakarta-commons-httpclient \
@@ -73,7 +99,7 @@ AOOVERSION3=	1
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
 AOOTAG=		AOO411m6\(Build:9775\)
 SVNREVISION=	1617669
-EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20140918.tar.gz
+EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 
 AOOVERSION=	${AOOVERSION1}.${AOOVERSION2}.${AOOVERSION3}
 AOOXXX=		${AOOVERSION1}${AOOVERSION2}${AOOVERSION3}
@@ -84,7 +110,6 @@ OOODIR=			openoffice${AOOVERSION1}
 AOOUDIR=		.openoffice.org\/${AOOVERSION1}
 INSTALLATION_BASEDIR?=	openoffice-${AOOSUFFIX}
 EXECBASE?=		openoffice-${AOOSUFFIX}
-DIST_SUBDIR=		openoffice
 
 NO_LATEST_LINK=	yes
 
@@ -100,7 +125,8 @@ USE_PERL5=	build
 USE_XORG=	x11 ice xaw xau xext xrender xrandr \
 		xi xt xcursor xdamage xcomposite xfixes
 USES=		autoreconf:autoconf bison compiler cpe desktop-file-utils \
-		gmake jpeg perl5 pkgconfig python tar:bzip2
+		gettext-runtime gmake iconv jpeg perl5 pkgconfig python \
+		tar:bzip2
 WITHOUT_CPU_CFLAGS=	true
 CPE_PRODUCT=	${PORTNAME:S|apache-||}
 CPE_VENDOR=	apache
@@ -141,7 +167,7 @@ CXX=			clang++35
 CPPFLAGS+=		-I${LOCALBASE}/include
 .else
 USE_GCC=		yes
-SUBST=			"s/-fexceptions/& -fno-enforce-eh-specs/;s/-DHAVE_STL_INCLUDE_PATH//"
+SUBST=			"s/-fexceptions/& -fno-enforce-eh-specs/;s/-DHAVE_STL_INCLUDE_PATH/-DBOOST_TR1_DISABLE_INCLUDE_NEXT -DBOOST_TR1_GCC_INCLUDE_PATH=c++/"
 .endif
 
 .if ${ARCH} == amd64
@@ -189,6 +215,7 @@ CONFIGURE_ARGS+=							\
 			--with-system-apr-util				\
 			--with-system-beanshell				\
 			--with-beanshell-jar=${JAVALIBDIR}/bsh.jar	\
+			--with-system-boost				\
 			--enable-category-b				\
 			--with-system-cairo --enable-cairo		\
 			--with-system-coinmp				\
@@ -201,6 +228,7 @@ CONFIGURE_ARGS+=							\
 			--without-fonts					\
 			--with-gnu-patch=${LOCALBASE}/bin/gpatch	\
 			--with-gperf=${LOCALBASE}/bin/gperf		\
+			--with-system-graphite				\
 			--enable-gtk					\
 			--with-system-hunspell				\
 			--with-external-dict-dir=${LOCALBASE}/share/hunspell \
@@ -225,6 +253,7 @@ CONFIGURE_ARGS+=							\
 			--with-system-poppler				\
 			--with-system-python				\
 			--with-system-redland				\
+			--with-system-sane				\
 			--with-system-serf				\
 			--with-system-stdlibs				\
 			--enable-symbols=small				\
@@ -233,10 +262,8 @@ CONFIGURE_ARGS+=							\
 			--enable-verbose				\
 			--with-system-vigra				\
 			--enable-wiki-publisher				\
+			--with-system-xrender				\
 			--with-system-zlib
-# system-graphite causes breakage when compiled with clang and linked
-# with libc++ because aoo is compiled with gcc and linked with libstdc++.
-#			--with-system-graphite
 
 #OOOEXTENSIONS+=		minimizer/presentation-minimizer.oxt
 #OOOEXTENSIONS+=		presenter/presenter-screen.oxt
@@ -269,6 +296,34 @@ post-extract:
 	${TAR} -C ${WRKSUBDIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EXTSRC}
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/unowinreg.dll ${WRKSRC}/external/unowinreg/
 	${RM} -rf ${WRKSRC}/l10n
+	${SED}  -e '\|^For main/vcl/unx/generic/fontmanager/parseAFM|,/^__/p' \
+		-e '\|^For PostScript(R) AFM|,/^__/p'			\
+		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_ADOBE}
+	${SED}  -e '\|^For main/unixODBC|,/^__/p'			\
+		-e '\|^For main/connectivity|,/^__/p'			\
+		-e '\|^For main/libtextcat/data|,/^__/p'		\
+		-e '\|^For integration of HSQLDB|,/^__/p'		\
+		-e '\|^For C preprocessor|,/^__/p'			\
+		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_BSD3CLAUSE}
+	${SED}  -e '\|^For ICC |,/^__/p'				\
+		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_BSD4CLAUSE}
+	${SED}  -e '\|^For integration of the C++ Boost |,/^__/p'	\
+		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_BSL}
+	${SED}  -e '\|^For main/i18npool/source/breakiterator|,/^__/p'	\
+		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_ICU}
+	${SED}  -e '\|^For Multi-Dimensional Data|,/^__/p'	\
+		-e '\|^For XSLT MathML Library|,/^__/p'			\
+		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_MIT}
+	${SED}  -e '\|^For XMLSec Library|,/^__/p'	\
+		-e d  ${WRKSRC}/LICENSE_category_b >> ${LICENSE_FILE_MIT}
+	${SED}  -e '\|^For Graphite|,$$d'	\
+		      ${WRKSRC}/LICENSE_category_b > ${LICENSE_FILE_MPL}
+	${SED}  -e '\|^For main/filter/source/config/tools/merge/pyAltFCFGMerge|,/^__/p'	\
+		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_PSFL}
+	${SED}  -e '\|^For main/twain|,/^__/p'	\
+		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_TWAIN}
+	${SED}  -e '\|^For main/MathMLDTD|,/^__/p'	\
+		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_W3C}
 
 post-patch:
 .if defined (USE_GCC)

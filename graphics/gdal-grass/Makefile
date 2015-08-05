@@ -3,7 +3,7 @@
 
 PORTNAME=	gdal-grass
 PORTVERSION=	1.11.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.osgeo.org/gdal/
 
@@ -16,6 +16,9 @@ BUILD_DEPENDS=	grass>=6:${PORTSDIR}/databases/grass
 LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal \
 		libgrass_gis.so:${PORTSDIR}/databases/grass
 RUN_DEPENDS=	grass>=6:${PORTSDIR}/databases/grass
+
+DEPRECATED=	Superseded by gdal-2.0.0
+EXPIRATION_DATE=2015-10-30
 
 USES=		gmake
 USE_GCC=	yes	# from databases/grass

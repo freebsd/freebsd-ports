@@ -3,6 +3,7 @@
 
 PORTNAME=	cinnamon-control-center
 PORTVERSION=	2.4.2
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 DIST_SUBDIR=	gnome3
 
@@ -34,7 +35,7 @@ RUN_DEPENDS=	py*-dbus>=0:${PORTSDIR}/devel/py-dbus \
 		ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss \
 		py*-lxml>=0:${PORTSDIR}/devel/py-lxml
 
-USES=		autoreconf:build gettext gmake libtool pathfix \
+USES=		autoreconf gettext gmake libtool pathfix \
 		python:2 pkgconfig
 USE_GNOME=	evolutiondataserver3 gconf2 gnomeprefix \
 		gtk30 intlhack libgnomekbd
@@ -61,8 +62,5 @@ post-patch:
 		${WRKSRC}/files/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/share/|${PREFIX}/share/|g' \
 		${WRKSRC}/panels/common/cc-common-language.c
-
-pre-configure:
-	cd ${WRKSRC} && NOCONFIGURE=yes ${SH} ./autogen.sh
 
 .include <bsd.port.mk>

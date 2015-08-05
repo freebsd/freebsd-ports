@@ -1,0 +1,38 @@
+https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=787875
+
+>From 8a69e5adedc64aaf8c16ffb7c8e8cf23b416c5a8 Mon Sep 17 00:00:00 2001
+From: Rodolphe PELLOUX-PRAYER <rodolphe@damsy.net>
+Date: Sun, 7 Jun 2015 16:33:27 +0200
+Subject: [PATCH] Fix ambiguous references between GLib.ListStore and
+ Gtk.ListStore GLib.ListStore is a new class in GIO and creates a conflict in
+ Vala 0.28.
+
+Closes: #787875
+---
+ ...us-references-between-GLib.ListStore-and-.patch | 33 ++++++++++++++++++++++
+ debian/patches/series                              |  1 +
+ 2 files changed, 34 insertions(+)
+ create mode 100644 debian/patches/0002-Fix-ambiguous-references-between-GLib.ListStore-and-.patch
+
+diff --git a/Steadyflow/FileListController.vala b/Steadyflow/FileListController.vala
+index 43a65c4..ae71222 100644
+--- Steadyflow/FileListController.vala
++++ Steadyflow/FileListController.vala
+@@ -27,7 +27,7 @@ public class FileListController : GLib.Object {
+ 	private static const double REDRAW_SEC = 0.2;
+ 
+ 	private TreeView tree;
+-	private ListStore model;
++	private Gtk.ListStore model;
+ 	private string filter = "";
+ 	private Timer redraw_timer;
+ 
+@@ -46,7 +46,7 @@ public class FileListController : GLib.Object {
+ 		column.pack_start (renderer, true);
+ 		column.set_cell_data_func (renderer, set_cell_data);
+ 		
+-		model = new ListStore.newv ({ typeof (IDownloadFile) });
++		model = new Gtk.ListStore.newv ({ typeof (IDownloadFile) });
+ 		tree.set_model (model);
+ 		tree.append_column (column);
+ 		

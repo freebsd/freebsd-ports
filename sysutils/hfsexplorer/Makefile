@@ -3,6 +3,7 @@
 
 PORTNAME=	hfsexplorer
 PORTVERSION=	0.23
+DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	sysutils java
 
 MAINTAINER=	vg@FreeBSD.org
@@ -19,7 +20,6 @@ DESKTOP_ENTRIES="hfsexplorer" "reader Mac-formatted harddisk" \
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME}
 GH_ACCOUNT=	unsound
-GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

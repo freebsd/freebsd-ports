@@ -19,7 +19,6 @@ INSTALL_ICONS=	yes
 
 USES=		python shebangfix
 SHEBANG_FILES=	myBudget.py
-python_CMD=	${PYTHON_CMD}
 
 OPTIONS_DEFINE=	DOCS
 
