@@ -1,0 +1,53 @@
+--- configure.orig	2015-08-05 08:12:21 UTC
++++ configure
+@@ -23559,7 +23559,9 @@ fi
+ 
+ if test $ac_with_krb5_count -gt 1 ; then
+   as_fn_error $? "Please choose only one Kerberos library." "$LINENO" 5
+-elif test $ac_with_krb5_count -eq 0 ; then
++# XXX: On FreeBSD we don't need to involve krb5-config.
++# This change makes GSSAPI_NONE work properly.
++elif test $ac_with_krb5_count -eq 100 ; then
+   # find installed libs via pkg-config or krb5-config
+   if test -n "$PKG_CONFIG" && \
+     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"gssapi-krb5 krb5\""; } >&5
+@@ -31973,7 +31975,7 @@ done
+ ##
+ 
+ BUILD_HELPER="NIS"
+-for ac_header in sys/types.h rpc/rpc.h rpcsvc/ypclnt.h rpcsvc/yp_prot.h crypt.h
++for ac_header in sys/types.h rpc/rpc.h rpcsvc/ypclnt.h rpcsvc/yp_prot.h rpcsvc/crypt.h
+ do :
+   as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ ac_fn_cxx_check_header_compile "$LINENO" "$ac_header" "$as_ac_Header" "
+@@ -31988,8 +31990,10 @@ if eval test \"x\$"$as_ac_Header"\" = x"
+ #define `$as_echo "HAVE_$ac_header" | $as_tr_cpp` 1
+ _ACEOF
+ 
+-else
+-  BUILD_HELPER=""
++# XXX: On FreeBSD we have to do this to make NIS work
++# until https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=188247
++# is resolved.
++  BUILD_HELPER="NIS"
+ fi
+ 
+ done
+@@ -32454,7 +32458,7 @@ done
+ 
+   # unconditionally requires crypt(3), for now
+   if test "x$ac_cv_func_crypt" != "x"; then
+-    for ac_header in unistd.h crypt.h shadow.h
++    for ac_header in unistd.h rpcsvc/crypt.h shadow.h
+ do :
+   as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ ac_fn_cxx_check_header_mongrel "$LINENO" "$ac_header" "$as_ac_Header" "$ac_includes_default"
+@@ -34509,7 +34513,7 @@ for ac_header in \
+   arpa/nameser.h \
+   assert.h \
+   bstring.h \
+-  crypt.h \
++  rpcsvc/crypt.h \
+   ctype.h \
+   direct.h \
+   errno.h \
