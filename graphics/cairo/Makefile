@@ -66,8 +66,9 @@ BROKEN=	OpenGL option needs X11 support
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/test/s/==/=/g' \
-		-e '/LIBS/s/-lrt//'  -e '/LIBS/s|-ldld||' \
+	@${REINPLACE_CMD} -e '/strings/s/ - / -a /' \
+		-e '/test/s/==/=/g' \
+		-e '/LIBS/s/-lrt//' -e '/LIBS/s|-ldld||' \
 		-e '/LIBS/s|-ldl||' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-lcairo|-lcairo -lpthread|' \
