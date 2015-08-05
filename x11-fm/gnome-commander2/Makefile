@@ -20,7 +20,7 @@ RUN_DEPENDS=	meld:${PORTSDIR}/textproc/meld \
 		yelp:${PORTSDIR}/x11/yelp
 
 USES=		gettext gmake libtool pathfix pkgconfig python tar:xz
-USE_GNOME=	gnomedocutils gnomeprefix gnomevfs2 libgnomeui
+USE_GNOME=	gnomedocutils gnomeprefix gnomevfs2 intltool libgnomeui
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 INSTALLS_OMF=	yes
