@@ -64,7 +64,6 @@
     SUBDIR += apache-ant
     SUBDIR += api-sanity-autotest
     SUBDIR += apiextractor
-    SUBDIR += appdata-tools
     SUBDIR += appstream-glib
     SUBDIR += apr1
     SUBDIR += apr2

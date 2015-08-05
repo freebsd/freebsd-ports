@@ -1,9 +1,10 @@
 # Created by: Vanilla I. Shu <vanilla@MinJe.com.TW>
 # $FreeBSD$
-# Please keep gtk30 and x11-themes/gnome-themes-standard minor version in sync
+# Please keep gtk30 in sync with the following x11-themes ports:
+# adwaita-icon-theme, gnome-themes-standard and mate-themes
 
 PORTNAME=	gtk
-PORTVERSION=	3.14.15
+PORTVERSION=	3.16.6
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME/sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -24,6 +25,7 @@ PORTSCOUT=	ignore:1
 PORTSCOUT=	limit:1,even
 
 BUILD_DEPENDS+=	at-spi2-atk>=0:${PORTSDIR}/accessibility/at-spi2-atk
+LIB_DEPENDS=	libepoxy.so:${PORTSDIR}/graphics/libepoxy
 RUN_DEPENDS+=	hicolor-icon-theme>=0:${PORTSDIR}/misc/hicolor-icon-theme \
 		adwaita-icon-theme>=0:${PORTSDIR}/x11-themes/adwaita-icon-theme \
 		at-spi2-atk>=0:${PORTSDIR}/accessibility/at-spi2-atk
@@ -31,56 +33,57 @@ RUN_DEPENDS+=	hicolor-icon-theme>=0:${PORTSDIR}/misc/hicolor-icon-theme \
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	atk gdkpixbuf2 gtk-update-icon-cache \
-		introspection:build pango
+USE_GNOME=	atk gdkpixbuf2 introspection:build pango
+#gtk-update-icon-cache \
+#		introspection:build pango
 USES+=		gettext gmake libtool pathfix perl5 pkgconfig
 USE_XORG=	xext xrender x11 xinerama xi xrandr xcursor xfixes xdamage \
 		xcomposite
-CONFIGURE_ARGS=	--enable-gtk2-dependency \
+CONFIGURE_ARGS=	--enable-x11-backend \
 		--disable-wayland-backend \
-		--enable-x11-backend \
 		--enable-introspection
 CPPFLAGS+=	-I${LOCALBASE}/include -fno-omit-frame-pointer
 LIBS+=		-L${LOCALBASE}/lib
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
-LIBVERSION=	0.1400.15
+LIBVERSION=	0.1600.6
 PLIST_SUB+=	LIBVERSION=${LIBVERSION}
 
 GLIB_SCHEMAS=	org.gtk.Demo.gschema.xml \
 		org.gtk.Settings.ColorChooser.gschema.xml \
 		org.gtk.Settings.Debug.gschema.xml \
-		org.gtk.Settings.FileChooser.gschema.xml \
-		org.gtk.exampleapp.gschema.xml
+		org.gtk.Settings.FileChooser.gschema.xml
 
-OPTIONS_DEFINE=	CUPS CLOUDPRINT COLORD DEBUG
-OPTIONS_DEFAULT=CUPS COLORD
+OPTIONS_DEFINE=	CUPS CLOUDPRINT COLORD DEBUG BROADWAY
+OPTIONS_DEFAULT=CUPS COLORD BROADWAY
 OPTIONS_SUB=	yes
+
+BROADWAY_DESC=	Enable GDK Broadway backend for showing GTK+ in the webbrowser using HTML5 and web sockets.
+BROADWAY_CONFIGURE_ENABLE=	broadway-backend
+
 COLORD_DESC=	Color profile support
 COLORD_LIB_DEPENDS=	libcolord.so:${PORTSDIR}/graphics/colord
 COLORD_CONFIGURE_ENABLE=colord
+
 CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
 CUPS_CONFIGURE_ENABLE=	cups
+
 CLOUDPRINT_DESC=	Cloud printing support
 CLOUDPRINT_CONFIGURE_ENABLE=	cloudprint
 CLOUDPRINT_LIB_DEPENDS=	librest-0.7.so:${PORTSDIR}/devel/librest \
 			libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
+
 DEBUG_CONFIGURE_ENABLE=debug
 
 # needed for the exists() check, booo
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${GREP} -l lgmodule | \
-		${XARGS} ${REINPLACE_CMD} -e 's|-lgmodule|@GMODULE_LIBS@|g'
 	@${REINPLACE_CMD} -e 's|[{]libdir[}]/locale|{datadir}/locale|g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|@LN_S@|${LN} -sf|' ${WRKSRC}/gtk/Makefile.in
 	@${REINPLACE_CMD} -e 's|file,cups|file,cups,lpr|' \
 		${WRKSRC}/gtk/Makefile.in
-	@${REINPLACE_CMD} -e 's|-DG_DISABLE_CHECKS||' \
-		${WRKSRC}/configure
 
 pre-configure:
 .if !exists(${LOCALBASE}/libdata/pkgconfig/cairo-xlib.pc)

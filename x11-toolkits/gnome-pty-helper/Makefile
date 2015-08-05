@@ -11,13 +11,13 @@ COMMENT=	utmp/wtmp/lastlog helper program for the vte Terminal widget
 VTE3_SLAVE=	yes
 
 MASTERDIR=	${.CURDIR}/../../x11-toolkits/vte3
-WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
-PATCHDIR=	${.CURDIR}/files
+CONFIGURE_WRKSRC=	${WRKSRC}/gnome-pty-helper
+BUILD_WRKSRC=	${WRKSRC}/gnome-pty-helper
+INSTALL_WRKSRC=	${WRKSRC}/gnome-pty-helper
 PLIST=		${.CURDIR}/pkg-plist
 USE_GNOME=	gnomeprefix
 CONFIGURE_ARGS=	# empty
-PATCH_STRIP=	-p1
-EXTRA_PATCHES+=	${MASTERDIR}/files/patch-gnome-pty-helper_Makefile.in \
-		${MASTERDIR}/files/patch-gnome-pty-helper_gnome-pty-helper.c
+#PATCH_STRIP=	-p1
+#EXTRA_PATCHES+=	${MASTERDIR}/files/patch-gnome-pty-helper_gnome-pty-helper.c
 
 .include "${MASTERDIR}/Makefile"

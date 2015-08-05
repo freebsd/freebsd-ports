@@ -3,6 +3,7 @@ libdata/pkgconfig/gnome-keybindings.pc
 libexec/cc-remote-login-helper
 libexec/gnome-control-center-search-provider
 man/man1/gnome-control-center.1.gz
+share/appdata/gnome-control-center.appdata.xml
 share/applications/gnome-background-panel.desktop
 share/applications/gnome-color-panel.desktop
 share/applications/gnome-control-center.desktop
@@ -14,6 +15,7 @@ share/applications/gnome-mouse-panel.desktop
 share/applications/gnome-notifications-panel.desktop
 share/applications/gnome-online-accounts-panel.desktop
 share/applications/gnome-power-panel.desktop
+share/applications/gnome-printers-panel.desktop
 share/applications/gnome-privacy-panel.desktop
 share/applications/gnome-region-panel.desktop
 share/applications/gnome-search-panel.desktop

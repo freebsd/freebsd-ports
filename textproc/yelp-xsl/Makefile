@@ -1,15 +1,16 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/textproc/yelp-xsl/Makefile 19967 2014-10-16 06:45:29Z gusi $
 
 PORTNAME=	yelp-xsl
-PORTVERSION=	3.14.0
+PORTVERSION=	3.16.1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	DocBook XSLT stylesheets for yelp
+
+PORTSCOUT=	limitw:1,even
 
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 

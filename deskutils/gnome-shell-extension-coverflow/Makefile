@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-shell-extension-coverflow
-PORTVERSION=	0.0.0.20141126
+PORTVERSION=	0.0.0.20150613
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Let's you Alt-Tab windows in a cover-flow manner
+COMMENT=	Lets you Alt-Tab windows in a cover-flow manner
 
 BUILD_DEPENDS=	gnome-shell>=0:${PORTSDIR}/x11/gnome-shell \
 		gsettings-desktop-schemas>=3.12.0:${PORTSDIR}/devel/gsettings-desktop-schemas
@@ -22,7 +22,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 GLIB_SCHEMAS=	org.gnome.shell.extensions.coverflowalttab.gschema.xml
 
 GH_ACCOUNT=	dmo60
-GH_TAGNAME=	c22c771
+GH_TAGNAME=	db5bd2c
 GH_PROJECT=	CoverflowAltTab
 
 PKGMESSAGE=	../gnome-shell-extra-extensions/pkg-message.slaves

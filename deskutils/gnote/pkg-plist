@@ -3,10 +3,10 @@ lib/gnote/addins/%%VERSION%%/backlinks.desktop
 lib/gnote/addins/%%VERSION%%/backlinks.so
 lib/gnote/addins/%%VERSION%%/bugzilla.desktop
 lib/gnote/addins/%%VERSION%%/bugzilla.so
-lib/gnote/addins/%%VERSION%%/exporttohtml.desktop
-lib/gnote/addins/%%VERSION%%/exporttohtml.so
 lib/gnote/addins/%%VERSION%%/exporttogtg.desktop
 lib/gnote/addins/%%VERSION%%/exporttogtg.so
+lib/gnote/addins/%%VERSION%%/exporttohtml.desktop
+lib/gnote/addins/%%VERSION%%/exporttohtml.so
 lib/gnote/addins/%%VERSION%%/filesystemsyncservice.desktop
 lib/gnote/addins/%%VERSION%%/filesystemsyncservice.so
 lib/gnote/addins/%%VERSION%%/fixedwidth.desktop
@@ -39,9 +39,9 @@ lib/gnote/addins/%%VERSION%%/underline.desktop
 lib/gnote/addins/%%VERSION%%/underline.so
 lib/gnote/addins/%%VERSION%%/webdavsyncservice.desktop
 lib/gnote/addins/%%VERSION%%/webdavsyncservice.so
+lib/libgnote-3.16.so.0
+lib/libgnote-3.16.so.0.1.1
 lib/libgnote.so
-lib/libgnote-3.14.so.0
-lib/libgnote-3.14.so.0.0.1
 man/man1/gnote.1.gz
 share/appdata/gnote.appdata.xml
 share/applications/gnote.desktop
@@ -88,7 +88,6 @@ share/help/C/gnote/figures/gnote-pindown.png
 share/help/C/gnote/figures/gnote-pinup.png
 share/help/C/gnote/figures/gnote-preferences-add-ins.png
 share/help/C/gnote/figures/gnote-preferences-editing.png
-share/help/C/gnote/figures/gnote-preferences-hotkeys.png
 share/help/C/gnote/figures/gnote-preferences-synchronization.png
 share/help/C/gnote/figures/gnote-search-all-notes.png
 share/help/C/gnote/figures/gnote-sync-progress.png
@@ -120,7 +119,6 @@ share/help/C/gnote/gnote-common-problems.page
 share/help/C/gnote/gnote-creating-notes.page
 share/help/C/gnote/gnote-deleting-notes.page
 share/help/C/gnote/gnote-editing-notes.page
-share/help/C/gnote/gnote-hotkeys.page
 share/help/C/gnote/gnote-introduction.page
 share/help/C/gnote/gnote-links.page
 share/help/C/gnote/gnote-notes-preferences.page
@@ -138,7 +136,6 @@ share/help/cs/gnote/figures/gnote-pindown.png
 share/help/cs/gnote/figures/gnote-pinup.png
 share/help/cs/gnote/figures/gnote-preferences-add-ins.png
 share/help/cs/gnote/figures/gnote-preferences-editing.png
-share/help/cs/gnote/figures/gnote-preferences-hotkeys.png
 share/help/cs/gnote/figures/gnote-preferences-synchronization.png
 share/help/cs/gnote/figures/gnote-search-all-notes.png
 share/help/cs/gnote/figures/gnote-sync-progress.png
@@ -170,7 +167,6 @@ share/help/cs/gnote/gnote-common-problems.page
 share/help/cs/gnote/gnote-creating-notes.page
 share/help/cs/gnote/gnote-deleting-notes.page
 share/help/cs/gnote/gnote-editing-notes.page
-share/help/cs/gnote/gnote-hotkeys.page
 share/help/cs/gnote/gnote-introduction.page
 share/help/cs/gnote/gnote-links.page
 share/help/cs/gnote/gnote-notes-preferences.page
@@ -188,7 +184,6 @@ share/help/da/gnote/figures/gnote-pindown.png
 share/help/da/gnote/figures/gnote-pinup.png
 share/help/da/gnote/figures/gnote-preferences-add-ins.png
 share/help/da/gnote/figures/gnote-preferences-editing.png
-share/help/da/gnote/figures/gnote-preferences-hotkeys.png
 share/help/da/gnote/figures/gnote-preferences-synchronization.png
 share/help/da/gnote/figures/gnote-search-all-notes.png
 share/help/da/gnote/figures/gnote-sync-progress.png
@@ -220,7 +215,6 @@ share/help/da/gnote/gnote-common-problems.page
 share/help/da/gnote/gnote-creating-notes.page
 share/help/da/gnote/gnote-deleting-notes.page
 share/help/da/gnote/gnote-editing-notes.page
-share/help/da/gnote/gnote-hotkeys.page
 share/help/da/gnote/gnote-introduction.page
 share/help/da/gnote/gnote-links.page
 share/help/da/gnote/gnote-notes-preferences.page
@@ -238,7 +232,6 @@ share/help/de/gnote/figures/gnote-pindown.png
 share/help/de/gnote/figures/gnote-pinup.png
 share/help/de/gnote/figures/gnote-preferences-add-ins.png
 share/help/de/gnote/figures/gnote-preferences-editing.png
-share/help/de/gnote/figures/gnote-preferences-hotkeys.png
 share/help/de/gnote/figures/gnote-preferences-synchronization.png
 share/help/de/gnote/figures/gnote-search-all-notes.png
 share/help/de/gnote/figures/gnote-sync-progress.png
@@ -270,7 +263,6 @@ share/help/de/gnote/gnote-common-problems.page
 share/help/de/gnote/gnote-creating-notes.page
 share/help/de/gnote/gnote-deleting-notes.page
 share/help/de/gnote/gnote-editing-notes.page
-share/help/de/gnote/gnote-hotkeys.page
 share/help/de/gnote/gnote-introduction.page
 share/help/de/gnote/gnote-links.page
 share/help/de/gnote/gnote-notes-preferences.page
@@ -288,7 +280,6 @@ share/help/el/gnote/figures/gnote-pindown.png
 share/help/el/gnote/figures/gnote-pinup.png
 share/help/el/gnote/figures/gnote-preferences-add-ins.png
 share/help/el/gnote/figures/gnote-preferences-editing.png
-share/help/el/gnote/figures/gnote-preferences-hotkeys.png
 share/help/el/gnote/figures/gnote-preferences-synchronization.png
 share/help/el/gnote/figures/gnote-search-all-notes.png
 share/help/el/gnote/figures/gnote-sync-progress.png
@@ -320,7 +311,6 @@ share/help/el/gnote/gnote-common-problems.page
 share/help/el/gnote/gnote-creating-notes.page
 share/help/el/gnote/gnote-deleting-notes.page
 share/help/el/gnote/gnote-editing-notes.page
-share/help/el/gnote/gnote-hotkeys.page
 share/help/el/gnote/gnote-introduction.page
 share/help/el/gnote/gnote-links.page
 share/help/el/gnote/gnote-notes-preferences.page
@@ -338,7 +328,6 @@ share/help/es/gnote/figures/gnote-pindown.png
 share/help/es/gnote/figures/gnote-pinup.png
 share/help/es/gnote/figures/gnote-preferences-add-ins.png
 share/help/es/gnote/figures/gnote-preferences-editing.png
-share/help/es/gnote/figures/gnote-preferences-hotkeys.png
 share/help/es/gnote/figures/gnote-preferences-synchronization.png
 share/help/es/gnote/figures/gnote-search-all-notes.png
 share/help/es/gnote/figures/gnote-sync-progress.png
@@ -370,7 +359,6 @@ share/help/es/gnote/gnote-common-problems.page
 share/help/es/gnote/gnote-creating-notes.page
 share/help/es/gnote/gnote-deleting-notes.page
 share/help/es/gnote/gnote-editing-notes.page
-share/help/es/gnote/gnote-hotkeys.page
 share/help/es/gnote/gnote-introduction.page
 share/help/es/gnote/gnote-links.page
 share/help/es/gnote/gnote-notes-preferences.page
@@ -388,7 +376,6 @@ share/help/fr/gnote/figures/gnote-pindown.png
 share/help/fr/gnote/figures/gnote-pinup.png
 share/help/fr/gnote/figures/gnote-preferences-add-ins.png
 share/help/fr/gnote/figures/gnote-preferences-editing.png
-share/help/fr/gnote/figures/gnote-preferences-hotkeys.png
 share/help/fr/gnote/figures/gnote-preferences-synchronization.png
 share/help/fr/gnote/figures/gnote-search-all-notes.png
 share/help/fr/gnote/figures/gnote-sync-progress.png
@@ -420,7 +407,6 @@ share/help/fr/gnote/gnote-common-problems.page
 share/help/fr/gnote/gnote-creating-notes.page
 share/help/fr/gnote/gnote-deleting-notes.page
 share/help/fr/gnote/gnote-editing-notes.page
-share/help/fr/gnote/gnote-hotkeys.page
 share/help/fr/gnote/gnote-introduction.page
 share/help/fr/gnote/gnote-links.page
 share/help/fr/gnote/gnote-notes-preferences.page
@@ -438,7 +424,6 @@ share/help/hu/gnote/figures/gnote-pindown.png
 share/help/hu/gnote/figures/gnote-pinup.png
 share/help/hu/gnote/figures/gnote-preferences-add-ins.png
 share/help/hu/gnote/figures/gnote-preferences-editing.png
-share/help/hu/gnote/figures/gnote-preferences-hotkeys.png
 share/help/hu/gnote/figures/gnote-preferences-synchronization.png
 share/help/hu/gnote/figures/gnote-search-all-notes.png
 share/help/hu/gnote/figures/gnote-sync-progress.png
@@ -470,7 +455,6 @@ share/help/hu/gnote/gnote-common-problems.page
 share/help/hu/gnote/gnote-creating-notes.page
 share/help/hu/gnote/gnote-deleting-notes.page
 share/help/hu/gnote/gnote-editing-notes.page
-share/help/hu/gnote/gnote-hotkeys.page
 share/help/hu/gnote/gnote-introduction.page
 share/help/hu/gnote/gnote-links.page
 share/help/hu/gnote/gnote-notes-preferences.page
@@ -488,7 +472,6 @@ share/help/lt/gnote/figures/gnote-pindown.png
 share/help/lt/gnote/figures/gnote-pinup.png
 share/help/lt/gnote/figures/gnote-preferences-add-ins.png
 share/help/lt/gnote/figures/gnote-preferences-editing.png
-share/help/lt/gnote/figures/gnote-preferences-hotkeys.png
 share/help/lt/gnote/figures/gnote-preferences-synchronization.png
 share/help/lt/gnote/figures/gnote-search-all-notes.png
 share/help/lt/gnote/figures/gnote-sync-progress.png
@@ -520,7 +503,6 @@ share/help/lt/gnote/gnote-common-problems.page
 share/help/lt/gnote/gnote-creating-notes.page
 share/help/lt/gnote/gnote-deleting-notes.page
 share/help/lt/gnote/gnote-editing-notes.page
-share/help/lt/gnote/gnote-hotkeys.page
 share/help/lt/gnote/gnote-introduction.page
 share/help/lt/gnote/gnote-links.page
 share/help/lt/gnote/gnote-notes-preferences.page
@@ -538,7 +520,6 @@ share/help/ru/gnote/figures/gnote-pindown.png
 share/help/ru/gnote/figures/gnote-pinup.png
 share/help/ru/gnote/figures/gnote-preferences-add-ins.png
 share/help/ru/gnote/figures/gnote-preferences-editing.png
-share/help/ru/gnote/figures/gnote-preferences-hotkeys.png
 share/help/ru/gnote/figures/gnote-preferences-synchronization.png
 share/help/ru/gnote/figures/gnote-search-all-notes.png
 share/help/ru/gnote/figures/gnote-sync-progress.png
@@ -570,7 +551,6 @@ share/help/ru/gnote/gnote-common-problems.page
 share/help/ru/gnote/gnote-creating-notes.page
 share/help/ru/gnote/gnote-deleting-notes.page
 share/help/ru/gnote/gnote-editing-notes.page
-share/help/ru/gnote/gnote-hotkeys.page
 share/help/ru/gnote/gnote-introduction.page
 share/help/ru/gnote/gnote-links.page
 share/help/ru/gnote/gnote-notes-preferences.page
@@ -588,7 +568,6 @@ share/help/sl/gnote/figures/gnote-pindown.png
 share/help/sl/gnote/figures/gnote-pinup.png
 share/help/sl/gnote/figures/gnote-preferences-add-ins.png
 share/help/sl/gnote/figures/gnote-preferences-editing.png
-share/help/sl/gnote/figures/gnote-preferences-hotkeys.png
 share/help/sl/gnote/figures/gnote-preferences-synchronization.png
 share/help/sl/gnote/figures/gnote-search-all-notes.png
 share/help/sl/gnote/figures/gnote-sync-progress.png
@@ -620,7 +599,6 @@ share/help/sl/gnote/gnote-common-problems.page
 share/help/sl/gnote/gnote-creating-notes.page
 share/help/sl/gnote/gnote-deleting-notes.page
 share/help/sl/gnote/gnote-editing-notes.page
-share/help/sl/gnote/gnote-hotkeys.page
 share/help/sl/gnote/gnote-introduction.page
 share/help/sl/gnote/gnote-links.page
 share/help/sl/gnote/gnote-notes-preferences.page
@@ -629,6 +607,54 @@ share/help/sl/gnote/gnote-synchronization.page
 share/help/sl/gnote/gnote-template-notes.page
 share/help/sl/gnote/gnote-working-with-notebooks.page
 share/help/sl/gnote/index.page
+share/help/sv/gnote/figures/add-notebook-search.png
+share/help/sv/gnote/figures/add-to-notebook.png
+share/help/sv/gnote/figures/delete-notebook.png
+share/help/sv/gnote/figures/gnote-addin-table-of-contents.png
+share/help/sv/gnote/figures/gnote-new-note.png
+share/help/sv/gnote/figures/gnote-pindown.png
+share/help/sv/gnote/figures/gnote-pinup.png
+share/help/sv/gnote/figures/gnote-preferences-add-ins.png
+share/help/sv/gnote/figures/gnote-preferences-editing.png
+share/help/sv/gnote/figures/gnote-preferences-synchronization.png
+share/help/sv/gnote/figures/gnote-search-all-notes.png
+share/help/sv/gnote/figures/gnote-sync-progress.png
+share/help/sv/gnote/figures/gnote-syncprefs-advanced.png
+share/help/sv/gnote/figures/gnote-syncprefs-local.png
+share/help/sv/gnote/figures/gnote-syncprefs-webdav.png
+share/help/sv/gnote/figures/gnote-template-note.png
+share/help/sv/gnote/figures/gnote-tools.png
+share/help/sv/gnote/figures/logo32.png
+share/help/sv/gnote/figures/note-template.png
+share/help/sv/gnote/figures/notebook-icon.png
+share/help/sv/gnote/gnote-addin-bugzillalink.page
+share/help/sv/gnote/gnote-addin-fixedwidth.page
+share/help/sv/gnote/gnote-addin-html.page
+share/help/sv/gnote/gnote-addin-notedirwatcher.page
+share/help/sv/gnote/gnote-addin-noteoftheday.page
+share/help/sv/gnote/gnote-addin-print.page
+share/help/sv/gnote/gnote-addin-readonly.page
+share/help/sv/gnote/gnote-addin-replacetitle.page
+share/help/sv/gnote/gnote-addin-specialnotes.page
+share/help/sv/gnote/gnote-addin-sync-local.page
+share/help/sv/gnote/gnote-addin-sync-webdav.page
+share/help/sv/gnote/gnote-addin-tableofcontents.page
+share/help/sv/gnote/gnote-addin-timestamp.page
+share/help/sv/gnote/gnote-addin-underline.page
+share/help/sv/gnote/gnote-addins-preferences.page
+share/help/sv/gnote/gnote-bulleted-lists.page
+share/help/sv/gnote/gnote-common-problems.page
+share/help/sv/gnote/gnote-creating-notes.page
+share/help/sv/gnote/gnote-deleting-notes.page
+share/help/sv/gnote/gnote-editing-notes.page
+share/help/sv/gnote/gnote-introduction.page
+share/help/sv/gnote/gnote-links.page
+share/help/sv/gnote/gnote-notes-preferences.page
+share/help/sv/gnote/gnote-searching-notes.page
+share/help/sv/gnote/gnote-synchronization.page
+share/help/sv/gnote/gnote-template-notes.page
+share/help/sv/gnote/gnote-working-with-notebooks.page
+share/help/sv/gnote/index.page
 share/help/zh_CN/gnote/figures/add-notebook-search.png
 share/help/zh_CN/gnote/figures/add-to-notebook.png
 share/help/zh_CN/gnote/figures/delete-notebook.png
@@ -638,7 +664,6 @@ share/help/zh_CN/gnote/figures/gnote-pindown.png
 share/help/zh_CN/gnote/figures/gnote-pinup.png
 share/help/zh_CN/gnote/figures/gnote-preferences-add-ins.png
 share/help/zh_CN/gnote/figures/gnote-preferences-editing.png
-share/help/zh_CN/gnote/figures/gnote-preferences-hotkeys.png
 share/help/zh_CN/gnote/figures/gnote-preferences-synchronization.png
 share/help/zh_CN/gnote/figures/gnote-search-all-notes.png
 share/help/zh_CN/gnote/figures/gnote-sync-progress.png
@@ -670,7 +695,6 @@ share/help/zh_CN/gnote/gnote-common-problems.page
 share/help/zh_CN/gnote/gnote-creating-notes.page
 share/help/zh_CN/gnote/gnote-deleting-notes.page
 share/help/zh_CN/gnote/gnote-editing-notes.page
-share/help/zh_CN/gnote/gnote-hotkeys.page
 share/help/zh_CN/gnote/gnote-introduction.page
 share/help/zh_CN/gnote/gnote-links.page
 share/help/zh_CN/gnote/gnote-notes-preferences.page
@@ -690,6 +714,7 @@ share/locale/ar/LC_MESSAGES/gnote.mo
 share/locale/as/LC_MESSAGES/gnote.mo
 share/locale/bg/LC_MESSAGES/gnote.mo
 share/locale/bn_IN/LC_MESSAGES/gnote.mo
+share/locale/bs/LC_MESSAGES/gnote.mo
 share/locale/ca/LC_MESSAGES/gnote.mo
 share/locale/ca@valencia/LC_MESSAGES/gnote.mo
 share/locale/cs/LC_MESSAGES/gnote.mo
@@ -723,6 +748,7 @@ share/locale/pt/LC_MESSAGES/gnote.mo
 share/locale/pt_BR/LC_MESSAGES/gnote.mo
 share/locale/ro/LC_MESSAGES/gnote.mo
 share/locale/ru/LC_MESSAGES/gnote.mo
+share/locale/sk/LC_MESSAGES/gnote.mo
 share/locale/sl/LC_MESSAGES/gnote.mo
 share/locale/sr/LC_MESSAGES/gnote.mo
 share/locale/sr@latin/LC_MESSAGES/gnote.mo

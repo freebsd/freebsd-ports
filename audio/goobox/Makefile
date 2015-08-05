@@ -1,10 +1,9 @@
 # Created by: Alexander Nedotsukov <bland@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/audio/goobox/Makefile 19823 2014-08-20 09:28:14Z gusi $
 
 PORTNAME=	goobox
-PORTVERSION=	3.3.2
-PORTREVISION=	3
+PORTVERSION=	3.4.0
+PORTREVISION=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -20,7 +19,7 @@ LIB_DEPENDS=	libdiscid.so:${PORTSDIR}/audio/libdiscid \
 		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
 
 USES=		desktop-file-utils gettext gmake pkgconfig tar:xz
-USE_GNOME=	glib20 gtk30 gnomeprefix intlhack
+USE_GNOME=	glib20 gtk30 intlhack
 USE_XORG=	x11
 USE_GSTREAMER1=	yes
 GNU_CONFIGURE=	yes

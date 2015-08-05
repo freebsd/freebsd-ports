@@ -18,7 +18,7 @@ USES=		desktop-file-utils gettext gmake jpeg libtool pathfix pkgconfig \
 		tar:xz
 USE_MATE=	desktop icontheme
 USE_XORG=	x11
-USE_GNOME=	gdkpixbuf2 glib20 gtk20 librsvg2 libxml2
+USE_GNOME=	gdkpixbuf2 glib20 gtk20 intltool librsvg2 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-gtk-doc \
 		--with-html-dir=${PREFIX}/share/doc \

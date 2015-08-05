@@ -22,8 +22,8 @@ GH_ACCOUNT=	bootchk
 
 USES=		autoreconf compiler:nestedfct gettext gmake pkgconfig
 GNU_CONFIGURE=	yes
-
-LIBS+=		-L${LOCALBASE}/lib -lintl
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 PLUGIN_DIR?=	libexec/gimp/2.2/plug-ins
 PLIST_SUB=	PLUGIN_DIR=${PLUGIN_DIR}

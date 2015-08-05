@@ -9,7 +9,6 @@ lib/libcaribou.a
 lib/libcaribou.so
 lib/libcaribou.so.0
 lib/libcaribou.so.0.0.0
-libexec/caribou
 %%PYTHON_SITELIBDIR%%/caribou/__init__.py
 %%PYTHON_SITELIBDIR%%/caribou/__init__.pyc
 %%PYTHON_SITELIBDIR%%/caribou/__init__.pyo
@@ -48,14 +47,15 @@ libexec/caribou
 %%PYTHON_SITELIBDIR%%/caribou/settings/settings_manager.pyo
 libdata/pkgconfig/caribou-1.0.pc
 libexec/antler-keyboard
+libexec/caribou
 share/antler/dark-key-border.svg
 share/antler/style.css
-share/caribou/layouts/fullscale/us.xml
-share/caribou/layouts/scan/us.xml
-share/caribou/layouts/touch/ara.xml
-share/caribou/layouts/touch/fr.xml
-share/caribou/layouts/touch/il.xml
-share/caribou/layouts/touch/us.xml
+%%DATADIR%%/layouts/fullscale/us.xml
+%%DATADIR%%/layouts/scan/us.xml
+%%DATADIR%%/layouts/touch/ara.xml
+%%DATADIR%%/layouts/touch/fr.xml
+%%DATADIR%%/layouts/touch/il.xml
+%%DATADIR%%/layouts/touch/us.xml
 share/dbus-1/services/org.gnome.Caribou.Antler.service
 share/dbus-1/services/org.gnome.Caribou.Daemon.service
 share/gir-1.0/Caribou-1.0.gir
@@ -126,5 +126,5 @@ share/locale/vi/LC_MESSAGES/caribou.mo
 share/locale/zh_CN/LC_MESSAGES/caribou.mo
 share/locale/zh_HK/LC_MESSAGES/caribou.mo
 share/locale/zh_TW/LC_MESSAGES/caribou.mo
-share/vala/vapi/caribou-1.0.vapi
 share/vala/vapi/caribou-1.0.deps
+share/vala/vapi/caribou-1.0.vapi

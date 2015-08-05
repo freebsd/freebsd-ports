@@ -22,10 +22,12 @@ lib/gio/modules/libgioremote-volume-monitor.so
 lib/gio/modules/libgvfsdbus.so
 lib/gvfs/libgvfscommon.so
 lib/gvfs/libgvfsdaemon.so
-libexec/gvfsd-afp
-libexec/gvfsd-afp-browse
+%%AFC%%libexec/gvfs-afc-volume-monitor
 %%GPHOTO2%%libexec/gvfs-gphoto2-volume-monitor
 %%HAL%%libexec/gvfs-hal-volume-monitor
+libexec/gvfsd-afp
+libexec/gvfsd-afp-browse
+%%AFC%%libexec/gvfsd-afc
 libexec/gvfsd
 libexec/gvfsd-archive
 libexec/gvfsd-burn
@@ -47,6 +49,7 @@ libexec/gvfsd-trash
 man/man1/gvfs-cat.1.gz
 man/man1/gvfs-copy.1.gz
 man/man1/gvfs-info.1.gz
+man/man1/gvfs-less.1.gz
 man/man1/gvfs-ls.1.gz
 man/man1/gvfs-mime.1.gz
 man/man1/gvfs-mkdir.1.gz
@@ -67,11 +70,28 @@ man/man1/gvfsd.1.gz
 man/man7/gvfs.7.gz
 %%AVAHI%%share/GConf/gsettings/gvfs-dns-sd.convert
 %%SAMBA%%share/GConf/gsettings/gvfs-smb.convert
-share/bash-completion/completions/gvfs
+share/bash-completion/completions/gvfs-cat
+share/bash-completion/completions/gvfs-copy
+share/bash-completion/completions/gvfs-info
+share/bash-completion/completions/gvfs-less
+share/bash-completion/completions/gvfs-ls
+share/bash-completion/completions/gvfs-mkdir
+share/bash-completion/completions/gvfs-monitor-dir
+share/bash-completion/completions/gvfs-monitor-file
+share/bash-completion/completions/gvfs-move
+share/bash-completion/completions/gvfs-open
+share/bash-completion/completions/gvfs-rename
+share/bash-completion/completions/gvfs-rm
+share/bash-completion/completions/gvfs-save
+share/bash-completion/completions/gvfs-set-attribute
+share/bash-completion/completions/gvfs-trash
+share/bash-completion/completions/gvfs-tree
 share/dbus-1/services/gvfs-daemon.service
 share/dbus-1/services/gvfs-metadata.service
+%%AFC%%share/dbus-1/services/org.gtk.Private.AfcVolumeMonitor.service
 %%GPHOTO2%%share/dbus-1/services/org.gtk.Private.GPhoto2VolumeMonitor.service
 %%HAL%%share/dbus-1/services/org.gtk.Private.HalVolumeMonitor.service
+%%AFC%%%%DATADIR%%/mounts/afc.mount
 share/gvfs/mounts/afp-browse.mount
 share/gvfs/mounts/afp.mount
 %%DATADIR%%/mounts/archive.mount
@@ -90,7 +110,7 @@ share/gvfs/mounts/afp.mount
 %%SAMBA%%%%DATADIR%%/mounts/smb-browse.mount
 %%SAMBA%%%%DATADIR%%/mounts/smb.mount
 %%DATADIR%%/mounts/trash.mount
-%%DATADIR%%/remote-volume-monitors/.keep
+%%AFC%%%%DATADIR%%/remote-volume-monitors/afc.monitor
 %%GPHOTO2%%%%DATADIR%%/remote-volume-monitors/gphoto2.monitor
 %%HAL%%%%DATADIR%%/remote-volume-monitors/hal.monitor
 share/locale/af/LC_MESSAGES/gvfs.mo
@@ -102,6 +122,7 @@ share/locale/be@latin/LC_MESSAGES/gvfs.mo
 share/locale/bg/LC_MESSAGES/gvfs.mo
 share/locale/bn/LC_MESSAGES/gvfs.mo
 share/locale/bn_IN/LC_MESSAGES/gvfs.mo
+share/locale/bs/LC_MESSAGES/gvfs.mo
 share/locale/ca/LC_MESSAGES/gvfs.mo
 share/locale/ca@valencia/LC_MESSAGES/gvfs.mo
 share/locale/cs/LC_MESSAGES/gvfs.mo
@@ -164,3 +185,5 @@ share/locale/vi/LC_MESSAGES/gvfs.mo
 share/locale/zh_CN/LC_MESSAGES/gvfs.mo
 share/locale/zh_HK/LC_MESSAGES/gvfs.mo
 share/locale/zh_TW/LC_MESSAGES/gvfs.mo
+@dir %%DATADIR%%/remote-volume-monitors
+@dir share/GConf/gsettings

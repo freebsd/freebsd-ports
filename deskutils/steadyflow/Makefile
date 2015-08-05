@@ -2,7 +2,7 @@
 
 PORTNAME=	steadyflow
 PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	https://launchpadlibrarian.net/109019071/ \
 	https://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/ \
