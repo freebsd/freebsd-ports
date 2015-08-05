@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	squid
-PORTVERSION=	3.5.6
+PORTVERSION=	3.5.7
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
 		http://www2.us.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
@@ -255,12 +255,6 @@ CONFIGURE_ARGS+=	--enable-auth-basic="${basic_auth}" \
 			--enable-auth-negotiate="${negotiate_auth}" \
 			--enable-auth-ntlm="${ntlm_auth}"
 
-.if ${PORT_OPTIONS:MECAP}
-. if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
-BROKEN=			Squid with eCAP enabled can't be compiled by clang
-. endif
-.endif
-
 # Storage schemes:
 storage_schemes=	ufs
 diskio_modules=		AIO Blocking IpcIo Mmapped
@@ -354,7 +348,6 @@ post-install:
 		${STAGEDIR}${EXAMPLESDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${MYDOCS} ${STAGEDIR}${DOCSDIR})
-	${MKDIR} ${STAGEDIR}/var/squid/logs
 
 .include <bsd.port.pre.mk>
 
