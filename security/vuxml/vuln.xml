@@ -58,6 +58,67 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ae8c09cb-32da-11e5-a4a5-002590263bf5">
+    <topic>elasticsearch -- directory traversal attack via snapshot API</topic>
+    <affects>
+      <package>
+	<name>elasticsearch</name>
+	<range><ge>1.0.0</ge><lt>1.6.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Elastic reports:</p>
+	<blockquote cite="https://www.elastic.co/community/security">
+	  <p>Vulnerability Summary: Elasticsearch versions from 1.0.0 to 1.6.0
+	    are vulnerable to a directory traversal attack.</p>
+	  <p>Remediation Summary: Users should upgrade to 1.6.1 or later, or
+	    constrain access to the snapshot API to trusted sources.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5531</cvename>
+      <freebsdpr>ports/201834</freebsdpr>
+      <url>https://www.elastic.co/community/security</url>
+    </references>
+    <dates>
+      <discovery>2015-07-16</discovery>
+      <entry>2015-08-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fb3668df-32d7-11e5-a4a5-002590263bf5">
+    <topic>elasticsearch -- remote code execution via transport protocol</topic>
+    <affects>
+      <package>
+	<name>elasticsearch</name>
+	<range><lt>1.6.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Elastic reports:</p>
+	<blockquote cite="https://www.elastic.co/community/security">
+	  <p>Vulnerability Summary: Elasticsearch versions prior to 1.6.1 are
+	    vulnerable to an attack that can result in remote code execution.</p>
+	  <p>Remediation Summary: Users should upgrade to 1.6.1 or 1.7.0.
+	    Alternately, ensure that only trusted applications have access to
+	    the transport protocol port.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5377</cvename>
+      <freebsdpr>ports/201834</freebsdpr>
+      <url>https://www.elastic.co/community/security</url>
+    </references>
+    <dates>
+      <discovery>2015-07-16</discovery>
+      <entry>2015-08-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="da451130-365d-11e5-a4a5-002590263bf5">
     <topic>xen-tools -- QEMU heap overflow flaw with certain ATAPI commands</topic>
     <affects>
