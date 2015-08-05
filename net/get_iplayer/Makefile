@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	get_iplayer
-PORTVERSION=	2.91
+PORTVERSION=	2.94
 CATEGORIES=	net multimedia
 MASTER_SITES=	ftp://ftp.infradead.org/pub/${PORTNAME}/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
