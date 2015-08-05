@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	elasticsearch
-PORTVERSION=	1.6.0
+PORTVERSION=	1.7.0
 CATEGORIES=	textproc java devel
 MASTER_SITES=	http://download.elasticsearch.org/${PORTNAME}/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
@@ -15,6 +15,7 @@ LICENSE=	APACHE20
 RUN_DEPENDS=	java-sigar>=0:${PORTSDIR}/java/sigar
 
 USES=		cpe
+NO_ARCH=	yes
 USE_JAVA=	yes
 NO_BUILD=	yes
 JAVA_VERSION=	1.7+
@@ -32,7 +33,7 @@ JARS=		elasticsearch-${PORTVERSION}.jar \
 		asm-commons-4.1.jar \
 		apache-log4j-extras-1.2.17.jar \
 		antlr-runtime-3.5.jar \
-		groovy-all-2.4.0.jar \
+		groovy-all-2.4.4.jar \
 		jna-4.1.0.jar \
 		jts-1.13.jar \
 		log4j-1.2.17.jar \
