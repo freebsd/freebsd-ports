@@ -3,7 +3,7 @@
 
 PORTNAME=	nautilus-sendto
 PORTVERSION=	3.8.2
-CATEGORIES=	net
+CATEGORIES=	deskutils
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
