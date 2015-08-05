@@ -105,9 +105,16 @@ useful for testing purposes and in practice has no use.
 5. Known issues
 ==============================================================================
 
-For mkntfs(8) -F must be used to allow non-block device to be processed.
+- For mkntfs(8) -F must be used to allow non-block device to be processed.
 
-When reading/writting the same file repeatedly while doing many simultaneous
+- Current implementation does not properly work with partitions of size which
+is not a multiply of UBLIO_BLOCKSIZE (cannot read/write last cluster). For
+instance, you may not be able to create ntfs filesystem because of this with
+
+   Initializing device with zeroes:  99%Failed to complete writing to
+   /dev/ada0s1 after three retries.
+
+- When reading/writting the same file repeatedly while doing many simultaneous
 operations on different files sometimes the former one fails: read(2) returns
 -1 and sets errno to EAGAIN. This is because of a difference between the FUSE
 kernel implementation in Linux and FreeBSD, and is being worked on. An example
