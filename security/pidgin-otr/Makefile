@@ -22,7 +22,7 @@ LIB_DEPENDS=	libotr.so.5:${PORTSDIR}/security/libotr \
 USES=		cpe gettext gmake libtool pkgconfig
 CPE_VENDOR=	cypherpunks
 CPE_PRODUCT=	${PKGNAMEPREFIX}${PORTNAME}
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 intltool
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 

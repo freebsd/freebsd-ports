@@ -19,7 +19,7 @@ RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool pkgconfig tar:bzip2
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 intltool
 PORTDOCS=	AUTHORS ChangeLog HACKING NEWS README TODO
 
 CPPFLAGS+=	-I${LOCALBASE}/include

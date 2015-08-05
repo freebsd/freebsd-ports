@@ -17,7 +17,7 @@ GNU_CONFIGURE=	yes
 USE_GL=		gl
 USES=		desktop-file-utils gettext gmake libtool pathfix \
 		pkgconfig shared-mime-info tar:bzip2
-USE_GNOME=	gtk20 libwnck pango
+USE_GNOME=	gtk20 intltool libwnck pango
 USE_XORG=	xrender
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
