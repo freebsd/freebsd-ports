@@ -4,6 +4,7 @@
 PORTNAME=	litecoin
 PORTVERSION=	0.10.2.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	LOCAL/swills
 
@@ -89,7 +90,8 @@ PLIST_FILES?=	bin/litecoin-qt share/applications/litecoin-qt.desktop \
 .if defined(SLAVE_PORT) && ${SLAVE_PORT} == "no"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|bitcoin128|litecoin128|' \
+	@${REINPLACE_CMD} -e 's|bitcoin|litecoin|g' \
+			  -e 's|Bitcoin|Litecoin|g' \
 		${WRKSRC}/contrib/debian/bitcoin-qt.desktop
 
 post-install:
