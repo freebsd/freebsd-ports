@@ -50,6 +50,7 @@
     SUBDIR += mpack
     SUBDIR += nomyso
     SUBDIR += o3read
+    SUBDIR += ocaml-jsonm
     SUBDIR += osm2mp
     SUBDIR += osm2pgsql
     SUBDIR += p5-Boulder
