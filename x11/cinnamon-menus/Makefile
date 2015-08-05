@@ -15,10 +15,9 @@ BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
 RUN_DEPENDS=	xkeyboard-config>=0:${PORTSDIR}/x11/xkeyboard-config \
 		libxkbfile>=0:${PORTSDIR}/x11/libxkbfile
 
-USES=		autoreconf:build gettext gmake libtool pathfix pkgconfig \
+USES=		autoreconf gettext gmake libtool pathfix pkgconfig \
 		python:2 tar:xz
-USE_GNOME=	gnomemenus3 gnomeprefix gtk30 intlhack \
-		introspection:build
+USE_GNOME=	gnomemenus3 gnomeprefix gtk30 introspection:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
 USE_LDCONFIG=	yes
@@ -27,8 +26,5 @@ PATHFIX_MAKEFILEIN=	Makefile.am
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
-
-pre-configure:
-	cd ${WRKSRC} && ${SETENV} NOCONFIGURE=yes ${SH} ./autogen.sh
 
 .include <bsd.port.mk>

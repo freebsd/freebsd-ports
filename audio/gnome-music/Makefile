@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-music
-PORTVERSION=	3.14.3
+PORTVERSION=	3.16.1
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -12,13 +12,13 @@ COMMENT=	GNOME music playing application
 
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 LIB_DEPENDS=	libgrilo-0.2.so:${PORTSDIR}/net/grilo \
-		libmediaart-1.0.so:${PORTSDIR}/multimedia/libmediaart
+		libmediaart-2.0.so:${PORTSDIR}/multimedia/libmediaart
 
-USES=		gettext gmake libtool pathfix pkgconfig \
-		python:3 tar:xz
+PORTSCOUT=	limitw:1,even
+
+USES=		gettext gmake libtool pathfix pkgconfig python:3 tar:xz
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomedesktop3 gnomeprefix gtk30 intlhack \
-		introspection:build
+USE_GNOME=	gnomedesktop3 gtk30 intlhack introspection:build
 GNU_CONFIGURE=	yes
 USE_GSTREAMER1=	ogg mad
 INSTALLS_ICONS=	yes

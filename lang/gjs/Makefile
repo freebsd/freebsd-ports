@@ -1,9 +1,8 @@
 # Created by: Pawel Worach <pawel.worach@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/lang/gjs/Makefile 19944 2014-10-15 05:33:09Z gusi $
 
 PORTNAME=	gjs
-PORTVERSION=	1.42.0
+PORTVERSION=	1.43.3
 PORTREVISION=	1
 CATEGORIES=	lang gnome
 MASTER_SITES=	GNOME
@@ -24,5 +23,8 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
+
+post-install:
+	@${RM} -rf ${STAGEDIR}${PREFIX}/libexec/gjs
 
 .include <bsd.port.mk>

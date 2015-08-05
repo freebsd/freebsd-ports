@@ -9,6 +9,7 @@ include/webkitgtk-4.0/JavaScriptCore/WebKitAvailability.h
 include/webkitgtk-4.0/webkit2/WebKitAuthenticationRequest.h
 include/webkitgtk-4.0/webkit2/WebKitBackForwardList.h
 include/webkitgtk-4.0/webkit2/WebKitBackForwardListItem.h
+include/webkitgtk-4.0/webkit2/WebKitColorChooserRequest.h
 include/webkitgtk-4.0/webkit2/WebKitContextMenu.h
 include/webkitgtk-4.0/webkit2/WebKitContextMenuActions.h
 include/webkitgtk-4.0/webkit2/WebKitContextMenuItem.h
@@ -31,6 +32,8 @@ include/webkitgtk-4.0/webkit2/WebKitJavascriptResult.h
 include/webkitgtk-4.0/webkit2/WebKitMimeInfo.h
 include/webkitgtk-4.0/webkit2/WebKitNavigationAction.h
 include/webkitgtk-4.0/webkit2/WebKitNavigationPolicyDecision.h
+include/webkitgtk-4.0/webkit2/WebKitNotification.h
+include/webkitgtk-4.0/webkit2/WebKitNotificationPermissionRequest.h
 include/webkitgtk-4.0/webkit2/WebKitPermissionRequest.h
 include/webkitgtk-4.0/webkit2/WebKitPlugin.h
 include/webkitgtk-4.0/webkit2/WebKitPolicyDecision.h
@@ -45,9 +48,11 @@ include/webkitgtk-4.0/webkit2/WebKitURIResponse.h
 include/webkitgtk-4.0/webkit2/WebKitURISchemeRequest.h
 include/webkitgtk-4.0/webkit2/WebKitUserContent.h
 include/webkitgtk-4.0/webkit2/WebKitUserContentManager.h
+include/webkitgtk-4.0/webkit2/WebKitUserMediaPermissionRequest.h
 include/webkitgtk-4.0/webkit2/WebKitVersion.h
 include/webkitgtk-4.0/webkit2/WebKitWebContext.h
 include/webkitgtk-4.0/webkit2/WebKitWebExtension.h
+include/webkitgtk-4.0/webkit2/WebKitWebHitTestResult.h
 include/webkitgtk-4.0/webkit2/WebKitWebInspector.h
 include/webkitgtk-4.0/webkit2/WebKitWebPage.h
 include/webkitgtk-4.0/webkit2/WebKitWebResource.h
@@ -75,6 +80,7 @@ include/webkitgtk-4.0/webkitdom/WebKitDOMCharacterData.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMCharacterDataUnstable.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMComment.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMCustom.h
+include/webkitgtk-4.0/webkitdom/WebKitDOMCustomUnstable.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMDOMApplicationCache.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMDOMImplementation.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMDOMMimeType.h
@@ -94,6 +100,7 @@ include/webkitgtk-4.0/webkitdom/WebKitDOMDOMWindowSpeechSynthesis.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMDOMWindowUnstable.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMDataCue.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMDatabase.h
+include/webkitgtk-4.0/webkitdom/WebKitDOMDeprecated.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMDocument.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMDocumentFragment.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMDocumentFragmentUnstable.h
@@ -157,6 +164,7 @@ include/webkitgtk-4.0/webkitdom/WebKitDOMHTMLLabelElement.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMHTMLLabelElementUnstable.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMHTMLLegendElement.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMHTMLLinkElement.h
+include/webkitgtk-4.0/webkitdom/WebKitDOMHTMLLinkElementUnstable.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMHTMLMapElement.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMHTMLMarqueeElement.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMHTMLMarqueeElementUnstable.h
@@ -171,6 +179,7 @@ include/webkitgtk-4.0/webkitdom/WebKitDOMHTMLObjectElementUnstable.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMHTMLOptGroupElement.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMHTMLOptionElement.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMHTMLOptionsCollection.h
+include/webkitgtk-4.0/webkitdom/WebKitDOMHTMLOptionsCollectionUnstable.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMHTMLParagraphElement.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMHTMLParamElement.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMHTMLPreElement.h
@@ -208,6 +217,7 @@ include/webkitgtk-4.0/webkitdom/WebKitDOMNode.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMNodeFilter.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMNodeIterator.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMNodeList.h
+include/webkitgtk-4.0/webkitdom/WebKitDOMNodeUnstable.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMObject.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMPerformance.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMPerformanceEntry.h
@@ -239,12 +249,15 @@ include/webkitgtk-4.0/webkitdom/WebKitDOMTrackEvent.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMTreeWalker.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMUIEvent.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMUIEventUnstable.h
+include/webkitgtk-4.0/webkitdom/WebKitDOMUserMessageHandler.h
+include/webkitgtk-4.0/webkitdom/WebKitDOMUserMessageHandlersNamespace.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMVTTCue.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMValidityState.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMVideoPlaybackQuality.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMVideoTrack.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMVideoTrackList.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMWebKitNamedFlow.h
+include/webkitgtk-4.0/webkitdom/WebKitDOMWebKitNamespace.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMWebKitPoint.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMWheelEvent.h
 include/webkitgtk-4.0/webkitdom/WebKitDOMWheelEventUnstable.h
@@ -259,14 +272,14 @@ lib/girepository-1.0/WebKit2-4.0.typelib
 lib/girepository-1.0/WebKit2WebExtension-4.0.typelib
 lib/libjavascriptcoregtk-4.0.so
 lib/libjavascriptcoregtk-4.0.so.18
-lib/libjavascriptcoregtk-4.0.so.18.0.10
+lib/libjavascriptcoregtk-4.0.so.18.1.11
 lib/libwebkit2gtk-4.0.so
 lib/libwebkit2gtk-4.0.so.37
-lib/libwebkit2gtk-4.0.so.37.2.7
+lib/libwebkit2gtk-4.0.so.37.6.7
+lib/webkit2gtk-4.0/injected-bundle/libwebkit2gtkinjectedbundle.so
 libdata/pkgconfig/javascriptcoregtk-4.0.pc
 libdata/pkgconfig/webkit2gtk-4.0.pc
 libdata/pkgconfig/webkit2gtk-web-extension-4.0.pc
-lib/webkit2gtk-4.0/injected-bundle/libwebkit2gtkinjectedbundle.so
 libexec/webkit2gtk-4.0/WebKitNetworkProcess
 libexec/webkit2gtk-4.0/WebKitPluginProcess
 libexec/webkit2gtk-4.0/WebKitPluginProcess2
@@ -277,6 +290,7 @@ share/gir-1.0/WebKit2WebExtension-4.0.gir
 share/locale/ar/LC_MESSAGES/WebKit2GTK-4.0.mo
 share/locale/as/LC_MESSAGES/WebKit2GTK-4.0.mo
 share/locale/bg/LC_MESSAGES/WebKit2GTK-4.0.mo
+share/locale/ca/LC_MESSAGES/WebKit2GTK-4.0.mo
 share/locale/cs/LC_MESSAGES/WebKit2GTK-4.0.mo
 share/locale/de/LC_MESSAGES/WebKit2GTK-4.0.mo
 share/locale/el/LC_MESSAGES/WebKit2GTK-4.0.mo

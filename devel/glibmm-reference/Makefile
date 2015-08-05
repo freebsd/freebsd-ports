@@ -1,13 +1,14 @@
 # Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	0
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/glibmm-2.4.pc:${PORTSDIR}/devel/glibmm \
 		gm4:${PORTSDIR}/devel/m4
 
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig
+PORTSCOUT=	ignore:1
 
 DOCSDIR=	${PREFIX}/share/doc/glibmm-2.4
 

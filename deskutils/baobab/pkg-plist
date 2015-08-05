@@ -10,6 +10,8 @@ share/help/C/baobab/media/hicolor_apps_48x48_baobab.png
 share/help/C/baobab/pref-view-chart.page
 share/help/C/baobab/problem-permissions.page
 share/help/C/baobab/problem-slow-scan.page
+share/help/C/baobab/question-open-folder.page
+share/help/C/baobab/question-trash.page
 share/help/C/baobab/scan-file-system.page
 share/help/C/baobab/scan-folder.page
 share/help/C/baobab/scan-home.page
@@ -21,6 +23,8 @@ share/help/ca/baobab/media/hicolor_apps_48x48_baobab.png
 share/help/ca/baobab/pref-view-chart.page
 share/help/ca/baobab/problem-permissions.page
 share/help/ca/baobab/problem-slow-scan.page
+share/help/ca/baobab/question-open-folder.page
+share/help/ca/baobab/question-trash.page
 share/help/ca/baobab/scan-file-system.page
 share/help/ca/baobab/scan-folder.page
 share/help/ca/baobab/scan-home.page
@@ -32,6 +36,8 @@ share/help/cs/baobab/media/hicolor_apps_48x48_baobab.png
 share/help/cs/baobab/pref-view-chart.page
 share/help/cs/baobab/problem-permissions.page
 share/help/cs/baobab/problem-slow-scan.page
+share/help/cs/baobab/question-open-folder.page
+share/help/cs/baobab/question-trash.page
 share/help/cs/baobab/scan-file-system.page
 share/help/cs/baobab/scan-folder.page
 share/help/cs/baobab/scan-home.page
@@ -43,6 +49,8 @@ share/help/de/baobab/media/hicolor_apps_48x48_baobab.png
 share/help/de/baobab/pref-view-chart.page
 share/help/de/baobab/problem-permissions.page
 share/help/de/baobab/problem-slow-scan.page
+share/help/de/baobab/question-open-folder.page
+share/help/de/baobab/question-trash.page
 share/help/de/baobab/scan-file-system.page
 share/help/de/baobab/scan-folder.page
 share/help/de/baobab/scan-home.page
@@ -54,6 +62,8 @@ share/help/el/baobab/media/hicolor_apps_48x48_baobab.png
 share/help/el/baobab/pref-view-chart.page
 share/help/el/baobab/problem-permissions.page
 share/help/el/baobab/problem-slow-scan.page
+share/help/el/baobab/question-open-folder.page
+share/help/el/baobab/question-trash.page
 share/help/el/baobab/scan-file-system.page
 share/help/el/baobab/scan-folder.page
 share/help/el/baobab/scan-home.page
@@ -65,6 +75,8 @@ share/help/es/baobab/media/hicolor_apps_48x48_baobab.png
 share/help/es/baobab/pref-view-chart.page
 share/help/es/baobab/problem-permissions.page
 share/help/es/baobab/problem-slow-scan.page
+share/help/es/baobab/question-open-folder.page
+share/help/es/baobab/question-trash.page
 share/help/es/baobab/scan-file-system.page
 share/help/es/baobab/scan-folder.page
 share/help/es/baobab/scan-home.page
@@ -76,6 +88,8 @@ share/help/fi/baobab/media/hicolor_apps_48x48_baobab.png
 share/help/fi/baobab/pref-view-chart.page
 share/help/fi/baobab/problem-permissions.page
 share/help/fi/baobab/problem-slow-scan.page
+share/help/fi/baobab/question-open-folder.page
+share/help/fi/baobab/question-trash.page
 share/help/fi/baobab/scan-file-system.page
 share/help/fi/baobab/scan-folder.page
 share/help/fi/baobab/scan-home.page
@@ -87,6 +101,8 @@ share/help/fr/baobab/media/hicolor_apps_48x48_baobab.png
 share/help/fr/baobab/pref-view-chart.page
 share/help/fr/baobab/problem-permissions.page
 share/help/fr/baobab/problem-slow-scan.page
+share/help/fr/baobab/question-open-folder.page
+share/help/fr/baobab/question-trash.page
 share/help/fr/baobab/scan-file-system.page
 share/help/fr/baobab/scan-folder.page
 share/help/fr/baobab/scan-home.page
@@ -98,6 +114,8 @@ share/help/gl/baobab/media/hicolor_apps_48x48_baobab.png
 share/help/gl/baobab/pref-view-chart.page
 share/help/gl/baobab/problem-permissions.page
 share/help/gl/baobab/problem-slow-scan.page
+share/help/gl/baobab/question-open-folder.page
+share/help/gl/baobab/question-trash.page
 share/help/gl/baobab/scan-file-system.page
 share/help/gl/baobab/scan-folder.page
 share/help/gl/baobab/scan-home.page
@@ -109,6 +127,8 @@ share/help/hu/baobab/media/hicolor_apps_48x48_baobab.png
 share/help/hu/baobab/pref-view-chart.page
 share/help/hu/baobab/problem-permissions.page
 share/help/hu/baobab/problem-slow-scan.page
+share/help/hu/baobab/question-open-folder.page
+share/help/hu/baobab/question-trash.page
 share/help/hu/baobab/scan-file-system.page
 share/help/hu/baobab/scan-folder.page
 share/help/hu/baobab/scan-home.page
@@ -120,6 +140,8 @@ share/help/id/baobab/media/hicolor_apps_48x48_baobab.png
 share/help/id/baobab/pref-view-chart.page
 share/help/id/baobab/problem-permissions.page
 share/help/id/baobab/problem-slow-scan.page
+share/help/id/baobab/question-open-folder.page
+share/help/id/baobab/question-trash.page
 share/help/id/baobab/scan-file-system.page
 share/help/id/baobab/scan-folder.page
 share/help/id/baobab/scan-home.page
@@ -131,6 +153,8 @@ share/help/it/baobab/media/hicolor_apps_48x48_baobab.png
 share/help/it/baobab/pref-view-chart.page
 share/help/it/baobab/problem-permissions.page
 share/help/it/baobab/problem-slow-scan.page
+share/help/it/baobab/question-open-folder.page
+share/help/it/baobab/question-trash.page
 share/help/it/baobab/scan-file-system.page
 share/help/it/baobab/scan-folder.page
 share/help/it/baobab/scan-home.page
@@ -142,6 +166,8 @@ share/help/pt_BR/baobab/media/hicolor_apps_48x48_baobab.png
 share/help/pt_BR/baobab/pref-view-chart.page
 share/help/pt_BR/baobab/problem-permissions.page
 share/help/pt_BR/baobab/problem-slow-scan.page
+share/help/pt_BR/baobab/question-open-folder.page
+share/help/pt_BR/baobab/question-trash.page
 share/help/pt_BR/baobab/scan-file-system.page
 share/help/pt_BR/baobab/scan-folder.page
 share/help/pt_BR/baobab/scan-home.page
@@ -153,6 +179,8 @@ share/help/ru/baobab/media/hicolor_apps_48x48_baobab.png
 share/help/ru/baobab/pref-view-chart.page
 share/help/ru/baobab/problem-permissions.page
 share/help/ru/baobab/problem-slow-scan.page
+share/help/ru/baobab/question-open-folder.page
+share/help/ru/baobab/question-trash.page
 share/help/ru/baobab/scan-file-system.page
 share/help/ru/baobab/scan-folder.page
 share/help/ru/baobab/scan-home.page
@@ -164,6 +192,8 @@ share/help/sl/baobab/media/hicolor_apps_48x48_baobab.png
 share/help/sl/baobab/pref-view-chart.page
 share/help/sl/baobab/problem-permissions.page
 share/help/sl/baobab/problem-slow-scan.page
+share/help/sl/baobab/question-open-folder.page
+share/help/sl/baobab/question-trash.page
 share/help/sl/baobab/scan-file-system.page
 share/help/sl/baobab/scan-folder.page
 share/help/sl/baobab/scan-home.page
@@ -175,22 +205,19 @@ share/help/zh_CN/baobab/media/hicolor_apps_48x48_baobab.png
 share/help/zh_CN/baobab/pref-view-chart.page
 share/help/zh_CN/baobab/problem-permissions.page
 share/help/zh_CN/baobab/problem-slow-scan.page
+share/help/zh_CN/baobab/question-open-folder.page
+share/help/zh_CN/baobab/question-trash.page
 share/help/zh_CN/baobab/scan-file-system.page
 share/help/zh_CN/baobab/scan-folder.page
 share/help/zh_CN/baobab/scan-home.page
 share/help/zh_CN/baobab/scan-remote.page
-share/icons/HighContrast/16x16/apps/baobab.png
-share/icons/HighContrast/22x22/apps/baobab.png
-share/icons/HighContrast/24x24/apps/baobab.png
-share/icons/HighContrast/256x256/apps/baobab.png
-share/icons/HighContrast/32x32/apps/baobab.png
-share/icons/HighContrast/48x48/apps/baobab.png
 share/icons/hicolor/16x16/apps/baobab.png
 share/icons/hicolor/22x22/apps/baobab.png
 share/icons/hicolor/24x24/apps/baobab.png
 share/icons/hicolor/256x256/apps/baobab.png
 share/icons/hicolor/32x32/apps/baobab.png
 share/icons/hicolor/48x48/apps/baobab.png
+share/icons/hicolor/scalable/apps/baobab-symbolic.svg
 share/locale/af/LC_MESSAGES/baobab.mo
 share/locale/am/LC_MESSAGES/baobab.mo
 share/locale/an/LC_MESSAGES/baobab.mo

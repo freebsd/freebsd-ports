@@ -1,9 +1,9 @@
---- Source/JavaScriptCore/assembler/ARMAssembler.h.orig	2014-12-15 04:13:43.336068961 +0000
-+++ Source/JavaScriptCore/assembler/ARMAssembler.h	2014-12-15 04:13:49.213068201 +0000
-@@ -1121,6 +1121,8 @@
+--- Source/JavaScriptCore/assembler/ARMAssembler.h.orig	2014-12-02 14:49:22.000000000 +0100
++++ Source/JavaScriptCore/assembler/ARMAssembler.h	2014-12-26 10:35:15.394821543 +0100
+@@ -1104,6 +1104,8 @@
+                 linuxPageFlush(current, current + page);
+ 
              linuxPageFlush(current, end);
- #elif OS(WINCE)
-             CacheRangeFlush(code, size, CACHE_SYNC_ALL);
 +#elif CPU(ARM_TRADITIONAL) && OS(FREEBSD) && COMPILER(CLANG)
 +            __clear_cache(code, reinterpret_cast<char*>(code) + size);
  #else
