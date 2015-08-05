@@ -7813,3 +7813,4 @@ finance/trytond_stock_supply_day||2015-08-05|No more supported upstream, use try
 finance/trytond_stock_supply_forecast||2015-08-05|No more supported upstream, use tryton 2.8 instead
 finance/trytond_stock_supply_production||2015-08-05|No more supported upstream, use tryton 2.8 instead
 finance/trytond_timesheet||2015-08-05|No more supported upstream, use tryton 2.8 instead
+textproc/py-stripogram||2015-08-05|Discontinued, author discourages to use it
