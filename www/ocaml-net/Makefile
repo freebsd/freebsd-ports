@@ -3,6 +3,7 @@
 
 PORTNAME=	net
 PORTVERSION=	4.0.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.camlcity.org/download/
 PKGNAMEPREFIX=	ocaml-
@@ -44,11 +45,12 @@ OCAML_PKGDIRS=	netsys netshm equeue shell netstring rpc-generator \
 		netstring-pcre netunidata
 OCAML_LDLIBS=	${OCAML_PKGDIRS:S/^/${OCAML_SITELIBDIR}\//}
 
-OPTIONS_DEFINE=	NETHTTPD GTK2 APACHE ZIP EXAMPLES DOCS
-OPTIONS_DEFAULT=
+OPTIONS_DEFINE=	NETHTTPD GTK2 GNUTLS APACHE ZIP EXAMPLES DOCS
+OPTIONS_DEFAULT= GNUTLS
 NETHTTPD_DESC=	Integrated HTTP daemon
 ZIP_DESC=	Compression support
 APACHE_DESC=	Apache mod connector (experimental)
+GNUTLS_DESC=	SSL/TLS support via GnuTLS
 
 CONFIGURE_ARGS+=-disable-gtk \
 		-enable-pcre
@@ -69,6 +71,13 @@ OCAML_PKGDIRS+=		nethttpd
 .if ${PORT_OPTIONS:MGTK2}
 CONFIGURE_ARGS+=	-enable-gtk2
 OCAML_PKGDIRS+=		equeue-gtk2
+.endif
+
+.if ${PORT_OPTIONS:MGNUTLS}
+USES+=	pkgconfig
+LIB_DEPENDS+=		libgnutls.so:${PORTSDIR}/security/gnutls
+CONFIGURE_ARGS+=	-enable-gnutls
+OCAML_PKGDIRS+=		nettls-gnutls
 .endif
 
 .if ${PORT_OPTIONS:MAPACHE}
