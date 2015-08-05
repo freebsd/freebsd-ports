@@ -62,8 +62,9 @@ PLIST_SUB+=	LIBVER=2.11200.18
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e '/test/s/==/=/g' \
-		-e '/LIBS/s/-lrt//'  -e '/LIBS/s|-ldld||' \
+	@${REINPLACE_CMD} -e '/strings/s/ - / -a /' \
+		-e '/test/s/==/=/g' \
+		-e '/LIBS/s/-lrt//' -e '/LIBS/s|-ldld||' \
 		-e '/LIBS/s|-ldl||' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-lcairo|-lcairo -lpthread|' \
