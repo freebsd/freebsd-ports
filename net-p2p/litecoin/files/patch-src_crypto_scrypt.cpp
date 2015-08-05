@@ -1,13 +1,13 @@
---- ./src/scrypt.cpp.orig	2014-01-10 01:38:53.000000000 +0000
-+++ ./src/scrypt.cpp	2014-02-09 05:45:03.131006405 +0000
-@@ -33,6 +33,7 @@
+--- src/crypto/scrypt.cpp.orig	2015-08-04 13:27:49 UTC
++++ src/crypto/scrypt.cpp
+@@ -32,6 +32,7 @@
+ #include <stdlib.h>
  #include <stdint.h>
  #include <string.h>
++#include <sys/endian.h>
  #include <openssl/sha.h>
-+#include <boost/lexical_cast.hpp>
  
  #if defined(USE_SSE2) && !defined(USE_SSE2_ALWAYS)
- #ifdef _MSC_VER
 @@ -44,22 +45,6 @@
  #endif
  #endif
