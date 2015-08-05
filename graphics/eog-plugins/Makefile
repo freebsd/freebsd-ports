@@ -1,9 +1,8 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/graphics/eog-plugins/Makefile 20061 2014-11-10 21:57:05Z gusi $
 
 PORTNAME=	eog-plugins
-PORTVERSION=	3.14.2
+PORTVERSION=	3.16.0
 PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
@@ -18,7 +17,9 @@ LIB_DEPENDS=	libgdata.so:${PORTSDIR}/devel/libgdata \
 		libpeas-1.0.so:${PORTSDIR}/devel/libpeas
 RUN_DEPENDS=	eog:${PORTSDIR}/graphics/eog
 
-USE_GNOME=	gnomeprefix intlhack gtk30
+PORTSCOUT=	limitw:1,even
+
+USE_GNOME=	intlhack gtk30
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

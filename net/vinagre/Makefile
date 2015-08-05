@@ -1,9 +1,8 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#  $MCom: ports/trunk/net/vinagre/Makefile 20064 2014-11-11 06:09:58Z gusi $
 
 PORTNAME=	vinagre
-PORTVERSION=	3.14.3
+PORTVERSION=	3.16.1
 PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
@@ -21,9 +20,11 @@ LIB_DEPENDS=	libgtk-vnc-2.0.so:${PORTSDIR}/net/gtk-vnc \
 		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
 RUN_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme
 
+PORTSCOUT=	limitw:1,even
+
 USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
 		shared-mime-info tar:xz
-USE_GNOME=	gnomeprefix gtk30 intlhack libxml2 vte3
+USE_GNOME=	gtk30 intlhack libxml2 vte3
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--disable-spice --enable-ssh

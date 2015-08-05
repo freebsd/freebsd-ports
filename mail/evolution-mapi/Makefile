@@ -1,20 +1,21 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/mail/evolution-mapi/Makefile 20048 2014-11-10 09:19:46Z gusi $
 
 PORTNAME=	evolution-mapi
-PORTVERSION=	3.12.10
+PORTVERSION=	3.16.4
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Evolution plugin to connect to Microsoft Exchange servers
+COMMENT=	Evolution Microsoft Exchange plugin through OpenChange
 
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool \
 		evolution>=3.0.0:${PORTSDIR}/mail/evolution
 LIB_DEPENDS=	libmapi.so:${PORTSDIR}/mail/libmapi
 RUN_DEPENDS=	evolution>=3.0.0:${PORTSDIR}/mail/evolution
+
+PORTSCOUT=	limitw:1,even
 
 USES=		gettext gmake libtool pkgconfig tar:xz
 USE_GNOME=	intltool
@@ -23,15 +24,14 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -Wno-error=format-nonliteral
 CFLAGS+=	-I${LOCALBASE}/include -Wno-error=format-nonliteral
 LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--datarootdir=${PREFIX}/share/
 INSTALL_TARGET=	install-strip
-
-VERSION=	3.12
-PLIST_SUB=	VERSION=${VERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/src/libexchangemapi/Makefile.in
 	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
+		-e 's|$$(prefix)/$$(DATADIRNAME)/|$$(prefix)/share/|g' \
 	    	${WRKSRC}/configure
 
 .include <bsd.port.mk>

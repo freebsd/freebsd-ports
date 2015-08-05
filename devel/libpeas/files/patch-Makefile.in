@@ -1,9 +1,9 @@
---- Makefile.in.orig	2015-05-17 08:39:30.610386000 +0200
-+++ Makefile.in	2015-05-17 08:41:22.473716000 +0200
-@@ -406,7 +406,7 @@
- top_srcdir = @top_srcdir@
- ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
- DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc --enable-glade-catalog
+--- Makefile.in.orig	2015-06-14 15:26:41.400785000 +0200
++++ Makefile.in	2015-06-14 15:27:12.810055000 +0200
+@@ -415,7 +415,7 @@
+ 	--enable-gtk-doc		\
+ 	--disable-doc-cross-references
+ 
 -SUBDIRS = libpeas loaders $(am__append_1) tests data po docs
 +SUBDIRS = libpeas loaders $(am__append_1) data po docs
  GCOVDIRS = libpeas loaders $(am__append_2)

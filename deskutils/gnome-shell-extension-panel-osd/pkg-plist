@@ -1,6 +1,6 @@
-lib/locale/de/LC_MESSAGES/gnome-shell-extension-panel-osd.mo
 share/gnome-shell/extensions/panel-osd@berend.de.schouwer.gmail.com/convenience.js
 share/gnome-shell/extensions/panel-osd@berend.de.schouwer.gmail.com/extension.js
 share/gnome-shell/extensions/panel-osd@berend.de.schouwer.gmail.com/metadata.json
 share/gnome-shell/extensions/panel-osd@berend.de.schouwer.gmail.com/panel-osd-settings.ui
 share/gnome-shell/extensions/panel-osd@berend.de.schouwer.gmail.com/prefs.js
+share/locale/de/LC_MESSAGES/gnome-shell-extension-panel-osd.mo

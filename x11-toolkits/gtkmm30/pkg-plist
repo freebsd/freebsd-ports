@@ -103,6 +103,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/combobox.h
 include/gtkmm-%%API_VERSION%%/gtkmm/comboboxtext.h
 include/gtkmm-%%API_VERSION%%/gtkmm/container.h
 include/gtkmm-%%API_VERSION%%/gtkmm/cssprovider.h
+include/gtkmm-%%API_VERSION%%/gtkmm/csssection.h
 include/gtkmm-%%API_VERSION%%/gtkmm/dialog.h
 include/gtkmm-%%API_VERSION%%/gtkmm/drawingarea.h
 include/gtkmm-%%API_VERSION%%/gtkmm/editable.h
@@ -246,6 +247,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/private/combobox_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/comboboxtext_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/container_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/cssprovider_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/csssection_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/dialog_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/drawingarea_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/editable_p.h
@@ -368,6 +370,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/private/socket_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/spinbutton_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/spinner_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/stack_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/stacksidebar_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/stackswitcher_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/statusbar_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/statusicon_p.h
@@ -415,6 +418,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/private/volumebutton_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/widget_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/widgetpath_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/window_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/windowgroup_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/progressbar.h
 include/gtkmm-%%API_VERSION%%/gtkmm/radioaction.h
 include/gtkmm-%%API_VERSION%%/gtkmm/radiobutton.h
@@ -450,6 +454,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/socket.h
 include/gtkmm-%%API_VERSION%%/gtkmm/spinbutton.h
 include/gtkmm-%%API_VERSION%%/gtkmm/spinner.h
 include/gtkmm-%%API_VERSION%%/gtkmm/stack.h
+include/gtkmm-%%API_VERSION%%/gtkmm/stacksidebar.h
 include/gtkmm-%%API_VERSION%%/gtkmm/stackswitcher.h
 include/gtkmm-%%API_VERSION%%/gtkmm/statusbar.h
 include/gtkmm-%%API_VERSION%%/gtkmm/statusicon.h
@@ -457,6 +462,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/stock.h
 include/gtkmm-%%API_VERSION%%/gtkmm/stockid.h
 include/gtkmm-%%API_VERSION%%/gtkmm/stockitem.h
 include/gtkmm-%%API_VERSION%%/gtkmm/stylecontext.h
+include/gtkmm-%%API_VERSION%%/gtkmm/styleproperty.h
 include/gtkmm-%%API_VERSION%%/gtkmm/styleprovider.h
 include/gtkmm-%%API_VERSION%%/gtkmm/switch.h
 include/gtkmm-%%API_VERSION%%/gtkmm/table.h
@@ -502,6 +508,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/volumebutton.h
 include/gtkmm-%%API_VERSION%%/gtkmm/widget.h
 include/gtkmm-%%API_VERSION%%/gtkmm/widgetpath.h
 include/gtkmm-%%API_VERSION%%/gtkmm/window.h
+include/gtkmm-%%API_VERSION%%/gtkmm/windowgroup.h
 include/gtkmm-%%API_VERSION%%/gtkmm/wrap_init.h
 lib/gdkmm-%%API_VERSION%%/include/gdkmmconfig.h
 lib/gtkmm-%%API_VERSION%%/include/gtkmmconfig.h

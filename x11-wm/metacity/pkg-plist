@@ -11,8 +11,8 @@ include/metacity/metacity-private/theme.h
 include/metacity/metacity-private/util.h
 lib/libmetacity-private.a
 lib/libmetacity-private.so
-lib/libmetacity-private.so.2
-lib/libmetacity-private.so.2.0.0
+lib/libmetacity-private.so.3
+lib/libmetacity-private.so.3.0.0
 libdata/pkgconfig/libmetacity-private.pc
 man/man1/metacity-message.1.gz
 man/man1/metacity-theme-viewer.1.gz
@@ -121,6 +121,7 @@ share/locale/zh_CN/LC_MESSAGES/metacity.mo
 share/locale/zh_HK/LC_MESSAGES/metacity.mo
 share/locale/zh_TW/LC_MESSAGES/metacity.mo
 %%DATADIR%%/icons/metacity-window-demo.png
+share/themes/Adwaita/metacity-1/metacity-theme-3.xml
 share/themes/AgingGorilla/metacity-1/active-button.png
 share/themes/AgingGorilla/metacity-1/active-close-button.png
 share/themes/AgingGorilla/metacity-1/active-close-menu-icon.png
@@ -217,6 +218,7 @@ share/themes/Crux/metacity-1/inactive-unstick-button.png
 share/themes/Crux/metacity-1/metacity-theme-1.xml
 share/themes/Crux/metacity-1/metacity-theme-2.xml
 share/themes/Esco/metacity-1/metacity-theme-1.xml
+share/themes/HighContrast/metacity-1/metacity-theme-3.xml
 share/themes/Metabox/metacity-1/metacity-theme-1.xml
 share/themes/Simple/metacity-1/close.png
 share/themes/Simple/metacity-1/maximize.png

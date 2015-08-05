@@ -15,7 +15,7 @@ COMMENT=	GNOME frontend to the PolicyKit framework
 LIB_DEPENDS=	libpolkit.so:${PORTSDIR}/sysutils/policykit
 
 USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
-USE_GNOME=	intlhack gnomedocutils gconf2
+USE_GNOME=	gconf2 gnomedocutils intlhack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc \

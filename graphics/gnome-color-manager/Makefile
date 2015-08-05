@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-color-manager
-PORTVERSION=	3.14.2
+PORTVERSION=	3.16.0
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -19,10 +19,11 @@ LIB_DEPENDS=	liblcms2.so:${PORTSDIR}/graphics/lcms2 \
 		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 		libexif.so:${PORTSDIR}/graphics/libexif
 
+PORTSCOUT=	limitw:1,even
+
 USE_XORG=	xrandr
-USE_GNOME=	gnomedesktop3 gnomeprefix gtk30 intlhack vte3
-USES=		desktop-file-utils gettext gmake pathfix \
-		pkgconfig tar:xz
+USE_GNOME=	gnomedesktop3 gtk30 intlhack vte3
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes

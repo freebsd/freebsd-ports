@@ -71,6 +71,7 @@ bin/gnome-tweak-tool
 %%PYTHON_SITELIBDIR%%/gtweak/tweaks/tweak_wacom.py
 %%PYTHON_SITELIBDIR%%/gtweak/tweaks/tweak_wacom.pyc
 %%PYTHON_SITELIBDIR%%/gtweak/tweaks/tweak_wacom.pyo
+libexec/gnome-tweak-tool-lid-inhibitor
 share/appdata/gnome-tweak-tool.appdata.xml
 share/applications/gnome-tweak-tool.desktop
 %%DATADIR%%/shell.css
@@ -81,6 +82,7 @@ share/icons/hicolor/24x24/apps/gnome-tweak-tool.png
 share/icons/hicolor/256x256/apps/gnome-tweak-tool.png
 share/icons/hicolor/32x32/apps/gnome-tweak-tool.png
 share/icons/hicolor/48x48/apps/gnome-tweak-tool.png
+share/icons/hicolor/scalable/apps/gnome-tweak-tool-symbolic.svg
 share/locale/as/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/ar/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/bg/LC_MESSAGES/gnome-tweak-tool.mo
