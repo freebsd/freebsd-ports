@@ -22,15 +22,6 @@ DOCUMENTS=	COPYRIGHT INSTALL LICENSE README
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-post-extract:
-	@${REINPLACE_CMD} -e 's,type perl,type ${LOCALBASE}/bin/perl,' ${WRKSRC}/scripts/Makefile
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000024
-	@${REINPLACE_CMD} -e 's,type gcc,type clang,' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's,type g++,type clang++,' ${WRKSRC}/Makefile
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${PROGRAMS:S|^|${WRKSRC}/|} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${SCRIPTS:S|^|${WRKSRC}/|} ${STAGEDIR}${PREFIX}/bin
