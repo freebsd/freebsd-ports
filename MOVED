@@ -5892,8 +5892,6 @@ databases/mergeant||2014-04-11|Superseded by libgda starting from version 4
 deskutils/evolution-jescs||2014-04-11|Doesn't work with newer version of evolution
 deskutils/nautilus-locked-folder||2014-04-11|Has expired: nautilus will be updated to the 3.x version which is not compatible with 2.x
 www/screem||2014-04-11|Has expired: gnome-menus 2.x will be updated in the GNOME 3 import
-deskutils/nautilus-actions||2014-04-11|Has expired: nautilus will be updated to the 3.x version which is not compatible with 2.x
-deskutils/nautilus-sendto||2014-04-11|Has expired: nautilus will be updated to the 3.x version which is not compatible with 2.x
 deskutils/nautilus-open-terminal||2014-04-11|Has expired: nautilus will be updated to the 3.x version which is not compatible with 2.x
 sysutils/eiciel||2014-04-11|Has expired: nautilus will be updated to the 3.x version which is not compatible with 2.x
 sysutils/nautilus-cd-burner||2014-04-11|Has expired: nautilus will be updated to the 3.x version which is not compatible with 2.x
