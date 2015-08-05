@@ -1,8 +1,8 @@
 bin/deadbeef
 include/deadbeef/deadbeef.h
 %%GUI%%include/deadbeef/gtkui_api.h
-%%ADP%%lib/deadbeef/adplug.a
-%%ADP%%lib/deadbeef/adplug.so
+%%ADPLUG%%lib/deadbeef/adplug.a
+%%ADPLUG%%lib/deadbeef/adplug.so
 %%CDDA%%lib/deadbeef/cdda.a
 %%CDDA%%lib/deadbeef/cdda.so
 %%FFAP%%lib/deadbeef/ffap.a
@@ -13,8 +13,8 @@ include/deadbeef/deadbeef.h
 %%FLAC%%lib/deadbeef/flac.so
 %%HOTKEYS%%lib/deadbeef/hotkeys.so
 %%HOTKEYS%%lib/deadbeef/hotkeys.a
-lib/deadbeef/mpgmad.a
-lib/deadbeef/mpgmad.so
+%%MAD%%lib/deadbeef/mpgmad.a
+%%MAD%%lib/deadbeef/mpgmad.so
 %%MUSEPACK%%lib/deadbeef/musepack.so
 %%MUSEPACK%%lib/deadbeef/musepack.a
 lib/deadbeef/oss.a
@@ -29,10 +29,10 @@ lib/deadbeef/oss.so
 %%OGG%%lib/deadbeef/vorbis.so
 %%VTX%%lib/deadbeef/vtx.a
 %%VTX%%lib/deadbeef/vtx.so
-%%WAV%%lib/deadbeef/wavpack.a
-%%WAV%%lib/deadbeef/wavpack.so
-%%WILD%%lib/deadbeef/wildmidi.so
-%%WILD%%lib/deadbeef/wildmidi.a
+%%WAVPACK%%lib/deadbeef/wavpack.a
+%%WAVPACK%%lib/deadbeef/wavpack.so
+%%WILDMIDI%%lib/deadbeef/wildmidi.so
+%%WILDMIDI%%lib/deadbeef/wildmidi.a
 %%TTA%%lib/deadbeef/tta.so
 %%TTA%%lib/deadbeef/tta.a
 %%DCA%%lib/deadbeef/dca.so
@@ -53,8 +53,8 @@ lib/deadbeef/oss.so
 %%ART%%lib/deadbeef/artwork.so
 %%SID%%lib/deadbeef/sid.so
 %%SID%%lib/deadbeef/sid.a
-%%EQ%%lib/deadbeef/supereq.so
-%%EQ%%lib/deadbeef/supereq.a
+%%SUPEREQ%%lib/deadbeef/supereq.so
+%%SUPEREQ%%lib/deadbeef/supereq.a
 %%GME%%lib/deadbeef/gme.so
 %%GME%%lib/deadbeef/gme.a
 %%DUMB%%lib/deadbeef/ddb_dumb.a
