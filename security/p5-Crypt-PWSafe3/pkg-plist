@@ -1,0 +1,14 @@
+%%SITE_PERL%%/Crypt/PWSafe3.pm
+%%SITE_PERL%%/Crypt/PWSafe3/Databaseformat.pm
+%%SITE_PERL%%/Crypt/PWSafe3/Field.pm
+%%SITE_PERL%%/Crypt/PWSafe3/HeaderField.pm
+%%SITE_PERL%%/Crypt/PWSafe3/PasswordPolicy.pm
+%%SITE_PERL%%/Crypt/PWSafe3/Record.pm
+%%SITE_PERL%%/Crypt/PWSafe3/SHA256.pm
+%%PERL5_MAN3%%/Crypt::PWSafe3.3.gz
+%%PERL5_MAN3%%/Crypt::PWSafe3::Databaseformat.3.gz
+%%PERL5_MAN3%%/Crypt::PWSafe3::Field.3.gz
+%%PERL5_MAN3%%/Crypt::PWSafe3::HeaderField.3.gz
+%%PERL5_MAN3%%/Crypt::PWSafe3::PasswordPolicy.3.gz
+%%PERL5_MAN3%%/Crypt::PWSafe3::Record.3.gz
+%%PERL5_MAN3%%/Crypt::PWSafe3::SHA256.3.gz
