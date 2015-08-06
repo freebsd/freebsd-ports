@@ -84,6 +84,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%BROWSER_PLUGINS_DIR%%|${BROWSER_PLUGINS_DIR}|' \
 		${WRKSRC}/Source/WebKit2/UIProcess/Plugins/unix/PluginInfoStoreUnix.cpp
 
+pre-configure:
+.if !exists(${LOCALBASE}/libdata/pkgconfig/cairo-egl.pc)
+	@${ECHO_CMD} "${PKGNAME}: Needs cairo with OPENGL support enabled."
+	@${FALSE}
+.endif
+
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} CFLAGS="${CFLAGS}" \
 		${CMAKE_ENV} cmake -DPORT=GTK ${CMAKE_ARGS}
