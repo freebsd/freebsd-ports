@@ -22,6 +22,10 @@ RUN_DEPENDS=	opendkim>=2.5.0:${PORTSDIR}/mail/opendkim \
 USES=		perl5
 USE_PERL5=	configure
 
+BROKEN=		fails to compile with present version of mail/opendkim port
+DEPRECATED=	Does not compile with newer opendkim port. Please use mail/p5-Mail-DKIM instead.
+EXPIRATION_DATE=	2015-10-31
+
 PLIST_FILES=	%%SITE_ARCH%%/Mail/OpenDKIM.pm \
 		%%SITE_ARCH%%/Mail/OpenDKIM/DKIM.pm \
 		%%SITE_ARCH%%/Mail/OpenDKIM/PrivateKey.pm \
