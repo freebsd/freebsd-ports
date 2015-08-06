@@ -1,4 +1,7 @@
 bin/openssl
+etc/ssl/cert.pem
+etc/ssl/openssl.cnf
+etc/ssl/x509v3.cnf
 include/openssl/aes.h
 include/openssl/asn1.h
 include/openssl/asn1_mac.h
@@ -74,16 +77,16 @@ include/openssl/x509v3.h
 include/tls.h
 lib/libcrypto.a
 lib/libcrypto.so
-lib/libcrypto.so.34
-lib/libcrypto.so.34.0.0
+lib/libcrypto.so.%%SHLIBVER%%
+lib/libcrypto.so.%%SHLIBVER%%.0.0
 lib/libssl.a
 lib/libssl.so
-lib/libssl.so.33
-lib/libssl.so.33.0.0
+lib/libssl.so.35
+lib/libssl.so.35.0.0
 lib/libtls.a
 lib/libtls.so
-lib/libtls.so.4
-lib/libtls.so.4.0.0
+lib/libtls.so.6
+lib/libtls.so.6.0.0
 libdata/pkgconfig/libcrypto.pc
 libdata/pkgconfig/libssl.pc
 libdata/pkgconfig/libtls.pc
@@ -829,7 +832,6 @@ man/man3/EVP_idea_ofb.3.gz
 man/man3/EVP_md2.3.gz
 man/man3/EVP_md5.3.gz
 man/man3/EVP_md_null.3.gz
-man/man3/EVP_mdc2.3.gz
 man/man3/EVP_rc2_40_cbc.3.gz
 man/man3/EVP_rc2_64_cbc.3.gz
 man/man3/EVP_rc2_cbc.3.gz
@@ -1541,4 +1543,5 @@ man/man3/ui.3.gz
 man/man3/ui_compat.3.gz
 man/man3/verify_callback.3.gz
 man/man3/x509.3.gz
+@dir etc/ssl/certs
 @dir include/openssl
