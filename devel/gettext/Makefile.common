@@ -10,7 +10,7 @@ CATEGORIES=	devel
 MASTER_SITES=	GNU/gettext
 DISTNAME=	gettext-${PORTVERSION}
 
-MAINTAINER=	autotools@FreeBSD.org
+MAINTAINER=	tijl@FreeBSD.org
 
 DISTINFO_FILE=	${.CURDIR}/../gettext/distinfo
 
