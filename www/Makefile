@@ -1938,6 +1938,7 @@
     SUBDIR += rubygem-rails_autolink
     SUBDIR += rubygem-railties
     SUBDIR += rubygem-railties4
+    SUBDIR += rubygem-railties41
     SUBDIR += rubygem-raindrops
     SUBDIR += rubygem-ramaze
     SUBDIR += rubygem-raphael-rails
