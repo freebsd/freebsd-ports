@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.7.20
+PORTVERSION=	1.7.21
 PORTREVISION?=	0
 CATEGORIES+=	devel
 MASTER_SITES=	APACHE/subversion
@@ -38,7 +38,7 @@ OPTIONS_NAME=		devel_subversion17
 # ===============================================================
 OPTIONS_SUB=			yes
 
-BDB_CONFIGURE_OFF=		--without-berkeley-db
+#BDB_CONFIGURE_OFF=		--with-berkeley-db=no
 BDB_USE=			BDB=42+
 
 GNOME_KEYRING_CONFIGURE_OFF=	--without-gnome-keyring
@@ -91,6 +91,11 @@ CFLAGS+=	-fpic -DPIC
 
 .if ${PORT_OPTIONS:MFREEBSD_TEMPLATE} && defined(ORGANIZATION)
 CFLAGS+=	-DHAS_ORGANIZATION_NAME
+.endif
+
+# unbreak py-subversion
+.if !${PORT_OPTIONS:MBDB}
+CONFIGURE_ARGS+=	--with-berkeley-db=no
 .endif
 
 .include <bsd.port.pre.mk>
