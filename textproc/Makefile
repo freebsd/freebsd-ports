@@ -1222,6 +1222,7 @@
     SUBDIR += py-pyscss
     SUBDIR += py-pysrt
     SUBDIR += py-pystache
+    SUBDIR += py-pystemmer
     SUBDIR += py-python-augeas
     SUBDIR += py-pytidylib
     SUBDIR += py-pyx12
@@ -1273,7 +1274,6 @@
     SUBDIR += py2html
     SUBDIR += py3-libxml2
     SUBDIR += pychm
-    SUBDIR += pystemmer
     SUBDIR += qprint
     SUBDIR += qstardict
     SUBDIR += qt4-xml
