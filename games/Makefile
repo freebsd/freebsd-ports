@@ -407,6 +407,7 @@
     SUBDIR += hohlin
     SUBDIR += hoichess
     SUBDIR += holotz-castle
+    SUBDIR += hypatia_engine
     SUBDIR += iagno
     SUBDIR += icbm3d
     SUBDIR += icebreaker
