@@ -58,6 +58,42 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ac5ec8e3-3c6c-11e5-b921-00a0986f28c4">
+    <topic>wordpress -- Multiple vulnerability</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<range><lt>4.2.4,1</lt></range>
+      </package>
+      <package>
+	<name>de-wordpress</name>
+	<name>ja-wordpress</name>
+	<name>ru-wordpress</name>
+	<name>zh-wordpress-zh_CH</name>
+	<name>zh-wordpress-zh_TW</name>
+	<range><lt>4.2.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gary Pendergast reports:</p>
+	<blockquote cite="https://wordpress.org/news/2015/08/wordpress-4-2-4-security-and-maintenance-release/">
+	  <p>WordPress 4.2.4 fixes three cross-site scripting vulnerabilities
+	    and a potential SQL injection that could be used to compromise a
+	    site.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://wordpress.org/news/2015/08/wordpress-4-2-4-security-and-maintenance-release/</url>
+      <cvename>CVE-2015-2213</cvename>
+    </references>
+    <dates>
+      <discovery>2015-08-04</discovery>
+      <entry>2015-08-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="57bb5e3d-3c4f-11e5-a4d4-001e8c75030d">
     <topic>subversion -- multiple vulnerabilities</topic>
     <affects>
