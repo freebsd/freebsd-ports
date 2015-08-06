@@ -16,7 +16,7 @@ LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake pathfix pkgconfig tar:xz
+USES=		alias gettext gmake pathfix pkgconfig tar:xz
 USE_MATE=	icontheme
 USE_GNOME=	gtk20 gtkmm24 intlhack librsvg2 libwnck libxml2
 CONFIGURE_ARGS=	--with-gtk=2.0
