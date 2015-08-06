@@ -58,6 +58,41 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="57bb5e3d-3c4f-11e5-a4d4-001e8c75030d">
+    <topic>subversion -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>subversion</name>
+	<range><ge>1.8.0</ge><lt>1.8.14</lt></range>
+	<range><ge>1.7.0</ge><lt>1.7.21</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Subversion reports:</p>
+	<blockquote cite="http://svn.haxx.se/dev/archive-2015-08/0024.shtml">
+	  <p>CVE-2015-3184:<br/>
+	     Subversion's mod_authz_svn does not properly restrict anonymous access
+	     in some mixed anonymous/authenticated environments when
+	     using Apache httpd 2.4.</p>
+	  <p>CVE-2015-3187:<br/>
+	     Subversion servers, both httpd and svnserve, will reveal some
+	     paths that should be hidden by path-based authz.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3184</cvename>
+      <url>http://subversion.apache.org/security/CVE-2015-3184-advisory.txt</url>
+      <cvename>CVE-2015-3187</cvename>
+      <url>http://subversion.apache.org/security/CVE-2015-3187-advisory.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-07-27</discovery>
+      <entry>2015-08-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ae8c09cb-32da-11e5-a4a5-002590263bf5">
     <topic>elasticsearch -- directory traversal attack via snapshot API</topic>
     <affects>
