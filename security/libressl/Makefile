@@ -19,15 +19,10 @@ CONFLICTS?=	openssl-[0-9]*
 GNU_CONFIGURE=	yes
 USES=		cpe libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 
 INSTALL_TARGET=	install-strip
 
 regression-test: build
 	cd ${WRKSRC} && ${MAKE} check
 
-.include <bsd.port.pre.mk>
-
-PLIST_SUB+=	SHLIBVER=${OPENSSL_SHLIBVER}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
