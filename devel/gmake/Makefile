@@ -11,7 +11,7 @@ DISTNAME=	make-${PORTVERSION}
 # note: before committing to this port, contact portmgr to arrange for an
 # experimental ports run.  Untested commits may be backed out at portmgr's
 # discretion.
-MAINTAINER=	autotools@FreeBSD.org
+MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	GNU version of 'make' utility
 
 LICENSE=	GPLv3
