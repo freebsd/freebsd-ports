@@ -2,6 +2,7 @@ etc/rc.d/iocage
 lib/iocage/ioc-cmd
 lib/iocage/ioc-common
 lib/iocage/ioc-configure
+lib/iocage/ioc-git
 lib/iocage/ioc-globals
 lib/iocage/ioc-hacks
 lib/iocage/ioc-help
