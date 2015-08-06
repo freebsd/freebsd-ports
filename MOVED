@@ -7816,3 +7816,4 @@ french/trytond_account_fr||2015-08-05|No more supported upstream, use tryton 2.8
 german/trytond_account_de_skr03||2015-08-05|No more supported upstream, use tryton 2.8 instead
 www/trytond_google_maps||2015-08-05|No more supported upstream, use tryton 2.8 instead
 devel/appdata-tools|devel/appstream-glib|2015-08-05|Replaced by appstream-glib
+textproc/pystemmer|textproc/py-pystemmer|2015-08-06|Rename to match upstream (PyPi) name
