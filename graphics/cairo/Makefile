@@ -38,18 +38,15 @@ CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR} \
 		--disable-wgl \
 		--enable-tee
 
-OPTIONS_DEFINE=	OPENGL XCB GLIB X11 EGL
-OPTIONS_DEFAULT=OPENGL XCB GLIB X11 EGL
+OPTIONS_DEFINE=	OPENGL XCB GLIB X11
+OPTIONS_DEFAULT=OPENGL XCB GLIB X11
 XCB_DESC=	Enable XCB (X C-language Binding) Support
 GLIB_DESC=	Enable GObject Functions Feature
-EGL_DESC=	2D/3D rendering support via EGL
 OPTIONS_SUB=	yes
 X11_USE=	xorg=xrender,xext
 X11_CONFIGURE_ENABLE=xlib
-OPENGL_USE=	gl=gl xorg=glproto:both,dri2proto:both
-OPENGL_CONFIGURE_ENABLE=gl
-EGL_USE=	gl=egl
-EGL_CONFIGURE_ENABLE=egl
+OPENGL_USE=	gl=gl,egl xorg=glproto:both,dri2proto:both
+OPENGL_CONFIGURE_ENABLE=gl egl
 GLIB_USE=	gnome=glib20
 GLIB_CONFIGURE_ENABLE=	gobject
 XCB_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcb-renderutil.pc:${PORTSDIR}/x11/xcb-util-renderutil
