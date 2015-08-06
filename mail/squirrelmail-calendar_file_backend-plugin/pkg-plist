@@ -10,5 +10,4 @@
 %%SQUIRRELDIR%%/plugins/calendar_file_backend/index.php
 %%SQUIRRELDIR%%/plugins/calendar_file_backend/setup.php
 %%SQUIRRELDIR%%/plugins/calendar_file_backend/version
-@dirrmtry %%SQUIRRELDIR%%/plugins/calendar_file_backend/
 @exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
