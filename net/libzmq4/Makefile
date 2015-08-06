@@ -2,6 +2,7 @@
 
 PORTNAME=	libzmq4
 PORTVERSION=	4.1.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://download.zeromq.org/
 DISTNAME=	zeromq-${DISTVERSION}
