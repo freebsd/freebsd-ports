@@ -170,6 +170,7 @@
     SUBDIR += rbldnsd
     SUBDIR += rbllookup
     SUBDIR += rbllookup-ng
+    SUBDIR += renewck
     SUBDIR += rubygem-dnsruby
     SUBDIR += rubygem-net-dns
     SUBDIR += rubygem-public_suffix
