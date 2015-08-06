@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${SVNREVISION}
-PORTREVISION=	2
+#PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	editors java
 MASTER_SITES=	http://ci.apache.org/projects/openoffice/milestones/${AOOVERSION}-${AOORC}-r${SVNREVISION}/source/ \
@@ -100,7 +100,7 @@ AOOVERSION2=	2
 AOOVERSION3=	0
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
 AOOTAG=		AOO420m1\(Build:9800\)
-SVNREVISION=	1689959
+SVNREVISION=	1694132
 #AOORC=rc3
 EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 
@@ -170,33 +170,21 @@ MMEDIA_USE=			GSTREAMER=yes
 .include <${FILESDIR}/Makefile.localized>
 
 .if ${COMPILER_TYPE} == clang
-. if ${COMPILER_VERSION} < 35 && ${ARCH} == amd64
-BUILD_DEPENDS+=		clang35:${PORTSDIR}/lang/clang35
-CPP=			clang-cpp35
-CC=			clang35
-CXX=			clang++35
-. endif
 CPPFLAGS+=		-I${LOCALBASE}/include
 .else
 USE_GCC=		yes
-SUBST=			"s/-fexceptions/& -fno-enforce-eh-specs/;s/-DHAVE_STL_INCLUDE_PATH/-DBOOST_TR1_DISABLE_INCLUDE_NEXT -DBOOST_TR1_GCC_INCLUDE_PATH=c++/"
 .endif
 
 .if ${ARCH} == amd64
 FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set.sh
-.else
-FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
-.endif
-
-LOCALIZED_LANG?=	en-US
-
-PACKAGE_PREFIX=		Apache_OpenOffice
-
-.if ${ARCH} == amd64
 PACKAGE_MIDDLE=		${PORTVERSION}_${OPSYS}_x86-64
 .else
+FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 PACKAGE_MIDDLE=		${PORTVERSION}_${OPSYS}_x86
 .endif
+PACKAGE_PREFIX=		Apache_OpenOffice
+
+LOCALIZED_LANG?=	en-US
 
 .if ${PORT_OPTIONS:MCCACHE} || defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
@@ -308,6 +296,7 @@ post-extract:
 	${TAR} -C ${WRKSUBDIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EXTSRC}
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/unowinreg.dll ${WRKSRC}/external/unowinreg/
 	${RM} -rf ${WRKSRC}/l10n
+	${LN} -sf ${UNZIP_CMD} ${WRKSRC}/solenv/bin/unzip
 	${SED}  -e '\|^For main/vcl/unx/generic/fontmanager/parseAFM|,/^__/p' \
 		-e '\|^For PostScript(R) AFM|,/^__/p'			\
 		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_ADOBE}
@@ -338,27 +327,28 @@ post-extract:
 		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_W3C}
 
 post-patch:
-.if defined (USE_GCC)
-	${REINPLACE_CMD} -e ${SUBST} ${WRKSRC}/solenv/gbuild/platform/freebsd.mk
-	${REINPLACE_CMD} -e ${SUBST} ${WRKSRC}/solenv/inc/unxfbsd.mk
-.endif
-.if ${ARCH} == i386
-	# g++49 -Os sometimes leaves inline class methods undefined
-	# autodoc core dumps when built with with -Os clang 3.6 on i386
-	if [ ${CXX} = g++49 -o \
-	     ${COMPILER_TYPE} = clang -a ${COMPILER_VERSION} = 36 ]; then \
-		${REINPLACE_CMD} -e "s/ := -Os/ := -O0/" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk; \
-		${REINPLACE_CMD} -e "s/=-Os /=-O0 /" ${WRKSRC}/solenv/inc/unxfbsdi.mk; \
+.if ${COMPILER_TYPE} == gcc
+	# g++49 -Os sometimes leaves inline class methods undefined,
+	# affects fmgridif.cxx and ColumnControl.cxx
+	# See: <https://gcc.gnu.org/bugzilla/show_bug.cgi?id=65009>
+	if [ ${CXX} = g++49  ]; then \
+		${REINPLACE_CMD} -e "s/ := -Os/ := -Os -fno-devirtualize -fno-devirtualize-speculatively/" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk; \
+		${REINPLACE_CMD} -e "s/=-Os /=-Os -fno-devirtualize -fno-devirtualize-speculatively /" ${WRKSRC}/solenv/inc/unxfbsdi.mk; \
 	fi
+.elif ${ARCH} == i386 && ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} == 36
+	# autodoc and uno (bridgetest) core dump when built with with -Os
+	# on i386, affects file.cxx and bridgetest.cxx
+	# Using -O2 optimiztion works, and -Os is essentially -O2 with out
+	# loop unrolling.
+	# Changing optimization in just unxfbsdi.mk is sufficient to get
+	# a successful build, but change it in both places to avoid the
+	# possibility of obscure runtime problems.
+	${REINPLACE_CMD} -e "s/=-Os /=-O2 -fno-unroll-loops /" ${WRKSRC}/solenv/inc/unxfbsdi.mk
+	${REINPLACE_CMD} -e "s/ := -Os/ := -O2 -fno-unroll-loops/" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk
 .endif
-
-pre-configure:
-	${LN} -sf ${UNZIP_CMD} ${WRKSRC}/solenv/bin/unzip
 
 do-build:
-	cd ${WRKSUBDIR} ; ${PRINTF} "[repositories]\n" > source_config
-	cd ${WRKSUBDIR} ; ${PRINTF} "main=active\n" >> source_config
-	cd ${WRKSUBDIR} ; ${PRINTF} "extras=active\n" >> source_config
+	${PRINTF} "[repositories]\nmain=active\nextras=active\n" > ${WRKSUBDIR}/source_config
 	cd ${WRKSRC} ; ./bootstrap
 	#
 	# numproc controls the number of parallel makes.
@@ -375,27 +365,27 @@ do-build:
 	#  * dmproc >= numproc
 	#  * dmproc <= 2*numproc if MAKE_JOBS_NUMBER <= 3
 	#
-	cd ${WRKSRC} ; . ${FREEBSD_ENV_SET} ; cd instsetoo_native/util ;  \
-	 export LANG=C LC_ALL=C FBSD_LDFLAGS="${LDFLAGS}" ;		  \
-	 if [ ${MAKE_JOBS_NUMBER} -le 3 ] ; then			  \
-	  numproc=1 ; dmproc=${MAKE_JOBS_NUMBER} ;			  \
+	if [ ${MAKE_JOBS_NUMBER} -le 3 ] ; then				  \
+	 numproc=1 ; dmproc=${MAKE_JOBS_NUMBER} ;			  \
+	else								  \
+	 a=1 ;								  \
+	 while [ $$(( 2 * $${a} * $${a} )) -lt ${MAKE_JOBS_NUMBER} ]; do  \
+	  a=$$(( $${a} + 1 )) ;						  \
+	 done ;								  \
+	 b=$$(( $${a} + 1 )) ;						  \
+	 ad=$$(( ( ${MAKE_JOBS_NUMBER} + $${a} - 1 ) / $${a} )) ;	  \
+	 ap=$$(( $${a} * $${ad} )) ;					  \
+	 bd=$$(( ( ${MAKE_JOBS_NUMBER} + $${b} - 1 ) / $${b} )) ;	  \
+	 bp=$$(( $${b} * $${bd} )) ;					  \
+	 if [ $${ap} -le $${bp} ]; then					  \
+	  numproc=$${a} ; dmproc=$${ad} ;				  \
 	 else								  \
-	  a=1 ;								  \
-	  while [ $$(( 2 * $${a} * $${a} )) -lt ${MAKE_JOBS_NUMBER} ]; do \
-	   a=$$(( $${a} + 1 )) ;					  \
-	  done ;							  \
-	  b=$$(( $${a} + 1 )) ;						  \
-	  ad=$$(( ( ${MAKE_JOBS_NUMBER} + $${a} - 1 ) / $${a} )) ;	  \
-	  ap=$$(( $${a} * $${ad} )) ;					  \
-	  bd=$$(( ( ${MAKE_JOBS_NUMBER} + $${b} - 1 ) / $${b} )) ;	  \
-	  bp=$$(( $${b} * $${bd} )) ;					  \
-	  if [ $${ap} -le $${bp} ]; then				  \
-	   numproc=$${a} ; dmproc=$${ad} ;				  \
-	  else								  \
-	   numproc=$${b} ; dmproc=$${bd} ;				  \
-	  fi ;								  \
+	  numproc=$${b} ; dmproc=$${bd} ;				  \
 	 fi ;								  \
-	 build.pl --all -P$${numproc} -- -P$${dmproc}
+	fi ;								  \
+	cd ${WRKSRC}/instsetoo_native ;					  \
+	. ../${FREEBSD_ENV_SET} ; 					  \
+	LANG=C LC_ALL=C build.pl --all -P$${numproc} -- -P$${dmproc}
 
 do-install:
 	cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/Apache_OpenOffice/archive/install/${LOCALIZED_LANG}/ ; ${LS} *.tar.?z > ${WRKDIR}/INSTALLFILES
