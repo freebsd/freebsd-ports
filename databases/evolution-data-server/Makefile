@@ -3,6 +3,7 @@
 
 PORTNAME=	evolution-data-server
 PORTVERSION=	3.16.4
+PORTREVISION=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

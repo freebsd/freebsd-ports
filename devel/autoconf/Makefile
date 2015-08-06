@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	GNU
 DISTNAME=	autoconf-${PORTVERSION}
 
-MAINTAINER=	autotools@FreeBSD.org
+MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Automatically configure source code on many Un*x platforms
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \

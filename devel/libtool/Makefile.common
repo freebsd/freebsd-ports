@@ -6,7 +6,7 @@ CATEGORIES=	devel
 MASTER_SITES=	GNU/libtool
 DISTNAME=	libtool-${PORTVERSION}
 
-MAINTAINER=	autotools@FreeBSD.org
+MAINTAINER=	tijl@FreeBSD.org
 
 DISTINFO_FILE=	${.CURDIR}/../libtool/distinfo
 USES=		cpe gmake tar:xz

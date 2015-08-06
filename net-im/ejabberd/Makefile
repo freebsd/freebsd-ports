@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ejabberd
-PORTVERSION=	15.06
-PORTREVISION=	2
+PORTVERSION=	15.07
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.process-one.net/downloads/${PORTNAME}/${PORTVERSION}/:p1 \
 		http://distfiles.pirateparty.in/ashish/:deps \
@@ -83,7 +82,7 @@ post-install:
 .if ${PORT_OPTIONS:MPAM}
 	${INSTALL} -m 444 ${FILESDIR}/pam_ejabberd ${STAGEDIR}${PREFIX}/etc/pam.d/ejabberd
 .endif
-.for _file in p1_tls_drv.so expat_erl.so p1_yaml.so esip_drv.so p1_sha.so jiffy.so ezlib_drv.so iconv.so stringprep.so
+.for _file in p1_tls_drv.so expat_erl.so p1_yaml.so esip_drv.so p1_sha.so jiffy.so ezlib_drv.so iconv.so stringprep.so sqlite3_drv.so xml.so
 	-@[ -f ${STAGEDIR}${PREFIX}/lib/erlang/lib/ejabberd-${PORTVERSION}/priv/lib/${_file} ] && ${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/erlang/lib/ejabberd-${PORTVERSION}/priv/lib/${_file}
 .endfor
 

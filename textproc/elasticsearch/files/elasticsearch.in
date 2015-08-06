@@ -27,7 +27,8 @@
 
 name=elasticsearch
 rcvar=elasticsearch_enable
-load_rc_config $name
+
+load_rc_config ${name}
 
 : ${elasticsearch_enable:="NO"}
 : ${elasticsearch_user:=%%SEARCHUSER%%}
@@ -46,7 +47,6 @@ pidfile="/var/run/${name}.pid"
 
 ES_LIB="%%PREFIX%%/lib/elasticsearch"
 ES_CLASSPATH=$ES_LIB/elasticsearch-%%PORTVERSION%%.jar:$ES_LIB/*:$ES_LIB/sigar/*
-
 
 java_options=" 	-server \
 		-Xms${elasticsearch_min_mem} \
@@ -71,7 +71,8 @@ stop_cmd="elasticsearch_stop"
 command="/usr/sbin/daemon"
 command_args="-f %%LOCALBASE%%/bin/java -Des.pidfile=${pidfile} ${elasticsearch_props} ${java_options} org.elasticsearch.bootstrap.Elasticsearch"
 
-elasticsearch_precmd() {
+elasticsearch_precmd()
+{
         touch ${pidfile}
         chown ${elasticsearch_user}:${elasticsearch_group} ${pidfile}
 	/usr/bin/install -d -o ${elasticsearch_user} -g ${elasticsearch_group} -m 750 ${elasticsearch_tmp}
@@ -79,12 +80,14 @@ elasticsearch_precmd() {
 	/usr/bin/install -d -o ${elasticsearch_user} -g ${elasticsearch_group} -m 750 /var/log/elasticsearch
 }
 
-elasticsearch_console () {
+elasticsearch_console()
+{
 	%%LOCALBASE%%/bin/java -Des.foreground=yes ${elasticsearch_props} ${java_options} org.elasticsearch.bootstrap.Elasticsearch
 }
 
 
-elasticsearch_stop() {
+elasticsearch_stop()
+{
 	rc_pid=$(elasticsearch_check_pidfile $pidfile)
 
 	if [ -z "$rc_pid" ]; then
@@ -97,7 +100,8 @@ elasticsearch_stop() {
 	kill ${rc_pid} 2> /dev/null
 }
 
-elasticsearch_status() {
+elasticsearch_status()
+{
 	rc_pid=$(elasticsearch_check_pidfile $pidfile)
 
 	if [ -z "$rc_pid" ]; then
@@ -108,7 +112,8 @@ elasticsearch_status() {
 	echo "${name} is running as pid ${rc_pid}."
 }
 
-elasticsearch_check_pidfile() {
+elasticsearch_check_pidfile()
+{
 	_pidfile=$1
 	if [ -z "$_pidfile" ]; then
 		err 3 'USAGE: elasticsearch_check_pidfile pidfile'
@@ -126,5 +131,5 @@ elasticsearch_check_pidfile() {
 		echo -n $_pid
 	fi
 }
-load_rc_config ${name}
+
 run_rc_command "$1"

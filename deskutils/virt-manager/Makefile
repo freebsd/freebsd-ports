@@ -2,7 +2,7 @@
 
 PORTNAME=	virt-manager
 PORTVERSION=	1.1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils net-mgmt
 MASTER_SITES=	http://virt-manager.org/download/sources/${PORTNAME}/ \
 		LOCAL/jgh/deskutils/${PORTNAME}/
@@ -29,20 +29,20 @@ PYDISTUTILS_CONFIGURE_TARGET=	configure
 PYDISTUTILS_CONFIGUREARGS=	--prefix=${PREFIX}
 USES=		python:2.7 gettext shebangfix
 USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
 USE_GNOME=	introspection:run intltool librsvg2 pygobject3
 
 INSTALLS_ICONS=	yes
 
+python_OLD_CMD=	/usr/bin/python2
 SHEBANG_FILES=	virt-manager \
 		virt-install \
 		virt-clone \
-		virt-convert
+		virt-convert \
+		virt-xml
 
 GLIB_SCHEMAS=	org.virt-manager.virt-manager.gschema.xml
-
-post-patch:
-	@${REINPLACE_CMD} -e '1s|/usr/bin/python2|${python_CMD}|' ${WRKSRC}/virt-xml
 
 #add workaround for two autoplist functions
 post-install:

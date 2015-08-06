@@ -1,6 +1,6 @@
---- subversion/svn/util.c.orig	2013-07-10 04:00:05 UTC
-+++ subversion/svn/util.c
-@@ -66,6 +66,9 @@
+--- subversion/svn/util.c.orig	2013-07-10 06:00:05.000000000 +0200
++++ subversion/svn/util.c	2015-07-30 13:00:04.642537000 +0200
+@@ -66,6 +69,9 @@
  #include "private/svn_client_private.h"
  #include "private/svn_cmdline_private.h"
  #include "private/svn_string_private.h"
@@ -10,7 +10,7 @@
  
  
  
-@@ -322,6 +325,70 @@ truncate_buffer_at_prefix(apr_size_t *ne
+@@ -322,6 +328,70 @@ truncate_buffer_at_prefix(apr_size_t *ne
  }
  
  
@@ -81,7 +81,14 @@
  #define EDITOR_EOF_PREFIX  _("--This line, and those below, will be ignored--")
  
  svn_error_t *
-@@ -337,8 +404,38 @@ svn_cl__get_log_message(const char **log
+@@ -334,11 +404,54 @@ svn_cl__get_log_message(const char **log
+   svn_stringbuf_t *default_msg = NULL;
+   struct log_msg_baton *lmb = baton;
+   svn_stringbuf_t *message = NULL;
++  svn_config_t *cfg;
++  const char *mfc_after, *sponsored_by;
++
++  cfg = lmb->config ? svn_hash_gets(lmb->config, SVN_CONFIG_CATEGORY_CONFIG) : NULL;
  
    /* Set default message.  */
    default_msg = svn_stringbuf_create(APR_EOL_STR, pool);
@@ -91,15 +98,24 @@
 +  svn_stringbuf_appendcstr(default_msg, "Reviewed by:\t" APR_EOL_STR);
 +  svn_stringbuf_appendcstr(default_msg, "Approved by:\t" APR_EOL_STR);
 +  svn_stringbuf_appendcstr(default_msg, "Obtained from:\t" APR_EOL_STR);
-+  svn_stringbuf_appendcstr(default_msg, "MFC after:\t" APR_EOL_STR);
++  svn_stringbuf_appendcstr(default_msg, "MFC after:\t");
++  svn_config_get(cfg, &mfc_after, SVN_CONFIG_SECTION_MISCELLANY, "freebsd-mfc-after", NULL);
++  if (mfc_after != NULL)
++	  svn_stringbuf_appendcstr(default_msg, mfc_after);
++  svn_stringbuf_appendcstr(default_msg, APR_EOL_STR);
 +  svn_stringbuf_appendcstr(default_msg, "MFH:\t\t" APR_EOL_STR);
 +  svn_stringbuf_appendcstr(default_msg, "Relnotes:\t" APR_EOL_STR);
 +  svn_stringbuf_appendcstr(default_msg, "Security:\t" APR_EOL_STR);
-+  svn_stringbuf_appendcstr(default_msg, "Sponsored by:\t"
++  svn_stringbuf_appendcstr(default_msg, "Sponsored by:\t");
++  svn_config_get(cfg, &sponsored_by, SVN_CONFIG_SECTION_MISCELLANY, "freebsd-sponsored-by",
 +#ifdef HAS_ORGANIZATION_NAME
-+      ORGANIZATION_NAME
++  	ORGANIZATION_NAME);
++#else
++	NULL);
 +#endif
-+      APR_EOL_STR);
++  if (sponsored_by != NULL)
++	  svn_stringbuf_appendcstr(default_msg, sponsored_by);
++  svn_stringbuf_appendcstr(default_msg, APR_EOL_STR);
 +  svn_stringbuf_appendcstr(default_msg, "Differential Revision:\t" APR_EOL_STR);
    svn_stringbuf_appendcstr(default_msg, EDITOR_EOF_PREFIX);
 -  svn_stringbuf_appendcstr(default_msg, APR_EOL_STR APR_EOL_STR);
@@ -121,7 +137,7 @@
  
    *tmp_file = NULL;
    if (lmb->message)
-@@ -350,6 +447,7 @@ svn_cl__get_log_message(const char **log
+@@ -350,6 +463,7 @@ svn_cl__get_log_message(const char **log
           that follows it.  */
        truncate_buffer_at_prefix(&(log_msg_buf->len), log_msg_buf->data,
                                  EDITOR_EOF_PREFIX);
@@ -129,7 +145,7 @@
  
        /* Make a string from a stringbuf, sharing the data allocation. */
        log_msg_str->data = log_msg_buf->data;
-@@ -470,6 +568,13 @@ svn_cl__get_log_message(const char **log
+@@ -470,6 +584,13 @@ svn_cl__get_log_message(const char **log
        if (message)
          truncate_buffer_at_prefix(&message->len, message->data,
                                    EDITOR_EOF_PREFIX);

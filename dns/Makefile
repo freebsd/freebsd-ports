@@ -7,6 +7,7 @@
     SUBDIR += adsuck
     SUBDIR += ares
     SUBDIR += autotrust
+    SUBDIR += axfr2acl
     SUBDIR += bind-tools
     SUBDIR += bind10
     SUBDIR += bind910
@@ -33,6 +34,7 @@
     SUBDIR += dnscheck
     SUBDIR += dnscheckengine
     SUBDIR += dnscrypt-proxy
+    SUBDIR += dnsdbck
     SUBDIR += dnsflood
     SUBDIR += dnshistory
     SUBDIR += dnsjava
@@ -170,6 +172,8 @@
     SUBDIR += rbldnsd
     SUBDIR += rbllookup
     SUBDIR += rbllookup-ng
+    SUBDIR += renewck
+    SUBDIR += rpsl2acl
     SUBDIR += rubygem-dnsruby
     SUBDIR += rubygem-net-dns
     SUBDIR += rubygem-public_suffix

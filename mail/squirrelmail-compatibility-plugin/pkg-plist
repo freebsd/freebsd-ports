@@ -70,39 +70,4 @@
 %%SQUIRRELDIR%%/plugins/compatibility/patches/index.php
 %%SQUIRRELDIR%%/plugins/compatibility/setup.php
 %%SQUIRRELDIR%%/plugins/compatibility/version
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/patches.old
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/patches
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/locale
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.5.2
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.5.1
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.5.0
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.9
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.8
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.7
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.6
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.5
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.4
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.3
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.20
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.2
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.19
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.18
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.17
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.16
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.15
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.14
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.13
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.12
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.11
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.10
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.1
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.0
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.2.9
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.2.8
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.2.7
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.2.11
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.2.10
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/docs
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility
 @exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
