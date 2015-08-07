@@ -950,6 +950,7 @@
     SUBDIR += py-pysendfile
     SUBDIR += py-pysocks
     SUBDIR += py-pysphere
+    SUBDIR += py-python-bitcoinrpc
     SUBDIR += py-pyvmomi
     SUBDIR += py-pyzmq
     SUBDIR += py-qt4-network
