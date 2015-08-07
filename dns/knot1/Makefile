@@ -3,10 +3,11 @@
 
 PORTNAME=	knot
 PORTVERSION=	1.6.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		http://dns-lab.com/downloads/knot-dns/
+PKGNAMESUFFIX=	1
 
 MAINTAINER=	freebsd@dns-lab.com
 COMMENT=	High performance authoritative-only DNS server
@@ -16,7 +17,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	flex>=2.5.35_1:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	liburcu.so:${PORTSDIR}/sysutils/liburcu
 
-CONFLICTS=	knot-2.*
+CONFLICTS=	knot-2.* knot2-.*
 
 USES=		alias bison libtool pkgconfig tar:xz
 GNU_CONFIGURE=	yes
