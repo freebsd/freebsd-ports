@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	libobjc2
-PORTVERSION=	1.7
-PORTREVISION=	2
+PORTVERSION=	1.8.1
 CATEGORIES=	lang devel gnustep
 USE_GITHUB=	yes
 GH_ACCOUNT=	gnustep
 GH_PROJECT=	libobjc2
-GH_TAGNAME=	857edd9
+GH_TAGNAME=	5a21dd1
 
 MAINTAINER=	theraven@FreeBSD.org
 COMMENT=	Replacement Objective-C runtime supporting modern Objective-C features
