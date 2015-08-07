@@ -35,6 +35,7 @@
     SUBDIR += dnscheckengine
     SUBDIR += dnscrypt-proxy
     SUBDIR += dnsdbck
+    SUBDIR += dnsdist
     SUBDIR += dnsflood
     SUBDIR += dnshistory
     SUBDIR += dnsjava
