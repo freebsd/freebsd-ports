@@ -974,7 +974,6 @@
     SUBDIR += py-urllib3
     SUBDIR += py-wolframalpha
     SUBDIR += py-xmlrpc
-    SUBDIR += py-xmlrpclib
     SUBDIR += py-zope.proxy
     SUBDIR += py-zsi
     SUBDIR += pygopherd
