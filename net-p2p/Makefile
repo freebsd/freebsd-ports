@@ -67,7 +67,6 @@
     SUBDIR += p5-Net-DirectConnect
     SUBDIR += p5-WWW-BitTorrent
     SUBDIR += phex
-    SUBDIR += py-kenosis
     SUBDIR += py-py2play
     SUBDIR += py-transmissionrpc
     SUBDIR += py-vertex
