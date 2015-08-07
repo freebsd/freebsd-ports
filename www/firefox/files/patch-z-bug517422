@@ -399,12 +399,16 @@ diff --git media/libtheora/moz.build media/libtheora/moz.build
 index 14265b1..3069e99 100644
 --- media/libtheora/moz.build
 +++ media/libtheora/moz.build
-@@ -93,3 +93,5 @@ if CONFIG['GNU_AS']:
-         if CONFIG['OS_TARGET'] == 'Android':
-             DEFINES['__linux__'] = True
+@@ -21,6 +21,9 @@ if CONFIG['GKMEDIAS_SHARED_LIBRARY']:
+ # The encoder is currently not included.
+ DEFINES['THEORA_DISABLE_ENCODE'] = True
  
 +if CONFIG['MOZ_NATIVE_OGG']:
 +    CFLAGS += CONFIG['MOZ_OGG_CFLAGS']
++
+ # Suppress warnings in third-party code.
+ if CONFIG['GNU_CC']:
+     CFLAGS += ['-Wno-type-limits']
 diff --git media/libtremor/README_MOZILLA media/libtremor/README_MOZILLA
 index ee67b53..3f34a09 100644
 --- media/libtremor/README_MOZILLA
@@ -448,11 +452,11 @@ index 919b99e..cc776f7 100644
 +
 +if CONFIG['MOZ_NATIVE_OGG']:
 +    CFLAGS += CONFIG['MOZ_OGG_CFLAGS']
-diff --git media/webrtc/signaling/test/moz.build media/webrtc/signaling/test/moz.build
+diff --git media/webrtc/signaling/test/common.build media/webrtc/signaling/test/common.build
 index bbc971c..6ed7e41 100644
---- media/webrtc/signaling/test/moz.build
-+++ media/webrtc/signaling/test/moz.build
-@@ -127,6 +127,9 @@ if CONFIG['MOZ_ALSA']:
+--- media/webrtc/signaling/test/common.build
++++ media/webrtc/signaling/test/common.build
+@@ -108,6 +109,9 @@ if CONFIG['MOZ_OSS']:
  if CONFIG['MOZ_NATIVE_JPEG']:
      OS_LIBS += CONFIG['MOZ_JPEG_LIBS']
  
