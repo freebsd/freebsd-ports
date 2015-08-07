@@ -77,7 +77,7 @@ index 9593492..470384b 100644
        installToDirPath.initWithPath(path);
        log.info("install to directory path: " + installToDirPath.path);
        let gmpInstaller = new GMPExtractor(zipPath, installToDirPath.path);
-@@ -885,10 +883,12 @@
+@@ -895,10 +893,12 @@ GMPDownloader.prototype = {
          // Success, set the prefs
          let now = Math.round(Date.now() / 1000);
          GMPPrefs.set(GMPPrefs.KEY_PLUGIN_LAST_UPDATE, now, gmpAddon.id);
@@ -89,9 +89,9 @@ index 9593492..470384b 100644
                       gmpAddon.id);
 +        GMPPrefs.set(GMPPrefs.KEY_PLUGIN_PATH,
 +                     installToDirPath.path, gmpAddon.id);
-         this._deferred.resolve(extractedPaths);
-       }, err => {
-         this._deferred.reject(err);
+         // Reset the trial create pref, so that Gecko knows to do a test
+         // run before reporting that the GMP works to content.
+         GMPPrefs.reset(GMPPrefs.KEY_PLUGIN_TRIAL_CREATE, gmpAddon.version,
 diff --git toolkit/modules/GMPUtils.jsm toolkit/modules/GMPUtils.jsm
 index 1f3a0b1..93517be 100644
 --- toolkit/modules/GMPUtils.jsm
@@ -124,11 +124,8 @@ index 1f3a0b1..93517be 100644
    if (this._plugin.isEME) {
      Preferences.observe(GMPPrefs.KEY_EME_ENABLED,
                          this.onPrefEMEGlobalEnabledChanged, this);
-@@ -134,17 +133,14 @@
-   optionsType: AddonManager.OPTIONS_TYPE_INLINE,
-   get optionsURL() { return this._plugin.optionsURL; },
+@@ -135,11 +134,8 @@ GMPWrapper.prototype = {
  
-+
    set gmpPath(aPath) { this._gmpPath = aPath; },
    get gmpPath() {
 -    if (!this._gmpPath && this.isInstalled) {
@@ -141,11 +138,7 @@ index 1f3a0b1..93517be 100644
      }
      return this._gmpPath;
    },
--
-   get missingKey() {
-     return this._plugin.missingKey;
-   },
-@@ -141,8 +137,13 @@
+@@ -158,8 +154,13 @@ GMPWrapper.prototype = {
    get description() { return this._plugin.description; },
    get fullDescription() { return this._plugin.fullDescription; },
  
@@ -203,9 +196,9 @@ index 1f3a0b1..93517be 100644
 -      this._log.info("onPrefVersionChanged() - unregistering gmp directory " +
 +      this._log.info("onPrefPathChanged() - unregistering gmp directory " +
                       this._gmpPath);
-       gmpService.removePluginDirectory(this._gmpPath);
+       gmpService.removeAndDeletePluginDirectory(this._gmpPath, true /* can defer */);
      }
-@@ -374,15 +368,10 @@
+@@ -415,15 +409,10 @@ GMPWrapper.prototype = {
      AddonManagerPrivate.callInstallListeners("onExternalInstall", null, this,
                                               null, false);
      AddonManagerPrivate.callAddonListeners("onInstalling", this, false);
