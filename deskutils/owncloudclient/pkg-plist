@@ -16,7 +16,7 @@ lib/libowncloudsync.so.0
 lib/libowncloudsync.so.%%VERSION%%
 lib/owncloud/libocsync.so
 lib/owncloud/libocsync.so.0
-lib/owncloud/libocsync.so.0.2.1
+lib/owncloud/libocsync.so.%%VERSION%%
 %%PORTDOCS%%man/man1/owncloud.1.gz
 %%PORTDOCS%%man/man1/owncloudcmd.1.gz
 share/applications/owncloud.desktop
@@ -233,6 +233,7 @@ share/owncloud/i18n/client_gl.qm
 share/owncloud/i18n/client_hu.qm
 share/owncloud/i18n/client_it.qm
 share/owncloud/i18n/client_ja.qm
+share/owncloud/i18n/client_nb_NO.qm
 share/owncloud/i18n/client_nl.qm
 share/owncloud/i18n/client_pl.qm
 share/owncloud/i18n/client_pt.qm
@@ -240,6 +241,7 @@ share/owncloud/i18n/client_pt_BR.qm
 share/owncloud/i18n/client_ru.qm
 share/owncloud/i18n/client_sk.qm
 share/owncloud/i18n/client_sl.qm
+share/owncloud/i18n/client_sr.qm
 share/owncloud/i18n/client_sv.qm
 share/owncloud/i18n/client_th.qm
 share/owncloud/i18n/client_tr.qm
