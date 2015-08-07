@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cloudabi-clang
-PORTVERSION=	1.0
+PORTVERSION=	3.7
 CATEGORIES=	lang
 MASTER_SITES=	# None
 DISTFILES=	# None
@@ -12,22 +12,24 @@ COMMENT=	Clang for CloudABI
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	clang-devel:${PORTSDIR}/devel/llvm-devel \
+RUN_DEPENDS=	clang${LLVM_SUFFIX}:${PORTSDIR}/devel/llvm${LLVM_SUFFIX} \
 		x86_64-unknown-cloudabi-ld:${PORTSDIR}/devel/cloudabi-binutils
+
+LLVM_SUFFIX=	${DISTVERSION:S/.//}
 
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/x86_64-unknown-cloudabi-cc \
 		bin/x86_64-unknown-cloudabi-c++ \
-		llvm-devel/x86_64-unknown-cloudabi
+		llvm${LLVM_SUFFIX}/x86_64-unknown-cloudabi
 
 do-install:
-	@${LN} -s ../llvm-devel/bin/clang \
+	@${LN} -s ../llvm${LLVM_SUFFIX}/bin/clang \
 		${STAGEDIR}${PREFIX}/bin/x86_64-unknown-cloudabi-cc
-	@${LN} -s ../llvm-devel/bin/clang++ \
+	@${LN} -s ../llvm${LLVM_SUFFIX}/bin/clang++ \
 		${STAGEDIR}${PREFIX}/bin/x86_64-unknown-cloudabi-c++
-	@${MKDIR} ${STAGEDIR}${PREFIX}/llvm-devel
+	@${MKDIR} ${STAGEDIR}${PREFIX}/llvm${LLVM_SUFFIX}
 	@${LN} -s ../x86_64-unknown-cloudabi \
-		${STAGEDIR}${PREFIX}/llvm-devel/x86_64-unknown-cloudabi
+		${STAGEDIR}${PREFIX}/llvm${LLVM_SUFFIX}/x86_64-unknown-cloudabi
 
 .include <bsd.port.mk>
