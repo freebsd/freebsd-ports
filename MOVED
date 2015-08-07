@@ -7735,6 +7735,7 @@ devel/amd64-gcc||2015-07-25|No real use
 devel/amd64-xtoolchain-gcc||2015-07-25|No real use
 devel/p5-Test-Tester|devel/p5-Test-Simple|2015-07-25|Has expired: Part of p5-Test-Simple (use that instead), and included in perl 5.22
 devel/p5-Test-use-ok|devel/p5-Test-Simple|2015-07-25|Has expired: Part of devel/p5-Test-Simple (use that instead), and included in perl 5.22
+sysutils/libzeitgeist|sysutils/zeitgeist|2015-07-26|Merged into zeitgeist
 math/mate-calc||2015-07-27|Not part of MATE 1.10. Instead galculator is used
 x11/mate-dialogs||2015-07-27|Not part of MATE 1.10
 devel/automake14||2015-07-27|Has expired: Not used in the ports tree anymore
@@ -7748,7 +7749,6 @@ net/py-soapy|net/py-soappy|2015-08-01|Has expired: Abandonware depending on anci
 net-p2p/btqueue||2015-08-01|Has expired: Runtime broken (does not download anything)
 sysutils/vhdtool||2015-08-01|Has expired: Use mkimg(1) instead
 www/rubygem-modernizr||2015-08-01|Has expired: This gem has been removed from rubygems.org by upstream
-sysutils/libzeitgeist|sysutils/zeitgeist|2015-07-26|Merged into zeitgeist
 devel/java-util-concurrent||2015-08-03|Has expired: Included in all current JDKs by default
 devel/py-pyparsing15||2015-08-03|Has expired: Not used in the ports tree anymore
 finance/tryton||2015-08-05|No more supported upstream, use tryton 2.8 instead
