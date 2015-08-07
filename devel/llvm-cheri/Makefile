@@ -2,11 +2,12 @@
 
 PORTNAME=	llvm
 PORTVERSION=	3.8.d20150730
+PORTREVISION=	1
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 
 MAINTAINER=	brooks@FreeBSD.org
-COMMENT=	LLVM and Clang
+COMMENT=	LLVM and Clang with support for the CHERI architecture
 
 LLVM_SUFFIX=	-cheri
 LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
@@ -49,7 +50,7 @@ DOCS_CMAKE_ON=		-DLLVM_ENABLE_SPHINX=ON \
 			-DLLVM_BUILD_DOCS=ON
 DOCS_PLIST_FILES=	${MAN1SRCS:S|^|man/man1/|:S|.1$|${LLVM_SUFFIX}.1.gz|}
 LIT_DESC=		Install lit and FileCheck test tools
-LLDB_DESC=		Install lldb, the LLVM debugger
+LLDB_DESC=		Install lldb, the LLVM debugger (ignore on 9.x)
 LLDB_BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 LLDB_GH_PROJECT=	lldb:lldb
 LLDB_GH_TAGNAME=	${LLDB_COMMIT}:lldb
@@ -137,15 +138,18 @@ NOT_FOR_ARCH=	ia64
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 900000
-BROKEN=	GCC failing on 8.x
+.if ${COMPILER_TYPE} != clang
+# Evil hack around gcc48 not providing a usable c++11 environment on 9.x
+PLIST_SUB:=	${PLIST_SUB:NLLDB=*} LLDB="@comment "
 .endif
 
 post-extract-CLANG-on:
 	${MV} ${WRKSRC_clang} ${PATCH_WRKSRC}/tools/clang
 
 post-extract-LLDB-on:
+.if ${COMPILER_TYPE} == clang
 	${MV} ${WRKSRC_lldb} ${PATCH_WRKSRC}/tools/lldb
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|import lit|import lit${LLVM_SUFFIX}|' \
@@ -175,7 +179,9 @@ post-install-DOCS-on:
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/
 
 post-install-LLDB-on:
+.if ${COMPILER_TYPE} == clang
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/lib/python*/site-packages/lib
+.endif
 
 post-install-CLANG-on:
 	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/clang \
