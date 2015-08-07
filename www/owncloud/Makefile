@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	owncloud
-PORTVERSION=	8.0.4
+PORTVERSION=	8.1.0
 CATEGORIES=	www
 MASTER_SITES=	http://download.owncloud.org/community/
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING-AGPL
 
 USES=		cpe tar:bzip2
 USE_PHP=	bz2 ctype curl dom fileinfo filter gd hash iconv json \
-		mbstring pdo session simplexml xml xmlreader xmlwriter \
+		mbstring pdo posix session simplexml xml xmlreader xmlwriter \
 		xsl wddx zip zlib
 WANT_PHP_WEB=	yes
 
@@ -47,5 +47,8 @@ SSL_USE=	PHP=openssl
 do-install:
 	@${MKDIR} -m 0755 ${STAGEDIR}${WWWDIR}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${WWWDIR}/data
 
 .include <bsd.port.mk>
