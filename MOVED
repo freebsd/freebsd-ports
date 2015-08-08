@@ -7819,3 +7819,5 @@ textproc/pystemmer|textproc/py-pystemmer|2015-08-06|Rename to match upstream (Py
 dns/knot|dns/knot1|2015-08-07|Rename to knot1 now knot 2.0 is out
 net/py-xmlrpclib||2015-08-07|Has expired: This is part of standard library since python 2.2
 net-p2p/py-kenosis||2015-08-07|Has expired: Fails to run with modern python
+graphics/skencil||2015-08-08|Has expired: Project is abandoned and was overtaken by sK1 fork
+www/ismail||2015-08-08|Has expired: Development has been discontinued for many years
