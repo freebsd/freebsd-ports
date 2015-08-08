@@ -11,6 +11,7 @@
     SUBDIR += R-cran-stringi
     SUBDIR += R-cran-stringr
     SUBDIR += R-cran-xtable
+    SUBDIR += R-cran-yaml
     SUBDIR += ack
     SUBDIR += adabrowse
     SUBDIR += add-css-links
