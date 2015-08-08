@@ -31,22 +31,18 @@ WRKSRC_SUBDIR=	gettext-tools
 CPE_PRODUCT=	gettext
 CPE_VENDOR=	gnu
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS THREADS
+OPTIONS_DEFAULT=THREADS
+OPTIONS_EXCLUDE_DragonFly=	THREADS
 
-.include <bsd.port.options.mk>
+DOCS_INFO=	gettext
 
-.if ${PORT_OPTIONS:MDOCS}
-INFO+=		gettext
-.endif
+THREADS_CONFIGURE_ENABLE=	threads
 
-.if ${OPSYS} == DragonFly || (${OPSYS} == FreeBSD && ${OSVERSION} < 900506)
-CONFIGURE_ARGS+=--disable-threads
-.endif
+post-patch-DOCS-off:
+	@${REINPLACE_CMD} '/^SUBDIRS =/s/doc//' ${WRKSRC}/Makefile.in
 
 post-patch:
-.if ! ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} '/^SUBDIRS =/s/doc//' ${WRKSRC}/Makefile.in
-.endif
 # Exclude examples and gnulib-tests.
 	@${REINPLACE_CMD} -E '/^SUBDIRS =/s/(examples|gnulib-tests)//g' \
 		${WRKSRC}/Makefile.in
