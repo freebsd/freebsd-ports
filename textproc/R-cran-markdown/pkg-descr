@@ -1,0 +1,5 @@
+Provides R bindings to the 'Sundown' 'Markdown' rendering library
+(https://github.com/vmg/sundown). 'Markdown' is a plain-text
+formatting syntax that can be converted to 'XHTML' or other formats.
+
+WWW: https://cran.r-project.org/web/packages/markdown/
