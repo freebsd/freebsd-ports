@@ -11,10 +11,14 @@ DISTNAME=	GunFuDeadlands_${PORTVERSION:C/\.//}_src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Far West themed 2D shooter featuring bullet time
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKDIR}/gpl.txt
+
 RUN_DEPENDS=	love07:${PORTSDIR}/devel/love07
 
 USES=		zip
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 SUB_FILES=	gunfudeadlands
 
@@ -24,16 +28,12 @@ PORTDATA=	*
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
 		${STAGEDIR}${DATADIR}/GunFuDeadlands.zip
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/readme.txt ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.mk>
