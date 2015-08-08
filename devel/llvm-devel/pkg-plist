@@ -552,13 +552,11 @@ llvm-devel/bin/yaml2obj
 %%LLD%%llvm-devel/include/lld/Core/Writer.h
 %%LLD%%llvm-devel/include/lld/Core/range.h
 %%LLD%%llvm-devel/include/lld/Driver/Driver.h
-%%LLD%%llvm-devel/include/lld/Driver/WinLinkModuleDef.h
 %%LLD%%llvm-devel/include/lld/ReaderWriter/AtomLayout.h
 %%LLD%%llvm-devel/include/lld/ReaderWriter/CoreLinkingContext.h
 %%LLD%%llvm-devel/include/lld/ReaderWriter/ELFLinkingContext.h
 %%LLD%%llvm-devel/include/lld/ReaderWriter/LinkerScript.h
 %%LLD%%llvm-devel/include/lld/ReaderWriter/MachOLinkingContext.h
-%%LLD%%llvm-devel/include/lld/ReaderWriter/PECOFFLinkingContext.h
 %%LLD%%llvm-devel/include/lld/ReaderWriter/YamlContext.h
 %%LLDB%%llvm-devel/include/lldb/API/LLDB.h
 %%LLDB%%llvm-devel/include/lldb/API/SBAddress.h
@@ -908,10 +906,7 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/Interpreter/OptionValues.h
 %%LLDB%%llvm-devel/include/lldb/Interpreter/Options.h
 %%LLDB%%llvm-devel/include/lldb/Interpreter/Property.h
-%%LLDB%%llvm-devel/include/lldb/Interpreter/PythonDataObjects.h
 %%LLDB%%llvm-devel/include/lldb/Interpreter/ScriptInterpreter.h
-%%LLDB%%llvm-devel/include/lldb/Interpreter/ScriptInterpreterNone.h
-%%LLDB%%llvm-devel/include/lldb/Interpreter/ScriptInterpreterPython.h
 %%LLDB%%llvm-devel/include/lldb/Symbol/Block.h
 %%LLDB%%llvm-devel/include/lldb/Symbol/ClangASTContext.h
 %%LLDB%%llvm-devel/include/lldb/Symbol/ClangASTImporter.h
@@ -1006,6 +1001,7 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/Utility/AnsiTerminal.h
 %%LLDB%%llvm-devel/include/lldb/Utility/CleanUp.h
 %%LLDB%%llvm-devel/include/lldb/Utility/ConvertEnum.h
+%%LLDB%%llvm-devel/include/lldb/Utility/Either.h
 %%LLDB%%llvm-devel/include/lldb/Utility/Iterable.h
 %%LLDB%%llvm-devel/include/lldb/Utility/JSON.h
 %%LLDB%%llvm-devel/include/lldb/Utility/LLDBAssert.h
@@ -1013,7 +1009,6 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/Utility/PriorityPointerPair.h
 %%LLDB%%llvm-devel/include/lldb/Utility/ProcessStructReader.h
 %%LLDB%%llvm-devel/include/lldb/Utility/PseudoTerminal.h
-%%LLDB%%llvm-devel/include/lldb/Utility/PythonPointer.h
 %%LLDB%%llvm-devel/include/lldb/Utility/Range.h
 %%LLDB%%llvm-devel/include/lldb/Utility/RegisterNumber.h
 %%LLDB%%llvm-devel/include/lldb/Utility/SafeMachO.h
@@ -1031,7 +1026,6 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/lldb-private-types.h
 %%LLDB%%llvm-devel/include/lldb/lldb-private.h
 %%LLDB%%llvm-devel/include/lldb/lldb-public.h
-%%LLDB%%llvm-devel/include/lldb/lldb-python.h
 %%LLDB%%llvm-devel/include/lldb/lldb-types.h
 %%LLDB%%llvm-devel/include/lldb/lldb-versioning.h
 llvm-devel/include/llvm-c/Analysis.h
@@ -1116,6 +1110,7 @@ llvm-devel/include/llvm/ADT/iterator_range.h
 llvm-devel/include/llvm/Analysis/AliasAnalysis.h
 llvm-devel/include/llvm/Analysis/AliasSetTracker.h
 llvm-devel/include/llvm/Analysis/AssumptionCache.h
+llvm-devel/include/llvm/Analysis/BasicAliasAnalysis.h
 llvm-devel/include/llvm/Analysis/BlockFrequencyInfo.h
 llvm-devel/include/llvm/Analysis/BlockFrequencyInfoImpl.h
 llvm-devel/include/llvm/Analysis/BranchProbabilityInfo.h
@@ -1154,6 +1149,7 @@ llvm-devel/include/llvm/Analysis/LoopPass.h
 llvm-devel/include/llvm/Analysis/MemoryBuiltins.h
 llvm-devel/include/llvm/Analysis/MemoryDependenceAnalysis.h
 llvm-devel/include/llvm/Analysis/MemoryLocation.h
+llvm-devel/include/llvm/Analysis/OrderedBasicBlock.h
 llvm-devel/include/llvm/Analysis/PHITransAddr.h
 llvm-devel/include/llvm/Analysis/Passes.h
 llvm-devel/include/llvm/Analysis/PostDominators.h
@@ -1186,6 +1182,7 @@ llvm-devel/include/llvm/Bitcode/LLVMBitCodes.h
 llvm-devel/include/llvm/Bitcode/ReaderWriter.h
 llvm-devel/include/llvm/CodeGen/Analysis.h
 llvm-devel/include/llvm/CodeGen/AsmPrinter.h
+llvm-devel/include/llvm/CodeGen/AtomicExpandUtils.h
 llvm-devel/include/llvm/CodeGen/BasicTTIImpl.h
 llvm-devel/include/llvm/CodeGen/CalcSpillWeights.h
 llvm-devel/include/llvm/CodeGen/CallingConvLower.h
@@ -1698,6 +1695,7 @@ llvm-devel/include/llvm/Support/Threading.h
 llvm-devel/include/llvm/Support/TimeValue.h
 llvm-devel/include/llvm/Support/Timer.h
 llvm-devel/include/llvm/Support/ToolOutputFile.h
+llvm-devel/include/llvm/Support/TrailingObjects.h
 llvm-devel/include/llvm/Support/Unicode.h
 llvm-devel/include/llvm/Support/UnicodeCharRanges.h
 llvm-devel/include/llvm/Support/UniqueLock.h
@@ -1830,6 +1828,7 @@ llvm-devel/lib/LLVMHello.so
 %%CLANG%%llvm-devel/lib/clang/3.8.0/include/tmmintrin.h
 %%CLANG%%llvm-devel/lib/clang/3.8.0/include/unwind.h
 %%CLANG%%llvm-devel/lib/clang/3.8.0/include/vadefs.h
+%%CLANG%%llvm-devel/lib/clang/3.8.0/include/vecintrin.h
 %%CLANG%%llvm-devel/lib/clang/3.8.0/include/wmmintrin.h
 %%CLANG%%llvm-devel/lib/clang/3.8.0/include/x86intrin.h
 %%CLANG%%llvm-devel/lib/clang/3.8.0/include/xmmintrin.h
@@ -2271,6 +2270,9 @@ llvm-devel/lib/libLTO.so.3.8.0svn
 %%LLD%%llvm-devel/lib/liblldELF.so
 %%LLD%%llvm-devel/lib/liblldELF.so.3.8
 %%LLD%%llvm-devel/lib/liblldELF.so.3.8.0svn
+%%LLD%%llvm-devel/lib/liblldELF2.so
+%%LLD%%llvm-devel/lib/liblldELF2.so.3.8
+%%LLD%%llvm-devel/lib/liblldELF2.so.3.8.0svn
 %%LLD%%llvm-devel/lib/liblldExampleSubTarget.so
 %%LLD%%llvm-devel/lib/liblldExampleSubTarget.so.3.8
 %%LLD%%llvm-devel/lib/liblldExampleSubTarget.so.3.8.0svn
@@ -2283,9 +2285,6 @@ llvm-devel/lib/libLTO.so.3.8.0svn
 %%LLD%%llvm-devel/lib/liblldMipsELFTarget.so
 %%LLD%%llvm-devel/lib/liblldMipsELFTarget.so.3.8
 %%LLD%%llvm-devel/lib/liblldMipsELFTarget.so.3.8.0svn
-%%LLD%%llvm-devel/lib/liblldPECOFF.so
-%%LLD%%llvm-devel/lib/liblldPECOFF.so.3.8
-%%LLD%%llvm-devel/lib/liblldPECOFF.so.3.8.0svn
 %%LLD%%llvm-devel/lib/liblldReaderWriter.so
 %%LLD%%llvm-devel/lib/liblldReaderWriter.so.3.8
 %%LLD%%llvm-devel/lib/liblldReaderWriter.so.3.8.0svn
@@ -2359,6 +2358,8 @@ llvm-devel/lib/libLTO.so.3.8.0svn
 %%LLDB%%llvm-devel/lib/liblldbPluginProcessPOSIX.a
 %%LLDB%%llvm-devel/lib/liblldbPluginProcessUtility.a
 %%LLDB%%llvm-devel/lib/liblldbPluginRenderScriptRuntime.a
+%%LLDB%%llvm-devel/lib/liblldbPluginScriptInterpreterNone.a
+%%LLDB%%llvm-devel/lib/liblldbPluginScriptInterpreterPython.a
 %%LLDB%%llvm-devel/lib/liblldbPluginSymbolFileDWARF.a
 %%LLDB%%llvm-devel/lib/liblldbPluginSymbolFileSymtab.a
 %%LLDB%%llvm-devel/lib/liblldbPluginSymbolVendorELF.a
