@@ -1,0 +1,5 @@
+Provides syntax highlighting for R source code. Currently it supports
+LaTeX and HTML output. Source code of other languages is supported
+via Andre Simon's highlight package.
+
+WWW: https://cran.r-project.org/web/packages/highr/
