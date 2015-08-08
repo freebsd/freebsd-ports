@@ -1,0 +1,4 @@
+Guesses the MIME type from a filename extension using the data
+derived from /etc/mime.types in UNIX-type systems.
+
+WWW: https://cran.r-project.org/web/packages/mime/
