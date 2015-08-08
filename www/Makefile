@@ -344,7 +344,6 @@
     SUBDIR += impresscms
     SUBDIR += interchange
     SUBDIR += iojs
-    SUBDIR += ismail
     SUBDIR += itop
     SUBDIR += iwebcal
     SUBDIR += jawstats
