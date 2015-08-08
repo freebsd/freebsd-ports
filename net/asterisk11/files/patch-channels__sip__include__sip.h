@@ -1,6 +1,6 @@
---- ./channels/sip/include/sip.h.orig	2010-11-08 04:46:46.000000000 +0100
-+++ ./channels/sip/include/sip.h	2010-11-08 04:47:07.000000000 +0100
-@@ -180,7 +180,7 @@
+--- channels/sip/include/sip.h.orig	2015-07-24 22:06:05 UTC
++++ channels/sip/include/sip.h
+@@ -190,7 +190,7 @@
  #define DEFAULT_MOHINTERPRET   "default"  /*!< The default music class */
  #define DEFAULT_MOHSUGGEST     ""
  #define DEFAULT_VMEXTEN        "asterisk" /*!< Default voicemail extension */
