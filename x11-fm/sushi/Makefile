@@ -20,6 +20,8 @@ LIB_DEPENDS=	libgcr-3.so:${PORTSDIR}/security/gcr \
 		libevdocument3.so:${PORTSDIR}/graphics/evince
 RUN_DEPENDS=	nautilus:${PORTSDIR}/x11-fm/nautilus
 
+PORTSCOUT=	limitw:1,even
+
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 INSTALLS_ICONS=	yes
 USE_GNOME=	gnomeprefix gtksourceview3 intlhack introspection:build

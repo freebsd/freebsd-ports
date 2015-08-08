@@ -14,6 +14,7 @@ COMMENT=	User interface builder for GTK+ 3
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
 CONFLICTS=	glade3-3.*
+PORTSCOUT=	limitw:1,even
 
 USES=		desktop-file-utils gettext gmake libtool \
 		pathfix pkgconfig tar:xz

@@ -28,6 +28,8 @@ RUN_DEPENDS=	py2?-dbus>0:${PORTSDIR}/devel/py-dbus \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
 		unoconv:${PORTSDIR}/textproc/unoconv
 
+PORTSCOUT=	limitw:1,even
+
 USES=		compiler:c++11-lib gettext gmake libtool pathfix \
 		pkgconfig tar:xz
 USE_GNOME=	gnomedesktop3 gtk30 intltool \

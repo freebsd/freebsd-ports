@@ -11,6 +11,8 @@ COMMENT=	Programming language and compiler that converts Vala code into C code
 
 LICENSE=	LGPL21
 
+PORTSCOUT=	limitw:1,even
+
 USES=		bison gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 gnomeprefix libxslt
 GNU_CONFIGURE=	yes
