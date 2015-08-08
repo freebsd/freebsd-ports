@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	argyllcms
-PORTVERSION=	1.6.3
+PORTVERSION=	1.7.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.argyllcms.com/
 DISTNAME=	Argyll_V${PORTVERSION}_src
