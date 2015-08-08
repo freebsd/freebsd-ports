@@ -7,6 +7,7 @@ include/rudiments/chat.h
 include/rudiments/client.h
 include/rudiments/codetree.h
 include/rudiments/commandline.h
+include/rudiments/compiler.h
 include/rudiments/crypt.h
 include/rudiments/datetime.h
 include/rudiments/device.h
@@ -48,6 +49,8 @@ include/rudiments/private/codetree.h
 include/rudiments/private/codetreeincludes.h
 include/rudiments/private/commandline.h
 include/rudiments/private/commandlineincludes.h
+include/rudiments/private/compiler.h
+include/rudiments/private/compilerincludes.h
 include/rudiments/private/config.h
 include/rudiments/private/cryptincludes.h
 include/rudiments/private/datetime.h
@@ -121,8 +124,6 @@ include/rudiments/private/randomnumber.h
 include/rudiments/private/randomnumberincludes.h
 include/rudiments/private/regularexpression.h
 include/rudiments/private/regularexpressionincludes.h
-include/rudiments/private/rpcentry.h
-include/rudiments/private/rpcentryincludes.h
 include/rudiments/private/rudimentsinlines.h
 include/rudiments/private/semaphoreset.h
 include/rudiments/private/semaphoresetincludes.h
@@ -182,7 +183,6 @@ include/rudiments/protocolentry.h
 include/rudiments/randomnumber.h
 include/rudiments/regularexpression.h
 include/rudiments/resultcodes.h
-include/rudiments/rpcentry.h
 include/rudiments/semaphoreset.h
 include/rudiments/serialport.h
 include/rudiments/serialportprofile.h
