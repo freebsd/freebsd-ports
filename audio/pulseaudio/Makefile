@@ -53,6 +53,7 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-gtk3 \
 		--disable-systemd \
 		--disable-neon-opt \
+		--disable-xen \
 		--disable-lirc # untested
 
 #FIXME --with-database=auto|tdb|gdbm|simple
