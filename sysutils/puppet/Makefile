@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	puppet
-PORTVERSION=	3.8.1
-PORTREVISION=	1
+PORTVERSION=	3.8.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 
@@ -51,11 +50,6 @@ BROKEN=	PACKAGE_ROOT option patch is incompatible with PACKAGE_ORIGIN patch.
 .endif
 
 .include <bsd.port.pre.mk>
-
-# puppet 4.x should support ruby 2.2.x
-.if ${RUBY_VER} >= 2.2
-BROKEN=		Does not work with Ruby 2.2
-.endif
 
 .if ${PORT_OPTIONS:MPACKAGE_ORIGIN}
 EXTRA_PATCHES+=	${FILESDIR}/optpatch-package_origin
