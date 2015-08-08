@@ -22,8 +22,8 @@ lib/gstreamer-1.0/libfsrtpconference.so
 lib/gstreamer-1.0/libfsrtpxdata.so
 lib/gstreamer-1.0/libfsvideoanyrate.so
 lib/libfarstream-0.2.so
-lib/libfarstream-0.2.so.2
-lib/libfarstream-0.2.so.2.2.0
+lib/libfarstream-0.2.so.5
+lib/libfarstream-0.2.so.5.0.0
 libdata/pkgconfig/farstream-0.2.pc
 %%DATADIR%%/0.2/fsrawconference/default-element-properties
 %%DATADIR%%/0.2/fsrtpconference/default-codec-preferences

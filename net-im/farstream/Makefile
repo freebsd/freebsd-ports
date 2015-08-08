@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	farstream
-PORTVERSION=	0.2.6
-PORTREVISION=	1
+PORTVERSION=	0.2.7
 CATEGORIES=	net-im devel
 MASTER_SITES=	http://freedesktop.org/software/farstream/releases/farstream/
 
