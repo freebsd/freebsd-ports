@@ -19,6 +19,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
+PORTSCOUT=	ignore:1
+
 USES=		cpe gmake jpeg libtool pathfix tar:bzip2
 CPE_VENDOR=	gnome
 USE_XORG=	xt xi x11
