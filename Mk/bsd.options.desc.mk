@@ -430,6 +430,7 @@ SPDY_DESC?=		SPDY network protocol support
 SPEEX_DESC?=		Speex audio format support
 SQL_DESC?=		SQL database support
 SQLITE_DESC?=		SQLite database support
+SQLITE2_DESC?=		SQLite 2 database support
 SQLITE3_DESC?=		SQLite 3 database support
 SSE_DESC?=		Use SSE optimized routines
 SSH_DESC?=		SSH protocol support
