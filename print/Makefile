@@ -3,6 +3,7 @@
 
     COMMENT = Desktop publishing
 
+    SUBDIR += R-cran-knitr
     SUBDIR += a2pdf
     SUBDIR += a2ps
     SUBDIR += abc2mtex
