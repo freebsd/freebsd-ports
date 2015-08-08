@@ -20,6 +20,8 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py
 LIB_DEPENDS+=	libffi.so:${PORTSDIR}/devel/libffi
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
 
+PORTSCOUT=	ignore:1
+
 USES=		gmake libtool pathfix pkgconfig python:2 tar:xz
 USE_GNOME=	glib20 introspection:build,run
 GNU_CONFIGURE=	yes

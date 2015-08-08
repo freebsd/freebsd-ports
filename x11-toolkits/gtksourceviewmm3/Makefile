@@ -12,6 +12,8 @@ PKGNAMESUFFIX=	3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ binding of GtkSourceView3
 
+PORTSCOUT=	limitw:1,even
+
 USES=		gmake libtool:keepla pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 USE_GNOME=	gtksourceview3 gnomeprefix gtkmm30

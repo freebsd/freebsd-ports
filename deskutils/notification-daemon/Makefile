@@ -16,6 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3
 
+PORTSCOUT=	limitw:1,even
+
 USE_GNOME=	gnomeprefix intlhack gtk30
 USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_XORG=	x11
