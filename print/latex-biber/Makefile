@@ -2,6 +2,7 @@
 
 PORTNAME=	biber
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	print perl5
 PKGNAMEPREFIX=	latex-
 DIST_SUBDIR=	TeX
@@ -19,14 +20,19 @@ __DEPENDS= \
 	p5-Business-ISSN>0:${PORTSDIR}/misc/p5-Business-ISSN \
 	p5-Config-AutoConf>0:${PORTSDIR}/devel/p5-Config-AutoConf \
 	p5-Data-Compare>0:${PORTSDIR}/devel/p5-Data-Compare \
+	p5-Data-Dump>0:${PORTSDIR}/devel/p5-Data-Dump \
 	p5-Date-Simple>0:${PORTSDIR}/devel/p5-Date-Simple \
 	p5-Encode-HanExtra>0:${PORTSDIR}/chinese/p5-Encode-HanExtra \
 	p5-Encode-JIS2K>0:${PORTSDIR}/converters/p5-Encode-JIS2K \
 	p5-ExtUtils-LibBuilder>0:${PORTSDIR}/devel/p5-ExtUtils-LibBuilder \
 	p5-File-Slurp>0:${PORTSDIR}/devel/p5-File-Slurp \
+	p5-IPC-Cmd>0:${PORTSDIR}/devel/p5-IPC-Cmd \
 	p5-IPC-Run3>0:${PORTSDIR}/devel/p5-IPC-Run3 \
+	p5-List-AllUtils>0:${PORTSDIR}/devel/p5-List-AllUtils \
+	p5-List-MoreUtils>0:${PORTSDIR}/lang/p5-List-MoreUtils \
 	p5-Log-Log4perl>0:${PORTSDIR}/devel/p5-Log-Log4perl \
 	p5-Module-Build>=0.4206:${PORTSDIR}/devel/p5-Module-Build \
+	p5-Mozilla-CA>0:${PORTSDIR}/www/p5-Mozilla-CA \
 	p5-Regexp-Common>0:${PORTSDIR}/textproc/p5-Regexp-Common \
 	p5-Text-BibTeX>0:${PORTSDIR}/textproc/p5-Text-BibTeX \
 	p5-Text-Roman>0:${PORTSDIR}/textproc/p5-Text-Roman \
