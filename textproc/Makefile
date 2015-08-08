@@ -6,6 +6,7 @@
     SUBDIR += 2bsd-diff
     SUBDIR += R-cran-R2HTML
     SUBDIR += R-cran-XML
+    SUBDIR += R-cran-formatR
     SUBDIR += R-cran-htmltools
     SUBDIR += R-cran-markdown
     SUBDIR += R-cran-pystr
