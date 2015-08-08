@@ -10,6 +10,8 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Collection of backgrounds for GNOME
 
+PORTSCOUT=	limitw:1,even
+
 USES=		gettext gmake pathfix tar:xz
 USE_GNOME=	intlhack
 GNU_CONFIGURE=	yes

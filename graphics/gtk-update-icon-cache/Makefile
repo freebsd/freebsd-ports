@@ -17,6 +17,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS+=	update-mime-database:${PORTSDIR}/misc/shared-mime-info \
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
+PORTSCOUT=	ignore:1
+
 USES=		gettext gmake libtool pathfix perl5 pkgconfig tar:xz
 USE_PERL5=	build
 MAKE_JOBS_UNSAFE=	yes
