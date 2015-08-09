@@ -1956,6 +1956,7 @@
     SUBDIR += rubygem-robotex
     SUBDIR += rubygem-robots
     SUBDIR += rubygem-rqrcode
+    SUBDIR += rubygem-rqrcode-rails3
     SUBDIR += rubygem-rtlit
     SUBDIR += rubygem-ruby-readability
     SUBDIR += rubygem-savon
