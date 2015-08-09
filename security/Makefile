@@ -912,6 +912,7 @@
     SUBDIR += ruby-hmac
     SUBDIR += ruby-password
     SUBDIR += ruby-tcpwrap
+    SUBDIR += rubygem-attr_encrypted
     SUBDIR += rubygem-bcrypt
     SUBDIR += rubygem-bcrypt-ruby
     SUBDIR += rubygem-doorkeeper
