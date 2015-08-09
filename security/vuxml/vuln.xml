@@ -122,10 +122,16 @@ Notes:
     <references>
       <url>https://wordpress.org/news/2015/08/wordpress-4-2-4-security-and-maintenance-release/</url>
       <cvename>CVE-2015-2213</cvename>
+      <cvename>CVE-2015-5730</cvename>
+      <cvename>CVE-2015-5731</cvename>
+      <cvename>CVE-2015-5732</cvename>
+      <cvename>CVE-2015-5733</cvename>
+      <cvename>CVE-2015-5734</cvename>
     </references>
     <dates>
       <discovery>2015-08-04</discovery>
       <entry>2015-08-06</entry>
+      <modified>2015-08-09</modified>
     </dates>
   </vuln>
 
