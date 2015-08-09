@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	webkit
-PORTVERSION=	2.8.4
+PORTVERSION=	2.8.5
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/releases/
 PKGNAMESUFFIX=	2-gtk3
@@ -23,7 +23,7 @@ LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
 		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 RUN_DEPENDS=	geoclue>=0:${PORTSDIR}/net/geoclue 
 
-PORTSCOUT=	^${PORTVERSION:R:S|.|\.|}\.*$$
+PORTSCOUT=	limitw:1,even
 
 USE_GSTREAMER1=	yes
 USE_XORG=	x11 xext ice
@@ -32,7 +32,7 @@ USES=		bison compiler:c++11-lib gettext gmake gperf jpeg perl5 \
 		pkgconfig python:2 tar:xz
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=yes
-USE_GNOME=	cairo gtk20 gtk30 introspection:build libxml2 libxslt:build
+USE_GNOME=	cairo gtk20 gtk30 introspection:build libxml2 libxslt
 USE_GL=		gl egl
 USE_SQLITE=	3
 USE_PERL5=	build
