@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# $FreeBSD: head/sysutils/bacula5-server/files/bacula-sd.in 323486 2013-07-22 17:51:39Z rm $
+#
+# PROVIDE: bareos_sd
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# bareos_sd_enable  (bool):  Set to NO by default.
+#               Set it to YES to enable bareos_sd.
+# bareos_sd_flags (params):  Set params used to start bareos_sd.
+#
+
+. /etc/rc.subr
+
+name="bareos_sd"
+rcvar=${name}_enable
+command=%%PREFIX%%/sbin/bareos-sd
+
+load_rc_config $name
+
+: ${bareos_sd_enable="NO"}
+: ${bareos_sd_flags=" -u bareos -g bareos -v -c %%PREFIX%%/etc/bareos/bareos-sd.conf"}
+: ${bareos_sd_pidfile="/var/run/bareos/bareos-sd.9103.pid"}
+
+pidfile="${bacula_sd_pidfile}"
+
+run_rc_command "$1"
