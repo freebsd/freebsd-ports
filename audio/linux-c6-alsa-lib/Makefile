@@ -34,5 +34,8 @@ post-install:
 	${RM} ${STAGEDIR}${PREFIX}/usr/lib/alsa-lib/smixer/smixer-ac97.la
 	${RM} ${STAGEDIR}${PREFIX}/usr/lib/alsa-lib/smixer/smixer-hda.la
 	${RM} ${STAGEDIR}${PREFIX}/usr/lib/alsa-lib/smixer/smixer-sbase.la
+	${RM} ${STAGEDIR}${PREFIX}/usr/lib64/alsa-lib/smixer/smixer-ac97.la
+	${RM} ${STAGEDIR}${PREFIX}/usr/lib64/alsa-lib/smixer/smixer-hda.la
+	${RM} ${STAGEDIR}${PREFIX}/usr/lib64/alsa-lib/smixer/smixer-sbase.la
 
 .include <bsd.port.mk>

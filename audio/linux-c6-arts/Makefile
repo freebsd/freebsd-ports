@@ -21,5 +21,6 @@ USE_LDCONFIG=		yes
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/usr/lib/*.la
+	${RM} ${STAGEDIR}${PREFIX}/usr/lib64/*.la
 
 .include <bsd.port.mk>
