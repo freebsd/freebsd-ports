@@ -8,6 +8,4 @@ RUN_DEPENDS=	rubygem-coffee-script>=2.2.0:${PORTSDIR}/devel/rubygem-coffee-scrip
 
 MASTERDIR=	${.CURDIR}/../rubygem-coffee-rails4
 
-PORTSCOUT=	limit:^4\.1
-
 .include "${MASTERDIR}/Makefile"
