@@ -1719,6 +1719,8 @@ STRIP_CMD=	${TRUE}
 .	if defined(OVERRIDE_LINUX_BASE_PORT)
 .		if ${USE_LINUX:tl} == yes
 USE_LINUX=	${OVERRIDE_LINUX_BASE_PORT}
+.		elif ${USE_LINUX} == "c6" && ${OVERRIDE_LINUX_BASE_PORT} == "c6_64"
+USE_LINUX=	${OVERRIDE_LINUX_BASE_PORT}
 .		endif
 .	endif
 
@@ -1731,11 +1733,26 @@ LINUX_BASE_PORT=	${LINUXBASE}/bin/sh:${PORTSDIR}/emulators/linux_base-${USE_LINU
 .		if ${USE_LINUX:tl} == "yes"
 USE_LINUX=	c6
 LINUX_BASE_PORT=	${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base-c6
+.		elif ${USE_LINUX} == "c6_64"
+LINUX_BASE_PORT=	${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base-c6
 .		else
 IGNORE=		cannot be built: there is no emulators/linux_base-${USE_LINUX}, perhaps wrong use of USE_LINUX or OVERRIDE_LINUX_BASE_PORT
 .		endif
 .	endif
 
+.	if ${USE_LINUX} == "c6_64" || (defined(OVERRIDE_LINUX_BASE_PORT) && ${OVERRIDE_LINUX_BASE_PORT} == "c6_64")
+.		if ${ARCH} != "amd64"
+IGNORE=		Cannot install 64 bit Linux on non-64bit platforms
+.		endif
+LINUX_RPM_ARCH?=	x86_64
+LINUX_REPO_ARCH?=	x86_64
+.	elif ${USE_LINUX} == "c6" || ${USE_LINUX} == "yes" # default to CentOS
+LINUX_RPM_ARCH?=	i686
+LINUX_REPO_ARCH?=	i386
+.	elif ${USE_LINUX} == "f10"
+LINUX_RPM_ARCH?=	i386
+LINUX_REPO_ARCH?=	i386
+.	endif
 RUN_DEPENDS+=	${LINUX_BASE_PORT}
 .endif
 

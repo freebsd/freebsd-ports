@@ -3,9 +3,13 @@
 
 PORTNAME=	c6
 PORTVERSION=	6.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	emulators linux
 MASTER_SITES=	CENTOS_LINUX CENTOS_LINUX_UPDATES
+MASTER_SITE_SUBDIR=	centos/${LINUX_DIST_VER}/os/${LINUX_REPO_ARCH}/Packages/\
+			centos/${LINUX_DIST_VER}/updates/${LINUX_REPO_ARCH}/Packages/ \
+			${LINUX_DIST_VER}/os/${LINUX_REPO_ARCH}/Packages/
+
 PKGNAMEPREFIX=	linux_base-
 DISTFILES=	${PRE_BIN_DISTFILES} ${BIN_DISTFILES} ${SRC_DISTFILES}
 EXTRACT_ONLY=	${BIN_DISTFILES}
@@ -19,7 +23,7 @@ DIST_SUBDIR=	rpm/${LINUX_RPM_ARCH}/${LINUX_DIST}/${LINUX_DIST_VER}
 
 # these get extracted from pre-extract, then some directory permissions
 # get fixed up
-PRE_BIN_DISTFILES=	filesystem-2.4.30-3.el6.${LINUX_RPM_ARCH}.rpm  \
+PRE_BIN_DISTFILES=	filesystem-2.4.30-3.el6.${LINUX_RPM_ARCH}.rpm \
 			setup-2.8.14-20.el6_4.1.noarch.rpm
 
 BIN_DISTFILES=	basesystem-10.0-4.el6.noarch.rpm \
@@ -29,7 +33,7 @@ BIN_DISTFILES=	basesystem-10.0-4.el6.noarch.rpm \
 		centos-release-6-6.el6.centos.12.2.${LINUX_RPM_ARCH}.rpm \
 		compat-db43-4.3.29-15.el6.${LINUX_RPM_ARCH}.rpm \
 		compat-libstdc++-33-3.2.3-69.el6.${LINUX_RPM_ARCH}.rpm \
-		compat-libstdc++-296-2.96-144.el6.${LINUX_RPM_ARCH}.rpm \
+		compat-libstdc++-296-2.96-144.el6.i686.rpm \
 		coreutils-8.4-37.el6.${LINUX_RPM_ARCH}.rpm \
 		db4-4.7.25-19.el6_6.${LINUX_RPM_ARCH}.rpm \
 		e2fsprogs-1.41.12-21.el6.${LINUX_RPM_ARCH}.rpm \
@@ -74,49 +78,49 @@ BIN_DISTFILES=	basesystem-10.0-4.el6.noarch.rpm \
 		zlib-1.2.3-29.el6.${LINUX_RPM_ARCH}.rpm
 
 .if defined(PACKAGE_BUILDING)
-SRC_DISTFILES=	basesystem-10.0-4.el6.src.rpm \
-		bash-4.1.2-29.el6.src.rpm \
-		bzip2-1.0.5-7.el6_0.src.rpm \
-		centos-release-6-6.el6.centos.12.2.src.rpm \
-		compat-db-4.6.21-15.el6.src.rpm \
-		compat-gcc-296-2.96-144.el6.src.rpm \
-		compat-gcc-32-3.2.3-69.el6.src.rpm \
-		coreutils-8.4-37.el6.src.rpm \
-		db4-4.7.25-19.el6_6.src.rpm \
-		e2fsprogs-1.41.12-21.el6.src.rpm \
-		elfutils-0.158-3.2.el6.src.rpm \
-		filesystem-2.4.30-3.el6.src.rpm \
-		findutils-4.4.2-6.el6.src.rpm \
-		freetype-2.3.11-15.el6_6.1.src.rpm \
-		gamin-0.1.10-9.el6.src.rpm \
-		gdbm-1.8.0-36.el6.src.rpm \
-		glib2-2.28.8-4.el6.src.rpm \
-		glibc-2.12-1.149.el6_6.9.src.rpm \
-		gmp-4.3.1-7.el6_2.2.src.rpm \
-		grep-2.6.3-6.el6.src.rpm \
-		texinfo-4.13a-8.el6.src.rpm \
-		keyutils-1.4-5.el6.src.rpm \
-		krb5-1.10.3-37.el6_6.src.rpm \
-		less-436-13.el6.src.rpm \
-		acl-2.2.49-6.el6.src.rpm \
-		attr-2.4.44-7.el6.src.rpm \
-		libcap-2.16-5.5.el6.src.rpm \
-		gcc-4.4.7-11.el6.src.rpm \
-		libidn-1.18-2.el6.src.rpm \
-		libselinux-2.0.94-5.8.el6.src.rpm \
-		libsepol-2.0.41-4.el6.src.rpm \
-		ncurses-5.7-3.20090208.el6.src.rpm \
-		pcre-7.8-6.el6.src.rpm \
-		popt-1.13-7.el6.src.rpm \
-		readline-6.0-4.el6.src.rpm \
-		redhat-lsb-4.0-7.el6.centos.src.rpm \
-		sed-4.2.1-10.el6.src.rpm \
-		setserial-2.17-25.el6.src.rpm \
-		setup-2.8.14-20.el6_4.1.src.rpm \
-		slang-2.2.1-1.el6.src.rpm \
-		util-linux-ng-2.17.2-12.18.el6.src.rpm \
-		which-2.19-6.el6.src.rpm \
-		zlib-1.2.3-29.el6.src.rpm
+SRC_DISTFILES=	basesystem-10.0-4.el6.src.rpm:SOURCE \
+		bash-4.1.2-29.el6.src.rpm:SOURCE \
+		bzip2-1.0.5-7.el6_0.src.rpm:SOURCE \
+		coreutils-8.4-37.el6.src.rpm:SOURCE \
+		compat-db-4.6.21-15.el6.src.rpm:SOURCE \
+		compat-gcc-296-2.96-144.el6.src.rpm:SOURCE \
+		compat-gcc-32-3.2.3-69.el6.src.rpm:SOURCE \
+		db4-4.7.25-19.el6_6.src.rpm:SOURCE \
+		e2fsprogs-1.41.12-21.el6.src.rpm:SOURCE \
+		elfutils-0.158-3.2.el6.src.rpm:SOURCE \
+		centos-release-6-6.el6.centos.12.2.src.rpm:SOURCE \
+		filesystem-2.4.30-3.el6.src.rpm:SOURCE \
+		findutils-4.4.2-6.el6.src.rpm:SOURCE \
+		freetype-2.3.11-15.el6_6.1.src.rpm:SOURCE \
+		gamin-0.1.10-9.el6.src.rpm:SOURCE \
+		gdbm-1.8.0-36.el6.src.rpm:SOURCE \
+		glib2-2.28.8-4.el6.src.rpm:SOURCE \
+		glibc-2.12-1.149.el6_6.9.src.rpm:SOURCE \
+		gmp-4.3.1-7.el6_2.2.src.rpm:SOURCE \
+		grep-2.6.3-6.el6.src.rpm:SOURCE \
+		texinfo-4.13a-8.el6.src.rpm:SOURCE \
+		keyutils-1.4-5.el6.src.rpm:SOURCE \
+		krb5-1.10.3-37.el6_6.src.rpm:SOURCE \
+		less-436-13.el6.src.rpm:SOURCE \
+		acl-2.2.49-6.el6.src.rpm:SOURCE \
+		attr-2.4.44-7.el6.src.rpm:SOURCE \
+		libcap-2.16-5.5.el6.src.rpm:SOURCE \
+		gcc-4.4.7-11.el6.src.rpm:SOURCE \
+		libidn-1.18-2.el6.src.rpm:SOURCE \
+		libselinux-2.0.94-5.8.el6.src.rpm:SOURCE \
+		libsepol-2.0.41-4.el6.src.rpm:SOURCE \
+		ncurses-5.7-3.20090208.el6.src.rpm:SOURCE \
+		pcre-7.8-6.el6.src.rpm:SOURCE \
+		popt-1.13-7.el6.src.rpm:SOURCE \
+		readline-6.0-4.el6.src.rpm:SOURCE \
+		redhat-lsb-4.0-7.el6.centos.src.rpm:SOURCE \
+		sed-4.2.1-10.el6.src.rpm:SOURCE \
+		setserial-2.17-25.el6.src.rpm:SOURCE \
+		setup-2.8.14-20.el6_4.1.src.rpm:SOURCE \
+		slang-2.2.1-1.el6.src.rpm:SOURCE \
+		util-linux-ng-2.17.2-12.18.el6.src.rpm:SOURCE \
+		which-2.19-6.el6.src.rpm:SOURCE \
+		zlib-1.2.3-29.el6.src.rpm:SOURCE
 
 ALWAYS_KEEP_DISTFILES=	yes
 .endif
@@ -124,10 +128,18 @@ ALWAYS_KEEP_DISTFILES=	yes
 CONFLICTS=		linux_base-gentoo* linux_base-f10-[0-9]* linux-glib2-*
 
 ONLY_FOR_ARCHS=		i386 amd64
+.	if defined(OVERRIDE_LINUX_BASE_PORT) && ${OVERRIDE_LINUX_BASE_PORT} == "c6_64"
+PKGNAMESUFFIX=		_64
+LINUX_RPM_ARCH=	x86_64
+LINUX_REPO_ARCH=	x86_64
+.	else
 LINUX_RPM_ARCH=		i686
+LINUX_REPO_ARCH=	i386
+.	endif
 USE_LINUX_PREFIX=	yes
 NO_WRKSUBDIR=		yes
 DISTINFO_FILE?=		${MASTERDIR}/distinfo.${LINUX_RPM_ARCH}
+PLIST=			${MASTERDIR}/pkg-plist.${LINUX_RPM_ARCH}
 PLIST_SUB=		GLIBCVER="2.12" LINUXBASE=${LINUXBASE}
 USES=	shebangfix
 SHEBANG_FILES=	bin/redhat_lsb_init sbin/mount.tmpfs
@@ -162,8 +174,10 @@ FALLBACK_ELF_MIB=	kern.fallback_elf_brand
 .endif
 
 .if (${ARCH} == "amd64")
+.	if defined(OVERRIDE_LINUX_BASE_PORT) && ${OVERRIDE_LINUX_BASE_PORT} != "c6_64"
 LATEST_LINK:=		${PKGBASE:C/linux/linux32/}
 ARCH=			i386
+.	endif
 .endif
 
 pre-extract:
@@ -174,6 +188,9 @@ pre-extract:
 	    fi; \
 	done
 	# now fix up broken permissions
+.	if defined(OVERRIDE_LINUX_BASE_PORT) && ${OVERRIDE_LINUX_BASE_PORT} == "c6_64"
+	@${CHMOD} -R u+rwX ${WRKDIR}/lib64 ${WRKDIR}/usr/lib64
+.	endif
 	@${CHMOD} -R u+rwX ${WRKDIR}/bin ${WRKDIR}/lib ${WRKDIR}/sbin ${WRKDIR}/usr/bin ${WRKDIR}/usr/lib ${WRKDIR}/usr/sbin
 	@${CHMOD} 400 ${WRKDIR}/etc/*shadow
 
@@ -193,7 +210,7 @@ do-build:
 #
 # Create a good ld.so.conf and touch ld.so.cache
 #
-	@${ECHO_CMD} -e '/lib\n/usr/lib\n${X11BASE}/lib' >> \
+	@${ECHO_CMD} -e '/lib\n/usr/lib\n/usr/lib64\n${X11BASE}/lib' >> \
 		${WRKSRC}/etc/ld.so.conf
 	@${TOUCH} ${WRKSRC}/etc/ld.so.cache
 #
@@ -209,17 +226,15 @@ do-build:
 #
 	@${MV} ${WRKSRC}/etc/krb5.conf ${WRKSRC}/etc/krb5.conf.sample
 
-# Fix usr/bin/*db4* permissions to allow "portupgrade -s"
-#	@${CHMOD} u+w ${WRKSRC}/usr/bin/*db4*
-
 	@${FIND} ${WRKSRC}/bin ${WRKSRC}/sbin/ ${WRKSRC}/usr/bin \
 		${WRKSRC}/usr/sbin -type f -print0 | ${XARGS} -0 ${FILE} \
 		| ${GREP} ELF | ${CUT} -d : -f 1 \
 		| ${XARGS} ${BRANDELF} -t Linux
+.	if defined(OVERRIDE_LINUX_BASE_PORT) && ${OVERRIDE_LINUX_BASE_PORT} == "c6_64"
+	@${BRANDELF} -t Linux ${WRKSRC}/lib64/ld-2.12.so
+.	else
 	@${BRANDELF} -t Linux ${WRKSRC}/lib/ld-2.12.so
-
-# Restore the status quo for usr/bin/*db4* files
-#	@${CHMOD} u-w ${WRKSRC}/usr/bin/*db4*
+.	endif
 
 # Install locales
 	@${MV} ${WRKSRC}/usr/lib/locale/locale-archive.tmpl \

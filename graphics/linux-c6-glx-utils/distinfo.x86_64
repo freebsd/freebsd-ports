@@ -1,0 +1,4 @@
+SHA256 (rpm/x86_64/centos/6.6/glx-utils-10.1.2-2.el6.x86_64.rpm) = da0ecfd5affb73f01d01fd2c2f89148d3593b82b271b98821682191833ac67d2
+SIZE (rpm/x86_64/centos/6.6/glx-utils-10.1.2-2.el6.x86_64.rpm) = 25712
+SHA256 (rpm/x86_64/centos/6.6/mesa-10.1.2-2.el6.src.rpm) = eecc2fcd5f3478d420a2decb61e201c91c8cfcaf3ae2bf7e6c5b69d342a5d98c
+SIZE (rpm/x86_64/centos/6.6/mesa-10.1.2-2.el6.src.rpm) = 23953214
