@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		tevent
-PORTVERSION=		0.9.24
+PORTVERSION=		0.9.25
 PORTREVISION=		0
 PORTEPOCH=		0
 CATEGORIES=		devel
@@ -24,6 +24,7 @@ PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
 
 CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man \
 			--infodir=${PREFIX}/${INFO_PATH}/${INFO_SUBDIR} \
+			--disable-rpath \
 			--without-gettext
 
 OPTIONS_DEFINE=		MANPAGES
