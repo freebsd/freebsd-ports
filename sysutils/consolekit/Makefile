@@ -3,7 +3,7 @@
 
 PORTNAME=	consolekit
 PORTVERSION=	0.4.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.freedesktop.org/software/ConsoleKit/dist/
 DISTFILES=	ConsoleKit-${PORTVERSION}${EXTRACT_SUFX}
@@ -33,6 +33,5 @@ post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/ck-get-x11-server-pid \
 	    	${STAGEDIR}${PREFIX}/libexec/ck-get-x11-server-pid
 	@${MKDIR} ${STAGEDIR}/var/log/ConsoleKit
-	${TOUCH} ${STAGEDIR}/var/log/ConsoleKit/history
 
 .include <bsd.port.mk>
