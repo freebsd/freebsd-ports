@@ -30,6 +30,7 @@ DJBFFT_CONFIGURE_ON=	--enable-djbfft
 
 .include <bsd.port.options.mk>
 
+CFLAGS_aarch64=	-fPIC
 CFLAGS_amd64=	-fPIC
 CFLAGS_powerpc=	-fPIC
 
