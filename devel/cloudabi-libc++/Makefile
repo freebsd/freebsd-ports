@@ -2,24 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	libc++
-PORTVERSION=	0.242897
 CATEGORIES=	devel
-MASTER_SITES=	https://nuxi.nl/distfiles/libc++/:libcxx \
-		https://nuxi.nl/distfiles/libc++abi/:libcxxabi
-PKGNAMEPREFIX=	cloudabi-
-DISTFILES=	libc++-${PORTVERSION}${EXTRACT_SUFX}:libcxx \
-		libc++abi-${PORTVERSION}${EXTRACT_SUFX}:libcxxabi
+DISTNAME=	libcxx-${DISTVERSION}.src
+DISTFILES=	libcxx-${DISTVERSION}.src${EXTRACT_SUFX} \
+		libcxxabi-${DISTVERSION}.src${EXTRACT_SUFX}
 
 MAINTAINER=	ed@FreeBSD.org
 COMMENT=	C++ standard template library for CloudABI
 
 LICENSE=	MIT
-
-BUILD_DEPENDS=	x86_64-unknown-cloudabi-ar:${PORTSDIR}/devel/cloudabi-binutils \
-		x86_64-unknown-cloudabi-c++:${PORTSDIR}/lang/cloudabi-clang \
-		${LOCALBASE}/x86_64-unknown-cloudabi/lib/libc.a:${PORTSDIR}/devel/cloudabi-cloudlibc
-
-USES=		tar:xz
 
 SRCFILES=	algorithm bind chrono condition_variable debug exception \
 		future hash ios iostream locale memory mutex new optional \
@@ -30,7 +21,7 @@ do-build:
 .for f in ${SRCFILES}
 	${LOCALBASE}/bin/x86_64-unknown-cloudabi-c++ \
 		-g -O2 -nostdinc++ -std=c++11 -I${WRKSRC}/include \
-		-I${WRKDIR}/libc++abi-${PORTVERSION}/include \
+		-I${WRKDIR}/libcxxabi-${DISTVERSION}.src/include \
 		-D_LIBCPP_BUILD_STATIC -DLIBCXX_BUILDING_LIBCXXABI \
 		-c -o ${WRKSRC}/$f.o ${WRKSRC}/src/$f.cpp
 .endfor
@@ -44,5 +35,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/x86_64-unknown-cloudabi/lib/
 	@${CP} -r ${WRKSRC}/include \
 		${STAGEDIR}${PREFIX}/x86_64-unknown-cloudabi/include/c++/v1
+
+.include "${.CURDIR}/Makefile.common"
 
 .include <bsd.port.mk>

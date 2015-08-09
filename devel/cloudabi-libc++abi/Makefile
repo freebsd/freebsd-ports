@@ -2,25 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	libc++abi
-PORTVERSION=	0.242897
 CATEGORIES=	devel
-MASTER_SITES=	https://nuxi.nl/distfiles/libc++abi/:libcxxabi \
-		https://nuxi.nl/distfiles/libunwind/:libunwind
-PKGNAMEPREFIX=	cloudabi-
-DISTFILES=	libc++abi-${PORTVERSION}${EXTRACT_SUFX}:libcxxabi \
-		libunwind-${PORTVERSION}${EXTRACT_SUFX}:libunwind
+DISTNAME=	libcxxabi-${DISTVERSION}.src
+DISTFILES=	libcxxabi-${DISTVERSION}.src${EXTRACT_SUFX} \
+		libunwind-${DISTVERSION}.src${EXTRACT_SUFX}
 
 MAINTAINER=	ed@FreeBSD.org
 COMMENT=	C++ standard library support for CloudABI
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	x86_64-unknown-cloudabi-ar:${PORTSDIR}/devel/cloudabi-binutils \
-		x86_64-unknown-cloudabi-c++:${PORTSDIR}/lang/cloudabi-clang \
-		${LOCALBASE}/x86_64-unknown-cloudabi/lib/libc.a:${PORTSDIR}/devel/cloudabi-cloudlibc \
-		${LOCALBASE}/x86_64-unknown-cloudabi/lib/libc++.a:${PORTSDIR}/devel/cloudabi-libc++
-
-USES=		tar:xz
+BUILD_DEPENDS=	${LOCALBASE}/x86_64-unknown-cloudabi/lib/libc++.a:${PORTSDIR}/devel/cloudabi-libc++
 
 PLIST_FILES=	x86_64-unknown-cloudabi/lib/libc++abi.a
 
@@ -34,7 +26,7 @@ do-build:
 .for f in ${SRCFILES}
 	${LOCALBASE}/bin/x86_64-unknown-cloudabi-c++ \
 		-O2 -std=c++11 -I${WRKSRC}/include \
-		-I${WRKDIR}/libunwind-${PORTVERSION}/include \
+		-I${WRKDIR}/libunwind-${DISTVERSION}.src/include \
 		-c -o ${WRKSRC}/$f.o ${WRKSRC}/src/$f.cpp
 .endfor
 	cd ${WRKSRC}; ${LOCALBASE}/bin/x86_64-unknown-cloudabi-ar -rcs \
@@ -44,5 +36,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/x86_64-unknown-cloudabi/lib/
 	${INSTALL_DATA} ${WRKSRC}/libc++abi.a \
 		${STAGEDIR}${PREFIX}/x86_64-unknown-cloudabi/lib/
+
+.include "${.CURDIR}/../cloudabi-libc++/Makefile.common"
 
 .include <bsd.port.mk>
