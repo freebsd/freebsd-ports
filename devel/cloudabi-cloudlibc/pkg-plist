@@ -1,6 +1,7 @@
 x86_64-unknown-cloudabi/include/_/arch/x86-64/fenv.h
 x86_64-unknown-cloudabi/include/_/arch/x86-64/setjmp.h
 x86_64-unknown-cloudabi/include/_/cdefs.h
+x86_64-unknown-cloudabi/include/_/endian.h
 x86_64-unknown-cloudabi/include/_/limits.h
 x86_64-unknown-cloudabi/include/_/struct/in_addr.h
 x86_64-unknown-cloudabi/include/_/struct/iovec.h

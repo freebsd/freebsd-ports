@@ -2,25 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	compiler-rt
-DISTVERSION=	0.242897
 CATEGORIES=	devel
-MASTER_SITES=	https://nuxi.nl/distfiles/compiler-rt/
-PKGNAMEPREFIX=	cloudabi-
 
 MAINTAINER=	ed@FreeBSD.org
 COMMENT=	Compiler runtime library for CloudABI
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	x86_64-unknown-cloudabi-ar:${PORTSDIR}/devel/cloudabi-binutils \
-		x86_64-unknown-cloudabi-cc:${PORTSDIR}/lang/cloudabi-clang \
-		${LOCALBASE}/x86_64-unknown-cloudabi/lib/libc.a:${PORTSDIR}/devel/cloudabi-cloudlibc
-
-USES=		tar:xz
-
 PLIST_FILES=	x86_64-unknown-cloudabi/lib/libcompiler_rt.a
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/lib/builtins
+WRKSRC=		${WRKDIR}/${DISTNAME}/lib/builtins
 
 # Do not use the CMake build rules provided by compiler-rt. The CMake build
 # rules shipped with compiler-rt depend both on a standard C++ library and a
@@ -68,5 +59,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/x86_64-unknown-cloudabi/lib/
 	${INSTALL_DATA} ${WRKSRC}/libcompiler_rt.a \
 		${STAGEDIR}${PREFIX}/x86_64-unknown-cloudabi/lib/
+
+.include "${.CURDIR}/../cloudabi-libc++/Makefile.common"
 
 .include <bsd.port.mk>

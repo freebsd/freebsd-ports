@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cloudabi-utils
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	sysutils
 MASTER_SITES=	https://nuxi.nl/distfiles/cloudabi-utils/
 
