@@ -151,7 +151,7 @@ post-configure:
 
 post-stage:
 .for f in ${TOSTRIP}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${f}
+	-${STRIP_CMD} ${STAGEDIR}${PREFIX}/${f}
 .endfor
 
 .include <bsd.port.mk>
