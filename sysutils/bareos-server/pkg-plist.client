@@ -1,0 +1,34 @@
+@sample %%ETCDIR%%/bareos-fd.conf.sample
+@group bareos
+@sample %%ETCDIR%%/bconsole.conf.sample
+@group wheel
+lib/libbareos.la
+lib/libbareos.so
+lib/libbareos-15.2.0.so
+lib/libbareoscfg.la
+lib/libbareoscfg.so
+lib/libbareoscfg-15.2.0.so
+lib/libbareosfind.la
+lib/libbareosfind.so
+lib/libbareosfind-15.2.0.so
+lib/bareos/plugins/BareosFdPluginBaseclass.py
+lib/bareos/plugins/BareosFdPluginLocalFileset.py
+lib/bareos/plugins/BareosFdWrapper.py
+lib/bareos/plugins/bareos-fd-local-fileset.py
+lib/bareos/plugins/bareos-fd-mock-test.py
+lib/bareos/plugins/bareos_fd_consts.py
+lib/bareos/plugins/bareos-fd.py.template
+lib/bareos/plugins/bpipe-fd.so
+man/man8/bareos-fd.8.gz
+man/man1/bconsole.1.gz
+sbin/bareos-fd
+@group bareos
+sbin/bconsole
+bin/bconsole
+@group wheel
+@dir(bareos,bareos,)  %%BAREOS_DIR%%
+@dir(,bareos,) %%ETCDIR%%
+@dir lib/bareos/plugins
+@dir lib/bareos/scripts
+@dir /var/log/bareos
+

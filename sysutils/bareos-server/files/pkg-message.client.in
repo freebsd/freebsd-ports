@@ -1,0 +1,8 @@
+################################################################################
+
+bareos client was installed
+
+1) Sample files are installed in %%PREFIX%%/etc/bareos:
+bconsole.conf.sample, bareos-barcodes.sample, bareos-fd.conf.sample
+
+################################################################################
