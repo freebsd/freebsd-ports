@@ -5,18 +5,23 @@ PORTNAME=	dt
 PORTVERSION=	17.07
 CATEGORIES=	sysutils
 MASTER_SITES=	http://home.comcast.net/~SCSIguy/SCSI_FAQ/RMiller_Tools/ftp/dt/ \
-		http://T32.TecNik93.com/FreeBSD/ports/dt/sources/
+		http://ionut.tetcu.info/FreeBSD/ports/distfiles/
+#PORTVERSION=	18.32
+#MASTER_SITES=	http://www.scsifaq.org/RMiller_Tools/ftp/dt/ \
+#		http://dl.dropboxusercontent.com/u/32363629/Datatest/
+#DISTNAME=	${PORTNAME}-source-v${PORTVERSION
 DISTNAME=	${PORTNAME}-source
 
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Data Test Program - disk/tape error diagnostic tool
+
+LICENSE=	ISCL
 
 OPTIONS_DEFINE=	DOCS
 
 WRKSRC=		${WRKDIR}/dt.d
 MAKEFILE=	Makefile.freebsd
 ALL_TARGET=	dt
-LICENSE=	ISCL
 
 PORTDOCS=	README.1st ToDoList WhatsNew-* dt-UsersGuide.pdf dt-Overview.txt
 
