@@ -3,7 +3,7 @@
 
 PORTNAME=	transmission-remote-gui
 PORTVERSION=	5.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-p2p
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	transgui-${PORTVERSION}-src
@@ -28,13 +28,12 @@ SUB_FILES=	pkg-message
 LAZARUS_PROJECT_FILE=	transgui.lpi
 LAZBUILD_CMD=		${LOCALBASE}/bin/lazbuild -d
 LCL_UNITS_DIR=		${LOCALBASE}/share/lazarus-${LAZARUS_VER}/lcl/units/${BUILDNAME}
-LAZARUS_VER=		1.4.0
+LAZARUS_VER=		1.4.2
 LAZARUS_DIR=		${LOCALBASE}/share/lazarus-${LAZARUS_VER}
 
 OPTIONS_SINGLE=		LCL
-OPTIONS_SINGLE_LCL=	GTK1 GTK2 QT4
+OPTIONS_SINGLE_LCL=	GTK2 QT4
 
-GTK1_DESC=		Use gtk12 interface
 GTK2_DESC=		Use gtk20 interface
 QT4_DESC=		Use qt4 interface
 
@@ -49,13 +48,6 @@ LCL_PLATFORM=	gtk2
 BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk2
 .endif
 
-.if ${PORT_OPTIONS:MGTK1}
-USE_FPC+=	gtk1
-USE_GNOME=	gtk12 gdkpixbuf
-LCL_PLATFORM=	gtk
-BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk
-.endif
-
 .if ${PORT_OPTIONS:MQT4}
 LIB_DEPENDS+=	libQt4Pas.so:${PORTSDIR}/x11-toolkits/qt4pas
 LCL_PLATFORM=	qt
@@ -63,7 +55,7 @@ BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/edit
 .endif
 
 do-build:
-	@cd ${WRKSRC} && \
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		${LAZBUILD_CMD} --ws=${LCL_PLATFORM} --lazarusdir=${LAZARUS_DIR} ${LAZARUS_PROJECT_FILE}
 
 do-install:

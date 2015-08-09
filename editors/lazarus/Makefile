@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lazarus
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.2
 DISTVERSIONSUFFIX=	-0
 PORTREVISION?=	0
 CATEGORIES=	editors devel
@@ -22,6 +22,7 @@ USES=		gmake
 USE_GNOME=	#
 USE_FPC?=	fcl-base fcl-db fcl-fpcunit fcl-image fcl-process fcl-registry \
 		fcl-res fcl-xml iconvenc numlib pasjpeg x11
+USE_FPC_RUN=	yes
 OPT?=		"-Sgic "
 
 MAKE_ENV=	OPT=${OPT}
@@ -32,10 +33,9 @@ DATADIR?=	${PREFIX}/share/${PORTNAME}-${PORTVERSION}
 .if !defined(PKGNAMESUFFIX)
 OPTIONS_DEFINE=		GDB
 OPTIONS_SINGLE=		LCL
-OPTIONS_SINGLE_LCL=	GTK1 GTK2 QT4
+OPTIONS_SINGLE_LCL=	GTK2 QT4
 
 GDB_DESC=		Install a newest version  of gdb
-GTK1_DESC=		Use gtk12 interface
 GTK2_DESC=		Use gtk20 interface
 QT4_DESC=		Use qt4 interface
 
@@ -77,14 +77,6 @@ USE_GNOME=	gtk20 gdkpixbuf
 LCL_PLATFORM=	gtk2
 BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk2
 RUN_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk2
-.endif
-
-.if ${PORT_OPTIONS:MGTK1}
-USE_FPC+=	gtk1
-USE_GNOME=	gtk12 gdkpixbuf
-LCL_PLATFORM=	gtk
-BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk
-RUN_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk
 .endif
 
 .if ${PORT_OPTIONS:MQT4}
