@@ -5,6 +5,25 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150809:
+  AFFECTS: users of sysutils/xfce4-power-manager
+  AUTHOR: olivierd@FreeBSD.org
+
+  After upgrading to 1.5.2, by default a label is displayed next to the
+  panel icon (it shows percentage and remaining time).
+
+  To hide this label, a new property /xfce4-power-manager/show-panel-label
+  must be created:
+
+  xfconf-query -c xfce4-power-manager \
+      -p /xfce4-power-manager/show-panel-label -n -t int -s 0
+
+  Possible values are:
+  - 0 -> does not display label
+  - 1 -> displays only percentage
+  - 2 -> displays only remaining time
+  - 3 -> displays only percentage and remaining time (default value)
+
 20150806:
   AFFECTS: users of security/libressl
   AUTHOR: brnrd@FreeBSD.org
