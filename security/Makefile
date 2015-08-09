@@ -915,6 +915,7 @@
     SUBDIR += rubygem-attr_encrypted
     SUBDIR += rubygem-bcrypt
     SUBDIR += rubygem-bcrypt-ruby
+    SUBDIR += rubygem-devise-two-factor
     SUBDIR += rubygem-doorkeeper
     SUBDIR += rubygem-encryptor
     SUBDIR += rubygem-ezcrypto
