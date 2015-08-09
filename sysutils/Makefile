@@ -70,6 +70,7 @@
     SUBDIR += bareos-bat
     SUBDIR += bareos-client
     SUBDIR += bareos-client-static
+    SUBDIR += bareos-docs
     SUBDIR += bareos-server
     SUBDIR += baloo
     SUBDIR += baloo-widgets
