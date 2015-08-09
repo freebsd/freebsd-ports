@@ -1,4 +1,3 @@
-/var/log/ConsoleKit/history
 bin/ck-history
 bin/ck-launch-session
 bin/ck-list-sessions
@@ -27,6 +26,8 @@ share/dbus-1/system-services/org.freedesktop.ConsoleKit.service
 share/polkit-1/actions/org.freedesktop.consolekit.policy
 @dir /var/run/ConsoleKit
 @dir /var/log/ConsoleKit
+@exec /usr/bin/touch /var/log/ConsoleKit/history
+@rmtry /var/log/ConsoleKit/history
 @dir etc/ConsoleKit/run-seat.d
 @dir etc/ConsoleKit/run-session.d
 @dir lib/ConsoleKit/run-seat.d
