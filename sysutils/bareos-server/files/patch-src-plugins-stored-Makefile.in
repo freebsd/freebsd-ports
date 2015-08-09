@@ -1,0 +1,11 @@
+--- src/plugins/stored/Makefile.in	2015-07-23 18:04:28.275396000 -0500
++++ src/plugins/stored/Makefile.in	2015-07-23 18:05:09.508399000 -0500
+@@ -39,7 +39,7 @@
+ 
+ autoxflate-sd.la: Makefile \
+ 		  autoxflate-sd$(DEFAULT_OBJECT_TYPE) \
+-		  ../../lib/libbareos$(DEFAULT_ARCHIVE_TYPE)
++		  $(LOCALBASE)/lib/libbareos$(DEFAULT_ARCHIVE_TYPE)
+ 	$(LIBTOOL_LINK) $(CXX) $(LDFLAGS) -shared autoxflate-sd.lo -o $@ -rpath $(plugindir) -module -export-dynamic -avoid-version -L../../lib -lbareos
+ 
+ example-plugin-sd.la: Makefile example-plugin-sd$(DEFAULT_OBJECT_TYPE)
