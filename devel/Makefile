@@ -13,6 +13,7 @@
     SUBDIR += R-cran-RUnit
     SUBDIR += R-cran-Rcpp
     SUBDIR += R-cran-bit
+    SUBDIR += R-cran-bit64
     SUBDIR += R-cran-bitops
     SUBDIR += R-cran-caTools
     SUBDIR += R-cran-caret
