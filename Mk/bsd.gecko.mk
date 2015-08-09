@@ -137,8 +137,10 @@ MOZ_OPTIONS+=	--enable-jemalloc
 # Standard depends
 _ALL_DEPENDS=	cairo event ffi graphite harfbuzz hunspell icu jpeg nspr nss opus png pixman soundtouch sqlite vorbis vpx
 
+.if ! ${PORT_OPTIONS:MBUNDLED_CAIRO}
 cairo_LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
 cairo_MOZ_OPTIONS=	--enable-system-cairo
+.endif
 
 event_LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 event_MOZ_OPTIONS=	--with-system-libevent
