@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.and.org/vstr/${PORTVERSION}/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose string library for C
 
-LICENSE=	LGPL
+LICENSE=	LGPL21
 
 USES=		gmake libtool pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
