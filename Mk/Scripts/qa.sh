@@ -293,7 +293,7 @@ prefixvar() {
 	fi
 }
 
-checks="shebang symlinks paths stripped desktopfileutils sharedmimeinfo suidfiles libtool libperl prefixvar baselibs"
+checks="shebang symlinks paths stripped desktopfileutils sharedmimeinfo suidfiles libtool libperl prefixvar" # baselibs"
 
 ret=0
 cd ${STAGEDIR}
