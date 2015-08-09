@@ -80,6 +80,7 @@
     SUBDIR += arm-gnueabi-binutils
     SUBDIR += arm-none-eabi-binutils
     SUBDIR += arm-none-eabi-gcc
+    SUBDIR += arm-none-eabi-gcc492
     SUBDIR += aros-sdk
     SUBDIR += art
     SUBDIR += as31
