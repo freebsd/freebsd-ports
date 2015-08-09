@@ -206,6 +206,7 @@ distcc:*:561:
 polkit:*:562:
 pulse:*:563:
 pulse-access:*:564:
+polkitd:*:565:
 assp:*:587:
 avahi-autoipd:*:588:
 _xsi:*:600:
