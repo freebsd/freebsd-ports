@@ -4975,6 +4975,7 @@
     SUBDIR += silentbob
     SUBDIR += simgear
     SUBDIR += simian
+    SUBDIR += simple_components
     SUBDIR += simpletest
     SUBDIR += skalibs
     SUBDIR += slf4j
