@@ -4,7 +4,7 @@
 PORTNAME=	lazarus
 PORTVERSION=	1.4.2
 DISTVERSIONSUFFIX=	-0
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	editors devel
 MASTER_SITES=	SF/${PORTNAME}/Lazarus%20Zip%20_%20GZip/Lazarus%20${PORTVERSION:S/.0//} \
 		LOCAL/acm/freepascal
@@ -20,8 +20,8 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 USES=		gmake
 USE_GNOME=	#
-USE_FPC?=	fcl-base fcl-db fcl-fpcunit fcl-image fcl-process fcl-registry \
-		fcl-res fcl-xml iconvenc numlib pasjpeg x11
+USE_FPC?=	cairo fcl-base fcl-db fcl-fpcunit fcl-image fcl-process fcl-registry \
+		fcl-res fcl-xml gtk2 iconvenc numlib pasjpeg x11
 USE_FPC_RUN=	yes
 OPT?=		"-Sgic "
 
@@ -72,7 +72,6 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/gdb:${PORTSDIR}/devel/gdb
 .endif
 
 .if ${PORT_OPTIONS:MGTK2}
-USE_FPC+=	gtk2
 USE_GNOME=	gtk20 gdkpixbuf
 LCL_PLATFORM=	gtk2
 BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk2
