@@ -5,6 +5,7 @@ PORTVERSION=	4.9.2
 CATEGORIES=	devel
 MASTER_SITES=	GCC/releases/gcc-${DISTVERSION}
 PKGNAMEPREFIX?=	arm-none-eabi-
+PKGNAMESUFFIX=	492
 
 MAINTAINER=	ian@FreeBSD.org
 COMMENT=	GNU Compiler Collection for bare metal arm cross-development
