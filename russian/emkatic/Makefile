@@ -3,7 +3,7 @@
 
 PORTNAME=	emkatic
 PORTVERSION=	0.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	russian emulators
 MASTER_SITES=	SF/${PORTNAME}/eMKatic%20Source
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -21,7 +21,7 @@ USE_FPC=	yes
 WANT_GNOME=	yes
 
 PROJECT_FILE=	emkatic.lpi
-LAZARUS_VER=	1.4.0
+LAZARUS_VER=	1.4.2
 LAZBUILD_CMD=	${LOCALBASE}/bin/lazbuild -d --pcp=${WRKSRC}/tmppcp
 LAZARUS_DIR=	${LOCALBASE}/share/lazarus-${LAZARUS_VER}
 LCL_UNITS_DIR=	${LAZARUS_DIR}/lcl/units/${BUILDNAME}
@@ -55,7 +55,7 @@ BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/edit
 .endif
 
 do-build:
-	@cd ${WRKSRC} && \
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		${LAZBUILD_CMD} --ws="${LCL_PLATFORM}" --lazarusdir=${LAZARUS_DIR} ${PROJECT_FILE}
 
 do-install:

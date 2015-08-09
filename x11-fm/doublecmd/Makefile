@@ -3,6 +3,7 @@
 
 PORTNAME=	doublecmd
 PORTVERSION=	0.6.4
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/${PORTNAME}/Double%20Commander%20Source
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -27,7 +28,7 @@ WANT_GNOME=	yes
 PLIST=		${WRKDIR}/pkg-plist
 
 PROJECT_FILE=	src/doublecmd.lpi
-LAZARUS_VER=	1.4.0
+LAZARUS_VER=	1.4.2
 LAZBUILD_CMD=	${LOCALBASE}/bin/lazbuild -d --pcp=${WRKSRC}/tmppcp
 LAZARUS_DIR=	${LOCALBASE}/share/lazarus-${LAZARUS_VER}
 

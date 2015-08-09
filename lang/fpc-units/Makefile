@@ -3,7 +3,7 @@
 
 PORTNAME=	units
 PORTVERSION=	2.6.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 PKGNAMEPREFIX=	fpc-
 
@@ -115,6 +115,8 @@ UNITS_SELECTED=		#
 UNITS_SELECTED+=	${OPT:tl}
 .	endif
 .endfor
+
+USE_FPC_RUN=	yes
 USE_FPC=	${UNITS_SELECTED}
 
 .include <bsd.port.mk>
