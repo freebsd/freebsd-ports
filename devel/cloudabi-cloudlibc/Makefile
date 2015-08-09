@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cloudlibc
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	devel
 MASTER_SITES=	https://nuxi.nl/distfiles/cloudlibc/
 PKGNAMEPREFIX=	cloudabi-
