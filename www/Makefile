@@ -44,6 +44,7 @@
     SUBDIR += b2evolution
     SUBDIR += bacula-web
     SUBDIR += baikal
+    SUBDIR += bareos-webui
     SUBDIR += bblog
     SUBDIR += bigbluebutton
     SUBDIR += bins
