@@ -946,6 +946,7 @@
     SUBDIR += rubygem-roauth
     SUBDIR += rubygem-ruby-hmac
     SUBDIR += rubygem-ruby-rc4
+    SUBDIR += rubygem-ruby-saml
     SUBDIR += rubygem-scrypt
     SUBDIR += rubygem-six
     SUBDIR += rubygem-sshkit
