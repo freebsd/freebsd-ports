@@ -11,7 +11,7 @@ COMMENT=	Create JSON structures via a Builder-style DSL
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-activesupport4>=3.0.0:${PORTSDIR}/devel/rubygem-activesupport4 \
+RUN_DEPENDS?=	rubygem-activesupport4>=3.0.0:${PORTSDIR}/devel/rubygem-activesupport4 \
 		rubygem-multi_json>=1.2:${PORTSDIR}/devel/rubygem-multi_json
 
 NO_ARCH=	yes
