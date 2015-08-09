@@ -1,0 +1,4 @@
+lib64/.libgcrypt.so.11.hmac
+lib64/libgcrypt.so.11
+lib64/libgcrypt.so.11.5.3
+@dir etc/gcrypt

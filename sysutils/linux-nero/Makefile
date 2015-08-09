@@ -21,6 +21,7 @@ USE_LINUX_APPS=	gtk2
 USE_LDCONFIG=	yes
 BRANDELF_DIRS=	usr/bin
 SRC_DISTFILES=
+PLIST=		${MASTERDIR}/pkg-plist
 
 # normalize permissions of symbolic links to prevent a package with
 # missing files

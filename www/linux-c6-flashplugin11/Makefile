@@ -18,6 +18,9 @@ USE_LINUX?=	c6
 USE_LINUX_APPS?=	curl cyrus-sasl2 gdkpixbuf2 gtk2 nspr nss # libssh2 openldap
 WANT_GNOME=	yes
 
+DISTINFO_FILE?=	${MASTERDIR}/distinfo.${LINUX_RPM_ARCH}
+PLIST?=		${MASTERDIR}/pkg-plist.${LINUX_RPM_ARCH}
+
 RESTRICTED=	Redistribution not allowed
 RESTRICTED_FILES=	${DISTFILES:Nlinux-f10-flashsupport*:C/:[^:]+$//}
 

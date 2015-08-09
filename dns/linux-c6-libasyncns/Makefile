@@ -3,7 +3,7 @@
 
 PORTNAME=	libasyncns
 PORTVERSION=	0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns devel linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -13,6 +13,5 @@ USE_LINUX=	c6
 USE_LINUX_RPM=	yes
 RPMVERSION=	1.1.el6
 USE_LDCONFIG=	yes
-AUTOMATIC_PLIST=	yes
 
 .include <bsd.port.mk>
