@@ -1,7 +1,7 @@
 # Created by: Christopher Key <cjk32@cam.ac.uk>
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net lang
 PKGNAMESUFFIX=	-ldap
 
