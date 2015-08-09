@@ -13,7 +13,8 @@ COMMENT=	High performance authoritative-only DNS server
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
+LIB_DEPENDS=	libfstrm.so:${PORTSDIR}/devel/fstrm \
+		libgnutls.so:${PORTSDIR}/security/gnutls \
 		libjansson.so:${PORTSDIR}/devel/jansson \
 		liblmdb.so:${PORTSDIR}/databases/lmdb \
 		libnettle.so:${PORTSDIR}/security/nettle \
@@ -48,8 +49,7 @@ OPTIONS_DEFINE=			DNSTAP FASTPARSER IDN
 
 DNSTAP_DESC=			dnstap support (see dnstap.info)
 DNSTAP_CONFIGURE_ENABLE=	dnstap
-DNSTAP_LIB_DEPENDS=		libfstrm.so:${PORTSDIR}/devel/fstrm \
-				libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c
+DNSTAP_LIB_DEPENDS=		libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c
 
 FASTPARSER_DESC=		Fast zone parser (demanding compilation)
 FASTPARSER_CONFIGURE_ENABLE=	fastparser
