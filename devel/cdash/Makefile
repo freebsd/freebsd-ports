@@ -16,7 +16,9 @@ OPTIONS_MULTI=	DB
 OPTIONS_MULTI_DB=	MYSQL PGSQL
 OPTIONS_DEFAULT=MYSQL
 
-USES=		cmake:outsource zip
+USES=		dos2unix cmake:outsource zip
+DOS2UNIX_GLOB=	*.php *.xml *.xsl *.txt
+
 CMAKE_ARGS+=	-DCDASH_DB_NAME:STRING=cdash \
    		-DCDASH_DB_LOGIN:STRING=cdash \
    		-DCDASH_DB_TYPE:STRING=${DB_TYPE}
