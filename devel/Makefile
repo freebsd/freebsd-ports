@@ -4818,6 +4818,7 @@
     SUBDIR += rubygem-retryable
     SUBDIR += rubygem-rgl
     SUBDIR += rubygem-rodzilla
+    SUBDIR += rubygem-rotp
     SUBDIR += rubygem-rr
     SUBDIR += rubygem-rrd-ffi
     SUBDIR += rubygem-rscm
