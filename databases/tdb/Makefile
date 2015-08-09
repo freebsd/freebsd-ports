@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		tdb
-PORTVERSION=		1.3.4
+PORTVERSION=		1.3.7
 PORTREVISION=		0
 PORTEPOCH=		1
 CATEGORIES=		databases
@@ -23,7 +23,9 @@ PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
 PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
 
 CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man \
-			--infodir=${PREFIX}/${INFO_PATH}/${INFO_SUBDIR}
+			--infodir=${PREFIX}/${INFO_PATH}/${INFO_SUBDIR} \
+			--disable-rpath \
+			--without-gettext
 
 OPTIONS_DEFINE=		MANPAGES
 MANPAGES_DESC=		Build and install manpages (requires textproc/docbook-xsl)
@@ -34,7 +36,8 @@ MANPAGES_DESC=		Build and install manpages (requires textproc/docbook-xsl)
 CONFIGURE_ARGS+=	--disable-python
 .else
 USES+=			python:2
-PLIST_FILES+=		%%PYTHON_SITELIBDIR%%/tdb.so
+PLIST_FILES+=		%%PYTHON_SITELIBDIR%%/tdb.so \
+			%%PYTHON_SITELIBDIR%%/_tdb_text.py
 .endif
 
 .include <bsd.port.pre.mk>
