@@ -58,6 +58,40 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ff0acfb4-3efa-11e5-93ad-002590263bf5">
+    <topic>pcre -- heap overflow vulnerability in '(?|' situations</topic>
+    <affects>
+      <package>
+	<name>pcre</name>
+	<range><le>8.37_2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Venustech ADLAB reports:</p>
+	<blockquote cite="https://bugs.exim.org/show_bug.cgi?id=1667">
+	  <p>PCRE library is prone to a vulnerability which leads to Heap
+	    Overflow. During the compilation of a malformed regular expression,
+	    more data is written on the malloced block than the expected size
+	    output by compile_regex. Exploits with advanced Heap Fengshui
+	    techniques may allow an attacker to execute arbitrary code in the
+	    context of the user running the affected application.</p>
+	  <p>Latest version of PCRE is prone to a Heap Overflow vulnerability
+	    which could caused by the following regular expression.</p>
+	  <p>/(?J:(?|(:(?|(?'R')(\k'R')|((?'R')))H'Rk'Rf)|s(?'R'))))/</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/202209</freebsdpr>
+      <url>https://bugs.exim.org/show_bug.cgi?id=1667</url>
+    </references>
+    <dates>
+      <discovery>2015-08-05</discovery>
+      <entry>2015-08-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8eee06d4-c21d-4f07-a669-455151ff426f">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
