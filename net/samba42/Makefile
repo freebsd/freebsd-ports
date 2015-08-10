@@ -3,7 +3,7 @@
 
 PORTNAME?=		${SAMBA4_BASENAME}42
 PORTVERSION?=		${SAMBA4_VERSION}
-PORTREVISION?=		0
+PORTREVISION?=		1
 CATEGORIES?=		net
 MASTER_SITES=		SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=		${SAMBA4_DISTNAME}
@@ -95,12 +95,12 @@ BUILD_DEPENDS+=		talloc>=2.1.2:${PORTSDIR}/devel/talloc
 RUN_DEPENDS+=		talloc>=2.1.2:${PORTSDIR}/devel/talloc
 SAMBA4_BUNDLED_LIBS+=	!talloc
 # tevent
-BUILD_DEPENDS+=		tevent>=0.9.24:${PORTSDIR}/devel/tevent
-RUN_DEPENDS+=		tevent>=0.9.24:${PORTSDIR}/devel/tevent
+BUILD_DEPENDS+=		tevent>=0.9.25:${PORTSDIR}/devel/tevent
+RUN_DEPENDS+=		tevent>=0.9.25:${PORTSDIR}/devel/tevent
 SAMBA4_BUNDLED_LIBS+=	!tevent
 # tdb
-BUILD_DEPENDS+=		tdb>=1.3.4:${PORTSDIR}/databases/tdb
-RUN_DEPENDS+=		tdb>=1.3.4:${PORTSDIR}/databases/tdb
+BUILD_DEPENDS+=		tdb>=1.3.6:${PORTSDIR}/databases/tdb
+RUN_DEPENDS+=		tdb>=1.3.6:${PORTSDIR}/databases/tdb
 SAMBA4_BUNDLED_LIBS+=	!tdb
 # ntdb
 BUILD_DEPENDS+=		ntdb>=1.0:${PORTSDIR}/databases/ntdb
