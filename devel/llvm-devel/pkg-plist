@@ -1773,6 +1773,7 @@ llvm-devel/include/llvm/Transforms/Utils/ValueMapper.h
 llvm-devel/include/llvm/Transforms/Vectorize.h
 llvm-devel/lib/BugpointPasses.so
 llvm-devel/lib/LLVMHello.so
+%%GOLD%%llvm-devel/lib/LLVMgold.so
 %%CLANG%%llvm-devel/lib/clang/3.8.0/include/Intrin.h
 %%CLANG%%llvm-devel/lib/clang/3.8.0/include/__stddef_max_align_t.h
 %%CLANG%%llvm-devel/lib/clang/3.8.0/include/__wmmintrin_aes.h
