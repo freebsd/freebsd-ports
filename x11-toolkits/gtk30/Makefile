@@ -55,7 +55,7 @@ GLIB_SCHEMAS=	org.gtk.Demo.gschema.xml \
 		org.gtk.Settings.Debug.gschema.xml \
 		org.gtk.Settings.FileChooser.gschema.xml
 
-OPTIONS_DEFINE=	CUPS CLOUDPRINT COLORD DEBUG BROADWAY
+OPTIONS_DEFINE=	CUPS CLOUDPRINT COLORD DEBUG BROADWAY TYPEAHEAD
 OPTIONS_DEFAULT=CUPS COLORD BROADWAY
 OPTIONS_SUB=	yes
 
@@ -76,8 +76,16 @@ CLOUDPRINT_LIB_DEPENDS=	librest-0.7.so:${PORTSDIR}/devel/librest \
 
 DEBUG_CONFIGURE_ENABLE=debug
 
+# GTK+ 3.17 has a beter way
+TYPEAHEAD_DESC=		Re-enable type-a-head functionality in file chooser
+
 # needed for the exists() check, booo
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MTYPEAHEAD}
+EXTRA_PATCHES+=	${FILESDIR}/extra-gtk_gtkfilechooserwidget.c \
+		${FILESDIR}/extra-gtk_ui_gtkfilechooserwidget.ui
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|[{]libdir[}]/locale|{datadir}/locale|g' \
