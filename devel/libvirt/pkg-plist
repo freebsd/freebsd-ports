@@ -36,6 +36,9 @@ include/libvirt/libvirt-storage.h
 include/libvirt/libvirt-stream.h
 include/libvirt/virterror.h
 lib/libvirt/lock-driver/lockd.so
+lib/libvirt-admin.so
+lib/libvirt-admin.so.0
+lib/libvirt-admin.so.%%SHLIB_VER%%
 lib/libvirt-lxc.so
 lib/libvirt-lxc.so.0
 lib/libvirt-lxc.so.%%SHLIB_VER%%
