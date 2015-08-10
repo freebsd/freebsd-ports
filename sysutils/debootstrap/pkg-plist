@@ -42,5 +42,6 @@ man/man8/debootstrap.8.gz
 %%DATADIR%%/scripts/warty
 %%DATADIR%%/scripts/warty.buildd
 %%DATADIR%%/scripts/wheezy
+%%DATADIR%%/scripts/wily
 %%DATADIR%%/scripts/woody
 %%DATADIR%%/scripts/woody.buildd
