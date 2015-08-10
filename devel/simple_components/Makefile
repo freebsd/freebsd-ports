@@ -10,7 +10,8 @@ DISTNAME=	components_4_8
 MAINTAINER=	rodakay@internode.on.net
 COMMENT=	Simple Ada Components
 
-LICENSE=	GMGPL
+LICENSE=	GPLv2 GMGPL
+LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	gprbuild:${PORTSDIR}/devel/gprbuild
 
