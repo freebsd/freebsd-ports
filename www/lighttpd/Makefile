@@ -6,7 +6,7 @@ PORTVERSION=	1.4.36
 CATEGORIES?=	www
 MASTER_SITES?=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pkubaj@riseup.net
 COMMENT?=	Secure, fast, compliant, and flexible Web Server
 
 .if !defined(_BUILDING_LIGHTTPD_MODULE)
