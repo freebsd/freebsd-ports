@@ -21,8 +21,7 @@ LIB_DEPENDS=	librazorback_api.so:${PORTSDIR}/security/razorback-api \
 OPTIONS_DEFINE=	DEBUG ASSERT
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig libtool
-USE_AUTOTOOLS=	autoconf
+USES=		autoreconf pkgconfig libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
