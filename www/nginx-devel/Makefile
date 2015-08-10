@@ -52,6 +52,7 @@ OPTIONS_DEFINE=	\
 	MAIL_SMTP \
 	MAIL_SSL \
 	SPDY \
+	HTTPV2 \
 	STREAM \
 	STREAM_SSL \
 	THREADS \
@@ -145,6 +146,7 @@ MAIL_POP3_DESC=			Enable POP3 proxy module
 MAIL_SMTP_DESC=			Enable SMTP proxy module
 MAIL_SSL_DESC=			Enable mail_ssl module
 SPDY_DESC=			Enable SPDY protocol support (SSL req.)
+HTTPV2_DESC=			Enable HTTP/2 protocol support (SSL req.)
 STREAM_DESC=			Enable stream module
 STREAM_SSL_DESC=		Enable stream_ssl module (SSL req.)
 THREADS_DESC=			Enable threads support
@@ -818,10 +820,25 @@ GH_TAGNAME+=	v${NGINX_XSS_VERSION}:xss
 CONFIGURE_ARGS+=--add-module=${WRKSRC_xss}
 .endif
 
+.if ${PORT_OPTIONS:MSPDY} && ${PORT_OPTIONS:MHTTPV2}
+IGNORE=		current HTTP/2 implementation replaces SPDY module support, please disable SPDY
+.endif
+
 .if ${PORT_OPTIONS:MSPDY}
 NGINX_OPENSSL=	yes
 USE_HTTP_SSL=	yes
 CONFIGURE_ARGS+=--with-http_spdy_module
+.endif
+
+.if ${PORT_OPTIONS:MHTTPV2}
+NGINX_OPENSSL=	yes
+USE_HTTP_SSL=	yes
+CONFIGURE_ARGS+=--with-http_v2_module
+USE_OPENSSL_PORT=	yes
+NGINX_HTTPV2_VERSION=	1
+PATCH_SITES+=	http://nginx.org/patches/http2/:httpv2
+PATCHFILES+=	patch.http2-v${NGINX_HTTPV2_VERSION}_${PORTVERSION}.txt:httpv2
+PATCH_DIST_STRIP=	-p1
 .endif
 
 .if ${PORT_OPTIONS:MSTREAM}
