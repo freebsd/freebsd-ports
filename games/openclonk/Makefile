@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openclonk
-PORTVERSION=	6.0
+PORTVERSION=	6.1
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	games
 MASTER_SITES=	http://www.openclonk.org/builds/release/${DISTVERSION}/
@@ -26,8 +26,6 @@ USE_GNOME=	gtk20
 USE_SDL=	sdl mixer
 USE_XORG=	x11 xpm
 INSTALLS_ICONS=	yes
-
-WRKSRC=		${WRKDIR}/openclonk-release-${DISTVERSION}-src
 
 .include <bsd.port.pre.mk>
 
