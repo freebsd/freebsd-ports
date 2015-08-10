@@ -19,6 +19,7 @@ BUILD_DEPENDS=	p5-Moo>=1.001000:${PORTSDIR}/devel/p5-Moo \
 		p5-strictures>0:${PORTSDIR}/devel/p5-strictures
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
