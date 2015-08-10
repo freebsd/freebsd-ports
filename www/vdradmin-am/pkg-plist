@@ -159,21 +159,7 @@ share/locale/fr/LC_MESSAGES/vdradmin.mo
 share/locale/it/LC_MESSAGES/vdradmin.mo
 share/locale/nl/LC_MESSAGES/vdradmin.mo
 share/locale/ru/LC_MESSAGES/vdradmin.mo
-@dirrmtry(%%VDR_USER%%,%%VDR_GROUP%%,) %%ETCDIR%%
-@dirrm share/vdradmin-am/lib/MIME
-@dirrm share/vdradmin-am/lib/File
-@dirrm share/vdradmin-am/lib/URI
-@dirrm share/vdradmin-am/lib/Template/Plugin
-@dirrm share/vdradmin-am/lib/Template/Namespace
-@dirrm share/vdradmin-am/lib/Template/Stash
-@dirrm share/vdradmin-am/lib/Template
-@dirrm share/vdradmin-am/lib
-@dirrm share/vdradmin-am/template/default/default
-@dirrm share/vdradmin-am/template/default
-@dirrm share/vdradmin-am/template
-@dirrm share/vdradmin-am
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry(%%VDR_USER%%,%%VDR_GROUP%%,) /var/cache/vdradmin-am
-@dirrmtry(%%VDR_USER%%,%%VDR_GROUP%%,) /var/log/vdradmin-am
-@dirrmtry(%%VDR_USER%%,%%VDR_GROUP%%,) /var/run/vdradmin-am
+@dir(%%VDR_USER%%,%%VDR_GROUP%%,) %%ETCDIR%%
+@dir(%%VDR_USER%%,%%VDR_GROUP%%,) /var/cache/vdradmin-am
+@dir(%%VDR_USER%%,%%VDR_GROUP%%,) /var/log/vdradmin-am
+@dir(%%VDR_USER%%,%%VDR_GROUP%%,) /var/run/vdradmin-am
