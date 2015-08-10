@@ -14,6 +14,9 @@ COMMENT=	Tool to dump x86 CPUID information about the CPU(s)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS_REASON=	only works with x86 CPUs
+
 USES=		gmake
 ALL_TARGET=	default
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
