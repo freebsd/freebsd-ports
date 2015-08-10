@@ -58,6 +58,35 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="dd7f29cc-3ee9-11e5-93ad-002590263bf5">
+    <topic>lighttpd -- Log injection vulnerability in mod_auth</topic>
+    <affects>
+      <package>
+	<name>lighttpd</name>
+	<range><lt>1.4.36</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MITRE reports:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3200">
+	  <p>mod_auth in lighttpd before 1.4.36 allows remote attackers to
+	    inject arbitrary log entries via a basic HTTP authentication string
+	    without a colon character, as demonstrated by a string containing a
+	    NULL and new line character.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3200</cvename>
+      <url>http://redmine.lighttpd.net/issues/2646</url>
+    </references>
+    <dates>
+      <discovery>2015-05-25</discovery>
+      <entry>2015-08-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ff0acfb4-3efa-11e5-93ad-002590263bf5">
     <topic>pcre -- heap overflow vulnerability in '(?|' situations</topic>
     <affects>
