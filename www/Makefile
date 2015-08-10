@@ -7,6 +7,7 @@
     SUBDIR += R-cran-RgoogleMaps
     SUBDIR += R-cran-Rpad
     SUBDIR += R-cran-httpuv
+    SUBDIR += R-cran-httr
     SUBDIR += R-cran-scrapeR
     SUBDIR += R-cran-shiny
     SUBDIR += WebMagick
