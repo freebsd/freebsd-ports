@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	swi-pl
-PORTVERSION=	6.6.6
+PORTVERSION=	7.2.2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.swi-prolog.org/download/stable/src/
-DISTNAME=	pl-${PORTVERSION}
+DISTNAME=	swipl-${PORTVERSION}
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Edinburgh-style Prolog compiler
