@@ -1,0 +1,6 @@
+Useful tools for working with HTTP organised by HTTP verbs (GET(),
+POST(), etc). Configuration functions make it easy to control
+additional request components (authenticate(), add_headers() and
+so on).
+
+WWW: https://cran.r-project.org/web/packages/httr/
