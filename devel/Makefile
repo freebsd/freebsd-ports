@@ -34,6 +34,7 @@
     SUBDIR += R-cran-plyr
     SUBDIR += R-cran-proto
     SUBDIR += R-cran-randomForest
+    SUBDIR += R-cran-registry
     SUBDIR += R-cran-reshape
     SUBDIR += R-cran-reshape2
     SUBDIR += SpecTcl
