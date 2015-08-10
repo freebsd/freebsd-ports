@@ -12,6 +12,9 @@ DISTFILES=	ghc-${PORTVERSION}-src${EXTRACT_SUFX}:source
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Compiler for the functional language Haskell
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 ONLY_FOR_ARCHS=	i386 amd64
 
 MAKE_JOBS_NUMBER_LIMIT=		4
@@ -28,12 +31,9 @@ LIB_DEPENDS+=	libgmp.so:${PORTSDIR}/math/gmp
 
 USE_AUTOTOOLS=		autoconf autoheader
 USE_PERL5=		build
-USES=			gmake iconv:translit perl5 ncurses tar:bzip2
+USES=			gmake iconv:translit ncurses perl5 tar:bzip2
 USE_BINUTILS=		yes
 USE_GCC=		yes
-
-LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 MAKE_ENV=	LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 
