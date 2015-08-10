@@ -24,8 +24,8 @@ CONFLICTS=	emacs-19.* emacs21-[0-9]* emacs22-[0-9]* emacs23-[0-9]* \
 		emacs-nox11-[0-9]*
 
 EMACS_VER=	25.0.50
-EMACS_REV=	20150427
-GIT_REV=	def0df01
+EMACS_REV=	20150810
+GIT_REV=	a9bb9d8f
 GNU_CONFIGURE=	yes
 USES=		cpe gmake makeinfo ncurses pkgconfig shebangfix tar:xz
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -57,7 +57,7 @@ INFO=		ada-mode auth autotype bovine calc ccmode cl dbus dired-x \
 		srecode todo-mode tramp url vhdl-mode vip viper widget wisent woman
 
 OPTIONS_DEFINE=	X11 ACL DBUS GCONF GIF JPEG M17N OTF PNG SOUND SOURCES SVG TIFF SCROLLBARS \
-		XFT XIM XML XPM MAGICK GNUTLS GSETTINGS LTO FILENOTIFY LLDB
+		XFT XIM XML XPM MAGICK GNUTLS GSETTINGS LTO FILENOTIFY LLDB CAIRO
 
 OPTIONS_SINGLE=	X11 SOUND
 
@@ -169,6 +169,9 @@ ACL_CONFIGURE_OFF=		--disable-acl
 FILENOTIFY_CONFIGURE_ON=	--with-file-notification=gfile
 FILENOTIFY_CONFIGURE_OFF=	--without-file-notification
 FILENOTIFY_USE=			GNOME=glib20
+
+CAIRO_USE=			GNOME=cairo
+CAIRO_CONFIGURE_ON=		--with-cairo
 
 .include <bsd.port.options.mk>
 
