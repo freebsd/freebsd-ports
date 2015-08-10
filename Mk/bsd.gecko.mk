@@ -370,11 +370,10 @@ MOZ_OPTIONS+=	--disable-debug --enable-release
 .endif
 
 .if ${PORT_OPTIONS:MDTRACE}
-. if ${OSVERSION} < 1000510
-BROKEN=			dtrace -G crashes with C++ object files
-. endif
 MOZ_OPTIONS+=	--enable-dtrace
+. if ${OSVERSION} < 1100061
 LIBS+=			-lelf
+. endif
 STRIP=
 .else
 MOZ_OPTIONS+=	--disable-dtrace
