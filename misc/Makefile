@@ -3,6 +3,7 @@
 
     COMMENT = Miscellaneous utilities
 
+    SUBDIR += R-cran-mime
     SUBDIR += achievo
     SUBDIR += aclgen
     SUBDIR += amanda-client

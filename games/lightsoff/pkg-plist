@@ -240,6 +240,7 @@ share/help/zh_CN/lightsoff/rules.page
 share/help/zh_CN/lightsoff/strategy.page
 share/help/zh_CN/lightsoff/translate.page
 share/icons/hicolor/scalable/apps/lightsoff-symbolic.svg
+share/icons/hicolor/scalable/apps/lightsoff.svg
 %%DATADIR%%/highlight.svg
 %%DATADIR%%/off.svg
 %%DATADIR%%/on.svg

@@ -5223,7 +5223,6 @@ net/lua50-luasocket||2013-11-18|Removed, lua50 is EOLed
 devel/lua50-compat51||2013-11-18|Removed, lua50 is EOLed
 lang/lua50|lang/lua|2013-11-18|Removed, lua50 is EOLed
 security/squidclamav|www/squidclamav|2013-11-18|Has expired: Obsolete and broken with clang, use www/squidclamav instead
-multimedia/tovid||2013-11-19|Has expired: No more public distfiles
 devel/rubygem-ripper||2013-11-20|Removed: it is only for Ruby 1.8 which is removed already
 editors/mode-info||2013-11-20|Has expired: Misbuilding since 2004, not maintained since 2008
 devel/netbsd-pkgsrc-mk-files||2013-11-20|Has expired: Imported for devel/mk-configure but no longer required
@@ -7736,6 +7735,7 @@ devel/amd64-gcc||2015-07-25|No real use
 devel/amd64-xtoolchain-gcc||2015-07-25|No real use
 devel/p5-Test-Tester|devel/p5-Test-Simple|2015-07-25|Has expired: Part of p5-Test-Simple (use that instead), and included in perl 5.22
 devel/p5-Test-use-ok|devel/p5-Test-Simple|2015-07-25|Has expired: Part of devel/p5-Test-Simple (use that instead), and included in perl 5.22
+sysutils/libzeitgeist|sysutils/zeitgeist|2015-07-26|Merged into zeitgeist
 math/mate-calc||2015-07-27|Not part of MATE 1.10. Instead galculator is used
 x11/mate-dialogs||2015-07-27|Not part of MATE 1.10
 devel/automake14||2015-07-27|Has expired: Not used in the ports tree anymore
@@ -7749,7 +7749,6 @@ net/py-soapy|net/py-soappy|2015-08-01|Has expired: Abandonware depending on anci
 net-p2p/btqueue||2015-08-01|Has expired: Runtime broken (does not download anything)
 sysutils/vhdtool||2015-08-01|Has expired: Use mkimg(1) instead
 www/rubygem-modernizr||2015-08-01|Has expired: This gem has been removed from rubygems.org by upstream
-sysutils/libzeitgeist|sysutils/zeitgeist|2015-07-26|Merged into zeitgeist
 devel/java-util-concurrent||2015-08-03|Has expired: Included in all current JDKs by default
 devel/py-pyparsing15||2015-08-03|Has expired: Not used in the ports tree anymore
 finance/tryton||2015-08-05|No more supported upstream, use tryton 2.8 instead
@@ -7818,3 +7817,8 @@ german/trytond_account_de_skr03||2015-08-05|No more supported upstream, use tryt
 www/trytond_google_maps||2015-08-05|No more supported upstream, use tryton 2.8 instead
 devel/appdata-tools|devel/appstream-glib|2015-08-05|Replaced by appstream-glib
 textproc/pystemmer|textproc/py-pystemmer|2015-08-06|Rename to match upstream (PyPi) name
+dns/knot|dns/knot1|2015-08-07|Rename to knot1 now knot 2.0 is out
+net/py-xmlrpclib||2015-08-07|Has expired: This is part of standard library since python 2.2
+net-p2p/py-kenosis||2015-08-07|Has expired: Fails to run with modern python
+graphics/skencil||2015-08-08|Has expired: Project is abandoned and was overtaken by sK1 fork
+www/ismail||2015-08-08|Has expired: Development has been discontinued for many years

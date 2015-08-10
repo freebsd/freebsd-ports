@@ -950,6 +950,7 @@
     SUBDIR += py-pysendfile
     SUBDIR += py-pysocks
     SUBDIR += py-pysphere
+    SUBDIR += py-python-bitcoinrpc
     SUBDIR += py-pyvmomi
     SUBDIR += py-pyzmq
     SUBDIR += py-qt4-network
@@ -973,7 +974,6 @@
     SUBDIR += py-urllib3
     SUBDIR += py-wolframalpha
     SUBDIR += py-xmlrpc
-    SUBDIR += py-xmlrpclib
     SUBDIR += py-zope.proxy
     SUBDIR += py-zsi
     SUBDIR += pygopherd

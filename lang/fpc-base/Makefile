@@ -13,6 +13,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Meta package to install all of the Free Pascal base
 
+USE_FPC_RUN=	yes
 WANT_FPC_BASE=	yes
 NO_BUILD=	yes
 NO_INSTALL=	yes

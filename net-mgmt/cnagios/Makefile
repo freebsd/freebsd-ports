@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cnagios
-PORTVERSION=	0.31
-PORTREVISION=	1
+PORTVERSION=	0.32
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	alexander.4mail@gmail.com
@@ -25,10 +24,6 @@ CONFIGURE_ARGS=	--with-etc-dir="${ETCDIR}" \
 		--with-nagios-data=3
 USES=		perl5
 ALL_TARGET=	cnagios
-
-post-patch:
-# check in next relase if version match, and adjust/remove the next line
-	${REINPLACE_CMD} -e 's/0.30/${PORTVERSION}/' ${WRKSRC}/version.h
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cnagios

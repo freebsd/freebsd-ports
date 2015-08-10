@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-power-manager
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.2
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/src/xfce/${PORTNAME}/${PORTVERSION:R}/
 DIST_SUBDIR=	xfce4
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
 	libupower-glib.so:${PORTSDIR}/sysutils/upower
 
 GNU_CONFIGURE=	yes
-USES=		gettext pkgconfig gmake libtool xfce:gtk3 tar:bzip2
+USES=		gettext gmake libtool pkgconfig tar:bzip2 xfce:gtk3
 USE_GNOME=	glib20 gtk30 intltool intlhack
 USE_XFCE=	panel
 INSTALLS_ICONS=	yes

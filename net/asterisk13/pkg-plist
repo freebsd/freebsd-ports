@@ -390,7 +390,7 @@ lib/asterisk/modules/res_clialiases.so
 %%CURL%%lib/asterisk/modules/res_curl.so
 %%CURL%%lib/asterisk/modules/res_config_curl.so
 %%LDAP%%lib/asterisk/modules/res_config_ldap.so
-%%SQLITE%%lib/asterisk/modules/res_config_sqlite.so
+%%SQLITE2%%lib/asterisk/modules/res_config_sqlite.so
 lib/asterisk/modules/res_config_sqlite3.so
 lib/asterisk/modules/res_format_attr_celt.so
 lib/asterisk/modules/res_format_attr_h263.so
@@ -453,6 +453,7 @@ lib/asterisk/modules/res_realtime.so
 lib/asterisk/modules/res_sorcery_astdb.so
 lib/asterisk/modules/res_sorcery_config.so
 lib/asterisk/modules/res_sorcery_memory.so
+lib/asterisk/modules/res_sorcery_memory_cache.so
 lib/asterisk/modules/res_sorcery_realtime.so
 %%SRTP%%lib/asterisk/modules/res_srtp.so
 lib/asterisk/modules/res_stasis.so

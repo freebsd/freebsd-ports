@@ -7,6 +7,7 @@ operator:*:5:amanda
 mail:*:6:postfix,clamav
 ftp:*:14:
 smmsp:*:25:
+video:*:44:
 bind:*:53:
 rdfdb:*:55:
 spamd:*:58:
@@ -206,6 +207,7 @@ distcc:*:561:
 polkit:*:562:
 pulse:*:563:
 pulse-access:*:564:
+polkitd:*:565:
 assp:*:587:
 avahi-autoipd:*:588:
 _xsi:*:600:
@@ -319,6 +321,7 @@ kannel:*:993:
 rcynic:*:994:
 rpkirtr:*:995:
 tarantool:*:996:
+bareos:*:997:
 ebnetd:*:999:
 nogroup:*:65533:
 nobody:*:65534:

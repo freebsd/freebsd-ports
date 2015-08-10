@@ -8,7 +8,6 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/glibmm-2.4.pc:${PORTSDIR}/devel/gl
 
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig
-PORTSCOUT=	ignore:1
 
 DOCSDIR=	${PREFIX}/share/doc/glibmm-2.4
 

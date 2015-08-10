@@ -6,10 +6,15 @@
     SUBDIR += 2bsd-diff
     SUBDIR += R-cran-R2HTML
     SUBDIR += R-cran-XML
+    SUBDIR += R-cran-formatR
+    SUBDIR += R-cran-highr
+    SUBDIR += R-cran-htmltools
+    SUBDIR += R-cran-markdown
     SUBDIR += R-cran-pystr
     SUBDIR += R-cran-stringi
     SUBDIR += R-cran-stringr
     SUBDIR += R-cran-xtable
+    SUBDIR += R-cran-yaml
     SUBDIR += ack
     SUBDIR += adabrowse
     SUBDIR += add-css-links
@@ -1413,6 +1418,7 @@
     SUBDIR += rubygem-sass
     SUBDIR += rubygem-sass-rails
     SUBDIR += rubygem-sass-rails4
+    SUBDIR += rubygem-sass-rails4-rails41
     SUBDIR += rubygem-sass-rails5
     SUBDIR += rubygem-sass32
     SUBDIR += rubygem-sax-machine

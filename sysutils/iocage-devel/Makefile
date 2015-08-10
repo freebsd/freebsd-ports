@@ -13,7 +13,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	pannon
+GH_ACCOUNT=	iocage
 GH_TAGNAME=	4dccc0
 
 .include <bsd.port.pre.mk>

@@ -3,6 +3,7 @@
 
 PORTNAME=	librfm
 PORTVERSION=	5.3.14.6
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/xffm/${PORTVERSION}
 DISTNAME=	${PORTNAME}5-${PORTVERSION}
@@ -12,7 +13,7 @@ COMMENT=	Basic library used by some rfm applications
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	gawk:${PORTSDIR}/japanese/gawk
+BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 LIB_DEPENDS=	libtubo.so:${PORTSDIR}/x11-fm/libtubo \
 		libdbh.so:${PORTSDIR}/databases/dbh \
 		libzip.so:${PORTSDIR}/archivers/libzip \
@@ -23,7 +24,7 @@ OPTIONS_DEFINE=	NLS
 CONFIGURE_ARGS+=--with-pkglibdata
 MAKE_JOB_UNSAFE=yes
 INSTALLS_ICONS=	yes
-USES=		gmake libtool:keepla pkgconfig tar:bzip2 gettext
+USES=		gettext gmake libtool:keepla pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 intltool
 USE_LDCONFIG=	yes

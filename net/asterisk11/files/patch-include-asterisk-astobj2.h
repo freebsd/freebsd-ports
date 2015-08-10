@@ -1,6 +1,6 @@
---- include/asterisk/astobj2.h.orig	2013-07-02 12:30:02.000000000 +0200
-+++ include/asterisk/astobj2.h	2013-07-02 12:31:39.000000000 +0200
-@@ -1472,5 +1472,7 @@
+--- include/asterisk/astobj2.h.orig	2015-07-24 22:06:05 UTC
++++ include/asterisk/astobj2.h
+@@ -1520,5 +1520,7 @@ void __ao2_cleanup_debug(void *obj, cons
  #else
  #define ao2_cleanup(obj) __ao2_cleanup(obj)
  #endif

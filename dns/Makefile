@@ -35,6 +35,7 @@
     SUBDIR += dnscheckengine
     SUBDIR += dnscrypt-proxy
     SUBDIR += dnsdbck
+    SUBDIR += dnsdist
     SUBDIR += dnsflood
     SUBDIR += dnshistory
     SUBDIR += dnsjava
@@ -72,7 +73,7 @@
     SUBDIR += inadyn-mt
     SUBDIR += ipcheck
     SUBDIR += ironsides
-    SUBDIR += knot
+    SUBDIR += knot1
     SUBDIR += knot2
     SUBDIR += ldapdns
     SUBDIR += ldns

@@ -58,6 +58,146 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="dd7f29cc-3ee9-11e5-93ad-002590263bf5">
+    <topic>lighttpd -- Log injection vulnerability in mod_auth</topic>
+    <affects>
+      <package>
+	<name>lighttpd</name>
+	<range><lt>1.4.36</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MITRE reports:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3200">
+	  <p>mod_auth in lighttpd before 1.4.36 allows remote attackers to
+	    inject arbitrary log entries via a basic HTTP authentication string
+	    without a colon character, as demonstrated by a string containing a
+	    NULL and new line character.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3200</cvename>
+      <url>http://redmine.lighttpd.net/issues/2646</url>
+    </references>
+    <dates>
+      <discovery>2015-05-25</discovery>
+      <entry>2015-08-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ff0acfb4-3efa-11e5-93ad-002590263bf5">
+    <topic>pcre -- heap overflow vulnerability in '(?|' situations</topic>
+    <affects>
+      <package>
+	<name>pcre</name>
+	<range><le>8.37_2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Venustech ADLAB reports:</p>
+	<blockquote cite="https://bugs.exim.org/show_bug.cgi?id=1667">
+	  <p>PCRE library is prone to a vulnerability which leads to Heap
+	    Overflow. During the compilation of a malformed regular expression,
+	    more data is written on the malloced block than the expected size
+	    output by compile_regex. Exploits with advanced Heap Fengshui
+	    techniques may allow an attacker to execute arbitrary code in the
+	    context of the user running the affected application.</p>
+	  <p>Latest version of PCRE is prone to a Heap Overflow vulnerability
+	    which could caused by the following regular expression.</p>
+	  <p>/(?J:(?|(:(?|(?'R')(\k'R')|((?'R')))H'Rk'Rf)|s(?'R'))))/</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/202209</freebsdpr>
+      <url>https://bugs.exim.org/show_bug.cgi?id=1667</url>
+    </references>
+    <dates>
+      <discovery>2015-08-05</discovery>
+      <entry>2015-08-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8eee06d4-c21d-4f07-a669-455151ff426f">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>39.0.3,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>39.0.3,1</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>38.1.1,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/advisories/">
+	  <p>MFSA 2015-78 Same origin violation and local file
+	    stealing via PDF reader</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4495</cvename>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-78/</url>
+    </references>
+    <dates>
+      <discovery>2015-08-06</discovery>
+      <entry>2015-08-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ac5ec8e3-3c6c-11e5-b921-00a0986f28c4">
+    <topic>wordpress -- Multiple vulnerability</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<range><lt>4.2.4,1</lt></range>
+      </package>
+      <package>
+	<name>de-wordpress</name>
+	<name>ja-wordpress</name>
+	<name>ru-wordpress</name>
+	<name>zh-wordpress-zh_CH</name>
+	<name>zh-wordpress-zh_TW</name>
+	<range><lt>4.2.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gary Pendergast reports:</p>
+	<blockquote cite="https://wordpress.org/news/2015/08/wordpress-4-2-4-security-and-maintenance-release/">
+	  <p>WordPress 4.2.4 fixes three cross-site scripting vulnerabilities
+	    and a potential SQL injection that could be used to compromise a
+	    site.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://wordpress.org/news/2015/08/wordpress-4-2-4-security-and-maintenance-release/</url>
+      <cvename>CVE-2015-2213</cvename>
+      <cvename>CVE-2015-5730</cvename>
+      <cvename>CVE-2015-5731</cvename>
+      <cvename>CVE-2015-5732</cvename>
+      <cvename>CVE-2015-5733</cvename>
+      <cvename>CVE-2015-5734</cvename>
+    </references>
+    <dates>
+      <discovery>2015-08-04</discovery>
+      <entry>2015-08-06</entry>
+      <modified>2015-08-09</modified>
+    </dates>
+  </vuln>
+
   <vuln vid="57bb5e3d-3c4f-11e5-a4d4-001e8c75030d">
     <topic>subversion -- multiple vulnerabilities</topic>
     <affects>

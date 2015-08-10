@@ -13,6 +13,9 @@
 #			  free pascal compiler, if you need install additional fpc
 #			  units, they can be listed there (USE_FPC= gtk x11 opengl).
 #
+# USE_FPC_RUN		- If you set this to "yes", free pascal units will be 
+#			  registered also as run dependencies.
+#
 # WANT_FPC_BASE		- If you set this to "yes", this automatically will install
 #			  all base units of fpc (gdbint graph ibase libasync hash 
 #			  httpd mysql netdb odbc oracle pasjpeg paszlib pthreads 
@@ -197,10 +200,14 @@ zlib_UNIT=	devel/fpc-zlib
 .		if ${_FPC_ALL_UNITS:M${UNITS}}!=""
 .			if ${_FPC_CFG_UNITS:M${UNITS}}!=""
 BUILD_DEPENDS+= ${UNITSDIR}/${UNITS}/fpunits.cfg:${PORTSDIR}/${${UNITS:S/-/_/}_UNIT}
+.				if defined(USE_FPC_RUN)
 RUN_DEPENDS+=   ${UNITSDIR}/${UNITS}/fpunits.cfg:${PORTSDIR}/${${UNITS:S/-/_/}_UNIT}
+.				endif
 .			else
 BUILD_DEPENDS+= ${UNITSDIR}/${UNITS}/Package.fpc:${PORTSDIR}/${${UNITS:S/-/_/}_UNIT}
+.				if defined(USE_FPC_RUN)
 RUN_DEPENDS+=   ${UNITSDIR}/${UNITS}/Package.fpc:${PORTSDIR}/${${UNITS:S/-/_/}_UNIT}
+.				endif
 .			endif
 
 security-check: fpc-check-install

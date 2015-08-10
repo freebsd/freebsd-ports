@@ -18,6 +18,8 @@ LIB_DEPENDS=	libgoa-1.0.so:${PORTSDIR}/net/gnome-online-accounts \
 		libgweather-3.so:${PORTSDIR}/net/libgweather
 RUN_DEPENDS=	gdm>=3.0.0:${PORTSDIR}/x11/gdm
 
+PORTSCOUT=	limitw:1,even
+
 USES=		autoreconf compiler:c++11-lib gettext gmake libtool \
 		pathfix pkgconfig tar:xz
 USE_GNOME=	gnomedesktop3 gnomeprefix gtk30 intlhack

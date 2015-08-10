@@ -67,6 +67,11 @@
     SUBDIR += bacula5-client-static
     SUBDIR += bacula5-docs
     SUBDIR += bacula5-server
+    SUBDIR += bareos-bat
+    SUBDIR += bareos-client
+    SUBDIR += bareos-client-static
+    SUBDIR += bareos-docs
+    SUBDIR += bareos-server
     SUBDIR += baloo
     SUBDIR += baloo-widgets
     SUBDIR += bamf

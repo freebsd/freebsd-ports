@@ -47,6 +47,9 @@ DEFAULT_SENDER_CONFIGURE_ENABLE=default_sender
 
 DIFFHEADERS_DESC=		Compare signed and verified headers (experimental)
 DIFFHEADERS_CONFIGURE_ENABLE=	diffheaders
+DIFFHEADERS_LIB_DEPENDS=	libtre.so:${PORTSDIR}/textproc/libtre                                                      
+DIFFHEADERS_CONFIGURE_WITH=	tre=${LOCALBASE}                                                                           
+DIFFHEADERS_CONFIGURE_OFF=	--without-tre                                                                              
 
 IDENTITY_HEADER_DESC=		Special header to set identity
 IDENTITY_HEADER_CONFIGURE_ENABLE=	identity_header

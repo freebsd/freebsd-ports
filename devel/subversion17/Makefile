@@ -216,7 +216,7 @@ post-install:	${MKREPOS_TARGET}
 .if ${PORT_OPTIONS:MMOD_DAV_SVN}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/*.so
 	${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/modules.d
-	${CP} ${WRKDIR}/220_subversion.conf.sample ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/modules.d
+	${INSTALL_DATA} ${WRKDIR}/220_subversion.conf.sample ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/modules.d
 .endif
 
 .if !${PORT_OPTIONS:MSTATIC}

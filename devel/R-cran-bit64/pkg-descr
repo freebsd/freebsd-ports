@@ -1,0 +1,9 @@
+Package 'bit64' provides serializable S3 atomic 64bit (signed)
+integers that can be used in vectors, matrices, arrays and data.frames.
+Methods are available for coercion from and to logicals, integers,
+doubles, characters and factors as well as many elementwise and
+summary functions. Many fast algorithmic operations such as 'match'
+and 'order' support interactive data exploration and manipulation
+and optionally leverage caching.
+
+WWW: https://cran.r-project.org/web/packages/bit64/

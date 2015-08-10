@@ -22,6 +22,8 @@ include/node/openssl/archs/darwin64-x86_64-cc/opensslconf.h
 include/node/openssl/archs/linux-aarch64/opensslconf.h
 include/node/openssl/archs/linux-armv4/opensslconf.h
 include/node/openssl/archs/linux-elf/opensslconf.h
+include/node/openssl/archs/linux-ppc/opensslconf.h
+include/node/openssl/archs/linux-ppc64/opensslconf.h
 include/node/openssl/archs/linux-x32/opensslconf.h
 include/node/openssl/archs/linux-x86_64/opensslconf.h
 include/node/openssl/archs/solaris-x86-gcc/opensslconf.h
@@ -101,7 +103,6 @@ include/node/openssl/x509.h
 include/node/openssl/x509_vfy.h
 include/node/openssl/x509v3.h
 include/node/pthread-fixes.h
-include/node/smalloc.h
 include/node/stdint-msvc2008.h
 include/node/tree.h
 include/node/uv-aix.h

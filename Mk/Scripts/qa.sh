@@ -109,7 +109,7 @@ baselibs() {
 			;;
 		esac
 	done <<-EOF
-	$(find ${STAGEDIR}${BIN} ${STAGEDIR}${PREFIX}/sbin \
+	$(find ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/sbin \
 		${STAGEDIR}${PREFIX}/lib ${STAGEDIR}${PREFIX}/libexec \
 		-type f -exec ldd -a {} + 2>/dev/null)
 	EOF
@@ -293,7 +293,7 @@ prefixvar() {
 	fi
 }
 
-checks="shebang symlinks paths stripped desktopfileutils sharedmimeinfo suidfiles libtool libperl prefixvar baselibs"
+checks="shebang symlinks paths stripped desktopfileutils sharedmimeinfo suidfiles libtool libperl prefixvar" # baselibs"
 
 ret=0
 cd ${STAGEDIR}

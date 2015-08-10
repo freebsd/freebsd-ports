@@ -48,12 +48,8 @@ PLIST_SUB=	VERSION=2.91
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 900007
-EXTRA_PATCHES+=		${FILESDIR}/extra-patch-gnome-pty-helper_gnome-utmp.c
-.endif
-
-.if ${OSVERSION} < 1000000
-CFLAGS+=	-lz
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000 || ${OPSYS} == DragonFly
+LIBS+=	-lz
 .endif
 
 post-patch:
@@ -62,7 +58,7 @@ post-patch:
 		${WRKSRC}/src/Makefile.in
 .endif
 # zlib.pc only is available on 10.1-R and newer.
-.if ${OSVERSION} < 1000000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000 || ${OPSYS} == DragonFly
 	@${REINPLACE_CMD} -e 's|gio-unix-2.0 zlib|gio-unix-2.0|g' \
 		${WRKSRC}/configure
 .endif
@@ -74,8 +70,6 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} -e 's|(AM_MAKEFLAGS) install-exec-hook|(AM_MAKEFLAGS)|g' \
 		${WRKSRC}/gnome-pty-helper/Makefile.in
-	@${REINPLACE_CMD} -e 's|zlib"|"|g' \
-		${WRKSRC}/configure
 
 .include <bsd.port.mk>
 
