@@ -52,6 +52,3 @@
 %%WWWDIR%%/localization/zh_CN.inc
 %%WWWDIR%%/localization/zh_TW.inc
 %%WWWDIR%%/package.xml
-@dir %%WWWDIR%%/localization
-@dir %%WWWDIR%%/SQL
-@dir %%WWWDIR%%/config

@@ -13,6 +13,7 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	roundcube>=0.8:${PORTSDIR}/mail/roundcube
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sblaisot
