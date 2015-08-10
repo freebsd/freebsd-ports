@@ -1774,6 +1774,7 @@ llvm37/include/llvm/Transforms/Utils/ValueMapper.h
 llvm37/include/llvm/Transforms/Vectorize.h
 llvm37/lib/BugpointPasses.so
 llvm37/lib/LLVMHello.so
+%%GOLD%%llvm37/lib/LLVMgold.so
 %%CLANG%%llvm37/lib/clang/3.7.0/include/Intrin.h
 %%CLANG%%llvm37/lib/clang/3.7.0/include/__stddef_max_align_t.h
 %%CLANG%%llvm37/lib/clang/3.7.0/include/__wmmintrin_aes.h
