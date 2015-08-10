@@ -217,6 +217,7 @@
     SUBDIR += p5-Net-IPv6Addr
     SUBDIR += p5-Net-NSCA-Client
     SUBDIR += p5-Net-Netmask
+    SUBDIR += p5-Net-OpenVPN-Manage
     SUBDIR += p5-Net-SNMP
     SUBDIR += p5-Net-SNMP-Util
     SUBDIR += p5-Net-SNMPTrapd
