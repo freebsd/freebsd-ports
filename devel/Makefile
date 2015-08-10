@@ -38,6 +38,7 @@
     SUBDIR += R-cran-registry
     SUBDIR += R-cran-reshape
     SUBDIR += R-cran-reshape2
+    SUBDIR += R-cran-rngtools
     SUBDIR += SpecTcl
     SUBDIR += aap
     SUBDIR += aarch64-binutils
