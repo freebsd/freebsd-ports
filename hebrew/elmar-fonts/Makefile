@@ -1,20 +1,23 @@
 # Created by: nadav@cs.technion.ac.il
 # $FreeBSD$
 
-PORTNAME=	elmar-fonts
+PORTNAME=	elmar
 PORTVERSION=	3.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	hebrew x11-fonts
+MASTER_SITES=	ftp://ftp.elmar.co.il/Portable/fonts/
+PKGNAMESUFFIX=	-fonts
 DISTNAME=	H.fonts
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	cpm@fbsd.es
-COMMENT=	Collection of Hebrew fonts from El-Mar software Ltd
+COMMENT=	Collection of Hebrew fonts from El-Mar software, Ltd
 
-USES=		fonts
+USES=		fonts tar:Z
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 FONTNAME=	hebrew
+
+SUB_FILES=	pkg-message
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}
