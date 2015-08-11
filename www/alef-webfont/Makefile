@@ -3,6 +3,7 @@
 
 PORTNAME=	alef
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://alef.hagilda.com/
 PKGNAMESUFFIX=	-webfont
