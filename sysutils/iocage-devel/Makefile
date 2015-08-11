@@ -3,6 +3,7 @@
 
 PORTNAME=	iocage
 PORTVERSION=	1.7.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
 
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	iocage
-GH_TAGNAME=	4dccc0
+GH_TAGNAME=	998eeb
 
 .include <bsd.port.pre.mk>
 
