@@ -29,6 +29,7 @@
     SUBDIR += R-cran-gtable
     SUBDIR += R-cran-igraph
     SUBDIR += R-cran-inline
+    SUBDIR += R-cran-irlba
     SUBDIR += R-cran-labeling
     SUBDIR += R-cran-memisc
     SUBDIR += R-cran-minqa
