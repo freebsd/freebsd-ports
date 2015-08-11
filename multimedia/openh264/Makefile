@@ -45,7 +45,7 @@ TEST_ALL_TARGET=test
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MDEBUG}
-. if ${ARCH} == amd64 || ${ARCH} == arm || ${ARCH} == i386
+. if ${ARCH} == amd64 || ${ARCH} == i386
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 . endif
 .endif
