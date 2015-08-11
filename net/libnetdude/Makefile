@@ -36,4 +36,7 @@ post-patch:
 		-e 's,-I$$(top_srcdir)/libltdl,@INCLTDL@,' \
 		-e '/LIBADD/s,$$(top_builddir)/libltdl/libltdlc.la,@LIBLTDL@,'
 
+post-install:
+	@${FIND} -d ${STAGEDIR}${DOCSDIR} -type d -empty -delete
+
 .include <bsd.port.mk>
