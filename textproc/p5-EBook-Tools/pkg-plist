@@ -1,5 +1,6 @@
 man/man1/ebook.1.gz
 %%PERL5_MAN3%%/EBook::Tools.3.gz
+%%PERL5_MAN3%%/EBook::Tools::BISG.3.gz
 %%PERL5_MAN3%%/EBook::Tools::EReader.3.gz
 %%PERL5_MAN3%%/EBook::Tools::IMP.3.gz
 %%PERL5_MAN3%%/EBook::Tools::LZSS.3.gz
@@ -8,6 +9,7 @@ man/man1/ebook.1.gz
 %%PERL5_MAN3%%/EBook::Tools::PalmDoc.3.gz
 %%PERL5_MAN3%%/EBook::Tools::Unpack.3.gz
 %%SITE_PERL%%/EBook/Tools.pm
+%%SITE_PERL%%/EBook/Tools/BISG.pm
 %%SITE_PERL%%/EBook/Tools/EReader.pm
 %%SITE_PERL%%/EBook/Tools/IMP.pm
 %%SITE_PERL%%/EBook/Tools/LZSS.pm
