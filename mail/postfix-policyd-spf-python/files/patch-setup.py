@@ -1,6 +1,6 @@
---- setup.py.orig	2013-05-14 12:57:04.000000000 +0900
-+++ setup.py	2014-01-14 10:15:11.000000000 +0900
-@@ -13,10 +13,10 @@
+--- setup.py.orig	2014-06-04 05:08:20 UTC
++++ setup.py
+@@ -13,10 +13,10 @@ setup(name='pypolicyd-spf',
        py_modules=['policydspfsupp', 'policydspfuser'],
        keywords = ['Postfix','spf','email'],
        scripts = ['policyd-spf'],
