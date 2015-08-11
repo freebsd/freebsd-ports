@@ -17,6 +17,7 @@ LICENSE_PERMS=	auto-accept
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=1.7.7.1:${PORTSDIR}/security/py-paramiko
 
 USES=		python:run
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/tsshbatch.py \
 		man/man1/tsshbatch.1.gz
