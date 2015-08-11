@@ -58,6 +58,38 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="34e60332-2448-4ed6-93f0-12713749f250">
+    <topic>libvpx -- multiple buffer overflows</topic>
+    <affects>
+      <package>
+	<name>libvpx</name>
+	<range><lt>1.5.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/security/advisories/mfsa2015-89/">
+	  <p>Security researcher Abhishek Arya (Inferno) of the Google
+	    Chrome Security Team used the Address Sanitizer tool to
+	    discover two buffer overflow issues in the Libvpx library
+	    used for WebM video when decoding a malformed WebM video
+	    file. These buffer overflows result in potentially
+	    exploitable crashes.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4485</cvename>
+      <cvename>CVE-2015-4486</cvename>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-89/</url>
+    </references>
+    <dates>
+      <discovery>2015-08-11</discovery>
+      <entry>2015-08-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c66a5632-708a-4727-8236-d65b2d5b2739">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
@@ -115,8 +147,6 @@ Notes:
 	    JavaScript</p>
 	  <p>MFSA 2015-88 Heap overflow in gdk-pixbuf when scaling
 	    bitmap images</p>
-	  <p>MFSA 2015-89 Buffer overflows on Libvpx when decoding
-	    WebM video</p>
 	  <p>MFSA 2015-90 Vulnerabilities found through code
 	    inspection</p>
 	  <p>MFSA 2015-91 Mozilla Content Security Policy allows for
@@ -138,8 +168,6 @@ Notes:
       <cvename>CVE-2015-4482</cvename>
       <cvename>CVE-2015-4483</cvename>
       <cvename>CVE-2015-4484</cvename>
-      <cvename>CVE-2015-4485</cvename>
-      <cvename>CVE-2015-4486</cvename>
       <cvename>CVE-2015-4487</cvename>
       <cvename>CVE-2015-4488</cvename>
       <cvename>CVE-2015-4489</cvename>
@@ -157,7 +185,6 @@ Notes:
       <url>https://www.mozilla.org/security/advisories/mfsa2015-86/</url>
       <url>https://www.mozilla.org/security/advisories/mfsa2015-87/</url>
       <url>https://www.mozilla.org/security/advisories/mfsa2015-88/</url>
-      <url>https://www.mozilla.org/security/advisories/mfsa2015-89/</url>
       <url>https://www.mozilla.org/security/advisories/mfsa2015-90/</url>
       <url>https://www.mozilla.org/security/advisories/mfsa2015-91/</url>
       <url>https://www.mozilla.org/security/advisories/mfsa2015-92/</url>
@@ -165,6 +192,7 @@ Notes:
     <dates>
       <discovery>2015-08-11</discovery>
       <entry>2015-08-11</entry>
+      <modified>2015-08-11</modified>
     </dates>
   </vuln>
 
