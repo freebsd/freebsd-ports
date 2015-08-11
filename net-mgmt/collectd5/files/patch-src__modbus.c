@@ -1,5 +1,5 @@
---- src/modbus.c.orig       2013-01-27 17:47:18.246255000 +0400
-+++ src/modbus.c    2013-05-14 18:40:05.000000000 +0400
+--- src/modbus.c.orig	2015-05-20 12:04:47 UTC
++++ src/modbus.c
 @@ -25,6 +25,9 @@
  #include "plugin.h"
  #include "configfile.h"

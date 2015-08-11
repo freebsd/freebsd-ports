@@ -10,6 +10,9 @@ include/collectd/client.h
 include/collectd/lcc_features.h
 include/collectd/network.h
 include/collectd/network_buffer.h
+lib/libcollectdclient.so
+lib/libcollectdclient.so.1
+lib/libcollectdclient.so.1.0.0
 lib/collectd/aggregation.so
 %%CURL%%lib/collectd/apache.so
 lib/collectd/apcups.so
@@ -27,9 +30,12 @@ lib/collectd/df.so
 lib/collectd/dns.so
 lib/collectd/email.so
 lib/collectd/exec.so
+lib/collectd/fhcount.so
 lib/collectd/filecount.so
 %%STATGRAB%%lib/collectd/interface.so
+%%IPMI%%lib/collectd/ipmi.so
 lib/collectd/load.so
+%%LOGSTASH%%lib/collectd/log_logstash.so
 lib/collectd/logfile.so
 lib/collectd/match_empty_counter.so
 lib/collectd/match_hashed.so
@@ -40,21 +46,24 @@ lib/collectd/mbmon.so
 %%MEMCACHEC%%lib/collectd/memcachec.so
 lib/collectd/memcached.so
 lib/collectd/memory.so
+%%MODBUS%%lib/collectd/modbus.so
 %%MYSQL%%lib/collectd/mysql.so
 lib/collectd/network.so
 %%CURL%%lib/collectd/nginx.so
-%%NOTIFYEMAIL%%lib/collectd/notify_email.so
 %%NOTIFYDESKTOP%%lib/collectd/notify_desktop.so
+%%NOTIFYEMAIL%%lib/collectd/notify_email.so
 lib/collectd/ntpd.so
 %%NUTUPS%%lib/collectd/nut.so
+%%OLSRD%%lib/collectd/olsrd.so
+%%ONEWIRE%%lib/collectd/onewire.so
+%%OPENLDAP%%lib/collectd/openldap.so
 lib/collectd/openvpn.so
 %%PERL%%lib/collectd/perl.so
-%%PERL%%%%PERL5_MAN3%%/Collectd::Unixsock.3.gz
-%%PERL%%%%SITE_PERL%%/Collectd/Plugins/OpenVZ.pm
+lib/collectd/pf.so
+%%PINBA%%lib/collectd/pinba.so
 %%PING%%lib/collectd/ping.so
 %%PGSQL%%lib/collectd/postgresql.so
 lib/collectd/powerdns.so
-lib/collectd/pf.so
 lib/collectd/processes.so
 %%PYTHON%%lib/collectd/python.so
 %%REDIS%%lib/collectd/redis.so
@@ -63,11 +72,12 @@ lib/collectd/processes.so
 %%RRDTOOL%%lib/collectd/rrdtool.so
 %%SIGROK%%lib/collectd/sigrok.so
 %%SNMP%%lib/collectd/snmp.so
-lib/collectd/statsd.so
+%%STATSD%%lib/collectd/statsd.so
 lib/collectd/swap.so
 lib/collectd/syslog.so
 lib/collectd/table.so
 lib/collectd/tail.so
+lib/collectd/tail_csv.so
 lib/collectd/target_notification.so
 lib/collectd/target_replace.so
 lib/collectd/target_scale.so
@@ -83,20 +93,21 @@ lib/collectd/uptime.so
 %%USERS%%lib/collectd/users.so
 lib/collectd/uuid.so
 %%VARNISH%%lib/collectd/varnish.so
-%%VIRT%%lib/collectd/libvirt.so
+%%VIRT%%lib/collectd/virt.so
 lib/collectd/write_graphite.so
 %%CURL%%lib/collectd/write_http.so
+lib/collectd/write_log.so
 %%MONGODB%%lib/collectd/write_mongodb.so
 %%REDIS%%lib/collectd/write_redis.so
 %%RIEMANN%%lib/collectd/write_riemann.so
 %%XMMS%%lib/collectd/xmms.so
 lib/collectd/zfs_arc.so
-lib/libcollectdclient.so
-lib/libcollectdclient.so.1
-lib/libcollectdclient.so.1.0.0
+%%ZOOKEEPER%%lib/collectd/zookeeper.so
 libdata/pkgconfig/libcollectdclient.pc
 %%DATADIR%%/postgresql_default.conf
 %%DATADIR%%/types.db
+%%PERL%%%%PERL5_MAN3%%/Collectd::Unixsock.3.gz
+%%PERL%%%%SITE_PERL%%/Collectd/Plugins/OpenVZ.pm
 %%PERL%%%%SITE_PERL%%/Collectd.pm
 %%PERL%%%%SITE_PERL%%/Collectd/Unixsock.pm
 man/man1/collectd-nagios.1.gz
@@ -115,5 +126,3 @@ man/man5/collectd-unixsock.5.gz
 man/man5/collectd.conf.5.gz
 man/man5/types.db.5.gz
 @dir /var/db/collectd
-@dir /var/lib/collectd
-@dir /var/lib
