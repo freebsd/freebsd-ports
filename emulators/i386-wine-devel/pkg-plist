@@ -230,6 +230,14 @@ include/wine/windows/d3drmobj.h
 include/wine/windows/d3drmwin.h
 include/wine/windows/d3dtypes.h
 include/wine/windows/d3dvec.inl
+%%OSREL8-STAGING%%include/wine/windows/d3dx10core.h
+%%OSREL9-STAGING%%include/wine/windows/d3dx10core.h
+%%OSREL10-STAGING%%include/wine/windows/d3dx10core.h
+%%OSREL11-STAGING%%include/wine/windows/d3dx10core.h
+%%OSREL8-STAGING%%include/wine/windows/d3dx10core.idl
+%%OSREL9-STAGING%%include/wine/windows/d3dx10core.idl
+%%OSREL10-STAGING%%include/wine/windows/d3dx10core.idl
+%%OSREL11-STAGING%%include/wine/windows/d3dx10core.idl
 include/wine/windows/d3dx9.h
 include/wine/windows/d3dx9anim.h
 include/wine/windows/d3dx9core.h
@@ -241,6 +249,7 @@ include/wine/windows/d3dx9shader.h
 include/wine/windows/d3dx9shape.h
 include/wine/windows/d3dx9tex.h
 include/wine/windows/d3dx9xof.h
+include/wine/windows/davclnt.h
 include/wine/windows/dbccmd.idl
 include/wine/windows/dbcses.idl
 include/wine/windows/dbdsad.idl
@@ -380,6 +389,10 @@ include/wine/windows/gameux.idl
 include/wine/windows/gdiplus.h
 include/wine/windows/gdipluscolor.h
 include/wine/windows/gdipluscolormatrix.h
+%%OSREL8-STAGING%%include/wine/windows/gdipluseffects.h
+%%OSREL9-STAGING%%include/wine/windows/gdipluseffects.h
+%%OSREL10-STAGING%%include/wine/windows/gdipluseffects.h
+%%OSREL11-STAGING%%include/wine/windows/gdipluseffects.h
 include/wine/windows/gdiplusenums.h
 include/wine/windows/gdiplusflat.h
 include/wine/windows/gdiplusgpstubs.h
@@ -433,6 +446,8 @@ include/wine/windows/inputscope.h
 include/wine/windows/inputscope.idl
 include/wine/windows/inseng.h
 include/wine/windows/inseng.idl
+include/wine/windows/inspectable.h
+include/wine/windows/inspectable.idl
 include/wine/windows/intshcut.h
 include/wine/windows/ipexport.h
 include/wine/windows/iphlpapi.h
@@ -550,6 +565,7 @@ include/wine/windows/netcon.h
 include/wine/windows/netcon.idl
 include/wine/windows/netfw.h
 include/wine/windows/netfw.idl
+include/wine/windows/netioapi.h
 include/wine/windows/netlistmgr.h
 include/wine/windows/netlistmgr.idl
 include/wine/windows/nldef.h
@@ -775,6 +791,7 @@ include/wine/windows/wbemdisp.h
 include/wine/windows/wbemdisp.idl
 include/wine/windows/wbemprov.h
 include/wine/windows/wbemprov.idl
+include/wine/windows/webservices.h
 include/wine/windows/werapi.h
 include/wine/windows/wfext.h
 include/wine/windows/wia.h
@@ -900,6 +917,8 @@ lib32/libXxf86vm.so.1
 lib32/libdrm.so.2
 lib32/libdrm_intel.so.1
 lib32/libdrm_radeon.so.1
+%%OSREL10%%lib32/libedit.so.0
+%%OSREL11%%lib32/libedit.so.0
 lib32/libexpat.so.1
 %%OSREL8-STAGING%%lib32/libffi.so.6
 %%OSREL9-STAGING%%lib32/libffi.so.6
@@ -2089,10 +2108,6 @@ lib32/wine/libuserenv.def
 lib32/wine/libusp10.def
 lib32/wine/libuuid.a
 lib32/wine/libuxtheme.def
-%%OSREL8-STAGING%%lib32/wine/libvcomp.def
-%%OSREL9-STAGING%%lib32/wine/libvcomp.def
-%%OSREL10-STAGING%%lib32/wine/libvcomp.def
-%%OSREL11-STAGING%%lib32/wine/libvcomp.def
 lib32/wine/libvdmdbg.def
 lib32/wine/libversion.def
 lib32/wine/libwebservices.def
@@ -2600,6 +2615,15 @@ share/wine/fonts/vgasysg.fon
 share/wine/fonts/vgasysr.fon
 share/wine/fonts/vgasyst.fon
 share/wine/fonts/wingding.ttf
-share/wine/l_intl.nls
-share/wine/patch-nvidia.sh
-share/wine/wine.inf
+%%OSREL8-DEVEL%%share/wine/l_intl.nls
+%%OSREL9%%share/wine/l_intl.nls
+%%OSREL10%%share/wine/l_intl.nls
+%%OSREL11%%share/wine/l_intl.nls
+%%OSREL8-DEVEL%%share/wine/patch-nvidia.sh
+%%OSREL9%%share/wine/patch-nvidia.sh
+%%OSREL10%%share/wine/patch-nvidia.sh
+%%OSREL11%%share/wine/patch-nvidia.sh
+%%OSREL8-DEVEL%%share/wine/wine.inf
+%%OSREL9%%share/wine/wine.inf
+%%OSREL10%%share/wine/wine.inf
+%%OSREL11%%share/wine/wine.inf
