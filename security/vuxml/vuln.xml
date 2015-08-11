@@ -58,6 +58,116 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c66a5632-708a-4727-8236-d65b2d5b2739">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>40.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>40.0,1</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.37</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.37</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>38.2.0,1</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><lt>38.2.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>38.2.0</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>38.2.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/advisories/">
+	  <p>MFSA 2015-79 Miscellaneous memory safety hazards (rv:40.0
+	    / rv:38.2)</p>
+	  <p>MFSA 2015-80 Out-of-bounds read with malformed MP3
+	    file</p>
+	  <p>MFSA 2015-81 Use-after-free in MediaStream playback</p>
+	    <p>MFSA 2015-82 Redefinition of non-configurable JavaScript object properties</p>
+	  <p>MFSA 2015-83 Overflow issues in libstagefright</p>
+	  <p>MFSA 2015-84 Arbitrary file overwriting through Mozilla
+	    Maintenance Service with hard links</p>
+	  <p>MFSA 2015-85 Out-of-bounds write with Updater and
+	    malicious MAR file</p>
+	  <p>MFSA 2015-86 Feed protocol with POST bypasses mixed
+	    content protections</p>
+	  <p>MFSA 2015-87 Crash when using shared memory in
+	    JavaScript</p>
+	  <p>MFSA 2015-88 Heap overflow in gdk-pixbuf when scaling
+	    bitmap images</p>
+	  <p>MFSA 2015-89 Buffer overflows on Libvpx when decoding
+	    WebM video</p>
+	  <p>MFSA 2015-90 Vulnerabilities found through code
+	    inspection</p>
+	  <p>MFSA 2015-91 Mozilla Content Security Policy allows for
+	    asterisk wildcards in violation of CSP specification</p>
+	  <p>MFSA 2015-92 Use-after-free in XMLHttpRequest with shared
+	    workers</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4473</cvename>
+      <cvename>CVE-2015-4474</cvename>
+      <cvename>CVE-2015-4475</cvename>
+      <cvename>CVE-2015-4477</cvename>
+      <cvename>CVE-2015-4478</cvename>
+      <cvename>CVE-2015-4479</cvename>
+      <cvename>CVE-2015-4480</cvename>
+      <cvename>CVE-2015-4481</cvename>
+      <cvename>CVE-2015-4482</cvename>
+      <cvename>CVE-2015-4483</cvename>
+      <cvename>CVE-2015-4484</cvename>
+      <cvename>CVE-2015-4485</cvename>
+      <cvename>CVE-2015-4486</cvename>
+      <cvename>CVE-2015-4487</cvename>
+      <cvename>CVE-2015-4488</cvename>
+      <cvename>CVE-2015-4489</cvename>
+      <cvename>CVE-2015-4490</cvename>
+      <cvename>CVE-2015-4491</cvename>
+      <cvename>CVE-2015-4492</cvename>
+      <cvename>CVE-2015-4493</cvename>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-79/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-80/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-81/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-82/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-83/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-84/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-85/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-86/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-87/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-88/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-89/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-90/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-91/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-92/</url>
+    </references>
+    <dates>
+      <discovery>2015-08-11</discovery>
+      <entry>2015-08-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="dd7f29cc-3ee9-11e5-93ad-002590263bf5">
     <topic>lighttpd -- Log injection vulnerability in mod_auth</topic>
     <affects>
