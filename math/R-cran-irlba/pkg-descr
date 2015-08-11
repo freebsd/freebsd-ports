@@ -1,0 +1,4 @@
+A fast and memory-efficient method for computing a few approximate
+singular values and singular vectors of large matrices.
+
+WWW: https://cran.r-project.org/web/packages/irlba/
