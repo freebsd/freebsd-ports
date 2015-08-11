@@ -20,10 +20,9 @@ LIB_DEPENDS=	librazorback_api.so:${PORTSDIR}/security/razorback-api \
 BUILD_DEPENDS=	razorback-masterNugget>=0.5.0:${PORTSDIR}/security/razorback-masterNugget
 RUN_DEPENDS=	razorback-masterNugget>=0.5.0:${PORTSDIR}/security/razorback-masterNugget
 
-USES=		libtool pkgconfig
+USES=		autoreconf libtool pkgconfig
 RB_LIBDIR?=	${PREFIX}/lib/razorback
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf
 USE_LDCONFIG=	${RB_LIBDIR}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
