@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	graphite2
-PORTVERSION=	1.2.4
+PORTVERSION=	1.3.0
 CATEGORIES=	graphics print
 MASTER_SITES=	SF/silgraphite/${PORTNAME}
 
