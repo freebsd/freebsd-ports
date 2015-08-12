@@ -117,6 +117,7 @@
 %%WXGTK%%man/de/man1/mkvmerge.1.gz
 %%WXGTK%%man/de/man1/mkvpropedit.1.gz
 %%WXGTK%%man/de/man1/mmg.1.gz
+%%WXGTK%%man/es/man1/mmg.1.gz
 %%WXGTK%%man/ja/man1/mmg.1.gz
 %%WXGTK%%man/man1/mmg.1.gz
 %%WXGTK%%man/nl/man1/mmg.1.gz
@@ -193,7 +194,6 @@ man/es/man1/mkvextract.1.gz
 man/es/man1/mkvinfo.1.gz
 man/es/man1/mkvmerge.1.gz
 man/es/man1/mkvpropedit.1.gz
-man/es/man1/mmg.1.gz
 man/ja/man1/mkvextract.1.gz
 man/ja/man1/mkvinfo.1.gz
 man/ja/man1/mkvmerge.1.gz
