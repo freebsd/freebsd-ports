@@ -1,0 +1,5 @@
+A framework for creating HTML widgets that render in various contexts
+including the R console, 'R Markdown' documents, and 'Shiny' web
+applications.
+
+WWW: https://cran.r-project.org/web/packages/htmlwidgets/
