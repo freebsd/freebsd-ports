@@ -119,6 +119,7 @@
     SUBDIR += libijs
     SUBDIR += libmspub01
     SUBDIR += libotf
+    SUBDIR += libpagemaker
     SUBDIR += libpaper
     SUBDIR += libppd
     SUBDIR += libspectre
