@@ -1830,6 +1830,7 @@ llvm37/lib/LLVMHello.so
 %%CLANG%%llvm37/lib/clang/3.7.0/include/tmmintrin.h
 %%CLANG%%llvm37/lib/clang/3.7.0/include/unwind.h
 %%CLANG%%llvm37/lib/clang/3.7.0/include/vadefs.h
+%%CLANG%%llvm37/lib/clang/3.7.0/include/vecintrin.h
 %%CLANG%%llvm37/lib/clang/3.7.0/include/wmmintrin.h
 %%CLANG%%llvm37/lib/clang/3.7.0/include/x86intrin.h
 %%CLANG%%llvm37/lib/clang/3.7.0/include/xmmintrin.h
