@@ -1,11 +1,10 @@
-%%BASH%%etc/bash_completion.d/lldpcli.bash-completion
 %%ETCDIR%%.d/README.conf
 include/lldp-const.h
 include/lldpctl.h
 lib/liblldpctl.a
 lib/liblldpctl.so
 lib/liblldpctl.so.4
-lib/liblldpctl.so.4.6.0
+lib/liblldpctl.so.4.7.0
 libdata/pkgconfig/lldpctl.pc
 man/man8/lldpcli.8.gz
 man/man8/lldpctl.8.gz
@@ -13,6 +12,7 @@ man/man8/lldpd.8.gz
 sbin/lldpcli
 sbin/lldpctl
 sbin/lldpd
+%%BASH%%share/bash-completion/completions/lldpcli
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTE.md
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/NEWS
