@@ -1,6 +1,6 @@
---- extra/yassl/taocrypt/src/integer.cpp.orig	2014-04-15 14:02:39.000000000 +0300
-+++ extra/yassl/taocrypt/src/integer.cpp	2014-05-16 17:00:15.000000000 +0300
-@@ -75,7 +75,7 @@
+--- extra/yassl/taocrypt/src/integer.cpp.orig	2015-06-17 14:54:11 UTC
++++ extra/yassl/taocrypt/src/integer.cpp
+@@ -74,7 +74,7 @@ template <class T>
  CPP_TYPENAME AlignedAllocator<T>::pointer AlignedAllocator<T>::allocate(
                                             size_type n, const void *)
  {

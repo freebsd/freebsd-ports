@@ -1,6 +1,6 @@
---- sql/sys_vars.cc.orig	2014-08-09 00:13:37.000000000 +0200
-+++ sql/sys_vars.cc	2014-09-05 19:30:55.609134039 +0200
-@@ -1012,7 +1012,7 @@
+--- sql/sys_vars.cc.orig	2015-06-17 14:54:13 UTC
++++ sql/sys_vars.cc
+@@ -1012,7 +1012,7 @@ static Sys_var_ulong Sys_interactive_tim
         "connection before closing it",
         SESSION_VAR(net_interactive_timeout),
         CMD_LINE(REQUIRED_ARG),
@@ -9,7 +9,7 @@
  
  static Sys_var_ulonglong Sys_join_buffer_size(
         "join_buffer_size",
-@@ -2044,7 +2044,7 @@
+@@ -2046,7 +2046,7 @@ static Sys_var_ulong Sys_net_read_timeou
         "Number of seconds to wait for more data from a connection before "
         "aborting the read",
         SESSION_VAR(net_read_timeout), CMD_LINE(REQUIRED_ARG),
@@ -18,7 +18,7 @@
         NO_MUTEX_GUARD, NOT_IN_BINLOG, ON_CHECK(0),
         ON_UPDATE(fix_net_read_timeout));
  
-@@ -2059,7 +2059,7 @@
+@@ -2061,7 +2061,7 @@ static Sys_var_ulong Sys_net_write_timeo
         "Number of seconds to wait for a block to be written to a connection "
         "before aborting the write",
         SESSION_VAR(net_write_timeout), CMD_LINE(REQUIRED_ARG),
@@ -27,7 +27,7 @@
         NO_MUTEX_GUARD, NOT_IN_BINLOG, ON_CHECK(0),
         ON_UPDATE(fix_net_write_timeout));
  
-@@ -3288,7 +3288,7 @@
+@@ -3291,7 +3291,7 @@ static Sys_var_ulong Sys_net_wait_timeou
         "The number of seconds the server waits for activity on a "
         "connection before closing it",
         SESSION_VAR(net_wait_timeout), CMD_LINE(REQUIRED_ARG),
