@@ -58,6 +58,70 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="42c98cef-62b1-4b8b-9065-f4621e08d526">
+    <topic>libvpx -- out-of-bounds write</topic>
+    <affects>
+      <package>
+	<name>libvpx</name>
+	<range><lt>1.4.0</lt></range>
+      </package>
+      <package>
+	<name>firefox</name>
+	<range><lt>33.0,1</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>31.1.2,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>33.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.30</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>31.1.2</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.30</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>31.1.2</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><lt>31.1.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/advisories/mfsa2014-77/">
+	  <p>Using the Address Sanitizer tool, security researcher
+	    Abhishek Arya (Inferno) of the Google Chrome Security Team
+	    found an out-of-bounds write when buffering WebM format
+	    video containing frames with invalid tile sizes. This can
+	    lead to a potentially exploitable crash during WebM video
+	    playback.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1578</cvename>
+      <url>https://www.mozilla.org/security/advisories/mfsa2014-77/</url>
+      <url>https://hg.mozilla.org/releases/mozilla-esr31/rev/6023f0b4f8ba</url>
+    </references>
+    <dates>
+      <discovery>2014-10-14</discovery>
+      <entry>2015-08-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f3778328-d288-4b39-86a4-65877331eaf7">
     <topic>Adobe Flash Player -- critical vulnerabilities</topic>
     <affects>
@@ -12223,7 +12287,6 @@ Notes:
 	  <p>MFSA 2014-75 Buffer overflow during CSS manipulation</p>
 	  <p>MFSA 2014-76 Web Audio memory corruption issues with
 	    custom waveforms</p>
-	  <p>MFSA 2014-77 Out-of-bounds write with WebM video</p>
 	  <p>MFSA 2014-78 Further uninitialized memory use during GIF</p>
 	  <p>MFSA 2014-79 Use-after-free interacting with text
 	    directionality</p>
@@ -12239,7 +12302,6 @@ Notes:
       <cvename>CVE-2014-1575</cvename>
       <cvename>CVE-2014-1576</cvename>
       <cvename>CVE-2014-1577</cvename>
-      <cvename>CVE-2014-1578</cvename>
       <cvename>CVE-2014-1580</cvename>
       <cvename>CVE-2014-1581</cvename>
       <cvename>CVE-2014-1582</cvename>
@@ -12250,7 +12312,6 @@ Notes:
       <url>https://www.mozilla.org/security/announce/2014/mfsa2014-74.html</url>
       <url>https://www.mozilla.org/security/announce/2014/mfsa2014-75.html</url>
       <url>https://www.mozilla.org/security/announce/2014/mfsa2014-76.html</url>
-      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-77.html</url>
       <url>https://www.mozilla.org/security/announce/2014/mfsa2014-78.html</url>
       <url>https://www.mozilla.org/security/announce/2014/mfsa2014-79.html</url>
       <url>https://www.mozilla.org/security/announce/2014/mfsa2014-80.html</url>
@@ -12261,7 +12322,7 @@ Notes:
     <dates>
       <discovery>2014-10-14</discovery>
       <entry>2014-10-14</entry>
-      <modified>2014-10-16</modified>
+      <modified>2015-08-12</modified>
     </dates>
   </vuln>
 
