@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	7.9.0
+PORTVERSION=	8.2.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		LOCAL/ehaupt
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libboost_regex.so:${PORTSDIR}/devel/boost-libs \
 		libmatroska.so:${PORTSDIR}/multimedia/libmatroska
 
-USES=		pkgconfig gettext iconv compiler:c++11-lib tar:xz
+USES=		compiler:c++11-lib gettext iconv pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=	yes

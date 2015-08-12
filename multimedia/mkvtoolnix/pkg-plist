@@ -124,7 +124,6 @@
 %%WXGTK%%man/zh_CN/man1/mmg.1.gz
 %%WXGTK%%share/applications/mkvinfo.desktop
 %%WXGTK%%share/applications/mkvmergeGUI.desktop
-%%WXGTK%%share/applications/mkvtoolnix-gui.desktop
 %%WXGTK%%share/icons/hicolor/128x128/apps/mkvextract.png
 %%WXGTK%%share/icons/hicolor/128x128/apps/mkvinfo.png
 %%WXGTK%%share/icons/hicolor/128x128/apps/mkvmerge.png
@@ -190,6 +189,11 @@ bin/mkvextract
 bin/mkvinfo
 bin/mkvmerge
 bin/mkvpropedit
+man/es/man1/mkvextract.1.gz
+man/es/man1/mkvinfo.1.gz
+man/es/man1/mkvmerge.1.gz
+man/es/man1/mkvpropedit.1.gz
+man/es/man1/mmg.1.gz
 man/ja/man1/mkvextract.1.gz
 man/ja/man1/mkvinfo.1.gz
 man/ja/man1/mkvmerge.1.gz
