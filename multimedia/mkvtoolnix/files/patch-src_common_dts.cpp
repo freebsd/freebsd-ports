@@ -1,6 +1,6 @@
---- src/common/dts.cpp.orig	2015-06-08 14:19:36 UTC
+--- src/common/dts.cpp.orig	2015-07-18 11:39:41 UTC
 +++ src/common/dts.cpp
-@@ -19,6 +19,10 @@
+@@ -23,6 +23,10 @@
  #include "common/endian.h"
  #include "common/math.h"
  
