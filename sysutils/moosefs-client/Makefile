@@ -1,33 +1,14 @@
-# Created by: Chifeng Qu <chifeng@gmail.com>
+# Created by: Jakub Kruszona-Zawadzki <acid@moosefs.com> ; Based on port created by: Chifeng Qu <chifeng@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	moosefs
-DISTVERSION=	1.6.27-5
-CATEGORIES=	sysutils
-MASTER_SITES=	http://www.moosefs.org/tl_files/mfscode/ \
-		http://ports.quxingwen.com/dist/mfs/
 PKGNAMESUFFIX=	-client
-DISTNAME=	mfs-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Moosefs client tools
+COMMENT=	MooseFS client tools
 
-LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	GPLv2
 
-WRKSRC=		${WRKDIR}/mfs-1.6.27
-GNU_CONFIGURE=	yes
+MFS_COMPONENT=	client
 
-USES=		fuse pkgconfig
+MASTERDIR=	${.CURDIR}/../moosefs-master
 
-CONFIGURE_ARGS=	--disable-mfsmaster \
-		--disable-mfschunkserver \
-		--disable-mfscgi \
-		--disable-mfscgiserv \
-		--enable-mfsmount
-
-post-patch:
-	${REINPLACE_CMD} -e 's;^general_mans;#general_mans;g' \
-		${WRKSRC}/doc/Makefile.am ${WRKSRC}/doc/Makefile.in
-
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"
