@@ -1,19 +1,19 @@
 #!/bin/sh
 # $FreeBSD$
 
-# PROVIDE: mfsmetalogger
+# PROVIDE: mfschunkserver
 # REQUIRE: DAEMON
 # KEYWORD: shutdown
 #
-# Add the following lines to /etc/rc.conf to enable mfsmetalogger:
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf to enable mfschunkserver:
 #
-# mfsmetalogger_enable="YES"
+# mfschunkserver_enable="YES"
 #
 
 . /etc/rc.subr
 
-name=mfsmetalogger
-rcvar=mfsmetalogger_enable
+name=mfschunkserver
+rcvar=mfschunkserver_enable
 
 config_file=%%PREFIX%%/etc/mfs/${name}.cfg
 
@@ -26,6 +26,6 @@ command_args="-c $config_file"
 load_rc_config $name
 
 # set defaults
-: ${mfsmetalogger_enable="NO"}
+: ${mfschunkserver_enable="NO"}
 
 run_rc_command "$1"
