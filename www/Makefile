@@ -10,6 +10,7 @@
     SUBDIR += R-cran-httpuv
     SUBDIR += R-cran-httr
     SUBDIR += R-cran-scrapeR
+    SUBDIR += R-cran-selectr
     SUBDIR += R-cran-shiny
     SUBDIR += WebMagick
     SUBDIR += ach
