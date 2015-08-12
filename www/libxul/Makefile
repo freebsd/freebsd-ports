@@ -3,7 +3,7 @@
 
 PORTNAME=	libxul
 DISTVERSION=	38.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	www devel
 MASTER_SITES=	MOZILLA/firefox/releases/${DISTVERSION}esr/source \
 		MOZILLA/firefox/candidates/${DISTVERSION}esr-candidates/build2/source
@@ -19,13 +19,13 @@ BUILD_DEPENDS=	nspr>=4.10.8:${PORTSDIR}/devel/nspr \
 		harfbuzz>=0.9.34:${PORTSDIR}/print/harfbuzz \
 		graphite2>=1.2.4:${PORTSDIR}/graphics/graphite2 \
 		libvorbis>=1.3.5:${PORTSDIR}/audio/libvorbis \
-		libvpx>=1.3.0:${PORTSDIR}/multimedia/libvpx \
 		sqlite3>=3.8.9:${PORTSDIR}/databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat \
 		autoconf-2.13:${PORTSDIR}/devel/autoconf213 \
 		zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip
+#		libvpx>=1.5.0:${PORTSDIR}/multimedia/libvpx \
 #		opus>=1.1:${PORTSDIR}/audio/opus \
 
 LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
@@ -46,7 +46,7 @@ MOZ_OPTIONS?=	--enable-application=xulrunner
 USE_GECKO=	gecko
 CPE_PRODUCT=	firefox_esr
 MOZILLA_EXEC_NAME=xulrunner
-USE_MOZILLA=	-opus
+USE_MOZILLA=	-opus -vpx
 MOZILLA_PLIST_DIRS=	bin include lib share/idl libdata
 MOZ_PKGCONFIG_FILES=	libxul-embedding libxul mozilla-js \
 			mozilla-plugin

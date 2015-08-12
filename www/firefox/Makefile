@@ -4,7 +4,7 @@
 PORTNAME=	firefox
 DISTVERSION=	40.0
 DISTVERSIONSUFFIX=.source
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
@@ -20,13 +20,13 @@ BUILD_DEPENDS=	nspr>=4.10.8:${PORTSDIR}/devel/nspr \
 		harfbuzz>=0.9.34:${PORTSDIR}/print/harfbuzz \
 		graphite2>=1.2.4:${PORTSDIR}/graphics/graphite2 \
 		libvorbis>=1.3.5:${PORTSDIR}/audio/libvorbis \
-		libvpx>=1.3.0:${PORTSDIR}/multimedia/libvpx \
 		sqlite3>=3.8.9:${PORTSDIR}/databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat \
 		autoconf-2.13:${PORTSDIR}/devel/autoconf213 \
 		zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip
+#		libvpx>=1.5.0:${PORTSDIR}/multimedia/libvpx \
 #		opus>=1.1:${PORTSDIR}/audio/opus \
 
 LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
@@ -34,7 +34,7 @@ LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
 USE_GECKO=	gecko
 CONFLICTS_INSTALL=	firefox-esr-31.* firefox-esr-24.* firefox-esr-17.*
 MOZ_PKGCONFIG_FILES=	# empty
-USE_MOZILLA=	-opus
+USE_MOZILLA=	-opus -vpx
 MOZILLA_NAME=	Firefox
 
 USE_QT5=	# empty
