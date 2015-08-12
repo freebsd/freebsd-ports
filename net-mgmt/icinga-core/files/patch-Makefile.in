@@ -1,5 +1,5 @@
 --- Makefile.in.orig	2015-07-15 13:04:09.000000000 +0200
-+++ Makefile.in	2015-07-25 16:26:11.654840000 +0200
++++ Makefile.in	2015-07-26 16:58:19.208026000 +0200
 @@ -139,16 +139,16 @@ none:
  ###############################
  
@@ -189,12 +189,9 @@
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)
 -	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/cgi.cfg $(DESTDIR)$(CFGDIR)/cgi.cfg
 -	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/cgiauth.cfg $(DESTDIR)$(CFGDIR)/cgiauth.cfg
-+	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)
-+	$(INSTALL) -b -m 644 $(INSTALL_OPTS) sample-config/cgi.cfg $(DESTDIR)$(CFGDIR)/cgi.cfg.sample
-+	$(INSTALL) -b -m 644 $(INSTALL_OPTS) sample-config/cgiauth.cfg $(DESTDIR)$(CFGDIR)/cgiauth.cfg.sample
- 
- 
- install-config: install-cgiconf
+-
+-
+-install-config: install-cgiconf
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)/objects
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)/conf.d
@@ -215,6 +212,12 @@
 -	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/modules/pnp4nagios.cfg $(DESTDIR)$(CFGDIR)/modules/pnp4nagios.cfg
 -	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/modules/flapjack.cfg $(DESTDIR)$(CFGDIR)/modules/flapjack.cfg
 -
++	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)
++	$(INSTALL) -b -m 644 $(INSTALL_OPTS) sample-config/cgi.cfg $(DESTDIR)$(CFGDIR)/cgi.cfg.sample
++	$(INSTALL) -b -m 644 $(INSTALL_OPTS) sample-config/cgiauth.cfg $(DESTDIR)$(CFGDIR)/cgiauth.cfg.sample
++
++
++install-config:
 +	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)
 +	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)/objects
 +	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)/conf.d
