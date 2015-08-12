@@ -58,6 +58,46 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="83b38a2c-413e-11e5-bfcf-6805ca0b3d42">
+    <topic>RT -- two XSS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>rt42</name>
+	<range><ge>4.2.0</ge><lt>4.2.12</lt></range>
+      </package>
+      <package>
+	<name>rt40</name>
+	<range><ge>4.0.0</ge><lt>4.0.24</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Best Practical reports:</p>
+	<blockquote cite="http://blog.bestpractical.com/2015/08/security-vulnerabilities-in-rt.html">
+	  <p>RT 4.0.0 and above are vulnerable to a cross-site
+	    scripting (XSS) attack via the user and group rights
+	    management pages.  This vulnerability is assigned
+	    CVE-2015-5475.  It was discovered and reported by Marcin
+	    Kopec at Data Reliance Shared Service Center.</p>
+	  <p>RT 4.2.0 and above are vulnerable to a cross-site
+	    scripting (XSS) attack via the cryptography interface.
+	    This vulnerability could allow an attacker with a
+	    carefully-crafted key to inject JavaScript into RT's user
+	    interface.  Installations which use neither GnuPG nor
+	    S/MIME are unaffected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5475</cvename>
+      <url>http://blog.bestpractical.com/2015/08/security-vulnerabilities-in-rt.html</url>
+    </references>
+    <dates>
+      <discovery>2015-08-12</discovery>
+      <entry>2015-08-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="09fff0d9-4126-11e5-9f01-14dae9d210b8">
     <topic>py-foolscap -- local file inclusion</topic>
     <affects>
