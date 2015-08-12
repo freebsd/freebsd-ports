@@ -188,19 +188,21 @@ diff --git gfx/thebes/moz.build gfx/thebes/moz.build
 index d5852fa..aeeab25 100644
 --- mozilla/gfx/thebes/moz.build
 +++ mozilla/gfx/thebes/moz.build
-@@ -278,6 +278,12 @@ CXXFLAGS += CONFIG['TK_CFLAGS']
- CFLAGS += CONFIG['MOZ_CAIRO_CFLAGS']
- CFLAGS += CONFIG['TK_CFLAGS']
+@@ -294,7 +294,13 @@ if CONFIG['MOZ_WIDGET_TOOLKIT'] == 'andr
+ if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('gtk2', 'gtk3', 'qt'):
+     CXXFLAGS += CONFIG['MOZ_PANGO_CFLAGS']
  
+-DEFINES['GRAPHITE2_STATIC'] = True
 +if CONFIG['MOZ_NATIVE_HARFBUZZ']:
 +    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
 +
 +if CONFIG['MOZ_NATIVE_GRAPHITE2']:
 +    CXXFLAGS += CONFIG['MOZ_GRAPHITE2_CFLAGS']
-+
- if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('android', 'gonk', 'qt'):
-     CXXFLAGS += CONFIG['CAIRO_FT_CFLAGS']
++else:
++    DEFINES['GRAPHITE2_STATIC'] = True
  
+ if CONFIG['GKMEDIAS_SHARED_LIBRARY']:
+     DEFINES['OTS_DLL'] = True
 diff --git intl/unicharutil/util/moz.build intl/unicharutil/util/moz.build
 index d736943..41a931f 100644
 --- mozilla/intl/unicharutil/util/moz.build
