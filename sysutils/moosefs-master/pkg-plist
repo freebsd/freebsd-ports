@@ -1,34 +1,15 @@
-@owner mfs
-@group mfs
-@sample etc/mfs/mfsexports.cfg.sample
 @sample etc/mfs/mfsmaster.cfg.sample
-@sample etc/mfs/mfsmetalogger.cfg.sample
+@sample etc/mfs/mfsexports.cfg.sample
 @sample etc/mfs/mfstopology.cfg.sample
-@owner
-@group
-man/man5/mfsexports.cfg.5.gz
-man/man5/mfsmaster.cfg.5.gz
-man/man5/mfsmetalogger.cfg.5.gz
-man/man5/mfstopology.cfg.5.gz
-man/man7/mfs.7.gz
-man/man7/moosefs.7.gz
-man/man8/mfscgiserv.8.gz
-man/man8/mfsmaster.8.gz
-man/man8/mfsmetalogger.8.gz
-man/man8/mfsmetarestore.8.gz
-sbin/mfscgiserv
 sbin/mfsmaster
 sbin/mfsmetadump
-sbin/mfsmetalogger
 sbin/mfsmetarestore
-share/mfscgi/chart.cgi
-share/mfscgi/err.gif
-share/mfscgi/favicon.ico
-share/mfscgi/index.html
-share/mfscgi/logomini.png
-share/mfscgi/mfs.cgi
-share/mfscgi/mfs.css
+man/man5/mfsexports.cfg.5.gz
+man/man5/mfsmaster.cfg.5.gz
+man/man5/mfstopology.cfg.5.gz
+man/man8/mfsmaster.8.gz
+man/man8/mfsmetarestore.8.gz
 @owner mfs
 @group mfs
-/var/mfs/metadata.mfs.empty
-@unexec rmdir "/var/mfs" >/dev/null 2>&1 || :
+@dir %%MFS_WORKDIR%%/mfs
+%%MFS_WORKDIR%%/mfs/metadata.mfs.empty

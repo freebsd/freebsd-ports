@@ -551,8 +551,13 @@
     SUBDIR += monitorix
     SUBDIR += mono-kmod
     SUBDIR += moosefs-chunkserver
+    SUBDIR += moosefs-cgi
+    SUBDIR += moosefs-cgiserv
+    SUBDIR += moosefs-cli
     SUBDIR += moosefs-client
     SUBDIR += moosefs-master
+    SUBDIR += moosefs-metalogger
+    SUBDIR += moosefs-netdump
     SUBDIR += moreutils
     SUBDIR += most
     SUBDIR += mount.app

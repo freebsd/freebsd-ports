@@ -1,8 +1,9 @@
-MooseFS is a fault tolerant, network distributed file system.
+MooseFS is a Fault tolerant, High Available, Highly Performing, Scale-Out,
+network distributed file system. It spreads data over several physical commodity
+servers, which are visible to the user as one resource.
 
-moosefs client is any number of machines using mfsmount process
-to communicate with the managing server (to receive and modify
-file metadata) and with chunkservers (to exchange actual file
-data).
+For standard file operations MooseFS acts like any other Unix-like file system.
 
-WWW: http://www.moosefs.org/
+This port provides: MooseFS clients: mfsmount and mfstools.
+
+WWW: https://moosefs.com/
