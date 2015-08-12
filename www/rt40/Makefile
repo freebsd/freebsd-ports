@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rt
-PORTVERSION=	4.0.23
+PORTVERSION=	4.0.24
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/
 PKGNAMESUFFIX=	40
