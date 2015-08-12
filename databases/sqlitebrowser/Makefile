@@ -3,6 +3,7 @@
 
 PORTNAME=	sqlitebrowser
 PORTVERSION=	3.6.0
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	coder@tuxfamily.org
@@ -16,7 +17,8 @@ GH_ACCOUNT=	sqlitebrowser
 GH_TAGNAME=	e703344
 
 USES=		cmake desktop-file-utils
-USE_QT4=	gui qmake_build linguist_build moc_build uic_build rcc_build
+USE_QT4=	corelib network gui qmake_build linguisttools_build \
+		moc_build uic_build rcc_build
 USE_SQLITE=	yes
 
 INSTALLS_ICONS=	yes
