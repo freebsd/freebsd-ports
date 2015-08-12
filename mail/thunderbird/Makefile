@@ -3,7 +3,7 @@
 
 PORTNAME=	thunderbird
 DISTVERSION=	38.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail news net-im ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source
@@ -21,13 +21,13 @@ BUILD_DEPENDS=	nspr>=4.10.8:${PORTSDIR}/devel/nspr \
 		graphite2>=1.2.4:${PORTSDIR}/graphics/graphite2 \
 		libvorbis>=1.3.5:${PORTSDIR}/audio/libvorbis \
 		opus>=1.1:${PORTSDIR}/audio/opus \
-		libvpx>=1.3.0:${PORTSDIR}/multimedia/libvpx \
 		sqlite3>=3.8.9:${PORTSDIR}/databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat \
 		autoconf-2.13:${PORTSDIR}/devel/autoconf213 \
 		zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip
+#		libvpx>=1.5.0:${PORTSDIR}/multimedia/libvpx \
 #		opus>=1.1:${PORTSDIR}/audio/opus \
 
 LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
@@ -37,7 +37,7 @@ L_VERSION=	4.0.1
 
 SSP_UNSAFE=	yes
 USE_GECKO=	gecko
-USE_MOZILLA=	-opus
+USE_MOZILLA=	-opus -vpx
 
 USE_QT5=	# empty
 QT_NONSTANDARD=	yes
