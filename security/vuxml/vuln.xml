@@ -58,6 +58,38 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="09fff0d9-4126-11e5-9f01-14dae9d210b8">
+    <topic>py-foolscap -- local file inclusion</topic>
+    <affects>
+      <package>
+	<name>py27-foolscap</name>
+	<name>py32-foolscap</name>
+	<name>py33-foolscap</name>
+	<name>py34-foolscap</name>
+	<range><lt>0.7.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Brian Warner reports:</p>
+	<blockquote cite="https://github.com/warner/foolscap/blob/a17218e18e01c05a9655863cd507b80561692c14/NEWS">
+	  <p>The "flappserver" feature was found to have a vulnerability in the
+	    service-lookup code which, when combined with an attacker who has the ability
+	    to write files to a location where the flappserver process could read them,
+	    would allow that attacker to obtain control of the flappserver process.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/warner/foolscap/blob/a17218e18e01c05a9655863cd507b80561692c14/NEWS</url>
+      <url>http://foolscap.lothar.com/trac/ticket/226</url>
+    </references>
+    <dates>
+      <discovery>2014-09-23</discovery>
+      <entry>2015-08-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="42c98cef-62b1-4b8b-9065-f4621e08d526">
     <topic>libvpx -- out-of-bounds write</topic>
     <affects>
