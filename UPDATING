@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20150812:
+  AFFECTS: users of net-mgmt/icinga and net-mgmt/icinga2
+  AUTHOR: lme@FreeBSD.org
+
+  The Icinga port has been split into two ports: net-mgmt/icinga-core
+  which contains the Icinga 1.x backend and net-mgmt/icinga-classicweb
+  which contains the Icinga classic web (CGI) interface. The latter can
+  be both used with Icinga 1.x and the Icinga 2 port (net-mgmt/icinga2).
+  A new meta-port net-mgmt/icinga was added which depends on both new
+  ports, so updating the Icinga port should be transparent.
+  
+20150812:
   AFFECTS: users of sysutils/moosefs-master and other moosefs packages
   AUTHOR: feld@FreeBSD.org
 
