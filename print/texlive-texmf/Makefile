@@ -2,7 +2,7 @@
 
 PORTNAME=	texlive
 PORTVERSION=	20150523
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.tug.org/historic/systems/texlive/2015/:texmf \
 		LOCAL/hrs:latex
@@ -18,11 +18,12 @@ COMMENT=	TeX Live Typesetting System, texmf Tree
 CONFLICTS_INSTALL=	texlive-base-201[234]* \
 			texlive-texmf-201[234]*
 
-USES=		tar:xz
+USES=		shebangfix tar:xz
 USE_TEX=	basic:extract base tlmgr:run texhash
 TEXHASHDIRS=	${TEXMFDIR} ${TEXMFDISTDIR}
 NO_BUILD=	yes
-NO_WRKSRC=	yes
+NO_WRKSUBDIR=	yes
+NO_ARCH=	yes
 
 EXCLUDE_FILES=	\*/doc/man \
 	texmf-dist/ls-R \
@@ -270,5 +271,13 @@ do-install:
 	${TOUCH} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/doc/.keep_me
 	${MKDIR} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/source
 	${TOUCH} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/source/.keep_me
+
+post-install:
+	@${REINPLACE_CMD} -i '' -e '1s|${bash_OLD_CMD}|${bash_CMD}|' \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/scripts/logicpuzzle/createlpsudoku \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/scripts/logicpuzzle/lpsmag \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/scripts/shipunov/biokey2html.sh
+	@${REINPLACE_CMD} -i '' -e '1s|${perl_OLD_CMD}|${perl_CMD}|' \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/scripts/mycv/mycv_split_contents.pl
 
 .include <bsd.port.mk>
