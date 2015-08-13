@@ -7821,3 +7821,4 @@ net/py-xmlrpclib||2015-08-07|Has expired: This is part of standard library since
 net-p2p/py-kenosis||2015-08-07|Has expired: Fails to run with modern python
 graphics/skencil||2015-08-08|Has expired: Project is abandoned and was overtaken by sK1 fork
 www/ismail||2015-08-08|Has expired: Development has been discontinued for many years
+sysutils/rubygem-bundler17||2015-08-13|Has expired: not used by other ports anymore

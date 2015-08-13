@@ -838,7 +838,6 @@
     SUBDIR += rubygem-bosh-gen
     SUBDIR += rubygem-bosh_cli
     SUBDIR += rubygem-bundler
-    SUBDIR += rubygem-bundler17
     SUBDIR += rubygem-bundler_ext
     SUBDIR += rubygem-capistrano
     SUBDIR += rubygem-capistrano-ext
