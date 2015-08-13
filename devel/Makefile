@@ -4272,6 +4272,7 @@
     SUBDIR += py-virtualenvwrapper
     SUBDIR += py-watchdog
     SUBDIR += py-wcwidth
+    SUBDIR += py-weblib
     SUBDIR += py-wheel
     SUBDIR += py-wsgi_xmlrpc
     SUBDIR += py-wsgitools
