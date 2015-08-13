@@ -1,14 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	synergy
-PORTVERSION=	1.7.3
+PORTVERSION=	1.7.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Mouse and keyboard sharing utility
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake cpe
 CPE_VENDOR=	synergy-foss
@@ -30,12 +30,6 @@ PORTEXAMPLES=	synergy.conf.example synergy.conf.example-basic \
 		synergy.conf.example-advanced
 
 OPTIONS_DEFINE=	EXAMPLES
-
-post-extract:
-	cp ${WRKSRC}/LICENSE ${WRKSRC}/COPYING
-	${MKDIR} -p ${WRKSRC}/ext/gmock-1.6.0 ${WRKSRC}/ext/gtest-1.6.0
-	(cd ${WRKSRC}/ext/gmock-1.6.0 && ${TAR} xfz ../gmock-1.6.0.zip)
-	(cd ${WRKSRC}/ext/gtest-1.6.0 && ${TAR} xfz ../gtest-1.6.0.zip)
 
 do-install:
 .for f in synergyc synergyd synergys
