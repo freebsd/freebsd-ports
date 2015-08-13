@@ -58,6 +58,46 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9ee72858-4159-11e5-93ad-002590263bf5">
+    <topic>froxlor -- database password information leak</topic>
+    <affects>
+      <package>
+	<name>froxlor</name>
+	<range><lt>0.9.33.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>oss-security-list@demlak.de reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2015/q3/238">
+	  <p>An unauthenticated remote attacker is able to get the database
+	    password via webaccess due to wrong file permissions of the /logs/
+	    folder in froxlor version 0.9.33.1 and earlier. The plain SQL
+	    password and username may be stored in the /logs/sql-error.log file.
+	    This directory is publicly reachable under the default
+	    configuration/setup.</p>
+	</blockquote>
+	<p>Note that froxlor 0.9.33.2 prevents future logging of passwords but
+	  does not retroactively remove passwords already logged.  Michael
+	  Kaufmann, the Froxlor lead developer reports:</p>
+	<blockquote cite="http://forum.froxlor.org/index.php/topic/13054-important-bugfix-release-09332/#entry30025">
+	  <p>Removing all .log files from the directory should do the job,
+	    alternatively just use the class.ConfigIO.php from Github</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5959</cvename>
+      <freebsdpr>ports/202262</freebsdpr>
+      <url>http://seclists.org/oss-sec/2015/q3/238</url>
+      <url>https://forum.froxlor.org/index.php/topic/13054-important-bugfix-release-09332/</url>
+    </references>
+    <dates>
+      <discovery>2015-07-29</discovery>
+      <entry>2015-08-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="83b38a2c-413e-11e5-bfcf-6805ca0b3d42">
     <topic>RT -- two XSS vulnerabilities</topic>
     <affects>
