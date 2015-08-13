@@ -7,10 +7,10 @@ PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://mark.foster.cc/pub/freebsd/ports/distfiles/ \
+		http://BSDforge.com/projects/source/audio/cd2mp3/ \
 		LOCAL/feld
-MASTER_SITES=	LOCAL/feld
 
-MAINTAINER=	mark@foster.cc
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Easy to use CD Ripping and MP3 Encoding tool
 
 RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
