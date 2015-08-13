@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	Geo-Coder-Google
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	misc geography perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:ARCANEZ
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -24,6 +23,7 @@ TEST_DEPENDS=	p5-Test-Number-Delta>=0:${PORTSDIR}/devel/p5-Test-Number-Delta
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
