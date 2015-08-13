@@ -3,4 +3,3 @@ hardware brute-force attacks than alternative functions such as PBKDF2 or
 bcrypt.
 
 WWW: https://github.com/pbhogan/scrypt
-RG:  https://rubygems.org/gems/scrypt

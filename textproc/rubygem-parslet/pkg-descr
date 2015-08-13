@@ -10,4 +10,3 @@ incremental language construction. Often, you start out small, implementing the
 atoms of your language first; parslet takes pride in making this possible.
 
 WWW: http://kschiess.github.io/parslet/
-RG:  https://rubygems.org/gems/parslet
