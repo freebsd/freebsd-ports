@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}serpent>=1.11:${PORTSDIR}/devel/py-serpent
 
+NO_ARCH=	yes
 USES=		dos2unix python
 USE_PYTHON=	autoplist concurrent distutils
 
