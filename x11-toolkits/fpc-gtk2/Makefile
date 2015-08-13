@@ -8,7 +8,7 @@ PKGNAMESUFFIX=	-gtk2
 MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to the GTK2 libraries
 
-USE_FPC=	cairo x11
+USE_FPC=	cairo x11 fcl-image
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
