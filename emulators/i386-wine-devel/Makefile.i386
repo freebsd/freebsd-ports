@@ -81,10 +81,4 @@ post-install-script:
 	echo ${DATADIR:S|$(PREFIX)/||}/patch-nvidia.sh >> ${TMPPLIST}
 	@${CAT} ${PKGMESSAGE}
 
-post-package-script:
-	${XZ_CMD} -dc ${PKGFILE} | \
-	${SED} -e 's/\(freebsd:.*:x86\):32/\1:64/' -e 's/\(freebsd:.*:x86\):32/\1:64/' | \
-	${XZ_CMD} > ${WRKDIR}/${PKGNAME}${PKG_SUFX}; \
-	${MV} ${WRKDIR}/${PKGNAME}${PKG_SUFX} ${PKGFILE}; \
-
 .include "${MASTERDIR}/Makefile"
