@@ -112,7 +112,7 @@ CONFIGURE_ARGS+=	--disable-sendfile
 .endif
 
 .if ${PORT_OPTIONS:MDBUS} || exists(${LOCALBASE}/libdata/pkgconfig/dbus-glib-1.pc)
-USES+=			python
+USES+=			python:2
 LIB_DEPENDS+=		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS+=		${PYTHON_SITELIBDIR}/dbus/_dbus.py:${PORTSDIR}/devel/py-dbus
 PLIST_SUB+=		DBUS=""
