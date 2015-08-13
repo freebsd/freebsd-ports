@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	browser
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
