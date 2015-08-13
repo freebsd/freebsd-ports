@@ -30,6 +30,7 @@ RUN_DEPENDS=	rubygem-chef-zero>=2.1.0:${PORTSDIR}/sysutils/rubygem-chef-zero \
 		rubygem-pry>=0.9.0:${PORTSDIR}/devel/rubygem-pry \
 		rubygem-rest-client>=1.0.4:${PORTSDIR}/www/rubygem-rest-client
 
+NO_ARCH=		yes
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
 RUBYGEM_AUTOPLIST=	yes
