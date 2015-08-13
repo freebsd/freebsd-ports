@@ -3,4 +3,3 @@ flexible solution to build and manage enterprise clouds and virtualized data
 centers. This gem provides libraries needed to talk to OpenNebula.
 
 WWW: http://opennebula.org/
-RG:  https://rubygems.org/gems/opennebula

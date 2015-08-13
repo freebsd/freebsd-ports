@@ -5,4 +5,3 @@ entities are delimited. In this respect it's ideally paired with something like
 EventMachine.
 
 WWW: https://github.com/sferik/buftok
-RG:  https://rubygems.org/gems/buftok

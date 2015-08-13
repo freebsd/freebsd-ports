@@ -3,4 +3,3 @@ compatible REST API for Ceph. Currently, the gem only supports the S3 API, not
 Swift.
 
 WWW: https://github.com/fog/fog-radosgw
-RG:  https://rubygems.org/gems/fog-radosgw

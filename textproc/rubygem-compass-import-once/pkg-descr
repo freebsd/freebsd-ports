@@ -7,4 +7,3 @@ Note: Although this plugin is maintained by compass, it can be used without
 compass in any Sass-based project.
 
 WWW: https://github.com/Compass/compass/tree/master/import-once
-RG:  https://rubygems.org/gems/compass-import-once

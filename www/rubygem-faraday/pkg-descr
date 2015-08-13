@@ -3,4 +3,3 @@ adapters (such as Net::HTTP) and embraces the concept of Rack middleware when
 processing the request/response cycle.
 
 WWW: https://github.com/lostisland/faraday
-RG:  https://rubygems.org/gems/faraday

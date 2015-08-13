@@ -2,4 +2,3 @@ pagerduty provides a lightweight Ruby interface for calling the PagerDuty
 Integration API.
 
 WWW: https://github.com/envato/pagerduty
-RG:  https://rubygems.org/gems/pagerduty

@@ -2,4 +2,3 @@ Guard::LiveReload automatically reloads your browser when 'view' files are
 modified.
 
 WWW: https://github.com/guard/guard-livereload
-RG:  https://rubygems.org/gems/guard-livereload
