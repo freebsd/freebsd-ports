@@ -2,18 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	hiera
-PORTVERSION=	3.0.1
+PORTVERSION=	1.3.4
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
+PKGNAMESUFFIX=	1
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Pluggable data store for hierarchical data
 
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	${PKGNAMEPREFIX}json_pure>=0:${PORTSDIR}/devel/rubygem-json_pure
 
-CONFLICTS_INSTALL=	rubygem-hiera1-*
+CONFLICTS_INSTALL=	rubygem-hiera-*
 
 NO_ARCH=	yes
 
@@ -25,10 +27,11 @@ PLIST_FILES=	bin/hiera
 PLIST_DIRS=	${HIERA_DBDIR}
 
 post-install:
-	@${REINPLACE_CMD} "s!/etc/puppetlabs/code/environments/%{environment}/hieradata!${HIERA_DBDIR}!" \
+	@${REINPLACE_CMD} "s!/etc!${PREFIX}/etc!" \
 		${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/lib/hiera/util.rb \
 		${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/spec/unit/util_spec.rb
-	@${REINPLACE_CMD} "s!/etc/puppetlabs/code!${PREFIX}/etc!" \
+	@${REINPLACE_CMD} "s!/var/lib/hiera!${HIERA_DBDIR}!" \
+		${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/lib/hiera/backend.rb \
 		${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/lib/hiera/util.rb \
 		${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/spec/unit/util_spec.rb
 	@${FIND} ${STAGEDIR}${PREFIX}/${GEM_LIB_DIR} -name \*.bak -delete
