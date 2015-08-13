@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTTP-Request-Params
-PORTVERSION=	1.01
-PORTREVISION=	3
+PORTVERSION=	1.02
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,21 +10,24 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Retrieve GET/POST Parameters from HTTP Requests
 
-BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-Email-MIME>=0:${PORTSDIR}/mail/p5-Email-MIME \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Class-Accessor>=0.19:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-Email-MIME-ContentType>=1:${PORTSDIR}/mail/p5-Email-MIME-ContentType \
+		p5-Email-MIME>=1.420:${PORTSDIR}/mail/p5-Email-MIME \
+		p5-HTTP-Message>=1.40:${PORTSDIR}/www/p5-HTTP-Message
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-OPTIONS_DEFINE=	DOCS
+.include <bsd.port.pre.mk>
 
-PORTDOCS=	Changes README
+.if ${PERL_LEVEL} >= 502200
+BUILD_DEPENDS+=	p5-CGI>=3:${PORTSDIR}/www/p5-CGI
+RUN_DEPENDS+=	p5-CGI>=3:${PORTSDIR}/www/p5-CGI
+.endif
 
-post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
