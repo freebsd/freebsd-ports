@@ -5,7 +5,6 @@ PORTNAME=	HTTP-Tiny
 PORTVERSION=	0.056
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:DAGOLDEN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -20,6 +19,7 @@ IO_SOCKET_IP_DESC=	Use IO::Socket:IP instead of IO::Socket::INET
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
