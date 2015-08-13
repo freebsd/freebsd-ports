@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Excel-Writer-XLSX
-PORTVERSION=	0.84
+PORTVERSION=	0.85
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JMCNAMARA
@@ -19,6 +19,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \
 		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
