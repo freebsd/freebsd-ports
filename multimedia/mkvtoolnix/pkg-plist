@@ -1,3 +1,12 @@
+%%QT5%%bin/mkvtoolnix-gui
+%%QT5%%man/de/man1/mkvtoolnix-gui.1.gz
+%%QT5%%man/es/man1/mkvtoolnix-gui.1.gz
+%%QT5%%man/ja/man1/mkvtoolnix-gui.1.gz
+%%QT5%%man/man1/mkvtoolnix-gui.1.gz
+%%QT5%%man/nl/man1/mkvtoolnix-gui.1.gz
+%%QT5%%man/uk/man1/mkvtoolnix-gui.1.gz
+%%QT5%%man/zh_CN/man1/mkvtoolnix-gui.1.gz
+%%QT5%%share/applications/mkvtoolnix-gui.desktop
 %%WXGTK%%%%DOCSDIR%%/guide/en/images/addingremovingattachments.gif
 %%WXGTK%%%%DOCSDIR%%/guide/en/images/addremovefiles.gif
 %%WXGTK%%%%DOCSDIR%%/guide/en/images/attachmentoptions.gif
