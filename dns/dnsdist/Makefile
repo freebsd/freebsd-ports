@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dnsdist
-DISTVERSION=	0.0.209g4fd8aed
+DISTVERSION=	0.0.210g4f0fae7
 CATEGORIES=	dns net
 MASTER_SITES=	http://builder.powerdns.com/files/dnsdist/dist/
 
@@ -20,7 +20,7 @@ CXXFLAGS+=	-D_GLIBCXX_USE_C99
 LDFLAGS+=	-L${LOCALBASE}/lib -latomic
 GNU_CONFIGURE=	yes
 USE_GCC=	4.8+
-USES=	bison cpe gmake libtool lua:52 pkgconfig readline tar:bz2
+USES=		bison cpe gmake libtool lua:52 pkgconfig readline tar:bz2
 INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	bin/dnsdist \
