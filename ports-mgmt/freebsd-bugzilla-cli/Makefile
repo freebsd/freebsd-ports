@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freebsd-bugzilla-cli
-PORTVERSION=	0.10.8
+PORTVERSION=	0.12.0
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	pgollucci@FreeBSD.org
