@@ -424,7 +424,7 @@ Notes:
     <affects>
       <package>
 	<name>libvpx</name>
-	<range><lt>1.5.0</lt></range>
+	<range><lt>1.4.0.488</lt></range>
       </package>
       <package>
 	<name>firefox</name>
@@ -456,7 +456,7 @@ Notes:
     <dates>
       <discovery>2015-08-11</discovery>
       <entry>2015-08-11</entry>
-      <modified>2015-08-11</modified>
+      <modified>2015-08-14</modified>
     </dates>
   </vuln>
 
