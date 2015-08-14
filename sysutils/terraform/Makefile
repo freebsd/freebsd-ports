@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	terraform
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	hashicorp-
@@ -42,19 +42,19 @@ GH_PROJECT=	atlas-go:atlasgo consul:consul errwrap:errwrap \
 		mergo:mergo go.uuid:suuid uuid:uuid winrm:winrm \
 		simplexml:simplexml xmlpath:xmlpath winrmcp:winrmcp \
 		winrmtest:winrmtest iso8601:iso8601
-GH_TAGNAME=	785958f:atlasgo c34bcb4:consul 7554cd9:errwrap \
+GH_TAGNAME=	d1d08e8:atlasgo 00e35cd:consul 7554cd9:errwrap \
 		88326f6:gocheckpoint 56912fb:gomultierror 999359b:goversion \
 		5486421:hcl 8e00b30:yamux 8102d0e:cli 61164e4:colorstring \
 		6fc6626:copystructure 1f6da4a:gohomedir 281073e:mapstructure \
 		0dd3f91:osext 45cbfd3:panicwrap 89d9b53:prefixedio \
-		eecf4c7:reflectwalk 07bab5f:golinereader 2010a0c:packer \
-		18450f4:apiclient 9197765:asfg a635c06:gpkcs 2a6648c:awssdkgo \
+		eecf4c7:reflectwalk 07bab5f:golinereader 60bbe85:packer \
+		0a735f7:apiclient 99b5c36:asfg a635c06:gpkcs ccb4ffd:awssdkgo \
 		f092b4f:circbuf 19e280b:cloudflare e966f00:digitalocean \
 		2a807d1:dnsimple 5b02e7e:mailgun 0031956:cloudstack \
-		7d5b0be:crypto 8914e50:oauth2 f0cf018:net 5578a8c:dnsmadeeasy \
-		522a8ce:gcloud f6e9f53:godocker a98ad7e:goini \
-		e83aa01:gophercloud 179d4d0:gouuid 594d483:heroku 61a5285:mergo \
-		afe1e2d:suuid ed3ca8a:uuid 23128e7:winrm 95ba304:simplexml \
+		83f1503:crypto 8914e50:oauth2 4a71d18:net 5578a8c:dnsmadeeasy \
+		e34a32f:gcloud 5c1d07d:godocker a98ad7e:goini \
+		efb1971:gophercloud 179d4d0:gouuid 594d483:heroku 61a5285:mergo \
+		6b8e5b5:suuid ed3ca8a:uuid 23128e7:winrm 95ba304:simplexml \
 		13f4951:xmlpath 743b1af:winrmcp 3e9661c:winrmtest \
 		2075bf1:iso8601
 
