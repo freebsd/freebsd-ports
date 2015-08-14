@@ -1,5 +1,5 @@
 #!/bin/sh
-#	$Id: pkg_update,v 1.85 2015/02/28 06:43:09 cvs Exp $
+#	$Id: pkg_update,v 1.86 2015/08/14 10:41:23 cvs Exp $
 #	$FreeBSD$
 #
 # Copyright (c) 2001-2006
@@ -159,13 +159,13 @@ run_pkg_add() {
 	read_env_local
 	if test "${pkgng}" = ""
 	then
-		${local_env} pkg_add "${pkgfile}"
+		env ${pkg_env} ${local_env} pkg_add "${pkgfile}"
 		if test -e ${pkg_dbdir}/${pkgname}/+CONTENTS
 		then
 			return 0
 		fi
 	else
-		${local_env} pkg add "${pkgfile}"
+		env ${pkg_env} ${local_env} pkg add "${pkgfile}"
 		installed=`pkg query -e "%o == ${dir}" '%o'`
 		if test "${installed}" = "${dir}"
 		then
@@ -331,7 +331,7 @@ run_pkg_info_dependecies() {
 	then
 		pkg_info -q -r "${1}" | sed 's|^@pkgdep ||'
 	else
-		${pkg} info -q -d -F "${1}"
+		${pkg} info -q --dependencies -F "${1}"
 	fi
 }
 
@@ -1125,7 +1125,7 @@ clean_package_all() {
 		while read dep
 		do
 			pmade="${dep}${ext}"
-			if test -f "${pmade}"
+			if test -f "${pkgall}/${pmade}"
 			then
 				#
 				# find matching port directory (origin)
@@ -1160,12 +1160,12 @@ clean_package_all() {
 				move_away ${i}
 				break
 			else
-				noinstall=`cd "${depdir}" && make -V NO_INSTALL`
-				case "${noinstall}" in
-				yes|YES)
-					continue
-					;;
-				esac
+#				noinstall=`cd "${depdir}" && make -V NO_INSTALL`
+#				case "${noinstall}" in
+#				yes|YES)
+#					continue
+#					;;
+#				esac
 				echo "${i}: dependency ${pmade} missing!"
 				move_away ${i}
 				break
@@ -2064,15 +2064,16 @@ update_pkg() {
 	if test -f "${pkg}"
 	then
 		${pkg} delete -y -a -f
+		env "PKG_DBDIR=/var/db/pkgng" ${pkg} delete -y -a -f
 	fi
 	/etc/rc.d/ldconfig start
-	cd "${portsdir}/ports-mgmt/pkg" && make clean deinstall PREFIX=/usr/pkgng PKGNAMESUFFIX=-pkgng package install
+	( cd "${portsdir}/ports-mgmt/pkg" && env "PKG_DBDIR=/var/db/pkgng" make clean deinstall PREFIX=/usr/pkgng PKGNAMESUFFIX=-pkgng package install )
 	if test ! -L /usr/sbin/pkg
 	then
 		mv -f /usr/sbin/pkg /usr/sbin/pkg.orig
 		ln -s "${pkg}" /usr/sbin/pkg
 	fi
-	cd "${portsdir}/ports-mgmt/pkg" && make clean package install
+	( cd "${portsdir}/ports-mgmt/pkg" && make clean package install )
 	${pkg} delete -y -f pkg
 }
 #
@@ -2081,7 +2082,7 @@ update_pkg() {
 check_update_pkg() {
 	if test -f "${pkg}"
 	then
-		old=`${pkg} query -e '%p == /usr/pkgng' %n-%v`
+		old=`env "PKG_DBDIR=/var/db/pkgng" ${pkg} query -e '%p == /usr/pkgng' %n-%v`
 		pkgname=`cd "${portsdir}/ports-mgmt/pkg" && make PKGNAMESUFFIX=-pkgng -V PKGNAME`
 		if test "${old}" = "${pkgname}"
 		then
@@ -2177,6 +2178,14 @@ quiet_mkdir "${pkginfo_cache}"
 #
 target="${1}"
 case "${target}" in
+repo)
+	if test "${pkgng}" != ""
+	then
+		mv "${packages}/Old" "${packages}-Old"
+		${pkg} repo "${packages}"
+		mv "${packages}-Old" "${packages}/Old"
+	fi
+	;;
 make-packages)
 	defaultdata="${localdir}/data/make-packages.${hostname}"
 	if test ! -f "${defaultdata}"
@@ -2204,12 +2213,7 @@ make-packages)
 			make_packages_in_dir "${i}"
 		fi
 	done
-	if test "${pkgng}" != ""
-	then
-		mv "${packages}/Old" "${packages}-Old"
-		${pkg} repo "${packages}"
-		mv "${packages}-Old" "${packages}/Old"
-	fi
+	next_target repo
 	;;
 add-packages)
 	shift
@@ -2342,6 +2346,7 @@ clean-packages)
 		clean_package_all
 		clean_package_links
 	)
+	next_target repo
 	next_target "${@}"
 	;;
 clean-openssl-packages)
