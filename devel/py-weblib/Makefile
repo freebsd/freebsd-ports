@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	weblib
-PORTVERSION=	0.1.14
+PORTVERSION=	0.1.15
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,8 +18,5 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytils>0:${PORTSDIR}/russian/py-pytils \
 NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	autoplist distutils
-
-post-extract:
-	${RM} -rf ${WRKSRC}/test
 
 .include <bsd.port.mk>
