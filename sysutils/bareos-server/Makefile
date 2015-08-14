@@ -3,7 +3,7 @@
 
 PORTNAME=	bareos
 DISTVERSION=	15.2
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
 PKGNAMESUFFIX?=	-server
@@ -162,15 +162,13 @@ MP1+=	bsmtp.1 bregex.1 bwild.1 bareos-tray-monitor.1
 MAKE_ENV+=	MAN8="${MP8}" MAN1="${MP1}"
 
 post-patch:
-#	This port does not install docs.  See bacula-docs for that
+#	This port does not install docs.  See bareos-docs for that
 	${REINPLACE_CMD} -e '/docdir/d' ${WRKSRC}/Makefile.in
 #	Default bconsole.conf is in ${ETCDIR}
 	@${REINPLACE_CMD} -e 's|./bconsole.conf|${ETCDIR}/bconsole.conf|g' ${WRKSRC}/src/console/console.c
 	@${REINPLACE_CMD} -e 's|^MAN8 =|MAN8 ?=|g' -e 's|^MAN1 =|MAN1 ?=|g' ${WRKSRC}/manpages/Makefile.in
 	@${REINPLACE_CMD} -e 's|_NONSHARED||g' ${WRKSRC}/src/filed/Makefile.in
 .if defined(WITH_CLIENT_ONLY)
-# 	In client port only install startup script out of script dir (see below post-install)
-# 	Dont mkdir ${PREFIX}/share/bacula cause it's empty
 	@${REINPLACE_CMD} -e 's|^\(fd_subdirs = .*\)scripts\(.*\)|\1\2|g' ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e 's|\(.*$${MKDIR} $${DESTDIR}$${scriptdir}\)|#\1|g' ${WRKSRC}/Makefile.in
 .else
