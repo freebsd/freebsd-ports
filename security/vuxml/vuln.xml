@@ -58,6 +58,51 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6241b5df-42a1-11e5-93ad-002590263bf5">
+    <topic>mediawiki -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mediawiki123</name>
+	<range><lt>1.23.10</lt></range>
+      </package>
+      <package>
+	<name>mediawiki124</name>
+	<range><lt>1.24.3</lt></range>
+      </package>
+      <package>
+	<name>mediawiki125</name>
+	<range><lt>1.25.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MediaWiki reports:</p>
+	<blockquote cite="https://lists.wikimedia.org/pipermail/mediawiki-announce/2015-August/000179.html">
+	  <p>Internal review discovered that Special:DeletedContributions did
+	    not properly protect the IP of autoblocked users. This fix makes
+	    the functionality of Special:DeletedContributions consistent with
+	    Special:Contributions and Special:BlockList.</p>
+	  <p>Internal review discovered that watchlist anti-csrf tokens were not
+	    being compared in constant time, which could allow various timing
+	    attacks. This could allow an attacker to modify a user's watchlist
+	    via csrf</p>
+	  <p>John Menerick reported that MediaWiki's thumb.php failed to sanitize
+	    various error messages, resulting in xss.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://lists.wikimedia.org/pipermail/mediawiki-announce/2015-August/000179.html</url>
+      <url>https://phabricator.wikimedia.org/T106893</url>
+      <url>https://phabricator.wikimedia.org/T94116</url>
+      <url>https://phabricator.wikimedia.org/T97391</url>
+    </references>
+    <dates>
+      <discovery>2015-08-10</discovery>
+      <entry>2015-08-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0c2c4d84-42a2-11e5-9daa-14dae9d210b8">
     <topic>freeradius3 -- insufficient validation on packets</topic>
     <affects>
