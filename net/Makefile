@@ -1178,6 +1178,7 @@
     SUBDIR += spread4
     SUBDIR += sprinkle
     SUBDIR += sqtop
+    SUBDIR += srelay
     SUBDIR += ss5
     SUBDIR += ssldump
     SUBDIR += sslh
