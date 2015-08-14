@@ -114,5 +114,5 @@ SHA256 (calio-form-input-nginx-module-v0.07_GH0.tar.gz) = c0c56cc697a290e98b88d4
 SIZE (calio-form-input-nginx-module-v0.07_GH0.tar.gz) = 10563
 SHA256 (calio-iconv-nginx-module-v0.10_GH0.tar.gz) = 88e326eba7fdf9fd2376b1ba033b48cb0eee45136528cf5430ac9340088ce324
 SIZE (calio-iconv-nginx-module-v0.10_GH0.tar.gz) = 12513
-SHA256 (patch.http2-v1_1.9.3.txt) = 14e37643c43e24ed7de9cc57bd4a082ff3b5d85423a998dc1a3226c9d00b1d6e
-SIZE (patch.http2-v1_1.9.3.txt) = 308749
+SHA256 (patch.http2-v2_1.9.3.txt) = 8fe4d8ca0301370902123136b401e8bd7112ed6c36e92a8fd8a0d9277dc870cb
+SIZE (patch.http2-v2_1.9.3.txt) = 312150
