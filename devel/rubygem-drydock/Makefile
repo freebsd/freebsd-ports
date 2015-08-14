@@ -16,8 +16,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-USES=		shebangfix
 RUBYGEM_AUTOPLIST=	yes
+USES=		shebangfix
 SHEBANG_FILES=	bin/example
 
 .include <bsd.port.mk>
