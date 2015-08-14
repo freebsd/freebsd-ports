@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: srelay
+# REQUIRE: DAEMON jail
+# BEFORE: LOGIN
+# KEYWORD: FreeBSD NetBSD shutdown
+#
+# Add the following line to /etc/rc.conf to enable srelay:
+#
+# srelay_enable="YES"
+# srelay_flags="-i 127.0.0.1"
+#
+
+. /etc/rc.subr
+
+name=srelay
+rcvar=srelay_enable
+
+load_rc_config $name
+: ${srelay_enable="NO"}
+
+command="%%LOCALBASE%%/sbin/srelay"
+pid_file="/var/run/srelay.pid"
+
+load_rc_config $name
+
+run_rc_command "$1"
