@@ -2,7 +2,7 @@
 
 PORTNAME=	rdtool
 PORTVERSION=	0.6.38
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc ruby
 MASTER_SITES=	RG
 
@@ -14,6 +14,8 @@ LICENSE_COMB=	dual
 
 NO_ARCH=	yes
 
+USES=		shebangfix
+SHEBANG_FILES=	bin/rd2 bin/rdswap.rb
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
