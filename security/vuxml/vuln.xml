@@ -58,6 +58,71 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ec6a2a1e-429d-11e5-9daa-14dae9d210b8">
+    <topic>gnutls -- double free in certificate DN decoding</topic>
+    <affects>
+      <package>
+	<name>gnutls</name>
+	<range><lt>3.3.17</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>gnutls.org reports:</p>
+	<blockquote cite="http://www.gnutls.org/security.html#GNUTLS-SA-2015-3">
+	    <p>Kurt Roeckx reported that decoding a specific certificate with very
+	    long DistinguishedName (DN) entries leads to double free, which may
+	    result to a denial of service. Since the DN decoding occurs in almost
+	    all applications using certificates it is recommended to upgrade the
+	    latest GnuTLS version fixing the issue. Recommendation: Upgrade to
+	    GnuTLS 3.4.4, or 3.3.17.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.gnutls.org/security.html#GNUTLS-SA-2015-3</url>
+      <mlist>http://seclists.org/oss-sec/2015/q3/308</mlist>
+      <url>https://gitlab.com/gnutls/gnutls/commit/272854367efc130fbd4f1a51840d80c630214e12</url>
+    </references>
+    <dates>
+      <discovery>2015-07-20</discovery>
+      <entry>2015-08-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3de36a19-429d-11e5-9daa-14dae9d210b8">
+    <topic>gnutls -- MD5 downgrade in TLS signatures</topic>
+    <affects>
+      <package>
+	<name>gnutls</name>
+	<range><lt>3.3.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Karthikeyan Bhargavan reports:</p>
+	<blockquote cite="http://permalink.gmane.org/gmane.comp.encryption.gpg.gnutls.devel/8132">
+	  <p>GnuTLS does not by default support MD5 signatures. Indeed the RSA-MD5
+	    signature-hash algorithm needs to be explicitly enabled using the
+	    priority option VERIFY_ALLOW_SIGN_RSA_MD5. In the NORMAL and SECURE
+	    profiles, GnuTLS clients do not offer RSA-MD5 in the signature
+	    algorithms extension. However, we find that all GnuTLS clients still
+	    accept RSA-MD5 in the ServerKeyExchange and GnuTLS servers still
+	    accept RSA-MD5 in the ClientCertificateVerify.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <mlist>http://permalink.gmane.org/gmane.comp.encryption.gpg.gnutls.devel/8132</mlist>
+      <url>http://www.gnutls.org/security.html#GNUTLS-SA-2015-2</url>
+      <mlist>http://seclists.org/oss-sec/2015/q2/367</mlist>
+    </references>
+    <dates>
+      <discovery>2015-04-25</discovery>
+      <entry>2015-08-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9ee72858-4159-11e5-93ad-002590263bf5">
     <topic>froxlor -- database password information leak</topic>
     <affects>
