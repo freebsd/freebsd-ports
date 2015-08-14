@@ -61,7 +61,8 @@ RUN_DEPENDS+=	fpcres:${PORTSDIR}/lang/fpc-utils \
 		${LCL_UNITS_DIR}/alllclunits.ppu:${PORTSDIR}/editors/lazarus-lcl-units \
 		${LCL_UNITS_DIR}/nogui/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-nogui
 
-USES+=	gettext iconv
+USES+=		gettext iconv
+USE_FPC+=	chm
 
 MAN1S=		lazarus-ide.1 lazbuild.1 startlazarus.1
 SUB_FILES=	pkg-message
