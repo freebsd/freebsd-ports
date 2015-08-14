@@ -1,0 +1,2 @@
+simpleperf is a minimal Linux perf implementation for extracting
+sampling information out of perf.data.
