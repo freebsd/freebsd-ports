@@ -3,7 +3,7 @@
 
 PORTNAME=	seamonkey
 DISTVERSION=	2.33.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES?=	www mail news editors irc ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source
@@ -21,13 +21,13 @@ BUILD_DEPENDS=	nspr>=4.10.6:${PORTSDIR}/devel/nspr \
 		graphite2>=1.2.4:${PORTSDIR}/graphics/graphite2 \
 		libvorbis>=1.3.5:${PORTSDIR}/audio/libvorbis \
 		opus>=1.1:${PORTSDIR}/audio/opus \
+		libvpx>=1.3.0:${PORTSDIR}/multimedia/libvpx \
 		sqlite3>=3.8.7.4:${PORTSDIR}/databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat \
 		autoconf-2.13:${PORTSDIR}/devel/autoconf213 \
 		zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip
-#		libvpx>=1.5.0:${PORTSDIR}/multimedia/libvpx \
 
 LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
 
@@ -47,7 +47,7 @@ MOZ_EXTENSIONS=	default
 MOZ_OPTIONS+=	--program-transform-name='s/seamonkey/${MOZILLA}/' \
 		--enable-application=suite
 
-USE_MOZILLA=	-vpx
+USE_MOZILLA=	# empty
 MOZ_PKGCONFIG_FILES=
 
 NOT_FOR_ARCHS=	ia64
