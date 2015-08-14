@@ -1,14 +1,17 @@
 --- configure.orig
 +++ configure
-@@ -164,6 +164,7 @@ all_platforms="${all_platforms} universa
- all_platforms="${all_platforms} universal-darwin12-gcc"
- all_platforms="${all_platforms} universal-darwin13-gcc"
- all_platforms="${all_platforms} universal-darwin14-gcc"
+@@ -148,6 +148,10 @@ all_platforms="${all_platforms} x86_64-w
+ all_platforms="${all_platforms} x86_64-win64-vs10"
+ all_platforms="${all_platforms} x86_64-win64-vs11"
+ all_platforms="${all_platforms} x86_64-win64-vs12"
 +all_platforms="${all_platforms} ia64-linux-gcc"
++all_platforms="${all_platforms} ppc32-linux-gcc"
++all_platforms="${all_platforms} ppc64-linux-gcc"
++all_platforms="${all_platforms} sparc64-linux-gcc"
  all_platforms="${all_platforms} generic-gnu"
  
  # all_targets is a list of all targets that can be configured
-@@ -611,15 +612,15 @@
+@@ -611,15 +612,14 @@
          check_add_cflags -Wimplicit-function-declaration
          check_add_cflags -Wuninitialized
          check_add_cflags -Wunused-variable
@@ -26,7 +29,6 @@
 +          # https://code.google.com/p/webm/issues/detail?id=603
 +          # work around them until they are fixed
 +          check_add_cflags -fno-strict-aliasing
-+          CLANG_NO_IAS=-no-integrated-as
 +        else
 +          check_add_cflags -Wunused-but-set-variable
 +        fi
