@@ -3,6 +3,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	5.5.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://collectd.org/files/ \
 		http://collectd.org/files/
@@ -59,7 +60,7 @@ ROUTEROS_DESC=		Enable routeros plugin
 RRDTOOL_DESC=		Enable rrdtool plugin (also rrdcached plugin)
 SIGROK_DESC=		Enable sigrok plugin
 SNMP_DESC=		Enable SNMP plugin
-STATGRAB_DESC=		Enable statgrab-based plugins (disk, interface, etc)
+STATGRAB_DESC=		Enable statgrab-based plugins (interface, etc)
 STATSD_DESC=		Enable statsd plugin
 TOKYOTYRANT_DESC=	Enable tokyotyrant plugin
 VARNISH_DESC=		Enable varnish 4.x cache statistics
@@ -114,6 +115,7 @@ CONFIGURE_ARGS+=	\
 		--enable-cpu \
 		--enable-csv \
 		--enable-df \
+		--enable-disk \
 		--enable-dns \
 		--enable-email \
 		--enable-exec \
@@ -455,7 +457,6 @@ PLIST_SUB+=	RRDTOOL="@comment "
 LIB_DEPENDS+=	libstatgrab.so:${PORTSDIR}/devel/libstatgrab
 LIBS+=		`pkg-config --libs libstatgrab`
 CONFIGURE_ARGS+=--with-libstatgrab=${LOCALBASE} \
-		--enable-disk \
 		--enable-interface
 PLIST_SUB+=	STATGRAB=""
 .else
