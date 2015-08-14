@@ -1,9 +1,9 @@
 ###############################################################################
 
-bacula webui was installed
+bareos webui was installed
 
 Please note that everything has been installed in %%BAREOSWEBUIDIR%%. You can 
-look bacula-webui installation/configuration instructions at:
+look bareos-webui installation/configuration instructions at:
 
 https://github.com/bareos/bareos-webui/blob/master/doc/INSTALL.md
 
