@@ -8,7 +8,7 @@ COMMENT=	Lazarus components library - GTK2 backend
 
 BUILD_DEPENDS=	${LCL_UNITS_DIR}/alllclunits.ppu:${PORTSDIR}/editors/lazarus-lcl-units
 
-USE_FPC=	x11 gtk2
+USE_FPC=	cairo gtk2 x11
 USE_FPC_RUN=	yes
 
 LCL_INTERFACE=	gtk2
