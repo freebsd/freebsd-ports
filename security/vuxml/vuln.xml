@@ -58,6 +58,34 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0c2c4d84-42a2-11e5-9daa-14dae9d210b8">
+    <topic>freeradius3 -- insufficient validation on packets</topic>
+    <affects>
+      <package>
+	<name>freeradius3</name>
+	<range><lt>3.0.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jouni Malinen reports:</p>
+	<blockquote cite="http://freeradius.org/security.html#eap-pwd-2015">
+	  <p>The EAP-PWD module performed insufficient validation on
+	    packets received from an EAP peer. This module is not enabled in the
+	    default configuration. Administrators must manually enable it for their
+	    server to be vulnerable. Only versions 3.0 up to 3.0.8 are affected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://freeradius.org/security.html#eap-pwd-2015</url>
+    </references>
+    <dates>
+      <discovery>2015-04-04</discovery>
+      <entry>2015-08-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ec6a2a1e-429d-11e5-9daa-14dae9d210b8">
     <topic>gnutls -- double free in certificate DN decoding</topic>
     <affects>
