@@ -2,7 +2,7 @@
 
 PORTNAME=	libarchive
 PORTVERSION=	3.1.2
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://libarchive.org/downloads/
@@ -18,7 +18,7 @@ OPTIONS_DEFAULT=LZO
 LZO_DESC=	Support lzo compression via liblzo2
 NETTLE_DESC=	Use Nettle instead of OpenSSL
 
-USES=		cpe libtool pathfix
+USES=		cpe iconv libtool pathfix
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
@@ -88,7 +88,15 @@ NETTLE_CONFIGURE_ON=	--without-openssl
 NETTLE_USE_OFF=		OPENSSL=yes
 NETTLE_CONFIGURE_OFF=	--with-openssl
 
+.include <bsd.port.pre.mk>
+
+.if empty(ICONV_LIB)
+CONFIGURE_ENV+=	ac_cv_header_localcharset_h=no \
+		ac_cv_func_locale_charset=no \
+		ac_cv_lib_charset_locale_charset=no
+.endif
+
 check:
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
