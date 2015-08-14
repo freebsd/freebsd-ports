@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	libvpx
-PORTVERSION=	1.4.0
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.4.0-488 # tracking www/firefox
+DISTVERSIONSUFFIX=	-ge67d45d
 CATEGORIES=	multimedia
-MASTER_SITES=	DEBIAN
-DISTNAME=	${PORTNAME}_${DISTVERSION}.orig
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	VP8/VP9 Codec SDK
@@ -15,7 +15,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
 
-USES=		cpe gmake perl5 shebangfix tar:bzip2
+USE_GITHUB=	yes
+GH_ACCOUNT=	webmproject
+
+USES=		compiler cpe gmake perl5 shebangfix tar:bzip2
 CPE_VENDOR=	john_koleszar
 HAS_CONFIGURE=	yes
 USE_PERL5=	build
@@ -28,7 +31,6 @@ POSTPROC_DESC=	Enable postprocessing
 RUNTIME_DESC=	Enable runtime CPU detection
 SHARED_DESC=	Enable shared-library support
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 ALL_TARGET=
 CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--disable-install-docs \
@@ -51,18 +53,6 @@ SHEBANG_FILES=	build/make/ads2gas.pl
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION}  < 900000
-.if ${ARCH} == "amd64"
-USE_GCC=	yes
-.endif
-.endif
-
-# Workaround for GCC in 9.x post r260075
-# OSVERSION taken from r260135, the closest OSVERSION
-.if ${OSVERSION} >  902505 && ${OSVERSION} < 1000000
-CFLAGS+=	-flax-vector-conversions
-.endif
-
 .if ${OSVERSION} >= 1000000
 CONFIGURE_ARGS+=	--disable-unit-tests
 .endif
@@ -77,6 +67,9 @@ CONFIGURE_ARGS+=	--target=ia64-linux-gcc
 CONFIGURE_ARGS+=	--target=ppc32-linux-gcc
 .elif ${ARCH} == "powerpc64"
 CONFIGURE_ARGS+=	--target=ppc64-linux-gcc
+.elif ${ARCH} == "sparc64"
+CONFIGURE_ARGS+=	--target=sparc64-linux-gcc
+USES:=			${USES:Ncompiler*} compiler:c++11-lib
 .elif ${ARCH} == "armv6"
 CONFIGURE_ARGS+=	--target=armv6-linux-gcc --cpu=armv6
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-build_make_Makefile
@@ -84,8 +77,22 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-build_make_Makefile
 IGNORE=	no support for ${ARCH} the moment. testing/patches are welcome
 .endif
 
+.include <bsd.port.pre.mk>
+
+# Workaround for GCC in 9.x post r260075
+# OSVERSION taken from r260135, the closest OSVERSION
+.if ${OPSYS} == FreeBSD && ${OSVERSION} > 902505
+. if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} == 42
+CFLAGS+=	-flax-vector-conversions
+. endif
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} 's|\(link_with_cc\)=gcc|\1=$${CC}|' \
 		${WRKSRC}/build/make/configure.sh
 
-.include <bsd.port.mk>
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/vpx*
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libvpx.so.*.*.*
+
+.include <bsd.port.post.mk>
