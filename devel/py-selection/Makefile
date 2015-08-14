@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	selection
-PORTVERSION=	0.0.9
+PORTVERSION=	0.0.10
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,8 +18,5 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six \
 NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	autoplist distutils
-
-post-extract:
-	${RM} -rf ${WRKSRC}/test
 
 .include <bsd.port.mk>
