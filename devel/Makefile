@@ -2434,6 +2434,7 @@
     SUBDIR += p5-List-Flatten
     SUBDIR += p5-List-Gen
     SUBDIR += p5-List-Group
+    SUBDIR += p5-List-Objects-Types
     SUBDIR += p5-List-Objects-WithUtils
     SUBDIR += p5-List-Permutor
     SUBDIR += p5-List-PowerSet
