@@ -68,6 +68,7 @@
 %%PERL5_MAN3%%/Data::Object::Role::Undef.3.gz
 %%PERL5_MAN3%%/Data::Object::Role::Universal.3.gz
 %%PERL5_MAN3%%/Data::Object::Scalar.3.gz
+%%PERL5_MAN3%%/Data::Object::Singleton.3.gz
 %%PERL5_MAN3%%/Data::Object::String.3.gz
 %%PERL5_MAN3%%/Data::Object::Undef.3.gz
 %%PERL5_MAN3%%/Data::Object::Universal.3.gz
