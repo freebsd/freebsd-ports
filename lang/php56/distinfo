@@ -1,4 +1,4 @@
-SHA256 (php-5.6.11.tar.bz2) = bd6b260816764c267244749ead07482120dbf8d1920ebbbb0dcb2aa411033866
-SIZE (php-5.6.11.tar.bz2) = 14081292
+SHA256 (php-5.6.12.tar.bz2) = 6f27104272af7b2a996f85e4100fac627630fbdaf39d7bd263f16cf529c8853a
+SIZE (php-5.6.12.tar.bz2) = 14094148
 SHA256 (php-5.5.x-mail-header.patch) = b0b5a7c961b2052eb14d9528e76155cbeaa881fb9b4a49f452f9dab07b6fb1c4
 SIZE (php-5.5.x-mail-header.patch) = 3379
