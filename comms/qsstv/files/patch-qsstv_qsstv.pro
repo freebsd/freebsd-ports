@@ -1,6 +1,6 @@
---- qsstv/qsstv.pro.orig	2014-12-06 06:41:00.000000000 -0800
-+++ qsstv/qsstv.pro	2014-12-07 16:17:46.000000000 -0800
-@@ -420,20 +420,17 @@
+--- qsstv/qsstv.pro.orig	2014-12-06 14:41:00 UTC
++++ qsstv/qsstv.pro
+@@ -420,20 +420,17 @@ HEADERS  += scope/scopeoffset.h \
  FORMS   += scope/scopeoffset.ui \
  				scope/plotform.ui
  

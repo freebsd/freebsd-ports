@@ -1,5 +1,5 @@
---- qsstv/drmrx/channeldecode.cpp.orig	2014-04-08 02:02:06.000000000 -0700
-+++ qsstv/drmrx/channeldecode.cpp	2014-04-08 02:03:28.000000000 -0700
+--- qsstv/drmrx/channeldecode.cpp.orig	2014-12-06 14:41:00 UTC
++++ qsstv/drmrx/channeldecode.cpp
 @@ -29,7 +29,6 @@
  #include <stdlib.h>
  #include <sys/types.h>

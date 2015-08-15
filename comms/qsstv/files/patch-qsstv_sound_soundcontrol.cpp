@@ -1,6 +1,6 @@
---- qsstv/sound/soundcontrol.cpp.orig	2014-04-09 10:27:08.000000000 -0700
-+++ qsstv/sound/soundcontrol.cpp	2014-04-09 10:27:28.000000000 -0700
-@@ -53,8 +53,8 @@
+--- qsstv/sound/soundcontrol.cpp.orig	2014-12-06 14:41:00 UTC
++++ qsstv/sound/soundcontrol.cpp
+@@ -53,8 +53,8 @@ void soundControl::readSettings()
    txClock=qSettings.value("txclock",BASESAMPLERATE).toDouble();
    if(fabs(1-rxClock/BASESAMPLERATE)>0.002) rxClock=BASESAMPLERATE;
    if(fabs(1-txClock/BASESAMPLERATE)>0.002) txClock=BASESAMPLERATE;
@@ -11,7 +11,7 @@
    soundIOPtr->soundRoutingInput=  (soundIO::edataSrc)qSettings.value("soundRoutingInput",  0 ).toInt();
    soundIOPtr->soundRoutingOutput= (soundIO::edataDst)qSettings.value("soundRoutingOutput", 0 ).toInt();
    soundIOPtr->recordingSize= qSettings.value("recordingSize", 100 ).toInt();
-@@ -69,8 +69,8 @@
+@@ -69,8 +69,8 @@ void soundControl::writeSettings()
    qSettings.beginGroup("Sound");
    qSettings.setValue("rxclock",rxClock);
    qSettings.setValue("txclock",txClock);
@@ -22,7 +22,7 @@
    qSettings.setValue ("soundRoutingInput", soundIOPtr->soundRoutingInput );
    qSettings.setValue ("soundRoutingOutput",soundIOPtr->soundRoutingOutput );
    qSettings.setValue ("recordingSize",soundIOPtr->recordingSize );
-@@ -82,8 +82,8 @@
+@@ -82,8 +82,8 @@ void soundControl::setParams()
  {
    setValue(rxClock,ui->inputClockLineEdit,9);
    setValue(txClock,ui->outputClockLineEdit,9);
@@ -33,7 +33,7 @@
    soundIOPtr->inputAudioDevice=ui->inputPCMNameComboBox->currentText();
    soundIOPtr->outputAudioDevice=ui->outputPCMNameComboBox->currentText();
  
-@@ -99,13 +99,13 @@
+@@ -99,13 +99,13 @@ void soundControl::setParams()
  void soundControl::getParams()
  {
    changed=false;
@@ -51,7 +51,7 @@
  
    if (ui->inFromCard->isChecked()) soundIOPtr->soundRoutingInput=soundIO::SNDINCARD;
    else if(ui->inFromFile->isChecked()) soundIOPtr->soundRoutingInput=soundIO::SNDINFILE;
-@@ -114,7 +114,7 @@
+@@ -114,7 +114,7 @@ void soundControl::getParams()
    if (ui->outToCard->isChecked()) soundIOPtr->soundRoutingOutput=soundIO::SNDOUTCARD;
    else soundIOPtr->soundRoutingOutput=soundIO::SNDOUTTOFILE;
    getValue(soundIOPtr->recordingSize,ui->mbSpinBox);
