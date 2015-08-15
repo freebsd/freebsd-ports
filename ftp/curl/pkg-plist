@@ -12,7 +12,7 @@ include/curl/typecheck-gcc.h
 lib/libcurl.a
 lib/libcurl.so
 lib/libcurl.so.4
-lib/libcurl.so.4.3.0
+lib/libcurl.so.4.4.0
 lib/libcurl.so.7
 libdata/pkgconfig/libcurl.pc
 man/man1/curl-config.1.gz
@@ -26,6 +26,8 @@ man/man3/CURLMOPT_MAX_TOTAL_CONNECTIONS.3.gz
 man/man3/CURLMOPT_PIPELINING.3.gz
 man/man3/CURLMOPT_PIPELINING_SERVER_BL.3.gz
 man/man3/CURLMOPT_PIPELINING_SITE_BL.3.gz
+man/man3/CURLMOPT_PUSHDATA.3.gz
+man/man3/CURLMOPT_PUSHFUNCTION.3.gz
 man/man3/CURLMOPT_SOCKETDATA.3.gz
 man/man3/CURLMOPT_SOCKETFUNCTION.3.gz
 man/man3/CURLMOPT_TIMERDATA.3.gz
@@ -301,6 +303,7 @@ man/man3/libcurl-errors.3.gz
 man/man3/libcurl-multi.3.gz
 man/man3/libcurl-share.3.gz
 man/man3/libcurl-symbols.3.gz
+man/man3/libcurl-thread.3.gz
 man/man3/libcurl-tutorial.3.gz
 man/man3/libcurl.3.gz
 share/aclocal/libcurl.m4
