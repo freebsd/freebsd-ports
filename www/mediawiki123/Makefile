@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.23.9
-PORTREVISION=	1
+PORTVERSION=	1.23.10
 CATEGORIES=	www
 MASTER_SITES=	http://releases.wikimedia.org/mediawiki/${PORTVERSION:R}/
 PKGNAMESUFFIX=	123
@@ -31,12 +30,11 @@ PLIST=		${WRKDIR}/plist
 SUB_FILES=	pkg-message
 SUB_LIST=	MEDIAWIKIDIR=${PREFIX}/${MEDIAWIKIDIR}
 
-OPTIONS_DEFINE=	MYSQL PGSQL SQLITE LDAP MEMCACHED APC EACCEL XCACHE IMAGICK
+OPTIONS_DEFINE=	MYSQL PGSQL SQLITE LDAP MEMCACHED APC XCACHE IMAGICK
 OPTIONS_DEFAULT=MYSQL
 
 MEMCACHED_DESC=	Use memcached
 APC_DESC=	Use pecl-APC (Mediawiki recommended)
-EACCEL_DESC=	Use eAccelerator (instead of pecl-APC)
 XCACHE_DESC=	Use xCache (instead of pecl-APC)
 IMAGICK_DESC=	Use ImageMagick
 
@@ -76,12 +74,8 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xcache.so:${PORTSDIR}/www/xcac
 .endif
 
 pre-install:
-	@${ECHO_CMD} "@owner ${WWWOWN}" >> ${PLIST}
-	@${ECHO_CMD} "@group ${WWWGRP}" >> ${PLIST}
 	@${FIND} -s -d ${WRKSRC} -not -type d | ${SED} "s?${WRKSRC}?${MEDIAWIKIDIR}?g" >>${PLIST}
 	@${ECHO} @dir ${MEDIAWIKIDIR} >> ${PLIST}
-	@${ECHO_CMD} "@group" >> ${PLIST}
-	@${ECHO_CMD} "@owner" >> ${PLIST}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${MEDIAWIKIDIR}
