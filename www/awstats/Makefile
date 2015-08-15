@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	awstats
-PORTVERSION=	7.3
+PORTVERSION=	7.4
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/AWStats/${PORTVERSION}
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-Net-XWhois>=0:${PORTSDIR}/net/p5-Net-XWhois
 
-USES=		dos2unix cpe perl5 shebangfix
+USES=		cpe dos2unix perl5 shebangfix
 CPE_VENDOR=	laurent_destailleur
 
 SHEBANG_FILES=	tools/*.pl wwwroot/cgi-bin/*.pl wwwroot/cgi-bin/plugins/*.pm
@@ -55,7 +55,7 @@ do-install:
 		logresolvemerge.pl maillogconvert.pl urlaliasbuilder.pl \
 		${STAGEDIR}${WWWDIR}/tools)
 	(cd ${WRKSRC}/tools && ${COPYTREE_SHARE} xslt ${STAGEDIR}${WWWDIR}/tools)
-	@${MKDIR} ${STAGEDIR}${WWWDIR}/cgi-bin 
+	@${MKDIR} ${STAGEDIR}${WWWDIR}/cgi-bin
 	(cd ${WRKSRC}/wwwroot/cgi-bin && ${INSTALL_SCRIPT} awredir.pl awstats.pl \
 		awstats.model.conf ${STAGEDIR}${WWWDIR}/cgi-bin)
 	@${MKDIR} ${STAGEDIR}${WWWDIR}/cgi-bin/lang/tooltips_f
@@ -85,7 +85,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} images ${STAGEDIR}${DOCSDIR})
 	${INSTALL_DATA} ${WRKSRC}/docs/*.* ${STAGEDIR}${DOCSDIR}
-	
+
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "* Use ${WWWDIR}/tools/awstats_configure.pl to setup your hosts."
 	@${ECHO_CMD} ""
