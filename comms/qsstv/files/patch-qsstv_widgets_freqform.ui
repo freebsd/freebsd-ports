@@ -1,5 +1,5 @@
---- qsstv/widgets/freqform.ui.orig	2014-04-10 14:59:37.000000000 -0700
-+++ qsstv/widgets/freqform.ui	2014-04-10 14:59:45.000000000 -0700
+--- qsstv/widgets/freqform.ui.orig	2014-12-06 14:41:00 UTC
++++ qsstv/widgets/freqform.ui
 @@ -242,7 +242,6 @@
    </layout>
   </widget>
