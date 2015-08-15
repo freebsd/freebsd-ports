@@ -20,6 +20,7 @@ TEST_DEPENDS=	p5-Moo>=0:${PORTSDIR}/devel/p5-Moo \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-strictures>=2:${PORTSDIR}/devel/p5-strictures
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
