@@ -449,6 +449,7 @@
     SUBDIR += nxproxy
     SUBDIR += nyancat
     SUBDIR += nylon
+    SUBDIR += ocserv
     SUBDIR += ohphone
     SUBDIR += olsrd
     SUBDIR += omcmd
