@@ -5,8 +5,8 @@ DISTVERSIONSUFFIX=	-g683790a
 PORTREVISION=	1
 PKGNAMESUFFIX=	-devel
 
-GH_TAGNAME=	m-preview-100-gdece0f9:extras \
-		m-preview-6-g6d0b91b:libselinux
+GH_TAGNAME=	${DISTVERSIONFULL:C/-[0-9].*//}-100-gdece0f9:extras \
+		${DISTVERSIONFULL:C/-[0-9].*//}-6-g6d0b91b:libselinux
 
 CONFLICTS_INSTALL=	${PORTNAME}-[0-9]*
 
