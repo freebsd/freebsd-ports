@@ -1017,8 +1017,10 @@ lib/mono/xbuild/Microsoft/Portable/Microsoft.Portable.Core.props
 lib/mono/xbuild/Microsoft/Portable/Microsoft.Portable.Core.targets
 lib/mono/xbuild/Microsoft/Portable/v4.0/Microsoft.Portable.CSharp.targets
 lib/mono/xbuild/Microsoft/Portable/v4.0/Microsoft.Portable.Common.targets
+lib/mono/xbuild/Microsoft/Portable/v4.0/Microsoft.Portable.VisualBasic.targets
 lib/mono/xbuild/Microsoft/Portable/v4.5/Microsoft.Portable.CSharp.targets
 lib/mono/xbuild/Microsoft/Portable/v4.5/Microsoft.Portable.Common.targets
+lib/mono/xbuild/Microsoft/Portable/v4.5/Microsoft.Portable.VisualBasic.targets
 lib/mono/xbuild/Microsoft/VisualStudio/v10.0/WebApplications/Microsoft.WebApplication.targets
 lib/mono/xbuild/Microsoft/VisualStudio/v11.0/WebApplications/Microsoft.WebApplication.targets
 lib/mono/xbuild/Microsoft/VisualStudio/v9.0/WebApplications/Microsoft.WebApplication.targets
