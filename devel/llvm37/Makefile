@@ -2,6 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.7.0rc2
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
 DISTNAME=	${PORTNAME}-${DISTVERSION}.src
@@ -37,7 +38,10 @@ OPTIONS_DEFAULT_amd64=	OPENMP
 OPTIONS_SUB=	yes
 
 CLANG_DESC=	Build clang
-CLANG_EXTRA_PATCHES= ${PATCHDIR}/clang-patch-tools_clang_lib_Headers_CMakeLists.txt
+CLANG_EXTRA_PATCHES= \
+		${PATCHDIR}/clang-patch-tools_clang_lib_Headers_CMakeLists.txt \
+		${PATCHDIR}/clang-patch-svn-244209 \
+		${PATCHDIR}/clang-patch-svn-245041
 CLANG_CONFLICTS_INSTALL=	clang-devel-3.[1234567]*
 CLANG_DISTFILES=	cfe-${DISTVERSION}.src${EXTRACT_SUFX}
 CLANG_CMAKE_ON=		-DCLANG_DEFAULT_OPENMP_RUNTIME=libomp
@@ -265,5 +269,17 @@ check-commands:
 .for command in ${COMMANDS}
 	test -e ${STAGEDIR}${LLVM_PREFIX}/bin/${command}
 .endfor
+
+.if make(svn-patch-clang)
+.if !defined(PATCH_REV)
+.error svn-patch-clang requires that PATCH_REV be set
+.endif
+_PATCH_FILE=${FILESDIR}/clang-patch-svn-${PATCH_REV}
+_LLVM_BASE=http://llvm.org/svn/llvm-project/cfe/trunk
+svn-patch-clang:
+	svn log -c ${PATCH_REV} ${_LLVM_BASE} >> ${_PATCH_FILE}
+	svn diff -c ${PATCH_REV} ${_LLVM_BASE} | \
+	    sed -E -e 's;^(---|\+\+\+) ;\1 tools/clang/;' >> ${_PATCH_FILE}
+.endif
 
 .include <bsd.port.post.mk>
