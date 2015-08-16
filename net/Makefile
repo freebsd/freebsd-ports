@@ -307,6 +307,7 @@
     SUBDIR += libilbc
     SUBDIR += libkfbapi
     SUBDIR += libkvkontakte
+    SUBDIR += libmaia
     SUBDIR += libmateweather
     SUBDIR += libmaxminddb
     SUBDIR += libmediawiki
