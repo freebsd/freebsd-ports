@@ -307,7 +307,6 @@
     SUBDIR += fxsudoku
     SUBDIR += galaxis
     SUBDIR += galaxyhack
-    SUBDIR += galaxymage
     SUBDIR += garith
     SUBDIR += gbottler
     SUBDIR += gbrainy
