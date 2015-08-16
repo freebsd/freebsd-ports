@@ -121,6 +121,10 @@ BUILD_MODE=	Debug
 BUILD_MODE=	NoDebug Full Optimizations
 .endif
 
+.if ${PORT_OPTIONS:MWFX_FTP}
+USE_FPC=	fcl-net
+.endif
+
 pre-patch:
 	${TR} '\r' '\n' < ${WRKSRC}/src/uGlobsPaths.pas > ${WRKSRC}/src/uGlobsPaths.pas.unix
 	${MV} ${WRKSRC}/src/uGlobsPaths.pas.unix ${WRKSRC}/src/uGlobsPaths.pas
