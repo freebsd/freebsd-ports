@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	s6
-PORTVERSION=	2.1.1.1
+PORTVERSION=	2.1.6.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
 
@@ -11,8 +11,8 @@ COMMENT=	skarnet.org supervision suite
 
 LICENSE=	ISCL
 
-BUILD_DEPENDS=	skalibs>=2.3.0.0:${PORTSDIR}/devel/skalibs \
-		execline>=2.0.2.1:${PORTSDIR}/lang/execline
+BUILD_DEPENDS=	skalibs>=2.3.5.1:${PORTSDIR}/devel/skalibs \
+		execline>=2.1.2.2:${PORTSDIR}/lang/execline
 RUN_DEPENDS=	execlineb:${PORTSDIR}/lang/execline
 
 USES=		gmake
@@ -20,8 +20,6 @@ USE_RC_SUBR=	s6
 SERVICE_DIR?=	/var/service
 SUB_FILES=	s6-svscan_finish s6-svscan-log_run s6-svscanboot s6-svscan_env_PATH
 SUB_LIST=	SERVICE_DIR="${SERVICE_DIR}"
-
-DOCS=		AUTHORS COPYING INSTALL README doc/*.html
 
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
@@ -32,6 +30,7 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 	--with-lib=${LOCALBASE}/lib/execline \
 	--enable-shared
 
+DOCS=		AUTHORS COPYING INSTALL README doc/*.html
 OPTIONS_DEFINE=	DOCS
 
 post-install:

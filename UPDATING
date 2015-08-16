@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150816:
+  AFFECTS: users of sysutils/s6
+  AUTHOR: Colin Booth <colin@heliocat.net>
+
+  s6-notifywhenup is deprecated and will be removed in the next version
+  of s6. Any run scripts depending on that program should be updated to
+  use an in-servicedir notification-fd file as described under
+  "Readyness notification support" in s6-supervise.html.
+
 20150812:
   AFFECTS: users of net-mgmt/icinga and net-mgmt/icinga2
   AUTHOR: lme@FreeBSD.org
