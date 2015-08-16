@@ -1,0 +1,707 @@
+------------------------------------------------------------------------
+r245041 | abataev | 2015-08-14 12:25:37 +0000 (Fri, 14 Aug 2015) | 4 lines
+
+[OPENMP] Fix for http://llvm.org/PR24371: Assert failure compiling blender 2.75.
+blender uses statements expression in condition of the loop under control of the '#pragma omp parallel for'. This condition is used several times in different expressions required for codegen of the loop directive. If there are some variables defined in statement expression, it fires an assert during codegen because of redefinition of the same variables.
+We have to rebuild several expression to be sure that all variables are unique.
+
+------------------------------------------------------------------------
+Index: lib/Sema/SemaOpenMP.cpp
+===================================================================
+--- tools/clang/lib/Sema/SemaOpenMP.cpp	(revision 245040)
++++ tools/clang/lib/Sema/SemaOpenMP.cpp	(revision 245041)
+@@ -12,6 +12,7 @@
+ ///
+ //===----------------------------------------------------------------------===//
+ 
++#include "TreeTransform.h"
+ #include "clang/AST/ASTContext.h"
+ #include "clang/AST/ASTMutationListener.h"
+ #include "clang/AST/Decl.h"
+@@ -2609,20 +2610,85 @@
+   return true;
+ }
+ 
++namespace {
++// Transform variables declared in GNU statement expressions to new ones to
++// avoid crash on codegen.
++class TransformToNewDefs : public TreeTransform<TransformToNewDefs> {
++  typedef TreeTransform<TransformToNewDefs> BaseTransform;
++
++public:
++  TransformToNewDefs(Sema &SemaRef) : BaseTransform(SemaRef) {}
++
++  Decl *TransformDefinition(SourceLocation Loc, Decl *D) {
++    if (auto *VD = cast<VarDecl>(D))
++      if (!isa<ParmVarDecl>(D) && !isa<VarTemplateSpecializationDecl>(D) &&
++          !isa<ImplicitParamDecl>(D)) {
++        auto *NewVD = VarDecl::Create(
++            SemaRef.Context, VD->getDeclContext(), VD->getLocStart(),
++            VD->getLocation(), VD->getIdentifier(), VD->getType(),
++            VD->getTypeSourceInfo(), VD->getStorageClass());
++        NewVD->setTSCSpec(VD->getTSCSpec());
++        NewVD->setInit(VD->getInit());
++        NewVD->setInitStyle(VD->getInitStyle());
++        NewVD->setExceptionVariable(VD->isExceptionVariable());
++        NewVD->setNRVOVariable(VD->isNRVOVariable());
++        NewVD->setCXXForRangeDecl(VD->isInExternCXXContext());
++        NewVD->setConstexpr(VD->isConstexpr());
++        NewVD->setInitCapture(VD->isInitCapture());
++        NewVD->setPreviousDeclInSameBlockScope(
++            VD->isPreviousDeclInSameBlockScope());
++        VD->getDeclContext()->addHiddenDecl(NewVD);
++        transformedLocalDecl(VD, NewVD);
++        return NewVD;
++      }
++    return BaseTransform::TransformDefinition(Loc, D);
++  }
++
++  ExprResult TransformDeclRefExpr(DeclRefExpr *E) {
++    if (auto *NewD = TransformDecl(E->getExprLoc(), E->getDecl()))
++      if (E->getDecl() != NewD) {
++        NewD->setReferenced();
++        NewD->markUsed(SemaRef.Context);
++        return DeclRefExpr::Create(
++            SemaRef.Context, E->getQualifierLoc(), E->getTemplateKeywordLoc(),
++            cast<ValueDecl>(NewD), E->refersToEnclosingVariableOrCapture(),
++            E->getNameInfo(), E->getType(), E->getValueKind());
++      }
++    return BaseTransform::TransformDeclRefExpr(E);
++  }
++};
++}
++
+ /// \brief Build the expression to calculate the number of iterations.
+ Expr *
+ OpenMPIterationSpaceChecker::BuildNumIterations(Scope *S,
+                                                 const bool LimitedType) const {
++  TransformToNewDefs Transform(SemaRef);
+   ExprResult Diff;
+-  if (Var->getType()->isIntegerType() || Var->getType()->isPointerType() ||
++  auto VarType = Var->getType().getNonReferenceType();
++  if (VarType->isIntegerType() || VarType->isPointerType() ||
+       SemaRef.getLangOpts().CPlusPlus) {
+     // Upper - Lower
+-    Expr *Upper = TestIsLessOp ? UB : LB;
+-    Expr *Lower = TestIsLessOp ? LB : UB;
++    auto *UBExpr = TestIsLessOp ? UB : LB;
++    auto *LBExpr = TestIsLessOp ? LB : UB;
++    Expr *Upper = Transform.TransformExpr(UBExpr).get();
++    Expr *Lower = Transform.TransformExpr(LBExpr).get();
++    if (!Upper || !Lower)
++      return nullptr;
++    Upper = SemaRef.PerformImplicitConversion(Upper, UBExpr->getType(),
++                                                    Sema::AA_Converting,
++                                                    /*AllowExplicit=*/true)
++                      .get();
++    Lower = SemaRef.PerformImplicitConversion(Lower, LBExpr->getType(),
++                                              Sema::AA_Converting,
++                                              /*AllowExplicit=*/true)
++                .get();
++    if (!Upper || !Lower)
++      return nullptr;
+ 
+     Diff = SemaRef.BuildBinOp(S, DefaultLoc, BO_Sub, Upper, Lower);
+ 
+-    if (!Diff.isUsable() && Var->getType()->getAsCXXRecordDecl()) {
++    if (!Diff.isUsable() && VarType->getAsCXXRecordDecl()) {
+       // BuildBinOp already emitted error, this one is to point user to upper
+       // and lower bound, and to tell what is passed to 'operator-'.
+       SemaRef.Diag(Upper->getLocStart(), diag::err_omp_loop_diff_cxx)
+@@ -2643,8 +2709,15 @@
+     return nullptr;
+ 
+   // Upper - Lower [- 1] + Step
+-  Diff = SemaRef.BuildBinOp(S, DefaultLoc, BO_Add, Diff.get(),
+-                            Step->IgnoreImplicit());
++  auto NewStep = Transform.TransformExpr(Step->IgnoreImplicit());
++  if (NewStep.isInvalid())
++    return nullptr;
++  NewStep = SemaRef.PerformImplicitConversion(
++      NewStep.get(), Step->IgnoreImplicit()->getType(), Sema::AA_Converting,
++      /*AllowExplicit=*/true);
++  if (NewStep.isInvalid())
++    return nullptr;
++  Diff = SemaRef.BuildBinOp(S, DefaultLoc, BO_Add, Diff.get(), NewStep.get());
+   if (!Diff.isUsable())
+     return nullptr;
+ 
+@@ -2654,15 +2727,35 @@
+     return nullptr;
+ 
+   // (Upper - Lower [- 1] + Step) / Step
+-  Diff = SemaRef.BuildBinOp(S, DefaultLoc, BO_Div, Diff.get(),
+-                            Step->IgnoreImplicit());
++  NewStep = Transform.TransformExpr(Step->IgnoreImplicit());
++  if (NewStep.isInvalid())
++    return nullptr;
++  NewStep = SemaRef.PerformImplicitConversion(
++      NewStep.get(), Step->IgnoreImplicit()->getType(), Sema::AA_Converting,
++      /*AllowExplicit=*/true);
++  if (NewStep.isInvalid())
++    return nullptr;
++  Diff = SemaRef.BuildBinOp(S, DefaultLoc, BO_Div, Diff.get(), NewStep.get());
+   if (!Diff.isUsable())
+     return nullptr;
+ 
+   // OpenMP runtime requires 32-bit or 64-bit loop variables.
++  QualType Type = Diff.get()->getType();
++  auto &C = SemaRef.Context;
++  bool UseVarType = VarType->hasIntegerRepresentation() &&
++                    C.getTypeSize(Type) > C.getTypeSize(VarType);
++  if (!Type->isIntegerType() || UseVarType) {
++    unsigned NewSize =
++        UseVarType ? C.getTypeSize(VarType) : C.getTypeSize(Type);
++    bool IsSigned = UseVarType ? VarType->hasSignedIntegerRepresentation()
++                               : Type->hasSignedIntegerRepresentation();
++    Type = C.getIntTypeForBitwidth(NewSize, IsSigned);
++    Diff = SemaRef.PerformImplicitConversion(
++        Diff.get(), Type, Sema::AA_Converting, /*AllowExplicit=*/true);
++    if (!Diff.isUsable())
++      return nullptr;
++  }
+   if (LimitedType) {
+-    auto &C = SemaRef.Context;
+-    QualType Type = Diff.get()->getType();
+     unsigned NewSize = (C.getTypeSize(Type) > 32) ? 64 : 32;
+     if (NewSize != C.getTypeSize(Type)) {
+       if (NewSize < C.getTypeSize(Type)) {
+@@ -2671,7 +2764,8 @@
+             << InitSrcRange << ConditionSrcRange;
+       }
+       QualType NewType = C.getIntTypeForBitwidth(
+-          NewSize, Type->hasSignedIntegerRepresentation());
++          NewSize, Type->hasSignedIntegerRepresentation() ||
++                       C.getTypeSize(Type) < NewSize);
+       Diff = SemaRef.PerformImplicitConversion(Diff.get(), NewType,
+                                                Sema::AA_Converting, true);
+       if (!Diff.isUsable())
+@@ -2686,10 +2780,24 @@
+   // Try to build LB <op> UB, where <op> is <, >, <=, or >=.
+   bool Suppress = SemaRef.getDiagnostics().getSuppressAllDiagnostics();
+   SemaRef.getDiagnostics().setSuppressAllDiagnostics(/*Val=*/true);
++  TransformToNewDefs Transform(SemaRef);
++
++  auto NewLB = Transform.TransformExpr(LB);
++  auto NewUB = Transform.TransformExpr(UB);
++  if (NewLB.isInvalid() || NewUB.isInvalid())
++    return Cond;
++  NewLB = SemaRef.PerformImplicitConversion(NewLB.get(), LB->getType(),
++                                            Sema::AA_Converting,
++                                            /*AllowExplicit=*/true);
++  NewUB = SemaRef.PerformImplicitConversion(NewUB.get(), UB->getType(),
++                                            Sema::AA_Converting,
++                                            /*AllowExplicit=*/true);
++  if (NewLB.isInvalid() || NewUB.isInvalid())
++    return Cond;
+   auto CondExpr = SemaRef.BuildBinOp(
+       S, DefaultLoc, TestIsLessOp ? (TestIsStrictOp ? BO_LT : BO_LE)
+                                   : (TestIsStrictOp ? BO_GT : BO_GE),
+-      LB, UB);
++      NewLB.get(), NewUB.get());
+   if (CondExpr.isUsable()) {
+     CondExpr = SemaRef.PerformImplicitConversion(
+         CondExpr.get(), SemaRef.Context.BoolTy, /*Action=*/Sema::AA_Casting,
+@@ -2912,6 +3020,31 @@
+   return HasErrors;
+ }
+ 
++/// \brief Build 'VarRef = Start.
++static ExprResult BuildCounterInit(Sema &SemaRef, Scope *S, SourceLocation Loc,
++                                   ExprResult VarRef, ExprResult Start) {
++  TransformToNewDefs Transform(SemaRef);
++  // Build 'VarRef = Start.
++  auto NewStart = Transform.TransformExpr(Start.get()->IgnoreImplicit());
++  if (NewStart.isInvalid())
++    return ExprError();
++  NewStart = SemaRef.PerformImplicitConversion(
++      NewStart.get(), Start.get()->IgnoreImplicit()->getType(),
++      Sema::AA_Converting,
++      /*AllowExplicit=*/true);
++  if (NewStart.isInvalid())
++    return ExprError();
++  NewStart = SemaRef.PerformImplicitConversion(
++      NewStart.get(), VarRef.get()->getType(), Sema::AA_Converting,
++      /*AllowExplicit=*/true);
++  if (!NewStart.isUsable())
++    return ExprError();
++
++  auto Init =
++      SemaRef.BuildBinOp(S, Loc, BO_Assign, VarRef.get(), NewStart.get());
++  return Init;
++}
++
+ /// \brief Build 'VarRef = Start + Iter * Step'.
+ static ExprResult BuildCounterUpdate(Sema &SemaRef, Scope *S,
+                                      SourceLocation Loc, ExprResult VarRef,
+@@ -2923,14 +3056,33 @@
+       !Step.isUsable())
+     return ExprError();
+ 
+-  ExprResult Update = SemaRef.BuildBinOp(S, Loc, BO_Mul, Iter.get(),
+-                                         Step.get()->IgnoreImplicit());
++  TransformToNewDefs Transform(SemaRef);
++  auto NewStep = Transform.TransformExpr(Step.get()->IgnoreImplicit());
++  if (NewStep.isInvalid())
++    return ExprError();
++  NewStep = SemaRef.PerformImplicitConversion(
++      NewStep.get(), Step.get()->IgnoreImplicit()->getType(),
++      Sema::AA_Converting,
++      /*AllowExplicit=*/true);
++  if (NewStep.isInvalid())
++    return ExprError();
++  ExprResult Update =
++      SemaRef.BuildBinOp(S, Loc, BO_Mul, Iter.get(), NewStep.get());
+   if (!Update.isUsable())
+     return ExprError();
+ 
+   // Build 'VarRef = Start + Iter * Step'.
++  auto NewStart = Transform.TransformExpr(Start.get()->IgnoreImplicit());
++  if (NewStart.isInvalid())
++    return ExprError();
++  NewStart = SemaRef.PerformImplicitConversion(
++      NewStart.get(), Start.get()->IgnoreImplicit()->getType(),
++      Sema::AA_Converting,
++      /*AllowExplicit=*/true);
++  if (NewStart.isInvalid())
++    return ExprError();
+   Update = SemaRef.BuildBinOp(S, Loc, (Subtract ? BO_Sub : BO_Add),
+-                              Start.get()->IgnoreImplicit(), Update.get());
++                              NewStart.get(), Update.get());
+   if (!Update.isUsable())
+     return ExprError();
+ 
+@@ -3050,8 +3202,18 @@
+   // true).
+   auto PreCond = ExprResult(IterSpaces[0].PreCond);
+   auto N0 = IterSpaces[0].NumIterations;
+-  ExprResult LastIteration32 = WidenIterationCount(32 /* Bits */, N0, SemaRef);
+-  ExprResult LastIteration64 = WidenIterationCount(64 /* Bits */, N0, SemaRef);
++  ExprResult LastIteration32 = WidenIterationCount(
++      32 /* Bits */, SemaRef.PerformImplicitConversion(
++                                N0->IgnoreImpCasts(), N0->getType(),
++                                Sema::AA_Converting, /*AllowExplicit=*/true)
++                         .get(),
++      SemaRef);
++  ExprResult LastIteration64 = WidenIterationCount(
++      64 /* Bits */, SemaRef.PerformImplicitConversion(
++                                N0->IgnoreImpCasts(), N0->getType(),
++                                Sema::AA_Converting, /*AllowExplicit=*/true)
++                         .get(),
++      SemaRef);
+ 
+   if (!LastIteration32.isUsable() || !LastIteration64.isUsable())
+     return NestedLoopCount;
+@@ -3068,11 +3230,19 @@
+     auto N = IterSpaces[Cnt].NumIterations;
+     AllCountsNeedLessThan32Bits &= C.getTypeSize(N->getType()) < 32;
+     if (LastIteration32.isUsable())
+-      LastIteration32 = SemaRef.BuildBinOp(CurScope, SourceLocation(), BO_Mul,
+-                                           LastIteration32.get(), N);
++      LastIteration32 = SemaRef.BuildBinOp(
++          CurScope, SourceLocation(), BO_Mul, LastIteration32.get(),
++          SemaRef.PerformImplicitConversion(N->IgnoreImpCasts(), N->getType(),
++                                            Sema::AA_Converting,
++                                            /*AllowExplicit=*/true)
++              .get());
+     if (LastIteration64.isUsable())
+-      LastIteration64 = SemaRef.BuildBinOp(CurScope, SourceLocation(), BO_Mul,
+-                                           LastIteration64.get(), N);
++      LastIteration64 = SemaRef.BuildBinOp(
++          CurScope, SourceLocation(), BO_Mul, LastIteration64.get(),
++          SemaRef.PerformImplicitConversion(N->IgnoreImpCasts(), N->getType(),
++                                            Sema::AA_Converting,
++                                            /*AllowExplicit=*/true)
++              .get());
+   }
+ 
+   // Choose either the 32-bit or 64-bit version.
+@@ -3233,6 +3403,7 @@
+   // Build updates and final values of the loop counters.
+   bool HasErrors = false;
+   Built.Counters.resize(NestedLoopCount);
++  Built.Inits.resize(NestedLoopCount);
+   Built.Updates.resize(NestedLoopCount);
+   Built.Finals.resize(NestedLoopCount);
+   {
+@@ -3266,6 +3437,12 @@
+           SemaRef, cast<VarDecl>(cast<DeclRefExpr>(IS.CounterVar)->getDecl()),
+           IS.CounterVar->getType(), IS.CounterVar->getExprLoc(),
+           /*RefersToCapture=*/true);
++      ExprResult Init = BuildCounterInit(SemaRef, CurScope, UpdLoc, CounterVar,
++                                         IS.CounterInit);
++      if (!Init.isUsable()) {
++        HasErrors = true;
++        break;
++      }
+       ExprResult Update =
+           BuildCounterUpdate(SemaRef, CurScope, UpdLoc, CounterVar,
+                              IS.CounterInit, Iter, IS.CounterStep, IS.Subtract);
+@@ -3306,6 +3483,7 @@
+       // Save results
+       Built.Counters[Cnt] = IS.CounterVar;
+       Built.PrivateCounters[Cnt] = IS.PrivateCounterVar;
++      Built.Inits[Cnt] = Init.get();
+       Built.Updates[Cnt] = Update.get();
+       Built.Finals[Cnt] = Final.get();
+     }
+Index: lib/AST/Stmt.cpp
+===================================================================
+--- tools/clang/lib/AST/Stmt.cpp	(revision 245040)
++++ tools/clang/lib/AST/Stmt.cpp	(revision 245041)
+@@ -1503,6 +1503,12 @@
+   std::copy(A.begin(), A.end(), getPrivateCounters().begin());
+ }
+ 
++void OMPLoopDirective::setInits(ArrayRef<Expr *> A) {
++  assert(A.size() == getCollapsedNumber() &&
++         "Number of counter inits is not the same as the collapsed number");
++  std::copy(A.begin(), A.end(), getInits().begin());
++}
++
+ void OMPLoopDirective::setUpdates(ArrayRef<Expr *> A) {
+   assert(A.size() == getCollapsedNumber() &&
+          "Number of counter updates is not the same as the collapsed number");
+@@ -1669,6 +1675,7 @@
+   Dir->setInc(Exprs.Inc);
+   Dir->setCounters(Exprs.Counters);
+   Dir->setPrivateCounters(Exprs.PrivateCounters);
++  Dir->setInits(Exprs.Inits);
+   Dir->setUpdates(Exprs.Updates);
+   Dir->setFinals(Exprs.Finals);
+   return Dir;
+@@ -1716,6 +1723,7 @@
+   Dir->setNextUpperBound(Exprs.NUB);
+   Dir->setCounters(Exprs.Counters);
+   Dir->setPrivateCounters(Exprs.PrivateCounters);
++  Dir->setInits(Exprs.Inits);
+   Dir->setUpdates(Exprs.Updates);
+   Dir->setFinals(Exprs.Finals);
+   return Dir;
+@@ -1763,6 +1771,7 @@
+   Dir->setNextUpperBound(Exprs.NUB);
+   Dir->setCounters(Exprs.Counters);
+   Dir->setPrivateCounters(Exprs.PrivateCounters);
++  Dir->setInits(Exprs.Inits);
+   Dir->setUpdates(Exprs.Updates);
+   Dir->setFinals(Exprs.Finals);
+   return Dir;
+@@ -1919,6 +1928,7 @@
+   Dir->setNextUpperBound(Exprs.NUB);
+   Dir->setCounters(Exprs.Counters);
+   Dir->setPrivateCounters(Exprs.PrivateCounters);
++  Dir->setInits(Exprs.Inits);
+   Dir->setUpdates(Exprs.Updates);
+   Dir->setFinals(Exprs.Finals);
+   return Dir;
+@@ -1964,6 +1974,7 @@
+   Dir->setNextUpperBound(Exprs.NUB);
+   Dir->setCounters(Exprs.Counters);
+   Dir->setPrivateCounters(Exprs.PrivateCounters);
++  Dir->setInits(Exprs.Inits);
+   Dir->setUpdates(Exprs.Updates);
+   Dir->setFinals(Exprs.Finals);
+   return Dir;
+Index: lib/CodeGen/CGStmtOpenMP.cpp
+===================================================================
+--- tools/clang/lib/CodeGen/CGStmtOpenMP.cpp	(revision 245040)
++++ tools/clang/lib/CodeGen/CGStmtOpenMP.cpp	(revision 245041)
+@@ -706,27 +706,9 @@
+     CodeGenFunction::OMPPrivateScope PreCondScope(CGF);
+     emitPrivateLoopCounters(CGF, PreCondScope, S.counters(),
+                             S.private_counters());
+-    const VarDecl *IVDecl =
+-        cast<VarDecl>(cast<DeclRefExpr>(S.getIterationVariable())->getDecl());
+-    bool IsRegistered = PreCondScope.addPrivate(IVDecl, [&]() -> llvm::Value *{
+-      // Emit var without initialization.
+-      auto VarEmission = CGF.EmitAutoVarAlloca(*IVDecl);
+-      CGF.EmitAutoVarCleanups(VarEmission);
+-      return VarEmission.getAllocatedAddress();
+-    });
+-    assert(IsRegistered && "counter already registered as private");
+-    // Silence the warning about unused variable.
+-    (void)IsRegistered;
+     (void)PreCondScope.Privatize();
+-    // Initialize internal counter to 0 to calculate initial values of real
+-    // counters.
+-    LValue IV = CGF.EmitLValue(S.getIterationVariable());
+-    CGF.EmitStoreOfScalar(
+-        llvm::ConstantInt::getNullValue(
+-            IV.getAddress()->getType()->getPointerElementType()),
+-        CGF.EmitLValue(S.getIterationVariable()), /*isInit=*/true);
+     // Get initial values of real counters.
+-    for (auto I : S.updates()) {
++    for (auto I : S.inits()) {
+       CGF.EmitIgnoredExpr(I);
+     }
+   }
+Index: lib/Serialization/ASTWriterStmt.cpp
+===================================================================
+--- tools/clang/lib/Serialization/ASTWriterStmt.cpp	(revision 245040)
++++ tools/clang/lib/Serialization/ASTWriterStmt.cpp	(revision 245041)
+@@ -1965,6 +1965,9 @@
+   for (auto I : D->private_counters()) {
+     Writer.AddStmt(I);
+   }
++  for (auto I : D->inits()) {
++    Writer.AddStmt(I);
++  }
+   for (auto I : D->updates()) {
+     Writer.AddStmt(I);
+   }
+Index: lib/Serialization/ASTReaderStmt.cpp
+===================================================================
+--- tools/clang/lib/Serialization/ASTReaderStmt.cpp	(revision 245040)
++++ tools/clang/lib/Serialization/ASTReaderStmt.cpp	(revision 245041)
+@@ -2125,6 +2125,10 @@
+   Sub.clear();
+   for (unsigned i = 0; i < CollapsedNum; ++i)
+     Sub.push_back(Reader.ReadSubExpr());
++  D->setInits(Sub);
++  Sub.clear();
++  for (unsigned i = 0; i < CollapsedNum; ++i)
++    Sub.push_back(Reader.ReadSubExpr());
+   D->setUpdates(Sub);
+   Sub.clear();
+   for (unsigned i = 0; i < CollapsedNum; ++i)
+Index: test/OpenMP/for_codegen.cpp
+===================================================================
+--- tools/clang/test/OpenMP/for_codegen.cpp	(revision 245040)
++++ tools/clang/test/OpenMP/for_codegen.cpp	(revision 245041)
+@@ -329,16 +329,11 @@
+   // CHECK: [[A_ADDR:%.+]] = alloca i8,
+   // CHECK: [[I_ADDR:%.+]] = alloca i8,
+   char a = 0;
+-  // CHECK: store i32 0, i32* [[IV_ADDR:%.+]],
++  // CHECK: store i8 0,
++  // CHECK: store i32
++  // CHECK: store i8
+   // CHECK: [[A:%.+]] = load i8, i8* [[A_ADDR]],
+   // CHECK: [[CONV:%.+]] = sext i8 [[A]] to i32
+-  // CHECK: [[IV:%.+]] = load i32, i32* [[IV_ADDR]],
+-  // CHECK: [[MUL:%.+]] = mul nsw i32 [[IV]], 1
+-  // CHECK: [[ADD:%.+]] = add nsw i32 [[CONV]], [[MUL]]
+-  // CHECK: [[CONV:%.+]] = trunc i32 [[ADD]] to i8
+-  // CHECK: store i8 [[CONV]], i8* [[I_ADDR]],
+-  // CHECK: [[A:%.+]] = load i8, i8* [[A_ADDR]],
+-  // CHECK: [[CONV:%.+]] = sext i8 [[A]] to i32
+   // CHECK: [[CMP:%.+]] = icmp slt i32 [[CONV]], 10
+   // CHECK: br i1 [[CMP]], label %[[PRECOND_THEN:[^,]+]], label %[[PRECOND_END:[^,]+]]
+   // CHECK: [[PRECOND_THEN]]
+@@ -482,4 +477,14 @@
+ // CHECK: call void @__kmpc_for_static_init_8(
+ // CHECK: call void @__kmpc_for_static_fini(
+ 
++void loop_with_stmt_expr() {
++#pragma omp for
++  for (int i = __extension__({float b = 0;b; }); i < __extension__({double c = 1;c; }); i += __extension__({char d = 1; d; }))
++    ;
++}
++// CHECK-LABEL: loop_with_stmt_expr
++// CHECK: call i32 @__kmpc_global_thread_num(
++// CHECK: call void @__kmpc_for_static_init_4(
++// CHECK: call void @__kmpc_for_static_fini(
++
+ #endif // HEADER
+Index: test/OpenMP/for_loop_messages.cpp
+===================================================================
+--- tools/clang/test/OpenMP/for_loop_messages.cpp	(revision 245040)
++++ tools/clang/test/OpenMP/for_loop_messages.cpp	(revision 245041)
+@@ -422,12 +422,12 @@
+   typedef int difference_type;
+   typedef std::random_access_iterator_tag iterator_category;
+ };
+-// expected-note@+2 {{candidate function not viable: no known conversion from 'const Iter0' to 'GoodIter' for 2nd argument}}
++// expected-note@+2 {{candidate function not viable: no known conversion from 'Iter0' to 'GoodIter' for 2nd argument}}
+ // expected-note@+1 2 {{candidate function not viable: no known conversion from 'Iter1' to 'GoodIter' for 1st argument}}
+ int operator-(GoodIter a, GoodIter b) { return 0; }
+ // expected-note@+1 3 {{candidate function not viable: requires single argument 'a', but 2 arguments were provided}}
+ GoodIter operator-(GoodIter a) { return a; }
+-// expected-note@+2 {{candidate function not viable: no known conversion from 'const Iter0' to 'int' for 2nd argument}}
++// expected-note@+2 {{candidate function not viable: no known conversion from 'Iter0' to 'int' for 2nd argument}}
+ // expected-note@+1 2 {{candidate function not viable: no known conversion from 'Iter1' to 'GoodIter' for 1st argument}}
+ GoodIter operator-(GoodIter a, int v) { return GoodIter(); }
+ // expected-note@+1 2 {{candidate function not viable: no known conversion from 'Iter0' to 'GoodIter' for 1st argument}}
+@@ -478,7 +478,7 @@
+ #pragma omp for
+   for (begin = GoodIter(0); begin < end; ++begin)
+     ++begin;
+-// expected-error@+4 {{invalid operands to binary expression ('GoodIter' and 'const Iter0')}}
++// expected-error@+4 {{invalid operands to binary expression ('GoodIter' and 'Iter0')}}
+ // expected-error@+3 {{could not calculate number of iterations calling 'operator-' with upper and lower loop bounds}}
+ #pragma omp parallel
+ #pragma omp for
+Index: test/OpenMP/parallel_for_simd_loop_messages.cpp
+===================================================================
+--- tools/clang/test/OpenMP/parallel_for_simd_loop_messages.cpp	(revision 245040)
++++ tools/clang/test/OpenMP/parallel_for_simd_loop_messages.cpp	(revision 245041)
+@@ -353,12 +353,12 @@
+   typedef int difference_type;
+   typedef std::random_access_iterator_tag iterator_category;
+ };
+-// expected-note@+2 {{candidate function not viable: no known conversion from 'const Iter0' to 'GoodIter' for 2nd argument}}
++// expected-note@+2 {{candidate function not viable: no known conversion from 'Iter0' to 'GoodIter' for 2nd argument}}
+ // expected-note@+1 2 {{candidate function not viable: no known conversion from 'Iter1' to 'GoodIter' for 1st argument}}
+ int operator-(GoodIter a, GoodIter b) { return 0; }
+ // expected-note@+1 3 {{candidate function not viable: requires single argument 'a', but 2 arguments were provided}}
+ GoodIter operator-(GoodIter a) { return a; }
+-// expected-note@+2 {{candidate function not viable: no known conversion from 'const Iter0' to 'int' for 2nd argument}}
++// expected-note@+2 {{candidate function not viable: no known conversion from 'Iter0' to 'int' for 2nd argument}}
+ // expected-note@+1 2 {{candidate function not viable: no known conversion from 'Iter1' to 'GoodIter' for 1st argument}}
+ GoodIter operator-(GoodIter a, int v) { return GoodIter(); }
+ // expected-note@+1 2 {{candidate function not viable: no known conversion from 'Iter0' to 'GoodIter' for 1st argument}}
+@@ -401,7 +401,7 @@
+ #pragma omp parallel for simd
+   for (begin = GoodIter(0); begin < end; ++begin)
+     ++begin;
+-// expected-error@+3 {{invalid operands to binary expression ('GoodIter' and 'const Iter0')}}
++// expected-error@+3 {{invalid operands to binary expression ('GoodIter' and 'Iter0')}}
+ // expected-error@+2 {{could not calculate number of iterations calling 'operator-' with upper and lower loop bounds}}
+ #pragma omp parallel for simd
+   for (begin = begin0; begin < end; ++begin)
+Index: test/OpenMP/for_simd_loop_messages.cpp
+===================================================================
+--- tools/clang/test/OpenMP/for_simd_loop_messages.cpp	(revision 245040)
++++ tools/clang/test/OpenMP/for_simd_loop_messages.cpp	(revision 245041)
+@@ -406,12 +406,12 @@
+   typedef int difference_type;
+   typedef std::random_access_iterator_tag iterator_category;
+ };
+-// expected-note@+2 {{candidate function not viable: no known conversion from 'const Iter0' to 'GoodIter' for 2nd argument}}
++// expected-note@+2 {{candidate function not viable: no known conversion from 'Iter0' to 'GoodIter' for 2nd argument}}
+ // expected-note@+1 2 {{candidate function not viable: no known conversion from 'Iter1' to 'GoodIter' for 1st argument}}
+ int operator-(GoodIter a, GoodIter b) { return 0; }
+ // expected-note@+1 3 {{candidate function not viable: requires single argument 'a', but 2 arguments were provided}}
+ GoodIter operator-(GoodIter a) { return a; }
+-// expected-note@+2 {{candidate function not viable: no known conversion from 'const Iter0' to 'int' for 2nd argument}}
++// expected-note@+2 {{candidate function not viable: no known conversion from 'Iter0' to 'int' for 2nd argument}}
+ // expected-note@+1 2 {{candidate function not viable: no known conversion from 'Iter1' to 'GoodIter' for 1st argument}}
+ GoodIter operator-(GoodIter a, int v) { return GoodIter(); }
+ // expected-note@+1 2 {{candidate function not viable: no known conversion from 'Iter0' to 'GoodIter' for 1st argument}}
+@@ -463,7 +463,7 @@
+   for (begin = GoodIter(0); begin < end; ++begin)
+     ++begin;
+ #pragma omp parallel
+-// expected-error@+3 {{invalid operands to binary expression ('GoodIter' and 'const Iter0')}}
++// expected-error@+3 {{invalid operands to binary expression ('GoodIter' and 'Iter0')}}
+ // expected-error@+2 {{could not calculate number of iterations calling 'operator-' with upper and lower loop bounds}}
+ #pragma omp for simd
+   for (begin = begin0; begin < end; ++begin)
+Index: test/OpenMP/parallel_for_loop_messages.cpp
+===================================================================
+--- tools/clang/test/OpenMP/parallel_for_loop_messages.cpp	(revision 245040)
++++ tools/clang/test/OpenMP/parallel_for_loop_messages.cpp	(revision 245041)
+@@ -352,12 +352,12 @@
+   typedef int difference_type;
+   typedef std::random_access_iterator_tag iterator_category;
+ };
+-// expected-note@+2 {{candidate function not viable: no known conversion from 'const Iter0' to 'GoodIter' for 2nd argument}}
++// expected-note@+2 {{candidate function not viable: no known conversion from 'Iter0' to 'GoodIter' for 2nd argument}}
+ // expected-note@+1 2 {{candidate function not viable: no known conversion from 'Iter1' to 'GoodIter' for 1st argument}}
+ int operator-(GoodIter a, GoodIter b) { return 0; }
+ // expected-note@+1 3 {{candidate function not viable: requires single argument 'a', but 2 arguments were provided}}
+ GoodIter operator-(GoodIter a) { return a; }
+-// expected-note@+2 {{candidate function not viable: no known conversion from 'const Iter0' to 'int' for 2nd argument}}
++// expected-note@+2 {{candidate function not viable: no known conversion from 'Iter0' to 'int' for 2nd argument}}
+ // expected-note@+1 2 {{candidate function not viable: no known conversion from 'Iter1' to 'GoodIter' for 1st argument}}
+ GoodIter operator-(GoodIter a, int v) { return GoodIter(); }
+ // expected-note@+1 2 {{candidate function not viable: no known conversion from 'Iter0' to 'GoodIter' for 1st argument}}
+@@ -400,7 +400,7 @@
+ #pragma omp parallel for
+   for (begin = GoodIter(0); begin < end; ++begin)
+     ++begin;
+-// expected-error@+3 {{invalid operands to binary expression ('GoodIter' and 'const Iter0')}}
++// expected-error@+3 {{invalid operands to binary expression ('GoodIter' and 'Iter0')}}
+ // expected-error@+2 {{could not calculate number of iterations calling 'operator-' with upper and lower loop bounds}}
+ #pragma omp parallel for
+   for (begin = begin0; begin < end; ++begin)
+Index: include/clang/AST/StmtOpenMP.h
+===================================================================
+--- tools/clang/include/clang/AST/StmtOpenMP.h	(revision 245040)
++++ tools/clang/include/clang/AST/StmtOpenMP.h	(revision 245041)
+@@ -319,7 +319,7 @@
+   }
+ 
+   /// \brief Get the updates storage.
+-  MutableArrayRef<Expr *> getUpdates() {
++  MutableArrayRef<Expr *> getInits() {
+     Expr **Storage = reinterpret_cast<Expr **>(
+         &*std::next(child_begin(),
+                     getArraysOffset(getDirectiveKind()) + 2 * CollapsedNum));
+@@ -326,11 +326,19 @@
+     return MutableArrayRef<Expr *>(Storage, CollapsedNum);
+   }
+ 
++  /// \brief Get the updates storage.
++  MutableArrayRef<Expr *> getUpdates() {
++    Expr **Storage = reinterpret_cast<Expr **>(
++        &*std::next(child_begin(),
++                    getArraysOffset(getDirectiveKind()) + 3 * CollapsedNum));
++    return MutableArrayRef<Expr *>(Storage, CollapsedNum);
++  }
++
+   /// \brief Get the final counter updates storage.
+   MutableArrayRef<Expr *> getFinals() {
+     Expr **Storage = reinterpret_cast<Expr **>(
+         &*std::next(child_begin(),
+-                    getArraysOffset(getDirectiveKind()) + 3 * CollapsedNum));
++                    getArraysOffset(getDirectiveKind()) + 4 * CollapsedNum));
+     return MutableArrayRef<Expr *>(Storage, CollapsedNum);
+   }
+ 
+@@ -364,8 +372,9 @@
+   /// \brief Children number.
+   static unsigned numLoopChildren(unsigned CollapsedNum,
+                                   OpenMPDirectiveKind Kind) {
+-    return getArraysOffset(Kind) +
+-           4 * CollapsedNum; // Counters, PrivateCounters, Updates and Finals
++    return getArraysOffset(Kind) + 5 * CollapsedNum; // Counters,
++                                                     // PrivateCounters, Inits,
++                                                     // Updates and Finals
+   }
+ 
+   void setIterationVariable(Expr *IV) {
+@@ -422,6 +431,7 @@
+   }
+   void setCounters(ArrayRef<Expr *> A);
+   void setPrivateCounters(ArrayRef<Expr *> A);
++  void setInits(ArrayRef<Expr *> A);
+   void setUpdates(ArrayRef<Expr *> A);
+   void setFinals(ArrayRef<Expr *> A);
+ 
+@@ -463,6 +473,8 @@
+     SmallVector<Expr *, 4> Counters;
+     /// \brief PrivateCounters Loop counters.
+     SmallVector<Expr *, 4> PrivateCounters;
++    /// \brief Expressions for loop counters inits for CodeGen.
++    SmallVector<Expr *, 4> Inits;
+     /// \brief Expressions for loop counters update for CodeGen.
+     SmallVector<Expr *, 4> Updates;
+     /// \brief Final loop counter values for GodeGen.
+@@ -495,11 +507,13 @@
+       NUB = nullptr;
+       Counters.resize(Size);
+       PrivateCounters.resize(Size);
++      Inits.resize(Size);
+       Updates.resize(Size);
+       Finals.resize(Size);
+       for (unsigned i = 0; i < Size; ++i) {
+         Counters[i] = nullptr;
+         PrivateCounters[i] = nullptr;
++        Inits[i] = nullptr;
+         Updates[i] = nullptr;
+         Finals[i] = nullptr;
+       }
+@@ -602,6 +616,12 @@
+     return const_cast<OMPLoopDirective *>(this)->getPrivateCounters();
+   }
+ 
++  ArrayRef<Expr *> inits() { return getInits(); }
++
++  ArrayRef<Expr *> inits() const {
++    return const_cast<OMPLoopDirective *>(this)->getInits();
++  }
++
+   ArrayRef<Expr *> updates() { return getUpdates(); }
+ 
+   ArrayRef<Expr *> updates() const {
