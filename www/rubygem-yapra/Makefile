@@ -11,11 +11,13 @@ COMMENT=	Yet Another Pragger implementation
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-mechanize>0:${PORTSDIR}/www/rubygem-mechanize
+RUN_DEPENDS=	rubygem-mechanize>=0:${PORTSDIR}/www/rubygem-mechanize
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+
 PLIST_FILES=	bin/yapra
 
 .include <bsd.port.mk>
