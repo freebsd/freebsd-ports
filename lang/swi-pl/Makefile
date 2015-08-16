@@ -3,6 +3,7 @@
 
 PORTNAME=	swi-pl
 PORTVERSION=	7.2.2
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.swi-prolog.org/download/stable/src/
 DISTNAME=	swipl-${PORTVERSION}
@@ -20,7 +21,7 @@ SWIPLDIR=	${PORTNAME:C/-//}-${PORTVERSION}
 
 NOPRECIOUSMAKEVARS=	yes
 USE_XORG=	xft xpm xt
-USES=		gmake jpeg pathfix pkgconfig shebangfix
+USES=		gmake jpeg libarchive pathfix pkgconfig shebangfix
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ARCH=${ARCH}-${OPSYS:tl}
