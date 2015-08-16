@@ -3,7 +3,7 @@
 PORTNAME=	openra
 PORTVERSION=	20150614
 DISTVERSIONPREFIX=	release-
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 # XXX Convert to USES=nuget or package dependencies instead
 MASTER_SITES=	https://nuget.org/api/v2/package/StyleCopPlus.MSBuild/4.7.49.5?dummy=/:StyleCopPlus \
