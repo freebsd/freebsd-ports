@@ -12,7 +12,8 @@ COMMENT=	ANSI-BBS terminal which supports telnet, rlogin, and SSH
 LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/syncterm-${PORTVERSION}/src/syncterm
-USES=		gmake tar:tgz
+USES=		gmake tar:tgz perl5
+USE_PERL5=	build
 MAKEFILE=	GNUmakefile
 PLIST_FILES=	bin/syncterm \
 		man/man1/syncterm.1.gz \
