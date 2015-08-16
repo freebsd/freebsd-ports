@@ -28,6 +28,7 @@ share/games/pioneers/conquest.game
 share/games/pioneers/crane_island.game
 share/games/pioneers/default.game
 share/games/pioneers/four-islands.game
+share/games/pioneers/genetic_core.c
 share/games/pioneers/henjes.game
 share/games/pioneers/iles.game
 share/games/pioneers/lobby.game
@@ -206,3 +207,4 @@ share/locale/ja/LC_MESSAGES/pioneers.mo
 share/locale/nl/LC_MESSAGES/pioneers.mo
 share/locale/pt/LC_MESSAGES/pioneers.mo
 share/locale/sv/LC_MESSAGES/pioneers.mo
+share/locale/zh_CN/LC_MESSAGES/pioneers.mo

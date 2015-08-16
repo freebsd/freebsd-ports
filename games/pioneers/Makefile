@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pioneers
-PORTVERSION=	15.1
-PORTREVISION=	2
+PORTVERSION=	15.3
 CATEGORIES=	games gnome
 MASTER_SITES=	SF/pio/Source/
 
@@ -14,8 +13,8 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	yelp:${PORTSDIR}/x11/yelp
 
-USES=		gettext gmake
-USE_GNOME=	gnomeprefix gtk20 intltool libgnome librsvg2
+USES=		gettext gmake pkgconfig
+USE_GNOME=	gnomeprefix gtk30 intltool libgnome librsvg2
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
