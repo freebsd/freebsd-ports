@@ -4,12 +4,12 @@
 PORTNAME=	pioneers
 PORTVERSION=	15.3
 CATEGORIES=	games gnome
-MASTER_SITES=	SF/pio/Source/
+MASTER_SITES=	SF/pio/Source
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internet playable version of the Settlers of Catan
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or any later version
 
 RUN_DEPENDS=	yelp:${PORTSDIR}/x11/yelp
 
@@ -19,6 +19,6 @@ INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
