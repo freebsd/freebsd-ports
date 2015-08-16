@@ -873,6 +873,7 @@
     SUBDIR += rubygem-ohai
     SUBDIR += rubygem-parallel
     SUBDIR += rubygem-puppet_forge
+    SUBDIR += rubygem-puppet_forge1
     SUBDIR += rubygem-r10k
     SUBDIR += rubygem-rubyipmi
     SUBDIR += rubygem-shellany
