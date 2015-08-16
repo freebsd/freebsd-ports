@@ -16,6 +16,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libgdiplus.a:${PORTSDIR}/x11-toolkits/libgdiplus \
 		exctags:${PORTSDIR}/devel/ctags \
 		mautil:${PORTSDIR}/devel/mono-addins
 
+BROKEN=		GUI does not start
+
 USE_GNOME=	gtksharp20 gnomesharp20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-update-mimedb --disable-update-desktopdb
