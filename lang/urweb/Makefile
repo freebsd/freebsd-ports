@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	urweb
-PORTVERSION=	20150214
+PORTVERSION=	20150520
 CATEGORIES=	lang www
 MASTER_SITES=	http://www.impredicative.com/ur/
 
