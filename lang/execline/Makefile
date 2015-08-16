@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	execline
-PORTVERSION=	2.1.1.0
+PORTVERSION=	2.1.3.0
 CATEGORIES=	lang shells
 MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
 
@@ -11,7 +11,7 @@ COMMENT=	Lightweight non-interactive sh(1)-like scripting language
 
 LICENSE=	ISCL
 
-BUILD_DEPENDS=	skalibs>=2.3.1.0:${PORTSDIR}/devel/skalibs
+BUILD_DEPENDS=	skalibs>=2.3.6.0:${PORTSDIR}/devel/skalibs
 
 CONFLICTS_INSTALL=	ImageMagick-* # bin/import
 
@@ -25,6 +25,7 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--enable-shared
 
 DOCS=		AUTHORS COPYING INSTALL README doc/*.html
+OPTIONS_DEFINE=	DOCS
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
