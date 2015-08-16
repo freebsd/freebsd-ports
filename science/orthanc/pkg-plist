@@ -12,5 +12,5 @@ include/orthanc/OrthancCDatabasePlugin.h
 include/orthanc/OrthancCPlugin.h
 include/orthanc/OrthancCppDatabasePlugin.h
 %%DATADIR%%/plugins/libServeFolders.so
-%%DATADIR%%/plugins/libServeFolders.so.0.9.1
+%%DATADIR%%/plugins/libServeFolders.so.0.9.3
 sbin/Orthanc
