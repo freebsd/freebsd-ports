@@ -623,8 +623,6 @@ lib/node_modules/npm/node_modules/chmodr/LICENSE
 lib/node_modules/npm/node_modules/chmodr/README.md
 lib/node_modules/npm/node_modules/chmodr/chmodr.js
 lib/node_modules/npm/node_modules/chmodr/package.json
-lib/node_modules/npm/node_modules/chmodr/test/basic.js
-lib/node_modules/npm/node_modules/chmodr/test/sync.js
 lib/node_modules/npm/node_modules/chownr/LICENCE
 lib/node_modules/npm/node_modules/chownr/LICENSE
 lib/node_modules/npm/node_modules/chownr/README.md
@@ -2659,6 +2657,7 @@ lib/node_modules/npm/test/tap/install-bad-man.js
 lib/node_modules/npm/test/tap/install-cli-production.js
 lib/node_modules/npm/test/tap/install-cli-unicode.js
 lib/node_modules/npm/test/tap/install-from-local.js
+lib/node_modules/npm/test/tap/install-link-scripts.js
 lib/node_modules/npm/test/tap/install-man.js
 lib/node_modules/npm/test/tap/install-noargs-dev.js
 lib/node_modules/npm/test/tap/install-save-exact.js
