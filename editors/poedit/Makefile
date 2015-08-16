@@ -3,10 +3,9 @@
 #    $MCom: ports/editors/poedit/Makefile,v 1.2 2006/10/05 07:03:09 mezz Exp $
 
 PORTNAME=	poedit
-PORTVERSION=	1.4.6.1
-PORTREVISION=	5
+PORTVERSION=	1.5.7
 CATEGORIES=	editors
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.4.6/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.5/
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Gettext catalogs (.po files) editor
@@ -14,10 +13,11 @@ COMMENT=	Gettext catalogs (.po files) editor
 LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	libgtkspell.so:${PORTSDIR}/textproc/gtkspell
+LIB_DEPENDS=	libgtkspell.so:${PORTSDIR}/textproc/gtkspell \
+		libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
 USES=		gettext gmake pkgconfig desktop-file-utils
-USE_WX=		2.8+
+USE_WX=		3.0
 WX_CONF_ARGS=	absolute
 WX_UNICODE=	yes
 USE_BDB=	yes
