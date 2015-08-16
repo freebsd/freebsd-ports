@@ -249,6 +249,7 @@ CONFIGURE_ARGS+=	--enable-memalign-hack
 .endif
 
 .if ${ARCH} == "armv6"
+CONFIGURE_ARGS+=	--disable-fast-unaligned
 .if ${CHOSEN_COMPILER_TYPE} == "clang"
 CONFIGURE_ENV+=	ASFLAGS=-no-integrated-as
 .endif
