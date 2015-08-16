@@ -1,10 +1,11 @@
-# Created by: Jeffrey Hsu <hsu@FreeBSD.org>
+# Created by: hsu
 # $FreeBSD$
 
 PORTNAME=	scm
 PORTVERSION=	5f2
 CATEGORIES=	lang scheme
-MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/
+MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. OLD
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} slib-3b5.zip slib-psd1-3.tar.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
