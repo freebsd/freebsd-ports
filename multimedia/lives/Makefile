@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lives
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/ 
 
@@ -89,10 +89,6 @@ post-patch:
 		${WRKSRC}/lives-plugins/weed-plugins/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/local/lib/|${LOCALBASE}/lib/|g' \
 		${WRKSRC}/lives-plugins/weed-plugins/frei0r.c
-	@${REINPLACE_CMD} 's|/bin/touch|/usr/bin/touch|g' \
-		${WRKSRC}/src/callbacks.c \
-		${WRKSRC}/src/saveplay.c \
-		${WRKSRC}/src/utils.c
 	@${REINPLACE_CMD} '/cp -rf/ s|data/|data|g; /cp -rf/ s|icons/|icons|g' \
 		${WRKSRC}/lives-plugins/weed-plugins/cairo/Makefile.in \
 		${WRKSRC}/lives-plugins/weed-plugins/Makefile.in
