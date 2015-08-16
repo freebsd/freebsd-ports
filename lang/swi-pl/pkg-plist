@@ -1781,3 +1781,5 @@ man/man1/swipl-ld.1.gz
 man/man1/swipl-rc.1.gz
 man/man1/swipl.1.gz
 man/man1/xpce-client.1.gz
+@dir lib/%%DISTNAME%%/xpce/bin/%%ARCH%%-%%OS%%
+@dir lib/%%DISTNAME%%/library/dialect/ifprolog
