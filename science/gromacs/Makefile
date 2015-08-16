@@ -2,11 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	gromacs
-PORTVERSION=	5.0.5
+PORTVERSION=	5.0.6
 CATEGORIES=	science
-MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/
+MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/ \
+		http://www.skysmurf.nl/comp/FreeBSD/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd@skysmurf.nl
 COMMENT=	Compute molecular dynamics
 
 LICENSE=	LGPL21
