@@ -3,7 +3,7 @@
 
 PORTNAME=	Data-Clone
 PORTVERSION=	0.004
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,5 +25,8 @@ USES=		perl5
 .if ${PERL_LEVEL} < 501800
 BUILD_DEPENDS+=	p5-ExtUtils-ParseXS>=3.18:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
 .endif
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Data/Clone/Clone.so
 
 .include <bsd.port.post.mk>
