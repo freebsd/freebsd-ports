@@ -3,7 +3,7 @@
 
 PORTNAME=	Thrift-XS
 PORTVERSION=	1.04
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:AGRUNDMA
@@ -24,5 +24,8 @@ TEST_DEPENDS=	p5-Proc-ProcessTable>=0:${PORTSDIR}/devel/p5-Proc-ProcessTable \
 
 USE_PERL5=	configure
 USES=		perl5
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Thrift/XS/XS.so
 
 .include <bsd.port.mk>
