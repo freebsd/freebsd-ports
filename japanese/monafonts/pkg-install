@@ -4,7 +4,7 @@ if [ "$2" != "POST-INSTALL" ]; then
 	exit 0
 fi
 
-FONTDIR=${PKG_PREFIX}/share/fonts/monafont
+FONTDIR=${PKG_PREFIX}/share/fonts/monafonts
 
 grepv() {
 	awk -v SRC=$1 'BEGIN{while (getline < SRC) {ENTRY[$0]=1}} (ENTRY[$0] != 1) {print}' $2
@@ -79,8 +79,9 @@ cp fonts.alias fonts.alias.orig
 rm -f fonts.alias.orig ${TMPFILE}
 
 echo "**********************************************************"
-echo "You should restart X server or do 'xset fp rehash' command"
-echo "to enable this update."
+echo "Please add ${FONTDIR}"
+echo "to your font path in /etc/X11/xorg.conf."
+echo "You should restart X server to enable this update."
 echo "**********************************************************"
 
 exit 0
