@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	orthanc-webviewer
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	science graphics
 MASTER_SITES=	http://orthanc-server.com/downloads/get.php?path=/plugin-webviewer/:main \
 		http://www.montefiore.ulg.ac.be/~jodogne/Orthanc/ThirdPartyDownloads/WebViewer/:thirdparty
