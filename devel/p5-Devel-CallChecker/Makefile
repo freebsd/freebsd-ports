@@ -3,6 +3,7 @@
 
 PORTNAME=	Devel-CallChecker
 PORTVERSION=	0.007
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,5 +21,8 @@ TEST_DEPENDS=	p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod \
 
 USE_PERL5=	modbuild
 USES=		perl5
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Devel/CallChecker/CallChecker.so
 
 .include <bsd.port.mk>
