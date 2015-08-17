@@ -19,8 +19,6 @@ MAKE_ENV=	NOKEYGEN=YES
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	shibboleth-sp
 
-LATEST_LINK=	shibboleth2-sp
-
 USERS=		shibd
 GROUPS=		shibd
 

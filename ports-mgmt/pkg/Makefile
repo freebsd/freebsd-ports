@@ -37,7 +37,6 @@ MAKE_ARGS+=	DEBUG_FLAGS="${DEBUG_FLAGS}"
 
 .if defined(WITH_PKG)
 .if ${WITH_PKG} == devel
-NO_LATEST_LINK=	yes
 IGNORE=	WITH_PKG is defined to 'devel', this version is the stable one
 .endif
 .if exists(${LOCALBASE}/sbin/pkg_info) || exists(/usr/sbin/pkg_info)

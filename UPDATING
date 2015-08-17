@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150817:
+  AFFECTS: everybody who still uses <UNIQUENAME>_SET/UNSET in make.conf
+  AUTHOR: mat@FreeBSD.org
+
+  The use of <UNIQUENAME>_SET/UNSET has been deprecated for a long time,
+  replaced by <OPTIONNS_NAME>_SET/UNSET.  It is now not supported any more.
+  A warning will be issued telling you what to do, for example:
+
+    $ make
+    /!\ WARNING /!\
+    You are using perl_SET which is not supported any more, use:
+    lang_perl5.20_SET= DEBUG
+
 20150816:
   AFFECTS: users of sysutils/s6
   AUTHOR: Colin Booth <colin@heliocat.net>

@@ -17,8 +17,7 @@ USES=		dos2unix zip:infozip
 DOS2UNIX_FILES=	../../../ctf/readme.txt ../../../ctf/server.cfg
 WRKSRC=		${WRKDIR}/${CTF_SRC:S/.tar.gz//}/src/ctf
 
-DOCSDIR=	${PREFIX}/share/doc/${LATEST_LINK}
-LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
 
 CTF_DATA=	q2ctf150.zip
 CTF_SRC=	quake2-r0.16.2.tar.gz

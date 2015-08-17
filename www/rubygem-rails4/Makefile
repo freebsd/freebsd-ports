@@ -54,7 +54,6 @@ CPE_PRODUCT=	ruby_on_rails
 OPTIONS_DEFINE=	PASSENGER MEMCACHE_CLIENT
 PASSENGER_DESC=	Passenger backend
 MEMCACHE_CLIENT_DESC=	MemCache-Client support
-OPTIONSFILE=	${PORT_DBDIR}/rubygem-${PORTNAME}/options
 
 MEMCACHE_CLIENT_RUN_DEPENDS=	rubygem-memcache-client>=1.2.0:${PORTSDIR}/databases/rubygem-memcache-client
 PASSENGER_RUN_DEPENDS=	rubygem-passenger>=2.2.15:${PORTSDIR}/www/rubygem-passenger

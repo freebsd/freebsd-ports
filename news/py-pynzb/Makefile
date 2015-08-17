@@ -16,7 +16,6 @@ LICENSE=	BSD3CLAUSE
 USES=		python
 USE_PYTHON=	distutils autoplist
 
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 OPTIONS_DEFINE=	LXML
 LXML_DESC=	Add support for py-lxml
 LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.2.1:${PORTSDIR}/devel/py-lxml

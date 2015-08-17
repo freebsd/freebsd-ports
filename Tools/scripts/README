@@ -12,8 +12,6 @@ bad-pkgdescrs.sh - locate identical pkg descriptions
 bump_revision.pl - Small script to bump the PORTREVISION variable of ports
                    which are depending on a port with a changed shared lib
                    version.
-check-latest-link - search for duplicate LATEST_LINK values and send nag
-                    mails to the responsible maintainers
 checkcats.py - verify that master categories in all ports are correct and
                report any problems. Beware that the full check takes quite
 			   some time.

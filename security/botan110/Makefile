@@ -14,8 +14,6 @@ COMMENT=	Portable, easy to use, and efficient C++ crypto library
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/doc/license.txt
 
-LATEST_LINK=	botan${PKGNAMESUFFIX}
-
 OPTIONS_DEFINE=		SSL GMP ECC DOCS
 OPTIONS_DEFAULT=	SSL GMP ECC
 ECC_DESC=	ECC support

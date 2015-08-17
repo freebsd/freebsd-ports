@@ -25,7 +25,6 @@ USES=		python shebangfix
 SHEBANG_FILES=	spotify_web/spotify.py ${CLIENTFILES}
 USE_PYTHON=	autoplist concurrent distutils
 
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 OPTIONS_DEFINE=	EXAMPLES
 
 PORTEXAMPLES=	blocking.py nonblocking.py decode_mercury.py play.py \

@@ -33,7 +33,6 @@ SUB_FILES=	pkg-message
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 
 OPTIONS_DEFINE=	DOCS
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 post-patch:
 	@${MV} ${WRKSRC}/policyd-spf.conf ${WRKSRC}/policyd-spf.conf.sample

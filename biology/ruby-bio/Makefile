@@ -16,8 +16,6 @@ OPTIONS_DEFINE=	XMLPARSER BDB4 MYSQL PGSQL DOCS
 XMLPARSER_DESC=	xmlparser support for faster Blast processing
 BDB4_DESC=	bdb4 support for faster flat file indexing
 
-OPTIONSFILE=	${PORT_DBDIR}/ruby-${PORTNAME}/options
-
 USES=	shebangfix
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes

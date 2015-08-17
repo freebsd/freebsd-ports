@@ -26,10 +26,10 @@ FILES=		adhoc.py config.py jep0133.py roomlist.py xmlconfig.py \
 FILES_CURPHOO=	YahooMD5.py __init__.py cpformat.py md5crypt.py pysha.py yahoo_fn.py
 PFILES=		${FILES:S.^.%%PYTHON_SITELIBDIR%%/xmpp/yahoo/.} \
 		${FILES_CURPHOO:S.^.%%PYTHON_SITELIBDIR%%/xmpp/yahoo/curphoo/.}
-PLIST_FILES=	${PFILES} ${PFILES:S.$.c.} ${PFILES:S.$.o.} etc/${UNIQUENAME:S.-._.}.conf.sample
+PLIST_FILES=	${PFILES} ${PFILES:S.$.c.} ${PFILES:S.$.o.} etc/${PKGBASE:S.-._.}.conf.sample
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD} BINDIR=${PYTHON_SITELIBDIR}/xmpp/yahoo \
 		JABBER_USER=${JABBER_USER}
-USE_RC_SUBR=	${UNIQUENAME:S/-/_/}
+USE_RC_SUBR=	${PKGBASE:S/-/_/}
 DDIR=		${PYTHON_SITELIBDIR}/xmpp/yahoo
 
 .include <bsd.port.options.mk>
@@ -45,7 +45,7 @@ SUB_LIST+=	JABBER_REQUIRE=jabberd
 post-patch:
 	@${GREP} -lr '/usr/bin/env python' ${WRKSRC} | \
 		${XARGS} ${REINPLACE_CMD} -e "s|/usr/bin/env python|${PYTHON_CMD}|"
-	@${REINPLACE_CMD} -e "s|/etc/pyyimt.conf.xml|${PREFIX}/etc/${UNIQUENAME:S.-._.}.conf|" \
+	@${REINPLACE_CMD} -e "s|/etc/pyyimt.conf.xml|${PREFIX}/etc/${PKGBASE:S.-._.}.conf|" \
 		-e 's|pid = ""|pid = "/var/jabberd/pid/PyYIMt.pid"|g' \
 		-e 's|spoolFile = "user.dbm"|spoolFile = "/var/spool/jabberd/yahoouser.dbm"|g' \
 		${WRKSRC}/config.py
@@ -60,7 +60,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/yahoo.py ${STAGEDIR}${DDIR}/
 	@${MKDIR} ${STAGEDIR}${DDIR}/curphoo
 	${INSTALL_DATA} ${FILES_CURPHOO:S.^.${WRKSRC}/curphoo/.} ${STAGEDIR}${DDIR}/curphoo/
-	${INSTALL_DATA} ${WRKSRC}/config_example.xml ${STAGEDIR}${PREFIX}/etc/${UNIQUENAME:S.-._.}.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/config_example.xml ${STAGEDIR}${PREFIX}/etc/${PKGBASE:S.-._.}.conf.sample
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -d ${DDIR} ${STAGEDIR}${DDIR}
 	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -d ${DDIR} ${STAGEDIR}${DDIR}
 	@${CHMOD} -R a-w ${STAGEDIR}${DDIR}

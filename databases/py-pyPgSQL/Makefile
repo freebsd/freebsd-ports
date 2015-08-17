@@ -25,9 +25,6 @@ OPTIONS_DEFINE=	BYTEA_CONN EXAMPLES DOCS
 OPTIONS_DEFAULT=	BYTEA_CONN
 BYTEA_CONN_DESC=	Apply Bytea connection patch
 
-# bypass infrastructure bug
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBYTEA_CONN}

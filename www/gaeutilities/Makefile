@@ -17,7 +17,6 @@ USES=		python:2 # same as www/google-appengine
 
 WRKSRC=	${WRKDIR}/joerussbowman-gaeutilities-ea3f7e1
 
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 OPTIONS_DEFINE=	DOCS
 
 do-build:

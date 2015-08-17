@@ -13,7 +13,6 @@ COMMENT=	Network auditing tool
 
 LIB_DEPENDS=	libtcl84.so:${PORTSDIR}/lang/tcl84
 
-NO_LATEST_LINK=	yes
 CONFLICTS=	hping-[0-9]*
 
 GNU_CONFIGURE=	yes

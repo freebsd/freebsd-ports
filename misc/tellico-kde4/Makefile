@@ -18,8 +18,6 @@ LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib \
 		libexempi.so:${PORTSDIR}/textproc/exempi \
 		libqjson.so:${PORTSDIR}/devel/qjson
 
-LATEST_LINK=	${PORTNAME}-kde4
-
 USE_KDE4=	kdelibs kdeprefix libksane pimlibs \
 		automoc4 qimageblitz libkcddb libkcompactdisc
 USE_QT4=	qmake_build moc_build uic_build rcc_build

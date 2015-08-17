@@ -16,7 +16,6 @@ RUN_DEPENDS=	${PEARDIR}/.channels/pear.doctrine-project.org.reg:${PORTSDIR}/deve
 	${PEARDIR}/Doctrine/Common/Version.php:${PORTSDIR}/databases/pear-DoctrineCommon \
 	${PEARDIR}/Symfony/Component/Console/Application.php:${PORTSDIR}/devel/pear-Symfony_Component_Console
 
-OPTIONSFILE?=	${PORT_DBDIR}/pear-${PORTNAME}/options
 OPTIONS_DEFINE=	DBLIB MYSQL ODBC PGSQL SQLITE
 OPTIONS_DEFAULT=MYSQL
 

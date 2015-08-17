@@ -29,8 +29,6 @@ CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.[0-3].* \
 .endif
 .else
 PKGNAMESUFFIX?=		-server
-# Do not use ${PKGNAMESUFFIX} here has it can change later
-OPTIONSFILE?=		${PORT_DBDIR}/${PORTNAME}24-server/options
 .endif
 EXTRACT_SUFX=		.tgz
 

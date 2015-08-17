@@ -111,8 +111,6 @@ AOOUDIR=		.openoffice.org\/${AOOVERSION1}
 INSTALLATION_BASEDIR?=	openoffice-${AOOSUFFIX}
 EXECBASE?=		openoffice-${AOOSUFFIX}
 
-NO_LATEST_LINK=	yes
-
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_GL=		gl glu
