@@ -10,7 +10,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: mat@FreeBSD.org
 
   The use of <UNIQUENAME>_SET/UNSET has been deprecated for a long time,
-  replaced by <OPTIONNS_NAME>_SET/UNSET.  It is now not supported any more.
+  replaced by <OPTIONS_NAME>_SET/UNSET.  It is now not supported any more.
   A warning will be issued telling you what to do, for example:
 
     $ make
