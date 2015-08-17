@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unbound
-PORTVERSION=	1.5.3
-PORTREVISION=	2
+PORTVERSION=	1.5.4
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
@@ -30,14 +29,14 @@ PORTDOCS=	CREDITS Changelog FEATURES LICENSE README README.svn \
 		ietf67-design-02.pdf requirements.txt
 PLIST_SUB+=	PYTHON=${PYTHON} MUNIN=${MUNIN}
 
-OPTIONS_DEFINE=	THREADS PYTHON GOST ECDSA MUNIN DOCS LIBEVENT FILTER_AAAA
+OPTIONS_DEFINE=	THREADS PYTHON GOST ECDSA MUNIN DOCS LIBEVENT
 OPTIONS_DEFAULT=THREADS ECDSA
 
 LIBEVENT_DESC=	Build against libevent
 GOST_DESC=	Enable GOST support (requires OpenSSL >= 1.0)
 ECDSA_DESC=	Enable ECDSA (elliptic curve) support (OpenSSL >= 1.0)
 MUNIN_DESC=	Install Munin plugin
-FILTER_AAAA_DESC=	Build with AAAA filter functionality (contrib)
+#FILTER_AAAA_DESC=	Build with AAAA filter functionality (contrib)
 
 .include <bsd.port.options.mk>
 
