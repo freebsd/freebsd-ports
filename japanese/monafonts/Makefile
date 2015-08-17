@@ -3,7 +3,7 @@
 
 PORTNAME=	monafonts
 PORTVERSION=	2.90
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	SF/monafont/monafont/monafont-${PORTVERSION}

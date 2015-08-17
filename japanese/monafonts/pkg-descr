@@ -3,6 +3,6 @@ Japanese Windows font. This is named after ASCII art 'mona' used in
 '2 channel', notorious huge Web BBS.
 
   Bitmap font is installed the following directory tree:
-        ${LOCALBASE}/share/fonts/monafont/
+        ${LOCALBASE}/share/fonts/monafonts/
 
 WWW: http://monafont.sourceforge.net/
