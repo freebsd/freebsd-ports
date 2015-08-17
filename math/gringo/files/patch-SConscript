@@ -1,0 +1,11 @@
+--- SConscript.orig	2015-08-17 12:39:49 UTC
++++ SConscript
+@@ -202,7 +202,7 @@ if env['WITH_LUA'] == "auto":
+     if conf.CheckWithPkgConfig("lua", ["lua", "lua5.1", "lua-5.1", "lua5.2", "lua-5.2", "lua5.3", "lua-5.3"]):
+         with_lua = True
+         DEFS["WITH_LUA"] = 1
+-elif env['WITH_LUA']:
++elif env['WITH_LUA'] != "no":
+     if not conf.CheckLibs("lua", env['WITH_LUA'], "lua.hpp"):
+         failure = True
+     else:
