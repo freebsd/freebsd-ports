@@ -14,7 +14,6 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Systems administration tool for networks
 CPE_VENDOR=	gnu
 
-LATEST_LINK=	cfengine32
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 
 CONFLICTS=	cfengine-[2]* cfengine-3.[345]* cfengine-devel-*

@@ -1,19 +1,17 @@
 # Created by: Gasol Wu <gasol.wu@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	memoize
+PORTNAME=	php-memoize
 PORTVERSION=	0.2.0b1
 DISTVERSIONPREFIX=	v
 PORTREVISION=	2
 CATEGORIES=	devel
-PKGNAMEPREFIX=	php-
 
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	PHP extension which transparently caches PHP functions
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	arraypad
-GH_PROJECT=	${UNIQUENAME}
 
 USE_PHP=	yes
 USE_PHPEXT=	yes

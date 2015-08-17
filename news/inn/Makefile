@@ -17,8 +17,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_RC_SUBR=	innd
 SUB_FILES=	pkg-install
 
-LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
-
 USES=		cpe gmake perl5 uidfix
 CPE_VENDOR=	isc
 

@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BSDL Regular Expressions library compatible with POSIX/GNU/Perl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-NO_LATEST_LINK=	yes
 CONFLICTS_INSTALL=	oniguruma-4.*
 GNU_CONFIGURE=	yes
 DOCS=		HISTORY README doc/*

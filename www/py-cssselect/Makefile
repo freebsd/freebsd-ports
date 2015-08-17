@@ -14,7 +14,6 @@ COMMENT=	Cssselect parses CSS3 Selectors and translates them to XPath 1.0
 LICENSE=	BSD3CLAUSE
 
 OPTIONS_DEFINE=	DOCS
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 USES=		python
 USE_PYTHON=	distutils autoplist

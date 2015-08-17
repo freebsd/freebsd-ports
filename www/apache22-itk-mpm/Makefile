@@ -18,7 +18,6 @@ MAINTAINER=		apache@FreeBSD.org
 
 WITH_MPM=		itk
 
-LATEST_LINK=		apache22-${WITH_MPM}-mpm
 DESCR=			${.CURDIR}/pkg-descr
 
 MPM_ITK_VERSION?=	20110321-01

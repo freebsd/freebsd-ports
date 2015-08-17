@@ -127,7 +127,6 @@
 OPTIONSMKINCLUDED=	bsd.options.mk
 
 OPTIONS_NAME?=	${PKGORIGIN:S/\//_/}
-OPTIONSFILE?=	${PORT_DBDIR}/${UNIQUENAME}/options
 OPTIONS_FILE?=	${PORT_DBDIR}/${OPTIONS_NAME}/options
 
 _OPTIONS_FLAGS=	ALL_TARGET CATEGORIES CFLAGS CONFIGURE_ENV CONFLICTS \
@@ -244,22 +243,6 @@ PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
 NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 .  endfor
 
-# XXX To remove once UNIQUENAME will be removed
-## Set the options specified per-port (set by user in make.conf)
-.  for opt in ${${UNIQUENAME}_SET}
-.    if !empty(COMPLETE_OPTIONS_LIST:M${opt})
-PORT_OPTIONS+=	${opt}
-NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
-.    endif
-.  endfor
-
-## Unset the options excluded per-port (set by user in make.conf)
-.  for opt in ${${UNIQUENAME}_UNSET}
-PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
-NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
-.  endfor
-# XXX To remove once UNIQUENAME will be removed
-
 ## Set the options specified per-port (set by user in make.conf)
 .  for opt in ${${OPTIONS_NAME}_SET}
 .    if !empty(COMPLETE_OPTIONS_LIST:M${opt})
@@ -273,14 +256,6 @@ NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
 NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 .  endfor
-
-# XXX to remove once UNIQUENAME is removed
-## options files (from dialog)
-.  if exists(${OPTIONSFILE}) && !make(rmconfig)
-.  include "${OPTIONSFILE}"
-.  endif
-.  sinclude "${OPTIONSFILE}.local"
-# XXX to remove once UNIQUENAME is removed
 
 ## options files (from dialog)
 .  if exists(${OPTIONS_FILE}) && !make(rmconfig)
@@ -300,6 +275,14 @@ PORT_OPTIONS+=	${opt}
 OPTIONS_WARNINGS+=	"WITHOUT_${opt}"
 OPTIONS_WARNINGS_UNSET+=	${opt}
 PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
+.endif
+.endfor
+
+_OPTIONS_UNIQUENAME=	${PKGNAMEPREFIX}${PORTNAME}
+.for _k in SET UNSET SET_FORCE UNSET_FORCE
+.if defined(${_OPTIONS_UNIQUENAME}_${_k})
+WARNING+=	"You are using ${_OPTIONS_UNIQUENAME}_${_k} which is not supported any more, use:"
+WARNING+=	"${OPTIONS_NAME}_${_k}=	${${_OPTIONS_UNIQUENAME}_${_k}}"
 .endif
 .endfor
 
@@ -354,22 +337,6 @@ NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
 NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 .  endfor
-
-# XXX To remove once UNIQUENAME will be removed
-## Set the options specified per-port (set by user in make.conf)
-.  for opt in ${${UNIQUENAME}_SET_FORCE}
-.    if !empty(COMPLETE_OPTIONS_LIST:M${opt})
-PORT_OPTIONS+=	${opt}
-NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
-.    endif
-.  endfor
-
-## Unset the options excluded per-port (set by user in make.conf)
-.  for opt in ${${UNIQUENAME}_UNSET_FORCE}
-PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
-NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
-.  endfor
-# XXX To remove once UNIQUENAME will be removed
 
 ## Set the options specified per-port (set by user in make.conf)
 .  for opt in ${${OPTIONS_NAME}_SET_FORCE}

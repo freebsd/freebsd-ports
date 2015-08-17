@@ -21,7 +21,6 @@ LICENSE=	GPLv2
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-UNIQUENAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 SLAVEDIRS=	databases/mariadb100-client
 USES=		bison:build cmake execinfo gmake shebangfix cpe
 USE_LDCONFIG=	${PREFIX}/lib/mysql ${PREFIX}/lib/mysql/plugin

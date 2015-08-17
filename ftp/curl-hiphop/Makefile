@@ -15,7 +15,6 @@ EXTRA_PATCHES=	${.CURDIR}/files/extra-patch-hiphop
 GNU_CONFIGURE_PREFIX=	${PREFIX}/${HIPHOP_DIR}/ext
 CONFIGURE_ARGS+=	--disable-shared --enable-static
 PLIST_SUB+=	HIPHOP_DIR="${HIPHOP_DIR}"
-LATEST_LINK=	curl-hiphop
 PLIST=		${.CURDIR}/pkg-plist
 DESCR=		${.CURDIR}/pkg-descr
 

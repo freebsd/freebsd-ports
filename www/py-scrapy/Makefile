@@ -23,7 +23,6 @@ USE_PYTHON=	distutils autoplist
 
 OPTIONS_DEFINE=	SSL
 OPTIONS_DEFAULT=SSL
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 .include <bsd.port.options.mk>
 

@@ -12,8 +12,6 @@ DISTNAME=	qt-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Qt4 bindings for GStreamer multimedia library
 
-LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
-
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
 USES=		bison cmake gmake pkgconfig tar:bzip2

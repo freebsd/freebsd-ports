@@ -19,7 +19,6 @@ SUB_FILES=	pkg-message
 OPTIONS_DEFINE=	XMPP MYSQL DOCS
 XMPP_DESC=	Jabber functions
 MYSQL_DESC=	Mysql functions
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 RUN_DEPENDS+=	${LOCALBASE}/bin/gpg:${PORTSDIR}/security/gnupg
 

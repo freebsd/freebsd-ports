@@ -32,9 +32,6 @@ MSSQL_DESC=	MS SQL Server backend
 TESTS_DESC=	Include nose for unit tests
 SYBASE_DESC=	Sybase backend
 
-# bypass infrastructure bug
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
-
 .include <bsd.port.options.mk>
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
