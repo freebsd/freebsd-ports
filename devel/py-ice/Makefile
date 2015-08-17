@@ -30,7 +30,6 @@ LIB_VRS=	${PORTVERSION:S|.||g:C|[0-9]$||}
 PLIST_SUB=	LIB_VERSION="${PORTVERSION}" LIB_VRS="${LIB_VRS}"
 
 # bypass infrastructure bug (taken from www/py-django)
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 OPTIONS_DEFINE=	DEBUG TESTS
 OPTIONS_DEFAULT=TESTS
 TESTS_DESC=	Run tests

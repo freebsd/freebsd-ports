@@ -14,7 +14,6 @@ LICENSE=	GPLv2
 
 DESCR=		${.CURDIR}/pkg-descr
 
-LATEST_LINK=	${PKGNAMEPREFIX}-${PORTNAME}
 MASTERDIR=	${.CURDIR}/../../ftp/proftpd
 
 LIB_DEPENDS+=	libsybdb.so.5:${PORTSDIR}/databases/freetds

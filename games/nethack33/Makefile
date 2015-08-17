@@ -12,7 +12,6 @@ MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Dungeon explorin', slashin', hackin' game
 
 WRKSRC=		${WRKDIR}/${TRUEPORTNAME}-${PORTVERSION}
-LATEST_LINK=	${TRUEPORTNAME}33${PKGNAMESUFFIX}
 
 USES=		gmake tar:tgz
 MAKE_ENV=	GRAPHICS="${GRAPHICS}"

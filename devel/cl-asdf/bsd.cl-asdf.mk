@@ -8,7 +8,7 @@
 # CL_LIBDIR_REL	- Common Lisp library directory, relative to LOCALBASE or PREFIX
 # ASDF_PATHNAME	- Where to install compiled FASL files (depends on FASL_DIR_REL)
 # ASDF_REGISTRY	- Path to ASDF registry
-# DOCSDIR	- DOCSDIR using UNIQUENAME (to account for optional cl- PKGNAMEPREFIX)
+# DOCSDIR	- DOCSDIR using PKGBASE (to account for optional cl- PKGNAMEPREFIX)
 # EXAMPLESDIR	- Same as above, for EXAMPLESDIR
 # FASL_DIR_REL	- Relative path to compiled FASL files; depends on FASL_TARGET
 # FASL_TARGET	- Platform for building FASL files (currently "sbcl" or "clisp")
@@ -32,8 +32,8 @@ FASL_PATHNAME=	${PREFIX}/${CL_LIBDIR_REL}/${PORTNAME}/${FASL_DIR_REL}
 ASDF_REGISTRY=	${PREFIX}/${CL_LIBDIR_REL}/system-registry
 
 # Include PKGNAMEPREFIX in DOCSDIR and EXAMPLESDIR
-DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
-EXAMPLESDIR=	${PREFIX}/share/examples/${UNIQUENAME}
+DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
+EXAMPLESDIR=	${PREFIX}/share/examples/${PKGBASE}
 
 .if defined(FASL_TARGET)
 FASL_DIR_REL=	${FASL_TARGET}fasl

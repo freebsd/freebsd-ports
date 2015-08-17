@@ -16,7 +16,6 @@ LICENSE=	GPLv2
 
 USES=		zip
 NO_BUILD=	yes
-LATEST_LINK=	openttd-${PORTNAME}
 
 # upstream zipped a tar file, unpack it.
 post-extract:

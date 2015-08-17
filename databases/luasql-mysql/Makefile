@@ -53,7 +53,6 @@ MAKE_ARGS+=	DRIVER_LIBS="-L ${LOCALBASE}/lib -lsqlite3" \
 IGNORE=		unknown or unsupported luasql driver
 .endif
 
-LATEST_LINK=	${PORTNAME}-${LUASQL_DRIVER}
 PLIST_SUB+=	LUASQL_DRIVER=${LUASQL_DRIVER}
 
 do-install:

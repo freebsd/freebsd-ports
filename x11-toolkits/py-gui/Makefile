@@ -15,7 +15,6 @@ COMMENT=	Cross-platform pythonic GUI API
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Pyrex/Distutils/__init__.py:${PORTSDIR}/devel/pyrex
 
 OPTIONS_DEFINE=	DOCS EXAMPLES OPENGL
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 USE_GNOME=	pygtk2
 USES=		python

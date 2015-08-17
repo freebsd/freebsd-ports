@@ -175,7 +175,6 @@ FALLBACK_ELF_MIB=	kern.fallback_elf_brand
 
 .if (${ARCH} == "amd64")
 .	if defined(OVERRIDE_LINUX_BASE_PORT) && ${OVERRIDE_LINUX_BASE_PORT} != "c6_64"
-LATEST_LINK:=		${PKGBASE:C/linux/linux32/}
 ARCH=			i386
 .	endif
 .endif

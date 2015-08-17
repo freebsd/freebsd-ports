@@ -22,7 +22,6 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
 
-UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 PATCHDIR=	${.CURDIR}/../${PORTNAME}/files
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 USE_RC_SUBR=	vboxguest vboxservice

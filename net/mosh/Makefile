@@ -23,8 +23,6 @@ INSTALL_TARGET=	install-strip
 USE_OPENSSL=	yes
 USES=		autoreconf:autoconf perl5 pkgconfig
 
-LATEST_LINK=	mosh-term
-
 CONFLICTS_INSTALL=	mosh-0.[2-9].*
 
 PLIST_FILES=	bin/mosh bin/mosh-server bin/mosh-client \
