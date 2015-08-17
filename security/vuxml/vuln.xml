@@ -58,6 +58,38 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="47aa4343-44fa-11e5-9daa-14dae9d210b8">
+    <topic>mod_jk -- information disclosure</topic>
+    <affects>
+      <package>
+	<name>ap22-mod_jk</name>
+	<name>ap24-mod_jk</name>
+	<range><lt>1.2.41,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NIST reports:</p>
+	<blockquote cite="http://www.cvedetails.com/cve/CVE-2014-8111/">
+	  <p>Apache Tomcat Connectors (mod_jk) before 1.2.41 ignores
+	    JkUnmount rules for subtrees of previous JkMount rules, which allows
+	    remote attackers to access otherwise restricted artifacts via
+	    unspecified vectors. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.mail-archive.com/users@tomcat.apache.org/msg118949.html</url>
+      <url>http://readlist.com/lists/tomcat.apache.org/users/27/135512.html</url>
+      <url>http://www.cvedetails.com/cve/CVE-2014-8111/</url>
+      <cvename>CVE-2014-8111</cvename>
+    </references>
+    <dates>
+      <discovery>2015-01-15</discovery>
+      <entry>2015-08-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f06f20dc-4347-11e5-93ad-002590263bf5">
     <topic>xen-tools -- QEMU leak of uninitialized heap memory in rtl8139 device model</topic>
     <affects>
