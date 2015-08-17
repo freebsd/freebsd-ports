@@ -3,7 +3,7 @@
 
 PORTNAME=	Cairo-GObject
 PORTVERSION=	1.004
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:XAOC
@@ -25,5 +25,8 @@ RUN_DEPENDS=	cairo>=1.10.0:${PORTSDIR}/graphics/cairo \
 
 USE_PERL5=	configure
 USES=		perl5
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Cairo/GObject/GObject.so
 
 .include <bsd.port.mk>
