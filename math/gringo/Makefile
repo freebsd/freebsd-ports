@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gringo
-PORTVERSION=	4.4.0
+PORTVERSION=	4.5.2
 DISTVERSIONSUFFIX=	-source
-PORTREVISION=	1
 CATEGORIES=	math devel
 MASTER_SITES=	SOURCEFORGE/potassco/${PORTNAME}/${PORTVERSION}
 
@@ -19,8 +18,9 @@ USES=	scons bison compiler:c++11-lang
 
 MAKE_ARGS+=	${MAKE_ENV}
 CXXFLAGS+=	-std=c++11
+MAKE_ENV+=	WITH_LUA=no
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} bin/clingo
 
 .include <bsd.port.pre.mk>
 
@@ -29,6 +29,7 @@ USE_GCC=	yes
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/build/release/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/build/debug/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/build/debug/clingo ${STAGEDIR}${PREFIX}/bin/clingo
 
 .include <bsd.port.post.mk>
