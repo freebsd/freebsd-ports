@@ -68,6 +68,7 @@ include/openNURBS/opennurbs_object_history.h
 include/openNURBS/opennurbs_objref.h
 include/openNURBS/opennurbs_offsetsurface.h
 include/openNURBS/opennurbs_optimize.h
+include/openNURBS/opennurbs_photogrammetry.h
 include/openNURBS/opennurbs_plane.h
 include/openNURBS/opennurbs_planesurface.h
 include/openNURBS/opennurbs_pluginlist.h
@@ -80,6 +81,7 @@ include/openNURBS/opennurbs_polyedgecurve.h
 include/openNURBS/opennurbs_polyline.h
 include/openNURBS/opennurbs_polylinecurve.h
 include/openNURBS/opennurbs_qsort_template.h
+include/openNURBS/opennurbs_quaternion.h
 include/openNURBS/opennurbs_rand.h
 include/openNURBS/opennurbs_rendering.h
 include/openNURBS/opennurbs_revsurface.h
