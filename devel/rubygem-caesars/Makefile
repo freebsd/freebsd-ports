@@ -3,6 +3,7 @@
 
 PORTNAME=	caesars
 PORTVERSION=	0.7.4
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,5 +13,7 @@ COMMENT=	Rapid DSL prototyping in Ruby
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+USES=		shebangfix
+SHEBANG_FILES=	bin/example
 
 .include <bsd.port.mk>
