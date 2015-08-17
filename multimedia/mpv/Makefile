@@ -47,7 +47,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 
 OPTIONS_DEFINE=		BS2B DOCS ENCA LADSPA LCMS2 LIBGUESS LUAJIT ZSH
 OPTIONS_GROUP=		IN VO AO
-OPTIONS_GROUP_IN=	CDIO LIBBLURAY V4L YTDL SMB
+OPTIONS_GROUP_IN=	CDIO LIBBLURAY V4L SMB
 OPTIONS_GROUP_VO=	CACA OPENGL VAAPI VDPAU XINERAMA
 OPTIONS_GROUP_AO=	JACK PULSEAUDIO
 OPTIONS_SUB=		yes
@@ -56,7 +56,6 @@ BS2B_DESC=	Enable Bauer Stereophonic-to-Binaural DSP support
 ENCA_DESC=	Enable encoding detection support
 LIBGUESS_DESC=	Enable high-speed character set detection support
 LUAJIT_DESC=	Use LuaJIT instead of Lua
-YTDL_DESC=	Install youtube-dl
 IN_DESC=	Input
 VO_DESC=	Video Output
 AO_DESC=	Audio Output
@@ -95,8 +94,6 @@ LIBBLURAY_CONFIGURE_ENABLE=	libbluray
 V4L_BUILD_DEPENDS=		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
 V4L_LIB_DEPENDS=		libv4l2.so:${PORTSDIR}/multimedia/libv4l
 V4L_CONFIGURE_ENABLE=		tv-v4l2
-
-YTDL_BUILD_DEPENDS=		${LOCALBASE}/bin/youtube-dl:${PORTSDIR}/www/youtube_dl
 
 SMB_LIB_DEPENDS=		libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
 SMB_CONFIGURE_ENABLE=		libsmbclient
