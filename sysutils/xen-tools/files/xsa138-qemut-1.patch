@@ -1,0 +1,77 @@
+From 510952d4c33ee69574167ce30829b21c815a165b Mon Sep 17 00:00:00 2001
+From: Kevin Wolf <kwolf@redhat.com>
+Date: Wed, 3 Jun 2015 14:13:31 +0200
+Subject: [PATCH 1/2] ide: Check array bounds before writing to io_buffer
+ (CVE-2015-5154)
+
+If the end_transfer_func of a command is called because enough data has
+been read or written for the current PIO transfer, and it fails to
+correctly call the command completion functions, the DRQ bit in the
+status register and s->end_transfer_func may remain set. This allows the
+guest to access further bytes in s->io_buffer beyond s->data_end, and
+eventually overflowing the io_buffer.
+
+One case where this currently happens is emulation of the ATAPI command
+START STOP UNIT.
+
+This patch fixes the problem by adding explicit array bounds checks
+before accessing the buffer instead of relying on end_transfer_func to
+function correctly.
+
+Cc: qemu-stable@nongnu.org
+Signed-off-by: Kevin Wolf <kwolf@redhat.com>
+---
+ hw/ide.c | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+
+diff --git a/hw/ide.c b/hw/ide.c
+index 791666b..211ec88 100644
+--- a/hw/ide.c
++++ b/hw/ide.c
+@@ -3002,6 +3002,10 @@ static void ide_data_writew(void *opaque, uint32_t addr, uint32_t val)
+     buffered_pio_write(s, addr, 2);
+ 
+     p = s->data_ptr;
++    if (p + 2 > s->data_end) {
++        return;
++    }
++
+     *(uint16_t *)p = le16_to_cpu(val);
+     p += 2;
+     s->data_ptr = p;
+@@ -3021,6 +3025,10 @@ static uint32_t ide_data_readw(void *opaque, uint32_t addr)
+     buffered_pio_read(s, addr, 2);
+ 
+     p = s->data_ptr;
++    if (p + 2 > s->data_end) {
++        return 0;
++    }
++
+     ret = cpu_to_le16(*(uint16_t *)p);
+     p += 2;
+     s->data_ptr = p;
+@@ -3040,6 +3048,10 @@ static void ide_data_writel(void *opaque, uint32_t addr, uint32_t val)
+     buffered_pio_write(s, addr, 4);
+ 
+     p = s->data_ptr;
++    if (p + 4 > s->data_end) {
++        return;
++    }
++
+     *(uint32_t *)p = le32_to_cpu(val);
+     p += 4;
+     s->data_ptr = p;
+@@ -3059,6 +3071,10 @@ static uint32_t ide_data_readl(void *opaque, uint32_t addr)
+     buffered_pio_read(s, addr, 4);
+ 
+     p = s->data_ptr;
++    if (p + 4 > s->data_end) {
++        return 0;
++    }
++
+     ret = cpu_to_le32(*(uint32_t *)p);
+     p += 4;
+     s->data_ptr = p;
+-- 
+2.1.4
+
