@@ -3,7 +3,7 @@
 
 PORTNAME=	XML-CanonicalizeXML
 PORTVERSION=	0.03
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,5 +20,8 @@ USE_PERL5=	configure
 USES=		perl5
 
 MAKE_JOBS_UNSAFE=	yes
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/XML/CanonicalizeXML/CanonicalizeXML.so
 
 .include <bsd.port.mk>
