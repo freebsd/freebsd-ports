@@ -64,6 +64,7 @@ IGNORE+=	missing definition for ${lang}_OLD_CMD
 _SHEBANG_REINPLACE_ARGS+=	-e "1s|^\#![[:space:]]*${${lang}_OLD_CMD}|\#!${${lang}_CMD}|"
 .endfor
 
+_USES_patch+=	210:fix-shebang
 fix-shebang:
 	@cd ${WRKSRC}; \
 		${ECHO_CMD} ${SHEBANG_FILES} | ${XARGS} ${SED} -i '' ${_SHEBANG_REINPLACE_ARGS}
