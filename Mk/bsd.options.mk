@@ -137,7 +137,16 @@ _OPTIONS_FLAGS=	ALL_TARGET CATEGORIES CFLAGS CONFIGURE_ENV CONFLICTS \
 		PATCH_SITES PLIST_DIRS PLIST_DIRSTRY PLIST_FILES PLIST_SUB \
 		PORTDOCS SUB_FILES SUB_LIST USES
 _OPTIONS_DEPENDS=	PKG FETCH EXTRACT PATCH BUILD LIB RUN
-_OPTIONS_TARGETS=	fetch extract patch configure build install package stage
+
+# The format here is target_family:priority:target-type
+_OPTIONS_TARGETS=	fetch:300:pre fetch:500:do fetch:700:post \
+			extract:300:pre extract:500:do extract:700:post \
+			patch:300:pre patch:500:do patch:700:post \
+			configure:300:pre configure:500:do configure:700:post \
+			build:300:pre build:500:do build:700:post \
+			install:300:pre install:500:do install:700:post  \
+			package:300:pre package:500:do package:700:post \
+			stage:800:post
 
 # Set the default values for the global options, as defined by portmgr
 .if !defined(NOPORTDOCS)
@@ -413,10 +422,8 @@ WITH_DEBUG=	yes
 ALL_OPTIONS=	${OPTIONS_DEFINE}
 .endif
 
-.for target in ${_OPTIONS_TARGETS}
-.for prepost in pre post
-_OPTIONS_${prepost}_${target}?=
-.endfor
+.for target in ${_OPTIONS_TARGETS:C/:.*//:u}
+_OPTIONS_${target}?=
 .endfor
 
 .for opt in ${COMPLETE_OPTIONS_LIST} ${OPTIONS_SLAVE} ${OPTIONS_EXCLUDE_${ARCH}} ${OPTIONS_EXCLUDE}
@@ -473,9 +480,10 @@ ${deptype}_DEPENDS+=	${${opt}_${deptype}_DEPENDS}
 .      endif
 .    endfor
 .    for target in ${_OPTIONS_TARGETS}
-.      for prepost in pre post
-_OPTIONS_${prepost}_${target}+=	${prepost}-${target}-${opt}-on
-.      endfor
+_target=	${target:C/:.*//}
+_prio=		${target:C/.*:(.*):.*/\1/}
+_type=		${target:C/.*://}
+_OPTIONS_${_target}:=	${_OPTIONS_${_target}} ${_prio}:${_type}-${_target}-${opt}-on
 .    endfor
 .  else
 .    if defined(${opt}_USE_OFF)
@@ -510,9 +518,10 @@ ${deptype}_DEPENDS+=	${${opt}_${deptype}_DEPENDS_OFF}
 .      endif
 .    endfor
 .    for target in ${_OPTIONS_TARGETS}
-.      for prepost in pre post
-_OPTIONS_${prepost}_${target}+=	${prepost}-${target}-${opt}-off
-.      endfor
+_target=	${target:C/:.*//}
+_prio=		${target:C/.*:(.*):.*/\1/}
+_type=		${target:C/.*://}
+_OPTIONS_${_target}:=	${_OPTIONS_${_target}} ${_prio}:${_type}-${_target}-${opt}-off
 .    endfor
 .  endif
 .endfor

@@ -101,6 +101,7 @@ _DO_CONDITIONAL_SYMLINK=	\
 _DO_CONDITIONAL_SYMLINK=	${DO_NADA}
 .endif
 
+_USES_stage+=	775:move-uniquefiles
 move-uniquefiles:
 .if ${UNIQUE_PREFIX_FILES} || ${UNIQUE_FIND_PREFIX_FILES}
 	@${ECHO_MSG} "===> Creating unique files: Move files needing PREFIX";
@@ -166,6 +167,7 @@ move-uniquefiles:
 
 # Using .if exists(${_UNIQUEPKGPLIST} below instead of the sh test
 # does not work in poudriere. It works fine on the CLI, though...
+_USES_stage+=	950:move-uniquefiles-plist
 move-uniquefiles-plist:
 	@if [ -e ${_UNIQUEPKGLIST} ]; then \
 		orgIFS=$$IFS; IFS=":"; while read command entry newentry; do \

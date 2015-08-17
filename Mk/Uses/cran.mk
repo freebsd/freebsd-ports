@@ -70,11 +70,10 @@ do-install:
 .endif
 
 .if ${cran_ARGS:Mauto-plist}
-.if !target(post-install-script)
-post-install-script:
+_USES_install+=	750:cran-auto-plist
+cran-auto-plist:
 	@${FIND} -ds ${STAGEDIR}${PREFIX}/${R_MOD_DIR} \( -type f -or -type l \) -print | \
 		${SED} -E -e 's,^${STAGEDIR}${PREFIX}/?,,' >> ${TMPPLIST}
-.endif
 .endif
 
 .endif #_INCLUDE_USES_CRAN_MK
