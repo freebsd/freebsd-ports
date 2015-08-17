@@ -3,7 +3,7 @@
 
 PORTNAME=	Clone-More
 PORTVERSION=	0.90.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,5 +17,8 @@ LICENSE_COMB=	dual
 USE_PERL5=	configure
 USES=		perl5
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Clone/More/More.so
 
 .include <bsd.port.mk>
