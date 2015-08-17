@@ -3,7 +3,7 @@
 
 PORTNAME=	true
 PORTVERSION=	0.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CHOCOLATE
@@ -22,5 +22,8 @@ RUN_DEPENDS=	p5-B-Hooks-OP-Annotation>=0.43:${PORTSDIR}/devel/p5-B-Hooks-OP-Anno
 
 USE_PERL5=	configure
 USES=		perl5
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/true/true.so
 
 .include <bsd.port.mk>
