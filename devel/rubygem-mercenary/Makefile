@@ -3,6 +3,7 @@
 
 PORTNAME=	mercenary
 PORTVERSION=	0.3.5
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,5 +15,7 @@ LICENSE=	MIT
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+USES=		shebangfix
+SHEBANG_FILES=	script/console script/examples
 
 .include <bsd.port.mk>
