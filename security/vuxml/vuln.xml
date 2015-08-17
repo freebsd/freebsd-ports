@@ -58,6 +58,71 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f06f20dc-4347-11e5-93ad-002590263bf5">
+    <topic>xen-tools -- QEMU leak of uninitialized heap memory in rtl8139 device model</topic>
+    <affects>
+      <package>
+	<name>xen-tools</name>
+	<range><lt>4.5.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-140.html">
+	  <p>The QEMU model of the RTL8139 network card did not sufficiently
+	    validate inputs in the C+ mode offload emulation. This results in
+	    uninitialised memory from the QEMU process's heap being leaked to
+	    the domain as well as to the network.</p>
+	  <p>A guest may be able to read sensitive host-level data relating to
+	    itself which resides in the QEMU process.</p>
+	  <p>Such information may include things such as information relating to
+	    real devices backing emulated devices or passwords which the host
+	    administrator does not intend to share with the guest admin.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5165</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-140.html</url>
+    </references>
+    <dates>
+      <discovery>2015-08-03</discovery>
+      <entry>2015-08-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ee99899d-4347-11e5-93ad-002590263bf5">
+    <topic>xen-tools -- use after free in QEMU/Xen block unplug protocol</topic>
+    <affects>
+      <package>
+	<name>xen-tools</name>
+	<range><lt>4.5.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-139.html">
+	  <p>When unplugging an emulated block device the device was not fully
+	    unplugged, meaning a second unplug attempt would attempt to unplug
+	    the device a second time using a previously freed pointer.</p>
+	  <p>An HVM guest which has access to an emulated IDE disk device may be
+	    able to exploit this vulnerability in order to take over the qemu
+	    process elevating its privilege to that of the qemu process.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5166</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-139.html</url>
+    </references>
+    <dates>
+      <discovery>2015-08-03</discovery>
+      <entry>2015-08-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="787ef75e-44da-11e5-93ad-002590263bf5">
     <topic>php5 -- multiple vulnerabilities</topic>
     <affects>
