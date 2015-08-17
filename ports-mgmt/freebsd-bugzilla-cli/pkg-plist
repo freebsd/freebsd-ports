@@ -1,6 +1,7 @@
 %%DATADIR%%/_util.sh
 %%DATADIR%%/_version.sh
 %%DATADIR%%/attach.sh
+%%DATADIR%%/claim.sh
 %%DATADIR%%/close.sh
 %%DATADIR%%/comment.sh
 %%DATADIR%%/edit.sh
