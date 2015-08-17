@@ -8,7 +8,7 @@ PKGNAMESUFFIX=	-rsvg
 MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to librsvg2 library
 
-USE_FPC=	gtk2
+USE_FPC=	cairo fcl-image gtk2 x11
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//:S/^/lib/}
