@@ -3,7 +3,7 @@
 
 PORTNAME=	CSS-Minifier-XS
 PORTVERSION=	0.09
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,5 +20,8 @@ TEST_DEPENDS=	p5-CSS-Minifier>=0:${PORTSDIR}/textproc/p5-CSS-Minifier \
 
 USE_PERL5=	configure
 USES=		perl5
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/CSS/Minifier/XS/XS.so
 
 .include <bsd.port.mk>
