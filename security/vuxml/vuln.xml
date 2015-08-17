@@ -58,6 +58,83 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="787ef75e-44da-11e5-93ad-002590263bf5">
+    <topic>php5 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>php5</name>
+	<name>php5-openssl</name>
+	<name>php5-phar</name>
+	<name>php5-soap</name>
+	<range><lt>5.4.44</lt></range>
+      </package>
+      <package>
+	<name>php55</name>
+	<name>php55-openssl</name>
+	<name>php55-phar</name>
+	<name>php55-soap</name>
+	<range><lt>5.5.28</lt></range>
+      </package>
+      <package>
+	<name>php56</name>
+	<name>php56-openssl</name>
+	<name>php56-phar</name>
+	<name>php56-soap</name>
+	<range><lt>5.6.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PHP project reports:</p>
+	<blockquote cite="http://php.net/ChangeLog-5.php">
+	  <p>Core:</p>
+	  <ul>
+	    <li>Fixed bug #69793 (Remotely triggerable stack exhaustion via
+	      recursive method calls).</li>
+	    <li>Fixed bug #70121 (unserialize() could lead to unexpected methods
+	      execution / NULL pointer deref).</li>
+	  </ul>
+	  <p>OpenSSL:</p>
+	  <ul>
+	    <li>Fixed bug #70014 (openssl_random_pseudo_bytes() is not
+	      cryptographically secure).</li>
+	  </ul>
+	  <p>Phar:</p>
+	  <ul>
+	    <li>Improved fix for bug #69441.</li>
+	    <li>Fixed bug #70019 (Files extracted from archive may be placed
+	      outside of destination directory).</li>
+	  </ul>
+	  <p>SOAP:</p>
+	  <ul>
+	    <li>Fixed bug #70081 (SoapClient info leak / null pointer
+	      dereference via multiple type confusions).</li>
+	  </ul>
+	  <p>SPL:</p>
+	  <ul>
+	    <li>Fixed bug #70068 (Dangling pointer in the unserialization of
+	      ArrayObject items).</li>
+	    <li>Fixed bug #70166 (Use After Free Vulnerability in unserialize()
+	      with SPLArrayObject).</li>
+	    <li>Fixed bug #70168 (Use After Free Vulnerability in unserialize()
+	      with SplObjectStorage).</li>
+	    <li>Fixed bug #70169 (Use After Free Vulnerability in unserialize()
+	      with SplDoublyLinkedList).</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://php.net/ChangeLog-5.php#5.4.44</url>
+      <url>http://php.net/ChangeLog-5.php#5.5.28</url>
+      <url>http://php.net/ChangeLog-5.php#5.6.12</url>
+    </references>
+    <dates>
+      <discovery>2015-08-06</discovery>
+      <entry>2015-08-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6241b5df-42a1-11e5-93ad-002590263bf5">
     <topic>mediawiki -- multiple vulnerabilities</topic>
     <affects>
