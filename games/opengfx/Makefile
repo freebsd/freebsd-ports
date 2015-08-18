@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opengfx
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.2
 CATEGORIES=	games
 MASTER_SITES=	http://hu.binaries.openttd.org/binaries/extra/${PORTNAME}/${PORTVERSION}/ \
 		http://us.binaries.openttd.org/binaries/extra/${PORTNAME}/${PORTVERSION}/ \
