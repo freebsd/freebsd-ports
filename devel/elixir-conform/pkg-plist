@@ -1,10 +1,13 @@
 lib/elixir/lib/conform/ebin/Elixir.Conform.Config.beam
 lib/elixir/lib/conform/ebin/Elixir.Conform.Options.beam
+lib/elixir/lib/conform/ebin/Elixir.Conform.Parse.ParseError.beam
 lib/elixir/lib/conform/ebin/Elixir.Conform.Parse.beam
 lib/elixir/lib/conform/ebin/Elixir.Conform.Schema.SchemaError.beam
 lib/elixir/lib/conform/ebin/Elixir.Conform.Schema.beam
 lib/elixir/lib/conform/ebin/Elixir.Conform.Translate.TranslateError.beam
 lib/elixir/lib/conform/ebin/Elixir.Conform.Translate.beam
+lib/elixir/lib/conform/ebin/Elixir.Conform.Type.beam
+lib/elixir/lib/conform/ebin/Elixir.Conform.Types.Enum.beam
 lib/elixir/lib/conform/ebin/Elixir.Conform.Utils.Code.beam
 lib/elixir/lib/conform/ebin/Elixir.Conform.Utils.beam
 lib/elixir/lib/conform/ebin/Elixir.Conform.beam
@@ -20,6 +23,8 @@ lib/elixir/lib/conform/lib/conform/config.ex
 lib/elixir/lib/conform/lib/conform/parse.ex
 lib/elixir/lib/conform/lib/conform/schema.ex
 lib/elixir/lib/conform/lib/conform/translate.ex
+lib/elixir/lib/conform/lib/conform/type.ex
+lib/elixir/lib/conform/lib/conform/types/enum.ex
 lib/elixir/lib/conform/lib/conform/utils/code.ex
 lib/elixir/lib/conform/lib/conform/utils/utils.ex
 lib/elixir/lib/conform/lib/mix/tasks/conform.archive.ex
