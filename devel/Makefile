@@ -296,6 +296,7 @@
     SUBDIR += cproto
     SUBDIR += cpuflags
     SUBDIR += critcl
+    SUBDIR += cs-eric6
     SUBDIR += cscope
     SUBDIR += cscout
     SUBDIR += csmith
