@@ -990,6 +990,7 @@
     SUBDIR += ipython
     SUBDIR += ireport
     SUBDIR += isl
+    SUBDIR += it-eric6
     SUBDIR += itext
     SUBDIR += jakarta-commons-configuration
     SUBDIR += jakarta-commons-daemon
