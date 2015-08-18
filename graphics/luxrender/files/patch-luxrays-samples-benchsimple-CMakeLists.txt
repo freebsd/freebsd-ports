@@ -1,5 +1,5 @@
---- ../luxrender-luxrays-7459cd8a9583/samples/benchsimple/CMakeLists.txt.orig
-+++ ../luxrender-luxrays-7459cd8a9583/samples/benchsimple/CMakeLists.txt
+--- ../luxrender-luxrays-7c7127ee1fa4/samples/benchsimple/CMakeLists.txt.orig
++++ ../luxrender-luxrays-7c7127ee1fa4/samples/benchsimple/CMakeLists.txt
 @@ -19,8 +19,10 @@
  #   LuxRays website: http://www.luxrender.net                             #
  ###########################################################################
@@ -11,4 +11,4 @@
  
  add_executable(benchsimple benchsimple.cpp)
 -target_link_libraries(benchsimple luxrays)
-+target_link_libraries(benchsimple luxrays ${CMAKE_THREAD_LIBS_INIT})
++target_link_libraries(benchsimple luxrays ${PYTHON_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
