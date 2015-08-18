@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sweet_xml
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3.0
 CATEGORIES=	textproc
 PKGNAMEPREFIX=	elixir-
 
