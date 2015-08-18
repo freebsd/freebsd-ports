@@ -33,7 +33,7 @@ USE_XORG=	x11 xv xxf86vm
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
-CPPFLAGS+=	-I.. -I${LOCALBASE}/include/ffmpeg -I${LOCALBASE}/include
+CPPFLAGS+=	-I.. -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
