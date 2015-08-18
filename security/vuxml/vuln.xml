@@ -135,7 +135,7 @@ Notes:
     <topic>unreal -- denial of service</topic>
     <affects>
       <package>
-	<name>unreal</name>
+	<name>Unreal</name>
 	<range><ge>3.2.10</ge><lt>3.2.10.5</lt></range>
       </package>
     </affects>
