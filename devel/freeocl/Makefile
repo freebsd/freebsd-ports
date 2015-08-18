@@ -25,7 +25,6 @@ USES=		cmake compiler:c++11-lib
 USE_LDCONFIG=	yes
 
 CXXFLAGS+=	-pthread -std=gnu++0x
-CMAKE_ENV+=	FREEOCL_CXX_COMPILER="${CXX}"
 
 CFLAGS_i386=	-msse
 
