@@ -3,6 +3,9 @@
 
 PORTNAME=	freeimage
 PORTVERSION=	3.16.0
+# Version 3.17.0 is available, but does not build on i386 (and probably
+# other 32-bit arches) without some not-quite-trivial patching.  If one
+# decides to update the port, please make sure 32-bit builds are tested!
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Source%20Distribution/${PORTVERSION}
 DISTNAME=	FreeImage${PORTVERSION:S/.//g}
