@@ -5103,6 +5103,7 @@
     SUBDIR += tokamak
     SUBDIR += tortoisehg
     SUBDIR += tpasm
+    SUBDIR += tr-eric6
     SUBDIR += trac-bitten
     SUBDIR += tradcpp
     SUBDIR += trio
