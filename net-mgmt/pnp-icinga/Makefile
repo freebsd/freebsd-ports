@@ -8,7 +8,7 @@ COMMENT=	Icinga performance data collector and grapher
 MASTERDIR=	${.CURDIR}/../pnp
 
 RUN_DEPENDS=	${LOCALBASE}/bin/rrdtool:${PORTSDIR}/databases/rrdtool \
-		icinga:${PORTSDIR}/net-mgmt/icinga
+		${LOCALBASE}/www/icinga/main.html:${PORTSDIR}/net-mgmt/icinga-classicweb
 
 NAGIOSDIR?=	/var/spool/icinga
 NAGIOSHTMURL?=	/icinga
