@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	combine
-PORTVERSION=	0.3.1
+PORTVERSION=	0.5.2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	elixir-
 
