@@ -3,7 +3,7 @@
 
 PORTNAME=	transmission-remote-gui
 PORTVERSION=	5.0.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-p2p
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	transgui-${PORTVERSION}-src
@@ -17,7 +17,7 @@ RUN_DEPENDS=	transmission-daemon:${PORTSDIR}/net-p2p/transmission-daemon
 
 PROJECTHOST=	transmisson-remote-gui
 
-USE_FPC=	fcl-net
+USE_FPC=	cairo fcl-base fcl-image fcl-net fcl-process hash pasjpeg paszlib x11
 USES=		iconv zip
 USE_GNOME=	#
 
