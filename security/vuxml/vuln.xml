@@ -58,6 +58,79 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b0e54dc1-45d2-11e5-adde-14dae9d210b8">
+    <topic>django -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py27-django</name>
+	<name>py32-django</name>
+	<name>py33-django</name>
+	<name>py34-django</name>
+	<range><lt>1.8.4</lt></range>
+      </package>
+      <package>
+	<name>py27-django17</name>
+	<name>py32-django17</name>
+	<name>py33-django17</name>
+	<name>py34-django17</name>
+	<range><lt>1.7.10</lt></range>
+      </package>
+      <package>
+	<name>py27-django14</name>
+	<name>py32-django14</name>
+	<name>py33-django14</name>
+	<name>py34-django14</name>
+	<range><lt>1.4.22</lt></range>
+      </package>
+      <package>
+	<name>py27-django-devel</name>
+	<name>py32-django-devel</name>
+	<name>py33-django-devel</name>
+	<name>py34-django-devel</name>
+	<range><le>20150709,1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tim Graham reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2015/aug/18/security-releases/">
+	  <p>Denial-of-service possibility in logout() view by filling
+	    session store</p>
+	  <p>Previously, a session could be created when anonymously
+	    accessing the django.contrib.auth.views.logout view
+	    (provided it wasn't decorated with django.contrib.auth.decorators.login_required
+	    as done in the admin). This could allow an attacker to
+	    easily create many new session records by sending repeated
+	    requests, potentially filling up the session store or
+	    causing other users' session records to be evicted.</p>
+	  <p>The django.contrib.sessions.middleware.SessionMiddleware
+	    has been modified to no longer create empty session records.</p>
+	  <p>This portion of the fix has been assigned CVE-2015-5963.</p>
+	  <p>Additionally, on the 1.4 and 1.7 series only, the
+	    contrib.sessions.backends.base.SessionBase.flush() and
+	    cache_db.SessionStore.flush() methods have been modified
+	    to avoid creating a new empty session. Maintainers of
+	    third-party session backends should check if the same
+	    vulnerability is present in their backend and correct
+	    it if so.</p>
+	  <p>This portion of the fix has been assigned CVE-2015-5964.
+	    Anyone reporting a similar vulnerability in a third-party
+	    session backend should not use this CVE ID.</p>
+	  <p>Thanks Lin Hua Cheng for reporting the issue.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.djangoproject.com/weblog/2015/aug/18/security-releases/</url>
+      <cvename>CVE-2015-5963</cvename>
+      <cvename>CVE-2015-5964</cvename>
+    </references>
+    <dates>
+      <discovery>2015-08-18</discovery>
+      <entry>2015-08-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0ecc1f55-45d0-11e5-adde-14dae9d210b8">
     <topic>unreal -- denial of service</topic>
     <affects>
