@@ -1,13 +1,13 @@
 # Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMESUFFIX=	-lcl-units
 
 COMMENT=	Lazarus components library units
 
-USE_FPC=	fcl-base fcl-db fcl-image fcl-process fcl-registry fcl-xml iconvenc fcl-res
-USE_FPC_RUN=	yes
+USE_FPC=	fcl-base fcl-db fcl-image fcl-json fcl-process fcl-registry \
+		fcl-res fcl-xml iconvenc pasjpeg
 
 LCL_INTERFACE=	#
 
