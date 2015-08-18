@@ -5,7 +5,7 @@
 
 PORTNAME=		nbc
 PORTVERSION=		1.2.1.r4
-PORTREVISION=		7
+PORTREVISION=		8
 CATEGORIES=		lang
 MASTER_SITES=		SF/bricxcc/NBC_NXC/NBC%20release%20${PORTVERSION:S/.r/%20r/}
 DISTNAME=		${PORTNAME}-${PORTVERSION}.src
@@ -23,7 +23,7 @@ ROBOCTL_DESC=		Include roboctl to communicate with the NXT
 ROBOCTL_RUN_DEPENDS=	legoctl:${PORTSDIR}/devel/roboctl
 
 USES=			dos2unix gmake tar:tgz
-USE_FPC=		fcl-base fcl-image
+USE_FPC=		fcl-base fcl-image hash pasjpeg paszlib
 
 PLIST_FILES=		bin/nbc \
 			include/nbc/NXCDefs.h \
