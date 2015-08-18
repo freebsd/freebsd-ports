@@ -87,7 +87,7 @@ lib/libskarnet.so
 lib/libskarnet.so.2
 lib/libskarnet.so.2.3
 lib/libskarnet.so.2.3.6
-lib/libskarnet.so.2.3.6.0
+lib/libskarnet.so.2.3.6.1
 lib/skalibs/libskarnet.a
 lib/skalibs/sysdeps/rt.lib
 lib/skalibs/sysdeps/socket.lib
