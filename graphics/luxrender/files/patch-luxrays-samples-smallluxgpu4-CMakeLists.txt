@@ -1,5 +1,5 @@
---- ../luxrender-luxrays-7459cd8a9583/samples/smallluxgpu4/CMakeLists.txt.orig
-+++ ../luxrender-luxrays-7459cd8a9583/samples/smallluxgpu4/CMakeLists.txt
+--- ../luxrender-luxrays-7c7127ee1fa4/samples/smallluxgpu4/CMakeLists.txt.orig
++++ ../luxrender-luxrays-7c7127ee1fa4/samples/smallluxgpu4/CMakeLists.txt
 @@ -25,6 +25,8 @@
  #
  #############################################################################
@@ -13,8 +13,8 @@
  
  add_executable(slg4 ${SMALLLUXGPU_SRCS})
  
--TARGET_LINK_LIBRARIES(slg4 smallluxgpu luxrays ${OPENGL_LIBRARIES} ${GLEW_LIBRARY} ${GLUT_LIBRARY})
-+TARGET_LINK_LIBRARIES(slg4 smallluxgpu luxrays ${OPENGL_LIBRARIES} ${GLEW_LIBRARY} ${GLUT_LIBRARY} ${CMAKE_THREAD_LIBS_INIT} -lexecinfo)
+-TARGET_LINK_LIBRARIES(slg4 luxcore smallluxgpu luxrays ${OPENGL_LIBRARIES} ${GLEW_LIBRARY} ${GLUT_LIBRARY} ${TIFF_LIBRARIES} ${OPENEXR_LIBRARIES} ${PNG_LIBRARIES} ${JPEG_LIBRARIES})
++TARGET_LINK_LIBRARIES(slg4 luxcore smallluxgpu luxrays ${OPENGL_LIBRARIES} ${GLEW_LIBRARY} ${GLUT_LIBRARY} ${TIFF_LIBRARIES} ${OPENEXR_LIBRARIES} ${PNG_LIBRARIES} ${JPEG_LIBRARIES} ${PYTHON_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} -lexecinfo)
  
  # This instructs FREEGLUT to emit a pragma for the static version
  SET_TARGET_PROPERTIES(slg4 PROPERTIES COMPILE_DEFINITIONS FREEGLUT_STATIC)
