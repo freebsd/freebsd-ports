@@ -243,7 +243,7 @@ CMAKE_ARGS+=	-DBUILD_opencv_java:BOOL=On
 . for module in apps python stitching superres videostab
 CMAKE_ARGS+=	-DBUILD_opencv_${module}:BOOL=Off
 . endfor
-CMAKE_ENV+=	JAVA_HOME="${JAVA_HOME}"
+CONFIGURE_ENV+=	JAVA_HOME="${JAVA_HOME}"
 INSTALL_WRKSRC=	${WRKSRC}/modules/java
 .else
 LIB_DEPENDS+=	libopencv_core.so:${PORTSDIR}/graphics/opencv-core

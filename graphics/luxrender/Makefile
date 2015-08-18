@@ -58,7 +58,7 @@ post-patch:
 		${LUXRAYS_WRKSRC}/cmake/Dependencies.cmake
 
 pre-configure:
-	cd ${LUXRAYS_WRKSRC} && ${SETENV} ${CMAKE_ENV} ${CMAKE_BIN} \
+	cd ${LUXRAYS_WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} \
 		${CMAKE_ARGS} .
 	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
 		${_MAKE_JOBS} ${MAKE_ARGS} -C ${LUXRAYS_WRKSRC}
