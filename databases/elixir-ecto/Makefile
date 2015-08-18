@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ecto
-PORTVERSION=	0.14.3
+PORTVERSION=	0.16.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 PKGNAMEPREFIX=	elixir-
@@ -15,10 +15,26 @@ USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	elixir-lang
 
+OPTIONS_DEFINE=	POSTGREX MARIAEX
+OPTIONS_SUB=	yes
+POSTGREX_DESC=	PostgreSQL adapter support
+MARIAEX_DESC=	MySQL adapter support
+
 MIX_BUILD_NAME=	shared
 MIX_BUILD_DEPS=	devel/elixir-decimal \
 		devel/elixir-poison \
 		devel/erlang-poolboy
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MPOSTGREX}
+MIX_BUILD_DEPS+=databases/elixir-postgrex
+.endif
+
+.if ${PORT_OPTIONS:MMARIAEX}
+MIX_BUILD_DEPS+=databases/elixir-mariaex
+.endif
+
 MIX_RUN_DEPS:=	${MIX_BUILD_DEPS}
 MIX_REWRITE=	yes
 
