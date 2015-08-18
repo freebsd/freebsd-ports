@@ -58,6 +58,72 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a59e263a-45cd-11e5-adde-14dae9d210b8">
+    <topic>freexl -- integer overflow</topic>
+    <affects>
+      <package>
+	<name>freexl</name>
+	<range><lt>1.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Stefan Cornelius reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/07/06/7">
+	  <p>There's an integer overflow in the allocate_cells() function
+	    when trying to allocate the memory for worksheet with specially
+	    crafted row/column dimensions. This can be exploited to cause a
+	    heap memory corruption. The most likely outcome of this is a crash
+	    when trying to initialize the cells later in the function.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openwall.com/lists/oss-security/2015/07/06/7</url>
+    </references>
+    <dates>
+      <discovery>2015-07-06</discovery>
+      <entry>2015-08-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ac98d090-45cc-11e5-adde-14dae9d210b8">
+    <topic>freexl -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>freexl</name>
+	<range><lt>1.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jodie Cunningham reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/03/25/1">
+	  <p>#1:  A flaw was found in the way FreeXL reads sectors from
+	    the input file. A specially crafted file could possibly
+	    result in stack corruption near freexl.c:3752.</p>
+	  <p>#2: A flaw was found in the function allocate_cells(). A
+	    specially crafted file with invalid workbook dimensions
+	    could possibly result in stack corruption near freexl.c:1074</p>
+	  <p>#3: A flaw was found in the way FreeXL handles a premature EOF. A
+	    specially crafted input file could possibly result in stack corruption
+	    near freexl.c:1131</p>
+	  <p>#4: FreeXL 1.0.0g did not properly check requests for workbook memory
+	    allocation. A specially crafted input file could cause a Denial of
+	    Service, or possibly write onto the stack.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openwall.com/lists/oss-security/2015/03/25/1</url>
+      <cvename>CVE-2015-2776</cvename>
+    </references>
+    <dates>
+      <discovery>2015-03-24</discovery>
+      <entry>2015-08-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="47aa4343-44fa-11e5-9daa-14dae9d210b8">
     <topic>mod_jk -- information disclosure</topic>
     <affects>
