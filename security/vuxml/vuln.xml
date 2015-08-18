@@ -444,11 +444,13 @@ Notes:
     </description>
     <references>
       <cvename>CVE-2015-5475</cvename>
+      <cvename>CVE-2015-6506</cvename>
       <url>http://blog.bestpractical.com/2015/08/security-vulnerabilities-in-rt.html</url>
     </references>
     <dates>
       <discovery>2015-08-12</discovery>
       <entry>2015-08-12</entry>
+      <modified>2015-08-18</modified>
     </dates>
   </vuln>
 
