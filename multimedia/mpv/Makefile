@@ -4,6 +4,7 @@
 PORTNAME=	mpv
 PORTVERSION=	0.9.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://ftp.waf.io/pub/release/:1 \
@@ -16,10 +17,7 @@ COMMENT=	Free and open-source general-purpose video player
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libavcodec26.so:${PORTSDIR}/multimedia/ffmpeg26 \
-		libass.so:${PORTSDIR}/multimedia/libass \
-		libdvdread.so:${PORTSDIR}/multimedia/libdvdread \
-		libdvdnav.so:${PORTSDIR}/multimedia/libdvdnav
+LIB_DEPENDS=	libavcodec26.so:${PORTSDIR}/multimedia/ffmpeg26
 BUILD_DEPENDS=	rst2man:${PORTSDIR}/textproc/py-docutils
 
 USE_GITHUB=	yes
@@ -44,14 +42,19 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--disable-alsa \
 		--disable-pdf
 
-OPTIONS_DEFINE=		BS2B DOCS ENCA LADSPA LCMS2 LIBGUESS LUAJIT ZSH
+OPTIONS_DEFINE=		ASS BS2B DOCS ENCA LADSPA LCMS2 \
+			LIBGUESS LUAJIT ZSH
+OPTIONS_DEFAULT=	ASS DVDREAD DVDNAV
 OPTIONS_GROUP=		IN VO AO
-OPTIONS_GROUP_IN=	CDIO LIBBLURAY V4L YTDL SMB
+OPTIONS_GROUP_IN=	CDIO DVDREAD DVDNAV LIBBLURAY V4L YTDL SMB
 OPTIONS_GROUP_VO=	CACA OPENGL VAAPI VDPAU XINERAMA
 OPTIONS_GROUP_AO=	JACK PULSEAUDIO
 OPTIONS_SUB=		yes
 
+ASS_DESC=	ASS/SSA subtitle and OSD rendering
 BS2B_DESC=	Enable Bauer Stereophonic-to-Binaural DSP support
+DVDREAD_DESC=	DVD Playback support
+DVDNAV_DESC=	DVD menu navigation
 ENCA_DESC=	Enable encoding detection support
 LIBGUESS_DESC=	Enable high-speed character set detection support
 LUAJIT_DESC=	Use LuaJIT instead of Lua
@@ -60,8 +63,17 @@ IN_DESC=	Input
 VO_DESC=	Video Output
 AO_DESC=	Audio Output
 
+ASS_LIB_DEPENDS=		libass.so:${PORTSDIR}/multimedia/libass
+ASS_CONFIGURE_ENABLE=		libass
+
 BS2B_LIB_DEPENDS=		libbs2b.so:${PORTSDIR}/audio/libbs2b
 BS2B_CONFIGURE_ENABLE=		libbs2b
+
+DVDREAD_LIB_DEPENDS=		libdvdread.so:${PORTSDIR}/multimedia/libdvdread
+DVDREAD_CONFIGURE_ENABLE=	dvdread
+
+DVDNAV_LIB_DEPENDS=		libdvdnav.so:${PORTSDIR}/multimedia/libdvdnav
+DVDNAV_CONFIGURE_ENABLE=	dvdnav
 
 ENCA_LIB_DEPENDS=		libenca.so:${PORTSDIR}/converters/enca
 ENCA_CONFIGURE_ENABLE=		enca
