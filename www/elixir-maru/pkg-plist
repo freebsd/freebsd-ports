@@ -22,6 +22,7 @@ lib/elixir/lib/maru/ebin/Elixir.Maru.ParamType.Map.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.ParamType.String.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.ParamType.Term.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.ParamType.beam
+lib/elixir/lib/maru/ebin/Elixir.Maru.Plugs.Extend.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Plugs.Forword.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Plugs.NotFound.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Plugs.Prepare.beam
@@ -60,6 +61,7 @@ lib/elixir/lib/maru/lib/maru/helpers/params.ex
 lib/elixir/lib/maru/lib/maru/helpers/response.ex
 lib/elixir/lib/maru/lib/maru/middleware.ex
 lib/elixir/lib/maru/lib/maru/paramtype.ex
+lib/elixir/lib/maru/lib/maru/plugs/extend.ex
 lib/elixir/lib/maru/lib/maru/plugs/forword.ex
 lib/elixir/lib/maru/lib/maru/plugs/notfound.ex
 lib/elixir/lib/maru/lib/maru/plugs/prepare.ex
