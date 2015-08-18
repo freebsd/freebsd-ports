@@ -35,7 +35,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		cmake:outsource iconv perl5 python:2.7 shebangfix
 SHEBANG_FILES=	grc/freedesktop/grc_setup_freedesktop.in
-CMAKE_ENV+=	LD_PRELOAD="${GCC_LIBS}/libstdc++.so:${GCC_LIBS}/libgcc_s.so.1"
+CONFIGURE_ENV+=	LD_PRELOAD="${GCC_LIBS}/libstdc++.so:${GCC_LIBS}/libgcc_s.so.1"
 CMAKE_ARGS+=	-DSWIG_EXECUTABLE:STRING="${LOCALBASE}/bin/swig2.0"
 CMAKE_ARGS+=	-DICONV_PREFIX:STRING="${ICONV_PREFIX}" \
 		-DICONV_LIB:STRING="X${ICONV_LIB}" \

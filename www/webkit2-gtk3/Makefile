@@ -47,10 +47,10 @@ BUILD_DEPENDS+=	cmake:${PORTSDIR}/devel/cmake
 #../../../lib/libjavascriptcoregtk-4.0.so.18.0.8: undefined reference to `JSC::JSCell::structure() const'
 #c++: error: linker command failed with exit code 1 (use -v to see invocation)
 #Source/JavaScriptCore/shell/CMakeFiles/jsc.dir/build.make:94: recipe for target 'bin/jsc' failed
-# there is something in CMAKE_ENV that cause this ... but what.
+# there is something in CONFIGURE_ENV that cause this ... but what.
 
 CMAKE_ARGS+=	-DPORT=GTK
-CMAKE_ENV+=	XDG_CACHE_HOME=${WRKDIR} \
+CONFIGURE_ENV+=	XDG_CACHE_HOME=${WRKDIR} \
 		CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}" \
 		CC="${CC}" CXX="${CXX}" CPP="${CPP}"
@@ -92,7 +92,7 @@ pre-configure:
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} CFLAGS="${CFLAGS}" \
-		${CMAKE_ENV} cmake -DPORT=GTK ${CMAKE_ARGS}
+		${CONFIGURE_ENV} cmake -DPORT=GTK ${CMAKE_ARGS}
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/bin/jsc \

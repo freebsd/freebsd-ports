@@ -19,7 +19,7 @@ CMAKE_ARGS=	-DBUILD_PLUGINS=none -DBUILD_TESTS=no -DQT5_BUILD=yes \
 		-DQCA_FEATURE_INSTALL_DIR=${QT_MKSPECDIR}/features \
 		-DQCA_MAN_INSTALL_DIR=${MANPREFIX}/man \
 		-DQCA_SUFFIX=qt5
-CMAKE_ENV=	QC_CERTSTORE_PATH=${LOCALBASE}/share/certs/ca-root-nss.crt
+CONFIGURE_ENV=	QC_CERTSTORE_PATH=${LOCALBASE}/share/certs/ca-root-nss.crt
 USE_LDCONFIG=	yes
 USE_QT5=	buildtools_build core network qmake_build
 
