@@ -8,7 +8,7 @@ PKGNAMESUFFIX=	-fpmkunit
 MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal build system unit
 
-USE_FPC=	fcl-process paszlib
+USE_FPC=	fcl-process hash paszlib
 USE_FPC_RUN=	yes
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
