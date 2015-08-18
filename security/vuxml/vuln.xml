@@ -330,10 +330,12 @@ Notes:
       <url>http://www.gnutls.org/security.html#GNUTLS-SA-2015-3</url>
       <mlist>http://seclists.org/oss-sec/2015/q3/308</mlist>
       <url>https://gitlab.com/gnutls/gnutls/commit/272854367efc130fbd4f1a51840d80c630214e12</url>
+      <cvename>CVE-2015-6251</cvename>
     </references>
     <dates>
       <discovery>2015-07-20</discovery>
       <entry>2015-08-14</entry>
+      <modified>2015-08-18</modified>
     </dates>
   </vuln>
 
