@@ -11,6 +11,12 @@ in the release notes and/or placed into UPDATING.
 All ports committers are allowed to commit to this file.
 
 20150818:
+AUTHOR: kde@FreeBSD.org
+
+  The CMAKE_ENV option has been deprecated. It no longer has any effect, and
+  the CONFIGURE_ENV variable should be used instead.
+
+20150818:
 AUTHOR: mat@FreeBSD.org
 
   <opt>_IMPLIES and <opt>_PREVENTS have been introduced to register dependency,
