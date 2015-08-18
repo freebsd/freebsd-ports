@@ -1,6 +1,6 @@
---- qmpdclient.desktop.orig	2011-02-04 14:22:08.000000000 +0300
-+++ qmpdclient.desktop	2011-03-25 13:43:51.000000000 +0300
-@@ -4,6 +4,6 @@
+--- qmpdclient.desktop.orig	2011-06-08 09:16:26 UTC
++++ qmpdclient.desktop
+@@ -4,6 +4,6 @@ Name=QMPDClient
  GenericName=Qt4 based MPD client
  Comment=A nicer MPD client
  Exec=qmpdclient

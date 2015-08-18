@@ -13,7 +13,7 @@ COMMENT=	Easy to use musicpd client written in Qt4
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:bzip2 qmake
+USES=		qmake tar:bzip2
 USE_QT4=	moc_build rcc_build uic_build \
 		corelib gui network xml xmlpatterns
 INSTALLS_ICONS=	yes
@@ -23,23 +23,16 @@ OPTIONS_DEFINE=	DBUS NLS DEBUG
 DATADIR=	${PREFIX}/share/QMPDClient
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+OPTIONS_SUB=	NLS
+
+NLS_USE=	QT4=linguisttools_build
+
+DBUS_QMAKE_ON=	CONFIG+=qdbus
+DBUS_USE=	QT4=dbus
+
+DEBUG_QMAKE_ON=	CONFIG+=debug
+
 .include  <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MNLS}
-PLIST_SUB+=	NLS="@comment "
-.else
-USE_QT4+=	linguist_build
-PLIST_SUB+=	NLS=""
-.endif
-
-.if ${PORT_OPTIONS:MDBUS}
-USE_QT4+=	dbus
-QMAKE_ARGS+=	"CONFIG+=qdbus"
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-QMAKE_ARGS+=	"CONFIG+=debug"
-.endif
 
 post-patch:
 .if ! ${PORT_OPTIONS:MNLS}
