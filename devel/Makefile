@@ -485,6 +485,7 @@
     SUBDIR += erlang-sbroker
     SUBDIR += erlang-ssl_verify_hostname
     SUBDIR += erlang-syslog
+    SUBDIR += es-eric6
     SUBDIR += etcd
     SUBDIR += etcdctl
     SUBDIR += etl
