@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	s6
-PORTVERSION=	2.1.6.0
+PORTVERSION=	2.2.0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
 
@@ -11,8 +11,8 @@ COMMENT=	skarnet.org supervision suite
 
 LICENSE=	ISCL
 
-BUILD_DEPENDS=	skalibs>=2.3.5.1:${PORTSDIR}/devel/skalibs \
-		execline>=2.1.2.2:${PORTSDIR}/lang/execline
+BUILD_DEPENDS=	skalibs>=2.3.6.1:${PORTSDIR}/devel/skalibs \
+		execline>=2.1.3.1:${PORTSDIR}/lang/execline
 RUN_DEPENDS=	execlineb:${PORTSDIR}/lang/execline
 
 USES=		gmake
@@ -26,6 +26,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--prefix=${PREFIX} \
 	--with-default-path=${LOCALBASE}/bin:/usr/bin:/bin \
 	--with-include=${LOCALBASE}/include \
+	--with-dynlib=${LOCALBASE}/lib \
 	--with-lib=${LOCALBASE}/lib/skalibs \
 	--with-lib=${LOCALBASE}/lib/execline \
 	--enable-shared
