@@ -3496,12 +3496,14 @@ Notes:
     </description>
     <references>
       <cvename>CVE-2015-3908</cvename>
+      <cvename>CVE-2015-6240</cvename>
       <url>http://www.ansible.com/security</url>
       <url>https://raw.githubusercontent.com/ansible/ansible/v1.9.2-1/CHANGELOG.md</url>
     </references>
     <dates>
       <discovery>2015-06-25</discovery>
       <entry>2015-07-02</entry>
+      <modified>2015-08-18</modified>
     </dates>
   </vuln>
 
