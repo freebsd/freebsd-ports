@@ -3,7 +3,7 @@
 
 PORTNAME=	mous
 PORTVERSION=	1.1a
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://cloud.github.com/downloads/bsdelf/mous/
 
@@ -14,6 +14,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 USES=		cmake
+USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=		ALSA ASSEMBLY FAAC FAAD FLAC LAME AO CUE MAC4DECODER \
 			MACDECODER MPG123 NCURSES OSS QT4 SDK TAGLIB VORBIS \
@@ -81,7 +82,8 @@ OSS_CMAKE_ON=		-DWithPluginOssRenderer=1
 OSS_CMAKE_OFF=		-DWithPluginOssRenderer=0
 
 QT4_DESC=		QT4 frontend
-QT4_USE=		QT4=gui,linguist,moc_build,qmake_build,rcc_build,uic_build
+QT4_USE=		QT4=corelib,gui,linguisttools_build
+QT4_USE+=		QT4=qmake_build,moc_build,rcc_build,uic_build
 QT4_CMAKE_ON=		-DWithFrontendQt=1
 QT4_CMAKE_OFF=		-DWithFrontendQt=0
 
