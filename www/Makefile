@@ -571,6 +571,7 @@
     SUBDIR += nspluginwrapper
     SUBDIR += ocaml-net
     SUBDIR += ocsigen
+    SUBDIR += offline-npm
     SUBDIR += ojs2
     SUBDIR += ompload
     SUBDIR += opencart
