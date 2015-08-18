@@ -96,6 +96,11 @@
 # ${opt}_QMAKE_OFF		When option is disabled, it will add its content to
 #				the QMAKE_ARGS.
 #
+# ${opt}_IMPLIES		When opt is enabled, options named in IMPLIES will
+#				get enabled too.
+# ${opt}_PREVENTS		When opt is enabled, if any options in PREVENTS are
+#				also enabled, it will produce an error.
+#
 # ${opt}_USE=	FOO=bar		When option is enabled, it will  enable
 #				USE_FOO+= bar
 #				If you need more than one option, you can do
@@ -364,6 +369,14 @@ NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
 .for opt in ${WITHOUT}
 PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
 NEW_OPTIONS:=	${NEW_OPTIONS:N${opt}}
+.endfor
+
+## Enable options implied by other options
+# _PREVENTS is handled in bsd.port.mk:pre-check-config
+.for count in ${PORT_OPTIONS}
+.  for opt in ${PORT_OPTIONS}
+PORT_OPTIONS+=	${${opt}_IMPLIES}
+.  endfor
 .endfor
 
 # Finally, add options required by slave ports
