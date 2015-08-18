@@ -58,6 +58,35 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0ecc1f55-45d0-11e5-adde-14dae9d210b8">
+    <topic>unreal -- denial of service</topic>
+    <affects>
+      <package>
+	<name>unreal</name>
+	<range><ge>3.2.10</ge><lt>3.2.10.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Unreal reports:</p>
+	<blockquote cite="https://www.unrealircd.org/txt/unrealsecadvisory.20150816.txt">
+	  <p>Summary: If SASL support is enabled in UnrealIRCd (this is
+	    not the default) and is also enabled in your services
+	    package then a malicious user with a services account can cause
+	    UnrealIRCd to crash.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.unrealircd.org/txt/unrealsecadvisory.20150816.txt</url>
+      <url>http://seclists.org/oss-sec/2015/q3/367</url>
+    </references>
+    <dates>
+      <discovery>2015-08-13</discovery>
+      <entry>2015-08-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f1692469-45ce-11e5-adde-14dae9d210b8">
     <topic>jasper -- double free in jasper_image_stop_load()</topic>
     <affects>
