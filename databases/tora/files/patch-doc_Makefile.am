@@ -1,6 +1,6 @@
---- doc/Makefile.am.orig	2008-07-30 15:50:50.000000000 +0200
-+++ doc/Makefile.am	2009-05-10 18:04:15.478423171 +0200
-@@ -3,19 +3,20 @@
+--- doc/Makefile.am.orig	2009-10-23 16:19:55 UTC
++++ doc/Makefile.am
+@@ -3,19 +3,20 @@ EXTRA_DIST = help
  dist-hook:
  	rm -rf `find $(distdir) -name .svn`
  
