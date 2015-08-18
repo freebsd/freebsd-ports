@@ -58,6 +58,36 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f1692469-45ce-11e5-adde-14dae9d210b8">
+    <topic>jasper -- double free in jasper_image_stop_load()</topic>
+    <affects>
+      <package>
+	<name>jasper</name>
+	<range><le>1.900.1_14</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Martin Prpic reports:</p>
+	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=1254242#c0">
+	  <p>A double free flaw was found in the way JasPer's
+	    jasper_image_stop_load() function parsed certain JPEG 2000 image files.
+	    A specially crafted file could cause an application using JasPer to
+	    crash.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=1254242#c0</url>
+      <url>http://seclists.org/oss-sec/2015/q3/366</url>
+      <cvename>CVE-2015-5203</cvename>
+    </references>
+    <dates>
+      <discovery>2015-08-17</discovery>
+      <entry>2015-08-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a59e263a-45cd-11e5-adde-14dae9d210b8">
     <topic>freexl -- integer overflow</topic>
     <affects>
