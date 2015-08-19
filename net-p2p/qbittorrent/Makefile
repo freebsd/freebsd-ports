@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qbittorrent
-PORTVERSION=	3.2.0
+PORTVERSION=	3.2.3
 DISTVERSIONPREFIX=	release-
 CATEGORIES=	net-p2p ipv6
 
@@ -44,17 +44,17 @@ CONFIGURE_ENV+=		zlib_CFLAGS=-I/usr/include
 CONFIGURE_ENV+=		zlib_LIBS=-lz
 CONFIGURE_ARGS+=	CXXFLAGS=-DBOOST_ASIO_DYN_LINK
 
+GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
+
+post-patch:
+	${REINPLACE_CMD} 's,^\$$QT_QMAKE,${LOCALBASE}/bin/qmake-qt4,'	\
+	    ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.options.mk>
 
-do-configure:
-.if defined(SLAVE_PORT) && ${SLAVE_PORT:tl} == "no"
-	@cd ${WRKSRC} ; ${SETENV} ${CONFIGURE_ENV} \
-		./configure --prefix=${PREFIX} ${CONFIGURE_ARGS}
-.else
-	@cd ${WRKSRC} ; ${SETENV} ${CONFIGURE_ENV} \
-		./configure --prefix=${PREFIX} ${CONFIGURE_ARGS} --disable-gui
+.if !defined(SLAVE_PORT) || ${SLAVE_PORT:tl} != "no"
+CONFIGURE_ARGS+=	--disable-gui
 .endif
 
 post-install:
