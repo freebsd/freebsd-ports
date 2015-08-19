@@ -316,8 +316,19 @@ Notes:
   </vuln>
 
   <vuln vid="f06f20dc-4347-11e5-93ad-002590263bf5">
-    <topic>xen-tools -- QEMU leak of uninitialized heap memory in rtl8139 device model</topic>
+    <topic>qemu, xen-tools -- QEMU leak of uninitialized heap memory in rtl8139 device model</topic>
     <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><le>0.11.1_20</le></range>
+	<range><ge>0.12</ge><le>2.3.0_2</le></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.4.50.g20150814</lt></range>
+      </package>
       <package>
 	<name>xen-tools</name>
 	<range><lt>4.5.1</lt></range>
@@ -342,16 +353,29 @@ Notes:
     <references>
       <cvename>CVE-2015-5165</cvename>
       <url>http://xenbits.xen.org/xsa/advisory-140.html</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=2a3612ccc1fa9cea77bd193afbfe21c77e7e91ef</url>
     </references>
     <dates>
       <discovery>2015-08-03</discovery>
       <entry>2015-08-17</entry>
+      <modified>2015-08-19</modified>
     </dates>
   </vuln>
 
   <vuln vid="ee99899d-4347-11e5-93ad-002590263bf5">
-    <topic>xen-tools -- use after free in QEMU/Xen block unplug protocol</topic>
+    <topic>qemu, xen-tools -- use after free in QEMU/Xen block unplug protocol</topic>
     <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><le>0.11.1_20</le></range>
+	<range><ge>0.12</ge><le>2.3.0_2</le></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.4.50.g20150814</lt></range>
+      </package>
       <package>
 	<name>xen-tools</name>
 	<range><lt>4.5.1</lt></range>
@@ -373,10 +397,12 @@ Notes:
     <references>
       <cvename>CVE-2015-5166</cvename>
       <url>http://xenbits.xen.org/xsa/advisory-139.html</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=260425ab405ea76c44dd59744d05176d4f579a52</url>
     </references>
     <dates>
       <discovery>2015-08-03</discovery>
       <entry>2015-08-17</entry>
+      <modified>2015-08-19</modified>
     </dates>
   </vuln>
 
@@ -1251,8 +1277,19 @@ Notes:
   </vuln>
 
   <vuln vid="da451130-365d-11e5-a4a5-002590263bf5">
-    <topic>xen-tools -- QEMU heap overflow flaw with certain ATAPI commands</topic>
+    <topic>qemu, xen-tools -- QEMU heap overflow flaw with certain ATAPI commands</topic>
     <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><le>0.11.1_20</le></range>
+	<range><ge>0.12</ge><le>2.3.0_2</le></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.4.50.g20150814</lt></range>
+      </package>
       <package>
 	<name>xen-tools</name>
 	<range><lt>4.5.0_9</lt></range>
@@ -1275,10 +1312,12 @@ Notes:
     <references>
       <cvename>CVE-2015-5154</cvename>
       <url>http://xenbits.xen.org/xsa/advisory-138.html</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=e40db4c6d391419c0039fe274c74df32a6ca1a28</url>
     </references>
     <dates>
       <discovery>2015-07-27</discovery>
       <entry>2015-08-04</entry>
+      <modified>2015-08-19</modified>
     </dates>
   </vuln>
 
