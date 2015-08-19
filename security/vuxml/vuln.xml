@@ -58,6 +58,988 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f5b8b670-465c-11e5-a49d-bcaec565249c">
+    <topic>gdk-pixbuf2 -- heap overflow and DoS</topic>
+    <affects>
+      <package>
+	<name>gdk-pixbuf2</name>
+	<range><lt>2.31.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gustavo Grieco reports:</p>
+	<blockquote cite="https://bugzilla.gnome.org/show_bug.cgi?id=752297">
+	  <p>We found a heap overflow and a DoS in the gdk-pixbuf
+	    implementation triggered by the scaling of a malformed bmp.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4491</cvename>
+      <url>https://bugzilla.gnome.org/show_bug.cgi?id=752297</url>
+    </references>
+    <dates>
+      <discovery>2015-07-12</discovery>
+      <entry>2015-08-19</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b0e54dc1-45d2-11e5-adde-14dae9d210b8">
+    <topic>django -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py27-django</name>
+	<name>py32-django</name>
+	<name>py33-django</name>
+	<name>py34-django</name>
+	<range><lt>1.8.4</lt></range>
+      </package>
+      <package>
+	<name>py27-django17</name>
+	<name>py32-django17</name>
+	<name>py33-django17</name>
+	<name>py34-django17</name>
+	<range><lt>1.7.10</lt></range>
+      </package>
+      <package>
+	<name>py27-django14</name>
+	<name>py32-django14</name>
+	<name>py33-django14</name>
+	<name>py34-django14</name>
+	<range><lt>1.4.22</lt></range>
+      </package>
+      <package>
+	<name>py27-django-devel</name>
+	<name>py32-django-devel</name>
+	<name>py33-django-devel</name>
+	<name>py34-django-devel</name>
+	<range><le>20150709,1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tim Graham reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2015/aug/18/security-releases/">
+	  <p>Denial-of-service possibility in logout() view by filling
+	    session store</p>
+	  <p>Previously, a session could be created when anonymously
+	    accessing the django.contrib.auth.views.logout view
+	    (provided it wasn't decorated with django.contrib.auth.decorators.login_required
+	    as done in the admin). This could allow an attacker to
+	    easily create many new session records by sending repeated
+	    requests, potentially filling up the session store or
+	    causing other users' session records to be evicted.</p>
+	  <p>The django.contrib.sessions.middleware.SessionMiddleware
+	    has been modified to no longer create empty session records.</p>
+	  <p>This portion of the fix has been assigned CVE-2015-5963.</p>
+	  <p>Additionally, on the 1.4 and 1.7 series only, the
+	    contrib.sessions.backends.base.SessionBase.flush() and
+	    cache_db.SessionStore.flush() methods have been modified
+	    to avoid creating a new empty session. Maintainers of
+	    third-party session backends should check if the same
+	    vulnerability is present in their backend and correct
+	    it if so.</p>
+	  <p>This portion of the fix has been assigned CVE-2015-5964.
+	    Anyone reporting a similar vulnerability in a third-party
+	    session backend should not use this CVE ID.</p>
+	  <p>Thanks Lin Hua Cheng for reporting the issue.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.djangoproject.com/weblog/2015/aug/18/security-releases/</url>
+      <cvename>CVE-2015-5963</cvename>
+      <cvename>CVE-2015-5964</cvename>
+    </references>
+    <dates>
+      <discovery>2015-08-18</discovery>
+      <entry>2015-08-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0ecc1f55-45d0-11e5-adde-14dae9d210b8">
+    <topic>unreal -- denial of service</topic>
+    <affects>
+      <package>
+	<name>Unreal</name>
+	<range><ge>3.2.10</ge><lt>3.2.10.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Unreal reports:</p>
+	<blockquote cite="https://www.unrealircd.org/txt/unrealsecadvisory.20150816.txt">
+	  <p>Summary: If SASL support is enabled in UnrealIRCd (this is
+	    not the default) and is also enabled in your services
+	    package then a malicious user with a services account can cause
+	    UnrealIRCd to crash.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.unrealircd.org/txt/unrealsecadvisory.20150816.txt</url>
+      <url>http://seclists.org/oss-sec/2015/q3/367</url>
+    </references>
+    <dates>
+      <discovery>2015-08-13</discovery>
+      <entry>2015-08-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f1692469-45ce-11e5-adde-14dae9d210b8">
+    <topic>jasper -- double free in jasper_image_stop_load()</topic>
+    <affects>
+      <package>
+	<name>jasper</name>
+	<range><le>1.900.1_14</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Martin Prpic reports:</p>
+	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=1254242#c0">
+	  <p>A double free flaw was found in the way JasPer's
+	    jasper_image_stop_load() function parsed certain JPEG 2000 image files.
+	    A specially crafted file could cause an application using JasPer to
+	    crash.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=1254242#c0</url>
+      <url>http://seclists.org/oss-sec/2015/q3/366</url>
+      <cvename>CVE-2015-5203</cvename>
+    </references>
+    <dates>
+      <discovery>2015-08-17</discovery>
+      <entry>2015-08-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a59e263a-45cd-11e5-adde-14dae9d210b8">
+    <topic>freexl -- integer overflow</topic>
+    <affects>
+      <package>
+	<name>freexl</name>
+	<range><lt>1.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Stefan Cornelius reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/07/06/7">
+	  <p>There's an integer overflow in the allocate_cells() function
+	    when trying to allocate the memory for worksheet with specially
+	    crafted row/column dimensions. This can be exploited to cause a
+	    heap memory corruption. The most likely outcome of this is a crash
+	    when trying to initialize the cells later in the function.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openwall.com/lists/oss-security/2015/07/06/7</url>
+    </references>
+    <dates>
+      <discovery>2015-07-06</discovery>
+      <entry>2015-08-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ac98d090-45cc-11e5-adde-14dae9d210b8">
+    <topic>freexl -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>freexl</name>
+	<range><lt>1.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jodie Cunningham reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/03/25/1">
+	  <p>#1:  A flaw was found in the way FreeXL reads sectors from
+	    the input file. A specially crafted file could possibly
+	    result in stack corruption near freexl.c:3752.</p>
+	  <p>#2: A flaw was found in the function allocate_cells(). A
+	    specially crafted file with invalid workbook dimensions
+	    could possibly result in stack corruption near freexl.c:1074</p>
+	  <p>#3: A flaw was found in the way FreeXL handles a premature EOF. A
+	    specially crafted input file could possibly result in stack corruption
+	    near freexl.c:1131</p>
+	  <p>#4: FreeXL 1.0.0g did not properly check requests for workbook memory
+	    allocation. A specially crafted input file could cause a Denial of
+	    Service, or possibly write onto the stack.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openwall.com/lists/oss-security/2015/03/25/1</url>
+      <cvename>CVE-2015-2776</cvename>
+    </references>
+    <dates>
+      <discovery>2015-03-24</discovery>
+      <entry>2015-08-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="47aa4343-44fa-11e5-9daa-14dae9d210b8">
+    <topic>mod_jk -- information disclosure</topic>
+    <affects>
+      <package>
+	<name>ap22-mod_jk</name>
+	<name>ap24-mod_jk</name>
+	<range><lt>1.2.41,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NIST reports:</p>
+	<blockquote cite="http://www.cvedetails.com/cve/CVE-2014-8111/">
+	  <p>Apache Tomcat Connectors (mod_jk) before 1.2.41 ignores
+	    JkUnmount rules for subtrees of previous JkMount rules, which allows
+	    remote attackers to access otherwise restricted artifacts via
+	    unspecified vectors. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.mail-archive.com/users@tomcat.apache.org/msg118949.html</url>
+      <url>http://readlist.com/lists/tomcat.apache.org/users/27/135512.html</url>
+      <url>http://www.cvedetails.com/cve/CVE-2014-8111/</url>
+      <cvename>CVE-2014-8111</cvename>
+    </references>
+    <dates>
+      <discovery>2015-01-15</discovery>
+      <entry>2015-08-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f06f20dc-4347-11e5-93ad-002590263bf5">
+    <topic>qemu, xen-tools -- QEMU leak of uninitialized heap memory in rtl8139 device model</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><le>0.11.1_20</le></range>
+	<range><ge>0.12</ge><le>2.3.0_2</le></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.4.50.g20150814</lt></range>
+      </package>
+      <package>
+	<name>xen-tools</name>
+	<range><lt>4.5.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-140.html">
+	  <p>The QEMU model of the RTL8139 network card did not sufficiently
+	    validate inputs in the C+ mode offload emulation. This results in
+	    uninitialised memory from the QEMU process's heap being leaked to
+	    the domain as well as to the network.</p>
+	  <p>A guest may be able to read sensitive host-level data relating to
+	    itself which resides in the QEMU process.</p>
+	  <p>Such information may include things such as information relating to
+	    real devices backing emulated devices or passwords which the host
+	    administrator does not intend to share with the guest admin.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5165</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-140.html</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=2a3612ccc1fa9cea77bd193afbfe21c77e7e91ef</url>
+    </references>
+    <dates>
+      <discovery>2015-08-03</discovery>
+      <entry>2015-08-17</entry>
+      <modified>2015-08-19</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="ee99899d-4347-11e5-93ad-002590263bf5">
+    <topic>qemu, xen-tools -- use after free in QEMU/Xen block unplug protocol</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><le>0.11.1_20</le></range>
+	<range><ge>0.12</ge><le>2.3.0_2</le></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.4.50.g20150814</lt></range>
+      </package>
+      <package>
+	<name>xen-tools</name>
+	<range><lt>4.5.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-139.html">
+	  <p>When unplugging an emulated block device the device was not fully
+	    unplugged, meaning a second unplug attempt would attempt to unplug
+	    the device a second time using a previously freed pointer.</p>
+	  <p>An HVM guest which has access to an emulated IDE disk device may be
+	    able to exploit this vulnerability in order to take over the qemu
+	    process elevating its privilege to that of the qemu process.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5166</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-139.html</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=260425ab405ea76c44dd59744d05176d4f579a52</url>
+    </references>
+    <dates>
+      <discovery>2015-08-03</discovery>
+      <entry>2015-08-17</entry>
+      <modified>2015-08-19</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="787ef75e-44da-11e5-93ad-002590263bf5">
+    <topic>php5 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>php5</name>
+	<name>php5-openssl</name>
+	<name>php5-phar</name>
+	<name>php5-soap</name>
+	<range><lt>5.4.44</lt></range>
+      </package>
+      <package>
+	<name>php55</name>
+	<name>php55-openssl</name>
+	<name>php55-phar</name>
+	<name>php55-soap</name>
+	<range><lt>5.5.28</lt></range>
+      </package>
+      <package>
+	<name>php56</name>
+	<name>php56-openssl</name>
+	<name>php56-phar</name>
+	<name>php56-soap</name>
+	<range><lt>5.6.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PHP project reports:</p>
+	<blockquote cite="http://php.net/ChangeLog-5.php">
+	  <p>Core:</p>
+	  <ul>
+	    <li>Fixed bug #69793 (Remotely triggerable stack exhaustion via
+	      recursive method calls).</li>
+	    <li>Fixed bug #70121 (unserialize() could lead to unexpected methods
+	      execution / NULL pointer deref).</li>
+	  </ul>
+	  <p>OpenSSL:</p>
+	  <ul>
+	    <li>Fixed bug #70014 (openssl_random_pseudo_bytes() is not
+	      cryptographically secure).</li>
+	  </ul>
+	  <p>Phar:</p>
+	  <ul>
+	    <li>Improved fix for bug #69441.</li>
+	    <li>Fixed bug #70019 (Files extracted from archive may be placed
+	      outside of destination directory).</li>
+	  </ul>
+	  <p>SOAP:</p>
+	  <ul>
+	    <li>Fixed bug #70081 (SoapClient info leak / null pointer
+	      dereference via multiple type confusions).</li>
+	  </ul>
+	  <p>SPL:</p>
+	  <ul>
+	    <li>Fixed bug #70068 (Dangling pointer in the unserialization of
+	      ArrayObject items).</li>
+	    <li>Fixed bug #70166 (Use After Free Vulnerability in unserialize()
+	      with SPLArrayObject).</li>
+	    <li>Fixed bug #70168 (Use After Free Vulnerability in unserialize()
+	      with SplObjectStorage).</li>
+	    <li>Fixed bug #70169 (Use After Free Vulnerability in unserialize()
+	      with SplDoublyLinkedList).</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://php.net/ChangeLog-5.php#5.4.44</url>
+      <url>http://php.net/ChangeLog-5.php#5.5.28</url>
+      <url>http://php.net/ChangeLog-5.php#5.6.12</url>
+    </references>
+    <dates>
+      <discovery>2015-08-06</discovery>
+      <entry>2015-08-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6241b5df-42a1-11e5-93ad-002590263bf5">
+    <topic>mediawiki -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mediawiki123</name>
+	<range><lt>1.23.10</lt></range>
+      </package>
+      <package>
+	<name>mediawiki124</name>
+	<range><lt>1.24.3</lt></range>
+      </package>
+      <package>
+	<name>mediawiki125</name>
+	<range><lt>1.25.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MediaWiki reports:</p>
+	<blockquote cite="https://lists.wikimedia.org/pipermail/mediawiki-announce/2015-August/000179.html">
+	  <p>Internal review discovered that Special:DeletedContributions did
+	    not properly protect the IP of autoblocked users. This fix makes
+	    the functionality of Special:DeletedContributions consistent with
+	    Special:Contributions and Special:BlockList.</p>
+	  <p>Internal review discovered that watchlist anti-csrf tokens were not
+	    being compared in constant time, which could allow various timing
+	    attacks. This could allow an attacker to modify a user's watchlist
+	    via csrf</p>
+	  <p>John Menerick reported that MediaWiki's thumb.php failed to sanitize
+	    various error messages, resulting in xss.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://lists.wikimedia.org/pipermail/mediawiki-announce/2015-August/000179.html</url>
+      <url>https://phabricator.wikimedia.org/T106893</url>
+      <url>https://phabricator.wikimedia.org/T94116</url>
+      <url>https://phabricator.wikimedia.org/T97391</url>
+    </references>
+    <dates>
+      <discovery>2015-08-10</discovery>
+      <entry>2015-08-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0c2c4d84-42a2-11e5-9daa-14dae9d210b8">
+    <topic>freeradius3 -- insufficient validation on packets</topic>
+    <affects>
+      <package>
+	<name>freeradius3</name>
+	<range><lt>3.0.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jouni Malinen reports:</p>
+	<blockquote cite="http://freeradius.org/security.html#eap-pwd-2015">
+	  <p>The EAP-PWD module performed insufficient validation on
+	    packets received from an EAP peer. This module is not enabled in the
+	    default configuration. Administrators must manually enable it for their
+	    server to be vulnerable. Only versions 3.0 up to 3.0.8 are affected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://freeradius.org/security.html#eap-pwd-2015</url>
+    </references>
+    <dates>
+      <discovery>2015-04-04</discovery>
+      <entry>2015-08-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ec6a2a1e-429d-11e5-9daa-14dae9d210b8">
+    <topic>gnutls -- double free in certificate DN decoding</topic>
+    <affects>
+      <package>
+	<name>gnutls</name>
+	<range><lt>3.3.17</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>gnutls.org reports:</p>
+	<blockquote cite="http://www.gnutls.org/security.html#GNUTLS-SA-2015-3">
+	    <p>Kurt Roeckx reported that decoding a specific certificate with very
+	    long DistinguishedName (DN) entries leads to double free, which may
+	    result to a denial of service. Since the DN decoding occurs in almost
+	    all applications using certificates it is recommended to upgrade the
+	    latest GnuTLS version fixing the issue. Recommendation: Upgrade to
+	    GnuTLS 3.4.4, or 3.3.17.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.gnutls.org/security.html#GNUTLS-SA-2015-3</url>
+      <mlist>http://seclists.org/oss-sec/2015/q3/308</mlist>
+      <url>https://gitlab.com/gnutls/gnutls/commit/272854367efc130fbd4f1a51840d80c630214e12</url>
+      <cvename>CVE-2015-6251</cvename>
+    </references>
+    <dates>
+      <discovery>2015-07-20</discovery>
+      <entry>2015-08-14</entry>
+      <modified>2015-08-18</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="3de36a19-429d-11e5-9daa-14dae9d210b8">
+    <topic>gnutls -- MD5 downgrade in TLS signatures</topic>
+    <affects>
+      <package>
+	<name>gnutls</name>
+	<range><lt>3.3.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Karthikeyan Bhargavan reports:</p>
+	<blockquote cite="http://permalink.gmane.org/gmane.comp.encryption.gpg.gnutls.devel/8132">
+	  <p>GnuTLS does not by default support MD5 signatures. Indeed the RSA-MD5
+	    signature-hash algorithm needs to be explicitly enabled using the
+	    priority option VERIFY_ALLOW_SIGN_RSA_MD5. In the NORMAL and SECURE
+	    profiles, GnuTLS clients do not offer RSA-MD5 in the signature
+	    algorithms extension. However, we find that all GnuTLS clients still
+	    accept RSA-MD5 in the ServerKeyExchange and GnuTLS servers still
+	    accept RSA-MD5 in the ClientCertificateVerify.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <mlist>http://permalink.gmane.org/gmane.comp.encryption.gpg.gnutls.devel/8132</mlist>
+      <url>http://www.gnutls.org/security.html#GNUTLS-SA-2015-2</url>
+      <mlist>http://seclists.org/oss-sec/2015/q2/367</mlist>
+    </references>
+    <dates>
+      <discovery>2015-04-25</discovery>
+      <entry>2015-08-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9ee72858-4159-11e5-93ad-002590263bf5">
+    <topic>froxlor -- database password information leak</topic>
+    <affects>
+      <package>
+	<name>froxlor</name>
+	<range><lt>0.9.33.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>oss-security-list@demlak.de reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2015/q3/238">
+	  <p>An unauthenticated remote attacker is able to get the database
+	    password via webaccess due to wrong file permissions of the /logs/
+	    folder in froxlor version 0.9.33.1 and earlier. The plain SQL
+	    password and username may be stored in the /logs/sql-error.log file.
+	    This directory is publicly reachable under the default
+	    configuration/setup.</p>
+	</blockquote>
+	<p>Note that froxlor 0.9.33.2 prevents future logging of passwords but
+	  does not retroactively remove passwords already logged.  Michael
+	  Kaufmann, the Froxlor lead developer reports:</p>
+	<blockquote cite="http://forum.froxlor.org/index.php/topic/13054-important-bugfix-release-09332/#entry30025">
+	  <p>Removing all .log files from the directory should do the job,
+	    alternatively just use the class.ConfigIO.php from Github</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5959</cvename>
+      <freebsdpr>ports/202262</freebsdpr>
+      <url>http://seclists.org/oss-sec/2015/q3/238</url>
+      <url>https://forum.froxlor.org/index.php/topic/13054-important-bugfix-release-09332/</url>
+    </references>
+    <dates>
+      <discovery>2015-07-29</discovery>
+      <entry>2015-08-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="83b38a2c-413e-11e5-bfcf-6805ca0b3d42">
+    <topic>RT -- two XSS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>rt42</name>
+	<range><ge>4.2.0</ge><lt>4.2.12</lt></range>
+      </package>
+      <package>
+	<name>rt40</name>
+	<range><ge>4.0.0</ge><lt>4.0.24</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Best Practical reports:</p>
+	<blockquote cite="http://blog.bestpractical.com/2015/08/security-vulnerabilities-in-rt.html">
+	  <p>RT 4.0.0 and above are vulnerable to a cross-site
+	    scripting (XSS) attack via the user and group rights
+	    management pages.  This vulnerability is assigned
+	    CVE-2015-5475.  It was discovered and reported by Marcin
+	    Kopec at Data Reliance Shared Service Center.</p>
+	  <p>RT 4.2.0 and above are vulnerable to a cross-site
+	    scripting (XSS) attack via the cryptography interface.
+	    This vulnerability could allow an attacker with a
+	    carefully-crafted key to inject JavaScript into RT's user
+	    interface.  Installations which use neither GnuPG nor
+	    S/MIME are unaffected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5475</cvename>
+      <cvename>CVE-2015-6506</cvename>
+      <url>http://blog.bestpractical.com/2015/08/security-vulnerabilities-in-rt.html</url>
+    </references>
+    <dates>
+      <discovery>2015-08-12</discovery>
+      <entry>2015-08-12</entry>
+      <modified>2015-08-18</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="09fff0d9-4126-11e5-9f01-14dae9d210b8">
+    <topic>py-foolscap -- local file inclusion</topic>
+    <affects>
+      <package>
+	<name>py27-foolscap</name>
+	<name>py32-foolscap</name>
+	<name>py33-foolscap</name>
+	<name>py34-foolscap</name>
+	<range><lt>0.7.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Brian Warner reports:</p>
+	<blockquote cite="https://github.com/warner/foolscap/blob/a17218e18e01c05a9655863cd507b80561692c14/NEWS">
+	  <p>The "flappserver" feature was found to have a vulnerability in the
+	    service-lookup code which, when combined with an attacker who has the ability
+	    to write files to a location where the flappserver process could read them,
+	    would allow that attacker to obtain control of the flappserver process.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/warner/foolscap/blob/a17218e18e01c05a9655863cd507b80561692c14/NEWS</url>
+      <url>http://foolscap.lothar.com/trac/ticket/226</url>
+    </references>
+    <dates>
+      <discovery>2014-09-23</discovery>
+      <entry>2015-08-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="42c98cef-62b1-4b8b-9065-f4621e08d526">
+    <topic>libvpx -- out-of-bounds write</topic>
+    <affects>
+      <package>
+	<name>libvpx</name>
+	<range><lt>1.4.0</lt></range>
+      </package>
+      <package>
+	<name>firefox</name>
+	<range><lt>33.0,1</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>31.1.2,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>33.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.30</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>31.1.2</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.30</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>31.1.2</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><lt>31.1.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/advisories/mfsa2014-77/">
+	  <p>Using the Address Sanitizer tool, security researcher
+	    Abhishek Arya (Inferno) of the Google Chrome Security Team
+	    found an out-of-bounds write when buffering WebM format
+	    video containing frames with invalid tile sizes. This can
+	    lead to a potentially exploitable crash during WebM video
+	    playback.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1578</cvename>
+      <url>https://www.mozilla.org/security/advisories/mfsa2014-77/</url>
+      <url>https://hg.mozilla.org/releases/mozilla-esr31/rev/6023f0b4f8ba</url>
+    </references>
+    <dates>
+      <discovery>2014-10-14</discovery>
+      <entry>2015-08-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f3778328-d288-4b39-86a4-65877331eaf7">
+    <topic>Adobe Flash Player -- critical vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-c6-flashplugin</name>
+	<name>linux-c6_64-flashplugin</name>
+	<range><lt>11.2r202.508</lt></range>
+      </package>
+      <package>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>11.2r202.508</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="https://helpx.adobe.com/security/products/flash-player/apsb15-19.html">
+	  <p>Adobe has released security updates for Adobe Flash Player.
+	    These updates address critical vulnerabilities that could
+	    potentially allow an attacker to take control of the affected
+	    system.</p>
+	  <p>These updates resolve type confusion vulnerabilities that could
+	    lead to code execution (CVE-2015-5128, CVE-2015-5554,
+	    CVE-2015-5555, CVE-2015-5558, CVE-2015-5562).</p>
+	  <p>These updates include further hardening to a mitigation
+	    introduced in version 18.0.0.209 to defend against vector
+	    length corruptions (CVE-2015-5125).</p>
+	  <p>These updates resolve use-after-free vulnerabilities that could
+	    lead to code execution (CVE-2015-5550, CVE-2015-5551,
+	    CVE-2015-3107, CVE-2015-5556, CVE-2015-5130, CVE-2015-5134,
+	    CVE-2015-5539, CVE-2015-5540, CVE-2015-5557, CVE-2015-5559,
+	    CVE-2015-5127, CVE-2015-5563, CVE-2015-5561, CVE-2015-5124,
+	    CVE-2015-5564).</p>
+	  <p>These updates resolve heap buffer overflow vulnerabilities
+	    that could lead to code execution (CVE-2015-5129,
+	    CVE-2015-5541).</p>
+	  <p>These updates resolve buffer overflow vulnerabilities that
+	    could lead to code execution (CVE-2015-5131, CVE-2015-5132,
+	    CVE-2015-5133).</p>
+	  <p>These updates resolve memory corruption vulnerabilities that
+	    could lead to code execution (CVE-2015-5544, CVE-2015-5545,
+	    CVE-2015-5546, CVE-2015-5547, CVE-2015-5548, CVE-2015-5549,
+	    CVE-2015-5552, CVE-2015-5553).</p>
+	  <p>These updates resolve an integer overflow vulnerability that
+	    could lead to code execution (CVE-2015-5560).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3107</cvename>
+      <cvename>CVE-2015-5124</cvename>
+      <cvename>CVE-2015-5125</cvename>
+      <cvename>CVE-2015-5127</cvename>
+      <cvename>CVE-2015-5128</cvename>
+      <cvename>CVE-2015-5129</cvename>
+      <cvename>CVE-2015-5130</cvename>
+      <cvename>CVE-2015-5131</cvename>
+      <cvename>CVE-2015-5132</cvename>
+      <cvename>CVE-2015-5133</cvename>
+      <cvename>CVE-2015-5134</cvename>
+      <cvename>CVE-2015-5539</cvename>
+      <cvename>CVE-2015-5540</cvename>
+      <cvename>CVE-2015-5541</cvename>
+      <cvename>CVE-2015-5544</cvename>
+      <cvename>CVE-2015-5545</cvename>
+      <cvename>CVE-2015-5546</cvename>
+      <cvename>CVE-2015-5547</cvename>
+      <cvename>CVE-2015-5548</cvename>
+      <cvename>CVE-2015-5549</cvename>
+      <cvename>CVE-2015-5550</cvename>
+      <cvename>CVE-2015-5551</cvename>
+      <cvename>CVE-2015-5552</cvename>
+      <cvename>CVE-2015-5553</cvename>
+      <cvename>CVE-2015-5554</cvename>
+      <cvename>CVE-2015-5555</cvename>
+      <cvename>CVE-2015-5556</cvename>
+      <cvename>CVE-2015-5557</cvename>
+      <cvename>CVE-2015-5558</cvename>
+      <cvename>CVE-2015-5559</cvename>
+      <cvename>CVE-2015-5560</cvename>
+      <cvename>CVE-2015-5561</cvename>
+      <cvename>CVE-2015-5562</cvename>
+      <cvename>CVE-2015-5563</cvename>
+      <cvename>CVE-2015-5564</cvename>
+      <url>https://helpx.adobe.com/security/products/flash-player/apsb15-19.html</url>
+    </references>
+    <dates>
+      <discovery>2015-08-11</discovery>
+      <entry>2015-08-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="34e60332-2448-4ed6-93f0-12713749f250">
+    <topic>libvpx -- multiple buffer overflows</topic>
+    <affects>
+      <package>
+	<name>libvpx</name>
+	<range><lt>1.4.0.488</lt></range>
+      </package>
+      <package>
+	<name>firefox</name>
+	<range><lt>40.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>40.0,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/security/advisories/mfsa2015-89/">
+	  <p>Security researcher Abhishek Arya (Inferno) of the Google
+	    Chrome Security Team used the Address Sanitizer tool to
+	    discover two buffer overflow issues in the Libvpx library
+	    used for WebM video when decoding a malformed WebM video
+	    file. These buffer overflows result in potentially
+	    exploitable crashes.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4485</cvename>
+      <cvename>CVE-2015-4486</cvename>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-89/</url>
+    </references>
+    <dates>
+      <discovery>2015-08-11</discovery>
+      <entry>2015-08-11</entry>
+      <modified>2015-08-14</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="c66a5632-708a-4727-8236-d65b2d5b2739">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>40.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>40.0,1</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.37</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.37</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>38.2.0,1</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><lt>38.2.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>38.2.0</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>38.2.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/advisories/">
+	  <p>MFSA 2015-79 Miscellaneous memory safety hazards (rv:40.0
+	    / rv:38.2)</p>
+	  <p>MFSA 2015-80 Out-of-bounds read with malformed MP3
+	    file</p>
+	  <p>MFSA 2015-81 Use-after-free in MediaStream playback</p>
+	    <p>MFSA 2015-82 Redefinition of non-configurable JavaScript object properties</p>
+	  <p>MFSA 2015-83 Overflow issues in libstagefright</p>
+	  <p>MFSA 2015-84 Arbitrary file overwriting through Mozilla
+	    Maintenance Service with hard links</p>
+	  <p>MFSA 2015-85 Out-of-bounds write with Updater and
+	    malicious MAR file</p>
+	  <p>MFSA 2015-86 Feed protocol with POST bypasses mixed
+	    content protections</p>
+	  <p>MFSA 2015-87 Crash when using shared memory in
+	    JavaScript</p>
+	  <p>MFSA 2015-88 Heap overflow in gdk-pixbuf when scaling
+	    bitmap images</p>
+	  <p>MFSA 2015-90 Vulnerabilities found through code
+	    inspection</p>
+	  <p>MFSA 2015-91 Mozilla Content Security Policy allows for
+	    asterisk wildcards in violation of CSP specification</p>
+	  <p>MFSA 2015-92 Use-after-free in XMLHttpRequest with shared
+	    workers</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4473</cvename>
+      <cvename>CVE-2015-4474</cvename>
+      <cvename>CVE-2015-4475</cvename>
+      <cvename>CVE-2015-4477</cvename>
+      <cvename>CVE-2015-4478</cvename>
+      <cvename>CVE-2015-4479</cvename>
+      <cvename>CVE-2015-4480</cvename>
+      <cvename>CVE-2015-4481</cvename>
+      <cvename>CVE-2015-4482</cvename>
+      <cvename>CVE-2015-4483</cvename>
+      <cvename>CVE-2015-4484</cvename>
+      <cvename>CVE-2015-4487</cvename>
+      <cvename>CVE-2015-4488</cvename>
+      <cvename>CVE-2015-4489</cvename>
+      <cvename>CVE-2015-4490</cvename>
+      <cvename>CVE-2015-4491</cvename>
+      <cvename>CVE-2015-4492</cvename>
+      <cvename>CVE-2015-4493</cvename>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-79/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-80/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-81/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-82/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-83/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-84/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-85/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-86/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-87/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-88/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-90/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-91/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-92/</url>
+    </references>
+    <dates>
+      <discovery>2015-08-11</discovery>
+      <entry>2015-08-11</entry>
+      <modified>2015-08-11</modified>
+    </dates>
+  </vuln>
+
   <vuln vid="dd7f29cc-3ee9-11e5-93ad-002590263bf5">
     <topic>lighttpd -- Log injection vulnerability in mod_auth</topic>
     <affects>
@@ -295,8 +1277,19 @@ Notes:
   </vuln>
 
   <vuln vid="da451130-365d-11e5-a4a5-002590263bf5">
-    <topic>xen-tools -- QEMU heap overflow flaw with certain ATAPI commands</topic>
+    <topic>qemu, xen-tools -- QEMU heap overflow flaw with certain ATAPI commands</topic>
     <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><le>0.11.1_20</le></range>
+	<range><ge>0.12</ge><le>2.3.0_2</le></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.4.50.g20150814</lt></range>
+      </package>
       <package>
 	<name>xen-tools</name>
 	<range><lt>4.5.0_9</lt></range>
@@ -319,10 +1312,12 @@ Notes:
     <references>
       <cvename>CVE-2015-5154</cvename>
       <url>http://xenbits.xen.org/xsa/advisory-138.html</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=e40db4c6d391419c0039fe274c74df32a6ca1a28</url>
     </references>
     <dates>
       <discovery>2015-07-27</discovery>
       <entry>2015-08-04</entry>
+      <modified>2015-08-19</modified>
     </dates>
   </vuln>
 
@@ -2767,12 +3762,14 @@ Notes:
     </description>
     <references>
       <cvename>CVE-2015-3908</cvename>
+      <cvename>CVE-2015-6240</cvename>
       <url>http://www.ansible.com/security</url>
       <url>https://raw.githubusercontent.com/ansible/ansible/v1.9.2-1/CHANGELOG.md</url>
     </references>
     <dates>
       <discovery>2015-06-25</discovery>
       <entry>2015-07-02</entry>
+      <modified>2015-08-18</modified>
     </dates>
   </vuln>
 
@@ -11984,7 +12981,6 @@ Notes:
 	  <p>MFSA 2014-75 Buffer overflow during CSS manipulation</p>
 	  <p>MFSA 2014-76 Web Audio memory corruption issues with
 	    custom waveforms</p>
-	  <p>MFSA 2014-77 Out-of-bounds write with WebM video</p>
 	  <p>MFSA 2014-78 Further uninitialized memory use during GIF</p>
 	  <p>MFSA 2014-79 Use-after-free interacting with text
 	    directionality</p>
@@ -12000,7 +12996,6 @@ Notes:
       <cvename>CVE-2014-1575</cvename>
       <cvename>CVE-2014-1576</cvename>
       <cvename>CVE-2014-1577</cvename>
-      <cvename>CVE-2014-1578</cvename>
       <cvename>CVE-2014-1580</cvename>
       <cvename>CVE-2014-1581</cvename>
       <cvename>CVE-2014-1582</cvename>
@@ -12011,7 +13006,6 @@ Notes:
       <url>https://www.mozilla.org/security/announce/2014/mfsa2014-74.html</url>
       <url>https://www.mozilla.org/security/announce/2014/mfsa2014-75.html</url>
       <url>https://www.mozilla.org/security/announce/2014/mfsa2014-76.html</url>
-      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-77.html</url>
       <url>https://www.mozilla.org/security/announce/2014/mfsa2014-78.html</url>
       <url>https://www.mozilla.org/security/announce/2014/mfsa2014-79.html</url>
       <url>https://www.mozilla.org/security/announce/2014/mfsa2014-80.html</url>
@@ -12022,7 +13016,7 @@ Notes:
     <dates>
       <discovery>2014-10-14</discovery>
       <entry>2014-10-14</entry>
-      <modified>2014-10-16</modified>
+      <modified>2015-08-12</modified>
     </dates>
   </vuln>
 

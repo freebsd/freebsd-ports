@@ -18152,3 +18152,4 @@
 %%DOCSDIR%%/tools/regression/xsl_reports/xsl/v2/html/summary_developer_legend.html
 %%DOCSDIR%%/tools/regression/xsl_reports/xsl/v2/html/summary_user_legend.html
 %%DOCSDIR%%/tools/release/index.html
+@comment @dir %%DOCSDIR%%/libs/geometry/doc/src/examples/ranges

@@ -15,12 +15,15 @@
     SUBDIR += ImageMagick7-nox11
     SUBDIR += O2-tools
     SUBDIR += OpenEXR
+    SUBDIR += R-cran-DiagrammeR
     SUBDIR += R-cran-GDD
     SUBDIR += R-cran-RColorBrewer
     SUBDIR += R-cran-colorspace
     SUBDIR += R-cran-diagram
     SUBDIR += R-cran-dichromat
+    SUBDIR += R-cran-dygraphs
     SUBDIR += R-cran-ggplot2
+    SUBDIR += R-cran-gridBase
     SUBDIR += R-cran-munsell
     SUBDIR += R-cran-pixmap
     SUBDIR += R-cran-png

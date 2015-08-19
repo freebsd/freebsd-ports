@@ -15,8 +15,6 @@ COMMENT=	Multi-platform backup to disk-based storage
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LATEST_LINK=	${PORTNAME}-devel
-
 RUN_DEPENDS=	p5-File-Listing>=0:${PORTSDIR}/sysutils/p5-File-Listing \
 		p5-BackupPC-XS>=0.30:${PORTSDIR}/sysutils/p5-BackupPC-XS
 

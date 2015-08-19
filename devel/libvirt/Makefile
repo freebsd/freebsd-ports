@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	1.2.16
+PORTVERSION=	1.2.18
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -17,7 +17,8 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libxml2.so:${PORTSDIR}/textproc/libxml2 \
 		libgnutls.so:${PORTSDIR}/security/gnutls \
 		libssh2.so:${PORTSDIR}/security/libssh2
-BUILD_DEPENDS=	dnsmasq:${PORTSDIR}/dns/dnsmasq
+BUILD_DEPENDS=	dnsmasq:${PORTSDIR}/dns/dnsmasq \
+		xsltproc:${PORTSDIR}/textproc/libxslt
 RUN_DEPENDS=	dnsmasq:${PORTSDIR}/dns/dnsmasq \
 		dmidecode:${PORTSDIR}/sysutils/dmidecode
 
@@ -68,7 +69,7 @@ PORTSCOUT=	limit:\d+\.\d+\.\d+$$
 
 LDFLAGS+=	-L${LOCALBASE}/lib -fstack-protector
 
-USES=		charsetfix gmake libtool pathfix pkgconfig perl5 cpe
+USES=		charsetfix cpe gmake libtool pathfix perl5 pkgconfig
 CPE_VENDOR=	redhat
 USE_PERL5=	build
 USE_LDCONFIG=	yes

@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	rsyncbackup
 
-MAINTAINER=	ports@danielbond.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rsync frontend written in Perl
 
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync

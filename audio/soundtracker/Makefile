@@ -23,6 +23,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	JACK SDL NLS
 OPTIONS_DEFINE_i386=	ASM
+OPTIONS_SUB=	yes
 ASM_DESC=	Use optimized assembly (potentially unstable)
 
 CONFIGURE_ARGS+=	--disable-gnome
@@ -31,31 +32,16 @@ DESKTOP_ENTRIES="SoundTracker" "Pattern-oriented music editor" \
 		"${PREFIX}/share/pixmaps/${PORTNAME}.xpm" \
 		"soundtracker" "AudioVideo;Audio;AudioVideoEditing;" false
 
-.include <bsd.port.options.mk>
+ASM_CONFIGURE_ENABLE=	asm
 
-.if ${PORT_OPTIONS:MASM}
-CONFIGURE_ARGS+=	--enable-asm
-.endif
+JACK_LIB_DEPENDS=		libjack.so:${PORTSDIR}/audio/jack
+JACK_CONFIGURE_ENABLE=	jack
 
-.if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=		libjack.so:${PORTSDIR}/audio/jack
-.else
-CONFIGURE_ARGS+=	--disable-jack
-.endif
+DSL_USE=	SDL=sdl
+DSL_CONFIGURE_ENABLE=	sdl
 
-.if ${PORT_OPTIONS:MSDL}
-USE_SDL=	sdl
-.else
-CONFIGURE_ARGS+=	--disable-sdl
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|soundtracker.desktop||' \
@@ -67,10 +53,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|PREFIX"/share/soundtracker|DATADIR"|' \
 		${WRKSRC}/app/gui.c
 
-pre-build:
-.if ${PORT_OPTIONS:MNLS}
+pre-build-NLS-on:
 	cd ${WRKSRC}/po && ${LOCALBASE}/bin/msgfmt -c -o ja.gmo ja.po
-.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/sharp.xpm \

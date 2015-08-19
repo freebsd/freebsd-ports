@@ -1,4 +1,4 @@
---- tools/clang/lib/Headers/CMakeLists.txt.orig	2015-07-21 15:57:35 UTC
+--- tools/clang/lib/Headers/CMakeLists.txt.orig	2015-07-30 22:47:41 UTC
 +++ tools/clang/lib/Headers/CMakeLists.txt
 @@ -30,7 +30,6 @@ set(files
    Intrin.h
@@ -26,6 +26,6 @@
    unwind.h
    vadefs.h
 -  varargs.h
+   vecintrin.h
    __wmmintrin_aes.h
    wmmintrin.h
-   __wmmintrin_pclmul.h

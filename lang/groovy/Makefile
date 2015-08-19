@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	groovy
-DISTVERSION=	2.3.9
+DISTVERSION=	2.4.4
 CATEGORIES=	lang java
 MASTER_SITES=	http://dl.bintray.com/groovy/maven/
-DISTFILES=	groovy-binary-${PORTVERSION}${EXTRACT_SUFX}
+DISTFILES=	apache-groovy-binary-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	mjs@Bur.st
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Agile dynamic language for the JVM
 
 LICENSE=	APACHE20
@@ -17,15 +17,16 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:tu}
 USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
+NO_ARCH=	yes
 NO_BUILD=	yes
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
-DATAFILES=	ANTLR-LICENSE.txt ASM-LICENSE.txt CLI-LICENSE.txt JSR223-LICENSE.txt LICENSE.txt conf lib
+DATAFILES=	CLI-LICENSE.txt conf lib
 SCRIPTFILES=	groovy groovyConsole groovyc groovysh java2groovy startGroovy
-PORTDOCS=	html pdf
+PORTDOCS=	html
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_DISTFILES=	groovy-docs-${PORTVERSION}${EXTRACT_SUFX}
+DOCS_DISTFILES=	apache-groovy-docs-${PORTVERSION}${EXTRACT_SUFX}
 
 .include <bsd.port.options.mk>
 
@@ -60,7 +61,7 @@ post-install:
 	@${FIND} -s ${DATAFILES:S,^,${WRKSRC}/,} -not -type d 2>/dev/null | \
 	  ${SED} -ne 's,^${WRKSRC},${DATADIR:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
 	@${FIND} -s -d ${DATAFILES:S,^,${WRKSRC}/,} -type d 2>/dev/null | \
-	  ${SED} -ne 's,^${WRKSRC},@dirrm ${DATADIR:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
-	@${ECHO_CMD} '@dirrm ${DATADIR:S,^${PREFIX}/,,}' >> ${TMPPLIST}
+	  ${SED} -ne 's,^${WRKSRC},@dir ${DATADIR:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
+	@${ECHO_CMD} '@dir ${DATADIR:S,^${PREFIX}/,,}' >> ${TMPPLIST}
 
 .include <bsd.port.mk>

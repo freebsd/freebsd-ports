@@ -34,8 +34,6 @@ BROKEN_ia64=	Does not compile: invokes i386 asm
 BROKEN_powerpc=	Does not compile: invokes i386 asm
 BROKEN_sparc64=	Does not compile: invokes i386 asm
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${FIND} ${WRKSRC} -name "CMakeLists.txt" | ${XARGS} \
 		${REINPLACE_CMD} -e \
@@ -63,10 +61,9 @@ do-install:
 	(cd ${WRKSRC}/avida-core/support/config && ${INSTALL_DATA} *.org \
 		${STAGEDIR}${PREFIX}/lib/${PORTNAME})
 
-.if ${PORT_OPTIONS:MDOCS}
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}/avida-core/documentation && ${COPYTREE_SHARE} . \
 		${STAGEDIR}${DOCSDIR})
-.endif
 
 .include <bsd.port.mk>

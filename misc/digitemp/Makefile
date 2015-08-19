@@ -6,7 +6,7 @@ PORTVERSION=	3.6.0
 CATEGORIES=	misc
 MASTER_SITES=	http://www.digitemp.com/software/linux/
 
-MAINTAINER=	ea@zaib.as
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dallas Semiconductor 1-wire device reading console application
 
 LICENSE=	GPLv2

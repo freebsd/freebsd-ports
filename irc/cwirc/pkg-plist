@@ -1,8 +1,8 @@
 bin/cwirc_frontend
 lib/xchat/plugins/cwirc.so
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/LISEZMOI
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
-%%PORTDOCS%%%%DOCSDIR%%/schematics/cw_oscillator.jpg
-%%PORTDOCS%%%%DOCSDIR%%/schematics/rs232_key_connection.jpg
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/LISEZMOI
+%%DOCSDIR%%/README
+%%DOCSDIR%%/RELEASE_NOTES
+%%DOCSDIR%%/schematics/cw_oscillator.jpg
+%%DOCSDIR%%/schematics/rs232_key_connection.jpg

@@ -1,5 +1,7 @@
 %%DATADIR%%/_util.sh
 %%DATADIR%%/_version.sh
+%%DATADIR%%/attach.sh
+%%DATADIR%%/claim.sh
 %%DATADIR%%/close.sh
 %%DATADIR%%/comment.sh
 %%DATADIR%%/edit.sh
@@ -11,6 +13,7 @@
 %%DATADIR%%/overto.sh
 %%DATADIR%%/patch.sh
 %%DATADIR%%/search.sh
+%%DATADIR%%/show.sh
 %%DATADIR%%/port_commit.sh
 %%DATADIR%%/port_submit.sh
 %%DATADIR%%/src_submit.sh

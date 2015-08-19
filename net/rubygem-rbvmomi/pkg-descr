@@ -3,4 +3,3 @@ can use it to manage ESX and VirtualCenter servers. The current release supports
 the vSphere 5.0 API.
 
 WWW: https://github.com/vmware/rbvmomi
-RG:  https://rubygems.org/gems/rbvmomi

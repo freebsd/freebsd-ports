@@ -16,6 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/fonts/TrueType/fireflysung.ttf:${PORTSDIR}/chine
 
 OPTIONS_DEFINE=	GTK2 CHEWING UNICODE
 OPTIONS_DEFAULT=	GTK2 CHEWING UNICODE
+OPTIONS_SUB=	yes
 GTK2_DESC=	 GTK2 input method module
 CHEWING_DESC=	 Chewing input module
 UNICODE_DESC=	 Unicode input module
@@ -36,43 +37,21 @@ CONFIGURE_ARGS+=--disable-bimsphone-module \
 # oxim requires qinputcontextplugin.h which only exists in Debian package
 CONFIGURE_ARGS+=--disable-qt-immodule
 
-.include <bsd.port.options.mk>
+GTK2_USE=		GNOME=gtk20
+GTK2_CONFIGURE_ENABLE=	gtk-immodule
 
-.if ${PORT_OPTIONS:MGTK2}
-USE_GNOME+=	gtk20
-CONFIGURE_ARGS+=	--enable-gtk-immodule
-PLIST_SUB+=	GTK2=""
-.else
-CONFIGURE_ARGS+=	--disable-gtk-immodule
-PLIST_SUB+=	GTK2="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MCHEWING}
 # make sure we have the required libchewing
-BUILD_DEPENDS+=	zh-libchewing>=0.3.2:${PORTSDIR}/chinese/libchewing
-RUN_DEPENDS+=	zh-libchewing>=0.3.2:${PORTSDIR}/chinese/libchewing
+CHEWING_BUILD_DEPENDS=	zh-libchewing>=0.3.2:${PORTSDIR}/chinese/libchewing
+CHEWING_RUN_DEPENDS=	${CHEWING_BUILD_DEPENDS}
+CHEWING_CONFIGURE_ENABLE=	chewing-module
+CHEWING_CONFIGURE_ENV=	CHEWING_CFLAGS=-I${LOCALBASE}/include
 
-CONFIGURE_ARGS+=	--enable-chewing-module
-CONFIGURE_ENV+=	CHEWING_CFLAGS=-I${LOCALBASE}/include
-PLIST_SUB+=	CHEWING=""
-.else
-CONFIGURE_ARGS+=	--disable-chewing-module
-PLIST_SUB+=	CHEWING="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MUNICODE}
-CONFIGURE_ARGS+=	--enable-unicode-module
-PLIST_SUB+=	UNICODE=""
-.else
-CONFIGURE_ARGS+=	--disable-unicode-module
-PLIST_SUB+=	UNICODE="@comment "
-.endif
+UNICODE_CONFIGURE_ENABLE=	unicode-module
 
 # TODO WITHOUT_NLS knob
 #.if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 LDFLAGS+=	-lintl
-PLIST_SUB+=	NLS=""
 #.else
 #CONFIGURE_ARGS+=--disable-nls
 #PLIST_SUB+=	NLS="@comment "

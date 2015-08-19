@@ -10,7 +10,7 @@ MASTER_SITES=	http://offload1.icculus.org/quake2/files/:retex \
 		http://www-personal.umich.edu/~jimw/q2/aq2_install/:models
 PKGNAMEPREFIX=	${Q2PKGNAMEPREFIX}
 DISTFILES=	#
-DIST_SUBDIR=	${LATEST_LINK}
+DIST_SUBDIR=	${PKGBASE}
 EXTRACT_ONLY=	#
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -18,8 +18,6 @@ COMMENT=	Quake II extras (high quality textures and skins)
 
 USES=		zip
 NO_WRKSUBDIR=	yes
-
-LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}
 
 RETEX_PAKS=	10 11 12 13 14 16 17 19
 RETEX_FULL=	all_q2_textures_07_17_2006zip

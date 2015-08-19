@@ -5,6 +5,61 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150817:
+  AFFECTS: everybody who still uses <UNIQUENAME>_SET/UNSET in make.conf
+  AUTHOR: mat@FreeBSD.org
+
+  The use of <UNIQUENAME>_SET/UNSET has been deprecated for a long time,
+  replaced by <OPTIONS_NAME>_SET/UNSET.  It is now not supported any more.
+  A warning will be issued telling you what to do, for example:
+
+    $ make
+    /!\ WARNING /!\
+    You are using perl_SET which is not supported any more, use:
+    lang_perl5.20_SET= DEBUG
+
+20150816:
+  AFFECTS: users of sysutils/s6
+  AUTHOR: Colin Booth <colin@heliocat.net>
+
+  s6-notifywhenup is deprecated and will be removed in the next version
+  of s6. Any run scripts depending on that program should be updated to
+  use an in-servicedir notification-fd file as described under
+  "Readyness notification support" in s6-supervise.html.
+
+20150812:
+  AFFECTS: users of net-mgmt/icinga and net-mgmt/icinga2
+  AUTHOR: lme@FreeBSD.org
+
+  The Icinga port has been split into two ports: net-mgmt/icinga-core
+  which contains the Icinga 1.x backend and net-mgmt/icinga-classicweb
+  which contains the Icinga classic web (CGI) interface. The latter can
+  be both used with Icinga 1.x and the Icinga 2 port (net-mgmt/icinga2).
+  A new meta-port net-mgmt/icinga was added which depends on both new
+  ports, so updating the Icinga port should be transparent.
+  
+20150812:
+  AFFECTS: users of sysutils/moosefs-master and other moosefs packages
+  AUTHOR: feld@FreeBSD.org
+
+  MooseFS ports have been updated to 2.0.72-1. Upstream has been
+  providing a private package repository to distribute newer releases of
+  MooseFS. These changes have now made it into the ports tree. This has
+  resulted in splitting up the sysutils/moosefs-master port into several
+  new ports:
+
+  sysutils/moosefs-cli
+  sysutils/moosefs-cgi
+  sysutils/moosefs-cgiserv
+  sysutils/moosefs-metalogger
+  sysutils/moosefs-netdump
+
+  You may need to install these additional ports/packages to restore the
+  complete functionality of your MooseFS cluster. Please review the
+  upstream documentation.
+
+  http://moosefs.com/documentation/moosefs-2-0.html
+
 20150809:
   AFFECTS: users of sysutils/xfce4-power-manager
   AUTHOR: olivierd@FreeBSD.org

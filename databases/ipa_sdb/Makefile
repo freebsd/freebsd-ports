@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	SF/ipa-system/modules/ipa_sdb
 
-MAINTAINER=	simon@comsys.ntu-kpi.kiev.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IPA simple database module
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ipa_mod.h:${PORTSDIR}/sysutils/ipa

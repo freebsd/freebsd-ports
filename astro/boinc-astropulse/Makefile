@@ -42,11 +42,7 @@ X11_USE=		GL=gl,glu,glut \
 			XORG=ice,sm,x11,xau,xcb,xext,xi,xdamage,xdmcp,xfixes,xmu,xt,xxf86vm
 X11_CONFIGURE_ENABLE=	graphics
 
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MX11}
-BUILD_DEPENDS+=	${LOCALBASE}/include/boinc/std_fixes.h:${PORTSDIR}/net/boinc-client
-.endif
+X11_BUILD_DEPENDS_OFF=	${LOCALBASE}/include/boinc/std_fixes.h:${PORTSDIR}/net/boinc-client
 
 SETI_WORK!=	cd ${.CURDIR}/../boinc-setiathome-v7 && ${MAKE} -V WRKSRC
 CONFIGURE_ENV+=	BOINCDIR="${NONEXISTENT}" \
@@ -76,9 +72,8 @@ do-install:
 	${INSTALL} -d ${STAGEDIR}${BOINC_CLIENT_HOME}/projects/${SETI_SITE}
 	${INSTALL_PROGRAM} ${WRKSRC}/${AP_BINARY} \
 	    ${STAGEDIR}${BOINC_CLIENT_HOME}/projects/${SETI_SITE}/
-.if ${PORT_OPTIONS:MX11}
+do-install-X11-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/ap_graphics \
 	    ${STAGEDIR}${BOINC_CLIENT_HOME}/projects/${SETI_SITE}/
-.endif
 
 .include <bsd.port.mk>

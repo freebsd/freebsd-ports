@@ -10,6 +10,8 @@ COMMENT=	Utility to process many files in parallel
 
 LICENSE=	MIT
 
+BROKEN=		does not build
+
 BUILD_DEPENDS=	npm>0:${PORTSDIR}/www/npm
 RUN_DEPENDS=	npm>0:${PORTSDIR}/www/npm
 

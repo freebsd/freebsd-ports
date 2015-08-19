@@ -3,7 +3,7 @@
 PORTNAME=	openh264
 PORTVERSION=	1.4.0
 DISTVERSIONPREFIX=v
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 
 MAINTAINER=	gecko@FreeBSD.org
@@ -35,7 +35,7 @@ PLUGINS_USES=	webplugin:gecko
 WEBPLUGIN_NAME=	gmp-gmp${PORTNAME}
 WEBPLUGIN_FILES=gmp${PORTNAME}.info libgmp${PORTNAME}.so
 SUB_FILES+=	gmp${PORTNAME}.js
-SUB_LIST+=	PORTVERSION=${PORTVERSION} WEBPLUGIN_DIR="${WEBPLUGIN_DIR}"
+SUB_LIST+=	PORTVERSION=${PORTVERSION} TIMESTAMP="`date +%s`"
 
 TEST_BUILD_DEPENDS=googletest>=1.6.0:${PORTSDIR}/devel/googletest
 TEST_CFLAGS=	-I${LOCALBASE}/include
@@ -45,7 +45,7 @@ TEST_ALL_TARGET=test
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MDEBUG}
-. if ${ARCH} == amd64 || ${ARCH} == arm || ${ARCH} == i386
+. if ${ARCH} == amd64 || ${ARCH} == i386
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 . endif
 .endif

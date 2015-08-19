@@ -361,6 +361,7 @@ bin/phplist
 %%WWWDIR%%/lists/admin/help/vi/subject.php
 %%WWWDIR%%/lists/admin/help/vi/usetemplate.php
 %%WWWDIR%%/lists/admin/home.php
+%%WWWDIR%%/lists/admin/hostedprocessqueuesetup.php
 %%WWWDIR%%/lists/admin/htaccess
 %%WWWDIR%%/lists/admin/image.php
 %%WWWDIR%%/lists/admin/images/LogoCertifiedHTTPCS.png
@@ -914,6 +915,7 @@ bin/phplist
 %%WWWDIR%%/lists/admin/locale/gl/phplist.po
 %%WWWDIR%%/lists/admin/locale/he/language_info
 %%WWWDIR%%/lists/admin/locale/he/phplist.po
+%%WWWDIR%%/lists/admin/locale/hr/phplist.po
 %%WWWDIR%%/lists/admin/locale/hu/language_info
 %%WWWDIR%%/lists/admin/locale/hu/pagetitles.php
 %%WWWDIR%%/lists/admin/locale/hu/phplist.po

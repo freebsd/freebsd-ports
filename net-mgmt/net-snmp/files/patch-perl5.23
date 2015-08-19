@@ -1,0 +1,65 @@
+--- agent/snmp_perl.c.orig	2015-08-11 13:07:06 UTC
++++ agent/snmp_perl.c
+@@ -5,6 +5,10 @@
+ #include <EXTERN.h>
+ #include "perl.h"
+ 
++#ifdef U64TYPE
++#define U64 U64pairU32
++#endif
++
+ #include <net-snmp/net-snmp-config.h>
+ #include <net-snmp/net-snmp-includes.h>
+ #include <net-snmp/agent/net-snmp-agent-includes.h>
+--- perl/OID/OID.xs.orig	2015-08-11 13:07:28 UTC
++++ perl/OID/OID.xs
+@@ -7,6 +7,10 @@
+ #include "perl.h"
+ #include "XSUB.h"
+ 
++#ifdef U64TYPE
++#define U64 U64pairU32
++#endif
++
+ #include <net-snmp/net-snmp-config.h>
+ #include <net-snmp/net-snmp-includes.h>
+ 
+--- perl/SNMP/SNMP.xs.orig	2015-08-11 13:07:54 UTC
++++ perl/SNMP/SNMP.xs
+@@ -16,6 +16,10 @@
+ #include "perl.h"
+ #include "XSUB.h"
+ 
++#ifdef U64TYPE
++#define U64 U64pairU32
++#endif
++
+ #include <net-snmp/net-snmp-config.h>
+ #include <net-snmp/net-snmp-includes.h>
+ #include <sys/types.h>
+--- perl/TrapReceiver/TrapReceiver.xs.orig	2015-08-11 13:08:02 UTC
++++ perl/TrapReceiver/TrapReceiver.xs
+@@ -9,6 +9,10 @@
+ 
+ #include "ppport.h"
+ 
++#ifdef U64TYPE
++#define U64 U64pairU32
++#endif
++
+ #include <net-snmp/net-snmp-config.h>
+ #include <net-snmp/net-snmp-includes.h>
+ #include <net-snmp/agent/net-snmp-agent-includes.h>
+--- perl/agent/agent.xs.orig	2015-08-11 13:07:48 UTC
++++ perl/agent/agent.xs
+@@ -9,6 +9,10 @@
+ #include <netdb.h>
+ #include <sys/socket.h>
+ 
++#ifdef U64TYPE
++#define U64 U64pairU32
++#endif
++
+ #include <net-snmp/net-snmp-config.h>
+ #include <net-snmp/net-snmp-includes.h>
+ #include <net-snmp/agent/net-snmp-agent-includes.h>

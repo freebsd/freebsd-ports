@@ -78,6 +78,7 @@
     SUBDIR += kermit
     SUBDIR += klog
     SUBDIR += kremotecontrol
+    SUBDIR += kvasd
     SUBDIR += libconcord
     SUBDIR += libfec
     SUBDIR += libimobiledevice

@@ -12,8 +12,6 @@ COMMENT=	Curses-based user interface library for Python
 
 LICENSE=	LGPL21
 
-# Bypass ports infrastructure bug
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 OPTIONS_DEFINE=	EXAMPLES
 
 USES=		python

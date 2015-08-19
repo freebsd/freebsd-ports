@@ -31,13 +31,9 @@ DESKTOP_ENTRIES="Apricots" \
 OPTIONS_DEFINE=	DOCS OPENAL
 OPTIONS_DEFAULT=OPENAL
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MOPENAL}
-USES+=		openal:al,alut
-CPPFLAGS+=	-DAP_AUDIO_OPENAL
-LDFLAGS+=	-L${LOCALBASE}/lib -lopenal -lalut
-.endif
+OPENAL_USES=	openal:al,alut
+OPENAL_CPPFLAGS=-DAP_AUDIO_OPENAL
+OPENAL_LDFLAGS=	-L${LOCALBASE}/lib -lopenal -lalut
 
 do-build:
 	cd ${WRKSRC}/apricots && ${CXX} ${CXXFLAGS} ${CPPFLAGS} ${LDFLAGS} \

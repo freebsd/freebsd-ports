@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.contenidosonline.com.ar/freebsd/ports/ \
 		LOCAL/yzlin
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	freebsd@contenidosonline.com.ar
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python language bindings for Cloud Files API
 
 USES=		python

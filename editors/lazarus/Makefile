@@ -4,7 +4,7 @@
 PORTNAME=	lazarus
 PORTVERSION=	1.4.2
 DISTVERSIONSUFFIX=	-0
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	editors devel
 MASTER_SITES=	SF/${PORTNAME}/Lazarus%20Zip%20_%20GZip/Lazarus%20${PORTVERSION:S/.0//} \
 		LOCAL/acm/freepascal
@@ -20,9 +20,9 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 USES=		gmake
 USE_GNOME=	#
-USE_FPC?=	cairo fcl-base fcl-db fcl-fpcunit fcl-image fcl-process fcl-registry \
-		fcl-res fcl-xml gtk2 iconvenc numlib pasjpeg x11
-USE_FPC_RUN=	yes
+USE_FPC?=	cairo dblib fcl-base fcl-db fcl-fpcunit fcl-image fcl-json fcl-process \
+		fcl-registry fcl-res fcl-xml gtk2 ibase iconvenc mysql numlib odbc oracle \
+		pasjpeg postgres sqlite x11
 OPT?=		"-Sgic "
 
 MAKE_ENV=	OPT=${OPT}
@@ -61,7 +61,8 @@ RUN_DEPENDS+=	fpcres:${PORTSDIR}/lang/fpc-utils \
 		${LCL_UNITS_DIR}/alllclunits.ppu:${PORTSDIR}/editors/lazarus-lcl-units \
 		${LCL_UNITS_DIR}/nogui/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-nogui
 
-USES+=	gettext iconv
+USES+=		gettext iconv
+USE_FPC+=	chm
 
 MAN1S=		lazarus-ide.1 lazbuild.1 startlazarus.1
 SUB_FILES=	pkg-message

@@ -30,5 +30,5 @@ bin/bconsole
 @dir(,bareos,) %%ETCDIR%%
 @dir lib/bareos/plugins
 @dir lib/bareos/scripts
-@dir /var/log/bareos
-
+@dir(bareos,bareos,) /var/log/bareos
+@dir(bareos,bareos,) /var/run/bareos

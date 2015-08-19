@@ -24,24 +24,8 @@ OPENGL_DESC=	Enable OpenGL evas engine
 SDL_DESC=	Enable SDL evas engine
 X11_DESC=	Enable X11 evas engine
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MOPENGL}
-CONFIGURE_ARGS+=	--enable-opengl-x11
-.else
-CONFIGURE_ARGS+=	--disable-opengl-x11
-.endif
-
-.if ${PORT_OPTIONS:MSDL}
-CONFIGURE_ARGS+=	--enable-software-sdl
-.else
-CONFIGURE_ARGS+=	--disable-software-sdl
-.endif
-
-.if ${PORT_OPTIONS:MX11}
-CONFIGURE_ARGS+=	--enable-software-x11 --enable-xrender-x11
-.else
-CONFIGURE_ARGS+=	--disable-software-x11 --disable-xrender-x11
-.endif
+OPENGL_CONFIGURE_ENABLE=	opengl-x11
+SDL_CONFIGURE_ENABLE=		software-sdl
+X11_CONFIGURE_ENABLE=		software-x11 xrender-x11
 
 .include <bsd.port.mk>

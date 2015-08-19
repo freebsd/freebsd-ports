@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://jason.long.name/dkfilter/
 
-MAINTAINER=	yanagisawa@csg.is.titech.ac.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Domainkeys filter for Postfix
 
 BUILD_DEPENDS=	p5-Crypt-OpenSSL-RSA>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA \

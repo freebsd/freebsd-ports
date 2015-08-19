@@ -6,7 +6,7 @@ DISTVERSION=	3.2.1
 CATEGORIES=	multimedia net
 MASTER_SITES=	SAVANNAH
 
-MAINTAINER=	liu_yinghong@yahoo.com.cn
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Download streams using the MMS protocol
 
 LIB_DEPENDS=	libmms.so:${PORTSDIR}/net/libmms

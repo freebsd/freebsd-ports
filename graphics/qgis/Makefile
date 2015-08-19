@@ -3,6 +3,7 @@
 
 PORTNAME=	qgis
 PORTVERSION=	2.10.1
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 
 MAINTAINER=	rhurlin@gwdg.de
@@ -58,7 +59,7 @@ BROKEN=		GRASS plugin not supported on FreeBSD 8.x and 9.x
 .endif
 BUILD_DEPENDS+=	grass64:${PORTSDIR}/databases/grass
 RUN_DEPENDS+=	grass64:${PORTSDIR}/databases/grass
-CMAKE_ARGS+=	-DWITH_GRASS:BOOL=TRUE -DGRASS_PREFIX=${LOCALBASE}/grass-6.4.4
+CMAKE_ARGS+=	-DWITH_GRASS:BOOL=TRUE -DGRASS_PREFIX=${LOCALBASE}/grass-6.4.5
 FORCE_MAKE_JOBS=	NO
 PLIST_SUB+=	GRASS=""
 .else

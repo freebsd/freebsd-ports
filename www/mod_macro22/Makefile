@@ -19,7 +19,6 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.options.mk>
 
 USE_APACHE=	22
-LATEST_LINK=	mod_macro22
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 PORTDOCS=	${PORTNAME}.html

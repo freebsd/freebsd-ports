@@ -6,9 +6,12 @@
     SUBDIR += MT
     SUBDIR += R-cran-RgoogleMaps
     SUBDIR += R-cran-Rpad
+    SUBDIR += R-cran-htmlwidgets
     SUBDIR += R-cran-httpuv
     SUBDIR += R-cran-httr
+    SUBDIR += R-cran-rvest
     SUBDIR += R-cran-scrapeR
+    SUBDIR += R-cran-selectr
     SUBDIR += R-cran-shiny
     SUBDIR += WebMagick
     SUBDIR += ach
@@ -571,6 +574,7 @@
     SUBDIR += nspluginwrapper
     SUBDIR += ocaml-net
     SUBDIR += ocsigen
+    SUBDIR += offline-npm
     SUBDIR += ojs2
     SUBDIR += ompload
     SUBDIR += opencart

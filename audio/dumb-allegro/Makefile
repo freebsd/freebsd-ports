@@ -3,5 +3,6 @@
 
 OPTIONS_SLAVE=	ALLEGRO
 MASTERDIR=	${.CURDIR}/../dumb
+PKGNAMESUFFIX=	-allegro
 
 .include "${MASTERDIR}/Makefile"

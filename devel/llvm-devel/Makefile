@@ -3,6 +3,7 @@
 
 PORTNAME=	llvm
 PORTVERSION=	3.8.d20150806
+PORTREVISION=	1
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-devel
 
@@ -13,7 +14,6 @@ LLVM_SUFFIX=	-devel
 LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
 DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
-UNIQUENAME=	${PORTNAME}${LLVM_SUFFIX}
 
 USES=		cmake:outsource compiler:c++11-lib libedit ninja perl5
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
@@ -34,9 +34,9 @@ LLD_COMMIT=	754e78c2a7593764867b8671fcd1018433e820f5
 LLDB_COMMIT=	f89c12e54d5d81c18f4d3f63826d568f6257cabc
 OPENMP_COMMIT=	d90b41fbdaa1036f7a36651449bdcb32813f8423
 
-OPTIONS_DEFINE=	CLANG DOCS LIT LLD LLDB
+OPTIONS_DEFINE=	CLANG DOCS GOLD LIT LLD LLDB
 OPTIONS_DEFINE_amd64=	OPENMP
-OPTIONS_DEFAULT=	CLANG LIT LLD LLDB
+OPTIONS_DEFAULT=	CLANG GOLD LIT LLD LLDB
 OPTIONS_DEFAULT_amd64=	OPENMP
 OPTIONS_SUB=	yes
 
@@ -64,6 +64,9 @@ OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
 OPENMP_CONFLICTS_INSTALL=	libiomp5-devel-*
 OPENMP_GH_PROJECT=	openmp:openmp
 OPENMP_GH_TAGNAME=	${OPENMP_COMMIT}:openmp
+GOLD_DESC=		Build the LLVM Gold plugin for LTO
+GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
+GOLD_BUILD_DEPENDS=	ld.gold:${PORTSDIR}/devel/binutils
 
 OPTIONS_SUB=	yes
 
@@ -258,7 +261,7 @@ build-plist:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/lit${LLVM_SUFFIX} -type f | \
 	    ${SED} -e 's|${STAGEDIR}${PYTHON_SITELIBDIR}|%%LIT%%%%PYTHON_SITELIBDIR%%|' | \
 	    ${SORT} >> ${PLIST}.tmp
-	awk '{if ($$0 ~ /clang/ && $$0 !~ /omp.h/) {printf "%%%%CLANG%%%%"} if ($$0 ~ /lld/ && $$0 !~ /lldb/) {printf "%%%%LLD%%%%"} if ($$0 ~ /(argdumper|lldb)/) {printf "%%%%LLDB%%%%"} if ($$0 ~ /lib.*omp/) {printf "%%%%OPENMP%%%%"} print}' ${PLIST}.tmp >> ${PLIST}
+	awk '{if ($$0 ~ /clang/ && $$0 !~ /omp.h/) {printf "%%%%CLANG%%%%"} if ($$0 ~ /lld/ && $$0 !~ /lldb/) {printf "%%%%LLD%%%%"} if ($$0 ~ /(argdumper|lldb)/) {printf "%%%%LLDB%%%%"} if ($$0 ~ /lib.*omp/) {printf "%%%%OPENMP%%%%"} if ($$0 ~ /LLVMgold/) {printf "%%%%GOLD%%%%"} print}' ${PLIST}.tmp >> ${PLIST}
 	${RM} -f ${PLIST}.tmp
 
 check-commands:

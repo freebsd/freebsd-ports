@@ -117,15 +117,12 @@ pre-configure:
 	@echo "Preparing build using autotools..."
 
 # Workarounds for different problems
-post-install:
-.if ${PORT_OPTIONS:MOWPYTHON}
+post-install-OWPYTHON-on:
 	(cd ${STAGEDIR}${PREFIX} \
 	 && ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
 	 -d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/python2.7/site-packages/ow/_OW.so
-.endif
-.if ${PORT_OPTIONS:MOWPERL}
+post-install-OWPERL-on:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/OW/OW.so
-.endif
 
 .include <bsd.port.mk>

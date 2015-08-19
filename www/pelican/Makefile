@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pelican
-PORTVERSION=	3.5.0
-PORTREVISION=	1
+PORTVERSION=	3.6.3
 CATEGORIES=	www textproc
 MASTER_SITES=	CHEESESHOP
 
@@ -27,7 +26,6 @@ TEST_DEPENDS:=	${RUN_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock \
 
 OPTIONS_DEFINE=	TEST
-OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 .include <bsd.port.options.mk>
 

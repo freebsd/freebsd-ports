@@ -1,6 +1,6 @@
 --- setup.py.orig	2015-04-01 08:43:36 UTC
 +++ setup.py
-@@ -6,10 +6,11 @@ import os
+@@ -6,19 +6,20 @@ import os
  import sys
  
  from setuptools import setup, find_packages
@@ -14,9 +14,11 @@
  
  
  with open(os.path.join(here, 'gandi', 'cli', '__init__.py')) as v_file:
-@@ -18,7 +19,7 @@ with open(os.path.join(here, 'gandi', 'c
+     version = re.compile(r".*__version__ = '(.*?)'",
+                          re.S).match(v_file.read()).group(1)
  
- requires = ['setuptools', 'pyyaml', 'click<=4.0', 'requests', 'IPy']
+-requires = ['setuptools', 'pyyaml', 'click<=4.0', 'requests', 'IPy']
++requires = ['setuptools', 'pyyaml', 'click>=3.0', 'requests', 'IPy']
  
 -tests_require = ['nose', 'coverage', 'tox', 'httpretty==0.8.6']
 +tests_require = ['nose', 'httpretty==0.8.6' ]

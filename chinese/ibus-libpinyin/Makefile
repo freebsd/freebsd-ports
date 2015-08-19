@@ -26,46 +26,23 @@ CONFIGURE_ARGS=	--disable-dependency-tracking --disable-boost \
 
 OPTIONS_DEFINE=		ENGLISH STROKE OPENCC NLS
 OPTIONS_DEFAULT=	ENGLISH STROKE NLS
+OPTIONS_SUB=		yes
 ENGLISH_DESC=		Enable English input mode
 STROKE_DESC=		Enable stroke input mode
 OPENCC_DESC=		Use opencc for simplified and traditional Chinese conversion
 
-.include <bsd.port.pre.mk>
+ENGLISH_CONFIGURE_ENABLE=	english-input-mode
+STROKE_CONFIGURE_ENABLE=	stroke-input-mode
 
-.if ${PORT_OPTIONS:MENGLISH}
-CONFIGURE_ARGS+=	--enable-english-input-mode
-PLIST_SUB+=	ENGLISH=""
-.else
-CONFIGURE_ARGS+=	--disable-english-input-mode
-PLIST_SUB+=	ENGLISH="@comment "
-.endif
+OPENCC_BROKEN=			Requires newer OpenCC
+OPENCC_CONFIGURE_ENABLE=	opencc
+OPENCC_LIB_DEPENDS=		libopencc.so:${PORTSDIR}/chinese/opencc
 
-.if ${PORT_OPTIONS:MSTROKE}
-CONFIGURE_ARGS+=	--enable-stroke-input-mode
-PLIST_SUB+=	STROKE=""
-.else
-CONFIGURE_ARGS+=	--disable-stroke-input-mode
-PLIST_SUB+=	STROKE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MOPENCC}
-BROKEN=			Requires newer OpenCC
-CONFIGURE_ARGS+=	--enable-opencc
-LIB_DEPENDS+=		libopencc.so:${PORTSDIR}/chinese/opencc
-.else
-CONFIGURE_ARGS+=	--disable-opencc
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-USE_GNOME+=	intltool
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_USES=		gettext
+NLS_USE=		GNOME=intltool
+NLS_CONFIGURE_ENABLE=	nls
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|DATADIRNAME = lib|DATADIRNAME = share|' ${WRKSRC}/po/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

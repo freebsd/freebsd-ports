@@ -25,7 +25,7 @@ WANT_SDL=	yes
 
 OPTIONS_DEFINE=	AACPLUS ALSA AMR_NB AMR_WB ASS CDIO CELT DEBUG DOCS FAAC \
 		FDK_AAC FFSERVER FONTCONFIG FREETYPE FREI0R GSM ICONV \
-		JACK LAME LIBBLURAY LIBV4L MODPLUG OPENAL OPENCV OPENJPEG \
+		JACK LAME LIBBLURAY LIBV4L MODPLUG OPENAL OPENCV OPENH264 OPENJPEG \
 		OPTIMIZED_CFLAGS OPUS PULSEAUDIO RTMP SCHROEDINGER SDL SPEEX \
 		THEORA VAAPI VDPAU VO_AACENC VO_AMRWBENC VORBIS VPX \
 		X11GRAB X264 X265 XVID
@@ -41,6 +41,7 @@ CDIO_DESC=	Audio CD grabbing with libcdio
 FDK_AAC_DESC=	AAC audio encoding via Fraunhofer FDK
 FFSERVER_DESC=	Build and install ffserver
 LIBV4L_DESC=	Video for Linux support
+OPENH264_DESC=	H.264 video codec support via OpenH264
 X11GRAB_DESC=	Enable x11 grabbing
 
 OPTIONS_SUB=	yes
@@ -139,6 +140,10 @@ OPENAL_CONFIGURE_OFF=		--disable-indev=openal
 # opencv
 OPENCV_LIB_DEPENDS=	libopencv_imgproc.so:${PORTSDIR}/graphics/opencv-core
 OPENCV_CONFIGURE_ENABLE=	libopencv
+
+# openh264
+OPENH264_LIB_DEPENDS=	libopenh264.so:${PORTSDIR}/multimedia/openh264
+OPENH264_CONFIGURE_ENABLE=	libopenh264
 
 # openjpeg
 OPENJPEG_LIB_DEPENDS=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15
@@ -244,6 +249,7 @@ CONFIGURE_ARGS+=	--enable-memalign-hack
 .endif
 
 .if ${ARCH} == "armv6"
+CONFIGURE_ARGS+=	--disable-fast-unaligned
 .if ${CHOSEN_COMPILER_TYPE} == "clang"
 CONFIGURE_ENV+=	ASFLAGS=-no-integrated-as
 .endif

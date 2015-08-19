@@ -1,4 +1,4 @@
 bin/cwmm
 bin/cwpcm
 bin/cwtext
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%DOCSDIR%%/README

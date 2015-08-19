@@ -25,6 +25,7 @@ BUILD_DEPENDS+=	libtool:${PORTSDIR}/devel/libtool
 .if defined(_POSTMKINCLUDED) && !defined(_INCLUDE_USES_LIBTOOL_POST_MK)
 _INCLUDE_USES_LIBTOOL_POST_MK=	yes
 
+_USES_configure+=	480:patch-libtool
 patch-libtool:
 	@${FIND} ${WRKDIR} \( -name configure -or -name ltconfig \)	\
 		-type f | while read i; do ${SED} -i.libtool.bak	\
@@ -66,6 +67,7 @@ patch-libtool:
 		-e '/if.*prog.*linkmode.*relink = .*mode/s/||.*;/;/'	\
 		-e 's/|-p|-pg|/|-B*|-fstack-protector*|-p|-pg|/'
 
+_USES_stage+=	790:patch-lafiles
 patch-lafiles:
 .if ${libtool_ARGS:Mkeepla}
 	@${FIND} ${STAGEDIR} -type f -name '*.la' |			\

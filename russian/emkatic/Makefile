@@ -3,7 +3,7 @@
 
 PORTNAME=	emkatic
 PORTVERSION=	0.20
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	russian emulators
 MASTER_SITES=	SF/${PORTNAME}/eMKatic%20Source
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -17,7 +17,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 BUILD_DEPENDS=	lazbuild:${PORTSDIR}/editors/lazarus \
 		fpcres:${PORTSDIR}/lang/fpc-utils
 
-USE_FPC=	yes
+USE_FPC=	cairo fcl-base fcl-image fcl-json fcl-process fcl-xml hash \
+		pasjpeg paszlib x11
 WANT_GNOME=	yes
 
 PROJECT_FILE=	emkatic.lpi

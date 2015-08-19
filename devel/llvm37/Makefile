@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	llvm
-DISTVERSION=	3.7.0rc1
+DISTVERSION=	3.7.0rc2
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
 DISTNAME=	${PORTNAME}-${DISTVERSION}.src
@@ -19,7 +20,6 @@ LLVM_SUFFIX=	${DISTVERSION:R:S/.//}
 LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
 DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
-UNIQUENAME=	${PORTNAME}${LLVM_SUFFIX}
 
 USES=		cmake:outsource compiler:c++11-lib libedit ninja perl5 tar:xz
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
@@ -30,14 +30,17 @@ SUB_LIST=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
 CMAKE_INSTALL_PREFIX=	${LLVM_PREFIX}
 CMAKE_ARGS=	-DBUILD_SHARED_LIBS=ON
 
-OPTIONS_DEFINE=	CLANG DOCS LIT LLD LLDB
+OPTIONS_DEFINE=	CLANG DOCS GOLD LIT LLD LLDB
 OPTIONS_DEFINE_amd64=	OPENMP
-OPTIONS_DEFAULT=	CLANG LIT LLD LLDB
+OPTIONS_DEFAULT=	CLANG GOLD LIT LLD LLDB
 OPTIONS_DEFAULT_amd64=	OPENMP
 OPTIONS_SUB=	yes
 
 CLANG_DESC=	Build clang
-CLANG_EXTRA_PATCHES= ${PATCHDIR}/clang-patch-tools_clang_lib_Headers_CMakeLists.txt
+CLANG_EXTRA_PATCHES= \
+		${PATCHDIR}/clang-patch-tools_clang_lib_Headers_CMakeLists.txt \
+		${PATCHDIR}/clang-patch-svn-244209 \
+		${PATCHDIR}/clang-patch-svn-245041
 CLANG_CONFLICTS_INSTALL=	clang-devel-3.[1234567]*
 CLANG_DISTFILES=	cfe-${DISTVERSION}.src${EXTRACT_SUFX}
 CLANG_CMAKE_ON=		-DCLANG_DEFAULT_OPENMP_RUNTIME=libomp
@@ -55,6 +58,9 @@ LLDB_BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 LLDB_DISTFILES=		lldb-${DISTVERSION}.src${EXTRACT_SUFX}
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
 OPENMP_DISTFILES=	openmp-${DISTVERSION}.src${EXTRACT_SUFX}
+GOLD_DESC=		Build the LLVM Gold plugin for LTO
+GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
+GOLD_BUILD_DEPENDS=	ld.gold:${PORTSDIR}/devel/binutils
 
 # Emulate USE_GITHUB's ${WRKSRC_tag} to reduce diffs to ../llvm-devel
 .for option in CLANG LLD LLDB OPENMP
@@ -155,7 +161,7 @@ NOT_FOR_ARCH=	ia64
 
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_TYPE} != clang
+.if ${OPSYS} == "FreeBSD" && ${COMPILER_TYPE} != clang
 # Evil hack around gcc48 not providing a usable c++11 environment on 9.x
 PLIST_SUB:=	${PLIST_SUB:NLLDB=*} LLDB="@comment "
 .endif
@@ -167,7 +173,7 @@ post-extract-LLD-on:
 	${MV} ${WRKSRC_lld} ${PATCH_WRKSRC}/tools/lld
 
 post-extract-LLDB-on:
-.if ${COMPILER_TYPE} == clang
+.if ${OPSYS} != "FreeBSD" || ${COMPILER_TYPE} == clang
 	${MV} ${WRKSRC_lldb} ${PATCH_WRKSRC}/tools/lldb
 .endif
 
@@ -203,7 +209,7 @@ post-install-DOCS-on:
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/
 
 post-install-LLDB-on:
-.if ${COMPILER_TYPE} == clang
+.if ${OPSYS} != "FreeBSD" || ${COMPILER_TYPE} == clang
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/lib/python*/site-packages/lib
 .endif
 
@@ -255,12 +261,24 @@ build-plist:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/lit${LLVM_SUFFIX} -type f | \
 	    ${SED} -e 's|${STAGEDIR}${PYTHON_SITELIBDIR}|%%LIT%%%%PYTHON_SITELIBDIR%%|' | \
 	    ${SORT} >> ${PLIST}.tmp
-	awk '{if ($$0 ~ /clang/ && $$0 !~ /omp.h/) {printf "%%%%CLANG%%%%"} if ($$0 ~ /lld/ && $$0 !~ /lldb/) {printf "%%%%LLD%%%%"} if ($$0 ~ /(argdumper|lldb)/) {printf "%%%%LLDB%%%%"} if ($$0 ~ /lib.*omp/) {printf "%%%%OPENMP%%%%"} print}' ${PLIST}.tmp >> ${PLIST}
+	awk '{if ($$0 ~ /clang/ && $$0 !~ /omp.h/) {printf "%%%%CLANG%%%%"} if ($$0 ~ /lld/ && $$0 !~ /lldb/) {printf "%%%%LLD%%%%"} if ($$0 ~ /(argdumper|lldb)/) {printf "%%%%LLDB%%%%"} if ($$0 ~ /lib.*omp/) {printf "%%%%OPENMP%%%%"} if ($$0 ~ /LLVMgold/) {printf "%%%%GOLD%%%%"} print}' ${PLIST}.tmp >> ${PLIST}
 	${RM} -f ${PLIST}.tmp
 
 check-commands:
 .for command in ${COMMANDS}
 	test -e ${STAGEDIR}${LLVM_PREFIX}/bin/${command}
 .endfor
+
+.if make(svn-patch-clang)
+.if !defined(PATCH_REV)
+.error svn-patch-clang requires that PATCH_REV be set
+.endif
+_PATCH_FILE=${FILESDIR}/clang-patch-svn-${PATCH_REV}
+_LLVM_BASE=http://llvm.org/svn/llvm-project/cfe/trunk
+svn-patch-clang:
+	svn log -c ${PATCH_REV} ${_LLVM_BASE} >> ${_PATCH_FILE}
+	svn diff -c ${PATCH_REV} ${_LLVM_BASE} | \
+	    sed -E -e 's;^(---|\+\+\+) ;\1 tools/clang/;' >> ${_PATCH_FILE}
+.endif
 
 .include <bsd.port.post.mk>

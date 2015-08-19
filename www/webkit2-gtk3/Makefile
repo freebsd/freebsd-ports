@@ -27,8 +27,7 @@ PORTSCOUT=	limitw:1,even
 
 USE_GSTREAMER1=	yes
 USE_XORG=	x11 xext ice
-# when it USES=cmake safe
-USES=		bison compiler:c++11-lib gettext gmake gperf jpeg perl5 \
+USES=		bison cmake compiler:c++11-lib gettext gmake gperf jpeg perl5 \
 		pkgconfig python:2 tar:xz
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=yes
@@ -40,24 +39,9 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-BUILD_DEPENDS+=	cmake:${PORTSDIR}/devel/cmake
-#USES=cmake is not used because it triggers:
-#Linking CXX executable ../../../bin/jsc
-#../../../lib/libjavascriptcoregtk-4.0.so.18.0.8: undefined reference to `JSC::JSCell::inherits(JSC::ClassInfo const*) const'
-#../../../lib/libjavascriptcoregtk-4.0.so.18.0.8: undefined reference to `JSC::JSCell::structure() const'
-#c++: error: linker command failed with exit code 1 (use -v to see invocation)
-#Source/JavaScriptCore/shell/CMakeFiles/jsc.dir/build.make:94: recipe for target 'bin/jsc' failed
-# there is something in CMAKE_ENV that cause this ... but what.
-
-CMAKE_ARGS+=	-DPORT=GTK
-CMAKE_ENV+=	XDG_CACHE_HOME=${WRKDIR} \
-		CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}" \
-		CC="${CC}" CXX="${CXX}" CPP="${CPP}"
-
-#CMAKE_ARGS+=	-GNinja -DUSE_LD_GOLD:BOOL=0
-#CMAKE_ARGS+=	-DCMAKE_VERBOSE_MAKEFILE=1
-#MAKE_ARGS+=	V=1 VERBOSE=1
+CMAKE_ARGS+=	-DPORT=GTK \
+		-DUSE_LD_GOLD:BOOL=0
+CONFIGURE_ENV+=	XDG_CACHE_HOME=${WRKDIR}
 
 BROWSER_PLUGINS_DIR?=	${LOCALBASE}/lib/browser_plugins/symlinks/webkit-gtk3
 #_BROWSER_PLUGINS_DIR=	${BROWSER_PLUGINS_DIR:S|^/|"|:S|/|", "|g}",
@@ -89,10 +73,6 @@ pre-configure:
 	@${ECHO_CMD} "${PKGNAME}: Needs cairo with OPENGL support enabled."
 	@${FALSE}
 .endif
-
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} CFLAGS="${CFLAGS}" \
-		${CMAKE_ENV} cmake -DPORT=GTK ${CMAKE_ARGS}
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/bin/jsc \

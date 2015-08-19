@@ -1,9 +1,9 @@
-MooseFS is a fault tolerant, network distributed file system.
+MooseFS is a Fault tolerant, High Available, Highly Performing, Scale-Out,
+network distributed file system. It spreads data over several physical commodity
+servers, which are visible to the user as one resource.
 
-mfsmaster is a single machine managing the whole filesystem,
-storing metadata for every file (information on size,
-attributes and file location(s), including all information
-about non-regular files, i.e. directories, sockets, pipes and
-devices).
+For standard file operations MooseFS acts like any other Unix-like file system.
 
-WWW: http://www.moosefs.org/
+This port provides: MooseFS master (metadata) server.
+
+WWW: https://moosefs.com/

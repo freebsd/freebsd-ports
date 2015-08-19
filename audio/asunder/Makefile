@@ -35,18 +35,13 @@ WAVPACK_RUN_DEPENDS=	wavpack:${PORTSDIR}/audio/wavpack
 APE_RUN_DEPENDS=	mac:${PORTSDIR}/audio/mac
 NLS_CONFIGURE_ENABLE=	yes
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's/^itlocaledir = .*/itlocaledir = @datarootdir@\/locale/' ${WRKSRC}/po/Makefile.in.in
-.if ${PORT_OPTIONS:MWINDOWS_CHARS}
+post-patch-WINDOWS_CHARS-on:
 	@${REINPLACE_CMD} -e 's^#define[[:blank:]]*BADCHARS.*^#define BADCHARS "/"^' ${WRKSRC}/src/util.h
-.endif
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.mk>

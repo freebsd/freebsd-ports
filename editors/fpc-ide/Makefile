@@ -8,8 +8,8 @@ PKGNAMESUFFIX=	-ide
 MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal integrated IDE/compiler
 
-USE_FPC=	chm fcl-async fcl-base fv gdbint graph ibase hash mysql odbc \
-		oracle pasjpeg paszlib pthreads postgres regexpr sqlite
+USE_FPC=	chm fcl-async fcl-base fcl-xml fv gdbint graph ibase hash mysql \
+		odbc oracle pasjpeg paszlib pthreads postgres regexpr sqlite
 
 FPCDIR=		# none
 UNITPREFIX=	# none

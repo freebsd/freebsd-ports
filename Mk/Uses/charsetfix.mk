@@ -17,6 +17,7 @@ IGNORE=	USES=charsetfix does not require args
 
 CHARSETFIX_MAKEFILEIN?=	Makefile.in
 
+_USES_patch+=	600:charsetfix-post-patch
 charsetfix-post-patch:
 	@${FIND} ${WRKSRC} -name "${CHARSETFIX_MAKEFILEIN}" -type f | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|need_charset_alias=true|need_charset_alias=false|g ; \

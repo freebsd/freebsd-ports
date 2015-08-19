@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ykpers
-PORTVERSION=	1.15.1
+PORTVERSION=	1.17.1
 CATEGORIES=	security
 MASTER_SITES=	http://opensource.yubico.com/yubikey-personalization/releases/
 
@@ -27,7 +27,7 @@ PLIST_FILES=	bin/ykchalresp \
 		include/ykpers-1/ykstatus.h \
 		lib/libykpers-1.so \
 		lib/libykpers-1.so.1 \
-		lib/libykpers-1.so.1.15.1 \
+		lib/libykpers-1.so.${PORTVERSION} \
 		libdata/pkgconfig/ykpers-1.pc \
 		man/man1/ykchalresp.1.gz \
 		man/man1/ykinfo.1.gz \

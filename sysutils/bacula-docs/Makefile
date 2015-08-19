@@ -13,8 +13,6 @@ COMMENT=	Bacula document set
 
 NO_BUILD=	yes
 
-UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
-
 PORTDOCS=	*.pdf
 
 do-install:

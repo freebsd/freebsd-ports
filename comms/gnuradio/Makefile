@@ -35,7 +35,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		cmake:outsource iconv perl5 python:2.7 shebangfix
 SHEBANG_FILES=	grc/freedesktop/grc_setup_freedesktop.in
-CMAKE_ENV+=	LD_PRELOAD="${GCC_LIBS}/libstdc++.so:${GCC_LIBS}/libgcc_s.so.1"
+CONFIGURE_ENV+=	LD_PRELOAD="${GCC_LIBS}/libstdc++.so:${GCC_LIBS}/libgcc_s.so.1"
 CMAKE_ARGS+=	-DSWIG_EXECUTABLE:STRING="${LOCALBASE}/bin/swig2.0"
 CMAKE_ARGS+=	-DICONV_PREFIX:STRING="${ICONV_PREFIX}" \
 		-DICONV_LIB:STRING="X${ICONV_LIB}" \
@@ -66,39 +66,26 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 VP=		${GCC_DEFAULT:S/.//}
 GCC_LIBS=	${LOCALBASE}/lib/gcc${VP}
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
-		${LOCALBASE}/bin/sphinx-apidoc:${PORTSDIR}/textproc/py-sphinx \
-		dot:${PORTSDIR}/graphics/graphviz \
-		xmlto:${PORTSDIR}/textproc/xmlto \
-		freefont-ttf>0:${PORTSDIR}/x11-fonts/freefont-ttf
-CMAKE_ARGS+=	-DENABLE_DOXYGEN:STRING="ON"
-CMAKE_ARGS+=	-DENABLE_DOCS:STRING="ON"
-CMAKE_ARGS+=	-DENABLE_BAD_BOOST="ON"
+DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen \
+			${LOCALBASE}/bin/sphinx-apidoc:${PORTSDIR}/textproc/py-sphinx \
+			dot:${PORTSDIR}/graphics/graphviz \
+			xmlto:${PORTSDIR}/textproc/xmlto \
+			freefont-ttf>0:${PORTSDIR}/x11-fonts/freefont-ttf
+DOCS_CMAKE_ON=	-DENABLE_DOXYGEN:STRING="ON" \
+		-DENABLE_DOCS:STRING="ON" \
+		-DENABLE_BAD_BOOST="ON"
+DOCS_CMAKE_OFF=	-DENABLE_DOXYGEN:STRING="OFF" \
+		-DENABLE_DOCS:STRING="OFF" \
+		-DENABLE_BAD_BOOST="ON"
 HAVE_PORTDOCS=	YES
-.else
-CMAKE_ARGS+=	-DENABLE_DOXYGEN:STRING="OFF"
-CMAKE_ARGS+=	-DENABLE_DOCS:STRING="OFF"
-CMAKE_ARGS+=	-DENABLE_BAD_BOOST="ON"
-.endif
 
-.if ${PORT_OPTIONS:MUSRP}
-CMAKE_ARGS+=	-DENABLE_GR_UHD:STRING="ON"
-BUILD_DEPENDS+=	${LOCALBASE}/include/uhd/config.hpp:${PORTSDIR}/comms/usrp
-PLIST_SUB+=	UHD=""
-.else
-CMAKE_ARGS+=	-DENABLE_GR_UHD:STRING="OFF"
-PLIST_SUB+=	UHD="@comment "
-.endif
+USRP_CMAKE_ON=	-DENABLE_GR_UHD:STRING="ON"
+USRP_CMAKE_OFF=	-DENABLE_GR_UHD:STRING="OFF"
+USRP_BUILD_DEPENDS=	${LOCALBASE}/include/uhd/config.hpp:${PORTSDIR}/comms/usrp
 
-.if ${PORT_OPTIONS:MTESTING}
-CMAKE_ARGS+=	-DENABLE_TESTING:STRING="ON"
-BUILD_DEPENDS+=	cppunit-config:${PORTSDIR}/devel/cppunit
-.else
-CMAKE_ARGS+=	-DENABLE_TESTING:STRING="OFF"
-.endif
+TESTING_CMAKE_ON=	-DENABLE_TESTING:STRING="ON"
+TESTING_CMAKE_OFF=	-DENABLE_TESTING:STRING="OFF"
+TESTING_BUILD_DEPENDS=	cppunit-config:${PORTSDIR}/devel/cppunit
 
 post-patch:
 	@${FIND} ${WRKSRC}/.. -name CMakeLists.txt | \
@@ -110,4 +97,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/cmake/Modules/FindPortaudio.cmake
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

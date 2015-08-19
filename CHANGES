@@ -10,6 +10,34 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20150818:
+AUTHOR: kde@FreeBSD.org
+
+  The CMAKE_ENV option has been deprecated. It no longer has any effect, and
+  the CONFIGURE_ENV variable should be used instead.
+
+20150818:
+AUTHOR: mat@FreeBSD.org
+
+  <opt>_IMPLIES and <opt>_PREVENTS have been introduced to register dependency,
+  or conflicts between options.
+
+    OPTIONS_DEFINE= FOO BAR BAZ
+
+    FOO_IMPLIES=	BAR
+    BAZ_PREVENTS= BAR
+
+  If the FOO option is selected, the BAR option will be enabled as well.  If
+  the BAZ and BAR options are both enabled, an error will be given.
+
+20150817:
+AUTHOR: mat@FreeBSD.org
+
+  UNIQUENAME and LATEST_LINK have been removed. LATEST_LINK was only used by
+  ports-mgmt/pkg{,-devel} and PKGBASE can be used in its stead.  UNIQUENAME was
+  used by USE_LDCONFIG where it was not unique enough, and as old compat shims
+  with options.
+
 20150716:
 AUTHOR:	kwm@FreeBSD.org
 

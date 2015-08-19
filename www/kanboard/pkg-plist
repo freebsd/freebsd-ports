@@ -1,5 +1,7 @@
 @owner %%KANBOARD_USERNAME%%
 @group %%KANBOARD_GROUPNAME%%
+%%WWWDIR%%/.htaccess
+%%WWWDIR%%/ChangeLog
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/app/.htaccess
 %%WWWDIR%%/app/Action/Base.php
@@ -40,7 +42,7 @@
 %%WWWDIR%%/app/Api/User.php
 %%WWWDIR%%/app/Auth/Base.php
 %%WWWDIR%%/app/Auth/Database.php
-%%WWWDIR%%/app/Auth/GitHub.php
+%%WWWDIR%%/app/Auth/Github.php
 %%WWWDIR%%/app/Auth/Google.php
 %%WWWDIR%%/app/Auth/Ldap.php
 %%WWWDIR%%/app/Auth/RememberMe.php
@@ -48,13 +50,14 @@
 %%WWWDIR%%/app/Console/Base.php
 %%WWWDIR%%/app/Console/LocaleComparator.php
 %%WWWDIR%%/app/Console/LocaleSync.php
-%%WWWDIR%%/app/Console/ProjectDailySummaryCalculation.php
-%%WWWDIR%%/app/Console/ProjectDailySummaryExport.php
+%%WWWDIR%%/app/Console/ProjectDailyColumnStatsExport.php
+%%WWWDIR%%/app/Console/ProjectDailyStatsCalculation.php
 %%WWWDIR%%/app/Console/SubtaskExport.php
 %%WWWDIR%%/app/Console/TaskExport.php
 %%WWWDIR%%/app/Console/TaskOverdueNotification.php
 %%WWWDIR%%/app/Console/TransitionExport.php
 %%WWWDIR%%/app/Controller/Action.php
+%%WWWDIR%%/app/Controller/Activity.php
 %%WWWDIR%%/app/Controller/Analytic.php
 %%WWWDIR%%/app/Controller/App.php
 %%WWWDIR%%/app/Controller/Auth.php
@@ -73,12 +76,18 @@
 %%WWWDIR%%/app/Controller/Hourlyrate.php
 %%WWWDIR%%/app/Controller/Ical.php
 %%WWWDIR%%/app/Controller/Link.php
+%%WWWDIR%%/app/Controller/Listing.php
+%%WWWDIR%%/app/Controller/Oauth.php
 %%WWWDIR%%/app/Controller/Project.php
-%%WWWDIR%%/app/Controller/Projectinfo.php
+%%WWWDIR%%/app/Controller/Search.php
 %%WWWDIR%%/app/Controller/Subtask.php
 %%WWWDIR%%/app/Controller/Swimlane.php
 %%WWWDIR%%/app/Controller/Task.php
+%%WWWDIR%%/app/Controller/Taskcreation.php
+%%WWWDIR%%/app/Controller/Taskduplication.php
 %%WWWDIR%%/app/Controller/Tasklink.php
+%%WWWDIR%%/app/Controller/Taskmodification.php
+%%WWWDIR%%/app/Controller/Taskstatus.php
 %%WWWDIR%%/app/Controller/Timer.php
 %%WWWDIR%%/app/Controller/Timetable.php
 %%WWWDIR%%/app/Controller/Timetableday.php
@@ -93,8 +102,10 @@
 %%WWWDIR%%/app/Core/EmailClient.php
 %%WWWDIR%%/app/Core/Helper.php
 %%WWWDIR%%/app/Core/HttpClient.php
+%%WWWDIR%%/app/Core/Lexer.php
 %%WWWDIR%%/app/Core/Markdown.php
 %%WWWDIR%%/app/Core/MemoryCache.php
+%%WWWDIR%%/app/Core/OAuth2.php
 %%WWWDIR%%/app/Core/Paginator.php
 %%WWWDIR%%/app/Core/Request.php
 %%WWWDIR%%/app/Core/Response.php
@@ -112,7 +123,8 @@
 %%WWWDIR%%/app/Event/TaskEvent.php
 %%WWWDIR%%/app/Helper/App.php
 %%WWWDIR%%/app/Helper/Asset.php
-%%WWWDIR%%/app/Helper/Datetime.php
+%%WWWDIR%%/app/Helper/Board.php
+%%WWWDIR%%/app/Helper/Dt.php
 %%WWWDIR%%/app/Helper/File.php
 %%WWWDIR%%/app/Helper/Form.php
 %%WWWDIR%%/app/Helper/Subtask.php
@@ -131,6 +143,7 @@
 %%WWWDIR%%/app/Integration/SlackWebhook.php
 %%WWWDIR%%/app/Integration/Smtp.php
 %%WWWDIR%%/app/Library/password.php
+%%WWWDIR%%/app/Locale/cs_CZ/translations.php
 %%WWWDIR%%/app/Locale/da_DK/translations.php
 %%WWWDIR%%/app/Locale/de_DE/translations.php
 %%WWWDIR%%/app/Locale/es_ES/translations.php
@@ -168,7 +181,8 @@
 %%WWWDIR%%/app/Model/Project.php
 %%WWWDIR%%/app/Model/ProjectActivity.php
 %%WWWDIR%%/app/Model/ProjectAnalytic.php
-%%WWWDIR%%/app/Model/ProjectDailySummary.php
+%%WWWDIR%%/app/Model/ProjectDailyColumnStats.php
+%%WWWDIR%%/app/Model/ProjectDailyStats.php
 %%WWWDIR%%/app/Model/ProjectDuplication.php
 %%WWWDIR%%/app/Model/ProjectIntegration.php
 %%WWWDIR%%/app/Model/ProjectPermission.php
@@ -178,6 +192,7 @@
 %%WWWDIR%%/app/Model/SubtaskTimeTracking.php
 %%WWWDIR%%/app/Model/Swimlane.php
 %%WWWDIR%%/app/Model/Task.php
+%%WWWDIR%%/app/Model/TaskAnalytic.php
 %%WWWDIR%%/app/Model/TaskCreation.php
 %%WWWDIR%%/app/Model/TaskDuplication.php
 %%WWWDIR%%/app/Model/TaskExport.php
@@ -220,42 +235,49 @@
 %%WWWDIR%%/app/Template/action/index.php
 %%WWWDIR%%/app/Template/action/params.php
 %%WWWDIR%%/app/Template/action/remove.php
+%%WWWDIR%%/app/Template/activity/project.php
+%%WWWDIR%%/app/Template/activity/task.php
+%%WWWDIR%%/app/Template/analytic/avg_time_columns.php
 %%WWWDIR%%/app/Template/analytic/burndown.php
 %%WWWDIR%%/app/Template/analytic/cfd.php
 %%WWWDIR%%/app/Template/analytic/layout.php
+%%WWWDIR%%/app/Template/analytic/lead_cycle_time.php
 %%WWWDIR%%/app/Template/analytic/sidebar.php
 %%WWWDIR%%/app/Template/analytic/tasks.php
 %%WWWDIR%%/app/Template/analytic/users.php
-%%WWWDIR%%/app/Template/app/dashboard.php
+%%WWWDIR%%/app/Template/app/activity.php
+%%WWWDIR%%/app/Template/app/calendar.php
+%%WWWDIR%%/app/Template/app/filters_helper.php
 %%WWWDIR%%/app/Template/app/forbidden.php
+%%WWWDIR%%/app/Template/app/layout.php
 %%WWWDIR%%/app/Template/app/notfound.php
+%%WWWDIR%%/app/Template/app/overview.php
 %%WWWDIR%%/app/Template/app/projects.php
+%%WWWDIR%%/app/Template/app/sidebar.php
 %%WWWDIR%%/app/Template/app/subtasks.php
 %%WWWDIR%%/app/Template/app/tasks.php
 %%WWWDIR%%/app/Template/auth/index.php
-%%WWWDIR%%/app/Template/board/assignee.php
-%%WWWDIR%%/app/Template/board/category.php
-%%WWWDIR%%/app/Template/board/comments.php
-%%WWWDIR%%/app/Template/board/description.php
-%%WWWDIR%%/app/Template/board/files.php
-%%WWWDIR%%/app/Template/board/filters.php
-%%WWWDIR%%/app/Template/board/index.php
-%%WWWDIR%%/app/Template/board/public.php
-%%WWWDIR%%/app/Template/board/show.php
-%%WWWDIR%%/app/Template/board/subtasks.php
-%%WWWDIR%%/app/Template/board/swimlane.php
+%%WWWDIR%%/app/Template/board/popover_assignee.php
+%%WWWDIR%%/app/Template/board/popover_category.php
+%%WWWDIR%%/app/Template/board/private_view.php
+%%WWWDIR%%/app/Template/board/public_view.php
+%%WWWDIR%%/app/Template/board/table_container.php
+%%WWWDIR%%/app/Template/board/table_swimlane.php
 %%WWWDIR%%/app/Template/board/task_footer.php
 %%WWWDIR%%/app/Template/board/task_menu.php
 %%WWWDIR%%/app/Template/board/task_private.php
 %%WWWDIR%%/app/Template/board/task_public.php
-%%WWWDIR%%/app/Template/board/tasklinks.php
+%%WWWDIR%%/app/Template/board/tooltip_comments.php
+%%WWWDIR%%/app/Template/board/tooltip_description.php
+%%WWWDIR%%/app/Template/board/tooltip_files.php
+%%WWWDIR%%/app/Template/board/tooltip_subtasks.php
+%%WWWDIR%%/app/Template/board/tooltip_tasklinks.php
 %%WWWDIR%%/app/Template/budget/breakdown.php
 %%WWWDIR%%/app/Template/budget/create.php
 %%WWWDIR%%/app/Template/budget/index.php
 %%WWWDIR%%/app/Template/budget/remove.php
 %%WWWDIR%%/app/Template/budget/sidebar.php
 %%WWWDIR%%/app/Template/calendar/show.php
-%%WWWDIR%%/app/Template/calendar/sidebar.php
 %%WWWDIR%%/app/Template/category/edit.php
 %%WWWDIR%%/app/Template/category/index.php
 %%WWWDIR%%/app/Template/category/remove.php
@@ -310,6 +332,7 @@
 %%WWWDIR%%/app/Template/link/edit.php
 %%WWWDIR%%/app/Template/link/index.php
 %%WWWDIR%%/app/Template/link/remove.php
+%%WWWDIR%%/app/Template/listing/show.php
 %%WWWDIR%%/app/Template/notification/comment_create.php
 %%WWWDIR%%/app/Template/notification/comment_update.php
 %%WWWDIR%%/app/Template/notification/file_create.php
@@ -330,6 +353,7 @@
 %%WWWDIR%%/app/Template/project/duplicate.php
 %%WWWDIR%%/app/Template/project/edit.php
 %%WWWDIR%%/app/Template/project/enable.php
+%%WWWDIR%%/app/Template/project/filters.php
 %%WWWDIR%%/app/Template/project/index.php
 %%WWWDIR%%/app/Template/project/integrations.php
 %%WWWDIR%%/app/Template/project/layout.php
@@ -339,9 +363,8 @@
 %%WWWDIR%%/app/Template/project/show.php
 %%WWWDIR%%/app/Template/project/sidebar.php
 %%WWWDIR%%/app/Template/project/users.php
-%%WWWDIR%%/app/Template/projectinfo/activity.php
-%%WWWDIR%%/app/Template/projectinfo/search.php
-%%WWWDIR%%/app/Template/projectinfo/tasks.php
+%%WWWDIR%%/app/Template/search/index.php
+%%WWWDIR%%/app/Template/search/results.php
 %%WWWDIR%%/app/Template/subtask/create.php
 %%WWWDIR%%/app/Template/subtask/edit.php
 %%WWWDIR%%/app/Template/subtask/icons.php
@@ -352,31 +375,30 @@
 %%WWWDIR%%/app/Template/swimlane/index.php
 %%WWWDIR%%/app/Template/swimlane/remove.php
 %%WWWDIR%%/app/Template/swimlane/table.php
-%%WWWDIR%%/app/Template/task/activity.php
+%%WWWDIR%%/app/Template/task/analytics.php
 %%WWWDIR%%/app/Template/task/changes.php
-%%WWWDIR%%/app/Template/task/close.php
 %%WWWDIR%%/app/Template/task/comments.php
+%%WWWDIR%%/app/Template/task/description.php
 %%WWWDIR%%/app/Template/task/details.php
-%%WWWDIR%%/app/Template/task/duplicate.php
-%%WWWDIR%%/app/Template/task/duplicate_project.php
-%%WWWDIR%%/app/Template/task/edit.php
-%%WWWDIR%%/app/Template/task/edit_description.php
-%%WWWDIR%%/app/Template/task/edit_recurrence.php
 %%WWWDIR%%/app/Template/task/layout.php
-%%WWWDIR%%/app/Template/task/move_project.php
-%%WWWDIR%%/app/Template/task/new.php
-%%WWWDIR%%/app/Template/task/open.php
 %%WWWDIR%%/app/Template/task/public.php
 %%WWWDIR%%/app/Template/task/recurring_info.php
 %%WWWDIR%%/app/Template/task/remove.php
 %%WWWDIR%%/app/Template/task/show.php
-%%WWWDIR%%/app/Template/task/show_description.php
 %%WWWDIR%%/app/Template/task/sidebar.php
-%%WWWDIR%%/app/Template/task/table.php
-%%WWWDIR%%/app/Template/task/time.php
-%%WWWDIR%%/app/Template/task/time_tracking.php
-%%WWWDIR%%/app/Template/task/timesheet.php
+%%WWWDIR%%/app/Template/task/time_tracking_details.php
+%%WWWDIR%%/app/Template/task/time_tracking_summary.php
 %%WWWDIR%%/app/Template/task/transitions.php
+%%WWWDIR%%/app/Template/task_creation/form.php
+%%WWWDIR%%/app/Template/task_duplication/copy.php
+%%WWWDIR%%/app/Template/task_duplication/duplicate.php
+%%WWWDIR%%/app/Template/task_duplication/move.php
+%%WWWDIR%%/app/Template/task_modification/edit_description.php
+%%WWWDIR%%/app/Template/task_modification/edit_recurrence.php
+%%WWWDIR%%/app/Template/task_modification/edit_task.php
+%%WWWDIR%%/app/Template/task_modification/edit_time.php
+%%WWWDIR%%/app/Template/task_status/close.php
+%%WWWDIR%%/app/Template/task_status/open.php
 %%WWWDIR%%/app/Template/tasklink/create.php
 %%WWWDIR%%/app/Template/tasklink/edit.php
 %%WWWDIR%%/app/Template/tasklink/remove.php
@@ -393,13 +415,14 @@
 %%WWWDIR%%/app/Template/twofactor/check.php
 %%WWWDIR%%/app/Template/twofactor/disable.php
 %%WWWDIR%%/app/Template/twofactor/index.php
-%%WWWDIR%%/app/Template/user/calendar.php
+%%WWWDIR%%/app/Template/user/authentication.php
+%%WWWDIR%%/app/Template/user/create_local.php
+%%WWWDIR%%/app/Template/user/create_remote.php
 %%WWWDIR%%/app/Template/user/edit.php
 %%WWWDIR%%/app/Template/user/external.php
 %%WWWDIR%%/app/Template/user/index.php
 %%WWWDIR%%/app/Template/user/last.php
 %%WWWDIR%%/app/Template/user/layout.php
-%%WWWDIR%%/app/Template/user/new.php
 %%WWWDIR%%/app/Template/user/notifications.php
 %%WWWDIR%%/app/Template/user/password.php
 %%WWWDIR%%/app/Template/user/remove.php
@@ -436,6 +459,7 @@
 %%WWWDIR%%/assets/css/src/confirm.css
 %%WWWDIR%%/assets/css/src/dashboard.css
 %%WWWDIR%%/assets/css/src/dropdown.css
+%%WWWDIR%%/assets/css/src/filters.css
 %%WWWDIR%%/assets/css/src/form.css
 %%WWWDIR%%/assets/css/src/header.css
 %%WWWDIR%%/assets/css/src/links.css
@@ -445,6 +469,7 @@
 %%WWWDIR%%/assets/css/src/popover.css
 %%WWWDIR%%/assets/css/src/print.css
 %%WWWDIR%%/assets/css/src/responsive.css
+%%WWWDIR%%/assets/css/src/screenshot.css
 %%WWWDIR%%/assets/css/src/sidebar.css
 %%WWWDIR%%/assets/css/src/subtask.css
 %%WWWDIR%%/assets/css/src/table.css
@@ -455,6 +480,7 @@
 %%WWWDIR%%/assets/css/vendor/chosen.min.css
 %%WWWDIR%%/assets/css/vendor/font-awesome.min.css
 %%WWWDIR%%/assets/css/vendor/fullcalendar.min.css
+%%WWWDIR%%/assets/css/vendor/jquery-ui-timepicker-addon.min.css
 %%WWWDIR%%/assets/css/vendor/jquery-ui.min.css
 %%WWWDIR%%/assets/css/vendor/jquery-ui.theme.min.css
 %%WWWDIR%%/assets/fonts/FontAwesome.otf
@@ -483,7 +509,6 @@
 %%WWWDIR%%/assets/js/src/base.js
 %%WWWDIR%%/assets/js/src/board.js
 %%WWWDIR%%/assets/js/src/calendar.js
-%%WWWDIR%%/assets/js/src/dashboard.js
 %%WWWDIR%%/assets/js/src/screenshot.js
 %%WWWDIR%%/assets/js/src/swimlane.js
 %%WWWDIR%%/assets/js/vendor/c3.min.js
@@ -492,6 +517,7 @@
 %%WWWDIR%%/assets/js/vendor/dropit.min.js
 %%WWWDIR%%/assets/js/vendor/fullcalendar.min.js
 %%WWWDIR%%/assets/js/vendor/jquery-1.11.1.min.js
+%%WWWDIR%%/assets/js/vendor/jquery-ui-timepicker-addon.min.js
 %%WWWDIR%%/assets/js/vendor/jquery-ui.min.js
 %%WWWDIR%%/assets/js/vendor/jquery.ui.touch-punch.min.js
 %%WWWDIR%%/assets/js/vendor/lang/ar-ma.js
@@ -688,117 +714,6 @@
 %%WWWDIR%%/vendor/fguillot/simpleLogger/src/SimpleLogger/File.php
 %%WWWDIR%%/vendor/fguillot/simpleLogger/src/SimpleLogger/Logger.php
 %%WWWDIR%%/vendor/fguillot/simpleLogger/src/SimpleLogger/Syslog.php
-%%WWWDIR%%/vendor/lusitanian/oauth/.scrutinizer.yml
-%%WWWDIR%%/vendor/lusitanian/oauth/LICENSE
-%%WWWDIR%%/vendor/lusitanian/oauth/examples/amazon.php
-%%WWWDIR%%/vendor/lusitanian/oauth/examples/bitbucket.php
-%%WWWDIR%%/vendor/lusitanian/oauth/examples/bitly.php
-%%WWWDIR%%/vendor/lusitanian/oauth/examples/bootstrap.php
-%%WWWDIR%%/vendor/lusitanian/oauth/examples/box.php
-%%WWWDIR%%/vendor/lusitanian/oauth/examples/buffer.php
-%%WWWDIR%%/vendor/lusitanian/oauth/examples/dailymotion.php
-%%WWWDIR%%/vendor/lusitanian/oauth/examples/dropbox.php
-%%WWWDIR%%/vendor/lusitanian/oauth/examples/etsy.php
-%%WWWDIR%%/vendor/lusitanian/oauth/examples/facebook.php
-%%WWWDIR%%/vendor/lusitanian/oauth/examples/fitbit.php
-%%WWWDIR%%/vendor/lusitanian/oauth/examples/flickr.php
-%%WWWDIR%%/vendor/lusitanian/oauth/examples/foursquare.php
-%%WWWDIR%%/vendor/lusitanian/oauth/examples/github.php
-%%WWWDIR%%/vendor/lusitanian/oauth/examples/google.php
-%%WWWDIR%%/vendor/lusitanian/oauth/examples/harvest.php
-%%WWWDIR%%/vendor/lusitanian/oauth/examples/init.example.php
-%%WWWDIR%%/vendor/lusitanian/oauth/examples/instagram.php
-%%WWWDIR%%/vendor/lusitanian/oauth/examples/linkedin.php
-%%WWWDIR%%/vendor/lusitanian/oauth/examples/mailchimp.php
-%%WWWDIR%%/vendor/lusitanian/oauth/examples/microsoft.php
-%%WWWDIR%%/vendor/lusitanian/oauth/examples/paypal.php
-%%WWWDIR%%/vendor/lusitanian/oauth/examples/pocket.php
-%%WWWDIR%%/vendor/lusitanian/oauth/examples/reddit.php
-%%WWWDIR%%/vendor/lusitanian/oauth/examples/runkeeper.php
-%%WWWDIR%%/vendor/lusitanian/oauth/examples/scoopit.php
-%%WWWDIR%%/vendor/lusitanian/oauth/examples/soundcloud.php
-%%WWWDIR%%/vendor/lusitanian/oauth/examples/tumblr.php
-%%WWWDIR%%/vendor/lusitanian/oauth/examples/twitter.php
-%%WWWDIR%%/vendor/lusitanian/oauth/examples/ustream.php
-%%WWWDIR%%/vendor/lusitanian/oauth/examples/yahoo.php
-%%WWWDIR%%/vendor/lusitanian/oauth/phpunit.xml.dist
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/AutoLoader.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Consumer/Credentials.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Consumer/CredentialsInterface.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Exception/Exception.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Http/Client/AbstractClient.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Http/Client/ClientInterface.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Http/Client/CurlClient.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Http/Client/StreamClient.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Http/Exception/TokenResponseException.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Http/Uri/Uri.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Http/Uri/UriFactory.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Http/Uri/UriFactoryInterface.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Http/Uri/UriInterface.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Service/AbstractService.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Service/ServiceInterface.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Storage/Exception/AuthorizationStateNotFoundException.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Storage/Exception/StorageException.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Storage/Exception/TokenNotFoundException.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Storage/Memory.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Storage/Redis.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Storage/Session.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Storage/SymfonySession.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Storage/TokenStorageInterface.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Token/AbstractToken.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Token/Exception/ExpiredTokenException.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Token/TokenInterface.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Service/AbstractService.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Service/BitBucket.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Service/Etsy.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Service/FitBit.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Service/Flickr.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Service/ScoopIt.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Service/ServiceInterface.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Service/Tumblr.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Service/Twitter.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Service/Xing.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Service/Yahoo.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Signature/Exception/UnsupportedHashAlgorithmException.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Signature/Signature.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Signature/SignatureInterface.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Token/StdOAuth1Token.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Token/TokenInterface.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/AbstractService.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Amazon.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Bitly.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Box.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Buffer.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Dailymotion.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Dropbox.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Exception/InvalidAccessTypeException.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Exception/InvalidAuthorizationStateException.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Exception/InvalidScopeException.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Exception/MissingRefreshTokenException.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Facebook.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Foursquare.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/GitHub.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Google.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Harvest.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Heroku.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Instagram.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Linkedin.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Mailchimp.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Microsoft.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Paypal.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Pocket.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Reddit.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/RunKeeper.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Salesforce.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/ServiceInterface.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/SoundCloud.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Ustream.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Vkontakte.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Yammer.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Token/StdOAuth2Token.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Token/TokenInterface.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/ServiceFactory.php
-%%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/bootstrap.php
 %%WWWDIR%%/vendor/nickcernis/html-to-markdown/HTML_To_Markdown.php
 %%WWWDIR%%/vendor/nickcernis/html-to-markdown/LICENSE
 %%WWWDIR%%/vendor/nickcernis/html-to-markdown/circle.yml
@@ -1205,6 +1120,10 @@
 %%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_5.md
 %%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_5.txt
 %%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_5.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_6.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_6.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_6.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_6.xml
 %%WWWDIR%%/vendor/symfony/console/Tests/Formatter/OutputFormatterStyleStackTest.php
 %%WWWDIR%%/vendor/symfony/console/Tests/Formatter/OutputFormatterStyleTest.php
 %%WWWDIR%%/vendor/symfony/console/Tests/Formatter/OutputFormatterTest.php
@@ -1256,237 +1175,3 @@
 %%WWWDIR%%/vendor/symfony/event-dispatcher/Tests/GenericEventTest.php
 %%WWWDIR%%/vendor/symfony/event-dispatcher/Tests/ImmutableEventDispatcherTest.php
 %%WWWDIR%%/vendor/symfony/event-dispatcher/phpunit.xml.dist
-@dir %%WWWDIR%%/
-@dir %%WWWDIR%%/app
-@dir %%WWWDIR%%/app/Action
-@dir %%WWWDIR%%/app/Api
-@dir %%WWWDIR%%/app/Auth
-@dir %%WWWDIR%%/app/Console
-@dir %%WWWDIR%%/app/Controller
-@dir %%WWWDIR%%/app/Core
-@dir %%WWWDIR%%/app/Event
-@dir %%WWWDIR%%/app/Helper
-@dir %%WWWDIR%%/app/Integration
-@dir %%WWWDIR%%/app/Library
-@dir %%WWWDIR%%/app/Locale
-@dir %%WWWDIR%%/app/Locale/da_DK
-@dir %%WWWDIR%%/app/Locale/de_DE
-@dir %%WWWDIR%%/app/Locale/es_ES
-@dir %%WWWDIR%%/app/Locale/fi_FI
-@dir %%WWWDIR%%/app/Locale/fr_FR
-@dir %%WWWDIR%%/app/Locale/hu_HU
-@dir %%WWWDIR%%/app/Locale/it_IT
-@dir %%WWWDIR%%/app/Locale/ja_JP
-@dir %%WWWDIR%%/app/Locale/nl_NL
-@dir %%WWWDIR%%/app/Locale/pl_PL
-@dir %%WWWDIR%%/app/Locale/pt_BR
-@dir %%WWWDIR%%/app/Locale/ru_RU
-@dir %%WWWDIR%%/app/Locale/sr_Latn_RS
-@dir %%WWWDIR%%/app/Locale/sv_SE
-@dir %%WWWDIR%%/app/Locale/th_TH
-@dir %%WWWDIR%%/app/Locale/tr_TR
-@dir %%WWWDIR%%/app/Locale/zh_CN
-@dir %%WWWDIR%%/app/Model
-@dir %%WWWDIR%%/app/Schema
-@dir %%WWWDIR%%/app/ServiceProvider
-@dir %%WWWDIR%%/app/Subscriber
-@dir %%WWWDIR%%/app/Template
-@dir %%WWWDIR%%/app/Template/action
-@dir %%WWWDIR%%/app/Template/analytic
-@dir %%WWWDIR%%/app/Template/app
-@dir %%WWWDIR%%/app/Template/auth
-@dir %%WWWDIR%%/app/Template/board
-@dir %%WWWDIR%%/app/Template/budget
-@dir %%WWWDIR%%/app/Template/calendar
-@dir %%WWWDIR%%/app/Template/category
-@dir %%WWWDIR%%/app/Template/column
-@dir %%WWWDIR%%/app/Template/comment
-@dir %%WWWDIR%%/app/Template/config
-@dir %%WWWDIR%%/app/Template/currency
-@dir %%WWWDIR%%/app/Template/event
-@dir %%WWWDIR%%/app/Template/export
-@dir %%WWWDIR%%/app/Template/feed
-@dir %%WWWDIR%%/app/Template/file
-@dir %%WWWDIR%%/app/Template/hourlyrate
-@dir %%WWWDIR%%/app/Template/link
-@dir %%WWWDIR%%/app/Template/notification
-@dir %%WWWDIR%%/app/Template/project
-@dir %%WWWDIR%%/app/Template/projectinfo
-@dir %%WWWDIR%%/app/Template/subtask
-@dir %%WWWDIR%%/app/Template/swimlane
-@dir %%WWWDIR%%/app/Template/task
-@dir %%WWWDIR%%/app/Template/tasklink
-@dir %%WWWDIR%%/app/Template/timetable
-@dir %%WWWDIR%%/app/Template/timetable_day
-@dir %%WWWDIR%%/app/Template/timetable_extra
-@dir %%WWWDIR%%/app/Template/timetable_off
-@dir %%WWWDIR%%/app/Template/timetable_week
-@dir %%WWWDIR%%/app/Template/twofactor
-@dir %%WWWDIR%%/app/Template/user
-@dir %%WWWDIR%%/assets
-@dir %%WWWDIR%%/assets/css
-@dir %%WWWDIR%%/assets/css/images
-@dir %%WWWDIR%%/assets/css/src
-@dir %%WWWDIR%%/assets/css/vendor
-@dir %%WWWDIR%%/assets/fonts
-@dir %%WWWDIR%%/assets/img
-@dir %%WWWDIR%%/assets/js
-@dir %%WWWDIR%%/assets/js/src
-@dir %%WWWDIR%%/assets/js/vendor
-@dir %%WWWDIR%%/assets/js/vendor/lang
-@dir %%WWWDIR%%/data
-@dir %%WWWDIR%%/vendor
-@dir %%WWWDIR%%/vendor/christian-riesen
-@dir %%WWWDIR%%/vendor/christian-riesen/base32
-@dir %%WWWDIR%%/vendor/christian-riesen/base32/src
-@dir %%WWWDIR%%/vendor/christian-riesen/otp
-@dir %%WWWDIR%%/vendor/christian-riesen/otp/example
-@dir %%WWWDIR%%/vendor/christian-riesen/otp/src
-@dir %%WWWDIR%%/vendor/christian-riesen/otp/src/Otp
-@dir %%WWWDIR%%/vendor/composer
-@dir %%WWWDIR%%/vendor/eluceo
-@dir %%WWWDIR%%/vendor/eluceo/ical
-@dir %%WWWDIR%%/vendor/eluceo/ical/examples
-@dir %%WWWDIR%%/vendor/eluceo/ical/src
-@dir %%WWWDIR%%/vendor/eluceo/ical/src/Eluceo
-@dir %%WWWDIR%%/vendor/eluceo/ical/src/Eluceo/iCal
-@dir %%WWWDIR%%/vendor/eluceo/ical/src/Eluceo/iCal/Component
-@dir %%WWWDIR%%/vendor/eluceo/ical/src/Eluceo/iCal/Property
-@dir %%WWWDIR%%/vendor/eluceo/ical/src/Eluceo/iCal/Property/Event
-@dir %%WWWDIR%%/vendor/erusev
-@dir %%WWWDIR%%/vendor/erusev/parsedown
-@dir %%WWWDIR%%/vendor/fabiang
-@dir %%WWWDIR%%/vendor/fabiang/xmpp
-@dir %%WWWDIR%%/vendor/fabiang/xmpp/src
-@dir %%WWWDIR%%/vendor/fabiang/xmpp/src/Connection
-@dir %%WWWDIR%%/vendor/fabiang/xmpp/src/Event
-@dir %%WWWDIR%%/vendor/fabiang/xmpp/src/EventListener
-@dir %%WWWDIR%%/vendor/fabiang/xmpp/src/EventListener/Stream
-@dir %%WWWDIR%%/vendor/fabiang/xmpp/src/EventListener/Stream/Authentication
-@dir %%WWWDIR%%/vendor/fabiang/xmpp/src/Exception
-@dir %%WWWDIR%%/vendor/fabiang/xmpp/src/Exception/Stream
-@dir %%WWWDIR%%/vendor/fabiang/xmpp/src/Protocol
-@dir %%WWWDIR%%/vendor/fabiang/xmpp/src/Protocol/User
-@dir %%WWWDIR%%/vendor/fabiang/xmpp/src/Stream
-@dir %%WWWDIR%%/vendor/fabiang/xmpp/src/Util
-@dir %%WWWDIR%%/vendor/fguillot
-@dir %%WWWDIR%%/vendor/fguillot/json-rpc
-@dir %%WWWDIR%%/vendor/fguillot/json-rpc/src
-@dir %%WWWDIR%%/vendor/fguillot/json-rpc/src/JsonRPC
-@dir %%WWWDIR%%/vendor/fguillot/picodb
-@dir %%WWWDIR%%/vendor/fguillot/picodb/lib
-@dir %%WWWDIR%%/vendor/fguillot/picodb/lib/PicoDb
-@dir %%WWWDIR%%/vendor/fguillot/picodb/lib/PicoDb/Driver
-@dir %%WWWDIR%%/vendor/fguillot/simple-validator
-@dir %%WWWDIR%%/vendor/fguillot/simple-validator/src
-@dir %%WWWDIR%%/vendor/fguillot/simple-validator/src/SimpleValidator
-@dir %%WWWDIR%%/vendor/fguillot/simple-validator/src/SimpleValidator/Validators
-@dir %%WWWDIR%%/vendor/fguillot/simpleLogger
-@dir %%WWWDIR%%/vendor/fguillot/simpleLogger/src
-@dir %%WWWDIR%%/vendor/fguillot/simpleLogger/src/SimpleLogger
-@dir %%WWWDIR%%/vendor/lusitanian
-@dir %%WWWDIR%%/vendor/lusitanian/oauth
-@dir %%WWWDIR%%/vendor/lusitanian/oauth/examples
-@dir %%WWWDIR%%/vendor/lusitanian/oauth/src
-@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth
-@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common
-@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Consumer
-@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Exception
-@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Http
-@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Http/Client
-@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Http/Exception
-@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Http/Uri
-@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Service
-@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Storage
-@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Storage/Exception
-@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Token
-@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/Common/Token/Exception
-@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1
-@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Service
-@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Signature
-@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Signature/Exception
-@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth1/Token
-@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2
-@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service
-@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Service/Exception
-@dir %%WWWDIR%%/vendor/lusitanian/oauth/src/OAuth/OAuth2/Token
-@dir %%WWWDIR%%/vendor/nickcernis
-@dir %%WWWDIR%%/vendor/nickcernis/html-to-markdown
-@dir %%WWWDIR%%/vendor/nickcernis/html-to-markdown/demo
-@dir %%WWWDIR%%/vendor/pimple
-@dir %%WWWDIR%%/vendor/pimple/pimple
-@dir %%WWWDIR%%/vendor/pimple/pimple/ext
-@dir %%WWWDIR%%/vendor/pimple/pimple/ext/pimple
-@dir %%WWWDIR%%/vendor/pimple/pimple/src
-@dir %%WWWDIR%%/vendor/pimple/pimple/src/Pimple
-@dir %%WWWDIR%%/vendor/pimple/pimple/src/Pimple/Tests
-@dir %%WWWDIR%%/vendor/pimple/pimple/src/Pimple/Tests/Fixtures
-@dir %%WWWDIR%%/vendor/psr
-@dir %%WWWDIR%%/vendor/psr/log
-@dir %%WWWDIR%%/vendor/psr/log/Psr
-@dir %%WWWDIR%%/vendor/psr/log/Psr/Log
-@dir %%WWWDIR%%/vendor/psr/log/Psr/Log/Test
-@dir %%WWWDIR%%/vendor/swiftmailer
-@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer
-@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib
-@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes
-@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift
-@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/ByteStream
-@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterReader
-@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterReaderFactory
-@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterStream
-@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Encoder
-@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events
-@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/KeyCache
-@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mailer
-@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime
-@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/ContentEncoder
-@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/HeaderEncoder
-@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Headers
-@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins
-@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Decorator
-@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Loggers
-@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Pop
-@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Reporters
-@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers
-@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/StreamFilters
-@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport
-@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/Esmtp
-@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/Esmtp/Auth
-@dir %%WWWDIR%%/vendor/swiftmailer/swiftmailer/lib/dependency_maps
-@dir %%WWWDIR%%/vendor/symfony
-@dir %%WWWDIR%%/vendor/symfony/console
-@dir %%WWWDIR%%/vendor/symfony/console/Command
-@dir %%WWWDIR%%/vendor/symfony/console/Descriptor
-@dir %%WWWDIR%%/vendor/symfony/console/Event
-@dir %%WWWDIR%%/vendor/symfony/console/Formatter
-@dir %%WWWDIR%%/vendor/symfony/console/Helper
-@dir %%WWWDIR%%/vendor/symfony/console/Input
-@dir %%WWWDIR%%/vendor/symfony/console/Logger
-@dir %%WWWDIR%%/vendor/symfony/console/Output
-@dir %%WWWDIR%%/vendor/symfony/console/Question
-@dir %%WWWDIR%%/vendor/symfony/console/Resources
-@dir %%WWWDIR%%/vendor/symfony/console/Resources/bin
-@dir %%WWWDIR%%/vendor/symfony/console/Style
-@dir %%WWWDIR%%/vendor/symfony/console/Tester
-@dir %%WWWDIR%%/vendor/symfony/console/Tests
-@dir %%WWWDIR%%/vendor/symfony/console/Tests/Command
-@dir %%WWWDIR%%/vendor/symfony/console/Tests/Descriptor
-@dir %%WWWDIR%%/vendor/symfony/console/Tests/Fixtures
-@dir %%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style
-@dir %%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle
-@dir %%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command
-@dir %%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output
-@dir %%WWWDIR%%/vendor/symfony/console/Tests/Formatter
-@dir %%WWWDIR%%/vendor/symfony/console/Tests/Helper
-@dir %%WWWDIR%%/vendor/symfony/console/Tests/Input
-@dir %%WWWDIR%%/vendor/symfony/console/Tests/Logger
-@dir %%WWWDIR%%/vendor/symfony/console/Tests/Output
-@dir %%WWWDIR%%/vendor/symfony/console/Tests/Style
-@dir %%WWWDIR%%/vendor/symfony/console/Tests/Tester
-@dir %%WWWDIR%%/vendor/symfony/event-dispatcher
-@dir %%WWWDIR%%/vendor/symfony/event-dispatcher/Debug
-@dir %%WWWDIR%%/vendor/symfony/event-dispatcher/DependencyInjection
-@dir %%WWWDIR%%/vendor/symfony/event-dispatcher/Tests
-@dir %%WWWDIR%%/vendor/symfony/event-dispatcher/Tests/Debug
-@dir %%WWWDIR%%/vendor/symfony/event-dispatcher/Tests/DependencyInjection

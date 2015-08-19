@@ -17,6 +17,7 @@ LIB_DEPENDS=	libxml++-2.6.so:${PORTSDIR}/textproc/libxml++26 \
 CONFLICTS_INSTALL=	wormux-*
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	cxx_present=yes
 USES=		dos2unix gmake pkgconfig tar:bzip2
 USE_SDL=	sdl image mixer ttf gfx net
 DOS2UNIX_GLOB=	fixed_class.h

@@ -72,6 +72,8 @@
     SUBDIR += hastmon
     SUBDIR += hawk
     SUBDIR += icinga
+    SUBDIR += icinga-classicweb
+    SUBDIR += icinga-core
     SUBDIR += icinga2
     SUBDIR += icli
     SUBDIR += icmpmonitor

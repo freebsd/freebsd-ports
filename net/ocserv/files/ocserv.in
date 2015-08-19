@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: ocserv
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following to /etc/rc.conf to enable ocserv:
+#
+# ocserv_enable="YES"
+#
+
+. /etc/rc.subr
+
+name="ocserv"
+rcvar="ocserv_enable"
+
+load_rc_config ${name}
+
+: ${ocserv_enable:="NO"}
+: ${ocserv_pidfile:=/var/run/${name}/pid}
+
+command=/usr/local/sbin/${name}
+
+run_rc_command "$1"

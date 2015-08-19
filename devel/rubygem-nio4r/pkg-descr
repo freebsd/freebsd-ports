@@ -17,4 +17,3 @@ Its goals are:
 - Provide inherently thread-safe facilities for working with IO objects
 
 WWW: https://github.com/celluloid/nio4r
-RG:  https://rubygems.org/gems/nio4r

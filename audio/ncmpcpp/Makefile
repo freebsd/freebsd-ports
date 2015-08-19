@@ -59,10 +59,9 @@ CONFIGURE_ARGS+=	NCURSES_CONFIG=/usr/bin/true
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ncmpcpp ${STAGEDIR}${PREFIX}/bin/
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/NEWS ${WRKSRC}/AUTHORS ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/bindings ${WRKSRC}/doc/config ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.post.mk>

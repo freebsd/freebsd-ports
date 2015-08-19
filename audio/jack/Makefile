@@ -32,8 +32,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -L${BDB_LIB_DIR}
 INSTALL_TARGET=	install-strip
 
-LATEST_LINK=	jack
-
 OPTIONS_DEFINE=	ALSA DOXYGEN READLINE
 OPTIONS_DEFAULT=READLINE
 OPTIONS_SUB=	yes
@@ -43,18 +41,11 @@ ALSA_CONFIGURE_ENABLE=	alsa
 
 READLINE_LIB_DEPENDS=	libreadline.so:${PORTSDIR}/devel/readline
 
-.include <bsd.port.options.mk>
+DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOXYGEN_CONFIGURE_ENV_OFF=	ac_cv_prog_HAVE_DOXYGEN="false"
 
-.if ${PORT_OPTIONS:MDOXYGEN}
-BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
-.else
-CONFIGURE_ENV+=	ac_cv_prog_HAVE_DOXYGEN="false"
-.endif
-
-.if ! ${PORT_OPTIONS:MREADLINE}
-CONFIGURE_ENV+=	ac_cv_lib_readline_readline=no \
+READLINE_CONFIGURE_ENV_OFF=	ac_cv_lib_readline_readline=no \
 		ac_cv_header_readline_chardefs_h=no
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|define USE_MLOCK|undef USE_MLOCK|' \

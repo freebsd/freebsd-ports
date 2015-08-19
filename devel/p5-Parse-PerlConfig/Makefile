@@ -8,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pedersen@meridian-enviro.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module to use perl scripts as config files
 
 USES=		perl5

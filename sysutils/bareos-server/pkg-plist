@@ -93,5 +93,3 @@ sbin/btraceback
 sbin/bwild
 sbin/chio-bareos
 @dir(bareos,bareos,) %%BAREOS_DIR%%
-@dir(bareos,bareos,) /var/log/bareos
-@dir(bareos,bareos,) /var/run/bareos

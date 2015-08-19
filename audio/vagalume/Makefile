@@ -25,7 +25,6 @@ OPTIONS_DEFAULT=	DBUS TRAY
 OPTIONS_SUB=	NLS DBUS
 TRAY_DESC=	Tray icon and libnotify support
 
-.include <bsd.port.options.mk>
 
 DBUS_LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 DBUS_CONFIGURE_ON=	--enable-dbus --enable-im-status
@@ -35,26 +34,20 @@ TRAY_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libnotify.pc:${PORTSDIR}/deve
 TRAY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
 TRAY_CONFIGURE_ENABLE=	tray-icon
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-.else
-CONFIGURE_ARGS+=--disable-nls
-.endif
+NLS_USES=		gettext
+NLS_CPPFLAGS=	-I${LOCALBASE}/include
+NLS_LDFLAGS=	-L${LOCALBASE}/lib
+NLS_CONFIGURE_ENABLE=	nls
 
-.if ${PORT_OPTIONS:MGCONF}
-USE_GNOME+=	gconf2
-CONFIGURE_ARGS+=--enable-gconf
-.endif
+GCONF_USE=	GNOME=gconf2
+GCONF_CONFIGURE_ENABLE=	gconf
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|serviceentrydir = @serviceentrydir@|serviceentrydir = ${PREFIX}/share/dbus-1/services|' \
 		${WRKSRC}/Makefile.in
-.if empty(PORT_OPTIONS:MNLS)
+post-patch-NLS-off:
 	@${REINPLACE_CMD} -e 's|SUBDIRS = src po|SUBDIRS = src|' \
 		${WRKSRC}/Makefile.in
-.endif
 
 post-install:
 	${CP} ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps

@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pySpeex-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 DIST_SUBDIR=	python
 
-MAINTAINER=	cjg@bsdmail.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings for the Speex compressor/decompressor audio codec
 
 BUILD_DEPENDS=	pyrex>=0.9.6.2:${PORTSDIR}/devel/pyrex

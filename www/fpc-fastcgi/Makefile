@@ -1,14 +1,14 @@
 # Created by: Christopher Key <cjk32@cam.ac.uk>
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www lang
 PKGNAMESUFFIX=	-fastcgi
 
 MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal fastcgi unit
 
-USE_FPC=	fpmkunit
+USE_FPC=	fcl-process fpmkunit hash paszlib
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

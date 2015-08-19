@@ -11,7 +11,6 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	High-performance non-validating XML parser written in 100% pure Ruby
 
-NO_LATEST_LINK=	yes
 USE_RUBY=	yes
 
 NO_BUILD=	yes

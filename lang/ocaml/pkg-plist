@@ -288,8 +288,10 @@ lib/ocaml/dynlink.cmx
 lib/ocaml/dynlink.cmxa
 lib/ocaml/dynlink.mli
 %%THREADS%%lib/ocaml/event.mli
+@mode 0555
 lib/ocaml/expunge
 lib/ocaml/extract_crc
+@mode
 lib/ocaml/filename.cmi
 lib/ocaml/filename.cmx
 %%PROF%%lib/ocaml/filename.p.cmx

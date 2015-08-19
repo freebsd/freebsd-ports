@@ -16,9 +16,8 @@ COMMENT=	Quake II data files
 USES=		zip:infozip
 NO_WRKSUBDIR=	yes
 
-LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}
 DATADIR=	${Q2DIR}
-DOCSDIR=	${PREFIX}/share/doc/${LATEST_LINK}
+DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
 
 Q2_DEMO=	q2-314-demo-x86.exe
 Q2_SRC=		q2src${PORTVERSION:S|.||}.shar.Z

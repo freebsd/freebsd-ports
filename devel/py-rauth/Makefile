@@ -20,7 +20,6 @@ TEST_DEPENDS:=	${RUN_DEPENDS} \
 
 OPTIONS_DEFINE=	TESTS
 TESTS_DESC=	Install tools for unit testing
-OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	litl

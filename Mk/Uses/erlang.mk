@@ -65,18 +65,7 @@ ERLANG_COMPILE=	${REBAR_CMD}
 ERLANG_COMPILE=	${REBAR3_CMD}
 .endif
 
-.if !target(post-patch)
-post-patch: post-patch-erlang
-.endif
-
-.if !target(do-build)
-do-build: do-build-erlang
-.endif
-
-.if !target(do-install)
-do-install: do-install-erlang
-.endif
-
+_USES_patch+=	650:post-patch-erlang
 post-patch-erlang:
 	@${FIND} ${WRKSRC} -name .gitignore -delete
 # Attempt to remove all traces of {vsn, ....}; replace with actual PORTVERSION
@@ -99,7 +88,8 @@ post-patch-erlang:
 	fi
 	@${RM} -f ${WRKSRC}/src/*.orig ${WRKSRC}/include/*.orig
 
-do-build-erlang:
+.if !target(do-build)
+do-build:
 # This will cause calls to local rebar and rebar3 to fail; makes it easier to spot them
 	@${RM} -f ${WRKSRC}/rebar ${WRKSRC}/rebar3
 .for target in ${REBAR_TARGETS}
@@ -107,8 +97,10 @@ do-build-erlang:
 	@${RM} ${WRKSRC}/rebar.lock
 	@cd ${WRKSRC} && REBAR_PROFILE=${REBAR_PROFILE} ${ERLANG_COMPILE} ${target}
 .endfor
+.endif # !target(do-build)
 
-do-install-erlang:
+.if !target(do-install)
+do-install:
 	@${MKDIR} ${STAGEDIR}${ERL_APP_ROOT}
 	@${MKDIR} ${STAGEDIR}${ERL_APP_ROOT}/src
 	cd ${WRKSRC}/src && ${COPYTREE_SHARE} \* ${STAGEDIR}${ERL_APP_ROOT}/src
@@ -141,5 +133,6 @@ do-install-erlang:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 .endif
+.endif # !target(do-install)
 
 .endif #!defined(_INCLUDE_USES_ERLANG_MK)

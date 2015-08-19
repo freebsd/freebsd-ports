@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	postfix-policyd-spf-python
-PORTVERSION=	1.2
+PORTVERSION=	1.3.1
 CATEGORIES=	mail python
-MASTER_SITES=	https://launchpadlibrarian.net/145855789/
+MASTER_SITES=	https://launchpad.net/pypolicyd-spf/1.3/1.3.1/+download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pypolicyd-spf-${PORTVERSION}
 
@@ -33,9 +33,6 @@ SUB_FILES=	pkg-message
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 
 OPTIONS_DEFINE=	DOCS
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${MV} ${WRKSRC}/policyd-spf.conf ${WRKSRC}/policyd-spf.conf.sample

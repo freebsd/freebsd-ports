@@ -307,6 +307,7 @@
     SUBDIR += libilbc
     SUBDIR += libkfbapi
     SUBDIR += libkvkontakte
+    SUBDIR += libmaia
     SUBDIR += libmateweather
     SUBDIR += libmaxminddb
     SUBDIR += libmediawiki
@@ -449,6 +450,7 @@
     SUBDIR += nxproxy
     SUBDIR += nyancat
     SUBDIR += nylon
+    SUBDIR += ocserv
     SUBDIR += ohphone
     SUBDIR += olsrd
     SUBDIR += omcmd
@@ -1055,6 +1057,8 @@
     SUBDIR += rubygem-epp-client-smallregistry
     SUBDIR += rubygem-fog-atmos
     SUBDIR += rubygem-fog-aws
+    SUBDIR += rubygem-fog-brightbox
+    SUBDIR += rubygem-fog-dynect
     SUBDIR += rubygem-fog-ecloud
     SUBDIR += rubygem-fog-google
     SUBDIR += rubygem-fog-local
@@ -1177,6 +1181,7 @@
     SUBDIR += spread4
     SUBDIR += sprinkle
     SUBDIR += sqtop
+    SUBDIR += srelay
     SUBDIR += ss5
     SUBDIR += ssldump
     SUBDIR += sslh

@@ -31,7 +31,6 @@ CONFIGURE_ARGS+=	--without-swig \
 .if defined(SVN_BUILD_BINDINGS)
 CONFLICTS_BUILD+=	${PORTNAME}-1.[^7].[0-9]*
 LIB_DEPENDS+=		libsvn_client-1.so:${PORTSDIR}/devel/subversion17
-OPTIONSFILE=		${PORT_DBDIR}/${PORTNAME}/options
 OPTIONS_NAME=		devel_subversion17
 .endif
 

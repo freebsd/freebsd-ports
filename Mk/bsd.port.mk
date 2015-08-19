@@ -74,9 +74,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Optional.
 # PKGVERSION	- Always defined as ${PORTVERSION}.
 #				  Do not define this in your Makefile.
-# UNIQUENAME	- A name for your port that is globally unique.  By default,
-#				  this is set to ${LATEST_LINK} when LATEST_LINK is set,
-#				  and to ${PKGNAMEPREFIX}${PORTNAME} otherwise.
 # DISTVERSION	- Vendor version of the distribution.
 #				  Default: ${PORTVERSION}
 # DISTNAME		- Name of port or distribution used in generating
@@ -705,6 +702,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # (which are available for every stage except checksum) or
 # override the do-* targets to do pretty much anything you want.
 #
+# The TARGET_ORDER_OVERRIDE variable can be set to multiple <priority>:<target>
+# to change the ordering of targets, have a look at the _SEQ variables at the
+# end of this file for the default order and priorities.
+#
 # NEVER override the "regular" targets unless you want to open
 # a major can of worms.
 #
@@ -888,7 +889,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  directories to be searched for shared libraries.
 #				  Otherwise, this is a list of directories to be added to that
 #				  list. The directory names are written to
-#				  ${LOCALBASE}/libdata/ldconfig/${UNIQUENAME} which is then
+#				  ${LOCALBASE}/libdata/ldconfig/${PKGBASE} which is then
 #				  used by the ldconfig startup script.
 #				  This mechanism replaces ldconfig scripts installed by some
 #				  ports, often under such names as 000.${UNQUENAME}.sh.
@@ -897,7 +898,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  version, and the directory list given will be ignored.
 # USE_LDCONFIG32
 # 				- Same as USE_LDCONFIG but the target file is
-# 				  ${LOCALBASE}/libdata/ldconfig32/${UNIQUENAME} instead.
+# 				  ${LOCALBASE}/libdata/ldconfig32/${PKGBASE} instead.
 # 				  Note: that should only be used on 64-bit architectures.
 #
 # DOCSDIR		- Name of the directory to install the packages docs in.
@@ -972,11 +973,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # ${TMPPLIST} is generated before the do-install stage.  If you are
 # generating the packing list on-the-fly, make sure it's generated before
 # do-install is called!
-#
-# For package:
-#
-# LATEST_LINK	- Install the "Latest" link for the package as ___.  Define
-#				  this if the "Latest" link name will be incorrectly determined.
 #
 # This is used in all stages:
 #
@@ -1248,12 +1244,6 @@ USERS_BLACKLIST=	_dhcp _pflogd auditdistd bin bind daemon games hast kmem mailnu
 LDCONFIG_DIR=	libdata/ldconfig
 LDCONFIG32_DIR=	libdata/ldconfig32
 
-.if defined(LATEST_LINK)
-UNIQUENAME?=	${LATEST_LINK}
-.else
-UNIQUENAME?=	${PKGNAMEPREFIX}${PORTNAME}
-.endif
-
 .endif
 
 # At least KDE needs TMPDIR for the package building,
@@ -1426,6 +1416,11 @@ UID!=	${ID} -u
 .endif
 
 DESTDIRNAME?=	DESTDIR
+
+# setup empty variables for USES targets
+.for target in sanity fetch extract patch configure build install package stage
+_USES_${target}?=
+.endfor
 
 # Loading features
 .for f in ${USES}
@@ -2562,8 +2557,7 @@ WRKDIR_PKGFILE=	${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX}
 # The "latest version" link -- ${PKGNAME} minus everthing after the last '-'
 PKGLATESTREPOSITORY?=	${PACKAGES}/Latest
 PKGBASE?=			${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
-LATEST_LINK?=		${PKGBASE}
-PKGLATESTFILE=		${PKGLATESTREPOSITORY}/${LATEST_LINK}${PKG_SUFX}
+PKGLATESTFILE=		${PKGLATESTREPOSITORY}/${PKGBASE}${PKG_SUFX}
 
 CONFIGURE_SCRIPT?=	configure
 CONFIGURE_CMD?=		./${CONFIGURE_SCRIPT}
@@ -2894,7 +2888,7 @@ DEPENDS_ARGS+=	NOCLEANDEPENDS=yes
 ################################################################
 .if ((!defined(OPTIONS_DEFINE) && !defined(OPTIONS_SINGLE) && !defined(OPTIONS_MULTI)) \
 	&& !defined(OPTIONS_GROUP) && !defined(OPTIONS_RADIO) \
-	|| defined(CONFIG_DONE_${UNIQUENAME:tu}) || \
+	|| defined(CONFIG_DONE_${PKGBASE:tu}) || \
 	defined(PACKAGE_BUILDING) || defined(BATCH))
 _OPTIONS_OK=yes
 .endif
@@ -3575,8 +3569,8 @@ install-ldconfig-file:
 	@${MKDIR} ${STAGEDIR}${LOCALBASE}/${LDCONFIG_DIR}
 .endif
 	@${ECHO_CMD} ${USE_LDCONFIG} | ${TR} ' ' '\n' \
-		> ${STAGEDIR}${LOCALBASE}/${LDCONFIG_DIR}/${UNIQUENAME}
-	@${ECHO_CMD} ${LOCALBASE}/${LDCONFIG_DIR}/${UNIQUENAME} >> ${TMPPLIST}
+		> ${STAGEDIR}${LOCALBASE}/${LDCONFIG_DIR}/${PKGBASE}
+	@${ECHO_CMD} ${LOCALBASE}/${LDCONFIG_DIR}/${PKGBASE} >> ${TMPPLIST}
 .endif
 .endif
 .endif
@@ -3587,8 +3581,8 @@ install-ldconfig-file:
 	@${MKDIR} ${STAGEDIR}${LOCALBASE}/${LDCONFIG32_DIR}
 .endif
 	@${ECHO_CMD} ${USE_LDCONFIG32} | ${TR} ' ' '\n' \
-		> ${STAGEDIR}${LOCALBASE}/${LDCONFIG32_DIR}/${UNIQUENAME}
-	@${ECHO_CMD} ${LOCALBASE}/${LDCONFIG32_DIR}/${UNIQUENAME} >> ${TMPPLIST}
+		> ${STAGEDIR}${LOCALBASE}/${LDCONFIG32_DIR}/${PKGBASE}
+	@${ECHO_CMD} ${LOCALBASE}/${LDCONFIG32_DIR}/${PKGBASE} >> ${TMPPLIST}
 .endif
 .endif
 .endif
@@ -5025,6 +5019,18 @@ OPTIONS_WRONG_MULTI+=	${multi}
 .  undef OPTNOCHECK
 .endfor
 .undef multi
+
+.for opt in ${PORT_OPTIONS}
+.  for conflict in ${${opt}_PREVENTS}
+.    if ${PORT_OPTIONS:M${conflict}}
+.      if empty(OPTIONS_WRONG_PREVENTS:M${opt})
+OPTIONS_WRONG_PREVENTS+=	${opt}
+.      endif
+OPTIONS_WRONG_PREVENTS_${opt}+=	${conflict}
+.    endif
+.  endfor
+.endfor
+.undef conflict
 .undef opt
 .endif #pre-check-config
 
@@ -5039,7 +5045,13 @@ _check-config: pre-check-config
 .for radio in ${OPTIONS_WRONG_RADIO}
 	@${ECHO_MSG} "====> You cannot select multiple options from the ${radio} radio"
 .endfor
-.if !empty(OPTIONS_WRONG_MULTI) || !empty(OPTIONS_WRONG_SINGLE) || !empty(OPTIONS_WRONG_RADIO)
+.if defined(OPTIONS_WRONG_PREVENTS)
+	@${ECHO_MSG} "====> Two or more enabled options conflict with each other"
+.  for prevents in ${OPTIONS_WRONG_PREVENTS}
+	@${ECHO_MSG} "=====> Option ${prevents} conflicts with ${OPTIONS_WRONG_PREVENTS_${prevents}} (select only one)"
+.  endfor
+.endif
+.if !empty(OPTIONS_WRONG_MULTI) || !empty(OPTIONS_WRONG_SINGLE) || !empty(OPTIONS_WRONG_RADIO) || !empty(OPTIONS_WRONG_PREVENTS)
 _CHECK_CONFIG_ERROR=	true
 .endif
 .endif # _check-config
@@ -5108,18 +5120,12 @@ do-config:
 	@${ECHO_MSG} "===> No options to configure"
 .else
 	@optionsdir=${OPTIONS_FILE:H}; \
-	oldoptionsdir=${OPTIONSFILE:H}; \
 	if [ ${UID} != 0 -a -z "${INSTALL_AS_USER}" -a ! -w "${PORT_DBDIR}" ] ; then \
 		${ECHO_MSG} "===>  Switching to root credentials to create $${optionsdir}"; \
-		(${SU_CMD} "${SH} -c \"if [ -d $${oldoptionsdir} -a ! -d $${optionsdir} ]; then ${MV} $${oldoptionsdir} $${optionsdir}; elif [ -d $${oldoptionsdir} -a -d $${optionsdir} ]; then ${RM} -rf $${oldoptionsdir} ; fi ; ${MKDIR} $${optionsdir} 2> /dev/null\"") || \
+		(${SU_CMD} "${SH} -c \"${MKDIR} $${optionsdir} 2> /dev/null\"") || \
 			(${ECHO_MSG} "===> Cannot create $${optionsdir}, check permissions"; exit 1); \
 		${ECHO_MSG} "===>  Returning to user credentials" ; \
 	else \
-	if [ -d $${oldoptionsdir} -a ! -d $${optionsdir} ]; then \
-		${MV} $${oldoptionsdir} $${optionsdir}; \
-	elif [ -d $${oldoptionsdir} -a -d $${optionsdir} ]; then \
-		${RM} -rf $${oldoptionsdir} ; \
-	fi ; \
 	${MKDIR} $${optionsdir} 2> /dev/null || \
 	(${ECHO_MSG} "===> Cannot create $${optionsdir}, check permissions"; exit 1) ; \
 	fi
@@ -5237,19 +5243,6 @@ showconfig-recursive:
 
 .if !target(rmconfig)
 rmconfig:
-.if exists(${OPTIONSFILE})
-	-@${ECHO_MSG} "===> Removing user-configured options for ${PKGNAME}"; \
-	optionsdir=${OPTIONSFILE:H}; \
-	if [ ${UID} != 0 -a "x${INSTALL_AS_USER}" = "x" -a ! -w "${OPTIONSFILE}" ]; then \
-		${ECHO_MSG} "===> Switching to root credentials to remove ${OPTIONSFILE} and $${optionsdir}"; \
-		${SU_CMD} "${RM} -f ${OPTIONSFILE} ; \
-			${RMDIR} $${optionsdir}"; \
-		${ECHO_MSG} "===> Returning to user credentials"; \
-	else \
-		${RM} -f ${OPTIONSFILE}; \
-		${RMDIR} $${optionsdir} 2>/dev/null || return 0; \
-	fi
-.endif
 .if exists(${OPTIONS_FILE})
 	-@${ECHO_MSG} "===> Removing user-configured options for ${PKGNAME}"; \
 	optionsdir=${OPTIONS_FILE:H}; \
@@ -5544,62 +5537,94 @@ _TARGETS_STAGES=	SANITY PKG FETCH EXTRACT PATCH CONFIGURE BUILD INSTALL PACKAGE 
 
 # Define the SEQ of actions to take when each target is ran, and which targets
 # it depends on before running its SEQ.
+#
+# Main target has a priority of 500, pre-target 300, post-target 700,
+# target-depends 150.  Other targets are spaced in between those
+#
+# If you change the pre-foo and post-foo values here, go and keep them in sync
+# in _OPTIONS_TARGETS in bsd.options.mk
 
-_SANITY_SEQ=	post-chroot pre-everything check-makefile \
-				show-warnings show-dev-warnings show-dev-errors \
-				check-categories check-makevars check-desktop-entries \
-				check-depends identify-install-conflicts check-deprecated \
-				check-vulnerable check-license check-config buildanyway-message \
-				options-message
+_SANITY_SEQ=	050:post-chroot 100:pre-everything 150:check-makefile \
+				200:show-warnings 210:show-dev-warnings 220:show-dev-errors \
+				250:check-categories 300:check-makevars \
+				350:check-desktop-entries 400:check-depends \
+				450:identify-install-conflicts 500:check-deprecated \
+				550:check-vulnerable 600:check-license 650:check-config \
+				700:buildanyway-message 750:options-message ${_USES_sanity}
 
 _PKG_DEP=		check-sanity
-_PKG_SEQ=		pkg-depends
+_PKG_SEQ=		500:pkg-depends
 _FETCH_DEP=		pkg
-_FETCH_SEQ=		fetch-depends pre-fetch ${_OPTIONS_pre_fetch} pre-fetch-script \
-				do-fetch fetch-specials post-fetch ${_OPTIONS_post_fetch} post-fetch-script
+_FETCH_SEQ=		150:fetch-depends 300:pre-fetch 450:pre-fetch-script \
+				500:do-fetch 550:fetch-specials 700:post-fetch \
+				850:post-fetch-script \
+				${_OPTIONS_fetch} ${_USES_fetch}
 _EXTRACT_DEP=	fetch
-_EXTRACT_SEQ=	check-build-conflicts extract-message checksum extract-depends \
-				clean-wrkdir ${WRKDIR} pre-extract ${_OPTIONS_pre_extract} pre-extract-script do-extract \
-				post-extract ${_OPTIONS_post_extract} post-extract-script
+_EXTRACT_SEQ=	010:check-build-conflicts 050:extract-message 100:checksum \
+				150:extract-depends 190:clean-wrkdir 200:${WRKDIR} \
+				300:pre-extract 450:pre-extract-script 500:do-extract \
+				700:post-extract 850:post-extract-script \
+				${_OPTIONS_extract} ${_USES_extract}
 _PATCH_DEP=		extract
-_PATCH_SEQ=		ask-license patch-message patch-depends pathfix dos2unix fix-shebang \
-				pre-patch ${_OPTIONS_pre_patch} \
-				pre-patch-script do-patch charsetfix-post-patch post-patch ${_OPTIONS_post_patch} post-patch-script
+_PATCH_SEQ=		050:ask-license 100:patch-message 150:patch-depends \
+				300:pre-patch 450:pre-patch-script 500:do-patch \
+				700:post-patch 850:post-patch-script \
+				${_OPTIONS_patch} ${_USES_patch}
 _CONFIGURE_DEP=	patch
-_CONFIGURE_SEQ=	build-depends lib-depends configure-message \
-				pre-configure ${_OPTIONS_pre_configure} pre-configure-script \
-				run-autotools do-autoreconf patch-libtool run-autotools-fixup do-configure \
-				post-configure ${_OPTIONS_post_configure} post-configure-script
+_CONFIGURE_SEQ=	150:build-depends 151:lib-depends 200:configure-message \
+				300:pre-configure 450:pre-configure-script 460:run-autotools \
+				490:run-autotools-fixup 500:do-configure 700:post-configure \
+				850:post-configure-script \
+				${_OPTIONS_configure} ${_USES_configure}
 _BUILD_DEP=		configure
-_BUILD_SEQ=		build-message pre-build ${_OPTIONS_pre_build} pre-build-script do-build \
-				post-build ${_OPTIONS_post_build} post-build-script
-
+_BUILD_SEQ=		100:build-message 300:pre-build 450:pre-build-script \
+				500:do-build 700:post-build 850:post-build-script \
+				${_OPTIONS_build} ${_USES_build}
 _STAGE_DEP=		build
-_STAGE_SEQ=		stage-message stage-dir run-depends lib-depends apply-slist pre-install ${_OPTIONS_pre_install} ${_OPTIONS_pre_stage} generate-plist \
-				pre-su-install
-# ${POST_PLIST} must be after anything that modifies TMPPLIST
-_STAGE_SEQ+=	create-users-groups do-install \
-				kmod-post-install fix-perl-things \
-				webplugin-post-install post-install ${_OPTIONS_post_install} post-install-script \
-				move-uniquefiles patch-lafiles post-stage ${_OPTIONS_post_stage} compress-man \
-				install-rc-script install-ldconfig-file install-license \
-				install-desktop-entries add-plist-info add-plist-docs \
-				add-plist-examples add-plist-data add-plist-post \
-				move-uniquefiles-plist ${POST_PLIST}
+# STAGE is special in its numbering as it has install and stage, so install is
+# the main, and stage goes after.
+_STAGE_SEQ=		050:stage-message 100:stage-dir 150:run-depends \
+				151:lib-depends 200:apply-slist 300:pre-install \
+				400:generate-plist 450:pre-su-install 475:create-users-groups \
+				500:do-install 550:kmod-post-install 700:post-install \
+				750:post-install-script 800:post-stage 850:compress-man \
+				860:install-rc-script 870:install-ldconfig-file \
+				880:install-license 890:install-desktop-entries \
+				900:add-plist-info 910:add-plist-docs 920:add-plist-examples \
+				930:add-plist-data 940:add-plist-post ${POST_PLIST:C/^/990:/} \
+				${_OPTIONS_install} ${_USES_install} \
+				${_OPTIONS_stage} ${_USES_stage}
 .if defined(DEVELOPER)
-_STAGE_SEQ+=	stage-qa
+_STAGE_SEQ+=	995:stage-qa
 .endif
 _INSTALL_DEP=	stage
-_INSTALL_SEQ=	install-message run-depends lib-depends check-already-installed
-_INSTALL_SUSEQ=	fake-pkg security-check
+_INSTALL_SEQ=	100:install-message 150:run-depends 151:lib-depends \
+				200:check-already-installed
+_INSTALL_SUSEQ=	300:fake-pkg 500:security-check
 
 _PACKAGE_DEP=	stage
-_PACKAGE_SEQ=	package-message pre-package ${_OPTIONS_pre_package} pre-package-script do-package ${_OPTIONS_post_package} post-package-script
+_PACKAGE_SEQ=	100:package-message 300:pre-package 450:pre-package-script \
+				500:do-package 850:post-package-script \
+				${_OPTIONS_package} ${_USES_package}
 
 # Enforce order for -jN builds
-
 .for _t in ${_TARGETS_STAGES}
-.  for s in ${_${_t}_SEQ}
+# Check if the port need to change the default order of some targets...
+.  if defined(TARGET_ORDER_OVERRIDE)
+_tmp_seq:=
+.    for _entry in ${_${_t}_SEQ}
+# for _target because :M${_target} does not work with fmake
+.      for _target in ${_entry:C/^[0-9]+://}
+.        if ${TARGET_ORDER_OVERRIDE:M*\:${_target}}
+_tmp_seq:=	${_tmp_seq} ${TARGET_ORDER_OVERRIDE:M*\:${_target}}
+.        else
+_tmp_seq:=	${_tmp_seq} ${_entry}
+.        endif
+.      endfor
+.    endfor
+_${_t}_SEQ:=	${_tmp_seq}
+.  endif
+.  for s in ${_${_t}_SEQ:O:C/^[0-9]+://}
 .    if target(${s})
 .      if ! ${NOTPHONY:M${s}}
 _PHONY_TARGETS+= ${s}
@@ -5607,7 +5632,7 @@ _PHONY_TARGETS+= ${s}
 _${_t}_REAL_SEQ+=	${s}
 .    endif
 .  endfor
-.  for s in ${_${_t}_SUSEQ}
+.  for s in ${_${_t}_SUSEQ:O:C/^[0-9]+://}
 .    if target(${s})
 .      if ! ${NOTPHONY:M${s}}
 _PHONY_TARGETS+= ${s}
@@ -5634,7 +5659,7 @@ _PHONY_TARGETS+= ${target}
 ${target}: ${${target:tu}_COOKIE}
 .elif !target(${target})
 ${target}: config-conditional
-	@cd ${.CURDIR} && ${MAKE} CONFIG_DONE_${UNIQUENAME:tu}=1 ${${target:tu}_COOKIE}
+	@cd ${.CURDIR} && ${MAKE} CONFIG_DONE_${PKGBASE:tu}=1 ${${target:tu}_COOKIE}
 .elif target(${target}) && defined(IGNORE)
 .endif
 

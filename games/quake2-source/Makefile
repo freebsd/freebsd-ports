@@ -25,8 +25,6 @@ XATRIX_DESC=	Reckoning (Xatrix) mission pack source
 
 OPTIONS_SUB=	yes
 
-LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}
-
 DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX}${PORTNAME}
 
 .include <bsd.port.options.mk>

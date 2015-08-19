@@ -22,7 +22,6 @@ BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4
 
 CONFLICTS=		heimdal-[0-9]* srp-[0-9]* krb5-[0-9]* krb5-maint-111-*
 
-LATEST_LINK=		${PORTNAME}-112
 KERBEROSV_URL=		http://web.mit.edu/kerberos/
 USE_PERL5=		build
 USE_LDCONFIG=		yes
