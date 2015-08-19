@@ -48,19 +48,13 @@ OPUS_CONFIGURE_ENABLE=	opus
 SPEEX_LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex
 SPEEX_CONFIGURE_ENABLE=	speex
 
-.include <bsd.port.options.mk>
-
 NLS_USES=		gettext-runtime
 
-.if ${PORT_OPTIONS:MGTK2}
-USE_GNOME+=	gtk20
-CONFIGURE_ARGS+=--with-gtk2
-.endif
+GTK2_USE=	GNOME=gtk20
+GTK2_CONFIGURE_ON=--with-gtk2
 
-.if ${PORT_OPTIONS:MGTK3}
-USE_GNOME+=	gtk30
-CONFIGURE_ARGS+=--without-gtk2
-.endif
+GTK3_USE=	GNOME=gtk30
+GTK3_CONFIGURE_ON=--without-gtk2
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

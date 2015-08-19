@@ -25,7 +25,7 @@ USE_JAVA=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
+DOCS_DISTFILES=	${PORTNAME}_manual_en.pdf:docs
 
 FDCJ_MANUAL=	${PORTNAME}_manual_en.pdf
 
@@ -33,13 +33,8 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${MKDIR} ${STAGEDIR}${DATADIR}; \
 	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}.jar ${STAGEDIR}${DATADIR}/
-.if ${PORT_OPTIONS:MDOCS}
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR} && \
 	${INSTALL_DATA} ${DISTDIR}/${FDCJ_MANUAL} ${STAGEDIR}${DOCSDIR}/
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-DISTFILES+=	${PORTNAME}_manual_en.pdf:docs
-.endif
 
 .include <bsd.port.mk>

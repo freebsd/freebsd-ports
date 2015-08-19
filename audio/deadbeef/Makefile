@@ -73,6 +73,7 @@ PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
 
 GUI_USE=	gnome=gtk20,glib20
 GUI_CONFIGURE_OFF=	--disable-gtkui --disable-gtk3
+GUI_IMPLIES=		CONVERTER
 
 VFS_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 VFS_CONFIGURE_OFF=	--disable-vfs-curl
@@ -84,6 +85,7 @@ ART_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 			libImlib2.so:${PORTSDIR}/graphics/imlib2
 ART_USES=		jpeg
 ART_CONFIGURE_OFF=	--disable-artwork --disable-artwork-imlib2
+ART_IMPLIES=		VFS
 
 SUPEREQ_CONFIGURE_OFF=	--disable-supereq
 
@@ -167,16 +169,6 @@ ALAC_CONFIGURE_OFF=		--disable-alac
 PLTBROWSER_CONFIGURE_OFF=	--disable-pltbrowser
 
 WMA_CONFIGURE_OFF=		--disable-wma
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MART} && ! ${PORT_OPTIONS:MVFS}
-BROKEN=		VFS plugin required for album art loader, please rerun 'make config' and either disable ART or enable VFS
-.endif
-
-.if ${PORT_OPTIONS:MCONVERTER} && ! ${PORT_OPTIONS:MGUI}
-BROKEN=		CONVERTER plugin required for gui, please rerun 'make config' and either disable CONVERTER or enable GUI
-.endif
 
 post-patch:
 # Do not link to libsupc++ which may be PIC-unsafe (breaks 64-bit arches)

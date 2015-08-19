@@ -22,20 +22,16 @@ MAKE_ENV+=	OUT=-o
 OPTIONS_DEFINE=	IPV6
 IPV6_PLIST_FILES=	bin/netio6
 
-.include <bsd.port.options.mk>
-
 do-build:
 	@(cd ${WRKSRC} && \
 	${SETENV} ${MAKE_ENV} O=.o CFLAGS="${CFLAGS}" ${MAKE_CMD} all)
-.if ${PORT_OPTIONS:MIPV6}
+do-build-IPV6-on:
 	@(cd ${WRKSRC} && \
 	${MAKE_ENV} O=.6o X=6 CFLAGS="${CFLAGS} -DUSE_IPV6" ${MAKE_CMD} all)
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/netio ${STAGEDIR}${PREFIX}/bin
-.if ${PORT_OPTIONS:MIPV6}
+do-install-IPV6-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/netio6 ${STAGEDIR}${PREFIX}/bin
-.endif
 
 .include <bsd.port.mk>

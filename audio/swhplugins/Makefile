@@ -27,26 +27,17 @@ USE_LDCONFIG=	yes
 CFLAGS+=	-fPIC -DPIC
 
 OPTIONS_DEFINE=	NLS 3DNOW SSE
+OPTIONS_SUB=	yes
 3DNOW_DESC=	use 3DNow! instructions
 SSE_DESC=	use SSE instructions
 
-.include <bsd.port.options.mk>
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-LDFLAGS+=	-lintl
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_USES=	gettext
+NLS_LDFLAGS=	-lintl
+NLS_CONFIGURE_ENABLE=	nls
 
-.if ${PORT_OPTIONS:M3DNOW}
-CONFIGURE_ARGS+=	--enable-3dnow
-.endif
+3DNOW_CONFIGURE_ENABLE=	3dnow
 
-.if ${PORT_OPTIONS:MSSE}
-CONFIGURE_ARGS+=	--enable-sse
-.endif
+SSE_CONFIGURE_ENABLE=	sse
 
 post-patch:
 	@${REINPLACE_CMD} -e \

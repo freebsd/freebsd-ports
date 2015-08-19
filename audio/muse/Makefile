@@ -37,15 +37,12 @@ SNDFILE_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 X11_USE=		GNOME=gtk20
 X11_CONFIGURE_OFF=	--without-x --with-rubik
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|machine/soundcard.h|sys/soundcard.h|' \
 		${WRKSRC}/src/portaudio/pa_unix_oss.c
-.if empty(PORT_OPTIONS:MSNDFILE)
+post-patch-SNDFILE-off:
 	@${REINPLACE_CMD} -e '/sndfile >=/s|$$PKG_CONFIG|${FALSE}|' \
 		${WRKSRC}/configure
-.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

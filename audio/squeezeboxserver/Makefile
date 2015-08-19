@@ -44,28 +44,14 @@ USERS=		${SLIMUSER}
 GROUPS=		${SLIMGROUP}
 USES=		perl5 tar:tgz
 
-.include <bsd.port.pre.mk>
-
 USE_MYSQL=	server
 
-.if ${PORT_OPTIONS:MAPE}
-RUN_DEPENDS+=	mac:${PORTSDIR}/audio/mac
-.endif
-.if ${PORT_OPTIONS:MFAAD}
-RUN_DEPENDS+=	faad:${PORTSDIR}/audio/faad
-.endif
-.if ${PORT_OPTIONS:MFLAC}
-RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
-.endif
-.if ${PORT_OPTIONS:MLAME}
-RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
-.endif
-.if ${PORT_OPTIONS:MSHORTEN}
-RUN_DEPENDS+=	shorten:${PORTSDIR}/audio/shorten
-.endif
-.if ${PORT_OPTIONS:MSOX}
-RUN_DEPENDS+=	sox:${PORTSDIR}/audio/sox
-.endif
+APE_RUN_DEPENDS=	mac:${PORTSDIR}/audio/mac
+FAAD_RUN_DEPENDS=	faad:${PORTSDIR}/audio/faad
+FLAC_RUN_DEPENDS=	flac:${PORTSDIR}/audio/flac
+LAME_RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame
+SHORTEN_RUN_DEPENDS=	shorten:${PORTSDIR}/audio/shorten
+SOX_RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox
 
 USE_RC_SUBR=	squeezeboxserver
 TMP_SLIMDIR=	${WRKDIR}/_squeezeboxserver
@@ -187,10 +173,9 @@ do-build:
 .for _CONF in ${CONFFILES}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${_CONF} ${TMP_SLIMDIR}/${_CONF}.sample
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
+do-build-DOCS-on:
 	@${MKDIR} ${TMP_DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCFILES} ${TMP_DOCSDIR}
-.endif
 
 pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
@@ -208,9 +193,8 @@ do-install:
 	    ${LOCALBASE}/share/mysql/english/errmsg.sys \
 	    ${STAGEDIR}${PREFIX}/${SLIMDIR}/MySQL/
 	@${INSTALL_SCRIPT} ${WRKDIR}/softsqueeze.sh ${STAGEDIR}${PREFIX}/bin/softsqueeze
-.if ${PORT_OPTIONS:MDOCS}
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${TMP_DOCSDIR} && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

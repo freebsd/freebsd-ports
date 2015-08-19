@@ -29,6 +29,7 @@ CXXFLAGS+=	-I${LOCALBASE}/include \
 		-L${LOCALBASE}/lib
 
 NO_ARCH=	yes
+NO_BUILD=	yes
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	JAVASCRIPT DOXYGEN DOCS
@@ -38,19 +39,13 @@ JAVASCRIPT_DESC=Enable javascript support
 JAVASCRIPT_LIB_DEPENDS=	libv8.so:${PORTSDIR}/lang/v8 \
 			libshp.so:${PORTSDIR}/devel/shapelib \
 			libicuuc.so:${PORTSDIR}/devel/icu
-.include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOXYGEN} && ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
-.endif
+DOXYGEN_IMPLIES=	DOCS
+DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 
-do-build:
-.if ${PORT_OPTIONS:MDOXYGEN} && ${PORT_OPTIONS:MDOCS}
+do-build-DOXYGEN-on:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKR_ARGS} doc
-.else
-	${TRUE}
-.endif
 
 regression-test:
 	cd ${WRKSRC}/test && ${SETENV} ${MAKE_ENV} ${SH} run_tests.sh
@@ -59,10 +54,9 @@ do-install:
 	cd ${WRKSRC}/include && ${COPYTREE_SHARE} '${PORTNAME} ${PORTNAME}.hpp' \
 		${STAGEDIR}${PREFIX}/include/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.if ${PORT_OPTIONS:MDOXYGEN}
-	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR}/
-.endif
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/THANKS \
 		${WRKSRC}/NOTES_FOR_DEVELOPERS ${STAGEDIR}${DOCSDIR}/
+do-install-DOXYGEN-on:
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

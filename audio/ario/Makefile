@@ -34,21 +34,11 @@ INSTALL_TARGET=	install-strip
 OPTIONS_DEFINE=	AVAHI NLS
 AVAHI_DESC=	Zeroconf support (Avahi)
 
-.include <bsd.port.options.mk>
+AVAHI_LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
+AVAHI_CONFIGURE_ENABLE=	avahi
 
-.if ${PORT_OPTIONS:MAVAHI}
-LIB_DEPENDS+=	libavahi-client.so:${PORTSDIR}/net/avahi-app
-CONFIGURE_ARGS+=	--enable-avahi
-.else
-CONFIGURE_ARGS+=	--disable-avahi
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-CONFIGURE_ARGS+=	--enable-nls
-.else
-CONFIGURE_ARGS+=	--disable-nls
-.endif
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|glib/gslist.h|glib.h|g ; \

@@ -31,8 +31,6 @@ PORTDOCS=	CHANGES CONTRIBUTORS.md Devices.md Documentation.md FAQ.md Gateways.md
 		NCID-API.odt NCID-SDK.md NCID_Documentation.md README.docdir ReleaseNotes.md \
 		TODO.md Verbose.md mk-epub ncid-1.jpg
 
-.include <bsd.port.options.mk>
-
 post-extract:
 	cd ${WRKSRC}/FreeBSD;for i in *.rc; do \
 		x=`echo $$i | cut -f 1 -d .`; ${CP} $$i $$x; done
@@ -74,15 +72,14 @@ ncid-alert ncid-yac ncid-initmodem ncid-notify ncid-wakeup
 ncid-page ncid-samba ncid-speak ncid-yac ncid-initmodem
 	${INSTALL_DATA} ${WRKSRC}/FreeBSD/${i} ${STAGEDIR}${PREFIX}/etc/rc.d
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for j in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${j} ${STAGEDIR}${DOCSDIR}
-.endfor
-.endif
 	${INSTALL_MAN} ${WRKSRC}/man/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/man/*.5 ${STAGEDIR}${MAN5PREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/man/*.7 ${STAGEDIR}${MAN7PREFIX}/man/man7
 	${INSTALL_MAN} ${WRKSRC}/man/*.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
+do-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for j in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/doc/${j} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>

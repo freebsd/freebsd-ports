@@ -26,45 +26,24 @@ CONFIGURE_ARGS=	--disable-dependency-tracking --disable-boost
 
 OPTIONS_DEFINE=	ANDROID_DB OPENPHRASE_DB OPENCC
 OPTIONS_DEFAULT=	ANDROID_DB
+OPTIONS_SUB=	yes
 ANDROID_DB_DESC=	Build Android DB
 OPENPHRASE_DB_DESC=	Build Open Phrase DB
 OPENCC_DESC=		Use opencc for simplified and traditional Chinese conversion
 
-.include <bsd.port.options.mk>
-
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MANDROID_DB}
-CONFIGURE_ARGS+=	--enable-db-android
-PLIST_SUB+=	ANDROID_DB=""
-.else
-CONFIGURE_ARGS+=	--disable-db-android
-PLIST_SUB+=	ANDROID_DB="@comment "
-.endif
+ANDROID_DB_CONFIGURE_ENABLE=	db-android
 
 OPENPHRASE_DBVER=	1.0.0
 OPENPHRASE_DBFILE=	pyzy-database-${OPENPHRASE_DBVER}.tar.bz2
 
-.if ${PORT_OPTIONS:MOPENPHRASE_DB}
-CONFIGURE_ARGS+=	--enable-db-open-phrase
-DISTFILES+=	${OPENPHRASE_DBFILE}
-PLIST_SUB+=	OPENPHRASE_DB=""
-.else
-CONFIGURE_ARGS+=	--disable-db-open-phrase
-PLIST_SUB+=	OPENPHRASE_DB="@comment "
-.endif
+OPENPHRASE_DB_CONFIGURE_ENABLE=	db-open-phrase
+OPENPHRASE_DB_DISTFILES=	${OPENPHRASE_DBFILE}
 
-.if ${PORT_OPTIONS:MOPENCC}
-CONFIGURE_ARGS+=	--enable-opencc
-LIB_DEPENDS+=		libopencc.so:${PORTSDIR}/chinese/opencc
-.else
-CONFIGURE_ARGS+=	--disable-opencc
-.endif
+OPENCC_CONFIGURE_ENABLE=	opencc
+OPENCC_LIB_DEPENDS=		libopencc.so:${PORTSDIR}/chinese/opencc
 
-post-extract:
-.if ${PORT_OPTIONS:MOPENPHRASE_DB}
+post-extract-OPENPHRASE_DB-on:
 	@${CP} ${DISTDIR}/${OPENPHRASE_DBFILE} ${WRKSRC}/data/db/open-phrase
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' ${WRKSRC}/Makefile.in
@@ -72,4 +51,4 @@ post-patch:
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}-1.0.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
