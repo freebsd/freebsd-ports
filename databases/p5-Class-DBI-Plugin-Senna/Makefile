@@ -23,6 +23,5 @@ do-configure:
 	cd ${CONFIGURE_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} \
 		${PERL5} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
-.endif
 
 .include <bsd.port.mk>
