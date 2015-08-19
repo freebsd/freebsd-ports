@@ -136,6 +136,7 @@
     SUBDIR += pear-Horde_Compress_Fast
     SUBDIR += pear-Horde_Pack
     SUBDIR += pear-PHP_Archive
+    SUBDIR += peazip
     SUBDIR += pecl-lzf
     SUBDIR += pecl-phk
     SUBDIR += pecl-rar
