@@ -7,7 +7,7 @@ CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	trevor@bitba.se
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WSGI request delegation (a.k.a. routing)
 
 LICENSE=	MIT
