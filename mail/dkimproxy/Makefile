@@ -6,7 +6,7 @@ PORTVERSION=	1.4.1
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
-MAINTAINER=	yanagisawa@csg.is.titech.ac.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DKIM filter for Postfix
 
 LICENSE=	GPLv2
