@@ -8,7 +8,7 @@ CATEGORIES=	shells
 MASTER_SITES=	http://www.softintegration.com/download/software/release/FreeBSD/
 DISTNAME=	chstandard-${PORTVERSION}.freebsd9.0
 
-MAINTAINER=	conrads@cox.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Embeddable C/C++ interpreter/shell
 
 IA32_BINARY_PORT=	yes
