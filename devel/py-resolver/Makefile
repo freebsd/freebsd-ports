@@ -8,7 +8,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	trevor@bitba.se
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Resolve specially formatted statements to Python objects
 
 LICENSE=	LGPL21
