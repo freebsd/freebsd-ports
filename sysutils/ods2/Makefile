@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.lugs.ch/~dussuett/
 DISTNAME=	ods2
 
-MAINTAINER=	dussuett@wigwam.ethz.ch
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for manipulating ODS-2 filesystems
 
 USES=		zip
