@@ -8,7 +8,7 @@ MASTER_SITES=	http://download.blender.org/documentation/
 PKGNAMESUFFIX=	-doc
 DISTFILES=	BlenderManualIen.23.html.tar.gz BlenderManualIIen.23.html.tar.gz
 
-MAINTAINER=	siegerstein@pochta.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Blender Documentation
 
 NO_WRKSUBDIR=	yes
