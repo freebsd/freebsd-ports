@@ -36,14 +36,11 @@ DAP_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 DOXYGEN_BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
 DOXYGEN_CONFIGURE_OFF=	--disable-doxygen
 DOXYGEN_CONFIGURE_ON=	--enable-doxygen
+DOXYGEN_PORTDOCS=	*
 SZIP_LIB_DEPENDS=	libsz.so:${PORTSDIR}/science/szip
 SZIP_LIBS=		-lsz
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOXYGEN}
-PORTDOCS=	*
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl ||g' ${WRKSRC}/configure
