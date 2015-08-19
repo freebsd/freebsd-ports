@@ -8,7 +8,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	fbsd@meersau.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple nested template engine for HTML, XML and XHTML
 
 RUN_DEPENDS=	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy
