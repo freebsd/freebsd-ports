@@ -13,11 +13,10 @@ COMMENT=	.NET build tool inspired by Ant
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-BROKEN=		Fails to build with mono 4
-
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 INSTALL_TARGET=	install destdir=${STAGEDIR} prefix=${PREFIX}
+MAKE_ARGS=	MCS=mcs MONO='mono --runtime=v4.0' TARGET=mono-4.0
 MAKE_JOBS_UNSAFE=	yes
 USES=		gmake mono pkgconfig
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
