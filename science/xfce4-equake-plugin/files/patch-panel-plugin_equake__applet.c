@@ -1,8 +1,6 @@
-Avoid warning during compilation stage.
-
---- ./panel-plugin/equake_applet.c.orig	2013-07-20 00:56:31.000000000 +0000
-+++ ./panel-plugin/equake_applet.c	2013-07-20 15:58:24.000000000 +0000
-@@ -907,7 +907,7 @@
+--- panel-plugin/equake_applet.c.orig	2015-08-18 21:05:07 UTC
++++ panel-plugin/equake_applet.c
+@@ -887,7 +887,7 @@ static void set_properties_from_dialog(i
  static void display_about_dialog(XfcePanelPlugin *applet, struct Equake_Data *equakedata)
  {
    GtkWidget *about;
@@ -11,7 +9,7 @@ Avoid warning during compilation stage.
  
    about=gtk_about_dialog_new();
    if(about!=NULL)
-@@ -919,7 +919,7 @@
+@@ -899,7 +899,7 @@ static void display_about_dialog(XfcePan
      gtk_about_dialog_set_license((GtkAboutDialog*)about,LICENSE);
      gtk_about_dialog_set_website((GtkAboutDialog*)about,WEBSITE);
      gtk_about_dialog_set_website_label((GtkAboutDialog*)about,WEBSITELABEL);

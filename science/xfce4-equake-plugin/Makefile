@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-equake-plugin
-PORTVERSION=	1.3.7
+PORTVERSION=	1.3.8
 CATEGORIES=	science xfce
 MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=	gettext pkgconfig gmake libtool xfce tar:bzip2
+USES=	gettext gmake libtool pkgconfig tar:bzip2 xfce
 USE_GNOME=	glib20 gtk20 intltool intlhack
 USE_XFCE=	panel
 USE_XORG=	x11
