@@ -8,7 +8,7 @@ MASTER_SITES=	https://launchpad.net/procenv/trunk/${PORTVERSION}/+download/ \
 		http://people.canonical.com/~jhunt/debian/procenv/${PORTVERSION}/ \
 		DEBIAN
 
-MAINTAINER=	james.hunt@ubuntu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to show process environment
 
 LICENSE=	GPLv3
