@@ -7,7 +7,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF/kbedic/Dictionary%20Data/1.0
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	todorov@freebsd-bg.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data (dictionary) files for the kbedic and cbedic ports
 
 NO_BUILD=	yes
