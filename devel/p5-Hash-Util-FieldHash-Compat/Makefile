@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Hash-Util-FieldHash-Compat
-PORTVERSION=	0.08
-PORTREVISION=	2
+PORTVERSION=	0.09
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +13,9 @@ COMMENT=	Use Hash::Util::FieldHash or ties, depending on availability
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Tie-RefHash-Weak>=0.08:${PORTSDIR}/devel/p5-Tie-RefHash-Weak
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	p5-Module-Metadata>=1.000027:${PORTSDIR}/devel/p5-Module-Metadata \
+		p5-Tie-RefHash-Weak>=0.08:${PORTSDIR}/devel/p5-Tie-RefHash-Weak
+RUN_DEPENDS=	p5-Tie-RefHash-Weak>=0.08:${PORTSDIR}/devel/p5-Tie-RefHash-Weak
 
 NO_ARCH=	yes
 USES=		perl5
