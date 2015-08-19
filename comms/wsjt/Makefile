@@ -21,7 +21,7 @@ WSJT_DEPENDS=	${PYTHON_LIBDIR}/tkinter:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/PIL:${PORTSDIR}/graphics/py-pillow \
 		${PYNUMPY}
 BUILD_DEPENDS=	${WSJT_DEPENDS}
-RUN_DEPENDS=	${LINUXBASE}/bin/kvasd:${PORTSDIR}/comms/kvasd \
+RUN_DEPENDS=	kvasd:${PORTSDIR}/comms/kvasd \
 		${WSJT_DEPENDS}
 
 USE_GCC=	yes
@@ -95,7 +95,6 @@ do-build:
 	(cd ${WRKSRC};${GMAKE})
 
 post-configure:
-	echo ZZZ post-configure
 	${REINPLACE_CMD} -e 's|f2py|f2py-${PYTHON_VER}|' \
 	    ${WRKSRC}/Makefile
 
