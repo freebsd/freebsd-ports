@@ -7823,3 +7823,4 @@ www/ismail||2015-08-08|Has expired: Development has been discontinued for many y
 sysutils/rubygem-bundler17||2015-08-13|Has expired: not used by other ports anymore
 sysutils/fpkg||2015-08-15|Has expired: Does not support pkg(8)
 games/galaxymage||2015-08-16|Has expired: Runtime broken and abandoned upstream
+devel/rubygem-fog-brightbox|net/rubygem-fog-brightbox|2015-08-19|Move to a better place
