@@ -16,6 +16,8 @@ LICENSE=	GPLv2
 OPTIONS_DEFINE=	CGRIBEX HDF5 JASPER NETCDF PROJ SZIP UDUNITS
 OPTIONS_DEFAULT=CGRIBEX HDF5 JASPER NETCDF PROJ SZIP UDUNITS
 OPTIONS_SUB=	yes
+HDF5_IMPLIES=	SZIP
+NETCDF_IMPLIES=	HDF5
 
 PORTSCOUT=	site:https://code.zmaw.de/projects/cdo/files
 
@@ -54,16 +56,6 @@ SZIP_LIB_DEPENDS=	libsz.so:${PORTSDIR}/science/szip
 UDUNITS_CONFIGURE_OFF=	--without-udunits2
 UDUNITS_CONFIGURE_ON=	--with-udunits2=${LOCALBASE}
 UDUNITS_LIB_DEPENDS=	libudunits2.so:${PORTSDIR}/science/udunits
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MHDF5} && !${PORT_OPTIONS:MSZIP}
-IGNORE=		HDF5 option requires SZIP option
-.endif
-
-.if ${PORT_OPTIONS:MNETCDF} && !${PORT_OPTIONS:MHDF5}
-IGNORE=		NETCDF option requires HDF5 option
-.endif
 
 .include <bsd.port.pre.mk>
 
