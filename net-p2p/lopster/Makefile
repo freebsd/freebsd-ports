@@ -8,7 +8,7 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	SF \
 		http://lopster.sourceforge.net/download/
 
-MAINTAINER=	conrads@cox.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ client for Napster and free alternatives
 
 GNU_CONFIGURE=	yes
