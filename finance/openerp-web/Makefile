@@ -8,7 +8,7 @@ CATEGORIES=	finance python
 MASTER_SITES=	http://openerp.com/download/stable/source/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	borja@pexego.es
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenERP Web Client
 
 BROKEN=		No public distfiles
