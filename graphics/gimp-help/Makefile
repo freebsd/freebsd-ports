@@ -5,16 +5,13 @@ PORTNAME=	gimp-help
 PORTVERSION=	2.8.1
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-html
-DISTFILES=	# none
 
 MAINTAINER=	liangtai.s16@gmail.com
 COMMENT=	The meta port for GIMP User Manual
 
 LICENSE=	GFDL
 
-NO_BUILD=	yes
-NO_INSTALL=	yes
-NO_MTREE=	yes
+USES=		metaport
 
 LANG_ALL_HTML=	ca da de el en en_GB es fr it ja ko nl nn \
 		pt_BR ru sl sv zh_CN
