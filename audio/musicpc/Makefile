@@ -27,14 +27,9 @@ PLIST_FILES=	bin/mpc man/man1/mpc.1.gz
 PORTDOCS=	AUTHORS README NEWS
 PORTEXAMPLES=	*
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MICONV}
-USES+=		iconv
-LDFLAGS+=	${ICONV_LIB}
-.else
-CONFIGURE_ARGS+=--disable-iconv
-.endif
+ICONV_USES=		iconv
+ICONV_LDFLAGS=	${ICONV_LIB}
+ICONV_CONFIGURE_ENABLE=	iconv
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lintl|${ICONV_LIB}|g' ${WRKSRC}/configure

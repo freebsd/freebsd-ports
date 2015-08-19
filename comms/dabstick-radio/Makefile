@@ -63,10 +63,9 @@ do-install:
 		${WRKSRC}/dabreceiver-V2/dabreceiver \
 		${WRKSRC}/spectrum-viewer/spectrum-viewer \
 		${STAGEDIR}${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/dabreceiver-V2 ${STAGEDIR}${DOCSDIR}/fmreceiver-dab
 	${INSTALL_DATA} ${WRKSRC}/dabreceiver-V2/README ${STAGEDIR}${DOCSDIR}/dabreceiver-V2
 	${INSTALL_DATA} ${WRKSRC}/fmreceiver-dab/README ${STAGEDIR}${DOCSDIR}/fmreceiver-dab
-.endif
 
 .include <bsd.port.mk>

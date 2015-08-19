@@ -33,11 +33,7 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-bin-${DISTVERSION}
 
 python_OLD_CMD=	/usr/bin/env python
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-DISTFILES+=	${PORTNAME}-pdf-${DISTVERSION:S,a,,}.tar.gz
-.endif
+DOCS_DISTFILES=	${PORTNAME}-pdf-${DISTVERSION:S,a,,}.tar.gz
 
 post-patch:
 	@(cd ${WRKSRC} && \

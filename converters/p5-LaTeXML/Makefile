@@ -38,16 +38,13 @@ PORTDOCS=		Changes INSTALL MANIFEST README manual.pdf
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-install:
 	${FIND} ${STAGEDIR}/${PREFIX} -name .packlist | \
 		${XARGS} ${REINPLACE_CMD} -e 's|^${STAGEDIR}||'
 	${RM} ${STAGEDIR}${PREFIX}/share/texmf-local/tex/latex/latexml/.packlist.bak
 
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

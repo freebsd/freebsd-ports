@@ -17,18 +17,11 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 gnomeprefix
 
 OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext iconv
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--enable-nls
-PLIST_SUB=		NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB=		NLS="@comment "
-.endif
+NLS_USES=		gettext iconv
+NLS_CPPFLAGS=	-I${LOCALBASE}/include
+NLS_LDFLAGS=	-L${LOCALBASE}/lib
+NLS_CONFIGURE_ENABLE=	nls
 
 .include <bsd.port.mk>

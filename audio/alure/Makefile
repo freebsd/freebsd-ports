@@ -49,21 +49,18 @@ SNDFILE_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 SNDFILE_CMAKE_ON=	-DSNDFILE:BOOL=TRUE
 SNDFILE_CMAKE_OFF=	-DSNDFILE:BOOL=FALSE
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|lib$${LIB_SUFFIX}/pkgconfig|libdata/pkgconfig|' \
 		-e 's|LIBFLAC_LIBRARIES|FLAC_LIBRARIES|' \
 		${WRKSRC}/CMakeLists.txt
 
-.if ${PORT_OPTIONS:MDOCS}
+post-patch-DOCS-on:
 	@${REINPLACE_CMD} \
 		-e 's|INSTALL(DIRECTORY "$${ALURE_SOURCE_DIR}/docs/html"|INSTALL(DIRECTORY "$${ALURE_SOURCE_DIR}/docs/html" "$${ALURE_SOURCE_DIR}/docs/naturaldocs"|' \
 		${WRKSRC}/CMakeLists.txt
-.else
+post-patch-DOCS-off:
 	@${REINPLACE_CMD} -i '' '/FIND_PROGRAM(NATDOCS_BIN NaturalDocs)/,/ENDIF(NATDOCS_BIN)/s/^/#/' ${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -i '' -e '/INSTALL(DIRECTORY "$${ALURE_SOURCE_DIR}/,+2d' ${WRKSRC}/CMakeLists.txt
-.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

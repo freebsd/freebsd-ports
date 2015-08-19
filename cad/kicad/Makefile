@@ -83,17 +83,15 @@ post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC}/library && ${COPYTREE_SHARE} library ${STAGEDIR}${DATADIR})
 	(cd ${WRKSRC}/library && ${COPYTREE_SHARE} modules ${STAGEDIR}${DATADIR})
-.if ${PORT_OPTIONS:MNLS}
+post-install-NLS-on:
 	${MKDIR} ${STAGEDIR}${DATADIR}/internat
 	(cd ${WRKSRC}/doc/internat &&	\
 		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/internat)
 	${RM} -f ${STAGEDIR}${DATADIR}/internat/CMakeLists.txt
 	${FIND} ${STAGEDIR}${DATADIR}/internat -name kicad.po -delete
-.endif
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 	(cd ${WRKSRC}/Documentation && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-.endif
 
 .include <bsd.port.mk>

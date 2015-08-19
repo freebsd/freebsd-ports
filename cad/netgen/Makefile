@@ -31,18 +31,13 @@ FFMPEG_DESC=		video recording with FFmpeg
 OPTIONS_DEFAULT=	OCC
 
 BROKEN_sparc64=	internal gcc error (Bug 23159)
-.include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MOCC}
-LIB_DEPENDS+=	libTKernel.so:${PORTSDIR}/cad/opencascade
-CXXFLAGS+=	-DOCCGEOMETRY -DHAVE_CONFIG_H -D${ARCH} -I${LOCALBASE}/include/OpenCASCADE
-CONFIGURE_ARGS+=	--enable-occ
-.endif
+OCC_LIB_DEPENDS=	libTKernel.so:${PORTSDIR}/cad/opencascade
+OCC_CXXFLAGS=	-DOCCGEOMETRY -DHAVE_CONFIG_H -D${ARCH} -I${LOCALBASE}/include/OpenCASCADE
+OCC_CONFIGURE_ENABLE=	occ
 
-.if ${PORT_OPTIONS:MFFMPEG}
-LIB_DEPENDS+=	libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0
-CONFIGURE_ARGS+=	--enable-ffmpeg
-.endif
+FFMPEG_LIB_DEPENDS=	libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0
+FFMPEG_CONFIGURE_ENABLE=ffmpeg
 
 MACHINE=	${OPSYS:tu}
 
