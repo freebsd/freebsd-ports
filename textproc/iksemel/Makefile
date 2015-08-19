@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	textproc
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	rhaamo@gruik.at
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML parser library mainly designed for Jabber applications
 
 LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
