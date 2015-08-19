@@ -8,7 +8,7 @@ CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	yanagisawa@csg.is.titech.ac.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl extension for Camellia Encryption Algorithm in pure Perl
 
 USES=		perl5
