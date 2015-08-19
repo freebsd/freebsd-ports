@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	geekounet@poildetroll.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line tool for scanning webpages for Youtube links
 
 LICENSE=	GPLv3
