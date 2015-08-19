@@ -8,7 +8,7 @@ CATEGORIES=	russian converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tolid@plab.ku.dk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for fast and easy Cyrillic text manipulation
 
 USES=		perl5
