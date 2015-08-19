@@ -44,6 +44,7 @@ man/man1/highlight.1.gz
 %%DATADIR%%/langDefs/clp.lang
 %%DATADIR%%/langDefs/cobol.lang
 %%DATADIR%%/langDefs/coldfusion.lang
+%%DATADIR%%/langDefs/conf.lang
 %%DATADIR%%/langDefs/crk.lang
 %%DATADIR%%/langDefs/csharp.lang
 %%DATADIR%%/langDefs/css.lang
@@ -154,6 +155,7 @@ man/man1/highlight.1.gz
 %%DATADIR%%/langDefs/rnc.lang
 %%DATADIR%%/langDefs/rpg.lang
 %%DATADIR%%/langDefs/rpl.lang
+%%DATADIR%%/langDefs/rs.lang
 %%DATADIR%%/langDefs/ruby.lang
 %%DATADIR%%/langDefs/s.lang
 %%DATADIR%%/langDefs/sas.lang
