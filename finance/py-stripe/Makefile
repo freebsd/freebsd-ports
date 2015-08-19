@@ -18,7 +18,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests1>=0.8.8:${PORTSDIR}/www/py-requests
 TEST_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} "s|, '../VERSION'||" ${WRKSRC}/setup.py
