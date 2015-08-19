@@ -6,7 +6,7 @@ PORTVERSION=	1.2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	purgedhalo@users.sourceforge.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Removes non-standard characters from filenames
 
 USES=		gmake tar:bzip2
