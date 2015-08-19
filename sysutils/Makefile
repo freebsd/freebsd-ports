@@ -849,6 +849,7 @@
     SUBDIR += rubygem-fluent-plugin-file-alternative
     SUBDIR += rubygem-fluent-plugin-tail-asis
     SUBDIR += rubygem-fluentd
+    SUBDIR += rubygem-fluentd010
     SUBDIR += rubygem-fssm
     SUBDIR += rubygem-god
     SUBDIR += rubygem-guard
