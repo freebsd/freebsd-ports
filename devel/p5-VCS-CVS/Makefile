@@ -9,7 +9,7 @@ MASTER_SITES=	http://savage.net.au/Perl-modules/ \
 		http://tolid.eu.org/VCSCVS/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tolid@plab.ku.dk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module that provides a simple interface to CVS
 
 BUILD_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod
