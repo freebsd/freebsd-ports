@@ -8,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	christian@karg.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text::LevenshteinXS - CPAN Levenshtein edit distance
 
 USES=		perl5
