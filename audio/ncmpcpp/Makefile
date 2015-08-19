@@ -50,6 +50,8 @@ OUTPUTS_CONFIGURE_ENABLE=	outputs
 VISUALIZER_BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
 VISUALIZER_CONFIGURE_ENABLE=	visualizer
 
+.include <bsd.port.pre.mk>
+
 .if ${NCURSESBASE} == /usr
 # no need to use ncurses-config if we use ncurses from the base system
 CONFIGURE_ARGS+=	NCURSES_CONFIG=/usr/bin/true
@@ -62,4 +64,4 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/NEWS ${WRKSRC}/AUTHORS ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/bindings ${WRKSRC}/doc/config ${STAGEDIR}${DOCSDIR}/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

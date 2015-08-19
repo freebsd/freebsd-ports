@@ -60,6 +60,5 @@ do-install-LYRICS-on:
 	(cd ${WRKSRC}/lyrics && ${INSTALL_SCRIPT} \
 		10-hd.sh 20-lyricwiki.rb \
 		${STAGEDIR}${PREFIX}/lib/ncmpc/lyrics)
-.endif
 
 .include <bsd.port.mk>

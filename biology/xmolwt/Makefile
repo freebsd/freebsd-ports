@@ -24,7 +24,6 @@ GTK2_USE=	GNOME=gtk20
 GTK2_MAKE_ENV=	GTKCONFIG="pkg-config gtk+-2.0"
 GTK2_USE_OFF=	GNOME=gtk12
 GTK2_MAKE_ENV_OFF=	GTKCONFIG="${GTK_CONFIG}"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \

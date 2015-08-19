@@ -51,6 +51,8 @@ SUB_LIST=	${SHOUTCAST_SUB}
 USERS=		${SHOUTCASTUSER}
 GROUPS=		${SHOUTCASTGROUP}
 
+.include <bsd.port.options.mk>
+
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000010
 .if ${ARCH} == "i386"
 RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libstdc++.so.6:${PORTSDIR}/misc/compat9x

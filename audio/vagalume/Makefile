@@ -41,7 +41,6 @@ NLS_CONFIGURE_ENABLE=	nls
 
 GCONF_USE=	GNOME=gconf2
 GCONF_CONFIGURE_ENABLE=	gconf
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|serviceentrydir = @serviceentrydir@|serviceentrydir = ${PREFIX}/share/dbus-1/services|' \
