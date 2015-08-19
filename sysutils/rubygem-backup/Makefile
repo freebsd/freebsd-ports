@@ -3,6 +3,7 @@
 
 PORTNAME=	backup
 PORTVERSION=	4.1.11
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -28,7 +29,7 @@ RUN_DEPENDS=	rubygem-CFPropertyList>=2.3.1:${PORTSDIR}/devel/rubygem-CFPropertyL
 		rubygem-fog>=1.28.0:${PORTSDIR}/devel/rubygem-fog \
 		rubygem-fog-atmos>=0.1.0:${PORTSDIR}/net/rubygem-fog-atmos \
 		rubygem-fog-aws>=0.1.1:${PORTSDIR}/net/rubygem-fog-aws \
-		rubygem-fog-brightbox>=0.7.1:${PORTSDIR}/devel/rubygem-fog-brightbox \
+		rubygem-fog-brightbox>=0.7.1:${PORTSDIR}/net/rubygem-fog-brightbox \
 		rubygem-fog-core>=1.29.0:${PORTSDIR}/devel/rubygem-fog-core \
 		rubygem-fog-ecloud>=0.0.2:${PORTSDIR}/net/rubygem-fog-ecloud \
 		rubygem-fog-json>=1.0.0:${PORTSDIR}/devel/rubygem-fog-json \

@@ -4664,7 +4664,6 @@
     SUBDIR += rubygem-flexmock
     SUBDIR += rubygem-fluent-logger
     SUBDIR += rubygem-fog
-    SUBDIR += rubygem-fog-brightbox
     SUBDIR += rubygem-fog-core
     SUBDIR += rubygem-fog-json
     SUBDIR += rubygem-font-awesome-rails
