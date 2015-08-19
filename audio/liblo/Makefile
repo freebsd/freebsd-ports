@@ -26,6 +26,8 @@ OPTIONS_SUB=	yes
 
 DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 
+.include <bsd.port.options.mk>
+
 post-patch:
 .if ${ARCH} == i386 || ${ARCH} == powerpc
 	@${REINPLACE_CMD} -e 's,deadbeef,, ; s,f00baa23,,' \
