@@ -3,7 +3,7 @@
 
 PORTNAME=	alias-fonts
 PORTVERSION=	1.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -20,6 +20,13 @@ RUN_DEPENDS=	ja-elisa8x8>0:${PORTSDIR}/japanese/elisa8x8 \
 		ja-font-jisx0213>0:${PORTSDIR}/japanese/font-jisx0213
 
 NO_BUILD=	yes
-NO_INSTALL=	yes
+
+USES=		fonts
+PLIST_FILES=	%%FONTSDIR%%/fonts.alias
+SUB_FILES=	pkg-message
+
+do-install:
+	${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${FILESDIR}/fonts.alias ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>
