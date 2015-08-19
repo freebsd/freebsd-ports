@@ -6,7 +6,7 @@ PORTVERSION=	0.4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.gufonero.com/postfix/
 
-MAINTAINER=	tabmow@freenode.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Prepares logfiles in a sanitised format for pflogsumm and awstats
 
 USES=		perl5 shebangfix tar:tgz

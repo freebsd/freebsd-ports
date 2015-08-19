@@ -9,7 +9,7 @@ MASTER_SITES=	https://bitbucket.org/slug/qwebirc/get/
 DISTNAME=	stable
 EXTRACT_SUFX=	.gz
 
-MAINTAINER=	tabmow@freenode.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast, easy to use, free, and open source web IRC client
 
 USES=		python twisted:run,conch,mail,names,web,words
