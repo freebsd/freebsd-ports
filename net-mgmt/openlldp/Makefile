@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}
 
-MAINTAINER=	roar.pettersen@it.uib.no
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Link Layer Discovery Protocol daemon
 
 GNU_CONFIGURE=	yes
