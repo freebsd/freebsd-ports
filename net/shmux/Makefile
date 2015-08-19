@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://web.taranis.org/shmux/dist/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	online@jamundsen.dyndns.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to run commands on multiple hosts using shell commands
 
 OPTIONS_DEFINE=		FPING PCRE
