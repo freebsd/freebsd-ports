@@ -41,6 +41,5 @@ post-install-EMACS-on:
 .for F in dinotrace.el sim-log.el
 	${INSTALL_DATA} ${WRKSRC}/lisp/${F} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

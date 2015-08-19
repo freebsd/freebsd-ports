@@ -47,10 +47,8 @@ X11_CONFIGURE_ENABLE=	graphics
 
 X11_BUILD_DEPENDS_OFF=	${LOCALBASE}/include/boinc/std_fixes.h:${PORTSDIR}/net/boinc-client
 
-.if ${ARCH} == i386 || ${ARCH} == amd64
-# comment out if world is built with clang and port with gcc
-CFLAGS+=	-mtune=native
-.endif
+CFLAGS_i386=	-mtune=native
+CFLAGS_amd64=	-mtune=native
 
 .if !empty(MACHINE_CPU:Maltivec)
 CONFIGURE_ARGS+=	--enable-altivec

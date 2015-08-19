@@ -74,4 +74,4 @@ OPTCFLAGS_CFLAGS=	-O2 -pipe
 
 BROKEN_sparc64=		Does not compile on sparc64
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
