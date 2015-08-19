@@ -6,7 +6,7 @@ DISTVERSION=	20060630
 CATEGORIES=	devel net
 MASTER_SITES=	http://www.lundman.net/ftp/
 
-MAINTAINER=	molterSPAM@gufiSPAM.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-platform, event-driven, simple networking library
 
 # TODO
