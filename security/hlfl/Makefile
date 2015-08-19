@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.hlfl.org/pub/hlfl/
 
-MAINTAINER=	alaunay@hlfl.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High Level Firewall Language
 
 GNU_CONFIGURE=	yes
