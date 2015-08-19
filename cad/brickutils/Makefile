@@ -40,12 +40,8 @@ SUB_FILES=	${PORTNAME} \
 INSTALLS_ICONS=	yes
 ICON_SIZES=	32x32 48x48 64x64 72x72 96x96 128x128
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-DISTFILES+=	${PORTNAME}-manual-it.pdf:docs \
+DOCS_DISTFILES=	${PORTNAME}-manual-it.pdf:docs \
 		${PORTNAME}-manual.pdf:docs
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/|${PREFIX}|' \
@@ -76,10 +72,9 @@ do-install:
 	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 
-.if ${PORT_OPTIONS:MDOCS}
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
 	@(cd ${_DISTDIR} && ${CP} -a *.pdf ${STAGEDIR}${DOCSDIR})
-.endif
 
 .include <bsd.port.mk>

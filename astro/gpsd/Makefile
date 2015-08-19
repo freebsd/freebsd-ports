@@ -75,189 +75,68 @@ QTBIND_DESC=		build QT bindings
 UBLOX_DESC=		u-blox protocol support
 USB_DESC=		libusb support for USB devices
 
-.include <bsd.port.options.mk>
-
 # Options related to GPS protocols
-.if ! ${PORT_OPTIONS:MNMEA0183}
-MAKE_ARGS+=	nmea0183=no
-.endif
-
-.if ! ${PORT_OPTIONS:MASHTECH}
-MAKE_ARGS+=	ashtech=no
-.endif
-
-.if ! ${PORT_OPTIONS:MEARTHMATE}
-MAKE_ARGS+=	earthmate=no
-.endif
-
-.if ! ${PORT_OPTIONS:MEVERMORE}
-MAKE_ARGS+=	evermore=no
-.endif
-
-.if ! ${PORT_OPTIONS:MFURY}
-MAKE_ARGS+=	fury=no
-.endif
-
-.if ! ${PORT_OPTIONS:MFV18}
-MAKE_ARGS+=	fv18=no
-.endif
-
-.if ! ${PORT_OPTIONS:MGARMIN}
-MAKE_ARGS+=	garmin=no
-.endif
-
-.if ! ${PORT_OPTIONS:MGARMINTXT}
-MAKE_ARGS+=	garmintxt=no
-.endif
-
-.if ! ${PORT_OPTIONS:MGEOSTAR}
-MAKE_ARGS+=	geostar=no
-.endif
-
-.if ! ${PORT_OPTIONS:MITRAX}
-MAKE_ARGS+=	itrax=no
-.endif
-
-.if ! ${PORT_OPTIONS:MMTK}
-MAKE_ARGS+=	mtk3301=no
-.endif
-
-.if ! ${PORT_OPTIONS:MNAVCOM}
-MAKE_ARGS+=	navcom=no
-.endif
-
-.if ! ${PORT_OPTIONS:MONCORE}
-MAKE_ARGS+=	oncore=no
-.endif
-
-.if ! ${PORT_OPTIONS:MSIRF}
-MAKE_ARGS+=	sirf=no
-.endif
-
-.if ! ${PORT_OPTIONS:MSUPERSTARII}
-MAKE_ARGS+=	superstar2=no
-.endif
-
-.if ! ${PORT_OPTIONS:MTNT}
-MAKE_ARGS+=	tnt=no
-.endif
-
-.if ! ${PORT_OPTIONS:MTRIPMATE}
-MAKE_ARGS+=	tripmate=no
-.endif
-
-.if ! ${PORT_OPTIONS:MTSIP}
-MAKE_ARGS+=	tsip=no
-.endif
-
-.if ! ${PORT_OPTIONS:MUBLOX}
-MAKE_ARGS+=	ublox=no
-.endif
+NMEA0183_MAKE_ARGS_OFF=	nmea0183=no
+ASHTECH_MAKE_ARGS_OFF=	ashtech=no
+EARTHMATE_MAKE_ARGS_OFF=	earthmate=no
+EVERMORE_MAKE_ARGS_OFF=	evermore=no
+FURY_MAKE_ARGS_OFF=	fury=no
+FV18_MAKE_ARGS_OFF=	fv18=no
+GARMIN_MAKE_ARGS_OFF=	garmin=no
+GARMINTXT_MAKE_ARGS_OFF=	garmintxt=no
+GEOSTAR_MAKE_ARGS_OFF=	geostar=no
+ITRAX_MAKE_ARGS_OFF=	itrax=no
+MTK_MAKE_ARGS_OFF=	mtk3301=no
+NAVCOM_MAKE_ARGS_OFF=	navcom=no
+ONCORE_MAKE_ARGS_OFF=	oncore=no
+SIRF_MAKE_ARGS_OFF=	sirf=no
+SUPERSTARII_MAKE_ARGS_OFF=	superstar2=no
+TNT_MAKE_ARGS_OFF=	tnt=no
+TRIPMATE_MAKE_ARGS_OFF=	tripmate=no
+TSIP_MAKE_ARGS_OFF=	tsip=no
+UBLOX_MAKE_ARGS_OFF=	ublox=no
 
 # Options related to Non-GPS protocols
-.if ! ${PORT_OPTIONS:MAIVDM}
-MAKE_ARGS+=	aivdm=no
-.endif
-
-.if ! ${PORT_OPTIONS:MGPSCLOCK}
-MAKE_ARGS+=	gpsclock=no
-.endif
-
-.if ! ${PORT_OPTIONS:MNTRIP}
-MAKE_ARGS+=	ntrip=no
-.endif
-
-.if ! ${PORT_OPTIONS:MOCEANSERVER}
-MAKE_ARGS+=	oceanserver=no
-.endif
-
-.if ! ${PORT_OPTIONS:MRTCM104V2}
-MAKE_ARGS+=	rtcm104v2=no
-.endif
-
-.if ! ${PORT_OPTIONS:MRTCM104V3}
-MAKE_ARGS+=	rtcm104v3=no
-.endif
+AIVDM_MAKE_ARGS_OFF=	aivdm=no
+GPSCLOCK_MAKE_ARGS_OFF=	gpsclock=no
+NTRIP_MAKE_ARGS_OFF=	ntrip=no
+OCEANSERVER_MAKE_ARGS_OFF=	oceanserver=no
+RTCM104V2_MAKE_ARGS_OFF=	rtcm104v2=no
+RTCM104V3_MAKE_ARGS_OFF=	rtcm104v3=no
 
 # Time service
-.if ! ${PORT_OPTIONS:MNTP}
-MAKE_ARGS+=	ntp=no
-.endif
-
-.if ! ${PORT_OPTIONS:MNTPSHM}
-MAKE_ARGS+=	ntpshm=no
-.endif
-
-.if ! ${PORT_OPTIONS:MPPS}
-MAKE_ARGS+=	pps=no
-.else
-.	if ! ${PORT_OPTIONS:MNTPSHM}
-IGNORE=		PPS requires NTPSHM
-.	endif
-.endif
+NTP_MAKE_ARGS_OFF=	ntp=no
+NTPSHM_MAKE_ARGS_OFF=	ntpshm=no
+PPS_MAKE_ARGS_OFF=	pps=no
+PPS_IMPLIES=	NTPSHM
 
 # Export methods
-.if ! ${PORT_OPTIONS:MSOCKEXPORT}
-MAKE_ARGS+=	socket_export=no
-.endif
-
-.if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	libdbus-1.so:${PORTSDIR}/devel/dbus
-MAKE_ARGS+=	dbus_export=yes
-.endif
-
-.if ! ${PORT_OPTIONS:MSHMEXPORT}
-MAKE_ARGS+=	shm_export=no
-.endif
+SOCKEXPORT_MAKE_ARGS_OFF=	socket_export=no
+DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
+DBUS_MAKE_ARGS=	dbus_export=yes
+SHMEXPORT_MAKE_ARGS_OFF=	shm_export=no
 
 # Communication
-.if ! ${PORT_OPTIONS:MUSB}
-MAKE_ARGS+=	usb=no
-.endif
-
-.if ! ${PORT_OPTIONS:MIPV6}
-MAKE_ARGS+=	ipv6=no
-.endif
-
-.if ! ${PORT_OPTIONS:MNETFEED}
-MAKE_ARGS+=	netfeed=no
-.endif
-
-.if ! ${PORT_OPTIONS:MPASSTHROUGH}
-MAKE_ARGS+=	passthrough=no
-.endif
+USB_MAKE_ARGS_OFF=	usb=no
+IPV6_MAKE_ARGS_OFF=	ipv6=no
+NETFEED_MAKE_ARGS_OFF=	netfeed=no
+PASSTHROUGH_MAKE_ARGS_OFF=	passthrough=no
 
 # Other daemon options
-.if ! ${PORT_OPTIONS:MTIMING}
-MAKE_ARGS+=	timing=no
-.endif
+TIMING_MAKE_ARGS_OFF=	timing=no
 
 # Client-side options
-.if ! ${PORT_OPTIONS:MNCURSES}
-MAKE_ARGS+=	ncurses=no
-.endif
-
-.if ${PORT_OPTIONS:MQTBIND}
-USE_QT4=	network
-MAKE_ARGS+=	qt=yes
-PLIST_SUB+=	QTBIND=""
-.else
-MAKE_ARGS+=	qt=no
-PLIST_SUB+=	QTBIND="@comment "
-.endif
-
-.if ! ${PORT_OPTIONS:MRECONFIGURE}
-MAKE_ARGS+=	reconfigure=no
-.endif
-
-.if ! ${PORT_OPTIONS:MCPPBIND}
-MAKE_ARGS+=	libgpsmm=no
-.endif
+NCURSES_MAKE_ARGS_OFF=	ncurses=no
+QTBIND_USE=	QT4=network
+QTBIND_MAKE_ARGS=	qt=yes
+QTBIND_MAKE_ARGS_OFF=	qt=no
+QTBIND_PLIST_SUB=	QTBIND=""
+QTBIND_PLIST_SUB_OFF=	QTBIND="@comment "
+RECONFIGURE_MAKE_ARGS_OFF=	reconfigure=no
+CPPBIND_MAKE_ARGS_OFF=	libgpsmm=no
 
 # Build control
-.if ${PORT_OPTIONS:MPROFILING}
-MAKE_ARGS+=	profiling=yes
-.endif
+PROFILING_MAKE_ARGS=	profiling=yes
 
 # generates .py[co] files for installed modules
 # if that's not done, ${PYTHON_SITELIBDIR}/gps will be polluted

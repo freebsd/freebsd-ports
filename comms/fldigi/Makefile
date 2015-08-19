@@ -54,14 +54,8 @@ HAMLIB_LIB_DEPENDS=		libhamlib.so:${PORTSDIR}/comms/hamlib
 NLS_CONFIGURE_ENABLE=		nls
 NLS_USES=			gettext
 
-.include <bsd.port.pre.mk>
+BROKEN_sparc64=		Fails to install
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Fails to install
-.endif
-.if ${PORT_OPTIONS:MFLARQ}
-MAN1+=		flarq.1
-.endif
 PLIST_SUB+=	XMLRPC=""
 # Always need asciidoc for man pages
 CONFIGURE_ARGS+=--with-asciidoc
@@ -83,4 +77,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/guide.html ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

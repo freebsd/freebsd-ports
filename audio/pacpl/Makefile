@@ -58,8 +58,6 @@ TTA_RUN_DEPENDS=	ttaenc:${PORTSDIR}/audio/tta
 VORBIS_RUN_DEPENDS=	vorbiscomment:${PORTSDIR}/audio/vorbis-tools
 WAVPACK_RUN_DEPENDS=	wavpack:${PORTSDIR}/audio/wavpack
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|"/etc/pacpl|"${ETCDIR}| ; \
@@ -100,12 +98,11 @@ do-install:
 		${STAGEDIR}${DOCSDIR})
 	(cd ${WRKSRC}/plugins/gnome/nautilus && ${INSTALL_SCRIPT} PACPL-Convert \
 		${STAGEDIR}${PREFIX}/libexec)
-.if ${PORT_OPTIONS:MKDE4}
+do-install-KDE4-on:
 	(cd ${WRKSRC}/plugins/kde && ${INSTALL_SCRIPT} PACPL-Konvert \
 		${STAGEDIR}${PREFIX}/libexec)
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/kde4/services/ServiceMenus
 	(cd ${WRKSRC}/plugins/kde && ${INSTALL_DATA} pacpl.desktop \
 		${STAGEDIR}${PREFIX}/share/kde4/services/ServiceMenus)
-.endif
 
 .include <bsd.port.mk>

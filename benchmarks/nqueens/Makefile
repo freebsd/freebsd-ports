@@ -40,10 +40,9 @@ post-extract:
 do-build:
 	cd ${WRKSRC} && \
 	${CC} ${CFLAGS} -o qn24b_base base/queens.c
-.if ${PORT_OPTIONS:MMPI}
+do-build-MPI-on:
 	cd ${WRKSRC} && \
 	${MPICC} ${CFLAGS} -o qn24b_mpi mpi/main.c
-.endif
 
 PLIST_FILES=	${PROGS:S/^/bin\//}
 

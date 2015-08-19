@@ -37,19 +37,11 @@ PYTHON_USES=	python
 PYTHON_BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 PYTHON_CONFIGURE_OFF=	--disable-pylash
 
-.include <bsd.port.options.mk>
+READLINE_USES=		readline
+READLINE_CONFIGURE_ENV_OFF=	vl_cv_lib_readline=no
 
-.if ${PORT_OPTIONS:MREADLINE}
-USES+=		readline
-.else
-CONFIGURE_ENV+=	vl_cv_lib_readline=no
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
-.else
-CONFIGURE_ENV+=	ac_cv_prog_lash_texi2html=no
-.endif
+DOCS_BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html
+DOCS_CONFIGURE_ENV_OFF=	ac_cv_prog_lash_texi2html=no
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -57,11 +49,9 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		'/texi2html/s|--number||' ${WRKSRC}/docs/Makefile.in
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/lash-manual-html-one-page/lash-manual.html \
 		${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

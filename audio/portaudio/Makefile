@@ -46,49 +46,38 @@ JACK_CONFIGURE_OFF=	--without-jack
 EXAMPLES_BIN=	pa_d* pa_f* paex_*
 PATEST_BIN=	pa_m* paqa_* patest*
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOXYGEN} && ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
-.endif
+DOXYGEN_IMPLIES=	DOCS
+DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|machine/soundcard.h|sys/soundcard.h|' ${WRKSRC}/configure.in \
 		${WRKSRC}/src/hostapi/oss/pa_unix_oss.c ${WRKSRC}/src/SConscript
 	@${REINPLACE_CMD} -e 's|PACKAGE_NAME=|PACKAGE_NAME=portaudio2|' ${WRKSRC}/configure
 
-.if ! ${PORT_OPTIONS:MEXAMPLES}
+post-patch-EXAMPLES-off:
 	@${REINPLACE_CMD} -i '' '/EXAMPLES =/,/bin\/paex_write_sine_nonint/s/^/#/' \
 		${WRKSRC}/Makefile.in
-.endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libportaudio.so.2
 
-.if ${PORT_OPTIONS:MEXAMPLES}
-.for f in ${EXAMPLES_BIN}
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${STAGEDIR}${PREFIX}/bin/
-.endfor
-.endif
-
-.if ${PORT_OPTIONS:MPATEST}
+post-install-PATEST-on:
 .for f in ${PATEST_BIN}
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${STAGEDIR}${PREFIX}/bin/
 .endfor
-.endif
 
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
-.endif
 
-.if ${PORT_OPTIONS:MDOXYGEN} && ${PORT_OPTIONS:MDOCS}
+post-install-DOXYGEN-on:
 	@cd ${WRKSRC} && doxygen
 	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
-.endif 
 
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
-.endif
+post-install-EXAMPLES-on:
+.for f in ${EXAMPLES_BIN}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${STAGEDIR}${PREFIX}/bin/
+.endfor
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>

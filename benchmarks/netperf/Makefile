@@ -28,37 +28,11 @@ CONFIGURE_ARGS=	--program-prefix="" --program-suffix="" --enable-dirty \
 
 INFO=		netperf
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSOCKETS}
-CONFIGURE_ARGS+=	--enable-unixdomain
-.else
-CONFIGURE_ARGS+=	--disable-unixdomain
-.endif
-
-.if ${PORT_OPTIONS:MSCTP}
-CONFIGURE_ARGS+=	--enable-sctp
-.else
-CONFIGURE_ARGS+=	--disable-sctp
-.endif
-
-.if ${PORT_OPTIONS:MEXS}
-CONFIGURE_ARGS+=	--enable-exs
-.else
-CONFIGURE_ARGS+=	--disable-exs
-.endif
-
-.if ${PORT_OPTIONS:MHISTOGRAM}
-CONFIGURE_ARGS+=	--enable-histogram
-.else
-CONFIGURE_ARGS+=	--disable-histogram
-.endif
-
-.if ${PORT_OPTIONS:MOMNI}
-CONFIGURE_ARGS+=	--enable-omni
-.else
-CONFIGURE_ARGS+=	--disable-omni
-.endif
+SOCKETS_CONFIGURE_ENABLE=	unixdomain
+SCTP_CONFIGURE_ENABLE=		sctp
+EXS_CONFIGURE_ENABLE=		exs
+HISTOGRAM_CONFIGURE_ENABLE=	histogram
+OMNI_CONFIGURE_ENABLE=		omni
 
 SCRIPTS=	arr_script packet_byte_script sctp_stream_script snapshot_script \
 		tcp_range_script tcp_rr_script tcp_stream_script udp_rr_script \

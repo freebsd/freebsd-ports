@@ -48,6 +48,7 @@ OPTIONS_SUB=		yes
 ALSA_DESC=		Build ALSA I/O module
 ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
 ALSA_CMAKE_OFF=		-DUSE_ALSA:BOOL=OFF
+ALSA_PREVENTS=		DSSI
 CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 CURL_CMAKE_OFF=		-DUSE_CURL:BOOL=OFF
 DSSI_DESC=		Build DSSI/LADSPA host opcodes
@@ -105,10 +106,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 CMAKE_ARGS+=	-DFLEX_EXECUTABLE:STRING="${LOCALBASE}/bin/flex"
 .endif
 
-.if ${PORT_OPTIONS:MALSA} && ${PORT_OPTIONS:MDSSI}
-IGNORE=		ALSA and DSSI options are mutually exclusive
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/-O3/s|^|#| ; \
@@ -138,8 +135,7 @@ post-patch:
 post-install:
 	@${LN} -sf libcsnd6.so.6.0 ${STAGEDIR}${PREFIX}/lib/libcsnd6.so.6
 	@${LN} -sf libcsound64.so.6.0 ${STAGEDIR}${PREFIX}/lib/libcsound64.so.6
-.if ${PORT_OPTIONS:MFLTK}
+post-install-FLTK-on:
 	@${LN} -sf libCsoundAC.so.6.0 ${STAGEDIR}${PREFIX}/lib/libCsoundAC.so.6
-.endif
 
 .include <bsd.port.mk>
