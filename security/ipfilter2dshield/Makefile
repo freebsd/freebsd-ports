@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.dshield.org/clients/
 DISTNAME=	dshield-freebsd.pl
 EXTRACT_SUFX=	.txt
 
-MAINTAINER=	fbsd_user@a1poweruser.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Official DShield client for ipfilter firewall logs
 
 RUN_DEPENDS=	p5-Net-Netmask>=0:${PORTSDIR}/net-mgmt/p5-Net-Netmask
