@@ -6,7 +6,7 @@ PORTVERSION=	2.3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	sklauder@trimind.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Send system commands to a group of remote servers simultaneously
 
 LICENSE=	GPLv3

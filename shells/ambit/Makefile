@@ -7,7 +7,7 @@ CATEGORIES=	shells
 MASTER_SITES=	http://m.a.tt/er/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	sklauder@trimind.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extended bash brace expansion to expand hostnames or commands
 
 LICENSE=	GPLv3
