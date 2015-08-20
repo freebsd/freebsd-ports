@@ -95659,7 +95659,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <url>https://svnweb.freebsd.org/ports/head/news/ifmail</url>
+      <url>https://svnweb.freebsd.org/changeset/ports/120295</url>
     </references>
     <dates>
       <discovery>2004-08-23</discovery>
