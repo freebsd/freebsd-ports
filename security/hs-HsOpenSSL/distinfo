@@ -1,2 +1,2 @@
-SHA256 (cabal/HsOpenSSL-0.11.tar.gz) = d9fba90fee57d13c78f5b940ebb79846b5809992024231f8fe34389f50090c00
-SIZE (cabal/HsOpenSSL-0.11.tar.gz) = 68086
+SHA256 (cabal/HsOpenSSL-0.11.1.1.tar.gz) = 4a61e074e968a9863e0f3440b3be8ac131457b3d34eb983ca8102122d8ebc4c1
+SIZE (cabal/HsOpenSSL-0.11.1.1.tar.gz) = 72297

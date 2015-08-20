@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	http-date
-PORTVERSION=	0.0.4
-PORTREVISION=	8
+PORTVERSION=	0.0.6.1
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org

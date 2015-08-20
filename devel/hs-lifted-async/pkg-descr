@@ -1,0 +1,4 @@
+This package provides IO operations from async package lifted to any
+instance of 'MonadBase' or 'MonadBaseControl'.
+
+WWW: https://github.com/maoe/lifted-async

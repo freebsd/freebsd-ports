@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unlambda
-PORTVERSION=	0.1.3
-PORTREVISION=	8
+PORTVERSION=	0.1.4.1
 CATEGORIES=	lang haskell
 
 MAINTAINER=	haskell@FreeBSD.org

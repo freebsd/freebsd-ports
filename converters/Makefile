@@ -31,8 +31,10 @@
     SUBDIR += gbase
     SUBDIR += gbsdconv
     SUBDIR += hs-aeson
+    SUBDIR += hs-aeson-pretty
     SUBDIR += hs-dataenc
     SUBDIR += hs-json
+    SUBDIR += hs-sandi
     SUBDIR += htx
     SUBDIR += i18ntools
     SUBDIR += ical2html

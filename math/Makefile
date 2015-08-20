@@ -172,6 +172,7 @@
     SUBDIR += hfst
     SUBDIR += hs-Agda
     SUBDIR += hs-NumInstances
+    SUBDIR += hs-adjunctions
     SUBDIR += hs-categories
     SUBDIR += hs-comonad
     SUBDIR += hs-contravariant
@@ -180,9 +181,9 @@
     SUBDIR += hs-distributive
     SUBDIR += hs-erf
     SUBDIR += hs-ieee754
+    SUBDIR += hs-kan-extensions
     SUBDIR += hs-math-functions
     SUBDIR += hs-mwc-random
-    SUBDIR += hs-nats
     SUBDIR += hs-pointed
     SUBDIR += hs-probability
     SUBDIR += hs-semigroupoids
