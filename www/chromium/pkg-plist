@@ -1,5 +1,6 @@
 bin/chrome
 man/man1/chrome.1.gz
+%%DRIVER%%bin/chromedriver
 share/applications/chromium-browser.desktop
 %%DATADIR%%/chrome
 %%DATADIR%%/chrome-wrapper
