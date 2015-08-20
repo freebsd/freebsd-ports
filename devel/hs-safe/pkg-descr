@@ -1,6 +1,12 @@
-Partial functions from the Haskell base library, such as head and !!, modified
-to return more descriptive error messages, programmer defined error messages,
-Maybe wrapped results and default values.  These functions can be used to
-reduce the number of unsafe pattern matches in your code.
+A library wrapping Prelude/Data.List functions that can throw exceptions,
+such as head and !!.
 
-WWW: http://community.haskell.org/~ndm/safe/
+This package is divided into three modules:
+
+ * Safe contains safe variants of Prelude and Data.List functions.
+ * Safe.Foldable contains safe variants of Foldable functions.
+ * Safe.Exact creates crashing versions of functions like zip (errors if the
+   lists are not equal) and take (errors if there are not enough elements),
+   then wraps them to provide safe variants.
+
+WWW: https://github.com/ndmitchell/safe#readme

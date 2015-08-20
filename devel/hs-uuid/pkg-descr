@@ -1,4 +1,4 @@
 This library is useful for creating, comparing, parsing and printing
 Universally Unique Identifiers.
 
-WWW: http://projects.haskell.org/uuid/
+WWW: https://github.com/aslatter/uuid

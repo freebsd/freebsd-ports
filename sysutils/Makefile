@@ -401,6 +401,7 @@
     SUBDIR += hs-cpu
     SUBDIR += hs-ekg
     SUBDIR += hs-ekg-core
+    SUBDIR += hs-ekg-json
     SUBDIR += htop
     SUBDIR += httplog
     SUBDIR += hwstat

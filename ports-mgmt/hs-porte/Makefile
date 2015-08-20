@@ -3,7 +3,7 @@
 
 PORTNAME=	porte
 PORTVERSION=	0.0.4
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	ports-mgmt haskell
 
 MAINTAINER=	sbahra@repnop.org

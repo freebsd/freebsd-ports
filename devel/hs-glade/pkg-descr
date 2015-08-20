@@ -1,4 +1,0 @@
-This library allows to load externally stored user interfaces into programs.
-This allows alteration of the interface without recompilation of the program.
-
-WWW: http://www.haskell.org/gtk2hs/
