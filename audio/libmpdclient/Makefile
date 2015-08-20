@@ -19,6 +19,6 @@ OPTIONS_SUB=	yes
 DOXYGEN_IMPLIES=	DOCS
 
 DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
-DOCS_CONFIGURE_OFF=	--disable-documentation
+DOXYGEN_CONFIGURE_OFF=	--disable-documentation
 
 .include <bsd.port.mk>
