@@ -58,6 +58,41 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a0a4e24c-4760-11e5-9391-3c970e169bc2">
+    <topic>vlc -- arbitrary pointer dereference vulnerability</topic>
+    <affects>
+      <package>
+	<name>vlc</name>
+	<range><lt>2.2.1_5,4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>oCERT reports:</p>
+	<blockquote cite="https://www.ocert.org/advisories/ocert-2015-009.html">
+	  <p>The stable VLC version suffers from an arbitrary pointer
+	    dereference vulnerability.</p>
+	  <p>The vulnerability affects the 3GP file format parser,
+	    insufficient restrictions on a writable buffer can be
+	    exploited to execute arbitrary code via the heap memory.
+	    A specific 3GP file can be crafted to trigger the
+	    vulnerability.</p>
+	  <p>Credit: vulnerability reported by Loren Maggiore of
+	    Trail of Bits.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5949</cvename>
+      <url>https://git.videolan.org/?p=vlc/vlc-2.2.git;a=commitdiff;h=ce91452460a75d7424b165c4dc8db98114c3cbd9;hp=9e12195d3e4316278af1fa4bcb6a705ff27456fd</url>
+      <url>https://www.ocert.org/advisories/ocert-2015-009.html</url>
+    </references>
+    <dates>
+      <discovery>2015-08-20</discovery>
+      <entry>2015-08-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9a71953a-474a-11e5-adde-14dae9d210b8">
     <topic>libpgf -- use after free</topic>
     <affects>
