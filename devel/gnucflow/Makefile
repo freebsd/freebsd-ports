@@ -13,30 +13,16 @@ COMMENT=	Tool to chart control flow within the C program
 
 CONFLICTS=	bsdcflow-[0-9]* cflow-[0-9]*
 
-USES=		tar:bzip2 gmake
+USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 
 INFO=		cflow
 
-PLIST_FILES=	bin/cflow
-
 OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-CONFIGURE_ARGS+=--with-libintl-prefix="${LOCALBASE}"
-PLIST_FILES+= 	share/locale/da/LC_MESSAGES/cflow.mo \
-		share/locale/fi/LC_MESSAGES/cflow.mo \
-		share/locale/ga/LC_MESSAGES/cflow.mo \
-		share/locale/id/LC_MESSAGES/cflow.mo \
-		share/locale/pl/LC_MESSAGES/cflow.mo \
-		share/locale/uk/LC_MESSAGES/cflow.mo \
-		share/locale/vi/LC_MESSAGES/cflow.mo \
-		share/locale/zh_CN/LC_MESSAGES/cflow.mo
-.else
-CONFIGURE_ARGS+=--disable-nls
-.endif
+NLS_USES=		gettext
+NLS_CONFIGURE_ON=	--with-libintl-prefix="${LOCALBASE}"
+NLS_CONFIGURE_OFF=	--disable-nls
 
 .include <bsd.port.mk>
