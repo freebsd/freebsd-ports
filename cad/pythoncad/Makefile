@@ -20,6 +20,7 @@ USES=			python
 USE_PYTHON=		distutils
 PYDISTUTILS_PKGNAME=	PythonCAD
 PYDISTUTILS_PKGVERSION=	DS1-R${PORTVERSION}
+NO_ARCH=		yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
