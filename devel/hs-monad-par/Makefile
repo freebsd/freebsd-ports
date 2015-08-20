@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	monad-par
-PORTVERSION=	0.3.4.6
-PORTREVISION=	1
+PORTVERSION=	0.3.4.7
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -12,6 +11,8 @@ LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	abstract-deque>=0.1.4 abstract-par monad-par-extras>=0.3 \
 		mtl>=2.0.1.0 mwc-random>=0.11 parallel>=3.1
+
+FLAGS_DISABLE=	chaselev newgeneric
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

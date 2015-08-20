@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mmorph
-PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTVERSION=	1.0.4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	utf8-string
-PORTVERSION=	0.3.8
-PORTREVISION=	1
+PORTVERSION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Support for reading/writing UTF-8 strings for Haskell programs
+COMMENT=	Support for reading and writing UTF-8 strings
 
 LICENSE=	BSD3CLAUSE
 

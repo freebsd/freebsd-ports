@@ -1,0 +1,50 @@
+--- http2.cabal.orig	2015-07-31 05:18:14 UTC
++++ http2.cabal
+@@ -60,7 +60,6 @@ Library
+   Build-Depends:        base >= 4.6 && < 5
+                       , array
+                       , bytestring >= 0.10
+-                      , bytestring-builder
+                       , containers >= 0.5
+                       , mwc-random
+                       , stm
+@@ -93,7 +92,6 @@ Test-Suite spec
+   Build-Depends:        base >= 4 && < 5
+                       , array
+                       , bytestring
+-                      , bytestring-builder
+                       , containers
+                       , hex
+                       , hspec >= 1.3
+@@ -116,7 +114,6 @@ Test-Suite hpack
+                       , aeson-pretty
+                       , array
+                       , bytestring
+-                      , bytestring-builder
+                       , containers
+                       , directory
+                       , filepath
+@@ -165,7 +162,6 @@ Executable hpack-encode
+                       , aeson-pretty
+                       , array
+                       , bytestring
+-                      , bytestring-builder
+                       , containers
+                       , hex
+                       , text
+@@ -186,7 +182,6 @@ Executable hpack-debug
+                       , aeson
+                       , array
+                       , bytestring
+-                      , bytestring-builder
+                       , containers
+                       , hex
+                       , text
+@@ -208,7 +203,6 @@ Executable hpack-stat
+                       , aeson-pretty
+                       , array
+                       , bytestring
+-                      , bytestring-builder
+                       , containers
+                       , directory
+                       , filepath

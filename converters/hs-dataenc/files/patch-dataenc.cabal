@@ -1,0 +1,11 @@
+--- dataenc.cabal.orig	2014-04-22 18:38:41 UTC
++++ dataenc.cabal
+@@ -21,7 +21,7 @@ flag tests
+ 
+ library
+     hs-source-dirs: src
+-    build-depends: array, base >= 3.0.0 && < 4.8, containers
++    build-depends: array, base >= 3.0.0 && < 4.9, containers
+     exposed-modules:
+             Codec.Binary.Base16
+             Codec.Binary.Base32

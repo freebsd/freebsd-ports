@@ -2,7 +2,7 @@
 
 PORTNAME=	DrIFT
 PORTVERSION=	2.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -10,7 +10,7 @@ COMMENT=	Program to derive type class instances
 
 LICENSE=	BSD3CLAUSE
 
-USE_CABAL=	random
+USE_CABAL=	old-time random
 
 EXECUTABLE=	DrIFT drift-ghc
 

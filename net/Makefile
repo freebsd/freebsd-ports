@@ -204,6 +204,7 @@
     SUBDIR += howl
     SUBDIR += hping
     SUBDIR += hping-devel
+    SUBDIR += hs-aws
     SUBDIR += hs-connection
     SUBDIR += hs-gsasl
     SUBDIR += hs-hoauth2
@@ -214,6 +215,7 @@
     SUBDIR += hs-network-info
     SUBDIR += hs-network-multicast
     SUBDIR += hs-network-protocol-xmpp
+    SUBDIR += hs-network-uri
     SUBDIR += hs-pcap
     SUBDIR += hs-publicsuffixlist
     SUBDIR += hs-sendfile
