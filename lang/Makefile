@@ -105,6 +105,7 @@
     SUBDIR += gnu-cobol
     SUBDIR += gnustep-base
     SUBDIR += go
+    SUBDIR += go14
     SUBDIR += gprolog
     SUBDIR += groovy
     SUBDIR += gscheme
