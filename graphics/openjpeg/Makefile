@@ -5,7 +5,6 @@ PORTNAME=	openjpeg
 PORTVERSION=	2.1.0
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	SF/openjpeg.mirror/${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Open-source JPEG 2000 codec
@@ -20,6 +19,10 @@ USE_LDCONFIG=	yes
 USES=		cmake cpe pkgconfig
 
 PLIST_SUB=	VER=${PORTVERSION:R}
+
+GH_ACCOUNT=	uclouvain
+GH_TAGNAME=	version.${PORTVERSION:R}
+USE_GITHUB=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${OPENJPEG_INSTALL_LIB_DIR}/pkgconfig|libdata/pkgconfig|' ${WRKSRC}/CMakeLists.txt
