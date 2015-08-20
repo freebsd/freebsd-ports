@@ -58,6 +58,34 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9a71953a-474a-11e5-adde-14dae9d210b8">
+    <topic>libpgf -- use after free</topic>
+    <affects>
+      <package>
+	<name>libpgf</name>
+	<range><le>6.14.12</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Pengsu Cheng reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2015/q3/404">
+	  <p>An use-after-free issue in Decoder.cpp was reported to
+	    upstream. The problem is due to lack of validation of ColorTableSize.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://seclists.org/oss-sec/2015/q3/404</url>
+      <url>https://sourceforge.net/p/libpgf/code/147/</url>
+      <url>https://sourceforge.net/p/libpgf/code/148/</url>
+    </references>
+    <dates>
+      <discovery>2015-08-08</discovery>
+      <entry>2015-08-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f5b8b670-465c-11e5-a49d-bcaec565249c">
     <topic>gdk-pixbuf2 -- heap overflow and DoS</topic>
     <affects>
