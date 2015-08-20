@@ -19,6 +19,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
 USES=		perl5
+NO_ARCH=	yes
 USE_RC_SUBR=	dkimproxy_in dkimproxy_out
 
 DKIMPROXYUSER=	dkimproxy
