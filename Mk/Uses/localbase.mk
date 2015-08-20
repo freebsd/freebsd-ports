@@ -15,4 +15,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+# Use CONFIGURE_ENV instead of CMAKE_ARGS because devel/cmake itself also needs
+# this, and CMAKE_ARGS is not used when bootstrapping CMake.
+CONFIGURE_ENV+=	CMAKE_PREFIX_PATH="${LOCALBASE}"
 .endif
