@@ -49142,7 +49142,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Juli Mallett reports:</p>
-	<blockquote cite="http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/147007">
+	<blockquote>
 	  <p>mdnsd will crash on some systems with a corrupt stack and once
 	    that's fixed it will still leak a file descriptor when parsing
 	    resolv.conf. The crash is because scanf is used with %10s for a
@@ -51558,14 +51558,14 @@ executed in your Internet Explorer while displaying the email.</p>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Denis Barov reports:</p>
-	<blockquote cite="http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/141852">
+	<blockquote>
 	  <p>sysutils/fuser allows user to send any signal to any process when
 	    installed with suid bit.</p>
 	</blockquote>
       </body>
     </description>
     <references>
-      <url>http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/141852</url>
+      <freebsdpr>ports/141852</freebsdpr>
     </references>
     <dates>
       <discovery>2009-09-15</discovery>
@@ -81734,7 +81734,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Emanuel Haupt reports:</p>
-	<blockquote cite="http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/86833">
+	<blockquote>
 	  <p>Someone who controls an FTP server that weex will log in to
 	    can set up malicious data in the account that weex will use,
 	    and that will cause a format string bug that will allow remote
@@ -95618,7 +95618,7 @@ http_access deny Gopher</pre>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Rudolf Polzer reports:</p>
-	<blockquote cite="http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/70618">
+	<blockquote>
 	  <p>a2ps builds a command line for file() containing an
 	    unescaped version of the file name, thus might call
 	    external programs described by the file name.  Running a
@@ -95659,7 +95659,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <url>http://cvsweb.freebsd.org/ports/news/ifmail</url>
+      <url>https://svnweb.freebsd.org/ports/head/news/ifmail</url>
     </references>
     <dates>
       <discovery>2004-08-23</discovery>
@@ -96567,7 +96567,7 @@ http_access deny Gopher</pre>
     <references>
       <cvename>CVE-2004-0919</cvename>
       <freebsdsa>SA-04:15.syscons</freebsdsa>
-      <url>http://www.freebsd.org/cgi/cvsweb.cgi/src/sys/dev/syscons/syscons.c#rev1.429</url>
+      <url>https://svnweb.freebsd.org/changeset/base/135942</url>
     </references>
     <dates>
       <discovery>2004-09-30</discovery>
@@ -101456,7 +101456,6 @@ http_access deny Gopher</pre>
     </description>
     <references>
       <cvename>CVE-2004-0408</cvename>
-      <url>http://cvsweb.freebsd.org/ports/security/ident2/files/patch-common.c</url>
     </references>
     <dates>
       <discovery>2004-04-15</discovery>
@@ -102746,7 +102745,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <url>http://cvsweb.freebsd.org/ports/chinese/chitex/Attic/Makefile?rev=1.5&amp;content-type=text/x-cvsweb-markup</url>
+      <url>https://docs.freebsd.org/cgi/mid.cgi?200303251301.h2PD1m9Y053389</url>
     </references>
     <dates>
       <discovery>2003-04-25</discovery>
@@ -102772,7 +102771,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <url>http://www.freebsd.org/cgi/cvsweb.cgi/ports/mail/pine4/Makefile?rev=1.43&amp;content-type=text/x-cvsweb-markup</url>
+      <url>https://docs.freebsd.org/cgi/mid.cgi?200009290728.AAA69097</url>
     </references>
     <dates>
       <discovery>2000-09-29</discovery>
