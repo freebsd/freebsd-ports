@@ -46,6 +46,9 @@ post-patch: .SILENT
 		${WRKSRC}/src/d_main.c
 # Unbreak against Clang (https://llvm.org/bugs/show_bug.cgi?id=10365)
 	${REINPLACE_CMD} -e 's,%cc,cc,' ${WRKSRC}/src/m_fixed.h
+# Unbreak against Clang 3.7.0
+	${REINPLACE_CMD} -e '/draw_dir_line(/s,inline,static &,' \
+		${WRKSRC}/src/m_menu.c
 .if ! ${PORT_OPTIONS:MIPX}
 	${REINPLACE_CMD} -e '/USE_IPX/s|define|undef|' ${WRKSRC}/src/doomdef.h
 	${REINPLACE_CMD} -e 's| -lipx||' ${WRKSRC}/Makefile
