@@ -9,7 +9,9 @@ MASTER_SITES=	http://www.transit.hanse.de/mirror/svn.openwrt.org/firmware-utils/
 MAINTAINER=	stb@lassitu.de
 COMMENT=	Create device firmware images
 
-USES=	tar:bzip2
+LICENSE=	GPLv2
+
+USES=		tar:bzip2
 
 MAKEFILE=	${FILESDIR}/Makefile
 MAKE_ARGS+=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" PREFIX=${PREFIX}

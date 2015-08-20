@@ -1,6 +1,4 @@
-diff --git a/mkmylofw.c b/mkmylofw.c
-index 585a9f9..927a0f7 100644
---- mkmylofw.c
+--- mkmylofw.c.orig	2011-12-22 14:21:03 UTC
 +++ mkmylofw.c
 @@ -28,7 +28,9 @@
  #include <stdarg.h>
