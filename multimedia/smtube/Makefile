@@ -2,32 +2,32 @@
 # $FreeBSD$
 
 PORTNAME=	smtube
-PORTVERSION=	15.5.17
+PORTVERSION=	15.8.0
 CATEGORIES=	multimedia
-MASTER_SITES=	SF/smtube/SMTube/${PORTVERSION:R}/
+MASTER_SITES=	SF/smtube/SMTube/${PORTVERSION}/
 
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	SMPlayer YouTube browser
 
-RUN_DEPENDS=	${LOCALBASE}/bin/smplayer:${PORTSDIR}/multimedia/smplayer
+RUN_DEPENDS=	smplayer:${PORTSDIR}/multimedia/smplayer
 
 USES=		gmake tar:bzip2
 ALL_TARGET=	#empty
-USE_QT4=	linguist_build moc_build qmake_build rcc_build uic_build
-INSTALLS_ICONS=	yes
+USE_QT4=	linguisttools_build moc_build qmake_build \
+		rcc_build script uic_build webkit
+MAKE_ENV=	DATA_PATH=${DATADIR} DOC_PATH=${DOCSDIR} \
+		LRELEASE=${LRELEASE} QMAKE=${QMAKE}
 
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|qmake|${QMAKE} ${QMAKE_ARGS:S,\$(,\$\$(,g}|' \
-		-e 's|lrelease|${LRELEASE}|g' \
-		-e 's|PREFIX=/usr/local|PREFIX=${PREFIX}|g' \
-		-e 's|$$(PREFIX)/share/smtube|${DATADIR}|g' \
-		-e 's|$$(PREFIX)/share/doc/smtube|${DOCSDIR}|' \
+	@${REINPLACE_CMD} -E \
+		-e '/^(DATA_PATH|DOC_PATH|LRELEASE|PREFIX|QMAKE)/ s|=|?=|' \
 		-e 's| make| ${MAKE_CMD}|' \
 		${WRKSRC}/Makefile
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}	
 
