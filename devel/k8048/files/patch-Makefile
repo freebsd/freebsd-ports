@@ -1,6 +1,6 @@
---- Makefile.bak	2014-03-28 17:43:38.862317007 +0600
-+++ Makefile	2014-03-28 17:44:32.337312175 +0600
-@@ -43,6 +43,8 @@
+--- Makefile.orig	2014-10-31 11:52:38 UTC
++++ Makefile
+@@ -43,6 +43,8 @@ PLATFORM:=$(shell uname -m)
  ifeq "$(SYSTEM)" "FreeBSD"
   ifneq (,$(findstring 10.,$(RELEASE)))
    CC=cc
