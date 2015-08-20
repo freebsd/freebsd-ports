@@ -13,6 +13,7 @@ COMMENT=	Blender Documentation
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 SUB_FILES=	pkg-message
 
