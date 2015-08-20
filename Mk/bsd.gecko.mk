@@ -130,7 +130,12 @@ LDFLAGS+=		-L${LOCALBASE}/lib -Wl,-rpath,${PREFIX}/lib/${MOZILLA}
 
 # use jemalloc 3.0.0 API for stats/tuning
 MOZ_EXPORT+=	MOZ_JEMALLOC3=1
-.if ${OSVERSION} < 1000012 || ${MOZILLA_VER:R:R} >= 37
+.if ${OSVERSION} >= 1100079
+. if ${MOZILLA_VER:R:R} < 43
+# system jemalloc 4.0.0 vs. bundled jemalloc 3.6.0-204-gb4acf73
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bug1125514
+. endif
+.elif ${OSVERSION} < 1000012 || ${MOZILLA_VER:R:R} >= 37
 MOZ_OPTIONS+=	--enable-jemalloc
 .endif
 
