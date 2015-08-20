@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	igor
-PORTVERSION=	1.526
+PORTVERSION=	1.555
 CATEGORIES=	textproc
 MASTER_SITES=	http://docscripts.glenbarber.us/tags/${PORTNAME}/${PORTVERSION}/
 
@@ -13,6 +13,7 @@ LICENSE=	BSD2CLAUSE
 USES=		perl5
 USE_PERL5=	run
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/${PORTNAME} \
