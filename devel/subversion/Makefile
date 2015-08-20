@@ -1,6 +1,8 @@
 # Created by: rooneg@electricjellyfish.net
 # $FreeBSD$
 
+PORTREVISION=	1
+
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Version control system
 
@@ -121,9 +123,9 @@ pre-everything::
 pre-configure:
 .if ${PORT_OPTIONS:MBDB}
 	@BDB_VERSION=`${APR_APU_DIR}/${APU_CONFIG} --db-version`; \
-	if [ "$${BDB_VERSION}" != "4" -a "$${BDB_VERSION}" != "5" ] ; then \
+	if [ "$${BDB_VERSION}" != "4" -a "$${BDB_VERSION}" != "5" -a "$${BDB_VERSION}" != "6" ] ; then \
 		${ECHO_MSG} "" ; \
-		${ECHO_MSG} 'You should build `'"devel/apr1' with Berkeley DB (4 or 5) support to use subversion with it." ; \
+		${ECHO_MSG} 'You should build `'"devel/apr1' with Berkeley DB (4, 5 or 6) support to use subversion with it." ; \
 		${ECHO_MSG} 'Please rebuild `'"devel/apr1' with option "'`'"${OPT_NAME}' and try again." ; \
 		${ECHO_MSG} "" ; \
 		${ECHO_MSG} "Or you can disable Berkeley DB support. Only 'fs' repository backend will be available." ; \
