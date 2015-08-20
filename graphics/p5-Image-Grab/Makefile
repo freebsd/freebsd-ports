@@ -20,5 +20,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ENV=	${ECHO_CMD} "N" |
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
