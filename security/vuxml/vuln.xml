@@ -216,7 +216,7 @@ Notes:
   </vuln>
 
   <vuln vid="f1692469-45ce-11e5-adde-14dae9d210b8">
-    <topic>jasper -- double free in jasper_image_stop_load()</topic>
+    <topic>jasper -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>jasper</name>
@@ -232,16 +232,25 @@ Notes:
 	    A specially crafted file could cause an application using JasPer to
 	    crash.</p>
 	</blockquote>
+	<p>Feist Josselin reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2015/q3/408">
+	  <p>A new use-after-free was found in Jasper JPEG-200. The
+	    use-after-free appears in the function mif_process_cmpt of the
+	    src/libjasper/mif/mif_cod.c file.</p>
+	</blockquote>
       </body>
     </description>
     <references>
       <url>https://bugzilla.redhat.com/show_bug.cgi?id=1254242#c0</url>
       <url>http://seclists.org/oss-sec/2015/q3/366</url>
+      <url>http://seclists.org/oss-sec/2015/q3/408</url>
       <cvename>CVE-2015-5203</cvename>
+      <cvename>CVE-2015-5221</cvename>
     </references>
     <dates>
       <discovery>2015-08-17</discovery>
       <entry>2015-08-18</entry>
+      <modified>2015-08-20</modified>
     </dates>
   </vuln>
 
