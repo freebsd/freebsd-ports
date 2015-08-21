@@ -3,6 +3,7 @@
 
 PORTNAME=	nagios
 PORTVERSION=	4.1.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-4.x/${PORTNAME}-${PORTVERSION}
 PKGNAMESUFFIX=	4
@@ -85,6 +86,8 @@ OPTIONS_SUB=
 
 NANOSLEEP_CONFIGURE_ENABLE=	nanosleep
 
+.if !defined(MAKING_PATCHES)
+# make clean patch makepatch MAKING_PATCHES=
 post-patch:
 	${REINPLACE_CMD} -e 's/\<77\([0-7]\)\>/75\1/g; s/\<66\([0-7]\)\>/64\1/; /chmod/d; \
 		/\.cfg$$/s/$$/-sample/' \
@@ -93,6 +96,7 @@ post-patch:
 post-patch-UNHANDLED_HACK-on:
 	${REINPLACE_CMD} -e 's#;serviceprops=42\&#;serviceprops=10\&#g' -e \
 		's#;hostprops=42\"#;hostprops=10\"#g' ${WRKSRC}/html/side.php
+.endif
 
 post-install:
 	@${RMDIR} ${STAGEDIR}${PREFIX}/libexec/nagios

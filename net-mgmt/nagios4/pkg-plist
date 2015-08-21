@@ -1,5 +1,5 @@
-bin/nagios
-bin/nagiostats
+@(,%%NAGIOSGROUP%%,755) bin/nagios
+@(,%%NAGIOSGROUP%%,755) bin/nagiostats
 %%ETCDIR%%/cgi.cfg-sample
 %%ETCDIR%%/nagios.cfg-sample
 %%ETCDIR%%/objects/commands.cfg-sample
