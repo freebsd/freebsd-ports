@@ -58,6 +58,42 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2fe40238-480f-11e5-adde-14dae9d210b8">
+    <topic>tarsnap -- buffer overflow and local DoS</topic>
+    <affects>
+      <package>
+	<name>tarsnap</name>
+	<range><lt>1.0.36</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Colin Percival reports:</p>
+	<blockquote cite="http://mail.tarsnap.com/tarsnap-announce/msg00032.html">
+	  <p>1. SECURITY FIX: When constructing paths of objects being archived, a buffer
+	    could overflow by one byte upon encountering 1024, 2048, 4096, etc. byte
+	    paths. Theoretically this could be exploited by an unprivileged user whose
+	    files are being archived; I do not believe it is exploitable in practice,
+	    but I am offering a $1000 bounty for the first person who can prove me wrong:
+	    http://www.daemonology.net/blog/2015-08-21-tarsnap-1000-exploit-bounty.html</p>
+	  <p>2. SECURITY FIX: An attacker with a machine's write keys, or with read keys
+	    and control of the tarsnap service, could make tarsnap allocate a large
+	    amount of memory upon listing archives or reading an archive the attacker
+	    created; on 32-bit machines, tarsnap can be caused to crash under the
+	    aforementioned conditions.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://mail.tarsnap.com/tarsnap-announce/msg00032.html</url>
+      <url>http://www.daemonology.net/blog/2015-08-21-tarsnap-1000-exploit-bounty.html</url>
+    </references>
+    <dates>
+      <discovery>2015-08-21</discovery>
+      <entry>2015-08-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a0a4e24c-4760-11e5-9391-3c970e169bc2">
     <topic>vlc -- arbitrary pointer dereference vulnerability</topic>
     <affects>
