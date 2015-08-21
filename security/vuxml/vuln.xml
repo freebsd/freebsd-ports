@@ -58,6 +58,35 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="27fed73e-484f-11e5-825f-c80aa9043978">
+    <topic>OpenSSH -- PermitRootLogin may allow password connections with 'without-password'</topic>
+    <affects>
+      <package>
+	<name>openssh-portable</name>
+	<range><eq>7.0.p1,1</eq></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="http://www.openssh.com/txt/release-7.1">
+	  <p>OpenSSH 7.0 contained a logic error in PermitRootLogin=
+	    prohibit-password/without-password that could, depending on
+	    compile-time configuration, permit password authentication to
+	    root while preventing other forms of authentication. This problem
+	    was reported by Mantas Mikulenas.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openssh.com/txt/release-7.1</url>
+    </references>
+    <dates>
+      <discovery>2015-08-20</discovery>
+      <entry>2015-08-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2fe40238-480f-11e5-adde-14dae9d210b8">
     <topic>tarsnap -- buffer overflow and local DoS</topic>
     <affects>
