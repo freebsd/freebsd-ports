@@ -80,6 +80,7 @@ LIBSECRET_CONFIGURE_ENABLE=	libsecret
 LIBSECRET_LIB_DEPENDS=	libsecret-1.so:${PORTSDIR}/security/libsecret
 
 .if ${PINENTRY_GUI} == "gnome3"
+OPTIONS_DEFAULT=	LIBSECRET
 USE_GNOME+=	gtk20
 LIB_DEPENDS+=	libgcr-base-3.so:${PORTSDIR}/security/gcr
 PLIST_FILES=	bin/pinentry-gnome3
