@@ -9,6 +9,9 @@ MASTER_SITES=	http://www.lundman.net/ftp/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-platform, event-driven, simple networking library
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/license.txt
+
 # TODO
 # add support for SSL/TLS/OpenSSL
 USES=		gmake tar:tgz
