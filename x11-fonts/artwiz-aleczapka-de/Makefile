@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of (improved) artwiz fonts
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 USES=		fonts tar:bzip2
 SUB_FILES=	pkg-message
 
