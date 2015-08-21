@@ -30,6 +30,18 @@ you update your ports collection, before attempting any port upgrades.
 
   # pkg install -y `cat ghc-pkgs.txt`
 
+20150818:
+  AFFECTS: users of sysutils/s6
+  AUTHOR: Colin Booth <colin@heliocat.net>
+
+  s6-notifywhenup has been removed as of v2.2.0.0. Any run scripts 
+  using readyness notification must be updated to use a notification 
+  fd instead.
+
+  s6-svc options have changed for sending syncronous up/down timeouts. 
+  Any management or wrapper scripts using those options will need to
+  be updated.
+
 20150817:
   AFFECTS: everybody who still uses <UNIQUENAME>_SET/UNSET in make.conf
   AUTHOR: mat@FreeBSD.org
