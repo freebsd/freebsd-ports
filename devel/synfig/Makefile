@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	synfig
-PORTVERSION=	0.64.3
+PORTVERSION=	1.0
 CATEGORIES=	devel graphics multimedia
 MASTER_SITES=	SF/${PORTNAME}/releases/${PORTVERSION}/source
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	woodsb02@gmail.com
 COMMENT=	Vector based 2D animation package
 
 LICENSE=	GPLv3
@@ -16,6 +16,7 @@ LIB_DEPENDS=	libboost_program_options.so:${PORTSDIR}/devel/boost-libs \
 		libltdl.so:${PORTSDIR}/devel/libltdl \
 		libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick \
 		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
+		libmlt.so:${PORTSDIR}/multimedia/mlt \
 		libmng.so:${PORTSDIR}/graphics/libmng \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
@@ -28,6 +29,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG}
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
