@@ -24,7 +24,7 @@ according to which sub class drivers you want to use.
 
 To manually start/stop uhidd daemon on certain device, run:
 
-	%%PREFIX%%/etc/rc.d/uhidd [start|stop] /dev/ugen.X.Y
+	service uhidd [start|stop] /dev/ugen.X.Y
 
 See http://wiki.FreeBSD.org/uhidd for more details about how to install and
 setup the daemon.
