@@ -16,5 +16,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}resolver>=0.2.1:${PORTSDIR}/devel/py-resolve
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
