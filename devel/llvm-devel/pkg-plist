@@ -31,6 +31,7 @@ bin/opt-devel
 %%CLANG%%bin/clang-cpp-devel
 %%CLANG%%bin/clang-format-devel
 %%LLD%%bin/lld-devel
+%%LLD%%bin/lld-link-devel
 %%LLDB%%bin/argdumper-devel
 %%LLDB%%bin/lldb-devel
 %%LLDB%%bin/lldb-mi-devel
@@ -53,6 +54,7 @@ llvm-devel/bin/bugpoint
 %%CLANG%%llvm-devel/bin/git-clang-format
 llvm-devel/bin/llc
 %%LLD%%llvm-devel/bin/lld
+%%LLD%%llvm-devel/bin/lld-link
 %%LLDB%%llvm-devel/bin/lldb
 %%LLDB%%llvm-devel/bin/lldb-3.8.0
 %%LLDB%%llvm-devel/bin/lldb-mi
@@ -910,12 +912,12 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/Symbol/Block.h
 %%LLDB%%llvm-devel/include/lldb/Symbol/ClangASTContext.h
 %%LLDB%%llvm-devel/include/lldb/Symbol/ClangASTImporter.h
-%%LLDB%%llvm-devel/include/lldb/Symbol/ClangASTType.h
 %%LLDB%%llvm-devel/include/lldb/Symbol/ClangExternalASTSourceCallbacks.h
 %%LLDB%%llvm-devel/include/lldb/Symbol/ClangExternalASTSourceCommon.h
 %%LLDB%%llvm-devel/include/lldb/Symbol/ClangNamespaceDecl.h
 %%LLDB%%llvm-devel/include/lldb/Symbol/CompactUnwindInfo.h
 %%LLDB%%llvm-devel/include/lldb/Symbol/CompileUnit.h
+%%LLDB%%llvm-devel/include/lldb/Symbol/CompilerType.h
 %%LLDB%%llvm-devel/include/lldb/Symbol/DWARFCallFrameInfo.h
 %%LLDB%%llvm-devel/include/lldb/Symbol/DeclVendor.h
 %%LLDB%%llvm-devel/include/lldb/Symbol/Declaration.h
@@ -934,6 +936,7 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/Symbol/TaggedASTType.h
 %%LLDB%%llvm-devel/include/lldb/Symbol/Type.h
 %%LLDB%%llvm-devel/include/lldb/Symbol/TypeList.h
+%%LLDB%%llvm-devel/include/lldb/Symbol/TypeSystem.h
 %%LLDB%%llvm-devel/include/lldb/Symbol/UnwindPlan.h
 %%LLDB%%llvm-devel/include/lldb/Symbol/UnwindTable.h
 %%LLDB%%llvm-devel/include/lldb/Symbol/Variable.h
@@ -1108,6 +1111,7 @@ llvm-devel/include/llvm/ADT/ilist_node.h
 llvm-devel/include/llvm/ADT/iterator.h
 llvm-devel/include/llvm/ADT/iterator_range.h
 llvm-devel/include/llvm/Analysis/AliasAnalysis.h
+llvm-devel/include/llvm/Analysis/AliasAnalysisCounter.h
 llvm-devel/include/llvm/Analysis/AliasSetTracker.h
 llvm-devel/include/llvm/Analysis/AssumptionCache.h
 llvm-devel/include/llvm/Analysis/BasicAliasAnalysis.h
@@ -1116,6 +1120,7 @@ llvm-devel/include/llvm/Analysis/BlockFrequencyInfoImpl.h
 llvm-devel/include/llvm/Analysis/BranchProbabilityInfo.h
 llvm-devel/include/llvm/Analysis/CFG.h
 llvm-devel/include/llvm/Analysis/CFGPrinter.h
+llvm-devel/include/llvm/Analysis/CFLAliasAnalysis.h
 llvm-devel/include/llvm/Analysis/CGSCCPassManager.h
 llvm-devel/include/llvm/Analysis/CallGraph.h
 llvm-devel/include/llvm/Analysis/CallGraphSCCPass.h
@@ -1124,10 +1129,12 @@ llvm-devel/include/llvm/Analysis/CaptureTracking.h
 llvm-devel/include/llvm/Analysis/CodeMetrics.h
 llvm-devel/include/llvm/Analysis/ConstantFolding.h
 llvm-devel/include/llvm/Analysis/DOTGraphTraitsPass.h
+llvm-devel/include/llvm/Analysis/DemandedBits.h
 llvm-devel/include/llvm/Analysis/DependenceAnalysis.h
 llvm-devel/include/llvm/Analysis/DomPrinter.h
 llvm-devel/include/llvm/Analysis/DominanceFrontier.h
 llvm-devel/include/llvm/Analysis/DominanceFrontierImpl.h
+llvm-devel/include/llvm/Analysis/GlobalsModRef.h
 llvm-devel/include/llvm/Analysis/IVUsers.h
 llvm-devel/include/llvm/Analysis/InlineCost.h
 llvm-devel/include/llvm/Analysis/InstructionSimplify.h
@@ -1137,7 +1144,6 @@ llvm-devel/include/llvm/Analysis/IntervalPartition.h
 llvm-devel/include/llvm/Analysis/IteratedDominanceFrontier.h
 llvm-devel/include/llvm/Analysis/LazyCallGraph.h
 llvm-devel/include/llvm/Analysis/LazyValueInfo.h
-llvm-devel/include/llvm/Analysis/LibCallAliasAnalysis.h
 llvm-devel/include/llvm/Analysis/LibCallSemantics.h
 llvm-devel/include/llvm/Analysis/Lint.h
 llvm-devel/include/llvm/Analysis/Loads.h
@@ -1160,9 +1166,11 @@ llvm-devel/include/llvm/Analysis/RegionIterator.h
 llvm-devel/include/llvm/Analysis/RegionPass.h
 llvm-devel/include/llvm/Analysis/RegionPrinter.h
 llvm-devel/include/llvm/Analysis/ScalarEvolution.h
+llvm-devel/include/llvm/Analysis/ScalarEvolutionAliasAnalysis.h
 llvm-devel/include/llvm/Analysis/ScalarEvolutionExpander.h
 llvm-devel/include/llvm/Analysis/ScalarEvolutionExpressions.h
 llvm-devel/include/llvm/Analysis/ScalarEvolutionNormalization.h
+llvm-devel/include/llvm/Analysis/ScopedNoAliasAA.h
 llvm-devel/include/llvm/Analysis/SparsePropagation.h
 llvm-devel/include/llvm/Analysis/TargetFolder.h
 llvm-devel/include/llvm/Analysis/TargetLibraryInfo.def
@@ -1170,6 +1178,7 @@ llvm-devel/include/llvm/Analysis/TargetLibraryInfo.h
 llvm-devel/include/llvm/Analysis/TargetTransformInfo.h
 llvm-devel/include/llvm/Analysis/TargetTransformInfoImpl.h
 llvm-devel/include/llvm/Analysis/Trace.h
+llvm-devel/include/llvm/Analysis/TypeBasedAliasAnalysis.h
 llvm-devel/include/llvm/Analysis/ValueTracking.h
 llvm-devel/include/llvm/Analysis/VectorUtils.h
 llvm-devel/include/llvm/AsmParser/Parser.h
@@ -1774,6 +1783,8 @@ llvm-devel/include/llvm/Transforms/Vectorize.h
 llvm-devel/lib/BugpointPasses.so
 llvm-devel/lib/LLVMHello.so
 %%GOLD%%llvm-devel/lib/LLVMgold.so
+%%COMPILER_RT%%llvm-devel/lib/clang/3.8.0/asan_blacklist.txt
+%%COMPILER_RT%%llvm-devel/lib/clang/3.8.0/cfi_blacklist.txt
 %%CLANG%%llvm-devel/lib/clang/3.8.0/include/Intrin.h
 %%CLANG%%llvm-devel/lib/clang/3.8.0/include/__stddef_max_align_t.h
 %%CLANG%%llvm-devel/lib/clang/3.8.0/include/__wmmintrin_aes.h
@@ -1822,6 +1833,15 @@ llvm-devel/lib/LLVMHello.so
 %%CLANG%%llvm-devel/lib/clang/3.8.0/include/rdseedintrin.h
 %%CLANG%%llvm-devel/lib/clang/3.8.0/include/rtmintrin.h
 %%CLANG%%llvm-devel/lib/clang/3.8.0/include/s390intrin.h
+%%COMPILER_RT%%llvm-devel/lib/clang/3.8.0/include/sanitizer/allocator_interface.h
+%%COMPILER_RT%%llvm-devel/lib/clang/3.8.0/include/sanitizer/asan_interface.h
+%%COMPILER_RT%%llvm-devel/lib/clang/3.8.0/include/sanitizer/common_interface_defs.h
+%%COMPILER_RT%%llvm-devel/lib/clang/3.8.0/include/sanitizer/coverage_interface.h
+%%COMPILER_RT%%llvm-devel/lib/clang/3.8.0/include/sanitizer/dfsan_interface.h
+%%COMPILER_RT%%llvm-devel/lib/clang/3.8.0/include/sanitizer/linux_syscall_hooks.h
+%%COMPILER_RT%%llvm-devel/lib/clang/3.8.0/include/sanitizer/lsan_interface.h
+%%COMPILER_RT%%llvm-devel/lib/clang/3.8.0/include/sanitizer/msan_interface.h
+%%COMPILER_RT%%llvm-devel/lib/clang/3.8.0/include/sanitizer/tsan_interface_atomic.h
 %%CLANG%%llvm-devel/lib/clang/3.8.0/include/shaintrin.h
 %%CLANG%%llvm-devel/lib/clang/3.8.0/include/smmintrin.h
 %%CLANG%%llvm-devel/lib/clang/3.8.0/include/tbmintrin.h
@@ -1835,7 +1855,7 @@ llvm-devel/lib/LLVMHello.so
 %%CLANG%%llvm-devel/lib/clang/3.8.0/include/xmmintrin.h
 %%CLANG%%llvm-devel/lib/clang/3.8.0/include/xopintrin.h
 %%CLANG%%llvm-devel/lib/clang/3.8.0/include/xtestintrin.h
-llvm-devel/lib/libLLVMAArch64AsmParser.so
+%%COMPILER_RT%%%%COMPILER_RT%%%%COMPILER_RT%%%%COMPILER_RT%%%%COMPILER_RT%%%%COMPILER_RT%%%%COMPILER_RT%%%%COMPILER_RT%%%%COMPILER_RT%%%%COMPILER_RT%%%%COMPILER_RT%%%%COMPILER_RT%%%%COMPILER_RT%%%%COMPILER_RT%%%%COMPILER_RT%%%%COMPILER_RT%%%%COMPILER_RT%%%%COMPILER_RT%%%%COMPILER_RT%%%%COMPILER_RT%%llvm-devel/lib/libLLVMAArch64AsmParser.so
 llvm-devel/lib/libLLVMAArch64AsmParser.so.3.8
 llvm-devel/lib/libLLVMAArch64AsmParser.so.3.8.0svn
 llvm-devel/lib/libLLVMAArch64AsmPrinter.so
