@@ -15,6 +15,7 @@ RUN_DEPENDS=	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
