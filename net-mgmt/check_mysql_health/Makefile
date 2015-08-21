@@ -10,6 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nagios plugin to check various parameters of a MySQL database
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 
@@ -23,6 +24,7 @@ CONFIGURE_ARGS=	--with-statefiles-dir=${NAGIOSDIR} \
 		--with-perl=${PERL}
 
 USES=		perl5
+NO_ARCH=	yes
 
 NAGIOSUSER?=	nagios
 NAGIOSGROUP?=	nagios
