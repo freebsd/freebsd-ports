@@ -77,7 +77,7 @@ Notes:
 	  <p>Fixed a use-after-free bug
 	    related to PAM support that was reachable by attackers who could
 	    compromise the pre-authentication process for remote code
-	    execution. </p>
+	    execution.</p>
 	</blockquote>
       </body>
     </description>
