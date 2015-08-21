@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Exporter-Declare
-PORTVERSION=	0.113
-PORTREVISION=	1
+PORTVERSION=	0.114
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:EXODIST
@@ -10,6 +9,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for exporting done right
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
 	p5-Meta-Builder>=0.003:${PORTSDIR}/devel/p5-Meta-Builder \
@@ -20,5 +22,6 @@ TEST_DEPENDS=	p5-Fennec-Lite>=0:${PORTSDIR}/devel/p5-Fennec-Lite \
 
 USES=	perl5
 USE_PERL5=	modbuild
+NO_ARCH=	YES
 
 .include <bsd.port.mk>
