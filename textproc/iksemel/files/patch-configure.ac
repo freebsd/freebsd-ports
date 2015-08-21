@@ -1,6 +1,6 @@
---- ./configure.ac.orig	2009-07-23 11:16:36.000000000 +0000
-+++ ./configure.ac	2009-10-21 11:57:12.768114881 +0000
-@@ -45,7 +45,15 @@
+--- configure.ac.orig	2009-07-23 11:16:36 UTC
++++ configure.ac
+@@ -45,7 +45,15 @@ AC_SEARCH_LIBS(recv,socket)
  AC_CHECK_FUNCS(getopt_long)
  AC_CHECK_FUNCS(getaddrinfo)
  
