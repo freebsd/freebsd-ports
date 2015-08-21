@@ -130,12 +130,12 @@ LDFLAGS+=		-L${LOCALBASE}/lib -Wl,-rpath,${PREFIX}/lib/${MOZILLA}
 
 # use jemalloc 3.0.0 API for stats/tuning
 MOZ_EXPORT+=	MOZ_JEMALLOC3=1
-.if ${OSVERSION} >= 1100079
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100079
 . if ${MOZILLA_VER:R:R} < 43
 # system jemalloc 4.0.0 vs. bundled jemalloc 3.6.0-204-gb4acf73
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bug1125514
 . endif
-.elif ${OSVERSION} < 1000012 || ${MOZILLA_VER:R:R} >= 37
+.elif ${OPSYS} != FreeBSD || ${OSVERSION} < 1000012 || ${MOZILLA_VER:R:R} >= 37
 MOZ_OPTIONS+=	--enable-jemalloc
 .endif
 
@@ -381,7 +381,7 @@ MOZ_OPTIONS+=	--disable-debug --enable-release
 
 .if ${PORT_OPTIONS:MDTRACE}
 MOZ_OPTIONS+=	--enable-dtrace
-. if ${OSVERSION} < 1100061
+. if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100061
 LIBS+=			-lelf
 . endif
 STRIP=
@@ -454,8 +454,8 @@ MOZCONFIG_SED?= ${SED} ${MOZ_SED_ARGS}
 USE_BINUTILS=	# intel-gcm.s
 CFLAGS+=	-B${LOCALBASE}/bin
 LDFLAGS+=	-B${LOCALBASE}/bin
-.  if ${OSVERSION} < 1000041 && exists(/usr/lib/libcxxrt.so) && \
-	${CXXFLAGS:M-stdlib=libc++}
+.  if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000041 && \
+	exists(/usr/lib/libcxxrt.so) && ${CXXFLAGS:M-stdlib=libc++}
 LIBS+=		-lcxxrt
 .  endif
 . endif
