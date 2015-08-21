@@ -58,6 +58,38 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2920c449-4850-11e5-825f-c80aa9043978">
+    <topic>OpenSSH -- PAM vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openssh-portable</name>
+	<range><lt>7.0p1,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="http://www.openssh.com/txt/release-7.0">
+	  <p>Fixed a privilege separation
+	    weakness related to PAM support. Attackers who could successfully
+	    compromise the pre-authentication process for remote code
+	    execution and who had valid credentials on the host could
+	    impersonate other users.</p>
+	  <p>Fixed a use-after-free bug
+	    related to PAM support that was reachable by attackers who could
+	    compromise the pre-authentication process for remote code
+	    execution. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openssh.com/txt/release-7.0</url>
+    </references>
+    <dates>
+      <discovery>2015-08-11</discovery>
+      <entry>2015-08-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="27fed73e-484f-11e5-825f-c80aa9043978">
     <topic>OpenSSH -- PermitRootLogin may allow password connections with 'without-password'</topic>
     <affects>
