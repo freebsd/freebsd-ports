@@ -21,6 +21,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
 
 do-extract:
