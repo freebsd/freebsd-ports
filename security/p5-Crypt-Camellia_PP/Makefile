@@ -13,5 +13,6 @@ COMMENT=	Perl extension for Camellia Encryption Algorithm in pure Perl
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
