@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150821:
+  AFFECTS: users of security/openssh-portable
+  AUTHOR: bdrewery@FreeBSD.org
+
+  OpenSSH 7.0 disables support for:
+    * SSH protocol 1
+    * 1024-bit diffie-hellman-group1-sha1 key exchange
+    * ssh-dss, ssh-dss-cert-* host and user keys
+    * legacy v00 cert format
+
+  See http://www.openssh.com/txt/release-7.0 for more information and
+  http://www.openssh.com/legacy.html for how to re-enable some of these
+  algorithms.
+
 20150820:
   AFFECTS: users of lang/ghc and */hs-*
   AUTHOR: haskell@FreeBSD.org
