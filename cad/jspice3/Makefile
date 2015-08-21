@@ -22,9 +22,11 @@ X11_USE=	XORG=x11,xaw,xt
 pre-configure:
 	@${REINPLACE_CMD} -e 's+/usr/local+${PREFIX}+g;s+-O -g+${CFLAGS}+g;' \
 		${WRKSRC}/conf/unixconf/mkheader.0
-pre-confiure-X11-on:
+
+pre-configure-X11-on:
 	@${REINPLACE_CMD} -e 's+#%%WITH_X%%++g' \
 		${WRKSRC}/conf/unixconf/mkheader.0
+
 pre-configure-X11-off:
 	@${ECHO} "#undef HAVE_X11" >> ${WRKSRC}/src/include/spice.h
 
