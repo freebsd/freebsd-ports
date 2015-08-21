@@ -8,6 +8,9 @@ CATEGORIES=	www
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-browser JavaScript display engine for mathematics
 
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 USE_GITHUB=	yes
