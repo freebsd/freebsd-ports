@@ -384,7 +384,8 @@ _DEPCHAIN+=	${opt}.$o
 ##    All of RHS of "RHS.*" (i.e. indirect dependency) are also added for
 ##    fast convergence.
 _PORT_OPTIONS:=	${PORT_OPTIONS}
-.for count in _0 ${COMPLETE_OPTIONS_LIST}
+.for _count in _0 ${COMPLETE_OPTIONS_LIST}
+count=	${_count}
 ### Check if all of the nested dependency are resolved already.
 .  if ${count} == _0 || ${_PORT_OPTIONS} != ${PORT_OPTIONS}
 PORT_OPTIONS:=	${_PORT_OPTIONS}
