@@ -3,7 +3,7 @@
 
 PORTNAME=	texmacs
 PORTVERSION=	1.0.7.21
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	editors print
 MASTER_SITES=	ftp://ftp.texmacs.org/TeXmacs/tmftp/source/ \
 		http://www.predatorlabs.net/dl/
@@ -40,7 +40,7 @@ PDF_DESC=	Experimental PDF renderer
 FREETYPE_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 FREETYPE_CONFIGURE_WITH=freetype=linked
 
-GHOSTSCRIPT_USES=	ghostscript
+GHOSTSCRIPT_USES=	ghostscript:x11
 GHOSTSCRIPT_CONFIGURE_WITH=	gs=yes
 
 ICONV_USES=		iconv

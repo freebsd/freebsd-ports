@@ -3,7 +3,7 @@
 
 PORTNAME=	flpsed
 PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://www.ecademix.com/JohannesHofmann/
 
@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 LIB_DEPENDS+=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils ghostscript gmake
+USES=		desktop-file-utils ghostscript:x11 gmake
 PLIST_FILES=	bin/flpsed \
 		man/man1/flpsed.1.gz \
 		share/applications/flpsed.desktop \

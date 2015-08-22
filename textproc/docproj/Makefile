@@ -3,17 +3,12 @@
 
 PORTNAME=	docproj
 PORTVERSION=	2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
-MASTER_SITES=	# empty
-DISTFILES=	# empty
-EXTRACT_ONLY=	# empty
 
 MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	The "meta-port" for the FreeBSD Documentation Project
 
-# This dependency list should be kept in sync with the list of
-# required ports in src/release/Makefile.inc.docports.
 RUN_DEPENDS=	links:${PORTSDIR}/www/links1 \
 		pngtopnm:${PORTSDIR}/graphics/netpbm \
 		scr2png:${PORTSDIR}/graphics/scr2png \
@@ -28,13 +23,11 @@ RUN_DEPENDS=	links:${PORTSDIR}/www/links1 \
 		p5-XML-Parser>=2.41:${PORTSDIR}/textproc/p5-XML-Parser \
 		zip:${PORTSDIR}/archivers/zip
 
-USES=		ghostscript:run perl5
+USES=		ghostscript:run metaport perl5
 USE_PERL5=	run
-DEPENDS_ARGS+=	BATCH=yes
-NO_BUILD=	yes
 
-OPTIONS_DEFINE=		X11 CJK SVN IGOR FOP JING DBLATEX
-OPTIONS_DEFAULT=	X11 CJK     IGOR
+OPTIONS_DEFINE=		CJK SVN IGOR FOP JING DBLATEX
+OPTIONS_DEFAULT=	CJK     IGOR
 .if !exists(/usr/bin/svnlite)
 OPTIONS_DEFAULT+=	SVN
 .endif
@@ -70,16 +63,10 @@ RUN_DEPENDS+=	${FONTS_CJK}
 .endif
 .endif
 
-.if !${PORT_OPTIONS:MX11}
-DEPENDS_ARGS+=	OPTIONS_UNSET_FORCE+=X11
-.endif
-
 # generate MINIMALDOCPORTS for src/release/Makefile.inc.docports.
 # (XXX: incomplete yet)
 minimaldocports:
 	@${ECHO_CMD} "MINIMALDOCPORTS= \\"
 	@${MAKE} all-depends-list | ${SED} -e 's,^${PORTSDIR}/,	,' -e 's,$$, \\,'
-
-do-install:	# empty
 
 .include <bsd.port.mk>
