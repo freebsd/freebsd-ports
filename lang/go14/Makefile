@@ -36,7 +36,7 @@ GOOBJ=6
 GOARCH=arm
 GOOBJ=5
 .else
-.error "unknown arch ${ARCH}"
+IGNORE=		unknown arch ${ARCH}
 .endif
 
 PLIST_SUB+=	ARCH=${GOARCH} \
