@@ -3,7 +3,7 @@
 
 PORTNAME=	tarantool
 PORTVERSION=	1.6.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	http://tarantool.org/dist/master/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${TR_REV}-src
@@ -13,7 +13,7 @@ COMMENT=	NoSQL database running in a Lua application server
 
 LICENSE=	BSD2CLAUSE
 
-TR_REV=		238-g74f3d65
+TR_REV=		305-g3a9640b
 MAKE_JOBS_UNSAFE=yes
 USES=		cmake compiler:c++11-lang gettext gmake perl5 readline
 USE_GCC=	4.8+ # clang bug PR/201270
