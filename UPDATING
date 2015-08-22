@@ -5,6 +5,27 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150822:
+  AFFECTS: users of print/ghostscript*
+  AUTHOR: hrs@FreeBSD.org
+
+ print/ghostscript{7,8,9,9-agpl} have been split into
+ print/ghostscript{7,8,9,9-agpl}-{base,x11}.
+ print/ghostscript*-nox11 ports have been removed.
+
+ The -base installs Ghostscript binaries, libgs, and other data files
+ and it depends on no X11 library.  The -x11 installs a small shared
+ library to enable x11* devices in the installed -base package.
+
+ In most cases, Ghostscript is installed as a dependency.  A port/package
+ which requires Ghostscript will automatically pick up -base, and
+ when x11* devices required it will pick up -x11 in addition.
+
+ If one wants to install Ghostscript manually and full compatibility
+ with the previous versions, just install -x11 because it installs
+ -base as a dependency.  Combination of the two provides the same
+ functionality as before.
+
 20150821:
   AFFECTS: users of security/openssh-portable
   AUTHOR: bdrewery@FreeBSD.org
