@@ -1051,6 +1051,7 @@
     SUBDIR += xoris
     SUBDIR += xournal
     SUBDIR += xpaint
+    SUBDIR += xpeps
     SUBDIR += xpdf
     SUBDIR += xpx
     SUBDIR += xsane
