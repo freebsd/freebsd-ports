@@ -7840,11 +7840,11 @@ www/hs-yesod-platform||2015-08-20|Removed: Upstream support is discontinued.
 www/hs-yesod-routes||2015-08-20|Removed: Upstream support is discontinued.
 x11-toolkits/hs-gtkglext||2015-08-20|Removed: Upstream support is discontinued.
 textproc/prosper||2015-08-22|Removed: maintainted in print/texlive-texmf.
-print/ghostscript7|print/ghostscript7-x11|2015-08-22|Split into print/ghostscript7-base and print/ghostscript7-x11
+print/ghostscript7|print/ghostscript7-base|2015-08-22|Split into print/ghostscript7-base and print/ghostscript7-x11
 print/ghostscript7-nox11|print/ghostscript7-base|2015-08-22|Integrated into print/ghostscript7-base
-print/ghostscript8|print/ghostscript8-x11|2015-08-22|Split into print/ghostscript8-base and print/ghostscript8-x11
+print/ghostscript8|print/ghostscript8-base|2015-08-22|Split into print/ghostscript8-base and print/ghostscript8-x11
 print/ghostscript8-nox11|print/ghostscript8-base|2015-08-22|Integrated into print/ghostscript8-base
-print/ghostscript9|print/ghostscript9-x11|2015-08-22|Split into print/ghostscript9-base and print/ghostscript9-x11
+print/ghostscript9|print/ghostscript9-base|2015-08-22|Split into print/ghostscript9-base and print/ghostscript9-x11
 print/ghostscript9-nox11|print/ghostscript9-base|2015-08-22|Integrated into print/ghostscript9-base
-print/ghostscript9-agpl|print/ghostscript9-agpl-x11|2015-08-22|Split into print/ghostscript9-agpl-base and print/ghostscript9-agpl-x11
+print/ghostscript9-agpl|print/ghostscript9-agpl-base|2015-08-22|Split into print/ghostscript9-agpl-base and print/ghostscript9-agpl-x11
 print/ghostscript9-agpl-nox11|print/ghostscript9-agpl-base|2015-08-22|Integrated into print/ghostscript9-agpl-base
