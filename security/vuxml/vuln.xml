@@ -58,6 +58,75 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9393213d-489b-11e5-b8c7-d050996490d0">
+    <topic>drupal -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>drupal6</name>
+	<range><lt>6.37</lt></range>
+      </package>
+      <package>
+	<name>drupal7</name>
+	<range><lt>7.39</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Drupal development team reports:</p>
+	<blockquote cite="https://www.drupal.org/SA-CORE-2015-003">
+	  <p>This security advisory fixes multiple vulnerabilities.
+	    See below for a list.</p>
+	  <h3>Cross-site Scripting - Ajax system - Drupal 7</h3>
+	  <p>A vulnerability was found that allows a malicious
+	    user to perform a cross-site scripting attack by
+	    invoking Drupal.ajax() on a whitelisted HTML element.</p>
+	  <p>This vulnerability is mitigated on sites that do not
+	    allow untrusted users to enter HTML.</p>
+	  <h3>Cross-site Scripting - Autocomplete system - Drupal 6 and 7</h3>
+	  <p>A cross-site scripting vulnerability was found in
+	    the autocomplete functionality of forms. The
+	    requested URL is not sufficiently sanitized.</p>
+	  <p>This vulnerability is mitigated by the fact that
+	    the malicious user must be allowed to upload files.</p>
+	  <h3>SQL Injection - Database API - Drupal 7</h3>
+	  <p>A vulnerability was found in the SQL comment
+	    filtering system which could allow a user with
+	    elevated permissions to inject malicious code in
+	    SQL comments.</p>
+	  <p>This vulnerability is mitigated by the fact that
+	    only one contributed module that the security team
+	    found uses the comment filtering system in a way
+	    that would trigger the vulnerability. That module
+	    requires you to have a very high level of access
+	    in order to perform the attack.</p>
+	  <h3>Cross-site Request Forgery - Form API - Drupal 6 and 7</h3>
+	  <p>A vulnerability was discovered in Drupal's form API
+	    that could allow file upload value callbacks to run
+	    with untrusted input, due to form token validation
+	    not being performed early enough. This vulnerability
+	    could allow a malicious user to upload files to the
+	    site under another user's account.</p>
+	  <p>This vulnerability is mitigated by the fact that
+	    the uploaded files would be temporary, and Drupal
+	    normally deletes temporary files automatically
+	    after 6 hours.</p>
+	  <h3>Information Disclosure in Menu Links - Access system - Drupal 6 and 7</h3>
+	  <p>Users without the "access content" permission
+	    can see the titles of nodes that they do not have
+	    access to, if the nodes are added to a menu on the
+	    site that the users have access to.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.drupal.org/SA-CORE-2015-003</url>
+    </references>
+    <dates>
+      <discovery>2015-08-19</discovery>
+      <entry>2015-08-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2920c449-4850-11e5-825f-c80aa9043978">
     <topic>OpenSSH -- PAM vulnerabilities</topic>
     <affects>
