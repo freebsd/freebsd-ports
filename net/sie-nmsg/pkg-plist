@@ -1,6 +1,7 @@
 include/nmsg/sie/defs.h
 include/nmsg/sie/delay.pb-c.h
 include/nmsg/sie/dnsdedupe.pb-c.h
+include/nmsg/sie/dnsnx.pb-c.h
 include/nmsg/sie/newdomain.pb-c.h
 include/nmsg/sie/qr.pb-c.h
 include/nmsg/sie/reputation.pb-c.h
