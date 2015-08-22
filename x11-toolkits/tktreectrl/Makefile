@@ -20,4 +20,8 @@ TKPKG=		treectrl${PORTVERSION}
 USE_LDCONFIG=	${PREFIX}/lib/${TKPKG}
 PLIST_SUB=	TKPKG=${TKPKG}
 
+post-patch:
+	@${REINPLACE_CMD} -e 's/FreeBSD-\*/FreeBSD-*|DragonFly-*/' \
+		${WRKSRC}/configure
+
 .include <bsd.port.mk>
