@@ -41,7 +41,7 @@ USE_LDCONFIG=	${PREFIX}/${PYPY_DIR}/bin
 USES=		compiler:c11 gettext-runtime tar:bzip2
 WRKSRC=		${WRKDIR}/pypy-pypy-295ee98b6928
 PYPY_VER=	${DISTVERSION:C|([0-9])\.([0-9]).*|\1\2|}
-PYPY_DIR=	pypy${PYPY_VER
+PYPY_DIR=	pypy${PYPY_VER}
 PLIST_SUB+=	PYPY_VER=${PYPY_VER} PYPY_DIR=${PYPY_DIR}
 
 .include <bsd.port.options.mk>
