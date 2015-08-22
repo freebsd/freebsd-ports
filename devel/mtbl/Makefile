@@ -18,16 +18,7 @@ USE_LDCONFIG=	yes
 USES=		gmake libtool pathfix pkgconfig
 INSTALL_TARGET=	install-strip
 
-.include <bsd.port.pre.mk>
-
-# The version of binutils in base does not understand the crc32
-# instructions used in this code on amd64.  Use gcc from ports
-# to get a more capable version of binutils.
-.if (${OPSYS} == FreeBSD && ${OSVERSION} < 900000 && ${ARCH} == amd64)
-USE_GCC=	yes
-.endif
-
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
