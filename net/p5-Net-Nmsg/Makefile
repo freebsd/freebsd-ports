@@ -26,8 +26,6 @@ OPTIONS_DEFINE=	EXAMPLES
 
 PORTEXAMPLES=	*
 
-.include <bsd.port.options.mk>
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Net/Nmsg/Nmsg.so
 
