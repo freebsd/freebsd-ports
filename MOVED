@@ -7839,3 +7839,4 @@ www/hs-scgi||2015-08-20|Removed: Deprecated.
 www/hs-yesod-platform||2015-08-20|Removed: Upstream support is discontinued.
 www/hs-yesod-routes||2015-08-20|Removed: Upstream support is discontinued.
 x11-toolkits/hs-gtkglext||2015-08-20|Removed: Upstream support is discontinued.
+textproc/prosper||2015-08-22|Removed: maintainted in print/texlive-texmf.
