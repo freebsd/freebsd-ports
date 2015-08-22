@@ -36,7 +36,7 @@ GOARCH=amd64
 .elif ${ARCH} == "armv6"
 GOARCH=arm
 .else
-.error "unknown arch ${ARCH}"
+IGNORE=		unknown arch ${ARCH}
 .endif
 
 PLIST_SUB+=	ARCH=${GOARCH}
