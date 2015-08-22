@@ -4,7 +4,7 @@
 PORTNAME=	doxygen
 PORTVERSION=	1.8.10
 PORTEPOCH=	2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/ \
 		http://ftp.stack.nl/pub/users/dimitri/

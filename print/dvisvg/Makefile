@@ -3,7 +3,7 @@
 
 PORTNAME=	dvisvg
 DISTVERSION=	0.7.1d
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	print
 MASTER_SITES=	http://dvisvg.sourceforge.net/files/
 
