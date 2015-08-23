@@ -772,6 +772,7 @@
     SUBDIR += p5-String-Strip
     SUBDIR += p5-String-ToIdentifier-EN
     SUBDIR += p5-String-Tokenizer
+    SUBDIR += p5-String-Trim
     SUBDIR += p5-String-Truncate
     SUBDIR += p5-String-Urandom
     SUBDIR += p5-String-Util
