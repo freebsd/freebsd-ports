@@ -10,6 +10,7 @@ include/avro/Decoder.hh
 include/avro/Encoder.hh
 include/avro/Exception.hh
 include/avro/Generic.hh
+include/avro/GenericDatum.hh
 include/avro/Layout.hh
 include/avro/Node.hh
 include/avro/NodeConcepts.hh
