@@ -1,8 +1,7 @@
 bin/asn_import
 bin/asn_get_routeviews
-libexec/apache22/mod_asn.so
+%%APACHEMODDIR%%/%%AP_MODULE%%
 %%EXAMPLESDIR%%/mod_asn.conf
 %%DATADIR%%/asn.sql
 @dirrm %%DATADIR%%
 @dirrm %%EXAMPLESDIR%%
-@unexec egrep -v 'LoadModule +asn_module +libexec/apache22/mod_asn.so' %D/etc/apache22/httpd.conf > /tmp/httpd.$$; mv /tmp/httpd.$$ %D/etc/apache22/httpd.conf
