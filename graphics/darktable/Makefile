@@ -18,7 +18,7 @@ LIB_DEPENDS=	libexiv2.so:${PORTSDIR}/graphics/exiv2 \
 		libcurl.so:${PORTSDIR}/ftp/curl
 
 ONLY_FOR_ARCHS=	i386 amd64
-ONLY_FOR_ARCHS_REASON=	uses SSE extensions
+ONLY_FOR_ARCHS_REASON=	uses SSE instructions
 
 USES=		compiler:c++11-lib cmake:outsource desktop-file-utils	\
 		ninja pkgconfig tar:xz

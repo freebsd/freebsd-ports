@@ -21,7 +21,7 @@ LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs \
 		libOpenImageIO.so:${PORTSDIR}/graphics/openimageio
 
 ONLY_FOR_ARCHS=	i386 amd64
-ONLY_FOR_ARCHS_REASON=	uses SSE extensions
+ONLY_FOR_ARCHS_REASON=	uses SSE instructions
 
 USES=		bison cmake execinfo python:version tar:bzip2
 USE_GL=		glut glew
