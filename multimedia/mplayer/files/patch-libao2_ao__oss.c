@@ -1,6 +1,6 @@
---- libao2/ao_oss.c.orig	2010-01-11 21:27:52.000000000 +0100
-+++ libao2/ao_oss.c	2011-12-29 01:06:49.227522915 +0100
-@@ -56,6 +56,8 @@
+--- libao2/ao_oss.c.orig	2013-03-17 22:47:17 UTC
++++ libao2/ao_oss.c
+@@ -57,6 +57,8 @@ static const ao_info_t info =
  	""
  };
  
@@ -9,7 +9,7 @@
  /* Support for >2 output channels added 2001-11-25 - Steve Davies <steve@daviesfam.org> */
  
  LIBAO_EXTERN(oss)
-@@ -72,6 +74,11 @@
+@@ -73,6 +75,11 @@ static int format2oss(int format)
      case AF_FORMAT_S16_BE: return AFMT_S16_BE;
  #ifdef AFMT_S24_PACKED
      case AF_FORMAT_S24_LE: return AFMT_S24_PACKED;
@@ -21,7 +21,7 @@
  #endif
  #ifdef AFMT_U32_LE
      case AF_FORMAT_U32_LE: return AFMT_U32_LE;
-@@ -115,6 +122,11 @@
+@@ -116,6 +123,11 @@ static int oss2format(int format)
      case AFMT_S16_BE: return AF_FORMAT_S16_BE;
  #ifdef AFMT_S24_PACKED
      case AFMT_S24_PACKED: return AF_FORMAT_S24_LE;
@@ -33,7 +33,7 @@
  #endif
  #ifdef AFMT_U32_LE
      case AFMT_U32_LE: return AF_FORMAT_U32_LE;
-@@ -434,9 +446,29 @@
+@@ -435,9 +447,29 @@ static void uninit(int immed){
      audio_fd = -1;
  }
  
@@ -63,7 +63,7 @@
      uninit(1);
      audio_fd=open(dsp, O_WRONLY);
      if(audio_fd < 0){
-@@ -448,6 +480,7 @@
+@@ -449,6 +481,7 @@ static void reset(void){
    fcntl(audio_fd, F_SETFD, FD_CLOEXEC);
  #endif
  
@@ -71,7 +71,7 @@
    oss_format = format2oss(ao_data.format);
    if(AF_FORMAT_IS_AC3(ao_data.format))
      ioctl (audio_fd, SNDCTL_DSP_SPEED, &ao_data.samplerate);
-@@ -459,13 +492,14 @@
+@@ -460,13 +493,14 @@ static void reset(void){
        int c = ao_data.channels-1;
        ioctl (audio_fd, SNDCTL_DSP_STEREO, &c);
      }

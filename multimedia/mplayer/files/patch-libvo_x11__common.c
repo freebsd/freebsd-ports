@@ -1,6 +1,6 @@
---- libvo/x11_common.c.orig	2014-02-08 21:39:02.000000000 +0100
-+++ libvo/x11_common.c	2014-04-19 14:43:53.715749607 +0200
-@@ -430,7 +430,7 @@
+--- libvo/x11_common.c.orig	2015-05-11 20:10:01 UTC
++++ libvo/x11_common.c
+@@ -430,7 +430,7 @@ int vo_init(void)
      }
  
      // Required so that XLookupString returns UTF-8
