@@ -584,6 +584,7 @@
     SUBDIR += mhgui
     SUBDIR += ming
     SUBDIR += mirage
+    SUBDIR += mitsuba
     SUBDIR += mmrecover
     SUBDIR += mozjpeg
     SUBDIR += mscgen
@@ -809,7 +810,6 @@
     SUBDIR += pstoedit
     SUBDIR += pstoepsi
     SUBDIR += pure-gl
-    SUBDIR += py-pyganim
     SUBDIR += py-PyX
     SUBDIR += py-PyX12
     SUBDIR += py-aafigure
@@ -854,6 +854,7 @@
     SUBDIR += py-pycha
     SUBDIR += py-pydot
     SUBDIR += py-pygal
+    SUBDIR += py-pyganim
     SUBDIR += py-pyggel
     SUBDIR += py-pyglet
     SUBDIR += py-pygooglechart
@@ -1051,8 +1052,8 @@
     SUBDIR += xoris
     SUBDIR += xournal
     SUBDIR += xpaint
-    SUBDIR += xpeps
     SUBDIR += xpdf
+    SUBDIR += xpeps
     SUBDIR += xpx
     SUBDIR += xsane
     SUBDIR += xsvg
