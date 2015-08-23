@@ -2,28 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	autossh
-PORTVERSION=	1.4d
+PORTVERSION=	1.4e
 CATEGORIES=	security
 MASTER_SITES=	http://www.harding.motd.ca/autossh/
-EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatically restart SSH sessions and tunnels
 
+USES=		tar:tgz
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	CHANGES README
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS SSH_PORTABLE
 
-.include <bsd.port.options.mk>
+SSH_PORTABLE_DESC=	Default to ports openssh (instead of base)
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,cp autossh.1 ,$$\{BSD_INSTALL_MAN\} autossh.1 ,g' ${WRKSRC}/${MAKEFILE}.in
-	@${REINPLACE_CMD} -e 's,cp autossh ,$$\{BSD_INSTALL_PROGRAM\} autossh ,g' ${WRKSRC}/${MAKEFILE}.in
-	@${REINPLACE_CMD} -e 's,cp ,$$\{BSD_INSTALL_DATA\} ,g' ${WRKSRC}/${MAKEFILE}.in
-.if empty(PORT_OPTIONS:MDOCS)
-	@${REINPLACE_CMD} -Ee '/doc/d' ${WRKSRC}/${MAKEFILE}.in
-.endif
+SSH_PORTABLE_CONFIGURE_ENV=	ac_cv_path_ssh=${LOCALBASE}/bin/ssh
+SSH_PORTABLE_RUN_DEPENDS=	${LOCALBASE}/bin/ssh:${PORTSDIR}/security/openssh-portable
 
 .include <bsd.port.mk>
