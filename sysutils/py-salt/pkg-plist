@@ -162,6 +162,8 @@
 %%PYTHON_SITELIBDIR%%/salt/cloud/clouds/softlayer.pyc
 %%PYTHON_SITELIBDIR%%/salt/cloud/clouds/softlayer_hw.py
 %%PYTHON_SITELIBDIR%%/salt/cloud/clouds/softlayer_hw.pyc
+%%PYTHON_SITELIBDIR%%/salt/cloud/clouds/vmware.py
+%%PYTHON_SITELIBDIR%%/salt/cloud/clouds/vmware.pyc
 %%PYTHON_SITELIBDIR%%/salt/cloud/clouds/vsphere.py
 %%PYTHON_SITELIBDIR%%/salt/cloud/clouds/vsphere.pyc
 %%PYTHON_SITELIBDIR%%/salt/cloud/deploy/Arch-git.sh
@@ -783,6 +785,8 @@
 %%PYTHON_SITELIBDIR%%/salt/modules/system.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/system_profiler.py
 %%PYTHON_SITELIBDIR%%/salt/modules/system_profiler.pyc
+%%PYTHON_SITELIBDIR%%/salt/modules/system_rest_sample.py
+%%PYTHON_SITELIBDIR%%/salt/modules/system_rest_sample.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/systemd.py
 %%PYTHON_SITELIBDIR%%/salt/modules/systemd.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/test.py
@@ -1651,6 +1655,8 @@
 %%PYTHON_SITELIBDIR%%/salt/utils/thin.pyc
 %%PYTHON_SITELIBDIR%%/salt/utils/timed_subprocess.py
 %%PYTHON_SITELIBDIR%%/salt/utils/timed_subprocess.pyc
+%%PYTHON_SITELIBDIR%%/salt/utils/url.py
+%%PYTHON_SITELIBDIR%%/salt/utils/url.pyc
 %%PYTHON_SITELIBDIR%%/salt/utils/validate/__init__.py
 %%PYTHON_SITELIBDIR%%/salt/utils/validate/__init__.pyc
 %%PYTHON_SITELIBDIR%%/salt/utils/validate/net.py
