@@ -892,6 +892,7 @@
     SUBDIR += p5-Text-Shellwords
     SUBDIR += p5-Text-Similarity
     SUBDIR += p5-Text-SimpleTable
+    SUBDIR += p5-Text-SimpleTable-AutoWidth
     SUBDIR += p5-Text-SimpleTemplate
     SUBDIR += p5-Text-Soundex
     SUBDIR += p5-Text-SpellChecker
