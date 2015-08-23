@@ -1,2 +1,4 @@
-SHA256 (mplayer-1.1.20150403.tar.xz) = 910c2c6fda92f5883e09f34c39ca314aa5a815fa1c224e5c072bde82339f6db3
-SIZE (mplayer-1.1.20150403.tar.xz) = 11552096
+SHA256 (ffmpeg-2.7.2.tar.bz2) = 7ceb7550ad628c526fa6c9ff23fdfb687a62f54d90c4a730998d8c2b417b9ef2
+SIZE (ffmpeg-2.7.2.tar.bz2) = 8157217
+SHA256 (mplayer-1.1.20150822.tar.xz) = a01e31b8a54f61d37bdeddd5c3514956c1c6366b65e3e67c25c828c47c98d9f7
+SIZE (mplayer-1.1.20150822.tar.xz) = 5162400

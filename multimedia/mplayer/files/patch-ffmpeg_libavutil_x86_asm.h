@@ -1,6 +1,6 @@
---- ffmpeg/libavutil/x86/asm.h.orig	2013-05-25 19:20:04.000000000 +0200
-+++ ffmpeg/libavutil/x86/asm.h	2013-11-11 21:51:57.940269764 +0100
-@@ -70,7 +70,7 @@
+--- ffmpeg/libavutil/x86/asm.h.orig	2015-06-19 20:44:54 UTC
++++ ffmpeg/libavutil/x86/asm.h
+@@ -71,7 +71,7 @@ typedef int32_t x86_reg;
  typedef int x86_reg;
  #endif
  

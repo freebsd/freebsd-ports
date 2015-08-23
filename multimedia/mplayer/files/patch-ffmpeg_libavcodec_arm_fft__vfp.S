@@ -1,6 +1,6 @@
---- ffmpeg/libavcodec/arm/fft_vfp.S.orig	2014-12-09 19:20:07.000000000 +0100
-+++ ffmpeg/libavcodec/arm/fft_vfp.S	2014-12-24 15:48:09.494735677 +0100
-@@ -33,7 +33,7 @@
+--- ffmpeg/libavcodec/arm/fft_vfp.S.orig	2015-06-19 20:44:37 UTC
++++ ffmpeg/libavcodec/arm/fft_vfp.S
+@@ -33,7 +33,7 @@ function ff_fft_calc_vfp, export=1
          movrel  a2, (fft_tab_vfp - 8)
          ldr     pc, [a2, ip, lsl #2]
  endfunc

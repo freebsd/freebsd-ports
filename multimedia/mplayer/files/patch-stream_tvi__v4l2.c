@@ -1,6 +1,6 @@
---- stream/tvi_v4l2.c.orig	2011-06-26 16:42:35.000000000 +0200
-+++ stream/tvi_v4l2.c	2011-11-26 20:09:03.369654854 +0100
-@@ -52,7 +52,6 @@
+--- stream/tvi_v4l2.c.orig	2014-06-10 16:39:04 UTC
++++ stream/tvi_v4l2.c
+@@ -53,7 +53,6 @@ known issues:
  #ifdef HAVE_SYS_VIDEOIO_H
  #include <sys/videoio.h>
  #else
@@ -8,9 +8,9 @@
  #include <linux/videodev2.h>
  #endif
  #include "mp_msg.h"
-@@ -62,6 +61,14 @@
- #include "tv.h"
- #include "audio_in.h"
+@@ -68,6 +67,14 @@ known issues:
+ #define V4L2_BUF_FLAG_TIMESTAMP_MONOTONIC 0x2000
+ #endif
  
 +#include <libv4l2.h>
 +#define open	v4l2_open

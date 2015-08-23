@@ -1,6 +1,6 @@
---- stream/tvi_v4l.c	2007-10-07 23:49:26.000000000 +0400
-+++ stream/tvi_v4l.c	2010-01-27 13:42:17.781746063 +0300
-@@ -48,6 +48,14 @@
+--- stream/tvi_v4l.c.orig	2013-03-17 22:47:17 UTC
++++ stream/tvi_v4l.c
+@@ -65,6 +65,14 @@
  
  #include "audio_in.h"
  
@@ -14,4 +14,4 @@
 +
  static tvi_handle_t *tvi_init_v4l(tv_param_t* tv_param);
  
- tvi_info_t tvi_info_v4l = {
+ const tvi_info_t tvi_info_v4l = {

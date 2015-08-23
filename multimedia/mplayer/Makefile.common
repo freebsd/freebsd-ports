@@ -4,16 +4,18 @@
 #
 # $FreeBSD$
 
-MPLAYER_SNAPSHOT_DATE=	2015-04-03
+MPLAYER_SNAPSHOT_DATE=	2015-08-22
 MPLAYER_PORT_VERSION=	1.1.r${MPLAYER_SNAPSHOT_DATE:S/-//g}
-CATEGORIES?=	multimedia audio
-MASTER_SITES=	LOCAL/riggs/mplayer
+FFMPEG_VERSION=	2.7.2
+MASTER_SITES=	LOCAL/riggs/mplayer:local \
+		http://ffmpeg.org/releases/:ffmpeg
+DISTFILES+=	ffmpeg-${FFMPEG_VERSION}.tar.bz2:ffmpeg \
+		${DISTNAME}.tar.xz:local
 DISTNAME=	mplayer-${MPLAYER_PORT_VERSION:S/.r/./g}
 WRKSRC=		${WRKDIR}/mplayer-export-${MPLAYER_SNAPSHOT_DATE}
 
-MAINTAINER?=	riggs@FreeBSD.org
-
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
@@ -21,7 +23,7 @@ LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/yasm:${PORTSDIR}/devel/yasm
 
-USES=		compiler:c11 gmake iconv ncurses tar:xz
+USES=		compiler:c11 gmake iconv ncurses tar:bzip2 tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	TMPDIR="${WRKSRC}"
 CONFIGURE_ARGS=	--cc="${CC}" \
