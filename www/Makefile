@@ -926,6 +926,7 @@
     SUBDIR += p5-HTML-QuickCheck
     SUBDIR += p5-HTML-RSSAutodiscovery
     SUBDIR += p5-HTML-ResolveLink
+    SUBDIR += p5-HTML-Restrict
     SUBDIR += p5-HTML-RobotsMETA
     SUBDIR += p5-HTML-Scrubber
     SUBDIR += p5-HTML-Seamstress
