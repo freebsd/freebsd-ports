@@ -17,8 +17,6 @@ USES=		perl5
 USE_PERL5=	configure
 
 post-install:
-	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Shape/Shape.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Shape/Shape.so
-	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Shape/Shape.so
 
 .include <bsd.port.mk>
