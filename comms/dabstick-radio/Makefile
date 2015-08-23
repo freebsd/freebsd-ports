@@ -28,13 +28,13 @@ PORTDOCS=	*
 PLIST_FILES+=	bin/dabreceiver bin/fmreceiver bin/spectrum-viewer
 
 ONLY_FOR_ARCHS=		i386 amd64
-ONLY_FOR_ARCHS_REASON=	uses MMX and SSE2
+ONLY_FOR_ARCHS_REASON=	uses MMX and SSE2 instructions
 
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-.if (${OSVERSION} >= 901000) && exists(${DESTDIR}/usr/bin/clang)
+.if (${OSVERSION} >= 900014) && exists(${DESTDIR}/usr/bin/clang)
 CC=		clang
 CXX=		clang++
 CPP=		clang-cpp
