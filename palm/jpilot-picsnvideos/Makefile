@@ -11,7 +11,8 @@ PKGNAMEPREFIX=	jpilot-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JPilot plugin to download photos and videos
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	jpilot:${PORTSDIR}/palm/jpilot
 BUILD_DEPENDS=	jpilot:${PORTSDIR}/palm/jpilot
