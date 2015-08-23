@@ -414,6 +414,7 @@
     SUBDIR += p5-POE-Component-Client-SMTP
     SUBDIR += p5-POE-Component-SMTP
     SUBDIR += p5-POE-Filter-Transparent-SMTP
+    SUBDIR += p5-Parse-MIME
     SUBDIR += p5-Parse-Syslog-Mail
     SUBDIR += p5-Qmail-Envelope
     SUBDIR += p5-SES
