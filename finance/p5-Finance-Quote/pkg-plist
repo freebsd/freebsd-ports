@@ -16,6 +16,7 @@
 %%SITE_PERL%%/Finance/Quote/FTPortfolios.pm
 %%SITE_PERL%%/Finance/Quote/FTfunds.pm
 %%SITE_PERL%%/Finance/Quote/Fidelity.pm
+%%SITE_PERL%%/Finance/Quote/FidelityFixed.pm
 %%SITE_PERL%%/Finance/Quote/FinanceCanada.pm
 %%SITE_PERL%%/Finance/Quote/Finanzpartner.pm
 %%SITE_PERL%%/Finance/Quote/Fool.pm
@@ -28,7 +29,6 @@
 %%SITE_PERL%%/Finance/Quote/ManInvestments.pm
 %%SITE_PERL%%/Finance/Quote/Morningstar.pm
 %%SITE_PERL%%/Finance/Quote/MorningstarJP.pm
-%%SITE_PERL%%/Finance/Quote/MtGox.pm
 %%SITE_PERL%%/Finance/Quote/NZX.pm
 %%SITE_PERL%%/Finance/Quote/Platinum.pm
 %%SITE_PERL%%/Finance/Quote/SEB.pm
@@ -55,6 +55,7 @@
 %%SITE_PERL%%/Finance/Quote/Yahoo/NZ.pm
 %%SITE_PERL%%/Finance/Quote/Yahoo/USA.pm
 %%SITE_PERL%%/Finance/Quote/YahooJSON.pm
+%%SITE_PERL%%/Finance/Quote/YahooYQL.pm
 %%SITE_PERL%%/Finance/Quote/ZA.pm
 %%SITE_PERL%%/Finance/Quote/ZA_UnitTrusts.pm
 %%PERL5_MAN3%%/Finance::Quote.3.gz
@@ -75,6 +76,7 @@
 %%PERL5_MAN3%%/Finance::Quote::FTPortfolios.3.gz
 %%PERL5_MAN3%%/Finance::Quote::FTfunds.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Fidelity.3.gz
+%%PERL5_MAN3%%/Finance::Quote::FidelityFixed.3.gz
 %%PERL5_MAN3%%/Finance::Quote::FinanceCanada.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Finanzpartner.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Fool.3.gz
@@ -87,7 +89,6 @@
 %%PERL5_MAN3%%/Finance::Quote::ManInvestments.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Morningstar.3.gz
 %%PERL5_MAN3%%/Finance::Quote::MorningstarJP.3.gz
-%%PERL5_MAN3%%/Finance::Quote::MtGox.3.gz
 %%PERL5_MAN3%%/Finance::Quote::NZX.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Platinum.3.gz
 %%PERL5_MAN3%%/Finance::Quote::SEB.3.gz
@@ -110,5 +111,6 @@
 %%PERL5_MAN3%%/Finance::Quote::Yahoo::NZ.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Yahoo::USA.3.gz
 %%PERL5_MAN3%%/Finance::Quote::YahooJSON.3.gz
+%%PERL5_MAN3%%/Finance::Quote::YahooYQL.3.gz
 %%PERL5_MAN3%%/Finance::Quote::ZA.3.gz
 %%PERL5_MAN3%%/Finance::Quote::ZA_UnitTrusts.3.gz
