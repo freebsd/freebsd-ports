@@ -1,6 +1,6 @@
---- vidix/mga_vid.c.orig	2014-05-17 03:38:00.000000000 +0200
-+++ vidix/mga_vid.c	2014-08-11 20:58:07.109876980 +0200
-@@ -1110,13 +1110,10 @@
+--- vidix/mga_vid.c.orig	2014-05-17 01:38:00 UTC
++++ vidix/mga_vid.c
+@@ -1110,13 +1110,10 @@ static int mga_probe(int verbose,int for
  		    i, lst[i].vendor, lst[i].device);
  	    if (lst[i].vendor == VENDOR_MATROX)
  	    {

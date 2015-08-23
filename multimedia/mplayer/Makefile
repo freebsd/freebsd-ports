@@ -3,15 +3,16 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	4
+CATEGORIES=	multimedia audio
 
+MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	High performance media player supporting many formats
 
-.include "${.CURDIR}/Makefile.shared"
+.include "${.CURDIR}/Makefile.common"
 
 OPTIONS_DEFINE=	AALIB AMR_NB AMR_WB BLURAY CACA CDIO DEBUG DV \
 		ENCA FONTCONFIG FRIBIDI GIF GNUTLS GSM GUI IPV6 JACK \
-		LADSPA LIBMNG LIRC LZO NAS OCFLAGS  OPENAL OPENGL \
+		LADSPA LIBMNG LIRC LZO NAS OCFLAGS OPENAL OPENGL \
 		OPENJPEG OPUS PULSEAUDIO REAL RTC RTCPU RTMP \
 		SCHROEDINGER SDL SKINS SMB SVGALIB V4L VDPAU VPX \
 		X11 X11DGA X11VM XINERAMA XVIDEO XVMC
@@ -120,6 +121,9 @@ pre-everything::
 	@${ECHO_MSG} "or download them from"
 	@${ECHO_MSG} "http://www.mplayerhq.hu/"
 .endif
+
+pre-patch:
+	${MV} ${WRKDIR}/ffmpeg-${FFMPEG_VERSION} ${WRKSRC}/ffmpeg
 
 post-patch:
 .if ${OSVERSION} >= 900010
