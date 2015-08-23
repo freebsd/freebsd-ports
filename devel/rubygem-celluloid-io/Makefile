@@ -3,6 +3,7 @@
 
 PORTNAME=	celluloid-io
 PORTVERSION=	0.17.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
