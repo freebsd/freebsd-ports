@@ -33,6 +33,10 @@ OPTIONS_SINGLE=	SAMPLERATED
 OPTIONS_SINGLE_SAMPLERATED=	SAMPLERATE #SOXR
 OPTIONS_DEFAULT=	FFMPEG FLAC ID3TAG LADSPA MAD MIDI NYQUIST \
 			PORTMIXER SBSMS SOUNDTOUCH SAMPLERATE TWOLAME VAMP VORBIS VST
+OPTIONS_DEFINE_amd64=	SSE
+OPTIONS_DEFINE_i386=	SSE
+OPTIONS_DEFAULT_amd64=	SSE
+OPTIONS_DEFAULT_i386=	${MACHINE_CPU:tu:MSSE}
 
 DEBUG_DESC=	Enable debug support
 LAME_DESC=	Use lame for import and export support
@@ -54,11 +58,6 @@ CONFIGURE_ENV+=	WX_CONFIG="${WX_CONFIG}"
 
 CONFIGURE_ARGS+=	--with-lib-preference="local system" \
 			--enable-portaudio --enable-unicode
-.if ${MACHINE_CPU:Msse}
-CONFIGURE_ARGS+=	--enable-sse
-.else
-CONFIGURE_ARGS+=	--disable-sse
-.endif
 
 DEBUG_CONFIGURE_WITH=	debug
 
@@ -103,6 +102,8 @@ SOUNDTOUCH_LIB_DEPENDS=	libSoundTouch.so:${PORTSDIR}/audio/soundtouch
 #SOXR_CONFIGURE_WITH=	libsoxr
 #SOXR_BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
 
+SSE_CONFIGURE_ENABLE=	sse
+
 TWOLAME_CONFIGURE_WITH=	libtwolame
 TWOLAME_LIB_DEPENDS=	libtwolame.so:${PORTSDIR}/audio/twolame
 
@@ -113,8 +114,6 @@ VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 
 VST_CONFIGURE_ENABLE=	vst
 
-.include <bsd.port.pre.mk>
-
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 CPPFLAGS+=	-I${WRKSRC}/lib-src/portsmf
 CXXFLAGS+=	-I${WRKSRC}/lib-src/portsmf
@@ -123,13 +122,13 @@ CFLAGS+=	-I${WRKSRC}/lib-src/portsmf \
 		-I${WRKSRC}/lib-src/lame -I${LOCALBASE}/include
 
 post-patch:
-.if ! ${PORT_OPTIONS:MPORTMIXER}
-	@${REINPLACE_CMD} -e 's/ portmixer / /' ${WRKSRC}/lib-src/Makefile.in
-.endif
 	@${REINPLACE_CMD} -e 's|inline void|static inline void|' ${WRKSRC}/lib-src/libnyquist/nyquist/ffts/src/fftlib.c
+
+post-patch-PORTMIXER-off:
+	@${REINPLACE_CMD} -e 's/ portmixer / /' ${WRKSRC}/lib-src/Makefile.in
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
