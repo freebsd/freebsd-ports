@@ -33,6 +33,7 @@ CONFIGURE_ARGS=	--disable-compile-inits \
 		--disable-contrib \
 		--enable-dynamic \
 		--disable-freetype \
+		--disable-fontconfig \
 		--without-libiconv \
 		--without-system-libtiff \
 		--without-ijs \
