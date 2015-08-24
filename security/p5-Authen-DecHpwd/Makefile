@@ -8,7 +8,7 @@ CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	brix@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module for DEC VMS password hashing
 
 BUILD_DEPENDS=	p5-Scalar-String>=0:${PORTSDIR}/devel/p5-Scalar-String \

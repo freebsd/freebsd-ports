@@ -10,7 +10,7 @@ MASTER_SITES=	http://apachegallery.dk/download/ \
 		CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	brix@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache::Gallery - mod_perl handler to create an image gallery
 
 LICENSE=	ART10
