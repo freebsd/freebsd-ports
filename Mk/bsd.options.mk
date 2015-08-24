@@ -100,6 +100,8 @@
 #				get enabled too.
 # ${opt}_PREVENTS		When opt is enabled, if any options in PREVENTS are
 #				also enabled, it will produce an error.
+# ${opt}_PREVENTS_MSG		Provides a message explaining why the options
+#				cannot be selected together.
 #
 # ${opt}_USE=	FOO=bar		When option is enabled, it will  enable
 #				USE_FOO+= bar
