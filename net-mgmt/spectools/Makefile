@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.kismetwireless.net/code/ \
 		LOCAL/brix
 DISTNAME=	spectools-2011-08-R1
 
-MAINTAINER=	brix@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for the Wi-Spy spectrum analyzers from MetaGeek LLC
 
 LICENSE=	GPLv2

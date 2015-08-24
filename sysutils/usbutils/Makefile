@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/linux-usb/${PORTNAME}
 
-MAINTAINER=	brix@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for listing USB devices
 
 LICENSE=	GPLv2
