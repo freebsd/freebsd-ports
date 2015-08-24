@@ -5049,6 +5049,9 @@ _check-config: pre-check-config
 	@${ECHO_MSG} "====> Two or more enabled options conflict with each other"
 .  for prevents in ${OPTIONS_WRONG_PREVENTS}
 	@${ECHO_MSG} "=====> Option ${prevents} conflicts with ${OPTIONS_WRONG_PREVENTS_${prevents}} (select only one)"
+.    if defined(${prevents}_PREVENTS_MSG)
+	@${ECHO_MSG} "======> ${${prevents}_PREVENTS_MSG}"
+.    endif
 .  endfor
 .endif
 .if !empty(OPTIONS_WRONG_MULTI) || !empty(OPTIONS_WRONG_SINGLE) || !empty(OPTIONS_WRONG_RADIO) || !empty(OPTIONS_WRONG_PREVENTS)
