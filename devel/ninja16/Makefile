@@ -1,11 +1,12 @@
 # Created by: Grzegorz Blach <gblach@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	ninja16
+PORTNAME=	ninja
 PORTVERSION=	1.6.0
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	devel
+PKGNAMESUFFIX=	16
 
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Ninja is a small build system closest in spirit to Make
@@ -29,7 +30,7 @@ do-build:
 		CXX="${CXX}" CFLAGS="${CXXFLAGS}" ${PYTHON_CMD} configure.py --bootstrap)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ninja ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/ninja ${STAGEDIR}${PREFIX}/bin/ninja16
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && \
 	    ${INSTALL_DATA} COPYING HACKING.md README doc/manual.asciidoc \
