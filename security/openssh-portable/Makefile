@@ -3,7 +3,7 @@
 
 PORTNAME=	openssh
 DISTVERSION=	7.1p1
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	OPENBSD/OpenSSH/portable
@@ -120,6 +120,8 @@ CONFIGURE_ARGS+=	--disable-utmp --disable-wtmp --disable-wtmpx --without-lastlog
 .else
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-sshd-utmp-size
 .endif
+
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-hostkeyalg_plus
 
 # Keep this last
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-version-addendum
