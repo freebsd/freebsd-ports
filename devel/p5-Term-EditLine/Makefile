@@ -3,7 +3,7 @@
 
 PORTNAME=	Term-EditLine
 PORTVERSION=	0.05
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Perl interface to the NetBSD editline library
 
-USES=		perl5
+USES=		libedit perl5
 USE_PERL5=	configure
 
 PORTSCOUT=	skipv:0.06,0.07 # no functional change
