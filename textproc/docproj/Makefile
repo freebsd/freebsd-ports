@@ -3,7 +3,7 @@
 
 PORTNAME=	docproj
 PORTVERSION=	2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 
 MAINTAINER=	doceng@FreeBSD.org
@@ -26,8 +26,8 @@ RUN_DEPENDS=	links:${PORTSDIR}/www/links1 \
 USES=		ghostscript:run metaport perl5
 USE_PERL5=	run
 
-OPTIONS_DEFINE=		CJK SVN IGOR FOP JING DBLATEX
-OPTIONS_DEFAULT=	CJK     IGOR
+OPTIONS_DEFINE=		DBLATEX CJK FOP IGOR JING SVN TRANSLATOR
+OPTIONS_DEFAULT=	        CJK     IGOR
 .if !exists(/usr/bin/svnlite)
 OPTIONS_DEFAULT+=	SVN
 .endif
@@ -46,6 +46,8 @@ DBLATEX_DESC=		dblatex PDF renderer (experimental, requires TeXLive)
 DBLATEX_RUN_DEPENDS=	dblatex:${PORTSDIR}/textproc/dblatex \
 			${FONTS}
 DBLATEX_USE=		TEX=xetex
+TRANSLATOR_DESC=	Tools for translators
+TRANSLATOR_RUN_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
 FONTS=	${LOCALBASE}/share/fonts/GentiumPlus/GentiumPlus-R.ttf:${PORTSDIR}/x11-fonts/gentium-plus \
 	${LOCALBASE}/share/fonts/Droid/DroidSans.ttf:${PORTSDIR}/x11-fonts/droid-fonts-ttf \
