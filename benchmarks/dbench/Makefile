@@ -5,14 +5,15 @@ PORTNAME=	dbench
 PORTVERSION=	4.0
 PORTREVISION=	2
 CATEGORIES=	benchmarks
-MASTER_SITES=	ftp/tridge/dbench
+MASTER_SITES=	SAMBA
+MASTER_SITE_SUBDIR=	tridge/dbench
 
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Simulation of the Ziff-Davis netbench benchmark
 
-LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
-
 LICENSE=	GPLv3
+
+LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
 
 CFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
