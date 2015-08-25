@@ -121,7 +121,7 @@ CONFIGURE_ARGS+=	--disable-utmp --disable-wtmp --disable-wtmpx --without-lastlog
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-sshd-utmp-size
 .endif
 
-EXTRA_PATCHES+=		${FILESDIR}/extra-patch-hostkeyalg_plus
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-hostkeyalg_plus:-p1
 
 # Keep this last
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-version-addendum
