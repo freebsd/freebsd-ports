@@ -1,6 +1,6 @@
---- libk3bdevice/k3bdevice.h.orig	2010-07-30 06:33:55.000000000 +0200
-+++ libk3bdevice/k3bdevice.h	2010-07-30 06:35:35.000000000 +0200
-@@ -222,6 +222,11 @@
+--- libk3bdevice/k3bdevice.h.orig	2014-11-04 18:37:31 UTC
++++ libk3bdevice/k3bdevice.h
+@@ -222,6 +222,11 @@ namespace K3b {
               */
              QString blockDeviceName() const;
  
