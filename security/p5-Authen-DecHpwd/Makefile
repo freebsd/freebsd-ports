@@ -8,14 +8,15 @@ CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for DEC VMS password hashing
 
-LICENSE=	GPLv1
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Scalar-String>=0:${PORTSDIR}/devel/p5-Scalar-String \
-		p5-Data-Integer>=0:${PORTSDIR}/devel/p5-Data-Integer \
-		p5-Digest-CRC>=0:${PORTSDIR}/security/p5-Digest-CRC
+BUILD_DEPENDS=	p5-Data-Integer>=0:${PORTSDIR}/devel/p5-Data-Integer \
+		p5-Digest-CRC>=0:${PORTSDIR}/security/p5-Digest-CRC \
+		p5-Scalar-String>=0:${PORTSDIR}/devel/p5-Scalar-String
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
