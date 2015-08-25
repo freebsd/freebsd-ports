@@ -18,17 +18,12 @@ PORTDOCS=	*
 PLIST_SUB=	SHLIB_VER=${PORTVERSION} \
 		SHLIB_SHVER=${PORTVERSION:R}
 
-STRIP_FILES=	lib/libqwt.so.${PORTVERSION}
-
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/man3/Qwt* ${STAGEDIR}${PREFIX}/man/man3
-	${STRIP_CMD} ${STRIP_FILES:S,^,${STAGEDIR}${PREFIX}/,}
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	(cd ${WRKSRC}/doc/html/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-.endif
 
 .include <bsd.port.mk>
