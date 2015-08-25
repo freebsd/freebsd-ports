@@ -3,12 +3,12 @@
 
 PORTNAME=	citrix_ica
 PORTVERSION=	13.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net comms linux
 MASTER_SITES=	#
 DISTNAME=	linuxx86-13.2.0.322243
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Citrix(R) Presentation Server(TM) client
 
 ONLY_FOR_ARCHS=	i386 amd64
@@ -51,6 +51,11 @@ pre-fetch:
 .endif
 .endfor
 .endif
+
+post-patch:
+# linux syscall epoll_create is not yet implemented
+	@${REINPLACE_CMD} -e 's|^ClientAudio=On|ClientAudio=Off|' \
+		${WRKSRC}/linuxx86/linuxx86.cor/nls/*/module.ini
 
 do-install:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${STAGEDIR}${PREFIX}|g' ${WRKDIR}/linuxx86/hinst
