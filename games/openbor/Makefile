@@ -40,6 +40,8 @@ DESKTOP_ENTRIES="OpenBOR" \
 
 .if ${ARCH} == i386
 BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
+.else
+MAKE_ARGS+=	BUILD_MMX=""
 .endif
 
 #
