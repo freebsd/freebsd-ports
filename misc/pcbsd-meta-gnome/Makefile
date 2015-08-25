@@ -12,7 +12,7 @@ DISTFILES=	# none
 MAINTAINER=	kris@pcbsd.org
 COMMENT=	The meta-port pcbsd-meta-gnome
 
-RUN_DEPENDS=	gnome3>=0:${PORTSDIR}/x11/gnome3-lite \
+RUN_DEPENDS=	gnome3-lite>=0:${PORTSDIR}/x11/gnome3-lite \
 		dconf-editor:${PORTSDIR}/devel/dconf-editor \
 		gnome-terminal>=3.0.0:${PORTSDIR}/x11/gnome-terminal \
 		gnome-calculator>=3.0.0:${PORTSDIR}/math/gnome-calculator \
