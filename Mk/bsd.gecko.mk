@@ -128,6 +128,7 @@ MOZ_MK_OPTIONS+=MOZ_OBJDIR="${MOZ_OBJDIR}"
 CPPFLAGS+=		-isystem${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib -Wl,-rpath,${PREFIX}/lib/${MOZILLA}
 
+.if ${OPSYS} != DragonFly # XXX xpcshell crash during install
 # use jemalloc 3.0.0 API for stats/tuning
 MOZ_EXPORT+=	MOZ_JEMALLOC3=1
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100079
@@ -138,6 +139,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bug1125514
 .elif ${OPSYS} != FreeBSD || ${OSVERSION} < 1000012 || ${MOZILLA_VER:R:R} >= 37
 MOZ_OPTIONS+=	--enable-jemalloc
 .endif
+.endif # !DragonFly
 
 # Standard depends
 _ALL_DEPENDS=	cairo event ffi graphite harfbuzz hunspell icu jpeg nspr nss opus png pixman soundtouch sqlite vorbis vpx
