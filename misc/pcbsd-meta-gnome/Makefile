@@ -17,7 +17,8 @@ RUN_DEPENDS=	gnome3-lite>=0:${PORTSDIR}/x11/gnome3-lite \
 		gnome-terminal>=3.0.0:${PORTSDIR}/x11/gnome-terminal \
 		gnome-calculator>=3.0.0:${PORTSDIR}/math/gnome-calculator \
 		gnome-utils>=3.6.0:${PORTSDIR}/deskutils/gnome-utils \
-		file-roller>=3.0.0:${PORTSDIR}/archivers/file-roller
+		file-roller>=3.0.0:${PORTSDIR}/archivers/file-roller \
+		gnome-system-monitor>=0:${PORTSDIR}/sysutils/gnome-system-monitor
 
 NO_BUILD=	yes
 
