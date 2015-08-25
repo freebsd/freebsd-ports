@@ -13,6 +13,7 @@ LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 DEPRECATED=	Superseded by sysutils/fusefs-ntfs
+EXPIRATION_DATE=	2016-12-31
 
 CONFLICTS_INSTALL=	fusefs-ntfs-*
 
