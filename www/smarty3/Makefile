@@ -3,9 +3,8 @@
 
 PORTNAME=	smarty3
 PORTVERSION=	3.1.27
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www
-MASTER_SITES=	https://github.com/smarty-php/smarty/archive/
-DISTNAME=	v${PORTVERSION}
 
 MAINTAINER=	ports@michael-fausten.de
 COMMENT=	PHP compiling template engine
@@ -20,6 +19,10 @@ WANT_PHP_WEB=	yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	smarty-php
+GH_PROJECT=	smarty
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
