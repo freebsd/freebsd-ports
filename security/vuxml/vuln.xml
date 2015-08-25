@@ -58,6 +58,70 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="40497e81-fee3-4e54-9d5f-175a5c633b73">
+    <topic>libtremor -- memory corruption</topic>
+    <affects>
+      <package>
+	<name>libtremor</name>
+	<range><lt>1.2.0.s20120120</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/advisories/mfsa2014-77/">
+	  <p>Security researcher regenrecht reported via
+	    TippingPoint's Zero Day Initiative the possibility of memory
+	    corruption during the decoding of Ogg Vorbis files. This can
+	    cause a crash during decoding and has the potential for
+	    remote code execution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-0444</cvename>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=719612</url>
+    </references>
+    <dates>
+      <discovery>2012-01-31</discovery>
+      <entry>2015-08-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3dac84c9-bce1-4199-9784-d68af1eb7b2e">
+    <topic>libtremor -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libtremor</name>
+	<range><lt>1.2.0.s20101013</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The RedHat Project reports:</p>
+	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=438125">
+	  <p>Will Drewry of the Google Security Team reported multiple
+	    issues in OGG Vorbis and Tremor libraries, that could cause
+	    application using those libraries to crash (NULL pointer
+	    dereference or divide by zero), enter an infinite loop or
+	    cause heap overflow caused by integer overflow.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-1418</cvename>
+      <cvename>CVE-2008-1419</cvename>
+      <cvename>CVE-2008-1420</cvename>
+      <cvename>CVE-2008-1423</cvename>
+      <cvename>CVE-2008-2009</cvename>
+      <url>http://redpig.dataspill.org/2008/05/multiple-vulnerabilities-in-ogg-tremor.html</url>
+    </references>
+    <dates>
+      <discovery>2008-03-19</discovery>
+      <entry>2015-08-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6900e6f1-4a79-11e5-9ad8-14dae9d210b8">
     <topic>pcre -- heap overflow vulnerability</topic>
     <affects>
