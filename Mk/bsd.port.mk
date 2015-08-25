@@ -4421,10 +4421,14 @@ build-depends-list:
 
 BUILD-DEPENDS-LIST= \
 	for dir in $$(${ECHO_CMD} "${PKG_DEPENDS} ${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS}" | ${SED} -E -e 's,([^: ]*):([^: ]*)(:[^ ]*)?,\2,g' -e 'y/ /\n/'| ${SORT} -u); do \
-		if [ -d $$dir ]; then \
-			${ECHO_CMD} $$dir; \
+		case $$dir in \
+		/*) pdir=$$dir ;; \
+		*) pdir=${PORTSDIR}/$$dir ;; \
+		esac ; \
+		if [ -d $$pdir ]; then \
+			${ECHO_CMD} $$pdir; \
 		else \
-			${ECHO_MSG} "${PKGNAME}: \"$$dir\" non-existent -- dependency list incomplete" >&2; \
+			${ECHO_MSG} "${PKGNAME}: \"$$pdir\" non-existent -- dependency list incomplete" >&2; \
 		fi; \
 	done | ${SORT} -u
 
@@ -4435,10 +4439,14 @@ run-depends-list:
 
 RUN-DEPENDS-LIST= \
 	for dir in $$(${ECHO_CMD} "${_LIB_RUN_DEPENDS:C,.*:([^:]*).*,\1,}" | ${SED} -e 'y/ /\n/' | ${SORT} -u); do \
-		if [ -d $$dir ]; then \
-			${ECHO_CMD} $$dir; \
+		case $$dir in \
+		/*) pdir=$$dir ;; \
+		*) pdir=${PORTSDIR}/$$dir ;; \
+		esac ; \
+		if [ -d $$pdir ]; then \
+			${ECHO_CMD} $$pdir; \
 		else \
-			${ECHO_MSG} "${PKGNAME}: \"$$dir\" non-existent -- dependency list incomplete" >&2; \
+			${ECHO_MSG} "${PKGNAME}: \"$$pdir\" non-existent -- dependency list incomplete" >&2; \
 		fi; \
 	done | ${SORT} -u
 
