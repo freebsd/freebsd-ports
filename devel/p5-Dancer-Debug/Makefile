@@ -6,18 +6,21 @@ PORTVERSION=	0.03
 PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:FRANCKC
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Dancer::Debug - Extend Plack::Middleware::Debug
 
-RUN_DEPENDS=	p5-Class-Method-Modifiers>=0:${PORTSDIR}/devel/p5-Class-Method-Modifiers \
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Class-Method-Modifiers>=0:${PORTSDIR}/devel/p5-Class-Method-Modifiers \
 		p5-Dancer>=0:${PORTSDIR}/www/p5-Dancer \
 		p5-Plack-Middleware-Debug>=0:${PORTSDIR}/www/p5-Plack-Middleware-Debug
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
-NO_ARCH=	yes
 
 .include <bsd.port.mk>
