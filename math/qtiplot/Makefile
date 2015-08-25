@@ -29,49 +29,26 @@ DESKTOP_ENTRIES="QtiPlot" "Data analysis and plotting" \
 		"qtiplot" "" true
 
 OPTIONS_DEFINE=	DOCS PYTHON NLS DEBUG
-OPTIONS_DEFAULT=	DOCS PYTHON NLS
+OPTIONS_DEFAULT=	PYTHON
+OPTIONS_SUB=	yes
 
 DOCS_DESC=	Install the QtiPlot Handbook
+DOCS_RUN_DEPENDS=	qtiplot-doc>=0:${PORTSDIR}/math/qtiplot-doc
+DOCS_USE=	QT4=assistant-adp_run
+
 PYTHON_DESC=	Python scripting support
+PYTHON_USES=	python
+PYTHON_BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
+PYTHON_RUN_DEPENDS:=	${PYTHON_BUILD_DEPENDS}
+PYTHON_CONFIGURE_ENV=	PYTHON_INCLUDEDIR=${PYTHON_INCLUDEDIR} \
+			PYTHON_VERSION=${PYTHON_VERSION}
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPYTHON}
-USES+=		python
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
-PLIST_SUB+=	PYTHON=""
-CONFIGURE_ENV+=	PYTHON_INCLUDEDIR=${PYTHON_INCLUDEDIR} \
-		PYTHON_VERSION=${PYTHON_VERSION}
-.else
-PLIST_SUB+=	PYTHON="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-RUN_DEPENDS+=	qtiplot-doc>=0:${PORTSDIR}/math/qtiplot-doc
-USE_QT4+=	assistant-adp_run
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USE_QT4+=	linguisttools_build
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_USE=	QT4=linguisttools_build
 
 post-extract:
 	${CP} ${FILESDIR}/build.conf ${WRKSRC}
 
 post-patch:
-.if ${PORT_OPTIONS:MPYTHON}
-	${REINPLACE_CMD} -e \
-		'/^sys.path.append/s|"\."|"${DATADIR}"|' \
-		${WRKSRC}/${PORTNAME}/qtiplotrc.py
-.else
-	${REINPLACE_CMD} -e \
-		"s/SCRIPTING_LANGS.*Python//" \
-		${WRKSRC}/build.conf
-.endif
 	${REINPLACE_CMD} -e \
 		's|/usr/local/qtiplot/fitPlugins|${DATADIR}/fitPlugins|' \
 		${WRKSRC}/qtiplot/src/core/ApplicationWindow.cpp
@@ -80,29 +57,37 @@ post-patch:
 		${WRKSRC}/fitPlugins/*/*.pro
 	${REINPLACE_CMD} -e '/^system($$$$LUPDATE/d; /^system($$$$LRELEASE/d' \
 		${WRKSRC}/${PORTNAME}/qtiplot.pro
-.if ${PORT_OPTIONS:MDEBUG}
+
+post-patch-PYTHON-on:
+	${REINPLACE_CMD} -e \
+		'/^sys.path.append/s|"\."|"${DATADIR}"|' \
+		${WRKSRC}/${PORTNAME}/qtiplotrc.py
+
+post-patch-PYTHON-off:
+	${REINPLACE_CMD} -e \
+		"s/SCRIPTING_LANGS.*Python//" \
+		${WRKSRC}/build.conf
+
+post-patch-DEBUG-on:
 	${REINPLACE_CMD} -e \
 		"/^CONFIG.*release/s|release|debug|" \
 		${WRKSRC}/build.conf
-.endif
-.if !${PORT_OPTIONS:MNLS}
+
+post-patch-NLS-off:
 	${REINPLACE_CMD} -e \
 		"/INSTALLS.*translations/d" \
 		${WRKSRC}/${PORTNAME}/qtiplot.pro
-.endif
 
-pre-configure:
-.if ${PORT_OPTIONS:MNLS}
+pre-configure-NLS-on:
 	cd ${WRKSRC}/qtiplot && ${LRELEASE} -compress qtiplot.pro
-.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/qtiplot_logo.png ${STAGEDIR}${PREFIX}/share/pixmaps/qtiplot.png
-.if ${PORT_OPTIONS:MPYTHON}
+
+post-install-PYTHON-on:
 .for s in qtiplotrc.py qtiUtil.py
 	cd ${WRKSRC}/qtiplot && ${PYTHON_CMD} -c "import py_compile; py_compile.compile('${s}')"
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/${s}c ${STAGEDIR}${DATADIR}/${s}c
 .endfor
-.endif
 
 .include <bsd.port.mk>
