@@ -8,13 +8,13 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Perl module for runtime module handling
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Runtime module handling
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-USES=		perl5
 USE_PERL5=	modbuild
+USES=		perl5
 
 .include <bsd.port.mk>
