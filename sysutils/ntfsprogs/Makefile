@@ -12,6 +12,8 @@ COMMENT=	Utilities and library to manipulate NTFS partitions
 LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Superseded by sysutils/fusefs-ntfs
+
 CONFLICTS_INSTALL=	fusefs-ntfs-*
 
 USES=		fuse pkgconfig libtool tar:bzip2
