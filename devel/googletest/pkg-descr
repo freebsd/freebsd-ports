@@ -6,4 +6,4 @@ a rich set of assertions, user-defined assertions, death tests,
 fatal and non-fatal failures, type-parameterized tests, various
 options for running the tests, and XML test report generation.
 
-WWW: http://code.google.com/p/googletest/
+WWW: https://github.com/google/googletest

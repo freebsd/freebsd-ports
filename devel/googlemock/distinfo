@@ -1,4 +1,2 @@
-SHA256 (gmock-1.7.0.zip) = 26fcbb5925b74ad5fc8c26b0495dfc96353f4d553492eb97e85a8a6d2f43095b
-SIZE (gmock-1.7.0.zip) = 2167746
-SHA256 (gmock_doctor.py) = 92a8eaf7f4c0716ecd9622b97d907e68d5eb63d6c89acbc1fc72d573d00fc47d
-SIZE (gmock_doctor.py) = 23590
+SHA256 (google-googlemock-release-1.7.0_GH0.tar.gz) = 3f20b6acb37e5a98e8c4518165711e3e35d47deb6cdb5a4dd4566563b5efd232
+SIZE (google-googlemock-release-1.7.0_GH0.tar.gz) = 296168
