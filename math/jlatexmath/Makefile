@@ -35,8 +35,6 @@ FOP_RUN_DEPENDS:=	${FOP_BUILD_DEPENDS} \
 			${JAVALIBDIR}/xml-apis-ext.jar:${PORTSDIR}/textproc/xml-commons
 FOP_ALL_TARGET=		fop
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/share/java/fop.jar|${LOCALBASE}/share/java/fop/build/fop.jar|' ${WRKSRC}/fop.properties
 	${REINPLACE_CMD} -e 's|/usr/share/java/batik.jar|${LOCALBASE}/share/java/batik/batik.jar|' ${WRKSRC}/fop.properties
@@ -47,10 +45,12 @@ pre-install:
 	-${RMDIR} ${WRKSRC}/examples/Macros/bin
 
 do-install:
-.if ${PORT_OPTIONS:MFOP}
-	${INSTALL_DATA} ${WRKSRC}/dist/jlatexmath-fop-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/jlatexmath-fop.jar
-.endif
 	${INSTALL_DATA} ${WRKSRC}/dist/jlatexmath-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/jlatexmath.jar
+
+do-install-EXAMPLES-on:
 	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR})
+
+do-install-FOP-on:
+	${INSTALL_DATA} ${WRKSRC}/dist/jlatexmath-fop-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/jlatexmath-fop.jar
 
 .include <bsd.port.mk>

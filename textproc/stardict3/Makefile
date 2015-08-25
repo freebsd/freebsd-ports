@@ -29,30 +29,28 @@ USE_GNOME=	intltool
 PROJECTHOST=	stardict-3
 
 OPTIONS_DEFINE=	GNOME
+OPTIONS_SUB=	yes
+
+GNOME_USE=	GNOME=gnomeprefix,gnomedocutils,libgnomeui
+GNOME_USE_OFF=	GNOME=gtk20
+GNOME_CONFIGURE_ENABLE=	gnome-support schemas-install scrollkeeper
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNOME}
-USE_GNOME+=	gnomeprefix gnomedocutils libgnomeui
 GCONF_SCHEMAS=	stardict.schemas
 INSTALLS_OMF=	yes
-PLIST_SUB=	GNOME=""
-.else
-USE_GNOME+=	gtk20
-CONFIGURE_ARGS+=--disable-gnome-support --disable-schemas-install \
-		--disable-scrollkeeper
-PLIST_SUB=	GNOME="@comment "
 .endif
 
 post-patch:
-.if !${PORT_OPTIONS:MGNOME}
-	@${REINPLACE_CMD} -e '/^SUBDIRS/s,help,,' ${WRKSRC}/dict/Makefile.in
-.endif
 	@${REINPLACE_CMD} -e 's,/usr/share,${PREFIX}/share,g' \
 		${WRKSRC}/dict/src/conf.cpp
 	@${REINPLACE_CMD} \
 		-e '/as_fn_error.*gnome-doc-utils/d' \
 		-e '/DEP_MODULES=/s/"$$/ gmodule-2.0"/' \
 		${WRKSRC}/dict/configure
+
+post-patch-GNOME-off:
+	${REINPLACE_CMD} -e '/^SUBDIRS/s,help,,' ${WRKSRC}/dict/Makefile.in
 
 .include <bsd.port.mk>
