@@ -3433,6 +3433,7 @@
     SUBDIR += pccts
     SUBDIR += pcl
     SUBDIR += pcre
+    SUBDIR += pcre2
     SUBDIR += pcre++
     SUBDIR += pcsc-ada
     SUBDIR += pcsc-lite
