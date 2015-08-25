@@ -8,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	http://users.tkk.fi/~jolma/pub/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module to read and write shapefiles via shapelib
 
 LIB_DEPENDS=	libshp.so:${PORTSDIR}/devel/shapelib
