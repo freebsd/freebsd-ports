@@ -2,15 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	scrypt
-PORTVERSION=	1.1.6
+PORTVERSION=	1.2.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.tarsnap.com/scrypt/
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Key Derivation Function
 
 GNU_CONFIGURE=	yes
-USES=	gmake tar:tgz
+USES=		gmake tar:tgz
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	bin/scrypt \
