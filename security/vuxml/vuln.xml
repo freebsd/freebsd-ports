@@ -69,7 +69,7 @@ Notes:
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The Mozilla Project reports:</p>
-	<blockquote cite="https://www.mozilla.org/en-US/security/advisories/mfsa2014-77/">
+	<blockquote cite="https://www.mozilla.org/en-US/security/advisories/mfsa2012-07/">
 	  <p>Security researcher regenrecht reported via
 	    TippingPoint's Zero Day Initiative the possibility of memory
 	    corruption during the decoding of Ogg Vorbis files. This can
@@ -81,10 +81,12 @@ Notes:
     <references>
       <cvename>CVE-2012-0444</cvename>
       <url>https://bugzilla.mozilla.org/show_bug.cgi?id=719612</url>
+      <url>https://git.xiph.org/?p=tremor.git;a=commitdiff;h=3daa274</url>
     </references>
     <dates>
       <discovery>2012-01-31</discovery>
       <entry>2015-08-25</entry>
+      <modified>2015-08-25</modified>
     </dates>
   </vuln>
 
@@ -115,10 +117,14 @@ Notes:
       <cvename>CVE-2008-1423</cvename>
       <cvename>CVE-2008-2009</cvename>
       <url>http://redpig.dataspill.org/2008/05/multiple-vulnerabilities-in-ogg-tremor.html</url>
+      <url>https://git.xiph.org/?p=tremor.git;a=commitdiff;h=7e94eea</url>
+      <url>https://git.xiph.org/?p=tremor.git;a=commitdiff;h=1d1f93e</url>
+      <url>https://git.xiph.org/?p=tremor.git;a=commitdiff;h=159efc4</url>
     </references>
     <dates>
       <discovery>2008-03-19</discovery>
       <entry>2015-08-25</entry>
+      <modified>2015-08-25</modified>
     </dates>
   </vuln>
 
