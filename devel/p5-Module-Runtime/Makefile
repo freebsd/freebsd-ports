@@ -14,8 +14,8 @@ COMMENT=	Runtime module handling
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+NO_ARCH=	yes
 USE_PERL5=	modbuild
 USES=		perl5
-NO_ARCH=	yes
 
 .include <bsd.port.mk>
