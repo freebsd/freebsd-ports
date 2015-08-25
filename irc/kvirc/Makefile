@@ -3,7 +3,7 @@
 
 PORTNAME=	kvirc
 PORTVERSION=	4.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	irc kde
 MASTER_SITES=	ftp://ftp.kvirc.de/pub/kvirc/%SUBDIR%/ \
 		http://kvirc.gmake.de/pub/kvirc/%SUBDIR%/ \
@@ -18,10 +18,6 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}/source
 MAINTAINER=	makc@FreeBSD.org
 COMMENT?=	IRC client for KDE 4
 
-.if !defined(PKGNAMESUFFIX)
-CONFLICTS_INSTALL=	kvirc-qt4-4.*
-.endif
-
 USE_OPENSSL=	yes
 USE_PERL5=	build
 USE_QT4=	moc_build qmake_build rcc_build uic_build \
@@ -29,85 +25,58 @@ USE_QT4=	moc_build qmake_build rcc_build uic_build \
 USES=		cmake cpe gettext perl5 tar:bzip2
 CMAKE_ARGS=	-DWANT_ESD=no -DWANT_DOXYGEN=no \
 		-DMANDIR=${MANPREFIX}
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	AUDIOFILE GSM PERL PYTHON DEBUG
+OPTIONS_SUB=	yes
 
-AUDIOFILE_DESC=	Support for various audio formats
-GSM_DESC=	u-law to gsm audio converter support
+AUDIOFILE_DESC=		Support for various audio formats
+AUDIOFILE_LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
+AUDIOFILE_CMAKE_OFF=	-DWITHOUT_AUDIOFILE=yes
+
+GSM_DESC=		u-law to gsm audio converter support
+GSM_LIB_DEPENDS=	libgsm.so:${PORTSDIR}/audio/gsm
+GSM_CMAKE_OFF=		-DWANT_GSM=no
+
 PERL_DESC=	Perl scripting support
-PYTHON_DESC=	Python scripting support
+PERL_USE=	PERL5=run
+PERL_CMAKE_OFF=	-DWANT_PERL=no
+
+PYTHON_DESC=		Python scripting support
+PYTHON_USES=		python
+PYTHON_CMAKE_OFF=	-DWANT_PYTHON=no
+
+DEBUG_CMAKE_ON=	-DWITH_DEBUG=yes -DVERBOSE=yes
 
 .if defined(PKGNAMESUFFIX)
-OPTIONS_DEFINE+=	PHONON WEBKIT
-PHONON_DESC=	Build with Phonon support
-WEBKIT_DESC=	Build with QtWebkit support
-.endif
+CONFLICTS_INSTALL=	kvirc-4.*
 
-PLIST_SUB+=	VER="${PORTVERSION:R}"
-
-.include <bsd.port.options.mk>
-
-.if defined(PKGNAMESUFFIX)
 CMAKE_ARGS+=	-DWITHOUT_KDE4=yes
 PLIST_SUB+=	QT="" KDE="@comment "
-. if ${PORT_OPTIONS:MPHONON}
-USE_QT4+=	phonon
-. else
-CMAKE_ARGS+=	-DWITHOUT_PHONON=yes
-. endif
-. if ${PORT_OPTIONS:MWEBKIT}
-USE_QT4+=	webkit
-. else
-CMAKE_ARGS+=	-DWITHOUT_QTWEBKIT=yes
-. endif
+
+OPTIONS_DEFINE+=	PHONON WEBKIT
+
+PHONON_DESC=	Build with Phonon support
+PHONON_USE=	QT4=phonon
+PHONON_CMAKE_OFF=	-DWITHOUT_PHONON=yes
+
+WEBKIT_DESC=	Build with QtWebkit support
+WEBKIT_USE=	QT4=webkit
+WEBKIT_CMAKE_OFF=	-DWITHOUT_QTWEBKIT=yes
 .else #defined(PKGNAMESUFFIX)
+CONFLICTS_INSTALL=	kvirc-qt4-4.*
+
 USES+=		shared-mime-info
 USE_KDE4=	kdelibs automoc4 kdeprefix
 PLIST_SUB+=	QT="@comment " KDE=""
 .endif #defined(PKGNAMESUFFIX)
 
-.if ${PORT_OPTIONS:MDEBUG}
-CMAKE_ARGS+=	-DWITH_DEBUG=yes -DVERBOSE=yes
-.endif
+PLIST_SUB+=	VER="${PORTVERSION:R}"
 
-#audio support
-.if ${PORT_OPTIONS:MAUDIOFILE}
-LIB_DEPENDS+=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
-.else
-CMAKE_ARGS+=	-DWITHOUT_AUDIOFILE=yes
-.endif
-
-.if ${PORT_OPTIONS:MGSM}
-LIB_DEPENDS+=	libgsm.so:${PORTSDIR}/audio/gsm
-.else
-CMAKE_ARGS+=	-DWANT_GSM=no
-.endif
-
-#scripting support
-.if ${PORT_OPTIONS:MPYTHON}
-USES+=		python
-PLIST_SUB+=	PYTHON=""
-.else
-CMAKE_ARGS+=	-DWANT_PYTHON=no
-PLIST_SUB+=	PYTHON="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPERL}
-USE_PERL5+=	run
-PLIST_SUB+=	PERL=""
-.else
-CMAKE_ARGS+=	-DWANT_PERL=no
-PLIST_SUB+=	PERL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPERL}
-pre-everything::
+pre-fetch-PERL-on:
 	@${ECHO_CMD} "====================================================="
-	@${ECHO_CMD} "     To enable perl scripting you need to rebuild"
-	@${ECHO_CMD} "     perl with multiplicity support!"
+	@${ECHO_CMD} "    Perl scripting requires perl with multiplicity
+	@${ECHO_CMD} "    support (enabled in ports by default).
 	@${ECHO_CMD} "====================================================="
-.endif
 
 .include <bsd.port.mk>
