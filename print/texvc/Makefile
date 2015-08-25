@@ -18,16 +18,12 @@ BUILD_WRKSRC=	${WRKSRC}/src
 PLIST_FILES=	bin/texvc
 
 OPTIONS_DEFINE=	RASTER
-OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+OPTIONS_DEFAULT:=	${OPTIONS_DEFINE}
+
 RASTER_DESC=	rasterization support
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MRASTER}
-USES+=		ghostscript:run
-USE_TEX=	latex dvipsk
-RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
-.endif
+RASTER_USES=	ghostscript:run
+RASTER_USE=	TEX=latex,dvipsk
+RASTER_RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/texvc ${STAGEDIR}${PREFIX}/bin

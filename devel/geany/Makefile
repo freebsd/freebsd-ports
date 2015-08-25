@@ -30,14 +30,10 @@ VTE_DESC=	Embedded virtual terminal
 VTE_CONFIGURE_ENABLE=	vte
 VTE_USE=	GNOME=vte
 
-.include <bsd.port.options.mk>
-
-post-patch:
-.if !${PORT_OPTIONS:MDOCS}
+post-patch-DOCS-off:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/ s|doc||' ${WRKSRC}/Makefile.in
-.endif
-.if !${PORT_OPTIONS:MNLS}
+
+post-patch-NLS-off:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/ s|po||' ${WRKSRC}/Makefile.in
-.endif
 
 .include <bsd.port.mk>
