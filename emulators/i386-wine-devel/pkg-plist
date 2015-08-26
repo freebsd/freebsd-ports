@@ -425,6 +425,8 @@ include/wine/windows/iextag.h
 include/wine/windows/iextag.idl
 include/wine/windows/ifdef.h
 include/wine/windows/ifmib.h
+include/wine/windows/iimgctx.h
+include/wine/windows/iimgctx.idl
 include/wine/windows/imagehlp.h
 include/wine/windows/imm.h
 include/wine/windows/imnact.h
@@ -729,6 +731,7 @@ include/wine/windows/tapi.h
 include/wine/windows/taskschd.h
 include/wine/windows/taskschd.idl
 include/wine/windows/tchar.h
+include/wine/windows/tcpestats.h
 include/wine/windows/tcpmib.h
 include/wine/windows/textserv.h
 include/wine/windows/textstor.h
@@ -2054,6 +2057,7 @@ lib32/wine/libd2d1.def
 lib32/wine/libd3d10.def
 lib32/wine/libd3d10_1.def
 lib32/wine/libd3d10core.def
+lib32/wine/libd3d11.def
 lib32/wine/libd3d8.def
 lib32/wine/libd3d9.def
 lib32/wine/libd3dcompiler.def
