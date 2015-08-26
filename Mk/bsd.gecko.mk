@@ -142,7 +142,14 @@ MOZ_OPTIONS+=	--enable-jemalloc
 .endif # !DragonFly
 
 # Standard depends
-_ALL_DEPENDS=	cairo event ffi graphite harfbuzz hunspell icu jpeg nspr nss opus png pixman soundtouch sqlite vorbis vpx
+_ALL_DEPENDS=	cairo event ffi graphite harfbuzz hunspell icu jpeg nspr nss opus png pixman soundtouch sqlite vpx
+
+.if ${PORT_OPTIONS:MINTEGER_SAMPLES}
+MOZ_EXPORT+=	MOZ_INTEGER_SAMPLES=1
+_ALL_DEPENDS+=	tremor
+.else
+_ALL_DEPENDS+=	vorbis
+.endif
 
 .if ! ${PORT_OPTIONS:MBUNDLED_CAIRO}
 cairo_LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
@@ -208,6 +215,9 @@ sqlite_MOZ_OPTIONS=	--enable-system-sqlite
 # XXX disabled: update to 1.2.x or review backported fixes
 theora_LIB_DEPENDS=	libtheora.so:${PORTSDIR}/multimedia/libtheora
 theora_MOZ_OPTIONS=	--with-system-theora
+
+tremor_LIB_DEPENDS=	libvorbisidec.so:${PORTSDIR}/audio/libtremor
+tremor_MOZ_OPTIONS=	--with-system-tremor --with-system-ogg
 
 vorbis_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 vorbis_MOZ_OPTIONS=	--with-system-vorbis --with-system-ogg
