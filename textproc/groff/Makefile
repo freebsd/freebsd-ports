@@ -3,7 +3,7 @@
 
 PORTNAME=	groff
 PORTVERSION=	1.22.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
@@ -23,6 +23,10 @@ CONFIGURE_ENV+=	PERLPATH=${perl_CMD} # shebangfix
 CPE_VENDOR=	gnu
 SHEBANG_FILES=	src/utils/afmtodit/afmtodit.pl \
 		contrib/mm/mmroff.pl \
+		font/devps/generate/symbol.sed
+SHEBANG_LANG=	sed
+sed_OLD_CMD=	/bin/sed
+sed_CMD=	/usr/bin/sed
 
 # Canonicalize to A4 if set.
 .if defined(A4) || (defined(PAPERSIZE) && ${PAPERSIZE:tu} == "A4")
