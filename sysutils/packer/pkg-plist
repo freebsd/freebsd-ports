@@ -15,6 +15,7 @@ bin/packer-builder-virtualbox-iso
 bin/packer-builder-virtualbox-ovf
 bin/packer-builder-vmware-iso
 bin/packer-builder-vmware-vmx
+bin/packer-post-processor-artifice
 bin/packer-post-processor-atlas
 bin/packer-post-processor-compress
 bin/packer-post-processor-docker-import

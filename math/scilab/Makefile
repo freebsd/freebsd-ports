@@ -48,7 +48,7 @@ ATLAS_USES=	blaslapack:atlas
 NETLIB_USES=	blaslapack:netlib
 OPENBLAS_USES=	blaslapack:openblas
 
-GUI_DESC=	Graphical User Interface (Java)
+GUI_DESC=	Java-based Graphical User Interface
 OCAML_DESC=	Scicos - dynamical system simulator (requires GUI)
 
 # Java dependencies:
@@ -88,7 +88,7 @@ GUI_BUILD_DEPENDS=	${_GUI_DEPENDS} \
 GUI_RUN_DEPENDS=	${_GUI_DEPENDS}
 
 GUI_ALL_TARGET=	all doc
-GUI_USE=	GL=gl
+GUI_USE=	GL=gl JAVA=yes
 GUI_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-bin-JAVA_HOME
 GUI_CONFIGURE_ON=	--with-jdk=${JAVA_HOME} \
 			--with-docbook=${LOCALBASE}/share/xsl/docbook \
@@ -97,8 +97,8 @@ GUI_CONFIGURE_OFF=	--without-gui \
 			--without-javasci \
 			--without-xcos \
 			--disable-build-help
-CONFIGURE_ENV_OFF=	JAVADOC="${TRUE}"
 
+OCAML_IMPLIES=		GUI
 OCAML_CONFIGURE_WITH=	modelica
 OCAML_BUILD_DEPENDS=	ocaml:${PORTSDIR}/lang/ocaml
 OCAML_RUN_DEPENDS=	ocaml:${PORTSDIR}/lang/ocaml
@@ -113,22 +113,6 @@ TK_USE=		XORG=x11
 
 .if !exists(/usr/include/omp.h)
 CONFIGURE_ARGS+=	--without-openmp
-.endif
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MOCAML} && empty(PORT_OPTIONS:MGUI)
-IGNORE=	with OCAML option requies GUI. Please rerun 'make config' and select GUI
-.endif
-
-.if ${PORT_OPTIONS:MGUI}
-USE_JAVA=	yes
-# bsdjava (ie java/jdk16) doesn't have some "extra" classes that aren't in
-# the standard java. namespace, but are required by scilab, such as
-# javax.xml.bind.annotation.XmlSeeAlso
-JAVA_VENDOR=	openjdk
-JAVA_BUILD=	yes
-JAVA_RUN=	yes
 .endif
 
 post-patch:
@@ -150,7 +134,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%JAVALIBDIR%%|${JAVALIBDIR}|' ${WRKSRC}/etc/librarypath.xml
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/etc/librarypath.xml
 	@${REINPLACE_CMD} -e 's, gfortran, ${FC},' ${WRKSRC}/modules/dynamic_link/src/scripts/configure
-.if ${PORT_OPTIONS:MGUI}
+
+post-patch-GUI-on:
 	@# Configure fixes
 	@${REINPLACE_CMD} -e 's|/usr/lib/java|${JAVALIBDIR}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/lib64/jni|${LOCALBASE}/lib/|g' ${WRKSRC}/configure
@@ -163,11 +148,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/scilab|${DATADIR}|' ${WRKSRC}/desktop/scilab.desktop
 	@${REINPLACE_CMD} -e 's|/usr/share/scilab-cli|${DATADIR}|' \
 		${WRKSRC}/desktop/scilab-adv-cli.desktop ${WRKSRC}/desktop/scilab-cli.desktop
-.if ${OSVERSION} < 900000 && ${ARCH} == "amd64"
-	@# Avoids segfault when building help
-	@${REINPLACE_CMD} 's|JIT|NONE|' ${WRKSRC}/etc/jvm_options.xml
-.endif
-.endif
 
 pre-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/.atoms

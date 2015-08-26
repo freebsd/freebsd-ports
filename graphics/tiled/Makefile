@@ -21,15 +21,10 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	PYTHON DOCS
 OPTIONS_DEFAULT=PYTHON
 OPTIONS_SUB=	yes
+
 PYTHON_DESC=	Enable python plugin
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPYTHON}
-USES+=		pkgconfig python:2.7
-.else
-QMAKE_ARGS+=	DISABLE_PYTHON_PLUGIN=yes
-.endif
+PYTHON_USES=	pkgconfig python:2.7
+PYTHON_QMAKE_OFF=	DISABLE_PYTHON_PLUGIN=yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|lrelease|&-qt4|' \

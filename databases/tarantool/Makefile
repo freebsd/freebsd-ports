@@ -3,7 +3,7 @@
 
 PORTNAME=	tarantool
 PORTVERSION=	1.6.5
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	http://tarantool.org/dist/master/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${TR_REV}-src
@@ -13,10 +13,10 @@ COMMENT=	NoSQL database running in a Lua application server
 
 LICENSE=	BSD2CLAUSE
 
-TR_REV=		238-g74f3d65
+TR_REV=		305-g3a9640b
 MAKE_JOBS_UNSAFE=yes
 USES=		cmake compiler:c++11-lang gettext gmake perl5 readline
-USE_GCC=	4.9+ # clang bug PR/201270
+USE_GCC=	4.8+ # clang bug PR/201270
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
 SUB_FILES=	pkg-message
@@ -48,6 +48,10 @@ PLIST_SUB+=	TT_USER=${USERS} \
 OPTIONS_DEFINE=	DEBUG
 DEBUG_DESC=	Enable debug
 
+.if defined(USE_GCC) && ${USE_GCC:S/+//} == 4.8
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-src_trivia_config.h.cmake
+.endif
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}
@@ -56,10 +60,6 @@ CMAKE_ARGS+=	-DENABLE_BACKTRACE=ON
 .else
 CMAKE_BUILD_TYPE=	Rel
 CMAKE_ARGS+=	-DENABLE_BACKTRACE=OFF
-.endif
-
-.if ${OSVERSION} < 1000000
-IGNORE=	does not support FreeBSD versions < 10.0
 .endif
 
 post-install:

@@ -4,7 +4,7 @@
 #
 # Feature:	ghostscript
 # Usage:	USES=ghostscript or USES=ghostscript:args
-# Valid ARGS:	<version>, build, run, nox11
+# Valid ARGS:	<version>, build, run, x11
 #
 # version 	The chooseable versions are 7, 8 and 9. If no version is
 #		specified version 9 is selected.
@@ -13,7 +13,7 @@
 #		USES=ghostscript:run	# Use the set default Ghostscript as a run dependancy
 #		USES=ghostscript:8,build # Use ghostscript 8 as a build dependancy.
 #
-# nox11		Indicate that the Ghostscript nox11 port is required.
+# x11		Indicate that X11 support is required.
 # build		Indicates that Ghostscript is needed at build time and adds
 #		it as BUILD_DEPENDS.
 # run		Indicates that Ghostscript is needed at run time and adds
@@ -32,7 +32,7 @@ _GS_VERSION=	7 8 9 agpl
 
 _GS_ARGS=		${ghostscript_ARGS}
 
-.if ${_GS_ARGS:N[789]:Nnox11:Nbuild:Nrun}
+.if ${_GS_ARGS:N[789]:Nagpl:Nx11:Nbuild:Nrun}
 IGNORE?=	Unknown ghostscript argument ${_GS_ARGS}
 .endif
 
@@ -84,23 +84,28 @@ _GS_SELECTED?=		7
 IGNORE?=	Invalid ghostscript argument or GHOSTSCRIPT_DEFAULT
 .endif
 
+# Resolve minor version number for X11.so library.
+.if !empty(_GS_SELECTED:M9) && defined(_GS_AGPL_SUFFIX)
+_GS_VERSION_MINOR=	9.16_2
+.elif !empty(_GS_SELECTED:M9)
+_GS_VERSION_MINOR=	9.06_11
+.elif !empty(_GS_SELECTED:M8)
+_GS_VERSION_MINOR=	8.71_19
+.elif !empty(_GS_SELECTED:M7)
+_GS_VERSION_MINOR=	7.07_32
+.endif
+
 # dependencies
-_GS_PORT=	ghostscript${_GS_SELECTED}${_GS_AGPL_SUFFIX}${_GS_NOX11_SUFFIX}
+_GS_PORT=	ghostscript${_GS_SELECTED}${_GS_AGPL_SUFFIX}-base
+_GS_X11_PORT=	ghostscript${_GS_SELECTED}${_GS_AGPL_SUFFIX}-x11
 
-.undef _GS_NOX11_SUFFIX
-.if ${_GS_ARGS:Mnox11} || \
-    (defined(OPTIONS_DEFINE) && defined(PORT_OPTIONS) && \
-     ${OPTIONS_DEFINE:MX11} && ${PORT_OPTIONS:MX11} == "")
-# XXX
-#DEPENDS_ARGS+=	print_${_GS_PORT}_UNSET_FORCE+=X11
-_GS_NOX11_SUFFIX=	-nox11
+.for type in BUILD RUN
+.if defined(_GS_${type}_DEP)
+${type}_DEPENDS+=	${_GS_PORT}>=${_GS_VERSION_MINOR}:${PORTSDIR}/print/${_GS_PORT}
+.if ${_GS_ARGS:Mx11}
+${type}_DEPENDS+=	${_GS_X11_PORT}>=${_GS_VERSION_MINOR}:${PORTSDIR}/print/${_GS_X11_PORT}
 .endif
-
-.if defined(_GS_BUILD_DEP)
-BUILD_DEPENDS+=	gs:${PORTSDIR}/print/${_GS_PORT}
 .endif
-.if defined(_GS_RUN_DEP)
-RUN_DEPENDS+=	gs:${PORTSDIR}/print/${_GS_PORT}
-.endif
+.endfor
 
 .endif # _INCLUDE_USES_GHOSTSCRIPT_MK

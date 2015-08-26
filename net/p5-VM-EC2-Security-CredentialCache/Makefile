@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	VM-EC2-Security-CredentialCache
-PORTVERSION=	0.23
+PORTVERSION=	0.25
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,6 +17,7 @@ BUILD_DEPENDS=	p5-DateTime-Format-ISO8601>=0:${PORTSDIR}/devel/p5-DateTime-Forma
 		p5-VM-EC2>=0:${PORTSDIR}/net/p5-VM-EC2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	virtualmin
-PORTVERSION=	4.16
+PORTVERSION=	4.18
 PORTEPOCH=	1
-PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/download/virtualmin/
 DISTNAME=	virtual-server-${PORTVERSION}.gpl
@@ -20,7 +19,7 @@ USES=		shebangfix
 SHEBANG_FILES=	*.cgi
 NO_ARCH=	yes
 NO_BUILD=	yes
-PORTSCOUT=	skipv:4.152,1.432
+PORTSCOUT=	skipv:4.132,4.152
 WRKSRC=		${WRKDIR}/virtual-server
 
 post-extract:

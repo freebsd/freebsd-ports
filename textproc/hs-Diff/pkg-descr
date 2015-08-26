@@ -1,3 +1,4 @@
-Basic implementation of the standard diff algorithm in Haskell.
+Implementation of the standard diff algorithm, and utilities for pretty
+printing.
 
 WWW: http://hackage.haskell.org/package/Diff

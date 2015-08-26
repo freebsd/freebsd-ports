@@ -19,6 +19,7 @@ RUN_DEPENDS=	p5-Expect>=1.21:${PORTSDIR}/lang/p5-Expect \
 
 USES=		perl5 shebangfix
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 SHEBANG_FILES=	${WRKSRC}/${PORTNAME}
 PLIST_FILES=	bin/massadmin man/man1/massadmin.1.gz

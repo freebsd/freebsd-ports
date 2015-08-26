@@ -58,6 +58,383 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4464212e-4acd-11e5-934b-002590263bf5">
+    <topic>go -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>go</name>
+	<range><lt>1.4.3,1</lt></range>
+      </package>
+      <package>
+	<name>go14</name>
+	<range><lt>1.4.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jason Buberel, Go Product Manager, reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2015/q3/237">
+	  <p>CVE-2015-5739 - "Content Length" treated as valid header</p>
+	  <p>CVE-2015-5740 - Double content-length headers does not return 400
+	    error</p>
+	  <p>CVE-2015-5741 - Additional hardening, not sending Content-Length
+	    w/Transfer-Encoding, Closing connections</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5739</cvename>
+      <cvename>CVE-2015-5740</cvename>
+      <cvename>CVE-2015-5741</cvename>
+      <url>https://github.com/golang/go/commit/117ddcb83d7f42d6aa72241240af99ded81118e9</url>
+      <url>https://github.com/golang/go/commit/143822585e32449860e624cace9d2e521deee62e</url>
+      <url>https://github.com/golang/go/commit/300d9a21583e7cf0149a778a0611e76ff7c6680f</url>
+      <url>http://seclists.org/oss-sec/2015/q3/237</url>
+    </references>
+    <dates>
+      <discovery>2015-07-29</discovery>
+      <entry>2015-08-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="40497e81-fee3-4e54-9d5f-175a5c633b73">
+    <topic>libtremor -- memory corruption</topic>
+    <affects>
+      <package>
+	<name>libtremor</name>
+	<range><lt>1.2.0.s20120120</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/advisories/mfsa2012-07/">
+	  <p>Security researcher regenrecht reported via
+	    TippingPoint's Zero Day Initiative the possibility of memory
+	    corruption during the decoding of Ogg Vorbis files. This can
+	    cause a crash during decoding and has the potential for
+	    remote code execution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-0444</cvename>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=719612</url>
+      <url>https://git.xiph.org/?p=tremor.git;a=commitdiff;h=3daa274</url>
+    </references>
+    <dates>
+      <discovery>2012-01-31</discovery>
+      <entry>2015-08-25</entry>
+      <modified>2015-08-25</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="3dac84c9-bce1-4199-9784-d68af1eb7b2e">
+    <topic>libtremor -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libtremor</name>
+	<range><lt>1.2.0.s20101013</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The RedHat Project reports:</p>
+	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=438125">
+	  <p>Will Drewry of the Google Security Team reported multiple
+	    issues in OGG Vorbis and Tremor libraries, that could cause
+	    application using those libraries to crash (NULL pointer
+	    dereference or divide by zero), enter an infinite loop or
+	    cause heap overflow caused by integer overflow.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-1418</cvename>
+      <cvename>CVE-2008-1419</cvename>
+      <cvename>CVE-2008-1420</cvename>
+      <cvename>CVE-2008-1423</cvename>
+      <cvename>CVE-2008-2009</cvename>
+      <url>http://redpig.dataspill.org/2008/05/multiple-vulnerabilities-in-ogg-tremor.html</url>
+      <url>https://git.xiph.org/?p=tremor.git;a=commitdiff;h=7e94eea</url>
+      <url>https://git.xiph.org/?p=tremor.git;a=commitdiff;h=1d1f93e</url>
+      <url>https://git.xiph.org/?p=tremor.git;a=commitdiff;h=159efc4</url>
+    </references>
+    <dates>
+      <discovery>2008-03-19</discovery>
+      <entry>2015-08-25</entry>
+      <modified>2015-08-25</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="6900e6f1-4a79-11e5-9ad8-14dae9d210b8">
+    <topic>pcre -- heap overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>pcre</name>
+	<range><lt>8.37_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Guanxing Wen reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2015/q3/295">
+	  <p>PCRE library is prone to a vulnerability which leads to
+	    Heap Overflow.
+	    During the compilation of a malformed regular expression, more data is
+	    written on the malloced block than the expected size output by
+	    compile_regex().
+	    The Heap Overflow vulnerability is caused by the following regular
+	    expression.</p>
+	    <p>/(?J:(?|(:(?|(?'R')(\z(?|(?'R')(\k'R')|((?'R')))k'R')|((?'R')))H'Ak'Rf)|s(?'R')))/</p>
+	    <p>A dry run of this particular regular expression with pcretest will
+	    reports "double free or corruption (!prev)".
+	    But it is actually a heap overflow problem.
+	    The overflow only affects pcre 8.x branch, pcre2 branch is not affected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://seclists.org/oss-sec/2015/q3/295</url>
+      <url>https://bugs.exim.org/show_bug.cgi?id=1672</url>
+    </references>
+    <dates>
+      <discovery>2015-08-21</discovery>
+      <entry>2015-08-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9393213d-489b-11e5-b8c7-d050996490d0">
+    <topic>drupal -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>drupal6</name>
+	<range><lt>6.37</lt></range>
+      </package>
+      <package>
+	<name>drupal7</name>
+	<range><lt>7.39</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Drupal development team reports:</p>
+	<blockquote cite="https://www.drupal.org/SA-CORE-2015-003">
+	  <p>This security advisory fixes multiple vulnerabilities.
+	    See below for a list.</p>
+	  <h3>Cross-site Scripting - Ajax system - Drupal 7</h3>
+	  <p>A vulnerability was found that allows a malicious
+	    user to perform a cross-site scripting attack by
+	    invoking Drupal.ajax() on a whitelisted HTML element.</p>
+	  <p>This vulnerability is mitigated on sites that do not
+	    allow untrusted users to enter HTML.</p>
+	  <h3>Cross-site Scripting - Autocomplete system - Drupal 6 and 7</h3>
+	  <p>A cross-site scripting vulnerability was found in
+	    the autocomplete functionality of forms. The
+	    requested URL is not sufficiently sanitized.</p>
+	  <p>This vulnerability is mitigated by the fact that
+	    the malicious user must be allowed to upload files.</p>
+	  <h3>SQL Injection - Database API - Drupal 7</h3>
+	  <p>A vulnerability was found in the SQL comment
+	    filtering system which could allow a user with
+	    elevated permissions to inject malicious code in
+	    SQL comments.</p>
+	  <p>This vulnerability is mitigated by the fact that
+	    only one contributed module that the security team
+	    found uses the comment filtering system in a way
+	    that would trigger the vulnerability. That module
+	    requires you to have a very high level of access
+	    in order to perform the attack.</p>
+	  <h3>Cross-site Request Forgery - Form API - Drupal 6 and 7</h3>
+	  <p>A vulnerability was discovered in Drupal's form API
+	    that could allow file upload value callbacks to run
+	    with untrusted input, due to form token validation
+	    not being performed early enough. This vulnerability
+	    could allow a malicious user to upload files to the
+	    site under another user's account.</p>
+	  <p>This vulnerability is mitigated by the fact that
+	    the uploaded files would be temporary, and Drupal
+	    normally deletes temporary files automatically
+	    after 6 hours.</p>
+	  <h3>Information Disclosure in Menu Links - Access system - Drupal 6 and 7</h3>
+	  <p>Users without the "access content" permission
+	    can see the titles of nodes that they do not have
+	    access to, if the nodes are added to a menu on the
+	    site that the users have access to.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.drupal.org/SA-CORE-2015-003</url>
+    </references>
+    <dates>
+      <discovery>2015-08-19</discovery>
+      <entry>2015-08-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2920c449-4850-11e5-825f-c80aa9043978">
+    <topic>OpenSSH -- PAM vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openssh-portable</name>
+	<range><lt>7.0p1,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="http://www.openssh.com/txt/release-7.0">
+	  <p>Fixed a privilege separation
+	    weakness related to PAM support. Attackers who could successfully
+	    compromise the pre-authentication process for remote code
+	    execution and who had valid credentials on the host could
+	    impersonate other users.</p>
+	  <p>Fixed a use-after-free bug
+	    related to PAM support that was reachable by attackers who could
+	    compromise the pre-authentication process for remote code
+	    execution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openssh.com/txt/release-7.0</url>
+    </references>
+    <dates>
+      <discovery>2015-08-11</discovery>
+      <entry>2015-08-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="27fed73e-484f-11e5-825f-c80aa9043978">
+    <topic>OpenSSH -- PermitRootLogin may allow password connections with 'without-password'</topic>
+    <affects>
+      <package>
+	<name>openssh-portable</name>
+	<range><eq>7.0.p1,1</eq></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="http://www.openssh.com/txt/release-7.1">
+	  <p>OpenSSH 7.0 contained a logic error in PermitRootLogin=
+	    prohibit-password/without-password that could, depending on
+	    compile-time configuration, permit password authentication to
+	    root while preventing other forms of authentication. This problem
+	    was reported by Mantas Mikulenas.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openssh.com/txt/release-7.1</url>
+    </references>
+    <dates>
+      <discovery>2015-08-20</discovery>
+      <entry>2015-08-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2fe40238-480f-11e5-adde-14dae9d210b8">
+    <topic>tarsnap -- buffer overflow and local DoS</topic>
+    <affects>
+      <package>
+	<name>tarsnap</name>
+	<range><lt>1.0.36</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Colin Percival reports:</p>
+	<blockquote cite="http://mail.tarsnap.com/tarsnap-announce/msg00032.html">
+	  <p>1. SECURITY FIX: When constructing paths of objects being archived, a buffer
+	    could overflow by one byte upon encountering 1024, 2048, 4096, etc. byte
+	    paths. Theoretically this could be exploited by an unprivileged user whose
+	    files are being archived; I do not believe it is exploitable in practice,
+	    but I am offering a $1000 bounty for the first person who can prove me wrong:
+	    http://www.daemonology.net/blog/2015-08-21-tarsnap-1000-exploit-bounty.html</p>
+	  <p>2. SECURITY FIX: An attacker with a machine's write keys, or with read keys
+	    and control of the tarsnap service, could make tarsnap allocate a large
+	    amount of memory upon listing archives or reading an archive the attacker
+	    created; on 32-bit machines, tarsnap can be caused to crash under the
+	    aforementioned conditions.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://mail.tarsnap.com/tarsnap-announce/msg00032.html</url>
+      <url>http://www.daemonology.net/blog/2015-08-21-tarsnap-1000-exploit-bounty.html</url>
+    </references>
+    <dates>
+      <discovery>2015-08-21</discovery>
+      <entry>2015-08-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a0a4e24c-4760-11e5-9391-3c970e169bc2">
+    <topic>vlc -- arbitrary pointer dereference vulnerability</topic>
+    <affects>
+      <package>
+	<name>vlc</name>
+	<range><lt>2.2.1_5,4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>oCERT reports:</p>
+	<blockquote cite="https://www.ocert.org/advisories/ocert-2015-009.html">
+	  <p>The stable VLC version suffers from an arbitrary pointer
+	    dereference vulnerability.</p>
+	  <p>The vulnerability affects the 3GP file format parser,
+	    insufficient restrictions on a writable buffer can be
+	    exploited to execute arbitrary code via the heap memory.
+	    A specific 3GP file can be crafted to trigger the
+	    vulnerability.</p>
+	  <p>Credit: vulnerability reported by Loren Maggiore of
+	    Trail of Bits.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5949</cvename>
+      <url>https://git.videolan.org/?p=vlc/vlc-2.2.git;a=commitdiff;h=ce91452460a75d7424b165c4dc8db98114c3cbd9;hp=9e12195d3e4316278af1fa4bcb6a705ff27456fd</url>
+      <url>https://www.ocert.org/advisories/ocert-2015-009.html</url>
+    </references>
+    <dates>
+      <discovery>2015-08-20</discovery>
+      <entry>2015-08-20</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9a71953a-474a-11e5-adde-14dae9d210b8">
+    <topic>libpgf -- use after free</topic>
+    <affects>
+      <package>
+	<name>libpgf</name>
+	<range><le>6.14.12</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Pengsu Cheng reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2015/q3/404">
+	  <p>An use-after-free issue in Decoder.cpp was reported to
+	    upstream. The problem is due to lack of validation of ColorTableSize.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://seclists.org/oss-sec/2015/q3/404</url>
+      <url>https://sourceforge.net/p/libpgf/code/147/</url>
+      <url>https://sourceforge.net/p/libpgf/code/148/</url>
+      <cvename>CVE-2015-6673</cvename>
+    </references>
+    <dates>
+      <discovery>2015-08-08</discovery>
+      <entry>2015-08-20</entry>
+      <modified>2015-08-26</modified>
+    </dates>
+  </vuln>
+
   <vuln vid="f5b8b670-465c-11e5-a49d-bcaec565249c">
     <topic>gdk-pixbuf2 -- heap overflow and DoS</topic>
     <affects>
@@ -188,7 +565,7 @@ Notes:
   </vuln>
 
   <vuln vid="f1692469-45ce-11e5-adde-14dae9d210b8">
-    <topic>jasper -- double free in jasper_image_stop_load()</topic>
+    <topic>jasper -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>jasper</name>
@@ -204,16 +581,25 @@ Notes:
 	    A specially crafted file could cause an application using JasPer to
 	    crash.</p>
 	</blockquote>
+	<p>Feist Josselin reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2015/q3/408">
+	  <p>A new use-after-free was found in Jasper JPEG-200. The
+	    use-after-free appears in the function mif_process_cmpt of the
+	    src/libjasper/mif/mif_cod.c file.</p>
+	</blockquote>
       </body>
     </description>
     <references>
       <url>https://bugzilla.redhat.com/show_bug.cgi?id=1254242#c0</url>
       <url>http://seclists.org/oss-sec/2015/q3/366</url>
+      <url>http://seclists.org/oss-sec/2015/q3/408</url>
       <cvename>CVE-2015-5203</cvename>
+      <cvename>CVE-2015-5221</cvename>
     </references>
     <dates>
       <discovery>2015-08-17</discovery>
       <entry>2015-08-18</entry>
+      <modified>2015-08-20</modified>
     </dates>
   </vuln>
 
@@ -49142,7 +49528,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Juli Mallett reports:</p>
-	<blockquote cite="http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/147007">
+	<blockquote>
 	  <p>mdnsd will crash on some systems with a corrupt stack and once
 	    that's fixed it will still leak a file descriptor when parsing
 	    resolv.conf. The crash is because scanf is used with %10s for a
@@ -51558,14 +51944,14 @@ executed in your Internet Explorer while displaying the email.</p>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Denis Barov reports:</p>
-	<blockquote cite="http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/141852">
+	<blockquote>
 	  <p>sysutils/fuser allows user to send any signal to any process when
 	    installed with suid bit.</p>
 	</blockquote>
       </body>
     </description>
     <references>
-      <url>http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/141852</url>
+      <freebsdpr>ports/141852</freebsdpr>
     </references>
     <dates>
       <discovery>2009-09-15</discovery>
@@ -81734,7 +82120,7 @@ executed in your Internet Explorer while displaying the email.</p>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Emanuel Haupt reports:</p>
-	<blockquote cite="http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/86833">
+	<blockquote>
 	  <p>Someone who controls an FTP server that weex will log in to
 	    can set up malicious data in the account that weex will use,
 	    and that will cause a format string bug that will allow remote
@@ -95618,7 +96004,7 @@ http_access deny Gopher</pre>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Rudolf Polzer reports:</p>
-	<blockquote cite="http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/70618">
+	<blockquote>
 	  <p>a2ps builds a command line for file() containing an
 	    unescaped version of the file name, thus might call
 	    external programs described by the file name.  Running a
@@ -95659,7 +96045,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <url>http://cvsweb.freebsd.org/ports/news/ifmail</url>
+      <url>https://svnweb.freebsd.org/changeset/ports/120295</url>
     </references>
     <dates>
       <discovery>2004-08-23</discovery>
@@ -96567,7 +96953,7 @@ http_access deny Gopher</pre>
     <references>
       <cvename>CVE-2004-0919</cvename>
       <freebsdsa>SA-04:15.syscons</freebsdsa>
-      <url>http://www.freebsd.org/cgi/cvsweb.cgi/src/sys/dev/syscons/syscons.c#rev1.429</url>
+      <url>https://svnweb.freebsd.org/changeset/base/135942</url>
     </references>
     <dates>
       <discovery>2004-09-30</discovery>
@@ -101456,7 +101842,6 @@ http_access deny Gopher</pre>
     </description>
     <references>
       <cvename>CVE-2004-0408</cvename>
-      <url>http://cvsweb.freebsd.org/ports/security/ident2/files/patch-common.c</url>
     </references>
     <dates>
       <discovery>2004-04-15</discovery>
@@ -102746,7 +103131,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <url>http://cvsweb.freebsd.org/ports/chinese/chitex/Attic/Makefile?rev=1.5&amp;content-type=text/x-cvsweb-markup</url>
+      <url>https://docs.freebsd.org/cgi/mid.cgi?200303251301.h2PD1m9Y053389</url>
     </references>
     <dates>
       <discovery>2003-04-25</discovery>
@@ -102772,7 +103157,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <url>http://www.freebsd.org/cgi/cvsweb.cgi/ports/mail/pine4/Makefile?rev=1.43&amp;content-type=text/x-cvsweb-markup</url>
+      <url>https://docs.freebsd.org/cgi/mid.cgi?200009290728.AAA69097</url>
     </references>
     <dates>
       <discovery>2000-09-29</discovery>

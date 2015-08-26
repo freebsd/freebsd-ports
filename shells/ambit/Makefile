@@ -10,13 +10,14 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extended bash brace expansion to expand hostnames or commands
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3 # or later
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USES=		tar:tgz
 AMBITDIR?=	/var/spool/${PORTNAME}
 NO_BUILD=	yes
+NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST_SUB=	AMBITDIR=${AMBITDIR}

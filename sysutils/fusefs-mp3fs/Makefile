@@ -12,6 +12,9 @@ PKGNAMEPREFIX=	fusefs-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FUSE-based filesystem for transcoding flac to mp3 on the fly
 
+LICENSE=	GPLv3 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame \
 		libFLAC.so:${PORTSDIR}/audio/flac \
 		libid3tag.so:${PORTSDIR}/audio/libid3tag

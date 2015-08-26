@@ -1,13 +1,13 @@
 # Created by: KalleDK <plexmaintainer@k-moeller.dk>
 # $FreeBSD$
 
-PORTVERSION=	0.9.12.10.1368
+PORTVERSION=	0.9.12.11.1406
 PORTREVISION=	0
 PKGNAMESUFFIX=	-plexpass
 
 MAINTAINER=	feld@FreeBSD.org
 
-PLEX_BUILD=	63adf2b
+PLEX_BUILD=	8403350
 
 USE_RC_SUBR=	${PORTNAME}_plexpass
 

@@ -3,11 +3,12 @@
 
 PORTNAME=	mencoder
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	2
+CATEGORIES=	multimedia audio
 
+MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	Convenient video file and movie encoder
 
-.include "${.CURDIR}/../mplayer/Makefile.shared"
+.include "${.CURDIR}/../mplayer/Makefile.common"
 
 OPTIONS_DEFINE=	AMR_NB AMR_WB BLURAY CDIO DEBUG DV FAAC FONTCONFIG \
 		FRIBIDI GIF GNUTLS GSM IPV6 JACK LADSPA LIBMNG LZO \
@@ -78,6 +79,9 @@ pre-everything::
 	@${ECHO_MSG} "OPTIONS framework. At the moment, these settings are:"
 	@${ECHO_MSG} "DEFAULT_DVD_DEVICE=${DEFAULT_DVD_DEVICE}"
 	@${ECHO_MSG} "DEFAULT_CDROM_DEVICE=${DEFAULT_CDROM_DEVICE}"
+
+pre-patch:
+	${MV} ${WRKDIR}/ffmpeg-${FFMPEG_VERSION} ${WRKSRC}/ffmpeg
 
 post-patch:
 .if ${OSVERSION} >= 900010

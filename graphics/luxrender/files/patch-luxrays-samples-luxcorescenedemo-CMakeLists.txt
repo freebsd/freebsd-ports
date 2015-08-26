@@ -1,5 +1,5 @@
---- ../luxrender-luxrays-7c7127ee1fa4/samples/luxcorescenedemo/CMakeLists.txt.orig	2015-01-20 22:45:32 UTC
-+++ ../luxrender-luxrays-7c7127ee1fa4/samples/luxcorescenedemo/CMakeLists.txt
+--- ../luxrays/samples/luxcorescenedemo/CMakeLists.txt.orig
++++ ../luxrays/samples/luxcorescenedemo/CMakeLists.txt
 @@ -22,10 +22,12 @@
  #
  ################################################################################

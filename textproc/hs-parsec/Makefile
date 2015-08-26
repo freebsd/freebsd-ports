@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	parsec
-PORTVERSION=	3.1.5
-PORTREVISION=	1
+PORTVERSION=	3.1.9
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -67,10 +67,8 @@ GROUPS=		${USERS}
 SUB_FILES=	pkg-message
 .endif
 
-pre-configure:
-.if !${PORT_OPTIONS:MNLS}
+post-patch-NLS-off:
 	${REINPLACE_CMD} -e '/add_subdirectory(po)/d' \
 		${WRKSRC}/CMakeLists.txt
-.endif
 
 .include <bsd.port.mk>

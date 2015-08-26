@@ -32,13 +32,9 @@ INSTALL_TARGET=	install-strip
 DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 DOXYGEN_ALL_TARGET=	html-local
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOXYGEN}
-post-install:
+post-install-DOXYGEN-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 	${INSTALL_DATA} ${WRKSRC}/html/* ${STAGEDIR}${DOCSDIR}/html
-.endif
 
 tests: build
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)

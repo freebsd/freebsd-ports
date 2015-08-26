@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	openssh
-DISTVERSION=	7.0p1
-PORTREVISION=	0
+DISTVERSION=	7.1p1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	OPENBSD/OpenSSH/portable
@@ -121,10 +121,13 @@ CONFIGURE_ARGS+=	--disable-utmp --disable-wtmp --disable-wtmpx --without-lastlog
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-sshd-utmp-size
 .endif
 
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-hostkeyalg_plus:-p1
+
 # Keep this last
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-version-addendum
 
 .if ${PORT_OPTIONS:MX509}
+BROKEN=	Patch does not apply with 7.1
 .  if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MNONECIPHER}
 BROKEN=		X509 patch and HPN patch do not apply cleanly together
 .  endif

@@ -10,6 +10,9 @@ MASTER_SITES=	ftp://ftp.hlfl.org/pub/hlfl/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High Level Firewall Language
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--datadir=${LOCALBASE}/share/doc
 PORTDOCS=	services.hlfl sample_1.hlfl sample_2.hlfl test.hlfl syntax.txt

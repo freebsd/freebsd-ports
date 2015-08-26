@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: tincd
-# REQUIRE: ipfilter FILESYSTEMS sysctl netif
+# REQUIRE: ipfilter FILESYSTEMS sysctl netif ldconfig
 # BEFORE:  SERVERS routing
 # KEYWORD: nojail
 #

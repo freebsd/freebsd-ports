@@ -3,6 +3,7 @@
 
 PORTNAME=	lcms2
 PORTVERSION=	2.7
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lcms/lcms/${PORTVERSION}
 
@@ -22,7 +23,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
-USES=		libtool:keepla pathfix
+USES=		libtool pathfix
 
 PORTDOCS=	*
 

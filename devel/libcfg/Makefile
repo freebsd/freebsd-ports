@@ -12,9 +12,9 @@ MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Library for command line and configuration file parsing
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake
-USE_AUTOTOOLS=	autoconf
+USES=		autoreconf gmake
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

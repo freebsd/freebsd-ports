@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tmuxp
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argcomplete>=0:${PORTSDIR}/devel/py-argcompl
 		tmux:${PORTSDIR}/sysutils/tmux
 
 NO_ARCH=	yes
-USES=		python:2
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

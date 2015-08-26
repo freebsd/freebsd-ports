@@ -44,7 +44,7 @@ SRC26104=	26104-b00.zip
 post-extract:
 	@${CP} ${_DISTDIR}/${SRC26104} ${WRKSRC}/
 
-post-install-DOCS-off:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 

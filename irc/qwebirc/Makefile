@@ -12,15 +12,18 @@ EXTRACT_SUFX=	.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast, easy to use, free, and open source web IRC client
 
+LICENSE=	GPLv2
+
 USES=		python twisted:run,conch,mail,names,web,words
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
+NO_ARCH=	yes
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}
-	(cd ${WRKDIR}/${PORTNAME} && \
-	${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/www/${PORTNAME} )
+	(cd ${WRKSRC} && \
+		${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/www/${PORTNAME} )
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/www/${PORTNAME}/config.py.example \

@@ -1,6 +1,6 @@
---- ./configure.ac.orig	2014-07-10 07:04:42.000000000 +0200
-+++ ./configure.ac	2014-07-11 10:27:40.000000000 +0200
-@@ -435,6 +435,9 @@
+--- configure.ac.orig	2015-07-21 19:50:11 UTC
++++ configure.ac
+@@ -383,6 +383,9 @@ AC_SUBST([SplitObjsBroken])
  dnl ** Building a cross compiler?
  dnl --------------------------------------------------------------
  CrossCompiling=NO
@@ -10,11 +10,3 @@
  # If 'host' and 'target' differ, then this means we are building a cross-compiler.
  if test "$target" != "$host" ; then
      CrossCompiling=YES
-@@ -914,7 +917,6 @@
- FP_VISIBILITY_HIDDEN
- 
- dnl ** check for librt
--AC_CHECK_LIB(rt, clock_gettime)
- AC_CHECK_FUNCS(clock_gettime timer_settime)
- FP_CHECK_TIMER_CREATE
- 

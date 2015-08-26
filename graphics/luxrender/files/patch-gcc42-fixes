@@ -1,5 +1,5 @@
---- ../luxrender-luxrays-7c7127ee1fa4/include/luxrays/core/geometry/frame.h.orig
-+++ ../luxrender-luxrays-7c7127ee1fa4/include/luxrays/core/geometry/frame.h
+--- ../luxrays/include/luxrays/core/geometry/frame.h.orig
++++ ../luxrays/include/luxrays/core/geometry/frame.h
 @@ -46,11 +46,11 @@ public:
  		SetFromZ(z);
  	}

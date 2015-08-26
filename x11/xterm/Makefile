@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xterm
-PORTVERSION=	318
+PORTVERSION=	319
 CATEGORIES=	x11
 MASTER_SITES=	ftp://invisible-island.net/xterm/:src1 \
 		LOCAL/ehaupt:src1 LOCAL/ehaupt:src2
@@ -79,7 +79,7 @@ post-install:
 .for f in koi8rxterm resize uxterm xterm
 	@${CHMOD} ${BINMODE} ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/xterm.desktop \
+	${INSTALL_DATA} ${WRKSRC}/xterm.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/
 
 .if ${PORT_OPTIONS:MWCHAR}

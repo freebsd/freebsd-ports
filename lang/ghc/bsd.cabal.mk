@@ -10,8 +10,10 @@
 #
 
 .if !defined(METAPORT)
-MASTER_SITES?=	http://hackage.haskell.org/package/${PORTNAME}-${PORTVERSION}/
+MASTER_SITES?=	http://hackage.haskell.org/package/${PORTNAME}-${PORTVERSION}/:hackage
+DISTFILES?=	${DISTNAME}${EXTRACT_SUFX}:hackage
 DIST_SUBDIR?=	cabal
+EXTRACT_ONLY?=	${DISTNAME}${EXTRACT_SUFX}
 .else
 USES+=		metaport
 .endif # !METAPORT
@@ -74,18 +76,34 @@ BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
 BUILD_DEPENDS+=	ghc>=${GHC_VERSION}:${PORTSDIR}/lang/ghc
 .endif
 
-USE_BINUTILS=	yes
-USE_GCC=	yes
 
-CONFIGURE_ARGS+=	--with-gcc=${CC} --with-ld=${LD} --with-ar=${AR} \
-			--with-ranlib=${RANLIB}
+.if ${PORT_OPTIONS:MPCLANG}
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang${LLVM_VERSION}:${PORTSDIR}/lang/clang${LLVM_VERSION}
+RUN_DEPENDS+=	${LOCALBASE}/bin/clang${LLVM_VERSION}:${PORTSDIR}/lang/clang${LLVM_VERSION}
+CC=		${LOCALBASE}/bin/clang${LLVM_VERSION}
+CXX=		${LOCALBASE}/bin/clang++${LLVM_VERSION}
+CPP=		${LOCALBASE}/bin/clang-cpp${LLVM_VERSION}
+CFLAGS+=	-Qunused-arguments
+LDFLAGS+=	-B${LOCALBASE}/bin
+CONFIGURE_ARGS+=	--ghc-option=-optl=-B${LOCALBASE}/bin
+USE_BINUTILS=	yes
+.elif ${PORT_OPTIONS:MBCLANG}
+CC=		/usr/bin/clang
+CXX=		/usr/bin/clang++
+CPP=		/usr/bin/clang-cpp
+CFLAGS+=	-Qunused-arguments
+.else # GCC
+USE_GCC=	yes
+.endif
+
+CONFIGURE_ARGS+=	--with-gcc=${CC} --with-ld=${LD} --with-ar=${AR}
 
 .if ${PORT_OPTIONS:MLLVM}
 CONFIGURE_ARGS+=	--ghc-option=-fllvm \
-			--ghc-option=-pgmlo --ghc-option=${LOCALBASE}/bin/opt34 \
-			--ghc-option=-pgmlc --ghc-option=${LOCALBASE}/bin/llc34
+			--ghc-option=-pgmlo --ghc-option=${LOCALBASE}/bin/opt${LLVM_VERSION} \
+			--ghc-option=-pgmlc --ghc-option=${LOCALBASE}/bin/llc${LLVM_VERSION}
 
-BUILD_DEPENDS+=		${LOCALBASE}/bin/opt34:${PORTSDIR}/devel/llvm34
+BUILD_DEPENDS+=		${LOCALBASE}/bin/opt${LLVM_VERSION}:${PORTSDIR}/devel/llvm${LLVM_VERSION}
 .endif
 
 .if defined(USE_ALEX)
@@ -154,7 +172,7 @@ HADDOCK_OPTS=	# empty
 .if ${PORT_OPTIONS:MHSCOLOUR}
 BUILD_DEPENDS+=	HsColour:${PORTSDIR}/print/hs-hscolour
 
-HSCOLOUR_VERSION=	1.20.3
+HSCOLOUR_VERSION=	1.23
 HSCOLOUR_DATADIR=	${LOCALBASE}/share/cabal/ghc-${GHC_VERSION}/hscolour-${HSCOLOUR_VERSION}
 HADDOCK_OPTS+=		--hyperlink-source --hscolour-css=${HSCOLOUR_DATADIR}/hscolour.css
 .endif # HSCOLOUR
@@ -180,7 +198,6 @@ CONFIGURE_ARGS+=	--haddock-options=-w --with-haddock=${HADDOCK_CMD}
 
 .if ${PORT_OPTIONS:MDYNAMIC}
 CONFIGURE_ARGS+=	--enable-shared --enable-executable-dynamic
-CONFIGURE_ARGS+=	"--ghc-option=-optl -rpath" "--ghc-option=-optl ${CABAL_LIBDIR}/${DISTNAME}"
 .else
 CONFIGURE_ARGS+=	--disable-shared --disable-executable-dynamic
 .endif
@@ -260,6 +277,7 @@ do-install:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${SETUP_CMD} copy --destdir=${STAGEDIR}
 
 .if !defined(STANDALONE)
+	@${MKDIR} ${STAGEDIR}${CABAL_LIBDIR}/${CABAL_LIBSUBDIR}
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} register.sh ${STAGEDIR}${CABAL_LIBDIR}/${CABAL_LIBSUBDIR}/register.sh
 .endif
 

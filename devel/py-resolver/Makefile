@@ -12,9 +12,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Resolve specially formatted statements to Python objects
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} 's/license="LGPL",/license="LGPL", zip_safe=False,/' \

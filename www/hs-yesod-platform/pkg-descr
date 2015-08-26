@@ -1,4 +1,0 @@
-Instead of allowing version ranges of dependencies, this package requires
-specific versions to avoid dependency hell.
-
-WWW: http://www.yesodweb.com/

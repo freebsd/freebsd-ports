@@ -16,9 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 GNU_CONFIGURE=	yes
 SUB_FILES+=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
-MAN1=		dircproxy.1 dircproxy-crypt.1
 
 post-install:
-	@cd ${WRKSRC}/doc && make install-man DESTDIR=${STAGEDIR}
+	@cd ${WRKSRC}/doc && ${MAKE_CMD} install-man DESTDIR=${STAGEDIR}
 
 .include <bsd.port.mk>

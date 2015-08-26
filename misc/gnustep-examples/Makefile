@@ -2,16 +2,15 @@
 
 PORTNAME=	gnustep-examples
 PORTVERSION=	1.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc gnustep
 MASTER_SITES=	GNUSTEP/usr-apps
 
 MAINTAINER=	ports@FreeBSD.org
 
-USES=	gnustep
+USES=		gnustep
 USE_GNUSTEP=	back build
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_GNUSTEP_MAKE_DIRS+=	. gui/Finger gui/GFractal gui/HostAddress gui/MyGL
 
 post-patch:
@@ -32,5 +31,51 @@ do-install:
 	@(cd ${INSTALL_WRKSRC}/${i}; . ${GNUSTEP_MAKEFILES}/GNUstep.sh; \
 	    ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 .endfor
+
+post-install:
+	${STRIP_CMD} \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/Calculator.app/Calculator \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/CurrencyConverter.app/CurrencyConverter \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/Finger.app/Finger \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/GFractal.app/GFractal \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/GSTest.app/GSTest \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/HostAddress.app/HostAddress \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/Ink.app/Ink \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/MyGL.app/MyGL \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/NSBrowserTest.app/NSBrowserTest \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/NSImageTest.app/NSImageTest \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/NSPanelTest.app/NSPanelTest \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/NSScreenTest.app/NSScreenTest \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/md5Digest.app/md5Digest \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/ApplicationSupport/GSTest/Composite-test.bundle/Composite-test \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/ApplicationSupport/GSTest/CoordinateCheck-test.bundle/CoordinateCheck-test \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/ApplicationSupport/GSTest/GSHbox-test.bundle/GSHbox-test \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/ApplicationSupport/GSTest/Image-test.bundle/Image-test \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/ApplicationSupport/GSTest/ImageSelection-test.bundle/ImageSelection-test \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/ApplicationSupport/GSTest/KeyboardInput-test.bundle/KeyboardInput-test \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/ApplicationSupport/GSTest/NSAnimation-test.bundle/NSAnimation-test \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/ApplicationSupport/GSTest/NSBox-test.bundle/NSBox-test \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/ApplicationSupport/GSTest/NSButton-test.bundle/NSButton-test \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/ApplicationSupport/GSTest/NSColorList-test.bundle/NSColorList-test \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/ApplicationSupport/GSTest/NSColorWell-test.bundle/NSColorWell-test \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/ApplicationSupport/GSTest/NSForm-test.bundle/NSForm-test \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/ApplicationSupport/GSTest/NSOpenPanel-test.bundle/NSOpenPanel-test \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/ApplicationSupport/GSTest/NSOutlineView-test.bundle/NSOutlineView-test \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/ApplicationSupport/GSTest/NSProgressIndicator-test.bundle/NSProgressIndicator-test \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/ApplicationSupport/GSTest/NSSavePanel-test.bundle/NSSavePanel-test \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/ApplicationSupport/GSTest/NSScrollView-test.bundle/NSScrollView-test \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/ApplicationSupport/GSTest/NSSecureTextField-test.bundle/NSSecureTextField-test \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/ApplicationSupport/GSTest/NSSlider-test.bundle/NSSlider-test \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/ApplicationSupport/GSTest/NSSplitView-test.bundle/NSSplitView-test \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/ApplicationSupport/GSTest/NSTableView-test.bundle/NSTableView-test \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/ApplicationSupport/GSTest/NSTextView-test.bundle/NSTextView-test \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/ApplicationSupport/GSTest/NSViewAnimation-test.bundle/NSViewAnimation-test \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/ApplicationSupport/GSTest/NSWindow-test.bundle/NSWindow-test \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/ApplicationSupport/GSTest/NSWindowStyleMask-test.bundle/NSWindowStyleMask-test \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/ApplicationSupport/GSTest/PixelExactDrawing-test.bundle/PixelExactDrawing-test \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/ApplicationSupport/GSTest/StringDrawing-test.bundle/StringDrawing-test \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/ApplicationSupport/GSTest/TextSystem-test.bundle/TextSystem-test \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/ApplicationSupport/GSTest/Transparency-test.bundle/Transparency-test \
+		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/Services/example.service/example
 
 .include <bsd.port.mk>

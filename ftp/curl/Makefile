@@ -20,13 +20,16 @@ OPTIONS_RADIO_SSL=	GNUTLS NSS OPENSSL POLARSSL WOLFSSL
 OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_NONE
 OPTIONS_DEFAULT=	CA_BUNDLE COOKIES IPV6 OPENSSL PROXY RESOLV THREADED_RESOLVER TLS_SRP
 CA_BUNDLE_DESC=		Install CA bundle for OpenSSL
+CA_BUNDLE_IMPLIES=	OPENSSL
 COOKIES_DESC=		Cookies support
 CURL_DEBUG_DESC=	cURL debug memory tracking
 GSSAPI_BASE_DESC=	GSSAPI support via base system (Kerberos required)
 GSSAPI_HEIMDAL_DESC=	GSSAPI support via security/heimdal
 GSSAPI_MIT_DESC=	GSSAPI support via security/krb5
 GSSAPI_NONE_DESC=	Disable GSSAPI support
+LDAPS_IMPLIES=		LDAP
 LIBSSH2_DESC=		SCP/SFTP support via libssh2
+LIBSSH2_IMPLIES=	OPENSSL
 RESOLV_DESC=		DNS resolving options
 THREADED_RESOLVER_DESC=	Threaded DNS resolver
 TLS_SRP_DESC=		TLS-SRP (Secure Remote Password) support
@@ -148,24 +151,12 @@ WOLFSSL_LIB_DEPENDS=	libwolfssl.so:${PORTSDIR}/security/wolfssl
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MCA_BUNDLE} && !${PORT_OPTIONS:MOPENSSL}
-IGNORE=		only supports CA bundle with OpenSSL
-.endif
-
 .if !${PORT_OPTIONS:MGNUTLS} && !${PORT_OPTIONS:MOPENSSL} && ${PORT_OPTIONS:MTLS_SRP}
 IGNORE=		only supports TLS-SRP with either OpenSSL or GnuTLS
 .endif
 
-.if !${PORT_OPTIONS:MLDAP} && ${PORT_OPTIONS:MLDAPS}
-IGNORE=		only supports LDAPS with LDAP
-.endif
-
 .if ${PORT_OPTIONS:MLDAPS} && !${PORT_OPTIONS:MGNUTLS} && !${PORT_OPTIONS:MNSS} && !${PORT_OPTIONS:MOPENSSL} && !${PORT_OPTIONS:MPOLARSSL} && !${PORT_OPTIONS:MWOLFSSL}
 IGNORE=		only supports LDAPS with SSL
-.endif
-
-.if ${PORT_OPTIONS:MLIBSSH2} && !${PORT_OPTIONS:MOPENSSL}
-IGNORE=		only supports LIBSSH2 with OpenSSL
 .endif
 
 .if ${PORT_OPTIONS:MGSSAPI_BASE} && ${PORT_OPTIONS:MOPENSSL} && (defined(WITH_OPENSSL_PORT) || (!defined(WITH_OPENSSL_BASE) && exists(${LOCALBASE}/lib/libcrypto.so)))

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pymtbl
-PORTVERSION=	0.2
+PORTVERSION=	0.3.1
 CATEGORIES=	devel python
 MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libmtbl.so:${PORTSDIR}/devel/mtbl
 
-USE_PYTHON=	distutils autoplist
-USES=		python shebangfix uniquefiles:dirs
+USE_PYTHON=	autoplist distutils
+USES=		pkgconfig python shebangfix uniquefiles:dirs
 
 python_OLD_CMD=	/usr/bin/env python
 SHEBANG_FILES=	examples/*.py examples/*/*.py

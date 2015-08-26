@@ -758,6 +758,7 @@
     SUBDIR += py-pypuppetdb
     SUBDIR += py-pytc
     SUBDIR += py-python-rrdtool
+    SUBDIR += py-python-sql
     SUBDIR += py-qt4-sql
     SUBDIR += py-redis
     SUBDIR += py-riak
@@ -919,6 +920,7 @@
     SUBDIR += sybtcl
     SUBDIR += tablelog
     SUBDIR += tarantool
+    SUBDIR += tarantool-c
     SUBDIR += tcl-Mysql
     SUBDIR += tcl-sqlite3
     SUBDIR += tdb

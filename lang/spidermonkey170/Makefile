@@ -57,9 +57,7 @@ UTF8_CFLAGS=		-DJS_C_STRINGS_ARE_UTF8
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == amd64
-CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
-.endif
+CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 
 .if ${PORT_OPTIONS:MDTRACE}
 . if ${OSVERSION} < 1000510

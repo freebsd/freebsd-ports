@@ -1,5 +1,0 @@
-An alternative implementation of the graphics library used in the book The
-Haskell School of Expression, by Paul Hudak, <http://www.haskell.org/soe/>
-This library builds on top of Gtk+.
-
-WWW: http://www.haskell.org/gtk2hs/

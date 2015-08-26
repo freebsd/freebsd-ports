@@ -295,10 +295,11 @@
     SUBDIR += hs-http-reverse-proxy
     SUBDIR += hs-http-server
     SUBDIR += hs-http-types
+    SUBDIR += hs-http2
+    SUBDIR += hs-multipart
     SUBDIR += hs-oeis
     SUBDIR += hs-path-pieces
     SUBDIR += hs-recaptcha
-    SUBDIR += hs-scgi
     SUBDIR += hs-shakespeare
     SUBDIR += hs-snap
     SUBDIR += hs-snap-core
@@ -319,8 +320,6 @@
     SUBDIR += hs-yesod-core
     SUBDIR += hs-yesod-form
     SUBDIR += hs-yesod-persistent
-    SUBDIR += hs-yesod-platform
-    SUBDIR += hs-yesod-routes
     SUBDIR += hs-yesod-static
     SUBDIR += hs-yesod-test
     SUBDIR += htdigest
@@ -576,7 +575,6 @@
     SUBDIR += ocsigen
     SUBDIR += offline-npm
     SUBDIR += ojs2
-    SUBDIR += ompload
     SUBDIR += opencart
     SUBDIR += openxmldir
     SUBDIR += opera
@@ -931,6 +929,7 @@
     SUBDIR += p5-HTML-QuickCheck
     SUBDIR += p5-HTML-RSSAutodiscovery
     SUBDIR += p5-HTML-ResolveLink
+    SUBDIR += p5-HTML-Restrict
     SUBDIR += p5-HTML-RobotsMETA
     SUBDIR += p5-HTML-Scrubber
     SUBDIR += p5-HTML-Seamstress
@@ -991,6 +990,7 @@
     SUBDIR += p5-HTTP-BrowserDetect
     SUBDIR += p5-HTTP-Cache-Transparent
     SUBDIR += p5-HTTP-CookieJar
+    SUBDIR += p5-HTTP-CookieMonster
     SUBDIR += p5-HTTP-Cookies
     SUBDIR += p5-HTTP-Cookies-Mozilla
     SUBDIR += p5-HTTP-Cookies-iCab
@@ -1049,6 +1049,7 @@
     SUBDIR += p5-LWP-Authen-OAuth
     SUBDIR += p5-LWP-Authen-Wsse
     SUBDIR += p5-LWP-ConnCache-MaxKeepAliveRequests
+    SUBDIR += p5-LWP-ConsoleLogger
     SUBDIR += p5-LWP-MediaTypes
     SUBDIR += p5-LWP-Online
     SUBDIR += p5-LWP-Protocol-PSGI

@@ -70,7 +70,7 @@
 -		  (Cardinal) &pausePauseInterval, XtRFloat, 
 -		  (caddr_t) &pausePauseInterval },
 +		  XtOffsetOf(AppData,pausePauseInterval), XtRFloat, 
-+		  &app_data.scanPauseInterval },
++		  &app_data.pausePauseInterval },
  	{ "cdInfoDir", "cdInfoDir", XtRString, sizeof(String), 
 -		  (Cardinal) &cdInfoDir, XtRString, (caddr_t) NULL },
 +		  XtOffsetOf(AppData,cdInfoDir), XtRString, (caddr_t) NULL },

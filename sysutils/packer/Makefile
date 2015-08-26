@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	packer
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -15,11 +15,11 @@ GH_ACCOUNT=	mitchellh:DEFAULT,cli,gofs,govnc,iochan,mapstructure \
 		mitchellh:multistep,osext,panicwrap,prefixedio,reflectwalk \
 		hashicorp:atlas,checkpoint,gomultierror,msgpack,version,yamux \
 		google:apiclient,goquerystr aws:awssdkgo \
-		golang:crypto,net,oauth2 go-fsnotify:fsnotify \
+		golang:crypto,net,oauth2,tools go-fsnotify:fsnotify \
 		GoogleCloudPlatform:gcloud digitalocean:godo vaughan0:goini \
 		rackspace:gophercloud zoutaiqi:gosshold nu7hatch:gouuid \
-		tent:hlink pierrec:lz4,xxhash klauspost:pgzip satori:suuid \
-		ActiveState:tail go-tomb:tomb going:toolkit \
+		tent:hlink pierrec:lz4,xxhash klauspost:compress,cpuid,crc32,pgzip \
+		satori:suuid ActiveState:tail go-tomb:tomb going:toolkit \
 		masterzen:winrm,simplexml,xmlpath packer-community:winrmcp \
 		dylanmei:iso8601,winrmtest
 GH_PROJECT=	cli:cli go-fs:gofs go-vnc:govnc iochan:iochan \
@@ -34,19 +34,21 @@ GH_PROJECT=	cli:cli go-fs:gofs go-vnc:govnc iochan:iochan \
 		gosshold:gosshold gouuid:gouuid http-link-go:hlink lz4:lz4 \
 		xxHash:xxhash pgzip:pgzip go.uuid:suuid tail:tail tomb:tomb \
 		toolkit:toolkit winrm:winrm simplexml:simplexml xmlpath:xmlpath \
-		winrmcp:winrmcp iso8601:iso8601 winrmtest:winrmtest
+		winrmcp:winrmcp iso8601:iso8601 winrmtest:winrmtest \
+		compress:compress cpuid:cpuid crc32:crc32 tools:tools
 GH_TAGNAME=	8102d0e:cli a34c1b9:gofs 723ed98:govnc 87b45ff:iochan \
 		281073e:mapstructure 162146f:multistep 0dd3f91:osext \
 		45cbfd3:panicwrap 89d9b53:prefixedio eecf4c7:reflectwalk \
-		785958f:atlas 88326f6:checkpoint 56912fb:gomultierror \
-		fa3f638:msgpack 999359b:version 8e00b30:yamux 18450f4:apiclient \
-		547ef5a:goquerystr 2a6648c:awssdkgo 7d5b0be:crypto 446d52d:net \
-		8914e50:oauth2 ea925a0:fsnotify f925ac6:gcloud e2a34fa:godo \
-		a98ad7e:goini e83aa01:gophercloud 967f522:gosshold \
+		d1d08e8:atlas 88326f6:checkpoint 56912fb:gomultierror \
+		fa3f638:msgpack 999359b:version 4036a34:yamux e5bf1aa:apiclient \
+		547ef5a:goquerystr 8aa49b7:awssdkgo 173ce04:crypto b026840:net \
+		397fe76:oauth2 ea925a0:fsnotify e34a32f:gcloud 0d77b00:godo \
+		a98ad7e:goini 1d8b6f1:gophercloud 967f522:gosshold \
 		179d4d0:gouuid ac974c6:hlink 4bdd4b0:lz4 284d0fc:xxhash \
-		49eeca5:pgzip afe1e2d:suuid 4b368d1:tail dd63297:tomb \
-		5bff591:toolkit 1323390:winrm 95ba304:simplexml 13f4951:xmlpath \
-		743b1af:winrmcp 2075bf1:iso8601 3e9661c:winrmtest
+		eef48e2:pgzip 6b8e5b5:suuid 4b368d1:tail dd63297:tomb \
+		5bff591:toolkit 27e0cc8:winrm 95ba304:simplexml 13f4951:xmlpath \
+		743b1af:winrmcp 2075bf1:iso8601 3e9661c:winrmtest \
+		058815a:compress 3b0816b:cpuid 55bf046:crc32 4f50f44:tools
 
 STRIP=		# stripping can break go binaries
 
@@ -56,14 +58,15 @@ PLUGINS=	builder-amazon-chroot builder-amazon-ebs \
 	builder-parallels-iso builder-parallels-pvm builder-qemu \
 	builder-virtualbox-iso builder-virtualbox-ovf builder-vmware-iso \
 	builder-vmware-vmx post-processor-atlas post-processor-compress \
-	post-processor-docker-import post-processor-docker-push \
-	post-processor-docker-save post-processor-docker-tag \
-	post-processor-vagrant post-processor-vagrant-cloud \
-	post-processor-vsphere provisioner-ansible-local \
-	provisioner-chef-client provisioner-chef-solo provisioner-file \
-	provisioner-powershell provisioner-puppet-masterless \
+	post-processor-artifice post-processor-docker-import \
+	post-processor-docker-push post-processor-docker-save \
+	post-processor-docker-tag post-processor-vagrant \
+	post-processor-vagrant-cloud post-processor-vsphere \
+	provisioner-ansible-local provisioner-chef-client provisioner-chef-solo \
+	provisioner-file provisioner-powershell provisioner-puppet-masterless \
 	provisioner-puppet-server provisioner-salt-masterless provisioner-shell \
-	provisioner-shell-local provisioner-windows-restart provisioner-windows-shell
+	provisioner-shell-local provisioner-windows-restart \
+	provisioner-windows-shell
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${PORTNAME}
@@ -127,6 +130,9 @@ post-extract:
 	@${MV} ${WRKSRC_osext} ${WRKSRC}/src/github.com/mitchellh/osext
 	@${MV} ${WRKSRC_panicwrap} ${WRKSRC}/src/github.com/mitchellh/panicwrap
 	@${MV} ${WRKSRC_pgzip} ${WRKSRC}/src/github.com/klauspost/pgzip
+	@${MV} ${WRKSRC_compress} ${WRKSRC}/src/github.com/klauspost/compress
+	@${MV} ${WRKSRC_cpuid} ${WRKSRC}/src/github.com/klauspost/cpuid
+	@${MV} ${WRKSRC_crc32} ${WRKSRC}/src/github.com/klauspost/crc32
 	@${MV} ${WRKSRC_prefixedio} ${WRKSRC}/src/github.com/mitchellh/prefixedio
 	@${MV} ${WRKSRC_reflectwalk} ${WRKSRC}/src/github.com/mitchellh/reflectwalk
 	@${MV} ${WRKSRC_simplexml} ${WRKSRC}/src/github.com/masterzen/simplexml

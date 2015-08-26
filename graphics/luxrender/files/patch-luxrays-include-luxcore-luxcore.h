@@ -1,5 +1,5 @@
---- ../luxrender-luxrays-7c7127ee1fa4/include/luxcore/luxcore.h.orig	2015-01-20 22:45:32.000000000 +0000
-+++ ../luxrender-luxrays-7c7127ee1fa4/include/luxcore/luxcore.h
+--- ../luxrays/include/luxcore/luxcore.h.orig
++++ ../luxrays/include/luxcore/luxcore.h
 @@ -63,7 +63,7 @@
   */
  namespace luxcore {

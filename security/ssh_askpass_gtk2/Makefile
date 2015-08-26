@@ -21,7 +21,7 @@ PLIST_FILES=	bin/ssh-askpass-fullscreen
 
 post-patch:
 	${REINPLACE_CMD} -e "s,gcc,${CC}," \
-		-e "/${CC}/s,$$, -lX11," ${WRKSRC}/Makefile
+		-e "\|${CC}|s,$$, -lX11," ${WRKSRC}/Makefile
 
 do-install:
 	cd ${WRKSRC};\

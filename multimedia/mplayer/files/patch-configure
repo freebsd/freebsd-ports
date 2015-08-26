@@ -1,6 +1,6 @@
---- configure.orig	2014-12-17 22:02:44.000000000 +0100
-+++ configure	2015-03-28 13:56:41.340987552 +0100
-@@ -646,7 +646,7 @@
+--- configure.orig	2015-08-02 17:29:05 UTC
++++ configure
+@@ -646,7 +646,7 @@ armthumb=auto
  _iwmmxt=auto
  _mtrr=auto
  _altivec=auto
@@ -9,7 +9,7 @@
  _ranlib=ranlib
  _windres=windres
  _cc=cc
-@@ -988,7 +988,7 @@
+@@ -988,7 +988,7 @@ for ac_option do
      ld_static=''
      ;;
    --enable-profile)
@@ -18,7 +18,7 @@
      ;;
    --disable-profile)
      _profile=
-@@ -1459,7 +1459,6 @@
+@@ -1459,7 +1459,6 @@ for ac_option do
  
    *)
      echo "Unknown parameter: $ac_option"
@@ -26,7 +26,7 @@
      ;;
  
    esac
-@@ -1712,7 +1711,7 @@
+@@ -1712,7 +1711,7 @@ if test -z "$_target" ; then
    case "$1" in
        x86_64|amd64|i[3-9]86*|i86pc|x86|x86pc|k5|k6|k6_2|k6_3|k6-2|k6-3|pentium*|athlon*|i586_i686|i586-i686) host_arch=i386 ;;
        ia64) host_arch=ia64 ;;
@@ -35,7 +35,7 @@
        alpha) host_arch=alpha ;;
        sun4*|sparc*) host_arch=sparc ;;
        parisc*|hppa*|9000*) host_arch=hppa ;;
-@@ -1834,7 +1833,11 @@
+@@ -1835,7 +1834,11 @@ echocheck "working compiler"
  cflag_check "" || die "Compiler is not functioning correctly. Check your installation and custom CFLAGS $CFLAGS ."
  echo "yes"
  
@@ -48,7 +48,7 @@
  
  if test -z "$_target" ; then
    cat > $TMPC << EOF
-@@ -3164,6 +3167,13 @@
+@@ -3170,6 +3173,13 @@ if arm ; then
    fi
    echores "$setend"
  
@@ -62,7 +62,7 @@
    echocheck "softfloat ABI"
    softfloat=yes
    cpp_condition_check '' 'defined(__ARM_PCS_VFP) || (!defined(__ARM_PCS) && !defined(__SOFTFP__))' && softfloat=no
-@@ -3914,7 +3924,7 @@
+@@ -3920,7 +3930,7 @@ echocheck "pthread"
  if linux ; then
    THREAD_CFLAGS=-D_REENTRANT
  elif freebsd || netbsd || openbsd || bsdos ; then
@@ -71,7 +71,7 @@
  fi
  if test "$_pthreads" = auto ; then
  cat > $TMPC << EOF
-@@ -3924,7 +3934,7 @@
+@@ -3930,7 +3940,7 @@ int main(void) { pthread_t tid; return p
  EOF
  _pthreads=no
  if ! hpux ; then
@@ -80,7 +80,7 @@
      # for crosscompilation, we cannot execute the program, be happy if we can link statically
      cc_check $THREAD_CFLAGS $ld_tmp && (tmp_run || test "$ld_static") && ld_pthread="$ld_tmp" && _pthreads=yes && break
    done
-@@ -4076,7 +4086,7 @@
+@@ -4082,7 +4092,7 @@ EOF
    # NOTE: -L/usr/lib is a hack to avoid issues due to a
    # broken libiconv that e.g. macports installs into /opt/local/lib
    # which might get addded to the search path later by e.g. SDL
@@ -89,7 +89,7 @@
      cc_check $ld_tmp && extra_ldflags="$extra_ldflags $ld_tmp" &&
        ld_iconv="$ld_tmp" && _iconv=yes && break
    done
-@@ -5474,15 +5484,6 @@
+@@ -5484,15 +5494,6 @@ EOF
        break
      fi
    done
@@ -105,7 +105,7 @@
    if win32 && cc_check -DGL_WIN32 -lopengl32 ; then
      _gl=yes
      _gl_win32=yes
-@@ -6046,7 +6047,7 @@
+@@ -6056,7 +6057,7 @@ elif darwin ; then
  elif dragonfly ; then
    default_cdrom_device="/dev/cd0"
  elif freebsd ; then
@@ -114,7 +114,7 @@
  elif openbsd ; then
    default_cdrom_device="/dev/rcd0c"
  elif sunos ; then
-@@ -6059,7 +6060,7 @@
+@@ -6069,7 +6070,7 @@ else
    default_cdrom_device="/dev/cdrom"
  fi
  
@@ -123,18 +123,7 @@
    default_dvd_device=$default_cdrom_device
  elif darwin ; then
    default_dvd_device="/dev/rdiskN"
-@@ -6133,8 +6134,8 @@
-         cat > $TMPC << EOF
- #include <stdio.h>
- #include <cdio/version.h>
--#include <cdio/cdda.h>
--#include <cdio/paranoia.h>
-+#include <cdio/paranoia/cdda.h>
-+#include <cdio/paranoia/paranoia.h>
- int main(void) {
-     void *test = cdda_verbose_set;
-     printf("%s\n", CDIO_VERSION);
-@@ -6566,7 +6567,7 @@
+@@ -6586,7 +6587,7 @@ echores "$_speex"
  echocheck "libgsm"
  if test "$_libgsm" = auto ; then
    _libgsm=no
@@ -143,7 +132,7 @@
  fi
  if test "$_libgsm" = yes ; then
    def_libgsm='#define CONFIG_LIBGSM 1'
-@@ -7051,6 +7052,16 @@
+@@ -7071,6 +7072,16 @@ if test "$_librtmp" = yes && test "$netw
    nolibrtmp=no
    def_librtmp='#define CONFIG_LIBRTMP 1'
    inputmodules="librtmp $inputmodules"
@@ -160,7 +149,7 @@
  else
    nolibrtmp=yes
    _librtmp=no
-@@ -7450,7 +7461,7 @@
+@@ -7471,7 +7482,7 @@ echores "$_mp3lame"
  echocheck "mencoder"
  if test "$_mencoder" = no ; then
    # mpeg1video for vf_lavc, snow for vf_uspp / vf_mcdeint,
@@ -169,7 +158,7 @@
  fi
  echores "$_mencoder"
  
-@@ -8329,7 +8340,7 @@
+@@ -8353,7 +8364,7 @@ TIMER = $_timer
  EXESUF      = $_exesuf
  EXESUFS_ALL = .exe
  

@@ -2,7 +2,7 @@
 
 PORTNAME=	ImageMagick
 DISTVERSION=	6.9.1-10
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.imagemagick.org/download/ \
@@ -221,9 +221,9 @@ PLIST_SUB+=		TIFF="@comment "
 .if ${PORT_OPTIONS:MGSLIB}
 CONFIGURE_ARGS+=	--with-gslib
 . if ${PORT_OPTIONS:MX11}
-USES+=		ghostscript
+USES+=		ghostscript:x11
 . else
-USES+=		ghostscript:nox11
+USES+=		ghostscript
 . endif
 .else
 CONFIGURE_ARGS+=	--without-gslib
@@ -358,9 +358,9 @@ PLIST_SUB+=		PANGO="@comment "
 # PDF (Adobe Portable Document Format) support
 .if ${PORT_OPTIONS:MPDF}
 . if ${PORT_OPTIONS:MX11}
-USES+=			ghostscript
+USES+=			ghostscript:x11
 . else
-USES+=			ghostscript:nox11
+USES+=			ghostscript
 . endif
 .endif
 
@@ -385,9 +385,9 @@ INSTALL_TARGET=	install-strip
 
 .if ${PORT_OPTIONS:MTESTS}
 . if ${PORT_OPTIONS:MX11}
-USES+=		ghostscript:build
+USES+=		ghostscript:x11,build
 . else
-USES+=		ghostscript:build,nox11
+USES+=		ghostscript:build
 . endif
 .endif
 

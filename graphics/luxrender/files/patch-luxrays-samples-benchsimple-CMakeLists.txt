@@ -1,5 +1,5 @@
---- ../luxrender-luxrays-7c7127ee1fa4/samples/benchsimple/CMakeLists.txt.orig
-+++ ../luxrender-luxrays-7c7127ee1fa4/samples/benchsimple/CMakeLists.txt
+--- ../luxrays/samples/benchsimple/CMakeLists.txt.orig
++++ ../luxrays/samples/benchsimple/CMakeLists.txt
 @@ -19,8 +19,10 @@
  #   LuxRays website: http://www.luxrender.net                             #
  ###########################################################################

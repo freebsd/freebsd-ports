@@ -1,6 +1,4 @@
-diff --git a/trx2edips.c b/trx2edips.c
-index f8d068d..224bc12 100644
---- trx2edips.c
+--- trx2edips.c.orig	2011-12-22 14:21:03 UTC
 +++ trx2edips.c
 @@ -6,6 +6,8 @@
  #include <errno.h>

@@ -30,14 +30,14 @@ OCC_DESC=		Compile with OpenCascade geometry kernel
 FFMPEG_DESC=		video recording with FFmpeg
 OPTIONS_DEFAULT=	OCC
 
-BROKEN_sparc64=	internal gcc error (Bug 23159)
+BROKEN_sparc64=		internal gcc error (Bug 23159)
 
 OCC_LIB_DEPENDS=	libTKernel.so:${PORTSDIR}/cad/opencascade
-OCC_CXXFLAGS=	-DOCCGEOMETRY -DHAVE_CONFIG_H -D${ARCH} -I${LOCALBASE}/include/OpenCASCADE
-OCC_CONFIGURE_ENABLE=	occ
+OCC_CXXFLAGS=		-DOCCGEOMETRY -DHAVE_CONFIG_H -D${ARCH} -I${LOCALBASE}/include/OpenCASCADE
+OCC_CONFIGURE_ON=	--enable-occ
 
 FFMPEG_LIB_DEPENDS=	libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0
-FFMPEG_CONFIGURE_ENABLE=ffmpeg
+FFMPEG_CONFIGURE_ON=	--enable-ffmpeg
 
 MACHINE=	${OPSYS:tu}
 
@@ -49,11 +49,11 @@ MAKE_ENV=	TK_VER=${TK_VER} TCL_VER=${TCL_VER}	\
 		MACHINE=${MACHINE} MAKE=${MAKE_CMD}
 
 pre-configure:
-	${REINPLACE_CMD} -e "s|%%DATADIR%%|${DATADIR}|"		\
+	@${REINPLACE_CMD} -e "s|%%DATADIR%%|${DATADIR}|"	\
 		${WRKSRC}/ng/ngappinit.cpp
 
 post-configure:
-	${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|"	\
+	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|"	\
 		${WRKSRC}/configure
 
 post-install:

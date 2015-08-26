@@ -12,9 +12,13 @@ DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pure Java napster client; also, supports OpenNap & giFT (FastTrack)
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 JAVAVM=		${LOCALBASE}/bin/java
 

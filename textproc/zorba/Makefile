@@ -3,7 +3,7 @@
 
 PORTNAME=	zorba
 PORTVERSION=	2.7.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	textproc
 MASTER_SITES=	https://launchpadlibrarian.net/119058962/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -43,7 +43,7 @@ CONFLICTS=	xqilla-[0-9]*
 USE_GNOME=	libxml2 libxslt
 USE_LDCONFIG=	yes
 USE_CXXSTD=	c++11
-USES=		cmake:outsource compiler:c++11-lib execinfo iconv
+USES=		cmake:outsource compiler:c++11-lib execinfo
 CXXFLAGS+=	-I${LOCALBASE}/include -O1 # compiler hangs with -O2 on CURRENT
 LDFLAGS+=	-L${LOCALBASE}/lib
 CMAKE_ARGS=	-DCMAKE_REQUIRED_FLAGS:STRING="-I${LOCALBASE}/include -L${LOCALBASE}/lib" \

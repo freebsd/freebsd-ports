@@ -4,7 +4,7 @@
 
 PORTNAME=	ggv
 PORTVERSION=	2.12.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	print gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -14,7 +14,7 @@ COMMENT=	GNOME 2 ghostscript viewer
 
 INSTALLS_OMF=	yes
 USE_GNOME=	gnomeprefix intlhack libgnomeui
-USES=		desktop-file-utils gettext ghostscript gmake libtool \
+USES=		desktop-file-utils gettext ghostscript:x11 gmake libtool \
 		pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

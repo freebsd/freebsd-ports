@@ -36,6 +36,7 @@
     SUBDIR += gnunet-gtk
     SUBDIR += gtk-gnutella
     SUBDIR += gtorrentviewer
+    SUBDIR += hs-torrent
     SUBDIR += jigdo
     SUBDIR += ktorrent
     SUBDIR += libbt

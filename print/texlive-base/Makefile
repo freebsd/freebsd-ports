@@ -2,7 +2,7 @@
 
 PORTNAME=	texlive
 PORTVERSION=	20150521
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	TEX_CTAN/systems/texlive/Source/
 PKGNAMESUFFIX=	-base
@@ -16,8 +16,8 @@ RUN_DEPENDS=	psbook:${PORTSDIR}/print/psutils
 LIB_DEPENDS=	libicuio.so:${PORTSDIR}/devel/icu \
 		libt1.so:${PORTSDIR}/devel/t1lib \
 		libTECkit.so:${PORTSDIR}/textproc/teckit \
-		libgraphite2.so:${PORTSDIR}/graphics/graphite2 \
 		libgd.so:${PORTSDIR}/graphics/gd \
+		libgraphite2.so:${PORTSDIR}/graphics/graphite2 \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libharfbuzz.so:${PORTSDIR}/print/harfbuzz \
 		libttf.so:${PORTSDIR}/print/freetype \
@@ -31,10 +31,9 @@ CONFLICTS_INSTALL=	texlive-texmf-201[234]*
 USE_TEX=	web2c kpathsea ptexenc tlmgr texhash-bootstrap
 USES=		ghostscript pkgconfig perl5 shebangfix tar:xz
 USE_PERL5=	run
-USE_LDCONFIG=	yes
+USE_XORG=	x11 xmu
 # during build phase gnu configure is run a lot
 MAKE_ENV+=	CONFIG_SITE=${CONFIG_SITE}
-USE_XORG=	x11 xmu xaw pixman
 EXCLUDE_FILES=	${DISTNAME}/texk/web2c \
 		${DISTNAME}/texk/kpathsea \
 		${DISTNAME}/texk/ptexenc \
@@ -61,9 +60,9 @@ CONFIGURE_ARGS= --disable-native-texlive-build \
 		--with-system-freetype2 \
 		--with-freetype2-includes=${LOCALBASE}/include/freetype2 \
 		--with-freetype2-libdir=${LOCALBASE}/lib \
+		--with-system-gd \
 		--with-system-cairo \
 		--with-system-harfbuzz \
-		--with-system-gd \
 		--with-system-graphite2 \
 		--with-system-pixman \
 		--with-system-poppler \

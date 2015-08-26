@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	actionpack
-PORTVERSION=	4.1.12
+PORTVERSION=	4.1.13
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	41
@@ -17,6 +17,7 @@ RUN_DEPENDS=	rubygem-actionview41>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-acti
 		rubygem-rack15>=1.5.2:${PORTSDIR}/www/rubygem-rack15 \
 		rubygem-rack-test>=0.6.2:${PORTSDIR}/www/rubygem-rack-test
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

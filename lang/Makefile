@@ -105,6 +105,7 @@
     SUBDIR += gnu-cobol
     SUBDIR += gnustep-base
     SUBDIR += go
+    SUBDIR += go14
     SUBDIR += gprolog
     SUBDIR += groovy
     SUBDIR += gscheme
@@ -114,7 +115,6 @@
     SUBDIR += hla
     SUBDIR += hope
     SUBDIR += hs-brainfuck
-    SUBDIR += hs-epic
     SUBDIR += hs-unlambda
     SUBDIR += huc
     SUBDIR += hugs

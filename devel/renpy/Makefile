@@ -6,7 +6,6 @@ DISTVERSIONSUFFIX=-sdk
 PORTREVISION=	1
 CATEGORIES=	devel games
 MASTER_SITES=	http://www.renpy.org/dl/${PORTVERSION}/
-#MASTER_SITES+=	GENTOO
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Framework for developing visual-novel type games

@@ -6368,7 +6368,6 @@ news/husky-base-devel||2014-08-05|Has been incorporated into the build process o
 archivers/hs-zlib-conduit||2014-08-10|Removed: Deprecated in favor of conduit-extra
 devel/hs-IORefCAS||2014-08-10|Removed: Deprecated in favor of atomic-primops
 devel/hs-Tensor||2014-08-10|Removed: Deprecated
-devel/hs-StateVar||2014-08-10|Removed: Deprecated
 devel/hs-attempt||2014-08-10|Removed: Deprecated in favor of exceptions
 devel/hs-base64-conduit||2014-08-10|Removed: Deprecated in favor of conduit-combinators
 devel/hs-blaze-builder-conduit||2014-08-10|Removed: Deprecated in favor of conduit-extra
@@ -7825,3 +7824,28 @@ sysutils/rubygem-bundler17||2015-08-13|Has expired: not used by other ports anym
 sysutils/fpkg||2015-08-15|Has expired: Does not support pkg(8)
 games/galaxymage||2015-08-16|Has expired: Runtime broken and abandoned upstream
 devel/rubygem-fog-brightbox|net/rubygem-fog-brightbox|2015-08-19|Move to a better place
+www/ompload||2015-08-20|Has expired: omploader.org is down for many years
+devel/ocaml-equeue|www/ocaml-net|2015-08-20|Has expired: Superseded by www/ocaml-net
+devel/hs-MaybeT||2015-08-20|Removed: Deprecated.
+devel/hs-geniplate||2015-08-20|Removed: Upstream support is discontinued.
+devel/hs-glade||2015-08-20|Removed: Upstream support is discontinued.
+devel/hs-haskell-platform||2015-08-20|Removed: It is not tracked any more.
+devel/hs-ranges||2015-08-20|Removed: Deprecated.
+devel/hs-testpack||2015-08-20|Removed: Upstream is unmaintained.
+graphics/hs-soegtk||2015-08-20|Removed: Upstream support is discontinued.
+lang/hs-epic||2015-08-20|Removed: It is not needed any more.
+math/hs-nats||2015-08-20|Removed: It has been merged into the base library of GHC.
+multimedia/hs-gstreamer||2015-08-20|Removed: Upstream support is discontinued.
+www/hs-scgi||2015-08-20|Removed: Deprecated.
+www/hs-yesod-platform||2015-08-20|Removed: Upstream support is discontinued.
+www/hs-yesod-routes||2015-08-20|Removed: Upstream support is discontinued.
+x11-toolkits/hs-gtkglext||2015-08-20|Removed: Upstream support is discontinued.
+textproc/prosper||2015-08-22|Removed: maintainted in print/texlive-texmf.
+print/ghostscript7|print/ghostscript7-base|2015-08-22|Split into print/ghostscript7-base and print/ghostscript7-x11
+print/ghostscript7-nox11|print/ghostscript7-base|2015-08-22|Integrated into print/ghostscript7-base
+print/ghostscript8|print/ghostscript8-base|2015-08-22|Split into print/ghostscript8-base and print/ghostscript8-x11
+print/ghostscript8-nox11|print/ghostscript8-base|2015-08-22|Integrated into print/ghostscript8-base
+print/ghostscript9|print/ghostscript9-base|2015-08-22|Split into print/ghostscript9-base and print/ghostscript9-x11
+print/ghostscript9-nox11|print/ghostscript9-base|2015-08-22|Integrated into print/ghostscript9-base
+print/ghostscript9-agpl|print/ghostscript9-agpl-base|2015-08-22|Split into print/ghostscript9-agpl-base and print/ghostscript9-agpl-x11
+print/ghostscript9-agpl-nox11|print/ghostscript9-agpl-base|2015-08-22|Integrated into print/ghostscript9-agpl-base

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qt5ct
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	misc
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -13,7 +13,7 @@ USE_QT5=	gui svg widgets buildtools_build linguisttools_build
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}/${DOCSDIR} && \
 	${INSTALL_DATA}	${WRKSRC}/README ${STAGEDIR}/${DOCSDIR}
 

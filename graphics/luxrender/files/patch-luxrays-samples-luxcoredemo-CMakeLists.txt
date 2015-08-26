@@ -1,5 +1,5 @@
---- ../luxrender-luxrays-7c7127ee1fa4/samples/luxcoredemo/CMakeLists.txt.orig
-+++ ../luxrender-luxrays-7c7127ee1fa4/samples/luxcoredemo/CMakeLists.txt
+--- ../luxrays/samples/luxcoredemo/CMakeLists.txt.orig
++++ ../luxrays/samples/luxcoredemo/CMakeLists.txt
 @@ -22,10 +22,12 @@
  #
  ################################################################################

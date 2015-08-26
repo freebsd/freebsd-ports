@@ -25,6 +25,7 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS DOXYGEN
 DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 DOXYGEN_ALL_TARGET=	all doxygen
+DOXYGEN_IMPLIES=	DOCS
 
 .include <bsd.port.pre.mk>
 
@@ -35,9 +36,9 @@ CXXFLAGS+=	-D_GLIBCXX_USE_C99 # gcc c++11 support is broken on FreeBSD
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}/
-.if ${PORT_OPTIONS:MDOXYGEN}
+
+post-install-DOXYGEN-on:
 	cd ${CONFIGURE_WRKSRC} && ${COPYTREE_SHARE} doxygen ${STAGEDIR}${DOCSDIR}/
-.endif
 
 regression-test: build
 	cd ${WRKSRC} && ${DO_MAKE_BUILD} test

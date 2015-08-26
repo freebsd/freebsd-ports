@@ -5,6 +5,78 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150822:
+  AFFECTS: users of print/ghostscript*
+  AUTHOR: hrs@FreeBSD.org
+
+ print/ghostscript{7,8,9,9-agpl} have been split into
+ print/ghostscript{7,8,9,9-agpl}-{base,x11}.
+ print/ghostscript*-nox11 ports have been removed.
+
+ The -base installs Ghostscript binaries, libgs, and other data files
+ and it depends on no X11 library.  The -x11 installs a small shared
+ library to enable x11* devices in the installed -base package.
+
+ In most cases, Ghostscript is installed as a dependency.  A port/package
+ which requires Ghostscript will automatically pick up -base, and
+ when x11* devices required it will pick up -x11 in addition.
+
+ If one wants to install Ghostscript manually and full compatibility
+ with the previous versions, just install -x11 because it installs
+ -base as a dependency.  Combination of the two provides the same
+ functionality as before.
+
+20150821:
+  AFFECTS: users of security/openssh-portable
+  AUTHOR: bdrewery@FreeBSD.org
+
+  OpenSSH 7.0 disables support for:
+    * SSH protocol 1
+    * 1024-bit diffie-hellman-group1-sha1 key exchange
+    * ssh-dss, ssh-dss-cert-* host and user keys
+    * legacy v00 cert format
+
+  See http://www.openssh.com/txt/release-7.0 for more information and
+  http://www.openssh.com/legacy.html for how to re-enable some of these
+  algorithms.
+
+20150820:
+  AFFECTS: users of lang/ghc and */hs-*
+  AUTHOR: haskell@FreeBSD.org
+
+  The Glorious Glasgow Haskell Compiler has been updated to version
+  7.10.2 and Haskell Platform has been removed.  As a result, it is
+  recommended to rebuild or reinstall all the dependent ports and the
+  lang/ghc port itself in one of the following ways:
+
+  # portmaster -w -r ghc
+    or
+  # portupgrade -fr lang/ghc
+
+  In case of pkg(8), it is probably safer to remove all the GHC-dependent
+  packages along with GHC and reinstall everything from scratch.  For
+  example:
+
+  # pkg query "%ro" ghc > ghc-pkgs.txt
+  # pkg delete -y lang/ghc
+
+  In ghc-pkgs.txt, check and remove all the packages that have been moved,
+  then:
+
+  # pkg install -y `cat ghc-pkgs.txt`
+
+20150818:
+  AFFECTS: users of sysutils/s6
+  AUTHOR: Colin Booth <colin@heliocat.net>
+
+  s6-notifywhenup has been removed as of v2.2.0.0. Any run scripts 
+  using readyness notification must be updated to use a notification 
+  fd instead.
+
+  s6-svc options have changed for sending syncronous up/down timeouts. 
+  Any management or wrapper scripts using those options will need to
+  be updated.
+
 20150817:
   AFFECTS: everybody who still uses <UNIQUENAME>_SET/UNSET in make.conf
   AUTHOR: mat@FreeBSD.org

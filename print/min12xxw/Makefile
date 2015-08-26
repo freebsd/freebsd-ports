@@ -9,14 +9,13 @@ MASTER_SITES=	http://hinterbergen.de/mala/min12xxw/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print driver for the Minolta PagePro 1(2/3/4)xxW printers
 
-HAS_CONFIGURE=	yes
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-PLIST_FILES=	bin/min12xxw bin/esc-m \
+GNU_CONFIGURE=	yes
+
+PLIST_FILES=	bin/esc-m \
+		bin/min12xxw \
 		man/man1/min12xxw.1.gz
-
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/min12xxw ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/esc-m ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/min12xxw.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>

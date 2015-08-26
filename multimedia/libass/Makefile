@@ -2,6 +2,7 @@
 
 PORTNAME=	libass
 PORTVERSION=	0.12.1
+PORTREVISION=	1
 CATEGORIES=	multimedia devel
 
 MAINTAINER=	multimedia@FreeBSD.org
@@ -21,9 +22,14 @@ USE_LDCONFIG=	yes
 PATHFIX_MAKEFILEIN=Makefile.am
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	ASM ENCA FONTCONFIG HARFBUZZ
-OPTIONS_DEFAULT=ASM ENCA FONTCONFIG HARFBUZZ
+OPTIONS_DEFINE=	ENCA FONTCONFIG HARFBUZZ
+OPTIONS_DEFAULT=ENCA FONTCONFIG HARFBUZZ
+OPTIONS_DEFINE_amd64=	ASM
+OPTIONS_DEFINE_i386=	ASM
+OPTIONS_DEFAULT_amd64=	ASM
 
+ASM_BUILD_DEPENDS=${LOCALBASE}/bin/yasm:${PORTSDIR}/devel/yasm
+ASM_CONFIGURE_ENABLE=asm
 ASM_DESC?=	Use optimized ASM routines on x86/amd64
 
 ENCA_LIB_DEPENDS=libenca.so:${PORTSDIR}/converters/enca
@@ -37,15 +43,4 @@ HARFBUZZ_LIB_DEPENDS=libharfbuzz.so:${PORTSDIR}/print/harfbuzz
 HARFBUZZ_CONFIGURE_ENABLE=harfbuzz
 HARFBUZZ_DESC?=	Font shaping via HarfBuzz
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64" || ${ARCH} == "i386"
-.if ${PORT_OPTIONS:MASM}
-CONFIGURE_ARGS+=	--enable-asm
-BUILD_DEPENDS+=	${LOCALBASE}/bin/yasm:${PORTSDIR}/devel/yasm
-.else
-CONFIGURE_ARGS+=	--disable-asm
-.endif
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -472,31 +472,31 @@
 %%WEBPLUGIN_DIR%%/usb/ctxusbd.rc
 %%WEBPLUGIN_DIR%%/usb/ica-usb.rules
 %%WEBPLUGIN_DIR%%/usb/usb.conf
-%%WEBPLUGIN_DIR%%/util/DeleteCompleteFlashCache.sh
-%%WEBPLUGIN_DIR%%/util/configmgr
-%%WEBPLUGIN_DIR%%/util/conncenter
-%%WEBPLUGIN_DIR%%/util/ctx_app_bind
-%%WEBPLUGIN_DIR%%/util/ctx_rehash
-%%WEBPLUGIN_DIR%%/util/echo_cmd
-%%WEBPLUGIN_DIR%%/util/gst_aud_play
-%%WEBPLUGIN_DIR%%/util/gst_aud_read
-%%WEBPLUGIN_DIR%%/util/gst_play
-%%WEBPLUGIN_DIR%%/util/gst_read
-%%WEBPLUGIN_DIR%%/util/hdxcheck.sh
-%%WEBPLUGIN_DIR%%/util/hinst
-%%WEBPLUGIN_DIR%%/util/icalicense.sh
-%%WEBPLUGIN_DIR%%/util/libgstflatstm.so
-%%WEBPLUGIN_DIR%%/util/lurdump
-%%WEBPLUGIN_DIR%%/util/new_store
-%%WEBPLUGIN_DIR%%/util/nslaunch
-%%WEBPLUGIN_DIR%%/util/pac.js
-%%WEBPLUGIN_DIR%%/util/pacexec
-%%WEBPLUGIN_DIR%%/util/pnabrowse
-%%WEBPLUGIN_DIR%%/util/pnabrowse_launch
-%%WEBPLUGIN_DIR%%/util/storebrowse
-%%WEBPLUGIN_DIR%%/util/sunraymac.sh
-%%WEBPLUGIN_DIR%%/util/what
-%%WEBPLUGIN_DIR%%/util/xcapture
+@(,,00555) %%WEBPLUGIN_DIR%%/util/DeleteCompleteFlashCache.sh
+@(,,00555) %%WEBPLUGIN_DIR%%/util/configmgr
+@(,,00555) %%WEBPLUGIN_DIR%%/util/conncenter
+@(,,00555) %%WEBPLUGIN_DIR%%/util/ctx_app_bind
+@(,,00555) %%WEBPLUGIN_DIR%%/util/ctx_rehash
+@(,,00555) %%WEBPLUGIN_DIR%%/util/echo_cmd
+@(,,00555) %%WEBPLUGIN_DIR%%/util/gst_aud_play
+@(,,00555) %%WEBPLUGIN_DIR%%/util/gst_aud_read
+@(,,00555) %%WEBPLUGIN_DIR%%/util/gst_play
+@(,,00555) %%WEBPLUGIN_DIR%%/util/gst_read
+@(,,00555) %%WEBPLUGIN_DIR%%/util/hdxcheck.sh
+@(,,00555) %%WEBPLUGIN_DIR%%/util/hinst
+@(,,00555) %%WEBPLUGIN_DIR%%/util/icalicense.sh
+@(,,00555) %%WEBPLUGIN_DIR%%/util/libgstflatstm.so
+@(,,00555) %%WEBPLUGIN_DIR%%/util/lurdump
+@(,,00555) %%WEBPLUGIN_DIR%%/util/new_store
+@(,,00555) %%WEBPLUGIN_DIR%%/util/nslaunch
+@(,,00555) %%WEBPLUGIN_DIR%%/util/pac.js
+@(,,00555) %%WEBPLUGIN_DIR%%/util/pacexec
+@(,,00555) %%WEBPLUGIN_DIR%%/util/pnabrowse
+@(,,00555) %%WEBPLUGIN_DIR%%/util/pnabrowse_launch
+@(,,00555) %%WEBPLUGIN_DIR%%/util/storebrowse
+@(,,00555) %%WEBPLUGIN_DIR%%/util/sunraymac.sh
+@(,,00555) %%WEBPLUGIN_DIR%%/util/what
+@(,,00555) %%WEBPLUGIN_DIR%%/util/xcapture
 @(,,00555) %%WEBPLUGIN_DIR%%/wfica
 bin/wfcmgr
 bin/wfica

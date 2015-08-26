@@ -21,6 +21,8 @@ PLIST_FILES=	bin/pcc libexec/ccom libexec/cpp \
 		man/man1/ccom.1.gz man/man1/cpp.1.gz \
 		man/man1/pcc.1.gz
 
+MAKE_JOBS_UNSAFE=	yes
+
 # Fix -jX builds: use -C switch instead of cd'ing and add missing dependency
 
 post-patch:

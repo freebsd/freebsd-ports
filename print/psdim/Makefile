@@ -3,7 +3,7 @@
 
 PORTNAME=	psdim
 PORTVERSION=	1.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	print
 MASTER_SITES=	http://www.mathstat.dal.ca/~selinger/psdim/download/
 
