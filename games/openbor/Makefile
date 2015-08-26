@@ -23,7 +23,7 @@ MAKE_ENV=	BUILD_LINUX=1 SDKPATH="${LOCALBASE}" \
 		GCC_TARGET="${CONFIGURE_TARGET:S/amd64/x86_64/}"
 MAKE_ARGS=	CC="${CC}" LIBRARIES="${LOCALBASE}/lib" \
 		TARGET_ARCH=${ARCH:S/i386/x86/} ARCHFLAGS="" \
-		TARGET_FINAL='$(TARGET)'
+		TARGET_FINAL='$(TARGET)' BUILD_MMX=""
 LDFLAGS+=	-Wl,--as-needed
 PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png
@@ -36,13 +36,11 @@ DESKTOP_ENTRIES="OpenBOR" \
 		"Game;ArcadeGame;" \
 		""
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE_i386=	MMX
+OPTIONS_DEFAULT_i386=	MMX # runtime detection
 
-.if ${ARCH} == i386
-BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
-.else
-MAKE_ARGS+=	BUILD_MMX=""
-.endif
+MMX_BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
+MMX_MAKE_ARGS=		BUILD_MMX=1
 
 #
 # To update snapshot: make makesum BOOTSTRAP=
