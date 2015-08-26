@@ -1,5 +1,5 @@
---- ../luxrender-luxrays-7c7127ee1fa4/cmake/PlatformSpecific.cmake.orig
-+++ ../luxrender-luxrays-7c7127ee1fa4/cmake/PlatformSpecific.cmake
+--- ../luxrays/cmake/PlatformSpecific.cmake.orig
++++ ../luxrays/cmake/PlatformSpecific.cmake
 @@ -138,18 +138,17 @@ ENDIF(MSVC)
  
  
