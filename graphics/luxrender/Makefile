@@ -25,8 +25,8 @@ ONLY_FOR_ARCHS_REASON=	uses SSE instructions
 
 USES=		bison cmake execinfo python:version tar:bzip2
 USE_GL=		glut glew
-WRKSRC=		${WRKDIR}/luxrender-lux-${LUX_REV}
-LUXRAYS_WRKSRC=	${WRKDIR}/luxrender-luxrays-${LUXRAYS_REV}
+WRKSRC=		${WRKDIR}/${PORTNAME}-lux-${LUX_REV}
+LUXRAYS_WRKSRC=	${WRKDIR}/${PORTNAME}-luxrays-${LUXRAYS_REV}
 
 CMAKE_ARGS=	-DLUXCORE_INCLUDE_DIRS:PATH="${LUXRAYS_WRKSRC}/include" \
 		-DLUXCORE_LIBRARY:STRING="${LUXRAYS_WRKSRC}/lib/libluxcore.a" \
@@ -46,11 +46,15 @@ X11_DESC=	Build GUI executable (requires Qt 4)
 X11_USE=	QT4=moc_build,qmake_build,rcc_build,uic_build,corelib,gui
 X11_PLIST_FILES=	bin/luxrender
 
+pre-patch:
+	@${LN} -sf ${PORTNAME}-luxrays-${LUXRAYS_REV} ${WRKDIR}/luxrays
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/__APPLE__/__FreeBSD__/' \
 		${LUXRAYS_WRKSRC}/samples/smallluxgpu4/smallluxgpu.h \
 		${WRKSRC}/core/osfunc.h \
 		${WRKSRC}/shapes/mikktspace/weldmesh.c
+# Avoid infamous "local symbol discarded in section `.text...' errors
 	@${REINPLACE_CMD} -e '/^set(Boost_USE_STATIC_LIBS/s,ON,OFF,' \
 		${LUXRAYS_WRKSRC}/cmake/Dependencies.cmake
 # Avoid picking up Python 3.x bits if they're installed
