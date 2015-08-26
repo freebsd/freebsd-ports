@@ -368,6 +368,7 @@ lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/pdt_console.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/pl2xpce.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/porter_stem.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/process.so
+lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/prolog_stream.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/protobufs.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/rdf_db.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/readutil.so
@@ -702,6 +703,7 @@ lib/%%DISTNAME%%/library/prolog_pack.pl
 lib/%%DISTNAME%%/library/prolog_server.pl
 lib/%%DISTNAME%%/library/prolog_source.pl
 lib/%%DISTNAME%%/library/prolog_stack.pl
+lib/%%DISTNAME%%/library/prolog_stream.pl
 lib/%%DISTNAME%%/library/prolog_xref.pl
 lib/%%DISTNAME%%/library/protobufs.pl
 lib/%%DISTNAME%%/library/pure_input.pl
@@ -1781,5 +1783,5 @@ man/man1/swipl-ld.1.gz
 man/man1/swipl-rc.1.gz
 man/man1/swipl.1.gz
 man/man1/xpce-client.1.gz
-@dir lib/%%DISTNAME%%/xpce/bin/%%ARCH%%-%%OS%%
 @dir lib/%%DISTNAME%%/library/dialect/ifprolog
+@dir lib/%%DISTNAME%%/xpce/bin/%%ARCH%%-%%OS%%
