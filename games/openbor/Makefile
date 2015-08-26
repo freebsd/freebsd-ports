@@ -2,7 +2,7 @@
 
 PORTNAME=	openbor
 PORTVERSION=	3.0.r4163
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	LOCAL/jbeich \
 		https://svn.code.sf.net/p/${PORTNAME}/engine/engine/:svn
@@ -12,8 +12,7 @@ COMMENT=	Moddable fighting game engine (aka Beats of Rage)
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
-		libpng.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libvpx.so:${PORTSDIR}/multimedia/libvpx
 
 USES=		dos2unix gmake pkgconfig tar:xz
@@ -36,11 +35,17 @@ DESKTOP_ENTRIES="OpenBOR" \
 		"Game;ArcadeGame;" \
 		""
 
+OPTIONS_DEFINE=		TREMOR
+OPTIONS_DEFAULT=	${MACHINE_CPU:tu:MSOFTFP:S/SOFTFP/TREMOR/}
 OPTIONS_DEFINE_i386=	MMX
 OPTIONS_DEFAULT_i386=	MMX # runtime detection
 
 MMX_BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
 MMX_MAKE_ARGS=		BUILD_MMX=1
+
+TREMOR_LIB_DEPENDS=	libvorbisidec.so:${PORTSDIR}/audio/libtremor
+TREMOR_MAKE_ARGS=	BUILD_TREMOR=1 BUILD_VORBIS=""
+TREMOR_LIB_DEPENDS_OFF=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
 
 #
 # To update snapshot: make makesum BOOTSTRAP=
