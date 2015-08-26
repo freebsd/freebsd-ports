@@ -52,13 +52,11 @@ post-extract:
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's/MAXOBV=1000000/MAXOBV=${MAXOBV}/' \
-	${WRKSRC}/DPCOPA.INC
+		${WRKSRC}/DPCOPA.INC
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/dpsnapsh.pdf \
 		${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
