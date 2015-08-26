@@ -39,6 +39,7 @@ DISTFILES=	${PORTNAME}-api-${PORTVERSION}.jar:api \
 EXTRACT_ONLY=
 
 NO_BUILD=	yes
+NO_INSTALL=	yes
 .endif
 
 post-patch-COMPILE-on:
