@@ -3,7 +3,7 @@
 
 PORTNAME=	citrix_ica
 PORTVERSION=	13.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net comms linux
 MASTER_SITES=	#
 DISTNAME=	linuxx86-13.2.0.322243
@@ -26,6 +26,7 @@ CDIR=		${PREFIX}/ICAClient
 CERTDIR=	${CDIR}/keystore/cacerts
 
 PLIST_SUB=	MOZILLA_HOME=${MOZILLA_HOME}
+
 .if defined(ICA_CERTS)
 PLIST_SUB+=	HAVE_ICA_CERTS="" ICA_CERTS="${ICA_CERTS}" CERTDIR="${CERTDIR}"
 .else
@@ -39,6 +40,14 @@ SUB_LIST=	CDIR=${CDIR}
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=May not be redistributed due to licensing. Please visit http://www.citrix.com/downloads/citrix-receiver/linux/receiver-for-linux-13-2.html accept their license and download ${DISTFILES} into ${DISTDIR}
+.endif
+
+.if defined(ICA_CERTS)
+.for f in ${ICA_CERTS}
+PLIST_FILES+=	${CERTDIR}/${f}
+HASH_${f}!=	openssl x509 -noout -hash -in ${DISTDIR}/${f}
+PLIST_FILES+=	${CERTDIR}/${HASH_${f}}.0
+.endfor
 .endif
 
 pre-fetch:
@@ -76,12 +85,13 @@ do-install:
 	${MKDIR} ${STAGEDIR}${CDIR}
 	${MKDIR} ${STAGEDIR}${CDIR}/config
 	cd ${WRKDIR}/linuxx86/linuxx86.cor/ && ${COPYTREE_SHARE} . ${STAGEDIR}${CDIR}
-	cp ${WRKDIR}/setupwfc ${STAGEDIR}${CDIR}
+	${CP} ${WRKDIR}/setupwfc ${STAGEDIR}${CDIR}
 
 .if defined(ICA_CERTS)
 	${MKDIR} ${STAGEDIR}${CERTDIR}
 .for f in ${ICA_CERTS}
 	${INSTALL_DATA} ${DISTDIR}/${f} ${STAGEDIR}${CERTDIR}
+	${LN} -sf ${f} ${STAGEDIR}${CERTDIR}/$$(openssl x509 -noout -hash -in ${DISTDIR}/${f}).0
 .endfor
 .endif
 
