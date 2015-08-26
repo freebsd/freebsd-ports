@@ -46,7 +46,7 @@ OWPHP_DESC=		Enable PHP binding (BROKEN)
 OWPYTHON_DESC=		Enable Python binding 
 OWTCL_DESC=		Enable TCL binding
 PROFILING_DESC=		Enable profiling (BROKEN)
-OWFS_DESC=		Enable FUSE support (UNTESTED)
+OWFS_DESC=		Enable FUSE support
 ZERO_DESC=		Enable Zeroconf/bonjour (UNTESTED)
 USB_DESC=		Enable 1-Wire usb DS2490 support
 
@@ -57,9 +57,11 @@ USB_DESC=		Enable 1-Wire usb DS2490 support
 OPTIONS_DEFAULT=OWDEBUG\
 	OWSHELL\
 	OWNET\
+	I2C\
 	OWHTTPD\
 	OWFTPD\
 	OWSERVER\
 	OWCAPI\
+	OWFS\
 	USB
 
