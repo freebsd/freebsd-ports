@@ -103,14 +103,12 @@ CMAKE_BUILD_TYPE=	RelWithDebInfo
 STRIP=
 .endif
 
-.if ! ${PORT_OPTIONS:MDOCS}
-post-install:
+post-install-DOCS-off:
 	${RM} ${STAGEDIR}${DOCSDIR}/AUTHORS
 	${RM} ${STAGEDIR}${DOCSDIR}/LICENSE
 	${RM} ${STAGEDIR}${DOCSDIR}/README
 	${RM} ${STAGEDIR}${DOCSDIR}/TRANSLATORS
 	${RM} ${STAGEDIR}${DOCSDIR}/darktablerc.html
 	${RMDIR} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
