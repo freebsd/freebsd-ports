@@ -8,7 +8,7 @@ CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	vivek@khera.org
+MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Perl interface to OpenDKIM C library
 
 LICENSE=	ART10 GPLv1
