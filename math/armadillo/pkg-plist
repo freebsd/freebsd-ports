@@ -111,10 +111,12 @@ include/armadillo_bits/fn_conv_to.hpp
 include/armadillo_bits/fn_cor.hpp
 include/armadillo_bits/fn_cov.hpp
 include/armadillo_bits/fn_cross.hpp
+include/armadillo_bits/fn_cumprod.hpp
 include/armadillo_bits/fn_cumsum.hpp
 include/armadillo_bits/fn_det.hpp
 include/armadillo_bits/fn_diagmat.hpp
 include/armadillo_bits/fn_diagvec.hpp
+include/armadillo_bits/fn_diff.hpp
 include/armadillo_bits/fn_dot.hpp
 include/armadillo_bits/fn_eig_gen.hpp
 include/armadillo_bits/fn_eig_pair.hpp
@@ -128,6 +130,7 @@ include/armadillo_bits/fn_eye.hpp
 include/armadillo_bits/fn_fft.hpp
 include/armadillo_bits/fn_fft2.hpp
 include/armadillo_bits/fn_find.hpp
+include/armadillo_bits/fn_find_unique.hpp
 include/armadillo_bits/fn_flip.hpp
 include/armadillo_bits/fn_hist.hpp
 include/armadillo_bits/fn_histc.hpp
@@ -264,6 +267,8 @@ include/armadillo_bits/op_cor_bones.hpp
 include/armadillo_bits/op_cor_meat.hpp
 include/armadillo_bits/op_cov_bones.hpp
 include/armadillo_bits/op_cov_meat.hpp
+include/armadillo_bits/op_cumprod_bones.hpp
+include/armadillo_bits/op_cumprod_meat.hpp
 include/armadillo_bits/op_cumsum_bones.hpp
 include/armadillo_bits/op_cumsum_meat.hpp
 include/armadillo_bits/op_cx_scalar_bones.hpp
@@ -272,6 +277,8 @@ include/armadillo_bits/op_diagmat_bones.hpp
 include/armadillo_bits/op_diagmat_meat.hpp
 include/armadillo_bits/op_diagvec_bones.hpp
 include/armadillo_bits/op_diagvec_meat.hpp
+include/armadillo_bits/op_diff_bones.hpp
+include/armadillo_bits/op_diff_meat.hpp
 include/armadillo_bits/op_dot_bones.hpp
 include/armadillo_bits/op_dot_meat.hpp
 include/armadillo_bits/op_dotext_bones.hpp
@@ -282,6 +289,8 @@ include/armadillo_bits/op_fft_bones.hpp
 include/armadillo_bits/op_fft_meat.hpp
 include/armadillo_bits/op_find_bones.hpp
 include/armadillo_bits/op_find_meat.hpp
+include/armadillo_bits/op_find_unique_bones.hpp
+include/armadillo_bits/op_find_unique_meat.hpp
 include/armadillo_bits/op_flip_bones.hpp
 include/armadillo_bits/op_flip_meat.hpp
 include/armadillo_bits/op_hist_bones.hpp
@@ -424,7 +433,7 @@ include/armadillo_bits/xvec_htrans_bones.hpp
 include/armadillo_bits/xvec_htrans_meat.hpp
 lib/libarmadillo.so
 lib/libarmadillo.so.5
-lib/libarmadillo.so.5.300.4
+lib/libarmadillo.so.5.400.2
 share/Armadillo/CMake/ArmadilloConfig.cmake
 share/Armadillo/CMake/ArmadilloConfigVersion.cmake
 share/Armadillo/CMake/ArmadilloLibraryDepends-release.cmake
