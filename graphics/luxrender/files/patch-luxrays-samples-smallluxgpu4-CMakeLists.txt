@@ -1,5 +1,5 @@
---- ../luxrender-luxrays-7c7127ee1fa4/samples/smallluxgpu4/CMakeLists.txt.orig
-+++ ../luxrender-luxrays-7c7127ee1fa4/samples/smallluxgpu4/CMakeLists.txt
+--- ../luxrays/samples/smallluxgpu4/CMakeLists.txt.orig
++++ ../luxrays/samples/smallluxgpu4/CMakeLists.txt
 @@ -25,6 +25,8 @@
  #
  #############################################################################
