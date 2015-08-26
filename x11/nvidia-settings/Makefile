@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nvidia-settings
-PORTVERSION=	346.47
+PORTVERSION=	340.24
 CATEGORIES=	x11
 MASTER_SITES=	ftp://download.nvidia.com/XFree86/nvidia-settings/ \
 		ftp://download1.nvidia.com/XFree86/nvidia-settings/
@@ -21,7 +21,6 @@ USE_GL=		gl
 USE_XORG=	xv xext
 
 PLIST_FILES=	bin/nvidia-settings \
-		lib/libnvidia-gtk2.so.346.47 \
 		man/man1/nvidia-settings.1.gz
 
 LDFLAGS+=	-Wl,--as-needed
