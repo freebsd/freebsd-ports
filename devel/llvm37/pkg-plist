@@ -1775,6 +1775,7 @@ llvm37/include/llvm/Transforms/Vectorize.h
 llvm37/lib/BugpointPasses.so
 llvm37/lib/LLVMHello.so
 %%GOLD%%llvm37/lib/LLVMgold.so
+%%COMPILER_RT%%llvm37/lib/clang/3.7.0/asan_blacklist.txt
 %%CLANG%%llvm37/lib/clang/3.7.0/include/Intrin.h
 %%CLANG%%llvm37/lib/clang/3.7.0/include/__stddef_max_align_t.h
 %%CLANG%%llvm37/lib/clang/3.7.0/include/__wmmintrin_aes.h
@@ -1823,6 +1824,15 @@ llvm37/lib/LLVMHello.so
 %%CLANG%%llvm37/lib/clang/3.7.0/include/rdseedintrin.h
 %%CLANG%%llvm37/lib/clang/3.7.0/include/rtmintrin.h
 %%CLANG%%llvm37/lib/clang/3.7.0/include/s390intrin.h
+%%COMPILER_RT%%llvm37/lib/clang/3.7.0/include/sanitizer/allocator_interface.h
+%%COMPILER_RT%%llvm37/lib/clang/3.7.0/include/sanitizer/asan_interface.h
+%%COMPILER_RT%%llvm37/lib/clang/3.7.0/include/sanitizer/common_interface_defs.h
+%%COMPILER_RT%%llvm37/lib/clang/3.7.0/include/sanitizer/coverage_interface.h
+%%COMPILER_RT%%llvm37/lib/clang/3.7.0/include/sanitizer/dfsan_interface.h
+%%COMPILER_RT%%llvm37/lib/clang/3.7.0/include/sanitizer/linux_syscall_hooks.h
+%%COMPILER_RT%%llvm37/lib/clang/3.7.0/include/sanitizer/lsan_interface.h
+%%COMPILER_RT%%llvm37/lib/clang/3.7.0/include/sanitizer/msan_interface.h
+%%COMPILER_RT%%llvm37/lib/clang/3.7.0/include/sanitizer/tsan_interface_atomic.h
 %%CLANG%%llvm37/lib/clang/3.7.0/include/shaintrin.h
 %%CLANG%%llvm37/lib/clang/3.7.0/include/smmintrin.h
 %%CLANG%%llvm37/lib/clang/3.7.0/include/tbmintrin.h
