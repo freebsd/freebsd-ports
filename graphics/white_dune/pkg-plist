@@ -607,3 +607,5 @@ man/man1/illegal2vrml.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/x3dDraft/LinePropertiesPROTO.wrl
 %%PORTDOCS%%%%DOCSDIR%%/x3dDraft/LoadSensorPROTO.wrl
 %%PORTDOCS%%%%DOCSDIR%%/x3dDraft/MultiTexturePROTO.wrl
+%%PORTDOCS%%@dir %%DOCSDIR%%/export_example_java/jme/classes
+%%PORTDOCS%%@dir %%DOCSDIR%%/export_example_java/classes
