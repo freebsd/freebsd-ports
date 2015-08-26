@@ -3,18 +3,21 @@
 
 PORTNAME=	scapy
 PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://secdev.org/projects/scapy/files/
 
 MAINTAINER=	vanhu@FreeBSD.org
 COMMENT=	Powerful interactive packet manipulation program in python
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dnet.so:${PORTSDIR}/net/py-libdnet \
 		${PYTHON_SITELIBDIR}/pcap.py:${PORTSDIR}/net/py-pcap
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	PYX PYCRYPTO PYGNUPLOT GRAPH P0F_BASE QUESO_BASE NMAP MANUF
 PYX_DESC=	PostScript and PDF graphs drawing
@@ -27,7 +30,7 @@ NMAP_DESC=	nmap OS signatures database
 MANUF_DESC=	wireshark's MANUF MAC database
 SOX_DESC=	Support for VoIP
 
-PYX_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyx/__init__.py:${PORTSDIR}/graphics/py-PyX
+PYX_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyx/__init__.py:${PORTSDIR}/graphics/py-PyX12
 PYCRYPTO_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto
 PYGNUPLOT_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Gnuplot/__init__.py:${PORTSDIR}/math/py-gnuplot
 GRAPH_RUN_DEPENDS=	${LOCALBASE}/bin/MagickCore-config:${PORTSDIR}/graphics/ImageMagick \
