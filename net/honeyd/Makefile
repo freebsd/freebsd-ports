@@ -3,7 +3,7 @@
 
 PORTNAME=	honeyd
 PORTVERSION=	1.5c
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net
 MASTER_SITES=	http://www.honeyd.org/uploads/ \
 		http://www.citi.umich.edu/u/provos/honeyd/
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2 \
 		libdnet.so:${PORTSDIR}/net/libdnet \
 		libpcre.so:${PORTSDIR}/devel/pcre
 
-USES=		libtool shebangfix
+USES=		libedit libtool shebangfix
 SHEBANG_FILES=	scripts/*.pl scripts/snmp/*.pl
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
