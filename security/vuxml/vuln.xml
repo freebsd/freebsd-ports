@@ -426,10 +426,12 @@ Notes:
       <url>http://seclists.org/oss-sec/2015/q3/404</url>
       <url>https://sourceforge.net/p/libpgf/code/147/</url>
       <url>https://sourceforge.net/p/libpgf/code/148/</url>
+      <cvename>CVE-2015-6673</cvename>
     </references>
     <dates>
       <discovery>2015-08-08</discovery>
       <entry>2015-08-20</entry>
+      <modified>2015-08-26</modified>
     </dates>
   </vuln>
 
