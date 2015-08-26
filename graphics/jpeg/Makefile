@@ -33,8 +33,6 @@ CONFIGURE_ARGS+=	--enable-maxmem=${J_MAXMEM}
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/jpegexiforient.c ${WRKSRC}/
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/exifautotran.txt ${WRKSRC}/exifautotran
@@ -49,15 +47,15 @@ regression-test:	test
 
 post-install:
 	${LN} -s libjpeg.so.8 ${STAGEDIR}${PREFIX}/lib/libjpeg.so.11
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/jpeg
-	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${PREFIX}/share/doc/jpeg/
-	@${INSTALL_DATA} ${WRKSRC}/*.txt ${STAGEDIR}${PREFIX}/share/doc/jpeg/
-.endif
 .for header in ${ADDITIONAL_HEADER}
-	@${INSTALL_DATA} ${WRKSRC}/${header} ${STAGEDIR}${PREFIX}/include/
+	${INSTALL_DATA} ${WRKSRC}/${header} ${STAGEDIR}${PREFIX}/include/
 .endfor
 	${INSTALL_PROGRAM} ${WRKSRC}/jpegexiforient ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${WRKSRC}/exifautotran ${STAGEDIR}${PREFIX}/bin/
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/jpeg
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${PREFIX}/share/doc/jpeg/
+	${INSTALL_DATA} ${WRKSRC}/*.txt ${STAGEDIR}${PREFIX}/share/doc/jpeg/
 
 .include <bsd.port.mk>
