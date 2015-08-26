@@ -12,6 +12,7 @@ MAINTAINER=	vg@FreeBSD.org
 COMMENT=	The stylish way of giving presentations
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/license.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opengl>=0:${PORTSDIR}/graphics/py-opengl \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
@@ -23,6 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opengl>=0:${PORTSDIR}/graphics/py-opengl \
 
 USES=		ghostscript:run python
 NO_BUILD=	yes
+NO_ARCH=	yes
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
 
@@ -30,14 +32,12 @@ PORTDOCS=	${PORTNAME}.html demo.pdf
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.py ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

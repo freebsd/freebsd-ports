@@ -23,23 +23,18 @@ USES=		python tar:bzip2
 DOCSDIR=	${PREFIX}/share/doc/sndcs
 DATADIR=	${PREFIX}/share/sndcs
 SUB_FILES=	pkg-message
+NO_ARCH=	yes
 
 PYDISTUTILS_PKGNAME=	sndcs
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if empty(PORT_OPTIONS:MDOCS)
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-setup.py
-.endif
+DOCS_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-setup.py
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/setup.py
 
 do-configure:
 	cd ${WRKSRC} && ${CP} "${FILESDIR}/sndcs2.conf" "sndcs/config/sndcs2.conf"
-
-post-install:
 
 .include <bsd.port.mk>
