@@ -235,8 +235,8 @@ do-install:
 	    	| ${SORT} > ${WRKDIR}/PLIST.leofs
 	cd ${STAGEDIR}${PREFIX} ; 					\
 	    ${FIND} ${LEOFS_BASEDIR:S/${PREFIX}\///}			\
-		${LEOFS_LIBXDIR:S/${PREFIX}\///} -type d		\
-	    	| ${SORT} -r | ${SED} -e 's/^/@dirrmtry /' 		\
+		${LEOFS_LIBXDIR:S/${PREFIX}\///} -type d -empty		\
+	    	| ${SORT} -r | ${SED} -e 's/^/@dir /' 			\
 		>> ${WRKDIR}/PLIST.leofs
 	${ECHO_CMD} "r ${TMPPLIST}"			>  ${WRKDIR}/ex.script
 	${ECHO_CMD} "/Insert PLIST.leofs"		>> ${WRKDIR}/ex.script
