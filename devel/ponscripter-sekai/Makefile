@@ -3,7 +3,7 @@
 PORTNAME=	ponscripter-sekai
 PORTVERSION=	0.0.6
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel games
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -11,8 +11,7 @@ COMMENT=	NScripter-like novel-game interpreter with Unicode support
 
 LICENSE=	GPLv2 # or any later version
 
-LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
-		libsmpeg2.so:${PORTSDIR}/multimedia/smpeg2 \
+LIB_DEPENDS=	libsmpeg2.so:${PORTSDIR}/multimedia/smpeg2 \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
 CONFLICTS=	ponscripter-[0-9]* # doesn't exist yet
@@ -35,8 +34,8 @@ PORTDOCS=	BUGS CHANGES MANUAL README TODO
 PLIST_FILES=	bin/ponscr \
 		share/emacs/site-lisp/ponscripter-mode.el
 
-OPTIONS_DEFINE=	DOCS MANPAGES
-OPTIONS_DEFAULT=MANPAGES
+OPTIONS_DEFINE=	DOCS MANPAGES TREMOR
+OPTIONS_DEFAULT=MANPAGES ${MACHINE_CPU:tu:MSOFTFP:S/SOFTFP/TREMOR/}
 
 MANPAGES_BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto
 MANPAGES_PLIST_FILES=\
@@ -44,6 +43,10 @@ MANPAGES_PLIST_FILES=\
 	man/man7/ponscr-ext.7.gz \
 	man/man7/ponscr-syntax.7.gz \
 	man/man7/ponscripter.7.gz
+
+TREMOR_LIB_DEPENDS=	libvorbisidec.so:${PORTSDIR}/audio/libtremor
+TREMOR_CFLAGS=		-DINTEGER_OGG_VORBIS
+TREMOR_LIB_DEPENDS_OFF=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^ifdef DEBUG/,/^$$/d' \
@@ -56,6 +59,17 @@ post-patch-MANPAGES-off:
 	@${REINPLACE_CMD} -i .manpages.bak \
 		-e '/install-man/d' \
 		-e 's/xmlto/${FALSE}/' \
+		${WRKSRC}/configure
+
+post-patch-TREMOR-on:
+	@${REINPLACE_CMD} -i .tremor.bak \
+		-e 's/"libogg, libvorbis"/libvorbisidec/' \
+		-e 's,vorbis/vorbisfile,tremor/ivorbisfile,' \
+		-e 's,vorbis/codec,tremor/ivorbiscodec,' \
+		-e '/genlink/ { s/vorbisfile/vorbisidec/; \
+			/ogg/d; /vorbis$$/d; }' \
+		-e 's/ $$LINKogg//; s/ $$LINKvorbis//' \
+		-e 's/LINKvorbisfile/LINKvorbisidec/' \
 		${WRKSRC}/configure
 
 post-build-MANPAGES-on:
