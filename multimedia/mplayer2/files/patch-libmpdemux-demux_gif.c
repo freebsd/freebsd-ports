@@ -1,6 +1,6 @@
---- libmpdemux/demux_gif.c.orig	2012-12-31 00:26:50.000000000 +0100
-+++ libmpdemux/demux_gif.c	2012-12-31 00:30:54.000000000 +0100
-@@ -44,6 +44,16 @@
+--- libmpdemux/demux_gif.c.orig	2013-07-09 16:33:16 UTC
++++ libmpdemux/demux_gif.c
+@@ -44,6 +44,16 @@ typedef struct {
  
  #define GIF_SIGNATURE (('G' << 16) | ('I' << 8) | 'F')
  
