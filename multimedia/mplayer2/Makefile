@@ -41,7 +41,6 @@ MAKE_ARGS+=	BINDIR=${STAGEDIR}${PREFIX}/bin \
 MPLAYER2_SNAPSHOT_DATE=	2013-04-28
 MPLAYER2_PORT_VERSION=	2.0.${MPLAYER2_SNAPSHOT_DATE:S/-//g}
 
-
 OPTIONS_DEFINE=	DEBUG RTC IPV6 SMB LIBBLURAY DV THEORA \
 		X11 XINERAMA OPENGL SDL VDPAU GIF CACA \
 		MAD SPEEX CDIO LADSPA REALPLAYER \
@@ -294,10 +293,10 @@ post-patch:
 .endif
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/etc/example.conf \
+	${INSTALL_DATA} ${WRKSRC}/etc/example.conf \
 		${STAGEDIR}${PREFIX}/etc/mplayer/mplayer.conf.sample
 .for conf in codecs input
-	@${INSTALL_DATA} ${WRKSRC}/etc/${conf}.conf \
+	${INSTALL_DATA} ${WRKSRC}/etc/${conf}.conf \
 		${STAGEDIR}${PREFIX}/etc/mplayer/${conf}.conf.sample
 .endfor
 
