@@ -4,6 +4,7 @@ bin/nytprofcg
 bin/nytprofcsv
 bin/nytprofhtml
 bin/nytprofmerge
+bin/nytprofpf
 %%SITE_ARCH%%/Devel/auto/Devel/NYTProf/NYTProf.so
 %%SITE_ARCH%%/Devel/MemoryProfiling.pod
 %%SITE_ARCH%%/Devel/NYTProf.pm
@@ -50,3 +51,4 @@ man/man1/nytprofcg.1.gz
 man/man1/nytprofcsv.1.gz
 man/man1/nytprofhtml.1.gz
 man/man1/nytprofmerge.1.gz
+man/man1/nytprofpf.1.gz
