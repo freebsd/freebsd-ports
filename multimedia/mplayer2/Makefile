@@ -23,9 +23,8 @@ USES=		cpe gmake iconv ncurses pkgconfig tar:xz
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	TMPDIR="${WRKSRC}"
 CONFIGURE_ARGS=	--cc=${CC} \
-		--extra-libs='-lavresample ${PORTAUDIOLIB}' \
+		--extra-libs='${LIBS}' \
 		--mandir=${PREFIX}/man \
-		--enable-libavresample \
 		--disable-alsa \
 		--disable-liba52 \
 		--disable-directfb \
@@ -134,7 +133,6 @@ CONFIGURE_ARGS+=	--disable-pulse
 
 .if ${PORT_OPTIONS:MPORTAUDIO}
 LIB_DEPENDS+=		libportaudio.so:${PORTSDIR}/audio/portaudio
-PORTAUDIOLIB=		-lportaudio
 .else
 CONFIGURE_ARGS+=	--disable-portaudio
 .endif
@@ -185,13 +183,9 @@ CONFIGURE_ARGS+=	--disable-real
 #BUILD_DEPENDS+=		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
 #LIB_DEPENDS+=		libv4l2.so:${PORTSDIR}/multimedia/libv4l
 #CONFIGURE_ARGS+=	--enable-tv-v4l2
-#EXTRA_LIBS+=		-lv4l2
+#LIBS+=			-lv4l2
 #.else
 CONFIGURE_ARGS+=	--disable-tv-v4l2
-#.endif
-
-#.if defined(EXTRA_LIBS)
-#CONFIGURE_ARGS+=	--extra-libs="${EXTRA_LIBS}"
 #.endif
 
 .if ${PORT_OPTIONS:MASS}
