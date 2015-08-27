@@ -3,8 +3,8 @@
 
 PORTNAME=	doxygen
 PORTVERSION=	1.8.10
-PORTEPOCH=	2
 PORTREVISION=	2
+PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/ \
 		http://ftp.stack.nl/pub/users/dimitri/
@@ -49,13 +49,10 @@ DOCS_PLIST_FILES=	man/man1/doxygen.1.gz \
 			man/man1/doxyindexer.1.gz \
 			man/man1/doxysearch.1.gz \
 			man/man1/doxywizard.1.gz
+DOCS_IMPLIES=		LATEX
 PORTDOCS=		*
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS} && empty(PORT_OPTIONS:MLATEX)
-IGNORE=		cannot build Doxygen's PDF docs without option LATEX enabled
-.endif
+.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 1000033
 BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
@@ -66,4 +63,4 @@ post-patch:
 	@${REINPLACE_CMD} -e '/PERL_PATH/ s|${perl_OLD_CMD}|${perl_CMD}|' \
 		${WRKSRC}/src/config.xml
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
