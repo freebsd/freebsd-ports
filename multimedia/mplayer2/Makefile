@@ -43,7 +43,7 @@ MPLAYER2_PORT_VERSION=	2.0.${MPLAYER2_SNAPSHOT_DATE:S/-//g}
 OPTIONS_DEFINE=	DEBUG RTC IPV6 SMB LIBBLURAY DV THEORA \
 		X11 XINERAMA OPENGL SDL VDPAU GIF CACA \
 		MAD SPEEX CDIO LADSPA REALPLAYER \
-		JACK PULSEAUDIO PORTAUDIO ASS LIRC
+		JACK PULSEAUDIO PORTAUDIO ASS LIRC V4L
 OPTIONS_DEFAULT=X11 ASS
 
 .if !defined(PACKAGE_BUILDING)
@@ -179,14 +179,13 @@ BUILD_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
 CONFIGURE_ARGS+=	--disable-real
 .endif
 
-#.if ${PORT_OPTIONS:MV4L}
-#BUILD_DEPENDS+=		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
-#LIB_DEPENDS+=		libv4l2.so:${PORTSDIR}/multimedia/libv4l
-#CONFIGURE_ARGS+=	--enable-tv-v4l2
-#LIBS+=			-lv4l2
-#.else
+.if ${PORT_OPTIONS:MV4L}
+BUILD_DEPENDS+=		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
+LIB_DEPENDS+=		libv4l2.so:${PORTSDIR}/multimedia/libv4l
+LIBS+=			-lv4l2
+.else
 CONFIGURE_ARGS+=	--disable-tv-v4l2
-#.endif
+.endif
 
 .if ${PORT_OPTIONS:MASS}
 LIB_DEPENDS+=		libass.so:${PORTSDIR}/multimedia/libass
