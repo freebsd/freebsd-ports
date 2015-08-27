@@ -4,7 +4,7 @@
 PORTNAME=	mpv
 PORTVERSION=	0.9.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://ftp.waf.io/pub/release/:1 \
@@ -39,7 +39,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--disable-debug-build \
 		--disable-optimize \
 		--enable-libmpv-shared \
-		--disable-alsa \
 		--disable-pdf
 
 OPTIONS_DEFINE=		ASS BS2B DOCS ENCA LADSPA LCMS2 \
@@ -48,7 +47,7 @@ OPTIONS_DEFAULT=	ASS DVDREAD DVDNAV
 OPTIONS_GROUP=		IN VO AO
 OPTIONS_GROUP_IN=	CDIO DVDREAD DVDNAV LIBBLURAY V4L SMB
 OPTIONS_GROUP_VO=	CACA OPENGL VAAPI VDPAU XINERAMA
-OPTIONS_GROUP_AO=	JACK PULSEAUDIO
+OPTIONS_GROUP_AO=	ALSA JACK PULSEAUDIO
 OPTIONS_SUB=		yes
 
 ASS_DESC=	ASS/SSA subtitle and OSD rendering
@@ -61,6 +60,9 @@ LUAJIT_DESC=	Use LuaJIT instead of Lua
 IN_DESC=	Input
 VO_DESC=	Video Output
 AO_DESC=	Audio Output
+
+ALSA_LIB_DEPENDS=		libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_CONFIGURE_ENABLE=		alsa
 
 ASS_LIB_DEPENDS=		libass.so:${PORTSDIR}/multimedia/libass
 ASS_CONFIGURE_ENABLE=		libass
@@ -136,16 +138,6 @@ PULSEAUDIO_CONFIGURE_ENABLE=	pulse
 .if ${ARCH} == "i386"
 CFLAGS:=	${CFLAGS:N-O*} -O0
 .endif
-
-show-info:
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "====================================================================="
-	@${ECHO_MSG} "Only for i386"
-	@${ECHO_MSG} "Make sure you have multimedia/libass build with the ASM option OFF"
-	@${ECHO_MSG} "====================================================================="
-	@${ECHO_MSG} ""
-
-pre-everything::show-info
 
 post-extract:
 	${CP} ${DISTDIR}/waf-${WAF_VERSION} ${WRKSRC}/waf
