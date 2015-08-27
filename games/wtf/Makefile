@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wtf
-PORTVERSION=	20150518
+PORTVERSION=	20150822
 CATEGORIES=	games
 MASTER_SITES=	SF/bsdwtf
 
@@ -16,8 +16,6 @@ OFFENSIVE_DESC=	Include offensive acronyms
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/misc|${DATADIR}|g' ${WRKSRC}/wtf*
 
@@ -26,11 +24,12 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/wtf.6 ${STAGEDIR}${MAN6PREFIX}/man/man6
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/acronyms ${STAGEDIR}${DATADIR}
-.if ${PORT_OPTIONS:MOFFENSIVE}
-	${INSTALL_DATA} ${WRKSRC}/acronyms-o.real ${STAGEDIR}${DATADIR}/acronyms-o
-.else
-	${INSTALL_DATA} ${WRKSRC}/acronyms-o.fake ${STAGEDIR}${DATADIR}/acronyms-o
-.endif
 	${INSTALL_DATA} ${WRKSRC}/acronyms.comp ${STAGEDIR}${DATADIR}
+
+do-install-OFFENSIVE-on:
+	${INSTALL_DATA} ${WRKSRC}/acronyms-o.real ${STAGEDIR}${DATADIR}/acronyms-o
+
+do-install-OFFENSIVE-off:
+	${INSTALL_DATA} ${WRKSRC}/acronyms-o.fake ${STAGEDIR}${DATADIR}/acronyms-o
 
 .include <bsd.port.mk>
