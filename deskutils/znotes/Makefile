@@ -11,10 +11,11 @@ MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Simple notes managment application based on Qt 4
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		qmake
-USE_QT4=	gui network xml uic_build moc_build rcc_build \
-		linguist_build
+USE_QT4=	corelib gui network xml uic_build moc_build rcc_build \
+		linguisttools_build
 QMAKE_ARGS=	QMAKE_LRELEASE=${LRELEASE}
 
 DESKTOP_ENTRIES="zNotes" "Notes managment" \
