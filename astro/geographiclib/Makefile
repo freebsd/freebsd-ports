@@ -41,10 +41,10 @@ PERL_USE=	PERL5=build
 PERL_USES=	perl5
 PERL_CONFIGURE_ENV_OFF=	ac_cv_prog_POD2MAN= ac_cv_prog_POD2HTML=
 
-GEOID_NAMES:=		egm84-30 egm84-15 egm96-15 egm96-5\
+GEOID_NAMES=		egm84-30 egm84-15 egm96-15 egm96-5\
 			egm2008-5 egm2008-2_5 egm2008-1
-GRAVITY_NAMES:=		egm84 egm96 egm2008 wgs84 grs80
-MAGNETIC_NAMES:=	wmm2010 wmm2015 igrf11 igrf12 emm2010 emm2015
+GRAVITY_NAMES=		egm84 egm96 egm2008 wgs84 grs80
+MAGNETIC_NAMES=		wmm2010 wmm2015 igrf11 igrf12 emm2010 emm2015
 
 .for n in ${GEOID_NAMES}
 GEOID_${n:C/[^0-9A-Z_a-z]/_/g:tu}_DESC=		Install ${n} geoid dataset
