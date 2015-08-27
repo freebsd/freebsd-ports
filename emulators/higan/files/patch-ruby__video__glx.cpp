@@ -1,6 +1,6 @@
---- ./ruby/video/glx.cpp.orig	2014-01-20 01:37:14.000000000 -0500
-+++ ./ruby/video/glx.cpp	2014-06-02 23:32:39.000000000 -0400
-@@ -128,6 +128,28 @@
+--- ruby/video/glx.cpp.orig	2014-01-20 06:37:14 UTC
++++ ruby/video/glx.cpp
+@@ -128,6 +128,28 @@ struct pVideoGLX : OpenGL {
      //require GLX 1.2+ API
      if(glx.version_major < 1 || (glx.version_major == 1 && glx.version_minor < 2)) return false;
  

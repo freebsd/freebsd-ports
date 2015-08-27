@@ -16,7 +16,6 @@ USES=		compiler:c++11-lib gmake pkgconfig tar:xz
 USE_LDCONFIG=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
-#MAKE_ENV+=	c="${CC} -std=gnu99" cpp="${CXX} -std=gnu++0x"
 MAKE_ENV+=	compiler="${CXX}" cflags="-x c -std=c99 ${CFLAGS}" \
 		cppflags="-x c++ -std=c++11 ${CXXFLAGS}"
 
@@ -118,19 +117,18 @@ post-patch:
 		${WRKSRC}/target-ethos/Makefile
 	${REINPLACE_CMD} -e 's|/usr/share/|${PREFIX}/share/|' \
 		${WRKSRC}/nall/string/platform.hpp
-.if ${PORT_OPTIONS:MDEBUG}
+
+post-patch-DEBUG-on:
 	${REINPLACE_CMD} -e 's|-O3|-g|g' \
 		${WRKSRC}/ananke/Makefile \
 		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's|:= -s|:= #|g' \
 		${WRKSRC}/Makefile
-.endif
-#	${RM} ${WRKSRC}/shaders/Sepia.Direct3D.shader
+
+pre-build-QT4-on:
+	(cd ${WRKSRC}/phoenix/qt && ${MOC} -i -o platform.moc platform.moc.hpp)
 
 do-build:
-.if ${PORT_OPTIONS:MQT4}
-	(cd ${WRKSRC}/phoenix/qt && ${MOC} -i -o platform.moc platform.moc.hpp)
-.endif
 .for d in . ananke
 	(cd ${WRKSRC}/${d} && ${MAKE_CMD} ${MAKE_ENV})
 .endfor
