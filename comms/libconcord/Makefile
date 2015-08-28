@@ -3,6 +3,7 @@
 
 PORTNAME=	libconcord
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	SF/concordance/concordance/${PORTVERSION}
 DISTNAME=	concordance-${PORTVERSION}
