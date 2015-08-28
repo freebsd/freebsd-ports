@@ -6,6 +6,4 @@ lib/libshadowsocks.a
 lib/libshadowsocks.la
 libdata/pkgconfig/shadowsocks-libev.pc
 man/man8/shadowsocks-libev.8.gz
-@unexec if cmp -s %D/etc/shadowsocks-libev/config.json %D/etc/shadowsocks-libev/config.json.sample ; then rm -f  %D/etc/shadowsocks-libev/config.json ; fi
-etc/shadowsocks-libev/config.json.sample
-@exec if [ ! -f %D/etc/shadowsocks-libev/config.json ]; then cp -p %D/%F %B/config.json ; fi
+@sample etc/shadowsocks-libev/config.json.sample
