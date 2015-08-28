@@ -5,7 +5,7 @@ PORTNAME=	gogglesmm
 PORTVERSION=	0.14.2
 CATEGORIES=	audio
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Music collection manager and player
 
 LICENSE=	GPLv3
