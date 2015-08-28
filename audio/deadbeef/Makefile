@@ -3,7 +3,7 @@
 
 PORTNAME=	deadbeef
 PORTVERSION=	0.6.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -184,5 +184,8 @@ post-patch:
 		-e 's,libavutil ,libavutil0 ,g' \
 		-e 's,libavformat ,libavformat0 ,g' \
 		${WRKSRC}/configure
+# Fix build with libzip-1.0
+	@${REINPLACE_CMD} 's,zip_file_t,zip_file_DB,g' \
+		${WRKSRC}/plugins/vfs_zip/vfs_zip.c
 
 .include <bsd.port.mk>
