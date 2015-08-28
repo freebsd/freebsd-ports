@@ -95,7 +95,6 @@ KQUEUE_CONFIGURE_ON=	--with-ioloop=kqueue --with-notify=kqueue
 
 LDAP_USE=		OPENLDAP=yes
 LDAP_CONFIGURE_WITH=	ldap
-LDAP_RC_REQUIRE=	slapd
 
 LIBWRAP_CONFIGURE_WITH=	libwrap
 
@@ -106,11 +105,9 @@ LZ4_LIB_DEPENDS=	liblz4.so:${PORTSDIR}/archivers/liblz4
 
 MYSQL_USE=		MYSQL=yes
 MYSQL_CONFIGURE_WITH=	mysql
-MYSQL_RC_REQUIRE=	mysql
 
 PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_WITH=	pgsql
-PGSQL_RC_REQUIRE=	postgresql
 
 SOLR_CONFIGURE_WITH=	solr
 SOLR_BUILD_DEPENDS=	curl:${PORTSDIR}/ftp/curl
@@ -131,20 +128,20 @@ DOCS=		AUTHORS COPYING COPYING.LGPL COPYING.MIT INSTALL NEWS TODO README
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-.include <bsd.port.options.mk>
-
-CPPFLAGS+=	-I${LOCALBASE}/include -I${OPENSSLINC}
-LDFLAGS+=	-L${LOCALBASE}/lib -I${OPENSSLLIB}
-
 # Default requirement for dovecot rc script
 _REQUIRE=	LOGIN
 
-.for opt in ${PORT_OPTIONS}
-_REQUIRE+=	${${opt}_RC_REQUIRE}
-.endfor
+LDAP_VARS=	_REQUIRE+=slapd
+MYSQL_VARS=	_REQUIRE+=mysql
+PGSQL_VARS=	_REQUIRE+=postgresql
+
+.include <bsd.port.options.mk>
 
 SUB_LIST+=	REQUIRE="${_REQUIRE}"
 SUB_FILES+=	pkg-message
+
+CPPFLAGS+=	-I${LOCALBASE}/include -I${OPENSSLINC}
+LDFLAGS+=	-L${LOCALBASE}/lib -I${OPENSSLLIB}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/dovecot,${PREFIX}/etc/dovecot,g; \
