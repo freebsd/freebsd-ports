@@ -1,4 +1,2 @@
 bin/nakenchat
-@unexec if cmp -s %D/etc/nakenchat.conf.sample %D/etc/nakenchat.conf; then rm -f %D/etc/nakenchat.conf; fi
-etc/nakenchat.conf.sample
-@exec if [ ! -f %D/etc/nakenchat.conf ] ; then cp -p %D/%F %B/nakenchat.conf; fi
+@sample etc/nakenchat.conf.sample
