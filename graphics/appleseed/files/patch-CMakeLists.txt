@@ -1,0 +1,64 @@
+--- CMakeLists.txt.orig	2015-06-13 09:38:53 UTC
++++ CMakeLists.txt
+@@ -84,6 +84,9 @@ option (USE_EXTERNAL_ZLIB       "Use ext
+ option (WITH_CLI                "Build appleseed.cli"                                   ON)
+ option (WITH_STUDIO             "Build appleseed.studio"                                ON)
+ option (WITH_TOOLS              "Build appleseed tools"                                 ON)
++option (WITH_DOXYGEN            "Generate API Reference with Doxygen"                   ON)
++option (WITH_TESTS              "Install unit tests and benchmarks"                     ON)
++option (WITH_HEADERS            "Install header files"                                  ON)
+ option (WITH_PYTHON             "Build Python bindings"                                 ON)
+ option (WITH_ALEMBIC            "Build Alembic support"                                 OFF)
+ option (WITH_OSL                "Build OSL support"                                     OFF)
+@@ -115,7 +118,7 @@ if (CMAKE_SYSTEM_NAME STREQUAL "Windows"
+     include (src/cmake/config/win-vs.txt)
+ elseif (CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+     include (src/cmake/config/mac-clang.txt)
+-elseif (CMAKE_SYSTEM_NAME STREQUAL "Linux")
++elseif (CMAKE_SYSTEM_NAME MATCHES "Linux|FreeBSD")
+     include (src/cmake/config/linux-gcc.txt)
+ else ()
+     message (FATAL_ERROR "Unsupported platform or compiler (CMAKE_SYSTEM_NAME is \"${CMAKE_SYSTEM_NAME}\"). "
+@@ -546,7 +549,7 @@ endif ()
+ 
+ find_package (Doxygen)
+ 
+-if (DOXYGEN_FOUND)
++if (DOXYGEN_FOUND AND WITH_DOXYGEN)
+     configure_file (${PROJECT_SOURCE_DIR}/scripts/appleseed.doxyfile.in ${PROJECT_BINARY_DIR}/appleseed.doxyfile @ONLY)
+     add_custom_target (
+         doc ${DOXYGEN_EXECUTABLE} ${PROJECT_BINARY_DIR}/appleseed.doxyfile
+@@ -596,22 +599,25 @@ install (
+     DIRECTORY
+         sandbox/docs
+         sandbox/samples
+-        sandbox/share
+     DESTINATION .
+ )
+ 
+ install (
+-    CODE "FILE (MAKE_DIRECTORY ${CMAKE_INSTALL_PREFIX}/images)"
+-    CODE "FILE (MAKE_DIRECTORY ${CMAKE_INSTALL_PREFIX}/images/autosave)"
++    DIRECTORY
++        sandbox/share
++    DESTINATION ..
+ )
+ 
++if (WITH_TESTS)
+ install (
+     DIRECTORY
+         "sandbox/tests/unit benchmarks"
+         "sandbox/tests/unit tests"
+     DESTINATION tests
+ )
++endif ()
+ 
++if (WITH_HEADERS)
+ install (
+     DIRECTORY src/appleseed/foundation
+     DESTINATION include
+@@ -629,3 +635,4 @@ install (
+     DESTINATION include
+     FILES_MATCHING PATTERN "*.h"
+ )
++endif ()
