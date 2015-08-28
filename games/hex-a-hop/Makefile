@@ -28,10 +28,10 @@ NLS_CONFIGURE_ENV=	ac_cv_header_libintl_h=yes
 NLS_CONFIGURE_ENV_OFF=	ac_cv_header_libintl_h=no
 NLS_LDFLAGS=		-lintl
 
-PANGO_DESC=	Use sdl_pango instead of sdl_ttf
+PANGO_DESC=	Use SDL_Pango instead of SDL_ttf
 PANGO_USE=	SDL=pango
 PANGO_USE_OFF=	SDL=ttf
-PANGO_CONFIGURE_ENABLE=	sdlttf
+PANGO_CONFIGURE_ON=	--disable-sdlttf
 
 SOUND_DESC=	Sound support
 SOUND_USE=	SDL=mixer
