@@ -42,11 +42,9 @@ OPTIONS_DEFINE=	DOCS
 PORTDOCS=	*
 PORTDATA=	*
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64
-.endif
+BROKEN_ia64=	does not compile
+BROKEN_powerpc=	does not compile
+BROKEN_sparc64=	does not compile
 
 post-extract:
 	@( cd ${WRKSRC}; ${TAR} xfz ${DISTDIR}/${GC_SRC} )
@@ -71,9 +69,9 @@ post-install:
 	${LN} -fs ${PREFIX}/bin/asir ${STAGEDIR}${DATADIR}/ox_launch
 	${LN} -fs ${DATADIR} ${STAGEDIR}${PREFIX}/lib/asir
 	${INSTALL_MAN} ${WRKDIR}/asirdoc/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKDIR}/asirdoc/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
