@@ -10,6 +10,17 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20150828:
+AUTHOR: mat@FreeBSD.org
+
+  <opt>_VARS and <opt>_VARS_OFF have been introduced to allow for a generic way
+  to set/append to variables.
+
+  OPT1_VARS=  foo=bar baz+=bam
+
+  will set FOO to bar and append bam to BAZ if OPT1 is enabled.  <opt>_VARS_OFF
+  works the same way, if the option is disabled.
+
 20150818:
 AUTHOR: kde@FreeBSD.org
 
