@@ -3,6 +3,7 @@
 
 PORTNAME=	pelican
 PORTVERSION=	3.6.3
+PORTREVISION=	1
 CATEGORIES=	www textproc python
 
 MAINTAINER=	jlaffaye@FreeBSD.org
