@@ -110,13 +110,13 @@
 # ${opt}_USE_OFF=	FOO=bar	When option is disabled, it will enable
 #				USE_FOO+= bar
 #
-# ${opt}_VARS=	FOO=bar		When option is enabled, it will run
+# ${opt}_VARS=	FOO=bar		When option is enabled, it will set
 #				FOO= bar
-# ${opt}_VARS=	FOO+=bar	When option is enabled, it will run
+# ${opt}_VARS=	FOO+=bar	When option is enabled, it will append
 #				FOO+= bar
-# ${opt}_VARS_OFF=    FOO=bar	When option is disabled, it will run
+# ${opt}_VARS_OFF=    FOO=bar	When option is disabled, it will set
 #				FOO= bar
-# ${opt}_VARS_OFF=    FOO+=bar	When option is disabled, it will run
+# ${opt}_VARS_OFF=    FOO+=bar	When option is disabled, it will append
 #				FOO+= bar
 #
 # For each of:
