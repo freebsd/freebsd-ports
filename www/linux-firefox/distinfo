@@ -1,5 +1,5 @@
-SHA256 (firefox-40.0.tar.bz2) = 56a15bfc31445defde693843d88faa249419d4ba97e2addfa8fb311e4b8b4b65
-SIZE (firefox-40.0.tar.bz2) = 49230121
+SHA256 (firefox-40.0.3.tar.bz2) = af3eaa3b56c8223d51079c62f00f36da0d200f28d59f6457c6794e2142b7925e
+SIZE (firefox-40.0.3.tar.bz2) = 49233137
 SHA256 (glib2-2.22.2-2.fc12.i686.rpm) = e3b459c245ec14e7248e9de4b506963a4773407f3e58835db5070d0ed02ecc99
 SIZE (glib2-2.22.2-2.fc12.i686.rpm) = 1162908
 SHA256 (gtk2-2.18.3-19.fc12.i686.rpm) = aea9cf7ffe9c8dae0faa2bf3d2aa1b2117c55dce03da72dcce8c268279ec0a4b
