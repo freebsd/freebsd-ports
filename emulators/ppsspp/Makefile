@@ -46,12 +46,7 @@ SDL_USES=	cmake:outsource ninja
 SDL_BUILD_DEPENDS=	png>=1.6:${PORTSDIR}/graphics/png
 SDL_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 SDL_LDFLAGS=	-L${LOCALBASE}/lib # ffmpeg
-
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MQT*}
-PORTDATA+=	assets ${PORTNAME}
-.endif
+SDL_VARS=	PORTDATA+="assets ${PORTNAME}"
 
 post-extract:
 # Convert USE_GITHUB groups to git-submodule(1) paths
