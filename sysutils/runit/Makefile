@@ -3,6 +3,7 @@
 
 PORTNAME=	runit
 PORTVERSION=	2.1.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://smarden.org/${PORTNAME}/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
@@ -24,6 +25,10 @@ DOCS=		package/CHANGES package/README \
 		package/THANKS doc/*.html
 CONFIG=		etc/freebsd/1 etc/2 etc/freebsd/3 etc/freebsd/ctrlaltdel \
 	 	etc/freebsd/getty-ttyv4/run etc/freebsd/getty-ttyv4/finish
+
+post-patch:
+	${REINPLACE_CMD} 's!/service/!${SERVICE_DIR}!' \
+		${WRKSRC}/man/* ${WRKSRC}/src/sv.c
 
 do-configure:
 	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/src/conf-cc
