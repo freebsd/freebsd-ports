@@ -3,6 +3,7 @@
 
 PORTNAME=	ruby2ruby
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -17,6 +18,8 @@ RUN_DEPENDS=	rubygem-ruby_parser>=3.1:${PORTSDIR}/devel/rubygem-ruby_parser \
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+USES=		shebangfix
+SHEBANG_FILES=	bin/r2r_show
 
 PLIST_FILES=	bin/r2r_show
 
