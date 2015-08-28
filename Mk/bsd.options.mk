@@ -110,6 +110,15 @@
 # ${opt}_USE_OFF=	FOO=bar	When option is disabled, it will enable
 #				USE_FOO+= bar
 #
+# ${opt}_VARS=	FOO=bar		When option is enabled, it will run
+#				FOO= bar
+# ${opt}_VARS=	FOO+=bar	When option is enabled, it will run
+#				FOO+= bar
+# ${opt}_VARS_OFF=    FOO=bar	When option is disabled, it will run
+#				FOO= bar
+# ${opt}_VARS_OFF=    FOO+=bar	When option is disabled, it will run
+#				FOO+= bar
+#
 # For each of:
 # ALL_TARGET BROKEN CATEGORIES CFLAGS CONFIGURE_ENV CONFLICTS CONFLICTS_BUILD
 # CONFLICTS_INSTALL CPPFLAGS CXXFLAGS DISTFILES EXTRA_PATCHES EXTRACT_ONLY
@@ -463,6 +472,16 @@ _u=		${option:C/=.*//g}
 USE_${_u:tu}+=	${option:C/.*=//g:C/,/ /g}
 .      endfor
 .    endif
+.    if defined(${opt}_VARS)
+.      for var in ${${opt}_VARS}
+_u=		${var:C/=.*//}
+.        if ${_u:M*+}
+${_u:C/.$//:tu}+=	${var:C/[^+]*\+=//:C/^"(.*)"$$/\1/}
+.        else
+${_u:tu}=	${var:C/[^=]*=//:C/^"(.*)"$$/\1/}
+.        endif
+.      endfor
+.    endif
 .    if defined(${opt}_CONFIGURE_ENABLE)
 .      for iopt in ${${opt}_CONFIGURE_ENABLE}
 CONFIGURE_ARGS+=	--enable-${iopt}
@@ -499,6 +518,16 @@ _OPTIONS_${_target}:=	${_OPTIONS_${_target}} ${_prio}:${_type}-${_target}-${opt}
 .      for option in ${${opt}_USE_OFF}
 _u=		${option:C/=.*//g}
 USE_${_u:tu}+=	${option:C/.*=//g:C/,/ /g}
+.      endfor
+.    endif
+.    if defined(${opt}_VARS_OFF)
+.      for var in ${${opt}_VARS_OFF}
+_u=		${var:C/=.*//}
+.        if ${_u:M*+}
+${_u:C/.$//:tu}+=	${var:C/[^+]*\+=//:C/^"(.*)"$$/\1/}
+.        else
+${_u:tu}=	${var:C/[^=]*=//:C/^"(.*)"$$/\1/}
+.        endif
 .      endfor
 .    endif
 .    if defined(${opt}_CONFIGURE_ENABLE)
