@@ -3,6 +3,7 @@
 
 PORTNAME=	openclonk
 PORTVERSION=	6.1
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	games
 MASTER_SITES=	http://www.openclonk.org/builds/release/${DISTVERSION}/
@@ -20,21 +21,17 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
-USES=		compiler:c++11-lib cmake desktop-file-utils iconv jpeg pkgconfig tar:bzip2
+BROKEN_FreeBSD_9=	does not build (lack of proper c++11 support)
+
+USES=		compiler:c++11-lib cmake desktop-file-utils jpeg pkgconfig tar:bzip2
 USE_GL=		glew
 USE_GNOME=	gtk20
 USE_SDL=	sdl mixer
 USE_XORG=	x11 xpm
 INSTALLS_ICONS=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000024
-BROKEN=		does not build (lack of proper c++11 support)
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|DESTINATION games|DESTINATION bin|' \
 		${WRKSRC}/CMakeLists.txt
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

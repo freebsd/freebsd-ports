@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	librecad
-DISTVERSION=	2.0.7
+DISTVERSION=	2.0.8
 CATEGORIES=	cad
 
 MAINTAINER=	makc@FreeBSD.org
@@ -32,7 +32,11 @@ pre-install:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unix/librecad ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/unix/ttf2lff ${STAGEDIR}${PREFIX}/bin
 	(cd ${WRKSRC}/unix/resources && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
+	(${MKDIR} ${STAGEDIR}${PREFIX}/share/appdata && \
+		${INSTALL_DATA} ${WRKSRC}/unix/appdata/librecad.appdata.xml \
+		${STAGEDIR}${PREFIX}/share/appdata)
 	${INSTALL_DATA} ${WRKSRC}/desktop/librecad.desktop \
 		${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/librecad/res/main/librecad.png \

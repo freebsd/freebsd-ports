@@ -1,0 +1,11 @@
+--- src/interface/Makefile.am.orig	2015-07-31 03:30:02 UTC
++++ src/interface/Makefile.am
+@@ -155,7 +155,7 @@ noinst_HEADERS = aboutdialog.h \
+ 		 filter_conditions_dialog.h \
+ 		 filteredit.h \
+ 		 file_utils.h \
+-		 fzputtygen_interface.cpp \
++		 fzputtygen_interface.h \
+ 		 import.h \
+ 		 inputdialog.h \
+ 		 ipcmutex.h \

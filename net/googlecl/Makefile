@@ -15,19 +15,18 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdata>0:${PORTSDIR}/devel/py-gdata
 
 USES=		python:2
 USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
 
 PLIST_FILES=	man/man1/google.1.gz
 PORTDOCS=	*
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
+	${INSTALL_MAN} ${WRKSRC}/man/google.1 ${STAGEDIR}${MANPREFIX}/man/man1
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.* ${STAGEDIR}${DOCSDIR}
-.endif
-	${INSTALL_MAN} ${WRKSRC}/man/google.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

@@ -77,6 +77,7 @@ OPTIONS_DEFINE=	\
 	HTTP_REDIS \
 	HTTP_RESPONSE \
 	HTTP_SUBS_FILTER \
+	HTTP_TARANTOOL \
 	HTTP_UPLOAD \
 	HTTP_UPLOAD_PROGRESS \
 	HTTP_UPSTREAM_FAIR \
@@ -168,6 +169,7 @@ HTTP_PUSH_STREAM_DESC=		3rd party push stream module
 HTTP_REDIS_DESC=		3rd party http_redis module
 HTTP_RESPONSE_DESC=		3rd party http_response module
 HTTP_SUBS_FILTER_DESC=		3rd party subs filter module
+HTTP_TARANTOOL_DESC=		3rd party tarantool upstream module
 HTTP_UPLOAD_DESC=		3rd party upload module
 HTTP_UPLOAD_PROGRESS_DESC=	3rd party uploadprogress module
 HTTP_UPSTREAM_FAIR_DESC=	3rd party upstream fair module
@@ -523,6 +525,17 @@ GH_TAGNAME+=	${NGINX_HTTP_SUBS_FILTER_VERSION}:subs_filter
 CONFIGURE_ARGS+=--add-module=${WRKSRC_subs_filter}
 .endif
 
+.if ${PORT_OPTIONS:MHTTP_TARANTOOL}
+LIB_DEPENDS+=	libmsgpuck.so:${PORTSDIR}/devel/msgpuck \
+		libyajl.so:${PORTSDIR}/devel/yajl
+GH_ACCOUNT+=	tarantool:nginx_tarantool
+GH_PROJECT+=	nginx_upstream_module:nginx_tarantool
+GH_TAGNAME+=	966f2f5:nginx_tarantool
+CFLAGS+=	-I${LOCALBASE}/include/msgpuck
+CONFIGURE_ARGS+=--add-module=${WRKSRC_nginx_tarantool}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_tarantool-config
+.endif
+
 .if ${PORT_OPTIONS:MHTTP_SECURE_LINK}
 CONFIGURE_ARGS+=--with-http_secure_link_module
 .endif
@@ -673,7 +686,7 @@ CONFIGURE_ARGS+=--without-http_rewrite_module \
 .endif
 
 .if ${PORT_OPTIONS:MPASSENGER}
-PASSENGER_VERSION=	5.0.15
+PASSENGER_VERSION=	5.0.16
 MASTER_SITES+=	http://s3.amazonaws.com/phusion-passenger/releases/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
@@ -970,6 +983,11 @@ post-patch:
 	@${REINPLACE_CMD} \
 		's!%%PREFIX%%!${LOCALBASE}!g' \
 		${WRKDIR}/modsecurity-${NGINX_MODSECURITY_VERSION}/configure
+.endif
+.if ${PORT_OPTIONS:MHTTP_TARANTOOL}
+	@${REINPLACE_CMD} \
+		's!%%PREFIX%%!${LOCALBASE}!g' \
+		${WRKSRC_nginx_tarantool}/config
 .endif
 
 pre-configure:

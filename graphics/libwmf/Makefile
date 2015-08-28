@@ -36,8 +36,6 @@ OPTIONS_SUB=	yes
 X11_USE=	XORG=x11
 X11_CONFIGURE_OFF=--with-x=no
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|src include fonts doc|src include fonts|g' \
 		${WRKSRC}/Makefile.in
@@ -46,11 +44,9 @@ post-patch:
 		 s|@LIBWMF_GDK_PIXBUF_FALSE@||g ; \
 		 s|: install-loaderLTLIBRARIES|:|g' ${WRKSRC}/src/Makefile.in
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${TAR} -C ${WRKSRC}/doc --exclude '*Makefile*' -cf - . | \
 		${TAR} -C ${STAGEDIR}${DOCSDIR} --unlink -xf -
-.endif
 
 .include <bsd.port.mk>

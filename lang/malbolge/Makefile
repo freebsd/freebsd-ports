@@ -13,15 +13,11 @@ PLIST_FILES=	bin/malbolge
 OPTIONS_DEFINE=	DOCS
 PORTDOCS=	*
 
-.include <bsd.port.options.mk>
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/malbolge ${STAGEDIR}${PREFIX}/bin
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/malbolge.txt ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

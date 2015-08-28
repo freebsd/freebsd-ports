@@ -32,12 +32,8 @@ PLIST_FILES=	man/man8/ladvd.8.gz \
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-post-patch:
-.if ! ${PORT_OPTIONS:MDOCS}
+post-patch-DOCS-off:
 	@@${REINPLACE_CMD} 's|install-data-am: install-dist_docDATA|install-data-am:|' \
 		${WRKSRC}/doc/Makefile.in
-.endif
 
 .include <bsd.port.mk>

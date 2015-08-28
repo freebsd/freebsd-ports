@@ -2,7 +2,7 @@
 
 PORTNAME=	mplayer2
 PORTVERSION=	${MPLAYER2_PORT_VERSION}
-PORTREVISION=	13
+PORTREVISION=	15
 CATEGORIES=	multimedia audio
 MASTER_SITES=	LOCAL/gblach/
 
@@ -23,9 +23,8 @@ USES=		cpe gmake iconv ncurses pkgconfig tar:xz
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	TMPDIR="${WRKSRC}"
 CONFIGURE_ARGS=	--cc=${CC} \
-		--extra-libs='-lavresample ${PORTAUDIOLIB}' \
+		--extra-libs='${LIBS}' \
 		--mandir=${PREFIX}/man \
-		--enable-libavresample \
 		--disable-alsa \
 		--disable-liba52 \
 		--disable-directfb \
@@ -41,11 +40,10 @@ MAKE_ARGS+=	BINDIR=${STAGEDIR}${PREFIX}/bin \
 MPLAYER2_SNAPSHOT_DATE=	2013-04-28
 MPLAYER2_PORT_VERSION=	2.0.${MPLAYER2_SNAPSHOT_DATE:S/-//g}
 
-
 OPTIONS_DEFINE=	DEBUG RTC IPV6 SMB LIBBLURAY DV THEORA \
 		X11 XINERAMA OPENGL SDL VDPAU GIF CACA \
-		MAD SPEEX LIBCDIO LADSPA REALPLAYER \
-		JACK PULSE PORTAUDIO ASS LIRC
+		MAD SPEEX CDIO LADSPA REALPLAYER \
+		JACK PULSEAUDIO PORTAUDIO ASS LIRC V4L
 OPTIONS_DEFAULT=X11 ASS
 
 .if !defined(PACKAGE_BUILDING)
@@ -54,14 +52,9 @@ OPTIONS_DEFAULT+=	WIN32
 .endif
 
 RTC_DESC=	Enable kernel realtime clock timing
-PULSE_DESC=	Enable PulseAudio support
-THEORA_DESC=	Enable ogg theora video support
 ASS_DESC=	Enable ASS/SSA subtitle rendering
 WIN32_DESC=	Enable win32 codec set on the IA32 arch
 REALPLAYER_DESC=Enable realplayer plugin
-LIRC_DESC=	Enable lirc support
-LIBCDIO_DESC=	Enable libcdio support
-V4L_DESC=	Enable Video4Linux TV support
 
 SUB_FILES=	pkg-message
 
@@ -98,6 +91,7 @@ CONFIGURE_ARGS+=	--disable-inet6
 
 .if ${PORT_OPTIONS:MGIF}
 LIB_DEPENDS+=		libgif.so:${PORTSDIR}/graphics/giflib
+CONFIGURE_ARGS+=	--enable-gif
 .else
 CONFIGURE_ARGS+=	--disable-gif
 .endif
@@ -132,7 +126,7 @@ LIB_DEPENDS+=		libjack.so:${PORTSDIR}/audio/jack
 CONFIGURE_ARGS+=	--disable-jack
 .endif
 
-.if ${PORT_OPTIONS:MPULSE}
+.if ${PORT_OPTIONS:MPULSEAUDIO}
 LIB_DEPENDS+=		libpulse.so:${PORTSDIR}/audio/pulseaudio
 .else
 CONFIGURE_ARGS+=	--disable-pulse
@@ -140,7 +134,6 @@ CONFIGURE_ARGS+=	--disable-pulse
 
 .if ${PORT_OPTIONS:MPORTAUDIO}
 LIB_DEPENDS+=		libportaudio.so:${PORTSDIR}/audio/portaudio
-PORTAUDIOLIB=		-lportaudio
 .else
 CONFIGURE_ARGS+=	--disable-portaudio
 .endif
@@ -157,7 +150,7 @@ LIB_DEPENDS+=		libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
 CONFIGURE_ARGS+=	--disable-smb
 .endif
 
-.if ${PORT_OPTIONS:MLIBCDIO}
+.if ${PORT_OPTIONS:MCDIO}
 LIB_DEPENDS+=		libcdio_paranoia.so:${PORTSDIR}/sysutils/libcdio-paranoia
 .else
 CONFIGURE_ARGS+=	--disable-libcdio
@@ -187,18 +180,13 @@ BUILD_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
 CONFIGURE_ARGS+=	--disable-real
 .endif
 
-#.if ${PORT_OPTIONS:MV4L}
-#BUILD_DEPENDS+=		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
-#LIB_DEPENDS+=		libv4l2.so:${PORTSDIR}/multimedia/libv4l
-#CONFIGURE_ARGS+=	--enable-tv-v4l2
-#EXTRA_LIBS+=		-lv4l2
-#.else
+.if ${PORT_OPTIONS:MV4L}
+BUILD_DEPENDS+=		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
+LIB_DEPENDS+=		libv4l2.so:${PORTSDIR}/multimedia/libv4l
+LIBS+=			-lv4l2
+.else
 CONFIGURE_ARGS+=	--disable-tv-v4l2
-#.endif
-
-#.if defined(EXTRA_LIBS)
-#CONFIGURE_ARGS+=	--extra-libs="${EXTRA_LIBS}"
-#.endif
+.endif
 
 .if ${PORT_OPTIONS:MASS}
 LIB_DEPENDS+=		libass.so:${PORTSDIR}/multimedia/libass
@@ -237,7 +225,7 @@ CONFIGURE_ARGS+=	--enable-rtc
 CONFIGURE_ARGS+=	--disable-rtc
 .endif
 
-.if ${PORT_OPTIONS:MLIBCACA}
+.if ${PORT_OPTIONS:MCACA}
 LIB_DEPENDS+=		libcaca.so:${PORTSDIR}/graphics/libcaca
 .else
 CONFIGURE_ARGS+=	--disable-caca
@@ -299,10 +287,10 @@ post-patch:
 .endif
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/etc/example.conf \
+	${INSTALL_DATA} ${WRKSRC}/etc/example.conf \
 		${STAGEDIR}${PREFIX}/etc/mplayer/mplayer.conf.sample
 .for conf in codecs input
-	@${INSTALL_DATA} ${WRKSRC}/etc/${conf}.conf \
+	${INSTALL_DATA} ${WRKSRC}/etc/${conf}.conf \
 		${STAGEDIR}${PREFIX}/etc/mplayer/${conf}.conf.sample
 .endfor
 

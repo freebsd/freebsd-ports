@@ -3,7 +3,7 @@
 
 PORTNAME=	jwhois
 PORTVERSION=	4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	GNU
 
@@ -13,7 +13,7 @@ COMMENT=	Improved WHOIS client capable of selecting server to query
 LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake
+USES=		gettext gmake iconv
 CPPFLAGS+=	-I${PREFIX}/include
 LDFLAGS+=	-L${PREFIX}/lib
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/var/jwhois

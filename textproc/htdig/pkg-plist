@@ -13,9 +13,7 @@ bin/htstat
 bin/rundig
 %%ETCDIR%%/HtFileType-magic.mime
 %%ETCDIR%%/cookies.txt
-@unexec if cmp -s %D/%%ETCDIR%%/htdig.conf.sample %D/%%ETCDIR%%/htdig.conf; then rm -f %D/%%ETCDIR%%/htdig.conf; fi
-%%ETCDIR%%/htdig.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/htdig.conf ] ; then cp -p %D/%F %B/htdig.conf; fi
+@sample %%ETCDIR%%/htdig.conf.sample
 %%ETCDIR%%/mime.types
 include/htdig/Configuration.h
 include/htdig/Connection.h

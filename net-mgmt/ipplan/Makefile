@@ -18,6 +18,7 @@ USE_PHP=	gettext pcre xml zlib
 SHEBANG_FILES=	${WRKSRC}/contrib/process-exports.pl ${WRKSRC}/contrib/ipplan-poller.php
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 CONFIG=		config.php
 SUB_FILES=	pkg-message

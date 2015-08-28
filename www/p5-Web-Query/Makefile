@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Web-Query
-PORTVERSION=	0.30
+PORTVERSION=	0.31
 CATEGORIES=	www
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,12 +15,13 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-HTML-Selector-XPath>=0.06:${PORTSDIR}/www/p5-HTML-Selector-XPath \
-		p5-HTML-TreeBuilder-XPath>=0.12:${PORTSDIR}/www/p5-HTML-TreeBuilder-XPath \
-		p5-libwww>=6:${PORTSDIR}/www/p5-libwww
+		p5-HTML-TreeBuilder-LibXML>=0:${PORTSDIR}/www/p5-HTML-TreeBuilder-LibXML \
+		p5-HTML-TreeBuilder-XPath>=0:${PORTSDIR}/www/p5-HTML-TreeBuilder-XPath \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
-USE_PERL5=	modbuild
+USE_PERL5=	configure
 USES=		perl5
 
 .include <bsd.port.mk>

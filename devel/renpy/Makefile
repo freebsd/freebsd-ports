@@ -53,25 +53,18 @@ OPTIONS_DEFAULT=TKINTER DIST
 OPTIONS_DEFINE=	DOCS DIST EXAMPLES TKINTER
 
 DIST_DESC=	Distribution runtimes for Windows, OS X, Linux
+DIST_VARS=	LICENSE+="ART20 PSFL" \
+		PORTDATA+="lib renpy.app renpy.exe renpy.sh"
+EXAMPLES_VARS=	PORTDATA+="the_question tutorial"
 TKINTER_DESC=	Install Tkinter to allow choosing Projects Directory
 TKINTER_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDIST}
-LICENSE+=	ART20 PSFL
-PORTDATA+=	lib renpy.app renpy.exe renpy.sh
 . for lic in FREETYPE LIBJPEG LIBPNG MSVCR90
-LICENSE+=	${lic}
+DIST_VARS+=	LICENSE+=${lic}
 LICENSE_NAME_${lic}=	${lic} license
 LICENSE_FILE_${lic}=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS_${lic}=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 . endfor
-.endif
-
-.if ${PORT_OPTIONS:MEXAMPLES}
-PORTDATA+=	the_question tutorial
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/bin/python,${PYTHON_CMD},' \

@@ -105,7 +105,9 @@ do-install:
 .for f in banner motd
 	${INSTALL_DATA} ${WRKSRC}/text/${f} ${STAGEDIR}${DATADIR}/text
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/eggdrop/*.so
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ABOUT BANS BOTNET BUG-REPORT COMPILE-GUIDE CONTENTS \
 	FIRST-SCRIPT KNOWN-PROBLEMS MODULES PARTYLINE PATCH-HOWTO \
@@ -118,7 +120,5 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/settings
 	cd ${WRKSRC}/doc/settings && ${RM} -rf CVS \
 		&& ${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR}/settings
-.endif
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/eggdrop/*.so
 
 .include <bsd.port.mk>

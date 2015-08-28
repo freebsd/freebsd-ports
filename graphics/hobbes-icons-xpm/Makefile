@@ -12,12 +12,11 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Collection of over 3000 icons in XPM3 format
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 LIBDIR=		${STAGEDIR}${PREFIX}/include/X11/pixmaps
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 do-install:
 	${MKDIR} ${LIBDIR}
@@ -25,11 +24,9 @@ do-install:
 	-${RM} ${LIBDIR}/README
 	-${RM} ${LIBDIR}/readem.shar
 
-.if ${PORT_OPTIONS:MDOCS}
-post-install:
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_SCRIPT} ${WRKSRC}/*.shar ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.mk>

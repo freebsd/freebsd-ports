@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	darktable
-PORTVERSION=	1.6.7
+PORTVERSION=	1.6.8
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/release-${PORTVERSION}/
 
@@ -103,14 +103,12 @@ CMAKE_BUILD_TYPE=	RelWithDebInfo
 STRIP=
 .endif
 
-.if ! ${PORT_OPTIONS:MDOCS}
-post-install:
+post-install-DOCS-off:
 	${RM} ${STAGEDIR}${DOCSDIR}/AUTHORS
 	${RM} ${STAGEDIR}${DOCSDIR}/LICENSE
 	${RM} ${STAGEDIR}${DOCSDIR}/README
 	${RM} ${STAGEDIR}${DOCSDIR}/TRANSLATORS
 	${RM} ${STAGEDIR}${DOCSDIR}/darktablerc.html
 	${RMDIR} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

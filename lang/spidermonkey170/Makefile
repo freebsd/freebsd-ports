@@ -66,6 +66,11 @@ BROKEN=			dtrace -G crashes with C++ object files
 STRIP_CMD=	${TRUE}
 .endif
 
+# ARM needs GCC until https://llvm.org/bugs/show_bug.cgi?id=23244 is fixed
+.if ${ARCH} == "armv6"
+USE_GCC=	yes
+.endif
+
 regression-test: build
 	@${ECHO_MSG} -n "===> Running jstests.py: "
 	@cd ${WRKSRC} && ${SETENV} TZ=PST8PDT ${PYTHON_CMD} tests/jstests.py \

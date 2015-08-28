@@ -24,10 +24,6 @@ PLIST_FILES=	sbin/map-mbone sbin/mrouted sbin/mrinfo sbin/mtrace \
 		man/man8/mtrace.8.gz
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-MAKE_ARGS+=	datadir=${DOCSDIR} doc=yes
-.endif
+DOCS_MAKE_ARGS=	datadir=${DOCSDIR} doc=yes
 
 .include <bsd.port.mk>

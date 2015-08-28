@@ -47,6 +47,7 @@
     SUBDIR += aoi
     SUBDIR += apngasm
     SUBDIR += apngdis
+    SUBDIR += appleseed
     SUBDIR += apvlv
     SUBDIR += aqsis
     SUBDIR += argyllcms

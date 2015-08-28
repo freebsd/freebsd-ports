@@ -14,6 +14,7 @@ COMMENT=	Fast world domination game
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}PC
 PORTDOCS=	README_Vox.txt
@@ -27,16 +28,13 @@ DESKTOP_ENTRIES="Castle Vox" "${COMMENT}" \
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "Support docs *.jar" ${STAGEDIR}${DATADIR})
 	${INSTALL_DATA} ${WRKSRC}/VoxIcon.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
-.if ${PORT_OPTIONS:MDOCS}
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

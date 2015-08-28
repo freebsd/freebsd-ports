@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qnapi
-PORTVERSION=	0.1.8
+PORTVERSION=	0.1.9
 CATEGORIES=	polish multimedia
 
 MAINTAINER=	pawel@FreeBSD.org
@@ -16,17 +16,15 @@ RUN_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
 
 USE_GITHUB=	yes
 
-USES=		qmake
+USES=		compiler:c++11-lib qmake
 USE_QT5=	buildtools_build gui network widgets xml
 
 CXXFLAGS+=	-I${LOCALBASE}/include/maia
 QMAKE_ARGS=	LIBS=-lmaia
 
 post-patch:
-	@${REINPLACE_CMD} 's|/usr/share/icons/||g' \
-		${WRKSRC}/doc/qnapi.desktop \
-		${WRKSRC}/doc/qnapi-download.desktop \
-		${WRKSRC}/doc/qnapi-scan.desktop
+	@${REINPLACE_CMD} 's|/usr|${PREFIX}|; s|share/man|man|; /doc \\/d' \
+		${WRKSRC}/qnapi.pro
 
 post-install:
 	(cd ${WRKSRC}/doc && ${INSTALL_DATA} qnapi-download.desktop \
