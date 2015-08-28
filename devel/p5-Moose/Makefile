@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Moose
-PORTVERSION=	2.1600
+PORTVERSION=	2.1603
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -38,16 +38,26 @@ BUILD_DEPENDS=	p5-Class-Load>=0.09:${PORTSDIR}/devel/p5-Class-Load \
 		p5-Try-Tiny>=0.17:${PORTSDIR}/lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-CPAN-Meta-Check>=0.007:${PORTSDIR}/devel/p5-CPAN-Meta-Check \
+		p5-DBM-Deep>=0:${PORTSDIR}/databases/p5-DBM-Deep \
+		p5-DateTime-Calendar-Mayan>=0:${PORTSDIR}/devel/p5-DateTime-Calendar-Mayan \
 		p5-DateTime-Format-MySQL>=0:${PORTSDIR}/devel/p5-DateTime-Format-MySQL \
 		p5-Declare-Constraints-Simple>=0:${PORTSDIR}/devel/p5-Declare-Constraints-Simple \
+		p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
 		p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
+		p5-Locale-US>=0:${PORTSDIR}/misc/p5-Locale-US \
 		p5-Module-Refresh>=0:${PORTSDIR}/devel/p5-Module-Refresh \
+		p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common \
+		p5-Params-Coerce>=0:${PORTSDIR}/devel/p5-Params-Coerce \
 		p5-SUPER>=0:${PORTSDIR}/devel/p5-SUPER \
 		p5-Test-CleanNamespaces>=0.13:${PORTSDIR}/devel/p5-Test-CleanNamespaces \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
+		p5-Test-DependentModules>=0:${PORTSDIR}/devel/p5-Test-DependentModules \
+		p5-Test-LeakTrace>=0:${PORTSDIR}/devel/p5-Test-LeakTrace \
 		p5-Test-Fatal>=0.001:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output \
-		p5-Test-Requires>=0.05:${PORTSDIR}/devel/p5-Test-Requires
+		p5-Test-Requires>=0.05:${PORTSDIR}/devel/p5-Test-Requires \
+		p5-Test-Warnings>=0:${PORTSDIR}/devel/p5-Test-Warnings \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI
 
 CFLAGS+=	-I.	# mop.h
 MAKE_JOBS_UNSAFE=	yes
