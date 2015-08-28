@@ -2,6 +2,7 @@
 
 PORTNAME=	pugixml
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://github.com/zeux/pugixml/releases/download/v${PORTVERSION}/
 
