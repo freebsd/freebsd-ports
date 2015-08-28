@@ -135,6 +135,7 @@
     SUBDIR += kturtle
     SUBDIR += lafontaine
     SUBDIR += lci
+    SUBDIR += lfe
     SUBDIR += libhx
     SUBDIR += libjit
     SUBDIR += libobjc2
