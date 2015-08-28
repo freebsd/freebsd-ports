@@ -3,7 +3,7 @@
 
 PORTNAME=	harbour
 PORTVERSION=	3.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}-project/source/${PORTVERSION}
 
@@ -22,7 +22,11 @@ NOT_FOR_ARCHS_REASON=	does not compile on sparc64: assertion failed
 
 PORTDOCS=	*.txt *.hbd NEWS INSTALL TODO COPYING ChangeLog
 
-USES=		bison gmake
+USES=		bison gmake shebangfix
+SHEBANG_FILES=	bin/hb3rdpat.hbs
+SHEBANG_LANG=	hbrun
+hbrun_OLD_CMD=	/usr/bin/hbrun
+hbrun_CMD=	${PREFIX}/bin/hbrun
 USE_OPENSSL=	yes
 USE_LDCONFIG=	${LOCALBASE}/lib/harbour
 
