@@ -24,19 +24,17 @@ PORTDOCS=	*
 USE_RC_SUBR=	ptpd2
 
 OPTIONS_DEFINE=	DOCS SNMP
-OPTIONS_DEFAULT=DOCS SNMP
+OPTIONS_DEFAULT=SNMP
 
 SNMP_CONFIGURE_ENABLE=	snmp
 SNMP_LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKDIR}/ptpd-${DISTVERSION}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
-.endif
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${CP} ${FILESDIR}/*.sample ${STAGEDIR}${ETCDIR}
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKDIR}/ptpd-${DISTVERSION}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

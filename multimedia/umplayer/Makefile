@@ -26,8 +26,6 @@ CONFIGURE_WRKSRC=	${WRKSRC}/src
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's| make| $$(MAKE)|' \
 		-e 's|cd src|(&| ; /cd src/s|$$|)|' \
@@ -37,10 +35,10 @@ post-patch:
 		-e 's|/doc/packages|/doc|' \
 		-e 's|^.*/get_svn_revision.sh$$||' \
 			${WRKSRC}/Makefile
-.if ! ${PORT_OPTIONS:MDOCS}
+
+post-patch-DOCS-off:
 	@${REINPLACE_CMD} -E -e '/(install|tar).*DOC_PATH/d' \
 		${WRKSRC}/Makefile
-.endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
