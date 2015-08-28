@@ -1024,6 +1024,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  has been specified in distinfo.  This is useful
 #				  when using an alternate FETCH_CMD.
 #
+# PKG_CREATE_VERBOSE		- If set, pass the -v option to pkg create which
+#				  ensures periodic output during packaging and
+#				  will help prevent timeouts by build monitors
+#
 # End of the list of all variables that need to be defined in a port.
 # Most port authors should not need to understand anything after this point.
 #
@@ -3453,6 +3457,9 @@ do-install:
 
 .if !target(do-package)
 PKG_CREATE_ARGS=	-r ${STAGEDIR} -m ${METADIR} -p ${TMPPLIST}
+.if defined(PKG_CREATE_VERBOSE)
+PKG_CREATE_ARGS+=	-v
+.endif
 do-package: create-manifest
 do-package: ${TMPPLIST}
 	@if [ -d ${PACKAGES} ]; then \
