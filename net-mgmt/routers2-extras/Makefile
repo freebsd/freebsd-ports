@@ -3,7 +3,7 @@
 
 PORTNAME=	routers2-extras
 PORTVERSION=	2.19
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.steveshipway.org/software/rrd/ \
 		ftp://ftp.oav.oav.net/routers2/
@@ -17,15 +17,22 @@ RUN_DEPENDS=	${LOCALBASE}/www/routers2/routers2.cgi:${PORTSDIR}/net-mgmt/routers
 
 WRKSRC=		${WRKDIR}/routers2-v${PORTVERSION}/extras
 
-USES=		perl5
-NO_BUILD=	YES
+USES=		perl5 shebangfix
+SHEBANG_FILES=	check_foundry check_vmware.pl \
+		checkagent gather.pl graphprune.pl \
+		mrtg-apache mrtg-nrpe.pl mrtg-pnsclient.pl \
+		mrtg-portsinuse.pl rrd-archive-clean.pl \
+		rrd-archive.pl rrdextend.pl \
+		winalert.pl
+NO_BUILD=	yes
+NO_ARCH=	yes
 PORTDOCS=	README *.txt
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
+	${REINPLACE_CMD} -e '1s|#!perl|#!${perl_CMD}|' \
+		${WRKSRC}/targetnames/targetnames.pl
 	${REINPLACE_CMD} -e 's|%%PERL%%|${PERL}|' \
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/buildwan.pl \
@@ -46,9 +53,9 @@ do-install:
 		${STAGEDIR}${PREFIX}/www/routers2/extras
 	cd ${WRKSRC}; ${INSTALL_DATA} mrtg-templates/* \
 		${STAGEDIR}${PREFIX}/www/routers2/extras/templates
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}; ${INSTALL_DATA} README *.txt ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
