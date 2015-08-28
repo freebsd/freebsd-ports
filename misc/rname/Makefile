@@ -15,10 +15,6 @@ USES=		gmake
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-INSTALL_TARGET=	install install-doc
-.endif
+DOCS_INSTALL_TARGET=	install install-doc
 
 .include <bsd.port.mk>

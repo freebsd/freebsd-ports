@@ -31,22 +31,14 @@ USE_PHP=	yes
 WANT_PHP_CLI=	yes
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 PORTDOCS=	Changelog
 
 CACTIDIR?=	share/cacti
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}/${doc}
-.endfor
-.endif
-
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/cacti/scripts
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/percona-monitoring-plugins
 
@@ -62,5 +54,11 @@ do-install:
 
 	${INSTALL_SCRIPT} ${WRKSRC}/cacti/bin/* ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/nagios/bin/* ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for doc in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}/${doc}
+.endfor
 
 .include <bsd.port.mk>

@@ -34,7 +34,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 GLIB_SCHEMAS=	org.gnome.Vinagre.gschema.xml
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	TELEPATHY RDP
+OPTIONS_DEFINE=	TELEPATHY RDP DOCS
 OPTIONS_DEFAULT=TELEPATHY RDP
 TELEPATHY_DESC=	Telepathy integration
 RDP_DESC=	MS Windows remote desktop support
@@ -45,14 +45,10 @@ RDP_CONFIGURE_ENABLE=	rdp
 RDP_BUILD_DEPENDS=	xfreerdp:${PORTSDIR}/net/freerdp
 RDP_RUN_DEPENDS=	xfreerdp:${PORTSDIR}/net/freerdp
 
-.include <bsd.port.options.mk>
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in AUTHORS COPYING ChangeLog NEWS README
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

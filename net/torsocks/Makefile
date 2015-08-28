@@ -23,14 +23,9 @@ INSTALL_TARGET=	install-strip
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=	DOCS
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	ChangeLog DEBUG SOCKS5 socks-extensions.txt
-.endif
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	${REINPLACE_CMD} -e 's,(defined(__linux__) || defined(__darwin__) || (defined(__FreeBSD_kernel__) && defined(__i386__))),defined(__FreeBSD__),' ${WRKSRC}/src/lib/syscall.c
