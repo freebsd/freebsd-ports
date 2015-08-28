@@ -3,6 +3,7 @@
 
 PORTNAME=	openclonk
 PORTVERSION=	6.1
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	games
 MASTER_SITES=	http://www.openclonk.org/builds/release/${DISTVERSION}/
@@ -20,7 +21,7 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
-USES=		compiler:c++11-lib cmake desktop-file-utils iconv jpeg pkgconfig tar:bzip2
+USES=		compiler:c++11-lib cmake desktop-file-utils jpeg pkgconfig tar:bzip2
 USE_GL=		glew
 USE_GNOME=	gtk20
 USE_SDL=	sdl mixer
