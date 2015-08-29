@@ -58,6 +58,32 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5300711b-4e61-11e5-9ad8-14dae9d210b8">
+    <topic>graphviz -- format string vulnerability</topic>
+    <affects>
+      <package>
+	<name>graphviz</name>
+	<range><lt>2.38.0_7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Joshua Rogers reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2014/q4/784">
+	  <p>A format string vulnerability has been found in `graphviz'.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://seclists.org/oss-sec/2014/q4/784</url>
+      <url>https://github.com/ellson/graphviz/commit/99eda421f7ddc27b14e4ac1d2126e5fe41719081</url>
+    </references>
+    <dates>
+      <discovery>2014-11-24</discovery>
+      <entry>2015-08-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="237a201c-888b-487f-84d3-7d92266381d6">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
