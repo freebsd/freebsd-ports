@@ -2,6 +2,7 @@
 
 PORTNAME=	jgraphx
 PORTVERSION=	2.5.1.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	java graphics
 
 MAINTAINER=	makc@FreeBSD.org
