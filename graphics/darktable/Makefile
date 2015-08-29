@@ -3,6 +3,7 @@
 
 PORTNAME=	darktable
 PORTVERSION=	1.6.8
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/release-${PORTVERSION}/
 
@@ -22,7 +23,7 @@ ONLY_FOR_ARCHS_REASON=	uses SSE instructions
 
 USES=		compiler:c++11-lib cmake:outsource desktop-file-utils	\
 		ninja pkgconfig tar:xz
-USE_GNOME=	intltool librsvg2
+USE_GNOME=	gtk20 intltool librsvg2
 USE_SQLITE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 INSTALLS_ICONS=	yes
