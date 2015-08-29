@@ -4,7 +4,7 @@
 PORTNAME=	mpv
 PORTVERSION=	0.9.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://ftp.waf.io/pub/release/:1 \
@@ -26,27 +26,26 @@ GH_ACCOUNT=	mpv-player
 WAF_VERSION=	1.8.9
 
 USES=		compiler:c11 desktop-file-utils iconv pkgconfig python:build waf
-USE_XORG=	x11 xv xxf86vm
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I.. -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--docdir=${EXAMPLESDIR} \
+CONFIGURE_ARGS=	--docdir=${EXAMPLESDIR} \
 		--mandir=${MANPREFIX}/man \
+		--prefix=${PREFIX} \
 		--disable-debug-build \
 		--disable-optimize \
-		--enable-libmpv-shared \
-		--disable-pdf
+		--disable-pdf \
+		--enable-libmpv-shared
 
 OPTIONS_DEFINE=		ASS BS2B DOCS ENCA LADSPA LCMS2 \
 			LIBGUESS LUAJIT ZSH
-OPTIONS_DEFAULT=	ASS DVDREAD DVDNAV
+OPTIONS_DEFAULT=	ASS DVDREAD DVDNAV X11
 OPTIONS_GROUP=		IN VO AO
 OPTIONS_GROUP_IN=	CDIO DVDREAD DVDNAV LIBBLURAY V4L SMB
-OPTIONS_GROUP_VO=	CACA OPENGL VAAPI VDPAU XINERAMA
+OPTIONS_GROUP_VO=	CACA OPENGL VAAPI VDPAU X11 XINERAMA
 OPTIONS_GROUP_AO=	ALSA JACK PULSEAUDIO
 OPTIONS_SUB=		yes
 
@@ -56,81 +55,86 @@ DVDREAD_DESC=	DVD Playback support
 DVDNAV_DESC=	DVD menu navigation
 ENCA_DESC=	Enable encoding detection support
 LIBGUESS_DESC=	Enable high-speed character set detection support
-LUAJIT_DESC=	Use LuaJIT instead of Lua
+LUAJIT_DESC=	Use LuaJIT instead of Lua scripting language support
 IN_DESC=	Input
 VO_DESC=	Video Output
 AO_DESC=	Audio Output
 
 ALSA_LIB_DEPENDS=		libasound.so:${PORTSDIR}/audio/alsa-lib
-ALSA_CONFIGURE_ENABLE=		alsa
+ALSA_CONFIGURE_OFF=		--disable-alsa
 
 ASS_LIB_DEPENDS=		libass.so:${PORTSDIR}/multimedia/libass
-ASS_CONFIGURE_ENABLE=		libass
+ASS_CONFIGURE_OFF=		--disable-libass
 
 BS2B_LIB_DEPENDS=		libbs2b.so:${PORTSDIR}/audio/libbs2b
-BS2B_CONFIGURE_ENABLE=		libbs2b
+BS2B_CONFIGURE_OFF=		--disable-libbs2b
 
-DVDREAD_LIB_DEPENDS=		libdvdread.so:${PORTSDIR}/multimedia/libdvdread
-DVDREAD_CONFIGURE_ENABLE=	dvdread
+CACA_LIB_DEPENDS=		libcaca.so:${PORTSDIR}/graphics/libcaca
+CACA_CONFIGURE_OFF=		--disable-caca
+
+CDIO_LIB_DEPENDS=		libcdio_paranoia.so:${PORTSDIR}/sysutils/libcdio-paranoia
+CDIO_CONFIGURE_OFF=		--disable-cdda
 
 DVDNAV_LIB_DEPENDS=		libdvdnav.so:${PORTSDIR}/multimedia/libdvdnav
-DVDNAV_CONFIGURE_ENABLE=	dvdnav
+DVDNAV_CONFIGURE_OFF=		--disable-dvdnav
+
+DVDREAD_LIB_DEPENDS=		libdvdread.so:${PORTSDIR}/multimedia/libdvdread
+DVDREAD_CONFIGURE_OFF=		--disable-dvdread
 
 ENCA_LIB_DEPENDS=		libenca.so:${PORTSDIR}/converters/enca
-ENCA_CONFIGURE_ENABLE=		enca
+ENCA_CONFIGURE_OFF=		--disable-enca
+
+JACK_LIB_DEPENDS=		libjack.so:${PORTSDIR}/audio/jack
+JACK_CONFIGURE_OFF=		--disable-jack
 
 LADSPA_BUILD_DEPENDS=		${LOCALBASE}/lib/ladspa/amp.so:${PORTSDIR}/audio/ladspa
 LADSPA_RUN_DEPENDS=		${LOCALBASE}/lib/ladspa/amp.so:${PORTSDIR}/audio/ladspa
-LADSPA_CONFIGURE_ENABLE=	ladspa
+LADSPA_CONFIGURE_OFF=		--disable-ladspa
 
 LCMS2_LIB_DEPENDS=		liblcms2.so:${PORTSDIR}/graphics/lcms2
-LCMS2_CONFIGURE_ENABLE=		lcms2
+LCMS2_CONFIGURE_OFF=		--disable-lcms2
+
+LIBBLURAY_LIB_DEPENDS=		libbluray.so:${PORTSDIR}/multimedia/libbluray
+LIBBLURAY_CONFIGURE_OFF=	--disable-libbluray
 
 LIBGUESS_LIB_DEPENDS=		libguess.so:${PORTSDIR}/textproc/libguess
-LIBGUESS_CONFIGURE_ENABLE=	libguess
+LIBGUESS_CONFIGURE_OFF=		--disable-libguess
 
 LUAJIT_LIB_DEPENDS=		libluajit-5.1.so:${PORTSDIR}/lang/luajit
 LUAJIT_USES_OFF=		lua
 LUAJIT_CONFIGURE_ON=		--lua=luajit
 LUAJIT_CONFIGURE_OFF=		--lua=${LUA_VER_STR}fbsd
 
-ZSH_USES=			perl5
-ZSH_USE=			PERL5=build
-ZSH_CONFIGURE_ENABLE=		zsh-comp
+OPENGL_USE=			GL=gl
+OPENGL_CONFIGURE_OFF=		--disable-gl
+OPENGL_IMPLIES=			X11
 
-CDIO_LIB_DEPENDS=		libcdio_paranoia.so:${PORTSDIR}/sysutils/libcdio-paranoia
-CDIO_CONFIGURE_ENABLE=		cdda
+PULSEAUDIO_LIB_DEPENDS=		libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
 
-LIBBLURAY_LIB_DEPENDS=		libbluray.so:${PORTSDIR}/multimedia/libbluray
-LIBBLURAY_CONFIGURE_ENABLE=	libbluray
+SMB_LIB_DEPENDS=		libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
+SMB_CONFIGURE_OFF=		--disable-libsmbclient
 
 V4L_BUILD_DEPENDS=		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
 V4L_LIB_DEPENDS=		libv4l2.so:${PORTSDIR}/multimedia/libv4l
-V4L_CONFIGURE_ENABLE=		tv-v4l2
-
-SMB_LIB_DEPENDS=		libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
-SMB_CONFIGURE_ENABLE=		libsmbclient
-
-CACA_LIB_DEPENDS=		libcaca.so:${PORTSDIR}/graphics/libcaca
-CACA_CONFIGURE_ENABLE=		caca
-
-OPENGL_USE=			GL=gl
-OPENGL_CONFIGURE_ENABLE=	gl
+V4L_CONFIGURE_OFF=		--disable-tv-v4l2
 
 VAAPI_LIB_DEPENDS=		libva.so:${PORTSDIR}/multimedia/libva
-VAAPI_CONFIGURE_ENABLE=		vaapi
+VAAPI_CONFIGURE_OFF=		--disable-vaapi
 
 VDPAU_LIB_DEPENDS=		libvdpau.so:${PORTSDIR}/multimedia/libvdpau
-VDPAU_CONFIGURE_ENABLE=		vdpau
+VDPAU_CONFIGURE_OFF=		--disable-vdpau
+
+X11_USE=			XORG=x11,xv,xxf86vm
+X11_CONFIGURE_OFF=		--disable-x11
 
 XINERAMA_USE=			XORG=xinerama,xineramaproto
-XINERAMA_CONFIGURE_ENABLE=	xinerama
+XINERAMA_CONFIGURE_OFF=		--disable-xinerama
+XINERAMA_IMPLIES=		X11
 
-JACK_LIB_DEPENDS=		libjack.so:${PORTSDIR}/audio/jack
-JACK_CONFIGURE_ENABLE=		jack
-
-PULSEAUDIO_LIB_DEPENDS=		libpulse.so:${PORTSDIR}/audio/pulseaudio
-PULSEAUDIO_CONFIGURE_ENABLE=	pulse
+ZSH_USES=			perl5
+ZSH_USE=			PERL5=build
+ZSH_CONFIGURE_OFF=		--disable-zsh-comp
 
 .include <bsd.port.options.mk>
 
@@ -140,7 +144,7 @@ CFLAGS:=	${CFLAGS:N-O*} -O0
 .endif
 
 post-extract:
-	${CP} ${DISTDIR}/waf-${WAF_VERSION} ${WRKSRC}/waf
+	@${CP} ${DISTDIR}/waf-${WAF_VERSION} ${WRKSRC}/waf
 	@${CHMOD} +x ${WRKSRC}/waf
 
 post-patch:
@@ -150,7 +154,7 @@ post-patch:
 		-e 's|/usr/local|${PREFIX}|g'
 
 post-stage:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mpv
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmpv.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mpv
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmpv.so
 
 .include <bsd.port.mk>
