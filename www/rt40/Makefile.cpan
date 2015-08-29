@@ -10,8 +10,8 @@
 ### Digest::base			  core
 ### Time::HiRes				  core
 ### Errno				  core
-### CGI				3.38	  core
-### CGI::Cookie			1.20	  core
+### CGI				3.38	  core (perl<5.22)
+### CGI::Cookie			1.20	  core (perl<5.22)
 ### Storable			2.08	  core
 ### Getopt::Long		2.24	  core
 ### Pod::Usage				  core
