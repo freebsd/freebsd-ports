@@ -2,7 +2,7 @@
 
 PORTNAME=	mplayer2
 PORTVERSION=	${MPLAYER2_PORT_VERSION}
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	multimedia audio
 MASTER_SITES=	LOCAL/gblach/
 
@@ -93,6 +93,7 @@ CONFIGURE_ARGS+=	--disable-inet6
 
 .if ${PORT_OPTIONS:MGIF}
 LIB_DEPENDS+=		libgif.so:${PORTSDIR}/graphics/giflib
+CONFIGURE_ARGS+=	--enable-gif
 .else
 CONFIGURE_ARGS+=	--disable-gif
 .endif
