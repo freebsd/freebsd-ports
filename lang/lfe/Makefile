@@ -2,7 +2,7 @@
 
 PORTNAME=	lfe
 PORTVERSION=	0.9.2
-CATEGORIES=	lang erlang elisp
+CATEGORIES=	lang
 DISTNAME=	v${PORTVERSION}
 
 MAINTAINER=	rpaulo@FreeBSD.org
