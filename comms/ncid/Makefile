@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ncid
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	comms
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -11,7 +11,6 @@ MAINTAINER=	cpm@fbsd.es
 COMMENT=	Network based Caller ID package
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
 USES=		gmake perl5 tk
 ALL_TARGET=	local
@@ -24,26 +23,27 @@ SUB_FILES=	pkg-message
 OPTIONS_DEFINE=	DOCS
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
+
 PORTDOCS=	CHANGES CONTRIBUTORS.md Devices.md Documentation.md FAQ.md Gateways.md \
 		GettingStarted.md INSTALL-Cygwin.md INSTALL-Fedora.md INSTALL-FreeBSD.md \
 		INSTALL-Mac.md INSTALL-Raspbian.md INSTALL-Redhat.md INSTALL-TiVo.md \
-		INSTALL-Ubuntu.md INSTALL-Win.md INSTALL.md LICENSE Makefile Modems.md \
+		INSTALL-Ubuntu.md INSTALL-Win.md INSTALL.md Makefile Modems.md \
 		NCID-API.odt NCID-SDK.md NCID_Documentation.md README.docdir ReleaseNotes.md \
 		TODO.md Verbose.md mk-epub ncid-1.jpg
 
 post-extract:
-	cd ${WRKSRC}/FreeBSD;for i in *.rc; do \
+	@cd ${WRKSRC}/FreeBSD;for i in *.rc; do \
 		x=`echo $$i | cut -f 1 -d .`; ${CP} $$i $$x; done
 
 post-patch:
-	${GREP} -lr 'etc/ncid' ${WRKSRC}/ | ${XARGS} ${REINPLACE_CMD} -Ee \
+	@${GREP} -lr 'etc/ncid' ${WRKSRC}/ | ${XARGS} ${REINPLACE_CMD} -Ee \
 		's,(/usr/local/etc/ncid | /etc/ncid),${ETCDIR},g'
-	${FIND} ${WRKSRC}/ -name Makefile | ${XARGS} ${REINPLACE_CMD} -Ee \
+	@${FIND} ${WRKSRC}/ -name Makefile | ${XARGS} ${REINPLACE_CMD} -Ee \
 		'/install:/s,install-(etc|logrotate),,'
-	${REINPLACE_CMD} -Ee '/mkdir.*(INIT|ROTATE|BIN|LOG|ETC)/d ;\
+	@${REINPLACE_CMD} -Ee '/mkdir.*(INIT|ROTATE|BIN|LOG|ETC)/d ;\
 		/CFLAGS.*=/s|=|+=|' ${WRKSRC}/Makefile
 # Respect PREFIX/MANPREFIX/DATADIR
-	${REINPLACE_CMD} -e 's|prefix.*= /usr/local|prefix=$${PREFIX}|g' \
+	@${REINPLACE_CMD} -e 's|prefix.*= /usr/local|prefix=$${PREFIX}|g' \
 		-e 's|$$(prefix)/bin|$${PREFIX}/bin|g' \
 		-e 's|$$(prefix)/sbin|$${PREFIX}/sbin|g' \
 		-e 's|$$(prefix)/share|$${PREFIX}/share|g' \
