@@ -1486,7 +1486,6 @@
     SUBDIR += nini
     SUBDIR += ninja
     SUBDIR += ninja-ide
-    SUBDIR += ninja16
     SUBDIR += node-thrift
     SUBDIR += notify-sharp
     SUBDIR += noweb
