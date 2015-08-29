@@ -350,7 +350,7 @@ vte3_USE_GNOME_IMPL=	gtk30
 
 librsvg2_LIB_DEPENDS=	librsvg-2.so:${PORTSDIR}/graphics/librsvg2
 librsvg2_DETECT=	${LOCALBASE}/libdata/pkgconfig/librsvg-2.0.pc
-librsvg2_USE_GNOME_IMPL=libgsf gtk20
+librsvg2_USE_GNOME_IMPL=libgsf gdkpixbuf2 pango
 
 nautilus3_LIB_DEPENDS=	libnautilus-extension.so:${PORTSDIR}/x11-fm/nautilus
 nautilus3_DETECT=	${LOCALBASE}/share/gir-1.0/Nautilus-3.0.gir
