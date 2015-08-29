@@ -2,7 +2,7 @@
 
 PORTNAME=	mplayer2
 PORTVERSION=	${MPLAYER2_PORT_VERSION}
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	multimedia audio
 MASTER_SITES=	LOCAL/gblach/
 
@@ -44,8 +44,8 @@ MPLAYER2_PORT_VERSION=	2.0.${MPLAYER2_SNAPSHOT_DATE:S/-//g}
 
 OPTIONS_DEFINE=	DEBUG RTC IPV6 SMB LIBBLURAY DV THEORA \
 		X11 XINERAMA OPENGL SDL VDPAU GIF CACA \
-		MAD SPEEX LIBCDIO LADSPA REALPLAYER \
-		JACK PULSE PORTAUDIO ASS LIRC
+		MAD SPEEX CDIO LADSPA REALPLAYER \
+		JACK PULSEAUDIO PORTAUDIO ASS LIRC
 OPTIONS_DEFAULT=X11 ASS
 
 .if !defined(PACKAGE_BUILDING)
@@ -54,14 +54,9 @@ OPTIONS_DEFAULT+=	WIN32
 .endif
 
 RTC_DESC=	Enable kernel realtime clock timing
-PULSE_DESC=	Enable PulseAudio support
-THEORA_DESC=	Enable ogg theora video support
 ASS_DESC=	Enable ASS/SSA subtitle rendering
 WIN32_DESC=	Enable win32 codec set on the IA32 arch
 REALPLAYER_DESC=Enable realplayer plugin
-LIRC_DESC=	Enable lirc support
-LIBCDIO_DESC=	Enable libcdio support
-V4L_DESC=	Enable Video4Linux TV support
 
 SUB_FILES=	pkg-message
 
@@ -132,7 +127,7 @@ LIB_DEPENDS+=		libjack.so:${PORTSDIR}/audio/jack
 CONFIGURE_ARGS+=	--disable-jack
 .endif
 
-.if ${PORT_OPTIONS:MPULSE}
+.if ${PORT_OPTIONS:MPULSEAUDIO}
 LIB_DEPENDS+=		libpulse.so:${PORTSDIR}/audio/pulseaudio
 .else
 CONFIGURE_ARGS+=	--disable-pulse
@@ -157,7 +152,7 @@ LIB_DEPENDS+=		libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
 CONFIGURE_ARGS+=	--disable-smb
 .endif
 
-.if ${PORT_OPTIONS:MLIBCDIO}
+.if ${PORT_OPTIONS:MCDIO}
 LIB_DEPENDS+=		libcdio_paranoia.so:${PORTSDIR}/sysutils/libcdio-paranoia
 .else
 CONFIGURE_ARGS+=	--disable-libcdio
@@ -237,7 +232,7 @@ CONFIGURE_ARGS+=	--enable-rtc
 CONFIGURE_ARGS+=	--disable-rtc
 .endif
 
-.if ${PORT_OPTIONS:MLIBCACA}
+.if ${PORT_OPTIONS:MCACA}
 LIB_DEPENDS+=		libcaca.so:${PORTSDIR}/graphics/libcaca
 .else
 CONFIGURE_ARGS+=	--disable-caca
