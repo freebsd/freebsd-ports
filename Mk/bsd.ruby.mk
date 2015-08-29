@@ -212,6 +212,14 @@ RUBY20?=		"@comment "
 RUBY21?=		"@comment "
 RUBY22?=		"@comment "
 
+.if defined(BROKEN_RUBY${RUBY_VER:R}${RUBY_VER:E})
+.if ${BROKEN_RUBY${RUBY_VER:R}${RUBY_VER:E}} == "yes"
+BROKEN=			does not build with Ruby ${RUBY_VER}
+.else
+BROKEN=			${BROKEN_RUBY${RUBY_VER:R}${RUBY_VER:E}}
+.endif
+.endif
+
 .if ${RUBY_PATCHLEVEL} == 0
 RUBY_VERSION?=		${RUBY_RELVERSION}
 RUBY_DISTVERSION?=	${RUBY_RELVERSION}
