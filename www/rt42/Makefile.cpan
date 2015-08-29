@@ -1,8 +1,8 @@
 ###############################################################################
 ### --- Core_DEPS ---
 ### Apache::Session 1.53
-### CGI 3.38                                    perl std
-### CGI::Cookie 1.20                            perl std
+### CGI 3.38                                    perl std (perl<5.22)
+### CGI::Cookie 1.20                            perl std (perl<5.22)
 ### CGI::Emulate::PSGI
 ### CGI::PSGI 0.12
 ### CSS::Squish 0.06
@@ -132,15 +132,6 @@ CORE_DEPS=	p5-Apache-Session>=1.53:${PORTSDIR}/www/p5-Apache-Session				\
 		p5-Tree-Simple>=1.04:${PORTSDIR}/devel/p5-Tree-Simple					\
 		p5-UNIVERSAL-require>0:${PORTSDIR}/devel/p5-UNIVERSAL-require				\
 		p5-XML-RSS>=1.05:${PORTSDIR}/textproc/p5-XML-RSS
-
-### Wants CGI => 4.00 for perl 5.20, meaning effectively www/p5-CGI.pm
-### rather than the version bundled with perl (as CGI is being
-### deprecated as a core perl module).  Except that a) www/p5-CGI.pm
-### is still at version 3.63 and b) ${PERL_LEVEL} doesn't seem to be in
-### scope at this point either.
-#.if ${PERL_LEVEL} >= 502000
-#CORE_DEPS+=	p5-CGI.pm>=4.00:${PORTSDIR}/www/p5-CGI.pm
-#.endif
 
 ### --- MAILGATE ---
 ### Crypt::SSLeay
