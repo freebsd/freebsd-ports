@@ -171,6 +171,7 @@
     SUBDIR += hexcalc
     SUBDIR += hfst
     SUBDIR += hs-Agda
+    SUBDIR += hs-Agda-stdlib
     SUBDIR += hs-NumInstances
     SUBDIR += hs-adjunctions
     SUBDIR += hs-categories
