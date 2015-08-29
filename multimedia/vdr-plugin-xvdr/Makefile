@@ -11,6 +11,9 @@ DISTNAME=	pipelka-${PORTNAME}-xvdr-${PORTVERSION}-0-g${GITHASH}
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Video Disk Recorder - XVDR server plugin
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GITHASH=	e4cab47
 PATCH_STRIP=	-p1
 HAVE_CONFIGURE=	yes
