@@ -9,7 +9,7 @@ MASTER_SITES=	http://cdn.sencha.com/ext/gpl/ \
 		http://mirror.joehorn.idv.tw/extjs/
 DISTNAME=	ext-${PORTVERSION}-gpl
 
-MAINTAINER=	joehorn@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JavaScript platform for rapid development of cross-browser web apps
 
 LICENSE=	GPLv3
