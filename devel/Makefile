@@ -5167,6 +5167,7 @@
     SUBDIR += winpdb
     SUBDIR += wizardkit
     SUBDIR += wxGlade
+    SUBDIR += wxformbuilder
     SUBDIR += xa65
     SUBDIR += xc3sprog
     SUBDIR += xdg-user-dirs
