@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	iojs
-PORTVERSION=	3.0.0
+PORTVERSION=	3.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -17,6 +17,8 @@ GH_ACCOUNT=	nodejs
 GH_PROJECT=	io.js
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
+WRKSRC=	${WRKDIR}/node-${PORTVERSION}
 
 CONFLICTS=	node-0.[02-9][0-9]* node-devel-0.[0-9]*
 
