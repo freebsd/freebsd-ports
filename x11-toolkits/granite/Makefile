@@ -9,7 +9,7 @@ MASTER_SITES=	https://launchpadlibrarian.net/215905441/ \
 	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/
 
 MAINTAINER=	olivierd@FreeBSD.org
-COMMENT=	Extensions of GTK3 toolkit
+COMMENT=	Extensions of GTK+3 toolkit
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
