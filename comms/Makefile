@@ -63,6 +63,7 @@
     SUBDIR += gsmlib
     SUBDIR += gstreamer1-plugins-spandsp
     SUBDIR += gtkmmorse
+    SUBDIR += hackrf
     SUBDIR += hamfax
     SUBDIR += hamlib
     SUBDIR += hcidump
