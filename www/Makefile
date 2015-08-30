@@ -1702,6 +1702,7 @@
     SUBDIR += py-py-restclient
     SUBDIR += py-pyjwt
     SUBDIR += py-pylons
+    SUBDIR += py-pyocclient
     SUBDIR += py-pyquery
     SUBDIR += py-pyramid
     SUBDIR += py-pyramid_rpc
