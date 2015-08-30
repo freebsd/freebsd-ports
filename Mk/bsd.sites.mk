@@ -1027,6 +1027,7 @@ MASTER_SITE_PERL_CPAN?=
 
 MASTER_SITE_PERL_CPAN_BY+= \
 	http://cpan.metacpan.org/%CPANSORT%/%SUBDIR%/ \
+	http://cpan.metacpan.org/modules/by-module/%SUBDIRPLUS%/ \
 	http://www.cpan.org/%CPANSORT%/%SUBDIR%/ \
 	ftp://ftp.cpan.org/pub/CPAN/%CPANSORT%/%SUBDIR%/ \
 	http://www.cpan.dk/%CPANSORT%/%SUBDIR%/ \
@@ -1038,7 +1039,6 @@ MASTER_SITE_PERL_CPAN_BY+= \
 	http://backpan.perl.org/%CPANSORT%/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/languages/perl/CPAN/%CPANSORT%/%SUBDIR%/ \
 	http://ftp.twaren.net/Unix/Lang/CPAN/%CPANSORT%/%SUBDIR%/ \
-	http://cpan.metacpan.org/modules/by-module/%SUBDIRPLUS%/ \
 	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%SUBDIRPLUS%/
 
 _PERL_CPAN_FLAG=${MASTER_SITE_SUBDIR:C/(CPAN):.*$/\1/}
