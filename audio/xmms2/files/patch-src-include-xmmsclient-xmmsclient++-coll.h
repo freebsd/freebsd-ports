@@ -1,6 +1,6 @@
---- src/include/xmmsclient/xmmsclient++/coll.h.orig	2013-05-24 12:04:02.505430442 +0200
-+++ src/include/xmmsclient/xmmsclient++/coll.h	2013-05-24 12:07:11.694426120 +0200
-@@ -612,7 +612,7 @@
+--- src/include/xmmsclient/xmmsclient++/coll.h.orig	2011-10-20 19:26:08 UTC
++++ src/include/xmmsclient/xmmsclient++/coll.h
+@@ -612,7 +612,7 @@ namespace Xmms 
  
  		template< typename keyT, typename valT >
  		AbstractElement< keyT, valT >::AbstractElement( const Coll& coll, keyT index )

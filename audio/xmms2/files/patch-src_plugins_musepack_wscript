@@ -1,5 +1,5 @@
---- src/plugins/musepack/wscript.orig	2010-09-10 22:55:03.412930402 +0200
-+++ src/plugins/musepack/wscript	2010-09-10 23:02:05.738208553 +0200
+--- src/plugins/musepack/wscript.orig	2011-10-20 19:26:08 UTC
++++ src/plugins/musepack/wscript
 @@ -8,7 +8,7 @@ def plugin_configure(conf):
          conf.check_cc(header_name="mpcdec/mpcdec.h", defines="HAVE_MPCDEC_OLD",
                  uselib_store="mpcdec")
