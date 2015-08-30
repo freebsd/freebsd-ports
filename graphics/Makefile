@@ -329,6 +329,7 @@
     SUBDIR += guilib
     SUBDIR += gwenview-kde4
     SUBDIR += gx
+    SUBDIR += hdr_tools
     SUBDIR += hobbes-icons-xpm
     SUBDIR += hppsmtools
     SUBDIR += hs-HGL
