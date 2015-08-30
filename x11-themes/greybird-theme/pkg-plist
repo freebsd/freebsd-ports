@@ -48,6 +48,15 @@ share/themes/Greybird/gtk-3.0/assets/radio-selected.png
 share/themes/Greybird/gtk-3.0/assets/radio-unselected-insensitive.png
 share/themes/Greybird/gtk-3.0/assets/radio-unselected.png
 share/themes/Greybird/gtk-3.0/assets/resize-grip.png
+share/themes/Greybird/gtk-3.0/assets/titlebutton-close-active.png
+share/themes/Greybird/gtk-3.0/assets/titlebutton-close-hover.png
+share/themes/Greybird/gtk-3.0/assets/titlebutton-close.png
+share/themes/Greybird/gtk-3.0/assets/titlebutton-maximize-active.png
+share/themes/Greybird/gtk-3.0/assets/titlebutton-maximize-hover.png
+share/themes/Greybird/gtk-3.0/assets/titlebutton-maximize.png
+share/themes/Greybird/gtk-3.0/assets/titlebutton-minimize-active.png
+share/themes/Greybird/gtk-3.0/assets/titlebutton-minimize-hover.png
+share/themes/Greybird/gtk-3.0/assets/titlebutton-minimize.png
 share/themes/Greybird/gtk-3.0/gtk-widgets-assets.css
 share/themes/Greybird/gtk-3.0/gtk-widgets.css
 share/themes/Greybird/gtk-3.0/gtk.css
