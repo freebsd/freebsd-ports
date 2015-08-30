@@ -3,6 +3,7 @@
 
 PORTNAME=	Moose
 PORTVERSION=	2.1603
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -15,12 +16,12 @@ COMMENT=	Complete modern object system for Perl 5
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-# Do not add devel/p5-Data-Visitor to TEST_DEPENDS to avoid cyclic dependency in tinderbox
+# Do not add p5-Data-Visitor to TEST_DEPENDS to avoid cyclic dependency
 BUILD_DEPENDS=	p5-Class-Load>=0.09:${PORTSDIR}/devel/p5-Class-Load \
 		p5-Class-Load-XS>=0.01:${PORTSDIR}/devel/p5-Class-Load-XS \
 		p5-Data-OptList>=0.107:${PORTSDIR}/devel/p5-Data-OptList \
 		p5-Devel-GlobalDestruction>=0:${PORTSDIR}/devel/p5-Devel-GlobalDestruction \
-		p5-Devel-OverloadInfo>=0.002:${PORTSDIR}/devel/p5-Devel-OverloadInfo \
+		p5-Devel-OverloadInfo>=0.004:${PORTSDIR}/devel/p5-Devel-OverloadInfo \
 		p5-Devel-StackTrace>=1.33:${PORTSDIR}/devel/p5-Devel-StackTrace \
 		p5-Eval-Closure>=0.04:${PORTSDIR}/devel/p5-Eval-Closure \
 		p5-List-MoreUtils>=0.28:${PORTSDIR}/lang/p5-List-MoreUtils \
@@ -73,5 +74,8 @@ post-patch:
 BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.35:${PORTSDIR}/lang/p5-Scalar-List-Utils
 RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.35:${PORTSDIR}/lang/p5-Scalar-List-Utils
 .endif
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Moose/Moose.so
 
 .include <bsd.port.post.mk>
