@@ -1,6 +1,8 @@
 bin/midori
 etc/xdg/midori/extensions/adblock/config
 etc/xdg/midori/search
+%%GIR%%lib/girepository-1.0/Katze-%%VERSION%%.typelib
+%%GIR%%lib/girepository-1.0/Midori-%%VERSION%%.typelib
 lib/libmidori-core.so
 lib/libmidori-core.so.0.0.0
 lib/libmidori-core.so.1
@@ -52,6 +54,9 @@ share/icons/hicolor/16x16/status/internet-news-reader.png
 share/icons/hicolor/22x22/apps/midori.png
 share/icons/hicolor/22x22/categories/extension.png
 share/icons/hicolor/22x22/status/internet-news-reader.png
+share/icons/hicolor/24x24/status/adblock-blocked.svg
+share/icons/hicolor/24x24/status/adblock-disabled.svg
+share/icons/hicolor/24x24/status/adblock-enabled.svg
 share/icons/hicolor/scalable/apps/midori.svg
 share/icons/hicolor/scalable/categories/extension.svg
 share/icons/hicolor/scalable/status/internet-news-reader.svg
@@ -94,6 +99,7 @@ share/locale/ka/LC_MESSAGES/midori.mo
 share/locale/kk/LC_MESSAGES/midori.mo
 share/locale/km/LC_MESSAGES/midori.mo
 share/locale/ko/LC_MESSAGES/midori.mo
+share/locale/ku/LC_MESSAGES/midori.mo
 share/locale/ky/LC_MESSAGES/midori.mo
 share/locale/lb/LC_MESSAGES/midori.mo
 share/locale/lt/LC_MESSAGES/midori.mo
@@ -131,15 +137,11 @@ share/locale/zh_HK/LC_MESSAGES/midori.mo
 share/locale/zh_TW/LC_MESSAGES/midori.mo
 %%DATADIR%%/res/about.css
 %%DATADIR%%/res/adblock.list
-%%DATADIR%%/res/adblock/blocked.png
-%%DATADIR%%/res/adblock/disabled.png
 %%DATADIR%%/res/adblock/element_hider.js
-%%DATADIR%%/res/adblock/enabled.png
 %%DATADIR%%/res/autosuggestcontrol.css
 %%DATADIR%%/res/autosuggestcontrol.js
 %%DATADIR%%/res/bookmarks/Create.sql
 %%DATADIR%%/res/bookmarks/Import_old_db_bookmarks.sql
-%%DATADIR%%/res/close.png
 %%DATADIR%%/res/error.html
 %%DATADIR%%/res/flummi/Create.sql
 %%DATADIR%%/res/forms/Create.sql
