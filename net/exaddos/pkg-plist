@@ -42,7 +42,5 @@ www/exaddos/html/index.html
 www/exaddos/html/overview.html
 www/exaddos/html/talkers.html
 www/exaddos/html/talker.html
-@unexec if cmp -s %D/etc/exaddos/exaddos.conf %D/etc/exaddos/exaddos.conf.sample ; then rm -f %D/etc/exaddos/exaddos.conf ; fi
-etc/exaddos/exaddos.conf.sample
-@exec if [ ! -f %D/etc/exaddos/exaddos.conf ]; then cp -p %D/%F %B/exaddos.conf; fi
+@sample etc/exaddos/exaddos.conf.sample
 @unexec if [ -d %D/%%ETCDIR%% ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/etc/exaddos`` to remove any configuration files left."; fi
