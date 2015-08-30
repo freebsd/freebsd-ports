@@ -6,8 +6,8 @@ lib/elixir/lib/geo/ebin/Elixir.Geo.MultiPoint.beam
 lib/elixir/lib/geo/ebin/Elixir.Geo.MultiPolygon.beam
 lib/elixir/lib/geo/ebin/Elixir.Geo.Point.beam
 lib/elixir/lib/geo/ebin/Elixir.Geo.Polygon.beam
-%%POSTGIS%%lib/elixir/lib/geo/ebin/Elixir.Geo.PostGIS.Extension.beam
-%%POSTGIS%%lib/elixir/lib/geo/ebin/Elixir.Geo.PostGIS.beam
+lib/elixir/lib/geo/ebin/Elixir.Geo.PostGIS.Extension.beam
+lib/elixir/lib/geo/ebin/Elixir.Geo.PostGIS.beam
 lib/elixir/lib/geo/ebin/Elixir.Geo.Utils.beam
 lib/elixir/lib/geo/ebin/Elixir.Geo.WKB.Reader.beam
 lib/elixir/lib/geo/ebin/Elixir.Geo.WKB.Writer.beam
@@ -31,8 +31,8 @@ lib/elixir/lib/geo/lib/geo/multi_point.ex
 lib/elixir/lib/geo/lib/geo/multi_polygon.ex
 lib/elixir/lib/geo/lib/geo/point.ex
 lib/elixir/lib/geo/lib/geo/polygon.ex
-%%POSTGIS%%lib/elixir/lib/geo/lib/geo/postgis.ex
-%%POSTGIS%%lib/elixir/lib/geo/lib/geo/postgis/extension.ex
+lib/elixir/lib/geo/lib/geo/postgis.ex
+lib/elixir/lib/geo/lib/geo/postgis/extension.ex
 lib/elixir/lib/geo/lib/geo/utils.ex
 lib/elixir/lib/geo/lib/geo/wkb.ex
 lib/elixir/lib/geo/lib/geo/wkb/reader.ex
