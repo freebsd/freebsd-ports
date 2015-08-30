@@ -44,22 +44,18 @@ PORTDOCS=	INSTALL.txt MANIFEST README.rst RELEASE-0.75.0 \
 		RELEASE-0.75.1 RELEASE-0.75.2 UPGRADE-0.75.0
 PORTEXAMPLES=	*
 
-.include <bsd.port.options.mk>
-
 post-install:
 .for f in office pdf web xml
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/${f}/*.so
 .endfor
 
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
-.if ${PORT_OPTIONS:MEXAMPLES}
+post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/docs/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 regression-test: build
 	cd ${WRKSRC}/test && ${PYTHON_CMD} test.py
