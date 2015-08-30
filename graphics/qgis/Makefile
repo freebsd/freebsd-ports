@@ -3,7 +3,7 @@
 
 PORTNAME=	qgis
 PORTVERSION=	2.10.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics geography
 
 MAINTAINER=	rhurlin@gwdg.de
@@ -26,7 +26,7 @@ USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME:tu}
 GH_TAGNAME=	e5928c7
 
-USES=		cpe bison cmake fortran iconv:wchar_t gmake python
+USES=		cpe bison cmake fortran gmake python
 USE_SQLITE=	yes
 USE_QT4=	gui svg xml network sql designer testlib linguist_build \
 		qmake_build moc_build rcc_build uic_build
