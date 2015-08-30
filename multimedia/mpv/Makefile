@@ -134,7 +134,7 @@ XINERAMA_IMPLIES=		X11
 
 ZSH_USES=			perl5
 ZSH_USE=			PERL5=build
-ZSH_CONFIGURE_OFF=		--disable-zsh-comp
+ZSH_CONFIGURE_ENABLE=		zsh-comp
 
 .include <bsd.port.options.mk>
 
