@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	midori
-PORTVERSION=	0.5.10
+PORTVERSION=	0.5.11
 CATEGORIES=	www xfce
-MASTER_SITES=	http://www.midori-browser.org/downloads/
-DISTNAME=	${PORTNAME}_${PORTVERSION}_all_
+MASTER_SITES=	https://launchpadlibrarian.net/215909491/ \
+	https://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
@@ -27,55 +27,31 @@ CFLAGS+=	-Wno-return-type
 CMAKE_ARGS=	-DUSE_APIDOCS:BOOL=OFF \
 	-DUSE_GRANITE:BOOL=OFF
 
-#WRKSRC=	${WRKDIR}/${DISTNAME:C/([a-z]*)_([0-9\.]*)(_all_)/\1-\2/}
-NO_WRKSUBDIR=	yes
 USE_GNOME=	glib20 intltool libxml2
 USE_XORG=	xscrnsaver
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-USES=		desktop-file-utils pkgconfig cmake gettext tar:bzip2
+USES=		cmake desktop-file-utils gettext pkgconfig tar:bzip2
 USE_SQLITE=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION:R}"
 
-OPTIONS_DEFINE=	GIR ZEITGEIST
-OPTIONS_SINGLE=	GTK
-OPTIONS_SINGLE_GTK=	GTK2 GTK3
-OPTIONS_DEFAULT=	GTK2
-GIR_DESC=	GObject Introspection
-ZEITGEIST_DESC=	User logs activities
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGTK2}
-LIB_DEPENDS+=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
-USE_GNOME+=	gtk20
-CMAKE_ARGS+=	-DUSE_GTK3:BOOL=OFF
-.endif
-
-.if ${PORT_OPTIONS:MGTK3}
-LIB_DEPENDS+=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3
-USE_GNOME+=	gtk30
-CMAKE_ARGS+=	-DUSE_GTK3:BOOL=ON \
+OPTIONS_DEFINE=	GIR GTK3 ZEITGEIST
+OPTIONS_SUB=	yes
+GIR_PREVENTS=	GTK3
+GIR_USE=	gnome=introspection:build
+GIR_CMAKE_ON=	-DUSE_GIR:BOOL=ON
+GTK3_LIB_DEPENDS=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3
+GTK3_USE=	gnome=gtk30
+GTK3_CMAKE_ON=	-DUSE_GTK3:BOOL=ON \
 	-DHALF_BRO_INCOM_WEBKIT2:BOOL=OFF
-.endif
-
-.if ${PORT_OPTIONS:MZEITGEIST}
-BROKEN=		Doesn't build with zeitgeist >= 0.9.0
-LIB_DEPENDS+=	libzeitgeist-2.0.so:${PORTSDIR}/sysutils/zeitgeist
-CMAKE_ARGS+=	-DUSE_ZEITGEIST:BOOL=ON
-.else
-CMAKE_ARGS+=	-DUSE_ZEITGEIST:BOOL=OFF
-.endif
-
-.if ${PORT_OPTIONS:MGIR} && ${PORT_OPTIONS:MGTK2}
-USE_GNOME+=	introspection:build
-CMAKE_ARGS+=	-DUSE_GIR:BOOL=ON
-PLIST_SUB+=	GIR=""
-.else
-CMAKE_ARGS+=	-DUSE_GIR:BOOL=OFF
-PLIST_SUB+=	GIR="@comment "
-.endif
+GTK3_LIB_DEPENDS_OFF=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
+GTK3_USE_OFF=	gnome=gtk20
+GTK3_CMAKE_OFF=	-DUSE_GTK3:BOOL=OFF
+ZEITGEIST_LIB_DEPENDS=	libzeitgeist-2.0.so:${PORTSDIR}/sysutils/zeitgeist
+ZEITGEIST_CMAKE_OFF=	-DUSE_ZEITGEIST:BOOL=OFF
+GIR_DESC=	Install GObject Introspection Reference manual
+ZEITGEIST_DESC=	User logs activities
 
 post-patch:
 # Avoid errors with CMake
