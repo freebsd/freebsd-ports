@@ -1,5 +1,5 @@
---- src/plugins/avcodec/avcodec_compat.h.orig	2011-10-20 21:26:08.000000000 +0200
-+++ src/plugins/avcodec/avcodec_compat.h	2014-02-27 18:38:22.000000000 +0100
+--- src/plugins/avcodec/avcodec_compat.h.orig	2011-10-20 19:26:08 UTC
++++ src/plugins/avcodec/avcodec_compat.h
 @@ -1,7 +1,7 @@
  /** @file avcodec_compat.h
   *  Compatibility header for libavcodec backwards compatibility
@@ -17,12 +17,8 @@
 - * avcodec_decode_audio in versions earlier than 51.28 */
 -#if LIBAVCODEC_VERSION_INT < 0x331c00
 -# define avcodec_decode_audio2 avcodec_decode_audio
-+/* Map avcodec_free_frame to av_freep if the former doesn't exist.
-+ * (This is in versions earlier than 54.28.0 (libav) or 54.59.100 (ffmpeg)) */
-+#if ! HAVE_AVCODEC_FREE_FRAME
-+# define avcodec_free_frame av_freep
- #endif
- 
+-#endif
+-
 -/* Handle API change that happened in libavcodec 52.00 */
 -#if LIBAVCODEC_VERSION_INT < 0x340000
 -# define CONTEXT_BPS(codecctx) (codecctx)->bits_per_sample
@@ -46,13 +42,7 @@
 -    (pkt)->data = NULL; \
 -    (pkt)->size = 0; \
 -  } while(0)
-+/* Map av_frame_alloc, av_frame_unref, av_frame_free into their
-+ * deprecated versions in versions earlier than 55.28.1 */
-+#if LIBAVCODEC_VERSION_INT < 0x371c01
-+# define av_frame_alloc avcodec_alloc_frame
-+# define av_frame_unref avcodec_get_frame_defaults
-+# define av_frame_free avcodec_free_frame
- #endif
+-#endif
 -
 -/* Map avcodec_decode_audio3 into the deprecated version
 - * avcodec_decode_audio2 in versions earlier than 52.26 */
@@ -60,10 +50,20 @@
 -# define avcodec_decode_audio3(avctx, samples, frame_size_ptr, avpkt) \
 -    avcodec_decode_audio2(avctx, samples, frame_size_ptr, \
 -                          (avpkt)->data, (avpkt)->size)
--#endif
--
++/* Map avcodec_free_frame to av_freep if the former doesn't exist.
++ * (This is in versions earlier than 54.28.0 (libav) or 54.59.100 (ffmpeg)) */
++#if ! HAVE_AVCODEC_FREE_FRAME
++# define avcodec_free_frame av_freep
+ #endif
+ 
 -/* Handle API change that happened in libavcodec 52.64 */
 -#if LIBAVCODEC_VERSION_INT < 0x344000
 -# define AVMEDIA_TYPE_AUDIO CODEC_TYPE_AUDIO
--#endif
++/* Map av_frame_alloc, av_frame_unref, av_frame_free into their
++ * deprecated versions in versions earlier than 55.28.1 */
++#if LIBAVCODEC_VERSION_INT < 0x371c01
++# define av_frame_alloc avcodec_alloc_frame
++# define av_frame_unref avcodec_get_frame_defaults
++# define av_frame_free avcodec_free_frame
+ #endif
 -

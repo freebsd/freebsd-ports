@@ -3,11 +3,11 @@ bin/nyxmms2
 %%VISUAL%%bin/vistest-fft
 bin/xmms2
 %%ET%%bin/xmms2-et
-%%MDNS_AVAHI%%bin/xmms2-find-avahi
+%%MDNS%%%%MDNS_AVAHI%%bin/xmms2-find-avahi
 bin/xmms2-launcher
 %%VISUAL%%bin/xmms2-libvisual
-%%MDNS_AVAHI%%bin/xmms2-mdns-avahi
-%%MDNS_APPLE%%bin/xmms2-mdns-dnssd
+%%MDNS%%%%MDNS_AVAHI%%bin/xmms2-mdns-avahi
+%%MDNS%%%%MDNS_APPLE%%bin/xmms2-mdns-dnssd
 %%FAM%%bin/xmms2-mlib-updater
 %%VISUAL%%%%VORBIS%%bin/xmms2-ripper
 bin/xmms2d
@@ -103,7 +103,7 @@ lib/libxmmsclient.so.6.0.0
 %%JACK%%%%LIBDIR%%/libxmms_jack.so
 %%LIBDIR%%/libxmms_karaoke.so
 %%LIBDIR%%/libxmms_m3u.so
-%%MAC%%%%LIBDIR%%/libxmms_mac.so
+%%APE%%%%LIBDIR%%/libxmms_mac.so
 %%MAD%%%%LIBDIR%%/libxmms_mad.so
 %%MMS%%%%LIBDIR%%/libxmms_mms.so
 %%MODPLUG%%%%LIBDIR%%/libxmms_modplug.so
@@ -116,7 +116,7 @@ lib/libxmmsclient.so.6.0.0
 %%OFA%%%%LIBDIR%%/libxmms_ofa.so
 %%LIBDIR%%/libxmms_oss.so
 %%LIBDIR%%/libxmms_pls.so
-%%PULSE%%%%LIBDIR%%/libxmms_pulse.so
+%%PULSEAUDIO%%%%LIBDIR%%/libxmms_pulse.so
 %%LIBDIR%%/libxmms_replaygain.so
 %%XML%%%%LIBDIR%%/libxmms_rss.so
 %%SAMBA%%%%LIBDIR%%/libxmms_samba.so
@@ -136,7 +136,7 @@ libdata/pkgconfig/xmms2-client.pc
 libdata/pkgconfig/xmms2-plugin.pc
 %%ET%%man/man1/xmms2-et.1.gz
 man/man1/xmms2-launcher.1.gz
-%%MDNS_AVAHI%%man/man1/xmms2-mdns-avahi.1.gz
+%%MDNS%%%%MDNS_AVAHI%%man/man1/xmms2-mdns-avahi.1.gz
 man/man1/xmms2.1.gz
 man/man1/xmms2d.1.gz
 share/pixmaps/xmms2-128.png
@@ -148,7 +148,7 @@ share/pixmaps/xmms2-white-on-black.svg
 share/pixmaps/xmms2.svg
 %%DATADIR%%/mind.in.a.box-lament_snipplet.ogg
 %%ET%%%%DATADIR%%/scripts/startup.d/xmms2-et-launcher.sh
-%%MDNS_AVAHI%%%%DATADIR%%/scripts/startup.d/xmms2-mdns-launcher.sh
-%%MDNS_APPLE%%%%DATADIR%%/scripts/startup.d/xmms2-mdns-launcher.sh
+%%MDNS%%%%MDNS_AVAHI%%%%DATADIR%%/scripts/startup.d/xmms2-mdns-launcher.sh
+%%MDNS%%%%MDNS_APPLE%%%%DATADIR%%/scripts/startup.d/xmms2-mdns-launcher.sh
 %%FAM%%%%DATADIR%%/scripts/startup.d/xmms2-mlib-updater.sh
 @dir %%DATADIR%%/scripts/startup.d
