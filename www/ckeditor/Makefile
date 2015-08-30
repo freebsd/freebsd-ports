@@ -7,7 +7,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://download.cksource.com/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}/
 DISTNAME=	ckeditor_${PORTVERSION}_full
 
-MAINTAINER=	joehorn@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WYSIWYG editor to be used inside web page
 
 LICENSE=	MPL

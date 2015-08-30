@@ -7,7 +7,7 @@ CATEGORIES=	www pear
 MASTER_SITES=	http://pear.twig-project.org/get/
 DISTNAME=	Twig-${PORTVERSION}
 
-MAINTAINER=	joehorn@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The flexible, fast, and secure template engine for PHP
 
 LICENSE=	BSD3CLAUSE
