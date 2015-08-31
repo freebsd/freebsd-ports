@@ -114,3 +114,5 @@ SHA256 (calio-form-input-nginx-module-v0.07_GH0.tar.gz) = c0c56cc697a290e98b88d4
 SIZE (calio-form-input-nginx-module-v0.07_GH0.tar.gz) = 10563
 SHA256 (calio-iconv-nginx-module-v0.10_GH0.tar.gz) = 88e326eba7fdf9fd2376b1ba033b48cb0eee45136528cf5430ac9340088ce324
 SIZE (calio-iconv-nginx-module-v0.10_GH0.tar.gz) = 12513
+SHA256 (nginx-shib-nginx-http-shibboleth-v20150121_GH0.tar.gz) = e38a19bb4d30e5487c013c4b6b3e3d5b96de82d63b776471cc2c381a5d00374d
+SIZE (nginx-shib-nginx-http-shibboleth-v20150121_GH0.tar.gz) = 10106
