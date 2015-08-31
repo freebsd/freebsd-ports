@@ -780,6 +780,8 @@
     SUBDIR += py-tarantool
     SUBDIR += py-umemcache
     SUBDIR += py-whisper
+    SUBDIR += pypy-gdbm
+    SUBDIR += pypy-sqlite3
     SUBDIR += pydbx
     SUBDIR += pymongo
     SUBDIR += pyspatialite
