@@ -112,6 +112,10 @@ post-patch:
 		s|-Werror|| ; \
 		s|#define HAVE_SYS_INOTIFY_H 1||' ${WRKSRC}/configure
 
+post-configure:
+	@${REINPLACE_CMD} -e 's|HAVE_MACH_MACH_TIME_H 1|HAVE_MACH_MACH_TIME_H 0|g' \
+		${WRKSRC}/config.h
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/GConf/gsettings
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gio/modules

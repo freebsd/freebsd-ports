@@ -1,8 +1,8 @@
---- config.h.in.orig	2015-05-13 02:50:38 UTC
-+++ config.h.in
-@@ -174,6 +174,9 @@
- /* Define to 1 if you have the `getresuid' function. */
- #undef HAVE_GETRESUID
+--- config.h.in.orig	2008-03-18 18:24:24.000000000 -0400
++++ config.h.in	2008-03-18 18:24:59.000000000 -0400
+@@ -197,6 +197,9 @@
+ /* Define to 1 if you have the `getpwuid' function. */
+ #undef HAVE_GETPWUID
  
 +/* Define to 1 if you have the `sysctlbyname' function. */
 +#undef HAVE_SYSCTLBYNAME
@@ -10,12 +10,3 @@
  /* Define if the GNU gettext() function is already present or preinstalled. */
  #undef HAVE_GETTEXT
  
-@@ -269,7 +272,7 @@
- #undef HAVE_LSTAT
- 
- /* Define to 1 if you have the <mach/mach_time.h> header file. */
--#undef HAVE_MACH_MACH_TIME_H
-+#define HAVE_MACH_MACH_TIME_H 0
- 
- /* Define to 1 if you have the <malloc.h> header file. */
- #undef HAVE_MALLOC_H
