@@ -1,14 +1,22 @@
---- Makefile.in.orig	2006-05-22 11:49:21.000000000 -0500
-+++ Makefile.in	2011-03-25 14:18:34.000000000 -0500
-@@ -48,3 +48,3 @@
+--- Makefile.in.orig	2006-05-22 16:49:21 UTC
++++ Makefile.in
+@@ -46,7 +46,7 @@ LIBS = @LIBS@
+ CFLAGS = @CFLAGS@
+ CPPFLAGS = @CPPFLAGS@
  INCLUDEFLAGS =
 -LDFLAGS =
 +LDFLAGS = @LDFLAGS@
  
-@@ -56,4 +56,4 @@
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+@@ -54,8 +54,8 @@ bindir = @bindir@
+ mandir = @mandir@
+ 
  # Installation locations
 -if [ ! $bindir ] ; then bindir = $(exec_prefix)/bin; fi
 -if [ ! $mandir ] ; then mandir = $(prefix)/man; fi
 +# if [ ! $bindir ] ; then bindir = $(exec_prefix)/bin; fi
 +# if [ ! $mandir ] ; then mandir = $(prefix)/man; fi
  
+ #### This is just a test---feel free to delete ###
+ printdirs:
