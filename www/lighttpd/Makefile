@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	lighttpd
-PORTVERSION=	1.4.36
+PORTVERSION=	1.4.37
 CATEGORIES?=	www
 MASTER_SITES?=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
 
@@ -63,6 +63,7 @@ LUA_CONFIGURE_WITH=     lua
 LUA_CONFIGURE_ENV=      LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER}"
 MEMCACHE_LIB_DEPENDS=   libmemcache.so:${PORTSDIR}/databases/libmemcache
 MEMCACHE_CONFIGURE_WITH=memcache
+MYSQLAUTH_IMPLIES=	 MYSQL
 SPAWNFCGI_RUN_DEPENDS=  spawn-fcgi:${PORTSDIR}/www/spawn-fcgi
 VALGRIND_BUILD_DEPENDS= valgrind:${PORTSDIR}/devel/valgrind
 VALGRIND_RUN_DEPENDS=   valgrind:${PORTSDIR}/devel/valgrind
@@ -172,25 +173,25 @@ post-patch:
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/lighttpd/conf.d ${STAGEDIR}${PREFIX}/etc/lighttpd/vhosts.d
 .for FILE in ${LIGHTTPD_CONF_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/doc/config/${FILE} \
+	${INSTALL_DATA} ${WRKSRC}/doc/config/${FILE} \
 		${STAGEDIR}${PREFIX}/etc/lighttpd/${FILE}.sample
 .endfor
 .for FILE in ${LIGHTTPD_CONF_D_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/doc/config/conf.d/${FILE} \
+	${INSTALL_DATA} ${WRKSRC}/doc/config/conf.d/${FILE} \
 		${STAGEDIR}${PREFIX}/etc/lighttpd/conf.d/${FILE}.sample
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/doc/config/vhosts.d/vhosts.template \
+	${INSTALL_DATA} ${WRKSRC}/doc/config/vhosts.d/vhosts.template \
 		${STAGEDIR}${PREFIX}/etc/lighttpd/vhosts.d/vhosts.template
 
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 . for FILE in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}/${FILE}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}/${FILE}
 . endfor
 .endif
 .if ${PORT_OPTIONS:MMYSQLAUTH}
 . for FILE in README.mysqlauth mysql_auth.sql
-	@${INSTALL_DATA} ${FILESDIR}/${FILE} ${STAGEDIR}${DOCSDIR}/${FILE}
+	${INSTALL_DATA} ${FILESDIR}/${FILE} ${STAGEDIR}${DOCSDIR}/${FILE}
 . endfor
 .endif
 	@${MKDIR} -m 0700 ${STAGEDIR}${LIGHTTPD_LOGROOT}
