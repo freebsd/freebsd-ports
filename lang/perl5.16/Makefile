@@ -37,7 +37,7 @@ USE_PERL_DESC=		Rewrite links in /usr/bin
 PORTSCOUT=	limit:^${PERL_VER}.
 
 # Remember to update Mk/Uses/perl5.mk too.
-PERL_VERSION=	5.16.3
+.include "version.mk"
 PERL_VER=	${PERL_VERSION:C/\.[0-9]+$//}
 PERL_ARCH=	mach
 SITE_PERL_REL?=	lib/perl5/site_perl
@@ -156,12 +156,6 @@ LIB_DEPENDS+=		libgdbm.so:${PORTSDIR}/databases/gdbm
 CONFIGURE_ARGS+=	-Ui_gdbm
 .endif
 
-.if ${OSVERSION} >= 900022
-PLIST_SUB+=	MANCONF=""
-.else
-PLIST_SUB+=	MANCONF="@comment "
-.endif
-
 .if ${PORT_OPTIONS:MTHREADS}
 #XXX .if ${ARCH} == "amd64"
 #XXX IGNORE=	Threaded perl does not pass tests on ${ARCH}
@@ -242,9 +236,7 @@ post-install:
 			${STRIP_CMD} $$f; \
 			${CHMOD} 444 $$f; \
 		done
-.if ${OSVERSION} >= 900022
 	${INSTALL_DATA} ${WRKDIR}/perl-man.conf ${STAGEDIR}${PREFIX}/etc/man.d/perl${PERL_VER}.conf
-.endif
 
 test: build
 	(cd ${WRKSRC}; TEST_JOBS=${MAKE_JOBS_NUMBER} make test_harness)
