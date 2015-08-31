@@ -9,8 +9,6 @@ DISTINFO_FILE=	${.CURDIR}/../../devel/geany-plugins/distinfo
 BUILD_DEPENDS+=	${LOCALBASE}/bin/geany:${PORTSDIR}/devel/geany
 RUN_DEPENDS+=	${LOCALBASE}/bin/geany:${PORTSDIR}/devel/geany
 
-EXTRA_PATCHES=  ${.CURDIR}/../../devel/geany-plugins/files/extrapatch-configure
-
 GNU_CONFIGURE=	yes
 USES+=		gettext-tools gmake libtool pkgconfig tar:bzip2
 USE_GNOME+=	gtk20 intltool
@@ -21,6 +19,8 @@ GEANY_PLUGIN=	po
 po_SWITCH=	--enable-nls
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+.else
+INSTALL_TARGET=	install-strip
 .endif
 
 GEANY_PLUGIN?=			${PORTNAME:S,geany-plugin-,,}
@@ -29,25 +29,15 @@ ${GEANY_PLUGIN}_SWITCH?=	--enable-${${GEANY_PLUGIN}_DIR}
 
 CONFIGURE_ARGS+=	${${GEANY_PLUGIN}_SWITCH}
 
+.if defined(VERBOSE_BUILD) || defined(PACKAGE_BUILDING)
+CONFIGURE_ARGS+=	--disable-silent-rules
+.endif
+
 BUILD_WRKSRC=	${WRKSRC}/${${GEANY_PLUGIN}_DIR}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 DATADIR=	share/geany-plugins
 DOCSDIR=	share/doc/geany-plugins
-
-.include <bsd.port.options.mk>
-
-.if ${PORTNAME} != "geany-plugins-l10n"
-. if ${PORT_OPTIONS:MNLS}
-USES+=	gettext-runtime
-. else
-CONFIGURE_ARGS+=	--disable-nls
-. endif
-.endif
-
-pre-configure:
-	${REINPLACE_CMD} -e 's,zlib,,g' \
-		${WRKSRC}/configure
 
 post-configure:
 	${FIND} ${BUILD_WRKSRC} -name Makefile | ${XARGS} \

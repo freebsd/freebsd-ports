@@ -7850,3 +7850,4 @@ print/ghostscript9-agpl|print/ghostscript9-agpl-base|2015-08-22|Split into print
 print/ghostscript9-agpl-nox11|print/ghostscript9-agpl-base|2015-08-22|Integrated into print/ghostscript9-agpl-base
 www/pelican|www/py-pelican|2015-08-29|Rename to match Python naming conventions
 devel/ninja16|devel/ninja|2015-08-29|Use devel/ninja instead
+devel/geany-plugin-gproject|devel/geany-plugin-projectorganizer|2015-08-31|Renamed to match upstream naming

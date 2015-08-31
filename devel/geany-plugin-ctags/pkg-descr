@@ -1,0 +1,11 @@
+GeanyCtags adds a simple support for generating and querying ctags
+files for a Geany project.
+
+Even though Geany supports symbol definition searching by itself
+within the open files (and with a plugin support within the whole
+project), tag regeneration can become too slow for really big
+projects.  This is why this plugin was created.  It makes it possible
+to generate the tag file only once and just query it when searching
+for a particular symbol definition/declaration.
+
+WWW: http://plugins.geany.org/geanyctags.html

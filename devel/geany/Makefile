@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geany
-PORTVERSION=	1.24.1
+PORTVERSION=	1.25
 CATEGORIES=	devel editors
 MASTER_SITES=	http://download.geany.org/ SF
 
@@ -18,6 +18,8 @@ USES=		desktop-file-utils gettext-tools \
 		gmake libtool pathfix pkgconfig tar:bzip2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	VTE NLS DOCS
 OPTIONS_DEFAULT=	VTE
