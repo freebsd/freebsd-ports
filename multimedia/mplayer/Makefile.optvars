@@ -82,6 +82,8 @@ RTC_BUILD_DEPENDS=	${LOCALBASE}/modules/rtc.ko:${PORTSDIR}/emulators/rtc
 RTC_RUN_DEPENDS=	${LOCALBASE}/modules/rtc.ko:${PORTSDIR}/emulators/rtc
 RTC_CONFIGURE_ENABLE=	rtc
 
+RTCPU_CONFIGURE_ON=	--enable-runtime-cpudetection
+
 SCHROEDINGER_LIB_DEPENDS=	libschroedinger-1.0.so:${PORTSDIR}/multimedia/schroedinger
 SCHROEDINGER_CONFIGURE_OFF=	--disable-libschroedinger-lavc
 
