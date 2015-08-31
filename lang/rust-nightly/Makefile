@@ -54,6 +54,7 @@ RUST_VSN=	${PORTVERSION:R}
 RUST_CHANNEL=	${PORTNAME:S/^rust-//}
 RUST_VSN_HASH!=	/usr/bin/printf '%s' ${RUST_VSN}-${RUST_CHANNEL} | /sbin/md5 -q | cut -c 1-8
 PLIST_SUB+=	RUST_VSN_HASH=${RUST_VSN_HASH}
+PLIST_SUB+=	RUST_TARGET=x86_64-unknown-${OPSYS:tl}
 
 USES=		gmake python:2,build
 HAS_CONFIGURE=	yes
