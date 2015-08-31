@@ -15,7 +15,7 @@
  // Other platforms.
  #else
  
-@@ -421,6 +429,384 @@ uint64 System::get_process_virtual_memor
+@@ -421,6 +429,386 @@ uint64 System::get_process_virtual_memor
      return static_cast<uint64>(rss) * sysconf(_SC_PAGESIZE);
  }
  
@@ -43,16 +43,17 @@
 +    size_t linesize;
 +} mycaches[3];
 +
-+// %ebx may be used to store GOT (Global Offset Table) for PIC (Position
-+// Independent Code), so use %esi instead.
++// %ebx is used to point to GOT (Global Offset Table) for PIC (Position
++// Independent Code) on 32-bit x86, so use %edi to preserve %ebx across
++// the call and %esi when passing CPUID arguments and return values.
 +static inline void
 +cpuid(uint32_t* data)
 +{
-+    asm("pushl %%ebx\n\t"
++    asm("movl %%ebx, %%edi\n\t"
 +        "movl %%esi, %%ebx\n\t"
 +        "cpuid\n\t"
 +        "movl %%ebx, %%esi\n\t"
-+        "popl %%ebx"
++        "movl %%edi, %%ebx"
 +      : "=a" (data[eax]),
 +        "=S" (data[ebx]),
 +        "=c" (data[ecx]),
@@ -60,7 +61,8 @@
 +      :  "a" (data[eax]),
 +         "S" (data[ebx]),
 +         "c" (data[ecx]),
-+         "d" (data[edx]));
++         "d" (data[edx])
++      : "%edi");
 +}
 +
 +// For modern CPUs, we use Deterministic Cache Parameters (Function 04h) to
