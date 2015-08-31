@@ -542,8 +542,8 @@ bin/pypy
 %%PYPY_DIR%%/lib-python/2.7/encodings/zlib_codec.py
 %%PYPY_DIR%%/lib-python/2.7/ensurepip/__init__.py
 %%PYPY_DIR%%/lib-python/2.7/ensurepip/__main__.py
-%%PYPY_DIR%%/lib-python/2.7/ensurepip/_bundled/pip-1.5.6-py2.py3-none-any.whl
-%%PYPY_DIR%%/lib-python/2.7/ensurepip/_bundled/setuptools-7.0-py2.py3-none-any.whl
+%%PYPY_DIR%%/lib-python/2.7/ensurepip/_bundled/pip-6.1.1-py2.py3-none-any.whl
+%%PYPY_DIR%%/lib-python/2.7/ensurepip/_bundled/setuptools-15.2-py2.py3-none-any.whl
 %%PYPY_DIR%%/lib-python/2.7/ensurepip/_uninstall.py
 %%PYPY_DIR%%/lib-python/2.7/filecmp.py
 %%PYPY_DIR%%/lib-python/2.7/fileinput.py
@@ -663,6 +663,7 @@ bin/pypy
 %%PYPY_DIR%%/lib-python/2.7/idlelib/idle_test/test_grep.py
 %%PYPY_DIR%%/lib-python/2.7/idlelib/idle_test/test_hyperparser.py
 %%PYPY_DIR%%/lib-python/2.7/idlelib/idle_test/test_idlehistory.py
+%%PYPY_DIR%%/lib-python/2.7/idlelib/idle_test/test_io.py
 %%PYPY_DIR%%/lib-python/2.7/idlelib/idle_test/test_parenmatch.py
 %%PYPY_DIR%%/lib-python/2.7/idlelib/idle_test/test_pathbrowser.py
 %%PYPY_DIR%%/lib-python/2.7/idlelib/idle_test/test_rstrip.py
@@ -678,7 +679,6 @@ bin/pypy
 %%PYPY_DIR%%/lib-python/2.7/idlelib/rpc.py
 %%PYPY_DIR%%/lib-python/2.7/idlelib/run.py
 %%PYPY_DIR%%/lib-python/2.7/idlelib/tabbedpages.py
-%%PYPY_DIR%%/lib-python/2.7/idlelib/testcode.py
 %%PYPY_DIR%%/lib-python/2.7/idlelib/textView.py
 %%PYPY_DIR%%/lib-python/2.7/ihooks.py
 %%PYPY_DIR%%/lib-python/2.7/imaplib.py
@@ -1451,7 +1451,7 @@ bin/pypy
 %%PYPY_DIR%%/lib-python/2.7/test/decimaltestdata/tointegral.decTest
 %%PYPY_DIR%%/lib-python/2.7/test/decimaltestdata/tointegralx.decTest
 %%PYPY_DIR%%/lib-python/2.7/test/decimaltestdata/xor.decTest
-%%PYPY_DIR%%/lib-python/2.7/test/dh512.pem
+%%PYPY_DIR%%/lib-python/2.7/test/dh1024.pem
 %%PYPY_DIR%%/lib-python/2.7/test/doctest_aliases.py
 %%PYPY_DIR%%/lib-python/2.7/test/double_const.py
 %%PYPY_DIR%%/lib-python/2.7/test/empty.vbs
@@ -1881,6 +1881,7 @@ bin/pypy
 %%PYPY_DIR%%/lib-python/2.7/test/test_threading_local.py
 %%PYPY_DIR%%/lib-python/2.7/test/test_threadsignals.py
 %%PYPY_DIR%%/lib-python/2.7/test/test_time.py
+%%PYPY_DIR%%/lib-python/2.7/test/test_timeit.py
 %%PYPY_DIR%%/lib-python/2.7/test/test_timeout.py
 %%PYPY_DIR%%/lib-python/2.7/test/test_tk.py
 %%PYPY_DIR%%/lib-python/2.7/test/test_tokenize.py
