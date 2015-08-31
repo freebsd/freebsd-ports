@@ -9,13 +9,16 @@
 # Maintained by: haskell@FreeBSD.org
 #
 
-.if !defined(METAPORT)
+.if !defined(METAPORT) && !defined(USE_GITHUB)
 MASTER_SITES?=	http://hackage.haskell.org/package/${PORTNAME}-${PORTVERSION}/:hackage
 DISTFILES?=	${DISTNAME}${EXTRACT_SUFX}:hackage
-DIST_SUBDIR?=	cabal
 EXTRACT_ONLY?=	${DISTNAME}${EXTRACT_SUFX}
-.else
+.endif
+
+.if defined(METAPORT)
 USES+=		metaport
+.else
+DIST_SUBDIR?=	cabal
 .endif # !METAPORT
 
 MAKE_ENV+=	LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 DESTDIR=${STAGEDIR} \
