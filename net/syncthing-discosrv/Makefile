@@ -9,7 +9,7 @@ CATEGORIES=	net
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Discovery server for syncthing
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
+BUILD_DEPENDS=	go14>=1.4:${PORTSDIR}/lang/go14
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	syncthing golang:gc
@@ -34,7 +34,8 @@ post-patch:
 		${WRKSRC}/src/github.com/golang/groupcache
 
 do-build:
-	@cd ${WRKSRC} ; ${SETENV} GOPATH=${WRKSRC} go build
+	@cd ${WRKSRC} ; ${SETENV} PATH=${PATH}:${LOCALBASE}/go14/bin \
+	GOPATH=${WRKSRC} go build
 	@${MV} ${WRKSRC}/discosrv-${GH_TAGNAME} ${WRKSRC}/syncthing-discosrv
 
 do-install:

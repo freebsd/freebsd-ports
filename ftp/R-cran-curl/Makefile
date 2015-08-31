@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	curl
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	ftp
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -15,5 +15,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/curl/curl.h:${PORTSDIR}/ftp/curl
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 USES=	cran:auto-plist
+
+post-patch:
+	 @${REINPLACE_CMD} -e 's|bin/bash|bin/sh|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

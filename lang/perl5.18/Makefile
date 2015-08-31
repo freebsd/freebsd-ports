@@ -53,11 +53,13 @@ THREADS_CONFIGURE_ON=	-Dusethreads=y
 THREADS_CONFIGURE_OFF=	-Dusethreads=n
 PERL_MALLOC_CONFIGURE_ON=	-Dusemymalloc=y
 PERL_MALLOC_CONFIGURE_OFF=	-Dusemymalloc=n
+USE_PERL_SUB_LIST=	LINK_USRBIN=yes
+USE_PERL_SUB_LIST_OFF=	LINK_USRBIN=no
 
 PORTSCOUT=	limit:^${PERL_VER}.
 
 # Remember to update Mk/Uses/perl5.mk too.
-PERL_VERSION=	5.18.4
+.include "version.mk"
 PERL_VER=	${PERL_VERSION:C/\.[0-9]+$//}
 PERL_ARCH=	mach
 SITE_PERL_REL?=	lib/perl5/site_perl
@@ -115,8 +117,7 @@ PKGINSTALL=	${WRKDIR}/use.perl
 PKGDEINSTALL=	${WRKDIR}/use.perl
 INSTALL_TARGET=	install-strip
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.default-versions.mk"
+.include "${.CURDIR}/../../Mk/bsd.default-versions.mk"
 
 # if this port is default due PERL5_DEFAULT
 # change PKGNAME to reflect this
@@ -161,19 +162,6 @@ PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
 		PRIV_LIB=${_PRIV_LIB} \
 		ARCH_LIB=${_ARCH_LIB}
 
-.if ${OSVERSION} >= 900022
-PLIST_SUB+=	MANCONF=""
-.else
-PLIST_SUB+=	MANCONF="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MUSE_PERL}
-LINK_USRBIN=	yes
-.else
-LINK_USRBIN=	no
-.endif
-SUB_LIST+=	LINK_USRBIN=${LINK_USRBIN}
-
 # Put a symlink to the future libperl.so.x.yy so that -lperl works.
 post-extract:
 	${LN} -s libperl.so.${PERL_VERSION} ${WRKSRC}/libperl.so
@@ -216,13 +204,11 @@ post-install:
 			${STRIP_CMD} $$f; \
 			${CHMOD} 444 $$f; \
 		done
-.if ${OSVERSION} >= 900022
 	${INSTALL_DATA} ${WRKDIR}/perl-man.conf ${STAGEDIR}${PREFIX}/etc/man.d/perl${PERL_VER}.conf
-.endif
 
 test: build
 	(cd ${WRKSRC}; TEST_JOBS=${MAKE_JOBS_NUMBER} make test_harness)
 
 regression-test: test
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	easytag
-PORTVERSION=	2.2.6
+PORTVERSION=	2.4.0
 CATEGORIES=	audio
 MASTER_SITES=	GNOME
 
@@ -21,8 +21,9 @@ LIB_DEPENDS=	libid3.so:${PORTSDIR}/audio/id3lib \
 		libFLAC.so:${PORTSDIR}/audio/flac \
 		libtag.so:${PORTSDIR}/audio/taglib
 
-USES=		desktop-file-utils gmake pkgconfig tar:xz gettext-tools
-USE_GNOME=	glib20 intltool intlhack libxslt
+USES=		desktop-file-utils gettext-tools gmake pkgconfig tar:xz
+USE_GNOME=	gtk30 glib20 intltool intlhack libxslt
+GLIB_SCHEMAS=	org.gnome.EasyTAG.gschema.xml org.gnome.EasyTAG.enums.xml
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_GTK
@@ -35,9 +36,7 @@ CONFIGURE_ARGS=	--disable-appdata-validate \
 PORTDOCS=	HACKING THANKS TODO
 
 OPTIONS_DEFINE=	WAVPACK NLS OPUS SPEEX DOCS
-OPTIONS_SINGLE=	GTK
-OPTIONS_SINGLE_GTK=	GTK2 GTK3
-OPTIONS_DEFAULT=	GTK2 NLS
+OPTIONS_DEFAULT=	NLS
 OPTIONS_SUB=	yes
 
 WAVPACK_LIB_DEPENDS=	libwavpack.so:${PORTSDIR}/audio/wavpack
@@ -50,16 +49,10 @@ SPEEX_CONFIGURE_ENABLE=	speex
 
 NLS_USES=		gettext-runtime
 
-GTK2_USE=	GNOME=gtk20
-GTK2_CONFIGURE_ON=--with-gtk2
-
-GTK3_USE=	GNOME=gtk30
-GTK3_CONFIGURE_ON=--without-gtk2
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 pre-configure:

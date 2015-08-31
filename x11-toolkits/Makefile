@@ -204,6 +204,7 @@
     SUBDIR += py-wxPython28-unicode
     SUBDIR += py-wxPython30
     SUBDIR += py-xlib
+    SUBDIR += pypy-tkinter
     SUBDIR += qt4-declarative
     SUBDIR += qt4-gui
     SUBDIR += qt4pas

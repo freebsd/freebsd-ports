@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rinse
-PORTVERSION=	3.1
+PORTVERSION=	3.1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Install RPM-based system into a directory
 
-LICENSE=	ARTPERL10
+LICENSE=	ART10
 
 RUN_DEPENDS=	p5-Term-Size>0:${PORTSDIR}/devel/p5-Term-Size \
 		p5-libwww>0:${PORTSDIR}/www/p5-libwww

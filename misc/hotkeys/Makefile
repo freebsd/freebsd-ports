@@ -11,7 +11,8 @@ DISTNAME=	hotkeys_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows usage of special keys on internet/multimedia keyboards
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 
@@ -20,7 +21,7 @@ CONFIGURE_ARGS=	--with-db3-inc=${BDB_INCLUDE_DIR} \
 		--with-db3-lib=${BDB_LIB_DIR} \
 		--with-db-name=${BDB_LIB_NAME}
 
-USE_XORG=	x11 xkbfile xmu xft
+USE_XORG=	x11 xft xkbfile xmu
 GNU_CONFIGURE=	yes
 USE_BDB=	yes
 USES=		gmake
@@ -43,6 +44,6 @@ post-configure:
 	${REINPLACE_CMD} -e 's,-lXinerama,-lXinerama `pkgconf --libs pangoxft`,g' ${WRKSRC}/src/Makefile
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/src/hotkeys.conf ${STAGEDIR}${PREFIX}/etc/hotkeys.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/src/hotkeys.conf ${STAGEDIR}${PREFIX}/etc/hotkeys.conf.sample
 
 .include <bsd.port.mk>

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pypy
-PORTVERSION=	2.6.0
-PORTREVISION=	3
+PORTVERSION=	2.6.1
 CATEGORIES=	lang python
 MASTER_SITES=	https://bitbucket.org/pypy/pypy/get/ LOCAL/dbn/pypy
 DISTNAME=	release-${DISTVERSION}
@@ -11,9 +10,6 @@ DIST_SUBDIR=	pypy
 
 MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	Fast, compliant implementation of the Python language
-
-LICENSE=	MIT PSFL
-LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libffi.so:${PORTSDIR}/devel/libffi
@@ -38,12 +34,10 @@ ALL_TARGET=	pypy-c
 BUILD_WRKSRC=	${WRKDIR}/build/usession-release-${DISTVERSION}-0/testing_1
 MAKE_ENV+=	PYPY_LOCALBASE=${LOCALBASE}
 USE_LDCONFIG=	${PREFIX}/${PYPY_DIR}/bin
-USES=		compiler:c11 gettext-runtime tar:bzip2
-WRKSRC=		${WRKDIR}/pypy-pypy-295ee98b6928
-PYPY_VER=	${DISTVERSION:C|([0-9])\.([0-9]).*|\1\2|}
-PYPY_DIR=	pypy${PYPY_VER}
-PLIST_SUB+=	PYPY_VER=${PYPY_VER} PYPY_DIR=${PYPY_DIR}
+USES=		gettext-runtime tar:bzip2
+WRKSRC=		${WRKDIR}/pypy-pypy-f3ad1e1e1d62
 
+.include ".${CURDIR}/bsd.pypy.mk"
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYPY} || defined(PYTHON_CMD)

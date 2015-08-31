@@ -38,13 +38,6 @@ NLS_PLIST_FILES+=	man/${lang}/man1/help2man.1.gz \
 			share/locale/${lang}/LC_MESSAGES/${PORTNAME}.mo
 .endfor
 
-.include <bsd.port.options.mk>
-
-# Add temporary note of build failure caused by Perl infrastructure change in 20130612
-.if ${PORT_OPTIONS:MNLS}
-CONFIGURE_FAIL_MESSAGE=	Please read UPDATING entry 20130612 \(http://svnweb.freebsd.org/ports/head/UPDATING\?r1=320405\&r2=320679\) and PR/184276 \(http://www.freebsd.org/cgi/query-pr.cgi\?pr=ports/184276\) to fix your Perl installation if you got the error message \"configure: error: perl module Locale::gettext required\".
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '/^pkglibdir/ s|/${PORTNAME}$$||' ${WRKSRC}/Makefile.in
 

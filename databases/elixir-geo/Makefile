@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	geo
-PORTVERSION=	0.15.2
+PORTVERSION=	0.16.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 PKGNAMEPREFIX=	elixir-
@@ -16,24 +16,11 @@ USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	bryanjos
 
-OPTIONS_DEFINE=	POSTGIS
-
-.include <bsd.port.options.mk>
-
 MIX_BUILD_DEPS=	databases/elixir-ecto \
+		databases/elixir-postgrex \
 		devel/elixir-poison
-
-.if ${PORT_OPTIONS:MPOSTGIS}
-MIX_BUILD_DEPS+=databases/elixir-postgrex
-.endif
 
 MIX_RUN_DEPS:=	${MIX_BUILD_DEPS}
 MIX_REWRITE=	yes
-
-post-patch:
-.if ! ${PORT_OPTIONS:MPOSTGIS}
-	# These files must be removed or the build will hang forever
-	${RM} -r ${WRKSRC}/lib/geo/postgis.ex ${WRKSRC}/lib/geo/postgis
-.endif
 
 .include <bsd.port.mk>

@@ -20,7 +20,7 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libcurl.so:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
-USES=		gmake shebangfix readline
+USES=		gmake readline shebangfix
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	utils/kamctl/dbtextdb/dbtextdb.py \
 		utils/kamctl/kamctl utils/kamctl/kamdbctl
@@ -109,9 +109,6 @@ do-build:
 	cd ${WRKSRC} && ${GMAKE} ${ALL_TARGET}
 
 post-stage:
-# Do not install anything beyond ${PREFIX}
-	${RM} /root/.rnd
-
 # Strip modules in lib/kamailio/modules
 	@${ECHO_CMD} "Stripping modules in ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/modules/"
 

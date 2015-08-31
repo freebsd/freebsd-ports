@@ -1,0 +1,9 @@
+LuaRocks allows you to install Lua modules as self-contained packages
+called rocks, which also contain version dependency information. This
+information can be used both during installation, so that when one
+rock is requested all rocks it depends on are installed as well, and
+also optionally at run time, so that when a module is required, the
+correct version is loaded. LuaRocks supports both local and remote
+repositories, and multiple local rocks trees.
+
+WWW: https://luarocks.org

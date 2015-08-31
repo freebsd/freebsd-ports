@@ -10,6 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	C++ port of the JUnit framework for unit testing
 
+CONFLICTS_INSTALL=	cppunit113-1.13.*
+
 OPTIONS_DEFINE=	DOXYGEN
 
 USES=		libtool pathfix

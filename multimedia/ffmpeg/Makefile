@@ -3,6 +3,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	2.7.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -36,6 +37,11 @@ OPTIONS_DEFAULT=	FFSERVER FONTCONFIG FREETYPE FREI0R GNUTLS ICONV \
 OPTIONS_SINGLE=	SSL
 OPTIONS_SINGLE_SSL=	GNUTLS OPENSSL
 
+OPTIONS_DEFINE_amd64=	MMX SSE
+OPTIONS_DEFINE_i386=	MMX SSE
+OPTIONS_DEFAULT_amd64=	MMX SSE
+OPTIONS_DEFAULT_i386=	${MACHINE_CPU:tu:MMMX} ${MACHINE_CPU:tu:MSSE}
+
 ASS_DESC=	Subtitles rendering via libass
 CDIO_DESC=	Audio CD grabbing with libcdio
 FDK_AAC_DESC=	AAC audio encoding via Fraunhofer FDK
@@ -49,6 +55,7 @@ OPTIONS_SUB=	yes
 # aacplus
 AACPLUS_LIB_DEPENDS=	libaacplus.so:${PORTSDIR}/audio/libaacplus
 AACPLUS_CONFIGURE_ENABLE=	libaacplus
+AACPLUS_VARS=		FFMPEG_NONFREE=yes
 
 # alsa
 ALSA_CONFIGURE_OFF=	--disable-indev=alsa \
@@ -58,10 +65,12 @@ ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
 # Opencore AMR NB
 AMR_NB_LIB_DEPENDS=	libopencore-amrnb.so:${PORTSDIR}/audio/opencore-amr
 AMR_NB_CONFIGURE_ENABLE=	libopencore-amrnb
+AMR_NB_VARS=		FFMPEG_LICENSE_GPL3=yes
 
 # Opencore AMR WB
 AMR_WB_LIB_DEPENDS=	libopencore-amrwb.so:${PORTSDIR}/audio/opencore-amr
 AMR_WB_CONFIGURE_ENABLE=	libopencore-amrwb
+AMR_WB_VARS=		FFMPEG_LICENSE_GPL3=yes
 
 # ass
 ASS_LIB_DEPENDS=	libass.so:${PORTSDIR}/multimedia/libass
@@ -75,16 +84,23 @@ CDIO_CONFIGURE_ENABLE=	libcdio
 CELT_LIB_DEPENDS=	libcelt0.so:${PORTSDIR}/audio/celt
 CELT_CONFIGURE_ENABLE=	libcelt
 
+# debugging
+DEBUG_CONFIGURE_ON=	--disable-stripping
+DEBUG_CONFIGURE_OFF=	--disable-debug
+
 # faac
 FAAC_LIB_DEPENDS=	libfaac.so:${PORTSDIR}/audio/faac
 FAAC_CONFIGURE_ENABLE=	libfaac
+FAAC_VARS=		FFMPEG_NONFREE=yes
 
 # fdk_aac
 FDK_AAC_LIB_DEPENDS=	libfdk-aac.so:${PORTSDIR}/audio/fdk-aac
 FDK_AAC_CONFIGURE_ENABLE=	libfdk-aac
+FDK_AAC_VARS=		FFMPEG_NONFREE=yes
 
 # ffserver
 FFSERVER_CONFIGURE_ENABLE=	ffserver
+FFSERVER_VARS=		USE_RC_SUBR+=ffserver
 
 # fontconfig
 FONTCONFIG_LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
@@ -128,6 +144,9 @@ LIBV4L_CONFIGURE_ENABLE=	libv4l2
 LIBV4L_CONFIGURE_OFF=		--disable-indev=v4l2 \
 				--disable-outdev=v4l2
 
+# mmx support
+MMX_CONFIGURE_ENABLE=	mmx
+
 # modplug
 MODPLUG_LIB_DEPENDS=	libmodplug.so:${PORTSDIR}/audio/libmodplug
 MODPLUG_CONFIGURE_ENABLE=	libmodplug
@@ -152,6 +171,10 @@ OPENJPEG_CONFIGURE_ENABLE=	libopenjpeg
 # openssl
 OPENSSL_USE=		OPENSSL=yes
 OPENSSL_CONFIGURE_ENABLE=	openssl
+OPENSSL_VARS=		FFMPEG_NONFREE=yes
+
+# optimizations
+OPTIMIZED_CFLAGS_CFLAGS=-O3 -ffast-math -fno-finite-math-only -fomit-frame-pointer
 
 # opus
 OPUS_LIB_DEPENDS=	libopus.so:${PORTSDIR}/audio/opus
@@ -175,6 +198,11 @@ SCHROEDINGER_CONFIGURE_ENABLE=	libschroedinger
 SPEEX_LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex
 SPEEX_CONFIGURE_ENABLE=	libspeex
 
+# sse support
+SSE_CONFIGURE_ENABLE=	sse
+SSE_VARS=		FFMPEG_CFLAGS+="-msse"
+SSE_IMPLIES=		MMX
+
 # theora
 THEORA_LIB_DEPENDS=	libtheora.so:${PORTSDIR}/multimedia/libtheora
 THEORA_CONFIGURE_ENABLE=	libtheora
@@ -190,18 +218,25 @@ VDPAU_CONFIGURE_ENABLE=	vdpau
 # vo-aacenc
 VO_AACENC_LIB_DEPENDS=	libvo-aacenc.so:${PORTSDIR}/audio/vo-aacenc
 VO_AACENC_CONFIGURE_ENABLE=	libvo-aacenc
+VO_AACENC_VARS=		FFMPEG_LICENSE_GPL3=yes
 
 # vo-amrwbenc
 VO_AMRWBENC_LIB_DEPENDS=	libvo-amrwbenc.so:${PORTSDIR}/audio/vo-amrwbenc
 VO_AMRWBENC_CONFIGURE_ENABLE=	libvo-amrwbenc
+VO_AMRWBENC_VARS=	FFMPEG_LICENSE_GPL3=yes
 
 # vorbis
 VORBIS_LIB_DEPENDS=	libvorbisenc.so:${PORTSDIR}/audio/libvorbis
 VORBIS_CONFIGURE_ENABLE=	libvorbis
+VORBIS_VARS=		FFMPEG_CFLAGS+="-I${LOCALBASE}/include/vorbis"
 
 # vp8
 VPX_LIB_DEPENDS=	libvpx.so:${PORTSDIR}/multimedia/libvpx
 VPX_CONFIGURE_ENABLE=	libvpx
+
+# x11grab
+X11GRAB_USE=		XORG=x11,xext,xfixes
+X11GRAB_CONFIGURE_ENABLE=	x11grab
 
 # x264
 X264_LIB_DEPENDS=	libx264.so:${PORTSDIR}/multimedia/libx264
@@ -219,28 +254,6 @@ FFPROGS=	ffmpeg ffprobe
 INSTALL_TARGET=	install-progs install-data install-libs install-headers
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
-
-.include <bsd.port.options.mk>
-
-# ssl
-.if ${PORT_OPTIONS:MOPENSSL} && empty(PORT_OPTIONS:MGNUTLS)
-FFMPEG_NONFREE=	yes
-.endif
-
-.if ${PORT_OPTIONS:MAACPLUS} || ${PORT_OPTIONS:MFAAC} || ${PORT_OPTIONS:MFDK_AAC}
-FFMPEG_NONFREE=	yes
-.endif
-
-.if ${PORT_OPTIONS:MAMR_NB} || ${PORT_OPTIONS:MAMR_WB} || \
-${PORT_OPTIONS:MVO_AACENC} || ${PORT_OPTIONS:MVO_AMRWBENC}
-FFMPEG_LICENSE_GPL3=	yes
-.endif
-
-# x11grab
-.if ${PORT_OPTIONS:MX11GRAB}
-USE_XORG=	x11 xext xfixes
-CONFIGURE_ARGS+=	--enable-x11grab
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -289,39 +302,6 @@ DOC_DOCFILES+=	*.html
 BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
 .endif
 
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--disable-stripping
-.else
-CONFIGURE_ARGS+=	--disable-debug
-.endif
-
-.if ${PORT_OPTIONS:MFFSERVER}
-USE_RC_SUBR=	ffserver
-.endif
-
-# sse hardware vector support
-.if defined(MACHINE_CPU) && (${MACHINE_CPU:Msse} == "sse" || ${MACHINE_CPU:Mamd64} == "amd64")
-_BUILTIN_VECTOR=	yes
-.else
-CONFIGURE_ARGS+=	--disable-sse
-.endif
-
-# mmx support
-.if defined(MACHINE_CPU) && ${MACHINE_CPU:Mmmx} == "" && ${MACHINE_CPU:Mamd64} == ""
-CONFIGURE_ARGS+=	--disable-mmx
-_NO_BUILTIN_VECTOR=	yes
-.endif
-
-# builtin vector, requires mmx and sse
-.if !defined(_NO_BUILTIN_VECTOR) && defined(_BUILTIN_VECTOR)
-FFMPEG_CFLAGS+=		-msse
-.endif
-
-# optimizations
-.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-CFLAGS+=	-O3 -ffast-math -fno-finite-math-only -fomit-frame-pointer
-.endif
-
 # ffserver
 .if ${PORT_OPTIONS:MFFSERVER}
 FFPROGS+=	ffserver
@@ -339,11 +319,6 @@ DOC_DOCFILES+=	ffplay.html
 .endif
 .else
 CONFIGURE_ARGS+=	--disable-ffplay --disable-outdev=sdl
-.endif
-
-# vorbis
-.if ${PORT_OPTIONS:MVORBIS}
-FFMPEG_CFLAGS+=		-I${LOCALBASE}/include/vorbis
 .endif
 
 # License knobs
@@ -374,31 +349,25 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL5}|g' \
 		${WRKSRC}/doc/texi2pod.pl
-.if ${PORT_OPTIONS:MSDL}
+
+post-patch-SDL-on:
 	@${REINPLACE_CMD} -E \
 		-e 's|sdl-config|${SDL_CONFIG}|g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${FIND} ${WRKSRC} -type f | \
 		${XARGS} -n 10 ${REINPLACE_CMD} -E \
 		-e 's|#include <SDL|#include <SDL/SDL|'
-.endif
 
-post-configure:
-.if empty(PORT_OPTIONS:MTHEORA)
+post-configure-THEORA-off:
 	@${REINPLACE_CMD} -E \
 		-e 's|^(CONFIG_LIBTHEORA).*$$|\1=no|' \
 		${WRKSRC}/config.mak
-.endif
 
 post-install:
 .for PROG in ${FFPROGS}
 	@${MKDIR} ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/${PROG}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/${PROG}.1
+	${INSTALL_MAN} ${WRKSRC}/doc/${PROG}*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
 .endfor
-.if ${PORT_OPTIONS:MFFSERVER}
-	${INSTALL_DATA} ${WRKSRC}/doc/ffserver.conf \
-		${STAGEDIR}${PREFIX}/etc/ffserver.conf.sample
-.endif
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in ${DOC_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
@@ -406,5 +375,9 @@ post-install:
 .for FILE in ${DOC_DOCFILES}
 	${INSTALL_DATA} ${WRKSRC}/doc/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
+
+post-install-FFSERVER-on:
+	${INSTALL_DATA} ${WRKSRC}/doc/ffserver.conf \
+		${STAGEDIR}${PREFIX}/etc/ffserver.conf.sample
 
 .include <bsd.port.post.mk>

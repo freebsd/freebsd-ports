@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jekyll-gist
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

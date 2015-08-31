@@ -1,6 +1,6 @@
---- bones.gemspec.orig	2015-03-30 13:39:32.602329000 +0800
-+++ bones.gemspec	2015-03-30 13:39:52.986969479 +0800
-@@ -26,7 +26,6 @@
+--- bones.gemspec.orig	2015-03-30 05:39:33 UTC
++++ bones.gemspec
+@@ -26,7 +26,6 @@ Gem::Specification.new do |s|
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
        s.add_runtime_dependency(%q<rake>, ["~> 10.0"])

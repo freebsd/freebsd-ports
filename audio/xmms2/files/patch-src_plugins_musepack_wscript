@@ -1,0 +1,11 @@
+--- src/plugins/musepack/wscript.orig	2011-10-20 19:26:08 UTC
++++ src/plugins/musepack/wscript
+@@ -8,7 +8,7 @@ def plugin_configure(conf):
+         conf.check_cc(header_name="mpcdec/mpcdec.h", defines="HAVE_MPCDEC_OLD",
+                 uselib_store="mpcdec")
+ 
+-    conf.check_cc(lib="mpcdec", uselib_store="mpcdec")
++    conf.check_cc(lib="mpcdec", uselib="math", uselib_store="mpcdec")
+ 
+ configure, build = plugin("musepack", configure=plugin_configure,
+         libs=["mpcdec"])

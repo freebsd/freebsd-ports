@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libressl
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	security devel
 MASTER_SITES=	OPENBSD/LibreSSL
 
@@ -17,6 +17,7 @@ CPE_VENDOR=	openbsd
 CONFLICTS?=	openssl-[0-9]*
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-silent-rules
 USES=		cpe libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 

@@ -1,5 +1,5 @@
---- src/plugins/airplay/wscript.orig	2010-02-19 18:43:54.000000000 +0100
-+++ src/plugins/airplay/wscript	2010-03-17 15:14:34.459359323 +0100
+--- src/plugins/airplay/wscript.orig	2011-10-20 19:26:08 UTC
++++ src/plugins/airplay/wscript
 @@ -12,8 +12,6 @@ rtspmessage.c
  def plugin_configure(conf):
      # MinGW doesn't ship sys/select.h

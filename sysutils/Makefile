@@ -954,6 +954,7 @@
     SUBDIR += ssync
     SUBDIR += stalepid
     SUBDIR += stmpclean
+    SUBDIR += storcli
     SUBDIR += stow
     SUBDIR += stowES
     SUBDIR += stress

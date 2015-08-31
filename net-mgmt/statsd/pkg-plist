@@ -1,3 +1,4 @@
+@sample etc/statsd.js.sample
 %%DATADIR%%/backends/console.js
 %%DATADIR%%/backends/graphite.js
 %%DATADIR%%/backends/repeater.js
@@ -11,6 +12,3 @@
 %%DATADIR%%/lib/process_mgmt.js
 %%DATADIR%%/lib/set.js
 %%DATADIR%%/stats.js
-@unexec if cmp -s %D/etc/statsd.js.sample %D/etc/statsd.js; then rm -f %D/etc/statsd.js; fi
-etc/statsd.js.sample
-@exec [ -f %B/statsd.js ] || cp %B/%f %B/statsd.js

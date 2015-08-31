@@ -2,6 +2,7 @@
 
 PORTNAME=	tint2
 PORTVERSION=	2.00.${DATE}
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://deponie.yamagi.org/freebsd/distfiles/tint/
 PKGNAMESUFFIX=	-devel
@@ -21,7 +22,7 @@ LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 CONFLICTS=	tint2-[0-9]*
 
 USES=		alias cmake pkgconfig tar:xz
-USE_GNOME=	glib20 pango
+USE_GNOME=	glib20 gtk20 pango
 USE_XORG=	xcomposite xdamage xinerama xrandr
 
 CMAKE_ARGS=	-DENABLE_BATTERY:BOOL=ON -DMANDIR:PATH=man

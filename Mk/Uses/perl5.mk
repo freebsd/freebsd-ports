@@ -50,15 +50,15 @@ PERL_VERSION!=	perl -e 'printf "%vd\n", $$^V;'
 .else
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 .if ${PERL5_DEFAULT} == 5.16
-PERL_VERSION=	5.16.3
+.include "${PORTSDIR}/lang/perl5.16/version.mk"
 .elif ${PERL5_DEFAULT} == 5.18
-PERL_VERSION=	5.18.4
+.include "${PORTSDIR}/lang/perl5.18/version.mk"
 .elif ${PERL5_DEFAULT} == 5.20
-PERL_VERSION=	5.20.2
+.include "${PORTSDIR}/lang/perl5.20/version.mk"
 .elif ${PERL5_DEFAULT} == 5.22
-PERL_VERSION=	5.22.0
+.include "${PORTSDIR}/lang/perl5.22/version.mk"
 .elif ${PERL5_DEFAULT} == devel
-PERL_VERSION=	5.23.3
+.include "${PORTSDIR}/lang/perl5-devel/version.mk"
 # Force PERL_PORT here in case two identical PERL_VERSION.
 PERL_PORT?=	perl5-devel
 .else

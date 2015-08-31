@@ -1,6 +1,4 @@
-@unexec if cmp -s %D/etc/pysieved.ini.sample %D/etc/pysieved.ini; then rm -f %D/etc/pysieved.ini; fi
-etc/pysieved.ini.sample
-@exec if [ ! -f %D/etc/pysieved.ini ] ; then cp -p %D/%F %B/pysieved.ini; fi
+@sample etc/pysieved.ini.sample
 lib/pysieved/config.py
 lib/pysieved/config.pyc
 lib/pysieved/daemon.py

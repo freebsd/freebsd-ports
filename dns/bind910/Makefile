@@ -8,7 +8,7 @@ PORTVERSION=	${ISCVERSION:S/-P/P/}
 PORTREVISION=	0
 .else
 # dns/bind910 here
-PORTREVISION=	1
+PORTREVISION=	3
 .endif
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
@@ -59,7 +59,7 @@ OPTIONS_RADIO_GOSTDEF=	GOST GOST_ASN1
 .if !defined(BIND_TOOLS_SLAVE)
 OPTIONS_DEFAULT+=	RRL
 OPTIONS_DEFINE+=	LINKS RPZ_NSIP RPZ_NSDNAME RRL DOCS NEWSTATS GEOIP \
-			MINCACHE
+			MINCACHE PORTREVISION
 OPTIONS_GROUP=		DLZ
 OPTIONS_GROUP_DLZ=	DLZ_POSTGRESQL DLZ_MYSQL DLZ_BDB \
 			DLZ_LDAP DLZ_FILESYSTEM DLZ_STUB
@@ -83,6 +83,7 @@ GOST_ASN1_DESC=		GOST using ASN.1
 PYTHON_DESC=		Build with Python utilities
 START_LATE_DESC=	Start BIND late in the boot process
 MINCACHE_DESC=		Use the mincachettl patch
+PORTREVISION_DESC=	Show PORTREVISION in the version string
 
 LINKS_DESC=		Create conf file symlinks in ${PREFIX}
 NEWSTATS_DESC=		Enable alternate xml statistics channel format
@@ -225,6 +226,10 @@ post-patch:
 		-e "s#/var\/run\/named\/named.pid#/var/run/named/pid#" \
 		${WRKSRC}/bin/${FILE}
 .endfor
+
+post-patch-PORTREVISION-on:
+	@${REINPLACE_CMD} -e '/EXTENSIONS/s#=$$#=_${PORTREVISION}#' \
+		${WRKSRC}/version
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}

@@ -1,0 +1,11 @@
+HDR Tools is a set of command-line tools for creating and manipulating High
+Dynamic Range (HDR) images.  It consists of six programs: hdr_create,
+hdr_fix_ca, hdr_denoise, hdr_squish, hdr_adjust, and hdr_convert.
+
+Together, they can convert a set of bracketed photographs to HDR image (in
+EXR format), fix chromatic aberrations and CCD noise, perform tone mapping
+and some simple color manipulations, apply gamma correction and optionally
+adjusts the exposure, crop, and finally convert the result into a "normal"
+image (a JPG, for example).
+
+WWW: http://ttic.uchicago.edu/~cotter/projects/hdr_tools/
