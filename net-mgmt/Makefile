@@ -57,6 +57,7 @@
     SUBDIR += etherape
     SUBDIR += ettercap
     SUBDIR += ezradius
+    SUBDIR += fastnetmon
     SUBDIR += fetchconfig
     SUBDIR += flow-extract
     SUBDIR += flow-tools

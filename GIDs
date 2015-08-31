@@ -219,6 +219,7 @@ monkeysphere:*:641:
 aox:*:666:
 riak:*:667:
 bnetd:*:700:
+fastnetmon:*:701:
 bopm:*:717:
 openxpki:*:777:
 zetacoin:*:780:
