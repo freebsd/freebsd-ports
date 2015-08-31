@@ -117,7 +117,7 @@ PKGINSTALL=	${WRKDIR}/use.perl
 PKGDEINSTALL=	${WRKDIR}/use.perl
 INSTALL_TARGET=	install-strip
 
-.include "${PORTSDIR}/Mk/bsd.default-versions.mk"
+.include "${.CURDIR}/../../Mk/bsd.default-versions.mk"
 
 # if this port is default due PERL5_DEFAULT
 # change PKGNAME to reflect this
