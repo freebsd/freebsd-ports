@@ -158,6 +158,15 @@
  fi
  echores "$_mencoder"
  
+@@ -8072,7 +8083,7 @@ libs_mplayer=$ld_tmp
+ 
+ #############################################################################
+ 
+-CFLAGS="$CFLAGS -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE"
++CFLAGS="$CFLAGS -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64"
+ 
+ CXXFLAGS=" $CFLAGS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS"
+ 
 @@ -8353,7 +8364,7 @@ TIMER = $_timer
  EXESUF      = $_exesuf
  EXESUFS_ALL = .exe
