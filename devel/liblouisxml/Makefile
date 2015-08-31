@@ -10,13 +10,14 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Library Provide Complete Braille Transcription Services
 
-LICENSE=	GPLv3
+LICENSE=	LGPL3 GPLv3 # or later
+LICENSE_COMB=	multi
 
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	liblouis.so:${PORTSDIR}/devel/liblouis
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig gmake libtool
+USES=		gmake libtool pkgconfig
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
 USE_GCC=	yes
@@ -24,8 +25,6 @@ USE_GCC=	yes
 INFO=		liblouisxml
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 post-extract:
 	@${REINPLACE_CMD} -e \
@@ -37,12 +36,12 @@ post-build:
 .endfor
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
+	${INSTALL_DATA} ${WRKSRC}/doc/liblouisxml.info ${STAGEDIR}${PREFIX}/info
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in liblouisxml.html liblouisxml.txt
-	${INSTALL_MAN} ${WRKSRC}/doc/${i} ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${STAGEDIR}${DOCSDIR}/
 .endfor
-.endif
-	${INSTALL_MAN} ${WRKSRC}/doc/liblouisxml.info ${STAGEDIR}${PREFIX}/info
 
 .include <bsd.port.mk>
