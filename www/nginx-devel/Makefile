@@ -105,6 +105,7 @@ OPTIONS_DEFINE=	\
 	RTMP \
 	SET_MISC \
 	SFLOW \
+	SHIBBOLETH \
 	SLOWFS_CACHE \
 	SMALL_LIGHT \
 	SRCACHE \
@@ -201,6 +202,7 @@ REDIS2_DESC=			3rd party redis2 module
 RTMP_DESC=			3rd party rtmp module
 SET_MISC_DESC=			3rd party set_misc module
 SFLOW_DESC=			3rd party sflow module
+SHIBBOLETH_DESC=		3rd party shibboleth module
 SLOWFS_CACHE_DESC=		3rd party slowfs_cache module
 SMALL_LIGHT_DESC=		3rd party small_light module
 SRCACHE_DESC=			3rd party srcache module
@@ -773,6 +775,15 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-sflow-module-${NGINX_SFLOW_VERSION}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_sflow_config.c \
 		${PATCHDIR}/extra-patch-ngx_http_sflow_config.h \
 		${PATCHDIR}/extra-patch-ngx_http_sflow_module.c
+.endif
+
+.if ${PORT_OPTIONS:MSHIBBOLETH}
+RUN_DEPENDS+=	${LOCALBASE}/sbin/shibd:${PORTSDIR}/security/shibboleth2-sp/
+GIT_SHIBBOLETH_VERSION=	20150121
+GH_ACCOUNT+=	nginx-shib:shib
+GH_PROJECT+=	nginx-http-shibboleth:shib
+GH_TAGNAME+=	v${GIT_SHIBBOLETH_VERSION}:shib
+CONFIGURE_ARGS+=--add-module=${WRKSRC_shib}
 .endif
 
 .if ${PORT_OPTIONS:MSLOWFS_CACHE}
