@@ -31,6 +31,7 @@ GH_ACCOUNT=	getpelican
 OPTIONS_DEFINE=		MARKDOWN SYNTAX TESTS
 OPTIONS_DEFAULT=	MARKDOWN SYNTAX
 
+MARKDOWN_DESC=		Markdown markup language format support
 MARKDOWN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown>0:${PORTSDIR}/textproc/py-markdown
 
 SYNTAX_DESC=		Syntax Highlighting (via pygments)
