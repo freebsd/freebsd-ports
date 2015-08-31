@@ -21,8 +21,6 @@ LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libdvdnav.so:${PORTSDIR}/multimedia/libdvdnav
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/yasm:${PORTSDIR}/devel/yasm
-
 USES=		compiler:c11 gmake iconv ncurses tar:bzip2 tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	TMPDIR="${WRKSRC}"
