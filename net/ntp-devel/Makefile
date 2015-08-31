@@ -3,6 +3,7 @@
 
 PORTNAME=	ntp
 PORTVERSION=	4.3.70
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-dev/ \
 		http://archive.ntp.org/ntp4/ntp-dev/
@@ -16,7 +17,7 @@ CONFLICTS=	ntp-[0-9].* ntp-rc-*
 
 GNU_CONFIGURE=	yes
 OPTIONS_SUB=	yes
-USES=		cpe pathfix shebangfix libtool pkgconfig
+USES=		cpe pathfix shebangfix libedit libtool pkgconfig
 LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 
 SHEBANG_FILES=	scripts/ntptrace/ntptrace.in \
