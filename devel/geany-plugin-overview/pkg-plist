@@ -1,0 +1,7 @@
+lib/geany/overview.so
+%%DOCSDIR%%/overview/AUTHORS
+%%DOCSDIR%%/overview/COPYING
+%%DOCSDIR%%/overview/ChangeLog
+%%DOCSDIR%%/overview/NEWS
+%%DOCSDIR%%/overview/README
+%%DATADIR%%/overview/prefs.ui

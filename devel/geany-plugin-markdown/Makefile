@@ -1,13 +1,13 @@
 # $FreeBSD$
 
-PORTNAME=	geany-plugins-l10n
+PORTNAME=	geany-plugin-markdown
 PORTVERSION=	${GEANY_VER}
 CATEGORIES=	devel
 
 MAINTAINER=	makc@FreeBSD.org
-COMMENT=	Localization messages for Geany plugins
+COMMENT=	Geany plugin: ${${GEANY_PLUGIN}_DESC}
 
-NO_ARCH=	yes
+LIB_DEPENDS=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
 
 .include "${.CURDIR}/../geany-plugins/files/Makefile.common"
 .include <bsd.port.mk>
