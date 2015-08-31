@@ -1,6 +1,4 @@
-@unexec if cmp -s %D/etc/exabgp/exabgp.env %D/etc/exabgp/exabgp.env.sample ; then rm -f %D/etc/exabgp/exabgp.env ; fi
-etc/exabgp/exabgp.env.sample
-@exec if [ ! -f %D/etc/exabgp/exabgp.env ]; then cp -p %D/%F %B/exabgp.env; fi
+@sample etc/exabgp/exabgp.env.sample
 man/man1/exabgp.1.gz
 sbin/exabgp
 %%PYTHON_SITELIBDIR%%/exabgp/__init__.py
