@@ -18,6 +18,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	LibreCAD
 GH_PROJECT=	LibreCAD
 
+# Unhide std::to_string() to fix build with GCC (ports/193528)
+CFLAGS=		-D_GLIBCXX_USE_C99
+
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/share,${PREFIX}/share,' \
 		${WRKSRC}/librecad/src/lib/engine/rs_settings.cpp \
