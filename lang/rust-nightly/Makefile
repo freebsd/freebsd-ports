@@ -82,10 +82,6 @@ LLNEXTGEN_BUILD_DEPENDS=	LLnextgen:${PORTSDIR}/devel/llnextgen
 BROKEN=		Only compiles on FreeBSD 10 and 11
 .endif
 
-.if ${OPSYS} == DragonFly
-IGNORE=		please use lang/rust-dragonfly instead
-.endif
-
 post-extract:
 	@(${RMDIR} ${WRKSRC}/src/compiler-rt && \
 	  ${MV} ${WRKSRC_compiler_rt} ${WRKSRC}/src/compiler-rt)
