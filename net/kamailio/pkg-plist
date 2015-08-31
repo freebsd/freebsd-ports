@@ -2,24 +2,12 @@ sbin/kamailio
 sbin/kamcmd
 sbin/kamctl
 sbin/kamdbctl
-@unexec if cmp -s %D/etc/kamailio/dictionary.kamailio.sample %D/etc/kamailio/dictionary.kamailio; then rm -f %D/etc/kamailio/dictionary.kamailio; fi
-etc/kamailio/dictionary.kamailio.sample
-@exec if [ ! -f %D/etc/kamailio/dictionary.kamailio ] ; then cp -p %D/%F %B/dictionary.kamailio; fi
-@unexec if cmp -s %D/etc/kamailio/kamailio-advanced.cfg.sample %D/etc/kamailio/kamailio-advanced.cfg; then rm -f %D/etc/kamailio/kamailio-advanced.cfg; fi
-etc/kamailio/kamailio-advanced.cfg.sample
-@exec if [ ! -f %D/etc/kamailio/kamailio-advanced.cfg ] ; then cp -p %D/%F %B/kamailio-advanced.cfg; fi
-@unexec if cmp -s %D/etc/kamailio/kamailio-basic.cfg.sample %D/etc/kamailio/kamailio-advanced.cfg; then rm -f %D/etc/kamailio/kamailio-advanced.cfg; fi
-etc/kamailio/kamailio-basic.cfg.sample
-@exec if [ ! -f %D/etc/kamailio/kamailio-basic.cfg ] ; then cp -p %D/%F %B/kamailio-advanced.cfg; fi
-@unexec if cmp -s %D/etc/kamailio/kamailio.cfg.sample %D/etc/kamailio/kamailio.cfg; then rm -f %D/etc/kamailio/kamailio.cfg; fi
-etc/kamailio/kamailio.cfg.sample
-@exec if [ ! -f %D/etc/kamailio/kamailio.cfg ] ; then cp -p %D/%F %B/kamailio.cfg; fi
-@unexec if cmp -s %D/etc/kamailio/kamctlrc.sample %D/etc/kamailio/kamctlrc; then rm -f %D/etc/kamailio/kamctlrc; fi
-etc/kamailio/kamctlrc.sample
-@exec if [ ! -f %D/etc/kamailio/kamctlrc ] ; then cp -p %D/%F %B/kamctlrc; fi
-%%TLS%%@unexec if cmp -s %D/etc/kamailio/tls.cfg.sample %D/etc/kamailio/tls.cfg; then rm -f %D/etc/kamailio/tls.cfg; fi
-%%TLS%%etc/kamailio/tls.cfg.sample
-%%TLS%%@exec if [ ! -f %D/etc/kamailio/tls.cfg ] ; then cp -p %D/%F %B/tls.cfg; fi
+@sample etc/kamailio/dictionary.kamailio.sample
+@sample etc/kamailio/kamailio-advanced.cfg.sample
+@sample etc/kamailio/kamailio-basic.cfg.sample
+@sample etc/kamailio/kamailio.cfg.sample
+@sample etc/kamailio/kamctlrc.sample
+%%TLS%%@sample etc/kamailio/tls.cfg.sample
 %%TLS%%etc/kamailio/kamailio-selfsigned.key
 %%TLS%%etc/kamailio/kamailio-selfsigned.pem
 lib/kamailio/libbinrpc.so
