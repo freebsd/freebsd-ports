@@ -1,13 +1,13 @@
 # $FreeBSD$
 
-PORTNAME=	geany-plugins-l10n
+PORTNAME=	geany-plugin-git-changebar
 PORTVERSION=	${GEANY_VER}
 CATEGORIES=	devel
 
 MAINTAINER=	makc@FreeBSD.org
-COMMENT=	Localization messages for Geany plugins
+COMMENT=	Geany plugin: ${${GEANY_PLUGIN}_DESC}
 
-NO_ARCH=	yes
+LIB_DEPENDS=	libgit2.so:${PORTSDIR}/devel/libgit2
 
 .include "${.CURDIR}/../geany-plugins/files/Makefile.common"
 .include <bsd.port.mk>

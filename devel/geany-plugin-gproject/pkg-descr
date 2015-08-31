@@ -1,8 +1,0 @@
-GProject is an extension of Geany's project management displaying
-a tree of files belonging to the project in the sidebar. In addition,
-it enables quick swapping between header and source files, searching
-project files by name and more. The plugin was created with big
-projects in mind so everything works fast enough even with projects
-consisting of hundreds of thousands of files.
-
-WWW: http://plugins.geany.org/gproject.html

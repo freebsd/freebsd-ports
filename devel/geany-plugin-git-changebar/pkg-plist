@@ -1,0 +1,7 @@
+lib/geany/git-changebar.so
+%%PORTDOCS%%%%DOCSDIR%%/git-changebar/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/git-changebar/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/git-changebar/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/git-changebar/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/git-changebar/README
+%%DATADIR%%/git-changebar/prefs.ui
