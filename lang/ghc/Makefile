@@ -29,9 +29,8 @@ CONFLICTS=	ghc-7.4.* ghc-7.6.* ghc-7.8.*
 
 LIB_DEPENDS+=	libgmp.so:${PORTSDIR}/math/gmp
 
-USE_AUTOTOOLS=		autoconf autoheader
 USE_PERL5=		build
-USES=			gmake iconv:translit ncurses perl5 tar:xz
+USES=			autoreconf gmake iconv:translit ncurses perl5 tar:xz
 
 MAKE_ENV+=	LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 # This is needed on FreeBSD 9.x due to the bootstrap tarball.
