@@ -36,10 +36,9 @@ CXXFLAGS+=	-msse2 -mfpmath=sse
 CXXFLAGS+=	-fopenmp
 .endif
 
-# NB: `math/ldouble' port provides these functions, but does not export
-# them correctly; as a result linking with C++ code is currently broken
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000034
-BROKEN=		requires logl(), expl(), log2l()
+LIB_DEPENDS+=	libml.so:${PORTSDIR}/math/ldouble
+LDFLAGS+=	-lml
 .endif
 
 post-patch:
