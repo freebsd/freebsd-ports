@@ -3,7 +3,7 @@
 
 PORTNAME=		krb5
 PORTVERSION=		1.12.4
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 PKGNAMESUFFIX=		-112
@@ -86,14 +86,8 @@ PLIST_SUB+=		LDAP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MREADLINE}
-.if ${OSVERSION} >= 1100000
-# libtool has some gas with libreadline in 11-CURRENT.
-BUILD_DEPENDS+=		libreadline.so:${PORTSDIR}/devel/readline
-LIB_DEPENDS+=		libreadline.so:${PORTSDIR}/devel/readline
-.else
 USES+=			readline:port
 CONFIGURE_ARGS+=	--with-readline
-.endif
 .endif
 
 .if defined(PROGRAM_TRANSFORM_NAME) && ${PROGRAM_TRANSFORM_NAME} != ""
