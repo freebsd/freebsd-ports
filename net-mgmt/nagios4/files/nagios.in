@@ -31,6 +31,7 @@ reload_precmd=reload_precmd
 configtest_cmd=nagios_checkconfig
 sig_reload=HUP
 
+nagios_enable=${nagios_enable:-"NO"}
 nagios_program=${nagios_program:-"%%PREFIX%%/bin/nagios"}	# Path to named, if you want a different one.
 command_args=${command_args:-"-d"}
 extra_commands=${extra_commands:-"reload configtest"}
