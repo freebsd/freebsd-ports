@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150901:
+  AFFECTS: users of editors/libreoffice
+  AUTHOR: jkim@FreeBSD.org
+
+  editors/libreoffice has been updated to 5.0.1.  However, FreeBSD 9.x is
+  no longer supported because it requires C++11-capable library installed
+  in the base.  If you cannot upgrade your system or still want 4.3.x for
+  some reason, use editors/libreoffice4.
+
 20150822:
   AFFECTS: users of print/ghostscript*
   AUTHOR: hrs@FreeBSD.org
