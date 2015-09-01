@@ -21,7 +21,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 		zip:${PORTSDIR}/archivers/zip \
 		${LOCALBASE}/lib/libboost_regex.a:${PORTSDIR}/devel/boost-libs \
-		cppunit-config:${PORTSDIR}/devel/cppunit113 \
+		cppunit-config:${PORTSDIR}/devel/cppunit \
 		dmake:${PORTSDIR}/devel/dmake \
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
 		mdds>=0.9.0:${PORTSDIR}/devel/mdds \
