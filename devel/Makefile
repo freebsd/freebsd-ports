@@ -293,7 +293,6 @@
     SUBDIR += cppi
     SUBDIR += cpptest
     SUBDIR += cppunit
-    SUBDIR += cppunit113
     SUBDIR += cproto
     SUBDIR += cpuflags
     SUBDIR += critcl

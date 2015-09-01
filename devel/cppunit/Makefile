@@ -1,44 +1,32 @@
-# Created by: Graeme Cross <gcross@netspace.net.au>
 # $FreeBSD$
 
 PORTNAME=	cppunit
-PORTVERSION=	1.12.1
-PORTREVISION=	3
+PORTVERSION=	1.13.2
 CATEGORIES=	devel
-MASTER_SITES=	SF
+MASTER_SITES=	http://dev-www.libreoffice.org/src/
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	C++ port of the JUnit framework for unit testing
 
-CONFLICTS_INSTALL=	cppunit113-1.13.*
+LICENSE=	LGPL21
 
-OPTIONS_DEFINE=	DOXYGEN
+OPTIONS_DEFINE=	DOCS DOXYGEN
 
-USES=		libtool pathfix
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-INSTALL_TARGET=	install-strip
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOXYGEN}
-BUILD_DEPENDS+=		doxygen:${PORTSDIR}/devel/doxygen \
+DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen \
 			dot:${PORTSDIR}/graphics/graphviz
-CONFIGURE_ARGS+=	--enable-doc --enable-doxygen --enable-html-docs
-PLIST_SUB+=		PORTDOCS=""
-.else
-CONFIGURE_ARGS+=	--disable-doc --disable-doxygen --disable-html-docs
-PLIST_SUB+=		PORTDOCS="@comment "
-.endif
+DOXYGEN_CONFIGURE_ENABLE=	dot doxygen html-docs
+DOXYGEN_CONFIGURE_ON=	--htmldir="${DOCSDIR}/html"
 
-post-install:
-	${FIND} ${STAGEDIR}${PREFIX}/include/cppunit ! -type d | \
-		${SED} 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+OPTIONS_SUB=	yes
+USE_LDCONFIG=	yes
+USES=		libtool pathfix
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${FIND} ${WRKSRC}/doc/html -not -type d \
-                | ${SED} 's,^${WRKSRC}/doc/html,${DOCSDIR_REL},' >> ${TMPPLIST}
-	${INSTALL_MAN} ${WRKSRC}/doc/FAQ ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/FAQ ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
