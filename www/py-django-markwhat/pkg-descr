@@ -1,0 +1,17 @@
+A collection of template filters that implement common markup languages.
+
+provides template filters that implement the following markup
+languages:
+
+* ``textile`` -- implements `Textile`_ -- requires `PyTextile`_
+* ``markdown`` -- implements `Markdown`_ -- requires `Python-markdown`_
+* ``commonmark`` -- implements `CommonMark`_ -- requires `CommonMark-py`_
+* ``reStructuredText`` -- implements `reST (reStructuredText)`_
+-- requires `docutils`_
+
+In each case, the filter expects formatted markup as a string and
+returns a string representing the marked-up text. For example, the
+``textile`` filter converts text that is marked-up in Textile format
+to HTML.
+
+WWW: https://pypi.python.org/pypi/django-markwhat
