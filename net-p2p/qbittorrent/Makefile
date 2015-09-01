@@ -58,11 +58,6 @@ CONFIGURE_ARGS+=	--disable-gui
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-.endif
-
 .if defined(SLAVE_PORT) && ${SLAVE_PORT:tl} == "no"
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qbittorrent
 	${INSTALL_MAN} ${WRKSRC}/doc/qbittorrent.1 \
@@ -73,5 +68,9 @@ post-install:
 		${STAGEDIR}${MAN1PREFIX}/man/man1/
 .endif
 	@${RM} -rf ${STAGEDIR}${PREFIX}/share/man
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

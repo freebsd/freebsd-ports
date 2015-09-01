@@ -19,20 +19,19 @@ USES=		libtool pathfix
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 # Inhibit installation of extra copy of GPL
 	@${REINPLACE_CMD} -E 's,: (un)?install-dist_pkgdataDATA,:,' \
 		${WRKSRC}/Makefile.in
-.if ${PORT_OPTIONS:MDOCS}
+
+post-patch-DOCS-on:
 # Fix documentation installation directory
 	@${REINPLACE_CMD} -e 's,pkgdata,pkgdoc,g ; s,(datadir.*,(docdir),' \
 		${WRKSRC}/doc/Makefile.in
-.else
+
+post-patch-DOCS-off:
 # If documentation is not wanted, just disable it instead of fixing
 	@${REINPLACE_CMD} -E 's,: (un)?install-dist_pkgdataDATA,:,' \
 		${WRKSRC}/doc/Makefile.in
-.endif
 
 .include <bsd.port.mk>

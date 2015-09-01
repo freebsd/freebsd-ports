@@ -20,8 +20,6 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/vcpc_users/jhm/bin/cmunger|${PREFIX}|; \
@@ -31,9 +29,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/ctran ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/proc-incl ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/cmunge ${STAGEDIR}${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
