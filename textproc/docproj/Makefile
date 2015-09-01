@@ -3,7 +3,7 @@
 
 PORTNAME=	docproj
 PORTVERSION=	2.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc
 
 MAINTAINER=	doceng@FreeBSD.org
@@ -54,7 +54,8 @@ FONTS=	${LOCALBASE}/share/fonts/GentiumPlus/GentiumPlus-R.ttf:${PORTSDIR}/x11-fo
 	${LOCALBASE}/share/fonts/Lohit/Lohit-Bengali.ttf:${PORTSDIR}/x11-fonts/lohit \
 	${LOCALBASE}/share/fonts/dejavu/DejaVuSansMono.ttf:${PORTSDIR}/x11-fonts/dejavu
 FONTS_CJK=${LOCALBASE}/share/fonts/TrueType/gkai00mp.ttf:${PORTSDIR}/chinese/arphicttf \
-	${LOCALBASE}/share/fonts/OTF/ipam.otf:${PORTSDIR}/japanese/font-ipa
+	${LOCALBASE}/share/fonts/OTF/ipam.otf:${PORTSDIR}/japanese/font-ipa \
+	${LOCALBASE}/share/fonts/nanum-ttf/NanumBarunGothic.ttf:${PORTSDIR}/korean/nanumfonts-ttf
 
 .include <bsd.port.options.mk>
 
