@@ -18,6 +18,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django16>0:${PORTSDIR}/www/py-django16 \
 		${PYTHON_PKGNAMEPREFIX}argparse>0:${PORTSDIR}/devel/py-argparse \
 		${PYTHON_PKGNAMEPREFIX}boto>=2.4.1:${PORTSDIR}/devel/py-boto \
 		${PYTHON_PKGNAMEPREFIX}tornado>=3.2:${PORTSDIR}/www/py-tornado \
+		${PYTHON_PKGNAMEPREFIX}colorlog>0:${PORTSDIR}/devel/py-colorlog \
+		${PYTHON_PKGNAMEPREFIX}colorama>0:${PORTSDIR}/devel/py-colorama \
 		${PYTHON_PKGNAMEPREFIX}django-markwhat>0:${PORTSDIR}/www/py-django-markwhat
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose \
 		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock \
