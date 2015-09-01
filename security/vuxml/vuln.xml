@@ -58,6 +58,65 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fc1f6658-4f53-11e5-934b-002590263bf5">
+    <topic>ghostscript -- denial of service (crash) via crafted Postscript files</topic>
+    <affects>
+      <package>
+	<name>ghostscript7</name>
+	<name>ghostscript7-nox11</name>
+	<name>ghostscript7-base</name>
+	<name>ghostscript7-x11</name>
+	<range><lt>7.07_32</lt></range>
+      </package>
+      <package>
+	<name>ghostscript8</name>
+	<name>ghostscript8-nox11</name>
+	<name>ghostscript8-base</name>
+	<name>ghostscript8-x11</name>
+	<range><lt>8.71_19</lt></range>
+      </package>
+      <package>
+	<name>ghostscript9</name>
+	<name>ghostscript9-nox11</name>
+	<name>ghostscript9-base</name>
+	<name>ghostscript9-x11</name>
+	<range><lt>9.06_11</lt></range>
+      </package>
+      <package>
+	<name>ghostscript9-agpl</name>
+	<name>ghostscript9-agpl-nox11</name>
+	<range><lt>9.15_2</lt></range>
+      </package>
+      <package>
+	<name>ghostscript9-agpl-base</name>
+	<name>ghostscript9-agpl-x11</name>
+	<range><lt>9.16_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MITRE reports:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3228">
+	  <p>Integer overflow in the gs_heap_alloc_bytes function in
+	    base/gsmalloc.c in Ghostscript 9.15 and earlier allows remote
+	    attackers to cause a denial of service (crash) via a crafted
+	    Postscript (ps) file, as demonstrated by using the ps2pdf command,
+	    which triggers an out-of-bounds read or write.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3228</cvename>
+      <url>http://bugs.ghostscript.com/show_bug.cgi?id=696041</url>
+      <url>http://bugs.ghostscript.com/show_bug.cgi?id=696070</url>
+      <url>http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=0c0b0859</url>
+    </references>
+    <dates>
+      <discovery>2015-06-17</discovery>
+      <entry>2015-08-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="80c66af0-d1c5-449e-bd31-63b12525ff88">
     <topic>ffmpeg -- out-of-bounds array access</topic>
     <affects>
