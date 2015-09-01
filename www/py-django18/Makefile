@@ -20,9 +20,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cpe python
 USE_PYTHON=	autoplist distutils
 
-CPE_VENDOR=	djangoproject
-
 CONFLICTS_INSTALL=	py??-django-devel-* py??-django-1.[012345679].*
+CPE_VENDOR=		djangoproject
 
 DOCSDIR=	${PREFIX}/share/doc/py-django
 
