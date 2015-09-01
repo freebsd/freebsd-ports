@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://tnemeth.free.fr/projets/programmes/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mbeis@xs4all.nl
 COMMENT=	Disk usage monitor dockapp
 
 USE_XORG=	x11 xpm
