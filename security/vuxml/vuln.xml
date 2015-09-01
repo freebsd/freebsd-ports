@@ -58,6 +58,182 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="80c66af0-d1c5-449e-bd31-63b12525ff88">
+    <topic>ffmpeg -- out-of-bounds array access</topic>
+    <affects>
+      <package>
+	<name>libav</name>
+	<range><ge>11.0</ge><lt>11.4</lt></range>
+	<range><lt>10.7</lt></range>
+      </package>
+      <package>
+	<name>gstreamer1-libav</name>
+	<!-- gst-libav-1.4.5 has libav-10.5 -->
+	<range><lt>1.5.1</lt></range>
+      </package>
+      <package>
+	<name>handbrake</name>
+	<!-- handbrake-0.10.2 has libav-10.1 -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>ffmpeg</name>
+	<range><ge>2.2.0,1</ge><lt>2.2.15,1</lt></range>
+	<range><lt>2.0.7,1</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg26</name>
+	<range><lt>2.6.2</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg25</name>
+	<range><lt>2.5.6</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg24</name>
+	<range><lt>2.4.8</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg23</name>
+	<!-- just in case: f7e1367 wasn't cherry-picked -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>ffmpeg1</name>
+	<!-- just in case: f7e1367 wasn't cherry-picked -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>avidemux</name>
+	<name>avidemux26</name>
+	<!-- avidemux-2.6.10 has ffmpeg-2.6.1 -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>kodi</name>
+	<!-- kodi-14.2 has ffmpeg-2.4.6 -->
+	<range><lt>15.1</lt></range>
+      </package>
+      <package>
+	<name>mplayer</name>
+	<name>mencoder</name>
+	<!-- mplayer-1.1.r20141223 has ffmpeg-2.5.1+ (snapshot, 03b84f2) -->
+	<range><lt>1.1.r20150403</lt></range>
+      </package>
+      <package>
+	<name>mythtv</name>
+	<name>mythtv-frontend</name>
+	<!-- mythtv-0.27.0.20140121 has ffmpeg-1.2.2+ (snapshot, f9c8726) -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NVD reports:</p>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-3395">
+	  <p>The msrle_decode_pal4 function in msrledec.c in Libav
+	    before 10.7 and 11.x before 11.4 and FFmpeg before 2.0.7,
+	    2.2.x before 2.2.15, 2.4.x before 2.4.8, 2.5.x before 2.5.6,
+	    and 2.6.x before 2.6.2 allows remote attackers to have
+	    unspecified impact via a crafted image, related to a pixel
+	    pointer, which triggers an out-of-bounds array access.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3395</cvename>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=f7e1367f58263593e6cee3c282f7277d7ee9d553</url>
+      <url>https://git.libav.org/?p=libav.git;a=commit;h=5ecabd3c54b7c802522dc338838c9a4c2dc42948</url>
+      <url>https://ffmpeg.org/security.html</url>
+      <url>https://git.libav.org/?p=libav.git;a=blob;f=Changelog;hb=refs/tags/v11.4</url>
+    </references>
+    <dates>
+      <discovery>2015-04-12</discovery>
+      <entry>2015-09-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="da434a78-e342-4d9a-87e2-7497e5f117ba">
+    <topic>ffmpeg -- use after free</topic>
+    <affects>
+      <package>
+	<name>libav</name>
+	<range><ge>11.0</ge><lt>11.4</lt></range>
+	<range><lt>10.7</lt></range>
+      </package>
+      <package>
+	<name>gstreamer1-libav</name>
+	<!-- gst-libav-1.4.5 has libav-10.5 -->
+	<range><lt>1.5.0</lt></range>
+      </package>
+      <package>
+	<name>handbrake</name>
+	<!-- handbrake-0.10.2 has libav-10.1 -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>ffmpeg</name>
+	<range><ge>2.2.0,1</ge><lt>2.2.12,1</lt></range>
+	<range><ge>2.1.0,1</ge><lt>2.1.7,1</lt></range>
+	<range><lt>2.0.7,1</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg25</name>
+	<range><lt>2.5.2</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg24</name>
+	<range><lt>2.4.5</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg23</name>
+	<range><lt>2.3.6</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg1</name>
+	<range><lt>1.2.11</lt></range>
+      </package>
+      <package>
+	<name>mythtv</name>
+	<name>mythtv-frontend</name>
+	<!-- mythtv-0.27.0.20140121 has ffmpeg-1.2.2+ (snapshot, f9c8726) -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NVD reports:</p>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-3417">
+	  <p>Use-after-free vulnerability in the ff_h264_free_tables
+	    function in libavcodec/h264.c in FFmpeg before 2.3.6 allows
+	    remote attackers to cause a denial of service or possibly
+	    have unspecified other impact via crafted H.264 data in an
+	    MP4 file, as demonstrated by an HTML VIDEO element that
+	    references H.264 data.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3417</cvename>
+      <!-- ffmpeg and libav fixes are different -->
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=e8714f6f93d1a32f4e4655209960afcf4c185214</url>
+      <url>https://git.libav.org/?p=libav.git;a=commitdiff;h=3b69f245dbe6e2016659a45c4bfe284f6c5ac57e</url>
+      <url>https://ffmpeg.org/security.html</url>
+      <url>https://git.libav.org/?p=libav.git;a=blob;f=Changelog;hb=refs/tags/v11.4</url>
+    </references>
+    <dates>
+      <discovery>2014-12-19</discovery>
+      <entry>2015-09-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5300711b-4e61-11e5-9ad8-14dae9d210b8">
     <topic>graphviz -- format string vulnerability</topic>
     <affects>
