@@ -111,35 +111,6 @@ CONFIGURE_ARGS+=	--with-openssl \
 			--with-openssl-libs=${OPENSSLLIB}
 .endif
 
-.if ${PORT_OPTIONS:MBZIP2}
-CONFIGURE_ARGS+=	--with-bzip2
-.endif
-
-.if ${PORT_OPTIONS:MGDBM}
-LIB_DEPENDS+=		libgdbm.so:${PORTSDIR}/databases/gdbm
-CONFIGURE_ARGS+=	--with-gdbm
-.endif
-
-.if empty(PORT_OPTIONS:MIPV6)
-CONFIGURE_ARGS+=	--disable-ipv6
-.endif
-
-.if ${PORT_OPTIONS:MLIBEV}
-CONFIGURE_ARGS+=	--with-libev=${LOCALBASE}
-LIB_DEPENDS+=		libev.so:${PORTSDIR}/devel/libev
-.endif
-
-.if ${PORT_OPTIONS:MLUA}
-USES+=			lua:51
-CONFIGURE_ARGS+=	--with-lua
-CONFIGURE_ENV+=		LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER}"
-.endif
-
-.if ${PORT_OPTIONS:MMEMCACHE}
-LIB_DEPENDS+=		libmemcache.so:${PORTSDIR}/databases/libmemcache
-CONFIGURE_ARGS+=	--with-memcache
-.endif
-
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=		yes
 CONFIGURE_ARGS+=	--with-mysql
@@ -163,16 +134,6 @@ EXTRA_PATCHES+=		${FILESDIR}/extra-patch-nodelay
 USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--with-ldap
 _REQUIRE+=		slapd
-.endif
-
-.if ${PORT_OPTIONS:MSPAWNFCGI}
-RUN_DEPENDS+=		spawn-fcgi:${PORTSDIR}/www/spawn-fcgi
-.endif
-
-.if ${PORT_OPTIONS:MVALGRIND}
-BUILD_DEPENDS+=		valgrind:${PORTSDIR}/devel/valgrind
-RUN_DEPENDS+=		valgrind:${PORTSDIR}/devel/valgrind
-CONFIGURE_ARGS+=	--with-valgrind
 .endif
 
 .if ${PORT_OPTIONS:MWEBDAV}
