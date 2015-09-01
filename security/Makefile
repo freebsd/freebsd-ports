@@ -993,6 +993,7 @@
     SUBDIR += snortreport
     SUBDIR += snortsam
     SUBDIR += snortsnarf
+    SUBDIR += softether
     SUBDIR += softhsm
     SUBDIR += softhsm2
     SUBDIR += spass
