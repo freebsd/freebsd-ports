@@ -22,7 +22,7 @@ LIB_DEPENDS=	libid3.so:${PORTSDIR}/audio/id3lib \
 		libtag.so:${PORTSDIR}/audio/taglib
 
 USES=		desktop-file-utils gettext-tools gmake pkgconfig tar:xz
-USE_GNOME=	gtk30 glib20 intltool intlhack libxslt
+USE_GNOME=	gtk30 intlhack libxslt
 GLIB_SCHEMAS=	org.gnome.EasyTAG.gschema.xml org.gnome.EasyTAG.enums.xml
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
