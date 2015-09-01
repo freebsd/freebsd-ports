@@ -6,7 +6,7 @@ PORTVERSION=	5.2.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 
-MAINTAINER=	joehorn@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full Featured Email Transfer Class for PHP
 
 LICENSE=	LGPL3

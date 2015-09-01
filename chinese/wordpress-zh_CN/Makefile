@@ -9,7 +9,7 @@ MASTER_SITES=	http://cn.wordpress.org/ \
 		http://mirror.joehorn.idv.tw/wordpress/
 PKGNAMESUFFIX=	-zh_CN
 
-MAINTAINER=	joehorn@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	State-of-the-art semantic personal publishing platform
 
 LICENSE=	GPLv2

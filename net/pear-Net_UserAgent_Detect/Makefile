@@ -6,7 +6,7 @@ PORTVERSION=	2.5.2
 PORTREVISION=	1
 CATEGORIES=	net www pear
 
-MAINTAINER=	joehorn@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class that determines the Web browser, version, and platform
 
 LICENSE=	PHP202
