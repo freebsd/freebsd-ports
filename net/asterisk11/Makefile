@@ -2,53 +2,60 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	11.19.0
+PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
-		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
+MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/%SUBDIR%/:main,g729
+MASTER_SITE_SUBDIR=	asterisk/:main \
+			asterisk/old-releases/:main \
+			sounds/releases/:g729
 PKGNAMESUFFIX=	11
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Open Source PBX and telephony toolkit
 
-LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex \
-		libnewt.so:${PORTSDIR}/devel/newt \
-		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3
-RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+EXTRACT_ONLY:=	${DISTNAME}${EXTRACT_SUFX}
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc sparc64
 
-GNU_CONFIGURE=	yes
+USES=		bison cpe gmake iconv localbase ncurses shebangfix
 USE_CSTD=	gnu89
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
-USES=		bison cpe gmake iconv localbase ncurses shebangfix
-CPE_VENDOR=	digium
+USE_SQLITE=	3
 USE_RC_SUBR=	asterisk
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--with-crypto=${OPENSSLBASE} \
+			--with-ssl=${OPENSSLBASE}
+
+CPE_VENDOR=	digium
+
+SHEBANG_FILES=	agi/agi-test.agi \
+		agi/jukebox.agi
+
 MAKE_ENV=	PTHREAD_LIBS="-lpthread" \
 		MKDIR="${MKDIR}" \
 		PWLIBDIR=${LOCALBASE}/share/pwlib \
 		OSVERSION=${OSVERSION} \
 		DOCSDIR=${DOCSDIR} \
-		ASTCFLAGS="${CFLAGS}"
-MAKE_ARGS+=	NOISY_BUILD=YES
-CONFIGURE_ARGS+=	--with-crypto=${OPENSSLBASE} \
-			--with-ssl=${OPENSSLBASE}
+		ASTCFLAGS="${CFLAGS}" \
+		ASTLDFLAGS="${LDFLAGS}"
+MAKE_ARGS+=	NOISY_BUILD=yes \
+		ASTDATADIR=${DATADIR}
 
-SHEBANG_FILES=	agi/agi-test.agi \
-		agi/jukebox.agi
-
-CONFLICTS_BUILD=	linuxthreads-*
+CONFLICTS_BUILD=	linuxthreads-* pjsip-*
 CONFLICTS_INSTALL=	asterisk*-1.8* asterisk*-13*
 
-OPTIONS_DEFINE=			CURL EXCHANGE FREETDS GSM LDAP LUA MYSQL NEWG711 \
-				ODBC OOH323 PGSQL RADIUS SNMP SPANDSP SQLITE2 SRTP \
-				SYSINFO UUID VORBIS XMPP
-OPTIONS_SINGLE=			COMPILER
-OPTIONS_SINGLE_COMPILER=	BASE GCC
-OPTIONS_DEFAULT=		CURL FREETDS GCC GSM LUA ODBC PGSQL RADIUS SNMP \
-				SQLITE2 UUID VORBIS XMPP
+OPTIONS_DEFINE=			BACKTRACE CURL EXCHANGE FREETDS LDAP LUA \
+				MP3PLAYER OOH323 RADIUS SNMP SPANDSP SRTP \
+				SYSINFO UUID XMPP
+OPTIONS_DEFAULT=		BACKTRACE CURL FREETDS GCC GSM LUA MP3PLAYER NEWT ODBC PGSQL \
+				RADIUS SNMP SPEEX SQLITE2 UUID VORBIS XMPP
 
 OPTIONS_DEFINE_i386=		DAHDI
 OPTIONS_DEFINE_amd64=		DAHDI
@@ -58,18 +65,50 @@ OPTIONS_DEFAULT_i386=		DAHDI
 OPTIONS_DEFAULT_amd64=		DAHDI
 OPTIONS_DEFAULT_sparc64=	DAHDI
 
+OPTIONS_GROUP=			CODECS
+OPTIONS_GROUP_CODECS=		GSM NEWG711 SPEEX VORBIS
+CODECS_DESC=			Encoder/Decoder (Codec) Support
+
+OPTIONS_SINGLE=			COMPILER
+OPTIONS_SINGLE_COMPILER=	BASE GCC
+COMPILER_DESC=			Compiler to use
+
+OPTIONS_GROUP+=			DATABASE
+OPTIONS_GROUP_DATABASE=		MYSQL ODBC PGSQL SQLITE2
+DATABASE_DESC=			Database Support
+
+OPTIONS_MULTI=			MENU
+OPTIONS_MULTI_MENU=		NCURSES NEWT
+MENU_DESC=			Menuselect Interface Backend
+NEWT_DESC=			Newt User Interface
+
+OPTIONS_GROUP+=			SOUNDS
+OPTIONS_GROUP_SOUNDS=		G729
+SOUNDS_DESC=			Core and Music-on-Hold (MoH) Sound Files
+ASTERISK_CORE_G729_SOUNDS=	asterisk-core-sounds-en-g729-1.4.27.tar.gz
+ASTERISK_MOH_G729_SOUNDS=	asterisk-moh-opsound-g729-2.03.tar.gz
+
+G729_DESC=			Install G.729 format sounds
+G729_DISTFILES=			${ASTERISK_CORE_G729_SOUNDS}:g729 \
+				${ASTERISK_MOH_G729_SOUNDS}:g729
+
+BACKTRACE_DESC= Stack backtrace support via (lib)execinfo
 BASE_DESC=	Use base compiler (experimental)
-DAHDI_DESC?=	DAHDI support
-EXCHANGE_DESC?=	Exchange calendar support
+DAHDI_DESC=	DAHDI support
+EXCHANGE_DESC=	Exchange calendar support
 GCC_DESC=	Use gcc from ports
-NEWG711_DESC?=	New G711 codec
-OOH323_DESC?=	ooh323 support
-SRTP_DESC?=	SecureRTP support
-SYSINFO_DESC?=	Use devel/libsysinfo to get system information
-UUID_DESC?=	libuuid support (required for ICE and TURN in RTP)
-XMPP_DESC?=	XMPP/GTALK support
+MP3PLAYER_DESC=	Install MP3 Player for Music-On-Hold (mpg123)
+NEWG711_DESC=	New G711 codec
+OOH323_DESC=	ooh323 support
+SRTP_DESC=	SecureRTP support
+SYSINFO_DESC=	Use devel/libsysinfo to get system information
+UUID_DESC=	libuuid support (required for ICE and TURN in RTP)
+XMPP_DESC=	XMPP/GTALK support
 
 OPTIONS_SUB=		yes
+
+BACKTRACE_CONFIGURE_WITH=	execinfo
+BACKTRACE_LIB_DEPENDS=		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
 CURL_CONFIGURE_ON=	--with-libcurl
 CURL_CONFIGURE_OFF=	--with-libcurl=no
@@ -105,6 +144,11 @@ LUA_LDFLAGS=		-L${LUA_LIBDIR}
 MYSQL_CONFIGURE_WITH=	mysqlclient
 MYSQL_USE=		MYSQL=yes
 
+MP3PLAYER_RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
+
+NCURSES_USES=		ncurses
+NEWT_LIB_DEPENDS=	libnewt.so:${PORTSDIR}/devel/newt
+
 ODBC_CONFIGURE_WITH=	unixodbc
 ODBC_CONFIGURE_ON=	--with-ltdl
 ODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC \
@@ -126,6 +170,9 @@ SNMP_LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 
 SPANDSP_CONFIGURE_WITH=	spandsp
 SPANDSP_LIB_DEPENDS=	libspandsp.so:${PORTSDIR}/comms/spandsp
+
+SPEEX_CONFIGURE_WITH=	speex
+SPEEX_LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex
 
 SQLITE2_CONFIGURE_WITH=	sqlite
 SQLITE2_LIB_DEPENDS=	libsqlite.so:${PORTSDIR}/databases/sqlite2
@@ -168,6 +215,11 @@ PLIST_SUB+=	ASTERISK_USER=${ASTERISK_USER} \
 post-extract:
 	@${FIND} ${WRKSRC} -name '*.d' -delete
 
+.if ${PORT_OPTIONS:MG729}
+	${CP} ${DISTDIR}/${ASTERISK_CORE_G729_SOUNDS} ${WRKSRC}/sounds
+	${CP} ${DISTDIR}/${ASTERISK_MOH_G729_SOUNDS} ${WRKSRC}/sounds
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/musiconhold.conf.sample
 .if ${PORT_OPTIONS:MSYSINFO}
@@ -177,8 +229,14 @@ post-patch:
 	@${REINPLACE_CMD} -e '/%%LIBSYSINFO%%/d' ${WRKSRC}/main/Makefile
 .endif
 
+.if exists(${FILESDIR}/.asterisk.makeopts)
+USER_MAKEOPTS_FILE=${FILESDIR}/.asterisk.makeopts
+.else
+USER_MAKEOPTS_FILE=
+.endif
+
 post-configure:
-	@cd ${WRKSRC} && ${MAKE_CMD} menuselect.makeopts
+	@cd ${WRKSRC} && ${MAKE_CMD} menuselect.makeopts USER_MAKEOPTS="${USER_MAKEOPTS_FILE}"
 	@cd ${WRKSRC} && ./menuselect/menuselect --disable res_timing_kqueue menuselect.makeopts
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable chan_mgcp menuselect.makeopts
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable res_pktccops menuselect.makeopts
@@ -191,7 +249,7 @@ post-configure:
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable chan_ooh323 menuselect.makeopts
 .endif
 .if ${PORT_OPTIONS:MNEWG711}
-	@cd ${WRKSRC} && ./menuselect/menuselect --enable  G711_NEW_ALGORITHM menuselect.makeopts
+	@cd ${WRKSRC} && ./menuselect/menuselect --enable G711_NEW_ALGORITHM menuselect.makeopts
 .endif
 
 pre-build:
@@ -200,5 +258,12 @@ pre-build:
 
 post-install:
 	@${RM} ${STAGEDIR}${ETCDIR}/*.conf ${STAGEDIR}${ETCDIR}/extensions.ael ${STAGEDIR}${ETCDIR}/extensions.lua
+	${FIND} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/modules -type f -name '*.so' | ${SED} "s,^${STAGEDIR}${PREFIX}/,," >> ${TMPPLIST}
+	${FIND} ${STAGEDIR}${DATADIR}/sounds -type f | ${SED} "s,^${STAGEDIR}${DATADIR},${DATADIR}," >> ${TMPPLIST}
+	${FIND} ${STAGEDIR}${DATADIR}/moh -type f | ${SED} "s,^${STAGEDIR}${DATADIR},${DATADIR}," >> ${TMPPLIST}
+
+	(cd ${STAGEDIR} && \
+		${FIND} var/spool/${PORTNAME}/voicemail/default -type f | ${SED} "s,^,/," >> ${TMPPLIST} && \
+		${FIND} var/spool/${PORTNAME}/voicemail/ -type d | ${SED} "s,^,@dir /," >> ${TMPPLIST});
 
 .include <bsd.port.post.mk>
