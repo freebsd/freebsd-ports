@@ -2,6 +2,7 @@ etc/rc.d/iocage
 lib/iocage/ioc-cmd
 lib/iocage/ioc-common
 lib/iocage/ioc-configure
+lib/iocage/ioc-git
 lib/iocage/ioc-globals
 lib/iocage/ioc-hacks
 lib/iocage/ioc-help
@@ -10,6 +11,7 @@ lib/iocage/ioc-info
 lib/iocage/ioc-network
 lib/iocage/ioc-rc
 lib/iocage/ioc-rctl
+lib/iocage/ioc-send
 lib/iocage/ioc-snapshot
 lib/iocage/ioc-upgrade
 lib/iocage/ioc-zfs
