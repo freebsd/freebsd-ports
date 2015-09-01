@@ -15,20 +15,17 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	re2c:${PORTSDIR}/devel/re2c
 
-USES=	scons bison compiler:c++11-lang
+USES=		bison compiler:c++11-lib scons
 
 MAKE_ARGS+=	${MAKE_ENV}
 CXXFLAGS+=	-std=c++11
 
+# Unhide std::to_string() with GCC < 4.9 (ports/193528)
+CXXFLAGS+=	-D_GLIBCXX_USE_C99
+
 PLIST_FILES=	bin/${PORTNAME}
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000000
-USE_GCC=	yes
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/build/release/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
