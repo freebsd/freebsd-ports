@@ -28,16 +28,14 @@ STRIP_FILES=	bin/${PORTNAME} libexec/${PORTNAME}/*.so
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-.endif
 	${INSTALL_DATA} ${WRKSRC}/edb.desktop ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/src/images/edb48-logo.png ${STAGEDIR}${PREFIX}/share/pixmaps/edb.png
 	${INSTALL_MAN} ${WRKSRC}/edb.1 ${STAGEDIR}${MANPREFIX}/man/man1/edb.1
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 	${STRIP_CMD} ${STRIP_FILES:S,^,${STAGEDIR}${PREFIX}/,}
+
+post-install-DOCS-on:
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

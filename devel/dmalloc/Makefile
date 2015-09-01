@@ -25,11 +25,7 @@ INSTALL_TARGET=	install
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-INSTALL_TARGET+=installdocs
-.endif
+DOCS_INSTALL_TARGET=	installdocs
 
 post-install:
 	${CHMOD} 755 ${STAGEDIR}${PREFIX}/bin/dmalloc

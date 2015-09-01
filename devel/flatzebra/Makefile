@@ -23,11 +23,7 @@ PORTDOCS=	AUTHORS COPYING INSTALL NEWS README TODO THANKS
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-post-patch:
-.if empty(PORT_OPTIONS:MDOCS)
+post-patch-DOCS-off:
 	@${REINPLACE_CMD} 's|^install-data-am: .*|install-data-am: install-pkgconfigDATA|' ${WRKSRC}/Makefile.in
-.endif
 
 .include <bsd.port.mk>

@@ -45,9 +45,10 @@ ENV=
 .SHELL:		path="/bin/sh" unsetenv=true
 .endif
 
-OPTIONS_DEFINE=	DOCS
+BROKEN_ia64=	does not compile on ia64
+BROKEN_powerpc=	does not compile on powerpc
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	${REINPLACE_CMD} -e '11269d;11274d' ${WRKSRC}/src/sed/configure
@@ -68,17 +69,11 @@ do-install:
 .endfor
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC}/out/${KBUILD_TARGET}.${KBUILD_ARCH}/release/stage${PREFIX}/share/kBuild && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR})
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/out/${KBUILD_TARGET}.${KBUILD_ARCH}/release/stage${PREFIX}/share/doc/${PORTNAME}-${KBUILD_VERSION}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc"
-BROKEN=		Does not compile on ia64 or powerpc
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

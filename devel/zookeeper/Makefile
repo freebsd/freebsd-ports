@@ -25,6 +25,7 @@ JAVA_RUN=	yes
 USE_RC_SUBR=	zookeeper
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 SCRIPTS=	zkCleanup.sh \
 		zkCli.sh \
@@ -59,17 +60,15 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.jar ${STAGEDIR}${PREFIX}/${PORTNAME}
 	${LN} -s ${PREFIX}/${PORTNAME}/bin/zkCli.sh ${STAGEDIR}${PREFIX}/bin/zkCli.sh
 
-.include <bsd.port.options.mk>
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${ZOOKEEPER_LOGDIR}
 	@${MKDIR} ${STAGEDIR}${ZOOKEEPER_RUNDIR}
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 	${RM} -r ${STAGEDIR}${DOCSDIR}/skin/translations
 	${RM} -r ${STAGEDIR}${DOCSDIR}/skin/scripts
 	${RM} -r ${STAGEDIR}${DOCSDIR}/skin/css
-.endif
 
 .include <bsd.port.mk>
