@@ -41,8 +41,6 @@ SHEBANG_FILES=	build \
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	${REINPLACE_CMD} -e 's|"/usr"|"${PREFIX}"| ; \
 		s|"/share/doc/libbobcat3"|"/share/doc/${PORTNAME}-${PORTVERSION}"| ; \
@@ -60,10 +58,10 @@ post-patch:
 		s|-lX11|-lX11 -L${LOCALBASE}/lib| ; \
 		s|-lmilter|-lmilter -lpthread|' \
 		${WRKSRC}/icmake/special
-.if ! ${PORT_OPTIONS:MDOCS}
+
+post-patch-DOCs-off:
 	@${REINPLACE_CMD} -e 's|#define DOCOTHER||' \
 		${WRKSRC}/INSTALL.im
-.endif
 
 do-build:
 	@cd ${WRKSRC} && ./build libraries all strip && ./build man

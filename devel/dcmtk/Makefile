@@ -31,18 +31,14 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-CFLAGS+=	-fPIC
-.endif
+CFLAGS_amd64=	-fPIC
 
 post-patch:
 	${FIND} ${WRKSRC} -name "*.h.orig" -delete
-.if !${PORT_OPTIONS:MDOCS}
+
+post-patch-DOCS-off:
 	${FIND} ${WRKSRC} -name CMakeLists.txt | ${XARGS} \
 	    ${REINPLACE_CMD} -e '/INSTALL_DOCDIR/d'
-.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doxygen/manpages/man1/*.1 ${STAGEDIR}${PREFIX}/man/man1/
@@ -51,4 +47,4 @@ post-install:
 	@${LN} -sf ${PREFIX}/lib/lib${shlib}.so.${SHLIBVER} ${STAGEDIR}${PREFIX}/lib/lib${shlib}.so
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
