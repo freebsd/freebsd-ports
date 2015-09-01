@@ -3,6 +3,7 @@
 
 PORTNAME=	go
 PORTVERSION=	1.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://golang.org/dl/
@@ -40,6 +41,10 @@ IGNORE=		unknown arch ${ARCH}
 .endif
 
 PLIST_SUB+=	ARCH=${GOARCH}
+
+.if (${OSVERSION} >= 1100000)
+EXTRA_PATCHES+=	${FILESDIR}/struct-if_data-patch
+.endif
 
 post-patch:
 	@cd ${WRKSRC} && ${FIND} . -name '*.orig' -delete
