@@ -6058,7 +6058,6 @@ net/py-spreadmodule||2014-05-04|Has expired: Depends on expired net/spread
 net/p5-Spread-Message||2014-05-04|Has expired: Depends on expired net/spread
 net/p5-POE-Component-Spread||2014-05-04|Has expired: Depends on expired net/spread
 net/p5-Spread-Session||2014-05-04|Has expired: Depends on expired net/spread
-sysutils/wmmemload||2014-05-04|Has expired: Broken
 lang/ml-pnet||2014-05-04|Has expired: Alpha-quality abandonware - Decommissioned Dec 2012 - Use mono
 lang/treecc||2014-05-04|Has expired: PNET dependency decommissioned Dec 2012
 lang/pnetlib||2014-05-04|Has expired: Alpha-quality abandonware - Decommissioned Dec 2012 - Use mono

@@ -1,0 +1,4 @@
+wmmemload displays current memory and swap usage as a percentage value
+in simulated LCD-display with support for background light.
+
+WWW: http://windowmaker.org/dockapps/?name=wmmemload
