@@ -3,7 +3,7 @@
 
 PORTNAME=	cmunge
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.vcpc.univie.ac.at/vcpc/jhm/code/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
@@ -24,7 +24,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|/vcpc_users/jhm/bin/cmunger|${STAGEDIR}${PREFIX}|; \
+		's|/vcpc_users/jhm/bin/cmunger|${PREFIX}|; \
 		s|/usr/ccs/lib/cpp|/usr/bin/cpp|' ${WRKSRC}/cmunge
 
 do-install:
