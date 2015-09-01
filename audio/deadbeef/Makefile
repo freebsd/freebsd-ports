@@ -183,6 +183,7 @@ post-patch:
 		-e 's,libavcodec ,libavcodec0 ,g' \
 		-e 's,libavutil ,libavutil0 ,g' \
 		-e 's,libavformat ,libavformat0 ,g' \
+		-e '/HAVE_OGG" = "yes"/ {n; n; /HAVE_VORBISPLUGIN=yes/d;}' \
 		${WRKSRC}/configure
 # Fix build with libzip-1.0
 	@${REINPLACE_CMD} 's,zip_file_t,zip_file_DB,g' \
