@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libreoffice
-PORTVERSION=	4.3.7
+PORTVERSION=	5.0.1
 RCVER=		2
 #PRERELEASE=	yes
 LOVERSION=	${PORTVERSION}.${RCVER}
@@ -12,7 +12,7 @@ LICENSE=	LGPL3 MPL
 LICENSE_COMB=	dual
 
 .if defined(PRERELEASE)
-MASTER_SITES?=	http://dev-builds.libreoffice.org/pre-releases/${MASTER_SITE_SUBDIR}
+MASTER_SITES?=	http://dev-builds.libreoffice.org/pre-releases/${MASTER_SITE_SUBDIR}/
 .else
 MASTER_SITES?=	http://download.documentfoundation.org/libreoffice/${MASTER_SITE_SUBDIR}/
 .endif
@@ -30,10 +30,10 @@ NO_BUILD=	yes
 RUN_DEPENDS=	libreoffice:${PORTSDIR}/editors/libreoffice
 
 .if defined(PRERELEASE)
-MASTER_SITE_SUBDIR=	deb/x86/
+MASTER_SITE_SUBDIR=	deb/x86
 LO_I18N_FILE=	LibreOffice_${LOVERSION}_Linux_x86_deb
 .else
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/deb/x86/
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/deb/x86
 LO_I18N_FILE=	LibreOffice_${PORTVERSION}_Linux_x86_deb
 .endif
 
@@ -69,8 +69,8 @@ do-install:
 MASTER_SITES+=	http://dev-www.libreoffice.org/src/:src \
 		http://dev-www.libreoffice.org/extern/:ext
 .if defined(PRERELEASE)
-MASTER_SITE_SUBDIR=	src/
+MASTER_SITE_SUBDIR=	src
 .else
-MASTER_SITE_SUBDIR=	src/${PORTVERSION}/
+MASTER_SITE_SUBDIR=	src/${PORTVERSION}
 .endif
 .endif
