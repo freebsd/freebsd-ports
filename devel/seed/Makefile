@@ -31,6 +31,8 @@ CONFIGURE_ARGS+=--enable-gtk-doc=no --with-webkit=3.0
 DATADIR=	share/seed-gtk3
 INSTALL_TARGET=	install-strip
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|== x|= x|g' \
 		${WRKSRC}/configure
