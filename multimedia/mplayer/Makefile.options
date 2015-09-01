@@ -89,11 +89,6 @@ CONFIGURE_ARGS+=	--disable-tv-v4l1 \
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-aligned_alloc
 .endif
 
-# Unsupported architectures for inline assembly
-.if ${ARCH} == "ppc"
-CONFIGURE_ARGS+=	--disable-asm
-.endif
-
 # Unsupported architectures
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
