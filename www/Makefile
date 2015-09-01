@@ -1564,6 +1564,7 @@
     SUBDIR += py-django16
     SUBDIR += py-django16-tastypie
     SUBDIR += py-django17
+    SUBDIR += py-django18
     SUBDIR += py-django_compressor
     SUBDIR += py-djangotoolbox
     SUBDIR += py-djblets
