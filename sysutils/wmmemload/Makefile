@@ -1,3 +1,4 @@
+# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
 # $FreeBSD$
 
 PORTNAME=	wmmemload
