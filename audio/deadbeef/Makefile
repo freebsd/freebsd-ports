@@ -3,7 +3,7 @@
 
 PORTNAME=	deadbeef
 PORTVERSION=	0.6.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -17,7 +17,7 @@ GNU_CONFIGURE=	yes
 USES=		desktop-file-utils execinfo gettext gmake iconv libtool \
 		pkgconfig shebangfix tar:bzip2
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--disable-alsa --disable-nullout --disable-gtk3
+CONFIGURE_ARGS=	--disable-alsa --disable-nullout --disable-gtk3 --disable-static
 CPPFLAGS+=	-I../dumb/dumb-kode54/include -I../../plugins/libmp4ff \
 		-I../../plugins/gme/game-music-emu-0.6pre \
 		-I${LOCALBASE}/include
