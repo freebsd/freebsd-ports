@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oozie
-PORTVERSION=	4.1.0
-PORTREVISION=	1
+PORTVERSION=	4.2.0
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTVERSION} \
 		LOCAL/demon/:maven \
@@ -28,7 +27,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 USES=		shebangfix
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
-TOMCAT_VERSION=	6.0.41
+TOMCAT_VERSION=	6.0.43
 HADOOP_VERSION=	2.7.1		# Matches devel/hadoop2
 SHEBANG_FILES=	client/src/main/bin/oozie distro/src/main/bin/addtowar.sh distro/src/main/bin/oozied.sh distro/src/main/bin/oozie-setup.sh distro/src/main/bin/oozie-sys.sh tools/src/main/bin/ooziedb.sh core/src/main/conf/oozie-env.sh
 
@@ -43,6 +42,7 @@ SUB_FILES=	pkg-message
 PLIST_SUB=	OOZIE_USER=${OOZIE_USER} \
 		OOZIE_RUNDIR=${OOZIE_RUNDIR} \
 		OOZIE_LOGDIR=${OOZIE_LOGDIR} \
+		OOZIE_VERSION=${PORTVERSION} \
 		HADOOP_VERSION=${HADOOP_VERSION}
 SUB_LIST=	OOZIE_USER=${OOZIE_USER} \
 		OOZIE_RUNDIR=${OOZIE_RUNDIR}
@@ -50,21 +50,16 @@ SUB_LIST=	OOZIE_USER=${OOZIE_USER} \
 do-build:
 	${MKDIR} ${WRKSRC}/distro/downloads
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/apache-tomcat-${TOMCAT_VERSION}.tar.gz ${WRKSRC}/distro/downloads/tomcat-${TOMCAT_VERSION}.tar.gz
-	${REINPLACE_CMD} -e s#hadoop-conf#${LOCALBASE}/etc/hadoop# ${WRKSRC}/core/src/main/conf/oozie-site.xml
 	${REINPLACE_CMD} -e s#%%OOZIE_LOGDIR%%#${OOZIE_LOGDIR}# -e s#%%OOZIE_RUNDIR%%#${OOZIE_RUNDIR}# ${WRKSRC}/core/src/main/conf/oozie-env.sh
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/share/java/maven3/bin/mvn -Dmaven.repo.local=${WRKDIR}/m2 --offline clean package -DskipTests -Phadoop-2 -Dassembly.ignorePermissions assembly:single
-
-post-build:
-	${RM} ${WRKSRC}/distro/target/oozie-${PORTVERSION}-distro/oozie-${PORTVERSION}/lib/hadoop-auth-2.3.0.jar
-	${INSTALL_DATA} ${PREFIX}/share/hadoop/common/lib/hadoop-auth-${HADOOP_VERSION}.jar ${WRKSRC}//distro/target/oozie-${PORTVERSION}-distro/oozie-${PORTVERSION}/lib/
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/share/java/maven3/bin/mvn -Dmaven.repo.local=${WRKDIR}/m2 --offline clean package -DskipTests -Phadoop-2 -Dhadoop.version=${HADOOP_VERSION} -Dassembly.ignorePermissions assembly:single
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/oozie ${STAGEDIR}${PREFIX}/oozie/libext ${STAGEDIR}${PREFIX}/oozie/bin ${STAGEDIR}${PREFIX}/oozie/conf ${STAGEDIR}${PREFIX}/oozie/conf/action-conf
 	cd ${WRKSRC}/distro/target/oozie-${PORTVERSION}-distro/oozie-${PORTVERSION}/bin && ${INSTALL_SCRIPT} addtowar.sh oozie oozie-setup.sh oozie-sys.sh oozied.sh ooziedb.sh ${STAGEDIR}${PREFIX}/oozie/bin/
-	cd ${WRKSRC}/distro/target/oozie-${PORTVERSION}-distro/oozie-${PORTVERSION}/conf && ${INSTALL_DATA} oozie-default.xml oozie-env.sh oozie-log4j.properties ${STAGEDIR}${PREFIX}/oozie/conf/
+	cd ${WRKSRC}/distro/target/oozie-${PORTVERSION}-distro/oozie-${PORTVERSION}/conf && ${INSTALL_DATA} oozie-default.xml.reference oozie-env.sh oozie-log4j.properties ${STAGEDIR}${PREFIX}/oozie/conf/
 	${INSTALL_DATA} ${WRKSRC}/distro/target/oozie-${PORTVERSION}-distro/oozie-${PORTVERSION}/conf/action-conf/hive.xml ${STAGEDIR}${PREFIX}/oozie/conf/action-conf/
 	${INSTALL_DATA} ${WRKSRC}/distro/target/oozie-${PORTVERSION}-distro/oozie-${PORTVERSION}/conf/oozie-site.xml ${STAGEDIR}${PREFIX}/oozie/conf/oozie-site.xml.sample
-	cd ${WRKSRC}/distro/target/oozie-${PORTVERSION}-distro/oozie-${PORTVERSION} && ${COPYTREE_SHARE} "lib libtools oozie-client-${PORTVERSION}.tar.gz oozie-core oozie-examples.tar.gz oozie-server oozie-sharelib-${PORTVERSION}.tar.gz oozie.war" ${STAGEDIR}${PREFIX}/oozie/
+	cd ${WRKSRC}/distro/target/oozie-${PORTVERSION}-distro/oozie-${PORTVERSION} && ${COPYTREE_SHARE} "libtools oozie-client-${PORTVERSION}.tar.gz oozie-core oozie-examples.tar.gz oozie-server oozie-sharelib-${PORTVERSION}.tar.gz oozie.war" ${STAGEDIR}${PREFIX}/oozie/
 	${CHMOD} 755 ${STAGEDIR}${PREFIX}/oozie/oozie-server/bin/catalina.sh ${STAGEDIR}${PREFIX}/oozie/oozie-server/bin/setclasspath.sh
 	${FIND} ${STAGEDIR}${PREFIX}/oozie/oozie-server/conf -name '*.xml' -or -name '*.properties' | ${XARGS} ${CHMOD} 644
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/ext-2.2.zip ${STAGEDIR}${PREFIX}/oozie/libext/
