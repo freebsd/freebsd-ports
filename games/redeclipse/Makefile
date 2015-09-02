@@ -9,10 +9,12 @@ CATEGORIES=	games
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Single-player and multi-player first-person ego-shooter
 
-LICENSE_COMB=	multi
 LICENSE=	MIT ZLIB
+LICENSE_COMB=	multi
 
 RUN_DEPENDS=	redeclipse-data>=1.5.0:${PORTSDIR}/games/redeclipse-data
+
+BROKEN_sparc64=	does not build on sparc64
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	red-eclipse
@@ -46,10 +48,6 @@ OPTIMIZED_CFLAGS_CXXFLAGS=	-O3 -fomit-frame-pointer -ffast-math
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		does not build on sparc64
-.endif
-
 .if ${PORT_OPTIONS:MCLIENT}
 DESKTOP_ENTRIES="Red Eclipse" \
 		"${COMMENT}" \
@@ -70,11 +68,11 @@ do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${f:T}_bsd \
 		${STAGEDIR}${PREFIX}/${f}
 .endfor
-.if ${PORT_OPTIONS:MCLIENT}
-	${INSTALL_DATA} ${WRKSRC}/src/${PORTNAME}.ico \
-		${STAGEDIR}${PREFIX}/share/pixmaps
-.endif
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} config ${STAGEDIR}${DATADIR})
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+
+do-install-CLIENT-on:
+	${INSTALL_DATA} ${WRKSRC}/src/${PORTNAME}.ico \
+		${STAGEDIR}${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>
