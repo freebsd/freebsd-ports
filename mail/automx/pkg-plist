@@ -1,7 +1,5 @@
 bin/automx-test
-@unexec cmp -s %D/etc/automx.conf %D/etc/automx.conf.sample && rm -f %D/etc/automx.conf || true
-etc/automx.conf.sample
-@exec cp -np %D/%F %B/automx.conf
+@sample etc/automx.conf.sample
 man/man1/automx-test.1.gz
 man/man5/automx.conf.5.gz
 man/man5/automx_ldap.5.gz
