@@ -10,7 +10,7 @@ MAINTAINER=	leva@ecentrum.hu
 COMMENT=	Console based password storing application
 
 LICENSE=	BSD2CLAUSE
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
 		libpcre.so:${PORTSDIR}/devel/pcre
