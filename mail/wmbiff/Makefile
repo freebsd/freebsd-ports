@@ -3,7 +3,7 @@
 
 PORTNAME=	wmbiff
 PORTVERSION=	0.4.27
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	mail windowmaker afterstep
 MASTER_SITES=	SF
 
@@ -14,6 +14,8 @@ LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	GNUTLS
 
+USES=		shebangfix
+SHEBANG_FILES=	scripts/security.debian.rb
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 
