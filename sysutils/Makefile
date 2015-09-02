@@ -972,7 +972,6 @@
     SUBDIR += syslog-ng-devel
     SUBDIR += syslog-ng-incubator
     SUBDIR += syslog-ng-incubator03
-    SUBDIR += syslog-ng33
     SUBDIR += syslog-ng34
     SUBDIR += syslog-ng35
     SUBDIR += syslogger
