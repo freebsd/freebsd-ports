@@ -30,6 +30,8 @@ OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	*
 
+CFLAGS_i386=	-march=i586
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/src/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|; \
