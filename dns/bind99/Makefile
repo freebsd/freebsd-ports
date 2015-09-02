@@ -15,7 +15,7 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	ISCL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.9.7-P2
+ISCVERSION=	9.9.7-P3
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -43,8 +43,9 @@ SUB_FILES=	pkg-message
 
 OPTIONS_DEFAULT=	IPV6 SSL THREADS SIGCHASE IDN GSSAPI_NONE RRL
 OPTIONS_DEFINE=		SSL IDN REPLACE_BASE LARGE_FILE FIXED_RRSET SIGCHASE \
-			IPV6 THREADS FILTER_AAAA GOST PYTHON START_LATE \
-			LINKS RPZ_NSIP RPZ_NSDNAME RRL DOCS RPZ_PATCH NEWSTATS
+			IPV6 THREADS FILTER_AAAA GOST PYTHON START_LATE MINCACHE \
+			LINKS RPZ_NSIP RPZ_NSDNAME RRL DOCS RPZ_PATCH NEWSTATS \
+			PORTREVISION
 OPTIONS_GROUP=		DLZ
 OPTIONS_GROUP_DLZ=	DLZ_POSTGRESQL DLZ_MYSQL DLZ_BDB \
 			DLZ_LDAP DLZ_FILESYSTEM DLZ_STUB
@@ -62,6 +63,8 @@ FILTER_AAAA_DESC=	Enable filtering of AAAA records
 GOST_DESC=		Enable GOST ciphers, needs SSL (see help on 8 and 9)
 PYTHON_DESC=		Build with Python utilities
 START_LATE_DESC=	Start BIND late in the boot process
+MINCACHE_DESC=		Use the mincachettl patch
+PORTREVISION_DESC=	Show PORTREVISION in the version string
 
 LINKS_DESC=		Create conf file symlinks in ${PREFIX}
 NEWSTATS_DESC=		Enable alternate xml statistics channel format
@@ -80,6 +83,7 @@ GSSAPI_BASE_DESC=	${GSSAPI_DESC} (Heimdal in base)
 GSSAPI_HEIMDAL_DESC=	${GSSAPI_DESC} (security/heimdal)
 GSSAPI_MIT_DESC=	${GSSAPI_DESC} (security/krb5)
 GSSAPI_NONE_DESC=	No ${GSSAPI_DESC}
+MINCACHE_EXTRA_PATCHES=	${FILESDIR}/extrapatch-bind-min-override-ttl
 
 SSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
 SSL_USE=		openssl=yes
@@ -193,6 +197,10 @@ post-patch:
 		-e "s#/var\/run\/named\/named.pid#/var/run/named/pid#" \
 		${WRKSRC}/bin/${FILE}
 .endfor
+
+post-patch-PORTREVISION-on:
+	@${REINPLACE_CMD} -e '/EXTENSIONS/s#=$$#=_${PORTREVISION}#' \
+		${WRKSRC}/version
 
 post-configure:
 	@${REINPLACE_CMD} -e '/^SO_LDFLAGS/s/-Wl,-rpath,/-rpath /' ${WRKSRC}/bin/tests/system/dlzexternal/Makefile
