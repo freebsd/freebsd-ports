@@ -13,7 +13,7 @@ COMMENT=	Light-weight microthreads for Python
 LICENSE=	MIT
 
 ONLY_FOR_ARCHS=	amd64 i386
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 USES=		python
 
 post-install:
