@@ -224,78 +224,58 @@
 %%WWWDIR%%/lib/vcard.php
 %%WWWDIR%%/plugins/auto_address/README
 %%WWWDIR%%/plugins/auto_address/ajax.php
-@unexec if cmp -s %D/%%WWWDIR%%/plugins/auto_address/config.php.sample %D/%%WWWDIR%%/plugins/auto_address/config.php; then rm -f %D/%%WWWDIR%%/plugins/auto_address/config.php; fi
-%%WWWDIR%%/plugins/auto_address/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/plugins/auto_address/config.php ]; then cp -p %D/%F %B/config.php; fi
+@sample %%WWWDIR%%/plugins/auto_address/config.php.sample
 %%WWWDIR%%/plugins/auto_address/display.php
 %%WWWDIR%%/plugins/auto_address/work.php
 %%WWWDIR%%/plugins/calendar/README
 %%WWWDIR%%/plugins/calendar/cal_include.php
 %%WWWDIR%%/plugins/calendar/calendar.mysql.sql
 %%WWWDIR%%/plugins/calendar/calendar.pgsql.sql
-@unexec if cmp -s %D/%%WWWDIR%%/plugins/calendar/config.php.sample %D/%%WWWDIR%%/plugins/calendar/config.php; then rm -f %D/%%WWWDIR%%/plugins/calendar/config.php; fi
-%%WWWDIR%%/plugins/calendar/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/plugins/calendar/config.php ]; then cp -p %D/%F %B/config.php; fi
+@sample %%WWWDIR%%/plugins/calendar/config.php.sample
 %%WWWDIR%%/plugins/calendar/css/calendar.css
 %%WWWDIR%%/plugins/calendar/display.php
 %%WWWDIR%%/plugins/calendar/page.php
 %%WWWDIR%%/plugins/calendar/work.php
 %%WWWDIR%%/plugins/compose_warning/README
-@unexec if cmp -s %D/%%WWWDIR%%/plugins/compose_warning/config.php.sample %D/%%WWWDIR%%/plugins/compose_warning/config.php; then rm -f %D/%%WWWDIR%%/plugins/compose_warning/config.php; fi
-%%WWWDIR%%/plugins/compose_warning/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/plugins/compose_warning/config.php ]; then cp -p %D/%F %B/config.php; fi
+@sample %%WWWDIR%%/plugins/compose_warning/config.php.sample
 %%WWWDIR%%/plugins/compose_warning/display.php
 %%WWWDIR%%/plugins/compose_warning/work.php
 %%WWWDIR%%/plugins/context/README
 %%WWWDIR%%/plugins/context/ajax.php
-@unexec if cmp -s %D/%%WWWDIR%%/plugins/context/config.php.sample %D/%%WWWDIR%%/plugins/context/config.php; then rm -f %D/%%WWWDIR%%/plugins/context/config.php; fi
-%%WWWDIR%%/plugins/context/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/plugins/context/config.php ]; then cp -p %D/%F %B/config.php; fi
+@sample %%WWWDIR%%/plugins/context/config.php.sample
 %%WWWDIR%%/plugins/context/css/hello_world.css
 %%WWWDIR%%/plugins/context/display.php
 %%WWWDIR%%/plugins/context/page.php
 %%WWWDIR%%/plugins/context/settings.php
 %%WWWDIR%%/plugins/context/work.php
 %%WWWDIR%%/plugins/custom_headers/README
-@unexec if cmp -s %D/%%WWWDIR%%/plugins/custom_headers/config.php.sample %D/%%WWWDIR%%/plugins/custom_headers/config.php; then rm -f %D/%%WWWDIR%%/plugins/custom_headers/config.php; fi
-%%WWWDIR%%/plugins/custom_headers/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/plugins/custom_headers/config.php ]; then cp -p %D/%F %B/config.php; fi
+@sample %%WWWDIR%%/plugins/custom_headers/config.php.sample
 %%WWWDIR%%/plugins/custom_headers/display.php
 %%WWWDIR%%/plugins/custom_headers/work.php
 %%WWWDIR%%/plugins/custom_reply_to/README
-@unexec if cmp -s %D/%%WWWDIR%%/plugins/custom_reply_to/config.php.sample %D/%%WWWDIR%%/plugins/custom_reply_to/config.php; then rm -f %D/%%WWWDIR%%/plugins/custom_reply_to/config.php; fi
-%%WWWDIR%%/plugins/custom_reply_to/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/plugins/custom_reply_to/config.php ]; then cp -p %D/%F %B/config.php; fi
+@sample %%WWWDIR%%/plugins/custom_reply_to/config.php.sample
 %%WWWDIR%%/plugins/custom_reply_to/display.php
 %%WWWDIR%%/plugins/custom_reply_to/work.php
 %%WWWDIR%%/plugins/display_switch/README
-@unexec if cmp -s %D/%%WWWDIR%%/plugins/display_switch/config.php.sample %D/%%WWWDIR%%/plugins/display_switch/config.php; then rm -f %D/%%WWWDIR%%/plugins/display_switch/config.php; fi
-%%WWWDIR%%/plugins/display_switch/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/plugins/display_switch/config.php ]; then cp -p %D/%F %B/config.php; fi
+@sample %%WWWDIR%%/plugins/display_switch/config.php.sample
 %%WWWDIR%%/plugins/display_switch/display.php
 %%WWWDIR%%/plugins/display_switch/page.php
 %%WWWDIR%%/plugins/filters/README
-@unexec if cmp -s %D/%%WWWDIR%%/plugins/filters/config.php.sample %D/%%WWWDIR%%/plugins/filters/config.php; then rm -f %D/%%WWWDIR%%/plugins/filters/config.php; fi
-%%WWWDIR%%/plugins/filters/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/plugins/filters/config.php ]; then cp -p %D/%F %B/config.php; fi
+@sample %%WWWDIR%%/plugins/filters/config.php.sample
 %%WWWDIR%%/plugins/filters/css/filters.css
 %%WWWDIR%%/plugins/filters/display.php
 %%WWWDIR%%/plugins/filters/page.php
 %%WWWDIR%%/plugins/filters/work.php
 %%WWWDIR%%/plugins/hello_world/README
 %%WWWDIR%%/plugins/hello_world/ajax.php
-@unexec if cmp -s %D/%%WWWDIR%%/plugins/hello_world/config.php.sample %D/%%WWWDIR%%/plugins/hello_world/config.php; then rm -f %D/%%WWWDIR%%/plugins/hello_world/config.php; fi
-%%WWWDIR%%/plugins/hello_world/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/plugins/hello_world/config.php ]; then cp -p %D/%F %B/config.php; fi
+@sample %%WWWDIR%%/plugins/hello_world/config.php.sample
 %%WWWDIR%%/plugins/hello_world/css/hello_world.css
 %%WWWDIR%%/plugins/hello_world/display.php
 %%WWWDIR%%/plugins/hello_world/page.php
 %%WWWDIR%%/plugins/hello_world/work.php
 %%WWWDIR%%/plugins/html_mail/README
 %%WWWDIR%%/plugins/html_mail/ajax.php
-@unexec if cmp -s %D/%%WWWDIR%%/plugins/html_mail/config.php.sample %D/%%WWWDIR%%/plugins/html_mail/config.php; then rm -f %D/%%WWWDIR%%/plugins/html_mail/config.php; fi
-%%WWWDIR%%/plugins/html_mail/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/plugins/html_mail/config.php ]; then cp -p %D/%F %B/config.php; fi
+@sample %%WWWDIR%%/plugins/html_mail/config.php.sample
 %%WWWDIR%%/plugins/html_mail/display.php
 %%WWWDIR%%/plugins/html_mail/page.php
 %%WWWDIR%%/plugins/html_mail/tiny_mce/langs/en.js
@@ -429,9 +409,7 @@
 %%WWWDIR%%/plugins/html_mail/tiny_mce/plugins/spellchecker/classes/SpellChecker.php
 %%WWWDIR%%/plugins/html_mail/tiny_mce/plugins/spellchecker/classes/utils/JSON.php
 %%WWWDIR%%/plugins/html_mail/tiny_mce/plugins/spellchecker/classes/utils/Logger.php
-@unexec if cmp -s %D/%%WWWDIR%%/plugins/html_mail/tiny_mce/plugins/spellchecker/config.php.sample %D/%%WWWDIR%%/plugins/html_mail/tiny_mce/plugins/spellchecker/config.php; then rm -f %D/%%WWWDIR%%/plugins/html_mail/tiny_mce/plugins/spellchecker/config.php; fi
-%%WWWDIR%%/plugins/html_mail/tiny_mce/plugins/spellchecker/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/plugins/html_mail/tiny_mce/plugins/spellchecker/config.php ]; then cp -p %D/%F %B/config.php; fi
+@sample %%WWWDIR%%/plugins/html_mail/tiny_mce/plugins/spellchecker/config.php.sample
 %%WWWDIR%%/plugins/html_mail/tiny_mce/plugins/spellchecker/css/content.css
 %%WWWDIR%%/plugins/html_mail/tiny_mce/plugins/spellchecker/editor_plugin.js
 %%WWWDIR%%/plugins/html_mail/tiny_mce/plugins/spellchecker/editor_plugin_src.js
@@ -566,93 +544,67 @@
 %%WWWDIR%%/plugins/html_mail/tiny_mce/utils/validate.js
 %%WWWDIR%%/plugins/html_mail/work.php
 %%WWWDIR%%/plugins/imap_domain_map/README
-@unexec if cmp -s %D/%%WWWDIR%%/plugins/imap_domain_map/config.php.sample %D/%%WWWDIR%%/plugins/imap_domain_map/config.php; then rm -f %D/%%WWWDIR%%/plugins/imap_domain_map/config.php; fi
-%%WWWDIR%%/plugins/imap_domain_map/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/plugins/imap_domain_map/config.php ]; then cp -p %D/%F %B/config.php; fi
+@sample %%WWWDIR%%/plugins/imap_domain_map/config.php.sample
 %%WWWDIR%%/plugins/imap_domain_map/settings.php
 %%WWWDIR%%/plugins/imap_domain_map/work.php
 %%WWWDIR%%/plugins/js_help/README
 %%WWWDIR%%/plugins/js_help/ajax.php
-@unexec if cmp -s %D/%%WWWDIR%%/plugins/js_help/config.php.sample %D/%%WWWDIR%%/plugins/js_help/config.php; then rm -f %D/%%WWWDIR%%/plugins/js_help/config.php; fi
-%%WWWDIR%%/plugins/js_help/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/plugins/js_help/config.php ]; then cp -p %D/%F %B/config.php; fi
+@sample %%WWWDIR%%/plugins/js_help/config.php.sample
 %%WWWDIR%%/plugins/js_help/display.php
 %%WWWDIR%%/plugins/js_help/work.php
 %%WWWDIR%%/plugins/js_notice/README
-@unexec if cmp -s %D/%%WWWDIR%%/plugins/js_notice/config.php.sample %D/%%WWWDIR%%/plugins/js_notice/config.php; then rm -f %D/%%WWWDIR%%/plugins/js_notice/config.php; fi
-%%WWWDIR%%/plugins/js_notice/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/plugins/js_notice/config.php ]; then cp -p %D/%F %B/config.php; fi
+@sample %%WWWDIR%%/plugins/js_notice/config.php.sample
 %%WWWDIR%%/plugins/js_notice/display.php
 %%WWWDIR%%/plugins/js_notice/work.php
 %%WWWDIR%%/plugins/js_sign/README
 %%WWWDIR%%/plugins/js_sign/ajax.php
-@unexec if cmp -s %D/%%WWWDIR%%/plugins/js_sign/config.php.sample %D/%%WWWDIR%%/plugins/js_sign/config.php; then rm -f %D/%%WWWDIR%%/plugins/js_sign/config.php; fi
-%%WWWDIR%%/plugins/js_sign/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/plugins/js_sign/config.php ]; then cp -p %D/%F %B/config.php; fi
+@sample %%WWWDIR%%/plugins/js_sign/config.php.sample
 %%WWWDIR%%/plugins/js_sign/display.php
 %%WWWDIR%%/plugins/js_sign/work.php
 %%WWWDIR%%/plugins/ldap_addressbook/README
-@unexec if cmp -s %D/%%WWWDIR%%/plugins/ldap_addressbook/config.php.sample %D/%%WWWDIR%%/plugins/ldap_addressbook/config.php; then rm -f %D/%%WWWDIR%%/plugins/ldap_addressbook/config.php; fi
-%%WWWDIR%%/plugins/ldap_addressbook/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/plugins/ldap_addressbook/config.php ]; then cp -p %D/%F %B/config.php; fi
+@sample %%WWWDIR%%/plugins/ldap_addressbook/config.php.sample
 %%WWWDIR%%/plugins/ldap_addressbook/settings.php
 %%WWWDIR%%/plugins/ldap_addressbook/work.php
 %%WWWDIR%%/plugins/ldap_mailhost/README
-@unexec if cmp -s %D/%%WWWDIR%%/plugins/ldap_mailhost/config.php.sample %D/%%WWWDIR%%/plugins/ldap_mailhost/config.php; then rm -f %D/%%WWWDIR%%/plugins/ldap_mailhost/config.php; fi
-%%WWWDIR%%/plugins/ldap_mailhost/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/plugins/ldap_mailhost/config.php ]; then cp -p %D/%F %B/config.php; fi
+@sample %%WWWDIR%%/plugins/ldap_mailhost/config.php.sample
 %%WWWDIR%%/plugins/ldap_mailhost/settings.php
 %%WWWDIR%%/plugins/ldap_mailhost/work.php
 %%WWWDIR%%/plugins/logger/README
-@unexec if cmp -s %D/%%WWWDIR%%/plugins/logger/config.php.sample %D/%%WWWDIR%%/plugins/logger/config.php; then rm -f %D/%%WWWDIR%%/plugins/logger/config.php; fi
-%%WWWDIR%%/plugins/logger/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/plugins/logger/config.php ]; then cp -p %D/%F %B/config.php; fi
+@sample %%WWWDIR%%/plugins/logger/config.php.sample
 %%WWWDIR%%/plugins/logger/log.mysql.sql
 %%WWWDIR%%/plugins/logger/log.pgsql.sql
 %%WWWDIR%%/plugins/logger/settings.php
 %%WWWDIR%%/plugins/logger/work.php
 %%WWWDIR%%/plugins/login_alias/README
-@unexec if cmp -s %D/%%WWWDIR%%/plugins/login_alias/config.php.sample %D/%%WWWDIR%%/plugins/login_alias/config.php; then rm -f %D/%%WWWDIR%%/plugins/login_alias/config.php; fi
-%%WWWDIR%%/plugins/login_alias/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/plugins/login_alias/config.php ]; then cp -p %D/%F %B/config.php; fi
+@sample %%WWWDIR%%/plugins/login_alias/config.php.sample
 %%WWWDIR%%/plugins/login_alias/login_alias_table.mysql.sql
 %%WWWDIR%%/plugins/login_alias/login_alias_table.psql.sql
 %%WWWDIR%%/plugins/login_alias/settings.php
 %%WWWDIR%%/plugins/login_alias/work.php
 %%WWWDIR%%/plugins/message_digest/README
-@unexec if cmp -s %D/%%WWWDIR%%/plugins/message_digest/config.php.sample %D/%%WWWDIR%%/plugins/message_digest/config.php; then rm -f %D/%%WWWDIR%%/plugins/message_digest/config.php; fi
-%%WWWDIR%%/plugins/message_digest/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/plugins/message_digest/config.php ]; then cp -p %D/%F %B/config.php; fi
+@sample %%WWWDIR%%/plugins/message_digest/config.php.sample
 %%WWWDIR%%/plugins/message_digest/display.php
 %%WWWDIR%%/plugins/message_digest/work.php
 %%WWWDIR%%/plugins/message_tags/README
 %%WWWDIR%%/plugins/message_tags/ajax.php
-@unexec if cmp -s %D/%%WWWDIR%%/plugins/message_tags/config.php.sample %D/%%WWWDIR%%/plugins/message_tags/config.php; then rm -f %D/%%WWWDIR%%/plugins/message_tags/config.php; fi
-%%WWWDIR%%/plugins/message_tags/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/plugins/message_tags/config.php ]; then cp -p %D/%F %B/config.php; fi
+@sample %%WWWDIR%%/plugins/message_tags/config.php.sample
 %%WWWDIR%%/plugins/message_tags/css/message_tags.css
 %%WWWDIR%%/plugins/message_tags/display.php
 %%WWWDIR%%/plugins/message_tags/page.php
 %%WWWDIR%%/plugins/message_tags/tag-icon.png
 %%WWWDIR%%/plugins/message_tags/work.php
 %%WWWDIR%%/plugins/move_sent/README
-@unexec if cmp -s %D/%%WWWDIR%%/plugins/move_sent/config.php.sample %D/%%WWWDIR%%/plugins/move_sent/config.php; then rm -f %D/%%WWWDIR%%/plugins/move_sent/config.php; fi
-%%WWWDIR%%/plugins/move_sent/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/plugins/move_sent/config.php ]; then cp -p %D/%F %B/config.php; fi
+@sample %%WWWDIR%%/plugins/move_sent/config.php.sample
 %%WWWDIR%%/plugins/move_sent/display.php
 %%WWWDIR%%/plugins/move_sent/work.php
 %%WWWDIR%%/plugins/news/README
-@unexec if cmp -s %D/%%WWWDIR%%/plugins/news/config.php.sample %D/%%WWWDIR%%/plugins/news/config.php; then rm -f %D/%%WWWDIR%%/plugins/news/config.php; fi
-%%WWWDIR%%/plugins/news/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/plugins/news/config.php ]; then cp -p %D/%F %B/config.php; fi
+@sample %%WWWDIR%%/plugins/news/config.php.sample
 %%WWWDIR%%/plugins/news/css/news.css
 %%WWWDIR%%/plugins/news/display.php
 %%WWWDIR%%/plugins/news/page.php
 %%WWWDIR%%/plugins/news/work.php
 %%WWWDIR%%/plugins/notices/README
-@unexec if cmp -s %D/%%WWWDIR%%/plugins/notices/config.php.sample %D/%%WWWDIR%%/plugins/notices/config.php; then rm -f %D/%%WWWDIR%%/plugins/notices/config.php; fi
-%%WWWDIR%%/plugins/notices/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/plugins/notices/config.php ]; then cp -p %D/%F %B/config.php; fi
+@sample %%WWWDIR%%/plugins/notices/config.php.sample
 %%WWWDIR%%/plugins/notices/display.php
 %%WWWDIR%%/plugins/notices/new_message_window.html
 %%WWWDIR%%/plugins/notices/script/soundmanager2-min.js
@@ -674,9 +626,7 @@
 %%WWWDIR%%/plugins/notices/work.php
 %%WWWDIR%%/plugins/pop_fetch/README
 %%WWWDIR%%/plugins/pop_fetch/ajax.php
-@unexec if cmp -s %D/%%WWWDIR%%/plugins/pop_fetch/config.php.sample %D/%%WWWDIR%%/plugins/pop_fetch/config.php; then rm -f %D/%%WWWDIR%%/plugins/pop_fetch/config.php; fi
-%%WWWDIR%%/plugins/pop_fetch/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/plugins/pop_fetch/config.php ]; then cp -p %D/%F %B/config.php; fi
+@sample %%WWWDIR%%/plugins/pop_fetch/config.php.sample
 %%WWWDIR%%/plugins/pop_fetch/css/pop_fetch.css
 %%WWWDIR%%/plugins/pop_fetch/display.php
 %%WWWDIR%%/plugins/pop_fetch/page.php
@@ -684,37 +634,25 @@
 %%WWWDIR%%/plugins/pop_fetch/settings.php
 %%WWWDIR%%/plugins/pop_fetch/work.php
 %%WWWDIR%%/plugins/quota/README
-@unexec if cmp -s %D/%%WWWDIR%%/plugins/quota/config.php.sample %D/%%WWWDIR%%/plugins/quota/config.php; then rm -f %D/%%WWWDIR%%/plugins/quota/config.php; fi
-%%WWWDIR%%/plugins/quota/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/plugins/quota/config.php ]; then cp -p %D/%F %B/config.php; fi
+@sample %%WWWDIR%%/plugins/quota/config.php.sample
 %%WWWDIR%%/plugins/quota/display.php
 %%WWWDIR%%/plugins/quota/work.php
 %%WWWDIR%%/plugins/saved_search/README
-@unexec if cmp -s %D/%%WWWDIR%%/plugins/saved_search/config.php.sample %D/%%WWWDIR%%/plugins/saved_search/config.php; then rm -f %D/%%WWWDIR%%/plugins/saved_search/config.php; fi
-%%WWWDIR%%/plugins/saved_search/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/plugins/saved_search/config.php ]; then cp -p %D/%F %B/config.php; fi
+@sample %%WWWDIR%%/plugins/saved_search/config.php.sample
 %%WWWDIR%%/plugins/saved_search/display.php
 %%WWWDIR%%/plugins/saved_search/work.php
 %%WWWDIR%%/plugins/select_range/README
-@unexec if cmp -s %D/%%WWWDIR%%/plugins/select_range/config.php.sample %D/%%WWWDIR%%/plugins/select_range/config.php; then rm -f %D/%%WWWDIR%%/plugins/select_range/config.php; fi
-%%WWWDIR%%/plugins/select_range/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/plugins/select_range/config.php ]; then cp -p %D/%F %B/config.php; fi
+@sample %%WWWDIR%%/plugins/select_range/config.php.sample
 %%WWWDIR%%/plugins/select_range/work.php
 %%WWWDIR%%/plugins/spam_folder/README
-@unexec if cmp -s %D/%%WWWDIR%%/plugins/spam_folder/config.php.sample %D/%%WWWDIR%%/plugins/spam_folder/config.php; then rm -f %D/%%WWWDIR%%/plugins/spam_folder/config.php; fi
-%%WWWDIR%%/plugins/spam_folder/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/plugins/spam_folder/config.php ]; then cp -p %D/%F %B/config.php; fi
+@sample %%WWWDIR%%/plugins/spam_folder/config.php.sample
 %%WWWDIR%%/plugins/spam_folder/display.php
 %%WWWDIR%%/plugins/spam_folder/work.php
 %%WWWDIR%%/plugins/username/README
-@unexec if cmp -s %D/%%WWWDIR%%/plugins/username/config.php.sample %D/%%WWWDIR%%/plugins/username/config.php; then rm -f %D/%%WWWDIR%%/plugins/username/config.php; fi
-%%WWWDIR%%/plugins/username/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/plugins/username/config.php ]; then cp -p %D/%F %B/config.php; fi
+@sample %%WWWDIR%%/plugins/username/config.php.sample
 %%WWWDIR%%/plugins/username/display.php
 %%WWWDIR%%/plugins/uuencode/README
-@unexec if cmp -s %D/%%WWWDIR%%/plugins/uuencode/config.php.sample %D/%%WWWDIR%%/plugins/uuencode/config.php; then rm -f %D/%%WWWDIR%%/plugins/uuencode/config.php; fi
-%%WWWDIR%%/plugins/uuencode/config.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/plugins/uuencode/config.php ]; then cp -p %D/%F %B/config.php; fi
+@sample %%WWWDIR%%/plugins/uuencode/config.php.sample
 %%WWWDIR%%/plugins/uuencode/display.php
 %%WWWDIR%%/plugins/uuencode/include.php
 %%WWWDIR%%/plugins/uuencode/work.php
