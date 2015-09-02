@@ -58,6 +58,76 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a9350df8-5157-11e5-b5c1-e8e0b747a45a">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>45.0.2454.85</lt></range>
+      </package>
+      <package>
+	<!--pcbsd-->
+	<name>chromium-npapi</name>
+	<range><lt>45.0.2454.85</lt></range>
+      </package>
+      <package>
+	<!--pcbsd-->
+	<name>chromium-pulse</name>
+	<range><lt>45.0.2454.85</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl">
+	  <p>29 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[516377] High CVE-2015-1291: Cross-origin bypass in DOM. Credit
+	      to anonymous.</li>
+	    <li>[522791] High CVE-2015-1292: Cross-origin bypass in
+	      ServiceWorker. Credit to Mariusz Mlynski.</li>
+	    <li>[524074] High CVE-2015-1293: Cross-origin bypass in DOM. Credit
+	      to Mariusz Mlynski.</li>
+	    <li>[492263] High CVE-2015-1294: Use-after-free in Skia. Credit
+	      to cloudfuzzer.</li>
+	    <li>[502562] High CVE-2015-1295: Use-after-free in Printing. Credit
+	      to anonymous.</li>
+	    <li>[421332] High CVE-2015-1296: Character spoofing in omnibox.
+	      Credit to zcorpan.</li>
+	    <li>[510802] Medium CVE-2015-1297: Permission scoping error in
+	      Webrequest. Credit to Alexander Kashev.</li>
+	    <li>[518827] Medium CVE-2015-1298: URL validation error in
+	      extensions. Credit to Rob Wu.</li>
+	    <li>[416362] Medium CVE-2015-1299: Use-after-free in Blink. Credit
+	      to taro.suzuki.dev.</li>
+	    <li>[511616] Medium CVE-2015-1300: Information leak in Blink. Credit
+	      to cgvwzq.</li>
+	    <li>[526825] CVE-2015-1301: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1291</cvename>
+      <cvename>CVE-2015-1292</cvename>
+      <cvename>CVE-2015-1293</cvename>
+      <cvename>CVE-2015-1294</cvename>
+      <cvename>CVE-2015-1295</cvename>
+      <cvename>CVE-2015-1296</cvename>
+      <cvename>CVE-2015-1297</cvename>
+      <cvename>CVE-2015-1298</cvename>
+      <cvename>CVE-2015-1299</cvename>
+      <cvename>CVE-2015-1300</cvename>
+      <cvename>CVE-2015-1301</cvename>
+      <url>http://googlechromereleases.blogspot.nl</url>
+    </references>
+    <dates>
+      <discovery>2015-09-01</discovery>
+      <entry>2015-09-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="55c43f5b-5190-11e5-9ad8-14dae9d210b8">
     <topic>powerdns -- denial of service</topic>
     <affects>
