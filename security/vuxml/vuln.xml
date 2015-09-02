@@ -58,6 +58,35 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="55c43f5b-5190-11e5-9ad8-14dae9d210b8">
+    <topic>powerdns -- denial of service</topic>
+    <affects>
+      <package>
+	<name>powerdns</name>
+	<range><ge>3.4.0</ge><lt>3.4.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PowerDNS reports:</p>
+	<blockquote cite="https://doc.powerdns.com/md/security/powerdns-advisory-2015-02/">
+	  <p>A bug was found in our DNS packet parsing/generation code,
+	    which, when exploited, can cause individual threads (disabling service)
+	    or whole processes (allowing a supervisor to restart them) to crash with
+	    just one or a few query packets.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://doc.powerdns.com/md/security/powerdns-advisory-2015-02/</url>
+      <cvename>CVE-2015-5230</cvename>
+    </references>
+    <dates>
+      <discovery>2015-09-02</discovery>
+      <entry>2015-09-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fc1f6658-4f53-11e5-934b-002590263bf5">
     <topic>ghostscript -- denial of service (crash) via crafted Postscript files</topic>
     <affects>
