@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tint2
-PORTVERSION=	0.12.1
-PORTREVISION=	1
+PORTVERSION=	0.12.2
 CATEGORIES=	x11
 MASTER_SITES=	http://leigh123linux.fedorapeople.org/pub/${PORTNAME}/source/
 
@@ -19,7 +18,7 @@ USES=		alias cmake gettext pkgconfig
 USE_GNOME=	glib20 gtk20 librsvg2 pango
 USE_XORG=	x11 xcomposite xdamage xinerama xrandr xrender
 
-CMAKE_ARGS=	-DMANDIR:PATH=man
+CMAKE_ARGS=	-DMANDIR:PATH=man -DSYSCONFDIR:PATH=etc
 
 OPTIONS_DEFINE=	EXAMPLES
 EXAMPLES_CMAKE_ON=	-DENABLE_EXAMPLES:BOOL=ON
