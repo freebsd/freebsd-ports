@@ -3,6 +3,7 @@
 
 PORTNAME=	oozie
 PORTVERSION=	4.2.0
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTVERSION} \
 		LOCAL/demon/:maven \
@@ -54,8 +55,9 @@ do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/share/java/maven3/bin/mvn -Dmaven.repo.local=${WRKDIR}/m2 --offline clean package -DskipTests -Phadoop-2 -Dhadoop.version=${HADOOP_VERSION} -Dassembly.ignorePermissions assembly:single
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/oozie ${STAGEDIR}${PREFIX}/oozie/libext ${STAGEDIR}${PREFIX}/oozie/bin ${STAGEDIR}${PREFIX}/oozie/conf ${STAGEDIR}${PREFIX}/oozie/conf/action-conf
+	${MKDIR} ${STAGEDIR}${PREFIX}/oozie ${STAGEDIR}${PREFIX}/oozie/libext ${STAGEDIR}${PREFIX}/oozie/lib ${STAGEDIR}${PREFIX}/oozie/bin ${STAGEDIR}${PREFIX}/oozie/conf ${STAGEDIR}${PREFIX}/oozie/conf/action-conf
 	cd ${WRKSRC}/distro/target/oozie-${PORTVERSION}-distro/oozie-${PORTVERSION}/bin && ${INSTALL_SCRIPT} addtowar.sh oozie oozie-setup.sh oozie-sys.sh oozied.sh ooziedb.sh ${STAGEDIR}${PREFIX}/oozie/bin/
+	cd ${WRKSRC}/webapp/target/oozie-webapp-${PORTVERSION}/WEB-INF/lib && ${INSTALL_DATA} *.jar ${STAGEDIR}${PREFIX}/oozie/lib/
 	cd ${WRKSRC}/distro/target/oozie-${PORTVERSION}-distro/oozie-${PORTVERSION}/conf && ${INSTALL_DATA} oozie-default.xml.reference oozie-env.sh oozie-log4j.properties ${STAGEDIR}${PREFIX}/oozie/conf/
 	${INSTALL_DATA} ${WRKSRC}/distro/target/oozie-${PORTVERSION}-distro/oozie-${PORTVERSION}/conf/action-conf/hive.xml ${STAGEDIR}${PREFIX}/oozie/conf/action-conf/
 	${INSTALL_DATA} ${WRKSRC}/distro/target/oozie-${PORTVERSION}-distro/oozie-${PORTVERSION}/conf/oozie-site.xml ${STAGEDIR}${PREFIX}/oozie/conf/oozie-site.xml.sample
