@@ -12,7 +12,7 @@ COMMENT=	Auto-adaptive genetic system designed for ALife research
 
 LICENSE=	GPLv3
 
-OPTIONS_DEFINE=	DOCS
+BROKEN_sparc64=	missing atomics implementation
 
 USES=		cmake:outsource ncurses
 CMAKE_ARGS=	-DAPTO_UNIT_TESTS:BOOL=OFF -DAVD_UNIT_TESTS:BOOL=OFF
@@ -30,9 +30,7 @@ DATA_FILES=	analyze.cfg avida.cfg default-gx.org \
 		instset-heads-sex.cfg instset-heads.cfg instset-smt.cfg \
 		instset-transsmt.cfg
 
-BROKEN_ia64=	Does not compile: invokes i386 asm
-BROKEN_powerpc=	Does not compile: invokes i386 asm
-BROKEN_sparc64=	Does not compile: invokes i386 asm
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "CMakeLists.txt" | ${XARGS} \
@@ -41,6 +39,8 @@ post-patch:
 		 s| pthread| -pthread|'
 	@${REINPLACE_CMD} -e '/long long int/s|std::abs|llabs|' \
 		${WRKSRC}/avida-core/source/main/cPopulationInterface.cc
+	@${REINPLACE_CMD} -e '/__PPC__/s|linux|${OPSYS}|' \
+		${WRKSRC}/libs/tcmalloc-1.4/src/atomicops.h
 
 pre-build:
 .for exec in ${BIN_FILES}
@@ -51,15 +51,15 @@ pre-build:
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 .for exec in ${BIN_FILES}
-	(cd ${WRKSRC} && ${INSTALL_SCRIPT} ${exec}.sh \
-		${STAGEDIR}${PREFIX}/bin/${exec})
-	(cd ${BUILD_WRKSRC}/bin && ${INSTALL_PROGRAM} ${exec} \
-		${STAGEDIR}${PREFIX}/lib/${PORTNAME})
+	${INSTALL_SCRIPT} ${WRKSRC}/${exec}.sh \
+		${STAGEDIR}${PREFIX}/bin/${exec}
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/bin/${exec} \
+		${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 .endfor
-	(cd ${WRKSRC}/avida-core/support/config && ${INSTALL_DATA} *.cfg \
-		${STAGEDIR}${PREFIX}/lib/${PORTNAME})
-	(cd ${WRKSRC}/avida-core/support/config && ${INSTALL_DATA} *.org \
-		${STAGEDIR}${PREFIX}/lib/${PORTNAME})
+	${INSTALL_DATA} \
+		${WRKSRC}/avida-core/support/config/*.cfg \
+		${WRKSRC}/avida-core/support/config/*.org \
+			${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
