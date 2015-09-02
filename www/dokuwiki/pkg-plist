@@ -49,6 +49,7 @@
 %%WWWDIR%%/inc/DifferenceEngine.php
 %%WWWDIR%%/inc/EmailAddressValidator.php
 %%WWWDIR%%/inc/FeedParser.php
+%%WWWDIR%%/inc/Form/ButtonElement.php
 %%WWWDIR%%/inc/Form/CheckableElement.php
 %%WWWDIR%%/inc/Form/Element.php
 %%WWWDIR%%/inc/Form/FieldsetCloseElement.php
@@ -56,7 +57,7 @@
 %%WWWDIR%%/inc/Form/Form.php
 %%WWWDIR%%/inc/Form/HTMLElement.php
 %%WWWDIR%%/inc/Form/InputElement.php
-%%WWWDIR%%/inc/Form/Label.php
+%%WWWDIR%%/inc/Form/LabelElement.php
 %%WWWDIR%%/inc/Form/LegacyForm.php
 %%WWWDIR%%/inc/Form/TagCloseElement.php
 %%WWWDIR%%/inc/Form/TagElement.php
@@ -2606,6 +2607,7 @@
 %%WWWDIR%%/lib/plugins/authldap/conf/metadata.php
 %%WWWDIR%%/lib/plugins/authldap/lang/ar/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/bg/settings.php
+%%WWWDIR%%/lib/plugins/authldap/lang/cs/lang.php
 %%WWWDIR%%/lib/plugins/authldap/lang/cs/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/da/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/de-informal/settings.php
@@ -2624,6 +2626,7 @@
 %%WWWDIR%%/lib/plugins/authldap/lang/he/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/hr/lang.php
 %%WWWDIR%%/lib/plugins/authldap/lang/hr/settings.php
+%%WWWDIR%%/lib/plugins/authldap/lang/hu/lang.php
 %%WWWDIR%%/lib/plugins/authldap/lang/hu/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/it/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/ja/lang.php
@@ -2654,6 +2657,7 @@
 %%WWWDIR%%/lib/plugins/authmysql/conf/metadata.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/bg/lang.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/bg/settings.php
+%%WWWDIR%%/lib/plugins/authmysql/lang/cs/lang.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/cs/settings.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/da/settings.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/de-informal/settings.php
@@ -2671,7 +2675,9 @@
 %%WWWDIR%%/lib/plugins/authmysql/lang/he/settings.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/hr/lang.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/hr/settings.php
+%%WWWDIR%%/lib/plugins/authmysql/lang/hu/lang.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/hu/settings.php
+%%WWWDIR%%/lib/plugins/authmysql/lang/it/lang.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/it/settings.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/ja/lang.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/ja/settings.php
@@ -3252,6 +3258,7 @@
 %%WWWDIR%%/lib/plugins/styling/admin.php
 %%WWWDIR%%/lib/plugins/styling/iris.js
 %%WWWDIR%%/lib/plugins/styling/lang/bg/lang.php
+%%WWWDIR%%/lib/plugins/styling/lang/cs/lang.php
 %%WWWDIR%%/lib/plugins/styling/lang/de/intro.txt
 %%WWWDIR%%/lib/plugins/styling/lang/de/lang.php
 %%WWWDIR%%/lib/plugins/styling/lang/en/intro.txt
@@ -3260,6 +3267,9 @@
 %%WWWDIR%%/lib/plugins/styling/lang/es/lang.php
 %%WWWDIR%%/lib/plugins/styling/lang/fr/intro.txt
 %%WWWDIR%%/lib/plugins/styling/lang/fr/lang.php
+%%WWWDIR%%/lib/plugins/styling/lang/hu/intro.txt
+%%WWWDIR%%/lib/plugins/styling/lang/hu/lang.php
+%%WWWDIR%%/lib/plugins/styling/lang/it/lang.php
 %%WWWDIR%%/lib/plugins/styling/lang/ja/intro.txt
 %%WWWDIR%%/lib/plugins/styling/lang/ja/lang.php
 %%WWWDIR%%/lib/plugins/styling/lang/ko/intro.txt
@@ -3268,6 +3278,8 @@
 %%WWWDIR%%/lib/plugins/styling/lang/nl/lang.php
 %%WWWDIR%%/lib/plugins/styling/lang/pt-br/intro.txt
 %%WWWDIR%%/lib/plugins/styling/lang/pt-br/lang.php
+%%WWWDIR%%/lib/plugins/styling/lang/ru/intro.txt
+%%WWWDIR%%/lib/plugins/styling/lang/ru/lang.php
 %%WWWDIR%%/lib/plugins/styling/lang/zh/intro.txt
 %%WWWDIR%%/lib/plugins/styling/lang/zh/lang.php
 %%WWWDIR%%/lib/plugins/styling/plugin.info.txt
@@ -3699,6 +3711,7 @@
 %%WWWDIR%%/lib/tpl/dokuwiki/images/toc-arrows.png
 %%WWWDIR%%/lib/tpl/dokuwiki/images/toc-bullet.png
 %%WWWDIR%%/lib/tpl/dokuwiki/images/usertools.png
+%%WWWDIR%%/lib/tpl/dokuwiki/lang/cs/lang.php
 %%WWWDIR%%/lib/tpl/dokuwiki/lang/de/lang.php
 %%WWWDIR%%/lib/tpl/dokuwiki/lang/de/style.txt
 %%WWWDIR%%/lib/tpl/dokuwiki/lang/en/lang.php
@@ -3707,6 +3720,9 @@
 %%WWWDIR%%/lib/tpl/dokuwiki/lang/es/style.txt
 %%WWWDIR%%/lib/tpl/dokuwiki/lang/fr/lang.php
 %%WWWDIR%%/lib/tpl/dokuwiki/lang/fr/style.txt
+%%WWWDIR%%/lib/tpl/dokuwiki/lang/hu/lang.php
+%%WWWDIR%%/lib/tpl/dokuwiki/lang/hu/style.txt
+%%WWWDIR%%/lib/tpl/dokuwiki/lang/it/lang.php
 %%WWWDIR%%/lib/tpl/dokuwiki/lang/ja/lang.php
 %%WWWDIR%%/lib/tpl/dokuwiki/lang/ja/style.txt
 %%WWWDIR%%/lib/tpl/dokuwiki/lang/ko/lang.php
@@ -3715,6 +3731,7 @@
 %%WWWDIR%%/lib/tpl/dokuwiki/lang/nl/style.txt
 %%WWWDIR%%/lib/tpl/dokuwiki/lang/pt-br/lang.php
 %%WWWDIR%%/lib/tpl/dokuwiki/lang/pt-br/style.txt
+%%WWWDIR%%/lib/tpl/dokuwiki/lang/ru/lang.php
 %%WWWDIR%%/lib/tpl/dokuwiki/lang/zh/lang.php
 %%WWWDIR%%/lib/tpl/dokuwiki/lang/zh/style.txt
 %%WWWDIR%%/lib/tpl/dokuwiki/main.php
