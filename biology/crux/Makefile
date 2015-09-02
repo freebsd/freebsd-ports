@@ -13,6 +13,8 @@ COMMENT=	Software toolkit for phylogenetic inference
 LICENSE=	BSD2CLAUSE BSD3CLAUSE
 LICENSE_COMB=	multi
 
+BROKEN_powerpc=	does not build on powerpc: error in pthreads
+
 USES=		fortran gmake python tar:bzip2
 USE_CSTD=	gnu99
 GNU_CONFIGURE=	yes
@@ -27,12 +29,6 @@ OPTIONS_DEFINE=		SYS_LINALG
 SYS_LINALG_DESC=	Enable system ATLAS/LAPACK
 SYS_LINALG_LIB_DEPENDS=	libatlas.so:${PORTSDIR}/math/atlas
 SYS_LINALG_CONFIGURE_ENABLE=	sys-linalg
-
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} > 900000
-BROKEN_powerpc=	Does not build on powerpc-9: error in pthreads
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
