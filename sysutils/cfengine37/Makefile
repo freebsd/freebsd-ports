@@ -3,6 +3,7 @@
 
 PORTNAME=	cfengine
 PORTVERSION=	3.7.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://s3.amazonaws.com/cfengine-package-repos/tarballs/
 DISTNAME=	cfengine-3.7.0-2
@@ -30,7 +31,8 @@ MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-USES=		autoreconf cpe gmake libtool
+USES=		autoreconf cpe gmake libtool shebangfix
+SHEBANG_FILES=	examples/remake_outputs.pl
 CFLAGS+=	-Wno-return-type
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
