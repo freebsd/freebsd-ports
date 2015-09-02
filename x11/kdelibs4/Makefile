@@ -63,13 +63,6 @@ SHEBANG_FILES=	kdecore/kconfig_compiler/checkkcfg.pl \
 		kio/proxytype.pl \
 		kioslave/http/kcookiejar/kcookiescfg.pl
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900004
-LIB_DEPENDS+=	libutempter.so:${PORTSDIR}/sysutils/libutempter
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-ConfigureChecks.cmake
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
 		${PATCH_WRKSRC}/kde3support/kdeui/k3sconfig.cpp \
@@ -109,4 +102,4 @@ post-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/share/mime/all \
 		${STAGEDIR}/${PREFIX}/share/mime/uri
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
