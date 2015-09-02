@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rocksdb
-PORTVERSION=	3.11.2
+PORTVERSION=	3.13.1
 DISTVERSIONPREFIX=	rocksdb-
 CATEGORIES=	databases
 
