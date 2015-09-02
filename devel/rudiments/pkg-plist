@@ -13,7 +13,6 @@ include/rudiments/datetime.h
 include/rudiments/device.h
 include/rudiments/dictionary.h
 include/rudiments/directory.h
-include/rudiments/dtd.h
 include/rudiments/dynamicarray.h
 include/rudiments/dynamiclib.h
 include/rudiments/environment.h
@@ -31,8 +30,6 @@ include/rudiments/listener.h
 include/rudiments/logger.h
 include/rudiments/memorymap.h
 include/rudiments/memorypool.h
-include/rudiments/modemclient.h
-include/rudiments/modemserver.h
 include/rudiments/parameterstring.h
 include/rudiments/permissions.h
 include/rudiments/private/bytebuffer.h
@@ -46,6 +43,7 @@ include/rudiments/private/chatincludes.h
 include/rudiments/private/client.h
 include/rudiments/private/clientincludes.h
 include/rudiments/private/codetree.h
+include/rudiments/private/codetreegrammar.h
 include/rudiments/private/codetreeincludes.h
 include/rudiments/private/commandline.h
 include/rudiments/private/commandlineincludes.h
@@ -64,8 +62,6 @@ include/rudiments/private/dictionarynode.h
 include/rudiments/private/directory.h
 include/rudiments/private/directoryincludes.h
 include/rudiments/private/dll.h
-include/rudiments/private/dtd.h
-include/rudiments/private/dtdincludes.h
 include/rudiments/private/dynamicarray.h
 include/rudiments/private/dynamicarrayincludes.h
 include/rudiments/private/dynamicarrayinlines.h
@@ -106,11 +102,6 @@ include/rudiments/private/memorymap.h
 include/rudiments/private/memorymapincludes.h
 include/rudiments/private/memorypool.h
 include/rudiments/private/memorypoolincludes.h
-include/rudiments/private/modemclient.h
-include/rudiments/private/modemclientincludes.h
-include/rudiments/private/modemserver.h
-include/rudiments/private/modemserverincludes.h
-include/rudiments/private/modemutil.h
 include/rudiments/private/new.h
 include/rudiments/private/parameterstring.h
 include/rudiments/private/parameterstringincludes.h
@@ -127,10 +118,6 @@ include/rudiments/private/regularexpressionincludes.h
 include/rudiments/private/rudimentsinlines.h
 include/rudiments/private/semaphoreset.h
 include/rudiments/private/semaphoresetincludes.h
-include/rudiments/private/serialport.h
-include/rudiments/private/serialportincludes.h
-include/rudiments/private/serialportprofile.h
-include/rudiments/private/serialportprofileincludes.h
 include/rudiments/private/server.h
 include/rudiments/private/serverincludes.h
 include/rudiments/private/serviceentry.h
@@ -184,8 +171,6 @@ include/rudiments/randomnumber.h
 include/rudiments/regularexpression.h
 include/rudiments/resultcodes.h
 include/rudiments/semaphoreset.h
-include/rudiments/serialport.h
-include/rudiments/serialportprofile.h
 include/rudiments/server.h
 include/rudiments/serviceentry.h
 include/rudiments/sharedmemory.h
