@@ -4,16 +4,11 @@
 PORTNAME=	telegram
 PORTVERSION=	1.3.1
 CATEGORIES=	net-im
-MASTER_SITES=	http://github.com/vysheng/tg/archive/:source1 \
-		http://github.com/vysheng/tgl/archive/:source2 \
-		http://github.com/vysheng/tl-parser/archive/:source3
-DISTFILES=	1.3.1.tar.gz:source1 2.0.1.tar.gz:source2 master.zip:source3
 
 MAINTAINER=	cpm@fbsd.es
 COMMENT=	Command-line interface for Telegram
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libconfig.so:${PORTSDIR}/devel/libconfig \
     		libevent.so:${PORTSDIR}/devel/libevent2 \
@@ -23,7 +18,12 @@ USES=		execinfo gmake lua:52 ncurses pkgconfig readline
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 
-WRKSRC=	${WRKDIR}/tg-1.3.1
+USE_GITHUB=	yes
+GH_ACCOUNT=	vysheng
+GH_PROJECT=	tg:telegram tgl tl-parser:tlparser
+GH_TAGNAME=	1.3.1:telegram 2.0.1 1659d87:tlparser
+
+WRKSRC=		${WRKDIR}/tg-1.3.1
 
 PLIST_FILES=	bin/telegram-cli \
 		etc/telegram-cli/server.pub
@@ -36,8 +36,10 @@ USE_GCC=	4.8+
 .endif
 
 post-extract:
-	@${MV} ${WRKDIR}/tgl-2.0.1/* ${WRKSRC}/tgl
-	@${MV} ${WRKDIR}/tl-parser-master/* ${WRKSRC}/tgl/tl-parser
+	@${RM} -r ${WRKSRC}/tgl
+	@${MV} ${WRKDIR}/tgl-2.0.1 ${WRKSRC}/tgl
+	@${MV} ${WRKDIR}/tl-parser-1659d87/* ${WRKSRC}/tgl/tl-parser
+	@${RM} -r ${WRKDIR}/tl-parser-1659d87
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/telegram-cli
