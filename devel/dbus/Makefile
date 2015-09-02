@@ -62,6 +62,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|install-data-am: install-data-local|install-data-am:|g' \
 		${WRKSRC}/tools/Makefile.in
 
+post-configure:
+	@${REINPLACE_CMD} -e 's|#define DBUS_ENABLE_LAUNCHD 1||g' \
+		${WRKSRC}/config.h
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/dbus-1/interfaces
 	@${MKDIR} ${STAGEDIR}/var/run/dbus
