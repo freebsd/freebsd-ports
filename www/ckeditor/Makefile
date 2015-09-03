@@ -13,10 +13,10 @@ COMMENT=	WYSIWYG editor to be used inside web page
 LICENSE=	MPL
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/ckeditor
 
 do-install:
-	@${INSTALL} -d -m 0755 ${STAGEDIR}${WWWDIR}
-	@(cd ${WRKSRC} && ${FIND} . | ${CPIO} -pdmu -R${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR})
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
 
 .include <bsd.port.mk>
