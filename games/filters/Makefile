@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	filters
-PORTVERSION=	2.53
+PORTVERSION=	2.54
 CATEGORIES=	games perl5
 MASTER_SITES=	http://ftp.debian.org/debian/pool/main/f/filters/ \
 		LOCAL/ehaupt
@@ -13,8 +13,7 @@ COMMENT=	Collection of filters, including B1FF, and the Swedish Chef
 
 CONFLICTS=	talkfilters-[0-9]* jive-[0-9]* chef-[0-9]* kenny-[0-9]*
 
-USES=		shebangfix gmake perl5
-MAKE_JOBS_UNSAFE=	yes
+USES=		gmake perl5 shebangfix
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
