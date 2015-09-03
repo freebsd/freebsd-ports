@@ -2,7 +2,7 @@
 
 .include "${.CURDIR}/Makefile.common"
 
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	Full integrated office productivity suite
 
@@ -79,7 +79,6 @@ CONFLICTS_INSTALL=	libreoffice4-4.*
 
 DIST_SUBDIR=	libreoffice
 INSTALL_TARGET=	distro-pack-install
-POST_PLIST=	post-plist
 WRKSRC=		${WRKDIR}/${PORTNAME}-${LOVERSION}
 
 GNU_CONFIGURE=	yes
@@ -107,8 +106,6 @@ VERBOSE_DESC=	Increase build verbosity
 WEBDAV_DESC=	Enable webdav protocol
 
 CUPS_CONFIGURE_ENABLE=	cups
-CUPS_CPPFLAGS=	-I${LOCALBASE}/include
-CUPS_LDFLAGS=	-L${LOCALBASE}/lib
 CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
 
 GNOME_CONFIGURE_ENABLE=	dbus gconf lockdown
@@ -116,15 +113,19 @@ GNOME_IMPLIES=	GTK2
 GNOME_LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 GNOME_USE=	GNOME=gconf2
 
+GTK_USE_GNOME=	gtk-update-icon-cache
+GTK_USES=	desktop-file-utils
+GTK_VARS=	POST_PLIST=add-plist-gnome
+
 GTK2_CONFIGURE_ENABLE=	gtk
-GTK2_USE=	GNOME=gtk20
-GTK2_USES=	desktop-file-utils
-GTK2_VARS=	INSTALLS_ICONS=yes
+GTK2_USE=	GNOME=gtk20,${GTK_USE_GNOME}
+GTK2_USES=	${GTK_USES}
+GTK2_VARS=	${GTK_VARS}
 
 GTK3_CONFIGURE_ENABLE=	gtk3
-GTK3_USE=	GNOME=gtk30
-GTK3_USES=	desktop-file-utils
-GTK2_VARS=	INSTALLS_ICONS=yes
+GTK3_USE=	GNOME=gtk30,${GTK_USE_GNOME}
+GTK3_USES=	${GTK_USES}
+GTK3_VARS=	${GTK_VARS}
 
 JAVA_BUILD=	yes
 JAVA_BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
@@ -190,6 +191,8 @@ WEBDAV_CONFIGURE_ENABLE=	neon
 WEBDAV_LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon
 
 ACLOCAL_ARGS=	-I "${WRKSRC}/m4"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 COLLADA_MODS=	COLLADABaseUtils COLLADAFramework \
 		COLLADASaxFrameworkLoader GeneratedSaxParser
@@ -293,6 +296,7 @@ CONFIGURE_ENV=	DMAKE=${LOCALBASE}/bin/dmake \
 		PYTHON_CFLAGS="`${PYTHON_VERSION}-config --cflags`" \
 		PYTHON_LIBS="`${PYTHON_VERSION}-config --libs`"
 
+MAKE_ENV+=	CXXFLAGS_WARN="${CXXFLAGS_WARN}"
 MAKE_ENV+=	GNUSED=${LOCALBASE}/bin/gsed
 MAKE_ENV+=	LANG=C LC_ALL=C
 
@@ -309,6 +313,17 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 CONFIGURE_ENV+=	FLEX=${LOCALBASE}/bin/flex
 .endif
 
+.if ${COMPILER_TYPE} == "clang"
+CXXFLAGS_WARN=	-Woverloaded-virtual -Wno-unknown-pragmas \
+		-Wno-unused-function -Wno-unused-parameter
+.if${COMPILER_VERSION} >= 36
+CXXFLAGS_WARN+=	-Wno-inconsistent-missing-override \
+		-Wno-unused-local-typedefs
+.endif
+.else
+CXXFLAGS_WARN=	-Wshadow -Woverloaded-virtual
+.endif
+
 pre-configure:
 	@${TOUCH} ${WRKSRC}/autogen.lastrun
 
@@ -316,24 +331,27 @@ post-configure:
 	@${TOUCH} ${WRKSRC}/src.downloaded
 
 post-install:
-	@${RM} -f ${PLISTD} ${PLISTF}
-	@cd ${STAGEDIR}${PREFIX} && ${FIND} -d lib/libreoffice -type d \
-	    -empty -exec ${ECHO_CMD} "@dir {}" \; > ${PLISTD}
-	@cd ${STAGEDIR}${PREFIX} && ${FIND} -H -s bin etc lib man \
-	    \( -type f -o -type l \) -print > ${PLISTF}
+	@cd ${STAGEDIR}${PREFIX} && \
+	${FIND} -s lib/libreoffice -type d -empty \
+	    -exec ${ECHO_CMD} "@dir {}" \; >> ${TMPPLIST}
+	@cd ${STAGEDIR}${PREFIX} && \
+	${FIND} -s bin etc lib man -not -type d >> ${TMPPLIST}
 .for subdir in application-registry applications icons mime mime-info mimelnk
-	@cd ${STAGEDIR}${PREFIX} && ${FIND} -H -s share/${subdir} \
-	    \( -type f -o -type l \) -print >> ${PLISTF}
+	@cd ${STAGEDIR}${PREFIX} && \
+	${FIND} -s share/${subdir} -not -type d >> ${TMPPLIST}
 .endfor
 
 post-install-SDK-on:
 .for subdir in include share share/doc share/idl
-	@cd ${STAGEDIR}${PREFIX} && ${FIND} -H -s ${subdir}/libreoffice \
-	    \( -type f -o -type l \) -print >> ${PLISTF}
+	@cd ${STAGEDIR}${PREFIX} && \
+	${FIND} -s ${subdir}/libreoffice -not -type d >> ${TMPPLIST}
 .endfor
 
-post-plist:
-	@${SORT} -u ${PLISTF} >> ${TMPPLIST}
-	@${SORT} -u ${PLISTD} >> ${TMPPLIST}
+add-plist-gnome:
+.for subdir in gnome hicolor locolor
+	@${ECHO_CMD} "@rmtry share/icons/${subdir}/icon-theme.cache" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${LOCALBASE}/bin/gtk-update-icon-cache -q -f %D/share/icons/${subdir} 2>/dev/null || ${TRUE}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${LOCALBASE}/bin/gtk-update-icon-cache -q -f %D/share/icons/${subdir} 2>/dev/null || ${TRUE}" >> ${TMPPLIST}
+.endfor
 
 .include <bsd.port.post.mk>
