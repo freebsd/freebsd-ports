@@ -54,6 +54,7 @@ SVNUSER?=	svn
 
 CONFIGURE_ARGS+=	--without-gnome-keyring \
 			--without-kwallet \
+			--disable-keychain \
 			--with-apxs=no
 
 .if ${PORT_OPTIONS:MSVNSERVE_WRAPPER}
