@@ -12,28 +12,27 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library for handling RSS (alternative impl.)
 
+LICENSE=	BSD2CLAUSE RUBY
+LICENSE_COMB=	dual
+
+RUN_DEPENDS=	ja-${RUBY_PKGNAMEPREFIX}uconv>=0:${PORTSDIR}/japanese/ruby-uconv
+
+BROKEN_RUBY22=	yes
+
+CONFLICTS_INSTALL=	ruby-rss-*
+
 OPTIONS_DEFINE=	DOCS
 
-RUN_DEPENDS=	${LOCALBASE}/${SADIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv
-
-CONFLICTS=	ruby-rss-*
-
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
-SADIR=	lib/ruby/site_ruby/${RUBY_VER}/${RUBY_ARCH}
 
 DOCS_EN=	README.en Tutorial.en
 DOCS_JA=	README.ja Tutorial.ja
 
-post-install:
-	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/ja
-	${INSTALL_DATA} ${DOCS_EN:S,^,${WRKSRC}/,} ${STAGEDIR}${RUBY_MODDOCDIR}/
-	${INSTALL_DATA} ${DOCS_JA:S,^,${WRKSRC}/,} ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS_EN} ${STAGEDIR}${RUBY_MODDOCDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS_JA} ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
 
-.include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} >= 2.2
-BROKEN=		Does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
