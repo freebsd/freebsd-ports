@@ -58,6 +58,87 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2c5e7e23-5248-11e5-9ad8-14dae9d210b8">
+    <topic>bind -- denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>bind99</name>
+	<range><lt>9.9.7P3</lt></range>
+      </package>
+      <package>
+	<name>bind910</name>
+	<range><lt>9.10.2P3</lt></range>
+      </package>
+      <package>
+	<name>bind910-base</name>
+	<name>bind99-base</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ISC reports:</p>
+	<blockquote cite="https://www.isc.org/blogs/cve-2015-5986-an-incorrect-boundary-check-can-trigger-a-require-assertion-failure-in-openpgpkey_61-c/">
+	  <p>An incorrect boundary check in openpgpkey_61.c can cause
+	    named to terminate due to a REQUIRE assertion failure.  This defect can
+	    be deliberately exploited by an attacker who can provide a maliciously
+	    constructed response in answer to a query.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.isc.org/blogs/cve-2015-5986-an-incorrect-boundary-check-can-trigger-a-require-assertion-failure-in-openpgpkey_61-c/</url>
+      <cvename>CVE-2015-5986</cvename>
+    </references>
+    <dates>
+      <discovery>2015-08-19</discovery>
+      <entry>2015-09-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="eaf3b255-5245-11e5-9ad8-14dae9d210b8">
+    <topic>bind -- denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>bind99</name>
+	<range><lt>9.9.7P3</lt></range>
+      </package>
+      <package>
+	<name>bind910</name>
+	<range><lt>9.10.2P3</lt></range>
+      </package>
+      <package>
+	<name>bind910-base</name>
+	<name>bind99-base</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>FreeBSD</name>
+	<range><gt>9.3</gt><le>9.3_25</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ISC reports:</p>
+	<blockquote cite="https://www.isc.org/blogs/cve-2015-5722-parsing-malformed-keys-may-cause-bind-to-exit-due-to-a-failed-assertion-in-buffer-c/">
+	  <p>Parsing a malformed DNSSEC key can cause a validating
+	    resolver to exit due to a failed assertion in buffer.c.  It is possible
+	    for a remote attacker to deliberately trigger this condition, for
+	    example by using a query which requires a response from a zone
+	    containing a deliberately malformed key.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.isc.org/blogs/cve-2015-5722-parsing-malformed-keys-may-cause-bind-to-exit-due-to-a-failed-assertion-in-buffer-c/</url>
+      <cvename>CVE-2015-5722</cvename>
+    </references>
+    <dates>
+      <discovery>2015-08-19</discovery>
+      <entry>2015-09-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a9350df8-5157-11e5-b5c1-e8e0b747a45a">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
