@@ -41,12 +41,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lexpat ${ICONV_LIB}
 
 PORTDOCS=	*
 
-.include <bsd.port.options.mk>
-
-post-patch:
-.if ! ${PORT_OPTIONS:MDOCS}
+post-patch-DOCS-off:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/apidoc//' ${WRKSRC}/doc/Makefile.in
-.endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsablot.so

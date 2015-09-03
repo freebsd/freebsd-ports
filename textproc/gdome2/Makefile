@@ -23,17 +23,7 @@ OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	*
 
-.include <bsd.port.options.mk>
-
 post-patch:
-.if ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -E -e \
-		's,^(HTML_DIR *= *).*,\1\$$(DESTDIR)$$(prefix)/share/doc,' \
-		${WRKSRC}/gtk-doc/Makefile.in
-.else
-	@${REINPLACE_CMD} '/gtk-doc/d' ${WRKSRC}/Makefile.in
-.endif
-
 	@${FIND} ${WRKSRC} -type f -and \
 		'(' -name '*.[ch]' -or -name '*.xml' ')' | \
 		${XARGS} ${REINPLACE_CMD} -e ' \
@@ -45,6 +35,14 @@ post-patch:
 		 s,<xmlIO\.h>,<libxml/xmlIO.h>,; \
 		 s,<parserInternals\.h>,<libxml/parserInternals.h>,; \
 		 s,<entities\.h>,<libxml/entities.h>,'
+
+post-patch-DOCS-on:
+	@${REINPLACE_CMD} -E -e \
+		's,^(HTML_DIR *= *).*,\1\$$(DESTDIR)$$(prefix)/share/doc,' \
+		${WRKSRC}/gtk-doc/Makefile.in
+
+post-patch-DOCS-off:
+	@${REINPLACE_CMD} '/gtk-doc/d' ${WRKSRC}/Makefile.in
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgdome.so

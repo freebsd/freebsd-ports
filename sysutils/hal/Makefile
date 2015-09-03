@@ -95,13 +95,13 @@ post-install:
 	    	${STAGEDIR}${PREFIX}/share/hal/fdi/policy/10osvendor
 	${INSTALL_SCRIPT} ${FILESDIR}/mount-fuse \
 	    	${STAGEDIR}${PREFIX}/share/hal/mount-fuse
-.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}/var/lib/hal
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/hald/freebsd/README \
 		${STAGEDIR}${DOCSDIR}/README.freebsd
 	${INSTALL_DATA} ${WRKDIR}/README.fuse \
 	    	${STAGEDIR}${DOCSDIR}/README.fuse
-.endif
-	@${MKDIR} ${STAGEDIR}/var/lib/hal
 
 .include <bsd.port.post.mk>
