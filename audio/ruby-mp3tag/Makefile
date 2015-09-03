@@ -4,25 +4,27 @@
 PORTNAME=	mp3tag
 PORTVERSION=	1.0
 CATEGORIES=	audio ruby
-MASTER_SITES=	http://users.cybercity.dk/~dsl8950/ruby/
+MASTER_SITES=	LOCAL/sunpoet/ruby
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby module to manipulate ID3v1.1 tags in MP3 files
 
-BROKEN=		Unfetchable
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+NO_ARCH=	yes
+NO_BUILD=	yes
 USE_RUBY=	yes
 USE_RUBY_RDOC=	yes
 
 RUBY_RD_FILES=	mp3tag.rb
 
-NO_BUILD=	yes
-
 DOCS=		README \
 		${RUBY_RD_HTML_FILES}
-
-OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -E \
@@ -32,9 +34,13 @@ post-patch:
 do-install:
 	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}/
 	${INSTALL_DATA} ${WRKSRC}/mp3tag.rb ${STAGEDIR}${RUBY_SITELIBDIR}/
-	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
+
+do-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${RUBY_MODDOCDIR}/
+
+do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/mp3tag_test.rb ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
-	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${RUBY_MODDOCDIR}/
 
 .include <bsd.port.mk>
