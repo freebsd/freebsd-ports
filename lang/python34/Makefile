@@ -109,6 +109,10 @@ DISABLED_EXTENSIONS+=	nis
 PLIST_SUB+=	NO_NIS=""
 .endif
 
+post-configure:
+	@${REINPLACE_CMD} -e 's|#define HAVE_UTIL_H 1||g' \
+		${WRKSRC}/pyconfig.h
+
 post-install:
 .if ! ${PORT_OPTIONS:MDEBUG}
 	${RM} -f ${STAGEDIR}${PREFIX}/lib/libpython3.so						# Upstream Issue: http://bugs.python.org/issue17975
