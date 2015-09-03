@@ -8,28 +8,20 @@ MASTER_SITES=	http://blade.nagaokaut.ac.jp/~sinara/ruby/math/algebra/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library for mathematical (algebraic) computations
 
-USE_RUBY=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
+NO_ARCH=	yes
 NO_BUILD=	yes
-
-OPTIONS_DEFINE=	DOCS
-
-DOCS_EN=	doc/*.rd	doc/*.html
-DOCS_JA=	doc-ja/*.rd	doc-ja/*.html
+USE_RUBY=	yes
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/sample/* ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
-	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/ja
-.for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
-.endfor
-.for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
-.endfor
+	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
+	cd ${WRKSRC}/doc/ && ${INSTALL_DATA} *.html *.rd ${STAGEDIR}${RUBY_MODDOCDIR}/
+	cd ${WRKSRC}/doc-ja/ && ${INSTALL_DATA} *.html *.rd ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
+	@${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/sample/sample-* ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
 
 .include <bsd.port.mk>
