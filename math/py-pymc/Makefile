@@ -25,14 +25,8 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:${PORTSDIR}/math/py-matplotlib \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:${PORTSDIR}/science/py-scipy
 
-OPTIONS_DEFINE=	DOCS
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-
-LDFLAGS+=	-shared
-
-USES=			python
-USE_PYTHON=		distutils autoplist
-PORTDOCS=	*
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 LDFLAGS+=	-shared
 
@@ -44,6 +38,5 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/gp/linalg_utils.so
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/Container_values.so
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/LazyFunction.so
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
