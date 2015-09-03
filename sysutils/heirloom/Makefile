@@ -22,12 +22,6 @@ REINPLACE_SUB=	DATADIR="${DATADIR}"
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} >= 900007
-EXTRA_PATCHES=	${FILESDIR}/extra-utmpx
-.endif
-
 SH2FIX=		maninst.sh genintro.sh crossln.sh
 
 DOC_FILES=	CHANGES LICENSE/COPYING LICENSE/LICENSE LICENSE/LUCENT \
@@ -52,14 +46,10 @@ pre-configure:
 pre-build:
 	${MAKE_CMD} -C ${WRKSRC}/libcommon -f Makefile.mk headers
 
-post-install: install-doc
-
-install-doc:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/LICENSE
-. for f in ${DOC_FILES}
+.for f in ${DOC_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/${f}
-. endfor
-.endif
+.endfor
 
 .include <bsd.port.mk>
