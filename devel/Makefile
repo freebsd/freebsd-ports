@@ -1358,6 +1358,7 @@
     SUBDIR += linux_kdump
     SUBDIR += linux_libusb
     SUBDIR += lion
+    SUBDIR += lldb37
     SUBDIR += llnextgen
     SUBDIR += llvm-cheri
     SUBDIR += llvm-devel
