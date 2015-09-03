@@ -30,8 +30,6 @@ DOCS=		BLURB INSTALL README THANKS TODO
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${ECHO_CMD} "${PREFIX}/bin" > ${WRKSRC}/conf-bin
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
@@ -46,9 +44,9 @@ do-install:
 		${INSTALL_PROGRAM} ${PROGRAMS} ${STAGEDIR}${PREFIX}/bin && \
 		${INSTALL_MAN} *.1 ${STAGEDIR}${MANPREFIX}/man/man1 && \
 		${INSTALL_MAN} *.5 ${STAGEDIR}${MANPREFIX}/man/man5
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
