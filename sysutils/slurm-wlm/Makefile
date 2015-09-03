@@ -39,8 +39,6 @@ OPTIONS_SUB=	yes
 
 GTK2_DESC=	Build GUI config tool sview
 
-.include <bsd.port.options.mk>
-
 # SLURM's configure enables interactive jobs if pty.h exists.  Replacing
 # #include <pty.h> with appropriate headers will therefore not work, so instead
 # add a pty.h for the build.
@@ -51,10 +49,7 @@ post-patch:
 		${WRKSRC}/doc/html/shtml2html.py \
 		${WRKSRC}/doc/man/man2html.py
 
-post-stage:
-.if ! ${PORT_OPTIONS:MDOCS}
-	${RM} -rf ${STAGEDIR}${LOCALBASE}/share/doc/${PORTNAME}-${PORTVERSION}
-.endif
-	${CP} ${FILESDIR}/slurm.conf.example ${STAGEDIR}${PREFIX}/etc/
+post-install:
+	${INSTALL_DATA} ${FILESDIR}/slurm.conf.example ${STAGEDIR}${PREFIX}/etc/
 
 .include <bsd.port.mk>
