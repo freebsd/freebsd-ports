@@ -21,8 +21,6 @@ NLS_CMAKE_ON=	-DENABLE_GETTEXT=On
 
 OPTIONS_SUB=	yes
 
-BROKEN_powerpc=	Does not install on powerpc: signal 11
-
 post-patch:
 	@${REINPLACE_CMD} -e 's@/usr/local@${LOCALBASE}@g' \
 		${WRKSRC}/CMakeLists.txt
