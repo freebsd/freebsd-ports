@@ -7858,3 +7858,4 @@ devel/rubygem-igraph||2015-09-01|Has expired: Broken for more than 6 months
 games/linux-candycruncher-demo||2015-09-01|Has expired: Broken for more than 6 months
 games/linux-gorky17-demo||2015-09-01|Has expired: Broken for more than 6 months
 sysutils/syslog-ng33||2015-09-01|Has expired: No longer supported by Balabit cince November 2014.
+textproc/ruby-xmlconfigfile|textproc/ruby-xml-configfile|2015-09-03|Rename to match our ruby naming
