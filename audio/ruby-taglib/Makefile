@@ -5,7 +5,7 @@ PORTNAME=	taglib
 PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	audio ruby
-MASTER_SITES=	http://www.hakubi.us/ruby-taglib/
+MASTER_SITES=	http://www.hakubi.us/wp-content/uploads/software/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-taglib-${PORTVERSION}
 DIST_SUBDIR=	ruby
@@ -13,21 +13,20 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	t.hiroaki.209@gmail.com
 COMMENT=	Ruby library wrapping the Taglib library
 
-LIB_DEPENDS=    libtag.so:${PORTSDIR}/audio/taglib
+LICENSE=	MIT
 
-BROKEN=		Unfetchable
+LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
+
+NO_ARCH=	yes
+NO_BUILD=	yes
 USE_RUBY=	yes
 USES=		tar:bzip2
 
 RUBY_RD_FILES=	taglib.rb
 
-NO_BUILD=	yes
-
 DOCS=		README
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 do-install:
 	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
