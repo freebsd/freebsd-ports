@@ -1258,6 +1258,8 @@
     SUBDIR += py-sphinx
     SUBDIR += py-sphinx-intl
     SUBDIR += py-sphinx_rtd_theme
+    SUBDIR += py-sphinx_numfig
+    SUBDIR += py-sphinx_wikipedia
     SUBDIR += py-sphinxcontrib-adadomain
     SUBDIR += py-sphinxcontrib-bitbucket
     SUBDIR += py-sphinxcontrib-httpdomain
