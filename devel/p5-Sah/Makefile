@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Sah
-PORTVERSION=	0.9.37
+PORTVERSION=	0.9.38
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PERLANCAR
@@ -14,9 +14,8 @@ COMMENT=	Schema for data structures (specification)
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-DefHash>=1.0.6:${PORTSDIR}/devel/p5-DefHash \
-		p5-File-ShareDir-Install>=0.06:${PORTSDIR}/devel/p5-File-ShareDir-Install
-RUN_DEPENDS=	p5-DefHash>=1.0.6:${PORTSDIR}/devel/p5-DefHash
+BUILD_DEPENDS=	p5-File-ShareDir-Install>=0.06:${PORTSDIR}/devel/p5-File-ShareDir-Install
+TEST_DEPENDS=	p5-DefHash>=1.0.6:${PORTSDIR}/devel/p5-DefHash
 
 NO_ARCH=	yes
 USE_PERL5=	configure
