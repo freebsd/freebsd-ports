@@ -3,6 +3,7 @@
 
 PORTNAME=	google
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	www databases ruby
 MASTER_SITES=	http://www.caliban.org/files/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -10,33 +11,27 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Ruby interface to Google's SOAP-driven Web API
+COMMENT=	Ruby interface to Google SOAP-driven Web API
 
 LICENSE=	GPLv2
 
+BROKEN_RUBY22=	yes
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
 
 DOCS=		CHANGES Changelog README google.html
-EXAMPLES=	examples/*
 
-OPTIONS_DEFINE=	DOCS
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${RUBY_MODDOCDIR}/
 
-post-install:
-	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
-.for f in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
-.endfor
-	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
-.endfor
+post-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
 
-.include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} >= 2.2
-BROKEN=         Does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
