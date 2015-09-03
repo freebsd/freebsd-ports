@@ -175,6 +175,8 @@ post-configure:
 	    -e 's|${WRKSRC}/cmake/modules|${DATADIR}/cmake|' \
 	    ${WRKDIR}/cmake/share/llvm/cmake/LLVMConfig.cmake
 .endif
+	@${REINPLACE_CMD} -e 's|#define HAVE_MACH_MACH_H 1||g' \
+		${WRKSRC}/include/llvm/Config/config.h
 
 post-build:
 .if ${PORT_OPTIONS:MMANPAGES}
