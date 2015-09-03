@@ -12,6 +12,7 @@ MAINTAINER=	me@mortis.eu
 COMMENT=	Pure Python Postfix policy daemon for SPF checking
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipaddr>0:${PORTSDIR}/devel/py-ipaddr \
 		${PYTHON_PKGNAMEPREFIX}spf>0:${PORTSDIR}/mail/py-spf \
@@ -20,6 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipaddr>0:${PORTSDIR}/devel/py-ipaddr \
 USES=		python
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	pypolicyd-spf
+NO_ARCH=	yes
 
 PORTDOCS=	CHANGES \
 		COPYING \
@@ -47,8 +49,8 @@ post-patch:
 		-e "s|/etc/pypolicyd-spf/|${PREFIX}/etc/postfix-policyd-spf-python/|" \
 		${WRKSRC}/policyd-spf.peruser.5
 
-post-install:
-	@${INSTALL} -d ${STAGEDIR}/${DOCSDIR}
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
