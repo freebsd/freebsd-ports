@@ -63,11 +63,11 @@ Notes:
     <affects>
       <package>
 	<name>bind99</name>
-	<range><lt>9.9.7P3</lt></range>
+	<range><ge>9.9.7</ge><lt>9.9.7P3</lt></range>
       </package>
       <package>
 	<name>bind910</name>
-	<range><lt>9.10.2P3</lt></range>
+	<range><lt>9.10.2P4</lt></range>
       </package>
       <package>
 	<name>bind910-base</name>
@@ -105,7 +105,7 @@ Notes:
       </package>
       <package>
 	<name>bind910</name>
-	<range><lt>9.10.2P3</lt></range>
+	<range><lt>9.10.2P4</lt></range>
       </package>
       <package>
 	<name>bind910-base</name>
