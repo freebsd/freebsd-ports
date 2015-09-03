@@ -12,30 +12,32 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	don@na.rim.or.jp
 COMMENT=	Ruby interface to Amazon Web Services
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN_RUBY22=	yes
+
 CONFLICTS=	ruby-amazon-[0-9]*
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
 DOCS=		COPYING INSTALL NEWS README
 EXAMPLES=	example/*
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
-post-install:
-	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
-.for f in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
-.endfor
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
 .endfor
 
-.include <bsd.port.pre.mk>
+post-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
+.for f in ${EXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
+.endfor
 
-.if ${RUBY_VER} >= 2.2
-BROKEN=		Does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
