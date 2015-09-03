@@ -60,7 +60,7 @@ SUB_LIST=	NAME=qemu_user_static
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS+=	--localstatedir=/var
-CONFIGURE_ARGS+=	--extra-ldflags=-L${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--extra-ldflags=-L\"${LOCALBASE}/lib\"
 CONFIGURE_ARGS+=	--disable-smartcard-nss --disable-libssh2
 PORTDOCS=	docs qemu-doc.html qemu-tech.html qmp-commands.txt
 
