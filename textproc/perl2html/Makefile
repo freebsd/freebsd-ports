@@ -15,14 +15,10 @@ LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in AUTHORS NEWS README
 	${INSTALL_MAN} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

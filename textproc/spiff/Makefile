@@ -22,8 +22,6 @@ STRIP=		# stripping can break go binaries
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@cd ${WRKSRC} ; ${MKDIR} src/github.com/${GH_ACCOUNT}/${GH_PROJECT} ; \
 		${MV} .gitignore .travis.yml Godeps LICENSE Makefile README.md \
@@ -42,13 +40,13 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT}/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin/
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${CP} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT}/LICENSE \
+	${INSTALL_DATA} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT}/LICENSE \
 		${STAGEDIR}${DOCSDIR}
-	${CP} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT}/README.md \
+	${INSTALL_DATA} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT}/README.md \
 		${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT} && ${COPYTREE_SHARE} examples ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

@@ -21,12 +21,10 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
-.if empty(PORT_OPTIONS:MDOCS)
-	@${REINPLACE_CMD} -e 's, doc , ,' ${WRKSRC}/Makefile.in
-.endif
 	@${REINPLACE_CMD} -e 's,-liconv,${ICONV_LIB},' ${WRKSRC}/src/Makefile.*
+
+post-patch-DOCS-off:
+	@${REINPLACE_CMD} -e 's, doc , ,' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

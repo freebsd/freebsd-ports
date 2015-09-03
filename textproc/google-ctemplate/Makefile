@@ -21,17 +21,15 @@ USE_LDCONFIG=	yes
 
 BROKEN_powerpc=	Does not compile on powerpc
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|$$(prefix)/share/doc/$$(PACKAGE)-$$(VERSION)|${DOCSDIR}|' \
 		${WRKSRC}/Makefile.in
-.if empty(PORT_OPTIONS:MDOCS)
+
+post-patch-DOCS-off:
 	@${REINPLACE_CMD} -e \
 		'/install-data-am/ s|install-dist_docDATA||' \
 		${WRKSRC}/Makefile.in
-.endif
 
 tests: build
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
