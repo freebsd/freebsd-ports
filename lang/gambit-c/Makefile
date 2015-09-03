@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gambit-c
-DISTVERSION=	v4_7_8
+DISTVERSION=	v4_7_9
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.iro.umontreal.ca/~gambit/download/gambit/v4.7/source/
