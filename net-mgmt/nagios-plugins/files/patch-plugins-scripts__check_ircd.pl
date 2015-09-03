@@ -1,14 +1,14 @@
---- plugins-scripts/check_ircd.pl.orig	2014-03-04 21:41:57 UTC
+--- plugins-scripts/check_ircd.pl.orig	2015-07-30 21:40:06 UTC
 +++ plugins-scripts/check_ircd.pl
-@@ -66,6 +66,7 @@
- $ENV{PATH} = "";
- $ENV{ENV} = "";
- $ENV{BASH_ENV} = "";
-+$ENV{CDPATH} = "";
+@@ -67,6 +67,7 @@ sub bindRemote ($$);
+ $ENV{'PATH'}='@TRUSTED_PATH@';
+ $ENV{'BASH_ENV'}=''; 
+ $ENV{'ENV'}='';
++$ENV{'CDPATH'} = "";
  
  # -----------------------------------------------------------------[ Global ]--
  
-@@ -153,7 +154,7 @@
+@@ -154,7 +155,7 @@ sub bindRemote ($$)
  	    print "IRCD UNKNOWN: Could not start socket ($!)\n";
  	    exit $ERRORS{"UNKNOWN"};
  	}
