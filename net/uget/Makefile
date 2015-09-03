@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	uget
-PORTVERSION=	2.0
+PORTVERSION=	2.0.1
 CATEGORIES=	net
 MASTER_SITES=	SF/urlget/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
@@ -13,10 +13,12 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	curl-config:${PORTSDIR}/ftp/curl
-LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
+	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
+	libgnutls.so:${PORTSDIR}/security/gnutls
 RUN_DEPENDS=	aria2c:${PORTSDIR}/www/aria2
 
-USES=	gmake pkgconfig gettext-tools compiler:c11
+USES=	compiler:c11 gettext-tools gmake pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk30 intltool intlhack
 INSTALLS_ICONS=	yes
@@ -26,17 +28,15 @@ INSTALL_TARGET=	install-strip
 CFLAGS+=	-Wno-typedef-redefinition
 
 CONFIGURE_ARGS=--enable-appindicator=no \
-	--disable-pwmd
+	--disable-pwmd \
+	--with-gnutls=yes
 
-OPTIONS_DEFINE=	GNUTLS GSTREAMER NLS
-OPTIONS_DEFAULT=	GNUTLS GSTREAMER NLS
+OPTIONS_DEFINE=	GSTREAMER NLS
+OPTIONS_DEFAULT=	GSTREAMER NLS
 GSTREAMER_USE=	gstreamer1=yes
 GSTREAMER_CONFIGURE_ENABLE=	gstreamer
 NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
-GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
-	libgcrypt.so:${PORTSDIR}/security/libgcrypt
-GNUTLS_CONFIGURE_WITH=	gnutls=yes
 OPTIONS_SUB=	yes
 
 .include <bsd.port.mk>
