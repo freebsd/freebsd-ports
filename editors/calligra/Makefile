@@ -2,7 +2,7 @@
 
 PORTNAME=	calligra
 PORTVERSION=	${CALLIGRA_VERSION}
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	editors kde
 MASTER_SITES=	KDE/${CALLIGRA_BRANCH}/${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	KDE
@@ -42,8 +42,8 @@ USE_QT4=	corelib dbus designer_build gui opengl phonon porting_build \
 		qt3support qtestlib_build script sql svg webkit xml xmlpatterns \
 		moc_build qmake_build rcc_build uic_build uic3_build
 USE_SQLITE=	3
-USES=		cmake:outsource cpe compiler:c++11-lang iconv jpeg perl5 pkgconfig tar:xz\
-		shared-mime-info
+USES=		cmake:outsource cpe compiler:c++11-lang iconv:translit jpeg \
+		perl5 pkgconfig shared-mime-info tar:xz
 CMAKE_ARGS=	-DCMAKE_INCLUDE_PATH:STRING="${QT_INCDIR} ${LOCALBASE}/include" \
 		-DPRODUCTSET:STRING="DESKTOP"
 USE_LDCONFIG=	yes
