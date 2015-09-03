@@ -5,7 +5,7 @@
 %%DATADIR%%/usr/5bin/s42/expr
 %%DATADIR%%/usr/5bin/s42/nl
 %%DATADIR%%/usr/5bin/s42/priocntl
-%%DATADIR%%/usr/5bin/s42/ps
+@(,,4755) %%DATADIR%%/usr/5bin/s42/ps
 %%DATADIR%%/usr/5bin/s42/sed
 %%DATADIR%%/usr/5bin/s42/wc
 %%DATADIR%%/usr/5bin/s42/csplit
@@ -66,7 +66,7 @@
 %%DATADIR%%/usr/5bin/posix/od
 %%DATADIR%%/usr/5bin/posix/pg
 %%DATADIR%%/usr/5bin/posix/pr
-%%DATADIR%%/usr/5bin/posix/ps
+@(,,4755) %%DATADIR%%/usr/5bin/posix/ps
 %%DATADIR%%/usr/5bin/posix/rm
 %%DATADIR%%/usr/5bin/posix/rmdir
 %%DATADIR%%/usr/5bin/posix/sed
@@ -207,7 +207,7 @@
 %%DATADIR%%/usr/5bin/printenv
 %%DATADIR%%/usr/5bin/printf
 %%DATADIR%%/usr/5bin/priocntl
-%%DATADIR%%/usr/5bin/ps
+@(,,4755) %%DATADIR%%/usr/5bin/ps
 %%DATADIR%%/usr/5bin/pwd
 %%DATADIR%%/usr/5bin/random
 %%DATADIR%%/usr/5bin/renice
@@ -222,7 +222,7 @@
 %%DATADIR%%/usr/5bin/split
 %%DATADIR%%/usr/5bin/stty
 %%DATADIR%%/usr/5bin/STTY
-%%DATADIR%%/usr/5bin/su
+@(,,4755) %%DATADIR%%/usr/5bin/su
 %%DATADIR%%/usr/5bin/sum
 %%DATADIR%%/usr/5bin/sync
 %%DATADIR%%/usr/5bin/tabs
@@ -285,7 +285,7 @@
 %%DATADIR%%/usr/ucb/groups
 %%DATADIR%%/usr/ucb/ln
 %%DATADIR%%/usr/ucb/ls
-%%DATADIR%%/usr/ucb/ps
+@(,,4755) %%DATADIR%%/usr/ucb/ps
 %%DATADIR%%/usr/ucb/stty
 %%DATADIR%%/usr/ucb/sum
 %%DATADIR%%/usr/ucb/test
@@ -485,32 +485,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE/README
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/intro.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/LICENSE
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/usr/ucb
-@dirrm %%DATADIR%%/usr/share/man/5man/man8
-@dirrm %%DATADIR%%/usr/share/man/5man/man7
-@dirrm %%DATADIR%%/usr/share/man/5man/man6
-@dirrm %%DATADIR%%/usr/share/man/5man/man5
-@dirrm %%DATADIR%%/usr/share/man/5man/man4
-@dirrm %%DATADIR%%/usr/share/man/5man/man3
-@dirrm %%DATADIR%%/usr/share/man/5man/man2
-@dirrm %%DATADIR%%/usr/share/man/5man/man1m
-@dirrm %%DATADIR%%/usr/share/man/5man/man1b
-@dirrm %%DATADIR%%/usr/share/man/5man/man1
-@dirrm %%DATADIR%%/usr/share/man/5man
-@dirrm %%DATADIR%%/usr/share/man
-@dirrm %%DATADIR%%/usr/share
-@dirrm %%DATADIR%%/usr/ccs/bin
-@dirrm %%DATADIR%%/usr/ccs
-@dirrm %%DATADIR%%/usr/5lib/tmac
-@dirrm %%DATADIR%%/usr/5lib/spell
-@dirrm %%DATADIR%%/usr/5lib
-@dirrm %%DATADIR%%/usr/5bin/s42
-@dirrm %%DATADIR%%/usr/5bin/posix2001
-@dirrm %%DATADIR%%/usr/5bin/posix
-@dirrm %%DATADIR%%/usr/5bin
-@dirrm %%DATADIR%%/usr
-@dirrm %%DATADIR%%/etc/default
-@dirrm %%DATADIR%%/etc
-@dirrm %%DATADIR%%
+@dir %%DATADIR%%/usr/share/man/5man/man6
+@dir %%DATADIR%%/usr/share/man/5man/man4
+@dir %%DATADIR%%/usr/share/man/5man/man3
+@dir %%DATADIR%%/usr/share/man/5man/man2
