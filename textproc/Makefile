@@ -1342,7 +1342,7 @@
     SUBDIR += ruby-rss.alt
     SUBDIR += ruby-rttool
     SUBDIR += ruby-sary
-    SUBDIR += ruby-xmlconfigfile
+    SUBDIR += ruby-xml-configfile
     SUBDIR += ruby-xmlparser
     SUBDIR += ruby-xmlscan
     SUBDIR += rubygem-albino
