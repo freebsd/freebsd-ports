@@ -25,8 +25,6 @@ WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,/var/qmail,${QMAIL_PREFIX},g' \
 			  -e 's,\(#define AD_USE_GC\) 1,\1 0,' \
@@ -43,9 +41,9 @@ do-install:
 .for prog in ${BINARIES}
 	${INSTALL_PROGRAM} ${WRKSRC}/${prog} ${STAGEDIR}${PREFIX}/bin/
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/INSTALL ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
