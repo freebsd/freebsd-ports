@@ -1,74 +1,20 @@
---- Makefile.orig	2014-09-10 09:44:18.886311642 +0200
-+++ Makefile	2014-09-10 09:44:13.089316817 +0200
-@@ -1,9 +1,10 @@
- LEX	= flex
- BUILD	= jethro kraut cockney jive nyc ken ky00te newspeak nethackify scramble
- OTHER	= eleet b1ff chef jibberish upside-down rasterman studly fudd \
--	  censor spammer uniencode pirate kenny scottish fanboy LOLCAT
--CFLAGS	= -O2 -lfl
-+	  censor spammer uniencode pirate kenny scottish fanboy
-+LDFLAGS+=	-lfl
- export CFLAGS
-+export LDFLAGS
- INSTALL_PROGRAM = install
- 
- # DEB_BUILD_OPTIONS suport, to control binary stripping.
-@@ -19,13 +20,9 @@
- all:	$(OTHER) $(BUILD) samples
- 
- install:	$(BUILD) $(OTHER)
--	install -d $(DESTDIR)/usr/games
--	$(INSTALL_PROGRAM) $(BUILD) $(DESTDIR)/usr/games/
--	install $(OTHER) $(DESTDIR)/usr/games/
--	install -d $(DESTDIR)/usr/share/man/man6
--	install -m 0644 filters.6 $(DESTDIR)/usr/share/man/man6
--	cd $(DESTDIR)/usr/share/man/man6 && \
--		$(foreach prog,$(BUILD) $(OTHER),ln -s filters.6 $(prog).6;)
-+	install -d $(DESTDIR)/$(PREFIX)/bin
-+	$(INSTALL_PROGRAM) $(BUILD) $(DESTDIR)/$(PREFIX)/bin
-+	install $(OTHER) $(DESTDIR)/$(PREFIX)/bin
- 
- samples:	$(BUILD) $(OTHER)
- 	-rm -f SAMPLES
-@@ -33,33 +30,33 @@
+--- Makefile.orig	2015-09-03 20:26:09 UTC
++++ Makefile
+@@ -27,7 +27,7 @@ install:	$(BUILD) $(OTHER)
  
  clean:
- 	$(RM) -f core *.o *~ $(BUILD) SAMPLES
+ 	$(RM) -f core *.o *~ $(BUILD)
 -	cd ky00te.dir && make clean
-+	cd ky00te.dir && $(SETENV) $(MAKE_ENV) $(MAKE) $(MAKE_FLAGS) clean
- 	rm -f kraut.dir/lex.yy.c
--	cd nethackify.dir && make clean
--	cd scramble.dir && make clean
-+	cd nethackify.dir && $(SETENV) $(MAKE_ENV) $(MAKE) $(MAKE_FLAGS) clean
-+	cd scramble.dir && $(SETENV) $(MAKE_ENV) $(MAKE) $(MAKE_FLAGS) clean
++	cd ky00te.dir && $(MAKE_ENV) $(MAKE) clean
  
  .SUFFIXES: .l
  
- .l:
- 	$(RM) $*.c
- 	$(LEX) -t $< > $*.c
--	$(CC) -o $@ $*.c $(CFLAGS)
-+	$(CC) -o $@ $*.c $(CFLAGS) $(LDFLAGS)
- 	$(RM) $*.c
- 
+@@ -40,7 +40,7 @@ clean:
  .SUFFIXES: .dir
  
- .dir:	
+ .dir:
 -	cd $<; make
-+	cd $<; $(SETENV) $(MAKE_ENV) $(MAKE) $(MAKE_FLAGS)
++	cd $<; $(MAKE_ENV) $(MAKE)
  
- ky00te:
--	cd ky00te.dir && make
-+	cd ky00te.dir && $(SETENV) $(MAKE_ENV) $(MAKE) $(MAKE_FLAGS)
- 
- kraut:
- 	cd kraut.dir && lex kraut.l
- 	cd kraut.dir && $(CC) kraut.c lex.yy.c -o ../kraut
- 
- nethackify:
--	cd nethackify.dir && make
-+	cd nethackify.dir && $(SETENV) $(MAKE_ENV) $(MAKE) $(MAKE_FLAGS)
- 
- scramble: 
--	cd scramble.dir && make
-+	cd scramble.dir && $(SETENV) $(MAKE_ENV) $(MAKE) $(MAKE_FLAGS)
+ nethackify: nethackify.c
+ scramble: scramble.c
