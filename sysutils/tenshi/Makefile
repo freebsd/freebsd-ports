@@ -3,6 +3,7 @@
 
 PORTNAME=		tenshi
 PORTVERSION=		0.14
+PORTREVISION=		1
 CATEGORIES=		sysutils
 MASTER_SITES=		http://dev.inversepath.com/tenshi/
 
@@ -29,7 +30,7 @@ PORTDOCS=		README Changelog
 post-patch:
 	@${PERL5} -pi.bak -e ' \
 		s"/usr/bin/perl"${PERL}" if $$. == 1; \
-		s"/etc/tenshi/tenshi\.conf"${STAGEDIR}${PREFIX}/etc/tenshi.conf"; \
+		s"/etc/tenshi/tenshi\.conf"${PREFIX}/etc/tenshi.conf"; \
 		s"/usr/bin/tail"${LOCALBASE}/bin/gtail"; \
 		' ${WRKSRC}/tenshi
 
