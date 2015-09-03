@@ -21,17 +21,14 @@ PORTDOCS=	BUGS README TODO
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-.endif
-
 .for f in dumpelf pspax scanelf scanmacho
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/${f}.1 ${STAGEDIR}${PREFIX}/man/man1
 .endfor
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -34,15 +34,13 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^en@/d' \
 		${WRKSRC}/lib/po/LINGUAS ${WRKSRC}/po/LINGUAS
 
-.include <bsd.port.options.mk>
-
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgsasl.so
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${DOCSDIR}/reference
-	@${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/reference/html/* \
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/reference/html/* \
 		${STAGEDIR}${DOCSDIR}/reference
-.endif
 
 .include <bsd.port.mk>

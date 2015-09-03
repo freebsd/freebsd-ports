@@ -16,18 +16,17 @@ RUN_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
 USES=		tar:bzip2 python:2
 USE_PYTHON=	distutils autoplist
 USE_TEX=	tex
+NO_ARCH=	yes
 
 PYDISTUTILS_INSTALLARGS+=	--catalogs=${LOCALBASE}/share/xml/catalog.ports
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
-.if ! ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e '/pdfdocs),/d ; /htmldoc)/d' ${WRKSRC}/setup.py
-.endif
 	@${REINPLACE_CMD} -e "s,share/man/man1,man/man1,g" ${WRKSRC}/setup.py
+
+post-patch-DOCS-off:
+	@${REINPLACE_CMD} -e '/pdfdocs),/d ; /htmldoc)/d' ${WRKSRC}/setup.py
 
 post-install:
 	# shebangfix can't be used because dblatex is built from scratch

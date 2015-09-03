@@ -16,6 +16,7 @@ RUN_DEPENDS=		${LOCALBASE}/bin/gtail:${PORTSDIR}/sysutils/coreutils \
 USES=			perl5
 USE_PERL5=		run build patch
 NO_BUILD=		yes
+NO_ARCH=		yes
 USE_RC_SUBR=		tenshi
 SUB_LIST=		PERL=${PERL}
 
@@ -24,8 +25,6 @@ OPTIONS_DEFINE=		DOCS
 PLIST_FILES=		bin/tenshi etc/tenshi.conf.sample man/man8/tenshi.8.gz
 
 PORTDOCS=		README Changelog
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${PERL5} -pi.bak -e ' \
@@ -38,9 +37,9 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tenshi ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/tenshi.conf ${STAGEDIR}${PREFIX}/etc/tenshi.conf.sample
 	${INSTALL_MAN} ${WRKSRC}/tenshi.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

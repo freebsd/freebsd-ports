@@ -31,8 +31,6 @@ MAKE_ARGS=	CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
 		LFLAGS="${LDFLAGS}"
 SUB_FILES=	pkg-message
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|$${CC}|g ; s|g++|$${CXX}|g' \
 		${WRKSRC}/Makefile
@@ -43,9 +41,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/sancp/sancp.conf \
 		${STAGEDIR}${PREFIX}/etc/sancp.conf.sample
 	${MKDIR} ${STAGEDIR}/var/log/sancp
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/docs/|} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
