@@ -12,15 +12,14 @@ COMMENT=	Tool to view and manage a qmail queue
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=	DOCS
-
 USES=		qmail:run perl5 tar:bzip2
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 PORTDOCS=	HISTORY README
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,^#!/usr/bin/perl,#!${PERL},g' \
@@ -33,11 +32,11 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/qmHandle ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/qmHandle.conf.sample ${STAGEDIR}${PREFIX}/etc
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

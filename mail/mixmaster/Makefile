@@ -29,11 +29,7 @@ CONFIG_FILES=	abuse.txt.in dest.blk mix.cfg news.hlp pubring.mix type1.hlp \
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1000000
-BROKEN=		Does not compile
-.endif
+BROKEN_FreeBSD_9=	does not compile
 
 post-patch:
 	@${RM} ${WRKSRC}/Mix/conf/mix.cfg.orig
@@ -55,13 +51,13 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/mixmaster-update.pl ${STAGEDIR}${PREFIX}/bin/mixmaster-update
 	${INSTALL_MAN} ${WRKSRC}/Mix/mixmaster.1 ${STAGEDIR}${PREFIX}/man/man1/mixmaster.1
 	${INSTALL_MAN} ${WRKSRC}/Mix/mpgp.1 ${STAGEDIR}${PREFIX}/man/man1/mpgp.1
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/Mix/,} ${STAGEDIR}${DOCSDIR}/
-.endif
 .for FILE in ${CONFIG_FILES}
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
-	@${INSTALL_DATA} ${WRKSRC}/Mix/conf/${FILE} ${STAGEDIR}${ETCDIR}/${FILE}.sample
+	${INSTALL_DATA} ${WRKSRC}/Mix/conf/${FILE} ${STAGEDIR}${ETCDIR}/${FILE}.sample
 .endfor
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/Mix/,} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
