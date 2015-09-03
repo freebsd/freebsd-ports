@@ -57,6 +57,7 @@
     SUBDIR += blogsum
     SUBDIR += bluefish
     SUBDIR += boa
+    SUBDIR += bolt
     SUBDIR += bookmarkbridge
     SUBDIR += bozohttpd
     SUBDIR += c-icap
