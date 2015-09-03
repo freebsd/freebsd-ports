@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	pbzip2
-PORTVERSION=	1.1.8
+PORTVERSION=	1.1.12
 CATEGORIES=	archivers
-MASTER_SITES=	http://compression.ca/pbzip2/
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://launchpad.net/${PORTNAME}/1.1/${PORTVERSION}/+download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Parallel BZIP2
 
 LICENSE=	BSD4CLAUSE
