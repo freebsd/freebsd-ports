@@ -12,10 +12,16 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	mauricio@arareko.net
 COMMENT=	Integrated environment for Bioinformatics written in Ruby
 
+LICENSE=	GPLv2 RUBY
+LICENSE_COMB=	dual
+
+BROKEN_RUBY22=	yes
+
 OPTIONS_DEFINE=	XMLPARSER BDB4 MYSQL PGSQL DOCS
 XMLPARSER_DESC=	xmlparser support for faster Blast processing
 BDB4_DESC=	bdb4 support for faster flat file indexing
 
+NO_ARCH=	yes
 USES=	shebangfix
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
@@ -44,10 +50,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/*.rd ${STAGEDIR}${RUBY_MODDOCDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/*.rd.ja ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
 
-.include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} >= 2.2
-BROKEN=         Does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
