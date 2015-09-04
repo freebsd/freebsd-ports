@@ -19,8 +19,6 @@ MAKE_JOBS_UNSAFE=	yes
 
 INFO=		omake-doc
 
-BROKEN_powerpc=		does not build on powerpc
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
