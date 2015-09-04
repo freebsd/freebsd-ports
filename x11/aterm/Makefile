@@ -19,7 +19,8 @@ CONFIGURE_ARGS= --enable-wtmp \
 		--disable-memset \
 		--disable-swapscreen \
 		--disable-thai \
-		--without-afterstep-config
+		--without-afterstep-config \
+		--disable-utmp
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -48,14 +49,5 @@ BGIMG_CONFIGURE_OFF=	--without-afterimage-config --with-png=no --with-jpeg=no
 KANJI_CONFIGURE_ENABLE=	kanji
 BIG5S_CONFIGURE_ENABLE=	big5
 GREEK_CONFIGURE_ENABLE=	greek
-
-
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} > 900007
-CONFIGURE_ARGS+=	--disable-utmp
-.else
-CONFIGURE_ARGS+=	--enable-utmp
-.endif
 
 .include <bsd.port.mk>
