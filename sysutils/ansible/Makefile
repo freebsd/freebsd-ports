@@ -3,6 +3,7 @@
 
 PORTNAME=	ansible
 PORTVERSION=	1.9.2
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://releases.ansible.com/ansible/
 
@@ -21,6 +22,7 @@ OPTIONS_DEFINE=	EXAMPLES
 
 USES=		cpe python:2 shebangfix
 USE_PYTHON=	autoplist distutils
+python_CMD=	${LOCALBASE}/bin/python
 SHEBANG_FILES=	lib/ansible/runner/action_plugins/synchronize.py \
 		lib/ansible/modules/core/*/*.py \
 		lib/ansible/modules/core/*/*/*.py \
