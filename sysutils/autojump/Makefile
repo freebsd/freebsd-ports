@@ -4,8 +4,7 @@
 PORTNAME=	autojump
 PORTVERSION=	13
 CATEGORIES=	sysutils
-MASTER_SITES=	http://cloud.github.com/downloads/joelthelion/autojump/ \
-		http://www.vermatech.com/distfiles/
+MASTER_SITES=	GHC http://www.vermatech.com/distfiles/
 DISTNAME=	autojump_v${PORTVERSION}
 
 MAINTAINER=	neeraj.verma.ports@vermatech.com
@@ -17,6 +16,8 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 NO_BUILD=	yes
 USES=		python:run
+USE_GITHUB=	yes
+GH_ACCOUNT=	joelthelion
 SUB_FILES=	pkg-install
 
 PLIST_FILES=	bin/autojump \
@@ -32,8 +33,6 @@ OPTIONS_DEFAULT=	ZSH
 ZSH_RUN_DEPENDS=	zsh:${PORTSDIR}/shells/zsh
 ZSH_PLIST_FILES=	share/zsh/site-functions/_j
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e '/#!\/usr\/bin/s|python|env &|' \
 		${WRKSRC}/autojump
@@ -41,10 +40,10 @@ post-patch:
 do-install:
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${SH} ./install.sh \
 		--prefix ${STAGEDIR}${PREFIX})
-.if ${PORT_OPTIONS:MZSH}
+
+do-install-ZSH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${WRKSRC}/_j \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions
-.endif
 
 .include <bsd.port.mk>
