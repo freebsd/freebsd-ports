@@ -14,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 LIB_DEPENDS?=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs \
 		libGeoIP.so:${PORTSDIR}/net/GeoIP
 
-USES+=		compiler:c++11-lang iconv libtool pathfix pkgconfig
+USES+=		compiler:c++11-lang iconv:wchar_t libtool pathfix pkgconfig
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
