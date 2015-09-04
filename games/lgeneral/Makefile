@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lgeneral
-PORTVERSION=	1.2.6
-PORTREVISION=	1
+PORTVERSION=	1.3.0
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME} \
 		SF/${PORTNAME}/${PORTNAME}-data:data
@@ -38,6 +37,7 @@ SOUND_CONFIGURE_OFF=	--disable-sound
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/icons.*|/pixmaps|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|' ${WRKSRC}/configure
 
 post-install:
 .for i in flags terrain units
