@@ -44,7 +44,6 @@
 %%SOFTMMU%%man/man8/qemu-nbd.8.gz
 %%SOFTMMU%%@sample etc/qemu-ifup.sample
 %%SOFTMMU%%@sample etc/qemu-ifdown.sample
-%%SOFTMMU%%@sample etc/qemu/target-x86_64.conf.sample
 %%SOFTMMU%%%%DATADIR%%/QEMU,tcx.bin
 %%SOFTMMU%%%%DATADIR%%/QEMU,cgthree.bin
 %%SOFTMMU%%%%DATADIR%%/acpi-dsdt.aml
@@ -62,6 +61,7 @@
 %%SOFTMMU%%%%DATADIR%%/vgabios-cirrus.bin
 %%SOFTMMU%%%%DATADIR%%/vgabios-qxl.bin
 %%SOFTMMU%%%%DATADIR%%/vgabios-stdvga.bin
+%%SOFTMMU%%%%DATADIR%%/vgabios-virtio.bin
 %%SOFTMMU%%%%DATADIR%%/vgabios-vmware.bin
 %%SOFTMMU%%%%DATADIR%%/palcode-clipper
 %%SOFTMMU%%%%DATADIR%%/ppc_rom.bin
