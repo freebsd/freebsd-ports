@@ -4,8 +4,7 @@
 PORTNAME=	tDOM
 PORTVERSION=	0.8.3
 CATEGORIES=	www
-MASTER_SITES=	https://cloud.github.com/downloads/tDOM/tdom/ \
-		http://mirrors.rit.edu/zi/
+MASTER_SITES=	GHC http://mirrors.rit.edu/zi/
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	High performance XML data processing with Tcl (ARGS for OpenACS)
@@ -16,6 +15,8 @@ TDOMBASE=	${PREFIX}/lib/tdom${PORTVERSION}
 OPTIONS_DEFINE=	DOCS
 
 USES=		gmake tcl tar:tgz
+USE_GITHUB=	yes
+GH_PROJECT=	tdom
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../configure
