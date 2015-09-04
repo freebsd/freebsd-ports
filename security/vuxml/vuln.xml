@@ -58,6 +58,31 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ed0ecad5-531d-11e5-9850-bcaec565249c">
+    <topic>gdk-pixbuf2 -- integer overflows</topic>
+    <affects>
+      <package>
+	<name>gdk-pixbuf2</name>
+	<range><lt>2.31.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matthias Clasen reports:</p>
+	<blockquote cite="https://mail.gnome.org/archives/ftp-release-list/2015-September/msg00013.html">
+	  <p>Fix several integer overflows.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://mail.gnome.org/archives/ftp-release-list/2015-September/msg00013.html</url>
+    </references>
+    <dates>
+      <discovery>2015-09-01</discovery>
+      <entry>2015-09-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2c5e7e23-5248-11e5-9ad8-14dae9d210b8">
     <topic>bind -- denial of service vulnerability</topic>
     <affects>
