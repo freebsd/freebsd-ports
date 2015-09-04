@@ -32,6 +32,7 @@ INSTALL_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
+LDFLAGS+=	-Wl,--add-needed
 
 INFO=		gmerlin
 
@@ -47,6 +48,7 @@ CDDB_LIB_DEPENDS=	libcddb.so:${PORTSDIR}/audio/libcddb
 CDDB_CONFIGURE_OFF=	--disable-cddb
 CDIO_LIB_DEPENDS=	libcdio.so:${PORTSDIR}/sysutils/libcdio
 CDIO_CONFIGURE_OFF=	--disable-libcdio
+CDIO_BROKEN=		fails to build with new libcdio
 ESOUND_USE=		gnome=esound
 ESOUND_CONFIGURE_OFF=	--disable-esd
 JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
@@ -64,16 +66,6 @@ QUICKTIME_LIB_DEPENDS=	libquicktime.so:${PORTSDIR}/multimedia/libquicktime
 QUICKTIME_CONFIGURE_OFF=--disable-lqt
 TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
 TIFF_CONFIGURE_OFF=	--disable-libtiff
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCDIO}
-BROKEN=	Fails to build with new libcdio
-.endif
-
-.if !(${OPSYS} == FreeBSD && ${OSVERSION} < 900033)
-LDFLAGS+=	-Wl,--add-needed
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
