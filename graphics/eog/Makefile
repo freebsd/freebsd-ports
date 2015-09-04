@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eog
-PORTVERSION=	3.16.2
+PORTVERSION=	3.16.3
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -22,11 +22,11 @@ PORTSCOUT=	limitw:1,even
 
 USES=		desktop-file-utils gettext gmake libtool pathfix \
 		pkgconfig tar:xz
-USE_GNOME=	intlhack librsvg2 gtk30 gnomedesktop3 introspection:build
+USE_GNOME=	intltool librsvg2 gtk30 gnomedesktop3 introspection:build
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.eog.enums.xml \
