@@ -1,21 +1,17 @@
---- configure.orig	2014-04-29 10:12:29.633996234 +0000
-+++ configure	2014-04-29 10:14:19.976988652 +0000
-@@ -13638,6 +13638,79 @@
+--- configure.orig	2015-08-13 20:06:09.161030000 +0200
++++ configure	2015-08-13 20:07:04.020683000 +0200
+@@ -14503,6 +14503,57 @@
  
- done
+ fi
  
-+               { echo "$as_me:$LINENO: checking for kinfo_getfile in -lutil" >&5
-+echo $ECHO_N "checking for kinfo_getfile in -lutil... $ECHO_C" >&6; }
-+if test "${ac_cv_lib_util_kinfo_getfile+set}" = set; then
-+  echo $ECHO_N "(cached) $ECHO_C" >&6
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for kinfo_getfile in -lutil" >&5
++$as_echo_n "checking for kinfo_getfile in -lutil... " >&6; }
++if ${ac_cv_lib_util_kinfo_getfile+:} false; then :
++  $as_echo_n "(cached) " >&6
 +else
 +  ac_check_lib_save_LIBS=$LIBS
 +LIBS="-lutil  $LIBS"
-+cat >conftest.$ac_ext <<_ACEOF
-+/* confdefs.h.  */
-+_ACEOF
-+cat confdefs.h >>conftest.$ac_ext
-+cat >>conftest.$ac_ext <<_ACEOF
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 +/* end confdefs.h.  */
 +
 +/* Override any GCC internal prototype to avoid an error.
@@ -33,50 +29,32 @@
 +  return 0;
 +}
 +_ACEOF
-+rm -f conftest.$ac_objext conftest$ac_exeext
-+if { (ac_try="$ac_link"
-+case "(($ac_try" in
-+  *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
-+  *) ac_try_echo=$ac_try;;
-+esac
-+eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
-+  (eval "$ac_link") 2>conftest.er1
-+  ac_status=$?
-+  grep -v '^ *+' conftest.er1 >conftest.err
-+  rm -f conftest.er1
-+  cat conftest.err >&5
-+  echo "$as_me:$LINENO: \$? = $ac_status" >&5
-+  (exit $ac_status); } && {
-+        test -z "$ac_c_werror_flag" ||
-+        test ! -s conftest.err
-+       } && test -s conftest$ac_exeext &&
-+	       $as_test_x conftest$ac_exeext; then
++if ac_fn_c_try_link "$LINENO"; then :
 +  ac_cv_lib_util_kinfo_getfile=yes
 +else
-+  echo "$as_me: failed program was:" >&5
-+sed 's/^/| /' conftest.$ac_ext >&5
-+
-+       ac_cv_lib_util_kinfo_getfile=no
++  ac_cv_lib_util_kinfo_getfile=no
 +fi
-+ 
-+rm -f core conftest.err conftest.$ac_objext conftest_ipa8_conftest.oo \
-+	      conftest$ac_exeext conftest.$ac_ext
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
 +LIBS=$ac_check_lib_save_LIBS
 +fi
-+{ echo "$as_me:$LINENO: result: $ac_cv_lib_util_kinfo_getfile" >&5
-+echo "${ECHO_T}$ac_cv_lib_util_kinfo_getfile" >&6; }
-+if test $ac_cv_lib_util_kinfo_getfile = yes; then
-+  EXTRA_SYSDEPS_LIBS="${EXTRA_SYSDEPS_LIBS} -lutil"
-+  
-+cat >>confdefs.h <<\_ACEOF
-+#define HAVE_KINFO_GETFILE 1
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_util_kinfo_getfile" >&5
++$as_echo "$ac_cv_lib_util_kinfo_getfile" >&6; }
++if test "x$ac_cv_lib_util_kinfo_getfile" = xyes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBUTIL 1
 +_ACEOF
-+  
-+else
-+  :
++
++  LIBS="-lutil $LIBS"
++
 +fi
 +
++if test xac_cv_lib_kinfo_getfile_util = xyes ; then
 +
- 	  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for I4B" >&5
- $as_echo_n "checking for I4B... " >&6; }
- 	  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++$as_echo "#define HAVE_KINFO_GETFILE 1" >>confdefs.h
++
++fi
++
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for an ANSI C-conforming const" >&5
+ $as_echo_n "checking for an ANSI C-conforming const... " >&6; }
+ if ${ac_cv_c_const+:} false; then :
