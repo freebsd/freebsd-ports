@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DBIx-Class-Schema-Loader
-PORTVERSION=	0.07042
-PORTREVISION=	1
+PORTVERSION=	0.07043
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,18 +21,15 @@ BUILD_DEPENDS=	p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-Class-Unload>=0:${PORTSDIR}/devel/p5-Class-Unload \
 		p5-DBIx-Class>=0.08127:${PORTSDIR}/databases/p5-DBIx-Class \
 		p5-Data-Dump>1.06:${PORTSDIR}/devel/p5-Data-Dump \
-		p5-File-Slurp>=9999.13:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-Hash-Merge>=0:${PORTSDIR}/textproc/p5-Hash-Merge \
 		p5-Lingua-EN-Inflect-Number>=1.1:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect-Number \
 		p5-Lingua-EN-Inflect-Phrase>=0.02:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect-Phrase \
-		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-MRO-Compat>=0.09:${PORTSDIR}/devel/p5-MRO-Compat \
 		p5-Scope-Guard>=0:${PORTSDIR}/devel/p5-Scope-Guard \
 		p5-String-CamelCase>=0.02:${PORTSDIR}/textproc/p5-String-CamelCase \
 		p5-String-ToIdentifier-EN>=0.05:${PORTSDIR}/textproc/p5-String-ToIdentifier-EN \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
 		p5-namespace-clean>=0.20:${PORTSDIR}/devel/p5-namespace-clean
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General \
 		p5-DBD-SQLite>=1.29:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-DBIx-Class-IntrospectableM2M>=0:${PORTSDIR}/databases/p5-DBIx-Class-IntrospectableM2M \
@@ -56,4 +52,12 @@ ORACLE_RUN_DEPENDS=	p5-DBD-Oracle>=0.19:${PORTSDIR}/databases/p5-DBD-Oracle
 PGSQL_USES=		pgsql
 SQLITE_USE=		SQLITE=yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502200
+BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.40:${PORTSDIR}/lang/p5-Scalar-List-Utils
+.endif
+
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+.include <bsd.port.post.mk>
