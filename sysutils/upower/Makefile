@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	upower
-PORTVERSION=	0.99.2
+PORTVERSION=	0.99.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://upower.freedesktop.org/releases/
 
@@ -15,17 +15,17 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
-USES=		gettext gmake libtool pathfix pkgconfig \
-		python tar:xz
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	intlhack glib20 introspection:build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc \
-		--localstatedir=/var
+		--localstatedir=/var \
+		--with-backend=freebsd \
+		--without-idevice
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
-CONFIGURE_ENV=	GTKDOC="false"
 
 OPTIONS_DEFINE=	MANPAGES
 OPTIONS_DEFAULT=MANPAGES
