@@ -42,6 +42,7 @@ CXXFLAGS+=	-Wno-inconsistent-missing-override
 post-patch:
 	@${REINPLACE_CMD} -e '/^all: / s| $$(TESTS)||' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's| -fno-builtin-memcmp||; s| -ltcmalloc||' ${WRKSRC}/build_tools/build_detect_platform
+	@${REINPLACE_CMD} -e 's|#include "gtest/gtest.h"|#include "gtest.h"|' ${WRKSRC}/third-party/gtest-1.7.0/fused-src/gtest/gtest-all.cc
 .if defined(WITHOUT_PROFILE)
 	@${REINPLACE_CMD} -e '/pg = / s| -pg||' ${WRKSRC}/Makefile
 .endif
