@@ -3,6 +3,7 @@
 
 PORTNAME=	omegaT
 DISTVERSION=	3.1.8
+PORTREVISION=	1
 CATEGORIES=	editors java x11
 MASTER_SITES=	SF/${PORTNAME:tl}/OmegaT%20-%20Standard/OmegaT%20${DISTVERSION}/
 DISTNAME=	OmegaT_${DISTVERSION}_Source
@@ -13,7 +14,13 @@ COMMENT=	Powerful translation memory application written in Java
 
 LICENSE=	GPLv2
 
-USES=		zip
+USES=		shebangfix zip
+SHEBANG_FILES=	release/linux-specific/OmegaT \
+		release/linux-specific/OmegaT-JRE \
+		release/linux-specific/omegat.kaptn
+SHEBANG_LANG=	kaptain
+kaptain_OLD_CMD=/usr/bin/kaptain
+kaptain_CMD=	${LOCALBASE}/bin/kaptain
 USE_ANT=	yes
 USE_JAVA=	yes
 JAVA_VENDOR=	openjdk
