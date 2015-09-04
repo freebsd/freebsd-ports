@@ -3,7 +3,7 @@
 
 PORTNAME=	kBuild
 DISTVERSION=	${KBUILD_VERSION}
-PORTREVISION=	3	
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netlabs.org/pub/kbuild/ \
 		http://tmp.chruetertee.ch/ \
@@ -22,7 +22,7 @@ CONFLICTS_INSTALL=	kBuild-devel-[0-9]*
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 KBUILD_VERSION=	0.1.9998
-KBUILD_ARCH=	${MACHINE_ARCH:S/i386/x86/:S/x86_64/amd64/}
+KBUILD_ARCH=	${MACHINE_ARCH:S/i386/x86/:S/x86_64/amd64/:S/powerpc/ppc32/}
 KBUILD_ENV=	ACLOCAL=${ACLOCAL} \
 		AUTOMAKE=${AUTOMAKE} \
 		AUTORECONF=${AUTORECONF} \
@@ -44,9 +44,6 @@ ENV=
 .else
 .SHELL:		path="/bin/sh" unsetenv=true
 .endif
-
-BROKEN_ia64=	does not compile on ia64
-BROKEN_powerpc=	does not compile on powerpc
 
 OPTIONS_DEFINE=	DOCS
 
