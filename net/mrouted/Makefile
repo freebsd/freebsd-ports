@@ -5,7 +5,7 @@ PORTNAME=	mrouted
 PORTVERSION=	3.9.6
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://cloud.github.com/downloads/troglobit/mrouted/
+MASTER_SITES=	GHC
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Multicast routing daemon providing DVMRP for IPv4
@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_RC_SUBR=	mrouted
 USES=		gmake tar:bzip2
+USE_GITHUB=	yes
+GH_ACCOUNT=	troglobit
 MAKE_ARGS=	sysconfdir=${PREFIX}/etc \
 		mandir=${MAN8PREFIX}/man/man8
 PORTDOCS=	README AUTHORS ChangeLog

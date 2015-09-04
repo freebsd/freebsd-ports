@@ -5,7 +5,6 @@ PORTNAME=	gaeutilities
 PORTVERSION=	1.4
 PORTREVISION=	0
 CATEGORIES=	www devel
-MASTER_SITES=	http://cloud.github.com/downloads/joerussbowman/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,8 +13,9 @@ COMMENT=	Utility classes to make working with Google App Engine easier
 RUN_DEPENDS=	google-appengine>=1.2.4_1:${PORTSDIR}/www/google-appengine
 
 USES=		python:2 # same as www/google-appengine
-
-WRKSRC=	${WRKDIR}/joerussbowman-gaeutilities-ea3f7e1
+USE_GITHUB=	yes
+GH_ACCOUNT=	joerussbowman
+GH_TAGNAME=	ea3f7e1
 
 OPTIONS_DEFINE=	DOCS
 
