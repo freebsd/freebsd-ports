@@ -1,0 +1,17 @@
+The single function pytimeparse.timeparse.timeparse, defined in the library,
+(also available as pytimeparse.parse) parses time expressions like the following:
+
+32m
+2h32m
+3d2h32m
+1w3d2h32m
+
+...
+
+It returns the time as a number of seconds (an integer value if possible, otherwise a floating-point number):
+
+>>> from pytimeparse import parse
+>>> parse('1.2 minutes')
+72
+
+WWW: https://github.com/wroberts/pytimeparse
