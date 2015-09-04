@@ -24,7 +24,6 @@ WAF_CMD=	${WRKSRC_waf}/waf-light
 
 USES=		compiler:c11 desktop-file-utils iconv pkgconfig python:build waf
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I.. -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
