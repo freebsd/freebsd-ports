@@ -12,21 +12,20 @@ MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Convert HTML (or live webpages) to PDF or image
 
 LICENSE=	LGPL3
-LICENSE_FILE_LGPL3=	${INSTALL_WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS+=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libpng.so:${PORTSDIR}/graphics/png
 
-
-USES=			iconv jpeg gmake perl5 pkgconfig tar:bzip2
-USE_XORG=		x11 xext xrender
-USE_PERL5=		build
-USE_LDCONFIG=		yes
-HAS_CONFIGURE=		yes
+USES=		gmake iconv jpeg perl5 pkgconfig tar:bzip2
+USE_XORG=	x11 xext xrender
+USE_PERL5=	build
+USE_LDCONFIG=	yes
+HAS_CONFIGURE=	yes
 
 WRKSRC=			${WRKDIR}/wkhtmltox-${PORTVERSION}
-PATCH_WRKSRC=		${WRKSRC}/qt	
+PATCH_WRKSRC=		${WRKSRC}/qt
 CONFIGURE_WRKSRC=	${WRKSRC}/build/qt
 BUILD_WRKSRC=		${WRKSRC}/build/qt
 INSTALL_WRKSRC=		${WRKSRC}/build/app
@@ -49,13 +48,7 @@ CONFIGURE_ARGS=	-prefix ${WRKSRC}/build/qt \
 	-no-audio-backend -no-sse3 -no-ssse3 -no-sse4.1 -no-sse4.2 -no-avx \
 	-no-neon
 
-MAKE_ARGS+=	INSTALL_ROOT="${STAGEDIR}${PREFIX}"
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not link on powerpc
-.endif
+MAKE_ARGS=	INSTALL_ROOT="${STAGEDIR}${PREFIX}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
@@ -77,4 +70,4 @@ post-build:
 		${_MAKE_JOBS} ${MAKE_ARGS:C,^${DESTDIRNAME}=.*,,g} \
 		${ALL_TARGET}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
