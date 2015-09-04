@@ -17,6 +17,8 @@ USES=		gettext gmake python shebangfix
 SHEBANG_FILES=	addons/* bin/* fvwm/scripts/speed_value
 MAKE_ENV=	prefix="${PREFIX}" addondir="${DOCSDIR}/addons"
 PORTDOCS=	*
+INSTALL_TARGET=	install
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	ROX IMAGEMAGICK XSCREENSAVER TRAYER SUDO HSETROOT CMUS DOCS
 OPTIONS_DEFAULT=	ROX IMAGEMAGICK XSCREENSAVER TRAYER SUDO HSETROOT
@@ -35,16 +37,11 @@ TRAYER_RUN_DEPENDS=	trayer:${PORTSDIR}/x11/trayer
 SUDO_RUN_DEPENDS=	sudo:${PORTSDIR}/security/sudo
 SETROOT_RUN_DEPENDS=	hsetroot:${PORTSDIR}/graphics/hsetroot
 CMUS_RUN_DEPENDS=	cmus:${PORTSDIR}/audio/cmus
-
-.include <bsd.port.options.mk>
+DOCS_INSTALL_TARGET=	install-doc
 
 post-extract:
 	@cd ${WRKSRC} && ${FIND} . -depth -type d -name .svn \
 		-exec ${RM} -rf {} \;
-
-.if ${PORT_OPTIONS:MDOCS}
-INSTALL_TARGET=	install install-doc
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|cp -r -d|cp -r|; s|cp -d|cp|' \
