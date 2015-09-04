@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mcabber
-PORTVERSION=	0.10.2
-PORTREVISION=	7
+PORTVERSION=	1.0.0
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/
 
@@ -15,46 +14,49 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libloudmouth-1.so:${PORTSDIR}/net-im/loudmouth
 
-USES=		gettext iconv libtool ncurses pkgconfig shebangfix tar:bzip2
-SHEBANG_FILES=	contrib/cicq2mcabber.pl \
-		contrib/events/mcnotify.py
+USES=		gettext iconv libtool ncurses pathfix pkgconfig tar:bzip2
+USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-sigwinch --libdir=${PREFIX}/lib
+CONFIGURE_ARGS=	--disable-hgcset --enable-sigwinch
+INSTALL_TARGET=	install-strip
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_LDCONFIG=	yes
-USE_GNOME=	glib20
 
-OPTIONS_DEFINE=	GPGME OTR
-OPTIONS_RADIO=	SPELL
+OPTIONS_DEFINE=		EXAMPLES GPGME OTR
+OPTIONS_RADIO=		SPELL
 OPTIONS_RADIO_SPELL=	ASPELL ENCHANT
-OPTIONS_SUB=	yes
 
-GPGME_DESC=	Use security/gpgme for PGP support
-OTR_DESC=	Off-the-record messaging support
-ENCHANT_DESC=	Spell checking via enchant
+ENCHANT_DESC=		Spell checking support via Enchant
+GPGME_DESC=		OpenPGP support via GPGME
+OTR_DESC=		Off-the-record messaging support
+
+OPTIONS_SUB=		yes
+
+ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
+ASPELL_CONFIGURE_ENABLE=aspell
+
+ENCHANT_LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant
+ENCHANT_CONFIGURE_ENABLE=enchant
 
 GPGME_LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
 GPGME_CONFIGURE_ENABLE=	gpgme
-ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
-ASPELL_CONFIGURE_ENABLE=aspell
-ENCHANT_LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant
-ENCHANT_CONFIGURE_ENABLE=enchant
-OTR_LIB_DEPENDS=	libotr.so.2:${PORTSDIR}/security/libotr3 \
-			libgcrypt.so:${PORTSDIR}/security/libgcrypt
+
+OTR_LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
+			libotr.so:${PORTSDIR}/security/libotr
 OTR_CONFIGURE_ENABLE=	otr
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$$"$${datadir}"|"$${datadir}"|;s|-O2||'\
-		-e 's|$$"$${libdir}|"$${libdir}|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.*
+	@${REINPLACE_CMD} -e 's|$$"$${libdir}|"$${libdir}|' \
+		 -e 's|-O2 $$CFLAGS|$$CFLAGS|' ${WRKSRC}/configure
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mcabber/*.so
-	@${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}/
-	@${INSTALL} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications/
-	@${CP} -R ${WRKSRC}/contrib ${STAGEDIR}${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/mcabberrc.example ${STAGEDIR}${EXAMPLESDIR}/mcabberrc
+	${INSTALL_DATA} ${WRKSRC}/mcabber.desktop \
+		${STAGEDIR}${PREFIX}/share/applications
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/mcabberrc.example \
+		${STAGEDIR}${EXAMPLESDIR}/mcabberrc
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} contrib \
+		${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
