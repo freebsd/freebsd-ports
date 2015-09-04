@@ -1,5 +1,3 @@
 bin/zfs-snapshot-mgmt
-@unexec if cmp -s %D/etc/zfs-snapshot-mgmt.conf.sample %D/etc/zfs-snapshot-mgmt.conf; then rm -f %D/etc/zfs-snapshot-mgmt.conf; fi
-etc/zfs-snapshot-mgmt.conf.sample
-@exec if [ ! -f %D/etc/zfs-snapshot-mgmt.conf ] ; then cp -p %D/%F %B/zfs-snapshot-mgmt.conf; fi
+@sample etc/zfs-snapshot-mgmt.conf.sample
 man/man8/zfs-snapshot-mgmt.8.gz
