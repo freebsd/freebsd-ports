@@ -1,81 +1,6 @@
---- configure.orig	2015-07-13 16:08:54.000000000 +0200
-+++ configure	2015-07-29 15:33:13.000000000 +0200
-@@ -674,6 +674,8 @@
- HELP_DIR
- YELP_LC_DIST
- YELP_LC_MEDIA_LINKS
-+WITH_MATEDESKTOP_FALSE
-+WITH_MATEDESKTOP_TRUE
- ATRIL_MIME_TYPES
- ENABLE_EPUB_FALSE
- ENABLE_EPUB_TRUE
-@@ -1006,6 +1008,7 @@
- enable_comics
- enable_xps
- enable_epub
-+with_matedesktop
- with_help_dir
- with_html_dir
- enable_gtk_doc
-@@ -1757,6 +1760,7 @@
-   --without-gtk-unix-print
-                           Disable the use of gtk-unix-print
-   --without-keyring       Disable the use of libsecret and keyring
-+  --without-matedesktop   Disable the use of matedesktop
-   --with-help-dir=DIR     path where help files are installed
-   --with-html-dir=PATH    path to installed docs
- 
-@@ -20038,12 +20042,12 @@
-     pkg_cv_SHELL_CORE_CFLAGS="$SHELL_CORE_CFLAGS"
-  elif test -n "$PKG_CONFIG"; then
-     if test -n "$PKG_CONFIG" && \
--    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libxml-2.0 >= \$LIBXML_REQUIRED gtk+-\$GTK_API_VERSION >= \$GTK_REQUIRED gio-2.0 >= \$GLIB_REQUIRED gthread-2.0 mate-desktop-2.0 >= \$MATEDESKTOP_REQUIRED \$SHELL_PLATFORM_PKGS\""; } >&5
--  ($PKG_CONFIG --exists --print-errors "libxml-2.0 >= $LIBXML_REQUIRED gtk+-$GTK_API_VERSION >= $GTK_REQUIRED gio-2.0 >= $GLIB_REQUIRED gthread-2.0 mate-desktop-2.0 >= $MATEDESKTOP_REQUIRED $SHELL_PLATFORM_PKGS") 2>&5
-+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libxml-2.0 >= \$LIBXML_REQUIRED gtk+-\$GTK_API_VERSION >= \$GTK_REQUIRED gio-2.0 >= \$GLIB_REQUIRED gthread-2.0 \$SHELL_PLATFORM_PKGS\""; } >&5
-+  ($PKG_CONFIG --exists --print-errors "libxml-2.0 >= $LIBXML_REQUIRED gtk+-$GTK_API_VERSION >= $GTK_REQUIRED gio-2.0 >= $GLIB_REQUIRED gthread-2.0 $SHELL_PLATFORM_PKGS") 2>&5
-   ac_status=$?
-   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
-   test $ac_status = 0; }; then
--  pkg_cv_SHELL_CORE_CFLAGS=`$PKG_CONFIG --cflags "libxml-2.0 >= $LIBXML_REQUIRED gtk+-$GTK_API_VERSION >= $GTK_REQUIRED gio-2.0 >= $GLIB_REQUIRED gthread-2.0 mate-desktop-2.0 >= $MATEDESKTOP_REQUIRED $SHELL_PLATFORM_PKGS" 2>/dev/null`
-+  pkg_cv_SHELL_CORE_CFLAGS=`$PKG_CONFIG --cflags "libxml-2.0 >= $LIBXML_REQUIRED gtk+-$GTK_API_VERSION >= $GTK_REQUIRED gio-2.0 >= $GLIB_REQUIRED gthread-2.0 $SHELL_PLATFORM_PKGS" 2>/dev/null`
- 		      test "x$?" != "x0" && pkg_failed=yes
- else
-   pkg_failed=yes
-@@ -20055,12 +20059,12 @@
-     pkg_cv_SHELL_CORE_LIBS="$SHELL_CORE_LIBS"
-  elif test -n "$PKG_CONFIG"; then
-     if test -n "$PKG_CONFIG" && \
--    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libxml-2.0 >= \$LIBXML_REQUIRED gtk+-\$GTK_API_VERSION >= \$GTK_REQUIRED gio-2.0 >= \$GLIB_REQUIRED gthread-2.0 mate-desktop-2.0 >= \$MATEDESKTOP_REQUIRED \$SHELL_PLATFORM_PKGS\""; } >&5
--  ($PKG_CONFIG --exists --print-errors "libxml-2.0 >= $LIBXML_REQUIRED gtk+-$GTK_API_VERSION >= $GTK_REQUIRED gio-2.0 >= $GLIB_REQUIRED gthread-2.0 mate-desktop-2.0 >= $MATEDESKTOP_REQUIRED $SHELL_PLATFORM_PKGS") 2>&5
-+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libxml-2.0 >= \$LIBXML_REQUIRED gtk+-\$GTK_API_VERSION >= \$GTK_REQUIRED gio-2.0 >= \$GLIB_REQUIRED gthread-2.0 \$SHELL_PLATFORM_PKGS\""; } >&5
-+  ($PKG_CONFIG --exists --print-errors "libxml-2.0 >= $LIBXML_REQUIRED gtk+-$GTK_API_VERSION >= $GTK_REQUIRED gio-2.0 >= $GLIB_REQUIRED gthread-2.0 $SHELL_PLATFORM_PKGS") 2>&5
-   ac_status=$?
-   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
-   test $ac_status = 0; }; then
--  pkg_cv_SHELL_CORE_LIBS=`$PKG_CONFIG --libs "libxml-2.0 >= $LIBXML_REQUIRED gtk+-$GTK_API_VERSION >= $GTK_REQUIRED gio-2.0 >= $GLIB_REQUIRED gthread-2.0 mate-desktop-2.0 >= $MATEDESKTOP_REQUIRED $SHELL_PLATFORM_PKGS" 2>/dev/null`
-+  pkg_cv_SHELL_CORE_LIBS=`$PKG_CONFIG --libs "libxml-2.0 >= $LIBXML_REQUIRED gtk+-$GTK_API_VERSION >= $GTK_REQUIRED gio-2.0 >= $GLIB_REQUIRED gthread-2.0 $SHELL_PLATFORM_PKGS" 2>/dev/null`
- 		      test "x$?" != "x0" && pkg_failed=yes
- else
-   pkg_failed=yes
-@@ -20081,14 +20085,14 @@
-         _pkg_short_errors_supported=no
- fi
-         if test $_pkg_short_errors_supported = yes; then
--	        SHELL_CORE_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "libxml-2.0 >= $LIBXML_REQUIRED gtk+-$GTK_API_VERSION >= $GTK_REQUIRED gio-2.0 >= $GLIB_REQUIRED gthread-2.0 mate-desktop-2.0 >= $MATEDESKTOP_REQUIRED $SHELL_PLATFORM_PKGS" 2>&1`
-+	        SHELL_CORE_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "libxml-2.0 >= $LIBXML_REQUIRED gtk+-$GTK_API_VERSION >= $GTK_REQUIRED gio-2.0 >= $GLIB_REQUIRED gthread-2.0 $SHELL_PLATFORM_PKGS" 2>&1`
-         else
--	        SHELL_CORE_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "libxml-2.0 >= $LIBXML_REQUIRED gtk+-$GTK_API_VERSION >= $GTK_REQUIRED gio-2.0 >= $GLIB_REQUIRED gthread-2.0 mate-desktop-2.0 >= $MATEDESKTOP_REQUIRED $SHELL_PLATFORM_PKGS" 2>&1`
-+	        SHELL_CORE_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "libxml-2.0 >= $LIBXML_REQUIRED gtk+-$GTK_API_VERSION >= $GTK_REQUIRED gio-2.0 >= $GLIB_REQUIRED gthread-2.0 $SHELL_PLATFORM_PKGS" 2>&1`
-         fi
- 	# Put the nasty error message in config.log where it belongs
- 	echo "$SHELL_CORE_PKG_ERRORS" >&5
- 
--	as_fn_error $? "Package requirements (libxml-2.0 >= $LIBXML_REQUIRED gtk+-$GTK_API_VERSION >= $GTK_REQUIRED gio-2.0 >= $GLIB_REQUIRED gthread-2.0 mate-desktop-2.0 >= $MATEDESKTOP_REQUIRED $SHELL_PLATFORM_PKGS) were not met:
-+	as_fn_error $? "Package requirements (libxml-2.0 >= $LIBXML_REQUIRED gtk+-$GTK_API_VERSION >= $GTK_REQUIRED gio-2.0 >= $GLIB_REQUIRED gthread-2.0 $SHELL_PLATFORM_PKGS) were not met:
- 
- $SHELL_CORE_PKG_ERRORS
- 
-@@ -22453,14 +22457,14 @@
+--- configure.orig	2015-09-04 11:35:11.223593000 +0200
++++ configure	2015-09-04 11:35:40.650664000 +0200
+@@ -21453,14 +21453,14 @@
   elif test -n "$PKG_CONFIG"; then
      if test -n "$PKG_CONFIG" && \
      { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"webkit-\$WEBKIT_API_VERSION >= \$WEBKIT_REQUIRED \\
@@ -93,7 +18,7 @@
  		      test "x$?" != "x0" && pkg_failed=yes
  else
    pkg_failed=yes
-@@ -22473,14 +22477,14 @@
+@@ -21473,14 +21473,14 @@
   elif test -n "$PKG_CONFIG"; then
      if test -n "$PKG_CONFIG" && \
      { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"webkit-\$WEBKIT_API_VERSION >= \$WEBKIT_REQUIRED \\
@@ -111,7 +36,7 @@
  		      test "x$?" != "x0" && pkg_failed=yes
  else
    pkg_failed=yes
-@@ -22502,10 +22506,10 @@
+@@ -21502,10 +21502,10 @@
  fi
          if test $_pkg_short_errors_supported = yes; then
  	        EPUB_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "webkit-$WEBKIT_API_VERSION >= $WEBKIT_REQUIRED \
@@ -124,7 +49,7 @@
          fi
  	# Put the nasty error message in config.log where it belongs
  	echo "$EPUB_PKG_ERRORS" >&5
-@@ -22534,14 +22538,14 @@
+@@ -21534,14 +21534,14 @@
   elif test -n "$PKG_CONFIG"; then
      if test -n "$PKG_CONFIG" && \
      { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"webkit2gtk-\$WEBKIT_API_VERSION >= \$WEBKIT_REQUIRED \\
@@ -142,7 +67,7 @@
  		      test "x$?" != "x0" && pkg_failed=yes
  else
    pkg_failed=yes
-@@ -22554,14 +22558,14 @@
+@@ -21554,14 +21554,14 @@
   elif test -n "$PKG_CONFIG"; then
      if test -n "$PKG_CONFIG" && \
      { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"webkit2gtk-\$WEBKIT_API_VERSION >= \$WEBKIT_REQUIRED \\
@@ -160,7 +85,7 @@
  		      test "x$?" != "x0" && pkg_failed=yes
  else
    pkg_failed=yes
-@@ -22583,10 +22587,10 @@
+@@ -21583,10 +21583,10 @@
  fi
          if test $_pkg_short_errors_supported = yes; then
  	        EPUB_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "webkit2gtk-$WEBKIT_API_VERSION >= $WEBKIT_REQUIRED \
@@ -173,7 +98,7 @@
          fi
  	# Put the nasty error message in config.log where it belongs
  	echo "$EPUB_PKG_ERRORS" >&5
-@@ -22617,14 +22621,14 @@
+@@ -21617,14 +21617,14 @@
   elif test -n "$PKG_CONFIG"; then
      if test -n "$PKG_CONFIG" && \
      { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"webkit2gtk-\$WEBKIT_API_VERSION >= \$WEBKIT_REQUIRED \\
@@ -191,7 +116,7 @@
  		      test "x$?" != "x0" && pkg_failed=yes
  else
    pkg_failed=yes
-@@ -22637,14 +22641,14 @@
+@@ -21637,14 +21637,14 @@
   elif test -n "$PKG_CONFIG"; then
      if test -n "$PKG_CONFIG" && \
      { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"webkit2gtk-\$WEBKIT_API_VERSION >= \$WEBKIT_REQUIRED \\
@@ -209,7 +134,7 @@
  		      test "x$?" != "x0" && pkg_failed=yes
  else
    pkg_failed=yes
-@@ -22666,10 +22670,10 @@
+@@ -21666,10 +21666,10 @@
  fi
          if test $_pkg_short_errors_supported = yes; then
  	        EPUB_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "webkit2gtk-$WEBKIT_API_VERSION >= $WEBKIT_REQUIRED \
@@ -222,192 +147,3 @@
          fi
  	# Put the nasty error message in config.log where it belongs
  	echo "$EPUB_PKG_ERRORS" >&5
-@@ -22751,6 +22755,125 @@
- fi
- 
- 
-+# *********************
-+# Mate-desktop support
-+# *********************
-+
-+
-+# Check whether --with-matedesktop was given.
-+if test "${with_matedesktop+set}" = set; then :
-+  withval=$with_matedesktop;
-+else
-+  with_matedesktop=yes
-+fi
-+
-+
-+ if test "$with_matedesktop" = "yes"; then
-+  WITH_MATEDESKTOP_TRUE=
-+  WITH_MATEDESKTOP_FALSE='#'
-+else
-+  WITH_MATEDESKTOP_TRUE='#'
-+  WITH_MATEDESKTOP_FALSE=
-+fi
-+
-+
-+if test "$with_matedesktop" = "yes"; then
-+
-+pkg_failed=no
-+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for SHELL_CORE" >&5
-+$as_echo_n "checking for SHELL_CORE... " >&6; }
-+
-+if test -n "$SHELL_CORE_CFLAGS"; then
-+    pkg_cv_SHELL_CORE_CFLAGS="$SHELL_CORE_CFLAGS"
-+ elif test -n "$PKG_CONFIG"; then
-+    if test -n "$PKG_CONFIG" && \
-+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"mate-desktop-2.0 >= \$MATEDESKTOP_REQUIRED\""; } >&5
-+  ($PKG_CONFIG --exists --print-errors "mate-desktop-2.0 >= $MATEDESKTOP_REQUIRED") 2>&5
-+  ac_status=$?
-+  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
-+  test $ac_status = 0; }; then
-+  pkg_cv_SHELL_CORE_CFLAGS=`$PKG_CONFIG --cflags "mate-desktop-2.0 >= $MATEDESKTOP_REQUIRED" 2>/dev/null`
-+		      test "x$?" != "x0" && pkg_failed=yes
-+else
-+  pkg_failed=yes
-+fi
-+ else
-+    pkg_failed=untried
-+fi
-+if test -n "$SHELL_CORE_LIBS"; then
-+    pkg_cv_SHELL_CORE_LIBS="$SHELL_CORE_LIBS"
-+ elif test -n "$PKG_CONFIG"; then
-+    if test -n "$PKG_CONFIG" && \
-+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"mate-desktop-2.0 >= \$MATEDESKTOP_REQUIRED\""; } >&5
-+  ($PKG_CONFIG --exists --print-errors "mate-desktop-2.0 >= $MATEDESKTOP_REQUIRED") 2>&5
-+  ac_status=$?
-+  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
-+  test $ac_status = 0; }; then
-+  pkg_cv_SHELL_CORE_LIBS=`$PKG_CONFIG --libs "mate-desktop-2.0 >= $MATEDESKTOP_REQUIRED" 2>/dev/null`
-+		      test "x$?" != "x0" && pkg_failed=yes
-+else
-+  pkg_failed=yes
-+fi
-+ else
-+    pkg_failed=untried
-+fi
-+
-+
-+
-+if test $pkg_failed = yes; then
-+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
-+$as_echo "no" >&6; }
-+
-+if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
-+        _pkg_short_errors_supported=yes
-+else
-+        _pkg_short_errors_supported=no
-+fi
-+        if test $_pkg_short_errors_supported = yes; then
-+	        SHELL_CORE_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "mate-desktop-2.0 >= $MATEDESKTOP_REQUIRED" 2>&1`
-+        else
-+	        SHELL_CORE_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "mate-desktop-2.0 >= $MATEDESKTOP_REQUIRED" 2>&1`
-+        fi
-+	# Put the nasty error message in config.log where it belongs
-+	echo "$SHELL_CORE_PKG_ERRORS" >&5
-+
-+	as_fn_error $? "Package requirements (mate-desktop-2.0 >= $MATEDESKTOP_REQUIRED) were not met:
-+
-+$SHELL_CORE_PKG_ERRORS
-+
-+Consider adjusting the PKG_CONFIG_PATH environment variable if you
-+installed software in a non-standard prefix.
-+
-+Alternatively, you may set the environment variables SHELL_CORE_CFLAGS
-+and SHELL_CORE_LIBS to avoid the need to call pkg-config.
-+See the pkg-config man page for more details." "$LINENO" 5
-+elif test $pkg_failed = untried; then
-+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
-+$as_echo "no" >&6; }
-+	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
-+$as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
-+as_fn_error $? "The pkg-config script could not be found or is too old.  Make sure it
-+is in your PATH or set the PKG_CONFIG environment variable to the full
-+path to pkg-config.
-+
-+Alternatively, you may set the environment variables SHELL_CORE_CFLAGS
-+and SHELL_CORE_LIBS to avoid the need to call pkg-config.
-+See the pkg-config man page for more details.
-+
-+To get pkg-config, see <http://pkg-config.freedesktop.org/>.
-+See \`config.log' for more details" "$LINENO" 5; }
-+else
-+	SHELL_CORE_CFLAGS=$pkg_cv_SHELL_CORE_CFLAGS
-+	SHELL_CORE_LIBS=$pkg_cv_SHELL_CORE_LIBS
-+        { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
-+$as_echo "yes" >&6; }
-+
-+fi
-+
-+$as_echo "#define WITH_MATEDESKTOP 1" >>confdefs.h
-+
-+fi
-+
- # *****************
- # Help files
- # *****************
-@@ -23716,6 +23839,10 @@
-   as_fn_error $? "conditional \"ENABLE_EPUB\" was never defined.
- Usually this means the macro was only invoked conditionally." "$LINENO" 5
- fi
-+if test -z "${WITH_MATEDESKTOP_TRUE}" && test -z "${WITH_MATEDESKTOP_FALSE}"; then
-+  as_fn_error $? "conditional \"WITH_MATEDESKTOP\" was never defined.
-+Usually this means the macro was only invoked conditionally." "$LINENO" 5
-+fi
- if test -z "${HAVE_GTK_DOC_TRUE}" && test -z "${HAVE_GTK_DOC_FALSE}"; then
-   as_fn_error $? "conditional \"HAVE_GTK_DOC\" was never defined.
- Usually this means the macro was only invoked conditionally." "$LINENO" 5
-@@ -26300,27 +26427,28 @@
- echo "
- Configure summary:
- 
--    Platform...........:    $with_platform
--    GTK+ version.......:    $with_gtk
--    GTK+ Unix Print....:    $with_gtk_unix_print
--    Keyring Support....:    $with_keyring
--    DBUS Support.......:    $enable_dbus
--    SM client support..:    $with_smclient
--    Caja Plugin........:    $enable_caja
--    Thumbnailer........:    $enable_thumbnailer
--    Previewer..........:    $enable_previewer
--    Gtk-Doc Support....:    $enable_gtk_doc
--    Debug mode.........:    $enable_debug
--    GObj. Introspection:    $enable_introspection
--    Tests..............:    $enable_tests
--
--    PDF Backend........:    $enable_pdf
--    PostScript Backend.:    $enable_ps
--    TIFF Backend.......:    $enable_tiff
--    DJVU Backend.......:    $enable_djvu
--    DVI Backend........:    $enable_dvi
--    Pixbuf Backend.....:    $enable_pixbuf
--    Comics Backend.....:    $enable_comics
--    XPS Backend........:    $enable_xps
--    ePub Backend.......:    $have_webkit
-+    Platform............:    $with_platform
-+    GTK+ version........:    $with_gtk
-+    GTK+ Unix Print.....:    $with_gtk_unix_print
-+    MATE desktop Support:    $with_matedesktop
-+    Keyring Support.....:    $with_keyring
-+    DBUS Support........:    $enable_dbus
-+    SM client support...:    $with_smclient
-+    Caja Plugin.........:    $enable_caja
-+    Thumbnailer.........:    $enable_thumbnailer
-+    Previewer...........:    $enable_previewer
-+    Gtk-Doc Support.....:    $enable_gtk_doc
-+    Debug mode..........:    $enable_debug
-+    GObj. Introspection.:    $enable_introspection
-+    Tests...............:    $enable_tests
-+
-+    PDF Backend.........:    $enable_pdf
-+    PostScript Backend..:    $enable_ps
-+    TIFF Backend........:    $enable_tiff
-+    DJVU Backend........:    $enable_djvu
-+    DVI Backend.........:    $enable_dvi
-+    Pixbuf Backend......:    $enable_pixbuf
-+    Comics Backend......:    $enable_comics
-+    XPS Backend.........:    $enable_xps
-+    ePub Backend........:    $have_webkit
- "
