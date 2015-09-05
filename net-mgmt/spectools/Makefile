@@ -15,10 +15,6 @@ COMMENT=	Tools for the Wi-Spy spectrum analyzers from MetaGeek LLC
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPL
 
-BROKEN_ia64=	does not build: duplicate definition of malloc
-BROKEN_powerpc=	does not build: duplicate definition of malloc
-BROKEN_sparc64=	does not build: duplicate definition of malloc
-
 USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -34,6 +30,15 @@ OPTIONS_SUB=	yes
 GTK2_ALL_TARGET=	spectool_gtk
 GTK2_USE=		GNOME=gtk20
 NCURSES_ALL_TARGET=	spectool_curses
+
+post-patch:
+# Provide the prototype for malloc(3)
+	@${REINPLACE_CMD} -e '/<pthread\.h>/ \
+		{ x; s/.*/#include <stdlib.h>/; G; }' \
+			${WRKSRC}/ubertooth_hw_u1.c \
+			${WRKSRC}/wispy_hw_24x.c \
+			${WRKSRC}/wispy_hw_dbx.c \
+			${WRKSRC}/wispy_hw_gen1.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/spectool_net ${STAGEDIR}/${PREFIX}/bin
