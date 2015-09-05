@@ -36,5 +36,6 @@ USE_PERL5=	configure
 USE_GITHUB=	yes
 GH_ACCOUNT=	typester
 GH_PROJECT=	ark-perl
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 .include <bsd.port.mk>
