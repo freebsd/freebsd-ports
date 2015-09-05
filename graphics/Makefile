@@ -980,6 +980,7 @@
     SUBDIR += sk1libs
     SUBDIR += skanlite
     SUBDIR += sketch
+    SUBDIR += smillaenlarger
     SUBDIR += springgraph
     SUBDIR += squish
     SUBDIR += sswf
