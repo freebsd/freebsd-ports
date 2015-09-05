@@ -1,6 +1,6 @@
---- configure.orig	2015-08-05 08:12:21 UTC
-+++ configure
-@@ -23559,7 +23559,9 @@ fi
+--- configure.orig	2015-09-01 12:53:55.000000000 -0700
++++ configure	2015-09-05 00:14:50.050817462 -0700
+@@ -23624,7 +23624,9 @@
  
  if test $ac_with_krb5_count -gt 1 ; then
    as_fn_error $? "Please choose only one Kerberos library." "$LINENO" 5
@@ -11,7 +11,7 @@
    # find installed libs via pkg-config or krb5-config
    if test -n "$PKG_CONFIG" && \
      { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"gssapi-krb5 krb5\""; } >&5
-@@ -31973,7 +31975,7 @@ done
+@@ -32038,7 +32040,7 @@
  ##
  
  BUILD_HELPER="NIS"
@@ -20,7 +20,7 @@
  do :
    as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
  ac_fn_cxx_check_header_compile "$LINENO" "$ac_header" "$as_ac_Header" "
-@@ -31988,8 +31990,10 @@ if eval test \"x\$"$as_ac_Header"\" = x"
+@@ -32053,8 +32055,10 @@
  #define `$as_echo "HAVE_$ac_header" | $as_tr_cpp` 1
  _ACEOF
  
@@ -33,7 +33,7 @@
  fi
  
  done
-@@ -32454,7 +32458,7 @@ done
+@@ -32519,7 +32523,7 @@
  
    # unconditionally requires crypt(3), for now
    if test "x$ac_cv_func_crypt" != "x"; then
@@ -42,7 +42,7 @@
  do :
    as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
  ac_fn_cxx_check_header_mongrel "$LINENO" "$ac_header" "$as_ac_Header" "$ac_includes_default"
-@@ -34509,7 +34513,7 @@ for ac_header in \
+@@ -34574,7 +34578,7 @@
    arpa/nameser.h \
    assert.h \
    bstring.h \
@@ -51,3 +51,43 @@
    ctype.h \
    direct.h \
    errno.h \
+@@ -34785,6 +34789,7 @@
+ #include <netinet/ip.h>
+ #endif
+ #if HAVE_NETINET_IP_COMPAT_H
++#include <net/if.h>	/* IFNAMSIZ */
+ #include <netinet/ip_compat.h>
+ #endif
+ #if HAVE_NETINET_IP_FIL_H
+@@ -38773,6 +38778,7 @@
+ #     include <sys/ioccom.h>
+ #     include <netinet/in.h>
+ 
++#     include <net/if.h>	/* IFNAMSIZ */
+ #     include <netinet/ip_compat.h>
+ #     include <netinet/ip_fil.h>
+ #     include <netinet/ip_nat.h>
+@@ -38803,6 +38809,7 @@
+ #       include <sys/ioccom.h>
+ #       include <netinet/in.h>
+ #undef minor_t
++#       include <net/if.h>	/* IFNAMSIZ */
+ #       include <netinet/ip_compat.h>
+ #       include <netinet/ip_fil.h>
+ #       include <netinet/ip_nat.h>
+@@ -38847,6 +38854,7 @@
+ 	ip_fil_compat.h \
+ 	ip_fil.h \
+ 	ip_nat.h \
++	net/if.h \
+ 	netinet/ip_compat.h \
+ 	netinet/ip_fil_compat.h \
+ 	netinet/ip_fil.h \
+@@ -38876,6 +38884,7 @@
+ #if HAVE_IP_COMPAT_H
+ #include <ip_compat.h>
+ #elif HAVE_NETINET_IP_COMPAT_H
++#include <net/if.h>	/* IFNAMSIZ */
+ #include <netinet/ip_compat.h>
+ #endif
+ #if HAVE_IP_FIL_H
