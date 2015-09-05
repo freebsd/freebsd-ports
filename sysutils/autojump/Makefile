@@ -4,7 +4,7 @@
 PORTNAME=	autojump
 PORTVERSION=	13
 CATEGORIES=	sysutils
-MASTER_SITES=	GHC http://www.vermatech.com/distfiles/
+MASTER_SITES=	http://www.vermatech.com/distfiles/
 DISTNAME=	autojump_v${PORTVERSION}
 
 MAINTAINER=	neeraj.verma.ports@vermatech.com
@@ -16,8 +16,6 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 NO_BUILD=	yes
 USES=		python:run
-USE_GITHUB=	yes
-GH_ACCOUNT=	joelthelion
 SUB_FILES=	pkg-install
 
 PLIST_FILES=	bin/autojump \
