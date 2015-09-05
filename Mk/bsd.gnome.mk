@@ -75,7 +75,7 @@ _USE_GNOME_ALL+= atk atspi cairo gal2 \
 		gnomespeech gnomevfs2 gtk-update-icon-cache gtk20 gtkhtml3 gtksharp10 \
 		gtksharp20 gtksourceview gtksourceview2 gvfs libartlgpl2 libbonobo \
 		libbonoboui libgda4 libglade2 libgnome \
-		libgnomecanvas libgnomedb libgnomekbd libgnomeprint libgnomeprintui \
+		libgnomecanvas libgnomekbd libgnomeprint libgnomeprintui \
 		libgnomeui libgsf libgtkhtml libidl librsvg2 libwnck \
 		libxml2 libxslt linc \
 		orbit2 pango pangox-compat pygnome2 pygobject pygtk2 \
@@ -379,10 +379,6 @@ libgda5_USE_GNOME_IMPL=	glib20 libxslt
 libgda5-ui_LIB_DEPENDS=	libgda-ui-5.0.so:${PORTSDIR}/databases/libgda5-ui
 libgda5-ui_DETECT=	${LOCALBASE}/libdata/pkgconfig/libgda-ui-5.0.pc
 libgda5-ui_USE_GNOME_IMPL=glib20 libxslt libgda5
-
-libgnomedb_LIB_DEPENDS=	libgnomedb-3.0.so:${PORTSDIR}/databases/libgnomedb
-libgnomedb_DETECT=	${LOCALBASE}/libdata/pkgconfig/libgnomedb.pc
-libgnomedb_USE_GNOME_IMPL=libgnomeui libgda3
 
 gtksourceview_LIB_DEPENDS=	libgtksourceview-1.0.so:${PORTSDIR}/x11-toolkits/gtksourceview
 gtksourceview_DETECT=	${LOCALBASE}/libdata/pkgconfig/gtksourceview-1.0.pc
