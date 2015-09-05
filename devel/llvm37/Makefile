@@ -2,6 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.7.0
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
 DISTNAME=	${PORTNAME}-${DISTVERSION}.src
@@ -38,6 +39,7 @@ OPTIONS_SUB=	yes
 
 CLANG_DESC=	Build clang
 CLANG_EXTRA_PATCHES= \
+		${PATCHDIR}/clang-patch-fformat_extensions.diff \
 		${PATCHDIR}/clang-patch-tools_clang_lib_Headers_CMakeLists.txt
 CLANG_CONFLICTS_INSTALL=	clang-devel-3.[1234567]*
 CLANG_DISTFILES=	cfe-${DISTVERSION}.src${EXTRACT_SUFX}
