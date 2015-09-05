@@ -23,7 +23,6 @@ USES=		tar:bzip2
 USE_XORG=	xinerama
 GNU_CONFIGURE=	yes
 OPTIONS_DEFINE=	DOCS
-BROKEN_powerpc=	Does not install on powerpc
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@OPTIM@|-DHAVE_CONFIG_H|g' ${WRKSRC}/Makefile.in
