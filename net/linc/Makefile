@@ -13,6 +13,9 @@ COMMENT=	Library for writing networked servers & clients
 
 USES=		tar:bzip2
 
+DEPRECATED=		Last release in 2003, not used by anything anymore.
+EXPIRATION_DATE=	2015-09-19
+
 .if !defined(REFERENCE_PORT)
 
 USES+=		gmake libtool pathfix pkgconfig
