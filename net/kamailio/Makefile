@@ -1,10 +1,8 @@
 # Created by: Oliver Mahmoudi <olivermahmoudi@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	kamailio
-PORTVERSION=	4.2.4
-PORTREVISION=	1
+PORTVERSION=	4.3.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.kamailio.org/pub/kamailio/${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
@@ -33,12 +31,14 @@ USE_RC_SUBR=	kamailio
 USERS=		kamailio
 GROUPS=		kamailio
 
-OPTIONS_DEFINE=	DOCS MYSQL PGSQL RADIUS JITSI JABBER TLS UNIXODBC PRESENCE
+OPTIONS_DEFINE=	DOCS MYSQL PGSQL RADIUS JITSI JABBER TLS UNIXODBC \
+		PRESENCE WEBSOCKET
 OPTIONS_DEFAULT=MYSQL RADIUS JABBER TLS PRESENCE
 OPTIONS_SUB=	YES
 
 JITSI_DESC=	VoIP Frontend GUI via Jitsi
 PRESENCE_DESC=	Presence support
+WEBSOCKET_DESC=	Websocket support
 
 MYSQL_USE=	mysql=yes
 PGSQL_USES=	pgsql
@@ -81,6 +81,11 @@ EXTRA_MODULES+=	tls
 
 .if ${PORT_OPTIONS:MPRESENCE}
 EXTRA_GROUPS+=	presence
+.endif
+
+.if ${PORT_OPTIONS:MWEBSOCKET}
+EXTRA_MODULES+=	websocket
+LIB_DEPENDS+=	libunistring.so:${PORTSDIR}/devel/libunistring
 .endif
 
 .if !empty (EXTRA_GROUPS)
@@ -138,7 +143,8 @@ post-stage:
 	presence_mwi \
 	presence_profile presence_reginfo presence_xml pua_bla \
 	pua_dialoginfo pua_mi pua_reginfo pua_usrloc rls \
-	acc_radius misc_radius peering pua pua_xmpp xcap_client xcap_server
+	acc_radius misc_radius peering pua pua_xmpp xcap_client xcap_server \
+	tcpops auth_xkeys statsd dmq_usrloc rtjson websocket
 	@if [ -e ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/modules/${i}.so ]; then \
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/modules/${i}.so; \
 	fi
@@ -167,5 +173,8 @@ post-stage:
 
 do-install:
 	cd ${WRKSRC} && ${GMAKE} ${INSTALL_TARGET}
+.if ! ${PORT_OPTIONS:MMYSQL} && ! ${PORT_OPTIONS:MPGSQL}
+	${RMDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}
+.endif
 
 .include <bsd.port.mk>
