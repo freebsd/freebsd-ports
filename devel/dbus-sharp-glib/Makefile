@@ -18,5 +18,6 @@ GH_PROJECT=	dbus-sharp
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_GMCS=${LOCALBASE}/bin/mcs
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 .include <bsd.port.mk>
