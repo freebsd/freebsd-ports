@@ -69,23 +69,23 @@ report_bulk_libusb_error(int r)
 {
     switch (r) {
     case LIBUSB_ERROR_TIMEOUT:
-        D("Transfer timeout\n");
+        D("Transfer timeout");
         break;
 
     case LIBUSB_ERROR_PIPE:
-        D("Control request is not supported\n");
+        D("Control request is not supported");
         break;
 
     case LIBUSB_ERROR_OVERFLOW:
-        D("Device offered more data\n");
+        D("Device offered more data");
         break;
 
     case LIBUSB_ERROR_NO_DEVICE :
-        D("Device was disconnected\n");
+        D("Device was disconnected");
         break;
 
     default:
-        D("Error %d during transfer\n", r);
+        D("Error %d during transfer", r);
         break;
     };
 }
@@ -140,7 +140,7 @@ usb_write(usb_handle *uh, const void *_data, int len)
         }
     }
 
-    D("usb_write(): %p:%d -> transport %p\n", _data, len, uh);
+    D("usb_write(): %p:%d -> transport %p", _data, len, uh);
 
     while (len > 0) {
         int xfer = (len > 4096) ? 4096 : len;
@@ -148,7 +148,7 @@ usb_write(usb_handle *uh, const void *_data, int len)
         n = usb_bulk_write(uh, data, xfer);
 
         if (n != xfer) {
-            D("usb_write(): failed for transport %p (%d bytes left)\n", uh, len);
+            D("usb_write(): failed for transport %p (%d bytes left)", uh, len);
             return -1;
         }
 
@@ -160,7 +160,7 @@ usb_write(usb_handle *uh, const void *_data, int len)
         n = usb_bulk_write(uh, _data, 0);
 
         if (n < 0) {
-            D("usb_write(): failed to finish operation for transport %p\n", uh);
+            D("usb_write(): failed to finish operation for transport %p", uh);
         }
         return n;
     }
@@ -174,7 +174,7 @@ usb_read(usb_handle *uh, void *_data, int len)
     unsigned char *data = (unsigned char*)_data;
     int n;
 
-    D("usb_read(): %p:%d <- transport %p\n", _data, len, uh);
+    D("usb_read(): %p:%d <- transport %p", _data, len, uh);
 
     while (len > 0) {
         int xfer = (len > 4096) ? 4096 : len;
@@ -188,7 +188,7 @@ usb_read(usb_handle *uh, void *_data, int len)
                 continue;
             }
 
-            D("usb_read(): failed for transport %p (%d bytes left)\n", uh, len);
+            D("usb_read(): failed for transport %p (%d bytes left)", uh, len);
             return -1;
         }
 
@@ -202,7 +202,7 @@ usb_read(usb_handle *uh, void *_data, int len)
 int
 usb_close(usb_handle *h)
 {
-    D("usb_close(): closing transport %p\n", h);
+    D("usb_close(): closing transport %p", h);
     adb_mutex_lock(&usb_lock);
 
     h->next->prev = h->prev;
@@ -224,7 +224,7 @@ usb_close(usb_handle *h)
 void
 usb_kick(usb_handle *h)
 {
-    D("usb_kick(): kicking transport %p\n", h);
+    D("usb_kick(): kicking transport %p", h);
 
     adb_mutex_lock(&h->lock);
     unregister_usb_transport(h);
@@ -249,14 +249,14 @@ check_usb_interface(libusb_interface const *interface,
     int e;
 
     if (interface->num_altsetting == 0) {
-        D("check_usb_interface(): No interface settings\n");
+        D("check_usb_interface(): No interface settings");
         return -1;
     }
 
     libusb_interface_descriptor const *idesc = &interface->altsetting[0];
 
     if (idesc->bNumEndpoints != 2) {
-        D("check_usb_interface(): Interface have not 2 endpoints, ignoring\n");
+        D("check_usb_interface(): Interface have not 2 endpoints, ignoring");
         return -1;
     }
 
@@ -264,7 +264,7 @@ check_usb_interface(libusb_interface const *interface,
         libusb_endpoint_descriptor const *edesc = &idesc->endpoint[e];
 
         if (edesc->bmAttributes != LIBUSB_TRANSFER_TYPE_BULK) {
-            D("check_usb_interface(): Endpoint (%u) is not bulk (%u), ignoring\n",
+            D("check_usb_interface(): Endpoint (%u) is not bulk (%u), ignoring",
               edesc->bmAttributes, LIBUSB_TRANSFER_TYPE_BULK);
             return -1;
         }
@@ -277,7 +277,7 @@ check_usb_interface(libusb_interface const *interface,
         /* aproto 01 needs 0 termination */
         if (idesc->bInterfaceProtocol == 0x01) {
             uh->zero_mask = edesc->wMaxPacketSize - 1;
-            D("check_usb_interface(): Forced Android interface protocol v.1\n");
+            D("check_usb_interface(): Forced Android interface protocol v.1");
         }
     }
 
@@ -291,11 +291,11 @@ check_usb_interface(libusb_interface const *interface,
                           idesc->bInterfaceClass, idesc->bInterfaceSubClass,
                           idesc->bInterfaceProtocol))
     {
-        D("not matches\n");
+        D("not matches");
         return -1;
     }
 
-    D("matches\n");
+    D("matches");
     return 1;
 }
 
@@ -310,7 +310,7 @@ check_usb_interfaces(libusb_config_descriptor *config,
         if (check_usb_interface(&config->interface[i], desc, uh) != -1) {
             /* found some interface and saved information about it */
             D("check_usb_interfaces(): Interface %d of %04x:%04x "
-              "matches Android device\n", i, desc->idVendor,
+              "matches Android device", i, desc->idVendor,
               desc->idProduct);
 
             return  i;
@@ -323,7 +323,7 @@ check_usb_interfaces(libusb_config_descriptor *config,
 static int
 register_device(usb_handle *uh, const char *serial)
 {
-    D("register_device(): Registering %p [%s] as USB transport\n",
+    D("register_device(): Registering %p [%s] as USB transport",
       uh, serial);
 
     usb_handle* usb = reinterpret_cast<usb_handle*>(calloc(1, sizeof(usb_handle)));
@@ -388,20 +388,20 @@ check_device(libusb_device *dev)
     int r = libusb_get_device_descriptor(dev, &desc);
 
     if (r != LIBUSB_SUCCESS) {
-        D("check_device(): Failed to get device descriptor\n");
+        D("check_device(): Failed to get device descriptor");
         return;
     }
 
     if ((desc.idVendor == 0) && (desc.idProduct == 0))
         return;
 
-    D("check_device(): Probing usb device %04x:%04x\n",
+    D("check_device(): Probing usb device %04x:%04x",
       desc.idVendor, desc.idProduct);
 
     if (!is_adb_interface(desc.idVendor, desc.idProduct,
                           ADB_CLASS, ADB_SUBCLASS, ADB_PROTOCOL))
     {
-        D("check_device(): Ignored due unknown vendor id\n");
+        D("check_device(): Ignored due unknown vendor id");
         return;
     }
 
@@ -410,30 +410,30 @@ check_device(libusb_device *dev)
 
     if (already_registered(&uh)) {
         D("check_device(): Device (bus: %d, address: %d) "
-          "is already registered\n", uh.dev_bus, uh.dev_addr);
+          "is already registered", uh.dev_bus, uh.dev_addr);
         return;
     }
 
-    D("check_device(): Device bus: %d, address: %d\n",
+    D("check_device(): Device bus: %d, address: %d",
       uh.dev_bus, uh.dev_addr);
 
     r = libusb_get_active_config_descriptor(dev, &config);
 
     if (r != 0) {
         if (r == LIBUSB_ERROR_NOT_FOUND) {
-            D("check_device(): Device %4x:%4x is unconfigured\n",
+            D("check_device(): Device %4x:%4x is unconfigured",
               desc.idVendor, desc.idProduct);
             return;
         }
 
-        D("check_device(): Failed to get configuration for %4x:%4x\n",
+        D("check_device(): Failed to get configuration for %4x:%4x",
           desc.idVendor, desc.idProduct);
         return;
     }
 
     if (config == NULL) {
         D("check_device(): Sanity check failed after "
-          "getting active config\n");
+          "getting active config");
         return;
     }
 
@@ -450,27 +450,27 @@ check_device(libusb_device *dev)
     if (r != 0) {
         switch (r) {
         case LIBUSB_ERROR_NO_MEM:
-            D("check_device(): Memory allocation problem\n");
+            D("check_device(): Memory allocation problem");
             break;
 
         case LIBUSB_ERROR_ACCESS:
             D("check_device(): Permissions problem, "
-              "current user priveleges are messed up?\n");
+              "current user priveleges are messed up?");
             break;
 
         case LIBUSB_ERROR_NO_DEVICE:
-            D("check_device(): Device disconected, bad cable?\n");
+            D("check_device(): Device disconected, bad cable?");
             break;
 
         default:
-            D("check_device(): libusb triggered error %d\n", r);
+            D("check_device(): libusb triggered error %d", r);
         }
         // skip rest
         found = -1;
     }
 
     if (found >= 0) {
-        D("check_device(): Device matches Android interface\n");
+        D("check_device(): Device matches Android interface");
         // read the device's serial number
         memset(serial, 0, sizeof(serial));
         uh.interface = found;
@@ -478,7 +478,7 @@ check_device(libusb_device *dev)
         r = libusb_claim_interface(uh.devh, uh.interface);
 
         if (r < 0) {
-            D("check_device(): Failed to claim interface %d\n",
+            D("check_device(): Failed to claim interface %d",
               uh.interface);
 
             goto fail;
@@ -497,7 +497,7 @@ check_device(libusb_device *dev)
                                         0, (uint8_t *)languages, sizeof(languages), 0);
 
             if (r <= 0) {
-                D("check_device(): Failed to get languages count\n");
+                D("check_device(): Failed to get languages count");
                 goto fail;
             }
 
@@ -524,7 +524,7 @@ check_device(libusb_device *dev)
             }
 
             if (register_device(&uh, serial) == 0) {
-                D("check_device(): Failed to register device\n");
+                D("check_device(): Failed to register device");
                 goto fail_interface;
             }
 
@@ -565,7 +565,7 @@ kick_disconnected()
 
     for (usb = handle_list.next; usb != &handle_list; usb = usb->next) {
         if (check_device_connected(usb) == 0) {
-            D("kick_disconnected(): Transport %p is not online anymore\n",
+            D("kick_disconnected(): Transport %p is not online anymore",
               usb);
 
             usb_kick(usb);
@@ -578,14 +578,14 @@ kick_disconnected()
 static void
 scan_usb_devices()
 {
-    D("scan_usb_devices(): started\n");
+    D("scan_usb_devices(): started");
 
     libusb_device **devs= NULL;
     libusb_device *dev= NULL;
     ssize_t cnt = libusb_get_device_list(ctx, &devs);
 
     if (cnt < 0) {
-        D("scan_usb_devices(): Failed to get device list (error: %zd)\n",
+        D("scan_usb_devices(): Failed to get device list (error: %zd)",
           cnt);
 
         return;
@@ -603,7 +603,8 @@ scan_usb_devices()
 static void *
 device_poll_thread(void* unused)
 {
-    D("device_poll_thread(): Created USB scan thread\n");
+    adb_thread_setname("USB scan");
+    D("device_poll_thread(): Created USB scan thread");
 
     for (;;) {
         sleep(5);
@@ -624,14 +625,14 @@ sigalrm_handler(int signo)
 void
 usb_init()
 {
-    D("usb_init(): started\n");
+    D("usb_init(): started");
     struct sigaction actions;
 
     atexit(usb_cleanup);
     int r = libusb_init(&ctx);
 
     if (r != LIBUSB_SUCCESS) {
-        fatal_errno("Failed to init libusb\n");
+        fatal_errno("Failed to init libusb");
     }
 
     memset(&actions, 0, sizeof(actions));
@@ -648,8 +649,8 @@ usb_init()
 
     /* starting USB event polling thread */
     if (!adb_thread_create(device_poll_thread, nullptr)) {
-        fatal_errno("cannot create USB scan thread\n");
+        fatal_errno("cannot create USB scan thread");
     }
 
-    D("usb_init(): finished\n");
+    D("usb_init(): finished");
 }
