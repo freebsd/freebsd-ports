@@ -1,0 +1,11 @@
+UW ttyp0 is a family of bitmap screen fonts in bdf format. It covers most of
+the Latin and Cyrillic alphabet, Greek, Armenian, Georgian (only Mkhedruli),
+Hebrew (without cantillation marks), Thai, most of IPA (but no UPA), standard
+punctuation, common symbols, some mathematics, line graphics, a few dingbats,
+and Powerline delimiter symbols. In addition to Unicode (ISO 10646-1), UW ttyp0
+supports about thirty 8-bit encodings (code pages).
+
+UW ttyp0 comes in nine sizes from 6x11 to 11x22. In all of the sizes there are
+regular and bold versions; for some there is also an italic.
+
+WWW: http://people.mpi-inf.mpg.de/~uwe/misc/uw-ttyp0/
