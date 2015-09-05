@@ -1,7 +1,7 @@
---- utils/sercmd/Makefile.orig	2015-01-11 14:54:24.246707463 +0100
-+++ utils/sercmd/Makefile	2015-01-11 14:56:12.692702813 +0100
-@@ -12,7 +12,7 @@
- 	NAME=sercmd
+--- utils/kamcmd/Makefile.orig	2015-07-20 13:16:26 UTC
++++ utils/kamcmd/Makefile
+@@ -12,7 +12,7 @@ else
+ 	NAME=kamcmd
  endif
  
 -readline_locations= /usr/include/readline/readline.h \
@@ -9,7 +9,7 @@
  					$(LOCALBASE)/include/readline/readline.h
  
  use_readline ?=
-@@ -71,8 +71,8 @@
+@@ -72,8 +72,8 @@ endif
  endif
  
  ifeq ($(use_readline),1)
