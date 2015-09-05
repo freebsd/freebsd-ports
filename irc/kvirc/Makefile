@@ -75,8 +75,8 @@ PLIST_SUB+=	VER="${PORTVERSION:R}"
 
 pre-fetch-PERL-on:
 	@${ECHO_CMD} "====================================================="
-	@${ECHO_CMD} "    Perl scripting requires perl with multiplicity
-	@${ECHO_CMD} "    support (enabled in ports by default).
+	@${ECHO_CMD} "    Perl scripting requires perl with multiplicity"
+	@${ECHO_CMD} "    support (enabled in ports by default)."
 	@${ECHO_CMD} "====================================================="
 
 .include <bsd.port.mk>
