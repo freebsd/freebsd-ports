@@ -33,8 +33,6 @@ NLS_USES=	gettext-runtime gettext-tools
 
 NO_ARCH=	yes
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|${PYTHON_CMD}|; \
 		s|/usr/share/anki|${DATADIR}|' \
@@ -43,10 +41,9 @@ post-patch:
 		's|/usr/share/anki/locale|${PREFIX}/share/locale|' \
 		${WRKSRC}/anki/lang.py
 
-.if ! ${PORT_OPTIONS:MNLS}
+post-patch-NLS-off:
 	@${REINPLACE_CMD} -i '' '/mkdir -p qt-locale/,/cp -av locale/s/^/#/' \
 		${WRKSRC}/Makefile
-.endif
 
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}
