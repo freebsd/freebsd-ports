@@ -1,12 +1,12 @@
 PVM (Parallel Virtual Machine) is a portable message-passing programming
-system, designed to link separate host machines to form a virtual
-machine which is a single, manageable computing resource. 
+system, designed to link separate host machines to form a virtual machine
+which is a single, manageable computing resource.
 
 The virtual machine can be composed of hosts of different architectures,
-located in physically remote locations. PVM applications can be composed of any
-number of separate processes, or components, written in a mixture of C,
-C++ and Fortran. The system is portable to a wide variety of
-architectures, including workstations, multiprocessors, supercomputers and
-PCs. 
+located in physically remote locations.  PVM applications can be composed
+of any number of separate processes, or components, written in a mixture
+of C, C++, and Fortran.  The system is portable to a wide variety of
+architectures, including workstations, multiprocessors, supercomputers,
+and PCs.
 
-WWW: http://www.csm.ornl.gov/pvm/pvm_home.html
+WWW: http://www.csm.ornl.gov/pvm/
