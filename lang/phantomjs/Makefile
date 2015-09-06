@@ -16,11 +16,10 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libicui18n.so:${PORTSDIR}/devel/icu \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png
 
 PROJECTHOST=	phantomjs
-USES=		bison:build compiler gmake perl5 pkgconfig python:build zip
+USES=		bison:build compiler gmake jpeg perl5 pkgconfig python:build zip
 USE_PERL5=	build
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=	yes
