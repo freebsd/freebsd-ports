@@ -1,12 +1,13 @@
 --- lib/pvmgetarch.orig	2007-11-29 21:17:02 UTC
 +++ lib/pvmgetarch
-@@ -79,6 +79,10 @@ if [ -f /bin/uname -o -f /usr/bin/uname 
+@@ -79,6 +79,11 @@ if [ -f /bin/uname -o -f /usr/bin/uname 
  	BSD/OS,i[3456]86 )      ARCH=BSD386 ;;
  	FreeBSD,i[3456]86 )     ARCH=FREEBSD ;;
  	FreeBSD,alpha )         ARCH=FREEBSD ;;
 +	FreeBSD,arm* )		ARCH=FREEBSD ;;
 +	FreeBSD,amd64 )		ARCH=FREEBSD ;;
 +	FreeBSD,ia64 )		ARCH=FREEBSD ;;
++	FreeBSD,powerpc )	ARCH=FREEBSD ;;
 +	FreeBSD,sparc64 )	ARCH=FREEBSD ;;
  	SUPER-UX,SX-3 )         ARCH=SX3 ;;
  	uts,* )                 ARCH=UTS2 ;;
