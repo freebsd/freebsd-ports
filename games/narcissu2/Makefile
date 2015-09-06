@@ -5,10 +5,11 @@ PORTVERSION=	1.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.neechin.net/file_download/22/:game \
 		http://www.neechin.net/file_download/27/:script \
-		http://aur.archlinux.org/packages/na/${PORTNAME}-en/:icon
+		https://aur.archlinux.org/cgit/aur.git/plain/:icon
 DISTFILES=	[Denpa]_Narcissu_2_Eng_[unix].tar.bz2.link:game \
 		Narcissu_2_Eng_v${PORTVERSION}_script_[All_platforms].zip:script \
-		${PORTNAME}-en.tar.gz:icon
+		${PORTNAME}-en.png?h=${PORTNAME}-en\&id=9768eea:icon
+EXTRACT_ONLY=	${DISTFILES:N*\:icon:C/:.*//}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Visual novel about an encounter of terminally ill
@@ -48,7 +49,7 @@ pre-install:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-en/${PORTNAME}-en.png \
+	${INSTALL_DATA} ${_DISTDIR}/${DISTFILES:M*\:icon:C/:.*//} \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png
 	(cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 	${INSTALL_DATA} -p ${WRKDIR}/*.utf ${STAGEDIR}${DATADIR}
