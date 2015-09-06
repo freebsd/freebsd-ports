@@ -22,9 +22,6 @@ USES=		compiler:c++0x gmake
 PLIST_SUB=	SHLIB_MAJOR=${SHLIB_MAJOR} \
 		SHLIB_MINOR=${SHLIB_MINOR}
 
-NOT_FOR_ARCHS=	powerpc
-NOT_FOR_ARCHS_REASON=	not yet ported to this platform
-
 SHLIB_MAJOR=	${PORTVERSION:R}
 SHLIB_MINOR=	${PORTVERSION:E}
 
