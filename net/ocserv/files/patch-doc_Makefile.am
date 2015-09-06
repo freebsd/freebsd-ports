@@ -1,11 +1,11 @@
---- doc/Makefile.am.orig	2015-05-26 16:33:38 UTC
+--- doc/Makefile.am.orig	2015-08-18 19:48:03 UTC
 +++ doc/Makefile.am
 @@ -5,18 +5,27 @@ EXTRA_DIST = design.dia sample.config sc
  
  dist_man_MANS = ocserv.8 ocpasswd.8 occtl.8
  
 -ocserv.8: ../src/ocserv-args.def
--	-sed 's/@subheading \(.*\)/@*\n@var{\1}\n@*/' $< > "$<".tmp && \
+-	-$(SED) 's/@subheading \(.*\)/@*\n@var{\1}\n@*/' $< > "$<".tmp && \
 -	@AUTOGEN@ -L../src -DMAN_SECTION=8 -Tagman-cmd.tpl "$<".tmp && \
 -	rm -f "$<".tmp
 +ocserv.8:
@@ -17,7 +17,7 @@
 +	sed -I -e 's/^\.NOP //' $@
  
 -occtl.8: ../src/occtl-args.def
--	-sed 's/@subheading \(.*\)/@*\n@var{\1}\n@*/' $< > "$<".tmp && \
+-	-$(SED) 's/@subheading \(.*\)/@*\n@var{\1}\n@*/' $< > "$<".tmp && \
 -	@AUTOGEN@ -L../src -DMAN_SECTION=8 -Tagman-cmd.tpl "$<".tmp && \
 -	rm -f "$<".tmp
 +occtl.8:
@@ -29,7 +29,7 @@
 +	sed -I -e 's/^\.NOP //' $@
  
 -ocpasswd.8: ../src/ocpasswd-args.def
--	-sed 's/@subheading \(.*\)/@*\n@var{\1}\n@*/' $< > "$<".tmp && \
+-	-$(SED) 's/@subheading \(.*\)/@*\n@var{\1}\n@*/' $< > "$<".tmp && \
 -	@AUTOGEN@ -L../src -DMAN_SECTION=8 -Tagman-cmd.tpl "$<".tmp && \
 -	rm -f "$<".tmp
 +ocpasswd.8:

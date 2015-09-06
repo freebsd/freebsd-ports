@@ -1,24 +1,26 @@
---- src/main-ctl-unix.c.orig	2015-05-26 16:33:38 UTC
+--- src/main-ctl-unix.c.orig	2015-08-28 19:13:38 UTC
 +++ src/main-ctl-unix.c
-@@ -110,10 +110,15 @@ int ctl_handler_init(main_server_st * s)
+@@ -110,12 +110,15 @@ int ctl_handler_init(main_server_st * s)
  	struct sockaddr_un sa;
  	int sd, e;
  
--	if (s->config->use_occtl == 0 || s->perm_config->occtl_socket_file == NULL)
-+	mslog(s, NULL, LOG_INFO, "using control unix socket: %s", s->perm_config->occtl_socket_file);
+-	if (s->config->use_occtl == 0 || s->perm_config->occtl_socket_file == NULL) {
+-		mslog(s, NULL, LOG_INFO, "not using control unix socket");
+-		return 0;
++       mslog(s, NULL, LOG_INFO, "using control unix socket: %s", s->perm_config->occtl_socket_file);
 +
-+	if (s->config->use_occtl == 0 ||
-+		s->perm_config->occtl_socket_file == NULL) {
-+		mslog(s, NULL, LOG_INFO, "not using control unix socket");
- 		return 0;
-+	}
++       if (s->config->use_occtl == 0 ||
++               s->perm_config->occtl_socket_file == NULL) {
++               mslog(s, NULL, LOG_INFO, "not using control unix socket");
++	       return 0;
+ 	}
  
 -	mslog(s, NULL, LOG_DEBUG, "initializing control unix socket: %s", s->perm_config->occtl_socket_file);
 +	mslog(s, NULL, LOG_INFO, "initializing control unix socket: %s", s->perm_config->occtl_socket_file);
  	memset(&sa, 0, sizeof(sa));
  	sa.sun_family = AF_UNIX;
  	strlcpy(sa.sun_path, s->perm_config->occtl_socket_file, sizeof(sa.sun_path));
-@@ -122,7 +127,7 @@ int ctl_handler_init(main_server_st * s)
+@@ -124,7 +127,7 @@ int ctl_handler_init(main_server_st * s)
  	sd = socket(AF_UNIX, SOCK_STREAM, 0);
  	if (sd == -1) {
  		e = errno;
@@ -27,7 +29,7 @@
  		      s->perm_config->occtl_socket_file, strerror(e));
  		return -1;
  	}
-@@ -131,7 +136,7 @@ int ctl_handler_init(main_server_st * s)
+@@ -133,7 +136,7 @@ int ctl_handler_init(main_server_st * s)
  	ret = bind(sd, (struct sockaddr *)&sa, SUN_LEN(&sa));
  	if (ret == -1) {
  		e = errno;
@@ -36,7 +38,7 @@
  		      s->perm_config->occtl_socket_file, strerror(e));
  		return -1;
  	}
-@@ -139,14 +144,14 @@ int ctl_handler_init(main_server_st * s)
+@@ -141,14 +144,14 @@ int ctl_handler_init(main_server_st * s)
  	ret = chown(s->perm_config->occtl_socket_file, s->perm_config->uid, s->perm_config->gid);
  	if (ret == -1) {
  		e = errno;
