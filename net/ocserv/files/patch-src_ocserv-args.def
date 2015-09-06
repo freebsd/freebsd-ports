@@ -1,4 +1,4 @@
---- src/ocserv-args.def.orig	2015-07-15 17:17:22 UTC
+--- src/ocserv-args.def.orig	2015-08-31 19:19:45 UTC
 +++ src/ocserv-args.def
 @@ -68,7 +68,7 @@ doc-section = {
    ds-format = 'texi';
@@ -23,11 +23,11 @@
  #auth = "pam"
  #auth = "pam[gid-min=1000]"
 -#auth = "plain[passwd=/etc/ocserv/ocpasswd]"
-+#auth = "plain[passwd=/usr/local/etc/ocserv/passwd]"
++#auth = "plain[passwd=/usr/local/etc/ocserv/ocpasswd]"
  #auth = "radius[config=/etc/radiusclient/radiusclient.conf,groupconfig=true]"
  
  # Specify alternative authentication methods that are sufficient
-@@ -431,7 +431,7 @@ rekey-method = ssl
+@@ -429,7 +429,7 @@ rekey-method = ssl
  use-occtl = true
  
  # PID file. It can be overriden in the command line.
@@ -36,7 +36,7 @@
  
  # Set the protocol-defined priority (SO_PRIORITY) for packets to
  # be sent. That is a number from 0 to 6 with 0 being the lowest
-@@ -555,13 +555,13 @@ no-route = 192.168.5.0/255.255.255.0
+@@ -553,13 +553,13 @@ no-route = 192.168.5.0/255.255.255.0
  # Also explicit addresses, are only allowed when they are odd. In that
  # case the next even address will be used as the remote address (in PtP).
  

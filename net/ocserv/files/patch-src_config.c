@@ -1,6 +1,6 @@
---- src/config.c.orig	2015-07-18 10:35:29 UTC
+--- src/config.c.orig	2015-09-04 19:27:22 UTC
 +++ src/config.c
-@@ -52,8 +52,7 @@
+@@ -51,8 +51,7 @@
  #include <tlslib.h>
  #include "common-config.h"
  
@@ -9,8 +9,8 @@
 +#define DEFAULT_CFG_FILE "/usr/local/etc/ocserv/conf"
  
  static char pid_file[_POSIX_PATH_MAX] = "";
- static const char* cfg_file = DEFAULT_CFG_FILE;
-@@ -414,7 +413,7 @@ static void figure_auth_funcs(struct per
+ static char cfg_file[_POSIX_PATH_MAX] = DEFAULT_CFG_FILE;
+@@ -416,7 +415,7 @@ static void figure_auth_funcs(struct per
  			}
  			talloc_free(auth[j]);
  		}
@@ -19,7 +19,7 @@
  	} else {
  		unsigned x = config->auth_methods;
  		/* Append authentication methods (alternative options) */
-@@ -583,9 +582,6 @@ size_t urlfw_size = 0;
+@@ -586,9 +585,6 @@ size_t urlfw_size = 0;
  #endif
  
  	pov = configFileLoad(file);
