@@ -4,6 +4,7 @@
 
 PORTNAME=	poedit
 PORTVERSION=	1.8.4
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://github.com/vslavik/${PORTNAME}/releases/download/v${PORTVERSION}-oss/
 
@@ -17,7 +18,7 @@ LIB_DEPENDS=	libgtkspell.so:${PORTSDIR}/textproc/gtkspell \
 		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		liblucene++.so:${PORTSDIR}/textproc/luceneplusplus
 
-USES=		gettext gmake pkgconfig desktop-file-utils
+USES=		compiler:c++11-lib desktop-file-utils gettext gmake pkgconfig
 USE_WX=		3.0
 WX_CONF_ARGS=	absolute
 WX_UNICODE=	yes
@@ -28,13 +29,14 @@ CONFIGURE_ENV=	WXRC="${WXRC_CMD}"
 INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include
+## -stdlib=libc++
 LDFLAGS+=	-lpthread -L${BDB_LIB_DIR} -L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=yes
 
-NLS_USES= gettext
-NLS_CONFIGURE_ENABLE= nls
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
 	@${REINPLACE_CMD} -e \
