@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitg
-PORTVERSION=	3.16.1
-PORTREVISION=	1
+PORTVERSION=	3.17.1
 CATEGORIES=	devel deskutils gnome
 MASTER_SITES=	GNOME
 
@@ -25,7 +24,7 @@ RUN_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-sc
 
 CONFLICTS=	gitg0-[0-9]*
 
-USES=		desktop-file-utils gmake libtool pathfix pkgconfig tar:xz
+USES=		compiler:c11 desktop-file-utils gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules \
 		--disable-maintainer-mode \
