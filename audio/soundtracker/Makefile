@@ -3,7 +3,7 @@
 
 PORTNAME=	soundtracker
 PORTVERSION=	0.6.8
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	audio
 MASTER_SITES=	http://www.soundtracker.org/dl/v${PORTVERSION:R}/
 
@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 
 GNU_CONFIGURE=	yes
-USES=		pathfix pkgconfig
+USES=		compiler pathfix pkgconfig
 USE_GNOME=	esound gdkpixbuf
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -32,16 +32,22 @@ DESKTOP_ENTRIES="SoundTracker" "Pattern-oriented music editor" \
 		"${PREFIX}/share/pixmaps/${PORTNAME}.xpm" \
 		"soundtracker" "AudioVideo;Audio;AudioVideoEditing;" false
 
-ASM_CONFIGURE_ENABLE=	asm
+ASM_CONFIGURE_ON=	--enable-asm
 
 JACK_LIB_DEPENDS=		libjack.so:${PORTSDIR}/audio/jack
-JACK_CONFIGURE_ENABLE=	jack
+JACK_CONFIGURE_OFF=	--disable-jack
 
-DSL_USE=	SDL=sdl
-DSL_CONFIGURE_ENABLE=	sdl
+SDL_USE=		SDL=sdl
+SDL_CONFIGURE_OFF=	--disable-sdl
 
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
+
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MASM} && ${CHOSEN_COMPILER_TYPE} == "clang"
+CFLAGS+=	-no-integrated-as
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|soundtracker.desktop||' \
@@ -60,4 +66,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/sharp.xpm \
 		${STAGEDIR}${PREFIX}/share/pixmaps/soundtracker.xpm
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
