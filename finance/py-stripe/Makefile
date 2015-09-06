@@ -9,7 +9,7 @@ CATEGORIES=	finance python
 MASTER_SITES=	https://code.stripe.com/stripe/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Python bindings for the Stripe.com payment system
 
 LICENSE=	MIT
