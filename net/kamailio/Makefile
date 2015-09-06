@@ -3,6 +3,7 @@
 
 PORTNAME=	kamailio
 PORTVERSION=	4.3.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.kamailio.org/pub/kamailio/${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
@@ -31,12 +32,13 @@ USE_RC_SUBR=	kamailio
 USERS=		kamailio
 GROUPS=		kamailio
 
-OPTIONS_DEFINE=	DOCS MYSQL PGSQL RADIUS JITSI JABBER TLS UNIXODBC \
-		PRESENCE WEBSOCKET
+OPTIONS_DEFINE=	DOCS MYSQL PGSQL PERL RADIUS JITSI JABBER SCTP TLS \
+		UNIXODBC PRESENCE WEBSOCKET
 OPTIONS_DEFAULT=MYSQL RADIUS JABBER TLS PRESENCE
 OPTIONS_SUB=	YES
 
 JITSI_DESC=	VoIP Frontend GUI via Jitsi
+SCTP_DESC=	SCTP support
 PRESENCE_DESC=	Presence support
 WEBSOCKET_DESC=	Websocket support
 
@@ -48,6 +50,15 @@ RADIUS_LIB_DEPENDS=	libradiusclient-ng.so:${PORTSDIR}/net/radiusclient
 TLS_USE=		OPENSSL=yes
 
 .include <bsd.port.options.mk>
+
+# avoid slow locks, use fast atomic ops
+.if ${ARCH} == "amd64"
+EXTRA_PATCHES+=	${.CURDIR}/files/extra-patch-atomic-amd64
+.endif
+
+.if ${ARCH} == "i386"
+EXTRA_PATCHES+=	${.CURDIR}/files/extra-patch-atomic-i386
+.endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 900000
 BUILD_DEPENDS+=	clang33:${PORTSDIR}/lang/clang33
@@ -63,6 +74,14 @@ EXTRA_GROUPS+=	mysql
 EXTRA_GROUPS+=	postgres
 .endif
 
+.if ${PORT_OPTIONS:MPERL}
+USES+=		perl5
+EXTRA_MODULES+=	app_perl
+MAKE_ENV+=	PERLLDOPTS=`perl -MExtUtils::Embed -e ldopts` \
+		PERLCCOPTS=`perl -MExtUtils::Embed -e ccopts` \
+		TYPEMAP=`perl -MConfig -e 'print $Config{installprivlib}'`/ExtUtils/typemap
+.endif
+
 .if ${PORT_OPTIONS:MUNIXODBC}
 EXTRA_MODULES+=	db_unixodbc
 .endif
@@ -73,6 +92,10 @@ EXTRA_GROUPS+=	radius
 
 .if ${PORT_OPTIONS:MJABBER}
 EXTRA_MODULES+=	jabber
+.endif
+
+.if ${PORT_OPTIONS:MSCTP}
+EXTRA_MODULES+=	sctp
 .endif
 
 .if ${PORT_OPTIONS:MTLS}
@@ -144,7 +167,8 @@ post-stage:
 	presence_profile presence_reginfo presence_xml pua_bla \
 	pua_dialoginfo pua_mi pua_reginfo pua_usrloc rls \
 	acc_radius misc_radius peering pua pua_xmpp xcap_client xcap_server \
-	tcpops auth_xkeys statsd dmq_usrloc rtjson websocket
+	tcpops auth_xkeys statsd dmq_usrloc rtjson websocket sctp \
+	app_perl
 	@if [ -e ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/modules/${i}.so ]; then \
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/modules/${i}.so; \
 	fi
