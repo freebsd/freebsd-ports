@@ -1,22 +1,15 @@
---- configure.ac.orig	2015-08-06 16:43:09 UTC
+--- configure.ac.orig	2015-09-04 19:27:22 UTC
 +++ configure.ac
-@@ -16,11 +16,11 @@ AM_PROG_CC_C_O
- if [ test "$GCC" = "yes" ];then
- 	CFLAGS="$CFLAGS -Wall"
+@@ -19,7 +19,7 @@ if [ test "$GCC" = "yes" ];then
  fi
--AC_PATH_PROG(CTAGS, ctags, /bin/true)
--AC_PATH_PROG(CSCOPE, cscope, /bin/true)
--AC_CHECK_PROG([AUTOGEN], [autogen], [autogen], [/bin/true])
-+AC_PATH_PROG(CTAGS, ctags, /usr/bin/true)
-+AC_PATH_PROG(CSCOPE, cscope, /usr/bin/true)
+ AC_PATH_PROG(CTAGS, ctags, [:])
+ AC_PATH_PROG(CSCOPE, cscope, [:])
+-AC_CHECK_PROG([AUTOGEN], [autogen], [autogen], [:])
 +AC_CHECK_PROG([AUTOGEN], [autogen], [autogen], [autogen])
  
--if test x"$AUTOGEN" = "x/bin/true"; then
-+if test x"$AUTOGEN" = "x:"; then
+ if test x"$AUTOGEN" = "x:"; then
  	AC_MSG_WARN([[
- ***
- *** autogen not found. Will not link against libopts.
-@@ -124,7 +124,7 @@ if test "$test_for_libnl" = yes;then
+@@ -125,7 +125,7 @@ if test "$test_for_libnl" = yes;then
  fi
  
  have_readline=no
@@ -25,11 +18,11 @@
  #include <stdio.h>
  #include <readline/readline.h>], [rl_replace_line(0,0);])
    if test x$ac_cv_libreadline = xyes; then
-@@ -441,7 +441,7 @@ if test "$NEED_LIBOPTS_DIR" = "true";the
+@@ -442,7 +442,7 @@ if test "$NEED_LIBOPTS_DIR" = "true";the
  			cp -f $i $nam
  		fi
  	done
--	AC_SUBST([AUTOGEN], [/bin/true])
+-	AC_SUBST([AUTOGEN], [:])
 +	AC_SUBST([AUTOGEN], [autogen])
  	enable_local_libopts=yes
  else
