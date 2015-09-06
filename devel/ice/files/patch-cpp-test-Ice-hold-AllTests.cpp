@@ -4,46 +4,46 @@
          ConditionPtr cond = new Condition(true);
          int value = 0;
          Ice::AsyncResultPtr result;
-+        cout << __LINE__ << endl;
++        cout << __LINE__ << " (" << time(nullptr) << ")" << endl;
          while(value < 3000 && cond->value())
          {
 +            if (!value)
-+                cout << __LINE__ << endl;
++                cout << __LINE__ << " (" << time(nullptr) << ")" << endl;
              result = holdSerialized->begin_set(value + 1,
                                                 IceUtilInternal::random(1),
                                                 newCallback_Hold_set(new SetCB(cond, value), 
                                                                      &SetCB::response, 
                                                                      &SetCB::exception));
 +            if (!value)
-+                cout << __LINE__ << endl;
++                cout << __LINE__ << " (" << time(nullptr) << ")" << endl;
              ++value;
              if(value % 100 == 0)
              {
-+                cout << __LINE__ << endl;
++                cout << __LINE__ << " (" << time(nullptr) << ")" << endl;
                  result->waitForSent();
              }
          }
-+        cout << __LINE__ << endl;
++        cout << __LINE__ << " (" << time(nullptr) << ")" << endl;
          result->waitForCompleted();
-+        cout << __LINE__ << endl;
++        cout << __LINE__ << " (" << time(nullptr) << ")" << endl;
          test(cond->value());
-+        cout << __LINE__ << endl;
++        cout << __LINE__ << " (" << time(nullptr) << ")" << endl;
  
          for(int i = 0; i < 10000; ++i)
          {
 +            if (value == 3000)
-+                cout << __LINE__ << endl;
++                cout << __LINE__ << " (" << time(nullptr) << ")" << endl;
              holdSerialized->ice_oneway()->setOneway(value + 1, value);
 +            if (value == 3000)
-+                cout << __LINE__ << endl;
++                cout << __LINE__ << " (" << time(nullptr) << ")" << endl;
              ++value;
              if((i % 100) == 0)
              {
-+                cout << __LINE__ << endl;
++                cout << __LINE__ << " (" << time(nullptr) << ")" << endl;
                  holdSerialized->ice_oneway()->putOnHold(1);
              }
          }
-+        cout << __LINE__ << endl;
++        cout << __LINE__ << " (" << time(nullptr) << ")" << endl;
      }
      cout << "ok" << endl;
  
