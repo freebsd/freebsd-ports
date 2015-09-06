@@ -17,8 +17,8 @@ LICENSE_PERMS_TTYP0=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 
 HAS_CONFIGURE=	yes
+USES=		fonts gmake perl5
 USE_PERL5=	build
-USES=		fonts gmake
 
 # Passing --prefix and --pcfdir to the configure script does not work: it is a
 # homebrewed script that relies on features only present in expr(1) from GNU
