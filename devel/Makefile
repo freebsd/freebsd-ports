@@ -1112,6 +1112,7 @@
     SUBDIR += libcli
     SUBDIR += libconfig
     SUBDIR += libconfuse
+    SUBDIR += libcutl
     SUBDIR += libcwd
     SUBDIR += libcxxrt
     SUBDIR += libdaemon
