@@ -15,6 +15,7 @@ RUN_DEPENDS=	rubygem-fog>=0:${PORTSDIR}/devel/rubygem-fog \
 		rubygem-minitar>=0:${PORTSDIR}/archivers/rubygem-minitar \
 		rubygem-thor>=0:${PORTSDIR}/devel/rubygem-thor
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
