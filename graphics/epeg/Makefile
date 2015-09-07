@@ -18,4 +18,7 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
+DEPRECATED=	Merged into devel/efl
+EXPIRATION_DATE=2015-10-10
+
 .include <bsd.port.mk>
