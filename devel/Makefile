@@ -2271,6 +2271,7 @@
     SUBDIR += p5-File-Slurp
     SUBDIR += p5-File-Slurp-Tiny
     SUBDIR += p5-File-Slurp-Tree
+    SUBDIR += p5-File-Slurper
     SUBDIR += p5-File-Spec-Native
     SUBDIR += p5-File-Stream
     SUBDIR += p5-File-Sync
