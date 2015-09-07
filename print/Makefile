@@ -260,6 +260,7 @@
     SUBDIR += utopia
     SUBDIR += xfce4-print
     SUBDIR += xmbibtex
+    SUBDIR += xpdfopen
     SUBDIR += xpp
     SUBDIR += xtexsh
     SUBDIR += yatex
