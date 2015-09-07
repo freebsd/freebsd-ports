@@ -1168,6 +1168,7 @@
     SUBDIR += slurm
     SUBDIR += smb4k-kde4
     SUBDIR += smbldap-tools
+    SUBDIR += smcroute
     SUBDIR += smm++
     SUBDIR += sniffit
     SUBDIR += sntop
