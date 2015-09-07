@@ -1,5 +1,5 @@
---- tool/rbinstall.rb.orig	2013-11-09 16:37:46.000000000 +0000
-+++ tool/rbinstall.rb	2014-02-15 19:19:08.049165962 +0000
+--- tool/rbinstall.rb.orig	2013-11-09 16:37:46 UTC
++++ tool/rbinstall.rb
 @@ -318,6 +318,7 @@
  libdir = CONFIG[CONFIG.fetch("libdirname", "libdir"), true]
  rubyhdrdir = CONFIG["rubyhdrdir", true]
