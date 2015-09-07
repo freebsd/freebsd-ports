@@ -1,6 +1,6 @@
---- ./fea/data_plane/control_socket/routing_socket.cc.orig	2011-03-16 21:27:46.000000000 +0000
-+++ ./fea/data_plane/control_socket/routing_socket.cc	2014-02-26 21:17:13.000000000 +0000
-@@ -240,9 +240,10 @@
+--- fea/data_plane/control_socket/routing_socket.cc.orig	2012-01-11 17:56:10 UTC
++++ fea/data_plane/control_socket/routing_socket.cc
+@@ -240,9 +240,10 @@ RoutingSocket::io_event(XorpFd fd, IoEve
  // Observe routing sockets activity
  //
  

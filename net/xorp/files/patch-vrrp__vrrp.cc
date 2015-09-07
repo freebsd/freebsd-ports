@@ -1,6 +1,6 @@
---- ./vrrp/vrrp.cc.orig	2011-03-16 21:27:57.000000000 +0000
-+++ ./vrrp/vrrp.cc	2014-02-26 21:17:13.000000000 +0000
-@@ -36,7 +36,7 @@
+--- vrrp/vrrp.cc.orig	2012-01-11 17:56:10 UTC
++++ vrrp/vrrp.cc
+@@ -36,7 +36,7 @@ namespace {
  
  template <class T>
  void
@@ -9,7 +9,7 @@
  {
      ostringstream oss;
  
-@@ -64,7 +64,7 @@
+@@ -64,7 +64,7 @@ Vrrp::Vrrp(VrrpVif& vif, EventLoop& e, u
        //, _arpd(_vif)
  {
      if (_vrid < 1 || _vrid > 255)
@@ -18,7 +18,7 @@
  
      char tmp[sizeof "ff:ff:ff:ff:ff:ff"];
  
-@@ -94,7 +94,7 @@
+@@ -94,7 +94,7 @@ void
  Vrrp::set_priority(uint32_t priority)
  {
      if (priority == PRIORITY_LEAVE || priority >= PRIORITY_OWN)

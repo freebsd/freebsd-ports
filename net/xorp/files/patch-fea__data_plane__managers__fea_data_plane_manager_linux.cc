@@ -1,6 +1,6 @@
---- ./fea/data_plane/managers/fea_data_plane_manager_linux.cc.orig	2011-03-16 21:27:48.000000000 +0000
-+++ ./fea/data_plane/managers/fea_data_plane_manager_linux.cc	2014-02-26 21:17:13.000000000 +0000
-@@ -71,8 +71,10 @@
+--- fea/data_plane/managers/fea_data_plane_manager_linux.cc.orig	2012-01-11 17:56:10 UTC
++++ fea/data_plane/managers/fea_data_plane_manager_linux.cc
+@@ -71,8 +71,10 @@ extern "C" void destroy(FeaDataPlaneMana
  
  
  FeaDataPlaneManagerLinux::FeaDataPlaneManagerLinux(FeaNode& fea_node)

@@ -1,6 +1,6 @@
---- ./cli/cli_client.cc.orig	2011-07-25 17:45:38.000000000 +0000
-+++ ./cli/cli_client.cc	2014-02-26 21:17:13.000000000 +0000
-@@ -832,7 +832,7 @@
+--- cli/cli_client.cc.orig	2012-01-11 17:56:10 UTC
++++ cli/cli_client.cc
+@@ -832,7 +832,7 @@ CliClient::process_char_page_mode(uint8_
      //
      // Print help
      //
@@ -9,7 +9,7 @@
  	if (! is_help_mode()) {
  	    set_help_mode(true);
  	    _is_page_buffer_mode = &_is_help_buffer_mode;
-@@ -958,7 +958,7 @@
+@@ -958,7 +958,7 @@ CliClient::process_char_page_mode(uint8_
      // Display the output all at once instead of oen screen at a time.
      // (Same as specifying the "| no-more" command.)
      //
@@ -18,7 +18,7 @@
  	while (page_buffer_last_line_n() < page_buffer_lines_n()) {
  	    set_page_buffer_mode(false);
  	    cli_print(page_buffer_line(page_buffer_last_line_n()));
-@@ -1021,7 +1021,7 @@
+@@ -1021,7 +1021,7 @@ CliClient::process_char_page_mode(uint8_
      //
      // Redraw the output of the screen
      //
