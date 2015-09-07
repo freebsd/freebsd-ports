@@ -55,7 +55,7 @@ ask() {
 	return 1
 }
 
-[ $# -le 2 ] && err "$(basename $0) requires at least 2 arguments: <branch> <revnumber> [<revnumber>...]"
+[ $# -lt 2 ] && err "$(basename $0) requires at least 2 arguments: <branch> <revnumber> [<revnumber>...]"
 branch=$1
 shift
 revs=""
