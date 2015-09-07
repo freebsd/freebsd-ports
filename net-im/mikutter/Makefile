@@ -30,6 +30,7 @@ RUN_DEPENDS=	rubygem-gtk2>=2.2.5:${PORTSDIR}/x11-toolkits/rubygem-gtk2 \
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USES=	shebangfix
 NO_BUILD=	yes
