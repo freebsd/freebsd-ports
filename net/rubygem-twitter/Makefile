@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	twitter
-PORTVERSION=	5.14.0
+PORTVERSION=	5.15.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -13,9 +13,9 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-addressable>=2.3:${PORTSDIR}/www/rubygem-addressable \
 		rubygem-buftok>=0.2.0:${PORTSDIR}/devel/rubygem-buftok \
-		rubygem-equalizer>=0.0.9:${PORTSDIR}/devel/rubygem-equalizer \
+		rubygem-equalizer>=0.0.10:${PORTSDIR}/devel/rubygem-equalizer \
 		rubygem-faraday>=0.9.0:${PORTSDIR}/www/rubygem-faraday \
-		rubygem-http>=0.6.0:${PORTSDIR}/www/rubygem-http \
+		rubygem-http>=0.4:${PORTSDIR}/www/rubygem-http \
 		rubygem-http_parser.rb>=0.6.0:${PORTSDIR}/net/rubygem-http_parser.rb \
 		rubygem-json>=1.8:${PORTSDIR}/devel/rubygem-json \
 		rubygem-memoizable>=0.4.0:${PORTSDIR}/devel/rubygem-memoizable \
