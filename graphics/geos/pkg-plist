@@ -261,6 +261,9 @@ include/geos/operation/distance/ConnectedElementLocationFilter.h
 include/geos/operation/distance/ConnectedElementPointFilter.h
 include/geos/operation/distance/DistanceOp.h
 include/geos/operation/distance/GeometryLocation.h
+include/geos/operation/intersection/Rectangle.h
+include/geos/operation/intersection/RectangleIntersection.h
+include/geos/operation/intersection/RectangleIntersectionBuilder.h
 include/geos/operation/linemerge/EdgeString.h
 include/geos/operation/linemerge/LineMergeDirectedEdge.h
 include/geos/operation/linemerge/LineMergeEdge.h
@@ -347,6 +350,7 @@ include/geos/spatialIndex.h
 include/geos/timeval.h
 include/geos/triangulate/DelaunayTriangulationBuilder.h
 include/geos/triangulate/IncrementalDelaunayTriangulator.h
+include/geos/triangulate/VoronoiDiagramBuilder.h
 include/geos/triangulate/quadedge/LastFoundQuadEdgeLocator.h
 include/geos/triangulate/quadedge/LocateFailureException.h
 include/geos/triangulate/quadedge/QuadEdge.h
@@ -378,7 +382,7 @@ lib/libgeos.so
 lib/libgeos_c.a
 lib/libgeos_c.so
 lib/libgeos_c.so.1
-lib/libgeos_c.so.1.8.2
+lib/libgeos_c.so.1.9.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/geos.pth
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/geos/_geos.a
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/geos/_geos.so
@@ -388,4 +392,3 @@ lib/libgeos_c.so.1.8.2
 %%RUBY%%%%RUBY_SITEARCHLIBDIR%%/geos.a
 %%RUBY%%%%RUBY_SITEARCHLIBDIR%%/geos.so
 %%PHP%%lib/php/%%PHP_EXT_DIR%%/geos.so
-@dir lib/geos
