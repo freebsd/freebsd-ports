@@ -3,8 +3,8 @@
 
 PORTNAME=	3proxy
 PORTVERSION=	0.7.1.2
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	ports@FreeBSD.org
@@ -29,7 +29,7 @@ post-patch:
 post-build:
 	${MV} ${WRKSRC}/src/proxy ${WRKSRC}/src/httppr
 	${MV} ${WRKSRC}/man/proxy.8 ${WRKSRC}/man/httppr.8
-	
+
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/ ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/src/ && ${INSTALL_PROGRAM} 3proxy countersutil dighosts ftppr icqpr msnpr mycrypt pop3p httppr smtpp socks tcppm udppm ${STAGEDIR}${PREFIX}/bin/
