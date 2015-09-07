@@ -1,6 +1,6 @@
---- ./rtrmgr/xorpsh_main.cc.orig	2012-01-11 17:46:45.000000000 +0000
-+++ ./rtrmgr/xorpsh_main.cc	2014-02-26 21:17:13.000000000 +0000
-@@ -146,7 +146,7 @@
+--- rtrmgr/xorpsh_main.cc.orig	2012-01-11 17:56:10 UTC
++++ rtrmgr/xorpsh_main.cc
+@@ -146,7 +146,7 @@ XorpShell::XorpShell(EventLoop& eventloo
        _verbose(verbose),
        _ipc_name(IPCname),
        _got_config(false),
@@ -9,7 +9,7 @@
        _mode(MODE_INITIALIZING),
        _xorpsh_interface(&_xrl_router, *this)
  {
-@@ -667,7 +667,7 @@
+@@ -667,7 +667,7 @@ XorpShell::config_changed(uid_t user_id,
  	_router_cli->notify_user(response, /* urgent */ true);
  	// XXX it's not clear we can continue if this happens
      }

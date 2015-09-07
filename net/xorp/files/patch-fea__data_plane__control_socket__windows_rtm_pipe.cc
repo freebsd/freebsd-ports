@@ -1,6 +1,6 @@
---- ./fea/data_plane/control_socket/windows_rtm_pipe.cc.orig	2011-03-16 21:16:01.000000000 +0000
-+++ ./fea/data_plane/control_socket/windows_rtm_pipe.cc	2014-02-26 21:17:13.000000000 +0000
-@@ -288,9 +288,10 @@
+--- fea/data_plane/control_socket/windows_rtm_pipe.cc.orig	2012-01-11 17:56:10 UTC
++++ fea/data_plane/control_socket/windows_rtm_pipe.cc
+@@ -288,9 +288,10 @@ WinRtmPipe::io_event(XorpFd fd, IoEventT
  // Observe routing sockets activity
  //
  

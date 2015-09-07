@@ -1,6 +1,6 @@
---- ./rtrmgr/template_tree_node.cc.orig	2011-03-16 21:16:14.000000000 +0000
-+++ ./rtrmgr/template_tree_node.cc	2014-02-26 21:17:13.000000000 +0000
-@@ -543,9 +543,12 @@
+--- rtrmgr/template_tree_node.cc.orig	2012-01-11 17:56:10 UTC
++++ rtrmgr/template_tree_node.cc
+@@ -543,9 +543,12 @@ TemplateTreeNode::create_variable_map(co
  {
      map<string,string> varmap;
      const TemplateTreeNode* ttn = this;
