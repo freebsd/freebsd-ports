@@ -1,6 +1,6 @@
---- config.c.orig	Fri Sep 29 11:55:19 2006
-+++ config.c	Fri Sep 29 11:55:43 2006
-@@ -343,7 +343,7 @@
+--- config.c.orig	1999-11-30 17:58:53 UTC
++++ config.c
+@@ -343,7 +343,7 @@ parse_phyint(s)
  		    v->uv_local_pref = n;
  		}
  	    
@@ -9,7 +9,7 @@
                  if(EQUAL((w = next_word(&s)), "")) 
                      log(LOG_WARNING, 0,
                          "Missing metric for phyint %s in %s",
-@@ -361,7 +361,7 @@
+@@ -361,7 +361,7 @@ parse_phyint(s)
  			    inet_fmt(local, s1), n);
  		    v->uv_local_metric = n;
  		}
