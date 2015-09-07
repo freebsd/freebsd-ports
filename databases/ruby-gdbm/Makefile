@@ -13,6 +13,9 @@ DISTFILES=	# none
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby extension to GDBM library
 
+LICENSE=	BSD2CLAUSE RUBY
+LICENSE_COMB=	dual
+
 FETCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${RUBY_PORT}:patch
 LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
 
@@ -24,7 +27,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ARGS=	sitelibdir='$$(rubylibdir)' \
 		INSTALL_PROG="${INSTALL_PROGRAM}" \
 		INSTALL_DATA="${INSTALL_DATA}"
-
 
 do-extract:
 	${MKDIR} ${WRKDIR}
