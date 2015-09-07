@@ -1,6 +1,6 @@
---- ./rtrmgr/userdb.hh.orig	2011-03-16 21:16:14.000000000 +0000
-+++ ./rtrmgr/userdb.hh	2014-02-26 21:17:13.000000000 +0000
-@@ -98,6 +98,7 @@
+--- rtrmgr/userdb.hh.orig	2012-01-11 17:56:10 UTC
++++ rtrmgr/userdb.hh
+@@ -98,6 +98,7 @@ public:
  
  private:
      map<uid_t, User*> _users;
