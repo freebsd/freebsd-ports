@@ -3637,6 +3637,7 @@
     SUBDIR += pecl-expect
     SUBDIR += pecl-gearman
     SUBDIR += pecl-hidef
+    SUBDIR += pecl-hrtime
     SUBDIR += pecl-htscanner
     SUBDIR += pecl-inclued
     SUBDIR += pecl-inotify
