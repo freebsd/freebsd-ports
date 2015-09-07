@@ -3,11 +3,11 @@
 
 PORTNAME=	libwmf
 PORTVERSION=	0.2.8.4
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	graphics
 MASTER_SITES=	SF/wvware/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	jason.unovitch@gmail.com
+MAINTAINER=	junovitch@FreeBSD.org
 COMMENT=	Tools and library for converting Microsoft WMF (windows metafile)
 
 LICENSE=	GPLv2 # or later
