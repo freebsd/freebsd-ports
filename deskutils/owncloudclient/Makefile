@@ -39,6 +39,11 @@ PLIST_SUB=	VERSION=${PORTVERSION}
 
 .if ${OPSYS} != FreeBSD || ${OSVERSION} < 1000015
 WITH_OPENSSL_PORT=	yes
+
+# CMake 3.3.x will use $PATH when looking for headers and libraries by default,
+# and OpenSSL from base will end up being used. Make sure ${LOCALBASE} is
+# preferred over $PATH.
+CMAKE_ARGS+=		-DCMAKE_PREFIX_PATH=${LOCALBASE}
 .endif
 
 post-patch:
