@@ -1,6 +1,6 @@
---- mfc/Makefile.am.orig	2005-12-11 14:15:10.000000000 +0900
-+++ mfc/Makefile.am	2013-10-17 13:52:36.000000000 +0900
-@@ -9,15 +9,19 @@
+--- mfc/Makefile.am.orig	2005-12-11 05:15:10 UTC
++++ mfc/Makefile.am
+@@ -9,15 +9,19 @@ DISTCLEANFILES = cftoken.c cfparse.c cfp
  
  # Config file parser (this is necessary because not all yacc generate y.tab.h)
  cftoken.o: cftoken.c cfparse.h
