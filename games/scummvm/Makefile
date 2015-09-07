@@ -3,14 +3,14 @@
 
 PORTNAME=	scummvm
 DISTVERSION=	1.7.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games emulators
 MASTER_SITES=	SF
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Interpreter for several adventure games
 
-USES=		gmake tar:bzip2
+USES=		gmake jpeg tar:bzip2
 HAS_CONFIGURE=	yes
 USE_SDL=	sdl
 
@@ -20,6 +20,11 @@ CONFIGURE_ARGS=	--with-sdl-prefix=${LOCALBASE} \
 		--disable-debug \
 		--disable-nasm \
 		--disable-tremor
+
+.if defined(BATCH) || defined(PACKAGE_BUILDING)
+CONFIGURE_ARGS+=	--enable-verbose-build
+.endif
+
 LDFLAGS+=	-lpthread
 
 OPTIONS_DEFINE=	VORBIS MP3 PNG FLAC FLUIDSYNTH MT32EMU DOCS
@@ -53,20 +58,18 @@ MT32EMU_CONFIGURE_OFF=	--disable-mt32emu
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64
-.endif
-
 .if ${ARCH} == "armv6"
 CONFIGURE_ENV+=	ASFLAGS=-meabi=5
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^mandir=/s/datarootdir/prefix/' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/^mandir=/s/datarootdir/prefix/' \
+		${WRKSRC}/configure
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DESKTOPDIR}
-	${INSTALL_DATA} ${WRKSRC}/dists/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}/
+	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/dists/${PORTNAME}.desktop \
+		${STAGEDIR}${DESKTOPDIR}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.post.mk>
