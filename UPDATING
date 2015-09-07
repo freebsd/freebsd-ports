@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150908:
+  AFFECTS: users of print/texlive-base
+  AUTHOR: hrs@FreeBSD.org
+
+ pdfclose and pdfopen utilities in print/texlive-base are now in a separate
+ port print/xpdfopen.  While upgrading print/texlive-base, a conflict may
+ occur between pdfclose utility installed by an old print/texlive-base and
+ one being installed by print/xpdfopen.  If it occurred on your system,
+ remove the installed print/texlive-base first by using the following
+ command:
+
+  # pkg delete -f texlive-base
+
 20150901:
   AFFECTS: users of editors/libreoffice
   AUTHOR: jkim@FreeBSD.org
