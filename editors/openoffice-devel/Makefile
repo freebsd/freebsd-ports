@@ -132,8 +132,8 @@ JAVA_BUILD=	jdk
 JAVA_VENDOR=	openjdk
 JAVA_VERSION=	1.6+
 USE_PERL5=	build
-USE_XORG=	x11 ice xaw xau xext xrender xrandr \
-		xi xt xcursor xdamage xcomposite xfixes
+USE_XORG=	ice x11 xau xaw xcomposite xcursor xdamage xext xfixes xi \
+		xrandr xrender xt
 USES=		autoreconf:autoconf bison compiler cpe desktop-file-utils \
 		gettext-runtime gmake iconv jpeg perl5 pkgconfig python \
 		tar:${TARTYPE}
