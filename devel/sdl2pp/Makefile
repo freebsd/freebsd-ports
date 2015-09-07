@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sdl2pp
-PORTVERSION=	0.8.2
+PORTVERSION=	0.9.0
 CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -18,7 +18,7 @@ GH_PROJECT=	libSDL2pp
 USES=		compiler:c++11-lib cmake
 CMAKE_ARGS=	-DRUN_GUI_TESTS=OFF \
 		-DSDL2PP_WITH_WERROR=ON
-USE_SDL=	sdl2 image2 ttf2
+USE_SDL=	sdl2 image2 mixer2 ttf2
 
 PORTDOCS=	*
 
