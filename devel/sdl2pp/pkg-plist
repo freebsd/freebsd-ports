@@ -1,9 +1,12 @@
 include/SDL2pp/AudioDevice.hh
 include/SDL2pp/AudioSpec.hh
+include/SDL2pp/Chunk.hh
 include/SDL2pp/Config.hh
 include/SDL2pp/ContainerRWops.hh
 include/SDL2pp/Exception.hh
 include/SDL2pp/Font.hh
+include/SDL2pp/Mixer.hh
+include/SDL2pp/Music.hh
 include/SDL2pp/Optional.hh
 include/SDL2pp/Point.hh
 include/SDL2pp/RWops.hh
@@ -12,6 +15,7 @@ include/SDL2pp/Renderer.hh
 include/SDL2pp/SDL.hh
 include/SDL2pp/SDL2pp.hh
 include/SDL2pp/SDLImage.hh
+include/SDL2pp/SDLMixer.hh
 include/SDL2pp/SDLTTF.hh
 include/SDL2pp/StreamRWops.hh
 include/SDL2pp/Surface.hh
@@ -20,7 +24,7 @@ include/SDL2pp/Wav.hh
 include/SDL2pp/Window.hh
 include/SDL2pp/external/libcpp_optional.hh
 lib/libSDL2pp.so
-lib/libSDL2pp.so.4
-lib/libSDL2pp.so.4.1.0
+lib/libSDL2pp.so.5
+lib/libSDL2pp.so.5.0.0
 libdata/pkgconfig/sdl2pp.pc
 share/cmake/Modules/FindSDL2PP.cmake
