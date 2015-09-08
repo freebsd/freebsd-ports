@@ -63,14 +63,14 @@ Notes:
     <affects>
       <package>
 	<name>php5</name>
-	<name>php56-soap</name>
-	<name>php56-xsl</name>
+	<name>php5-soap</name>
+	<name>php5-xsl</name>
 	<range><lt>5.4.45</lt></range>
       </package>
       <package>
 	<name>php55</name>
-	<name>php56-soap</name>
-	<name>php56-xsl</name>
+	<name>php55-soap</name>
+	<name>php55-xsl</name>
 	<range><lt>5.5.29</lt></range>
       </package>
       <package>
@@ -135,6 +135,7 @@ Notes:
     <dates>
       <discovery>2015-09-03</discovery>
       <entry>2015-09-08</entry>
+      <modified>2015-09-08</modified>
     </dates>
   </vuln>
 
