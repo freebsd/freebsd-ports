@@ -1,5 +1,5 @@
-bin/halog
 man/man1/haproxy.1.gz
+sbin/halog
 sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/acl.fig
 %%PORTDOCS%%%%DOCSDIR%%/architecture.txt
