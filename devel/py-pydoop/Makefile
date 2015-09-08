@@ -14,8 +14,9 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/yarn:${PORTSDIR}/devel/hadoop2
 RUN_DEPENDS=	${LOCALBASE}/bin/yarn:${PORTSDIR}/devel/hadoop2
 
 USES=		python:2
-USE_PYTHON=	distutils
+USE_PYTHON=	distutils autoplist
 USE_JAVA=	1.7
-MAKE_ENV+=	HADOOP_HOME=${LOCALBASE}
+MAKE_ENV+=	HADOOP_HOME=${LOCALBASE} \
+		JAVA_HOME=${JAVA_HOME}
 
 .include <bsd.port.mk>
