@@ -265,6 +265,7 @@
     SUBDIR += python32
     SUBDIR += python33
     SUBDIR += python34
+    SUBDIR += python35
     SUBDIR += qore
     SUBDIR += qscheme
     SUBDIR += qt5-qml
