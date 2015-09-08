@@ -2,19 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	tiled
-PORTVERSION=	0.12.3
+PORTVERSION=	0.13.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics editors games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	General purpose tile map editor
 
-USES=		desktop-file-utils shared-mime-info qmake
-USE_QT4=	corelib gui opengl \
-		linguisttools_build moc_build uic_build rcc_build
-USE_LDCONFIG=	yes
+LICENSE=	GPLv2 # or later
+LICENSE+=	BSD2CLAUSE BSD3CLAUSE
+LICENSE_COMB=	multi
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	bjorn
+
+USES=		compiler:c++11-lib desktop-file-utils qmake shared-mime-info
+USE_QT5=	core gui widgets opengl buildtools_build linguisttools_build
+USE_GL=		gl
+USE_LDCONFIG=	yes
 
 PORTDOCS=	*
 
@@ -27,16 +32,10 @@ PYTHON_USES=	pkgconfig python:2.7
 PYTHON_QMAKE_OFF=	DISABLE_PYTHON_PLUGIN=yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|lrelease|&-qt4|' \
-		${WRKSRC}/translations/translations.pro
-	@${REINPLACE_CMD} -e 's|.*\(QT += opengl\)|\1|' \
-		${WRKSRC}/src/tiled/tiled.pro
 	@${FIND} ${WRKSRC} -name "*.pro" -exec ${REINPLACE_CMD} -e 's|share/man|man|' {} \;
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}/
-	${CP} ${STAGEDIR}${PREFIX}/share/icons/hicolor/32x32/apps/tiled.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>
