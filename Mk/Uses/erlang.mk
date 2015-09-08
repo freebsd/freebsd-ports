@@ -62,7 +62,7 @@ ERLANG_COMPILE=	${REBAR_CMD}
 .endif
 
 .if ${erlang_ARGS:Mrebar3}
-ERLANG_COMPILE=	${REBAR3_CMD}
+ERLANG_COMPILE=	HOME=${WRKDIR} ${REBAR3_CMD}
 .endif
 
 _USES_patch+=	650:post-patch-erlang
