@@ -58,6 +58,32 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b5e654c3-5644-11e5-9ad8-14dae9d210b8">
+    <topic>libvncserver -- memory corruption</topic>
+    <affects>
+      <package>
+	<name>libvncserver</name>
+	<range><lt>0.9.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Petr Pisar reports:</p>
+	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=706087">
+	  <p>libvncserver/tight.c:rfbTightCleanup() frees a buffer without zeroing freed pointer.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=706087</url>
+      <url>https://github.com/LibVNC/libvncserver/commit/804335f9d296440bb708ca844f5d89b58b50b0c6</url>
+    </references>
+    <dates>
+      <discovery>2011-05-19</discovery>
+      <entry>2015-09-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ed0ecad5-531d-11e5-9850-bcaec565249c">
     <topic>gdk-pixbuf2 -- integer overflows</topic>
     <affects>
