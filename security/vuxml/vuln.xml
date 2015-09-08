@@ -58,6 +58,32 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d68df01b-564e-11e5-9ad8-14dae9d210b8">
+    <topic>ganglia-webfrontent -- auth bypass</topic>
+    <affects>
+      <package>
+	<name>ganglia-webfrontent</name>
+	<range><lt>3.7.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ivan Novikov reports:</p>
+	<blockquote cite="https://github.com/ganglia/ganglia-web/issues/267">
+	  <p>It's easy to bypass auth by using boolean serialization...</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/ganglia/ganglia-web/issues/267</url>
+      <cvename>CVE-2015-6816</cvename>
+    </references>
+    <dates>
+      <discovery>2015-09-04</discovery>
+      <entry>2015-09-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9bdd8eb5-564a-11e5-9ad8-14dae9d210b8">
     <topic>wireshark -- multiple vulnerabilities</topic>
     <affects>
