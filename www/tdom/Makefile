@@ -14,7 +14,7 @@ TDOMBASE=	${PREFIX}/lib/tdom${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		gmake tcl tar:tgz
+USES=		gmake tar:tgz tcl
 USE_GITHUB=	yes
 GH_PROJECT=	tdom
 
@@ -34,24 +34,22 @@ HTMLDOCS=	category-index.html dom.html domDoc.html domNode.html \
 post-build test:
 	${SETENV} LANG=C ${MAKE} -C ${WRKSRC} test
 
-.include <bsd.port.options.mk>
-
 CONFIGURE_ARGS+=--enable-threads --disable-tdomalloc \
 		--with-tcl=${TCL_LIBDIR} \
 		--with-tclinclude=${TCL_INCLUDEDIR} \
 		--prefix=${PREFIX} --exec-prefix=${PREFIX}
 
 post-install:
-	chmod 755 ${STAGEDIR}${TDOMBASE}
-	chmod 644 ${STAGEDIR}${TDOMBASE}/*
-.if ${PORT_OPTIONS:MDOCS}
+	${CHMOD} 755 ${STAGEDIR}${TDOMBASE}
+	${CHMOD} 644 ${STAGEDIR}${TDOMBASE}/*
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
-. for FILE in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/../${FILE} ${STAGEDIR}${DOCSDIR}/${FILE}
-. endfor
-. for FILE in ${HTMLDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/../doc/${FILE} ${STAGEDIR}${DOCSDIR}/html/${FILE}
-. endfor
-.endif
+.for FILE in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/../${FILE} ${STAGEDIR}${DOCSDIR}/${FILE}
+.endfor
+.for FILE in ${HTMLDOCS}
+	${INSTALL_DATA} ${WRKSRC}/../doc/${FILE} ${STAGEDIR}${DOCSDIR}/html/${FILE}
+.endfor
 
 .include <bsd.port.mk>
