@@ -159,6 +159,10 @@ bin/rexify
 %%SITE_PERL%%/Rex/Helper/Misc.pm
 %%SITE_PERL%%/Rex/Helper/UserAgent.pm
 %%SITE_PERL%%/Rex/Helper/URI.pm
+%%SITE_PERL%%/Rex/Helper/File/Spec.pm
+%%SITE_PERL%%/Rex/Helper/File/Stat.pm
+%%SITE_PERL%%/Rex/Helper/File/Stat/Unix.pm
+%%SITE_PERL%%/Rex/Helper/File/Stat/Win32.pm
 %%SITE_PERL%%/Rex/Hook.pm
 %%SITE_PERL%%/Rex/Require.pm
 %%SITE_PERL%%/Rex/Interface/Cache.pm
@@ -270,6 +274,7 @@ bin/rexify
 %%SITE_PERL%%/Rex/Service/ALT/systemd.pm
 %%SITE_PERL%%/Rex/Service/Base.pm
 %%SITE_PERL%%/Rex/Service/Debian.pm
+%%SITE_PERL%%/Rex/Service/Debian/systemd.pm
 %%SITE_PERL%%/Rex/Service/FreeBSD.pm
 %%SITE_PERL%%/Rex/Service/Gentoo.pm
 %%SITE_PERL%%/Rex/Service/Gentoo/systemd.pm
