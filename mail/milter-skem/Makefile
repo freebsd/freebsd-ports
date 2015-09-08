@@ -30,10 +30,6 @@ OPTIONS_DEFAULT=	SKEM_NETINET
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not compile on powerpc
-.endif
-
 MAKE_ENV+=	PTHREAD_LIBS="-lpthread"
 
 .for o in ${PORT_OPTIONS:MSKEM_*}
@@ -41,5 +37,8 @@ MAKE_ENV+=	PTHREAD_LIBS="-lpthread"
 MAKE_ARGS+=	-D$o
 .	endif
 .endfor
+
+post-patch:
+	@${REINPLACE_CMD} -E 's/char[[:blank:]]+c;/int c;/' ${WRKSRC}/milter.c
 
 .include <bsd.port.mk>
