@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.arpalert.org/src/ \
 MAINTAINER=	jake@xz.cx
 COMMENT=	MySQL Simple Asynchronous Client
 
-LICENSE=	GPLv3
+LICENSE=	LGPL3
 
 USE_LDCONFIG=	yes
 USE_MYSQL=	yes
