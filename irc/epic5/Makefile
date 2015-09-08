@@ -21,7 +21,7 @@ OPTIONS_DEFINE=	DOCS PERL RUBY TCL TERMCAP
 TERMCAP_DESC=	Refuse to use terminfo/ncurses
 
 CONFIGURE_ARGS+=--with-iconv=${ICONV_PREFIX}
-USES=		iconv tar:bzip2
+USES=		iconv libarchive tar:bzip2
 
 PERL_USES=	perl5
 PERL_CONFIGURE_WITH=	perl
