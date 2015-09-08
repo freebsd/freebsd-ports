@@ -58,6 +58,38 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3904f759-5659-11e5-a207-6805ca0b3d42">
+    <topic>phpMyAdmin -- reCaptcha bypass</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><ge>4.4.0</ge><lt>4.4.14.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="https://www.phpmyadmin.net/security/PMASA-2015-4/">
+	  <p>This vulnerability allows to complete the reCaptcha test
+	    and subsequently perform a brute force attack to guess user
+	    credentials without having to complete further reCaptcha
+	    tests.</p>
+
+	  <p>We consider this vulnerability to be non critical since
+	    reCaptcha is an additional opt-in security measure.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.phpmyadmin.net/security/PMASA-2015-4/</url>
+      <cvename>CVE-2015-6830</cvename>
+    </references>
+    <dates>
+      <discovery>2015-09-08</discovery>
+      <entry>2015-09-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3d675519-5654-11e5-9ad8-14dae9d210b8">
     <topic>php -- multiple vulnerabilities</topic>
     <affects>
