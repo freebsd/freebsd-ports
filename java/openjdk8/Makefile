@@ -6,9 +6,19 @@ CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}/promoted/b${DIST_BUILD_NUMBER}/:jdk \
 		https://adopt-openjdk.ci.cloudbees.com/job/jtreg/${JTREG_JENKINS_BUILD}/artifact/:jtreg \
 		LOCAL/jkim:jdk,jtreg
+PATCH_SITES=	LOCAL/glewis/openjdk8
 PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
 DISTNAME=	${PORTNAME}-${JDK_MAJOR_VERSION}-src-b${DIST_BUILD_NUMBER}-03_mar_2014
 DISTFILES=	${DISTNAME}.zip:jdk
+PATCHFILES=	patch-8u05-b13.gz \
+		patch-8u11-b13.gz \
+		patch-8u20-b26.gz \
+		patch-8u25-b17.gz \
+		patch-8u31-b13.gz \
+		patch-8u40-b25.gz \
+		patch-8u45-b14.gz \
+		patch-8u51-b16.gz \
+		patch-8u60-b23.gz
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT?=	Java Development Kit ${JDK_MAJOR_VERSION}
