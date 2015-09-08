@@ -54,17 +54,10 @@ BINS=		cvpcb eeschema gerbview kicad pcbnew
 EXTRAS2RM=	linux-non_unicode linux wings3d LINUX.README	\
 		contrib_makefiles.txt running_kicad_under_W98.txt
 
-.include <bsd.port.options.mk>
+# undefined reference to `std::chrono::_V2::steady_clock::now()@GLIBCXX_3.4.19'
+BROKEN_FreeBSD_9=	does not link
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-#	undefined reference to `std::chrono::_V2::steady_clock::now()@GLIBCXX_3.4.19'
-BROKEN=	Does not link
-.endif
-
-.if {PORT_OPTIONS:MDOCS}
-LICENSE+=	GFDL
-LICENSE_COMB=	multi
-.endif
+DOCS_VARS=	LICENSE+=GFDL LICENSE_COMB=multi
 
 post-patch:
 	${MV} ${WRKSRC}/include/boost ${WRKSRC}/include/boost.orig
@@ -83,12 +76,14 @@ post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC}/library && ${COPYTREE_SHARE} library ${STAGEDIR}${DATADIR})
 	(cd ${WRKSRC}/library && ${COPYTREE_SHARE} modules ${STAGEDIR}${DATADIR})
+
 post-install-NLS-on:
 	${MKDIR} ${STAGEDIR}${DATADIR}/internat
 	(cd ${WRKSRC}/doc/internat &&	\
 		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/internat)
 	${RM} -f ${STAGEDIR}${DATADIR}/internat/CMakeLists.txt
 	${FIND} ${STAGEDIR}${DATADIR}/internat -name kicad.po -delete
+
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
