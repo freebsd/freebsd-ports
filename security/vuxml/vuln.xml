@@ -58,6 +58,33 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="98092444-5645-11e5-9ad8-14dae9d210b8">
+    <topic>screen -- stack overflow</topic>
+    <affects>
+      <package>
+	<name>screen</name>
+	<range><lt>4.3.1_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Kuang-che Wu reports:</p>
+	<blockquote cite="https://savannah.gnu.org/bugs/?45713">
+	  <p>screen will recursively call MScrollV to depth n/256. This
+	    is time consuming and will overflow stack if n is huge.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://savannah.gnu.org/bugs/?45713</url>
+      <cvename>CVE-2015-6806</cvename>
+    </references>
+    <dates>
+      <discovery>2015-08-07</discovery>
+      <entry>2015-09-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b5e654c3-5644-11e5-9ad8-14dae9d210b8">
     <topic>libvncserver -- memory corruption</topic>
     <affects>
