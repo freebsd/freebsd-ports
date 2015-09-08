@@ -59,10 +59,10 @@ Notes:
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="d68df01b-564e-11e5-9ad8-14dae9d210b8">
-    <topic>ganglia-webfrontent -- auth bypass</topic>
+    <topic>ganglia-webfrontend -- auth bypass</topic>
     <affects>
       <package>
-	<name>ganglia-webfrontent</name>
+	<name>ganglia-webfrontend</name>
 	<range><lt>3.7.1</lt></range>
       </package>
     </affects>
@@ -81,6 +81,7 @@ Notes:
     <dates>
       <discovery>2015-09-04</discovery>
       <entry>2015-09-08</entry>
+      <modified>2015-09-08</modified>
     </dates>
   </vuln>
 
