@@ -64,6 +64,7 @@ Notes:
       <package>
 	<name>wireshark</name>
 	<name>wireshark-lite</name>
+	<name>wireshark-qt5</name>
 	<name>tshark</name>
 	<name>tshark-lite</name>
 	<range><lt>1.12.7</lt></range>
@@ -112,6 +113,7 @@ Notes:
     <dates>
       <discovery>2015-08-12</discovery>
       <entry>2015-09-08</entry>
+      <modified>2015-09-08</modified>
     </dates>
   </vuln>
 
