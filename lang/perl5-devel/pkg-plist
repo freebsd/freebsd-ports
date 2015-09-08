@@ -763,6 +763,7 @@ etc/perl5_version
 %%ARCH_LIB%%/File/DosGlob.pm
 %%ARCH_LIB%%/File/Glob.pm
 %%ARCH_LIB%%/File/Spec.pm
+%%ARCH_LIB%%/File/Spec/AmigaOS.pm
 %%ARCH_LIB%%/File/Spec/Cygwin.pm
 %%ARCH_LIB%%/File/Spec/Epoc.pm
 %%ARCH_LIB%%/File/Spec/Functions.pm
@@ -1060,6 +1061,7 @@ etc/perl5_version
 %%MAN3%%/File::GlobMapper.3.gz
 %%MAN3%%/File::Path.3.gz
 %%MAN3%%/File::Spec.3.gz
+%%MAN3%%/File::Spec::AmigaOS.3.gz
 %%MAN3%%/File::Spec::Cygwin.3.gz
 %%MAN3%%/File::Spec::Epoc.3.gz
 %%MAN3%%/File::Spec::Functions.3.gz
