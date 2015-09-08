@@ -1586,10 +1586,14 @@ Notes:
       <url>http://php.net/ChangeLog-5.php#5.4.44</url>
       <url>http://php.net/ChangeLog-5.php#5.5.28</url>
       <url>http://php.net/ChangeLog-5.php#5.6.12</url>
+      <cvename>CVE-2015-6831</cvename>
+      <cvename>CVE-2015-6832</cvename>
+      <cvename>CVE-2015-6833</cvename>
     </references>
     <dates>
       <discovery>2015-08-06</discovery>
       <entry>2015-08-17</entry>
+      <modified>2015-09-08</modified>
     </dates>
   </vuln>
 
