@@ -33,6 +33,7 @@ CMAKE_ARGS=	-DUSE_SYSTEM_FFMPEG=on
 QMAKE_SOURCE_PATH=	${WRKSRC}/Qt/PPSSPPQt.pro
 QMAKE_ARGS=	CONFIG+="system_ffmpeg" LREL_TOOL="${LRELEASE}"
 NINJA_VERBOSE=	yes
+NO_INSTALL=	yes # ports/202949
 
 OPTIONS_DEFAULT=QT5
 OPTIONS_SINGLE=	GUI
@@ -64,19 +65,7 @@ post-patch:
 		${WRKSRC}/git-version.cmake \
 		${WRKSRC}/Qt/Settings.pri
 
-do-install:
-# XXX Vendor install is incomplete
-	${INSTALL_DATA} ${WRKSRC}/debian/${PORTNAME}.desktop \
-		${STAGEDIR}${DESKTOPDIR}
-	${INSTALL_MAN} ${WRKSRC}/debian/${PORTNAME}.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1
-	(cd ${WRKSRC}/assets/unix-icons && ${COPYTREE_SHARE} \
-		"hicolor" ${STAGEDIR}${PREFIX}/share/icons)
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
-	${INSTALL_DATA} ${WRKSRC}/assets/unix-icons/icon-512.svg \
-		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${PORTNAME}.svg
-
-post-install-SDL-on:
+do-install-SDL-on:
 # cmake doesn't pack assets into the app unlike qmake
 # XXX Convert to ${PORTDATA:N${PORTNAME}} once fmake is EOL
 	(cd ${INSTALL_WRKSRC} && ${COPYTREE_SHARE} \
@@ -86,8 +75,19 @@ post-install-SDL-on:
 		${STAGEDIR}${DATADIR}/${PORTNAME}
 	${LN} -sf ${DATADIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
-post-install-SDL-off:
+do-install-SDL-off:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/debian/${PORTNAME}.desktop \
+		${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_MAN} ${WRKSRC}/debian/${PORTNAME}.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1
+	(cd ${WRKSRC}/assets/unix-icons && ${COPYTREE_SHARE} \
+		"hicolor" ${STAGEDIR}${PREFIX}/share/icons)
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
+	${INSTALL_DATA} ${WRKSRC}/assets/unix-icons/icon-512.svg \
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${PORTNAME}.svg
 
 .include <bsd.port.mk>
