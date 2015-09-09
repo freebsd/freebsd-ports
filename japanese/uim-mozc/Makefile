@@ -13,4 +13,6 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 BUILD_MOZC_LIST=uim_mozc
 
+MAKE_JOBS_UNSAFE=yes
+
 .include "${MASTERDIR}/Makefile"
