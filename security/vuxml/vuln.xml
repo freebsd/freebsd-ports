@@ -58,6 +58,37 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d76961da-56f6-11e5-934b-002590263bf5">
+    <topic>pgbouncer -- failed auth_query lookup leads to connection as auth_user</topic>
+    <affects>
+      <package>
+	<name>pgbouncer</name>
+	<range><eq>1.6.0</eq></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PgBouncer reports:</p>
+	<blockquote cite="http://pgbouncer.github.io/2015/09/pgbouncer-1-6-1/">
+	  <p>New auth_user functionality introduced in 1.6 allows login as
+	    auth_user when client presents unknown username. It's quite likely
+	    auth_user is superuser. Affects only setups that have enabled
+	    auth_user in their config.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-6817</cvename>
+      <url>https://pgbouncer.github.io/2015/09/pgbouncer-1-6-1/</url>
+      <url>https://github.com/pgbouncer/pgbouncer/issues/69</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/09/04/3</url>
+    </references>
+    <dates>
+      <discovery>2015-09-03</discovery>
+      <entry>2015-09-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3904f759-5659-11e5-a207-6805ca0b3d42">
     <topic>phpMyAdmin -- reCaptcha bypass</topic>
     <affects>
