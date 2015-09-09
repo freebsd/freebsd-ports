@@ -22,8 +22,6 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 MAKE_JOBS_UNSAFE=	yes
 
-.include <bsd.port.options.mk>
-
 post-patch:
 # Change "cd foo && $(MAKE)" into "$(MAKE) -C foo"
 	@${REINPLACE_CMD} -E 's,cd (.+) && (\$$\(MAKE\)),\2 -C \1, ; \
@@ -36,14 +34,14 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${PROGRAMS:S,^,${WRKSRC}/bin/,} ${STAGEDIR}${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/documents/,} ${STAGEDIR}${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR} ${STAGEDIR}${PREFIX}/share/examples/mace2
 	(cd ${WRKSRC}/examples; ${PAX} -rw . ${STAGEDIR}${EXAMPLESDIR})
 	(cd ${WRKSRC}/examples-mace2; ${PAX} -rw . ${STAGEDIR}${PREFIX}/share/examples/mace2)
-.endif
 
 .include <bsd.port.mk>
