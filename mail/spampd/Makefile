@@ -3,6 +3,7 @@
 
 PORTNAME=	spampd
 PORTVERSION=	2.42
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 
 MAINTAINER=	des@FreeBSD.org
@@ -17,6 +18,7 @@ NO_BUILD=	yes
 PLIST_FILES=	sbin/spampd
 USES=		perl5 shebangfix
 SHEBANG_FILES=	spampd.pl
+SUB_LIST=	PERL=${PERL}
 USE_RC_SUBR=	spampd
 
 USE_GITHUB=	yes
