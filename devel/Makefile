@@ -637,7 +637,6 @@
     SUBDIR += git-bzr-ng
     SUBDIR += git-codereview
     SUBDIR += git-extras
-    SUBDIR += git-list
     SUBDIR += git-lite
     SUBDIR += git-merge-changelog
     SUBDIR += git-modes
@@ -648,6 +647,7 @@
     SUBDIR += gitg0
     SUBDIR += github-backup-utils
     SUBDIR += gitinspector
+    SUBDIR += gitlist
     SUBDIR += gitolite
     SUBDIR += gitolite2
     SUBDIR += gitphp
