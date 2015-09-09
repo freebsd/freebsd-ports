@@ -273,6 +273,7 @@
     SUBDIR += kdenetwork4
     SUBDIR += kdenetwork4-filesharing
     SUBDIR += kdenetwork4-strigi-analyzers
+    SUBDIR += kea
     SUBDIR += kget
     SUBDIR += kio-upnp-ms
     SUBDIR += kippo
