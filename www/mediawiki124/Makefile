@@ -3,6 +3,7 @@
 
 PORTNAME=	mediawiki
 PORTVERSION=	1.24.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://releases.wikimedia.org/mediawiki/${PORTVERSION:R}/
 PKGNAMESUFFIX=	124
@@ -30,13 +31,14 @@ PLIST=		${WRKDIR}/plist
 SUB_FILES=	pkg-message
 SUB_LIST=	MEDIAWIKIDIR=${PREFIX}/${MEDIAWIKIDIR}
 
-OPTIONS_DEFINE=	MYSQL PGSQL SQLITE LDAP MEMCACHED APC XCACHE IMAGICK
-OPTIONS_DEFAULT=MYSQL
+OPTIONS_DEFINE=	MYSQL PGSQL SQLITE LDAP MEMCACHED APC XCACHE IMAGICK SOCKETS
+OPTIONS_DEFAULT=MYSQL SOCKETS
 
 MEMCACHED_DESC=	Use memcached
 APC_DESC=	Use pecl-APC (Mediawiki recommended)
 XCACHE_DESC=	Use xCache (instead of pecl-APC)
 IMAGICK_DESC=	Use ImageMagick
+SOCKETS_DESC=	Use sockets
 
 .include <bsd.port.options.mk>
 
@@ -69,6 +71,10 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:${PORTSDIR}/graphic
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/apc.so:${PORTSDIR}/www/pecl-APC
 .elif ${PORT_OPTIONS:MXCACHE}
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xcache.so:${PORTSDIR}/www/xcache
+.endif
+
+.if ${PORT_OPTIONS:MSOCKETS}
+USE_PHP+=	sockets
 .endif
 
 pre-install:
