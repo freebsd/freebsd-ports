@@ -1,5 +1,5 @@
---- base/allocator/allocator_extension.cc	2015-04-15 00:18:47.000000000 +0200
-+++ base/allocator/allocator_extension.cc	2015-04-18 21:44:25.000000000 +0200
+--- base/allocator/allocator_extension.cc   2015-04-15 00:18:47.000000000 +0200
++++ base/allocator/allocator_extension.cc   2015-04-18 21:44:25.000000000 +0200
 @@ -35,20 +35,20 @@
  void SetGetAllocatorWasteSizeFunction(
      thunks::GetAllocatorWasteSizeFunction get_allocator_waste_size_function) {
@@ -24,8 +24,8 @@
    thunks::SetReleaseFreeMemoryFunction(release_free_memory_function);
  }
  
---- base/strings/safe_sprintf_unittest.cc	2015-04-15 00:18:48.000000000 +0200
-+++ base/strings/safe_sprintf_unittest.cc	2015-04-18 22:08:45.000000000 +0200
+--- base/strings/safe_sprintf_unittest.cc   2015-04-15 00:18:48.000000000 +0200
++++ base/strings/safe_sprintf_unittest.cc   2015-04-18 22:08:45.000000000 +0200
 @@ -729,12 +729,14 @@
  #pragma GCC diagnostic push
  #pragma GCC diagnostic ignored "-Wconversion-null"
@@ -41,8 +41,8 @@
  #if defined(__GCC__)
  #pragma GCC diagnostic pop
  #endif
---- base/threading/thread_local_storage_unittest.cc	2015-04-15 00:18:48.000000000 +0200
-+++ base/threading/thread_local_storage_unittest.cc	2015-04-18 21:45:40.000000000 +0200
+--- base/threading/thread_local_storage_unittest.cc 2015-04-15 00:18:48.000000000 +0200
++++ base/threading/thread_local_storage_unittest.cc 2015-04-18 21:45:40.000000000 +0200
 @@ -60,7 +60,7 @@
  void ThreadLocalStorageCleanup(void *value) {
    int *ptr = reinterpret_cast<int*>(value);
@@ -52,9 +52,9 @@
    if (*ptr == kFinalTlsValue)
      return;  // We've been called enough times.
    ASSERT_LT(kFinalTlsValue, *ptr);
---- base/tracked_objects.cc	2015-04-15 00:31:20.000000000 +0200
-+++ base/tracked_objects.cc	2015-04-18 21:57:33.000000000 +0200
-@@ -393,7 +393,7 @@
+--- base/tracked_objects.cc 2015-04-15 00:31:20.000000000 +0200
++++ base/tracked_objects.cc 2015-04-18 21:57:33.000000000 +0200
+@@ -425,7 +425,7 @@
    }
    // We must NOT do any allocations during this callback.
    // Using the simple linked lists avoids all allocations.
@@ -63,8 +63,8 @@
    this->next_retired_worker_ = first_retired_worker_;
    first_retired_worker_ = this;
  }
---- base/tracked_objects_unittest.cc	2015-04-15 00:31:20.000000000 +0200
-+++ base/tracked_objects_unittest.cc	2015-04-18 22:01:28.000000000 +0200
+--- base/tracked_objects_unittest.cc.orig   2015-08-22 15:01:51.000000000 -0400
++++ base/tracked_objects_unittest.cc    2015-09-03 09:20:53.370191000 -0400
 @@ -58,9 +58,9 @@
      Births* birth = ThreadData::TallyABirthIfActive(location);
  
@@ -77,18 +77,27 @@
    }
  
    // Helper function to verify the most common test expectations.
-@@ -271,7 +271,7 @@
-   }
+@@ -240,7 +240,7 @@
+   ThreadData::InitializeAndSetTrackingStatus(ThreadData::PROFILING_ACTIVE);
  
    scoped_ptr<DeathData> data(new DeathData());
 -  ASSERT_NE(data, reinterpret_cast<DeathData*>(NULL));
 +  ASSERT_NE(data, static_cast<DeathData*>(NULL));
    EXPECT_EQ(data->run_duration_sum(), 0);
+   EXPECT_EQ(data->run_duration_max(), 0);
    EXPECT_EQ(data->run_duration_sample(), 0);
-   EXPECT_EQ(data->queue_duration_sum(), 0);
+@@ -279,7 +279,7 @@
+   ThreadData::InitializeAndSetTrackingStatus(ThreadData::PROFILING_ACTIVE);
+ 
+   scoped_ptr<DeathData> data(new DeathData());
+-  ASSERT_NE(data, reinterpret_cast<DeathData*>(NULL));
++  ASSERT_NE(data, static_cast<DeathData*>(NULL));
+ 
+   int32 run_ms = 42;
+   int32 queue_ms = 8;
 --- chrome/browser/sync/glue/synced_session_tracker.cc	2015-04-15 00:18:50.000000000 +0200
 +++ chrome/browser/sync/glue/synced_session_tracker.cc	2015-04-18 22:02:15.000000000 +0200
-@@ -260,7 +260,7 @@
+@@ -262,7 +262,7 @@
    }
    DCHECK(window_ptr);
    DCHECK_EQ(window_ptr->window_id.id(), window_id);
@@ -99,7 +108,7 @@
  }
 --- content/browser/frame_host/render_widget_host_view_guest.cc	2015-04-15 00:31:22.000000000 +0200
 +++ content/browser/frame_host/render_widget_host_view_guest.cc	2015-04-18 22:10:28.000000000 +0200
-@@ -241,11 +241,11 @@
+@@ -315,11 +315,11 @@
  
  gfx::NativeViewId RenderWidgetHostViewGuest::GetNativeViewId() const {
    if (!guest_)
@@ -126,7 +135,7 @@
          .Times(2);
 --- media/filters/decrypting_video_decoder_unittest.cc	2015-04-15 00:31:22.000000000 +0200
 +++ media/filters/decrypting_video_decoder_unittest.cc	2015-04-18 22:03:40.000000000 +0200
-@@ -420,7 +420,7 @@
+@@ -422,7 +422,7 @@
    // NULL callback to cancel the |decryptor_ready_cb|.
    EXPECT_CALL(*this, RequestDecryptorNotification(IsNullCallback())).WillOnce(
        ResetAndRunCallback(&decryptor_ready_cb,
@@ -135,8 +144,8 @@
                            base::Bind(&DecryptingVideoDecoderTest::DecryptorSet,
                                       base::Unretained(this))));
    EXPECT_CALL(*this, DecryptorSet(_)).Times(0);
---- third_party/hunspell_new/src/hunspell/affentry.hxx.orig 2015-07-21 18:46:37.322427000 -0400
-+++ third_party/hunspell_new/src/hunspell/affentry.hxx  2015-07-21 18:48:02.034251000 -0400
+--- third_party/hunspell/src/hunspell/affentry.hxx.orig 2015-07-21 18:46:37.322427000 -0400
++++ third_party/hunspell/src/hunspell/affentry.hxx  2015-07-21 18:48:02.034251000 -0400
 @@ -27,7 +27,7 @@
    struct hentry *      checkword(const char * word, int len, char in_compound, 
                              const FLAG needflag = FLAG_NULL);
@@ -213,9 +222,9 @@
  
    tasks_.erase(it, tasks_.end());
  
---- third_party/webrtc/modules/audio_coding/main/acm2/audio_coding_module_impl.cc.orig  2015-07-21 18:53:32.511953000 -0400
-+++ third_party/webrtc/modules/audio_coding/main/acm2/audio_coding_module_impl.cc   2015-07-21 18:54:56.010341000 -0400
-@@ -989,7 +989,7 @@
+--- third_party/webrtc/modules/audio_coding/main/acm2/audio_coding_module_impl.cc.orig  2015-09-03 09:31:11.815462000 -0400
++++ third_party/webrtc/modules/audio_coding/main/acm2/audio_coding_module_impl.cc   2015-09-03 09:31:50.974163000 -0400
+@@ -1028,7 +1028,7 @@
  
  const AudioEncoder* AudioCodingImpl::GetSenderInfo() const {
    FATAL() << "Not implemented yet.";
@@ -224,7 +233,7 @@
  }
  
  const CodecInst* AudioCodingImpl::GetSenderCodecInst() {
-@@ -1009,7 +1009,7 @@
+@@ -1048,7 +1048,7 @@
  
  const ReceiverInfo* AudioCodingImpl::GetReceiverInfo() const {
    FATAL() << "Not implemented yet.";
@@ -232,7 +241,7 @@
 +  return static_cast<const ReceiverInfo*>(NULL);
  }
  
- bool AudioCodingImpl::RegisterReceiveCodec(AudioDecoder* receive_codec) {
+ bool AudioCodingImpl::RegisterReceiveCodec(AudioDecoder* receive_codec) { 
 --- v8/src/runtime/runtime-i18n.cc	2015-04-15 00:32:37.000000000 +0200
 +++ v8/src/runtime/runtime-i18n.cc	2015-04-18 22:06:17.000000000 +0200
 @@ -627,7 +627,7 @@
