@@ -3,7 +3,7 @@
 
 PORTNAME=	mod_musicindex
 PORTVERSION=	1.4.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www audio
 MASTER_SITES=	http://hacks.slashdirt.org/musicindex/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -13,6 +13,7 @@ COMMENT=	Apache module that allows downloading and streaming of audio
 
 LICENSE=	LGPL21
 
+USES=		libarchive
 USE_APACHE=	22
 
 OPTIONS_DEFINE=	NLS FLAC MP3 MP4 VORBIS LIBARCHIVE FILECACHE MYSQLCACHE
