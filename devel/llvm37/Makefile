@@ -233,8 +233,8 @@ post-patch:
 	    ${WRKSRC}/utils/lit/lit.py ${WRKSRC}/utils/lit/lit/*.py
 
 post-configure:
-	@${REINPLACE_CMD} -e 's|#define HAVE_MACH_MACH_H 1||g' \
-		${WRKSRC}/include/llvm/Config/config.h
+	@${REINPLACE_CMD} -e 's|#cmakedefine HAVE_MACH_MACH_H|#cmakedefine NOHAVE_MACH_MACH_H|g' \
+		${WRKSRC}/include/llvm/Config/config.h.cmake
 
 post-install:
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/llvm/MC/MCAnalysis
