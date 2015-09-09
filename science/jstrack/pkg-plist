@@ -1,3 +1,4 @@
+bin/jstrack
 lib/jstrack/autoconfig.tcl
 lib/jstrack/filt/TCPAT4.201208211147.txt
 lib/jstrack/filt/advfilt.tcl
@@ -568,4 +569,4 @@ lib/jstrack/tracker/storms/old/2011/twelve.dis
 lib/jstrack/tracker/storms/old/2011/twelve.fc
 lib/jstrack/tracker/storms/old/2011/two.dis
 lib/jstrack/tracker/storms/old/2011/two.fc
-bin/jstrack
+@dir lib/jstrack/filt/tmp
