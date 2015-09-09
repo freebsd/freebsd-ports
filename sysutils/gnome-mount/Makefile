@@ -12,7 +12,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Front-end to mount, umount, and eject using HAL
 
 LIB_DEPENDS=	libhal.so:${PORTSDIR}/sysutils/hal \
-		${LOCALBASE}/lib/libnotify.so:${PORTSDIR}/devel/libnotify \
+		libnotify.4:${PORTSDIR}/devel/libnotify \
 		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/polkit-gnome.pc:${PORTSDIR}/sysutils/policykit-gnome
 
