@@ -20,15 +20,6 @@
       || defined(sun) && (defined(i386) || defined(__i386__) \
                           || defined(__amd64__))
  #   define GC_SOLARIS_THREADS
-@@ -261,7 +261,7 @@
- # define GC_CAN_SAVE_CALL_STACKS
- #endif
- 
--#if defined(__sparc__)
-+#if defined(__sparc__) && !defined(__XXXeBSD__)
- # define GC_CAN_SAVE_CALL_STACKS
- #endif
- 
 --- extlibs/gc-cvs/include/private/gcconfig.h.orig	2011-06-04 00:48:10 UTC
 +++ extlibs/gc-cvs/include/private/gcconfig.h
 @@ -2568,7 +2568,7 @@
