@@ -3,6 +3,7 @@
 
 PORTNAME=	dconf
 PORTVERSION=	0.24.0
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DISTNAME=	dconf-${PORTVERSION}
@@ -24,6 +25,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' \
+		-e 's|"/etc"|"${PREFIX}/etc"|g' \
 		${WRKSRC}/engine/dconf-engine.c \
 		${WRKSRC}/engine/dconf-engine-profile.c \
 		${WRKSRC}/engine/dconf-engine-source-system.c \
