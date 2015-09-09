@@ -11,8 +11,6 @@ COMMENT=	Automatic migrations for Ecto
 
 LICENSE=	APACHE20
 
-BROKEN=		does not build
-
 USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	xerions
