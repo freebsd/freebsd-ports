@@ -1,4 +1,4 @@
-# Created by: loader <loader@freebsdmall.com>
+# Created by: Fukang Chen <loader@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	HTML-FormatText-WithLinks
@@ -8,7 +8,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	loader@freebsdmall.com
+MAINTAINER=	loader@FreeBSD.org
 COMMENT=	Perl5 module to convert HTML to text with links as footnotes
 
 LICENSE=	ART10 GPLv1
