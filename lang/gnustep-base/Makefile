@@ -31,7 +31,7 @@ LIB_DEPENDS+=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-procfs --disable-openssl --enable-tls \
 		--with-tls-prefix=${LOCALBASE} TLS_CONFIG="pkg-config -gnutls"\
-		--disable-mixedabi
+		--disable-mixedabi --disable-libdispatch
 CONFIGURE_ENV+=	OBJCFLAGS='-fobjc-runtime=gnustep-1.7 -fblocks'
 USES=		pkgconfig iconv gnustep
 USE_GNUSTEP=	build
