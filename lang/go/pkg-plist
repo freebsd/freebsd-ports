@@ -156,6 +156,7 @@ go/doc/progs/slices.go
 go/doc/progs/timeout1.go
 go/doc/progs/timeout2.go
 go/doc/root.html
+go/doc/security.html
 go/doc/share.png
 go/doc/tos.html
 go/favicon.ico
@@ -5092,6 +5093,7 @@ go/test/fixedbugs/issue9731.go
 go/test/fixedbugs/issue9738.go
 go/test/fixedbugs/issue9862.go
 go/test/fixedbugs/issue9862_run.go
+go/test/fixedbugs/issue12226.go
 go/test/float_lit.go
 go/test/float_lit2.go
 go/test/float_lit3.go
