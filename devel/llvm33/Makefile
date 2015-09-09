@@ -163,14 +163,16 @@ post-patch:
 	    -e 's|lit\.|lit${LLVM_SUFFIX}.|' \
 	    ${WRKSRC}/utils/lit/lit.py ${WRKSRC}/utils/lit/lit/*.py
 
-.if ${PORT_OPTIONS:MCMAKE}
 post-configure:
+.if ${PORT_OPTIONS:MCMAKE}
 	${MKDIR} ${WRKDIR}/cmake
 	cd ${WRKDIR}/cmake && cmake -DPYTHON_EXECUTABLE=${PYTHON_CMD} -G "Unix Makefiles" ${WRKSRC}
 	${REINPLACE_CMD} -e 's|${WRKDIR}/cmake|${LLVM_PREFIX}|' \
 	    -e 's|${WRKSRC}/cmake/modules|${DATADIR}/cmake|' \
 	    ${WRKDIR}/cmake/share/llvm/cmake/LLVMConfig.cmake
 .endif
+	@${REINPLACE_CMD} -e 's|#define HAVE_MACH_MACH_H 1||g' \
+		${WRKSRC}/include/llvm/Config/config.h
 
 post-build:
 .if ${PORT_OPTIONS:MMANPAGES}

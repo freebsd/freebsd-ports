@@ -232,6 +232,10 @@ post-patch:
 	    -e 's|lit\.|lit${LLVM_SUFFIX}.|' \
 	    ${WRKSRC}/utils/lit/lit.py ${WRKSRC}/utils/lit/lit/*.py
 
+post-configure:
+	@${REINPLACE_CMD} -e 's|#define HAVE_MACH_MACH_H 1||g' \
+		${WRKSRC}/include/llvm/Config/config.h
+
 post-install:
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/llvm/MC/MCAnalysis
 	${INSTALL_SCRIPT} ${WRKDIR}/llvm-wrapper.sh \
