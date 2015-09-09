@@ -168,6 +168,7 @@
     SUBDIR += eo-aspell
     SUBDIR += eqe
     SUBDIR += erlang-edown
+    SUBDIR += erlang-p1xml
     SUBDIR += erlang-yamerl
     SUBDIR += es-aspell
     SUBDIR += es-hunspell
@@ -1149,6 +1150,7 @@
     SUBDIR += peco
     SUBDIR += perl2html
     SUBDIR += permute
+    SUBDIR += php-mecab
     SUBDIR += php5-ctype
     SUBDIR += php5-dom
     SUBDIR += php5-pspell
@@ -1344,7 +1346,7 @@
     SUBDIR += ruby-rss.alt
     SUBDIR += ruby-rttool
     SUBDIR += ruby-sary
-    SUBDIR += ruby-xmlconfigfile
+    SUBDIR += ruby-xml-configfile
     SUBDIR += ruby-xmlparser
     SUBDIR += ruby-xmlscan
     SUBDIR += rubygem-albino

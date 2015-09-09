@@ -1,0 +1,19 @@
+--- Makefile.in.orig	2004-04-16 15:46:42 UTC
++++ Makefile.in
+@@ -34,13 +34,13 @@ MANPAGES8=autocd.8
+ all:	$(ALL)
+ 
+ autocd:	$(AUTOCD_O)
+-	$(CC) $(CFLAGS) -o autocd $(AUTOCD_O)
++	$(CC) $(LDFLAGS) -o autocd $(AUTOCD_O)
+ 
+ cdctl:	$(CDCTL_O)
+-	$(CC) $(CFLAGS) $(CDCTL_LIBS) -o cdctl $(CDCTL_O)
++	$(CC) $(LDFLAGS) $(CDCTL_LIBS) -o cdctl $(CDCTL_O)
+ 
+ acdplay:	$(ACDPLAY_O)
+-	$(CC) $(CFLAGS) $(ACDPLAY_LIBS) -o acdplay $(ACDPLAY_O)
++	$(CC) $(LDFLAGS) $(ACDPLAY_LIBS) -o acdplay $(ACDPLAY_O)
+ 
+ .c.o:	$(GLOBAL_DEP)
+ 	$(CC) $(CFLAGS) $(DEFS) -c $<

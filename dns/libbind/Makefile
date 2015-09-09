@@ -22,26 +22,13 @@ CONFIGURE_ARGS=	--localstatedir=/var --with-randomdev=/dev/random
 OPTIONS_DEFINE=	IPV6 THREADS
 OPTIONS_DEFAULT=	IPV6 THREADS
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--enable-ipv6
-.else
-CONFIGURE_ARGS+=	--disable-ipv6
-.endif
-
-.if ${PORT_OPTIONS:MTHREADS}
-CONFIGURE_ARGS+=	--enable-threads
-.else
-CONFIGURE_ARGS+=	--disable-threads
-.endif
+IPV6_CONFIGURE_ENABLE=		ipv6
+THREADS_CONFIGURE_ENABLE=	threads
 
 verify:	checksum
 	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
 
-.if ${OSVERSION} > 900007
 post-patch:
 	${REINPLACE_CMD} -e '/#include <utmp.h>/ d' ${WRKSRC}/irs/*.c
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

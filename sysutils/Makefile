@@ -974,7 +974,6 @@
     SUBDIR += syslog-ng-devel
     SUBDIR += syslog-ng-incubator
     SUBDIR += syslog-ng-incubator03
-    SUBDIR += syslog-ng33
     SUBDIR += syslog-ng34
     SUBDIR += syslog-ng35
     SUBDIR += syslogger
@@ -1095,6 +1094,7 @@
     SUBDIR += wmfire
     SUBDIR += wmflame
     SUBDIR += wmmemfree
+    SUBDIR += wmmemload
     SUBDIR += wmtop
     SUBDIR += wmupmon
     SUBDIR += worldtools

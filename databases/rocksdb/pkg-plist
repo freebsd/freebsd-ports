@@ -8,8 +8,11 @@ bin/table_reader_bench
 include/rocksdb/c.h
 include/rocksdb/cache.h
 include/rocksdb/compaction_filter.h
+include/rocksdb/compaction_job_stats.h
 include/rocksdb/comparator.h
+include/rocksdb/convenience.h
 include/rocksdb/db.h
+include/rocksdb/delete_scheduler.h
 include/rocksdb/env.h
 include/rocksdb/experimental.h
 include/rocksdb/filter_policy.h
@@ -24,6 +27,7 @@ include/rocksdb/merge_operator.h
 include/rocksdb/metadata.h
 include/rocksdb/options.h
 include/rocksdb/perf_context.h
+include/rocksdb/perf_level.h
 include/rocksdb/rate_limiter.h
 include/rocksdb/slice.h
 include/rocksdb/slice_transform.h
@@ -43,10 +47,14 @@ include/rocksdb/utilities/db_ttl.h
 include/rocksdb/utilities/document_db.h
 include/rocksdb/utilities/flashcache.h
 include/rocksdb/utilities/geo_db.h
+include/rocksdb/utilities/info_log_finder.h
 include/rocksdb/utilities/json_document.h
 include/rocksdb/utilities/leveldb_options.h
+include/rocksdb/utilities/optimistic_transaction.h
+include/rocksdb/utilities/optimistic_transaction_db.h
 include/rocksdb/utilities/spatial_db.h
 include/rocksdb/utilities/stackable_db.h
+include/rocksdb/utilities/table_properties_collectors.h
 include/rocksdb/utilities/utility_db.h
 include/rocksdb/utilities/write_batch_with_index.h
 include/rocksdb/version.h

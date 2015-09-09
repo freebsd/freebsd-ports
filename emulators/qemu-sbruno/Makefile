@@ -60,7 +60,7 @@ SUB_LIST=	NAME=qemu_user_static
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS+=	--localstatedir=/var
-CONFIGURE_ARGS+=	--extra-ldflags=-L${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--extra-ldflags=-L\"${LOCALBASE}/lib\"
 CONFIGURE_ARGS+=	--disable-smartcard-nss --disable-libssh2
 PORTDOCS=	docs qemu-doc.html qemu-tech.html qmp-commands.txt
 
@@ -292,8 +292,6 @@ post-install:
 .endif
 	${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup.sample ${STAGEDIR}${PREFIX}/etc
 	${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifdown.sample ${STAGEDIR}${PREFIX}/etc
-	@(cd ${STAGEDIR}${PREFIX}/etc/qemu && \
-		${MV} -i target-x86_64.conf target-x86_64.conf.sample)
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qemu-*
 .endif
 

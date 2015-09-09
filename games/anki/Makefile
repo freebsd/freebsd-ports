@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	anki
-PORTVERSION=	2.0.31
-PORTREVISION=	1
+PORTVERSION=	2.0.32
 CATEGORIES=	games python
 MASTER_SITES=	http://ankisrs.net/download/mirror/
 DIST_SUBDIR=	python
@@ -28,30 +27,23 @@ RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 USES=		desktop-file-utils python:2 shared-mime-info shebangfix tar:tgz
 SHEBANG_FILES=	tools/build_ui.sh tools/tests.sh
 USE_QT4=	network_run webkit_run
-
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
+NLS_USES=	gettext-runtime gettext-tools
 
-NLS_USES=	gettext-runtime:run
-
-.include <bsd.port.options.mk>
+NO_ARCH=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|^Categories=.*|Categories=Education;Languages;KDE;Qt;Game;|' \
-		${WRKSRC}/${PORTNAME}.desktop
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|${PYTHON_CMD}|; \
 		s|/usr/share/anki|${DATADIR}|' \
 		${WRKSRC}/runanki
 	@${REINPLACE_CMD} -e \
 		's|/usr/share/anki/locale|${PREFIX}/share/locale|' \
 		${WRKSRC}/anki/lang.py
-	@${FIND} ${WRKSRC} -name "*.bak" -delete -or -name "*.orig" -delete
 
-.if ! ${PORT_OPTIONS:MNLS}
+post-patch-NLS-off:
 	@${REINPLACE_CMD} -i '' '/mkdir -p qt-locale/,/cp -av locale/s/^/#/' \
 		${WRKSRC}/Makefile
-.endif
 
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}

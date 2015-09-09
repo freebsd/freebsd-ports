@@ -526,7 +526,7 @@ IGNORE?=	Using master as GH_TAGNAME is invalid. \
 # We are cheating and using backend URLS for Github here. See ports/194898
 # comment #15 for explanation as to why and how to deal with it if it breaks.
 MASTER_SITE_GITHUB+=		https://codeload.github.com/%SUBDIR%
-MASTER_SITE_GITHUB_CLOUD+=	http://cloud.github.com/downloads/%SUBDIR%
+MASTER_SITE_GITHUB_CLOUD+=	https://cloud.github.com/downloads/%SUBDIR%
 
 .  if !defined(MASTER_SITES) || !${MASTER_SITES:MGH} && !${MASTER_SITES:MGHC} && !${USE_GITHUB:Mnodefault}
 MASTER_SITES+=	GH

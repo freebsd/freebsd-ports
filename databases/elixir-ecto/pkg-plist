@@ -92,7 +92,6 @@ lib/elixir/lib/ecto/ebin/Elixir.Ecto.Storage.beam
 lib/elixir/lib/ecto/ebin/Elixir.Ecto.Time.beam
 lib/elixir/lib/ecto/ebin/Elixir.Ecto.Type.beam
 lib/elixir/lib/ecto/ebin/Elixir.Ecto.UUID.beam
-lib/elixir/lib/ecto/ebin/Elixir.Ecto.UnmachedRelationError.beam
 lib/elixir/lib/ecto/ebin/Elixir.Ecto.beam
 lib/elixir/lib/ecto/ebin/Elixir.Inspect.Ecto.Association.NotLoaded.beam
 lib/elixir/lib/ecto/ebin/Elixir.Inspect.Ecto.Date.beam

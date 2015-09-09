@@ -22,6 +22,7 @@ RUN_DEPENDS=	dtplite:${PORTSDIR}/devel/tcllib
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		tk:85
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 SUB_FILES=	${PORTNAME}.sh
 SUB_LIST=	WISH=${WISH}
@@ -37,12 +38,12 @@ do-install:
 	@(cd ${WRKSRC}/ && ${COPYTREE_SHARE} ${f} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/ \
 		'! -path *windows_bin*')
 .endfor
-	@${INSTALL_SCRIPT} ${WRKSRC}/*.tcl ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
-	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/*.tcl ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.	for f in ${PORTDOCS}
-		@${INSTALL_MAN} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
-.	endfor
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
+.endfor
 .for d in filt httpfilt tracker tracker/lib tracker/storms/old/2007 tracker/storms/old/2008 tracker/storms/old/2009 tracker/storms/old/2010
 	@${CHMOD} ugo+rx ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${d}/*.t*
 .endfor

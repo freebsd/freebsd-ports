@@ -3,6 +3,7 @@
 
 PORTNAME=	rudy
 PORTVERSION=	0.9.8.020
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -27,5 +28,8 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/rudy bin/rudy-ec2 bin/rudy-s3 bin/rudy-sdb
+USES=		shebangfix
+SHEBANG_FILES=	bin/* tryouts/exploration/machine.rb
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

@@ -132,6 +132,7 @@
     SUBDIR += libreoffice-gd
     SUBDIR += libreoffice-gl
     SUBDIR += libreoffice-gu
+    SUBDIR += libreoffice-gug
     SUBDIR += libreoffice-hi
     SUBDIR += libreoffice-hr
     SUBDIR += libreoffice-i18n
@@ -195,6 +196,7 @@
     SUBDIR += libreoffice-ve
     SUBDIR += libreoffice-xh
     SUBDIR += libreoffice-zu
+    SUBDIR += libreoffice4
     SUBDIR += madedit
     SUBDIR += manedit
     SUBDIR += mg

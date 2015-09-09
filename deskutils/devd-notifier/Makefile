@@ -4,8 +4,7 @@
 PORTNAME=	devd-notifier
 PORTVERSION=	0.1
 CATEGORIES=	deskutils
-MASTER_SITES=	https://cloud.github.com/downloads/funglaub/devd-notifier/\
-		http://roladder.net/~flo/dist/
+MASTER_SITES=	GHC http://roladder.net/~flo/dist/
 
 MAINTAINER=	f.unglaub@googlemail.com
 COMMENT=	Daemon notifying the user about devd(8) events \
@@ -19,6 +18,8 @@ LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
 USES=		pkgconfig
 PLIST_FILES=	bin/devd-notifier \
 		man/man1/devd-notifier.1.gz
+USE_GITHUB=	yes
+GH_ACCOUNT=	funglaub
 
 pre-everything::
 	@${ECHO_MSG} "You can build devd-notifier with your own config.h using the DEVD-NOTIFIER_CONF knob:"

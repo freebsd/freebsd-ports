@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	check_mysql_health
-PORTVERSION=	2.1.5.1
-PORTREVISION=	1
+PORTVERSION=	2.2.1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://labs.consol.de/wp-content/uploads/2011/04/
+MASTER_SITES=	https://labs.consol.de/assets/downloads/nagios/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nagios plugin to check various parameters of a MySQL database

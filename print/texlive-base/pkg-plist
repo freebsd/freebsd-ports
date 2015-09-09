@@ -159,7 +159,6 @@ bin/pdf90
 bin/pdfannotextractor
 bin/pdfatfi
 bin/pdfbook
-bin/pdfclose
 bin/pdfcrop
 bin/pdfflip
 bin/pdfjam
@@ -168,7 +167,6 @@ bin/pdfjam-slides3up
 bin/pdfjam-slides6up
 bin/pdfjoin
 bin/pdfnup
-bin/pdfopen
 bin/pdfpun
 bin/pedigree
 bin/perltex
@@ -299,8 +297,6 @@ man/man1/mmpfb.1.gz
 man/man1/msxlint.1.gz
 man/man1/otfinfo.1.gz
 man/man1/otftotfm.1.gz
-man/man1/pdfclose.1.gz
-man/man1/pdfopen.1.gz
 man/man1/pfb2pfa.1.gz
 man/man1/pk2bm.1.gz
 man/man1/pmxab.1.gz

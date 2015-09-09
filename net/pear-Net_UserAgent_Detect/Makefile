@@ -11,6 +11,7 @@ COMMENT=	PEAR class that determines the Web browser, version, and platform
 
 LICENSE=	PHP202
 
-USES=	pear
+USES=		pear
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

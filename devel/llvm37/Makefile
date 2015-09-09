@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	llvm
-DISTVERSION=	3.7.0rc3
+DISTVERSION=	3.7.0
+PORTREVISION=	2
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
 DISTNAME=	${PORTNAME}-${DISTVERSION}.src
@@ -38,7 +39,9 @@ OPTIONS_SUB=	yes
 
 CLANG_DESC=	Build clang
 CLANG_EXTRA_PATCHES= \
-		${PATCHDIR}/clang-patch-tools_clang_lib_Headers_CMakeLists.txt
+		${PATCHDIR}/clang-patch-fformat_extensions.diff \
+		${PATCHDIR}/clang-patch-tools_clang_lib_Headers_CMakeLists.txt \
+		${PATCHDIR}/clang-patch-tools_clang_tools_clang-format_clang-format.py
 CLANG_CONFLICTS_INSTALL=	clang-devel-3.[1234567]*
 CLANG_DISTFILES=	cfe-${DISTVERSION}.src${EXTRACT_SUFX}
 CLANG_CMAKE_ON=		-DCLANG_DEFAULT_OPENMP_RUNTIME=libomp

@@ -94,6 +94,12 @@ post-extract:
 	${MKDIR} ${WRKDIR}/conf
 	cd ${KERNCONFDIR} && \
 	    /usr/sbin/config -d ${WRKDIR}/conf ${_KERNCONF} >/dev/null
+# Unbreak on FreeBSD 10.2 (until official support arrives)
+	@${SED} -e 's,101,102, ; /FBSD102_ENV/ { h; s/102/101/; G; }' \
+		${WRKSRC}/src/config/param.i386_fbsd_101.h \
+		> ${WRKSRC}/src/config/param.i386_fbsd_102.h
+	@${REINPLACE_CMD} -e '/fbsd_101/ { h; s/101/102/; s/31/32/; x; G; }' \
+		${WRKSRC}/src/config/afs_sysnames.h
 
 create-sample-files:
 	@${ECHO_CMD} openafs.org > ${WRKDIR}/ThisCell

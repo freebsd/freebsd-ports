@@ -35,6 +35,7 @@ include/tbb/internal/_flow_graph_trace_impl.h
 include/tbb/internal/_flow_graph_types_impl.h
 include/tbb/internal/_mutex_padding.h
 include/tbb/internal/_range_iterator.h
+include/tbb/internal/_tbb_hash_compare_impl.h
 include/tbb/internal/_tbb_strings.h
 include/tbb/internal/_tbb_windef.h
 include/tbb/internal/_template_helpers.h

@@ -8,15 +8,6 @@
  
  # Build optimized code for following CPU (default i386)
  #SET(CPU_TUNE               "i686")
-@@ -272,7 +273,7 @@
-         INCLUDE_DIRECTORIES(${ICONV_INCLUDE})
- 
-         IF (NOT "${SKIP_ICONV_LIRARY}" MATCHES "ON")
--            FIND_LIBRARY(ICONV_LIBRARY NAMES iconv PATHS /lib
-+            FIND_LIBRARY(ICONV_LIBRARY NAMES iconv libiconv c PATHS /lib
-                                                          /opt/lib
-                                                          /usr/lib
-                                                          /usr/local/lib
 @@ -660,6 +661,8 @@
      SET_TESTS_PROPERTIES(Calls_D PROPERTIES DEPENDS Calls_R)
  ENDIF (DIFF_EXECUTABLE)

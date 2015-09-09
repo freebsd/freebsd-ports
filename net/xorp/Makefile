@@ -3,12 +3,11 @@
 
 PORTNAME=	xorp
 PORTVERSION=	1.8.5
-DISTVERSIONSUFFIX=	-src
+DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	net
-MASTER_SITES=	http://www.xorp.org/releases/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The eXtensible Open Router Platform
+MAINTAINER=	hrs@FreeBSD.org
+COMMENT=	EXtensible Open Router Platform
 
 LICENSE=	GPLv2
 
@@ -17,60 +16,40 @@ LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs \
 
 CONFLICTS_INSTALL=	xorp-devel-*
 
-EXTRACT_AFTER_ARGS=	--no-same-owner --no-same-permissions -s /^xorp/${DISTNAME}/
-GROUPS=		xorp
 USES=		tar:bzip2 ncurses scons shebangfix compiler:env python:2,build
+USE_GITHUB=	yes
 USE_OPENSSL=	yes
 USE_RC_SUBR=	xorp
+GH_ACCOUNT=	greearb
+GH_PROJECT=	${PORTNAME}.ct
 SHEBANG_FILES=	xrl/scripts/clnt-gen xrl/scripts/tgt-gen
 python_OLD_CMD=	.*python
+WRKSRC=		${WRKDIR}/${GH_PROJECT}-${DISTVERSIONPREFIX}${DISTVERSION}/${PORTNAME}
+MAKE_ARGS=	prefix=${PREFIX} enable_boost=1
 SUB_FILES=	pkg-message
-XORP_SAMPLECONF=	rtrmgr/config/multicast4.boot
-
+GROUPS=		xorp
 BROKEN_sparc64=		Does not compile on sparc64
 
 OPTIONS_DEFINE=	OPTIMIZE ORIGIN SHARED STRIP TCP_RPC
 OPTIONS_DEFAULT=	OPTIMIZE ORIGIN SHARED STRIP
+OPTIONS_SUB=	yes
 OPTIMIZE_DESC=	Build with optimization
+OPTIMIZE_MAKE_ARGS=	optimize=highest
+OPTIMIZE_MAKE_ARGS_OFF=	optimize=no
 ORIGIN_DESC=	Use ORIGIN with shared libraries
+ORIGIN_MAKE_ARGS=	origin=true
+ORIGIN_MAKE_ARGS_OFF=	origin=false
 SHARED_DESC=	Build with shared libraries
+SHARED_MAKE_ARGS=	shared=true
+SHARED_MAKE_ARGS_OFF=	shared=false
+SHARED_USE_ON=	LDCONFIG=${PREFIX}/lib/xorp/lib
+STRIP_MAKE_ARGS=	strip=true
+STRIP_MAKE_ARGS_OFF=	strip=false
 TCP_RPC_DESC=	Use TCP as RPC transport (defaults to AF_LOCAL)
-
-MAKE_ARGS=	prefix=${PREFIX} enable_boost=1
+TCP_RPC_MAKE_ARGS=	transport=tcp
+TCP_RPC_MAKE_ARGS_OFF=	transport=local
 
 .include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MOPTIMIZE}
-MAKE_ARGS+=	optimize=highest
-.else
-MAKE_ARGS+=	optimize=no
-.endif
-
-.if ${PORT_OPTIONS:MSHARED}
-MAKE_ARGS+=	shared=true
-PLIST_SUB+=	XORP_SHLIB=""
-USE_LDCONFIG=	${PREFIX}/lib/xorp/lib
-. if ${PORT_OPTIONS:MORIGIN}
-MAKE_ARGS+=	origin=true
-. else
-MAKE_ARGS+=	origin=false
-. endif
-.else
-MAKE_ARGS+=	shared=false
-PLIST_SUB+=	XORP_SHLIB="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSTRIP}
-MAKE_ARGS+=	strip=true
-.else
-MAKE_ARGS+=	strip=false
-.endif
-
-.if ${PORT_OPTIONS:MTCP_RPC}
-MAKE_ARGS+=	transport=tcp
-.else
-MAKE_ARGS+=	transport=local
-.endif
 
 post-patch:
 	${REINPLACE_CMD} 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKSRC}/SConstruct
@@ -79,6 +58,7 @@ post-patch:
 .endif
 
 post-install:
-	${CP} -p ${WRKSRC}/${XORP_SAMPLECONF} ${STAGEDIR}${PREFIX}/etc/xorp.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/rtrmgr/config/multicast4.boot \
+	    ${STAGEDIR}${PREFIX}/etc/xorp.conf.sample
 
 .include <bsd.port.post.mk>

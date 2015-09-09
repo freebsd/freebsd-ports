@@ -1,0 +1,75 @@
+--- po/sv.po.orig	2006-11-18 03:24:41 UTC
++++ po/sv.po
+@@ -1,5 +1,71 @@
+ msgid ""
+-msgstr "Project-Id-Version: flphoto 1.2\nPOT-Creation-Date: 2003-01-15 07:14-0500\nPO-Revision-Date: 2005-12-29 05:14+0100\nLast-Translator: Daniel Nylander <po@danielnylander.se>\nLanguage-Team: Swedish <tp-sv@listor.tp-sv.se>\nMIME-Version: 1.0\nContent-Type: text/plain; charset=iso-8859-1\nContent-Transfer-Encoding: 8bit\nAre you sure you want to adjust the brightness and contrast\nand save all of the selected images?Är du säker att du vill justera ljusstyrka och kontrast för\nalla valda bilder och spara alla?Directory %s does not exist.\n\nCreate directory?Katalogen %s existerar inte.\n\nSkapa katalog?Image file %s already exists!\n\nOK to overwrite?Bildfilen %s existerar redan!\n\nOK att skriva över?Print file %s already exists.\nOK to overwrite?Utskriftsfilen %s existerar redan.\nOK att skriva över?Purging %s will delete the file from disk.\n\nReally delete?Rensning av %s kommer att ta bort filen från disk.\n\nVerkligen ta bort?Sorry, no cameras were found.\nIs your camera connected to a USB port and turned on?Tyvärr, inga kameror hittades.\nÄr din kamera ansluten till en USB-port och påslagen?The image %s has not been saved?\n\nSave it now?Bilden %s har inte blivit sparad?\n\nSpara den nu?Unable to create %s:\n\n%sKunde inte skapa %s:\n\n%sUnable to create JPEG image:\n\n%sKunde inte skapa JPEG-bild:\n\n%sUnable to create PNG data:\n\n%sKunde inte skapa PNG-data:\n\n%sUnable to create PNG image information:\n\n%sKunde inte skapa PNG-bildinformation:\n\n%sUnable to create PNG image:\n\n%sKunde inte skapa PNG-bild:\n\n%sUnable to create destination URL:\n\n%d - %sKunde inte skapa destinations-URL:\n\n%d - %sUnable to create directory %s:\n\n%sKunde inte skapa katalog %s:\n\n%sUnable to create image %s:\n\n%sKunde inte skapa bild %s:\n\n%sUnable to create temporary thumbnail image %s:\n\n%sKunde inte skapa temporär miniatyrbild %s:\n\n%sUnable to open album file \"%s\":\n\n%sKunde inte öppna albumfil \"%s\":\n\n%sUnable to open original JPEG image:\n\n%sKunde inte öppna original JPEG-bild:\n\n%sUnable to rename %s:\n\n%sKunde inte byta namn på %s:\n\n%sUnable to save album file \"%s\":\n\n%sKunde inte spara albumfil \"%s\":\n\n%sUnable to write PNG image:\n\n%sKunde inte skriva PNG-bild:\n\n%sWarning: Re-saving %s will cause a loss of quality!\nDo you wish to overwrite the original JPEG file?Varning: Spara %s igen kommer att sänka kvaliteten!\nVill du skriva över original JPEG-filen?"
++msgstr "Project-Id-Version: flphoto 1.2\nPOT-Creation-Date: 2003-01-15 07:14-0500\nPO-Revision-Date: 2005-12-29 05:14+0100\nLast-Translator: Daniel Nylander <po@danielnylander.se>\nLanguage-Team: Swedish <tp-sv@listor.tp-sv.se>\nMIME-Version: 1.0\nContent-Type: text/plain; charset=iso-8859-1\nContent-Transfer-Encoding: 8bit\n"
++
++msgid "Are you sure you want to adjust the brightness and contrast\nand save all of the selected images?"
++msgstr "Är du säker att du vill justera ljusstyrka och kontrast för\nalla valda bilder och spara alla?"
++
++msgid "Directory %s does not exist.\n\nCreate directory?"
++msgstr "Katalogen %s existerar inte.\n\nSkapa katalog?"
++
++msgid "Image file %s already exists!\n\nOK to overwrite?"
++msgstr "Bildfilen %s existerar redan!\n\nOK att skriva över?"
++
++msgid "Print file %s already exists.\nOK to overwrite?"
++msgstr "Utskriftsfilen %s existerar redan.\nOK att skriva över?"
++
++msgid "Purging %s will delete the file from disk.\n\nReally delete?"
++msgstr "Rensning av %s kommer att ta bort filen från disk.\n\nVerkligen ta bort?"
++
++msgid "Sorry, no cameras were found.\nIs your camera connected to a USB port and turned on?"
++msgstr "Tyvärr, inga kameror hittades.\nÄr din kamera ansluten till en USB-port och påslagen?"
++
++msgid "The image %s has not been saved?\n\nSave it now?"
++msgstr "Bilden %s har inte blivit sparad?\n\nSpara den nu?"
++
++msgid "Unable to create %s:\n\n%s"
++msgstr "Kunde inte skapa %s:\n\n%s"
++
++msgid "Unable to create JPEG image:\n\n%s"
++msgstr "Kunde inte skapa JPEG-bild:\n\n%s"
++
++msgid "Unable to create PNG data:\n\n%s"
++msgstr "Kunde inte skapa PNG-data:\n\n%s"
++
++msgid "Unable to create PNG image information:\n\n%s"
++msgstr "Kunde inte skapa PNG-bildinformation:\n\n%s"
++
++msgid "Unable to create PNG image:\n\n%s"
++msgstr "Kunde inte skapa PNG-bild:\n\n%s"
++
++msgid "Unable to create destination URL:\n\n%d - %s"
++msgstr "Kunde inte skapa destinations-URL:\n\n%d - %s"
++
++msgid "Unable to create directory %s:\n\n%s"
++msgstr "Kunde inte skapa katalog %s:\n\n%s"
++
++msgid "Unable to create image %s:\n\n%s"
++msgstr "Kunde inte skapa bild %s:\n\n%s"
++
++msgid "Unable to create temporary thumbnail image %s:\n\n%s"
++msgstr "Kunde inte skapa temporär miniatyrbild %s:\n\n%s"
++
++msgid "Unable to open album file \"%s\":\n\n%s"
++msgstr "Kunde inte öppna albumfil \"%s\":\n\n%s"
++
++msgid "Unable to open original JPEG image:\n\n%s"
++msgstr "Kunde inte öppna original JPEG-bild:\n\n%s"
++
++msgid "Unable to rename %s:\n\n%s"
++msgstr "Kunde inte byta namn på %s:\n\n%s"
++
++msgid "Unable to save album file \"%s\":\n\n%s"
++msgstr "Kunde inte spara albumfil \"%s\":\n\n%s"
++
++msgid "Unable to write PNG image:\n\n%s"
++msgstr "Kunde inte skriva PNG-bild:\n\n%s"
++
++msgid "Warning: Re-saving %s will cause a loss of quality!\nDo you wish to overwrite the original JPEG file?"
++msgstr "Varning: Spara %s igen kommer att sänka kvaliteten!\nVill du skriva över original JPEG-filen?"
+ 
+ msgid " Selected Images"
+ msgstr " Valda bilder"

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libreoffice
-PORTVERSION=	4.3.7
+PORTVERSION=	5.0.1
 RCVER=		2
 #PRERELEASE=	yes
 LOVERSION=	${PORTVERSION}.${RCVER}
@@ -12,16 +12,12 @@ LICENSE=	LGPL3 MPL
 LICENSE_COMB=	dual
 
 .if defined(PRERELEASE)
-MASTER_SITES?=	http://dev-builds.libreoffice.org/pre-releases/${MASTER_SITE_SUBDIR}
+MASTER_SITES?=	http://dev-builds.libreoffice.org/pre-releases/${MASTER_SITE_SUBDIR}/
 .else
 MASTER_SITES?=	http://download.documentfoundation.org/libreoffice/${MASTER_SITE_SUBDIR}/
 .endif
 
 ONLY_FOR_ARCHS=	i386 amd64
-
-# for dynamic plist generation
-PLISTD?=	${WRKDIR}/plist_dirs
-PLISTF?=	${WRKDIR}/plist_files
 
 .if defined(LO_I18N)
 NO_ARCH=	yes
@@ -30,10 +26,10 @@ NO_BUILD=	yes
 RUN_DEPENDS=	libreoffice:${PORTSDIR}/editors/libreoffice
 
 .if defined(PRERELEASE)
-MASTER_SITE_SUBDIR=	deb/x86/
+MASTER_SITE_SUBDIR=	deb/x86
 LO_I18N_FILE=	LibreOffice_${LOVERSION}_Linux_x86_deb
 .else
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/deb/x86/
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/deb/x86
 LO_I18N_FILE=	LibreOffice_${PORTVERSION}_Linux_x86_deb
 .endif
 
@@ -51,26 +47,26 @@ EXTRACT_AFTER_ARGS=	--exclude '${PORTNAME}*-dict-*.deb' \
 			--strip-components 1
 
 post-extract:
-	@${MKDIR} ${WRKSRC}; \
+	@${MKDIR} ${WRKSRC}
 	for deb in ${WRKDIR}/DEBS/*.deb ; do \
 		${TAR} xfO $${deb} data.tar.gz | ${TAR} -C ${WRKSRC} -xf - ; \
-	done ; \
+	done
 
 do-install:
-	@${RM} -f ${PLISTF}
-	cd ${WRKSRC}/opt/${PORTNAME}${PORTVERSION:R} ; ${FIND} * \( -type f -o -type l \) -exec ${ECHO_CMD} "lib/${PORTNAME}/{} " \; >> ${PLISTF}
-
-	${SORT} ${PLISTF} >> ${TMPPLIST}
-
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 	cd ${WRKSRC}/opt/${PORTNAME}${PORTVERSION:R} ; \
 	    ${PAX} -rw . ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
+
+post-install:
+	@cd ${WRKSRC}/opt/${PORTNAME}${PORTVERSION:R} && \
+	${FIND} -s * -not -type d \
+	    -exec ${ECHO_CMD} "lib/${PORTNAME}/{} " \; >> ${TMPPLIST}
 .else
 MASTER_SITES+=	http://dev-www.libreoffice.org/src/:src \
 		http://dev-www.libreoffice.org/extern/:ext
 .if defined(PRERELEASE)
-MASTER_SITE_SUBDIR=	src/
+MASTER_SITE_SUBDIR=	src
 .else
-MASTER_SITE_SUBDIR=	src/${PORTVERSION}/
+MASTER_SITE_SUBDIR=	src/${PORTVERSION}
 .endif
 .endif

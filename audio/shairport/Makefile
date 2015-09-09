@@ -5,8 +5,6 @@ PORTNAME=	shairport
 PORTVERSION=	0.05
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://cloud.github.com/downloads/miks/${PORTNAME}/
-DISTNAME=	miks-${PORTNAME}-${REV}
 
 MAINTAINER=	miks.mikelsons@gmail.com
 COMMENT=	Airtunes emulator
@@ -23,14 +21,15 @@ RUN_DEPENDS=	p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64 \
 USES=		gmake perl5 pkgconfig
 USE_PERL5=	run
 USE_OPENSSL=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	miks
+GH_TAGNAME=	b1cb9ea
 
 USE_RC_SUBR=	${PORTNAME}
 SUB_LIST=	PERL=${PERL}
 
 PLIST_FILES=	bin/${PORTNAME} bin/hairtunes bin/${PORTNAME}.pl
 PORTDOCS=	README.md
-
-REV=		b1cb9ea
 
 OPTIONS_DEFINE=	DOCS
 

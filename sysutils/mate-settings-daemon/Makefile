@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-settings-daemon
-PORTVERSION=	1.10.1
+PORTVERSION=	1.10.2
 CATEGORIES=	sysutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate

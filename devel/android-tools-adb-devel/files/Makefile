@@ -16,6 +16,7 @@ SRCS+= console.cpp
 SRCS+= fdevent.cpp
 SRCS+= file_sync_client.cpp
 SRCS+= services.cpp
+SRCS+= shell_service_protocol.cpp
 SRCS+= sockets.cpp
 SRCS+= transport.cpp
 SRCS+= transport_local.cpp

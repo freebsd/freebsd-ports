@@ -1,5 +1,5 @@
---- configure.in.orig	2014-10-01 13:46:05.488459511 +0000
-+++ configure.in	2014-10-01 13:45:56.345459984 +0000
+--- configure.in.orig	2014-10-01 13:46:05 UTC
++++ configure.in
 @@ -570,7 +570,7 @@
  [AC_CACHE_CHECK(whether dtrace USDT is available, rb_cv_dtrace_available,
  [

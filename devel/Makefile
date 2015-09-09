@@ -293,7 +293,6 @@
     SUBDIR += cppi
     SUBDIR += cpptest
     SUBDIR += cppunit
-    SUBDIR += cppunit113
     SUBDIR += cproto
     SUBDIR += cpuflags
     SUBDIR += critcl
@@ -648,6 +647,7 @@
     SUBDIR += gitg0
     SUBDIR += github-backup-utils
     SUBDIR += gitinspector
+    SUBDIR += gitlist
     SUBDIR += gitolite
     SUBDIR += gitolite2
     SUBDIR += gitphp
@@ -1113,6 +1113,7 @@
     SUBDIR += libcli
     SUBDIR += libconfig
     SUBDIR += libconfuse
+    SUBDIR += libcutl
     SUBDIR += libcwd
     SUBDIR += libcxxrt
     SUBDIR += libdaemon
@@ -1359,6 +1360,7 @@
     SUBDIR += linux_kdump
     SUBDIR += linux_libusb
     SUBDIR += lion
+    SUBDIR += lldb37
     SUBDIR += llnextgen
     SUBDIR += llvm-cheri
     SUBDIR += llvm-devel
@@ -2217,6 +2219,7 @@
     SUBDIR += p5-File-Cat
     SUBDIR += p5-File-ChangeNotify
     SUBDIR += p5-File-ConfigDir
+    SUBDIR += p5-File-Copy-Link
     SUBDIR += p5-File-Copy-Recursive
     SUBDIR += p5-File-CountLines
     SUBDIR += p5-File-CreationTime
@@ -2270,6 +2273,7 @@
     SUBDIR += p5-File-Slurp
     SUBDIR += p5-File-Slurp-Tiny
     SUBDIR += p5-File-Slurp-Tree
+    SUBDIR += p5-File-Slurper
     SUBDIR += p5-File-Spec-Native
     SUBDIR += p5-File-Stream
     SUBDIR += p5-File-Sync
@@ -2688,6 +2692,7 @@
     SUBDIR += p5-MooseX-Types-DateTime
     SUBDIR += p5-MooseX-Types-DateTime-ButMaintained
     SUBDIR += p5-MooseX-Types-DateTime-MoreCoercions
+    SUBDIR += p5-MooseX-Types-DateTime-MySQL
     SUBDIR += p5-MooseX-Types-DateTimeX
     SUBDIR += p5-MooseX-Types-ISO8601
     SUBDIR += p5-MooseX-Types-JSON
@@ -3635,6 +3640,7 @@
     SUBDIR += pecl-expect
     SUBDIR += pecl-gearman
     SUBDIR += pecl-hidef
+    SUBDIR += pecl-hrtime
     SUBDIR += pecl-htscanner
     SUBDIR += pecl-inclued
     SUBDIR += pecl-inotify
@@ -3685,6 +3691,7 @@
     SUBDIR += php-libawl
     SUBDIR += php-memoize
     SUBDIR += php-scalar_objects
+    SUBDIR += php-uprofiler
     SUBDIR += php-xdebug
     SUBDIR += php5-blitz
     SUBDIR += php5-blitz-devel
@@ -3858,6 +3865,7 @@
     SUBDIR += py-apipkg
     SUBDIR += py-appdirs
     SUBDIR += py-application
+    SUBDIR += py-apscheduler
     SUBDIR += py-archetypes.querywidget
     SUBDIR += py-archetypes.referencebrowserwidget
     SUBDIR += py-archetypes.schemaextender
@@ -4142,6 +4150,7 @@
     SUBDIR += py-pycerberus
     SUBDIR += py-pycparser
     SUBDIR += py-pydasm
+    SUBDIR += py-pydoop
     SUBDIR += py-pyechonest
     SUBDIR += py-pyee
     SUBDIR += py-pyelftools
@@ -4173,6 +4182,7 @@
     SUBDIR += py-python-statsd
     SUBDIR += py-python2-pythondialog
     SUBDIR += py-pythonbrew
+    SUBDIR += py-pytimeparse
     SUBDIR += py-pytrie
     SUBDIR += py-pytz
     SUBDIR += py-pyutil
@@ -4739,7 +4749,6 @@
     SUBDIR += rubygem-icalendar
     SUBDIR += rubygem-ice_cube
     SUBDIR += rubygem-ice_nine
-    SUBDIR += rubygem-igraph
     SUBDIR += rubygem-inflecto
     SUBDIR += rubygem-interact
     SUBDIR += rubygem-io-like

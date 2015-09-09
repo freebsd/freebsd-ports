@@ -3,6 +3,7 @@
 
 PORTNAME=	xmlscan
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.blue.sky.or.jp/atelier/ruby/xmlscan/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -13,7 +14,11 @@ COMMENT=	High-performance non-validating XML parser written in 100% pure Ruby
 
 USE_RUBY=	yes
 
+NO_ARCH=	yes
 NO_BUILD=	yes
+USES=		shebangfix
+SHEBANG_FILES=	samples/xmlbench.rb \
+		samples/xmlconftest.rb
 
 DOCS_EN=	ChangeLog \
 		README \

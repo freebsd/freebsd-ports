@@ -4,8 +4,7 @@
 PORTNAME=	tinymce
 PORTVERSION=	3.5.8
 CATEGORIES=	www
-MASTER_SITES=	http://cloud.github.com/downloads/${PORTNAME}/${PORTNAME}/ \
-		LOCAL/sunpoet
+MASTER_SITES=	GHC LOCAL/sunpoet
 PKGNAMESUFFIX=	3
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -19,6 +18,7 @@ CONFLICTS_INSTALL=	tinymce-[0-24-9]*
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		cpe zip
+USE_GITHUB=	yes
 
 post-extract:
 	@cd ${WRKSRC}/ && ${FIND} -s * -type d -empty | ${XARGS} -I % ${TOUCH} %/.keepme

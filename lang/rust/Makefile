@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	lang
 MASTER_SITES=	http://static.rust-lang.org/dist/:src \
 		http://static.rust-lang.org/stage0-snapshots/:bootstrap
@@ -32,13 +32,14 @@ CONFLICTS_INSTALL=	rust-nightly
 
 RUST_SOURCE=	${DISTNAME}-src${EXTRACT_SUFX}
 RUST_BOOT=	rust-stage0-${RUST_BOOT_SIG}.tar.bz2
-RUST_BOOT_SIG=	2015-04-27-857ef6e-freebsd-x86_64-18925db56f6298cc190d1f41615ab5871de1dda0
+RUST_BOOT_SIG=	2015-05-24-ba0e1cd-freebsd-x86_64-370db40613f5c08563ed7e38357826dd42d4e0f8
 
-USES=		gmake python:2,build
+USES=		gmake libedit python:2,build
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-valgrind --disable-docs \
 		--enable-clang --mandir=${MANPREFIX}/man \
 		--release-channel=stable
+PLIST_SUB+=	VSN="62abc69f"
 
 # Use LLVM from ports, instead of the copy shipped with rust.
 LLVM_VER=	36
@@ -68,6 +69,10 @@ post-extract:
 	@${MKDIR} ${WRKSRC}/dl
 	${LN} -sf ${DISTDIR}/${RUST_BOOT} ${WRKSRC}/dl
 	(cd ${WRKSRC} && find . -type d -exec chmod 0755 {} \;)
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/mk/main.mk
 
 # In case the previous "make stage" failed, this ensures rust's
 # install.sh won't backup previously staged files before reinstalling

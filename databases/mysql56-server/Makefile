@@ -64,8 +64,7 @@ MMAN1=		my_print_defaults.1 myisam_ftdump.1 myisamchk.1 myisamlog.1 myisampack.1
 
 CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON"
 .else
-BUILD_DEPENDS+=	libedit>=0:${PORTSDIR}/devel/libedit
-RUN_DEPENDS+=	libedit>=0:${PORTSDIR}/devel/libedit
+USES+=		libedit
 .endif
 
 post-patch:
@@ -76,5 +75,5 @@ post-patch:
 .if ${ARCH} == "armv6"	 
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-config.h.cmake
 .endif
- 	 
+
 .include <bsd.port.post.mk>

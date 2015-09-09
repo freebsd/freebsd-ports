@@ -105,6 +105,7 @@ OPTIONS_DEFINE=	\
 	RTMP \
 	SET_MISC \
 	SFLOW \
+	SHIBBOLETH \
 	SLOWFS_CACHE \
 	SMALL_LIGHT \
 	SRCACHE \
@@ -201,6 +202,7 @@ REDIS2_DESC=			3rd party redis2 module
 RTMP_DESC=			3rd party rtmp module
 SET_MISC_DESC=			3rd party set_misc module
 SFLOW_DESC=			3rd party sflow module
+SHIBBOLETH_DESC=		3rd party shibboleth module
 SLOWFS_CACHE_DESC=		3rd party slowfs_cache module
 SMALL_LIGHT_DESC=		3rd party small_light module
 SRCACHE_DESC=			3rd party srcache module
@@ -368,7 +370,7 @@ JAVA_VERSION=	1.8
 JAVA_VENDOR=	openjdk
 JAVA_BUILD=	yes
 JAVA_RUN=	yes
-NGINX_CLOJURE_VERSION=	0.4.1
+NGINX_CLOJURE_VERSION=	0.4.2
 GH_ACCOUNT+=	nginx-clojure:clojure
 GH_PROJECT+=	nginx-clojure:clojure
 GH_TAGNAME+=	v${NGINX_CLOJURE_VERSION}:clojure
@@ -775,6 +777,14 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_sflow_config.c \
 		${PATCHDIR}/extra-patch-ngx_http_sflow_module.c
 .endif
 
+.if ${PORT_OPTIONS:MSHIBBOLETH}
+GIT_SHIBBOLETH_VERSION=	20150121
+GH_ACCOUNT+=	nginx-shib:shib
+GH_PROJECT+=	nginx-http-shibboleth:shib
+GH_TAGNAME+=	v${GIT_SHIBBOLETH_VERSION}:shib
+CONFIGURE_ARGS+=--add-module=${WRKSRC_shib}
+.endif
+
 .if ${PORT_OPTIONS:MSLOWFS_CACHE}
 NGINX_SLOWFS_CACHE_VERSION=	1.10
 MASTER_SITES+=	http://labs.frickle.com/files/:slowfs_cache
@@ -848,7 +858,7 @@ NGINX_OPENSSL=	yes
 USE_HTTP_SSL=	yes
 CONFIGURE_ARGS+=--with-http_v2_module
 USE_OPENSSL_PORT=	yes
-NGINX_HTTPV2_VERSION=	3
+NGINX_HTTPV2_VERSION=	4
 PATCH_SITES+=	http://nginx.org/patches/http2/:httpv2
 PATCHFILES+=	patch.http2-v${NGINX_HTTPV2_VERSION}_${PORTVERSION}.txt:httpv2
 PATCH_DIST_STRIP=	-p1

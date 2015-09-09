@@ -6058,7 +6058,6 @@ net/py-spreadmodule||2014-05-04|Has expired: Depends on expired net/spread
 net/p5-Spread-Message||2014-05-04|Has expired: Depends on expired net/spread
 net/p5-POE-Component-Spread||2014-05-04|Has expired: Depends on expired net/spread
 net/p5-Spread-Session||2014-05-04|Has expired: Depends on expired net/spread
-sysutils/wmmemload||2014-05-04|Has expired: Broken
 lang/ml-pnet||2014-05-04|Has expired: Alpha-quality abandonware - Decommissioned Dec 2012 - Use mono
 lang/treecc||2014-05-04|Has expired: PNET dependency decommissioned Dec 2012
 lang/pnetlib||2014-05-04|Has expired: Alpha-quality abandonware - Decommissioned Dec 2012 - Use mono
@@ -7852,3 +7851,14 @@ print/ghostscript9-agpl-nox11|print/ghostscript9-agpl-base|2015-08-22|Integrated
 www/pelican|www/py-pelican|2015-08-29|Rename to match Python naming conventions
 devel/ninja16|devel/ninja|2015-08-29|Use devel/ninja instead
 devel/geany-plugin-gproject|devel/geany-plugin-projectorganizer|2015-08-31|Renamed to match upstream naming
+www/p5-WWW-Shorten-NotLong||2015-09-01|Has expired: notlong.com is now dead
+games/linux-majesty-demo||2015-09-01|Has expired: Broken for more than 6 months
+games/linux-coldwar-demo||2015-09-01|Has expired: Broken for more than 6 months
+games/linux-hdb-demo||2015-09-01|Has expired: Broken for more than 6 months
+devel/rubygem-igraph||2015-09-01|Has expired: Broken for more than 6 months
+games/linux-candycruncher-demo||2015-09-01|Has expired: Broken for more than 6 months
+games/linux-gorky17-demo||2015-09-01|Has expired: Broken for more than 6 months
+sysutils/syslog-ng33||2015-09-01|Has expired: No longer supported by Balabit cince November 2014.
+textproc/ruby-xmlconfigfile|textproc/ruby-xml-configfile|2015-09-03|Rename to match our ruby naming
+net/mcast-tools|net/pim6-tools|2015-09-07|Rename
+www/p5-Dancer-Session-Memcached|databases/p5-Dancer-Session-Memcached|2015-09-09|Duplicate port

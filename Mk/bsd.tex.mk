@@ -27,13 +27,14 @@ TEX_MAINTAINER=	hrs@FreeBSD.org
 #  texlua:	texlua52 library
 #  texluajit:	texluajit library
 #  synctex:	synctex library
+#  xpdfopen:	pdfopen/pdfclose utility
 #
 #  dvipsk:	dvipsk
 #  dvipdfmx:	DVIPDFMx
 #  xdvik:	XDvi
 #  gbklatex:	gbklatex
 #
-#  formats:	TeX, LaTeX, PDFTeX, AMSTeX, ConTeXT, CSLaTeX, EplainTeX,
+#  formats:	TeX, LaTeX, AMSTeX, ConTeXT, CSLaTeX, EplainTeX,
 #		CSplainTeX, METAFONT, MLTeX, PDFTeX, TeXsis
 #  tex:		TeX
 #  latex:	LaTeX
@@ -142,6 +143,9 @@ _USE_TEX_FORMATS_PKGNAME=tex-formats
 _USE_TEX_SYNCTEX_DEP=	libsynctex.so
 _USE_TEX_SYNCTEX_PORT=	devel/${_USE_TEX_SYNCTEX_PKGNAME}
 _USE_TEX_SYNCTEX_PKGNAME=tex-synctex
+_USE_TEX_XPDFOPEN_DEP=	pdfopen
+_USE_TEX_XPDFOPEN_PORT=	print/${_USE_TEX_XPDFOPEN_PKGNAME}
+_USE_TEX_XPDFOPEN_PKGNAME=	xpdfopen
 _USE_TEX_ALEPH_DEP=	aleph
 _USE_TEX_ALEPH_PORT=	print/${_USE_TEX_ALEPH_PKGNAME}
 _USE_TEX_ALEPH_PKGNAME=	tex-aleph
@@ -152,10 +156,10 @@ _USE_TEX_XETEX_DEP=	xetex
 _USE_TEX_XETEX_PORT=	print/${_USE_TEX_XETEX_PKGNAME}
 _USE_TEX_XETEX_PKGNAME=	tex-xetex
 
-_USE_TEX_FULLLIST=	texmf>=20150523 base>=20150521 \
+_USE_TEX_FULLLIST=	texmf>=20150523_3 base>=20150521_5 \
 		web2c tlmgr:run \
 		basic formats aleph xetex jadetex luatex xmltex ptex \
-		dvipsk dvipdfmx xdvik \
+		dvipsk dvipdfmx xdvik xpdfopen:run \
 		kpathsea:lib ptexenc:lib texlua:lib texluajit:lib synctex:lib
 
 .if !empty(USE_TEX:tu:MFULL)
@@ -166,10 +170,10 @@ USE_TEX:=	${USE_TEX:tu:NFULL} ${_USE_TEX_FULLLIST:tu}
 _U:=	${_UU}	# ugly but necessary in for loop
 _VOP:=
 . if !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MTEXMF) && empty(_U:M*[<>=]*)
-_U:=	${_U}>=20150523
+_U:=	${_U}>=20150523_3
 . endif
 . if !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MBASE) && empty(_U:M*[<>=]*)
-_U:=	${_U}>=20150521
+_U:=	${_U}>=20150521_5
 . endif
 . if !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MKPATHSEA) || \
      !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MPTEXENC) || \

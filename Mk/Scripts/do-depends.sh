@@ -56,7 +56,7 @@ find_package()
 		echo "===>   ${dp_PKGNAME} depends on package: $1 - found"
 		return 0
 	fi
-	echo "===>   ${dp_PKGNAME} depends on file: $1 - not found"
+	echo "===>   ${dp_PKGNAME} depends on package: $1 - not found"
 	return 1
 }
 

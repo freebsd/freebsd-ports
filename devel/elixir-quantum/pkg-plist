@@ -1,8 +1,10 @@
 lib/elixir/lib/quantum/ebin/Elixir.Quantum.Application.beam
 lib/elixir/lib/quantum/ebin/Elixir.Quantum.Executor.beam
+lib/elixir/lib/quantum/ebin/Elixir.Quantum.Job.beam
 lib/elixir/lib/quantum/ebin/Elixir.Quantum.Matcher.beam
 lib/elixir/lib/quantum/ebin/Elixir.Quantum.Normalizer.beam
 lib/elixir/lib/quantum/ebin/Elixir.Quantum.Parser.beam
+lib/elixir/lib/quantum/ebin/Elixir.Quantum.Supervisor.beam
 lib/elixir/lib/quantum/ebin/Elixir.Quantum.Timer.beam
 lib/elixir/lib/quantum/ebin/Elixir.Quantum.Translator.beam
 lib/elixir/lib/quantum/ebin/Elixir.Quantum.beam
@@ -10,9 +12,11 @@ lib/elixir/lib/quantum/ebin/quantum.app
 lib/elixir/lib/quantum/lib/quantum.ex
 lib/elixir/lib/quantum/lib/quantum/application.ex
 lib/elixir/lib/quantum/lib/quantum/executor.ex
+lib/elixir/lib/quantum/lib/quantum/job.ex
 lib/elixir/lib/quantum/lib/quantum/matcher.ex
 lib/elixir/lib/quantum/lib/quantum/normalizer.ex
 lib/elixir/lib/quantum/lib/quantum/parser.ex
+lib/elixir/lib/quantum/lib/quantum/supervisor.ex
 lib/elixir/lib/quantum/lib/quantum/timer.ex
 lib/elixir/lib/quantum/lib/quantum/translator.ex
 %%PORTDOCS%%%%DOCSDIR%%/README.md

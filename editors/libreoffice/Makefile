@@ -8,8 +8,7 @@ COMMENT=	Full integrated office productivity suite
 
 BUILD_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 		zip:${PORTSDIR}/archivers/zip \
-		${LOCALBASE}/lib/libboost_regex.a:${PORTSDIR}/devel/boost-libs \
-		${LOCALBASE}/libdata/pkgconfig/cppunit.pc:${PORTSDIR}/devel/cppunit \
+		cppunit-config:${PORTSDIR}/devel/cppunit \
 		dmake:${PORTSDIR}/devel/dmake \
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
 		mdds>=0.9.0:${PORTSDIR}/devel/mdds \
@@ -19,11 +18,11 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 		${LOCALBASE}/include/glm/glm.hpp:${PORTSDIR}/math/glm \
 		bash:${PORTSDIR}/shells/bash \
 		gsed:${PORTSDIR}/textproc/gsed
-
 LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1 \
+		libboost_date_time.so:${PORTSDIR}/devel/boost-libs \
 		libicutu.so:${PORTSDIR}/devel/icu \
 		liblangtag.so:${PORTSDIR}/devel/liblangtag \
-		liborcus-0.8.so:${PORTSDIR}/devel/liborcus07 \
+		liborcus-0.10.so:${PORTSDIR}/devel/liborcus \
 		libcurl.so:${PORTSDIR}/ftp/curl \
 		libcairo.so:${PORTSDIR}/graphics/cairo \
 		libGLEW.so:${PORTSDIR}/graphics/glew \
@@ -41,6 +40,7 @@ LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1 \
 		libcmis-0.5.so:${PORTSDIR}/net/libcmis \
 		libharfbuzz.so:${PORTSDIR}/print/harfbuzz \
 		libmspub-0.1.so:${PORTSDIR}/print/libmspub01 \
+		libpagemaker-0.0.so:${PORTSDIR}/print/libpagemaker \
 		libnss3.so:${PORTSDIR}/security/nss \
 		libclucene-core.so:${PORTSDIR}/textproc/clucene \
 		libexpat.so:${PORTSDIR}/textproc/expat2 \
@@ -54,31 +54,18 @@ LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1 \
 		librevenge-0.0.so:${PORTSDIR}/textproc/librevenge \
 		libvisio-0.1.so:${PORTSDIR}/textproc/libvisio01 \
 		libwpd-0.10.so:${PORTSDIR}/textproc/libwpd010 \
-		libwps-0.3.so:${PORTSDIR}/textproc/libwps03 \
+		libwps-0.4.so:${PORTSDIR}/textproc/libwps \
 		libxml2.so:${PORTSDIR}/textproc/libxml2 \
 		libxslt.so:${PORTSDIR}/textproc/libxslt \
 		libmythes-1.2.so:${PORTSDIR}/textproc/mythes \
 		librdf.so:${PORTSDIR}/textproc/redland \
 		libserf-1.so:${PORTSDIR}/www/serf
-
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/Caladea/Caladea-Bold.ttf:${PORTSDIR}/x11-fonts/crosextrafonts-caladea-ttf \
 		${LOCALBASE}/share/fonts/Carlito/Carlito-Bold.ttf:${PORTSDIR}/x11-fonts/crosextrafonts-carlito-ttf \
 		${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu \
 		${LOCALBASE}/share/fonts/GentiumBasic/GenBasI.ttf:${PORTSDIR}/x11-fonts/gentium-basic \
 		${LOCALBASE}/share/fonts/Liberation/LiberationMono-Bold.ttf:${PORTSDIR}/x11-fonts/liberation-fonts-ttf \
 		${LOCALBASE}/share/fonts/LinLibertineG/LinLibertine_DR_G.ttf:${PORTSDIR}/x11-fonts/linuxlibertine-g
-
-_MAKE_JOBS=	#
-
-GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf aclocal
-USE_GL=		gl glu
-USE_OPENLDAP=	yes
-USE_PERL5=	build
-USE_QT4=	# empty but required
-USE_XORG=	xaw xrandr
-USES=		bison compiler:c++11-lang cpe gmake jpeg perl5 pkgconfig python shared-mime-info tar:xz
-WANT_GNOME=	yes
 
 DISTFILES+=	${PORTNAME}-${LOVERSION}${EXTRACT_SUFX}
 DISTFILES+=	${PORTNAME}-help-${LOVERSION}${EXTRACT_SUFX}
@@ -88,115 +75,26 @@ EXTRACT_ONLY:=	${DISTFILES}
 DISTFILES+=	1f24ab1d39f4a51faf22244c94a6203f-xmlsec1-1.2.14.tar.gz:src \
 		4b87018f7fff1d054939d19920b751a0-collada2gltf-master-cb1d97788a.tar.bz2:src
 
+CONFLICTS_INSTALL=	libreoffice4-4.*
+
 DIST_SUBDIR=	libreoffice
-EXTRA_PATCHES=	${FILESDIR}/enable-opencollada:-p1
+INSTALL_TARGET=	distro-pack-install
 WRKSRC=		${WRKDIR}/${PORTNAME}-${LOVERSION}
 
-COLLADA_MODS=		COLLADABaseUtils COLLADAFramework \
-			COLLADASaxFrameworkLoader GeneratedSaxParser
-COLLADA_CFLAGS=		${COLLADA_MODS:S|^|-I${LOCALBASE}/include/opencollada/|}
-COLLADA_LIBS=		-L${LOCALBASE}/lib/opencollada \
-			${COLLADA_MODS:S|^COLLADA|OpenCOLLADA|:S|^|-l|}
+GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoconf aclocal
+USE_GL=		gl glu
+USE_OPENLDAP=	yes
+USE_PERL5=	build
+USE_QT4=	# empty but required
+USE_XORG=	xaw xrandr
+USES=		bison compiler:c++11-lib cpe gmake jpeg perl5 pkgconfig \
+		python shared-mime-info tar:xz
+WANT_GNOME=	yes
 
-CONFIGURE_ENV=		DMAKE=${LOCALBASE}/bin/dmake \
-			GNUTAR="${TAR}" \
-			GPERF=${LOCALBASE}/bin/gperf \
-			OPENCOLLADA_CFLAGS="${COLLADA_CFLAGS}" \
-			OPENCOLLADA_LIBS="${COLLADA_LIBS}" \
-			OPENSSL_CFLAGS="-I/usr/include" \
-			OPENSSL_LIBS="-lcrypto -lssl" \
-			PYTHON_CFLAGS="`${PYTHON_VERSION}-config --cflags`" \
-			PYTHON_LIBS="`${PYTHON_VERSION}-config --libs`"
-
-CONFIGURE_ARGS+=	--disable-dependency-tracking \
-			--disable-fetch-external \
-			--disable-online-update \
-			--exec-prefix=${PREFIX} \
-			--with-build-version="FreeBSD ports ${PKGVERSION}" \
-			--with-external-tar=${DISTDIR}/${DIST_SUBDIR} \
-			--with-gnu-patch=${LOCALBASE}/bin/gpatch \
-			--with-os-version=${OSVERSION} \
-			--with-parallelism=${MAKE_JOBS_NUMBER} \
-			--with-vendor="FreeBSD ports"
-
-CONFIGURE_ARGS+=	--disable-coinmp \
-			--disable-epm \
-			--disable-firebird-sdbc \
-			--disable-gnome-vfs \
-			--disable-gstreamer-0-10 \
-			--disable-kde \
-			--disable-kdeab \
-			--disable-mergelibs \
-			--disable-packagekit \
-			--enable-cairo-canvas \
-			--enable-graphite \
-			--enable-python=system \
-			--with-alloc=system \
-			--with-external-dict-dir=${LOCALBASE}/share/hunspell \
-			--with-external-hyph-dir=${LOCALBASE}/share/hyphen \
-			--with-external-thes-dir=${LOCALBASE}/share/mythes \
-			--with-system-altlinuxhyph \
-			--with-system-apr \
-			--with-system-boost \
-			--with-system-cairo \
-			--with-system-clucene \
-			--with-system-cppunit \
-			--with-system-curl \
-			--with-system-dicts \
-			--with-system-expat \
-			--with-system-glew \
-			--with-system-glm \
-			--with-system-graphite \
-			--with-system-harfbuzz \
-			--with-system-hunspell \
-			--with-system-icu \
-			--with-system-jpeg \
-			--with-system-lcms2 \
-			--with-system-libabw \
-			--with-system-libcdr \
-			--with-system-libcmis \
-			--with-system-libebook \
-			--with-system-libetonyek \
-			--with-system-libexttextcat \
-			--with-system-libfreehand \
-			--with-system-libgltf \
-			--with-system-liblangtag \
-			--with-system-libmspub \
-			--with-system-libmwaw \
-			--with-system-libodfgen \
-			--with-system-libpng \
-			--with-system-librevenge \
-			--with-system-libvisio \
-			--with-system-libwpd \
-			--with-system-libwpg \
-			--with-system-libwps \
-			--with-system-libxml \
-			--with-system-lpsolve \
-			--with-system-mdds \
-			--with-system-mesa-headers \
-			--with-system-mythes \
-			--with-system-neon \
-			--with-system-nss \
-			--with-system-opencollada \
-			--with-system-openldap \
-			--with-system-openssl \
-			--with-system-orcus \
-			--with-system-poppler \
-			--with-system-postgresql \
-			--with-system-redland \
-			--with-system-serf \
-			--with-system-ucpp \
-			--with-system-vigra \
-			--with-system-zlib \
-			--without-fonts \
-			--without-myspell-dicts \
-			--without-system-npapi-headers
-
-#XXX add: --with-system-libeot or --with-system-libatomic_ops
-
-OPTIONS_DEFINE=	CUPS DEBUG GNOME GTK2 GTK3 JAVA KDE4 MMEDIA PGSQL SDK \
-		SYSTRAY TEST VERBOSE WEBDAV
-OPTIONS_DEFAULT=CUPS GTK2
+OPTIONS_DEFINE=	CUPS GNOME GTK2 GTK3 JAVA KDE4 MMEDIA PGSQL SDK SYSTRAY \
+		TEST VERBOSE WEBDAV
+OPTIONS_DEFAULT=	CUPS GTK2
 
 JAVA_DESC=	Add Java support (XML filters, macros)
 MMEDIA_DESC=	Enable multimedia backend for impress
@@ -207,20 +105,40 @@ TEST_DESC=	Run all regression tests
 VERBOSE_DESC=	Increase build verbosity
 WEBDAV_DESC=	Enable webdav protocol
 
-CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
 CUPS_CONFIGURE_ENABLE=	cups
+CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
 
-DEBUG_CONFIGURE_ON=	--enable-crashdump --enable-dbgutil --enable-debug
-DEBUG_CONFIGURE_OFF=	--enable-release-build
-
+GNOME_CONFIGURE_ENABLE=	dbus gconf lockdown
+GNOME_IMPLIES=	GTK2
 GNOME_LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 GNOME_USE=	GNOME=gconf2
-GNOME_CONFIGURE_ENABLE=	dbus gconf lockdown
 
-GTK3_USE=		GNOME=gtk30
+GTK_USE_GNOME=	gtk-update-icon-cache
+GTK_USES=	desktop-file-utils
+GTK_VARS=	POST_PLIST=add-plist-gnome
+
+GTK2_CONFIGURE_ENABLE=	gtk
+GTK2_USE=	GNOME=gtk20,${GTK_USE_GNOME}
+GTK2_USES=	${GTK_USES}
+GTK2_VARS=	${GTK_VARS}
+
 GTK3_CONFIGURE_ENABLE=	gtk3
+GTK3_USE=	GNOME=gtk30,${GTK_USE_GNOME}
+GTK3_USES=	${GTK_USES}
+GTK3_VARS=	${GTK_VARS}
 
+JAVA_BUILD=	yes
+JAVA_BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
+			${JAVAJARDIR}/junit.jar:${PORTSDIR}/java/junit
 JAVA_CATEGORIES=	java
+JAVA_CONFIGURE_ENABLE=	ext-wiki-publisher report-builder
+JAVA_CONFIGURE_ON=	--with-ant-home=${LOCALBASE}/share/java/apache-ant \
+			--with-jdk-home="${JAVA_HOME}" \
+			--with-junit=${JAVAJARDIR}/junit.jar \
+			--with-hamcrest=${JAVAJARDIR}/hamcrest.jar
+JAVA_CONFIGURE_WITH=	java
+# XXX jni.h from GNU classpath causes ABI conflicts.
+JAVA_CONFLICTS_BUILD=	classpath-[0-9]*
 JAVA_DISTFILES=	048751f3271906db5126ab76870444c4-commons-codec-1.9-src.zip:src \
 		17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:src \
 		2c9b0f83ed5890af02c0df1c1776f39b-commons-httpclient-3.1-src.tar.gz:src \
@@ -235,97 +153,159 @@ JAVA_DISTFILES=	048751f3271906db5126ab76870444c4-commons-codec-1.9-src.zip:src \
 		a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip:src \
 		ace6ab49184e329db254e454a010f56d-libxml-1.1.7.zip:src \
 		ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip:src \
+		commons-logging-1.2-src.tar.gz:src \
 		d8bd5eed178db6e2b18eeed243f85aa8-flute-1.1.6.zip:src \
 		db60e4fde8dd6d6807523deb71ee34dc-liblayout-0.2.10.zip:src \
-		e8e197d628436490886d17cffa108fe3-commons-logging-1.1.3-src.tar.gz:src \
-		ea570af93c284aa9e5621cd563f54f4d-bsh-2.0b1-src.tar.gz:src \
+		ec1941a74d3ef513c4ce57a9092b74e1-bsh-2.0b5-src.zip:src \
 		eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip:src \
 		f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:src
-JAVA_BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
-			${JAVAJARDIR}/junit.jar:${PORTSDIR}/java/junit
-# XXX jni.h from GNU classpath causes ABI conflicts.
-JAVA_CONFLICTS_BUILD=	classpath-[0-9]*
-JAVA_CONFIGURE_ON=	--enable-ext-wiki-publisher \
-			--enable-report-builder \
-			--with-ant-home=${LOCALBASE}/share/java/apache-ant \
-			--with-jdk-home="${JAVA_HOME}" \
-			--with-junit=${JAVAJARDIR}/junit.jar \
-			--with-hamcrest=${JAVAJARDIR}/hamcrest.jar
-JAVA_CONFIGURE_OFF=	--without-java
-JAVA_BUILD=	yes
 JAVA_USE=	JAVA=yes
 
-KDE4_USE=	KDE4=kdelibs QT4=moc_build,qmake_build
 KDE4_CONFIGURE_ENABLE=	kde4
 KDE4_CONFIGURE_ENV=	KDE4DIR="${KDE4_PREFIX}" \
 			QT4DIR="${QT_PREFIX}" \
 			QT4INC="${QT_INCDIR}" \
 			QT4LIB="${QT_LIBDIR}"
+KDE4_USE=	KDE4=kdelibs QT4=moc_build,qmake_build
 
+MMEDIA_CONFIGURE_ENABLE=	gstreamer-1-0
 MMEDIA_USE=	GSTREAMER1=yes
-MMEDIA_CONFIGURE_ENABLE=	gstreamer
 
-PGSQL_USES=	pgsql:9.0+
 PGSQL_CONFIGURE_ENABLE=	postgresql-sdbc
 PGSQL_CONFIGURE_WITH=	gssapi krb5
+PGSQL_USES=	pgsql:9.0+
 
-SDK_DISTFILES=	185d60944ea767075d27247c3162b3bc-unowinreg.dll:ext
 SDK_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 SDK_CONFIGURE_ENABLE=	odk
-SDK_CONFIGURE_ON=	--with-doxygen=${LOCALBASE}/bin/doxygen
 SDK_CONFIGURE_OFF=	--without-doxygen
+SDK_CONFIGURE_ON=	--with-doxygen=${LOCALBASE}/bin/doxygen
+SDK_DISTFILES=	185d60944ea767075d27247c3162b3bc-unowinreg.dll:ext
 
 SYSTRAY_CONFIGURE_ENABLE=	systray
 
 TEST_CONFIGURE_ENABLE=	cve-tests
 
-WEBDAV_LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon
+VERBOSE_CONFIGURE_ON=	--enable-verbose
+
 WEBDAV_CONFIGURE_ENABLE=	neon
+WEBDAV_LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon
 
-.include <bsd.port.options.mk>
+ACLOCAL_ARGS=	-I "${WRKSRC}/m4"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if ${PORT_OPTIONS:MDEBUG}
-IGNORE=			is broken with DEBUG option
-.else
-EXTRA_PATCHES+=		${FILESDIR}/extra-Makefile.in
-.endif
+COLLADA_MODS=	COLLADABaseUtils COLLADAFramework \
+		COLLADASaxFrameworkLoader GeneratedSaxParser
+COLLADA_CFLAGS=	${COLLADA_MODS:S|^|-I${LOCALBASE}/include/opencollada/|}
+COLLADA_LIBS=	-L${LOCALBASE}/lib/opencollada \
+		${COLLADA_MODS:S|^COLLADA|OpenCOLLADA|:S|^|-l|}
 
-.if ${PORT_OPTIONS:MDEBUG} || ${PORT_OPTIONS:MVERBOSE}
-CONFIGURE_ARGS+=	--enable-verbose
-.endif
+CONFIGURE_ARGS=	--disable-coinmp \
+		--disable-dependency-tracking \
+		--disable-epm \
+		--disable-fetch-external \
+		--disable-firebird-sdbc \
+		--disable-gnome-vfs \
+		--disable-kde \
+		--disable-kdeab \
+		--disable-online-update \
+		--disable-mergelibs \
+		--disable-packagekit \
+		--enable-cairo-canvas \
+		--enable-graphite \
+		--enable-release-build \
+		--exec-prefix=${PREFIX} \
+		--enable-python=system \
+		--with-alloc=system \
+		--with-build-version="FreeBSD ports ${PKGVERSION}" \
+		--with-external-dict-dir=${LOCALBASE}/share/hunspell \
+		--with-external-hyph-dir=${LOCALBASE}/share/hyphen \
+		--with-external-tar=${DISTDIR}/${DIST_SUBDIR} \
+		--with-external-thes-dir=${LOCALBASE}/share/mythes \
+		--with-gnu-patch=${LOCALBASE}/bin/gpatch \
+		--with-os-version=${OSVERSION} \
+		--with-parallelism=${MAKE_JOBS_NUMBER} \
+		--with-system-altlinuxhyph \
+		--with-system-apr \
+		--with-system-boost \
+		--with-system-cairo \
+		--with-system-clucene \
+		--with-system-cppunit \
+		--with-system-curl \
+		--with-system-dicts \
+		--with-system-expat \
+		--with-system-glew \
+		--with-system-glm \
+		--with-system-graphite \
+		--with-system-harfbuzz \
+		--with-system-hunspell \
+		--with-system-icu \
+		--with-system-jpeg \
+		--with-system-lcms2 \
+		--with-system-libabw \
+		--with-system-libcdr \
+		--with-system-libcmis \
+		--with-system-libebook \
+		--with-system-libetonyek \
+		--with-system-libexttextcat \
+		--with-system-libfreehand \
+		--with-system-libgltf \
+		--with-system-liblangtag \
+		--with-system-libmspub \
+		--with-system-libmwaw \
+		--with-system-libodfgen \
+		--with-system-libpagemaker \
+		--with-system-libpng \
+		--with-system-librevenge \
+		--with-system-libvisio \
+		--with-system-libwpd \
+		--with-system-libwpg \
+		--with-system-libwps \
+		--with-system-libxml \
+		--with-system-lpsolve \
+		--with-system-mdds \
+		--with-system-mesa-headers \
+		--with-system-mythes \
+		--with-system-neon \
+		--with-system-nss \
+		--with-system-opencollada \
+		--with-system-openldap \
+		--with-system-openssl \
+		--with-system-orcus \
+		--with-system-poppler \
+		--with-system-postgresql \
+		--with-system-redland \
+		--with-system-serf \
+		--with-system-ucpp \
+		--with-system-vigra \
+		--with-system-zlib \
+		--with-vendor="FreeBSD ports" \
+		--without-fonts \
+		--without-myspell-dicts \
+		--without-system-npapi-headers
 
-.if ${PORT_OPTIONS:MGNOME} || ${PORT_OPTIONS:MGTK2}
-USE_GNOME+=	gtk20
-CONFIGURE_ARGS+=	--enable-gtk
-.else
-CONFIGURE_ARGS+=	--disable-gtk
-.endif
+#XXX add: --with-system-libeot or --with-system-libatomic_ops
 
-.if ${PORT_OPTIONS:MGNOME} || ${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MGTK3}
-USES+=		desktop-file-utils
-CONFIGURE_ARGS+=	--enable-gio
-INSTALLS_ICONS=	yes
-.else
-CONFIGURE_ARGS+=	--disable-gio
-.endif
+CONFIGURE_ENV=	DMAKE=${LOCALBASE}/bin/dmake \
+		GNUTAR="${TAR}" \
+		GPERF=${LOCALBASE}/bin/gperf \
+		OPENCOLLADA_CFLAGS="${COLLADA_CFLAGS}" \
+		OPENCOLLADA_LIBS="${COLLADA_LIBS}" \
+		OPENSSL_CFLAGS="-I/usr/include" \
+		OPENSSL_LIBS="-lcrypto -lssl" \
+		PYTHON_CFLAGS="`${PYTHON_VERSION}-config --cflags`" \
+		PYTHON_LIBS="`${PYTHON_VERSION}-config --libs`"
 
-.if empty(PORT_OPTIONS:MTEST)
-EXTRA_PATCHES+=		${FILESDIR}/disable-cppunittester
-.endif
+MAKE_ENV+=	CXXFLAGS_WARN="${CXXFLAGS_WARN}"
+MAKE_ENV+=	GNUSED=${LOCALBASE}/bin/gsed
+MAKE_ENV+=	DISPLAY= LANG=C LC_ALL=C
+
+_MAKE_JOBS=	#
 
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_FEATURES:Mlibc++}
-EXTRA_PATCHES+=	${FILESDIR}/extra-libc++:-p1
-EXTRA_PATCHES+=	${FILESDIR}/extra-libc++.i386:-p0
-.endif
-
 .if ${COMPILER_FEATURES:Mlibstdc++}
-EXTRA_PATCHES+=	${FILESDIR}/extra-configure.ac
-.endif
-
-.if ${OSVERSION} < 900506
-CONFIGURE_ARGS+=	--with-linker-hash-style=sysv
+BROKEN=		Build with system libstdc++ is unsupported
 .endif
 
 .if ${OSVERSION} < 1000033
@@ -333,14 +313,16 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 CONFIGURE_ENV+=	FLEX=${LOCALBASE}/bin/flex
 .endif
 
-ACLOCAL_ARGS=	-I "${WRKSRC}/m4"
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-MAKE_ENV+=	ENVCFLAGS="${CFLAGS}" ENVCFLAGSCXX="${CXXFLAGS}"
-MAKE_ENV+=	ENVLINKFLAGS="${LDFLAGS}"
-MAKE_ENV+=	GNUSED=${LOCALBASE}/bin/gsed
-MAKE_ENV+=	LANG=C LC_ALL=C
+.if ${COMPILER_TYPE} == "clang"
+CXXFLAGS_WARN=	-Woverloaded-virtual -Wno-unknown-pragmas \
+		-Wno-unused-function -Wno-unused-parameter
+.if${COMPILER_VERSION} >= 36
+CXXFLAGS_WARN+=	-Wno-inconsistent-missing-override \
+		-Wno-unused-local-typedefs
+.endif
+.else
+CXXFLAGS_WARN=	-Wshadow -Woverloaded-virtual
+.endif
 
 pre-configure:
 	@${TOUCH} ${WRKSRC}/autogen.lastrun
@@ -348,24 +330,28 @@ pre-configure:
 post-configure:
 	@${TOUCH} ${WRKSRC}/src.downloaded
 
-do-install:
-	@cd ${WRKSRC} && ${MAKE_CMD} ${MAKE_ARGS} distro-pack-install
-	@${RM} -f ${PLISTD} ${PLISTF}
-	@cd ${STAGEDIR}${PREFIX} && ${FIND} -d lib/libreoffice -type d \
-	    -empty -exec ${ECHO_CMD} "@dir {}" \; >> ${PLISTD}
-	@cd ${STAGEDIR}${PREFIX} && ${FIND} -H -s bin etc lib man \
-	    \( -type f -o -type l \) -print >> ${PLISTF}
+post-install:
+	@cd ${STAGEDIR}${PREFIX} && \
+	${FIND} -s lib/libreoffice -type d -empty \
+	    -exec ${ECHO_CMD} "@dir {}" \; >> ${TMPPLIST}
+	@cd ${STAGEDIR}${PREFIX} && \
+	${FIND} -s bin etc lib man -not -type d >> ${TMPPLIST}
 .for subdir in application-registry applications icons mime mime-info mimelnk
-	@cd ${STAGEDIR}${PREFIX} && ${FIND} -H -s share/${subdir} \
-	    \( -type f -o -type l \) -print >> ${PLISTF}
+	@cd ${STAGEDIR}${PREFIX} && \
+	${FIND} -s share/${subdir} -not -type d >> ${TMPPLIST}
 .endfor
-.if ${PORT_OPTIONS:MSDK}
+
+post-install-SDK-on:
 .for subdir in include share share/doc share/idl
-	@cd ${STAGEDIR}${PREFIX} && ${FIND} -H -s ${subdir}/libreoffice \
-	    \( -type f -o -type l \) -print >> ${PLISTF}
+	@cd ${STAGEDIR}${PREFIX} && \
+	${FIND} -s ${subdir}/libreoffice -not -type d >> ${TMPPLIST}
 .endfor
-.endif
-	@${SORT} -u ${PLISTF} >> ${TMPPLIST}
-	@${SORT} -u ${PLISTD} >> ${TMPPLIST}
+
+add-plist-gnome:
+.for subdir in gnome hicolor locolor
+	@${ECHO_CMD} "@rmtry share/icons/${subdir}/icon-theme.cache" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${LOCALBASE}/bin/gtk-update-icon-cache -q -f %D/share/icons/${subdir} 2>/dev/null || ${TRUE}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${LOCALBASE}/bin/gtk-update-icon-cache -q -f %D/share/icons/${subdir} 2>/dev/null || ${TRUE}" >> ${TMPPLIST}
+.endfor
 
 .include <bsd.port.post.mk>

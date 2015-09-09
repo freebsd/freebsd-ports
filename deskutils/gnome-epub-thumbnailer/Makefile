@@ -3,7 +3,7 @@
 
 PORTNAME=	gnome-epub-thumbnailer
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	https://git.gnome.org/browse/gnome-epub-thumbnailer/snapshot/
 DIST_SUBDIR=	gnome3
@@ -13,7 +13,7 @@ COMMENT=	Thumbnailer for EPub and MOBI books
 
 BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common
 
-USES=		autoreconf:build gettext gmake libtool pathfix pkgconfig
+USES=		autoreconf:build gettext gmake libarchive libtool pathfix pkgconfig
 USE_GNOME=	gdkpixbuf2 gnomedesktop3 gnomeprefix gtk30 \
 		intlhack libxml2
 USE_LDCONFIG=	yes

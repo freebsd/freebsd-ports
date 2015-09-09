@@ -1,6 +1,6 @@
---- ./bgp/path_attribute.cc.orig	2011-03-16 21:15:59.000000000 +0000
-+++ ./bgp/path_attribute.cc	2014-02-26 21:17:13.000000000 +0000
-@@ -830,8 +830,11 @@
+--- bgp/path_attribute.cc.orig	2012-01-11 17:56:10 UTC
++++ bgp/path_attribute.cc
+@@ -830,8 +830,11 @@ PathAttribute *
  ClusterListAttribute::clone() const
  {
      ClusterListAttribute *ca = new ClusterListAttribute();

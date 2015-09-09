@@ -113,6 +113,7 @@
     SUBDIR += easypg
     SUBDIR += elixir-comeonin
     SUBDIR += engine_pkcs11
+    SUBDIR += erlang-p1tls
     SUBDIR += expiretable
     SUBDIR += f-prot
     SUBDIR += fakebo
@@ -993,6 +994,7 @@
     SUBDIR += snortreport
     SUBDIR += snortsam
     SUBDIR += snortsnarf
+    SUBDIR += softether
     SUBDIR += softhsm
     SUBDIR += softhsm2
     SUBDIR += spass

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	h2o
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -38,10 +38,6 @@ H2O_PIDDIR=	/var/run/${PORTNAME}/
 USE_RC_SUBR=	${PORTNAME}
 
 .include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 900000
-BROKEN=		fails to compile on 8.x
-.endif
 
 CMAKE_ARGS+=	-DWITH_BUNDLED_SSL=OFF -DEXTRA_LIBRARIES=OFF
 USE_OPENSSL_PORT=	yes

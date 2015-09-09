@@ -4,15 +4,15 @@
 PORTNAME=	django
 PORTVERSION=	1.7.10
 CATEGORIES=	www python
-MASTER_SITES=	https://www.djangoproject.com/m/releases/${PORTVERSION}/ \
-		CHEESESHOP
+MASTER_SITES=	CHEESESHOP \
+		https://www.djangoproject.com/m/releases/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	17
 DISTNAME=	Django-${PORTVERSION}
 DIST_SUBDIR=	python
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT=	High-level Python Web framework
+COMMENT=	High-level Python Web Framework (1.7.x)
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -20,16 +20,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cpe python
 USE_PYTHON=	autoplist distutils
 
-CPE_VENDOR=	djangoproject
-
-CONFLICTS=	py[23][0-9]-django-devel-[0-9]* py[23][0-9]-django-1.[0-57-9].*
+CONFLICTS_INSTALL=	py??-django-devel-* py??-django-1.[012345689].*
+CPE_VENDOR=		djangoproject
 
 DOCSDIR=	${PREFIX}/share/doc/py-django
 
-OPTIONS_DEFINE=	FASTCGI HTMLDOCS
-OPTIONS_DEFAULT=SQLITE
-OPTIONS_GROUP=	DATABASE
+OPTIONS_DEFINE=		FASTCGI HTMLDOCS
+OPTIONS_DEFAULT=	SQLITE
+
+OPTIONS_GROUP=		DATABASE
 OPTIONS_GROUP_DATABASE=	PGSQL MYSQL SQLITE
+
 HTMLDOCS_DESC=	Install HTML documentation (requires Sphinx)
 
 PLIST_FILES=	man/man1/django-admin.1.gz \

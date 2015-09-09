@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net_SMTP
-PORTVERSION=	1.6.3
+PORTVERSION=	1.7.1
 CATEGORIES=	net mail www pear
 
 MAINTAINER=	ports@FreeBSD.org

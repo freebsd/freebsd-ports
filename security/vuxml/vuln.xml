@@ -58,6 +58,730 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d76961da-56f6-11e5-934b-002590263bf5">
+    <topic>pgbouncer -- failed auth_query lookup leads to connection as auth_user</topic>
+    <affects>
+      <package>
+	<name>pgbouncer</name>
+	<range><eq>1.6.0</eq></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PgBouncer reports:</p>
+	<blockquote cite="http://pgbouncer.github.io/2015/09/pgbouncer-1-6-1/">
+	  <p>New auth_user functionality introduced in 1.6 allows login as
+	    auth_user when client presents unknown username. It's quite likely
+	    auth_user is superuser. Affects only setups that have enabled
+	    auth_user in their config.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-6817</cvename>
+      <url>https://pgbouncer.github.io/2015/09/pgbouncer-1-6-1/</url>
+      <url>https://github.com/pgbouncer/pgbouncer/issues/69</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/09/04/3</url>
+    </references>
+    <dates>
+      <discovery>2015-09-03</discovery>
+      <entry>2015-09-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3904f759-5659-11e5-a207-6805ca0b3d42">
+    <topic>phpMyAdmin -- reCaptcha bypass</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><ge>4.4.0</ge><lt>4.4.14.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="https://www.phpmyadmin.net/security/PMASA-2015-4/">
+	  <p>This vulnerability allows to complete the reCaptcha test
+	    and subsequently perform a brute force attack to guess user
+	    credentials without having to complete further reCaptcha
+	    tests.</p>
+
+	  <p>We consider this vulnerability to be non critical since
+	    reCaptcha is an additional opt-in security measure.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.phpmyadmin.net/security/PMASA-2015-4/</url>
+      <cvename>CVE-2015-6830</cvename>
+    </references>
+    <dates>
+      <discovery>2015-09-08</discovery>
+      <entry>2015-09-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3d675519-5654-11e5-9ad8-14dae9d210b8">
+    <topic>php -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>php5</name>
+	<name>php5-soap</name>
+	<name>php5-xsl</name>
+	<range><lt>5.4.45</lt></range>
+      </package>
+      <package>
+	<name>php55</name>
+	<name>php55-soap</name>
+	<name>php55-xsl</name>
+	<range><lt>5.5.29</lt></range>
+      </package>
+      <package>
+	<name>php56</name>
+	<name>php56-soap</name>
+	<name>php56-xsl</name>
+	<range><lt>5.6.13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PHP reports:</p>
+	<blockquote cite="http://php.net/ChangeLog-5.php#5.4.45">
+	    <ul><li>Core:
+	    <ul>
+	    <li>Fixed bug #70172 (Use After Free Vulnerability in unserialize()).</li>
+	    <li>Fixed bug #70219 (Use after free vulnerability in session deserializer).</li>
+	    </ul></li>
+	    <li>EXIF:
+	    <ul>
+	    <li>Fixed bug #70385 (Buffer over-read in exif_read_data with TIFF IFD tag byte value of 32 bytes).</li>
+	    </ul></li>
+	    <li>hash:
+	    <ul>
+	    <li>Fixed bug #70312 (HAVAL gives wrong hashes in specific cases).</li>
+	    </ul></li>
+	    <li>PCRE:
+	    <ul>
+	    <li>Fixed bug #70345 (Multiple vulnerabilities related to PCRE functions).</li>
+	    </ul></li>
+	    <li>SOAP:
+	    <ul>
+	    <li>Fixed bug #70388 (SOAP serialize_function_call() type confusion / RCE).</li>
+	    </ul></li>
+	    <li>SPL:
+	    <ul>
+	    <li>Fixed bug #70365 (Use-after-free vulnerability in unserialize() with SplObjectStorage).</li>
+	    <li>Fixed bug #70366 (Use-after-free vulnerability in unserialize() with SplDoublyLinkedList).</li>
+	    </ul></li>
+	    <li>XSLT:
+	    <ul>
+	    <li>Fixed bug #69782 (NULL pointer dereference).</li>
+	    </ul></li>
+	    <li>ZIP:
+	    <ul>
+	    <li>Fixed bug #70350 (ZipArchive::extractTo allows for directory traversal when creating directories).</li>
+	    </ul></li>
+	    </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://php.net/ChangeLog-5.php#5.4.45</url>
+      <url>http://php.net/ChangeLog-5.php#5.5.29</url>
+      <url>http://php.net/ChangeLog-5.php#5.6.13</url>
+      <cvename>CVE-2015-6834</cvename>
+      <cvename>CVE-2015-6835</cvename>
+      <cvename>CVE-2015-6836</cvename>
+      <cvename>CVE-2015-6837</cvename>
+      <cvename>CVE-2015-6838</cvename>
+    </references>
+    <dates>
+      <discovery>2015-09-03</discovery>
+      <entry>2015-09-08</entry>
+      <modified>2015-09-08</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="d68df01b-564e-11e5-9ad8-14dae9d210b8">
+    <topic>ganglia-webfrontend -- auth bypass</topic>
+    <affects>
+      <package>
+	<name>ganglia-webfrontend</name>
+	<range><lt>3.7.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ivan Novikov reports:</p>
+	<blockquote cite="https://github.com/ganglia/ganglia-web/issues/267">
+	  <p>It's easy to bypass auth by using boolean serialization...</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/ganglia/ganglia-web/issues/267</url>
+      <cvename>CVE-2015-6816</cvename>
+    </references>
+    <dates>
+      <discovery>2015-09-04</discovery>
+      <entry>2015-09-08</entry>
+      <modified>2015-09-08</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="9bdd8eb5-564a-11e5-9ad8-14dae9d210b8">
+    <topic>wireshark -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>wireshark</name>
+	<name>wireshark-lite</name>
+	<name>wireshark-qt5</name>
+	<name>tshark</name>
+	<name>tshark-lite</name>
+	<range><lt>1.12.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Wireshark development team reports:</p>
+	<blockquote cite="https://www.wireshark.org/docs/relnotes/wireshark-1.12.7.html">
+	  <p>The following vulnerabilities have been fixed.</p>
+	  <ul>
+	    <li><p>wnpa-sec-2015-21</p>
+	      <p>Protocol tree crash. (Bug 11309)</p></li>
+	    <li><p>wnpa-sec-2015-22</p>
+	      <p>Memory manager crash. (Bug 11373)</p></li>
+	    <li><p>wnpa-sec-2015-23</p>
+	      <p>Dissector table crash. (Bug 11381)</p></li>
+	    <li><p>wnpa-sec-2015-24</p>
+	      <p>ZigBee crash. (Bug 11389)</p></li>
+	    <li><p>wnpa-sec-2015-25</p>
+	      <p>GSM RLC/MAC infinite loop. (Bug 11358)</p></li>
+	    <li><p>wnpa-sec-2015-26</p>
+	      <p>WaveAgent crash. (Bug 11358)</p></li>
+	    <li><p>wnpa-sec-2015-27</p>
+	      <p>OpenFlow infinite loop. (Bug 11358)</p></li>
+	    <li><p>wnpa-sec-2015-28</p>
+	      <p>Ptvcursor crash. (Bug 11358)</p></li>
+	    <li><p>wnpa-sec-2015-29</p>
+	      <p>WCCP crash. (Bug 11358)</p></li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.wireshark.org/docs/relnotes/wireshark-1.12.7.html</url>
+      <cvename>CVE-2015-6241</cvename>
+      <cvename>CVE-2015-6242</cvename>
+      <cvename>CVE-2015-6243</cvename>
+      <cvename>CVE-2015-6244</cvename>
+      <cvename>CVE-2015-6245</cvename>
+      <cvename>CVE-2015-6246</cvename>
+      <cvename>CVE-2015-6247</cvename>
+      <cvename>CVE-2015-6248</cvename>
+      <cvename>CVE-2015-6249</cvename>
+    </references>
+    <dates>
+      <discovery>2015-08-12</discovery>
+      <entry>2015-09-08</entry>
+      <modified>2015-09-08</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="98092444-5645-11e5-9ad8-14dae9d210b8">
+    <topic>screen -- stack overflow</topic>
+    <affects>
+      <package>
+	<name>screen</name>
+	<range><lt>4.3.1_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Kuang-che Wu reports:</p>
+	<blockquote cite="https://savannah.gnu.org/bugs/?45713">
+	  <p>screen will recursively call MScrollV to depth n/256. This
+	    is time consuming and will overflow stack if n is huge.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://savannah.gnu.org/bugs/?45713</url>
+      <cvename>CVE-2015-6806</cvename>
+    </references>
+    <dates>
+      <discovery>2015-08-07</discovery>
+      <entry>2015-09-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b5e654c3-5644-11e5-9ad8-14dae9d210b8">
+    <topic>libvncserver -- memory corruption</topic>
+    <affects>
+      <package>
+	<name>libvncserver</name>
+	<range><lt>0.9.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Petr Pisar reports:</p>
+	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=706087">
+	  <p>libvncserver/tight.c:rfbTightCleanup() frees a buffer without zeroing freed pointer.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=706087</url>
+      <url>https://github.com/LibVNC/libvncserver/commit/804335f9d296440bb708ca844f5d89b58b50b0c6</url>
+    </references>
+    <dates>
+      <discovery>2011-05-19</discovery>
+      <entry>2015-09-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ed0ecad5-531d-11e5-9850-bcaec565249c">
+    <topic>gdk-pixbuf2 -- integer overflows</topic>
+    <affects>
+      <package>
+	<name>gdk-pixbuf2</name>
+	<range><lt>2.31.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matthias Clasen reports:</p>
+	<blockquote cite="https://mail.gnome.org/archives/ftp-release-list/2015-September/msg00013.html">
+	  <p>Fix several integer overflows.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://mail.gnome.org/archives/ftp-release-list/2015-September/msg00013.html</url>
+    </references>
+    <dates>
+      <discovery>2015-09-01</discovery>
+      <entry>2015-09-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2c5e7e23-5248-11e5-9ad8-14dae9d210b8">
+    <topic>bind -- denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>bind99</name>
+	<range><ge>9.9.7</ge><lt>9.9.7P3</lt></range>
+      </package>
+      <package>
+	<name>bind910</name>
+	<range><lt>9.10.2P4</lt></range>
+      </package>
+      <package>
+	<name>bind910-base</name>
+	<name>bind99-base</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ISC reports:</p>
+	<blockquote cite="https://www.isc.org/blogs/cve-2015-5986-an-incorrect-boundary-check-can-trigger-a-require-assertion-failure-in-openpgpkey_61-c/">
+	  <p>An incorrect boundary check in openpgpkey_61.c can cause
+	    named to terminate due to a REQUIRE assertion failure.  This defect can
+	    be deliberately exploited by an attacker who can provide a maliciously
+	    constructed response in answer to a query.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.isc.org/blogs/cve-2015-5986-an-incorrect-boundary-check-can-trigger-a-require-assertion-failure-in-openpgpkey_61-c/</url>
+      <cvename>CVE-2015-5986</cvename>
+    </references>
+    <dates>
+      <discovery>2015-08-19</discovery>
+      <entry>2015-09-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="eaf3b255-5245-11e5-9ad8-14dae9d210b8">
+    <topic>bind -- denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>bind99</name>
+	<range><lt>9.9.7P3</lt></range>
+      </package>
+      <package>
+	<name>bind910</name>
+	<range><ge>9.10.2</ge><lt>9.10.2P4</lt></range>
+      </package>
+      <package>
+	<name>bind910-base</name>
+	<name>bind99-base</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>FreeBSD</name>
+	<range><gt>9.3</gt><le>9.3_25</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ISC reports:</p>
+	<blockquote cite="https://www.isc.org/blogs/cve-2015-5722-parsing-malformed-keys-may-cause-bind-to-exit-due-to-a-failed-assertion-in-buffer-c/">
+	  <p>Parsing a malformed DNSSEC key can cause a validating
+	    resolver to exit due to a failed assertion in buffer.c.  It is possible
+	    for a remote attacker to deliberately trigger this condition, for
+	    example by using a query which requires a response from a zone
+	    containing a deliberately malformed key.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.isc.org/blogs/cve-2015-5722-parsing-malformed-keys-may-cause-bind-to-exit-due-to-a-failed-assertion-in-buffer-c/</url>
+      <cvename>CVE-2015-5722</cvename>
+    </references>
+    <dates>
+      <discovery>2015-08-19</discovery>
+      <entry>2015-09-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a9350df8-5157-11e5-b5c1-e8e0b747a45a">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>45.0.2454.85</lt></range>
+      </package>
+      <package>
+	<!--pcbsd-->
+	<name>chromium-npapi</name>
+	<range><lt>45.0.2454.85</lt></range>
+      </package>
+      <package>
+	<!--pcbsd-->
+	<name>chromium-pulse</name>
+	<range><lt>45.0.2454.85</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl">
+	  <p>29 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[516377] High CVE-2015-1291: Cross-origin bypass in DOM. Credit
+	      to anonymous.</li>
+	    <li>[522791] High CVE-2015-1292: Cross-origin bypass in
+	      ServiceWorker. Credit to Mariusz Mlynski.</li>
+	    <li>[524074] High CVE-2015-1293: Cross-origin bypass in DOM. Credit
+	      to Mariusz Mlynski.</li>
+	    <li>[492263] High CVE-2015-1294: Use-after-free in Skia. Credit
+	      to cloudfuzzer.</li>
+	    <li>[502562] High CVE-2015-1295: Use-after-free in Printing. Credit
+	      to anonymous.</li>
+	    <li>[421332] High CVE-2015-1296: Character spoofing in omnibox.
+	      Credit to zcorpan.</li>
+	    <li>[510802] Medium CVE-2015-1297: Permission scoping error in
+	      Webrequest. Credit to Alexander Kashev.</li>
+	    <li>[518827] Medium CVE-2015-1298: URL validation error in
+	      extensions. Credit to Rob Wu.</li>
+	    <li>[416362] Medium CVE-2015-1299: Use-after-free in Blink. Credit
+	      to taro.suzuki.dev.</li>
+	    <li>[511616] Medium CVE-2015-1300: Information leak in Blink. Credit
+	      to cgvwzq.</li>
+	    <li>[526825] CVE-2015-1301: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1291</cvename>
+      <cvename>CVE-2015-1292</cvename>
+      <cvename>CVE-2015-1293</cvename>
+      <cvename>CVE-2015-1294</cvename>
+      <cvename>CVE-2015-1295</cvename>
+      <cvename>CVE-2015-1296</cvename>
+      <cvename>CVE-2015-1297</cvename>
+      <cvename>CVE-2015-1298</cvename>
+      <cvename>CVE-2015-1299</cvename>
+      <cvename>CVE-2015-1300</cvename>
+      <cvename>CVE-2015-1301</cvename>
+      <url>http://googlechromereleases.blogspot.nl</url>
+    </references>
+    <dates>
+      <discovery>2015-09-01</discovery>
+      <entry>2015-09-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="55c43f5b-5190-11e5-9ad8-14dae9d210b8">
+    <topic>powerdns -- denial of service</topic>
+    <affects>
+      <package>
+	<name>powerdns</name>
+	<range><ge>3.4.0</ge><lt>3.4.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PowerDNS reports:</p>
+	<blockquote cite="https://doc.powerdns.com/md/security/powerdns-advisory-2015-02/">
+	  <p>A bug was found in our DNS packet parsing/generation code,
+	    which, when exploited, can cause individual threads (disabling service)
+	    or whole processes (allowing a supervisor to restart them) to crash with
+	    just one or a few query packets.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://doc.powerdns.com/md/security/powerdns-advisory-2015-02/</url>
+      <cvename>CVE-2015-5230</cvename>
+    </references>
+    <dates>
+      <discovery>2015-09-02</discovery>
+      <entry>2015-09-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fc1f6658-4f53-11e5-934b-002590263bf5">
+    <topic>ghostscript -- denial of service (crash) via crafted Postscript files</topic>
+    <affects>
+      <package>
+	<name>ghostscript7</name>
+	<name>ghostscript7-nox11</name>
+	<name>ghostscript7-base</name>
+	<name>ghostscript7-x11</name>
+	<range><lt>7.07_32</lt></range>
+      </package>
+      <package>
+	<name>ghostscript8</name>
+	<name>ghostscript8-nox11</name>
+	<name>ghostscript8-base</name>
+	<name>ghostscript8-x11</name>
+	<range><lt>8.71_19</lt></range>
+      </package>
+      <package>
+	<name>ghostscript9</name>
+	<name>ghostscript9-nox11</name>
+	<name>ghostscript9-base</name>
+	<name>ghostscript9-x11</name>
+	<range><lt>9.06_11</lt></range>
+      </package>
+      <package>
+	<name>ghostscript9-agpl</name>
+	<name>ghostscript9-agpl-nox11</name>
+	<range><lt>9.15_2</lt></range>
+      </package>
+      <package>
+	<name>ghostscript9-agpl-base</name>
+	<name>ghostscript9-agpl-x11</name>
+	<range><lt>9.16_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MITRE reports:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3228">
+	  <p>Integer overflow in the gs_heap_alloc_bytes function in
+	    base/gsmalloc.c in Ghostscript 9.15 and earlier allows remote
+	    attackers to cause a denial of service (crash) via a crafted
+	    Postscript (ps) file, as demonstrated by using the ps2pdf command,
+	    which triggers an out-of-bounds read or write.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3228</cvename>
+      <url>http://bugs.ghostscript.com/show_bug.cgi?id=696041</url>
+      <url>http://bugs.ghostscript.com/show_bug.cgi?id=696070</url>
+      <url>http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=0c0b0859</url>
+    </references>
+    <dates>
+      <discovery>2015-06-17</discovery>
+      <entry>2015-09-01</entry>
+      <modified>2015-09-02</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="80c66af0-d1c5-449e-bd31-63b12525ff88">
+    <topic>ffmpeg -- out-of-bounds array access</topic>
+    <affects>
+      <package>
+	<name>libav</name>
+	<range><ge>11.0</ge><lt>11.4</lt></range>
+	<range><lt>10.7</lt></range>
+      </package>
+      <package>
+	<name>gstreamer1-libav</name>
+	<!-- gst-libav-1.4.5 has libav-10.5 -->
+	<range><lt>1.5.1</lt></range>
+      </package>
+      <package>
+	<name>handbrake</name>
+	<!-- handbrake-0.10.2 has libav-10.1 -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>ffmpeg</name>
+	<range><ge>2.2.0,1</ge><lt>2.2.15,1</lt></range>
+	<range><lt>2.0.7,1</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg26</name>
+	<range><lt>2.6.2</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg25</name>
+	<range><lt>2.5.6</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg24</name>
+	<range><lt>2.4.8</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg23</name>
+	<!-- just in case: f7e1367 wasn't cherry-picked -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>ffmpeg1</name>
+	<!-- just in case: f7e1367 wasn't cherry-picked -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>avidemux</name>
+	<name>avidemux26</name>
+	<!-- avidemux-2.6.10 has ffmpeg-2.6.1 -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>kodi</name>
+	<!-- kodi-14.2 has ffmpeg-2.4.6 -->
+	<range><lt>15.1</lt></range>
+      </package>
+      <package>
+	<name>mplayer</name>
+	<name>mencoder</name>
+	<!-- mplayer-1.1.r20141223 has ffmpeg-2.5.1+ (snapshot, 03b84f2) -->
+	<range><lt>1.1.r20150403</lt></range>
+      </package>
+      <package>
+	<name>mythtv</name>
+	<name>mythtv-frontend</name>
+	<!-- mythtv-0.27.0.20140121 has ffmpeg-1.2.2+ (snapshot, f9c8726) -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NVD reports:</p>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-3395">
+	  <p>The msrle_decode_pal4 function in msrledec.c in Libav
+	    before 10.7 and 11.x before 11.4 and FFmpeg before 2.0.7,
+	    2.2.x before 2.2.15, 2.4.x before 2.4.8, 2.5.x before 2.5.6,
+	    and 2.6.x before 2.6.2 allows remote attackers to have
+	    unspecified impact via a crafted image, related to a pixel
+	    pointer, which triggers an out-of-bounds array access.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3395</cvename>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=f7e1367f58263593e6cee3c282f7277d7ee9d553</url>
+      <url>https://git.libav.org/?p=libav.git;a=commit;h=5ecabd3c54b7c802522dc338838c9a4c2dc42948</url>
+      <url>https://ffmpeg.org/security.html</url>
+      <url>https://git.libav.org/?p=libav.git;a=blob;f=Changelog;hb=refs/tags/v11.4</url>
+    </references>
+    <dates>
+      <discovery>2015-04-12</discovery>
+      <entry>2015-09-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="da434a78-e342-4d9a-87e2-7497e5f117ba">
+    <topic>ffmpeg -- use after free</topic>
+    <affects>
+      <package>
+	<name>libav</name>
+	<range><ge>11.0</ge><lt>11.4</lt></range>
+	<range><lt>10.7</lt></range>
+      </package>
+      <package>
+	<name>gstreamer1-libav</name>
+	<!-- gst-libav-1.4.5 has libav-10.5 -->
+	<range><lt>1.5.0</lt></range>
+      </package>
+      <package>
+	<name>handbrake</name>
+	<!-- handbrake-0.10.2 has libav-10.1 -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>ffmpeg</name>
+	<range><ge>2.2.0,1</ge><lt>2.2.12,1</lt></range>
+	<range><ge>2.1.0,1</ge><lt>2.1.7,1</lt></range>
+	<range><lt>2.0.7,1</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg25</name>
+	<range><lt>2.5.2</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg24</name>
+	<range><lt>2.4.5</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg23</name>
+	<range><lt>2.3.6</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg1</name>
+	<range><lt>1.2.11</lt></range>
+      </package>
+      <package>
+	<name>mythtv</name>
+	<name>mythtv-frontend</name>
+	<!-- mythtv-0.27.0.20140121 has ffmpeg-1.2.2+ (snapshot, f9c8726) -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NVD reports:</p>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-3417">
+	  <p>Use-after-free vulnerability in the ff_h264_free_tables
+	    function in libavcodec/h264.c in FFmpeg before 2.3.6 allows
+	    remote attackers to cause a denial of service or possibly
+	    have unspecified other impact via crafted H.264 data in an
+	    MP4 file, as demonstrated by an HTML VIDEO element that
+	    references H.264 data.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3417</cvename>
+      <!-- ffmpeg and libav fixes are different -->
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=e8714f6f93d1a32f4e4655209960afcf4c185214</url>
+      <url>https://git.libav.org/?p=libav.git;a=commitdiff;h=3b69f245dbe6e2016659a45c4bfe284f6c5ac57e</url>
+      <url>https://ffmpeg.org/security.html</url>
+      <url>https://git.libav.org/?p=libav.git;a=blob;f=Changelog;hb=refs/tags/v11.4</url>
+    </references>
+    <dates>
+      <discovery>2014-12-19</discovery>
+      <entry>2015-09-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5300711b-4e61-11e5-9ad8-14dae9d210b8">
     <topic>graphviz -- format string vulnerability</topic>
     <affects>
@@ -926,10 +1650,14 @@ Notes:
       <url>http://php.net/ChangeLog-5.php#5.4.44</url>
       <url>http://php.net/ChangeLog-5.php#5.5.28</url>
       <url>http://php.net/ChangeLog-5.php#5.6.12</url>
+      <cvename>CVE-2015-6831</cvename>
+      <cvename>CVE-2015-6832</cvename>
+      <cvename>CVE-2015-6833</cvename>
     </references>
     <dates>
       <discovery>2015-08-06</discovery>
       <entry>2015-08-17</entry>
+      <modified>2015-09-08</modified>
     </dates>
   </vuln>
 

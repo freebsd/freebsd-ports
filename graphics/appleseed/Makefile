@@ -40,15 +40,7 @@ PLIST_SUB=	APPHOME=${CMAKE_INSTALL_PREFIX}
 SUB_FILES=	pkg-message
 SUB_LIST:=	${PLIST_SUB}
 
-.include <bsd.port.pre.mk>
-
 post-patch:
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100074
-# Fix "undefined reference to `LZ4_compressBound'" upon linking with Clang
-# on -CURRENT (I'm not sure how it can be mapped to specific Clang version)
-	@${REINPLACE_CMD} -e '/LZ4_compressBound/s,static inline ,,' \
-		${WRKSRC}/src/lz4/lz4.h
-.endif
 	@${REINPLACE_CMD} -e 's,Linux,${OPSYS},' \
 		${WRKSRC}/src/appleseed.cli/CMakeLists.txt \
 		${WRKSRC}/src/appleseed.studio/CMakeLists.txt \
@@ -59,4 +51,4 @@ post-patch:
 		${WRKSRC}/src/tools/updateprojectfile/CMakeLists.txt
 	@${RMDIR} ${WRKSRC}/sandbox/docs/api
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

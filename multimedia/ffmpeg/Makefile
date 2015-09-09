@@ -27,7 +27,7 @@ WANT_SDL=	yes
 OPTIONS_DEFINE=	AACPLUS ALSA AMR_NB AMR_WB ASS CDIO CELT DEBUG DOCS FAAC \
 		FDK_AAC FFSERVER FONTCONFIG FREETYPE FREI0R GSM ICONV \
 		JACK LAME LIBBLURAY LIBV4L MODPLUG OPENAL OPENCV OPENH264 OPENJPEG \
-		OPTIMIZED_CFLAGS OPUS PULSEAUDIO RTMP SCHROEDINGER SDL SPEEX \
+		OPTIMIZED_CFLAGS OPUS PULSEAUDIO RTMP SCHROEDINGER SDL SMB SPEEX \
 		THEORA VAAPI VDPAU VO_AACENC VO_AMRWBENC VORBIS VPX \
 		X11GRAB X264 X265 XVID
 
@@ -36,6 +36,8 @@ OPTIONS_DEFAULT=	FFSERVER FONTCONFIG FREETYPE FREI0R GNUTLS ICONV \
 
 OPTIONS_SINGLE=	SSL
 OPTIONS_SINGLE_SSL=	GNUTLS OPENSSL
+OPTIONS_GROUP=	LICENSE
+OPTIONS_GROUP_LICENSE=	GPL3 NONFREE
 
 OPTIONS_DEFINE_amd64=	MMX SSE
 OPTIONS_DEFINE_i386=	MMX SSE
@@ -46,7 +48,10 @@ ASS_DESC=	Subtitles rendering via libass
 CDIO_DESC=	Audio CD grabbing with libcdio
 FDK_AAC_DESC=	AAC audio encoding via Fraunhofer FDK
 FFSERVER_DESC=	Build and install ffserver
+GPL3_DESC=	Allow (L)GPL version 3 code(cs)
 LIBV4L_DESC=	Video for Linux support
+LICENSE_DESC=	Licensing options
+NONFREE_DESC=	Allow use of nonfree code
 OPENH264_DESC=	H.264 video codec support via OpenH264
 X11GRAB_DESC=	Enable x11 grabbing
 
@@ -55,7 +60,7 @@ OPTIONS_SUB=	yes
 # aacplus
 AACPLUS_LIB_DEPENDS=	libaacplus.so:${PORTSDIR}/audio/libaacplus
 AACPLUS_CONFIGURE_ENABLE=	libaacplus
-AACPLUS_VARS=		FFMPEG_NONFREE=yes
+AACPLUS_IMPLIES=	NONFREE
 
 # alsa
 ALSA_CONFIGURE_OFF=	--disable-indev=alsa \
@@ -65,12 +70,12 @@ ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
 # Opencore AMR NB
 AMR_NB_LIB_DEPENDS=	libopencore-amrnb.so:${PORTSDIR}/audio/opencore-amr
 AMR_NB_CONFIGURE_ENABLE=	libopencore-amrnb
-AMR_NB_VARS=		FFMPEG_LICENSE_GPL3=yes
+AMR_NB_IMPLIES=		GPL3
 
 # Opencore AMR WB
 AMR_WB_LIB_DEPENDS=	libopencore-amrwb.so:${PORTSDIR}/audio/opencore-amr
 AMR_WB_CONFIGURE_ENABLE=	libopencore-amrwb
-AMR_WB_VARS=		FFMPEG_LICENSE_GPL3=yes
+AMR_WB_IMPLIES=		GPL3
 
 # ass
 ASS_LIB_DEPENDS=	libass.so:${PORTSDIR}/multimedia/libass
@@ -91,12 +96,12 @@ DEBUG_CONFIGURE_OFF=	--disable-debug
 # faac
 FAAC_LIB_DEPENDS=	libfaac.so:${PORTSDIR}/audio/faac
 FAAC_CONFIGURE_ENABLE=	libfaac
-FAAC_VARS=		FFMPEG_NONFREE=yes
+FAAC_IMPLIES=		NONFREE
 
 # fdk_aac
 FDK_AAC_LIB_DEPENDS=	libfdk-aac.so:${PORTSDIR}/audio/fdk-aac
 FDK_AAC_CONFIGURE_ENABLE=	libfdk-aac
-FDK_AAC_VARS=		FFMPEG_NONFREE=yes
+FDK_AAC_IMPLIES=	NONFREE
 
 # ffserver
 FFSERVER_CONFIGURE_ENABLE=	ffserver
@@ -171,7 +176,7 @@ OPENJPEG_CONFIGURE_ENABLE=	libopenjpeg
 # openssl
 OPENSSL_USE=		OPENSSL=yes
 OPENSSL_CONFIGURE_ENABLE=	openssl
-OPENSSL_VARS=		FFMPEG_NONFREE=yes
+OPENSSL_IMPLIES=	NONFREE
 
 # optimizations
 OPTIMIZED_CFLAGS_CFLAGS=-O3 -ffast-math -fno-finite-math-only -fomit-frame-pointer
@@ -193,6 +198,11 @@ RTMP_CONFIGURE_ENABLE=	librtmp
 # schroedinger
 SCHROEDINGER_LIB_DEPENDS=	libschroedinger-1.0.so:${PORTSDIR}/multimedia/schroedinger
 SCHROEDINGER_CONFIGURE_ENABLE=	libschroedinger
+
+# smbclient
+SMB_LIB_DEPENDS=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
+SMB_CONFIGURE_ENABLE=	libsmbclient
+SMB_IMPLIES=		GPL3
 
 # speex
 SPEEX_LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex
@@ -218,12 +228,12 @@ VDPAU_CONFIGURE_ENABLE=	vdpau
 # vo-aacenc
 VO_AACENC_LIB_DEPENDS=	libvo-aacenc.so:${PORTSDIR}/audio/vo-aacenc
 VO_AACENC_CONFIGURE_ENABLE=	libvo-aacenc
-VO_AACENC_VARS=		FFMPEG_LICENSE_GPL3=yes
+VO_AACENC_IMPLIES=	GPL3
 
 # vo-amrwbenc
 VO_AMRWBENC_LIB_DEPENDS=	libvo-amrwbenc.so:${PORTSDIR}/audio/vo-amrwbenc
 VO_AMRWBENC_CONFIGURE_ENABLE=	libvo-amrwbenc
-VO_AMRWBENC_VARS=	FFMPEG_LICENSE_GPL3=yes
+VO_AMRWBENC_IMPLIES=	GPL3
 
 # vorbis
 VORBIS_LIB_DEPENDS=	libvorbisenc.so:${PORTSDIR}/audio/libvorbis
@@ -249,6 +259,15 @@ X265_CONFIGURE_ENABLE=	libx265
 # xvid
 XVID_LIB_DEPENDS=	libxvidcore.so:${PORTSDIR}/multimedia/xvid
 XVID_CONFIGURE_ENABLE=	libxvid
+
+# License knobs
+GPL3_CONFIGURE_ENABLE=	version3
+GPL3_VARS=		LICENSE="GPLv3 LGPL3"
+LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING.GPLv3
+LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LGPLv3
+
+NONFREE_CONFIGURE_ENABLE=nonfree
+NONFREE_VARS=		RESTRICTED="linking to libfaac or libaacplus restricts redistribution"
 
 FFPROGS=	ffmpeg ffprobe
 INSTALL_TARGET=	install-progs install-data install-libs install-headers
@@ -319,19 +338,6 @@ DOC_DOCFILES+=	ffplay.html
 .endif
 .else
 CONFIGURE_ARGS+=	--disable-ffplay --disable-outdev=sdl
-.endif
-
-# License knobs
-.if defined(FFMPEG_NONFREE)
-RESTRICTED=	linking to libfaac or libaacplus restricts redistribution
-CONFIGURE_ARGS+=	--enable-nonfree
-.endif
-
-.if defined(FFMPEG_LICENSE_GPL3)
-CONFIGURE_ARGS+=	--enable-version3
-LICENSE=		GPLv3 LGPL3
-LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING.GPLv3
-LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LGPLv3
 .endif
 
 post-patch:

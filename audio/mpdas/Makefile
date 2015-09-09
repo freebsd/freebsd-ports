@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpdas
-PORTVERSION=	0.3.2
+PORTVERSION=	0.4.0
 CATEGORIES=	audio
 MASTER_SITES=	http://50hz.ws/mpdas/
 
@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libmpd.so:${PORTSDIR}/audio/libmpd
+		libmpdclient.so:${PORTSDIR}/audio/libmpdclient
 
 USES=		pkgconfig
 

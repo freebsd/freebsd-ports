@@ -7,7 +7,7 @@ CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	khsing.cn@gmail.com
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Python Web Server from FriendFeed
 
 LICENSE=	APACHE20

@@ -2,7 +2,7 @@
 
 PORTNAME=	texlive
 PORTVERSION=	20150521
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print
 MASTER_SITES=	TEX_CTAN/systems/texlive/Source/
 PKGNAMESUFFIX=	-base
@@ -20,7 +20,6 @@ LIB_DEPENDS=	libicuio.so:${PORTSDIR}/devel/icu \
 		libgraphite2.so:${PORTSDIR}/graphics/graphite2 \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libharfbuzz.so:${PORTSDIR}/print/harfbuzz \
-		libttf.so:${PORTSDIR}/print/freetype \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libzzip.so:${PORTSDIR}/devel/zziplib \
 		libpoppler.so:${PORTSDIR}/graphics/poppler \
@@ -31,7 +30,6 @@ CONFLICTS_INSTALL=	texlive-texmf-201[234]*
 USE_TEX=	web2c kpathsea ptexenc tlmgr texhash-bootstrap
 USES=		ghostscript pkgconfig perl5 shebangfix tar:xz
 USE_PERL5=	run
-USE_XORG=	x11 xmu
 # during build phase gnu configure is run a lot
 MAKE_ENV+=	CONFIG_SITE=${CONFIG_SITE}
 EXCLUDE_FILES=	${DISTNAME}/texk/web2c \
@@ -41,7 +39,8 @@ EXCLUDE_FILES=	${DISTNAME}/texk/web2c \
 		${DISTNAME}/texk/dvipdfm-x \
 		${DISTNAME}/texk/dvipsk \
 		${DISTNAME}/libs \
-		${DISTNAME}/utils/t1utils
+		${DISTNAME}/utils/t1utils \
+		${DISTNAME}/utils/xpdfopen
 EXTRACT_AFTER_ARGS=	${EXCLUDE_FILES:S,^,--exclude ,}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --disable-native-texlive-build \
@@ -52,11 +51,9 @@ CONFIGURE_ARGS= --disable-native-texlive-build \
 		--disable-dvipdfmx \
 		--disable-dvipdfm-x \
 		--disable-xdvipdfmx \
+		--disable-xpdfopen \
 		--enable-build-in-source-tree \
 		--datarootdir=${LOCALBASE}/share \
-		--with-system-freetype \
-		--with-freetype-includes=${LOCALBASE}/include/freetype1/freetype \
-		--with-freetype-libdir=${LOCALBASE}/lib \
 		--with-system-freetype2 \
 		--with-freetype2-includes=${LOCALBASE}/include/freetype2 \
 		--with-freetype2-libdir=${LOCALBASE}/lib \
@@ -111,6 +108,11 @@ SHEBANG_FILES=	texk/texlive/linked_scripts/accfonts/mkt1font \
 	texk/texlive/linked_scripts/yplan/yplan
 
 INFO=	dvipng tlbuild
+
+OPTIONS_DEFINE=	X11
+OPTIONS_DEFAULT=X11
+
+X11_USE=	TEX=xpdfopen:run
 
 post-patch:
 	cd ${WRKSRC}/texk/texlive && \

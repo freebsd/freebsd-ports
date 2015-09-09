@@ -3,6 +3,7 @@
 
 PORTNAME=	psycopg2
 PORTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	http://initd.org/psycopg/tarballs/PSYCOPG-${PORTVERSION:R:S|.|-|}/ \
 		CHEESESHOP
@@ -22,8 +23,14 @@ PORTDOCS=	AUTHORS INSTALL NEWS PKG-INFO README.rst
 PORTEXAMPLES=	*
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/ ${STAGEDIR}${EXAMPLESDIR}/
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/psycopg2/_psycopg.so
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
+
+post-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/
 
 .include <bsd.port.mk>

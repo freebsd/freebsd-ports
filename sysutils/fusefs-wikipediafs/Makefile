@@ -16,22 +16,22 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	py*-fusefs>=0.2:${PORTSDIR}/devel/py-fusefs
 
 USES=		fuse python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 PORTDOCS=	AUTHORS ChangeLog HACKING NEWS README TODO
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
 
 PLIST_FILES=	man/man1/mount.${PORTNAME}.1.gz
 
-.include <bsd.port.options.mk>
 post-extract:
 	@${GUNZIP_CMD} ${WRKSRC}/doc/*gz
 
 post-install:
-	@cd ${WRKSRC}/doc/&&${INSTALL_MAN} mount.${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1/
-.if ${PORT_OPTIONS:MDOCS}
-	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}/
-	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
-.endif
+	@cd ${WRKSRC}/doc && ${INSTALL_MAN} mount.${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1/
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

@@ -41,13 +41,11 @@ PORTDOCS=	00api 00changes.0 00changes.1 00changes.2 00changes.3 \
 		00changes.6.5 00changes.6.6 \
 		00diff 00readme dot.emacs dot.mew dot.theme
 
-.include <bsd.port.options.mk>
-
 post-install:
 	@${RM} -f ${STAGEDIR}${PREFIX}/${INFO_PATH}/*.info.~1~
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

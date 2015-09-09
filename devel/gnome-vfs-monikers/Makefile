@@ -11,7 +11,7 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome-vfs monikers module
 
-USES=		gmake libtool:keepla pkgconfig
+USES=		gettext-tools gmake libtool:keepla pkgconfig
 USE_GNOME=	gnomevfs2 intltool libbonobo
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes

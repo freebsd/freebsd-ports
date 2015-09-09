@@ -10,16 +10,22 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby interface to the Sary library
+
+LICENSE=	LGPL21 LGPL3
+LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libsary.so:${PORTSDIR}/textproc/sary
 
+BROKEN_RUBY22=	yes
+
+OPTIONS_DEFINE=	DOCS
+
+INSTALL_TARGET=	site-install
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USES=		pkgconfig
-
-INSTALL_TARGET=	site-install
 
 RUBY_RD_FILES=	*.en.rd *.ja.rd
 
@@ -29,23 +35,13 @@ DOCS_EN=	ChangeLog \
 DOCS_JA=	${RUBY_RD_FILES:M*.ja.rd} \
 		${RUBY_RD_HTML_FILES:M*.ja.html}
 
-OPTIONS_DEFINE=	DOCS
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${RUBY_SITEARCHLIBDIR:C/^${LOCALBASE}/${PREFIX}/}/sary.so
 	${INSTALL_SCRIPT} ${WRKSRC}/rsary.rb ${STAGEDIR}${PREFIX}/bin/
-	${MKDIR}  ${STAGEDIR}${RUBY_MODDOCDIR}/ja
-.for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
-.endfor
-.for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
-.endfor
 
-.include <bsd.port.pre.mk>
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS_EN} ${STAGEDIR}${RUBY_MODDOCDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS_JA} ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
 
-.if ${RUBY_VER} >= 2.2
-BROKEN=		Does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rugged
-PORTVERSION=	0.22.2
+PORTVERSION=	0.23.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

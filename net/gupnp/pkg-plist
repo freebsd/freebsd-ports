@@ -72,3 +72,5 @@ share/gtk-doc/html/gupnp/style.css
 share/gtk-doc/html/gupnp/tutorial.html
 share/gtk-doc/html/gupnp/up-insensitive.png
 share/gtk-doc/html/gupnp/up.png
+%%VALA%%share/vala/vapi/gupnp-1.0.deps
+%%VALA%%share/vala/vapi/gupnp-1.0.vapi

@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	simple-mtpfs
-PORTVERSION=	0.2.s20150108
+DISTVERSION=	0.2-24
+DISTVERSIONSUFFIX=	-ga7ab64c
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
 
@@ -14,7 +15,6 @@ LIB_DEPENDS=	libmtp.so:${PORTSDIR}/multimedia/libmtp
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	phatina
-GH_TAGNAME=	76be403
 
 USES=		autoreconf compiler:c++11-lib fuse pkgconfig
 GNU_CONFIGURE=	yes

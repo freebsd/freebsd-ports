@@ -3,6 +3,7 @@
 
 PORTNAME=	gnome-devel-docs
 PORTVERSION=	3.16.2
+PORTREVISION=	1
 CATEGORIES=	misc gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -14,7 +15,16 @@ BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext-tools gmake pkgconfig tar:xz
+USES=		gettext-tools gmake pkgconfig shebangfix tar:xz
+SHEBANG_LANG=	gjs
+gjs_OLD_CMD=	/usr/bin/gjs
+gjs_CMD=	${LOCALBASE}/bin/gjs
+SHEBANG_FILES=	platform-demos/C/guitar-tuner/guitar-tuner.js \
+		platform-demos/C/guitar-tuner/guitar-tuner.py \
+		platform-demos/C/image-viewer/image-viewer.py \
+		platform-demos/C/samples/hello-in-js/hello-world \
+		platform-demos/C/samples/*.js
 GNU_CONFIGURE=	yes
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

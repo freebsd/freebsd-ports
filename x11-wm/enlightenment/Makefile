@@ -20,8 +20,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/evas/utils/evas_image_loader.svg:${PORTSDIR}/graph
 
 DIST_SUBDIR=	enlightenment
 GNU_CONFIGURE=	yes
-USES=		alias autoreconf desktop-file-utils execinfo libtool pathfix \
-		iconv gmake pkgconfig tar:xz
+USES=		alias autoreconf desktop-file-utils execinfo gettext-tools \
+		libtool pathfix iconv gmake pkgconfig tar:xz
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 SUB_FILES=	pkg-message
@@ -37,7 +37,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include/e_dbus-1
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-NLS_USES=		gettext
+NLS_USES=		gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:

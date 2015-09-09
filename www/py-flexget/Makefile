@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flexget
-PORTVERSION=	1.2.172
-PORTREVISIO=	1
+PORTVERSION=	1.2.348
 PORTEPOCH=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
@@ -34,7 +33,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>=5.1.3:${PORTSDIR}/textproc/py-fe
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=2.0:${PORTSDIR}/devel/py-jsonschema \
 		${PYTHON_PKGNAMEPREFIX}tvrage>0:${PORTSDIR}/devel/py-tvrage \
 		${PYTHON_PKGNAMEPREFIX}tmdb3>0:${PORTSDIR}/www/py-tmdb3 \
-		${PYTHON_PKGNAMEPREFIX}path.py>0:${PORTSDIR}/devel/py-path.py
+		${PYTHON_PKGNAMEPREFIX}apscheduler>0:${PORTSDIR}/devel/py-apscheduler \
+		${PYTHON_PKGNAMEPREFIX}guessit>=0.9.3:${PORTSDIR}/multimedia/py-guessit \
+		${PYTHON_PKGNAMEPREFIX}path.py>=6.2:${PORTSDIR}/devel/py-path.py
 TEST_DEPENDS:=	${RUN_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose \
 		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock

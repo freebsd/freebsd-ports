@@ -3,7 +3,7 @@
 
 PORTNAME=	suck
 PORTVERSION=	4.3.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	news
 #MASTER_SITES=	http://www.sucknews.org/
 MASTER_SITES=	http://home.comcast.net/~bobyetman/ \
@@ -15,7 +15,8 @@ COMMENT=	Receives/sends news to/from localhost via NNTP
 
 CONFLICTS?=	suckblow-1.*
 
-USES=		gmake
+USES=		gmake shebangfix
+SHEBANG_FILES=	sample/post_filter.pl
 GNU_CONFIGURE=	yes
 MAKE_ENV=	CHKHISTORY=chkhistory_db.o
 

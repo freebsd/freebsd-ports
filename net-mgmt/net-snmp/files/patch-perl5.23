@@ -63,3 +63,73 @@
  #include <net-snmp/net-snmp-config.h>
  #include <net-snmp/net-snmp-includes.h>
  #include <net-snmp/agent/net-snmp-agent-includes.h>
+--- perl/ASN/Makefile.PL.orig	2014-12-08 20:23:22 UTC
++++ perl/ASN/Makefile.PL
+@@ -1,3 +1,4 @@
++package ASN;
+ use ExtUtils::MakeMaker;
+ require 5;
+ use Config;
+--- perl/AnyData_SNMP/Makefile.PL.orig	2015-09-03 22:27:45 UTC
++++ perl/AnyData_SNMP/Makefile.PL
+@@ -1,3 +1,4 @@
++package AnyData_SNMP;
+ use ExtUtils::MakeMaker;
+ # See lib/ExtUtils/MakeMaker.pm for details of how to influence
+ # the contents of the Makefile that is written.
+--- perl/OID/Makefile.PL.orig	2014-12-08 20:23:22 UTC
++++ perl/OID/Makefile.PL
+@@ -1,3 +1,4 @@
++package OID;
+ # See lib/ExtUtils/MakeMaker.pm for details of how to influence
+ # the contents of the Makefile that is written.
+ 
+--- perl/SNMP/Makefile.PL.orig	2014-12-08 20:23:22 UTC
++++ perl/SNMP/Makefile.PL
+@@ -1,3 +1,4 @@
++package SNMP;
+ use ExtUtils::MakeMaker;
+ require 5;
+ use Config;
+--- perl/TrapReceiver/Makefile.PL.orig	2014-12-08 20:23:22 UTC
++++ perl/TrapReceiver/Makefile.PL
+@@ -1,3 +1,4 @@
++package TrapReceiver;
+ use ExtUtils::MakeMaker;
+ require 5;
+ use Config;
+--- perl/agent/Makefile.PL.orig	2014-12-08 20:23:22 UTC
++++ perl/agent/Makefile.PL
+@@ -1,3 +1,4 @@
++package agent;
+ use ExtUtils::MakeMaker;
+ require 5;
+ use Config;
+--- perl/agent/Support/Makefile.PL.orig	2014-12-08 20:23:22 UTC
++++ perl/agent/Support/Makefile.PL
+@@ -1,3 +1,4 @@
++package agent_Support;
+ use ExtUtils::MakeMaker;
+ require 5;
+ use Config;
+--- perl/agent/default_store/Makefile.PL.orig	2014-12-08 20:23:22 UTC
++++ perl/agent/default_store/Makefile.PL
+@@ -1,3 +1,4 @@
++package agent_default_store;
+ use ExtUtils::MakeMaker;
+ require 5;
+ use Config;
+--- perl/default_store/Makefile.PL.orig	2014-12-08 20:23:22 UTC
++++ perl/default_store/Makefile.PL
+@@ -1,3 +1,4 @@
++package default_store;
+ use ExtUtils::MakeMaker;
+ require 5;
+ use Config;
+--- perl/manager/Makefile.PL.orig	2014-12-08 20:23:22 UTC
++++ perl/manager/Makefile.PL
+@@ -1,3 +1,4 @@
++package manager;
+ use ExtUtils::MakeMaker;
+ # See lib/ExtUtils/MakeMaker.pm for details of how to influence
+ # the contents of the Makefile that is written.

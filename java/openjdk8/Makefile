@@ -6,9 +6,19 @@ CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}/promoted/b${DIST_BUILD_NUMBER}/:jdk \
 		https://adopt-openjdk.ci.cloudbees.com/job/jtreg/${JTREG_JENKINS_BUILD}/artifact/:jtreg \
 		LOCAL/jkim:jdk,jtreg
+PATCH_SITES=	LOCAL/glewis/openjdk8
 PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
 DISTNAME=	${PORTNAME}-${JDK_MAJOR_VERSION}-src-b${DIST_BUILD_NUMBER}-03_mar_2014
 DISTFILES=	${DISTNAME}.zip:jdk
+PATCHFILES=	patch-8u05-b13.xz \
+		patch-8u11-b13.xz \
+		patch-8u20-b26.xz \
+		patch-8u25-b17.xz \
+		patch-8u31-b13.xz \
+		patch-8u40-b25.xz \
+		patch-8u45-b14.xz \
+		patch-8u51-b16.xz \
+		patch-8u60-b23.xz
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT?=	Java Development Kit ${JDK_MAJOR_VERSION}
@@ -38,34 +48,127 @@ BUILD_DEPENDS+=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 ONLY_FOR_ARCHS=	i386 amd64
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-DOS2UNIX_FILES= jdk/src/bsd/doc/man/java.1 \
+DOS2UNIX_FILES= jdk/src/bsd/doc/man/appletviewer.1 \
+		jdk/src/bsd/doc/man/extcheck.1 \
+		jdk/src/bsd/doc/man/idlj.1 \
+		jdk/src/bsd/doc/man/jar.1 \
+		jdk/src/bsd/doc/man/jarsigner.1 \
+		jdk/src/bsd/doc/man/java.1 \
 		jdk/src/bsd/doc/man/javac.1 \
 		jdk/src/bsd/doc/man/javadoc.1 \
+		jdk/src/bsd/doc/man/javah.1 \
 		jdk/src/bsd/doc/man/javap.1 \
 		jdk/src/bsd/doc/man/jcmd.1 \
+		jdk/src/bsd/doc/man/jconsole.1 \
+		jdk/src/bsd/doc/man/jdb.1 \
+		jdk/src/bsd/doc/man/jdeps.1 \
+		jdk/src/bsd/doc/man/jhat.1 \
+		jdk/src/bsd/doc/man/jinfo.1 \
 		jdk/src/bsd/doc/man/jjs.1 \
+		jdk/src/bsd/doc/man/jmap.1 \
+		jdk/src/bsd/doc/man/jps.1 \
+		jdk/src/bsd/doc/man/jrunscript.1 \
+		jdk/src/bsd/doc/man/jsadebugd.1 \
+		jdk/src/bsd/doc/man/jstack.1 \
 		jdk/src/bsd/doc/man/jstat.1 \
+		jdk/src/bsd/doc/man/jstatd.1 \
 		jdk/src/bsd/doc/man/keytool.1 \
+		jdk/src/bsd/doc/man/native2ascii.1 \
+		jdk/src/bsd/doc/man/orbd.1 \
+		jdk/src/bsd/doc/man/pack200.1 \
 		jdk/src/bsd/doc/man/policytool.1 \
+		jdk/src/bsd/doc/man/rmic.1 \
+		jdk/src/bsd/doc/man/rmid.1 \
+		jdk/src/bsd/doc/man/rmiregistry.1 \
+		jdk/src/bsd/doc/man/schemagen.1 \
+		jdk/src/bsd/doc/man/serialver.1 \
+		jdk/src/bsd/doc/man/servertool.1 \
+		jdk/src/bsd/doc/man/tnameserv.1 \
+		jdk/src/bsd/doc/man/unpack200.1 \
+		jdk/src/bsd/doc/man/wsgen.1 \
+		jdk/src/bsd/doc/man/wsimport.1 \
+		jdk/src/bsd/doc/man/xjc.1 \
+		jdk/src/linux/doc/man/appletviewer.1 \
+		jdk/src/linux/doc/man/extcheck.1 \
+		jdk/src/linux/doc/man/idlj.1 \
+		jdk/src/linux/doc/man/jar.1 \
+		jdk/src/linux/doc/man/jarsigner.1 \
 		jdk/src/linux/doc/man/java.1 \
 		jdk/src/linux/doc/man/javac.1 \
 		jdk/src/linux/doc/man/javadoc.1 \
+		jdk/src/linux/doc/man/javah.1 \
 		jdk/src/linux/doc/man/javap.1 \
 		jdk/src/linux/doc/man/jcmd.1 \
+		jdk/src/linux/doc/man/jconsole.1 \
+		jdk/src/linux/doc/man/jdb.1 \
+		jdk/src/linux/doc/man/jdeps.1 \
+		jdk/src/linux/doc/man/jhat.1 \
+		jdk/src/linux/doc/man/jinfo.1 \
 		jdk/src/linux/doc/man/jjs.1 \
+		jdk/src/linux/doc/man/jmap.1 \
+		jdk/src/linux/doc/man/jps.1 \
+		jdk/src/linux/doc/man/jrunscript.1 \
+		jdk/src/linux/doc/man/jsadebugd.1 \
+		jdk/src/linux/doc/man/jstack.1 \
 		jdk/src/linux/doc/man/jstat.1 \
+		jdk/src/linux/doc/man/jstatd.1 \
 		jdk/src/linux/doc/man/keytool.1 \
+		jdk/src/linux/doc/man/native2ascii.1 \
+		jdk/src/linux/doc/man/orbd.1 \
+		jdk/src/linux/doc/man/pack200.1 \
 		jdk/src/linux/doc/man/policytool.1 \
+		jdk/src/linux/doc/man/rmic.1 \
+		jdk/src/linux/doc/man/rmid.1 \
+		jdk/src/linux/doc/man/rmiregistry.1 \
+		jdk/src/linux/doc/man/schemagen.1 \
+		jdk/src/linux/doc/man/serialver.1 \
+		jdk/src/linux/doc/man/servertool.1 \
+		jdk/src/linux/doc/man/tnameserv.1 \
+		jdk/src/linux/doc/man/unpack200.1 \
+		jdk/src/linux/doc/man/wsgen.1 \
+		jdk/src/linux/doc/man/wsimport.1 \
+		jdk/src/linux/doc/man/xjc.1 \
 		jdk/src/share/classes/com/sun/org/apache/xml/internal/security/resource/xmlsecurity_en.properties \
+		jdk/src/solaris/doc/sun/man/man1/appletviewer.1 \
+		jdk/src/solaris/doc/sun/man/man1/extcheck.1 \
+		jdk/src/solaris/doc/sun/man/man1/idlj.1 \
+		jdk/src/solaris/doc/sun/man/man1/jar.1 \
+		jdk/src/solaris/doc/sun/man/man1/jarsigner.1 \
 		jdk/src/solaris/doc/sun/man/man1/java.1 \
 		jdk/src/solaris/doc/sun/man/man1/javac.1 \
 		jdk/src/solaris/doc/sun/man/man1/javadoc.1 \
+		jdk/src/solaris/doc/sun/man/man1/javah.1 \
 		jdk/src/solaris/doc/sun/man/man1/javap.1 \
 		jdk/src/solaris/doc/sun/man/man1/jcmd.1 \
+		jdk/src/solaris/doc/sun/man/man1/jconsole.1 \
+		jdk/src/solaris/doc/sun/man/man1/jdb.1 \
+		jdk/src/solaris/doc/sun/man/man1/jdeps.1 \
+		jdk/src/solaris/doc/sun/man/man1/jhat.1 \
+		jdk/src/solaris/doc/sun/man/man1/jinfo.1 \
 		jdk/src/solaris/doc/sun/man/man1/jjs.1 \
+		jdk/src/solaris/doc/sun/man/man1/jmap.1 \
+		jdk/src/solaris/doc/sun/man/man1/jps.1 \
+		jdk/src/solaris/doc/sun/man/man1/jrunscript.1 \
+		jdk/src/solaris/doc/sun/man/man1/jsadebugd.1 \
+		jdk/src/solaris/doc/sun/man/man1/jstack.1 \
 		jdk/src/solaris/doc/sun/man/man1/jstat.1 \
+		jdk/src/solaris/doc/sun/man/man1/jstatd.1 \
 		jdk/src/solaris/doc/sun/man/man1/keytool.1 \
+		jdk/src/solaris/doc/sun/man/man1/native2ascii.1 \
+		jdk/src/solaris/doc/sun/man/man1/orbd.1 \
+		jdk/src/solaris/doc/sun/man/man1/pack200.1 \
 		jdk/src/solaris/doc/sun/man/man1/policytool.1 \
+		jdk/src/solaris/doc/sun/man/man1/rmic.1 \
+		jdk/src/solaris/doc/sun/man/man1/rmid.1 \
+		jdk/src/solaris/doc/sun/man/man1/rmiregistry.1 \
+		jdk/src/solaris/doc/sun/man/man1/schemagen.1 \
+		jdk/src/solaris/doc/sun/man/man1/serialver.1 \
+		jdk/src/solaris/doc/sun/man/man1/servertool.1 \
+		jdk/src/solaris/doc/sun/man/man1/tnameserv.1 \
+		jdk/src/solaris/doc/sun/man/man1/unpack200.1 \
+		jdk/src/solaris/doc/sun/man/man1/wsgen.1 \
+		jdk/src/solaris/doc/sun/man/man1/wsimport.1 \
+		jdk/src/solaris/doc/sun/man/man1/xjc.1 \
 		nashorn/test/script/jfx.js \
 		nashorn/test/script/jfx/kaleidoscope.js \
 		nashorn/test/script/jfx/spread.js
@@ -93,8 +196,8 @@ NO_CCACHE=		yes
 NOPRECIOUSMAKEVARS=	yes
 
 JDK_MAJOR_VERSION=	8
-JDK_UPDATE_VERSION=	51
-JDK_BUILD_NUMBER=	16
+JDK_UPDATE_VERSION=	60
+JDK_BUILD_NUMBER=	24
 DIST_BUILD_NUMBER=	132
 JTREG_VERSION=		4.1
 JTREG_BUILD_NUMBER=	b08

@@ -59,9 +59,9 @@ pre-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/twisterd ${STAGEDIR}${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

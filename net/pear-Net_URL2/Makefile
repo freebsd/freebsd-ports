@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net_URL2
-PORTVERSION=	2.0.10
+PORTVERSION=	2.0.12
 CATEGORIES=	net www pear
 
 MAINTAINER=	ports@FreeBSD.org

@@ -1,3 +1,5 @@
-a plugin to check various parameters of a MySQL database
+Plugin to check various parameters of a MySQL database.
 
-WWW: http://labs.consol.de/lang/en/nagios/check_mysql_health/
+The english site is at /en/, but not as up2date.
+
+WWW: https://labs.consol.de/de/nagios/check_mysql_health/

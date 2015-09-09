@@ -1,0 +1,75 @@
+--- po/it.po.orig	2006-11-18 03:24:41 UTC
++++ po/it.po
+@@ -1,5 +1,71 @@
+ msgid ""
+-msgstr "Project-Id-Version: PACKAGE VERSION\nPOT-Creation-Date: 2003-01-15 07:14-0500\nPO-Revision-Date: 2006-03-21 16:28+0100\nLast-Translator: Giacomo Margarito <giacomomargarito@libero.it>\nLanguage-Team: LANGUAGE <LL@li.org>\nMIME-Version: 1.0\nContent-Type: text/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nAre you sure you want to adjust the brightness and contrast\nand save all of the selected images?Siete sicuri di voler regolare la luminosità ed il contrasto di tutte le immagini selezionate\ne di volerlesalvare?Directory %s does not exist.\n\nCreate directory?La cartella %s non esiste.\n\nVolete crearla?Image file %s already exists!\n\nOK to overwrite?Il file di immagine %s esiste già!\n\nOK per sovrascrivere?Print file %s already exists.\nOK to overwrite?La stampa del file %s esiste già.\nOK per sovrascrivere?Purging %s will delete the file from disk.\n\nReally delete?L'eliminazione del file %s lo cancellerà dal disco.\n\nVolete eliminarlo per davvero?Sorry, no cameras were found.\nIs your camera connected to a USB port and turned on?Nessuna fotocamera trovata.\nla fotocamera è connessa ad una porta USB ed accesa?The image %s has not been saved?\n\nSave it now?L'immagine %s non è stata salvata?\n\nSalvarla ora?Unable to create %s:\n\n%sImpossibile creare %s:\n\n%sUnable to create JPEG image:\n\n%sImpossibile creare l'immagine JPEG:\n\n%sUnable to create PNG data:\n\n%sImpossibile creare i dati PNG:\n\n%sUnable to create PNG image information:\n\n%sImpossibile creare le informazioni PNG:\n\n%sUnable to create PNG image:\n\n%sImpossibile creare l'immagine PNG:\n\n%sUnable to create destination URL:\n\n%d - %sImpossibile creare l'URL di destinazione:\n\n%d - %sUnable to create directory %s:\n\n%sImpossibile creare la cartella %s:\n\n%sUnable to create image %s:\n\n%sImpossibile creare l'immagine %s:\n\n%sUnable to create temporary thumbnail image %s:\n\n%sImpossibile creare l'anteprima temporanea dell'immagine %s:\n\n%sUnable to open album file \"%s\":\n\n%sImpossibile aprire il file dell'album \"%s\":\n\n%sUnable to open original JPEG image:\n\n%sImpossibile aprire il file JPEG originale:\n\n%sUnable to rename %s:\n\n%sImpossibile rinominare %s:\n\n%sUnable to save album file \"%s\":\n\n%sImpossibile salvare il file dell'album \"%s\":\n\n%sUnable to write PNG image:\n\n%sImpossibile salvare l'immagine PNG:\n\n%sWarning: Re-saving %s will cause a loss of quality!\nDo you wish to overwrite the original JPEG file?Attenzione: il nuovo salvataggio %s causerà una perdita di qualità!\nVolete sovrascrivere il file JPEG originale?"
++msgstr "Project-Id-Version: PACKAGE VERSION\nPOT-Creation-Date: 2003-01-15 07:14-0500\nPO-Revision-Date: 2006-03-21 16:28+0100\nLast-Translator: Giacomo Margarito <giacomomargarito@libero.it>\nLanguage-Team: LANGUAGE <LL@li.org>\nMIME-Version: 1.0\nContent-Type: text/plain; charset=iso-8859-1\nContent-Transfer-Encoding: 8bit\n"
++
++msgid "Are you sure you want to adjust the brightness and contrast\nand save all of the selected images?"
++msgstr "Siete sicuri di voler regolare la luminosità ed il contrasto di tutte le immagini selezionate\ne di volerlesalvare?"
++
++msgid "Directory %s does not exist.\n\nCreate directory?"
++msgstr "La cartella %s non esiste.\n\nVolete crearla?"
++
++msgid "Image file %s already exists!\n\nOK to overwrite?"
++msgstr "Il file di immagine %s esiste già!\n\nOK per sovrascrivere?"
++
++msgid "Print file %s already exists.\nOK to overwrite?"
++msgstr "La stampa del file %s esiste già.\nOK per sovrascrivere?"
++
++msgid "Purging %s will delete the file from disk.\n\nReally delete?"
++msgstr "L'eliminazione del file %s lo cancellerà dal disco.\n\nVolete eliminarlo per davvero?"
++
++msgid "Sorry, no cameras were found.\nIs your camera connected to a USB port and turned on?"
++msgstr "Nessuna fotocamera trovata.\nla fotocamera è connessa ad una porta USB ed accesa?"
++
++msgid "The image %s has not been saved?\n\nSave it now?"
++msgstr "L'immagine %s non è stata salvata?\n\nSalvarla ora?"
++
++msgid "Unable to create %s:\n\n%s"
++msgstr "Impossibile creare %s:\n\n%s"
++
++msgid "Unable to create JPEG image:\n\n%s"
++msgstr "Impossibile creare l'immagine JPEG:\n\n%s"
++
++msgid "Unable to create PNG data:\n\n%s"
++msgstr "Impossibile creare i dati PNG:\n\n%s"
++
++msgid "Unable to create PNG image information:\n\n%s"
++msgstr "Impossibile creare le informazioni PNG:\n\n%s"
++
++msgid "Unable to create PNG image:\n\n%s"
++msgstr "Impossibile creare l'immagine PNG:\n\n%s"
++
++msgid "Unable to create destination URL:\n\n%d - %s"
++msgstr "Impossibile creare l'URL di destinazione:\n\n%d - %s"
++
++msgid "Unable to create directory %s:\n\n%s"
++msgstr "Impossibile creare la cartella %s:\n\n%s"
++
++msgid "Unable to create image %s:\n\n%s"
++msgstr "Impossibile creare l'immagine %s:\n\n%s"
++
++msgid "Unable to create temporary thumbnail image %s:\n\n%s"
++msgstr "Impossibile creare l'anteprima temporanea dell'immagine %s:\n\n%s"
++
++msgid "Unable to open album file \"%s\":\n\n%s"
++msgstr "Impossibile aprire il file dell'album \"%s\":\n\n%s"
++
++msgid "Unable to open original JPEG image:\n\n%s"
++msgstr "Impossibile aprire il file JPEG originale:\n\n%s"
++
++msgid "Unable to rename %s:\n\n%s"
++msgstr "Impossibile rinominare %s:\n\n%s"
++
++msgid "Unable to save album file \"%s\":\n\n%s"
++msgstr "Impossibile salvare il file dell'album \"%s\":\n\n%s"
++
++msgid "Unable to write PNG image:\n\n%s"
++msgstr "Impossibile salvare l'immagine PNG:\n\n%s"
++
++msgid "Warning: Re-saving %s will cause a loss of quality!\nDo you wish to overwrite the original JPEG file?"
++msgstr "Attenzione: il nuovo salvataggio %s causerà una perdita di qualità!\nVolete sovrascrivere il file JPEG originale?"
+ 
+ msgid " Selected Images"
+ msgstr "Immagini selezionate"

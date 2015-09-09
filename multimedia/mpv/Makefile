@@ -2,33 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	mpv
-PORTVERSION=	0.9.2
+PORTVERSION=	0.10.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
-MASTER_SITES=	http://ftp.waf.io/pub/release/:1 \
-		http://www.freehackers.org/~tnagy/release/:1
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} waf-${WAF_VERSION}:1
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	cpm@fbsd.es
 COMMENT=	Free and open-source general-purpose video player
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 BUILD_DEPENDS=	rst2man:${PORTSDIR}/textproc/py-docutils
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	mpv-player
+GH_ACCOUNT=	mpv-player waf-project:waf
+GH_PROJECT=	waf:waf
+GH_TAGNAME=	waf-1.8.12:waf
 
-WAF_VERSION=	1.8.9
+WAF_CMD=	${WRKSRC_waf}/waf-light
 
 USES=		compiler:c11 desktop-file-utils iconv pkgconfig python:build waf
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I.. -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -42,7 +37,7 @@ CONFIGURE_ARGS=	--docdir=${EXAMPLESDIR} \
 		--enable-libmpv-shared
 
 OPTIONS_DEFINE=		ASS BS2B DOCS ENCA LADSPA LCMS2 \
-			LIBGUESS LUAJIT ZSH
+			LIBGUESS LUAJIT UCHARDET ZSH
 OPTIONS_DEFAULT=	ASS DVDREAD DVDNAV ENCA X11
 OPTIONS_GROUP=		IN VO AO
 OPTIONS_GROUP_IN=	CDIO DVDREAD DVDNAV LIBBLURAY V4L SMB
@@ -57,6 +52,7 @@ DVDNAV_DESC=	DVD menu navigation
 ENCA_DESC=	Enable encoding detection support
 LIBGUESS_DESC=	Enable high-speed character set detection support
 LUAJIT_DESC=	Use LuaJIT instead of Lua scripting language support
+UCHARDET_DESC=	Use UCHARDET instead ENCA support
 IN_DESC=	Input
 VO_DESC=	Video Output
 AO_DESC=	Audio Output
@@ -116,6 +112,9 @@ PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
 SMB_LIB_DEPENDS=		libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
 SMB_CONFIGURE_OFF=		--disable-libsmbclient
 
+UCHARDET_LIB_DEPENDS=		libuchardet.so:${PORTSDIR}/textproc/uchardet
+UCHARDET_CONFIGURE_OFF=		--disable-uchardet
+
 V4L_BUILD_DEPENDS=		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
 V4L_LIB_DEPENDS=		libv4l2.so:${PORTSDIR}/multimedia/libv4l
 V4L_CONFIGURE_OFF=		--disable-tv-v4l2
@@ -143,10 +142,6 @@ ZSH_CONFIGURE_ENABLE=		zsh-comp
 .if ${ARCH} == "i386"
 CFLAGS:=	${CFLAGS:N-O*} -O0
 .endif
-
-post-extract:
-	@${CP} ${DISTDIR}/waf-${WAF_VERSION} ${WRKSRC}/waf
-	@${CHMOD} +x ${WRKSRC}/waf
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/pkgconfig/mpv.pc|data/pkgconfig/mpv.pc|g' \

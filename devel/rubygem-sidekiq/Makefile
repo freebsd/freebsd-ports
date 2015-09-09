@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sidekiq
-PORTVERSION=	3.4.2
-PORTREVISION=	1
+PORTVERSION=	3.5.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +11,7 @@ COMMENT=	Simple, efficient background processing for Ruby
 
 LICENSE=	LGPL3
 
-RUN_DEPENDS=	rubygem-celluloid>=0.16.0:${PORTSDIR}/devel/rubygem-celluloid \
+RUN_DEPENDS=	rubygem-celluloid>=0.17.0:${PORTSDIR}/devel/rubygem-celluloid \
 		rubygem-connection_pool>=2.2:${PORTSDIR}/net/rubygem-connection_pool \
 		rubygem-json>=1:${PORTSDIR}/devel/rubygem-json \
 		rubygem-redis>=3.2.1:${PORTSDIR}/databases/rubygem-redis \

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jwm
-PORTVERSION=	2.2.2
-PORTREVISION=	2
+PORTVERSION=	2.3.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://joewing.net/programs/jwm/releases/
 
@@ -12,7 +11,7 @@ COMMENT=	Joe's Window Manager
 
 LICENSE=	GPLv2
 
-USES=		pkgconfig tar:xz
+USES=		iconv pkgconfig tar:xz
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 

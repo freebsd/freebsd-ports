@@ -16,10 +16,4 @@ USES=		imake:noman
 USE_XORG=	xpm xaw
 PLIST_FILES=	"@(,operator,2755) bin/xbatt"
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == amd64 && ${OPSYS} == FreeBSD && ${OSVERSION} < 900000
-IGNORE=		doesn't support FreeBSD 8.x amd64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

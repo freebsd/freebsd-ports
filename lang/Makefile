@@ -38,6 +38,7 @@
     SUBDIR += clang34
     SUBDIR += clang35
     SUBDIR += clang36
+    SUBDIR += clang37
     SUBDIR += clojure
     SUBDIR += clojure-mode.el
     SUBDIR += cloudabi-clang
@@ -264,6 +265,7 @@
     SUBDIR += python32
     SUBDIR += python33
     SUBDIR += python34
+    SUBDIR += python35
     SUBDIR += qore
     SUBDIR += qscheme
     SUBDIR += qt5-qml

@@ -3,20 +3,20 @@
 
 PORTNAME=	o_dbm
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	OODB-like DBM module for Ruby
 
 USE_RUBY=	yes
+USES=		tar:tgz
 
 NO_BUILD=	yes
-
-OPTIONS_DEFINE=	DOCS
+NO_ARCH=	yes
 
 do-install:
 	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}

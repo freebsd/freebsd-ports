@@ -22,16 +22,14 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|..LIBDIR./pkgconfig|libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|..LFX./pkgconfig|${STAGEDIR}${PREFIX}/libdata/pkgconfig|g' \
 		${WRKSRC}/libr/Makefile
-.if empty(PORT_OPTIONS:MDOCS)
-	@${REINPLACE_CMD} -e 's| install-doc install-man||g' \
+
+post-patch-DOCS-off:
+	@${REINPLACE_CMD} -e 's| install-doc ||g' \
 		${WRKSRC}/Makefile
-.endif
 
 .include <bsd.port.mk>

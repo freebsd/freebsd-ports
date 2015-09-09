@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	portmaster
-PORTVERSION=	3.17.7
+PORTVERSION=	3.17.8
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/ \
   		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
@@ -14,7 +14,6 @@ LICENSE=	BSD2CLAUSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
-GH_TAGNAME=	94ed670
 
 OPTIONS_DEFINE=	BASH ZSH
 

@@ -29,20 +29,18 @@ MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libreadline-java.jar ${STAGEDIR}${JAVAJARDIR}
 	${INSTALL_LIB} ${WRKSRC}/libJavaReadline.so ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/libJavaEditline.so ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/libJavaGetline.so ${STAGEDIR}${PREFIX}/lib
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.1st ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/jython.sh ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${FILESDIR}/JReadlineCompleter.py ${STAGEDIR}${DOCSDIR}
-.endif
 
 .if !defined(BATCH)
 test:
