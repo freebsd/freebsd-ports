@@ -6,3 +6,4 @@ lib/xchat/plugins/cwirc.so
 %%DOCSDIR%%/RELEASE_NOTES
 %%DOCSDIR%%/schematics/cw_oscillator.jpg
 %%DOCSDIR%%/schematics/rs232_key_connection.jpg
+@dir %%DATADIR%%/extensions
