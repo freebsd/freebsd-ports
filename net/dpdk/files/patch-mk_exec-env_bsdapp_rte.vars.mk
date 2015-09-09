@@ -3,7 +3,7 @@
 @@ -40,13 +40,13 @@
  # examples for RTE_EXEC_ENV: linuxapp, bsdapp
  #
- ifeq ($(RTE_BUILD_SHARED_LIB),y)
+ ifeq ($(CONFIG_RTE_BUILD_SHARED_LIB),y)
 -EXECENV_CFLAGS  = -pthread -fPIC
 +EXECENV_CFLAGS  = -pthread -fPIC %%EXECINFO_CPPFLAGS%%
  else
@@ -16,4 +16,4 @@
 +EXECENV_LDLIBS  = -lexecinfo %%EXECINFO_LDFLAGS%%
  EXECENV_ASFLAGS =
  
- ifeq ($(RTE_BUILD_SHARED_LIB),y)
+ ifeq ($(CONFIG_RTE_BUILD_SHARED_LIB),y)
