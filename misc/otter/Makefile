@@ -3,12 +3,15 @@
 
 PORTNAME=	otter
 PORTVERSION=	3.3f
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://www-unix.mcs.anl.gov/AR/otter/dist33/
 
 MAINTAINER=	wollman@FreeBSD.org
 COMMENT=	Theorem prover and finite model searcher
+
+USES=		shebangfix
+SHEBANG_FILES=	examples-mace2/Perl-examples/commute4_filter
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
