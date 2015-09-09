@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	44.0.2403.155
+PORTVERSION=    45.0.2454.85	
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # default, but needed to get distinfo correct if TEST is on
@@ -281,7 +281,7 @@ pre-configure:
 		'third_party/google_input_tools' \
 		'third_party/google_input_tools/third_party/closure_library' \
 		'third_party/google_input_tools/third_party/closure_library/third_party/closure' \
-		'third_party/hunspell_new' \
+		'third_party/hunspell' \
 		'third_party/iccjpeg' \
 		'third_party/icu/icu.isolate' \
 		'third_party/jinja2' \
@@ -325,9 +325,10 @@ pre-configure:
 		'third_party/tcmalloc' \
 		'third_party/tlslite' \
 		'third_party/trace-viewer' \
-		'third_party/trace-viewer/third_party' \
-		'third_party/trace-viewer/third_party/tvcm/third_party' \
-		'third_party/undoview' \
+		'third_party/trace-viewer/tracing' \
+		'third_party/trace-viewer/tracing/third_party' \
+		'third_party/trace-viewer/tracing/third_party/tvcm/third_party' \
+		'third_party/trace-viewer/tracing/third_party/tvcm/tvcm' \
 		'third_party/usrsctp' \
 		'third_party/web-animations-js' \
 		'third_party/webdriver' \
