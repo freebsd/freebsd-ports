@@ -845,7 +845,6 @@
     SUBDIR += p5-Dancer-Plugin-SiteMap
     SUBDIR += p5-Dancer-Plugin-ValidationClass
     SUBDIR += p5-Dancer-Session-Cookie
-    SUBDIR += p5-Dancer-Session-Memcached
     SUBDIR += p5-Dancer-Template-Xslate
     SUBDIR += p5-Dancer2
     SUBDIR += p5-Dancer2-Plugin-Ajax
