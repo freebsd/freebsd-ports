@@ -2,7 +2,7 @@
 
 PORTNAME=	postgis
 PORTVERSION=	2.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases geography
 MASTER_SITES=	http://download.osgeo.org/postgis/source/
 PKGNAMESUFFIX=	20
@@ -47,6 +47,7 @@ SHEBANG_FILES=	astyle.sh \
 		extras/tiger_geocoder/tiger_2010/legacy_import/tiger2008/import_tiger_shps.sh \
 		extras/tiger_geocoder/tiger_2010/upgrade_geocoder.sh \
 		raster/test/regress/testgdalraster \
+		utils/postgis_restore.pl.in \
 		utils/uninstall_script
 
 LOADERGUI_CONFIGURE_WITH=	gui
