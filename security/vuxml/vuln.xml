@@ -59,15 +59,32 @@ Notes:
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="a35f415d-572a-11e5-b0a4-f8b156b6dcc8">
-    <topic>vorbis-tools -- oggenc buffer overflow</topic>
+    <topic>vorbis-tools, opus-tools -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>vorbis-tools</name>
-	<range><lt>1.4.0_9,3</lt></range>
+	<range><lt>1.4.0_10,3</lt></range>
+      </package>
+      <package>
+	<name>opus-tools</name>
+	<range><lt>0.1.9_2</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Paris Zoumpouloglou reports:</p>
+	<blockquote cite="https://trac.xiph.org/ticket/2136">
+	  <p>I discovered an integer overflow issue in oggenc,
+	    related to the number of channels in the input WAV file.
+	    The issue triggers an out-of-bounds memory access which
+	    causes oggenc to crash.</p>
+	</blockquote>
+	<p>Paris Zoumpouloglou reports:</p>
+	<blockquote cite="https://trac.xiph.org/ticket/2136">
+	  <p>A crafted WAV file with number of channels set to 0
+	    will cause oggenc to crash due to a division by zero
+	    issue.</p>
+	</blockquote>
 	<p>pengsu reports:</p>
 	<blockquote cite="https://trac.xiph.org/ticket/2212">
 	  <p>I discovered an buffer overflow issue in oggenc/audio.c
@@ -76,13 +93,18 @@ Notes:
       </body>
     </description>
     <references>
-      <url>https://trac.xiph.org/ticket/2212</url>
       <freebsdpr>ports/202941</freebsdpr>
+      <url>https://trac.xiph.org/ticket/2136</url>
+      <cvename>CVE-2014-9639</cvename>
+      <url>https://trac.xiph.org/ticket/2137</url>
+      <cvename>CVE-2014-9638</cvename>
+      <url>https://trac.xiph.org/ticket/2212</url>
       <cvename>CVE-2015-6749</cvename>
     </references>
     <dates>
       <discovery>2015-08-08</discovery>
       <entry>2015-09-09</entry>
+      <modified>2015-09-09</modified>
     </dates>
   </vuln>
 
