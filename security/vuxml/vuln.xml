@@ -58,6 +58,34 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a35f415d-572a-11e5-b0a4-f8b156b6dcc8">
+    <topic>vorbis-tools -- oggenc buffer overflow</topic>
+    <affects>
+      <package>
+	<name>vorbis-tools</name>
+	<range><lt>1.4.0_9,3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>pengsu reports:</p>
+	<blockquote cite="https://trac.xiph.org/ticket/2212">
+	  <p>I discovered an buffer overflow issue in oggenc/audio.c
+	    when it tries to open invalid aiff file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://trac.xiph.org/ticket/2212</url>
+      <freebsdpr>ports/202941</freebsdpr>
+      <cvename>CVE-2015-6749</cvename>
+    </references>
+    <dates>
+      <discovery>2015-08-08</discovery>
+      <entry>2015-09-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d76961da-56f6-11e5-934b-002590263bf5">
     <topic>pgbouncer -- failed auth_query lookup leads to connection as auth_user</topic>
     <affects>
