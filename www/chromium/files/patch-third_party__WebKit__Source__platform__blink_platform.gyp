@@ -1,5 +1,5 @@
---- third_party/WebKit/Source/platform/blink_platform.gyp.orig	2015-01-21 20:48:07 UTC
-+++ third_party/WebKit/Source/platform/blink_platform.gyp
+--- third_party/WebKit/Source/platform/blink_platform.gyp.orig	2015-09-01 16:10:53.000000000 -0400
++++ third_party/WebKit/Source/platform/blink_platform.gyp	2015-09-03 11:17:44.822976000 -0400
 @@ -38,6 +38,9 @@
    'targets': [{
      'target_name': 'blink_common',
@@ -10,16 +10,16 @@
      'variables': { 'enable_wexit_time_destructors': 1 },
      'dependencies': [
        '../config.gyp:config',
-@@ -248,7 +251,7 @@
-     # compiler optimizations, see crbug.com/237063
-     'msvs_disabled_warnings': [ 4267, 4334, 4724 ],
-     'conditions': [
+@@ -251,7 +254,7 @@
+           ['include', 'graphics/cpu/x86/WebGLImageConversionSSE\\.h$'],
+         ],
+       }],
 -      ['OS=="linux" or OS=="android" or OS=="win"', {
 +      ['OS=="linux" or OS=="android" or OS=="win" or os_bsd==1', {
          'sources/': [
            # Cherry-pick files excluded by the broader regular expressions above.
            ['include', 'fonts/opentype/OpenTypeTypes\\.h$'],
-@@ -259,7 +262,7 @@
+@@ -262,7 +265,7 @@
          ],
        },
        ],
@@ -28,7 +28,7 @@
          'sources/': [
            ['include', 'fonts/linux/FontPlatformDataLinux\\.cpp$'],
          ]
-@@ -350,7 +353,7 @@
+@@ -345,7 +348,7 @@
            ['exclude', 'scroll/ScrollbarThemeMac'],
          ],
        }],
@@ -37,7 +37,7 @@
          'sources/': [
            ['exclude', 'VDMX[^/]+\\.(cpp|h)$'],
          ],
-@@ -395,7 +398,7 @@
+@@ -388,7 +391,7 @@
            ['exclude', 'Android\\.cpp$'],
          ],
        }],
