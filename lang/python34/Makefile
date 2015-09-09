@@ -112,6 +112,8 @@ PLIST_SUB+=	NO_NIS=""
 post-configure:
 	@${REINPLACE_CMD} -e 's|#define HAVE_UTIL_H 1||g' \
 		${WRKSRC}/pyconfig.h
+	@${REINPLACE_CMD} -e 's|#define HAVE_SYS_SYS_DOMAIN_H 1||g' \
+		${WRKSRC}/pyconfig.h
 
 post-install:
 .if ! ${PORT_OPTIONS:MDEBUG}
