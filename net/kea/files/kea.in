@@ -1,0 +1,40 @@
+#!/bin/sh
+# $FreeBSD$
+#
+# PROVIDE: kea
+# REQUIRE: netif routing
+# KEYWORD: nojail
+
+#
+# Add the following to /etc/rc.conf[.local] to enable this service
+#
+# kea_enable="YES"
+#
+
+. /etc/rc.subr
+
+name="kea"
+rcvar="${name}_enable"
+command="%%PREFIX%%/sbin/keactrl"
+required_files="%%PREFIX%%/etc/${name}/keactrl.conf"
+extra_commands="reload"
+start_precmd="kea_start_precmd"
+stop_cmd="kea_cmd stop"
+status_cmd="kea_cmd status"
+reload_cmd="kea_cmd reload"
+
+kea_start_precmd()
+{
+
+	command_args="start"
+}
+
+kea_cmd()
+{
+
+	$command $1
+}
+
+load_rc_config $name
+: ${kea_enable="NO"}
+run_rc_command "$1"
