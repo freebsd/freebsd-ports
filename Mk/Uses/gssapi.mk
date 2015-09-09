@@ -24,6 +24,7 @@
 #  GSSAPILIBDIR
 #  GSSAPILIBS
 #  GSSAPI_CONFIGURE_ARGS
+#  KRB5CONFIG
 #
 # Affected variables:
 #  PREFIX (bootstrap)
@@ -90,7 +91,9 @@ GSSAPILIBDIR=	${GSSAPIBASEDIR}/lib
 GSSAPIINCDIR=	${GSSAPIBASEDIR}/include
 _HEADERS+=	gssapi/gssapi.h gssapi/gssapi_krb5.h krb5.h
 GSSAPICPPFLAGS=	-I"${GSSAPIINCDIR}"
-GSSAPILIBS=	-lkrb5 -lgssapi -lgssapi_krb5
+GSSAPILIBS=	-lgssapi -lgssapi_krb5 -lheimntlm -lkrb5 -lhx509 \
+		-lcom_err -lcrypto -lasn1 -lwind -lheimbase -lroken \
+		-lcrypt -pthread
 GSSAPILDFLAGS=	-L"${GSSAPILIBDIR}"
 .elif ${_local} == "heimdal"
 HEIMDAL_HOME?=	${LOCALBASE}
@@ -105,7 +108,10 @@ RUN_DEPENDS+=	${_HEIMDAL_DEPENDS}
 PREFIX=		${HEIMDAL_HOME}
 .endif
 GSSAPICPPFLAGS=	-I"${GSSAPIINCDIR}"
-GSSAPILIBS=	-lkrb5 -lgssapi
+GSSAPILIBS=	-lgssapi -lheimntlm -lkrb5 -lhx509 \
+		-lcom_err -lcrypto -lasn1 -lwind -lheimbase -lroken \
+		-lcrypt -pthread
+GSSAPILDFLAGS=	-L"${GSSAPILIBDIR}"
 GSSAPILDFLAGS=	-L"${GSSAPILIBDIR}"
 _RPATH=		${GSSAPILIBDIR}
 .elif ${_local} == "mit"
@@ -120,7 +126,7 @@ RUN_DEPENDS+=	${_MITKRB5_DEPENDS}
 .else
 PREFIX=		${KRB5_HOME}
 .endif
-GSSAPILIBS=	-lkrb5 -lgssapi_krb5
+GSSAPILIBS=	-lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err
 GSSAPICPPFLAGS=	-I"${GSSAPIINCDIR}"
 GSSAPILDFLAGS=	-L"${GSSAPILIBDIR}"
 _RPATH=		${GSSAPILIBDIR}
@@ -132,6 +138,8 @@ _KRB_USEFLAGS=	1
 IGNORE=	USES=gssapi - invalid args: [${_local}] specified
 .endif
 .endfor
+
+KRB5CONFIG=${GSSAPIBASEDIR}/bin/krb5-config
 
 # Fix up -Wl,-rpath in LDFLAGS
 .if defined(_RPATH) && !empty(_RPATH)
@@ -153,7 +161,8 @@ LDADD+=		${GSSAPILIBS}
 GSSAPI_CONFIGURE_ARGS=	\
 	CFLAGS="${GSSAPICPPFLAGS} ${CFLAGS}" \
 	LDFLAGS="${GSSAPILDFLAGS} ${LDFLAGS}" \
-	LIBS="${GSSAPILIBS} ${LIBS}"
+	LIBS="${GSSAPILIBS} ${LIBS}" \
+	KRB5CONFIG="${KRB5CONFIG}"
 
 debug-krb:
 	@(for I in ${_HEADERS}; do echo "#include <$$I>"; done; \
@@ -174,6 +183,7 @@ debug-krb:
 	@echo "GSSAPICPPFLAGS: ${GSSAPICPPFLAGS}"
 	@echo "GSSAPILDFLAGS: ${GSSAPILDFLAGS}"
 	@echo "GSSAPI_CONFIGURE_ARGS: ${GSSAPI_CONFIGURE_ARGS}"
+	@echo "KRB5CONFIG: ${KRB5CONFIG}"
 	@echo "CFLAGS: ${CFLAGS}"
 	@echo "LDFLAGS: ${LDFLAGS}"
 	@echo "LDADD: ${LDADD}"
