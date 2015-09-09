@@ -10,15 +10,15 @@ PATCH_SITES=	LOCAL/glewis/openjdk8
 PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
 DISTNAME=	${PORTNAME}-${JDK_MAJOR_VERSION}-src-b${DIST_BUILD_NUMBER}-03_mar_2014
 DISTFILES=	${DISTNAME}.zip:jdk
-PATCHFILES=	patch-8u05-b13.gz \
-		patch-8u11-b13.gz \
-		patch-8u20-b26.gz \
-		patch-8u25-b17.gz \
-		patch-8u31-b13.gz \
-		patch-8u40-b25.gz \
-		patch-8u45-b14.gz \
-		patch-8u51-b16.gz \
-		patch-8u60-b23.gz
+PATCHFILES=	patch-8u05-b13.xz \
+		patch-8u11-b13.xz \
+		patch-8u20-b26.xz \
+		patch-8u25-b17.xz \
+		patch-8u31-b13.xz \
+		patch-8u40-b25.xz \
+		patch-8u45-b14.xz \
+		patch-8u51-b16.xz \
+		patch-8u60-b23.xz
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT?=	Java Development Kit ${JDK_MAJOR_VERSION}
