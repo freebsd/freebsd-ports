@@ -3,6 +3,7 @@
 
 PORTNAME=	jekyll-paginate
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -10,9 +11,14 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Built-in Pagination Generator for Jekyll
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+USES=		shebangfix
+SHEBANG_FILES=	script/bootstrap \
+		script/cibuild \
+		script/unbundle
 
 .include <bsd.port.mk>
