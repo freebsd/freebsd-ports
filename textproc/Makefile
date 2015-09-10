@@ -1500,6 +1500,7 @@
     SUBDIR += sl-hyphen
     SUBDIR += sl-mythes
     SUBDIR += slides
+    SUBDIR += smi
     SUBDIR += smu
     SUBDIR += so-hunspell
     SUBDIR += soothsayer
