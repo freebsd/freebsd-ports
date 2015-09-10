@@ -15,27 +15,34 @@ LIB_DEPENDS=	libsz.so:${PORTSDIR}/science/szip
 
 CONFLICTS_INSTALL=	netcdf-4.[0-9]*
 
-OPTIONS_DEFINE=	EXAMPLES
-
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared --with-jpeg=${LOCALBASE} --with-szlib=${LOCALBASE}
-INSTALL_TARGET=	install-strip
-USE_LDCONFIG=	yes
 USES=		fortran jpeg libtool tar:bzip2
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-shared --with-jpeg=${LOCALBASE} \
+		--with-szlib=${LOCALBASE}
+USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 PORTDATA=	*
 PORTEXAMPLES=	*
 
-BROKEN_powerpc=	Does not compile on powerpc
+OPTIONS_DEFINE=	EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} -e '/PROD_/ s|=.*|=""|' ${WRKSRC}/config/freebsd
+# Allow to build on PowerPC
+	@${REINPLACE_CMD} -e '/if defined (__APPLE__)/ \
+		s,),) || defined(__powerpc__),' ${WRKSRC}/hdf/src/hdfi.h
+	@${REINPLACE_CMD} -e 's/ || (__APPLE__.*//' \
+		${WRKSRC}/hdf/test/fortest.c
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/man/hdfunpac.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/man/gr_chunk.3 ${STAGEDIR}${MAN3PREFIX}/man/man3/
+	${INSTALL_MAN} ${WRKSRC}/man/hdfunpac.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/gr_chunk.3 \
+		${STAGEDIR}${MAN3PREFIX}/man/man3
 
-regression-test test: build
-	cd ${WRKSRC}/hdf/test/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
+regression-test: build
+	@${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
+		${MAKE_ARGS} check -C ${WRKSRC}/hdf/test
 
 .include <bsd.port.mk>
