@@ -29,9 +29,9 @@ PORTDOCS=	CDF_copyright.txt CHANGES.txt Release.notes Welcome.txt
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-pre-configure:
+post-patch:
 .for def in ${DEFS}
-	${REINPLACE_CMD} -e 's|<path>|${PREFIX}|' \
+	@${REINPLACE_CMD} -e 's|<path>|${PREFIX}|' \
 		 ${WRKSRC}/src/definitions/definitions.${def}
 .endfor
 
@@ -46,7 +46,7 @@ post-install:
 	${SED} -i '' 's,${STAGEDIR},,g' ${STAGEDIR}${PREFIX}/bin/definitions.?
 
 regression-test: build
-	@${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} \
+	@${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
 		${MAKE_ARGS} test -C ${BUILD_WRKSRC}
 
 .include <bsd.port.mk>
