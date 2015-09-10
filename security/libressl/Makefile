@@ -1,27 +1,39 @@
 # Created by: Vsevolod Stakhov <vsevolod@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/security/libressl/Makefile 395668 2015-08-31 12:25:43Z brnrd $
 
 PORTNAME=	libressl
-PORTVERSION=	2.1.6
+PORTVERSION=	2.3.0
 CATEGORIES=	security devel
-MASTER_SITES=	${MASTER_SITE_OPENBSD}
-MASTER_SITE_SUBDIR=	LibreSSL
+MASTER_SITES=	https://brnrd.eu/pub/OpenBSD/LibreSSL/ \
+		OPENBSD/LibreSSL
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Free version of the SSL/TLS protocol forked from OpenSSL
 
 LICENSE=	BSD4CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 CPE_VENDOR=	openbsd
 
-CONFLICTS?=	openssl-*
+OPTIONS_DEFINE=	API_MAN
+OPTIONS_DEFAULT=API_MAN
+OPTIONS_SUB=	yes
+
+API_MAN_DESC=	Install API manpages (command manpages always installed)
+
+CONFLICTS?=	openssl-[0-9]* \
+		tcltls-[0-9]*
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable--silent-rules
 USES=		cpe libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
+CFLAGS+=	-Darc4random=libressl_arc4random -Darc4random_buf=libressl_arc4random_buf
+
 INSTALL_TARGET=	install-strip
 
-test: build
+regression-test: build
 	cd ${WRKSRC} && ${MAKE} check
 
 .include <bsd.port.mk>
