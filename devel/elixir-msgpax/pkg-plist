@@ -3,6 +3,7 @@ lib/elixir/lib/msgpax/ebin/Elixir.Inspect.Msgpax.Ext.beam
 lib/elixir/lib/msgpax/ebin/Elixir.Msgpax.Bin.beam
 lib/elixir/lib/msgpax/ebin/Elixir.Msgpax.Ext.beam
 lib/elixir/lib/msgpax/ebin/Elixir.Msgpax.PackError.beam
+lib/elixir/lib/msgpax/ebin/Elixir.Msgpax.Packer.Any.beam
 lib/elixir/lib/msgpax/ebin/Elixir.Msgpax.Packer.Atom.beam
 lib/elixir/lib/msgpax/ebin/Elixir.Msgpax.Packer.BitString.beam
 lib/elixir/lib/msgpax/ebin/Elixir.Msgpax.Packer.Float.beam
