@@ -34,12 +34,12 @@ CGO_LDFLAGS+=	-L${LOCALBASE}/lib
 # Read-only variables
 GO_CMD=		${LOCALBASE}/bin/go
 LOCAL_GOPATH=	${LOCALBASE}/share/go
-GO_LIBDIR=	share/go/pkg/freebsd_${GOARCH}
+GO_LIBDIR=	share/go/pkg/${OPSYS:tl}_${GOARCH}
 GO_SRCDIR=	share/go/src
 GO_WRKSRC=	${GO_WRKDIR_SRC}/${GO_PKGNAME}
 GO_WRKDIR_BIN=	${WRKDIR}/bin
 GO_WRKDIR_SRC=	${WRKDIR}/src
-GO_WRKDIR_PKG=	${WRKDIR}/pkg/freebsd_${GOARCH}
+GO_WRKDIR_PKG=	${WRKDIR}/pkg/${OPSYS:tl}_${GOARCH}
 
 BUILD_DEPENDS+=	${GO_CMD}:${PORTSDIR}/lang/go
 GO_ENV+=	GOPATH="${WRKDIR}:${LOCAL_GOPATH}" \
