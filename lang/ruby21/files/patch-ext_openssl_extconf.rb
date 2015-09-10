@@ -1,15 +1,13 @@
---- ext/openssl/extconf.rb.orig	2015-04-01 22:28:09 UTC
-+++ ext/openssl/extconf.rb
-@@ -100,9 +100,9 @@ have_func("OBJ_NAME_do_all_sorted")
- have_func("SSL_SESSION_get_id")
- have_func("SSL_SESSION_cmp")
- have_func("OPENSSL_cleanse")
--have_func("SSLv2_method")
--have_func("SSLv2_server_method")
--have_func("SSLv2_client_method")
-+have_func("SSLv23_method")
-+have_func("SSLv23_server_method")
-+have_func("SSLv23_client_method")
+$OpenBSD: patch-ext_openssl_extconf_rb,v 1.1 2015/08/27 15:55:04 kili Exp $
+--- ext/openssl/extconf.rb.orig	Mon Oct 28 07:32:24 2013
++++ ext/openssl/extconf.rb	Thu Aug 27 17:21:59 2015
+@@ -103,6 +103,9 @@ have_func("OPENSSL_cleanse")
+ have_func("SSLv2_method")
+ have_func("SSLv2_server_method")
+ have_func("SSLv2_client_method")
++have_func("SSLv3_method")
++have_func("SSLv3_server_method")
++have_func("SSLv3_client_method")
  have_func("TLSv1_1_method")
  have_func("TLSv1_1_server_method")
  have_func("TLSv1_1_client_method")
