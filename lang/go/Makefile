@@ -39,7 +39,7 @@ GOARCH=arm
 IGNORE=		unknown arch ${ARCH}
 .endif
 
-PLIST_SUB+=	ARCH=${GOARCH}
+PLIST_SUB+=	opsys_ARCH=${OPSYS:tl}_${GOARCH}
 
 .if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1100000)
 EXTRA_PATCHES+=	${FILESDIR}/struct-if_data-patch
