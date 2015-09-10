@@ -43,7 +43,6 @@ include/dnscore/empty-input-stream.h
 include/dnscore/fdtools.h
 include/dnscore/file_input_stream.h
 include/dnscore/file_output_stream.h
-include/dnscore/filter_input_stream.h
 include/dnscore/fingerprint.h
 include/dnscore/format.h
 include/dnscore/host_address.h
@@ -66,7 +65,7 @@ include/dnscore/message_verify_rrsig.h
 include/dnscore/mt_output_stream.h
 include/dnscore/mutex.h
 include/dnscore/network.h
-%%NSID%%include/dnscore/nsid.h
+include/dnscore/nsid.h
 include/dnscore/output_stream.h
 include/dnscore/pace.h
 include/dnscore/packet_reader.h
@@ -186,7 +185,6 @@ include/dnslg/config-resolver.h
 include/dnslg/dns.h
 include/dnslg/dnslg-config-features.h
 include/dnslg/resolv-conf.h
-include/dnslg/resolv.h
 include/dnszone/dnszone-config-features.h
 include/dnszone/dnszone-config.h
 include/dnszone/dnszone.h

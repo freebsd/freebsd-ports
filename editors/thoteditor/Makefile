@@ -7,7 +7,6 @@ PORTREVISION=	3
 CATEGORIES=	editors www
 MASTER_SITES=	ftp://ftp.inrialpes.fr/pub/opera/sources/thot/ \
 		ftp://ftp.ruhr-uni-bochum.de/local/jk.collection/thot/
-MASTER_SITE_SUBDIR=	apps/editors/X/thot
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

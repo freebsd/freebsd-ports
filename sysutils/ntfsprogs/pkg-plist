@@ -5,8 +5,6 @@ bin/ntfsfix
 bin/ntfsinfo
 bin/ntfsls
 bin/ntfsmount
-@exec ln -fs %D/%F /usr/sbin/mount_ntfs-fuse
-@unexec rm -f /usr/sbin/mount_ntfs-fuse
 include/ntfs/attrib.h
 include/ntfs/attrlist.h
 include/ntfs/bitmap.h
@@ -71,4 +69,4 @@ sbin/ntfsundelete
 %%GNOMEVFS2%%lib/gnome-vfs-2.0/modules/libntfs-gnomevfs.so
 %%GNOMEVFS2%%lib/gnome-vfs-2.0/modules/libntfs-gnomevfs.so.1
 %%GNOMEVFS2%%lib/gnome-vfs-2.0/modules/libntfs-gnomevfs.so.1.0.0
-@dirrm include/ntfs
+/usr/sbin/mount_ntfs-fuse

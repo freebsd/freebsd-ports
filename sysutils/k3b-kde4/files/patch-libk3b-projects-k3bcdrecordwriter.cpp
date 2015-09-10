@@ -1,6 +1,6 @@
---- libk3b/projects/k3bcdrecordwriter.cpp.orig	2010-06-06 20:49:38.000000000 +0200
-+++ libk3b/projects/k3bcdrecordwriter.cpp	2010-07-30 06:43:53.000000000 +0200
-@@ -228,7 +228,11 @@
+--- libk3b/projects/k3bcdrecordwriter.cpp.orig	2014-11-04 18:37:31 UTC
++++ libk3b/projects/k3bcdrecordwriter.cpp
+@@ -228,7 +228,11 @@ bool K3b::CdrecordWriter::prepareProcess
          d->process << "gracetime=2";  // 2 is the lowest allowed value (Joerg, why do you do this to us?)
  
      // Again we assume the device to be set!

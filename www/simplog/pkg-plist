@@ -334,28 +334,4 @@
 %%WWWDIR%%/weblogrpc.php
 %%WWWDIR%%/xmlrpc.inc
 %%WWWDIR%%/xmlrpcs.inc
-@dirrm %%WWWDIR%%/adodb/contrib
-@dirrm %%WWWDIR%%/adodb/cute_icons_for_site
-@dirrm %%WWWDIR%%/adodb/datadict
-@dirrm %%WWWDIR%%/adodb/docs
-@dirrm %%WWWDIR%%/adodb/drivers
-@dirrm %%WWWDIR%%/adodb/lang
-@dirrm %%WWWDIR%%/adodb/pear/Auth/Container
-@dirrm %%WWWDIR%%/adodb/pear/Auth
-@dirrm %%WWWDIR%%/adodb/pear
-@dirrm %%WWWDIR%%/adodb/perf
-@dirrm %%WWWDIR%%/adodb/session/old
-@dirrm %%WWWDIR%%/adodb/session
-@dirrm %%WWWDIR%%/adodb/tests
-@dirrm %%WWWDIR%%/adodb/xsl
-@dirrm %%WWWDIR%%/adodb
-@exec [ -e %D/%%WWWDIR%%/cache ] || install -o %%WWWOWN%% -g %%WWWGRP%% -d %D/%%WWWDIR%%/cache
-@unexec [ -e %D/%%WWWDIR%%/cache ] && rm -rf %D/%%WWWDIR%%/cache
-@dirrm %%WWWDIR%%/doc
-@dirrm %%WWWDIR%%/images/smile
-@dirrm %%WWWDIR%%/images
-@dirrm %%WWWDIR%%/install
-@dirrm %%WWWDIR%%/phpFlickr
-@dirrm %%WWWDIR%%/templates/images
-@dirrm %%WWWDIR%%/templates
-@dirrm %%WWWDIR%%
+@dir(%%WWWOWN%%,%%WWWGRP%%) %%WWWDIR%%/cache

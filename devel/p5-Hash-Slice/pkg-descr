@@ -1,0 +1,7 @@
+Hash::Slice lets you easily make a deep slice of a hash, specifically a hash
+containing one or more nested hashes. Instead of just taking a slice of the
+first level of a hash in an all-or-nothing manner, you can use slice to take a
+slice of the first level, then take a particular slice of the second level, and
+so on.
+
+WWW: http://search.cpan.org/dist/Hash-Slice/

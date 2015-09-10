@@ -1,6 +1,6 @@
---- ./support/Makefile.in.orig	2011-04-16 21:09:47.000000000 +0200
-+++ ./support/Makefile.in	2013-09-25 21:02:44.000000000 +0200
-@@ -16,17 +16,14 @@
+--- support/Makefile.in.orig	2011-04-16 19:09:47 UTC
++++ support/Makefile.in
+@@ -16,17 +16,14 @@ install:
  	@test -d $(DESTDIR)$(sbindir) || $(MKINSTALLDIRS) $(DESTDIR)$(sbindir)
  	@test -d $(DESTDIR)$(libexecdir) || $(MKINSTALLDIRS) $(DESTDIR)$(libexecdir)
  	@cp -p $(top_builddir)/server/httpd.exp $(DESTDIR)$(libexecdir)

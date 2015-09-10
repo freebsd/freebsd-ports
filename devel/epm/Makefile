@@ -5,7 +5,6 @@ PORTNAME=	epm
 PORTVERSION=	4.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.msweet.org/files/project2/
-MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
 EXTRACT_SUFX=	-source.tar.bz2
 
 MAINTAINER=	office@FreeBSD.org

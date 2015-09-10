@@ -3,7 +3,7 @@
 
 PORTNAME=	exilog
 PORTVERSION=	0.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	mail
 MASTER_SITES=	http://duncanthrax.net/exilog/
 
@@ -19,8 +19,9 @@ OPTIONS_DEFINE=	DOCS
 
 USES=		perl5 shebangfix
 NO_BUILD=	yes
+NO_ARCH=	yes
 
-SHEBANG_FILES=	exilog_agent.pl exilog_cleanup.pl
+SHEBANG_FILES=	exilog_agent.pl exilog_cgi.pl exilog_cleanup.pl
 
 # Default sql backend
 WITH_SQL_BACKEND?=	mysql

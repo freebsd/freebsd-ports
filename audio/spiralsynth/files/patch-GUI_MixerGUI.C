@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- GUI/MixerGUI.C.orig	Sun Nov 26 15:52:40 2000
 +++ GUI/MixerGUI.C	Mon Feb  9 12:08:25 2004
 @@ -24,8 +24,10 @@ MixerGUI::MixerGUI(Mixer *o)

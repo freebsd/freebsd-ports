@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- lib/fingerprint.c.orig
 +++ lib/fingerprint.c
 @@ -9,6 +9,7 @@

@@ -5,8 +5,7 @@ PORTNAME=	libstdc++_stldoc_4.2.2
 PORTVERSION=	20071101
 PORTREVISION=	1
 CATEGORIES=	lang devel
-MASTER_SITES=	${MASTER_SITE_GCC}
-MASTER_SITE_SUBDIR=	libstdc++/doxygen
+MASTER_SITES=	GCC/libstdc++/doxygen
 DISTNAME=	libstdc++-html-USERS-4.2.2
 
 MAINTAINER=	ports@FreeBSD.org

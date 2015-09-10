@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	warbler
-PORTVERSION=	1.4.7
+PORTVERSION=	1.4.9
 CATEGORIES=	devel rubygems java
 MASTER_SITES=	RG
 
@@ -17,7 +17,9 @@ RUN_DEPENDS=	jruby:${PORTSDIR}/lang/jruby \
 		rubygem-rake>=0.9.6:${PORTSDIR}/devel/rubygem-rake \
 		rubygem-rubyzip>=0.9:${PORTSDIR}/archivers/rubygem-rubyzip
 
+NO_ARCH=	yes
 USE_RUBY=	yes
+
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 

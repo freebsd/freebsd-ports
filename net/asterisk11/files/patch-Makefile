@@ -1,4 +1,4 @@
---- Makefile.orig	2014-10-31 16:40:55 UTC
+--- Makefile.orig	2015-07-24 22:06:05 UTC
 +++ Makefile
 @@ -126,7 +126,7 @@ ASTTOPDIR:=$(subst $(space),\$(space),$(
  OVERWRITE=y
@@ -9,7 +9,7 @@
  
  # Asterisk.conf is located in ASTETCDIR or by using the -C flag
  # when starting Asterisk
-@@ -202,7 +202,7 @@ endif
+@@ -209,7 +209,7 @@ endif
  
  ifeq ($(OSARCH),FreeBSD)
    # -V is understood by BSD Make, not by GNU make.
@@ -18,7 +18,7 @@
    _ASTCFLAGS+=$(shell if test $(BSDVERSION) -lt 500016 ; then echo "-D_THREAD_SAFE"; fi)
    # flag to tell 'ldconfig' to only process specified directories
    LDCONFIG_FLAGS=-m
-@@ -456,8 +456,12 @@ datafiles: _all doc/core-en_US.xml
+@@ -466,8 +466,12 @@ datafiles: _all doc/core-en_US.xml
  			$(INSTALL) -m 644 $$n "$(DESTDIR)$(ASTDATADIR)/static-http/docs" ; \
  		done \
  	fi
@@ -32,7 +32,7 @@
  	done
  	$(MAKE) -C sounds install
  
-@@ -537,7 +541,7 @@ INSTALLDIRS="$(ASTLIBDIR)" "$(ASTMODDIR)
+@@ -547,7 +551,7 @@ INSTALLDIRS="$(ASTLIBDIR)" "$(ASTMODDIR)
  	"$(ASTDATADIR)/documentation/thirdparty" "$(ASTDATADIR)/firmware" \
  	"$(ASTDATADIR)/firmware/iax" "$(ASTDATADIR)/images" "$(ASTDATADIR)/keys" \
  	"$(ASTDATADIR)/phoneprov" "$(ASTDATADIR)/static-http" "$(ASTDATADIR)/sounds" \
@@ -41,7 +41,7 @@
  
  installdirs:
  	@for i in $(INSTALLDIRS); do \
-@@ -606,7 +610,7 @@ ifneq ($(filter ~%,$(DESTDIR)),)
+@@ -616,7 +620,7 @@ ifneq ($(filter ~%,$(DESTDIR)),)
  	@exit 1
  endif
  
@@ -50,7 +50,7 @@
  	@if [ -x /usr/sbin/asterisk-post-install ]; then \
  		/usr/sbin/asterisk-post-install "$(DESTDIR)" . ; \
  	fi
-@@ -615,21 +619,7 @@ install: badshell bininstall datafiles
+@@ -625,21 +629,7 @@ install: badshell bininstall datafiles
  	@echo " +    YOU MUST READ THE SECURITY DOCUMENT    +"
  	@echo " +                                           +"
  	@echo " + Asterisk has successfully been installed. +"
@@ -72,7 +72,7 @@
  	@echo " +-------------------------------------------+"
  	@$(MAKE) -s oldmodcheck
  
-@@ -648,45 +638,30 @@ adsi:
+@@ -658,45 +648,30 @@ adsi:
  		else \
  			echo "Installing $$x" ; \
  		fi ; \

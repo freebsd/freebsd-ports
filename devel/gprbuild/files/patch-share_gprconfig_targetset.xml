@@ -1,4 +1,4 @@
---- share/gprconfig/targetset.xml.orig	2014-02-13 04:59:56.000000000 +0000
+--- share/gprconfig/targetset.xml.orig	2014-09-11 13:36:47 UTC
 +++ share/gprconfig/targetset.xml
 @@ -66,8 +66,8 @@
  
@@ -11,7 +11,7 @@
    </targetset>
  
    <!-- x86-windows (mingw) -->
-@@ -156,19 +156,34 @@
+@@ -162,19 +162,34 @@
      <target>pent.*-cygwin.*</target>
    </targetset>
  

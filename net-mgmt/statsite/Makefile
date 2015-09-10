@@ -1,22 +1,22 @@
 # $FreeBSD$
 
 PORTNAME=	statsite
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt
-MASTER_SITES=	https://github.com/armon/statsite/archive/
-DISTNAME=	v${PORTVERSION}
 
 MAINTAINER=	rbarabas@rbarabas.info
 COMMENT=	C implementation of statsd
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		scons
+USE_GITHUB=	yes
+GH_ACCOUNT=	armon
 
 USERS=		statsd
 GROUPS=		statsd
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST_FILES=	bin/statsite
 

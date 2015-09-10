@@ -3,6 +3,7 @@
 
 PORTNAME=	gkrellweather
 PORTVERSION=	2.0.8
+PORTREVISION=	1
 CATEGORIES=	misc geography
 MASTER_SITES=	https://sites.google.com/site/makovick/projects/
 
@@ -22,7 +23,7 @@ do-install:
 	(cd ${WRKSRC} && ${INSTALL_SCRIPT} GrabWeather \
 		${STAGEDIR}${PREFIX}/bin)
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins
-	(cd ${WRKSRC} && ${INSTALL_DATA} gkrellweather.so \
+	(cd ${WRKSRC} && ${INSTALL_LIB} gkrellweather.so \
 		${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins)
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/ru
 	(cd ${WRKSRC}/po && ${INSTALL_DATA} ru.mo \

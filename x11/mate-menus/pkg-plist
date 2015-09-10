@@ -1,11 +1,11 @@
 etc/xdg/menus/mate-applications.menu
 etc/xdg/menus/mate-settings.menu
 include/mate-menus/matemenu-tree.h
+lib/girepository-1.0/MateMenu-2.0.typelib
 lib/libmate-menu.a
 lib/libmate-menu.so
 lib/libmate-menu.so.2
 lib/libmate-menu.so.2.4.9
-lib/girepository-1.0/MateMenu-2.0.typelib
 %%PYTHON_SITELIBDIR%%/matemenu.a
 %%PYTHON_SITELIBDIR%%/matemenu.so
 libdata/pkgconfig/libmate-menu.pc
@@ -69,6 +69,7 @@ share/locale/kk/LC_MESSAGES/mate-menus.mo
 share/locale/kn/LC_MESSAGES/mate-menus.mo
 share/locale/ko/LC_MESSAGES/mate-menus.mo
 share/locale/ku/LC_MESSAGES/mate-menus.mo
+share/locale/ku_IQ/LC_MESSAGES/mate-menus.mo
 share/locale/ky/LC_MESSAGES/mate-menus.mo
 share/locale/lt/LC_MESSAGES/mate-menus.mo
 share/locale/lv/LC_MESSAGES/mate-menus.mo

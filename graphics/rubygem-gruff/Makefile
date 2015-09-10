@@ -2,16 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	gruff
-PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTVERSION=	0.6.0
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Beautiful graphing library for Ruby using RMagick
 
-RUN_DEPENDS=	rubygem-rmagick>0:${PORTSDIR}/graphics/rubygem-rmagick
+LICENSE=	MIT
 
+RUN_DEPENDS=	rubygem-rmagick>=2.13.4:${PORTSDIR}/graphics/rubygem-rmagick
+
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MaxMind-DB-Reader
-PORTVERSION=	1.000004
+PORTVERSION=	1.000007
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MAXMIND
@@ -29,6 +29,7 @@ BUILD_DEPENDS=	p5-Data-IEEE754>=0:${PORTSDIR}/devel/p5-Data-IEEE754 \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Math-Int128>=0:${PORTSDIR}/math/p5-Math-Int128 \
 		p5-Net-Works>=0:${PORTSDIR}/net/p5-Net-Works \
+		p5-Scalar-List-Utils>=1.42:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		p5-Test-Bits>=0:${PORTSDIR}/devel/p5-Test-Bits \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Number-Delta>=0:${PORTSDIR}/devel/p5-Test-Number-Delta

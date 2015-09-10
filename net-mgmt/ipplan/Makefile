@@ -18,6 +18,7 @@ USE_PHP=	gettext pcre xml zlib
 SHEBANG_FILES=	${WRKSRC}/contrib/process-exports.pl ${WRKSRC}/contrib/ipplan-poller.php
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 CONFIG=		config.php
 SUB_FILES=	pkg-message
@@ -62,6 +63,5 @@ post-install:
 .if ${PORT_OPTIONS:MPGSQL}
 	@${REINPLACE_CMD} -e 's|INSTALL|INSTALL-POSTGRESQL|g' ${PKGMESSAGE}
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

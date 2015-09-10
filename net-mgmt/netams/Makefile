@@ -73,8 +73,8 @@ RUN_DEPENDS+=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-Crypt-GeneratePassword>=0:${PORTSDIR}/security/p5-Crypt-GeneratePassword
 
-LIB_DEPENDS+=	libgd.so:${PORTSDIR}/graphics/gd \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	libgd.so:${PORTSDIR}/graphics/gd
+USES+=		jpeg
 
 . if ${PORT_OPTIONS:MPGSQL}
 RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
@@ -137,4 +137,10 @@ do-install:
 .endif
 	${INSTALL_MAN} ${MAN_8:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${PREFIX}/man/man8
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
+BROKEN=		does not build on 10.x+
+.endif
+
+.include <bsd.port.post.mk>

@@ -91,7 +91,7 @@ bin/cbpolicyd
 %%WWWDIR%%/images/valid-css2.png
 %%WWWDIR%%/images/valid-xhtml10.png
 %%WWWDIR%%/images/wcag1AAA.png
-%%WWWDIR%%/includes/config.php
+@sample %%WWWDIR%%/includes/config.php.sample
 %%WWWDIR%%/includes/db.php
 %%WWWDIR%%/includes/footer.php
 %%WWWDIR%%/includes/header.php

@@ -1,5 +1,5 @@
---- src/condor_includes/config.h.cmake.orig	2014-11-26 11:22:10.000000000 -0600
-+++ src/condor_includes/config.h.cmake	2014-12-27 17:19:56.000000000 -0600
+--- src/condor_includes/config.h.cmake.orig	2015-04-07 15:10:11 UTC
++++ src/condor_includes/config.h.cmake
 @@ -16,7 +16,11 @@
   * 
   *************************************************************/

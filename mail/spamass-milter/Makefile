@@ -4,8 +4,7 @@
 PORTNAME=	spamass-milter
 PORTVERSION=	0.4.0
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	spamass-milt
+MASTER_SITES=	SAVANNAH/spamass-milt
 
 MAINTAINER=	bmah@FreeBSD.org
 COMMENT=	Sendmail Milter (mail filter) plugin for SpamAssassin

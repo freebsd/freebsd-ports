@@ -1,6 +1,6 @@
---- ./setup.py.orig	2013-04-28 16:58:49.000000000 +0000
-+++ ./setup.py	2013-04-28 17:02:38.000000000 +0000
-@@ -62,8 +62,5 @@
+--- setup.py.orig	2015-05-19 20:23:13 UTC
++++ setup.py
+@@ -61,8 +61,5 @@ setup(name = PACKAGE_NAME,
            include_dirs = include_dirs,
            library_dirs = library_dirs,
            libraries = libraries)],

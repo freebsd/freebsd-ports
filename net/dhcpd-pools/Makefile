@@ -3,6 +3,7 @@
 
 PORTNAME=	dhcpd-pools
 PORTVERSION=	2.26
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -14,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/uthash.h:${PORTSDIR}/devel/uthash
 
-USES=		charsetfix tar:xz
+USES=		charsetfix shebangfix tar:xz
+SHEBANG_FILES=	contrib/snmptest.pl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-dhcpd-conf=${LOCALBASE}/etc/dhcpd.conf \
 		--with-dhcpd-leases=/var/db/dhcpd/dhcpd.leases \

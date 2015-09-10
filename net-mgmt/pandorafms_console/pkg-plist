@@ -1,8 +1,5 @@
-@mode 444
-@sample %%APACHEETCDIR%%/Includes/pandora_console.conf.sample
 @owner www
 @group www
-@mode
 %%WWWDIR%%/ajax.php
 %%WWWDIR%%/attachment/index.html
 %%WWWDIR%%/attachment/mibs/index.html
@@ -669,6 +666,7 @@
 %%WWWDIR%%/images/grafica_h.png
 %%WWWDIR%%/images/grafica_m.png
 %%WWWDIR%%/images/grafica_w.png
+%%WWWDIR%%/images/grafico_llave.png
 %%WWWDIR%%/images/graphmenu_arrow.png
 %%WWWDIR%%/images/graphmenu_arrow_hide.png
 %%WWWDIR%%/images/greyback.gif
@@ -2772,7 +2770,7 @@
 @comment install.php
 @unexec if [ -e %D/%%WWWDIR%%/install.php  ];then rm -f %D/%%WWWDIR%%/install.php ;fi
 %%WWWDIR%%/install.done
-@exec [ -e %D/%B/include/config.php ] || cp -p %D/%F %B/install.php
+@exec [ -e %B/include/config.php ] || cp -p %D/%F %B/install.php
 %%WWWDIR%%/mobile/images/ajax-loader.gif
 %%WWWDIR%%/mobile/images/bricks.png
 %%WWWDIR%%/mobile/images/datos_blue.png
@@ -2927,3 +2925,4 @@
 %%WWWDIR%%/pandoradb.postgreSQL.sql
 %%WWWDIR%%/pandoradb.sql
 %%WWWDIR%%/pandoradb_data.sql
+@sample(,,444) %%APACHEETCDIR%%/Includes/pandora_console.conf.sample

@@ -1,8 +1,0 @@
-color-tools is a Ruby library to provide RGB, CMYK, and other colourspace
-support to applications that require it. It also provides 152 named RGB
-colours. It offers 152 named RGB colours (184 with spelling variations)
-that are commonly supported and used in HTML, SVG, and X11 applications.
-A technique for generating a monochromatic contrasting palette is also
-included.
-
-WWW: http://rubygems.org/gems/colortools/

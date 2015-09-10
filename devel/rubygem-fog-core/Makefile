@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-core
-PORTVERSION=	1.30.0
+PORTVERSION=	1.32.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -18,6 +18,7 @@ RUN_DEPENDS=	rubygem-builder32>=0:${PORTSDIR}/devel/rubygem-builder32 \
 		rubygem-net-scp>=1.1:${PORTSDIR}/security/rubygem-net-scp \
 		rubygem-net-ssh>=2.1.3:${PORTSDIR}/security/rubygem-net-ssh
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

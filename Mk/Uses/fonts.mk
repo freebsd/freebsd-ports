@@ -5,6 +5,8 @@
 # Usage:	USES=fonts
 
 .if !defined(_INCLUDE_USES_FONTS_MK)
+_INCLUDE_USES_FONTS_MK=	yes
+
 .if !empty(fonts_ARGS)
 IGNORE=	USES=fonts - expecting no arguments
 .endif

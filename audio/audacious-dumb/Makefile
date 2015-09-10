@@ -17,6 +17,7 @@ RUN_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
 BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious \
 		${LOCALBASE}/lib/libdumb.a:${PORTSDIR}/audio/dumb
 
+BROKEN=		Does not compile with audacious 3.6.x.
 USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 

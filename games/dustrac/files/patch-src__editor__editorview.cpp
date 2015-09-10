@@ -1,11 +1,10 @@
---- ./src/editor/editorview.cpp.orig	2014-03-29 12:42:23.000000000 +0000
-+++ ./src/editor/editorview.cpp	2014-04-06 15:45:53.624369553 +0000
-@@ -240,7 +240,7 @@
+--- src/editor/editorview.cpp.orig	2015-04-28 17:34:19 UTC
++++ src/editor/editorview.cpp
+@@ -35,6 +35,7 @@
+ #include "tracktile.hpp"
  
-             if (MainWindow::instance()->randomlyRotateObjects())
-             {
--                object.setRotation(std::rand() % 360);
-+                object.setRotation(rand() % 360);
-             }
+ #include <cassert>
++#include <cstdlib>
  
-             scene()->addItem(&object);
+ EditorView::EditorView(EditorData & editorData, QWidget * parent)
+ : QGraphicsView(parent)

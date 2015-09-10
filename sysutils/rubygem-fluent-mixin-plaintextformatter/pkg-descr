@@ -3,4 +3,4 @@ Fluent::Mixin::PlainTextFormatter is a mix-in module, that provides
 BufferedOutput Plugin and TimeSlicedOutput Plugin, to output plain
 text data (to file, REST storages, KVSs ...).
 
-WWW: https://rubygems.org/gems/fluent-mixin-plaintextformatter
+WWW: https://github.com/tagomoris/fluent-mixin-plaintextformatter

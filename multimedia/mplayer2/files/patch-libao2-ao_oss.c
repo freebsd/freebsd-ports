@@ -1,5 +1,5 @@
---- libao2/ao_oss.c~	2012-05-10 23:45:22.000000000 -0500
-+++ libao2/ao_oss.c	2012-05-11 00:03:17.820525648 -0500
+--- libao2/ao_oss.c.orig	2013-07-09 16:33:13 UTC
++++ libao2/ao_oss.c
 @@ -460,6 +460,7 @@ static void reset(void){
    fcntl(audio_fd, F_SETFD, FD_CLOEXEC);
  #endif

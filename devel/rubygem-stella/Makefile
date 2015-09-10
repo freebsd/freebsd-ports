@@ -22,6 +22,7 @@ RUN_DEPENDS=	rubygem-benelux>=0.6.1:${PORTSDIR}/devel/rubygem-benelux \
 		rubygem-whois>=1.6.6:${PORTSDIR}/net/rubygem-whois \
 		rubygem-yajl-ruby>=0.7.9:${PORTSDIR}/devel/rubygem-yajl-ruby
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

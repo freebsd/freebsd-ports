@@ -2,13 +2,13 @@
 
 PORTNAME=	thundercache
 PORTVERSION=	6.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www
 MASTER_SITES=	http://www.thundercache.com.br/dist/ \
 		http://www.bmsoftware.org/packs/ \
 		http://www8.freebsdbrasil.com.br/~eksffa/thunder/ \
 		http://www6.freebsdbrasil.com.br/~eksffa/l/dev/thunder/ \
-		${MASTER_SITE_LOCAL}/jmelo
+		LOCAL/jmelo
 DISTNAME=	thundercache-6.1.201104260900-${BITS}-fbsd
 
 MAINTAINER=	eksffa@freebsdbrasil.com.br
@@ -29,7 +29,8 @@ PHP_DESC=	Install PHP for reporting generating
 PGSQL_DESC=	Install PostgreSQL (report data storing)
 
 USE_OPENSSL=	yes
-USES=		tar:bzip2
+USES=		shebangfix tar:bzip2
+SHEBANG_FILES=	sbin/thunderlog.php
 
 ONLY_FOR_ARCHS=	i386 amd64
 

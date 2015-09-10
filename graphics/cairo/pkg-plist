@@ -41,6 +41,7 @@ lib/libcairo.so
 lib/libcairo.so.2
 lib/libcairo.so.%%LIBVER%%
 libdata/pkgconfig/cairo.pc
+%%OPENGL%%libdata/pkgconfig/cairo-egl.pc
 libdata/pkgconfig/cairo-fc.pc
 libdata/pkgconfig/cairo-ft.pc
 %%OPENGL%%libdata/pkgconfig/cairo-gl.pc

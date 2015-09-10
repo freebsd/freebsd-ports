@@ -4,14 +4,14 @@
 PORTNAME=	uncompyle2
 PORTVERSION=	1.1
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/Mysterie/${PORTNAME}/tarball/${HASH}/
 PKGNAMEPREFIX=	py-
-DISTNAME=	Mysterie-${PORTNAME}-${HASH}
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Decompiler for Python's .pyc and .pyo files
 
-HASH=		3956a5a
+USE_GITHUB=	yes
+GH_ACCOUNT=	Mysterie
+GH_TAGNAME=	3956a5a
 USES=		python:2
 USE_PYTHON=	distutils
 REINPLACE_ARGS=	-i ""

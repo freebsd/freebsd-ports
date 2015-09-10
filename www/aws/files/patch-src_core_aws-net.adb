@@ -1,6 +1,6 @@
---- src/core/aws-net.adb.orig	2014-05-15 19:48:07.000000000 +0000
+--- src/core/aws-net.adb.orig	2015-06-22 10:52:10 UTC
 +++ src/core/aws-net.adb
-@@ -552,7 +552,7 @@ package body AWS.Net is
+@@ -553,7 +553,7 @@ package body AWS.Net is
  
           --  to be shure that it is S1 and S2 connected together
  

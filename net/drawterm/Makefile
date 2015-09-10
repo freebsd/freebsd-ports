@@ -3,9 +3,9 @@
 
 PORTNAME=	drawterm
 PORTVERSION=	20140106
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://swtch.com/drawterm/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	winston@ml1.net
 COMMENT=	Plan9 cpu client
@@ -13,6 +13,7 @@ COMMENT=	Plan9 cpu client
 # Additionally the Lucent Public License
 LICENSE=	MIT
 
+USES=	tar:tgz
 USE_XORG=	x11 xt
 
 PLIST_FILES=	bin/drawterm

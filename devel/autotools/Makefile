@@ -10,13 +10,12 @@ DISTFILES=	# none
 # note: before committing to this port, contact portmgr to arrange for an
 # experimental ports run.  Untested commits may be backed out at portmgr's
 # discretion.
-MAINTAINER=	autotools@FreeBSD.org
+MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Autotools meta-port
 
 RUN_DEPENDS=	libtoolize:${PORTSDIR}/devel/libtool \
 		autoconf-2.13:${PORTSDIR}/devel/autoconf213 \
 		autoconf-2.69:${PORTSDIR}/devel/autoconf \
-		automake-1.4:${PORTSDIR}/devel/automake14 \
 		automake-1.15:${PORTSDIR}/devel/automake
 
 PLIST_FILES=	share/${PORTNAME}

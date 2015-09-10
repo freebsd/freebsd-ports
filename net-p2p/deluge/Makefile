@@ -41,7 +41,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_PKGNAMEPREFIX}notify>=0.1.1:${PORTSDIR}/devel/py-notify \
 		xdg-utils>=1.0.2:${PORTSDIR}/devel/xdg-utils
 
-USE_GNOME+=	librsvg2 pygnome2 pygtk2
+USE_GNOME+=	intltool librsvg2 pygnome2 pygtk2
 USES+=		desktop-file-utils
 INSTALLS_ICONS=	yes
 .endif

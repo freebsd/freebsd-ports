@@ -5,8 +5,7 @@ PORTNAME=	webcrawl
 PORTVERSION=	1.10
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/www/mirroring
+MASTER_SITES=	SUNSITE/apps/www/mirroring
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Download web sites without user interaction by following links

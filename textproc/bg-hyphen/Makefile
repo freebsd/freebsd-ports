@@ -16,6 +16,7 @@ LICENSE=	GPLv2 LGPL21 MPL
 LICENSE_COMB=	dual
 
 USES=		zip
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	%%DATADIR%%/hyph_bg_BG.dic

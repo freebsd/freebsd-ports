@@ -310,21 +310,3 @@ bin/pyblosxom-cmd
 %%DOCSDIR%%/whatsnew_1_4.rst
 %%DOCSDIR%%/whatsnewolder.rst
 %%DOCSDIR%%/writing_entries.rst
-@dirrm %%DOCSDIR%%/_static/plugins/comments
-@dirrm %%DOCSDIR%%/_static/plugins
-@dirrm %%DOCSDIR%%/_static
-@dirrm %%DOCSDIR%%/plugins
-@dirrm %%DOCSDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/Pyblosxom/cache
-@dirrm %%PYTHON_SITELIBDIR%%/Pyblosxom/data
-@dirrm %%PYTHON_SITELIBDIR%%/Pyblosxom/entries
-@dirrm %%PYTHON_SITELIBDIR%%/Pyblosxom/flavours/atom.flav
-@dirrm %%PYTHON_SITELIBDIR%%/Pyblosxom/flavours/error.flav
-@dirrm %%PYTHON_SITELIBDIR%%/Pyblosxom/flavours/html.flav
-@dirrm %%PYTHON_SITELIBDIR%%/Pyblosxom/flavours/rss.flav
-@dirrm %%PYTHON_SITELIBDIR%%/Pyblosxom/flavours/rss20.flav
-@dirrm %%PYTHON_SITELIBDIR%%/Pyblosxom/flavours
-@dirrm %%PYTHON_SITELIBDIR%%/Pyblosxom/plugins
-@dirrm %%PYTHON_SITELIBDIR%%/Pyblosxom/renderers
-@dirrm %%PYTHON_SITELIBDIR%%/Pyblosxom/tests
-@dirrm %%PYTHON_SITELIBDIR%%/Pyblosxom

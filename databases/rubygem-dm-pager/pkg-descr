@@ -4,4 +4,4 @@ rich pagination implementation for DataMapper. Due to Github's gem
 builder being destroyed, we were forced to rename our gem to 
 'dm-pager' which is now available on Gemcutter.org.
 
-WWW: https://github.com/visionmedia/dm-pagination
+WWW: https://github.com/tj/dm-pagination

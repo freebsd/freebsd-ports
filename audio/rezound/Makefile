@@ -3,7 +3,7 @@
 
 PORTNAME=	rezound
 DISTVERSION=	0.12.3beta
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/ReZound/${DISTVERSION}
 
@@ -11,6 +11,8 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Graphical audio file editor
 
 LICENSE=	GPLv2
+
+BROKEN=		Fails to configure with gcc, fails to link with clang
 
 LIB_DEPENDS=	libFOX-1.4.so:${PORTSDIR}/x11-toolkits/fox14
 
@@ -36,7 +38,7 @@ BROKEN_NLS_DESC=	${NLS_DESC} (broken!)
 LARGEFILE_CONFIGURE_ON=	--enable-largefile
 JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
 AUDIOFILE_LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
-PORTAUDIO_LIB_DEPENDS=	libportaudio.so.0:${PORTSDIR}/audio/portaudio
+PORTAUDIO_LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio
 OGG_LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg
 VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
@@ -46,6 +48,8 @@ LADSPA_RUN_DEPENDS=	${LOCALBASE}/lib/ladspa/amp.so:${PORTSDIR}/audio/ladspa
 LADSPA_CONFIGURE_OFF=	--disable-ladspa
 LAME_RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame
 CDRDAO_RUN_DEPENDS=	cdrdao:${PORTSDIR}/sysutils/cdrdao
+
+EXTRA_PATCHES=		${FILESDIR}/050_all_portaudio19.patch:-p1
 
 .include <bsd.port.options.mk>
 
@@ -57,6 +61,10 @@ PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MPORTAUDIO}
+LIBS+=	-lportaudio
 .endif
 
 post-patch: .SILENT
@@ -97,6 +105,11 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e '/AUTHORS/d; /COPYING/d' ${WRKSRC}/Makefile.in
 .else
 	${REINPLACE_CMD} -e 's/ install-pkgdocDATA$$//' ${WRKSRC}/Makefile.in
+.endif
+
+.if ${PORT_OPTIONS:MPORTAUDIO}
+post-configure:
+	${ECHO_CMD} "#define ENABLE_PORTAUDIO_V19 1" >> ${WRKSRC}/config/config.h
 .endif
 
 .include <bsd.port.mk>

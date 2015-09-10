@@ -3,7 +3,7 @@
 
 PORTNAME=	pidgimpd
 PORTVERSION=	1.1.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	net-im audio
 MASTER_SITES=	http://ayeon.org/projects/pidgimpd/
 PKGNAMEPREFIX=	pidgin-
@@ -19,6 +19,7 @@ RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 USES=		libtool pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	lib/pidgin/pidgimpd.so
 

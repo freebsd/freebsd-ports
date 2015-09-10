@@ -1,4 +1,4 @@
---- lib/compat/gettext.h.orig	2015-05-07 18:40:12 UTC
+--- lib/compat/gettext.h.orig	2015-05-03 14:52:33 UTC
 +++ lib/compat/gettext.h
 @@ -53,7 +53,6 @@
     <libintl.h>, which chokes if dcgettext is defined as a macro.  So include

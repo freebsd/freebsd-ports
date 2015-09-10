@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- libapm.c.orig	Fri Jun 19 02:28:23 1998
 +++ libapm.c	Sun Aug 22 23:31:55 2004
 @@ -8,12 +8,19 @@

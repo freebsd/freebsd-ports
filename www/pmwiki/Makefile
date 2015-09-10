@@ -6,15 +6,19 @@ PORTVERSION=	2.2.64
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.pmwiki.org/pub/pmwiki/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WikiWikiWeb clone using PHP
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/docs/COPYING.txt
+
+USES=		cpe tar:tgz
 USE_PHP=	mbstring session
 WANT_PHP_WEB=	yes
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 PORTDOCS=	*
 
@@ -39,15 +43,11 @@ post-extract:
 	@${MV} ${WRKSRC}/docs/sample-config.php ${WRKSRC}
 
 do-install:
-	@${MKDIR} -m 755 ${STAGEDIR}${PREFIX}/${PMWIKIDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${PMWIKIDIR}
 	@cd ${WRKSRC} && ${FIND} . ! \( -name docs -prune \) | \
 		${CPIO} ${CPIOFLAGS} ${STAGEDIR}${PREFIX}/${PMWIKIDIR}
-	@${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${PMWIKIDIR}
-	@${INSTALL} -o ${DOCOWN} -g ${DOCGRP} -m 555 -d ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
-
-post-install:
-	@${MKDIR} -m 775 ${STAGEDIR}${PREFIX}/${PMWIKIDIR}/wiki.d
-	@${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${PMWIKIDIR}/wiki.d
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${PMWIKIDIR}/wiki.d
 
 .include <bsd.port.mk>

@@ -1,0 +1,8 @@
+The Inline::Python module allows you to put Python source code directly
+"inline" in a Perl script or module. It sets up an in-process Python
+interpreter, runs your code, and then examines Python's symbol table for
+things to bind to Perl. The process of interrogating the Python
+interpreter for globals only occurs the first time you run your Python
+code. The namespace is cached, and subsequent calls use the cached version.
+
+WWW: http://search.cpan.org/dist/Inline-Python/

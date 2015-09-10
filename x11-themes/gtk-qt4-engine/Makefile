@@ -5,7 +5,7 @@ PORTNAME=	gtk-qt-engine
 PORTVERSION=	1.1
 PORTREVISION=	12
 CATEGORIES=	x11-themes
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	GTK+ 2.x theme engine allowing to use Qt/KDE styles
@@ -18,20 +18,15 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	BONOBO
 BONOBO_DESC=	Better support for Bonobo (GNOME) framework
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MBONOBO}
-USE_GNOME+=	libbonoboui
-.endif
+BONOBO_USE=	GNOME=libbonoboui
 
 post-patch:
-.if !${PORT_OPTIONS:MBONOBO}
-	@${REINPLACE_CMD} -e '/^PKGCONFIG(libbonoboui/d' \
-		${WRKSRC}/CMakeLists.txt
-.endif
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
 		${WRKSRC}/kcm_gtk/searchpaths.cpp \
 		${WRKSRC}/src/rcproperties.cpp
+
+post-patch-BONOBO-off:
+	${REINPLACE_CMD} -e '/^PKGCONFIG(libbonoboui/d' \
+		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

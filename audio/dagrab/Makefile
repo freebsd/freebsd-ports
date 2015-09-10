@@ -5,8 +5,7 @@ PORTNAME=	dagrab
 PORTVERSION=	0.3.5
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/sound/cdrom
+MASTER_SITES=	SUNSITE/apps/sound/cdrom
 
 MAINTAINER=	clkao@CirX.ORG
 COMMENT=	Read audio tracks from a CD into wav sound files

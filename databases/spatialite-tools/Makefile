@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	spatialite-tools
-PORTVERSION=	4.2.0
+PORTVERSION=	4.3.0
 CATEGORIES=	databases geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libgeos_c.so:${PORTSDIR}/graphics/geos \
 		libreadosm.so:${PORTSDIR}/astro/readosm
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig iconv
 USE_SQLITE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include

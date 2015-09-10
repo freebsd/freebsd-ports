@@ -15,6 +15,7 @@ CONFLICTS=	linux-f8-tcl84-[0-9]* linux-c6-tcl85-[0-9]*
 
 USE_LINUX=	f10
 USE_LINUX_RPM=	yes
+USE_LINUX_RPM_BAD_PERMS=	yes
 RPMVERSION=	1.fc10
 BRANDELF_FILES=	usr/bin/tclsh8.5
 USE_LDCONFIG=	yes

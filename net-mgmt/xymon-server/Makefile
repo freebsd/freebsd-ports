@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	xymon
-PORTVERSION=	4.3.19
-PORTREVISION=	0
+PORTVERSION=	4.3.21
+PORTREVISION=	2
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF/xymon/Xymon/${PORTVERSION}
 PKGNAMESUFFIX=	-server${PKGNAMESUFFIX2}
@@ -51,7 +51,7 @@ FIXME1=		alerts.cfg hosts.cfg xymon-apache-open xymon-apache-secure
 FIXME2=		analysis.cfg combo.cfg holidays.cfg rrddefinitions.cfg \
 		snmpmibs.cfg xymonmenu.cfg xymonserver-migration.cfg
 
-OPTIONS_DEFINE=LDAP NETSNMP
+OPTIONS_DEFINE=DEBUG LDAP NETSNMP
 NETSNMP_DESC=Enable Net-SNMP support
 
 .include <bsd.port.options.mk>
@@ -71,6 +71,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's|install-docs install-client|install-docs|' ${WRKSRC}/build/Makefile.rules
 	${REINPLACE_CMD} -e 's|$(INSTALLETCDIR)/protocols.cfg|$(INSTALLETCDIR)/protocols.cfg.DIST|' ${WRKSRC}/xymonnet/Makefile
 	${REINPLACE_CMD} -e 's|TRACEROUTE="traceroute"|TRACEROUTE="mtr -c 2 -n --report"|' ${WRKSRC}/xymond/etcfiles/xymonserver.cfg.DIST
+	${RM} ${WRKSRC}/docs/manpages/man1/xymonping.1.html
+	${RM} ${WRKSRC}/xymonnet/xymonping.1
 
 # Configure script is interactive
 do-configure:
@@ -78,6 +80,7 @@ do-configure:
 
 post-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}/server/etc
+	${LN} -s ${LOCALBASE}/sbin/fping ${STAGEDIR}${WWWDIR}/server/bin/xymonping
 	${INSTALL_SCRIPT} ${WRKSRC}/build/upgrade430.sh ${STAGEDIR}${WWWDIR}/server/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/build/renamevars ${STAGEDIR}${WWWDIR}/server/bin/
 .for i in ${FIXME1}

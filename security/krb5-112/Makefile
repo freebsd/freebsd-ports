@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=		krb5
-PORTVERSION=		1.12.3
-PORTREVISION=		1
+PORTVERSION=		1.12.4
+PORTREVISION=		2
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 PKGNAMESUFFIX=		-112
@@ -22,13 +22,13 @@ BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4
 
 CONFLICTS=		heimdal-[0-9]* srp-[0-9]* krb5-[0-9]* krb5-maint-111-*
 
-LATEST_LINK=		${PORTNAME}-112
 KERBEROSV_URL=		http://web.mit.edu/kerberos/
 USE_PERL5=		build
 USE_LDCONFIG=		yes
 USE_CSTD=		gnu99
 GNU_CONFIGURE=		yes
-USES=			cpe gettext gmake perl5 libtool:build
+USES=			cpe gettext gmake perl5 libtool:build \
+			gssapi:boostrap,mit
 CONFIGURE_ARGS?=	--enable-shared --without-system-verto \
 			--disable-rpath --localstatedir="${PREFIX}/var"
 CONFIGURE_ENV=		INSTALL="${INSTALL}" INSTALL_LIB="${INSTALL_LIB}" YACC="${YACC}"
@@ -86,14 +86,8 @@ PLIST_SUB+=		LDAP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MREADLINE}
-.if ${OSVERSION} >= 1100000
-# libtool has some gas with libreadline in 11-CURRENT.
-BUILD_DEPENDS+=		libreadline.so:${PORTSDIR}/devel/readline
-LIB_DEPENDS+=		libreadline.so:${PORTSDIR}/devel/readline
-.else
 USES+=			readline:port
 CONFIGURE_ARGS+=	--with-readline
-.endif
 .endif
 
 .if defined(PROGRAM_TRANSFORM_NAME) && ${PROGRAM_TRANSFORM_NAME} != ""

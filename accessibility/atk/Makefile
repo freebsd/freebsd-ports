@@ -1,9 +1,8 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/accessibility/atk/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	atk
-PORTVERSION=	2.14.0
+PORTVERSION=	2.16.0
 PORTREVISION?=	0
 CATEGORIES=	accessibility devel
 MASTER_SITES=	GNOME
@@ -13,6 +12,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME accessibility toolkit (ATK)
 
 USES=		tar:xz
+PORTSCOUT=	limitw:1,even
 
 .if !defined(REFERENCE_PORT)
 
@@ -23,7 +23,6 @@ USE_GNOME=	glib20 introspection:build referencehack
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
-CONFIGURE_ENV=	AUTOCONF=${TRUE} AUTOMAKE=${TRUE}
 INSTALL_TARGET=	install-strip
 
 post-patch:

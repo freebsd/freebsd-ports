@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	audacious-plugins
-PORTVERSION=	3.5.2
+PORTVERSION=	3.6.2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
@@ -14,21 +14,18 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig tar:bzip2
+USES=		gmake pkgconfig tar:bzip2 compiler:c++11-lib
 USE_LDCONFIG=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ARGS=	--disable-mpris2
 USE_GNOME=	glib20
 WANT_SDL=	yes
-
-PORTDOCS=	AUTHORS
 
 OPTIONS_DEFINE=	DBUS OSS4 SDLOUT ALSA CUE MP3 STATUSICON AOSD AOSDXCOMP \
 		ADPLUG VORBIS FLAC WAVPACK AAC SNDFILE MODPLUG JACK \
 		CDAUDIO SCROBBLER MMS NLS RESAMPLE AMIDI GLSPECTRUM \
 		NOTIFY BS2B FFAUDIO PULSE NEON SPEEDPITCH LIRC MP3FILEWRITER \
-		SID
+		SID MPRIS
 OPTIONS_DEFAULT=DBUS CUE MP3 STATUSICON AOSD AOSDXCOMP AAC CDAUDIO \
 		SCROBBLER NEON NLS OSS4 FFAUDIO
 
@@ -51,6 +48,7 @@ NEON_DESC=	Neon plugin
 SPEEDPITCH_DESC=Speed and Pitch plugin
 LIRC_DESC=	LIRC plugin
 MP3FILEWRITER=	Filewriter plugin for MP3
+MPRIS_DESC=	NPRIS plugin
 
 .include <bsd.port.options.mk>
 
@@ -349,11 +347,15 @@ CONFIGURE_ARGS+=--disable-lirc
 PLIST_SUB+=	LIRC="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MMPRIS}
+CONFIGURE_ARGS+=--enable-mpris2
+PLIST_SUB+=	MPRIS=""
+.else
+CONFIGURE_ARGS+=--disable-mpris2
+PLIST_SUB+=	MPRIS="@comment "
+.endif
+
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
-.endfor
 	@${FIND} ${STAGEDIR}${PREFIX}/lib/audacious/ -name "*.so" \
 		-exec ${STRIP_CMD} {} \;
 

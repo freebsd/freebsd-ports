@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dejavu
-PORTVERSION=	2.34
-PORTREVISION=	6
+PORTVERSION=	2.35
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-fonts-ttf-${PORTVERSION}
@@ -16,6 +15,7 @@ OPTIONS_DEFAULT=LINKS
 OPTIONS_SUB=	yes
 LINKS_DESC=	Install links of configuration files in conf.d
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 USES=		fonts tar:bzip2
 

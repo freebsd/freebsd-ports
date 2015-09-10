@@ -1,0 +1,2 @@
+Note: WinFF will emit a warning if it cannot find ffplay.
+To get it, you need to install ffmpeg with the SDL option.

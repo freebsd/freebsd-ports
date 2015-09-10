@@ -13,7 +13,7 @@
 .if !defined(_INCLUDE_USES_ALIAS_MK)
 _INCLUDE_USES_ALIAS_MK=    yes
 
-.if ${OPSYS} == DragonFly
+.if ${OPSYS} != FreeBSD
 
 .if empty(alias_ARGS)
 CFLAGS+=	-D__FreeBSD__=9
@@ -26,6 +26,6 @@ IGNORE=	invalid MAJOR RELEASE argument (${alias_ARGS}) for USES=alias
 .  endif
 .endif
 
-.endif # OPSYS == DragonFly
+.endif # OPSYS != FreeBSD
 
 .endif

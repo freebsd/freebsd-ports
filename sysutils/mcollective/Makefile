@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mcollective
-PORTVERSION=	2.5.3
+PORTVERSION=	2.8.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/${PORTNAME}/
 
@@ -16,6 +16,8 @@ USE_RUBY=	yes
 USE_RC_SUBR=	mcollectived
 
 RUBY_SHEBANG_FILES=	bin/mcollectived bin/mco
+CFG_FILES=	client.cfg data-help.erb discovery-help.erb facts.yaml \
+		metadata-help.erb rpc-help.erb server.cfg
 
 # don't make .bak files
 REINPLACE_ARGS=	-i ""
@@ -39,20 +41,9 @@ do-patch:
 	    ${WRKSRC}/etc/client.cfg.dist
 
 do-install:
-	@(cd ${WRKSRC}/lib && ${COPYTREE_SHARE} \* ${STAGEDIR}${RUBY_SITELIBDIR})
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	@(cd ${WRKSRC}/plugins/mcollective && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR})
-
-.for script in ${SCRIPTS}
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/${script} ${STAGEDIR}${PREFIX}/bin/
+	cd ${WRKSRC} ; ${RUBY} install.rb --destdir=${STAGEDIR} --configdir=${ETCDIR} --plugindir=${DATADIR}
+.for cfg in ${CFG_FILES}
+	mv ${STAGEDIR}${ETCDIR}/${cfg} ${STAGEDIR}${ETCDIR}/${cfg}.sample
 .endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/mcollectived ${STAGEDIR}${PREFIX}/sbin/mcollectived
-
-	${MKDIR} ${STAGEDIR}${ETCDIR}
-	${INSTALL_DATA} ${WRKSRC}/etc/client.cfg.dist ${STAGEDIR}${ETCDIR}
-	${INSTALL_DATA} ${WRKSRC}/etc/server.cfg.dist ${STAGEDIR}${ETCDIR}
-
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

@@ -4,7 +4,7 @@
 PORTNAME=	esmska
 PORTVERSION=	0.21
 CATEGORIES=	comms java
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	gamato@users.sf.net
 COMMENT=	Program for sending SMS over the Internet
@@ -21,8 +21,6 @@ PORTDOCS=	readme.txt
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/esmska.jar ${STAGEDIR}${DATADIR}/
@@ -32,12 +30,10 @@ do-install:
 	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} license ${STAGEDIR}${DATADIR}/)
 	${INSTALL_SCRIPT} ${WRKDIR}/esmska ${STAGEDIR}${PREFIX}/bin/
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
 .endfor
-.endif
 
 .include <bsd.port.mk>

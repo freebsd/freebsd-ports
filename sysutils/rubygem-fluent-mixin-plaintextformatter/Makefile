@@ -8,6 +8,8 @@ MASTER_SITES=	RG
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Fluentd plugin to include format values into json, tsv or csv
 
+LICENSE=	APACHE20
+
 RUN_DEPENDS=	\
 	rubygem-fluentd>0:${PORTSDIR}/sysutils/rubygem-fluentd \
 	rubygem-ltsv>0:${PORTSDIR}/textproc/rubygem-ltsv

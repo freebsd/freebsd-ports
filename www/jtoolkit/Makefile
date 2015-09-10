@@ -15,6 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}kid>=0.9.5:${PORTSDIR}/devel/py-kid
 # Can optionally use py-lucene (on i386)
 
 USES=		python:2
+NO_ARCH=	yes
 USE_PYTHON=	distutils
 PYSETUP=	${PORTNAME}Setup.py
 

@@ -2,5 +2,3 @@ etc/squid/squid_radius_auth.conf
 etc/squid/squid_radius_auth.conf.default
 libexec/squid/squid_radius_auth
 man/man8/squid_radius_auth.8.gz
-@dirrmtry libexec/squid/
-@dirrmtry etc/squid/

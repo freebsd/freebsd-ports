@@ -14,7 +14,6 @@ COMMENT=	Python module for writing inline assembler programs
 FETCH_BEFORE_ARGS=-o ${DISTFILES}
 USES=		dos2unix python shebangfix
 SHEBANG_FILES=	examples/*.py
-python_CMD=	${PYTHON_CMD}
 USE_PYTHON=	distutils autoplist
 
 PORTDOCS=	InlineEgg.html Changelog README

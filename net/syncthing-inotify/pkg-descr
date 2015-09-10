@@ -1,0 +1,3 @@
+Provides inotify/kqueue support for Syncthing
+
+WWW: https://github.com/syncthing/syncthing-inotify

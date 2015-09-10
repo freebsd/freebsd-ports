@@ -3,6 +3,7 @@
 
 PORTNAME=	validator
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://validator.w3.org/dist/ \
 		http://www.cyberbotx.com/w3c-validator/
@@ -39,6 +40,12 @@ HTML_TIDY_DESC=	Enable HTML Markup Cleaning
 
 HTML_TIDY_RUN_DEPENDS=	p5-HTML-Tidy>=0:${PORTSDIR}/textproc/p5-HTML-Tidy
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 502200
+RUN_DEPENDS+=	p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm
+.endif
+
 post-extract:
 	@${RM} ${WRKSRC}/README.cvs
 	@${RM} -rf ${WRKSRC}/misc
@@ -56,4 +63,4 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/httpd/cgi-bin/* ${STAGEDIR}${PREFIX}/www/validator/httpd/cgi-bin
 	(cd ${WRKSRC}/share && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/www/validator/share/)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

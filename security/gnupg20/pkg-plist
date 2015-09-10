@@ -112,7 +112,4 @@ sbin/applygnupgdefaults
 %%NLS%%share/locale/uk/LC_MESSAGES/gnupg2.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gnupg2.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gnupg2.mo
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/examples
-@dirrmtry %%DOCSDIR%%
 @unexec [ -L %D/bin/gpg ] && rm -f %D/bin/gpg || true

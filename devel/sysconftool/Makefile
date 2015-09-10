@@ -11,12 +11,7 @@ COMMENT=	Helps to install application configuration files
 
 LICENSE=	GPLv3
 
-USES=		perl5 tar:bzip2
-HAS_CONFIGURE=	yes
-
-USE_AUTOTOOLS=	automake aclocal autoconf
-
-pre-patch:
-	@${CP} ${TEMPLATES}/config.guess ${TEMPLATES}/config.sub ${WRKSRC}
+USES=		autoreconf perl5 tar:bzip2
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

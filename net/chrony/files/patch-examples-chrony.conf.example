@@ -1,4 +1,4 @@
---- examples/chrony.conf.example.orig	2014-01-31 20:12:59 +0800
+--- examples/chrony.conf.example.orig	2015-04-07 14:35:16 UTC
 +++ examples/chrony.conf.example
 @@ -42,6 +42,13 @@
  # Failing that, there are a lot of public NTP servers.  There is a list
@@ -23,7 +23,7 @@
  
  # Tell chronyd which numbered key in the file is used as the password
  # for chronyc. (You can pick any integer up to 2**32-1.  '1' is just a
-@@ -129,7 +136,7 @@ commandkey 1
+@@ -132,7 +139,7 @@ generatecommandkey
  # still running and bail out.  If you want to change the path to the PID
  # file, uncomment this line and edit it.  The default path is shown.
  
@@ -32,7 +32,7 @@
  
  #######################################################################
  ### INITIAL CLOCK CORRECTION
-@@ -152,8 +159,8 @@ commandkey 1
+@@ -155,8 +162,8 @@ generatecommandkey
  # produce some graphs of your system's timekeeping performance, or you
  # need help in debugging a problem.
  

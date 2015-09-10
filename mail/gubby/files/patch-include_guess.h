@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- include/guess.h.orig
 +++ include/guess.h
 @@ -38,7 +38,7 @@

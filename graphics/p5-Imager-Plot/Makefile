@@ -3,7 +3,7 @@
 
 PORTNAME=	Imager-Plot
 PORTVERSION=	0.09
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,9 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Imager>=0:${PORTSDIR}/graphics/p5-Imager
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	plot.pl
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

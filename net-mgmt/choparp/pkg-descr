@@ -4,4 +4,4 @@ proxy arp reply to the sender if the arp request queries the MAC address
 (ethernet hardware address) for the network speicified by net_addr and
 net_mask.
 
-WWW: http://sourceforge.net/projects/choparp/
+WWW: https://github.com/quinot/choparp

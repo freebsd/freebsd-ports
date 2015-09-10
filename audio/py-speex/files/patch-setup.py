@@ -1,6 +1,6 @@
---- setup.py.orig	Sun Oct 30 13:10:14 2005
-+++ setup.py	Sat Mar  3 00:40:44 2007
-@@ -5,9 +5,9 @@
+--- setup.py.orig	2005-10-30 12:10:14 UTC
++++ setup.py
+@@ -5,9 +5,9 @@ import sys
  from distutils.core import setup, Extension
  from Pyrex.Distutils import build_ext
  

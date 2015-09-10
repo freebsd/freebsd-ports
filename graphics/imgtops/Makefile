@@ -3,7 +3,7 @@
 
 PORTNAME=	imgtops
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -15,8 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
 
-USES=			python
-USE_GHOSTSCRIPT_RUN=	yes
+USES=			ghostscript:run python
 USE_PYTHON=		distutils
 
 post-install:

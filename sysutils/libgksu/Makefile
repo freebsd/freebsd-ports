@@ -18,7 +18,7 @@ RUN_DEPENDS=	xauth:${PORTSDIR}/x11/xauth \
 		sudo:${PORTSDIR}/security/sudo
 
 USES=		gettext gmake libtool pathfix pkgconfig
-USE_GNOME=	glib20 gconf2
+USE_GNOME=	glib20 gconf2 intltool
 USE_LDCONFIG=	yes
 USE_XORG=	x11
 CONFIGURE_ARGS=	--enable-gtk-doc=no

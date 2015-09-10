@@ -10,8 +10,7 @@ DISTNAME=	vnc_reflector-${PORTVERSION}
 MAINTAINER=	paul@it.ca
 COMMENT=	Multi-client VNC proxy server
 
-LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
-
+USES=		jpeg
 USE_RC_SUBR=	vncreflector
 
 ALL_TARGET=	default

@@ -1,6 +1,6 @@
---- configure.in.orig
+--- configure.in.orig	2013-07-15 05:50:01 UTC
 +++ configure.in
-@@ -260,10 +260,11 @@
+@@ -260,10 +260,11 @@ dnl make sure at least one of lame and v
  dnl-----------------------------------------------------------------------------
  if test "x${LAME_LDFLAGS}" = "x" \
       -a "x${VORBIS_LDFLAGS}" = "x" \

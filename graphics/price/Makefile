@@ -3,7 +3,7 @@
 
 PORTNAME=	price
 PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics gnustep
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 DISTNAME=	PRICE-${PORTVERSION}
@@ -14,7 +14,7 @@ COMMENT=	Image filtering and manipulation using GNUstep
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		desktop-file-utils gnustep
+USES=		gnustep
 
 USE_GNUSTEP=	back build
 

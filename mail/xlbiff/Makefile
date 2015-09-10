@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The X Literate Biff - displays the from and subject from incoming mails
 
 USES=		imake tar:Z

@@ -1,4 +1,4 @@
---- src/gnatcoll_iconv.gpr.orig	2014-04-10 13:47:58.000000000 +0000
+--- src/gnatcoll_iconv.gpr.orig	2015-04-30 10:51:45 UTC
 +++ src/gnatcoll_iconv.gpr
 @@ -27,7 +27,8 @@ project GnatColl_Iconv is
     package Compiler is

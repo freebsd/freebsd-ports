@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- bin/curly/machine.h.orig	Wed Nov 13 08:08:13 2002
 +++ bin/curly/machine.h	Wed Nov 13 08:08:48 2002
 @@ -19,7 +19,7 @@

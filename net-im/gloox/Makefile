@@ -26,8 +26,7 @@ PORTSCOUT=	skipv:1.0.x
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|"GNU strip"|"strip"| ; \
-		 s| -ansi||' ${WRKSRC}/configure
+		 's| -ansi||' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's| -pedantic|| ; \
 		 s| -pipe||'

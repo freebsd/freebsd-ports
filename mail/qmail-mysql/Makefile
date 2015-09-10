@@ -19,6 +19,5 @@ USE_MYSQL=	yes
 
 MASTERDIR=	${.CURDIR}/../qmail
 DESCR=		${.CURDIR}/pkg-descr
-LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
 .include "${MASTERDIR}/Makefile"

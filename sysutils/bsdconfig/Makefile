@@ -32,12 +32,8 @@ OPTIONS_DEFINE=	EXAMPLES
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD
-.  if ${OSVERSION} < 900030
-IGNORE=	requires FreeBSD 9.0 or later
-.  endif
-.else
-IGNORE= is a FreeBSD-specific port
+.if ${OPSYS} != FreeBSD
+IGNORE= 	is a FreeBSD-specific port
 .endif
 
 post-patch:

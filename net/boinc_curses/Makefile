@@ -5,9 +5,7 @@ PORTNAME=	boinc_curses
 PORTVERSION=	0.2.2
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://www.oook.cz/bsd/boinc_curses/
-MASTER_SITE_SUBDIR=rene
+MASTER_SITES=	LOCAL/rene http://www.oook.cz/bsd/boinc_curses/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console, ncurses based monitor and manager for BOINC

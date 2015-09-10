@@ -1,4 +1,3 @@
-# $FreeBSD$
 --- src/docsis.c.orig	Mon Aug 15 14:19:04 2005
 +++ src/docsis.c	Sun Jun 10 18:14:07 2007
 @@ -20,10 +20,6 @@

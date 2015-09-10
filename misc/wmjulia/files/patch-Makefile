@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- Makefile.orig	Thu May 16 12:16:40 2002
 +++ Makefile	Thu May 16 12:17:17 2002
 @@ -1,21 +1,20 @@

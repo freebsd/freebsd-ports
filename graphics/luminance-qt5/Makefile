@@ -16,14 +16,13 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
 LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float \
 		libexiv2.so:${PORTSDIR}/graphics/exiv2 \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libgsl.so:${PORTSDIR}/math/gsl \
 		libraw_r.so:${PORTSDIR}/graphics/libraw \
 		libboost_system.so:${PORTSDIR}/devel/boost-libs
 
-USES=		cmake:outsource pkgconfig tar:bzip2
+USES=		cmake:outsource jpeg pkgconfig tar:bzip2
 USE_QT5=	concurrent declarative gui printsupport sql webkit xml \
 		buildtools_build linguist_build qmake_build \
 		imageformats_run

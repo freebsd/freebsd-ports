@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: cf-monitord
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf[.local] to enable cf-monitord(8)
+#
+# cf_monitord_enable (bool):        Set to "NO" by default.
+#                               Set it to "YES" to enable cf-monitord.
+# cf_monitord_flags (str):          Custom additional arguments to be passed
+#                               to cf-monitord (default empty).
+#
+
+. /etc/rc.subr
+
+name="cf_monitord"
+rcvar=cf_monitord_enable
+
+command="%%PREFIX%%/sbin/cf-monitord"
+
+load_rc_config $name
+
+: ${cf_monitord_enable="NO"}
+
+run_rc_command "$1"

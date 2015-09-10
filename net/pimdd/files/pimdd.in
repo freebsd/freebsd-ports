@@ -1,0 +1,25 @@
+#!/bin/sh
+# $FreeBSD$
+#
+# PROVIDE: pimdd
+# REQUIRE: netif routing
+# KEYWORD: nojail
+
+#
+# Add the following to /etc/rc.conf[.local] to enable this service
+#
+# pimdd_enable="YES"
+#
+
+. /etc/rc.subr
+
+name="pimdd"
+rcvar="${name}_enable"
+command="%%PREFIX%%/sbin/${name}"
+required_files="%%PREFIX%%/etc/${name}.conf"
+extra_commands=reload
+
+load_rc_config $name
+: ${pimdd_enable="NO"}
+run_rc_command "$1"
+

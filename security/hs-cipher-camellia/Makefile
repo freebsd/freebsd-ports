@@ -2,7 +2,7 @@
 
 PORTNAME=	cipher-camellia
 PORTVERSION=	0.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org

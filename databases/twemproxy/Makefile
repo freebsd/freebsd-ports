@@ -3,16 +3,16 @@
 
 PORTNAME=	twemproxy
 PORTVERSION=	0.4.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
-MASTER_SITES=	https://github.com/twitter/${PORTNAME}/archive/
-DISTNAME=	v${PORTVERSION}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Fast, light-weight proxy for memcached and redis
 
 LICENSE=	APACHE20
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	twitter
 
 USES=		execinfo autoreconf libtool
 

@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- ehntserv.c.orig
 +++ ehntserv.c
 @@ -23,9 +23,13 @@

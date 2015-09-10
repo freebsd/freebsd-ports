@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Gnome2
-PORTVERSION=	1.045
-PORTREVISION=	1
+PORTVERSION=	1.046
 CATEGORIES=	x11-toolkits gnome perl5
 MASTER_SITES=	CPAN \
 		SF/gtk2-perl/${PORTNAME}/${PORTVERSION}
@@ -29,5 +28,8 @@ MAKE_JOBS_UNSAFE=	yes
 USES=		perl5
 USE_GNOME=	libbonoboui libgnome libgnomeui
 USE_PERL5=	configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Gnome2/Gnome2.so
 
 .include <bsd.port.mk>

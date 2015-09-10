@@ -17,6 +17,8 @@ RUN_DEPENDS=	rubygem-addressable>=2.3.4:${PORTSDIR}/www/rubygem-addressable \
 		rubygem-eventmachine>=1.0.3:${PORTSDIR}/devel/rubygem-eventmachine \
 		rubygem-http_parser.rb>=0.6.0:${PORTSDIR}/net/rubygem-http_parser.rb
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

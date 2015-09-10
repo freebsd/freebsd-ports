@@ -1,6 +1,6 @@
---- ./block/dollarindex.cc.orig	2013-06-23 20:13:49.000000000 +0200
-+++ ./block/dollarindex.cc	2013-11-27 18:55:17.000000000 +0100
-@@ -6,7 +6,7 @@
+--- block/dollarindex.cc.orig	2013-06-23 18:13:49 UTC
++++ block/dollarindex.cc
+@@ -6,7 +6,7 @@ void Block::dollarIndex(size_t lineNr, s
  {
      d_atDollar.push_back(
          AtDollar(AtDollar::DOLLAR, length(), lineNr, 

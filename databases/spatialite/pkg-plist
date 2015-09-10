@@ -1,8 +1,10 @@
 include/spatialite.h
+include/spatialite/control_points.h
 include/spatialite/debug.h
 include/spatialite/gaiaaux.h
 include/spatialite/gaiaexif.h
 include/spatialite/gaiageo.h
+include/spatialite/gaiamatrix.h
 include/spatialite/geopackage.h
 include/spatialite/gg_advanced.h
 include/spatialite/gg_const.h
@@ -19,8 +21,8 @@ include/spatialite/sqlite.h
 lib/libspatialite.a
 lib/libspatialite.so
 lib/libspatialite.so.7
-lib/libspatialite.so.7.0.0
+lib/libspatialite.so.7.1.0
 lib/mod_spatialite.so
 lib/mod_spatialite.so.7
-lib/mod_spatialite.so.7.0.0
+lib/mod_spatialite.so.7.1.0
 libdata/pkgconfig/spatialite.pc

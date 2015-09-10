@@ -3,7 +3,7 @@
 
 PORTNAME=	uniconvw
 PORTVERSION=	1.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics python
 MASTER_SITES=	GOOGLE_CODE \
 		http://mirror.amdmi3.ru/distfiles/
@@ -17,8 +17,9 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sk1libs/__init__.py:${PORTSDIR}/graphics/sk1li
 
 PROJECTHOST=	uniconvertor
 
-USES=		python
+USES=		desktop-file-utils python
 USE_PYTHON=	distutils
+NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|' ${WRKSRC}/setup.py

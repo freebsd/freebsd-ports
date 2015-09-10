@@ -1,6 +1,6 @@
---- drivers/dummy/dummy_driver.h.orig	2009-02-12 05:04:38.000000000 +0100
-+++ drivers/dummy/dummy_driver.h	2009-02-12 05:04:44.000000000 +0100
-@@ -44,7 +44,7 @@
+--- drivers/dummy/dummy_driver.h.orig	2013-10-04 00:45:25 UTC
++++ drivers/dummy/dummy_driver.h
+@@ -44,7 +44,7 @@ struct _dummy_driver
      jack_nframes_t  period_size;
      unsigned long   wait_time;
  

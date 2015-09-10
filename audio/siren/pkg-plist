@@ -1,6 +1,7 @@
 bin/siren
 lib/siren/ip/flac.so
 lib/siren/ip/mad.so
+lib/siren/ip/opus.so
 lib/siren/ip/vorbis.so
 lib/siren/ip/wavpack.so
 %%OSS%%lib/siren/op/oss.so

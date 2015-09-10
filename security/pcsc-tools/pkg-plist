@@ -7,4 +7,3 @@ man/man1/gscriptor.1p.gz
 man/man1/pcsc_scan.1.gz
 man/man1/scriptor.1p.gz
 share/pcsc/smartcard_list.txt
-@dirrm share/pcsc

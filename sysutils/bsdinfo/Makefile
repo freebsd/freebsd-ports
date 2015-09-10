@@ -5,11 +5,13 @@ PORTNAME=	bsdinfo
 PORTVERSION=	0.22
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://cloud.github.com/downloads/samupl/bsdinfo/
+MASTER_SITES=	GHC
 
 MAINTAINER=	freebsd-ports@samu.pl
 COMMENT=	Simple utility to display system-based information
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	samupl
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	X256

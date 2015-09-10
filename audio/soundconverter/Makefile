@@ -20,7 +20,7 @@ SHEBANG_FILES=	src/soundconverter.py
 python_OLD_CMD=	/usr/bin/python -tt
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	pygtk2 pygnome2
+USE_GNOME=	intltool pygtk2 pygnome2
 MAKE_ENV=	MAKE=${MAKE_CMD}
 INSTALLS_ICONS=	yes
 

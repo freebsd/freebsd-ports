@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	clawsker
-PORTVERSION=	0.7.12
+PORTVERSION=	0.7.13
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/tools/
 
@@ -11,12 +11,12 @@ COMMENT=	Applet to edit Claws Mail's hidden preferences
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	claws-mail>=3.9.1:${PORTSDIR}/mail/claws-mail \
-		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
+RUN_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext
 
 USES=		shebangfix perl5
 SHEBANG_FILES=	${PORTNAME}
+NO_ARCH=	yes
 
 PORTDOCS=	NEWS README
 

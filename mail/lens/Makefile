@@ -6,7 +6,7 @@ PORTVERSION=	0.2
 PORTREVISION=	1
 CATEGORIES=	mail ruby
 MASTER_SITES=	http://www.pitecan.com/Lens/ \
-		${MASTER_SITE_LOCAL:S|%SUBDIR%|tota/lens|}
+		LOCAL/tota/lens
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Mail filter written in Ruby

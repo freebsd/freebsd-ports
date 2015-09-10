@@ -3,7 +3,8 @@
 # Configuration settings for logstash in /etc/rc.conf:
 #
 # PROVIDE: logstash
-# REQUIRE: LOGIN
+# REQUIRE: DAEMON
+# BEFORE:  LOGIN
 # KEYWORD: shutdown
 #
 # logstash_enable (bool):
@@ -11,24 +12,13 @@
 #   Flag that determines whether Logstash is enabled.
 #
 # logstash_home (string):
-#   Default value: "/opt/logstash-1.4.2"
+#   Default value: "/usr/local/logstash"
 #   Logstash installation directory.
 #
 # logstash_config (string):
 #   Default value: /usr/local/etc/${name}/${name}.conf
 #   Logstash configuration file path.
 #
-# logstash_mode (string):
-#   Default value: "standalone"
-#   Valid options:
-#     "standalone": agent, web & elasticsearch
-#     "web": Starts logstash as a web ui
-#     "agent": Justs works as a log shipper 
-#
-# logstash_port (int):
-#   Default value: 9292
-#   Port of the Kibana web interface.
-# 
 # logstash_log (bool):
 #   Set to "NO" by default.
 #   Set it to "YES" to enable logstash logging to file
@@ -68,13 +58,10 @@ logdir="/var/log"
 : ${logstash_home="%%LOGSTASH_HOME%%"}
 : ${logstash_config="%%ETCDIR%%/${name}.conf"}
 : ${logstash_log="NO"}
-: ${logstash_mode="standalone"}
-: ${logstash_port="9292"}
 : ${logstash_log_file="${logdir}/${name}.log"}
-: ${logstash_elastic_datadir="%%LOGSTASH_DATA_DIR%%"}
 : ${logstash_java_home="%%JAVA_HOME%%"}
 : ${logstash_java_opts=""}
-: ${logstash_ffi_java_opts="-Djnr.ffi.asm.enabled=false"}
+: ${logstash_elastic_datadir="%%LOGSTASH_DATA_DIR%%"}
 
 piddir=/var/run/${name}
 pidfile=${piddir}/${name}.pid
@@ -94,16 +81,10 @@ if checkyesno logstash_log; then
   logstash_log_options=" --log ${logstash_log_file}" 
 fi
 
-if [ ${logstash_mode} = "standalone" ]; then
-  logstash_args="agent -f ${logstash_config} ${logstash_log_options} -- web --port ${logstash_port}"
-  logstash_elastic_options="-Des.path.data=${logstash_elastic_datadir}"
-elif [ ${logstash_mode} = "agent" ]; then
-  logstash_args="agent -f ${logstash_config} ${logstash_log_options}"
-elif [ ${logstash_mode} = "web" ]; then
-  logstash_args="web --port ${logstash_port} ${logstash_log_options}"
-fi
+logstash_args="agent -f ${logstash_config} ${logstash_log_options}"
+logstash_elastic_options="-Des.path.data=${logstash_elastic_datadir}"
 
-JAVA_OPTS="${logstash_ffi_java_opts} ${logstash_java_opts} ${logstash_elastic_options}"
+JAVA_OPTS="${logstash_java_opts} ${logstash_elastic_options}"
 JAVA_HOME="${logstash_java_home}"
 export JAVA_OPTS
 export JAVA_HOME
@@ -111,5 +92,9 @@ export JAVA_HOME
 command="/usr/sbin/daemon"
 command_args="-f -p ${pidfile} ${logstash_cmd} ${logstash_args}"
 required_files="${logstash_home} ${logstash_java_home} ${logstash_cmd} ${logstash_config}"
+
+# Include /usr/local/bin in path because Logstash startup scripts
+# assume bash is in path.
+PATH=/usr/local/bin:$PATH
 
 run_rc_command "$1"

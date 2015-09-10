@@ -189,7 +189,7 @@ RUN_DEPENDS+=	procmail:${PORTSDIR}/mail/procmail
 .endif
 
 .if ${PORT_OPTIONS:MSENDFAX}
-USE_GHOSTSCRIPT=yes
+USES+=		ghostscript
 SENDFAX_DEPENDS=sendfax:${PORTSDIR}/comms/mgetty+sendfax \
 		pnmscale:${PORTSDIR}/graphics/netpbm
 BUILD_DEPENDS+=	${SENDFAX_DEPENDS}

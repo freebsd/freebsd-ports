@@ -16,3 +16,5 @@ man/man1/tstatd.1.gz
 %%SITE_PERL%%/Tail/Stat/Plugin/icecast.pm
 %%SITE_PERL%%/Tail/Stat/Plugin/nginx.pm
 %%SITE_PERL%%/Tail/Stat/Plugin/spamd.pm
+@dir(,,1777) /var/db/tstatd
+@dir(,,1777) /var/run/tstatd

@@ -9,7 +9,7 @@ MASTER_SITES=	SF:0 \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:0 mimelib-${MIMELIB_VERSION}.tar.gz:1
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	sweetpea-freebsd@tentacle.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mailing list archiver
 
 LICENSE=	GPLv2

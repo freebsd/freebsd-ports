@@ -1,0 +1,29 @@
+--- mailestd/Makefile.orig	2015-06-06 10:45:32 UTC
++++ mailestd/Makefile
+@@ -2,9 +2,9 @@ MAILESTD_MT=	#
+ 
+ PROG=		mailestd
+ SRCS=		bytebuf.c mailestd.c mailestctl.c parse.y parser.c
+-LINKS=		${BINDIR}/mailestd ${LOCALBASE}/bin/mailestctl
++LINKS=		${BINDIR}/${PROG} ${BINDIR}/mailestctl
+ CFLAGS+=	-DHAVE_LIBESTDRAFT -DMONITOR_KQUEUE
+-LIBESTDRAFTOBJ!=cd ${.CURDIR}/../libestdraft; ${MAKE} _whereobj
++LIBESTDRAFTOBJ!=cd ${.CURDIR}/../libestdraft; ${MAKE} -V.OBJDIR
+ LDFLAGS=	-L${LOCALBASE}/lib
+ LDADD=		-lestraier -levent -lqdbm
+ DPADD=		${LIBESTRAIER} ${LIBEVENT} ${LIBQDBM}
+@@ -21,13 +21,7 @@ LDADD+=		-lpthread
+ DPADD+=		${LIBPTHREAD}
+ .endif
+ 
+-beforeinstall:
+-	${INSTALL} ${INSTALL_COPY} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
+-	    ${.CURDIR}/../mew-mailest.sh ${PREFIX}/bin/mew-mailest
+-	${INSTALL} ${INSTALL_COPY} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
+-	    ${.CURDIR}/../cmew-mailest.sh ${PREFIX}/bin/cmew-mailest
+-	${INSTALL} ${INSTALL_COPY} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
+-	    ${.CURDIR}/../smew-mailest.sh ${PREFIX}/bin/smew-mailest
++SCRIPTS=	mew-mailest.sh cmew-mailest.sh smew-mailest.sh
+ 
+ LDFLAGS+=	-L${LIBESTDRAFTOBJ}
+ LDADD+=		-lestdraft

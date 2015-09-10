@@ -2,10 +2,7 @@
 
     %%FLOWVIEWERDIR%%
 
-Please copy FlowViewer_Configuration.pm.sample to FlowViewer_Configuration.pm,
-NamedInterfaces_Devices.sample to NamedInterfaces_Devices,
-NamedInterfaces_Exporters.sample to NamedInterfaces_Exporters
-and edit them to suit your needs.
+Please edit at least FlowViewer_Configuration.pm to suit your needs.
 
 To make FlowViewer available through your web site, I suggest
 that you add something like the following to httpd.conf:

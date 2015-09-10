@@ -1,0 +1,11 @@
+--- host/hackrf-tools/CMakeLists.txt.orig	2015-08-30 19:34:41 UTC
++++ host/hackrf-tools/CMakeLists.txt
+@@ -35,7 +35,7 @@ include_directories(getopt)
+ add_definitions(/D _CRT_SECURE_NO_WARNINGS)
+ else()
+ add_definitions(-Wall)
+-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=gnu90")
++set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
+ endif()
+ 
+ if(NOT libhackrf_SOURCE_DIR)

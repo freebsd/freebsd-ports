@@ -5,10 +5,9 @@ PORTVERSION=	1.4
 PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.netmeridian.com/e-huss/ \
-		${MASTER_SITE_GENTOO}
-MASTER_SITE_SUBDIR=	distfiles
+		GENTOO
 
-MAINTAINER=	bdrewery@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Repairs or generates a qmail queue structure
 
 USES=		qmail:run

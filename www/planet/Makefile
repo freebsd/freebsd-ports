@@ -14,6 +14,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/Tidy/Tidy.py:${PORTSDIR}/devel/py-mx-experi
 
 USES=		python tar:bzip2
 NO_BUILD=	yes
+NO_ARCH=	yes
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 

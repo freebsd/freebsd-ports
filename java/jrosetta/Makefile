@@ -20,7 +20,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/jrosetta-api.jar \
 		%%JAVAJARDIR%%/jrosetta-engine.jar
 
 OPTIONS_DEFINE=	COMPILE
-COMPILE_DESC=	Download and compile source instead of binaries
+COMPILE_DESC=	Download and compile source instead of using provided binaries
 
 .include <bsd.port.options.mk>
 
@@ -39,29 +39,27 @@ DISTFILES=	${PORTNAME}-api-${PORTVERSION}.jar:api \
 EXTRACT_ONLY=
 
 NO_BUILD=	yes
+NO_INSTALL=	yes
 .endif
 
-.if ${PORT_OPTIONS:MCOMPILE}
-post-patch:
+post-patch-COMPILE-on:
 	${MKDIR} ${WRKDIR}/m2
 	${CP} ${FILESDIR}/settings.xml ${WRKDIR}
 	${REINPLACE_CMD} -e "s|WORK|${WRKDIR}|" ${WRKDIR}/settings.xml
 
-do-build:
+do-build-COMPILE-on:
 	(cd ${WRKSRC} && ${LOCALBASE}/bin/mvn -gs "${WRKDIR}/settings.xml" clean install)
-.endif
 
-do-install:
-.if ${PORT_OPTIONS:MCOMPILE}
+do-install-COMPILE-on:
 	${INSTALL_DATA} ${OUTPUT}/jrosetta-api/${PORTVERSION}/jrosetta-api-${PORTVERSION}.jar \
 		${STAGEDIR}${JAVAJARDIR}/jrosetta-api.jar
 	${INSTALL_DATA} ${OUTPUT}/jrosetta-engine/${PORTVERSION}/jrosetta-engine-${PORTVERSION}.jar \
 		${STAGEDIR}${JAVAJARDIR}/jrosetta-engine.jar
-.else
+
+do-install-COMPILE-off:
 	${INSTALL_DATA} ${DISTDIR}/jrosetta-api-${PORTVERSION}.jar \
 		${STAGEDIR}${JAVAJARDIR}/jrosetta-api.jar
 	${INSTALL_DATA} ${DISTDIR}/jrosetta-engine-${PORTVERSION}.jar \
 		${STAGEDIR}${JAVAJARDIR}/jrosetta-engine.jar
-.endif
 
 .include <bsd.port.mk>

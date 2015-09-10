@@ -1,0 +1,9 @@
+--- modules/jpeg/jpeg.tcl	2015-04-30 04:21:20 UTC
++++ modules/jpeg/jpeg.tcl
+@@ -402,5 +402,5 @@ proc ::jpeg::getExifFromChannel {chan {t
+             # offset of next exif block (for thumbnail)
+             _scan $byteOrder [read $chan 4] i next
+-            if {$next <= 0} { close $chan ; return }
++            if {$next <= 0} { return }
+             # but its relative to start
+             seek $chan [expr {$start + $next}] start

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aria2
-PORTVERSION=	1.18.10
+PORTVERSION=	1.19.0
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
 
@@ -52,10 +52,4 @@ SQLITE_USE=		SQLITE=yes
 
 ARIA2_DISK_CACHE?=	16M
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "powerpc" && ${OSVERSION} > 900000
-BROKEN=		Does not install on powerpc-9
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

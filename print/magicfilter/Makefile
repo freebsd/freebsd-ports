@@ -3,14 +3,14 @@
 
 PORTNAME=	magicfilter
 PORTVERSION=	2.3.h
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	print
 MASTER_SITES=	http://www.pell.portland.or.us/~orc/Code/magicfilter/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Customizable, extensible automatic printer filter
 
-USE_GHOSTSCRIPT=	yes
+USES=		ghostscript
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.sh

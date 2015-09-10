@@ -3,8 +3,8 @@
 
 PORTNAME=	cinnamon-control-center
 PORTVERSION=	2.4.2
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
-MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -35,10 +35,12 @@ RUN_DEPENDS=	py*-dbus>=0:${PORTSDIR}/devel/py-dbus \
 		ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss \
 		py*-lxml>=0:${PORTSDIR}/devel/py-lxml
 
-USES=		autoreconf:build gettext gmake libtool pathfix \
+USES=		autoreconf gettext gmake libtool pathfix \
 		python:2 pkgconfig
 USE_GNOME=	evolutiondataserver3 gconf2 gnomeprefix \
 		gtk30 intlhack libgnomekbd
+USE_GITHUB=	yes
+GH_ACCOUNT=	linuxmint
 USE_XORG=	x11 xfixes sm
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
@@ -60,8 +62,5 @@ post-patch:
 		${WRKSRC}/files/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/share/|${PREFIX}/share/|g' \
 		${WRKSRC}/panels/common/cc-common-language.c
-
-pre-configure:
-	cd ${WRKSRC} && NOCONFIGURE=yes ${SH} ./autogen.sh
 
 .include <bsd.port.mk>

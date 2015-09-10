@@ -12,6 +12,8 @@ www/CDash/ajax/expectedbuildgroup.php
 www/CDash/ajax/expectedinfo.php
 www/CDash/ajax/finduserproject.php
 www/CDash/ajax/findusers.php
+www/CDash/ajax/getfeed.php
+www/CDash/ajax/getviewcoverage.php
 www/CDash/ajax/showbuildhistory.php
 www/CDash/ajax/showbuildtimegraph.php
 www/CDash/ajax/showbuildupdategraph.php
@@ -33,7 +35,6 @@ www/CDash/api/getversion.php
 www/CDash/api/hasfile.php
 www/CDash/api/index.php
 www/CDash/autoRemoveBuilds.php
-www/CDash/backup.xsl
 www/CDash/backup/.htaccess
 www/CDash/backup/README.txt
 www/CDash/buildOverview.php
@@ -45,9 +46,10 @@ www/CDash/cdash/ChangeLog.txt
 www/CDash/cdash/Copyright.txt
 www/CDash/cdash/autoremove.php
 www/CDash/cdash/bugurl.php
+www/CDash/cdash/cdashmail.php
 www/CDash/cdash/clientsubmit.php
 www/CDash/cdash/common.php
-www/CDash/cdash/config.local.php
+www/CDash/cdash/config.local.sample.php
 www/CDash/cdash/config.php
 www/CDash/cdash/createRSS.php
 www/CDash/cdash/ctestparser.php
@@ -65,6 +67,8 @@ www/CDash/cdash/processsubmissions.php
 www/CDash/cdash/repository.php
 www/CDash/cdash/sendemail.php
 www/CDash/cdash/version.php
+www/CDash/colorblind.css
+www/CDash/common.css
 www/CDash/createProject.php
 www/CDash/createProject.xsl
 www/CDash/displayImage.php
@@ -72,6 +76,8 @@ www/CDash/editSite.php
 www/CDash/editSite.xsl
 www/CDash/editUser.php
 www/CDash/editUser.xsl
+www/CDash/error.php
+www/CDash/error.xsl
 www/CDash/favicon.ico
 www/CDash/filterdataFunctions.php
 www/CDash/filterdataTemplate.xsl
@@ -83,6 +89,7 @@ www/CDash/headeradminproject.xsl
 www/CDash/headerback.xsl
 www/CDash/headscripts.xsl
 www/CDash/help.html
+www/CDash/htaccess.in
 www/CDash/images/Calendar.gif
 www/CDash/images/Closed.gif
 www/CDash/images/DownBlack.gif
@@ -97,6 +104,9 @@ www/CDash/images/RightBlack.gif
 www/CDash/images/activity-level.png
 www/CDash/images/advanced.png
 www/CDash/images/asc.gif
+www/CDash/images/back_disabled.png
+www/CDash/images/back_enabled.png
+www/CDash/images/back_enabled_hover.png
 www/CDash/images/bg.gif
 www/CDash/images/bg1.gif
 www/CDash/images/bgfo.gif
@@ -121,13 +131,18 @@ www/CDash/images/error.png
 www/CDash/images/feed-icon16x16.png
 www/CDash/images/filecoverage.png
 www/CDash/images/filter.gif
+www/CDash/images/first.png
 www/CDash/images/flag.png
 www/CDash/images/flaggreen.gif
 www/CDash/images/folder.png
+www/CDash/images/forward_disabled.png
+www/CDash/images/forward_enabled.png
+www/CDash/images/forward_enabled_hover.png
 www/CDash/images/graph.png
 www/CDash/images/help.gif
 www/CDash/images/hide.png
 www/CDash/images/invite.png
+www/CDash/images/last.png
 www/CDash/images/loading.gif
 www/CDash/images/logo2.gif
 www/CDash/images/mail.png
@@ -143,13 +158,19 @@ www/CDash/images/platform_freebsd.png
 www/CDash/images/platform_linux.png
 www/CDash/images/platform_mac.png
 www/CDash/images/platform_windows.png
+www/CDash/images/prev.png
 www/CDash/images/previous.png
 www/CDash/images/progressbar.gif
-www/CDash/images/progressbg_green.gif
-www/CDash/images/progressbg_orange.gif
-www/CDash/images/progressbg_red.gif
 www/CDash/images/refresh.png
+www/CDash/images/settings.png
 www/CDash/images/show.png
+www/CDash/images/smiley-bad.png
+www/CDash/images/smiley-good.png
+www/CDash/images/sort_asc.png
+www/CDash/images/sort_asc_disabled.png
+www/CDash/images/sort_both.png
+www/CDash/images/sort_desc.png
+www/CDash/images/sort_desc_disabled.png
 www/CDash/images/star.png
 www/CDash/images/subproject.png
 www/CDash/images/systemtray.png
@@ -202,6 +223,7 @@ www/CDash/javascript/cdashBuildGroup.js
 www/CDash/javascript/cdashClient.js
 www/CDash/javascript/cdashCoverageGraph.js
 www/CDash/javascript/cdashCreateProject.js
+www/CDash/javascript/cdashFeed.js
 www/CDash/javascript/cdashFilters.js
 www/CDash/javascript/cdashIndexTable.js
 www/CDash/javascript/cdashManageCoverageSorter.js
@@ -215,8 +237,10 @@ www/CDash/javascript/cdashUpgrade.js
 www/CDash/javascript/cdashUploadFilesSorter.js
 www/CDash/javascript/cdashUser.js
 www/CDash/javascript/cdashUserLabels.js
+www/CDash/javascript/cdashViewCoverage.js
 www/CDash/javascript/cdashmenu.js
 www/CDash/javascript/excanvas.js
+www/CDash/javascript/images/next.png
 www/CDash/javascript/images/ui-bg_diagonals-thick_90_eeeeee_40x40.png
 www/CDash/javascript/images/ui-bg_flat_15_cd0a0a_40x100.png
 www/CDash/javascript/images/ui-bg_glass_100_e4f1fb_1x400.png
@@ -231,16 +255,21 @@ www/CDash/javascript/images/ui-icons_2e83ff_256x240.png
 www/CDash/javascript/images/ui-icons_3d80b3_256x240.png
 www/CDash/javascript/images/ui-icons_72a7cf_256x240.png
 www/CDash/javascript/images/ui-icons_ffffff_256x240.png
+www/CDash/javascript/je_compare-1.0.0.min.js
+www/CDash/javascript/je_compare_style-1.0.0.css
 www/CDash/javascript/jqModal.css
 www/CDash/javascript/jqModal.js
 www/CDash/javascript/jquery-1.6.2.js
 www/CDash/javascript/jquery-ui-1.8.16.css
 www/CDash/javascript/jquery-ui-1.8.16.min.js
 www/CDash/javascript/jquery.cookie.js
+www/CDash/javascript/jquery.dataTables.css
+www/CDash/javascript/jquery.dataTables.min.js
 www/CDash/javascript/jquery.flot.min.js
 www/CDash/javascript/jquery.flot.pie.js
 www/CDash/javascript/jquery.flot.selection.min.js
 www/CDash/javascript/jquery.metadata.js
+www/CDash/javascript/jquery.mobile-1.4.0.min.js
 www/CDash/javascript/jquery.qtip.min.css
 www/CDash/javascript/jquery.qtip.min.js
 www/CDash/javascript/jquery.tablesorter.js
@@ -271,6 +300,8 @@ www/CDash/manageClient.php
 www/CDash/manageClient.xsl
 www/CDash/manageCoverage.php
 www/CDash/manageCoverage.xsl
+www/CDash/manageMeasurements.php
+www/CDash/manageMeasurements.xsl
 www/CDash/manageProjectRoles.php
 www/CDash/manageProjectRoles.xsl
 www/CDash/manageSubproject.php
@@ -314,6 +345,7 @@ www/CDash/models/dailyupdatefile.php
 www/CDash/models/dynamicanalysis.php
 www/CDash/models/dynamicanalysisdefect.php
 www/CDash/models/errorlog.php
+www/CDash/models/feed.php
 www/CDash/models/image.php
 www/CDash/models/label.php
 www/CDash/models/labelemail.php
@@ -337,7 +369,9 @@ www/CDash/register.php
 www/CDash/register.xsl
 www/CDash/removeBuilds.php
 www/CDash/removeBuilds.xsl
+www/CDash/robots.txt
 www/CDash/router.php
+www/CDash/rss/.htaccess
 www/CDash/scheduleSummary.php
 www/CDash/scheduleSummary.xsl
 www/CDash/scripts/cdash_client_common.ctest
@@ -352,7 +386,7 @@ www/CDash/sql/mysql/cdash-upgrade-1.2-1.4.sql
 www/CDash/sql/mysql/cdash-upgrade-1.4-1.6.sql
 www/CDash/sql/mysql/cdash-upgrade-1.6-1.8.sql
 www/CDash/sql/mysql/cdash-upgrade-1.8-2.0.sql
-www/CDash/sql/mysql/cdash-upgrade-2.0-2.1.sql
+www/CDash/sql/mysql/cdash-upgrade-2.0-2.2.sql
 www/CDash/sql/mysql/cdash.sql
 www/CDash/sql/mysqlcompat.patch
 www/CDash/sql/pgsql/cdash-upgrade-0-0.8.sql
@@ -362,7 +396,7 @@ www/CDash/sql/pgsql/cdash-upgrade-1.2-1.4.sql
 www/CDash/sql/pgsql/cdash-upgrade-1.4-1.6.sql
 www/CDash/sql/pgsql/cdash-upgrade-1.6-1.8.sql
 www/CDash/sql/pgsql/cdash-upgrade-1.8-2.0.sql
-www/CDash/sql/pgsql/cdash-upgrade-2.0-2.1.sql
+www/CDash/sql/pgsql/cdash-upgrade-2.0-2.2.sql
 www/CDash/sql/pgsql/cdash.ext.sql
 www/CDash/sql/pgsql/cdash.sql
 www/CDash/submit.php
@@ -622,7 +656,10 @@ www/CDash/tests/data/smile.gif
 www/CDash/tests/data/smile2.gif
 www/CDash/tests/kwtest/kw_db.php
 www/CDash/tests/kwtest/kw_test_manager.php
+www/CDash/tests/kwtest/kw_unlink.php
 www/CDash/tests/kwtest/kw_web_tester.php
+www/CDash/tests/kwtest/simpletest/VERSION
+www/CDash/tests/kwtest/simpletest/arguments.php
 www/CDash/tests/kwtest/simpletest/authentication.php
 www/CDash/tests/kwtest/simpletest/autorun.php
 www/CDash/tests/kwtest/simpletest/browser.php
@@ -644,6 +681,8 @@ www/CDash/tests/kwtest/simpletest/invoker.php
 www/CDash/tests/kwtest/simpletest/mock_objects.php
 www/CDash/tests/kwtest/simpletest/page.php
 www/CDash/tests/kwtest/simpletest/parser.php
+www/CDash/tests/kwtest/simpletest/php_parser.php
+www/CDash/tests/kwtest/simpletest/recorder.php
 www/CDash/tests/kwtest/simpletest/reflection_php4.php
 www/CDash/tests/kwtest/simpletest/reflection_php5.php
 www/CDash/tests/kwtest/simpletest/remote.php
@@ -655,6 +694,7 @@ www/CDash/tests/kwtest/simpletest/simpletest.php
 www/CDash/tests/kwtest/simpletest/socket.php
 www/CDash/tests/kwtest/simpletest/tag.php
 www/CDash/tests/kwtest/simpletest/test_case.php
+www/CDash/tests/kwtest/simpletest/tidy_parser.php
 www/CDash/tests/kwtest/simpletest/unit_tester.php
 www/CDash/tests/kwtest/simpletest/url.php
 www/CDash/tests/kwtest/simpletest/user_agent.php
@@ -812,6 +852,8 @@ www/CDash/viewDynamicAnalysisFile.php
 www/CDash/viewDynamicAnalysisFile.xsl
 www/CDash/viewErrorLog.php
 www/CDash/viewErrorLog.xsl
+www/CDash/viewFeed.php
+www/CDash/viewFeed.xsl
 www/CDash/viewFiles.php
 www/CDash/viewFiles.xsl
 www/CDash/viewIssues.php
@@ -833,6 +875,7 @@ www/CDash/xml_handlers/abstract_handler.php
 www/CDash/xml_handlers/build_handler.php
 www/CDash/xml_handlers/configure_handler.php
 www/CDash/xml_handlers/coverage_handler.php
+www/CDash/xml_handlers/coverage_junit_handler.php
 www/CDash/xml_handlers/coverage_log_handler.php
 www/CDash/xml_handlers/dynamic_analysis_handler.php
 www/CDash/xml_handlers/note_handler.php
@@ -840,7 +883,14 @@ www/CDash/xml_handlers/project_handler.php
 www/CDash/xml_handlers/sax_handler.php
 www/CDash/xml_handlers/stack.php
 www/CDash/xml_handlers/testing_handler.php
+www/CDash/xml_handlers/testing_junit_handler.php
+www/CDash/xml_handlers/testing_nunit_handler.php
 www/CDash/xml_handlers/update_handler.php
 www/CDash/xml_handlers/upload_handler.php
-@dir(%%WWWOWN%%,,) www/CDash/rss
-@dir(%%WWWOWN%%,,) www/CDash/backup
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
+@dir www/CDash/backup
+@dir www/CDash/rss
+@dir www/CDash/upload
+@owner
+@group

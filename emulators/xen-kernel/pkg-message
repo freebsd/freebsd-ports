@@ -1,17 +1,17 @@
 Please add the following entries in order to boot the xen kernel
 
-in /etc/sysctl.conf:
+In /etc/sysctl.conf:
 	vm.max_wired=-1
 
-in /etc/ttys
+In /etc/ttys:
 	xc0 	"/usr/libexec/getty Pc"         xterm   on  secure
 
-In /boot/loader.conf for a dom0 with 2G memory and 4 vcpus
+In /boot/loader.conf for a dom0 with 2G memory and 4 vcpus:
 	xen_kernel="/boot/xen"
 	xen_cmdline="dom0_mem=2048M dom0_max_vcpus=4 dom0pvh=1 com1=115200,8n1 guest_loglvl=all loglvl=all"
 
-Add
-	console=com1 to the above xen_cmdline in order to activate the serial console
+Add to the above xen_cmdline in order to activate the serial console:
+	console=com1
 
-In /boot/menu.rc.local
+In /boot/menu.rc.local:
 	try-include /boot/xen.4th

@@ -3,6 +3,7 @@
 PORTNAME=	ponscripter-sekai
 PORTVERSION=	0.0.6
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	devel games
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -10,8 +11,7 @@ COMMENT=	NScripter-like novel-game interpreter with Unicode support
 
 LICENSE=	GPLv2 # or any later version
 
-LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
-		libsmpeg2.so:${PORTSDIR}/multimedia/smpeg2 \
+LIB_DEPENDS=	libsmpeg2.so:${PORTSDIR}/multimedia/smpeg2 \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
 CONFLICTS=	ponscripter-[0-9]* # doesn't exist yet
@@ -34,8 +34,8 @@ PORTDOCS=	BUGS CHANGES MANUAL README TODO
 PLIST_FILES=	bin/ponscr \
 		share/emacs/site-lisp/ponscripter-mode.el
 
-OPTIONS_DEFINE=	MANPAGES
-OPTIONS_DEFAULT=MANPAGES
+OPTIONS_DEFINE=	DOCS MANPAGES TREMOR
+OPTIONS_DEFAULT=MANPAGES ${MACHINE_CPU:tu:MSOFTFP:S/SOFTFP/TREMOR/}
 
 MANPAGES_BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto
 MANPAGES_PLIST_FILES=\
@@ -44,7 +44,9 @@ MANPAGES_PLIST_FILES=\
 	man/man7/ponscr-syntax.7.gz \
 	man/man7/ponscripter.7.gz
 
-.include <bsd.port.options.mk>
+TREMOR_LIB_DEPENDS=	libvorbisidec.so:${PORTSDIR}/audio/libtremor
+TREMOR_CFLAGS=		-DINTEGER_OGG_VORBIS
+TREMOR_LIB_DEPENDS_OFF=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^ifdef DEBUG/,/^$$/d' \
@@ -52,26 +54,35 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's/$$(LIBS)/$$(LDFLAGS) &/' \
 		${WRKSRC}/src/Makefile.ponscripter
-.if ! ${PORT_OPTIONS:MMANPAGES}
+
+post-patch-MANPAGES-off:
 	@${REINPLACE_CMD} -i .manpages.bak \
 		-e '/install-man/d' \
 		-e 's/xmlto/${FALSE}/' \
 		${WRKSRC}/configure
-.endif
 
-post-build:
-.if ${PORT_OPTIONS:MMANPAGES}
+post-patch-TREMOR-on:
+	@${REINPLACE_CMD} -i .tremor.bak \
+		-e 's/"libogg, libvorbis"/libvorbisidec/' \
+		-e 's,vorbis/vorbisfile,tremor/ivorbisfile,' \
+		-e 's,vorbis/codec,tremor/ivorbiscodec,' \
+		-e '/genlink/ { s/vorbisfile/vorbisidec/; \
+			/ogg/d; /vorbis$$/d; }' \
+		-e 's/ $$LINKogg//; s/ $$LINKvorbis//' \
+		-e 's/LINKvorbisfile/LINKvorbisidec/' \
+		${WRKSRC}/configure
+
+post-build-MANPAGES-on:
 	# Remove extraneous whitespace to unbreak manpage syntax
 	${REINPLACE_CMD} -e 's/^[[:space:]]*//; /^$$/d' \
 		${WRKSRC}/doc/*.[0-9]
-.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/misc/ponscripter-mode.el \
 		${STAGEDIR}${PREFIX}/share/emacs/site-lisp
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
 		"${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
-.endif
 
 .include <bsd.port.mk>

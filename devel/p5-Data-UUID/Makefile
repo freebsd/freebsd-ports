@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Data-UUID
-PORTVERSION=	1.220
+PORTVERSION=	1.221
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,8 +10,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate Globally/Universally Unique Identifiers (GUIDs/UUIDs)
 
+LICENSE=	BSD3CLAUSE
+
 USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS=	</dev/null
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Data/UUID/UUID.so
 
 .include <bsd.port.mk>

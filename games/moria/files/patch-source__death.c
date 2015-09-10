@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- source/death.c.orig	Thu Aug  7 16:02:45 2003
 +++ source/death.c	Thu Aug  7 16:06:12 2003
 @@ -123,6 +123,7 @@

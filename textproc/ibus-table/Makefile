@@ -5,7 +5,7 @@ PORTNAME=	ibus-table
 PORTVERSION=	1.5.0
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	Table based input method framework for IBus

@@ -3,11 +3,11 @@
 
 PORTNAME=	ipa_conv
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	SF/ipa-system/modules/ipa_conv
 
-MAINTAINER=	simon@comsys.ntu-kpi.kiev.ua
+MAINTAINER=	misc/ipa_conv
 COMMENT=	IPA accounting/database module for converting statistics
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ipa_mod.h:${PORTSDIR}/sysutils/ipa

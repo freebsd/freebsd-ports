@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- dal/dbapi/db_row.py
 +++ dal/dbapi/db_row.py
 @@ -699,7 +699,6 @@

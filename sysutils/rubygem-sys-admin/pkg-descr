@@ -1,5 +1,4 @@
-A unified, cross-platform replacement for the Etc
-module that allows you to get information about
-users and groups.
+A unified, cross-platform replacement for the Etc module that allows you to get
+information about users and groups.
 
-WWW: http://www.github.com/djberg96/sysutils
+WWW: https://github.com/djberg96/sys-admin

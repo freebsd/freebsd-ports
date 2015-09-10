@@ -36,9 +36,12 @@ man/man3/oath_init.3.gz
 man/man3/oath_strerror.3.gz
 man/man3/oath_strerror_name.3.gz
 man/man3/oath_totp_generate.3.gz
+man/man3/oath_totp_generate2.3.gz
 man/man3/oath_totp_validate.3.gz
 man/man3/oath_totp_validate2.3.gz
+man/man3/oath_totp_validate4.3.gz
 man/man3/oath_totp_validate2_callback.3.gz
+man/man3/oath_totp_validate4_callback.3.gz
 man/man3/oath_totp_validate3.3.gz
 man/man3/oath_totp_validate3_callback.3.gz
 man/man3/oath_totp_validate_callback.3.gz
@@ -154,7 +157,3 @@ man/man3/oath_totp_validate_callback.3.gz
 %%PSKC%%share/xml/pskc/pskc-schema.xsd
 %%PSKC%%share/xml/pskc/xenc-schema.xsd
 %%PSKC%%share/xml/pskc/xmldsig-core-schema.xsd
-@dirrm include/liboath
-%%PSKC%%@dirrm include/pskc
-@dirrmtry lib/security
-%%PSKC%%@dirrm share/xml/pskc

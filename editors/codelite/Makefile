@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	codelite
-DISTVERSION=	6.1.1
-PORTREVISION=	1
+DISTVERSION=	8.1
 CATEGORIES=	editors devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -13,6 +12,9 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	xterm:${PORTSDIR}/x11/xterm
+
+BROKEN_FreeBSD_8=	does not build on FreeBSD < 10.x
+BROKEN_FreeBSD_9=	does not build on FreeBSD < 10.x
 
 OPTIONS_DEFINE=	CSCOPE CLANG NLS
 CSCOPE_DESC=	CScope integration
@@ -24,12 +26,13 @@ GH_ACCOUNT=	eranif
 
 USE_WX=		3.0
 WX_UNICODE=	yes
-USES=		gettext cmake:outsource dos2unix shebangfix
+USES=		gettext cmake:outsource dos2unix execinfo shebangfix
 DOS2UNIX_GLOB=	*.cpp *.txt
 USE_LDCONFIG=	${PREFIX}/lib/codelite
-SHEBANG_FILES=	Runtime/clg++ Runtime/clgcc
+SHEBANG_FILES=	Runtime/clg++ Runtime/clgcc Runtime/codelite_xterm
+bash_CMD=	/bin/sh
+INSTALLS_ICONS=	yes
 
-CXXFLAGS+=	-I${LOCALBASE}/include
 CMAKE_ARGS+=	-DIS_FREEBSD=1 \
 		-DENABLE_LLDB=0 \
 		-DPREFIX=${PREFIX}

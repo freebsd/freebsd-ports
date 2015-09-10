@@ -16,6 +16,8 @@ COMMENT=	Manage remote serial consoles via TCP/IP
 BUILD_DEPENDS=	makeme:${PORTSDIR}/devel/msrc0 \
 		mkcmd:${PORTSDIR}/devel/mkcmd
 
+CONFLICTS_INSTALL=	conserver-com-[0-9]*
+
 # Set this to where you want console(8) to connect to by default
 # or use something like ``make DEFAULTHOST=myserver.mydomain.net''
 DEFAULTHOST?=	localhost
@@ -57,6 +59,5 @@ do-install:
 	    ${STAGEDIR}${PREFIX}/man/man8/autologin.8  \
 	    ${STAGEDIR}${PREFIX}/man/man8/conserver.8  \
 	    ${STAGEDIR}${PREFIX}/man/man8/console.8
-	@#	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

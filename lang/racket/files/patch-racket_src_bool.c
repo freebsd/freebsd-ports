@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- racket/src/bool.c.orig
 +++ racket/src/bool.c
 @@ -203,6 +203,9 @@

@@ -3,7 +3,7 @@
 
 PORTNAME=	texmacs
 PORTVERSION=	1.0.7.21
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	editors print
 MASTER_SITES=	ftp://ftp.texmacs.org/TeXmacs/tmftp/source/ \
 		http://www.predatorlabs.net/dl/
@@ -40,7 +40,7 @@ PDF_DESC=	Experimental PDF renderer
 FREETYPE_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 FREETYPE_CONFIGURE_WITH=freetype=linked
 
-GHOSTSCRIPT_USE=	GHOSTSCRIPT=yes
+GHOSTSCRIPT_USES=	ghostscript:x11
 GHOSTSCRIPT_CONFIGURE_WITH=	gs=yes
 
 ICONV_USES=		iconv
@@ -66,5 +66,10 @@ post-patch:
 	@ #fix for namespace clash with Qt3
 	@${REINPLACE_CMD} -e 's|qdrawutil.h|qt4/Qt/qdrawutil.h|' \
 		${WRKSRC}/src/Plugins/Qt/QTMStyle.cpp
+
+post-install:
+.for f in realpath texmacs.bin tm_axiom tm_graphviz tm_maple_5 tm_r tm_shell
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/TeXmacs/bin/${f}
+.endfor
 
 .include <bsd.port.mk>

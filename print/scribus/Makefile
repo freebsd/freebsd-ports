@@ -3,6 +3,7 @@
 
 PORTNAME=	scribus
 PORTVERSION=	1.4.5
+PORTREVISION=	1
 CATEGORIES=	print editors
 MASTER_SITES=	SF \
 		http://www.scribus.net/downloads/${PORTVERSION}/
@@ -10,8 +11,7 @@ MASTER_SITES=	SF \
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Comprehensive desktop publishing program
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		liblcms.so:${PORTSDIR}/graphics/lcms \
+LIB_DEPENDS=	liblcms.so:${PORTSDIR}/graphics/lcms \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libcups.so:${PORTSDIR}/print/cups-client \
@@ -28,8 +28,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinte
 
 USE_QT4=	gui linguist_build moc_build qmake_build rcc_build uic_build xml network
 USE_GNOME=	libartlgpl2 libxml2
-USE_GHOSTSCRIPT_RUN=	yes
-USES=		cmake desktop-file-utils pkgconfig python shared-mime-info tar:xz
+USES=		cmake desktop-file-utils ghostscript:run jpeg pkgconfig \
+		python shared-mime-info tar:bz2
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS+=	-DWANT_HUNSPELL=YES -Wno-ferror-limit

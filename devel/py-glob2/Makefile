@@ -1,4 +1,4 @@
-# Created by: loader <loader@freebsdmall.com>
+# Created by: Fukang Chen <loader@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	glob2
@@ -8,7 +8,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	loader@freebsdmall.com
+MAINTAINER=	loader@FreeBSD.org
 COMMENT=	Glob that captures patterns and supports recursive wildcards
 
 LICENSE=	BSD2CLAUSE

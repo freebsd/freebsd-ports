@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Plack
-PORTVERSION=	1.0034
+PORTVERSION=	1.0036
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
@@ -15,11 +15,13 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
 	p5-Apache-LogFormat-Compiler>=0.12:${PORTSDIR}/www/p5-Apache-LogFormat-Compiler \
+	p5-Cookie-Baker>=0.05:${PORTSDIR}/www/p5-Cookie-Baker \
 	p5-Devel-StackTrace>=1.23:${PORTSDIR}/devel/p5-Devel-StackTrace \
 	p5-Devel-StackTrace-AsHTML>=0.11:${PORTSDIR}/devel/p5-Devel-StackTrace-AsHTML \
 	p5-File-ShareDir>=1.00:${PORTSDIR}/devel/p5-File-ShareDir \
 	p5-Filesys-Notify-Simple>0:${PORTSDIR}/devel/p5-Filesys-Notify-Simple \
 	p5-HTTP-Body>=1.06:${PORTSDIR}/www/p5-HTTP-Body \
+	p5-HTTP-Headers-Fast>=0.17:${PORTSDIR}/www/p5-HTTP-Headers-Fast \
 	p5-HTTP-Tiny>=0.034:${PORTSDIR}/www/p5-HTTP-Tiny \
 	p5-Hash-MultiValue>=0.05:${PORTSDIR}/devel/p5-Hash-MultiValue \
 	p5-Path-Class>0:${PORTSDIR}/devel/p5-Path-Class \

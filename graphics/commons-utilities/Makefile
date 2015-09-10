@@ -3,7 +3,7 @@
 
 PORTNAME=	commons-utilities
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://devio.us/~dereckson/software/commons-utilities/
 
@@ -12,7 +12,6 @@ COMMENT=	Wikimedia Commons (MediaWiki) utilities for bulk image uploading
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	p5-Image-ExifTool>=0:${PORTSDIR}/graphics/p5-Image-ExifTool \
 		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
 		p5-Text-CSV_XS>=0:${PORTSDIR}/textproc/p5-Text-CSV_XS \
@@ -20,7 +19,8 @@ RUN_DEPENDS=	p5-Image-ExifTool>=0:${PORTSDIR}/graphics/p5-Image-ExifTool \
 		${PYTHON_PKGNAMEPREFIX}mechanize>=0.2:${PORTSDIR}/www/py-mechanize \
 		exiv2:${PORTSDIR}/graphics/exiv2
 
-USES=		perl5 python
+USES=		jpeg perl5 python shebangfix
+SHEBANG_FILES=	commons-csv-creator
 USE_PERL5=	run
 NO_BUILD=	yes
 

@@ -3,12 +3,14 @@
 
     COMMENT = Miscellaneous utilities
 
+    SUBDIR += R-cran-mime
     SUBDIR += achievo
     SUBDIR += aclgen
     SUBDIR += amanda-client
     SUBDIR += amanda-perl-wrapper
     SUBDIR += amanda-server
     SUBDIR += amfm
+    SUBDIR += ansiweather
     SUBDIR += apparix
     SUBDIR += artikulate
     SUBDIR += asbutton
@@ -73,6 +75,7 @@
     SUBDIR += dvorakng
     SUBDIR += e2fsprogs-libblkid
     SUBDIR += e2fsprogs-libuuid
+    SUBDIR += elixir-uuid
     SUBDIR += elscreen
     SUBDIR += esniper
     SUBDIR += estic
@@ -299,6 +302,7 @@
     SUBDIR += p5-Business-ISBN
     SUBDIR += p5-Business-ISBN-Data
     SUBDIR += p5-Business-ISIN
+    SUBDIR += p5-Business-ISMN
     SUBDIR += p5-Business-ISSN
     SUBDIR += p5-Business-UPS
     SUBDIR += p5-Chatbot-Eliza
@@ -364,6 +368,7 @@
     SUBDIR += pcbsd-meta-mate
     SUBDIR += pcbsd-meta-nvidia
     SUBDIR += pcbsd-meta-nvidia-304
+    SUBDIR += pcbsd-meta-nvidia-340
     SUBDIR += pcbsd-meta-openbox
     SUBDIR += pcbsd-meta-ratpoison
     SUBDIR += pcbsd-meta-rekonq
@@ -406,6 +411,7 @@
     SUBDIR += py-osd
     SUBDIR += py-pexpect
     SUBDIR += py-progressbar
+    SUBDIR += py-progressbar231
     SUBDIR += py-qt4-demo
     SUBDIR += py-qt4-doc
     SUBDIR += py-yolk
@@ -446,6 +452,7 @@
     SUBDIR += sloccount
     SUBDIR += sls
     SUBDIR += smssend
+    SUBDIR += solarized
     SUBDIR += spamcalc
     SUBDIR += sshbuddy
     SUBDIR += sssnips

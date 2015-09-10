@@ -95,4 +95,4 @@ sbin/zebra
 %%EXAMPLESDIR%%/vtysh.conf.sample
 %%EXAMPLESDIR%%/zebra.conf.sample
 @dir(%%ENABLE_USER%%,%%ENABLE_GROUP%%,750) %%LOCALSTATE_DIR%%
-@dir(%%ENABLE_USER%%,%%ENABLE_GROUP%%,750) %%ETCDIR%%
+@dir(%%ENABLE_USER%%,%%ENABLE_GROUP%%,750) %%SYSCONF_DIR%%

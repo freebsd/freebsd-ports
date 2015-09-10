@@ -1,19 +1,13 @@
 #!/bin/sh
-#
 # $FreeBSD$
-#
 
 # PROVIDE: mfscgiserv
-# REQUIRE: LOGIN 
+# REQUIRE: DAEMON
 # KEYWORD: shutdown
-
 #
-# Add the following lines to /etc/rc.conf or /etc/rc.conf.local to enable mfscgiserv:
+# Add the following lines to /etc/rc.conf to enable mfscgiserv:
 #
-# mfscgiserv_enable (bool):    Set to NO by default.
-#                              Set it to YES to enable mfscgiserv.
-# mfscgiserv_flags (str):      Set to "" by default.
-#                              Extra flags passed to mfscgiserv.
+# mfscgiserv_enable="YES"
 #
 
 . /etc/rc.subr
@@ -21,12 +15,16 @@
 name=mfscgiserv
 rcvar=mfscgiserv_enable
 
+command=%%PREFIX%%/sbin/${name}
+pid_file=%%MFS_WORKDIR%%/mfs/.${name}.lock
+procname="python"
+
+stop_cmd="$command stop"
+status_cmd="$command test"
+
 load_rc_config $name
-: ${mfscgiserv_enable=NO}
 
-mfscgiserv_user=mfs
-
-command_interpreter=%%PYTHON_CMD%%
-command=%%PREFIX%%/sbin/mfscgiserv
+# set defaults
+: ${mfscgiserv_enable="NO"}
 
 run_rc_command "$1"

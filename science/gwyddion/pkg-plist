@@ -151,6 +151,7 @@ lib/gwyddion/modules/file/aistfile.so
 lib/gwyddion/modules/file/alicona.so
 lib/gwyddion/modules/file/ambfile.so
 lib/gwyddion/modules/file/anfatec.so
+lib/gwyddion/modules/file/apedaxfile.so
 lib/gwyddion/modules/file/apefile.so
 lib/gwyddion/modules/file/asciiexport.so
 lib/gwyddion/modules/file/assing-afm.so
@@ -169,6 +170,7 @@ lib/gwyddion/modules/file/ecsfile.so
 lib/gwyddion/modules/file/ezdfile.so
 lib/gwyddion/modules/file/femtoscan.so
 lib/gwyddion/modules/file/femtoscan-txt.so
+lib/gwyddion/modules/file/fitsfile.so
 lib/gwyddion/modules/file/gdeffile.so
 lib/gwyddion/modules/file/gsffile.so
 lib/gwyddion/modules/file/gwyfile.so
@@ -196,7 +198,9 @@ lib/gwyddion/modules/file/nanoeducator.so
 lib/gwyddion/modules/file/nanomagnetics.so
 lib/gwyddion/modules/file/nanonics.so
 lib/gwyddion/modules/file/nanonis.so
+lib/gwyddion/modules/file/nanoobserver.so
 lib/gwyddion/modules/file/nanoscan.so
+lib/gwyddion/modules/file/nanoscantech.so
 lib/gwyddion/modules/file/nanoscope-ii.so
 lib/gwyddion/modules/file/nanoscope.so
 lib/gwyddion/modules/file/nanotop.so
@@ -211,6 +215,7 @@ lib/gwyddion/modules/file/omicron.so
 lib/gwyddion/modules/file/omicronflat.so
 lib/gwyddion/modules/file/omicronmatrix.so
 lib/gwyddion/modules/file/opdfile.so
+lib/gwyddion/modules/file/opengps.so
 lib/gwyddion/modules/file/pixmap.so
 lib/gwyddion/modules/file/pltfile.so
 lib/gwyddion/modules/file/pnifile.so
@@ -237,6 +242,7 @@ lib/gwyddion/modules/file/spip-asc.so
 lib/gwyddion/modules/file/spml.so
 lib/gwyddion/modules/file/spmlab.so
 lib/gwyddion/modules/file/spmlabf.so
+lib/gwyddion/modules/file/spmxfile.so
 lib/gwyddion/modules/file/stmprg.so
 lib/gwyddion/modules/file/stpfile.so
 lib/gwyddion/modules/file/surffile.so
@@ -253,6 +259,7 @@ lib/gwyddion/modules/file/wsxmfile.so
 lib/gwyddion/modules/file/xyzexport.so
 lib/gwyddion/modules/file/zeiss.so
 lib/gwyddion/modules/file/zemax.so
+lib/gwyddion/modules/graph/graph_align.so
 lib/gwyddion/modules/graph/graph_cd.so
 lib/gwyddion/modules/graph/graph_cut.so
 lib/gwyddion/modules/graph/graph_dos_spectrum.so
@@ -275,6 +282,7 @@ lib/gwyddion/modules/process/angle_dist.so
 lib/gwyddion/modules/process/arithmetic.so
 lib/gwyddion/modules/process/averaging.so
 lib/gwyddion/modules/process/basicops.so
+lib/gwyddion/modules/process/bdep_synth.so
 lib/gwyddion/modules/process/calcoefs_load.so
 lib/gwyddion/modules/process/calcoefs_new.so
 lib/gwyddion/modules/process/calcoefs_simple.so
@@ -342,6 +350,7 @@ lib/gwyddion/modules/process/pid.so
 lib/gwyddion/modules/process/polydistort.so
 lib/gwyddion/modules/process/polylevel.so
 lib/gwyddion/modules/process/presentationops.so
+lib/gwyddion/modules/process/psdf_logphi.so
 lib/gwyddion/modules/process/rank.so
 lib/gwyddion/modules/process/rotate.so
 lib/gwyddion/modules/process/scale.so
@@ -387,6 +396,7 @@ lib/gwyddion/modules/volume/volume_fdfit.so
 lib/gwyddion/modules/volume/volume_invert.so
 lib/gwyddion/modules/volume/volume_kmeans.so
 lib/gwyddion/modules/volume/volume_kmedians.so
+lib/gwyddion/modules/volume/volume_slice.so
 %%PERL%%lib/gwyddion/perl/Gwyddion/dump.pm
 %%PYTHON%%lib/gwyddion/python/Gwyddion/__init__.py
 %%PYTHON%%lib/gwyddion/python/Gwyddion/__init__.pyc
@@ -397,13 +407,13 @@ lib/gwyddion/modules/volume/volume_kmedians.so
 %%RUBY%%lib/gwyddion/ruby/gwyddion/dump.rb
 lib/libgwyapp2.so
 lib/libgwyapp2.so.0
-lib/libgwyapp2.so.0.11.1
+lib/libgwyapp2.so.0.12.0
 lib/libgwyddion2.so
 lib/libgwyddion2.so.0
-lib/libgwyddion2.so.0.15.1
+lib/libgwyddion2.so.0.16.0
 lib/libgwydgets2.so
 lib/libgwydgets2.so.0
-lib/libgwydgets2.so.0.17.0
+lib/libgwydgets2.so.0.18.0
 lib/libgwydraw2.so
 lib/libgwydraw2.so.0
 lib/libgwydraw2.so.0.3.0
@@ -412,7 +422,7 @@ lib/libgwymodule2.so.0
 lib/libgwymodule2.so.0.8.0
 lib/libgwyprocess2.so
 lib/libgwyprocess2.so.0
-lib/libgwyprocess2.so.0.23.0
+lib/libgwyprocess2.so.0.24.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gwy.so
 libdata/pkgconfig/gwyddion.pc
 libexec/gwyddion/plugins/file/dump

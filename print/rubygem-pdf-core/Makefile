@@ -2,12 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	pdf-core
-PORTVERSION=	0.4.0
+PORTVERSION=	0.6.0
 CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library to render PDF documents
+
+LICENSE=	GPLv2 GPLv3 RUBY
+LICENSE_COMB=	dual
+
+NO_ARCH=	yes
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

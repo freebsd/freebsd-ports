@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.9.1-2
+DISTVERSION=	6.9.2-0
 PORTEPOCH=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.imagemagick.org/download/ \
@@ -45,8 +45,7 @@ CPE_VENDOR=	imagemagick
 SHEBANG_FILES=	www/source/examples.pl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKE=${MAKE_CMD}
-CONFIGURE_ARGS=	--without-dps \
-		--without-lcms
+CONFIGURE_ARGS=	--without-dps
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
 
@@ -195,7 +194,7 @@ PLIST_SUB+=		DJVU="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MJPEG}
-LIB_DEPENDS+=		libjpeg.so:${PORTSDIR}/graphics/jpeg
+USES+=			jpeg
 PLIST_SUB+=		JPEG=""
 .else
 CONFIGURE_ARGS+=	--without-jpeg
@@ -220,7 +219,11 @@ PLIST_SUB+=		TIFF="@comment "
 
 .if ${PORT_OPTIONS:MGSLIB}
 CONFIGURE_ARGS+=	--with-gslib
-USE_GHOSTSCRIPT=	yes
+. if ${PORT_OPTIONS:MX11}
+USES+=		ghostscript:x11
+. else
+USES+=		ghostscript
+. endif
 .else
 CONFIGURE_ARGS+=	--without-gslib
 .endif
@@ -291,7 +294,7 @@ CONFIGURE_ARGS+=	--without-lzma
 .if ${PORT_OPTIONS:MLCMS2}
 LIB_DEPENDS+=		liblcms2.so:${PORTSDIR}/graphics/lcms2
 .else
-CONFIGURE_ARGS+=	--without-lcms2
+CONFIGURE_ARGS+=	--without-lcms
 .endif
 
 # Freetype (TrueType Font) support
@@ -353,7 +356,11 @@ PLIST_SUB+=		PANGO="@comment "
 
 # PDF (Adobe Portable Document Format) support
 .if ${PORT_OPTIONS:MPDF}
-USE_GHOSTSCRIPT=	yes
+. if ${PORT_OPTIONS:MX11}
+USES+=			ghostscript:x11
+. else
+USES+=			ghostscript
+. endif
 .endif
 
 .if ! ${PORT_OPTIONS:MX11}
@@ -376,11 +383,11 @@ INSTALL_TARGET=	install-strip
 .endif
 
 .if ${PORT_OPTIONS:MTESTS}
-USE_GHOSTSCRIPT_BUILD=yes
-.endif
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900000
-EXTRA_PATCHES+=	${FILESDIR}/extra-magick_locale.c
+. if ${PORT_OPTIONS:MX11}
+USES+=		ghostscript:x11,build
+. else
+USES+=		ghostscript:build
+. endif
 .endif
 
 post-patch:
@@ -418,7 +425,7 @@ post-install: test
 
 test check:
 .if ${PORT_OPTIONS:MTESTS}
-	-cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} limits -m 20m ${MAKE} check
+	-cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} limits -m 20m ${MAKE} ${_MAKE_JOBS} check
 .endif
 
 .include <bsd.port.mk>

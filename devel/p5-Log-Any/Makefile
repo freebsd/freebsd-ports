@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Log-Any
-PORTVERSION=	1.03
+PORTVERSION=	1.032
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DAGOLDEN
@@ -15,5 +15,6 @@ LICENSE_COMB=	dual
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	YES
 
 .include <bsd.port.mk>

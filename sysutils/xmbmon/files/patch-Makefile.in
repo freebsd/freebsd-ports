@@ -1,6 +1,6 @@
---- Makefile.in.orig	Wed Feb  1 20:12:01 2006
-+++ Makefile.in	Wed Feb  1 20:12:22 2006
-@@ -27,9 +27,9 @@
+--- Makefile.in.orig	2004-08-13 07:04:21 UTC
++++ Makefile.in
+@@ -27,9 +27,9 @@ LIBSX=$(LIBS) @X_LIBS@ -lXt @X_PRE_LIBS@
  
  #CC=/compat/linux/usr/bin/gcc
  CC=@CC@

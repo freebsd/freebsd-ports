@@ -3,7 +3,7 @@
 
 PORTNAME=	xsane
 PORTVERSION=	0.999
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.xsane.org/download/
 
@@ -12,15 +12,14 @@ COMMENT=	Gtk-based X11 frontend for SANE (Scanner Access Now Easy)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		liblcms.so:${PORTSDIR}/graphics/lcms
 BUILD_DEPENDS=	scanimage:${PORTSDIR}/graphics/sane-backends
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		gmake pkgconfig
+USES=		gmake jpeg pkgconfig
 USE_GNOME=	gtk20 gdkpixbuf2
 GNU_CONFIGURE=	yes
 
@@ -35,7 +34,7 @@ OPTIONS_DEFAULT=	GIMP
 
 OPTIONS_SUB=	yes
 
-GIMP_RUN_DEPENDS=	${LOCALBASE}/bin/gimp:${PORTSDIR}/graphics/gimp-app
+GIMP_LIB_DEPENDS=	libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app
 GIMP_CONFIGURE_ENABLE=	gimp2 gimp
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext

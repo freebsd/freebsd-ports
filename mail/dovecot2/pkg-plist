@@ -136,6 +136,7 @@ include/dovecot/fts-api.h
 include/dovecot/fts-expunge-log.h
 include/dovecot/fts-indexer.h
 include/dovecot/fts-parser.h
+include/dovecot/fts-user.h
 include/dovecot/guid.h
 include/dovecot/hash-decl.h
 include/dovecot/hash-format.h
@@ -176,6 +177,7 @@ include/dovecot/imap-envelope.h
 include/dovecot/imap-expunge.h
 include/dovecot/imap-fetch.h
 include/dovecot/imap-id.h
+include/dovecot/imap-keepalive.h
 include/dovecot/imap-list.h
 include/dovecot/imap-match.h
 include/dovecot/imap-metadata.h
@@ -246,6 +248,7 @@ include/dovecot/istream-chain.h
 include/dovecot/istream-concat.h
 include/dovecot/istream-crlf.h
 include/dovecot/istream-dot.h
+include/dovecot/istream-file-private.h
 include/dovecot/istream-fs-file.h
 include/dovecot/istream-hash.h
 include/dovecot/istream-header-filter.h
@@ -261,9 +264,11 @@ include/dovecot/istream-seekable.h
 include/dovecot/istream-sized.h
 include/dovecot/istream-tee.h
 include/dovecot/istream-timeout.h
+include/dovecot/istream-unix.h
 include/dovecot/istream-zlib.h
 include/dovecot/istream.h
 include/dovecot/json-parser.h
+include/dovecot/json-tree.h
 include/dovecot/lda-settings.h
 include/dovecot/lib-signals.h
 include/dovecot/lib.h
@@ -308,6 +313,8 @@ include/dovecot/mail-transaction-log.h
 include/dovecot/mail-types.h
 include/dovecot/mail-user-hash.h
 include/dovecot/mail-user.h
+include/dovecot/mailbox-attribute-private.h
+include/dovecot/mailbox-attribute.h
 include/dovecot/mailbox-guid-cache.h
 include/dovecot/mailbox-list-delete.h
 include/dovecot/mailbox-list-fs.h
@@ -415,6 +422,7 @@ include/dovecot/primes.h
 include/dovecot/printf-format-fix.h
 include/dovecot/priorityq.h
 include/dovecot/process-title.h
+include/dovecot/qp-decoder.h
 include/dovecot/quota-fs.h
 include/dovecot/quota-plugin.h
 include/dovecot/quota-private.h
@@ -521,6 +529,8 @@ lib/dovecot/lib20_mail_log_plugin.a
 lib/dovecot/lib20_mail_log_plugin.so
 lib/dovecot/lib20_mailbox_alias_plugin.a
 lib/dovecot/lib20_mailbox_alias_plugin.so
+lib/dovecot/lib20_quota_clone_plugin.a
+lib/dovecot/lib20_quota_clone_plugin.so
 lib/dovecot/lib20_replication_plugin.a
 lib/dovecot/lib20_replication_plugin.so
 lib/dovecot/lib20_virtual_plugin.a
@@ -563,6 +573,8 @@ lib/dovecot/libdovecot.a
 lib/dovecot/libdovecot.so
 lib/dovecot/libdovecot.so.0
 lib/dovecot/libdovecot.so.0.0.0
+lib/dovecot/libfs_compress.a
+lib/dovecot/libfs_compress.so
 lib/dovecot/stats/libstats_mail.a
 lib/dovecot/stats/libstats_mail.so
 libexec/dovecot/aggregator
@@ -645,6 +657,9 @@ man/man1/dsync.1.gz
 man/man7/doveadm-search-query.7.gz
 sbin/dovecot
 share/aclocal/dovecot.m4
+%%DATADIR%%/stopwords/stopwords_en.txt
+%%DATADIR%%/stopwords/stopwords_fi.txt
+%%DATADIR%%/stopwords/stopwords_fr.txt
 %%LIBWRAP%%libexec/dovecot/tcpwrap
 %%LUCENE%%lib/dovecot/doveadm/lib20_doveadm_fts_lucene_plugin.a
 %%LUCENE%%lib/dovecot/doveadm/lib20_doveadm_fts_lucene_plugin.so

@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Command line parsing with Ruby
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RAKE=	yes
 USE_RUBYGEMS=	yes

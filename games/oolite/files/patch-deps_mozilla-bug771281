@@ -1,6 +1,6 @@
 diff -ruN deps.orig/mozilla/js/src/shell/Makefile.in deps/mozilla/js/src/shell/Makefile.in
---- deps.orig/mozilla/js/src/shell/Makefile.in	2014-06-30 12:54:39.000000000 +0400
-+++ deps/mozilla/js/src/shell/Makefile.in	2014-09-23 07:59:03.000000000 +0400
+--- deps.orig/mozilla/js/src/shell/Makefile.in	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/shell/Makefile.in
 @@ -47,7 +47,6 @@
  PROGRAM         = js$(BIN_SUFFIX)
  CPPSRCS		= \
@@ -10,8 +10,8 @@ diff -ruN deps.orig/mozilla/js/src/shell/Makefile.in deps/mozilla/js/src/shell/M
  
  DEFINES         += -DEXPORT_JS_API
 diff -ruN deps.orig/mozilla/js/src/shell/js.cpp deps/mozilla/js/src/shell/js.cpp
---- deps.orig/mozilla/js/src/shell/js.cpp	2014-06-30 12:54:39.000000000 +0400
-+++ deps/mozilla/js/src/shell/js.cpp	2014-09-23 07:59:03.000000000 +0400
+--- deps.orig/mozilla/js/src/shell/js.cpp	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/shell/js.cpp
 @@ -91,8 +91,6 @@
  #endif /* JSDEBUGGER_C_UI */
  #endif /* JSDEBUGGER */
@@ -85,8 +85,8 @@ diff -ruN deps.orig/mozilla/js/src/shell/js.cpp deps/mozilla/js/src/shell/js.cpp
      if (jsdc) {
  #ifdef JSDEBUGGER_C_UI
 diff -ruN deps.orig/mozilla/js/src/shell/jsworkers.cpp.rej deps/mozilla/js/src/shell/jsworkers.cpp.rej
---- deps.orig/mozilla/js/src/shell/jsworkers.cpp.rej	1970-01-01 03:00:00.000000000 +0300
-+++ deps/mozilla/js/src/shell/jsworkers.cpp.rej	2014-09-23 07:59:03.000000000 +0400
+--- deps.orig/mozilla/js/src/shell/jsworkers.cpp.rej	1970-01-01 00:00:00 UTC
++++ deps/mozilla/js/src/shell/jsworkers.cpp.rej
 @@ -0,0 +1,1281 @@
 +@@ -1,1280 +0,0 @@
 +-/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -1370,8 +1370,8 @@ diff -ruN deps.orig/mozilla/js/src/shell/jsworkers.cpp.rej deps/mozilla/js/src/s
 +-
 +-#endif /* JS_THREADSAFE */
 diff -ruN deps.orig/mozilla/js/src/shell/jsworkers.h deps/mozilla/js/src/shell/jsworkers.h
---- deps.orig/mozilla/js/src/shell/jsworkers.h	2014-06-30 12:54:39.000000000 +0400
-+++ deps/mozilla/js/src/shell/jsworkers.h	2014-09-23 07:59:03.000000000 +0400
+--- deps.orig/mozilla/js/src/shell/jsworkers.h	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/shell/jsworkers.h
 @@ -1,93 +0,0 @@
 -/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*-
 - * vim: set ts=8 sw=4 et tw=99:
@@ -1467,8 +1467,8 @@ diff -ruN deps.orig/mozilla/js/src/shell/jsworkers.h deps/mozilla/js/src/shell/j
 -
 -#endif /* jsworkers_h___ */
 diff -ruN deps.orig/mozilla/js/src/tests/browser.js deps/mozilla/js/src/tests/browser.js
---- deps.orig/mozilla/js/src/tests/browser.js	2014-06-30 12:54:39.000000000 +0400
-+++ deps/mozilla/js/src/tests/browser.js	2014-09-23 07:59:03.000000000 +0400
+--- deps.orig/mozilla/js/src/tests/browser.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/browser.js
 @@ -767,17 +767,6 @@
    document.write(s);
  }
@@ -1488,8 +1488,8 @@ diff -ruN deps.orig/mozilla/js/src/tests/browser.js deps/mozilla/js/src/tests/br
  {
    // gDelayTestDriverEnd is used to
 diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/jstests.list deps/mozilla/js/src/tests/js1_8_5/extensions/jstests.list
---- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/jstests.list	2014-06-30 12:54:39.000000000 +0400
-+++ deps/mozilla/js/src/tests/js1_8_5/extensions/jstests.list	2014-09-23 07:59:03.000000000 +0400
+--- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/jstests.list	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/js1_8_5/extensions/jstests.list
 @@ -1,13 +1,6 @@
  url-prefix ../../jsreftest.html?test=js1_8_5/extensions/
  script typedarray.js
@@ -1505,8 +1505,8 @@ diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/jstests.list deps/mo
  script array-length-protochange.js
  script parseInt-octal.js
 diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-error-child.js deps/mozilla/js/src/tests/js1_8_5/extensions/worker-error-child.js
---- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-error-child.js	2014-06-30 12:54:39.000000000 +0400
-+++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-error-child.js	2014-09-23 07:59:03.000000000 +0400
+--- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-error-child.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-error-child.js
 @@ -1,9 +0,0 @@
 -/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 -/*
@@ -1518,8 +1518,8 @@ diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-error-child.j
 -    throw new Error("fail");
 -}
 diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-error-propagation-child.js deps/mozilla/js/src/tests/js1_8_5/extensions/worker-error-propagation-child.js
---- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-error-propagation-child.js	2014-06-30 12:54:39.000000000 +0400
-+++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-error-propagation-child.js	2014-09-23 07:59:03.000000000 +0400
+--- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-error-propagation-child.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-error-propagation-child.js
 @@ -1,16 +0,0 @@
 -/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 -/*
@@ -1538,8 +1538,8 @@ diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-error-propaga
 -    w.postMessage(n - 1 + "");
 -}
 diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-error-propagation.js deps/mozilla/js/src/tests/js1_8_5/extensions/worker-error-propagation.js
---- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-error-propagation.js	2014-06-30 12:54:39.000000000 +0400
-+++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-error-propagation.js	2014-09-23 07:59:03.000000000 +0400
+--- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-error-propagation.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-error-propagation.js
 @@ -1,20 +0,0 @@
 -/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 -/*
@@ -1562,8 +1562,8 @@ diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-error-propaga
 -    reportCompare(0, 0, " PASSED! Test skipped. Shell workers required.");
 -}
 diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-error.js deps/mozilla/js/src/tests/js1_8_5/extensions/worker-error.js
---- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-error.js	2014-06-30 12:54:39.000000000 +0400
-+++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-error.js	2014-09-23 07:59:03.000000000 +0400
+--- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-error.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-error.js
 @@ -1,21 +0,0 @@
 -/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 -/*
@@ -1587,8 +1587,8 @@ diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-error.js deps
 -    reportCompare(0, 0, "Test skipped. Shell workers required.");
 -}
 diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-fib-child.js deps/mozilla/js/src/tests/js1_8_5/extensions/worker-fib-child.js
---- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-fib-child.js	2014-06-30 12:54:39.000000000 +0400
-+++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-fib-child.js	2014-09-23 07:59:03.000000000 +0400
+--- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-fib-child.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-fib-child.js
 @@ -1,27 +0,0 @@
 -/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 -/*
@@ -1618,8 +1618,8 @@ diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-fib-child.js 
 -    }
 -}
 diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-fib.js deps/mozilla/js/src/tests/js1_8_5/extensions/worker-fib.js
---- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-fib.js	2014-06-30 12:54:39.000000000 +0400
-+++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-fib.js	2014-09-23 07:59:03.000000000 +0400
+--- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-fib.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-fib.js
 @@ -1,18 +0,0 @@
 -/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 -/*
@@ -1640,8 +1640,8 @@ diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-fib.js deps/m
 -    reportCompare(0, 0, "Test skipped. Shell workers required.");
 -}
 diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-init-child.js deps/mozilla/js/src/tests/js1_8_5/extensions/worker-init-child.js
---- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-init-child.js	2014-06-30 12:54:39.000000000 +0400
-+++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-init-child.js	2014-09-23 07:59:03.000000000 +0400
+--- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-init-child.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-init-child.js
 @@ -1,8 +0,0 @@
 -/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 -/*
@@ -1652,8 +1652,8 @@ diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-init-child.js
 -postMessage('do your worst');
 -for (;;) ;
 diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-init.js deps/mozilla/js/src/tests/js1_8_5/extensions/worker-init.js
---- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-init.js	2014-06-30 12:54:39.000000000 +0400
-+++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-init.js	2014-09-23 07:59:03.000000000 +0400
+--- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-init.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-init.js
 @@ -1,19 +0,0 @@
 -/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 -/*
@@ -1675,8 +1675,8 @@ diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-init.js deps/
 -    reportCompare(0, 0, "Test skipped. Shell workers required.");
 -}
 diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-simple-child.js deps/mozilla/js/src/tests/js1_8_5/extensions/worker-simple-child.js
---- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-simple-child.js	2014-06-30 12:54:39.000000000 +0400
-+++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-simple-child.js	2014-09-23 07:59:03.000000000 +0400
+--- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-simple-child.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-simple-child.js
 @@ -1,8 +0,0 @@
 -/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 -/*
@@ -1687,8 +1687,8 @@ diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-simple-child.
 -
 -onmessage = function (event) { postMessage(event.data); };
 diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-simple.js deps/mozilla/js/src/tests/js1_8_5/extensions/worker-simple.js
---- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-simple.js	2014-06-30 12:54:39.000000000 +0400
-+++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-simple.js	2014-09-23 07:59:03.000000000 +0400
+--- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-simple.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-simple.js
 @@ -1,20 +0,0 @@
 -/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 -/*
@@ -1711,8 +1711,8 @@ diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-simple.js dep
 -    reportCompare(0, 0, "Test skipped. Shell workers required.");
 -}
 diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate-child.js deps/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate-child.js
---- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate-child.js	2014-06-30 12:54:39.000000000 +0400
-+++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate-child.js	2014-09-23 07:59:03.000000000 +0400
+--- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate-child.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate-child.js
 @@ -1,13 +0,0 @@
 -/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 -/*
@@ -1728,8 +1728,8 @@ diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate-chi
 -    postMessage("killed");
 -};
 diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate-iloop.js deps/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate-iloop.js
---- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate-iloop.js	2014-06-30 12:54:39.000000000 +0400
-+++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate-iloop.js	2014-09-23 07:59:03.000000000 +0400
+--- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate-iloop.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate-iloop.js
 @@ -1,9 +0,0 @@
 -/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 -/*
@@ -1741,8 +1741,8 @@ diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate-ilo
 -for (;;)
 -    ;
 diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate.js deps/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate.js
---- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate.js	2014-06-30 12:54:39.000000000 +0400
-+++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate.js	2014-09-23 07:59:03.000000000 +0400
+--- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate.js
 @@ -1,37 +0,0 @@
 -/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 -/*
@@ -1782,8 +1782,8 @@ diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-terminate.js 
 -    reportCompare(0, 0, "Test skipped. Shell workers required.");
 -}
 diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-timeout-child.js deps/mozilla/js/src/tests/js1_8_5/extensions/worker-timeout-child.js
---- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-timeout-child.js	2014-06-30 12:54:39.000000000 +0400
-+++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-timeout-child.js	2014-09-23 07:59:03.000000000 +0400
+--- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-timeout-child.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-timeout-child.js
 @@ -1,9 +0,0 @@
 -/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 -/*
@@ -1795,8 +1795,8 @@ diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-timeout-child
 -for (;;)
 -    ;
 diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-timeout.js deps/mozilla/js/src/tests/js1_8_5/extensions/worker-timeout.js
---- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-timeout.js	2014-06-30 12:54:39.000000000 +0400
-+++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-timeout.js	2014-09-23 07:59:03.000000000 +0400
+--- deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-timeout.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/js1_8_5/extensions/worker-timeout.js
 @@ -1,18 +0,0 @@
 -/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 -/*
@@ -1817,8 +1817,8 @@ diff -ruN deps.orig/mozilla/js/src/tests/js1_8_5/extensions/worker-timeout.js de
 -    reportCompare(0, 0, "Test skipped. Shell workers and timeout required.");
 -}
 diff -ruN deps.orig/mozilla/js/src/tests/shell.js deps/mozilla/js/src/tests/shell.js
---- deps.orig/mozilla/js/src/tests/shell.js	2014-06-30 12:54:39.000000000 +0400
-+++ deps/mozilla/js/src/tests/shell.js	2014-09-23 07:59:03.000000000 +0400
+--- deps.orig/mozilla/js/src/tests/shell.js	2014-06-30 08:54:39 UTC
++++ deps/mozilla/js/src/tests/shell.js
 @@ -833,18 +833,6 @@
    }
  }

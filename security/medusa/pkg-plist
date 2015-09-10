@@ -53,8 +53,3 @@ man/man1/medusa.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/medusa-wrapper.html
 %%PORTDOCS%%%%DOCSDIR%%/medusa.html
 share/zsh/site-functions/_medusa
-@dirrmtry lib/medusa/modules
-@dirrmtry lib/medusa
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry share/zsh/site-functions
-@dirrmtry share/zsh

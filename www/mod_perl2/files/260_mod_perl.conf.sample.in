@@ -1,0 +1,9 @@
+## $FreeBSD$
+## vim: set filetype=apache:
+##
+## module file for mod_perl
+##
+## PROVIDE: mod_perl
+## REQUIRE:
+
+#LoadModule perl_module        %%APACHEMODDIR%%/mod_perl.so

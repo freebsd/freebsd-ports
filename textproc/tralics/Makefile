@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tralics
-PORTVERSION=	2.15.2
+PORTVERSION=	2.15.3
 DISTVERSIONPREFIX=	src-
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp-sop.inria.fr/marelle/tralics/src/

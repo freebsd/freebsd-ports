@@ -3,6 +3,7 @@
 
 PORTNAME=	byobu
 PORTVERSION=	5.80
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
@@ -14,8 +15,8 @@ RUN_DEPENDS=	screen:${PORTSDIR}/sysutils/screen \
 		bash:${PORTSDIR}/shells/bash
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	aclocal automake
-USES=		python
+USES=		autoreconf python shebangfix
+SHEBANG_FILES=	usr/lib/byobu/include/notify_osd
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS

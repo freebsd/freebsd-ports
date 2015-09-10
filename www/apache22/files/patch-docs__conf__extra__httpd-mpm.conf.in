@@ -1,5 +1,5 @@
---- docs/conf/extra/httpd-mpm.conf.in.bak	2007-12-29 06:08:28.000000000 +0300
-+++ docs/conf/extra/httpd-mpm.conf.in	2013-01-02 05:58:13.000000000 +0400
+--- docs/conf/extra/httpd-mpm.conf.in.orig	2007-12-29 03:08:28 UTC
++++ docs/conf/extra/httpd-mpm.conf.in
 @@ -17,7 +17,7 @@
  #
  <IfModule !mpm_winnt_module>

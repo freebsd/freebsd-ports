@@ -5,15 +5,12 @@ PORTNAME=	Trf
 PORTVERSION=	2.1.4
 PORTREVISION=	1
 CATEGORIES=	devel tcl
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=tcltrf/tcltrf/${PORTVERSION}
+MASTER_SITES=	SF/tcltrf/tcltrf/${PORTVERSION}
 PKGNAMEPREFIX=	tcl-
 DISTNAME=	trf${PORTVERSION}
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Data conversion, digests, compression, error-correction for Tcl
-
-BUILD_DEPENDS=	${LOCALBASE}/lib/Memchan2.3/pkgIndex.tcl:${PORTSDIR}/devel/tcl-memchan
 
 ALL_TARGET=	all
 
@@ -61,7 +58,12 @@ do-install:
 		${INSTALL_MAN} $$m ${STAGEDIR}${MANNPREFIX}/man/mann/ ;\
 	done
 
-check regression-test post-build test:
+check regression-test test:
+	@if ! ${PKG_BIN} info --quiet tcl-memchan; then	\
+		${PRINTF} "*****************\n%s\n*****************\n"	\
+		    "devel/tcl-memchan must be installed for the tests to work";	\
+		exit 1;	\
+	fi
 	cd ${WRKSRC}/tests && ${SETENV} TCLLIBPATH="${WRKSRC}" ${TCLSH} all
 
 .include <bsd.port.pre.mk>

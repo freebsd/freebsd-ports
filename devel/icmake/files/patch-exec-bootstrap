@@ -1,5 +1,5 @@
---- exec/bootstrap.orig	2012-09-07 09:43:56.000000000 +0200
-+++ exec/bootstrap	2012-12-01 23:45:56.000000000 +0100
+--- exec/bootstrap.orig	2012-07-15 13:24:41 UTC
++++ exec/bootstrap
 @@ -1,6 +1,6 @@
  echo Creating icm-exec
  
@@ -8,7 +8,7 @@
  
  mkdir -p tmp/bin
  
-@@ -8,10 +8,10 @@
+@@ -8,10 +8,10 @@ NR=0
  for x in auks var virtual int list string stack opcodefun builtin
  do
      cd $x

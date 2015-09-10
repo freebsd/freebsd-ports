@@ -18,10 +18,10 @@ LICENSE_FILE=	${WRKSRC}/../../License
 LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs \
 		libcurl.so:${PORTSDIR}/ftp/curl
 
+USES=		autoreconf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-simplelayout --enable-getaddrinfo
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_AUTOTOOLS=	automake autoconf
 USE_SDL=	mixer image
 SUB_FILES=	daimonin.sh
 SUB_LIST=	PORTVERSION=${PORTVERSION}
@@ -56,9 +56,6 @@ post-patch:
 	@${CHMOD} a+x ${WRKSRC}/make_utils/install-sh
 	@${CP} ${PORTSDIR}/Templates/config.guess ${PORTSDIR}/Templates/config.sub \
 		${WRKSRC}/make_utils/
-
-pre-configure:
-	cd ${WRKSRC}; ${LN} -sf ${AUTOMAKE_DIR}/COPYING . && ${AUTORECONF}
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/bin/daimonin ${STAGEDIR}${DATADIR}

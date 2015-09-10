@@ -1,10 +1,10 @@
-gozerbot.1
 bin/gozerbot
 bin/gozerbot-start
 bin/gozerbot-stop
 bin/gozerinit
 bin/gozerupgrade06
 bin/gozerbot-merc
+man/man1/gozerbot.1.gz
 %%PYTHON_SITELIBDIR%%/gozerbot/__init__.py
 %%PYTHON_SITELIBDIR%%/gozerbot/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gozerbot/__init__.pyo

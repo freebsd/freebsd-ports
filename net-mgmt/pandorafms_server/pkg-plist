@@ -1,12 +1,3 @@
-@mode 440
-@sample %%ETCDIR%%/pandora_server.conf.sample
-@mode 555
-bin/pandora_exec
-bin/pandora_server
-%%TENTACLE%%bin/tentacle_server
-etc/rc.d/pandora_server
-etc/rc.d/tentacle_server
-@mode
 %%PERL5_MAN3%%/PandoraFMS::Core.3.gz
 %%PERL5_MAN3%%/PandoraFMS::GIS.3.gz
 %%PERL5_MAN3%%/PandoraFMS::GeoIP.3.gz
@@ -115,3 +106,10 @@ man/man1/tentacle_server.1.gz
 %%DATADIR%%/util/trap_rate.sh
 %%DATADIR%%/util/udp_client.pl
 %%DATADIR%%/util/windows.README
+@mode 555
+bin/pandora_exec
+bin/pandora_server
+%%TENTACLE%%bin/tentacle_server
+etc/rc.d/pandora_server
+etc/rc.d/tentacle_server
+@sample(,,440) %%ETCDIR%%/pandora_server.conf.sample

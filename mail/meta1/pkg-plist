@@ -1,15 +1,3 @@
-@exec if ! pw groupshow meta1s 2>/dev/null; then pw groupadd meta1s -g 260; fi
-@exec if ! pw groupshow meta1q 2>/dev/null; then pw groupadd meta1q -g 261; fi
-@exec if ! pw groupshow meta1c 2>/dev/null; then pw groupadd meta1c -g 262; fi
-@exec if ! pw groupshow meta1m 2>/dev/null; then pw groupadd meta1m -g 263; fi
-@exec if ! pw groupshow meta1 2>/dev/null; then pw groupadd meta1 -g 264; fi
-@exec if ! pw usershow meta1s 2>/dev/null; then pw useradd meta1s -g meta1s -u 260 -h - -d /nonexistent -s %%NOLOGIN%% -c "MeTA1 SMTPS"; fi
-@exec if ! pw usershow meta1q 2>/dev/null; then pw useradd meta1q -g meta1q -u 261 -h - -d /nonexistent -s %%NOLOGIN%% -c "MeTA1 QMGR"; fi
-@exec if ! pw usershow meta1c 2>/dev/null; then pw useradd meta1c -g meta1c -u 262 -h - -d /nonexistent -s %%NOLOGIN%% -c "MeTA1 SMTPC"; fi
-@exec if ! pw usershow meta1m 2>/dev/null; then pw useradd meta1m -g meta1m -u 263 -h - -d /nonexistent -s %%NOLOGIN%% -c "MeTA1 misc"; fi
-@exec if ! pw usershow meta1 2>/dev/null; then pw useradd meta1 -g meta1 -u 264 -h - -d /nonexistent -s %%NOLOGIN%% -c "MeTA1 other"; fi
-@exec pw groupmod meta1c -m meta1s
-@exec pw groupmod meta1m -m meta1s,meta1q
 %%WITH_BDBINT%%bin/db_archive
 %%WITH_BDBINT%%bin/db_checkpoint
 %%WITH_BDBINT%%bin/db_deadlock
@@ -84,4 +72,3 @@ sbin/statit
 sbin/t-hostname
 sbin/t-getgroup
 sbin/tree
-@exec %D/sbin/sm.setup.sh

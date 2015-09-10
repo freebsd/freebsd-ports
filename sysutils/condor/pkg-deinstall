@@ -25,12 +25,12 @@ DEINSTALL)
     # the syadmin is left to deal with this.
 
     # Remove the link to /home/condor
-    /bin/rm -f /var/db/condor
+    rm -f /var/db/condor
     # Remove /home/condor, if empty
-    /bin/rmdir /home/condor/config
-    /bin/rmdir /home/condor/execute
-    /bin/rmdir /home/condor/log
-    /bin/rmdir /home/condor/spool
-    /bin/rmdir /home/condor
+    rmdir /home/condor/config
+    rmdir /home/condor/execute
+    rmdir /home/condor/log
+    rmdir /home/condor/spool
+    rmdir /home/condor
     ;;
 esac

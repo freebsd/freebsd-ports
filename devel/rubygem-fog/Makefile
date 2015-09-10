@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog
-PORTVERSION=	1.30.0
+PORTVERSION=	1.34.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,10 +12,11 @@ COMMENT=	Ruby cloud services library
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-fog-atmos>=0:${PORTSDIR}/net/rubygem-fog-atmos \
-		rubygem-fog-aws>=0:${PORTSDIR}/net/rubygem-fog-aws \
-		rubygem-fog-brightbox>=0.4:${PORTSDIR}/devel/rubygem-fog-brightbox \
-		rubygem-fog-core>=1.27.4:${PORTSDIR}/devel/rubygem-fog-core \
-		rubygem-fog-ecloud>=0:${PORTSDIR}/net/rubygem-fog-ecloud \
+		rubygem-fog-aws>=0.6.0:${PORTSDIR}/net/rubygem-fog-aws \
+		rubygem-fog-brightbox>=0.4:${PORTSDIR}/net/rubygem-fog-brightbox \
+		rubygem-fog-core>=1.32:${PORTSDIR}/devel/rubygem-fog-core \
+		rubygem-fog-dynect>=0.0.2:${PORTSDIR}/net/rubygem-fog-dynect \
+		rubygem-fog-ecloud>=0.1:${PORTSDIR}/net/rubygem-fog-ecloud \
 		rubygem-fog-google>=0.0.2:${PORTSDIR}/net/rubygem-fog-google \
 		rubygem-fog-json>=0:${PORTSDIR}/devel/rubygem-fog-json \
 		rubygem-fog-local>=0:${PORTSDIR}/net/rubygem-fog-local \
@@ -34,6 +35,7 @@ RUN_DEPENDS=	rubygem-fog-atmos>=0:${PORTSDIR}/net/rubygem-fog-atmos \
 		rubygem-ipaddress>=0.5:${PORTSDIR}/net/rubygem-ipaddress \
 		rubygem-nokogiri>=1.5.11:${PORTSDIR}/textproc/rubygem-nokogiri
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

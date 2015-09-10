@@ -1,29 +1,30 @@
 ==================================================================
-- Universal server building block (OpenXPKI) for arbitrary PKI installed. 
-- SCEP prerequisite binary and i18n tools for UI installed.
+- Universal server building block (OpenXPKI) for arbitrary PKI: installed. 
+- SCEP prerequisite binary and i18n tools for UI: installed.
 - Enable utf8 locale (e.g. en_US.utf8) for the translation staff to operate
   (translation is needed even for English language).
 - Install your favorite database (enable utf8 support), 
   e.g. databases/mysql56-server
-  Install perl interface for your favorite database, 
+- Install perl interface for your favorite database, 
   e.g. databases/p5-DBD-mysql
 - Install your favorite web server.
   This port has created user:group as openxpki:openxpki
   Add a line: "User openxpki" to configuration of your OpenXPKI-related 
   web server. Choose from two versions of the handler: based on CGI or FastCGI
   perl core modules.
-- Perform deployment procedure for OpenXPKI in a regular way, 
-  without this OpenXPKI server would not start.
+- Perform deployment procedure (define a role of the server inside the PKI
+  infrastructure) for OpenXPKI server in a regular way, 
+  without this procedure OpenXPKI server would not start.
+  E.g. if you want your server to act as the simplest CA, 
+  then copy sample configuration for this case with 
+    cp -R %%EXAMPLESDIR%%/openxpki/* %%PREFIX%%/etc/openxpki/
+  and follow advice at:
+  https://openxpki.readthedocs.org/en/latest/quickstart.html
 - Start daemons in this order:
     database server,
     OpenXPKI server (%%PREFIX%%/etc/rc.d/openxpki start),
     web server.
 - Docs installed (if you opted so) into %%DOCSDIR%%
-- If you want your PKI server to act as the simplest CA, 
-  then copy sample configuration for this case with 
-    cp -R %%EXAMPLESDIR%%/openxpki/* %%PREFIX%%/etc/openxpki/
-  and follow advice at:
-  https://openxpki.readthedocs.org/en/latest/quickstart.html
 - Mind FreeBSD specific file structure:
     %%PREFIX%%/etc/openxpki: server configuration, logs configuration.
     /var/openxpki: pid file, socket file, ...

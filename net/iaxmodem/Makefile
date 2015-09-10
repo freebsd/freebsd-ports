@@ -12,7 +12,7 @@ COMMENT=	Software modem that connects to IAX channel
 
 LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
 
-USES=		perl5
+USES=		compiler:features perl5
 USE_PERL5=	patch
 HAS_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME}
@@ -27,7 +27,12 @@ PORTEXAMPLES=	config.ttyIAX iaxmodem-cfg.ttyIAX
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == i386 && ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 36
+# gsm0610_rpe.c:81:10: error: invalid operand for instruction
+USE_GCC=	yes
+.endif
 
 post-patch:
 	@${PERL} -0pi.bak -e "s|for ac_header in tgmath\.h.*?done||s" \
@@ -43,4 +48,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -118,6 +118,7 @@ lib/yorick/i/testlp.i
 lib/yorick/i/testm.i
 lib/yorick/i/testoxy.i
 lib/yorick/i/testp.i
+lib/yorick/i/testsock.i
 lib/yorick/i/teststr.i
 lib/yorick/i/textload.i
 lib/yorick/i/torgb.i

@@ -3,21 +3,15 @@
 
 PORTNAME=	darkice
 PORTVERSION=	1.2
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	audio net
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IceCast, IceCast2, and ShoutCast live audio streamer
 
-LICENSE=	GPLv3
-
-OPTIONS_DEFINE=	JACK PULSEAUDIO
-OPTIONS_MULTI=	CODEC
-OPTIONS_MULTI_CODEC=	VORBIS OPUS LAME TWOLAME FAAC AACPLUS
-OPTIONS_DEFAULT=	VORBIS
-
-AACPLUS_DESC=	AAC HEv2 and libsamplerate support
+LICENSE=	GPLv3 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf
 GNU_CONFIGURE=	yes
@@ -27,65 +21,38 @@ CONFIGURE_ARGS=	--without-alsa
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	${PORTNAME}
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=		JACK PULSEAUDIO
+OPTIONS_MULTI=		CODEC
+OPTIONS_MULTI_CODEC=	AACPLUS FAAC LAME OPUS TWOLAME VORBIS
+OPTIONS_DEFAULT=	VORBIS
 
-.if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack
-CONFIGURE_ARGS+=	--with-jack-prefix=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--without-jack
-.endif
-
-.if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	libpulse-simple.so:${PORTSDIR}/audio/pulseaudio
-CONFIGURE_ARGS+=	--with-pulseaudio-prefix=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--without-pulseaudio
-.endif
-
-.if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
-CONFIGURE_ARGS+=	--with-vorbis-prefix=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--without-vorbis
-.endif
-
-.if ${PORT_OPTIONS:MOPUS}
-LIB_DEPENDS+=	libopus.so:${PORTSDIR}/audio/opus
-CONFIGURE_ARGS+=	--with-opus-prefix=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--without-opus
-.endif
-
-.if ${PORT_OPTIONS:MLAME}
-LIB_DEPENDS+=	libmp3lame.so:${PORTSDIR}/audio/lame
-CONFIGURE_ARGS+=	--with-lame-prefix=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--without-lame
-.endif
-
-.if ${PORT_OPTIONS:MTWOLAME}
-LIB_DEPENDS+=	libtwolame.so:${PORTSDIR}/audio/twolame
-CONFIGURE_ARGS+=	--with-twolame-prefix=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--without-twolame
-.endif
-
-.if ${PORT_OPTIONS:MFAAC}
-LIB_DEPENDS+=	libfaac.so:${PORTSDIR}/audio/faac
-CONFIGURE_ARGS+=	--with-faac-prefix=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--without-faac
-.endif
-
-.if ${PORT_OPTIONS:MAACPLUS}
-LIB_DEPENDS+=	libaacplus.so:${PORTSDIR}/audio/libaacplus \
-		libsamplerate.so:${PORTSDIR}/audio/libsamplerate
-CONFIGURE_ARGS+=	--with-aacplus-prefix=${LOCALBASE} \
+AACPLUS_DESC=		AAC HEv2 and libsamplerate support
+AACPLUS_LIB_DEPENDS=	libaacplus.so:${PORTSDIR}/audio/libaacplus \
+			libsamplerate.so:${PORTSDIR}/audio/libsamplerate
+AACPLUS_CONFIGURE_ON=	--with-aacplus-prefix=${LOCALBASE} \
 			--with-samplerate-prefix=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--without-aacplus --without-samplerate
-.endif
+AACPLUS_CONFIGURE_OFF=	--without-aacplus --without-samplerate
+FAAC_LIB_DEPENDS=	libfaac.so:${PORTSDIR}/audio/faac
+FAAC_CONFIGURE_ON=	--with-faac-prefix=${LOCALBASE}
+FAAC_CONFIGURE_OFF=	--without-faac
+JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_CONFIGURE_ON=	--with-jack-prefix=${LOCALBASE}
+JACK_CONFIGURE_OFF=	--without-jack
+LAME_LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame
+LAME_CONFIGURE_ON=	--with-lame-prefix=${LOCALBASE}
+LAME_CONFIGURE_OFF=	--without-lame
+OPUS_LIB_DEPENDS=	libopus.so:${PORTSDIR}/audio/opus
+OPUS_CONFIGURE_ON=	--with-opus-prefix=${LOCALBASE}
+OPUS_CONFIGURE_OFF=	--without-opus
+PULSEAUDIO_LIB_DEPENDS=	libpulse-simple.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_CONFIGURE_ON=	--with-pulseaudio-prefix=${LOCALBASE}
+PULSEAUDIO_CONFIGURE_OFF=	--without-pulseaudio
+TWOLAME_LIB_DEPENDS=	libtwolame.so:${PORTSDIR}/audio/twolame
+TWOLAME_CONFIGURE_ON=	--with-twolame-prefix=${LOCALBASE}
+TWOLAME_CONFIGURE_OFF=	--without-twolame
+VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+VORBIS_CONFIGURE_ON=	--with-vorbis-prefix=${LOCALBASE}
+VORBIS_CONFIGURE_OFF=	--without-vorbis
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2 -pedantic||g' ${WRKSRC}/src/Makefile.am
@@ -93,7 +60,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.cfg \
-		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.cfg.dist
+		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.cfg.sample
 	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.cfg.5 ${STAGEDIR}${MAN5PREFIX}/man/man5
 

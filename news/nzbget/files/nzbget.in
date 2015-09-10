@@ -21,9 +21,9 @@ load_rc_config ${name}
 : ${nzbget_enable:=NO}
 
 start_cmd="${name}_start"
-status_cmd="${command} status"
+status_cmd="${command} -L S"
 stop_cmd="${name}_stop"
-command=%%PREFIX%%/sbin/nzbgetd
+command=%%PREFIX%%/bin/nzbget
 
 nzbget_start()
 {
@@ -31,13 +31,15 @@ nzbget_start()
 	# artificial sleep because it doesnt want to start
 	# after a restart without it
 	sleep .5
-	${command} start
+	${command} -D
 }
 
 nzbget_stop()
 {
 	echo "Stopping ${name}."
-	${command} stop
+	${command} -Q
+	# artificial sleep because stop is backgrounded
+	sleep 3
 }
 
 run_rc_command "$1"

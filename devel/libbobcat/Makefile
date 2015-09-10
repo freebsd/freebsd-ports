@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libbobcat
-PORTVERSION=	3.21.01
+PORTVERSION=	3.25.01
 CATEGORIES=	devel
 MASTER_SITES=	SF/bobcat/bobcat/${PORTVERSION}
 DISTNAME=	bobcat_${PORTVERSION}
@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	icmake:${PORTSDIR}/devel/icmake \
 		yodl>=3.0:${PORTSDIR}/textproc/yodl
 
-USE_GCC=	yes
+USE_GCC=	4.9+
 USE_XORG=	x11
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
@@ -41,30 +41,27 @@ SHEBANG_FILES=	build \
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|"/usr"|"${PREFIX}"| ; \
+	${REINPLACE_CMD} -e 's|"/usr"|"${PREFIX}"| ; \
 		s|"/share/doc/libbobcat3"|"/share/doc/${PORTNAME}-${PORTVERSION}"| ; \
 		s|"/share/doc/libbobcat3-dev"|"/share/doc/${PORTNAME}-${PORTVERSION}/dev"| ; \
 		s|"/share/man"|"/man"| ; \
 		s|"-d"|"-Pp"| ; \
 		s|#define MANHTML|| ; \
 		s|g++|${CXX}| ; \
+		s|Wall|Wall -D_GLIBCXX_USE_C99| ; \
 		s|gcc|${CC}|' \
 		${WRKSRC}/INSTALL.im
-	@${REINPLACE_CMD} -e 's|"-isystem tmp -Wall -O3"|"-isystem tmp ${LOCALBASE}/include -Wall ${CXXFLAGS}"|' \
-		${WRKSRC}/build
 	@${REINPLACE_CMD} -e 's|"cp -r |"cp -R |' \
 		${WRKSRC}/icmake/install
 	@${REINPLACE_CMD} -e 's|-lssl|-lssl -L${LOCALBASE}/lib| ; \
 		s|-lX11|-lX11 -L${LOCALBASE}/lib| ; \
 		s|-lmilter|-lmilter -lpthread|' \
 		${WRKSRC}/icmake/special
-.if ! ${PORT_OPTIONS:MDOCS}
+
+post-patch-DOCs-off:
 	@${REINPLACE_CMD} -e 's|#define DOCOTHER||' \
 		${WRKSRC}/INSTALL.im
-.endif
 
 do-build:
 	@cd ${WRKSRC} && ./build libraries all strip && ./build man

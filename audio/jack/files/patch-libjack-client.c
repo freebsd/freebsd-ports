@@ -1,6 +1,6 @@
---- libjack/client.c.orig	2014-10-23 09:09:09.000000000 +0200
-+++ libjack/client.c	2014-10-23 09:20:15.000000000 +0200
-@@ -116,6 +116,30 @@
+--- libjack/client.c.orig	2014-01-21 22:48:10 UTC
++++ libjack/client.c
+@@ -116,6 +116,30 @@ init_cpu ()
  
  char *jack_tmpdir = DEFAULT_TMP_DIR;
  
@@ -31,7 +31,7 @@
  static int
  jack_get_tmpdir ()
  {
-@@ -248,7 +272,7 @@
+@@ -248,7 +272,7 @@ oop_client_deliver_request (void *ptr, j
  	int wok, rok;
  	jack_client_t *client = (jack_client_t*) ptr;
  
@@ -40,7 +40,7 @@
  	       == sizeof (*req));
  
          /* if necessary, add variable length key data after a PropertyChange request
-@@ -256,7 +280,7 @@
+@@ -256,7 +280,7 @@ oop_client_deliver_request (void *ptr, j
          
          if (req->type == PropertyChangeNotify) {
                  if (req->x.property.keylen) {
@@ -49,7 +49,7 @@
                                  jack_error ("cannot send property key of length %d to server",
                                              req->x.property.keylen);
                                  req->status = -1;
-@@ -265,7 +289,7 @@
+@@ -265,7 +289,7 @@ oop_client_deliver_request (void *ptr, j
                  }
          }
  
@@ -58,7 +58,7 @@
  	       == sizeof (*req));
  
  	if (wok && rok) {		/* everything OK? */
-@@ -822,14 +846,14 @@
+@@ -822,14 +846,14 @@ server_event_connect (jack_client_t *cli
  
  	jack_uuid_copy (&req.client_id, client->control->uuid);
  
@@ -75,7 +75,7 @@
  		jack_error ("cannot read event connect result from server (%s)",
  			    strerror (errno));
  		close (fd);
-@@ -1070,14 +1094,14 @@
+@@ -1070,14 +1094,14 @@ jack_request_client (ClientType type,
  	snprintf (req.object_data, sizeof (req.object_data),
  		  "%s", va->load_init);
  
@@ -92,7 +92,7 @@
  
  		if (errno == 0) {
  			/* server shut the socket */
-@@ -1456,7 +1480,7 @@
+@@ -1456,7 +1480,7 @@ jack_internal_client_close (const char *
  		return;
  	}
  
@@ -101,7 +101,7 @@
  		jack_error ("cannot deliver ClientUnload request to JACK "
  			    "server.");
  	}
-@@ -1582,7 +1606,7 @@
+@@ -1582,7 +1606,7 @@ jack_session_notify (jack_client_t* clie
  
  	request.x.session.type = code;
  	
@@ -110,7 +110,7 @@
  	       != sizeof (request)) ) {
  		jack_error ("cannot send request type %d to server",
  				    request.type);
-@@ -1592,7 +1616,7 @@
+@@ -1592,7 +1616,7 @@ jack_session_notify (jack_client_t* clie
  	while( 1 ) {
  		jack_uuid_t uid;
  
@@ -119,7 +119,7 @@
  			jack_error ("cannot read result for request type %d from"
  					" server (%s)", request.type, strerror (errno));
  			goto out;
-@@ -1613,19 +1637,19 @@
+@@ -1613,19 +1637,19 @@ jack_session_notify (jack_client_t* clie
  			break;
                  }
  
@@ -142,7 +142,7 @@
  			       	!= sizeof(retval[num_replies-1].flags) ) {
  			jack_error ("cannot read result for request type %d from"
  					" server (%s)", request.type, strerror (errno));
-@@ -1742,7 +1766,7 @@
+@@ -1742,7 +1766,7 @@ jack_client_process_events (jack_client_
  		/* server has sent us an event. process the
  		 * event and reply */
  		
@@ -151,7 +151,7 @@
  		    != sizeof (event)) {
  			jack_error ("cannot read server event (%s)",
  				    strerror (errno));
-@@ -1751,7 +1775,7 @@
+@@ -1751,7 +1775,7 @@ jack_client_process_events (jack_client_
  
                  if (event.type == PropertyChange) {
                          key = (char *) malloc (event.y.key_size);
@@ -160,7 +160,7 @@
                              event.y.key_size) {
                                  jack_error ("cannot read property change key (%s)",
                                              strerror (errno));
-@@ -1868,7 +1892,7 @@
+@@ -1868,7 +1892,7 @@ jack_client_process_events (jack_client_
  		DEBUG ("client has dealt with the event, writing "
  		       "response on event fd");
  		
@@ -169,7 +169,7 @@
  		    != sizeof (status)) {
  			jack_error ("cannot send event response to "
  				    "engine (%s)", strerror (errno));
-@@ -1888,7 +1912,7 @@
+@@ -1888,7 +1912,7 @@ jack_wake_next_client (jack_client_t* cl
  	int pret = 0;
  	char c = 0;
  
@@ -178,7 +178,7 @@
  	    != sizeof (c)) {
  		DEBUG("cannot write byte to fd %d", client->graph_next_fd);
  		jack_error ("cannot continue execution of the "
-@@ -1916,7 +1940,7 @@
+@@ -1916,7 +1940,7 @@ jack_wake_next_client (jack_client_t* cl
  	}
  
  	if (pret > 0 && (pfds[0].revents & POLLIN)) {

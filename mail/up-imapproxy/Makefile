@@ -13,13 +13,14 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Caching IMAP proxy server
 
 LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	DOVECOT DOCS
 DOVECOT_DESC=	Use with dovecot2
 
-USES=		tar:bzip2 pathfix
+USES=		autoreconf tar:bzip2 pathfix
 USE_OPENSSL=	yes
-USE_AUTOTOOLS=	autoheader
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE}
 
 USE_RC_SUBR=	imapproxyd

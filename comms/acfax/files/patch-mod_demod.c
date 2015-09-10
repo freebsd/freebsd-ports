@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- mod_demod.c.orig	Sat Jun  8 00:38:29 2002
 +++ mod_demod.c	Sat Jun  8 00:38:41 2002
 @@ -29,6 +29,8 @@

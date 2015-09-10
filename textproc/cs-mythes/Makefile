@@ -15,6 +15,7 @@ COMMENT=	Czech thesaurus
 LICENSE=	MIT
 
 USES=		zip
+NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

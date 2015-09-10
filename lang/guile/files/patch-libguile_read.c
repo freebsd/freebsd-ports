@@ -1,5 +1,5 @@
---- libguile/read.c	2008-02-23 18:05:20.175715735 -0600
-+++ libguile/read.c	2008-02-23 18:06:27.495397147 -0600
+--- libguile/read.c.orig	2010-12-13 17:24:40 UTC
++++ libguile/read.c
 @@ -27,7 +27,7 @@
  #include <ctype.h>
  #include <string.h>

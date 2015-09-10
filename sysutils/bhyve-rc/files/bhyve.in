@@ -141,6 +141,6 @@ bhyve_stop()
 	rm -f ${pidfile}
 }
 
-command_args="new-session -ds ${_session} \"sh -c 'echo \\\$PPID >${pidfile}; while true; do /usr/sbin/bhyvectl --vm=${_session} --destroy; /usr/sbin/bhyveload -m ${bhyve_memsize} -d ${bhyve_diskdev} ${_session} && /usr/sbin/bhyve -c ${bhyve_ncpu} -m ${bhyve_memsize} -AI -H -P -g 0 -s 0:0,hostbridge -s 1:0,virtio-net,${bhyve_tapdev} -s 2:0,virtio-blk,${bhyve_diskdev} -S 31,uart,stdio ${_session} || break; done'\""
+command_args="new-session -ds ${_session} \"sh -c 'echo \\\$PPID >${pidfile}; while true; do /usr/sbin/bhyvectl --vm=${_session} --destroy; /usr/sbin/bhyveload -m ${bhyve_memsize} -d ${bhyve_diskdev} ${_session} && /usr/sbin/bhyve -c ${bhyve_ncpu} -m ${bhyve_memsize} -AI -H -P -g 0 -s 0:0,hostbridge -s 1:0,virtio-net,${bhyve_tapdev} -s 2:0,virtio-blk,${bhyve_diskdev} -s 31,uart,stdio ${_session} || break; done'\""
 
 run_rc_command "$1"

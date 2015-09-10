@@ -1,11 +1,4 @@
-Hastymail2 is a full featured IMAP/SMTP client written in PHP. Our goal is to
-create a fast, secure, compliant web mail client that has great usability.
-Hastymail2 is much more lightweight than most popular web based mail
-applications but still maintains a competitive feature set. The project
-originated as Hastymail in 2002, then was nearly completely rewritten as
-Hastymail2 starting in January of 2008. We are very near our first stable
-release of the second generation of Hastymail and development continues to be
-active.
+Hastymail2 is a full featured IMAP/SMTP client written in PHP.
 
 Features:
   * Compatible with PDAs, phones, text browsers, and all mainstream browsers

@@ -8,6 +8,10 @@ lib/tcc/include/stddef.h
 lib/tcc/include/tcclib.h
 lib/tcc/include/varargs.h
 lib/tcc/bcheck.o
+%%I386%%lib/tcc/alloca86.o
+%%I386%%lib/tcc/alloca86-bt.o
+%%AMD64%%lib/tcc/alloca86_64.o
+lib/tcc/libtcc1.o
 lib/tcc/libtcc1.a
 man/man1/tcc.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/tcc-doc.html

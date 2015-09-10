@@ -1,4 +1,8 @@
 %%PERL5_MAN3%%/RedisDB.3.gz
+%%PERL5_MAN3%%/RedisDB::Cluster.3.gz
 %%PERL5_MAN3%%/RedisDB::Error.3.gz
+%%PERL5_MAN3%%/RedisDB::Sentinel.3.gz
 %%SITE_PERL%%/RedisDB.pm
+%%SITE_PERL%%/RedisDB/Cluster.pm
 %%SITE_PERL%%/RedisDB/Error.pm
+%%SITE_PERL%%/RedisDB/Sentinel.pm

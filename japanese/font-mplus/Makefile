@@ -21,6 +21,7 @@ RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 
 USES=		tar:xz
 NO_BUILD=	yes
+NO_ARCH=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install
 SUB_FILES=	pkg-install
@@ -39,8 +40,6 @@ LOCAL_FONTSDIR=	share/fonts
 X_FONTSDIR=	lib/X11/fonts
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 post-extract:
 	cd ${WRKDIR}/${PORTNAME}_bitmap_fonts-2.2.4 && \
@@ -83,8 +82,7 @@ do-install-outline:
 	${LN} -s -f ../conf.avail/62-fonts-${PORTNAME}.conf \
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/62-fonts-${PORTNAME}.conf
 
-.if ${PORT_OPTIONS:MDOCS}
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	for F in ${PORTDOCS:M*.bitmap:S,.bitmap$,,}; do \
 		${INSTALL_DATA} ${WRKDIR}/${PORTNAME}_bitmap_fonts-2.2.4/$${F} ${STAGEDIR}${DOCSDIR}/$${F}.bitmap; \
@@ -92,6 +90,5 @@ post-install:
 	for F in ${PORTDOCS:M*.outline:S,.outline$,,}; do \
 		${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-TESTFLIGHT-055/$${F} ${STAGEDIR}${DOCSDIR}/$${F}.outline; \
 	done
-.endif
 
 .include <bsd.port.mk>

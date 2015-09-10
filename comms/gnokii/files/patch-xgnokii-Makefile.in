@@ -1,6 +1,6 @@
---- xgnokii/Makefile.in.orig	2008-10-06 08:57:20.000000000 +0200
-+++ xgnokii/Makefile.in	2009-02-26 17:33:22.000000000 +0100
-@@ -62,7 +62,7 @@
+--- xgnokii/Makefile.in.orig	2015-06-15 14:14:28 UTC
++++ xgnokii/Makefile.in
+@@ -67,7 +67,7 @@ am_xgnokii_OBJECTS = xgnokii-xgnokii.$(O
  	xgnokii-xgnokii_xring.$(OBJEXT) \
  	xgnokii-xgnokii_lowlevel.$(OBJEXT) \
  	xgnokii-xgnokii_data.$(OBJEXT)

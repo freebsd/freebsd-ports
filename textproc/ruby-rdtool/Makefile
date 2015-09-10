@@ -3,10 +3,9 @@
 
 PORTNAME=	rdtool
 PORTVERSION=	0.6.38
+DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc ruby
-MASTER_SITES=	https://github.com/uwabami/${PORTNAME}/tarball/v${PORTVERSION}/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	uwabami-${PORTNAME}-v${PORTVERSION}-0-g${GITVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
@@ -14,8 +13,8 @@ COMMENT=	RD to HTML/man/etc. converter (RD is to Ruby as POD is to Perl)
 
 BUILD_DEPENDS=	racc:${PORTSDIR}/devel/rubygem-racc
 
-GITVERSION=	c895345
-WRKSRC=		${WRKDIR}/uwabami-${PORTNAME}-${GITVERSION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	uwabami
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
@@ -40,6 +39,5 @@ post-install:
 .for f in ${DOCS_JA}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
 .endfor
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

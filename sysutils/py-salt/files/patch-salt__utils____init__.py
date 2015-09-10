@@ -1,7 +1,7 @@
---- ./salt/utils/__init__.py.orig	2014-02-19 22:21:15.000000000 +0200
-+++ ./salt/utils/__init__.py	2014-03-06 10:50:07.000000000 +0200
-@@ -316,6 +316,15 @@
-         if os.access(exe, os.X_OK):
+--- salt/utils/__init__.py.orig	2015-04-17 18:44:50 UTC
++++ salt/utils/__init__.py
+@@ -372,6 +372,15 @@ def which(exe=None):
+             # executable in cwd or fullpath
              return exe
  
 +        p = os.environ.get('PATH')

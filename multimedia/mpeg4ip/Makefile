@@ -3,12 +3,11 @@
 
 PORTNAME=	mpeg4ip
 PORTVERSION=	1.6.1
-PORTREVISION=	32
+PORTREVISION=	33
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	LOCAL/ahze
 # http://sourceforge.net/forum/forum.php?thread_id=1839453&forum_id=59136
-#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-#MASTER_SITE_SUBDIR=	${PORTNAME}
+#MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Standards-based system to encode, stream, and play MPEG-4 audio/video
@@ -90,10 +89,6 @@ PLIST_SUB+=	XVID=""
 PLIST_SUB+=	XVID="@comment "
 .endif
 
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64
-.endif
-
 #post-patch:
 pre-configure:
 	@${TOUCH} -f ${WRKSRC}/bootstrapped
@@ -134,6 +129,8 @@ pre-configure:
 		${WRKSRC}/doc/mp4v2/Makefile.in
 	@${REINPLACE_CMD} -e 's|$${enable_ffmpeg}/lib/libavcodec.a|-lavcodec0 -lavutil0 -lswscale0|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|pSameples|pSamples|' \
+		${WRKSRC}/server/mp4live/audio_l16.cpp
 
 # replace bundled mp4v2 with placeholder
 post-configure:

@@ -1,6 +1,6 @@
---- libguile/threads.c	2008-02-27 10:17:41.531443640 -0600
-+++ libguile/threads.c	2008-02-27 10:25:44.309334685 -0600
-@@ -593,7 +593,7 @@
+--- libguile/threads.c.orig	2010-12-13 17:24:40 UTC
++++ libguile/threads.c
+@@ -631,7 +631,7 @@ scm_i_init_thread_for_guile (SCM_STACKIT
  
  #if SCM_USE_PTHREAD_THREADS
  
@@ -9,7 +9,7 @@
  /* This method for GNU/Linux and perhaps some other systems.
     It's not for MacOS X or Solaris 10, since pthread_getattr_np is not
     available on them.  */
-@@ -606,8 +606,15 @@
+@@ -644,8 +644,15 @@ get_thread_stack_base ()
    void *start, *end;
    size_t size;
  

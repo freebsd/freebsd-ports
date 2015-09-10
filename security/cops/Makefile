@@ -3,6 +3,7 @@
 
 PORTNAME=	cops
 PORTVERSION=	1.04
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.fish2.com/cops/ \
 		http://komquats.com/distfiles/
@@ -11,6 +12,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}+
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	System secureness checker
 
+USES=		perl5 shebangfix
+USE_PERL5=	run
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/.//g}+
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	reconfig
@@ -23,6 +26,10 @@ EXECUTABLE=	home.chk user.chk is_writable crc crc_check \
 C_SRC=		home.chk.c user.chk.c is_able.c is_something.c \
 		addto.c clearfiles.c filewriters.c members.c tilde.c \
 		crc.c crc_check.c
+
+post-patch:
+	@${REINPLACE_CMD} -i '' -e 's|${perl_OLD_CMD}|${perl_CMD}|' \
+		${WRKSRC}/perl/cops
 
 pre-build:
 	${SED} \

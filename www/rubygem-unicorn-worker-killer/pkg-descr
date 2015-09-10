@@ -3,4 +3,4 @@ workers based on the number of served requests and process memory size
 without affecting any requests. This can improve stability by avoiding
 unexpected memory exhaustion of applications.
 
-WWW: https://rubygems.org/gems/unicorn-worker-killer
+WWW: https://github.com/kzk/unicorn-worker-killer

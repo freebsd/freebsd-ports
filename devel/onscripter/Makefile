@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	onscripter
-PORTVERSION=	20150208
+PORTVERSION=	20150820
 CATEGORIES=	devel games
 MASTER_SITES=	http://onscripter.sourceforge.jp/
 
@@ -38,27 +38,25 @@ PDA_DESC=	Fit window size to screen on small PDA devices
 PDA_CFLAGS?=	-DPDA_AUTOSIZE
 UTF8_CFLAGS?=	-DUTF8_CAPTION -DUTF8_FILESYSTEM
 
-.include <bsd.port.options.mk>
-
 post-patch:
-.if ! ${PORT_OPTIONS:MLUA}
-	@${REINPLACE_CMD} '/optional: lua/,/^$$/d' ${WRKSRC}/${MAKEFILE}
-.endif
 	@${REINPLACE_CMD} -e 's/$$(LIBS)/$$(LDFLAGS) &/' \
 		${WRKSRC}/Makefile.onscripter
 	@${REINPLACE_CMD} -e 's/luaL_checkint/(int)&eger/' \
 		${WRKSRC}/LUAHandler.cpp
+
+post-patch-LUA-off:
+	@${REINPLACE_CMD} '/optional: lua/,/^$$/d' ${WRKSRC}/${MAKEFILE}
 
 .if !target(do-install)
 do-install:
 .for f in ${PLIST_FILES:T}
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	(cd ${WRKSRC}/www && ${COPYTREE_SHARE} \
 		. ${STAGEDIR}${DOCSDIR} \
 		"! -name *.orig ! -name *.bak")
-.endif
 .endif # do-install
 
 .include <bsd.port.mk>

@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>0:${PORTSDIR}/devel/py-xdg
 
-USES= 		desktop-file-utils python:2 shared-mime-info
+USES=	desktop-file-utils python:2 shared-mime-info
 USE_PYTHON=	distutils
 WANT_GNOME=	yes
 USE_GSTREAMER=	gnonlin good python
@@ -32,7 +32,7 @@ PULSE_DESC=	${PULSEAUDIO_DESC}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
 .endif
 
-.if ${PORT_OPTIONS:MGNOME} || ${PORT_OPTIONS:MPROFILES}
+.if ${PORT_OPTIONS:MGNOME} || ${PORT_OPTIONS:MPROFILES} \
 	|| ${HAVE_GNOME:Mpygnome2}!=""
 USE_GNOME+=	pygnome2
 .endif

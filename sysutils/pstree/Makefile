@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pstree
-PORTVERSION=	2.38
+PORTVERSION=	2.39
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.thp.uni-due.de/pub/source/ \
 		LOCAL/jgh/sysutils/${PORTNAME}/

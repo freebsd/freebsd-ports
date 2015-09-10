@@ -3,8 +3,7 @@
 PORTNAME=	kdenlive
 PORTVERSION=	0.9.10
 CATEGORIES=	multimedia kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src/
+MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src/
 
 MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	KDE professional quality non-linear video editing suite

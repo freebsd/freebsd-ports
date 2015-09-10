@@ -17,6 +17,7 @@
     SUBDIR += fish
     SUBDIR += flash
     SUBDIR += heirloom-sh
+    SUBDIR += hs-shelly
     SUBDIR += ibsh
     SUBDIR += jailkit
     SUBDIR += ksh93
@@ -41,6 +42,7 @@
     SUBDIR += v7sh
     SUBDIR += viewglob
     SUBDIR += vshnu
+    SUBDIR += wcd
     SUBDIR += zsh
 
 .include <bsd.port.subdir.mk>

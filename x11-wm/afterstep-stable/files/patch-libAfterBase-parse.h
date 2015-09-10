@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- libAfterBase/parse.h.orig	2014-04-12 10:22:23.000000000 -0700
 +++ libAfterBase/parse.h	2014-04-11 06:31:10.000000000 -0700
 @@ -73,7 +73,7 @@

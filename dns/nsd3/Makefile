@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nsd
-PORTVERSION=	3.2.18
+PORTVERSION=	3.2.19
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
@@ -14,6 +14,9 @@ COMMENT=	Authoritative only non-recursive name server
 LICENSE=	BSD3CLAUSE
 
 CONFLICTS=	nsd-[0-2]* nsd-4*
+
+DEPRECATED=		NSD 3 is EOL, please upgrade to NSD 4 in dns/nsd
+EXPIRATION_DATE=	2016-05-20
 
 USE_RC_SUBR=	nsd
 
@@ -44,7 +47,7 @@ PORTDOCS=	CREDITS ChangeLog LICENSE NSD-DATABASE NSD-DIFFFILE \
 		differences.tex
 
 OPTIONS_DEFINE=	ROOT_SERVER LARGEFILE IPV6 BIND8_STATS ZONE_STATS CHECKING \
-		MINRESPSIZE NSEC3 NSEC3PREHASH MMAP MAXIPS DOCS RRL EUI_RRTYPES
+		MINRESPSIZE NSEC3 NSEC3PREHASH MMAP MAXIPS DOCS RRL
 OPTIONS_DEFAULT=	LARGEFILE IPV6 NSEC3 NSEC3PREHASH MINRESPSIZE
 
 ROOT_SERVER_DESC=	Configure as a root server
@@ -58,7 +61,6 @@ MINRESPSIZE_DESC=	Minimial response sizing
 MMAP_DESC=		Use mmap instead of malloc (experimental)
 MAXIPS_DESC=		Raise max-ips from 8 to ${NSDMAX_IPS}
 RRL_DESC=		Response Rate Limiting
-EUI_RRTYPES_DESC=	EUI48 and EUI64 RRtypes support
 
 ROOT_SERVER_CONFIGURE_ENABLE=	root-server
 LARGEFILE_CONFIGURE_ENABLE=	largefile
@@ -71,7 +73,6 @@ NSEC3PREHASH_CONFIGURE_ENABLE=	full-prehash
 MMAP_CONFIGURE_ENABLE=		mmap
 MAXIPS_CONFIGURE_ON=		--with-max-ips=${NSDMAX_IPS}
 RRL_CONFIGURE_ENABLE=		ratelimit
-EUI_RRTYPES_CONFIGURE_ENABLE=	draft-rrtypes
 
 .include <bsd.port.options.mk>
 
@@ -87,5 +88,11 @@ post-install:
 		${STAGEDIR}${PREFIX}/etc/nsd/nsd.conf.sample
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/nsd \
+		${STAGEDIR}${PREFIX}/sbin/nsd-checkconf \
+		${STAGEDIR}${PREFIX}/sbin/nsd-notify \
+		${STAGEDIR}${PREFIX}/sbin/nsd-patch \
+		${STAGEDIR}${PREFIX}/sbin/nsd-xfer \
+		${STAGEDIR}${PREFIX}/sbin/zonec
 
 .include <bsd.port.mk>

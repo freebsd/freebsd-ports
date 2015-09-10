@@ -4,12 +4,11 @@
 PORTNAME=	vnconvert
 PORTVERSION=	1.0
 CATEGORIES=	vietnamese
-MASTER_SITES=	LOCAL
-MASTER_SITE_SUBDIR=	obrien
+MASTER_SITES=	LOCAL/obrien
 DISTNAME=	convert
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts Vietnamese text files between popular formats
 
 NO_WRKSUBDIR=	yes

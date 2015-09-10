@@ -5,7 +5,7 @@ PORTNAME=	skipfish
 PORTVERSION=	2.10b
 PORTREVISION=	3
 CATEGORIES=	security www
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Fully automated, active web application security reconnaissance tool

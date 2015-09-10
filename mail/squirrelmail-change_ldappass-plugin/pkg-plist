@@ -44,31 +44,4 @@
 %%SQUIRRELDIR%%/plugins/change_ldappass/version
 %%SQUIRRELDIR%%/plugins/change_ldappass/setup.php
 %%SQUIRRELDIR%%/plugins/change_ldappass/xgetpot
-@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/mkntpwd
-@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/de_DE/LC_MESSAGES
-@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/de_DE
-@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/pl_PL/LC_MESSAGES
-@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/pl_PL
-@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/fr_FR/LC_MESSAGES
-@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/fr_FR
-@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/nn_NO/LC_MESSAGES
-@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/nn_NO
-@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/el_GR/LC_MESSAGES
-@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/el_GR
-@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/cs_CZ/LC_MESSAGES
-@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/cs_CZ
-@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/sv_SE/LC_MESSAGES
-@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/sv_SE
-@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/no_NO/LC_MESSAGES
-@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/no_NO
-@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/pt_BR/LC_MESSAGES
-@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/pt_BR
-@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/lt_LT/LC_MESSAGES
-@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/lt_LT
-@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/es_ES/LC_MESSAGES
-@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/es_ES
-@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/nl_NL/LC_MESSAGES
-@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/nl_NL
-@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale
-@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass
 @exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin %%SQUIRREL_PLUGIN_NAME%%; fi

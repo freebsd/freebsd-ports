@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	ReadLine-Gnu
-PORTVERSION=	1.26
+PORTVERSION=	1.27
+PORTREVISION=	1
 CATEGORIES=	devel perl5
-MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=Term
+MASTER_SITES=	CPAN/Term
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Term-${PORTNAME}-${PORTVERSION}
 
@@ -18,5 +18,8 @@ LICENSE_COMB=	dual
 USES=		perl5 readline
 CFLAGS+=	${CPPFLAGS}
 USE_PERL5=	configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Term/ReadLine/Gnu/Gnu.so
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	git
-PORTVERSION=	2.4.0
+PORTVERSION=	2.5.1
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -16,7 +16,7 @@ COMMENT?=	Distributed source code management tool
 
 LICENSE=	GPLv2
 
-CONFLICTS?=	git-subversion-[0-9]* git-lite-[0-9]*
+CONFLICTS_INSTALL?=	git-subversion-[0-9]* git-lite-[0-9]*
 
 USERS=		git_daemon
 GROUPS=		git_daemon
@@ -31,10 +31,12 @@ MAKE_ENV+=	V=1
 USE_OPENSSL=	yes
 USE_RC_SUBR=	git_daemon
 SHEBANG_FILES=	*.perl */*.perl */*/*.perl */*.pl */*/*.pl */*/*/*.pl \
+		t/*/*/pre t/*/*/post t/Git-SVN/Utils/*.t \
 		contrib/hooks/update-paranoid \
 		contrib/credential/netrc/git-credential-netrc \
 		contrib/diff-highlight/diff-highlight \
-		contrib/buildsystems/generate contrib/contacts/git-contacts
+		contrib/buildsystems/generate contrib/contacts/git-contacts \
+		contrib/svn-fe/svnrdump_sim.py
 
 CONFIGURE_ARGS=	--enable-pthreads=-pthread ac_cv_header_libcharset_h=no
 
@@ -154,6 +156,7 @@ post-patch:
 .endif
 .if empty(PORT_OPTIONS:MGITWEB)
 	@${REINPLACE_CMD} -e '/$$(MAKE) -C gitweb install/d' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s,/usr/bin/perl,${PERL}," ${WRKSRC}/t/gitweb-lib.sh
 .endif
 .if empty(PORT_OPTIONS:MP4)
 	@${REINPLACE_CMD} -e '/^SCRIPT_PYTHON += git-p4.py$$/d' ${WRKSRC}/Makefile

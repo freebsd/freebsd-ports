@@ -4,8 +4,7 @@
 PORTNAME=	poi
 PORTVERSION=	3.10.1
 CATEGORIES=	textproc devel java
-MASTER_SITES=	${MASTER_SITE_APACHE}
-MASTER_SITE_SUBDIR=	${PORTNAME:S,-,/,}/release/bin
+MASTER_SITES=	APACHE/${PORTNAME}/release/bin
 PKGNAMEPREFIX=	apache-
 DISTNAME=	${PORTNAME}-bin-${PORTVERSION}-${RELEASE_DATE}
 
@@ -13,6 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java API To Access Microsoft Format Files
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PORTDOCS=	*
 USE_JAVA=	yes
@@ -40,7 +40,7 @@ do-install:
 	@${ECHO_MSG} " [ DONE ]"
 	@${ECHO_MSG} -n ">> Installing documentation in ${STAGEDIR}${DOCSDIR}/..."
 	@cd ${WRKSRC}/docs \
-	  && ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \; \
+	  && ${FIND} . -type d -not -empty -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \; \
 	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
 	@${ECHO_MSG} " [ DONE ]"
 

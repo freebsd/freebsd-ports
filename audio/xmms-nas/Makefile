@@ -3,7 +3,7 @@
 
 PORTNAME=	xmms-nas
 PORTVERSION=	0.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/willem/
 
@@ -20,5 +20,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 
 PLIST_FILES=	lib/xmms/Output/libnas.so
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/xmms/Output/libnas.so
 
 .include <bsd.port.mk>

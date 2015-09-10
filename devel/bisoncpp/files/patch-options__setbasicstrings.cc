@@ -1,6 +1,6 @@
---- ./options/setbasicstrings.cc.orig	2013-06-24 15:10:12.000000000 +0200
-+++ ./options/setbasicstrings.cc	2013-11-27 18:56:48.000000000 +0100
-@@ -35,7 +35,7 @@
+--- options/setbasicstrings.cc.orig	2014-02-17 12:30:08 UTC
++++ options/setbasicstrings.cc
+@@ -34,7 +34,7 @@ void Options::setBasicStrings()
  
      string nTokens;
      if (d_arg.option(&nTokens, "required-tokens"))

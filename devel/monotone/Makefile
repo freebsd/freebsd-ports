@@ -22,7 +22,6 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 SUB_FILES=	pkg-message
 USES=		cpe iconv pkgconfig gmake perl5 lua:51 tar:bzip2 makeinfo
 USE_PERL5=	build
-MAKE_JOBS_SAFE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
@@ -91,6 +90,5 @@ post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} NEWS UPGRADE ${STAGEDIR}${DOCSDIR}
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

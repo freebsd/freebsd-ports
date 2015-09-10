@@ -1,0 +1,38 @@
+pci_piix3_xen_ide_unplug should completely unhook the unplugged
+IDEDevice from the corresponding BlockBackend, otherwise the next call
+to release_drive will try to detach the drive again.
+
+Suggested-by: Kevin Wolf <kwolf@redhat.com>
+Signed-off-by: Stefano Stabellini <stefano.stabellini@eu.citrix.com>
+---
+ hw/ide/piix.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/hw/ide/piix.c b/hw/ide/piix.c
+index 40757eb..0524dce 100644
+--- a/hw/ide/piix.c
++++ b/hw/ide/piix.c
+@@ -172,6 +172,7 @@ int pci_piix3_xen_ide_unplug(DeviceState *dev)
+     PCIIDEState *pci_ide;
+     DriveInfo *di;
+     int i = 0;
++    IDEDevice *idedev;
+ 
+     pci_ide = PCI_IDE(dev);
+ 
+@@ -184,6 +185,12 @@ int pci_piix3_xen_ide_unplug(DeviceState *dev)
+             }
+             bdrv_close(di->bdrv);
+             pci_ide->bus[di->bus].ifs[di->unit].bs = NULL;
++            if (!(i % 2)) {
++                idedev = pci_ide->bus[di->bus].master;
++            } else {
++                idedev = pci_ide->bus[di->bus].slave;
++            }
++            idedev->conf.bs = NULL;
+             drive_put_ref(di);
+         }
+     }
+-- 
+2.1.4
+

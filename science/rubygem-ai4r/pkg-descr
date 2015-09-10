@@ -1,30 +1,23 @@
-AI4R is a collection of ruby algorithms implementations,
-covering several Artificial intelligence fields.  It implements:
+AI4R is a collection of ruby algorithms implementations, covering several
+Artificial intelligence fields. It implements:
+* Genetic algorithms
+* Self-organized maps (SOM)
+* Neural Networks
+  - Multilayer perceptron with Backpropagation learning
+  - Hopfield net
+* Automatic classifiers (Machine Learning)
+  - ID3 (Decision Trees)
+  - PRISM (J. Cendrowska, 1987)
+  - Multilayer Perceptron
+  - OneR (AKA One Attribute Rule, 1R)
+  - ZeroR
+  - Hyperpipes
+  - Naive Bayes
+  - IB1 (D. Aha, D. Kibler - 1991)
+* Data clustering
+  - K-means, Bisecting K-means
+  - Single linkage, Complete linkage, Average linkage, Weighted Average linkage,
+    Centroid linkage, Median linkage, Ward's method linkage
+  - Diana (Divisive Analysis)
 
- * Genetic algorithms
- * Self-organized maps (SOM)
- * Neural Networks
-    - Multilayer perceptron with Backpropagation learning
-    - Hopfield net
- * Automatic classifiers (Machine Learning)
-    - ID3 (Decision Trees)
-    - PRISM (J. Cendrowska, 1987)
-    - Multilayer Perceptron
-    - OneR (AKA One Attribute Rule, 1R)
-    - ZeroR
-    - Hyperpipes
-    - Naive Bayes
-    - IB1 (D. Aha, D. Kibler - 1991)
- * Data clustering
-    - K-means
-    - Bisecting k-means
-    - Single linkage
-    - Complete linkage
-    - Average linkage
-    - Weighted Average linkage
-    - Centroid linkage
-    - Median linkage
-    - Ward's method linkage
-    - Diana (Divisive Analysis)
-
-WWW: http://rubygems.org/gems/ai4r/
+WWW: http://www.ai4r.org/

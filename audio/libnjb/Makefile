@@ -25,13 +25,8 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
-.else
-CONFIGURE_ENV+=	ac_cv_prog_HAVE_DOXYGEN=no
-.endif
+DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOCS_CONFIGURE_ENV_OFF=	ac_cv_prog_HAVE_DOXYGEN=no
 
 post-patch:
 	@${REINPLACE_CMD} -e \

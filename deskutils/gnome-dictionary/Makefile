@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-dictionary
-PORTVERSION=	3.14.2
+PORTVERSION=	3.16.2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -13,10 +13,10 @@ COMMENT=	GNOME 3 dictionary lookup application
 BUILD_DEPENDS=	gtkdoc-check:${PORTSDIR}/textproc/gtk-doc \
 		itstool:${PORTSDIR}/textproc/itstool
 
-CONFLICTS=	gnome-utils-2.[0-9]*
+PORTSCOUT=	limitw:1,even
 
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
-USE_GNOME=	gnomeprefix intlhack gtk30
+USE_GNOME=	intlhack introspection:build gtk30
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

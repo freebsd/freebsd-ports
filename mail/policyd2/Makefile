@@ -3,7 +3,7 @@
 
 PORTNAME=	policyd2
 PORTVERSION=	2.0.14
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://download.policyd.org/v${PORTVERSION}/
 DISTNAME=	cluebringer-v${PORTVERSION}
@@ -70,6 +70,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/cluebringer.conf \
 		${STAGEDIR}${PREFIX}/etc/cluebringer.conf.sample
 	(cd ${WRKSRC}/webui && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
+	${MV} ${STAGEDIR}${WWWDIR}/includes/config.php \
+		${STAGEDIR}${WWWDIR}/includes/config.php.sample
 	(cd ${WRKSRC}/cbp && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/cbp)
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} contrib ${STAGEDIR}${DATADIR})
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} database ${STAGEDIR}${DATADIR})

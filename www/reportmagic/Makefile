@@ -3,7 +3,7 @@
 
 PORTNAME=	reportmagic
 PORTVERSION=	2.21
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://www.reportmagic.org/	\
 		http://www.reportmagic.org.uk/	\
@@ -14,24 +14,18 @@ DISTNAME=	rmagic-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web site statistics post-processor for Analog
 
-USES=		perl5
-
 RUN_DEPENDS=	analog:${PORTSDIR}/www/analog \
 		p5-GD-Graph3d>=0:${PORTSDIR}/graphics/p5-GD-Graph3d \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-Config-IniFiles>=0:${PORTSDIR}/devel/p5-Config-IniFiles
 
+USES=		perl5 shebangfix
+SHEBANG_FILES=	rmagic.pl
+NO_BUILD=	yes
+NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
-NO_BUILD=	YES
 
 do-install:
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} DESTDIR=${STAGEDIR} ${PERL5} Install.PL -no_modules
-
-post-install:
-	@${ECHO}
-	@${ECHO} "You must agree to the [Artistic] license agreement at"
-	@${ECHO} "${PREFIX}/share/doc/reportmagic/license.html before"
-	@${ECHO} "using Report Magic."
-	@${ECHO}
 
 .include <bsd.port.mk>

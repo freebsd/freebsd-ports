@@ -61,3 +61,4 @@ share/mimelnk/chemical/x-ncbi-asn1.desktop
 share/mimelnk/chemical/x-shelx.desktop
 share/mimelnk/chemical/x-vmd.desktop
 share/mimelnk/chemical/x-xyz.desktop
+@unexec rm -rf %D/share/mime/chemical

@@ -3,7 +3,7 @@
 
 PORTNAME=	griffith
 PORTVERSION=	0.13
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils
 MASTER_SITES=	http://launchpadlibrarian.net/87859599/
 
@@ -15,14 +15,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy06>=0.5:${PORTSDIR}/databases/py-sqlalchemy06 \
-		${PYTHON_PKGNAMEPREFIX}pillow>=0:${PORTSDIR}/graphics/py-pillow \
-		${PYXML}
+		${PYTHON_PKGNAMEPREFIX}pillow>=0:${PORTSDIR}/graphics/py-pillow
 
 USE_GNOME=	pygtk2
-USES=		gmake gettext python tar:xz
+USES=		gmake gettext python:2 tar:xz
 NO_BUILD=	yes
 
-OPTIONS_DEFINE=		CHARDET LXML PYGNOMEEXTRAS REPORTLAB2
+OPTIONS_DEFINE=		CHARDET LXML REPORTLAB2
 OPTIONS_DEFAULT=	LXML
 
 CHARDET_DESC=		chardet support
@@ -30,9 +29,6 @@ CHARDET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>=0:${PORTSDIR}/textproc/py-c
 
 LXML_DESC=		lxml support
 LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:${PORTSDIR}/devel/py-lxml
-
-PYGNOMEEXTRAS_DESC=	python-gnome-extras support
-PYGNOMEEXTRAS_USE=	GNOME=pygnomeextras
 
 REPORTLAB2_DESC=	ReportLab2 support
 

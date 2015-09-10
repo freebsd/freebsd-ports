@@ -1,6 +1,6 @@
---- qsstv/sound/soundcontrol.h.orig	2014-04-09 10:27:16.000000000 -0700
-+++ qsstv/sound/soundcontrol.h	2014-04-09 10:27:28.000000000 -0700
-@@ -22,8 +22,8 @@
+--- qsstv/sound/soundcontrol.h.orig	2014-12-06 14:41:00 UTC
++++ qsstv/sound/soundcontrol.h
+@@ -22,8 +22,8 @@ public:
  
  private:
    Ui::soundControl *ui;

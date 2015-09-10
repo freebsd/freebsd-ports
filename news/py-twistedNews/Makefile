@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	twistedNews
-PORTVERSION=	15.1.0
+PORTVERSION=	15.2.1
 CATEGORIES=	news devel python
 MASTER_SITES=	http://twistedmatrix.com/Releases/News/${PORTVERSION:R}/ \
 		LOCAL/sunpoet
@@ -14,7 +14,8 @@ COMMENT=	NNTP protocol implementation with client and server
 
 LICENSE=	MIT
 
-USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
+USE_PYTHON=	autoplist distutils
 USES=		python:2 tar:bzip2 twisted
 
 .include <bsd.port.mk>

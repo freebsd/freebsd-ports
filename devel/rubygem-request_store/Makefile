@@ -2,18 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	request_store
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	RequestStore gives you per-request global storage
 
-RUN_DEPENDS=	rubygem-rake>=0:${PORTSDIR}/devel/rubygem-rake \
-		rubygem-minitest>=3.0:${PORTSDIR}/devel/rubygem-minitest
+LICENSE=	MIT
+
+NO_ARCH=	yes
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=yes
+RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

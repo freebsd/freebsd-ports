@@ -18,7 +18,7 @@ USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} == 330 || (${PYTHON_VER} == 2.7 && ${PYTHON_REL} < 279)
+.if ${PYTHON_REL} == 3300 || (${PYTHON_VER} == 2.7 && ${PYTHON_REL} < 2709)
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0.14:${PORTSDIR}/security/py-openssl
 .endif
 

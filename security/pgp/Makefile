@@ -3,7 +3,7 @@
 
 PORTNAME=	pgp
 PORTVERSION=	2.6.3i
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	PACKETSTORM/crypt/pgp/V5.0
 DISTNAME=	pgp263is
@@ -30,10 +30,8 @@ do-install:
 	-${MKDIR} ${PGPLIB}
 	cd ${WRKSRC}/.. && \
 		${INSTALL_DATA} pgp.hlp doc/pgpdoc1.txt doc/pgpdoc2.txt ${PGPLIB}/
-	${INSTALL_DATA} ${WRKSRC}/../language.txt ${PGPLIB}/language.txt-dist
-	${INSTALL_DATA} ${WRKSRC}/../config.txt ${PGPLIB}/config.txt-dist
-
-post-install:
+	${INSTALL_DATA} ${WRKSRC}/../language.txt ${PGPLIB}/language.txt.sample
+	${INSTALL_DATA} ${WRKSRC}/../config.txt ${PGPLIB}/config.txt.sample
 	${INSTALL_MAN} ${STAGEDIR}${PREFIX}/man/man1/pgp.1 ${STAGEDIR}${PREFIX}/man/man1/pgp2.1
 
 .include <bsd.port.mk>

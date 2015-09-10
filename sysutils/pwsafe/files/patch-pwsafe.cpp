@@ -1,6 +1,6 @@
---- pwsafe.cpp.orig	2005-09-30 12:30:56.000000000 +0200
-+++ pwsafe.cpp	2014-09-17 15:44:48.000000000 +0200
-@@ -1019,7 +1019,12 @@
+--- pwsafe.cpp.orig	2005-09-30 10:30:56 UTC
++++ pwsafe.cpp
+@@ -1019,7 +1019,12 @@ int main(int argc, char **argv) {
        // seed the random number generator
        char rng_filename[1024];
        if (RAND_file_name(rng_filename,sizeof(rng_filename))) {
@@ -14,7 +14,7 @@
          if (rc) {
            if (arg_verbose > 0) printf("rng seeded with %d bytes from %s\n", rc, rng_filename);
          } else {
-@@ -2111,7 +2116,7 @@
+@@ -2111,7 +2116,7 @@ static secstring xmlescape(const secstri
        case '"': out += "&quot;"; break;
        case '&': out += "&amp;"; break;
        case '<': out += "&lt;"; break;

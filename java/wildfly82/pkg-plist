@@ -1,27 +1,27 @@
 @owner www
 @group www
-@mode 644
-%%APP_HOME%%/appclient/configuration/appclient.xml
-%%APP_HOME%%/appclient/configuration/logging.properties
-%%APP_HOME%%/domain/configuration/application-roles.properties
-%%APP_HOME%%/domain/configuration/application-users.properties
-%%APP_HOME%%/domain/configuration/default-server-logging.properties
-%%APP_HOME%%/domain/configuration/domain.xml
-%%APP_HOME%%/domain/configuration/host-master.xml
-%%APP_HOME%%/domain/configuration/host-slave.xml
-%%APP_HOME%%/domain/configuration/host.xml
-%%APP_HOME%%/domain/configuration/logging.properties
-%%APP_HOME%%/domain/configuration/mgmt-groups.properties
-%%APP_HOME%%/domain/configuration/mgmt-users.properties
-%%APP_HOME%%/standalone/configuration/application-roles.properties
-%%APP_HOME%%/standalone/configuration/application-users.properties
-%%APP_HOME%%/standalone/configuration/logging.properties
-%%APP_HOME%%/standalone/configuration/mgmt-groups.properties
-%%APP_HOME%%/standalone/configuration/mgmt-users.properties
-%%APP_HOME%%/standalone/configuration/standalone-full-ha.xml
-%%APP_HOME%%/standalone/configuration/standalone-full.xml
-%%APP_HOME%%/standalone/configuration/standalone-ha.xml
-%%APP_HOME%%/standalone/configuration/standalone.xml
+@mode 600
+@sample %%APP_HOME%%/appclient/configuration/appclient.xml.sample
+@sample %%APP_HOME%%/appclient/configuration/logging.properties.sample
+@sample %%APP_HOME%%/domain/configuration/application-roles.properties.sample
+@sample %%APP_HOME%%/domain/configuration/application-users.properties.sample
+@sample %%APP_HOME%%/domain/configuration/default-server-logging.properties.sample
+@sample %%APP_HOME%%/domain/configuration/domain.xml.sample
+@sample %%APP_HOME%%/domain/configuration/host-master.xml.sample
+@sample %%APP_HOME%%/domain/configuration/host-slave.xml.sample
+@sample %%APP_HOME%%/domain/configuration/host.xml.sample
+@sample %%APP_HOME%%/domain/configuration/logging.properties.sample
+@sample %%APP_HOME%%/domain/configuration/mgmt-groups.properties.sample
+@sample %%APP_HOME%%/domain/configuration/mgmt-users.properties.sample
+@sample %%APP_HOME%%/standalone/configuration/application-roles.properties.sample
+@sample %%APP_HOME%%/standalone/configuration/application-users.properties.sample
+@sample %%APP_HOME%%/standalone/configuration/logging.properties.sample
+@sample %%APP_HOME%%/standalone/configuration/mgmt-groups.properties.sample
+@sample %%APP_HOME%%/standalone/configuration/mgmt-users.properties.sample
+@sample %%APP_HOME%%/standalone/configuration/standalone-full-ha.xml.sample
+@sample %%APP_HOME%%/standalone/configuration/standalone-full.xml.sample
+@sample %%APP_HOME%%/standalone/configuration/standalone-ha.xml.sample
+@sample %%APP_HOME%%/standalone/configuration/standalone.xml.sample
 @mode
 %%APP_HOME%%/LICENSE.txt
 %%APP_HOME%%/README.txt

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	responders
-PORTVERSION=	1.1.2
+PORTVERSION=	2.1.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +11,9 @@ COMMENT=	Simple Ruby DSL for making HTTP requests
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-railties4>=4.1.0:${PORTSDIR}/www/rubygem-railties4
+RUN_DEPENDS=	rubygem-railties4>=4.2.0:${PORTSDIR}/www/rubygem-railties4
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

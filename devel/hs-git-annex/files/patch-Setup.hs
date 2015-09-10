@@ -1,14 +1,14 @@
---- ./Setup.hs.orig	2014-01-22 21:23:18.000000000 +0100
-+++ ./Setup.hs	2014-07-10 21:52:00.000000000 +0200
-@@ -19,6 +19,7 @@
- main = defaultMainWithHooks simpleUserHooks
- 	{ preConf = configure
+--- Setup.hs.orig	2015-07-27 16:25:52 UTC
++++ Setup.hs
+@@ -23,6 +23,7 @@ main = defaultMainWithHooks simpleUserHo
+ 		Configure.run Configure.tests
+ 		return (Nothing, [])	
  	, postInst = myPostInst
 +	, postCopy = myPostCopy
  	}
  
- configure _ _ = do
-@@ -34,6 +35,15 @@
+ myPostInst :: Args -> InstallFlags -> PackageDescription -> LocalBuildInfo -> IO ()
+@@ -34,6 +35,15 @@ myPostInst _ (InstallFlags { installVerb
  	dest      = NoCopyDest
  	verbosity = fromFlag installVerbosity
  
@@ -24,17 +24,21 @@
  installGitAnnexShell :: CopyDest -> Verbosity -> PackageDescription -> LocalBuildInfo -> IO ()
  installGitAnnexShell copyDest verbosity pkg lbi =
  	rawSystemExit verbosity "ln"
-@@ -50,7 +60,7 @@
+@@ -50,14 +60,14 @@ installManpages :: CopyDest -> Verbosity
  installManpages copyDest verbosity pkg lbi =
  	installOrdinaryFiles verbosity dstManDir =<< srcManpages
    where
 -	dstManDir   = mandir (absoluteInstallDirs pkg lbi copyDest) </> "man1"
 +	dstManDir   = prefix (absoluteInstallDirs pkg lbi copyDest) </> "man" </> "man1"
  	srcManpages = zip (repeat srcManDir)
- 		<$> filterM doesFileExist manpages
- 	srcManDir   = ""
-@@ -60,4 +70,4 @@
- installDesktopFile copyDest verbosity pkg lbi =
+-		<$> filterM doesFileExist manpages
+-	srcManDir   = ""
++		<$> filterM (doesFileExist . (srcManDir </>)) manpages
++	srcManDir   = "man"
+ 	manpages    = ["git-annex.1", "git-annex-shell.1"]
+ 
+ installDesktopFile :: CopyDest -> Verbosity -> PackageDescription -> LocalBuildInfo -> IO ()
+ installDesktopFile copyDest _verbosity pkg lbi =
  	DesktopFile.install $ dstBinDir </> "git-annex"
    where
 -	dstBinDir = bindir $ absoluteInstallDirs pkg lbi copyDest

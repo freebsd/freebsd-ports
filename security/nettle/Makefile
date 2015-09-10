@@ -4,10 +4,9 @@
 PORTNAME=	nettle
 PORTVERSION=	2.7.1
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_GNU} \
+MASTER_SITES=	GNU \
 		http://www.lysator.liu.se/~nisse/archive/:liu \
 		ftp://ftp.lysator.liu.se/pub/security/lsh/:liu
-MASTER_SITE_SUBDIR=	${PORTNAME}/:DEFAULT
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Low-level cryptographic library

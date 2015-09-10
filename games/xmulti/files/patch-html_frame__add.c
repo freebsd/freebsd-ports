@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- html/frame_add.c.orig	Sun Aug 22 18:00:16 2004
 +++ html/frame_add.c	Sun Aug 22 18:00:27 2004
 @@ -215,7 +215,7 @@

@@ -3,13 +3,12 @@
 
 PORTNAME=	pstotext
 PORTVERSION=	1.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print
-MASTER_SITES=	http://ftp.gwdg.de/pub/%SUBDIR%/ \
-		http://ftp.sunet.se/pub/text-processing/postscript/interpreters/%SUBDIR%/ \
-		http://gd.tuwien.ac.at/pub/publishing/%SUBDIR%/ \
+MASTER_SITES=	http://ftp.gwdg.de/pub/ghostscript/contrib/ \
+		http://ftp.sunet.se/pub/text-processing/postscript/interpreters/ghostscript/contrib/ \
+		http://gd.tuwien.ac.at/pub/publishing/ghostscript/contrib/ \
 		http://fossies.org/unix/misc/
-MASTER_SITE_SUBDIR=	ghostscript/contrib
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PostScript to Text converter
@@ -19,7 +18,7 @@ LICENSE_NAME=	End User License Agreement
 LICENSE_FILE=	${WRKSRC}/pstotext.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USE_GHOSTSCRIPT_RUN=	yes
+USES=		ghostscript:run
 
 SUB_LIST=	LICENSE=${LICENSE} \
 		LICENSE_DIR=${_LICENSE_DIR}

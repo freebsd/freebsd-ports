@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Is a simple yet powerful Music Player Daemon library
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

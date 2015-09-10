@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cgiirc
-PORTVERSION=	0.5.10
+PORTVERSION=	0.5.11
 CATEGORIES=	irc www perl5
 MASTER_SITES=	http://cgiirc.org/releases/ \
 		SF/${PORTNAME}/cgi-irc/${PORTVERSION}

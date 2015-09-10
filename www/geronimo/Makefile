@@ -5,8 +5,7 @@ PORTNAME=	geronimo
 DISTVERSION=	3.0-beta-1
 PORTREVISION=	1
 CATEGORIES=	www devel java
-MASTER_SITES=	${MASTER_SITE_APACHE}
-MASTER_SITE_SUBDIR=	geronimo/${DISTVERSION}
+MASTER_SITES=	APACHE/geronimo/${DISTVERSION}
 DISTNAME=	${PORTNAME}-${WEBSERVER}-javaee6-${DISTVERSION}-bin
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,7 +15,11 @@ USES=		cpe
 CPE_VENDOR=	apache
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-NO_BUILD=	YES
+NO_BUILD=	yes
+
+CPE_VENDOR=	apache
+CPE_VERSION=	${DISTVERSION:C/-.*//}
+CPE_UPDATE=	${DISTVERSION:C/[^-]*((-.*)?)/\1/:C/-//g}
 
 USE_RC_SUBR=	geronimo3
 SUB_FILES=	pkg-deinstall
@@ -47,7 +50,6 @@ PID_FILE=	/var/run/${APP_SHORTNAME}.pid
 WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-bin//}
 JAR_FILE=	bin/server.jar
-LATEST_LINK=	${APP_SHORTNAME}
 PLIST_FILES=	"@(${GERONIMO_USER},${GERONIMO_GROUP},) ${GERONIMO_OUT:S,^${PREFIX}/,,}"
 
 SUB_LIST=	GERONIMO_HOME=${APP_HOME} \
@@ -90,7 +92,7 @@ post-install:
 	@${FIND} -s ${WRKSRC} -not -type d | \
 		 ${SED} -ne 's,^${WRKSRC},${APP_HOME:S,${PREFIX}/,,},p' >> ${TMPPLIST}
 	@${FIND} -s -d ${WRKSRC} -type d | \
-		 ${SED} -ne 's,^${WRKSRC},@dirrm ${APP_HOME:S,${PREFIX}/,,},p' >> ${TMPPLIST}
+		 ${SED} -ne 's,^${WRKSRC},@dir ${APP_HOME:S,${PREFIX}/,,},p' >> ${TMPPLIST}
 	@${ECHO_CMD} -e '@owner root\n@group wheel' >> ${TMPPLIST}
 
 .include <bsd.port.mk>

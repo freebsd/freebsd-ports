@@ -2,116 +2,136 @@ $FreeBSD$
 
 Fixes to make it work with Erlang R17
 
---- ../deps/meck/rebar.config.orig
-+++ ../deps/meck/rebar.config
-@@ -1,4 +1,6 @@
--{erl_opts, [warnings_as_errors, debug_info]}.
-+{erl_opts, [
-+	{platform_define, "^17-", 'ERLANG_17'},
-+	warnings_as_errors, debug_info]}.
- {xref_checks, [undefined_function_calls]}.
- {dialyzer_opts, [{warnings, [unmatched_returns]}]}.
+
+$FreeBSD$
+
+--- ../deps/riak_pb/src/riak_pb_kv_codec.erl.orig
++++ ../deps/riak_pb/src/riak_pb_kv_codec.erl
+@@ -49,7 +49,11 @@
  
---- ../deps/meck/src/meck_proc.erl.orig
-+++ ../deps/meck/src/meck_proc.erl
-@@ -46,6 +46,17 @@
- %%% Definitions
- %%%============================================================================
- 
+ -type symbolic_quorum() :: one | quorum | all | default.
+ -type value() :: binary().
 +-ifdef(ERLANG_17).
-+-record(state, {mod :: atom(),
-+                can_expect :: any | [{Mod::atom(), Ari::byte()}],
-+                expects :: dict:dict(),
-+                valid = true :: boolean(),
-+                history = [] :: meck_history:history() | undefined,
-+                original :: term(),
-+                was_sticky = false :: boolean(),
-+                reload :: {Compiler::pid(), {From::pid(), Tag::any()}} |
-+                undefined}).
++-type metadata() :: dict:dict().
 +-else.
- -record(state, {mod :: atom(),
-                 can_expect :: any | [{Mod::atom(), Ari::byte()}],
-                 expects :: dict(),
-@@ -55,6 +66,7 @@
-                 was_sticky = false :: boolean(),
-                 reload :: {Compiler::pid(), {From::pid(), Tag::any()}} |
-                 undefined}).
+ -type metadata() :: dict().
++-endif.
+ -type contents() :: [{metadata(), value()}].
+ 
+ %% @doc Convert a list of object {MetaData,Value} pairs to protocol
+
+$FreeBSD$
+
+--- ../deps/riak_pb/rebar.config.orig
++++ ../deps/riak_pb/rebar.config
+@@ -1,5 +1,5 @@
+ %% -*- mode: erlang -*-
+-{erl_opts, [debug_info]}.
++{erl_opts, [{platform_define, "^1[78]-", 'ERLANG_17'},debug_info]}.
+ {deps, [
+         {protobuffs, "0.8.1", {git, "git://github.com/basho/erlang_protobuffs.git", {tag, "0.8.1p1"}}}
+        ]}.
+
+$FreeBSD$
+
+--- ../deps/esip/src/esip_listener.erl.orig
++++ ../deps/esip/src/esip_listener.erl
+@@ -37,7 +37,11 @@
+ 
+ -include("esip_lib.hrl").
+ -define(TCP_SEND_TIMEOUT, 10000).
++-ifdef(ERLANG_17).
++-record(state, {listeners = dict:new() :: dict:dict()}).
++-else.
+ -record(state, {listeners = dict:new() :: dict()}).
 +-endif.
  
+ %%%===================================================================
+ %%% API
+
+$FreeBSD$
+
+--- ../deps/esip/rebar.config.orig
++++ ../deps/esip/rebar.config
+@@ -1,4 +1,5 @@
+-{erl_opts, [{i, "include"},
++{erl_opts, [{platform_define, "^1[78]-", 'ERLANG_17'},
++	    {i, "include"},
+ 	    {i, "deps/p1_stun/include"},
+ 	    {i, "../p1_stun/include"}]}.
  
- %%%============================================================================
-@@ -340,9 +352,17 @@
-     end.
+
+$FreeBSD$
+
+--- ../deps/p1_stun/src/turn.erl.orig
++++ ../deps/p1_stun/src/turn.erl
+@@ -56,6 +56,29 @@
  
- 
-+-ifdef(ERLANG_17).
-+-spec init_expects(Exports::[meck_expect:func_ari()] | undefined,
-+                   Options::[proplists:property()]) ->
-+        dict:dict().
-+-else.
- -spec init_expects(Exports::[meck_expect:func_ari()] | undefined,
-                    Options::[proplists:property()]) ->
-         dict().
-+-endif.
-+
-+
- init_expects(Exports, Options) ->
-     Passthrough = proplists:get_bool(passthrough, Options),
-     StubAll = proplists:is_defined(stub_all, Options),
-@@ -379,8 +399,13 @@
-     erlang:error(concurrent_reload).
- 
- 
-+-ifdef(ERLANG_17).
-+-spec do_get_result_spec(Expects::dict:dict(), Func::atom(), Args::[any()]) ->
-+        {meck_ret_spec:result_spec() | undefined, NewExpects::dict:dict()}.
-+-else.
- -spec do_get_result_spec(Expects::dict(), Func::atom(), Args::[any()]) ->
-         {meck_ret_spec:result_spec() | undefined, NewExpects::dict()}.
-+-endif.
- do_get_result_spec(Expects, Func, Args) ->
-     FuncAri = {Func, erlang:length(Args)},
-     Clauses = dict:fetch(FuncAri, Expects),
-@@ -411,23 +436,39 @@
-     end.
- 
+ -type addr() :: {inet:ip_address(), inet:port_number()}.
  
 +-ifdef(ERLANG_17).
-+-spec store_expect(Mod::atom(), meck_expect:func_ari(),
-+                   meck_expect:expect(), Expects::dict:dict()) ->
-+        {NewExpects::dict:dict(), CompilerPid::pid()}.
++-record(state,
++	{sock_mod = gen_udp             :: gen_udp | gen_tcp | p1_tls,
++	 sock                           :: inet:socket() | p1_tls:tls_socket(),
++	 addr = {{0,0,0,0}, 0}          :: addr(),
++	 owner = self()                 :: pid(),
++	 username = <<"">>              :: binary(),
++	 realm = <<"">>                 :: binary(),
++	 key = {<<"">>, <<"">>, <<"">>} :: {binary(), binary(), binary()},
++	 server_name = <<"">>           :: binary(),
++	 permissions = ?DICT:new()      :: dict:dict(),
++	 channels = ?DICT:new()         :: dict:dict(),
++	 max_permissions                :: non_neg_integer() | atom(),
++	 relay_ip = {127,0,0,1}         :: inet:ip_address(),
++	 min_port = 49152               :: non_neg_integer(),
++	 max_port = 65535               :: non_neg_integer(),
++	 relay_addr                     :: addr(),
++	 relay_sock                     :: inet:socket(),
++	 last_trid                      :: non_neg_integer(),
++	 last_pkt = <<>>                :: binary(),
++	 seq = 1                        :: non_neg_integer(),
++	 life_timer                     :: reference()}).
 +-else.
- -spec store_expect(Mod::atom(), meck_expect:func_ari(),
-                    [meck_expect:func_clause()], Expects::dict()) ->
-         {NewExpects::dict(), CompilerPid::pid()}.
+ -record(state,
+ 	{sock_mod = gen_udp             :: gen_udp | gen_tcp | p1_tls,
+ 	 sock                           :: inet:socket() | p1_tls:tls_socket(),
+@@ -77,6 +100,7 @@
+ 	 last_pkt = <<>>                :: binary(),
+ 	 seq = 1                        :: non_neg_integer(),
+ 	 life_timer                     :: reference()}).
 +-endif.
- store_expect(Mod, FuncAri, Clauses, Expects) ->
-     NewExpects = dict:store(FuncAri, Clauses, Expects),
-     compile_expects(Mod, NewExpects).
  
+ %%====================================================================
+ %% API
+
+$FreeBSD$
+
+--- ../deps/p1_stun/rebar.config.orig
++++ ../deps/p1_stun/rebar.config
+@@ -1,4 +1,5 @@
+-{erl_opts, [debug_info, {i, "include"}]}.
++{erl_opts, [{platform_define, "^1[78]-", 'ERLANG_17'},
++	    debug_info, {i, "include"}]}.
  
+ {deps, [{p1_tls, ".*", {git, "git://github.com/processone/tls.git"}},
+ 	{p1_utils, ".*", {git, "git://github.com/processone/p1_utils.git"}}]}.
+
+$FreeBSD$
+
+--- ../deps/p1_stun/src/stun_listener.erl.orig
++++ ../deps/p1_stun/src/stun_listener.erl
+@@ -36,7 +36,11 @@
+          terminate/2, code_change/3]).
+ 
+ -define(TCP_SEND_TIMEOUT, 10000).
 +-ifdef(ERLANG_17).
-+-spec do_delete_expect(Mod::atom(), meck_expect:func_ari(), Expects::dict:dict()) ->
-+        {NewExpects::dict:dict(), CompilerPid::pid()}.
++-record(state, {listeners = dict:new() :: dict:dict()}).
 +-else.
- -spec do_delete_expect(Mod::atom(), meck_expect:func_ari(), Expects::dict()) ->
-         {NewExpects::dict(), CompilerPid::pid()}.
+ -record(state, {listeners = dict:new() :: dict()}).
 +-endif.
- do_delete_expect(Mod, FuncAri, Expects) ->
-     NewExpects = dict:erase(FuncAri, Expects),
-     compile_expects(Mod, NewExpects).
  
- 
-+-ifdef(ERLANG_17).
-+-spec compile_expects(Mod::atom(), Expects::dict:dict()) ->
-+        {NewExpects::dict:dict(), CompilerPid::pid()}.
-+-else.
- -spec compile_expects(Mod::atom(), Expects::dict()) ->
-         {NewExpects::dict(), CompilerPid::pid()}.
-+-endif.
- compile_expects(Mod, Expects) ->
-     %% If the recompilation is made by the server that executes a module
-     %% no module that is called from meck_code:compile_and_load_forms/2
+ %%%===================================================================
+ %%% API
 --- ../deps/riakc/rebar.config.orig
 +++ ../deps/riakc/rebar.config
 @@ -1,6 +1,8 @@
@@ -119,7 +139,7 @@ Fixes to make it work with Erlang R17
  {eunit_opts, [verbose]}.
 -{erl_opts, [warnings_as_errors, debug_info]}.
 +{erl_opts, [
-+	{platform_define, "^17-", 'ERLANG_17'},
++	{platform_define, "^1[78]-", 'ERLANG_17'},
 +        warnings_as_errors, debug_info]}.
  {deps, [
          {riak_pb, ".*", {git, "git://github.com/basho/riak_pb", {tag, "1.4.4.0"}}}
@@ -206,3 +226,4 @@ Fixes to make it work with Erlang R17
  
  %% @doc Create a linked process to talk with the riak server on Address:Port
  %%      Client id will be assigned by the server.
+

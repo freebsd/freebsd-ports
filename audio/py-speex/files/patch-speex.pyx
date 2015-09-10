@@ -1,6 +1,6 @@
---- speex.pyx.orig	Sat Mar  3 00:32:39 2007
-+++ speex.pyx	Sat Mar  3 00:33:01 2007
-@@ -365,7 +365,7 @@
+--- speex.pyx.orig	2003-11-24 05:29:33 UTC
++++ speex.pyx
+@@ -365,7 +365,7 @@ cdef class new:
              bufOut[bufOutSiz] = nBytes % 256
              bufOut[bufOutSiz+1] = nBytes / 256
              bufOutSiz = bufOutSiz + 2
@@ -9,7 +9,7 @@
              # printf("ok5\n")
              bufOutSiz = bufOutSiz + nBytes
              # printf("ok6\n")
-@@ -522,7 +522,7 @@
+@@ -522,7 +522,7 @@ cdef class new:
        
                      # Copy from float to short (16 bits) for output
                      for i from 0 <= i < self.encFramesPerBlock:

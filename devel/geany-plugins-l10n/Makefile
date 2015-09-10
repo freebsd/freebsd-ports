@@ -7,5 +7,7 @@ CATEGORIES=	devel
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Localization messages for Geany plugins
 
+NO_ARCH=	yes
+
 .include "${.CURDIR}/../geany-plugins/files/Makefile.common"
 .include <bsd.port.mk>

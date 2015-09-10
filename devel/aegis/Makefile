@@ -3,6 +3,7 @@
 
 PORTNAME=	aegis
 PORTVERSION=	4.25
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 DISTVERSIONSUFFIX=	.D510
@@ -12,11 +13,10 @@ COMMENT=	Transaction-based software configuration management system
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	ps2pdf:${PORTSDIR}/print/ghostscript9-nox11
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	tkdiff:${PORTSDIR}/textproc/tkdiff
 
-USES=		gettext perl5 tk
+USES=		gettext ghostscript perl5 tk
 USE_GNOME=	libxml2
 USE_GCC=	any
 GNU_CONFIGURE=	yes

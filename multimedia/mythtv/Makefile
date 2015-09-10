@@ -3,7 +3,7 @@
 
 PORTNAME=	mythtv
 PORTVERSION=	0.27.0.20140121
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia
 MASTER_SITES=	http://people.freebsd.org/~decke/distfiles/
 
@@ -30,7 +30,9 @@ WRKSRC_SUBDIR=	${PORTNAME}
 ONLY_FOR_ARCHS=	i386 amd64
 USE_PERL5=	run build
 NOPRECIOUSMAKEVARS=	# don't override $(ARCH) in ffmpeg makefiles
-USES=		gmake libtool perl5 pkgconfig pathfix
+USES=		gmake libtool perl5 pkgconfig pathfix shebangfix
+SHEBANG_FILES=	programs/scripts/database/mythconverg_backup.pl \
+		programs/scripts/database/mythconverg_restore.pl
 USE_QT4=	gui sql network script linguist_build l10n sql-mysql_run \
 		moc_build qmake_build rcc_build uic_build imageformats
 QT_NONSTANDARD=	yes

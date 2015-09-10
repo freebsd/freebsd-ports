@@ -3,13 +3,12 @@
 
 PORTNAME?=	tidy
 DISTVERSION=	090315-cvs
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	LOCAL/thierry
 #MASTER_SITES=	http://tidy.sourceforge.net/src/%SUBDIR%/	\
 #		http://tidy.sourceforge.net/docs/:docs
 #MASTER_SITE_SUBDIR=	. old
-MASTER_SITE_SUBDIR=	thierry
 PKGNAMESUFFIX?=	-devel
 
 MAINTAINER?=	thierry@FreeBSD.org

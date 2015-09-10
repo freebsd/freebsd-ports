@@ -3,7 +3,7 @@
 
 PORTNAME=	fftw
 PORTVERSION=	2.1.5
-PORTREVISION?=	11
+PORTREVISION?=	12
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ 		\
 		ftp://ftp.fftw.org/pub/fftw/old/ 	\
@@ -13,7 +13,8 @@ MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ 		\
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Fast C routines to compute the Discrete Fourier Transform
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	DOCS
 
@@ -24,6 +25,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 USES=		fortran gmake libtool:keepla
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 BROKEN_sparc64=	does not build
 

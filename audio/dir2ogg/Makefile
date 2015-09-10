@@ -5,8 +5,7 @@ PORTNAME=	dir2ogg
 PORTVERSION=	0.11.8
 PORTREVISION=	4
 CATEGORIES=	audio
-MASTER_SITES=	http://jak-linux.org/projects/dir2ogg/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTVERSION:R}
+MASTER_SITES=	http://jak-linux.org/projects/dir2ogg/${PORTVERSION:R}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line {wav,mp3,m4a} to ogg converter

@@ -63,7 +63,7 @@
 +  int exit_code = -1;
 +  if (!process.WaitForExitWithTimeout(base::TimeDelta::FromMilliseconds(3000),
 +                                      &exit_code)) {
-+    base::KillProcess(process.Handle(), -1, false);
++    process.Terminate(-1, false);
 +    base::EnsureProcessTerminated(process.Pass());
 +    return StorageMonitor::EJECT_FAILURE;
 +  }

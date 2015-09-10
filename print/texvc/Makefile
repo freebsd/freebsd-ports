@@ -2,7 +2,7 @@
 
 PORTNAME=	texvc
 PORTVERSION=	20050202
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	SF/wikipedia/Support%20files/${PORTNAME}%20Linux-x86%20source%20%2B%20binary
 DISTNAME=	${PORTNAME}-linux-x86-${PORTVERSION}
@@ -18,16 +18,12 @@ BUILD_WRKSRC=	${WRKSRC}/src
 PLIST_FILES=	bin/texvc
 
 OPTIONS_DEFINE=	RASTER
-OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+OPTIONS_DEFAULT:=	${OPTIONS_DEFINE}
+
 RASTER_DESC=	rasterization support
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MRASTER}
-USE_GHOSTSCRIPT_RUN=	yes
-USE_TEX=	latex dvipsk
-RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
-.endif
+RASTER_USES=	ghostscript:run
+RASTER_USE=	TEX=latex,dvipsk
+RASTER_RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/texvc ${STAGEDIR}${PREFIX}/bin

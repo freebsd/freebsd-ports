@@ -4,9 +4,8 @@
 PORTNAME=	webscarab
 PORTVERSION=	20090427
 CATEGORIES=	security www java
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
+MASTER_SITES=	LOCAL/niels \
 		http://people.freebsd.org/~niels/distfiles/
-MASTER_SITE_SUBDIR=	niels
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework for analysing HTTP and HTTPS web application traffic

@@ -1,6 +1,6 @@
---- send_packet_bsd.c.orig	2009-05-04 16:27:55.000000000 -0700
-+++ send_packet_bsd.c	2009-05-04 16:28:43.000000000 -0700
-@@ -56,7 +56,13 @@
+--- send_packet_bsd.c.orig	2009-05-23 11:11:58 UTC
++++ send_packet_bsd.c
+@@ -56,7 +56,13 @@ int send_packet_bsd(const char *dev, u_c
        flock(bpffd,LOCK_EX);
        
        // Bind it to a device

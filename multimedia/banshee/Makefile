@@ -36,7 +36,7 @@ USES=		desktop-file-utils gmake libtool mono pathfix perl5 \
 		pkgconfig shared-mime-info tar:xz
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomedocutils gnomesharp20 gtksharp20
+USE_GNOME=	gnomedocutils gnomesharp20 gtksharp20 intltool
 USE_GSTREAMER=	cdparanoia
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME:C/-.*//}
 USE_XORG=	xrandr xxf86vm
@@ -45,6 +45,7 @@ INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-vendor-build-id=FreeBSD\ BSD\#\ Project --disable-gio-hardware --disable-boo
+CONFIGURE_ENV=	ac_cv_path_MCS=${LOCALBASE}/bin/mcs
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 

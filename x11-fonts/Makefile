@@ -166,6 +166,7 @@
     SUBDIR += ubuntu-font
     SUBDIR += urwfonts
     SUBDIR += urwfonts-ttf
+    SUBDIR += uw-ttyp0
     SUBDIR += vollkorn-ttf
     SUBDIR += webfonts
     SUBDIR += wqy

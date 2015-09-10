@@ -8,6 +8,8 @@ MASTER_SITES=	RG
 MAINTAINER=	mhjacks@swbell.net
 COMMENT=	SNMP library for Ruby
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

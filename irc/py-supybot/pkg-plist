@@ -10,6 +10,7 @@ man/man1/supybot-adduser.1.gz
 man/man1/supybot-botchk.1.gz
 man/man1/supybot-plugin-create.1.gz
 man/man1/supybot-plugin-doc.1.gz
+man/man1/supybot-test.1.gz
 man/man1/supybot-wizard.1.gz
 man/man1/supybot.1.gz
 %%PYTHON_SITELIBDIR%%/supybot/__init__.py
@@ -849,7 +850,5 @@ man/man1/supybot.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ACKS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/GETTING_STARTED
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/RELNOTES

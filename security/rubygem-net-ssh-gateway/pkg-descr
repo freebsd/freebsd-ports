@@ -7,4 +7,4 @@ restricted access.
 * Easily manage forwarded ports
 * Establish Net::SSH connections through firewalls
 
-WWW: http://rubygems.org/gems/net-ssh-gateway/
+WWW: https://github.com/net-ssh/net-scp

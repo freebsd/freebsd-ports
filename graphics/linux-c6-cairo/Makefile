@@ -3,8 +3,9 @@
 
 PORTNAME=	cairo
 PORTVERSION=	1.8.8
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	graphics linux
+MASTER_SITES=	CENTOS_LINUX_UPDATES
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Vector graphics library Cairo (Linux CentOS ${LINUX_DIST_VER})
@@ -16,11 +17,9 @@ USE_LINUX=	c6
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	fontconfig png xorglibs
 
-RPMVERSION=	3.1.el6
+RPMVERSION=	6.el6_6
 USE_LDCONFIG=	yes
 
-PLIST_FILES=	usr/lib/libcairo.so.2 \
-		usr/lib/libcairo.so.2.10800.8
 DOCSDIR=	${PREFIX}/usr/share/doc/cairo-${PORTVERSION}
 PORTDOCS=	AUTHORS BIBLIOGRAPHY BUGS COPYING COPYING-LGPL-2.1 \
 		COPYING-MPL-1.1 NEWS README

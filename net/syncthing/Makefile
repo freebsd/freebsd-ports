@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	syncthing
-PORTVERSION=	0.11.2
+PORTVERSION=	0.11.23
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -23,13 +23,14 @@ STRIP=		# stripping can break go binaries
 
 post-patch:
 	@cd ${WRKSRC} ; ${MKDIR} src/github.com/${PORTNAME}/${PORTNAME} ; \
-		${MV} AUTHORS CONTRIBUTING.md Godeps LICENSE README.md \
-		build.go build.sh check-contrib.sh assets cmd gui internal \
-		protocol test src/github.com/${PORTNAME}/${PORTNAME}
+		${MV} .gitattributes .gitignore .mailmap AUTHORS CONDUCT.md \
+		CONTRIBUTING.md Godeps LICENSE NICKS README.md assets build.go \
+		build.sh cmd etc gui lib man protocol script test \
+		src/github.com/${PORTNAME}/${PORTNAME}
 
 do-build:
 	# timestamp here refers to source, not build time
-	cd ${WRKSRC}/src/github.com/${PORTNAME}/${PORTNAME} ; \
+	@cd ${WRKSRC}/src/github.com/${PORTNAME}/${PORTNAME} ; \
 		${SETENV} GOPATH=${WRKSRC} go run build.go -no-upgrade=true -version v${PORTVERSION}
 
 do-install:

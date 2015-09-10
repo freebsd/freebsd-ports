@@ -1,4 +1,4 @@
---- aws.gpr.orig	2014-05-15 19:48:07.000000000 +0000
+--- aws.gpr.orig	2014-11-15 19:27:52 UTC
 +++ aws.gpr
 @@ -44,7 +44,8 @@ aggregate library project AWS is
              when "Windows_NT" =>

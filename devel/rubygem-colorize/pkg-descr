@@ -3,4 +3,3 @@ background color and, text effects on ruby console and command line output,
 using ANSI escape sequences.
 
 WWW: https://github.com/fazibear/colorize
-RG:  https://rubygems.org/gems/colorize

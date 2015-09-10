@@ -19,7 +19,7 @@ USE_SDL=	sdl image
 INSTALLS_ICONS=	yes
 
 CONFIGURE_ENV=	AUTOMAKE="${TRUE}" ACLOCAL="${TRUE}" MISSING="${TRUE}"
-LDFLAGS+=	-L${LOCALBASE}/lib -pthread
+LDFLAGS+=	-L${LOCALBASE}/lib -lpthread
 CPPFLAGS+=	-I${LOCALBASE}/include -DINSTALL_BASE_PATH=\"\\\"${DATADIR}\\\"\"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -28,18 +28,17 @@ OPTIONS_DEFINE=	MOREFPS
 OPTIONS_DEFAULT=MOREFPS
 MOREFPS_DESC=	Smoother graphics support
 
-.include <bsd.port.options.mk>
-
 post-patch:
-.if ${PORT_OPTIONS:MMOREFPS}
-	@${REINPLACE_CMD} -e '/define RENDER_RATE/ s|20|60|' \
-		${WRKSRC}/Config.h
-.endif
 	@${CHMOD} a+x ${WRKSRC}/install-sh
 	@${REINPLACE_CMD} -e 's|\(desktopentrydir=\).*|\1${PREFIX}/share/applications|' \
+		-e '/stdc++/ d' \
 		${WRKSRC}/configure ${WRKSRC}/configure.in
 	@${REINPLACE_CMD} -e 's|^Exec=.*|Exec=${PORTNAME}|; /^X-Icon-Path/ d' \
 		${WRKSRC}/data/${PORTNAME}.desktop
+
+post-patch-MOREFPS-on:
+	@${REINPLACE_CMD} -e '/define RENDER_RATE/ s|20|60|' \
+		${WRKSRC}/Config.h
 
 post-build:
 	${STRIP_CMD} ${WRKSRC}/${PORTNAME}

@@ -32,7 +32,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_XORG=	x11 xcb xproto xinerama
-DISABLE_MAKE_JOBS=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 pre-configure:
 	cd ${WRKSRC} && ${PERL} Makefile.PL

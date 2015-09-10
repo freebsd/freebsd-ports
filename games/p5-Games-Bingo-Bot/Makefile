@@ -3,7 +3,7 @@
 
 PORTNAME=	Games-Bingo-Bot
 PORTVERSION=	0.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,14 +14,14 @@ COMMENT=	Simple class holding IRC related methods for bingo
 BUILD_DEPENDS=	p5-Games-Bingo>=0:${PORTSDIR}/games/p5-Games-Bingo
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	bin/bingobot.pl
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 PORTEXAMPLES=	bingobot.pl
 
 OPTIONS_DEFINE=	EXAMPLES
-
-.include <bsd.port.options.mk>
 
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

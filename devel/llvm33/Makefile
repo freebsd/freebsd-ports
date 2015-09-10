@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 PORTVERSION=	3.3
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -15,7 +15,6 @@ LLVM_SUFFIX=	${PORTVERSION:S/.//g}
 LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
 DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
-UNIQUENAME=	${PORTNAME}${LLVM_SUFFIX}
 
 USES=		execinfo gmake perl5
 GNU_CONFIGURE=	yes
@@ -164,14 +163,16 @@ post-patch:
 	    -e 's|lit\.|lit${LLVM_SUFFIX}.|' \
 	    ${WRKSRC}/utils/lit/lit.py ${WRKSRC}/utils/lit/lit/*.py
 
-.if ${PORT_OPTIONS:MCMAKE}
 post-configure:
+.if ${PORT_OPTIONS:MCMAKE}
 	${MKDIR} ${WRKDIR}/cmake
 	cd ${WRKDIR}/cmake && cmake -DPYTHON_EXECUTABLE=${PYTHON_CMD} -G "Unix Makefiles" ${WRKSRC}
 	${REINPLACE_CMD} -e 's|${WRKDIR}/cmake|${LLVM_PREFIX}|' \
 	    -e 's|${WRKSRC}/cmake/modules|${DATADIR}/cmake|' \
 	    ${WRKDIR}/cmake/share/llvm/cmake/LLVMConfig.cmake
 .endif
+	@${REINPLACE_CMD} -e 's|#define HAVE_MACH_MACH_H 1||g' \
+		${WRKSRC}/include/llvm/Config/config.h
 
 post-build:
 .if ${PORT_OPTIONS:MMANPAGES}

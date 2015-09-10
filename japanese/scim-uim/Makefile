@@ -3,7 +3,7 @@
 
 PORTNAME=	scim-uim
 PORTVERSION=	0.2.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	japanese
 MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION} \
 		http://freedesktop.org/~suzhe/sources/

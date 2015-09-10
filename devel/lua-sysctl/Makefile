@@ -2,7 +2,7 @@
 
 PORTNAME=	sysctl
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
@@ -24,6 +24,6 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${LUA_MODLIBDIR}/sysctl \
 		${STAGEDIR}${LUA_MODSHAREDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/sysctl.lua ${STAGEDIR}${LUA_MODSHAREDIR}/sysctl.lua
-	${INSTALL_SCRIPT} ${WRKSRC}/build/core.so ${STAGEDIR}${LUA_MODLIBDIR}/sysctl/core.so
+	${INSTALL_LIB} ${WRKSRC}/build/core.so ${STAGEDIR}${LUA_MODLIBDIR}/sysctl/core.so
 
 .include <bsd.port.mk>

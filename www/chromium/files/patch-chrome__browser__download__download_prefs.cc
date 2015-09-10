@@ -1,5 +1,5 @@
---- chrome/browser/download/download_prefs.cc.orig	2015-01-24 21:51:37 UTC
-+++ chrome/browser/download/download_prefs.cc
+--- chrome/browser/download/download_prefs.cc.orig	2015-07-15 16:29:57.000000000 -0400
++++ chrome/browser/download/download_prefs.cc	2015-07-21 21:27:54.085299000 -0400
 @@ -51,7 +51,7 @@
  // Consider downloads 'dangerous' if they go to the home directory on Linux and
  // to the desktop on any platform.
@@ -18,15 +18,15 @@
      (defined(OS_MACOSX) && !defined(OS_IOS))
    should_open_pdf_in_system_reader_ =
        prefs->GetBoolean(prefs::kOpenPdfDownloadInSystemReader);
-@@ -205,7 +205,7 @@
-       prefs::kSaveFileDefaultDirectory,
-       default_download_path,
-       user_prefs::PrefRegistrySyncable::UNSYNCABLE_PREF);
+@@ -208,7 +208,7 @@
+                                  default_download_path);
+   registry->RegisterFilePathPref(prefs::kSaveFileDefaultDirectory,
+                                  default_download_path);
 -#if defined(OS_WIN) || defined(OS_LINUX) || \
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD) || \
      (defined(OS_MACOSX) && !defined(OS_IOS))
-   registry->RegisterBooleanPref(
-       prefs::kOpenPdfDownloadInSystemReader,
+   registry->RegisterBooleanPref(prefs::kOpenPdfDownloadInSystemReader, false);
+ #endif
 @@ -286,7 +286,7 @@
  }
  
@@ -45,7 +45,7 @@
      (defined(OS_MACOSX) && !defined(OS_IOS))
    if (extension == FILE_PATH_LITERAL("pdf") && ShouldOpenPdfInSystemReader())
      return true;
-@@ -333,7 +333,7 @@
+@@ -335,7 +335,7 @@
    SaveAutoOpenState();
  }
  
@@ -54,7 +54,7 @@
      (defined(OS_MACOSX) && !defined(OS_IOS))
  void DownloadPrefs::SetShouldOpenPdfInSystemReader(bool should_open) {
    if (should_open_pdf_in_system_reader_ == should_open)
-@@ -355,7 +355,7 @@
+@@ -357,7 +357,7 @@
  #endif
  
  void DownloadPrefs::ResetAutoOpen() {

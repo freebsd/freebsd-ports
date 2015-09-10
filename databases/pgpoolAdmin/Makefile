@@ -2,6 +2,7 @@
 
 PORTNAME=	pgpoolAdmin
 PORTVERSION=	3.3.1
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.pgpool.net/mediawiki/images/
 

@@ -1,9 +1,3 @@
-bin/wks2csv
-bin/wks2raw
-bin/wks2text
-bin/wps2html
-bin/wps2raw
-bin/wps2text
 include/libwps-0.3/libwps/WPSDocument.h
 include/libwps-0.3/libwps/libwps.h
 lib/libwps-0.3.so

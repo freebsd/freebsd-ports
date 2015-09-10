@@ -23,8 +23,7 @@ RUN_DEPENDS=	razorback-masterNugget>=0.5.0:${PORTSDIR}/security/razorback-master
 
 RB_LIBDIR?=	${PREFIX}/lib/razorback
 GNU_CONFIGURE=	yes
-USES=		libtool pkgconfig
-USE_AUTOTOOLS=	autoconf
+USES=		autoreconf libtool pkgconfig
 USE_LDCONFIG=	${RB_LIBDIR}
 
 OPTIONS_DEFINE=	DEBUG ASSERT
@@ -34,7 +33,7 @@ ASSERT_CONFIGURE_ENABLE=	assert
 DEBUG_CONFIGURE_ENABLE=	debug
 
 post-patch:
-	@${REINPLACE_CMD} '/CWARNINGS/ s|-Werror||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} 's|-Werror||' ${WRKSRC}/libyara/configure.ac
 
 post-install:
 	${LN} -sf ${RB_LIBDIR}/yaraNugget.so.2 \

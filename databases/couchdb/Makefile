@@ -6,8 +6,7 @@ PORTVERSION=	1.6.1
 PORTREVISION=	4
 PORTEPOCH=	2
 CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_APACHE}
-MASTER_SITE_SUBDIR=	couchdb/source/${PORTVERSION}
+MASTER_SITES=	APACHE/couchdb/source/${PORTVERSION}
 DISTNAME=	apache-couchdb-${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -44,8 +43,6 @@ CONFIGURE_ARGS=	--with-erlang=${LOCALBASE}/lib/erlang/usr/include \
 STRIP=	#empty
 
 INFO=		CouchDB
-
-OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

@@ -20,7 +20,8 @@ SQLITE_DESC=		Install sqlite support
 OPTIONS_MULTI=		DATABASE
 OPTIONS_MULTI_DATABASE=	MYSQL PGSQL SQLITE
 
-USES=			zip
+USES=			cpe zip
+CPE_VENDOR=		fruux
 USE_PHP=		dom simplexml mbstring ctype iconv
 
 .include <bsd.port.options.mk>

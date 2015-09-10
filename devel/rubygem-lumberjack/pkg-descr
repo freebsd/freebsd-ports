@@ -4,4 +4,3 @@ automatically rolling log files even with multiple processes writing the same
 log file.
 
 WWW: https://github.com/bdurand/lumberjack
-RG:  https://rubygems.org/gems/lumberjack

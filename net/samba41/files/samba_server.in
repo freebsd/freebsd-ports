@@ -54,8 +54,12 @@ samba_server_checkconfig() {
 
 samba_server_prestart() {
     # Make sure we have our RUNDIR, even if it's on a tmpfs
-    if [ ! -d "${samba_server_piddir}" -a ! -e "${samba_server_piddir}" ]; then
-	install -m 0755 -d "${samba_server_piddir}"
+    if [ -d "${samba_server_piddir}" -o ! -e "${samba_server_piddir}" ]; then
+	install -d -m 0755 "${samba_server_piddir}"
+    fi
+    # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=200186
+    if [ -d "${samba_server_privatedir}" -o ! -e "${samba_server_privatedir}" ]; then
+	install -d -m 0700 "${samba_server_privatedir}"
     fi
 #    # Remove smbd.pid before starting up samba(needed for s3fs)
 #    if [ -e "${samba_server_piddir}/smbd.pid" ] ; then
@@ -179,6 +183,8 @@ samba_server_config_init() {
     samba_server_lockdir=${samba_server_lockdir:=%%SAMBA4_LOCKDIR%%}
     samba_server_piddir="$(${testparm_command} --parameter-name='pid directory' 2>/dev/null)"
     samba_server_piddir=${samba_server_piddir:=%%SAMBA4_RUNDIR%%}
+    samba_server_privatedir="$(${testparm_command} --parameter-name='private dir' 2>/dev/null)"
+    samba_server_privatedir=${samba_server_privatedir:=%%SAMBA4_PRIVATEDIR%%}
 }
 
 # Load configuration variables

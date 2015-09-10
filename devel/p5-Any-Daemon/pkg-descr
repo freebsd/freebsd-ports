@@ -1,0 +1,7 @@
+This module delivers the basic needs for any daemon on UNIX systems.
+There are other standard daemon implementations available on CPAN,
+with as main common difference that this module is not dedicated to a
+specific task. By using Log::Report, you can easily redirect error
+reports to any logging mechanism you like.
+
+WWW: http://search.cpan.org/dist/Any-Daemon/

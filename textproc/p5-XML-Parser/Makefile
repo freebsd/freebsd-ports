@@ -1,14 +1,16 @@
 # $FreeBSD$
 
 PORTNAME=	XML-Parser
-PORTVERSION=	2.41
-PORTREVISION=	2
+PORTVERSION=	2.44
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension interface to James Clark's XML parser, expat
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
@@ -27,17 +29,20 @@ EUCJP=		"@comment "
 .if !defined(XMLPARSER_SJIS)
 SJIS=		"@comment "
 .endif
+.if defined(XMLPARSER_EUCJP) || defined(XMLPARSER_SJIS)
+USE_PERL5+=	patch
+.endif
 
 post-patch:
 .if defined(XMLPARSER_EUCJP)
-	@cd ${WRKSRC}/Parser/Encodings; \
+	cd ${WRKSRC}/Parser/Encodings; \
 		${CONV_ENC} euc-jp ${XMLPARSER_EUCJP}.enc > euc-jp.enc
-	@${ECHO_CMD} Parser/Encodings/euc-jp.enc >> ${WRKSRC}/MANIFEST
+	${ECHO_CMD} Parser/Encodings/euc-jp.enc >> ${WRKSRC}/MANIFEST
 .endif
 .if defined(XMLPARSER_SJIS)
-	@cd ${WRKSRC}/Parser/Encodings; \
+	cd ${WRKSRC}/Parser/Encodings; \
 		${CONV_ENC} shift_jis ${XMLPARSER_SJIS}.enc > shift_jis.enc
-	@${ECHO_CMD} Parser/Encodings/Shift_JIS.enc >> ${WRKSRC}/MANIFEST
+	${ECHO_CMD} Parser/Encodings/Shift_JIS.enc >> ${WRKSRC}/MANIFEST
 .endif
 	@${CP} ${FILESDIR}/*.enc ${WRKSRC}/Parser/Encodings/
 .for e in 1 6 10 11 13 14 15

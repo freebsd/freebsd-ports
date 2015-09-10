@@ -1,6 +1,6 @@
---- Makefile.orig	2013-06-10 13:29:16.000000000 +0200
-+++ Makefile	2014-01-10 15:03:37.479613407 +0100
-@@ -81,6 +81,13 @@
+--- Makefile.orig	2015-02-13 06:11:21 UTC
++++ Makefile
+@@ -81,6 +81,13 @@ ifeq ($(OS_NAME),NetBSD)
      LOADLIBES += -L$(BASEDIR)/lib -Wl,-R,$(BASEDIR)/lib
  endif
  
@@ -14,7 +14,7 @@
  ifneq ($(POPT_DIR),)
      CFLAGS += -I$(POPT_DIR)
      LOADLIBES += -L$(POPT_DIR)
-@@ -148,9 +155,9 @@
+@@ -155,9 +162,9 @@ install:
  	$(INSTALL) $(MAN) $(PREFIX)$(MANDIR)/man`echo $(MAN) | sed "s/.*\.//"` 0644 bin bin; \
  	$(INSTALL) $(MAN5) $(PREFIX)$(MANDIR)/man`echo $(MAN5) | sed "s/.*\.//"` 0644 bin bin; \
  	else if [ "$(OS_NAME)" = FreeBSD ]; then \

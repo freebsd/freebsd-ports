@@ -1,0 +1,71 @@
+From 1ac0f60d558b7fca55c69a61ab4c4538af1f02f9 Mon Sep 17 00:00:00 2001
+From: Kevin Wolf <kwolf@redhat.com>
+Date: Wed, 3 Jun 2015 14:41:27 +0200
+Subject: [PATCH 2/2] ide: Clear DRQ after handling all expected accesses
+
+This is additional hardening against an end_transfer_func that fails to
+clear the DRQ status bit. The bit must be unset as soon as the PIO
+transfer has completed, so it's better to do this in a central place
+instead of duplicating the code in all commands (and forgetting it in
+some).
+
+Signed-off-by: Kevin Wolf <kwolf@redhat.com>
+---
+ hw/ide.c | 16 ++++++++++++----
+ 1 file changed, 12 insertions(+), 4 deletions(-)
+
+diff --git a/hw/ide.c b/hw/ide.c
+index 211ec88..7b84d1b 100644
+--- a/hw/ide.c
++++ b/hw/ide.c
+@@ -3009,8 +3009,10 @@ static void ide_data_writew(void *opaque, uint32_t addr, uint32_t val)
+     *(uint16_t *)p = le16_to_cpu(val);
+     p += 2;
+     s->data_ptr = p;
+-    if (p >= s->data_end)
++    if (p >= s->data_end) {
++        s->status &= ~DRQ_STAT;
+         s->end_transfer_func(s);
++    }
+ }
+ 
+ static uint32_t ide_data_readw(void *opaque, uint32_t addr)
+@@ -3032,8 +3034,10 @@ static uint32_t ide_data_readw(void *opaque, uint32_t addr)
+     ret = cpu_to_le16(*(uint16_t *)p);
+     p += 2;
+     s->data_ptr = p;
+-    if (p >= s->data_end)
++    if (p >= s->data_end) {
++        s->status &= ~DRQ_STAT;
+         s->end_transfer_func(s);
++    }
+     return ret;
+ }
+ 
+@@ -3055,8 +3059,10 @@ static void ide_data_writel(void *opaque, uint32_t addr, uint32_t val)
+     *(uint32_t *)p = le32_to_cpu(val);
+     p += 4;
+     s->data_ptr = p;
+-    if (p >= s->data_end)
++    if (p >= s->data_end) {
++        s->status &= ~DRQ_STAT;
+         s->end_transfer_func(s);
++    }
+ }
+ 
+ static uint32_t ide_data_readl(void *opaque, uint32_t addr)
+@@ -3078,8 +3084,10 @@ static uint32_t ide_data_readl(void *opaque, uint32_t addr)
+     ret = cpu_to_le32(*(uint32_t *)p);
+     p += 4;
+     s->data_ptr = p;
+-    if (p >= s->data_end)
++    if (p >= s->data_end) {
++        s->status &= ~DRQ_STAT;
+         s->end_transfer_func(s);
++    }
+     return ret;
+ }
+ 
+-- 
+2.1.4
+

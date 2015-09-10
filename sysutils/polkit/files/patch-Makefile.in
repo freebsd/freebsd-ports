@@ -1,11 +1,11 @@
---- Makefile.in.orig	2012-05-15 22:09:33.000000000 +0200
-+++ Makefile.in	2012-05-15 22:10:16.000000000 +0200
-@@ -292,7 +292,7 @@
- top_build_prefix = @top_build_prefix@
- top_builddir = @top_builddir@
- top_srcdir = @top_srcdir@
--SUBDIRS = actions data src docs po test
-+SUBDIRS = actions data src docs po
- NULL = 
- EXTRA_DIST = \
- 	HACKING 		\
+--- Makefile.in.orig	2015-06-19 20:31:12 UTC
++++ Makefile.in
+@@ -157,7 +157,7 @@ am__define_uniq_tagged_files = \
+ ETAGS = etags
+ CTAGS = ctags
+ CSCOPE = cscope
+-DIST_SUBDIRS = actions data src docs po test
++DIST_SUBDIRS = actions data src docs po
+ am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/config.h.in AUTHORS \
+ 	COPYING ChangeLog INSTALL NEWS README compile config.guess \
+ 	config.sub depcomp install-sh ltmain.sh missing

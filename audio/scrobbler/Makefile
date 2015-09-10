@@ -41,11 +41,6 @@ APE_CONFIGURE_ENABLE=	prefer-ape
 
 ENCODINGS_PATCH_USES=	iconv
 
-.include <bsd.port.options.mk>
-
-post-patch::
-.if ${PORT_OPTIONS:MENCODINGS_PATCH}
-	@${PATCH} ${PATCH_ARGS} -p1 < ${FILESDIR}/extra-encodings-patch
-.endif
+ENCODINGS_PATCH_EXTRA_PATCHES= ${FILESDIR}/extra-encodings-patch:-p1
 
 .include <bsd.port.mk>

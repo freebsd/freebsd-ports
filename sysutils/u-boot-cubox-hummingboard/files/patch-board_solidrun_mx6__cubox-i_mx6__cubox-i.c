@@ -12,7 +12,7 @@
  }
  
  static char const *board_type = "uninitialized";
-+static char const *fdt_board;
++static char const *fdt_board  = "uninitialized";
  
  int checkboard(void)
  {

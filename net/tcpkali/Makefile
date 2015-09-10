@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	tcpkali
-PORTVERSION=	0.5
+PORTVERSION=	0.6
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
 MAINTAINER=	neel@neelc.org
@@ -14,7 +15,6 @@ USES=		autoreconf libtool gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	machinezone
-GH_TAGNAME=	v${PORTVERSION}
 
 PLIST_FILES=	bin/${PORTNAME}
 

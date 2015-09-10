@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp.monash.edu.au/pub/vietnam/unix/
 DISTNAME=	vn7to8
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts between 7-bit Vietnamese VIQR and 8-bit VISCII formats
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libviqr.a:${PORTSDIR}/vietnamese/libviet

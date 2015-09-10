@@ -2,6 +2,7 @@
 
 PORTNAME=	kodi
 DISTVERSION=	14.2
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	https://codeload.github.com/xbmc/xbmc/tar.gz/${DISTVERSION}-Helix?dummy=/ \
 		GH:ffmpeg
@@ -38,7 +39,6 @@ LIB_DEPENDS=	libass.so:${PORTSDIR}/multimedia/libass \
 		libgnutls.so:${PORTSDIR}/security/gnutls \
 		liblzo2.so:${PORTSDIR}/archivers/lzo2 \
 		libjasper.so:${PORTSDIR}/graphics/jasper \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libltdl.so:${PORTSDIR}/devel/libltdl \
 		libmodplug.so:${PORTSDIR}/audio/libmodplug \
 		libmpeg2.so:${PORTSDIR}/multimedia/libmpeg2 \
@@ -61,7 +61,7 @@ GH_ACCOUNT=	xbmc
 GH_PROJECT=	ffmpeg
 GH_TAGNAME=	2.4.6-Helix
 
-USES=		autoreconf:build gettext gmake iconv:wchar_t libtool \
+USES=		autoreconf:build gettext gmake iconv:wchar_t jpeg libtool \
 		pkgconfig python:2
 GNU_CONFIGURE=	yes
 USE_XORG=	xt xmu xtst xrandr

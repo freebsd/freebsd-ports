@@ -3,7 +3,7 @@
 
 PORTNAME=	WWW-Curl
 PORTVERSION=	4.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www ftp perl5
 MASTER_SITES=	CPAN \
 		http://curl.haxx.se/libcurl/perl/
@@ -21,5 +21,8 @@ TEST_DEPENDS=	p5-Test-CPAN-Meta>=0:${PORTSDIR}/devel/p5-Test-CPAN-Meta \
 
 USE_PERL5=	configure
 USES=		perl5
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/WWW/Curl/Curl.so
 
 .include <bsd.port.mk>

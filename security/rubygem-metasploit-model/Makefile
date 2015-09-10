@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit-model
-PORTVERSION=	0.28.0
+PORTVERSION=	0.29.2
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-activesupport>=0:${PORTSDIR}/devel/rubygem-activesupport \
 		rubygem-railties>=3.0.0:${PORTSDIR}/www/rubygem-railties
+
+NO_ARCH=	yes
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

@@ -21,8 +21,6 @@ MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|^QT +=|#QT +=|g' \
 		${WRKSRC}/src/src.pro
@@ -40,11 +38,11 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/images
 	${INSTALL_DATA} ${WRKSRC}/src/doc/images/*.jpg ${STAGEDIR}${DATADIR}/images
 	${INSTALL_DATA} ${WRKSRC}/src/doc/images/*.png ${STAGEDIR}${DATADIR}/images
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in CREDITS ChangeLog README
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

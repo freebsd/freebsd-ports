@@ -12,12 +12,11 @@ COMMENT=	Extensible vector graphics editor with LaTeX support
 
 LICENSE=	GPLv3 # (or later)
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
-USES=		dos2unix gmake iconv lua:52 pkgconfig
+USES=		dos2unix gmake iconv jpeg lua:52 pkgconfig
 DOS2UNIX_FILES=	ipelib/Makefile
 USE_GNOME=	cairo
 USE_QT4=	gui moc_build qmake_build rcc_build uic_build

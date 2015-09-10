@@ -88,7 +88,4 @@ do-install:
 	cd ${WRKSRC}/bin && \
 		${INSTALL_SCRIPT} ${SCRIPTS} ${STAGEDIR}${EXAMPLESDIR}
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.post.mk>

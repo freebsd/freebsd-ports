@@ -2,6 +2,7 @@
 
 PORTNAME=	u-boot
 PORTVERSION=	2013.10
+PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-cubox-hummingboard
 
@@ -10,7 +11,9 @@ COMMENT=	Cross-build U-Boot loader for SolidRun Cubox
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=  arm-none-eabi-gcc:${PORTSDIR}/devel/arm-none-eabi-gcc
+BUILD_DEPENDS=	${CROSS_GCC}:${PORTSDIR}/devel/arm-none-eabi-gcc492
+
+CROSS_GCC=	arm-none-eabi-gcc-4.9.2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	SolidRun
@@ -28,8 +31,9 @@ PLIST_FILES=	${U_BOOT_DIR}/u-boot.imx \
 		${U_BOOT_DIR}/README
 
 MAKE_ARGS+=	ARCH=arm \
+		CC=${CROSS_GCC} \
 		CROSS_COMPILE=arm-none-eabi- \
-		HOSTCC=clang
+		HOSTCC=cc
 
 do-configure:
 	cd ${WRKSRC}; ${GMAKE} ${MAKE_ARGS} mx6_cubox-i_config

@@ -10,4 +10,3 @@ man/man1/rhost.1.gz
 %%PORTDOCS%%share/doc/jdresolve/INSTALL
 %%PORTDOCS%%share/doc/jdresolve/README
 %%PORTDOCS%%share/doc/jdresolve/TODO
-%%PORTDOCS%%@dirrm share/doc/jdresolve

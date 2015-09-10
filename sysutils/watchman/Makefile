@@ -3,6 +3,7 @@
 
 PORTNAME=	watchman
 PORTVERSION=	3.0.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
 MAINTAINER=	linpct@gmail.com
@@ -14,7 +15,6 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebook
-GH_TAGNAME=	v${PORTVERSION}
 
 USES=		autoreconf gmake pkgconfig
 GNU_CONFIGURE=	yes
@@ -32,6 +32,5 @@ PORTDOCS=	README.markdown
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^docdir = /d' ${WRKSRC}/Makefile.am
-	@${REINPLACE_CMD} -e '/timestamp=/s,%ld,%d,' ${WRKSRC}/root.c
 
 .include <bsd.port.mk>

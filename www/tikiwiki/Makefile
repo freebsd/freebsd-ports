@@ -10,7 +10,8 @@ DISTNAME=	tiki-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful PHP based Wiki/CMS/Groupware
 
-LICENSE=	LGPL20
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/license.txt
 
 USE_PHP=	gettext pcre posix session xml zlib
 WANT_PHP_WEB=	yes
@@ -22,7 +23,7 @@ SUB_FILES=	pkg-message
 SUB_LIST+=	PORTNAME=${PORTNAME} TIKIWIKI_DIR=${TIKIWIKI_DIR}
 
 post-extract:
-	@${FIND} ${WRKSRC} -name '.DS_Store' -delete
+	@${FIND} ${WRKSRC} -name '.DS_Store' -o -name '.git' | ${XARGS} ${RM} -rf
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${TIKIWIKI_DIR}
@@ -33,11 +34,16 @@ do-install:
 # The benefits of a fixed pkg-plist aren't worth it, autogen!
 
 post-install:
-	@echo "@owner ${WWWOWN}" >> ${TMPPLIST}
-	@echo "@group ${WWWGRP}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@owner ${WWWOWN}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@group ${WWWGRP}" >> ${TMPPLIST}
 	@(cd ${STAGEDIR}${PREFIX}; ${FIND} * \( -type f -or -type l \) | \
 		${SORT} >> ${TMPPLIST})
-	@echo "@owner" >> ${TMPPLIST}
-	@echo "@group" >> ${TMPPLIST}
+	@${ECHO_CMD} "@owner" >> ${TMPPLIST}
+	@${ECHO_CMD} "@group" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir ${TIKIWIKI_DIR}/lib/test/core/Profile" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir ${TIKIWIKI_DIR}/permissioncheck/meta_755" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir ${TIKIWIKI_DIR}/permissioncheck/meta_775" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir ${TIKIWIKI_DIR}/permissioncheck/meta_777" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir ${TIKIWIKI_DIR}/vendor_extra/elfinder/files" >> ${TMPPLIST}
 
 .include <bsd.port.mk>

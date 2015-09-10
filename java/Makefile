@@ -100,6 +100,7 @@
     SUBDIR += openjdk6
     SUBDIR += openjdk6-jre
     SUBDIR += openjdk7
+    SUBDIR += openjdk7-jre
     SUBDIR += openjdk8
     SUBDIR += openjdk8-jre
     SUBDIR += phpeclipse

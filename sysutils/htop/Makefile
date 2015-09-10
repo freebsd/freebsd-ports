@@ -21,9 +21,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lexecinfo
 
 CONFIGURE_ARGS=	--with-proc=/compat/linux/proc --enable-unicode
-USES=		ncurses libtool execinfo python:2,build
-USE_AUTOTOOLS=	autoconf aclocal automake
-ACLOCAL_ARGS=	-I ${ACLOCAL_DIR}
+USES=		autoreconf ncurses libtool execinfo python:2,build
 
 LSOF_RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
 

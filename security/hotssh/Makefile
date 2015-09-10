@@ -6,7 +6,6 @@ PORTVERSION=	0.2.7
 PORTREVISION=	5
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	HotSSH is an interface to Secure Shell, for GNOME and OpenSSH
@@ -24,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_SITELIBDIR}/gtk-2.0/vtemodule.so:${PORTSDIR}/x11-toolkits/py-vte
 
-USE_GNOME=	pygtk2 gnomedocutils libxslt glib20
+USE_GNOME=	pygtk2 gnomedocutils libxslt glib20 intltool
 USES=		gettext python tar:bzip2 waf
 INSTALLS_ICONS=	yes
 

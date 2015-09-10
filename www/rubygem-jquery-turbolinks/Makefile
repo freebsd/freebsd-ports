@@ -9,9 +9,12 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	jQuery plugin for drop-in fix binded events problem caused by Turbolinks
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-railties4>=4.1.6:${PORTSDIR}/www/rubygem-railties4 \
 		rubygem-turbolinks>=0:${PORTSDIR}/www/rubygem-turbolinks
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

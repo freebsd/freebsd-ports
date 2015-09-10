@@ -5,8 +5,7 @@ PORTNAME=	ucommon
 PORTVERSION=	6.1.11
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	commoncpp
+MASTER_SITES=	GNU/commoncpp
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very lightweight C++ design pattern library

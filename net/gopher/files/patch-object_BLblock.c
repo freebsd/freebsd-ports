@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- object/BLblock.c.orig	Sun Aug 22 15:52:31 2004
 +++ object/BLblock.c	Sun Aug 22 15:53:33 2004
 @@ -118,7 +118,7 @@

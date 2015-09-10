@@ -4,7 +4,6 @@ bin/crmfdump.py
 bin/ocspclient.py
 bin/ocspreqdump.py
 bin/ocsprspdump.py
-bin/ocspserver.py
 bin/pkcs10dump.py
 bin/pkcs1dump.py
 bin/pkcs7dump.py

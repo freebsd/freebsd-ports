@@ -934,3 +934,12 @@ bin/jalbum
 %%DATADIR%%/tools/Server mode.bsh
 %%DATADIR%%/tools/Show supported file types.bsh
 %%DATADIR%%/tools/jAlbum core update.bsh
+@dir %%DATADIR%%/skins/Turtle/styles/Yellow
+@dir %%DATADIR%%/skins/Turtle/styles/White
+@dir %%DATADIR%%/skins/Turtle/styles/Stone
+@dir %%DATADIR%%/skins/Turtle/styles/Red
+@dir %%DATADIR%%/skins/Turtle/styles/Mesh
+@dir %%DATADIR%%/skins/Turtle/styles/Grunge
+@dir %%DATADIR%%/skins/Turtle/styles/Dark
+@dir %%DATADIR%%/skins/Turtle/styles/Black
+@dir %%DATADIR%%/skins/Minimal/res

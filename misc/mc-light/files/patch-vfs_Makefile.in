@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- vfs/Makefile.in.orig	Sun Aug 29 23:20:18 2004
 +++ vfs/Makefile.in	Fri Sep  3 14:33:38 2004
 @@ -95,34 +95,34 @@

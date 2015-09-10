@@ -1,0 +1,37 @@
+--- rltiles/Makefile.orig	2015-03-04 04:53:28 UTC
++++ rltiles/Makefile
+@@ -10,8 +10,6 @@ endif
+ # Also, cross-compilation with no system libraries for host rather than target
+ # is not supported.  If host=target, contribs are enough.
+ 
+-CFLAGS := -O2 -g -Wall -Wextra -Wno-parentheses -Wno-unused-parameter
+-
+ ifdef ANDROID
+   CXXFLAGS :=
+   LDFLAGS :=
+@@ -49,14 +47,14 @@ endif
+ 
+ # Attempt to use a full compiler name, to make
+ # distcc builds work nicely.
+-LMACH := $(shell gcc -dumpmachine)-
++LMACH := $(shell $(CC) -dumpmachine)-
+ ifeq ($(LMACH),-)
+ LMACH :=
+ endif
+-ifeq ($(shell which $(LMACH)gcc > /dev/null 2> /dev/null && echo "Yes"),)
++ifeq ($(shell which $(LMACH)$(CC) > /dev/null 2> /dev/null && echo "Yes"),)
+ LMACH :=
+ endif
+-HOSTCXX ?= $(LMACH)g++
++HOSTCXX ?= $(LMACH)$(CXX)
+ 
+ DELETE = rm -f
+ 
+@@ -133,6 +131,6 @@ distclean: clean
+ 	$(QUIET_HOSTCXX)$(HOSTCXX) $(CFLAGS) -MMD -c $< -o $@
+ 
+ $(TILEGEN): $(OBJECTS)
+-	$(QUIET_HOSTLINK)$(HOSTCXX) $(OBJECTS) -o $@ $(LDFLAGS)
++	$(QUIET_HOSTLINK)$(HOSTCXX) $(OBJECTS) -o $@ $(CFLAGS) $(LDFLAGS) $(PNG_LIB)
+ 
+ .PHONY: all clean distclean

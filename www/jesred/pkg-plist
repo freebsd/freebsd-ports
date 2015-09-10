@@ -2,4 +2,3 @@ etc/jesred/jesred.conf.sample
 etc/jesred/redirect.acl.sample
 etc/jesred/redirect.rules.sample
 libexec/jesred
-@dirrm etc/jesred

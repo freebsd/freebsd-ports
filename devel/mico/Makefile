@@ -3,7 +3,7 @@
 
 PORTNAME=	mico
 PORTVERSION=	2.3.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20${PORTVERSION}/
 
@@ -44,5 +44,13 @@ post-patch:
 		${REINPLACE_CMD} 's,doc/mico/examples,${EXAMPLESDIR_REL},'
 	@${REINPLACE_CMD} 's/ministl//' ${WRKSRC}/include/Makefile
 	@${REINPLACE_CMD} 's/^main()/int &/' ${WRKSRC}/configure
+
+post-install:
+.for f in eventd idl imr iordump ird mico-cpp micod mkdepend nsadmin nsd propertyd timed
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${f}
+.endfor
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/lib/*.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
+	${CHMOD} u-w ${STAGEDIR}${PREFIX}/lib/*.so
 
 .include <bsd.port.mk>

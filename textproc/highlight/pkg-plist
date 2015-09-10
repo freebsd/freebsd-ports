@@ -44,6 +44,7 @@ man/man1/highlight.1.gz
 %%DATADIR%%/langDefs/clp.lang
 %%DATADIR%%/langDefs/cobol.lang
 %%DATADIR%%/langDefs/coldfusion.lang
+%%DATADIR%%/langDefs/conf.lang
 %%DATADIR%%/langDefs/crk.lang
 %%DATADIR%%/langDefs/csharp.lang
 %%DATADIR%%/langDefs/css.lang
@@ -86,6 +87,7 @@ man/man1/highlight.1.gz
 %%DATADIR%%/langDefs/js.lang
 %%DATADIR%%/langDefs/jsp.lang
 %%DATADIR%%/langDefs/ldif.lang
+%%DATADIR%%/langDefs/less.lang
 %%DATADIR%%/langDefs/lhs.lang
 %%DATADIR%%/langDefs/lilypond.lang
 %%DATADIR%%/langDefs/limbo.lang
@@ -145,6 +147,7 @@ man/man1/highlight.1.gz
 %%DATADIR%%/langDefs/python.lang
 %%DATADIR%%/langDefs/q.lang
 %%DATADIR%%/langDefs/qmake.lang
+%%DATADIR%%/langDefs/qml.lang
 %%DATADIR%%/langDefs/qu.lang
 %%DATADIR%%/langDefs/r.lang
 %%DATADIR%%/langDefs/rebol.lang
@@ -152,11 +155,13 @@ man/man1/highlight.1.gz
 %%DATADIR%%/langDefs/rnc.lang
 %%DATADIR%%/langDefs/rpg.lang
 %%DATADIR%%/langDefs/rpl.lang
+%%DATADIR%%/langDefs/rs.lang
 %%DATADIR%%/langDefs/ruby.lang
 %%DATADIR%%/langDefs/s.lang
 %%DATADIR%%/langDefs/sas.lang
 %%DATADIR%%/langDefs/scala.lang
 %%DATADIR%%/langDefs/scilab.lang
+%%DATADIR%%/langDefs/scss.lang
 %%DATADIR%%/langDefs/sh.lang
 %%DATADIR%%/langDefs/small.lang
 %%DATADIR%%/langDefs/smalltalk.lang
@@ -167,6 +172,8 @@ man/man1/highlight.1.gz
 %%DATADIR%%/langDefs/spn.lang
 %%DATADIR%%/langDefs/sql.lang
 %%DATADIR%%/langDefs/squirrel.lang
+%%DATADIR%%/langDefs/styl.lang
+%%DATADIR%%/langDefs/swift.lang
 %%DATADIR%%/langDefs/sybase.lang
 %%DATADIR%%/langDefs/tcl.lang
 %%DATADIR%%/langDefs/tcsh.lang

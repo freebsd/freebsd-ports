@@ -135,7 +135,3 @@ man/man7/tntnet.properties.7.gz
 man/man7/tntnet.xml.7.gz
 man/man8/tntnet.8.gz
 %%DATADIR%%/tntnet-conf2xml.pl
-@dirrm %%DATADIR%%
-@dirrm lib/tntnet
-@dirrm include/tnt
-@dirrmtry %%ETCDIR%%

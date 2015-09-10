@@ -5,4 +5,4 @@ Simple, feature rich ascii table generation library.
  - Supports column span
  - Easy modification of table strings (+, -, |) 
 
-WWW: https://github.com/visionmedia/terminal-table
+WWW: https://github.com/tj/terminal-table

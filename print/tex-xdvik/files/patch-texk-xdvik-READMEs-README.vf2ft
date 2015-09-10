@@ -1,5 +1,5 @@
---- /dev/null	2015-01-31 21:35:05.000000000 +0900
-+++ texk/xdvik/READMEs/README.vf2ft	2015-01-31 21:02:18.000000000 +0900
+--- texk/xdvik/READMEs/README.vf2ft.orig	2015-07-19 18:49:41 UTC
++++ texk/xdvik/READMEs/README.vf2ft
 @@ -0,0 +1,100 @@
 +＊ xdvik-22.40l-j1.09-vf2ft.patch について
 +

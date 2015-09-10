@@ -5,6 +5,430 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150908:
+  AFFECTS: users of print/texlive-base
+  AUTHOR: hrs@FreeBSD.org
+
+ pdfclose and pdfopen utilities in print/texlive-base are now in a separate
+ port print/xpdfopen.  While upgrading print/texlive-base, a conflict may
+ occur between pdfclose utility installed by an old print/texlive-base and
+ one being installed by print/xpdfopen.  If it occurred on your system,
+ remove the installed print/texlive-base first by using the following
+ command:
+
+  # pkg delete -f texlive-base
+
+20150901:
+  AFFECTS: users of editors/libreoffice
+  AUTHOR: jkim@FreeBSD.org
+
+  editors/libreoffice has been updated to 5.0.1.  However, FreeBSD 9.x is
+  no longer supported because it requires C++11-capable library installed
+  in the base.  If you cannot upgrade your system or still want 4.3.x for
+  some reason, use editors/libreoffice4.
+
+20150822:
+  AFFECTS: users of print/ghostscript*
+  AUTHOR: hrs@FreeBSD.org
+
+ print/ghostscript{7,8,9,9-agpl} have been split into
+ print/ghostscript{7,8,9,9-agpl}-{base,x11}.
+ print/ghostscript*-nox11 ports have been removed.
+
+ The -base installs Ghostscript binaries, libgs, and other data files
+ and it depends on no X11 library.  The -x11 installs a small shared
+ library to enable x11* devices in the installed -base package.
+
+ In most cases, Ghostscript is installed as a dependency.  A port/package
+ which requires Ghostscript will automatically pick up -base, and
+ when x11* devices required it will pick up -x11 in addition.
+
+ If one wants to install Ghostscript manually and full compatibility
+ with the previous versions, just install -x11 because it installs
+ -base as a dependency.  Combination of the two provides the same
+ functionality as before.
+
+20150821:
+  AFFECTS: users of security/openssh-portable
+  AUTHOR: bdrewery@FreeBSD.org
+
+  OpenSSH 7.0 disables support for:
+    * SSH protocol 1
+    * 1024-bit diffie-hellman-group1-sha1 key exchange
+    * ssh-dss, ssh-dss-cert-* host and user keys
+    * legacy v00 cert format
+
+  See http://www.openssh.com/txt/release-7.0 for more information and
+  http://www.openssh.com/legacy.html for how to re-enable some of these
+  algorithms.
+
+20150820:
+  AFFECTS: users of lang/ghc and */hs-*
+  AUTHOR: haskell@FreeBSD.org
+
+  The Glorious Glasgow Haskell Compiler has been updated to version
+  7.10.2 and Haskell Platform has been removed.  As a result, it is
+  recommended to rebuild or reinstall all the dependent ports and the
+  lang/ghc port itself in one of the following ways:
+
+  # portmaster -w -r ghc
+    or
+  # portupgrade -fr lang/ghc
+
+  In case of pkg(8), it is probably safer to remove all the GHC-dependent
+  packages along with GHC and reinstall everything from scratch.  For
+  example:
+
+  # pkg query "%ro" ghc > ghc-pkgs.txt
+  # pkg delete -y lang/ghc
+
+  In ghc-pkgs.txt, check and remove all the packages that have been moved,
+  then:
+
+  # pkg install -y `cat ghc-pkgs.txt`
+
+20150818:
+  AFFECTS: users of sysutils/s6
+  AUTHOR: Colin Booth <colin@heliocat.net>
+
+  s6-notifywhenup has been removed as of v2.2.0.0. Any run scripts 
+  using readyness notification must be updated to use a notification 
+  fd instead.
+
+  s6-svc options have changed for sending syncronous up/down timeouts. 
+  Any management or wrapper scripts using those options will need to
+  be updated.
+
+20150817:
+  AFFECTS: everybody who still uses <UNIQUENAME>_SET/UNSET in make.conf
+  AUTHOR: mat@FreeBSD.org
+
+  The use of <UNIQUENAME>_SET/UNSET has been deprecated for a long time,
+  replaced by <OPTIONS_NAME>_SET/UNSET.  It is now not supported any more.
+  A warning will be issued telling you what to do, for example:
+
+    $ make
+    /!\ WARNING /!\
+    You are using perl_SET which is not supported any more, use:
+    lang_perl5.20_SET= DEBUG
+
+20150816:
+  AFFECTS: users of sysutils/s6
+  AUTHOR: Colin Booth <colin@heliocat.net>
+
+  s6-notifywhenup is deprecated and will be removed in the next version
+  of s6. Any run scripts depending on that program should be updated to
+  use an in-servicedir notification-fd file as described under
+  "Readyness notification support" in s6-supervise.html.
+
+20150812:
+  AFFECTS: users of net-mgmt/icinga and net-mgmt/icinga2
+  AUTHOR: lme@FreeBSD.org
+
+  The Icinga port has been split into two ports: net-mgmt/icinga-core
+  which contains the Icinga 1.x backend and net-mgmt/icinga-classicweb
+  which contains the Icinga classic web (CGI) interface. The latter can
+  be both used with Icinga 1.x and the Icinga 2 port (net-mgmt/icinga2).
+  A new meta-port net-mgmt/icinga was added which depends on both new
+  ports, so updating the Icinga port should be transparent.
+  
+20150812:
+  AFFECTS: users of sysutils/moosefs-master and other moosefs packages
+  AUTHOR: feld@FreeBSD.org
+
+  MooseFS ports have been updated to 2.0.72-1. Upstream has been
+  providing a private package repository to distribute newer releases of
+  MooseFS. These changes have now made it into the ports tree. This has
+  resulted in splitting up the sysutils/moosefs-master port into several
+  new ports:
+
+  sysutils/moosefs-cli
+  sysutils/moosefs-cgi
+  sysutils/moosefs-cgiserv
+  sysutils/moosefs-metalogger
+  sysutils/moosefs-netdump
+
+  You may need to install these additional ports/packages to restore the
+  complete functionality of your MooseFS cluster. Please review the
+  upstream documentation.
+
+  http://moosefs.com/documentation/moosefs-2-0.html
+
+20150809:
+  AFFECTS: users of sysutils/xfce4-power-manager
+  AUTHOR: olivierd@FreeBSD.org
+
+  After upgrading to 1.5.2, by default a label is displayed next to the
+  panel icon (it shows percentage and remaining time).
+
+  To hide this label, a new property /xfce4-power-manager/show-panel-label
+  must be created:
+
+  xfconf-query -c xfce4-power-manager \
+      -p /xfce4-power-manager/show-panel-label -n -t int -s 0
+
+  Possible values are:
+  - 0 -> does not display label
+  - 1 -> displays only percentage
+  - 2 -> displays only remaining time
+  - 3 -> displays only percentage and remaining time (default value)
+
+20150806:
+  AFFECTS: users of security/libressl
+  AUTHOR: brnrd@FreeBSD.org
+
+  After upgrading to 2.2.2, manually update all packages that depend on
+  any of the libraries provided by LibreSSL (libssl, libcrypto and
+  libtls) since the versions of these libraries have changed. Normally,
+  you can obtain the list of dependent software by running the following
+  command:
+
+  # pkg info -r libressl
+
+  Then you should rebuild all ports depending on libressl to avoid dangling
+  shared library dependencies. Poudriere and pkg handle this correctly,
+  portmaster and portupgrade users can use the following to rebuild all
+  dependent ports.
+
+  Portmaster users:
+      portmaster -r libressl
+  Portupgrade users:
+      portupgrade -fr security/libressl
+
+20150805:
+  AFFECTS: users of sysutils/tracker
+  AUTHOR: kwm@FreeBSD.org
+
+  The new tracker version does not build if the old version is installed.
+
+  # pkg delete -f tracker
+
+  After use your upgrade tool of choice.
+
+20150802:
+  AFFECTS: users of mail/opensmtpd
+  AUTHOR: ashish@FreeBSD.org
+
+  After upgrading, you will need to review all your configuration, as
+  there are some configuration changes between 5.4.x and 5.7.1.
+
+20150726:
+  AFFECTS: users of ukrainian/monacofonts
+  AUTHOR: mi@aldan.algebra.com
+
+  The destination-directory used by monacofonts port was altered.
+  The fonts-location changed from koi8u-monaco/ to koi8-u-monaco/
+
+  Users are advised to modify the path set in their xorg.conf files.
+
+20150720:
+  AFFECTS: users of print/texlive-base and other TeXLive packages
+  AUTHOR: hrs@FreeBSD.org
+
+  TeXLive in Ports Collection has been updated to TL2015.  To upgrade
+  installed old packages, upgrading of "tex-*" packages is required.
+
+  If you have a problem with upgrading, please send it to
+  freebsd-tex@FreeBSD.org and/or file a PR.
+
+20150711:
+  AFFECTS: users of graphics/gdal
+  AUTHOR: sunpoet@FreeBSD.org
+
+  Due to changes in header files, please deinstall gdal first while updating
+  from 1.x to 2.0.
+
+20150708:
+  AFFECTS: users of security/libressl
+  AUTHOR: brnrd@FreeBSD.org
+
+  After upgrading to 2.2.1, manually update all packages that depend on
+  any of the libraries provided by LibreSSL (libssl, libcrypto and
+  libtls) since the versions of these libraries have changed. Normally,
+  you can obtain the list of dependent software by running the following
+  command:
+
+  pkg query -e '%n = libressl' %ro
+
+  Then you should rebuild all ports depending on libressl to avoid dangling
+  shared library dependencies.
+
+20150707:
+  AFFECTS: users of net-mgmt/netmagis-*
+  AUTHOR: pgollucci@FreeBSD.org
+
+  Netmagis-* ports have been upgraded to 2.3.0. Upgrading from
+  previous version require a database schema upgrade.
+  See http://netmagis.org/upgrade.html
+
+20150702:
+  AFFECTS: users of multimedia/ffmpeg
+  AUTHOR: riggs@FreeBSD.org
+
+  ffmpeg has been updated to the latest version from the 2.7 branch.
+  If you are using binary pkg, 'pkg upgrade' will do the right thing.
+  Users of portmaster/portupgrade must rebuild all ports that depend
+  on it.
+
+  Portmaster users:
+      portmaster -w -r ffmpeg
+  Portupgrade users:
+      portupgrade -fr multimedia/ffmpeg
+
+20150702:
+  AFFECTS: users of net/ptpd2-devel
+  AUTHOR: skreuzer@FreeBSD.org
+
+  net/ptpd2 has been upgraded to version 2.3.1
+  net/ptpd2-devel is now deprecated and has been removed
+
+  If using portupgrade:
+  # portupgrade -o net/ptpd2 net/ptpd2-devel
+
+  If using portmaster:
+  # portmaster -o net/ptpd2 net/ptpd2-devel
+
+20150628:
+  AFFECTS: users of www/varnish, www/pecl-varnish,
+  www/varnish-libvmod-header, www/varnish-nagios
+  AUTHOR: feld@FreeBSD.org
+
+  Varnish 3.x has reached End of Life status and has been removed from
+  the ports tree. If you were using www/varnish we urge you to to update
+  to www/varnish4. The upgrade guide can be found here:
+
+  https://www.varnish-cache.org/docs/trunk/whats-new/upgrade-4.0.html
+  
+  www/varnish-libvmod-header and www/varnish-nagios have been updated to
+  versions that work with Varnish 4.x. You should not lose access to
+  this software.
+
+  www/pecl-varnish was updated to the latest release which has added
+  support for Varnish 4.x. Please note that it appears some
+  functionality has been lost. This is unfortunate but out of our
+  control. Details can be found here:
+
+  http://pecl.php.net/package-changelog.php?package=varnish
+
+  If for some reason you need www/varnish to exist in your ports tree
+  for a bit longer you may consider instead following the 2015Q2 branch.
+  Do note however that Varnish 3.x will not be receiving updates or
+  security patches from upstream.
+
+20150624:
+  AFFECTS: users of devel/p5-Test-Tester and devel/p5-Test-use-ok
+  AUTHOR: adamw@FreeBSD.org
+
+  The Test::Tester and Test::use::ok modules have been rolled into
+  devel/p5-Test-Simple, and are included in perl 5.22. The p5-Test-Tester
+  and p5-Test-use-ok modules will be removed in one month.
+
+  If you use either of those ports and have perl-5.22 installed:
+
+      pkg delete p5-Test-Tester p5-Test-use-ok
+
+  If you use either of those ports and have perl-5.20 or lower installed:
+
+      portmaster -o devel/p5-Test-Simple p5-Test-Tester
+      portmaster -o devel/p5-Test-Simple p5-Test-use-ok
+
+20150615:
+  AFFECTS: users of security/libressl
+  AUTHOR: brnrd@FreeBSD.org 
+
+  After upgrading libressl, manually update all packages that depend on
+  this library since its version has changed. Normally, you can obtain the 
+  list of dependent software by running the following command:
+
+  pkg query -e '%n = libressl' %ro
+
+  Then you should rebuild all ports depending on libressl to avoid dangling
+  shared library dependencies.
+
+20150614:
+  AFFECTS: users of audio/libmusicbrainz5
+  AUTHOR: jhale@FreeBSD.org
+
+  libmusicbrainz5 has been updated to 5.1.0.  Please rebuild all ports that
+  depend on it.  PORTREVISIONS have been bumped on dependent ports.
+
+  If you use portmaster:
+        portmaster -w -r libmusicbrainz5
+  If you use portupgrade:
+        portupgrade -fr audio/libmusicbrainz5
+
+20150613:
+  AFFECTS: users of multimedia/avidemux26-*
+  AUTHOR: riggs@FreeBSD.org
+
+  avidemux26 has been renamed to avidemux
+  If you are using binary pkg, 'pkg upgrade' will do the right thing.
+  Users of portmaster/portupgrade have to take a manual step:
+  Portmaster users:
+      portmaster -o multimedia/avidemux multimedia/avidemux26
+  Portupgrade users:
+      portupgrade -o multimedia/avidemux multimedia/avidemux26
+
+20150610:
+  AFFECTS: users of databases/postgresql84-server
+  AUTHOR: girgen@FreeBSD.org
+
+  PostgreSQL-8.4 EOL was reached in July 2014. To upgrade to a later version of
+  choice, you need to do a dump+restore of the database.
+  Please follow the instructions at:
+
+     http://www.postgresql.org/docs/8.4/static/install-upgrading.html
+
+20150527:
+  AFFECTS: users of sysutils/xfce4-power-manager
+  AUTHOR: olivierd@FreeBSD.org
+
+  Before upgrading, you must stop xfce4-power-manager daemon:
+
+    xfce4-power-manager --quit
+
+20150519:
+  AFFECTS: users of sysutils/webmin and sysutils/usermin
+  AUTHOR: olgeni@FreeBSD.org
+
+  After upgrading to Perl 5.20 the /usr/bin/perl link will no longer
+  be available. You will have to check your perl-path files and
+  change the path of the Perl interpreter to "/usr/local/bin/perl":
+
+    /usr/local/etc/webmin/perl-path
+    /usr/local/etc/usermin/perl-path
+
+20150513:
+  AFFECTS: users of lang/perl5*
+  AUTHOR: mat@FreeBSD.org
+
+  The default Perl version has been switched to Perl 5.20.  If you are using
+  binary packages to upgrade your system, you do not have anything to do, pkg
+  upgrade will do the right thing.  For the other people, assuming you are
+  migrating from 5.18 to 5.20, do:
+
+  Portupgrade users:
+	portupgrade -o lang/perl5.20 -f lang/perl5.18
+
+	portupgrade -f `pkg shlib -R libperl.so.5.18|tail +2`
+
+  Portmaster users:
+	portmaster -o lang/perl5.20 lang/perl5.18
+
+	portmaster -f `pkg shlib -R libperl.so.5.18|tail +2`
+
+  NOTE:
+    Perl has been removed from base more than ten years ago, so it was way past
+    time for the /usr/bin/perl symlink to be removed from the port.  If for
+    some strange reason, you still need it, you will have to create it
+    manually.
+
+  IMPORTANT:
+    In case you have not updated your system in a while, and specifically,
+    followed the 20141126 instructions regarding the new Perl layout, you
+    should follow those more extensive instructions rather than the
+    conservative presented here.
+
 20150510:
   AFFECTS: users of mail/postfix mail/postfix-current
   AUTHOR: ohauer@FreeBSD.org

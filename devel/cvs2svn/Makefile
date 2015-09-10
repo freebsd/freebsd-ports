@@ -9,8 +9,7 @@ MASTER_SITES=	http://cvs2svn.tigris.org/files/documents/1462/49237/ \
 		LOCAL/ohauer
 
 PATCHFILES=	${PORTNAME}-${PORTVERSION}-r${PATCHREV}.diff.bz2
-PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	ohauer
+PATCH_SITES=	LOCAL/ohauer
 
 MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	CVS to Subversion Repository Converter
@@ -25,7 +24,6 @@ USES=			shebangfix python:2.7
 USE_PYTHON=		distutils autoplist
 
 SHEBANG_LANG=		python python2
-python_CMD=		${PYTHON_CMD}
 python2_OLD_CMD=	/usr/bin/env python
 python2_CMD=		${PYTHON_CMD}
 SHEBANG_FILES=		cvs2svn cvs2git cvs2bzr *.py \

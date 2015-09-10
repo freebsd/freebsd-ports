@@ -14,5 +14,3 @@ man/man1/sitecopy.1.gz
 %%NLS%%share/locale/tr/LC_MESSAGES/sitecopy.mo
 %%DATADIR%%/changes.awk
 %%DATADIR%%/examplerc
-@dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%

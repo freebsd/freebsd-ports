@@ -1,6 +1,4 @@
-diff --git a/ptgen.c b/ptgen.c
-index d94aabb..4733311 100644
---- ptgen.c
+--- ptgen.c.orig	2011-12-22 14:21:03 UTC
 +++ ptgen.c
 @@ -29,6 +29,8 @@
  #include <ctype.h>

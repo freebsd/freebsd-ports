@@ -22,4 +22,3 @@ man/man1/pestr.1.gz
 man/man1/readpe.1.gz
 man/man1/rva2ofs.1.gz
 %%DATADIR%%/userdb.txt
-@dirrmtry %%DATADIR%%

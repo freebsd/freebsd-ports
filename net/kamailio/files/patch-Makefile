@@ -1,6 +1,6 @@
---- Makefile.orig	2014-10-16 14:46:22.000000000 +0200
-+++ Makefile	2014-11-09 11:52:07.000000000 +0100
-@@ -95,7 +95,7 @@
+--- Makefile.orig	2015-07-20 13:16:24 UTC
++++ Makefile
+@@ -34,7 +34,7 @@ err_fail?=1
  # whether or not to install $(MAIN_NAME).cfg or just $(MAIN_NAME).cfg.default
  # ($(MAIN_NAME).cfg will never be overwritten by make install, this is usefull
  #  when creating packages)
@@ -9,7 +9,16 @@
  
  #extra modules to exclude
  skip_modules?=
-@@ -819,10 +819,10 @@
+@@ -646,7 +646,7 @@ sunpkg:
+ .PHONY: install
+ install: mk_params="compile_for_install=yes"
+ install: install-bin install-every-module install-cfg \
+-	install-doc install-man install-utils install-share
++	install-man install-utils install-share
+ 
+ .PHONY: dbinstall
+ dbinstall:
+@@ -761,10 +761,10 @@ install-cfg: $(cfg_prefix)/$(cfg_dir)
  				fi ; \
  			fi ; \
  			: ; done; true

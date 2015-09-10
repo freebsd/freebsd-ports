@@ -1,6 +1,6 @@
---- ./docs/conf/httpd.conf.in.orig	2007-12-21 06:43:00.000000000 -0500
-+++ ./docs/conf/httpd.conf.in	2010-05-06 19:37:54.224731824 -0400
-@@ -54,6 +54,9 @@
+--- docs/conf/httpd.conf.in.orig	2012-02-06 16:54:24 UTC
++++ docs/conf/httpd.conf.in
+@@ -54,6 +54,9 @@ Listen @@Port@@
  #
  @@LoadModule@@
  
@@ -10,7 +10,7 @@
  <IfModule !mpm_netware_module>
  <IfModule !mpm_winnt_module>
  #
-@@ -63,8 +63,8 @@
+@@ -64,8 +67,8 @@ Listen @@Port@@
  # It is usually good practice to create a dedicated user and group for
  # running httpd, as with most system services.
  #
@@ -21,7 +21,7 @@
  
  </IfModule>
  </IfModule>
-@@ -113,7 +113,6 @@
+@@ -114,7 +117,6 @@ DocumentRoot "@exp_htdocsdir@"
  # features.  
  #
  <Directory />
@@ -29,7 +29,7 @@
      AllowOverride None
      Order deny,allow
      Deny from all
-@@ -184,7 +183,7 @@
+@@ -185,7 +187,7 @@ DocumentRoot "@exp_htdocsdir@"
  # logged here.  If you *do* define an error logfile for a <VirtualHost>
  # container, that host's errors will be logged there and not here.
  #
@@ -38,7 +38,7 @@
  
  #
  # LogLevel: Control the number of messages logged to the error_log.
-@@ -213,13 +212,13 @@
+@@ -214,13 +216,13 @@ LogLevel warn
      # define per-<VirtualHost> access logfiles, transactions will be
      # logged therein and *not* in this file.
      #
@@ -54,7 +54,7 @@
  </IfModule>
  
  <IfModule alias_module>
-@@ -408,3 +407,5 @@
+@@ -416,3 +418,5 @@ DefaultType text/plain
  SSLRandomSeed startup builtin
  SSLRandomSeed connect builtin
  </IfModule>

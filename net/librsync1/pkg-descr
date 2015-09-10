@@ -1,0 +1,8 @@
+The librsync library implements network delta-compression of streams and
+files. The algorithm is similar to that used in the rsync(1) and xdelta(2)
+programs, but specialized for transfer of arbitrary-length octet streams.
+Unlike most diff programs, librsync does not require access to both of the
+files on the same machine, but rather only a short ``signature'' of the
+old file and the complete contents of the new file.
+
+WWW: http://librsync.sourceforge.net/

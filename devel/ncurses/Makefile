@@ -3,9 +3,9 @@
 
 PORTNAME=	ncurses
 DISTVERSION=	${RELEASE}-20150214
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/${PORTNAME}/current/
-MASTER_SITE_SUBDIR=	${PORTNAME}/current
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -39,7 +39,8 @@ TRACE_DESC=	Add trace() function to all models of ncurses
 CONFIGURE_ENV=	gnat_exists="no"
 
 USE_LDCONFIG=	yes
-USES=		tar:tgz
+USES=		shebangfix tar:tgz
+SHEBANG_FILES=	test/tracemunch
 
 WIDEC_WRKSRC=	${WRKSRC}/build.widec
 NOWIDEC_WRKSRC=	${WRKSRC}/build.nowidec

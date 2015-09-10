@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 SUB_FILES=	squirrel-sql
 
-DATADIR=	${PREFIX}/share/java/${UNIQUENAME}
+DATADIR=	${PREFIX}/share/java/${PKGBASE}
 
 DESKTOP_ENTRIES="Squirrel-SQL Client" \
 		"${COMMENT}" \

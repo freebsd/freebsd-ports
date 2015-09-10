@@ -2776,3 +2776,9 @@ share/games/torcs/wheels/trb1-6/wheel1.acc
 share/games/torcs/wheels/trb1-6/wheel2.acc
 share/games/torcs/wheels/trb1-6/wheel3.acc
 share/games/torcs/wheels/trb1-6/wheel3d.png
+@dir share/games/torcs/drivers/bt/1/race
+@dir share/games/torcs/drivers/bt/1/qualifying
+@dir share/games/torcs/drivers/bt/1/practice
+@dir share/games/torcs/drivers/bt/0/race
+@dir share/games/torcs/drivers/bt/0/qualifying
+@dir share/games/torcs/drivers/bt/0/practice

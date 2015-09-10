@@ -4,7 +4,7 @@
 
 PORTNAME=	farsight2
 PORTVERSION=	0.0.31
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im devel
 MASTER_SITES=	http://www.freedesktop.org/software/farstream/releases/farsight2/ \
 		http://miwibox.org/distfiles/

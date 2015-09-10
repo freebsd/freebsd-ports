@@ -1,6 +1,6 @@
 --- src/ui/gtk/ffmpeg.cc.orig	2010-03-07 20:50:23.000000000 +0100
-+++ src/ui/gtk/ffmpeg.cc	2013-12-15 16:54:09.000000000 +0100
-@@ -48,7 +48,7 @@
++++ src/ui/gtk/ffmpeg.cc	2015-07-03 22:59:12.842256554 +0200
+@@ -48,7 +48,7 @@ FfmpegVideoEncoder::init(const char *fil
  
    av_register_all();
  
@@ -9,16 +9,25 @@
    if (fmt == NULL)
      return false;
  
-@@ -66,7 +66,7 @@
+@@ -59,14 +59,15 @@ FfmpegVideoEncoder::init(const char *fil
+   _context->oformat = fmt;
+   snprintf(_context->filename, sizeof (_context->filename), "%s", filename);
+ 
+-  _stream = av_new_stream(_context, 0);
++  _stream = avformat_new_stream(_context, NULL);
+   if (_stream == NULL)
+     {
+       close();
        return false;
      }
++  _stream->id = 0;
    _stream->codec->codec_id = fmt->video_codec;
 -  _stream->codec->codec_type = CODEC_TYPE_VIDEO;
 +  _stream->codec->codec_type = AVMEDIA_TYPE_VIDEO;
    _stream->codec->codec_tag = MKTAG('D', 'X', '5', '0');
  
    _stream->codec->bit_rate = 79000 + 1000 * pow(1.4, quality * 20.0);
-@@ -81,14 +81,8 @@
+@@ -81,14 +82,8 @@ FfmpegVideoEncoder::init(const char *fil
    if (_context->oformat->flags & AVFMT_GLOBALHEADER)
      _stream->codec->flags |= CODEC_FLAG_GLOBAL_HEADER;
  
@@ -34,7 +43,7 @@
      {
        close();
        return false;
-@@ -119,14 +113,14 @@
+@@ -119,14 +114,14 @@ FfmpegVideoEncoder::init(const char *fil
  
    avpicture_fill((AVPicture *) _frame, buf, _stream->codec->pix_fmt, width, height);
  
@@ -51,7 +60,7 @@
    return true;
  }
  
-@@ -171,7 +165,7 @@
+@@ -171,7 +166,7 @@ FfmpegVideoEncoder::encode(byte_t *image
    if (_stream->codec->coded_frame->pts != AV_NOPTS_VALUE)
      pkt.pts = av_rescale_q(_stream->codec->coded_frame->pts, _stream->codec->time_base, _stream->time_base);
    if (_stream->codec->coded_frame->key_frame)
@@ -60,7 +69,7 @@
    pkt.stream_index = _stream->index;
    pkt.data = _buf;
    pkt.size = out_size;
-@@ -197,7 +191,7 @@
+@@ -197,7 +192,7 @@ FfmpegVideoEncoder::close(void)
        av_freep(&_context->streams[i]->codec);
        av_freep(&_context->streams[i]);
      }
@@ -69,7 +78,7 @@
    
    av_free(_context);
    
-@@ -207,4 +201,4 @@
+@@ -207,4 +202,4 @@ FfmpegVideoEncoder::close(void)
    _buf = NULL;
  }
  

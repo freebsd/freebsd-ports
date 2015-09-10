@@ -182,6 +182,7 @@ foomatic/db/source/printer/Oki-C3300.xml
 foomatic/db/source/printer/Oki-C3400.xml
 foomatic/db/source/printer/Oki-C3530_MFP.xml
 foomatic/db/source/printer/Oki-C5100.xml
+foomatic/db/source/printer/Oki-C511dn.xml
 foomatic/db/source/printer/Oki-C5200.xml
 foomatic/db/source/printer/Oki-C5500.xml
 foomatic/db/source/printer/Oki-C5600.xml
@@ -269,6 +270,7 @@ share/cups/model/Oki-C3300.ppd.gz
 share/cups/model/Oki-C3400.ppd.gz
 share/cups/model/Oki-C3530_MFP.ppd.gz
 share/cups/model/Oki-C5100.ppd.gz
+share/cups/model/Oki-C511dn.ppd.gz
 share/cups/model/Oki-C5200.ppd.gz
 share/cups/model/Oki-C5500.ppd.gz
 share/cups/model/Oki-C5600.ppd.gz

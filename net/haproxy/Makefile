@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	haproxy
-PORTVERSION=	1.5.12
+PORTVERSION=	1.5.14
 CATEGORIES=	net www
 MASTER_SITES=	http://www.haproxy.org/download/1.5/src/
 
@@ -43,8 +43,12 @@ USE_OPENSSL=	yes
 MAKE_ARGS+=	USE_OPENSSL=1
 .endif
 
+post-build:
+	cd ${WRKSRC}/contrib/halog && ${MAKE_CMD} ${MAKE_ENV}
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/haproxy ${STAGEDIR}${PREFIX}/sbin/
+	${INSTALL_PROGRAM} ${WRKSRC}/contrib/halog/halog ${STAGEDIR}${PREFIX}/sbin/
 	${INSTALL_MAN} ${WRKSRC}/doc/haproxy.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})

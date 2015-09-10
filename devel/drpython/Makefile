@@ -3,7 +3,7 @@
 
 PORTNAME=	drpython
 PORTVERSION=	3.11.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel python
 MASTER_SITES=	SF/${PORTNAME}/DrPython%20%283.x%29/${PORTVERSION}
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
@@ -37,6 +37,7 @@ post-patch:
 	@${RM} ${WRKSRC}/setup.cfg
 	@${REINPLACE_CMD} -e \
 		's|firefox|xdg-open|' ${WRKSRC}/drPreferences.py
+	@${REINPLACE_CMD} -e 's|%%PYTHON%%|${PYTHON_CMD}|' ${WRKSRC}/drpython.lin
 
 pre-build:
 	@(cd ${WRKSRC}/docsrc && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} html)

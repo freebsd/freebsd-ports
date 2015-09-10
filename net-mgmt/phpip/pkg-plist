@@ -99,11 +99,13 @@
 %%PHPIP%%/sql/phpip_upgrade_4.2-4.3.2.sql
 %%PHPIP%%/subnetSummary.php
 %%PHPIP%%/user_management.php
-@dirrm %%PHPIP%%/sql
-@dirrmtry %%PHPIP%%/includes
-@dirrm %%PHPIP%%/i
-@dirrm %%PHPIP%%/css
-@dirrm %%PHPIP%%/classes
-@dirrm %%PHPIP%%/boxes
-@dirrm %%PHPIP%%/Net
-@dirrmtry %%PHPIP%%
+@dir %%PHPIP%%/sql
+@dir %%PHPIP%%/includes
+@dir %%PHPIP%%/i
+@dir %%PHPIP%%/css
+@dir %%PHPIP%%/classes
+@dir %%PHPIP%%/boxes
+@dir %%PHPIP%%/Net
+@dir %%PHPIP%%
+@owner
+@group

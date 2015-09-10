@@ -3,7 +3,7 @@
 
 PORTNAME=	pstoedit
 PORTVERSION=	3.70
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics print
 MASTER_SITES=	SF
 
@@ -14,8 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
 
-USES=		pathfix pkgconfig libtool
-USE_GHOSTSCRIPT=	yes
+USES=		ghostscript pathfix pkgconfig libtool
 GNU_CONFIGURE=	yes
 MAKE_ENV=	INSTALL_STRIP_FLAG="${STRIP}"
 USE_LDCONFIG=	yes

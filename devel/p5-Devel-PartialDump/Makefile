@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Devel-PartialDump
-PORTVERSION=	0.17
-PORTREVISION=	1
+PORTVERSION=	0.18
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,10 +17,16 @@ BUILD_DEPENDS=	p5-Class-Tiny>=0:${PORTSDIR}/devel/p5-Class-Tiny \
 		p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter \
 		p5-namespace-clean>=0.20:${PORTSDIR}/devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn \
-		p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok
+TEST_DEPENDS=	p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
 
+NO_ARCH=	yes
 USES=		perl5
-USE_PERL5=	modbuildtiny
+USE_PERL5=	configure
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502200
+TEST_DEPENDS+=	p5-Test-Simple>=1.001.014:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>

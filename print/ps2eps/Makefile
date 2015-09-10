@@ -3,7 +3,7 @@
 
 PORTNAME=	ps2eps
 PORTVERSION=	1.64
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	http://www.tm.uka.de/~bless/ \
 		http://www.ipv6.tm.uka.de/~bless/
@@ -13,8 +13,7 @@ COMMENT=	Generate Encapsulated Postscript file from Postscript document
 
 WRKSRC=		${WRKDIR}/ps2eps
 
-USE_GHOSTSCRIPT_RUN=	yes
-USES=		perl5
+USES=		ghostscript:run perl5
 USE_PERL5=	run
 OPTIONS_DEFINE=	DOCS
 

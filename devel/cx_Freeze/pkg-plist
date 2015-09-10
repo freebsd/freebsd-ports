@@ -5,6 +5,9 @@ bin/cxfreeze-quickstart
 %%PYTHON_SITELIBDIR%%/cx_Freeze/__init__.pyo
 %%PYTHON_SITELIBDIR%%/cx_Freeze/bases/Console
 %%PYTHON_SITELIBDIR%%/cx_Freeze/bases/ConsoleKeepPath
+%%PYTHON_SITELIBDIR%%/cx_Freeze/common.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/common.pyc
+%%PYTHON_SITELIBDIR%%/cx_Freeze/common.pyo
 %%PYTHON_SITELIBDIR%%/cx_Freeze/dist.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/dist.pyc
 %%PYTHON_SITELIBDIR%%/cx_Freeze/dist.pyo
@@ -59,12 +62,12 @@ bin/cxfreeze-quickstart
 %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/advanced/setup.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/advanced/setup.pyc
 %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/advanced/setup.pyo
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/matplotlib/matplotlib_eg.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/matplotlib/matplotlib_eg.pyc
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/matplotlib/matplotlib_eg.pyo
 %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/matplotlib/setup.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/matplotlib/setup.pyc
 %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/matplotlib/setup.pyo
-%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/matplotlib/test_matplotlib.py
-%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/matplotlib/test_matplotlib.pyc
-%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/matplotlib/test_matplotlib.pyo
 %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport/relimport.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport/relimport.pyc
 %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport/relimport.pyo

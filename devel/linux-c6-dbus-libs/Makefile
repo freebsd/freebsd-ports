@@ -3,8 +3,9 @@
 
 PORTNAME=	dbus-libs
 PORTVERSION=	1.2.24
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	devel linux
+MASTER_SITES=	CENTOS_LINUX_UPDATES
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Libraries for accessing D-BUS (Linux CentOS ${LINUX_DIST_VER})
@@ -13,14 +14,12 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 USE_LINUX=	c6
 USE_LINUX_RPM=	yes
-RPMVERSION=	7.el6_3
+RPMVERSION=	8.el6_6
 USE_LDCONFIG=	yes
 DESCR=		${.CURDIR}/../dbus/pkg-descr
 
-PLIST_FILES=	lib/libdbus-1.so.3 lib/libdbus-1.so.3.4.0
-
 CONFLICTS=	linux-dbus-libs-[0-9]*  linux-f10-dbus-libs-[0-9]*
 
-SRC_DISTFILES=	dbus-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}
+SRC_DISTFILES=	dbus-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}:SOURCE
 
 .include <bsd.port.mk>

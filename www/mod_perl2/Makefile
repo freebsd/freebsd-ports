@@ -2,26 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	mod_perl
-PORTVERSION=	2.0.8
-PORTREVISION=	4
+PORTVERSION=	2.0.9
 PORTEPOCH=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	APACHE/perl
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	2
 
-PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	ohauer
-
 MAINTAINER=	apache@FreeBSD.org
-COMMENT=	Embeds a Perl interpreter in the Apache2 server
+COMMENT=	Embeds a Perl interpreter in the Apache server
 
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	p5-BSD-Resource>=0:${PORTSDIR}/devel/p5-BSD-Resource
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-CGI>=4.15:${PORTSDIR}/www/p5-CGI \
+		p5-libwww>=6.13:${PORTSDIR}/www/p5-libwww
 
-SUB_FILES=	pkg-message
+SUB_FILES=	pkg-message ${APMOD_FILE}
 SUB_LIST=	APACHEMODDIR=${APACHEMODDIR}
 USE_APACHE=	22+
 USES=		cpe gmake perl5
@@ -29,20 +27,14 @@ USE_PERL5=	configure
 USE_CSTD=	gnu89
 CPE_VENDOR=	apache
 
+APMOD_FILE=	260_${PORTNAME}.conf.sample
+PLIST_SUB+=	APMOD_FILE=${APMOD_FILE}
+
 .include <bsd.port.pre.mk>
 
-# In case apache22 is in use and you want to test
-# the new mod_perl, change '> 22' to '>= 22'
-.if ${APACHE_VERSION} > 22
-# patch shaped against upstream mod_perl
-# Last Changed Rev: 1602105
-PATCHREV=	1638352
-PATCHFILES+= 	${PORTNAME}-${PORTVERSION}-r${PATCHREV}.diff.gz
-PLIST_SUB+=	AP24=""
-PMSED=		's/%AP24%//'
-.else
-PLIST_SUB+=	AP24="@comment "
-PMSED=		'/%AP24%/d'
+.if ${PERL_VER} == 5.22
+BROKEN=		PERL ${PERL_VER} is not supported by upstream,\
+		see http://svn.apache.org/viewvc/perl/modperl/trunk/README?view=markup
 .endif
 
 # Provider is build iff apache24 is in use
@@ -52,29 +44,8 @@ PLIST_SUB+=	AP22="@comment "
 PLIST_SUB+=	AP22=""
 .endif
 
-# Using apxs in this way is problematic if apache2 is installed under a
-# different PREFIX than mod_perl2, because the mod_perl2 installation will
-# use paths returned by apxs to install some components. Fixes welcome.
-CONFIGURE_ARGS=	PREFIX=${PREFIX} MP_APXS=${APXS} MP_APR_CONFIG=${LOCALBASE}/bin/apr-1-config
-
-.if exists(${LOCALBASE}/include/apr-1/apr.h)
-APR_H=		${LOCALBASE}/include/apr-1/apr.h
-APR_MAJ_V!=	${ECHO_CMD} `${LOCALBASE}/bin/apr-1-config --version | ${SED} -e 's,\..*,,'`
-.endif
-
-.if defined(APR_H)
-APR_HAS_THREADS!=	${ECHO_CMD} `${GREP} -c 'APR_HAS_THREADS *1' ${APR_H}`
-.else
-APR_HAS_THREADS=	0
-.endif
-
-.if ${APR_HAS_THREADS} == 1
-PLIST_SUB+=	THREADMUTEX=""
-PLIST_SUB+=	THREADRWLOCK=""
-.else
-PLIST_SUB+=	THREADMUTEX="@comment "
-PLIST_SUB+=	THREADRWLOCK="@comment "
-.endif
+CONFIGURE_ARGS=	PREFIX=${PREFIX} MP_APXS=${APXS} \
+		MP_APR_CONFIG=${LOCALBASE}/bin/apr-1-config
 
 post-patch:
 	${REINPLACE_CMD} -e 's/APR_INLINE//g' \
@@ -86,21 +57,39 @@ post-patch:
 pre-configure:
 	${FIND} ${WRKSRC} -type f \( -name \*.bak -o -name \*.orig \) -delete
 
+# PR 200697: Test whether the system uses a multithreaded perl
+.if exists(${PERL})
+HAS_ITHREADS!=	${PERL} -e 'use Config; print $$Config{useithreads} ? 1 : 0'
+.else
+# Assume true when building packages.
+HAS_ITHREADS=	1
+.endif
+
+.if ${HAS_ITHREADS:M1}
+PLIST_SUB+=	ITHREADS=""
+.else
+PLIST_SUB+=	ITHREADS="@comment "
+. if !${APACHE_VERSION:M22}
+IGNORE=		requires PERL with "THREADS=on", please rebuild PERL and all depending ports
+. endif
+.endif
+
 post-configure:
 	${REINPLACE_CMD} -e 's/-pthread -Wl,-E//g' \
 		${PATCH_WRKSRC}/xs/APR/APR/Makefile
+	@${ECHO_CMD} == PERL: \"${PERL_VER}\", ITHREADS: \"${HAS_ITHREADS}\", Apache: \"${APACHE_VERSION}\"
 
 post-install:
-# adjust pkg-message
-	${REINPLACE_CMD} -e ${PMSED} ${WRKDIR}/pkg-message
-	${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEINCLUDEDIR}/modules/perl
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEINCLUDEDIR}/modules/perl
 	${INSTALL_DATA} ${WRKSRC}/src/modules/perl/*.h \
 		${STAGEDIR}${PREFIX}/${APACHEINCLUDEDIR}/modules/perl
 	${INSTALL_DATA} ${WRKSRC}/xs/*.h ${STAGEDIR}${PREFIX}/${APACHEINCLUDEDIR}
 	${INSTALL_DATA} ${WRKSRC}/xs/APR/PerlIO/*.h ${STAGEDIR}${PREFIX}/${APACHEINCLUDEDIR}
-	${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/modules/perl/mod_perl.so \
 		${STAGEDIR}${PREFIX}/${APACHEMODDIR}/mod_perl.so
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/modules.d
+	${INSTALL_DATA} ${WRKDIR}/${APMOD_FILE} ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/modules.d
 
 	-for f in `${FIND} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto -name \*.so` ; do \
 		${CHMOD} u+w $${f}; \

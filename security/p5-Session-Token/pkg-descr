@@ -1,0 +1,7 @@
+This module provides a secure, efficient, and simple interface for
+creating session tokens, password reset codes, temporary passwords,
+random identifiers, and anything else you can think of.
+
+Like this: my $token = Session::Token->new->get; # 128 bits
+
+WWW: http://search.cpan.org/dist/Session-Token/

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	omniauth-multipassword
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -12,6 +12,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-omniauth>=1.0:${PORTSDIR}/security/rubygem-omniauth
+
+NO_ARCH=	yes
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

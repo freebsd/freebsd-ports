@@ -34,7 +34,6 @@ bin/s6-ipcserver-socketbinder
 bin/s6-ipcserverd
 bin/s6-log
 bin/s6-mkfifodir
-bin/s6-notifywhenup
 bin/s6-setlock
 bin/s6-setsid
 bin/s6-softlimit
@@ -68,9 +67,9 @@ include/s6/s6.h
 include/s6/s6lock.h
 lib/libs6.so
 lib/libs6.so.2
-lib/libs6.so.2.1
-lib/libs6.so.2.1.1
-lib/libs6.so.2.1.1.1
+lib/libs6.so.2.2
+lib/libs6.so.2.2.0
+lib/libs6.so.2.2.0.1
 lib/s6/libs6.a
 libexec/s6lockd-helper
 sbin/s6-applyuidgid
@@ -84,6 +83,7 @@ sbin/s6-setuidgid
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/localservice.html
 %%PORTDOCS%%%%DOCSDIR%%/notifywhenup.html
+%%PORTDOCS%%%%DOCSDIR%%/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-accessrules-cdb-from-fs.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-accessrules-fs-from-cdb.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-applyuidgid.html
@@ -121,7 +121,6 @@ sbin/s6-setuidgid
 %%PORTDOCS%%%%DOCSDIR%%/s6-ipcserverd.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-log.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-mkfifodir.html
-%%PORTDOCS%%%%DOCSDIR%%/s6-notifywhenup.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-setlock.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-setsid.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-setuidgid.html

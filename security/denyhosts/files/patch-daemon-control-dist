@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- daemon-control-dist.orig
 +++ daemon-control-dist
 @@ -11,9 +11,9 @@

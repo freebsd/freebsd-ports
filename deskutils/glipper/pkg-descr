@@ -1,8 +1,0 @@
-Glipper is a clipboardmanager for the GNOME Panel. It maintains a history of
-text copied to the clipboard from which you can choose. You can see this as a
-GNOME counterpart to KDE's Klipper.
-
-Glipper uses plugins to give the user all the extra functionality they want,
-including support for Actions, Snippets and No-Paste services.
-
-WWW: https://launchpad.net/glipper

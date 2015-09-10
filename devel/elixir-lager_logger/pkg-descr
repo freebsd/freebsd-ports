@@ -1,0 +1,3 @@
+A lager backend that forwards all log messages to Elixir's Logger.
+
+WWW: https://github.com/PSPDFKit-labs/lager_logger

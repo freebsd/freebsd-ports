@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- SAM.cpp.orig	Sat Nov 30 01:25:40 2002
 +++ SAM.cpp	Sat Nov 30 01:26:38 2002
 @@ -205,7 +205,7 @@

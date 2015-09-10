@@ -3,7 +3,7 @@ lib/girepository-1.0/libisocodes-%%VERSION%%.typelib
 lib/libisocodes.a
 lib/libisocodes.so
 lib/libisocodes.so.1
-lib/libisocodes.so.1.1.0
+lib/libisocodes.so.1.1.1
 libdata/pkgconfig/libisocodes.pc
 share/gir-1.0/libisocodes-%%VERSION%%.gir
 share/locale/cs/LC_MESSAGES/libisocodes.mo

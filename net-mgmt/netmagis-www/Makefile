@@ -6,6 +6,15 @@ PKGNAMESUFFIX=	-www
 
 COMMENT=	Netmagis web module
 
+RUN_DEPENDS=	netmagis-config:${PORTSDIR}/net-mgmt/netmagis-common \
+		dot:${PORTSDIR}/graphics/graphviz \
+		pwgen:${PORTSDIR}/sysutils/pwgen \
+		tcltls>=1.4.1:${PORTSDIR}/devel/tcltls \
+		tDOM>=0.8.0:${PORTSDIR}/www/tdom \
+		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+
+USE_TEX=	full
+
 MASTERDIR=	${.CURDIR}/../netmagis-common
 
 PKGMESSAGE=	${.CURDIR}/pkg-message

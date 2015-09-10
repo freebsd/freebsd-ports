@@ -13,6 +13,8 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	rubygem-loggability>=0.11:${PORTSDIR}/textproc/rubygem-loggability
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

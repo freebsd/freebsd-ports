@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libusbmuxd
-PORTVERSION=	1.0.9
+PORTVERSION=	1.0.10
 CATEGORIES=	comms
 MASTER_SITES=	http://www.libimobiledevice.org/downloads/
 

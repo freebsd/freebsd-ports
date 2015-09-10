@@ -2,17 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=		oolite
-PORTVERSION=		1.80
-PORTREVISION=		2
+PORTVERSION=		1.82
 CATEGORIES=		games gnustep
-MASTER_SITES=		http://github.com/OoliteProject/oolite/releases/download/1.80b/
+MASTER_SITES=		http://github.com/OoliteProject/oolite/releases/download/1.82/
 DISTNAME=		${PORTNAME}-source-${PORTVERSION}
 DIST_SUBDIR=		oolite
 
-MAINTAINER=		avg@icyb.net.ua
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Trade and combat space simulator, clone of Elite
-
-BROKEN=			Not converted to USES=gnustep
 
 LICENSE=		CCBYNCSAv3 GPLv2 ZLIB
 LICENSE_COMB=		multi
@@ -28,15 +25,17 @@ LIB_DEPENDS=		libespeak.so:${PORTSDIR}/audio/espeak \
 			libpng.so:${PORTSDIR}/graphics/png \
 			libminizip.so:${PORTSDIR}/archivers/minizip
 
-USES=			gmake openal:al perl5 python:build tar:bzip2
+USES=			gnustep openal:al perl5 python:build tar:bzip2
 USE_GL=			yes
 USE_SDL=		sdl
-USE_GNUSTEP=		yes
-USE_GNUSTEP_BASE=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_MAKEFILE=		yes
+USE_GNUSTEP=		base build
+# Redefine DO_MAKE_BUILD, because current gnustep in USES overrides MAKEFILE
+# without possibility to change it, as it was done in the previous implementation
+DO_MAKE_BUILD=		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} Makefile ${_MAKE_JOBS} ${MAKE_ARGS:C,^${DESTDIRNAME}=.*,,g}
 ALL_TARGET=		release-deployment
 USE_PERL5=		build
+
+GNUSTEP_LOCAL_APPS=	${GNUSTEP_LOCAL_ROOT}/Applications
 
 SUB_FILES=	oolite
 SUB_LIST=	GNUSTEP_SYSTEM_TOOLS="${GNUSTEP_SYSTEM_TOOLS}"
@@ -55,33 +54,36 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 900014
-BUILD_DEPENDS+=	clang34:${PORTSDIR}/lang/clang34
-CC=		${LOCALBASE}/bin/clang34
-CXX=		${LOCALBASE}/bin/clang++34
-CPP=		${LOCALBASE}/bin/clang-cpp34
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900014
+WITH_PORTS_CLANG=	yes
 .elif exists(${CC})
 CCVERSION!=	${CC} --version
 COMPILER_VERSION=	${CCVERSION:M[0-9].[0-9]*:C/([0-9]).?/\1/g}
 COMPILER_IS_CLANG=	${CCVERSION:Mclang}
-
 # Check for LLVM/Clang v3.4.1
 .if ${COMPILER_IS_CLANG} && ${COMPILER_VERSION} == 341
-# Force to use optimization for size, because of speed optimization error(s)
+# Use compiler from ports, because of errors
 # for ${WRKSRC}/src/Core/Scripting/OOJavaScriptEngine.m file
-ADD_OBJCFLAGS=	s|-std=c99|-std=c99 -Os|
+WITH_PORTS_CLANG=	yes
 .endif
+.endif
+
+.if defined(WITH_PORTS_CLANG)
+BUILD_DEPENDS+=	clang34:${PORTSDIR}/lang/clang34
+CC=		${LOCALBASE}/bin/clang34
+CXX=		${LOCALBASE}/bin/clang++34
+CPP=		${LOCALBASE}/bin/clang-cpp34
 .endif
 
 post-patch: .SILENT
 	${REINPLACE_CMD} -e 's/GNUSTEP_USER_ROOT/GNUSTEP_LOCAL_ROOT/ ; \
 		s/sdl-config/$${SDL_CONFIG}/ ; \
-		s|-lstdc++|`$${SDL_CONFIG} --libs` -lstdc++| ; \
+		s|-lstdc++|`$${SDL_CONFIG} --libs` &| ; \
 		s|:src/Core/MiniZip|| ; \
 		s|-Isrc/Core/MiniZip|-I$${LOCALBASE}/include/minizip| ; \
 		s|-lz|-lminizip| ; \
 		/ioapi.c/d ; /unzip.c/d ; \
-		s|/usr/X11R6|$${LOCALBASE}| ; ${ADD_OBJCFLAGS}' \
+		s|/usr/X11R6|$${LOCALBASE}|' \
 		${WRKSRC}/GNUmakefile
 # Conversion needed for unsigned int type for using isfinite function
 	${REINPLACE_CMD} -e 's|isfinite(uValue)|isfinite((long double)uValue)|' \
@@ -91,11 +93,13 @@ post-patch: .SILENT
 		${WRKSRC}/src/Core/NSFileManagerOOExtensions.h
 
 do-install:
-	cd ${RELEASEDIR} && ${COPYTREE_SHARE} "${PORTDATA}" ${STAGEDIR}${DATADIR}
+	(cd ${RELEASEDIR} && ${COPYTREE_SHARE} "${PORTDATA}" ${STAGEDIR}${DATADIR})
 	${INSTALL_SCRIPT} ${WRKDIR}/oolite ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${RELEASEDIR}/oolite ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/installers/FreeDesktop/oolite.desktop ${STAGEDIR}${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/installers/FreeDesktop/oolite-icon.png ${STAGEDIR}${PREFIX}/share/pixmaps
-	cd ${WRKSRC}/Doc && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/installers/FreeDesktop/oolite.desktop \
+		${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/installers/FreeDesktop/oolite-icon.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps
+	(cd ${WRKSRC}/Doc && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.post.mk>

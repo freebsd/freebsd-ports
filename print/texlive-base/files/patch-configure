@@ -1,0 +1,36 @@
+--- configure.orig	2015-04-12 11:22:39 UTC
++++ configure
+@@ -5685,6 +5685,15 @@ $as_echo "$as_me:   ->  installed \`zlib
+     as_fn_error $? "Sorry, \`--with-system-teckit' requires \`--with-system-zlib'" "$LINENO" 5
+   fi
+ fi
++# Check whether --with-teckit-includes was given.
++if test "${with_teckit_includes+set}" = set; then :
++  withval=$with_teckit_includes;
++fi
++
++# Check whether --with-teckit-libdir was given.
++if test "${with_teckit_libdir+set}" = set; then :
++  withval=$with_teckit_libdir;
++fi
+ 
+ test "x$need_teckit" = xyes && {
+   need_zlib=yes
+@@ -21284,11 +21293,12 @@ elif test "x$need_graphite2:$with_system
+   as_fn_error $? "did not find graphite2" "$LINENO" 5
+ fi
+ 
+-if $PKG_CONFIG teckit; then
+-  TECKIT_INCLUDES=`$PKG_CONFIG teckit --cflags`
+-  TECKIT_LIBS=`$PKG_CONFIG teckit --libs`
+-elif test "x$need_teckit:$with_system_teckit" = xyes:yes; then
+-  as_fn_error $? "did not find teckit" "$LINENO" 5
++if test "x$with_teckit_includes" != x && test "x$with_teckit_includes" != xyes; then
++  TECKIT_INCLUDES="-I$with_teckit_includes"
++fi
++TECKIT_LIBS="-lTECkit"
++if test "x$with_teckit_libdir" != x && test "x$with_teckit_libdir" != xyes; then
++  TECKIT_LIBS="-L$with_teckit_libdir $TECKIT_LIBS"
+ fi
+ 
+ if test -n "$ac_tool_prefix"; then

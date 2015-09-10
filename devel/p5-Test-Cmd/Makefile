@@ -13,6 +13,7 @@ COMMENT=	Portable testing of commands and scripts
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

@@ -1,6 +1,6 @@
---- ./Mix.c.orig	2011-06-21 21:06:03.000000000 +0200
-+++ ./Mix.c	2011-06-21 21:06:53.000000000 +0200
-@@ -78,7 +78,7 @@
+--- Mix.c.orig	2003-03-27 05:43:11 UTC
++++ Mix.c
+@@ -78,7 +78,7 @@ close_mixer() {
  #ifdef DEBUG
    fprintf(stderr, "close_mixer()\n");
  #endif

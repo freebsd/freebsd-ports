@@ -42,8 +42,7 @@ BROKEN=		Does not compile on arm
 .endif
 
 .if ${PORT_OPTIONS:MSERVER}
-MASTER_SITES+=	${MASTER_SITE_XORG:S/$/:x/}
-MASTER_SITE_SUBDIR+=	4.3.0/:x
+MASTER_SITES+=	XORG/4.3.0/:x
 DISTFILES+=	X430src-1.tgz:x \
 		X430src-2.tgz:x \
 		X430src-3.tgz:x

@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- src/WinCommand/WinCommand.c.orig	Sat Jun 24 22:08:22 2006
 +++ src/WinCommand/WinCommand.c	Sat Jun 24 22:09:07 2006
 @@ -307,12 +307,13 @@

@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- libAfterBase/safemalloc.h.orig	Mon Sep 13 13:48:08 2004
 +++ libAfterBase/safemalloc.h	Mon Sep 13 13:48:40 2004
 @@ -1,7 +1,7 @@

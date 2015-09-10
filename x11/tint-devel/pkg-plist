@@ -1,6 +1,3 @@
 bin/tint2
 man/man1/tint2.1.gz
-%%PYCONF%%bin/tint2conf
-%%PYCONF%%bin/tintwizard.py
-%%PYCONF%%share/applications/tint2conf.desktop
 %%DATADIR%%-devel/default_icon.png

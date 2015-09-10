@@ -1,6 +1,6 @@
---- ./build/apr_hints.m4.orig	2010-02-06 16:14:03.000000000 -0500
-+++ ./build/apr_hints.m4	2010-05-26 23:19:19.263812317 -0400
-@@ -159,15 +159,11 @@
+--- build/apr_hints.m4.orig	2015-04-05 07:04:48 UTC
++++ build/apr_hints.m4
+@@ -147,15 +147,11 @@ dnl	       # Not a problem in 10.20.  Ot
  	;;
      *-freebsd*)
          APR_SETIFNULL(apr_lock_method, [USE_FLOCK_SERIALIZE])

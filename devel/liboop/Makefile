@@ -5,7 +5,7 @@ PORTNAME=	liboop
 PORTVERSION=	1.0
 PORTREVISION=	12
 CATEGORIES=	devel
-MASTER_SITES=	GENTOO/distfiles \
+MASTER_SITES=	GENTOO \
 		http://download.ofb.net/liboop/
 
 MAINTAINER=	rodrigo@FreeBSD.org

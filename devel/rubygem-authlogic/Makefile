@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	authlogic
-PORTVERSION=	3.4.5
+PORTVERSION=	3.4.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,6 +16,7 @@ RUN_DEPENDS=	rubygem-activesupport>=3.2:${PORTSDIR}/devel/rubygem-activesupport 
 		rubygem-request_store>=1.0:${PORTSDIR}/devel/rubygem-request_store \
 		rubygem-scrypt>=1.2:${PORTSDIR}/security/rubygem-scrypt
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

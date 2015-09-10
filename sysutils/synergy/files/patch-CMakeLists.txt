@@ -1,5 +1,5 @@
---- CMakeLists.txt.orig	2014-05-23 23:43:58.000000000 +0800
-+++ CMakeLists.txt	2014-05-30 13:55:26.000000000 +0800
+--- CMakeLists.txt.orig	2015-05-26 23:56:21.000000000 +0800
++++ CMakeLists.txt	2015-08-03 14:02:26.524577000 +0800
 @@ -74,10 +74,6 @@
  # Depending on the platform, pass in the required defines.
  if (UNIX)
@@ -8,6 +8,6 @@
 -	# we have a problem with people checking in code with warnings.
 -	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
 -
- 	# For config.h, detect the libraries, functions, etc.
- 	include(CheckIncludeFiles)
- 	include(CheckLibraryExists)
+ 	if (NOT APPLE)
+ 		set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
+ 	endif()

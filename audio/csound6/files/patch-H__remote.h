@@ -1,6 +1,6 @@
---- H/remote.h.orig
+--- H/remote.h.orig	2015-04-25 19:06:22 UTC
 +++ H/remote.h
-@@ -37,7 +37,10 @@
+@@ -42,7 +42,10 @@
      #ifdef MACOSX
        #include <net/if.h>
      #endif

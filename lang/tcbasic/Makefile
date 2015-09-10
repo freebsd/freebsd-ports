@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tcbasic
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.0
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/tcort/${PORTNAME}/releases/download/v${PORTVERSION}/
 

@@ -2,17 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	tweepy
-PORTVERSION=	2.3.0
+PORTVERSION=	3.3.0
 CATEGORIES=	net python
-MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTVERSIONPREFIX=	v
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Twitter API library for Python!
 
 LICENSE=	MIT
 
-USES=		python:2
-USE_PYTHON=	distutils autoplist
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>0:${PORTSDIR}/devel/py-pip
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.4.3:${PORTSDIR}/www/py-requests \
+		${PYTHON_PKGNAMEPREFIX}requests-oauthlib>=0.4.1:${PORTSDIR}/www/py-requests-oauthlib \
+		${PYTHON_PKGNAMEPREFIX}six>=1.7.3:${PORTSDIR}/devel/py-six
+
+USES=		python
+USE_GITHUB=	yes
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

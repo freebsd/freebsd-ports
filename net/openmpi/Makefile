@@ -4,7 +4,7 @@
 #  - etc/*.sample support
 
 PORTNAME=	openmpi
-DISTVERSION=	1.8.5
+DISTVERSION=	1.8.8
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v1.8/downloads/
 
@@ -24,7 +24,7 @@ USES=		fortran gmake libtool:keepla perl5 pkgconfig tar:bzip2
 USE_PERL5=	build
 
 MPIBASE?=	mpi
-MPIDIR?=	${MPIBASE}/${UNIQUENAME}
+MPIDIR?=	${MPIBASE}/${PKGBASE}
 
 PLIST_SUB+=	MPIBASE=${MPIBASE}
 PLIST_SUB+=	MPIDIR=${MPIDIR}
@@ -62,7 +62,7 @@ TORQUE_PLIST_FILES=	${MPIDIR}/lib/openmpi/mca_plm_tm.so \
 			${MPIDIR}/share/openmpi/help-ras-tm.txt
 
 SLURM_CONFIGURE_WITH=	slurm
-SLURM_LIB_DEPENDS=	libslurm.so:${PORTSDIR}/sysutils/slurm-hpc
+SLURM_LIB_DEPENDS=	libslurm.so:${PORTSDIR}/sysutils/slurm-wlm
 SLURM_PLIST_FILES=	${MPIDIR}/lib/openmpi/mca_ess_slurm.la \
 			${MPIDIR}/lib/openmpi/mca_ess_slurm.so \
 			${MPIDIR}/lib/openmpi/mca_plm_slurm.la \

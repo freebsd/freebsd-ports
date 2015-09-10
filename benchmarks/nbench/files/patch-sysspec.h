@@ -1,5 +1,5 @@
---- sysspec.h.orig	Mon Oct 18 00:05:17 2004
-+++ sysspec.h	Mon Oct 18 00:05:50 2004
+--- sysspec.h.orig	2003-02-19 21:37:21 UTC
++++ sysspec.h
 @@ -33,7 +33,7 @@
  
  #include "nmglobal.h"

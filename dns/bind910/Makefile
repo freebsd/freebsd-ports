@@ -1,4 +1,5 @@
 # $FreeBSD$
+# pkg-help formatted with fmt 59 63
 
 PORTNAME=	bind
 PORTVERSION=	${ISCVERSION:S/-P/P/}
@@ -7,7 +8,7 @@ PORTVERSION=	${ISCVERSION:S/-P/P/}
 PORTREVISION=	0
 .else
 # dns/bind910 here
-PORTREVISION=	3
+PORTREVISION=	0
 .endif
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
@@ -20,7 +21,7 @@ COMMENT?=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	ISCL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.10.2
+ISCVERSION=	9.10.2-P4
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -49,14 +50,16 @@ SUB_FILES=	pkg-message
 .endif
 
 OPTIONS_DEFAULT=	IPV6 SSL THREADS SIGCHASE IDN GSSAPI_NONE
-OPTIONS_DEFINE=		IDN LARGE_FILE GOST PYTHON \
+OPTIONS_DEFINE=		IDN LARGE_FILE PYTHON START_LATE \
 			FIXED_RRSET SIGCHASE IPV6 THREADS FILTER_AAAA
-OPTIONS_RADIO=	CRYPTO
+OPTIONS_RADIO=	CRYPTO GOSTDEF
 OPTIONS_RADIO_CRYPTO=	SSL NATIVE_PKCS11
+OPTIONS_RADIO_GOSTDEF=	GOST GOST_ASN1
 
 .if !defined(BIND_TOOLS_SLAVE)
 OPTIONS_DEFAULT+=	RRL
-OPTIONS_DEFINE+=	LINKS RPZ_NSIP RPZ_NSDNAME RRL DOCS NEWSTATS GEOIP
+OPTIONS_DEFINE+=	LINKS RPZ_NSIP RPZ_NSDNAME RRL DOCS NEWSTATS GEOIP \
+			MINCACHE PORTREVISION
 OPTIONS_GROUP=		DLZ
 OPTIONS_GROUP_DLZ=	DLZ_POSTGRESQL DLZ_MYSQL DLZ_BDB \
 			DLZ_LDAP DLZ_FILESYSTEM DLZ_STUB
@@ -74,8 +77,13 @@ FILTER_AAAA_DESC=	Enable filtering of AAAA records
 CRYPTO_DESC=		Choose which crypto engine to use
 NATIVE_PKCS11_DESC=	Use PKCS\#11 native API (**READ HELP**)
 GEOIP_DESC=		Allow geographically based ACL.
-GOST_DESC=		Enable GOST ciphers, needs SSL (see help)
+GOSTDEF_DESC=		Enable GOST ciphers, needs SSL (see help on 8 and 9)
+GOST_DESC=		GOST raw keys (new default)
+GOST_ASN1_DESC=		GOST using ASN.1
 PYTHON_DESC=		Build with Python utilities
+START_LATE_DESC=	Start BIND late in the boot process
+MINCACHE_DESC=		Use the mincachettl patch
+PORTREVISION_DESC=	Show PORTREVISION in the version string
 
 LINKS_DESC=		Create conf file symlinks in ${PREFIX}
 NEWSTATS_DESC=		Enable alternate xml statistics channel format
@@ -89,10 +97,11 @@ DLZ_BDB_DESC=		DLZ BDB driver
 DLZ_LDAP_DESC=		DLZ LDAP driver
 DLZ_FILESYSTEM_DESC=	DLZ filesystem driver
 DLZ_STUB_DESC=		DLZ stub driver
-GSSAPI_BASE_DESC=	${GSSAPI_DESC} (Heimdal in base)
-GSSAPI_HEIMDAL_DESC=	${GSSAPI_DESC} (security/heimdal)
-GSSAPI_MIT_DESC=	${GSSAPI_DESC} (security/krb5)
-GSSAPI_NONE_DESC=	No ${GSSAPI_DESC}
+GSSAPI_BASE_DESC=	Using Heimdal in base
+GSSAPI_HEIMDAL_DESC=	Using security/heimdal
+GSSAPI_MIT_DESC=	Using security/krb5
+GSSAPI_NONE_DESC=	Disable
+MINCACHE_EXTRA_PATCHES=	${FILESDIR}/extrapatch-bind-min-override-ttl
 
 .if !defined(BIND_TOOLS_SLAVE)
 CONFLICTS+=		bind-tools-9.*
@@ -122,7 +131,8 @@ NATIVE_PKCS11_CONFIGURE_ENABLE=	native-pkcs11
 GEOIP_CONFIGURE_WITH=	geoip
 GEOIP_LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
 
-GOST_CONFIGURE_WITH=	gost
+GOST_CONFIGURE_ON=	--with-gost
+GOST_ASN1_CONFIGURE_ON=	--with-gost=asn1
 
 PYTHON_CONFIGURE_WITH=	python
 PYTHON_USES=	python
@@ -151,6 +161,11 @@ DLZ_FILESYSTEM_CONFIGURE_ON=	--with-dlz-filesystem=yes
 
 DLZ_STUB_CONFIGURE_ON=	--with-dlz-stub=yes
 
+START_LATE_SUB_LIST=	NAMED_REQUIRE="SERVERS cleanvar" \
+			NAMED_BEFORE="LOGIN"
+START_LATE_SUB_LIST_OFF=NAMED_REQUIRE="NETWORKING ldconfig syslogd" \
+			NAMED_BEFORE="SERVERS"
+
 GSSAPI_BASE_USES=	gssapi
 GSSAPI_BASE_CONFIGURE_ON= \
 	--with-gssapi=${GSSAPIBASEDIR} ${GSSAPI_CONFIGURE_ARGS}
@@ -163,6 +178,10 @@ GSSAPI_MIT_CONFIGURE_ON= \
 GSSAPI_NONE_CONFIGURE_ON=	--without-gssapi
 
 .include <bsd.port.options.mk>
+
+.if !${PORT_OPTIONS:MGOST} && !${PORT_OPTIONS:MGOST_ASN1}
+CONFIGURE_ARGS+=	--without-gost
+.endif
 
 .if !${PORT_OPTIONS:MLINKS}
 PKGINSTALL=${NONEXISTENT}
@@ -182,7 +201,7 @@ SUB_LIST+=	NOBASE="" BASE="@comment "
 USE_RC_SUBR+=	named
 SUB_FILES+=	named.conf
 .endif # !defined(BIND_TOOLS_SLAVE)
-.if ${PORT_OPTIONS:MGOST}
+.if ${PORT_OPTIONS:MGOST} || ${PORT_OPTIONS:MGOST_ASN1}
 WITH_OPENSSL_PORT=yes
 .endif
 .else
@@ -207,6 +226,10 @@ post-patch:
 		-e "s#/var\/run\/named\/named.pid#/var/run/named/pid#" \
 		${WRKSRC}/bin/${FILE}
 .endfor
+
+post-patch-PORTREVISION-on:
+	@${REINPLACE_CMD} -e '/EXTENSIONS/s#=$$#=_${PORTREVISION}#' \
+		${WRKSRC}/version
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}

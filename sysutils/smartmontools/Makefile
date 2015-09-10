@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	smartmontools
-PORTVERSION=	6.3
+PORTVERSION=	6.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -14,13 +15,12 @@ LICENSE=	GPLv2
 CONFLICTS=	smartmontools-devel-[0-9]*
 
 OPTIONS_DEFINE=	DOCS
-DOCS_CONFIGURE_OFF=	--without-docdir --without-exampledir
-DOCS_CONFIGURE_ON=	--with-docdir=${DOCSDIR}
 
-USES=		alias gmake
+USES=		alias gmake shebangfix
+SHEBANG_FILES=	examplescripts/Example5
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking \
-		--enable-drivedb --enable-sample \
+		--enable-sample \
 		--with-initscriptdir=${PREFIX}/etc/rc.d
 
 SUB_FILES=	pkg-message smart

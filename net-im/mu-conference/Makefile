@@ -3,7 +3,7 @@
 
 PORTNAME=	mu-conference
 PORTVERSION=	0.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-im
 MASTER_SITES=	http://download.gna.org/mu-conference/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -12,11 +12,13 @@ MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Multi-User Conferencing component for Jabber
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libidn.so:${PORTSDIR}/dns/libidn
 
-USES=		pkgconfig
+USES=		pkgconfig shebangfix
+SHEBANG_FILES=	scripts/roommaker.pl scripts/roomname.pl
 USE_GNOME=	glib20
 USE_RC_SUBR=	${PORTNAME}
 

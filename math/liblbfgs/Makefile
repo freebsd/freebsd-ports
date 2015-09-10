@@ -5,7 +5,7 @@ PORTNAME=	liblbfgs
 PORTVERSION=	1.10
 PORTREVISION=	1
 CATEGORIES=	math
-MASTER_SITES=	http://cloud.github.com/downloads/chokkan/liblbfgs/
+MASTER_SITES=	GHC
 
 MAINTAINER=	gaod@hychen.org
 COMMENT=	Library of Limited-memory Broyden-Fletcher-Goldfarb-Shanno
@@ -14,6 +14,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		libtool
+USE_GITHUB=	yes
+GH_ACCOUNT=	chokkan
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:env
 

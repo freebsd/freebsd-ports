@@ -20,23 +20,20 @@ USES=		tar:bzip2 libtool
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--with-pkg-config-files=${PREFIX}/libdata/pkgconfig
+CONFIGURE_ARGS=	--with-pkg-config-files=${PREFIX}/libdata/pkgconfig
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|md5sum|md5|g" ${WRKSRC}/Makefile.in
 
-pre-install:
-.if ${PORT_OPTIONS:MDOCS}
+pre-install-DOCS-on:
 	@${REINPLACE_CMD} -E "s|^(libgringottsdocdir =).*|\1 $$\(datadir\)/doc/libgringotts|" ${WRKSRC}/docs/Makefile ${WRKSRC}/Makefile
-.else
+
+pre-install-DOCS-off:
 	@${REINPLACE_CMD} -E -e "s|^(SUBDIRS =.*) docs|\1|" ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -E -e "s|^(install-data-am:.*)install-libgringottsdocDATA|\1|" ${WRKSRC}/Makefile
-.endif
 
 .include <bsd.port.mk>

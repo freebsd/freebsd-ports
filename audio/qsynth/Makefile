@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qsynth
-PORTVERSION=	0.3.8
+PORTVERSION=	0.3.9
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -13,15 +13,7 @@ LICENSE=	GPLv2 # (or later)
 
 LIB_DEPENDS=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth
 
-OPTIONS_DEFINE=	GRADIENT SYSTEM_TRAY
-OPTIONS_DEFAULT=	GRADIENT SYSTEM_TRAY
-GRADIENT_DESC=		Gradient eye-candy
-GRADIENT_CONFIGURE_ENABLE=	gradient
-SYSTEM_TRAY_DESC=	System-tray icon
-SYSTEM_TRAY_CONFIGURE_ENABLE=	system-tray
-
 USES=		gmake
-USE_QT4=	gui linguisttools_build moc_build qmake_build rcc_build uic_build
 QT_NONSTANDARD=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_ac_moc=${MOC} \
@@ -30,9 +22,27 @@ CONFIGURE_ENV=	ac_cv_path_ac_moc=${MOC} \
 		ac_cv_path_ac_lupdate=${LUPDATE} \
 		ac_cv_path_ac_lrelease=${LRELEASE}
 CONFIGURE_ARGS=	--localedir=${DATADIR} \
-		--with-qt=${QT_PREFIX} \
 		--with-fluidsynth=${LOCALBASE}
 INSTALLS_ICONS=	yes
+
+OPTIONS_DEFINE=		GRADIENT SYSTEM_TRAY
+OPTIONS_SINGLE=		TOOLKIT
+OPTIONS_SINGLE_TOOLKIT=	QT4 QT5
+OPTIONS_DEFAULT=	GRADIENT QT4 SYSTEM_TRAY
+
+GRADIENT_DESC=		Gradient eye-candy
+GRADIENT_CONFIGURE_ENABLE=	gradient
+QT4_USE=		qt4=corelib,gui \
+			qt4=linguisttools_build \
+			qt4=moc_build,qmake_build,rcc_build,uic_build
+QT4_CONFIGURE_ENABLE=	qt4
+QT5_USE=		qt5=core,gui,widgets \
+			qt5=buildtools_build,linguisttools_build,qmake_build
+QT5_CXXFLAGS=		-fPIC
+QT5_CONFIGURE_ENABLE=	qt5
+SYSTEM_TRAY_DESC=	System-tray icon
+SYSTEM_TRAY_CONFIGURE_ENABLE=	system-tray
+TOOLKIT_DESC=		Qt toolkit
 
 post-configure:
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} -o qsynth.mak \

@@ -3,7 +3,7 @@
 
 PORTNAME=	qca
 PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://delta.affinix.com/download/qca/2.0/
 
@@ -18,7 +18,7 @@ CMAKE_ARGS=	-DBUILD_PLUGINS=none -DBUILD_TESTS=no -DQT4_BUILD=yes \
 		-DPKGCONFIG_INSTALL_PREFIX=${PREFIX}/libdata/pkgconfig \
 		-DQCA_FEATURE_INSTALL_DIR=${QT_MKSPECDIR}/features \
 		-DQCA_MAN_INSTALL_DIR=${MANPREFIX}/man
-CMAKE_ENV=	QC_CERTSTORE_PATH=${LOCALBASE}/share/certs/ca-root-nss.crt
+CONFIGURE_ENV=	QC_CERTSTORE_PATH=${LOCALBASE}/share/certs/ca-root-nss.crt
 USE_LDCONFIG=	yes
 USE_QT4=	corelib moc_build qmake_build rcc_build
 

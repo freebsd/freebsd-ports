@@ -1,6 +1,6 @@
---- libev/ev.c.orig	2014-04-30 16:45:07.000000000 +0200
-+++ libev/ev.c	2015-02-20 23:33:36.945803000 +0100
-@@ -967,8 +967,8 @@
+--- libev/ev.c.orig	2015-05-23 12:04:13 UTC
++++ libev/ev.c
+@@ -1026,8 +1026,8 @@ ecb_inline uint64_t ecb_rotr64 (uint64_t
    #define ecb_unreachable() __builtin_unreachable ()
  #else
    /* this seems to work fine, but gcc always emits a warning for it :/ */

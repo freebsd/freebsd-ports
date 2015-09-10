@@ -10,19 +10,14 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby bindings for libmemcached
 
+LICENSE=	MIT
+
 LIB_DEPENDS=	libmemcached.so:${PORTSDIR}/databases/libmemcached
 
+CONFIGURE_ARGS=	--with-opt-dir=${LOCALBASE}
+GEM_ENV=	EXTERNAL_LIB="yes"
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-GEM_ENV	+=EXTERNAL_LIB="YES"
-CONFIGURE_ARGS=	"--with-opt-dir=${LOCALBASE}"
-
-.include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} >= 2.1
-BROKEN=		Does not build with Ruby 2.1
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

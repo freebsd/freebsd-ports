@@ -11,5 +11,3 @@ libexec/squidclamav/clwarn.cgi.fr_FR
 libexec/squidclamav/clwarn.cgi.pt_BR
 libexec/squidclamav/clwarn.cgi.ru_RU
 man/man1/squidclamav.1.gz
-@dirrm libexec/squidclamav
-@dirrm %%DATADIR%%

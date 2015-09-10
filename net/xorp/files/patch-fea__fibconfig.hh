@@ -1,6 +1,6 @@
---- ./fea/fibconfig.hh.orig	2012-01-11 17:46:45.000000000 +0000
-+++ ./fea/fibconfig.hh	2014-02-26 21:17:13.000000000 +0000
-@@ -736,12 +736,14 @@
+--- fea/fibconfig.hh.orig	2012-01-11 17:56:10 UTC
++++ fea/fibconfig.hh
+@@ -736,12 +736,14 @@ public:
       */
      Trie6& trie6() { return _trie6; }
  

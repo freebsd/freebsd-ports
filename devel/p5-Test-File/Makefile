@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-File
-PORTVERSION=	1.41
-PORTREVISION=	1
+PORTVERSION=	1.44
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +13,17 @@ COMMENT=	Test file attributes
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-Test-Manifest>=1.14:${PORTSDIR}/devel/p5-Test-Manifest
+TEST_DEPENDS=	p5-Test-utf8>=0:${PORTSDIR}/devel/p5-Test-utf8
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502104
+BUILD_DEPENDS+=	p5-Test-Simple>=1.001.006:${PORTSDIR}/devel/p5-Test-Simple
+RUN_DEPENDS+=	p5-Test-Simple>=1.001.006:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>

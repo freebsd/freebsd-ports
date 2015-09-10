@@ -3,11 +3,11 @@
 
 PORTNAME=	terraform
 PORTVERSION=	0.9.5
-PORTREVISION=	1
 DISTVERSIONPREFIX=	src-
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc gnome
 MASTER_SITES=	GOOGLE_CODE
+PKGNAMEPREFIX=	gnome-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive height field generation and manipulation program
@@ -19,10 +19,9 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libtrio.a:${PORTSDIR}/devel/trio
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		pathfix gettext gmake pkgconfig tar:tgz
+USES=		autoreconf gettext gmake pathfix pkgconfig tar:tgz
 USE_GCC=	yes
 USE_GNOME=	libgnomeprintui libgnomeui
-USE_AUTOTOOLS=	automake:env
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -32,10 +31,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s| desktop-links docs | |' \
-		 ${WRKSRC}/Makefile.in
-
-pre-configure:
-	@${LN} -sf ${AUTOMAKE_DIR}/depcomp ${WRKSRC}
+		 ${WRKSRC}/Makefile.am
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/desktop-links/Terraform.desktop \

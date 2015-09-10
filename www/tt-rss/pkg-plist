@@ -1527,12 +1527,6 @@
 %%WWWDIR%%/lib/jimIcon.php
 %%WWWDIR%%/lib/jshrink/Minifier.php
 %%WWWDIR%%/lib/jshrink/README.md
-%%WWWDIR%%/lib/languagedetect/LanguageDetect.php
-%%WWWDIR%%/lib/languagedetect/Text/LanguageDetect/Exception.php
-%%WWWDIR%%/lib/languagedetect/Text/LanguageDetect/ISO639.php
-%%WWWDIR%%/lib/languagedetect/Text/LanguageDetect/Parser.php
-%%WWWDIR%%/lib/languagedetect/data/lang.dat
-%%WWWDIR%%/lib/languagedetect/data/unicode_blocks.dat
 %%WWWDIR%%/lib/otphp/LICENCE
 %%WWWDIR%%/lib/otphp/lib/hotp.php
 %%WWWDIR%%/lib/otphp/lib/otp.php
@@ -1995,6 +1989,8 @@
 %%WWWDIR%%/lib/pubsubhubbub/README.txt
 %%WWWDIR%%/lib/pubsubhubbub/publisher.php
 %%WWWDIR%%/lib/pubsubhubbub/subscriber.php
+%%WWWDIR%%/lib/readability/JSLikeHTMLElement.php
+%%WWWDIR%%/lib/readability/Readability.php
 %%WWWDIR%%/lib/scriptaculous/controls.js
 %%WWWDIR%%/lib/scriptaculous/effects.js
 %%WWWDIR%%/lib/scriptaculous/scriptaculous.js
@@ -2057,9 +2053,11 @@
 %%WWWDIR%%/lock/.htaccess
 %%WWWDIR%%/messages.pot
 %%WWWDIR%%/opml.php
+%%WWWDIR%%/plugins.local/index.html
 %%WWWDIR%%/plugins/af_comics/af_comics_template.php
 %%WWWDIR%%/plugins/af_comics/filter_base.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_cad.php
+%%WWWDIR%%/plugins/af_comics/filters/af_comics_comicclass.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_comicpress.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_darklegacy.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_dilbert.php
@@ -2069,17 +2067,35 @@
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_tfd.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_twp.php
 %%WWWDIR%%/plugins/af_comics/init.php
-%%WWWDIR%%/plugins/af_elreg/init.php
 %%WWWDIR%%/plugins/af_fsckportal/init.php
-%%WWWDIR%%/plugins/af_habr/init.php
-%%WWWDIR%%/plugins/af_natgeo/init.php
+%%WWWDIR%%/plugins/af_lang_detect/init.php
+%%WWWDIR%%/plugins/af_lang_detect/languagedetect/LanguageDetect.php
+%%WWWDIR%%/plugins/af_lang_detect/languagedetect/Text/LanguageDetect/Exception.php
+%%WWWDIR%%/plugins/af_lang_detect/languagedetect/Text/LanguageDetect/ISO639.php
+%%WWWDIR%%/plugins/af_lang_detect/languagedetect/Text/LanguageDetect/Parser.php
+%%WWWDIR%%/plugins/af_lang_detect/languagedetect/data/lang.dat
+%%WWWDIR%%/plugins/af_lang_detect/languagedetect/data/unicode_blocks.dat
 %%WWWDIR%%/plugins/af_psql_trgm/button.png
 %%WWWDIR%%/plugins/af_psql_trgm/init.js
 %%WWWDIR%%/plugins/af_psql_trgm/init.php
+%%WWWDIR%%/plugins/af_readability/init.php
 %%WWWDIR%%/plugins/af_redditimgur/init.php
-%%WWWDIR%%/plugins/af_sciam/init.php
+%%WWWDIR%%/plugins/af_sort_bayes/chart_bar.png
+%%WWWDIR%%/plugins/af_sort_bayes/init.js
+%%WWWDIR%%/plugins/af_sort_bayes/init.php
+%%WWWDIR%%/plugins/af_sort_bayes/lib/COPYING
+%%WWWDIR%%/plugins/af_sort_bayes/lib/HISTORY
+%%WWWDIR%%/plugins/af_sort_bayes/lib/README.md
+%%WWWDIR%%/plugins/af_sort_bayes/lib/README.txt
+%%WWWDIR%%/plugins/af_sort_bayes/lib/VERSION
+%%WWWDIR%%/plugins/af_sort_bayes/lib/class.naivebayesian.php
+%%WWWDIR%%/plugins/af_sort_bayes/lib/class.naivebayesian_ngram.php
+%%WWWDIR%%/plugins/af_sort_bayes/lib/class.naivebayesianstorage.php
+%%WWWDIR%%/plugins/af_sort_bayes/thumb_down.png
+%%WWWDIR%%/plugins/af_sort_bayes/thumb_up.png
 %%WWWDIR%%/plugins/af_tumblr_1280/init.php
 %%WWWDIR%%/plugins/af_unburn/init.php
+%%WWWDIR%%/plugins/af_youtube_embed/init.php
 %%WWWDIR%%/plugins/af_zz_imgsetsizes/init.php
 %%WWWDIR%%/plugins/auth_internal/init.php
 %%WWWDIR%%/plugins/auth_remote/init.php
@@ -2393,6 +2409,7 @@
 %%WWWDIR%%/templates/generated_feed.txt
 %%WWWDIR%%/templates/resetpass_link_template.txt
 %%WWWDIR%%/templates/resetpass_template.txt
+%%WWWDIR%%/themes.local/.empty
 %%WWWDIR%%/themes/.empty
 %%WWWDIR%%/themes/default.css
 %%WWWDIR%%/themes/night.css
@@ -2410,6 +2427,7 @@
 @owner
 @group
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/utils
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/themes.local
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/themes
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/templates
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/schema/versions/pgsql
@@ -2437,17 +2455,27 @@
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/close_button
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/cache_starred_images
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/bookmarklets
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/auto_assign_labels
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/auth_remote
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/auth_internal
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_zz_imgsetsizes
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_youtube_embed
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_unburn
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_sciam
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_tumblr_1280
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_sort_bayes/lib
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_sort_bayes
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_redditimgur
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_natgeo
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_habr
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_readability
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_psql_trgm
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_lang_detect/languagedetect/data
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_lang_detect/languagedetect/Text/LanguageDetect
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_lang_detect/languagedetect/Text
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_lang_detect/languagedetect
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_lang_detect
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_fsckportal
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_elreg
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_comics/filters
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_comics
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins.local
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/lock
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/locale/zh_TW/LC_MESSAGES
@@ -2498,10 +2526,13 @@
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/locale/cs_CZ
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/locale/ca_CA/LC_MESSAGES
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/locale/ca_CA
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/locale/bg_BG/LC_MESSAGES
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/locale/bg_BG
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/locale/ar_SA/LC_MESSAGES
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/locale/ar_SA
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/locale
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/lib/scriptaculous
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/lib/readability
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/lib/pubsubhubbub
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/lib/phpqrcode/tools
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/lib/phpqrcode/cache/mask_7
@@ -2521,10 +2552,6 @@
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/lib/otphp/vendor
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/lib/otphp/lib
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/lib/otphp
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/lib/languagedetect/data
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/lib/languagedetect/Text/LanguageDetect
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/lib/languagedetect/Text
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/lib/languagedetect
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/lib/jshrink
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/lib/gettext
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/lib/dojo/store/util

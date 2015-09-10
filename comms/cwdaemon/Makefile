@@ -5,8 +5,7 @@ PORTNAME=	cwdaemon
 PORTVERSION=	0.9.4
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.chronos.org.uk/download/ \
-		    ${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	db
+		LOCAL/db
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio cw (Morse code) keyer daemon

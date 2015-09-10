@@ -10,10 +10,13 @@ PKGNAMESUFFIX=	4
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Coherent wrapper object-relational mapping for REST web services
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-activemodel4>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-activemodel4 \
 		rubygem-activesupport4>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport4 \
 		rubygem-rails-observers>=0.1.1:${PORTSDIR}/devel/rubygem-rails-observers
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

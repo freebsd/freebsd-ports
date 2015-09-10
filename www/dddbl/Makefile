@@ -11,9 +11,8 @@ COMMENT=	Definition Driven Database Layer for PHP
 
 USES=		tar:bzip2
 
-.include <bsd.port.options.mk>
-
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 USE_PHP=	yes
 

@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- wmMoonClock.c.orig	Thu Aug 15 18:15:26 2002
 +++ wmMoonClock.c	Thu Aug 15 18:15:51 2002
 @@ -162,7 +162,8 @@

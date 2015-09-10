@@ -5,9 +5,7 @@ PORTNAME=	a2ps
 PORTVERSION=	4.13b
 PORTREVISION=	6
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_GNU} \
-		${MASTER_SITE_LOCAL:S/$/:i18n/}
-MASTER_SITE_SUBDIR=	${PORTNAME} hrs/a2ps/:i18n
+MASTER_SITES=	GNU LOCAL/hrs/a2ps/:i18n
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Formats an ASCII file for printing on a postscript printer

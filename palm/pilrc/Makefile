@@ -12,20 +12,18 @@ COMMENT=	Resource compiler for Pilot applications
 LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/pilrc-${PORTVERSION}/unix
-CONFIGURE_ARGS+=	--enable-pilrcui
+CONFIGURE_ARGS=	--enable-pilrcui
 
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pilrc ${WRKSRC}/pilrcui ${STAGEDIR}${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${CP} -R ${WRKSRC}/../doc/* ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

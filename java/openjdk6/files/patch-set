@@ -1108,7 +1108,13 @@
  # include <signal.h>
  # include <errno.h>
  # include <dlfcn.h>
-@@ -131,6 +130,19 @@
+@@ -126,11 +125,25 @@
+ # include <sys/shm.h>
+ #ifndef __APPLE__
+ # include <link.h>
++# include <stdlib.h>
+ #endif
+ # include <stdint.h>
  # include <inttypes.h>
  # include <sys/ioctl.h>
  
@@ -1128,7 +1134,7 @@
  #if defined(__FreeBSD__) || defined(__NetBSD__)
  # include <elf.h>
  #endif
-@@ -162,8 +174,10 @@
+@@ -162,8 +175,10 @@
  #endif
  
  int (*os::Bsd::_clock_gettime)(clockid_t, struct timespec *) = NULL;
@@ -1140,7 +1146,7 @@
  Mutex* os::Bsd::_createThread_lock = NULL;
  #endif
  pthread_t os::Bsd::_main_thread;
-@@ -171,7 +185,11 @@
+@@ -171,7 +186,11 @@
  #ifndef _ALLBSD_SOURCE
  bool os::Bsd::_is_floating_stack = false;
  bool os::Bsd::_is_NPTL = false;
@@ -1152,7 +1158,7 @@
  const char * os::Bsd::_glibc_version = NULL;
  const char * os::Bsd::_libpthread_version = NULL;
  #endif
-@@ -205,6 +223,28 @@
+@@ -205,6 +224,28 @@
  
  julong os::Bsd::available_memory() {
  #ifdef _ALLBSD_SOURCE
@@ -1181,7 +1187,7 @@
    // XXXBSD: this is just a stopgap implementation
    return physical_memory() >> 2;
  #else
-@@ -221,6 +261,17 @@
+@@ -221,6 +262,17 @@
  }
  
  julong os::allocatable_physical_memory(julong size) {
@@ -1199,7 +1205,7 @@
  #ifdef _LP64
    return size;
  #else
-@@ -308,16 +359,22 @@
+@@ -308,16 +360,22 @@
  #define COMPILER_VARIANT "client"
  #endif
  
@@ -1226,7 +1232,7 @@
    int rslt = syscall(SYS_gettid);
    if (rslt == -1) {
       // old kernel, no NPTL support
-@@ -325,6 +382,7 @@
+@@ -325,6 +383,7 @@
    } else {
       return (pid_t)rslt;
    }
@@ -1234,7 +1240,7 @@
  }
  
  // Most versions of bsd have a bug where the number of processors are
-@@ -337,7 +395,35 @@
+@@ -337,7 +396,35 @@
                       "environment on Bsd when /proc filesystem is not mounted.";
  #endif
  
@@ -1271,7 +1277,7 @@
  void os::Bsd::initialize_system_info() {
    int mib[2];
    size_t len;
-@@ -452,7 +538,7 @@
+@@ -452,7 +539,7 @@
   *        7: The default directories, normally /lib and /usr/lib.
   */
  #ifndef DEFAULT_LIBPATH
@@ -1280,7 +1286,7 @@
  #endif
  
  #define EXTENSIONS_DIR  "/lib/ext"
-@@ -997,7 +1083,7 @@
+@@ -997,7 +1084,7 @@
      return NULL;
    }
  
@@ -1289,7 +1295,7 @@
  #ifdef __APPLE__
    // thread_id is mach thread on macos
    osthread->set_thread_id(::mach_thread_self());
-@@ -1009,6 +1095,7 @@
+@@ -1009,6 +1096,7 @@
    // thread_id is kernel thread id (similar to Solaris LWP id)
    osthread->set_thread_id(os::Bsd::gettid());
  
@@ -1297,7 +1303,7 @@
    if (UseNUMA) {
      int lgrp_id = os::numa_get_group_id();
      if (lgrp_id != -1) {
-@@ -1016,6 +1103,7 @@
+@@ -1016,6 +1104,7 @@
      }
    }
  #endif
@@ -1305,7 +1311,7 @@
    // initialize signal mask for this thread
    os::Bsd::hotspot_sigmask(thread);
  
-@@ -1105,7 +1193,7 @@
+@@ -1105,7 +1194,7 @@
      // let pthread_create() pick the default value.
    }
  
@@ -1314,7 +1320,7 @@
    // glibc guard page
    pthread_attr_setguardsize(&attr, os::Bsd::default_guard_size(thr_type));
  #endif
-@@ -1194,7 +1282,7 @@
+@@ -1194,7 +1283,7 @@
    }
  
    // Store pthread info into the OSThread
@@ -1323,7 +1329,7 @@
  #ifdef __APPLE__
    osthread->set_thread_id(::mach_thread_self());
  #else
-@@ -1630,7 +1718,10 @@
+@@ -1630,7 +1719,10 @@
  }
  #endif
  
@@ -1335,7 +1341,7 @@
  #ifndef SYS_clock_getres
  
  #if defined(IA32) || defined(AMD64)
-@@ -1644,6 +1735,7 @@
+@@ -1644,6 +1736,7 @@
  #else
  #define sys_clock_getres(x,y)  ::syscall(SYS_clock_getres, x, y)
  #endif
@@ -1343,7 +1349,7 @@
  
  void os::Bsd::fast_thread_clock_init() {
    if (!UseBsdPosixThreadCPUClocks) {
-@@ -1817,8 +1909,10 @@
+@@ -1814,8 +1907,10 @@
  }
  
  intx os::current_thread_id() {
@@ -1355,7 +1361,7 @@
  #else
    return (intx)::pthread_self();
  #endif
-@@ -2341,14 +2435,16 @@
+@@ -2338,14 +2433,16 @@
  }
  
  void os::print_os_info_brief(outputStream* st) {
@@ -1374,7 +1380,7 @@
  
    os::Posix::print_uname_info(st);
  
-@@ -2366,7 +2462,23 @@
+@@ -2363,7 +2460,23 @@
    st->print("Memory:");
    st->print(" %dk page", os::vm_page_size()>>10);
  
@@ -1399,7 +1405,7 @@
    // values in struct sysinfo are "unsigned long"
    struct sysinfo si;
    sysinfo(&si);
-@@ -2376,17 +2488,22 @@
+@@ -2373,17 +2486,22 @@
              os::physical_memory() >> 10);
    st->print("(" UINT64_FORMAT "k free)",
              os::available_memory() >> 10);
@@ -1424,7 +1430,7 @@
    st->cr();
  }
  
-@@ -2399,7 +2516,7 @@
+@@ -2396,7 +2514,7 @@
  
  const char *fpe_names[] = { "FPE0", "FPE_INTDIV", "FPE_INTOVF", "FPE_FLTDIV",
                            "FPE_FLTOVF", "FPE_FLTUND", "FPE_FLTRES",
@@ -1433,7 +1439,7 @@
  
  const char *segv_names[] = { "SEGV0", "SEGV_MAPERR", "SEGV_ACCERR" };
  
-@@ -2425,7 +2542,7 @@
+@@ -2422,7 +2540,7 @@
      st->print(", si_addr=" PTR_FORMAT, si->si_addr);
      break;
    case SIGFPE:
@@ -1442,7 +1448,7 @@
      st->print(", si_addr=" PTR_FORMAT, si->si_addr);
      break;
    case SIGSEGV:
-@@ -2533,10 +2650,17 @@
+@@ -2531,10 +2649,17 @@
          jrelib_p = buf + len;
  
          // Add the appropriate library subdir
@@ -1460,7 +1466,7 @@
  
          // Add the appropriate client or server subdir
          len = strlen(buf);
-@@ -2752,7 +2876,7 @@
+@@ -2752,7 +2877,7 @@
        if (::write(fd, "", 1) == 1) {
          mmap(base, size,
               PROT_READ|PROT_WRITE|PROT_EXEC,
@@ -1469,7 +1475,7 @@
        }
      }
      ::close(fd);
-@@ -2815,7 +2939,7 @@
+@@ -2815,7 +2940,7 @@
  }
  
  void os::free_memory(char *addr, size_t bytes, size_t alignment_hint) {
@@ -1478,7 +1484,7 @@
  }
  
  void os::numa_make_global(char *addr, size_t bytes) {
-@@ -2962,7 +3086,7 @@
+@@ -2962,7 +3087,7 @@
    return ::mprotect(addr, size, PROT_NONE) == 0;
  #else
    uintptr_t res = (uintptr_t) ::mmap(addr, size, PROT_NONE,
@@ -1487,7 +1493,7 @@
    return res  != (uintptr_t) MAP_FAILED;
  #endif
  }
-@@ -2989,15 +3113,16 @@
+@@ -2989,15 +3114,16 @@
    char * addr;
    int flags;
  
@@ -1508,7 +1514,7 @@
                         flags, -1, 0);
  
    if (addr != MAP_FAILED) {
-@@ -3244,9 +3369,11 @@
+@@ -3242,9 +3368,11 @@
  #endif
  
  char* os::reserve_memory_special(size_t bytes, char* req_addr, bool exec) {
@@ -1520,7 +1526,7 @@
  
    key_t key = IPC_PRIVATE;
    char *addr;
-@@ -3321,11 +3448,19 @@
+@@ -3319,11 +3447,19 @@
  // with SysV SHM the entire memory region must be allocated as shared
  // memory.
  bool os::can_commit_large_page_memory() {
@@ -1540,7 +1546,7 @@
  }
  
  // Reserve memory at an arbitrary address, only if that area is
-@@ -3654,8 +3789,8 @@
+@@ -3652,8 +3788,8 @@
    return OS_OK;
  #else
    int ret = setpriority(PRIO_PROCESS, thread->osthread()->thread_id(), newpri);
@@ -1550,7 +1556,7 @@
  }
  
  OSReturn os::get_native_priority(const Thread* const thread, int *priority_ptr) {
-@@ -4171,7 +4306,7 @@
+@@ -4169,7 +4305,7 @@
    }
  }
  
@@ -1559,7 +1565,7 @@
  // This is the fastest way to get thread cpu time on Bsd.
  // Returns cpu time (user+sys) for any thread, not only for current.
  // POSIX compliant clocks are implemented in the kernels 2.6.16+.
-@@ -4188,6 +4323,7 @@
+@@ -4186,6 +4322,7 @@
  }
  #endif
  
@@ -1567,7 +1573,7 @@
  /////
  // glibc on Bsd platform uses non-documented flag
  // to indicate, that some special sort of signal
-@@ -4198,6 +4334,7 @@
+@@ -4196,6 +4333,7 @@
  #undef SIGNIFICANT_SIGNAL_MASK
  #endif
  #define SIGNIFICANT_SIGNAL_MASK (~0x04000000)
@@ -1575,7 +1581,7 @@
  
  static const char* get_signal_handler_name(address handler,
                                             char* buf, int buflen) {
-@@ -4222,8 +4359,10 @@
+@@ -4220,8 +4358,10 @@
  
    sigaction(sig, NULL, &sa);
  
@@ -1586,7 +1592,7 @@
  
    st->print("%s: ", os::exception_name(sig, buf, buflen));
  
-@@ -4245,7 +4384,11 @@
+@@ -4243,7 +4383,11 @@
    // May be, handler was resetted by VMError?
    if(rh != NULL) {
      handler = rh;
@@ -1598,7 +1604,7 @@
    }
  
    st->print(", sa_flags="   PTR32_FORMAT, sa.sa_flags);
-@@ -4320,7 +4463,9 @@
+@@ -4318,7 +4462,9 @@
    os_sigaction(sig, (struct sigaction*)NULL, &act);
  
  
@@ -1608,7 +1614,7 @@
  
    address thisHandler = (act.sa_flags & SA_SIGINFO)
      ? CAST_FROM_FN_PTR(address, act.sa_sigaction)
-@@ -4381,6 +4526,14 @@
+@@ -4379,6 +4525,14 @@
  
  extern bool signal_name(int signo, char* buf, size_t len);
  
@@ -1623,7 +1629,7 @@
  const char* os::exception_name(int exception_code, char* buf, size_t size) {
    if (0 < exception_code && exception_code <= SIGRTMAX) {
      // signal
-@@ -4450,7 +4603,7 @@
+@@ -4448,7 +4602,7 @@
  // this is called _after_ the global arguments have been parsed
  jint os::init_2(void)
  {
@@ -1632,7 +1638,7 @@
    Bsd::fast_thread_clock_init();
  #endif
  
-@@ -4634,6 +4787,20 @@
+@@ -4632,6 +4786,20 @@
  
  int os::active_processor_count() {
  #ifdef _ALLBSD_SOURCE
@@ -1653,7 +1659,7 @@
    return _processor_count;
  #else
    // Bsd doesn't yet have a (official) notion of processor sets,
-@@ -5033,7 +5200,7 @@
+@@ -5031,7 +5199,7 @@
    return munmap(addr, bytes) == 0;
  }
  
@@ -1662,7 +1668,7 @@
  static jlong slow_thread_cpu_time(Thread *thread, bool user_sys_cpu_time);
  
  static clockid_t thread_cpu_clockid(Thread* thread) {
-@@ -5057,7 +5224,7 @@
+@@ -5055,7 +5223,7 @@
  jlong os::current_thread_cpu_time() {
  #ifdef __APPLE__
    return os::thread_cpu_time(Thread::current(), true /* user + sys */);
@@ -1671,7 +1677,7 @@
    if (os::Bsd::supports_fast_thread_cpu_time()) {
      return os::Bsd::fast_thread_cpu_time(CLOCK_THREAD_CPUTIME_ID);
    } else {
-@@ -5068,7 +5235,7 @@
+@@ -5066,7 +5234,7 @@
  }
  
  jlong os::thread_cpu_time(Thread* thread) {
@@ -1680,7 +1686,7 @@
    // consistent with what current_thread_cpu_time() returns
    if (os::Bsd::supports_fast_thread_cpu_time()) {
      return os::Bsd::fast_thread_cpu_time(thread_cpu_clockid(thread));
-@@ -5081,7 +5248,7 @@
+@@ -5079,7 +5247,7 @@
  jlong os::current_thread_cpu_time(bool user_sys_cpu_time) {
  #ifdef __APPLE__
    return os::thread_cpu_time(Thread::current(), user_sys_cpu_time);
@@ -1689,7 +1695,7 @@
    if (user_sys_cpu_time && os::Bsd::supports_fast_thread_cpu_time()) {
      return os::Bsd::fast_thread_cpu_time(CLOCK_THREAD_CPUTIME_ID);
    } else {
-@@ -5110,7 +5277,7 @@
+@@ -5108,7 +5276,7 @@
    } else {
      return ((jlong)tinfo.user_time.seconds * 1000000000) + ((jlong)tinfo.user_time.microseconds * (jlong)1000);
    }
@@ -1698,7 +1704,7 @@
    if (user_sys_cpu_time && os::Bsd::supports_fast_thread_cpu_time()) {
      return os::Bsd::fast_thread_cpu_time(thread_cpu_clockid(thread));
    } else {
-@@ -5119,12 +5286,15 @@
+@@ -5117,12 +5285,15 @@
  #endif
  }
  
@@ -1715,7 +1721,7 @@
    static bool proc_pid_cpu_avail = true;
    static bool proc_task_unchecked = true;
    static const char *proc_stat_path = "/proc/%d/stat";
-@@ -5208,6 +5378,7 @@
+@@ -5206,6 +5377,7 @@
    } else {
      return (jlong)user_time * (1000000000 / clock_tics_per_sec);
    }
@@ -1723,7 +1729,7 @@
  }
  #endif
  
-@@ -5226,7 +5397,7 @@
+@@ -5224,7 +5396,7 @@
  }
  
  bool os::is_thread_cpu_time_supported() {
@@ -1732,6 +1738,37 @@
    return true;
  #elif defined(_ALLBSD_SOURCE)
    return false;
+@@ -5799,3 +5971,30 @@
+ 
+     return true;
+ }
++
++// Get the default path to the core file
++// Returns the length of the string
++int os::get_core_path(char *buffer, size_t bufferSize) {
++#ifdef __APPLE__
++  jio_snprintf(buffer, bufferSize, "/cores/core.%d", current_process_id());
++#else
++  const char *p = get_current_directory(buffer, bufferSize);
++
++  if (p == NULL) {
++    assert(p != NULL, "failed to get current directory");
++    return 0;
++  }
++
++  const char *q = getprogname();
++
++  if (q == NULL) {
++    assert(q != NULL, "failed to get progname");
++    return 0;
++  }
++
++  const int n = strlen(buffer);
++
++  jio_snprintf(buffer + n, bufferSize - n, "/%s.core", q);
++#endif
++  return strlen(buffer);
++}
 --- hotspot/src/os/bsd/vm/os_bsd.hpp
 +++ hotspot/src/os/bsd/vm/os_bsd.hpp
 @@ -56,9 +56,11 @@
@@ -1936,44 +1973,74 @@
  }
 --- hotspot/src/os/bsd/vm/vmError_bsd.cpp
 +++ hotspot/src/os/bsd/vm/vmError_bsd.cpp
-@@ -34,6 +34,12 @@
+@@ -33,30 +33,50 @@
+ #include <sys/syscall.h>
  #include <unistd.h>
  #include <signal.h>
- 
 +#ifdef __FreeBSD__
-+#define	GDB_LAUNCHER	"gdb /proc/%d/file %d"
-+#else
-+#define	GDB_LAUNCHER	"gdb /proc/%d/exe %d"
++#include <limits.h>
++#include <sys/sysctl.h>
 +#endif
 +
++#define GDB_CMD "gdb"
++
++static void set_debugger(char *buf, int buflen) {
++  int pid = os::current_process_id();
++#ifdef __FreeBSD__
++  char cmd[PATH_MAX+1];
++  int name[4] = { CTL_KERN, KERN_PROC, KERN_PROC_PATHNAME, pid };
++  size_t len = sizeof(cmd);
++  if (sysctl(name, 4, cmd, &len, NULL, 0) == 0 && len > 0) {
++    cmd[len] = '\0';
++    jio_snprintf(buf, buflen, "%s %s %d", GDB_CMD, cmd, pid);
++  } else
++#endif
++  jio_snprintf(buf, buflen, "%s /proc/%d/file %d", GDB_CMD, pid, pid);
++}
+ 
  void VMError::show_message_box(char *buf, int buflen) {
    bool yes;
    do {
-@@ -44,7 +50,7 @@
+-    error_string(buf, buflen);
+-    int len = (int)strlen(buf);
++    intx tid = os::current_thread_id();
++    set_debugger(buf, buflen);
++    int len = (int)strlen(buf) + 1;
++    char *msg = &buf[len];
++    error_string(msg, buflen - len);
++    len += (int)strlen(msg);
+     char *p = &buf[len];
+ 
      jio_snprintf(p, buflen - len,
                 "\n\n"
                 "Do you want to debug the problem?\n\n"
 -               "To debug, run 'gdb /proc/%d/exe %d'; then switch to thread " INTX_FORMAT " (" INTPTR_FORMAT ")\n"
-+               "To debug, run '" GDB_LAUNCHER "'; then switch to thread " INTX_FORMAT " (" INTPTR_FORMAT ")\n"
-                "Enter 'yes' to launch gdb automatically (PATH must include gdb)\n"
+-               "Enter 'yes' to launch gdb automatically (PATH must include gdb)\n"
++               "To debug, run '%s'; then switch to thread " INTX_FORMAT " (" INTPTR_FORMAT ")\n"
++               "Enter 'yes' to launch " GDB_CMD " automatically (PATH must include " GDB_CMD ")\n"
                 "Otherwise, press RETURN to abort...",
-                os::current_process_id(), os::current_process_id(),
-@@ -54,7 +60,7 @@
+-               os::current_process_id(), os::current_process_id(),
+-               os::current_thread_id(), os::current_thread_id());
++               buf, tid, tid);
+ 
+-    yes = os::message_box("Unexpected Error", buf);
++    yes = os::message_box("Unexpected Error", msg);
  
      if (yes) {
        // yes, user asked VM to launch debugger
 -      jio_snprintf(buf, buflen, "gdb /proc/%d/exe %d",
-+      jio_snprintf(buf, buflen, GDB_LAUNCHER,
-                    os::current_process_id(), os::current_process_id());
- 
+-                   os::current_process_id(), os::current_process_id());
+-
        os::fork_and_exec(buf);
+       yes = false;
+     }
 --- hotspot/src/os/posix/launcher/java_md.c
 +++ hotspot/src/os/posix/launcher/java_md.c
 @@ -35,6 +35,9 @@
  #include <sys/stat.h>
  #include <unistd.h>
  #include <sys/types.h>
-+#ifndef _SC_PHYS_PAGES
++#ifdef __FreeBSD__
 +#include <sys/sysctl.h>
 +#endif
  
@@ -1999,31 +2066,26 @@
          strcat(new_runpath, ":");
          strcat(new_runpath, runpath);
        }
-@@ -992,9 +995,13 @@
-             }
-         }
-     }
--#elif defined(__linux__)
-+#elif defined(__linux__) || defined(_ALLBSD_SOURCE)
-     {
-+#ifdef __FreeBSD__
-+        const char* self = "/proc/curproc/file";
-+#else
-         const char* self = "/proc/self/exe";
-+#endif
-         char buf[PATH_MAX+1];
-         int len = readlink(self, buf, PATH_MAX);
-         if (len >= 0) {
-@@ -1002,7 +1009,7 @@
+@@ -1002,7 +1005,17 @@
              exec_path = JLI_StringDup(buf);
          }
      }
 -#else /* !__sun && !__linux */
-+#else /* !__sun && !__linux && !_ALLBSD_SOURCE */
++#elif defined(__FreeBSD__)
++    {
++        char buf[PATH_MAX+1];
++        int name[4] = { CTL_KERN, KERN_PROC, KERN_PROC_PATHNAME, -1 };
++        size_t len = sizeof(buf);
++        if (sysctl(name, 4, buf, &len, NULL, 0) == 0 && len > 0) {
++            buf[len] = '\0';
++            exec_path = JLI_StringDup(buf);
++        }
++    }
++#else /* !__sun && !__linux && !__FreeBSD__ */
      {
          /* Not implemented */
      }
-@@ -1100,6 +1107,7 @@
+@@ -1100,6 +1113,7 @@
  /* Compute physical memory by asking the OS */
  uint64_t
  physical_memory(void) {
@@ -2031,7 +2093,7 @@
    const uint64_t pages     = (uint64_t) sysconf(_SC_PHYS_PAGES);
    const uint64_t page_size = (uint64_t) sysconf(_SC_PAGESIZE);
    const uint64_t result    = pages * page_size;
-@@ -1111,6 +1119,28 @@
+@@ -1111,6 +1125,28 @@
             "  physical memory: " UINT64_FORMAT " (%.3fGB)\n",
             pages, page_size, result, result / (double) GB);
    }
@@ -2060,7 +2122,7 @@
    return result;
  }
  
-@@ -1271,7 +1301,7 @@
+@@ -1271,7 +1307,7 @@
  #endif
  }
  
@@ -2069,7 +2131,7 @@
  
  #ifdef i586
  /*
-@@ -1450,7 +1480,7 @@
+@@ -1450,7 +1486,7 @@
  
  #endif /* __sun && i586 */
  
@@ -2078,7 +2140,7 @@
  
  /* The definition of a server-class machine for linux-i586 */
  jboolean
-@@ -1481,7 +1511,7 @@
+@@ -1481,7 +1517,7 @@
    return result;
  }
  
@@ -2087,7 +2149,7 @@
  
  #if defined(_ALLBSD_SOURCE) && defined(i586)
  
-@@ -1508,7 +1538,7 @@
+@@ -1508,7 +1544,7 @@
      }
    }
    if (_launcher_debug) {
@@ -2096,7 +2158,7 @@
             (result == JNI_TRUE ? "true" : "false"));
    }
    return result;
-@@ -1672,7 +1702,7 @@
+@@ -1672,7 +1708,7 @@
      while (dp != NULL) {
          cp = strchr(dp, (int)':');
          if (cp != NULL)
@@ -2105,7 +2167,7 @@
          if ((target = ProcessDir(info, dp)) != NULL)
              break;
          dp = cp;
-@@ -1931,8 +1961,8 @@
+@@ -1931,8 +1967,8 @@
  #define MAX_PID_STR_SZ   20
  
  void SetJavaLauncherPlatformProps() {
@@ -2116,6 +2178,40 @@
      const char *substr = "-Dsun.java.launcher.pid=";
      char *pid_prop_str = (char *)JLI_MemAlloc(strlen(substr) + MAX_PID_STR_SZ + 1);
      sprintf(pid_prop_str, "%s%d", substr, getpid());
+--- hotspot/src/os/posix/vm/os_posix.cpp
++++ hotspot/src/os/posix/vm/os_posix.cpp
+@@ -33,19 +33,18 @@
+ 
+ // Check core dump limit and report possible place where core can be found
+ void os::check_or_create_dump(void* exceptionRecord, void* contextRecord, char* buffer, size_t bufferSize) {
++  int n;
+   struct rlimit rlim;
+-  static char cwd[O_BUFLEN];
+   bool success;
+ 
+-  get_current_directory(cwd, sizeof(cwd));
++  n = get_core_path(buffer, bufferSize);
+ 
+   if (getrlimit(RLIMIT_CORE, &rlim) != 0) {
+-    jio_snprintf(buffer, bufferSize, "%s/core or core.%d (may not exist)", cwd, current_process_id());
++    jio_snprintf(buffer + n, bufferSize - n, " (may not exist)");
+     success = true;
+   } else {
+     switch(rlim.rlim_cur) {
+       case RLIM_INFINITY:
+-        jio_snprintf(buffer, bufferSize, "%s/core or core.%d", cwd, current_process_id());
+         success = true;
+         break;
+       case 0:
+@@ -53,7 +52,7 @@
+         success = false;
+         break;
+       default:
+-        jio_snprintf(buffer, bufferSize, "%s/core or core.%d (max size %lu kB). To ensure a full core dump, try \"ulimit -c unlimited\" before starting Java again", cwd, current_process_id(), (unsigned long)(rlim.rlim_cur >> 10));
++        jio_snprintf(buffer + n, bufferSize - n, " (max size %lu kB). To ensure a full core dump, try \"ulimit -c unlimited\" before starting Java again", (unsigned long)(rlim.rlim_cur >> 10));
+         success = true;
+         break;
+     }
 --- hotspot/src/os_cpu/bsd_x86/vm/globals_bsd_x86.hpp
 +++ hotspot/src/os_cpu/bsd_x86/vm/globals_bsd_x86.hpp
 @@ -42,7 +42,6 @@
@@ -2525,6 +2621,16 @@
  #endif // PRODUCT
      } else {
        assert(_real_start_word == NULL && _real_end_word == NULL, "invariant");
+--- hotspot/src/share/vm/gc_implementation/parallelScavenge/psPromotionManager.inline.hpp
++++ hotspot/src/share/vm/gc_implementation/parallelScavenge/psPromotionManager.inline.hpp
+@@ -25,6 +25,7 @@
+ #ifndef SHARE_VM_GC_IMPLEMENTATION_PARALLELSCAVENGE_PSPROMOTIONMANAGER_INLINE_HPP
+ #define SHARE_VM_GC_IMPLEMENTATION_PARALLELSCAVENGE_PSPROMOTIONMANAGER_INLINE_HPP
+ 
++#include "gc_implementation/parallelScavenge/psOldGen.hpp"
+ #include "gc_implementation/parallelScavenge/psPromotionManager.hpp"
+ #include "gc_implementation/parallelScavenge/psScavenge.hpp"
+ 
 --- hotspot/src/share/vm/gc_implementation/shared/gcUtil.hpp
 +++ hotspot/src/share/vm/gc_implementation/shared/gcUtil.hpp
 @@ -144,9 +144,9 @@
@@ -2950,6 +3056,19 @@
      return ptr;
    }
  };
+--- hotspot/src/share/vm/runtime/os.hpp
++++ hotspot/src/share/vm/runtime/os.hpp
+@@ -636,6 +636,10 @@
+   // On Windows this will create an actual minidump, on Linux/Solaris it will simply check core dump limits
+   static void check_or_create_dump(void* exceptionRecord, void* contextRecord, char* buffer, size_t bufferSize);
+ 
++  // Get the default path to the core file
++  // Returns the length of the string
++  static int get_core_path(char* buffer, size_t bufferSize);
++
+   // JVMTI & JVM monitoring and management support
+   // The thread_cpu_time() and current_thread_cpu_time() are only
+   // supported if is_thread_cpu_time_supported() returns true.
 --- hotspot/src/share/vm/runtime/park.cpp
 +++ hotspot/src/share/vm/runtime/park.cpp
 @@ -140,7 +140,7 @@
@@ -3211,24 +3330,15 @@
  ifeq ($(PLATFORM), linux)
 --- jdk/make/com/sun/jmx/Makefile
 +++ jdk/make/com/sun/jmx/Makefile
-@@ -102,16 +102,7 @@
+@@ -102,7 +102,7 @@
  # when available, we need to run with latest rmic version available. rmic 
  # launch tool not built at this stage but we can invoke via rmi class.
  
 -RMIC_JAVA = $(OUTPUTDIR)/bin/java
--# need to treat 64bit solaris differently
--ifeq ($(PLATFORM)-$(LIBARCH), solaris-amd64)
--RMIC_JAVA = $(OUTPUTDIR)/bin/amd64/java
--endif
--ifeq ($(PLATFORM)-$(LIBARCH), solaris-sparcv9)
--RMIC_JAVA = $(OUTPUTDIR)/bin/sparcv9/java
--endif
--
--RMIC = $(RMIC_JAVA) $(JAVA_TOOLS_FLAGS) -cp $(OUTPUTDIR)/classes sun.rmi.rmic.Main
-+RMIC = $(BOOT_JAVA_CMD) -cp $(OUTPUTDIR)/classes sun.rmi.rmic.Main
- 
- $(CLASSDESTDIR)/%_Stub.class: $(CLASSDESTDIR)/%.class
- 	$(prep-target)
++RMIC_JAVA = $(BOOTDIR)/bin/java
+ # need to treat 64bit solaris differently
+ ifeq ($(PLATFORM)-$(LIBARCH), solaris-amd64)
+ RMIC_JAVA = $(OUTPUTDIR)/bin/amd64/java
 --- jdk/make/com/sun/security/auth/module/Makefile
 +++ jdk/make/com/sun/security/auth/module/Makefile
 @@ -70,7 +70,7 @@
@@ -5499,7 +5609,7 @@
  
      // An entryName(path)->File map generated during "expand", it helps to
      // decide whether or not an existing entry in a jar file needs to be
-@@ -249,6 +250,16 @@
+@@ -250,6 +251,16 @@
                      }
                  }
              } else if (xflag) {
@@ -5516,10 +5626,10 @@
                  replaceFSC(files);
                  if (fname != null && files != null) {
                      extract(fname, files);
-@@ -921,6 +932,10 @@
-         ZipEntry rc = null;
-         String name = e.getName();
-         File f = new File(e.getName().replace('/', File.separatorChar));
+@@ -975,6 +986,10 @@
+             return rc;    // leading '/' or 'dot-dot' only path
+         }
+         File f = new File(name.replace('/', File.separatorChar));
 +        if (!f.getCanonicalPath().startsWith(cwd)) {
 +            output(formatMsg("out.ignore.entry", name));
 +            return null;
@@ -5527,7 +5637,7 @@
          if (e.isDirectory()) {
              if (f.exists()) {
                  if (!f.isDirectory()) {
-@@ -942,6 +957,10 @@
+@@ -996,6 +1011,10 @@
          } else {
              if (f.getParent() != null) {
                  File d = new File(f.getParent());
@@ -8549,15 +8659,13 @@
  #include <dirent.h>
  #include <dlfcn.h>
  #include <fcntl.h>
-@@ -34,17 +35,33 @@
+@@ -34,17 +35,31 @@
  #include <sys/stat.h>
  #include <unistd.h>
  #include <sys/types.h>
 +#if defined(_ALLBSD_SOURCE)
-+#include <sys/time.h>
-+#endif
-+#ifndef _SC_PHYS_PAGES
 +#include <sys/sysctl.h>
++#include <sys/time.h>
 +#endif
 +
  #include "manifest_info.h"
@@ -8582,9 +8690,9 @@
 +#define LD_LIBRARY_PATH "LD_LIBRARY_PATH"
 +#endif
  
- /*
-  * If a processor / os combination has the ability to run binaries of
-@@ -75,14 +92,31 @@
+ #define JRE_ERROR1      "Error: Could not find Java SE Runtime Environment."
+ #define JRE_ERROR11     "Error: Path length exceeds maximum length (PATH_MAX)"
+@@ -79,14 +94,31 @@
  #endif
  
  /* pointer to environment */
@@ -8618,7 +8726,7 @@
  static const char *user_dir     = "/java";
  #else /* Solaris */
  static const char *system_dir   = "/usr/jdk";
-@@ -404,10 +438,10 @@
+@@ -408,10 +440,10 @@
         * If not on Solaris, assume only a single LD_LIBRARY_PATH
         * variable.
         */
@@ -8631,7 +8739,7 @@
        /*
         * On linux, if a binary is running as sgid or suid, glibc sets
         * LD_LIBRARY_PATH to the empty string for security purposes.  (In
-@@ -423,6 +457,22 @@
+@@ -427,6 +459,22 @@
        if((getgid() != getegid()) || (getuid() != geteuid()) ) {
          return;
        }
@@ -8654,16 +8762,16 @@
  #endif
  
        /* runpath contains current effective LD_LIBRARY_PATH setting */
-@@ -431,7 +481,7 @@
-       new_runpath = JLI_MemAlloc( ((runpath!=NULL)?strlen(runpath):0) +
+@@ -436,7 +484,7 @@
                                2*strlen(jrepath) + 2*strlen(arch) +
-                               strlen(jvmpath) + 52);
+                               strlen(jvmpath) + 52;
+       new_runpath = JLI_MemAlloc(new_runpath_size);
 -      newpath = new_runpath + strlen("LD_LIBRARY_PATH=");
 +      newpath = new_runpath + strlen(LD_LIBRARY_PATH "=");
  
  
        /*
-@@ -446,7 +496,7 @@
+@@ -451,7 +499,7 @@
  
          /* jvmpath, ((running != wanted)?((wanted==64)?"/"LIBARCH64NAME:"/.."):""), */
  
@@ -8672,7 +8780,7 @@
                  "%s:"
                  "%s/lib/%s:"
                  "%s/../lib/%s",
-@@ -721,7 +771,7 @@
+@@ -737,7 +785,7 @@
  jboolean
  GetApplicationHome(char *buf, jint bufsize)
  {
@@ -8681,31 +8789,26 @@
      char *execname = GetExecname();
      if (execname) {
          strncpy(buf, execname, bufsize-1);
-@@ -878,9 +928,13 @@
-             }
-         }
-     }
--#elif defined(__linux__)
-+#elif defined(__linux__) || defined(_ALLBSD_SOURCE)
-     {
-+#ifdef __FreeBSD__
-+        const char* self = "/proc/curproc/file";
-+#else
-         const char* self = "/proc/self/exe";
-+#endif
-         char buf[PATH_MAX+1];
-         int len = readlink(self, buf, PATH_MAX);
-         if (len >= 0) {
-@@ -888,7 +942,7 @@
+@@ -904,7 +952,17 @@
              exec_path = JLI_StringDup(buf);
          }
      }
 -#else /* !__sun && !__linux */
-+#else /* !__sun && !__linux && !_ALLBSD_SOURCE */
++#elif defined(__FreeBSD__)
++    {
++        char buf[PATH_MAX+1];
++        int name[4] = { CTL_KERN, KERN_PROC, KERN_PROC_PATHNAME, -1 };
++        size_t len = sizeof(buf);
++        if (sysctl(name, 4, buf, &len, NULL, 0) == 0 && len > 0) {
++            buf[len] = '\0';
++            exec_path = JLI_StringDup(buf);
++        }
++    }
++#else /* !__sun && !__linux && !__FreeBSD__ */
      {
          /* Not implemented */
      }
-@@ -977,6 +1031,7 @@
+@@ -993,6 +1051,7 @@
  /* Compute physical memory by asking the OS */
  uint64_t
  physical_memory(void) {
@@ -8713,7 +8816,7 @@
    const uint64_t pages     = (uint64_t) sysconf(_SC_PHYS_PAGES);
    const uint64_t page_size = (uint64_t) sysconf(_SC_PAGESIZE);
    const uint64_t result    = pages * page_size;
-@@ -988,6 +1043,28 @@
+@@ -1004,6 +1063,28 @@
             "  physical memory: " UINT64_FORMAT " (%.3fGB)\n",
             pages, page_size, result, result / (double) GB);
    }
@@ -8742,7 +8845,7 @@
    return result;
  }
  
-@@ -1083,7 +1160,7 @@
+@@ -1099,7 +1180,7 @@
  
  #endif /* __sun && i586 */
  
@@ -8751,7 +8854,7 @@
  
  /*
   * A utility method for asking the CPU about itself.
-@@ -1148,7 +1225,7 @@
+@@ -1164,7 +1245,7 @@
  #endif
  }
  
@@ -8760,7 +8863,7 @@
  
  #ifdef i586
  /*
-@@ -1360,6 +1437,39 @@
+@@ -1376,6 +1457,39 @@
  
  #endif /* __linux__ && i586 */
  
@@ -8800,7 +8903,7 @@
  /* Dispatch to the platform-specific definition of "server-class" */
  jboolean
  ServerClassMachine(void) {
-@@ -1374,6 +1484,8 @@
+@@ -1390,6 +1504,8 @@
    result = solaris_i586_ServerClassMachine();
  #elif defined(__linux__) && defined(i586)
    result = linux_i586_ServerClassMachine();
@@ -8809,7 +8912,7 @@
  #else
    if (_launcher_debug) {
      printf("ServerClassMachine: returns default value of %s\n",
-@@ -1514,7 +1626,7 @@
+@@ -1530,7 +1646,7 @@
      while (dp != NULL) {
          cp = strchr(dp, (int)':');
          if (cp != NULL)
@@ -8818,7 +8921,7 @@
          if ((target = ProcessDir(info, dp)) != NULL)
              break;
          dp = cp;
-@@ -1692,9 +1804,29 @@
+@@ -1708,9 +1824,29 @@
      return(borrowed_unsetenv(name));
  }
  
@@ -8849,7 +8952,7 @@
  
  static void* hSplashLib = NULL;
  
-@@ -1722,13 +1854,15 @@
+@@ -1759,13 +1895,15 @@
      return "%lld";
  }
  
@@ -8867,7 +8970,7 @@
      pthread_t tid;
      pthread_attr_t attr;
      pthread_attr_init(&attr);
-@@ -1741,7 +1875,7 @@
+@@ -1778,7 +1916,7 @@
      if (pthread_create(&tid, &attr, (void *(*)(void*))continuation, (void*)args) == 0) {
        void * tmp;
        pthread_join(tid, &tmp);
@@ -8876,7 +8979,7 @@
      } else {
       /*
        * Continue execution in current thread if for some reason (e.g. out of
-@@ -1759,25 +1893,23 @@
+@@ -1796,25 +1934,23 @@
      if (thr_create(NULL, stack_size, (void *(*)(void *))continuation, args, flags, &tid) == 0) {
        void * tmp;
        thr_join(tid, NULL, &tmp);
@@ -12610,20 +12713,24 @@
  
  /*
   * The fd table and the number of file descriptors
-@@ -281,7 +281,7 @@
+@@ -281,9 +281,7 @@
  
  int NET_RecvFrom(int s, void *buf, int len, unsigned int flags,
         struct sockaddr *from, int *fromlen) {
--    BLOCKING_IO_RETURN_INT( s, recvfrom(s, buf, len, flags, from, (socklen_t)fromlen) );
+-    socklen_t socklen = *fromlen;
+-    BLOCKING_IO_RETURN_INT( s, recvfrom(s, buf, len, flags, from, &socklen) );
+-    *fromlen = socklen;
 +    BLOCKING_IO_RETURN_INT( s, recvfrom(s, buf, len, flags, from, (socklen_t *)fromlen) );
  }
  
  int NET_Send(int s, void *msg, int len, unsigned int flags) {
-@@ -298,7 +298,7 @@
+@@ -300,9 +298,7 @@
  }
  
  int NET_Accept(int s, struct sockaddr *addr, int *addrlen) {
--    BLOCKING_IO_RETURN_INT( s, accept(s, addr, (socklen_t)addrlen) );
+-    socklen_t socklen = *addrlen;
+-    BLOCKING_IO_RETURN_INT( s, accept(s, addr, &socklen) );
+-    *addrlen = socklen;
 +    BLOCKING_IO_RETURN_INT( s, accept(s, addr, (socklen_t *)addrlen) );
  }
  
@@ -12680,16 +12787,7 @@
          /*
           * On Linux if we are connecting to a link-local address
           * we need to specify the interface in the scope_id (2.4 kernel only)
-@@ -1104,7 +1126,7 @@
-     }
- #endif
- 
--    rv = getsockopt(fd, level, opt, result, (socklen_t)len);
-+    rv = getsockopt(fd, level, opt, result, (socklen_t *)len);
-     if (rv < 0) {
-         return rv;
-     }
-@@ -1151,6 +1173,24 @@
+@@ -1160,6 +1182,24 @@
  #define IPTOS_PREC_MASK 0xe0
  #endif
  
@@ -12714,7 +12812,7 @@
      /*
       * IPPROTO/IP_TOS :-
       * 1. IPv6 on Solaris: no-op and will be set in flowinfo
-@@ -1183,6 +1223,10 @@
+@@ -1192,6 +1232,10 @@
          *iptos &= (IPTOS_TOS_MASK | IPTOS_PREC_MASK);
      }
  
@@ -12725,7 +12823,7 @@
      /*
       * SOL_SOCKET/{SO_SNDBUF,SO_RCVBUF} - On Solaris need to
       * ensure that value is <= max_buf as otherwise we get
-@@ -1230,6 +1274,84 @@
+@@ -1239,6 +1283,84 @@
      }
  #endif
  
@@ -13229,7 +13327,7 @@
                        "X11GD_InitXrandrFuncs: Could not open libXrandr.so.2");
 --- jdk/src/solaris/native/sun/awt/awt_InputMethod.c
 +++ jdk/src/solaris/native/sun/awt/awt_InputMethod.c
-@@ -69,7 +69,7 @@
+@@ -67,7 +67,7 @@
                                  XIMPreeditDrawCallbackStruct *);
  static void PreeditCaretCallback(XIC, XPointer,
                                   XIMPreeditCaretCallbackStruct *);
@@ -13238,7 +13336,7 @@
  static void StatusStartCallback(XIC, XPointer, XPointer);
  static void StatusDoneCallback(XIC, XPointer, XPointer);
  static void StatusDrawCallback(XIC, XPointer,
-@@ -83,7 +83,7 @@
+@@ -81,7 +81,7 @@
  #define PreeditDoneIndex        1
  #define PreeditDrawIndex        2
  #define PreeditCaretIndex       3
@@ -13247,7 +13345,7 @@
  #define StatusStartIndex        4
  #define StatusDoneIndex         5
  #define StatusDrawIndex         6
-@@ -101,14 +101,14 @@
+@@ -99,14 +99,14 @@
      (XIMProc)PreeditDoneCallback,
      (XIMProc)PreeditDrawCallback,
      (XIMProc)PreeditCaretCallback,
@@ -13264,7 +13362,7 @@
  #define MAX_STATUS_LEN  100
  typedef struct {
      Window   w;                /*status window id        */
-@@ -148,7 +148,7 @@
+@@ -146,7 +146,7 @@
  #endif /* XAWT */
      jobject     x11inputmethod; /* global ref to X11InputMethod instance */
                                  /* associated with the XIC */
@@ -13273,7 +13371,7 @@
      StatusWindow *statusWindow; /* our own status window  */
  #else
  #ifndef XAWT
-@@ -427,7 +427,7 @@
+@@ -425,7 +425,7 @@
  static void
  freeX11InputMethodData(JNIEnv *env, X11InputMethodData *pX11IMData)
  {
@@ -13282,7 +13380,7 @@
      if (pX11IMData->statusWindow != NULL){
          StatusWindow *sw = pX11IMData->statusWindow;
          XFreeGC(awt_display, sw->lightGC);
-@@ -533,7 +533,7 @@
+@@ -531,7 +531,7 @@
      pX11IMData = getX11InputMethodData(env, currentX11InputMethodInstance);
  
      if (pX11IMData == NULL) {
@@ -13291,7 +13389,7 @@
          return False;
  #else
          return result;
-@@ -541,7 +541,7 @@
+@@ -539,7 +539,7 @@
      }
  
      if ((ic = pX11IMData->current_ic) == (XIC)0){
@@ -13300,7 +13398,7 @@
          return False;
  #else
          return result;
-@@ -650,7 +650,7 @@
+@@ -648,7 +648,7 @@
      return result;
  }
  
@@ -13309,7 +13407,7 @@
  static StatusWindow *createStatusWindow(
  #ifdef XAWT
                                  Window parent) {
-@@ -994,7 +994,7 @@
+@@ -993,7 +993,7 @@
          }
      }
  }
@@ -13318,7 +13416,7 @@
  /*
   * Creates two XICs, one for active clients and the other for passive
   * clients. All information on those XICs are stored in the
-@@ -1051,7 +1051,7 @@
+@@ -1050,7 +1050,7 @@
          return FALSE ;
      }
  
@@ -13327,7 +13425,7 @@
      on_the_spot_styles |= XIMStatusNothing;
  
      /*kinput does not support XIMPreeditCallbacks and XIMStatusArea
-@@ -1064,7 +1064,7 @@
+@@ -1063,7 +1063,7 @@
              break;
          }
      }
@@ -13336,7 +13434,7 @@
  #ifdef XAWT
      on_the_spot_styles |= XIMStatusNothing;
  #else /* !XAWT */
-@@ -1087,7 +1087,7 @@
+@@ -1086,7 +1086,7 @@
          on_the_spot_styles |= XIMStatusNothing;
  
  #endif /* XAWT */
@@ -13345,7 +13443,7 @@
  
      for (i = 0; i < im_styles->count_styles; i++) {
          active_styles |= im_styles->supported_styles[i] & on_the_spot_styles;
-@@ -1135,7 +1135,7 @@
+@@ -1134,7 +1134,7 @@
                          NULL);
          if (preedit == (XVaNestedList)NULL)
              goto err;
@@ -13354,7 +13452,7 @@
          /*always try XIMStatusCallbacks for active client...*/
          {
              status = (XVaNestedList)XVaCreateNestedList(0,
-@@ -1157,7 +1157,7 @@
+@@ -1156,7 +1156,7 @@
              XFree((void *)status);
              XFree((void *)preedit);
          }
@@ -13363,16 +13461,16 @@
  #ifndef XAWT
          if (on_the_spot_styles & XIMStatusArea) {
              Widget parent;
-@@ -1185,7 +1185,7 @@
+@@ -1184,7 +1184,7 @@
          }
  #endif /* XAWT */
          XFree((void *)preedit);
 -#endif /* __linux__ */
 +#endif /* __linux__ || _ALLBSD_SOURCE */
          pX11IMData->ic_passive = XCreateIC(X11im,
-                                            XNClientWindow, XtWindow(w),
-                                            XNFocusWindow, XtWindow(w),
-@@ -1344,7 +1344,7 @@
+                                            XNClientWindow, w,
+                                            XNFocusWindow, w,
+@@ -1343,7 +1343,7 @@
  
  }
  
@@ -13381,7 +13479,7 @@
  static void
  StatusStartCallback(XIC ic, XPointer client_data, XPointer call_data)
  {
-@@ -1412,7 +1412,7 @@
+@@ -1411,7 +1411,7 @@
   finally:
      AWT_UNLOCK();
  }
@@ -13390,14 +13488,14 @@
  
  static void CommitStringCallback(XIC ic, XPointer client_data, XPointer call_data) {
      JNIEnv *env = GetJNIEnv();
-@@ -1514,14 +1514,14 @@
+@@ -1513,14 +1513,14 @@
  /* Use IMInstantiate call back only on Linux, as there is a bug in Solaris
     (4768335)
  */
 -#ifdef __linux__
 +#if defined(__linux__) || defined(_ALLBSD_SOURCE)
      registered = XRegisterIMInstantiateCallback(dpy, NULL, NULL,
-                      NULL, (XIMProc)OpenXIMCallback, NULL);
+                      NULL, (XIDProc)OpenXIMCallback, NULL);
      if (!registered) {
          /* directly call openXIM callback */
  #endif
@@ -13407,7 +13505,7 @@
      }
  #endif
  
-@@ -1585,13 +1585,13 @@
+@@ -1584,13 +1584,13 @@
  #endif /* XAWT */
      globalRef = (*env)->NewGlobalRef(env, this);
      pX11IMData->x11inputmethod = globalRef;
@@ -13424,10 +13522,10 @@
  
      pX11IMData->lookup_buf = 0;
      pX11IMData->lookup_buf_len = 0;
-@@ -1738,14 +1738,14 @@
+@@ -1737,14 +1737,14 @@
          setXICFocus(pX11IMData->current_ic, req);
          currentX11InputMethodInstance = pX11IMData->x11inputmethod;
-         currentFocusWindow =  XtWindow(w);
+         currentFocusWindow =  w;
 -#ifdef __linux__
 +#if defined(__linux__) || defined(_ALLBSD_SOURCE)
          if (active && pX11IMData->statusWindow && pX11IMData->statusWindow->on)
@@ -13441,7 +13539,7 @@
          onoffStatusWindow(pX11IMData, 0, False);
          if (pX11IMData->current_ic != NULL)
  #endif
-@@ -1762,7 +1762,7 @@
+@@ -1761,7 +1761,7 @@
  Java_sun_awt_X11InputMethod_turnoffStatusWindow(JNIEnv *env,
                                                  jobject this)
  {
@@ -13450,7 +13548,7 @@
      X11InputMethodData *pX11IMData;
      StatusWindow *statusWindow;
  
-@@ -1859,7 +1859,7 @@
+@@ -1858,7 +1858,7 @@
      X11InputMethodData *pX11IMData;
      XVaNestedList status;
  
@@ -13459,7 +13557,7 @@
        /*do nothing for linux? */
  #else
      AWT_LOCK();
-@@ -1965,7 +1965,7 @@
+@@ -1964,7 +1964,7 @@
  JNIEXPORT void JNICALL Java_sun_awt_X11_XInputMethod_adjustStatusWindow
    (JNIEnv *env, jobject this, jlong window)
  {

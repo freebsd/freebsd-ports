@@ -46,7 +46,7 @@ PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 # JPEG support
 JPEG_CONFIGURE_WITH=jpeg
-JPEG_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+JPEG_USES=		jpeg
 
 .include <bsd.port.options.mk>
 

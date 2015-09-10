@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTML-Template-Compiled
-PORTVERSION=	1.001
-PORTREVISION=	1
+PORTVERSION=	1.002
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,6 +19,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

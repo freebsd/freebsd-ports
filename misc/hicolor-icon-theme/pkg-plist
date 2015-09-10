@@ -335,3 +335,4 @@ share/icons/hicolor/index.theme
 @dir share/icons/hicolor/scalable/stock/object
 @dir share/icons/hicolor/scalable/stock/table
 @dir share/icons/hicolor/scalable/stock/text
+@dir share/icons/hicolor/symbolic/apps

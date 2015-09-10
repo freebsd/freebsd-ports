@@ -3,7 +3,7 @@
 
 PORTNAME=	shapelib
 PORTVERSION=	1.3.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	devel geography
 MASTER_SITES=	http://download.osgeo.org/shapelib/ \
 		ftp://ftp.remotesensing.org/shapelib/ \
@@ -22,14 +22,6 @@ USE_LDCONFIG=	yes
 
 PROJ_LIB_DEPENDS=	libproj.so:${PORTSDIR}/graphics/proj
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPROJ}
-PROJ=		-DPROJ4
-.else
-PROJ=		-DNO_PROJ4
-.endif
-
 .include <bsd.port.pre.mk>
 
 # Ref: /usr/share/mk/bsd.endian.mk
@@ -40,16 +32,17 @@ ENDIAN=		-D_BIG_ENDIAN	# mips*eb, powerpc, powerpc64 and sparc
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} \
-		-e 's|%%ENDIAN%%|${ENDIAN}|g' \
-		-e 's|%%PROJ%%|${PROJ}|g' \
-			${WRKSRC}/Makefile ${WRKSRC}/contrib/Makefile
+	@${REINPLACE_CMD} -e 's|%%ENDIAN%%|${ENDIAN}|g' ${WRKSRC}/contrib/Makefile
+
+post-patch-PROJ-off:
+	@${REINPLACE_CMD} -e 's|%%PROJ%%|-DNO_PROJ4|g' ${WRKSRC}/Makefile ${WRKSRC}/contrib/Makefile
+
+post-patch-PROJ-on:
+	@${REINPLACE_CMD} -e 's|%%PROJ%%|-DPROJ4|g' ${WRKSRC}/Makefile ${WRKSRC}/contrib/Makefile
 
 post-install:
 	${LN} -s libshp.so.1 ${STAGEDIR}${PREFIX}/lib/libshp.so
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/web/*.html ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.post.mk>

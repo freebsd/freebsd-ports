@@ -1,0 +1,30 @@
+.Dd May 17, 2015
+.Dt DUPE 1
+.Os
+.Sh NAME                  
+.Nm dupe
+.Nd duplicate a file quickly
+.Sh SYNOPSIS
+.Nm
+.Ar original
+.Sh DESCRIPTION
+This utility is always called by
+.Xr portfix 1 ,
+but sometimes it is useful in its own right.
+
+.Nm 
+takes exactly one argument, a path to a file.  It will duplicate the
+.Op original 
+file to "<original>.orig" unless there is already an existing file with
+this exact name.  In that case, the target file name will be "<original>.intermediate" 
+and any existing file of that name will be unconditionally overwritten.
+.Pp
+.Sh ERRORS
+.Nm
+will abort if zero or more than one argument is given, or if
+.Op original
+is not a path to a valid regular file.
+.Pp
+.Sh SEE ALSO 
+.Xr genpatch 1 , 
+.Xr portfix 1 

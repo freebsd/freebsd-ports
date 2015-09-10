@@ -1,4 +1,6 @@
 Index: create-lw-file
+--- create-lw-file.orig	2010-06-29 09:37:07 UTC
++++ create-lw-file
 @@ -1,8 +1,8 @@
 -#!/bin/bash
 +#!/bin/sh

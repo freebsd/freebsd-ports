@@ -5,10 +5,14 @@ PORTNAME=	MathJax
 PORTVERSION=	2.4.0
 CATEGORIES=	www
 
-MAINTAINER=	lukasz.stelmach@iem.pw.edu.pl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-browser JavaScript display engine for mathematics
 
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 NO_BUILD=	yes
+NO_ARCH=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	mathjax
 
@@ -21,7 +25,5 @@ do-install:
 	${FIND} -d ${STAGEDIR}${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	${FIND} -d ${STAGEDIR}${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
 	@(cd ${STAGEDIR}${PREFIX}; ${FIND} -s ${WWWDIR_REL} -not -type d) >> ${TMPPLIST}
-	@(cd ${STAGEDIR}${PREFIX}; ${FIND} -s -d ${WWWDIR_REL} -type d) \
-	| ${SED} -ne 's,^,@dirrm ,p' >> ${TMPPLIST}
 
 .include <bsd.port.mk>

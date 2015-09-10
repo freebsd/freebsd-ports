@@ -4,10 +4,10 @@ lib/libgringotts.so
 lib/libgringotts.so.2
 lib/libgringotts.so.2.0.7
 libdata/pkgconfig/libgringotts.pc
-%%PORTDOCS%%share/doc/libgringotts/AUTHORS
-%%PORTDOCS%%share/doc/libgringotts/COPYING
-%%PORTDOCS%%share/doc/libgringotts/ChangeLog
-%%PORTDOCS%%share/doc/libgringotts/NEWS
-%%PORTDOCS%%share/doc/libgringotts/README
-%%PORTDOCS%%share/doc/libgringotts/TODO
-%%PORTDOCS%%share/doc/libgringotts/manual.htm
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/manual.htm

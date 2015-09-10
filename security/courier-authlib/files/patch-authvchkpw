@@ -587,17 +587,9 @@
 +	close(DIR);
 +}
 +
---- userdb/Makefile.in.orig	2013-09-13 12:42:56.000000000 +0200
-+++ userdb/Makefile.in	2013-10-16 12:27:57.000000000 +0200
-@@ -91,6 +91,7 @@
- 	$(top_srcdir)/configure $(am__configure_deps) \
- 	$(srcdir)/config.h.in $(srcdir)/userdb.pl.in \
- 	$(srcdir)/makeuserdb.in $(srcdir)/pw2userdb.in \
-+	$(srcdir)/vchkpw2userdb.in \
- 	$(top_srcdir)/../depcomp ../AUTHORS ../COPYING ../ChangeLog \
- 	../INSTALL ../NEWS ../README ../config.guess ../config.sub \
- 	../depcomp ../install-sh ../missing ../ltmain.sh \
-@@ -105,7 +106,7 @@
+--- userdb/Makefile.in.orig	2015-06-06 14:37:22 UTC
++++ userdb/Makefile.in
+@@ -107,7 +107,7 @@ am__CONFIG_DISTCLEAN_FILES = config.stat
   configure.lineno config.status.lineno
  mkinstalldirs = $(install_sh) -d
  CONFIG_HEADER = config.h
@@ -606,7 +598,15 @@
  CONFIG_CLEAN_VPATH_FILES =
  LTLIBRARIES = $(noinst_LTLIBRARIES)
  libuserdb_la_LIBADD =
-@@ -365,7 +366,7 @@
+@@ -222,6 +222,7 @@ CSCOPE = cscope
+ AM_RECURSIVE_TARGETS = cscope
+ am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/config.h.in \
+ 	$(srcdir)/makeuserdb.in $(srcdir)/pw2userdb.in \
++	$(srcdir)/vchkpw2userdb.in \
+ 	$(srcdir)/userdb.pl.in $(top_srcdir)/../compile \
+ 	$(top_srcdir)/../config.guess $(top_srcdir)/../config.sub \
+ 	$(top_srcdir)/../depcomp $(top_srcdir)/../install-sh \
+@@ -376,7 +377,7 @@ BUILT_SOURCES = makeuserdb.html.in makeu
  		userdb.html.in userdb.8.in \
  		userdbpw.html.in userdbpw.8.in
  
@@ -615,7 +615,7 @@
  noinst_DATA = makeuserdb.html userdb.html userdbpw.html
  userdbpw_SOURCES = userdbpw.c
  userdbpw_LDADD = libuserdb.la @HMACLIB@ @MD5LIB@ @SHA1LIB@ @CRYPTLIBS@
-@@ -434,6 +435,8 @@
+@@ -444,6 +445,8 @@ makeuserdb: $(top_builddir)/config.statu
  	cd $(top_builddir) && $(SHELL) ./config.status $@
  pw2userdb: $(top_builddir)/config.status $(srcdir)/pw2userdb.in
  	cd $(top_builddir) && $(SHELL) ./config.status $@

@@ -3,6 +3,7 @@
 
 PORTNAME=	kafo_parsers
 PORTVERSION=	0.0.5
+PORTREVISION=	1
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
@@ -12,6 +13,8 @@ COMMENT=	Parser for puppet modules
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	puppet:${PORTSDIR}/sysutils/puppet
+
+NO_ARCH=	yes
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

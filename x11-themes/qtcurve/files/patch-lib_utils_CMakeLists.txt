@@ -1,0 +1,11 @@
+--- lib/utils/CMakeLists.txt.orig	2014-01-25 20:13:54 UTC
++++ lib/utils/CMakeLists.txt
+@@ -13,7 +13,7 @@ set(qtcurve_utils_SRCS
+   x11helpers.c
+   x11wrap.c)
+ set(qtcurve_utils_LINKS
+-  m rt dl ${LIBEXECINFO_LIBRARIES} pthread)
++  m rt ${CMAKE_DL_LIBS} ${LIBEXECINFO_LIBRARIES} pthread)
+ 
+ include_directories("${CMAKE_CURRENT_BINARY_DIR}")
+ 

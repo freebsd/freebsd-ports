@@ -29,7 +29,7 @@ LDFLAGS+=	-L${OPENSSLLIB}
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 340
+.if ${PYTHON_REL} < 3400
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}enum34>0:${PORTSDIR}/devel/py-enum34
 .endif
 

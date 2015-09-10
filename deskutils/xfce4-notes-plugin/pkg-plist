@@ -73,6 +73,15 @@ share/locale/zh_TW/LC_MESSAGES/xfce4-notes-plugin.mo
 %%DATADIR%%/gtk-2.0/scrollbars/stepper-up.png
 %%DATADIR%%/gtk-2.0/scrollbars/trough-scrollbar-horiz.png
 %%DATADIR%%/gtk-2.0/scrollbars/trough-scrollbar-vert.png
+%%DATADIR%%/gtk-2.0/tabs/notebook.png
+%%DATADIR%%/gtk-2.0/tabs/tab-bottom-active.png
+%%DATADIR%%/gtk-2.0/tabs/tab-bottom.png
+%%DATADIR%%/gtk-2.0/tabs/tab-left-active.png
+%%DATADIR%%/gtk-2.0/tabs/tab-left.png
+%%DATADIR%%/gtk-2.0/tabs/tab-right-active.png
+%%DATADIR%%/gtk-2.0/tabs/tab-right.png
+%%DATADIR%%/gtk-2.0/tabs/tab-top-active.png
+%%DATADIR%%/gtk-2.0/tabs/tab-top.png
 %%DATADIR%%/pixmaps/notes-menu-active.png
 %%DATADIR%%/pixmaps/notes-menu.png
 share/xfce4/panel-plugins/xfce4-notes-plugin.desktop

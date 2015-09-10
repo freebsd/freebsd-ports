@@ -157,19 +157,3 @@ share/locale/tr/LC_MESSAGES/rekonq.mo
 share/locale/uk/LC_MESSAGES/rekonq.mo
 share/locale/zh_CN/LC_MESSAGES/rekonq.mo
 share/locale/zh_TW/LC_MESSAGES/rekonq.mo
-@dirrmtry share/locale/ia/LC_MESSAGES
-@dirrmtry share/locale/ia
-@dirrm share/doc/HTML/uk/rekonq
-@dirrm share/doc/HTML/sv/rekonq
-@dirrm share/doc/HTML/pt_BR/rekonq
-@dirrm share/doc/HTML/pt/rekonq
-@dirrm share/doc/HTML/nl/rekonq
-@dirrm share/doc/HTML/fr/rekonq
-@dirrm share/doc/HTML/et/rekonq
-@dirrm share/doc/HTML/es/rekonq
-@dirrm share/doc/HTML/en/rekonq
-@dirrm share/doc/HTML/el/rekonq
-@dirrm share/doc/HTML/de/rekonq
-@dirrm share/apps/rekonq/pics
-@dirrm share/apps/rekonq/htmls
-@dirrm share/apps/rekonq

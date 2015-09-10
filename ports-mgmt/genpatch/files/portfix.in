@@ -1,0 +1,39 @@
+#!/bin/sh
+#
+# usage: portfix origfile
+#
+# This is a wrapper.  It runs consecutively:
+#   1. dupe XXX
+#   2. <editor> XXX
+#   3. genpatch XXX 
+#
+# If PORTEDITOR is defined in the environment, that program will be
+# used instead of the EDITOR env. variable.  If neither are defined
+# it will fall back to vi.
+
+
+if [ $# -eq 1 ]; then
+	old=${1}
+	if [ ! -f ${old} ]; then
+		echo "${0}: '${old}' does not exist! aborting..."
+		exit 1;
+	fi
+else
+	echo "${0}: need exactly one argument"
+	echo "${0} <path/to/original/file>"
+	exit 1;
+fi
+
+if [ -n "${PORTEDITOR}" ]; then
+	MYPORTEDITOR=${PORTEDITOR}
+elif [ -n "${EDITOR}" ]; then
+	MYPORTEDITOR=${EDITOR}
+else
+	MYPORTEDITOR=/usr/bin/vi
+fi
+
+%%PREFIX%%/bin/dupe ${old}
+${MYPORTEDITOR} ${old}
+if [ $? -eq 0 ]; then
+	%%PREFIX%%/bin/genpatch ${old}
+fi

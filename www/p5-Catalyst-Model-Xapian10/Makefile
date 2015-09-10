@@ -3,7 +3,7 @@
 
 PORTNAME=	Catalyst-Model-Xapian10
 PORTVERSION=	0.06
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MRAMBERG
@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.30:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Search-Xapian10>=0.9.2.4:${PORTSDIR}/databases/p5-Search-Xapian10
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	sample-indexer.pl
 USE_PERL5=	configure
 
 .include <bsd.port.mk>

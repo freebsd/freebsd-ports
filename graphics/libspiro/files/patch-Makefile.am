@@ -1,11 +1,41 @@
---- Makefile.am.orig	2015-01-31 19:29:34 UTC
+--- Makefile.am.orig	2015-07-02 13:50:20 UTC
 +++ Makefile.am
-@@ -2,7 +2,7 @@
+@@ -1,8 +1,8 @@
+ # Makefile.am - Top level automakefile for libspiro
  
- SUBDIRS = . tests
+-SUBDIRS = . tests
++SUBDIRS = .
  
 -pkgconfigdir = $(libdir)/pkgconfig
-+pkgconfigdir =  ${PREFIX}/libdata/pkgconfig
++pkgconfigdir = ${PREFIX}/libdata/pkgconfig
  pkgconfig_DATA = libspiro.pc
  
  ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
+@@ -13,7 +13,7 @@ AM_LDFLAGS = $(WLSLIB) $(LS_LIB) -no-und
+ LIBTOOL_DEPS = @LIBTOOL_DEPS@
+ 
+ DISTCLEANFILES = libspiro.pc
+-DISTCHECK_CONFIGURE_FLAGS = --enable-verbose_lib --enable-test_inputs
++DISTCHECK_CONFIGURE_FLAGS = --enable-verbose_lib --disable-test_inputs
+ 
+ lib_LTLIBRARIES = libspiro.la
+ 
+@@ -26,17 +26,10 @@ EXTRA_DIST = bezctx.md get-spiro-src.sh 
+ 	java/ShowPlate.java java/Spiro.java java/SpiroBezierContext.java    \
+ 	java/SpiroCanvas.java java/SpiroCP.java java/SpiroGeneralPath.java  \
+ 	java/SpiroPointType.java README-GeorgeWilliams fontforge-debug.txt  \
+-	fontforge.sh m4/ax_check_compile_flag.m4 tests/call-test.c
++	fontforge.sh m4/ax_check_compile_flag.m4
+ 
+ include_HEADERS = bezctx.h bezctx_intf.h spiro.h spiroentrypoints.h
+ 
+ libtool: $(LIBTOOL_DEPS)
+ 	$(SHELL) ./config.status libtool
+ 
+-# test: run all tests in cwd and subdirs
+-test:	${TEST_PROGS}
+-
+-.PHONY: test
+-# run make test as part of make check
+-check-local: test
+-

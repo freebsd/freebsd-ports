@@ -1,11 +1,9 @@
---- liquibase.orig	2013-02-11 22:36:23.000000000 +0800
-+++ liquibase	2013-02-11 22:38:03.000000000 +0800
-@@ -1,51 +1,14 @@
+--- liquibase.orig	2015-01-08 14:10:22 UTC
++++ liquibase
+@@ -1,49 +1,14 @@
  #! /bin/sh
  
--if [ -n "${LIQUIBASE_HOME+x}" ]; then
--echo "Liquibase Home: $LIQUIBASE_HOME"
--else
+-if [ ! -n "${LIQUIBASE_HOME+x}" ]; then
 -  echo "Liquibase Home is not set."
 -
 -  ## resolve links - $0 may be a symlink
@@ -25,9 +23,10 @@
 -
 -  # make it fully qualified
 -  LIQUIBASE_HOME=`cd "$LIQUIBASE_HOME" && pwd`
--  echo "Liquibase Home: $LIQUIBASE_HOME"
+-  # echo "Liquibase Home: $LIQUIBASE_HOME"
 -fi
--
++LIQUIBASE_HOME=`dirname $0`/../share/liquibase
+ 
 - 
 -# build classpath from all jars in lib
 -if [ -f /usr/bin/cygpath ]; then
@@ -49,8 +48,6 @@
 -    CP="$CP":"$i"
 -  done
 -fi
-+LIQUIBASE_HOME=`dirname $0`/../share/liquibase
-+
 +CP=.
 +for i in "$LIQUIBASE_HOME"/liquibase*.jar; do
 +  CP="$CP":"$i"
@@ -60,4 +57,4 @@
 +done
  
  # add any JVM options here
- JAVA_OPTS=
+ JAVA_OPTS="${JAVA_OPTS-}"

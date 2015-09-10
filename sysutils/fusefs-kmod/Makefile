@@ -49,9 +49,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/mount_fusefs/mount_fusefs.8 ${STAGEDIR}${PREFIX}/man/man8
 	${INSTALL_PROGRAM} ${WRKSRC}/mount_fusefs/mount_fusefs ${STAGEDIR}${PREFIX}/sbin
 
-post-install:
-	${CAT} ${PKGMESSAGE}
-
 SVN_REV=	263233
 SVN_MIRROR?=	http://svn.freebsd.org/base
 EXPDIR=		${WRKSRC}/src

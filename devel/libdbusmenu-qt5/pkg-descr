@@ -1,0 +1,5 @@
+A library that provides Qt5 implementation of the DBusMenu protocol.
+The DBusMenu protocol makes it possible for applications to export
+and import their menus over DBus.
+
+WWW: https://launchpad.net/libdbusmenu-qt

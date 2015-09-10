@@ -80,30 +80,3 @@
 %%PYTHON_SITELIBDIR%%/reversion/version.py
 %%PYTHON_SITELIBDIR%%/reversion/version.pyc
 %%PYTHON_SITELIBDIR%%/reversion/version.pyo
-@dirrmtry %%PYTHON_SITELIBDIR%%/reversion/templates/reversion
-@dirrmtry %%PYTHON_SITELIBDIR%%/reversion/templates
-@dirrmtry %%PYTHON_SITELIBDIR%%/reversion/migrations
-@dirrmtry %%PYTHON_SITELIBDIR%%/reversion/management/commands
-@dirrmtry %%PYTHON_SITELIBDIR%%/reversion/management
-@dirrmtry %%PYTHON_SITELIBDIR%%/reversion/locale/sv/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/reversion/locale/sv
-@dirrmtry %%PYTHON_SITELIBDIR%%/reversion/locale/ru/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/reversion/locale/ru
-@dirrmtry %%PYTHON_SITELIBDIR%%/reversion/locale/pt_BR/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/reversion/locale/pt_BR
-@dirrmtry %%PYTHON_SITELIBDIR%%/reversion/locale/pl/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/reversion/locale/pl
-@dirrmtry %%PYTHON_SITELIBDIR%%/reversion/locale/nb/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/reversion/locale/nb
-@dirrmtry %%PYTHON_SITELIBDIR%%/reversion/locale/it/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/reversion/locale/it
-@dirrmtry %%PYTHON_SITELIBDIR%%/reversion/locale/he/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/reversion/locale/he
-@dirrmtry %%PYTHON_SITELIBDIR%%/reversion/locale/fr/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/reversion/locale/fr
-@dirrmtry %%PYTHON_SITELIBDIR%%/reversion/locale/de/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/reversion/locale/de
-@dirrmtry %%PYTHON_SITELIBDIR%%/reversion/locale/cs/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/reversion/locale/cs
-@dirrmtry %%PYTHON_SITELIBDIR%%/reversion/locale
-@dirrmtry %%PYTHON_SITELIBDIR%%/reversion

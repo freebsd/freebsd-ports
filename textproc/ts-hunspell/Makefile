@@ -4,7 +4,7 @@ PORTNAME=	hunspell
 PORTVERSION=	20110323
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	MOZILLA_EXTENDED/addons/46611
+MASTER_SITES=	MOZILLA_ADDONS/addons/46611
 PKGNAMEPREFIX=	ts-
 DISTNAME=	tsonga_spell_checker-${PORTVERSION}-tb+sm+fx+fn
 EXTRACT_SUFX=	.xpi
@@ -13,6 +13,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Tsonga hunspell dictionaries
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/dictionaries
 

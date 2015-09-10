@@ -87,16 +87,16 @@ diff --git dom/base/moz.build dom/base/moz.build
 index a660ba4..6b2f602 100644
 --- dom/base/moz.build
 +++ dom/base/moz.build
-@@ -196,6 +196,9 @@ SOURCES += [
-     'nsObjectLoadingContent.cpp',
- ]
+@@ -375,6 +375,9 @@ if CONFIG['INTEL_ARCHITECTURE']:
+     SOURCES += ['nsTextFragmentSSE2.cpp']
+     SOURCES['nsTextFragmentSSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
  
 +if CONFIG['MOZ_NATIVE_HARFBUZZ']:
 +    SOURCES['nsContentUtils.cpp'].flags += CONFIG['MOZ_HARFBUZZ_CFLAGS']
 +
  EXTRA_COMPONENTS += [
-     'contentAreaDropListener.js',
-     'contentAreaDropListener.manifest',
+     'ConsoleAPI.manifest',
+     'ConsoleAPIStorage.js',
 diff --git gfx/graphite2/moz-gr-update.sh gfx/graphite2/moz-gr-update.sh
 index f3d76ea..a9e7fb6 100644
 --- gfx/graphite2/moz-gr-update.sh
@@ -121,10 +121,10 @@ diff --git gfx/harfbuzz/README-mozilla gfx/harfbuzz/README-mozilla
 index ca57d16..1ce21fe 100644
 --- gfx/harfbuzz/README-mozilla
 +++ gfx/harfbuzz/README-mozilla
-@@ -21,3 +21,8 @@ In addition, the src/Makefile.in file here is NOT from upstream, nor is it
+@@ -18,3 +18,8 @@ the mozilla tree.
+ In addition, the src/Makefile.in file here is NOT from upstream, nor is it
  generated from src/Makefile.am (the original harfbuzz version); it is a mozilla-
- specific makefile that is maintained by hand. It should only need updating when
- new source files or exported headers are added in harfbuzz.
+ specific makefile that is maintained by hand.
 +
 +The in-tree copy may be omitted during build by --with-system-harfbuzz.
 +Make sure to keep pkg-config version check within configure.in in sync
@@ -160,9 +160,9 @@ diff --git gfx/skia/generate_mozbuild.py gfx/skia/generate_mozbuild.py
 index 28fa6b5..240dced 100755
 --- gfx/skia/generate_mozbuild.py
 +++ gfx/skia/generate_mozbuild.py
-@@ -140,6 +140,9 @@ if CONFIG['GNU_CXX']:
-     if not CONFIG['CLANG_CXX']:
-         CXXFLAGS += ['-Wno-logical-op']
+@@ -142,6 +142,9 @@ if CONFIG['GNU_CXX']:
+     if CONFIG['CPU_ARCH'] == 'arm':
+         SOURCES['trunk/src/opts/SkBlitRow_opts_arm.cpp'].flags += ['-fomit-frame-pointer']
  
 +if CONFIG['MOZ_NATIVE_HARFBUZZ']:
 +    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
@@ -174,9 +174,9 @@ diff --git gfx/skia/moz.build gfx/skia/moz.build
 index 1d0c2f9..adb8941 100644
 --- gfx/skia/moz.build
 +++ gfx/skia/moz.build
-@@ -968,6 +968,9 @@ if CONFIG['GNU_CXX']:
-     if not CONFIG['CLANG_CXX']:
-         CXXFLAGS += ['-Wno-logical-op']
+@@ -970,6 +970,9 @@ if CONFIG['GNU_CXX']:
+     if CONFIG['CPU_ARCH'] == 'arm':
+         SOURCES['trunk/src/opts/SkBlitRow_opts_arm.cpp'].flags += ['-fomit-frame-pointer']
  
 +if CONFIG['MOZ_NATIVE_HARFBUZZ']:
 +    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
@@ -188,41 +188,48 @@ diff --git gfx/thebes/moz.build gfx/thebes/moz.build
 index d5852fa..aeeab25 100644
 --- gfx/thebes/moz.build
 +++ gfx/thebes/moz.build
-@@ -278,6 +278,12 @@ CXXFLAGS += CONFIG['TK_CFLAGS']
- CFLAGS += CONFIG['MOZ_CAIRO_CFLAGS']
- CFLAGS += CONFIG['TK_CFLAGS']
+@@ -294,7 +294,13 @@ if CONFIG['MOZ_WIDGET_TOOLKIT'] == 'andr
+ if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('gtk2', 'gtk3', 'qt'):
+     CXXFLAGS += CONFIG['MOZ_PANGO_CFLAGS']
  
+-DEFINES['GRAPHITE2_STATIC'] = True
 +if CONFIG['MOZ_NATIVE_HARFBUZZ']:
 +    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
 +
 +if CONFIG['MOZ_NATIVE_GRAPHITE2']:
 +    CXXFLAGS += CONFIG['MOZ_GRAPHITE2_CFLAGS']
-+
- if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('android', 'gonk', 'qt'):
-     CXXFLAGS += CONFIG['CAIRO_FT_CFLAGS']
++else:
++    DEFINES['GRAPHITE2_STATIC'] = True
  
+ if CONFIG['GKMEDIAS_SHARED_LIBRARY']:
+     DEFINES['OTS_DLL'] = True
 diff --git intl/unicharutil/util/moz.build intl/unicharutil/util/moz.build
 index d736943..41a931f 100644
 --- intl/unicharutil/util/moz.build
 +++ intl/unicharutil/util/moz.build
-@@ -37,3 +37,6 @@ if CONFIG['_MSC_VER']:
- 
+@@ -42,6 +42,9 @@ if CONFIG['_MSC_VER']:
  if CONFIG['ENABLE_INTL_API']:
      CXXFLAGS += CONFIG['MOZ_ICU_CFLAGS']
-+
+ 
 +if CONFIG['MOZ_NATIVE_HARFBUZZ']:
 +    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
++
+ if CONFIG['GNU_CXX']:
+     FAIL_ON_WARNINGS = True
+ 
 diff --git netwerk/dns/moz.build netwerk/dns/moz.build
 index 0b0717a..2e665c9 100644
 --- netwerk/dns/moz.build
 +++ netwerk/dns/moz.build
-@@ -64,3 +64,6 @@ GENERATED_FILES = [
- LOCAL_INCLUDES += [
+@@ -66,5 +66,8 @@ LOCAL_INCLUDES += [
      '/netwerk/base',
  ]
-+
+ 
 +if CONFIG['MOZ_NATIVE_HARFBUZZ']:
 +    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
++
+ if CONFIG['MOZ_WIDGET_TOOLKIT'] == 'gonk' and CONFIG['ANDROID_VERSION'] > '19':
+     CXXFLAGS += ['-I%s/bionic/libc/dns/include' % CONFIG['ANDROID_SOURCE']]
 diff --git toolkit/library/moz.build toolkit/library/moz.build
 index 67f0db9..d42137a 100644
 --- toolkit/library/moz.build

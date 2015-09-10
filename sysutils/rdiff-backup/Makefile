@@ -6,11 +6,8 @@ PORTVERSION=	1.2.8
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SAVANNAH:S/$/:savannah/} \
-		${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=	${PORTNAME}/:savannah \
-		vd/${PORTNAME}${PKGNAMESUFFIX}/:local
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:savannah,local
+MASTER_SITES=	SAVANNAH \
+		LOCAL/vd/${PORTNAME}${PKGNAMESUFFIX}
 
 MAINTAINER=	udvzsolt@gmail.com
 COMMENT=	Local/remote mirroring+incremental backup

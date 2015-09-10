@@ -1,5 +1,5 @@
---- Makefile	2014-10-03 14:37:57.000000000 -0500
-+++ Makefile	2015-01-10 21:44:03.000000000 -0500
+--- Makefile.orig	2015-03-04 15:17:21 UTC
++++ Makefile
 @@ -1,11 +1,12 @@
 -CC=lazbuild
 +CC=lazbuild -d
@@ -14,11 +14,11 @@
  
  cqrlog: src/cqrlog.lpi
 -	$(CC) --ws=gtk2 src/cqrlog.lpi
-+	$(CC) --pcp=. --ws=%%LCL_PLATFORM%% src/cqrlog.lpi --lazarusdir=%%LAZARUSDIR%%
++	$(CC) --pcp=. --ws=${PLATFORM} src/cqrlog.lpi --lazarusdir=%%LAZARUSDIR%%
  	$(ST) src/cqrlog
  	gzip tools/cqrlog.1 -c > tools/cqrlog.1.gz
  
-@@ -29,7 +30,7 @@
+@@ -29,7 +30,7 @@ install:
  	install -d -v         $(sharedir)/pixmaps/cqrlog
  	install -d -v         $(sharedir)/icons
  	install -d -v         $(sharedir)/applications
@@ -27,7 +27,7 @@
  	install    -v -m 0755 src/cqrlog $(bindir)
  	install    -v -m 0755 tools/cqrlog-apparmor-fix $(datadir)/cqrlog-apparmor-fix
  	install    -v -m 0644 ctyfiles/* $(datadir)/ctyfiles/
-@@ -46,7 +47,7 @@
+@@ -46,7 +47,7 @@ install:
  	install    -v -m 0644 images/cqrlog.png $(sharedir)/pixmaps/cqrlog/cqrlog.png
  	install    -v -m 0644 images/cqrlog.png $(sharedir)/icons/cqrlog.png  
  	install    -v -m 0644 src/changelog.html $(datadir)/changelog.html

@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sound synthesizer
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	swig13>0:${PORTSDIR}/devel/swig13 \
 		eigen>0:${PORTSDIR}/math/eigen3 \
@@ -40,7 +41,8 @@ CONFLICTS_INSTALL=	outguess-* csound6
 
 WRKSRC=		${WRKDIR}/${PORTNAME:S/c/C/}${PORTVERSION}
 
-USES=		bison gettext scons compiler:openmp python
+USES=		bison cpe gettext scons compiler:openmp python
+CPE_VENDOR=	csounds
 MAKE_ARGS=	instdir="${STAGEDIR}" prefix="${PREFIX}" \
 		CC="${CC}" CXX="${CXX}" \
 		buildCsoundAC=0 buildCsoundVST=0 buildInterfaces=1 \
@@ -105,15 +107,10 @@ MAKE_ARGS+=	useOSC=0
 .endif
 
 .if ${PORT_OPTIONS:MPORTAUDIO}
-BUILD_DEPENDS+=	portaudio2>=0:${PORTSDIR}/audio/portaudio2
-RUN_DEPENDS+=	portaudio2>=0:${PORTSDIR}/audio/portaudio2
+LIB_DEPENDS+=	libportaudio.so:${PORTSDIR}/audio/portaudio
 MAKE_ARGS+=	usePortAudio=1
-PORTAUDIO_L=	"${LOCALBASE}/lib/portaudio2"
-PORTAUDIO_R=	"-Wl,-rpath,${LOCALBASE}/lib/portaudio2"
 .else
 MAKE_ARGS+=	usePortAudio=0
-PORTAUDIO_L=	# empty
-PORTAUDIO_R=	# empty
 .endif
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
@@ -134,8 +131,6 @@ MAKE_ARGS+=	buildCsound5GUI=0 buildCSEditor=0 buildWinsound=0 useFLTK=0
 CSOUND_DOCS=	Csound${PORTVERSION:R}_manual_html.zip
 .endif
 
-.include <bsd.port.pre.mk>
-
 .if ${ARCH} == amd64 || ${ARCH} == sparc64 || ${ARCH} == ia64
 MAKE_ARGS+=	Word64=1
 .endif
@@ -151,13 +146,9 @@ CXXLIB=		c++
 CXXLIB=		# empty
 .endif
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${SED} -e "s|%%LOCALBASE%%|${LOCALBASE}|g; \
-		s|%%PYTHON_INCLUDEDIR%%|${PYTHON_INCLUDEDIR}|; \
-		s|%%PORTAUDIO_L%%|${PORTAUDIO_L}|; \
-		s|%%PORTAUDIO_R%%|${PORTAUDIO_R}|" \
+		s|%%PYTHON_INCLUDEDIR%%|${PYTHON_INCLUDEDIR}|" \
 		< ${FILESDIR}/custom.py.in > ${WRKSRC}/custom.py
 	@${REINPLACE_CMD} -e "s|'unsupported'|'linux'|; \
 		s|Exit(-1)|print \"\"|; \
@@ -168,7 +159,6 @@ post-patch:
 		/LINKFLAGS/s|\['-Wl,-Bdynamic'\]|Split('${LDFLAGS}')|; \
 		s|\"pthread\"|\"\"|; \
 		s|'pthread'|''|; \
-		s|\"portaudio.h\"|\"portaudio2/portaudio.h\"|; \
 		s|\"boost/any.hpp\"|\"##boost/any.hpp##\"|; \
 		s|\"alsa/asoundlib.h\"|\"${ALSA_H}\"|; \
 		s|'xmlfile.h'|'##xmlfile.h##'|; \
@@ -184,8 +174,6 @@ post-patch:
 		/jpluginEnvironment/s|'asound'|''|; \
 		/portaudioEnvironment/s|'asound'|''|; \
 		/jackEnvironment/s|'asound'|''|" ${WRKSRC}/SConstruct
-	@${REINPLACE_CMD} -e "s|<portaudio.h>|<portaudio2/portaudio.h>|" \
-		${WRKSRC}/InOut/rtpa.c
 	@${REINPLACE_CMD} -e "s|linux/if.h|sys/types.h|" \
 		${WRKSRC}/OOps/remote.c
 
@@ -198,4 +186,4 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/* ${STAGEDIR}${PREFIX}/lib/*.so* \
 		${STAGEDIR}${PREFIX}/lib/csound/plugins64/*.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

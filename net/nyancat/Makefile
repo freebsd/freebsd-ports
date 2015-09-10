@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nyancat
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 PORTEPOCH=	1
 CATEGORIES=	net games
 
@@ -17,8 +17,5 @@ PLIST_FILES=	bin/nyancat
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

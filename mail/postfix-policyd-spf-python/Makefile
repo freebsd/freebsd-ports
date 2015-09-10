@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	postfix-policyd-spf-python
-PORTVERSION=	1.2
+PORTVERSION=	1.3.1
 CATEGORIES=	mail python
-MASTER_SITES=	https://launchpadlibrarian.net/145855789/
+MASTER_SITES=	https://launchpad.net/pypolicyd-spf/1.3/1.3.1/+download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pypolicyd-spf-${PORTVERSION}
 
@@ -12,6 +12,7 @@ MAINTAINER=	me@mortis.eu
 COMMENT=	Pure Python Postfix policy daemon for SPF checking
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipaddr>0:${PORTSDIR}/devel/py-ipaddr \
 		${PYTHON_PKGNAMEPREFIX}spf>0:${PORTSDIR}/mail/py-spf \
@@ -20,6 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipaddr>0:${PORTSDIR}/devel/py-ipaddr \
 USES=		python
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	pypolicyd-spf
+NO_ARCH=	yes
 
 PORTDOCS=	CHANGES \
 		COPYING \
@@ -33,9 +35,6 @@ SUB_FILES=	pkg-message
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 
 OPTIONS_DEFINE=	DOCS
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${MV} ${WRKSRC}/policyd-spf.conf ${WRKSRC}/policyd-spf.conf.sample
@@ -50,8 +49,8 @@ post-patch:
 		-e "s|/etc/pypolicyd-spf/|${PREFIX}/etc/postfix-policyd-spf-python/|" \
 		${WRKSRC}/policyd-spf.peruser.5
 
-post-install:
-	@${INSTALL} -d ${STAGEDIR}/${DOCSDIR}
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

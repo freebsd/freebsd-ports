@@ -3,7 +3,7 @@
 
 PORTNAME=	sqlite
 PORTVERSION=	3.6.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases linux
 PKGNAMEPREFIX=	linux-${USE_LINUX}-
 
@@ -19,8 +19,6 @@ USE_LINUX_RPM=	yes
 BRANDELF_FILES=	usr/bin/sqlite3
 USE_LDCONFIG=	yes
 
-PLIST_FILES=	usr/bin/sqlite3 usr/lib/libsqlite3.so.0 \
-		usr/lib/libsqlite3.so.0.8.6 usr/share/man/man1/sqlite3.1.gz
 DOCSDIR=	${PREFIX}/usr/share/doc/sqlite-${PORTVERSION}
 PORTDOCS=	README
 DESCR=		${.CURDIR}/../${PORTNAME}3/pkg-descr

@@ -1,14 +1,14 @@
---- tempstream/tempstream1.cc.orig	2012-05-07 16:35:29.000000000 +0200
-+++ tempstream/tempstream1.cc	2012-12-02 00:49:06.000000000 +0100
-@@ -7,7 +7,11 @@
+--- tempstream/tempstream1.cc.orig	2013-10-01 16:50:32 UTC
++++ tempstream/tempstream1.cc
+@@ -7,7 +7,11 @@ TempStream::TempStream(string const &bas
      strcpy(buf + base.length(), "XXXXXX");
      base.copy(buf, string::npos);
  
-+#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__DragonFly__)
 +    int fd = mkstemp(buf);
 +#else
      int fd = mkostemp(buf, O_RDWR);
 +#endif
  
      if (fd == -1)
-         throw Errno("TempStream");
+         throw Exception() << "TempStream: " << errnodescr;

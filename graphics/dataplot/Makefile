@@ -17,13 +17,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free software system for statistical visualization
 
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg
+		libpng.so:${PORTSDIR}/graphics/png
 
 OPTIONS_DEFINE=	DOCS
 DOCS_DISTFILES=	dpsnapsh.pdf:doc
 
-USES=		fortran
+USES=		fortran jpeg
 USE_XORG=	x11 xi
 NO_WRKSUBDIR=	yes
 MAXOBV?=	400000	# Change if you need more observations/variable
@@ -53,13 +52,11 @@ post-extract:
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's/MAXOBV=1000000/MAXOBV=${MAXOBV}/' \
-	${WRKSRC}/DPCOPA.INC
+		${WRKSRC}/DPCOPA.INC
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/dpsnapsh.pdf \
 		${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

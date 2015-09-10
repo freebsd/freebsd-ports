@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	XML-Atom-SimpleFeed
-PORTVERSION=	0.861
+PORTVERSION=	0.862
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,5 +15,6 @@ LICENSE_COMB=	dual
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

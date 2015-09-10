@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- src/rio_add_song.c.orig	Sun Aug 22 16:53:27 2004
 +++ src/rio_add_song.c	Sun Aug 22 16:55:17 2004
 @@ -325,6 +325,7 @@

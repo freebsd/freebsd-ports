@@ -26,7 +26,6 @@ man/man8/radmind.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/SPEC
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @sample(,,700) /%%RADMIND_BASE_DIR%%/config.sample
 @owner %%RADMINUSER%%
 @group %%RADMINUSER%%

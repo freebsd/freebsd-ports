@@ -152,6 +152,7 @@ share/applications/fontforge.desktop
 %%DATADIR%%/pixmaps/choosermacttf.png
 %%DATADIR%%/pixmaps/choosernobookmark.png
 %%DATADIR%%/pixmaps/chooserobject.png
+%%DATADIR%%/pixmaps/choosersfdir.png
 %%DATADIR%%/pixmaps/choosertar.png
 %%DATADIR%%/pixmaps/choosertextbdf.png
 %%DATADIR%%/pixmaps/choosertextc.png
@@ -475,6 +476,7 @@ share/locale/es/LC_MESSAGES/FontForge.mo
 share/locale/fr/LC_MESSAGES/FontForge.mo
 share/locale/it/LC_MESSAGES/FontForge.mo
 share/locale/ja/LC_MESSAGES/FontForge.mo
+share/locale/ko/LC_MESSAGES/FontForge.mo
 share/locale/ml/LC_MESSAGES/FontForge.mo
 share/locale/pl/LC_MESSAGES/FontForge.mo
 share/locale/pt/LC_MESSAGES/FontForge.mo

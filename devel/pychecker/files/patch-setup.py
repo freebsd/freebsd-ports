@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- setup.py
 +++ setup.py
 @@ -187,7 +187,6 @@

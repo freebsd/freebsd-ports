@@ -45,6 +45,7 @@ lib/coq/theories/Logic/Epsilon.vo
 lib/coq/theories/Logic/Eqdep_dec.vo
 lib/coq/theories/Logic/EqdepFacts.vo
 lib/coq/theories/Logic/Eqdep.vo
+lib/coq/theories/Logic/ExtensionalityFacts.vo
 lib/coq/theories/Logic/FunctionalExtensionality.vo
 lib/coq/theories/Logic/Hurkens.vo
 lib/coq/theories/Logic/IndefiniteDescription.vo

@@ -246,3 +246,4 @@ lib/libcppcms.so.1.0.5
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xss/config.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xss/tinymce_profile.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xss/xss.cpp
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/uploads/uploads

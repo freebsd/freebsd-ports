@@ -3,7 +3,7 @@
 PARENTDIR?=	${.CURDIR:S|-reference$||}
 REFERENCE_PORT=	${PKGORIGIN:S|-reference$||}
 
-PORTSCOUT=	ignore
+PORTSCOUT=	ignore:1
 
 .include "${PARENTDIR}/Makefile"
 
@@ -22,9 +22,6 @@ DISTNAME:=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 MASTER_SITE_SUBDIR:=	${MASTER_SITE_SUBDIR}
 .endif
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-reference
-.if defined(LATEST_LINK)
-LATEST_LINK:=	${LATEST_LINK}-reference
-.endif
 
 COMMENT=	Programming reference for ${REFERENCE_PORT}
 

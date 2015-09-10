@@ -3,7 +3,7 @@
 
 PORTNAME=	lineak-defaultplugin
 PORTVERSION=	0.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils deskutils
 MASTER_SITES=	SF/lineak/lineak_defaultplugin/${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	lineak
@@ -21,6 +21,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	kde_cv_prog_cxx_fno_check_new=no
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	lib/lineakd/plugins/defaultplugin.so \
 		lib/lineakd/plugins/mediadetectplugin.so \

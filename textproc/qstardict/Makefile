@@ -13,35 +13,27 @@ USES=		dos2unix pkgconfig qmake tar:bzip2
 USE_QT4=	gui network xml uic_build moc_build rcc_build
 DOS2UNIX_FILES=	qstardict.pri
 
+# Path to dictionaries installed by stardict-* ports
 DICPATH=	${LOCALBASE}/share/stardict/dic
 
 OPTIONS_DEFINE=	DBUS DOCS NLS
-OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+OPTIONS_DEFAULT:=	${OPTIONS_DEFINE}
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
+DBUS_USE=	QT4=dbus
+DBUS_QMAKE_OFF=	NO_DBUS=1
 
-.if ${PORT_OPTIONS:MNLS}
-PLIST_SUB+=	NLS=""
-.else
-QMAKE_ARGS+=	NO_TRANSLATIONS=1
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MDBUS}
-USE_QT4+=	dbus
-.else
-QMAKE_ARGS+=	NO_DBUS=1
-.endif
+NLS_QMAKE_OFF=	NO_TRANSLATIONS=1
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr|${PREFIX}|g" \
 		${WRKSRC}/qstardict.pri
-.if !${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e "/^INSTALLS/s|docs||g" \
-		${WRKSRC}/qstardict.pro
-.endif
 	@${REINPLACE_CMD} -e "s|/usr/share/stardict/dic|${DICPATH}|g" \
 		-e "s|glib.*\.h|glib.h|g" \
 		${WRKSRC}/plugins/stardict/stardict.cpp
+
+post-patch-DOCS-off:
+	${REINPLACE_CMD} -e "/^INSTALLS/s|docs||g" \
+		${WRKSRC}/qstardict.pro
 
 .include <bsd.port.mk>

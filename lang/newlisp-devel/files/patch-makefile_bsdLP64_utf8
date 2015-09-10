@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- makefile_bsdLP64_utf8.orig
 +++ makefile_bsdLP64_utf8
 @@ -6,14 +6,12 @@

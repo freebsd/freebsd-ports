@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ruby-graphviz
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	graphics ruby rubygems
 MASTER_SITES=	RG
 
@@ -12,6 +12,8 @@ COMMENT=	Ruby Interface to the GraphViz Graphing Tool
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	${LOCALBASE}/bin/gxl2dot:${PORTSDIR}/graphics/graphviz
+
+NO_ARCH=	yes
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

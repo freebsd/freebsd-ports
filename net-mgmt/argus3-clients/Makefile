@@ -3,6 +3,7 @@
 
 PORTNAME=	argus-clients
 PORTVERSION=	3.0.8
+PORTREVISION=	1
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://qosient.com/argus/src/ \
 		ftp://qosient.com/pub/argus/src/
@@ -23,7 +24,7 @@ MYSQL_USE=	MYSQL=yes
 GEOIP_LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
 GEOIP_CONFIGURE_ON=	--with-GeoIP=${LOCALBASE}
 
-USES=		bison ncurses perl5
+USES=		bison ncurses perl5 readline
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 

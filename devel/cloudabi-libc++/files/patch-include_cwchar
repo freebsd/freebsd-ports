@@ -1,0 +1,32 @@
+--- include/cwchar.orig	2015-06-17 04:49:22 UTC
++++ include/cwchar
+@@ -135,10 +135,8 @@ using ::fgetwc;
+ using ::fgetws;
+ using ::fputwc;
+ using ::fputws;
+-using ::fwide;
+ using ::getwc;
+ using ::putwc;
+-using ::ungetwc;
+ using ::wcstod;
+ #ifndef _LIBCPP_MSVCRT
+ using ::wcstof;
+@@ -152,10 +150,7 @@ using ::wcstoul;
+ #ifndef _LIBCPP_HAS_NO_LONG_LONG
+ using ::wcstoull;
+ #endif // _LIBCPP_HAS_NO_LONG_LONG
+-using ::wcscpy;
+ using ::wcsncpy;
+-using ::wcscat;
+-using ::wcsncat;
+ using ::wcscmp;
+ using ::wcscoll;
+ using ::wcsncmp;
+@@ -199,7 +194,6 @@ using ::wmemset;
+ using ::wcsftime;
+ using ::btowc;
+ using ::wctob;
+-using ::mbsinit;
+ using ::mbrlen;
+ using ::mbrtowc;
+ using ::wcrtomb;

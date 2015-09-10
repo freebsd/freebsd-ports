@@ -23,6 +23,10 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
+.if ${ARCH} == "amd64" && ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+BROKEN=		all tests end up with segfault on FreeBSD < 10.x amd64
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-DUNIX|@X_CFLAGS@ &|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e '/Intrinsic\.h/d' ${WRKSRC}/yabasic.h

@@ -3,7 +3,7 @@
 
 PORTNAME=	gltt
 PORTVERSION=	2.5.2
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	graphics
 MASTER_SITES=	http://gltt.sourceforge.net/download/
 
@@ -23,7 +23,9 @@ CONFIGURE_ARGS=	--with-ttf-includes=${LOCALBASE}/include/freetype1 \
 		--with-gl-libraries=${LOCALBASE}/lib \
 		--with-glut-includes=${LOCALBASE}/include \
 		--with-glut-libraries=${LOCALBASE}/lib
-INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgltt.so
 
 .include <bsd.port.mk>

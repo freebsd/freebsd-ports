@@ -16,6 +16,7 @@ LICENSE=	LGPL21 GPLv2 MPL
 LICENSE_COMB=	dual
 
 USES=		zip
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	%%DATADIR%%/sk_SK.aff \

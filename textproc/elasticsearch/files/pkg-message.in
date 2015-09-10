@@ -1,6 +1,6 @@
 ======================================================================
 
-Please see %%DATADIR%% for sample versions of
+Please see %%ETCDIR%% for sample versions of
 elasticsearch.yml and logging.yml.
 
 ======================================================================

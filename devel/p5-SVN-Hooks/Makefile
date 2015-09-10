@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	SVN-Hooks
-PORTVERSION=	1.27
+PORTVERSION=	1.28
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,5 +24,6 @@ TEST_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

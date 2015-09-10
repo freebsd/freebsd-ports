@@ -3,7 +3,7 @@
 
 PORTNAME=	Mail-ListDetector
 PORTVERSION=	1.04
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MSTEVENS
@@ -18,8 +18,10 @@ RUN_DEPENDS=	p5-Email-Abstract>=3.001:${PORTSDIR}/mail/p5-Email-Abstract \
 		p5-URI>=1.1:${PORTSDIR}/net/p5-URI
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	examples/sample.pl
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	EXAMPLES
 

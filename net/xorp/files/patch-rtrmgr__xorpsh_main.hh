@@ -1,6 +1,6 @@
---- ./rtrmgr/xorpsh_main.hh.orig	2011-03-16 21:16:14.000000000 +0000
-+++ ./rtrmgr/xorpsh_main.hh	2014-02-26 21:17:13.000000000 +0000
-@@ -151,7 +151,7 @@
+--- rtrmgr/xorpsh_main.hh.orig	2012-01-11 17:56:10 UTC
++++ rtrmgr/xorpsh_main.hh
+@@ -151,7 +151,7 @@ private:
      string		_authfile;
      string		_authtoken;
      bool		_got_config;

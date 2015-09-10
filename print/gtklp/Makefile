@@ -11,16 +11,16 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK interface to cups
 
 LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		gettext pkgconfig
+USES=		autoreconf gettext libtool pkgconfig
+GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 USE_OPENSSL=	yes
-USE_AUTOTOOLS=	aclocal autoheader automake autoconf
-AUTOMAKE_ARGS=	--add-missing --copy
 INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

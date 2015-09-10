@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	facter
-PORTVERSION=	2.4.3
+PORTVERSION=	2.4.4
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG \
 		http://downloads.puppetlabs.com/facter/
@@ -33,8 +33,8 @@ RUN_DEPENDS+=	dmidecode:${PORTSDIR}/sysutils/dmidecode
 
 post-patch:
 .if empty(PORT_OPTIONS:MZFS_FACTS)
-	@${REINPLACE_CMD} -e '/\-\ lib\/facter\/zfs_version.rb/d' ${WRKSRC}/${PORTNAME}.gemspec
-	@${REINPLACE_CMD} -e '/\-\ lib\/facter\/zpool_version.rb/d' ${WRKSRC}/${PORTNAME}.gemspec
+	@${REINPLACE_CMD} -e 's/\,\ \"lib\/facter\/zfs_version.rb\"//' ${WRKSRC}/${PORTNAME}.gemspec
+	@${REINPLACE_CMD} -e 's/\,\ \"lib\/facter\/zpool_version.rb\"//' ${WRKSRC}/${PORTNAME}.gemspec
 .endif
 
 .include <bsd.port.post.mk>

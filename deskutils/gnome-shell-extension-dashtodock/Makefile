@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-shell-extension-dashtodock
-PORTVERSION=	0.0.0.20141126
+PORTVERSION=	0.0.0.20150613
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome3
 
@@ -22,8 +22,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 GLIB_SCHEMAS=	org.gnome.shell.extensions.dash-to-dock.gschema.xml
 
 GH_ACCOUNT=	micheleg
-GH_TAGNAME=	8d2ccc7
 GH_PROJECT=	dash-to-dock
+GH_TAGNAME=	82b2e7c
 
 PKGMESSAGE=	../gnome-shell-extra-extensions/pkg-message.slaves
 
@@ -32,10 +32,10 @@ NO_BUILD=	yes
 do-install:
 		@${MKDIR} ${STAGEDIR}${PREFIX}/share/glib-2.0/schemas/
 		@${MKDIR} ${STAGEDIR}${PREFIX}/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com
-		@(cd ${WRKSRC} && ${CP} schemas/org.gnome.shell.extensions.dash-to-dock.gschema.xml \
-			${STAGEDIR}${PREFIX}/share/glib-2.0/schemas/)
+		${INSTALL_DATA} ${WRKSRC}/schemas/org.gnome.shell.extensions.dash-to-dock.gschema.xml \
+			${STAGEDIR}${PREFIX}/share/glib-2.0/schemas/
 		@${RM} -fr ${WRKSRC}/schemas
-		@(cd ${WRKSRC} && ${CP} -pPR * \
-			${STAGEDIR}${PREFIX}/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com)
+		cd ${WRKSRC} && ${COPYTREE_SHARE} . \
+			${STAGEDIR}${PREFIX}/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com
 
 .include <bsd.port.mk>

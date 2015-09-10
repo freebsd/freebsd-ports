@@ -3,7 +3,7 @@
 
 PORTNAME=	libieee1284
 PORTVERSION=	0.2.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cyberelk.net/tim/data/libieee1284/stable/
 

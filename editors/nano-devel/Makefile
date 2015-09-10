@@ -4,7 +4,7 @@ PORTNAME=	nano
 PORTVERSION=	2.3.6
 CATEGORIES=	editors
 MASTER_SITES=	http://www.nano-editor.org/dist/v${PORTVERSION:R}/ \
-		${MASTER_SITE_GNU}
+		GNU
 
 PKGNAMESUFFIX=	-devel
 

@@ -33,10 +33,10 @@ MAKE_ENV=	STRIP="${STRIP_CMD}"
 ALL_TARGET=	# empty
 MAKE_JOBS_UNSAFE=yes
 
-PORTDOCS=	README.txt
+PORTDOCS=	*
 PORTDATA=	*
 
-OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
+OPTIONS_DEFINE=	DOCS OPTIMIZED_CFLAGS
 OPTIONS_MULTI=	COMPONENTS
 OPTIONS_MULTI_COMPONENTS=	CLIENT DEDICATED
 OPTIONS_DEFAULT=OPTIMIZED_CFLAGS CLIENT DEDICATED
@@ -44,39 +44,35 @@ OPTIONS_DEFAULT=OPTIMIZED_CFLAGS CLIENT DEDICATED
 CLIENT_DESC=	Build client
 DEDICATED_DESC=	Dedicated server
 
-.include <bsd.port.options.mk>
+CLIENT_ALL_TARGET=	cl-release
+CLIENT_USE=		XORG=x11,xext,xpm,xxf86dga,xxf86vm
+CLIENT_PLIST_FILES=	bin/${PORTNAME}
 
-.if ${PORT_OPTIONS:MCLIENT}
-ALL_TARGET+=	cl-release
-USE_XORG+=	x11 xpm xext xxf86dga xxf86vm
-PLIST_FILES+=	bin/${PORTNAME}
-.endif
-
-.if ${PORT_OPTIONS:MDEDICATED}
-ALL_TARGET+=	sv-release
-PLIST_FILES+=	bin/${PORTNAME}-dedicated
-.endif
+DEDICATED_ALL_TARGET=	sv-release
+DEDICATED_PLIST_FILES=	bin/${PORTNAME}-dedicated
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
 		${BUILD_WRKSRC}/BSDmakefile ${BUILD_WRKSRC}/makefile.inc
-.if ! ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-	@${REINPLACE_CMD} -e '/^OPTIM_RELEASE=/ d' \
-		${BUILD_WRKSRC}/makefile.inc
-.endif
 	@${REINPLACE_CMD} -e 's|"gamedata"|"${DATADIR}"|' \
 		${BUILD_WRKSRC}/common.c
 
+post-patch-OPTIMIZED_CFLAGS-off:
+	@${REINPLACE_CMD} -e '/^OPTIM_RELEASE=/ d' \
+		${BUILD_WRKSRC}/makefile.inc
+
 do-install:
-.if ${PORT_OPTIONS:MCLIENT}
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/darkplaces-glx ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-.endif
-.if ${PORT_OPTIONS:MDEDICATED}
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/darkplaces-dedicated ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-dedicated
-.endif
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/gamedata/ssgamedata000001.pk3 ${STAGEDIR}${DATADIR}/
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}/
+
+do-install-CLIENT-on:
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/darkplaces-glx ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+do-install-DEDICATED-on:
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/darkplaces-dedicated ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-dedicated
 
 .include <bsd.port.mk>

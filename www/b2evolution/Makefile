@@ -13,7 +13,7 @@ COMMENT=	Multilingual, multiuser, multi-blog engine
 
 PATCH_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
-USES=		dos2unix zip
+USES=		cpe dos2unix zip
 
 B2EVO_DATE?=	stable-2011-03-23
 USE_PHP=	mysql pcre session xml
@@ -44,8 +44,8 @@ pre-install:
 	@cd ${WRKSRC} && ${FIND} -s . -type f | \
 		${SED} -e 's|^./||;s|^|${B2EVO_DIR}/|' >> ${PLIST} \
 		&& ${FIND} -d * -type d | \
-		${SED} -e 's|^|@dirrm ${B2EVO_DIR}/|' >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrm ${B2EVO_DIR} >> ${PLIST}
+		${SED} -e 's|^|@dir ${B2EVO_DIR}/|' >> ${PLIST} \
+		&& ${ECHO_CMD} @dir ${B2EVO_DIR} >> ${PLIST}
 	@${ECHO_CMD} -e '@owner root\n@group wheel' >> ${PLIST}
 
 do-install:

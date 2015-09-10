@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	tcpproxy
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.spreadspace.org/tcpproxy/releases/ \
 		http://alex.bmg.gv.at/programs/
 
 MAINTAINER=	alex@hugo.bmg.gv.at
 COMMENT=	Simple TCP connection proxy for IPv4 and IPv6
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/../LICENSE
 
 BUILD_DEPENDS=	ragel:${PORTSDIR}/devel/ragel
 

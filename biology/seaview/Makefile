@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seaview
-PORTVERSION=	4.5.4
+PORTVERSION=	4.5.4.4
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/seaview/archive/
@@ -15,6 +15,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
 		libpng.so:${PORTSDIR}/graphics/png
+#		libpdf.so:${PORTSDIR}/print/pdflib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

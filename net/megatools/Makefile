@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	megatools
-PORTVERSION=	1.9.94
+PORTVERSION=	1.9.95
 CATEGORIES=	net
 MASTER_SITES=	http://megatools.megous.com/builds/
 

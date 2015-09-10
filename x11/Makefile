@@ -46,7 +46,7 @@
     SUBDIR += dgs
     SUBDIR += dmenu
     SUBDIR += dmxproto
-    SUBDIR += docker
+    SUBDIR += docker-tray
     SUBDIR += dri2proto
     SUBDIR += dri3proto
     SUBDIR += dxpc
@@ -71,7 +71,6 @@
     SUBDIR += gdkxft
     SUBDIR += gdm
     SUBDIR += glproto
-    SUBDIR += gmessage
     SUBDIR += gmrun
     SUBDIR += gnome-clipboard-daemon
     SUBDIR += gnome-desktop
@@ -186,6 +185,7 @@
     SUBDIR += lsw
     SUBDIR += luit
     SUBDIR += lumina
+    SUBDIR += lumina-i18n
     SUBDIR += lupe
     SUBDIR += lxde-meta
     SUBDIR += lxmenu-data
@@ -195,7 +195,6 @@
     SUBDIR += mate-applets
     SUBDIR += mate-base
     SUBDIR += mate-desktop
-    SUBDIR += mate-dialogs
     SUBDIR += mate-menus
     SUBDIR += mate-panel
     SUBDIR += mate-screensaver
@@ -216,6 +215,7 @@
     SUBDIR += nvidia-driver-304
     SUBDIR += nvidia-driver-340
     SUBDIR += nvidia-settings
+    SUBDIR += nvidia-settings-340
     SUBDIR += nvidia-xconfig
     SUBDIR += nxcomp
     SUBDIR += ooxcb

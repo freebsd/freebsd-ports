@@ -3,7 +3,7 @@
 
 PORTNAME=	pspresent
 PORTVERSION=	1.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc
 MASTER_SITES=	http://www.zmatt.net/pspresent/
 
@@ -13,7 +13,7 @@ COMMENT=	Full-screen slide shows of postscript files
 LICENSE=	GPLv2
 
 USE_XORG=	x11 xext xinerama
-USE_GHOSTSCRIPT_RUN=	yes
+USES=		ghostscript:x11,run
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDLIBS="${LDFLAGS}"
 ALL_TARGET=	pspresent
 

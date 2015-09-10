@@ -1,0 +1,2 @@
+To enable PC speaker sound output support, install `audio/beep' package or
+from the ports.  Frequency and duration can be specified in the settings.

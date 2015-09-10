@@ -1,8 +1,6 @@
-diff --git a/config.h b/config.h
-index ae7f308..7c0a2b3 100644
---- a/config.h
-+++ b/config.h
-@@ -16,6 +16,13 @@
+--- config.h.orig	2015-02-13 06:11:21 UTC
++++ config.h
+@@ -23,6 +23,13 @@
  #define STATEFILE "/var/log/logrotate.status"
  #endif
  

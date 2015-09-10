@@ -3,7 +3,7 @@
 
 PORTNAME=	deadbeef
 PORTVERSION=	0.6.2
-PORTREVISION=	3
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -13,66 +13,67 @@ COMMENT=	Ultimate music player for Unix-like systems
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
-		libmad.so:${PORTSDIR}/audio/libmad
-
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig gettext iconv shebangfix tar:bzip2 desktop-file-utils \
-		libtool execinfo
+USES=		desktop-file-utils execinfo gettext gmake iconv libtool \
+		pkgconfig shebangfix tar:bzip2
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--disable-alsa --disable-nullout --disable-gtk3
-CPPFLAGS+=	-I../dumb/dumb-kode54/include -I../../plugins/libmp4ff -I../../plugins/gme/game-music-emu-0.6pre -I${LOCALBASE}/include
+CONFIGURE_ARGS=	--disable-alsa --disable-nullout --disable-gtk3 --disable-static
+CPPFLAGS+=	-I../dumb/dumb-kode54/include -I../../plugins/libmp4ff \
+		-I../../plugins/gme/game-music-emu-0.6pre \
+		-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lexecinfo -lintl
-WANT_GNOME=	yes
+USE_GNOME=	intltool
 INSTALLS_ICONS=	yes
 SHEBANG_FILES=	yasmwrapper.sh
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	PULSEAUDIO GUI VFS LASTFM ART EQ SID FFAP VTX HOTKEYS OGG FFMPEG \
-		FLAC SNDFILE WAV CDDA GME DUMB NOTIFY MUSEPACK WILD TTA DCA AAC \
-		MMS SHN AO SHELLEXEC NLS M3U PSF ADP DSP MONO2STEREO CONVERTER VFS_ZIP \
-		ALAC PLTBROWSER WMA
-OPTIONS_DEFAULT=	GUI VFS LASTFM ART EQ SID FFAP VTX HOSTKEYS OGG FFMPEG \
-			FLAC SNDFILE WAV CDDA GME DUMB NOTIFY MUSEPACK WILD TTA DCA \
-			AAC MMS SHN AO SHELLEXEC M3U PSF ADP DSP MONO2STEREO CONVERTER VFS_ZIP \
-			HOTKEYS ALAC PLTBROWSER WMA
+OPTIONS_DEFINE=	MAD PULSEAUDIO GUI VFS LASTFM ART SUPEREQ SID FFAP VTX \
+		HOTKEYS OGG FFMPEG FLAC SNDFILE WAVPACK CDDA GME DUMB NOTIFY \
+		MUSEPACK WILDMIDI TTA DCA AAC MMS SHN AO SHELLEXEC NLS M3U \
+		PSF ADPLUG DSP MONO2STEREO CONVERTER VFS_ZIP ALAC PLTBROWSER \
+		WMA
+OPTIONS_DEFAULT=	MAD GUI VFS LASTFM ART SUPEREQ SID FFAP VTX HOSTKEYS \
+		OGG FLAC SNDFILE WAVPACK CDDA GME DUMB NOTIFY MUSEPACK \
+		WILDMIDI TTA DCA AAC MMS SHN AO SHELLEXEC M3U PSF ADPLUG DSP \
+		MONO2STEREO CONVERTER VFS_ZIP HOTKEYS ALAC PLTBROWSER WMA
+
 PULSEAUDIO_DESC=	PulseAudio output plugin (unsupported)
-GUI_DESC=		standard GTK2 user interface plugin
-VFS_DESC=		HTTP streaming vfs plugin
-LASTFM_DESC=		last.fm/libre.fm scrobbler plugin
-ART_DESC=		album art loader plugin
-EQ_DESC=		SuperEQ DSP plugin
-SID_DESC=		SID music player plugin
-FFAP_DESC=		Monkey's Audio plugin
-VTX_DESC=		libayemy VTX ZX-Spectrum music player plugin
-ADP_DESC=		adplug plugin
-HOTKEYS_DESC=		global hotkeys plugin
-CDDA_DESC=		CD-Audio plugin
-GME_DESC=		Game Music Emu plugin
-DUMB_DESC=		D.U.M.B. plugin for MOD, S3M and other
-NOTIFY_DESC=		support for OSD notifications into GTKUI plugin
-WILD_DESC=		wildmidi plugin
-TTA_DESC=		tta plugin
-SHN_DESC=		shorten plugin
-AO_DESC=		audio overload plugin
-SHELLEXEC_DESC=		shell commands plugin
-M3U_DESC=		m3u plugin
+GUI_DESC=		Standard GTK+2 user interface plugin
+VFS_DESC=		HTTP streaming VFS plugin
+LASTFM_DESC=		Last.fm/Libre.fm scrobbler plugin
+ART_DESC=		Cover artwork loader plugin
+SUPEREQ_DESC=		SuperEQ DSP plugin (equalizer)
+SID_DESC=		Commodore 64 SID music player plugin
+FFAP_DESC=		${APE_DESC}
+VTX_DESC=		VTX ZX-Spectrum music player plugin
+ADPLUG_DESC=		AdPlug audio format (OPL2/OPL3) support
+HOTKEYS_DESC=		Local and global hotkeys support
+GME_DESC=		Chiptune music support (based on GME)
+DUMB_DESC=		D.U.M.B. plugin for MOD, S3M, etc.
+NOTIFY_DESC=		OSD notification support in GTKUI plugin
+WILDMIDI_DESC=		WildMIDI synthesizer plugin
+SHN_DESC=		Shorten waveform encoder support
+AO_DESC=		Audio Overload (vintage hardware sound) plugin
+SHELLEXEC_DESC=		Shell commands execution plugin
+M3U_DESC=		M3U and PLS playlist format support
 PSF_DESC=		AOSDK-based PSF(,QSF,SSF,DSF) plugin
-DSP_DESC=		libsamplerate (SRC) plugin
-MONO2STEREO_DESC=	mono2stereo DSP plugin
-CONVERTER_DESC=		Build converter
-VFS_ZIP_DESC=		ZIP support
-ALAC_DESC=		ALAC plugin
-PLTBROWSER_DESC=	Playlist browser gui plugin
-WMA_DESC=		WMA plugin
+DSP_DESC=		High-quality sample rate conversion support
+MONO2STEREO_DESC=	Mono to stereo converter DSP plugin
+CONVERTER_DESC=		Plugin for converting files from/to any formats
+VFS_ZIP_DESC=		Play files directly from ZIP archives
+PLTBROWSER_DESC=	Playlist browser GUI plugin
 
 OPTIONS_SUB=	yes
+
+MAD_LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad
+MAD_CONFIGURE_OFF=	--disable-mad
 
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
 
 GUI_USE=	gnome=gtk20,glib20
 GUI_CONFIGURE_OFF=	--disable-gtkui --disable-gtk3
+GUI_IMPLIES=		CONVERTER
 
 VFS_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 VFS_CONFIGURE_OFF=	--disable-vfs-curl
@@ -81,11 +82,12 @@ LASTFM_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 LASTFM_CONFIGURE_OFF=	--disable-lfm
 
 ART_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-			libImlib2.so:${PORTSDIR}/graphics/imlib2 \
-			libjpeg.so:${PORTSDIR}/graphics/jpeg
+			libImlib2.so:${PORTSDIR}/graphics/imlib2
+ART_USES=		jpeg
 ART_CONFIGURE_OFF=	--disable-artwork --disable-artwork-imlib2
+ART_IMPLIES=		VFS
 
-EQ_CONFIGURE_OFF=	--disable-supereq
+SUPEREQ_CONFIGURE_OFF=	--disable-supereq
 
 SID_CONFIGURE_OFF=	--disable-sid
 
@@ -94,7 +96,7 @@ FFAP_CONFIGURE_OFF=	--disable-ffap
 
 VTX_CONFIGURE_OFF=	--disable-vtx
 
-ADP_CONFIGURE_OFF=	--disable-adplug
+ADPLUG_CONFIGURE_OFF=	--disable-adplug
 
 HOTKEYS_CONFIGURE_OFF=	--disable-hotkeys
 
@@ -112,8 +114,8 @@ FLAC_CONFIGURE_OFF=	--disable-flac
 SNDFILE_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 SNDFILE_CONFIGURE_OFF=	--disable-sndfile
 
-WAV_LIB_DEPENDS=	libwavpack.so:${PORTSDIR}/audio/wavpack
-WAV_CONFIGURE_OFF=	--disable-wavpack
+WAVPACK_LIB_DEPENDS=	libwavpack.so:${PORTSDIR}/audio/wavpack
+WAVPACK_CONFIGURE_OFF=	--disable-wavpack
 
 CDDA_LIB_DEPENDS=	libcdio.so:${PORTSDIR}/sysutils/libcdio \
 			libcddb.so:${PORTSDIR}/audio/libcddb
@@ -128,8 +130,8 @@ NOTIFY_CONFIGURE_OFF=	--disable-notify
 
 MUSEPACK_CONFIGURE_OFF=	--disable-musepack
 
-WILD_RUN_DEPENDS=	${LOCALBASE}/share/freepats/crude.cfg:${PORTSDIR}/audio/freepats
-WILD_CONFIGURE_OFF=	--disable-wildmidi
+WILDMIDI_RUN_DEPENDS=	${LOCALBASE}/share/freepats/crude.cfg:${PORTSDIR}/audio/freepats
+WILDMIDI_CONFIGURE_OFF=	--disable-wildmidi
 
 TTA_CONFIGURE_OFF=	--disable-tta
 
@@ -168,16 +170,6 @@ PLTBROWSER_CONFIGURE_OFF=	--disable-pltbrowser
 
 WMA_CONFIGURE_OFF=		--disable-wma
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MART} && ! ${PORT_OPTIONS:MVFS}
-BROKEN=		VFS plugin required for album art loader, please rerun 'make config' and either disable ART or enable VFS
-.endif
-
-.if ${PORT_OPTIONS:MCONVERTER} && ! ${PORT_OPTIONS:MGUI}
-BROKEN=		CONVERTER plugin required for gui, please rerun 'make config' and either disable CONVERTER or enable GUI
-.endif
-
 post-patch:
 # Do not link to libsupc++ which may be PIC-unsafe (breaks 64-bit arches)
 	@${REINPLACE_CMD} -e 's, -lsupc++,,' \
@@ -191,10 +183,10 @@ post-patch:
 		-e 's,libavcodec ,libavcodec0 ,g' \
 		-e 's,libavutil ,libavutil0 ,g' \
 		-e 's,libavformat ,libavformat0 ,g' \
+		-e '/HAVE_OGG" = "yes"/ {n; n; /HAVE_VORBISPLUGIN=yes/d;}' \
 		${WRKSRC}/configure
-
-.if ${ARCH} == "powerpc" && ${OSVERSION} > 900000
-BROKEN=		Does not build on powerpc-9: fails to compile
-.endif
+# Fix build with libzip-1.0
+	@${REINPLACE_CMD} 's,zip_file_t,zip_file_DB,g' \
+		${WRKSRC}/plugins/vfs_zip/vfs_zip.c
 
 .include <bsd.port.mk>

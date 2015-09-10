@@ -1,0 +1,18 @@
+Hackney is an HTTP client library for Erlang.
+
+Main features:
+
+  - No message passing
+  - Binary streams
+  - SSL support
+  - Keepalive handling
+  - Basic authentication
+  - Stream the response and the requests
+  - Fetch a response asynchronously
+  - Multipart support (streamed or not)
+  - Chunked encoding support
+  - Can send files using the sendfile API
+  - Optional socket pool
+  - REST syntax
+
+WWW: https://github.com/benoitc/hackney

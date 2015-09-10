@@ -1,3 +1,2 @@
 bin/swiggle
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

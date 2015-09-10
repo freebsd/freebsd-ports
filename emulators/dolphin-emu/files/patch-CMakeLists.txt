@@ -113,51 +113,6 @@
  
  	if(UNIX AND NOT APPLE)
  		# Note: The convention is to check USE_X11 or USE_WAYLAND where needed.
-@@ -455,21 +485,32 @@
- 		check_libav()
- 	endif()
- 
--	set(CMAKE_REQUIRED_LIBRARIES portaudio)
--	CHECK_CXX_SOURCE_RUNS(
--		"#include <portaudio.h>
--		int main(int argc, char **argv)
--		{ if(Pa_GetVersion() >= 1890) return 0; else return 1; }"
--		PORTAUDIO)
--	if(PORTAUDIO)
--		message("PortAudio found, enabling mic support")
--		add_definitions(-DHAVE_PORTAUDIO=1)
--		set(PORTAUDIO_FOUND TRUE)
-+	option(DISABLE_PORTAUDIO "Disable PortAudio (mic) support" OFF)
-+	if(NOT DISABLE_PORTAUDIO)
-+		include_directories(BEFORE ${CMAKE_INSTALL_PREFIX}/include/portaudio2)
-+		link_directories(${CMAKE_INSTALL_PREFIX}/lib/portaudio2)
-+		set(CMAKE_REQUIRED_INCLUDES ${CMAKE_INSTALL_PREFIX}/include/portaudio2)
-+		set(CMAKE_REQUIRED_FLAGS -L${CMAKE_INSTALL_PREFIX}/lib/portaudio2)
-+		set(CMAKE_REQUIRED_LIBRARIES portaudio)
-+		CHECK_CXX_SOURCE_RUNS(
-+			"#include <portaudio.h>
-+			int main(int argc, char **argv)
-+			{ if(Pa_GetVersion() >= 1890) return 0; else return 1; }"
-+			PORTAUDIO)
-+		if(PORTAUDIO)
-+			message("PortAudio found, enabling mic support")
-+			add_definitions(-DHAVE_PORTAUDIO=1)
-+			set(PORTAUDIO_FOUND TRUE)
-+		else()
-+			message("PortAudio not found, disabling mic support")
-+			add_definitions(-DHAVE_PORTAUDIO=0)
-+			set(PORTAUDIO_FOUND FALSE)
-+		endif(PORTAUDIO)
- 	else()
--		message("PortAudio not found, disabling mic support")
-+		message("PortAudio (mic) support disabled")
- 		add_definitions(-DHAVE_PORTAUDIO=0)
- 		set(PORTAUDIO_FOUND FALSE)
--	endif(PORTAUDIO)
-+	endif()
- 
- 	if(OPROFILING)
- 		check_lib(OPROFILE opagent opagent.h)
 @@ -577,14 +618,14 @@
  set(SFML_FIND_VERSION_MAJOR 1)
  set(SFML_FIND_VERSION_MINOR 5)

@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- g3/Makefile.orig
 +++ g3/Makefile
 @@ -40,13 +40,13 @@

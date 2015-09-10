@@ -10,6 +10,9 @@ DISTNAME=	openbsm-${DISTVERSION}
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Open Source Basic Security Module (BSM) Audit Implementation
 
+LICENSE=	BSD2CLAUSE BSD3CLAUSE
+LICENSE_COMB=	multi
+
 CONFLICTS=	openbsm-devel-1.[0-9]*
 
 GNU_CONFIGURE=	yes

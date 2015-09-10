@@ -2,23 +2,25 @@
 
 PORTNAME=	opengtl
 PORTVERSION=	0.9.18
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://download.${PORTNAME}.org/
 DISTNAME=	OpenGTL-${PORTVERSION}
+PATCH_SITES=	http://dev.gentoo.org/~creffett/distfiles/
+PATCHFILES=	${PORTNAME}-${PORTVERSION}-llvm-3.3.patch
+PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Graphics Transformation Languages
 
 LICENSE=	LGPL20
 
-BROKEN=		Depends on deleted devel/llvm32
-#LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-#		libLLVM-3.2.so:${PORTSDIR}/devel/llvm32
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
+		libLLVM-3.3.so:${PORTSDIR}/devel/llvm33
 
 USES=		cmake perl5 tar:bzip2
 USE_LDCONFIG=	yes
-CMAKE_ARGS=	-DLLVM_CONFIG_EXECUTABLE=${LOCALBASE}/bin/llvm-config32
+CMAKE_ARGS=	-DLLVM_CONFIG_EXECUTABLE=${LOCALBASE}/bin/llvm-config33
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 

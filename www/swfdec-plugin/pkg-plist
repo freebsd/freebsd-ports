@@ -7,4 +7,3 @@ share/icons/hicolor/24x24/apps/swfdec-mozilla.png
 share/icons/hicolor/32x32/apps/swfdec-mozilla.png
 share/icons/hicolor/48x48/apps/swfdec-mozilla.png
 share/icons/hicolor/scalable/apps/swfdec-mozilla.svg
-@dirrmtry %%WEBPLUGIN_DIR%%

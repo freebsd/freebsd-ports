@@ -2,15 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	gawk
-PORTVERSION=	4.1.2
+PORTVERSION=	4.1.3
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	GNU
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	GNU version of Awk
 
-LIB_DEPENDS=	libsigsegv.so:${PORTSDIR}/devel/libsigsegv \
-		libreadline.so:${PORTSDIR}/devel/readline
+LIB_DEPENDS=	libsigsegv.so:${PORTSDIR}/devel/libsigsegv
 
 OPTIONS_DEFINE=		NLS MPFR
 OPTIONS_SUB=		yes
@@ -23,11 +23,11 @@ MPFR_CONFIGURE_OFF=	--without-gmp --without-mpfr
 INFO=		gawk gawkinet
 
 GNU_CONFIGURE=	yes
-USES=		iconv libtool makeinfo tar:xz
+USES=		iconv libtool makeinfo readline tar:xz
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} \
 		--with-libintl-prefix=${LOCALBASE} \
-		--with-readline=${LOCALBASE} \
 		AWK=${AWK}
+INSTALL_TARGET=	install-strip
 
 PLIST_SUB+=	VERSION=${PORTVERSION}
 

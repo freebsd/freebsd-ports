@@ -3,9 +3,9 @@
 
 PORTNAME=	nant
 PORTVERSION=	0.92
+DISTVERSIONSUFFIX=	-src
 CATEGORIES=	devel
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	.NET build tool inspired by Ant
@@ -16,6 +16,7 @@ LICENSE_COMB=	dual
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 INSTALL_TARGET=	install destdir=${STAGEDIR} prefix=${PREFIX}
+MAKE_ARGS=	MCS=mcs MONO='mono --runtime=v4.0' TARGET=mono-4.0
 MAKE_JOBS_UNSAFE=	yes
 USES=		gmake mono pkgconfig
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

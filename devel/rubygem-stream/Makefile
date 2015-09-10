@@ -10,6 +10,11 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Interface for external iterators
 
+LICENSE=	BSD2CLAUSE RUBY
+LICENSE_COMB=	dual
+
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

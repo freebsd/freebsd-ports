@@ -8,7 +8,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://cr.yp.to/software/ \
 		http://www.emaillab.org/djb/qmailanalog/
 
-MAINTAINER=	bdrewery@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools to analyze qmail-send activity
 
 USES=		qmail:run

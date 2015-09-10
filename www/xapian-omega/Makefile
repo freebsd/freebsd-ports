@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xapian-omega
-PORTVERSION=	1.2.20
+PORTVERSION=	1.2.21
 CATEGORIES=	www
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -31,8 +31,8 @@ USE_LDCONFIG=	yes
 USES=		libtool perl5 shebangfix tar:xz
 
 MORE_PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
-PORTDOCS=	${MORE_PORTDOCS} cgiparams.html index.html omegascript.html \
-		overview.html quickstart.html scriptindex.html termprefixes.html
+PORTDATA=	*
+PORTDOCS=	*
 PORTEXAMPLES=	omega.conf
 
 SHEBANG_FILES=	dbi2omega htdig2omega mbox2omega
@@ -48,7 +48,7 @@ post-patch:
 			${WRKSRC}/Makefile.in
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/ ${STAGEDIR}${EXAMPLESDIR}/
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${MORE_PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}/
 

@@ -6,8 +6,7 @@ PORTVERSION=	1.0
 PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://komquats.com/distfiles/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	cy
+		LOCAL/cy
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The OpenLook props application

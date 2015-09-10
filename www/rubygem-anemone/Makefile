@@ -7,7 +7,9 @@ CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Anemone is a library that allows programs to spider websites
+COMMENT=	Library that allows programs to spider websites
+
+LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-nokogiri>=1.3.0:${PORTSDIR}/textproc/rubygem-nokogiri \
 		rubygem-robotex>=1.0.0:${PORTSDIR}/www/rubygem-robotex
@@ -15,6 +17,7 @@ RUN_DEPENDS=	rubygem-nokogiri>=1.3.0:${PORTSDIR}/textproc/rubygem-nokogiri \
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+
 PLIST_FILES=	bin/anemone
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit_data_models
-PORTVERSION=	0.22.6
+PORTVERSION=	0.24.0
 PORTEPOCH=	2
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
@@ -15,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-activerecord>=3.2.13:${PORTSDIR}/databases/rubygem-activerecord \
 		rubygem-activesupport>=0:${PORTSDIR}/devel/rubygem-activesupport \
 		rubygem-arel-helpers>=0:${PORTSDIR}/databases/rubygem-arel-helpers \
-		rubygem-metasploit-concern>=0.3.0:${PORTSDIR}/security/rubygem-metasploit-concern \
-		rubygem-metasploit-model>=0.28.0:${PORTSDIR}/security/rubygem-metasploit-model \
+		rubygem-metasploit-concern>=0.4.0:${PORTSDIR}/security/rubygem-metasploit-concern \
+		rubygem-metasploit-model>=0.29.0:${PORTSDIR}/security/rubygem-metasploit-model \
 		rubygem-pg>=0:${PORTSDIR}/databases/rubygem-pg \
 		rubygem-railties>=3.0.0:${PORTSDIR}/www/rubygem-railties \
 		rubygem-recog>=1.0:${PORTSDIR}/security/rubygem-recog

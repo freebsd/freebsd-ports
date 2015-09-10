@@ -11,6 +11,7 @@ COMMENT=	Read, write and manipulate both binary and XML property lists
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

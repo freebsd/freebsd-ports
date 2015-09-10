@@ -11,9 +11,9 @@ DISTNAME=	${PORTNAME}_10aug1998
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Make an HTML index file for a bunch of images
 
-RUN_DEPENDS=	djpeg:${PORTSDIR}/graphics/jpeg \
-		pnmscale:${PORTSDIR}/graphics/netpbm
+RUN_DEPENDS=	pnmscale:${PORTSDIR}/graphics/netpbm
 
+USES=		jpeg:run
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

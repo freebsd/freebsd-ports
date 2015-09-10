@@ -1,6 +1,6 @@
---- modules/ssl/ssl_engine_vars.c.orig	2013-02-12 12:51:17.000000000 +0100
-+++ modules/ssl/ssl_engine_vars.c	2015-02-28 10:54:21.257798164 +0100
-@@ -832,7 +832,7 @@
+--- modules/ssl/ssl_engine_vars.c.orig	2013-02-12 11:51:17 UTC
++++ modules/ssl/ssl_engine_vars.c
+@@ -832,7 +832,7 @@ static char *ssl_var_lookup_ssl_compress
  {
      char *result = "NULL";
  #ifdef OPENSSL_VERSION_NUMBER

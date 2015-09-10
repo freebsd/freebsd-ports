@@ -3,7 +3,7 @@
 
 PORTNAME=	librasterlite
 PORTVERSION=	1.1g
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/librasterlite-sources/
 
@@ -17,7 +17,6 @@ LIB_DEPENDS=	libspatialite.so:${PORTSDIR}/databases/spatialite \
 		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
 		libgeotiff.so:${PORTSDIR}/graphics/libgeotiff \
 		libjbig.so:${PORTSDIR}/graphics/jbigkit \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libgeos.so:${PORTSDIR}/graphics/geos \
 		libproj.so:${PORTSDIR}/graphics/proj \
@@ -25,11 +24,11 @@ LIB_DEPENDS=	libspatialite.so:${PORTSDIR}/databases/spatialite \
 		libfreexl.so:${PORTSDIR}/textproc/freexl
 
 GNU_CONFIGURE=	yes
-USES=		gmake iconv libtool pathfix pkgconfig
+USES=		gmake iconv jpeg libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib -lsqlite3 -lm
 
 .include <bsd.port.mk>

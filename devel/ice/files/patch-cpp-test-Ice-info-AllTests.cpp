@@ -1,31 +1,20 @@
---- cpp.orig/test/Ice/info/AllTests.cpp	2011-06-15 21:43:59.000000000 +0200
-+++ cpp/test/Ice/info/AllTests.cpp	2012-03-04 20:14:53.000000000 +0100
-@@ -141,9 +141,11 @@
+--- cpp.orig/test/Ice/info/AllTests.cpp	2015-01-23 12:42:09.819774063 +0000
++++ cpp/test/Ice/info/AllTests.cpp	2015-01-23 12:42:59.341774435 +0000
+@@ -157,7 +157,7 @@
          test(info->adapterName.empty());
          test(info->localPort > 0);
          test(info->remotePort == 12010);
--        test(info->remoteAddress == defaultHost);
--        test(info->localAddress == defaultHost);
--
-+        if (!inFreeBSDJail())
-+        {
-+            test(info->remoteAddress == defaultHost);
-+            test(info->localAddress == defaultHost);
-+        }
-         ostringstream os;
- 
-         Ice::Context ctx = testIntf->getConnectionInfoAsContext();
-@@ -163,8 +165,11 @@
+-        if(defaultHost == "127.0.0.1")
++        if(defaultHost == "127.0.0.1" && !inFreeBSDJail())
+         {
+             test(info->remoteAddress == defaultHost);
+             test(info->localAddress == defaultHost);
+@@ -182,7 +182,7 @@
          test(info->adapterName.empty());
          test(info->localPort > 0);
          test(info->remotePort == 12010);
--        test(info->remoteAddress ==defaultHost);
--        test(info->localAddress == defaultHost);
-+        if (!inFreeBSDJail())
-+        {
-+            test(info->remoteAddress == defaultHost);
-+            test(info->localAddress == defaultHost);
-+        }
-     }
-     cout << "ok" << endl;
- 
+-        if(defaultHost == "127.0.0.1")
++        if(defaultHost == "127.0.0.1" && !inFreeBSDJail())
+         {
+             test(info->remoteAddress == defaultHost);
+             test(info->localAddress == defaultHost);

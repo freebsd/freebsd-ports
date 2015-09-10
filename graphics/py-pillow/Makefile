@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pillow
-PORTVERSION=	2.6.0
-PORTREVISION=	1
+PORTVERSION=	2.9.0
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,7 +11,7 @@ COMMENT=	Fork of the Python Imaging Library (PIL)
 
 LICENSE=	PIL
 LICENSE_NAME=	Standard PIL License
-LICENSE_FILE=	${WRKSRC}/docs/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 OPTIONS_DEFINE=		FREETYPE JPEG LCMS PNG TIFF TKINTER WEBP
@@ -22,7 +21,7 @@ LCMS_DESC=		Little Color Management System
 TKINTER_DESC=		Tkinter (Tcl/Tk) BitmapImage & PhotoImage support
 
 FREETYPE_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
-JPEG_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+JPEG_USES=		jpeg
 LCMS_LIB_DEPENDS=	liblcms2.so:${PORTSDIR}/graphics/lcms2
 TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
 TKINTER_USES=		tk:build
@@ -30,10 +29,11 @@ TKINTER_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits
 TKINTER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
 WEBP_LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp
 
+USES=			cpe python
 USE_GITHUB=		yes
 USES=			python
 USE_PYTHON=		autoplist concurrent distutils
-PYDISTUTILS_SETUP=	${PYSETUP}
+PYDISTUTILS_SETUP=		${PYSETUP}
 PYDISTUTILS_BUILD_TARGET=	build build_py build_ext
 
 # we have to build and install everything in a single run,
@@ -41,7 +41,7 @@ PYDISTUTILS_BUILD_TARGET=	build build_py build_ext
 # and messes up standard distutils behaviour...
 NO_BUILD=		yes
 
-GH_ACCOUNT=	python-pillow
+GH_ACCOUNT=	python-${PORTNAME}
 GH_PROJECT=	${PORTNAME:C/p/P/}
 
 CONFLICTS_INSTALL=	py*-imaging-*

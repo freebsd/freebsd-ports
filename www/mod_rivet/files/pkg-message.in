@@ -1,0 +1,13 @@
+
+====================================================
+Remember to modify your apache configuration file
+to load mod_rivet and set the appropriate handlers:
+
+LoadModule rivet_module %%APACHEMODDIR%%/mod_rivet.so
+
+AddType application/x-httpd-rivet .rvt
+AddType application/x-rivet-tcl .tcl
+
+Visit http://tcl.apache.org/rivet/ for documentation
+
+====================================================

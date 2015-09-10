@@ -42,5 +42,3 @@ man/man1/slreportd.1.gz
 man/man1/slrsh.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/init.d/slchoosed
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/init.d/slreportd
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/init.d
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

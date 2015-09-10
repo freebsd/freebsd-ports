@@ -7,18 +7,22 @@ PORTVERSION=	0.22.0
 PORTREVISION=	17
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
-MASTER_SITE_SUBDIR=	sources/gdk-pixbuf/0.22
 DISTNAME=	gdk-pixbuf-${PORTVERSION}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Graphic library for GTK+
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg
+LICENSE=	LGPL20 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-USES=		gmake libtool pathfix tar:bzip2
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
+		libtiff.so:${PORTSDIR}/graphics/tiff
+
+PORTSCOUT=	ignore:1
+
+USES=		cpe gmake jpeg libtool pathfix tar:bzip2
+CPE_VENDOR=	gnome
 USE_XORG=	xt xi x11
 USE_GNOME=	gtk12
 USE_LDCONFIG=	yes

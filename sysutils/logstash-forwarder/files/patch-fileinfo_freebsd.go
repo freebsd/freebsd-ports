@@ -1,5 +1,5 @@
---- fileinfo_freebsd.go.orig	1970-01-01 02:00:00.000000000 +0200
-+++ fileinfo_freebsd.go		2014-08-15 15:55:47.824555519 +0300
+--- fileinfo_freebsd.go.orig	2015-06-23 08:32:46 UTC
++++ fileinfo_freebsd.go
 @@ -0,0 +1,11 @@
 +package main
 +

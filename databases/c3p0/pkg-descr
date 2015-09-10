@@ -3,4 +3,4 @@ c3p0 is an easy-to-use Java library for augmenting traditional
 including DataSources that implement Connection and Statement
 Pooling, as described by the jdbc3 spec and jdbc2 std extension.
 
-WWW: http://sourceforge.net/projects/c3p0/
+WWW: http://www.mchange.com/projects/c3p0/

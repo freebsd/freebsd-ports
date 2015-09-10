@@ -66,9 +66,9 @@ CONFIGURE_ARGS+=--without-libpng
 
 .if ${PORT_OPTIONS:MJPEG}
 .if ${PORT_OPTIONS:MSTATIC}
-BUILD_DEPENDS+=	jpeg>=6b:${PORTSDIR}/graphics/jpeg
+USES+=		jpeg:build
 .else
-LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+USES+=		jpeg
 .endif
 .else
 CONFIGURE_ARGS+=--without-libjpeg

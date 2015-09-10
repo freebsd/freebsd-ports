@@ -1,0 +1,14 @@
+include/lua-ada/lua-ada_limited_types.adb
+include/lua-ada/lua-ada_limited_types.ads
+include/lua-ada/lua-ada_types.adb
+include/lua-ada/lua-ada_types.ads
+include/lua-ada/lua-utils.adb
+include/lua-ada/lua-utils.ads
+include/lua-ada/lua.adb
+include/lua-ada/lua.ads
+lib/lua-ada/libadalua.a
+lib/lua-ada/lua-ada_limited_types.ali
+lib/lua-ada/lua-ada_types.ali
+lib/lua-ada/lua-utils.ali
+lib/lua-ada/lua.ali
+lib/gnat/lua.gpr

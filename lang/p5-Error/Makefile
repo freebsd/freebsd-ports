@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Error
-PORTVERSION=	0.17023
+PORTVERSION=	0.17024
 CATEGORIES=	lang perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,6 +13,7 @@ COMMENT=	Error/exception handling in object-oriented programming style
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- CH2L.cpp.orig	Sun Nov 11 21:03:19 2001
 +++ CH2L.cpp	Fri Feb 21 03:08:09 2003
 @@ -18,6 +18,9 @@

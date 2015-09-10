@@ -42,7 +42,7 @@ include/templates_parser/templates_parser_tasking.ads
 include/templates_parser/templates_parser_tasking__standard_tasking.adb
 lib/gnat/templates_parser.gpr
 lib/libtemplates_parser.so
-lib/templates_parser.relocatable/libtemplates_parser-11.9.0w.so
+lib/templates_parser.relocatable/libtemplates_parser-%%LIBVER%%.so
 lib/templates_parser.relocatable/libtemplates_parser.so
 lib/templates_parser.relocatable/templates_parser-configuration__standalone.ali
 lib/templates_parser.relocatable/templates_parser-debug.ali

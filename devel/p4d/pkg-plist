@@ -1,1 +1,2 @@
 sbin/p4d
+@dir(p4admin,p4admin,0750) %%P4ROOT%%

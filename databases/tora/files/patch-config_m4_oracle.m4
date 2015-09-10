@@ -1,6 +1,6 @@
---- config/m4/oracle.m4.orig	2008-05-14 19:07:34.000000000 +0200
-+++ config/m4/oracle.m4	2009-05-07 19:15:56.463399933 +0200
-@@ -113,6 +113,11 @@
+--- config/m4/oracle.m4.orig	2009-10-23 16:19:57 UTC
++++ config/m4/oracle.m4
+@@ -113,6 +113,11 @@ Please install the instant client sdk pa
          ora_cflags="$ora_cflags -I$dir"
          echo "adding -I$dir" >&AS_MESSAGE_LOG_FD()
        fi

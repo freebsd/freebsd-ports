@@ -1,11 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	gorm
-PORTVERSION=	1.2.20
-PORTREVISION=	2
+PORTVERSION=	1.2.22
 CATEGORIES=	devel gnustep
-MASTER_SITES=	${MASTER_SITE_GNUSTEP}
-MASTER_SITE_SUBDIR=	dev-apps
+MASTER_SITES=	GNUSTEP/dev-apps
 
 MAINTAINER=	theraven@FreeBSD.org
 COMMENT=	Graphical Object Relationship Modeller

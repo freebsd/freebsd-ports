@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-PORTVERSION=	2.11.5
+PORTVERSION=	2.11.6
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/ \
@@ -36,6 +36,7 @@ USES=		perl5 shebangfix cpe
 SHEBANG_LANG=	perl
 SHEBANG_FILES=	auxiliary/qshape/qshape.pl
 
+USE_RC_SUBR=	postfix
 USE_SUBMAKE=	yes
 USE_PERL5=	build
 SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
@@ -69,7 +70,7 @@ LDAP_SASL_DESC=	LDAP client-to-server SASL auth
 LMDB_DESC=	LMDB maps
 SPF_DESC=	SPF support (via libspf2 1.2.x)
 TEST_DESC=	SMTP/LMTP test server and generator
-VDA_DESC=	VDA (Virtual Delivery Agent 32Bit)
+VDA_DESC=	VDA (Virtual Delivery Agent)
 
 RG1_DESC=	Dovecot SASL authentication methods
 DOVECOT_DESC=	Dovecot 1.x SASL authentication method
@@ -104,10 +105,8 @@ MAKEFILEFLAGS+=	CC="${CC}" OPT="${CFLAGS}"
 PKGNAMESUFFIX=	-base
 PREFIX=		/usr
 ETCDIR=		/etc/postfix
-USE_RCORDER=	postfix
 PLIST_SUB+=	BMAN="share/"
 .else
-USE_RC_SUBR=	postfix
 PLIST_SUB+=	BMAN=""
 .endif
 
@@ -182,8 +181,7 @@ POSTFIX_CCARGS+=	-DNO_TLS
 .endif
 
 .if ${PORT_OPTIONS:MSPF}
-PATCH_SITES+=		${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	mm
+PATCH_SITES+=		LOCAL/mm
 PATCHFILES+=		postfix-2.8.0-libspf2-1.2.x-0.patch.gz
 PATCH_DIST_STRIP=	-p1
 POSTFIX_CCARGS+=	-DHAVE_NS_TYPE -DHAS_SPF -I${LOCALBASE}/include

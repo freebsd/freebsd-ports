@@ -40,21 +40,15 @@ X11_DESC=	Build screensaver (requires net/boinc-client with X11)
 OPTIONS_SUB=	yes
 
 X11_BUILD_DEPENDS=	${LOCALBASE}/lib/libboinc_graphics2.a:${PORTSDIR}/net/boinc-client
-X11_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+X11_USES=		jpeg
 X11_USE=		GL=gl,glu,glut \
 			XORG=ice,sm,x11,xau,xcb,xext,xi,xdamage,xdmcp,xfixes,xmu,xt,xxf86vm
 X11_CONFIGURE_ENABLE=	graphics
 
-.include <bsd.port.options.mk>
+X11_BUILD_DEPENDS_OFF=	${LOCALBASE}/include/boinc/std_fixes.h:${PORTSDIR}/net/boinc-client
 
-.if ! ${PORT_OPTIONS:MX11}
-BUILD_DEPENDS+=	${LOCALBASE}/include/boinc/std_fixes.h:${PORTSDIR}/net/boinc-client
-.endif
-
-.if ${ARCH} == i386 || ${ARCH} == amd64
-# comment out if world is built with clang and port with gcc
-CFLAGS+=	-mtune=native
-.endif
+CFLAGS_i386=	-mtune=native
+CFLAGS_amd64=	-mtune=native
 
 .if !empty(MACHINE_CPU:Maltivec)
 CONFIGURE_ARGS+=	--enable-altivec
@@ -101,8 +95,8 @@ do-install:
 	${INSTALL} -d ${STAGEDIR}${BOINC_CLIENT_HOME}/projects/${SETI_SITE}
 	${INSTALL_PROGRAM} ${WRKSRC}/client/${SETI_BINARY} \
 	    ${STAGEDIR}${BOINC_CLIENT_HOME}/projects/${SETI_SITE}/
-.if ${PORT_OPTIONS:MX11}
+do-install-X11-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/client/seti_graphics \
 	    ${STAGEDIR}${BOINC_CLIENT_HOME}/projects/${SETI_SITE}/
-.endif
+
 .include <bsd.port.mk>

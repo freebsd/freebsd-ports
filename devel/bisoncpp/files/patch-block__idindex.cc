@@ -1,6 +1,6 @@
---- ./block/idindex.cc.orig	2013-06-23 20:13:49.000000000 +0200
-+++ ./block/idindex.cc	2013-11-27 18:54:04.000000000 +0100
-@@ -8,7 +8,7 @@
+--- block/idindex.cc.orig	2013-06-23 18:13:49 UTC
++++ block/idindex.cc
+@@ -8,7 +8,7 @@ void Block::IDindex(size_t lineNr, strin
      d_atDollar.push_back(
          AtDollar(
              AtDollar::DOLLAR, length(), lineNr, 

@@ -4,9 +4,9 @@
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
 PORTEPOCH=	3
+PORTREVISION=	1
 CATEGORIES=	editors ipv6
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	GNU
 PKGNAMESUFFIX?= 24
 
 PATCH_SITE_SUBDIR+=	ashish
@@ -86,7 +86,7 @@ OPTIONS_SUB=		SOURCES
 CANNA_CONFIGURE_ON=	--with-canna \
 			--with-canna-includes=${LOCALBASE}/include \
 			--with-canna-libraries=${LOCALBASE}/lib
-CANNA_PATCH_SITES=	http://distfiles.pirateparty.in/%SUBDIR%/ ${MASTER_SITE_LOCAL}
+CANNA_PATCH_SITES=	http://distfiles.pirateparty.in/%SUBDIR%/ LOCAL
 CANNA_PATCHFILES=	emacs24.4canna-20141030.diff.gz
 CANNA_LIB_DEPENDS=	libcanna.so:${PORTSDIR}/japanese/canna-lib
 
@@ -128,7 +128,7 @@ MOTIF_CONFIGURE_ON+=	--with-x-toolkit=motif
 
 SCROLLBARS_CONFIGURE_WITH=	toolkit-scroll-bars
 
-JPEG_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+JPEG_USES=		jpeg
 JPEG_CONFIGURE_WITH=	jpeg
 
 TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff

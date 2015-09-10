@@ -9,9 +9,10 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Modern, pretty RDoc template
 
-USE_RUBY=		yes
-USE_RUBYGEMS=		yes
-USE_RAKE=	yes
+NO_ARCH=	yes
+
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/allison

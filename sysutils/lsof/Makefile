@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lsof
-DISTVERSION=	4.89D
+DISTVERSION=	4.90A
 PORTEPOCH=	8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/lsof/ \
@@ -25,6 +25,11 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}${DISTNAME_SUFFIX}
 MAINTAINER=	ler@lerctr.org
 COMMENT=	Lists information about open files (similar to fstat(1))
 
+LICENSE=lsof
+LICENSE_NAME=lsof
+LICENSE_FILE=${FILESDIR}/LICENSE
+LICENSE_PERMS=	 dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 #Please leave the below line in for the next clean up.
 FIXUP_RELEASE=	YES
 .if defined(FIXUP_RELEASE)
@@ -33,7 +38,6 @@ DISTNAME_SUFFIX=.freebsd
 SRCBALL_NAME=	${DISTNAME:S/_W$//}_src
 WRKSRC=		${WRKDIR}/${DISTNAME}/${SRCBALL_NAME}
 .endif
-
 HAS_CONFIGURE=	yes
 
 USES=		shebangfix tar:bzip2
@@ -48,7 +52,6 @@ BROKEN=	Not supported on ARM platform below release 10.1 or a more recent curren
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	-n freebsd
 CONFIGURE_ENV=	LSOF_CC="${CC}" FREEBSD_SYS="${SRC_BASE}/sys"
-
 
 .if !exists(${SRC_BASE}/sys/kern/kern_lockf.c)
 IGNORE=		requires kernel sources

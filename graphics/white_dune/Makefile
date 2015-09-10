@@ -12,12 +12,11 @@ MASTER_SITES=	http://vrml.cip.ica.uni-stuttgart.de/dune/
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Graphical VRML97 editor and animation tool
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 LICENSE=	GPLv2
 
-USES=		motif
+USES=		jpeg motif
 USE_XORG=	xft
 USE_GL=		gl glu glut
 USE_SDL=	sdl
@@ -37,8 +36,6 @@ REINPLACE_ARGS=	-i ''
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 # Try to fix parallel builds (-jX) by calling submakes correctly
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile\* | ${XARGS} ${REINPLACE_CMD} -E \
@@ -49,8 +46,8 @@ do-install:
 	cd ${WRKSRC}/bin && ${INSTALL_SCRIPT} dune4kids illegal2vrml \
 		${STAGEDIR}${PREFIX}/bin
 	cd ${WRKSRC}/man && ${INSTALL_MAN} dune.1 illegal2vrml.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

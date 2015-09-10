@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	hexchat
-PORTVERSION=	2.10.1
+PORTVERSION=	2.10.2
 CATEGORIES=	irc gnome ipv6
-MASTER_SITES=	http://dl.hexchat.org/${PORTNAME}/
+MASTER_SITES=	http://dl.hexchat.net/${PORTNAME}/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IRC chat program with GTK and Text Frontend
 
 LICENSE=	GPLv2
@@ -14,12 +14,13 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libproxy.so:${PORTSDIR}/net/libproxy
 
 USES=		gmake desktop-file-utils libtool pkgconfig tar:xz
-USE_GNOME=	gtk20 libxml2
+USE_GNOME=	gtk20 intltool libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-openssl --enable-gtkfe --disable-sysinfo \
 		--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
+USE_OPENSSL=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lX11
@@ -51,6 +52,7 @@ DOAT_CONFIGURE_ENABLE=	doat
 FISHLIM_CONFIGURE_ENABLE=	fishlim
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
+NLS_USES_OFF=		gettext-tools # doesn't build otherwise
 NOTIFY_RUN_DEPENDS=	notify-send:${PORTSDIR}/devel/libnotify
 NOTIFY_CONFIGURE_ENABLE=	libnotify
 PERL_CONFIGURE_ENABLE=	perl
@@ -60,6 +62,10 @@ SOCKS_CONFIGURE_ENABLE=	socks
 TEXTFE_CONFIGURE_ENABLE=	textfe
 
 .include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+WITH_OPENSSL_PORT=	yes
+.endif
 
 .if ${PORT_OPTIONS:MCA_BUNDLE}
 CA_BUNDLE=	"${LOCALBASE}/share/certs/ca-root-nss.crt"
@@ -80,8 +86,6 @@ USE_GNOME+=	gconf2
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^appdata_DATA/s|hexchat.appdata.xml||' \
-		${WRKSRC}/data/misc/Makefile.in
 	@${REINPLACE_CMD} -e 's|%%CA_BUNDLE%%|${CA_BUNDLE}|' \
 		${WRKSRC}/src/common/server.c
 

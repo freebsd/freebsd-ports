@@ -1,11 +1,3 @@
-%%PERL5_MAN3%%/HTTP::Config.3.gz
-%%PERL5_MAN3%%/HTTP::Headers.3.gz
-%%PERL5_MAN3%%/HTTP::Headers::Util.3.gz
-%%PERL5_MAN3%%/HTTP::Message.3.gz
-%%PERL5_MAN3%%/HTTP::Request.3.gz
-%%PERL5_MAN3%%/HTTP::Request::Common.3.gz
-%%PERL5_MAN3%%/HTTP::Response.3.gz
-%%PERL5_MAN3%%/HTTP::Status.3.gz
 %%SITE_PERL%%/HTTP/Config.pm
 %%SITE_PERL%%/HTTP/Headers.pm
 %%SITE_PERL%%/HTTP/Headers/Auth.pm
@@ -16,3 +8,11 @@
 %%SITE_PERL%%/HTTP/Request/Common.pm
 %%SITE_PERL%%/HTTP/Response.pm
 %%SITE_PERL%%/HTTP/Status.pm
+%%PERL5_MAN3%%/HTTP::Config.3.gz
+%%PERL5_MAN3%%/HTTP::Headers.3.gz
+%%PERL5_MAN3%%/HTTP::Headers::Util.3.gz
+%%PERL5_MAN3%%/HTTP::Message.3.gz
+%%PERL5_MAN3%%/HTTP::Request.3.gz
+%%PERL5_MAN3%%/HTTP::Request::Common.3.gz
+%%PERL5_MAN3%%/HTTP::Response.3.gz
+%%PERL5_MAN3%%/HTTP::Status.3.gz

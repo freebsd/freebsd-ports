@@ -1,0 +1,14 @@
+bin/pulledpork.pl
+%%ETCDIR%%/disablesid.conf.sample
+%%ETCDIR%%/dropsid.conf.sample
+%%ETCDIR%%/enablesid.conf.sample
+%%ETCDIR%%/modifysid.conf.sample
+@(,,0640) %%ETCDIR%%/pulledpork.conf.sample
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.CATEGORIES
+%%PORTDOCS%%%%DOCSDIR%%/README.CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/README.RULESET
+%%PORTDOCS%%%%DOCSDIR%%/README.SHAREDOBJECTS
+%%DATADIR%%/README.CONTRIB
+%%DATADIR%%/oink-conv.pl
+@dir(,,0750) %%ETCDIR%%

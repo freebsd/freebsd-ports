@@ -16,6 +16,9 @@
 #				Default is "nobody".
 # memcached_profiles (str):     Set to "" by default.
 #                               Define your profiles here.
+# memcached_post_start (str):   Set extra commands that should be executed after memcached was successfully
+#                               started here.
+#                               Default is empty "".
 
 . /etc/rc.subr
 
@@ -33,6 +36,7 @@ if [ -n "$2" ]; then
 		pidfile="${_piddir}/memcached.${profile}.pid"
 		eval memcached_enable="\${memcached_${profile}_enable:-${memcached_enable}}"
 		eval memcached_flags="\${memcached_${profile}_flags:-${memcached_flags}}"
+		eval memcached_post_start="\${memcached_${profile}_post_start:-${memcached_post_start}}"
 	else
 		echo "%%PREFIX%%/etc/rc.d/memcached%%RC_SUBR_SUFFIX%%: extra argument ignored"
 	fi
@@ -70,6 +74,13 @@ else
 	fi
 fi
 
+memcached_poststart()
+{
+    if [ -n "$memcached_post_start" ]; then
+        eval $memcached_post_start
+    fi
+}
+
 memcached_poststop()
 {
 	if [ -n "${profile}" ]; then
@@ -94,6 +105,7 @@ command=%%PREFIX%%/bin/memcached
 command_args="-d -u ${memcached_user} -P ${pidfile} "
 
 start_precmd="install -d -o $memcached_user -g $memcached_user -m 755 $_piddir"
+start_postcmd="${name}_poststart"
 stop_postcmd="${name}_poststop"
 
 run_rc_command "$1"

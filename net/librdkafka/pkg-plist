@@ -1,0 +1,9 @@
+include/librdkafka/rdkafka.h
+include/librdkafka/rdkafkacpp.h
+lib/librdkafka++.a
+lib/librdkafka++.so
+lib/librdkafka++.so.1
+lib/librdkafka.a
+lib/librdkafka.so
+lib/librdkafka.so.1
+libdata/pkgconfig/librdkafka.pc

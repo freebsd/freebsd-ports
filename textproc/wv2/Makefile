@@ -12,7 +12,7 @@ COMMENT=	Library providing routines to access Microsoft Word files
 
 USE_GNOME=	libgsf
 GNU_CONFIGURE=	yes
-USES=		cmake iconv pkgconfig libtool tar:bzip2
+USES=		cmake:outsource iconv pkgconfig libtool tar:bzip2
 USE_LDCONFIG=	yes
 
 post-patch:

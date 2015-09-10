@@ -1,0 +1,26 @@
+--- Makefile.in.orig	2015-06-01 14:38:17 UTC
++++ Makefile.in
+@@ -70,7 +70,7 @@ all: tools tests
+ static: build_library_type/static
+ relocatable: build_library_type/relocatable
+ 
+-tools:
++tools: src/gtkada-intl.adb
+ 	@echo "====== Building tools ====="
+ 	${GPRBUILD_FULL} -XLIBRARY_TYPE=static -Psrc/tools/tools.gpr
+ 
+@@ -142,11 +142,11 @@ ifeq (${HAVE_OPENGL},True)
+ endif
+ 
+ 	@# install executables
+-	${INSTALL_PROGRAM} src/tools/gtkada-config ${bindir}
+-	${INSTALL_PROGRAM} src/obj/tools/gtkada-dialog${EXEEXT} ${bindir}
++	${BSD_INSTALL_SCRIPT} src/tools/gtkada-config ${bindir}
++	${BSD_INSTALL_PROGRAM} src/obj/tools/gtkada-dialog${EXEEXT} ${bindir}
+ 
+ 	@# install testgtk
+-	-${INSTALL_PROGRAM} testgtk/testgtk${EXEEXT} ${exampledir}
++	-${BSD_INSTALL_PROGRAM} testgtk/testgtk${EXEEXT} ${exampledir}
+ 	${CP} testgtk/*.ad? testgtk/*.xpm testgtk/*.png testgtk/*.gif testgtk/*.lwo testgtk/*.xml testgtk/*.css testgtk/*.ui ${exampledir}
+ 
+ 	$(MAKE) -C $(projects_dir) install

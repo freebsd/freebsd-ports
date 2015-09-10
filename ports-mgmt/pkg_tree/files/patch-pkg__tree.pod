@@ -1,0 +1,15 @@
+--- pkg_tree.pod.orig	2001-12-12 11:44:40 UTC
++++ pkg_tree.pod
+@@ -53,6 +53,12 @@ E<32>[~] edwin@k7E<gt>B<pkg_tree -v linu
+  |\__ freetype2-2.0.5
+   \__ XFree86-libraries-4.1.0 (unknown)
+ 
++Use the B<-t> parameter to show only top level packages,
++and B<-b> to show only bottom level packages. And B<-t> B<-q>
++together will give the list of top level packages without their
++dependencies, installing only these packages should install all
++currently installed packages.
++
+ =head1 RETURN VALUES
+ 
+ Always 0.

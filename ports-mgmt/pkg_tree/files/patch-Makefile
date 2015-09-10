@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Dec 12 23:06:13 2001
-+++ Makefile	Wed Dec 12 23:07:35 2001
-@@ -11,8 +11,8 @@
+--- Makefile.orig	2001-12-12 11:44:40 UTC
++++ Makefile
+@@ -11,8 +11,8 @@ pkg_tree.7: pkg_tree.pod
  		--date="December 15, 2001" pkg_tree.pod > pkg_tree.7
  
  install:

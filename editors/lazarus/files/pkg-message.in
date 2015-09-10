@@ -16,7 +16,7 @@ The Lazarus RAD was installed
 
    It could be extracted to your home directory.
 
-4) You can use %%LOCALBASE%%/bin/gdb771 debugger instead of gdb installed deugger
+4) You can use %%LOCALBASE%%/bin/gdb debugger instead of gdb installed debugger
    installed from base system. Lazarus works better with this version.
 
 5) The lazbuild.cfg file has been removed, it is not necessary anymore. Now 
@@ -25,11 +25,10 @@ The Lazarus RAD was installed
    by default:
 
    editors/lazarus-lcl-nogui
-   editors/lazarus-lcl-gtk
    editors/lazarus-lcl-gtk2
    editors/lazarus-lcl-qt
 
-   You can added those ports if you want support for nogui, gtk, gtk2 or qt 
+   You can added those ports if you want support for nogui, gtk2 or qt 
    interfaces. Please look at net-p2p/transmission-remote-gui like a example of
    how use it
 

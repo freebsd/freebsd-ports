@@ -4,7 +4,6 @@
 PORTNAME=	masscan
 PORTVERSION=	1.0.3
 CATEGORIES=	security
-MASTER_SITES=	http://github.com/robertdavidgraham/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 
 MAINTAINER=	taguchi.ch@gmail.com
 COMMENT=	Very fast port scanner
@@ -12,6 +11,8 @@ COMMENT=	Very fast port scanner
 LICENSE=	GPLv3
 
 USES=		gmake
+USE_GITHUB=	yes
+GH_ACCOUNT=	robertdavidgraham
 CFLAGS+=	-Wno-format
 MAKE_ARGS=	SYS=freebsd CC="${CC}" CFLAGS="${CFLAGS}"
 

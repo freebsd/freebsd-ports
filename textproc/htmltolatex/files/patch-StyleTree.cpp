@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- StyleTree.cpp.orig	Wed Oct 10 14:24:25 2001
 +++ StyleTree.cpp	Fri Feb 21 22:10:03 2003
 @@ -18,8 +18,12 @@

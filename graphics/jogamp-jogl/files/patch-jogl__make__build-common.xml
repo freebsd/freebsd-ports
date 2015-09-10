@@ -1,6 +1,6 @@
---- ./jogl/make/build-common.xml.orig	2014-03-11 00:59:24.000000000 +0000
-+++ ./jogl/make/build-common.xml	2014-05-08 19:04:20.951173869 +0000
-@@ -128,8 +128,8 @@
+--- jogl/make/build-common.xml.orig	2015-03-27 14:58:50 UTC
++++ jogl/make/build-common.xml
+@@ -130,8 +130,8 @@
          <condition property="swt.jar" value="${project.root}/make/lib/swt/win32-win32-x86/swt-debug.jar">
            <istrue value="${isWindowsX86}" />
          </condition>
@@ -11,21 +11,21 @@
          </condition>
          <condition property="swt.jar" value="${project.root}/make/lib/swt/gtk-linux-x86_64/swt-debug.jar">
            <istrue value="${isLinuxAMD64}" />
-@@ -208,7 +208,7 @@
+@@ -210,7 +210,7 @@
          <property name="gluegen.build.xml"          value="${gluegen.make}/build.xml" />
          <property name="build.gluegen"              value="${gluegen.root}/${rootrel.build}" />
          <property name="obj.gluegen"                value="${build.gluegen}/obj"/>
 -        <property name="gluegen.jar"                value="${build.gluegen}/gluegen.jar" />
 +        <property name="gluegen.jar"                value="${build.gluegen}/gluegen2.jar" />
-         <property name="ant.jar"                    value="${ant.home}/lib/ant.jar" />
-         <property name="ant-junit.jar"              value="${ant.home}/lib/ant-junit.jar" />
  
-@@ -413,7 +413,7 @@
+         <property name="build.joal"                 value="${joal.root}/${rootrel.build}" /> <!-- optional -->
+ 
+@@ -434,7 +434,7 @@
          </path>
  
          <!-- JavaSE combinations -->
 -        <property name="gluegen-rt.jar"                 value="${build.gluegen}/gluegen-rt.jar" />
 +        <property name="gluegen-rt.jar"                 value="${build.gluegen}/gluegen2-rt.jar" />
          <property name="gluegen-rt-android.jar"         value="${build.gluegen}/gluegen-rt-android.jar" />
+         <property name="gluegen-test-util.jar"          value="${build.gluegen}/gluegen-test-util.jar" />
          <property name="jogl-test.jar"                  value="${jar}/jogl-test.jar"/>
-         <property name="jogl-test-android.jar"          value="${jar}/jogl-test-android.jar"/>

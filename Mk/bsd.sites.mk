@@ -113,6 +113,14 @@ MASTER_SITE_CHEESESHOP+= \
 	http://pypi.python.jp/${DISTNAME:S/${DISTVERSION}//:S/-//}/
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_COMP_SOURCES)
+MASTER_SITE_COMP_SOURCES+= \
+	http://ftp.isc.org/pub/usenet/comp.sources.%SUBDIR%/ \
+	http://ftp.funet.fi/pub/archive/comp.sources.%SUBDIR%/ \
+	http://ftp.sunet.se/pub/usenet/ftp.uu.net/comp.sources.%SUBDIR%/ \
+	http://ftp.fi.netbsd.org/pub/misc/archive/comp.sources.%SUBDIR%/
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_DEBIAN)
 MASTER_SITE_DEBIAN+= \
 	http://cdn.debian.net/debian/%SUBDIR%/ \
@@ -224,23 +232,23 @@ MASTER_SITE_EXIM+= \
 
 .if !defined(IGNORE_MASTER_SITE_CENTOS_LINUX)
 MASTER_SITE_CENTOS_LINUX+= \
-	http://mirror.centos.org/centos/6/os/i386/Packages/ \
-	http://vault.centos.org/6.6/os/Source/SPackages/ \
 	http://mirror.centos.org/%SUBDIR%/ \
-	http://vault.centos.org/%SUBDIR%/
-
+	http://vault.centos.org/%SUBDIR%/ \
+	http://mirror.centos.org/centos/${LINUX_DIST_VER}/os/${LINUX_REPO_ARCH}/Packages/ \
+	http://vault.centos.org/${LINUX_DIST_VER}/os/${LINUX_REPO_ARCH}/Packages/ \
+	http://vault.centos.org/${LINUX_DIST_VER}/os/Source/SPackages/:SOURCE
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_CENTOS_LINUX)
 MASTER_SITE_CENTOS_LINUX_UPDATES+= \
-	http://mirror.centos.org/centos/6/updates/i386/Packages/ \
-	http://vault.centos.org/${LINUX_DIST_VER}/updates/Source/SPackages/
+	http://mirror.centos.org/centos/${LINUX_DIST_VER}/updates/${LINUX_REPO_ARCH}/Packages/ \
+	http://vault.centos.org/${LINUX_DIST_VER}/updates/Source/SPackages/:SOURCE
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_EPEL)
 MASTER_SITE_EPEL+= \
-	http://dl.fedoraproject.org/pub/epel/6/i386/ \
-	http://dl.fedoraproject.org/pub/epel/6/SRPMS/
+	http://dl.fedoraproject.org/pub/epel/6/${LINUX_REPO_ARCH}/ \
+	http://dl.fedoraproject.org/pub/epel/6/SRPMS/:DEFAULT,SOURCE
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_FEDORA_LINUX)
@@ -509,13 +517,6 @@ MASTER_SITE_GENTOO+= \
 #                 possible to do GH_TAGNAME= GIT_HASH to do a snapshot.
 #                 default: ${DISTVERSION}
 #
-# GH_COMMIT     - first 7 digits of the commit that generated GH_TAGNAME
-#                 (man git-describe(1))
-#                 if this is not set, archive corresponding to tag is fetched
-#                 default: not set
-#                 This is a deprecated option. Just set the hash in GH_TAGNAME
-#                 instead.
-#
 .if defined(USE_GITHUB)
 .  if defined(GH_TAGNAME) && ${GH_TAGNAME} == master
 IGNORE?=	Using master as GH_TAGNAME is invalid. \
@@ -525,40 +526,129 @@ IGNORE?=	Using master as GH_TAGNAME is invalid. \
 # We are cheating and using backend URLS for Github here. See ports/194898
 # comment #15 for explanation as to why and how to deal with it if it breaks.
 MASTER_SITE_GITHUB+=		https://codeload.github.com/%SUBDIR%
-MASTER_SITE_GITHUB_CLOUD+=	http://cloud.github.com/downloads/%SUBDIR%
-MASTER_SITE_GITHUB_LEGACY+=	https://codeload.github.com/%SUBDIR%
+MASTER_SITE_GITHUB_CLOUD+=	https://cloud.github.com/downloads/%SUBDIR%
 
-.  if defined(GH_COMMIT)
-.    if !defined(MASTER_SITES) || !${MASTER_SITES:MGHL}
-MASTER_SITES+=	GHL
-.    endif
-.  else
-.    if !defined(MASTER_SITES) || !${MASTER_SITES:MGH} && !${MASTER_SITES:MGHC}
+.  if !defined(MASTER_SITES) || !${MASTER_SITES:MGH} && !${MASTER_SITES:MGHC} && !${USE_GITHUB:Mnodefault}
 MASTER_SITES+=	GH
-.    endif
 .  endif
-GH_ACCOUNT?=	${PORTNAME}
-GH_PROJECT?=	${PORTNAME}
-.  if defined(GH_COMMIT)
-# Use the old style for safety for now.
-GH_TAGNAME?=	${DISTVERSION}
-.  else
+GH_ACCOUNT_DEFAULT=	${PORTNAME}
+GH_ACCOUNT?=	${GH_ACCOUNT_DEFAULT}
+GH_PROJECT_DEFAULT=	${PORTNAME}
+GH_PROJECT?=	${GH_PROJECT_DEFAULT}
 # Use full PREFIX/SUFFIX and converted DISTVERSION
-GH_TAGNAME?=	${DISTVERSIONFULL}
-# This new scheme rerolls distfiles. Also ensure they are renamed to avoid
-# conflicts. Use _GITHUB_REV in case github changes their zipping or structure
-# which has happened before.
-_GITHUB_REV=	0
-.    if ${MASTER_SITES:MGH}
-DISTNAME:=	${DISTNAME}_GH${_GITHUB_REV}
-.    endif
+GH_TAGNAME_DEFAULT=	${DISTVERSIONFULL}
+GH_TAGNAME?=	${GH_TAGNAME_DEFAULT}
+# Iterate over GH_ACCOUNT, GH_PROJECT and GH_TAGNAME to extract groups
+_GITHUB_GROUPS= DEFAULT
+.for _A in ${GH_ACCOUNT}
+_S_TEMP=	${_A:S/^${_A:C@:[^/:]+$@@}//:S/^://}
+.  if !empty(_S_TEMP)
+.    for _group in ${_S_TEMP:S/,/ /g}
+_G_TEMP=	${_group}
+.      if ${_G_TEMP} == all || ${_G_TEMP} == ALL || ${_G_TEMP} == default
+check-makevars::
+		@${ECHO_MSG} "Makefile error: the words all, ALL and default are reserved and cannot be"
+		@${ECHO_MSG} "used in group definitions. Please fix your GH_ACCOUNT"
+		@${FALSE}
+.      endif
+.      if !${_GITHUB_GROUPS:M${_group}}
+_GITHUB_GROUPS+=	${_group}
+.       endif
+GH_ACCOUNT_${_group}=	${_A:C@^(.*):[^/:]+$@\1@}
+.    endfor
+.  else
+GH_ACCOUNT_DEFAULT=	${_A:C@^(.*):[^/:]+$@\1@}
 .  endif
+.endfor
+.for _P in ${GH_PROJECT}
+_S_TEMP=	${_P:S/^${_P:C@:[^/:]+$@@}//:S/^://}
+.  if !empty(_S_TEMP)
+.    for _group in ${_S_TEMP:S/,/ /g}
+_G_TEMP=	${_group}
+.      if ${_G_TEMP} == all || ${_G_TEMP} == ALL || ${_G_TEMP} == default
+check-makevars::
+		@${ECHO_MSG} "Makefile error: the words all, ALL and default are reserved and cannot be"
+		@${ECHO_MSG} "used in group definitions. Please fix your GH_PROJECT"
+		@${FALSE}
+.      endif
+.      if !${_GITHUB_GROUPS:M${_group}}
+_GITHUB_GROUPS+=	${_group}
+.       endif
+GH_PROJECT_${_group}=	${_P:C@^(.*):[^/:]+$@\1@}
+.    endfor
+.  else
+GH_PROJECT_DEFAULT=	${_P:C@^(.*):[^/:]+$@\1@}
+.  endif
+.endfor
+.for _T in ${GH_TAGNAME}
+_S_TEMP=	${_T:S/^${_T:C@:[^/:]+$@@}//:S/^://}
+.  if !empty(_S_TEMP)
+.    for _group in ${_S_TEMP:S/,/ /g}
+_G_TEMP=	${_group}
+.      if ${_G_TEMP} == all || ${_G_TEMP} == ALL || ${_G_TEMP} == default
+check-makevars::
+		@${ECHO_MSG} "Makefile error: the words all, ALL and default are reserved and cannot be"
+		@${ECHO_MSG} "used in group definitions. Please fix your GH_TAGNAME"
+		@${FALSE}
+.      endif
+.      if !${_GITHUB_GROUPS:M${_group}}
+_GITHUB_GROUPS+=	${_group}
+.       endif
+GH_TAGNAME_${_group}=	${_T:C@^(.*):[^/:]+$@\1@}
+.    endfor
+.  else
+GH_TAGNAME_DEFAULT=	${_T:C@^(.*):[^/:]+$@\1@}
+.  endif
+.endfor
+# Put the default values back into the variables so that the *default* behavior
+# is not changed.
+GH_ACCOUNT:=	${GH_ACCOUNT_DEFAULT}
+GH_PROJECT:=	${GH_PROJECT_DEFAULT}
+GH_TAGNAME:=	${GH_TAGNAME_DEFAULT}
 .  if defined(GH_TAGNAME)
 GH_TAGNAME_SANITIZED=	${GH_TAGNAME:S,/,-,}
 # Github silently converts tags starting with v to not have v in the filename
 # and extraction directory.
 GH_TAGNAME_EXTRACT=	${GH_TAGNAME_SANITIZED:C/^[vV]([0-9])/\1/}
+.  endif 
+.  if defined(_GITHUB_MUST_SET_DISTNAME)
+# GH_TAGNAME defaults to DISTVERSIONFULL; Avoid adding DISTVERSIONFULL in twice
+.    if ${GH_TAGNAME} != ${DISTVERSIONFULL}
+DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${DISTVERSIONFULL}-${GH_TAGNAME_SANITIZED}
+.    else
+DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME_SANITIZED}
+.    endif
 .  endif
+# This new scheme rerolls distfiles. Also ensure they are renamed to avoid
+# conflicts. Use _GITHUB_REV in case github changes their zipping or structure
+# which has happened before.
+_GITHUB_REV=	0
+.  if ${MASTER_SITES:MGH}
+DISTNAME:=	${DISTNAME}_GH${_GITHUB_REV}
+.  endif
+.endif
+_GITHUB_EXTRACT_SUFX=	.tar.gz
+# If there are non default groups
+.if !empty(_GITHUB_GROUPS:NDEFAULT)
+# Put the DEFAULT distfile first
+.if !${USE_GITHUB:Mnodefault}
+DISTFILES+=	${DISTNAME}${_GITHUB_EXTRACT_SUFX}
+.endif
+# Then for each of the remaining groups, add DISTFILES and MASTER_SITES
+# entries with the correct group and create {WRKSRC,DISTNAME,DISTFILES}_group
+# helper variables.
+.  for _group in ${_GITHUB_GROUPS:NDEFAULT}
+GH_ACCOUNT_${_group}?=	${GH_ACCOUNT_DEFAULT}
+GH_PROJECT_${_group}?=	${GH_PROJECT_DEFAULT}
+GH_TAGNAME_${_group}?=	${GH_TAGNAME_DEFAULT}
+GH_TAGNAME_${_group}_SANITIZED=	${GH_TAGNAME_${_group}:S,/,-,}
+GH_TAGNAME_${_group}_EXTRACT=	${GH_TAGNAME_${_group}_SANITIZED:C/^[vV]([0-9])/\1/}
+DISTNAME_${_group}:=	${GH_ACCOUNT_${_group}}-${GH_PROJECT_${_group}}-${GH_TAGNAME_${_group}_SANITIZED}
+DISTFILE_${_group}:=	${DISTNAME_${_group}}_GH${_GITHUB_REV}${_GITHUB_EXTRACT_SUFX}
+DISTFILES:=	${DISTFILES} ${DISTFILE_${_group}}:${_group}
+MASTER_SITES:=	${MASTER_SITES} ${MASTER_SITE_GITHUB:S@%SUBDIR%@${GH_ACCOUNT_${_group}}/${GH_PROJECT_${_group}}/tar.gz/${GH_TAGNAME_${_group}}?dummy=/:${_group}@}
+WRKSRC_${_group}:=	${WRKDIR}/${GH_PROJECT_${_group}}-${GH_TAGNAME_${_group}_EXTRACT}
+.  endfor
 .endif
 .endif
 
@@ -597,7 +687,7 @@ MASTER_SITE_GNU+= \
 	ftp://ftp.gnu.org/gnu/%SUBDIR%/ \
 	http://www.gtlib.gatech.edu/pub/gnu/gnu/%SUBDIR%/ \
 	http://mirrors.kernel.org/gnu/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/GNU/%SUBDIR%/ \
+	ftp://ftp.kddlabs.co.jp/GNU/gnu/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/GNU/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.gnu.org/gnu/%SUBDIR%/ \
 	ftp://ftp.informatik.hu-berlin.de/pub/gnu/gnu/%SUBDIR%/ \
@@ -607,20 +697,26 @@ MASTER_SITE_GNU+= \
 
 .if !defined(IGNORE_MASTER_SITE_GNUPG)
 MASTER_SITE_GNUPG+= \
-	http://mirror.tje.me.uk/pub/mirrors/ftp.gnupg.org/%SUBDIR%/ \
-	http://dotsrc.org/%SUBDIR%/ \
-	ftp://ftp.freenet.de/pub/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
-	ftp://ftp.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
-	ftp://mirror.cict.fr/gnupg/%SUBDIR%/ \
-	http://artfiles.org/gnupg.org/%SUBDIR%/ \
-	ftp://ftp.franken.de/pub/crypt/mirror/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
-	ftp://ftp.crysys.hu/pub/gnupg/%SUBDIR%/ \
-	ftp://ftp.hi.is/pub/mirrors/gnupg/%SUBDIR%/ \
-	http://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
-	ftp://ftp.sunet.se/pub/security/gnupg/%SUBDIR%/ \
-	ftp://mirror.switch.ch/mirror/gnupg/%SUBDIR%/ \
 	http://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
-	ftp://ftp.gnupg.org/gcrypt/%SUBDIR%/
+	http://mirror.tje.me.uk/pub/mirrors/ftp.gnupg.org/%SUBDIR%/ \
+	ftp://ftp.surfnet.nl/pub/security/gnupg/%SUBDIR%/ \
+	http://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
+	ftp://ftp.franken.de/pub/crypt/mirror/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
+	ftp://ftp.gnupg.org/gcrypt/%SUBDIR%/ \
+	ftp://ftp.bit.nl/mirror/gnupg/%SUBDIR%/ \
+	ftp://mirror.switch.ch/mirror/gnupg/%SUBDIR%/ \
+	http://artfiles.org/gnupg.org/%SUBDIR%/ \
+	ftp://ftp.freenet.de/pub/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
+	ftp://ftp.crysys.hu/pub/gnupg/%SUBDIR%/ \
+	http://gd.tuwien.ac.at/privacy/gnupg/%SUBDIR%/ \
+	ftp://mirror.cict.fr/gnupg/%SUBDIR%/ \
+	http://mirrors.dotsrc.org/%SUBDIR%/ \
+	ftp://ftp.iasi.roedu.net/pub/mirrors/ftp.gnupg.org/%SUBDIR%/ \
+	ftp://ftp.sunet.se/pub/security/gnupg/%SUBDIR%/ \
+	ftp://ftp.hi.is/pub/mirrors/gnupg/%SUBDIR%/ \
+	ftp://ftp.jyu.fi/pub/crypt/gcrypt/%SUBDIR%/ \
+	http://dist.gnupg.pt/%SUBDIR%/ \
+	http://gnupg.org.favoritelinks.net/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_GNUSTEP)
@@ -775,43 +871,18 @@ MASTER_SITE_MOZDEV+= \
 	http://ftp.osuosl.org/pub/mozdev/%SUBDIR%/
 .endif
 
-# releases.mozilla.org mirror sites
-#
-# For the full list, see the following:
-#
-#	http://www.mozilla.org/mirrors.html
-#
 .if !defined(IGNORE_MASTER_SITE_MOZILLA)
 MASTER_SITE_MOZILLA+= \
-	https://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
-	http://mirror3.mirrors.tds.net/pub/mozilla.org/%SUBDIR%/ \
-	http://mozilla.isc.org/pub/mozilla.org/%SUBDIR%/ \
 	http://releases.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
-	http://kyoto-mz-dl.sinet.ad.jp/pub/mozilla.org/%SUBDIR%/ \
-	http://jp-nii01.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
-	http://jp-nii02.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
-	http://mirror.internode.on.net/pub/mozilla/%SUBDIR%/ \
-	http://ftp.acc.umu.se/pub/mozilla.org/%SUBDIR%/ \
-	http://mozilla.c3sl.ufpr.br/releases/%SUBDIR%/ \
-	http://www.gtlib.gatech.edu/pub/mozilla.org/%SUBDIR%/ \
-	ftp://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
-	ftp://ftp.fh-wolfenbuettel.de/pub/www/mozilla/%SUBDIR%/ \
-	ftp://ftp.informatik.rwth-aachen.de/pub/mirror/ftp.mozilla.org/pub/%SUBDIR%/ \
-	http://ftp.twaren.net/Unix/Mozilla/%SUBDIR%/
-.endif
-
-.if !defined(IGNORE_MASTER_SITE_BUGZILLA)
-MASTER_SITE_BUGZILLA+= \
 	https://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
 	http://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
-	ftp://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
-	http://mirror.internode.on.net/pub/mozilla/%SUBDIR%/
+	ftp://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/
 .endif
 
-.if !defined(IGNORE_MASTER_SITE_MOZILLA_EXTENDED)
-MASTER_SITE_MOZILLA_EXTENDED+= \
-	http://releases.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
-	${MASTER_SITE_MOZILLA}
+.if !defined(IGNORE_MASTER_SITE_MOZILLA_ADDONS)
+MASTER_SITE_MOZILLA_ADDONS+= \
+	https://addons.cdn.mozilla.net/user-media/%SUBDIR%/ \
+	http://kyoto-mz-dl.sinet.ad.jp/pub/mozilla.org/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_MPLAYERHQ)
@@ -956,6 +1027,7 @@ MASTER_SITE_PERL_CPAN?=
 
 MASTER_SITE_PERL_CPAN_BY+= \
 	http://cpan.metacpan.org/%CPANSORT%/%SUBDIR%/ \
+	http://cpan.metacpan.org/modules/by-module/%SUBDIRPLUS%/ \
 	http://www.cpan.org/%CPANSORT%/%SUBDIR%/ \
 	ftp://ftp.cpan.org/pub/CPAN/%CPANSORT%/%SUBDIR%/ \
 	http://www.cpan.dk/%CPANSORT%/%SUBDIR%/ \
@@ -967,17 +1039,16 @@ MASTER_SITE_PERL_CPAN_BY+= \
 	http://backpan.perl.org/%CPANSORT%/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/languages/perl/CPAN/%CPANSORT%/%SUBDIR%/ \
 	http://ftp.twaren.net/Unix/Lang/CPAN/%CPANSORT%/%SUBDIR%/ \
-	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%SUBDIR%/ \
-	http://www.cpan.dk/modules/by-module/%SUBDIR%/
+	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%SUBDIRPLUS%/
 
 _PERL_CPAN_FLAG=${MASTER_SITE_SUBDIR:C/(CPAN):.*$/\1/}
 _PERL_CPAN_ID=	${MASTER_SITE_SUBDIR:C/^CPAN:(.)(.)(.*)$/\1\/\1\2\/\1\2\3/}
 
 .if !empty(_PERL_CPAN_ID) && ${_PERL_CPAN_FLAG:tl} == "cpan"
     _PERL_CPAN_SORT=authors/id/${_PERL_CPAN_ID}
-    MASTER_SITE_PERL_CPAN=${MASTER_SITE_PERL_CPAN_BY:S/%CPANSORT%/${_PERL_CPAN_SORT}/:S/%SUBDIR%\///}
+    MASTER_SITE_PERL_CPAN=${MASTER_SITE_PERL_CPAN_BY:S/%CPANSORT%/${_PERL_CPAN_SORT}/:S/%SUBDIR%\///:S/%SUBDIRPLUS%\//${PORTNAME:C/-.*//}\//}
 .else
-    MASTER_SITE_PERL_CPAN=${MASTER_SITE_PERL_CPAN_BY:S/%CPANSORT%/${_PERL_CPAN_SORT}/}
+    MASTER_SITE_PERL_CPAN=${MASTER_SITE_PERL_CPAN_BY:S/%CPANSORT%/${_PERL_CPAN_SORT}/:S/%SUBDIRPLUS%\///}
 .endif
 
 .endif
@@ -1161,7 +1232,6 @@ MASTER_SITE_SUNSITE+= \
 	ftp://ftp.nvg.ntnu.no/pub/mirrors/metalab.unc.edu/%SUBDIR%/ \
 	ftp://ftp.icm.edu.pl/pub/Linux/sunsite/%SUBDIR%/ \
 	ftp://ftp.cse.cuhk.edu.hk/pub4/Linux/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/Linux/metalab.unc.edu/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/Linux/sunsite/%SUBDIR%/ \
 	ftp://ftp.sun.ac.za/pub/mirrors/sunsite.unc.edu/pub/Linux/%SUBDIR%/
 .endif
@@ -1234,37 +1304,6 @@ MASTER_SITE_TUCOWS+= \
 	http://iinets.linux.tucows.com/files/%SUBDIR%/
 .endif
 
-# List:		http://www.vim.org/mirrors.php
-# Updated:	2015-01-03
-# Please make sure mirrors end in /unix/
-.if !defined(IGNORE_MASTER_SITE_VIM)
-MASTER_SITE_VIM+= \
-	http://mirrors-usa.go-parts.com/pub/vim/unix/ \
-	http://ftp2.uk.vim.org/pub/vim/unix/ \
-	http://ftp.vim.ossmirror.de/pub/vim/unix/ \
-	http://ftp.stust.edu.tw/vim/unix/ \
-	http://vim.cybermirror.org/unix/ \
-	http://www.netgull.com/vim/unix/ \
-	http://ftp2.jp.vim.org/pub/vim/unix/ \
-	http://mirrors.go-parts.com/pub/vim/unix/ \
-	http://artfiles.org/vim.org/unix/ \
-	http://ftp2.kr.vim.org/pub/vim/unix/ \
-	http://mirror.netinch.com/pub/vim/unix/ \
-	http://ftp.es.vim.org/pub/vim/unix/ \
-	http://ftp.gr.vim.org/pub/vim/unix/ \
-	http://tweedo.com/mirror/ftp.vim.org/unix/ \
-	http://mirrors-br.go-parts.com/pub/vim/unix/ \
-	http://ftp2.tw.vim.org/pub/vim/unix/ \
-	http://mirrors-au.go-parts.com/pub/vim/unix/ \
-	http://mirrors-uk.go-parts.com/pub/vim/unix/ \
-	http://ftp.tw.vim.org/pub/vim/unix/ \
-	http://funnyshare.org/mirrors/vim/unix/ \
-	http://mirrors-ru.go-parts.com/pub/vim/unix/ \
-	http://servingzone.com/mirrors/vim/unix/ \
-	http://ftp.ro.vim.org/mirrors/ftp.vim.org/unix/ \
-	http://vim.mirror.fr/unix/
-.endif
-
 .if !defined(IGNORE_MASTER_SITE_WINDOWMAKER)
 MASTER_SITE_WINDOWMAKER+= \
 	ftp://ftp.windowmaker.info/pub/%SUBDIR%/ \
@@ -1332,12 +1371,11 @@ MASTER_SITE_KERNEL_ORG+= \
 MASTER_SITES_ABBREVS=	CPAN:PERL_CPAN \
 			GH:GITHUB \
 			GHC:GITHUB_CLOUD \
-			GHL:GITHUB_LEGACY \
 			LODEV:LIBREOFFICE_DEV \
 			NL:NETLIB \
+			RG:RUBYGEMS \
 			SF:SOURCEFORGE \
-			SFJP:SOURCEFORGE_JP \
-			RG:RUBYGEMS
+			SFJP:SOURCEFORGE_JP
 MASTER_SITES_SUBDIRS=	APACHE_COMMONS_BINARIES:${PORTNAME:S,commons-,,} \
 			APACHE_COMMONS_SOURCE:${PORTNAME:S,commons-,,} \
 			APACHE_JAKARTA:${PORTNAME:S,-,/,}/source \
@@ -1345,13 +1383,15 @@ MASTER_SITES_SUBDIRS=	APACHE_COMMONS_BINARIES:${PORTNAME:S,commons-,,} \
 			CHEESESHOP:source/${DISTNAME:C/(.).*/\1/}/${DISTNAME:C/(.*)-[0-9].*/\1/} \
 			DEBIAN:pool/main/${PORTNAME:C/^((lib)?.).*$/\1/}/${PORTNAME} \
 			FARSIGHT:${PORTNAME} \
+			FESTIVAL:${PORTVERSION} \
 			GCC:releases/${DISTNAME} \
+			GENTOO:distfiles \
+			GIMP:${PORTNAME}/${PORTVERSION:R}/ \
 			GITHUB:${GH_ACCOUNT}/${GH_PROJECT}/tar.gz/${GH_TAGNAME}?dummy=/ \
 			GITHUB_CLOUD:${GH_ACCOUNT}/${GH_PROJECT}/ \
-			GITHUB_LEGACY:${GH_ACCOUNT}/${GH_PROJECT}/legacy.tar.gz/${GH_TAGNAME}?dummy=/ \
 			GNOME:sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/} \
-			GIMP:${PORTNAME}/${PORTVERSION:R}/ \
 			GNU:${PORTNAME} \
+			GNUPG:${PORTNAME} \
 			GNU_ALPHA:${PORTNAME} \
 			HORDE:${PORTNAME} \
 			LIBREOFFICE_DEV:${PORTNAME} \
@@ -1359,6 +1399,8 @@ MASTER_SITES_SUBDIRS=	APACHE_COMMONS_BINARIES:${PORTNAME:S,commons-,,} \
 			MOZDEV:${PORTNAME:tl} \
 			NETLIB:${PORTNAME} \
 			PERL_CPAN:${PORTNAME:C/-.*//} \
+			QT:archive/qt/${PORTVERSION:R} \
+			SAMBA:${PORTNAME} \
 			SAVANNAH:${PORTNAME:tl} \
 			SOURCEFORGE:${PORTNAME:tl}/${PORTNAME:tl}/${PORTVERSION} \
 			XFCE:xfce/${XFCE_MASTER_SITE_VER}/src
@@ -1385,11 +1427,13 @@ _site_group_=	${_site_:S/^${_site_:C@^(.*):[^/:]+$@\1@}//:S/^://}
 _site_url_=	${_abbrev_:C/.*://}
 .			endif
 .		endfor
-.		for _subdir_ in ${MASTER_SITES_SUBDIRS}
-.			if ${_site_url_} == ${_subdir_:C/:.*//} && !defined(MASTER_SITE_SUBDIR)
+.		if !defined(MASTER_SITE_SUBDIR)
+.			for _subdir_ in ${MASTER_SITES_SUBDIRS}
+.				if ${_site_url_} == ${_subdir_:C/:.*//}
 _site_subdir_?=	${_subdir_:C/.*://}
-.			endif
-.		endfor
+.				endif
+.			endfor
+.		endif
 .		ifdef MASTER_SITE_${_site_url_}
 .			ifdef _site_subdir_
 MASTER_SITES_EXP+=	${MASTER_SITE_${_site_url_}:S^%SUBDIR%^${_site_subdir_}^:S/$/:${_site_group_}/:S/:$//}
@@ -1426,11 +1470,13 @@ _site_group_=	${_site_:S/^${_site_:C@^(.*):[^/:]+$@\1@}//:S/^://}
 _site_url_=	${_abbrev_:C/.*://}
 .			endif
 .		endfor
-.		for _subdir_ in ${MASTER_SITES_SUBDIRS}
-.			if ${_site_url_} == ${_subdir_:C/:.*//} && !defined(MASTER_SITE_SUBDIR)
+.		if !defined(MASTER_SITE_SUBDIR)
+.			for _subdir_ in ${MASTER_SITES_SUBDIRS}
+.				if ${_site_url_} == ${_subdir_:C/:.*//}
 _site_subdir_?=	${_subdir_:C/.*://}
-.			endif
-.		endfor
+.				endif
+.			endfor
+.		endif
 .		ifdef MASTER_SITE_${_site_url_}
 .			ifdef _site_subdir_
 PATCH_SITES_EXP+=	${MASTER_SITE_${_site_url_}:S^%SUBDIR%^${_site_subdir_}^:S/$/:${_site_group_}/:S/:$//}

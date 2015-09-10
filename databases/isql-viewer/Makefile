@@ -6,9 +6,7 @@ PORTVERSION=	2.1.8
 PORTREVISION=	4
 CATEGORIES=	databases java
 MASTER_SITES=	SF/isql/Stand%20Alone%20Jars/Version%20${PORTVERSION}:isql \
-		${MASTER_SITE_APACHE:S/$/:bsf/}
-MASTER_SITE_SUBDIR=	isql/:isql \
-			ws/soap/version-2.2/:bsf
+		APACHE/ws/soap/version-2.2:bsf
 DISTFILES=	${ISQL_JAR}:isql \
 		${BSF_JAR}:bsf
 EXTRACT_ONLY=	# none

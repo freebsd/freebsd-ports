@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- portell.py.orig
 +++ portell.py
 @@ -6,7 +6,7 @@

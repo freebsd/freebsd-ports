@@ -1,10 +1,12 @@
 bin/ikiwiki
 bin/ikiwiki-calendar
+bin/ikiwiki-comment
 bin/ikiwiki-makerepo
 bin/ikiwiki-transition
 bin/ikiwiki-update-wikilist
 @sample %%ETCDIR%%/auto-blog.setup.sample
 @sample %%ETCDIR%%/auto.setup.sample
+@sample %%ETCDIR%%/wikilist.sample
 lib/ikiwiki/plugins/proxy.py
 lib/ikiwiki/plugins/rst
 %%SITE_PERL%%/IkiWiki.pm
@@ -32,6 +34,7 @@ lib/ikiwiki/plugins/rst
 %%SITE_PERL%%/IkiWiki/Plugin/editdiff.pm
 %%SITE_PERL%%/IkiWiki/Plugin/editpage.pm
 %%SITE_PERL%%/IkiWiki/Plugin/edittemplate.pm
+%%SITE_PERL%%/IkiWiki/Plugin/emailauth.pm
 %%SITE_PERL%%/IkiWiki/Plugin/embed.pm
 %%SITE_PERL%%/IkiWiki/Plugin/external.pm
 %%SITE_PERL%%/IkiWiki/Plugin/favicon.pm
@@ -61,6 +64,7 @@ lib/ikiwiki/plugins/rst
 %%SITE_PERL%%/IkiWiki/Plugin/listdirectives.pm
 %%SITE_PERL%%/IkiWiki/Plugin/localstyle.pm
 %%SITE_PERL%%/IkiWiki/Plugin/lockedit.pm
+%%SITE_PERL%%/IkiWiki/Plugin/loginselector.pm
 %%SITE_PERL%%/IkiWiki/Plugin/map.pm
 %%SITE_PERL%%/IkiWiki/Plugin/mdwn.pm
 %%SITE_PERL%%/IkiWiki/Plugin/mercurial.pm
@@ -137,6 +141,7 @@ lib/ikiwiki/plugins/rst
 %%SITE_PERL%%/IkiWiki/Wrapper.pm
 %%W3M%%libexec/w3m/cgi-bin/ikiwiki-w3m.cgi
 man/man1/ikiwiki-calendar.1.gz
+man/man1/ikiwiki-comment.1.gz
 man/man1/ikiwiki-makerepo.1.gz
 man/man1/ikiwiki-transition.1.gz
 man/man1/ikiwiki-update-wikilist.1.gz
@@ -187,6 +192,7 @@ sbin/ikiwiki-mass-rebuild
 %%DATADIR%%/basewiki/templates/note.mdwn
 %%DATADIR%%/basewiki/templates/popup.mdwn
 %%DATADIR%%/basewiki/wikiicons/diff.png
+%%DATADIR%%/basewiki/wikiicons/email.png
 %%DATADIR%%/basewiki/wikiicons/openidlogin-bg.gif
 %%DATADIR%%/basewiki/wikiicons/revert.png
 %%DATADIR%%/basewiki/wikiicons/search-bg.gif
@@ -282,8 +288,6 @@ sbin/ikiwiki-mass-rebuild
 %%PO4A%%%%DATADIR%%/locale/da/basewiki/sandbox.mdwn
 %%PO4A%%%%DATADIR%%/locale/da/basewiki/shortcuts.mdwn
 %%PO4A%%%%DATADIR%%/locale/da/basewiki/templates.mdwn
-%%PO4A%%%%DATADIR%%/locale/da/basewiki/templates/note.mdwn
-%%PO4A%%%%DATADIR%%/locale/da/basewiki/templates/popup.mdwn
 %%PO4A%%%%DATADIR%%/locale/da/directives/ikiwiki/directive/aggregate.mdwn
 %%PO4A%%%%DATADIR%%/locale/da/directives/ikiwiki/directive/brokenlinks.mdwn
 %%PO4A%%%%DATADIR%%/locale/da/directives/ikiwiki/directive/calendar.mdwn
@@ -454,14 +458,12 @@ sbin/ikiwiki-mass-rebuild
 %%PO4A%%%%DATADIR%%/locale/fr/directives/ikiwiki/directive/toggle.mdwn
 %%PO4A%%%%DATADIR%%/locale/fr/directives/ikiwiki/directive/version.mdwn
 %%PO4A%%%%DATADIR%%/locale/fr/smiley/smileys.mdwn
-%%DATADIR%%/openid-selector/ikiwiki/openid/aol.png
-%%DATADIR%%/openid-selector/ikiwiki/openid/goa-account-flickr.png
-%%DATADIR%%/openid-selector/ikiwiki/openid/goa-account-google.png
-%%DATADIR%%/openid-selector/ikiwiki/openid/goa-account-yahoo.png
-%%DATADIR%%/openid-selector/ikiwiki/openid/livejournal.png
-%%DATADIR%%/openid-selector/ikiwiki/openid/openid-jquery.js
-%%DATADIR%%/openid-selector/ikiwiki/openid/verisign.png
-%%DATADIR%%/openid-selector/ikiwiki/openid/wordpress.png
+%%DATADIR%%/login-selector/ikiwiki/login-selector/aol.png
+%%DATADIR%%/login-selector/ikiwiki/login-selector/goa-account-flickr.png
+%%DATADIR%%/login-selector/ikiwiki/login-selector/goa-account-yahoo.png
+%%DATADIR%%/login-selector/ikiwiki/login-selector/login-selector.js
+%%DATADIR%%/login-selector/ikiwiki/login-selector/verisign.png
+%%DATADIR%%/login-selector/ikiwiki/login-selector/wordpress.png
 %%DATADIR%%/osm/ikiwiki/images/osm.png
 %%DATADIR%%/osm/ikiwiki/osm.js
 %%DATADIR%%/po/cs/basewiki/ikiwiki.cs.po
@@ -739,12 +741,13 @@ sbin/ikiwiki-mass-rebuild
 %%DATADIR%%/templates/editfailedsave.tmpl
 %%DATADIR%%/templates/editpage.tmpl
 %%DATADIR%%/templates/editpagegone.tmpl
+%%DATADIR%%/templates/emailauth.tmpl
 %%DATADIR%%/templates/feedlink.tmpl
 %%DATADIR%%/templates/googleform.tmpl
 %%DATADIR%%/templates/inlinepage.tmpl
+%%DATADIR%%/templates/login-selector.tmpl
 %%DATADIR%%/templates/microblog.tmpl
 %%DATADIR%%/templates/notifyemail.tmpl
-%%DATADIR%%/templates/openid-selector.tmpl
 %%DATADIR%%/templates/page.tmpl
 %%DATADIR%%/templates/passwordmail.tmpl
 %%DATADIR%%/templates/pocreatepage.tmpl

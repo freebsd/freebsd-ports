@@ -14,7 +14,10 @@ PORTSCOUT=	limit:^1\.2\. skipb:1
 USE_PHP=	pcre session
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes
+NO_ARCH=	yes
 
+USES=		cpe
+CPE_VENDOR=	craig_knudsen
 WWWDIR=		${PREFIX}/www/${PORTNAME:tl}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:tl}
 DEFAULT_VERSIONS+=	php=5

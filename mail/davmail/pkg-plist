@@ -14,6 +14,7 @@ share/applications/davmail.desktop
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Java/jcifs-1.3.14.jar
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Java/jdom-1.0.jar
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Java/libgrowl-0.2.jar
+%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Java/libgrowl.jnilib
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Java/log4j-1.2.16.jar
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Java/mail-1.4.3.jar
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Java/slf4j-api-1.3.1.jar
@@ -24,8 +25,6 @@ share/applications/davmail.desktop
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Java/xercesImpl-2.8.1.jar
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/MacOS/davmail
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/MacOS/libgrowl.jnilib
-%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/PkgInfo
-%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/en.lproj/Localizable.strings
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/tray.icns
 %%JAVASHAREDIR%%/davmail/davmail.jar
 %%JAVASHAREDIR%%/davmail/davmail.png

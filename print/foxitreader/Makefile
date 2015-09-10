@@ -5,9 +5,8 @@ PORTNAME=	foxitreader
 PORTVERSION=	1.1.0
 PORTREVISION=	3
 CATEGORIES=	print
-MASTER_SITES=	http://cdn04.foxitsoftware.com/pub/foxit/%SUBDIR%/:reader,manual
-MASTER_SITE_SUBDIR=	reader/desktop/linux/1.x/${PORTVERSION:R}/enu/:reader \
-			manual/enu/:manual
+MASTER_SITES=	http://cdn04.foxitsoftware.com/pub/foxit/reader/desktop/linux/1.x/${PORTVERSION:R}/enu/:reader
+			
 DISTFILES=	FoxitReader-${PORTVERSION}.tar.bz2:reader
 EXTRACT_ONLY=	FoxitReader-${PORTVERSION}.tar.bz2
 
@@ -33,6 +32,7 @@ WRKSRC=	${WRKDIR}/${PORTVERSION:R}-release
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
+MASTER_SITES+=	http://cdn04.foxitsoftware.com/pub/foxit/manual/enu/:manual
 DISTFILES+=	FoxitReader${PORTVERSION:R}ForLinux_Manual.pdf:manual
 .endif
 

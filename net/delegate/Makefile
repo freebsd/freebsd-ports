@@ -43,7 +43,7 @@ post-install:
 	@${MKDIR} ${WRKDIR}/tmp
 	@${CP} ${STAGEDIR}${PREFIX}/sbin/delegated ${WRKDIR}/tmp/dg
 	@${CHMOD} +w ${STAGEDIR}${PREFIX}/sbin/delegated
-	@${WRKDIR}/tmp/dg -Fesign -w ${STAGEDIR}${PREFIX}/sbin/delegated
+	@${WRKDIR}/tmp/dg DGROOT=${WRKDIR}/tmp/ -Fesign -w ${STAGEDIR}${PREFIX}/sbin/delegated
 	@${CHMOD} -w ${STAGEDIR}${PREFIX}/sbin/delegated
 
 .include <bsd.port.mk>

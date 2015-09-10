@@ -25,7 +25,12 @@ include/perforce/macfile.h
 include/perforce/mapapi.h
 include/perforce/md5.h
 include/perforce/msgclient.h
+include/perforce/msgdb.h
+include/perforce/msgdm.h
+include/perforce/msgos.h
+include/perforce/msgrpc.h
 include/perforce/msgserver.h
+include/perforce/msgsupp.h
 include/perforce/netbuffer.h
 include/perforce/netconnect.h
 include/perforce/netportparser.h
@@ -45,6 +50,7 @@ include/perforce/strops.h
 include/perforce/strtable.h
 include/perforce/strxml.h
 include/perforce/threading.h
+include/perforce/ticket.h
 include/perforce/validate.h
 include/perforce/vararray.h
 include/perforce/web822.h

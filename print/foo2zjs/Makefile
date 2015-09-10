@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	foo2zjs
-PORTVERSION=	20140417
+PORTVERSION=	20150511
+PORTREVISION=	1
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
-		${MASTER_SITE_LOCAL:S,$,bsam/${PORTNAME}/,}  \
+MASTER_SITES=	GOOGLE_CODE \
+		LOCAL/bsam/${PORTNAME}  \
 		ftp://ftp.wart.ru/pub/FreeBSD/ports/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,9 +18,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/foomatic/db/oldprinterids:${PORTSDIR}/print/foom
 		gsed:${PORTSDIR}/textproc/gsed
 
 PROJECTHOST=	bsdistfiles
-USE_GHOSTSCRIPT=yes
-USES=		gmake shebangfix
-SHEBANG_FILES=	msexpand
+USES=		ghostscript gmake shebangfix
+SHEBANG_FILES=	msexpand printer-profile.sh
 SUB_FILES=	pkg-message ${DEVDCONF_FILE}
 EXTRAFILES=	msexpand getweb
 DEVDCONF_FILE=	${PORTNAME}.conf

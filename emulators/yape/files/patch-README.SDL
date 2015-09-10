@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- README.SDL.orig
 +++ README.SDL
 @@ -80,7 +80,7 @@

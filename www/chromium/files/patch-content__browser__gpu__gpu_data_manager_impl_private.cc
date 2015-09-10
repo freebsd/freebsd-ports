@@ -1,5 +1,5 @@
---- content/browser/gpu/gpu_data_manager_impl_private.cc.orig	2014-10-10 08:54:14 UTC
-+++ content/browser/gpu/gpu_data_manager_impl_private.cc
+--- content/browser/gpu/gpu_data_manager_impl_private.cc.orig	2015-05-13 18:35:46.000000000 -0400
++++ content/browser/gpu/gpu_data_manager_impl_private.cc    2015-05-20 11:59:04.537631000 -0400
 @@ -471,7 +471,9 @@
    gpu_info.gl_renderer = gl_renderer;
    gpu_info.gl_version = gl_version;
@@ -10,7 +10,7 @@
  
    UpdateGpuInfo(gpu_info);
    UpdateGpuSwitchingManager(gpu_info);
-@@ -514,10 +516,12 @@
+@@ -513,10 +515,12 @@
      // Also declare the driver_vendor to be osmesa to be able to specify
      // exceptions based on driver_vendor==osmesa for some blacklist rules.
      gpu_info.driver_vendor = gfx::kGLImplementationOSMesaName;
@@ -23,13 +23,13 @@
    }
  #if defined(ARCH_CPU_X86_FAMILY)
    if (!gpu_info.gpu.vendor_id || !gpu_info.gpu.device_id) {
-@@ -569,7 +573,9 @@
-   if (use_swiftshader_ || ShouldUseWarp())
+@@ -575,7 +579,9 @@
      return;
  
+   bool was_info_available = IsCompleteGpuInfoAvailable();
 +#ifndef __FreeBSD__
    gpu::MergeGPUInfo(&gpu_info_, gpu_info);
 +#endif
-   if (IsCompleteGpuInfoAvailable())
+   if (IsCompleteGpuInfoAvailable()) {
      complete_gpu_info_already_requested_ = true;
- 
+   } else if (was_info_available) {

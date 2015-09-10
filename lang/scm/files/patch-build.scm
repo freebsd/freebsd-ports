@@ -1,12 +1,5 @@
 --- build.scm	2009-08-04 03:35:57.000000000 +0900
 +++ build.scm	2015-01-23 16:23:32.000000000 -0500
-@@ -618,5 +618,5 @@
- 
-      (nostart gcc "" "-e __start -nostartfiles" #f ("ecrt0.c") ())
--     (dump gcc "" "" #f ("unexelf.c" "gmalloc.c") ())
-+     (dump gcc "" "" #f ("unexelf.c") ())
- 
-      (m hp-ux "" "-lm" #f () ())
 @@ -665,14 +665,15 @@
       (dump darwin "" "" #f ("unexmacosx.c" "lastfile.c") ())
       (dlll darwin "-DSUN_DL" "-ldl" "" () ())

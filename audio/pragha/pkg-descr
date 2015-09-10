@@ -1,0 +1,18 @@
+Pragha is a Lightweight Music Player, based on GTK, and SQLite.
+
+Main features:
+* Full integration with GTK+3
+* Library with multiple views, according tags or folder structure
+* Search, filtering and queue songs on current playlist
+* Playing and edit tag of mp3, m4a, ogg, flac, asf, wma, and ape files
+* Playlist management: Exporting M3U and read M3U, PLS, XSPF and WAX
+   playlists.
+* Playback control with command line
+
+Extensible by plugins:
+* AcoustID: Get metadata on AcoustID service
+* Global Hotkeys: Control Pragha with multimedia keys
+* Notification: Show notification when change songs
+* Get radios: Search radios on TuneIn service
+
+WWW: http://pragha-music-player.github.io/

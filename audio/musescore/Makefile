@@ -3,7 +3,7 @@
 
 PORTNAME=	musescore
 PORTVERSION=	1.3
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	SF/mscore/mscore/MuseScore-${PORTVERSION}/
 DISTNAME=	mscore-${PORTVERSION}
@@ -12,12 +12,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free music composition & notation software
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/mscore/COPYING
 
 BUILD_DEPENDS=	qtscriptgenerator>0:${PORTSDIR}/devel/qtscriptgenerator
 LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 RUN_DEPENDS=	qtscriptgenerator>0:${PORTSDIR}/devel/qtscriptgenerator
 
-USES=		tar:bzip2 cmake:outsource
+USES=		desktop-file-utils tar:bzip2 cmake:outsource
 USE_QT4=	corelib designer gui network script scripttools svg webkit xml \
 		linguisttools_build moc_build qmake_build rcc_build uic_build
 CMAKE_SOURCE_PATH=	${WRKSRC}/mscore
@@ -38,7 +39,7 @@ JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
 JACK_CMAKE_ON=		-DBUILD_JACK:BOOL=ON
 JACK_CMAKE_OFF=		-DBUILD_JACK:BOOL=OFF
 
-PORTAUDIO_LIB_DEPENDS=	libportaudio.so.2:${PORTSDIR}/audio/portaudio2
+PORTAUDIO_LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio
 PORTAUDIO_CMAKE_ON=	-DBUILD_PORTAUDIO:BOOL=ON
 PORTAUDIO_CMAKE_OFF=	-DBUILD_PORTAUDIO:BOOL=OFF
 

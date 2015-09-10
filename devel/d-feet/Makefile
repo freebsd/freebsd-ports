@@ -5,8 +5,7 @@ PORTNAME=	d-feet
 PORTVERSION=	0.1.12
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/d-feet/0.1
+MASTER_SITES=	GNOME/sources/d-feet/0.1
 
 MAINTAINER=	thinker@codemud.net
 COMMENT=	D-Feet is a D-Bus debugger written in PyGtk+ by John (J5) Palmieri

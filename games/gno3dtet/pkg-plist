@@ -24,8 +24,3 @@ share/sounds/gno3dtet/pause.wav
 share/sounds/gno3dtet/score.wav
 share/sounds/gno3dtet/screwd.wav
 %%NLS%%share/locale/fr/LC_MESSAGES/gno3dtet.mo
-@dirrm share/sounds/gno3dtet
-@dirrm share/omf/gno3dtet
-@dirrm share/gnome/help/gno3dtet/C
-@dirrm share/gnome/help/gno3dtet
-@dirrmtry share/games

@@ -3,7 +3,7 @@
 
 PORTNAME=	dvdrip
 PORTVERSION=	0.98.11
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	multimedia
 MASTER_SITES=	CPAN http://www.exit1.org/dvdrip/dist/
 MASTER_SITE_SUBDIR=	CPAN:JRED
@@ -49,12 +49,17 @@ SHEBANG_FILES=	bin/dvdrip*
 
 MAKE_JOBS_UNSAFE=	yes
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${PERL} -pi -e 's#/usr/sbin/fping#${LOCALBASE}/sbin/fping#' \
 		${WRKSRC}/lib/Video/DVDRip/Cluster/Master.pm \
 		${WRKSRC}/lib/Video/DVDRip/Depend.pm
 	@${FIND} ${WRKSRC} -name \*.orig -delete
+
+post-install:
+.for f in dvdrip-progress dvdrip-splitpipe
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/bin/${f}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${f}
+	${CHMOD} u-w ${STAGEDIR}${PREFIX}/bin/${f}
+.endfor
 
 .include <bsd.port.mk>

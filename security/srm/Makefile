@@ -4,10 +4,9 @@
 PORTNAME=	srm
 PORTVERSION=	1.2.12
 CATEGORIES=	security sysutils
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION} \
-			${PORTNAME}/old_releases \
-			${PORTNAME}/old_releases/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION} \
+		SF/${PORTNAME}/old_releases \
+		SF/${PORTNAME}/old_releases/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure rm, a utility which destroys file contents before unlinking

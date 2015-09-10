@@ -2,8 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	tcllib
-PORTVERSION=	1.17
+DISTVERSION=	1_17
+PORTREVISION=	1
 CATEGORIES=	devel tcl
+MASTER_SITES=	http://aldan.algebra.com/~mi/port-stuff/
+DISTFILES=	tcltk-tcllib-${PORTVERSION}-tcllib_${DISTVERSION}_GH0.tar.gz
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Collection of utility modules for Tcl
@@ -13,18 +16,15 @@ LICENSE_NAME=	Tcl/Tk License
 LICENSE_FILE=	${WRKSRC}/license.terms
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-OPTIONS_DEFINE=	DOCS MANPAGES
+OPTIONS_DEFINE?=DOCS MANPAGES
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	tcltk
-GH_TAGNAME=	${PORTNAME}_${PORTVERSION:S/./_/}
-
+WRKSRC=		${WRKDIR}/tcllib-tcllib_${DISTVERSION}
 USES+=		tcl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	ac_cv_path_tclsh="${TCLSH}"
-ALL_TARGET=	all
 MAKE_ENV+=	LANG=C
 PORTDOCS=	*
+REINPLACE_ARGS=	-i'""'
 
 INSTALL_ARGS=	-pkgs -pkg-path ${STAGEDIR}${PREFIX}/lib/tcllib \
 		-apps -app-path ${STAGEDIR}${PREFIX}/bin \
@@ -35,7 +35,7 @@ INSTALL_ARGS=	-pkgs -pkg-path ${STAGEDIR}${PREFIX}/lib/tcllib \
 #
 # Man pages
 #
-.if ${PORT_OPTIONS:MMANPAGES}
+.if !empty(${PORT_OPTIONS:MMANPAGES}) && !(defined(ALL_TARGET) && !empty(${ALL_TARGET:Mcritcl}))
 ALL_TARGET+=	nroff-doc
 INSTALL_ARGS+=	-nroff-path ${STAGEDIR}${PREFIX}/man/mann
 PLIST_SUB+=	MAN=""
@@ -47,13 +47,14 @@ PLIST_SUB+=	MAN="@comment "
 #
 # HTML documentation
 #
-.if ${PORT_OPTIONS:MDOCS}
+.if !empty(${PORT_OPTIONS:MDOCS}) && !(defined(ALL_TARGET) && !empty(${ALL_TARGET:Mcritcl}))
 ALL_TARGET+=	html-doc
 INSTALL_ARGS+=	-html-path ${STAGEDIR}${DOCSDIR}
 .else
 INSTALL_ARGS+=	-no-html
 .endif
 
+.if !target(post-patch)
 post-patch:
 #
 # 	Ensure, the detailed output of vendors' self-tests is
@@ -70,11 +71,6 @@ post-patch:
 	${AWK} 'NR > 1 { print h } { h = $$0 } END { ORS = ""; print h }' \
 	   ${WRKSRC}/modules/doctools/tests/text/04 > ${WRKSRC}/modules/doctools/tests/text/04.new
 	${MV} ${WRKSRC}/modules/doctools/tests/text/04.new ${WRKSRC}/modules/doctools/tests/text/04
-#
-#	 .orig files confuse the pt module test suite and eventually get
-#	 installed
-#
-	${FIND} ${WRKSRC} -name "*.orig" -delete
 #
 #	man pages have the .tcllib suffix, so there's no need to have a
 #	tcllib_ prefix too
@@ -97,11 +93,14 @@ post-patch:
 	for man in `${FIND} . -name "*.n"`; do \
 	    ${MV} $$man `echo $$man | ${SED} -e 's|n$$|tcllib.n|'`; \
 	done
+.endif
 
+.if !target(do-install)
 do-install:
 	cd ${WRKSRC} && ${TCLSH} ./installer.tcl ${INSTALL_ARGS}
+.endif
 
-regression-test: build
+test check regression-test: build
 	cd ${WRKSRC} && ${SETENV} LANG=C LC_ALL=C DISPLAY= ${MAKE} test
 
 .include <bsd.port.mk>

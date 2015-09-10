@@ -22,13 +22,11 @@ OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
 
 ATLAS_DESC=	Build with optimized math/atlas instead of builtin
 
-USES=		gettext gmake pathfix pkgconfig
+USES=		autoreconf gettext gmake pathfix pkgconfig
 
 # GCC required due to fortran dependency, e.g., math/atlas
 USE_GCC=	yes
 
-USE_AUTOTOOLS=	aclocal autoconf automake
-AUTOMAKE_ARGS=	--add-missing
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GIMPTOOL=${LOCALBASE}/bin/gimptool-2.0
 

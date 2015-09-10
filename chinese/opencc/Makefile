@@ -4,7 +4,7 @@
 PORTNAME=	opencc
 PORTVERSION=	0.4.3
 CATEGORIES=	chinese converters
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Open Chinese Convert library and utilities
@@ -20,8 +20,6 @@ NLS_USES=	gettext
 NLS_CMAKE_ON=	-DENABLE_GETTEXT=On
 
 OPTIONS_SUB=	yes
-
-BROKEN_powerpc=	Does not install on powerpc: signal 11
 
 post-patch:
 	@${REINPLACE_CMD} -e 's@/usr/local@${LOCALBASE}@g' \

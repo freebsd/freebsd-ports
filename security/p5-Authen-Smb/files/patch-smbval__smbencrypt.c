@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- smbval/smbencrypt.c.orig	Fri Jan 10 01:29:40 2003
 +++ smbval/smbencrypt.c	Fri Jan 10 01:29:44 2003
 @@ -24,7 +24,6 @@

@@ -13,7 +13,8 @@ COMMENT=	CLI to manage IPMI systems
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:bzip2 gmake readline
+USES=		cpe tar:bzip2 gmake readline
+CPE_VENDOR=	sun
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-intf-lan --enable-intf-lanplus \
@@ -28,6 +29,9 @@ PERIODIC_DIR=	etc/periodic/daily
 
 OPTIONS_DEFINE=	FREEIPMI DOCS
 FREEIPMI_DESC=	Enable support for freeipmi
+
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 
 .if defined(WITH_DEBUG)
 CFLAGS+=	-ggdb -Wall

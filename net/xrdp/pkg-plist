@@ -1,4 +1,3 @@
-@stopdaemon xrdp
 bin/xrdp-dis
 bin/xrdp-genkeymap
 bin/xrdp-keygen
@@ -49,17 +48,10 @@ etc/pam.d/xrdp-sesman
 %%JP106%%%%ETCDIR%%/km-e0010411.ini
 %%JP106%%%%ETCDIR%%/km-e0200411.ini
 %%JP106%%%%ETCDIR%%/km-e0210411.ini
-@unexec if cmp -s %D/etc/xrdp/rsakeys.ini.sample %D/etc/xrdp/rsakeys.ini; then rm -f %D/etc/xrdp/rsakeys.ini; fi
-@unexec if cmp -s %D/etc/xrdp/sesman.ini.sample %D/etc/xrdp/sesman.ini; then rm -f %D/etc/xrdp/sesman.ini; fi
-@unexec if cmp -s %D/etc/xrdp/startwm.sh.sample %D/etc/xrdp/startwm.sh; then rm -f %D/etc/xrdp/startwm.sh; fi
-@unexec if cmp -s %D/etc/xrdp/xrdp.ini.sample %D/etc/xrdp/xrdp.ini; then rm -f %D/etc/xrdp/xrdp.ini; fi
 @sample %%ETCDIR%%/rsakeys.ini.sample
 @sample %%ETCDIR%%/sesman.ini.sample
 @sample %%ETCDIR%%/startwm.sh.sample
 @sample %%ETCDIR%%/xrdp.ini.sample
-@exec [ -f %D/etc/xrdp/sesman.ini ] || cp -p %D/etc/xrdp/sesman.ini.sample %D/etc/xrdp/sesman.ini
-@exec [ -f %D/etc/xrdp/startwm.sh ] || cp -p %D/etc/xrdp/startwm.sh.sample %D/etc/xrdp/startwm.sh
-@exec [ -f %D/etc/xrdp/xrdp.ini ] || cp -p %D/etc/xrdp/xrdp.ini.sample %D/etc/xrdp/xrdp.ini
 sbin/xrdp
 sbin/xrdp-chansrv
 sbin/xrdp-sesman

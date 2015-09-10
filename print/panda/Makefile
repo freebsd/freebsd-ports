@@ -15,8 +15,7 @@ COMMENT=	PDF generation library
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
 GNU_CONFIGURE=	yes
@@ -24,7 +23,7 @@ CONFIGURE_ARGS=	--enable-berkeley-db
 CPPFLAGS+=	-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include
 LIBS+=		-L${BDB_LIB_DIR} -L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
-USES=		autoreconf gmake libtool pathfix pkgconfig tar:bzip2
+USES=		autoreconf gmake jpeg libtool pathfix pkgconfig tar:bzip2
 PATHFIX_MAKEFILEIN=	Makefile.am
 USE_BDB=	yes
 USE_LDCONFIG=	yes

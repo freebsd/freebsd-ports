@@ -4,6 +4,7 @@
 
 PORTNAME=	libspectre
 PORTVERSION=	0.2.7
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://libspectre.freedesktop.org/releases/
 
@@ -12,10 +13,9 @@ COMMENT=	Small library for rendering Postscript documents
 
 LICENSE=	GPLv2
 
-USES=		gmake libtool:keepla pathfix pkgconfig
+USES=		gmake libtool:keepla pathfix pkgconfig ghostscript
 USE_LDCONFIG=	yes
 USE_GNOME=	cairo
-USE_GHOSTSCRIPT=yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes

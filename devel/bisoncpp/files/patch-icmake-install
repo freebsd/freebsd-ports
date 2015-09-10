@@ -1,6 +1,6 @@
---- icmake/install.orig	2013-06-21 11:16:34.000000000 +0200
-+++ icmake/install	2013-11-27 22:05:08.000000000 +0100
-@@ -3,7 +3,6 @@
+--- icmake/install.orig	2013-06-21 09:16:34 UTC
++++ icmake/install
+@@ -3,7 +3,6 @@ string setWhere(string where, string def
      if (where == "")
          where = defaultWhere;
  
@@ -8,7 +8,7 @@
      return where;
  }
  
-@@ -13,22 +12,15 @@
+@@ -13,22 +12,15 @@ void install(string what, string where)
  
      if (what == "program")
      {
@@ -34,7 +34,7 @@
          printf("  INSTALLING skeleton files at `" + where + "'\n");
          md(where);
          run("cp skeletons/* " + where);
-@@ -37,8 +29,7 @@
+@@ -37,8 +29,7 @@ void install(string what, string where)
  
      if (what == "man")
      {
@@ -44,7 +44,7 @@
          printf("  INSTALLING the manual page at `", where, "'\n");
          run("gzip -9 < tmp/man/" PROGRAM ".1 > " + where + "/" PROGRAM ".1.gz");
          exit(0);
-@@ -46,21 +37,18 @@
+@@ -46,21 +37,18 @@ void install(string what, string where)
  
      if (what == "manual")
      {
@@ -70,7 +70,7 @@
          printf("  INSTALLING the html-manual page at `", where, "\n");
          run("cp tmp/manhtml/" PROGRAM "man.html " + where);
          exit(0);
-@@ -68,17 +56,14 @@
+@@ -68,17 +56,14 @@ void install(string what, string where)
  
      if (what == "extra")
      {

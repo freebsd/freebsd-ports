@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- config.h.orig	Thu Oct  4 22:18:29 2001
 +++ config.h	Thu Nov 14 22:20:47 2002
 @@ -32,4 +32,12 @@

@@ -1,5 +1,5 @@
 bin/avconv
-%%AVPLAY%%bin/avplay
+%%SDL%%bin/avplay
 bin/avprobe
 include/libav/libavcodec/avcodec.h
 include/libav/libavcodec/avfft.h
@@ -110,7 +110,7 @@ libdata/pkgconfig/libavresample-libav.pc
 libdata/pkgconfig/libavutil-libav.pc
 libdata/pkgconfig/libswscale-libav.pc
 man/man1/avconv.1.gz
-%%AVPLAY%%man/man1/avplay.1.gz
+%%SDL%%man/man1/avplay.1.gz
 man/man1/avprobe.1.gz
 %%DATADIR%%/libvpx-1080p.avpreset
 %%DATADIR%%/libvpx-1080p50_60.avpreset
@@ -148,7 +148,7 @@ man/man1/avprobe.1.gz
 %%DATADIR%%/libx264-veryslow.avpreset
 %%DATADIR%%/libx264-veryslow_firstpass.avpreset
 %%PORTDOCS%%%%DOCSDIR%%/avconv.html
-%%AVPLAY%%%%PORTDOCS%%%%DOCSDIR%%/avplay.html
+%%SDL%%%%PORTDOCS%%%%DOCSDIR%%/avplay.html
 %%PORTDOCS%%%%DOCSDIR%%/avprobe.html
 %%PORTDOCS%%%%DOCSDIR%%/developer.html
 %%PORTDOCS%%%%DOCSDIR%%/faq.html

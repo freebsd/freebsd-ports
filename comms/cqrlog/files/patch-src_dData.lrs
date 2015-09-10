@@ -1,6 +1,6 @@
---- src/dData.lrs.orig	2014-10-03 12:37:57.000000000 -0700
-+++ src/dData.lrs	2014-12-20 19:41:40.000000000 -0800
-@@ -38,7 +38,7 @@
+--- src/dData.lrs.orig	2015-03-04 15:17:21 UTC
++++ src/dData.lrs
+@@ -38,7 +38,7 @@ LazarusResources.Add('TdmData','FORMDATA
    +'ARY KEY,'#6'&            pref VARCHAR(20) NOT NULL,'#6'''            name V'
    +'ARCHAR(100) NOT NULL,'#6'%            cont VARCHAR(6) NOT NULL,'#6'$       '
    +'     utc VARCHAR(12)NOT NULL,'#6'%            lat VARCHAR(10) NOT NULL,'#6

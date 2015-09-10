@@ -36,6 +36,7 @@ include/libxl_event.h
 include/libxl_json.h
 include/libxl_utils.h
 include/libxl_uuid.h
+include/libxlutil.h
 include/xen/COPYING
 include/xen/arch-arm.h
 include/xen/arch-arm/hvm/save.h

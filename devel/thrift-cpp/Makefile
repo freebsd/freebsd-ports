@@ -6,25 +6,19 @@ PORTVERSION=	${THRIFT_PORTVERSION} # to keep in sync with thrift
 PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
+PKGNAMESUFFIX=	-cpp
+MASTER_SITES=		APACHE/thrift/${PORTVERSION}
+DISTNAME=		thrift-${PORTVERSION}
 
 MAINTAINER=	komarov@valerka.net
 COMMENT=	C++ interface to Thrift
 
-PKGNAMESUFFIX=	-cpp
-
-MASTER_SITES=		APACHE
-MASTER_SITE_SUBDIR=	thrift/${PORTVERSION}
-DISTNAME=		thrift-${PORTVERSION}
 DISTINFO_FILE=		${.CURDIR}/../thrift/distinfo
 
 LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
 		libevent.so:${PORTSDIR}/devel/libevent2
 
-USE_AUTOTOOLS=	autoconf autoheader:env aclocal automake
-ACLOCAL_ARGS=	-I${WRKSRC}/aclocal
-AUTOMAKE_ARGS=	--foreign --add-missing --copy
-
-USES=			pkgconfig gmake compiler libtool
+USES=			autoreconf pkgconfig gmake compiler libtool
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
 MAKE_JOBS_UNSAFE=	yes

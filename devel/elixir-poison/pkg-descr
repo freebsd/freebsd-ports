@@ -1,0 +1,8 @@
+Poison is a new JSON library for Elixir focusing on wicked-fast
+speed without sacrificing simplicity, completeness, or correctness.
+Poison takes several approaches to be the fastest JSON library for
+Elixir. Poison uses extensive sub binary matching, a hand-rolled
+parser using several techniques that are known to benefit HiPE for
+native compilation, IO list encoding and single-pass decoding.
+
+WWW: https://github.com/devinus/poison

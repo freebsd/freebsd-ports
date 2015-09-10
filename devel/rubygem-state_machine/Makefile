@@ -9,8 +9,12 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Support for creating state machines for attributes on any Ruby class
 
-USE_RUBY=		yes
-USE_RUBYGEMS=		yes
+LICENSE=	MIT
+
+NO_ARCH=	yes
+
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

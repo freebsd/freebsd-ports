@@ -18,7 +18,7 @@ RUN_DEPENDS=	nagios:${PORTSDIR}/net-mgmt/nagios \
 		${PEARDIR}/HTML/Template/IT.php:${PORTSDIR}/devel/pear-HTML_Template_IT
 
 USE_MYSQL=	yes
-USES=		gettext tar:bzip2
+USES=		cpe gettext tar:bzip2
 USE_PHP=	mysql filter gettext session simplexml
 WANT_PHP_WEB=	yes
 
@@ -27,6 +27,7 @@ GROUPS?=	nagios
 NAGIOSUSER?=	nagios
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}32
 
 SUB_FILES=	pkg-message

@@ -17,7 +17,6 @@ PKGDEINSTALL=	${PKGINSTALL}
 
 WEBPLUGIN_FILES=npplugger.so
 
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 	's|/usr/X11R6/lib/xscreensaver|${LOCALBASE}/bin/xscreensaver-hacks|g ; \

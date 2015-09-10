@@ -2,9 +2,7 @@ bin/papercut
 %%DATADIR%%/papercut.py
 %%DATADIR%%/papercut_cache.py
 %%DATADIR%%/portable_locker.py
-@unexec if cmp -s %D/%%DATADIR%%/settings.py.sample %D/%%DATADIR%%/settings.py; then rm -f %D/%%DATADIR%%/settings.py; fi
-%%DATADIR%%/settings.py.sample
-@exec if [ ! -f %D/%%DATADIR%%/settings.py ] ; then cp -p %D/%F %B/settings.py; fi
+@sample %%DATADIR%%/settings.py.sample
 @exec echo "To use papercut you need to edit %D/%%DATADIR%%/settings.py." |fmt
 %%DATADIR%%/auth/__init__.py
 %%DATADIR%%/auth/mysql.py
@@ -49,8 +47,6 @@ bin/papercut
 @unexec [ -f %D/%%DATADIR%%/storage/phorum_pgsql.pyc ] && rm %D/%%DATADIR%%/storage/phorum_pgsql.pyc || true
 @unexec [ -f %D/%%DATADIR%%/storage/phpbb_mysql.pyc ] && rm %D/%%DATADIR%%/storage/phpbb_mysql.pyc || true
 @unexec [ -f %D/%%DATADIR%%/storage/strutil.pyc ] && rm %D/%%DATADIR%%/storage/strutil.pyc || true
-@dirrm %%DATADIR%%/auth
-@dirrm %%DATADIR%%/storage
-@dirrmtry %%DATADIR%%/cache
-@dirrmtry %%DATADIR%%/logs
+@dir %%DATADIR%%/logs
+@dir %%DATADIR%%/cache
 @unexec rmdir %D/%%DATADIR%% 2> /dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf %D/%%DATADIR%%`` to remove any files left." | fmt

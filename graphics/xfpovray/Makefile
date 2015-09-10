@@ -6,8 +6,7 @@ PORTVERSION=	1.3.1
 PORTREVISION=	13
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.batse.msfc.nasa.gov/~mallozzi/home/software/xforms/src/ \
-		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/graphics/rays/pov
+		SUNSITE/apps/graphics/rays/pov
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical interface to POV-Ray
@@ -18,7 +17,7 @@ RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray-meta
 USES=		tar:tgz uidfix
 USE_XORG=	x11 xext xpm
 MAKEFILE=	${FILESDIR}/BSDmakefile
-MAKE_ENV+=	DOCSDIR="${DOCSDIR}"
+MAKE_ENV=	DOCSDIR="${DOCSDIR}"
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g;" ${WRKSRC}/src/xfpovray.h

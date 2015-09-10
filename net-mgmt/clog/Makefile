@@ -4,10 +4,9 @@
 PORTNAME=	clog
 PORTVERSION=	1.6
 CATEGORIES=	net-mgmt security
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	obrien
+MASTER_SITES=	LOCAL/obrien
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcp connection logger daemon
 
 PATCH_DEPENDS=	rcsdiff:${PORTSDIR}/devel/rcs

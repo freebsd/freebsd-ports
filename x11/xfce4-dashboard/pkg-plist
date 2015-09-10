@@ -14,6 +14,7 @@ share/icons/hicolor/48x48/apps/xfdashboard.png
 share/icons/hicolor/64x64/apps/xfdashboard.png
 share/icons/hicolor/96x96/apps/xfdashboard.png
 share/locale/es/LC_MESSAGES/xfdashboard.mo
+share/locale/fr/LC_MESSAGES/xfdashboard.mo
 share/locale/he/LC_MESSAGES/xfdashboard.mo
 share/locale/it_IT/LC_MESSAGES/xfdashboard.mo
 share/locale/sr/LC_MESSAGES/xfdashboard.mo

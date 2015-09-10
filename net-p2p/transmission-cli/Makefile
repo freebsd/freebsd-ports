@@ -2,7 +2,7 @@
 
 PORTNAME=	transmission
 PORTVERSION=	2.84
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	net-p2p
 #MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
 MASTER_SITES=	http://transmission.cachefly.net/
@@ -13,11 +13,10 @@ COMMENT?=	Lightweight CLI (command line) BitTorrent client and utilities
 
 SLAVEPORT?=	cli
 
-# Odd arrangement here-- cli is MIT, everything else is GPL
-.if ${SLAVEPORT} == cli
-LICENSE=	MIT
-.else
 LICENSE=	GPLv2
+.if ${SLAVEPORT} == cli
+LICENSE+=	MIT
+LICENSE_COMB=	multi
 .endif
 LICENSE_FILE=	${WRKSRC}/COPYING
 
@@ -28,8 +27,6 @@ CONFLICTS_INSTALL=	${PORTNAME}${PKGNAMESUFFIX}-2.5*
 
 OPTIONS_DEFINE=	LITE DOCS
 EXTRACT_AFTER_ARGS=--no-same-owner --no-same-permissions --exclude third-party
-
-.include <bsd.port.options.mk>
 
 .if ${SLAVEPORT} != web
 LIB_DEPENDS?=	${GEN_LIB_DEPENDS}
@@ -69,14 +66,10 @@ EXTRA_CONF_ARGS?=--enable-cli \
 		 --disable-mac \
 		 --disable-nls
 
-.if ${PORT_OPTIONS:MLITE}
-CONFIGURE_ARGS+=--enable-lightweight
-.endif
+LITE_CONFIGURE_ENABLE=	lightweight
 
 EXTRA_PATCHES=	${PATCHDIR}/disable-web
 .endif
-
-USES+=		tar:xz
 
 DOCS=		AUTHORS NEWS README
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}

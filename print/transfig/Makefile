@@ -14,9 +14,8 @@ COMMENT=	Tools to convert Xfig .fig files
 RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
-USES=		alias imake
+USES=		alias ghostscript:run imake
 CFLAGS+=	-Wno-return-type
-USE_GHOSTSCRIPT_RUN=	yes
 USE_XORG=	xpm
 
 MAKE_ARGS+=	INSTALLFLAGS="${COPY}" \

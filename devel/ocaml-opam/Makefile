@@ -2,17 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	opam
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/ocaml/opam/releases/download/${DISTVERSION}/ \
 		http://github.com/ocaml/opam/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	opam-full-${DISTVERSION}
+DIST_SUBDIR=	opam-01
 
 MAINTAINER=	joris@giovannangeli.fr
 COMMENT=	Source-based package manager for OCaml
 
 LICENSE=	GPLv3
+
+RUN_DEPENDS=		camlp4:${PORTSDIR}/devel/ocaml-camlp4
 
 USES=		gmake
 USE_OCAML=	yes
@@ -21,7 +25,7 @@ MAKE_ENV+=	TERM=xterm
 ALL_TARGET=	lib-ext all man
 
 OPTIONS_DEFINE=		RSYNC GIT WGET HG DARCS ASPCUD
-OPTIONS_DEFAULT=	RSYNC GIT WGET
+OPTIONS_DEFAULT=	RSYNC GIT WGET ASPCUD
 
 RSYNC_DESC=		Remote repository synchronized with Rsync
 WGET_DESC=		Remote repository synchronized with git
@@ -30,12 +34,12 @@ HG_DESC=		Remote repository synchronized with mercurial
 DARCS_DESC=		Remote repository synchronized with darcs
 ASPCUD_DESC=		Use aspcud as an external dependencies solver
 
-WGET_RUN_DEPENDS:=	wget:${PORTSDIR}/ftp/wget
-RSYNC_RUN_DEPENDS:=	rsync:${PORTSDIR}/net/rsync
-GIT_RUN_DEPENDS:=	git:${PORTSDIR}/devel/git
-HG_RUN_DEPENDS:=	hg:${PORTSDIR}/devel/mercurial
-DARCS_RUN_DEPENDS:=	darcs:${PORTSDIR}/devel/hs-darcs
-ASPCUD_RUN_DEPENDS:=	aspcud:${PORTSDIR}/math/aspcud
+WGET_RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
+RSYNC_RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
+GIT_RUN_DEPENDS=	git:${PORTSDIR}/devel/git
+HG_RUN_DEPENDS=		hg:${PORTSDIR}/devel/mercurial
+DARCS_RUN_DEPENDS=	darcs:${PORTSDIR}/devel/hs-darcs
+ASPCUD_RUN_DEPENDS=	aspcud:${PORTSDIR}/math/aspcud
 
 MAKE_JOBS_UNSAFE=	yes
 

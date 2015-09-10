@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-media
-PORTVERSION=	1.8.0
+PORTVERSION=	1.10.0
 CATEGORIES=	audio mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -11,7 +11,9 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Multimedia applications for the MATE desktop
 
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra
+LIB_DEPENDS=	libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra \
+		libmatemixer.so:${PORTSDIR}/audio/libmatemixer \
+		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
 
 PORTSCOUT=	limitw:1,even
 
@@ -21,21 +23,10 @@ USE_GNOME=	glib20 gtk20 intlhack libxml2
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	good
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-gtk=2.0
 INSTALLS_ICONS=	yes
-CONFIGURE_ARGS=	--disable-pulseaudio \
-		--enable-gst-mixer-applet
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
-
-GLIB_SCHEMAS=	org.mate.panel.applet.mixer.gschema.xml \
-		org.mate.volume-control.gschema.xml
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|mixer_applet2|mate_mixer_applet2|g' \
-		${WRKSRC}/gst-mixer-applet/Makefile.in \
-		${WRKSRC}/gst-mixer-applet/load.c \
-		${WRKSRC}/gst-mixer-applet/org.mate.panel.applet.MixerAppletFactory.service.in \
-		${WRKSRC}/gst-mixer-applet/org.mate.applets.MixerApplet.mate-panel-applet.in.in
 
 .include <bsd.port.mk>

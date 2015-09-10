@@ -1,6 +1,6 @@
---- libsylph/ssl.c.orig	2014-06-10 06:06:36.000000000 +0200
-+++ libsylph/ssl.c	2015-02-16 16:38:30.082429979 +0100
-@@ -59,6 +59,7 @@
+--- libsylph/ssl.c.orig	2014-06-10 04:06:36 UTC
++++ libsylph/ssl.c
+@@ -59,6 +59,7 @@ static gchar *find_certs_file(const gcha
  		LOOK_FOR("ca-bundle.crt");
  		LOOK_FOR("ca-root.crt");
  		LOOK_FOR("certs.crt");
@@ -8,7 +8,7 @@
  	}
  
  #undef LOOK_FOR
-@@ -117,7 +118,7 @@
+@@ -117,7 +118,7 @@ void ssl_init(void)
  			certs_dir = NULL;
  		}
  #else

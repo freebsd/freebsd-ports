@@ -1,4 +1,4 @@
 Allow inclusion of the pre built jquery themes in the asset pipeline without
 having to edit the files each time.
 
-WWW: https://rubygems.org/gems/jquery-ui-themes
+WWW: https://github.com/fatdude/jquery-ui-themes-rails

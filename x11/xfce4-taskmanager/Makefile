@@ -16,20 +16,17 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake pkgconfig tar:bzip2
-USE_GNOME=	glib20 cairo intltool intlhack
+USE_GNOME=	gtk20 glib20 cairo intltool intlhack
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_SINGLE=	GTK
-OPTIONS_SINGLE_GTK=	GTK2 GTK3
-OPTIONS_DEFAULT=	GTK2
-
-GTK2_USE=		GNOME=gtk20,libwnck
-GTK2_CONFIGURE_ON=	--enable-wnck --disable-wnck3
-GTK3_USE=		GNOME=gtk30,libwnck3
+OPTIONS_DEFINE=	GTK3
+GTK3_USE=	gnome=gtk30,libwnck3
 GTK3_CONFIGURE_ON=	--enable-gtk3 --enable-wnck3 --disable-wnck
+GTK3_USE_OFF=	gnome=libwnck
+GTK3_CONFIGURE_OFF=	--enable-wnck --disable-wnck3
 
-CONFIGURE_ARGS=	--disable-gksu
+CONFIGURE_ARGS+=	--disable-gksu
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|prefix)/$$(DATADIRNAME)|datadir)|' \

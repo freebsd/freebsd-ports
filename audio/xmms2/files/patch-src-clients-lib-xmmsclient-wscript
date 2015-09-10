@@ -1,6 +1,6 @@
---- src/clients/lib/xmmsclient/wscript.orig	2013-05-24 16:42:05.810273309 +0200
-+++ src/clients/lib/xmmsclient/wscript	2013-05-24 17:00:19.345205807 +0200
-@@ -25,19 +25,21 @@
+--- src/clients/lib/xmmsclient/wscript.orig	2011-10-20 19:26:08 UTC
++++ src/clients/lib/xmmsclient/wscript
+@@ -25,19 +25,21 @@ def build(bld):
      else:
          source.extend(["visualization/dummy.c"])
  

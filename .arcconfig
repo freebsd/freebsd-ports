@@ -1,5 +1,6 @@
 {
 	"project.name": "P",
+	"repository.callsign" : "P",
 	"phabricator.uri" : "https://reviews.freebsd.org/",
 	"history.immutable" : true
 }

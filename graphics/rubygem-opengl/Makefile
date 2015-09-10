@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opengl
-PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTVERSION=	0.9.2
 PORTEPOCH=	1
 CATEGORIES=	graphics ruby
 MASTER_SITES=	RG
@@ -12,10 +11,11 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	OpenGL wrapper for Ruby
 
-USE_RUBY=	yes
-USE_RAKE=	yes
-USE_RUBYGEMS=	yes
+LICENSE=	MIT
+
 USE_GL=		glut
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

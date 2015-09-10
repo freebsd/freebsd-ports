@@ -3,6 +3,7 @@
 
 PORTNAME=	GinGin
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,9 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_SITELIBDIR}/fcgi.py:${PORTSDIR}/www/py-fcgi
 
-USES=		python:2
+USES=		python:2 shebangfix
+SHEBANG_FILES=	GinGin/data/config.py.example
+python_OLD_CMD=	env python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

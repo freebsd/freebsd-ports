@@ -12,6 +12,8 @@ COMMENT=	Library for delta compression of streams
 
 LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
 
+CONFLICTS=	librsync1-*
+
 USES=		gmake libtool
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes

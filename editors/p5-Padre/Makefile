@@ -131,9 +131,6 @@ pre-install:
 		${PERL} Build install)
 
 post-install:
-	@(cd ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Wx/Scintilla && \
-		${CHMOD} u+w libwx_gtk2u_scintilla.so && \
-		${STRIP_CMD} libwx_gtk2u_scintilla.so && \
-		${CHMOD} u-w libwx_gtk2u_scintilla.so)
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Wx/Scintilla/libwx_gtk2u_scintilla.so
 
 .include <bsd.port.post.mk>

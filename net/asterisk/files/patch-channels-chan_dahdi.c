@@ -1,6 +1,6 @@
---- channels/chan_dahdi.c.orig	2010-11-09 11:18:39.000000000 +0100
-+++ channels/chan_dahdi.c	2010-11-09 11:22:15.000000000 +0100
-@@ -4688,6 +4688,8 @@
+--- channels/chan_dahdi.c.orig	2014-07-03 21:38:30 UTC
++++ channels/chan_dahdi.c
+@@ -4907,6 +4907,8 @@ static void dahdi_enable_ec(struct dahdi
  		return;
  	}
  	if (p->echocancel.head.tap_length) {
@@ -9,7 +9,7 @@
  #if defined(HAVE_PRI) || defined(HAVE_SS7)
  		switch (p->sig) {
  #if defined(HAVE_PRI)
-@@ -4718,7 +4720,9 @@
+@@ -4937,7 +4939,9 @@ static void dahdi_enable_ec(struct dahdi
  			break;
  		}
  #endif	/* defined(HAVE_PRI) || defined(HAVE_SS7) */
@@ -20,7 +20,7 @@
  		if (res) {
  			ast_log(LOG_WARNING, "Unable to enable echo cancellation on channel %d (%s)\n", p->channel, strerror(errno));
  		} else {
-@@ -4752,8 +4756,9 @@
+@@ -4971,8 +4975,9 @@ static void dahdi_disable_ec(struct dahd
  
  	if (p->echocanon) {
  		struct dahdi_echocanparams ecp = { .tap_length = 0 };

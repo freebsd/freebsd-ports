@@ -5,21 +5,16 @@ PORTNAME=	fox
 PORTVERSION=	1.7.50
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ftp.fox-toolkit.org/pub/ \
-   		ftp://ftp.fox-toolkit.org/pub/
+		ftp://ftp.fox-toolkit.org/pub/
 PKGNAMESUFFIX=	${PORTVERSION:R:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Fast and extensive C++ GUI toolkit -- devel version
+COMMENT=	Fast and extensive C++ GUI toolkit (development version)
 
-OPTIONS_DEFINE=	DOCS JPEG PNG TIFF WEBP
-OPTIONS_DEFAULT=JPEG PNG TIFF WEBP
+BROKEN_powerpc=		missing __sync_bool_compare_and_swap_8()
 
-MAJORVER=	${PORTVERSION:R}
-PLIST_SUB+=	MAJORVER=${MAJORVER}
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${MAJORVER}
-
-GNU_CONFIGURE=	yes
 USES=		libtool pathfix
+GNU_CONFIGURE=	yes
 USE_GL=		glut
 USE_XORG=	sm xft
 USE_LDCONFIG=	yes
@@ -30,10 +25,17 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
 LDFLAGS+=	-L${LOCALBASE}/lib
 PORTDOCS=	*
 
+MAJORVER=	${PORTVERSION:R}
+PLIST_SUB+=	MAJORVER=${MAJORVER}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${MAJORVER}
+
+OPTIONS_DEFINE=	DOCS JPEG PNG TIFF WEBP
+OPTIONS_DEFAULT=	JPEG PNG TIFF WEBP
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJPEG}
-LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+USES+=		jpeg
 .else
 CONFIGURE_ARGS+=--disable-jpeg
 .endif
@@ -56,10 +58,6 @@ LIB_DEPENDS+=	libwebp.so:${PORTSDIR}/graphics/webp
 CONFIGURE_ARGS+=--disable-webp
 .endif
 
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not link on powerpc
-.endif
-
 post-patch:
 # Rename man pages as in manpage.1 --> manpage-17.1 to avoid
 # conflicts with fox14 and fox16
@@ -76,6 +74,6 @@ post-patch:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libFOX-${MAJORVER}.so \
-	    	     ${STAGEDIR}${PREFIX}/lib/libCHART-${MAJORVER}.so
+		${STAGEDIR}${PREFIX}/lib/libCHART-${MAJORVER}.so
 
 .include <bsd.port.mk>

@@ -4,10 +4,7 @@
 PORTNAME=	abi-compliance-checker
 PORTVERSION=	1.99
 CATEGORIES=	devel perl5
-MASTER_SITES=	https://github.com/lvc/${PORTNAME}/archive/ \
-		LOCAL/bf/${DIST_SUBDIR}
-DISTNAME=	${PORTVERSION}
-DIST_SUBDIR=	${PORTNAME}
+MASTER_SITES=	LOCAL/bf/${PORTNAME}
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Checks binary compatibility of two versions of a C/C++ shared library
@@ -17,6 +14,8 @@ LICENSE_COMB=	dual
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	*.pl
+USE_GITHUB=	yes
+GH_ACCOUNT=	lvc
 
 .if defined(MAINTAINER_MODE) || defined(PACKAGE_BUILDING)
 BUILD_DEPENDS?=	exctags:${PORTSDIR}/devel/ctags

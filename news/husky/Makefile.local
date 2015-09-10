@@ -11,8 +11,7 @@ PORTEPOCH=	1
 
 MAINTAINER=	osharoiko@gmail.com
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	husky/husky/1.9-current/2014.05.19
+MASTER_SITES=	SF/husky/husky/1.9-current/2014.05.19
 DISTNAME=	husky-all-1.9-source-20140519
 
 HUSKY_ROOTDIR=	${WRKDIR}/husky

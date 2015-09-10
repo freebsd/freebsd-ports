@@ -15,6 +15,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_ANT=	yes
 ALL_TARGET=	dist
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
 
@@ -23,18 +24,9 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
 VERSION_DATE=	20020712
 
-DOC_FILES=	\
-		gnutella-graph.gif \
-		index.html \
-		nbio.html \
-		profile.gif \
-		sandstorm.html \
-		sandstorm.jpg
-PORTDOCS=	${DOC_FILES} \
-		javadoc
+PORTDOCS=	*
 
-PLIST_FILES=	\
-		%%JAVAJARDIR%%/${PORTNAME:tl}.jar
+PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME:tl}.jar
 
 .include <bsd.port.options.mk>
 
@@ -52,16 +44,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/dist/lib/${PORTNAME:tl}.jar \
 		${STAGEDIR}${JAVAJARDIR}/
 # docs
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-. for doc in ${DOC_FILES}
+.for doc in gnutella-graph.gif index.html nbio.html profile.gif sandstorm.html sandstorm.jpg
 	${INSTALL_DATA} ${WRKSRC}/docs/${doc} ${STAGEDIR}${DOCSDIR}
-. endfor
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/javadoc
-# line taken from textproc/xerces-j maintained by hq@FreeBSD.org
-	cd ${JAVADOC_WRKSRC} && \
-		${FIND} . -type d -exec ${MKDIR} "${STAGEDIR}${DOCSDIR}/javadoc/{}" \; && \
-		${FIND} . -not -type d -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DOCSDIR}/javadoc/{}" \;
-.endif
+.endfor
 
 .include <bsd.port.mk>

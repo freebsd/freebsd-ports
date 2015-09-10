@@ -1,6 +1,6 @@
---- drivers/dummy/dummy_driver.c.orig	2009-02-12 04:44:04.000000000 +0100
-+++ drivers/dummy/dummy_driver.c	2009-02-12 04:44:15.000000000 +0100
-@@ -73,7 +73,7 @@
+--- drivers/dummy/dummy_driver.c.orig	2013-10-04 00:45:25 UTC
++++ drivers/dummy/dummy_driver.c
+@@ -73,7 +73,7 @@ FakeVideoSync( dummy_driver_t *driver )
          }
  }
  

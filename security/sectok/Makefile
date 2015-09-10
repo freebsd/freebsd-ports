@@ -3,7 +3,7 @@
 
 PORTNAME=	sectok
 PORTVERSION=	20030825
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.citi.umich.edu/projects/smartcard/
 EXTRACT_SUFX=	.tgz

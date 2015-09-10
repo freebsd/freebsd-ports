@@ -2,10 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	zsh
-PORTVERSION=	5.0.7
-PORTREVISION=	3
+DISTVERSION=	5.1
 CATEGORIES=	shells
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
+MASTER_SITES=	\
+		http://www.zsh.org/pub/:doc \
+		http://www.zsh.org/pub/ \
+		SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
 		SF/${PORTNAME}/${PORTNAME}-doc/${PORTVERSION}:doc
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -21,7 +23,17 @@ MAKE_JOBS_UNSAFE=	yes
 
 ZSH_VER=	${PORTVERSION}
 
-USES=		iconv ncurses tar:bzip2
+USES=		iconv ncurses shebangfix tar:xz
+SHEBANG_FILES=	Functions/Calendar/calendar_add \
+		Functions/Misc/checkmail \
+		Functions/Misc/run-help \
+		Functions/Misc/sticky-note \
+		Functions/Misc/zcalc \
+		Functions/Misc/zed \
+		Functions/Misc/zkbd
+SHEBANG_LANG=	zsh
+zsh_OLD_CMD=	/bin/zsh
+zsh_CMD=	${PREFIX}/bin/zsh
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include -DBOOL_DEFINED
@@ -73,6 +85,7 @@ CONFIGURE_ENV+=	ac_cv_lib_iconv_libiconv=no
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -i '' -e '1s|zsh|${zsh_CMD}|' ${WRKSRC}/Functions/Misc/run-help-ip
 	@${REINPLACE_CMD} -e '/LIBS/s/-lrt//' ${WRKSRC}/configure
 	@${SED} -i "" -e "s,link=dynamic,link=either," \
 		${WRKSRC}/Src/Modules/*.mdd

@@ -1,4 +1,4 @@
-A Ruby interface for getting system information
-along the lines of the uname Unix command
+A Ruby interface for getting system information along the lines of the uname
+Unix command
 
-WWW: http://rubygems.org/gems/sys-uname/
+WWW: https://github.com/djberg96/sys-uname

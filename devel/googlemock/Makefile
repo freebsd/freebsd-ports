@@ -3,22 +3,22 @@
 
 PORTNAME=	googlemock
 PORTVERSION=	1.7.0
+DISTVERSIONPREFIX=	release-
 CATEGORIES=	devel
-MASTER_SITES=	GOOGLE_CODE \
-		https://googlemock.googlecode.com/svn-history/r407/trunk/scripts/:svn
-DISTNAME=	gmock-${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} gmock_doctor.py:svn
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Library for writing and using C++ mock classes
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	googletest>=1.7.0:${PORTSDIR}/devel/googletest
+BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/ax_pthread.m4:${PORTSDIR}/devel/autoconf-archive \
+		googletest>=1.7.0:${PORTSDIR}/devel/googletest
 LIB_DEPENDS=	libgtest.so:${PORTSDIR}/devel/googletest
 
-USES=		libtool shebangfix zip
+USE_GITHUB=	yes
+GH_ACCOUNT=	google
+
+USES=		autoreconf libtool shebangfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
@@ -33,14 +33,11 @@ OPTIONS_DEFINE=	TEST
 TEST_USES=	python:2,build
 TEST_ALL_TARGET=check
 
-post-extract:
-# XXX gmock_doctor.py is missing from distfile before r455 or 1.8.0
-	${CP} ${DISTDIR}/gmock_doctor.py ${WRKSRC}/scripts
-
 post-patch:
-# enable vendor make install again (revert r562)
-	${REINPLACE_CMD} -E 's/ install-(exec|data)-local//' \
-		${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} '/acx_pthread.m4/d' ${WRKSRC}/configure.ac
+# enable vendor make install again (revert 52277c9)
+	${REINPLACE_CMD} -E 's/install-(exec|data)-local/&-dummy/' \
+		${WRKSRC}/Makefile.am
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/gmock-config ${STAGEDIR}${PREFIX}/bin

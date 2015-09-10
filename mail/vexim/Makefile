@@ -4,8 +4,7 @@
 PORTNAME=	vexim
 DISTVERSION=	2.2.2_rc1
 CATEGORIES=	mail www
-MASTER_SITES=	LOCAL
-MASTER_SITE_SUBDIR=	feld
+MASTER_SITES=	LOCAL/feld
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	feld@FreeBSD.org
@@ -67,8 +66,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

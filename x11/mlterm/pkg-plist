@@ -23,7 +23,7 @@ lib/libkik.so.16.0.0
 lib/libmkf.a
 lib/libmkf.so
 lib/libmkf.so.16
-lib/libmkf.so.16.0.0
+lib/libmkf.so.16.0.1
 lib/libmlterm_core.a
 lib/libmlterm_core.so
 lib/libvte-mlterm.a

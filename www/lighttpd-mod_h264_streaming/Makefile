@@ -6,7 +6,6 @@ CATEGORIES=	www multimedia
 PKGNAMEPREFIX=	lighttpd-
 DISTNAME=	lighttpd-${PORTVERSION}
 
-MAINTAINER=	mat@FreeBSD.org
 COMMENT=	H264 streaming module for lighttpd
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
@@ -25,9 +24,8 @@ PLIST=		${.CURDIR}/pkg-plist
 
 MANUAL_PACKAGE_BUILD=	free for non-commercial use only
 
-PATCH_SITES+=	${MASTER_SITE_LOCAL}
+PATCH_SITES+=	LOCAL/mm
 PATCHFILES+=	lighttpd-1.4.26_mod_h264_streaming-2.2.9.patch.gz
-PATCH_SITE_SUBDIR+=	mm
 
 BUILD_WRKSRC=	${WRKSRC}/src
 ALL_TARGET=	${PORTNAME}.la

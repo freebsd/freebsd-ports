@@ -3,7 +3,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	7.07
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	print
 MASTER_SITES=	# empty
 PKGNAMESUFFIX=	7-commfont
@@ -21,15 +21,11 @@ SUB_FILES=	pkg-message \
 SUB_LIST=	PORTVERSION="${PORTVERSION}" GS_RESDIR="${GS_RESDIR}"
 PLIST_SUB=	GS_RESDIR="${GS_RESDIR}"
 PKGMESSAGE=	${WRKDIR}/pkg-message
-DEPENDS_ARGS+=	-DA4
-# set these forcibly
-USE_GHOSTSCRIPT_RUN=7
+USES=		ghostscript:7,run
 
 CONFLICTS_INSTALL= \
-		ghostscript8-[0-9]* \
-		ghostscript8-nox11-[0-9]* \
-		ghostscript9-[0-9]* \
-		ghostscript9-nox11-[0-9]* \
+		ghostscript[789]-[0-9]* \
+		ghostscript[789]-nox11-[0-9]* \
 		ghostscript9-agpl-[0-9]* \
 		ghostscript9-agpl-nox11-[0-9]*
 

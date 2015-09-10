@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/c-utils/
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert between Gregorian Solar Calendar (SC) and Lunar Calendar (LC)
 
 ALL_TARGET=

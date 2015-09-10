@@ -1,0 +1,7 @@
+renewck checks expiration times of one or more domains and notifies user
+via email about the domains that are approaching expiring.
+
+It is part of dnstools, a set of utilities for DNS management and related
+tasks.
+
+WWW: http://www.gnu.org.ua/software/dnstools/renewck.html

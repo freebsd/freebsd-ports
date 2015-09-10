@@ -4,7 +4,7 @@
 PORTNAME=	mapnik
 PORTVERSION=	2.2.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	13
+PORTREVISION=	15
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://mapnik.s3.amazonaws.com/dist/v${PORTVERSION}/
 
@@ -91,7 +91,7 @@ BUILD_DEPENDS+=	sqlite3>=3.7.12:${PORTSDIR}/databases/sqlite3
 .endif
 
 .if ${PORT_OPTIONS:MJPEG}
-LIB_DEPENDS+=   libjpeg.so:${PORTSDIR}/graphics/jpeg
+USES+=		jpeg
 .else
 MAKE_ARGS+=	JPEG=False
 .endif

@@ -65,11 +65,11 @@ gdm_start()
 
 gdm_stop()
 {
-	/bin/kill -9 $(/bin/cat "${pidfile}")
-	pkill -9 -u gdm
-	pkill -9 X
-	pkill -9 gdm-session-worker
-
+    echo "Stopping ${name}."
+    /bin/kill -9 $(/bin/cat "${pidfile}")
+    pkill -9 -u gdm
+    pkill -9 X
+    pkill -9 gdm-session-worker
 }
 
 load_rc_config ${name}

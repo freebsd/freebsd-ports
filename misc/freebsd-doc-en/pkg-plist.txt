@@ -16,6 +16,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/hubs/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/ldap-auth/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-emulation/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/mailing-list-faq/article.txt

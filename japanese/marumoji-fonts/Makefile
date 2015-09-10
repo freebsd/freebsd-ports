@@ -5,8 +5,7 @@ PORTNAME=	marumoji-fonts
 PORTVERSION=	1.0
 PORTREVISION=	7
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	yoichi
+MASTER_SITES=	LOCAL/yoichi
 DISTFILES=	maru14.bdf.v13.gz maru18.bdf.v10.gz \
 		m18to16.sed \
 		7x14maru.bdf.gz 7x14rkmr.bdf.gz \

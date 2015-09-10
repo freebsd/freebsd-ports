@@ -1,0 +1,7 @@
+Convert::Moji creates objects which can be used to convert between
+different alphabets.
+
+This is basically a helper module for Lingua::JA::Moji.  It was split
+out of that module as a general-purpose converter for any alphabets.
+
+WWW: http://search.cpan.org/dist/Convert-Moji/

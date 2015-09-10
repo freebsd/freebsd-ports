@@ -6,13 +6,10 @@ To activate SquirrelMail, you must complete the following steps:
 2) Make sure the following is set in your php.ini:
    file_uploads = On
 
-3) If you have trouble logging in, add the following to your php.ini:
-   session.auto_start = 1
-
-4) Configure your installation.
+3) Configure your installation.
    SQUIRRELMAIL WILL NOT WORK UNTIL THIS HAS BEEN DONE.
    cd %%SQUIRRELDIR%% && ./configure
 
-5) It is best practice to change the data/user preference directory
+4) It is best practice to change the data/user preference directory
    (under General Options) to somewhere outside of
    %%SQUIRRELDIR%%.

@@ -21,6 +21,7 @@ GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message
 MAKE_ENV=	ETCDIR=${PREFIX}/etc BINDIR=${PREFIX}/bin \
 		MANDIR=${MANPREFIX}/man
+NO_ARCH=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e 's|`which sed`|${SED}|' ${WRKSRC}/configure

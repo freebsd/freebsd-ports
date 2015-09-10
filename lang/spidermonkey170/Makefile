@@ -5,8 +5,7 @@ PORTNAME=		spidermonkey170
 PORTVERSION=		17.0.0
 PORTREVISION=		1
 CATEGORIES=		lang
-MASTER_SITES=		${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	js
+MASTER_SITES=		MOZILLA/js
 DISTNAME=		mozjs${PORTVERSION}
 
 MAINTAINER=		kwm@FreeBSD.org
@@ -58,15 +57,18 @@ UTF8_CFLAGS=		-DJS_C_STRINGS_ARE_UTF8
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == amd64
-CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
-.endif
+CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 
 .if ${PORT_OPTIONS:MDTRACE}
 . if ${OSVERSION} < 1000510
 BROKEN=			dtrace -G crashes with C++ object files
 . endif
 STRIP_CMD=	${TRUE}
+.endif
+
+# ARM needs GCC until https://llvm.org/bugs/show_bug.cgi?id=23244 is fixed
+.if ${ARCH} == "armv6"
+USE_GCC=	yes
 .endif
 
 regression-test: build

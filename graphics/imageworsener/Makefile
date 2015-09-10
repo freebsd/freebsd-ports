@@ -25,7 +25,7 @@ USES=		libtool
 
 JPEG_CONFIGURE_OFF=	--without-jpeg
 JPEG_CONFIGURE_ON=	--with-jpeg-include-dir=${LOCALBASE}/include --with-jpeg-lib-dir=${LOCALBASE}/lib
-JPEG_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+JPEG_USES=		jpeg
 PNG_CONFIGURE_OFF=	--without-png
 PNG_CONFIGURE_ON=	--with-png-include-dir=${LOCALBASE}/include --with-png-lib-dir=${LOCALBASE}/lib
 PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png

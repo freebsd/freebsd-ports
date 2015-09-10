@@ -1,6 +1,8 @@
 bin/be.contacts
 bin/trojita
 lib/libtrojita_plugins.so
+lib/trojita/trojita_plugin_ClearTextPasswordPlugin.so
+lib/trojita/trojita_plugin_QtKeychainPasswordPlugin.so
 share/appdata/trojita.appdata.xml
 share/applications/trojita.desktop
 share/icons/hicolor/32x32/apps/trojita.png

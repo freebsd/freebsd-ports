@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	librarian-puppet
-PORTVERSION=	0.9.17
+PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -9,10 +10,13 @@ MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Tool for management and bundling Puppet modules
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PKGNAMEPREFIX}json>=0:${PORTSDIR}/devel/rubygem-json \
-		${PKGNAMEPREFIX}librarian>=0.1.2:${PORTSDIR}/devel/rubygem-librarian
+RUN_DEPENDS=	${PKGNAMEPREFIX}librarianp>=0.6.3:${PORTSDIR}/devel/rubygem-librarianp \
+		${PKGNAMEPREFIX}puppet_forge1>=1.0:${PORTSDIR}/sysutils/rubygem-puppet_forge1 \
+		${PKGNAMEPREFIX}rsync>0:${PORTSDIR}/net/rubygem-rsync
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

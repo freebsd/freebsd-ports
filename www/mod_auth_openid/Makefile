@@ -3,6 +3,7 @@
 
 PORTNAME=	mod_auth_openid
 PORTVERSION=	0.8
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -36,5 +37,8 @@ post-patch:
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/${PORTNAME}.so
 
 .include <bsd.port.mk>

@@ -1,0 +1,13 @@
+lib/elixir/lib/httpoison/ebin/Elixir.HTTPoison.AsyncChunk.beam
+lib/elixir/lib/httpoison/ebin/Elixir.HTTPoison.AsyncEnd.beam
+lib/elixir/lib/httpoison/ebin/Elixir.HTTPoison.AsyncHeaders.beam
+lib/elixir/lib/httpoison/ebin/Elixir.HTTPoison.AsyncResponse.beam
+lib/elixir/lib/httpoison/ebin/Elixir.HTTPoison.AsyncStatus.beam
+lib/elixir/lib/httpoison/ebin/Elixir.HTTPoison.Base.beam
+lib/elixir/lib/httpoison/ebin/Elixir.HTTPoison.Error.beam
+lib/elixir/lib/httpoison/ebin/Elixir.HTTPoison.Response.beam
+lib/elixir/lib/httpoison/ebin/Elixir.HTTPoison.beam
+lib/elixir/lib/httpoison/ebin/httpoison.app
+lib/elixir/lib/httpoison/lib/httpoison.ex
+lib/elixir/lib/httpoison/lib/httpoison/base.ex
+%%PORTDOCS%%%%DOCSDIR%%/README.md

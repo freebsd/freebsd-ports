@@ -3,17 +3,12 @@
 
 PORTNAME=	docproj
 PORTVERSION=	2.0
-PORTREVISION=	3
+PORTREVISION=	6
 CATEGORIES=	textproc
-MASTER_SITES=	# empty
-DISTFILES=	# empty
-EXTRACT_ONLY=	# empty
 
 MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	The "meta-port" for the FreeBSD Documentation Project
 
-# This dependency list should be kept in sync with the list of
-# required ports in src/release/Makefile.inc.docports.
 RUN_DEPENDS=	links:${PORTSDIR}/www/links1 \
 		pngtopnm:${PORTSDIR}/graphics/netpbm \
 		scr2png:${PORTSDIR}/graphics/scr2png \
@@ -28,14 +23,11 @@ RUN_DEPENDS=	links:${PORTSDIR}/www/links1 \
 		p5-XML-Parser>=2.41:${PORTSDIR}/textproc/p5-XML-Parser \
 		zip:${PORTSDIR}/archivers/zip
 
-USES=		perl5
+USES=		ghostscript:run metaport perl5
 USE_PERL5=	run
-USE_GHOSTSCRIPT_RUN=	yes
-DEPENDS_ARGS+=	BATCH=yes
-NO_BUILD=	yes
 
-OPTIONS_DEFINE=		X11 CJK SVN IGOR FOP JING DBLATEX
-OPTIONS_DEFAULT=	X11 CJK     IGOR
+OPTIONS_DEFINE=		DBLATEX CJK FOP IGOR JING SVN TRANSLATOR
+OPTIONS_DEFAULT=	        CJK     IGOR
 .if !exists(/usr/bin/svnlite)
 OPTIONS_DEFAULT+=	SVN
 .endif
@@ -54,13 +46,16 @@ DBLATEX_DESC=		dblatex PDF renderer (experimental, requires TeXLive)
 DBLATEX_RUN_DEPENDS=	dblatex:${PORTSDIR}/textproc/dblatex \
 			${FONTS}
 DBLATEX_USE=		TEX=xetex
+TRANSLATOR_DESC=	Tools for translators
+TRANSLATOR_RUN_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
 FONTS=	${LOCALBASE}/share/fonts/GentiumPlus/GentiumPlus-R.ttf:${PORTSDIR}/x11-fonts/gentium-plus \
 	${LOCALBASE}/share/fonts/Droid/DroidSans.ttf:${PORTSDIR}/x11-fonts/droid-fonts-ttf \
 	${LOCALBASE}/share/fonts/Lohit/Lohit-Bengali.ttf:${PORTSDIR}/x11-fonts/lohit \
 	${LOCALBASE}/share/fonts/dejavu/DejaVuSansMono.ttf:${PORTSDIR}/x11-fonts/dejavu
 FONTS_CJK=${LOCALBASE}/share/fonts/TrueType/gkai00mp.ttf:${PORTSDIR}/chinese/arphicttf \
-	${LOCALBASE}/share/fonts/OTF/ipam.otf:${PORTSDIR}/japanese/font-ipa
+	${LOCALBASE}/share/fonts/OTF/ipam.otf:${PORTSDIR}/japanese/font-ipa \
+	${LOCALBASE}/share/fonts/nanum-ttf/NanumBarunGothic.ttf:${PORTSDIR}/korean/nanumfonts-ttf
 
 .include <bsd.port.options.mk>
 
@@ -71,16 +66,10 @@ RUN_DEPENDS+=	${FONTS_CJK}
 .endif
 .endif
 
-.if !${PORT_OPTIONS:MX11}
-DEPENDS_ARGS+=	WITHOUT_X11=${WITHOUT_X11}
-.endif
-
 # generate MINIMALDOCPORTS for src/release/Makefile.inc.docports.
 # (XXX: incomplete yet)
 minimaldocports:
 	@${ECHO_CMD} "MINIMALDOCPORTS= \\"
 	@${MAKE} all-depends-list | ${SED} -e 's,^${PORTSDIR}/,	,' -e 's,$$, \\,'
-
-do-install:	# empty
 
 .include <bsd.port.mk>

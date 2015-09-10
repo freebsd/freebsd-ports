@@ -1,0 +1,13 @@
+--- uhidd/usb_hid_usages.orig	2009-07-30 10:46:10 UTC
++++ uhidd/usb_hid_usages
+@@ -1270,8 +1270,8 @@
+ 	0x48	Top Corner Distortion Balance
+ 	0x4A	Bottom Corner Distortion Control
+ 	0x4C	Bottom Corner Distortion Balance
+-	0x56	Horizontal Moiré
+-	0x58	Vertical Moiré
++	0x56	Horizontal Moire
++	0x58	Vertical Moire
+ 	0x5E	Input Level Select
+ 	0x60	Input Source Select
+ 	0x6C	Red Video Black Level

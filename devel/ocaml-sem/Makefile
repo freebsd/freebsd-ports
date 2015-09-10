@@ -3,7 +3,7 @@
 
 PORTNAME=	sem
 PORTVERSION=	0.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://ocaml-sem.sourceforge.net/files/ \
 		SF/ocaml-${PORTNAME}/${PORTNAME}/${PORTVERSION}

@@ -3,4 +3,4 @@ encodings, used in the Haskell XML Toolbox.  ISO Latin 1 - 16, utf8, utf16,
 ASCII are supported. Decoding is done with lasy functions, errors may be
 detected or ignored.
 
-WWW: http://www.fh-wedel.de/~si/HXmlToolbox/index.html
+WWW: https://github.com/UweSchmidt/hxt

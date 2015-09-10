@@ -18,7 +18,7 @@ LIB_DEPENDS=	libespeak.so:${PORTSDIR}/audio/espeak
 
 GNU_CONFIGURE=	yes
 USES=		tar:bzip2 gettext gmake pkgconfig
-USE_GNOME=	gtk20 esound
+USE_GNOME=	gtk20 intltool esound
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 

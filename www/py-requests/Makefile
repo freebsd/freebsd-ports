@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	requests
-PORTVERSION=	2.4.3
+PORTVERSION=	2.7.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,6 +21,6 @@ USE_PYTHON=	autoplist distutils
 CONFLICTS_INSTALL=	py*-requests1-*
 
 regression-test: build
-	@cd ${WRKSRC} && ${PYTHON_CMD} test_requests.py
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>

@@ -4,8 +4,7 @@
 PORTNAME=	netpipes
 PORTVERSION=	4.2
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=kris
+MASTER_SITES=	LOCAL/kris
 DISTNAME=	netpipes-4.2-export
 
 MAINTAINER=	doconnor@gsoft.com.au

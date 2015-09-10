@@ -1,6 +1,6 @@
---- ./channels/Makefile.orig	2010-06-07 22:04:42.000000000 +0200
-+++ ./channels/Makefile	2010-11-06 14:54:36.000000000 +0100
-@@ -27,9 +27,10 @@
+--- channels/Makefile.orig	2015-07-24 22:06:05 UTC
++++ channels/Makefile
+@@ -27,9 +27,10 @@ ifeq ($(OSARCH),linux-gnu)
  endif
  
  ifeq ($(OSARCH),FreeBSD)
@@ -13,7 +13,7 @@
  endif
  
  ifeq ($(OSARCH),NetBSD)
-@@ -86,9 +87,13 @@
+@@ -86,9 +87,13 @@ chan_h323.so: chan_h323.o h323/libchanh3
  else
  chan_h323.so: chan_h323.o h323/libchanh323.a
  	$(ECHO_PREFIX) echo "   [LD] $^ -> $@"

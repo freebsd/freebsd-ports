@@ -1,5 +1,5 @@
---- SConstruct.orig	2014-12-02 06:28:17.000000000 +0300
-+++ SConstruct	2014-12-02 06:28:31.000000000 +0300
+--- SConstruct
++++ SConstruct
 @@ -26,7 +26,7 @@
      if platform == 'linux-gcc':
          CXX = 'g++' # not quite right, but env is not yet available.
@@ -26,3 +26,42 @@
  else:
      print "UNSUPPORTED PLATFORM."
      env.Exit(1)
+@@ -147,6 +148,11 @@
+ env['BUILD_DIR'] = env.Dir(build_dir)
+ env['ROOTBUILD_DIR'] = env.Dir(rootbuild_dir)
+ env['DIST_DIR'] = DIST_DIR
++
++# Set SHLIBVERSION for env.InstallVersionedLib(). We use the version number
++# without the "-rcXX" part.
++env['SHLIBVERSION'] = JSONCPP_VERSION.partition('-')[0]
++
+ if 'TarGz' in env['BUILDERS']:
+ 	class SrcDistAdder:
+ 		def __init__( self, env ):
+@@ -164,7 +170,7 @@
+ env['SRCDIST_TARGET'] = os.path.join( DIST_DIR, 'jsoncpp-src-%s.tar.gz' % env['JSONCPP_VERSION'] )
+                       
+ env_testing = env.Clone( )
+-env_testing.Append( LIBS = ['json_${LIB_NAME_SUFFIX}'] )
++env_testing.Append( LIBS = ['jsoncpp'] )
+ 
+ def buildJSONExample( env, target_sources, target_name ):
+     env = env.Clone()
+@@ -187,14 +193,14 @@
+     env.AlwaysBuild( check_alias_target )
+ 
+ def buildLibrary( env, target_sources, target_name ):
+-    static_lib = env.StaticLibrary( target=target_name + '_${LIB_NAME_SUFFIX}',
++    static_lib = env.StaticLibrary( target=target_name,
+                                     source=target_sources )
+     global lib_dir
+     env.Install( lib_dir, static_lib )
+     if env['SHARED_LIB_ENABLED']:
+-        shared_lib = env.SharedLibrary( target=target_name + '_${LIB_NAME_SUFFIX}',
++        shared_lib = env.SharedLibrary( target=target_name,
+                                         source=target_sources )
+-        env.Install( lib_dir, shared_lib )
++        env.InstallVersionedLib( lib_dir, shared_lib )
+     env['SRCDIST_ADD']( source=[target_sources] )
+ 
+ Export( 'env env_testing buildJSONExample buildLibrary buildJSONTests buildUnitTests' )

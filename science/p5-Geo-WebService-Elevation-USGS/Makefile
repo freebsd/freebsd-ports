@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Geo-WebService-Elevation-USGS
-PORTVERSION=	0.101
+PORTVERSION=	0.102
 CATEGORIES=	science perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:WYANT
@@ -19,6 +19,9 @@ BUILD_DEPENDS=	p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

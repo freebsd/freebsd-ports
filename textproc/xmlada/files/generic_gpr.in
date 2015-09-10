@@ -1,0 +1,19 @@
+with "xmlada_@DEPENDS@";
+project XmlAda_@ZONE@ is
+    for Library_Name use "xmlada_@ZONE@";
+    Version := "@VERSION@";
+    So_Ext := ".so";
+
+    type Xmlada_Kind_Type is ("static", "relocatable");
+    Xmlada_Kind : Xmlada_Kind_Type := external ("LIBRARY_TYPE", "static");
+    Libdir := "../../lib/xmlada/" & Xmlada_Kind;
+
+    for Library_Kind use Xmlada_Kind;
+    for Library_Dir use Libdir;
+    for Library_Version use
+       "lib" & Project'Library_Name & So_Ext & "." & Version;
+    for Source_Dirs use ("../../include/xmlada");
+    for Source_Files use ("@ZONE@.ads"@FILES@);
+    for Externally_Built use "true";
+
+end XmlAda_@ZONE@;

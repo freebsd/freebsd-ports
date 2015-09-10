@@ -9,10 +9,8 @@ MASTER_SITES=	http://www.smuxi.org/jaws/data/files/
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Multi-layered IRC library
 
-BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 GNU_CONFIGURE=	yes
-USES=	pathfix pkgconfig gmake
+CONFIGURE_ENV=	ac_cv_path_MCS=${LOCALBASE}/bin/mcs
+USES=		gmake mono pathfix pkgconfig
 
 .include <bsd.port.mk>

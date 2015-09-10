@@ -1,8 +1,9 @@
 bin/fh2raw
 bin/fh2svg
+bin/fh2text
 include/libfreehand-0.1/libfreehand/FreeHandDocument.h
 include/libfreehand-0.1/libfreehand/libfreehand.h
 lib/libfreehand-0.1.so
 lib/libfreehand-0.1.so.1
-lib/libfreehand-0.1.so.1.0.0
+lib/libfreehand-0.1.so.1.0.1
 libdata/pkgconfig/libfreehand-0.1.pc

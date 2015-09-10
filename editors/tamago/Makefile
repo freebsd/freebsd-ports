@@ -5,13 +5,11 @@ PORTNAME=	tamago
 PORTVERSION=	4.0.6.0.20041122.19
 PORTREVISION=	13
 CATEGORIES=	editors elisp
-MASTER_SITES=	${MASTER_SITE_DEBIAN}
-MASTER_SITE_SUBDIR=	pool/main/e/egg
+MASTER_SITES=	DEBIAN/pool/main/e/egg
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	egg_4.0.6+0.20041122cvs.orig
 
-PATCH_SITES=	${MASTER_SITE_DEBIAN:S,%SUBDIR%,pool/main/e/egg,} \
-		${MASTER_SITE_LOCAL:S,%SUBDIR%,nork,}
+PATCH_SITES=	DEBIAN/pool/main/e/egg LOCAL/nork
 PATCHFILES=	egg_4.0.6+0.20041122cvs-19.diff.gz
 PATCH_DIST_STRIP=	-p1
 
@@ -31,8 +29,6 @@ PORTDOCS=	AUTHORS ChangeLog ChangeLog.1997-1998 \
 		README.Debian changelog.Debian
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-build:
 	cd ${WRKSRC}/helper && \
 	    ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} \
@@ -43,9 +39,9 @@ post-build:
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/helper/egg-helper \
 	    ${STAGEDIR}${PREFIX}/bin/egg-helper
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

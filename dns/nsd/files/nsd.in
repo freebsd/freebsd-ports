@@ -21,7 +21,7 @@ rcvar=nsd_enable
 load_rc_config "${name}"
 : ${nsd_enable="NO"}
 
-config=${nsd_config:=%%PREFIX%%/etc/nsd/nsd.conf}
+config=${nsd_config:=%%ETCDIR%%/nsd.conf}
 required_files=${config}
 pidfile=`%%PREFIX%%/sbin/nsd-checkconf -f -o pidfile ${config}`
 command="%%PREFIX%%/sbin/${name}"

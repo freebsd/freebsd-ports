@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	mariadb
+PORTREVISION=	7
 PKGNAMESUFFIX=	53-client
-
-UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 
 COMMENT=	Database client - drop-in replacement for MySQL
 
@@ -24,6 +23,7 @@ CONFLICTS=	mariadb5[4-9]-client-* \
 
 PATCHDIR=	${.CURDIR}/files
 PLIST=		${.CURDIR}/pkg-plist
+PKGMESSAGE=	${.CURDIR}/pkg-message
 
 MANS=	mysql_config.1 mysql_upgrade.1 mysql.1 mysqladmin.1 \
 	mysqlbinlog.1 mysqlbug.1 mysqlcheck.1 \

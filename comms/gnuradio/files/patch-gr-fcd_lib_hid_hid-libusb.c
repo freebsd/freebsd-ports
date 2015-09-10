@@ -1,15 +1,17 @@
---- gr-fcd/lib/hid/hid-libusb.c.orig	2013-08-28 13:27:03.000000000 -0500
-+++ gr-fcd/lib/hid/hid-libusb.c	2014-03-02 20:20:18.000000000 -0500
-@@ -250,7 +250,7 @@
+--- gr-fcd/lib/hid/hid-libusb.c.orig	2015-05-12 09:39:44 UTC
++++ gr-fcd/lib/hid/hid-libusb.c
+@@ -250,8 +250,8 @@ static int get_usage(uint8_t *report_des
  }
  #endif /* INVASIVE_GET_USAGE */
  
 -#ifdef __FreeBSD__
+-/* The FreeBSD version of libusb doesn't have this funciton. In mainline
 +#ifndef HAVE_LIBUSB_GET_STRING_DESCRIPTOR
- /* The FreeBSD version of libusb doesn't have this funciton. In mainline
++/* The FreeBSD version of libusb doesn't have this function. In mainline
     libusb, it's inlined in libusb.h. This function will bear a striking
     resemblence to that one, because there's about one way to code it.
-@@ -756,8 +756,12 @@
+ 
+@@ -756,8 +756,12 @@ static void *read_thread(void *param)
  	   if no transfers are pending, but that's OK. */
  	libusb_cancel_transfer(dev->transfer);
  

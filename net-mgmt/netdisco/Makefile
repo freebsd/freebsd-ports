@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netdisco
-PORTVERSION=	2.031012
-PORTREVISION=	1
+PORTVERSION=	2.032005
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:OLIVER
@@ -13,6 +12,7 @@ MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	Network discovery/management tool with web console
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENCE
 
 BUILD_DEPENDS=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg \
 		p5-Net-SNMP>=6.0.1:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
@@ -21,6 +21,7 @@ BUILD_DEPENDS=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg \
 		p5-AnyEvent-DNS-EtcHosts>=0.0103:${PORTSDIR}/dns/p5-AnyEvent-DNS-EtcHosts \
 		p5-App-cpanminus>=1.6108:${PORTSDIR}/devel/p5-App-cpanminus \
 		p5-App-local-lib-helper>=0.07:${PORTSDIR}/devel/p5-App-local-lib-helper \
+		p5-Archive-Extract>=0:${PORTSDIR}/archivers/p5-Archive-Extract \
 		p5-CGI-Expand>=2.05:${PORTSDIR}/www/p5-CGI-Expand \
 		p5-Data-Printer>=0:${PORTSDIR}/devel/p5-Data-Printer \
 		p5-DBIx-Class-Helpers>=2.023007:${PORTSDIR}/databases/p5-DBIx-Class-Helpers \
@@ -29,19 +30,24 @@ BUILD_DEPENDS=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg \
 		p5-Dancer-Plugin-DBIC>=0.2001:${PORTSDIR}/databases/p5-Dancer-Plugin-DBIC \
 		p5-Dancer-Plugin-Auth-Extensible>=0.30:${PORTSDIR}/security/p5-Dancer-Plugin-Auth-Extensible \
 		p5-Dancer-Plugin-Passphrase>=2.0.1:${PORTSDIR}/security/p5-Dancer-Plugin-Passphrase \
+		p5-Env-Path>=0:${PORTSDIR}/devel/p5-Env-Path \
 		p5-File-ShareDir>=1.03:${PORTSDIR}/devel/p5-File-ShareDir \
 		p5-File-Slurp>=9999.19:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-Guard>=1.022:${PORTSDIR}/devel/p5-Guard \
+		p5-Graph>=0:${PORTSDIR}/math/p5-Graph \
+		p5-GraphViz>=0:${PORTSDIR}/graphics/p5-GraphViz \
 		p5-HTML-Parser>=3.70:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-HTTP-Tiny>=0.029:${PORTSDIR}/www/p5-HTTP-Tiny \
 		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
 		p5-List-MoreUtils>=0.33:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-Log-Message-Simple>=0:${PORTSDIR}/devel/p5-Log-Message-Simple \
 		p5-Module-Find>=0.12:${PORTSDIR}/devel/p5-Module-Find \
 		p5-Module-Load>=0.32:${PORTSDIR}/devel/p5-Module-Load \
 		p5-Moo>=1.001000:${PORTSDIR}/devel/p5-Moo \
 		p5-MCE>=1.515:${PORTSDIR}/devel/p5-MCE \
 		p5-Net-DNS>=0.72:${PORTSDIR}/dns/p5-Net-DNS \
 		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap \
+		p5-Net-OpenSSH>=0:${PORTSDIR}/net/p5-Net-OpenSSH \
 		p5-NetAddr-MAC>=0:${PORTSDIR}/net/p5-NetAddr-MAC \
 		p5-NetAddr-IP>=4.068:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
 		p5-Path-Class>=0.32:${PORTSDIR}/devel/p5-Path-Class \
@@ -57,16 +63,13 @@ BUILD_DEPENDS=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg \
 		p5-Template-Toolkit>=2.24:${PORTSDIR}/www/p5-Template-Toolkit \
 		p5-Template-Plugin-CSV>=0.04:${PORTSDIR}/textproc/p5-Template-Plugin-CSV \
 		p5-Template-Plugin-Number-Format>=1.02:${PORTSDIR}/www/p5-Template-Plugin-Number-Format \
+		p5-Term-UI>=0:${PORTSDIR}/devel/p5-Term-UI \
+		p5-Text-CSV>=0:${PORTSDIR}/textproc/p5-Text-CSV \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-URL-Encode>=0.01:${PORTSDIR}/www/p5-URL-Encode \
 		p5-YAML>=0.84:${PORTSDIR}/textproc/p5-YAML \
-		p5-YAML-LibYAML>=0.41:${PORTSDIR}/textproc/p5-YAML-LibYAML \
-		p5-Env-Path>=0:${PORTSDIR}/devel/p5-Env-Path \
-		p5-Text-CSV>=0:${PORTSDIR}/textproc/p5-Text-CSV \
-		p5-Graph>=0:${PORTSDIR}/math/p5-Graph \
-		p5-GraphViz>=0:${PORTSDIR}/graphics/p5-GraphViz \
-		p5-Net-OpenSSH>=0:${PORTSDIR}/net/p5-Net-OpenSSH
+		p5-YAML-LibYAML>=0.41:${PORTSDIR}/textproc/p5-YAML-LibYAML
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

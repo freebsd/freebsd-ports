@@ -15,7 +15,6 @@ COMMENT=	Python toolkit for stream-based generation of output for the web
 LICENSE=	BSD3CLAUSE
 
 OPTIONS_DEFINE=	BABEL
-OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
 BABEL_DESC=	I18n support through the Babel plugin
 
 USES=		python

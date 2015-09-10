@@ -2,6 +2,7 @@
 
 PORTNAME=	fxlinuxprint
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://download.fujixerox.co.jp/pub/exe/apeosport/c4300series/
 PKGNAMEPREFIX=	cups-
@@ -14,9 +15,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
 
-USES=		dos2unix
+USES=		dos2unix ghostscript:run
 DOS2UNIX_FILES=	fxlinuxprint.ppd
-USE_GHOSTSCRIPT_RUN=yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

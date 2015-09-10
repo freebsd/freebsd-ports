@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	qbittorrent
-PORTVERSION=	3.1.12
-PORTREVISION?=	0
+PORTVERSION=	3.2.3
+DISTVERSIONPREFIX=	release-
 CATEGORIES=	net-p2p ipv6
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Bittorrent client using Qt4 and libtorrent-rasterbar
@@ -13,9 +12,14 @@ COMMENT?=	Bittorrent client using Qt4 and libtorrent-rasterbar
 LICENSE=	GPLv2
 
 # ABI versions specified on purpose for libtorrent-rasterbar
-LIB_DEPENDS=	libtorrent-rasterbar.so:${PORTSDIR}/net-p2p/libtorrent-rasterbar
+LIB_DEPENDS=	libtorrent-rasterbar.so:${PORTSDIR}/net-p2p/libtorrent-rasterbar \
+		libboost_system.so:${PORTSDIR}/devel/boost-libs
 
-USES=		execinfo pkgconfig tar:xz
+USE_GITHUB=	yes
+GH_ACCOUNT=	qBittorrent
+GH_PROJECT=	qBittorrent
+
+USES=		compiler:c++11-lang execinfo pkgconfig tar:xz
 USE_QT4=	corelib network qmake_build linguisttools_build moc_build \
 		rcc_build uic_build
 QT_NONSTANDARD=	yes
@@ -29,36 +33,31 @@ INSTALLS_ICONS=	yes
 OPTIONS_DEFINE=	DBUS
 .endif
 
-SUB_FILES=	pkg-message
-
 PORTDOCS=	AUTHORS Changelog README.md
 
 OPTIONS_DEFINE=	DEBUG DOCS DBUS
 
 DEBUG_CONFIGURE_ENABLE=	debug
 DBUS_CONFIGURE_ENABLE=	qt-dbus
+DBUS_USE=		QT4=dbus
+CONFIGURE_ENV+=		zlib_CFLAGS=-I/usr/include
+CONFIGURE_ENV+=		zlib_LIBS=-lz
+CONFIGURE_ARGS+=	CXXFLAGS=-DBOOST_ASIO_DYN_LINK
+
+GNU_CONFIGURE=	yes
+USE_OPENSSL=	yes
+
+post-patch:
+	${REINPLACE_CMD} 's,^\$$QT_QMAKE,${LOCALBASE}/bin/qmake-qt4,'	\
+	    ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDBUS}
-USE_QT4+=	dbus
-.endif
-
-do-configure:
-.if defined(SLAVE_PORT) && ${SLAVE_PORT:tl} == "no"
-	@cd ${WRKSRC} ; ${SETENV} ${CONFIGURE_ENV} \
-		./configure --prefix=${PREFIX}
-.else
-	@cd ${WRKSRC} ; ${SETENV} ${CONFIGURE_ENV} \
-		./configure --prefix=${PREFIX} --disable-gui
+.if !defined(SLAVE_PORT) || ${SLAVE_PORT:tl} != "no"
+CONFIGURE_ARGS+=	--disable-gui
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-.endif
-
 .if defined(SLAVE_PORT) && ${SLAVE_PORT:tl} == "no"
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qbittorrent
 	${INSTALL_MAN} ${WRKSRC}/doc/qbittorrent.1 \
@@ -68,5 +67,10 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/qbittorrent-nox.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1/
 .endif
+	@${RM} -rf ${STAGEDIR}${PREFIX}/share/man
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

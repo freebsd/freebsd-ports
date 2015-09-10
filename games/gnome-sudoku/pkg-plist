@@ -2,7 +2,7 @@ bin/gnome-sudoku
 man/man6/gnome-sudoku.6.gz
 share/appdata/gnome-sudoku.appdata.xml
 share/applications/gnome-sudoku.desktop
-share/gnome-sudoku/images/footprints.png
+%%DATADIR%%/images/footprints.png
 share/help/C/gnome-sudoku/basics.page
 share/help/C/gnome-sudoku/bug-filing.page
 share/help/C/gnome-sudoku/commandline.page
@@ -338,6 +338,15 @@ share/help/hu/gnome-sudoku/bug-filing.page
 share/help/hu/gnome-sudoku/commandline.page
 share/help/hu/gnome-sudoku/develop.page
 share/help/hu/gnome-sudoku/documentation.page
+share/help/hu/gnome-sudoku/figures/logo.png
+share/help/hu/gnome-sudoku/figures/logo32.png
+share/help/hu/gnome-sudoku/figures/possible-numbers.png
+share/help/hu/gnome-sudoku/figures/resuming.png
+share/help/hu/gnome-sudoku/figures/rowcolumnbox.png
+share/help/hu/gnome-sudoku/figures/stats-very-hard.png
+share/help/hu/gnome-sudoku/figures/strategy1.png
+share/help/hu/gnome-sudoku/figures/strategy2.png
+share/help/hu/gnome-sudoku/figures/trackers.webm
 share/help/hu/gnome-sudoku/highlighting.page
 share/help/hu/gnome-sudoku/hints.page
 share/help/hu/gnome-sudoku/index.page
@@ -354,15 +363,6 @@ share/help/hu/gnome-sudoku/strategy.page
 share/help/hu/gnome-sudoku/toolbar.page
 share/help/hu/gnome-sudoku/trackers.page
 share/help/hu/gnome-sudoku/translate.page
-share/help/hu/gnome-sudoku/figures/logo.png
-share/help/hu/gnome-sudoku/figures/logo32.png
-share/help/hu/gnome-sudoku/figures/possible-numbers.png
-share/help/hu/gnome-sudoku/figures/resuming.png
-share/help/hu/gnome-sudoku/figures/rowcolumnbox.png
-share/help/hu/gnome-sudoku/figures/stats-very-hard.png
-share/help/hu/gnome-sudoku/figures/strategy1.png
-share/help/hu/gnome-sudoku/figures/strategy2.png
-share/help/hu/gnome-sudoku/figures/trackers.webm
 share/help/it/gnome-sudoku/basics.page
 share/help/it/gnome-sudoku/bug-filing.page
 share/help/it/gnome-sudoku/commandline.page
@@ -643,6 +643,7 @@ share/icons/hicolor/22x22/apps/gnome-sudoku.png
 share/icons/hicolor/24x24/apps/gnome-sudoku.png
 share/icons/hicolor/32x32/apps/gnome-sudoku.png
 share/icons/hicolor/48x48/apps/gnome-sudoku.png
+share/icons/hicolor/scalable/apps/gnome-sudoku-symbolic.svg
 share/icons/hicolor/scalable/apps/gnome-sudoku.svg
 share/locale/af/LC_MESSAGES/gnome-sudoku.mo
 share/locale/am/LC_MESSAGES/gnome-sudoku.mo
@@ -655,6 +656,7 @@ share/locale/bg/LC_MESSAGES/gnome-sudoku.mo
 share/locale/bn/LC_MESSAGES/gnome-sudoku.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-sudoku.mo
 share/locale/br/LC_MESSAGES/gnome-sudoku.mo
+share/locale/bs/LC_MESSAGES/gnome-sudoku.mo
 share/locale/ca/LC_MESSAGES/gnome-sudoku.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-sudoku.mo
 share/locale/cs/LC_MESSAGES/gnome-sudoku.mo

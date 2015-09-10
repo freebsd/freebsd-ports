@@ -34,6 +34,7 @@ share/gtk-doc/html/harfbuzz/annotation-glossary.html
 share/gtk-doc/html/harfbuzz/api-index-full.html
 share/gtk-doc/html/harfbuzz/ch01.html
 share/gtk-doc/html/harfbuzz/deprecated-api-index.html
+share/gtk-doc/html/harfbuzz/harfbuzz-Shaping.html
 share/gtk-doc/html/harfbuzz/harfbuzz-hb-blob.html
 share/gtk-doc/html/harfbuzz/harfbuzz-hb-buffer.html
 share/gtk-doc/html/harfbuzz/harfbuzz-hb-common.html
@@ -51,7 +52,6 @@ share/gtk-doc/html/harfbuzz/harfbuzz-hb-ot-tag.html
 share/gtk-doc/html/harfbuzz/harfbuzz-hb-ot.html
 share/gtk-doc/html/harfbuzz/harfbuzz-hb-set.html
 share/gtk-doc/html/harfbuzz/harfbuzz-hb-shape-plan.html
-share/gtk-doc/html/harfbuzz/harfbuzz-hb-shape.html
 share/gtk-doc/html/harfbuzz/harfbuzz-hb-unicode.html
 share/gtk-doc/html/harfbuzz/harfbuzz-hb-uniscribe.html
 share/gtk-doc/html/harfbuzz/harfbuzz-hb-version.html

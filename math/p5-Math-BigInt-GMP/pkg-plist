@@ -1,3 +1,3 @@
-%%PERL5_MAN3%%/Math::BigInt::GMP.3.gz
 %%SITE_ARCH%%/Math/BigInt/GMP.pm
 %%SITE_ARCH%%/auto/Math/BigInt/GMP/GMP.so
+%%PERL5_MAN3%%/Math::BigInt::GMP.3.gz

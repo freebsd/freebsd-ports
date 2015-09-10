@@ -11,7 +11,6 @@ MAINTAINER=		ports@FreeBSD.org
 
 WITH_MPM=		peruser
 
-LATEST_LINK=		apache22-${WITH_MPM}-mpm
 DESCR=			${.CURDIR}/pkg-descr
 
 EXTRA_PATCHES+=		${.CURDIR}/files/httpd-2.2.3-peruser-0.3.0.patch

@@ -15,20 +15,18 @@ COMMENT=	SEGA Genesis emulator
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
-
-USES=		gmake tar:bzip2
+USES=		gmake jpeg tar:bzip2
 USE_GNOME=	gtk12
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-transform-name=s/${PORTNAME}/${UNIQUENAME}/ \
+CONFIGURE_ARGS=	--program-transform-name=s/${PORTNAME}/${PORTNAME}/ \
 		--with-gtk
 MAKE_JOBS_UNSAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PLIST_FILES=	bin/${UNIQUENAME}-gtk
+PLIST_FILES=	bin/${PORTNAME}-gtk
 
 OPTIONS_DEFINE=		OPTIMIZED_CFLAGS SDL
 OPTIONS_DEFINE_i386=	RAZE

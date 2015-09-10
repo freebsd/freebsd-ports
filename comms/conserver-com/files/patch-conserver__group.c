@@ -26,19 +26,3 @@
  	    ret = 1;
  	    break;
  	case GSS_S_CREDENTIALS_EXPIRED:
-@@ -3940,12 +3941,10 @@
- 					      "failed]\r\n", -1);
- 				    continue;
- 				}
--				if (TAB3 == (TABDLY & sbuf.c_oflag)) {
--				    sbuf.c_oflag &= ~TABDLY;
--				    sbuf.c_oflag |= TAB0;
-+				if (sbuf.c_oflag & OXTABS) {
-+				    sbuf.c_oflag &= ~OXTABS;
- 				} else {
--				    sbuf.c_oflag &= ~TABDLY;
--				    sbuf.c_oflag |= TAB3;
-+				    sbuf.c_oflag |= OXTABS;
- 				}
- 				if (-1 ==
- 				    tcsetattr(FileFDNum

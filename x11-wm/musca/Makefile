@@ -8,7 +8,7 @@ MASTER_SITES=	http://aerosuidae.net/ \
 		http://mirror.mcx2.org/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple window manager for X, with features from ratpoison and dwm
 
 RUN_DEPENDS=	dmenu:${PORTSDIR}/x11/dmenu

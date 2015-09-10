@@ -6,8 +6,7 @@ PORTNAME=	libunicode
 PORTVERSION=	0.4
 PORTREVISION=	10
 CATEGORIES=	devel gnome
-MASTER_SITES=	GNOME
-MASTER_SITE_SUBDIR=	sources/libunicode/0.4
+MASTER_SITES=	GNOME/sources/libunicode/0.4
 DISTNAME=	${PORTNAME}-${PORTVERSION}.gnome
 
 MAINTAINER=	gnome@FreeBSD.org

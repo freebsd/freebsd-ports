@@ -1,0 +1,11 @@
+--- configure.ac.orig	2014-08-31 10:39:02.982846403 +0100
++++ configure.ac	2014-08-31 10:39:31.763844267 +0100
+@@ -15343,7 +15343,7 @@
+                     | cut -f2 -d"/" \
+                     | cut -f1 -d" "`
+     major_version=`echo $APACHE_VERSION|cut -f1,2 -d.`
+-    if test "$major_version" = "2.0" -o "$major_version" = "2.2"; then
++    if test "$major_version" = "2.0" -o "$major_version" = "2.2" -o "$major_version" = "2.4"; then
+       APACHE_VERSION_2=true
+       APACHE_VERSION_1_3=false
+     else

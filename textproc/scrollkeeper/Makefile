@@ -46,5 +46,6 @@ post-patch:
 
 post-install:
 	@${RM} ${STAGEDIR}/var/log/scrollkeeper.log
+	@${MKDIR} ${STAGEDIR}/var/db/scrollkeeper
 
 .include <bsd.port.mk>

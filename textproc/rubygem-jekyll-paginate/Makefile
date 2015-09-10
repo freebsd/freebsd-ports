@@ -11,6 +11,8 @@ COMMENT=	Built-in Pagination Generator for Jekyll
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

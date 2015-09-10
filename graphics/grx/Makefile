@@ -3,7 +3,7 @@
 
 PORTNAME=	grx
 PORTVERSION=	2.4.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://grx.gnu.de/download/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
@@ -38,7 +38,7 @@ BGI_DESC=		BGI image format support
 BGI_CONFIGURE_ENABLE=	bgi
 BMP_DESC=		BMP image format support
 BMP_CONFIGURE_ENABLE=	bmp
-JPEG_LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+JPEG_USES=		jpeg
 JPEG_CONFIGURE_ENABLE=	jpeg
 PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 PNG_CONFIGURE_ENABLE=	png
@@ -57,10 +57,6 @@ IGNORE=		PNG support requires ZLIB support
 CONFIGURE_ARGS+=--enable-x86_64
 .endif
 
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64
-.endif
-
 post-patch:
 	@${GREP} -ERl '<(malloc|alloca)\.h>' ${WRKSRC} | ${XARGS} \
 		${REINPLACE_CMD} -Ee 's|<(malloc\|alloca)\.h>|<stdlib.h>|'
@@ -72,8 +68,11 @@ post-patch:
 		 s|-m64|| ; \
 		 s|-m32||' \
 		${WRKSRC}/makedefs.grx
+	@${REINPLACE_CMD} -e '/_GR_swap32u/s|length|numchars|' \
+		${WRKSRC}/src/fonts/fdv_raw.c
 
 post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgrx20X.so
 .for i in bin2c fnt2c xmodetest
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${i}
 .endfor

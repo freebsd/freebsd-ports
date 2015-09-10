@@ -1,13 +1,13 @@
---- cpp.orig/config/Make.rules	Fri Mar 11 16:19:00 2013
-+++ cpp/config/Make.rules	Fri May 19 22:00:09 2013
-@@ -233,7 +233,9 @@
-           DB_FLAGS          = -I/usr/local/include/db53
-           DB_LIBS           = -L/usr/local/$(libsubdir)/db53 -ldb_cxx
-       else
--        DB_LIBS      = -ldb_cxx
-+        DB_FLAGS          = -I%%BDB_INCLUDE_DIR%%
-+        DB_LIBS           = -L%%BDB_LIB_DIR%% -l%%BDB_LIB_CXX_NAME%%
-+        DB_RPATH_LINK     = $(call rpathlink,%%BDB_LIB_DIR%%)
-       endif
+--- cpp/config/Make.rules.orig	2015-06-23 15:30:20.000000000 +0000
++++ cpp/config/Make.rules	2015-06-27 10:26:42.692387147 +0000
+@@ -240,7 +240,9 @@
+ 	    DB_FLAGS          = -I/usr/local/include/db53
+ 	    DB_LIBS           = -L/usr/local/$(libsubdir)/db53 -ldb_cxx
+ 	else
+-	    DB_LIBS      = -ldb_cxx
++	    DB_FLAGS          = -I%%BDB_INCLUDE_DIR%%
++	    DB_LIBS           = -L%%BDB_LIB_DIR%% -l%%BDB_LIB_CXX_NAME%%
++	    DB_RPATH_LINK     = $(call rpathlink,%%BDB_LIB_DIR%%)
+ 	endif
     endif
  endif

@@ -22,6 +22,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		fam gettext gmake iconv ncurses perl5 shebangfix tar:bzip2
 USE_GNOME=	libxml2
+USE_GCC=	yes
 
 SHEBANG_FILES=	sysconftool
 

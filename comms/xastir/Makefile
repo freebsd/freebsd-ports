@@ -3,6 +3,7 @@
 
 PORTNAME=	xastir
 PORTVERSION=	2.0.6
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTNAME}-${PORTVERSION}
 
@@ -12,11 +13,12 @@ COMMENT=	X Amateur Station Tracking and Information Reporting
 BUILD_DEPENDS=	xfontsel:${PORTSDIR}/x11-fonts/xfontsel
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake motif
+USES=		gettext gmake jpeg motif shebangfix
+SHEBANG_FILES=	scripts/*.pl scripts/get-maptools.sh \
+		scripts/gpx2shape scripts/values.pl.in
 
 SUB_FILES=	pkg-message
 
@@ -38,74 +40,38 @@ OPTCFLAGS_DESC=	Use optimized CFLAGS (-O2 -pipe)
 
 OPTIONS_DEFAULT=	SHAPELIB DBFAWK MAGICK CURL RTREE BDB
 
-.include <bsd.port.pre.mk>
+SHAPELIB_LIB_DEPENDS=	libshp.so:${PORTSDIR}/devel/shapelib
+SHAPELIB_CONFIGURE_WITH=	shapelib
 
-.if ${PORT_OPTIONS:MSHAPELIB}
-LIB_DEPENDS+=	libshp.so:${PORTSDIR}/devel/shapelib
-.else
-CONFIGURE_ARGS+=	--without-shapelib
-.endif
+MAGICK_LIB_DEPENDS=	libGraphicsMagickWand.so:${PORTSDIR}/graphics/GraphicsMagick
+MAGICK_CONFIGURE_WITH=	imagemagick graphicsmagick
 
-.if ${PORT_OPTIONS:MMAGICK}
-LIB_DEPENDS+=	libGraphicsMagickWand.so:${PORTSDIR}/graphics/GraphicsMagick
-.else
-CONFIGURE_ARGS+=	--without-imagemagick --without-graphicsmagick
-.endif
+DBFAWK_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+DBFAWK_CONFIGURE_WITH=	dbfawk
 
-.if ${PORT_OPTIONS:MDBFAWK}
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
-.else
-CONFIGURE_ARGS+=	--without-dbfawk
-.endif
+CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
-.if ${PORT_OPTIONS:MCURL}
-LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
-.endif
+GEOTIFF_LIB_DEPENDS=	libgeotiff.so:${PORTSDIR}/graphics/libgeotiff
 
-.if ${PORT_OPTIONS:MGEOTIFF}
-LIB_DEPENDS+=	libgeotiff.so:${PORTSDIR}/graphics/libgeotiff
-.endif
+GDAL_LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal
+GDAL_CONFIGURE_WITH=	gdal
 
-.if ${PORT_OPTIONS:MGDAL}
-LIB_DEPENDS+=	libgdal.so:${PORTSDIR}/graphics/gdal
-.else
-CONFIGURE_ARGS+=	--without-gdal
-.endif
+GPSMAN_BUILD_DEPENDS=	${LOCALBASE}/share/doc/gpsmanshp/GPSManSHP.pdf:${PORTSDIR}/graphics/gpsmanshp
+GPSMAN_IMPLIES=		SHAPELIB
+GPSMAN_CONFIGURE_WITH=	gpsman
 
-.if ${PORT_OPTIONS:MGPSMAN}
-BUILD_DEPENDS+=	${LOCALBASE}/share/doc/gpsmanshp/GPSManSHP.pdf:${PORTSDIR}/graphics/gpsmanshp
-SHAPELIB=	true
-.else
-CONFIGURE_ARGS+=	--without-gpsman
-.endif
+FESTIVAL_BUILD_DEPENDS=	festival:${PORTSDIR}/audio/festival
+FESTIVAL_CONFIGURE_WITH=festival
 
-.if ${PORT_OPTIONS:MFESTIVAL}
-BUILD_DEPENDS+=	festival:${PORTSDIR}/audio/festival
-.else
-CONFIGURE_ARGS+=	--without-festival
-.endif
+RTREE_CONFIGURE_WITH=	rtree
 
-.if ${PORT_OPTIONS:MRTREE}
-CONFIGURE_ARGS+=	--with-rtree
-.endif
+ERRORPOP_CONFIGURE_WITH=	errorpopups
 
-.if ${PORT_OPTIONS:MERRORPOP}
-CONFIGURE_ARGS+=	--with-errorpopups
-.endif
+BDB_USE=		BDB=41+
+BDB_CONFIGURE_ON=	--with-bdb-incdir=${BDB_INCLUDE_DIR} --with-bdb-libdir=${BDB_LIB_DIR}
 
-.if ${PORT_OPTIONS:MBDB}
-USE_BDB=		41+
-WITH_BDB_HIGHEST=	${TRUE}
-INVALID_BDB_VER=	2 3 40
-CONFIGURE_ARGS+=	--with-bdb-incdir=${BDB_INCLUDE_DIR} --with-bdb-libdir=${BDB_LIB_DIR}
-.endif
+OPTCFLAGS_CFLAGS=	-O2 -pipe
 
-.if ${PORT_OPTIONS:MOPTCFLAGS}
-CFLAGS+=	-O2 -pipe
-.endif
+BROKEN_sparc64=		Does not compile on sparc64
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

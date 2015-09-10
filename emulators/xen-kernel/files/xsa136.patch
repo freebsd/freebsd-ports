@@ -1,0 +1,19 @@
+From: Andrew Cooper <andrew.cooper3@citrix.com>
+Subject: x86/traps: loop in the correct direction in compat_iret()
+
+This is XSA-136.
+
+Signed-off-by: Andrew Cooper <andrew.cooper3@citrix.com>
+Reviewed-by: Jan Beulich <jbeulich@suse.com>
+
+--- a/xen/arch/x86/x86_64/compat/traps.c
++++ b/xen/arch/x86/x86_64/compat/traps.c
+@@ -119,7 +119,7 @@ unsigned int compat_iret(void)
+         }
+         else if ( ksp > regs->_esp )
+         {
+-            for (i = 9; i > 0; ++i)
++            for ( i = 9; i > 0; --i )
+             {
+                 rc |= __get_user(x, (u32 *)regs->rsp + i);
+                 rc |= __put_user(x, (u32 *)(unsigned long)ksp + i);

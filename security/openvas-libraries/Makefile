@@ -3,7 +3,7 @@
 
 PORTNAME=	openvas-libraries
 PORTVERSION=	2.0.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	security
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/600/
 
@@ -22,5 +22,8 @@ MAKE_JOBS_UNSAFE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libopenvas*.so
 
 .include <bsd.port.mk>

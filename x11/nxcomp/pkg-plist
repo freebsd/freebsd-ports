@@ -9,4 +9,4 @@ include/nx/NXvars.h
 lib/libXcomp.a
 lib/libXcomp.so
 lib/libXcomp.so.3
-lib/libXcomp.so.3.5.0.31
+lib/libXcomp.so.3.5.0.32

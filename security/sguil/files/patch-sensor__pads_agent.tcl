@@ -1,5 +1,5 @@
---- sensor/pads_agent.tcl.orig	2012-12-19 21:25:26.000000000 +0000
-+++ sensor/pads_agent.tcl	2012-12-19 21:27:37.000000000 +0000
+--- sensor/pads_agent.tcl.orig	2014-03-29 00:41:36 UTC
++++ sensor/pads_agent.tcl
 @@ -1,6 +1,4 @@
  #!/bin/sh
 -# Run tcl from users PATH \
@@ -7,7 +7,7 @@
  
  # $Id: pads_agent.tcl,v 1.13 2011/02/17 02:55:48 bamm Exp $ #
  
-@@ -332,7 +330,7 @@
+@@ -332,7 +330,7 @@ proc Daemonize {} {
    id process group set
    if {[fork]} {exit 0}
    set PID [id process]
@@ -16,7 +16,7 @@
    set PID_DIR [file dirname $PID_FILE]
    if { ![file exists $PID_DIR] || ![file isdirectory $PID_DIR] || ![file writable $PID_DIR] } {
      puts "ERROR: Directory $PID_DIR does not exists or is not writable."
-@@ -380,16 +378,16 @@
+@@ -380,16 +378,16 @@ foreach arg $argv {
    }
  }
  # Parse the config file here

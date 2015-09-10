@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Sub-Exporter-ForMethods
-PORTVERSION=	0.100051
-PORTREVISION=	1
+PORTVERSION=	0.100052
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,6 +14,7 @@ RUN_DEPENDS=	p5-Sub-Name>=0:${PORTSDIR}/devel/p5-Sub-Name \
 		p5-Sub-Exporter>=0.978:${PORTSDIR}/devel/p5-Sub-Exporter
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

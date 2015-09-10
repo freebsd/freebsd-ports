@@ -17,7 +17,7 @@ webmin_enable=${webmin_enable:-"NO"}
 name=webmin
 rcvar=webmin_enable
 
-procname=%%PERL5%%
+procname=%%PERL%%
 pidfile=/var/log/webmin/miniserv.pid
 required_dirs=%%PREFIX%%/etc/webmin
 command=%%PREFIX%%/etc/webmin/start

@@ -15,13 +15,3 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/status.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/web.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/web_test.go
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/examples
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%
-@dirrmtry %%GO_SRCDIR%%/github.com/hoisie
-@dirrmtry %%GO_SRCDIR%%/github.com
-@dirrmtry %%GO_SRCDIR%%
-@dirrmtry %%GO_LIBDIR%%/github.com/hoisie
-@dirrmtry %%GO_LIBDIR%%/github.com
-@dirrmtry %%GO_LIBDIR%%
-@dirrmtry share/go/pkg
-@dirrmtry share/go

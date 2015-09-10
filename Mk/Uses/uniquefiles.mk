@@ -92,7 +92,7 @@ _UNIQUEPKGLIST=		${WRKDIR}/.PLIST.uniquefiles
 .if ${UNIQUE_DEFAULT_LINKS} == yes
 _DO_CONDITIONAL_SYMLINK=	\
 	if [ ! -e ${STAGEDIR}${PREFIX}/$${fname} -a ! -L ${STAGEDIR}${PREFIX}/$${fname} ]; then \
-		${ECHO_MSG} "  $${newf} --> @$${fname}"; \
+		${ECHO_MSG} "Link: @$${fname} --> $${newf}"; \
 		${LN} -s ${PREFIX}/$${newf} ${STAGEDIR}${PREFIX}/$${fname}; \
 		${ECHO_CMD} LINKED:$${newf}:$${fname} >> ${_UNIQUEPKGLIST}; \
 	fi
@@ -101,15 +101,16 @@ _DO_CONDITIONAL_SYMLINK=	\
 _DO_CONDITIONAL_SYMLINK=	${DO_NADA}
 .endif
 
+_USES_stage+=	775:move-uniquefiles
 move-uniquefiles:
 .if ${UNIQUE_PREFIX_FILES} || ${UNIQUE_FIND_PREFIX_FILES}
-	@${ECHO_MSG} "===> Moving prefixed files around";
+	@${ECHO_MSG} "===> Creating unique files: Move files needing PREFIX";
 .endif
 .for entry in ${UNIQUE_PREFIX_FILES}
 	@fname=${entry}; \
 	if [ -e ${STAGEDIR}${PREFIX}/$${fname} -o -L ${STAGEDIR}${PREFIX}/$${fname} ]; then \
 		newf=$${fname%/*}/${UNIQUE_PREFIX}$${fname##*/} ; \
-		${ECHO_MSG} "  $${fname} --> $${newf}" ; \
+		${ECHO_MSG} "Move: $${fname} --> $${newf}" ; \
 		${MV} ${STAGEDIR}${PREFIX}/$${fname} ${STAGEDIR}${PREFIX}/$${newf}; \
 		${ECHO_CMD} MOVED:$${fname}:$${newf} >> ${_UNIQUEPKGLIST}; \
 		${_DO_CONDITIONAL_SYMLINK}; \
@@ -122,7 +123,7 @@ move-uniquefiles:
 	@for fname in `${UNIQUE_FIND_PREFIX_FILES}`; do \
 		if [ -e ${STAGEDIR}${PREFIX}/$${fname} -o -L ${STAGEDIR}${PREFIX}/$${fname} ]; then \
 			newf=$${fname%/*}/${UNIQUE_PREFIX}$${fname##*/} ; \
-			${ECHO_MSG} "  $${fname} --> $${newf}" ; \
+			${ECHO_MSG} "Move: $${fname} --> $${newf}" ; \
 			${MV} ${STAGEDIR}${PREFIX}/$${fname} ${STAGEDIR}${PREFIX}/$${newf}; \
 			${ECHO_CMD} MOVED:$${fname}:$${newf} >> ${_UNIQUEPKGLIST}; \
 			${_DO_CONDITIONAL_SYMLINK}; \
@@ -134,13 +135,13 @@ move-uniquefiles:
 .endif
 
 .if ${UNIQUE_SUFFIX_FILES} || ${UNIQUE_FIND_SUFFIX_FILES}
-	@${ECHO_MSG} "===> Moving suffixed files around";
+	@${ECHO_MSG} "===> Creating unique files: Move files needing SUFFIX";
 .endif
 .for entry in ${UNIQUE_SUFFIX_FILES}
 	@fname=${entry}; \
 	if [ -e ${STAGEDIR}${PREFIX}/$${fname} -o -L ${STAGEDIR}${PREFIX}/$${fname} ]; then \
 		newf=$${fname%/*}/$${fname##*/}${UNIQUE_SUFFIX}; \
-		${ECHO_MSG} "  $${fname} --> $${newf}"; \
+		${ECHO_MSG} "Move: $${fname} --> $${newf}"; \
 		${MV} ${STAGEDIR}${PREFIX}/$${fname} ${STAGEDIR}${PREFIX}/$${newf}; \
 		${ECHO_CMD} MOVED:$${fname}:$${newf} >> ${_UNIQUEPKGLIST}; \
 		${_DO_CONDITIONAL_SYMLINK}; \
@@ -153,7 +154,7 @@ move-uniquefiles:
 	@for fname in `${UNIQUE_FIND_SUFFIX_FILES}`; do \
 		if [ -e ${STAGEDIR}${PREFIX}/$${fname} -o -L ${STAGEDIR}${PREFIX}/$${fname} ]; then \
 			newf=$${fname%/*}/$${fname##*/}${UNIQUE_SUFFIX}; \
-			${ECHO_MSG} "  $${fname} --> $${newf}"; \
+			${ECHO_MSG} "Move: $${fname} --> $${newf}"; \
 			${MV} ${STAGEDIR}${PREFIX}/$${fname} ${STAGEDIR}${PREFIX}/$${newf}; \
 			${ECHO_CMD} MOVED:$${fname}:$${newf} >> ${_UNIQUEPKGLIST}; \
 			${_DO_CONDITIONAL_SYMLINK}; \
@@ -166,6 +167,7 @@ move-uniquefiles:
 
 # Using .if exists(${_UNIQUEPKGPLIST} below instead of the sh test
 # does not work in poudriere. It works fine on the CLI, though...
+_USES_stage+=	950:move-uniquefiles-plist
 move-uniquefiles-plist:
 	@if [ -e ${_UNIQUEPKGLIST} ]; then \
 		orgIFS=$$IFS; IFS=":"; while read command entry newentry; do \

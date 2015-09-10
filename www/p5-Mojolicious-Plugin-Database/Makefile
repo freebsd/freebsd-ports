@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Mojolicious-Plugin-Database
-PORTVERSION=	1.08
-PORTREVISION=	1
+PORTVERSION=	1.09
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,6 +19,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

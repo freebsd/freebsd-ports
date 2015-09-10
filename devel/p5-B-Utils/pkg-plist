@@ -1,8 +1,8 @@
-%%PERL5_MAN3%%/B::Utils.3.gz
-%%PERL5_MAN3%%/B::Utils::OP.3.gz
 %%SITE_ARCH%%/B/Utils.pm
 %%SITE_ARCH%%/B/Utils/Install/BUtils.h
 %%SITE_ARCH%%/B/Utils/Install/Files.pm
 %%SITE_ARCH%%/B/Utils/Install/typemap
 %%SITE_ARCH%%/B/Utils/OP.pm
 %%SITE_ARCH%%/auto/B/Utils/Utils.so
+%%PERL5_MAN3%%/B::Utils.3.gz
+%%PERL5_MAN3%%/B::Utils::OP.3.gz

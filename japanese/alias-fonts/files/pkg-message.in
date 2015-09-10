@@ -1,0 +1,30 @@
+********************************************************************
+You can start using the fonts by the following instructions.  It is
+required for an application which uses XLFD.
+
+Eiter type the following in an X terminal:
+
+        xset fp+ %%FONTSDIR%%
+        xset fp rehash
+
+Or, more permanently, add the following line to the "Files" section
+of your X.Org configuration file (typically /etc/X11/xorg.conf):
+
+        FontPath "%%FONTSDIR%%/"
+
+then restart X.  After that, run the following command to check your
+Font Path setting:
+
+	xset q
+
+whether the following directories are listed:
+
+    %%PREFIX%%/share/fonts/alias-fonts/	(This port)
+    %%PREFIX%%/share/fonts/elisa8x8/	(8 dot fonts)
+    %%PREFIX%%/share/fonts/naga10/	(10 dot fonts)
+    %%PREFIX%%/share/fonts/shinonome/	(12, 14 and 16 dots)
+    %%PREFIX%%/share/fonts/kanji/	(18 and 24 dot fonts)
+    %%PREFIX%%/share/fonts/k20fonts/	(20 dot fonts)
+    %%PREFIX%%/share/fonts/jisx0213/	(12, 14, 16 and 24 dots
+                                         JISX0213 fonts)
+********************************************************************

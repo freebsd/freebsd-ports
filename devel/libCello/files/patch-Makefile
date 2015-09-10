@@ -1,5 +1,16 @@
---- Makefile.orig	2015-03-10 20:42:37 UTC
+--- Makefile.orig	2015-06-25 22:20:28 UTC
 +++ Makefile
+@@ -18,8 +18,8 @@ DEMOS := $(wildcard demos/*.c)
+ DEMOS_OBJ := $(addprefix obj/,$(notdir $(DEMOS:.c=.o)))
+ DEMOS_EXE := $(DEMOS:.c=)
+ 
+-CFLAGS = -I ./include -std=gnu99 -Wall -Werror -Wno-unused -O3 -g
+-LFLAGS = -shared -g -ggdb
++CFLAGS += -I ./include -std=gnu99 -Wall -Werror -Wno-unused
++LFLAGS = ${LDFLAGS} -shared
+ 
+ PLATFORM := $(shell uname)
+ COMPILER := $(shell $(CC) -v 2>&1 )
 @@ -42,8 +42,8 @@ else
  
  	CFLAGS += -fPIC

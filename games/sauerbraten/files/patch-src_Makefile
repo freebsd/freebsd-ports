@@ -1,5 +1,5 @@
---- src/Makefile	2012-08-28 00:30:07.000000000 -0500
-+++ src/Makefile	2013-03-24 00:38:04.000000000 -0500
+--- src/Makefile.orig	2012-08-28 05:30:07 UTC
++++ src/Makefile
 @@ -1,8 +1,7 @@
 -CXXFLAGS= -O3 -fomit-frame-pointer
  override CXXFLAGS+= -Wall -fsigned-char -fno-exceptions -fno-rtti
@@ -10,7 +10,7 @@
  
  INCLUDES= -Ishared -Iengine -Ifpsgame -Ienet/include
  
-@@ -36,8 +35,8 @@
+@@ -36,8 +35,8 @@ STD_LIBS= -static-libgcc -static-libstdc
  endif
  CLIENT_LIBS= -mwindows $(STD_LIBS) -L$(WINBIN) -L$(WINLIB) -lSDL -lSDL_image -lSDL_mixer -lzlib1 -lopengl32 -lenet -lws2_32 -lwinmm
  else	
@@ -21,7 +21,14 @@
  endif
  ifeq ($(PLATFORM),Linux)
  CLIENT_LIBS+= -lrt
-@@ -105,8 +104,8 @@
+@@ -98,15 +97,13 @@ CLIENT_OBJS= \
+ 	fpsgame/waypoint.o \
+ 	fpsgame/weapon.o
+ 
+-CLIENT_PCH= shared/cube.h.gch engine/engine.h.gch fpsgame/game.h.gch
+-
+ ifneq (,$(findstring MINGW,$(PLATFORM)))
+ SERVER_INCLUDES= -DSTANDALONE $(INCLUDES) -Iinclude
  SERVER_LIBS= -mwindows $(STD_LIBS) -L$(WINBIN) -L$(WINLIB) -lzlib1 -lenet -lws2_32 -lwinmm
  MASTER_LIBS= $(STD_LIBS) -L$(WINBIN) -L$(WINLIB) -lzlib1 -lenet -lws2_32 -lwinmm
  else

@@ -9,7 +9,7 @@ MASTER_SITES=	http://scythia.free.fr/wp-content/ \
 		ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/
 DISTNAME=	${PORTNAME}_${PORTVERSION}-2-src
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small ftp client unpretentious based on Qt4
 
 USES=		qmake

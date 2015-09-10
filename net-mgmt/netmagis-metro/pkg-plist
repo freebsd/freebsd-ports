@@ -22,26 +22,13 @@ lib/netmagis/probes/sensor-stp-catalyst.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/apache-metro.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/crontab.metro
 www/metro/gengraph
-@dirrm www/metro
-@dirrmtry var/netmagis/metro/wifi
-@dirrmtry var/netmagis/metro/spool
-@dirrmtry var/netmagis/metro/report
-@dirrmtry var/netmagis/metro/log
-@dirrmtry var/netmagis/metro/lock
-@dirrmtry var/netmagis/metro/graph
-@dirrmtry var/netmagis/metro/db
-@dirrmtry var/netmagis/metro/cache
-@dirrmtry var/netmagis/metro
-@dirrmtry var/netmagis
-@dirrmtry var
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-@dirrm lib/netmagis/probes
-@dirrm lib/netmagis/plugins
-@exec mkdir -p %D/var/netmagis/metro/wifi
-@exec mkdir -p %D/var/netmagis/metro/spool
-@exec mkdir -p %D/var/netmagis/metro/report
-@exec mkdir -p %D/var/netmagis/metro/log
-@exec mkdir -p %D/var/netmagis/metro/lock
-@exec mkdir -p %D/var/netmagis/metro/graph
-@exec mkdir -p %D/var/netmagis/metro/db
-@exec mkdir -p %D/var/netmagis/metro/cache
+@dir /var/netmagis/metro/wifi
+@dir /var/netmagis/metro/spool
+@dir /var/netmagis/metro/report
+@dir /var/netmagis/metro/log
+@dir /var/netmagis/metro/lock
+@dir /var/netmagis/metro/graph
+@dir /var/netmagis/metro/db
+@dir /var/netmagis/metro/cache
+@dir /var/netmagis/metro
+@dir /var/netmagis

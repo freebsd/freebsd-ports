@@ -54,10 +54,12 @@ man/man5/nanorc.5.gz
 %%DATADIR%%/css.nanorc
 %%DATADIR%%/debian.nanorc
 %%DATADIR%%/default.nanorc
+%%DATADIR%%/elisp.nanorc
 %%DATADIR%%/fortran.nanorc
 %%DATADIR%%/gentoo.nanorc
 %%DATADIR%%/go.nanorc
 %%DATADIR%%/groff.nanorc
+%%DATADIR%%/guile.nanorc
 %%DATADIR%%/html.nanorc
 %%DATADIR%%/java.nanorc
 %%DATADIR%%/javascript.nanorc
@@ -74,6 +76,7 @@ man/man5/nanorc.5.gz
 %%DATADIR%%/perl.nanorc
 %%DATADIR%%/php.nanorc
 %%DATADIR%%/po.nanorc
+%%DATADIR%%/postgresql.nanorc
 %%DATADIR%%/pov.nanorc
 %%DATADIR%%/python.nanorc
 %%DATADIR%%/ruby.nanorc

@@ -18,7 +18,7 @@ USES+=		tar:bzip2
 
 USES+=		gettext gmake libtool:keepla pathfix pkgconfig
 USE_LDCONFIG=	yes
-USE_GNOME=	libglade2 libartlgpl2 referencehack
+USE_GNOME=	intltool libglade2 libartlgpl2 referencehack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--enable-glade \

@@ -3,6 +3,7 @@
 
 PORTNAME=	xournal
 PORTVERSION=	0.4.8
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -23,6 +24,8 @@ INSTALL_TARGET=	install desktop-install
 OPTIONS_DEFINE=		GHOSTSCRIPT DOCS
 GHOSTSCRIPT_DESC=	Install ghostscript (PS/PDF as bitmap bg)
 OPTIONS_DEFAULT=	GHOSTSCRIPT
+
+GHOSTSCRIPT_USES=	ghostscript:run
 
 PORTDOCS_MAIN=	AUTHORS \
 		ChangeLog \
@@ -62,23 +65,15 @@ PORTDOCS=	${PORTDOCS_MAIN} \
 		html-doc/pixmaps/black.png \
 		html-doc/pixmaps/text-tool.png
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGHOSTSCRIPT}
-USE_GHOSTSCRIPT_RUN=	yes
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|$$(DESTDIR)/usr/share/|$$(DESTDIR)$$$$desktopdir/|g' \
 		${WRKSRC}/Makefile.in
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS_MAIN:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html-doc
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} html-doc/ ${STAGEDIR}${DOCSDIR})
-.endif
 
 .include <bsd.port.mk>

@@ -1,9 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	apache24
-PORTVERSION=	2.4.12
+PORTVERSION=	2.4.16
+PORTREVISION=	1
 CATEGORIES=	www ipv6
-MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
+MASTER_SITES=	APACHE_HTTPD
 DISTNAME=	httpd-${PORTVERSION}
 DIST_SUBDIR=	apache24
 
@@ -18,10 +19,10 @@ CONFLICTS_INSTALL=	caudium14-1.* \
 			apache-*-2.2.* apache22-*
 
 USE_APACHE=	common24
-USES=		tar:bzip2 iconv perl5 libtool cpe
+USES=		autoreconf cpe iconv libtool perl5 tar:bzip2
 USE_PERL5=	run
-USE_AUTOTOOLS=	autoconf
 USE_RC_SUBR=	apache24 htcacheclean
+GNU_CONFIGURE=	yes
 
 CPE_VENDOR=	apache
 CPE_PRODUCT=	http_server

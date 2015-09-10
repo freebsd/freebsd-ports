@@ -3,7 +3,7 @@
 
 PORTNAME=	cocor
 PORTVERSION=	1.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.psg.com/pub/modula-2/coco/ \
 		ftp://ftp.ssw.uni-linz.ac.at/pub/Coco/C/ \
@@ -45,5 +45,13 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/samples/*.atg ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/samples/*.inp ${STAGEDIR}${EXAMPLESDIR}
+.for f in xref pretty taste
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/lib/cocor/taste/${f}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/cocor/taste/${f}
+	${CHMOD} u-w ${STAGEDIR}${PREFIX}/lib/cocor/taste/${f}
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/lib/cocor/taste_cp/${f}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/cocor/taste_cp/${f}
+	${CHMOD} u-w ${STAGEDIR}${PREFIX}/lib/cocor/taste_cp/${f}
+.endfor
 
 .include <bsd.port.mk>

@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}_${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 MAINTAINER=	rand@iteris.com
 COMMENT=	Nagios integration for VictorOps incident notification service
 
+BROKEN=		Unfetchable
+
 NO_WRKSUBDIR=	YES
 NO_BUILD=	YES
 

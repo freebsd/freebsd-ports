@@ -6,17 +6,17 @@ PORTVERSION=	0.82
 PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://farrokhi.net/distfiles/ \
-		http://nocat.net/download/NoCatSplash/
+		http://BSDforge.com/projects/source/net/nocatsplash/
 DISTNAME=	NoCatSplash-nightly
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Open 802.11 Splash Screen
 
-BROKEN=		Broken pkg-install script, should use USERS and UIDs
+LICENSE=	GPLv2
 
 USE_GNOME=	glib12
 
-CONFLICTS=	nocatauth-server-*
+CONFLICTS=	nocatauth-server-[0-9]*
 
 GNU_CONFIGURE=	yes
 USES=		gmake tar:tgz
@@ -31,5 +31,8 @@ CONFIGURE_ARGS+=	--with-mode=${AUTHMODE}
 .if defined(DOCROOT)
 CONFIGURE_ARGS+=	--with-docroot=${DOCROOT}
 .endif
+
+USERS=		nocat
+GROUPS=		nocat
 
 .include <bsd.port.mk>

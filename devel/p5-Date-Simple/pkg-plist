@@ -1,11 +1,11 @@
+%%SITE_ARCH%%/Date/Simple.pm
+%%SITE_ARCH%%/Date/Simple/D8.pm
+%%SITE_ARCH%%/Date/Simple/Fmt.pm
+%%SITE_ARCH%%/Date/Simple/ISO.pm
+%%SITE_ARCH%%/Date/Simple/NoXS.pm
+%%SITE_ARCH%%/auto/Date/Simple/Simple.so
 %%PERL5_MAN3%%/Date::Simple.3.gz
 %%PERL5_MAN3%%/Date::Simple::D8.3.gz
 %%PERL5_MAN3%%/Date::Simple::Fmt.3.gz
 %%PERL5_MAN3%%/Date::Simple::ISO.3.gz
 %%PERL5_MAN3%%/Date::Simple::NoXS.3.gz
-%%SITE_ARCH%%/Date/Simple.pm
-%%SITE_ARCH%%/Date/Simple/NoXS.pm
-%%SITE_ARCH%%/Date/Simple/ISO.pm
-%%SITE_ARCH%%/Date/Simple/D8.pm
-%%SITE_ARCH%%/Date/Simple/Fmt.pm
-%%SITE_ARCH%%/auto/Date/Simple/Simple.so

@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2014-01-31 15:10:13.000000000 +0100
-+++ CMakeLists.txt	2014-01-31 15:10:39.000000000 +0100
-@@ -535,7 +535,7 @@
+--- CMakeLists.txt.orig	2015-02-25 21:09:49 UTC
++++ CMakeLists.txt
+@@ -541,7 +541,7 @@ ADD_SUBDIRECTORY(packaging/WiX)
  #
  # RPM installs documentation directly from the source tree
  #

@@ -1,6 +1,7 @@
---- configure	2014-01-22 15:23:47.000000000 -0500
-+++ configure	2014-11-30 13:05:39.000000000 -0500
-@@ -2608,48 +2608,4 @@
+--- configure.orig	2014-01-22 20:23:47 UTC
++++ configure
+@@ -2607,50 +2607,6 @@ ac_link='$CC -o conftest$ac_exeext $CFLA
+ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  
  
 -
@@ -49,3 +50,4 @@
 -
  ac_aux_dir=
  for ac_dir in config "$srcdir"/config; do
+   for ac_t in install-sh install.sh shtool; do

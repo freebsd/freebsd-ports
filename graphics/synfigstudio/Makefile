@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	synfigstudio
-PORTVERSION=	0.64.3
+PORTVERSION=	1.0
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	SF/synfig/releases/${PORTVERSION}/source
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	woodsb02@gmail.com
 COMMENT=	Vector-based 2D animation software package
 
 LICENSE=	GPLv3
@@ -17,7 +17,7 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
 		shared-mime-info
-USE_GNOME=	gtkmm24
+USE_GNOME=	gtkmm30 intltool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-update-mimedb
 INSTALL_TARGET=	install-strip
@@ -33,7 +33,6 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		'/optimization_flags/s|CXXFLAGS=|#CXXFLAGS=| ; \
 		 /optimization_flags/s|CFLAGS=|#CFLAGS=| ; \
-		 s|"GNU strip"|"strip"| ; \
 		 /DATADIRNAME/s|lib|share| ; \
 		 s|<tr1/|<| ; \
 		 s|::tr1||' \

@@ -3,6 +3,7 @@
 
 PORTNAME=	pciutils
 PORTVERSION=	3.3.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	KERNEL_ORG/software/utils/pciutils \
 		ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \

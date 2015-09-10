@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- neighbor_list.xml.in.orig
 +++ neighbor_list.xml.in
 @@ -1,6 +1,6 @@

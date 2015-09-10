@@ -39,7 +39,7 @@ STRIP_CMD+=	--strip-debug # do not strip kernel symbols
 .if defined(_POSTMKINCLUDED) && !defined(_INCLUDE_USES_KMOD_POST_MK)
 _INCLUDE_USES_KMOD_POST_MK=	yes
 
-pre-install: ${STAGEDIR}${KMODDIR}
+_USES_install+=	290:${STAGEDIR}${KMODDIR}
 ${STAGEDIR}${KMODDIR}:
 	@${MKDIR} ${.TARGET}
 

@@ -5,8 +5,8 @@ PORTNAME=	apr
 PORTVERSION=	2.0.${SNAPDATE}
 CATEGORIES=	devel
 MASTER_SITES=	LOCAL/ohauer
-DISTNAME=	${PORTNAME}_${SNAPDATE}
 PKGNAMESUFFIX=	2
+DISTNAME=	${PORTNAME}_${SNAPDATE}
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache Portability Library
@@ -17,10 +17,11 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 NO_PACKAGE=	yes
 
-SNAPDATE=	20140626144503
+# r1676013
+SNAPDATE=	20150425134304
 
 USES=		autoreconf:build cpe iconv libtool pathfix perl5 \
-		python:2,build tar:xz
+		python:2.7,build tar:xz
 CPE_PRODUCT=	apr-util
 CPE_VENDOR=	apache
 CPE_VERSION=	${PORTVERSION:S|.${SNAPDATE}||}
@@ -31,7 +32,7 @@ GNU_CONFIGURE=		yes
 OPTIONS_SUB=		yes
 OPTIONS_DEFINE=		DEVELOPER_ONLY
 OPTIONS_GROUP=		APR APU
-OPTIONS_GROUP_APR=	THREADS IPV6 DEVRANDOM
+OPTIONS_GROUP_APR=	IPV6 DEVRANDOM
 OPTIONS_GROUP_APU=	BDB GDBM MYSQL NDBM PGSQL SQLITE
 OPTIONS_RADIO=		CRYPTO
 OPTIONS_RADIO_CRYPTO=	SSL NSS
@@ -46,9 +47,6 @@ SSL_DESC=		OpenSSL crypto driver
 WRKSRC=	${WRKDIR}/apr
 
 DEVRANDOM_CONFIGURE_WITH=	devrandom
-# is there a valid requirement to build without threads
-# if not make thread a mandantory default
-THREADS_CONFIGURE_ENABLE=	threads
 
 # APR-Util Options
 BDB_USE=		BDB=48+
@@ -80,6 +78,8 @@ NSS_CONFIGURE_WITH=	nss=${LOCALBASE}
 
 CONFIGURE_ENV+=	CC="${CC}"
 CONFIGURE_ARGS+=--with-installbuilddir=${DATADIR}/build-2 \
+		--enable-threads \
+		--enable-posix-shm \
 		--with-expat=${LOCALBASE} \
 		--with-iconv=${ICONV_PREFIX}
 
@@ -107,7 +107,7 @@ CONFIGURE_ARGS+=	--without-crypto
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%OSVERSION%%|${OSVERSION}|g' ${WRKSRC}/build/apr_hints.m4
-	${REINPLACE_CMD} -e '1s|${SETENV} python|${LOCALBASE}/bin/${PYTHON_VERSION}|' \
+	${REINPLACE_CMD} -e '1s|${SETENV} python|${PYTHON_CMD}|' \
 		${WRKSRC}/build/gen-build.py
 	${REINPLACE_CMD} -e 's|PrintPath python|PrintPath ${PYTHON_VERSION}|' \
 		-e 's|python -c|${PYTHON_VERSION} -c|' \

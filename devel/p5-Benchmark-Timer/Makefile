@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Benchmark-Timer
-PORTVERSION=	0.7103
+PORTVERSION=	0.7107
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,7 +11,8 @@ COMMENT=	Code benchmarking tool
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-Module-Install>0:${PORTSDIR}/devel/p5-Module-Install
+BUILD_DEPENDS=	p5-Module-Install>0:${PORTSDIR}/devel/p5-Module-Install \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI
 
 OPTIONS_DEFINE=	SAMPLE
 OPTIONS_DEFAULT=	SAMPLE

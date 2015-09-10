@@ -77,6 +77,10 @@ bin/xyzsybyl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ammonia.xyz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/amoeba.key
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/amoeba.xyz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/anthracene.key
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/anthracene.xyz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/aspirin.key
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/aspirin.xyz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arach.int
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arach.key
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arach.xyz

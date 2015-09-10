@@ -37,6 +37,7 @@ lib/mysql/plugin/libfnv_udf.so
 %%INNODBMEMCACHED%%lib/mysql/plugin/libmemcached.so
 lib/mysql/plugin/libmurmur_udf.so
 lib/mysql/plugin/mypluglib.so
+lib/mysql/plugin/mysql_no_login.so
 lib/mysql/plugin/qa_auth_client.so
 lib/mysql/plugin/qa_auth_interface.so
 lib/mysql/plugin/qa_auth_server.so

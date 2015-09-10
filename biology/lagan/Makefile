@@ -3,6 +3,7 @@
 
 PORTNAME=	lagan
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://lagan.stanford.edu/lagan_web/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
@@ -12,8 +13,9 @@ COMMENT=	Efficient tools for large-scale multiple alignments of genomic DNA
 
 LICENSE=	GPLv2
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
+SHEBANG_FILES=	slagan.pl
 MAKE_JOBS_UNSAFE=yes
 
 SUB_FILES=	pkg-message

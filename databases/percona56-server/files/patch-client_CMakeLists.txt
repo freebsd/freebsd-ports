@@ -1,5 +1,5 @@
---- client/CMakeLists.txt.orig	2014-03-15 18:08:38.000000000 +0100
-+++ client/CMakeLists.txt	2014-03-22 21:07:36.536119132 +0100
+--- client/CMakeLists.txt.orig	2015-05-06 12:38:47.000000000 +0200
++++ client/CMakeLists.txt	2015-06-07 18:30:20.496432000 +0200
 @@ -31,17 +31,20 @@
  COPY_OPENSSL_DLLS(copy_openssl_client)
  
@@ -8,7 +8,7 @@
  MYSQL_ADD_EXECUTABLE(mysql completion_hash.cc mysql.cc readline.cc sql_string.cc)
  TARGET_LINK_LIBRARIES(mysql perconaserverclient)
  IF(UNIX)
-   TARGET_LINK_LIBRARIES(mysql ${EDITLINE_LIBRARY})
+   TARGET_LINK_LIBRARIES(mysql ${MY_READLINE_LIBRARY})
  ENDIF(UNIX)
 +ENDIF()
  

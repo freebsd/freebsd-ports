@@ -3,7 +3,7 @@
 
 PORTNAME=	autoq3d
 PORTVERSION=	1.40
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/AutoQ3D%20${PORTVERSION}
 DISTNAME=	AutoQ3DCommunity${PORTVERSION:C/\./-/}qt4source
@@ -23,8 +23,8 @@ USE_QT4=	corelib gui opengl moc_build
 PORTDOCS=	3DQformat.txt ChangeLog.txt
 OPTIONS_DEFINE=	DOCS
 
-DESKTOP_ENTRIES="AutoQ3D" "" "${PORTNAME}" \
-		"${PORTNAME}" "Graphics;3DGraphics;Qt;" ""
+DESKTOP_ENTRIES="AutoQ3D" "" "AutoQ3D" \
+		"AutoQ3D" "Graphics;3DGraphics;Qt;" ""
 
 post-patch:
 .for file in src/main.cpp src/fgui/cadform.cpp src/dialogs/prgsettings.cpp

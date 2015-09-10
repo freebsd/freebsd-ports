@@ -5,7 +5,6 @@ PORTNAME=	torsocks
 PORTVERSION=	2.0.0
 CATEGORIES=	net security
 MASTER_SITES=	GH
-DISTNAME=	${GH_ACCOUNT}-${PORTNAME}-${GH_TAGNAME}
 
 MAINTAINER=	yuri@rawbw.com
 COMMENT=	Easy way to make any app work through Tor
@@ -18,20 +17,15 @@ GH_PROJECT=	torsocks
 GH_TAGNAME=	96f7a0d
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf gmake libtool
+USES=		alias autoreconf gmake libtool
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=	DOCS
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	ChangeLog DEBUG SOCKS5 socks-extensions.txt
-.endif
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	${REINPLACE_CMD} -e 's,(defined(__linux__) || defined(__darwin__) || (defined(__FreeBSD_kernel__) && defined(__i386__))),defined(__FreeBSD__),' ${WRKSRC}/src/lib/syscall.c

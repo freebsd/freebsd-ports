@@ -3,7 +3,7 @@
 
 PORTNAME=	pidgin-rhythmbox
 PORTVERSION=	2.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net-im audio
 MASTER_SITES=	http://jon.oberheide.org/pidgin-rhythmbox/downloads/
 
@@ -18,12 +18,13 @@ RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin \
 USES=		gmake libtool pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	lib/pidgin/pidgin-rhythmbox.so
 
 post-patch:
-		@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} \
-			-e 's#\([@(]\)PIDGIN_INSTALL\([@)]\)#\1libdir\2/pidgin#' \
-			-e 's#-g -g3 -O2##'
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} \
+		-e 's#\([@(]\)PIDGIN_INSTALL\([@)]\)#\1libdir\2/pidgin#' \
+		-e 's#-g -g3 -O2##'
 
 .include <bsd.port.mk>

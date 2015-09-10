@@ -84,9 +84,5 @@ man/man1/prelude-admin.1.gz
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/prelude.pyc
 libdata/pkgconfig/libprelude.pc
 share/aclocal/libprelude.m4
-@dirrm include/libprelude
-@dirrmtry %%ETCDIR%%/default
-@dirrmtry %%ETCDIR%%/profile
-@dirrmtry %%ETCDIR%%
-@exec install -d -o root -g wheel -m 711 /var/spool/prelude
-@unexec rmdir /var/spool/prelude 2>/dev/null || true
+@dir %%ETCDIR%%/profile
+@dir(root,wheel,711) /var/spool/prelude

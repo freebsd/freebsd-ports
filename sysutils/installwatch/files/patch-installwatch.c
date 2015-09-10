@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- installwatch.c.orig
 +++ installwatch.c
 @@ -574,7 +574,7 @@

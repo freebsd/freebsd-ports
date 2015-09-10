@@ -1,6 +1,6 @@
---- tools/awstats_configure.pl.old	2010-12-25 19:25:49.000000000 -0600
-+++ tools/awstats_configure.pl	2010-12-25 19:33:43.000000000 -0600
-@@ -28,12 +28,13 @@
+--- tools/awstats_configure.pl.orig	2015-07-21 07:55:55 UTC
++++ tools/awstats_configure.pl
+@@ -27,12 +27,13 @@
  $AWSTATS_MODEL_CONFIG
  $AWSTATS_DIRDATA_PATH
  /;
@@ -20,25 +20,25 @@
  $AWSTATS_DIRDATA_PATH='/var/lib/awstats';						# Used only when configure ran on linux
  
  
-@@ -64,6 +65,7 @@
+@@ -63,6 +64,7 @@
  '/etc/httpd/httpd.conf',
  '/usr/local/apache/conf/httpd.conf',
  '/usr/local/apache2/conf/httpd.conf',
-+'/usr/local/etc/apache(13/22)/httpd.conf',
++'%%PREFIX%%/etc/apache(13/22)/httpd.conf',
  );
  
  use vars qw/
-@@ -309,7 +311,8 @@
+@@ -308,7 +310,8 @@
  	$AWSTATS_PATH=`pwd`; $AWSTATS_PATH =~ s/[\r\n]//;
  	$AWSTATS_PATH=~s/tools[\\\/]?$//;
  	$AWSTATS_PATH=~s/[\\\/]$//;
 -	if ($AWSTATS_PATH ne '/usr/local/awstats') {
 +#freebsd default %%PREFIX%%/www/awstats
-+	if ($AWSTATS_PATH ne '/usr/local/www/awstats') {
++	if ($AWSTATS_PATH ne '%%PREFIX%%/www/awstats') {
  		print "Warning: AWStats standard directory on Linux OS is '/usr/local/awstats'.\n";
  		print "If you want to use standard directory, you should first move all content\n";
  		print "of AWStats distribution from current directory:\n";
-@@ -324,10 +327,10 @@
+@@ -323,10 +326,10 @@
  			print "configure.pl aborted.\n";
  			exit 1;
  		}
@@ -53,15 +53,15 @@
  	}
  }
  elsif ($OS eq 'macosx') {
-@@ -420,6 +423,7 @@
+@@ -419,6 +422,7 @@
  
  		print "\n".($bidon?"Now, enter":"Enter")." full config file path of your Web server.\n";
  		print "Example: /etc/httpd/httpd.conf\n";
-+		print "Example: %%PREFIX%%/etc/apache(13/22)/httpd.conf";
++		print "Example: %%PREFIX%%/etc/apache(22/24)/httpd.conf";
  		print "Example: /usr/local/apache2/conf/httpd.conf\n";
  		print "Example: c:\\Program files\\apache group\\apache\\conf\\httpd.conf\n";
  		$bidon='';
-@@ -527,7 +531,7 @@
+@@ -526,7 +530,7 @@
  #
  # This is to permit URL access to scripts/files in AWStats directory.
  #
@@ -70,7 +70,7 @@
      Options None
      AllowOverride None
      Order allow,deny
-@@ -546,12 +550,12 @@
+@@ -545,12 +549,12 @@
  # -----------------------------
  my $modelfile='';
  if ($OS eq 'linux') 		{ 

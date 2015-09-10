@@ -63,6 +63,7 @@
     SUBDIR += gsmlib
     SUBDIR += gstreamer1-plugins-spandsp
     SUBDIR += gtkmmorse
+    SUBDIR += hackrf
     SUBDIR += hamfax
     SUBDIR += hamlib
     SUBDIR += hcidump
@@ -78,6 +79,7 @@
     SUBDIR += kermit
     SUBDIR += klog
     SUBDIR += kremotecontrol
+    SUBDIR += kvasd
     SUBDIR += libconcord
     SUBDIR += libfec
     SUBDIR += libimobiledevice
@@ -100,6 +102,7 @@
     SUBDIR += nasawash
     SUBDIR += ncid
     SUBDIR += nec2c
+    SUBDIR += nmealib
     SUBDIR += nokryptia
     SUBDIR += o2sms
     SUBDIR += obexapp

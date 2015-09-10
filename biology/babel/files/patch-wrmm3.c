@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- wrmm3.c.orig	Tue Jan 21 09:53:02 1997
 +++ wrmm3.c	Wed Sep  4 16:00:23 2002
 @@ -33,14 +33,17 @@

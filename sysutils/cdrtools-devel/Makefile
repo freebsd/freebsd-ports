@@ -21,8 +21,7 @@ PORTNAME=	cdrtools
 PORTVERSION=	3.01a24
 PORTEPOCH=	1
 CATEGORIES=	sysutils audio
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=${PORTNAME}/alpha
+MASTER_SITES=	SF/${PORTNAME}/alpha
 
 MAINTAINER=	marius@FreeBSD.org
 COMMENT=	CD/DVD/BluRay and ISO-9660 image creation and extraction tools
@@ -50,7 +49,6 @@ SICONVTABLES=	cp10000 cp10006 cp10007 cp10029 cp10079 cp10081 cp1250 \
 		iso8859-16 iso8859-2 iso8859-3 iso8859-4 iso8859-5 \
 		iso8859-6 iso8859-7 iso8859-8 iso8859-9 koi8-r koi8-u
 
-NO_LATEST_LINK=	yes
 USES=		gmake tar:bzip2
 #CFLAGS+=	-DSOURCE_MODIFIED
 WRKSRC=		${WRKDIR}/${DISTNAME:C/a(.+)$//}

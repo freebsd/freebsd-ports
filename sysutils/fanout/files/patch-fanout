@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- fanout.orig
 +++ fanout
 @@ -1,4 +1,4 @@

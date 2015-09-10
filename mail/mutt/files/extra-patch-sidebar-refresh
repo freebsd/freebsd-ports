@@ -1,5 +1,5 @@
---- mutt.orig/buffy.c	2012-11-02 13:16:39.000000000 +0100
-+++ mutt/buffy.c	2012-11-02 13:20:52.000000000 +0100
+--- mutt.orig/buffy.c.orig	2015-04-22 08:09:04.000000000 +0200
++++ mutt/buffy.c	2015-04-22 08:12:54.000000000 +0200
 @@ -26,6 +26,7 @@
  #include "mx.h"
  
@@ -8,13 +8,13 @@
  
  #ifdef USE_IMAP
  #include "imap.h"
-@@ -564,19 +565,28 @@
+@@ -584,19 +585,28 @@
        {
        case M_MBOX:
        case M_MMDF:
--	buffy_mbox_update (tmp);
+-	buffy_mbox_update (tmp, &sb);
 +	if (sidebar_should_refresh()) {
-+	  buffy_mbox_update (tmp);
++	  buffy_mbox_update (tmp, &sb);
 +	  sidebar_updated();
 +	}
  	if (buffy_mbox_hasnew (tmp, &sb) > 0)
@@ -26,18 +26,18 @@
 +	if (sidebar_should_refresh()) {
 +	  buffy_maildir_update (tmp);
 +	  sidebar_updated();
-+	}
++ 	}
  	if (buffy_maildir_hasnew (tmp) > 0)
  	  BuffyCount++;
  	break;
  
        case M_MH:
--	mh_buffy_update (tmp->path, &tmp->msgcount, &tmp->msg_unread, &tmp->msg_flagged);
+-	mh_buffy_update (tmp->path, &tmp->msgcount, &tmp->msg_unread, &tmp->msg_flagged, &tmp->sb_last_checked);
 +	if (sidebar_should_refresh()) {
-+	  mh_buffy_update (tmp->path, &tmp->msgcount, &tmp->msg_unread, &tmp->msg_flagged);
++	  mh_buffy_update (tmp->path, &tmp->msgcount, &tmp->msg_unread, &tmp->msg_flagged, &tmp->sb_last_checked);
 +	  sidebar_updated();
-+	}
- 	mh_buffy(tmp);
++ 	}
+         mh_buffy(tmp);
  	if (tmp->new)
  	  BuffyCount++;
 Index: mutt/globals.h

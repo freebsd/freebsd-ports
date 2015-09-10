@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	quassel
-PORTVERSION=	0.11.0
-PORTREVISION=	1
+PORTVERSION=	0.11.1
 CATEGORIES=	irc
 MASTER_SITES=	http://www.quassel-irc.org/pub/
 
@@ -68,10 +67,8 @@ GROUPS=		${USERS}
 SUB_FILES=	pkg-message
 .endif
 
-pre-configure:
-.if !${PORT_OPTIONS:MNLS}
+post-patch-NLS-off:
 	${REINPLACE_CMD} -e '/add_subdirectory(po)/d' \
 		${WRKSRC}/CMakeLists.txt
-.endif
 
 .include <bsd.port.mk>

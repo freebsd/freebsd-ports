@@ -5,7 +5,6 @@ bin/_pcb_calculator.kiface
 bin/_pcbnew.kiface
 bin/_pl_editor.kiface
 bin/bitmap2component
-bin/cvpcb
 bin/dxf2idf
 bin/eeschema
 bin/gerbview
@@ -145,11 +144,11 @@ share/icons/hicolor/scalable/mimetypes/application-x-pcbcalculator-project.svg
 share/icons/hicolor/scalable/mimetypes/application-x-pcbnew-project.svg
 %%DATADIR%%/demos/complex_hierarchy/ampli_ht.sch
 %%DATADIR%%/demos/complex_hierarchy/complex_hierarchy-cache.lib
-%%DATADIR%%/demos/complex_hierarchy/complex_hierarchy.cmp
 %%DATADIR%%/demos/complex_hierarchy/complex_hierarchy.kicad_pcb
 %%DATADIR%%/demos/complex_hierarchy/complex_hierarchy.net
 %%DATADIR%%/demos/complex_hierarchy/complex_hierarchy.pro
 %%DATADIR%%/demos/complex_hierarchy/complex_hierarchy.sch
+%%DATADIR%%/demos/complex_hierarchy/complex_hierarchy_schlib.lib
 %%DATADIR%%/demos/ecc83/ecc83-pp-cache.lib
 %%DATADIR%%/demos/ecc83/ecc83-pp.cmp
 %%DATADIR%%/demos/ecc83/ecc83-pp.kicad_pcb
@@ -162,6 +161,8 @@ share/icons/hicolor/scalable/mimetypes/application-x-pcbnew-project.svg
 %%DATADIR%%/demos/ecc83/ecc83-pp_v2.net
 %%DATADIR%%/demos/ecc83/ecc83-pp_v2.pro
 %%DATADIR%%/demos/ecc83/ecc83-pp_v2.sch
+%%DATADIR%%/demos/ecc83/ecc83_schlib.dcm
+%%DATADIR%%/demos/ecc83/ecc83_schlib.lib
 %%DATADIR%%/demos/ecc83/fp-lib-table
 %%DATADIR%%/demos/electric/electric-cache.lib
 %%DATADIR%%/demos/electric/electric.pro
@@ -172,6 +173,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-pcbnew-project.svg
 %%DATADIR%%/demos/flat_hierarchy/flat_hierarchy.net
 %%DATADIR%%/demos/flat_hierarchy/flat_hierarchy.pro
 %%DATADIR%%/demos/flat_hierarchy/flat_hierarchy.sch
+%%DATADIR%%/demos/flat_hierarchy/flat_hierarchy_schlib.lib
 %%DATADIR%%/demos/flat_hierarchy/pic_programmer.sch
 %%DATADIR%%/demos/flat_hierarchy/pic_sockets.sch
 %%DATADIR%%/demos/interf_u/image.lib
@@ -182,6 +184,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-pcbnew-project.svg
 %%DATADIR%%/demos/interf_u/interf_u.net
 %%DATADIR%%/demos/interf_u/interf_u.pro
 %%DATADIR%%/demos/interf_u/interf_u.sch
+%%DATADIR%%/demos/interf_u/interf_u_schlib.lib
 %%DATADIR%%/demos/interf_u/pagelayout_logo.kicad_wks
 %%DATADIR%%/demos/interf_u/tux.bmp
 %%DATADIR%%/demos/kit-dev-coldfire-xilinx_5213/in_out_conn.sch
@@ -191,12 +194,14 @@ share/icons/hicolor/scalable/mimetypes/application-x-pcbnew-project.svg
 %%DATADIR%%/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire-xilinx_5213.net
 %%DATADIR%%/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire-xilinx_5213.pro
 %%DATADIR%%/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire-xilinx_5213.sch
+%%DATADIR%%/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire-xilinx_5213_schlib.lib
 %%DATADIR%%/demos/kit-dev-coldfire-xilinx_5213/xilinx.sch
 %%DATADIR%%/demos/microwave/microwave.kicad_pcb
 %%DATADIR%%/demos/microwave/microwave.pro
 %%DATADIR%%/demos/microwave/shape1.txt
 %%DATADIR%%/demos/pic_programmer/fp-lib-table
 %%DATADIR%%/demos/pic_programmer/libs/pic_programmer_fp.pretty/1pin-4.kicad_mod
+%%DATADIR%%/demos/pic_programmer/libs/pic_programmer_schlib.lib
 %%DATADIR%%/demos/pic_programmer/pic_programmer-cache.lib
 %%DATADIR%%/demos/pic_programmer/pic_programmer.cmp
 %%DATADIR%%/demos/pic_programmer/pic_programmer.kicad_pcb
@@ -208,18 +213,28 @@ share/icons/hicolor/scalable/mimetypes/application-x-pcbnew-project.svg
 %%DATADIR%%/demos/pspice/pspice.cir
 %%DATADIR%%/demos/pspice/pspice.pro
 %%DATADIR%%/demos/pspice/pspice.sch
+%%DATADIR%%/demos/python_scripts_examples/gen_gerber_and_drill_files_board.py
+%%DATADIR%%/demos/python_scripts_examples/plot_board.py
 %%DATADIR%%/demos/sonde xilinx/sonde xilinx-cache.lib
 %%DATADIR%%/demos/sonde xilinx/sonde xilinx.cmp
 %%DATADIR%%/demos/sonde xilinx/sonde xilinx.kicad_pcb
 %%DATADIR%%/demos/sonde xilinx/sonde xilinx.net
 %%DATADIR%%/demos/sonde xilinx/sonde xilinx.pro
 %%DATADIR%%/demos/sonde xilinx/sonde xilinx.sch
+%%DATADIR%%/demos/sonde xilinx/sonde xilinx_schlib.lib
+%%DATADIR%%/demos/test_pads_inside_pads/test_pads_inside_pads-cache.lib
+%%DATADIR%%/demos/test_pads_inside_pads/test_pads_inside_pads.cmp
+%%DATADIR%%/demos/test_pads_inside_pads/test_pads_inside_pads.kicad_pcb
+%%DATADIR%%/demos/test_pads_inside_pads/test_pads_inside_pads.net
+%%DATADIR%%/demos/test_pads_inside_pads/test_pads_inside_pads.pro
+%%DATADIR%%/demos/test_pads_inside_pads/test_pads_inside_pads.sch
 %%DATADIR%%/demos/test_xil_95108/carte_test-cache.lib
 %%DATADIR%%/demos/test_xil_95108/carte_test.cmp
 %%DATADIR%%/demos/test_xil_95108/carte_test.kicad_pcb
 %%DATADIR%%/demos/test_xil_95108/carte_test.net
 %%DATADIR%%/demos/test_xil_95108/carte_test.pro
 %%DATADIR%%/demos/test_xil_95108/carte_test.sch
+%%DATADIR%%/demos/test_xil_95108/carte_test_schlib.lib
 %%DATADIR%%/demos/video/bus_pci.sch
 %%DATADIR%%/demos/video/esvideo.sch
 %%DATADIR%%/demos/video/fp-lib-table
@@ -228,6 +243,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-pcbnew-project.svg
 %%DATADIR%%/demos/video/libs/footprints.pretty/PLCC68.kicad_mod
 %%DATADIR%%/demos/video/libs/footprints.pretty/PLCC84.kicad_mod
 %%DATADIR%%/demos/video/libs/footprints.pretty/sim72.kicad_mod
+%%DATADIR%%/demos/video/libs/video_schlib.lib
 %%DATADIR%%/demos/video/modul.sch
 %%DATADIR%%/demos/video/muxdata.sch
 %%DATADIR%%/demos/video/pal-ntsc.sch
@@ -242,6 +258,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-pcbnew-project.svg
 %%DATADIR%%/library/74xgxx.lib
 %%DATADIR%%/library/74xx.dcm
 %%DATADIR%%/library/74xx.lib
+%%DATADIR%%/library/Altera.lib
 %%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModA_RevC/317Regulator-BuildingBlock-ModA_RevC_19Apr2011-cache.lib
 %%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModA_RevC/317Regulator-BuildingBlock-ModA_RevC_19Apr2011.pdf
 %%DATADIR%%/library/Buildingblocks/317Regler-BuildingBlocks_RevC/317Regulator-BuildingBlock-ModA_RevC/317Regulator-BuildingBlock-ModA_RevC_19Apr2011.pro
@@ -323,6 +340,15 @@ share/icons/hicolor/scalable/mimetypes/application-x-pcbnew-project.svg
 %%DATADIR%%/library/Buildingblocks/KiCAD-HierarchcalSchematicsAndBuildingBlocksRevA-EN.pdf
 %%DATADIR%%/library/Buildingblocks/KiCAD-HierarchischeSchaltplaeneUndBuildingBlocks3-DE.pdf
 %%DATADIR%%/library/CMakeLists.txt
+%%DATADIR%%/library/ESD_Protection.lib
+%%DATADIR%%/library/Lattice.dcm
+%%DATADIR%%/library/Lattice.lib
+%%DATADIR%%/library/Oscillators.lib
+%%DATADIR%%/library/Power_Management.lib
+%%DATADIR%%/library/Xicor.dcm
+%%DATADIR%%/library/Xicor.lib
+%%DATADIR%%/library/Zilog.dcm
+%%DATADIR%%/library/Zilog.lib
 %%DATADIR%%/library/ac-dc.dcm
 %%DATADIR%%/library/ac-dc.lib
 %%DATADIR%%/library/actel.dcm
@@ -368,6 +394,8 @@ share/icons/hicolor/scalable/mimetypes/application-x-pcbnew-project.svg
 %%DATADIR%%/library/device.lib
 %%DATADIR%%/library/digital-audio.dcm
 %%DATADIR%%/library/digital-audio.lib
+%%DATADIR%%/library/diode.dcm
+%%DATADIR%%/library/diode.lib
 %%DATADIR%%/library/display.dcm
 %%DATADIR%%/library/display.lib
 %%DATADIR%%/library/dsp.dcm
@@ -447,8 +475,6 @@ share/icons/hicolor/scalable/mimetypes/application-x-pcbnew-project.svg
 %%DATADIR%%/library/silabs.dcm
 %%DATADIR%%/library/silabs.lib
 %%DATADIR%%/library/siliconi.lib
-%%DATADIR%%/library/special.dcm
-%%DATADIR%%/library/special.lib
 %%DATADIR%%/library/stm32.dcm
 %%DATADIR%%/library/stm32.lib
 %%DATADIR%%/library/stm8.dcm
@@ -779,6 +805,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-pcbnew-project.svg
 %%DATADIR%%/modules/packages3d/Buttons_Switches_ThroughHole.3dshapes/SW_PUSH-12mm.wrl
 %%DATADIR%%/modules/packages3d/Buttons_Switches_ThroughHole.3dshapes/SW_PUSH.wings
 %%DATADIR%%/modules/packages3d/Buttons_Switches_ThroughHole.3dshapes/SW_PUSH.wrl
+%%DATADIR%%/modules/packages3d/Buttons_Switches_ThroughHole.3dshapes/SW_Tactile_SPST_Angled.wrl
 %%DATADIR%%/modules/packages3d/Buzzers_Beepers.3dshapes/Buzzer_12x9.5RM7.6.wings
 %%DATADIR%%/modules/packages3d/Buzzers_Beepers.3dshapes/Buzzer_12x9.5RM7.6.wrl
 %%DATADIR%%/modules/packages3d/Buzzers_Beepers.3dshapes/MagneticBuzzer_Kingstate_KCG0601.wings
@@ -1071,16 +1098,22 @@ share/icons/hicolor/scalable/mimetypes/application-x-pcbnew-project.svg
 %%DATADIR%%/modules/packages3d/Connect.3dshapes/HE10_20D.wrl
 %%DATADIR%%/modules/packages3d/Connect.3dshapes/JACK_ALIM.wings
 %%DATADIR%%/modules/packages3d/Connect.3dshapes/JACK_ALIM.wrl
+%%DATADIR%%/modules/packages3d/Connect.3dshapes/NMJ6HFD2.wrl
 %%DATADIR%%/modules/packages3d/Connect.3dshapes/PINTST.wings
 %%DATADIR%%/modules/packages3d/Connect.3dshapes/PINTST.wrl
 %%DATADIR%%/modules/packages3d/Connect.3dshapes/QMS-1X52-FEMALE-SMD.wings
 %%DATADIR%%/modules/packages3d/Connect.3dshapes/QMS-1X52-FEMALE-SMD.wrl
 %%DATADIR%%/modules/packages3d/Connect.3dshapes/RJ45_8.wings
 %%DATADIR%%/modules/packages3d/Connect.3dshapes/RJ45_8.wrl
+%%DATADIR%%/modules/packages3d/Connect.3dshapes/RJHSE538X.wrl
+%%DATADIR%%/modules/packages3d/Connect.3dshapes/SDS-50J.wrl
+%%DATADIR%%/modules/packages3d/Connect.3dshapes/SMB_Straight.wings
+%%DATADIR%%/modules/packages3d/Connect.3dshapes/SMB_Straight.wrl
 %%DATADIR%%/modules/packages3d/Connect.3dshapes/TESTPOINT.wings
 %%DATADIR%%/modules/packages3d/Connect.3dshapes/TESTPOINT.wrl
 %%DATADIR%%/modules/packages3d/Connect.3dshapes/USB_A.wings
 %%DATADIR%%/modules/packages3d/Connect.3dshapes/USB_A.wrl
+%%DATADIR%%/modules/packages3d/Connect.3dshapes/USB_A_Vertical.wrl
 %%DATADIR%%/modules/packages3d/Connect.3dshapes/USB_B.wings
 %%DATADIR%%/modules/packages3d/Connect.3dshapes/USB_B.wrl
 %%DATADIR%%/modules/packages3d/Connect.3dshapes/XLR3MC.wings
@@ -1139,6 +1172,8 @@ share/icons/hicolor/scalable/mimetypes/application-x-pcbnew-project.svg
 %%DATADIR%%/modules/packages3d/Diodes_SMD.3dshapes/DD-PAK_TO263_SingleDiode.wrl
 %%DATADIR%%/modules/packages3d/Diodes_SMD.3dshapes/DD-PAK_TO263_SingleDiode_ThermalVias.wings
 %%DATADIR%%/modules/packages3d/Diodes_SMD.3dshapes/DD-PAK_TO263_SingleDiode_ThermalVias.wrl
+%%DATADIR%%/modules/packages3d/Diodes_SMD.3dshapes/Diode-DO-214AB.wings
+%%DATADIR%%/modules/packages3d/Diodes_SMD.3dshapes/Diode-DO-214AB.wrl
 %%DATADIR%%/modules/packages3d/Diodes_SMD.3dshapes/Diode-MELF_Handsoldering.wings
 %%DATADIR%%/modules/packages3d/Diodes_SMD.3dshapes/Diode-MELF_Handsoldering.wrl
 %%DATADIR%%/modules/packages3d/Diodes_SMD.3dshapes/Diode-MELF_Standard.wings
@@ -1171,10 +1206,6 @@ share/icons/hicolor/scalable/mimetypes/application-x-pcbnew-project.svg
 %%DATADIR%%/modules/packages3d/Diodes_SMD.3dshapes/Diode-Universal-SMC-RM10_Handsoldering.wrl
 %%DATADIR%%/modules/packages3d/Diodes_ThroughHole.3dshapes/Diode_DO-35_SOD27_Horizontal_RM10.wings
 %%DATADIR%%/modules/packages3d/Diodes_ThroughHole.3dshapes/Diode_DO-35_SOD27_Horizontal_RM10.wrl
-%%DATADIR%%/modules/packages3d/Diodes_ThroughHole.3dshapes/Diode_LED_3mm_round_vertical.wings
-%%DATADIR%%/modules/packages3d/Diodes_ThroughHole.3dshapes/Diode_LED_3mm_round_vertical.wrl
-%%DATADIR%%/modules/packages3d/Diodes_ThroughHole.3dshapes/Diode_LED_5mm_round_vertical.wings
-%%DATADIR%%/modules/packages3d/Diodes_ThroughHole.3dshapes/Diode_LED_5mm_round_vertical.wrl
 %%DATADIR%%/modules/packages3d/Diodes_ThroughHole.3dshapes/Diode_TO-220_Dual_CommonCathode_Horizontal.wrl
 %%DATADIR%%/modules/packages3d/Diodes_ThroughHole.3dshapes/Diode_TO-220_Dual_CommonCathode_Horizontal_LargePads.wrl
 %%DATADIR%%/modules/packages3d/Diodes_ThroughHole.3dshapes/Diode_TO-220_Dual_CommonCathode_Vertical.wrl
@@ -1338,6 +1369,8 @@ share/icons/hicolor/scalable/mimetypes/application-x-pcbnew-project.svg
 %%DATADIR%%/modules/packages3d/Displays_7-Segment.3dshapes/7SegmentLED_LTS6760_LTS6780.wrl
 %%DATADIR%%/modules/packages3d/Displays_7-Segment.3dshapes/7SegmentLED_SBC18-11EGWA.wings
 %%DATADIR%%/modules/packages3d/Displays_7-Segment.3dshapes/7SegmentLED_SBC18-11EGWA.wrl
+%%DATADIR%%/modules/packages3d/Displays_7-Segment.3dshapes/Cx56-12.fcstd
+%%DATADIR%%/modules/packages3d/Displays_7-Segment.3dshapes/Cx56-12.wrl
 %%DATADIR%%/modules/packages3d/Displays_7-Segment.3dshapes/MAN3640A.wings
 %%DATADIR%%/modules/packages3d/Displays_7-Segment.3dshapes/MAN3640A.wrl
 %%DATADIR%%/modules/packages3d/Divers.3dshapes/2PIN_6mm.wings
@@ -1516,6 +1549,48 @@ share/icons/hicolor/scalable/mimetypes/application-x-pcbnew-project.svg
 %%DATADIR%%/modules/packages3d/Housings_DFN_QFN.3dshapes/UQFN-48-1EP_6x6mm_Pitch0.4mm.wrl
 %%DATADIR%%/modules/packages3d/Housings_DFN_QFN.3dshapes/VDFN-8-1EP_2x2mm_Pitch0.5mm.wings
 %%DATADIR%%/modules/packages3d/Housings_DFN_QFN.3dshapes/VDFN-8-1EP_2x2mm_Pitch0.5mm.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-10_W7.62mm.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-10_W7.62mm_LongPads.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-14_W7.62mm.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-14_W7.62mm_LongPads.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-16_W7.62mm.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-16_W7.62mm_LongPads.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-18_W7.62mm.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-18_W7.62mm_LongPads.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-20_W7.62mm.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-20_W7.62mm_LongPads.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-22_W10.16mm.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-22_W10.16mm_LongPads.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-22_W7.62mm.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-22_W7.62mm_LongPads.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-24_W10.16mm.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-24_W10.16mm_LongPads.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-24_W15.24mm.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-24_W15.24mm_LongPads.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-24_W7.62mm.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-24_W7.62mm_LongPads.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-28_W15.24mm.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-28_W15.24mm_LongPads.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-28_W7.62mm.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-28_W7.62mm_LongPads.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-32_W15.24mm.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-32_W15.24mm_LongPads.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-40_W15.24mm.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-40_W15.24mm_LongPads.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-40_W25.4mm.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-40_W25.4mm_LongPads.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-48_W15.24mm.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-48_W15.24mm_LongPads.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-4_W7.62mm.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-4_W7.62mm_LongPads.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-64_W15.24mm.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-64_W15.24mm_LongPads.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-64_W22.86mm.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-64_W22.86mm_LongPads.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-6_W7.62mm.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-6_W7.62mm_LongPads.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-8_W7.62mm.wrl
+%%DATADIR%%/modules/packages3d/Housings_DIP.3dshapes/DIP-8_W7.62mm_LongPads.wrl
 %%DATADIR%%/modules/packages3d/Housings_QFP.3dshapes/LQFP-100_14x14mm_Pitch0.5mm.wings
 %%DATADIR%%/modules/packages3d/Housings_QFP.3dshapes/LQFP-100_14x14mm_Pitch0.5mm.wrl
 %%DATADIR%%/modules/packages3d/Housings_QFP.3dshapes/LQFP-128_14x14mm_Pitch0.4mm.wings
@@ -2063,6 +2138,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-pcbnew-project.svg
 %%DATADIR%%/modules/packages3d/Pin_Headers.3dshapes/Pin_Header_Straight_1x01.wrl
 %%DATADIR%%/modules/packages3d/Pin_Headers.3dshapes/Pin_Header_Straight_1x02.wings
 %%DATADIR%%/modules/packages3d/Pin_Headers.3dshapes/Pin_Header_Straight_1x02.wrl
+%%DATADIR%%/modules/packages3d/Pin_Headers.3dshapes/Pin_Header_Straight_1x02_Pitch3.96mm_Friction_Lock.wrl
 %%DATADIR%%/modules/packages3d/Pin_Headers.3dshapes/Pin_Header_Straight_1x03.wings
 %%DATADIR%%/modules/packages3d/Pin_Headers.3dshapes/Pin_Header_Straight_1x03.wrl
 %%DATADIR%%/modules/packages3d/Pin_Headers.3dshapes/Pin_Header_Straight_1x04.wings
@@ -2257,6 +2333,8 @@ share/icons/hicolor/scalable/mimetypes/application-x-pcbnew-project.svg
 %%DATADIR%%/modules/packages3d/Potentiometers.3dshapes/Potentiometer_Bourns_3339W_Angular_ScrewFront.wrl
 %%DATADIR%%/modules/packages3d/Potentiometers.3dshapes/Potentiometer_Triwood_RM-065.wings
 %%DATADIR%%/modules/packages3d/Potentiometers.3dshapes/Potentiometer_Triwood_RM-065.wrl
+%%DATADIR%%/modules/packages3d/Power_Packages_SMD.3dshapes/PowerSO-20.wings
+%%DATADIR%%/modules/packages3d/Power_Packages_SMD.3dshapes/PowerSO-20.wrl
 %%DATADIR%%/modules/packages3d/Power_Packages_SMD.3dshapes/SOT-669_LFPAK.wings
 %%DATADIR%%/modules/packages3d/Power_Packages_SMD.3dshapes/SOT-669_LFPAK.wrl
 %%DATADIR%%/modules/packages3d/Power_Packages_SMD.3dshapes/SOT-669_LFPAK_ThermalVias-1.wings
@@ -2281,6 +2359,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-pcbnew-project.svg
 %%DATADIR%%/modules/packages3d/Power_Packages_ThroughHole.3dshapes/STK672-040-E.wrl
 %%DATADIR%%/modules/packages3d/Power_Packages_ThroughHole.3dshapes/STK672-080-E.wings
 %%DATADIR%%/modules/packages3d/Power_Packages_ThroughHole.3dshapes/STK672-080-E.wrl
+%%DATADIR%%/modules/packages3d/Relays_ThroughHole.3dshapes/Relay_DPDT_IM0(3,6,7)NS.wrl
 %%DATADIR%%/modules/packages3d/Relays_ThroughHole.3dshapes/Relay_SANYOU_SRD_Series_Form_C.wings
 %%DATADIR%%/modules/packages3d/Relays_ThroughHole.3dshapes/Relay_SANYOU_SRD_Series_Form_C.wrl
 %%DATADIR%%/modules/packages3d/Relays_ThroughHole.3dshapes/Relay_SPDS_OMRON-G6E.wings

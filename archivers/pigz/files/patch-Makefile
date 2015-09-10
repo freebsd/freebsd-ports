@@ -1,9 +1,0 @@
---- ./Makefile.orig	2013-03-10 10:38:22.000000000 -0700
-+++ ./Makefile	2013-11-26 13:32:03.000000000 -0800
-@@ -1,5 +1,4 @@
--CC=cc
--CFLAGS=-O3 -Wall -Wextra
-+all: dev
- 
- 
- pigz: pigz.o yarn.o zopfli/deflate.o zopfli/blocksplitter.o zopfli/tree.o zopfli/lz77.o zopfli/cache.o zopfli/hash.o zopfli/util.o zopfli/squeeze.o zopfli/katajainen.o

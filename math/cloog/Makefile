@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cloog
-PORTVERSION=	0.18.3
-PORTREVISION=	1
+PORTVERSION=	0.18.4
 CATEGORIES=	math
 MASTER_SITES=	http://www.bastoul.net/cloog/pages/download/
 

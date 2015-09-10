@@ -24,8 +24,6 @@ OPTIONS_DEFAULT=	A4SIZE
 
 A4SIZE_DESC=	Set A4 (not Letter) as a default paper size
 
-.include <bsd.port.pre.mk>
-
 do-extract:
 	${MKDIR} ${WRKSRC}
 .for i in ${DISTFILES}
@@ -42,10 +40,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/\(DEFAULT_JIS_FONT\):.*$$/\1: kanji48.hbf/; \
 		s/\(DEFAULT_BIG5FONT\):.*$$/\1: ntu_kai48.hbf/; \
 		s/\(DEFAULT_ENCODING\):.*$$/\1: BIG5/' ${WRKSRC}/cnprint33.cmd
-.if ${PORT_OPTIONS:MA4SIZE}
+post-patch-A4SIZE-on:
 	@${REINPLACE_CMD} -e 's/\(DEFAULT_PAPERSIZE\):.*$$/\1: 8.27 11.69/' \
 		${WRKSRC}/cnprint33.cmd
-.endif
 
 do-build:
 	cd ${WRKSRC} ; \
@@ -57,4 +54,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}33.cmd  ${STAGEDIR}${DATADIR}/${PORTNAME}.cmd
 	${INSTALL_DATA} ${FILES} ${STAGEDIR}${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

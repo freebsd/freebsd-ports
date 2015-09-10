@@ -5,7 +5,7 @@ PORTNAME=	wikitools
 PORTVERSION=	1.1.1
 PORTREVISION=	1
 CATEGORIES=	www devel python
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -18,7 +18,7 @@ USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 260
+.if ${PYTHON_REL} < 2600
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}simplejson>=2.0.9:${PORTSDIR}/devel/py-simplejson
 .endif
 

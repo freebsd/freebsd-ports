@@ -17,7 +17,7 @@ LIB_DEPENDS=	libxmmsclient.so:${PORTSDIR}/audio/xmms2 \
 		libnotify.so:${PORTSDIR}/devel/libnotify
 
 USES=		gmake desktop-file-utils pkgconfig
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 intltool
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip

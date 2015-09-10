@@ -1,6 +1,6 @@
---- texk/bibtex-x/Makefile.in.orig	2013-12-26 00:37:50.000000000 +0900
-+++ texk/bibtex-x/Makefile.in	2014-08-22 17:37:38.000000000 +0900
-@@ -124,8 +124,7 @@
+--- texk/bibtex-x/Makefile.in.orig	2015-03-12 14:42:02 UTC
++++ texk/bibtex-x/Makefile.in
+@@ -121,8 +121,7 @@ CONFIG_CLEAN_FILES =
  CONFIG_CLEAN_VPATH_FILES =
  @BIBTEX8_TRUE@am__EXEEXT_1 = bibtex8$(EXEEXT)
  @BIBTEXU_TRUE@am__EXEEXT_2 = bibtexu$(EXEEXT)
@@ -10,7 +10,7 @@
  PROGRAMS = $(bin_PROGRAMS)
  am__objects_1 = bibtex8-bibtex-1.$(OBJEXT) bibtex8-bibtex-2.$(OBJEXT) \
  	bibtex8-bibtex-3.$(OBJEXT) bibtex8-bibtex-4.$(OBJEXT) \
-@@ -1427,7 +1426,7 @@
+@@ -1438,7 +1437,7 @@ check-am: all-am
  check: check-am
  all-am: Makefile $(PROGRAMS) $(DATA) config.h
  installdirs:
@@ -19,7 +19,7 @@
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
  install: install-am
-@@ -1487,7 +1486,7 @@
+@@ -1498,7 +1497,7 @@ info: info-am
  
  info-am:
  

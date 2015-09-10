@@ -14,7 +14,7 @@ LICENSE=	APACHE20
 RUN_DEPENDS=	rubygem-ffi>=1.0.0:${PORTSDIR}/devel/rubygem-ffi \
 		rubygem-rake>=0:${PORTSDIR}/devel/rubygem-rake
 
-USE_RAKE=	yes
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

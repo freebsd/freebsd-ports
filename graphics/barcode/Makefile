@@ -4,8 +4,7 @@
 PORTNAME=	barcode
 PORTVERSION=	0.98
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	barcode
+MASTER_SITES=	GNU
 
 MAINTAINER=	jev@ecad.org
 COMMENT=	A barcode generation library along with a command line frontend

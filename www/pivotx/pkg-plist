@@ -1,11 +1,13 @@
 @owner www
 @group www
-%%WWWDIR%%/images/index.html
 %%WWWDIR%%/index.php
+%%WWWDIR%%/robots.txt
+%%WWWDIR%%/images/index.html
+%%WWWDIR%%/images/icon_pivotx.jpg
 %%WWWDIR%%/pivotx/ajaxhelper.php
 %%WWWDIR%%/pivotx/data.php
 @exec   rm -f  %B/db/cache/*
-@unexec rm -rf %B/db/cache 2>/dev/null || true
+@unexec rm -r  %B/db/cache/* 2>/dev/null || true
 %%WWWDIR%%/pivotx/db/index.html
 %%WWWDIR%%/pivotx/db/refkeys/index.html
 %%WWWDIR%%/pivotx/db/rsscache/index.html
@@ -178,6 +180,14 @@
 %%WWWDIR%%/pivotx/extensions/slideshow/slideviewer.css
 %%WWWDIR%%/pivotx/extensions/slideshow/spinner.gif
 %%WWWDIR%%/pivotx/extensions/slideshow/widget_slideshow.php
+%%WWWDIR%%/pivotx/extensions/wxrexport/docs/bolt.markdown
+%%WWWDIR%%/pivotx/extensions/wxrexport/docs/changelog.markdown
+%%WWWDIR%%/pivotx/extensions/wxrexport/docs/index.markdown
+%%WWWDIR%%/pivotx/extensions/wxrexport/docs/toc.markdown
+%%WWWDIR%%/pivotx/extensions/wxrexport/docs/wordpress.markdown
+%%WWWDIR%%/pivotx/extensions/wxrexport/hook_wxrexport.php
+%%WWWDIR%%/pivotx/extensions/wxrexport/media-library-assistant-fixed-values/mla-fixed-values.php
+%%WWWDIR%%/pivotx/extensions/wxrexport/wordpress-importer/pivx_wp_import_users.php
 %%WWWDIR%%/pivotx/fileupload.php
 %%WWWDIR%%/pivotx/first_defense.php
 %%WWWDIR%%/pivotx/forms.php
@@ -908,103 +918,4 @@
 %%WWWDIR%%/pivotx/templates_internal/window_insert_popup.tpl
 %%WWWDIR%%/pivotx/templates_internal/window_insert_tag.tpl
 %%WWWDIR%%/pivotx/templates_internal/window_upload.tpl
-%%WWWDIR%%/robots.txt
-@dirrm %%WWWDIR%%/pivotx/templates_internal/ui-theme/images
-@dirrm %%WWWDIR%%/pivotx/templates_internal/ui-theme
-@dirrm %%WWWDIR%%/pivotx/templates_internal/mobile
-@dirrm %%WWWDIR%%/pivotx/templates_internal/assets
-@dirrm %%WWWDIR%%/pivotx/templates_internal
-@dirrmtry %%WWWDIR%%/pivotx/templates/skinny/images
-@dirrmtry %%WWWDIR%%/pivotx/templates/skinny
-@dirrmtry %%WWWDIR%%/pivotx/templates/mobile
-@dirrmtry %%WWWDIR%%/pivotx/templates/default/images
-@dirrmtry %%WWWDIR%%/pivotx/templates/default
-@dirrmtry %%WWWDIR%%/pivotx/templates/bare_bones
-@dirrm %%WWWDIR%%/pivotx/templates
-@dirrm %%WWWDIR%%/pivotx/pics/taggerati
-@dirrm %%WWWDIR%%/pivotx/pics
-@dirrm %%WWWDIR%%/pivotx/modules/smarty/plugins
-@dirrm %%WWWDIR%%/pivotx/modules/smarty/internals
-@dirrm %%WWWDIR%%/pivotx/modules/smarty
-@dirrm %%WWWDIR%%/pivotx/modules/moblog
-@dirrm %%WWWDIR%%/pivotx/modules
-@dirrm %%WWWDIR%%/pivotx/langs/codes
-@dirrm %%WWWDIR%%/pivotx/langs
-@dirrm %%WWWDIR%%/pivotx/includes/xmlrpc/compat
-@dirrm %%WWWDIR%%/pivotx/includes/xmlrpc
-@dirrm %%WWWDIR%%/pivotx/includes/textile
-@dirrm %%WWWDIR%%/pivotx/includes/minify/lib/Solar
-@dirrm %%WWWDIR%%/pivotx/includes/minify/lib/Minify/Controller
-@dirrm %%WWWDIR%%/pivotx/includes/minify/lib/Minify/Cache
-@dirrm %%WWWDIR%%/pivotx/includes/minify/lib/Minify/CSS
-@dirrm %%WWWDIR%%/pivotx/includes/minify/lib/Minify
-@dirrm %%WWWDIR%%/pivotx/includes/minify/lib/HTTP
-@dirrm %%WWWDIR%%/pivotx/includes/minify/lib
-@dirrm %%WWWDIR%%/pivotx/includes/minify
-@dirrm %%WWWDIR%%/pivotx/includes/markitup/images
-@dirrm %%WWWDIR%%/pivotx/includes/markitup
-@dirrm %%WWWDIR%%/pivotx/includes/markdown
-@dirrm %%WWWDIR%%/pivotx/includes/magpie
-@dirrm %%WWWDIR%%/pivotx/includes/js/plupload
-@dirrm %%WWWDIR%%/pivotx/includes/js
-@dirrm %%WWWDIR%%/pivotx/includes/emoticons/trillian
-@dirrm %%WWWDIR%%/pivotx/includes/emoticons
-@dirrm %%WWWDIR%%/pivotx/includes/editor
-@dirrm %%WWWDIR%%/pivotx/includes
-@dirrm %%WWWDIR%%/pivotx/extensions/slideshow/docs
-@dirrm %%WWWDIR%%/pivotx/extensions/slideshow
-@dirrm %%WWWDIR%%/pivotx/extensions/lifestream/docs
-@dirrm %%WWWDIR%%/pivotx/extensions/lifestream
-@dirrm %%WWWDIR%%/pivotx/extensions/gallery/docs
-@dirrm %%WWWDIR%%/pivotx/extensions/gallery
-@dirrm %%WWWDIR%%/pivotx/extensions/fancybox/docs
-@dirrm %%WWWDIR%%/pivotx/extensions/fancybox
-@dirrm %%WWWDIR%%/pivotx/extensions/extraimagefield/docs
-@dirrm %%WWWDIR%%/pivotx/extensions/extraimagefield
-@dirrm %%WWWDIR%%/pivotx/extensions
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/utils
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/themes/advanced/skins/default/img
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/themes/advanced/skins/default
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/themes/advanced/skins
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/themes/advanced/langs
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/themes/advanced/js
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/themes/advanced/img
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/themes/advanced
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/themes
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/plugins/xhtmlxtras/langs
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/plugins/xhtmlxtras/js
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/plugins/xhtmlxtras/css
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/plugins/xhtmlxtras
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/plugins/visualchars
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/plugins/table/langs
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/plugins/table/js
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/plugins/table/css
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/plugins/table
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/plugins/searchreplace/langs
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/plugins/searchreplace/js
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/plugins/searchreplace/css
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/plugins/searchreplace
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/plugins/paste/langs
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/plugins/paste/js
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/plugins/paste
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/plugins/nonbreaking
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/plugins/media/langs
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/plugins/media/js
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/plugins/media/css
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/plugins/media
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/plugins/fullscreen
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/plugins/contextmenu
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/plugins
-@dirrm %%WWWDIR%%/pivotx/editor_wysi/langs
-@dirrm %%WWWDIR%%/pivotx/editor_wysi
-@dirrmtry %%WWWDIR%%/pivotx/db/users
-@dirrmtry %%WWWDIR%%/pivotx/db/tbkeys
-@dirrmtry %%WWWDIR%%/pivotx/db/tagdata
-@dirrmtry %%WWWDIR%%/pivotx/db/search
-@dirrmtry %%WWWDIR%%/pivotx/db/rsscache
-@dirrmtry %%WWWDIR%%/pivotx/db/refkeys
-@dirrmtry %%WWWDIR%%/pivotx/db/cache
-@dirrmtry %%WWWDIR%%/pivotx/db
-@dirrmtry %%WWWDIR%%/pivotx
-@dirrm %%WWWDIR%%/images
-@dirrmtry %%WWWDIR%%
+@dir %%WWWDIR%%/pivotx/db/cache

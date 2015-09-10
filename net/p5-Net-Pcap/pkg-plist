@@ -1,5 +1,5 @@
 bin/pcapinfo
-%%PERL5_MAN3%%/Net::Pcap.3.gz
 %%SITE_ARCH%%/Net/Pcap.pm
 %%SITE_ARCH%%/auto/Net/Pcap/Pcap.so
+%%PERL5_MAN3%%/Net::Pcap.3.gz
 man/man1/pcapinfo.1.gz

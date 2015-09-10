@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	AnyEvent-Filesys-Notify
-PORTVERSION=	1.15
-PORTREVISION=	1
+PORTVERSION=	1.19
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MGRIMES
@@ -21,7 +20,7 @@ RUN_DEPENDS=	\
 	p5-AnyEvent>=7.05:${PORTSDIR}/devel/p5-AnyEvent \
 	p5-Path-Iterator-Rule>=1.005:${PORTSDIR}/devel/p5-Path-Iterator-Rule \
 	p5-Try-Tiny>=0.18:${PORTSDIR}/lang/p5-Try-Tiny \
-	p5-namespace-autoclean>=0.006:${PORTSDIR}/devel/p5-namespace-autoclean \
+	p5-namespace-autoclean>=0.24:${PORTSDIR}/devel/p5-namespace-autoclean \
 	p5-IO-KQueue>=0.34:${PORTSDIR}/devel/p5-IO-KQueue
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Data-Dump>=0:${PORTSDIR}/devel/p5-Data-Dump \

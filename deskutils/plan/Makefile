@@ -7,7 +7,6 @@ PORTNAME=	plan
 PORTVERSION=	1.10.1
 CATEGORIES+=	deskutils
 MASTER_SITES=	ftp://plan.ftp.fu-berlin.de/
-MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X/Motif schedule planner with calendar
@@ -19,11 +18,6 @@ ALL_TARGET=	freebsd
 MAKE_ENV+=	DATADIR=${DATADIR} EXAMPLESDIR=${EXAMPLESDIR}
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} > 900006
-EXTRA_PATCHES=	${PATCHDIR}/utmpx-src-daemon.c
-.endif
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
@@ -54,4 +48,4 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/netplan.dir
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

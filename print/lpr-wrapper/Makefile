@@ -3,7 +3,7 @@
 
 PORTNAME=	lpr-wrapper
 PORTVERSION=	0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	http://www.mathstat.dal.ca/~selinger/lpr-wrapper/download/
 
@@ -16,9 +16,8 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		mpage:${PORTSDIR}/print/mpage \
 		pstops:${PORTSDIR}/print/psutils
 
-USES=		shebangfix
+USES=		ghostscript:run shebangfix
 SHEBANG_FILES=	lpr-wrapper.in lpr-wrapper-cups.in lpr-wrapper-features
-USE_GHOSTSCRIPT_RUN=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 

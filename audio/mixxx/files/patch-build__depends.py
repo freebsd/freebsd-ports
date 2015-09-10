@@ -67,7 +67,7 @@
          elif build.toolchain_is_msvs:
              # Validate the specified winlib directory exists
              mixxx_lib_path = SCons.ARGUMENTS.get('winlib', '..\\..\\..\\mixxx-win32lib-msvc100-release')
-@@ -851,16 +847,20 @@
+@@ -851,16 +847,19 @@
  
          elif build.platform_is_bsd:
              build.env.Append(CPPDEFINES='__BSD__')
@@ -84,8 +84,7 @@
 +            build.env.Append(LIBPATH=['%%LOCALBASE%%/lib/portaudio2',
 +                                      '%%LOCALBASE%%/lib/qt4',
 +                                      '%%LOCALBASE%%/lib'])
-+            build.env.Append(LINKFLAGS=['%%LOCALBASE%%/lib/portaudio2/libportaudio.so',
-+                                        '-Wl,-rpath,%%LOCALBASE%%/lib/portaudio2',
++            build.env.Append(LINKFLAGS=['%%LOCALBASE%%/lib/libportaudio.so',
 +                                        '-Wl,-rpath,%%LOCALBASE%%/lib/qt4',
 +                                        '-Wl,-rpath,%%LOCALBASE%%/lib'])
              # why do we need to do this on OpenBSD and not on Linux?  if we

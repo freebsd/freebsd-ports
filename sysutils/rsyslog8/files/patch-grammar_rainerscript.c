@@ -1,6 +1,6 @@
---- grammar/rainerscript.c.orig	2014-12-02 10:15:16 UTC
+--- grammar/rainerscript.c.orig	2015-06-30 12:26:24 UTC
 +++ grammar/rainerscript.c
-@@ -34,6 +34,7 @@
+@@ -35,6 +35,7 @@
  #include <sys/stat.h>
  #include <sys/types.h>
  #include <libestr.h>

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	squid
-PORTVERSION=	3.5.3
+PORTVERSION=	3.5.8
 PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
@@ -9,7 +9,6 @@ MASTER_SITES=	http://www.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
 		http://www1.at.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
 		http://www.eu.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
 		http://www1.jp.squid-cache.org/Versions/v3/${PORTVERSION:R}/
-MASTER_SITE_SUBDIR=	squid
 DIST_SUBDIR=	squid${PORTVERSION:R}
 
 PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
@@ -257,10 +256,6 @@ CONFIGURE_ARGS+=	--enable-auth-basic="${basic_auth}" \
 			--enable-auth-negotiate="${negotiate_auth}" \
 			--enable-auth-ntlm="${ntlm_auth}"
 
-.if ${PORT_OPTIONS:MECAP}
-BROKEN=			It needs eCAP 1.0 lib, which isn't in ports tree now
-.endif
-
 # Storage schemes:
 storage_schemes=	ufs
 diskio_modules=		AIO Blocking IpcIo Mmapped
@@ -354,8 +349,6 @@ post-install:
 		${STAGEDIR}${EXAMPLESDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${MYDOCS} ${STAGEDIR}${DOCSDIR})
-	${MKDIR} ${STAGEDIR}/var/squid/logs
-	${RMDIR} ${STAGEDIR}/var/run/squid
 
 .include <bsd.port.pre.mk>
 

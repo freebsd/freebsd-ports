@@ -6,8 +6,7 @@ PORTVERSION=	0.2.5
 PORTREVISION=	3
 CATEGORIES=	misc windowmaker afterstep
 MASTER_SITES=	http://people.debian.org/~godisch/wmwork/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	xride
+		LOCAL/xride
 
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Dockapp that keeps track of time you have spent on something

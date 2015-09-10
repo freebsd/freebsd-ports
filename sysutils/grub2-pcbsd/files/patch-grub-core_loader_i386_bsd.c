@@ -1,8 +1,6 @@
-diff --git grub-core/loader/i386/bsd.c grub-core/loader/i386/bsd.c
-index 8f691e0..8c7decd 100644
---- grub-core/loader/i386/bsd.c
+--- grub-core/loader/i386/bsd.c.orig	2015-01-30 16:34:55 UTC
 +++ grub-core/loader/i386/bsd.c
-@@ -415,11 +415,14 @@ grub_freebsd_add_meta_module (const char *filename, const char *type,
+@@ -416,11 +416,14 @@ grub_freebsd_add_meta_module (const char
  			      grub_addr_t addr, grub_uint32_t size)
  {
    const char *name;

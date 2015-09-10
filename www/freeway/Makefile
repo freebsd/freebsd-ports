@@ -3,7 +3,7 @@
 
 PORTNAME=	freeway
 PORTVERSION=	1.4.2.197
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}-ecom/Freeway/${PORTVERSION}%20Sathish
 DISTNAME=	${PORTNAME}_${PORTVERSION:S,.,_,g}
@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S,.,_,g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced Open Source eCommerce Platform
 
+USES=		shebangfix
+SHEBANG_FILES=	admin/htmlarea/plugins/SpellChecker/spell-check-logic.cgi
 USE_PHP=	mysql
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

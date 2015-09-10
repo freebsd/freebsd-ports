@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.23.9
+PORTVERSION=	1.23.10
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://releases.wikimedia.org/mediawiki/${PORTVERSION:R}/
 PKGNAMESUFFIX=	123
@@ -12,8 +13,14 @@ COMMENT=	Wiki engine used by Wikipedia
 
 LICENSE=	GPLv2
 
-CONFLICTS=	mediawiki119-[0-9]* mediawiki12[24]-[0-9]*
+CONFLICTS=	mediawiki119-[0-9]* mediawiki12[45]-[0-9]*
 
+USES=		shebangfix
+SHEBANG_FILES=	maintenance/dev/*.sh \
+		maintenance/hiphop/run-server
+SHEBANG_LANG=	hhvm
+hhvm_OLD_CMD=	/usr/bin/hhvm
+hhvm_CMD=	${LOCALBASE}/bin/hhvm # not installed by anything yet
 USE_PHP=	ctype hash iconv mbstring pcre session xml zlib readline dom json
 WANT_PHP_WEB=	yes
 MEDIAWIKIDIR?=	www/mediawiki
@@ -24,14 +31,14 @@ PLIST=		${WRKDIR}/plist
 SUB_FILES=	pkg-message
 SUB_LIST=	MEDIAWIKIDIR=${PREFIX}/${MEDIAWIKIDIR}
 
-OPTIONS_DEFINE=	MYSQL PGSQL SQLITE LDAP MEMCACHED APC EACCEL XCACHE IMAGICK
-OPTIONS_DEFAULT=MYSQL
+OPTIONS_DEFINE=	MYSQL PGSQL SQLITE LDAP MEMCACHED APC XCACHE IMAGICK SOCKETS
+OPTIONS_DEFAULT=MYSQL SOCKETS
 
 MEMCACHED_DESC=	Use memcached
 APC_DESC=	Use pecl-APC (Mediawiki recommended)
-EACCEL_DESC=	Use eAccelerator (instead of pecl-APC)
 XCACHE_DESC=	Use xCache (instead of pecl-APC)
 IMAGICK_DESC=	Use ImageMagick
+SOCKETS_DESC=	Use sockets
 
 .include <bsd.port.options.mk>
 
@@ -62,19 +69,17 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:${PORTSDIR}/graphic
 
 .if ${PORT_OPTIONS:MAPC}
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/apc.so:${PORTSDIR}/www/pecl-APC
-.elif ${PORT_OPTIONS:MEACCEL}
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/eaccelerator.so:${PORTSDIR}/www/eaccelerator
 .elif ${PORT_OPTIONS:MXCACHE}
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xcache.so:${PORTSDIR}/www/xcache
 .endif
 
+.if ${PORT_OPTIONS:MSOCKETS}
+USE_PHP+=	sockets
+.endif
+
 pre-install:
-	@${ECHO_CMD} "@owner ${WWWOWN}" >> ${PLIST}
-	@${ECHO_CMD} "@group ${WWWGRP}" >> ${PLIST}
 	@${FIND} -s -d ${WRKSRC} -not -type d | ${SED} "s?${WRKSRC}?${MEDIAWIKIDIR}?g" >>${PLIST}
 	@${ECHO} @dir ${MEDIAWIKIDIR} >> ${PLIST}
-	@${ECHO_CMD} "@group" >> ${PLIST}
-	@${ECHO_CMD} "@owner" >> ${PLIST}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${MEDIAWIKIDIR}

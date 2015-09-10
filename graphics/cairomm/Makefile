@@ -1,10 +1,9 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/graphics/cairomm/Makefile,v 1.19 2011/06/07 14:00:26 kwm Exp $
 
 PORTNAME=	cairomm
 PORTVERSION=	1.10.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/
 
@@ -16,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake libtool:keepla pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig
 USE_GNOME=	cairo libxml++26
 CONFIGURE_ENV=	AUTOMAKE="${TRUE}" AUTOCONF="${TRUE}" DOXYGEN="${TRUE}"
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -26,12 +25,8 @@ OPTIONS_DEFINE=	DOCS
 
 DOCS_CONFIGURE_ARGS_OFF=	--disable-documentation
 
-.include <bsd.port.options.mk>
-
-.if empty(PORT_OPTIONS:MDOCS)
-post-configure:
+post-configure-DOCS-off:
 	@${TOUCH} -f ${WRKSRC}/docs/reference/html/index.html
-.endif
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcairomm-1.0.so.1.4.0

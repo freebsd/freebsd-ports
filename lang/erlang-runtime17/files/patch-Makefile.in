@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- Makefile.in.orig
 +++ Makefile.in
 @@ -59,7 +59,7 @@

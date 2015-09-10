@@ -12,7 +12,6 @@ MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Media-server compatible with "Digital Life Network Alliance"
 
 LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3	\
-		libjpeg.so:${PORTSDIR}/graphics/jpeg		\
 		libexif.so:${PORTSDIR}/graphics/libexif	\
 		libid3tag.so:${PORTSDIR}/audio/libid3tag	\
 		libogg.so:${PORTSDIR}/audio/libogg		\
@@ -25,7 +24,7 @@ CONFIGURE_ARGS=	--with-db-path=/var/db/minidlna \
 		--with-os-url="http://www.FreeBSD.org"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
-USES=		autoreconf gettext-tools iconv
+USES=		autoreconf gettext-tools iconv jpeg
 
 PKGMESSAGE=	${WRKSRC}/pkg-message
 SUB_FILES+=	pkg-message

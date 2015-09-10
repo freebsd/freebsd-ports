@@ -4,7 +4,7 @@
 #
 
 # PROVIDE: puppet
-# REQUIRE: NETWORK
+# REQUIRE: LOGIN
 # KEYWORD: shutdown
 
 #

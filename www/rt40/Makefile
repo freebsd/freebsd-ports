@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	rt
-PORTVERSION=	4.0.23
+PORTVERSION=	4.0.24
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/
 PKGNAMESUFFIX=	40
@@ -37,7 +38,7 @@ OPTIONS_SINGLE_DB=	MYSQL ORACLE PGSQL SQLITE
 OPTIONS_RADIO=		WEB
 OPTIONS_RADIO_WEB=	AP_MODFASTCGI AP_MODPERL LIGHTTPD SPAWN_FCGI
 
-OPTIONS_DEFAULT=	AP_MODPERL GD GPG MYSQL
+OPTIONS_DEFAULT=	AP_MODFASTCGI GD GPG MYSQL
 
 USERS?=		www
 GROUPS?=	rt www
@@ -208,4 +209,10 @@ post-install:
 	(cd ${WRKSRC}/etc && \
 	    ${COPYTREE_SHARE} upgrade ${STAGEDIR}${DOCSDIR} "! -name *\.in")
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 502200
+CORE_DEPS+=	p5-CGI>0:${PORTSDIR}/www/p5-CGI
+.endif
+
+.include <bsd.port.post.mk>

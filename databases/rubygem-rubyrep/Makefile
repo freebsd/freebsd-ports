@@ -3,6 +3,7 @@
 
 PORTNAME=	rubyrep
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -17,9 +18,13 @@ RUN_DEPENDS=	flog>=0:${PORTSDIR}/sysutils/flog \
 		rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport \
 		rubygem-activerecord>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-activerecord
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+USES=		shebangfix
+SHEBANG_FILES=	bin/rubyrep rubyrep
 
 USE_RC_SUBR=	rubyrep
 

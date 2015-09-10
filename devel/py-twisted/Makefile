@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	twisted
-PORTVERSION=	15.0.0
+PORTVERSION=	15.2.1
 CATEGORIES=	devel net python
-MASTER_SITES=	# empty
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTFILES=	# empty
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Metaport of Twisted, an event-driven networking engine
@@ -15,11 +13,8 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedCore>=${PORTVERSION}:${PORTSDIR}/devel/py-twistedCore
 
-NO_BUILD=	yes
-USES=		python:2
+USES=		metaport python:2
 
-# Bypass infrastructure bug
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 OPTIONS_DEFINE=	CONCH LORE MAIL NAMES NEWS PAIR RUNNER WEB WORDS
 OPTIONS_DEFAULT=CONCH LORE MAIL NAMES NEWS PAIR RUNNER WEB WORDS
 CONCH_DESC=	SSH and SFTP protocol
@@ -40,8 +35,5 @@ PAIR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedPair>=${PORTVERSION}:${PORTSDIR}
 RUNNER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedRunner>=${PORTVERSION}:${PORTSDIR}/devel/py-twistedRunner
 WEB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedWeb>=${PORTVERSION}:${PORTSDIR}/www/py-twistedWeb
 WORDS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedWords>=${PORTVERSION}:${PORTSDIR}/net-im/py-twistedWords
-
-do-install:
-	@${DO_NADA}
 
 .include <bsd.port.mk>

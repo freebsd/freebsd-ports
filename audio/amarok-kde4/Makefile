@@ -3,10 +3,9 @@
 
 PORTNAME=	amarok
 PORTVERSION=	2.8.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src
+MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE music player
@@ -23,8 +22,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:${P
 RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:${PORTSDIR}/devel/qtscriptgenerator \
 		${KDE4_PREFIX}/lib/kde4/kio_upnp_ms.so:${PORTSDIR}/net/kio-upnp-ms
 
-LATEST_LINK=	${PORTNAME}-kde4
-
 USE_KDE4=	kdelibs kdeprefix libkcddb libkcompactdisc \
 		nepomuk-core runtime automoc4 strigi
 USE_MYSQL=	embedded
@@ -32,7 +29,8 @@ USE_QT4=	corelib dbus designer gui network opengl \
 		phonon script sql svg webkit xml \
 		qmake_build moc_build rcc_build uic_build
 USE_XORG=	x11
-USES=		cmake pkgconfig shared-mime-info tar:bzip2
+USES=		cmake pkgconfig shared-mime-info shebangfix tar:bzip2
+SHEBANG_FILES=	src/kconf_update/amarok-2.4.1-tokens_syntax_update.pl
 USE_LDCONFIG=	yes
 
 BROKEN_sparc64=	does not build (GCC-related error)

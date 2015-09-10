@@ -2,9 +2,9 @@
 
 PORTNAME=	cwm
 PORTVERSION=	5.6
+DISTVERSIONPREFIX=	v
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://chneukirchen.org/releases/ \
-		http://github.com/chneukirchen/${PORTNAME}/archive/v${PORTVERSION}.tar.gz?dummy=/
 
 MAINTAINER=	braakvaak@aol.com
 COMMENT=	Minimalistic window manager for X11 based on evilwm
@@ -15,6 +15,8 @@ LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
 USES=		pkgconfig:build
 USE_XORG=	x11 xft xinerama xrandr
+USE_GITHUB=	yes
+GH_ACCOUNT=	chneukirchen
 
 PLIST_FILES=	bin/cwm \
 		man/man1/cwm.1.gz \

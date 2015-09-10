@@ -37,4 +37,3 @@
 %%DATADIR%%/wikicalcmodperl.pl
 %%DATADIR%%/wikicalcwin.pl
 %%DATADIR%%/setup.sh
-@dirrm %%DATADIR%%

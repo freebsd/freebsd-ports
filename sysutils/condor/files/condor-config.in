@@ -5,6 +5,12 @@ if [ -z $EDITOR ]; then
     export EDITOR
 fi
 
+for file in condor_config condor_config.local; do
+    if [ ! -e %%PREFIX%%/etc/$file ]; then
+	cp %%PREFIX%%/etc/$file.sample %%PREFIX%%/etc/$file
+    fi
+done
+
 $EDITOR %%PREFIX%%/etc/condor_config.local
 
 printf "Restart HTCondor? (y/[n]) "
@@ -16,7 +22,6 @@ if [ 0$restart = 0y ]; then
     ps ax | grep condor
 
     service condor start
-    sleep 5
     printf "\nCondor processes running after start:\n\n"
     ps ax | grep condor
 fi

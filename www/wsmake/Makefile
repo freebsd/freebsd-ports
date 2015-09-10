@@ -9,18 +9,15 @@ MASTER_SITES=	SF/${PORTNAME}/OldFiles
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software for production and maintenance of web sites
 
-OPTIONS_DEFINE=	DOCS
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gwsmake=no --enable-iswmake=no
 
-.include <bsd.port.options.mk>
+INFO=		wsmake iwsmake gwsmake
 
-.if ${PORT_OPTIONS:MDOCS}
-INFO=	wsmake iwsmake gwsmake
-.else
-CONFIGURE_ARGS+=	--enable-docs=no
-.endif
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	ircproxy
 PORTVERSION=	1.3.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	irc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -34,15 +34,13 @@ MEMDEBUG_CONFIGURE_ENABLE=	memdebug
 FDDEBUG_CONFIGURE_ENABLE=	fddebug
 IPV6_CONFIGURE_ENABLE=		ipv6
 SSL_CONFIGURE_ENABLE=		ssl
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSSL}
-USE_OPENSSL=		yes
-.endif
+SSL_USE=			OPENSSL=yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|EUSER="ircproxy"|EUSER="ircproxyd"|g; \
 		s|EGROUP="users"|EGROUP="ircproxyd"|g' ${WRKSRC}/data/${PORTNAME}d.conf
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/imkpasswd ${STAGEDIR}${PREFIX}/bin/ircproxyd
 
 .include <bsd.port.mk>

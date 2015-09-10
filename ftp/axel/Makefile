@@ -5,14 +5,10 @@ PORTNAME=	axel
 PORTVERSION=	2.4
 PORTREVISION=	1
 CATEGORIES=	ftp
-MASTER_SITES=	https://alioth.debian.org/frs/download.php/3015/ \
-		ftp://ftp.linuxforum.hu/mirrors/frugalware/pub/frugalware/frugalware-testing/source/apps-extra/axel/ \
-		http://cvs.fedoraproject.org/repo/pkgs/axel/axel-2.4.tar.gz/a2a762fce0c96781965c8f9786a3d09d/
+MASTER_SITES=	http://pkgs.fedoraproject.org/repo/pkgs/axel/axel-2.4.tar.gz/a2a762fce0c96781965c8f9786a3d09d/
 
 MAINTAINER=	prudhvi-krishna-bsd@surapaneni.in
 COMMENT=	Download accelerator
-
-BROKEN=		No public distfiles
 
 USES=		gmake
 HAS_CONFIGURE=	yes

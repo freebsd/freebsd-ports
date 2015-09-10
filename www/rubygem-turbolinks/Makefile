@@ -10,7 +10,7 @@ COMMENT=	Turbolinks makes following links in your web application faster
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-coffee-rails4>=4.0.1:${PORTSDIR}/devel/rubygem-coffee-rails4
+RUN_DEPENDS?=	rubygem-coffee-rails4>=4.0.1:${PORTSDIR}/devel/rubygem-coffee-rails4
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

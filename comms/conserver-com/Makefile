@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	conserver
-PORTVERSION=	8.1.18
-PORTREVISION=	2
+PORTVERSION=	8.2.1
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.conserver.com/ \
 		ftp://ftp.conserver.com/conserver/
@@ -10,6 +10,8 @@ PKGNAMESUFFIX=	-com
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Application that allows multiple users to watch serial consoles
+
+CONFLICTS_INSTALL=	conserver-[0-9]*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-master=${DEFAULTHOST} --with-port=${DEFAULTPORT} \
@@ -21,25 +23,16 @@ OPTIONS_DEFINE=	UDS GSSAPI GSSAPIONLY STRIPREALM
 UDS_DESC=	Use Unix domain sockets for client/server
 STRIPREALM_DESC=Strip @REALM when using GSSAPI
 GSSAPIONLY_DESC=Never prompt for a password when using GSSAPI
-
-.include <bsd.port.options.mk>
+STRIPREALM_IMPLIES=	GSSAPI
+GSSAPIONLY_IMPLIES=	GSSAPI
 
 DEFAULTPORT?=	782
 DEFAULTHOST?=	localhost
 
-.if ${PORT_OPTIONS:MUDS}
-CONFIGURE_ARGS+=	--with-uds
-.endif
-
-.if ${PORT_OPTIONS:MGSSAPI}
-CONFIGURE_ARGS+=	--with-gssapi
-.if ${PORT_OPTIONS:MSTRIPREALM}
-CONFIGURE_ARGS+=	--with-striprealm
-.endif
-.if ${PORT_OPTIONS:MGSSAPIONLY}
-EXTRA_PATCHES=		${FILESDIR}/extra-patch-conserver__master.c
-.endif
-.endif
+UDS_CONFIGURE_WITH=	uds
+GSSAPI_CONFIGURE_WITH=	gssapi
+STRIPREALM_CONFIGURE_WITH=	striprealm
+GSSAPIONLY_EXTRA_PATCHES=		${FILESDIR}/extra-patch-conserver__master.c
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/conserver-convert

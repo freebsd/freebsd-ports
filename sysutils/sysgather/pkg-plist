@@ -1,9 +1,6 @@
 bin/sysgather
-@unexec if cmp -s %D/etc/sysgather.conf %D/etc/sysgather.conf.default; then rm -f %D/etc/sysgather.conf; fi
-etc/sysgather.conf.default
-@exec [ -f %B/sysgather.conf ] || cp %B/%f %B/sysgather.conf
+@sample etc/sysgather.conf.sample
 man/man1/sysgather.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/debian.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/freebsd.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/slackware.conf
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

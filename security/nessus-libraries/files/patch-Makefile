@@ -1,6 +1,6 @@
---- Makefile.orig	2004-01-08 16:55:13 UTC
-+++ Makefile
-@@ -3,8 +3,8 @@ include nessus.tmpl
+--- Makefile.orig	2004-01-09 00:55:13.000000000 +0800
++++ Makefile	2013-07-28 16:41:08.000000000 +0800
+@@ -3,8 +3,8 @@
  ALLDEPS = nessus.tmpl nessus-config
  
  all: $(ALLDEPS) $(PCAP_MAKE)
@@ -11,7 +11,7 @@
  
  nessus-config: nessus-config.pre Makefile nessus.tmpl
  	@echo Creating $@ ...
-@@ -19,8 +19,8 @@ nessus.tmpl: nessus.tmpl.in configure VE
+@@ -19,8 +19,8 @@
  	touch $@
  
  win32:
@@ -22,7 +22,7 @@
  	@echo
  	@echo ' --------------------------------------------------------------'
  	@echo ' The header files necessary and some docs have been generated,'
-@@ -31,27 +31,26 @@ win32:
+@@ -31,27 +31,26 @@
  
  
  pcap-make :
@@ -56,7 +56,7 @@
  	$(INSTALL) -m 0444 include/libnessus.h $(DESTDIR)${includedir}/nessus
  	$(INSTALL) -m 0444 include/harglists.h $(DESTDIR)${includedir}/nessus
  	$(INSTALL) -m 0444 include/libvers.h   $(DESTDIR)${includedir}/nessus
-@@ -64,22 +63,13 @@ install : $(PCAP_INSTALL)
+@@ -64,22 +63,13 @@
  	test -d $(DESTDIR)${mandir}/man1 || ${INSTALL_DIR} -m 755 $(DESTDIR)${mandir}/man1
  	$(INSTALL) -m 0644 nessus-config.1 $(DESTDIR)${mandir}/man1
  

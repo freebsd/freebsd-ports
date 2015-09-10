@@ -15,8 +15,9 @@ RUN_DEPENDS=	rubygem-coderay>=1.1.0:${PORTSDIR}/textproc/rubygem-coderay \
 		rubygem-method_source>=0.8.1:${PORTSDIR}/devel/rubygem-method_source \
 		rubygem-slop>=3.4.0:${PORTSDIR}/devel/rubygem-slop
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
-USE_RAKE=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 

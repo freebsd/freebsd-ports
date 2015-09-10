@@ -15,10 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_AUTOTOOLS=	autoconf automake aclocal
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	LCDd lcdproc lcdexec
-USES=		pkgconfig
+USES=		autoreconf pkgconfig
 
 CONFIGURE_ARGS=	--enable-drivers="${LCDPROC_DRIVERS}" \
 		--disable-dependency-tracking \

@@ -5,8 +5,7 @@ PORTNAME=	quantis
 DISTVERSION=	v13.11.08
 CATEGORIES=	security devel java
 MASTER_SITES=	http://www.idquantique.com/~download/Quantis/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	ale
+		LOCAL/ale
 DISTNAME=	Quantis-${DISTVERSION}-src
 
 MAINTAINER=	ale@FreeBSD.org
@@ -92,10 +91,10 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/../*.txt ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/../User_Manual.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../*.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../User_Manual.pdf ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@(cd ${WRKSRC}/../Samples; ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+	@(cd ${WRKSRC}/../Samples; ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR} "-not -empty")
 .if ${PORT_OPTIONS:MUSB}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/devd
 	${INSTALL_DATA} ${FILESDIR}/quantis.conf ${STAGEDIR}${EXAMPLESDIR}/devd

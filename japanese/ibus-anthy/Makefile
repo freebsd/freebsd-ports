@@ -6,7 +6,7 @@ PORTVERSION=	1.2.7
 PORTREVISION=	6
 CATEGORIES=	japanese
 PROJECTHOST=	ibus
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	ja-
 
 MAINTAINER=	daichi@FreeBSD.org
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/_pynotify.so:${PORTSDIR}/deve
 
 GNU_CONFIGURE=	yes
 USES=		libtool gettext gmake pkgconfig python
-USE_GNOME=	pygtk2
+USE_GNOME=	intltool pygtk2
 
 LOCALBASE_REPLACE_FILES= \
 		engine/engine.py \

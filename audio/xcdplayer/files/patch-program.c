@@ -1,5 +1,5 @@
 
-$FreeBSD$
+$NetBSD: pkgsrc/audio/xcdplayer/patches/patch-ak,v 1.4 2005/12/11 20:48:46 joerg Exp $
 
 --- program.c.orig	Tue Jan 12 19:59:49 1993
 +++ program.c	Mon Aug 25 00:38:35 2003
@@ -12,7 +12,7 @@ $FreeBSD$
  
  # include "debug.h"
  # include "cdrom_globs.h"
-+#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
++#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__) || defined(__DragonFly__)
 +# include "cdrom_freebsd.h"
 +#endif
  #ifdef sun

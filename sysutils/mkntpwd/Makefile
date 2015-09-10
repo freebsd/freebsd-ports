@@ -4,8 +4,7 @@
 PORTNAME=	mkntpwd
 PORTVERSION=	1.0
 CATEGORIES=	sysutils net
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	ldaputils/Contrib/mkntpwd
+MASTER_SITES=	SF/ldaputils/Contrib/mkntpwd
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	pcTA@cs.nctu.edu.tw

@@ -2,45 +2,37 @@
 # $FreeBSD$
 
 PORTNAME=	GeoIP
-PORTVERSION=	1.2.8
-DISTVERSIONPREFIX=	v
+PORTVERSION=	1.3.2
 PORTREVISION=	1
 CATEGORIES=	net python geography
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	stefan@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Mapping of IP addresses/hostnames to country names in Python
 
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	maxmind
-GH_PROJECT=	geoip-api-python
+OPTIONS_DEFINE=	EXAMPLES
 
-USES=		python
-USE_PYTHON=	distutils
-PYDISTUTILS_PKGNAME=	GeoIP-Python
+CPPFLAGS+=	-I${LOCALBASE}/include
+USE_PYTHON=	autoplist concurrent distutils
+USES=		python shebangfix
 
-EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
-EXAMPLE_FILES=	README test.py test_city.py test_org.py test_region.py
+PORTEXAMPLES=	*
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/GeoIP.so
-PORTEXAMPLES=	README test.py test_city.py test_org.py test_region.py
+SHEBANG_FILES=	examples/*.py
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
-		${WRKSRC}/setup.py \
-		${WRKSRC}/test.py \
-		${WRKSRC}/test_city.py \
-		${WRKSRC}/test_org.py \
-		${WRKSRC}/test_region.py
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/examples/*.py
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-.for file in ${EXAMPLE_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${EXAMPLESDIR}
-.endfor
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/GeoIP.so
+
+post-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	cd ${WRKSRC}/examples/ && ${INSTALL_DATA} *.py ${STAGEDIR}${EXAMPLESDIR}/
 
 .include <bsd.port.mk>

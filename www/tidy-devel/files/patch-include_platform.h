@@ -1,6 +1,6 @@
---- include/platform.h.orig	Sun Jan 21 21:36:21 2007
-+++ include/platform.h	Sat Feb  3 17:39:40 2007
-@@ -33,7 +33,7 @@
+--- include/platform.h.orig	2008-03-17 12:57:01 UTC
++++ include/platform.h
+@@ -33,7 +33,7 @@ extern "C" {
    It enables tidy to find config files named ~/.tidyrc if 
    the HTML_TIDY environment variable is not set.
  */
@@ -9,7 +9,7 @@
  
  /*
    Uncomment the following #define if your
-@@ -48,7 +48,7 @@
+@@ -48,7 +48,7 @@ extern "C" {
    Contributed by Todd Lewis.
  */
  

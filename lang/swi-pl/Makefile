@@ -2,16 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	swi-pl
-PORTVERSION=	6.6.6
+PORTVERSION=	7.2.3
 CATEGORIES=	lang
 MASTER_SITES=	http://www.swi-prolog.org/download/stable/src/
-DISTNAME=	pl-${PORTVERSION}
+DISTNAME=	swipl-${PORTVERSION}
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Edinburgh-style Prolog compiler
 
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libodbc.so:${PORTSDIR}/databases/unixODBC
 
 CFLAGS+=	-I${LOCALBASE}/include
@@ -21,7 +20,7 @@ SWIPLDIR=	${PORTNAME:C/-//}-${PORTVERSION}
 
 NOPRECIOUSMAKEVARS=	yes
 USE_XORG=	xft xpm xt
-USES=		pkgconfig pathfix gmake shebangfix
+USES=		gmake jpeg libarchive pathfix pkgconfig shebangfix
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ARCH=${ARCH}-${OPSYS:tl}
@@ -41,7 +40,7 @@ PLIST_SUB=	DISTNAME=${SWIPLDIR} ARCH=${ARCH} OS=${OPSYS:tl} \
 
 .include <bsd.port.pre.mk>
 
-.if (${ARCH} == "i386" || ${ARCH} == "powerpc")
+.if (${ARCH} == "i386" || ${ARCH} == "powerpc" || ${ARCH} == "armv6")
 PLIST_SUB+=	BITS=32
 .else
 PLIST_SUB+=	BITS=64
@@ -61,6 +60,8 @@ post-configure:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's!^mandir=@mandir@!mandir=${MANPREFIX}/man!' \
+		-e '/-o $$@ $$(PLOBJ)/s/$$/ $$(LIBS)/' \
+		-e '/ $$(SHAREDV) $$(SONAME)/d' \
 		${WRKSRC}/src/Makefile.in \
 		${WRKSRC}/packages/xpce/src/Makefile.in
 	@${REINPLACE_CMD} -e '/EXAMPLEEXE/s/INSTALL_PROGRAM/INSTALL_SCRIPT/' \

@@ -6,7 +6,6 @@ PORTVERSION=	0.05
 PORTREVISION=	1
 CATEGORIES=	misc geography perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:KAORU
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -21,15 +20,11 @@ BUILD_DEPENDS=	p5-JSON>=2.53:${PORTSDIR}/converters/p5-JSON \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0.32:${PORTSDIR}/devel/p5-Test-Exception
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501600
-BUILD_DEPENDS+=	p5-Carp>=1.26:${PORTSDIR}/devel/p5-Carp
-RUN_DEPENDS+=	p5-Carp>=1.26:${PORTSDIR}/devel/p5-Carp
-.endif
 
 .if ${PERL_LEVEL} < 502000
 BUILD_DEPENDS+=	p5-HTTP-Tiny>=0.028:${PORTSDIR}/www/p5-HTTP-Tiny \

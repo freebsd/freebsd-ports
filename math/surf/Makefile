@@ -12,10 +12,10 @@ COMMENT=	Visualize some real algebraic geometry
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
+LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
 		libgmp.so:${PORTSDIR}/math/gmp
 
+USES=		jpeg
 USE_XORG=	x11 xmu
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes

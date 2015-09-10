@@ -5,9 +5,8 @@ PORTNAME=	gnupod
 PORTVERSION=	0.99.8
 PORTREVISION=	2
 CATEGORIES=	audio perl5
-MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
+MASTER_SITES=	SAVANNAH \
 		http://www.blinkenlights.ch/gnupod-dist/stable/
-MASTER_SITE_SUBDIR=	gnupod
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of Perl scripts for using an Apple iPod

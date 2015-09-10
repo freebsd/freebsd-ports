@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=		talloc
-PORTVERSION=		2.1.1
+PORTVERSION=		2.1.3
 PORTREVISION=		0
 PORTEPOCH=		0
 CATEGORIES=		devel
-MASTER_SITES=		${MASTER_SITE_SAMBA}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=		SAMBA
 
 MAINTAINER=		timur@FreeBSD.org
 COMMENT=		Hierarchical pool based memory allocator
@@ -25,6 +24,7 @@ PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
 
 CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man \
 			--infodir=${PREFIX}/${INFO_PATH}/${INFO_SUBDIR} \
+			--disable-rpath \
 			--without-gettext
 
 OPTIONS_DEFINE=		MANPAGES

@@ -10,6 +10,7 @@ COMMENT=	SubWeb is a (reverse) proxy to inspect HTTP flows on the fly
 
 USES=		shebangfix
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 SHEBANG_FILES=	subweb
 

@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	DBD-SQLite
-PORTVERSION=	1.46
+PORTVERSION=	1.48
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:ISHIGAKI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -21,5 +20,8 @@ PORTSCOUT=	limit:^[0-9\.]*$$
 
 USES=		perl5
 USE_PERL5=	configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/DBD/SQLite/SQLite.so
 
 .include <bsd.port.mk>

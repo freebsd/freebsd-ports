@@ -1,10 +1,10 @@
---- socketbase/socketbase.orig	2013-11-13 11:44:53.000000000 +0100
-+++ socketbase/socketbase	2013-11-27 14:27:08.000000000 +0100
+--- socketbase/socketbase.orig	2015-01-25 09:51:12 UTC
++++ socketbase/socketbase
 @@ -1,6 +1,10 @@
  #ifndef INCLUDED_BOBCAT_SOCKETBASE_
  #define INCLUDED_BOBCAT_SOCKETBASE_
  
-+#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__DragonFly__)
 +#include <sys/types.h>
 +#endif
 +

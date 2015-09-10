@@ -6,4 +6,3 @@ man/man1/qmail-autoresponder.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/procedure.txt
 %%PORTDOCS%%%%DOCSDIR%%/schema.mysql
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

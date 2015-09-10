@@ -4,8 +4,7 @@
 PORTNAME=	suckblow
 PORTVERSION=	1.1
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	archie
+MASTER_SITES=	LOCAL/archie
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Two companion utilities for transferring data over a TCP socket

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	denemo
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.4
 CATEGORIES=	audio
 MASTER_SITES=	GNU
 
@@ -16,26 +16,25 @@ LIB_DEPENDS=	libaubio.so:${PORTSDIR}/audio/aubio \
 		libjack.so:${PORTSDIR}/audio/jack \
 		libsmf.so:${PORTSDIR}/audio/libsmf \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile \
-		libportaudio.so.2:${PORTSDIR}/audio/portaudio2 \
+		libportaudio.so:${PORTSDIR}/audio/portaudio \
 		librubberband.so:${PORTSDIR}/audio/rubberband \
-		libguile-2.0.so:${PORTSDIR}/lang/guile2 \
+		libguile.so:${PORTSDIR}/lang/guile \
 		libfftw3.so:${PORTSDIR}/math/fftw3
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USES=		bison gettext gmake pkgconfig
-USE_GNOME=	librsvg2 libxml2
+USE_GNOME=	intltool librsvg2 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-jack \
 		--disable-alsa \
 		--disable-portmidi \
 		--disable-gtk-doc \
 		--disable-gtk-doc-html \
-		--disable-gtk-doc-pdf
+		--disable-gtk-doc-pdf \
+		--enable-guile_1_8
 
-CPPFLAGS+=	-I${LOCALBASE}/include/portaudio2 \
-		-I${LOCALBASE}/include
-LDFLAGS+=	${LOCALBASE}/lib/portaudio2/libportaudio.so \
-		-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
@@ -68,10 +67,6 @@ PDF_CONFIGURE_OFF=	--disable-evince
 TOOLKIT_DESC=		GTK+ toolkit
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLILYPOND}
-BROKEN=		Depends transitively on conflicting versions of guile
-.endif
 
 .if ${PORT_OPTIONS:MGTK3} && ${PORT_OPTIONS:MPDF}
 LIB_DEPENDS+=	libevview3.so:${PORTSDIR}/graphics/evince

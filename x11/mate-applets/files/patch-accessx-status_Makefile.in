@@ -1,5 +1,5 @@
---- accessx-status/Makefile.in.orig	2014-04-12 15:37:29.000000000 +0200
-+++ accessx-status/Makefile.in	2014-04-12 15:39:27.000000000 +0200
+--- accessx-status/Makefile.in.orig	2015-01-22 17:21:18.066885138 +0100
++++ accessx-status/Makefile.in	2015-01-22 17:21:33.201884384 +0100
 @@ -78,7 +78,7 @@
  POST_UNINSTALL = :
  build_triplet = @build@
@@ -21,10 +21,10 @@
  am__DEPENDENCIES_1 =
 -accessx_status_applet_DEPENDENCIES = $(am__DEPENDENCIES_1) \
 +mate_accessx_status_applet_DEPENDENCIES = $(am__DEPENDENCIES_1) \
- 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1)
  AM_V_lt = $(am__v_lt_@AM_V@)
- am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
-@@ -141,8 +142,8 @@
+@@ -142,8 +143,8 @@
  am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
  am__v_CCLD_0 = @echo "  CCLD    " $@;
  am__v_CCLD_1 = 
@@ -35,7 +35,7 @@
  RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
  	ctags-recursive dvi-recursive html-recursive info-recursive \
  	install-data-recursive install-dvi-recursive \
-@@ -487,11 +488,11 @@
+@@ -470,11 +471,11 @@
  	-DACCESSX_PIXMAPS_DIR=\""$(datadir)/pixmaps/mate-accessx-status-applet"\" \
  	-DACCESSX_MENU_UI_DIR=\""$(uidir)"\"
  
@@ -48,8 +48,8 @@
 +mate_accessx_status_applet_LDADD = \
  	$(MATE_APPLETS4_LIBS) \
  	$(MATEDESKTOP_LIBS) \
- 	$(X_LIBS)
-@@ -594,9 +595,9 @@
+ 	$(GIO_LIBS) \
+@@ -578,9 +579,9 @@
  	echo " rm -f" $$list; \
  	rm -f $$list
  

@@ -1,0 +1,8 @@
+This package installs X11 support library which adds the following
+devices to the installed Ghostscript:
+
+  x11, x11alpha. x11cmyk, x11mono, x11_, x11alt_, x11cmyk2, x11cmyk4,
+  x11cmyk8, x11rg16x, x11rg32x, x11gray2, and x11gray4.
+
+WWW: http://www.cs.wisc.edu/~ghost/doc/GPL/index.htm
+     http://www.ghostscript.com/

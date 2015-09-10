@@ -1,24 +1,33 @@
---- ./Makefile.orig	2014-08-28 05:28:56.000000000 +0200
-+++ ./Makefile	2014-08-29 18:32:12.040229158 +0200
-@@ -69,7 +69,7 @@
- #    ask for a package with convenience libraries instead -- we'll try to provide
- #    them somewhere in the near future.
+--- Makefile.orig	2015-03-23 01:49:21 UTC
++++ Makefile
+@@ -71,7 +71,7 @@
+ #    them; you can also ask for a package with convenience libraries instead --
+ #    we'll try to provide them somewhere in the near future.
  
 -GAME = crawl
 +GAME = stonesoup
  
  # Disable GNU Make implicit rules and variables. Leaving them enabled will slow
  # down MinGW and Cygwin builds by a very VERY noticeable degree. Besides, we have
-@@ -101,7 +101,7 @@
+@@ -103,7 +103,7 @@ include Makefile.obj
  #
  
  
 -CFOTHERS := -pipe $(EXTERNAL_FLAGS)
 +CFOTHERS := $(CFLAGS)
- CFWARN := -Wall -Wformat-security
- CFWARN_L := -Wundef
+ CFWARN := 
+ CFWARN_L := -Wall -Wformat-security -Wundef
  
-@@ -118,8 +118,6 @@
+@@ -112,7 +112,7 @@ DEFINES := $(EXTERNAL_DEFINES)
+ ifdef ANDROID
+ LDFLAGS := $(EXTERNAL_LDFLAGS) $(LDFLAGS)
+ else
+-LDFLAGS := $(EXTERNAL_LDFLAGS)
++# LDFLAGS := $(EXTERNAL_LDFLAGS)
+ endif
+ 
+ #
+@@ -120,8 +120,6 @@ endif
  #
  AR = ar
  RANLIB = ranlib
@@ -27,19 +36,40 @@
  RM = rm -f
  COPY = cp
  COPY_R = cp -r
-@@ -535,9 +533,9 @@
-   ifneq (,$(shell $(GXX) --version|grep 'g++.*4\.2\.'))
-     # OS X uses a buggy ancient version of gcc without fixes from even
-     # subsequent point releases of 4.2.
--    CFOPTIMIZE := -O0
-+    CFOPTIMIZE :=
-   else
--    CFOPTIMIZE := -O2
-+    CFOPTIMIZE :=
-   endif
+@@ -495,16 +493,6 @@ ifneq ($(GCC_VER),)
+ GCC_VER_SUFFIX:=-$(GCC_VER)
  endif
  
-@@ -606,13 +604,13 @@
+-# Attempt to use a full compiler name, to make
+-# distcc builds work nicely.
+-LMACH := $(shell gcc -dumpmachine)-
+-ifeq ($(LMACH),-)
+-LMACH :=
+-endif
+-ifeq ($(shell which $(LMACH)gcc$(GCC_VER_SUFFIX) > /dev/null 2> /dev/null && echo "Yes"),)
+-LMACH :=
+-endif
+-
+ ifneq ($(FORCE_CC),)
+ GCC := $(FORCE_CC)
+ else
+@@ -554,15 +542,6 @@ ifdef USE_ICC
+ 
+ # Some very good optimization flags.
+   CFOPTIMIZE := -O2 -parallel
+-else
+-
+-  ifneq (,$(shell $(GXX) --version|grep 'g++.*4\.2\.'))
+-    # OS X uses a buggy ancient version of gcc without fixes from even
+-    # subsequent point releases of 4.2.
+-    CFOPTIMIZE := -O0
+-  else
+-    CFOPTIMIZE := -O2
+-  endif
+ endif
+ 
+ ifdef LTO
+@@ -636,13 +615,13 @@ ifndef BUILD_LUA
          LUA_PACKAGE = lua-5.1
        endif
      else
@@ -55,7 +85,7 @@
    endif
    INCLUDES_L += $(shell $(PKGCONFIG) $(LUA_PACKAGE) --cflags-only-I | sed -e 's/-I/-isystem /')
    CFLAGS_L  += $(shell $(PKGCONFIG) $(LUA_PACKAGE) --cflags-only-other)
-@@ -625,7 +623,7 @@
+@@ -655,7 +634,7 @@ endif
  
  ifndef BUILD_SQLITE
    ifeq ($(shell grep -q sqlite3_prepare $(SQLITE_INCLUDE_DIR)/sqlite3.h 2>/dev/null && echo yes),yes)
@@ -64,7 +94,16 @@
      LIBS += $(SQLITE_LIB)
      ifneq ($(shell grep -q sqlite3_prepare_v2 $(SQLITE_INCLUDE_DIR)/sqlite3.h 2>/dev/null && echo yes),yes)
        DEFINES_L += -DANCIENT_SQLITE
-@@ -777,7 +775,7 @@
+@@ -743,7 +722,7 @@ endif
+ endif
+ 
+ DEFINES_L += $(PNG_CFLAGS) $(FREETYPE_CFLAGS) $(SDL2_CFLAGS)
+-INCLUDES_L += $(PNG_INCLUDE) $(FREETYPE_INCLUDE) $(SDL2_INCLUDE)
++INCLUDES_L += $(PNG_INCLUDE) $(FREETYPE_INCLUDE) $(SDL2_INCLUDE) $(GL_INCLUDE)
+ 
+ endif # TILES
+ 
+@@ -816,7 +795,7 @@ ifndef NOWIZARD
  DEFINES += -DWIZARD
  endif
  ifdef NO_OPTIMIZE
@@ -73,30 +112,32 @@
  endif
  
  ifdef PCH
-@@ -901,7 +899,7 @@
-     INSTALL_FONTS += $(PROPORTIONAL_FONT)
-   endif
- else
--  SYS_PROPORTIONAL_FONT = $(shell dir=/usr/share/fonts; [ -d $$dir ] && find $$dir -iname $(OUR_PROPORTIONAL_FONT)|head -n 1)
-+  SYS_PROPORTIONAL_FONT = $(shell dir=%%LOCALBASE%%/share/fonts; [ -d $$dir ] && find $$dir -iname $(OUR_PROPORTIONAL_FONT)|head -n 1)
-   ifeq (,$(SYS_PROPORTIONAL_FONT))
-     SYS_PROPORTIONAL_FONT = $(shell dir=/usr/local/share/fonts ; [ -d $$dir ] && find $$dir -iname $(OUR_PROPORTIONAL_FONT)|head -n 1)
-   endif
-@@ -924,7 +922,7 @@
-     INSTALL_FONTS += $(MONOSPACED_FONT)
-   endif
- else
--  SYS_MONOSPACED_FONT = $(shell dir=/usr/share/fonts; [ -d $$dir ] && find $$dir -iname $(OUR_MONOSPACED_FONT)|head -n 1)
-+  SYS_MONOSPACED_FONT = $(shell dir=%%LOCALBASE%%/share/fonts; [ -d $$dir ] && find $$dir -iname $(OUR_MONOSPACED_FONT)|head -n 1)
-   ifeq (,$(SYS_MONOSPACED_FONT))
-     SYS_MONOSPACED_FONT = $(shell dir=/usr/local/share/fonts; [ -d $$dir ] && find $$dir -iname $(OUR_MONOSPACED_FONT)|head -n 1)
-   endif
-@@ -1127,7 +1125,7 @@
+@@ -943,7 +922,7 @@ else
+   SYS_PROPORTIONAL_FONT = $(shell { name=$(OUR_PROPORTIONAL_FONT);\
+     {\
+       fc-list | sed 's/: .*//' | grep -Fi "/$$name";\
+-      for dir in /usr/share/fonts /usr/local/share/fonts /usr/*/lib/X11/fonts;\
++      for dir in %%LOCALBASE%%/share/fonts;\
+       do [ -d $$dir ] && echo $$dir; done;\
+     } | xargs -I% find % -type f -iname $$name -print | head -n1; } 2>/dev/null)
+   ifneq (,$(SYS_PROPORTIONAL_FONT))
+@@ -968,7 +947,7 @@ else
+   SYS_MONOSPACED_FONT = $(shell { name=$(OUR_MONOSPACED_FONT);\
+     {\
+       fc-list | sed 's/: .*//' | grep -Fi "/$$name";\
+-      for dir in /usr/share/fonts /usr/local/share/fonts /usr/*/lib/X11/fonts;\
++      for dir in %%LOCALBASE%%/share/fonts;\
+       do [ -d $$dir ] && echo $$dir; done;\
+     } | xargs -I% find % -type f -iname $$name -print | head -n1; } 2>/dev/null)
+   ifneq (,$(SYS_MONOSPACED_FONT))
+@@ -1035,10 +1014,6 @@ CFWARN := -wd383,810,869,981,1418 -we14,
+ CFWARN_L :=
+ endif
  
- LANGUAGES = $(filter-out en, $(notdir $(wildcard dat/descript/??)))
- SRC_PKG_BASE  := stone_soup
--SRC_VERSION   := $(shell git describe --tags $(MERGE_BASE) 2>/dev/null || cat util/release_ver)
-+SRC_VERSION   := $(shell cat util/release_ver)
- MAJOR_VERSION = $(shell echo "$(SRC_VERSION)"|sed -r 's/-.*//;s/^([^.]+\.[^.]+).*/\1/')
+-ifeq (,$(shell echo 'int main(){return 1;}'|$(GXX) -x c++ - -o /dev/null -fuse-ld=gold 2>&1))
+-  LDFLAGS += -fuse-ld=gold
+-endif
+-
+ LDFLAGS += $(CFOPTIMIZE) $(CFOPTIMIZE_L)
  
- export SRC_VERSION
+ ifdef REPORT

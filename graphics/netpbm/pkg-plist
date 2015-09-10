@@ -278,6 +278,7 @@ bin/ppmtoppm
 bin/ppmtopuzz
 bin/ppmtorgb3
 bin/ppmtosixel
+bin/ppmtotga
 bin/ppmtoterm
 bin/ppmtouil
 bin/ppmtowinicon

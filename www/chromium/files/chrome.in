@@ -15,4 +15,4 @@ $SYSCTL=1
 EOMSG
 	exit 1
 fi
-%%PREFIX%%/share/chromium/chrome $*
+exec %%PREFIX%%/share/chromium/chrome $*

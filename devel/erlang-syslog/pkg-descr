@@ -1,0 +1,3 @@
+Erlang port driver for interacting with syslog via syslog(3).
+
+WWW: https://github.com/Vagabond/erlang-syslog

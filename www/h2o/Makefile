@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	h2o
-PORTVERSION=	1.0.1
+PORTVERSION=	1.4.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -11,15 +11,10 @@ COMMENT=	Optimized HTTP2 server with support for HTTP/1.x
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libyaml.so:${PORTSDIR}/textproc/libyaml
-
 USE_GITHUB=	yes
-GH_ACCOUNT=	h2o
 
-MAKE_JOBS_UNSAFE=	yes
-USES=	cmake:outsource compiler:c11
-
-USE_OPENSSL=	yes
+USES=		cmake compiler:c11 shebangfix
+SHEBANG_FILES=	share/h2o/start_server
 
 PORTDOCS=	README.md
 
@@ -42,7 +37,12 @@ H2O_PIDDIR=	/var/run/${PORTNAME}/
 
 USE_RC_SUBR=	${PORTNAME}
 
-do-install:
+.include <bsd.port.options.mk>
+
+CMAKE_ARGS+=	-DWITH_BUNDLED_SSL=OFF -DEXTRA_LIBRARIES=OFF
+USE_OPENSSL_PORT=	yes
+
+post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR} \
 		${STAGEDIR}${ETCDIR} \
 		${STAGEDIR}${H2O_PIDDIR} \
@@ -51,12 +51,5 @@ do-install:
 	${INSTALL_DATA} \
 		${FILESDIR}/${PORTNAME}.conf.sample \
 		${STAGEDIR}${ETCDIR}/${PORTNAME}.conf.sample
-	${INSTALL_PROGRAM} ${WRKDIR}/.build/h2o ${STAGEDIR}${PREFIX}/bin/h2o
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 900000
-BROKEN=	fails to compile on 8.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

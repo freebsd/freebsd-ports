@@ -1,0 +1,12 @@
+Remove useless directory creation (leaving a locale/ directory behind)
+
+--- po/Makefile.in.in.orig	2015-07-26 20:28:34.000000000 +0000
++++ po/Makefile.in.in	2015-07-26 20:29:04.000000000 +0000
+@@ -97,7 +97,6 @@
+ install-data: install-data-@USE_NLS@
+ install-data-no: all
+ install-data-yes: all
+-	$(mkdir_p) $(DESTDIR)$(itlocaledir)
+ 	if test -n "$(PO_LINGUAS)"; then \
+ 	  linguas="$(PO_LINGUAS)"; \
+ 	else \

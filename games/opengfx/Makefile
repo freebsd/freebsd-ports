@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opengfx
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.2
 CATEGORIES=	games
 MASTER_SITES=	http://hu.binaries.openttd.org/binaries/extra/${PORTNAME}/${PORTVERSION}/ \
 		http://us.binaries.openttd.org/binaries/extra/${PORTNAME}/${PORTVERSION}/ \
@@ -16,7 +16,6 @@ LICENSE=	GPLv2
 
 USES=		zip
 NO_BUILD=	yes
-LATEST_LINK=	openttd-${PORTNAME}
 
 # upstream zipped a tar file, unpack it.
 post-extract:

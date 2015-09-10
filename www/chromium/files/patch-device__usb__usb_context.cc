@@ -1,7 +1,7 @@
---- device/usb/usb_context.cc.orig	2014-10-10 09:15:31 UTC
-+++ device/usb/usb_context.cc
-@@ -9,8 +9,13 @@
- #include "base/synchronization/waitable_event.h"
+--- device/usb/usb_context.cc.orig	2015-07-15 16:30:04.000000000 -0400
++++ device/usb/usb_context.cc	2015-07-22 07:32:40.938868000 -0400
+@@ -8,8 +8,13 @@
+ #include "base/logging.h"
  #include "base/threading/platform_thread.h"
  #include "device/usb/usb_error.h"
 +#if defined(OS_FREEBSD)
@@ -14,13 +14,13 @@
  
  namespace device {
  
-@@ -43,7 +48,9 @@
+@@ -62,7 +67,9 @@
  
- UsbContext::UsbEventHandler::~UsbEventHandler() {
+ void UsbContext::UsbEventHandler::Stop() {
    base::subtle::Release_Store(&running_, 0);
 +#if !defined(OS_FREEBSD) // XXX(rene) not available in base version
    libusb_interrupt_handle_event(context_);
 +#endif
-   base::PlatformThread::Join(thread_handle_);
  }
  
+ UsbContext::UsbContext(PlatformUsbContext context) : context_(context) {

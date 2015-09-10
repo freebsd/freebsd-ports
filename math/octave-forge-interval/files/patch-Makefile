@@ -1,0 +1,18 @@
+--- Makefile.orig	2015-08-09 09:08:20 UTC
++++ Makefile
+@@ -25,13 +25,13 @@ OBJ            = mpfr_function_d.oct \
+ 
+ LDFLAGS_MPFR   =-lmpfr -lgmp
+ ## Use important flags in XTRA_CFLAGS for OpenMP (workaround for bug #45280)
+-XTRA_CFLAGS    =$(shell $(MKOCTFILE) -p XTRA_CFLAGS)
++CFLAG_OPENMP   =$(findstring -fopenmp,$(shell $(MKOCTFILE) -p XTRA_CFLAGS))
+ 
+ all: $(OBJ)
+ 
+ ## GNU MPFR api oct-files
+ mpfr_matrix_mul_d.oct: mpfr_%.oct: mpfr_%.cc mpfr_commons.cc
+-	$(MKOCTFILE)  -o $@ $(LDFLAGS_MPFR) $(XTRA_CFLAGS) $<
++	$(MKOCTFILE)  -o $@ $(LDFLAGS_MPFR) $(CFLAG_OPENMP) $<
+ mpfr_%.oct: mpfr_%.cc mpfr_commons.cc
+ 	$(MKOCTFILE)  -o $@ $(LDFLAGS_MPFR)  $<
+ 

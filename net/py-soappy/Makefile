@@ -2,24 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	soappy
-PORTVERSION=	0.11.6
-PORTREVISION=	1
+PORTVERSION=	0.12.22
 CATEGORIES=	net python
-MASTER_SITES=	SF/pywebsvcs/SOAP.py/${PORTVERSION}
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	SOAPpy-${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
-COMMENT=	SOAP implementation
-
+COMMENT=	SOAP Services for Python
+# Actual LICENSE is in GH Repo but not in pypi release
 LICENSE=	BSD3CLAUSE
 
-PORTSCOUT=	skipv:0.12.0	# This is a release candidate and is ports tree py*-soappy-devel
-USES=		python
-USE_PYTHON=	distutils autoplist
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}defusedxml>0:${PORTSDIR}/devel/py-defusedxml \
+		${PYTHON_PKGNAMEPREFIX}wstools>0:${PORTSDIR}/textproc/py-wstools
 
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/fpconst.py:${PORTSDIR}/math/py-fpconst
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+USES=		python:2 zip
+USE_PYTHON=	autoplist distutils
 
 CONFLICTS=	py*-soappy-devel-0.12.*
 

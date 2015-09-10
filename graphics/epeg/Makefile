@@ -12,12 +12,13 @@ MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Immensely fast JPEG thumbnailing library
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
-
 GNU_CONFIGURE=	yes
-USES=		libtool pathfix tar:bzip2
+USES=		jpeg libtool pathfix tar:bzip2
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
+
+DEPRECATED=	Merged into devel/efl
+EXPIRATION_DATE=2015-10-10
 
 .include <bsd.port.mk>

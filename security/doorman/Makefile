@@ -3,19 +3,24 @@
 
 PORTNAME=	doorman
 PORTVERSION=	0.81
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Port knocking implementation, both daemon and client
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PATCH_STRIP=	-p1
 
+USES=		shebangfix tar:tgz
+SHEBANG_FILES=	ipfw_add ipfw_delete \
+		pfctl_add pfctl_delete
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	installdirs install-exec install-data
 

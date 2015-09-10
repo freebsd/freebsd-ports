@@ -5,7 +5,7 @@ PORTNAME=	swisswatch
 PORTVERSION=	0.06
 PORTREVISION=	2
 CATEGORIES=	x11-clocks
-MASTER_SITES=	${MASTER_SITE_PORTS_JP}
+MASTER_SITES=	PORTS_JP
 
 MAINTAINER=	sanpei@FreeBSD.org
 COMMENT=	Swiss railway clock emulation, and a fancy default appearance

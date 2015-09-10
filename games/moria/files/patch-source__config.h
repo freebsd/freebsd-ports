@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- source/config.h	Thu Jul 21 19:47:13 1994
 +++ source/config.h	Tue Aug  5 10:04:39 2003
 @@ -14,7 +14,7 @@

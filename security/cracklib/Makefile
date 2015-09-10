@@ -8,7 +8,7 @@ CATEGORIES=	security
 CATEGORIES+=	python
 .endif
 MASTER_SITES=	SF \
-		LOCAL/${MAINTAINER:C/([^@]*)@.*/\1/}
+		LOCAL/cy
 
 MAINTAINER= 	cy@FreeBSD.org
 COMMENT?=	Password-checking library

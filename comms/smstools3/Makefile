@@ -42,14 +42,10 @@ SUB_FILES=	pkg-install pkg-deinstall
 PORTDOCS=	*
 PORTEXAMPLES=	.procmailrc .qmailrc *
 
-.include <bsd.port.options.mk>
+STATS_LIB_DEPENDS=	libmm.so:${PORTSDIR}/devel/mm
+STATS_CFLAGS=	-I${LOCALBASE}/include
+STATS_CFLAGS_OFF=	-DNOSTATS
 
-.if ${PORT_OPTIONS:MSTATS}
-LIB_DEPENDS+=	libmm.so:${PORTSDIR}/devel/mm
-CFLAGS+=	-I${LOCALBASE}/include
-.else
-CFLAGS+=	-DNOSTATS
-.endif
 SMSTOOLS_DEFAULT_COMPORT?=	/dev/cuau0
 
 post-patch:

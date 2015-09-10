@@ -1,6 +1,6 @@
---- src/auto/configure.orig	2014-12-04 04:16:00.326888901 +0800
-+++ src/auto/configure	2014-12-04 04:18:43.019881161 +0800
-@@ -889,7 +889,7 @@
+--- src/auto/configure.orig	2015-05-14 03:56:21 UTC
++++ src/auto/configure
+@@ -889,7 +889,7 @@ pdfdir='${docdir}'
  psdir='${docdir}'
  libdir='${exec_prefix}/lib'
  localedir='${datarootdir}/locale'
@@ -9,7 +9,7 @@
  
  ac_prev=
  ac_dashdash=
-@@ -4952,7 +4952,7 @@
+@@ -4952,7 +4952,7 @@ $as_echo_n "checking Lua version of LuaJ
  if ${vi_cv_version_lua_luajit+:} false; then :
    $as_echo_n "(cached) " >&6
  else
@@ -18,7 +18,7 @@
  fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $vi_cv_version_lua_luajit" >&5
  $as_echo "$vi_cv_version_lua_luajit" >&6; }
-@@ -5006,7 +5006,7 @@
+@@ -5006,7 +5006,7 @@ $as_echo_n "checking Lua version... " >&
  if ${vi_cv_version_plain_lua+:} false; then :
    $as_echo_n "(cached) " >&6
  else
@@ -27,7 +27,7 @@
  fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $vi_cv_version_plain_lua" >&5
  $as_echo "$vi_cv_version_plain_lua" >&6; }
-@@ -5097,7 +5097,7 @@
+@@ -5097,7 +5097,7 @@ rm -f core conftest.err conftest.$ac_obj
        LIBS=$libs_save
      fi
      if test "x$lua_ok" = "xyes"; then
@@ -36,7 +36,7 @@
        LUA_SRC="if_lua.c"
        LUA_OBJ="objects/if_lua.o"
        LUA_PRO="if_lua.pro"
-@@ -5154,7 +5154,8 @@
+@@ -5154,7 +5154,8 @@ $as_echo "yes" >&6; }
        $as_echo "#define DYNAMIC_LUA 1" >>confdefs.h
  
        LUA_LIBS=""
@@ -46,7 +46,7 @@
      fi
      if test "X$LUA_CFLAGS$LUA_LIBS" != "X" && \
         test "x$MACOSX" = "xyes" && test "x$vi_cv_with_luajit" != "xno" && \
-@@ -5732,7 +5733,7 @@
+@@ -5732,7 +5733,7 @@ if test "$enable_pythoninterp" = "yes" -
      as_fn_error $? "cannot use Python with tiny or small features" "$LINENO" 5
    fi
  
@@ -55,7 +55,7 @@
  do
    # Extract the first word of "$ac_prog", so it can be a program name with args.
  set dummy $ac_prog; ac_word=$2
-@@ -6052,7 +6053,7 @@
+@@ -6069,7 +6070,7 @@ if test "$enable_python3interp" = "yes" 
      as_fn_error $? "cannot use Python with tiny or small features" "$LINENO" 5
    fi
  
@@ -64,7 +64,7 @@
  do
    # Extract the first word of "$ac_prog", so it can be a program name with args.
  set dummy $ac_prog; ac_word=$2
-@@ -6867,7 +6868,7 @@
+@@ -6884,7 +6885,7 @@ $as_echo_n "checking for location of tcl
  $as_echo "$try/tclConfig.sh" >&6; }
  	    . $try/tclConfig.sh
  	    	    TCL_LIBS=`eval echo "$TCL_LIB_SPEC $TCL_LIBS"`

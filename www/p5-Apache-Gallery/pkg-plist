@@ -95,11 +95,3 @@ www/icons/gallery/video-mov.png
 www/icons/gallery/video-mpeg.png
 www/icons/gallery/video-mpg.png
 www/icons/gallery/video-wmv.png
-@dirrm www/icons/gallery
-@dirrmtry www/icons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/templates/new
-@dirrm %%DATADIR%%/templates/default
-@dirrm %%DATADIR%%/templates/bright
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%

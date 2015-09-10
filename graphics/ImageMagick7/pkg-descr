@@ -1,0 +1,19 @@
+
+*** This is a UNSTABLE development snapshot. API/ABI breakage guaranteed ***
+
+*** This port is a best efford and updates might be irregular ***
+
+ImageMagick is a package for display and interactive manipulation of
+images. The package includes tools for image conversion, annotation,
+compositing, animation, and creating montages. ImageMagick can read and
+write many of the more popular image formats (e.g. JPEG, TIFF, PNM, XPM,
+Photo CD, etc.).
+
+The package can be built _without_ the GUI (X11) support at all -- it
+will not have the display, import, and animate functionality, but remain
+extremely useful for image manipulation.
+
+The optional "display" utility conflicts with the utility of the
+same name from the misc/display port/package.
+
+WWW: http://www.ImageMagick.org/

@@ -6,8 +6,7 @@ PORTVERSION=	0.88
 PORTREVISION=	2
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://cr.yp.to/ucspi-tcp/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	garga/ucspi-tcp
+		LOCAL/garga/ucspi-tcp
 
 PATCH_DIST_STRIP=	-p1
 
@@ -55,8 +54,7 @@ BROKEN=	SSL and LIMITS options cannot coexist, please choose one of them
 .endif
 
 MASTER_SITES+=	http://smarden.org/pape/djb/manpages/:man \
-		${MASTER_SITE_LOCAL:S/$/:man/}
-MASTER_SITE_SUBDIR+=	garga/ucspi-tcp/:man
+		LOCAL/garga/ucspi-tcp/:man
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME}-man.tar.gz:man
 MAN_FILES=	addcr.1 argv0.1 date@.1 delcr.1 finger@.1 fixcrio.1 \
@@ -98,8 +96,7 @@ PATCH_SITES+=	http://www.fefe.de/ucspi/:ipv6
 PATCHFILES+=	ucspi-tcp-0.88-ipv6.diff19.bz2:ipv6
 .endif
 
-PATCH_SITES+=		${MASTER_SITE_LOCAL:S/$/:rss,ssl,rbl2smtpd/}
-PATCH_SITE_SUBDIR+=	garga/ucspi-tcp/:rss,ssl,rbl2smtpd
+PATCH_SITES+=		LOCAL/garga/ucspi-tcp/:rss,ssl,rbl2smtpd
 
 .include <bsd.port.pre.mk>
 

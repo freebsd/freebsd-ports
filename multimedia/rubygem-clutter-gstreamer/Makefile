@@ -14,6 +14,8 @@ LICENSE_COMB=	dual
 RUN_DEPENDS=	rubygem-clutter>=${PORTSVERSION}:${PORTSDIR}/graphics/rubygem-clutter \
 		rubygem-gstreamer>=${PORTVERSION}:${PORTSDIR}/multimedia/rubygem-gstreamer
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

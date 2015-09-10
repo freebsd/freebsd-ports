@@ -10,6 +10,3 @@ do-install:
 		${COPYTREE_SHARE} \* \
 		${STAGEDIR}${PREFIX}/lib/X11/icons/${PORTNAME}${PKGNAMESUFFIX}-${i:tl}
 .endfor
-
-post-install:
-	@${CAT} ${PKGMESSAGE}

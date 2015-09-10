@@ -52,11 +52,9 @@
 %%EMACS_PACKAGESDIR%%/lisp/semi/signature.elc
 %%EMACS_PACKAGESDIR%%/lisp/semi/smime.el
 %%EMACS_PACKAGESDIR%%/lisp/semi/smime.elc
-@dirrm %%EMACS_PACKAGESDIR%%/lisp/semi
 %%EMACS_PACKAGESDIR%%/info/mime-ui-en.info
 %%EMACS_PACKAGESDIR%%/info/mime-ui-ja.info
 %%EMACS_PACKAGESDIR%%/man/semi/mime-ui-en.texi
 %%EMACS_PACKAGESDIR%%/man/semi/mime-ui-ja.texi
-@dirrm %%EMACS_PACKAGESDIR%%/man/semi
 share/semi/%%SEMI_COOKIE%%
 @unexec rmdir %D/share/semi||(echo "===>  Please ignore above error.";true)

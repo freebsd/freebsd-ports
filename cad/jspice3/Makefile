@@ -17,21 +17,18 @@ OPTIONS_DEFINE=	X11 EXAMPLES
 OPTIONS_DEFAULT=	X11
 WRKSRC=		${WRKDIR}/${PORTNAME}-2.5
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MX11}
-USE_XORG=	x11 xaw xt
-.endif
+X11_USE=	XORG=x11,xaw,xt
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's+/usr/local+${PREFIX}+g;s+-O -g+${CFLAGS}+g;' \
 		${WRKSRC}/conf/unixconf/mkheader.0
-.if ${PORT_OPTIONS:MX11}
+
+pre-configure-X11-on:
 	@${REINPLACE_CMD} -e 's+#%%WITH_X%%++g' \
 		${WRKSRC}/conf/unixconf/mkheader.0
-.else
+
+pre-configure-X11-off:
 	@${ECHO} "#undef HAVE_X11" >> ${WRKSRC}/src/include/spice.h
-.endif
 
 do-build:
 	(cd ${WRKSRC};${SETENV} ${MAKE_ENV} ${SH} build)
@@ -50,7 +47,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/lib/jspice3/sced
 	${INSTALL_DATA} ${WRKSRC}/lib/scripts/* \
 		${STAGEDIR}${PREFIX}/lib/jspice3/scripts
-.if ${PORT_OPTIONS:MEXAMPLES}
+do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/examples/jspice3/cryocmos \
 		${STAGEDIR}${PREFIX}/share/examples/jspice3/josephson
 	${INSTALL_DATA} ${WRKSRC}/examples/*.* \
@@ -59,6 +56,5 @@ do-install:
 		${STAGEDIR}${PREFIX}/share/examples/jspice3/cryocmos
 	${INSTALL_DATA} ${WRKSRC}/examples/josephson/* \
 		${STAGEDIR}${PREFIX}/share/examples/jspice3/josephson
-.endif
 
 .include <bsd.port.mk>

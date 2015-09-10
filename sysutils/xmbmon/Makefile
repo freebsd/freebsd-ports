@@ -13,7 +13,7 @@ COMMENT=	MB monitor for LM78/79, W8378x, AS99127F, VT82C686 and ADM9240
 
 LICENSE=	BSD2CLAUSE
 
-PORTSCOUT=	limit:^[0-9]+$
+PORTSCOUT=	skipv:205conf
 PATCH_SITES+=	${MASTER_SITES}
 PATCHFILES+=	${PORTNAME}${PORTVERSION}_fflush.patch
 
@@ -29,6 +29,8 @@ OPTIONS_DEFAULT=SMB CLI
 ASUS_DESC=	Enable A7N8X-VM support
 SMB_DESC=	Enable smb(4) support
 CLI_DESC=	CLI support only
+X11_USE=	XORG=x11,xt
+X11_MAKE_ARGS_OFF=	PROGRAM="mbmon"
 
 ASUS_PATCHFILES=	${PORTNAME}${PORTVERSION}_A7N8X-VM.patch
 X11_PLIST_FILES=	"@mode 4555"\
@@ -42,12 +44,6 @@ CLI_PLIST_FILES=	"@mode 4555"\
 			man/man1/mbmon.1.gz
 
 .include <bsd.port.options.mk>
-
-.if !${PORT_OPTIONS:MX11}
-MAKE_ARGS=	PROGRAM="mbmon"
-.else
-USE_XORG=	x11 xt
-.endif
 
 .if ${PORT_OPTIONS:MCLI}
 USE_RC_SUBR=	mbmon

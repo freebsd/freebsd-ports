@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	highlighting-kate
-PORTVERSION=	0.5.11.1
+PORTVERSION=	0.6
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -14,9 +14,11 @@ USE_CABAL=	blaze-html>=0.4.2 mtl parsec \
 
 FLAGS_DEFINE=			EXECUTABLE
 
-EXECUTABLE_DESC=		Build the Highlight executable
+EXECUTABLE_DESC=		Build the executable
 EXECUTABLE_FLAG_ENABLE=		executable
-EXECUTABLE_FLAG_EXECUTABLE=	Highlight
+EXECUTABLE_FLAG_EXECUTABLE=	highlighting-kate
+
+FLAGS_DISABLE=	pcre-light
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

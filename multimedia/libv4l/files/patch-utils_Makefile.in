@@ -1,0 +1,11 @@
+--- utils/Makefile.in.orig	2015-01-25 19:52:31.619994565 +0100
++++ utils/Makefile.in	2015-01-25 19:53:34.975249497 +0100
+@@ -374,7 +374,7 @@
+ top_srcdir = @top_srcdir@
+ udevrulesdir = @udevrulesdir@
+ SUBDIRS = dvb libv4l2util libmedia_dev decode_tm6000 keytable \
+-	media-ctl v4l2-compliance v4l2-ctl v4l2-dbg v4l2-sysfs-path \
++	v4l2-compliance v4l2-dbg v4l2-sysfs-path \
+ 	rds-ctl $(am__append_1) $(am__append_2) $(am__append_3)
+ all: all-recursive
+ 

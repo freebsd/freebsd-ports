@@ -1,6 +1,6 @@
---- debug.c.orig	Fri Sep 29 11:54:42 2006
-+++ debug.c	Fri Sep 29 11:55:06 2006
-@@ -378,6 +378,7 @@
+--- debug.c.orig	1999-11-30 17:58:53 UTC
++++ debug.c
+@@ -378,6 +378,7 @@ log(int severity, int syserr, char *form
      static char fmt[211] = "warning - ";
      char *msg;
      struct timeval now;
@@ -8,7 +8,7 @@
      struct tm *thyme;
      
      va_start(ap, format);
-@@ -394,6 +395,7 @@
+@@ -394,6 +395,7 @@ log(severity, syserr, format, va_alist)
      char *msg;
      char tbuf[20];
      struct timeval now;
@@ -16,7 +16,7 @@
      struct tm *thyme;
      
      va_start(ap);
-@@ -408,7 +410,8 @@
+@@ -408,7 +410,8 @@ log(severity, syserr, format, va_alist)
       */
      if (haveterminal && (debug || severity <= LOG_WARNING)) {
  	gettimeofday(&now,NULL);

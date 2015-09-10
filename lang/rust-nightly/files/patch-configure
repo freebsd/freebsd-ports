@@ -1,0 +1,10 @@
+--- configure.orig	2015-06-09 09:12:09 UTC
++++ configure
+@@ -695,7 +695,6 @@ putvar CFG_BOOTSTRAP_KEY
+ 
+ step_msg "looking for build programs"
+ 
+-probe_need CFG_CURLORWGET  curl wget
+ if [ -z "$CFG_PYTHON_PROVIDED" ]; then
+     probe_need CFG_PYTHON      python2.7 python2.6 python2 python
+ fi

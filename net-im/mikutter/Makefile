@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	mikutter
-PORTVERSION=	3.2.2
+PORTVERSION=	3.2.6
 CATEGORIES=	net-im ruby
 MASTER_SITES=	http://mikutter.hachune.net/bin/ \
-		LOCAL
-MASTER_SITE_SUBDIR=	tota/${PORTNAME}
+		LOCAL/tota/${PORTNAME}
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
@@ -15,10 +14,10 @@ COMMENT=	Simple, powerful, and moeful Twitter client
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-gtk2>=2.2.0:${PORTSDIR}/x11-toolkits/rubygem-gtk2 \
+RUN_DEPENDS=	rubygem-gtk2>=2.2.5:${PORTSDIR}/x11-toolkits/rubygem-gtk2 \
 		rubygem-cairo>=1.12.9:${PORTSDIR}/graphics/rubygem-cairo \
 		rubygem-addressable>=2.3.6:${PORTSDIR}/www/rubygem-addressable \
-		rubygem-hmac>=0.4.0:${PORTSDIR}/security/rubygem-hmac \
+		rubygem-ruby-hmac>=0.4.0:${PORTSDIR}/security/rubygem-ruby-hmac \
 		rubygem-json_pure>=1.8.1:${PORTSDIR}/devel/rubygem-json_pure \
 		rubygem-memoize>=1.3.1:${PORTSDIR}/devel/rubygem-memoize \
 		rubygem-oauth>=0.4.7:${PORTSDIR}/net/rubygem-oauth \
@@ -26,18 +25,20 @@ RUN_DEPENDS=	rubygem-gtk2>=2.2.0:${PORTSDIR}/x11-toolkits/rubygem-gtk2 \
 		rubygem-delayer>=0.0.2:${PORTSDIR}/devel/rubygem-delayer \
 		rubygem-gettext>=2.3.1:${PORTSDIR}/devel/rubygem-gettext \
 		rubygem-moneta>=0.7:${PORTSDIR}/devel/rubygem-moneta \
-		rubygem-nokogiri>=1.6.3.1:${PORTSDIR}/textproc/rubygem-nokogiri
+		rubygem-nokogiri>=1.6.3.1:${PORTSDIR}/textproc/rubygem-nokogiri \
+		rubygem-httpclient>=0:${PORTSDIR}/www/rubygem-httpclient
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
+NO_ARCH=	yes
 USE_RUBY=	yes
+USES=	shebangfix
 NO_BUILD=	yes
 
-RUBY_REQUIRE=	Ruby >= 200
-RUBY_SHEBANG_FILES=	mikutter.rb \
-			core/miku/miku.rb \
-			core/lib/piapro.rb \
-			devel/makechi.rb
+SHEBANG_FILES=	mikutter.rb \
+		core/miku/miku.rb \
+		core/lib/piapro.rb \
+		devel/makechi.rb
 
 PORTDOCS=	README
 SUB_FILES=	mikutter.desktop
@@ -45,19 +46,13 @@ SUB_LIST=	RUBY_SITELIBDIR=${RUBY_SITELIBDIR}
 
 REINPLACE_ARGS=	-i ''
 
-OPTIONS_DEFINE=		DOCS HTTPCLIENT NOTIFY
-HTTPCLIENT_DESC=	httpclient support
+OPTIONS_DEFINE=		DOCS NOTIFY
 NOTIFY_DESC=		notify-send support
 
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(RUBY_PROVIDED)
-IGNORE=	requires Ruby 2.0.0 or later
-.endif
-
-HTTPCLIENT_RUN_DEPENDS=	rubygem-httpclient>=0:${PORTSDIR}/www/rubygem-httpclient
 NOTIFY_RUN_DEPENDS=	notify-send:${PORTSDIR}/devel/libnotify
 
 post-patch:
@@ -79,4 +74,4 @@ x-generate-plist: stage
 	${FIND} ${STAGEDIR}${RUBY_SITELIBDIR}/mikutter -type f | ${SORT} | ${SED} -e 's,${STAGEDIR}${RUBY_SITELIBDIR},%%RUBY_SITELIBDIR%%,' >> pkg-plist.new
 	${ECHO} share/applications/mikutter.desktop >> pkg-plist.new
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

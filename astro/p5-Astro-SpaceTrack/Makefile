@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	Astro-SpaceTrack
-PORTVERSION=	0.091
+PORTVERSION=	0.092
 CATEGORIES=	astro perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:WYANT
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -24,9 +23,10 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 
+CONFIGURE_ARGS=	-y
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
-CONFIGURE_ARGS=	-y
 
 .include <bsd.port.pre.mk>
 

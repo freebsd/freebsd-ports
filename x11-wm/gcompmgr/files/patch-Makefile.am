@@ -1,0 +1,17 @@
+--- Makefile.am.orig	2005-06-20 15:46:44 UTC
++++ Makefile.am
+@@ -5,13 +5,11 @@
+ 
+ SUBDIRS = src
+ 
+-gcompmgrdocdir = ${prefix}/doc/gcompmgr
++gcompmgrdocdir = ${prefix}/share/doc/gcompmgr
+ gcompmgrdoc_DATA = \
+ 	README\
+-	COPYING\
+ 	AUTHORS\
+ 	ChangeLog\
+-	INSTALL\
+ 	NEWS\
+ 	TODO
+ 

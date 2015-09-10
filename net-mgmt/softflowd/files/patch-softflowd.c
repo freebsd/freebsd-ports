@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- softflowd.c.orig
 +++ softflowd.c
 @@ -91,6 +91,9 @@

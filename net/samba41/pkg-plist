@@ -1002,6 +1002,7 @@ man/man8/vfs_extd_audit.8.gz
 man/man8/vfs_fake_perms.8.gz
 man/man8/vfs_fileid.8.gz
 man/man8/vfs_full_audit.8.gz
+man/man8/vfs_glusterfs.8.gz
 man/man8/vfs_gpfs.8.gz
 man/man8/vfs_linux_xfs_sgid.8.gz
 man/man8/vfs_media_harmony.8.gz

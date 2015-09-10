@@ -1,6 +1,6 @@
---- texk/texlive/tl_scripts/Makefile.in.orig	2013-12-26 00:37:50.000000000 +0900
-+++ texk/texlive/tl_scripts/Makefile.in	2014-12-15 00:41:48.000000000 +0900
-@@ -121,10 +121,9 @@
+--- texk/texlive/tl_scripts/Makefile.in.orig	2015-04-26 23:57:20 UTC
++++ texk/texlive/tl_scripts/Makefile.in
+@@ -128,10 +128,9 @@ am__uninstall_files_from_dir = { \
      || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
           $(am__cd) "$$dir" && rm -f $$files; }; \
    }
@@ -13,16 +13,16 @@
  SCRIPTS = $(dist_texconfig_SCRIPTS) $(dist_texmf_SCRIPTS) \
  	$(nodist_bin_SCRIPTS)
  AM_V_P = $(am__v_P_@AM_V@)
-@@ -253,8 +252,6 @@
+@@ -263,8 +262,6 @@ sh_scripts = \
+ 	dvi2fax \
  	dvired \
- 	fmtutil \
  	fontinst \
 -	kpsetool \
 -	kpsewhere \
  	ps2frag \
  	pslatex \
  	rubibtex \
-@@ -283,8 +280,6 @@
+@@ -293,8 +290,6 @@ dist_man_MANS = \
  	fmtutil.1 \
  	fmtutil.cnf.5 \
  	fontinst.1 \
@@ -31,7 +31,7 @@
  	ps2frag.1 \
  	pslatex.1 \
  	rubibtex.1 \
-@@ -296,14 +291,10 @@
+@@ -306,14 +301,10 @@ dist_man_MANS = \
  
  bin_links = \
  	allcm:allec \
@@ -47,7 +47,7 @@
  	fmtutil:mktexfmt \
  	texconfig:texconfig-sys \
  	updmap:updmap-sys
-@@ -627,7 +618,7 @@
+@@ -638,7 +629,7 @@ check-am: all-am
  check: check-am
  all-am: Makefile $(SCRIPTS) $(MANS) $(DATA) all-local
  installdirs:
@@ -56,7 +56,7 @@
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
  install: install-am
-@@ -681,8 +672,8 @@
+@@ -692,8 +683,8 @@ info: info-am
  
  info-am:
  

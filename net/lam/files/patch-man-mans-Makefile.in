@@ -1,6 +1,6 @@
---- man/mans/Makefile.in.orig	Fri Mar 10 22:31:27 2006
-+++ man/mans/Makefile.in	Sun Jul 16 16:43:58 2006
-@@ -134,7 +134,7 @@
+--- man/mans/Makefile.in.orig	2008-06-09 04:36:53 UTC
++++ man/mans/Makefile.in
+@@ -134,7 +134,7 @@ CONFIG_HEADER = $(top_builddir)/share/in
  CONFIG_CLEAN_FILES =
  SOURCES =
  DIST_SOURCES =

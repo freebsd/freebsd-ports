@@ -9,8 +9,7 @@ PORTNAME=	noia-warm
 PORTVERSION=	20041102
 PORTREVISION=	2
 CATEGORIES=	x11-themes gnome
-MASTER_SITES=	GNOME
-MASTER_SITE_SUBDIR=	teams/art.gnome.org/archive/themes/icon
+MASTER_SITES=	GNOME/teams/art.gnome.org/archive/themes/icon
 DISTNAME=	ICON-NoiaWarm
 
 MAINTAINER=	ports@FreeBSD.org

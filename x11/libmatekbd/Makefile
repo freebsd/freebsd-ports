@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmatekbd
-PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTVERSION=	1.10.0
 CATEGORIES=	x11 mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -26,5 +25,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.mate.peripherals-keyboard-xkb.gschema.xml
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmatekbd*so*
 
 .include <bsd.port.mk>

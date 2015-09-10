@@ -57,3 +57,5 @@ share/vmware-tools/scripts/vmware/network
 @rmtry share/vmware-tools/tools.conf
 @rmtry etc/vmware-tools/plugins
 etc/pam.d/vmtoolsd
+@dir %%DATADIR%%/scripts/vmware
+@dir %%DATADIR%%/tests

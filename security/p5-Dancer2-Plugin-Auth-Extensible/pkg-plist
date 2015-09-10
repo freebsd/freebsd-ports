@@ -1,4 +1,3 @@
-bin/generate-crypted-password
 %%SITE_PERL%%/Dancer2/Plugin/Auth/Extensible.pm
 %%SITE_PERL%%/Dancer2/Plugin/Auth/Extensible/Provider/Base.pm
 %%SITE_PERL%%/Dancer2/Plugin/Auth/Extensible/Provider/Config.pm

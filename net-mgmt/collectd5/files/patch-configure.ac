@@ -1,6 +1,6 @@
---- configure.ac.orig	2015-02-26 11:49:16 UTC
+--- configure.ac.orig	2015-05-27 07:51:35 UTC
 +++ configure.ac
-@@ -111,7 +111,7 @@ then
+@@ -120,7 +120,7 @@ then
  fi
  
  # Where to install .pc files.
@@ -9,7 +9,25 @@
  AC_SUBST(pkgconfigdir)
  
  # Check for standards compliance mode
-@@ -1440,6 +1440,7 @@ if test "x$with_kstat" = "xyes"
+@@ -641,7 +641,7 @@ SAVE_CFLAGS="$CFLAGS"
+ # Emulate behavior of src/Makefile.am
+ if test "x$GCC" = "xyes"
+ then
+-	CFLAGS="$CFLAGS -Wall -Werror"
++	CFLAGS="$CFLAGS -Wall "
+ fi
+ 
+ AC_CACHE_CHECK([for strtok_r],
+@@ -770,7 +770,7 @@ AC_CHECK_FUNCS(getutxent, [have_getutxen
+ if test "x$GCC" = "xyes"
+ then
+ 	SAVE_CFLAGS="$CFLAGS"
+-	CFLAGS="$CFLAGS -Wall -Wextra -Werror"
++	CFLAGS="$CFLAGS -Wall -Wextra "
+ fi
+ 
+ AC_CHECK_FUNCS(strptime, [have_strptime="yes"], [have_strptime="no"])
+@@ -1495,6 +1495,7 @@ if test "x$with_kstat" = "xyes"
  then
  	AC_CHECK_LIB(kstat, kstat_open, [with_kstat="yes"], [with_kstat="no (libkstat not found)"], [])
  fi
@@ -17,7 +35,7 @@
  if test "x$with_kstat" = "xyes"
  then
  	AC_CHECK_LIB(devinfo, di_init, [with_devinfo="yes"], [with_devinfo="no (not found)"], [])
-@@ -1449,6 +1450,8 @@ if test "x$with_kstat" = "xyes"
+@@ -1504,6 +1505,8 @@ if test "x$with_kstat" = "xyes"
  then
  	AC_DEFINE(HAVE_LIBKSTAT, 1,
  		  [Define to 1 if you have the 'kstat' library (-lkstat)])
@@ -26,7 +44,43 @@
  fi
  AM_CONDITIONAL(BUILD_WITH_LIBKSTAT, test "x$with_kstat" = "xyes")
  AM_CONDITIONAL(BUILD_WITH_LIBDEVINFO, test "x$with_devinfo" = "xyes")
-@@ -3508,7 +3511,7 @@ fi
+@@ -3346,7 +3349,7 @@ then
+ 	SAVE_LIBS="$LIBS"
+ 	# trigger an error if Perl_load_module*() uses __attribute__nonnull__(3)
+ 	# (see issues #41 and #42)
+-	CFLAGS="$CFLAGS $PERL_CFLAGS -Wall -Werror"
++	CFLAGS="$CFLAGS $PERL_CFLAGS -Wall "
+ 	LIBS="$LIBS $PERL_LIBS"
+ 
+ 	AC_CACHE_CHECK([for broken Perl_load_module()],
+@@ -3576,7 +3579,7 @@ fi
+ if test "x$with_python" = "xyes"
+ then
+ 	AC_MSG_CHECKING([for Python CPPFLAGS])
+-	python_include_path=`echo "import distutils.sysconfig;import sys;sys.stdout.write(distutils.sysconfig.get_python_inc())" | "$with_python_prog" 2>&1`
++	python_include_path=`echo "import distutils.sysconfig;import sys;sys.stdout.write(distutils.sysconfig.get_python_inc())" | "$with_python_prog" 2>/dev/null`
+ 	python_config_status=$?
+ 
+ 	if test "$python_config_status" -ne 0 || test "x$python_include_path" = "x"
+@@ -3599,7 +3602,7 @@ fi
+ if test "x$with_python" = "xyes"
+ then
+ 	AC_MSG_CHECKING([for Python LDFLAGS])
+-	python_library_path=`echo "import distutils.sysconfig;import sys;sys.stdout.write(distutils.sysconfig.get_config_vars(\"LIBDIR\").__getitem__(0))" | "$with_python_prog" 2>&1`
++	python_library_path=`echo "import distutils.sysconfig;import sys;sys.stdout.write(distutils.sysconfig.get_config_vars(\"LIBDIR\").__getitem__(0))" | "$with_python_prog" 2>/dev/null`
+ 	python_config_status=$?
+ 
+ 	if test "$python_config_status" -ne 0 || test "x$python_library_path" = "x"
+@@ -3614,7 +3617,7 @@ fi
+ if test "x$with_python" = "xyes"
+ then
+ 	AC_MSG_CHECKING([for Python LIBS])
+-	python_library_flags=`echo "import distutils.sysconfig;import sys;sys.stdout.write(distutils.sysconfig.get_config_vars(\"BLDLIBRARY\").__getitem__(0))" | "$with_python_prog" 2>&1`
++	python_library_flags=`echo "import distutils.sysconfig;import sys;sys.stdout.write(distutils.sysconfig.get_config_vars(\"BLDLIBRARY\").__getitem__(0))" | "$with_python_prog" 2>/dev/null`
+ 	python_config_status=$?
+ 
+ 	if test "$python_config_status" -ne 0 || test "x$python_library_flags" = "x"
+@@ -3629,7 +3632,7 @@ fi
  if test "x$with_python" = "xyes"
  then
  	LDFLAGS="-L$python_library_path $LDFLAGS"
@@ -35,12 +89,22 @@
  
  	AC_CHECK_FUNC(PyObject_CallFunction,
  		      [with_python="yes"],
-@@ -4415,7 +4418,7 @@ AC_ARG_WITH(libvarnish, [AS_HELP_STRING(
+@@ -4692,8 +4695,8 @@ AC_ARG_WITH(libvarnish, [AS_HELP_STRING(
+ 	else if test -d "$with_libvarnish/lib"
  	then
  		AC_MSG_NOTICE([Not checking for libvarnish: Manually configured])
- 		with_libvarnish_cflags="-I$withval/include"
+-		with_libvarnish_cflags="-I$withval/include"
 -		with_libvarnish_libs="-L$withval/lib -lvarnishapi"
++		with_libvarnish_cflags="-I$withval/include/varnish"
 +		with_libvarnish_libs="-L$withval/lib/varnish -lvarnishapi"
  		with_libvarnish="yes"
  	fi; fi; fi
  ],
+@@ -5263,6 +5266,7 @@ fi
+ 
+ if test "x$ac_system" = "xFreeBSD"
+ then
++	plugin_disk="yes"
+         plugin_zfs_arc="yes"
+ fi
+ 

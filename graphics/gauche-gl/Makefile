@@ -3,7 +3,7 @@
 
 PORTNAME=	gl
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics scheme
 MASTER_SITES=	SF/gauche/Gauche-gl
 PKGNAMEPREFIX=	gauche-
@@ -57,6 +57,7 @@ do-install:
 	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . \
 		${STAGEDIR}${EXAMPLESDIR})
 	@(cd ${STAGEDIR}${PREFIX}/lib/gauche-0.9/site/${CONFIGURE_TARGET} && \
-		${STRIP_CMD} libgauche-*.so)
+		${CHMOD} u+w libgauche-*.so && ${STRIP_CMD} libgauche-*.so && \
+		${CHMOD} u-w libgauche-*.so)
 
 .include <bsd.port.mk>

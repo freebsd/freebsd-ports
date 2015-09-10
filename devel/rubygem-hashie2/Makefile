@@ -11,6 +11,8 @@ COMMENT=	Hashie is a simple collection of useful Hash extensions
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=yes

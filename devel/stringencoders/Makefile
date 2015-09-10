@@ -3,10 +3,10 @@
 
 PORTNAME=	stringencoders
 PORTVERSION=	3.10.3
+DISTVERSIONPREFIX=	v
 PORTREVISION=	3
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-DISTNAME=	${PORTNAME}-v${PORTVERSION}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Collection of high performance c-string transformations
@@ -14,7 +14,6 @@ COMMENT=	Collection of high performance c-string transformations
 USES=		libtool perl5
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-
-BROKEN_powerpc=	Does not compile on powerpc
+CFLAGS+=	-fsigned-char	# chars are unsigned on PowerPC and ARM
 
 .include <bsd.port.mk>

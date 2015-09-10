@@ -1,5 +1,5 @@
---- src/sys/arch.c.orig	Wed Sep 20 20:01:15 2000
-+++ src/sys/arch.c	Fri Jul  6 23:08:27 2007
+--- src/sys/arch.c.orig	2009-12-29 16:53:02 UTC
++++ src/sys/arch.c
 @@ -11,7 +11,7 @@
      defined(NeXT)  || defined(WIN32)
  #undef HAS_UNAME
@@ -9,13 +9,13 @@
  #undef HAS_UNAME
  #endif
  #if defined(sun4) && defined(sun4Pre41)
-@@ -91,6 +91,9 @@
- 
+@@ -96,6 +96,9 @@ void SYGetArchType( char *str, int slen 
  #elif defined(NeXT)
      strncpy( str, "NeXT", slen );
-+
+ 
 +#elif defined(__FreeBSD__)
 +    strncpy( str, "FreeBSD", slen );
- 
++
  #else
      strncpy( str, "Unknown", slen );
+ #endif

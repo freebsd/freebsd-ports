@@ -3,7 +3,7 @@
 PORTNAME=	hunspell
 PORTVERSION=	0.1.6
 CATEGORIES=	textproc
-MASTER_SITES=	MOZILLA_EXTENDED/addons/204314
+MASTER_SITES=	MOZILLA_ADDONS/addons/204314
 PKGNAMEPREFIX=	tk-
 DISTNAME=	turkmen_spell_checker_dictionary-${PORTVERSION}-tb+fx+sm
 EXTRACT_SUFX=	.xpi
@@ -14,6 +14,7 @@ COMMENT=	Turkmen hunspell dictionaries
 
 LICENSE=	GPLv3
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/dictionaries
 

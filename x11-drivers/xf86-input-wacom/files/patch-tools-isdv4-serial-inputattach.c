@@ -37,11 +37,11 @@
  }
 +#endif
  
- static int get_baud_rate(int fd)
+ static unsigned int get_baud_rate(int fd)
  {
 +#ifdef __linux__
  	struct stat st;
- 	int baudrate = 19200;
+ 	unsigned int baudrate = 19200;
  	int id;
 @@ -112,6 +122,9 @@ int get_baud_rate(int fd)
  	udev_unref(udev);

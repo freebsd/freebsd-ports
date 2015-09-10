@@ -1,26 +1,20 @@
-To be able to shutdown or reboot your system, you'll have to add a .pkla file
-in %%LOCALBASE%%/etc/polkit-1/localauthority/50-local.d directory. Which looks
+To be able to shutdown or reboot your system, you'll have to add .rules
+files in %%LOCALBASE%%/etc/polkit-1/rules.d directory. Which looks
 like this (replace PUTYOURGROUPHERE by your group):
 
-[Restart]
-Identity=unix-group:PUTYOURGROUPHERE
-Action=org.freedesktop.consolekit.system.restart
-ResultAny=yes
-ResultInactive=yes
-ResultActive=yes
-
-[Shutdown]
-Identity=unix-group:PUTYOURGROUPHERE
-Action=org.freedesktop.consolekit.system.stop
-ResultAny=yes
-ResultInactive=yes
-ResultActive=yes
+polkit.addRule(function (action, subject) {
+  if (action.id == "org.freedesktop.consolekit.system.restart" ||
+      action.id == "org.freedesktop.consolekit.system.stop"
+      && subject.isInGroup("PUTYOURGROUPHERE")) {
+    return polkit.Result.YES;
+  }
+});
 
 For those who have working suspend/resume:
 
-[Suspend]
-Identity=unix-group:PUTYOURGROUPHERE
-Action=org.freedesktop.upower.suspend
-ResultAny=yes
-ResultInactive=yes
-ResultActive=yes
+polkit.addRule(function (action, subject) {
+  if (action.id == "org.freedesktop.consolekit.system.suspend"
+      && subject.isInGroup("PUTYOURGROUPHERE")) {
+    return polkit.Result.YES;
+  }
+});

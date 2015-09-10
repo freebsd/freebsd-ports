@@ -19,6 +19,6 @@ INSTALLS_ICONS=		yes
 INSTALL_TARGET=		install-strip
 USES=			gettext gmake libtool pkgconfig tar:bzip2
 USE_LDCONFIG=		yes
-USE_GNOME=		gtk20
+USE_GNOME=		gtk20 intltool
 
 .include <bsd.port.mk>

@@ -1,0 +1,32 @@
+==============================================================================
+
+To use uhidd daemon for USB HID devices, depends on which sub class
+driver you want to attach, to avoid conflicts between the daemon and
+the kernel drivers, you should either use the command line option '-u'
+to instruct the daemon to detach active kernel drivers attached to
+a device, or you should remove some of those entries 'device ums',
+'device ukbd', or 'device uhid' from your kernel config file and
+recompile the kernel.
+
+Note that if the USB kernel drivers are compiled as kernel modules,
+you should also remove the relevant devd(8) rules in /etc/devd/usb.conf
+config file, so those modules will not be loaded automatically by devd(8)
+when devices are attached.
+
+If you want to run uhidd daemon at the startup, add the following lines to
+/etc/rc.conf:
+
+	uhidd_flags="-kmohsu"
+	uhidd_enable="YES"
+
+Note that you need to modify the uhidd_flags (command line options)
+according to which sub class drivers you want to use.
+
+To manually start/stop uhidd daemon on certain device, run:
+
+	service uhidd [start|stop] /dev/ugen.X.Y
+
+See http://wiki.FreeBSD.org/uhidd for more details about how to install and
+setup the daemon.
+
+==============================================================================

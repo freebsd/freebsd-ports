@@ -3,7 +3,7 @@
 
 PORTNAME=	bugle
 PORTVERSION=	0.0.20100508
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -39,6 +39,12 @@ READLINE_USES=		readline
 READLINE_CONFIGURE_WITH=	readline
 THREADS_CONFIGURE_ON=	--with-threads=pthreads
 THREADS_CONFIGURE_OFF=	--with-threads=single
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MFFMPEG}
+BROKEN=		Does not build with ffmpeg-2.7
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \

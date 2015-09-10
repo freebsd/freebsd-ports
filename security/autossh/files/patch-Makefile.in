@@ -1,5 +1,5 @@
---- Makefile.in.orig	2014-06-06 09:42:44.484826074 +0800
-+++ Makefile.in	2014-06-06 09:43:35.132824906 +0800
+--- Makefile.in.orig	2014-09-10 01:59:17 UTC
++++ Makefile.in
 @@ -45,18 +45,18 @@ distclean:	allclean
  		- /bin/rm -f Makefile
  
@@ -23,11 +23,11 @@
 +		mkdir -p -m 755 $(DESTDIR)$(prefix)/share/doc/autossh
 +		mkdir -p -m 755 $(DESTDIR)$(datadir)/examples/autossh
 +		mkdir -p -m 755 $(DESTDIR)$(mandir)/man1
-+		cp $(TARGET) $(DESTDIR)$(bindir)
-+		cp CHANGES README $(DESTDIR)$(datadir)/doc/autossh
-+		cp autossh.host	$(DESTDIR)$(datadir)/examples/autossh
-+		cp rscreen $(DESTDIR)$(datadir)/examples/autossh
-+		cp autossh.1 $(DESTDIR)$(mandir)/man1
++		${BSD_INSTALL_PROGRAM} $(TARGET) $(DESTDIR)$(bindir)
++		${BSD_INSTALL_DATA} CHANGES README $(DESTDIR)$(datadir)/doc/autossh
++		${BSD_INSTALL_DATA} autossh.host $(DESTDIR)$(datadir)/examples/autossh
++		${BSD_INSTALL_DATA} rscreen $(DESTDIR)$(datadir)/examples/autossh
++		${BSD_INSTALL_MAN} autossh.1 $(DESTDIR)$(mandir)/man1
 +		chmod 755 $(DESTDIR)$(bindir)/$(TARGET)
 +		chmod 644 $(DESTDIR)$(datadir)/doc/autossh/CHANGES
 +		chmod 644 $(DESTDIR)$(datadir)/doc/autossh/README

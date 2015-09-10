@@ -32,6 +32,8 @@ USE_RC_SUBR=	sslh
 
 PORTEXAMPLES=	example.cfg
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLIBWRAP}

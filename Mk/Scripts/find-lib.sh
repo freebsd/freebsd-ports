@@ -7,6 +7,13 @@ if [ -z "${LIB_DIRS}" -o -z "${LOCALBASE}" ]; then
 	exit 1
 fi
 
+if [ -f /usr/share/misc/magic.mime -o -f /usr/share/misc/magic.mime.mgc ]; then
+	echo "Either /usr/share/misc/magic.mime or /usr/share/misc/mime.magic.mgc exist and must be removed." >&2
+	echo "These are legacy files from an older release and may safely be deleted." >&2
+	echo "Please see UPDATING 20150213 for more details." >&2
+	exit 1
+fi
+
 if [ $# -ne 1 ]; then
 	echo "$0: no argument provided." >&2
 fi

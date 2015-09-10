@@ -3,6 +3,7 @@
 
 PORTNAME=	libkml
 PORTVERSION=	1.2
+DISTVERSIONPREFIX=	release-
 PORTREVISION=	4
 CATEGORIES=	science
 
@@ -26,8 +27,6 @@ USE_LDCONFIG=	yes
 USES=		autoreconf gmake libtool
 
 GH_ACCOUNT=	google
-GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	release-${PORTVERSION}
 USE_GITHUB=	yes
 
 SWIG_BUILD_DEPENDS=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13

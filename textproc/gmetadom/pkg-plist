@@ -152,9 +152,6 @@ lib/libgmetadom_gdome_cpp_smart.so.0.2.6
 %%OCAML%%lib/ocaml/stublibs/dllmlgdome.so
 %%OCAML%%lib/ocaml/stublibs/dllmlgdome.so.owner
 libdata/pkgconfig/gdome2-cpp-smart.pc
-@dirrm include/gmetadom/gdome_cpp_smart
-@dirrm include/gmetadom
-%%OCAML%%@dirrm lib/ocaml/gdome2
 @comment Shim to clean-up a previous bad install - this can be removed
 @comment PORTVERSION > 0.2.6
 @exec if [ -d %D/lib/ocaml/gdome2 ] ; then /bin/rm -f %D/lib/ocaml/gdome2/* 2>/dev/null && /bin/rmdir %D/lib/ocaml/gdome2 2>/dev/null ; fi

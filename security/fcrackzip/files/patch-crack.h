@@ -1,6 +1,6 @@
---- crack.h.orig	Tue Mar 20 21:56:11 2007
-+++ crack.h	Tue Mar 20 21:56:20 2007
-@@ -24,7 +24,6 @@
+--- crack.h.orig	2000-06-18 23:19:07 UTC
++++ crack.h
+@@ -24,7 +24,6 @@ extern u8 bf_next[256];
  extern u8 bf_last;
  
  extern int verbosity;

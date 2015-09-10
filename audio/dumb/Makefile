@@ -13,26 +13,19 @@ COMMENT=	IT, XM, S3M, and MOD player library
 USES=		gmake
 
 OPTIONS_DEFINE=	ALLEGRO
+OPTIONS_SUB=	yes
 ALLEGRO_DESC=	Enable allegro support
 
-.include <bsd.port.options.mk>
+ALLEGRO_LIB_DEPENDS=	liballeg.so:${PORTSDIR}/devel/allegro
+ALLEGRO_MAKE_ARGS=	_PORT_ALLEGRO_CFLAGS="`allegro-config --cflags`" \
+			LINK_ALLEGRO="`allegro-config --libs` -lm"
+ALLEGRO_CONFLICTS=	dumb-[0-9]*
+ALLEGRO_MAKE_ARGS_OFF=	_PORT_ALLEGRO_CFLAGS=
+ALLEGRO_CONFLICTS_OFF=	dumb-allegro-[0-9]*
 
-.if ${PORT_OPTIONS:MALLEGRO}
-LIB_DEPENDS+=	liballeg.so:${PORTSDIR}/devel/allegro
-PLIST_SUB+=	ALLEGRO=""
-MAKE_ARGS=	_PORT_ALLEGRO_CFLAGS="`allegro-config --cflags`"
-MAKE_ARGS+=	LINK_ALLEGRO="`allegro-config --libs` -lm"
-PKGNAMESUFFIX=	-allegro
-CONFLICTS=	dumb-[0-9]*
-.else
-PLIST_SUB+=	ALLEGRO="@comment "
-MAKE_ARGS=	_PORT_ALLEGRO_CFLAGS=
-CONFLICTS=	dumb-allegro-[0-9]*
-.endif
-
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "sparc64"
-CFLAGS+=	-fPIC
-.endif
+CFLAGS_amd64=	-fPIC
+CFLAGS_ia64=	-fPIC
+CFLAGS_sparc64=	-fPIC
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|_INSTALL_PATH := |&$${DESTDIR}|' ${WRKSRC}/Makefile
@@ -40,8 +33,7 @@ post-patch:
 do-configure:
 	@${ECHO_CMD} 'include make/unix.inc' > ${WRKSRC}/make/config.txt
 	@${ECHO_CMD} 'ALL_TARGETS := core core-examples core-headers' >> ${WRKSRC}/make/config.txt
-.if ${PORT_OPTIONS:MALLEGRO}
+do-configure-ALLEGRO-on:
 	@${ECHO_CMD} 'ALL_TARGETS += allegro allegro-examples allegro-headers' >> ${WRKSRC}/make/config.txt
-.endif
 
 .include <bsd.port.mk>

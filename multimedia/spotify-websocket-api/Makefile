@@ -10,6 +10,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Websocket API and client for Spotify
 
+IGNORE=		login fails due to protocol changes
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2016-01-01
+
 NO_ARCH=	yes
 
 USE_GITHUB=	yes
@@ -17,11 +21,10 @@ GH_ACCOUNT=	Hexxeh
 GH_PROJECT=	spotify-websocket-api
 GH_TAGNAME=	d397ed2
 
-USES=		shebangfix python
+USES=		python shebangfix
 SHEBANG_FILES=	spotify_web/spotify.py ${CLIENTFILES}
 USE_PYTHON=	autoplist concurrent distutils
 
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 OPTIONS_DEFINE=	EXAMPLES
 
 PORTEXAMPLES=	blocking.py nonblocking.py decode_mercury.py play.py \
@@ -51,13 +54,13 @@ post-patch:
 
 post-install:
 .for f in ${CLIENTFILES}
-	@${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	@${LN} -s ${PREFIX}/bin/respotify.py ${STAGEDIR}${PREFIX}/bin/respotify
+	${LN} -s ${PREFIX}/bin/respotify.py ${STAGEDIR}${PREFIX}/bin/respotify
 
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for f in ${PORTEXAMPLES}
-	@${INSTALL_SCRIPT} ${WRKSRC}/examples/${f} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 
 .include <bsd.port.mk>

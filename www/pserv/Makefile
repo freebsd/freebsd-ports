@@ -11,6 +11,7 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Portable and small webserver written in C
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 

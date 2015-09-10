@@ -67,6 +67,7 @@ sbin/update-leap
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver39.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver4.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver40.html
+%%PORTDOCS%%%%DOCSDIR%%/drivers/driver40-ja.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver42.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver43.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver44.html
@@ -163,6 +164,7 @@ sbin/update-leap
 %%PORTDOCS%%%%DOCSDIR%%/html/drivers/driver39.html
 %%PORTDOCS%%%%DOCSDIR%%/html/drivers/driver4.html
 %%PORTDOCS%%%%DOCSDIR%%/html/drivers/driver40.html
+%%PORTDOCS%%%%DOCSDIR%%/html/drivers/driver40-ja.html
 %%PORTDOCS%%%%DOCSDIR%%/html/drivers/driver42.html
 %%PORTDOCS%%%%DOCSDIR%%/html/drivers/driver43.html
 %%PORTDOCS%%%%DOCSDIR%%/html/drivers/driver44.html

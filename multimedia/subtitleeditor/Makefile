@@ -18,7 +18,7 @@ LIB_DEPENDS=	libglademm-2.4.so:${PORTSDIR}/devel/libglademm24 \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		desktop-file-utils gettext gmake libtool pkgconfig
-USE_GNOME=	gtkmm24
+USE_GNOME=	gtkmm24 intltool
 USE_GSTREAMER=	good mm
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -35,9 +35,5 @@ NLS_CONFIGURE_OFF=	--disable-nls
 OPENGL_LIB_DEPENDS=	libgtkglextmm-x11-1.2.so:${PORTSDIR}/x11-toolkits/gtkglextmm
 OPENGL_USE=		gl=glu
 OPENGL_CONFIGURE_ENABLE=gl
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|"GNU strip"|"strip"|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

@@ -1,0 +1,7 @@
+rpsl2acl queries a set of RPSL database objects (normally route-sets) and
+converts them to an ACL for use in BIND configuration files.
+
+It is part of dnstools, a set of utilities for DNS management and related
+tasks.
+
+WWW: http://www.gnu.org.ua/software/dnstools/rpsl2acl.html

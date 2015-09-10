@@ -9,10 +9,13 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Library for mocking and stubbing syntax like JMock and SchMock
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-metaclass>=0:${PORTSDIR}/devel/rubygem-metaclass
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
-USE_RAKE=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	BS-Event
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ELMEX
@@ -17,8 +17,11 @@ LICENSE_COMB=	dual
 
 OPTIONS_DEFINE=	EXAMPLES
 
+NO_ARCH=	yes
 USE_PERL5=	configure
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	samples/simple_example
+perl_OLD_CMD=	/opt/perl/bin/perl
 
 PORTEXAMPLES=	simple_example
 

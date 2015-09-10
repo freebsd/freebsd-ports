@@ -3,16 +3,15 @@
 
 PORTNAME=	gmake
 PORTVERSION=	4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	make
+MASTER_SITES=	GNU/make
 DISTNAME=	make-${PORTVERSION}
 
 # note: before committing to this port, contact portmgr to arrange for an
 # experimental ports run.  Untested commits may be backed out at portmgr's
 # discretion.
-MAINTAINER=	autotools@FreeBSD.org
+MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	GNU version of 'make' utility
 
 LICENSE=	GPLv3

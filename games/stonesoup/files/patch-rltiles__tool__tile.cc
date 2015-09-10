@@ -1,6 +1,6 @@
---- ./rltiles/tool/tile.cc.orig	2014-04-09 17:36:33.000000000 +0200
-+++ ./rltiles/tool/tile.cc	2014-05-06 21:21:37.808135615 +0200
-@@ -123,10 +123,10 @@
+--- rltiles/tool/tile.cc.orig	2015-03-04 04:53:29 UTC
++++ rltiles/tool/tile.cc
+@@ -123,10 +123,10 @@ void tile::add_rim(const tile_colour &ri
              if (flags[x + y * m_width])
                  continue;
  

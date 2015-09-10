@@ -10,6 +10,8 @@ COMMENT=	Tag a single model on several contexts
 
 RUN_DEPENDS=	rubygem-rails>=3.0:${PORTSDIR}/www/rubygem-rails
 
+NO_ARCH=	yes
+
 USE_RUBY=	YES
 USE_RUBYGEMS=	YES
 RUBYGEM_AUTOPLIST=	YES

@@ -127,9 +127,7 @@ INDEXDIR?=	${PORTSDIR}
 INDEXFILE?=	INDEX-${OSVERSION:C/([0-9]*)[0-9]{5}/\1/}
 
 # local customization of the ports tree
-.if exists(${.CURDIR}/Makefile.local)
-.include "${.CURDIR}/Makefile.local"
-.endif
+.sinclude "${.CURDIR}/Makefile.local"
 
 TARGETS+=	all
 TARGETS+=	build

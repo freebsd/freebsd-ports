@@ -1,6 +1,6 @@
---- qmpdclient.pro.orig	2011-06-08 13:16:26.000000000 +0400
-+++ qmpdclient.pro	2011-09-21 14:18:07.000000000 +0400
-@@ -3,7 +3,7 @@
+--- qmpdclient.pro.orig	2011-06-08 09:16:26 UTC
++++ qmpdclient.pro
+@@ -3,7 +3,7 @@ PREFIX = /usr/local
  
  # Most people need not muck about below here
  #!contains(QT_MAJOR_VERSION, 4):error(QMPDClient requires Qt 4)
@@ -9,7 +9,7 @@
  
  # addition ldflags for release build
  QMAKE_LFLAGS_RELEASE += -O2 -g0 -s
-@@ -212,16 +212,15 @@
+@@ -212,16 +212,15 @@ unix {
          SOURCES += src/qmpdclient_x11.cpp
          LIBS += -lX11
          # Check for dbus support
@@ -28,7 +28,7 @@
              SOURCES += src/notifications_nodbus.cpp
          }
      }
-@@ -253,6 +252,7 @@
+@@ -253,6 +252,7 @@ unix {
  translations.commands = lrelease $$TRANSLATIONS
  translations.files = lang/cs_CZ.qm lang/de_DE.qm lang/es_ES.qm lang/fr_FR.qm lang/it_IT.qm lang/nl_NL.qm lang/nn_NO.qm lang/no_NO.qm lang/pt_BR.qm lang/ru_RU.qm lang/sv_SE.qm lang/tr_TR.qm lang/uk_UA.qm lang/zh_CN.qm lang/zh_TW.qm
  translations.path = $$PREFIX/share/QMPDClient/translations

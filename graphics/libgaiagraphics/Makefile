@@ -13,10 +13,9 @@ COMMENT=	Library supporting common-utility raster handling methods
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libgeotiff.so:${PORTSDIR}/graphics/libgeotiff \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libcairo.so:${PORTSDIR}/graphics/cairo
 
-USES=		gmake iconv pathfix pkgconfig libtool
+USES=		gmake iconv jpeg pathfix pkgconfig libtool
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include

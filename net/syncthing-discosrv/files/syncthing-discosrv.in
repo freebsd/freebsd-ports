@@ -16,7 +16,7 @@
 # syncthingdiscosrv_group (group):      Set group to run syncthing-discosrv.
 #                               Default is "syncthing".
 # syncthingdiscosrv_dir (dir):          Set dir to run syncthing-discosrv in.
-#                               Default is "/var/tmp/syncthing".
+#                               Default is "/var/db/syncthing-discosrv".
 
 . /etc/rc.subr
 
@@ -28,15 +28,14 @@ load_rc_config $name
 : ${syncthingdiscosrv_enable:="NO"}
 : ${syncthingdiscosrv_user:="syncthing"}
 : ${syncthingdiscosrv_group:="syncthing"}
-: ${syncthingdiscosrv_dir:="/var/tmp/syncthing"}
+: ${syncthingdiscosrv_dir:="/var/db/syncthing-discosrv"}
 
 export STNORESTART=true
-export HOME=${syncthingdiscosrv_dir} 
 
 pidfile=/var/run/syncthingdiscosrv.pid
 procname="%%PREFIX%%/bin/syncthing-discosrv"
 command="/usr/sbin/daemon"
-command_args="-f -p ${pidfile} ${procname} ${syncthingdiscosrv_flags}"
+command_args="-f -p ${pidfile} ${procname} -db-dir=${syncthingdiscosrv_dir}/db -stats-file=${syncthingdiscosrv_dir}/stats ${syncthingdiscosrv_flags}"
 
 start_precmd=syncthingdiscosrv_startprecmd
 

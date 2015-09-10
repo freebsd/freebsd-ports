@@ -3,7 +3,7 @@
 
 PORTNAME=	eiffelstudio
 PORTVERSION=	5.7
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cs.rit.edu/pub/mirrors/ise/download/57/ \
 		ftp://ftp.inf.ethz.ch/pub/mirror/eiffel/57/ \
@@ -22,6 +22,10 @@ COMMENT=	Complete Integrated Development Environment for Eiffel
 
 LIB_DEPENDS=	libc.so.6:${PORTSDIR}/misc/compat6x
 
+USES=		shebangfix
+SHEBANG_FILES=	library/event/example/gen_action_sequences \
+		library/vision2/interface/events/gen_action_sequences \
+		library/vision2/interface/events/gen_event_sensitive
 USE_GNOME=	gtk20
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/Eiffel${PORTVERSION:S/.//}
@@ -52,6 +56,7 @@ EIFFEL_ARCH=		x86
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${CP} -R ${WRKSRC}/* ${STAGEDIR}${DATADIR}
+	${FIND} ${STAGEDIR}${DATADIR} -type d -empty -delete
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 .for f in libgtk-x11-2.0.so.600 libgdk-x11-2.0.so.600 libatk-1.0.so.600 \
     libgdk_pixbuf-2.0.so.600 libpangoxft-1.0.so.800 libpangox-1.0.so.800 \

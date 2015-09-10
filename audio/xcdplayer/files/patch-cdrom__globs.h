@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- cdrom_globs.h.orig	Tue Jan 12 19:59:31 1993
 +++ cdrom_globs.h	Mon Aug 25 00:38:35 2003
 @@ -99,22 +99,10 @@

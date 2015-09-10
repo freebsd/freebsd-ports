@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- vbnc/vbnc/setversion.sh.orig
 +++ vbnc/vbnc/setversion.sh
 @@ -1,4 +1,4 @@

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	leptonica
-PORTVERSION=	1.70
-PORTREVISION=	3
+PORTVERSION=	1.72
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.leptonica.com/source/
 
@@ -11,14 +10,14 @@ MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	C library for efficient image processing and image analysis operations
 
 LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libopenjp2.so:${PORTSDIR}/graphics/openjpeg \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libwebp.so:${PORTSDIR}/graphics/webp
 
 CONFLICTS=	leptonlib-[0-9]*
 
-USES=		libtool
+USES=		jpeg libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

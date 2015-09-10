@@ -11,6 +11,7 @@ COMMENT=	Red5 is an Open Source Flash Server
 
 USE_JAVA=	yes
 NO_BUILD=	yes
+NO_ARCH=	yes
 USE_RC_SUBR=	red5
 WRKSRC=		${WRKDIR}/red5-server-1.0
 
@@ -19,6 +20,7 @@ RED5_GRP?=	${WWWGRP}
 RED5_HOME?=	${PREFIX}/${PORTNAME}
 
 SUB_LIST+=	RED5_USER=${RED5_USER} RED5_HOME=${RED5_HOME}
+PLIST_SUB=	RED5_USER=${RED5_USER} RED5_GRP=${RED5_GRP}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/host=0.0.0.0/host=127.0.0.1/' ${WRKSRC}/conf/red5.properties
@@ -43,9 +45,5 @@ do-install:
 	(cd ${WRKSRC}/lib && ${COPYTREE_SHARE} \* ${STAGEDIR}${RED5_HOME}/lib)
 	(cd ${WRKSRC}/webapps && ${COPYTREE_SHARE} \* ${STAGEDIR}${RED5_HOME}/webapps)
 	(cd ${WRKSRC}/plugins && ${COPYTREE_SHARE} \* ${STAGEDIR}${RED5_HOME}/plugins)
-
-post-install:
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${RED5_USER}:${RED5_GRP} ${RED5_HOME}' \
-		>> ${TMPPLIST}
 
 .include <bsd.port.mk>

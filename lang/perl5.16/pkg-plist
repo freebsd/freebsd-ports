@@ -40,7 +40,7 @@ bin/shasum
 bin/splain
 bin/xsubpp
 bin/zipdetails
-%%MANCONF%%etc/man.d/perl%%PERL_VER%%.conf
+etc/man.d/perl%%PERL_VER%%.conf
 etc/perl5_version
 %%PRIV_LIB%%/AnyDBM_File.pm
 %%PRIV_LIB%%/App/Cpan.pm

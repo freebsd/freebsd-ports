@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- ehnt_display.c.orig
 +++ ehnt_display.c
 @@ -22,15 +22,16 @@

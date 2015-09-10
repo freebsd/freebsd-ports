@@ -17,6 +17,8 @@ RUN_DEPENDS=	rubygem-hashie2>=2.0.0:${PORTSDIR}/devel/rubygem-hashie2 \
 		rubygem-mixlib-log>=1.3.0:${PORTSDIR}/devel/rubygem-mixlib-log \
 		rubygem-rack>=0.0.0:${PORTSDIR}/www/rubygem-rack
 
+NO_ARCH=	yes
+
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
 RUBYGEM_AUTOPLIST=	yes

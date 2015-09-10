@@ -9,5 +9,4 @@
 %%SQUIRRELDIR%%/plugins/password_forget/make_release.sh
 %%SQUIRRELDIR%%/plugins/password_forget/setup.php
 %%SQUIRRELDIR%%/plugins/password_forget/version
-@dirrmtry %%SQUIRRELDIR%%/plugins/password_forget
 @exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin %%SQUIRREL_PLUGIN_NAME%%; fi

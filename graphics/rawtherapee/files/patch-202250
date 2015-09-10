@@ -1,0 +1,20 @@
+--- rtgui/dirbrowser.cc.orig	2015-08-11 19:57:03.809587000 +0200
++++ rtgui/dirbrowser.cc	2015-08-11 20:16:28.320220000 +0200
+@@ -223,9 +223,14 @@
+   Glib::RefPtr<WinDirMonitor> monitor = Glib::RefPtr<WinDirMonitor>(new WinDirMonitor (iter->get_value (dtColumns.dirname), this));
+   iter->set_value (dtColumns.monitor, monitor);
+ #else
+-  Glib::RefPtr<Gio::FileMonitor> monitor = dir->monitor_directory ();
+-  iter->set_value (dtColumns.monitor, monitor);
+-  monitor->signal_changed().connect (sigc::bind(sigc::mem_fun(*this, &DirBrowser::file_changed), iter, dir->get_parse_name()));
++  Glib::RefPtr<Gio::FileMonitor> monitor;
++  try {
++      monitor = dir->monitor_directory ();
++      iter->set_value (dtColumns.monitor, monitor);
++      monitor->signal_changed().connect (sigc::bind(sigc::mem_fun(*this, &DirBrowser::file_changed), iter, dir->get_parse_name()));
++  } catch (Glib::Error &err) {
++      fprintf (stderr, "cannot create directory monitor: %s\n", err.what().c_str());
++  }
+ #endif
+ }
+ 

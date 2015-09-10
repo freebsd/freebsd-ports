@@ -4,9 +4,8 @@
 PORTNAME=	rdate
 PORTVERSION=	20150501
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.stack.nl/pub/users/%SUBDIR%/rdate/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	johans
+MASTER_SITES=	ftp://ftp.stack.nl/pub/users/johans/rdate/ \
+		LOCAL/johans
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Sets the clock of the local host to the time of another host
@@ -19,7 +18,7 @@ PLIST_FILES=	sbin/rdate man/man8/${PORTNAME}.8.gz
 
 post-patch:
 	${REINPLACE_CMD} -e 's,/right,,' ${WRKSRC}/rdate.8
-.if ${OSVERSION} < 1100072
+.if ${OPSYS} == DragonFly || ${OSVERSION} < 1100072
 	${REINPLACE_CMD} -e '/^SRCS/s/$$/ reallocarray.c/' ${WRKSRC}/Makefile
 	${ECHO} 'void *reallocarray(void *optr, size_t nmemb, size_t size);' \
 		>> ${WRKSRC}/ntpleaps.h

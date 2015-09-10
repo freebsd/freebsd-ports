@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	recursor
-PORTVERSION=	3.7.2
+PORTVERSION=	3.7.3
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 PKGNAMEPREFIX=	powerdns-

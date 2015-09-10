@@ -1,6 +1,6 @@
---- texk/xdvik/special.c.orig	2014-09-02 18:41:34.000000000 +0900
-+++ texk/xdvik/special.c	2015-01-31 21:02:18.000000000 +0900
-@@ -691,6 +691,12 @@
+--- texk/xdvik/special.c.orig	2008-02-16 21:43:15 UTC
++++ texk/xdvik/special.c
+@@ -691,6 +691,12 @@ static size_t g_bbox_info_max_size = 0;
    contains these coordinates.
  */
  
@@ -13,7 +13,7 @@
  static void
  append_bbox_info(int x, int y, int w, int h, int angle)
  {
-@@ -735,25 +741,25 @@
+@@ -735,25 +741,25 @@ draw_bbox0(int xcorner, int ycorner)
  	    do_color_change();
  #endif
  
@@ -49,7 +49,7 @@
  
  	    XDrawLine(DISP, currwin.win, globals.gc.high,
  		      xcorner, ycorner,
-@@ -782,27 +788,27 @@
+@@ -782,27 +788,27 @@ display_bboxes(void)
      size_t i;
      
      for (i = 0; i < g_bbox_info_size; i++) {
@@ -96,7 +96,7 @@
  #endif
      }
      bbox_angle = 0;
-@@ -829,6 +835,9 @@
+@@ -829,6 +835,9 @@ save_bbox(void)
  	
  	ycorner -= bbox_voffset;
  	append_bbox_info(xcorner, ycorner, bbox_width, bbox_height, bbox_angle);
@@ -106,7 +106,7 @@
  
  	/* register boundaries of this box as anchor boundaries */
  	if (htex_inside_href) {
-@@ -907,6 +916,11 @@
+@@ -907,6 +916,11 @@ ps_startup2(void)
  }
  
  
@@ -118,7 +118,7 @@
  /*
   * dumb parsing of PostScript - search for rotation H. Zeller 1/97
   * Returns true if we find a potentially non-supported command that
-@@ -916,6 +930,52 @@
+@@ -916,6 +930,52 @@ static Boolean
  ps_parseraw(const char *PostScript_cmd)
  {
      const char *p;
@@ -171,7 +171,7 @@
  
      bbox_angle = 0;
      p = strstr(PostScript_cmd, "rotate");
-@@ -924,9 +984,137 @@
+@@ -924,9 +984,137 @@ ps_parseraw(const char *PostScript_cmd)
  	    --p;
  	while (*p != '\0' && isdigit((int)*p))
  	    --p;
@@ -310,7 +310,7 @@
  	return True;
      }
      if (strstr(PostScript_cmd, " scale ") != NULL)
-@@ -1477,10 +1665,10 @@
+@@ -1477,10 +1665,10 @@ psfig_special(char *cp)
  #endif	    
  	/* also raw PostScript, but no extra colon to skip */
  #if PS
@@ -323,7 +323,7 @@
  	    if (psfig_begun)
  		psp.drawraw(cp);
  	    else {
-@@ -2325,6 +2513,100 @@
+@@ -2325,6 +2513,100 @@ scan_papersize(const char *cp0)
  }
  
  /*
@@ -424,7 +424,7 @@
   *	The following copyright message applies to the rest of this file.  --PV
   */
  
-@@ -2555,6 +2837,8 @@
+@@ -2555,6 +2837,8 @@ applicationDoSpecial(char *cp, size_t le
  	case CMD('b', 'k'):
  	    blacken_last();
  	    return;

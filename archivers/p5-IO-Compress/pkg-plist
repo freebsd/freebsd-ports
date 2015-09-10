@@ -1,4 +1,3 @@
-%%EXE_FILES%%bin/zipdetails
 %%SITE_PERL%%/Compress/Zlib.pm
 %%SITE_PERL%%/File/GlobMapper.pm
 %%SITE_PERL%%/IO/Compress/Adapter/Bzip2.pm
@@ -44,4 +43,3 @@
 %%PERL5_MAN3%%/IO::Uncompress::Inflate.3.gz
 %%PERL5_MAN3%%/IO::Uncompress::RawInflate.3.gz
 %%PERL5_MAN3%%/IO::Uncompress::Unzip.3.gz
-%%EXE_FILES%%man/man1/zipdetails.1.gz

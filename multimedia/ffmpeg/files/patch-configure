@@ -1,6 +1,6 @@
---- configure.orig	2014-08-17 15:33:04.000000000 +0200
-+++ configure	2014-09-12 15:07:50.647439045 +0200
-@@ -2649,12 +2649,7 @@
+--- configure.orig	2015-06-19 20:47:55 UTC
++++ configure
+@@ -2814,12 +2814,7 @@ target_os_default=$(tolower $(uname -s))
  host_os=$target_os_default
  
  # machine
@@ -12,18 +12,18 @@
 -fi
 +arch_default=$(uname -p)
  cpu="generic"
+ intrinsics="none"
  
- # configurable options
-@@ -5381,7 +5376,7 @@
+@@ -5823,7 +5818,7 @@ ifndef MAIN_MAKEFILE
  SRC_PATH:=\$(SRC_PATH:.%=..%)
  endif
  CC_IDENT=$cc_ident
 -ARCH=$arch
 +FFMPEG_ARCH=$arch
+ INTRINSICS=$intrinsics
  CC=$cc
  CXX=$cxx
- AS=$as
-@@ -5590,7 +5585,7 @@
+@@ -6035,7 +6030,7 @@ exec_prefix=\${prefix}
  libdir=$libdir
  includedir=$incdir
  
@@ -32,7 +32,7 @@
  Description: $comment
  Version: $version
  Requires: $(enabled shared || echo $requires)
-@@ -5604,10 +5599,10 @@
+@@ -6049,10 +6044,10 @@ EOF
  mkdir -p doc/examples/pc-uninstalled
  includedir=${source_path}
  [ "$includedir" = . ] && includedir="\${pcfiledir}/../../.."

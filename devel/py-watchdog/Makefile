@@ -22,7 +22,6 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
 GH_ACCOUNT=	gorakhargosh
 
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	*
@@ -30,17 +29,14 @@ PORTDOCS=	*
 USE_GITHUB=	yes
 USES=		python
 USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
-.include <bsd.port.options.mk>
+post-build-DOCS-on:
+	(cd ${WRKSRC}/docs ; ${MAKE_CMD} html)
 
-.if ${PORT_OPTIONS:MDOCS}
-post-build:
-	(cd ${WRKSRC}/docs ; ${MAKE} html)
-
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/docs/build/html ; \
 	${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} "-not -name .buildinfo")
-.endif
 
 .include <bsd.port.mk>

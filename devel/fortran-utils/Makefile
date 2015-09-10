@@ -4,8 +4,7 @@
 PORTNAME=	fortran-utils
 PORTVERSION=	1.1
 CATEGORIES=	devel
-MASTER_SITES=	LOCAL
-MASTER_SITE_SUBDIR=	kris
+MASTER_SITES=	LOCAL/kris
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for use with Fortran code, from 4.4BSD

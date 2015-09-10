@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- client-qt/qt4/Makefile.in.orig
 +++ client-qt/qt4/Makefile.in
 @@ -243,7 +243,7 @@

@@ -21,12 +21,11 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libHermes.so:${PORTSDIR}/graphics/Hermes \
 		libpng.so:${PORTSDIR}/graphics/png \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libgif.so:${PORTSDIR}/graphics/giflib
 
 WRKSRC=		${WRKDIR}/wmweather+-${PORTVERSION}
 
-USES=		iconv
+USES=		iconv jpeg
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-lm

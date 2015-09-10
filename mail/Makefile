@@ -56,6 +56,7 @@
     SUBDIR += claws-mail-gdata
     SUBDIR += claws-mail-libravatar
     SUBDIR += claws-mail-mailmbox
+    SUBDIR += claws-mail-managesieve
     SUBDIR += claws-mail-newmail
     SUBDIR += claws-mail-notification
     SUBDIR += claws-mail-pdf_viewer
@@ -109,6 +110,7 @@
     SUBDIR += elm
     SUBDIR += elmo
     SUBDIR += elmo-devel
+    SUBDIR += emailrelay
     SUBDIR += emil
     SUBDIR += enma
     SUBDIR += eps
@@ -211,11 +213,10 @@
     SUBDIR += lmtp2nntp
     SUBDIR += lookout
     SUBDIR += lurker
-    SUBDIR += mail-notification
     SUBDIR += mail2sms
     SUBDIR += mailagent
-    SUBDIR += maildirsync
     SUBDIR += maildrop
+    SUBDIR += mailest
     SUBDIR += mailfmt
     SUBDIR += mailfront
     SUBDIR += mailgraph
@@ -413,6 +414,7 @@
     SUBDIR += p5-POE-Component-Client-SMTP
     SUBDIR += p5-POE-Component-SMTP
     SUBDIR += p5-POE-Filter-Transparent-SMTP
+    SUBDIR += p5-Parse-MIME
     SUBDIR += p5-Parse-Syslog-Mail
     SUBDIR += p5-Qmail-Envelope
     SUBDIR += p5-SES
@@ -513,7 +515,6 @@
     SUBDIR += pymsgauth
     SUBDIR += pysieved
     SUBDIR += pyzor
-    SUBDIR += qar-bufo
     SUBDIR += qconfirm
     SUBDIR += qgmailnotifier
     SUBDIR += qmail
@@ -543,6 +544,7 @@
     SUBDIR += queue-fix
     SUBDIR += queue-repair
     SUBDIR += rainloop
+    SUBDIR += rainloop-community
     SUBDIR += raysfilter
     SUBDIR += razor-agents
     SUBDIR += rbl-milter
@@ -574,6 +576,7 @@
     SUBDIR += ruby-rmail
     SUBDIR += rubygem-actionmailer
     SUBDIR += rubygem-actionmailer4
+    SUBDIR += rubygem-actionmailer41
     SUBDIR += rubygem-email_reply_parser-discourse
     SUBDIR += rubygem-exception_notification
     SUBDIR += rubygem-larch
@@ -599,6 +602,7 @@
     SUBDIR += simscan
     SUBDIR += slapd-cyrus
     SUBDIR += sma
+    SUBDIR += smfsav
     SUBDIR += smtp-cli
     SUBDIR += smtp-gated
     SUBDIR += smtpfeed

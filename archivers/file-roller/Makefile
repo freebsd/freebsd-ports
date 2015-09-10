@@ -1,9 +1,8 @@
 # Created by: Anders Nordby <anders@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/archivers/file-roller/Makefile 20062 2014-11-10 22:05:52Z gusi $
 
 PORTNAME=	file-roller
-PORTVERSION=	3.14.2
+PORTVERSION=	3.16.4
 PORTEPOCH=	1
 CATEGORIES=	archivers gnome
 MASTER_SITES=	GNOME
@@ -16,9 +15,11 @@ BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar \
     		unzip:${PORTSDIR}/archivers/unzip
 
-USES=		desktop-file-utils gettext gmake libtool \
+PORTSCOUT=	limitw:1,even
+
+USES=		desktop-file-utils gettext gmake libarchive libtool \
 		pathfix pkgconfig tar:xz
-USE_GNOME=	gnomeprefix gtk30 intlhack introspection:build
+USE_GNOME=	gtk30 intlhack introspection:build
 USE_XORG=	sm
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
@@ -32,7 +33,7 @@ PORTDOCS=	AUTHORS NEWS README TODO ChangeLog
 GLIB_SCHEMAS=	org.gnome.FileRoller.gschema.xml
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	NAUTILUS
+OPTIONS_DEFINE=	DOCS NAUTILUS
 OPTIONS_DEFAULT=NAUTILUS
 NAUTILUS_DESC=	Enable Nautilus extension
 NAUTILUS_USE=	GNOME=nautilus3
@@ -43,14 +44,10 @@ post-patch:
 		${WRKSRC}/src/fr-command-tar.c \
 		${WRKSRC}/src/fr-command-zip.c
 
-.include <bsd.port.options.mk>
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}/${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

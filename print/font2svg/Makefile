@@ -3,7 +3,7 @@
 
 PORTNAME=	font2svg
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print
 MASTER_SITES=	http://www.gdv.uni-hannover.de/~peinecke/font2svg/
 
@@ -12,7 +12,7 @@ COMMENT=	All font to svg-font converter
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-USE_GHOSTSCRIPT_RUN=	yes
+USES=		ghostscript:run
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/font2svg %%DATADIR%%/encodings %%DATADIR%%/font2svg.ps

@@ -12,6 +12,8 @@ COMMENT=	Program to manage GPS data (tracks, waypoints, etc.)
 
 LICENSE=	GPLv2
 
+BROKEN=		Fails to build
+
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 LIB_DEPENDS=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
 		libpcre.so:${PORTSDIR}/devel/pcre \
@@ -51,6 +53,7 @@ MERKAATOR_DESC=	Edit OpenStreetMap via Merkaartor
 OPTIONS_SUB=	yes
 
 GEOCACHES_CONFIGURE_ENABLE=	geocaches
+GEOCACHES_SUB_FILES=	pkg-message
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
@@ -63,12 +66,6 @@ GPSD_CONFIGURE_ENABLE=	realtime-gps-tracking
 
 JOSM_RUN_DEPENDS=	josm:${PORTSDIR}/astro/josm
 MERKAATOR_RUN_DEPENDS=	merkaartor:${PORTSDIR}/astro/merkaartor
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGEOCACHES}
-SUB_FILES+=	pkg-message
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^AM_CFLAGS/s| -g | |' ${WRKSRC}/src/Makefile.in

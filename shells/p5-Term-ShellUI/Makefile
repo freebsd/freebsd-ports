@@ -3,7 +3,7 @@
 
 PORTNAME=	Term-ShellUI
 PORTVERSION=	0.92
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	shells perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,10 @@ COMMENT=	Fully-featured shell-like command line environment
 BUILD_DEPENDS=	p5-ReadLine-Gnu>=0:${PORTSDIR}/devel/p5-ReadLine-Gnu
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	examples/*
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	EXAMPLES
 

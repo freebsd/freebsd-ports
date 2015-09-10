@@ -39,8 +39,8 @@ lib/libatspi.so.0.0.1
 libdata/pkgconfig/atspi-2.pc
 libexec/at-spi-bus-launcher
 libexec/at-spi2-registryd
+share/dbus-1/accessibility-services/org.a11y.atspi.Registry.service
 share/dbus-1/services/org.a11y.Bus.service
-share/dbus-1/services/org.a11y.atspi.Registry.service
 share/gir-1.0/Atspi-2.0.gir
 share/gtk-doc/html/libatspi/AtspiAccessible.html
 share/gtk-doc/html/libatspi/AtspiDeviceListener.html
@@ -90,6 +90,7 @@ share/locale/ast/LC_MESSAGES/at-spi2-core.mo
 share/locale/be/LC_MESSAGES/at-spi2-core.mo
 share/locale/bg/LC_MESSAGES/at-spi2-core.mo
 share/locale/bn_IN/LC_MESSAGES/at-spi2-core.mo
+share/locale/bs/LC_MESSAGES/at-spi2-core.mo
 share/locale/ca/LC_MESSAGES/at-spi2-core.mo
 share/locale/ca@valencia/LC_MESSAGES/at-spi2-core.mo
 share/locale/cs/LC_MESSAGES/at-spi2-core.mo
@@ -115,6 +116,7 @@ share/locale/hu/LC_MESSAGES/at-spi2-core.mo
 share/locale/id/LC_MESSAGES/at-spi2-core.mo
 share/locale/it/LC_MESSAGES/at-spi2-core.mo
 share/locale/ja/LC_MESSAGES/at-spi2-core.mo
+share/locale/kk/LC_MESSAGES/at-spi2-core.mo
 share/locale/km/LC_MESSAGES/at-spi2-core.mo
 share/locale/kn/LC_MESSAGES/at-spi2-core.mo
 share/locale/ko/LC_MESSAGES/at-spi2-core.mo

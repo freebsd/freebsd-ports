@@ -17,6 +17,8 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		orc>=0.4.16:${PORTSDIR}/devel/orc
 LIB_DEPENDS=	liborc-0.4.so:${PORTSDIR}/devel/orc
 
+PORTSCOUT=	limitw:1,even
+
 USES=		compiler:features gmake libtool pkgconfig tar:xz
 USE_LDCONFIG=	yes
 USE_GSTREAMER1=	yes

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	asunder
-PORTVERSION=	2.6
+PORTVERSION=	2.7
 CATEGORIES=	audio
 MASTER_SITES=	http://littlesvr.ca/asunder/releases/
 
@@ -16,13 +16,13 @@ LIB_DEPENDS=	libcddb.so:${PORTSDIR}/audio/libcddb
 RUN_DEPENDS=	${LOCALBASE}/bin/cdparanoia:${PORTSDIR}/audio/cdparanoia
 
 OPTIONS_DEFINE=	LAME OGG FLAC OPUS WAVPACK APE WINDOWS_CHARS NLS DOCS
-OPTIONS_DEFAULT=	LAME OGG FLAC
+OPTIONS_DEFAULT=	OGG FLAC
 OPTIONS_SUB=	yes
 
 WINDOWS_CHARS_DESC=	Allow Windows special chars in filenames
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake desktop-file-utils pkgconfig tar:bzip2
+USES=		desktop-file-utils gettext gmake pkgconfig tar:bzip2
 USE_GNOME=	gtk20 glib20 intltool intlhack
 
 PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README TODO
@@ -35,18 +35,13 @@ WAVPACK_RUN_DEPENDS=	wavpack:${PORTSDIR}/audio/wavpack
 APE_RUN_DEPENDS=	mac:${PORTSDIR}/audio/mac
 NLS_CONFIGURE_ENABLE=	yes
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's/^itlocaledir = .*/itlocaledir = @datarootdir@\/locale/' ${WRKSRC}/po/Makefile.in.in
-.if ${PORT_OPTIONS:MWINDOWS_CHARS}
+post-patch-WINDOWS_CHARS-on:
 	@${REINPLACE_CMD} -e 's^#define[[:blank:]]*BADCHARS.*^#define BADCHARS "/"^' ${WRKSRC}/src/util.h
-.endif
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.mk>

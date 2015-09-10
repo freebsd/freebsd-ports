@@ -2,6 +2,7 @@ GNUstep/GNUstep.conf
 GNUstep/System/Library/Documentation/man/man1/debugapp.1.gz
 GNUstep/System/Library/Documentation/man/man1/openapp.1.gz
 GNUstep/System/Library/Documentation/man/man1/gnustep-config.1.gz
+GNUstep/System/Library/Documentation/man/man1/gnustep-tests.1.gz
 GNUstep/System/Library/Documentation/man/man1/opentool.1.gz
 GNUstep/System/Library/Documentation/man/man7/GNUstep.7.gz
 GNUstep/System/Library/Documentation/man/man7/library-combo.7.gz
@@ -85,6 +86,7 @@ GNUstep/System/Library/Makefiles/aggregate.make
 GNUstep/System/Library/Makefiles/app-wrapper.template
 GNUstep/System/Library/Makefiles/application.make
 GNUstep/System/Library/Makefiles/bundle.make
+GNUstep/System/Library/Makefiles/bake_debian_files.sh
 GNUstep/System/Library/Makefiles/clean_cpu.sh
 GNUstep/System/Library/Makefiles/clean_os.sh
 GNUstep/System/Library/Makefiles/clean_vendor.sh
@@ -96,7 +98,6 @@ GNUstep/System/Library/Makefiles/config.make
 GNUstep/System/Library/Makefiles/config.sub
 GNUstep/System/Library/Makefiles/cpu.sh
 GNUstep/System/Library/Makefiles/ctool.make
-GNUstep/System/Library/Makefiles/deb-equivs-control.template
 GNUstep/System/Library/Makefiles/documentation.make
 GNUstep/System/Library/Makefiles/empty.make
 GNUstep/System/Library/Makefiles/executable.template

@@ -40,7 +40,7 @@ X86_ASM_DESC= Enable x86 assembly code
 
 .if ${PORT_OPTIONS:MOPENGL}
 USE_GL=		yes
-LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+USES+=		jpeg
 ALL_TARGET+=	glx
 PLIST_SUB+=	GLX=""
 .else

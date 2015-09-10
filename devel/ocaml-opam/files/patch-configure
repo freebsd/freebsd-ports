@@ -1,6 +1,6 @@
---- configure	2015-04-29 20:23:39.092132000 +0200
-+++ configure	2015-04-29 20:24:39.312802000 +0200
-@@ -599,8 +599,6 @@
+--- configure.orig	2015-04-27 08:51:24 UTC
++++ configure
+@@ -599,8 +599,6 @@ OCAML_PKG_re_emacs
  OCAML_PKG_re
  OCAML_PKG_extlib
  OCAML_PKG_unix
@@ -9,7 +9,7 @@
  OCAMLFIND
  OCAMLYACC
  OCAMLLEXDOTOPT
-@@ -671,7 +669,6 @@
+@@ -671,7 +669,6 @@ ac_subst_files=''
  ac_user_opts='
  enable_option_checking
  enable_version_check
@@ -17,7 +17,7 @@
  '
        ac_precious_vars='build_alias
  host_alias
-@@ -1292,10 +1289,6 @@
+@@ -1292,10 +1289,6 @@ Optional Features:
    --enable-FEATURE[=ARG]  include FEATURE [ARG=yes]
    --disable-version-check Do not check OCaml version
  
@@ -28,7 +28,7 @@
  
  Some influential environment variables:
    CC          C compiler command
-@@ -4156,73 +4149,6 @@
+@@ -4156,73 +4149,6 @@ fi
  
  
  

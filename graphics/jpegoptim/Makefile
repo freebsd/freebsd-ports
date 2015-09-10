@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jpegoptim
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.kokkonen.net/tjko/src/ \
 		LOCAL/ehaupt
@@ -13,8 +13,7 @@ COMMENT=	Utility to optimize jpeg files
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
-
+USES=		jpeg
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libjpeg=${LOCALBASE}
 

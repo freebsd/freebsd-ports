@@ -1,0 +1,8 @@
+The cryptographic hash function BLAKE2 is an improved version of the SHA-3
+finalist BLAKE. Like SHA-3, BLAKE2 offers the highest security, yet is fast as
+MD5 on 64-bit platforms and requires at least 33% less RAM than SHA-2 or SHA-3
+on low-end systems. The core algorithm of BLAKE2 is derived from ChaCha, a
+stream cipher designed by Daniel J. Bernstein that has been proposed as a
+standard cipher for TLS.
+
+WWW: https://blake2.net/

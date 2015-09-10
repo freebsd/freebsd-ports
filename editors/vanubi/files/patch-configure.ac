@@ -1,0 +1,11 @@
+--- configure.ac.orig	2014-12-09 10:52:31 UTC
++++ configure.ac
+@@ -71,7 +71,7 @@ LIBVANUBI_VALAFLAGS="$LIBVANUBI_VALAFLAG
+ LIBVANUBI_CFLAGS="$LIBVANUBI_CFLAGS -w"
+ LIBVANUBI_LIBS="$LIBVANUBI_LIBS"
+ 
+-VALA_CHECK_MODULES(VANUBI, [gtk+-3.0 >= 3.6 gio-unix-2.0 gtksourceview-3.0 vte-2.90 gdk-x11-3.0 libwnck-3.0])
++VALA_CHECK_MODULES(VANUBI, [gtk+-3.0 gio-unix-2.0 gtksourceview-3.0 vte-2.90 gdk-x11-3.0 libwnck-3.0])
+ dnl We ignore GTK_3_10_*
+ PKG_CHECK_MODULES(GTK_3_10, [gtk+-3.0 >= 3.10],
+ 				  [VANUBI_VALAFLAGS="$VANUBI_VALAFLAGS -D GTK_3_10"],

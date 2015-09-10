@@ -1,21 +1,40 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	2
+PORTNAME=	qdbm
+PORTVERSION=	1.8.78
+PORTREVISION=	4
+CATEGORIES=	databases
+MASTER_SITES=	http://fallabs.com/qdbm/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Ruby API for QDBM
 
-SLAVEPORT=	ruby
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/COPYING
 
-USES=		shebangfix
+LIB_DEPENDS=	libqdbm.so:${PORTSDIR}/databases/qdbm
+
+USES=		iconv shebangfix
 SHEBANG_FILES=	curia/rbcrtest depot/rbdptest myrbdoc villa/rbvltest
 USE_RUBY=	yes
-
-MASTERDIR=	${.CURDIR}/../../databases/qdbm
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/ruby
-PLIST=		${.CURDIR}/pkg-plist
-DESCR=		${.CURDIR}/pkg-descr
-PATCHDIR=	${.CURDIR}/files
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+CONFIGURE_ENV=	ac_cv_lib_iconv_main=yes
+MAKE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
+		LOCALBASE="${LOCALBASE}"
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include "${MASTERDIR}/Makefile"
+post-configure:
+	cd ${WRKSRC} && ${SETENV} RB_USER_INSTALL=yes ${MAKE_ENV} \
+	    ${MAKE} configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${RUBY_SITEARCHLIBDIR}/mod_depot.so \
+	    ${STAGEDIR}${RUBY_SITEARCHLIBDIR}/mod_curia.so \
+	    ${STAGEDIR}${RUBY_SITEARCHLIBDIR}/mod_villa.so
+
+.include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	DateTime-Astro
 PORTVERSION=	1.00
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DMAKI
@@ -23,5 +23,8 @@ USES=		gmake perl5
 
 post-configure:
 	@${REINPLACE_CMD} -e '/^INC = / s|$$| -I${LOCALBASE}/include|' ${WRKSRC}/Makefile
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/DateTime/Astro/Astro.so
 
 .include <bsd.port.mk>

@@ -1,7 +1,0 @@
-Salt API : Expose the fundamental aspects of Salt control to external sources
-=============================================================================
-
-Salt API is a modular interface on top of Salt that can provide a variety of 
-entry points into a running Salt system.
-
-WWW: http://saltstack.org

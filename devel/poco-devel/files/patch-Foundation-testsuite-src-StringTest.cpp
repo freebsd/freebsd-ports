@@ -1,6 +1,6 @@
---- Foundation/testsuite/src/StringTest.cpp.orig	2014-07-07 20:36:25.000000000 -0700
-+++ Foundation/testsuite/src/StringTest.cpp	2014-07-08 07:44:54.000000000 -0700
-@@ -922,11 +922,11 @@
+--- Foundation/testsuite/src/StringTest.cpp.orig	2014-12-21 23:06:53 UTC
++++ Foundation/testsuite/src/StringTest.cpp
+@@ -926,11 +926,11 @@ void StringTest::testIntToString()
  	assert (uIntToStr(0xF0F0F0F0, 2, result));
  	assert (result == "11110000111100001111000011110000");
  #if defined(POCO_HAVE_INT64)
@@ -17,7 +17,7 @@
  #endif
  
  	// octal
-@@ -954,15 +954,15 @@
+@@ -958,15 +958,15 @@ void StringTest::testIntToString()
  	assert (result == "0x499602D2");
  	assert (uIntToStr(1234567890, 0x10, result, true, 15, '0'));
  	assert (result == "0x00000499602D2");

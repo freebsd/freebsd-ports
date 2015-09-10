@@ -1,4 +1,4 @@
---- src/src.gpr.orig	2014-05-15 19:48:07.000000000 +0000
+--- src/src.gpr.orig	2015-06-22 10:52:10 UTC
 +++ src/src.gpr
 @@ -21,13 +21,14 @@ with "../.build/projects/aws_xmlada";
  with "../shared";
@@ -8,7 +8,7 @@
  
  library project Src is
  
-    for Languages use ("Ada", "Project file", "makefile");
+    for Languages use ("Ada", "Project file", "Makefile");
  
     for Source_Dirs use
 -     ("core", "extended", "../templates_parser/src", "../config/src",
@@ -25,7 +25,7 @@
        when "Disabled" =>
           null;
     end case;
-@@ -67,7 +68,7 @@ library project Src is
+@@ -68,7 +69,7 @@ library project Src is
              when "Windows_NT" =>
                 for Library_Options use ("-lwsock32", "-lws2_32");
              when others =>
@@ -34,7 +34,7 @@
           end case;
  
           case Shared.LDAP is
-@@ -78,7 +79,7 @@ library project Src is
+@@ -79,7 +80,7 @@ library project Src is
                         Project'Library_Options & ("-lwldap32");
                    when others =>
                       for Library_Options use
@@ -43,9 +43,9 @@
                 end case;
  
              when "Disabled" =>
-@@ -123,17 +124,6 @@ library project Src is
-       for Implementation_Suffix ("makefile") use ".txt";
-       for Implementation_Exceptions ("makefile") use ("makefile");
+@@ -124,17 +125,6 @@ library project Src is
+       for Implementation_Suffix ("Makefile") use ".txt";
+       for Implementation_Exceptions ("Makefile") use ("Makefile");
  
 -      -- Templates Parser
 -

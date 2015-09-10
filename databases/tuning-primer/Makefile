@@ -10,7 +10,7 @@ EXTRACT_SUFX=
 EXTRACT_ONLY=
 DIST_SUBDIR=	${PORTNAME}/${DISTVERSION}
 
-MAINTAINER=	joehorn@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MySQL performance tuning primer script
 
 LICENSE=	GPLv2

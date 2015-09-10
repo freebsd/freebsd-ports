@@ -130,6 +130,7 @@
 %%DATADIR%%/Modules/CPackWIX.cmake
 %%DATADIR%%/Modules/CPackZIP.cmake
 %%DATADIR%%/Modules/CTest.cmake
+%%DATADIR%%/Modules/CTestCoverageCollectGCOV.cmake
 %%DATADIR%%/Modules/CTestScriptMode.cmake
 %%DATADIR%%/Modules/CTestTargets.cmake
 %%DATADIR%%/Modules/CTestUseLaunchers.cmake
@@ -141,6 +142,7 @@
 %%DATADIR%%/Modules/CheckCXXSourceRuns.cmake
 %%DATADIR%%/Modules/CheckCXXSymbolExists.cmake
 %%DATADIR%%/Modules/CheckForPthreads.c
+%%DATADIR%%/Modules/CheckFortranCompilerFlag.cmake
 %%DATADIR%%/Modules/CheckFortranFunctionExists.cmake
 %%DATADIR%%/Modules/CheckFortranSourceCompiles.cmake
 %%DATADIR%%/Modules/CheckFunctionExists.c
@@ -167,13 +169,16 @@
 %%DATADIR%%/Modules/Compiler/Absoft-Fortran.cmake
 %%DATADIR%%/Modules/Compiler/AppleClang-ASM.cmake
 %%DATADIR%%/Modules/Compiler/AppleClang-C.cmake
+%%DATADIR%%/Modules/Compiler/AppleClang-C-FeatureTests.cmake
 %%DATADIR%%/Modules/Compiler/AppleClang-CXX.cmake
+%%DATADIR%%/Modules/Compiler/AppleClang-CXX-FeatureTests.cmake
 %%DATADIR%%/Modules/Compiler/AppleClang-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/Borland-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/Clang-ASM.cmake
 %%DATADIR%%/Modules/Compiler/Clang-C-FeatureTests.cmake
 %%DATADIR%%/Modules/Compiler/Clang-C.cmake
 %%DATADIR%%/Modules/Compiler/Clang-CXX-FeatureTests.cmake
+%%DATADIR%%/Modules/Compiler/Clang-CXX-TestableFeatures.cmake
 %%DATADIR%%/Modules/Compiler/Clang-CXX.cmake
 %%DATADIR%%/Modules/Compiler/Clang-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/Clang-DetermineCompilerInternal.cmake
@@ -188,6 +193,9 @@
 %%DATADIR%%/Modules/Compiler/Embarcadero-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/Fujitsu-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/G95-Fortran.cmake
+%%DATADIR%%/Modules/Compiler/GHS-C.cmake
+%%DATADIR%%/Modules/Compiler/GHS-CXX.cmake
+%%DATADIR%%/Modules/Compiler/GHS-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/GNU-ASM.cmake
 %%DATADIR%%/Modules/Compiler/GNU-C-FeatureTests.cmake
 %%DATADIR%%/Modules/Compiler/GNU-C.cmake
@@ -218,6 +226,8 @@
 %%DATADIR%%/Modules/Compiler/MIPSpro-CXX.cmake
 %%DATADIR%%/Modules/Compiler/MIPSpro-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/MIPSpro-Fortran.cmake
+%%DATADIR%%/Modules/Compiler/MSVC-CXX.cmake
+%%DATADIR%%/Modules/Compiler/MSVC-CXX-FeatureTests.cmake
 %%DATADIR%%/Modules/Compiler/MSVC-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/NAG-Fortran.cmake
 %%DATADIR%%/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake
@@ -243,6 +253,7 @@
 %%DATADIR%%/Modules/Compiler/SunPro-C-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/SunPro-C.cmake
 %%DATADIR%%/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake
+%%DATADIR%%/Modules/Compiler/SunPro-CXX-FeatureTests.cmake
 %%DATADIR%%/Modules/Compiler/SunPro-CXX.cmake
 %%DATADIR%%/Modules/Compiler/SunPro-Fortran.cmake
 %%DATADIR%%/Modules/Compiler/TI-ASM.cmake
@@ -321,6 +332,7 @@
 %%DATADIR%%/Modules/FindGLEW.cmake
 %%DATADIR%%/Modules/FindGLU.cmake
 %%DATADIR%%/Modules/FindGLUT.cmake
+%%DATADIR%%/Modules/FindGSL.cmake
 %%DATADIR%%/Modules/FindGTK.cmake
 %%DATADIR%%/Modules/FindGTK2.cmake
 %%DATADIR%%/Modules/FindGTest.cmake
@@ -335,6 +347,7 @@
 %%DATADIR%%/Modules/FindIce.cmake
 %%DATADIR%%/Modules/FindIcotool.cmake
 %%DATADIR%%/Modules/FindImageMagick.cmake
+%%DATADIR%%/Modules/FindIntl.cmake
 %%DATADIR%%/Modules/FindJNI.cmake
 %%DATADIR%%/Modules/FindJPEG.cmake
 %%DATADIR%%/Modules/FindJasper.cmake
@@ -402,6 +415,7 @@
 %%DATADIR%%/Modules/FindWget.cmake
 %%DATADIR%%/Modules/FindWish.cmake
 %%DATADIR%%/Modules/FindX11.cmake
+%%DATADIR%%/Modules/FindXCTest.cmake
 %%DATADIR%%/Modules/FindXMLRPC.cmake
 %%DATADIR%%/Modules/FindXercesC.cmake
 %%DATADIR%%/Modules/FindZLIB.cmake
@@ -461,6 +475,7 @@
 %%DATADIR%%/Modules/MacOSXBundleInfo.plist.in
 %%DATADIR%%/Modules/MacOSXFrameworkInfo.plist.in
 %%DATADIR%%/Modules/MacroAddFileDependencies.cmake
+%%DATADIR%%/Modules/MatlabTestsRedirect.cmake
 %%DATADIR%%/Modules/NSIS.InstallOptions.ini.in
 %%DATADIR%%/Modules/NSIS.template.in
 %%DATADIR%%/Modules/Platform/AIX-GNU-ASM.cmake
@@ -496,6 +511,21 @@
 %%DATADIR%%/Modules/Platform/BlueGeneP-static-XL-CXX.cmake
 %%DATADIR%%/Modules/Platform/BlueGeneP-static-XL-Fortran.cmake
 %%DATADIR%%/Modules/Platform/BlueGeneP-static.cmake
+%%DATADIR%%/Modules/Platform/BlueGeneQ-base.cmake
+%%DATADIR%%/Modules/Platform/BlueGeneQ-dynamic-GNU-C.cmake
+%%DATADIR%%/Modules/Platform/BlueGeneQ-dynamic-GNU-CXX.cmake
+%%DATADIR%%/Modules/Platform/BlueGeneQ-dynamic-GNU-Fortran.cmake
+%%DATADIR%%/Modules/Platform/BlueGeneQ-dynamic-XL-C.cmake
+%%DATADIR%%/Modules/Platform/BlueGeneQ-dynamic-XL-CXX.cmake
+%%DATADIR%%/Modules/Platform/BlueGeneQ-dynamic-XL-Fortran.cmake
+%%DATADIR%%/Modules/Platform/BlueGeneQ-dynamic.cmake
+%%DATADIR%%/Modules/Platform/BlueGeneQ-static-GNU-C.cmake
+%%DATADIR%%/Modules/Platform/BlueGeneQ-static-GNU-CXX.cmake
+%%DATADIR%%/Modules/Platform/BlueGeneQ-static-GNU-Fortran.cmake
+%%DATADIR%%/Modules/Platform/BlueGeneQ-static-XL-C.cmake
+%%DATADIR%%/Modules/Platform/BlueGeneQ-static-XL-CXX.cmake
+%%DATADIR%%/Modules/Platform/BlueGeneQ-static-XL-Fortran.cmake
+%%DATADIR%%/Modules/Platform/BlueGeneQ-static.cmake
 %%DATADIR%%/Modules/Platform/CYGWIN-CXX.cmake
 %%DATADIR%%/Modules/Platform/CYGWIN-GNU-C.cmake
 %%DATADIR%%/Modules/Platform/CYGWIN-GNU-CXX.cmake
@@ -528,6 +558,8 @@
 %%DATADIR%%/Modules/Platform/Darwin.cmake
 %%DATADIR%%/Modules/Platform/DragonFly.cmake
 %%DATADIR%%/Modules/Platform/FreeBSD.cmake
+%%DATADIR%%/Modules/Platform/GHS-MULTI-Initialize.cmake
+%%DATADIR%%/Modules/Platform/GHS-MULTI.cmake
 %%DATADIR%%/Modules/Platform/GNU.cmake
 %%DATADIR%%/Modules/Platform/GNUtoMS_lib.bat.in
 %%DATADIR%%/Modules/Platform/GNUtoMS_lib.cmake
@@ -545,6 +577,7 @@
 %%DATADIR%%/Modules/Platform/HP-UX-HP-C.cmake
 %%DATADIR%%/Modules/Platform/HP-UX-HP-CXX.cmake
 %%DATADIR%%/Modules/Platform/HP-UX-HP-Fortran.cmake
+%%DATADIR%%/Modules/Platform/HP-UX-GNU-ASM.cmake
 %%DATADIR%%/Modules/Platform/HP-UX-HP.cmake
 %%DATADIR%%/Modules/Platform/HP-UX.cmake
 %%DATADIR%%/Modules/Platform/Haiku.cmake

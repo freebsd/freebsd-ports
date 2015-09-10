@@ -3,7 +3,7 @@
 
 PORTNAME=	libafterimage
 PORTVERSION=	1.20
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF/afterstep/libAfterImage/${PORTVERSION}
 DISTNAME=	libAfterImage-${PORTVERSION}
@@ -11,15 +11,14 @@ DISTNAME=	libAfterImage-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic imaging library originally designed for AfterStep
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21 # or later
 
 LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
-USES=		pkgconfig tar:bzip2
+USES=		jpeg pkgconfig tar:bzip2
 USE_XORG=	xext
 USE_GNOME=	librsvg2
 GNU_CONFIGURE=	yes
@@ -37,8 +36,6 @@ OPTIONS_DEFINE_i386=	MMX
 
 MMX_CONFIGURE_ENABLE=	mmx-optimization
 
-.include <bsd.port.options.mk>
-
 post-extract:
 	@${LN} -sf ${WRKSRC} ${WRKDIR}/libAfterImage
 
@@ -48,6 +45,7 @@ post-patch:
 		 s| malloc\.h | |g' ${WRKSRC}/configure
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libAfterImage.so
 	(cd ${WRKSRC}/apps && ${INSTALL_MAN} ascompose.man \
 		${STAGEDIR}${MANPREFIX}/man/man1/ascompose.1x)
 

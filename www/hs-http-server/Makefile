@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	http-server
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTVERSION=	1.0.6
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -11,14 +10,16 @@ COMMENT=	Library for writing Haskell web servers
 
 LICENSE=	BSD3CLAUSE
 
-USE_CABAL=	HTTP>=4000.2.0 mime>=0.3 network>=2.4.0.0 text>=1.0 url>=2 \
-		utf8-string>=0.3.4
+USE_CABAL=	HTTP>=4000.2.0 mime>=0.3 network>=2.6 network-uri>=2.6 \
+		text>=1.0 url>=2.0 utf8-string>=0.3.4
 
 INSTALL_PORTEXAMPLES=	cd ${WRKSRC}/example && \
 			  ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
 
 OPTIONS_DEFINE=		EXAMPLES
 OPTIONS_DEFAULT=	EXAMPLES
+
+FLAGS_ENABLE=	network-uri
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 

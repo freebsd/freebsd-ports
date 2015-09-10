@@ -47,6 +47,7 @@ share/java/zi/America/Campo_Grande
 share/java/zi/America/Cancun
 share/java/zi/America/Caracas
 share/java/zi/America/Cayenne
+share/java/zi/America/Cayman
 share/java/zi/America/Chicago
 share/java/zi/America/Chihuahua
 share/java/zi/America/Costa_Rica
@@ -103,7 +104,6 @@ share/java/zi/America/Miquelon
 share/java/zi/America/Moncton
 share/java/zi/America/Monterrey
 share/java/zi/America/Montevideo
-share/java/zi/America/Montreal
 share/java/zi/America/Nassau
 share/java/zi/America/New_York
 share/java/zi/America/Nipigon

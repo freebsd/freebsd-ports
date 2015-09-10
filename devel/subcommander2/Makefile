@@ -16,19 +16,16 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libsvn_client-1.so:${PORTSDIR}/devel/subversion
 
-LATEST_LINK=	subcommander2
 CONFLICTS=	subcommander-1.*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R:S,.b,b,}p${PORTVERSION:E}
 
-USES=		gmake dos2unix
+USES=		autoreconf gmake dos2unix
 DOS2UNIX_GLOB=	*.cpp *.h
 USE_QT4=	corelib gui network qt3support moc_build rcc_build uic_build
 QT_NONSTANDARD=	yes
 USE_OPENSSL=	yes
-USE_AUTOTOOLS=	aclocal automake autoheader autoconf
-ACLOCAL_ARGS=	-I ac-macros
-AUTOMAKE_ARGS=	--copy --force-missing --foreign
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE}/include \
 		--with-subversion=${LOCALBASE} --with-qt=${QT_PREFIX} \
 		--with-apr=${LOCALBASE}/bin/apr-1-config \

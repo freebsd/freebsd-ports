@@ -11,6 +11,7 @@ COMMENT=	Dynamic Web CMS
 
 USE_PHP=	mysql
 
+USES=		cpe
 NO_BUILD=	yes
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 SUB_FILES=	pkg-message

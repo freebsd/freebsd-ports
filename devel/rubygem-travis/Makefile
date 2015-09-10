@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	travis
-PORTVERSION=	1.7.6
+PORTVERSION=	1.8.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -23,6 +23,7 @@ RUN_DEPENDS=	rubygem-addressable>=2.3:${PORTSDIR}/www/rubygem-addressable \
 		rubygem-pusher-client>=0.4:${PORTSDIR}/www/rubygem-pusher-client \
 		rubygem-typhoeus>=0.6.8:${PORTSDIR}/www/rubygem-typhoeus
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

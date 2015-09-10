@@ -1,6 +1,6 @@
---- ./CMakeLists.txt.orig	2010-03-01 12:40:55.000000000 +0000
-+++ ./CMakeLists.txt	2012-09-10 22:29:07.183039461 +0000
-@@ -379,13 +379,15 @@
+--- CMakeLists.txt.orig	2015-04-11 13:49:50 UTC
++++ CMakeLists.txt
+@@ -421,13 +421,15 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin"
  
  ELSE(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
  
@@ -18,3 +18,11 @@
  
  ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
  ENDIF(WIN32 AND NOT UNIX)
+@@ -438,7 +440,6 @@ INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR
+ 
+ INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/credits.txt DESTINATION ${INSTALL_SUBDIR_SHARE})
+ 
+-INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/supertux2.appdata.xml DESTINATION "share/appdata" )
+ 
+ INSTALL(DIRECTORY data/images
+                   data/fonts

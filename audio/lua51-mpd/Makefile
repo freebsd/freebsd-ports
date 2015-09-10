@@ -12,7 +12,7 @@ COMMENT=	Lua library for musicpd
 RUN_DEPENDS=	${LUA_MODLIBDIR}/socket/core.so:${PORTSDIR}/net/luasocket
 
 OPTIONS_DEFINE=	DOCS
-DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
+DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
 
 GH_ACCOUNT=	silentbicycle
 GH_PROJECT=	lua-mpd

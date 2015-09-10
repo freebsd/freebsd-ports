@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mysql
-PORTVERSION=	0.1.1.6
-PORTREVISION=	1
+PORTVERSION=	0.1.1.8
 CATEGORIES=	databases haskell
 
 MAINTAINER=	haskell@FreeBSD.org

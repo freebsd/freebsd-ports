@@ -1,6 +1,6 @@
---- OpenIPMIpthread.pc.in.orig	2005-08-17 05:56:02.000000000 +0200
-+++ OpenIPMIpthread.pc.in	2013-02-28 09:55:49.000000000 +0100
-@@ -6,6 +6,6 @@
+--- OpenIPMIpthread.pc.in.orig	2012-07-21 22:01:45 UTC
++++ OpenIPMIpthread.pc.in
+@@ -6,6 +6,6 @@ includedir=@includedir@
  Name: OpenIPMIpthread
  Description: Pthread OS handler for OpenIPMI
  Version: @VERSION@

@@ -205,6 +205,7 @@ share/help/ro/gnome-system-monitor/process-update-speed.page
 share/help/ro/gnome-system-monitor/solaris-mode.page
 share/help/ro/gnome-system-monitor/units.page
 share/locale/am/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/an/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ar/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/as/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ast/LC_MESSAGES/gnome-system-monitor.mo
@@ -245,6 +246,7 @@ share/locale/id/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/it/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ja/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ka/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/kk/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/km/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/kn/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ko/LC_MESSAGES/gnome-system-monitor.mo

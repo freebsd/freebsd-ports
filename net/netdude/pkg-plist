@@ -67,3 +67,4 @@ man/man1/netdude.1.gz
 %%DATADIR%%/0.5/protocols/nd_udp.so
 %%DATADIR%%/0.5/protocols/nd_vlan.a
 %%DATADIR%%/0.5/protocols/nd_vlan.so
+@dir include/netdude/0.5/protocols/fddi

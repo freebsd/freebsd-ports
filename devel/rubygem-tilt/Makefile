@@ -10,6 +10,8 @@ COMMENT=	Generic interface to multiple Ruby template engines
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

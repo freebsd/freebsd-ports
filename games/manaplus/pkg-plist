@@ -94,6 +94,7 @@ share/locale/zh_CN/LC_MESSAGES/manaplus.mo
 %%DATADIR%%/data/graphics/gui/label.xml
 %%DATADIR%%/data/graphics/gui/listbox.xml
 %%DATADIR%%/data/graphics/gui/lock.png
+%%DATADIR%%/data/graphics/gui/mailedit.xml
 %%DATADIR%%/data/graphics/gui/ministatus.xml
 %%DATADIR%%/data/graphics/gui/mouse.png
 %%DATADIR%%/data/graphics/gui/npc.xml
@@ -250,6 +251,7 @@ share/locale/zh_CN/LC_MESSAGES/manaplus.mo
 %%DATADIR%%/data/themes/enchilado/equipment.xml
 %%DATADIR%%/data/themes/enchilado/info.xml
 %%DATADIR%%/data/themes/enchilado/inventory.xml
+%%DATADIR%%/data/themes/enchilado/mailedit.xml
 %%DATADIR%%/data/themes/enchilado/npc.xml
 %%DATADIR%%/data/themes/enchilado/ok.xml
 %%DATADIR%%/data/themes/enchilado/outfits.xml
@@ -317,6 +319,7 @@ share/locale/zh_CN/LC_MESSAGES/manaplus.mo
 %%DATADIR%%/data/themes/golden-delicious/listbox_xxhigh.xml
 %%DATADIR%%/data/themes/golden-delicious/login.xml
 %%DATADIR%%/data/themes/golden-delicious/map.xml
+%%DATADIR%%/data/themes/golden-delicious/mailedit.xml
 %%DATADIR%%/data/themes/golden-delicious/ministatus.xml
 %%DATADIR%%/data/themes/golden-delicious/mouse.png
 %%DATADIR%%/data/themes/golden-delicious/npc.xml
@@ -426,6 +429,7 @@ share/locale/zh_CN/LC_MESSAGES/manaplus.mo
 %%DATADIR%%/data/themes/jewelry/listbox_xxhigh.xml
 %%DATADIR%%/data/themes/jewelry/login.xml
 %%DATADIR%%/data/themes/jewelry/map.xml
+%%DATADIR%%/data/themes/jewelry/mailedit.xml
 %%DATADIR%%/data/themes/jewelry/ministatus.xml
 %%DATADIR%%/data/themes/jewelry/mouse.png
 %%DATADIR%%/data/themes/jewelry/npc.xml
@@ -506,6 +510,7 @@ share/locale/zh_CN/LC_MESSAGES/manaplus.mo
 %%DATADIR%%/data/themes/pink/equipment.xml
 %%DATADIR%%/data/themes/pink/info.xml
 %%DATADIR%%/data/themes/pink/inventory.xml
+%%DATADIR%%/data/themes/pink/mailedit.xml
 %%DATADIR%%/data/themes/pink/npc.xml
 %%DATADIR%%/data/themes/pink/ok.xml
 %%DATADIR%%/data/themes/pink/outfits.xml
@@ -526,6 +531,7 @@ share/locale/zh_CN/LC_MESSAGES/manaplus.mo
 %%DATADIR%%/data/themes/unity/equipment.xml
 %%DATADIR%%/data/themes/unity/info.xml
 %%DATADIR%%/data/themes/unity/inventory.xml
+%%DATADIR%%/data/themes/unity/mailedit.xml
 %%DATADIR%%/data/themes/unity/npc.xml
 %%DATADIR%%/data/themes/unity/ok.xml
 %%DATADIR%%/data/themes/unity/outfits.xml
@@ -545,6 +551,7 @@ share/locale/zh_CN/LC_MESSAGES/manaplus.mo
 %%DATADIR%%/data/themes/wood/info.xml
 %%DATADIR%%/data/themes/wood/inventory.xml
 %%DATADIR%%/data/themes/wood/item_shortcut_bgr.png
+%%DATADIR%%/data/themes/wood/mailedit.xml
 %%DATADIR%%/data/themes/wood/mouse.png
 %%DATADIR%%/data/themes/wood/npc.xml
 %%DATADIR%%/data/themes/wood/ok.xml

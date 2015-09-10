@@ -1,9 +1,8 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports-experimental/trunk/multimedia/clutter-gst/Makefile 19553 2014-04-20 07:23:27Z gusi $
 
 PORTNAME=	clutter-gst
-PORTVERSION=	2.0.12
+PORTVERSION=	2.0.16
 CATEGORIES=	multimedia
 MASTER_SITES=	GNOME
 

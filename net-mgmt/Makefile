@@ -57,6 +57,7 @@
     SUBDIR += etherape
     SUBDIR += ettercap
     SUBDIR += ezradius
+    SUBDIR += fastnetmon
     SUBDIR += fetchconfig
     SUBDIR += flow-extract
     SUBDIR += flow-tools
@@ -65,8 +66,6 @@
     SUBDIR += flowviewer
     SUBDIR += fprobe
     SUBDIR += glpi-plugins-fusioninventory-server
-    SUBDIR += glpi-plugins-tracker-agent
-    SUBDIR += glpi-plugins-tracker-server
     SUBDIR += grepcidr
     SUBDIR += grepip
     SUBDIR += gsnmp
@@ -74,6 +73,8 @@
     SUBDIR += hastmon
     SUBDIR += hawk
     SUBDIR += icinga
+    SUBDIR += icinga-classicweb
+    SUBDIR += icinga-core
     SUBDIR += icinga2
     SUBDIR += icli
     SUBDIR += icmpmonitor
@@ -95,6 +96,7 @@
     SUBDIR += kismet
     SUBDIR += lanmap
     SUBDIR += lg
+    SUBDIR += librenms
     SUBDIR += libsmi
     SUBDIR += lldpd
     SUBDIR += mbrowse
@@ -218,6 +220,7 @@
     SUBDIR += p5-Net-IPv6Addr
     SUBDIR += p5-Net-NSCA-Client
     SUBDIR += p5-Net-Netmask
+    SUBDIR += p5-Net-OpenVPN-Manage
     SUBDIR += p5-Net-SNMP
     SUBDIR += p5-Net-SNMP-Util
     SUBDIR += p5-Net-SNMPTrapd
@@ -254,6 +257,7 @@
     SUBDIR += phpipam
     SUBDIR += phpweathermap
     SUBDIR += pixilate
+    SUBDIR += pktstat
     SUBDIR += pmacct
     SUBDIR += pnp
     SUBDIR += pnp-icinga

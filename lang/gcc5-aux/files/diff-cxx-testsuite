@@ -1,6 +1,6 @@
 --- libstdc++-v3/testsuite/lib/libstdc++.exp.orig
 +++ libstdc++-v3/testsuite/lib/libstdc++.exp
-@@ -898,17 +898,18 @@
+@@ -902,17 +902,18 @@
        set f [open $src "w"]
        puts $f "#include <locale>"
        puts $f "#include <cstdio>"

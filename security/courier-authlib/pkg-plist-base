@@ -21,6 +21,7 @@ man/man3/auth_generic.3.gz
 man/man3/auth_getoption.3.gz
 man/man3/auth_getuserinfo.3.gz
 man/man3/auth_login.3.gz
+man/man3/auth_mkhomedir.3.gz
 man/man3/auth_passwd.3.gz
 man/man3/auth_sasl.3.gz
 man/man3/auth_sasl_ex.3.gz

@@ -12,8 +12,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		unzip:${PORTSDIR}/archivers/unzip \
-		${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
+		unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \

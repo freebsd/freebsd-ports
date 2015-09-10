@@ -1,0 +1,23 @@
+From: Jan Beulich <jbeulich@suse.com>
+Subject: gnttab: add missing version check to GNTTABOP_swap_grant_ref handling
+
+... avoiding NULL derefs when the version to use wasn't set yet (via
+GNTTABOP_setup_table or GNTTABOP_set_version).
+
+This is XSA-134.
+
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Acked-by: Ian Campbell <ian.campbell@citrix.com>
+
+--- a/xen/common/grant_table.c
++++ b/xen/common/grant_table.c
+@@ -2592,6 +2592,9 @@ __gnttab_swap_grant_ref(grant_ref_t ref_
+ 
+     spin_lock(&gt->lock);
+ 
++    if ( gt->gt_version == 0 )
++        PIN_FAIL(out, GNTST_general_error, "grant table not yet set up\n");
++
+     /* Bounds check on the grant refs */
+     if ( unlikely(ref_a >= nr_grant_entries(d->grant_table)))
+         PIN_FAIL(out, GNTST_bad_gntref, "Bad ref-a (%d).\n", ref_a);

@@ -14,6 +14,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	rubygem-json>=1.4:${PORTSDIR}/devel/rubygem-json
 RUN_DEPENDS=	rubygem-json>=1.4:${PORTSDIR}/devel/rubygem-json
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

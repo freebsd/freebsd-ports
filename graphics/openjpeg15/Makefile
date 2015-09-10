@@ -5,7 +5,6 @@ PORTNAME=	openjpeg
 PORTVERSION=	1.5.2
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	SF/openjpeg.mirror/${PORTVERSION}/
 PKGNAMESUFFIX=	15
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -25,5 +24,9 @@ USE_LDCONFIG=	yes
 USES=		cmake cpe dos2unix
 
 PORTDOCS=	CHANGES LICENSE
+
+GH_ACCOUNT=	uclouvain
+GH_TAGNAME=	version.${PORTVERSION}
+USE_GITHUB=	yes
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nose
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.7
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,9 +20,9 @@ USE_PYTHON=	autoplist concurrent distutils
 
 regression-test: build
 # Extra tests for python 3, added in by setup3lib.py
-.if ${PYTHON_REL} >= 300
+.if ${PYTHON_REL} >= 3000
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} build_tests
 .endif
-	@cd ${WRKSRC} && ${PYTHON_CMD} selftest.py --verbose
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.post.mk>

@@ -5,8 +5,7 @@ PORTNAME=	wmScoreBoard
 PORTVERSION=	0.30
 PORTREVISION=	4
 CATEGORIES=	misc windowmaker
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	pat
+MASTER_SITES=	LOCAL/pat
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window Maker dockapp that display game scores from excite

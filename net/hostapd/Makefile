@@ -3,6 +3,7 @@
 
 PORTNAME=	hostapd
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://w1.fi/releases/
 
@@ -18,10 +19,6 @@ BUILD_WRKSRC=	${WRKSRC}/hostapd
 
 PLIST_FILES=	sbin/hostapd sbin/hostapd_cli man/man1/hostapd_cli.1.gz \
 		man/man8/hostapd.8.gz
-
-BROKEN_ia64=	does not compile
-BROKEN_powerpc=	does not compile
-BROKEN_sparc64=	does not compile
 
 OPTIONS_DEFINE=	PORTS_SSL
 

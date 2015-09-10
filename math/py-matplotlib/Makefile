@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	matplotlib
-PORTVERSION=	1.4.0
-PORTREVISION=	2
+PORTVERSION=	1.4.3
 CATEGORIES=	math python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +12,7 @@ COMMENT=	Plotting library uses a syntax familiar to MATLAB users
 
 LICENSE=	PSFL
 
-BUILD_DEPENDS=	${PYNUMPY} 
+BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libpng.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${PYNUMPY} \
@@ -33,7 +32,6 @@ TKAGGBACKEND_DESC=	TKAgg backend support
 WXAGGBACKEND_DESC=	WXAgg backend support
 
 PORTEXAMPLES=	*
-UNIQUENAME=	${PORTNAME}
 
 .include <bsd.port.options.mk>
 
