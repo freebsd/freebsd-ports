@@ -3,6 +3,7 @@
 
 PORTNAME=	memcached
 PORTVERSION=	1.4.24
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.memcached.org/files/ \
 		GOOGLE_CODE \
