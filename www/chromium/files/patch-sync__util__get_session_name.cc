@@ -1,18 +1,18 @@
---- sync/util/get_session_name.cc.orig	2014-10-10 08:54:17 UTC
-+++ sync/util/get_session_name.cc
-@@ -12,7 +12,7 @@
- #include "base/sys_info.h"
- #include "base/task_runner.h"
+--- sync/util/get_session_name.cc.orig	2015-08-22 15:01:57.000000000 -0400
++++ sync/util/get_session_name.cc	2015-09-03 11:15:14.369871000 -0400
+@@ -14,7 +14,7 @@
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+ #if defined(OS_CHROMEOS)
+ #include "chromeos/system/devicetype.h"
+-#elif defined(OS_LINUX)
++#elif (defined(OS_LINUX) || defined(OS_BSD))
  #include "sync/util/get_session_name_linux.h"
  #elif defined(OS_IOS)
  #include "sync/util/get_session_name_ios.h"
-@@ -37,7 +37,7 @@
-   // like "stumpy-signed-mp-v2keys" etc. The information can be checked on
-   // "CHROMEOS_RELEASE_BOARD" line in chrome://system.
-   session_name = board.substr(0, 6) == "stumpy" ? "Chromebox" : "Chromebook";
+@@ -50,7 +50,7 @@
+       session_name = "Chromebook";
+       break;
+   }
 -#elif defined(OS_LINUX)
 +#elif defined(OS_LINUX) || defined(OS_BSD)
    session_name = internal::GetHostname();
