@@ -11,5 +11,6 @@ COMMENT=	PHP5 Session Handler
 LICENSE=	BSD3CLAUSE
 
 USES=		dos2unix pear
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
