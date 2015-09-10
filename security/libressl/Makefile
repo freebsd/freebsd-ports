@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	libressl
-PORTVERSION=	2.2.3
+PORTVERSION=	2.3.0
 CATEGORIES=	security devel
-MASTER_SITES=	OPENBSD/LibreSSL
+MASTER_SITES=	https://brnrd.eu/pub/OpenBSD/LibreSSL/ \
+		OPENBSD/LibreSSL
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Free version of the SSL/TLS protocol forked from OpenSSL
@@ -14,12 +15,21 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CPE_VENDOR=	openbsd
 
-CONFLICTS?=	openssl-[0-9]*
+OPTIONS_DEFINE=	API_MAN
+OPTIONS_DEFAULT=API_MAN
+OPTIONS_SUB=	yes
+
+API_MAN_DESC=	Install API manpages (command manpages always installed)
+
+CONFLICTS?=	openssl-[0-9]* \
+		tcltls-[0-9]*
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-silent-rules
+CONFIGURE_ARGS=	--disable--silent-rules
 USES=		cpe libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
+
+CFLAGS+=	-Darc4random=libressl_arc4random -Darc4random_buf=libressl_arc4random_buf
 
 INSTALL_TARGET=	install-strip
 
