@@ -1,0 +1,10 @@
+GoVPN is simple secure free software virtual private network daemon,
+aimed to be reviewable, secure, DPI-resistant, written on Go.
+
+It uses fast PAKE DH A-EKE for mutual strong zero-knowledge peers
+authentication. Data transport is encrypted, authenticated, hides
+message's length and timestamp. PFS property, resistance to dictionary
+attacks, replay attacks. Built-in heartbeating, rehandshaking, real-time
+statistics, IPv4/IPv6-compatibility.
+
+WWW: http://www.cypherpunks.ru/govpn/

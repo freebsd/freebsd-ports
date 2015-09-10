@@ -160,6 +160,7 @@
     SUBDIR += go.crypto
     SUBDIR += goptlib
     SUBDIR += gorilla
+    SUBDIR += govpn
     SUBDIR += gpa
     SUBDIR += gpasman
     SUBDIR += gpass
