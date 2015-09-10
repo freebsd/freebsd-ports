@@ -1,15 +1,15 @@
---- ./Makefile.in.orig	2014-02-19 12:30:54.040272078 +0100
-+++ ./Makefile.in	2014-02-19 12:31:21.743269418 +0100
-@@ -43,11 +43,11 @@
+--- Makefile.in.orig	2015-09-09 20:50:10 UTC
++++ Makefile.in
+@@ -44,11 +44,11 @@ test:	regression
  	./regression
  
- install:	$(TARGETLIB)
+ install:	$(TARGETLIB) $(TARGETSHLIB)
 -	$(MKDIR) $(libdir)
 -	$(MKDIR) $(includedir)
--	$(INSTALL_DATA) $(TARGETLIB) $(libdir)/$(TARGETLIB)
+-	$(INSTALL_DATA) $(TARGETLIB) $(TARGETSHLIB) $(libdir)/
 +	$(MKDIR) $(DESTDIR)$(libdir)
 +	$(MKDIR) $(DESTDIR)$(includedir)
-+	$(INSTALL_DATA) $(TARGETLIB) $(DESTDIR)$(libdir)/$(TARGETLIB)
++	$(INSTALL_DATA) $(TARGETLIB) $(TARGETSHLIB) $(DESTDIR)$(libdir)/
  	for i in $(TARGETINCS);do \
 -	(set -x;$(INSTALL_DATA) $(srcdir)/$$i $(includedir)); \
 +	(set -x;$(INSTALL_DATA) $(srcdir)/$$i $(DESTDIR)$(includedir)); \
