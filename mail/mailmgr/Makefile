@@ -14,12 +14,8 @@ GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/mailmgr.conf \
-		${STAGEDIR}${PREFIX}/etc/mailmgr.conf.default
-.if !exists(${STAGEDIR}${PREFIX}/etc/mailmgr.conf)
-	${INSTALL_DATA} ${WRKSRC}/mailmgr.conf \
-		${STAGEDIR}${PREFIX}/etc/mailmgr.conf
-.endif
 	${INSTALL_PROGRAM} ${WRKSRC}/mailmgr ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/mailmgr.conf \
+		${STAGEDIR}${PREFIX}/etc/mailmgr.conf.sample
 
 .include <bsd.port.mk>
