@@ -245,6 +245,7 @@
     SUBDIR += extipl
     SUBDIR += ezjail
     SUBDIR += f3
+    SUBDIR += facter
     SUBDIR += fanout
     SUBDIR += farbot
     SUBDIR += fastest_cvsup
