@@ -7,7 +7,6 @@ bin/%%GCC_TARGET%%-gcc-ar
 bin/%%GCC_TARGET%%-gcc-nm
 bin/%%GCC_TARGET%%-gcc-ranlib
 bin/%%GCC_TARGET%%-gcov
-lib/gcc/%%GCC_TARGET%%/4.9.2/libgcc.a
 lib/gcc/%%GCC_TARGET%%/4.9.2/crtbegin.o
 lib/gcc/%%GCC_TARGET%%/4.9.2/crtend.o
 lib/gcc/%%GCC_TARGET%%/4.9.2/crti.o
@@ -31,6 +30,7 @@ lib/gcc/%%GCC_TARGET%%/4.9.2/include/stdint.h
 lib/gcc/%%GCC_TARGET%%/4.9.2/include/stdnoreturn.h
 lib/gcc/%%GCC_TARGET%%/4.9.2/include/tgmath.h
 lib/gcc/%%GCC_TARGET%%/4.9.2/include/unwind-arm-common.h
+lib/gcc/%%GCC_TARGET%%/4.9.2/include/unwind.h
 lib/gcc/%%GCC_TARGET%%/4.9.2/include/varargs.h
 lib/gcc/%%GCC_TARGET%%/4.9.2/install-tools/fixinc_list
 lib/gcc/%%GCC_TARGET%%/4.9.2/install-tools/gsyslimits.h
@@ -38,6 +38,8 @@ lib/gcc/%%GCC_TARGET%%/4.9.2/install-tools/include/README
 lib/gcc/%%GCC_TARGET%%/4.9.2/install-tools/include/limits.h
 lib/gcc/%%GCC_TARGET%%/4.9.2/install-tools/macro_list
 lib/gcc/%%GCC_TARGET%%/4.9.2/install-tools/mkheaders.conf
+lib/gcc/%%GCC_TARGET%%/4.9.2/libgcc.a
+lib/gcc/%%GCC_TARGET%%/4.9.2/libgcov.a
 lib/gcc/%%GCC_TARGET%%/4.9.2/plugin/gtype.state
 lib/gcc/%%GCC_TARGET%%/4.9.2/plugin/include/ada/gcc-interface/ada-tree.def
 lib/gcc/%%GCC_TARGET%%/4.9.2/plugin/include/alias.h
@@ -163,6 +165,7 @@ lib/gcc/%%GCC_TARGET%%/4.9.2/plugin/include/opts.h
 lib/gcc/%%GCC_TARGET%%/4.9.2/plugin/include/output.h
 lib/gcc/%%GCC_TARGET%%/4.9.2/plugin/include/params.def
 lib/gcc/%%GCC_TARGET%%/4.9.2/plugin/include/params.h
+lib/gcc/%%GCC_TARGET%%/4.9.2/plugin/include/pass-instances.def
 lib/gcc/%%GCC_TARGET%%/4.9.2/plugin/include/pass_manager.h
 lib/gcc/%%GCC_TARGET%%/4.9.2/plugin/include/plugin-api.h
 lib/gcc/%%GCC_TARGET%%/4.9.2/plugin/include/plugin-version.h
