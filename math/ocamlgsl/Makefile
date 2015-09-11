@@ -3,7 +3,7 @@
 
 PORTNAME=	ocaml-gsl
 PORTVERSION=	1.15.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://bitbucket.org/mmottl/gsl-ocaml/downloads/
 DISTNAME=	gsl-ocaml-${PORTVERSION}
