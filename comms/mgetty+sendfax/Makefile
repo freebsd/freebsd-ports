@@ -3,7 +3,7 @@
 
 PORTNAME=	mgetty
 PORTVERSION=	1.1.35
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	comms
 MASTER_SITES=	ftp://mgetty.greenie.net/pub/mgetty/source/1.1/
 DISTNAME=	${PORTNAME}${PORTVERSION}-Feb22
@@ -14,7 +14,10 @@ COMMENT=	Handle external logins, send and receive faxes
 LICENSE=	GPLv2
 
 USE_CSTD=	gnu89
-USES=		makeinfo perl5
+USES=		makeinfo perl5 shebangfix
+SHEBANG_FILES=	samples/fax \
+		samples/new_fax.all/new_fax \
+		samples/new_fax.mime1
 
 SUB_FILES=	pkg-message mgettycfg
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
