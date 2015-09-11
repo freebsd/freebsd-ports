@@ -44,6 +44,8 @@ do-install:
 	dta dtc dtf dtr dts dtt dtw trigger-AIX.ksh
 	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/${script} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.1st \
 		${WRKSRC}/ToDoList \
