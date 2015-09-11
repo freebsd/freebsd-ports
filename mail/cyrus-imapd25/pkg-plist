@@ -68,6 +68,7 @@ cyrus/man/man8/chk_cyrus.8.gz
 cyrus/man/man8/ctl_cyrusdb.8.gz
 cyrus/man/man8/ctl_deliver.8.gz
 cyrus/man/man8/ctl_mboxlist.8.gz
+%%HTTP%%cyrus/man/man8/ctl_zoneinfo.8.gz
 cyrus/man/man8/cvt_cyrusdb.8.gz
 cyrus/man/man8/cyr_dbtool.8.gz
 cyrus/man/man8/cyr_deny.8.gz
@@ -76,8 +77,9 @@ cyrus/man/man8/cyr_expire.8.gz
 cyrus/man/man8/cyr_info.8.gz
 cyrus/man/man8/cyr_synclog.8.gz
 cyrus/man/man8/deliver.8.gz
-cyrus/man/man8/fetchnews.8.gz
+%%NNTP%%cyrus/man/man8/fetchnews.8.gz
 cyrus/man/man8/fud.8.gz
+%%HTTP%%cyrus/man/man8/httpd.8.gz
 cyrus/man/man8/idled.8.gz
 cyrus/man/man8/imapd.8.gz
 cyrus/man/man8/ipurge.8.gz
@@ -85,7 +87,7 @@ cyrus/man/man8/lmtpd.8.gz
 cyrus/man/man8/master.8.gz
 cyrus/man/man8/mbexamine.8.gz
 cyrus/man/man8/mbpath.8.gz
-cyrus/man/man8/nntpd.8.gz
+%%NNTP%%cyrus/man/man8/nntpd.8.gz
 cyrus/man/man8/notifyd.8.gz
 cyrus/man/man8/pop3d.8.gz
 cyrus/man/man8/quota.8.gz
