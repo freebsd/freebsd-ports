@@ -8,7 +8,7 @@ CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hierarchical Clustering Package For Scipy
 
 BUILD_DEPENDS=	${PYNUMPY} \
