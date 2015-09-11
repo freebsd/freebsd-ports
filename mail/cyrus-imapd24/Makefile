@@ -128,6 +128,22 @@ SUB_LIST=	CYRUS_USER=${CYRUS_USER} CYRUS_GROUP=${CYRUS_GROUP}
 CYRUS_USER?=	cyrus
 CYRUS_GROUP?=	cyrus
 
+MAN_MAN1=	imtest installsieve lmtptest mupdatetest nntptest pop3test \
+		sieveshell sivtest smtptest
+MAN_MAN3=	imclient
+MAN_MAN5=	cyrus.conf imapd.conf krb.equiv
+
+CYRUS_MAN8=	arbitron chk_cyrus ctl_cyrusdb ctl_deliver ctl_mboxlist \
+		cvt_cyrusdb cyr_dbtool cyr_df cyr_expire cyr_synclog deliver \
+		fetchnews fud idled imapd ipurge lmtpd master mbexamine \
+		mbpath nntpd notifyd pop3d quota reconstruct rmnews smmapd \
+		squatter sync_client sync_reset sync_server syncnews \
+		timsieved tls_prune unexpunge
+
+CYRUS_PERL_MAN1=cyradm
+CYRUS_PERL_MAN3=Cyrus::IMAP Cyrus::IMAP::Admin Cyrus::IMAP::IMSP \
+		Cyrus::IMAP::Shell Cyrus::SIEVE::managesieve
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBDB}
@@ -166,6 +182,20 @@ post-install:
 		${STAGEDIR}${CYRUS_PREFIX}/bin/masssievec
 	${INSTALL_DATA} ${WRKDIR}/cyrus-imapd-man.conf \
 		${STAGEDIR}${PREFIX}/etc/man.d/cyrus-imapd.conf
+.for s in 1 3 5
+.  for m in ${MAN_MAN${s}}
+	@${ECHO_CMD} man/man${s}/${m}.${s}.gz >> ${TMPPLIST}
+.  endfor
+.endfor
+.for m in ${CYRUS_PERL_MAN1}
+	@${ECHO_CMD} man/man1/${m}.1.gz >> ${TMPPLIST}
+.endfor
+.for m in ${CYRUS_PERL_MAN3}
+	@${ECHO_CMD} ${SITE_MAN3}/${m}.3.gz >> ${TMPPLIST}
+.endfor
+.for m in ${CYRUS_MAN8}
+	@${ECHO_CMD} ${CYRUS_PREFIX}/man/man8/${m}.8.gz >> ${TMPPLIST}
+.endfor
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
