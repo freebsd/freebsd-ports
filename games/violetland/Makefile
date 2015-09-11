@@ -3,7 +3,7 @@
 
 PORTNAME=	violetland
 PORTVERSION=	0.4.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -21,7 +21,8 @@ DOS2UNIX_FILES=	CMakeLists.txt src/system/utility/FileUtility.cpp
 CMAKE_ARGS=	-DDATA_INSTALL_DIR="${DATADIR}"
 
 PLIST_FILES=	bin/violetland \
-		share/applications/violetland.desktop
+		share/applications/${PORTNAME}.desktop \
+		share/pixmaps/${PORTNAME}.png
 PORTDOCS=	*
 PORTDATA=	*
 
@@ -34,6 +35,7 @@ post-patch:
 post-install:
 	${MKDIR} ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/icon-light.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
