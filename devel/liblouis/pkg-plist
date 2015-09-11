@@ -11,7 +11,13 @@ lib/liblouis.a
 lib/liblouis.so
 lib/liblouis.so.9
 lib/liblouis.so.9.0.0
-lib/pkgconfig/liblouis.pc
+libdata/pkgconfig/liblouis.pc
+man/man1/lou_allround.1.gz
+man/man1/lou_checkhyphens.1.gz
+man/man1/lou_checktable.1.gz
+man/man1/lou_debug.1.gz
+man/man1/lou_trace.1.gz
+man/man1/lou_translate.1.gz
 %%DATADIR%%/tables/Cz-Cz-g1.utb
 %%DATADIR%%/tables/Es-Es-G0.utb
 %%DATADIR%%/tables/Es-Es-g1.utb
