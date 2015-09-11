@@ -8,8 +8,10 @@ CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Pluggable command-line frontend
+
+LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah>=2.0.1:${PORTSDIR}/devel/py-cheetah \
 		${PYTHON_PKGNAMEPREFIX}flup>0:${PORTSDIR}/www/py-flup \
@@ -19,7 +21,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah>=2.0.1:${PORTSDIR}/devel/py-cheeta
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 post-extract:
 		${RM} -r ${WRKSRC}/tests
