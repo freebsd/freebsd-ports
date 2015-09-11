@@ -18,4 +18,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|hexdump|/usr/bin/hexdump|' ${WRKSRC}/startx.cpp
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/man/xinit.man
 
+post-configure:
+	@${REINPLACE_CMD} -e 's|#define HAVE_LAUNCHD 1||g' \
+		${WRKSRC}/config.h
+
 .include <bsd.port.mk>
