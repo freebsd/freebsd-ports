@@ -9,7 +9,7 @@ MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}/8.5
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Pyfort-${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creating extensions to the Python language with Fortran routines
 
 RUN_DEPENDS=	${PYNUMERIC}
