@@ -1,4 +1,4 @@
---- objc/toydispatch.h.orig	2015-09-08 20:19:38 UTC
+--- objc/toydispatch.h.orig	2015-08-07 11:33:41 UTC
 +++ objc/toydispatch.h
 @@ -14,7 +14,7 @@
  #if !defined(__has_include)
