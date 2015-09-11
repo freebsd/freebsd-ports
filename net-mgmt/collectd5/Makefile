@@ -3,7 +3,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	5.5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://collectd.org/files/ \
 		http://collectd.org/files/
@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=		CGI DEBUG GCRYPT LOGSTASH VIRT
 OPTIONS_GROUP=		INPUT OUTPUT
-OPTIONS_GROUP_OUTPUT=	RRDTOOL NOTIFYEMAIL NOTIFYDESKTOP RIEMANN
+OPTIONS_GROUP_OUTPUT=	KAFKA NOTIFYDESKTOP NOTIFYEMAIL RIEMANN RRDTOOL
 OPTIONS_GROUP_INPUT=	CURL DBI IPMI JSON MEMCACHEC MODBUS MONGODB MYSQL \
 			NUTUPS OLSRD ONEWIRE OPENLDAP PERL PGSQL PINBA PING \
 			PYTHON RABBITMQ REDIS ROUTEROS SIGROK SNMP STATGRAB \
@@ -32,18 +32,19 @@ OPTIONS_GROUP_INPUT=	CURL DBI IPMI JSON MEMCACHEC MODBUS MONGODB MYSQL \
 
 CGI_DESC=		Install collection.cgi (requires rrdtool)
 CURL_DESC=		Enable curl-based plugins (apache, nginx, etc)
-DEBUG_DESC=		Enable debugging
 DBI_DESC=		Enable dbi plugin
+DEBUG_DESC=		Enable debugging
 GCRYPT_DESC=		Build with libgcrypt
 IPMI_DESC=		Enable OpenIPMI plugin
 JSON_DESC=		Enable JSON plugins
+KAFKA_DESC=		Enable write_kafka plugin
 LOGSTASH_DESC=		Enable log_logstash plugin (requires json)
 MEMCACHEC_DESC=		Enable memcachec plugin
 MODBUS_DESC=		Enable modbus plugin
 MONGODB_DESC=		Enable MongoDB-based plugins
 MYSQL_DESC=		Enable mysql-based plugins
-NOTIFYEMAIL_DESC=	Enable notifications via email
 NOTIFYDESKTOP_DESC=	Enable desktop notifications
+NOTIFYEMAIL_DESC=	Enable notifications via email
 NUTUPS_DESC=		Enable nut (ups) plugin
 OLSRD_DESC=		Enable olsrd plugin
 ONEWIRE_DESC=		Eanble onewire plugin (via owfs)
@@ -99,7 +100,6 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--without-libnetapp \
 		--without-libowcapi \
 		--without-libperfstat \
-		--without-librdkafka \
 		--without-libsensors \
 		--without-libvarnish \
 		--without-lvm \
@@ -249,6 +249,15 @@ LIB_DEPENDS+=	libyajl.so:${PORTSDIR}/devel/yajl
 CONFIGURE_ARGS+=--with-libyajl=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--without-libyajl
+.endif
+
+.if ${PORT_OPTIONS:MKAFKA}
+LIB_DEPENDS+=	librdkafka.so:${PORTSDIR}/net/librdkafka
+CONFIGURE_ARGS+=--enable-write_kafka
+PLIST_SUB+=	KAFKA=""
+.else
+CONFIGURE_ARGS+=--disable-write_kafka
+PLIST_SUB+=	KAFKA="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLOGSTASH}
