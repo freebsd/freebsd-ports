@@ -2,7 +2,7 @@
 
 PORTNAME=	cvs
 PORTVERSION=	1.20120905
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel ipv6
 MASTER_SITES=	LOCAL/eadler
 PKGNAMESUFFIX=	+ipv6
@@ -18,7 +18,16 @@ COMMENT=	IPv6 enabled cvs.  You can use IPv6 connection when using pserver
 CONFLICTS=	cvsnt-[12]* cvs-devel-[12]*
 LICENSE=	GPLv2
 
-USES=		makeinfo tar:xz uidfix
+USES=		makeinfo shebangfix tar:xz uidfix
+SHEBANG_FILES=	contrib/clmerge \
+		contrib/cln_hist \
+		contrib/commit_prep \
+		contrib/cvs_acls \
+		contrib/easy-import \
+		contrib/log \
+		contrib/log_accum \
+		contrib/mfpipe \
+		contrib/rcslock
 PATCHDIR=	${WRKDIR}/call/cvs-build
 WRKSRC=		${WRKDIR}/call/cvs-build
 INFO=		cvs cvsclient
@@ -27,13 +36,7 @@ INFO=		cvs cvsclient
 DESTDIRNAME=	NADA
 MAKE_ARGS=	DESTDIR=${STAGEDIR}${PREFIX}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 900000
-BROKEN=	does not link
-.endif
-
 pre-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/contrib
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
