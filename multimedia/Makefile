@@ -286,6 +286,7 @@
     SUBDIR += phonon-vlc
     SUBDIR += phonon-xine
     SUBDIR += photofilmstrip
+    SUBDIR += php-pHash
     SUBDIR += pitivi
     SUBDIR += playd
     SUBDIR += plexhometheater
