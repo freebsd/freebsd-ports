@@ -136,6 +136,7 @@
 %%PORTDOCS%%share/doc/ocaml/gsl/api/index_class_types.html
 %%PORTDOCS%%share/doc/ocaml/gsl/api/index_classes.html
 %%PORTDOCS%%share/doc/ocaml/gsl/api/index_exceptions.html
+%%PORTDOCS%%share/doc/ocaml/gsl/api/index_extensions.html
 %%PORTDOCS%%share/doc/ocaml/gsl/api/index_methods.html
 %%PORTDOCS%%share/doc/ocaml/gsl/api/index_module_types.html
 %%PORTDOCS%%share/doc/ocaml/gsl/api/index_modules.html
