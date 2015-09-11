@@ -3,6 +3,7 @@
 
 PORTNAME=	bamg
 PORTVERSION=	1.01
+PORTREVISION=	1
 CATEGORIES=	math science
 MASTER_SITES=	http://www.ann.jussieu.fr/hecht/ftp/bamg/
 DISTFILES=	${PORTNAME}-v${PORTVERSION}${EXTRACT_SUFX}
@@ -15,7 +16,8 @@ RESTRICTED=	Contact author personally regarding commercial use
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_XORG=	x11
-USES=		gmake
+USES=		gmake shebangfix
+SHEBANG_FILES=	examples/quadloop/dotest.pl
 MAKE_JOBS_UNSAFE=	yes
 
 ALL_TARGET=	world
