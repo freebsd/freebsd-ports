@@ -53,9 +53,6 @@ TCP_RPC_MAKE_ARGS_OFF=	transport=local
 
 post-patch:
 	${REINPLACE_CMD} 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKSRC}/SConstruct
-.if ${COMPILER_TYPE} == "clang"
-	${REINPLACE_CMD} 's,-Werror,& -Wno-unused-function,' ${WRKSRC}/SConstruct
-.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/rtrmgr/config/multicast4.boot \
