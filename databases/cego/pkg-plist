@@ -98,6 +98,7 @@ include/cego/CegoProcPred.h
 include/cego/CegoProcQueryStmt.h
 include/cego/CegoProcReturnStmt.h
 include/cego/CegoProcStmt.h
+include/cego/CegoProcThrowStmt.h
 include/cego/CegoProcVar.h
 include/cego/CegoProcWhileStmt.h
 include/cego/CegoProcedure.h
