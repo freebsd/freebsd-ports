@@ -25,20 +25,11 @@
  		  variables = vars)
  
  prefix = env['prefix']
-@@ -858,13 +849,13 @@ if ((build != "i386-pc-mingw32") and
-      host_cpu == "i386" or
-      host_cpu == "x86_64")):
-         env.AppendUnique(CFLAGS = [
--	        '-Werror',
-+	        '-Werror -Wno-unused-function',
- 		])
- 	env.AppendUnique(CXXFLAGS = [
--		'-Werror',
-+		'-Werror -Wno-unused-function',
- 		])
- else:
--	print "WARNING:  Detected funky platform, will not enable -Werror compile option: ", host_cpu
-+	print "WARNING:  Detected funky platform, will not enable -Werror -Wno-unused-function compile option: ", host_cpu
- 	
+@@ -880,6 +871,7 @@ env.AppendUnique(CFLAGS = [
+     '-Wcast-align',
+     '-Wstrict-prototypes',
+     '-Wnested-externs',
++    '-Wno-unused-function',
+     '-pipe',
+     ])
  
- # NOTE: gcc specific flags.
