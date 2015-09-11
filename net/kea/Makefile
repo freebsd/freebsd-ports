@@ -23,7 +23,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules \
 		--with-openssl=${OPENSSLBASE} \
 		--with-log4cplus=${LOCALBASE} \
-		--with-boost-include=${LOCALBASE}/include
+		--with-boost-include=${LOCALBASE}/include \
+		--without-werror
 INSTALL_TARGET=	install-strip
 PORTDOCS=	AUTHORS COPYING ChangeLog README \
 		kea-guide.css kea-guide.html kea-guide.txt \
