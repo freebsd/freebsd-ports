@@ -1,0 +1,9 @@
+include/audiophash.h
+include/pHash-config.h
+include/pHash.h
+include/ph_fft.h
+lib/libpHash.a
+lib/libpHash.so
+lib/libpHash.so.0
+lib/libpHash.so.0.0.0
+libdata/pkgconfig/pHash.pc
