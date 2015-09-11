@@ -1,6 +1,6 @@
---- autogen.sh.orig	2015-09-10 16:17:51.726491000 +0800
-+++ autogen.sh	2015-09-10 16:18:08.800813000 +0800
-@@ -28,8 +28,8 @@
+--- autogen.sh.orig	2015-08-31 14:19:59 UTC
++++ autogen.sh
+@@ -28,8 +28,8 @@ set -e
  
  # Refresh GNU autotools toolchain.
  echo Cleaning autotools files...

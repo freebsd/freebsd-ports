@@ -4,24 +4,21 @@
 PORTNAME=	liblouis
 PORTVERSION=	2.6.4
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open-source Braille Translator And Back-translator
 
-LICENSE=	GPLv3
+LICENSE=	LGPL3 # or any later version
 
-OPTIONS_DEFINE=	DOCS
+BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man
 
-USES=		gmake libtool autoreconf
+USES=		autoreconf gmake libtool pathfix
 USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-
-pre-configure:
-	cd ${WRKSRC} && ./autogen.sh
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblouis.so
+PATHFIX_MAKEFILEIN=	Makefile.am
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
