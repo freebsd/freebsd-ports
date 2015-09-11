@@ -167,15 +167,15 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/cyrus-imapd-man.conf \
 		${STAGEDIR}${PREFIX}/etc/man.d/cyrus-imapd.conf
 
-post-install-docs-on:
-	${mkdir} ${stagedir}${docsdir}
-	cd ${wrksrc}/doc && ${copytree_share} . ${stagedir}${docsdir} \
-		"! ( -name makefile.dist -o -name makefile -o -name .cvsignore )"
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} \
+		"! ( -name Makefile.dist -o -name Makefile -o -name .cvsignore )"
 
 # there are already files in examplesdir at that point, so no
 # need to create it.
-post-install-examples-on:
-	cd ${wrksrc}/master/conf && ${copytree_share} . \
-		${stagedir}${examplesdir}
+post-install-EXAMPLES-on:
+	cd ${WRKSRC}/master/conf && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
