@@ -17,6 +17,7 @@ LICENSE_PERMS_TTYP0=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 
 HAS_CONFIGURE=	yes
+NO_ARCH=	yes
 USES=		fonts gmake perl5
 USE_PERL5=	build
 
