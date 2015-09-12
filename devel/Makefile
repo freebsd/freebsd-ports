@@ -255,11 +255,6 @@
     SUBDIR += clisp-hyperspec
     SUBDIR += clojure-cider
     SUBDIR += cloudabi-binutils
-    SUBDIR += cloudabi-cloudlibc
-    SUBDIR += cloudabi-compiler-rt
-    SUBDIR += cloudabi-libc++
-    SUBDIR += cloudabi-libc++abi
-    SUBDIR += cloudabi-libunwind
     SUBDIR += cloudabi-toolchain
     SUBDIR += cmake
     SUBDIR += cmake-fedora
