@@ -12,6 +12,8 @@ COMMENT=	Perl extension to read/write access to HTTP::Cookies jar
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+BROKEN=		bogus depends, p5-URI is not provided by net/p5-Net
+
 RUN_DEPENDS=	\
 	p5-HTTP-Cookies>0:${PORTSDIR}/www/p5-HTTP-Cookies \
 	p5-Moo>=1.000003:${PORTSDIR}/devel/p5-Moo \
