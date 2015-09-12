@@ -58,6 +58,34 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4910d161-58a4-11e5-9ad8-14dae9d210b8">
+    <topic>openldap -- denial of service</topic>
+    <affects>
+      <package>
+	<name>openldap24-server</name>
+	<range><lt>2.4.42_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Denis Andzakovic reports:</p>
+	<blockquote cite="http://www.openldap.org/its/index.cgi/Software%20Bugs?id=8240">
+	  <p>By sending a crafted packet, an attacker may cause the
+	    OpenLDAP server to reach an assert(9 9 statement, crashing the daemon.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openldap.org/its/index.cgi/Software%20Bugs?id=8240</url>
+      <url>http://www.openldap.org/devel/gitweb.cgi?p=openldap.git;a=commit;h=6fe51a9ab04fd28bbc171da3cf12f1c1040d6629</url>
+      <cvename>CVE-2015-6908</cvename>
+    </references>
+    <dates>
+      <discovery>2015-09-09</discovery>
+      <entry>2015-09-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a35f415d-572a-11e5-b0a4-f8b156b6dcc8">
     <topic>vorbis-tools, opus-tools -- multiple vulnerabilities</topic>
     <affects>
