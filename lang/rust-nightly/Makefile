@@ -48,14 +48,16 @@ RUST_BOOT=	rust-stage0-${RUST_BOOT_SIG}.tar.bz2
 RUST_BOOT_SIG=	2015-05-24-ba0e1cd-freebsd-x86_64-370db40613f5c08563ed7e38357826dd42d4e0f8
 
 # Rust's libraries are named librustc_${component}-${RUST_VSN_HASH}.so.
-# The hash depends on Rust version and channel. See
-# $(CFG_FILENAME_EXTRA) definition in src/main.mk.
+# The hash depends on Rust version and, if the channel is not "stable",
+# the channel name. See $(CFG_FILENAME_EXTRA) definition in mk/main.mk.
 RUST_VSN=	${PORTVERSION:R}
 RUST_CHANNEL=	${PORTNAME:S/^rust-//}
 RUST_VSN_HASH!=	/usr/bin/printf '%s' ${RUST_VSN}-${RUST_CHANNEL} | /sbin/md5 -q | cut -c 1-8
 PLIST_SUB+=	RUST_VSN_HASH=${RUST_VSN_HASH}
 
-USES=		gmake python:2,build
+PLIST_SUB+=	RUST_TARGET=x86_64-unknown-${OPSYS:tl}
+
+USES=		gmake libedit python:2,build
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-valgrind --disable-docs \
 		--enable-clang --mandir=${MANPREFIX}/man \
@@ -81,9 +83,29 @@ LLNEXTGEN_BUILD_DEPENDS=	LLnextgen:${PORTSDIR}/devel/llnextgen
 BROKEN=		Only compiles on FreeBSD 10 and 11
 .endif
 
-.if ${OPSYS} == DragonFly
-IGNORE=		please use lang/rust-dragonfly instead
-.endif
+pre-fetch:
+	# FIXME: This is the same check for CONFLICTS as the standard
+	# one, except port origins are not compared. This allows
+	# the port to conflict with itself, because Rust would pick
+	# installed Rust libraries instead of freshly built ones.
+	@conflicts_with=$$( \
+	{ ${PKG_QUERY} -g "%n-%v %p %o" ${CONFLICTS:C/.+/'&'/} ${CONFLICTS_BUILD:C/.+/'&'/} 2>/dev/null || : ; } \
+		| while read pkgname prfx orgn; do \
+		if [ "/${PREFIX}" = "/$${prfx}" ]; then \
+			${ECHO_CMD} -n " $${pkgname}"; \
+		fi; \
+	done); \
+	if [ -n "$${conflicts_with}" ]; then \
+		${ECHO_MSG}; \
+		${ECHO_MSG} "===>  ${PKGNAME} conflicts with installed package(s): "; \
+		for entry in $${conflicts_with}; do \
+			${ECHO_MSG} "      $${entry}"; \
+		done; \
+		${ECHO_MSG}; \
+		${ECHO_MSG} "      They will not build together."; \
+		${ECHO_MSG} "      Please remove them first with pkg delete."; \
+		exit 1;\
+	fi
 
 post-extract:
 	@(${RMDIR} ${WRKSRC}/src/compiler-rt && \
@@ -97,6 +119,10 @@ post-extract:
 	@${MKDIR} ${WRKSRC}/dl
 	${LN} -sf ${DISTDIR}/${RUST_BOOT} ${WRKSRC}/dl
 	(cd ${WRKSRC} && find . -type d -exec chmod 0755 {} \;)
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/mk/main.mk
 
 # In case the previous "make stage" failed, this ensures rust's
 # install.sh won't backup previously staged files before reinstalling
