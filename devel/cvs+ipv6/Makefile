@@ -1,42 +1,16 @@
 # $FreeBSD$
 
-PORTNAME=	cvs
-PORTVERSION=	1.20120905
-PORTREVISION=	2
-CATEGORIES=	devel ipv6
-MASTER_SITES=	LOCAL/eadler
+PORTREVISION=	3
 PKGNAMESUFFIX=	+ipv6
-
-PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
-PATCHFILES=	${DISTNAME}-v6-20140105.diff.gz
-PATCH_WRKSRC=	${WRKDIR}/call/cvs
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	IPv6 enabled cvs.  You can use IPv6 connection when using pserver
 
-CONFLICTS=	cvsnt-[12]* cvs-devel-[12]*
-LICENSE=	GPLv2
+CONFLICTS_INSTALL=	cvs-[12]* cvs-devel-[12]*
 
-USES=		makeinfo shebangfix tar:xz uidfix
-SHEBANG_FILES=	contrib/clmerge \
-		contrib/cln_hist \
-		contrib/commit_prep \
-		contrib/cvs_acls \
-		contrib/easy-import \
-		contrib/log \
-		contrib/log_accum \
-		contrib/mfpipe \
-		contrib/rcslock
-PATCHDIR=	${WRKDIR}/call/cvs-build
-WRKSRC=		${WRKDIR}/call/cvs-build
-INFO=		cvs cvsclient
+OPTIONS_SLAVE=		IPV6
+OPTIONS_EXCLUDE=	# empty
 
-# bsd.stage.makes sets the wrong value for DESTDIR
-DESTDIRNAME=	NADA
-MAKE_ARGS=	DESTDIR=${STAGEDIR}${PREFIX}
+MASTERDIR=	${.CURDIR}/../cvs
 
-pre-install:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/contrib
-
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"
