@@ -16,7 +16,7 @@ LIB_DEPENDS=	libefl.so:${PORTSDIR}/devel/efl \
 
 DIST_SUBDIR=	enlightenment
 GNU_CONFIGURE=	yes
-USES=		pkgconfig tar:xz
+USES=		compiler:c11 pkgconfig tar:xz
 
 OPTIONS_DEFINE=		NLS
 OPTIONS_SUB=		yes
