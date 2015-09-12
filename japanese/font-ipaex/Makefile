@@ -2,7 +2,7 @@
 
 PORTNAME=	ipaex
 PORTVERSION=	00201
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://info.openlab.ipa.go.jp/ipafont/fontdata/7bf84182a04a9632268dbcb03f100d05/
 PKGNAMEPREFIX=	ja-font-
@@ -26,8 +26,6 @@ FONTNAME=	OTF
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-extract:
 	cd ${WRKSRC} && for F in *.ttf; do ${MV} $${F} $${F%.ttf}.otf; done
 
@@ -45,6 +43,8 @@ do-install:
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/20-unhint-${PORTNAME}.conf
 	${LN} -s -f ../conf.avail/62-fonts-${PORTNAME}.conf \
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/62-fonts-${PORTNAME}.conf
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
