@@ -3,7 +3,7 @@
 
 PORTNAME=	shinonome
 PORTVERSION=	0.9.11.p1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://openlab.jp/efont/dist/shinonome/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
@@ -44,7 +44,7 @@ FONTNAMES=\
 	shnmk16      shnmk16b     shnmk16i     shnmk16bi     \
 	shnmk16min   shnmk16minb  shnmk16mini  shnmk16minbi
 
-FONTNAME=	shinonome
+FONTNAME=	misc
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
@@ -65,6 +65,8 @@ do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}
 	cd ${STAGEDIR}${FONTSDIR} && ${LN} -s -f \
 	    ../../../${DATADIR_REL}/*.pcf.gz .
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 

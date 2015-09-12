@@ -1,16 +1,17 @@
 #!/bin/sh
 # $FreeBSD$
 
-FONTSDIR=%%FONTSDIR%%
-
 case "$2" in
 POST-INSTALL)
+	cd %%FONTSDIR%%
 	touch fonts.alias
 	grep -v -- "-shinonome-" fonts.alias > fonts.alias.tmp
-	(cat fonts.alias.tmp; grep -v "^!!" %%FONTSALIAS%%) > fonts.alias
+	(cat fonts.alias.tmp; grep -- "-shinonome-" %%FONTSALIAS%%) \
+	    > fonts.alias
 	rm -f fonts.alias.tmp
 	;;
 POST-DEINSTALL)
+	cd %%FONTSDIR%%
 	touch fonts.alias
 	grep -v -- "-shinonome-" fonts.alias > fonts.alias.tmp
 	if [ -s fonts.alias.tmp ]; then
