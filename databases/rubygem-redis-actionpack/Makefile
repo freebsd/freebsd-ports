@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	redis-actionpack
-PORTVERSION=	4.0.0
+PORTVERSION=	4.0.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
