@@ -7860,3 +7860,8 @@ sysutils/syslog-ng33||2015-09-01|Has expired: No longer supported by Balabit cin
 textproc/ruby-xmlconfigfile|textproc/ruby-xml-configfile|2015-09-03|Rename to match our ruby naming
 net/mcast-tools|net/pim6-tools|2015-09-07|Rename
 www/p5-Dancer-Session-Memcached|databases/p5-Dancer-Session-Memcached|2015-09-09|Duplicate port
+devel/cloudabi-cloudlibc||2015-09-12|Moved to the CloudABI Ports Collection
+devel/cloudabi-compiler-rt||2015-09-12|Moved to the CloudABI Ports Collection
+devel/cloudabi-libc++||2015-09-12|Moved to the CloudABI Ports Collection
+devel/cloudabi-libc++abi||2015-09-12|Moved to the CloudABI Ports Collection
+devel/cloudabi-libunwind||2015-09-12|Moved to the CloudABI Ports Collection
