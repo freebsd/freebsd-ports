@@ -2,16 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	smu
-PORTVERSION=	1.3
+PORTVERSION=	1.4
+DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
-MASTER_SITES=	http://s01.de/~tox/files/smu/ \
-		http://mirror.4bit.ws/
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Simple interpreter for a simplified markdown dialect
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	Gottox
+GH_PROJECT=	smu
 
 PLIST_FILES=	bin/smu man/man1/smu.1.gz
 
