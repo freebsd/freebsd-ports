@@ -34,7 +34,7 @@ do-install:
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGUI}
-USE_WX=	2.4+
+USE_WX=	3.0+
 WX_COMPS=	python:run
 .endif
 
