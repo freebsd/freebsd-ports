@@ -30,6 +30,7 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		xorg>=0:${PORTSDIR}/x11/xorg \
 		xf86-input-synaptics>=0:${PORTSDIR}/x11-drivers/xf86-input-synaptics \
 		xf86-video-intel>=0:${PORTSDIR}/x11-drivers/xf86-video-intel \
+		xf86-video-scfb>=0:${PORTSDIR}/x11-drivers/xf86-video-scfb \
 		noto>=0:${PORTSDIR}/x11-fonts/noto \
 		droid-fonts-ttf>=0:${PORTSDIR}/x11-fonts/droid-fonts-ttf \
 		xv:${PORTSDIR}/graphics/xv \
