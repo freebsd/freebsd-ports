@@ -16,6 +16,7 @@ COMMENT=	Shinonome Japanese fonts, 12/14/16 dots
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 
 USES=		fonts tar:bzip2
+FONTNAME=	misc
 WRKSRC=		${WRKDIR}/${PORTNAME:C/^font-//}-${PORTVERSION:C/.p.*$//}
 DATADIR=	${PREFIX}/share/font-${PORTNAME}
 SUB_FILES=	pkg-install
@@ -44,7 +45,6 @@ FONTNAMES=\
 	shnmk16      shnmk16b     shnmk16i     shnmk16bi     \
 	shnmk16min   shnmk16minb  shnmk16mini  shnmk16minbi
 
-FONTNAME=	misc
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
