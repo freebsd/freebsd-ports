@@ -21,7 +21,6 @@ FFTW3_DESC=	Use FFTW
 GSL_DESC=	Use GNU Scientific Library
 S7_DESC=	Use S7 as the extension language
 
-WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-float-samples
 MAKEFILE=	makefile
@@ -32,49 +31,27 @@ CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.options.mk>
+BROKEN_sparc64=		does not compile on sparc64
 
-.if ${ARCH} == "sparc64"
-BROKEN=		does not compile on sparc64
-.endif
+FFTW3_LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3
+FFTW3_CONFIGURE_WITH=	fftw
 
-.if ${PORT_OPTIONS:MFFTW3}
-LIB_DEPENDS+=	libfftw3.so:${PORTSDIR}/math/fftw3
-.else
-CONFIGURE_ARGS+=	--without-fftw
-.endif
+GSL_LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
+GSL_CONFIGURE_WITH=	gsl
 
-.if ${PORT_OPTIONS:MGSL}
-LIB_DEPENDS+=	libgsl.so:${PORTSDIR}/math/gsl
-.else
-CONFIGURE_ARGS+=	--without-gsl
-.endif
+S7_CONFIGURE_WITH=	s7
 
-.if ${PORT_OPTIONS:MS7}
-CONFIGURE_ARGS+=	--with-s7
-.else
-CONFIGURE_ARGS+=	--without-s7
-.endif
+LADSPA_BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+LADSPA_RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+LADSPA_CONFIGURE_WITH=	ladspa
 
-.if ${PORT_OPTIONS:MLADSPA}
-BUILD_DEPENDS+=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-RUN_DEPENDS+=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-.else
-CONFIGURE_ARGS+=	--without-ladspa
-.endif
+GTK2_USE=	GNOME=gtk20
+GTK2_CONFIGURE_WITH=	gtk
 
-.if ${PORT_OPTIONS:MGTK2}
-USE_GNOME+=	gtk20
-CONFIGURE_ARGS+=	--with-gtk
-.endif
-.if ${PORT_OPTIONS:MMOTIF}
-USES+=		motif
-CONFIGURE_ARGS+=	--with-motif
-.endif
+MOTIF_USES=	motif
+MOTIF_CONFIGURE_WITH=	motif
 
-.if ${PORT_OPTIONS:MX11}
-CONFIGURE_ARGS+=	--with-no-gui
-.endif
+X11_CONFIGURE_ON=	--with-no-gui
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^ _Complex| Vaiolate _Complex|g ; \
@@ -88,15 +65,16 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/snd.1 ${STAGEDIR}${MANPREFIX}/man/man1/
-.if ${PORT_OPTIONS:MS7}
+
+do-install-S7-on:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.scm ${STAGEDIR}${DATADIR}
 	@${MKDIR} ${STAGEDIR}${DATADIR}/tools
 	${INSTALL_DATA} ${WRKSRC}/tools/*.scm ${STAGEDIR}${DATADIR}/tools
 	@${MKDIR} ${STAGEDIR}${DATADIR}/sndins/samples
 	${INSTALL_DATA} ${WRKSRC}/sndins/samples/*.scm ${STAGEDIR}${DATADIR}/sndins/samples
-.endif
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in HISTORY.Snd README.Snd
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
@@ -104,10 +82,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.html ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/pix
 	${INSTALL_DATA} ${WRKSRC}/pix/*.png ${STAGEDIR}${DOCSDIR}/pix
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/DotEmacs ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>
