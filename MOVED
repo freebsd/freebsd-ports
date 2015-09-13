@@ -7865,3 +7865,4 @@ devel/cloudabi-compiler-rt||2015-09-12|Moved to the CloudABI Ports Collection
 devel/cloudabi-libc++||2015-09-12|Moved to the CloudABI Ports Collection
 devel/cloudabi-libc++abi||2015-09-12|Moved to the CloudABI Ports Collection
 devel/cloudabi-libunwind||2015-09-12|Moved to the CloudABI Ports Collection
+japanese/marumoji-fonts|japanese/font-marumoji|2015-09-13|Renamed
