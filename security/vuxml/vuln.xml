@@ -62,7 +62,7 @@ Notes:
     <topic>openldap -- denial of service</topic>
     <affects>
       <package>
-	<name>openldap24-server</name>
+	<name>openldap-server</name>
 	<range><lt>2.4.42_1</lt></range>
       </package>
     </affects>
@@ -83,6 +83,7 @@ Notes:
     <dates>
       <discovery>2015-09-09</discovery>
       <entry>2015-09-12</entry>
+      <modified>2015-09-13</modified>
     </dates>
   </vuln>
 
