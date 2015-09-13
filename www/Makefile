@@ -33,7 +33,6 @@
     SUBDIR += aria2
     SUBDIR += aria2fe
     SUBDIR += arora
-    SUBDIR += asp2php
     SUBDIR += asql
     SUBDIR += asterisk-stat
     SUBDIR += atutor
