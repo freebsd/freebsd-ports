@@ -1,0 +1,19 @@
+# $FreeBSD$
+#
+# MAINTAINER: x11@FreeBSD.org
+
+actions: [dir]
+post-install: <<EOD
+  case "%@" in
+  /*) fontsdir="%@" ;;
+  *) fontsdir="%D/%@" ;;
+  esac
+  fc-cache -fs ${fontsdir} 2>/dev/null || true
+EOD
+post-deinstall: <<EOD
+  case "%@" in
+  /*) fontsdir="%@" ;;
+  *) fontsdir="%D/%@" ;;
+  esac
+  fc-cache -fs ${fontsdir} 2>/dev/null || true
+EOD
