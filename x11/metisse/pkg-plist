@@ -50,7 +50,6 @@ libexec/fvwm-insitu/2.5.20/FvwmDragWell
 libexec/fvwm-insitu/2.5.20/FvwmEvent
 libexec/fvwm-insitu/2.5.20/FvwmForm
 %%GCONF%%libexec/fvwm-insitu/2.5.20/FvwmGConf
-%%GTK%%libexec/fvwm-insitu/2.5.20/FvwmGtk
 libexec/fvwm-insitu/2.5.20/FvwmGtkDebug
 libexec/fvwm-insitu/2.5.20/FvwmIconBox
 libexec/fvwm-insitu/2.5.20/FvwmIconMan
@@ -85,7 +84,6 @@ man/man1/FvwmDebug.1.gz
 man/man1/FvwmDragWell.1.gz
 man/man1/FvwmEvent.1.gz
 man/man1/FvwmForm.1.gz
-%%GTK%%man/man1/FvwmGtk.1.gz
 man/man1/FvwmGtkDebug.1.gz
 man/man1/FvwmIconBox.1.gz
 man/man1/FvwmIconMan.1.gz
