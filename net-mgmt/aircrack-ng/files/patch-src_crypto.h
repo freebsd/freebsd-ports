@@ -1,5 +1,5 @@
---- src/crypto.h.orig	2014-07-12 04:24:03.000000000 +0200
-+++ src/crypto.h	2014-11-02 21:23:28.529312627 +0100
+--- src/crypto.h.orig	2014-07-12 02:24:03 UTC
++++ src/crypto.h
 @@ -34,6 +34,7 @@
  
  #ifndef _CRYPTO_H
