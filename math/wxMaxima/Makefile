@@ -24,7 +24,7 @@ PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S,${PREFIX}/,,}
 USES=		desktop-file-utils gettext
 USE_WX=		2.8
 
-WANT_UNICODE=	yes
+WX_UNICODE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME:tl}-${PORTVERSION}
 WX_COMPS=	wx
 WX_CONF_ARGS=	absolute
