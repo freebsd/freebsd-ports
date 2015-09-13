@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libconcord>=0:${PORTSDIR}/comms/py-libconcor
 MAKE_ARGS=	MANDIR=${PREFIX}/man
 USES=		desktop-file-utils gmake tar:bzip2 python:2.7+
 USE_WX=		2.8+
-WANT_UNICODE=	yes
+WX_UNICODE=	yes
 WX_COMPS=	python
 
 .include <bsd.port.mk>
