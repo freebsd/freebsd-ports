@@ -1,26 +1,26 @@
---- contrib/Makefile.am.orig	Tue Jul 18 20:04:14 2006
-+++ contrib/Makefile.am	Wed Aug 30 16:05:33 2006
+--- contrib/Makefile.am.orig	2015-09-10 08:43:38.000000000 +0200
++++ contrib/Makefile.am	2015-09-10 08:48:05.000000000 +0200
 @@ -1,6 +1,7 @@
- # $Id: Makefile.am,v 3.1 2006/07/18 18:04:14 brendan Exp $
+ # $Id$
  
  subdir = contrib
 +samplesdir = @samplesdir@
  
- SAMPLES = Mush.rc Pine.rc gpg.rc pgp2.rc pgp5.rc pgp6.rc Tin.rc \
+ SAMPLES = Mush.rc Pine.rc gpg.rc pgp2.rc pgp6.rc Tin.rc \
  	sample.muttrc  sample.mailcap sample.muttrc-tlr \
 @@ -14,12 +15,12 @@
  	iconv/make.sh
  
  install-data-local:
--	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)/samples $(DESTDIR)$(docdir)/samples/iconv
-+	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(samplesdir) $(DESTDIR)$(samplesdir)/iconv
+-	$(MKDIR_P) $(DESTDIR)$(docdir)/samples $(DESTDIR)$(docdir)/samples/iconv
++	$(MKDIR_P) $(DESTDIR)$(samplesdir) $(DESTDIR)$(samplesdir)/iconv
  	for f in $(SAMPLES) ; do \
 -		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir)/samples ;	\
 +		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(samplesdir) ;	\
  	done
  	for f in $(srcdir)/iconv/*.rc ; do					\
 -		$(INSTALL) -m 644 $$f $(DESTDIR)$(docdir)/samples/iconv	  ;	\
-+		$(INSTALL) -m 644 $$f $(DESTDIR)$(samplesdir)/iconv  ;	\
++		$(INSTALL) -m 644 $$f $(DESTDIR)$(samplesdir)/iconv  ;		\
  	done
  
  uninstall-local:
@@ -68,42 +68,38 @@
  
  into your system's global Muttrc, which normally resides in /etc or
  /usr/local/etc.
---- doc/manual.txt.orig	2009-06-14 20:54:56.000000000 +0200
-+++ doc/manual.txt	2009-06-22 15:11:26.000000000 +0200
-@@ -3225,9 +3225,9 @@
- shows that arguments can be quoted: the script will receive the expanded string
- between the single quotes as the only argument.
+--- doc/manual.txt.orig	2015-08-30 19:25:51.000000000 +0200
++++ doc/manual.txt	2015-09-10 08:56:32.000000000 +0200
+@@ -3128,8 +3128,8 @@
+    argument.
  
--A practical example is the mutt_xtitle script installed in the samples
--subdirectory of the Mutt documentation: it can be used as filter for
--$status_format to set the current terminal's title, if supported.
-+A practical example is the mutt_xtitle script installed in the
-+share/examples/mutt/ subdirectory of the Mutt documentation: it can be used as
-+filter for $status_format to set the current terminal's title, if supported.
+    A practical example is the mutt_xtitle script installed in the samples
+-   subdirectory of the Mutt documentation: it can be used as filter for
+-   $$ssttaattuuss__ffoorrmmaatt to set the current terminal's title, if supported.
++   share/examples/mutt subdirectory of the Mutt documentation: it can be used as
++   filter for $$ssttaattuuss__ffoorrmmaatt to set the current terminal's title, if supported.
  
  29.4. Padding
  
-@@ -7740,8 +7740,8 @@
+@@ -7736,8 +7736,8 @@
  
- For examples on how to configure these formats for the various versions of PGP
- which are floating around, see the pgp and gpg sample configuration files in
--the samples/ subdirectory which has been installed on your system alongside the
--documentation. (PGP only)
-+the share/examples/mutt/ subdirectory which has been installed on your system.
-+(PGP only)
+    For examples on how to configure these formats for the various versions
+    of PGP which are floating around, see the pgp and gpg sample
+-   configuration files in the samples/ subdirectory which has been
+-   installed on your system alongside the documentation. (PGP only)
++   configuration files in the share/examples/mutt/ subdirectory which has
++   been installed on your system alongside the documentation. (PGP only)
  
- 3.158. pgp_decrypt_command
+ 3.162. pgp_decrypt_command
  
-@@ -8751,9 +8751,9 @@
- |  |$smime_ca_location?.                                                      |
- +-----------------------------------------------------------------------------+
+@@ -8783,8 +8783,8 @@
+       "-CAfile $$ssmmiimmee__ccaa__llooccaattiioonn".
  
--For examples on how to configure these formats, see the smime.rc in the samples
--/ subdirectory which has been installed on your system alongside the
--documentation. (S/MIME only)
-+For examples on how to configure these formats, see the smime.rc in the 
-+share/examples/mutt/ subdirectory which has been installed on your system.
-+(S/MIME only)
+    For examples on how to configure these formats, see the smime.rc in the
+-   samples/ subdirectory which has been installed on your system alongside
+-   the documentation. (S/MIME only)
++   share/examples/mutt/ subdirectory which has been installed on your system
++   alongside the documentation. (S/MIME only)
  
- 3.244. smime_decrypt_use_default_key
+ 3.252. smime_decrypt_use_default_key
  
