@@ -3,7 +3,7 @@
 
 PORTNAME=	audacity
 PORTVERSION=	2.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-minsrc-${PORTVERSION}
@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-minsrc-${PORTVERSION}
 GNU_CONFIGURE=	yes
 USES=		cpe desktop-file-utils gettext gmake pkgconfig shared-mime-info \
 		tar:xz
-USE_WX=		2.8
+USE_WX=		3.0+
 WX_UNICODE=	yes
 WX_COMPS=	wx
 INSTALLS_ICONS=	yes
