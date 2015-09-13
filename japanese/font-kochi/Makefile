@@ -3,7 +3,7 @@
 
 PORTNAME=	kochi
 PORTVERSION=	20030809
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	SFJP/efont/5411/
 PKGNAMEPREFIX=	ja-font-
@@ -12,16 +12,14 @@ DISTNAME=	${PORTNAME}-substitute-${PORTVERSION}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Kochi Japanese TrueType font
 
-USES=		fonts tar:bzip2
+USES=		fonts:fc tar:bzip2
+FONTNAME=	TTF
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install
 SUB_FILES=	pkg-install
 DATADIR=	${PREFIX}/share/font-${PORTNAME}
 PLIST_SUB=	DATADIR=share/font-${PORTNAME}
-WRKSRC=		${WRKDIR}/${DISTNAME}
-
-FONTNAME=	TTF
 PORTDOCS=	README.ja COPYING docs
 
 OPTIONS_DEFINE=	DOCS

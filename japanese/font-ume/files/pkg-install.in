@@ -1,8 +1,6 @@
 #!/bin/sh
 # $FreeBSD$
 
-FONTSDIR=%%FONTSDIR%%/
-
 catfontsdir ()
 {
     while read _IN
@@ -80,7 +78,7 @@ nfonts ()
 
 case "$2" in
 POST-INSTALL)
-	cd ${FONTSDIR}
+	cd %%FONTSDIR%%
 	touch fonts.dir
 	exec < fonts.dir; rm -f fonts.dir
 	(catfontsdir; addentries) > fonts.dir
@@ -90,7 +88,7 @@ POST-INSTALL)
 	chmod 0444 fonts.dir
 	;;
 DEINSTALL)
-	cd ${FONTSDIR}
+	cd %%FONTSDIR%%
 	exec < fonts.dir; rm -f fonts.dir
 	catfontsdir > fonts.dir
 	_num=`nfonts fonts.dir`

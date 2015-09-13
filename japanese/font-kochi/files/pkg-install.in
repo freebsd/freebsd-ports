@@ -6,7 +6,7 @@ catfontsdir ()
     while read _IN
     do
       case "${_IN}" in
-      *-kochi-*|[0-9]*|"") ;;
+      kochi-*|*-kochi-*|[0-9]*|"") ;;
       *-aliastt-*|[0-9]*|"") ;;
       *)       echo ${_IN} ;;
       esac
