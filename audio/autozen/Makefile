@@ -29,7 +29,6 @@ PORTDOCS=	*
 
 USE_GNOME=	gtk20
 MAKE_ENV=	GTK_CONFIG="pkg-config gtk+-2.0"
-LDFLAGS+=	-lm
 
 post-extract:
 	@cd ${WRKSRC} && ${RM} -f autozen seq2wav
@@ -51,6 +50,8 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/autozen.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.seq ${STAGEDIR}${DATADIR}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} HTML ${STAGEDIR}${DOCSDIR}
 
