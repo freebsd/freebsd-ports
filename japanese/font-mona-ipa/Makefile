@@ -2,7 +2,7 @@
 
 PORTNAME=	mona-ipa
 PORTVERSION=	1.0.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://www.geocities.jp/ipa_mona/
 PKGNAMEPREFIX=	ja-font-
@@ -11,7 +11,8 @@ DISTNAME=	opfc-ModuleHP-1.1.1_withIPAMonaFonts-${PORTVERSION}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	IPA Japanese TrueType fonts with Mona font
 
-USES=		fonts
+USES=		fonts:fc
+FONTNAME=	TTF
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install
