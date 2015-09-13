@@ -12,6 +12,9 @@ COMMENT=	Graphical FTP Client
 
 LICENSE=	ART10
 
+DEPRECATED=	No releases for 8+ years, no supporting newer wxWidget
+EXPIRATION_DATE=	2015-12-13
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/paramiko/__init__.py:${PORTSDIR}/security/py-paramiko
 
 USES=		python
