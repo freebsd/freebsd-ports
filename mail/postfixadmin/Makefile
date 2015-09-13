@@ -37,7 +37,7 @@ OPTIONS_DEFAULT=	MYSQL
 
 OPTIONS_DEFINE=	DOCS
 
-USES_PERL5=	run
+USE_PERL5=	run
 
 .include <bsd.port.options.mk>
 
