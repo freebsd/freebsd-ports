@@ -13,6 +13,7 @@ COMMENT=	Time/date applet for WindowMaker with fishes swimming around
 
 USE_GNOME=	gtk12
 
+BROKEN=		does not fetch
 GTK_LIBS?=	`${GTK_CONFIG} --libs`
 GTK_CFLAGS?=	`${GTK_CONFIG} --cflags`
 MAKE_ARGS+=	CFLAGS="${CPPFLAGS} ${CFLAGS} -Wall ${GTK_CFLAGS}" \
