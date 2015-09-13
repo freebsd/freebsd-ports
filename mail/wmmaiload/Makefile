@@ -12,6 +12,7 @@ COMMENT=	Incoming mail monitor dockapp with a similar look to wmcpuload
 
 OPTIONS_DEFINE=	GTK2
 
+BROKEN=		Does not fetch
 USES=		gmake pkgconfig
 USE_XORG=	xpm
 USE_OPENSSL=	yes
