@@ -18,7 +18,7 @@ LIB_DEPENDS=	libgaiagraphics.so:${PORTSDIR}/graphics/libgaiagraphics \
 		libspatialite.so:${PORTSDIR}/databases/spatialite
 
 USE_WX=		2.8
-WANT_UNICODE=	yes
+WX_UNICODE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2
 USES=		gmake pkgconfig iconv
