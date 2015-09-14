@@ -47,6 +47,8 @@ SASL_CFLAGS=		-I${LOCALBASE}/include
 SASL_CPPFLAGS+=		${CFLAGS}
 SASL_LDFLAGS=		-L${LOCALBASE}/lib
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64
