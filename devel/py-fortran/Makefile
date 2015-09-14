@@ -12,9 +12,12 @@ DISTNAME=	Pyfort-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creating extensions to the Python language with Fortran routines
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	${PYNUMERIC}
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
