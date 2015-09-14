@@ -1447,6 +1447,7 @@ etc/perl5_version
 %%PRIV_LIB%%/pod/perl5200delta.pod
 %%PRIV_LIB%%/pod/perl5201delta.pod
 %%PRIV_LIB%%/pod/perl5202delta.pod
+%%PRIV_LIB%%/pod/perl5203delta.pod
 %%PRIV_LIB%%/pod/perl5220delta.pod
 %%PRIV_LIB%%/pod/perl5230delta.pod
 %%PRIV_LIB%%/pod/perl5231delta.pod
@@ -1775,7 +1776,7 @@ etc/perl5_version
 %%PRIV_LIB%%/unicore/lib/GrBase/Y.pl
 %%PRIV_LIB%%/unicore/lib/Hex/Y.pl
 %%PRIV_LIB%%/unicore/lib/Hst/NA.pl
-%%PRIV_LIB%%/unicore/lib/Hyphen/Y.pl
+%%PRIV_LIB%%/unicore/lib/Hyphen/T.pl
 %%PRIV_LIB%%/unicore/lib/IDC/Y.pl
 %%PRIV_LIB%%/unicore/lib/IDS/Y.pl
 %%PRIV_LIB%%/unicore/lib/Ideo/Y.pl
@@ -2115,6 +2116,7 @@ man/man1/perl5184delta.1.gz
 man/man1/perl5200delta.1.gz
 man/man1/perl5201delta.1.gz
 man/man1/perl5202delta.1.gz
+man/man1/perl5203delta.1.gz
 man/man1/perl5220delta.1.gz
 man/man1/perl5230delta.1.gz
 man/man1/perl5231delta.1.gz
