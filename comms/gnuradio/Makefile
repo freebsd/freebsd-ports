@@ -36,7 +36,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		cmake:outsource iconv perl5 python:2.7 shebangfix
 SHEBANG_FILES=	grc/freedesktop/grc_setup_freedesktop.in
-CONFIGURE_ENV+=	LD_PRELOAD="${GCC_LIBS}/libstdc++.so:${GCC_LIBS}/libgcc_s.so.1"
 CMAKE_ARGS+=	-DSWIG_EXECUTABLE:STRING="${LOCALBASE}/bin/swig2.0"
 CMAKE_ARGS+=	-DICONV_PREFIX:STRING="${ICONV_PREFIX}" \
 		-DICONV_LIB:STRING="X${ICONV_LIB}" \
@@ -46,7 +45,6 @@ CMAKE_ARGS+=	-DICONV_PREFIX:STRING="${ICONV_PREFIX}" \
 MAJOR_SUB_VER=	3.7.7
 DOCSDIR=	share/doc/${PORTNAME}-${MAJOR_SUB_VER}
 USE_GNOME=	pygtk2
-USE_GCC=	yes
 USE_WX=		3.0+
 USE_QT4=	gui xml qmake moc rcc uic
 WX_COMPS=	wx wx:build wx:run python:build python:run
@@ -64,8 +62,6 @@ USRP_DESC=	Include USRP support (UHD) from Ettus
 TESTING_DESC=	Include testing support
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
-VP=		${GCC_DEFAULT:S/.//}
-GCC_LIBS=	${LOCALBASE}/lib/gcc${VP}
 
 DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen \
 			${LOCALBASE}/bin/sphinx-apidoc:${PORTSDIR}/textproc/py-sphinx \
@@ -87,6 +83,12 @@ USRP_BUILD_DEPENDS=	${LOCALBASE}/include/uhd/config.hpp:${PORTSDIR}/comms/usrp
 TESTING_CMAKE_ON=	-DENABLE_TESTING:STRING="ON"
 TESTING_CMAKE_OFF=	-DENABLE_TESTING:STRING="OFF"
 TESTING_BUILD_DEPENDS=	cppunit-config:${PORTSDIR}/devel/cppunit
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+USE_GCC=	yes
+.endif
 
 post-patch:
 	@${FIND} ${WRKSRC}/.. -name CMakeLists.txt | \
