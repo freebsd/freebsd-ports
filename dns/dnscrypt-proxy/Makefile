@@ -3,7 +3,7 @@
 
 PORTNAME=	dnscrypt-proxy
 PORTVERSION=	1.6.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://download.dnscrypt.org/dnscrypt-proxy/ \
 		http://www.dns-lab.com/downloads/dnscrypt-proxy/
@@ -19,17 +19,29 @@ LIB_DEPENDS=	libsodium.so:${PORTSDIR}/security/libsodium
 GNU_CONFIGURE=	yes
 USES=		execinfo gmake
 
-SUB_FILES=	pkg-message
+OPTIONS_DEFINE=	DOCS
+OPTIONS_SINGLE=	RCWHICH
+OPTIONS_SINGLE_RCWHICH=	RCSINGLE RCMULTI
+RCWHICH_DESC=	rc script to use:
+RCSINGLE_DESC=	use default rc script for single daemon
+RCMULTI_DESC=	use experimental rc script for multiple instances
+OPTIONS_DEFAULT=RCSINGLE
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MRCMULTI}
+USE_RC_SUBR=	${PORTNAME}_multi
+SUB_FILES=	pkg-message_multi
+.else
 USE_RC_SUBR=	${PORTNAME}
+SUB_FILES=	pkg-message
+.endif
 
 USERS=		_dnscrypt-proxy
 
 PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README \
 		README-PLUGINS.markdown README-WINDOWS.markdown \
 		README.markdown TECHNOTES THANKS
-
-OPTIONS_DEFINE=	DOCS
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
