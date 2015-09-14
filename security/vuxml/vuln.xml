@@ -58,6 +58,43 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ea893f06-5a92-11e5-98c0-20cf30e32f6d">
+    <topic>Bugzilla security issues</topic>
+    <affects>
+      <package>
+	<name>bugzilla44</name>
+	<range><lt>4.4.10</lt></range>
+      </package>
+      <package>
+	<name>bugzilla50</name>
+	<range><lt>5.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Bugzilla Security Advisory</p>
+	<blockquote cite="https://www.bugzilla.org/security/4.2.14/">
+	  <p>Login names (usually an email address) longer than 127
+	    characters are silently truncated in MySQL which could
+	    cause the domain name of the email address to be
+	    corrupted. An attacker could use this vulnerability to
+	    create an account with an email address different from the
+	    one originally requested. The login name could then be
+	    automatically added to groups based on the group's regular
+	  expression setting.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4499</cvename>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=1202447</url>
+    </references>
+    <dates>
+      <discovery>2015-09-10</discovery>
+      <entry>2015-09-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4910d161-58a4-11e5-9ad8-14dae9d210b8">
     <topic>openldap -- denial of service</topic>
     <affects>
