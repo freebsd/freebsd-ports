@@ -13,7 +13,6 @@ LICENSE=	BSD2CLAUSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	MagikBSD
 
-INSTALL_TARGET=	install
 PLIST_FILES=	"@(,,6555) bin/please" "@sample etc/pam.d/please.sample" \
 		man/man1/please.1.gz
 
