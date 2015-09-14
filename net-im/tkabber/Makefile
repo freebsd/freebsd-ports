@@ -3,7 +3,7 @@
 
 PORTNAME=	tkabber
 PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im ipv6 tcl tk
 MASTER_SITES=	http://files.jabber.ru/tkabber/
 
@@ -11,6 +11,7 @@ MAINTAINER=	mp39590@gmail.com
 COMMENT=	Tcl/Tk based jabber client
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	tcllib>=1.2:${PORTSDIR}/devel/tcllib \
 		bwidget>=1.4:${PORTSDIR}/x11-toolkits/bwidget
@@ -20,7 +21,8 @@ OPTIONS_DEFAULT=	TLS
 
 CONFLICTS=	tkabber-devel-[0-9]*
 
-USES=		tar:xz
+USES=		shebangfix tar:xz
+SHEBANG_FILES=	contrib/extract-translations/extract.tcl
 
 IPV6_USES=	tk:86+
 IPV6_USES_OFF=	tk:85+
@@ -36,6 +38,7 @@ GNUPG_RUN_DEPENDS=	tclgpg>0:${PORTSDIR}/security/tclgpg
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 SUBDIRS=	contrib emoticons ifacetk mclistbox \
 		msgs pixmaps plugins sounds tclxmpp trans
