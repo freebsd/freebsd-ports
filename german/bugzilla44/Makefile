@@ -2,7 +2,7 @@
 
 PORTNAME=	bugzilla
 PORTVERSION=	4.4.9
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	german
 MASTER_SITES=	SF/bugzilla-de/${PORTVERSION:R}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-de-${PORTVERSION}-1.utf-8
@@ -16,7 +16,7 @@ NO_WRKSUBDIR=	yes
 
 # adjust BZ_REVNUM if bugzilla revision was incremented and there are no
 # changes in bugzilla/templates/en. If not used simply comment the line.
-#BZ_REVNUM=	9
+BZ_REVNUM=	10
 
 .include "${.CURDIR}/../../devel/bugzilla44/Makefile.common"
 
