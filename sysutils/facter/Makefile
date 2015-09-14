@@ -2,11 +2,12 @@
 
 PORTNAME=	facter
 PORTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/facter/
 
 MAINTAINER=	mmoll@FreeBSD.org
-COMMENT=	Cross-platform Ruby library for retrieving facts from OS
+COMMENT=	Cross-platform library for retrieving facts from OS
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
