@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xephem
-PORTVERSION=	3.7.6
-PORTREVISION=	2
+PORTVERSION=	3.7.7
 CATEGORIES=	astro
 MASTER_SITES=	# http://www.clearskyinstitute.com/xephem/
 
