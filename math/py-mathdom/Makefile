@@ -11,9 +11,13 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Content MathML in Python
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
