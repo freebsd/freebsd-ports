@@ -3,6 +3,7 @@
 
 PORTNAME=	recoll
 PORTVERSION=	1.21.0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lesbonscomptes.com/${PORTNAME}/
 
@@ -21,7 +22,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		unrtf:${PORTSDIR}/textproc/unrtf
 
 USES=		bison gmake iconv shebangfix
-SHEBANG_FILES=	filters/rclimg desktop/hotrecoll.py
+SHEBANG_FILES=	filters/rclimg filters/rclpdf desktop/hotrecoll.py
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-pic
 
