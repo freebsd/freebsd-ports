@@ -7,4 +7,4 @@ bin/adsquery
 %%PERL5_MAN3%%/Astro::ADS::Query.3.gz
 %%PERL5_MAN3%%/Astro::ADS::Result.3.gz
 %%PERL5_MAN3%%/Astro::ADS::Result::Paper.3.gz
-man/man1/adsquery.1.gz
+%%PERL5_MAN1%%/adsquery.1.gz

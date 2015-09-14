@@ -35,6 +35,6 @@ bin/mp3info2
 %%PERL5_MAN3%%/MP3::Tag::LastResort.3.gz
 %%PERL5_MAN3%%/MP3::Tag::ParseData.3.gz
 %%PERL5_MAN3%%/Normalize::Text::Music_Fields.3.gz
-man/man1/audio_rename.1.gz
-man/man1/mp3info2.1.gz
-man/man1/typeset_audio_dir.1.gz
+%%PERL5_MAN1%%/audio_rename.1.gz
+%%PERL5_MAN1%%/mp3info2.1.gz
+%%PERL5_MAN1%%/typeset_audio_dir.1.gz

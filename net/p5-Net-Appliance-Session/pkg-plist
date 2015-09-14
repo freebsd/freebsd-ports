@@ -5,4 +5,4 @@ bin/nas
 %%SITE_PERL%%/Net/Appliance/Session/Engine.pm
 %%SITE_PERL%%/Net/Appliance/Session/Scripting.pm
 %%SITE_PERL%%/Net/Appliance/Session/Transport.pm
-man/man1/nas.1.gz
+%%PERL5_MAN1%%/nas.1.gz

@@ -14,12 +14,12 @@ COMMENT=	Perl5 module to read and write netCDF files
 
 LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf
 
-USES=		perl5
+USES=		perl5 fakeroot
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
+WRKSRC_SUBDIR=		src
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPP_NETCDF=-I${LOCALBASE}/include LD_NETCDF=-lnetcdf \
-		PERL_MANDIR=${STAGEDIR}${MAN1PREFIX}/man PERL=${PERL5}
+		PERL_MANDIR=${STAGEDIR}${SITE_PERL}/man PERL=${PERL5}
 
 pre-install:
 	@${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' ${WRKSRC}/perl/Makefile

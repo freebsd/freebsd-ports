@@ -25,7 +25,7 @@ bin/amon2-setup.pl
 %%PERL5_MAN3%%/auto::share::dist::Amon2::flavor::Basic::lib::__PATH__.3.gz
 %%PERL5_MAN3%%/auto::share::dist::Amon2::flavor::Basic::lib::__PATH__::Web::Plugin::Session.3.gz
 %%PERL5_MAN3%%/auto::share::dist::Amon2::flavor::Minimum::lib::__PATH__.3.gz
-man/man1/amon2-setup.pl.1.gz
+%%PERL5_MAN1%%/amon2-setup.pl.1.gz
 %%SITE_PERL%%/Amon2.pm
 %%SITE_PERL%%/Amon2/Config/Simple.pm
 %%SITE_PERL%%/Amon2/ContextGuard.pm

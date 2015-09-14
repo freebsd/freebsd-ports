@@ -13,4 +13,4 @@ bin/xsh
 %%SITE_PERL%%/XML/XSH/Iterators.pm
 %%SITE_PERL%%/XML/XSH/LibXMLCompat.pm
 %%SITE_PERL%%/XML/XSH/Parser.pm
-man/man1/xsh.1.gz
+%%PERL5_MAN1%%/xsh.1.gz

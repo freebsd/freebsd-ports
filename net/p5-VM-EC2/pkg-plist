@@ -353,4 +353,4 @@ bin/sync_to_snapshot.pl
 %%PERL5_MAN3%%/VM::EC2::Volume::Status::Details.3.gz
 %%PERL5_MAN3%%/VM::EC2::Volume::Status::Event.3.gz
 %%PERL5_MAN3%%/VM::EC2::Volume::StatusItem.3.gz
-man/man1/migrate-ebs-image.pl.1.gz
+%%PERL5_MAN1%%/migrate-ebs-image.pl.1.gz

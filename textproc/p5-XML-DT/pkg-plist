@@ -1,8 +1,8 @@
 bin/mkdtskel
 bin/mkdtdskel
 bin/mkxmltype
-man/man1/mkdtdskel.1.gz
-man/man1/mkdtskel.1.gz
-man/man1/mkxmltype.1.gz
+%%PERL5_MAN1%%/mkdtdskel.1.gz
+%%PERL5_MAN1%%/mkdtskel.1.gz
+%%PERL5_MAN1%%/mkxmltype.1.gz
 %%PERL5_MAN3%%/XML::DT.3.gz
 %%SITE_PERL%%/XML/DT.pm

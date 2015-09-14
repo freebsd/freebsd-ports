@@ -1,4 +1,4 @@
 bin/mpath
 %%SITE_PERL%%/Module/Path.pm
-man/man1/mpath.1.gz
+%%PERL5_MAN1%%/mpath.1.gz
 %%PERL5_MAN3%%/Module::Path.3.gz

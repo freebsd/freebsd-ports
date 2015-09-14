@@ -1,4 +1,4 @@
 bin/mkill
 bin/mtop
-man/man1/mkill.1.gz
-man/man1/mtop.1.gz
+%%PERL5_MAN1%%/mkill.1.gz
+%%PERL5_MAN1%%/mtop.1.gz

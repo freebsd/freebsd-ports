@@ -11,6 +11,6 @@ bin/pmd_indexer.plx
 %%SITE_PERL%%/Module/Dependency/Indexer.pm
 %%SITE_PERL%%/Module/Dependency/Info.pm
 %%SITE_PERL%%/Module/pmd_dump.pl
-man/man1/pmd_dump.pl.1.gz
-man/man1/pmd_grapher.plx.1.gz
-man/man1/pmd_indexer.plx.1.gz
+%%PERL5_MAN1%%/pmd_dump.pl.1.gz
+%%PERL5_MAN1%%/pmd_grapher.plx.1.gz
+%%PERL5_MAN1%%/pmd_indexer.plx.1.gz

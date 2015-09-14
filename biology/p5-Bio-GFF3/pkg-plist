@@ -9,4 +9,4 @@ bin/gff3_from_fasta
 %%PERL5_MAN3%%/Bio::GFF3::LowLevel::Parser::1_0_backcompat.3.gz
 %%PERL5_MAN3%%/Bio::GFF3::Transform::FromFasta.3.gz
 %%PERL5_MAN3%%/Bio::GFF3::Transform::SyncDirectives.3.gz
-man/man1/gff3_from_fasta.1.gz
+%%PERL5_MAN1%%/gff3_from_fasta.1.gz

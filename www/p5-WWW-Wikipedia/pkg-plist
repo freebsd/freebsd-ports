@@ -3,4 +3,4 @@ bin/wikipedia
 %%PERL5_MAN3%%/WWW::Wikipedia::Entry.3.gz
 %%SITE_PERL%%/WWW/Wikipedia.pm
 %%SITE_PERL%%/WWW/Wikipedia/Entry.pm
-man/man1/wikipedia.1.gz
+%%PERL5_MAN1%%/wikipedia.1.gz

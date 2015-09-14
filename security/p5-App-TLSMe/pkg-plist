@@ -1,4 +1,4 @@
-man/man1/tlsme.1.gz
+%%PERL5_MAN1%%/tlsme.1.gz
 %%PERL5_MAN3%%/App::TLSMe.3.gz
 %%PERL5_MAN3%%/App::TLSMe::Connection.3.gz
 %%PERL5_MAN3%%/App::TLSMe::Connection::http.3.gz

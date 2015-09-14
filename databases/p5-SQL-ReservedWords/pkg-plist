@@ -17,4 +17,4 @@ bin/sqlrw
 %%PERL5_MAN3%%/SQL::ReservedWords::SQLServer.3.gz
 %%PERL5_MAN3%%/SQL::ReservedWords::SQLite.3.gz
 %%PERL5_MAN3%%/SQL::ReservedWords::Sybase.3.gz
-man/man1/sqlrw.1.gz
+%%PERL5_MAN1%%/sqlrw.1.gz

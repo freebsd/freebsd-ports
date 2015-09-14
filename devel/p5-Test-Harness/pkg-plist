@@ -99,4 +99,4 @@ bin/p5prove
 %%PERL5_MAN3%%/TAP::Parser::YAMLish::Writer.3.gz
 %%PERL5_MAN3%%/Test::HACKING.3.gz
 %%PERL5_MAN3%%/Test::Harness.3.gz
-man/man1/p5prove.1.gz
+%%PERL5_MAN1%%/p5prove.1.gz

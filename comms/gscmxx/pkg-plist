@@ -32,4 +32,4 @@ share/gscmxx/i18n/german
 share/gscmxx/i18n/english
 share/gscmxx/i18n/italian
 %%PERL5_MAN3%%/SCMxx.3.gz
-man/man1/gscmxx.1.gz
+%%PERL5_MAN1%%/gscmxx.1.gz

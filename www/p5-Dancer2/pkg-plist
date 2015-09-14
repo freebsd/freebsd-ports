@@ -153,4 +153,4 @@ bin/dancer2
 %%PERL5_MAN3%%/Dancer2::Template::Tiny.3.gz
 %%PERL5_MAN3%%/Dancer2::Test.3.gz
 %%PERL5_MAN3%%/Dancer2::Tutorial.3.gz
-man/man1/dancer2.1.gz
+%%PERL5_MAN1%%/dancer2.1.gz

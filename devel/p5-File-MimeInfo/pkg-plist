@@ -10,5 +10,5 @@ bin/mimetype
 %%PERL5_MAN3%%/File::MimeInfo::Cookbook.3.gz
 %%PERL5_MAN3%%/File::MimeInfo::Magic.3.gz
 %%PERL5_MAN3%%/File::MimeInfo::Rox.3.gz
-man/man1/mimeopen.1.gz
-man/man1/mimetype.1.gz
+%%PERL5_MAN1%%/mimeopen.1.gz
+%%PERL5_MAN1%%/mimetype.1.gz

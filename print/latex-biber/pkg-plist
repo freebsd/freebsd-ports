@@ -1,5 +1,5 @@
 bin/biber
-man/man1/biber.1.gz
+%%PERL5_MAN1%%/biber.1.gz
 %%PERL5_MAN3%%/Biber.3.gz
 %%PERL5_MAN3%%/Biber::Config.3.gz
 %%PERL5_MAN3%%/Biber::Constants.3.gz

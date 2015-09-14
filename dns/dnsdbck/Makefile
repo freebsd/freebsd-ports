@@ -18,6 +18,6 @@ RUN_DEPENDS=	p5-Net-CIDR>0:${PORTSDIR}/net-mgmt/p5-Net-CIDR \
 USES=		perl5
 USE_PERL5=	configure
 
-PLIST_FILES=	bin/dnsdbck man/man1/dnsdbck.1.gz
+PLIST_FILES=	bin/dnsdbck ${SITE_MAN1}/dnsdbck.1.gz
 
 .include <bsd.port.mk>

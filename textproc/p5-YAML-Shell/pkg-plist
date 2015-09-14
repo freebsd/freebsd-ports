@@ -1,5 +1,5 @@
 bin/ysh
-man/man1/ysh.1.gz
+%%PERL5_MAN1%%/ysh.1.gz
 %%PERL5_MAN3%%/YAML::Shell.3.gz
 %%SITE_PERL%%/YAML/Shell.pm
 %%SITE_PERL%%/YAML/Shell.pod

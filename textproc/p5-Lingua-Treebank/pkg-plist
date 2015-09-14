@@ -10,9 +10,9 @@ bin/vocabulary
 %%SITE_PERL%%/Lingua/Treebank.pm
 %%SITE_PERL%%/Lingua/Treebank/Const.pm
 %%SITE_PERL%%/Lingua/Treebank/HeadFinder.pm
-man/man1/get-words.1.gz
-man/man1/list-edges.1.gz
-man/man1/list-rewrites.1.gz
-man/man1/tree-collapse.1.gz
-man/man1/tree-inflate.1.gz
-man/man1/vocabulary.1.gz
+%%PERL5_MAN1%%/get-words.1.gz
+%%PERL5_MAN1%%/list-edges.1.gz
+%%PERL5_MAN1%%/list-rewrites.1.gz
+%%PERL5_MAN1%%/tree-collapse.1.gz
+%%PERL5_MAN1%%/tree-inflate.1.gz
+%%PERL5_MAN1%%/vocabulary.1.gz

@@ -89,6 +89,6 @@ bin/gcov2perl
 %%PERL5_MAN3%%/Devel::Cover::Tutorial.3.gz
 %%PERL5_MAN3%%/Devel::Cover::Util.3.gz
 %%PERL5_MAN3%%/Devel::Cover::Web.3.gz
-man/man1/cover.1.gz
-man/man1/cpancover.1.gz
-man/man1/gcov2perl.1.gz
+%%PERL5_MAN1%%/cover.1.gz
+%%PERL5_MAN1%%/cpancover.1.gz
+%%PERL5_MAN1%%/gcov2perl.1.gz

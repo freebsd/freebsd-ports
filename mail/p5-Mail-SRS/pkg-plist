@@ -13,5 +13,5 @@ bin/srsd
 %%PERL5_MAN3%%/Mail::SRS::Guarded.3.gz
 %%PERL5_MAN3%%/Mail::SRS::Reversible.3.gz
 %%PERL5_MAN3%%/Mail::SRS::Shortcut.3.gz
-man/man1/srs.1.gz
-man/man1/srsd.1.gz
+%%PERL5_MAN1%%/srs.1.gz
+%%PERL5_MAN1%%/srsd.1.gz

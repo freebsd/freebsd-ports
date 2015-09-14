@@ -8,8 +8,8 @@ bin/clipjoin
 %%SITE_PERL%%/Clipboard/MacPasteboard.pm
 %%SITE_PERL%%/Clipboard/Win32.pm
 %%SITE_PERL%%/Clipboard/Xclip.pm
-man/man1/clipaccumulate.1.gz
-man/man1/clipbrowse.1.gz
-man/man1/clipedit.1.gz
-man/man1/clipfilter.1.gz
-man/man1/clipjoin.1.gz
+%%PERL5_MAN1%%/clipaccumulate.1.gz
+%%PERL5_MAN1%%/clipbrowse.1.gz
+%%PERL5_MAN1%%/clipedit.1.gz
+%%PERL5_MAN1%%/clipfilter.1.gz
+%%PERL5_MAN1%%/clipjoin.1.gz

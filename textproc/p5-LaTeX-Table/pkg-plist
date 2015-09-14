@@ -22,5 +22,5 @@ bin/ltpretty
 %%SITE_PERL%%/LaTeX/Table/Types/Longtable.pm
 %%SITE_PERL%%/LaTeX/Table/Types/Xtab.pm
 %%SITE_PERL%%/LaTeX/Table/Types/TypeI.pm
-man/man1/csv2pdf.1.gz
-man/man1/ltpretty.1.gz
+%%PERL5_MAN1%%/csv2pdf.1.gz
+%%PERL5_MAN1%%/ltpretty.1.gz
