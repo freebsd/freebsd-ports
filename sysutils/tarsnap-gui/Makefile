@@ -11,7 +11,7 @@ COMMENT=	Cross platform GUI for the Tarsnap command line client
 USE_GITHUB=	yes
 GH_ACCOUNT=	Tarsnap
 
-USES=		qmake
+USES=		compiler:c++11-lib qmake
 USE_QT5=	qmake_build widgets network buildtools_build sql-sqlite3
 
 PLIST_FILES=	bin/tarsnap-gui
