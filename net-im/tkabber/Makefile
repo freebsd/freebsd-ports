@@ -43,8 +43,6 @@ NO_ARCH=	yes
 SUBDIRS=	contrib emoticons ifacetk mclistbox \
 		msgs pixmaps plugins sounds tclxmpp trans
 
-.include <bsd.port.options.mk>
-
 do-install:
 	${ECHO_CMD} -e "#!/bin/sh\nexec ${WISH} ${DATADIR}/tkabber.tcl \
 		-name tkabber \"\$$@\"\n" > ${WRKDIR}/tkabber.sh
@@ -57,15 +55,15 @@ do-install:
 .for i in ${SUBDIRS}
 	${CP} -R ${WRKSRC}/${i} ${STAGEDIR}${DATADIR}
 .endfor
-.if ${PORT_OPTIONS:MEXAMPLES}
+
+do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
-.endif
-.if ${PORT_OPTIONS:MDOCS}
+	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in tkabber.html tkabber.xml
 	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
