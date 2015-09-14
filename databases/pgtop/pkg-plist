@@ -1,2 +1,2 @@
 bin/pgtop
-man/man1/pgtop.1.gz
+%%PERL5_MAN1%%/pgtop.1.gz

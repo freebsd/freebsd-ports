@@ -5,4 +5,4 @@ bin/verify-rule
 %%SITE_PERL%%/Net/Snort/Parser/File.pm
 %%SITE_PERL%%/Net/Snort/Parser/Rule.pm
 %%SITE_PERL%%/Net/Snort/Parser/RuleOptions.pm
-man/man1/snortconfig.1.gz
+%%PERL5_MAN1%%/snortconfig.1.gz

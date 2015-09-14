@@ -7,6 +7,6 @@ bin/tabmerge
 %%SITE_PERL%%/Text/RecordParser.pm
 %%SITE_PERL%%/Text/RecordParser/Tab.pm
 %%SITE_PERL%%/Text/RecordParser/Object.pm
-man/man1/tablify.1.gz
-man/man1/tabmerge.1.gz
-man/man1/tab2graph.1.gz
+%%PERL5_MAN1%%/tablify.1.gz
+%%PERL5_MAN1%%/tabmerge.1.gz
+%%PERL5_MAN1%%/tab2graph.1.gz

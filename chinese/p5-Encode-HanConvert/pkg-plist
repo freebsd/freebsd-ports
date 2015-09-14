@@ -4,5 +4,5 @@ bin/g2b.pl
 %%SITE_ARCH%%/Encode/HanConvert/Perl.pm
 %%SITE_ARCH%%/Encode/HanConvert/Perl.pm-orig
 %%SITE_ARCH%%/auto/Encode/HanConvert/HanConvert.so
-man/man1/b2g.pl.1.gz
-man/man1/g2b.pl.1.gz
+%%PERL5_MAN1%%/b2g.pl.1.gz
+%%PERL5_MAN1%%/g2b.pl.1.gz

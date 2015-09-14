@@ -16,8 +16,8 @@ bin/bufrresolve.pl
 %%PERL5_MAN3%%/Geo::bufrencode.3.gz
 %%PERL5_MAN3%%/Geo::bufrread.3.gz
 %%PERL5_MAN3%%/Geo::bufrresolve.3.gz
-man/man1/bufr_reencode.pl.1.gz
-man/man1/bufralter.pl.1.gz
-man/man1/bufrencode.pl.1.gz
-man/man1/bufrread.pl.1.gz
-man/man1/bufrresolve.pl.1.gz
+%%PERL5_MAN1%%/bufr_reencode.pl.1.gz
+%%PERL5_MAN1%%/bufralter.pl.1.gz
+%%PERL5_MAN1%%/bufrencode.pl.1.gz
+%%PERL5_MAN1%%/bufrread.pl.1.gz
+%%PERL5_MAN1%%/bufrresolve.pl.1.gz

@@ -32,4 +32,4 @@ bin/smonitor
 %%PERL5_MAN3%%/Monitor::Simple::Output.3.gz
 %%PERL5_MAN3%%/Monitor::Simple::UserAgent.3.gz
 %%PERL5_MAN3%%/Monitor::Simple::Utils.3.gz
-man/man1/smonitor.1.gz
+%%PERL5_MAN1%%/smonitor.1.gz

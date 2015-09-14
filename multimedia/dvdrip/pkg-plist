@@ -8,9 +8,9 @@ bin/dvdrip-splash
 bin/dvdrip-splitpipe
 bin/dvdrip-subpng
 bin/dvdrip-thumb
-man/man1/dvdrip.1.gz
-man/man1/dvdrip-progress.1.gz
-man/man1/dvdrip-splitpipe.1.gz
+%%PERL5_MAN1%%/dvdrip.1.gz
+%%PERL5_MAN1%%/dvdrip-progress.1.gz
+%%PERL5_MAN1%%/dvdrip-splitpipe.1.gz
 %%PERL5_MAN3%%/Video::DVDRip.3.gz
 %%PERL5_MAN3%%/Video::DVDRip::CPAN::Scanf.3.gz
 %%SITE_PERL%%/LocaleData/cs/LC_MESSAGES/video.dvdrip.mo

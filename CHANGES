@@ -10,6 +10,12 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20150914:
+AUTHOR: mat@FreeBSD.org
+
+  Introducing the %%PERL5_MAN1%% PLIST_SUB entry, as Perl now installs man1
+  pages in the same prefix as man3 pages.
+
 20150828:
 AUTHOR: mat@FreeBSD.org
 

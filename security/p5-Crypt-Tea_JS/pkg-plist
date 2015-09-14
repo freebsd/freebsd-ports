@@ -1,5 +1,5 @@
 bin/tea
-man/man1/tea.1.gz
+%%PERL5_MAN1%%/tea.1.gz
 %%PERL5_MAN3%%/Crypt::Tea_JS.3.gz
 %%SITE_ARCH%%/Crypt/Tea_JS.pm
 %%SITE_ARCH%%/auto/Crypt/Tea_JS/Tea_JS.so

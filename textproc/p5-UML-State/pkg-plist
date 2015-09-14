@@ -6,5 +6,5 @@ bin/drawstatexml.pl
 %%SITE_PERL%%/UML/State.pm
 %%SITE_PERL%%/UML/drawstate.pl
 %%SITE_PERL%%/UML/drawstatexml.pl
-man/man1/drawstate.pl.1.gz
-man/man1/drawstatexml.pl.1.gz
+%%PERL5_MAN1%%/drawstate.pl.1.gz
+%%PERL5_MAN1%%/drawstatexml.pl.1.gz

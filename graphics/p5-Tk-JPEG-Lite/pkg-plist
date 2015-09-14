@@ -2,4 +2,4 @@ bin/tkjpeg-lite
 %%PERL5_MAN3%%/Tk::JPEG::Lite.3.gz
 %%SITE_ARCH%%/Tk/JPEG/Lite.pm
 %%SITE_ARCH%%/auto/Tk/JPEG/Lite/Lite.so
-man/man1/tkjpeg-lite.1.gz
+%%PERL5_MAN1%%/tkjpeg-lite.1.gz

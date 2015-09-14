@@ -1,4 +1,4 @@
 bin/xml-pretty
 %%SITE_PERL%%/XML/LibXML/PrettyPrint.pm
 %%PERL5_MAN3%%/XML::LibXML::PrettyPrint.3.gz
-man/man1/xml-pretty.1.gz
+%%PERL5_MAN1%%/xml-pretty.1.gz

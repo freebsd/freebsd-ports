@@ -1,2 +1,2 @@
 bin/mime-construct
-man/man1/mime-construct.1.gz
+%%PERL5_MAN1%%/mime-construct.1.gz

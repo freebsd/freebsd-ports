@@ -34,4 +34,4 @@ bin/distfind
 %%PERL5_MAN3%%/Dist::Joseki::DistType::ModuleBuild.3.gz
 %%PERL5_MAN3%%/Dist::Joseki::Find.3.gz
 %%PERL5_MAN3%%/Dist::Joseki::Version.3.gz
-man/man1/distfind.1.gz
+%%PERL5_MAN1%%/distfind.1.gz

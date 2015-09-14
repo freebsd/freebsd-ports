@@ -82,14 +82,15 @@ post-patch:
 post-install:
 	@(cd ${WRKSRC}; ${PERL} -Iblib/lib -Iblib/arch Doc/scantree.pl)
 	@(cd ${WRKSRC}/blib/man3 ; \
-	  ${FIND} *.3 | ${SED} "s,^,${MAN3PREFIX:S,^${PREFIX}/,,}/man/man3/,;s/3$$/3.gz/" \
+	  ${FIND} *.3 | ${SED} "s,^,${MAN3PREFIX}/man/man3/,;s/3$$/3.gz/" \
 		>> ${TMPPLIST} ; \
 	  cd ${WRKSRC}/blib/man1 ; \
-	  ${FIND} *.1 | ${SED} "s,^,man/man1/,;s/1$$/1.gz/" >> ${TMPPLIST})
+	  ${FIND} *.1 | ${SED} "s,^,${MAN1PREFIX}/man/man1/,;s/1$$/1.gz/" \
+		>> ${TMPPLIST})
 	@(${FIND} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/PDL* -type f | \
 		${SED} "s,^${STAGEDIR}${PREFIX}/,," >> ${TMPPLIST} ; \
 	  ${FIND} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL -type f \
-	  	-name "[A-Z]*" | ${SED} "s,^${STAGEDIR}${PREFIX}/,," \
-	  	>> ${TMPPLIST})
+		-name "[A-Z]*" | ${SED} "s,^${STAGEDIR}${PREFIX}/,," \
+		>> ${TMPPLIST})
 
 .include <bsd.port.mk>

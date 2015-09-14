@@ -142,4 +142,4 @@ bin/ace.pl
 %%PERL5_MAN3%%/Ace::Sequence::Homol.3.gz
 %%PERL5_MAN3%%/Ace::Sequence::Multi.3.gz
 %%PERL5_MAN3%%/Ace::Sequence::Transcript.3.gz
-man/man1/ace.pl.1.gz
+%%PERL5_MAN1%%/ace.pl.1.gz

@@ -1,2 +1,2 @@
 bin/github_creator
-man/man1/github_creator.1.gz
+%%PERL5_MAN1%%/github_creator.1.gz

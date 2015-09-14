@@ -1,5 +1,5 @@
 bin/xmlrewrite
-man/man1/xmlrewrite.1.gz
+%%PERL5_MAN1%%/xmlrewrite.1.gz
 %%SITE_PERL%%/XML/Rewrite.pm
 %%SITE_PERL%%/XML/Rewrite.pod
 %%SITE_PERL%%/XML/Rewrite/Schema.pm

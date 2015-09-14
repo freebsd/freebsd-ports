@@ -24,5 +24,5 @@ bin/tkpod
 %%PERL5_MAN3%%/Tk::Pod::Tree.3.gz
 %%PERL5_MAN3%%/Tk::Pod::Util.3.gz
 %%PERL5_MAN3%%/Tk::Pod_usage.3.gz
-man/man1/tkmore.1.gz
-man/man1/tkpod.1.gz
+%%PERL5_MAN1%%/tkmore.1.gz
+%%PERL5_MAN1%%/tkpod.1.gz

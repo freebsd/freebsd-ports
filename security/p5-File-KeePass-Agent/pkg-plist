@@ -5,4 +5,4 @@ bin/fkp-agent
 %%PERL5_MAN3%%/File::KeePass::Agent.3.gz
 %%PERL5_MAN3%%/File::KeePass::Agent::linux.3.gz
 %%PERL5_MAN3%%/File::KeePass::Agent::unix.3.gz
-man/man1/fkp-agent.1.gz
+%%PERL5_MAN1%%/fkp-agent.1.gz

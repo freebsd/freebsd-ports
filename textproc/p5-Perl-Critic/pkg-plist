@@ -393,4 +393,4 @@ bin/perlcritic
 %%PERL5_MAN3%%/Perl::Critic::Utils::Perl.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Violation.3.gz
 %%PERL5_MAN3%%/Test::Perl::Critic::Policy.3.gz
-man/man1/perlcritic.1.gz
+%%PERL5_MAN1%%/perlcritic.1.gz

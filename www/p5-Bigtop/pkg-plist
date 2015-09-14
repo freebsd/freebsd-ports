@@ -90,8 +90,8 @@ bin/tentmaker
 %%SITE_PERL%%/Bigtop/TentMaker.pm
 %%SITE_PERL%%/Bigtop/TentMakerPath.pm
 %%SITE_PERL%%/Bigtop/grammar.pod
-man/man1/bigtop.1.gz
-man/man1/tentmaker.1.gz
+%%PERL5_MAN1%%/bigtop.1.gz
+%%PERL5_MAN1%%/tentmaker.1.gz
 share/TentMaker/tenttemplates/app_body.ttc
 share/TentMaker/tenttemplates/app_body_div.ttc
 share/TentMaker/tenttemplates/app_config.ttc

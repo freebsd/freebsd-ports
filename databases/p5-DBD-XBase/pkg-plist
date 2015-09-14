@@ -15,5 +15,5 @@ bin/indexdump
 %%PERL5_MAN3%%/XBase::Index.3.gz
 %%PERL5_MAN3%%/XBase::Memo.3.gz
 %%PERL5_MAN3%%/XBase::SDBM.3.gz
-man/man1/dbfdump.1.gz
-man/man1/indexdump.1.gz
+%%PERL5_MAN1%%/dbfdump.1.gz
+%%PERL5_MAN1%%/indexdump.1.gz

@@ -55,5 +55,5 @@ bin/check_postgres.pl
 %%NAGIOS%%libexec/nagios/check_postgres_txn_wraparound
 %%NAGIOS%%libexec/nagios/check_postgres_version
 %%NAGIOS%%libexec/nagios/check_postgres_wal_files
-man/man1/check_postgres.1p.gz
+%%PERL5_MAN1%%/check_postgres.1p.gz
 %%CACTI%%share/cacti/scripts/check_postgres_dbstats

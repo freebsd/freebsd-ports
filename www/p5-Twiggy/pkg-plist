@@ -1,4 +1,4 @@
-man/man1/twiggy.1.gz
+%%PERL5_MAN1%%/twiggy.1.gz
 %%PERL5_MAN3%%/Plack::Handler::Twiggy.3.gz
 %%PERL5_MAN3%%/Twiggy.3.gz
 bin/twiggy

@@ -15,4 +15,4 @@ bin/pdbdump
 %%PERL5_MAN3%%/Palm::Raw.3.gz
 %%PERL5_MAN3%%/Palm::StdAppInfo.3.gz
 %%PERL5_MAN3%%/Palm::ToDo.3.gz
-man/man1/pdbdump.1.gz
+%%PERL5_MAN1%%/pdbdump.1.gz

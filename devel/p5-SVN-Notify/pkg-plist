@@ -11,4 +11,4 @@ bin/svnnotify
 %%SITE_PERL%%/SVN/Notify/Filter/Trac.pm
 %%SITE_PERL%%/SVN/Notify/HTML.pm
 %%SITE_PERL%%/SVN/Notify/HTML/ColorDiff.pm
-man/man1/svnnotify.1.gz
+%%PERL5_MAN1%%/svnnotify.1.gz
