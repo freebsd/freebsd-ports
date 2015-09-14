@@ -1959,7 +1959,6 @@ lib32/wine/fakedlls/xapofx1_1.dll
 lib32/wine/fakedlls/xapofx1_3.dll
 lib32/wine/fakedlls/xapofx1_4.dll
 lib32/wine/fakedlls/xapofx1_5.dll
-lib32/wine/fakedlls/xaudio2_7.dll
 lib32/wine/fakedlls/xaudio2_8.dll
 lib32/wine/fakedlls/xcopy.exe
 lib32/wine/fakedlls/xinput1_1.dll
@@ -2174,9 +2173,6 @@ lib32/wine/libstrmbase.a
 lib32/wine/libstrmiids.a
 lib32/wine/libsxs.def
 lib32/wine/libtapi32.def
-%%OSREL9-STAGING%%lib32/wine/libucrtbase.def
-%%OSREL10-STAGING%%lib32/wine/libucrtbase.def
-%%OSREL11-STAGING%%lib32/wine/libucrtbase.def
 lib32/wine/libunicows.def
 lib32/wine/liburl.def
 lib32/wine/liburlmon.def
@@ -2584,7 +2580,6 @@ lib32/wine/xapofx1_1.dll.so
 lib32/wine/xapofx1_3.dll.so
 lib32/wine/xapofx1_4.dll.so
 lib32/wine/xapofx1_5.dll.so
-lib32/wine/xaudio2_7.dll.so
 lib32/wine/xaudio2_8.dll.so
 lib32/wine/xcopy.exe.so
 lib32/wine/xinput1_1.dll.so
@@ -2684,6 +2679,9 @@ share/wine/fonts/svgasys.fon
 share/wine/fonts/symbol.ttf
 share/wine/fonts/tahoma.ttf
 share/wine/fonts/tahomabd.ttf
+%%OSREL9-STAGING%%share/wine/fonts/times.ttf
+%%OSREL10-STAGING%%share/wine/fonts/times.ttf
+%%OSREL11-STAGING%%share/wine/fonts/times.ttf
 share/wine/fonts/vgafix.fon
 share/wine/fonts/vgas1255.fon
 share/wine/fonts/vgas1256.fon
