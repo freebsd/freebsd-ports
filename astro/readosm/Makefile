@@ -5,7 +5,7 @@ PORTNAME=	readosm
 PORTVERSION=	1.0.0
 CATEGORIES=	astro geography devel
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
-DISTNAME=	${PORTNAME}-${PORTVERSION}d
+DISTNAME=	${PORTNAME}-${PORTVERSION}e
 
 MAINTAINER=	coder@tuxfamily.org
 COMMENT=	Extract valid data from within an Open Street Map input file
@@ -15,9 +15,9 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}d
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}e
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pkgconfig pathfix
+USES=		gmake libtool pathfix pkgconfig
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
