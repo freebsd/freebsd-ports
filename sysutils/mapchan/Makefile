@@ -24,14 +24,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/mapchan.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${MV} ${WRKSRC}/examples/default ${WRKSRC}/examples/default.sample
 	@${RM} ${WRKSRC}/examples/default.orig
 	${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|" ${WRKSRC}/mapchan.c
-.if ${OSVERSION} > 900007
 	${REINPLACE_CMD} -e "s|utmp.h|utmpx.h|" ${WRKSRC}/mapchan.c
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
