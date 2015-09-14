@@ -12,23 +12,24 @@ you update your ports collection, before attempting any port upgrades.
   Binary package users can ignore this.
 
   The way lang/perl5* ports install themselves has changed.  From now on, only
-  the default Perl version will install /usr/local/bin/perl.
+  the default Perl port (currently 5.20), or the version listed in
+  DEFAULT_VERSIONS, will install /usr/local/bin/perl.
 
   If you are NOT using the default version of Perl (as of right now, it is
   5.20) you MUST add a line setting the version you are using to your
-  /etc/make.conf:
+  /etc/make.conf, to preserve /usr/local/bin/perl:
 
   DEFAULT_VERSIONS+=	perl5=5.xx
 
-  Especially, after this date, to migrate from one Perl version to the other,
-  you must first put the DEFAULT_VERSIONS line in your make.conf, and then, for
-  example, if you want to move from 5.20 to 5.22, do:
+  After this date, to migrate from one Perl version to the other, you must
+  first put the DEFAULT_VERSIONS line in your make.conf, and then, for example,
+  if you want to move from 5.20 to 5.22, do:
 
 	pkg set -o lang/perl5.20:lang/perl5.22
 	portmaster `pkg shlib -qR libperl.so.5.20`
 
   If you do not do that, you will replace your default Perl 5.20 installation
-  (one that has /usr/local/bin/perl) to an installation that does not have
+  (one that has /usr/local/bin/perl) with an installation that does not have
   /usr/local/bin/perl, and it will break everything.
 
 20150908:
