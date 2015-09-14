@@ -8,5 +8,5 @@ bin/spdy-server.pl
 %%PERL5_MAN3%%/Net::SPDY::Compressor.3.gz
 %%PERL5_MAN3%%/Net::SPDY::Framer.3.gz
 %%PERL5_MAN3%%/Net::SPDY::Session.3.gz
-man/man1/spdy-client.pl.1.gz
-man/man1/spdy-server.pl.1.gz
+%%PERL5_MAN1%%/spdy-client.pl.1.gz
+%%PERL5_MAN1%%/spdy-server.pl.1.gz

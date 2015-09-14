@@ -1,2 +1,2 @@
 bin/mbx2mbox
-man/man1/mbx2mbox.1.gz
+%%PERL5_MAN1%%/mbx2mbox.1.gz

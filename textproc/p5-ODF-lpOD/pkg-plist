@@ -33,4 +33,4 @@ bin/lpod_test
 %%SITE_PERL%%/ODF/lpOD/templates/presentation.odp
 %%SITE_PERL%%/ODF/lpOD/templates/spreadsheet.ods
 %%SITE_PERL%%/ODF/lpOD/templates/text.odt
-man/man1/lpod_test.1.gz
+%%PERL5_MAN1%%/lpod_test.1.gz

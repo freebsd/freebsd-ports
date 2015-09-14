@@ -1,5 +1,5 @@
 bin/ip2cc
-man/man1/ip2cc.1.gz
+%%PERL5_MAN1%%/ip2cc.1.gz
 %%PERL5_MAN3%%/IP::Authority.3.gz
 %%PERL5_MAN3%%/IP::Country.3.gz
 %%PERL5_MAN3%%/IP::Country::Fast.3.gz

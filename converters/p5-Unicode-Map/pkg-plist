@@ -98,5 +98,5 @@ bin/mkmapfile
 %%SITE_ARCH%%/Unicode/Map/REGISTRY
 %%SITE_ARCH%%/auto/Unicode/Map/Map.so
 %%PERL5_MAN3%%/Unicode::Map.3.gz
-man/man1/map.1.gz
-man/man1/mkmapfile.1.gz
+%%PERL5_MAN1%%/map.1.gz
+%%PERL5_MAN1%%/mkmapfile.1.gz

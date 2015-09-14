@@ -3,4 +3,4 @@ bin/pod2xhtml
 %%PERL5_MAN3%%/Pod::Xhtml.3.gz
 %%SITE_PERL%%/Pod/Hyperlink/BounceURL.pm
 %%SITE_PERL%%/Pod/Xhtml.pm
-man/man1/pod2xhtml.1.gz
+%%PERL5_MAN1%%/pod2xhtml.1.gz

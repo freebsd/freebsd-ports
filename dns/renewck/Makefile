@@ -19,6 +19,6 @@ RUN_DEPENDS=	p5-Time-modules>0:${PORTSDIR}/devel/p5-Time-modules \
 USES=		perl5
 USE_PERL5=	configure
 
-PLIST_FILES=	bin/renewck man/man1/renewck.1.gz
+PLIST_FILES=	bin/renewck ${SITE_MAN1}/renewck.1.gz
 
 .include <bsd.port.mk>

@@ -81,7 +81,7 @@ libexec/gimp/2.2/plug-ins/xachlego
 libexec/gimp/2.2/plug-ins/xachshadow
 libexec/gimp/2.2/plug-ins/xachvision
 libexec/gimp/2.2/plug-ins/yinyang
-man/man1/embedxpm.1.gz
-man/man1/gimpdoc.1.gz
-man/man1/scm2perl.1.gz
-man/man1/xcftopnm.1.gz
+%%PERL5_MAN1%%/embedxpm.1.gz
+%%PERL5_MAN1%%/gimpdoc.1.gz
+%%PERL5_MAN1%%/scm2perl.1.gz
+%%PERL5_MAN1%%/xcftopnm.1.gz

@@ -1,4 +1,4 @@
 bin/applypatch
 bin/makepatch
-man/man1/makepatch.1.gz
-man/man1/applypatch.1.gz
+%%PERL5_MAN1%%/makepatch.1.gz
+%%PERL5_MAN1%%/applypatch.1.gz

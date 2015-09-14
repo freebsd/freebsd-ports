@@ -41,10 +41,10 @@ bin/lwp-request
 %%PERL5_MAN3%%/LWP::UserAgent.3.gz
 %%PERL5_MAN3%%/lwpcook.3.gz
 %%PERL5_MAN3%%/lwptut.3.gz
-man/man1/GET.1.gz
-man/man1/HEAD.1.gz
-man/man1/POST.1.gz
-man/man1/lwp-download.1.gz
-man/man1/lwp-dump.1.gz
-man/man1/lwp-mirror.1.gz
-man/man1/lwp-request.1.gz
+%%PERL5_MAN1%%/GET.1.gz
+%%PERL5_MAN1%%/HEAD.1.gz
+%%PERL5_MAN1%%/POST.1.gz
+%%PERL5_MAN1%%/lwp-download.1.gz
+%%PERL5_MAN1%%/lwp-dump.1.gz
+%%PERL5_MAN1%%/lwp-mirror.1.gz
+%%PERL5_MAN1%%/lwp-request.1.gz

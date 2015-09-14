@@ -1,5 +1,5 @@
 bin/ptee
-man/man1/ptee.1.gz
+%%PERL5_MAN1%%/ptee.1.gz
 %%PERL5_MAN3%%/Tee.3.gz
 %%PERL5_MAN3%%/Tee::App.3.gz
 %%SITE_PERL%%/Tee.pm

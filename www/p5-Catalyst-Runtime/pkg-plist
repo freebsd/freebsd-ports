@@ -109,4 +109,4 @@ bin/catalyst.pl
 %%PERL5_MAN3%%/Catalyst::Upgrading.3.gz
 %%PERL5_MAN3%%/Catalyst::Utils.3.gz
 %%PERL5_MAN3%%/Catalyst::View.3.gz
-man/man1/catalyst.pl.1.gz
+%%PERL5_MAN1%%/catalyst.pl.1.gz

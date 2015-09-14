@@ -46,6 +46,6 @@ bin/pomdump
 %%PERL5_MAN3%%/Pod::POM::View::HTML.3.gz
 %%PERL5_MAN3%%/Pod::POM::View::Pod.3.gz
 %%PERL5_MAN3%%/Pod::POM::View::Text.3.gz
-man/man1/podlint.1.gz
-man/man1/pom2.1.gz
-man/man1/pomdump.1.gz
+%%PERL5_MAN1%%/podlint.1.gz
+%%PERL5_MAN1%%/pom2.1.gz
+%%PERL5_MAN1%%/pomdump.1.gz

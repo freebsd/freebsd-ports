@@ -25,7 +25,7 @@ bin/wt
 %%PERL5_MAN3%%/HTTP::WebTest::Test.3.gz
 %%PERL5_MAN3%%/HTTP::WebTest::TestResult.3.gz
 %%PERL5_MAN3%%/HTTP::WebTest::Utils.3.gz
-man/man1/wt.1.gz
+%%PERL5_MAN1%%/wt.1.gz
 %%SITE_PERL%%/Bundle/HTTP/WebTest.pm
 %%SITE_PERL%%/HTTP/WebTest.pm
 %%SITE_PERL%%/HTTP/WebTest.pm.in

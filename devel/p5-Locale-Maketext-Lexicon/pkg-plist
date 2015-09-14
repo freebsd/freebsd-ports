@@ -33,4 +33,4 @@ bin/xgettext.pl
 %%SITE_PERL%%/Locale/Maketext/Lexicon/Gettext.pm
 %%SITE_PERL%%/Locale/Maketext/Lexicon/Msgcat.pm
 %%SITE_PERL%%/Locale/Maketext/Lexicon/Tie.pm
-man/man1/xgettext.pl.1.gz
+%%PERL5_MAN1%%/xgettext.pl.1.gz

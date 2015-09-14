@@ -10,5 +10,5 @@ bin/getnameinfo
 %%PERL5_MAN3%%/Socket::GetAddrInfo::Emul.3.gz
 %%PERL5_MAN3%%/Socket::GetAddrInfo::Socket6api.3.gz
 %%PERL5_MAN3%%/Socket::GetAddrInfo::Strict.3.gz
-man/man1/getaddrinfo.1.gz
-man/man1/getnameinfo.1.gz
+%%PERL5_MAN1%%/getaddrinfo.1.gz
+%%PERL5_MAN1%%/getnameinfo.1.gz

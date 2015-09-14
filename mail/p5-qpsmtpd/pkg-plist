@@ -2,7 +2,7 @@ bin/qpsmtpd
 bin/qpsmtpd-async
 bin/qpsmtpd-forkserver
 bin/qpsmtpd-prefork
-man/man1/qpsmtpd-async.1.gz
+%%PERL5_MAN1%%/qpsmtpd-async.1.gz
 %%DATADIR%%/plugins/async/dns_whitelist_soft
 %%DATADIR%%/plugins/async/dnsbl
 %%DATADIR%%/plugins/async/earlytalker

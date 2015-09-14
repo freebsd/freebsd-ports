@@ -187,11 +187,10 @@ post-install:
 	@${ECHO_CMD} man/man${s}/${m}.${s}.gz >> ${TMPPLIST}
 .  endfor
 .endfor
-.for m in ${CYRUS_PERL_MAN1}
-	@${ECHO_CMD} man/man1/${m}.1.gz >> ${TMPPLIST}
-.endfor
-.for m in ${CYRUS_PERL_MAN3}
-	@${ECHO_CMD} ${SITE_MAN3}/${m}.3.gz >> ${TMPPLIST}
+.for s in 1 3
+.  for m in ${CYRUS_PERL_MAN${s}}
+	@${ECHO_CMD} ${SITE_MAN${s}}/${m}.${s}.gz >> ${TMPPLIST}
+.  endfor
 .endfor
 .for m in ${CYRUS_MAN8}
 	@${ECHO_CMD} ${CYRUS_PREFIX}/man/man8/${m}.8.gz >> ${TMPPLIST}

@@ -2,4 +2,4 @@ bin/stime
 %%SITE_ARCH%%/Astro/PAL.pm
 %%SITE_ARCH%%/auto/Astro/PAL/PAL.so
 %%PERL5_MAN3%%/Astro::PAL.3.gz
-man/man1/stime.1.gz
+%%PERL5_MAN1%%/stime.1.gz

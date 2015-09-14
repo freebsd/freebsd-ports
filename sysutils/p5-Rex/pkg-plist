@@ -367,5 +367,5 @@ bin/rexify
 %%SITE_PERL%%/Rex/Virtualization/VBox/shutdown.pm
 %%SITE_PERL%%/Rex/Virtualization/VBox/start.pm
 %%SITE_PERL%%/Rex/Virtualization/VBox/status.pm
-man/man1/rex.1.gz
-man/man1/rexify.1.gz
+%%PERL5_MAN1%%/rex.1.gz
+%%PERL5_MAN1%%/rexify.1.gz

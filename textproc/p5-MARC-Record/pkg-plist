@@ -1,5 +1,5 @@
 bin/marcdump
-man/man1/marcdump.1.gz
+%%PERL5_MAN1%%/marcdump.1.gz
 %%PERL5_MAN3%%/MARC::Batch.3.gz
 %%PERL5_MAN3%%/MARC::Doc::Tutorial.3.gz
 %%PERL5_MAN3%%/MARC::Field.3.gz

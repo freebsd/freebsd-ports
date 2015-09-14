@@ -25,6 +25,6 @@ USES=		perl5
 USE_PERL5=	configure
 NO_ARCH=	yes
 
-PLIST_FILES=	bin/grake man/man1/grake.1.gz
+PLIST_FILES=	bin/grake ${SITE_MAN1}/grake.1.gz
 
 .include <bsd.port.mk>

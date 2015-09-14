@@ -7,4 +7,4 @@ bin/gpgmailtunl
 %%SITE_PERL%%/GnuPG/Tie/Sign.pm
 %%PERL5_MAN3%%/GnuPG.3.gz
 %%PERL5_MAN3%%/GnuPG::Tie.3.gz
-man/man1/gpgmailtunl.1.gz
+%%PERL5_MAN1%%/gpgmailtunl.1.gz
