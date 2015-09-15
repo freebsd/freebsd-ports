@@ -21,8 +21,9 @@ you update your ports collection, before attempting any port upgrades.
 
   DEFAULT_VERSIONS+=	perl5=5.xx
 
-  If your Perl package name is not called perl5-5.xx.y but perl5.xx-5.xx.y, you
-  will need to rename it so that portupgrade doesn't get confused:
+  If your Perl package name is not called perl5-5.xx.y but perl5.xx-5.xx.y,
+  you will need to rename it so that portupgrade and portmaster do not get
+  confused:
 
     pkg set -n perl5.xx:perl5
 
