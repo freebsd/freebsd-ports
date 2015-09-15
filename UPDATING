@@ -21,6 +21,11 @@ you update your ports collection, before attempting any port upgrades.
 
   DEFAULT_VERSIONS+=	perl5=5.xx
 
+  If your Perl package name is not called perl5-5.xx.y but perl5.xx-5.xx.y, you
+  will need to rename it so that portupgrade doesn't get confused:
+
+    pkg set -n perl5.xx:perl5
+
   After this date, to migrate from one Perl version to the other, you must
   first put the DEFAULT_VERSIONS line in your make.conf, and then, for example,
   if you want to move from 5.20 to 5.22, do:
