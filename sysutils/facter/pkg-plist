@@ -1,5 +1,4 @@
 bin/facter
-include/facter/execution/execution.hpp
 include/facter/export.h
 include/facter/facts/array_value.hpp
 include/facter/facts/collection.hpp
@@ -12,20 +11,11 @@ include/facter/facts/resolver.hpp
 include/facter/facts/scalar_value.hpp
 include/facter/facts/value.hpp
 include/facter/facts/vm.hpp
-include/facter/http/client.hpp
-include/facter/http/request.hpp
-include/facter/http/response.hpp
 include/facter/logging/logging.hpp
 include/facter/ruby/ruby.hpp
-include/facter/util/directory.hpp
-include/facter/util/environment.hpp
-include/facter/util/file.hpp
-include/facter/util/option_set.hpp
-include/facter/util/scope_exit.hpp
-include/facter/util/scoped_resource.hpp
 include/facter/util/string.hpp
 include/facter/version.h
 lib/libfacter.so
-lib/libfacter.so.3.0.2
+lib/libfacter.so.3.1.0
 lib/ruby/vendor_ruby/facter.rb
 man/man8/facter.8.gz
