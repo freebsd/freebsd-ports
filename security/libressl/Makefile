@@ -23,7 +23,13 @@ USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	install-strip
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
+.endif
+
 regression-test: build
 	cd ${WRKSRC} && ${MAKE} check
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
