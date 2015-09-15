@@ -1283,7 +1283,6 @@
     SUBDIR += py-xlwriter
     SUBDIR += py-xlwt
     SUBDIR += py-xml
-    SUBDIR += py-xmltools
     SUBDIR += py-xmltv
     SUBDIR += py-zope.app.i18n
     SUBDIR += py-zope.app.locales

@@ -7867,3 +7867,4 @@ devel/cloudabi-libc++abi||2015-09-12|Moved to the CloudABI Ports Collection
 devel/cloudabi-libunwind||2015-09-12|Moved to the CloudABI Ports Collection
 japanese/marumoji-fonts|japanese/font-marumoji|2015-09-13|Renamed
 www/asp-php||2015-09-13|Unmaintained upstream, generate unsupported php
+textproc/py-xmltools||2015-09-15|Remove port marked broken for six months: fetch failed
