@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	librenms
-PORTVERSION=	201506
+PORTVERSION=	201509
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.librenms.org/
 
@@ -46,8 +46,8 @@ RUN_DEPENDS+=	rrdtool:${PORTSDIR}/databases/rrdtool \
 		snmpget:${PORTSDIR}/net-mgmt/net-snmp \
 		bash:${PORTSDIR}/shells/bash
 
-OPTIONS_DEFINE=	APACHEMOD FPING IPMITOOL LIBVIRT MYSQLD NAGPLUGINS NMAP PYPOLLER WMIC
-OPTIONS_DEFAULT=	APACHEMOD FPING IPMITOOL LIBVIRT NAGPLUGINS NMAP PYPOLLER WMIC
+OPTIONS_DEFINE=	APACHEMOD FPING IPMITOOL LIBVIRT MYSQLD NAGPLUGINS NMAP PYPOLLER WMIC DOCS EXAMPLES
+OPTIONS_DEFAULT=	APACHEMOD FPING IPMITOOL LIBVIRT NAGPLUGINS NMAP PYPOLLER WMIC DOCS EXAMPLES
 APACHEMOD_DESC=	Use PHP with Apache 2.2+ module
 FPING_DESC=	Enable fping support ping monitoring
 IPMITOOL_DESC=	Enable support for monitoring hardware IPMI
@@ -65,29 +65,26 @@ WMIC_RUN_DEPENDS=	wmic:${PORTSDIR}/net-mgmt/wmi-client
 MYSQLD_USE=		MYSQL=server
 MYSQLD_USE_OFF=		MYSQL=client
 
-.include <bsd.port.options.mk>
-
 SUB_FILES+=	pkg-message
 SUB_LIST+=	PHP="${PHPBASE}/bin/php" PYTHON=${PYTHON_CMD}
 
 ROOT_FILES=	addhost.php adduser.php	alerts.php build-base.php build.sql \
-	       	billing-calculate.php callback.php check-errors.php \
+	       	billing-calculate.php callback.php \
 	       	check-services.php config_to_json.php daily.php daily.sh \
 	       	delhost.php discovery.php dist-pollers.php irc.php \
-	       	poll-billing.php poller.php poller-wrapper.py renamehost.php \
-		snmptrap.php syslog.php	validate.php
+	       	poll-billing.php poller.php poller-service.py poller-wrapper.py renamehost.php \
+		snmp-scan.php snmptrap.php syslog.php validate.php
 
-ROOT_DIRS=	contrib html includes lib mibs scripts sql-schema \
-	       	upgrade-scripts
+ROOT_DIRS=	contrib html includes lib mibs scripts sql-schema
 
 DOCS=		AUTHORS.md CHANGELOG CONTRIBUTING.md LICENSE.txt README.md
 PORTDOCS=	*
 PORTEXAMPLES=	snmp.conf.example snmpd.conf.example
 NO_ARCH=	yes
 
-.if ${PORT_OPTIONS:MAPACHEMOD} && !defined(PACKAGE_BUILDING)
-WANT_PHP_MOD=	yes
-USE_APACHE_RUN=	22+
+.if !defined(PACKAGE_BUILDING)
+APACHEMOD_VARS_ON=	WANT_PHP_MOD=yes
+APACHEMOD_USE=		APACHE_RUN=22+
 .else
 # Package builder doesn't create php5 with module
 WANT_PHP_WEB=	yes
@@ -113,21 +110,19 @@ do-install:
 # Ensure PHP and Python scripts are executable
 	@${FIND} ${STAGEDIR}/${WWWDIR} -type f -name '*.py' -or -type f -name \
 	       '*.php' -exec ${CHMOD} +x {} \;
-# Rename for @sample
 
-.if ${PORT_OPTIONS:MDOCS}
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}/${DOCSDIR}
 .endfor
 	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}/${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
 .for f in ${PORTEXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}/${EXAMPLESDIR}
 .endfor
-.endif
 
 post-install:
 	@${ECHO_CMD} "@owner ${WWWOWN}" >> ${TMPPLIST}
