@@ -11,7 +11,8 @@ COMMENT=	WYSIWYG GUI Designer and Code Generator for wxWidgets
 
 LICENSE=	GPLv2
 
-USES=		dos2unix gmake zip
+USES=		compiler:c++11-lib dos2unix gmake zip
+USE_CSTD=	c++11
 USE_LDCONFIG=	yes
 USE_WX=		3.0+
 WANT_UNICODE=	yes
