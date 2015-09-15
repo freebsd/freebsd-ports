@@ -12,6 +12,10 @@ COMMENT=	Verify and repair Xbox 360 backup images
 
 BUILD_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
+BROKEN_ia64=	does not compile
+BROKEN_powerpc=	does not compile
+BROKEN_sparc64=	does not compile
+
 PLIST_FILES=	bin/abgx360
 
 GNU_CONFIGURE=	yes
@@ -19,16 +23,4 @@ GNU_CONFIGURE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/abgx360 ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 900000
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-abgx360.c
-.endif
-
-.if ${OSVERSION} > 900000
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64
-.endif
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
