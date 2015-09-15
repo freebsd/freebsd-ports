@@ -3,6 +3,7 @@
 
 PORTNAME=	ecl
 PORTVERSION=	15.3.7
+PORTREVISION=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF/${PORTNAME}s/${PORTNAME}s/15.3/
 
@@ -33,53 +34,33 @@ DFFI_DESC=	Dynamic foreign-function support
 OPTIONS_SUB=	yes
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
-.include <bsd.port.pre.mk>
+BROKEN_ia64=	does not compile
+BROKEN_sparc64=	does not compile
 
-.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ${ARCH}
-.endif
+ASDF_CONFIGURE_ON=	--with-asdf=yes
+ASDF_CONFIGURE_OFF=	--with-asdf=no
 
-.if ${PORT_OPTIONS:MASDF}
-CONFIGURE_ARGS+=--with-asdf=yes
-.else
-CONFIGURE_ARGS+=--with-asdf=no
-.endif
+CLX_USE=		XORG=x11
+CLX_CONFIGURE_ON=	--with-clx=yes
+CLX_CONFIGURE_OFF=	--with-clx=no
 
-.if ${PORT_OPTIONS:MCLX}
-USE_XORG=	x11
-CONFIGURE_ARGS+=--with-clx=yes
-.else
-CONFIGURE_ARGS+=--with-clx=no
-.endif
+SOCKETS_CONFIGURE_ON=	--with-tcp=yes
+SOCKETS_CONFIGURE_OFF=	--with-tcp=no
 
-.if ${PORT_OPTIONS:MSOCKETS}
-CONFIGURE_ARGS+=--with-tcp=yes
-.else
-CONFIGURE_ARGS+=--with-tcp=no
-.endif
+DFFI_LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
+DFFI_CONFIGURE_ON=	--with-dffi=system
+DFFI_CONFIGURE_OFF=	--with-dffi=no
 
-.if ${PORT_OPTIONS:MDFFI}
-CONFIGURE_ARGS+=--with-dffi=system
-LIB_DEPENDS+=	libffi.so:${PORTSDIR}/devel/libffi
-.else
-CONFIGURE_ARGS+=--with-dffi=no
-.endif
+THREADS_CONFIGURE_ON=	--enable-threads=yes
+THREADS_LDFLAGS=	-lpthread
+THREADS_LIB_DEPENDS=	libgc-threaded.so:${PORTSDIR}/devel/boehm-gc-threaded
+THREADS_CONFIGURE_OFF=	--enable-threads=no
+THREADS_LIB_DEPENDS_OFF=	libgc.so:${PORTSDIR}/devel/boehm-gc
 
-.if ${PORT_OPTIONS:MTHREADS}
-CONFIGURE_ARGS+=--enable-threads=yes
-LDFLAGS+=	-lpthread
-LIB_DEPENDS+=	libgc-threaded.so:${PORTSDIR}/devel/boehm-gc-threaded
-.else
-CONFIGURE_ARGS+=--enable-threads=no
-LIB_DEPENDS+=	libgc.so:${PORTSDIR}/devel/boehm-gc
-.endif
-
-.if ${PORT_OPTIONS:MTHREADS}
-post-patch:
+post-patch-THREADS-on:
 	@${REINPLACE_CMD} -e 's|-lgc|-lgc-threaded|' ${WRKSRC}/src/configure
-.endif
 
 post-install:
 	${RMDIR} ${STAGEDIR}${PREFIX}/include/ecl/gc/private
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
