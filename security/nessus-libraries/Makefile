@@ -27,7 +27,11 @@ CONFIGURE_ARGS+=	--enable-bpf-sharing
 .endif
 USES=		bison libtool
 USE_LDCONFIG=	YES
+USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/nessus-libraries
+
+.include <bsd.port.pre.mk>
+CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 
 .if ! defined(NESSUS_CLIENT_ONLY)
 pre-everything::
@@ -45,4 +49,4 @@ pre-everything::
 	fi
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
