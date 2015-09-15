@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seaview
-PORTVERSION=	4.5.4.4
+PORTVERSION=	4.5.4.6
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/seaview/archive/
@@ -37,8 +37,8 @@ DESKTOP_ENTRIES="SeaView" "" "${PREFIX}/share/pixmaps/seaview.xpm" "seaview" \
 
 post-patch:
 	${REINPLACE_CMD} -e \
-		's|^\(CC\) |#\1 | ; \
-		 s|^\(CXX\) |#\1 |' ${WRKSRC}/Makefile
+		's|^\(CC\) |#\1 | ; s|-ldl || ; \
+		s|^\(CXX\) |#\1 |' ${WRKSRC}/Makefile
 
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} seaview \
