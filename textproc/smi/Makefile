@@ -3,6 +3,7 @@
 
 PORTNAME=	smi
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	textproc www
 MASTER_SITES=	http://bsdforge.com/projects/source/textproc/${PORTNAME}/
 
@@ -20,10 +21,7 @@ PLIST_FILES=	bin/smi man/man1/smi.1.gz
 USES=		tar:xz
 
 post-patch:
-	${REINPLACE_CMD} -e 's|^CC = .*|CC = ${CC}|' \
-			 -e 's|^PREFIX = .*|PREFlX = ${PREFIX}|' \
-			 -e 's|^MANPREFIX = .*|MANPREFIX = ${MANPREFIX}|' \
-			 ${WRKSRC}/config.mk
+	${REINPLACE_CMD} -e 's|^CC = .*|CC = ${CC}|' ${WRKSRC}/config.mk
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/smi ${STAGEDIR}${PREFIX}/bin
