@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	renpy
-PORTVERSION=	6.99.5
+PORTVERSION=	6.99.6
 DISTVERSIONSUFFIX=-sdk
-PORTREVISION=	1
 CATEGORIES=	devel games
 MASTER_SITES=	http://www.renpy.org/dl/${PORTVERSION}/
 
@@ -16,14 +15,14 @@ LICENSE_NAME_DejaVu=	Bitstream Vera and Arev fonts license
 LICENSE_FILE_DejaVu=	${WRKSRC}/renpy/common/DejaVuSans.txt
 LICENSE_PERMS_DejaVu=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game_sdl2>=6.99.5:${PORTSDIR}/devel/py-game_sdl2 \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game_sdl2>0:${PORTSDIR}/devel/py-game_sdl2 \
 		cython:${PORTSDIR}/lang/cython
 LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi \
 		libGLEW.so:${PORTSDIR}/graphics/glew \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
 		libfreetype.so:${PORTSDIR}/print/freetype2
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game_sdl2>=6.99.5:${PORTSDIR}/devel/py-game_sdl2
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game_sdl2>=6.99.6:${PORTSDIR}/devel/py-game_sdl2
 
 # Upstream tends to reroll distfiles before moving under /release/
 PORTSCOUT=	site:http://www.renpy.org/dl/release/
