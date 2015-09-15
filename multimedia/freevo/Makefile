@@ -3,7 +3,7 @@
 
 PORTNAME=	freevo
 PORTVERSION=	1.9.0
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/Freevo%20releases/${PORTVERSION}
 
@@ -17,7 +17,6 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 		aumix:${PORTSDIR}/audio/aumix \
 		tv_cat:${PORTSDIR}/textproc/p5-xmltv \
 		${PYTHON_PKGNAMEPREFIX}zope.interface>=3.3.0_1:${PORTSDIR}/devel/py-zope.interface \
-		${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml \
 		${PYTHON_SITELIBDIR}/kaa/__init__.py:${PORTSDIR}/multimedia/py-kaa-base \
 		${PYTHON_SITELIBDIR}/kaa/imlib2/__init__.py:${PORTSDIR}/multimedia/py-kaa-imlib2 \
 		${PYTHON_SITELIBDIR}/kaa/metadata/__init__.py:${PORTSDIR}/multimedia/py-kaa-metadata \
@@ -38,7 +37,8 @@ SUB_LIST+=	PYTHON_VERSION=${PYTHON_DEFAULT_VERSION} \
 		FREEVO_HOME=${FREEVO_HOME}
 SUB_FILES=	pkg-message pkg-deinstall
 
-USES=		python twisted:web
+NO_ARCH=	yes
+USES=		python:2 twisted:web
 USE_PYTHON=	distutils noegginfo
 PYDISTUTILS_INSTALLNOSINGLE=	yes
 PYDISTUTILS_SETUP=	${PYSETUP}
