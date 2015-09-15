@@ -1,5 +1,5 @@
---- native/image/png_load.cpp.orig	2015-02-23 23:22:58 UTC
-+++ native/image/png_load.cpp
+--- ext/native/image/png_load.cpp.orig	2015-09-06 20:37:59 UTC
++++ ext/native/image/png_load.cpp
 @@ -5,7 +5,7 @@
  #ifdef USING_QT_UI
  #include <QtGui/QImage>
