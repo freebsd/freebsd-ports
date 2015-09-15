@@ -1,8 +1,0 @@
---- CMakeLists.txt.orig	2015-07-23 12:50:51 UTC
-+++ CMakeLists.txt
-@@ -169,4 +169,4 @@ endif()
- add_test(NAME "facter\\ smoke" COMMAND facter)
- 
- # Install the man page
--install(FILES ${PROJECT_SOURCE_DIR}/man/man8/facter.8 DESTINATION share/man/man8/)
-+install(FILES ${PROJECT_SOURCE_DIR}/man/man8/facter.8 DESTINATION man/man8/)
