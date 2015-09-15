@@ -65,7 +65,7 @@ include/dnscore/message_verify_rrsig.h
 include/dnscore/mt_output_stream.h
 include/dnscore/mutex.h
 include/dnscore/network.h
-include/dnscore/nsid.h
+%%NSID%%include/dnscore/nsid.h
 include/dnscore/output_stream.h
 include/dnscore/pace.h
 include/dnscore/packet_reader.h
@@ -163,7 +163,6 @@ include/dnsdb/zdb-zone-reader-filter.h
 include/dnsdb/zdb.h
 include/dnsdb/zdb_cache.h
 include/dnsdb/zdb_config.h
-include/dnsdb/zdb_dnsname.h
 include/dnsdb/zdb_error.h
 include/dnsdb/zdb_icmtl.h
 include/dnsdb/zdb_listener.h
