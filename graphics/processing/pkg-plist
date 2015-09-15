@@ -3388,3 +3388,8 @@ libexec/processing/modes/android/theme/tab-sel-mid.gif
 libexec/processing/tools/Mangler/src/Mangler.java
 libexec/processing/tools/Mangler/make.sh
 libexec/processing/tools/howto.txt
+@dir libexec/processing/tools/Mangler/tool
+@dir libexec/processing/tools/Mangler/bin
+@dir libexec/processing/modes/java/reference/libraries/pdf/images
+@dir libexec/processing/modes/java/reference/img/reference
+@dir libexec/processing/modes/java/application/template.app/Contents/Resources/Java
