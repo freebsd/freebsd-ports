@@ -58,6 +58,56 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f4ce64c2-5bd4-11e5-9040-3c970e169bc2">
+    <topic>wordpress -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<range><lt>4.3.1,1</lt></range>
+      </package>
+      <package>
+	<name>de-wordpress</name>
+	<name>ja-wordpress</name>
+	<name>ru-wordpress</name>
+	<name>zh-wordpress-zh_CH</name>
+	<name>zh-wordpress-zh_TW</name>
+	<range><lt>4.3.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Samuel Sidler reports:</p>
+	<blockquote cite="https://wordpress.org/news/2015/09/wordpress-4-3-1/">
+	  <p>WordPress 4.3.1 is now available. This is a security
+	    release for all previous versions and we strongly
+	    encourage you to update your sites immediately.</p>
+	  <ul>
+	    <li>WordPress versions 4.3 and earlier are vulnerable
+	      to a cross-site scripting vulnerability when processing
+	      shortcode tags (CVE-2015-5714). Reported by Shahar Tal
+	      and Netanel Rubin of <a href="http://checkpoint.com/">Check Point</a>.</li>
+	    <li>A separate cross-site scripting vulnerability was found
+	      in the user list table. Reported by Ben Bidner of the
+	      WordPress security team.</li>
+	    <li>Finally, in certain cases, users without proper
+	      permissions could publish private posts and make
+	      them sticky (CVE-2015-5715). Reported by Shahar Tal
+	      and Netanel Rubin of <a href="http://checkpoint.com/">Check Point</a>.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5714</cvename>
+      <cvename>CVE-2015-5715</cvename>
+      <url>https://wordpress.org/news/2015/09/wordpress-4-3-1/</url>
+    </references>
+    <dates>
+      <discovery>2015-09-15</discovery>
+      <entry>2015-09-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ea893f06-5a92-11e5-98c0-20cf30e32f6d">
     <topic>Bugzilla security issues</topic>
     <affects>
