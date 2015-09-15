@@ -11,9 +11,9 @@
 .if !defined(_INCLUDE_USES_LOCALBASE_MK)
 _INCLUDE_USES_LOCALBASE_MK=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-CFLAGS+=	-I${LOCALBASE}/include
-CXXFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-isystem ${LOCALBASE}/include
+CFLAGS+=	-isystem ${LOCALBASE}/include
+CXXFLAGS+=	-isystem ${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 # Use CONFIGURE_ENV instead of CMAKE_ARGS because devel/cmake itself also needs
