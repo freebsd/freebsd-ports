@@ -44,7 +44,7 @@ TODAY=`date -u -v+0d +%Y-%m-%d`
 
 SED="sed -i .orig -E"
 # use ~/.ssh/config to set up the desired username if different than $LOGNAME
-SVNREPO=${SVNREPO:-svn+ssh://svn.FreeBSD.org/ports}
+SVNREPO=${SVNREPO:-svn+ssh://repo.FreeBSD.org/ports}
 
 if ! CDIFF=$(which cdiff) ; then
 	CDIFF=${PAGER}
