@@ -1,6 +1,6 @@
---- src/abgx360.c.orig	2012-05-07 10:23:05.997665157 -0400
-+++ src/abgx360.c	2012-05-07 10:26:22.824665331 -0400
-@@ -2220,82 +2220,8 @@
+--- src/abgx360.c.orig	2012-01-03 07:29:31 UTC
++++ src/abgx360.c
+@@ -2220,82 +2220,8 @@ int sendcdb(int direction, unsigned char
  
  int sendcdb(int direction, unsigned char *dataBuffer, unsigned long dataBufferSize,
              unsigned char *cdb, unsigned char cdbLen, bool checkreturnlength) {
