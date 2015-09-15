@@ -33,31 +33,24 @@ OPTIONS_DEFINE=	DESKTOP_FILES
 OPTIONS_DEFAULT=DESKTOP_FILES
 DESKTOP_FILES_DESC=Install menu entries (lots of them)
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDESKTOP_FILES}
-. for f in ${PUZZLE_LIST}
-PLIST_FILES+=	share/pixmaps/sgt-${f}.png
-
-DESKTOP_ENTRIES+=\
+.for f in ${PUZZLE_LIST}
+DESKTOP_FILES_PLIST_FILES+=	share/pixmaps/sgt-${f}.png
+DESKTOP_FILES_DESKTOP_ENTRIES+=\
 		"${f}" \
 		"${f} puzzle game" \
 		"sgt-${f}" \
 		"sgt-${f}" \
 		"Game;LogicGame;" \
 		""
-. endfor
-.endif
+.endfor
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/configure.ac \
 		${WRKSRC}/configure
 
-.if ${PORT_OPTIONS:MDESKTOP_FILES}
-post-install:
-. for f in ${PUZZLE_LIST}
+post-install-DESKTOP_FILES-on:
+.for f in ${PUZZLE_LIST}
 	${INSTALL_DATA} ${WRKSRC}/icons/${f}-48d24.png ${STAGEDIR}${PREFIX}/share/pixmaps/sgt-${f}.png
-. endfor
-.endif
+.endfor
 
 .include <bsd.port.mk>
