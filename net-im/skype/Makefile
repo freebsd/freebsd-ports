@@ -42,7 +42,7 @@ USE_LINUX_APPS+=dri
 .endif
 
 .if ${PORT_OPTIONS:MVIDEO}
-RUN_DEPENDS+=	webcamd>0:${PORTSDIR}/multimedia/webcamd
+RUN_DEPENDS+=	webcamd:${PORTSDIR}/multimedia/webcamd
 USE_LINUX_APPS+=libv4l
 SUB_LIST+=	VIDEO="LD_PRELOAD=/usr/lib/libv4l/v4l2convert.so "
 .else
