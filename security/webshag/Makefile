@@ -2,6 +2,7 @@
 
 PORTNAME=	webshag
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=	http://www.scrt.ch/outils/webshag/
 DISTNAME=	ws110
