@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	h2o
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.5
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	dch@skunkwerks.at
@@ -14,7 +13,8 @@ LICENSE=	MIT
 
 USE_GITHUB=	yes
 
-USES=		cmake compiler:c11 shebangfix
+USES=		cmake compiler:c11 perl5 shebangfix
+USE_PERL5=	run
 SHEBANG_FILES=	share/h2o/start_server
 
 PORTDOCS=	README.md
@@ -39,6 +39,13 @@ USE_RC_SUBR=	${PORTNAME}
 
 CMAKE_ARGS+=	-DWITH_BUNDLED_SSL=OFF -DEXTRA_LIBRARIES=OFF
 USE_OPENSSL_PORT=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|exec perl|exec ${LOCALBASE}/bin/perl|' \
+			${WRKSRC}/share/h2o/annotate-backtrace-symbols \
+			${WRKSRC}/share/h2o/fetch-ocsp-response \
+			${WRKSRC}/share/h2o/kill-on-close \
+			${WRKSRC}/share/h2o/start_server
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR} \
