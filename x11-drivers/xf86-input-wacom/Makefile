@@ -19,6 +19,7 @@ USE_XORG=	xrandr xinerama
 XORG_CAT=	driver
 USE_RC_SUBR=	wacom
 SUB_FILES=	pkg-message
+CONFIGURE_ENV=	UDEV_CFLAGS=" " UDEV_LIBS=" "
 CONFIGURE_ARGS=	--without-systemd-unit-dir \
 		--without-udev-rules-dir \
 		--without-doxygen
@@ -32,7 +33,7 @@ TEST_CONFIGURE_ENABLE=unit-tests
 TEST_ALL_TARGET=check
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/as_fn_error.*udev/${TRUE} &/' \
+	@${REINPLACE_CMD} \
 		-e 's/dir=.*xorg-server/& \
 			--define-variable prefix="$$prefix"/' \
 		${WRKSRC}/configure
