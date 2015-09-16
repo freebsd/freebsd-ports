@@ -25,6 +25,6 @@ USES+=		perl5
 USE_PERL5=	configure
 
 PLIST_FILES=	bin/mytop \
-		man/man1/mytop.1.gz
+		${SITE_MAN1}/mytop.1.gz
 
 .include <bsd.port.mk>

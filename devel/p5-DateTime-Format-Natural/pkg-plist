@@ -14,7 +14,7 @@ bin/dateparse
 %%SITE_PERL%%/DateTime/Format/Natural/Utils.pm
 %%SITE_PERL%%/DateTime/Format/Natural/Wrappers.pm
 %%SITE_PERL%%/DateTime/Format/Natural/Duration/Checks.pm
-man/man1/dateparse.1.gz
+%%PERL5_MAN1%%/dateparse.1.gz
 %%PERL5_MAN3%%/DateTime::Format::Natural.3.gz
 %%PERL5_MAN3%%/DateTime::Format::Natural::Calc.3.gz
 %%PERL5_MAN3%%/DateTime::Format::Natural::Compat.3.gz

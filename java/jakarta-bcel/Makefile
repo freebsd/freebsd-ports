@@ -13,6 +13,7 @@ COMMENT=	Library for generating Java bytecode
 NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
+NO_ARCH=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/bcel.jar
 
@@ -24,7 +25,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.jar \
 	    ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/docs && ${FIND} . -print | \
-	    ${CPIO} -pdmu -R${DOCOWN}:${DOCGRP} ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} "-not -empty")
 
 .include <bsd.port.mk>

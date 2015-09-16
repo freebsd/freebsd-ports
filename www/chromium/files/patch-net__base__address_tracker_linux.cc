@@ -1,5 +1,5 @@
---- net/base/address_tracker_linux.cc.orig	2015-04-19 20:31:08.000000000 +0200
-+++ net/base/address_tracker_linux.cc	2015-04-19 20:36:27.000000000 +0200
+--- net/base/address_tracker_linux.cc.orig	2015-08-22 15:01:56.000000000 -0400
++++ net/base/address_tracker_linux.cc	2015-09-03 10:45:50.411703000 -0400
 @@ -5,7 +5,9 @@
  #include "net/base/address_tracker_linux.h"
  
@@ -10,7 +10,7 @@
  #include <sys/ioctl.h>
  
  #include "base/files/scoped_file.h"
-@@ -24,6 +26,7 @@
+@@ -39,6 +41,7 @@
  bool GetAddress(const struct nlmsghdr* header,
                  IPAddressNumber* out,
                  bool* really_deprecated) {
@@ -18,7 +18,7 @@
    if (really_deprecated)
      *really_deprecated = false;
    const struct ifaddrmsg* msg =
-@@ -76,6 +79,9 @@
+@@ -91,6 +94,9 @@
      return false;
    out->assign(address, address + address_length);
    return true;
@@ -28,7 +28,7 @@
  }
  
  }  // namespace
-@@ -128,6 +134,7 @@
+@@ -146,6 +152,7 @@
  }
  
  void AddressTrackerLinux::Init() {
@@ -36,7 +36,7 @@
    netlink_fd_ = socket(AF_NETLINK, SOCK_RAW, NETLINK_ROUTE);
    if (netlink_fd_ < 0) {
      PLOG(ERROR) << "Could not create NETLINK socket";
-@@ -215,6 +222,10 @@
+@@ -233,6 +240,10 @@
        return;
      }
    }
@@ -47,7 +47,7 @@
  }
  
  void AddressTrackerLinux::AbortAndForceOnline() {
-@@ -250,6 +261,7 @@
+@@ -277,6 +288,7 @@
  void AddressTrackerLinux::ReadMessages(bool* address_changed,
                                         bool* link_changed,
                                         bool* tunnel_changed) {
@@ -55,7 +55,7 @@
    *address_changed = false;
    *link_changed = false;
    *tunnel_changed = false;
-@@ -276,6 +288,7 @@
+@@ -303,6 +315,7 @@
    }
    if (*link_changed || *address_changed)
      UpdateCurrentConnectionType();
@@ -63,7 +63,7 @@
  }
  
  void AddressTrackerLinux::HandleMessage(char* buffer,
-@@ -283,6 +296,7 @@
+@@ -310,6 +323,7 @@
                                          bool* address_changed,
                                          bool* link_changed,
                                          bool* tunnel_changed) {
@@ -71,7 +71,7 @@
    DCHECK(buffer);
    for (struct nlmsghdr* header = reinterpret_cast<struct nlmsghdr*>(buffer);
         NLMSG_OK(header, length);
-@@ -365,6 +379,7 @@
+@@ -406,6 +420,7 @@
          break;
      }
    }
@@ -79,7 +79,7 @@
  }
  
  void AddressTrackerLinux::OnFileCanReadWithoutBlocking(int fd) {
-@@ -391,8 +406,12 @@
+@@ -432,8 +447,12 @@
  
  bool AddressTrackerLinux::IsTunnelInterface(int interface_index) const {
    // Linux kernel drivers/net/tun.c uses "tun" name prefix.

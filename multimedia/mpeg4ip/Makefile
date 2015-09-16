@@ -51,7 +51,7 @@ PORTDOCS=	MAINREADME.html MP4LIVE_INTERNALS.html MPEG4IP_Guide.pdf \
 ## Auto detect possible extensions
 ###
 # esound
-.if ${HAVE_GNOME:Mesound}!="" && empty(PORT_OPTIONS:MESOUND)
+.if exists(${LOCALBASE}/bin/esd-config) && empty(PORT_OPTIONS:MESOUND)
 PORT_OPTIONS+=	ESOUND
 .endif
 # nas

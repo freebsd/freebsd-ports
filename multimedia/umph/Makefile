@@ -21,6 +21,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_PERL5=	configure
 USES=		perl5
 
-PLIST_FILES=	bin/umph man/man1/umph.1.gz
+PLIST_FILES=	bin/umph ${SITE_MAN1}/umph.1.gz
 
 .include <bsd.port.mk>

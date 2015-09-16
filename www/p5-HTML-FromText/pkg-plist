@@ -1,4 +1,4 @@
 bin/text2html
 %%SITE_PERL%%/HTML/FromText.pm
-man/man1/text2html.1.gz
+%%PERL5_MAN1%%/text2html.1.gz
 %%PERL5_MAN3%%/HTML::FromText.3.gz

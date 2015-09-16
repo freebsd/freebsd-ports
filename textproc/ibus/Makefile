@@ -59,7 +59,7 @@ GTK2_CONFIGURE_ENABLE=	gtk2
 
 GTK3_USE=		GNOME=gtk30 XORG=x11
 GTK3_CONFIGURE_ENABLE=	gtk3 libnotify
-GTK3_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+GTK3_LIB_DEPENDS=	libnotify.so.4:${PORTSDIR}/devel/libnotify
 GTK3_LIBS=		-lX11
 
 VALA_BUILD_DEPENDS=	vala>=0.20:${PORTSDIR}/lang/vala

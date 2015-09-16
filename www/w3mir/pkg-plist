@@ -3,8 +3,8 @@ bin/w3mir
 %%SITE_PERL%%/htmlop.pm
 %%SITE_PERL%%/w3http.pm
 %%SITE_PERL%%/w3pdfuri.pm
-man/man1/w3mfix.1.gz
-man/man1/w3mir.1.gz
+%%PERL5_MAN1%%/w3mfix.1.gz
+%%PERL5_MAN1%%/w3mir.1.gz
 share/doc/w3mir/Artistic
 share/doc/w3mir/README
 share/doc/w3mir/example.cfg

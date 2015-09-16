@@ -58,6 +58,173 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f4ce64c2-5bd4-11e5-9040-3c970e169bc2">
+    <topic>wordpress -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<range><lt>4.3.1,1</lt></range>
+      </package>
+      <package>
+	<name>de-wordpress</name>
+	<name>ja-wordpress</name>
+	<name>ru-wordpress</name>
+	<name>zh-wordpress-zh_CN</name>
+	<name>zh-wordpress-zh_TW</name>
+	<range><lt>4.3.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Samuel Sidler reports:</p>
+	<blockquote cite="https://wordpress.org/news/2015/09/wordpress-4-3-1/">
+	  <p>WordPress 4.3.1 is now available. This is a security
+	    release for all previous versions and we strongly
+	    encourage you to update your sites immediately.</p>
+	  <ul>
+	    <li>WordPress versions 4.3 and earlier are vulnerable
+	      to a cross-site scripting vulnerability when processing
+	      shortcode tags (CVE-2015-5714). Reported by Shahar Tal
+	      and Netanel Rubin of <a href="http://checkpoint.com/">Check Point</a>.</li>
+	    <li>A separate cross-site scripting vulnerability was found
+	      in the user list table. Reported by Ben Bidner of the
+	      WordPress security team.</li>
+	    <li>Finally, in certain cases, users without proper
+	      permissions could publish private posts and make
+	      them sticky (CVE-2015-5715). Reported by Shahar Tal
+	      and Netanel Rubin of <a href="http://checkpoint.com/">Check Point</a>.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5714</cvename>
+      <cvename>CVE-2015-5715</cvename>
+      <url>https://wordpress.org/news/2015/09/wordpress-4-3-1/</url>
+    </references>
+    <dates>
+      <discovery>2015-09-15</discovery>
+      <entry>2015-09-15</entry>
+      <modified>2015-09-15</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="ea893f06-5a92-11e5-98c0-20cf30e32f6d">
+    <topic>Bugzilla security issues</topic>
+    <affects>
+      <package>
+	<name>bugzilla44</name>
+	<range><lt>4.4.10</lt></range>
+      </package>
+      <package>
+	<name>bugzilla50</name>
+	<range><lt>5.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Bugzilla Security Advisory</p>
+	<blockquote cite="https://www.bugzilla.org/security/4.2.14/">
+	  <p>Login names (usually an email address) longer than 127
+	    characters are silently truncated in MySQL which could
+	    cause the domain name of the email address to be
+	    corrupted. An attacker could use this vulnerability to
+	    create an account with an email address different from the
+	    one originally requested. The login name could then be
+	    automatically added to groups based on the group's regular
+	  expression setting.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4499</cvename>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=1202447</url>
+    </references>
+    <dates>
+      <discovery>2015-09-10</discovery>
+      <entry>2015-09-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4910d161-58a4-11e5-9ad8-14dae9d210b8">
+    <topic>openldap -- denial of service</topic>
+    <affects>
+      <package>
+	<name>openldap-server</name>
+	<range><lt>2.4.42_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Denis Andzakovic reports:</p>
+	<blockquote cite="http://www.openldap.org/its/index.cgi/Software%20Bugs?id=8240">
+	  <p>By sending a crafted packet, an attacker may cause the
+	    OpenLDAP server to reach an assert(9 9 statement, crashing the daemon.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openldap.org/its/index.cgi/Software%20Bugs?id=8240</url>
+      <url>http://www.openldap.org/devel/gitweb.cgi?p=openldap.git;a=commit;h=6fe51a9ab04fd28bbc171da3cf12f1c1040d6629</url>
+      <cvename>CVE-2015-6908</cvename>
+    </references>
+    <dates>
+      <discovery>2015-09-09</discovery>
+      <entry>2015-09-12</entry>
+      <modified>2015-09-13</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="a35f415d-572a-11e5-b0a4-f8b156b6dcc8">
+    <topic>vorbis-tools, opus-tools -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>vorbis-tools</name>
+	<range><lt>1.4.0_10,3</lt></range>
+      </package>
+      <package>
+	<name>opus-tools</name>
+	<range><lt>0.1.9_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Paris Zoumpouloglou reports:</p>
+	<blockquote cite="https://trac.xiph.org/ticket/2136">
+	  <p>I discovered an integer overflow issue in oggenc,
+	    related to the number of channels in the input WAV file.
+	    The issue triggers an out-of-bounds memory access which
+	    causes oggenc to crash.</p>
+	</blockquote>
+	<p>Paris Zoumpouloglou reports:</p>
+	<blockquote cite="https://trac.xiph.org/ticket/2136">
+	  <p>A crafted WAV file with number of channels set to 0
+	    will cause oggenc to crash due to a division by zero
+	    issue.</p>
+	</blockquote>
+	<p>pengsu reports:</p>
+	<blockquote cite="https://trac.xiph.org/ticket/2212">
+	  <p>I discovered an buffer overflow issue in oggenc/audio.c
+	    when it tries to open invalid aiff file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/202941</freebsdpr>
+      <url>https://trac.xiph.org/ticket/2136</url>
+      <cvename>CVE-2014-9639</cvename>
+      <url>https://trac.xiph.org/ticket/2137</url>
+      <cvename>CVE-2014-9638</cvename>
+      <url>https://trac.xiph.org/ticket/2212</url>
+      <cvename>CVE-2015-6749</cvename>
+    </references>
+    <dates>
+      <discovery>2015-08-08</discovery>
+      <entry>2015-09-09</entry>
+      <modified>2015-09-09</modified>
+    </dates>
+  </vuln>
+
   <vuln vid="d76961da-56f6-11e5-934b-002590263bf5">
     <topic>pgbouncer -- failed auth_query lookup leads to connection as auth_user</topic>
     <affects>
@@ -2327,7 +2494,7 @@ Notes:
 	<name>de-wordpress</name>
 	<name>ja-wordpress</name>
 	<name>ru-wordpress</name>
-	<name>zh-wordpress-zh_CH</name>
+	<name>zh-wordpress-zh_CN</name>
 	<name>zh-wordpress-zh_TW</name>
 	<range><lt>4.2.4</lt></range>
       </package>
@@ -2354,7 +2521,7 @@ Notes:
     <dates>
       <discovery>2015-08-04</discovery>
       <entry>2015-08-06</entry>
-      <modified>2015-08-09</modified>
+      <modified>2015-09-15</modified>
     </dates>
   </vuln>
 
@@ -2828,7 +2995,7 @@ Notes:
 	<name>de-wordpress</name>
 	<name>ja-wordpress</name>
 	<name>ru-wordpress</name>
-	<name>zh-wordpress-zh_CH</name>
+	<name>zh-wordpress-zh_CN</name>
 	<name>zh-wordpress-zh_TW</name>
 	<range><lt>4.2.3</lt></range>
       </package>
@@ -2853,7 +3020,7 @@ Notes:
     <dates>
       <discovery>2015-07-23</discovery>
       <entry>2015-07-23</entry>
-      <modified>2015-07-24</modified>
+      <modified>2015-09-15</modified>
     </dates>
   </vuln>
 
@@ -8720,7 +8887,7 @@ Notes:
 	<range><lt>4.2.2</lt></range>
       </package>
       <package>
-	<name>zh-wordpress-zh_CH</name>
+	<name>zh-wordpress-zh_CN</name>
 	<range><lt>4.2.2</lt></range>
       </package>
       <package>
@@ -8759,6 +8926,7 @@ Notes:
     <dates>
       <discovery>2015-05-07</discovery>
       <entry>2015-05-07</entry>
+      <modified>2015-09-15</modified>
     </dates>
   </vuln>
 
@@ -8782,7 +8950,7 @@ Notes:
 	<range><lt>4.2.1</lt></range>
       </package>
       <package>
-	<name>zh-wordpress-zh_CH</name>
+	<name>zh-wordpress-zh_CN</name>
 	<range><lt>4.2.1</lt></range>
       </package>
       <package>
@@ -8810,6 +8978,7 @@ Notes:
     <dates>
       <discovery>2015-04-27</discovery>
       <entry>2015-05-07</entry>
+      <modified>2015-09-15</modified>
     </dates>
   </vuln>
 

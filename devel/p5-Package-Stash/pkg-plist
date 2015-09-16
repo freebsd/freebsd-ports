@@ -4,4 +4,4 @@ bin/package-stash-conflicts
 %%SITE_PERL%%/Package/Stash.pm
 %%SITE_PERL%%/Package/Stash/Conflicts.pm
 %%SITE_PERL%%/Package/Stash/PP.pm
-man/man1/package-stash-conflicts.1.gz
+%%PERL5_MAN1%%/package-stash-conflicts.1.gz

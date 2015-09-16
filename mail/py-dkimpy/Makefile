@@ -10,7 +10,11 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@caomhin.org
 COMMENT=	Python library for DKIM email signing and verification
 
+LICENSE=	ZLIB
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dns>=0:${PORTSDIR}/dns/py-dns
+
+NO_ARCH=	yes
 
 USES=		python:2
 USE_PYTHON=	autoplist distutils

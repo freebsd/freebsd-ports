@@ -3,14 +3,18 @@
 
 PORTNAME=	2d-rewriter
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	science
-MASTER_SITES=	http://www.crowdeduniverse.org/distfiles/
+#MASTER_SITES=	http://www.crowdeduniverse.org/distfiles/
 
 MAINTAINER=	iserikov@acm.org
 COMMENT=	Cellular automata simulator
 
 USES=		imake
 USE_XORG=	x11 xext
+USE_GITHUB=	yes
+GH_ACCOUNT=	iserikov
+GH_PROJECT=	2d-rewriter
 
 OPTIONS_DEFINE=	EXAMPLES
 

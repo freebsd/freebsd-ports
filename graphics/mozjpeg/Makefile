@@ -4,6 +4,7 @@
 PORTNAME=	mozjpeg
 PORTVERSION=	3.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	horia@racoviceanu.com

@@ -18,7 +18,7 @@ CONFIGURE_ARGS=	--with-cxxflags="${CXXFLAGS}"
 CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	LIRC SIDPLAY VORBIS DOCS
+OPTIONS_DEFINE=	LIRC NAS SIDPLAY VORBIS DOCS ESOUND
 OPTIONS_DEFAULT=	SIDPLAY VORBIS
 SIDPLAY_DESC=	Sidplayer support
 
@@ -40,13 +40,8 @@ NAS_CONFIGURE_WITH=	nas
 NAS_LIB_DEPENDS=	libaudio.so:${PORTSDIR}/audio/nas
 NAS_LDFLAGS=		-laudio
 
-.include <bsd.port.pre.mk>
-.if ${HAVE_GNOME:Mesound} != ""
-USE_GNOME+=		esound
-CONFIGURE_ARGS+=	--with-esd
-.else
-CONFIGURE_ARGS+=	--without-esd
-.endif
+ESOUND_CONFIGURE_WITH=	esd
+ESOUND_GNOME=		esound
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/share/mp3blaster/win2koi.tbl|${DATADIR}/charmap/win2koi.tbl|' \
@@ -58,4 +53,4 @@ post-install-DOCS-on:
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

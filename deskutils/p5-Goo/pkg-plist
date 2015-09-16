@@ -283,5 +283,5 @@ bin/goo.pl
 %%SITE_PERL%%/Goo/WebDBLite.pm
 %%SITE_PERL%%/Goo/Zone.pm
 %%SITE_PERL%%/Goo/test.pl
-man/man1/goo.1.gz
-man/man1/goo.pl.1.gz
+%%PERL5_MAN1%%/goo.1.gz
+%%PERL5_MAN1%%/goo.pl.1.gz

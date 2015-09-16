@@ -1,6 +1,6 @@
---- config.php.default.orig	2015-06-15 14:48:46 UTC
+--- config.php.default.orig	2015-09-06 16:13:08 UTC
 +++ config.php.default
-@@ -14,7 +14,7 @@ $config['memcached']['host']    = "local
+@@ -15,7 +15,7 @@ $config['memcached']['host']    = "local
  $config['memcached']['port']    = 11211;
  
  ### Locations - it is recommended to keep the default

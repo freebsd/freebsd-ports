@@ -47,14 +47,20 @@ CFLAGS+=	-Darc4random=libressl_arc4random -Darc4random_buf=libressl_arc4random_b
 INSTALL_TARGET=	install-strip
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4243c1c6373d1b338727bc0c539ec0ea6788094b
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
 .endif
 
+<<<<<<< HEAD
 =======
 >>>>>>> 10ca0771a28046affb4f5b25818def3a761c22de
+=======
+>>>>>>> 4243c1c6373d1b338727bc0c539ec0ea6788094b
 regression-test: build
 	cd ${WRKSRC} && ${MAKE} check
 

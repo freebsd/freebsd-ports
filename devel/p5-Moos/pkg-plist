@@ -8,4 +8,4 @@ bin/remoos
 %%PERL5_MAN3%%/Moos.3.gz
 %%PERL5_MAN3%%/Moos::Role.3.gz
 %%PERL5_MAN3%%/oos.3.gz
-man/man1/remoos.1.gz
+%%PERL5_MAN1%%/remoos.1.gz

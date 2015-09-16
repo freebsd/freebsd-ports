@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	timex_ecto
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.0
 CATEGORIES=	databases
 PKGNAMEPREFIX=	elixir-
 

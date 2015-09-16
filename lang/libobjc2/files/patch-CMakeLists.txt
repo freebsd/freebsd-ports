@@ -1,0 +1,15 @@
+--- CMakeLists.txt.orig	2015-09-11 18:21:29 UTC
++++ CMakeLists.txt
+@@ -273,9 +273,9 @@ if (LIBGC)
+ endif ()
+ 
+ # Link libdispatch if available (we'll miss symbols for toydispatch otherwise)
+-find_library(LIBDISPATCH dispatch)
+-if (LIBDISPATCH)
+-	target_link_libraries(objc ${LIBDISPATCH})
++find_library(LIBNODISPATCH dispatch)
++if (LIBNODISPATCH)
++	target_link_libraries(objc ${LIBNODISPATCH})
+ endif ()
+ 
+ # Make weak symbols work on OS X

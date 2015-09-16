@@ -152,7 +152,7 @@ bin/tide_float.pl
 %%PERL5_MAN3%%/Algorithm::Evolutionary::Run.3.gz
 %%PERL5_MAN3%%/Algorithm::Evolutionary::Utils.3.gz
 %%PERL5_MAN3%%/Algorithm::Evolutionary::Wheel.3.gz
-man/man1/canonical-genetic-algorithm.pl.1.gz
-man/man1/rectangle-coverage.pl.1.gz
-man/man1/tide_bitstring.pl.1.gz
-man/man1/tide_float.pl.1.gz
+%%PERL5_MAN1%%/canonical-genetic-algorithm.pl.1.gz
+%%PERL5_MAN1%%/rectangle-coverage.pl.1.gz
+%%PERL5_MAN1%%/tide_bitstring.pl.1.gz
+%%PERL5_MAN1%%/tide_float.pl.1.gz

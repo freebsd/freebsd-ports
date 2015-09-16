@@ -2,23 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	visualparadigm
-PORTVERSION=	12.0.20150401
+PORTVERSION=	12.2.20150902
 CATEGORIES=	devel
-MASTER_SITES=	http://eu6.visual-paradigm.com/visual-paradigm/vpce12.0/20150401/
-DISTNAME=	Visual_Paradigm_CE_12_0_20150401_Unix_InstallFree
+MASTER_SITES=	http://eu6.visual-paradigm.com/visual-paradigm/vpce12.2/20150902/
+DISTNAME=	Visual_Paradigm_CE_12_2_20150902_Unix_InstallFree
 
 MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Visual modeling tool for all kinds of UML diagrams
 
+RUN_DEPENDS=	${LOCALBASE}/lib/libsqlitejdbc.so:${PORTSDIR}/java/sqlitejdbc
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.8+
+JAVA_OS=	linux
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}
 
 INSTALLDIR=	${STAGEDIR}${PREFIX}/${PORTNAME}
 
-EXTRACT_NAME=	Visual_Paradigm_CE_12.0
+EXTRACT_NAME=	Visual_Paradigm_CE_12.2
 
 FETCH_ARGS=	-Fpr
 
@@ -28,9 +31,5 @@ post-patch:
 do-install:
 	${MKDIR} ${INSTALLDIR}
 	cd ${WRKSRC}/${EXTRACT_NAME} && ${COPYTREE_SHARE} \* ${INSTALLDIR} && ${CP} -R .install4j ${INSTALLDIR}
-
-post-install:
-	${CHMOD} 755 ${INSTALLDIR}/Application/bin/V*
-	${CHMOD} 755 ${INSTALLDIR}/Visual_Paradigm
 
 .include <bsd.port.mk>

@@ -449,8 +449,8 @@ bin/rclass_back_to_moose.pl
 %%SITE_PERL%%/auto/share/dist/Reaction/skin/default/layout/site_layout.tt
 %%SITE_PERL%%/auto/share/dist/Reaction/skin/default/skin.conf
 %%SITE_PERL%%/auto/share/dist/Reaction/skin/defaults.conf
-man/man1/componentui_cgi.pl.1.gz
-man/man1/componentui_create.pl.1.gz
-man/man1/componentui_fastcgi.pl.1.gz
-man/man1/componentui_server.pl.1.gz
-man/man1/componentui_test.pl.1.gz
+%%PERL5_MAN1%%/componentui_cgi.pl.1.gz
+%%PERL5_MAN1%%/componentui_create.pl.1.gz
+%%PERL5_MAN1%%/componentui_fastcgi.pl.1.gz
+%%PERL5_MAN1%%/componentui_server.pl.1.gz
+%%PERL5_MAN1%%/componentui_test.pl.1.gz

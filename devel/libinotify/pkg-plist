@@ -1,3 +1,5 @@
 include/sys/inotify.h
+lib/libinotify.a
 lib/libinotify.so
 lib/libinotify.so.0
+lib/libinotify.so.0.0.0

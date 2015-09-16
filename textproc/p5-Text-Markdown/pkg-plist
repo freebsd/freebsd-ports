@@ -1,4 +1,4 @@
 bin/Markdown.pl
 %%PERL5_MAN3%%/Text::Markdown.3.gz
 %%SITE_PERL%%/Text/Markdown.pm
-man/man1/Markdown.pl.1.gz
+%%PERL5_MAN1%%/Markdown.pl.1.gz

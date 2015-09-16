@@ -20,7 +20,7 @@ USE_PERL5=	configure
 USES=		perl5
 
 PLIST_FILES=	bin/2ping \
-		man/man1/2ping.1.gz
+		${SITE_MAN1}/2ping.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|2ping.1p|2ping.1|' ${WRKSRC}/Makefile.PL

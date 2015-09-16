@@ -7,4 +7,4 @@ bin/couchdb-push
 %%PERL5_MAN3%%/AnyEvent::CouchDB::Database.3.gz
 %%PERL5_MAN3%%/AnyEvent::CouchDB::Exceptions.3.gz
 %%PERL5_MAN3%%/AnyEvent::CouchDB::Stream.3.gz
-man/man1/couchdb-push.1.gz
+%%PERL5_MAN1%%/couchdb-push.1.gz

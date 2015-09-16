@@ -10,6 +10,7 @@ include/chipmunk/cpSpace.h
 include/chipmunk/cpSlideJoint.h
 include/chipmunk/cpSimpleMotor.h
 include/chipmunk/cpShape.h
+include/chipmunk/cpRobust.h
 include/chipmunk/cpRotaryLimitJoint.h
 include/chipmunk/cpRatchetJoint.h
 include/chipmunk/cpPolyline.h

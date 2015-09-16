@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	terminology
-PORTVERSION=	0.8.0
+PORTVERSION=	0.9.0
 CATEGORIES=	x11 enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libefl.so:${PORTSDIR}/devel/efl \
 
 DIST_SUBDIR=	enlightenment
 GNU_CONFIGURE=	yes
-USES=		pkgconfig tar:xz
+USES=		compiler:c11 pkgconfig tar:xz
 
 OPTIONS_DEFINE=		NLS
 OPTIONS_SUB=		yes

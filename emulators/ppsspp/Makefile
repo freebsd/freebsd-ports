@@ -20,9 +20,14 @@ LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	hrydgard:DEFAULT,lang,native Kingcom:ext_armips
-GH_PROJECT=	${PORTNAME}-lang:lang native:native armips:ext_armips
+GH_ACCOUNT=	hrydgard:DEFAULT,lang Kingcom:ext_armips
+GH_PROJECT=	${PORTNAME}-lang:lang armips:ext_armips
 GH_TAGNAME?=	52c757e:lang 52ce9c1:native a0b878f:ext_armips
+
+.ifndef PKGNAMESUFFIX
+GH_ACCOUNT+=	hrydgard:native
+GH_PROJECT+=	native:native
+.endif
 
 CONFLICTS_INSTALL?=	${PORTNAME}-devel-[0-9]*
 

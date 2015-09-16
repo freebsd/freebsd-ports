@@ -3,4 +3,4 @@ bin/copylink
 %%SITE_PERL%%/File/Spec/Link.pm
 %%PERL5_MAN3%%/File::Copy::Link.3.gz
 %%PERL5_MAN3%%/File::Spec::Link.3.gz
-man/man1/copylink.1.gz
+%%PERL5_MAN1%%/copylink.1.gz

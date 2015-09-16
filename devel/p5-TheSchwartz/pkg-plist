@@ -11,7 +11,7 @@ bin/thetop
 %%SITE_PERL%%/TheSchwartz/Job.pm
 %%SITE_PERL%%/TheSchwartz/JobHandle.pm
 %%SITE_PERL%%/TheSchwartz/Worker.pm
-man/man1/schwartzmon.1.gz
+%%PERL5_MAN1%%/schwartzmon.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/http-mappings.txt
 %%PORTDOCS%%%%DOCSDIR%%/notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/schema-postgres.sql

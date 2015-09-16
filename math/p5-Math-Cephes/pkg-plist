@@ -12,4 +12,4 @@ bin/pmath
 %%PERL5_MAN3%%/Math::Cephes::Fraction.3.gz
 %%PERL5_MAN3%%/Math::Cephes::Matrix.3.gz
 %%PERL5_MAN3%%/Math::Cephes::Polynomial.3.gz
-man/man1/pmath.1.gz
+%%PERL5_MAN1%%/pmath.1.gz

@@ -249,9 +249,11 @@ TEST_DESC=		Run regression tests
 RELEASE_BUILD_DEPENDS_OFF=	${LOCALBASE}/bin/objcopy:${PORTSDIR}/devel/binutils
 RELEASE_CONFIGURE_ON=	--disable-debug-symbols
 TEST_ALL_TARGET=	test
+TEST_ALL_TARGET_OFF=	images
 TEST_CONFIGURE_ON=	--with-jtreg=${WRKDIR}/jtreg
 TEST_DISTFILES=		jtreg${JTREG_VERSION}-${JTREG_BUILD_NUMBER}${EXTRACT_SUFX}:jtreg
 .else
+ALL_TARGET=		images
 CONFIGURE_ARGS+=	--disable-debug-symbols
 JAVAVMS_COMMENT+=	JRE
 .endif
@@ -349,6 +351,11 @@ post-patch:
 	    ${WRKSRC}/jdk/make/lib/Awt2dLibraries.gmk \
 	    ${WRKSRC}/jdk/make/lib/CoreLibraries.gmk \
 	    ${WRKSRC}/jdk/make/lib/ServiceabilityLibraries.gmk
+.if defined(BUILD_JRE)
+	@${REINPLACE_CMD} -e 's|-f Images.gmk$$|-f Images.gmk jre-image|' \
+	    -e 's|-f Images.gmk overlay-images$$|-f Images.gmk jre-overlay-image|' \
+	    ${WRKSRC}/jdk/make/BuildJdk.gmk
+.endif
 	@${CHMOD} 755 ${WRKSRC}/configure
 
 run-autotools-autoconf:

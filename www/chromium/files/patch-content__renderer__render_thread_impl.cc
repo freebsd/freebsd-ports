@@ -1,11 +1,11 @@
---- content/renderer/render_thread_impl.cc.orig	2015-05-13 18:35:46.000000000 -0400
-+++ content/renderer/render_thread_impl.cc	    2015-05-20 15:46:14.175833000 -0400
-@@ -673,7 +673,7 @@
-                   static_cast<unsigned>(compositor_raster_threads_.size() + 1))
-                   .c_str()));
-       raster_thread->Start();
+--- content/renderer/render_thread_impl.cc.orig	2015-09-01 16:10:42.000000000 -0400
++++ content/renderer/render_thread_impl.cc	2015-09-03 10:37:57.364787000 -0400
+@@ -768,7 +768,7 @@
+   is_gather_pixel_refs_enabled_ = num_raster_threads > 1;
+ 
+   base::SimpleThread::Options thread_options;
 -#if defined(OS_ANDROID) || defined(OS_LINUX)
 +#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
-       if (!command_line.HasSwitch(
-               switches::kUseNormalPriorityForTileTaskWorkerThreads)) {
-         raster_thread->SetThreadPriority(base::ThreadPriority::BACKGROUND);
+   if (!command_line.HasSwitch(
+           switches::kUseNormalPriorityForTileTaskWorkerThreads)) {
+     thread_options.set_priority(base::ThreadPriority::BACKGROUND);

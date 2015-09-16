@@ -46,7 +46,7 @@ CONFIGURE_ENV=	MKDIR_P="${MKDIR}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
-USES=		gettext libtool pkgconfig python shebangfix
+USES=		gettext libarchive libtool pkgconfig python shebangfix
 USE_OPENSSL=	yes
 USE_SQLITE=	3
 USE_XORG=	pixman
@@ -94,6 +94,8 @@ pre-configure:
 
 post-install:
 	${TOUCH} ${STAGEDIR}${DATADIR}/stopwords/.empty_file
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

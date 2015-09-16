@@ -222,6 +222,7 @@
     SUBDIR += mailgraph
     SUBDIR += mailman
     SUBDIR += mailmgr
+    SUBDIR += mailpile
     SUBDIR += mailscanner
     SUBDIR += mailsync
     SUBDIR += mailtray

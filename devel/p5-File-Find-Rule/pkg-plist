@@ -5,4 +5,4 @@ bin/findrule
 %%SITE_PERL%%/File/Find/Rule.pm
 %%SITE_PERL%%/File/Find/Rule/Extending.pod
 %%SITE_PERL%%/File/Find/Rule/Procedural.pod
-man/man1/findrule.1.gz
+%%PERL5_MAN1%%/findrule.1.gz

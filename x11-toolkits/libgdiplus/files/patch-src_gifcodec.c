@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- src/gifcodec.c.orig
 +++ src/gifcodec.c
 @@ -40,9 +40,13 @@

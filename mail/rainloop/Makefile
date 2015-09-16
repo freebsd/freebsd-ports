@@ -2,6 +2,7 @@
 
 PORTNAME=	rainloop
 PORTVERSION=	1.9.2
+PORTREVISION=	1
 CATEGORIES?=	mail www
 MASTER_SITES=	http://repository.rainloop.net/v2/webmail/${PORTVERSION}/
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}.${RBUILD}-${RHASH}
@@ -10,10 +11,10 @@ MAINTAINER=	loic.blot@unix-experience.fr
 COMMENT=	Modern and interactive webmail
 
 .if !defined(PKGNAMESUFFIX)
-LICENSE=	CCbyNCSA3
-LICENSE_NAME=	Attribution-NonCommercial-ShareAlike 3.0 Unported
-LICENSE_TEXT=	License can be found at: https://github.com/RainLoop/rainloop-webmail/blob/master/LICENSE
-LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+LICENSE=	RainLoop
+LICENSE_NAME=	RainLoop Software License
+LICENSE_TEXT=	License can be found at: http://www.rainloop.net/licensing/
+LICENSE_PERMS=	auto-accept
 .endif
 
 .if !defined(PKGNAMESUFFIX)
@@ -29,6 +30,9 @@ RHASH=		1579e1f742ef7a4fa87e55c201416e30
 # Refresh using info from http://repository.rainloop.net/v2/core.(stable|open).json
 RBUILD=		343
 
+.if !defined(PKGNAMESUFFIX)
+RESTRICTED=	Redistribution in any form is prohibited
+.endif
 USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

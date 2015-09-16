@@ -11,7 +11,7 @@ DISTFILES=	${ASIR_SRC} ${ASIR_DOC} ${GC_SRC}
 EXTRACT_ONLY=	${ASIR_SRC}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The system Risa/Asir is a general computer algebra system
+COMMENT=	General computer algebra system (Risa/Asir)
 
 LICENSE=	RALUL
 LICENSE_NAME=	Risa/Asir Limited Use License
@@ -42,18 +42,19 @@ OPTIONS_DEFINE=	DOCS
 PORTDOCS=	*
 PORTDATA=	*
 
-BROKEN_ia64=	does not compile
-BROKEN_powerpc=	does not compile
-BROKEN_sparc64=	does not compile
-
 post-extract:
-	@( cd ${WRKSRC}; ${TAR} xfz ${DISTDIR}/${GC_SRC} )
+	@${TAR} xfz ${DISTDIR}/${GC_SRC} -C ${WRKSRC}
 	@${MKDIR} ${WRKDIR}/asirdoc
 	@${TAR} xfz ${DISTDIR}/${ASIR_DOC} -C ${WRKDIR}/asirdoc
 
 post-patch:
-	${REINPLACE_CMD} '-e s|$${DESTDIR}|${STAGEDIR}|g' \
+	@${REINPLACE_CMD} -e 's|$${DESTDIR}|${STAGEDIR}|' \
 		${WRKSRC}/lib/Makefile.am
+	@${REINPLACE_CMD} -e 's|reallocarray|_&|' \
+		${WRKSRC}/include/ca.h ${WRKSRC}/parse/eval.c \
+		${WRKSRC}/parse/glob.c ${WRKSRC}/parse/load.c \
+		${WRKSRC}/parse/pvar.c ${WRKSRC}/parse/struct.c \
+		${WRKSRC}/parse/util.c
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
@@ -68,10 +69,11 @@ post-install:
 	${LN} -fs ${PREFIX}/bin/asir ${STAGEDIR}${DATADIR}/ox_plot
 	${LN} -fs ${PREFIX}/bin/asir ${STAGEDIR}${DATADIR}/ox_launch
 	${LN} -fs ${DATADIR} ${STAGEDIR}${PREFIX}/lib/asir
-	${INSTALL_MAN} ${WRKDIR}/asirdoc/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKDIR}/asirdoc/${PORTNAME}.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKDIR}/asirdoc/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKDIR}/asirdoc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

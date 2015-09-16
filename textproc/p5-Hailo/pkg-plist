@@ -1,5 +1,5 @@
 bin/hailo
-man/man1/hailo.1.gz
+%%PERL5_MAN1%%/hailo.1.gz
 %%PERL5_MAN3%%/Hailo.3.gz
 %%PERL5_MAN3%%/Hailo::Command.3.gz
 %%PERL5_MAN3%%/Hailo::Engine::Default.3.gz

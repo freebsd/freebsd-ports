@@ -111,10 +111,10 @@ bin/psh
 %%SITE_PERL%%/Psh/Support/Functions.pm
 %%SITE_PERL%%/Psh/Support/TiedOption.pm
 %%SITE_PERL%%/Psh/Util.pm
-man/man1/psh.1.gz
-man/man1/pshcomplete.1.gz
-man/man1/pshconfig.1.gz
-man/man1/pshdevel.1.gz
+%%PERL5_MAN1%%/psh.1.gz
+%%PERL5_MAN1%%/pshcomplete.1.gz
+%%PERL5_MAN1%%/pshconfig.1.gz
+%%PERL5_MAN1%%/pshdevel.1.gz
 %%PERL5_MAN3%%/Psh::Builtins::Alias.3.gz
 %%PERL5_MAN3%%/Psh::Builtins::Bg.3.gz
 %%PERL5_MAN3%%/Psh::Builtins::Bind.3.gz

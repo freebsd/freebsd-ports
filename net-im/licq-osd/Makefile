@@ -3,7 +3,7 @@
 
 PORTNAME=	osd
 PORTVERSION=	1.8.2
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	net-im
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/licq/licq_qt4-gui.so:${PORTSDIR}/${LICQ_PORT}-qt-g
 
 USES=		cmake gettext-tools
 
-LOCALES=	be de cs es fr pt pt_BR ro ru sv sk
+LOCALES=	be de cs es fr pt pt_BR ro ru sv sk tr
 PLIST_FILES=	lib/licq/licq_osd.so \
 		${LOCALES:C+^.*$+share/locale/&/LC_MESSAGES/licq_osd_plugin.mo+}
 

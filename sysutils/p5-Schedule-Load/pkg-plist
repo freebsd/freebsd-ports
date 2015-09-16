@@ -34,11 +34,11 @@ bin/slrsh
 %%SITE_PERL%%/Schedule/Load/Schedule.pm
 %%SITE_PERL%%/auto/Schedule/Load/Hosts/Host/autosplit.ix
 %%SITE_PERL%%/auto/Schedule/Load/Hosts/Proc/autosplit.ix
-man/man1/rschedule.1.gz
-man/man1/slchoosed.1.gz
-man/man1/slchoosed_watchd.1.gz
-man/man1/slpolice.1.gz
-man/man1/slreportd.1.gz
-man/man1/slrsh.1.gz
+%%PERL5_MAN1%%/rschedule.1.gz
+%%PERL5_MAN1%%/slchoosed.1.gz
+%%PERL5_MAN1%%/slchoosed_watchd.1.gz
+%%PERL5_MAN1%%/slpolice.1.gz
+%%PERL5_MAN1%%/slreportd.1.gz
+%%PERL5_MAN1%%/slrsh.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/init.d/slchoosed
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/init.d/slreportd

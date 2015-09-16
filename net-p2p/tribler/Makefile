@@ -39,7 +39,7 @@ SHEBANG_FILES=	usr/share/tribler/Tribler/Core/DecentralizedTracking/pymdht/*.py 
 		usr/share/tribler/Tribler/vlc.py
 USE_OPENSSL=	yes
 USE_PYTHON=	run
-USE_WX=		2.8+
+USE_WX=		2.8
 WX_COMPS=	python
 WX_UNICODE=	yes
 

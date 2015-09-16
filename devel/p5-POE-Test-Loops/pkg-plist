@@ -37,4 +37,4 @@ bin/poe-gen-tests
 %%SITE_PERL%%/POE/Test/Loops/z_rt54319_bazerka_followtail.pm
 %%SITE_PERL%%/POE/Test/Loops/z_steinert_signal_integrity.pm
 %%PERL5_MAN3%%/POE::Test::Loops.3.gz
-man/man1/poe-gen-tests.1.gz
+%%PERL5_MAN1%%/poe-gen-tests.1.gz

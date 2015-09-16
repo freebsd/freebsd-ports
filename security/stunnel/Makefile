@@ -1,8 +1,8 @@
 # Created by: Martti Kuparinen <martti.kuparinen@ericsson.com>
-# $FreeBSD$
+# $FreeBSD: head/security/stunnel/Makefile 382247 2015-03-25 16:07:20Z zi $
 
 PORTNAME=	stunnel
-PORTVERSION=	5.23
+PORTVERSION=	5.14
 CATEGORIES=	security
 MASTER_SITES=	https://www.stunnel.org/downloads/%SUBDIR%/ \
 		http://mirrors.zerg.biz/stunnel/%SUBDIR%/ \
@@ -25,8 +25,7 @@ COMMENT=	SSL encryption wrapper for standard network daemons
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-USES=		cpe libtool perl5 shebangfix
-USE_PERL5=	build
+USES=		shebangfix libtool
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 USE_RC_SUBR=	stunnel

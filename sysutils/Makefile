@@ -246,6 +246,7 @@
     SUBDIR += extipl
     SUBDIR += ezjail
     SUBDIR += f3
+    SUBDIR += facter
     SUBDIR += fanout
     SUBDIR += farbot
     SUBDIR += fastest_cvsup
@@ -982,6 +983,7 @@
     SUBDIR += sysvbanner
     SUBDIR += tai64nfrac
     SUBDIR += tarsnap
+    SUBDIR += tarsnap-gui
     SUBDIR += tartarus
     SUBDIR += tbku
     SUBDIR += tclsyslog
