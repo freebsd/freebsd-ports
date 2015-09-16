@@ -12,7 +12,7 @@ COMMENT=	X.Org Wacom tablet driver
 LICENSE=	GPLv2 # or any later version
 
 BUILD_DEPENDS=	v4l_compat>=1.0.20110603:${PORTSDIR}/multimedia/v4l_compat
-RUN_DEPENDS=	webcamd>0:${PORTSDIR}/multimedia/webcamd
+RUN_DEPENDS=	webcamd>=3.1.0.1:${PORTSDIR}/multimedia/webcamd
 
 USES=		tar:bzip2 pathfix pkgconfig libtool
 USE_XORG=	xrandr xinerama
