@@ -1,7 +1,2 @@
-<<<<<<< HEAD
-SHA256 (libressl-2.2.3.tar.gz) = a1ccc21adf91d60e99246031b99c930c9af5e1b1b5a61b1bec87beef6f16d882
-SIZE (libressl-2.2.3.tar.gz) = 2967547
-=======
-SHA256 (libressl-2.3.0.tar.gz) = 475397a8be637f8d914933154af9103f27a4b2cf14649c78ab003bef1a1612e1
-SIZE (libressl-2.3.0.tar.gz) = 3118432
->>>>>>> 10ca0771a28046affb4f5b25818def3a761c22de
+SHA256 (libressl-2.3.0.tar.gz) = ed886546604a3ba504eff4b40d792d26bf6bcd3746f3a8fedd3dd204299e0f77
+SIZE (libressl-2.3.0.tar.gz) = 2992864
