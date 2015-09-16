@@ -7871,5 +7871,5 @@ textproc/py-xmltools||2015-09-15|Remove port marked broken for six months: fetch
 security/krb5-111|security/krb5-112|2015-09-15|krb5-1.11 EOLed by MIT in December 2014
 textproc/py-xml||2015-09-16|Remove: this package is available in standard python library since 2.2
 x11-toolkits/wxgtk28-unicode|x11-toolkits/wxgtk28|2015-09-16|Make wxGTK now only unicode
-x11-toolkits/py-wxPython28-unicode|x11-toolkits/py-wxPython28-unicode|2015-09-16|Make wxGTK now only unicode
-x11-toolkits/py-wxPython28-unicode-contrib|x11-toolkits/py-wxPython28-unicode-contrib|2015-09-16|Make wxGTK now only unicode
+x11-toolkits/wxgtk28-unicode-contrib|x11-toolkits/wxgtk28-contrib|2015-09-16|Make wxGTK now only unicode
+x11-toolkits/py-wxPython28-unicode|x11-toolkits/py-wxPython28|2015-09-16|Make wxGTK now only unicode
