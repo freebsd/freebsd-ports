@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ft2demos
-PORTVERSION=	2.5.5
+PORTVERSION=	2.6
 CATEGORIES=	print
 MASTER_SITES=	SF/freetype/freetype-demos/${PORTVERSION}
 
@@ -25,12 +25,10 @@ PLIST_FILES=	${FT_PROGRAMS:S,^,bin/,}
 FT_PROGRAMS=	ftbench ftchkwd ftdiff ftdump ftgamma ftgrid ftlint ftmemchk \
 		ftmulti ftpatchk ftstring fttimer ftvalid ftview
 
-.include <bsd.port.pre.mk>
-
 FREETYPE_WRKSRC!=	${MAKE} -C ${.CURDIR}/../../print/freetype2 -V WRKSRC
 
 do-install:
 	@(cd ${WRKSRC}/bin/.libs && \
 		${INSTALL_PROGRAM} ${FT_PROGRAMS} ${STAGEDIR}${PREFIX}/bin)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
