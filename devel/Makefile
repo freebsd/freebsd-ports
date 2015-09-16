@@ -1214,6 +1214,7 @@
     SUBDIR += libmpsse
     SUBDIR += libmsiecf
     SUBDIR += libmsocket
+    SUBDIR += libmtdev
     SUBDIR += libmtrie
     SUBDIR += libnaji
     SUBDIR += libnfc
