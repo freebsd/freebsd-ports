@@ -3,6 +3,7 @@
 
 PORTNAME=	tribler
 PORTVERSION=	6.4.3
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/Tribler/tribler/releases/download/${PORTVERSION:S/^/v/}/
 DISTFILES=	${PORTNAME}_${PORTVERSION}_all.deb

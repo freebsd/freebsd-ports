@@ -2,6 +2,7 @@
 
 PORTNAME=	erlang
 PORTVERSION=	18.0.3
+PORTREVISION=	1
 CATEGORIES=	lang parallel
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\

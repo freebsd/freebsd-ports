@@ -3,7 +3,7 @@
 
 PORTNAME=	amule
 PORTVERSION=	2.3.1
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/aMule/${PORTVERSION}
 DISTNAME=	aMule-${PORTVERSION}
@@ -22,6 +22,7 @@ USES=		bison gmake pkgconfig perl5 shebangfix tar:bzip2 \
 		desktop-file-utils
 USE_PERL5=	build
 USE_WX=		2.8
+WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-denoise-level=0
@@ -34,7 +35,7 @@ LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	ALC ALCC AMULECMD AMULEDAEMON AMULEGUI CAS DEBUG DOCS ED2K \
 	FILEVIEW GEOIP MMAP MONOLITHIC NLS PLASMAMULE UPNP \
-	WEBSERVER WXCAS WXUNICODE XAS
+	WEBSERVER WXCAS XAS
 ALC_DESC=		Compile aMule Link Creator for GUI
 ALCC_DESC=		Compile aMule Link Creator for console
 AMULECMD_DESC=		Compile aMule command line client
@@ -47,10 +48,9 @@ MMAP_DESC=		Use mapped memory
 MONOLITHIC_DESC=	Compile monolithic aMule
 PLASMAMULE_DESC=	Compile aMule plasma applet and engine
 WXCAS_DESC=		Compile aMule Statistics for GUI
-WXUNICODE_DESC=		Unicode support
 XAS_DESC=		Install XChat2 plugin
 OPTIONS_DEFAULT=ALC ALCC AMULECMD AMULEDAEMON AMULEGUI CAS ED2K \
-	FILEVIEW MONOLITHIC WEBSERVER WXCAS WXUNICODE XAS
+	FILEVIEW MONOLITHIC WEBSERVER WXCAS XAS
 
 OPTIONS_SUB=	yes
 
@@ -113,10 +113,6 @@ CPPFLAGS+=	-DCRYPTOPP_DISABLE_ASM
 
 .if ${PORT_OPTIONS:MED2K}
 CONFLICTS+=		ed2k-hash*
-.endif
-
-.if ${PORT_OPTIONS:MWXUNICODE}
-WX_UNICODE=		yes
 .endif
 
 post-patch:	.SILENT
