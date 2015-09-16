@@ -43,14 +43,11 @@ ORACLE_BUILD_DEPENDS=	${ORACLE_HOME}/lib/libclntsh.a:${PORTSDIR}/databases/oracl
 ORACLE_RUN_DEPENDS=	${ORACLE_HOME}/network/admin/tnsnames.ora:${PORTSDIR}/databases/oracle8-client
 ORACLE_CONFIGURE_ON=	--with-oracle=${ORACLE_HOME} --with-oci-version=${ORACLE_VER:tu}
 
-.include <bsd.port.options.mk>
-
-post-patch:
-.if ${PORT_OPTIONS:MDOCS}
+post-patch-DOCS-on:
 	@${REINPLACE_CMD} 's|/etc/torarc|${PREFIX}/etc/torarc|' \
 		${PREFIX2FIX:S|^|${WRKSRC}/|}
-.else
+
+post-patch-DOCS-off:
 	@${REINPLACE_CMD} 's|test doc|test|' ${WRKSRC}/Makefile.am
-.endif
 
 .include <bsd.port.mk>

@@ -24,6 +24,8 @@ CFLAGS+=	-fPIC # XXX Convert into an implicit rule
 LDFLAGS+=	-lm
 USE_LDCONFIG=	yes
 
+MAKE_JOBS_UNSAFE=	yes
+
 do-install:
 .for f in ${PORTNAME} ${PORTNAME}png
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin

@@ -57,4 +57,4 @@ bin/reply
 %%PERL5_MAN3%%/Reply::Plugin::ReadLine.3.gz
 %%PERL5_MAN3%%/Reply::Plugin::ResultCache.3.gz
 %%PERL5_MAN3%%/Reply::Plugin::Timer.3.gz
-man/man1/reply.1.gz
+%%PERL5_MAN1%%/reply.1.gz

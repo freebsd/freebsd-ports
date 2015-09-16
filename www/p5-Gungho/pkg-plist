@@ -105,4 +105,4 @@ bin/gungho
 %%SITE_PERL%%/Gungho/Request/http.pm
 %%SITE_PERL%%/Gungho/Response.pm
 %%SITE_PERL%%/Gungho/Util.pm
-man/man1/gungho.1.gz
+%%PERL5_MAN1%%/gungho.1.gz

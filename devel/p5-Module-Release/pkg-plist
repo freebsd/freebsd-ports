@@ -15,4 +15,4 @@ bin/release
 %%PERL5_MAN3%%/Module::Release::Prereq.3.gz
 %%PERL5_MAN3%%/Module::Release::SVN.3.gz
 %%PERL5_MAN3%%/Module::Release::WebUpload::Mojo.3.gz
-man/man1/release.1.gz
+%%PERL5_MAN1%%/release.1.gz

@@ -1,4 +1,4 @@
 bin/xmlpretty
 %%PERL5_MAN3%%/XML::Handler::YAWriter.3.gz
 %%SITE_PERL%%/XML/Handler/YAWriter.pm
-man/man1/xmlpretty.1.gz
+%%PERL5_MAN1%%/xmlpretty.1.gz

@@ -2,7 +2,7 @@
 
 PORTNAME=	ipa-uigothic
 PORTVERSION=	00203
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://info.openlab.ipa.go.jp/ipafont/fontdata/old/
 PKGNAMEPREFIX=	ja-font-
@@ -15,7 +15,8 @@ COMMENT=	IPA Japanese fonts, UIGothic
 CONFLICTS=	ja-font-mplus-ipa-1.0.20060520.p1 \
 		ja-ipa-ttfonts-[0-9]*
 
-USES=		fonts zip
+USES=		fonts:fc zip
+FONTNAME=	TTF
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install
@@ -24,7 +25,6 @@ DATADIR=	${PREFIX}/share/font-${PORTNAME}
 PORTDOCS=	enduser_license.txt \
 		Readme${PORTVERSION}.txt
 
-FONTNAME=	TTF
 OPTIONS_DEFINE=	DOCS
 
 do-install:
@@ -42,6 +42,8 @@ do-install:
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/20-unhint-${PORTNAME}.conf
 	${LN} -s -f ../conf.avail/62-fonts-${PORTNAME}.conf \
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/62-fonts-${PORTNAME}.conf
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 

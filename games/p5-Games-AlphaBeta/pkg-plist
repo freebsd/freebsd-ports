@@ -9,4 +9,4 @@ bin/othello-demo
 %%SITE_PERL%%/Games/AlphaBeta/Reversi.pm
 %%SITE_PERL%%/Games/Sequential.pm
 %%SITE_PERL%%/Games/Sequential/Position.pm
-man/man1/othello-demo.1.gz
+%%PERL5_MAN1%%/othello-demo.1.gz

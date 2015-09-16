@@ -27,6 +27,6 @@ USES=		perl5
 USE_PERL5=	configure
 NO_ARCH=	yes
 
-PLIST_FILES=	bin/gcap man/man1/gcap.1.gz
+PLIST_FILES=	bin/gcap ${SITE_MAN1}/gcap.1.gz
 
 .include <bsd.port.mk>

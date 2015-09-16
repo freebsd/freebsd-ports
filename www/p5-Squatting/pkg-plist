@@ -14,7 +14,7 @@ bin/squatting
 %%PERL5_MAN3%%/Squatting::With::Log.3.gz
 %%PERL5_MAN3%%/Squatting::With::MockRequest.3.gz
 %%PERL5_MAN3%%/Squatting::With::Mount.3.gz
-man/man1/squatting.1.gz
+%%PERL5_MAN1%%/squatting.1.gz
 %%SITE_PERL%%/Squatting.pm
 %%SITE_PERL%%/Squatting/Controller.pm
 %%SITE_PERL%%/Squatting/H.pm

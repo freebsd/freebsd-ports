@@ -18,7 +18,7 @@ etc/mp3lintrc
 %%SITE_PERL%%/MP3/Archive/Lint/Tools/Ogg.pm
 %%SITE_PERL%%/MP3/Archive/Lint/Tools/Wav.pm
 %%PERL5_MAN3%%/mp3lint-tools.3.gz
-man/man1/mp3lint.1.gz
-man/man1/mp3lintskip.1.gz
-man/man1/mp3lintsum.1.gz
+%%PERL5_MAN1%%/mp3lint.1.gz
+%%PERL5_MAN1%%/mp3lintskip.1.gz
+%%PERL5_MAN1%%/mp3lintsum.1.gz
 man/man5/mp3lintrc.5.gz

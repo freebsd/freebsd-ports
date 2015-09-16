@@ -2,7 +2,7 @@
 
 PORTNAME=	migu
 PORTVERSION=	1.0.20130617
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	SFJP/mix-mplus-ipa/59022
 PKGNAMEPREFIX=	ja-font-
@@ -14,7 +14,8 @@ DISTFILES=	${PORTNAME}-1p-${PORTVERSION:E}${EXTRACT_SUFX} \
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Another Japanese font set based on MigMix
 
-USES=		fonts zip
+USES=		fonts:fc zip
+FONTNAME=	TTF
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install
@@ -23,7 +24,6 @@ DATADIR=	${PREFIX}/share/font-${PORTNAME}
 PORTDOCS=	IPA_Font_License_Agreement_v1.0.txt Readme_ipag00303.txt \
 		migu-README.txt
 
-FONTNAME=	TTF
 OPTIONS_DEFINE=	DOCS
 
 do-install:
@@ -50,6 +50,8 @@ do-install:
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/20-unhint-${PORTNAME}.conf
 	${LN} -s -f ../conf.avail/62-fonts-${PORTNAME}.conf \
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/62-fonts-${PORTNAME}.conf
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKDIR} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 

@@ -1,0 +1,37 @@
+--- configure.orig	2011-06-16 09:06:28 UTC
++++ configure
+@@ -3105,7 +3105,7 @@ if test "" = "$CXXFLAGS"; then
+     CXXFLAGS=" "
+ fi
+ 
+-MOSH_LIB_PATH="${datadir}/mosh-$PACKAGE_VERSION"
++MOSH_LIB_PATH="${datadir}/mosh"
+ 
+ 
+ # Checks for programs.
+@@ -5808,7 +5808,6 @@ $as_echo "#define MOSH_HOST_OS \"unknown
+     ;;
+ esac
+ 
+-MOSH_GENERIC_OPTS="-O3"
+ MOSH_INTEL_OPTS="$MOSH_GENERIC_OPTS -momit-leaf-frame-pointer -fomit-frame-pointer"
+ 
+ # Checks for O/S specific features
+@@ -5931,7 +5930,7 @@ i[3456]86|pentium)
+           fi
+           ;;
+        *freebsd*)
+-         MOSH_OPTS="$MOSH_INTEL_OPTS"
++         MOSH_OPTS="$MOSH_OPTS $MOSH_INTEL_OPTS"
+          MOSH_LDADD_ARCH="-lpthread"
+          ;;
+        *netbsd*)
+@@ -6023,7 +6022,7 @@ $as_echo "x86_64" >&6; }
+ 	*)
+         { $as_echo "$as_me:${as_lineno-$LINENO}: result: $host_cpu" >&5
+ $as_echo "$host_cpu" >&6; }
+-        MOSH_OPTS="-O3"
++        MOSH_LDADD_ARCH="-lpthread"
+         { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: architecture $host_cpu is not supported, but may work other than FFI" >&5
+ $as_echo "$as_me: WARNING: architecture $host_cpu is not supported, but may work other than FFI" >&2;}
+ 

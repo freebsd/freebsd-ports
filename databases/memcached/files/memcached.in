@@ -28,6 +28,9 @@ rcvar=memcached_enable
 _piddir="/var/run/memcached"
 pidfile="${_piddir}/memcached.pid"
 
+: ${memcached_enable="NO"}
+: ${memcached_user="nobody"}
+
 load_rc_config ${name}
 
 if [ -n "$2" ]; then
@@ -35,6 +38,7 @@ if [ -n "$2" ]; then
 	if [ -n "${memcached_profiles}" ]; then
 		pidfile="${_piddir}/memcached.${profile}.pid"
 		eval memcached_enable="\${memcached_${profile}_enable:-${memcached_enable}}"
+                eval memcached_user="\${memcached_${profile}_user:-${memcached_user}}"
 		eval memcached_flags="\${memcached_${profile}_flags:-${memcached_flags}}"
 		eval memcached_post_start="\${memcached_${profile}_post_start:-${memcached_post_start}}"
 	else
@@ -97,9 +101,6 @@ memcached_poststop()
 		done
 	fi
 }
-
-: ${memcached_enable="NO"}
-: ${memcached_user="nobody"}
 
 command=%%PREFIX%%/bin/memcached
 command_args="-d -u ${memcached_user} -P ${pidfile} "

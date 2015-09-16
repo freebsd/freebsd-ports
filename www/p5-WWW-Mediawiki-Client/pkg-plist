@@ -3,4 +3,4 @@ bin/mvs
 %%PERL5_MAN3%%/WWW::Mediawiki::Client::Exceptions.3.gz
 %%SITE_PERL%%/WWW/Mediawiki/Client.pm
 %%SITE_PERL%%/WWW/Mediawiki/Client/Exceptions.pm
-man/man1/mvs.1.gz
+%%PERL5_MAN1%%/mvs.1.gz

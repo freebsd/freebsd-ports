@@ -144,5 +144,5 @@ bin/genexp.pl
 %%PERL5_MAN3%%/Genezzo::XEval::SQLAlter.3.gz
 %%PERL5_MAN3%%/Genezzo::gendba.3.gz
 %%PERL5_MAN3%%/Genezzo::genexp.3.gz
-man/man1/gendba.pl.1.gz
-man/man1/genexp.pl.1.gz
+%%PERL5_MAN1%%/gendba.pl.1.gz
+%%PERL5_MAN1%%/genexp.pl.1.gz

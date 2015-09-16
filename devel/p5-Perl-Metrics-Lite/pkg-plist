@@ -1,7 +1,7 @@
 bin/measureperl
 bin/measureperl-checkstyle
-man/man1/measureperl-checkstyle.1.gz
-man/man1/measureperl.1.gz
+%%PERL5_MAN1%%/measureperl-checkstyle.1.gz
+%%PERL5_MAN1%%/measureperl.1.gz
 %%SITE_PERL%%/Perl/Metrics/Lite.pm
 %%SITE_PERL%%/Perl/Metrics/Lite/Analysis.pm
 %%SITE_PERL%%/Perl/Metrics/Lite/Analysis/DocumentFactory.pm

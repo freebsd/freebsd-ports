@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	aleefonts
-PORTVERSION=	12
-PORTREVISION=	1
+PORTVERSION=	13.1
 CATEGORIES=	korean x11-fonts
-MASTER_SITES=	DEBIAN/pool/main/t/ttf-alee
+MASTER_SITES=	DEBIAN/pool/main/f/fonts-alee
 PKGNAMESUFFIX=	-ttf
-DISTNAME=	ttf-alee_${PORTVERSION}
+DISTNAME=	fonts-alee_${PORTVERSION}
 
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	A-Lee's Hangul truetype fonts #'
@@ -15,7 +14,7 @@ COMMENT=	A-Lee's Hangul truetype fonts #'
 LICENSE=	ART10
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		fonts
+USES=		fonts tar:xz
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 FONTLIST=	Bandal Bangwool Eunjin EunjinNakseo Guseul

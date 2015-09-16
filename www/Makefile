@@ -33,7 +33,6 @@
     SUBDIR += aria2
     SUBDIR += aria2fe
     SUBDIR += arora
-    SUBDIR += asp2php
     SUBDIR += asql
     SUBDIR += asterisk-stat
     SUBDIR += atutor
@@ -1337,6 +1336,7 @@
     SUBDIR += p5-Web-Scraper-Config
     SUBDIR += p5-Web-oEmbed
     SUBDIR += p5-WebDAO
+    SUBDIR += p5-WebDriver-Tiny
     SUBDIR += p5-WebService-Basecamp
     SUBDIR += p5-WebService-Bloglines
     SUBDIR += p5-WebService-BuzzurlAPI

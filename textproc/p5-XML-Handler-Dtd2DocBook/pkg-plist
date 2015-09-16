@@ -17,4 +17,4 @@ bin/dtd2db.pl
 %%SITE_PERL%%/XML/Handler/Dtd2DocBook/fr/index.tmpl
 %%SITE_PERL%%/XML/Handler/Dtd2DocBook/fr/notation.tmpl
 %%SITE_PERL%%/XML/Handler/Dtd2DocBook/fr/prolog.tmpl
-man/man1/dtd2db.pl.1.gz
+%%PERL5_MAN1%%/dtd2db.pl.1.gz

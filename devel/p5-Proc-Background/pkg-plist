@@ -1,5 +1,5 @@
 bin/timed-process
-man/man1/timed-process.1.gz
+%%PERL5_MAN1%%/timed-process.1.gz
 %%SITE_PERL%%/Proc/Background.pm
 %%SITE_PERL%%/Proc/Background/Unix.pm
 %%SITE_PERL%%/Proc/Background/Win32.pm

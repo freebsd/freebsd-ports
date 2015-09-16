@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	salt
-PORTVERSION=	2015.5.5
+PORTVERSION=	2015.8.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}MarkupSafe>0:${PORTSDIR}/textproc/py-MarkupSafe \
 		${PYTHON_PKGNAMEPREFIX}requests>1:${PORTSDIR}/www/py-requests \
 		${PYTHON_PKGNAMEPREFIX}enum34>0:${PORTSDIR}/devel/py-enum34 \
-		${PYTHON_PKGNAMEPREFIX}progressbar>0:${PORTSDIR}/misc/py-progressbar
+		${PYTHON_PKGNAMEPREFIX}progressbar>0:${PORTSDIR}/misc/py-progressbar \
+		${PYTHON_PKGNAMEPREFIX}futures>=2.0:${PORTSDIR}/devel/py-futures \
+		${PYTHON_PKGNAMEPREFIX}tornado>=4.2.1:${PORTSDIR}/www/py-tornado
 
 OPTIONS_DEFINE=	ZEROMQ RAET
 OPTIONS_DEFAULT=	ZEROMQ
@@ -30,8 +32,7 @@ RAET_DESC=	Enable RAET transport
 
 ZEROMQ_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyzmq>=2.2.0:${PORTSDIR}/net/py-pyzmq
 ZEROMQ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyzmq>=2.2.0:${PORTSDIR}/net/py-pyzmq \
-		${PYTHON_PKGNAMEPREFIX}m2crypto>0:${PORTSDIR}/security/py-m2crypto \
-		${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto
+		${PYTHON_PKGNAMEPREFIX}pycrypto>2.6.1:${PORTSDIR}/security/py-pycrypto
 
 RAET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libnacl>=1.4.2:${PORTSDIR}/security/py-libnacl \
 		${PYTHON_PKGNAMEPREFIX}ioflo>=1.2.1:${PORTSDIR}/devel/py-ioflo \
@@ -55,8 +56,7 @@ PYDISTUTILS_INSTALLARGS+=\
 		--salt-logs-dir=/var/log/salt \
 		--salt-pidfile-dir=/var/run
 
-USE_RC_SUBR=	salt_api \
-		salt_master \
+USE_RC_SUBR=	salt_master \
 		salt_minion \
 		salt_syndic
 

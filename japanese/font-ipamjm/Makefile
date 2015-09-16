@@ -16,14 +16,14 @@ LICENSE_NAME=	IPA Font License Agreement v1.0
 LICENSE_FILE=	${WRKSRC}/IPA_Font_License_Agreement_v1.0.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		fonts zip
+USES=		fonts:fc zip
+FONTNAME=	OTF
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install
 SUB_FILES=	pkg-install
 DATADIR=	${PREFIX}/share/font-${PORTNAME}
 PORTDOCS=	Readme_${PORTNAME}003.01.txt
-FONTNAME=	OTF
 
 OPTIONS_DEFINE=	DOCS
 
@@ -42,6 +42,8 @@ do-install:
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/20-unhint-${PORTNAME}.conf
 	${LN} -s -f ../conf.avail/62-fonts-${PORTNAME}.conf \
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/62-fonts-${PORTNAME}.conf
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 

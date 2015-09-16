@@ -1,4 +1,4 @@
-man/man1/dancer.1.gz
+%%PERL5_MAN1%%/dancer.1.gz
 %%PERL5_MAN3%%/Dancer.3.gz
 %%PERL5_MAN3%%/Dancer::App.3.gz
 %%PERL5_MAN3%%/Dancer::Config.3.gz

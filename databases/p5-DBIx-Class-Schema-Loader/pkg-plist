@@ -79,4 +79,4 @@ bin/dbicdump
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/Table/Informix.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/Table/Sybase.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/Utils.pm
-man/man1/dbicdump.1.gz
+%%PERL5_MAN1%%/dbicdump.1.gz

@@ -4,4 +4,4 @@ bin/svm
 %%SITE_PERL%%/SVN/Mirror/Ra.pm
 %%SITE_PERL%%/SVN/Mirror/VCP.pm
 %%PERL5_MAN3%%/SVN::Mirror.3.gz
-man/man1/svm.1.gz
+%%PERL5_MAN1%%/svm.1.gz

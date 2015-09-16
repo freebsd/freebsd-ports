@@ -1,6 +1,6 @@
---- fortran_compiler.py.orig	Sat Jul 20 20:40:23 2002
-+++ fortran_compiler.py	Thu Jul 25 11:43:52 2002
-@@ -574,6 +574,7 @@
+--- fortran_compiler.py.orig	2005-09-20 18:08:08 UTC
++++ fortran_compiler.py
+@@ -703,6 +703,7 @@ compiler_ids = [
      'pgf77',
      'pgf90',
      'g77',
@@ -8,13 +8,13 @@
      'g77alpha',
      'sgi',
      'vf',
-@@ -654,6 +655,9 @@
- 
+@@ -801,6 +802,9 @@ def get_compiler (compiler_id):
      elif compiler_id == 'g77':
          return G77Compiler()
-+
+ 
 +    elif compiler_id == 'f77':
 +        return F77Compiler()
- 
++
      elif compiler_id == 'g77alpha':
          return G77Compiler(typedict = alpha_typedict)
+ 

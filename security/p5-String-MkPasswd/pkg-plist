@@ -1,4 +1,4 @@
 bin/mkpasswd.pl
 %%SITE_PERL%%/String/MkPasswd.pm
 %%PERL5_MAN3%%/String::MkPasswd.3.gz
-man/man1/mkpasswd.pl.1.gz
+%%PERL5_MAN1%%/mkpasswd.pl.1.gz

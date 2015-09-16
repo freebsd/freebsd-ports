@@ -1,4 +1,4 @@
 bin/xslt-parser
 %%PERL5_MAN3%%/XML::XSLT.3.gz
 %%SITE_PERL%%/XML/XSLT.pm
-man/man1/xslt-parser.1.gz
+%%PERL5_MAN1%%/xslt-parser.1.gz

@@ -92,6 +92,7 @@ CONFIGURE_ARGS+=	--without-mdb
 USE_JAVA=		yes
 JAVA_VERSION=		1.6+
 JAVA_VENDOR=		bsdjava openjdk
+CFLAGS+=		-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd
 .else
 CONFIGURE_ARGS+=	--without-java
 .endif

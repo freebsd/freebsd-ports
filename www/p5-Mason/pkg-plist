@@ -33,7 +33,7 @@ bin/mason.pl
 %%PERL5_MAN3%%/Mason::PluginRole.3.gz
 %%PERL5_MAN3%%/Mason::Request.3.gz
 %%PERL5_MAN3%%/Mason::Result.3.gz
-man/man1/mason.pl.1.gz
+%%PERL5_MAN1%%/mason.pl.1.gz
 %%SITE_PERL%%/Mason.pm
 %%SITE_PERL%%/Mason/App.pm
 %%SITE_PERL%%/Mason/CodeCache.pm

@@ -6,8 +6,8 @@ Subject: Make cvs.texinfo compatible with newer makeinfo (Closes: #711298)
 
 diff --git a/doc/cvs.texinfo b/doc/cvs.texinfo
 index a0136a5..d11a5e1 100644
---- ../cvs/doc/cvs.texinfo
-+++ ../cvs/doc/cvs.texinfo
+--- doc/cvs.texinfo
++++ doc/cvs.texinfo
 @@ -113,9 +113,9 @@ approved by the Free Software Foundation.
  @sp 4
  @comment The title is printed in a large font.

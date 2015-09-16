@@ -4139,7 +4139,6 @@ net-mgmt/zabbix-frontend|net-mgmt/zabbix2-frontend|2013-03-15|Has expired: no lo
 net-mgmt/zabbix-proxy|net-mgmt/zabbix2-proxy|2013-03-15|Has expired: no longer supported by upstream
 net-mgmt/zabbix-server|net-mgmt/zabbix2-server|2013-03-15|Has expired: no longer supported by upstream
 dns/h2n||2013-03-17|Removed: legally questionable and obsolete
-sysutils/facter|sysutils/rubygem-facter|2013-03-17|Renamed to match naming convention for rubygems
 french/gibi||2013-03-18|Removed: IGNORE for more than 6 months
 finance/pfpro||2013-03-18|Removed: upstream no longer exists
 finance/p5-PFProAPI||2013-03-18|Removed: upstream no longer exists
@@ -7862,3 +7861,13 @@ sysutils/syslog-ng33||2015-09-01|Has expired: No longer supported by Balabit cin
 textproc/ruby-xmlconfigfile|textproc/ruby-xml-configfile|2015-09-03|Rename to match our ruby naming
 net/mcast-tools|net/pim6-tools|2015-09-07|Rename
 www/p5-Dancer-Session-Memcached|databases/p5-Dancer-Session-Memcached|2015-09-09|Duplicate port
+devel/cloudabi-cloudlibc||2015-09-12|Moved to the CloudABI Ports Collection
+devel/cloudabi-compiler-rt||2015-09-12|Moved to the CloudABI Ports Collection
+devel/cloudabi-libc++||2015-09-12|Moved to the CloudABI Ports Collection
+devel/cloudabi-libc++abi||2015-09-12|Moved to the CloudABI Ports Collection
+devel/cloudabi-libunwind||2015-09-12|Moved to the CloudABI Ports Collection
+japanese/marumoji-fonts|japanese/font-marumoji|2015-09-13|Renamed
+www/asp-php||2015-09-13|Unmaintained upstream, generate unsupported php
+textproc/py-xmltools||2015-09-15|Remove port marked broken for six months: fetch failed
+security/krb5-111|security/krb5-112|2015-09-15|krb5-1.11 EOLed by MIT in December 2014
+textproc/py-xml||2015-09-16|Remove: this package is available in standard python library since 2.2

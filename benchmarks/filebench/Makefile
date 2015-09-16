@@ -8,11 +8,12 @@ MASTER_SITES=	http://www.fsl.cs.sunysb.edu/~vass/filebench/
 DISTNAME=	go_filebench-1.4.8.fsl.0.8
 
 MAINTAINER=	tj@FreeBSD.org
-COMMENT=	Performance Test of Filesystem I/O
+COMMENT=	Model-based file system workload generator
 
-ONLY_FOR_ARCHS=	amd64 i386 ia64 ppc
+LICENSE=	CDDL
+
+ONLY_FOR_ARCHS=	amd64 i386 ia64 powerpc powerpc64
 
 GNU_CONFIGURE=	yes
-LICENSE=	CDDL
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	mdbtools
 PORTVERSION=	0.7.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases
 
 MAINTAINER=	rhurlin@gwdg.de
@@ -16,13 +16,15 @@ BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk \
 		txt2man:${PORTSDIR}/textproc/txt2man
 LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
 
+OPTIONS_DEFINE=	GNOME DOCS
+OPTIONS_SUB=	yes
+
 USES=		autoreconf bison iconv libtool pathfix pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	brianb
 PATHFIX_MAKEFILEIN=	Makefile.am
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20
-WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} \
 		--with-unixodbc=${LOCALBASE}
@@ -32,25 +34,11 @@ DOCS=		AUTHORS ChangeLog HACKING NEWS README TODO
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-OPTIONS_DEFINE=	DOCS
+GNOME_CONFIGURE_ENABLE=	gmdb2
+GNOME_USE=	GNOME=gnomeprefix GNOME=libgnomeui GNOME=gconf2 GNOME=intltool
 
-.include <bsd.port.pre.mk>
-
-.if ${HAVE_GNOME:Mlibgnomeui}!=""
-USE_XORG+=	x11
-USE_GNOME+=	gnomeprefix libgnomeui gconf2 intltool
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|$$(srcdir)/$$<|$$(srcdir)/$$>|g' \
-		${WRKSRC}/doc/Makefile.am
-
-post-configure:
-	@${REINPLACE_CMD} -e 's|^install-man:.*|install-man: install-man1|' \
-		${WRKSRC}/doc/Makefile.in
-
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,}  ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

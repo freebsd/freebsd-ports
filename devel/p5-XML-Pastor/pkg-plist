@@ -1,5 +1,5 @@
 bin/pastorize
-man/man1/pastorize.1.gz
+%%PERL5_MAN1%%/pastorize.1.gz
 %%PERL5_MAN3%%/XML::Pastor.3.gz
 %%PERL5_MAN3%%/XML::Pastor::Builtin.3.gz
 %%PERL5_MAN3%%/XML::Pastor::Builtin::List.3.gz

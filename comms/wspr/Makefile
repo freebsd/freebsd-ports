@@ -21,7 +21,7 @@ LIB_DEPENDS=	libhamlib.so:${PORTSDIR}/comms/hamlib \
 		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 		libportaudio.so:${PORTSDIR}/audio/portaudio
 
-DISABLE_MAKE_JOBS=	yes
+MAKE_JOBS_UNSAFE=	yes
 USES=		autoreconf dos2unix fortran gmake libtool python:3.3 tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gfortran=${FC} \

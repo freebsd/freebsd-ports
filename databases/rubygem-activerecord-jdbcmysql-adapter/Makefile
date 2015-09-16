@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	activerecord-jdbcmysql-adapter
-PORTVERSION=	1.3.17
+PORTVERSION=	1.3.18
 CATEGORIES=	databases rubygems java
 MASTER_SITES=	RG
 
@@ -16,7 +16,6 @@ RUN_DEPENDS=	jruby:${PORTSDIR}/lang/jruby \
 		rubygem-jdbc-mysql>=5.1.22:${PORTSDIR}/databases/rubygem-jdbc-mysql
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

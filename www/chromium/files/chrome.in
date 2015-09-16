@@ -15,4 +15,5 @@ $SYSCTL=1
 EOMSG
 	exit 1
 fi
+ulimit -c 0
 exec %%PREFIX%%/share/chromium/chrome $*

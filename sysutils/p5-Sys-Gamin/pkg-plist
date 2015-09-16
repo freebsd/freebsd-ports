@@ -14,4 +14,4 @@ bin/gamin-monitor
 %%SITE_ARCH%%/auto/Sys/Gamin/suspend.al
 %%SITE_ARCH%%/auto/Sys/Gamin/suspended.al
 %%SITE_ARCH%%/auto/Sys/Gamin/which.al
-man/man1/gamin-monitor.1.gz
+%%PERL5_MAN1%%/gamin-monitor.1.gz

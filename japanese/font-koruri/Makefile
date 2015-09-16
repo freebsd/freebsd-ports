@@ -4,7 +4,7 @@
 PORTNAME=	koruri
 PORTVERSION=	20150701
 DISTVERSIONPREFIX=	Koruri-
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 PKGNAMEPREFIX=	ja-font-
 DISTNAME=	Koruri-${PORTVERSION}
@@ -14,7 +14,8 @@ COMMENT=	Koruri Japanese TrueType fonts
 
 LICENSE=	APACHE20
 
-USES=		fonts tar:xz
+USES=		fonts:fc tar:xz
+FONTNAME=	TTF
 USE_GITHUB=	yes
 GH_ACCOUNT=	Koruri
 GH_PROJECT=	Koruri
@@ -26,7 +27,6 @@ SUB_FILES=	pkg-install
 DATADIR=	${PREFIX}/share/font-${PORTNAME}
 PORTDOCS=	README.md
 
-FONTNAME=	TTF
 OPTIONS_DEFINE=	DOCS
 
 do-install:
@@ -44,6 +44,8 @@ do-install:
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/20-unhint-${PORTNAME}.conf
 	${LN} -s -f ../conf.avail/62-fonts-${PORTNAME}.conf \
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/62-fonts-${PORTNAME}.conf
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 

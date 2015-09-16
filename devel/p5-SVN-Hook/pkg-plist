@@ -1,5 +1,5 @@
 bin/svnhook
-man/man1/svnhook.1.gz
+%%PERL5_MAN1%%/svnhook.1.gz
 %%SITE_PERL%%/SVN/Hook.pm
 %%SITE_PERL%%/SVN/Hook/CLI.pm
 %%SITE_PERL%%/SVN/Hook/Redispatch.pm

@@ -1282,8 +1282,6 @@
     SUBDIR += py-xlutils
     SUBDIR += py-xlwriter
     SUBDIR += py-xlwt
-    SUBDIR += py-xml
-    SUBDIR += py-xmltools
     SUBDIR += py-xmltv
     SUBDIR += py-zope.app.i18n
     SUBDIR += py-zope.app.locales
@@ -1378,6 +1376,7 @@
     SUBDIR += rubygem-fog-xml
     SUBDIR += rubygem-gemoji
     SUBDIR += rubygem-gherkin
+    SUBDIR += rubygem-gherkin3
     SUBDIR += rubygem-github-linguist
     SUBDIR += rubygem-github-markdown
     SUBDIR += rubygem-github-markup
@@ -1502,6 +1501,7 @@
     SUBDIR += sl-hyphen
     SUBDIR += sl-mythes
     SUBDIR += slides
+    SUBDIR += smi
     SUBDIR += smu
     SUBDIR += so-hunspell
     SUBDIR += soothsayer

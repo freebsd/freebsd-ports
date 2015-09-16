@@ -1,4 +1,4 @@
 bin/stackattack
 %%SITE_PERL%%/Net/OpenStack/Attack.pm
 %%PERL5_MAN3%%/Net::OpenStack::Attack.3.gz
-man/man1/stackattack.1.gz
+%%PERL5_MAN1%%/stackattack.1.gz

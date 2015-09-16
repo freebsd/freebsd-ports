@@ -1,6 +1,3 @@
-
-$FreeBSD: /tmp/pcvs/ports/net/hping-devel/files/patch-bytesex.h,v 1.1 2005-11-15 10:22:58 az Exp $
-
 --- bytesex.h.orig	Tue Sep 14 15:22:45 2004
 +++ bytesex.h	Tue Sep 14 15:21:50 2004
 @@ -8,10 +8,12 @@

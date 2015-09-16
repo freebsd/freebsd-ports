@@ -1,4 +1,4 @@
-man/man1/plackup.1.gz
+%%PERL5_MAN1%%/plackup.1.gz
 %%PERL5_MAN3%%/HTTP::Message::PSGI.3.gz
 %%PERL5_MAN3%%/HTTP::Server::PSGI.3.gz
 %%PERL5_MAN3%%/Plack.3.gz

@@ -35,4 +35,4 @@ bin/shipit
 %%SITE_PERL%%/ShipIt/VC/Mercurial.pm
 %%SITE_PERL%%/ShipIt/VC/SVK.pm
 %%SITE_PERL%%/ShipIt/VC/SVN.pm
-man/man1/shipit.1.gz
+%%PERL5_MAN1%%/shipit.1.gz

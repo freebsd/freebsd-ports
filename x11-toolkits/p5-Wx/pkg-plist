@@ -13,7 +13,7 @@ bin/wxperl_overload
 %%PERL5_MAN3%%/Wx::build::MakeMaker::Win32_MSVC.3.gz
 %%PERL5_MAN3%%/Wx::build::Options.3.gz
 %%PERL5_MAN3%%/Wx::build::Utils.3.gz
-man/man1/wxperl_overload.1.gz
+%%PERL5_MAN1%%/wxperl_overload.1.gz
 %%SITE_ARCH%%/Wx.pm
 %%SITE_ARCH%%/Wx/AUI.pm
 %%SITE_ARCH%%/Wx/Api.pod
