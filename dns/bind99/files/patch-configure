@@ -1,6 +1,6 @@
---- configure.orig	2014-09-16 19:27:20 UTC
+--- configure.orig	2015-09-09 02:23:50 UTC
 +++ configure
-@@ -14211,6 +14211,8 @@
+@@ -14289,6 +14289,8 @@ done
  		    "-lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err -lresolv" \
  		    "-lgssapi" \
  		    "-lgssapi -lkrb5 -ldes -lcrypt -lasn1 -lroken -lcom_err" \
