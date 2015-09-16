@@ -58,6 +58,37 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8f5c9dd6-5cac-11e5-9ad8-14dae9d210b8">
+    <topic>p7zip -- directory traversal vulnerability</topic>
+    <affects>
+      <package>
+	<name>p7zip</name>
+	<range><lt>9.38.1_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Alexander Cherepanov reports:</p>
+	<blockquote cite="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=774660">
+	  <p>7z (and 7zr) is susceptible to a directory traversal vulnerability.
+	    While extracting an archive, it will extract symlinks and then follow
+	    them if they are referenced in further entries. This can be exploited by
+	    a rogue archive to write files outside the current directory.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=774660</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/01/11/2</url>
+      <url>http://sourceforge.net/p/p7zip/bugs/147/</url>
+      <cvename>CVE-2015-1038</cvename>
+    </references>
+    <dates>
+      <discovery>2015-01-05</discovery>
+      <entry>2015-09-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="31ea7f73-5c55-11e5-8607-74d02b9a84d5">
     <topic>h2o -- directory traversal vulnerability</topic>
     <affects>
