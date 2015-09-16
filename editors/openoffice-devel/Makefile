@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${SVNREVISION}
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	3
 CATEGORIES=	editors java
 MASTER_SITES=	http://ci.apache.org/projects/openoffice/milestones/${AOOVERSION}-${AOORC}-r${SVNREVISION}/source/ \
@@ -207,6 +207,7 @@ SUB_FILES=	pkg-message
 SUB_LIST=	EXECBASE=${EXECBASE} AOOTAG=${AOOTAG} AOOUDIR=${AOOUDIR}
 
 CONFIGURE_ARGS+=							\
+			--with-unix-wrapper=${EXECBASE}			\
 			--with-system-apache-commons=yes		\
 			--with-commons-codec-jar=${JAVALIBDIR}/commons-codec.jar \
 			--with-commons-lang-jar=${JAVALIBDIR}/commons-lang.jar \
@@ -330,6 +331,8 @@ post-extract:
 		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_W3C}
 
 post-patch:
+	${REINPLACE_CMD} -e "/^ICONVERSION/s/=.*/= '-${AOOSUFFIX}'/" \
+		${WRKSRC}/sysui/desktop/productversion.mk
 .if ${COMPILER_TYPE} == gcc
 	# g++49 -Os sometimes leaves inline class methods undefined,
 	# affects fmgridif.cxx and ColumnControl.cxx
@@ -340,12 +343,15 @@ post-patch:
 	fi
 .elif ${ARCH} == i386 && ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 36
 	# autodoc and uno (bridgetest) core dump when built with with -Os
-	# on i386, affects file.cxx and bridgetest.cxx
+	# on i386, affects file.cxx and bridgetest.cxx (at least).
 	# Using -O2 optimiztion works, and -Os is essentially -O2 with out
 	# loop unrolling.
 	# Changing optimization in just unxfbsdi.mk is sufficient to get
 	# a successful build, but change it in both places to avoid the
-	# possibility of obscure runtime problems.
+	# possibility of obscure runtime problems, which is likely
+	# since this seems to be a generic bug in code generation for
+	# exception handling.
+	# See: <https://llvm.org/bugs/show_bug.cgi?id=24792>
 	${REINPLACE_CMD} -e "s/=-Os /=-O2 -fno-unroll-loops /" ${WRKSRC}/solenv/inc/unxfbsdi.mk
 	${REINPLACE_CMD} -e "s/ := -Os/ := -O2 -fno-unroll-loops/" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk
 .endif
@@ -391,78 +397,66 @@ do-build:
 	LANG=C LC_ALL=C build.pl --all -P$${numproc} -- -P$${dmproc}
 
 do-install:
-	cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/Apache_OpenOffice/archive/install/${LOCALIZED_LANG}/ ; ${LS} *.tar.?z > ${WRKDIR}/INSTALLFILES
-	${RM} -Rf ${WRKDIR}/tmp
-	${MKDIR} ${WRKDIR}/tmp
-	@for i in `${CAT} ${WRKDIR}/INSTALLFILES`; do \
-		${ECHO_CMD} "extracting $$i" ; \
-		cd ${WRKDIR}/tmp ; ${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/Apache_OpenOffice/archive/install/${LOCALIZED_LANG}/$$i ; \
-	done
-	${MKDIR} ${STAGEDIR}${PRINSTALLATION_BASEDIR}
-	cd ${WRKDIR}/tmp/*/ ; ${TAR} cf - -C . . | ${TAR} xf - -C ${STAGEDIR}${PRINSTALLATION_BASEDIR}
-	${REINPLACE_CMD} -e '/^UserInstallation/s/=.*/=$$SYSUSERCONFIG\/${AOOUDIR}/' ${STAGEDIR}${OOPATH}/program/bootstraprc
-	${RM} ${STAGEDIR}${OOPATH}/program/bootstraprc.bak
-	${MKDIR} ${STAGEDIR}${PRINSTALLATION_BASEDIR}/extensions/
-	cd ${WRKSRC}/solver/${AOOXXX}/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${AOOEXTENSIONS} ${STAGEDIR}${PRINSTALLATION_BASEDIR}/extensions/
-	${FIND} ${STAGEDIR}${OOPATH}/program -type f \( -name '*.so*' -or -name '*.bin' \) -print0 | ${XARGS} -0 -n1 ${STRIP_CMD}
-	for prog in crashrep pagein uri-encode javaldx regmerge regview; do \
-		${STRIP_CMD} ${STAGEDIR}${OOPATH}/program/$${prog}; \
-	done
-	${FIND} ${STAGEDIR}${PRINSTALLATION_BASEDIR} -type d -exec ${CHMOD} 755 {} \;
-	@${ECHO_MSG} "===>  Add wrapper scripts";
-	${CP} ${FILESDIR}/openoffice-wrapper ${WRKDIR}/
-	${REINPLACE_CMD} -e 's#%%OOPATH%%#${OOPATH}#g' \
+	@${MKDIR} ${STAGEDIR}${PRINSTALLATION_BASEDIR}/extensions/ \
+		${STAGEDIR}${DESKTOPDIR}
+	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/Apache_OpenOffice/archive/install/${LOCALIZED_LANG}/ ; \
+		for i in *.tar.?z ; do \
+			${ECHO_CMD} "extracting $$i" ; \
+			${TAR} -s '|./[^/]*/||' -xz -f $$i - \
+				-C ${STAGEDIR}${PRINSTALLATION_BASEDIR} ; \
+		done
+	@${ECHO_CMD} "installing extensions" ; \
+	cd ${WRKSRC}/solver/${AOOXXX}/unxfbsd?.pro/bin/ ; \
+		${INSTALL_DATA} ${AOOEXTENSIONS} \
+			${STAGEDIR}${PRINSTALLATION_BASEDIR}/extensions/
+	@cd ${STAGEDIR}${OOPATH}/program ; \
+		${ECHO_CMD} "stripping executables and shared libraries" ; \
+		${STRIP_CMD} crashrep pagein uri-encode javaldx regmerge \
+			regview *.so* *.bin ; \
+		${ECHO_CMD} "fixing permissions" ; \
+		${FIND} . -type d -exec ${CHMOD} 755 {} \;
+	${REINPLACE_CMD} \
+		-e '/^UserInstallation/s/=.*/=$$SYSUSERCONFIG\/${AOOUDIR}/' \
+		${STAGEDIR}${OOPATH}/program/bootstraprc
+	@${RM} ${STAGEDIR}${OOPATH}/program/bootstraprc.bak
+	@${ECHO_CMD} "adding wrapper scripts";
+	@${CP} ${FILESDIR}/openoffice-wrapper ${WRKDIR}/
+	@${REINPLACE_CMD} -e 's#%%OOPATH%%#${OOPATH}#g' \
 			-e 's#%%EXECBASE%%#${EXECBASE}#g' \
 			${WRKDIR}/openoffice-wrapper
 	${INSTALL_SCRIPT} ${WRKDIR}/openoffice-wrapper \
 		${STAGEDIR}${PREFIX}/bin/${EXECBASE}
-	${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-sbase
-	${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-scalc
-	${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-sdraw
-	${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-setofficelang
-	${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-simpress
-	${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-smath
-	${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-spadmin
-	${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-swriter
-	cd ${STAGEDIR}${PREFIX} ; ${FIND} -s bin \( -type f -or -type l \) -name "${EXECBASE}*" >> ${TMPPLIST}
-	cd ${STAGEDIR}${PREFIX} ; ${FIND} -s ${INSTALLATION_BASEDIR} \( -type f -or -type l \) >> ${TMPPLIST}
-	cd ${STAGEDIR}${PREFIX} ; ${FIND} ${INSTALLATION_BASEDIR} -type d -empty | ${SORT} -r | \
-		${XARGS} -n 1 ${ECHO_CMD} @dir >> ${TMPPLIST}
-	for app in base calc draw impress math writer; do \
-		${REINPLACE_CMD} -e "s/^Exec.*/Exec=${EXECBASE} -$${app} %U/" \
-			-e "s/^Icon.*/Icon=${EXECBASE}-$${app}.png/" \
-		${STAGEDIR}${XDGDIR}/$${app}.desktop ; \
+	@cd ${STAGEDIR}${PREFIX}/bin; for i in sbase scalc sdraw \
+		setofficelang simpress smath spadmin swriter ; do \
+			${LN} -f ${EXECBASE} ${EXECBASE}-$${i} ; \
 	done
-	${REINPLACE_CMD} -e "s/^Exec.*/Exec=${EXECBASE}-spadmin %U/" \
-		-e "s/^Icon.*/Icon=${EXECBASE}-printeradmin.png/" \
-		${STAGEDIR}${XDGDIR}/printeradmin.desktop
-	${REINPLACE_CMD} -e "s/^Exec.*/Exec=${EXECBASE} -quickstart -nologo -nodefault/" \
-		${STAGEDIR}${XDGDIR}/startcenter.desktop
-	${RM} ${STAGEDIR}${XDGDIR}/*.desktop.bak
-	${MKDIR} ${STAGEDIR}${DESKTOPDIR}
 	${LN} -sf ${XDGDIR} ${STAGEDIR}${DESKTOPDIR}/${EXECBASE}
-	${ECHO_CMD} "share/applications/${EXECBASE}" >> ${TMPPLIST}
-	cd ${ICONS} ; for dir in hicolor/*/apps ; do \
+	@${ECHO_CMD} "installing application icons"
+	@cd ${ICONS} ; for dir in hicolor/*/apps ; do \
 		${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/$${dir} ; \
-		for app in base calc draw impress math printeradmin writer; do \
+		for app in base calc draw impress math printeradmin startcenter writer; do \
 			icon_src=$${dir}/$${app}.png; \
 			icon_dst=share/icons/$${dir}/${EXECBASE}-$${app}.png; \
 			if [ -r $${icon_src} ]; then \
 				${INSTALL_DATA} $${icon_src} \
 				    ${STAGEDIR}${PREFIX}/$${icon_dst} ; \
-				${ECHO_CMD} "$${icon_dst}" >> ${TMPPLIST} ; \
 			fi \
 		done ; \
 	done
-	cd ${ICONS} ; for dir in hicolor/*/mimetypes ; do \
-		${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/$${dir} ; \
-		for iconfile in `cd $${dir}; ls *.png`; do \
-			icon_dst=share/icons/$${dir}/$${iconfile} ; \
-			${INSTALL_DATA} $${dir}/$${iconfile} \
-			    ${STAGEDIR}${PREFIX}/$${icon_dst}; \
-			${ECHO_CMD} "$${icon_dst}" >> ${TMPPLIST} ; \
-		done ; \
+	@${ECHO_CMD} "installing mimetype icons"
+	@cd ${ICONS} ; for dir in hicolor/*/mimetypes ; do \
+		dstdir=${STAGEDIR}${PREFIX}/share/icons/$${dir} ; \
+		${MKDIR} $${dstdir} ; \
+		${INSTALL_DATA} $${dir}/*.png $${dstdir}/ ; \
 	done
+	@${ECHO_CMD} "generating plist";
+	@cd ${STAGEDIR}${PREFIX} ; (\
+		${ECHO_CMD} "share/applications/${EXECBASE}" ; \
+		${FIND} -s bin -name "${EXECBASE}*" ; \
+		${FIND} -s ${INSTALLATION_BASEDIR} share/icons \! -type d ; \
+		${FIND} ${INSTALLATION_BASEDIR} -type d -empty | ${SORT} -r | \
+			${SED} -e 's/^/@dir /' ; \
+	) >> ${TMPPLIST}
 
 .include <${FILESDIR}/Makefile.others>
 
