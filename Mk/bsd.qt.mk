@@ -26,7 +26,7 @@ Qt_Pre_Include=	bsd.qt.mk
 
 # Qt versions currently supported by the framework.
 _QT_SUPPORTED?=	4 5
-QT4_VERSION?=	4.8.6
+QT4_VERSION?=	4.8.7
 QT5_VERSION?=	5.4.1
 
 QT_PREFIX?=		${LOCALBASE}
@@ -171,13 +171,13 @@ CONFIGURE_ARGS+=-verbose
 . endif
 
 . if ${QT_DIST} == "base" || ${_QT_VERSION:M4*}
+.  if ${_QT_VERSION:M4*}
+_EXTRA_PATCHES_QT4=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-src-corelib-global-qglobal.h
+.  endif
 EXTRA_PATCHES?=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-configure \
 		${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-config.tests-unix-compile.test \
-		${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-libtool
-.  if ${_QT_VERSION:M4*}
-EXTRA_PATCHES?=	${EXTRA_PATCHES} \
-				${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-src-corelib-global-qglobal.h
-.  endif
+		${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-libtool \
+		${_EXTRA_PATCHES_QT4}
 . endif
 
 # Override settings installed in qconfig.h and *.pri files. The flags will be
