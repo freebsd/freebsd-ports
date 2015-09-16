@@ -1,0 +1,10 @@
+--- sysui/desktop/menus/printeradmin.desktop.orig	2014-09-19 18:25:03 UTC
++++ sysui/desktop/menus/printeradmin.desktop
+@@ -24,6 +24,6 @@ Terminal=false
+ Icon=printeradmin
+ Type=Application
+ Categories=Office;X-Red-Hat-Base;X-SuSE-Core-Office;
+-Exec=openoffice-printeradmin
++Exec=openoffice-spadmin
+ Name=%PRODUCTNAME Printer Administration
+ StartupNotify=true
