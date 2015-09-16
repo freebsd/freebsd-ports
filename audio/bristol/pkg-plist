@@ -34,3 +34,4 @@ man/man1/brighton.1.gz
 man/man1/bristol.1.gz
 man/man1/bristoljackstats.1.gz
 man/man1/startBristol.1.gz
+@dir %%DATADIR%%/memory/granular
