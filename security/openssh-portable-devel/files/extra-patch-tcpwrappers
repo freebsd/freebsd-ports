@@ -1,5 +1,4 @@
 Revert TCPWRAPPER removal -bdrewery
-$FreeBSD$
 
 commit f2719b7c2b8a3b14d778d8a6d8dc729b5174b054
 Author: Damien Miller <djm@mindrot.org>

@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 This diff is retrieved from http://lists.gnu.org/archive/html/emacs-devel/2015-02/msg00274.html
 
 And traces its origin back to https://gitorious.org/lldb/lldb/commit/40e4dbf
