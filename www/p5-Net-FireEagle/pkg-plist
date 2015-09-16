@@ -1,4 +1,4 @@
 bin/fireeagle
 %%PERL5_MAN3%%/Net::FireEagle.3.gz
-man/man1/fireeagle.1.gz
+%%PERL5_MAN1%%/fireeagle.1.gz
 %%SITE_PERL%%/Net/FireEagle.pm

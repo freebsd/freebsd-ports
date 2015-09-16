@@ -3,11 +3,11 @@ bin/dq-indexd
 bin/dq-list
 bin/dq-server
 bin/dq-submit
-man/man1/dq-deque.1.gz
-man/man1/dq-indexd.1.gz
-man/man1/dq-list.1.gz
-man/man1/dq-server.1.gz
-man/man1/dq-submit.1.gz
+%%PERL5_MAN1%%/dq-deque.1.gz
+%%PERL5_MAN1%%/dq-indexd.1.gz
+%%PERL5_MAN1%%/dq-list.1.gz
+%%PERL5_MAN1%%/dq-server.1.gz
+%%PERL5_MAN1%%/dq-submit.1.gz
 %%SITE_PERL%%/IPC/DirQueue.pm
 %%SITE_PERL%%/IPC/DirQueue/IndexClient.pm
 %%SITE_PERL%%/IPC/DirQueue/IndexServer.pm

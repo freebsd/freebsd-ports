@@ -57,57 +57,32 @@ QT4_USE=	QT4=gui,moc_build
 QT4_MAKE_ENV=	phoenix="qt"
 
 GLX_USE=	GL=gl
+GLX_VARS=	VIDEO_DRIVER+=video.glx
+
 SDL_USE=	XORG=xv SDL=sdl
+SDL_VARS=	VIDEO_DRIVER+=video.sdl
+
 XSHM_USE=	XORG=xext
+XSHM_VARS=	VIDEO_DRIVER+=video.xshm
+
 XV_USE=		XORG=xv
+XV_VARS=	VIDEO_DRIVER+=video.xv
 
 AO_LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao
+AO_VARS=	AUDIO_DRIVER+=audio.ao
+
 OPENAL_USES=	openal:al
+OPENAL_VARS=	AUDIO_DRIVER+=audio.openal
+
+OSS_VARS=	AUDIO_DRIVER+=audio.oss
+
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_VARS=	AUDIO_DRIVER+=audio.pulseaudio
 
 INPUT_SDL_USE=	SDL=sdl
+INPUT_SDL_VARS=	INPUT_DRIVER+=input.sdl
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGLX}
-VIDEO_DRIVER+=	video.glx
-.endif
-
-.if ${PORT_OPTIONS:MSDL}
-VIDEO_DRIVER+=	video.sdl
-.endif
-
-.if ${PORT_OPTIONS:MXSHM}
-VIDEO_DRIVER+=	video.xshm
-.endif
-
-.if ${PORT_OPTIONS:MXV}
-VIDEO_DRIVER+=	video.xv
-.endif
-
-.if ${PORT_OPTIONS:MAO}
-AUDIO_DRIVER+=	audio.ao
-.endif
-
-.if ${PORT_OPTIONS:MOPENAL}
-AUDIO_DRIVER+=	audio.openal
-.endif
-
-.if ${PORT_OPTIONS:MOSS}
-AUDIO_DRIVER+=	audio.oss
-.endif
-
-.if ${PORT_OPTIONS:MPULSEAUDIO}
-AUDIO_DRIVER+=	audio.pulseaudio
-.endif
-
-.if ${PORT_OPTIONS:MINPUT_SDL}
-INPUT_DRIVER+=	input.sdl
-.endif
-
-.if ${PORT_OPTIONS:MINPUT_X}
-INPUT_DRIVER+=	input.xlib
-.endif
+INPUT_X_VARS=	INPUT_DRIVER+=input.xlib
 
 post-patch:
 	${REINPLACE_CMD} \

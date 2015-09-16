@@ -24,7 +24,7 @@ load_rc_config $name
 
 command="%%PREFIX%%/sbin/$name"
 command_args="--pid=${spampd_pidfile}"
-command_interpreter=%%PERL%%
+command_interpreter="%%PERL%% -T"
 pidfile="${spampd_pidfile}"
 
 run_rc_command $1

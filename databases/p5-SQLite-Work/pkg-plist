@@ -7,6 +7,6 @@ bin/sqlw_mail
 %%PERL5_MAN3%%/SQLite::Work.3.gz
 %%PERL5_MAN3%%/SQLite::Work::CGI.3.gz
 %%PERL5_MAN3%%/SQLite::Work::Mail.3.gz
-man/man1/sqlreport.1.gz
-man/man1/sqlw_import.1.gz
-man/man1/sqlw_mail.1.gz
+%%PERL5_MAN1%%/sqlreport.1.gz
+%%PERL5_MAN1%%/sqlw_import.1.gz
+%%PERL5_MAN1%%/sqlw_mail.1.gz

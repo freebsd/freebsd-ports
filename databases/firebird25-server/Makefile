@@ -3,7 +3,7 @@
 
 PORTNAME=	firebird
 PORTVERSION=	2.5.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	databases
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:S/.0//}-Release/
 PKGNAMESUFFIX?=	${PORTVERSION:R:S/.//}-server
@@ -90,6 +90,8 @@ PKGINSTALL?=	${PKGDIR}/pkg-install-server
 # Client part stuff
 ALL_TARGET=	firebird_basic libfbembed libfbclient embed_isql embed_gpre \
 		embed_gdef embed_qli extlib
+
+USES+=		libedit
 
 USE_LDCONFIG=	yes
 CLIENT_BIN=	gpre isql-fb qli

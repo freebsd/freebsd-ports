@@ -1,4 +1,4 @@
---- src/cpHastySpace.c.orig	2015-01-13 01:54:11 UTC
+--- src/cpHastySpace.c.orig	2015-07-02 16:24:47 UTC
 +++ src/cpHastySpace.c
 @@ -5,8 +5,11 @@
  #include <stdio.h>
@@ -14,18 +14,17 @@
  
  #include "chipmunk/chipmunk_private.h"
  #include "chipmunk/cpHastySpace.h"
-@@ -313,15 +316,18 @@ cpHastySpaceSetThreads(cpSpace *space, u
- 	
+@@ -314,14 +317,20 @@ cpHastySpaceSetThreads(cpSpace *space, u
  	cpHastySpace *hasty = (cpHastySpace *)space;
  	HaltThreads(hasty);
--	
+ 	
 -#ifdef __APPLE__
-+
  	if(threads == 0){
--		size_t size = sizeof(threads);
--		sysctlbyname("hw.ncpu", &threads, &size, NULL, 0);
++#ifdef __APPLE__
+ 		size_t size = sizeof(threads);
+ 		sysctlbyname("hw.ncpu", &threads, &size, NULL, 0);
 -	}
-+#if defined(_SC_NPROCESSORS_ONLN)
++#elif defined(_SC_NPROCESSORS_ONLN)
 +		threads = sysconf(_SC_NPROCESSORS_ONLN);
 +#elif defined(_WIN32)
 +		SYSTEM_INFO siSysInfo;

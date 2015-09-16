@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- src/wings__font.erl.orig
 +++ src/wings__font.erl
 @@ -11,45 +11,50 @@

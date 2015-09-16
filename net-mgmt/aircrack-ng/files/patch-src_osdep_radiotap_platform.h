@@ -1,5 +1,5 @@
---- src/osdep/radiotap/platform.h.orig	2014-04-01 19:18:03.439632822 +0200
-+++ src/osdep/radiotap/platform.h	2014-04-01 19:18:19.900626663 +0200
+--- src/osdep/radiotap/platform.h.orig	2014-03-22 20:26:59 UTC
++++ src/osdep/radiotap/platform.h
 @@ -3,7 +3,7 @@
  #ifndef _BSD_SOURCE
  #define _BSD_SOURCE

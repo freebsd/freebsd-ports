@@ -3,6 +3,7 @@
 
 PORTNAME=	grass
 PORTVERSION=	6.4.5
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	databases geography
 MASTER_SITES=	http://grass.osgeo.org/%SUBDIR%/ \
@@ -43,6 +44,7 @@ USE_XORG=	sm ice x11 xext xi xmu xt
 USE_GL=		glu
 USE_GNOME=	cairo
 USE_WX=		2.8
+WX_UNICODE=	yes
 WX_COMPS=	wx:build python:run
 USE_GCC=	yes
 GNU_CONFIGURE=	yes

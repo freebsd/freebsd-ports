@@ -56,4 +56,4 @@ bin/html2pdf.pl
 %%SITE_PERL%%/PDF/FromHTML/Template/Iterator.pm
 %%SITE_PERL%%/PDF/FromHTML/Template/TextObject.pm
 %%SITE_PERL%%/PDF/FromHTML/Twig.pm
-man/man1/html2pdf.pl.1.gz
+%%PERL5_MAN1%%/html2pdf.pl.1.gz

@@ -1,3 +1,3 @@
 bin/a2pdf
 %%SITE_PERL%%/App/a2pdf.pm
-man/man1/a2pdf.1.gz
+%%PERL5_MAN1%%/a2pdf.1.gz

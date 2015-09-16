@@ -1,4 +1,4 @@
 bin/bitly_url
 %%PERL5_MAN3%%/WWW::Shorten::Bitly.3.gz
-man/man1/bitly_url.1.gz
+%%PERL5_MAN1%%/bitly_url.1.gz
 %%SITE_PERL%%/WWW/Shorten/Bitly.pm

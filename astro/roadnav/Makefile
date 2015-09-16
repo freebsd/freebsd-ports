@@ -10,6 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/Roadnav/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D GPS mapping program
 
+DEPRECATED=	No releases for 8+ years, no supporting newer wxWidget
+EXPIRATION_DATE=	2015-12-13
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libroadnav.a:${PORTSDIR}/astro/libroadnav
 
 USE_WX=		2.8+

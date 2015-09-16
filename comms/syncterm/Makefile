@@ -21,7 +21,7 @@ PLIST_FILES=	bin/syncterm \
 		share/icons/hicolor/64x64/apps/syncterm.png
 
 NO_CCACHE=	yes
-DISABLE_MAKE_JOBS=	yes
+MAKE_JOBS_UNSAFE=	yes
 MAKE_ARGS+=	WITHOUT_PORTAUDIO=yes
 MAKE_ARGS+=	-C ${WRKSRC}
 MAKE_ARGS+=	PREFIX="${PREFIX}"

@@ -3,6 +3,7 @@
 
 PORTNAME=	ktoblzcheck
 PORTVERSION=	1.48
+PORTREVISION=	1
 CATEGORIES=	finance german
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -12,7 +13,7 @@ COMMENT=	Check bank codes of German banks
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		libtool pathfix
+USES=		libtool pathfix perl5
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

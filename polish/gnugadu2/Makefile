@@ -3,7 +3,7 @@
 
 PORTNAME=	gnugadu2
 PORTVERSION=	2.3.0
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	polish net-im
 MASTER_SITES=	SF/ggadu/gg2/${PORTVERSION}
 DISTNAME=	gg2-${PORTVERSION}
@@ -44,105 +44,39 @@ CONFIGURE_ARGS=	--disable-esdtest \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	AUTODETECT DBUS DOCKAPP DOCKLET ESOUND \
+OPTIONS_DEFINE=	DBUS DOCKAPP DOCKLET ESOUND \
 		GTKSPELL JABBER TLEN XOSD
 OPTIONS_DEFAULT=DOCKLET
+OPTIONS_SUB=	yes
 
-AUTODETECT_DESC=Autodetect plugins
 DOCKLET_DESC=	Enable fd.o docklet plugin
 DOCKAPP_DESC=	Enable WindowMaker dockapp plugin
 GTKSPELL_DESC=	Enable GTKSpell checker
 TLEN_DESC=	Enable Tlen.pl network plugin
 XOSD_DESC=	Enable On-Screen-Display messages
 
-#.if ${${HAVE_GNOME:Mesound}!="" && empty(PORT_OPTIONS:MESOUND)
+TLEN_LIB_DEPENDS=	libtlen.so:${PORTSDIR}/polish/libtlen
+TLEN_CONFIGURE_WITH=	tlen
 
-.include <bsd.port.pre.mk> # can't change this untile HAVE_GNOME has been fixed
+JABBER_LIB_DEPENDS=	libloudmouth-1.so:${PORTSDIR}/net-im/loudmouth
+JABBER_CONFIGURE_WITH=	jabber
 
-.if ${PORT_OPTIONS:MAUTODETECT}
-#detect dbus - only works with old versions
-.if exists(${LOCALBASE}/lib/libdbus-1.so)  && !${PORT_OPTIONS:MDBUS}
-PORT_OPTIONS+=	DBUS
-.endif
-#detect esound
-.if ${HAVE_GNOME:Mesound}!="" && !${PORT_OPTIONS:MESOUND}
-PORT_OPTIONS+=	ESOUND
-.endif
-#detect gtkspell
-.if exists(${LOCALBASE}/lib/libgtkspell.so) && !${PORT_OPTIONS:MGTKSPELL}
-PORT_OPTIONS+=	GTKSPELL
-.endif
-.endif
+DOCKLET_CONFIGURE_WITH=	docklet-system-tray
 
-.if ${PORT_OPTIONS:MTLEN}
-LIB_DEPENDS+=	libtlen.so:${PORTSDIR}/polish/libtlen
-CONFIGURE_ARGS+=	--with-tlen
-PLIST_SUB+=	TLEN:=""
-.else
-CONFIGURE_ARGS+=	--without-tlen
-PLIST_SUB+=	TLEN:="@comment "
-.endif
+DOCKAPP_CONFIGURE_WITH=	docklet_dockapp
 
-.if ${PORT_OPTIONS:MJABBER}
-LIB_DEPENDS+=	libloudmouth-1.so:${PORTSDIR}/net-im/loudmouth
-CONFIGURE_ARGS+=	--with-jabber
-PLIST_SUB+=	JABBER:=""
-.else
-CONFIGURE_ARGS+=	--without-jabber
-PLIST_SUB+=	JABBER:="@comment "
-.endif
+GTKSPELL_LIB_DEPENDS=	libgtkspell.so:${PORTSDIR}/textproc/gtkspell
+GTKSPELL_CONFIGURE_WITH=	gtkspell
 
-.if !${PORT_OPTIONS:MDOCKLET}
-CONFIGURE_ARGS+=	--without-docklet-system-tray
-PLIST_SUB+=	DOCKLET:="@comment "
-.else
-CONFIGURE_ARGS+=	--with-docklet-system-tray
-PLIST_SUB+=	DOCKLET:=""
-.endif
+DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
+DBUS_CONFIGURE_WITH=	dbus
+DBUS_CONFIGURE_ON=	--with-dbus-dir=${PREFIX}/share/dbus-1/services
 
-.if ${PORT_OPTIONS:MDOCKAPP}
-CONFIGURE_ARGS+=	--with-docklet_dockapp
-PLIST_SUB+=	DOCKAPP:=""
-.else
-CONFIGURE_ARGS+=	--without-docklet_dockapp
-PLIST_SUB+=	DOCKAPP:="@comment "
-.endif
+ESOUND_USE=	GNOME=esound
+ESOUND_CONFIGURE_WITH=	esd
 
-.if ${PORT_OPTIONS:MGTKSPELL}
-LIB_DEPENDS+=	libgtkspell.so:${PORTSDIR}/textproc/gtkspell
-CONFIGURE_ARGS+=	--with-gtkspell
-.else
-CONFIGURE_ARGS+=	--without-gtkspell
-.endif
-
-.if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	libdbus-1.so:${PORTSDIR}/devel/dbus
-CONFIGURE_ARGS+=	--with-dbus \
-			--with-dbus-dir=${PREFIX}/share/dbus-1/services
-PLIST_SUB+=	DBUS:=""
-.else
-CONFIGURE_ARGS+=	--without-dbus
-PLIST_SUB+=	DBUS:="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MESOUND}
-PKGNAMESUFFIX=	-esound
-USE_GNOME+=	esound
-CONFIGURE_ARGS+=	--with-esd
-PLIST_SUB+=	ESOUND:=""
-.else
-CONFIGURE_ARGS+=	--without-esd
-PLIST_SUB+=	ESOUND:="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MXOSD}
-LIB_DEPENDS+=	libxosd.so:${PORTSDIR}/misc/xosd
-CONFIGURE_ARGS+=	--with-xosd
-PLIST_SUB+=	XOSD:=""
-.else
-CONFIGURE_ARGS+=	--without-xosd
-PLIST_SUB+=	XOSD:="@comment "
-.endif
+XOSD_LIB_DEPENDS=	libxosd.so:${PORTSDIR}/misc/xosd
+XOSD_CONFIGURE_WITH=	xosd
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,=.*},=${PREFIX},' ${WRKSRC}/src/plugins/dbus/org.freedesktop.im.GG.service
@@ -153,5 +87,4 @@ post-patch:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/gg2.desktop ${STAGEDIR}${PREFIX}/share/applications/
 
-# vim: set ts=8 sw=8:
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

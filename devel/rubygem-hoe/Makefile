@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hoe
-PORTVERSION=	3.13.1
+PORTVERSION=	3.14.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-rake>=0.8:${PORTSDIR}/devel/rubygem-rake
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

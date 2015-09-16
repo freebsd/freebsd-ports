@@ -13,6 +13,9 @@ COMMENT=	Simple download manager
 
 LICENSE=	GPLv3
 
+DEPRECATED=	No new releases for years, consider using net/uget
+EXPIRATION_DATE=	2015-11-12
+
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libgee-0.8.so:${PORTSDIR}/devel/libgee \
 		libnotify.so:${PORTSDIR}/devel/libnotify

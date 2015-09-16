@@ -1,4 +1,4 @@
 bin/envpath
 %%PERL5_MAN3%%/Env::Path.3.gz
 %%SITE_PERL%%/Env/Path.pm
-man/man1/envpath.1.gz
+%%PERL5_MAN1%%/envpath.1.gz

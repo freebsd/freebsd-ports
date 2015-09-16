@@ -11,4 +11,4 @@ Toolbox API to make code easier to port from MATLAB to
 Python/Numpy. The core implementation of this library
 is in C for efficiency. 
 
-WWW:	http://code.google.com/p/scipy-cluster/
+WWW: http://code.google.com/p/scipy-cluster/

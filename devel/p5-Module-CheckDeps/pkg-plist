@@ -1,4 +1,4 @@
 bin/checkdeps
 %%SITE_PERL%%/Module/CheckDeps.pm
 %%PERL5_MAN3%%/Module::CheckDeps.3.gz
-man/man1/checkdeps.1.gz
+%%PERL5_MAN1%%/checkdeps.1.gz

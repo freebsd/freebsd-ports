@@ -2,7 +2,6 @@ bin/homerunviewer
 include/homerun/abstractsource.h
 include/homerun/actionlist.h
 include/homerun/homerun_export.h
-include/homerun/libhomerun_config.h
 include/homerun/pathmodel.h
 include/homerun/sourceconfigurationwidget.h
 lib/cmake/Homerun/HomerunConfig.cmake

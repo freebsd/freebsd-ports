@@ -11,7 +11,7 @@ bin/ora_explain
 %%SITE_ARCH%%/oraperl.ph
 %%PERL5_MAN3%%/DBD::Oracle.3.gz
 %%PERL5_MAN3%%/DBD::Oraperl.3.gz
-man/man1/ora_explain.1.gz
+%%PERL5_MAN1%%/ora_explain.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Readme
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bind.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/commit.pl

@@ -5,6 +5,6 @@ bin/cnmapwx
 %%SITE_ARCH%%/Encode/CNMap/cnmapwx.wdr
 %%SITE_ARCH%%/Encode/CNMap/cnmapwx_wdr.pl
 %%SITE_ARCH%%/auto/Encode/CNMap/CNMap.so
-man/man1/cnmap.1.gz
-man/man1/cnmapdir.1.gz
-man/man1/cnmapwx.1.gz
+%%PERL5_MAN1%%/cnmap.1.gz
+%%PERL5_MAN1%%/cnmapdir.1.gz
+%%PERL5_MAN1%%/cnmapwx.1.gz

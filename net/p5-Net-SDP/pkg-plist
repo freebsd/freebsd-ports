@@ -5,4 +5,4 @@ bin/sdp2rat
 %%SITE_PERL%%/Net/SDP.pm
 %%SITE_PERL%%/Net/SDP/Media.pm
 %%SITE_PERL%%/Net/SDP/Time.pm
-man/man1/sdp2rat.1.gz
+%%PERL5_MAN1%%/sdp2rat.1.gz

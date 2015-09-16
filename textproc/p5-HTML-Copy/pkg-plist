@@ -1,4 +1,4 @@
 bin/htmlcopy
 %%PERL5_MAN3%%/HTML::Copy.3.gz
 %%SITE_PERL%%/HTML/Copy.pm
-man/man1/htmlcopy.1.gz
+%%PERL5_MAN1%%/htmlcopy.1.gz

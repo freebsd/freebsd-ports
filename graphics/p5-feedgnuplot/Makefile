@@ -20,6 +20,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 USES=		perl5
 USE_PERL5=	configure
 
-PLIST_FILES=	bin/feedgnuplot man/man1/feedgnuplot.1.gz
+PLIST_FILES=	bin/feedgnuplot ${SITE_MAN1}/feedgnuplot.1.gz
 
 .include <bsd.port.mk>

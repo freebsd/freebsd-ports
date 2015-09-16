@@ -17,8 +17,6 @@ MAKE_ARGS=	USE_PGXS=1
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/postgresql/
 	@${INSTALL_PROGRAM} ${WRKSRC}/table_log.so \
@@ -26,10 +24,10 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/postgresql/contrib/
 	@${INSTALL_DATA} ${WRKSRC}/table_log_init.sql \
 		${STAGEDIR}${PREFIX}/share/postgresql/contrib/
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC} && ${INSTALL_DATA} README.table_log table_log.sql \
 		${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.mk>

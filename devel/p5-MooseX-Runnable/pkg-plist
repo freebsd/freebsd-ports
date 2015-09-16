@@ -27,4 +27,4 @@ bin/mx-run
 %%PERL5_MAN3%%/MooseX::Runnable::Invocation::Scheme::MooseX::Getopt.3.gz
 %%PERL5_MAN3%%/MooseX::Runnable::Run.3.gz
 %%PERL5_MAN3%%/MooseX::Runnable::Util::ArgParser.3.gz
-man/man1/mx-run.1.gz
+%%PERL5_MAN1%%/mx-run.1.gz

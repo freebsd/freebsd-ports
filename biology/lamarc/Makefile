@@ -27,6 +27,7 @@ PLIST_FILES=	bin/${PORTNAME}
 .if ${PORT_OPTIONS:MWXGTK}
 USE_WX=		2.8
 WX_CONF_ARGS=	absolute
+WX_UNICODE=	yes
 PLIST_FILES+=	bin/lam_conv
 .else
 CONFIGURE_ARGS+=	--disable-converter

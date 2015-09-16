@@ -354,4 +354,4 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::XMPStruct.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::ZIP.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::iWork.3.gz
-man/man1/exiftool.1.gz
+%%PERL5_MAN1%%/exiftool.1.gz

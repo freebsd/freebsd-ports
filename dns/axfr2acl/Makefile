@@ -17,6 +17,6 @@ RUN_DEPENDS=	p5-Net-DNS>0:${PORTSDIR}/dns/p5-Net-DNS
 USES=		perl5
 USE_PERL5=	configure
 
-PLIST_FILES=	bin/axfr2acl man/man1/axfr2acl.1.gz
+PLIST_FILES=	bin/axfr2acl ${SITE_MAN1}/axfr2acl.1.gz
 
 .include <bsd.port.mk>

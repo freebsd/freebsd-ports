@@ -17,6 +17,6 @@ RUN_DEPENDS=	p5-Net-CIDR>0:${PORTSDIR}/net-mgmt/p5-Net-CIDR
 USES=		perl5
 USE_PERL5=	configure
 
-PLIST_FILES=	bin/rpsl2acl man/man1/rpsl2acl.1.gz
+PLIST_FILES=	bin/rpsl2acl ${SITE_MAN1}/rpsl2acl.1.gz
 
 .include <bsd.port.mk>

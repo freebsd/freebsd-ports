@@ -26,18 +26,12 @@ USE_XORG=	x11 xext xtst xxf86vm
 PORTDOCS=	Changes DBUS-API README
 
 OPTIONS_DEFINE=	GDM DOCS
+OPTIONS_SUB=	yes
 GDM_DESC=	Install GDM login manager
 
 SUB_FILES=	${PORTNAME} rox.desktop
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGDM}
-RUN_DEPENDS+=	${LOCALBASE}/sbin/gdm:${PORTSDIR}/x11/gdm
-PLIST_SUB+=	GDM=""
-.else
-PLIST_SUB+=	GDM="@comment "
-.endif
+GDM_RUN_DEPENDS=${LOCALBASE}/sbin/gdm:${PORTSDIR}/x11/gdm
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
@@ -50,20 +44,20 @@ do-build:
 	@cd ${WRKSRC}/src/po && ./dist
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@cd ${WRKSRC} && ${CP} -r .DirIcon AppInfo.xml AppRun \
 		Environment Login Messages Options.xml ROX-Session \
 		ROX-Session.xml RunROX SetupPanel Styles browser images \
 		*.py *.pyc *.pyo ${STAGEDIR}${DATADIR}
-.if ${PORT_OPTIONS:MGDM}
-	@${INSTALL_DATA} ${WRKDIR}/rox.desktop ${STAGEDIR}${PREFIX}/share/applications
-.endif
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-GDM-on:
+	${INSTALL_DATA} ${WRKDIR}/rox.desktop ${STAGEDIR}${PREFIX}/share/applications
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/Help/${f} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Help/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

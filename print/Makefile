@@ -41,6 +41,7 @@
     SUBDIR += dvi2tty
     SUBDIR += dvips2ascii
     SUBDIR += dvisvg
+    SUBDIR += dymo-cups-drivers
     SUBDIR += easylatex
     SUBDIR += enscript-a4
     SUBDIR += enscript-letter

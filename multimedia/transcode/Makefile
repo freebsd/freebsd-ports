@@ -25,7 +25,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
-NO_OPTIONS_SORT=	yes
 OPTIONS_DEFINE=		DOCS OPTIMIZED_CFLAGS X11 MPEG2 BKTR POSTPROC FREETYPE LAME \
 			XVID X264 OGG VORBIS THEORA DVDREAD DV QUICKTIME LZO A52 \
 			FAAC LIBXML2 MJPEGTOOLS SDL IMAGEMAGICK JPEG ICONV V4L
@@ -126,15 +125,6 @@ post-extract:
 	@${RM} ${WRKSRC}/import/v4l/videodev*
 
 post-patch:
-.if ${PORT_OPTIONS:MLZO}
-	@${REINPLACE_CMD} -e 's|%%NUV%%|nuv|' ${WRKSRC}/import/Makefile.in
-.else
-	@${REINPLACE_CMD} -e 's|%%NUV%%||' ${WRKSRC}/import/Makefile.in
-.endif
-.if !${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-	@${FIND} ${WRKSRC} -type f | ${XARGS} -n 10 -x ${REINPLACE_CMD} \
-		-e 's|-O[236]|${CFLAGS}|'
-.endif
 	@${REINPLACE_CMD} -E -e 's|loff_t|uint64_t|' ${WRKSRC}/avilib/avidump.c
 	@${REINPLACE_CMD} -E -e 's|<SDL/|<|' ${WRKSRC}/filter/preview/display.h
 	@${REINPLACE_CMD} -e '/^static.*lrint/s|static ||' ${WRKSRC}/filter/filter_modfps.c
@@ -153,6 +143,16 @@ post-patch:
 		${WRKSRC}/import/decode_mov.c \
 		${WRKSRC}/import/import_mov.c \
 		${WRKSRC}/import/probe_mov.c
+
+post-patch-LZO-on:
+	@${REINPLACE_CMD} -e 's|%%NUV%%|nuv|' ${WRKSRC}/import/Makefile.in
+
+post-patch-LZO-off:
+	@${REINPLACE_CMD} -e 's|%%NUV%%||' ${WRKSRC}/import/Makefile.in
+
+post-patch-OPTIMIZED_CFLAGS-off:
+	@${FIND} ${WRKSRC} -type f | ${XARGS} -n 10 -x ${REINPLACE_CMD} \
+		-e 's|-O[236]|${CFLAGS}|'
 
 post-stage:
 	@(cd ${STAGEDIR}${PREFIX} && \

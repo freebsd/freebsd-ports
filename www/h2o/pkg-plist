@@ -5,5 +5,4 @@ share/h2o/kill-on-close
 share/h2o/start_server
 %%DATADIR%%/setuidgid
 @dir(%%H2O_USER%%,%%H2O_GROUP%%,0750) %%H2O_LOGDIR%%
-@dir(%%H2O_USER%%,%%H2O_GROUP%%,0750) %%H2O_PIDDIR%%
 @sample %%ETCDIR%%/h2o.conf.sample

@@ -27,5 +27,5 @@ bin/oai-listsets
 %%PERL5_MAN3%%/Net::OAI::Record::Header.3.gz
 %%PERL5_MAN3%%/Net::OAI::Record::OAI_DC.3.gz
 %%PERL5_MAN3%%/Net::OAI::ResumptionToken.3.gz
-man/man1/oai-listrecords.1.gz
-man/man1/oai-listsets.1.gz
+%%PERL5_MAN1%%/oai-listrecords.1.gz
+%%PERL5_MAN1%%/oai-listsets.1.gz

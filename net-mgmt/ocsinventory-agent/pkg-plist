@@ -214,4 +214,4 @@ bin/ocsinventory-agent
 %%SITE_PERL%%/Ocsinventory/LoggerBackend/Stderr.pm
 %%SITE_PERL%%/Ocsinventory/LoggerBackend/Syslog.pm
 %%SITE_PERL%%/Ocsinventory/Unix/postinst.pl
-man/man1/ocsinventory-agent.1.gz
+%%PERL5_MAN1%%/ocsinventory-agent.1.gz

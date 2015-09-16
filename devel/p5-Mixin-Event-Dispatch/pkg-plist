@@ -2,6 +2,9 @@
 %%SITE_PERL%%/Mixin/Event/Dispatch/Bus.pm
 %%SITE_PERL%%/Mixin/Event/Dispatch/Bus.pod
 %%SITE_PERL%%/Mixin/Event/Dispatch/Event.pm
+%%SITE_PERL%%/Mixin/Event/Dispatch/Methods.pm
+%%SITE_PERL%%/Mixin/Event/Dispatch/Methods.pod
 %%PERL5_MAN3%%/Mixin::Event::Dispatch.3.gz
 %%PERL5_MAN3%%/Mixin::Event::Dispatch::Bus.3.gz
 %%PERL5_MAN3%%/Mixin::Event::Dispatch::Event.3.gz
+%%PERL5_MAN3%%/Mixin::Event::Dispatch::Methods.3.gz

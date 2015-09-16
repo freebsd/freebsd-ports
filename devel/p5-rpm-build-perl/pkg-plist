@@ -14,5 +14,5 @@ bin/perl.req.files
 %%SITE_ARCH%%/PerlReq/Utils.pm
 %%SITE_ARCH%%/auto/B/ConstOptree/ConstOptree.so
 %%SITE_ARCH%%/fake.pm
-man/man1/perl.prov.1.gz
-man/man1/perl.req.1.gz
+%%PERL5_MAN1%%/perl.prov.1.gz
+%%PERL5_MAN1%%/perl.req.1.gz

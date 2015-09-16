@@ -304,6 +304,7 @@ _MAKE_JOBS=	#
 
 .include <bsd.port.pre.mk>
 
+.if ${OPSYS} == FreeBSD
 .if ${COMPILER_FEATURES:Mlibstdc++}
 BROKEN=		Build with system libstdc++ is unsupported
 .endif
@@ -312,6 +313,7 @@ BROKEN=		Build with system libstdc++ is unsupported
 BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 CONFIGURE_ENV+=	FLEX=${LOCALBASE}/bin/flex
 .endif
+.endif # FreeBSD
 
 .if ${COMPILER_TYPE} == "clang"
 CXXFLAGS_WARN=	-Woverloaded-virtual -Wno-unknown-pragmas \

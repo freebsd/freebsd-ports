@@ -68,7 +68,7 @@ my $autofill = ($autofill_l ? $autofill_l : $autofill_L);
 my $c = $opts{'c'} if ($opts{'c'} ne "");
 my $distdir = $opts{'s'} if ($opts{'s'} ne "");
 my $dir = $opts{'d'};
-my $h = "svn.FreeBSD.org";
+my $h = "repo.FreeBSD.org";
 $h = $opts{'h'} if ($opts{'h'} ne "");
 my $u = $ENV{USER};
 $u = $opts{'u'} if ($opts{'u'} ne "");
@@ -532,7 +532,7 @@ OPTIONS
 			there are no problems.  Recommended.
 	-c file		Use file in place of normal log message.
 	-f		Do not fetch the distfile.
-	-h host		Use a svnhost besides svn.FreeBSD.org.
+	-h host		Use a svnhost besides repo.FreeBSD.org.
 	-i		Interactive mode; allow more control over
 			where things are placed.
 	-l PR#		Attempts to autogenerate a commit message by

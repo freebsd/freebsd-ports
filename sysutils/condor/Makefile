@@ -11,6 +11,7 @@ MAINTAINER=	jwbacon@tds.net
 COMMENT=	High-throughput computing on distributively owned resources
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE-2.0.txt
 
 LIB_DEPENDS+=	libkrb5support.so:${PORTSDIR}/security/krb5 \
 		libpcre.so:${PORTSDIR}/devel/pcre \
@@ -53,12 +54,6 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 900000
-BROKEN=		Fails to build on FreeBSD 8.x
-.endif
-
 pre-everything::
 	@( ${PRINTF} "\nWARNING: Condor needs approximately 3GB to build!"; \
 	   ${PRINTF} "         Please make sure your build environment has that much before continuing.\n" )
@@ -86,4 +81,4 @@ post-install:
 		${STAGEDIR}${PREFIX}/etc/condor_config.local.sample
 	${INSTALL_SCRIPT} ${WRKDIR}/condor-config ${STAGEDIR}${PREFIX}/sbin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

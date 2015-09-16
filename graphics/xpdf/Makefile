@@ -2,7 +2,7 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	3.04
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics print
 MASTER_SITES=	http://mirrors.rit.edu/zi/ \
 		ftp://ftp.foolabs.com/pub/xpdf/ \
@@ -37,6 +37,8 @@ TYPE1_DESC=	Ghostscript type1 fonts
 OPTIONS_DEFAULT=	TYPE1 X11
 OPTIONS_SUB=		yes
 
+SUB_FILES=	xpdf-man.conf
+
 TYPE1_RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/n021003l.pfb:${PORTSDIR}/print/gsfonts
 
 LIBPAPER_LIB_DEPENDS=	libpaper.so:${PORTSDIR}/print/libpaper
@@ -61,5 +63,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 	${LN} -sf ${PREFIX}/libexec/xpdf/xpdf ${STAGEDIR}${PREFIX}/bin/xpdf
+	${INSTALL_DATA} ${WRKDIR}/xpdf-man.conf \
+		${STAGEDIR}${PREFIX}/etc/man.d/xpdf.conf
 
 .include <bsd.port.mk>

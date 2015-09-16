@@ -42,8 +42,8 @@
 %%PERL5_MAN3%%/Test::Parser::lhcs_regression.3.gz
 %%PERL5_MAN3%%/Test::Parser::ltp.3.gz
 %%PERL5_MAN3%%/Test::Parser::newpynfs.3.gz
-man/man1/parse_iozone.1.gz
-man/man1/parse_test.1.gz
+%%PERL5_MAN1%%/parse_iozone.1.gz
+%%PERL5_MAN1%%/parse_test.1.gz
 bin/kernel2trpi
 bin/parse_build_kernel
 bin/parse_iozone

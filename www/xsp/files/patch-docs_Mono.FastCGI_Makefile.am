@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- docs/Mono.FastCGI/Makefile.am.orig
 +++ docs/Mono.FastCGI/Makefile.am
 @@ -8,7 +8,7 @@

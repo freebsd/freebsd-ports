@@ -2,6 +2,7 @@
 
 PORTNAME=	r10k
 PORTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -25,6 +26,14 @@ NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+USES=		shebangfix
+SHEBANG_FILES=	integration/scripts/*.sh \
+		integration/test_run_scripts/*.sh \
+		integration/test_run_scripts/basic_functionality/all_tests-pe-centos6.sh \
+		integration/test_run_scripts/command_line/all_tests-pe-centos6.sh \
+		integration/test_run_scripts/git_source/all_tests-pe-centos6.sh \
+		integration/test_run_scripts/user_scenario/basic_workflow/all_tests-pe-centos6.sh \
+		integration/test_run_scripts/user_scenario/complex_workflow/all_tests-pe-centos6.sh
 
 PLIST_FILES=	bin/r10k
 

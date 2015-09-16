@@ -3,7 +3,7 @@
 
 PORTNAME=	dmd
 PORTVERSION=	1.076
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMESUFFIX=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.digitalmars.com/
@@ -69,9 +69,7 @@ post-build:
 do-install:
 	${INSTALL_MAN} ${WRKDIR}/dmd/man/man1/dmd.1 ${STAGEDIR}${MANPREFIX}/man/man1/dmd1.1
 	${INSTALL_MAN} ${WRKDIR}/dmd/man/man1/dmd.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5/dmd1.conf.5
-.if !exists(${STAGEDIR}${PREFIX}/etc/dmd.conf)
-	${INSTALL_DATA} ${WRKDIR}/dmd/freebsd/bin32/dmd.conf ${STAGEDIR}${PREFIX}/etc
-.endif
+	${INSTALL_DATA} ${WRKDIR}/dmd/freebsd/bin32/dmd.conf ${STAGEDIR}${PREFIX}/etc/dmd1.conf.sample
 	${INSTALL_PROGRAM} ${WRKDIR}/dmd/freebsd/bin32/dmd ${STAGEDIR}${PREFIX}/bin/dmd1
 	${INSTALL_DATA} ${WRKDIR}/dmd/freebsd/lib32/libphobos.a ${STAGEDIR}${PREFIX}/lib
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
