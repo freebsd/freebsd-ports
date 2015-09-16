@@ -1141,6 +1141,7 @@
     SUBDIR += libesedb
     SUBDIR += libestr
     SUBDIR += libev
+    SUBDIR += libevdev
     SUBDIR += libevent-hiphop
     SUBDIR += libevent2
     SUBDIR += libevt
