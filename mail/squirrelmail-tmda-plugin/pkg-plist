@@ -14,5 +14,4 @@
 %%SQUIRRELDIR%%/%%TMDATOOLDIR%%/tools.php
 %%SQUIRRELDIR%%/%%TMDATOOLDIR%%/version
 %%SQUIRRELDIR%%/%%TMDATOOLDIR%%/viewer.php
-@dirrm %%SQUIRRELDIR%%/%%TMDATOOLDIR%%
 @exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin tmdatools; fi

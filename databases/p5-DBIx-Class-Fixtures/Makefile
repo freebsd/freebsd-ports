@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	DBIx-Class-Fixtures
-PORTVERSION=	1.001024
-PORTREVISION=	1
+PORTVERSION=	1.001032
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SKAUFMAN
@@ -27,12 +26,15 @@ RUN_DEPENDS=	\
 	p5-DateTime-Format-SQLite>=0.1:${PORTSDIR}/devel/p5-DateTime-Format-SQLite \
 	p5-File-Copy-Recursive>=0.38:${PORTSDIR}/devel/p5-File-Copy-Recursive \
 	p5-Hash-Merge>=0.1:${PORTSDIR}/textproc/p5-Hash-Merge \
+	p5-IO-All>=0.85:${PORTSDIR}/devel/p5-IO-All \
 	p5-YAML-Syck>=1.27:${PORTSDIR}/textproc/p5-YAML-Syck \
 	p5-Path-Class>=0.32:${PORTSDIR}/devel/p5-Path-Class
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
 	p5-DBD-SQLite>=1.12:${PORTSDIR}/databases/p5-DBD-SQLite \
-	p5-DBIx-Class-InflateColumn-FS>=0.01007:${PORTSDIR}/databases/p5-DBIx-Class-InflateColumn-FS
+	p5-DBIx-Class-InflateColumn-FS>=0.01007:${PORTSDIR}/databases/p5-DBIx-Class-InflateColumn-FS \
+	p5-Test-Compile>0:${PORTSDIR}/devel/p5-Test-Compile \
+	p5-Test-TempDir-Tiny>0:${PORTSDIR}/devel/p5-Test-TempDir-Tiny
 
 USES=	perl5
 USE_PERL5=	configure

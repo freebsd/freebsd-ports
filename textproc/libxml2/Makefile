@@ -1,10 +1,9 @@
 # Created by: Yukihiro Nakai <Nakai@technologist.com>
-# $FreeBSD: head/textproc/libxml2/Makefile 354000 2014-05-13 21:25:15Z kwm $
-#    $MCom: ports/trunk/textproc/libxml2/Makefile 19578 2014-04-25 21:50:30Z kwm $
+# $FreeBSD$
 
 PORTNAME=	libxml2
 PORTVERSION=	2.9.2
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	ftp://xmlsoft.org/libxml2/ \
 		http://xmlsoft.org/sources/ \
@@ -32,10 +31,12 @@ PLIST_SUB+=	LIBVERSION=${PORTVERSION}
 
 .if !defined(MASTERDIR)
 
-OPTIONS_DEFINE= SCHEMA THREADS MEM_DEBUG XMLLINT_HIST THREAD_ALLOC
-OPTIONS_DEFAULT=SCHEMA THREADS
+OPTIONS_DEFINE= SCHEMA VALID THREADS MEM_DEBUG XMLLINT_HIST THREAD_ALLOC
+OPTIONS_DEFAULT=SCHEMA VALID THREADS
 SCHEMA_DESC=	XML schema support
 SCHEMA_CONFIGURE_WITH=	schemas
+VALID_DESC=	Validation support
+VALID_CONFIGURE_OFF=	--without-valid
 THREADS_DESC=	Threads support
 THREADS_CONFIGURE_WITH=	threads
 MEM_DEBUG_DESC= Memory debugging (DEVELOPERS ONLY!)

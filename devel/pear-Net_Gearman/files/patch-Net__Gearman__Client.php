@@ -1,6 +1,6 @@
---- ./Net/Gearman/Client.php.orig	2013-03-13 17:50:59.000000000 +0800
-+++ ./Net/Gearman/Client.php	2013-03-13 17:51:18.000000000 +0800
-@@ -166,11 +166,11 @@
+--- Net/Gearman/Client.php.orig	1970-01-01 09:13:08 UTC
++++ Net/Gearman/Client.php
+@@ -166,11 +166,11 @@ class Net_Gearman_Client
          $s = $this->getConnection();
          Net_Gearman_Connection::send($s, $type, $params);
  
@@ -15,7 +15,7 @@
      }
  
      /**
-@@ -244,7 +244,7 @@
+@@ -244,7 +244,7 @@ class Net_Gearman_Client
              $task->fail();
              break;
          case 'job_created':

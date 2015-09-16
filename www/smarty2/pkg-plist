@@ -253,8 +253,3 @@
 %%DATADIR%%/plugins/outputfilter.trimwhitespace.php
 %%DATADIR%%/plugins/shared.escape_special_chars.php
 %%DATADIR%%/plugins/shared.make_timestamp.php
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/internals
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%

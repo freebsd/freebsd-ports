@@ -16,10 +16,9 @@ LICENSE_NAME=	Wings 3D License # similar to TclTk license
 LICENSE_FILE=	${WRKSRC}/license.terms
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang \
-		esdl>0:${PORTSDIR}/devel/esdl
-RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang \
-		esdl>0:${PORTSDIR}/devel/esdl
+BUILD_DEPENDS=	erl:${PORTSDIR}/lang/erlang \
+		erlang-esdl>0:${PORTSDIR}/devel/erlang-esdl
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAKE_ENV=	ESDL_PATH=${LOCALBASE}/lib/erlang/lib/esdl
 PLIST_SUB=	VERSION="${PORTVERSION}"

@@ -3,7 +3,7 @@
 
 PORTNAME=	images
 PORTVERSION=	4.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/camlspotter/camlimages/get/
@@ -43,7 +43,7 @@ PNG_CONFIGURE_WITH=	png
 PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 JPEG_CONFIGURE_WITH=	jpeg
-JPEG_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+JPEG_USES=		jpeg
 
 TIFF_CONFIGURE_WITH=	tiff
 TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
@@ -57,6 +57,7 @@ FREETYPE_CONFIGURE_WITH=freetype
 FREETYPE_LIB_DEPENDS=	libttf.so:${PORTSDIR}/print/freetype
 
 GHOSTSCRIPT_CONFIGURE_WITH= gs
+GHOSTSCRIPT_USES=	ghostscript
 
 GTK2_CONFIGURE_WITH=	liblgtk2
 GTK2_BUILD_DEPENDS=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
@@ -66,10 +67,6 @@ GTK2_RUN_DEPENDS=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
 
 .if ${PORT_OPTIONS:MXPM}
 USE_XORG=	xpm
-.endif
-
-.if ${PORT_OPTIONS:MGHOSTSCRIPT}
-USE_GHOSTSCRIPT=	yes
 .endif
 
 do-configure:

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	commons-logging
-PORTVERSION=	1.1.3
+PORTVERSION=	1.2
 CATEGORIES=	java devel
 MASTER_SITES=	APACHE_COMMONS_BINARIES
 PKGNAMEPREFIX=	jakarta-
@@ -21,17 +21,15 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
+JARFILE=	${PORTNAME}-${PORTVERSION}.jar
+
 PORTDOCS=	*
-PLIST_FILES=	%%JAVAJARDIR%%/commons-logging.jar
+PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
+		%%JAVAJARDIR%%/${JARFILE}
 
 do-install:
-	@${ECHO_MSG} -n ">> Installing JAR as ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar..."
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
-	@${ECHO_MSG} " [ DONE ]"
-	@${ECHO_MSG} -n ">> Installing documentation in ${STAGEDIR}${DOCSDIR}/..."
-	@cd ${WRKSRC}/apidocs \
-	  && ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \; \
-	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
-	@${ECHO_MSG} " [ DONE ]"
+	${INSTALL_DATA} ${WRKSRC}/${JARFILE} ${STAGEDIR}${JAVAJARDIR}
+	${LN} -sf ${JARFILE} ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
+	(cd ${WRKSRC}/apidocs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

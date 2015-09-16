@@ -46,9 +46,9 @@ CFLAGS+=	`${SDL_CONFIG} --cflags`
 .if ${PORT_OPTIONS:MWAD}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source heretic_share.wad.gz:wad
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-PLIST_SUB=	WAD:=""
+PLIST_SUB+=	WAD=""
 .else
-PLIST_SUB=	WAD:="@comment "
+PLIST_SUB+=	WAD="@comment "
 .endif
 
 post-extract:

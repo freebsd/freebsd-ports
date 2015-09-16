@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	Perl-Lint
-PORTVERSION=	0.22
+PORTVERSION=	0.23
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MOZNION
@@ -10,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Yet another Perl source code linter
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-B-Keywords>=0:${PORTSDIR}/devel/p5-B-Keywords \
 		p5-Compiler-Lexer>=0.22:${PORTSDIR}/devel/p5-Compiler-Lexer \
@@ -30,7 +34,8 @@ USE_PERL5=	modbuildtiny
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} >= 502000
-TEST_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
+BUILD_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
+RUN_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
 .endif
 
 .include <bsd.port.post.mk>

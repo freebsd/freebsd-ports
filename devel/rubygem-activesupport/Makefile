@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	activesupport
-PORTVERSION=	3.2.21
+PORTVERSION=	3.2.22
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,6 +14,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-i18n>=0.6.4:${PORTSDIR}/devel/rubygem-i18n \
 		rubygem-multi_json>=1.0:${PORTSDIR}/devel/rubygem-multi_json
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

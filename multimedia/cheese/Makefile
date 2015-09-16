@@ -1,10 +1,8 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/multimedia/cheese/Makefile 20066 2014-11-11 08:48:50Z gusi $
 
 PORTNAME=	cheese
-PORTVERSION=	3.14.2
-PORTREVISION=	1
+PORTVERSION=	3.16.1
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -22,8 +20,10 @@ LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 		libclutter-gst-2.0.so:${PORTSDIR}/multimedia/clutter-gst
 RUN_DEPENDS=	gnome-video-effects>=0:${PORTSDIR}/graphics/gnome-video-effects
 
+PORTSCOUT=	limitw:1,even
+
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
-USE_GNOME=	gnomeprefix intlhack evolutiondataserver3 librsvg2 \
+USE_GNOME=	intlhack evolutiondataserver3 librsvg2 \
 		gnomedesktop3 libxml2:build introspection:build
 USE_XORG=	xxf86vm x11
 USE_GSTREAMER1=	bad good jpeg ogg theora v4l2 vorbis vpx
@@ -36,6 +36,14 @@ INSTALL_TARGET=	install-strip
 
 DOCS=		AUTHORS COPYING ChangeLog NEWS README
 GLIB_SCHEMAS=	org.gnome.Cheese.gschema.xml
+
+OPTIONS_DEFINE=	MANPAGES
+OPTIONS_DEFAULT=MANPAGES
+
+MANPAGES_CONFIGURE_ENABLE=	man
+MANPAGES_BUILD_DEPENDS=	docbook-xml>=0:${PORTSDIR}/textproc/docbook-xml \
+			docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
+MANPAGES_USE=	GNOME=libxslt:build
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

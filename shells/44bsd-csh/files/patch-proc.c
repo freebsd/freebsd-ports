@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- proc.c	Tue Jun  4 20:07:29 2002
 +++ proc.c	Tue Jun  4 20:14:09 2002
 @@ -89,13 +89,13 @@

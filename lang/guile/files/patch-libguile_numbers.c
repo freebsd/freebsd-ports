@@ -1,6 +1,6 @@
---- libguile/numbers.c	2008-07-09 14:50:22.000000000 +0800
-+++ libguile/numbers.c	2008-07-09 14:53:05.000000000 +0800
-@@ -163,7 +163,7 @@
+--- libguile/numbers.c.orig	2010-12-13 17:25:01 UTC
++++ libguile/numbers.c
+@@ -160,7 +160,7 @@ xisnan (double x)
  }
  
  #if defined (GUILE_I)

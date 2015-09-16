@@ -1,6 +1,6 @@
---- configure.orig	2013-10-07 13:59:48.000000000 +0200
-+++ configure		2013-10-07 16:30:19.000000000 +0200
-@@ -105,12 +105,12 @@
+--- configure.orig	2015-05-13 22:14:22 UTC
++++ configure
+@@ -110,12 +110,12 @@ if [ -n "$ERRORS" ] && [ $EBUILD_COMPAT 
  fi
  
  if [ $USE_CLANG -eq 0 ]; then
@@ -17,7 +17,7 @@
    COMPILER='clang'
  fi
  
-@@ -151,7 +151,6 @@
+@@ -160,7 +160,6 @@ cat > include.mk <<EOF
  # use ./configure instead
  
  TARGET := $TARGET

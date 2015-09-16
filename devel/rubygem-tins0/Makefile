@@ -10,6 +10,10 @@ PKGNAMESUFFIX=	0
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Useful tools library in Ruby
 
+LICENSE=	MIT
+
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

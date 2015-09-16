@@ -1,6 +1,6 @@
---- src/CMakeLists.txt.orig	2014-10-08 21:50:07 UTC
+--- src/CMakeLists.txt.orig	2015-05-07 13:21:22 UTC
 +++ src/CMakeLists.txt
-@@ -79,7 +79,7 @@ if (UNIX)
+@@ -86,7 +86,7 @@ if (UNIX)
  	if (APPLE)
  		set (MOSQ_LIBS ${MOSQ_LIBS} dl m)
  	else (APPLE)
@@ -9,7 +9,7 @@
  	endif (APPLE)
  endif (UNIX)
  
-@@ -100,6 +100,5 @@ if (${WITH_TLS} STREQUAL ON)
+@@ -127,6 +127,5 @@ if (${WITH_TLS} STREQUAL ON)
  endif (${WITH_TLS} STREQUAL ON)
  
  if (UNIX)

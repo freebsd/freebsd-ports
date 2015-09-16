@@ -13,6 +13,8 @@ COMMENT=	Advanced genealogy software
 
 LICENSE=	GPLv2
 
+BROKEN=		Fails to build
+
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		camlp5:${PORTSDIR}/devel/ocaml-camlp5
 

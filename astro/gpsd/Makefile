@@ -2,53 +2,60 @@
 # $FreeBSD$
 
 PORTNAME=	gpsd
-PORTVERSION=	3.9
+PORTVERSION=	3.14
+PORTREVISION=	3
 CATEGORIES=	astro geography
 MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	glebius@FreeBSD.org
 COMMENT=	Daemon that monitors one or more GPSes attached to a host computer
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl \
 		xsltproc:${PORTSDIR}/textproc/libxslt
 
-USES=		pathfix pkgconfig python scons
+USES=		cpe pathfix pkgconfig python scons
+CPE_VENDOR=	gpsd_project
 USE_RC_SUBR=	gpsd
 
-MAKE_ARGS=	prefix="${PREFIX}" mandir="man" pkgconfig="libdata/pkgconfig" \
-		chrpath=no
+MAKE_ARGS=	prefix="${PREFIX}" mandir="man" pkgconfig="libdata/pkgconfig"
 MAKE_ENV=	DESTDIR="${STAGEDIR}"
 
-OPTIONS_DEFINE=	AIVDM ASHTECH CPPBIND DBUS EARTHMATE EVERMORE FV18 GARMIN GARMINTXT \
-		GEOSTAR GPSCLOCK GTK2 IPV6 ITRAX MTK NAVCOM NETFEED NMEA NTPSHM NTRIP \
-		OCEANSERVER OLDPROTO ONCORE PASSTHROUGH PPS PROFILING RECONFIGURE \
-		RTCM104V2 RTCM104V3 SHMEXPORT SIRF SOCKEXPORT SUPERSTARII TIMING TNT TRIPMATE \
-		TSIP QTBIND UBX USB
-OPTIONS_DEFAULT=	AIVDM ASHTECH CPPBIND EARTHMATE EVERMORE FV18 GARMIN GARMINTXT GEOSTAR \
-			GPSCLOCK ITRAX NAVCOM NETFEED NMEA NTPSHM NTRIP OCEANSERVER OLDPROTO \
-			ONCORE PASSTHROUGH PPS RECONFIGURE RTCM104V2 RTCM104V3 SHMEXPORT SIRF \
-			SOCKEXPORT SUPERSTARII TIMING TNT TRIPMATE TSIP UBX USB
+OPTIONS_DEFINE=	AIVDM ASHTECH CPPBIND DBUS EARTHMATE EVERMORE FURY FV18 GARMIN \
+		GARMINTXT GEOSTAR GPSCLOCK IPV6 ITRAX MTK NAVCOM NCURSES \
+		NETFEED NMEA0183 NTP NTPSHM NTRIP OCEANSERVER ONCORE \
+		PASSTHROUGH PPS PROFILING RECONFIGURE RTCM104V2 RTCM104V3 \
+		SHMEXPORT SIRF SOCKEXPORT SUPERSTARII TIMING TNT TRIPMATE \
+		TSIP QTBIND UBLOX USB
+OPTIONS_DEFAULT= AIVDM ASHTECH CPPBIND EARTHMATE EVERMORE FURY FV18 GARMIN \
+		GARMINTXT GEOSTAR GPSCLOCK ITRAX NAVCOM NCURSES NETFEED \
+		NMEA0183 NTP NTPSHM NTRIP OCEANSERVER ONCORE PASSTHROUGH \
+		RECONFIGURE RTCM104V2 RTCM104V3 SHMEXPORT SIRF SOCKEXPORT \
+		SUPERSTARII TIMING TNT TRIPMATE TSIP UBLOX USB
 
 AIVDM_DESC=		Aivdm support
 ASHTECH_DESC=		Ashtech support
 CPPBIND_DESC=		Build C++ bindings
 EARTHMATE_DESC=		DeLorme EarthMate Zodiac support
 EVERMORE_DESC=		Evermore binary support
+FURY_DESC=		Jackson Labs Fury and Firefly support
 FV18_DESC=		San Jose Navigation FV-18 support
 GARMIN_DESC=		Garmin kernel driver support
 GARMINTXT_DESC=		Garmin Simple Text support
 GEOSTAR_DESC=		Geostar Protocol support
 GPSCLOCK_DESC=		GPSclock support
-GTK2_DESC=		Install py-gtk2 (required for xgps & xgpsspeed)
 ITRAX_DESC=		iTrax support
 MTK_DESC=		MTK-3301 support
 NAVCOM_DESC=		Navcom support
+NCURSES_DESC=		Build with ncurses
 NETFEED_DESC=		Build support for handling TCP/IP data sources
-NMEA_DESC=		NMEA support
-NTPSHM_DESC=		NTP time hinting support
+NMEA0183_DESC=		NMEA0183 support
+NTP_DESC=		NTP time hinting support
+NTPSHM_DESC=		NTP time hinting support via shared memory
 NTRIP_DESC=		NTRIP support
 OCEANSERVER_DESC=	Oceanserver support
-OLDPROTO_DESC=		Old (pre-JSON) protocol support in client lib
 ONCORE_DESC=		Motorola OnCore chipset support
 PASSTHROUGH_DESC=	Build support for passing through JSON
 PPS_DESC=		PPS time syncing support
@@ -65,185 +72,71 @@ TNT_DESC=		True North Technologies support
 TRIPMATE_DESC=		DeLorme TripMate support
 TSIP_DESC=		Trimble TSIP support
 QTBIND_DESC=		build QT bindings
-UBX_DESC=		UBX protocol support
+UBLOX_DESC=		u-blox protocol support
 USB_DESC=		libusb support for USB devices
 
-.include <bsd.port.options.mk>
-
 # Options related to GPS protocols
-.if ! ${PORT_OPTIONS:MNMEA}
-SCONS_ARGS+=	nmea=no
-.endif
-
-.if ! ${PORT_OPTIONS:MASHTECH}
-SCONS_ARGS+=	ashtech=no
-.endif
-
-.if ! ${PORT_OPTIONS:MEARTHMATE}
-SCONS_ARGS+=	earthmate=no
-.endif
-
-.if ! ${PORT_OPTIONS:MEVERMORE}
-SCONS_ARGS+=	evermore=no
-.endif
-
-.if ! ${PORT_OPTIONS:MFV18}
-SCONS_ARGS+=	fv18=no
-.endif
-
-.if ! ${PORT_OPTIONS:MGARMIN}
-SCONS_ARGS+=	garmin=no
-.endif
-
-.if ! ${PORT_OPTIONS:MGARMINTXT}
-SCONS_ARGS+=	garmintxt=no
-.endif
-
-.if ! ${PORT_OPTIONS:MGEOSTAR}
-SCONS_ARGS+=	geostar=no
-.endif
-
-.if ! ${PORT_OPTIONS:MITRAX}
-SCONS_ARGS+=	itrax=no
-.endif
-
-.if ! ${PORT_OPTIONS:MMTK}
-SCONS_ARGS+=	mtk3301=no
-.endif
-
-.if ! ${PORT_OPTIONS:MNAVCOM}
-SCONS_ARGS+=	navcom=no
-.endif
-
-.if ! ${PORT_OPTIONS:MONCORE}
-SCONS_ARGS+=	oncore=no
-.endif
-
-.if ! ${PORT_OPTIONS:MSIRF}
-SCONS_ARGS+=	sirf=no
-.endif
-
-.if ! ${PORT_OPTIONS:MSUPERSTARII}
-SCONS_ARGS+=	superstar2=no
-.endif
-
-.if ! ${PORT_OPTIONS:MTNT}
-SCONS_ARGS+=	tnt=no
-.endif
-
-.if ! ${PORT_OPTIONS:MTRIPMATE}
-SCONS_ARGS+=	tripmate=no
-.endif
-
-.if ! ${PORT_OPTIONS:MTSIP}
-SCONS_ARGS+=	tsip=no
-.endif
-
-.if ! ${PORT_OPTIONS:MUBX}
-SCONS_ARGS+=	ubx=no
-.endif
+NMEA0183_MAKE_ARGS_OFF=	nmea0183=no
+ASHTECH_MAKE_ARGS_OFF=	ashtech=no
+EARTHMATE_MAKE_ARGS_OFF=	earthmate=no
+EVERMORE_MAKE_ARGS_OFF=	evermore=no
+FURY_MAKE_ARGS_OFF=	fury=no
+FV18_MAKE_ARGS_OFF=	fv18=no
+GARMIN_MAKE_ARGS_OFF=	garmin=no
+GARMINTXT_MAKE_ARGS_OFF=	garmintxt=no
+GEOSTAR_MAKE_ARGS_OFF=	geostar=no
+ITRAX_MAKE_ARGS_OFF=	itrax=no
+MTK_MAKE_ARGS_OFF=	mtk3301=no
+NAVCOM_MAKE_ARGS_OFF=	navcom=no
+ONCORE_MAKE_ARGS_OFF=	oncore=no
+SIRF_MAKE_ARGS_OFF=	sirf=no
+SUPERSTARII_MAKE_ARGS_OFF=	superstar2=no
+TNT_MAKE_ARGS_OFF=	tnt=no
+TRIPMATE_MAKE_ARGS_OFF=	tripmate=no
+TSIP_MAKE_ARGS_OFF=	tsip=no
+UBLOX_MAKE_ARGS_OFF=	ublox=no
 
 # Options related to Non-GPS protocols
-.if ! ${PORT_OPTIONS:MAIVDM}
-SCONS_ARGS+=	aivdm=no
-.endif
-
-.if ! ${PORT_OPTIONS:MGPSCLOCK}
-SCONS_ARGS+=	gpsclock=no
-.endif
-
-.if ! ${PORT_OPTIONS:MNTRIP}
-SCONS_ARGS+=	ntrip=no
-.endif
-
-.if ! ${PORT_OPTIONS:MOCEANSERVER}
-SCONS_ARGS+=	oceanserver=no
-.endif
-
-.if ! ${PORT_OPTIONS:MRTCM104V2}
-SCONS_ARGS+=	rtcm104v2=no
-.endif
-
-.if ! ${PORT_OPTIONS:MRTCM104V3}
-SCONS_ARGS+=	rtcm104v3=no
-.endif
+AIVDM_MAKE_ARGS_OFF=	aivdm=no
+GPSCLOCK_MAKE_ARGS_OFF=	gpsclock=no
+NTRIP_MAKE_ARGS_OFF=	ntrip=no
+OCEANSERVER_MAKE_ARGS_OFF=	oceanserver=no
+RTCM104V2_MAKE_ARGS_OFF=	rtcm104v2=no
+RTCM104V3_MAKE_ARGS_OFF=	rtcm104v3=no
 
 # Time service
-.if ! ${PORT_OPTIONS:MNTPSHM}
-SCONS_ARGS+=	ntpshm=no
-.endif
-
-.if ! ${PORT_OPTIONS:MPPS}
-SCONS_ARGS+=	pps=no
-.else
-.	if ! ${PORT_OPTIONS:MNTPSHM}
-IGNORE=		PPS requires NTPSHM
-.	endif
-.endif
+NTP_MAKE_ARGS_OFF=	ntp=no
+NTPSHM_MAKE_ARGS_OFF=	ntpshm=no
+PPS_MAKE_ARGS_OFF=	pps=no
+PPS_IMPLIES=	NTPSHM
 
 # Export methods
-.if ! ${PORT_OPTIONS:MSOCKEXPORT}
-SCONS_ARGS+=	socket_export=no
-.endif
-
-.if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	libdbus-1.so:${PORTSDIR}/devel/dbus \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
-SCONS_ARGS+=	dbus_export=yes
-.endif
-
-.if ! ${PORT_OPTIONS:MSHMEXPORT}
-SCONS_ARGS+=	shm_export=no
-.endif
+SOCKEXPORT_MAKE_ARGS_OFF=	socket_export=no
+DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
+DBUS_MAKE_ARGS=	dbus_export=yes
+SHMEXPORT_MAKE_ARGS_OFF=	shm_export=no
 
 # Communication
-.if ! ${PORT_OPTIONS:MUSB}
-SCONS_ARGS+=	usb=no
-.endif
-
-.if ! ${PORT_OPTIONS:MIPV6}
-SCONS_ARGS+=	ipv6=no
-.endif
-
-.if ! ${PORT_OPTIONS:MNETFEED}
-SCONS_ARGS+=	netfeed=no
-.endif
-
-.if ! ${PORT_OPTIONS:MPASSTHROUGH}
-SCONS_ARGS+=	passthrough=no
-.endif
+USB_MAKE_ARGS_OFF=	usb=no
+IPV6_MAKE_ARGS_OFF=	ipv6=no
+NETFEED_MAKE_ARGS_OFF=	netfeed=no
+PASSTHROUGH_MAKE_ARGS_OFF=	passthrough=no
 
 # Other daemon options
-.if ! ${PORT_OPTIONS:MTIMING}
-SCONS_ARGS+=	timing=no
-.endif
+TIMING_MAKE_ARGS_OFF=	timing=no
 
 # Client-side options
-.if ! ${PORT_OPTIONS:MOLDPROTO}
-SCONS_ARGS+=	oldstyle=no
-.endif
-
-.if ${PORT_OPTIONS:MQTBIND}
-USE_QT4=	network
-SCONS_ARGS+=	libQgpsmm=yes
-PLIST_SUB+=	QTBIND=""
-.else
-SCONS_ARGS+=	libQgpsmm=no
-PLIST_SUB+=	QTBIND="@comment "
-.endif
-
-.if ! ${PORT_OPTIONS:MRECONFIGURE}
-SCONS_ARGS+=	reconfigure=no
-.endif
-
-.if ! ${PORT_OPTIONS:MCPPBIND}
-SCONS_ARGS+=	libgpsmm=no
-.endif
+NCURSES_MAKE_ARGS_OFF=	ncurses=no
+QTBIND_USE=	QT4=network
+QTBIND_MAKE_ARGS=	qt=yes
+QTBIND_MAKE_ARGS_OFF=	qt=no
+QTBIND_PLIST_SUB=	QTBIND=""
+QTBIND_PLIST_SUB_OFF=	QTBIND="@comment "
+RECONFIGURE_MAKE_ARGS_OFF=	reconfigure=no
+CPPBIND_MAKE_ARGS_OFF=	libgpsmm=no
 
 # Build control
-.if ${PORT_OPTIONS:MPROFILING}
-SCONS_ARGS+=	profiling=yes
-.endif
+PROFILING_MAKE_ARGS=	profiling=yes
 
 # generates .py[co] files for installed modules
 # if that's not done, ${PYTHON_SITELIBDIR}/gps will be polluted

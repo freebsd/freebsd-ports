@@ -2,15 +2,15 @@
 # used instead of the provided asis.gpr file.
 # $FreeBSD$
 
-CP=cp -p
-MKDIR=mkdir -p
-SRC=gen_src
+CP=		cp -p
+MKDIR=		mkdir -p
+SRC=		gen_src
 ADA_FLAGS=	-O2 -gnatn -gnatws -gnat05
 C_FLAGS=	-O2
 ADB_SRCS!=	cd ${.CURDIR} && ls *.adb | sort -r
 GEN_SRCS=	sdefault.adb snames.adb xsnamest.adb
 ADS_SRCS=	rident.ads hostparm.ads err_vars.ads alloc.ads prj-com.ads
-C_SRCS=		link.c update_path.c set_std_prefix.c
+C_SRCS=		link.c osint_scars.c
 LIB_SRCS+=	${C_SRCS} ${GEN_SRCS} ${ADS_SRCS} ${ADB_SRCS:Nlib-*.adb}
 LIB_OBJS=	${LIB_SRCS:R:S/$/.o/}
 

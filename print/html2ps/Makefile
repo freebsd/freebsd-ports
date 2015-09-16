@@ -3,7 +3,7 @@
 
 PORTNAME=	html2ps
 DISTVERSION=	1.0b7
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	print www perl5
 MASTER_SITES=	http://user.it.uu.se/~jan/ \
@@ -21,8 +21,7 @@ RUN_DEPENDS=	mogrify:${PORTSDIR}/graphics/ImageMagick \
 		paperconf:${PORTSDIR}/print/libpaper
 
 NO_BUILD=	yes
-USES=		perl5
-USE_GHOSTSCRIPT_RUN=	yes
+USES=		ghostscript:run perl5
 
 SUB_FILES=	html2psrc
 

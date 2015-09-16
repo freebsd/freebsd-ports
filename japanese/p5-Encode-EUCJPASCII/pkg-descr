@@ -1,0 +1,13 @@
+This is a Perl5 module that defines eucJP-open encodings.
+
+Encodings supported are as follows:
+
+  Canonical    Alias                           Description
+  --------------------------------------------------------------
+  eucJP-ascii                                  eucJP-ascii
+               qr/\beuc-?jp(-?open)?(-?19970715)?-?ascii$/i
+  x-iso2022jp-ascii                            7-bit counterpart
+               qr/\b(x-)?iso-?2022-?jp-?ascii$/i
+  --------------------------------------------------------------
+
+WWW: http://search.cpan.org/dist/Unicode-Japanese/

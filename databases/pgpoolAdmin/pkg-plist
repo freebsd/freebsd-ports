@@ -7,7 +7,7 @@
 %%WWWDIR%%/changePassword.php
 %%WWWDIR%%/command.php
 %%WWWDIR%%/common.php
-@sample %%WWWDIR%%/conf/pgmgt.conf.php.sample
+@sample(%%WWWOWN%%,%%WWWGRP%%,644) %%WWWDIR%%/conf/pgmgt.conf.php.sample
 %%WWWDIR%%/config.php
 %%WWWDIR%%/definePgpoolConfParam.php
 %%WWWDIR%%/doc/en/changePassword.html
@@ -281,32 +281,5 @@
 %%WWWDIR%%/templates/status.tpl
 %%WWWDIR%%/templates/systemDb.tpl
 %%WWWDIR%%/version.php
-@dirrmtry %%WWWDIR%%/conf
-@dirrm %%WWWDIR%%/doc/en/images
-@dirrm %%WWWDIR%%/doc/en
-@dirrm %%WWWDIR%%/doc/images
-@dirrm %%WWWDIR%%/doc/ja/images
-@dirrm %%WWWDIR%%/doc/ja
-@dirrm %%WWWDIR%%/doc
-@dirrm %%WWWDIR%%/images
-@dirrm %%WWWDIR%%/install/images
-@dirrm %%WWWDIR%%/install/lang
-@dirrm %%WWWDIR%%/install
-@dirrm %%WWWDIR%%/lang
-@dirrm %%WWWDIR%%/libs/plugins
-@dirrm %%WWWDIR%%/libs/sysplugins
-@dirrm %%WWWDIR%%/libs
-@dirrm %%WWWDIR%%/templates/elements
-@dirrm %%WWWDIR%%/templates/help/en
-@dirrm %%WWWDIR%%/templates/help/ja
-@dirrm %%WWWDIR%%/templates/help
-@dirrm %%WWWDIR%%/templates
-@comment without dirrm(try) the directory is not packaged, but pkg cannot
-@comment deinstall correct if there are tmp leftovers
-@comment @dirrmtry %%WWWDIR%%/templates_c
-@unexec rm -rf %D/%%WWWDIR%%/templates_c 2>&1 >/dev/null || true
-@dirrmtry %%WWWDIR%%
-@exec install -o %%WWWOWN%% -g %%WWWGRP%% -d %D/%%WWWDIR%%/templates_c
-@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%/templates_c
-@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%/conf
-@exec chmod u+w %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%/conf/*
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/conf
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/templates_c

@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	MongoDB
-PORTVERSION=	0.708.1.0
+PORTVERSION=	0.708.4.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:MONGODB
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Mongo Driver for Perl
@@ -33,11 +32,14 @@ TEST_DEPENDS=	p5-Data-Dump>=0:${PORTSDIR}/devel/p5-Data-Dump \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
 
-PORTSCOUT=	limit:^v*[0-9\.]*$$
+PORTSCOUT=	skipv:0.999.998.5
 
 CFLAGS+=	-DBSON_COMPILATION
 MAKE_JOBS_UNSAFE=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/MongoDB/MongoDB.so
 
 .include <bsd.port.mk>

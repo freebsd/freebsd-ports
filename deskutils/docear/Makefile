@@ -3,6 +3,7 @@
 
 PORTNAME=	docear
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 _suffix=	_stable
 CATEGORIES=	deskutils java
 MASTER_SITES=	http://downloads.docear.org/${PORTVERSION}${_suffix}/ \

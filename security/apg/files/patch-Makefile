@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- Makefile.orig
+--- Makefile.orig	2003-08-07 15:40:39 UTC
 +++ Makefile
-@@ -44,10 +44,12 @@
+@@ -44,10 +44,12 @@ APG_CLIBS += -lcrypt
  # If you want to use cracklib for password quality check then you
  # must uncomment the folowing 4 lines (you must not do this for WIN32)
  #
@@ -20,7 +17,7 @@ $FreeBSD$
  
  ##################################################################
  # Support for ANSI X9.17/SHA1 PRNG
-@@ -60,12 +62,12 @@
+@@ -60,12 +62,12 @@ APG_CLIBS += -lcrypt
  ##################################################################
  # You can modify CC variable if you have compiler other than GCC
  # But the code was designed and tested with GCC
@@ -35,7 +32,7 @@ $FreeBSD$
  
  ####################################################################
  # If you plan to install APG daemon you should look at lines below #
-@@ -135,7 +137,7 @@
+@@ -135,7 +137,7 @@ apgd:
  	${CC} ${CFLAGS} -DCLISERV ${CLISERV_OPTIONS} -o ${CS_PROGNAME} ${SOURCES} ${APG_CS_CLIBS}
  
  apgbfm:

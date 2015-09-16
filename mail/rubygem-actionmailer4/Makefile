@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	actionmailer
-PORTVERSION=	4.1.6
-PORTREVISION=	2
+PORTVERSION=	4.2.4
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	4
@@ -15,8 +14,11 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-actionpack4>=${PORTVERSION}:${PORTSDIR}/www/rubygem-actionpack4 \
 		rubygem-actionview>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-actionview \
-		rubygem-mail>=2.6.1:${PORTSDIR}/mail/rubygem-mail
+		rubygem-activejob>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activejob \
+		rubygem-mail>=2.6.1:${PORTSDIR}/mail/rubygem-mail \
+		rubygem-rails-dom-testing>=1.0:${PORTSDIR}/textproc/rubygem-rails-dom-testing
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

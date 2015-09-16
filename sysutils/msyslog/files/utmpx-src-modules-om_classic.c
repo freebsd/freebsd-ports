@@ -1,5 +1,5 @@
 --- src/modules/om_classic.c.orig	2010-01-25 16:36:53.000000000 -0800
-+++ src/modules/om_classic.c	2010-01-25 16:40:31.000000000 -0800
++++ src/modules/om_classic.c
 @@ -66,7 +66,7 @@
  #include <string.h>
  #include <syslog.h>

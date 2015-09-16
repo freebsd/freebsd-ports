@@ -1,12 +1,22 @@
-#extra linker flags for threaded tk
---- configure.orig	2009-06-03 19:08:21.000000000 -0400
-+++ configure	2009-06-03 19:48:48.000000000 -0400
-@@ -43400,7 +43400,7 @@
+# Recognize makeinfo from texinfo 6.0
+# Extra linker flags for threaded tk
+--- configure.orig	2013-09-17 22:06:13 UTC
++++ configure
+@@ -5181,7 +5181,7 @@ if ${r_cv_prog_makeinfo_v4+:} false; the
+   $as_echo_n "(cached) " >&6
+ else
+   makeinfo_version=`${MAKEINFO} --version | \
+-  grep "^makeinfo" | sed 's/[^)]*) \(.*\)/\1/'`
++  grep -E "^(makeinfo|texi2any)" | sed 's/[^)]*) \(.*\)/\1/'`
+ makeinfo_version_maj=`echo ${makeinfo_version} | cut -f1 -d.`
+ makeinfo_version_min=`echo ${makeinfo_version} | \
+   cut -f2 -d. | tr -dc '0123456789.' `
+@@ -32742,7 +32742,7 @@ fi
      ## Part 2.  Try finding the tk library.
      if test -n "${TK_CONFIG}"; then
        . ${TK_CONFIG}
 -      TCLTK_LIBS="${TCLTK_LIBS} ${TK_LIB_SPEC} ${TK_XLIBSW}"
 +      TCLTK_LIBS="${TCLTK_LIBS} ${TK_LIB_SPEC} ${TK_XLIBSW} ${TCL_LD_FLAGS}"
      else
- 
- { echo "$as_me:$LINENO: checking for Tk_Init in -ltk" >&5
+       { $as_echo "$as_me:${as_lineno-$LINENO}: checking for Tk_Init in -ltk" >&5
+ $as_echo_n "checking for Tk_Init in -ltk... " >&6; }

@@ -2,7 +2,7 @@
 
 PORTNAME=	preferences
 PORTVERSION=	1.2.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	deskutils gnustep
 MASTER_SITES=	SF/prefsapp/prefsapp/${PORTVERSION}
 DISTNAME=	Preferences-${PORTVERSION}
@@ -27,5 +27,11 @@ post-patch:
 	${REINPLACE_CMD} 's, -Werror,,' ${MODIFY:S,^,${WRKSRC}/,}
 	${REINPLACE_CMD} -e 's|^GNUSTEP_INSTALLATION_DIR|#GNUSTEP_INSTALLATION_DIR|' \
 		${WRKSRC}/GNUmakefile.preamble
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/System/Applications/Preferences.app/Preferences
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/System/Applications/Preferences.app/Resources/PrefsApp.prefs/PrefsApp
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/System/Library/Frameworks/PrefsModule.framework/Versions/0/libPrefsModule.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/System/Library/Preferences/Keyboard.prefs/Keyboard
 
 .include <bsd.port.mk>

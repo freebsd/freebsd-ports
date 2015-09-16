@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	mupen64plus
-PORTVERSION=	2.0
-PORTREVISION=	1
+PORTVERSION=	2.5
+PORTREVISION?=	0
 CATEGORIES=	emulators
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	acm@FreeBSD.org
 COMMENT=	Fork of Mupen64 Nintendo 64 emulator with plugins (meta port)
 
 # Mupen64 Emulator core and ui-console

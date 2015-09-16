@@ -3,7 +3,7 @@
 
 PORTNAME=	kpdftool
 PORTVERSION=	0.23.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/
 DISTFILES=	33194-${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
@@ -14,8 +14,7 @@ COMMENT=	Simple utility to manipulate PS and PDF files
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
 USE_QT4=	qt3support moc_build porting_build uic3_build
-USE_GHOSTSCRIPT_RUN=	yes
-USES=		qmake zip
+USES=		ghostscript:run qmake zip
 
 DESKTOP_ENTRIES=	"KPDFTool" "${COMMENT}" "kpdftool" \
 			"kpdftool" "Qt;Utility;" true

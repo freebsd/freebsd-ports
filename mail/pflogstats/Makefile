@@ -8,8 +8,10 @@ PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.aerasec.de/pub/linux/postfix/pflogsumm/${PORTNAME}/
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Postfix Log Statistics Reporter
+
+LICENSE=	GPLv2 # or later
 
 RUN_DEPENDS=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \
 		p5-Net-IP>=0:${PORTSDIR}/net-mgmt/p5-Net-IP \

@@ -7,7 +7,7 @@ CATEGORIES=	audio
 MASTER_SITES=	CENKES
 PKGNAMEPREFIX=	cmus-
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Last.fm submitter
 
 BROKEN=		No public distfiles

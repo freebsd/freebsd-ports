@@ -3,22 +3,25 @@
 
 PORTNAME=	shmux
 DISTVERSION=	1.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://web.taranis.org/shmux/dist/
-EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	online@jamundsen.dyndns.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to run commands on multiple hosts using shell commands
 
-OPTIONS_DEFINE=		FPING PCRE
-OPTIONS_DEFAULT=	FPING
-FPING_DESC=	Use fping utility
+LICENSE=	BSD4CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		tar:tgz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/examples
 
 ALL_TARGET=	${PORTNAME}
+
+OPTIONS_DEFINE=		FPING PCRE
+OPTIONS_DEFAULT=	FPING
+FPING_DESC=	Use fping utility
 
 .include <bsd.port.options.mk>
 
@@ -32,5 +35,8 @@ CONFIGURE_ARGS+=	--with-pcre=${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=	--with-pcre=no
 .endif
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

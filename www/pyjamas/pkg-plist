@@ -7,5 +7,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/img/num4.png
 %%PORTDOCS%%%%DOCSDIR%%/img/overview.png
 %%PORTDOCS%%%%DOCSDIR%%/uiHierarchy.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/img
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

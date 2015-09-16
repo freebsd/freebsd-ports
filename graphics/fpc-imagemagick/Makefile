@@ -1,7 +1,7 @@
 # Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-imagemagick
 

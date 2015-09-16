@@ -1,4 +1,5 @@
 bin/mp2bug
+@sample %%APACHEETCDIR%%/modules.d/%%APMOD_FILE%%
 %%APACHEINCLUDEDIR%%/modperl_apr_perlio.h
 %%APACHEINCLUDEDIR%%/modperl_xs_sv_convert.h
 %%APACHEINCLUDEDIR%%/modperl_xs_typedefs.h
@@ -70,8 +71,8 @@ bin/mp2bug
 %%SITE_ARCH%%/APR/Status.pm
 %%SITE_ARCH%%/APR/String.pm
 %%SITE_ARCH%%/APR/Table.pm
-%%THREADMUTEX%%%%SITE_ARCH%%/APR/ThreadMutex.pm
-%%THREADRWLOCK%%%%SITE_ARCH%%/APR/ThreadRWLock.pm
+%%SITE_ARCH%%/APR/ThreadMutex.pm
+%%SITE_ARCH%%/APR/ThreadRWLock.pm
 %%SITE_ARCH%%/APR/URI.pm
 %%SITE_ARCH%%/APR/UUID.pm
 %%SITE_ARCH%%/APR/Util.pm
@@ -130,7 +131,7 @@ bin/mp2bug
 %%SITE_ARCH%%/Apache2/PerlSections.pm
 %%SITE_ARCH%%/Apache2/PerlSections/Dump.pm
 %%SITE_ARCH%%/Apache2/Process.pm
-%%AP22%%%%AP24%%%%SITE_ARCH%%/Apache2/Provider.pm
+%%AP22%%%%SITE_ARCH%%/Apache2/Provider.pm
 %%SITE_ARCH%%/Apache2/Reload.pm
 %%SITE_ARCH%%/Apache2/RequestIO.pm
 %%SITE_ARCH%%/Apache2/RequestRec.pm
@@ -159,8 +160,8 @@ bin/mp2bug
 %%SITE_ARCH%%/ModPerl/Const.pm
 %%SITE_ARCH%%/ModPerl/FunctionMap.pm
 %%SITE_ARCH%%/ModPerl/Global.pm
-%%AP24%%%%SITE_ARCH%%/ModPerl/InterpPool.pm
-%%AP24%%%%SITE_ARCH%%/ModPerl/Interpreter.pm
+%%ITHREADS%%%%SITE_ARCH%%/ModPerl/InterpPool.pm
+%%ITHREADS%%%%SITE_ARCH%%/ModPerl/Interpreter.pm
 %%SITE_ARCH%%/ModPerl/MM.pm
 %%SITE_ARCH%%/ModPerl/Manifest.pm
 %%SITE_ARCH%%/ModPerl/MapUtil.pm
@@ -176,12 +177,11 @@ bin/mp2bug
 %%SITE_ARCH%%/ModPerl/StructureMap.pm
 %%SITE_ARCH%%/ModPerl/TestReport.pm
 %%SITE_ARCH%%/ModPerl/TestRun.pm
-%%AP24%%%%SITE_ARCH%%/ModPerl/TiPool.pm
-%%AP24%%%%SITE_ARCH%%/ModPerl/TiPoolConfig.pm
+%%ITHREADS%%%%SITE_ARCH%%/ModPerl/TiPool.pm
+%%ITHREADS%%%%SITE_ARCH%%/ModPerl/TiPoolConfig.pm
 %%SITE_ARCH%%/ModPerl/TypeMap.pm
 %%SITE_ARCH%%/ModPerl/Util.pm
 %%SITE_ARCH%%/ModPerl/WrapXS.pm
-%%AP24%%%%SITE_ARCH%%/MyTest/Util.pm
 %%SITE_ARCH%%/auto/APR/APR.so
 %%SITE_ARCH%%/auto/APR/Base64/Base64.so
 %%SITE_ARCH%%/auto/APR/Brigade/Brigade.so
@@ -201,8 +201,8 @@ bin/mp2bug
 %%SITE_ARCH%%/auto/APR/Status/Status.so
 %%SITE_ARCH%%/auto/APR/String/String.so
 %%SITE_ARCH%%/auto/APR/Table/Table.so
-%%THREADMUTEX%%%%SITE_ARCH%%/auto/APR/ThreadMutex/ThreadMutex.so
-%%THREADRWLOCK%%%%SITE_ARCH%%/auto/APR/ThreadRWLock/ThreadRWLock.so
+%%SITE_ARCH%%/auto/APR/ThreadMutex/ThreadMutex.so
+%%SITE_ARCH%%/auto/APR/ThreadRWLock/ThreadRWLock.so
 %%SITE_ARCH%%/auto/APR/URI/URI.so
 %%SITE_ARCH%%/auto/APR/UUID/UUID.so
 %%SITE_ARCH%%/auto/APR/Util/Util.so
@@ -221,7 +221,7 @@ bin/mp2bug
 %%SITE_ARCH%%/auto/Apache2/MPM/MPM.so
 %%SITE_ARCH%%/auto/Apache2/Module/Module.so
 %%SITE_ARCH%%/auto/Apache2/Process/Process.so
-%%AP22%%%%AP24%%%%SITE_ARCH%%/auto/Apache2/Provider/Provider.so
+%%AP22%%%%SITE_ARCH%%/auto/Apache2/Provider/Provider.so
 %%SITE_ARCH%%/auto/Apache2/RequestIO/RequestIO.so
 %%SITE_ARCH%%/auto/Apache2/RequestRec/RequestRec.so
 %%SITE_ARCH%%/auto/Apache2/RequestUtil/RequestUtil.so
@@ -235,10 +235,10 @@ bin/mp2bug
 %%SITE_ARCH%%/auto/Apache2/typemap
 %%SITE_ARCH%%/auto/ModPerl/Const/Const.so
 %%SITE_ARCH%%/auto/ModPerl/Global/Global.so
-%%AP24%%%%SITE_ARCH%%/auto/ModPerl/InterpPool/InterpPool.so
-%%AP24%%%%SITE_ARCH%%/auto/ModPerl/Interpreter/Interpreter.so
-%%AP24%%%%SITE_ARCH%%/auto/ModPerl/TiPool/TiPool.so
-%%AP24%%%%SITE_ARCH%%/auto/ModPerl/TiPoolConfig/TiPoolConfig.so
+%%ITHREADS%%%%SITE_ARCH%%/auto/ModPerl/InterpPool/InterpPool.so
+%%ITHREADS%%%%SITE_ARCH%%/auto/ModPerl/Interpreter/Interpreter.so
+%%ITHREADS%%%%SITE_ARCH%%/auto/ModPerl/TiPool/TiPool.so
+%%ITHREADS%%%%SITE_ARCH%%/auto/ModPerl/TiPoolConfig/TiPoolConfig.so
 %%SITE_ARCH%%/auto/ModPerl/Util/Util.so
 %%SITE_ARCH%%/mod_perl2.pm
 %%PERL5_MAN3%%/APR.3.gz
@@ -332,9 +332,5 @@ bin/mp2bug
 %%PERL5_MAN3%%/ModPerl::RegistryLoader.3.gz
 %%PERL5_MAN3%%/ModPerl::RegistryPrefork.3.gz
 %%PERL5_MAN3%%/ModPerl::Util.3.gz
-%%AP24%%%%PERL5_MAN3%%/MyTest::Util.3.gz
 %%PERL5_MAN3%%/mod_perl2.3.gz
-@unexec sed -i '' -E '/LoadModule[[:blank:]]+%%AP_NAME%%_module/d' %D/%%APACHEETCDIR%%/httpd.conf
-@unexec echo "Don't forget to remove all mod_perl2-related directives in your httpd.conf"
 %%APACHEMODDIR%%/%%AP_MODULE%%
-@exec %D/sbin/apxs -e %%AP_MOD_EN%% -n %%AP_NAME%% %D/%F

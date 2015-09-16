@@ -1,7 +1,7 @@
---- Makefile.orig	Thu Jan 25 15:51:27 2007
-+++ Makefile	Sat Jul  7 21:41:49 2007
+--- Makefile.orig	2014-11-25 08:37:49 UTC
++++ Makefile
 @@ -1,10 +1,10 @@
- VERSION=0.0.3
+ VERSION=0.0.11
 -EMACS = emacs
 -PREFIX = /usr/local
 -INSTALLLIBDIR = $(PREFIX)/share/emacs/site-lisp

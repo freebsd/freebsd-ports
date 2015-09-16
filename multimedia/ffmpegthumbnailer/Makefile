@@ -5,8 +5,7 @@ PORTNAME=	ffmpegthumbnailer
 PORTVERSION=	2.0.9
 PORTREVISION=	1
 CATEGORIES=	multimedia graphics
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	riggs/${PORTNAME}
+MASTER_SITES=	LOCAL/riggs/${PORTNAME}
 
 MAINTAINER=	clutton@zoho.com
 COMMENT=	Lightweight video thumbnailer that can be used by file managers
@@ -15,8 +14,7 @@ LICENSE=	GPLv2 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libswscale.so:${PORTSDIR}/multimedia/ffmpeg \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg
+		libswscale.so:${PORTSDIR}/multimedia/ffmpeg
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
@@ -24,7 +22,7 @@ CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig --enable-gio
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		compiler:c++11-lib libtool pathfix pkgconfig
+USES=		compiler:c++11-lib jpeg libtool pathfix pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 

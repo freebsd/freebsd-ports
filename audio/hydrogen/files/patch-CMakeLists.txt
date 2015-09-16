@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2014-09-09 20:39:33.000000000 +0200
-+++ CMakeLists.txt	2014-09-18 10:21:00.739505710 +0200
-@@ -100,12 +100,12 @@
+--- CMakeLists.txt.orig	2014-09-09 18:39:33 UTC
++++ CMakeLists.txt
+@@ -100,12 +100,12 @@ ENDIF()
  IF(APPLE)
  	SET(CMAKE_CXX_FLAGS "-O2")
  ELSE()
@@ -16,15 +16,7 @@
  
  
  IF(APPLE)
-@@ -138,7 +138,6 @@
-     ENDIF(APPLE)
- ENDIF(WIN32)
- 
--
- #
- # HEADER LIBRARY FUNCTIONS
- #
-@@ -178,7 +177,11 @@
+@@ -178,7 +178,11 @@ FIND_LADSPA(LADSPA ladspa.h noise)
  IF("${CMAKE_SYSTEM_NAME}" MATCHES "NetBSD")
  	FIND_HELPER(OSS oss sys/soundcard.h ossaudio )
  ELSE()
@@ -37,7 +29,7 @@
  ENDIF()
  
  FIND_HELPER(JACK jack jack/jack.h jack)
-@@ -195,9 +198,9 @@
+@@ -195,9 +199,9 @@ FIND_HELPER(PULSEAUDIO pulseaudio pulse/
  FIND_HELPER(LASH lash-1.0 lash/lash.h lash)
  FIND_HELPER(LRDF lrdf lrdf.h lrdf)
  

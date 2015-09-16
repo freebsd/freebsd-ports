@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-sakuracloud
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -14,6 +14,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-fog-core>=0:${PORTSDIR}/devel/rubygem-fog-core \
 		rubygem-fog-json>=0:${PORTSDIR}/devel/rubygem-fog-json
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

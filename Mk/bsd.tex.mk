@@ -22,14 +22,19 @@ TEX_MAINTAINER=	hrs@FreeBSD.org
 #  web2c:	WEB2C toolchain and TeX engines
 #  kpathsea:	kpathsea library
 #  ptexenc:	character code conversion library for pTeX
-#  infra:	tlmgr dependency (Perl modules)
+#  basic:	basic TeX engines including tex and pdftex
+#  tlmgr:	tlmgr dependency (Perl modules)
+#  texlua:	texlua52 library
+#  texluajit:	texluajit library
+#  synctex:	synctex library
+#  xpdfopen:	pdfopen/pdfclose utility
 #
 #  dvipsk:	dvipsk
 #  dvipdfmx:	DVIPDFMx
 #  xdvik:	XDvi
 #  gbklatex:	gbklatex
 #
-#  formats:	TeX, LaTeX, PDFTeX, AMSTeX, ConTeXT, CSLaTeX, EplainTeX,
+#  formats:	TeX, LaTeX, AMSTeX, ConTeXT, CSLaTeX, EplainTeX,
 #		CSplainTeX, METAFONT, MLTeX, PDFTeX, TeXsis
 #  tex:		TeX
 #  latex:	LaTeX
@@ -88,9 +93,9 @@ _USE_TEX_SOURCE_PKGNAME=texlive-texmf-source
 _USE_TEX_DOCS_DEP=	${LOCALBASE}/${TEXMFDISTDIR}/doc/texlive/texlive-en/README
 _USE_TEX_DOCS_PORT=	print/${_USE_TEX_DOCS_PKGNAME}
 _USE_TEX_DOCS_PKGNAME=	texlive-docs
-_USE_TEX_INFRA_DEP=	${LOCALBASE}/${TEXMFDISTDIR}/web2c/fmtutil-hdr.cnf
-_USE_TEX_INFRA_PORT=	print/${_USE_TEX_INFRA_PKGNAME}
-_USE_TEX_INFRA_PKGNAME=	texlive-infra
+_USE_TEX_TLMGR_DEP=	${LOCALBASE}/${TEXMFDISTDIR}/.texlive-tlmgr
+_USE_TEX_TLMGR_PORT=	print/${_USE_TEX_TLMGR_PKGNAME}
+_USE_TEX_TLMGR_PKGNAME=	texlive-tlmgr
 _USE_TEX_DVIPSK_DEP=	dvips
 _USE_TEX_DVIPSK_PORT=	print/${_USE_TEX_DVIPSK_PKGNAME}
 _USE_TEX_DVIPSK_PKGNAME=tex-dvipsk
@@ -100,6 +105,9 @@ _USE_TEX_XDVIK_PKGNAME=	tex-xdvik
 _USE_TEX_DVIPDFMX_DEP=	dvipdfmx
 _USE_TEX_DVIPDFMX_PORT=	print/${_USE_TEX_DVIPDFMX_PKGNAME}
 _USE_TEX_DVIPDFMX_PKGNAME=tex-dvipdfmx
+_USE_TEX_BASIC_DEP=	tex
+_USE_TEX_BASIC_PORT=	print/${_USE_TEX_BASIC_PKGNAME}
+_USE_TEX_BASIC_PKGNAME=	tex-basic-engines
 .for _L in TEX LATEX PDFTEX
 _USE_TEX_${_L}_DEP=	${_USE_TEX_FORMATS_DEP}
 _USE_TEX_${_L}_PORT=	${_USE_TEX_FORMATS_PORT}
@@ -123,9 +131,21 @@ _USE_TEX_KPATHSEA_PKGNAME=tex-kpathsea
 _USE_TEX_PTEXENC_DEP=	libptexenc.so
 _USE_TEX_PTEXENC_PORT=	print/${_USE_TEX_PTEXENC_PKGNAME}
 _USE_TEX_PTEXENC_PKGNAME=tex-ptexenc
+_USE_TEX_TEXLUA_DEP=	libtexlua52.so
+_USE_TEX_TEXLUA_PORT=	devel/${_USE_TEX_TEXLUA_PKGNAME}
+_USE_TEX_TEXLUA_PKGNAME=tex-libtexlua
+_USE_TEX_TEXLUAJIT_DEP=	libtexluajit.so
+_USE_TEX_TEXLUAJIT_PORT=	devel/${_USE_TEX_TEXLUAJIT_PKGNAME}
+_USE_TEX_TEXLUAJIT_PKGNAME=tex-libtexluajit
 _USE_TEX_FORMATS_DEP=	${LOCALBASE}/${TEXMFVARDIR}/web2c/tex/tex.fmt
 _USE_TEX_FORMATS_PORT=	print/${_USE_TEX_FORMATS_PKGNAME}
 _USE_TEX_FORMATS_PKGNAME=tex-formats
+_USE_TEX_SYNCTEX_DEP=	libsynctex.so
+_USE_TEX_SYNCTEX_PORT=	devel/${_USE_TEX_SYNCTEX_PKGNAME}
+_USE_TEX_SYNCTEX_PKGNAME=tex-synctex
+_USE_TEX_XPDFOPEN_DEP=	pdfopen
+_USE_TEX_XPDFOPEN_PORT=	print/${_USE_TEX_XPDFOPEN_PKGNAME}
+_USE_TEX_XPDFOPEN_PKGNAME=	xpdfopen
 _USE_TEX_ALEPH_DEP=	aleph
 _USE_TEX_ALEPH_PORT=	print/${_USE_TEX_ALEPH_PKGNAME}
 _USE_TEX_ALEPH_PKGNAME=	tex-aleph
@@ -136,11 +156,11 @@ _USE_TEX_XETEX_DEP=	xetex
 _USE_TEX_XETEX_PORT=	print/${_USE_TEX_XETEX_PKGNAME}
 _USE_TEX_XETEX_PKGNAME=	tex-xetex
 
-_USE_TEX_FULLLIST=	texmf>=20140525_2 base>=20140525_1 \
-		web2c infra \
-		formats aleph xetex jadetex luatex xmltex ptex \
-		dvipsk dvipdfmx xdvik \
-		kpathsea:lib ptexenc:lib
+_USE_TEX_FULLLIST=	texmf>=20150523_3 base>=20150521_5 \
+		web2c tlmgr:run \
+		basic formats aleph xetex jadetex luatex xmltex ptex \
+		dvipsk dvipdfmx xdvik xpdfopen:run \
+		kpathsea:lib ptexenc:lib texlua:lib texluajit:lib synctex:lib
 
 .if !empty(USE_TEX:tu:MFULL)
 USE_TEX:=	${USE_TEX:tu:NFULL} ${_USE_TEX_FULLLIST:tu}
@@ -149,7 +169,17 @@ USE_TEX:=	${USE_TEX:tu:NFULL} ${_USE_TEX_FULLLIST:tu}
 .for _UU in ${USE_TEX:tu}
 _U:=	${_UU}	# ugly but necessary in for loop
 _VOP:=
-. if !empty(_U:tu:MKPATHSEA) || !empty(_U:tu:MPTEXENC)
+. if !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MTEXMF) && empty(_U:M*[<>=]*)
+_U:=	${_U}>=20150523_3
+. endif
+. if !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MBASE) && empty(_U:M*[<>=]*)
+_U:=	${_U}>=20150521_5
+. endif
+. if !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MKPATHSEA) || \
+     !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MPTEXENC) || \
+     !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MTEXLUA) || \
+     !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MTEXLUAJIT) || \
+     !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MSYNCTEX)
 _U:=	${_U}:lib
 . endif
 . if !empty(_U:M*[<>=]*)
@@ -158,8 +188,9 @@ _VOP:=	${_U:C/^[^<>=]*//:C/\:.*$//}
 . if empty(_U:M*\:*)
 _C:=	BUILD RUN
 . else
-_C:=	${_U:C/.*://}
+_C:=	${_U:C/.*://:S/,/ /g:C/[<>=][^\:]*//g}
 . endif
+#. warning DEBUG: ${_U}: _VOP=${_VOP}, _C=${_C}
 . for _CC in ${_C:tu}
 _V:=${_UU:C/[<>=][^\:]*//:C/\:.*$//}
 .  if defined(_USE_TEX_${_V}_PORT)
@@ -193,7 +224,7 @@ do-texhash:
 		"${TEXHASHDIRS:S,^,%D/,}" >> ${TMPPLIST}
 	@for D in ${TEXHASHDIRS}; do \
 		${ECHO_CMD} "@rmtry $$D/ls-R"; \
-		${ECHO_CMD} "@dirrmtry $$D"; \
+		${ECHO_CMD} "@dir $$D"; \
 	done >> ${TMPPLIST}
 . else
 	@${ECHO_CMD} "@exec for D in ${TEXHASHDIRS:S,^,${PREFIX}/,}; do " \
@@ -238,6 +269,7 @@ do-fmtutil-$F:
 	${RM} ${TEXHASHDIRS:S,^,${STAGEDIR}${PREFIX}/,:S,$,/ls-R,} \
 	    ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/web2c/texmf.cnf
 	${RMDIR} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/web2c || ${TRUE}
+	${RMDIR} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR} || ${TRUE}
 _PLIST_FILES+=	${TEX_FORMAT_${F:tu}_FILES}
 _PLIST_DIRSTRY+=${TEX_FORMAT_${F:tu}_DIRS}
 _PLIST_FILES+=	${TEX_FORMAT_${F:tu}_BIN}

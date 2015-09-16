@@ -14,7 +14,8 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blessings>=1.5:${PORTSDIR}/devel/py-blessings
 
-USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
+USE_PYTHON=	autoplist concurrent distutils
 USES=		python
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 
 PORTNAME=	pjsip
 PORTVERSION=	2.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://www.pjsip.org/release/${PORTVERSION}/
 DISTNAME=	pjproject-${DISTVERSION}
@@ -12,7 +12,7 @@ COMMENT=	Multimedia communication library written in C language
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libportaudio.so.2:${PORTSDIR}/audio/portaudio2
+LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio
 
 CONFLICTS=	pjsip-extsrtp-[0-9]*
 
@@ -22,8 +22,8 @@ CONFIGURE_ARGS=	--with-external-pa \
 USES=		gmake tar:bz2
 USE_LDCONFIG=	yes
 PLIST_SUB=	CONFIGURE_TARGET="${CONFIGURE_TARGET}"
-LDFLAGS+=	-L${LOCALBASE}/lib/portaudio2 -L${LOCALBASE}/lib
-CFLAGS+=	-I${LOCALBASE}/include/portaudio2 -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	FFMPEG G711 G722 G7221 GSM ILBC L16 OPENH264 RESAMPLE RESAMPLEDLL \

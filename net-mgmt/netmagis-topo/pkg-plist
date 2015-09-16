@@ -26,13 +26,6 @@ sbin/toposendd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eqvirt/rtr.eq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eqvirt/sw1.eq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eqvirt/sw2.eq
-@dirrmtry var/netmagis/eqvirt
-@dirrmtry var/netmagis/eqgen
-@dirrmtry var/netmagis
-@dirrmtry var
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/eqvirt
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-@dirrm lib/netmagis/topo
-@dirrmtry lib/netmagis
-@exec mkdir -p %D/var/netmagis/eqvirt
-@exec mkdir -p %D/var/netmagis/eqgen
+@dir /var/netmagis/eqvirt
+@dir /var/netmagis/eqgen
+@dir /var/netmagis

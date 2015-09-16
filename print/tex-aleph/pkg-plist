@@ -1,8 +1,4 @@
 bin/aleph
-bin/odvicopy
-bin/odvitype
-bin/otangle
-bin/wovp2ovf
 bin/omfonts
 bin/otp2ocp
 bin/outocp
@@ -12,9 +8,6 @@ bin/ofm2opl
 bin/opl2ofm
 bin/ovf2ovp
 bin/ovp2ovf
-bin/wofm2opl
-bin/wopl2ofm
-bin/wovf2ovp
 man/man1/aleph.1.gz
 man/man1/lamed.1.gz
 man/man1/mkocp.1.gz
@@ -31,12 +24,12 @@ man/man1/ovp2ovf.1.gz
 %%TEXMFDISTDIR%%/tex/plain/config/aleph.ini
 %%TEXMFDISTDIR%%/doc/aleph/base/readme.txt
 %%TEXMFDISTDIR%%/doc/aleph/base/News
-%%TEXMFDISTDIR%%/source/lambda/antomega/antenc.dtx
-%%TEXMFDISTDIR%%/source/lambda/antomega/antomega.ins
-%%TEXMFDISTDIR%%/source/lambda/antomega/antomega.dtx
-%%TEXMFDISTDIR%%/source/lambda/antomega/antenc.ins
-%%TEXMFDISTDIR%%/source/lambda/oinuit/oinuit.dtx
-%%TEXMFDISTDIR%%/source/lambda/oinuit/oinuit.ins
+%%SOURCE%%%%TEXMFDISTDIR%%/source/lambda/antomega/antenc.dtx
+%%SOURCE%%%%TEXMFDISTDIR%%/source/lambda/antomega/antomega.ins
+%%SOURCE%%%%TEXMFDISTDIR%%/source/lambda/antomega/antomega.dtx
+%%SOURCE%%%%TEXMFDISTDIR%%/source/lambda/antomega/antenc.ins
+%%SOURCE%%%%TEXMFDISTDIR%%/source/lambda/oinuit/oinuit.dtx
+%%SOURCE%%%%TEXMFDISTDIR%%/source/lambda/oinuit/oinuit.ins
 %%TEXMFDISTDIR%%/tex/lambda/base/usenglish.bgd
 %%TEXMFDISTDIR%%/tex/lambda/base/UT1omlgc.fd
 %%TEXMFDISTDIR%%/tex/lambda/base/lchcmr.fd

@@ -1,7 +1,2 @@
-@group games
-@owner games
-bin/xmines
-%%DATADIR%%/scores
-@owner
-@group
-@dirrm %%DATADIR%%
+@(,games,2755) bin/xmines
+@sample(,games,664) /var/games/xmines-scores.sample

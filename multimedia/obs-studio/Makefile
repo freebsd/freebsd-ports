@@ -2,6 +2,7 @@
 
 PORTNAME=	obs-studio
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	kmoore@FreeBSD.org
@@ -16,6 +17,8 @@ LIB_DEPENDS=	libsysinfo.so:${PORTSDIR}/devel/libsysinfo \
 		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
 		libfdk-aac.so:${PORTSDIR}/audio/fdk-aac
 BUILD_DEPENDS=	v4l_compat>=0:${PORTSDIR}/multimedia/v4l_compat
+
+BROKEN_FreeBSD_9=	does not build
 
 USE_XORG=	x11 xcomposite xdamage xrender
 USE_XCB=	x11extras wm

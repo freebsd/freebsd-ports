@@ -15,4 +15,3 @@ The benefits over using ENV directly:
 - designed to be both hackable and convenient
 
 WWW: https://github.com/e2/nenv
-RG:  https://rubygems.org/gems/nenv

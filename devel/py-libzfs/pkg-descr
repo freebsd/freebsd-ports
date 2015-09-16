@@ -1,0 +1,3 @@
+Python libzfs bindings using cython.
+
+WWW: https://github.com/freenas/py-libzfs

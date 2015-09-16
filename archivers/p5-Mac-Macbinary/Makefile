@@ -13,5 +13,6 @@ COMMENT=	Perl module that can extract info from Macbinary files
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

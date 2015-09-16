@@ -2,10 +2,9 @@
 
 PORTNAME=	lusernet
 PORTVERSION=	0.4.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	news gnustep
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	dinoex
+MASTER_SITES=	LOCAL/dinoex
 DISTNAME=	LuserNET-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,5 +15,8 @@ LICENSE=	GPLv2
 USES=		gnustep
 USE_GNUSTEP=	back build
 LIB_DEPENDS=	libPantomime.so:${PORTSDIR}/mail/pantomime
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/LuserNET.app/LuserNET
 
 .include <bsd.port.mk>

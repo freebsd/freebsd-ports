@@ -33,11 +33,7 @@ USE_CSTD=	gnu89
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MDOCS}
-CONFIGURE_ARGS+=	--docdir=${WRKDIR}/doc
-.endif
+DOCS_CONFIGURE_OFF=	--docdir=${WRKDIR}/doc
 
 post-patch:
 	@${REINPLACE_CMD} 's|-std=c99||g' \

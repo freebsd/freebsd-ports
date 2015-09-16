@@ -5,8 +5,8 @@
 # Parent  cecc5adfc44068fb6f11b9baa78cb5fddc100b27
 Bug 662961 - Silence the clang warnings issued because of alignment requirements increase when compiling jsstr.cpp; r=Waldo
 
---- deps/mozilla/js/src/jsstr.cpp.orig	2013-05-26 00:44:33.383765764 +1000
-+++ deps/mozilla/js/src/jsstr.cpp	2013-05-26 00:46:35.842211859 +1000
+--- deps/mozilla/js/src/jsstr.cpp.orig	2013-05-25 14:44:33 UTC
++++ deps/mozilla/js/src/jsstr.cpp
 @@ -3147,7 +3147,7 @@
   */
  #define R(c) {                                                                \

@@ -1,6 +1,17 @@
-nb - Micro-benchmarking NoSQL storage. Features include:
+NoSQL Benchmark (nb) is a multi-threaded benchmark tool for evaluating main
+database performance metrics using OLTP-alike benchmarking against
+a specified workload.
 
-* Benchmarking support: tarantool, memcached, redis
-* GNUPlot generation
+Features include:
 
-WWW: https://github.com/mailru/nosqlbench
+* benchmarking types: unlimited, time limited or maximum thread limited
+* different threads creation policies: at once or interleaved
+* key distribution supported: uniform, gaussian
+* key types supported: string, u32, u64
+* CSV report file generation supported (for future plot generation)
+* single configuration file
+* workload tests are specified in percents against a total request count
+* supported database drivers: tarantool, leveldb (redis, memcached planned).
+* plotter tool (CSV to GNU Plot generation)
+
+WWW: https://github.com/tarantool/nosqlbench

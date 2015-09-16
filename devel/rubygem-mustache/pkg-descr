@@ -10,4 +10,4 @@ consisting of ERB or HAML with random helpers and arbitrary logic,
 your views are broken into two parts: a Ruby class and an HTML
 template.
 
-WWW: http://github.com/defunkt/mustache
+WWW: https://github.com/mustache/mustache

@@ -1,6 +1,6 @@
---- tools/awstats_updateall.pl.orig	Mon Jun  7 08:27:26 2004
-+++ tools/awstats_updateall.pl	Thu Sep 22 01:30:15 2005
-@@ -121,8 +121,8 @@
+--- tools/awstats_updateall.pl.orig	2015-07-21 07:55:55 UTC
++++ tools/awstats_updateall.pl
+@@ -129,8 +129,8 @@
  	# Check if AWSTATS prog is found
  	my $AwstatsFound=0;
  	if (-s "$Awstats") { $AwstatsFound=1; }

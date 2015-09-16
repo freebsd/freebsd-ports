@@ -1,11 +1,29 @@
 --- Makefile.in.orig	2010-08-04 17:14:34 UTC
 +++ Makefile.in
-@@ -56,7 +56,7 @@ CPPFLAGS = @CPPFLAGS@ -I$(srcdir) -I$(MY
+@@ -51,20 +51,19 @@ DESTDIR =
+ 
+ # Building binaries
+ CC = @CC@
+-CPPFLAGS = @CPPFLAGS@ -I$(srcdir) -I$(MYHEADDIR) \
+-  -I$(HOME)/include -I/usr/local/include @MYDEFS@ \
++CPPFLAGS = @CPPFLAGS@ -I$(srcdir) -I$(MYHEADDIR) @MYDEFS@ \
    -D_XOPEN_SOURCE_EXTENDED=1 -D_GNU_SOURCE=1 -D__EXTENSIONS__=1 -D_HPUX_SOURCE=1 \
    -D_POSIX_MAPPED_FILES=1 -D_POSIX_SYNCHRONIZED_IO=1 \
    -DPIC=1 -D_THREAD_SAFE=1 -D_REENTRANT=1 -DNDEBUG
 -CFLAGS = -Wall -pedantic -fPIC -fsigned-char -O3 -fomit-frame-pointer -fforce-addr @MYOPTS@
-+CFLAGS = @CFLAGS@ -Wall -pedantic -fPIC -fsigned-char
++CFLAGS = @CFLAGS@
  LD = @LD@
  LIBS = -lqdbm @LIBS@
- LIBLDFLAGS = @LDFLAGS@ -L. -L$(MYLIBDIR) -L$(HOME)/lib -L/usr/local/lib @LIBS@
+-LIBLDFLAGS = @LDFLAGS@ -L. -L$(MYLIBDIR) -L$(HOME)/lib -L/usr/local/lib @LIBS@
+-LDFLAGS = @LDFLAGS@ -L. -L$(MYLIBDIR) -L$(HOME)/lib -L/usr/local/lib $(LIBS)
+-LDENV = LD_RUN_PATH=/lib:/usr/lib:$(MYLIBDIR):$(HOME)/lib:/usr/local/lib
++LIBLDFLAGS = @LDFLAGS@ -L. -L$(MYLIBDIR) @LIBS@
++LDFLAGS = @LDFLAGS@ -L. -L$(MYLIBDIR) $(LIBS)
++LDENV =
+ AR = @AR@
+ ARFLAGS = rcsv
+-RUNENV = LD_LIBRARY_PATH=.:/lib:/usr/lib:$(MYLIBDIR):$(HOME)/lib:/usr/local/lib
++RUNENV =
+ 
+ 
+ 

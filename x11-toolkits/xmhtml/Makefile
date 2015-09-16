@@ -3,7 +3,7 @@
 
 PORTNAME=	XmHTML
 PORTVERSION=	1.1.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits www
 MASTER_SITES=	SF/${PORTNAME:tl}
 
@@ -11,11 +11,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Motif widget set for displaying HTML 3.2 documents
 
 LICENSE=	LGPL20 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
-USES=		gmake libtool:build motif pkgconfig tar:tgz
+USES=		gmake jpeg libtool:build motif pkgconfig tar:tgz
 USE_XORG=	xft xmu xpm xt
 USE_LDCONFIG=	yes
 
@@ -27,6 +27,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 do-install:
 	(cd ${WRKSRC}/lib && ${LIBTOOL} --mode=install ${INSTALL_DATA} \
 		libXmHTML.la ${STAGEDIR}${PREFIX}/lib)
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libXmHTML.so
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/XmHTML
 	(cd ${WRKSRC}/include/XmHTML && ${INSTALL_DATA} *.h \
 		${STAGEDIR}${PREFIX}/include/XmHTML)
@@ -35,10 +36,7 @@ do-install:
 		${CPIO} --quiet -dump -R ${SHAREOWN}:${SHAREGRP} \
 		${STAGEDIR}${DOCSDIR})
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-.for i in book contrib examples
-	@(cd ${WRKSRC} && ${FIND} ${i} ! -name "*Makefile*" | \
-		${CPIO} --quiet -dump -R ${SHAREOWN}:${SHAREGRP} \
-		${STAGEDIR}${EXAMPLESDIR})
-.endfor
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "book contrib examples" \
+		${STAGEDIR}${EXAMPLESDIR} "! -type d ! -name Makefile"
 
 .include <bsd.port.mk>

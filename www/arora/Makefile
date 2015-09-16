@@ -3,7 +3,7 @@
 
 PORTNAME=	arora
 PORTVERSION=	0.11.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	GOOGLE_CODE
 
@@ -14,11 +14,11 @@ LICENSE=	GPLv3
 
 USES=		desktop-file-utils qmake
 USE_QT4=	network webkit moc_build uic_build rcc_build \
-		imageformats_run gui script sql
+		sql-sqlite3_run imageformats_run gui script sql
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
-NLS_USE=	QT4=linguist_build
+NLS_USE=	QT4=linguisttools_build
 
 BROKEN_ia64=		core dump on application startup
 

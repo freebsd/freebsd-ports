@@ -14,4 +14,4 @@ data over the network more efficiently than AMF0. AMF3 supports sending int
 and uint objects as integers and supports data types that are available only
 in ActionScript 3.0, such as ByteArray, ArrayCollection, and IExternalizable.
 
-WWW: http://pyamf.org/
+WWW: https://github.com/hydralabs/pyamf

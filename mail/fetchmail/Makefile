@@ -59,7 +59,7 @@ CONFIGURE_ARGS+=	--enable-POP2
 .endif
 
 .if ${PORT_OPTIONS:MX11}
-USES+=		python:run
+USES+=		python
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tkinter>=0:${PORTSDIR}/x11-toolkits/py-tkinter
 PLIST_SUB+=	NOX11="@comment "
 .else
@@ -97,19 +97,18 @@ post-patch:
 .endif
 
 post-build:
-	@${MAKE} -C ${WRKSRC} check
+	@${MAKE_CMD} -C ${WRKSRC} check
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
+	${INSTALL_DATA} ${FILESDIR}/fetchmailrc.sample \
+		${STAGEDIR}${PREFIX}/etc/fetchmailrc.sample
 
-.if empty(PORT_OPTIONS:MX11)
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+
+post-install-X11-off:
 	${INSTALL_SCRIPT} ${WRKDIR}/fetchmailconf ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/fetchmailconf.py ${STAGEDIR}${PREFIX}/libexec
-.endif
-	${INSTALL} ${FILESDIR}/fetchmailrc.sample \
-		${STAGEDIR}${PREFIX}/etc/fetchmailrc.sample
 
 .include <bsd.port.mk>

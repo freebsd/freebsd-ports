@@ -3,13 +3,12 @@
 
 PORTNAME=	openssl
 PORTVERSION=	1.0.2
-DISTVERSIONSUFFIX=	a
-PORTREVISION=	1
+DISTVERSIONSUFFIX=	d
+PORTREVISION=	4
 CATEGORIES=	security devel
-MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
-		ftp://ftp.openssl.org/%SUBDIR%/ \
-		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/%SUBDIR%/
-MASTER_SITE_SUBDIR=	source
+MASTER_SITES=	http://www.openssl.org/source/ \
+		ftp://ftp.openssl.org/source/ \
+		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/
 DIST_SUBDIR=	${DISTNAME}
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -21,8 +20,8 @@ COMMENT=	SSL and crypto library
 
 CONFLICTS?=	libressl-*
 
-OPTIONS_DEFINE=	SHARED THREADS I386 SSE2 ASM PADLOCK ZLIB GMP SCTP SSL2 SSL3 RFC3779 MD2 RC5 EXPCIPHERS DOCS
-OPTIONS_DEFAULT=SHARED THREADS SSE2 SCTP SSL2 SSL3 MD2
+OPTIONS_DEFINE=	SHARED THREADS I386 SSE2 ASM PADLOCK ZLIB GMP SCTP SSL2 SSL3 RFC3779 MD2 RC5 EXPCIPHERS DOCS MAN3
+OPTIONS_DEFAULT=SHARED THREADS SSE2 SCTP SSL2 SSL3 MD2 MAN3
 .for a in amd64 ia64
 OPTIONS_DEFINE_${a}=	EC
 OPTIONS_DEFAULT_${a}=	EC
@@ -49,6 +48,7 @@ MD2_DESC?=	MD2 hash (obsolete)
 RC5_DESC?=	RC5 cipher (patented)
 EXPCIPHERS_DESC?=	Include experimental ciphers
 EC_DESC?=	Optimize NIST elliptic curves
+MAN3_DESC?=	Install API manpages (section 3)
 
 GMP_LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
@@ -67,7 +67,7 @@ CPE_VERSION=	${PORTVERSION}${DISTVERSIONSUFFIX}
 .include <bsd.port.pre.mk>
 
 .if ${PREFIX} == /usr
-IGNORE=	OpenSSL can not be installed over the base version
+IGNORE=	OpenSSL can not be installed over the base version.
 .endif
 
 OPENSSLDIR?=	${PREFIX}/openssl
@@ -155,7 +155,7 @@ PATCHFILES+=	1001-crypto-hmac-support-EVP_MD_CTX_FLAG_ONESHOT-and-set-.patch:pad
 
 .if ${PORT_OPTIONS:MGMP}
 EXTRACONFIGURE+=	enable-gmp -I${LOCALBASE}/include
-IGNORE=	GMP is LGPLv3 and can not be linked
+IGNORE=	GMP is LGPLv3 and can not be linked.
 .else
 EXTRACONFIGURE+=	no-gmp
 .endif
@@ -227,6 +227,10 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/openssl.txt ${STAGEDIR}${DOCSDIR}/
+.endif
+.if empty(PORT_OPTIONS:MMAN3)
+	${RM} -rf ${STAGEDIR}/${PREFIX}/man/man3
+	${REINPLACE_CMD} -e 's|^man/man3/.*||' ${TMPPLIST}
 .endif
 	${SED} -e 's|/usr/local|${PREFIX}|g' ${PKGMESSAGE}
 

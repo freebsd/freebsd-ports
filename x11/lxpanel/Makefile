@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/desktop-directories/lxde-audio-video.directory:$
 
 USE_AUTOTOOLS=	automake:env
 USE_CSTD=	gnu89
-USE_GNOME=	gtk20 libwnck
+USE_GNOME=	gtk20 libwnck intltool
 USE_XORG=	x11 xmu
 USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes

@@ -4,8 +4,7 @@
 PORTNAME=	fastjar
 PORTVERSION=	0.93.20060808
 CATEGORIES=	archivers java
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	maho/fastjar
+MASTER_SITES=	LOCAL/maho/fastjar
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Version of JDK's `jar' command written entirely in C

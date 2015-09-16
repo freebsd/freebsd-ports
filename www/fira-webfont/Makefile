@@ -2,59 +2,75 @@
 # $FreeBSD$
 
 PORTNAME=	fira
-PORTVERSION=	3.111
+PORTVERSION=	4.104
 CATEGORIES=	www
-MASTER_SITES=	http://www.carrois.com/wordpress/downloads/${PORTNAME}_3_1/ \
-		SF/horia/${CATEGORIES}/${PORTNAME}${PKGNAMESUFFIX}/ \
-		SF/horia/${CATEGORIES}/${PORTNAME}${PKGNAMESUFFIX}/:bp
+MASTER_SITES=	http://www.carrois.com/downloads/%SUBDIR%/:sans,mono \
+		SF/horia/${CATEGORIES}/${PORTNAME}${PKGNAMESUFFIX}/%SUBDIR%/:sans,mono,bp
+MASTER_SITE_SUBDIR=	${PORTNAME}_4_1/:sans,bp ${PORTNAME}_mono_3_2/:mono
 PKGNAMESUFFIX=	-webfont
-DISTNAME=	${PORTNAME:S|f|F|}Fonts${PORTVERSION:S|.||}
-DISTFILES=	${PORTNAME:S|f|F|}Boilerplate${PORTVERSION:S|.||}${EXTRACT_SUFX}:bp \
-		${DISTNAME}${EXTRACT_SUFX} \
-		${PORTNAME:S|f|F|}PDF${PORTVERSION:S|.||}${EXTRACT_SUFX} \
-		${PORTNAME:S|f|F|}UFO_beta${PORTVERSION:S|.||}${EXTRACT_SUFX} \
-		Version_Report.rtf
-EXTRACT_ONLY=	${DISTFILES:C|Version.*||:S|:bp||}
+DISTNAME=	${PORTNAME:S|f|F|}
+DISTFILES=	${DISTNAME}Boilerplate${PORTVERSION:S|.||}${EXTRACT_SUFX}:bp \
+		${DISTNAME}Fonts${PORTVERSION:S|.||}${EXTRACT_SUFX}:sans \
+		${DISTNAME}MonoFonts${MONO_VERSION}${EXTRACT_SUFX}:mono
+EXTRACT_ONLY=	${DISTFILES:C|:[^:]+$||:M*.zip}
 
 MAINTAINER=	horia@racoviceanu.com
 COMMENT=	Sans-serif and monospaced Web Font for small screens
 
 LICENSE=	OFL11
+LICENSE_FILE=	${WRKSRC}/${DISTNAME}Fonts${PORTVERSION:S|.||}/License.txt
 
 USES=		zip
+NO_ARCH=	yes
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 SUB_FILES=	pkg-message
 PLIST_SUB=	WWWDIR_REL="${WWWDIR_REL}"
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
-PORTDOCS=	Version_Report.rtf \
-		${PORTNAME:S|f|F|}*.pdf
+PORTDOCS=	*.pdf *.rtf
 
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}${PKGNAMESUFFIX}
 PORTEXAMPLES=	*
 
+MONO_VERSION=	3204
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 EXAMPLES_DESC=	UFO source files
 
+DOCS_DISTFILES=	${DISTNAME}_4_1_Version_Report.rtf:sans \
+		${DISTNAME}PDF${PORTVERSION:S|.||}${EXTRACT_SUFX}:sans \
+		${DISTNAME}MonoPDF${MONO_VERSION}${EXTRACT_SUFX}:mono
+EXAMPLES_DISTFILES=	${DISTNAME}UFO_beta${PORTVERSION:S|.||}${EXTRACT_SUFX}:sans \
+			${DISTNAME}MonoUFO_beta${MONO_VERSION}${EXTRACT_SUFX}:mono
+
+.include <bsd.port.options.mk>
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
-.for b in index.html fira.css
+.for b in index.html ${PORTNAME:S|$|.css|}
 	${INSTALL_DATA} \
-	${WRKDIR}/${PORTNAME:S|f|F|}Boilerplate${PORTVERSION:S|.||}/${b} \
+		${WRKDIR}/${DISTNAME}Boilerplate${PORTVERSION:S|.||}/${b} \
 		${STAGEDIR}${WWWDIR}
 .endfor
-.for w in eot ttf woff
+.for w in eot ttf woff woff2
 	@${MKDIR} ${STAGEDIR}${WWWDIR}/${w}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME:S|f|F|}*${PORTVERSION:S|.||}/WEB/${PORTNAME:S|f|F|}*.${w} \
+	${INSTALL_DATA} ${WRKSRC}/${DISTNAME}*Fonts*/WEB/${w:tu}/${DISTNAME}*.${w} \
 		${STAGEDIR}${WWWDIR}/${w}/
 .endfor
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${CP} ${DISTDIR}/Version_Report.rtf ${WRKSRC}/
-	${CP} ${WRKDIR}/${PORTNAME:S|f|F|}PDF${PORTVERSION:S|.||}/${PORTNAME:S|f|F|}*.pdf ${WRKSRC}/
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${CP} ${DISTDIR}/${DISTFILES:C|:[^:]+$||:M*.rtf} ${WRKSRC}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|:M*.rtf} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/${DISTNAME}*PDF*/|:M*.pdf} \
+		${STAGEDIR}${DOCSDIR}
+.endif
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	(cd ${WRKDIR}/${PORTNAME:S|f|F|}UFO_beta${PORTVERSION:S|.||} && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+. for e in ${EXAMPLES_DISTFILES:R:C|:[^:]+$||}
+	(cd ${WRKDIR}/${e} && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+. endfor
+.endif
 
 .include <bsd.port.mk>

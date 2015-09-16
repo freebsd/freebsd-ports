@@ -1,10 +1,10 @@
-@unexec if cmp -s %D/etc/exabgp/exabgp.env %D/etc/exabgp/exabgp.env.sample ; then rm -f %D/etc/exabgp/exabgp.env ; fi
-etc/exabgp/exabgp.env.sample
-@exec if [ ! -f %D/etc/exabgp/exabgp.env ]; then cp -p %D/%F %B/exabgp.env; fi
+@sample etc/exabgp/exabgp.env.sample
 man/man1/exabgp.1.gz
 sbin/exabgp
 %%PYTHON_SITELIBDIR%%/exabgp/__init__.py
 %%PYTHON_SITELIBDIR%%/exabgp/__init__.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/__main__.py
+%%PYTHON_SITELIBDIR%%/exabgp/__main__.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/application/__init__.py
 %%PYTHON_SITELIBDIR%%/exabgp/application/__init__.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/application/bgp.py
@@ -13,6 +13,10 @@ sbin/exabgp
 %%PYTHON_SITELIBDIR%%/exabgp/application/bmp.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/application/cli.py
 %%PYTHON_SITELIBDIR%%/exabgp/application/cli.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/application/healthcheck.py
+%%PYTHON_SITELIBDIR%%/exabgp/application/healthcheck.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/application/netlink.py
+%%PYTHON_SITELIBDIR%%/exabgp/application/netlink.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/__init__.py
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/__init__.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/__init__.py
@@ -261,8 +265,28 @@ sbin/exabgp
 %%PYTHON_SITELIBDIR%%/exabgp/logger.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/netlink/__init__.py
 %%PYTHON_SITELIBDIR%%/exabgp/netlink/__init__.pyc
-%%PYTHON_SITELIBDIR%%/exabgp/netlink/route.py
-%%PYTHON_SITELIBDIR%%/exabgp/netlink/route.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/netlink/attributes.py
+%%PYTHON_SITELIBDIR%%/exabgp/netlink/attributes.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/netlink/firewall.py
+%%PYTHON_SITELIBDIR%%/exabgp/netlink/firewall.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/netlink/message.py
+%%PYTHON_SITELIBDIR%%/exabgp/netlink/message.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/netlink/old.py
+%%PYTHON_SITELIBDIR%%/exabgp/netlink/old.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/netlink/route/__init__.py
+%%PYTHON_SITELIBDIR%%/exabgp/netlink/route/__init__.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/netlink/route/address.py
+%%PYTHON_SITELIBDIR%%/exabgp/netlink/route/address.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/netlink/route/link.py
+%%PYTHON_SITELIBDIR%%/exabgp/netlink/route/link.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/netlink/route/neighbor.py
+%%PYTHON_SITELIBDIR%%/exabgp/netlink/route/neighbor.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/netlink/route/network.py
+%%PYTHON_SITELIBDIR%%/exabgp/netlink/route/network.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/netlink/sequence.py
+%%PYTHON_SITELIBDIR%%/exabgp/netlink/sequence.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/netlink/tc.py
+%%PYTHON_SITELIBDIR%%/exabgp/netlink/tc.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/protocol/__init__.py
 %%PYTHON_SITELIBDIR%%/exabgp/protocol/__init__.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/protocol/family.py
@@ -357,7 +381,6 @@ sbin/exabgp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/processes/stderr-1.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/processes/syslog-1.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/processes/read-write.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/processes/healthcheck.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/processes/dynamic-1.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/processes/dynamic-1.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/ibgp4-tcpcontrol.txt

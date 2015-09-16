@@ -5,7 +5,6 @@ PORTNAME=	IO-Compress
 PORTVERSION=	2.068
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:PMQS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -19,22 +18,13 @@ BUILD_DEPENDS=	p5-Compress-Raw-Bzip2>=2.068:${PORTSDIR}/archivers/p5-Compress-Ra
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod
 
-CONFLICTS=	p5-Compress-Zlib-2* p5-IO-Compress-Base-2* p5-IO-Compress-Zlib-2* p5-IO-Compress-Bzip2-2*
+CONFLICTS_INSTALL=	p5-Compress-Zlib-2* p5-IO-Compress-Base-2* p5-IO-Compress-Zlib-2* p5-IO-Compress-Bzip2-2*
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 501600
-PLIST_SUB+=	EXE_FILES="@comment "
-.else
-PLIST_SUB+=	EXE_FILES=""
-.endif
-
 post-patch:
-.if ${PERL_LEVEL} >= 501600
 	@${REINPLACE_CMD} -e '/EXE_FILES/d' ${WRKSRC}/Makefile.PL
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

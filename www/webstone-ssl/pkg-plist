@@ -49,7 +49,3 @@ webstone-ssl/lgm/keepme
 webstone-ssl/lgm/ws20_cgi
 webstone-ssl/lgm/ws25_cgi
 webstone-ssl/webstone
-@dirrm webstone-ssl/bin
-@dirrm webstone-ssl/conf
-@dirrm webstone-ssl/lgm
-@dirrm webstone-ssl

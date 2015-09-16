@@ -12,7 +12,7 @@ COMMENT=	Free lightweight bittorrent tracker using libowfat
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libowfat.a:${PORTSDIR}/devel/libowfat
 
-USES=	tar:bzip2
+USES=		tar:bzip2
 USE_RC_SUBR=	${PORTNAME}
 
 OPTIONS_DEFINE= COMPRESSION_GZIP DEBUG_HTTPERROR FULLSCRAPE RESTRICT_STATS IPV6

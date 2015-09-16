@@ -1,0 +1,4 @@
+#!/bin/sh
+SSL_CERT_FILE='/etc/ssl/cert.pem'
+export SSL_CERT_FILE
+exec mpsyt ${1+"$@"}

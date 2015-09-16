@@ -1,17 +1,17 @@
---- Kernel/System/Loader.pm.orig	2010-12-02 18:20:40.000000000 +0000
-+++ Kernel/System/Loader.pm	2010-12-02 18:21:30.000000000 +0000
-@@ -19,8 +19,8 @@
- 
- use Kernel::System::CacheInternal;
+--- Kernel/System/Loader.pm.orig	2015-05-11 14:29:06 UTC
++++ Kernel/System/Loader.pm
+@@ -12,8 +12,8 @@ package Kernel::System::Loader;
+ use strict;
+ use warnings;
  
 -use CSS::Minifier qw();
 -use JavaScript::Minifier qw();
 +use CSS::Minifier::XS qw();
 +use JavaScript::Minifier::XS qw();
  
- =head1 NAME
- 
-@@ -361,7 +361,7 @@
+ our @ObjectDependencies = (
+     'Kernel::Config',
+@@ -336,7 +336,7 @@ sub MinifyCSS {
          return;
      }
  
@@ -20,7 +20,7 @@
  
      # a few optimizations can be made for the minified CSS that CSS::Minifier doesn't yet do
  
-@@ -408,7 +408,7 @@
+@@ -383,7 +383,7 @@ sub MinifyJavaScript {
          return;
      }
  
@@ -28,4 +28,4 @@
 +    return JavaScript::Minifier::XS::minify( $Param{Code} );
  }
  
- =item CacheDelete()
+ =item CacheGenerate()

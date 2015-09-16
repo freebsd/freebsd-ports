@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freetds
-PORTVERSION=	0.91.112.0.0
+PORTVERSION=	0.95.18
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.freetds.org/pub/freetds/stable/
@@ -16,11 +16,11 @@ LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
 TDS_VER?=	5.0
 
-USES=		autoreconf iconv gmake pkgconfig libtool:keepla tar:bzip2
+USES=		autoreconf iconv gmake libtool:keepla pkgconfig readline tar:bzip2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-LIBS+=		-lgcrypt
+LIBS+=		-lgcrypt -lpthread
 CONFIGURE_ARGS=	--with-tdsver=${TDS_VER} --sysconfdir=${ETCDIR} \
 	       	--enable-sybase-compat --enable-msdblib
 USE_LDCONFIG=	yes
@@ -64,15 +64,10 @@ post-patch:
 		 s|/locales.conf|/locales.conf.sample|g ; \
 		 s|/pool.conf|/pool.conf.sample|g ; \
 		 s| common.h||g'
-	@${REINPLACE_CMD} -e 's|$$ODBC_INC/isql.h|$$ODBC_INC/libiodbc/isql.h|g ; \
-		 s|$$ODBC_INC/isqlext.h|$$ODBC_INC/libiodbc/isqlext.h|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|\(\$with_iodbc/include\)|\1/libiodbc|g' \
+		${WRKSRC}/configure.ac
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/interfaces ${STAGEDIR}${ETCDIR}/interfaces.sample
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/doc/doc/${PORTNAME}-${PORTVERSION} && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-.endif
 
 .include <bsd.port.mk>

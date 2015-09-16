@@ -8,8 +8,11 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple universally unique ID generation library
 
+LICENSE=	APACHE20
+
+NO_ARCH=	yes
+
 USE_RUBY=	yes
-USE_RAKE=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 

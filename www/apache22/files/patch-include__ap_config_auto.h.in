@@ -1,5 +1,5 @@
---- include/ap_config_auto.h.in.orig	2014-08-22 19:54:18.000000000 +0200
-+++ include/ap_config_auto.h.in	2015-02-28 10:25:55.191842645 +0100
+--- include/ap_config_auto.h.in.orig	2014-08-22 17:54:18 UTC
++++ include/ap_config_auto.h.in
 @@ -127,6 +127,12 @@
  /* Define to 1 if you have the `SSL_CTX_new' function. */
  #undef HAVE_SSL_CTX_NEW

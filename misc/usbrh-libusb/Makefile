@@ -5,8 +5,7 @@ PORTNAME=	usbrh-libusb
 PORTVERSION=	0.05
 CATEGORIES=	misc
 MASTER_SITES=	http://www.dd.iij4u.or.jp/~briareos/soft/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	sanpei
+		LOCAL/sanpei
 DISTNAME=	usbrh-${PORTVERSION}
 
 MAINTAINER=	sanpei@FreeBSD.org

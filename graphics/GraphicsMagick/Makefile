@@ -3,19 +3,17 @@
 
 PORTNAME=	GraphicsMagick
 PORTVERSION=	1.3.20
-PORTREVISION=	3
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
 		ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/1.3/
-MASTER_SITE_SUBDIR=	${PORTNAME:tl}/${PORTNAME:tl}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast image processing tools based on ImageMagick
 
 LIB_DEPENDS=	libjbig.so:${PORTSDIR}/graphics/jbigkit		\
 		libjasper.so:${PORTSDIR}/graphics/jasper	\
-		libjpeg.so:${PORTSDIR}/graphics/jpeg		\
 		liblcms2.so:${PORTSDIR}/graphics/lcms2		\
 		libpng.so:${PORTSDIR}/graphics/png		\
 		libtiff.so:${PORTSDIR}/graphics/tiff		\
@@ -23,14 +21,14 @@ LIB_DEPENDS=	libjbig.so:${PORTSDIR}/graphics/jbigkit		\
 
 PORTSCOUT=	limit:^1\.3\.
 
-USES=		iconv libtool tar:bzip2
+USES=		ghostscript iconv jpeg libtool tar:bzip2
 USE_GNOME=	libxml2
-USE_GHOSTSCRIPT=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_LIBS="-lpthread"
 CONFIGURE_ARGS=	--without-perl --enable-shared --enable-static \
 		--with-quantum-depth="${QD}" \
 		--with-windows-font-dir="${WINDOWS_FONT_DIR}"
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	Q="${QD}"

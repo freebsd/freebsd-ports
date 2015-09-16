@@ -1,6 +1,8 @@
 bin/openra
 bin/openra-editor
 share/applications/openra-editor.desktop
+share/applications/openra-join-servers.desktop
+share/applications/openra-replays.desktop
 share/applications/openra.desktop
 share/icons/hicolor/128x128/apps/openra.png
 share/icons/hicolor/16x16/apps/openra.png
@@ -10,3 +12,4 @@ share/icons/hicolor/48x48/apps/openra-editor.png
 share/icons/hicolor/48x48/apps/openra.png
 share/icons/hicolor/64x64/apps/openra.png
 share/icons/hicolor/scalable/apps/openra.svg
+share/mime/packages/openra.xml

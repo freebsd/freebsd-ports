@@ -1,4 +1,4 @@
---- src/lazy_bdecode.cpp.orig	2014-04-04 02:51:48.000000000 +0000
+--- src/lazy_bdecode.cpp.orig	2014-12-05 01:00:07 UTC
 +++ src/lazy_bdecode.cpp
 @@ -30,6 +30,9 @@ POSSIBILITY OF SUCH DAMAGE.
  
@@ -9,4 +9,4 @@
 +
  #include "libtorrent/config.hpp"
  #include "libtorrent/lazy_entry.hpp"
- #include "libtorrent/escape_string.hpp"
+ #include <cstring>

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	parcellite
-PORTVERSION=	1.1.7
-PORTREVISION=	1
+PORTVERSION=	1.1.9
 PORTEPOCH=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
@@ -12,33 +11,52 @@ MAINTAINER=	koalative@gmail.com
 COMMENT=	Lightweight GTK+ clipboard manager
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
-
-USES=		gmake pkgconfig
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
-USE_GNOME=	gtk20
+USE_GNOME=	glib20 gtk20 pango
+USE_XORG=	x11
+CONFIGURE_ARGS+=--disable-appindicator
 
 PORTDOCS=	AUTHORS ChangeLog README
 
-OPTIONS_DEFINE= DOCS NLS
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-lgio-2.0
+
+OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
-NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=	gettext
+NLS_USES=	gmake gettext
+NLS_USE=	GNOME=intltool
+NLS_USES_OFF=	autoreconf
+NLS_EXTRA_PATCHES_OFF=	${PATCHDIR}/extrapatch-configure.ac
+NLS_LIBS=	-lintl
 
 SUB_FILES=	pkg-message
 
-.include <bsd.port.options.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|"/proc/|"/compat/linux/proc/|; \
-		s|"/proc"|"/compat/linux/proc"|' \
-		${WRKSRC}/src/utils.c
-.if ${PORT_OPTIONS:MNLS}
+post-patch-NLS-on:
 	@${REINPLACE_CMD} -e 's|$$(DATADIRNAME)/locale|share/locale|' \
 		${WRKSRC}/po/Makefile.in.in
-.endif
+
+post-patch-NLS-off:
+	@${REINPLACE_CMD} -e 's|@INTLTOOL_DESKTOP_RULE@||' \
+		${WRKSRC}/data/Makefile.am
+	@${REINPLACE_CMD} -e 's|_Name|Name|' -e 's|_Comment|Comment|' \
+		${WRKSRC}/data/parcellite-startup.desktop.in \
+		${WRKSRC}/data/parcellite.desktop.in
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/proc|/compat/linux/proc|g' \
+		${WRKSRC}/src/utils.c
+
+pre-build-NLS-off:
+	@${REINPLACE_CMD} -e '/SUBDIRS = /s| po||' ${WRKSRC}/Makefile
+	${MV} ${WRKSRC}/data/parcellite-startup.desktop.in \
+		${WRKSRC}/data/parcellite-startup.desktop
+	${MV} ${WRKSRC}/data/parcellite.desktop.in \
+		${WRKSRC}/data/parcellite.desktop
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

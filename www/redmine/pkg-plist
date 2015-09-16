@@ -855,7 +855,7 @@
 %%WWWDIR%%/extra/sample_plugin/test/integration/routing_test.rb
 %%WWWDIR%%/extra/svn/Redmine.pm
 %%WWWDIR%%/extra/svn/reposman.rb
-%%WWWDIR%%/files/delete.me
+@(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/files/delete.me
 %%WWWDIR%%/lib/SVG/GPL.txt
 %%WWWDIR%%/lib/SVG/Graph/Bar.rb
 %%WWWDIR%%/lib/SVG/Graph/BarBase.rb
@@ -1090,7 +1090,7 @@
 %%WWWDIR%%/lib/tasks/reminder.rake
 %%WWWDIR%%/lib/tasks/testing.rake
 %%WWWDIR%%/lib/tasks/yardoc.rake
-%%WWWDIR%%/log/delete.me
+@(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/log/delete.me
 %%WWWDIR%%/plugins/README
 %%WWWDIR%%/public/404.html
 %%WWWDIR%%/public/500.html
@@ -1427,7 +1427,7 @@
 %%WWWDIR%%/public/javascripts/repository_navigation.js
 %%WWWDIR%%/public/javascripts/revision_graph.js
 %%WWWDIR%%/public/javascripts/select_list_move.js
-%%WWWDIR%%/public/plugin_assets/empty
+@(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/public/plugin_assets/empty
 %%WWWDIR%%/public/stylesheets/application.css
 %%WWWDIR%%/public/stylesheets/context_menu.css
 %%WWWDIR%%/public/stylesheets/context_menu_rtl.css
@@ -1454,8 +1454,8 @@
 %%WWWDIR%%/public/themes/classic/images/home.png
 %%WWWDIR%%/public/themes/classic/images/wrench.png
 %%WWWDIR%%/public/themes/classic/stylesheets/application.css
-%%WWWDIR%%/script/about
-%%WWWDIR%%/script/rails
+@(,,755) %%WWWDIR%%/script/about
+@(,,755) %%WWWDIR%%/script/rails
 %%WWWDIR%%/test/extra/redmine_pm/repository_git_test.rb
 %%WWWDIR%%/test/extra/redmine_pm/repository_subversion_test.rb
 %%WWWDIR%%/test/extra/redmine_pm/test_case.rb
@@ -1842,20 +1842,16 @@
 %%WWWDIR%%/test/unit/wiki_test.rb
 %%WWWDIR%%/test/unit/workflow_test.rb
 %%WWWDIR%%/test/unit/workflow_transition_test.rb
-%%WWWDIR%%/tmp/pdf/empty
-%%WWWDIR%%/tmp/test/empty
-%%WWWDIR%%/tmp/thumbnails/empty
+@(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/pdf/empty
+@(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/test/empty
+@(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/thumbnails/empty
 @dir %%WWWDIR%%/app/sweepers
 @dir %%WWWDIR%%/lib/vendor
 @dir %%WWWDIR%%/test/fixtures/mailer
 @dir %%WWWDIR%%/test/mocks/development
 @dir %%WWWDIR%%/test/mocks/test
-@dir %%WWWDIR%%/tmp/cache
-@dir %%WWWDIR%%/tmp/pids
-@dir %%WWWDIR%%/tmp/sessions
-@dir %%WWWDIR%%/tmp/sockets
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/cache
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/pids
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/sessions
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/sockets
 @dir %%WWWDIR%%/vendor
-@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%/files
-@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%/log
-@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%/public/plugin_assets
-@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%/tmp

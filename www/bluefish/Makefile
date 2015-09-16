@@ -21,7 +21,7 @@ USE_LDCONFIG=	yes
 
 USES=		gmake pkgconfig desktop-file-utils shared-mime-info \
 		tar:bzip2 libtool
-USE_GNOME=	gnomeprefix gtk20 gnomevfs2 gnomemimedata
+USE_GNOME=	gnomeprefix gtk20 gnomevfs2 gnomemimedata intltool
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

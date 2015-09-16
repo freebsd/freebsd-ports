@@ -1,6 +1,6 @@
---- analogger.gemspec.orig	2014-11-29 13:26:51.000000000 +0000
-+++ analogger.gemspec	2014-11-29 13:27:09.000000000 +0000
-@@ -13,7 +13,7 @@
+--- analogger.gemspec.orig	2014-11-29 13:26:51 UTC
++++ analogger.gemspec
+@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
    s.email = "wyhaines@gmail.com"
    s.executables = ["analogger"]
    s.extra_rdoc_files = ["README"]

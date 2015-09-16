@@ -1,0 +1,5 @@
+libunwind is a stack unwinder library maintained by the LLVM project. It
+is used when handling exceptions in C++. This port provides a copy of
+libunwind built for CloudABI.
+
+WWW: http://libcxxabi.llvm.org/

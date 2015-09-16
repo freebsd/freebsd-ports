@@ -9,6 +9,7 @@ MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Callback-based program option parser for C\#
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_cv_path_MCS=${LOCALBASE}/bin/mcs
 USES=		gmake mono pathfix pkgconfig
 
 .include <bsd.port.mk>

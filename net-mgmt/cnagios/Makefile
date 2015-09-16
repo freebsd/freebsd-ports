@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	cnagios
-PORTVERSION=	0.31
+PORTVERSION=	0.32
 CATEGORIES=	net-mgmt
-MASTER_SITES=	ftp://noc.hep.wisc.edu/src/cnagios/ \
-		ftp://noc.hep.wisc.edu/src/cnagios/old-versions/
 
 MAINTAINER=	alexander.4mail@gmail.com
 COMMENT=	Curses-based interface for nagios
@@ -13,6 +11,9 @@ COMMENT=	Curses-based interface for nagios
 LICENSE=	ISCL
 
 RUN_DEPENDS=	nagios>=3.0:${PORTSDIR}/net-mgmt/nagios
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	dannywarren
 
 NAGIOSDIR?=	/var/spool/nagios
 ETCDIR=		${PREFIX}/etc/nagios
@@ -24,8 +25,7 @@ CONFIGURE_ARGS=	--with-etc-dir="${ETCDIR}" \
 USES=		perl5
 ALL_TARGET=	cnagios
 
-post-patch:
-# check in next relase if version match, and adjust/remove the next line
-	${REINPLACE_CMD} -e 's/0.30/${PORTVERSION}/' ${WRKSRC}/version.h
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cnagios
 
 .include <bsd.port.mk>

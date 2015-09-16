@@ -19,6 +19,7 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		syscache:${PORTSDIR}/sysutils/pcbsd-syscache \
 		lpreserver:${PORTSDIR}/sysutils/life-preserver \
 		warden:${PORTSDIR}/sysutils/warden \
+		iocage:${PORTSDIR}/sysutils/iocage-devel \
 		pbi:${PORTSDIR}/sysutils/pbi-manager \
 		appcafe-setpass:${PORTSDIR}/sysutils/pcbsd-appweb \
 		git:${PORTSDIR}/devel/git \
@@ -29,10 +30,14 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		xorg>=0:${PORTSDIR}/x11/xorg \
 		xf86-input-synaptics>=0:${PORTSDIR}/x11-drivers/xf86-input-synaptics \
 		xf86-video-intel>=0:${PORTSDIR}/x11-drivers/xf86-video-intel \
-		dejavu>=0:${PORTSDIR}/x11-fonts/dejavu \
+		noto>=0:${PORTSDIR}/x11-fonts/noto \
+		droid-fonts-ttf>=0:${PORTSDIR}/x11-fonts/droid-fonts-ttf \
 		xv:${PORTSDIR}/graphics/xv \
 		libvdpau>=0:${PORTSDIR}/multimedia/libvdpau \
 		rdesktop:${PORTSDIR}/net/rdesktop \
+		gtk2-qtcurve-theme>=0:${PORTSDIR}/x11-themes/qtcurve-gtk2 \
+		qt4-style-qtcurve>=0:${PORTSDIR}/x11-themes/qtcurve-qt4 \
+		gtk-theme-switch>=0:${PORTSDIR}/x11/gtk-theme-switch2 \
 		alsa-lib>=0:${PORTSDIR}/audio/alsa-lib \
 		nspluginwrapper:${PORTSDIR}/www/nspluginwrapper \
 		linux_base-c6>=0:${PORTSDIR}/emulators/linux_base-c6 \
@@ -71,15 +76,9 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		gutenprint-foomatic>=0:${PORTSDIR}/print/gutenprint-foomatic \
 		system-config-printer:${PORTSDIR}/print/system-config-printer \
 		numlockx:${PORTSDIR}/x11/numlockx \
-		swapexd:${PORTSDIR}/sysutils/swapexd \
 		mupdf:${PORTSDIR}/graphics/mupdf \
 		pciutils>=0:${PORTSDIR}/sysutils/pciutils \
 		gpg:${PORTSDIR}/security/gnupg \
-		idesk:${PORTSDIR}/x11/idesk \
-		gtk2-qtcurve-theme>=0:${PORTSDIR}/x11-themes/qtcurve-gtk2 \
-		qt4-style-qtcurve>=0:${PORTSDIR}/x11-themes/qtcurve-qt4 \
-		webfonts>=0:${PORTSDIR}/x11-fonts/webfonts \
-		gtk-theme-switch>=0:${PORTSDIR}/x11/gtk-theme-switch2 \
 		foo2zjs>=0:${PORTSDIR}/print/foo2zjs \
 		linux_dvbwrapper-kmod>=0:${PORTSDIR}/multimedia/linux_dvbwrapper-kmod \
 		xvkbd:${PORTSDIR}/x11/xvkbd \
@@ -96,25 +95,13 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		xsane:${PORTSDIR}/graphics/xsane \
 		libaacs>=0:${PORTSDIR}/multimedia/libaacs \
 		xbrightness>=0:${PORTSDIR}/x11/xbrightness \
-		fusefs-ext4fuse>=0:${PORTSDIR}/sysutils/fusefs-ext4fuse \
 		gstreamer-plugins-cdaudio>=0:${PORTSDIR}/audio/gstreamer-plugins-cdaudio \
 		gstreamer-plugins-cdparanoia>=0:${PORTSDIR}/audio/gstreamer-plugins-cdparanoia \
-		ar-aspell>=0:${PORTSDIR}/arabic/aspell \
-		fr-aspell>=0:${PORTSDIR}/french/aspell \
-		de-aspell>=0:${PORTSDIR}/german/aspell \
-		iw-aspell>=0:${PORTSDIR}/hebrew/aspell \
-		hu-aspell>=0:${PORTSDIR}/hungarian/aspell \
-		pl-aspell>=0:${PORTSDIR}/polish/aspell \
-		ru-aspell>=0:${PORTSDIR}/russian/aspell \
-		uk-aspell>=0:${PORTSDIR}/ukrainian/aspell \
-		vi-aspell>=0:${PORTSDIR}/vietnamese/aspell \
-		mosh:${PORTSDIR}/net/mosh \
 		x11vnc>=0:${PORTSDIR}/net/x11vnc \
 		ataidle>=0:${PORTSDIR}/sysutils/ataidle \
 		tk84>=0:${PORTSDIR}/x11-toolkits/tk84 \
 		tk85>=0:${PORTSDIR}/x11-toolkits/tk85 \
 		tk86>=0:${PORTSDIR}/x11-toolkits/tk86 \
-		panicmail>=0:${PORTSDIR}/sysutils/panicmail \
 		pulseaudio>=0:${PORTSDIR}/audio/pulseaudio \
 		paprefs>=0:${PORTSDIR}/audio/paprefs \
 		pavucontrol>=0:${PORTSDIR}/audio/pavucontrol \
@@ -122,14 +109,12 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		grub-mkconfig:${PORTSDIR}/sysutils/grub2-pcbsd \
 		grub2-efi>=0:${PORTSDIR}/sysutils/grub2-efi \
 		unrar:${PORTSDIR}/archivers/unrar \
-		p7zip:${PORTSDIR}/archivers/p7zip \
+		7z:${PORTSDIR}/archivers/p7zip \
 		avahi-browse:${PORTSDIR}/net/avahi-app \
 		anacron:${PORTSDIR}/sysutils/anacron \
-		vagrant>=0:${PORTSDIR}/sysutils/vagrant \
 		openntpd>=0:${PORTSDIR}/net/openntpd \
 		socat>=0:${PORTSDIR}/net/socat \
-		tor>=0:${PORTSDIR}/security/tor \
-		zsh:${PORTSDIR}/shells/zsh
+		tor>=0:${PORTSDIR}/security/tor
 
 NO_BUILD=	yes
 

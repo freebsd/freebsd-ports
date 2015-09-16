@@ -66,9 +66,6 @@ GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/Recycler
 GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/RunExternal.rtfd/Run-panel.tiff
 GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/RunExternal.rtfd/TXT.rtf
 GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/RunExternal.rtfd/dummy.tiff
-GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/SViewer.rtfd/TXT.rtf
-GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/SViewer.rtfd/dummy.tiff
-GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/SViewer.rtfd/spatial.tiff
 GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/TabbedShelf.rtfd/TXT.rtf
 GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/TabbedShelf.rtfd/TabbedShelf-develop.tiff
 GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/TabbedShelf.rtfd/dummy.tiff
@@ -178,7 +175,6 @@ GNUstep/System/Applications/GWorkspace.app/Resources/SlideMask.tiff
 GNUstep/System/Applications/GWorkspace.app/Resources/SmallCellHighlight.tiff
 GNUstep/System/Applications/GWorkspace.app/Resources/SmallCellHighlightSmall.tiff
 GNUstep/System/Applications/GWorkspace.app/Resources/Spanish.lproj/Localizable.strings
-GNUstep/System/Applications/GWorkspace.app/Resources/Spanish.lproj/Localizable.strings~
 GNUstep/System/Applications/GWorkspace.app/Resources/TileHighlight.tiff
 GNUstep/System/Applications/GWorkspace.app/Resources/Weekday-0.tiff
 GNUstep/System/Applications/GWorkspace.app/Resources/Weekday-1.tiff

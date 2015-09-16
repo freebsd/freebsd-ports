@@ -14,12 +14,11 @@ COMMENT=	Photomosaic generator
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png
 
 CPPFLAGS+=	$$(libpng-config --I_opts) -I${LOCALBASE}/include -I.
 LDFLAGS+=	$$(libpng-config --L_opts) -L${LOCALBASE}/lib
-USES=		gmake shebangfix
+USES=		gmake jpeg shebangfix
 SHEBANG_FILES=	metapixel-prepare metapixel-sizesort
 
 PLIST_FILES=	bin/metapixel \

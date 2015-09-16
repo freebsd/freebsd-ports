@@ -17,7 +17,7 @@ RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
 		py*-chardet>=0:${PORTSDIR}/textproc/py-chardet \
 		py*-enchant>=1.5.1:${PORTSDIR}/textproc/py-enchant
 
-USE_GNOME=	pygtk2
+USE_GNOME=	pygtk2 intltool
 USE_PYTHON=	distutils
 USES=		desktop-file-utils python
 INSTALLS_ICONS=	yes

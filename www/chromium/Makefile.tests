@@ -1,4 +1,4 @@
-#$FreeBSD: head/www/chromium/Makefile.tests 354687 2014-05-20 20:47:17Z rene $
+#$FreeBSD$
 #telemetry_unittests : unknown ninja target
 TEST_TARGETS=	base_unittests \
 		crypto_unittests \

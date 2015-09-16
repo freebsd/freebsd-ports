@@ -1,4 +1,4 @@
 This program is designed to let you play with the Perl YAML modules in an
 interactive way. When you to type in Perl, you get back YAML. And vice versa.
 
-WWW:	http://search.cpan.org/dist/YAML-Shell/
+WWW: http://search.cpan.org/dist/YAML-Shell/

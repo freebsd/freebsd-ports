@@ -22,7 +22,7 @@ LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd \
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake libtool pathfix pkgconfig
-USE_GNOME=	glib20 gtk20 libglade2
+USE_GNOME=	glib20 gtk20 intltool libglade2
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--enable-system-libsexy
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -31,17 +31,9 @@ LIBS+=		-L${LOCALBASE}/lib -lm
 OPTIONS_DEFINE=	MMKEYS XSPF
 OPTIONS_DEFAULT=	MMKEYS
 
-.include <bsd.port.options.mk>
+MMKEYS_CONFIGURE_ON=--disable-mmkeys
 
-.if ${PORT_OPTIONS:MMMKEYS}
-CONFIGURE_ARGS+=--disable-mmkeys
-.endif
-
-.if ${PORT_OPTIONS:MXSPF}
-LIB_DEPENDS+=	libxspf.so:${PORTSDIR}/multimedia/libxspf
-CONFIGURE_ARGS+=--enable-libxspf
-.else
-CONFIGURE_ARGS+=--disable-libxspf
-.endif
+XSPF_LIB_DEPENDS=	libxspf.so:${PORTSDIR}/multimedia/libxspf
+XSPF_CONFIGURE_ENABLE=	libxspf
 
 .include <bsd.port.mk>

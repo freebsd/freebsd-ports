@@ -1,6 +1,6 @@
---- libguile/gc.c.orig	2008-12-08 09:42:54.000000000 -0800
-+++ libguile/gc.c	2009-08-20 22:55:11.000000000 -0700
-@@ -1060,6 +1060,20 @@
+--- libguile/gc.c.orig	2010-12-13 17:24:40 UTC
++++ libguile/gc.c
+@@ -1060,6 +1060,20 @@ scm_ia64_ar_bsp (const void *opaque)
    return (void *) ctx->uc_mcontext.sc_ar_bsp;
  }
  # endif	/* linux */

@@ -22,6 +22,7 @@ CONFLICTS=	gts-[0-9]*
 
 USE_AUTOTOOLS=	autoconf
 USES=		gmake pkgconfig tk:run shared-mime-info desktop-file-utils
+USE_GNOME=	intltool
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	INSTALL_DATA="${BSD_INSTALL_DATA}"
@@ -63,10 +64,6 @@ NONE_CONFIGURE_ENV=	WISH=/usr/bin/true
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	Uses x86 specific libc functions and has not been ported
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-INFO=		pcb
-.endif
+DOCS_INFO=		pcb
 
 .include <bsd.port.mk>

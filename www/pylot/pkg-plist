@@ -28,11 +28,3 @@ bin/pylot
 %%DATADIR%%/ui/gui/icon.ico
 %%DATADIR%%/ui/gui/wx_gui.py
 %%DATADIR%%/util/pylot_win_recorder.py
-@dirrm %%DATADIR%%/util
-@dirrm %%DATADIR%%/ui/gui
-@dirrm %%DATADIR%%/ui/console/win
-@dirrm %%DATADIR%%/ui/console
-@dirrm %%DATADIR%%/ui/blocking
-@dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%/core
-@dirrm %%DATADIR%%

@@ -1,5 +1,5 @@
---- /dev/null	2015-01-31 21:35:05.000000000 +0900
-+++ texk/xdvik/READMEs/README.markpage+toc+printdvi	2015-01-31 21:02:18.000000000 +0900
+--- texk/xdvik/READMEs/README.markpage+toc+printdvi.orig	2015-07-19 18:49:41 UTC
++++ texk/xdvik/READMEs/README.markpage+toc+printdvi
 @@ -0,0 +1,200 @@
 +
 +        << xdvi-17+markpage+toc+printdvi patch について >>

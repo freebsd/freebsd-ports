@@ -1,6 +1,6 @@
---- src/posix/OSPosix.cpp.orig	2014-08-28 18:02:26.000000000 +0400
-+++ src/posix/OSPosix.cpp	2014-08-31 21:03:27.000000000 +0400
-@@ -111,7 +111,7 @@
+--- src/posix/OSPosix.cpp.orig	2015-06-07 21:44:10 UTC
++++ src/posix/OSPosix.cpp
+@@ -107,7 +107,7 @@
  	}
  
  	char infoString[2048];

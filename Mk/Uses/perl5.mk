@@ -50,13 +50,17 @@ PERL_VERSION!=	perl -e 'printf "%vd\n", $$^V;'
 .else
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 .if ${PERL5_DEFAULT} == 5.16
-PERL_VERSION=	5.16.3
+.include "${PORTSDIR}/lang/perl5.16/version.mk"
 .elif ${PERL5_DEFAULT} == 5.18
-PERL_VERSION=	5.18.4
+.include "${PORTSDIR}/lang/perl5.18/version.mk"
 .elif ${PERL5_DEFAULT} == 5.20
-PERL_VERSION=	5.20.2
-.elif ${PERL5_DEFAULT} == 5.21 || ${PERL5_DEFAULT} == devel
-PERL_VERSION=	5.22.0
+.include "${PORTSDIR}/lang/perl5.20/version.mk"
+.elif ${PERL5_DEFAULT} == 5.22
+.include "${PORTSDIR}/lang/perl5.22/version.mk"
+.elif ${PERL5_DEFAULT} == devel
+.include "${PORTSDIR}/lang/perl5-devel/version.mk"
+# Force PERL_PORT here in case two identical PERL_VERSION.
+PERL_PORT?=	perl5-devel
 .else
 IGNORE=	Invalid perl5 version ${PERL5_DEFAULT}
 .endif
@@ -83,9 +87,10 @@ PERL_LEVEL=0
 PERL_ARCH?=	mach
 
 # there must always be a default to prevent dependency failures such
-# as "ports/lang: not found"
-.if   ${PERL_LEVEL} >= 502100
-PERL_PORT?=	perl5-devel
+# as "ports/lang: not found".  Also, perl5-devel is taken care in the
+# perl5_default file, or up there in the default versions selection.
+.if   ${PERL_LEVEL} >= 502200
+PERL_PORT?=	perl5.22
 .elif   ${PERL_LEVEL} >= 502000
 PERL_PORT?=	perl5.20
 .elif ${PERL_LEVEL} >= 501800
@@ -269,6 +274,7 @@ PACKLIST_DIR?=	${PREFIX}/${SITE_ARCH_REL}/auto
 
 # In all those, don't use - before the command so that the user does
 # not wonder what has been ignored by this message "*** Error code 1 (ignored)"
+_USES_install+=	560:fix-perl-things
 fix-perl-things:
 # Remove STAGEDIR from .packlist and add the file to the plist.
 	@(if [ -d ${STAGEDIR}${PACKLIST_DIR} ] ; then \
@@ -292,8 +298,8 @@ fix-perl-things:
 	@${RMDIR} -p ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH} 2>/dev/null || :
 
 .if !target(regression-test)
-TEST_ARGS+=	${MAKE_ARGS}
-TEST_ENV+=	${MAKE_ENV}
+TEST_ARGS?=	${MAKE_ARGS}
+TEST_ENV?=	${MAKE_ENV}
 TEST_TARGET?=	test
 TEST_WRKSRC?=	${BUILD_WRKSRC}
 .if !target(test)

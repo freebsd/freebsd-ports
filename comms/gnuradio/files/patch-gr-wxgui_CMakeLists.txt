@@ -1,6 +1,14 @@
---- gr-wxgui/CMakeLists.txt.orig	2013-11-04 13:50:36.000000000 -0500
-+++ gr-wxgui/CMakeLists.txt	2014-03-02 20:20:37.000000000 -0500
-@@ -106,12 +106,21 @@
+--- gr-wxgui/CMakeLists.txt.orig	2015-05-12 09:39:44 UTC
++++ gr-wxgui/CMakeLists.txt
+@@ -99,19 +99,28 @@ configure_file(
+ 
+ install(
+     FILES ${CMAKE_CURRENT_BINARY_DIR}/gr-wxgui.pc
+-    DESTINATION ${GR_LIBRARY_DIR}/pkgconfig
++    DESTINATION ${GR_PKGCONFIG_DIR}/pkgconfig
+     COMPONENT "wxgui"
+ )
+ 
  ########################################################################
  # Install the conf file
  ########################################################################

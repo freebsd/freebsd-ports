@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chiconv
-PORTVERSION=	11.1
+PORTVERSION=	11.3
 CATEGORIES=	chinese converters
 
 MAINTAINER=	buganini@gmail.com
@@ -18,5 +18,8 @@ GH_ACCOUNT=	buganini
 MAKE_ARGS=	PREFIX=${PREFIX}
 
 PLIST_FILES=	bin/chiconv
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/chiconv
 
 .include <bsd.port.mk>

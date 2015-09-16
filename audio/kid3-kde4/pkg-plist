@@ -5,10 +5,6 @@ lib/libkid3-core.so
 lib/libkid3-core.so.%%SHLIB_VER%%
 lib/libkid3-gui.so
 lib/libkid3-gui.so.%%SHLIB_VER%%
-%%QML%%lib/kid3/imports/Kid3/Kid3Script.qml
-%%QML%%lib/kid3/imports/Kid3/libkid3qml.so
-%%QML%%lib/kid3/imports/Kid3/plugins.qmltypes
-%%QML%%lib/kid3/imports/Kid3/qmldir
 %%CHROMAPRINT%%lib/kid3/libacoustidimport.so
 lib/kid3/libamazonimport.so
 lib/kid3/libdiscogsimport.so
@@ -17,7 +13,6 @@ lib/kid3/libfreedbimport.so
 %%MP4V2%%lib/kid3/libmp4v2metadata.so
 lib/kid3/libmusicbrainzimport.so
 %%OGGFLAC%%lib/kid3/liboggflacmetadata.so
-%%QML%%lib/kid3/libqmlcommand.so
 %%TAGLIB%%lib/kid3/libtaglibmetadata.so
 %%CLI%%man/de/man1/kid3-cli.1.gz
 %%QT%%man/de/man1/kid3-qt.1.gz
@@ -51,14 +46,6 @@ man/man1/kid3.1.gz
 %%KDE%%share/icons/hicolor/64x64/apps/kid3.png
 %%QT%%share/icons/hicolor/scalable/apps/kid3-qt.svg
 %%KDE%%share/icons/hicolor/scalable/apps/kid3.svgz
-%%QML%%%%DATADIR%%/qml/script/EmbedAlbumArt.qml
-%%QML%%%%DATADIR%%/qml/script/EmbedLyrics.qml
-%%QML%%%%DATADIR%%/qml/script/ExportCsv.qml
-%%QML%%%%DATADIR%%/qml/script/ExtractAlbumArt.qml
-%%QML%%%%DATADIR%%/qml/script/QmlConsole.qml
-%%QML%%%%DATADIR%%/qml/script/ReplayGain2SoundCheck.qml
-%%QML%%%%DATADIR%%/qml/script/ResizeAlbumArt.qml
-%%QML%%%%DATADIR%%/qml/script/ShowTextEncodingV1.qml
 %%DATADIR%%/translations/kid3_cs.qm
 %%DATADIR%%/translations/kid3_de.qm
 %%DATADIR%%/translations/kid3_es.qm

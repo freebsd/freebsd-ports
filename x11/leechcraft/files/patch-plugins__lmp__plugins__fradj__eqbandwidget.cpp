@@ -1,6 +1,6 @@
---- ./plugins/lmp/plugins/fradj/eqbandwidget.cpp.orig	2014-07-16 15:52:17.270849299 +0400
-+++ ./plugins/lmp/plugins/fradj/eqbandwidget.cpp	2014-07-16 15:52:46.079846871 +0400
-@@ -98,7 +98,7 @@
+--- plugins/lmp/plugins/fradj/eqbandwidget.cpp.orig	2014-07-28 18:35:44 UTC
++++ plugins/lmp/plugins/fradj/eqbandwidget.cpp
+@@ -98,7 +98,7 @@ namespace Fradj
  				this,
  				SLOT (setGainBoxValue (int)));
  

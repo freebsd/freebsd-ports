@@ -3,4 +3,4 @@ with ActiveScaffold. ActiveScaffold handles all your CRUD (create, read,
 update, delete) user interface needs, leaving you more time to focus on more
 challenging (and interesting!) problems.
 
-WWW: https://rubygems.org/gems/active_scaffold
+WWW: https://github.com/activescaffold/active_scaffold

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	minitest
-PORTVERSION=	5.5.1
+PORTVERSION=	5.8.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +11,10 @@ COMMENT=	Minitest provides a complete suite of testing facilities
 
 LICENSE=	MIT
 
-USE_RUBY=		yes
-USE_RUBYGEMS=		yes
+NO_ARCH=	yes
+
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

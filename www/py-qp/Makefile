@@ -3,7 +3,7 @@
 
 PORTNAME=	qp
 PORTVERSION=	2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	http://www.mems-exchange.org/software/qp/ \
 		LOCAL/sunpoet
@@ -17,7 +17,6 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}durus>=0:${PORTSDIR}/devel/py-durus \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 USE_PYTHON=	distutils
 USES=		python:2
@@ -31,7 +30,7 @@ post-build:
 	@${STRIP_CMD} ${WRKSRC}/build/lib.*/qp/hub/passfd.so
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/ ${STAGEDIR}${EXAMPLESDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${PYTHON_CMD} setup.py install_demo_sites ${STAGEDIR}${EXAMPLESDIR}/
 

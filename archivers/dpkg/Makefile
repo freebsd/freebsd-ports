@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	dpkg
-PORTVERSION=	1.17.25
+PORTVERSION=	1.18.2
 CATEGORIES=	archivers sysutils
-MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
+MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	dpkg_${PORTVERSION}
 
 MAINTAINER=	pawel@FreeBSD.org
@@ -14,14 +14,12 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	po4a:${PORTSDIR}/textproc/po4a
 RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar \
-		gpatch:${PORTSDIR}/devel/patch \
-		gmd5sum:${PORTSDIR}/sysutils/coreutils
+		gpatch:${PORTSDIR}/devel/patch
 
 GNU_CONFIGURE=	yes
-USES=		gmake iconv libtool perl5 pkgconfig shebangfix tar:xz
+USES=		cpe gmake iconv libtool perl5 pkgconfig tar:xz
+CPE_VENDOR=	debian
 WRKSRC=		${WRKDIR}/dpkg-${PORTVERSION}
-SHEBANG_FILES=	dselect/methods/ftp/update dselect/methods/ftp/install \
-		dselect/methods/ftp/setup
 
 DPKGDIR?=	/var/db/dpkg
 PLIST_SUB+=	DPKGDIR=${DPKGDIR}
@@ -30,8 +28,8 @@ SUB_FILES=	pkg-install pkg-deinstall
 SUB_LIST+=	DPKGDIR=${DPKGDIR}
 
 CONFIGURE_ARGS+=--with-admindir=${DPKGDIR} --libdir=${PREFIX}/libexec \
-		--program-transform-name="" --with-libintl-prefix=${LOCALBASE} \
-		--disable-compiler-warnings --with-logdir=/var/log
+		--with-libintl-prefix=${LOCALBASE} \
+		--with-logdir=/var/log
 CONFIGURE_ENV+=	PERL_LIBDIR="${PREFIX}/${SITE_PERL_REL}"
 
 OPTIONS_DEFINE=	NLS
@@ -39,16 +37,6 @@ OPTIONS_SUB=	yes
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
-
-post-patch:
-	@${REINPLACE_CMD} 's|-t$$host|-t${ARCH}-freebsd|g' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -E 's/(md5|sha1|sha256)sum/g&/g' \
-		${WRKSRC}/scripts/Dpkg/Checksums.pm
-	@${REINPLACE_CMD} -e 's/cp -p $$(DEST/mv $$(DEST/g; s/rm $$(/rm -f $$(/g' \
-		${WRKSRC}/scripts/mk/Makefile.in \
-		${WRKSRC}/scripts/Makefile.in
-	@${REINPLACE_CMD} 's/{^MATCH}/\&/' ${WRKSRC}/dselect/mkcurkeys.pl
 
 post-install:
 	(cd ${STAGEDIR}${DPKGDIR} && ${MKDIR} available diversions \

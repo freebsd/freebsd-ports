@@ -13,6 +13,7 @@ COMMENT?=	Library (written in C) for parsing and creating messages using MIME
 
 LICENSE=	LGPL21
 
+PORTSCOUT=	limit:^2\.2
 CONFLICTS=	gmime-1.0.* gmime-2.4.*
 
 SLAVEDIRS=	mail/gmime2-sharp
@@ -34,19 +35,15 @@ OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	*
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|stdint.h|inttypes.h|" ${WRKSRC}/zentimer.h
 	@${REINPLACE_CMD} -e 's|-DG_DISABLE_DEPRECATED||g' \
 		${WRKSRC}/gmime/Makefile.in
 
-post-install:
-.if  ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in docs/reference/html/*
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

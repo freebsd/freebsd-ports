@@ -4,9 +4,8 @@
 PORTNAME=	python-doc-${DOCFORMAT}
 PORTVERSION=	${PYTHON_PORTVERSION}
 CATEGORIES=	lang python
-MASTER_SITES=	PYTHON
-MASTER_SITE_SUBDIR=	ftp/python/doc/${PORTVERSION} \
-			ftp/python/doc/current
+MASTER_SITES=	PYTHON/ftp/python/doc/${PORTVERSION} \
+		PYTHON/ftp/python/doc/current
 DISTNAME=	python-${PORTVERSION}-docs-${DOCFORMAT}
 DIST_SUBDIR=	python
 
@@ -36,9 +35,7 @@ IGNORE=		invalid value for DOCFORMAT: "${DOCFORMAT}", possible values are: text,
 
 pre-install:
 	@cd ${WRKSRC} && \
-		(${FIND} . -type f | ${SED} -e 's|^\./|%%DOCSDIR%%/|' | ${SORT}; \
-		${FIND} * -type d | ${SED} -e 's|^|@dirrm %%DOCSDIR%%/|' | ${SORT} -r; \
-		${ECHO_CMD} "@dirrmtry %%DOCSDIR%%") > ${PLIST}
+		(${FIND} . -type f | ${SED} -e 's|^\./|%%DOCSDIR%%/|' | ${SORT}) > ${PLIST}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/

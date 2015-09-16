@@ -14,16 +14,13 @@ LICENSE=	ZLIB
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}/html
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 	@${TAR} -C ${WRKSRC}/doc/html -cf - . | \
 		${TAR} -C ${STAGEDIR}${DOCSDIR}/html -xf -
-.endif
 
 .include <bsd.port.mk>

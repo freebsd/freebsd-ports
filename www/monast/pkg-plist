@@ -1,6 +1,4 @@
-@unexec if cmp -s %D/etc/monast.conf %D/etc/monast.conf.default; then rm -f %D/etc/monast.conf; fi
-etc/monast.conf.default
-@exec [ -f %B/monast.conf ] || cp %B/%f %B/monast.conf
+@sample etc/monast.conf.sample
 monast/amapi/AsteriskManager.py
 monast/amapi/AsteriskManager.pyc
 monast/amapi/AsteriskManager.pyo
@@ -57,36 +55,3 @@ monast/simplejson/tool.pyo
 %%WWWDIR%%/lib/yui_2.5.2/yahoo-dom-event/yahoo-dom-event.js
 %%WWWDIR%%/status.php
 %%WWWDIR%%/template/index.html
-@dirrm %%WWWDIR%%/template
-@dirrm %%WWWDIR%%/lib/yui_2.5.2/yahoo-dom-event
-@dirrm %%WWWDIR%%/lib/yui_2.5.2/tabview
-@dirrm %%WWWDIR%%/lib/yui_2.5.2/menu/assets/skins/sam
-@dirrm %%WWWDIR%%/lib/yui_2.5.2/menu/assets/skins
-@dirrm %%WWWDIR%%/lib/yui_2.5.2/menu/assets
-@dirrm %%WWWDIR%%/lib/yui_2.5.2/menu
-@dirrm %%WWWDIR%%/lib/yui_2.5.2/logger
-@dirrm %%WWWDIR%%/lib/yui_2.5.2/fonts
-@dirrm %%WWWDIR%%/lib/yui_2.5.2/element
-@dirrm %%WWWDIR%%/lib/yui_2.5.2/dragdrop
-@dirrm %%WWWDIR%%/lib/yui_2.5.2/cookie
-@dirrm %%WWWDIR%%/lib/yui_2.5.2/container/assets/skins/sam
-@dirrm %%WWWDIR%%/lib/yui_2.5.2/container/assets/skins
-@dirrm %%WWWDIR%%/lib/yui_2.5.2/container/assets
-@dirrm %%WWWDIR%%/lib/yui_2.5.2/container
-@dirrm %%WWWDIR%%/lib/yui_2.5.2/button/assets/skins/sam
-@dirrm %%WWWDIR%%/lib/yui_2.5.2/button/assets/skins
-@dirrm %%WWWDIR%%/lib/yui_2.5.2/button/assets
-@dirrm %%WWWDIR%%/lib/yui_2.5.2/button
-@dirrm %%WWWDIR%%/lib/yui_2.5.2/assets/skins/sam
-@dirrm %%WWWDIR%%/lib/yui_2.5.2/assets/skins
-@dirrm %%WWWDIR%%/lib/yui_2.5.2/assets
-@dirrm %%WWWDIR%%/lib/yui_2.5.2/animation
-@dirrm %%WWWDIR%%/lib/yui_2.5.2
-@dirrm %%WWWDIR%%/lib
-@dirrm %%WWWDIR%%/js
-@dirrm %%WWWDIR%%/image
-@dirrm %%WWWDIR%%/css
-@dirrm %%WWWDIR%%
-@dirrm monast/simplejson
-@dirrm monast/amapi
-@dirrm monast

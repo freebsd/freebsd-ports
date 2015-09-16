@@ -263,6 +263,8 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/getopt.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/json.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/match.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/math/luhn.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/math/modulus-check-digit.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/math/mt-random.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/net/mq/amqp.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/net/mq/amqp/api.scm
@@ -290,6 +292,7 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/%3a5322.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/base64.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/cmac.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/cookie.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/ftp.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/ftp/client.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/ftp/messages.scm
@@ -344,6 +347,7 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/cgen/unit.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/char-set/boundary.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/control.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/conditions.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/debug.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/document/html.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/interactive/support.scm
@@ -410,6 +414,7 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a115.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a115/regexp.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a116.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a116/comparators.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a116/ilists.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a117.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a117/list-queues.scm
@@ -547,6 +552,7 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/concurrent/executor.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/concurrent/future.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/concurrent/shared-queue.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/util/concurrent/thread-pool.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/deque.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/file.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/hashtables.scm

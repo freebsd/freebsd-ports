@@ -5,8 +5,7 @@ PORTNAME=	spamd
 PORTVERSION=	4.9.1
 PORTREVISION=	2
 CATEGORIES=	mail
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=freebsdspamd/spamd
+MASTER_SITES=	SF/freebsdspamd/spamd
 
 MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	Traps spammers with a very slow smtp-login and return 4xx error

@@ -12,12 +12,11 @@ COMMENT=	Tk console for Tcl
 OPTIONS_DEFINE=	DOCS
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 USES+=		tk
 
 PORTDOCS=	*
 PLIST_FILES=	bin/${PORTNAME}
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -25,10 +24,10 @@ post-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.tcl ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}/README.${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

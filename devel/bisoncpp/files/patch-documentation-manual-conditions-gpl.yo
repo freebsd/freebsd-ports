@@ -1,5 +1,5 @@
---- documentation/manual/conditions/gpl.yo.orig	2007-03-22 21:29:15.000000000 +0100
-+++ documentation/manual/conditions/gpl.yo	2009-03-05 16:07:39.000000000 +0100
+--- documentation/manual/conditions/gpl.yo.orig	2012-02-08 19:53:51 UTC
++++ documentation/manual/conditions/gpl.yo
 @@ -1,8 +1,2 @@
  The text of the em(GNU General Public License) (GPL) is frequently found in
 -files named tt(COPYING). On em(Debian) systems the GPL may be found in the

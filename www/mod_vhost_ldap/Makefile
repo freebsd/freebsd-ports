@@ -5,8 +5,7 @@ PORTNAME=	mod_vhost_ldap
 PORTVERSION=	2.0.8
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_DEBIAN}
-MASTER_SITE_SUBDIR=pool/main/m/mod-vhost-ldap
+MASTER_SITES=	DEBIAN/pool/main/m/mod-vhost-ldap
 DISTNAME=	${PORTNAME:S/_/-/g}_${PORTVERSION}.orig
 DIST_SUBDIR=	apache2
 

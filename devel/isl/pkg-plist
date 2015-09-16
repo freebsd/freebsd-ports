@@ -20,7 +20,6 @@ include/isl/deprecated/set_int.h
 include/isl/deprecated/union_map_int.h
 include/isl/deprecated/val_int.h
 include/isl/deprecated/vec_int.h
-include/isl/dim.h
 include/isl/flow.h
 include/isl/hash.h
 include/isl/hmap.h
@@ -43,6 +42,8 @@ include/isl/polynomial.h
 include/isl/polynomial_type.h
 include/isl/printer.h
 include/isl/schedule.h
+include/isl/schedule_node.h
+include/isl/schedule_type.h
 include/isl/set.h
 include/isl/set_type.h
 include/isl/space.h
@@ -59,7 +60,7 @@ include/isl/version.h
 include/isl/vertices.h
 lib/libisl.a
 lib/libisl.so
-lib/libisl.so.13
-lib/libisl.so.13.1.1
-lib/libisl.so.13.1.1-gdb.py
+lib/libisl.so.15
+lib/libisl.so.15.0.0
+lib/libisl.so.15.0.0-gdb.py
 libdata/pkgconfig/isl.pc

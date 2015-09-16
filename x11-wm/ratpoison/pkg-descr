@@ -1,11 +1,10 @@
-Ratpoison is a simple Window Manager with no fat library
-dependencies, no fancy graphics, no window decorations,
-and no flashy wank. It is largely modelled after GNU
-Screen which has done wonders in virtual terminal market.
+Ratpoison is a simple Window Manager with no fat library dependencies,
+no fancy graphics, no window decorations, and no flashy wank. It is
+largely modelled after GNU Screen which has done wonders in virtual
+terminal market.
 
-All interaction with the window manager is done through
-keystrokes. ratpoison has a prefix map to minimize the
-key clobbering that cripples EMACS and other quality
-pieces of software.
+All interaction with the window manager is done through keystrokes.
+ratpoison has a prefix map to minimize the key clobbering that cripples
+EMACS and other quality pieces of software.
 
-WWW:		http://www.nongnu.org/ratpoison/
+WWW: http://www.nongnu.org/ratpoison/

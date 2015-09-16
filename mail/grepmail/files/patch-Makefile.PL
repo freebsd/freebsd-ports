@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- Makefile.PL.orig
 +++ Makefile.PL
 @@ -44,10 +44,6 @@

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PDL
-PORTVERSION=	2.007
-PORTREVISION=	4
+PORTVERSION=	2.008
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CHM
@@ -16,10 +15,15 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Astro-FITS-Header>=0:${PORTSDIR}/astro/p5-Astro-FITS-Header \
 		p5-Convert-UU>=0:${PORTSDIR}/converters/p5-Convert-UU \
-		p5-File-Map>=0.47:${PORTSDIR}/devel/p5-File-Map \
-		p5-Inline>=0.43:${PORTSDIR}/devel/p5-Inline \
+		p5-File-Map>=0.57:${PORTSDIR}/devel/p5-File-Map \
+		p5-Inline>=0.68:${PORTSDIR}/devel/p5-Inline \
+		p5-Inline-C>=0.62:${PORTSDIR}/devel/p5-Inline-C \
 		p5-Module-Compile>=0.23:${PORTSDIR}/devel/p5-Module-Compile
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS+=	p5-Devel-CheckLib>=1.01:${PORTSDIR}/devel/p5-Devel-CheckLib
+TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
+		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
 
 PORTSCOUT=	limit:^[0-9]\.[0-9][0-9]+[0-9\.]*$$
 

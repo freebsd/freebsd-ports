@@ -4,8 +4,7 @@
 PORTNAME=	xarchiver
 PORTVERSION=	0.5.4
 CATEGORIES=	archivers
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME:tl}
+MASTER_SITES=	SF/${PORTNAME:tl}
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Desktop-agnostic GTK+2 frontend to various archiving tools
@@ -28,14 +27,9 @@ NLS_USES=	gettext
 NLS_CPPFLAGS+=	-I${LOCALBASE}/include
 NLS_LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.options.mk>
-
-post-patch:
-.if empty(PORT_OPTIONS:MDOCS)
+post-patch-DOCS-off:
 	@${REINPLACE_CMD} -e 's|doc||g' ${WRKSRC}/Makefile.in
-.endif
-.if empty(PORT_OPTIONS:MNLS)
+post-patch-NLS-off:
 	@${REINPLACE_CMD} -e 's| po | |g' ${WRKSRC}/Makefile.in
-.endif
 
 .include <bsd.port.mk>

@@ -26,7 +26,7 @@ CPPFLAGS+=		-I${LOCALBASE}/include
 # --export-dynamic fixes libglade problems
 LDFLAGS+=		-L${LOCALBASE}/lib -Wl,--export-dynamic
 
-USE_GNOME=		glib20 libglade2
+USE_GNOME=		glib20 libglade2 intltool
 USES=			gettext gmake pkgconfig
 USE_XORG=		x11 xmu ice xfixes xdamage
 INSTALLS_OMF=		yes

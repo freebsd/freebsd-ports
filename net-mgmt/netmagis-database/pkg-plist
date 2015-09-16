@@ -5,6 +5,10 @@ lib/netmagis/sql22/functions.sql
 lib/netmagis/sql22/schema-mac.sql
 lib/netmagis/sql22/schema-main.sql
 lib/netmagis/sql22/triggers.sql
+lib/netmagis/sql23/functions.sql
+lib/netmagis/sql23/schema-mac.sql
+lib/netmagis/sql23/schema-main.sql
+lib/netmagis/sql23/triggers.sql
 lib/netmagis/triggers.sql
 lib/netmagis/upgrade/12-13/upgrade.sql
 lib/netmagis/upgrade/13-14/upgrade.sql
@@ -14,10 +18,12 @@ lib/netmagis/upgrade/15-20/pgauth.sed
 lib/netmagis/upgrade/15-20/upgrade.sql
 lib/netmagis/upgrade/20-21/upgrade.sql
 lib/netmagis/upgrade/21-22/upgrade.sql
+lib/netmagis/upgrade/22-23/upgrade.sql
 sbin/netmagis-dbcreate
 sbin/netmagis-dbimport
 sbin/netmagis-dbmaint
 sbin/netmagis-dbupgrade
+sbin/netmagis-getoui
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/crontab.database
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/no-view/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/no-view/domain.txt
@@ -50,21 +56,5 @@ sbin/netmagis-dbupgrade
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/with-views/zones/example.com-ext
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/with-views/zones/example.com-int
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/with-views/zones/example.org
-@dirrmtry var/netmagis/dbdump
-@dirrmtry var/netmagis
-@dirrmtry var
-@dirrmtry lib/netmagis/sql22
-@dirrmtry lib/netmagis/upgrade/12-13
-@dirrmtry lib/netmagis/upgrade/13-14
-@dirrmtry lib/netmagis/upgrade/14-15
-@dirrmtry lib/netmagis/upgrade/15-20
-@dirrmtry lib/netmagis/upgrade/20-21
-@dirrmtry lib/netmagis/upgrade/21-22
-@dirrmtry lib/netmagis/upgrade
-@dirrmtry lib/netmagis
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/with-views/zones
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/with-views
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/no-view/zones
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/no-view
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-@exec mkdir -p %D/var/netmagis/dbdump
+@dir /var/netmagis/dbdump
+@dir /var/netmagis

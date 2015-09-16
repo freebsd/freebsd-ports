@@ -12,6 +12,8 @@ COMMENT=	Ruby module for reading and writing zip files
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

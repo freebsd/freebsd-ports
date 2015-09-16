@@ -13,11 +13,10 @@ COMMENT=	Tilt the floor to guide a ball through an obstacle course
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libphysfs.so:${PORTSDIR}/devel/physfs
 
-USES=		gmake iconv
+USES=		gmake iconv jpeg
 USE_GL=		gl
 USE_SDL=	sdl2 ttf2
 MAKE_ARGS+=	DATADIR="${DATADIR}" \
@@ -28,15 +27,9 @@ PORTDATA=	*
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-MAKE_ENV+=	ENABLE_NLS=1
-.else
-MAKE_ENV+=	ENABLE_NLS=0
-.endif
+NLS_USES=		gettext
+NLS_MAKE_ENV_ON=	ENABLE_NLS=1
+NLS_MAKE_ENV_OFF=	ENABLE_NLS=0
 
 do-install:
 	cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
@@ -48,9 +41,11 @@ do-install:
 		${STAGEDIR}${PREFIX}/share/pixmaps/${f}.png
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin/
 .endfor
-.if ${PORT_OPTIONS:MNLS}
+
+do-install-NLS-on:
 	cd ${WRKSRC}/locale && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/locale/
-.endif
+
+do-install-DOCS-on:
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

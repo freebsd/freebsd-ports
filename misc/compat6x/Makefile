@@ -5,9 +5,8 @@ PORTNAME=	compat6x
 PORTVERSION=	6.4.604000.200810
 PORTREVISION=	3
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://people.freebsd.org/~${MASTER_SITE_SUBDIR}/
-MASTER_SITE_SUBDIR=	mnag/compat6x
+MASTER_SITES=	LOCAL/mnag/compat6x \
+		http://people.freebsd.org/~mnag/compat6x/
 PKGNAMESUFFIX=	-${ARCH}
 DISTNAME=	${PORTNAME}-${ARCH}-${PORTVERSION}
 

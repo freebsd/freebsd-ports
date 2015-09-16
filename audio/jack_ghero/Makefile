@@ -21,13 +21,9 @@ PLIST_FILES=	sbin/jack_ghero \
 
 OPTIONS_DEFINE=	DEBUG
 
-.include <bsd.port.options.mk>
-
 MAKE_ARGS+=	HAVE_MAN="YES"
 MAKE_ARGS+=	PTHREAD_LIBS="-lpthread"
 
-.if ${PORT_OPTIONS:MDEBUG}
-MAKE_ARGS+=	HAVE_DEBUG="YES"
-.endif
+DEBUG_MAKE_ARGS=	HAVE_DEBUG="YES"
 
 .include <bsd.port.mk>

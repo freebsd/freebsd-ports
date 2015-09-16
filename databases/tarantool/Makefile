@@ -2,45 +2,56 @@
 # $FreeBSD$
 
 PORTNAME=	tarantool
-PORTVERSION=	1.5.3
+PORTVERSION=	1.6.6
 CATEGORIES=	databases
-MASTER_SITES=	http://tarantool.org/dist/
+MASTER_SITES=	http://tarantool.org/dist/master/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${TR_REV}-src
 
 MAINTAINER=	vg@FreeBSD.org
-COMMENT=	High performance key/value storage server
+COMMENT=	NoSQL database running in a Lua application server
 
 LICENSE=	BSD2CLAUSE
 
-TR_REV=		102-g2857a4e
+TR_REV=		130-ge3f2420
 MAKE_JOBS_UNSAFE=yes
-USES=		cmake gettext gmake iconv perl5 compiler:c++11-lang
+USES=		cmake compiler:c++11-lang gettext gmake perl5 readline
+USE_GCC=	4.8+ # clang bug PR/201270
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
 SUB_FILES=	pkg-message
+
+TT_DATADIR?=	/var/db/tarantool
+TT_RUNDIR?=	/var/run/tarantool
+TT_LOGDIR?=	/var/log/tarantool
+
 CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR=man \
 		-DCMAKE_INSTALL_SYSCONFDIR=${ETCDIR} \
-		-DCMAKE_LOCALSTATE_DIR=${DATADIR}
+		-DCMAKE_LOCALSTATE_DIR=${DATADIR} \
+		-DTARANTOOL_DATADIR="${TT_DATADIR}"
 
-OPTIONS_DEFINE=	CLIENT DEBUG
-OPTIONS_GROUP=	PLUGINS
-OPTIONS_GROUP_PLUGINS=	MYSQL PGSQL
-PLUGINS_DESC=	Plugins list
-CLIENT_DESC=	Enable client
+USERS=		tarantool
+GROUPS=		tarantool
+
+SUB_LIST+=	PORTNAME=${PORTNAME} \
+	TT_USER=${USERS} \
+	TT_DATADIR=${TT_DATADIR} \
+	TT_LOGDIR=${TT_LOGDIR} \
+	TT_RUNDIR=${TT_RUNDIR}
+
+PLIST_SUB+=	TT_USER=${USERS} \
+	TT_GROUP=${GROUPS} \
+	TT_LOGDIR=${TT_LOGDIR} \
+	TT_DATADIR=${TT_DATADIR} \
+	TT_RUNDIR=${TT_RUNDIR}
+
+OPTIONS_DEFINE=	DEBUG
 DEBUG_DESC=	Enable debug
-MYSQL_DESC=	Install MySQL plugin
-PGSQL_DESC=	Install PostgreSQL plugin
 
-OPTIONS_DEFAULT=CLIENT MYSQL
+.if defined(USE_GCC) && ${USE_GCC:S/+//} == 4.8
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-src_trivia_config.h.cmake
+.endif
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCLIENT}
-CMAKE_ARGS+=	-DENABLE_CLIENT=true
-PLIST_SUB+=	CLIENT=""
-.else
-PLIST_SUB+=	CLIENT="@comment "
-.endif
 
 .if ${PORT_OPTIONS:MDEBUG}
 CMAKE_BUILD_TYPE=	RelWithDebugInfo
@@ -50,32 +61,10 @@ CMAKE_BUILD_TYPE=	Rel
 CMAKE_ARGS+=	-DENABLE_BACKTRACE=OFF
 .endif
 
-.if ${PORT_OPTIONS:MMYSQL}
-CMAKE_ARGS+=	-DWITH_MYSQL=ON
-PLIST_SUB+=	MYSQL=""
-USE_MYSQL=	yes
-.else
-CMAKE_ARGS+=	-DWITH_MYSQL=OFF
-PLIST_SUB+=	MYSQL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-CMAKE_ARGS+=	-DWITH_POSTGRESQL=ON
-PLIST_SUB+=	PGSQL=""
-USES+=		pgsql
-.else
-CMAKE_ARGS+=	-DWITH_POSTGRESQL=OFF
-PLIST_SUB+=	PGSQL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MMYSQL} || ${PORT_OPTIONS:MPGSQL}
-PLIST_SUB+=	PLUGINS=""
-.else
-PLIST_SUB+=	PLUGINS="@comment "
-.endif
-
-.if ${OSVERSION} < 900000
-BROKEN=		Does not build on FreeBSD < 9.0
-.endif
+post-install:
+	${MKDIR} ${STAGEDIR}${TT_LOGDIR} \
+		${STAGEDIR}${TT_DATADIR} \
+		${STAGEDIR}${TT_RUNDIR} \
+		${STAGEDIR}${ETCDIR}/instances.enabled
 
 .include <bsd.port.mk>

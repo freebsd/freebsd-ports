@@ -20,7 +20,7 @@ load_rc_config $name
 : ${wolfpack_enable="NO"}
 : ${wolfpack_user="wolfpack"}
 
-pidfile="%%PREFIX%%/var/wolfpack/server.pid"
+pidfile="/var/wolfpack/server.pid"
 command="%%PREFIX%%/lib/wolfpack/emp_server"
 
 run_rc_command "$1"

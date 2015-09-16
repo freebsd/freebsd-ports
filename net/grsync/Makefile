@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync \
 		bash:${PORTSDIR}/shells/bash
 
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 intltool
 USES=		desktop-file-utils gettext gmake \
 		shared-mime-info pkgconfig shebangfix
 SHEBANG_FILES=	src/grsync-batch

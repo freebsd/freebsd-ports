@@ -1,5 +1,5 @@
---- pci_pm.h.orig	2004-07-14 21:02:49.000000000 +0600
-+++ pci_pm.h	2013-12-05 23:53:34.000000000 +0600
+--- pci_pm.h.orig	2004-07-14 15:02:49 UTC
++++ pci_pm.h
 @@ -32,10 +32,10 @@
  #define getSMBBA0	0x90	/* PIIX4, VIA596,686 */
  #define getSMBBA1	0xD0	/* VT8233/A/C */

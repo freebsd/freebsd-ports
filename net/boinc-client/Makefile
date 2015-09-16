@@ -66,7 +66,7 @@ CLIENT_USE=		RC_SUBR=boinc-client
 LINUX_CONFIGURE_ON=	--with-boinc-alt-platform=i686-pc-linux-gnu
 LINUX_USE=		LINUX=yes
 
-X11_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+X11_USES=		jpeg
 X11_USE=		GL=glut XORG=xmu,xi
 X11_CONFIGURE_OFF=	ax_cv_check_glut_libglut=no
 

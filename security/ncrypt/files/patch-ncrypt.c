@@ -1,5 +1,5 @@
---- ncrypt.c.orig	Tue Aug 30 10:57:04 2005
-+++ ncrypt.c	Tue Aug 30 10:57:30 2005
+--- ncrypt.c.orig	2015-05-11 20:36:52 UTC
++++ ncrypt.c
 @@ -17,6 +17,7 @@
  #include <sys/stat.h>
  #include <sys/mman.h>

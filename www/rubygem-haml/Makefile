@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	haml
-PORTVERSION=	4.0.6
+PORTVERSION=	4.0.7
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,6 +12,8 @@ COMMENT=	Markup language to describe HTML
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-tilt>=0:${PORTSDIR}/devel/rubygem-tilt
+
+NO_ARCH=	yes
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

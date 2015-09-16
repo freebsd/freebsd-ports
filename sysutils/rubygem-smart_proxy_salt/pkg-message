@@ -1,5 +1,5 @@
 Further configuration is required to connect salt and foreman-proxy, see:
-https://github.com/theforeman/foreman_salt/wiki#21-smart-proxy
+http://theforeman.org/plugins/foreman_salt/2.0/#2.1SmartProxy
 
 To upload reports from SaltStack highstates to Foreman, add a line like this to your /etc/crontab:
 */10 * * * * root /usr/local/sbin/upload-salt-reports >>/var/log/foreman-proxy/salt-cron.log 2>&1

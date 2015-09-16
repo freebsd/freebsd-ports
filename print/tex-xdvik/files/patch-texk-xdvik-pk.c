@@ -1,6 +1,6 @@
---- texk/xdvik/pk.c.orig	2014-09-02 18:41:34.000000000 +0900
-+++ texk/xdvik/pk.c	2015-01-31 21:02:18.000000000 +0900
-@@ -201,6 +201,9 @@
+--- texk/xdvik/pk.c.orig	2009-03-02 21:43:37 UTC
++++ texk/xdvik/pk.c
+@@ -201,6 +201,9 @@ read_PK_char(struct font *fontp,
  
      g->dvi_adv = fontp->dimconv * fpwidth;
  

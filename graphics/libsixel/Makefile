@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	libsixel
+PORTVERSION=	1.4.13
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.10
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	GH
 
 MAINTAINER=	sue@iwmt.org
 COMMENT=	Encoder/decoder library for DEC SIXEL graphics
@@ -35,7 +34,7 @@ CURL_CONFIGURE_WITH=	libcurl
 GD_LIB_DEPENDS=		libgd.so:${PORTSDIR}/graphics/gd
 GD_CONFIGURE_WITH=	gd
 
-JPEG_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+JPEG_USES=		jpeg
 JPEG_CONFIGURE_WITH=	jpeg
 JPEG_CPPFLAGS=		-I${LOCALBASE}/include
 JPEG_LDFLAGS=		-L${LOCALBASE}/lib

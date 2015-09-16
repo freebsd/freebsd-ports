@@ -1,6 +1,6 @@
---- ./doc/ref/fdl.texi.orig	2010-12-13 18:24:39.000000000 +0100
-+++ ./doc/ref/fdl.texi	2014-06-25 22:53:08.813111590 +0200
-@@ -408,7 +408,7 @@
+--- doc/ref/fdl.texi.orig	2010-12-13 17:24:39 UTC
++++ doc/ref/fdl.texi
+@@ -408,7 +408,7 @@ as a draft) by the Free Software Foundat
  @end enumerate
  
  @page

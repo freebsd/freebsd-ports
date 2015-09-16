@@ -4,8 +4,7 @@
 PORTNAME=	binutils
 PORTVERSION=	2.15
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	binutils
+MASTER_SITES=	GNU
 PKGNAMEPREFIX=	m6811-
 
 PATCH_SITES=	http://stephane.carrez.free.fr/snapshots/

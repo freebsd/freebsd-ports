@@ -2,6 +2,7 @@
 
 PORTNAME=	c
 PORTVERSION=	0.10
+DISTVERSIONPREFIX=	v
 CATEGORIES=	lang
 
 MAINTAINER=	neel@neelc.org
@@ -13,7 +14,6 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ryanmjacobs
-GH_TAGNAME=	v${PORTVERSION}
 NO_BUILD=	yes
 
 SHEBANG_FILES=	c

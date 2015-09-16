@@ -13,6 +13,8 @@ LICENSE=	MIT
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconf
 LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs
 
+BROKEN_armv6=	AtomicPointer not implemented
+
 USE_GITHUB=	yes
 GH_TAGNAME=	22ddb9b
 
@@ -34,7 +36,8 @@ X11_CONFIGURE_WITH=	gui
 X11_CONFIGURE_ON=	--without-daemon
 X11_CONFIGURE_OFF=	--with-daemon
 X11_BUILD_DEPENDS=	protoc:${PORTSDIR}/devel/protobuf
-X11_USE=	qt4=corelib,gui,qmake_build,linguist,uic,moc,rcc,qtestlib_build
+X11_USE=	qt4=corelib,network,gui,qmake_build,linguisttools_build \
+		qt4=uic_build,moc_build,rcc_build,qtestlib_build
 X11_USES=	desktop-file-utils
 
 WALLET_CONFIGURE_ENABLE=	wallet
@@ -49,11 +52,10 @@ CLI_CONFIGURE_WITH=	cli
 TEST_CONFIGURE_ENABLE=	tests
 TEST_ALL_TARGET=	check
 
-AUTOMAKE_ARGS+=	--add-missing
-USE_AUTOTOOLS=	aclocal autoheader automake autoconf
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SSL_LIBS="-lssl" CRYPTO_LIBS="-lcrypto" SSL_CFLAGS="-I/usr/include" CRYPTO_CFLAGS="-I/usr/include"
 
-USES=		gmake
+USES=		autoreconf gmake
 USE_OPENSSL=	yes
 WANT_BDB_VER=	48
 

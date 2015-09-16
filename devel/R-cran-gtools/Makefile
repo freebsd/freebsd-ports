@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	gtools
-PORTVERSION=	3.4.2
+PORTVERSION=	3.5.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Various R programming tools
 
-LICENSE=	LGPL21
+LICENSE=	GPLv2
 
 USES=	cran:auto-plist
 

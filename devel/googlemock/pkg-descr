@@ -8,4 +8,4 @@ for writing and using C++ mock classes. Google Mock:
     * is extensible by users, and
     * works on Linux, Windows, and Mac OS X. 
 
-WWW: http://code.google.com/p/googlemock/
+WWW: https://github.com/google/googlemock

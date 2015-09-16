@@ -213,6 +213,7 @@ lib/webmin/virtual-server/generate-cert.pl
 lib/webmin/virtual-server/generate-script-sites.pl
 lib/webmin/virtual-server/get-command.pl
 lib/webmin/virtual-server/get-dns.pl
+lib/webmin/virtual-server/get-logs.pl
 lib/webmin/virtual-server/get-ssl.pl
 lib/webmin/virtual-server/get-template.pl
 lib/webmin/virtual-server/help/accesslog.html
@@ -353,6 +354,7 @@ lib/webmin/virtual-server/help/backup_increment.fr.html
 lib/webmin/virtual-server/help/backup_increment.html
 lib/webmin/virtual-server/help/backup_increment.nl.html
 lib/webmin/virtual-server/help/backup_key.html
+lib/webmin/virtual-server/help/backup_kill.html
 lib/webmin/virtual-server/help/backup_mkdir.html
 lib/webmin/virtual-server/help/backup_mkdir.nl.html
 lib/webmin/virtual-server/help/backup_onebyone.fr.html
@@ -492,6 +494,7 @@ lib/webmin/virtual-server/help/config_avail_webalizer.nl.html
 lib/webmin/virtual-server/help/config_avail_webminlog.html
 lib/webmin/virtual-server/help/config_avail_webminlog.nl.html
 lib/webmin/virtual-server/help/config_aws_cmd.html
+lib/webmin/virtual-server/help/config_backuplog_age.html
 lib/webmin/virtual-server/help/config_backuplog_days.html
 lib/webmin/virtual-server/help/config_backuplog_days.nl.html
 lib/webmin/virtual-server/help/config_batch_create.html
@@ -1262,6 +1265,7 @@ lib/webmin/virtual-server/help/subs.html
 lib/webmin/virtual-server/help/subs.nl.html
 lib/webmin/virtual-server/help/subs2.html
 lib/webmin/virtual-server/help/subs2.nl.html
+lib/webmin/virtual-server/help/sv.html
 lib/webmin/virtual-server/help/template.fr.html
 lib/webmin/virtual-server/help/template.html
 lib/webmin/virtual-server/help/template.nl.html
@@ -1934,6 +1938,7 @@ lib/webmin/virtual-server/newfeatures-all/4.14/1-dmarc
 lib/webmin/virtual-server/newfeatures-all/4.15/1-running
 lib/webmin/virtual-server/newfeatures-all/4.15/2-recovery
 lib/webmin/virtual-server/newfeatures-all/4.16/1-aws
+lib/webmin/virtual-server/newfeatures-all/4.17/1-replication
 lib/webmin/virtual-server/newfeatures-gpl/3.52/8-webowner
 lib/webmin/virtual-server/newfeatures-gpl/3.55/8-move
 lib/webmin/virtual-server/newfeatures-gpl/3.55/9-preload
@@ -1973,6 +1978,8 @@ lib/webmin/virtual-server/newfeatures-gpl/4.13/0-scripts
 lib/webmin/virtual-server/newfeatures-gpl/4.14/0-scripts
 lib/webmin/virtual-server/newfeatures-gpl/4.15/0-scripts
 lib/webmin/virtual-server/newfeatures-gpl/4.16/0-scripts
+lib/webmin/virtual-server/newfeatures-gpl/4.17/0-scripts
+lib/webmin/virtual-server/newfeatures-gpl/4.18/0-scripts
 lib/webmin/virtual-server/newfeatures-lib.pl
 lib/webmin/virtual-server/newip_form.cgi
 lib/webmin/virtual-server/newkey.cgi

@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- src/gsgui.c.orig	Fri Mar 25 15:21:29 2005
 +++ src/gsgui.c	Fri Mar 25 15:21:42 2005
 @@ -28,8 +28,8 @@

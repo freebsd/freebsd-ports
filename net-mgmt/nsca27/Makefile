@@ -66,6 +66,5 @@ do-install:
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

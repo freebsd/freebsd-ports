@@ -1,0 +1,3 @@
+Godep helps build packages reproducibly by fixing their dependencies.
+
+WWW: https://github.com/tools/godep

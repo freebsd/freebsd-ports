@@ -4,7 +4,7 @@
 
 PORTNAME=	gspeakers
 PORTVERSION=	0.11
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -13,35 +13,31 @@ COMMENT=	Gnome-based loudspeaker design program
 
 LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
 
-USES=		gmake pkgconfig
+USES=		autoreconf gmake pkgconfig
 USE_GNOME=	gnomeprefix libxml2
-USE_AUTOTOOLS=	automake:env
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 CFLAGS+=	-O0
 
-.if defined(WITH_SPICE)
-RUN_DEPENDS+=	spice3:${PORTSDIR}/cad/spice
-.else
-RUN_DEPENDS+=	gnucap:${PORTSDIR}/cad/gnucap
-.endif
+OPTIONS_DEFINE=	SPICE
+SPICE_DESC=	Use spice instead of gnucap
+
+SPICE_RUN_DEPENDS=	spice3:${PORTSDIR}/cad/spice
+SPICE_RUN_DEPENDS_OFF=	gnucap:${PORTSDIR}/cad/gnucap
 
 post-extract:
 	@${FIND} ${WRKSRC} -type l -delete
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(datadir)/pixmaps|$$(pkgdatadir)/pixmaps|g' \
-		${WRKSRC}/pixmaps/Makefile.in
+		${WRKSRC}/pixmaps/Makefile.am
 	@${REINPLACE_CMD} -e 's|-Wall -O0|@CXXFLAGS@|g' \
-		${WRKSRC}/src/Makefile.in
+		${WRKSRC}/src/Makefile.am
 	@${REINPLACE_CMD} -e 's|$$(datadir)/xml|$$(pkgdatadir)/xml|g' \
-		${WRKSRC}/xml/Makefile.in
+		${WRKSRC}/xml/Makefile.am
 	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
 		${WRKSRC}/src/*.cc ${WRKSRC}/src/cellitemcrossover.h
-
-pre-configure:
-	@${CP} ${AUTOMAKE_DIR}/depcomp ${WRKSRC}
 
 .include <bsd.port.mk>

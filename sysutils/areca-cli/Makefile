@@ -5,10 +5,10 @@ PORTNAME=	areca-cli
 DISTVERSION=	${CLI_VER}.${CLI_REV}
 PORTEPOCH=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.areca.com.tw/RaidCards/AP_Drivers/FreeBSD/CLI/ \
+MASTER_SITES=	http://www.areca.us/support/s_freebsd/cli/ \
 		LOCAL/ehaupt
 PKGNAMESUFFIX=	-${ARCH}
-DISTNAME=	v${CLI_VER}_${CLI_REV}
+DISTNAME=	freebsdcli_V${CLI_VER}_${CLI_REV}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command Line Interface for the Areca ARC-xxxx RAID controllers
@@ -20,12 +20,12 @@ PERIODICSCRIPT=	407.status-areca-raid
 USES=		zip
 NO_BUILD=	yes
 
-CLI_VER=	1.9.0
-CLI_REV=	120503
+CLI_VER=	1.14.7
+CLI_REV=	150519
 
 SUB_FILES+=	${PERIODICSCRIPT}
 
-WRKSRC=		${WRKDIR}/V${CLI_VER}_${CLI_REV}
+WRKSRC=		${WRKDIR}/freebsdcli_V${CLI_VER}_${CLI_REV}
 
 .include <bsd.port.pre.mk>
 

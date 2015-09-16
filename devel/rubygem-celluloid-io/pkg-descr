@@ -21,4 +21,3 @@ just to take advantage of Celluloid::IO's event loop and you can freely switch
 between evented and blocking IO even over the lifetime of a single connection.
 
 WWW: https://github.com/celluloid/celluloid-io
-RG:  https://rubygems.org/gems/celluloid-io

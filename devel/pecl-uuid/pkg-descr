@@ -1,0 +1,3 @@
+A wrapper around libuuid from the ext2utils project.
+
+WWW: https://pecl.php.net/package/uuid

@@ -6,7 +6,7 @@ bin/icqpr
 bin/msnpr
 bin/mycrypt
 bin/pop3p
-bin/proxy
+bin/httppr
 bin/smtpp
 bin/socks
 bin/tcppm
@@ -19,7 +19,7 @@ man/man3/3proxy.cfg.3.gz
 man/man8/3proxy.8.gz
 man/man8/ftppr.8.gz
 man/man8/pop3p.8.gz
-man/man8/proxy.8.gz
+man/man8/httppr.8.gz
 man/man8/socks.8.gz
 man/man8/tcppm.8.gz
 man/man8/udppm.8.gz

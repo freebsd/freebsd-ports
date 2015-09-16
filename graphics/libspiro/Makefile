@@ -2,12 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	libspiro
-DISTVERSION=	0.3.20150131
+DISTVERSION=	0.5.20150702
 PORTEPOCH=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Library to convert clothoid splines into Bezier splines
+
+LICENSE=	GPLv3 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	fontforge

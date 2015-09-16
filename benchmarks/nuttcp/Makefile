@@ -25,8 +25,6 @@ NUTTSCP_DESC=	Install script for copying files over nuttcp
 OPTIONS_SUB=	yes
 NUTTSCP_USES=	perl5
 
-.include <bsd.port.options.mk>
-
 post-extract:
 	${CP} ${DISTDIR}/beta/${NUTTSCPDISTFILE} ${WRKDIR}/nuttscp
 	${CP} ${DISTDIR}/beta/${PORTNAME}-${PORTVERSION}.c ${WRKDIR}/
@@ -38,12 +36,11 @@ post-extract:
 do-build:
 	cd ${WRKDIR} && ${CC} -o ${PORTNAME} nuttcp-${PORTVERSION}.c
 
-do-install:
-.	if ${PORT_OPTIONS:MNUTTSCP}
-		${INSTALL_SCRIPT} ${WRKDIR}/nuttscp ${STAGEDIR}${PREFIX}/bin/
-		( cd ${STAGEDIR}${PREFIX}/bin; ${LN} -sf nuttscp nuttrcp )
-.	endif
+do-install-NUTTSCP-on:
+	${INSTALL_SCRIPT} ${WRKDIR}/nuttscp ${STAGEDIR}${PREFIX}/bin/
+	( cd ${STAGEDIR}${PREFIX}/bin; ${LN} -sf nuttscp nuttrcp )
 
+do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKDIR}/${PORTNAME}.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
 

@@ -1,42 +1,19 @@
---- SConstruct.orig	2013-05-01 09:44:21.000000000 +0400
-+++ SConstruct	2014-05-20 00:47:57.769697286 +0400
-@@ -268,14 +268,6 @@
-     wrapped.replace("/usr/etc", "/etc")
+--- SConstruct.orig	2015-03-14 11:24:41 UTC
++++ SConstruct
+@@ -305,16 +305,6 @@ def installdir(dir, add_destdir=True):
+     wrapped.replace("/usr/lib/systemd", "/lib/systemd")
      return wrapped
  
 -# Honor the specified installation prefix in link paths.
--if not env["sysroot"]:
--    env.Prepend(LIBPATH=[installdir('libdir')])
--else:
--    env.Prepend(LIBPATH=[env["sysroot"] + installdir('libdir')])
+-if env["sysroot"]:
+-    env.Prepend(LIBPATH=[env["sysroot"] + installdir('libdir', add_destdir=False)])
+-
+-# Don't hack RPATH unless libdir points somewhere that is not on the
+-# minimum default load path.
 -if env["shared"]:
--    env.Prepend(RPATH=[installdir('libdir')])
+-    if env["libdir"] not in ["/usr/lib", "/lib"]:
+-        env.Prepend(RPATH=[installdir('libdir')])
 -
  # Give deheader a way to set compiler flags
  if 'MORECFLAGS' in os.environ:
      env.Append(CFLAGS=Split(os.environ['MORECFLAGS']))
-@@ -590,7 +582,14 @@
- #ifdef __LITTLE_ENDIAN__
- #undef WORDS_BIGENDIAN
- #else
--#include <endian.h>
-+''')
-+
-+if config.CheckHeader("endian.h"):
-+	confdefs.append("#include <endian.h>")
-+elif config.CheckHeader("sys/endian.h"):
-+	confdefs.append("#include <sys/endian.h>")
-+
-+confdefs.append('''
- #if __BYTE_ORDER == __BIG_ENDIAN
- #define WORDS_BIGENDIAN 1
- #elif __BYTE_ORDER == __LITTLE_ENDIAN
-@@ -1242,7 +1241,7 @@
- if not env['python']:
-     python_install = []
- else:
--    python_lib_dir = sysconfig.get_python_lib(plat_specific=1)
-+    python_lib_dir = sysconfig.get_python_lib(plat_specific=1,prefix=env['prefix'])
-     python_module_dir = python_lib_dir + os.sep + 'gps'
-     python_extensions_install = python_env.Install( DESTDIR + python_module_dir,
-                                                     python_built_extensions)

@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${SVNREVISION}
-PORTREVISION=	1
+#PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	editors java
 MASTER_SITES=	http://ci.apache.org/projects/openoffice/milestones/${AOOVERSION}-${AOORC}-r${SVNREVISION}/source/ \
@@ -17,6 +17,7 @@ PKGNAMESUFFIX=		-${LANG_SUFFIX}
 .endif
 PKGNAMESUFFIX=		-devel
 DISTFILES=	${OOOSRC}${AOODISTTAG} unowinreg.dll:unoreg ${EXTSRC}:extsrc
+DIST_SUBDIR=	openoffice
 EXTRACT_ONLY=	${OOOSRC}
 
 MAINTAINER=	office@FreeBSD.org
@@ -24,7 +25,28 @@ MAINTAINER=	office@FreeBSD.org
 #Frequent Patch submitters should optionally sign Apache iCLA
 COMMENT=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser (developer version)
 
-LICENSE=	APACHE20
+LICENSE=		APACHE20 ADOBE BSD3CLAUSE BSD4CLAUSE BSL ICU MIT MPL \
+			PSFL TWAIN W3C
+LICENSE_COMB=		multi
+LICENSE_NAME_ADOBE=	Adobe Systems Incorporated license
+LICENSE_NAME_ICU=	ICU License
+LICENSE_NAME_TWAIN=	TWAIN Working Group license
+LICENSE_NAME_W3C=	W3C license
+LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE_ALv2
+LICENSE_FILE_ADOBE=	${WRKSRC}/LICENSE_ADOBE
+LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/LICENSE_BSD3CLAUSE
+LICENSE_FILE_BSD4CLAUSE=	${WRKSRC}/LICENSE_BSD4CLAUSE
+LICENSE_FILE_BSL=	${WRKSRC}/LICENSE_BSL
+LICENSE_FILE_ICU=	${WRKSRC}/LICENSE_ICU
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE_MIT
+LICENSE_FILE_MPL=	${WRKSRC}/LICENSE_MPL
+LICENSE_FILE_PSFL=	${WRKSRC}/LICENSE_PSFL
+LICENSE_FILE_TWAIN=	${WRKSRC}/LICENSE_TWAIN
+LICENSE_FILE_W3C=	${WRKSRC}/LICENSE_W3C
+LICENSE_PERMS_ADOBE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS_ICU=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS_TWAIN=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS_W3C=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=								\
 		p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip	\
@@ -33,11 +55,13 @@ BUILD_DEPENDS=								\
 		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip	\
 		zip:${PORTSDIR}/archivers/zip				\
 		ant:${PORTSDIR}/devel/apache-ant			\
+		${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs \
 		dmake:${PORTSDIR}/devel/dmake				\
 		epm:${PORTSDIR}/devel/epm				\
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf		\
 		imake:${PORTSDIR}/devel/imake				\
 		gpatch:${PORTSDIR}/devel/patch				\
+		${LOCALBASE}/include/sane/sane.h:${PORTSDIR}/graphics/sane-backends \
 		${LOCALBASE}/bin/vigra-config:${PORTSDIR}/graphics/vigra \
 		${JAVALIBDIR}/commons-httpclient.jar:${PORTSDIR}/java/jakarta-commons-httpclient \
 		${JAVALIBDIR}/commons-lang.jar:${PORTSDIR}/java/jakarta-commons-lang \
@@ -48,9 +72,9 @@ BUILD_DEPENDS=								\
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 LIB_DEPENDS=								\
 		libapr-1.so:${PORTSDIR}/devel/apr1			\
+		libnspr4.so:${PORTSDIR}/devel/nspr			\
 		libcurl.so:${PORTSDIR}/ftp/curl				\
 		libcairo.so:${PORTSDIR}/graphics/cairo			\
-		libjpeg.so:${PORTSDIR}/graphics/jpeg			\
 		libpng.so:${PORTSDIR}/graphics/png			\
 		libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib	\
 		libgraphite.so:${PORTSDIR}/graphics/silgraphite		\
@@ -63,7 +87,8 @@ LIB_DEPENDS=								\
 		libtextcat.so:${PORTSDIR}/textproc/libtextcat		\
 		libmythes-1.2.so:${PORTSDIR}/textproc/mythes		\
 		librdf.so:${PORTSDIR}/textproc/redland			\
-		libserf-1.so:${PORTSDIR}/www/serf
+		libserf-1.so:${PORTSDIR}/www/serf			\
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=								\
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 		${JAVALIBDIR}/commons-httpclient.jar:${PORTSDIR}/java/jakarta-commons-httpclient \
@@ -75,9 +100,9 @@ AOOVERSION2=	2
 AOOVERSION3=	0
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
 AOOTAG=		AOO420m1\(Build:9800\)
-SVNREVISION=	1677314
+SVNREVISION=	1697984
 #AOORC=rc3
-EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150118.tar.gz
+EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 
 AOOVERSION=	${AOOVERSION1}.${AOOVERSION2}.${AOOVERSION3}
 AOOXXX=		${AOOVERSION1}${AOOVERSION2}${AOOVERSION3}
@@ -97,9 +122,6 @@ OOODIR=			openoffice${AOOVERSION1}
 AOOUDIR=		.openoffice.org\/${AOOVERSION1}
 INSTALLATION_BASEDIR?=	openoffice-${AOOSUFFIX}
 EXECBASE?=		openoffice-${AOOSUFFIX}
-DIST_SUBDIR=		openoffice
-
-NO_LATEST_LINK=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -110,12 +132,12 @@ JAVA_BUILD=	jdk
 JAVA_VENDOR=	openjdk
 JAVA_VERSION=	1.6+
 USE_PERL5=	build
-USE_XORG=	x11 ice xaw xau xext xrender xrandr \
-		xi xt xcursor xdamage xcomposite xfixes
+USE_XORG=	ice x11 xau xaw xcomposite xcursor xdamage xext xfixes xi \
+		xrandr xrender xt
 USES=		autoreconf:autoconf bison compiler cpe desktop-file-utils \
-		gmake perl5 pkgconfig python tar:${TARTYPE}
+		gettext-runtime gmake iconv jpeg perl5 pkgconfig python \
+		tar:${TARTYPE}
 WITHOUT_CPU_CFLAGS=	true
-MAKE_JOBS_SAFE=	yes
 CPE_PRODUCT=	${PORTNAME:S|apache-||}
 CPE_VENDOR=	apache
 
@@ -146,35 +168,21 @@ MMEDIA_USE=			GSTREAMER=yes
 .include <${FILESDIR}/Makefile.localized>
 
 .if ${COMPILER_TYPE} == clang
-. if ${COMPILER_VERSION} < 35 && ${ARCH} == amd64
-BUILD_DEPENDS+=		clang35:${PORTSDIR}/lang/clang35
-CPP=			clang-cpp35
-CC=			clang35
-CXX=			clang++35
-. endif
-BUILD_DEPENDS+=		${LOCALBASE}/lib/libboost_regex.a:${PORTSDIR}/devel/boost-libs
-CONFIGURE_ARGS+=	--with-system-boost
 CPPFLAGS+=		-I${LOCALBASE}/include
 .else
 USE_GCC=		yes
-SUBST=			"s/-fexceptions/& -fno-enforce-eh-specs/;s/-DHAVE_STL_INCLUDE_PATH//"
 .endif
 
 .if ${ARCH} == amd64
 FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set.sh
-.else
-FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
-.endif
-
-LOCALIZED_LANG?=	en-US
-
-PACKAGE_PREFIX=		Apache_OpenOffice
-
-.if ${ARCH} == amd64
 PACKAGE_MIDDLE=		${PORTVERSION}_${OPSYS}_x86-64
 .else
+FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 PACKAGE_MIDDLE=		${PORTVERSION}_${OPSYS}_x86
 .endif
+PACKAGE_PREFIX=		Apache_OpenOffice
+
+LOCALIZED_LANG?=	en-US
 
 .if ${PORT_OPTIONS:MCCACHE} || defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
@@ -192,13 +200,8 @@ CONFIGURE_ENV+=	CC="${OOOCC}" CXX="${OOOCXX}"		\
 GNU_CONFIGURE=	yes
 WRKSUBDIR=	${WRKDIR}/aoo-${AOOVERSION}
 WRKSRC?=	${WRKSUBDIR}/main
-BASH?=		${PREFIX}/bin/bash
 SUB_FILES=	pkg-message
 SUB_LIST=	EXECBASE=${EXECBASE} AOOTAG=${AOOTAG} AOOUDIR=${AOOUDIR}
-
-.if defined(DISABLE_MAKE_JOBS)
-MAKE_JOBS_NUMBER=	4
-.endif
 
 CONFIGURE_ARGS+=							\
 			--with-system-apache-commons=yes		\
@@ -210,6 +213,7 @@ CONFIGURE_ARGS+=							\
 			--with-system-apr-util				\
 			--with-system-beanshell				\
 			--with-beanshell-jar=${JAVALIBDIR}/bsh.jar	\
+			--with-system-boost				\
 			--enable-category-b				\
 			--with-system-cairo --enable-cairo		\
 			--with-system-coinmp				\
@@ -247,6 +251,7 @@ CONFIGURE_ARGS+=							\
 			--with-system-poppler				\
 			--with-system-python				\
 			--with-system-redland				\
+			--with-system-sane				\
 			--with-system-serf				\
 			--with-system-stdlibs				\
 			--enable-symbols=small				\
@@ -255,6 +260,7 @@ CONFIGURE_ARGS+=							\
 			--enable-verbose				\
 			--with-system-vigra				\
 			--enable-wiki-publisher				\
+			--with-system-xrender				\
 			--with-system-zlib
 
 #OOOEXTENSIONS+=		minimizer/presentation-minimizer.oxt
@@ -287,32 +293,99 @@ pre-everything::
 post-extract:
 	${TAR} -C ${WRKSUBDIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EXTSRC}
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/unowinreg.dll ${WRKSRC}/external/unowinreg/
+	${CP} ${FILESDIR}/freebsd-aoo-intro-developer.png ${WRKSRC}/default_images/introabout/intro.png
+	${CP} ${FILESDIR}/freebsd-aoo-about-developer.png ${WRKSRC}/default_images/introabout/about.png
 	${RM} -rf ${WRKSRC}/l10n
+	${LN} -sf ${UNZIP_CMD} ${WRKSRC}/solenv/bin/unzip
+	${SED}  -e '\|^For main/vcl/unx/generic/fontmanager/parseAFM|,/^__/p' \
+		-e '\|^For PostScript(R) AFM|,/^__/p'			\
+		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_ADOBE}
+	${SED}  -e '\|^For main/unixODBC|,/^__/p'			\
+		-e '\|^For main/connectivity|,/^__/p'			\
+		-e '\|^For main/libtextcat/data|,/^__/p'		\
+		-e '\|^For integration of HSQLDB|,/^__/p'		\
+		-e '\|^For C preprocessor|,/^__/p'			\
+		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_BSD3CLAUSE}
+	${SED}  -e '\|^For ICC |,/^__/p'				\
+		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_BSD4CLAUSE}
+	${SED}  -e '\|^For integration of the C++ Boost |,/^__/p'	\
+		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_BSL}
+	${SED}  -e '\|^For main/i18npool/source/breakiterator|,/^__/p'	\
+		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_ICU}
+	${SED}  -e '\|^For Multi-Dimensional Data|,/^__/p'	\
+		-e '\|^For XSLT MathML Library|,/^__/p'			\
+		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_MIT}
+	${SED}  -e '\|^For XMLSec Library|,/^__/p'	\
+		-e d  ${WRKSRC}/LICENSE_category_b >> ${LICENSE_FILE_MIT}
+	${SED}  -e '\|^For Graphite|,$$d'	\
+		      ${WRKSRC}/LICENSE_category_b > ${LICENSE_FILE_MPL}
+	${SED}  -e '\|^For main/filter/source/config/tools/merge/pyAltFCFGMerge|,/^__/p'	\
+		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_PSFL}
+	${SED}  -e '\|^For main/twain|,/^__/p'	\
+		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_TWAIN}
+	${SED}  -e '\|^For main/MathMLDTD|,/^__/p'	\
+		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_W3C}
 
 post-patch:
-.if defined (USE_GCC)
-	${REINPLACE_CMD} -e ${SUBST} ${WRKSRC}/solenv/gbuild/platform/freebsd.mk
-	${REINPLACE_CMD} -e ${SUBST} ${WRKSRC}/solenv/inc/unxfbsd.mk
-.endif
-.if ${ARCH} == i386
-	# g++49 -Os sometimes leaves inline class methods undefined
-	# autodoc core dumps when built with with -Os clang 3.6 on i386
-	if [ ${CXX} = g++49 -o \
-	     ${COMPILER_TYPE} = clang -a ${COMPILER_VERSION} = 36 ]; then \
-		${REINPLACE_CMD} -e "s/ := -Os/ := -O0/" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk; \
-		${REINPLACE_CMD} -e "s/=-Os /=-O0 /" ${WRKSRC}/solenv/inc/unxfbsdi.mk; \
+.if ${COMPILER_TYPE} == gcc
+	# g++49 -Os sometimes leaves inline class methods undefined,
+	# affects fmgridif.cxx and ColumnControl.cxx
+	# See: <https://gcc.gnu.org/bugzilla/show_bug.cgi?id=65009>
+	if [ ${CXX} = g++49  ]; then \
+		${REINPLACE_CMD} -e "s/ := -Os/ := -Os -fno-devirtualize -fno-devirtualize-speculatively/" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk; \
+		${REINPLACE_CMD} -e "s/=-Os /=-Os -fno-devirtualize -fno-devirtualize-speculatively /" ${WRKSRC}/solenv/inc/unxfbsdi.mk; \
 	fi
+.elif ${ARCH} == i386 && ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} == 36
+	# autodoc and uno (bridgetest) core dump when built with with -Os
+	# on i386, affects file.cxx and bridgetest.cxx
+	# Using -O2 optimiztion works, and -Os is essentially -O2 with out
+	# loop unrolling.
+	# Changing optimization in just unxfbsdi.mk is sufficient to get
+	# a successful build, but change it in both places to avoid the
+	# possibility of obscure runtime problems.
+	${REINPLACE_CMD} -e "s/=-Os /=-O2 -fno-unroll-loops /" ${WRKSRC}/solenv/inc/unxfbsdi.mk
+	${REINPLACE_CMD} -e "s/ := -Os/ := -O2 -fno-unroll-loops/" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk
 .endif
-
-pre-configure:
-	${LN} -sf ${UNZIP_CMD} ${WRKSRC}/solenv/bin/unzip
 
 do-build:
-	cd ${WRKSUBDIR} ; ${PRINTF} "[repositories]\n" > source_config
-	cd ${WRKSUBDIR} ; ${PRINTF} "main=active\n" >> source_config
-	cd ${WRKSUBDIR} ; ${PRINTF} "extras=active\n" >> source_config
+	${PRINTF} "[repositories]\nmain=active\nextras=active\n" > ${WRKSUBDIR}/source_config
 	cd ${WRKSRC} ; ./bootstrap
-	cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" FBSD_LDFLAGS="${LDFLAGS}" ${BASH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native/util  ; build.pl --all -P${MAKE_JOBS_NUMBER} -- -P${MAKE_JOBS_NUMBER}"
+	#
+	# numproc controls the number of parallel makes.
+	#
+	# dmproc is passed to dmake and controls parallelization at that
+	# level.
+	#
+	# dmproc > numproc seems to give shorter build times than
+	# numproc > dmproc.
+	#
+	# Select values for numproc and dmproc such that:
+	#  * numproc*dmproc >= MAKE_JOBS_NUMBER
+	#  * minimize numproc*dmproc-MAKE_JOBS_NUMBER
+	#  * dmproc >= numproc
+	#  * dmproc <= 2*numproc if MAKE_JOBS_NUMBER <= 3
+	#
+	if [ ${MAKE_JOBS_NUMBER} -le 3 ] ; then				  \
+	 numproc=1 ; dmproc=${MAKE_JOBS_NUMBER} ;			  \
+	else								  \
+	 a=1 ;								  \
+	 while [ $$(( 2 * $${a} * $${a} )) -lt ${MAKE_JOBS_NUMBER} ]; do  \
+	  a=$$(( $${a} + 1 )) ;						  \
+	 done ;								  \
+	 b=$$(( $${a} + 1 )) ;						  \
+	 ad=$$(( ( ${MAKE_JOBS_NUMBER} + $${a} - 1 ) / $${a} )) ;	  \
+	 ap=$$(( $${a} * $${ad} )) ;					  \
+	 bd=$$(( ( ${MAKE_JOBS_NUMBER} + $${b} - 1 ) / $${b} )) ;	  \
+	 bp=$$(( $${b} * $${bd} )) ;					  \
+	 if [ $${ap} -le $${bp} ]; then					  \
+	  numproc=$${a} ; dmproc=$${ad} ;				  \
+	 else								  \
+	  numproc=$${b} ; dmproc=$${bd} ;				  \
+	 fi ;								  \
+	fi ;								  \
+	cd ${WRKSRC}/instsetoo_native ;					  \
+	. ../${FREEBSD_ENV_SET} ; 					  \
+	LANG=C LC_ALL=C build.pl --all -P$${numproc} -- -P$${dmproc}
 
 do-install:
 	cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/Apache_OpenOffice/archive/install/${LOCALIZED_LANG}/ ; ${LS} *.tar.?z > ${WRKDIR}/INSTALLFILES

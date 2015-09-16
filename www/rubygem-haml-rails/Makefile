@@ -15,6 +15,10 @@ RUN_DEPENDS=	rubygem-actionpack>=3.1:${PORTSDIR}/www/rubygem-actionpack \
 		rubygem-haml>=3.1:${PORTSDIR}/www/rubygem-haml \
 		rubygem-railties>=3.1:${PORTSDIR}/www/rubygem-railties
 
+PORTSCOUT=	limit:0.4
+
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

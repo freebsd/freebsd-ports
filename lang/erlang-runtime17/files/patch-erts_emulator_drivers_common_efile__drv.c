@@ -1,6 +1,6 @@
---- erts/emulator/drivers/common/efile_drv.c.orig
+--- erts/emulator/drivers/common/efile_drv.c.orig	2015-03-31 12:32:52 UTC
 +++ erts/emulator/drivers/common/efile_drv.c
-@@ -1938,6 +1938,8 @@
+@@ -1938,6 +1938,8 @@ static void invoke_sendfile(void *data)
  	d->result_ok = 1;
  	if (d->c.sendfile.nbytes != 0)
  	  d->c.sendfile.nbytes -= nbytes;

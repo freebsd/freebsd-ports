@@ -4,8 +4,8 @@
 PORTNAME=	quake3
 PORTVERSION=	1.32c
 CATEGORIES=	games linux
-MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S|$|quake3/linux/:data|} \
-		${MASTER_SITE_IDSOFTWARE:S|$|quake3/:patch|}
+MASTER_SITES=	IDSOFTWARE/quake3/linux/:data \
+		IDSOFTWARE/quake3/:patch
 PKGNAMEPREFIX=	linux-
 DISTFILES=	${Q3DATAFILE}:data \
 		${Q3PATCHFILE}:patch
@@ -35,7 +35,6 @@ PUNKBUSTER_DESC=	Install PunkBuster
 SMP_DESC=	Install SMP (threaded) client
 
 PLIST_SUB+=	LIBDIR="libexec/${PKGNAMEPREFIX}${PORTNAME}"
-LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}
 
 LIBDIR=		${PREFIX}/libexec/${PKGNAMEPREFIX}${PORTNAME}
 Q3DATAFILE=	linuxq3apoint-1.32b-3.x86.run

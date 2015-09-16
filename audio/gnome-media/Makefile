@@ -34,17 +34,10 @@ GCONF_SCHEMAS=	gnome-audio-profiles.schemas \
 
 OPTIONS_DEFINE=	PULSEAUDIO
 OPTIONS_DEFAULT=PULSEAUDIO
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
-CONFIGURE_ARGS+=--enable-pulseaudio
-PLIST_SUB+=	PULSE=""
-.else
-CONFIGURE_ARGS+=--disable-pulseaudio
-PLIST_SUB+=	PULSE="@comment "
-.endif
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_CONFIGURE_ENABLE=pulseaudio
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|have_gladeui=true|have_gladeui=false|g' \

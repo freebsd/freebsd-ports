@@ -8,4 +8,4 @@ configuration work. rebar also provides dependency management, enabling
 application writers to easily re-use common libraries from a variety of
 locations (git, hg, etc).
 
-WWW: https://github.com/basho/rebar
+WWW: https://github.com/rebar/rebar

@@ -1,7 +1,7 @@
---- Makefile.orig	2013-09-16 12:15:40.000000000 +0800
-+++ Makefile	2014-05-15 23:43:23.541980613 +0800
-@@ -3,17 +3,9 @@ BSDCONV_PATH?=${PREFIX}
- CFLAGS+=-Wall -DPREFIX='"${PREFIX}"' -DBSDCONV_PATH='"${BSDCONV_PATH}"'
+--- Makefile.orig	2014-05-13 13:09:10 UTC
++++ Makefile
+@@ -5,17 +5,9 @@ BSDCONV_PATH?=${PREFIX}
+ CFLAGS+=-O2 -Wall -D_BSDCONV_INTERNAL -DPREFIX='"${PREFIX}"' -DBSDCONV_PATH='"${BSDCONV_PATH}"'
  SHLIBVER=11
  
 -UNAME_S=$(shell uname -s)
@@ -16,86 +16,81 @@
 -LIBS+=-ldl
 -endif
  
- TODO_CODECS_BASIC=
- TODO_CODECS_BASIC+=from/00
-@@ -174,12 +166,12 @@ builddir:
- 	mkdir -p build/share/bsdconv/to
+ TODO_FILTERS=
+ TODO_FILTERS+=ANSI
+@@ -237,14 +229,14 @@ bsdconv-completion: builddir libbsdconv 
+ bsdconv-dbg: builddir libbsdconv src/libbsdconv.c src/bsdconv.h src/bsdconv-dbg.c
+ 	$(CC) ${CFLAGS} src/libbsdconv.c src/bsdconv-dbg.c -o build/bin/bsdconv-dbg ${LIBS}
  
- installdir:
--	mkdir -p ${PREFIX}/bin
--	mkdir -p ${PREFIX}/lib
--	mkdir -p ${PREFIX}/include
--	mkdir -p ${PREFIX}/share/bsdconv/from
--	mkdir -p ${PREFIX}/share/bsdconv/inter
--	mkdir -p ${PREFIX}/share/bsdconv/to
-+	mkdir -p ${DESTDIR}${PREFIX}/bin
-+	mkdir -p ${DESTDIR}${PREFIX}/lib
-+	mkdir -p ${DESTDIR}${PREFIX}/include
-+	mkdir -p ${DESTDIR}${PREFIX}/share/bsdconv/from
-+	mkdir -p ${DESTDIR}${PREFIX}/share/bsdconv/inter
-+	mkdir -p ${DESTDIR}${PREFIX}/share/bsdconv/to
+-filters: builddir
++filters: builddir meta
+ 	for item in ${TODO_FILTERS} ; do \
+ 		echo Build filter $${item}.so ; \
+ 		$(CC) ${CFLAGS} modules/filter/$${item}.c -L./build/lib/ -fPIC -shared -o ./build/share/bsdconv/filter/$${item}.so -lbsdconv ${LIBS} ; \
+ 		if [ -e modules/filter/$${item}.man ]; then cp modules/filter/$${item}.man ./build/share/bsdconv/filter/$${item}.man ; fi ; \
+ 	done
  
- libbsdconv: builddir src/libbsdconv.c src/bsdconv.h
- 	$(CC) ${CFLAGS} src/libbsdconv.c -fPIC -shared -o build/lib/${SHLIBNAME} ${LIBS}
-@@ -238,41 +230,41 @@ clean:
- install: installdir install_main install_basic install_chinese install_ebcdic
+-scorers: builddir
++scorers: builddir meta
+ 	for item in ${TODO_SCORERS} ; do \
+ 		echo Build scorer $${item}.so ; \
+ 		$(CC) ${CFLAGS} modules/scorer/$${item}.c -L./build/lib/ -fPIC -shared -o ./build/share/bsdconv/scorer/$${item}.so -lbsdconv ${LIBS} ; \
+@@ -291,12 +283,12 @@ clean:
+ install: installdir install_main install_filters install_scorers install_basic install_chinese install_ebcdic
  
  install_main:
--	install -m 555 build/bin/bsdconv ${PREFIX}/bin
--	install -m 555 build/bin/bsdconv-man ${PREFIX}/bin
--	install -m 555 build/bin/bsdconv-mktable ${PREFIX}/bin
--	install -m 555 build/bin/bsdconv-completion ${PREFIX}/bin
--	install -m 444 build/include/bsdconv.h ${PREFIX}/include
--	install -m 444 build/lib/${SHLIBNAME} ${PREFIX}/lib
--	install -m 444 build/share/bsdconv/from/alias ${PREFIX}/share/bsdconv/from/alias
--	install -m 444 build/share/bsdconv/inter/alias ${PREFIX}/share/bsdconv/inter/alias
--	install -m 444 build/share/bsdconv/to/alias ${PREFIX}/share/bsdconv/to/alias
-+	install -m 555 build/bin/bsdconv ${DESTDIR}${PREFIX}/bin
-+	install -m 555 build/bin/bsdconv-man ${DESTDIR}${PREFIX}/bin
-+	install -m 555 build/bin/bsdconv-mktable ${DESTDIR}${PREFIX}/bin
-+	install -m 555 build/bin/bsdconv-completion ${DESTDIR}${PREFIX}/bin
-+	install -m 444 build/include/bsdconv.h ${DESTDIR}${PREFIX}/include
-+	install -m 444 build/lib/${SHLIBNAME} ${DESTDIR}${PREFIX}/lib
-+	install -m 444 build/share/bsdconv/from/alias ${DESTDIR}${PREFIX}/share/bsdconv/from/alias
-+	install -m 444 build/share/bsdconv/inter/alias ${DESTDIR}${PREFIX}/share/bsdconv/inter/alias
-+	install -m 444 build/share/bsdconv/to/alias ${DESTDIR}${PREFIX}/share/bsdconv/to/alias
- 	if [ ${SHLIBNAME} != libbsdconv.so ]; then \
--		ln -sf libbsdconv.so.${SHLIBVER} ${PREFIX}/lib/libbsdconv.so ; \
-+		ln -sf libbsdconv.so.${SHLIBVER} ${DESTDIR}${PREFIX}/lib/libbsdconv.so ; \
- 	fi
+-	install -m 555 build/bin/bsdconv ${DESTDIR}${PREFIX}/bin
+-	install -m 555 build/bin/bsdconv-man ${DESTDIR}${PREFIX}/bin
+-	install -m 555 build/bin/bsdconv-mktable ${DESTDIR}${PREFIX}/bin
+-	install -m 555 build/bin/bsdconv-completion ${DESTDIR}${PREFIX}/bin
++	install ${STRIP} -m 555 build/bin/bsdconv ${DESTDIR}${PREFIX}/bin
++	install ${STRIP} -m 555 build/bin/bsdconv-man ${DESTDIR}${PREFIX}/bin
++	install ${STRIP} -m 555 build/bin/bsdconv-mktable ${DESTDIR}${PREFIX}/bin
++	install ${STRIP} -m 555 build/bin/bsdconv-completion ${DESTDIR}${PREFIX}/bin
+ 	install -m 444 build/include/bsdconv.h ${DESTDIR}${PREFIX}/include
+-	install -m 444 build/lib/${SHLIBNAME} ${DESTDIR}${PREFIX}/lib
++	install ${STRIP} -m 444 build/lib/${SHLIBNAME} ${DESTDIR}${PREFIX}/lib
+ 	install -m 444 build/share/bsdconv/from/alias ${DESTDIR}${PREFIX}/share/bsdconv/from/alias
+ 	install -m 444 build/share/bsdconv/inter/alias ${DESTDIR}${PREFIX}/share/bsdconv/inter/alias
+ 	install -m 444 build/share/bsdconv/to/alias ${DESTDIR}${PREFIX}/share/bsdconv/to/alias
+@@ -307,13 +299,13 @@ install_main:
  
- install_doc:
--	install -m 555 build/bin/bsdconv-man ${PREFIX}/bin
-+	install -m 555 build/bin/bsdconv-man ${DESTDIR}${PREFIX}/bin
+ install_filters:
+ 	for item in ${TODO_FILTERS} ; do \
+-		install -m 444 build/share/bsdconv/filter/$${item}.so ${DESTDIR}${PREFIX}/share/bsdconv/filter/$${item}.so ; \
++		install ${STRIP} -m 444 build/share/bsdconv/filter/$${item}.so ${DESTDIR}${PREFIX}/share/bsdconv/filter/$${item}.so ; \
+ 		if [ -e build/share/bsdconv/filter/$${item}.man ]; then install -m 444 build/share/bsdconv/filter/$${item}.man ${DESTDIR}${PREFIX}/share/bsdconv/filter/$${item}.man ; fi ; \
+ 	done
  
- install_basic:
+ install_scorers:
+ 	for item in ${TODO_SCORERS} ; do \
+-		install -m 444 build/share/bsdconv/scorer/$${item}.so ${DESTDIR}${PREFIX}/share/bsdconv/scorer/$${item}.so ; \
++		install ${STRIP} -m 444 build/share/bsdconv/scorer/$${item}.so ${DESTDIR}${PREFIX}/share/bsdconv/scorer/$${item}.so ; \
+ 		if [ -e build/share/bsdconv/scorer/$${item}.man ]; then install -m 444 build/share/bsdconv/scorer/$${item}.man ${DESTDIR}${PREFIX}/share/bsdconv/scorer/$${item}.man ; fi ; \
+ 	done
+ 
+@@ -321,21 +313,21 @@ install_basic:
  	for item in ${TODO_CODECS_BASIC} ; do \
--		install -m 444 build/share/bsdconv/$${item} ${PREFIX}/share/bsdconv/$${item} ; \
--		if [ -e build/share/bsdconv/$${item}.man ]; then install -m 444 build/share/bsdconv/$${item}.man ${PREFIX}/share/bsdconv/$${item}.man ; fi ; \
--		if [ -e build/share/bsdconv/$${item}.so ]; then install -m 444 build/share/bsdconv/$${item}.so ${PREFIX}/share/bsdconv/$${item}.so ; fi ; \
-+		install -m 444 build/share/bsdconv/$${item} ${DESTDIR}${PREFIX}/share/bsdconv/$${item} ; \
-+		if [ -e build/share/bsdconv/$${item}.man ]; then install -m 444 build/share/bsdconv/$${item}.man ${DESTDIR}${PREFIX}/share/bsdconv/$${item}.man ; fi ; \
-+		if [ -e build/share/bsdconv/$${item}.so ]; then install -m 444 build/share/bsdconv/$${item}.so ${DESTDIR}${PREFIX}/share/bsdconv/$${item}.so ; fi ; \
+ 		install -m 444 build/share/bsdconv/$${item} ${DESTDIR}${PREFIX}/share/bsdconv/$${item} ; \
+ 		if [ -e build/share/bsdconv/$${item}.man ]; then install -m 444 build/share/bsdconv/$${item}.man ${DESTDIR}${PREFIX}/share/bsdconv/$${item}.man ; fi ; \
+-		if [ -e build/share/bsdconv/$${item}.so ]; then install -m 444 build/share/bsdconv/$${item}.so ${DESTDIR}${PREFIX}/share/bsdconv/$${item}.so ; fi ; \
++		if [ -e build/share/bsdconv/$${item}.so ]; then install ${STRIP} -m 444 build/share/bsdconv/$${item}.so ${DESTDIR}${PREFIX}/share/bsdconv/$${item}.so ; fi ; \
  	done
  
  install_chinese:
  	for item in ${TODO_CODECS_CHINESE} ; do \
--		install -m 444 build/share/bsdconv/$${item} ${PREFIX}/share/bsdconv/$${item} ; \
--		if [ -e build/share/bsdconv/$${item}.man ]; then install -m 444 build/share/bsdconv/$${item}.man ${PREFIX}/share/bsdconv/$${item}.man ; fi ; \
--		if [ -e build/share/bsdconv/$${item}.so ]; then install -m 444 build/share/bsdconv/$${item}.so ${PREFIX}/share/bsdconv/$${item}.so ; fi ; \
-+		install -m 444 build/share/bsdconv/$${item} ${DESTDIR}${PREFIX}/share/bsdconv/$${item} ; \
-+		if [ -e build/share/bsdconv/$${item}.man ]; then install -m 444 build/share/bsdconv/$${item}.man ${DESTDIR}${PREFIX}/share/bsdconv/$${item}.man ; fi ; \
-+		if [ -e build/share/bsdconv/$${item}.so ]; then install -m 444 build/share/bsdconv/$${item}.so ${DESTDIR}${PREFIX}/share/bsdconv/$${item}.so ; fi ; \
+ 		install -m 444 build/share/bsdconv/$${item} ${DESTDIR}${PREFIX}/share/bsdconv/$${item} ; \
+ 		if [ -e build/share/bsdconv/$${item}.man ]; then install -m 444 build/share/bsdconv/$${item}.man ${DESTDIR}${PREFIX}/share/bsdconv/$${item}.man ; fi ; \
+-		if [ -e build/share/bsdconv/$${item}.so ]; then install -m 444 build/share/bsdconv/$${item}.so ${DESTDIR}${PREFIX}/share/bsdconv/$${item}.so ; fi ; \
++		if [ -e build/share/bsdconv/$${item}.so ]; then install ${STRIP} -m 444 build/share/bsdconv/$${item}.so ${DESTDIR}${PREFIX}/share/bsdconv/$${item}.so ; fi ; \
  	done
  
  install_ebcdic:
  	for item in ${TODO_CODECS_EBCDIC} ; do \
--		install -m 444 build/share/bsdconv/$${item} ${PREFIX}/share/bsdconv/$${item} ; \
--		if [ -e build/share/bsdconv/$${item}.man ]; then install -m 444 build/share/bsdconv/$${item}.man ${PREFIX}/share/bsdconv/$${item}.man ; fi ; \
--		if [ -e build/share/bsdconv/$${item}.so ]; then install -m 444 build/share/bsdconv/$${item}.so ${PREFIX}/share/bsdconv/$${item}.so ; fi ; \
-+		install -m 444 build/share/bsdconv/$${item} ${DESTDIR}${PREFIX}/share/bsdconv/$${item} ; \
-+		if [ -e build/share/bsdconv/$${item}.man ]; then install -m 444 build/share/bsdconv/$${item}.man ${DESTDIR}${PREFIX}/share/bsdconv/$${item}.man ; fi ; \
-+		if [ -e build/share/bsdconv/$${item}.so ]; then install -m 444 build/share/bsdconv/$${item}.so ${DESTDIR}${PREFIX}/share/bsdconv/$${item}.so ; fi ; \
+ 		install -m 444 build/share/bsdconv/$${item} ${DESTDIR}${PREFIX}/share/bsdconv/$${item} ; \
+ 		if [ -e build/share/bsdconv/$${item}.man ]; then install -m 444 build/share/bsdconv/$${item}.man ${DESTDIR}${PREFIX}/share/bsdconv/$${item}.man ; fi ; \
+-		if [ -e build/share/bsdconv/$${item}.so ]; then install -m 444 build/share/bsdconv/$${item}.so ${DESTDIR}${PREFIX}/share/bsdconv/$${item}.so ; fi ; \
++		if [ -e build/share/bsdconv/$${item}.so ]; then install ${STRIP} -m 444 build/share/bsdconv/$${item}.so ${DESTDIR}${PREFIX}/share/bsdconv/$${item}.so ; fi ; \
  	done
  
- plist:
+ build_doc: build_doc_tex build_doc_sphinx

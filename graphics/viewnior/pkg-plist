@@ -9,6 +9,7 @@ share/icons/hicolor/48x48/apps/viewnior.png
 share/icons/hicolor/scalable/apps/viewnior.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/viewnior.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/viewnior.mo
+%%NLS%%share/locale/bs/LC_MESSAGES/viewnior.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/viewnior.mo
 %%NLS%%share/locale/ca@valencia/LC_MESSAGES/viewnior.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/viewnior.mo

@@ -14,7 +14,7 @@ BUILD_DEPENDS=	p5-XML-Parser>0:${PORTSDIR}/textproc/p5-XML-Parser
 
 USES=		gettext gmake libtool pathfix perl5 pkgconfig
 USE_XORG=	x11
-USE_GNOME=	glib20
+USE_GNOME=	glib20 intltool
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules \

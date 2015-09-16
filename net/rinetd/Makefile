@@ -6,8 +6,7 @@ PORTVERSION=	0.62
 PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://www.boutell.com/rinetd/http/ \
-		${MASTER_SITE_GENTOO}
-MASTER_SITE_SUBDIR=	distfiles
+		GENTOO
 DISTNAME=	rinetd
 
 MAINTAINER=	garga@FreeBSD.org
@@ -35,7 +34,7 @@ post-patch:
 		${WRKSRC}/rinetd.[8c]
 	@${REINPLACE_CMD} -E "s,/usr(/sbin/rinetd),${PREFIX}\1," \
 		${WRKSRC}/rinetd.8
-	@${REINPLACE_CMD} -e "s/cc /${CC} /g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s,cc ,${CC} ,g" ${WRKSRC}/Makefile
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

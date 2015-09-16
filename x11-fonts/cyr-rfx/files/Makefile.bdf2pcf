@@ -1,6 +1,5 @@
-VPATH=	${.CURDIR}/75dpi:${.CURDIR}/misc
-BDFS!=	echo ${VPATH:S,:,/*.bdf ,}/*.bdf
-PCFS=	${BDFS:T:S/.bdf/.pcf.gz/}
+BDFS!=	echo 75dpi/*.bdf misc/*.bdf
+PCFS=	${BDFS:S/.bdf/.pcf.gz/}
 
 .SUFFIXES:	.bdf .pcf.gz
 
@@ -9,7 +8,7 @@ all:	fonts.dir fonts.alias ${PCFS}
 fonts.dir:	${PCFS}
 	mkfontdir .
 
-fonts.alias: ${VPATH:S,:,/fonts.alias ,}/fonts.alias
+fonts.alias: 75dpi/fonts.alias misc/fonts.alias
 	cat ${.ALLSRC} > ${.TARGET}
 
 .bdf.pcf.gz:

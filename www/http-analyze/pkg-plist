@@ -214,14 +214,3 @@ man/man1/http-analyze.1.gz
 %%DATADIR%%/logfmt.clf
 %%DATADIR%%/logfmt.dlf
 %%DATADIR%%/logfmt.elf
-@dirrm %%DATADIR%%/btn-pt_BR
-@dirrm %%DATADIR%%/btn-it
-@dirrm %%DATADIR%%/btn-fr
-@dirrm %%DATADIR%%/btn-de_BY
-@dirrm %%DATADIR%%/btn-de
-@dirrm %%DATADIR%%/btn
-@dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tools
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,5 +1,5 @@
---- libguile/guile-snarf.in	2010-12-13 18:24:40.000000000 +0100
-+++ libguile/guile-snarf.in	2014-04-13 21:05:42.000000000 +0200
+--- libguile/guile-snarf.in.orig	2010-12-13 17:24:40 UTC
++++ libguile/guile-snarf.in
 @@ -51,7 +51,8 @@ modern_snarf ()                         
      ## empty file.
      echo "/* cpp arguments: $@ */" ;

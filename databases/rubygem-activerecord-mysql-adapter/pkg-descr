@@ -1,3 +1,3 @@
 An ActiveRecord adapter for MySQL, based on mysql gem.
 
-WWW: https://rubygems.org/gems/activerecord-mysql-adapter
+WWW: https://github.com/rafaelfranca/activerecord-mysql-adapter

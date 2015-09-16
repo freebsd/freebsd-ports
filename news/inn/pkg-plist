@@ -325,8 +325,8 @@ man/man8/writelog.8.gz
 %%EXAMPLESDIR%%/send-uucp.cf
 %%EXAMPLESDIR%%/storage.conf
 %%EXAMPLESDIR%%/subscriptions
+@dir %%EXAMPLESDIR%%/db
 @comment --------------------------------------------------------------
-@cwd /
 @sample %%DBDIR%%/active.sample
 @sample %%DBDIR%%/active.times.sample
 @sample %%DBDIR%%/newsgroups.sample
@@ -368,38 +368,19 @@ man/man8/writelog.8.gz
 @sample %%CONFDIR%%/storage.conf.sample
 @sample %%CONFDIR%%/subscriptions.sample
 @comment --------------------------------------------------------------
-@cwd
-@dirrm %%EXAMPLESDIR%%/db
-@dirrm %%EXAMPLESDIR%%
 @cwd /
-@dirrm %%TMPDIR%%                
-@dirrm %%SHAREDIR%%              
-@dirrm %%NEWSSPOOL%%/overview    
-@dirrm %%NEWSSPOOL%%/outgoing    
-@dirrm %%NEWSSPOOL%%/innfeed     
-@dirrm %%NEWSSPOOL%%/incoming/bad
-@dirrm %%NEWSSPOOL%%/incoming    
-@dirrm %%NEWSSPOOL%%/articles    
-@dirrm %%NEWSSPOOL%%/archive     
-@dirrm %%NEWSSPOOL%%             
-@dirrm %%RUNDIR%%                
-@dirrm %%NEWSBASE%%/http
-@dirrm %%NEWSBASE%%/lib/perl/INN/Utils
-@dirrm %%NEWSBASE%%/lib/perl/INN
-@dirrm %%NEWSBASE%%/lib/perl
-@dirrm %%NEWSBASE%%/lib
-@dirrm %%NEWSBASE%%/include/inn
-@dirrm %%NEWSBASE%%/include
-@dirrm %%NEWSBASE%%/doc
-@dirrm %%NEWSBASE%%/bin/rnews.libexec
-@dirrm %%NEWSBASE%%/bin/filter
-@dirrm %%NEWSBASE%%/bin/control
-@dirrm %%NEWSBASE%%/bin/auth/resolv
-@dirrm %%NEWSBASE%%/bin/auth/passwd
-@dirrm %%NEWSBASE%%/bin/auth
-@dirrm %%NEWSBASE%%/bin
-@dirrm %%DBDIR%%                 
-@dirrm %%LOGDIR%%/OLD
-@dirrm %%LOGDIR%%
-@dirrm %%CONFDIR%%                
+@dir %%TMPDIR%%
+@dir %%SHAREDIR%%
+@dir %%NEWSSPOOL%%/overview
+@dir %%NEWSSPOOL%%/outgoing
+@dir %%NEWSSPOOL%%/innfeed
+@dir %%NEWSSPOOL%%/incoming/bad
+@dir %%NEWSSPOOL%%/incoming
+@dir %%NEWSSPOOL%%/articles
+@dir %%NEWSSPOOL%%/archive
+@dir %%NEWSSPOOL%%
+@dir %%RUNDIR%%
+@dir %%DBDIR%%
+@dir %%LOGDIR%%/OLD
+@dir %%LOGDIR%%
 @unexec rmdir %%NEWSBASE%% 2>/dev/null ||( echo "===>  If you don't plan to use inn later, you can safely remove %%NEWSBASE%%. Deinstall process kept these files intact:" | fmt && for i in $(find %D/news -type f); do echo "    - $i"; done)

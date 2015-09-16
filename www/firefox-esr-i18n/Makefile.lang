@@ -1,13 +1,13 @@
 # Created by: Koji Yokota <yokota@res.otaru-uc.ac.jp>
 # $FreeBSD$
 
-FIREFOX_I18N_ALL_=	ach af an ar as ast be bg bn-BD bn-IN br bs ca cs	\
-			csb cy da de el en-GB en-US en-ZA eo es-AR es-CL	\
+FIREFOX_I18N_ALL_=	ach af an ar as ast az be bg bn-BD bn-IN br bs ca cs	\
+			cy da de dsb el en-GB en-US en-ZA eo es-AR es-CL	\
 			es-ES es-MX et eu fa ff fi fr fy-NL ga-IE gd gl		\
 			gu-IN he hi-IN hr hsb hu hy-AM id is it ja kk km	\
-			kn ko ku lij lt lv mai mk ml mr ms nb-NO nl nn-NO	\
+			kn ko lij lt lv mai mk ml mr ms nb-NO nl nn-NO	\
 			or pa-IN pl pt-BR pt-PT rm ro ru si sk sl son sq	\
-			sr sv-SE ta te th tr uk vi xh zh-CN zh-TW zu
+			sr sv-SE ta te th tr uk vi xh zh-CN zh-TW
 
 .if defined(FIREFOX_I18N_ALL) || defined(PACKAGE_BUILDING) || target(package)
 FIREFOX_I18N=   ${FIREFOX_I18N_ALL_}
@@ -29,6 +29,9 @@ FIREFOX_I18N+=  as
 .endif
 .if ${PORT_OPTIONS:MLANG_AST}
 FIREFOX_I18N+=  ast
+.endif
+.if ${PORT_OPTIONS:MLANG_AZ}
+FIREFOX_I18N+=  az
 .endif
 .if ${PORT_OPTIONS:MLANG_BE}
 FIREFOX_I18N+=  be
@@ -65,6 +68,9 @@ FIREFOX_I18N+=  da
 .endif
 .if ${PORT_OPTIONS:MLANG_DE}
 FIREFOX_I18N+=  de
+.endif
+.if ${PORT_OPTIONS:MLANG_DSB}
+FIREFOX_I18N+=  dsb
 .endif
 .if ${PORT_OPTIONS:MLANG_EL}
 FIREFOX_I18N+=  el

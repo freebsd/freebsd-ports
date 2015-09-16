@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=		openvpn
-DISTVERSION=		2.3.6
-PORTREVISION=		4
+DISTVERSION=		2.3.8
 CATEGORIES=		security net
 MASTER_SITES=		http://swupdate.openvpn.net/community/releases/ \
 			http://build.openvpn.net/downloads/releases/
 
 MAINTAINER=		mandree@FreeBSD.org
-COMMENT=		Secure IP/Ethernet tunnel daemon
+COMMENT?=		Secure IP/Ethernet tunnel daemon
 
 LICENSE=		GPLv2
 
@@ -28,16 +27,15 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 # set PLUGIN_LIBDIR so that unqualified plugin paths are found:
 CPPFLAGS+=		-DPLUGIN_LIBDIR=\\\"${PREFIX}/lib/openvpn/plugins\\\"
 
-OPTIONS_DEFINE=		PW_SAVE PKCS11 EASYRSA DOCS EXAMPLES X509ALTUSERNAME ENGINEFIX2
+OPTIONS_DEFINE=		PW_SAVE PKCS11 EASYRSA DOCS EXAMPLES X509ALTUSERNAME
 OPTIONS_DEFAULT=	EASYRSA OPENSSL
 OPTIONS_SINGLE=		SSL
 OPTIONS_SINGLE_SSL=	OPENSSL POLARSSL
 PW_SAVE_DESC=		Interactive passwords may be read from a file
 PKCS11_DESC=		Use security/pkcs11-helper
 EASYRSA_DESC=		Install security/easy-rsa RSA helper package
-POLARSSL_DESC=		SSL/TLS support via PolarSSL
+POLARSSL_DESC=		SSL/TLS support via PolarSSL 1.2
 X509ALTUSERNAME_DESC=	Enable --x509-username-field (only with OpenSSL)
-ENGINEFIX2_DESC=	New EXPERIMENTAL patchset for SSL engine use (OpenSSL)
 
 EASYRSA_RUN_DEPENDS=	easy-rsa>=0:${PORTSDIR}/security/easy-rsa
 
@@ -49,13 +47,6 @@ PW_SAVE_CONFIGURE_ENABLE=	password-save
 X509ALTUSERNAME_CONFIGURE_ENABLE=	x509-alt-username
 
 .include <bsd.port.options.mk>
-
-# patches to fix PR 195004, https://community.openvpn.net/openvpn/ticket/480
-.if ${PORT_OPTIONS:MENGINEFIX2}
-EXTRA_PATCHES+=		${FILESDIR}/EF1.patch:-p1 \
-			${FILESDIR}/EF2.patch:-p1 \
-			${FILESDIR}/EF3.patch:-p1
-.endif
 
 .if ${PORT_OPTIONS:MPOLARSSL}
 . if ${PORT_OPTIONS:MX509ALTUSERNAME}

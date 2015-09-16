@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	clang
-DISTVERSION=	3.6.0
+DISTVERSION=	3.6.2
 CATEGORIES=	lang devel
-MASTER_SITES=   http://llvm.org/releases/3.6.0/
+MASTER_SITES=   http://llvm.org/releases/3.6.2/
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 DISTNAME=	${CLANG_NAME}
 DISTFILES=	${CLANG_SOURCE} \
@@ -125,11 +125,13 @@ pre-build:
 	${LN} -sf ${LLVM_PREFIX}/lib/${LIBNAME} ${WRKSRC}/${RELTYPE}/lib/
 	${LN} -sf ${LLVM_PREFIX}/lib/libLLVMTableGen.a ${WRKSRC}/${RELTYPE}/lib/
 	${LN} -sf ${LLVM_PREFIX}/lib/libLLVMSupport.a ${WRKSRC}/${RELTYPE}/lib/
-	cd ${WRKSRC}/utils/unittest && ${MAKE_CMD}
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC}/utils/unittest
 
 post-build:
-	@cd ${WRKSRC}/tools/clang/docs/tools && ${MAKE_CMD} man
-	@cd ${WRKSRC}/tools/clang/docs/tools && ${MAKE_CMD} html ps
+	${SETENV} ${MAKE_ENV} \
+		${MAKE_CMD} -C ${WRKSRC}/tools/clang/docs/tools man
+	${SETENV} ${MAKE_ENV} \
+		${MAKE_CMD} -C ${WRKSRC}/tools/clang/docs/tools html ps
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${LLVM_PREFIX}/lib/libclang.so

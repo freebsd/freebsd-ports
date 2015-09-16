@@ -1,4 +1,4 @@
---- src/gnatcoll_readline.gpr.in.orig	2014-04-10 13:47:58.000000000 +0000
+--- src/gnatcoll_readline.gpr.in.orig	2015-04-30 10:51:45 UTC
 +++ src/gnatcoll_readline.gpr.in
 @@ -6,7 +6,7 @@ project GnatColl_Readline is
        when "yes" =>

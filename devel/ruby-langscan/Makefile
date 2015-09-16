@@ -4,8 +4,7 @@
 PORTNAME=	langscan
 PORTVERSION=	1.2.20070115
 CATEGORIES=	devel ruby
-MASTER_SITES=	LOCAL
-MASTER_SITE_SUBDIR=	tota/${PORTNAME}
+MASTER_SITES=	LOCAL/tota/${PORTNAME}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	${RUBY_PKGNAMEPREFIX:S|${RUBY_SUFFIX}-||}
 
@@ -16,6 +15,9 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-PPI>=0:${PORTSDIR}/textproc/p5-PPI
 BUILD_DEPENDS=	flex>=2.5.31:${PORTSDIR}/textproc/flex
+
+BROKEN_RUBY21=	yes
+BROKEN_RUBY22=	yes
 
 USES=		perl5
 USE_AUTOTOOLS=	aclocal:env automake:env autoconf:env
@@ -31,7 +33,6 @@ PORTDOCS=	ChangeLog NEWS README
 DOCSDIR=	${RUBY_MODDOCDIR}
 
 OPTIONS_DEFINE=	DOCS
-OPTIONSFILE=	${PORT_DBDIR}/ruby-${PORTNAME}/options
 
 CFLAGS+=	-fPIC
 
@@ -60,10 +61,4 @@ x-generate-plist:
 	${FIND} ${RUBY_SITELIBDIR}/${PORTNAME} -type d -depth | ${SORT} -r | ${SED} -e 's,${RUBY_SITELIBDIR},@dirrm %%RUBY_SITELIBDIR%%,' >> pkg-plist.new
 	${FIND} ${RUBY_SITEARCHLIBDIR}/${PORTNAME} -type d -depth | ${SORT} -r | ${SED} -e 's,${RUBY_SITEARCHLIBDIR},@dirrm %%RUBY_SITEARCHLIBDIR%%,' >> pkg-plist.new
 
-.include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} >= 2.1
-BROKEN=		Does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

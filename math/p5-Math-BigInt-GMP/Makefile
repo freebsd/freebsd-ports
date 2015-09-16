@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Math-BigInt-GMP
-PORTVERSION=	1.38
-PORTREVISION=	1
+PORTVERSION=	1.40
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,5 +25,8 @@ post-patch:
 	@${PERL} -pi -e "s!-lgmp!-L${LOCALBASE}/lib $$&!;" \
 		     -e "if (/'LIBS'/) { print qq!'INC' => '-I${LOCALBASE}/include',!; }" \
 		${WRKSRC}/Makefile.PL
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/BigInt/GMP/GMP.so
 
 .include <bsd.port.mk>

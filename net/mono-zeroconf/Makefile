@@ -8,13 +8,13 @@ MASTER_SITES=	http://download.banshee.fm/${PORTNAME}/
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Cross platform Zero Configuration Networking library for Mono
 
-BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono \
-		${LOCALBASE}/libdata/pkgconfig/avahi-sharp.pc:${PORTSDIR}/net/avahi-sharp
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/avahi-sharp.pc:${PORTSDIR}/net/avahi-sharp
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	DOCS
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_cv_path_MCS=${LOCALBASE}/bin/mcs
 USES=		gmake mono pathfix pkgconfig shebangfix
 bash_CMD=	${SH}
 SHEBANG_FILES=	src/MZClient/mzclient.in

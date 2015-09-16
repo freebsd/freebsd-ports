@@ -13,14 +13,13 @@ COMMENT=	Auto Adjust Photo, automatic color correction of photos
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	log69
 
 GNU_CONFIGURE=	yes
-USES=		compiler:openmp
+USES=		compiler:openmp jpeg
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -3,7 +3,7 @@
 
 PORTNAME=	suphp
 PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.suphp.org/download/ \
 		LOCAL/bdrewery/${PORTNAME}/ \
@@ -16,7 +16,7 @@ GNU_CONFIGURE=	yes
 USES=		autoreconf libtool
 SUB_FILES=	pkg-message
 
-USE_APACHE=	22
+USE_APACHE=	22+
 CFLAGS+=	-I${LOCALBASE}/include
 USE_CSTD=	gnu89
 USE_PHP=	yes
@@ -28,7 +28,8 @@ MYPORTDOCS=	apache/CONFIG \
 		CONFIG LICENSE \
 		INSTALL README
 
-CONFIGURE_ARGS=	CFLAGS="${CFLAGS}" --with-apxs=${APXS}
+CONFIGURE_ARGS=	CFLAGS="${CFLAGS} -I`${LOCALBASE}/bin/apr-1-config --includedir`" \
+		--with-apxs=${APXS}
 
 # WITH_SETID_MODE should be a value of "owner", "force", or "paranoid".
 # It's important that you understand the differences between each mode.

@@ -4,8 +4,7 @@
 PORTNAME=	rzip
 PORTVERSION=	2.1
 CATEGORIES=	archivers
-MASTER_SITES=	SAMBA
-MASTER_SITE_SUBDIR=	rzip
+MASTER_SITES=	SAMBA/rzip
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Compression program similar to gzip or bzip2

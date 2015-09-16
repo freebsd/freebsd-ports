@@ -2,6 +2,7 @@
 
 PORTNAME=	kensa
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,6 +11,7 @@ COMMENT=	Heroku Add-On provider tool
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST= yes

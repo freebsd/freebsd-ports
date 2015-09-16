@@ -2,7 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	nsscache
-PORTVERSION=	0.29
+PORTVERSION=	0.30
+PORTREVISION=	1
+DISTVERSIONPREFIX=	version/
 CATEGORIES=	net python
 
 MAINTAINER=	k@kev009.com
@@ -12,14 +14,12 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pycurl.so:${PORTSDIR}/ftp/py-curl \
-		${PYTHON_PKGNAMEPREFIX}ldap2>0:${PORTSDIR}/net/py-ldap2 \
-		${PYTHON_PKGNAMEPREFIX}bsddb>0:${PORTSDIR}/databases/py-bsddb
+		${PYTHON_PKGNAMEPREFIX}ldap>0:${PORTSDIR}/net/py-ldap
 
 USES=		python:2
 USE_PYTHON=	autoplist distutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_TAGNAME=	version/${DISTVERSION}
 
 PLIST_FILES=	'@sample etc/nsscache.conf.sample' '@dir /var/db/nsscache' \
 		man/man1/nsscache.1.gz man/man5/nsscache.conf.5.gz

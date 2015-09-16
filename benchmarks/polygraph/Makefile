@@ -32,28 +32,17 @@ ZLIB_DESC=	Enable HTTP compression support
 
 OPTIONS_DEFAULT=	OPENSSL ZLIB
 
+GNUPLOT_RUN_DEPENDS=	 gnuplot:${PORTSDIR}/math/gnuplot
+
+OPENSSL_USE=		OPENSSL=yes
+PERL_USES=		perl5
+PERL_USE=		PERL5=run
+ZLIB_CONFIGURE_WITH=	zlib=/usr
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MGNUPLOT}
-RUN_DEPENDS+=	 gnuplot:${PORTSDIR}/math/gnuplot
-.endif
-
 .if ${PORT_OPTIONS:MOPENSSL}
-USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
-.else
-CONFIGURE_ARGS+=	--without-ssl
-.endif
-
-.if ${PORT_OPTIONS:MPERL}
-USES+=		perl5
-USE_PERL5=	run
-.endif
-
-.if ${PORT_OPTIONS:MZLIB}
-CONFIGURE_ARGS+=	--with-zlib=/usr
-.else
-CONFIGURE_ARGS+=	--without-zlib
 .endif
 
 .include <bsd.port.mk>

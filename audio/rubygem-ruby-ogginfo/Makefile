@@ -11,9 +11,9 @@ COMMENT=	Ruby library to access to information on ogg files
 
 LICENSE=	GPLv3
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-GEM_NAME=	${DISTNAME}
 RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

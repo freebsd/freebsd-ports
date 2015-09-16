@@ -4,6 +4,7 @@
 PORTNAME=	groupoffice
 DISTVERSIONPREFIX=	com-
 DISTVERSION=	6.0.27
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/group-office/${DISTVERSION:R}
 
@@ -11,10 +12,20 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modular web application framework vor office
 
 RESTRICTED=	Free for personal use only
+
 NO_BUILD=	yes
 USE_PHP=	mysqli session mbstring pcre xml
 WANT_PHP_WEB=	yes
 USE_MYSQL=	yes
+USES=		shebangfix
+SHEBANG_FILES=	go/vendor/tcpdf/tools/tcpdf_addfont.php \
+		groupoffice \
+		groupofficecli.php \
+		install/autoinstall.php \
+		modules/postfixadmin/scripts/vacation.pl \
+		modules/sync/z-push21/install.sh \
+		vendor/fkooman/php-oauth-client/bin/php-oauth-client-create-tables
+NO_ARCH=	yes
 
 WWWDIR?=	${PREFIX}/www/${PORTNAME}${DISTVERSION:R:R}
 
@@ -58,14 +69,6 @@ LIB_DEPENDS=	libwbxml2.so:${PORTSDIR}/textproc/wbxml2
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	${CP} -R ${WRKSRC}/ ${STAGEDIR}${WWWDIR}
-	@${TOUCH} ${STAGEDIR}${WWWDIR}/config.php
-
-create-plist:
-	@${FIND} -s ${WRKSRC}/${file} -not -type d \
-	    | ${SED} -e 's,^${WRKSRC},%%WWWDIR%%,' > ${PLIST}
-	@${ECHO_CMD} '@exec touch %D/%%WWWDIR%%/config.php;chown ${WWWOWN} %D/%%WWWDIR%%/config.php' >> ${PLIST}
-	@${ECHO_CMD} '@unexec if [ ! -s %D/%%WWWDIR%%/config.php ];then rm -f %D/%%WWWDIR%%/config.php;fi' >> ${PLIST}
-	@${FIND} -ds ${WRKSRC}/${file} -type d \
-	    | ${SED} -e 's,^${WRKSRC},@dirrm %%WWWDIR%%,' >> ${PLIST}
+	@${TOUCH} ${STAGEDIR}${WWWDIR}/config.php.sample
 
 .include <bsd.port.mk>

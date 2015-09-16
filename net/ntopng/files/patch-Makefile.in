@@ -1,6 +1,6 @@
---- Makefile.in.orig	2014-09-07 01:22:11.756545075 +0600
-+++ Makefile.in	2014-09-07 01:45:36.496401797 +0600
-@@ -6,67 +6,32 @@
+--- Makefile.in.orig	2015-05-13 13:29:47.790658000 -0500
++++ Makefile.in	2015-05-13 13:30:08.207655000 -0500
+@@ -6,68 +6,28 @@
  INSTALL_DIR=@INSTALL_DIR@
  MAN_DIR=@MAN_DIR@
  ######
@@ -70,19 +70,17 @@
 -	else
 -		ZEROMQ_LIB = $(ZMQ_STATIC)
 -	endif
-+ZEROMQ_INC = $(shell pkg-config --cflags libzmq)
-+ZMQ_STATIC=/usr/local/lib/libzmq.a
-+ifeq ($(wildcard $(ZMQ_STATIC)),)
-+	ZEROMQ_LIB = $(shell pkg-config --libs libzmq)
- else
+-else
 -	ZEROMQ_HOME=./third-party/zeromq-3.2.4
 -	ZEROMQ_INC=-I$(ZEROMQ_HOME)/include
 -	ZEROMQ_LIB=$(ZEROMQ_HOME)/src/.libs/libzmq.a
-+	ZEROMQ_LIB = $(ZMQ_STATIC)
- endif
+-endif
++ZEROMQ_INC = $(shell pkg-config --cflags libzmq)
++ZEROMQ_LIB = $(shell pkg-config --libs libzmq)
  ######
  EWH_HOME=third-party/EWAHBoolArray
-@@ -91,22 +56,6 @@
+ EWH_INC=$(EWH_HOME)/headers
+@@ -91,22 +51,6 @@
  
  LIB_TARGETS =
  
@@ -105,7 +103,7 @@
  .PHONY: default all clean docs test
  
  .NOTPARALLEL: default all
-@@ -129,24 +78,6 @@
+@@ -129,24 +73,6 @@
  $(TARGET): $(OBJECTS) $(LIBRRDTOOL) Makefile
  	$(GPP) $(OBJECTS) -Wall $(LIBS) -o $@
  
@@ -130,7 +128,7 @@
  clean:
  	-rm -f *.o *~ svn-commit.* #config.h
  	-rm -f $(TARGET)
-@@ -156,10 +87,6 @@
+@@ -156,10 +82,6 @@
  	cat privkey.pem cert.pem > httpdocs/ssl/ntopng-cert.pem
  	/bin/rm -f privkey.pem cert.pem
  
@@ -141,7 +139,7 @@
  geoip: httpdocs/geoip/GeoLiteCity.dat httpdocs/geoip/GeoLiteCityv6.dat httpdocs/geoip/GeoIPASNum.dat httpdocs/geoip/GeoIPASNumv6.dat
  
  httpdocs/geoip/GeoLiteCity.dat:
-@@ -189,7 +116,6 @@
+@@ -189,7 +111,6 @@
  	cp -r doc *.cpp *.h configure COPYING README.* *.in ntopng.8 httpdocs scripts packages third-party ntopng-@NTOPNG_VERSION@
  	find ntopng-@NTOPNG_VERSION@ -name ".svn" | xargs /bin/rm -rf
  	-rm ntopng-@NTOPNG_VERSION@/httpdocs/geoip/*
@@ -149,7 +147,7 @@
  	tar cvfz ntopng-@NTOPNG_VERSION@.tgz ntopng-@NTOPNG_VERSION@
  	#
  	rm -f $(HOME)/rpmbuild/RPMS/$(PLATFORM)/$(RPM_PKG)
-@@ -232,21 +158,8 @@
+@@ -232,21 +153,8 @@
  dist:
  	rm -rf ntopng-@NTOPNG_VERSION@
  	mkdir ntopng-@NTOPNG_VERSION@

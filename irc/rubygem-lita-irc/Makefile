@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lita-irc
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	irc rubygems
 MASTER_SITES=	RG
 
@@ -14,6 +14,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-cinch>=2.0:${PORTSDIR}/irc/rubygem-cinch \
 		rubygem-lita>=4.0:${PORTSDIR}/net-im/rubygem-lita
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

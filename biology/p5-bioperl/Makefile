@@ -3,7 +3,7 @@
 
 PORTNAME=	bioperl
 PORTVERSION=	1.6.924
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CJFIELDS
@@ -59,16 +59,22 @@ BUILD_DEPENDS=	p5-Algorithm-Munkres>=0:${PORTSDIR}/math/p5-Algorithm-Munkres \
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	modbuild
+NO_ARCH=	yes
 
-OPTIONS_DEFINE=	DOCS PGTEST SQLITETEST
+OPTIONS_DEFINE=	DOCS EXAMPLES PGTEST SQLITETEST
 PGTEST_DESC=	Test PostGreSQL
 SQLITETEST_DESC=	Test SQLite
 PGTEST_RUN_DEPENDS=	p5-DBD-Pg>=3:${PORTSDIR}/databases/p5-DBD-Pg
 PGTEST_BUILD_DEPENDS=	p5-DBD-Pg>=3:${PORTSDIR}/databases/p5-DBD-Pg
 SQLITETEST_RUN_DEPENDS=	p5-DBD-SQLite>=1:${PORTSDIR}/databases/p5-DBD-SQLite
 SQLITETEST_BUILD_DEPENDS=	p5-DBD-SQLite>=1:${PORTSDIR}/databases/p5-DBD-SQLite
+
+post-patch:
+	@${FIND} ${WRKSRC}/examples ${WRKSRC}/doc -name "*.pl" -o -name "*.cgi" \
+		-o -name "*.PL" | ${XARGS} ${REINPLACE_CMD} -i '' -Ee \
+		'1s|(/usr)?/bin/perl|${perl_CMD}|'
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

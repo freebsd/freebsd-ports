@@ -9,7 +9,7 @@ CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION} \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/
 
-MAINTAINER=	bdrewery@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CGI program for administering Qmail with vchkpw/vpopmail
 
 LICENSE=	GPLv2 GPLv3

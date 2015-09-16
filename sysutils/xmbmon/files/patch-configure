@@ -1,6 +1,6 @@
---- configure.orig	Wed Feb  1 20:34:58 2006
-+++ configure	Wed Feb  1 20:35:38 2006
-@@ -3487,7 +3487,6 @@
+--- configure.orig	2004-08-13 07:22:18 UTC
++++ configure
+@@ -3487,7 +3487,6 @@ host_os=`echo $ac_cv_host | sed 's/^\([^
  
  case "${host}" in
  	i?86-*-freebsd*)
@@ -8,7 +8,7 @@
  		;;
  	i?86-*-linux-*)
    		CC=gcc
-@@ -3499,7 +3498,6 @@
+@@ -3499,7 +3498,6 @@ case "${host}" in
  		ADDLIBS="-li386"
  		;;
  	*)
@@ -16,7 +16,7 @@
  		;;
  esac
  
-@@ -3946,7 +3944,7 @@
+@@ -3946,7 +3944,7 @@ fi
  done
  
  

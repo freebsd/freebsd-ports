@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-shell-extension-hidetopbar
-PORTVERSION=	0.0.0.20141126
+PORTVERSION=	0.0.0.20150613
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome3
 
@@ -23,19 +23,19 @@ GLIB_SCHEMAS=	org.gnome.shell.extensions.hidetopbar.gschema.xml
 
 GH_ACCOUNT=	mlutfy
 GH_PROJECT=	hidetopbar
-GH_TAGNAME=	033a2e5
+GH_TAGNAME=	9758a91
 
 PKGMESSAGE=	../gnome-shell-extra-extensions/pkg-message.slaves
 
 NO_BUILD=	yes
 
 do-install:
-		@${MKDIR} ${STAGEDIR}${PREFIX}/share/glib-2.0/schemas/
-		@${MKDIR} ${STAGEDIR}${PREFIX}/share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca
-		@(cd ${WRKSRC} && ${CP} org.gnome.shell.extensions.hidetopbar.gschema.xml \
-			${STAGEDIR}${PREFIX}/share/glib-2.0/schemas/)
-		@${RM} -fr ${WRKSRC}/org.gnome.shell.extensions.hidetopbar.gschema.xml
-		@(cd ${WRKSRC} && ${CP} -pPR * \
-			${STAGEDIR}${PREFIX}/share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca)
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/glib-2.0/schemas/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca
+	${INSTALL_DATA} ${WRKSRC}/org.gnome.shell.extensions.hidetopbar.gschema.xml \
+		${STAGEDIR}${PREFIX}/share/glib-2.0/schemas/
+	@${RM} -fr ${WRKSRC}/org.gnome.shell.extensions.hidetopbar.gschema.xml
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${PREFIX}/share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca/
 
 .include <bsd.port.mk>

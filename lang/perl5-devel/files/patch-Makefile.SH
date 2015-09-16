@@ -1,6 +1,6 @@
---- Makefile.SH.orig	2015-04-15 07:47:18 UTC
+--- Makefile.SH.orig	2015-09-08 05:21:36 UTC
 +++ Makefile.SH
-@@ -31,7 +31,6 @@ esac
+@@ -40,7 +40,6 @@ esac
  pwd="`pwd`"
  linklibperl='$(LIBPERL)'
  linklibperl_nonshr=''

@@ -1,2 +1,2 @@
 lib/elasticsearch/plugins/river-rabbitmq/amqp-client-3.3.4.jar
-lib/elasticsearch/plugins/river-rabbitmq/elasticsearch-river-rabbitmq-2.5.0.jar
+lib/elasticsearch/plugins/river-rabbitmq/elasticsearch-river-rabbitmq-2.6.0.jar

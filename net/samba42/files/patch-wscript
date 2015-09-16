@@ -1,0 +1,18 @@
+--- wscript.orig	2014-10-01 09:17:32.000000000 +0000
++++ wscript	2014-11-03 14:50:56.381380474 +0000
+@@ -40,7 +40,6 @@
+     opt.RECURSE('lib/ntdb')
+     opt.RECURSE('selftest')
+     opt.RECURSE('source4/lib/tls')
+-    opt.RECURSE('pidl')
+     opt.RECURSE('source3')
+     opt.RECURSE('lib/util')
+ 
+@@ -162,7 +161,6 @@
+     conf.RECURSE('lib/subunit/c')
+     conf.RECURSE('libcli/smbreadline')
+     conf.RECURSE('lib/crypto')
+-    conf.RECURSE('pidl')
+     conf.RECURSE('selftest')
+     conf.RECURSE('source3')
+     conf.RECURSE('lib/texpect')

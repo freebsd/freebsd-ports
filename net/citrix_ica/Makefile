@@ -2,17 +2,18 @@
 # $FreeBSD: head/net/citrix_ica/Makefile 364689 2014-08-12 10:13:54Z marino $
 
 PORTNAME=	citrix_ica
-PORTVERSION=	12.1
+PORTVERSION=	13.2.0
 PORTREVISION=	3
 CATEGORIES=	net comms linux
 MASTER_SITES=	#
-DISTNAME=	linuxx86_12.1.0.203066
+DISTNAME=	linuxx86-13.2.0.322243
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Citrix(R) Presentation Server(TM) client
 
 ONLY_FOR_ARCHS=	i386 amd64
 USES=		webplugin:linux
+WEBPLUGIN_DIR=	${PREFIX}/ICAClient
 WEBPLUGIN_FILES=	npica.so
 USE_LINUX=	yes
 USE_LINUX_APPS=	alsalib gtk2 openmotif
@@ -25,6 +26,7 @@ CDIR=		${PREFIX}/ICAClient
 CERTDIR=	${CDIR}/keystore/cacerts
 
 PLIST_SUB=	MOZILLA_HOME=${MOZILLA_HOME}
+
 .if defined(ICA_CERTS)
 PLIST_SUB+=	HAVE_ICA_CERTS="" ICA_CERTS="${ICA_CERTS}" CERTDIR="${CERTDIR}"
 .else
@@ -37,7 +39,15 @@ SUB_LIST=	CDIR=${CDIR}
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=May not be redistributed due to licensing. Please visit http://www.citrix.com/downloads/citrix-receiver/receivers-by-platform/receiver-for-linux-121.html to accept their license and download ${DISTFILES} into ${DISTDIR}
+IGNORE=May not be redistributed due to licensing. Please visit http://www.citrix.com/downloads/citrix-receiver/linux/receiver-for-linux-13-2.html accept their license and download ${DISTFILES} into ${DISTDIR}
+.endif
+
+.if defined(ICA_CERTS)
+.for f in ${ICA_CERTS}
+PLIST_FILES+=	${CERTDIR}/${f}
+HASH_${f}!=	openssl x509 -noout -hash -in ${DISTDIR}/${f}
+PLIST_FILES+=	${CERTDIR}/${HASH_${f}}.0
+.endfor
 .endif
 
 pre-fetch:
@@ -50,6 +60,11 @@ pre-fetch:
 .endif
 .endfor
 .endif
+
+post-patch:
+# linux syscall epoll_create is not yet implemented
+	@${REINPLACE_CMD} -e 's|^ClientAudio=On|ClientAudio=Off|' \
+		${WRKSRC}/linuxx86/linuxx86.cor/nls/*/module.ini
 
 do-install:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${STAGEDIR}${PREFIX}|g' ${WRKDIR}/linuxx86/hinst
@@ -70,12 +85,13 @@ do-install:
 	${MKDIR} ${STAGEDIR}${CDIR}
 	${MKDIR} ${STAGEDIR}${CDIR}/config
 	cd ${WRKDIR}/linuxx86/linuxx86.cor/ && ${COPYTREE_SHARE} . ${STAGEDIR}${CDIR}
-	cp ${WRKDIR}/setupwfc ${STAGEDIR}${CDIR}
+	${CP} ${WRKDIR}/setupwfc ${STAGEDIR}${CDIR}
 
 .if defined(ICA_CERTS)
 	${MKDIR} ${STAGEDIR}${CERTDIR}
 .for f in ${ICA_CERTS}
 	${INSTALL_DATA} ${DISTDIR}/${f} ${STAGEDIR}${CERTDIR}
+	${LN} -sf ${f} ${STAGEDIR}${CERTDIR}/$$(openssl x509 -noout -hash -in ${DISTDIR}/${f}).0
 .endfor
 .endif
 

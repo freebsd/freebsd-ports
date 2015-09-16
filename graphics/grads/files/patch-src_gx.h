@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- src/gx.h.orig	Fri Mar 25 15:37:16 2005
 +++ src/gx.h	Fri Mar 25 15:37:53 2005
 @@ -45,7 +45,7 @@

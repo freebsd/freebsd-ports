@@ -1,11 +1,36 @@
---- Makefile.in.orig	2006-09-06 03:37:33.000000000 +0000
-+++ Makefile.in	2011-07-21 03:18:15.000000000 +0000
-@@ -54,7 +54,7 @@
- 	rm -rf casket *~
+--- Makefile.in.orig	2006-09-06 03:37:33 UTC
++++ Makefile.in
+@@ -25,7 +25,7 @@ MYDATADIR = @datadir@/$(PACKAGE)/ruby
+ DESTDIR =
+ 
+ # Building binaries
+-RUNENV = LD_LIBRARY_PATH=.:..:../..:/usr/local/lib
++RUNENV =
  
  
--install :
-+install : all
- 	cd depot ; make install
- 	cd curia ; make install
- 	cd villa ; make install
+ 
+@@ -34,15 +34,16 @@ RUNENV = LD_LIBRARY_PATH=.:..:../..:/usr
+ #================================================================
+ 
+ 
+-all :
+-	cd depot && [ -f Makefile ] || $(RUNENV) ruby extconf.rb ; $(RUNENV) make
+-	cd curia && [ -f Makefile ] || $(RUNENV) ruby extconf.rb ; $(RUNENV) make
+-	cd villa && [ -f Makefile ] || $(RUNENV) ruby extconf.rb ; $(RUNENV) make
+-	@printf '\n'
+-	@printf '#================================================================\n'
+-	@printf '# Ready to install.\n'
+-	@printf '#================================================================\n'
++all:
++	for d in depot curia villa; do \
++		(cd $$d && ${MAKE} all); \
++	done
+ 
++.PHONY: configure
++configure:
++	for d in depot curia villa; do \
++		(cd $$d && ${LOCALBASE}/bin/ruby extconf.rb); \
++	done
+ 
+ clean :
+ 	cd depot ; if [ -f Makefile ] ; then $(RUNENV) make -i clean ; fi || true

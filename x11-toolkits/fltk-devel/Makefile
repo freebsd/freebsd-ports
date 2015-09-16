@@ -14,7 +14,6 @@ COMMENT=	Cross-platform C++ graphical user interface toolkit
 LICENSE=	LGPL20
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
@@ -24,7 +23,7 @@ EXAMPLES_CMAKE_OFF=	-DOPTION_BUILD_EXAMPLES:BOOL=OFF
 USE_XORG=	xft
 USE_GL=		glu
 USE_LDCONFIG=	${PREFIX}/lib/fltk-devel
-USES+=		cmake:outsource
+USES+=		cmake:outsource jpeg
 LDFLAGS+=	-L${LOCALBASE}/lib
 CMAKE_ARGS+=	-DOPTION_BUILD_SHARED_LIBS:BOOL=ON \
     		-DPREFIX_BIN:PATH=${PREFIX}/bin/fltk-devel \

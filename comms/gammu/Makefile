@@ -41,14 +41,9 @@ post-install:
 	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
 		-d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MBASH}
-BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
-RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
-PLIST_FILES+=	etc/bash_completion.d/gammu
-.else
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-contrib_CMakeLists.txt
-.endif
+BASH_BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BASH_RUN_DEPENDS=	${BASH_BUILD_DEPENDS}
+BASH_PLIST_FILES=	etc/bash_completion.d/gammu
+BASH_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-contrib_CMakeLists.txt
 
 .include <bsd.port.mk>

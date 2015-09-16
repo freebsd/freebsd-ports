@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	weberp
-PORTVERSION=	4.12.2
+PORTVERSION=	4.12.3
+PORTREVISION=	1
 CATEGORIES=	finance www
 MASTER_SITES=	SF/web-erp/
 DISTNAME=	webERP_${PORTVERSION}
@@ -14,7 +15,8 @@ LICENSE=	GPLv2
 
 PORTSCOUT=	skipv:3.12
 
-USES=		gettext zip
+USES=		gettext shebangfix zip
+SHEBANG_FILES=	report_runner.php
 USE_PHP=	mysql gettext
 WRKSRC=		${WRKDIR}/webERP
 

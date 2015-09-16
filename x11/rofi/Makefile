@@ -1,20 +1,18 @@
 # $FreeBSD$
 
 PORTNAME=	rofi
-PORTVERSION=	0.15.2
+PORTVERSION=	0.15.7
 CATEGORIES=	x11
-MASTER_SITES=	GH
 
 MAINTAINER=	nomoo@nomoo.ru
 COMMENT=	Window switcher, run dialog and dmenu replacement
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	DaveDavenport
-GH_TAGNAME=	0.15.2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 USES=		autoreconf pkgconfig gmake
 USE_XORG=	x11 xinerama xft

@@ -5,8 +5,7 @@ PORTNAME=	fidocadj
 PORTVERSION=	0.24.4
 #PORTREVISION=	0
 CATEGORIES=	cad
-MASTER_SITES=	SF:src,docs
-MASTER_SITE_SUBDIR=	${PORTNAME}/:src ${PORTNAME}/manuals/:docs
+MASTER_SITES=	SF/${PORTNAME}/:src SF/${PORTNAME}/manuals/:docs
 DISTFILES=	${PORTNAME}.jar:src
 EXTRACT_ONLY=
 
@@ -26,7 +25,7 @@ USE_JAVA=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
+DOCS_DISTFILES=	${PORTNAME}_manual_en.pdf:docs
 
 FDCJ_MANUAL=	${PORTNAME}_manual_en.pdf
 
@@ -34,13 +33,8 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${MKDIR} ${STAGEDIR}${DATADIR}; \
 	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}.jar ${STAGEDIR}${DATADIR}/
-.if ${PORT_OPTIONS:MDOCS}
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR} && \
 	${INSTALL_DATA} ${DISTDIR}/${FDCJ_MANUAL} ${STAGEDIR}${DOCSDIR}/
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-DISTFILES+=	${PORTNAME}_manual_en.pdf:docs
-.endif
 
 .include <bsd.port.mk>

@@ -19,12 +19,11 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack \
 		libpng.so:${PORTSDIR}/graphics/png \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libFLAC.so:${PORTSDIR}/audio/flac \
 		libphysfs.so:${PORTSDIR}/devel/physfs
 
-USES=		gmake cmake openal:soft pkgconfig
+USES=		cmake gmake jpeg openal:soft pkgconfig
 USE_XORG=	x11 xpm xext xcursor xxf86vm xxf86dga
 USE_GL=		glu
 USE_GNOME=	gtk20

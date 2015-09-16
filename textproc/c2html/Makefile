@@ -4,8 +4,7 @@
 PORTNAME=		c2html
 PORTVERSION=		0.9.6
 CATEGORIES=		textproc www
-MASTER_SITES=		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/www/converters
+MASTER_SITES=		SUNSITE/apps/www/converters
 
 MAINTAINER=		mkamm@gmx.net
 COMMENT=	C-language sources to HTML converter

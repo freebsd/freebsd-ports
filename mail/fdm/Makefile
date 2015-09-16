@@ -18,11 +18,12 @@ PLIST_FILES=	bin/fdm man/man1/fdm.1.gz man/man5/fdm.conf.5.gz
 PORTDOCS=	CHANGES README MANUAL
 PORTEXAMPLES=	n-marriott.conf f-terbeck.conf t-ulmer.conf w-maier.conf g-lando.conf
 MAKE_ARGS=	-DPCRE -DDB INSTALLBIN="${INSTALL_PROGRAM}"
+USE_OPENSSL=	yes
 HAS_CONFIGURE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/*.[ch15]
-	@${REINPLACE_CMD} -e 's|/usr/local/include/openssl|/usr/include/openssl|;\
+	@${REINPLACE_CMD} -e 's|/usr/local/include/openssl|${OPENSSLINC}|;\
 		s|-I-||g; s|-g bin -o root||g; s|^FDEBUG|#&|;\
 		s|/usr/local|${LOCALBASE}|g' ${WRKSRC}/${MAKEFILE}
 

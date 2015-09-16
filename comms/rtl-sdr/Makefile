@@ -3,7 +3,7 @@
 
 PORTNAME=	rtl-sdr
 PORTVERSION=	20140210
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
@@ -24,13 +24,8 @@ DOCSDIR=	${PREFIX}/share/doc/librtlsdr
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
-.else
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Makefile.am
-.endif
+DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOCS_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-Makefile.am
 
 post-patch:
 	@${REINPLACE_CMD} 's|^pkgdocdir=.*|pkgdocdir=${DOCSDIR}|' \

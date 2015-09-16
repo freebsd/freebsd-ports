@@ -5,8 +5,7 @@ PORTNAME=	sdl_gfx
 PORTVERSION=	2.0.25
 PORTREVISION=	3
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.ferzkopp.net/Software/%SUBDIR%/
-MASTER_SITE_SUBDIR=	SDL_gfx-${PORTVERSION:R}
+MASTER_SITES=	http://www.ferzkopp.net/Software/SDL_gfx-${PORTVERSION:R}/
 DISTNAME=	SDL_gfx-${PORTVERSION}
 
 MAINTAINER=	mva@FreeBSD.org

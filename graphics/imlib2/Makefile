@@ -6,8 +6,7 @@ PORTVERSION=	1.4.6
 PORTREVISION=	6
 PORTEPOCH=	2
 CATEGORIES=	graphics enlightenment
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	enlightenment/imlib2-src/${PORTVERSION}
+MASTER_SITES=	SF/enlightenment/imlib2-src/${PORTVERSION}
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	The next generation graphics library for Enlightenment
@@ -55,7 +54,7 @@ PLIST_SUB=	X11=""
 .endif
 
 .if ${PORT_OPTIONS:MJPEG}
-LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+USES+=		jpeg
 PLIST_SUB+=	JPEG=""
 .else
 CONFIGURE_ARGS+=	--without-jpeg

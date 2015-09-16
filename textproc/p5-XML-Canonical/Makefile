@@ -3,7 +3,7 @@
 
 PORTNAME=	XML-Canonical
 PORTVERSION=	0.10
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,5 +20,11 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure
 USES=		perl5 pkgconfig
+
+post-patch:
+	@${REINPLACE_CMD} -e '/die "VERSION" unless /d' ${WRKSRC}/Makefile.PL
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/XML/Canonical/Canonical.so
 
 .include <bsd.port.mk>

@@ -18,8 +18,6 @@ USES=		perl5
 USE_PERL5=	configure
 
 post-install:
-	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Encode/HanConvert/HanConvert.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Encode/HanConvert/HanConvert.so
-	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Encode/HanConvert/HanConvert.so
 
 .include <bsd.port.mk>

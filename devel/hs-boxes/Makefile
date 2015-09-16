@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	boxes
-PORTVERSION=	0.1.3
-PORTREVISION=	1
+PORTVERSION=	0.1.4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

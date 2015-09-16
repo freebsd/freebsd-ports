@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	get_iplayer
-PORTVERSION=	2.91
+PORTVERSION=	2.94
 CATEGORIES=	net multimedia
 MASTER_SITES=	ftp://ftp.infradead.org/pub/${PORTNAME}/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
@@ -25,6 +25,7 @@ USE_PERL5=	run
 perl_OLD_CMD=	${SETENV} perl
 SHEBANG_FILES=	${PORTNAME} ${PORTNAME}.cgi
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 USE_RC_SUBR=	${PORTNAME}
 
@@ -43,8 +44,6 @@ PORTDOCS=	CHANGELOG-get_iplayer.cgi.txt CHANGELOG.txt \
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	${REINPLACE_CMD} -e "s|/usr/bin/get_iplayer|${PREFIX}/bin/${PORTNAME}|" \
 		${WRKSRC}/README-get_iplayer.cgi.txt ${WRKSRC}/get_iplayer.cgi
@@ -61,9 +60,9 @@ do-install:
 .for DIR in html plugins
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} ${DIR} ${STAGEDIR}${WWWDIR})
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
-.endif
 
 .include <bsd.port.mk>

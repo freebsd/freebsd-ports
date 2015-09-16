@@ -3,6 +3,7 @@
 
 PORTNAME=	qt4-gui
 PORTVERSION=	1.8.2
+PORTREVISION=	1
 CATEGORIES=	net-im
 PKGNAMESUFFIX?=	${KDE_SUFFIX}${PKGNAMESUFFIX2}
 
@@ -16,12 +17,26 @@ RUN_DEPENDS=	${LOCALBASE}/lib/licq/protocol_icq.so:${PORTSDIR}/${LICQ_PORT}-icq
 
 USE_XORG=	x11 xext ice xscrnsaver
 USES=		cmake
-USE_QT4=	qmake_build moc_build rcc_build uic_build linguist_build
+USE_QT4=	qmake_build moc_build rcc_build uic_build linguisttools_build \
+		corelib xml gui
 
-OPTIONS_DEFINE=	KDE4
-OPTIONS_DEFAULT=
+OPTIONS_DEFINE=	HUNSPELL KDE4
+OPTIONS_DEFAULT=HUNSPELL
 
 LICQ_PORT?=	net-im/licq
+
+HUNSPELL_LIB_DEPENDS=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell
+HUNSPELL_CMAKE_ON=	-DHUNSPELL_INCLUDE_DIRS=${LOCALBASE}/include/hunspell \
+			-DHUNSPELL_LIBRARIES=${LOCALBASE}/lib/libhunspell-1.3.so \
+			-DHUNSPELL_FOUND:BOOL=ON
+HUNSPELL_CMAKE_OFF=	-DHUNSPELL_FOUND:BOOL=OFF
+
+KDE4_USE=		KDE4=kdelibs,automoc4
+KDE4_PREVENTS=		HUNSPELL
+KDE4_CMAKE_ON=		-DWITH_KDE:BOOL=ON
+KDE4_CMAKE_OFF=		-DWITH_KDE:BOOL=OFF
+KDE4_PLIST_SUB=		GUI_NAME=kde4 WITH_KDE="" WITH_QT="@comment "
+KDE4_PLIST_SUB_OFF=	GUI_NAME=qt4  WITH_KDE="@comment " WITH_QT=""
 
 .include <bsd.port.options.mk>
 
@@ -29,16 +44,12 @@ LICQ_PORT?=	net-im/licq
 
 .if ${PORT_OPTIONS:MKDE4}
 KDE_SUFFIX=	-kde
-USE_KDE4=	kdelibs automoc4
-CMAKE_ARGS+=	-DWITH_KDE:BOOL=ON
-PLIST_SUB+=	GUI_NAME=kde4
-PLIST_SUB+=	WITH_KDE=""
-PLIST_SUB+=	WITH_QT="@comment "
-.else
-USE_QT4+=	xml gui
-PLIST_SUB+=	GUI_NAME=qt4
-PLIST_SUB+=	WITH_KDE="@comment "
-PLIST_SUB+=	WITH_QT=""
+.endif
+
+.if ${PORT_OPTIONS:MHUNSPELL}
+.if ${PORT_OPTIONS:MKDE4}
+IGNORE= option HUNSPELL can not be used with KDE4
+.endif
 .endif
 
 .include <bsd.port.mk>

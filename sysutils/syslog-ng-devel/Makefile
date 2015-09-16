@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	syslog-ng
-PORTVERSION=	3.7.0a2
-PORTREVISION=	1
+PORTVERSION=	3.7.1
 PKGNAMESUFFIX=	-devel
 CATEGORIES=	sysutils
 DISTVERSION=	$(PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/)
@@ -16,14 +15,16 @@ COMMENT=	Powerful syslogd replacement
 LIB_DEPENDS=	libevtlog.so:${PORTSDIR}/sysutils/eventlog \
 		libpcre.so:${PORTSDIR}/devel/pcre
 
+BROKEN_FreeBSD_9=	does not build
+
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng[0-9][0-9]-[0-9]* \
 		syslog-ng-devel-[0-9]*
 WRKSRC=		$(WRKDIR)/$(PORTNAME)-$(DISTVERSION)
 
 MAKE_JOBS_UNSAFE=	yes
-OPTIONS_DEFINE=	TCP_WRAPPERS SQL SPOOF IPV6 SMTP JSON GEOIP DOCS REDIS OPENSSL
-OPTIONS_DEFAULT=	OPENSSL JSON
+OPTIONS_DEFINE=	TCP_WRAPPERS SQL SPOOF IPV6 SMTP JSON GEOIP DOCS REDIS JAVA PYTHON
+OPTIONS_DEFAULT=	JSON
 TCP_WRAPPERS_DESC=	Build with TCP Wrappers
 SQL_DESC=		Build with database (libdbi) support
 SPOOF_DESC=		Build with spoof source support
@@ -32,6 +33,8 @@ SMTP_DESC=		Build with SMTP support
 JSON_DESC=		Build with JSON-C support
 GEOIP_DESC=		Build with GeoIP support
 REDIS_DESC=		Build with Redis support
+JAVA_DESC=		Build with Java support (and modules, like Elastic)
+PYTHON_DESC=		Build with Python 2.7 support
 
 USES=		gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
@@ -39,27 +42,21 @@ USE_RC_SUBR=	syslog-ng
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 SUB_FILES=	pkg-message
+USE_OPENSSL=	yes
+WITH_OPENSSL_PORT=	yes
 INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
-		--enable-dynamic-linking \
-		--enable-debug \
+		--enable-dynamic-linking --enable-manpages \
 		--datadir=${PREFIX}/share/syslog-ng/
+		
 
 BROKEN_sparc64=	Does not compile on sparc64: gcc core dump
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MOPENSSL}
-USE_OPENSSL=		yes
-WITH_OPENSSL_PORT=	yes
-CONFIGURE_ARGS+=	--enable-ssl
 CONFIGURE_ENV+=		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 			OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
-PLIST_FILES+=		lib/syslog-ng/libafsocket-tls.so
-.else
-CONFIGURE_ARGS+=	--disable-ssl
-.endif
 
 .if ${PORT_OPTIONS:MTCP_WRAPPERS}
 CONFIGURE_ARGS+=	--enable-tcp-wrapper
@@ -87,7 +84,7 @@ CONFIGURE_ARGS+=	--disable-ipv6
 CONFIGURE_ARGS+=	--enable-geoip
 LIB_DEPENDS+=		libGeoIP.so:${PORTSDIR}/net/GeoIP
 CONFIGURE_ENV+=		GEOIP_LIBS="-L${LOCALBASE}/lib -lGeoIP"
-PLIST_FILES+=		lib/syslog-ng/libtfgeoip.so
+PLIST_FILES+=		lib/syslog-ng/libgeoip-plugin.so
 .else
 CONFIGURE_ARGS+=	--disable-geoip
 .endif
@@ -124,6 +121,32 @@ CONFIGURE_ARGS+=	--enable-json
 PLIST_FILES+= 		lib/syslog-ng/libjson-plugin.so
 .else
 CONFIGURE_ARGS+=        --disable-json
+.endif
+
+.if ${PORT_OPTIONS:MJAVA}
+CONFIGURE_ARGS+=	--enable-java
+USE_JAVA=	yes
+BUILD_DEPENDS=		gradle:${PORTSDIR}/devel/gradle
+PLIST_FILES+= 		lib/syslog-ng/libmod-java.so \
+			lib/syslog-ng/java-modules/syslog-ng-core.jar \
+			lib/syslog-ng/java-modules/log4j-1.2.16.jar \
+			lib/syslog-ng/java-modules/elastic.jar \
+			lib/syslog-ng/java-modules/http.jar \
+			lib/syslog-ng/java-modules/kafka.jar \
+			lib/syslog-ng/java-modules/java-modules.jar \
+			lib/syslog-ng/java-modules/hdfs.jar \
+			lib/syslog-ng/java-modules/syslog-ng-common.jar \
+			lib/syslog-ng/java-modules/dummy.jar
+.else
+CONFIGURE_ARGS+=        --disable-java
+.endif
+
+.if ${PORT_OPTIONS:MPYTHON}
+CONFIGURE_ARGS+=	--enable-python --with-python=2.7
+USES+=			python:2.7
+PLIST_FILES+= 		lib/syslog-ng/libmod-python.so
+.else
+CONFIGURE_ARGS+=        --disable-python
 .endif
 
 .include <bsd.port.pre.mk>

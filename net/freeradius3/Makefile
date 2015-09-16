@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freeradius
-DISTVERSION=	3.0.8
+DISTVERSION=	3.0.9
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -37,7 +37,6 @@ MAKE_ARGS+=	HOME=/dev/null
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	${CPPFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_JOBS_SAFE=	yes
 
 PLIST_SUB=	PORTVERSION=${DISTVERSION} LIBVER=0${PORTVERSION:C/\./0/g}
 
@@ -81,11 +80,7 @@ RADIUS_GROUP=	freeradius
 USERS=		${RADIUS_USER}
 GROUPS=		${RADIUS_GROUP}
 
-.if ${PORT_OPTIONS:MHEIMDAL} && empty(PORT_OPTIONS:MKERBEROS)
-${UNIQUENAME}_SET+=	KERBEROS
-.endif
-
-.if ${PORT_OPTIONS:MKERBEROS}
+.if ${PORT_OPTIONS:MKERBEROS} || ${PORT_OPTIONS:MHEIMDAL}
 .if ${PORT_OPTIONS:MHEIMDAL}
 .if ${PORT_OPTIONS:MHEIMDAL_PORT}
 LIB_DEPENDS+=	libkrb5.so:${PORTSDIR}/security/heimdal

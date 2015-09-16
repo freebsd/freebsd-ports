@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	17.5.3
+PORTVERSION=	18.0.3
 CATEGORIES=	lang parallel
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\
@@ -12,8 +12,14 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:erlangorg
 DIST_SUBDIR=	erlang
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
+PATCH_SITES=	http://olgeni.olgeni.com/~olgeni/distfiles/ \
+		LOCAL/olgeni
+PATCHFILES=	patch-otp-18.0.1 patch-otp-18.0.2 patch-otp-18.0.3
+
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Erlang bindings for wxWindows
+
+RUN_DEPENDS=	${LOCALBASE}/bin/erl:${PORTSDIR}/lang/erlang
 
 WRKSRC=		${WRKDIR}/otp_src_${ERL_RELEASE}
 
@@ -24,13 +30,13 @@ MAKE_JOBS_UNSAFE=yes
 
 OPTIONS_DEFINE=	DOCS
 
-ERL_RELEASE=	17.5
+ERL_RELEASE=	18.0
 
-USES=		autoreconf gmake
+USES=		gmake
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-APP_VERSION=	1.3.3
+APP_VERSION=	1.4
 APP_DIR=	${PREFIX}/lib/erlang/lib/wx-${APP_VERSION}
 
 .include <bsd.port.options.mk>

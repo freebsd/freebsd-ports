@@ -9,9 +9,6 @@ bin/hal-is-caller-privileged
 bin/hal-lock
 bin/hal-set-property
 bin/lshal
-@exec mkdir -p %D/etc/hal/fdi/preprobe
-@exec mkdir -p %D/etc/hal/fdi/policy
-@exec mkdir -p %D/etc/hal/fdi/information
 include/hal/libhal-storage.h
 include/hal/libhal.h
 lib/libhal-storage.a
@@ -94,7 +91,6 @@ share/PolicyKit/policy/org.freedesktop.hal.wol.policy
 %%DATADIR%%/dist/hal.conf
 %%DATADIR%%/fdi/fdi.dtd
 %%DATADIR%%/fdi/information/10freedesktop/01-deprecated-keys.fdi
-@exec mkdir -p %D/%%DATADIR%%/fdi/information/20thirdparty
 %%DATADIR%%/fdi/policy/10osvendor/10-dockstation.fdi
 %%DATADIR%%/fdi/policy/10osvendor/10-input-policy.fdi
 %%DATADIR%%/fdi/policy/10osvendor/10-laptop-panel-mgmt-policy.fdi
@@ -108,35 +104,18 @@ share/PolicyKit/policy/org.freedesktop.hal.wol.policy
 %%DATADIR%%/fdi/policy/10osvendor/20-storage-methods.fdi
 %%DATADIR%%/fdi/policy/10osvendor/30-wol.fdi
 %%DATADIR%%/mount-fuse
-@exec mkdir -p %D/%%DATADIR%%/fdi/policy/20thirdparty
-@exec mkdir -p %D/%%DATADIR%%/fdi/preprobe/10osvendor
-@exec mkdir -p %D/%%DATADIR%%/fdi/preprobe/20thirdparty
-@dirrm %%DATADIR%%/fdi/preprobe/20thirdparty
-@dirrm %%DATADIR%%/fdi/preprobe/10osvendor
-@dirrm %%DATADIR%%/fdi/preprobe
-@dirrm %%DATADIR%%/fdi/policy/20thirdparty
-@dirrm %%DATADIR%%/fdi/policy/10osvendor
-@dirrm %%DATADIR%%/fdi/policy
-@dirrm %%DATADIR%%/fdi/information/20thirdparty
-@dirrm %%DATADIR%%/fdi/information/10freedesktop
-@dirrm %%DATADIR%%/fdi/information
-@dirrm %%DATADIR%%/fdi
-@dirrm %%DATADIR%%/dist
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm libexec/hal/scripts/freebsd
-@dirrm libexec/hal/scripts
-@dirrm libexec/hal
-@dirrm include/hal
-@dirrm etc/hal/fdi/preprobe
-@dirrm etc/hal/fdi/policy
-@dirrm etc/hal/fdi/information
-@dirrm etc/hal/fdi
-@dirrm etc/hal
 @unexec rm -f /var/lib/PolicyKit/user-haldaemon.auths 2>/dev/null || true
 @unexec rm -f /var/run/hald/hald.pid 2>/dev/null || true
-@unexec rmdir /var/run/hald/hald-local 2>/dev/null || true
-@unexec rmdir /var/run/hald/hald-runner 2>/dev/null || true
-@unexec rmdir /var/run/hald 2>/dev/null || true
-@unexec rmdir /var/cache/hald 2>/dev/null || true
-@unexec rmdir /var/lib/hal 2>/dev/null || true
+@dir etc/hal/fdi/information
+@dir etc/hal/fdi/policy
+@dir etc/hal/fdi/preprobe
+@dir %%DATADIR%%/fdi/information/20thirdparty
+@dir %%DATADIR%%/fdi/policy/20thirdparty
+@dir %%DATADIR%%/fdi/preprobe/10osvendor
+@dir %%DATADIR%%/fdi/preprobe/20thirdparty
+@dir /var/cache/hald
+@dir /var/lib/hal
+@dir /var/lib
+@dir /var/run/hald/hald-local
+@dir /var/run/hald/hald-runner
+@dir /var/run/hald

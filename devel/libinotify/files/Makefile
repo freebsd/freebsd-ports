@@ -7,11 +7,12 @@ DPADD=		${LIBPTHREAD}
 LDADD=		-lpthread
 
 SRCS=		utils.c
-SRCS+=		barriers.c
+SRCS+=		compat.c
 SRCS+=		conversions.c
 SRCS+=		dep-list.c
+SRCS+=		inotify-watch.c
+SRCS+=		watch-set.c
 SRCS+=		watch.c
-SRCS+=		worker-sets.c
 SRCS+=		worker-thread.c
 SRCS+=		worker.c
 SRCS+=		controller.c

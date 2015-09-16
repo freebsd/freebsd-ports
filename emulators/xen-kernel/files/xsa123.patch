@@ -1,0 +1,24 @@
+x86emul: fully ignore segment override for register-only operations
+
+For ModRM encoded instructions with register operands we must not
+overwrite ea.mem.seg (if a - bogus in that case - segment override was
+present) as it aliases with ea.reg.
+
+This is CVE-2015-2151 / XSA-123.
+
+Reported-by: Felix Wilhelm <fwilhelm@ernw.de>
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Reviewed-by: Tim Deegan <tim@xen.org>
+Reviewed-by: Keir Fraser <keir@xen.org>
+
+--- a/xen/arch/x86/x86_emulate/x86_emulate.c
++++ b/xen/arch/x86/x86_emulate/x86_emulate.c
+@@ -1757,7 +1757,7 @@ x86_emulate(
+         }
+     }
+ 
+-    if ( override_seg != -1 )
++    if ( override_seg != -1 && ea.type == OP_MEM )
+         ea.mem.seg = override_seg;
+ 
+     /* Early operand adjustments. */

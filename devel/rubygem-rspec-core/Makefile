@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspec-core
-PORTVERSION=	3.2.3
+PORTVERSION=	3.3.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,6 +13,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-rspec-support>=${PORTVERSION:R}:${PORTSDIR}/devel/rubygem-rspec-support
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	2.3.0
+PORTVERSION=	2.4.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/:release \
 		LOCAL/nox:snapshot
@@ -14,7 +14,7 @@ MAINTAINER=	nox@FreeBSD.org
 COMMENT?=	QEMU CPU Emulator - development version
 
 HAS_CONFIGURE=	yes
-USES=		gmake pkgconfig bison perl5 python:2,build tar:bzip2
+USES=		cpe gmake pkgconfig bison perl5 python:2,build tar:bzip2
 USE_PERL5=	build
 USE_XORG=	pixman
 USE_GNOME+=	glib20
@@ -46,7 +46,7 @@ CONFLICTS_INSTALL=	qemu-[0-9]* qemu-sbruno-[0-9]*
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS+=	--localstatedir=/var
-CONFIGURE_ARGS+=	--extra-ldflags=-L${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--extra-ldflags=-L\"${LOCALBASE}/lib\"
 CONFIGURE_ARGS+=	--disable-smartcard-nss --disable-libssh2
 PORTDOCS=	docs qemu-doc.html qemu-tech.html qmp-commands.txt
 
@@ -118,7 +118,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC} --enable-docs \
 	--smbd=${LOCALBASE}/sbin/smbd \
 	--enable-debug \
 	--enable-debug-info \
-	--extra-cflags=-I${WRKSRC}\ -I${LOCALBASE}/include\ -DPREFIX=\\\"${PREFIX}\\\"
+	--extra-cflags=-I${WRKSRC}\ -I${LOCALBASE}/include\ -DPREFIX=\\\"\"${PREFIX}\\\"\"
 
 .if empty(PORT_OPTIONS:MX11)
 CONFIGURE_ARGS+=	--disable-sdl
@@ -151,7 +151,7 @@ LIB_DEPENDS+=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 .if empty(PORT_OPTIONS:MJPEG)
 CONFIGURE_ARGS+=	--disable-vnc-jpeg
 .else
-LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+USES+=		jpeg
 .endif
 
 .if empty(PORT_OPTIONS:MPNG)
@@ -276,8 +276,6 @@ post-install:
 .endif
 	${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup.sample ${STAGEDIR}${PREFIX}/etc
 	${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifdown.sample ${STAGEDIR}${PREFIX}/etc
-	@(cd ${STAGEDIR}${PREFIX}/etc/qemu && \
-		${MV} -i target-x86_64.conf target-x86_64.conf.sample)
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qemu-*
 .endif
 

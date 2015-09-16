@@ -1,0 +1,5 @@
+Recon is a library to be dropped into any other Erlang project, to
+be used to assist DevOps people diagnose problems in production
+nodes.
+
+WWW: http://ferd.github.io/recon/

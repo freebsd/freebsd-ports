@@ -1,0 +1,253 @@
+From e698f4ab05a710e4463317ea978d426d43107e27 Mon Sep 17 00:00:00 2001
+From: Julien Grall <julien.grall@linaro.org>
+Date: Mon, 19 Jan 2015 14:01:09 +0000
+Subject: [PATCH 1/2] xen/arm: vgic-v3: message in the emulation code should be
+ rate-limited
+
+printk by default is not rate-limited by default. Therefore a malicious guest
+may be able to flood the Xen console.
+
+If we use gdprintk, unnecessary information will be printed such as the
+filename and the line. Instead use XENLOG_G_{ERR,DEBUG} combine with %pv.
+
+Also remove the vGICv3 prefix which is not neccessary and update some
+message which were wrong.
+
+Signed-off-by: Julien Grall <julien.grall@linaro.org>
+---
+ xen/arch/arm/vgic-v3.c | 109 +++++++++++++++++++++++++++----------------------
+ 1 file changed, 61 insertions(+), 48 deletions(-)
+
+diff --git a/xen/arch/arm/vgic-v3.c b/xen/arch/arm/vgic-v3.c
+index ae4482c..bece189 100644
+--- a/xen/arch/arm/vgic-v3.c
++++ b/xen/arch/arm/vgic-v3.c
+@@ -168,13 +168,14 @@ static int __vgic_v3_rdistr_rd_mmio_read(struct vcpu *v, mmio_info_t *info,
+         /* Reserved0 */
+         goto read_as_zero;
+     default:
+-        printk("vGICv3: vGICR: read r%d offset %#08x\n not found",
+-               dabt.reg, gicr_reg);
++        printk(XENLOG_G_ERR
++               "%pv: vGICR: read r%d offset %#08x\n not found",
++               v, dabt.reg, gicr_reg);
+         return 0;
+     }
+ bad_width:
+-    printk("vGICv3: vGICR: bad read width %d r%d offset %#08x\n",
+-           dabt.size, dabt.reg, gicr_reg);
++    printk(XENLOG_G_ERR "%pv vGICR: bad read width %d r%d offset %#08x\n",
++           v, dabt.size, dabt.reg, gicr_reg);
+     domain_crash_synchronous();
+     return 0;
+ 
+@@ -244,12 +245,14 @@ static int __vgic_v3_rdistr_rd_mmio_write(struct vcpu *v, mmio_info_t *info,
+         /* RO */
+         goto write_ignore;
+     default:
+-        printk("vGICR: write r%d offset %#08x\n not found", dabt.reg, gicr_reg);
++        printk(XENLOG_G_ERR "%pv: vGICR: write r%d offset %#08x\n not found",
++               v, dabt.reg, gicr_reg);
+         return 0;
+     }
+ bad_width:
+-    printk("vGICR: bad write width %d r%d=%"PRIregister" offset %#08x\n",
+-           dabt.size, dabt.reg, *r, gicr_reg);
++    printk(XENLOG_G_ERR
++          "%pv: vGICR: bad write width %d r%d=%"PRIregister" offset %#08x\n",
++          v, dabt.size, dabt.reg, *r, gicr_reg);
+     domain_crash_synchronous();
+     return 0;
+ 
+@@ -345,15 +348,16 @@ static int __vgic_v3_distr_common_mmio_read(struct vcpu *v, mmio_info_t *info,
+         vgic_unlock_rank(v, rank, flags);
+         return 1;
+     default:
+-        printk("vGICv3: vGICD/vGICR: unhandled read r%d offset %#08x\n",
+-               dabt.reg, reg);
++        printk(XENLOG_G_ERR
++               "%pv: vGICD/vGICR: unhandled read r%d offset %#08x\n",
++               v, dabt.reg, reg);
+         return 0;
+     }
+ 
+ bad_width:
+-    dprintk(XENLOG_ERR,
+-            "vGICv3: vGICD/vGICR: bad read width %d r%d offset %#08x\n",
+-            dabt.size, dabt.reg, reg);
++    printk(XENLOG_G_ERR
++           "%pv: vGICD/vGICR: bad read width %d r%d offset %#08x\n",
++           v, dabt.size, dabt.reg, reg);
+     domain_crash_synchronous();
+     return 0;
+ 
+@@ -458,15 +462,16 @@ static int __vgic_v3_distr_common_mmio_write(struct vcpu *v, mmio_info_t *info,
+         vgic_unlock_rank(v, rank, flags);
+         return 1;
+     default:
+-        printk("vGICv3: vGICD/vGICR: unhandled write r%d "
+-               "=%"PRIregister" offset %#08x\n", dabt.reg, *r, reg);
++        printk(XENLOG_G_ERR
++               "%pv: vGICD/vGICR: unhandled write r%d=%"PRIregister" offset %#08x\n",
++               v, dabt.reg, *r, reg);
+         return 0;
+     }
+ 
+ bad_width:
+-    dprintk(XENLOG_ERR,
+-            "vGICv3: vGICD/vGICR: bad write width %d r%d=%"PRIregister" "
+-            "offset %#08x\n", dabt.size, dabt.reg, *r, reg);
++    printk(XENLOG_G_ERR
++           "%pv: vGICD/vGICR: bad write width %d r%d=%"PRIregister" offset %#08x\n",
++           v, dabt.size, dabt.reg, *r, reg);
+     domain_crash_synchronous();
+     return 0;
+ 
+@@ -521,13 +526,14 @@ static int vgic_v3_rdistr_sgi_mmio_read(struct vcpu *v, mmio_info_t *info,
+         if ( dabt.size != DABT_WORD ) goto bad_width;
+         return 1;
+     default:
+-        printk("vGICv3: vGICR: read r%d offset %#08x\n not found",
+-               dabt.reg, gicr_reg);
++        printk(XENLOG_G_ERR
++               "%pv: vGICR: SGI: read r%d offset %#08x\n not found",
++               v, dabt.reg, gicr_reg);
+         return 0;
+     }
+ bad_width:
+-    printk("vGICv3: vGICR: bad read width %d r%d offset %#08x\n",
+-           dabt.size, dabt.reg, gicr_reg);
++    printk(XENLOG_G_ERR "%pv: vGICR: SGI: bad read width %d r%d offset %#08x\n",
++           v, dabt.size, dabt.reg, gicr_reg);
+     domain_crash_synchronous();
+     return 0;
+ 
+@@ -585,14 +591,16 @@ static int vgic_v3_rdistr_sgi_mmio_write(struct vcpu *v, mmio_info_t *info,
+         /* We do not implement security extensions for guests, write ignore */
+         goto write_ignore;
+     default:
+-        printk("vGICv3: vGICR SGI: write r%d offset %#08x\n not found",
+-               dabt.reg, gicr_reg);
++        printk(XENLOG_G_ERR
++               "%pv: vGICR: SGI: write r%d offset %#08x\n not found",
++               v, dabt.reg, gicr_reg);
+         return 0;
+     }
+ 
+ bad_width:
+-    printk("vGICR SGI: bad write width %d r%d=%"PRIregister" offset %#08x\n",
+-           dabt.size, dabt.reg, *r, gicr_reg);
++    printk(XENLOG_G_ERR
++           "%pv: vGICR: SGI: bad write width %d r%d=%"PRIregister" offset %#08x\n",
++           v, dabt.size, dabt.reg, *r, gicr_reg);
+     domain_crash_synchronous();
+     return 0;
+ 
+@@ -618,9 +626,9 @@ static int vgic_v3_rdistr_mmio_read(struct vcpu *v, mmio_info_t *info)
+     else  if ( (offset >= SZ_64K) && (offset < 2 * SZ_64K) )
+         return vgic_v3_rdistr_sgi_mmio_read(v, info, (offset - SZ_64K));
+     else
+-        gdprintk(XENLOG_WARNING,
+-                 "vGICv3: vGICR: unknown gpa read address %"PRIpaddr"\n",
+-                 info->gpa);
++        printk(XENLOG_G_WARNING
++               "%pv: vGICR: unknown gpa read address %"PRIpaddr"\n",
++                v, info->gpa);
+ 
+     return 0;
+ }
+@@ -642,9 +650,9 @@ static int vgic_v3_rdistr_mmio_write(struct vcpu *v, mmio_info_t *info)
+     else  if ( (offset >= SZ_64K) && (offset < 2 * SZ_64K) )
+         return vgic_v3_rdistr_sgi_mmio_write(v, info, (offset - SZ_64K));
+     else
+-        gdprintk(XENLOG_WARNING,
+-                 "vGICV3: vGICR: unknown gpa write address %"PRIpaddr"\n",
+-                 info->gpa);
++        printk(XENLOG_G_WARNING
++               "%pv: vGICR: unknown gpa write address %"PRIpaddr"\n",
++               v, info->gpa);
+ 
+     return 0;
+ }
+@@ -770,18 +778,19 @@ static int vgic_v3_distr_mmio_read(struct vcpu *v, mmio_info_t *info)
+     case 0xf30 ... 0x5fcc:
+     case 0x8000 ... 0xbfcc:
+         /* These are reserved register addresses */
+-        printk("vGICv3: vGICD: read unknown 0x00c .. 0xfcc r%d offset %#08x\n",
+-               dabt.reg, gicd_reg);
++        printk(XENLOG_G_DEBUG
++               "%pv: vGICD: RAZ on reserved register offset %#08x\n",
++               v, gicd_reg);
+         goto read_as_zero;
+     default:
+-        printk("vGICv3: vGICD: unhandled read r%d offset %#08x\n",
+-               dabt.reg, gicd_reg);
++        printk(XENLOG_G_ERR "%pv: vGICD: unhandled read r%d offset %#08x\n",
++               v, dabt.reg, gicd_reg);
+         return 0;
+     }
+ 
+ bad_width:
+-    dprintk(XENLOG_ERR, "vGICv3: vGICD: bad read width %d r%d offset %#08x\n",
+-            dabt.size, dabt.reg, gicd_reg);
++    printk(XENLOG_G_ERR "%pv: vGICD: bad read width %d r%d offset %#08x\n",
++           v, dabt.size, dabt.reg, gicd_reg);
+     domain_crash_synchronous();
+     return 0;
+ 
+@@ -840,8 +849,9 @@ static int vgic_v3_distr_mmio_write(struct vcpu *v, mmio_info_t *info)
+     case 0x020 ... 0x03c:
+     case 0xc000 ... 0xffcc:
+         /* Implementation defined -- write ignored */
+-        printk("vGICv3: vGICD: write unknown 0x020 - 0x03c r%d offset %#08x\n",
+-               dabt.reg, gicd_reg);
++        printk(XENLOG_G_DEBUG
++               "%pv: vGICD: WI on implementation defined register offset %#08x\n",
++               v, gicd_reg);
+         goto write_ignore;
+     case GICD_IGROUPR ... GICD_IGROUPRN:
+     case GICD_ISENABLER ... GICD_ISENABLERN:
+@@ -885,8 +895,9 @@ static int vgic_v3_distr_mmio_write(struct vcpu *v, mmio_info_t *info)
+             new_target = new_irouter & MPIDR_AFF0_MASK;
+             if ( new_target >= v->domain->max_vcpus )
+             {
+-                printk("vGICv3: vGICD: wrong irouter at offset %#08x\n val 0x%lx vcpu %x",
+-                       gicd_reg, new_target, v->domain->max_vcpus);
++                printk(XENLOG_G_DEBUG
++                       "%pv: vGICD: wrong irouter at offset %#08x\n val 0x%lx vcpu %x",
++                       v, gicd_reg, new_target, v->domain->max_vcpus);
+                 vgic_unlock_rank(v, rank, flags);
+                 return 0;
+             }
+@@ -926,19 +937,21 @@ static int vgic_v3_distr_mmio_write(struct vcpu *v, mmio_info_t *info)
+     case 0xf30 ... 0x5fcc:
+     case 0x8000 ... 0xbfcc:
+         /* Reserved register addresses */
+-        printk("vGICv3: vGICD: write unknown 0x00c 0xfcc  r%d offset %#08x\n",
+-                dabt.reg, gicd_reg);
++        printk(XENLOG_G_DEBUG
++               "%pv: vGICD: write unknown 0x00c 0xfcc  r%d offset %#08x\n",
++               v, dabt.reg, gicd_reg);
+         goto write_ignore;
+     default:
+-        printk("vGICv3: vGICD: unhandled write r%d=%"PRIregister" "
+-               "offset %#08x\n", dabt.reg, *r, gicd_reg);
++        printk(XENLOG_G_ERR
++               "%pv: vGICD: unhandled write r%d=%"PRIregister" offset %#08x\n",
++               v, dabt.reg, *r, gicd_reg);
+         return 0;
+     }
+ 
+ bad_width:
+-    dprintk(XENLOG_ERR,
+-            "VGICv3: vGICD: bad write width %d r%d=%"PRIregister" "
+-            "offset %#08x\n", dabt.size, dabt.reg, *r, gicd_reg);
++    printk(XENLOG_G_ERR
++           "%pv: vGICD: bad write width %d r%d=%"PRIregister" offset %#08x\n",
++           v, dabt.size, dabt.reg, *r, gicd_reg);
+     domain_crash_synchronous();
+     return 0;
+ 
+-- 
+2.1.4
+

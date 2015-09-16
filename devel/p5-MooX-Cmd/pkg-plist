@@ -1,6 +1,8 @@
 %%PERL5_MAN3%%/MooX::Cmd.3.gz
 %%PERL5_MAN3%%/MooX::Cmd::Role.3.gz
+%%PERL5_MAN3%%/MooX::Cmd::Role::ConfigFromFile.3.gz
 %%PERL5_MAN3%%/MooX::Cmd::Tester.3.gz
 %%SITE_PERL%%/MooX/Cmd.pm
 %%SITE_PERL%%/MooX/Cmd/Role.pm
+%%SITE_PERL%%/MooX/Cmd/Role/ConfigFromFile.pm
 %%SITE_PERL%%/MooX/Cmd/Tester.pm

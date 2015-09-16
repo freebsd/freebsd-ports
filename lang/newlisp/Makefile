@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	newlisp
-PORTVERSION=	10.6.0
-PORTREVISION=	2
+PORTVERSION=	10.6.2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.newlisp.org/downloads/
 
@@ -16,22 +15,24 @@ LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
 
 CONFLICTS=	newlisp-devel-[0-9]*
 
-USES=		readline tar:tgz
+USES=		readline:port tar:tgz
+OPTIONS_SUB=	yes
 
 HAS_CONFIGURE=	yes
 ALL_TARGET=	default
 
 REINPLACE_ARGS=	-i ""
 
-MODULES=	canvas cgi crypto ftp getopts infix odbc pop3 \
+MODULES=	canvas cgi crypto ftp getopts infix odbc plot pop3 \
 		postscript smtp smtpx stat unix xmlrpc-client zlib
 
 DOCS=		CHANGES CodePatterns.html ExpressionEvaluation.html \
-		MemoryManagement.html newLISP-${PORTVERSION}-Release.html \
-		manual_frame.html newLISPdoc.html \
-		newlisp_index.html newlisp_manual.html \
+		MemoryManagement.html manual_frame.html \
+		newLISP-${PORTVERSION}-Release.html newLISPdoc.html \
+		newlisp-man.txt newlisp_index.html newlisp_manual.html \
+		newlispdoc-man.txt
 
-OPTIONS_DEFINE=	GMP GSL MYSQL PGSQL SQLITE GUISERV DOCS EXAMPLES
+OPTIONS_DEFINE=	GSL MYSQL PGSQL SQLITE GUISERV DOCS EXAMPLES
 GSL_DESC=	GSL (GNU Scientific Library)
 GUISERV_DESC=	Install GUI server (in Java)
 
@@ -44,59 +45,27 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-DNEWLISP64
 .endif
 
-.if ${PORT_OPTIONS:MGMP}
-LIB_DEPENDS+=	libgmp.so:${PORTSDIR}/math/gmp
-MODULES+=	gmp
-PLIST_SUB+=	GMP=""
-.else
-PLIST_SUB+=	GMP="@comment "
-.endif
-
 .if ${PORT_OPTIONS:MGSL}
 LIB_DEPENDS+=	libgsl.so:${PORTSDIR}/math/gsl
 MODULES+=	gsl
-PLIST_SUB+=	GSL=""
-.else
-PLIST_SUB+=	GSL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 MODULES+=	mysql
-PLIST_SUB+=	MYSQL=""
-.else
-PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
 USES+=		pgsql
 MODULES+=	postgres
-PLIST_SUB+=	PGSQL=""
-.else
-PLIST_SUB+=	PGSQL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
 USE_SQLITE=	3
 MODULES+=	sqlite3
-PLIST_SUB+=	SQLITE=""
-.else
-PLIST_SUB+=	SQLITE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MGUISERV}
-PLIST_SUB+=	GUISERV=""
-.else
-PLIST_SUB+=	GUISERV="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -E -e "s,install -m 644, \$${BSD_INSTALL_DATA},g" \
-		-e "s,install -m 755, \$${BSD_INSTALL_SCRIPT},g" \
-		-e "s,^(datadir=).*,\1${STAGEDIR}${PREFIX}/share,g" \
-		-e "s,^(bindir=).*,\1${STAGEDIR}${PREFIX}/bin,g" \
-		${WRKSRC}/Makefile
-
 	@${REINPLACE_CMD} -E \
 		-e "s,/usr/(local/)?bin/newlisp,${PREFIX}/bin/newlisp,g" \
 		-e "s,/usr/(local/)?share/newlisp,${DATADIR},g" \
@@ -115,9 +84,6 @@ post-patch:
 	@${REINPLACE_CMD} -E -e \
 		"s,/usr/local/lib/(libsqlite)3.so,${LOCALBASE}/lib/\1${_SQLITE_VER}.so," \
 		${WRKSRC}/modules/sqlite3.lsp
-	@${REINPLACE_CMD} -E -e \
-		"s,/usr/local/lib/libgmp.so,${LOCALBASE}/lib/libgmp.so," \
-		${WRKSRC}/modules/gmp.lsp
 	@${REINPLACE_CMD} -E -e \
 		"s,/usr/local/lib/libgsl.so,${LOCALBASE}/lib/libgsl.so," \
 		${WRKSRC}/modules/gsl.lsp
@@ -158,7 +124,6 @@ do-install:
 		${STAGEDIR}${PREFIX}/bin/newlisp-edit
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${DOCSDIR}
 .if ${PORT_OPTIONS:MGUISERV}
@@ -166,7 +131,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/guiserver/index.html \
 		${WRKSRC}/guiserver/guiserver.lsp.html \
 		${STAGEDIR}${DOCSDIR}/guiserver
-.endif
 .endif
 
 .if ${PORT_OPTIONS:MEXAMPLES}

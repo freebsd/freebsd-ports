@@ -38,9 +38,9 @@ OPTIONS_SUB=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCSL}
-LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
+USES+=		jpeg
 CPPFLAGS+=	`freetype-config --cflags`
 LDFLAGS+=	`freetype-config --libs`
 .else

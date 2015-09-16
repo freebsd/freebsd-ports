@@ -1436,8 +1436,8 @@ lib/python2.7/ensurepip/__init__.pyo
 lib/python2.7/ensurepip/__main__.py
 lib/python2.7/ensurepip/__main__.pyc
 lib/python2.7/ensurepip/__main__.pyo
-lib/python2.7/ensurepip/_bundled/pip-1.5.6-py2.py3-none-any.whl
-lib/python2.7/ensurepip/_bundled/setuptools-7.0-py2.py3-none-any.whl
+lib/python2.7/ensurepip/_bundled/pip-6.1.1-py2.py3-none-any.whl
+lib/python2.7/ensurepip/_bundled/setuptools-15.2-py2.py3-none-any.whl
 lib/python2.7/ensurepip/_uninstall.py
 lib/python2.7/ensurepip/_uninstall.pyc
 lib/python2.7/ensurepip/_uninstall.pyo
@@ -1782,9 +1782,9 @@ lib/python2.7/idlelib/run.pyc
 lib/python2.7/idlelib/tabbedpages.py
 lib/python2.7/idlelib/tabbedpages.pyo
 lib/python2.7/idlelib/tabbedpages.pyc
-lib/python2.7/idlelib/testcode.py
-lib/python2.7/idlelib/testcode.pyo
-lib/python2.7/idlelib/testcode.pyc
+lib/python2.7/idlelib/idle_test/test_io.py
+lib/python2.7/idlelib/idle_test/test_io.pyo
+lib/python2.7/idlelib/idle_test/test_io.pyc
 lib/python2.7/idlelib/textView.py
 lib/python2.7/idlelib/textView.pyo
 lib/python2.7/idlelib/textView.pyc
@@ -2907,7 +2907,7 @@ lib/python2.7/test/decimaltestdata/testall.decTest
 lib/python2.7/test/decimaltestdata/tointegral.decTest
 lib/python2.7/test/decimaltestdata/tointegralx.decTest
 lib/python2.7/test/decimaltestdata/xor.decTest
-lib/python2.7/test/dh512.pem
+lib/python2.7/test/dh1024.pem
 lib/python2.7/test/doctest_aliases.py
 lib/python2.7/test/doctest_aliases.pyo
 lib/python2.7/test/doctest_aliases.pyc
@@ -4090,6 +4090,9 @@ lib/python2.7/test/test_threadsignals.pyc
 lib/python2.7/test/test_time.py
 lib/python2.7/test/test_time.pyo
 lib/python2.7/test/test_time.pyc
+lib/python2.7/test/test_timeit.py
+lib/python2.7/test/test_timeit.pyo
+lib/python2.7/test/test_timeit.pyc
 lib/python2.7/test/test_timeout.py
 lib/python2.7/test/test_timeout.pyo
 lib/python2.7/test/test_timeout.pyc

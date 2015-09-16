@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rye
-PORTVERSION=	0.9.12
+PORTVERSION=	0.9.13
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -18,6 +18,7 @@ RUN_DEPENDS=	rubygem-annoy>=0:${PORTSDIR}/devel/rubygem-annoy \
 		rubygem-net-ssh>=2.0.13:${PORTSDIR}/security/rubygem-net-ssh \
 		rubygem-sysinfo>=0.8.1:${PORTSDIR}/devel/rubygem-sysinfo
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

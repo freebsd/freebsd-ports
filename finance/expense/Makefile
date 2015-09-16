@@ -2,7 +2,7 @@
 
 PORTNAME=	expense
 PORTVERSION=	0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	finance gnustep
 MASTER_SITES=	http://www.eskimo.com/~pburns/Expense/files/
 DISTNAME=	Expense-${PORTVERSION}
@@ -18,5 +18,8 @@ USE_GNUSTEP=	back build
 WRKSRC=		${WRKDIR}/Expense
 
 PORTSCOUT=	ignore:1
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/Expense.app/Expense
 
 .include <bsd.port.mk>

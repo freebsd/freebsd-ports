@@ -1,3 +1,4 @@
+XXX: this breaks writing to /var/log/xpat2.log
 --- loadsave.c.orig
 +++ loadsave.c
 @@ -42,13 +42,18 @@

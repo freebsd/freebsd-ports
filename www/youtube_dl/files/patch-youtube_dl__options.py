@@ -1,13 +1,13 @@
---- youtube_dl/options.py.orig	2014-11-15 22:16:23.000000000 +0800
-+++ youtube_dl/options.py	2014-11-22 12:34:15.188052389 +0800
-@@ -125,10 +125,6 @@
+--- youtube_dl/options.py.orig	2015-05-29 05:52:12 UTC
++++ youtube_dl/options.py
+@@ -127,10 +127,6 @@ def parseOpts(overrideArguments=None):
          action='version',
-         help='print program version and exit')
+         help='Print program version and exit')
      general.add_option(
 -        '-U', '--update',
 -        action='store_true', dest='update_self',
--        help='update this program to latest version. Make sure that you have sufficient permissions (run with sudo if needed)')
+-        help='Update this program to latest version. Make sure that you have sufficient permissions (run with sudo if needed)')
 -    general.add_option(
          '-i', '--ignore-errors',
          action='store_true', dest='ignoreerrors', default=False,
-         help='continue on download errors, for example to skip unavailable videos in a playlist')
+         help='Continue on download errors, for example to skip unavailable videos in a playlist')

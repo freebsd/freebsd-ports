@@ -8,7 +8,7 @@ CATEGORIES=	textproc java
 MASTER_SITES=	http://xml.apache.org/dist/crimson/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
-MAINTAINER=	girgen@partitur.se
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implements the Java API for XML Processing (JAXP)
 
 USE_JAVA=	yes
@@ -17,6 +17,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 JAVAVM?=	${LOCALBASE}/bin/javavm
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

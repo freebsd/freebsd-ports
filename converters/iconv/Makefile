@@ -5,8 +5,7 @@ PORTNAME=	iconv
 PORTVERSION=	2.0
 PORTREVISION=	4
 CATEGORIES=	converters
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	bland
+MASTER_SITES=	LOCAL/bland
 
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	Charset conversion library and utilities
@@ -23,13 +22,8 @@ OPTIONS_SUB=	yes
 
 CCSUTIL_DESC=	Install Coded character set (CCS) util
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCCSUTIL}
-USE_PERL5+=	run
-.else
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-ccs_Makefile
-.endif
+CCSUTIL_USE=	PERL5=run
+CCSUTIL_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-ccs_Makefile
 
 .if defined(NO_PROFILE)
 PLIST_SUB+=	PROFILE="@comment "

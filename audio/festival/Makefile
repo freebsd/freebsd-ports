@@ -5,8 +5,7 @@ PORTNAME=	festival
 PORTVERSION=	2.1
 PORTREVISION=	1
 CATEGORIES=	audio accessibility
-MASTER_SITES=	${MASTER_SITE_FESTIVAL}
-MASTER_SITE_SUBDIR=	${PORTVERSION}
+MASTER_SITES=	FESTIVAL
 DISTFILES=	${DISTNAME}-release.tar.gz 	\
 		speech_tools-${PORTVERSION}-release.tar.gz
 
@@ -76,18 +75,12 @@ post-patch::
 	${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g'	\
 		${WRKSRC}/*/config/systems/default.mak
 
-.include <bsd.port.options.mk>
-
 .for m in nas esd
-.	if ${PORT_OPTIONS:M${m:tu}}
-LIB_DEPENDS+=	lib${m:nas=audio}.so:${PORTSDIR}/audio/${m:esd=esound}
-post-patch::
+${m:tu}_LIB_DEPENDS=	lib${m:nas=audio}.so:${PORTSDIR}/audio/${m:esd=esound}
+post-patch-${m:tu}-on:
 	${REINPLACE_CMD} -e 's,# INCLUDE_MODULES += ${m:tu}_AUDIO,INCLUDE_MODULES += ${m:tu}_AUDIO,' \
 		${WRKDIR}/*/config/config.in
-CONFIGURE_ARGS+=--enable-$m
-.	else
-CONFIGURE_ARGS+=--disable-$m
-.	endif
+${m:tu}_CONFIGURE_ENABLE=${m}
 .endfor
 
 do-configure:
@@ -100,7 +93,7 @@ do-configure:
 		${FALSE}; \
 	fi
 	# This step helps non-i386 systems and is harmless on i386
-	-${LN} -s ix86_FreeBSD.mak ${WRKDIR}/$d/config/systems/${ARCH}_unknown.mak
+	-${LN} -s ix86_FreeBSD.mak ${WRKDIR}/$d/config/systems/${ARCH:S/armv6/arm/}_unknown.mak
 .endfor
 	${REINPLACE_CMD} \
 	    -e '/^CFLAGS *=/s|$$| ${CFLAGS}|' \
@@ -112,13 +105,11 @@ do-configure:
 		${LN} -s gcc_defaults.mak ${WRKDIR}/speech_tools/config/compilers/${CC}.mak
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}/lib/voices/english/
-	@${MKDIR} ${STAGEDIR}${DATADIR}/lib/voices/spanish/
-	@${MKDIR} ${STAGEDIR}${DATADIR}/lib/dicts
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${CHMOD} -R u+w,a+r,og-w ${FESTIVAL}/lib
 	${FIND} ${FESTIVAL}/lib -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	${FIND} ${FESTIVAL} -type f -name *.orig -delete
-	cd ${FESTIVAL} && ${CP} -pPR lib examples ${STAGEDIR}${DATADIR}
+	${CP} -pPR ${FESTIVAL}/lib ${FESTIVAL}/examples ${STAGEDIR}${DATADIR}
 	${RM} -rf ${STAGEDIR}${DATADIR}/lib/etc/Makefile ${STAGEDIR}${DATADIR}/lib/etc/*FreeBSD* \
 	    ${STAGEDIR}${DATADIR}/lib/etc/*unknown
 	${INSTALL_PROGRAM} ${FESTIVAL}/lib/etc/*/audsp ${STAGEDIR}${PREFIX}/libexec

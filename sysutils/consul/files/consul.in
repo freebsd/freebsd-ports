@@ -17,6 +17,8 @@
 #                               Default is "consul".
 # consul_dir (dir):          Set dir to run consul in.
 #                               Default is "/var/tmp/consul".
+# consul_env (dir):          Set environment variables used with consul
+#                               Default is "".
 
 . /etc/rc.subr
 
@@ -29,11 +31,12 @@ load_rc_config $name
 : ${consul_user:="consul"}
 : ${consul_group:="consul"}
 : ${consul_dir:="/var/tmp/consul"}
+: ${consul_env:=""}
 
 pidfile=/var/run/consul.pid
 procname="%%PREFIX%%/bin/consul"
 command="/usr/sbin/daemon"
-command_args="-f -p ${pidfile} ${procname} agent -data-dir=${consul_dir} -ui-dir=%%PREFIX%%/share/consul -config-dir=%%PREFIX%%/etc/consul.d ${consul_args}"
+command_args="-f -p ${pidfile} /usr/bin/env ${consul_env} ${procname} agent -data-dir=${consul_dir} -ui-dir=%%PREFIX%%/share/consul -config-dir=%%PREFIX%%/etc/consul.d ${consul_args}"
 
 start_precmd=consul_startprecmd
 

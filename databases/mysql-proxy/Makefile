@@ -5,8 +5,7 @@ PORTNAME=	mysql-proxy
 PORTVERSION=	0.8.4
 PORTREVISION=	2
 CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_MYSQL}
-MASTER_SITE_SUBDIR=	MySQL-Proxy
+MASTER_SITES=	MYSQL/MySQL-Proxy
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Monitor, analyze, or transform the communication of MySQL

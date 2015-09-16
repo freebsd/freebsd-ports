@@ -1,6 +1,7 @@
 bin/gnome-screenshot
 man/man1/gnome-screenshot.1.gz
 share/GConf/gsettings/gnome-screenshot.convert
+share/appdata/org.gnome.Screenshot.appdata.xml
 share/applications/org.gnome.Screenshot.desktop
 share/dbus-1/services/org.gnome.Screenshot.service
 share/locale/af/LC_MESSAGES/gnome-screenshot.mo
@@ -46,9 +47,11 @@ share/locale/hi/LC_MESSAGES/gnome-screenshot.mo
 share/locale/hr/LC_MESSAGES/gnome-screenshot.mo
 share/locale/hu/LC_MESSAGES/gnome-screenshot.mo
 share/locale/id/LC_MESSAGES/gnome-screenshot.mo
+share/locale/is/LC_MESSAGES/gnome-screenshot.mo
 share/locale/it/LC_MESSAGES/gnome-screenshot.mo
 share/locale/ja/LC_MESSAGES/gnome-screenshot.mo
 share/locale/ka/LC_MESSAGES/gnome-screenshot.mo
+share/locale/kk/LC_MESSAGES/gnome-screenshot.mo
 share/locale/km/LC_MESSAGES/gnome-screenshot.mo
 share/locale/kn/LC_MESSAGES/gnome-screenshot.mo
 share/locale/ko/LC_MESSAGES/gnome-screenshot.mo

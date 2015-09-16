@@ -1,6 +1,14 @@
---- Makefile.orig	2014-08-05 16:50:32.000000000 +0400
-+++ Makefile	2014-09-13 02:29:01.000000000 +0400
-@@ -24,28 +24,28 @@
+--- Makefile.orig	2015-03-24 13:03:52.000000000 +0300
++++ Makefile	2015-06-02 22:37:10.831330000 +0300
+@@ -1,5 +1,5 @@
+-CFLAGS  := -std=c99 -Wall -O2 -D_REENTRANT
+-LIBS    := -lpthread -lm -lcrypto -lssl
++CFLAGS  += -std=c99 -Wall -O2 -D_REENTRANT
++LIBS    := -pthread -lm -lcrypto -lssl
+ 
+ TARGET  := $(shell uname -s | tr '[A-Z]' '[a-z]' 2>/dev/null || echo unknown)
+ 
+@@ -25,32 +25,32 @@
  OBJ  := $(patsubst %.c,$(ODIR)/%.o,$(SRC)) $(ODIR)/bytecode.o
  
  LDIR     = deps/luajit/src
@@ -18,7 +26,8 @@
  
  $(BIN): $(OBJ)
  	@echo LINK $(BIN)
- 	@$(CC) $(LDFLAGS) -o $@ $^ $(LIBS)
+-	@$(CC) $(LDFLAGS) -o $@ $^ $(LIBS)
++	$(CC) $(LDFLAGS) -o $@ $^ $(LIBS)
  
 -$(OBJ): config.h Makefile $(LDIR)/libluajit.a | $(ODIR)
 +$(OBJ): config.h Makefile | $(ODIR)
@@ -29,7 +38,12 @@
  $(ODIR)/bytecode.o: src/wrk.lua
  	@echo LUAJIT $<
 -	@$(SHELL) -c 'cd $(LDIR) && ./luajit -b $(CURDIR)/$< $(CURDIR)/$@'
-+	@$(SHELL) -c 'cd $(LDIR) && ${PREFIX}/bin/luajit -b $(CURDIR)/$< $(CURDIR)/$@'
++	$(SHELL) -c '${PREFIX}/bin/luajit -b $(CURDIR)/$< $(CURDIR)/$@'
  
  $(ODIR)/%.o : %.c
  	@echo CC $<
+-	@$(CC) $(CFLAGS) -c -o $@ $<
++	$(CC) $(CFLAGS) -c -o $@ $<
+ 
+ $(LDIR)/libluajit.a:
+ 	@echo Building LuaJIT...

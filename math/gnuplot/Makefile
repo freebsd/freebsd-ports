@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Command-line driven graphing utility
 
-USES=		iconv lua pkgconfig
+USES=		iconv lua pkgconfig readline
 USE_TEX=	kpathsea
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}

@@ -3,4 +3,3 @@ This is a simple wrapper over the kqueue BSD event notification interface
 avoid having to compile a C extension.
 
 WWW: https://github.com/mat813/rb-kqueue
-RG:  https://rubygems.org/gems/rb-kqueue

@@ -3,6 +3,7 @@
 
 PORTNAME=	pdftohtml
 PORTVERSION=	0.40a
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/Experimental%20Versions/${PORTNAME}%20${PORTVERSION:S|a||} \
 		http://fossies.org/linux/www/
@@ -10,8 +11,7 @@ MASTER_SITES=	SF/${PORTNAME}/Experimental%20Versions/${PORTNAME}%20${PORTVERSION
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line tool for converting pdf-files into html
 
-USES=		gmake
-USE_GHOSTSCRIPT_RUN=	yes
+USES=		ghostscript gmake
 
 PLIST_FILES=	bin/pdf-to-html
 

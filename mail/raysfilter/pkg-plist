@@ -9,7 +9,6 @@ etc/rc.d/raysfilter.sh.sample
 etc/mail-filter/header-list.conf-dist
 etc/mail-filter/mail-filter.conf-dist
 etc/mail-filter/string-list.conf-dist
-@dirrm etc/mail-filter
 %%PORTDOCS%%%%DOCSDIR%%/rays-filter.html
 %%PORTDOCS%%%%DOCSDIR%%/install.html
 %%PORTDOCS%%%%DOCSDIR%%/configure.html
@@ -18,4 +17,3 @@ etc/mail-filter/string-list.conf-dist
 %%PORTDOCS%%%%DOCSDIR%%/GNU-public-licence.txt
 %%PORTDOCS%%%%DOCSDIR%%/copyright.txt
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

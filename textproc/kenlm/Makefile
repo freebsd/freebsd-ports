@@ -14,7 +14,7 @@ BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost-jam \
 		bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
-USES+=		compiler:c++11-lang
+USES+=		compiler:c++11-lib
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ENV+=	BOOST_BUILD_PATH=${WRKSRC}/jam-files/boost-build

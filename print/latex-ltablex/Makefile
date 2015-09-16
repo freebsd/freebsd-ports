@@ -6,10 +6,8 @@ PORTREVISION=	2
 CATEGORIES=	print
 # As of 2012-08-24, some mirrors are returning a tarball with a
 # different checksum, so I am mirroring it locally instead.
-# MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
-# MASTER_SITE_SUBDIR=	macros/latex/contrib
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	rakuco/latex
+# MASTER_SITES=	TEX_CTAN/macros/latex/contrib
+MASTER_SITES=	LOCAL/rakuco/latex
 PKGNAMEPREFIX=	latex-
 DIST_SUBDIR=	latex
 

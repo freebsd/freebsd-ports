@@ -4,8 +4,7 @@ PORTNAME=	asusoled
 PORTVERSION=	0.10
 PORTREVISION=	10
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	jkim
+MASTER_SITES=	LOCAL/jkim
 
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Utility for ASUS USB OLED Display
@@ -28,17 +27,15 @@ FONTDIR?=	${LOCALBASE}/share/fonts
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/asusoled ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/asusoled ${STAGEDIR}${PREFIX}/sbin
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for i in ${PORTDATA}
-	@${INSTALL_DATA} ${WRKSRC}/data/${i} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/data/${i} ${STAGEDIR}${DATADIR}
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${PKGMESSAGE} ${STAGEDIR}${DOCSDIR}/README.FreeBSD
-.endif
+	${INSTALL_DATA} ${PKGMESSAGE} ${STAGEDIR}${DOCSDIR}/README.FreeBSD
 
 .include <bsd.port.mk>

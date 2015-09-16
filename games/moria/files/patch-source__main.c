@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- source/main.c.orig	Thu Jul 21 19:47:27 1994
 +++ source/main.c	Thu Aug  7 16:12:13 2003
 @@ -88,6 +88,7 @@

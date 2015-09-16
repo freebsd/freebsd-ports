@@ -42,9 +42,6 @@ ${l:tu}_DESC=	${l:S/_/ /} fonts
 MASTER_SITES+=	SF/${PORTNAME}/${PORTNAME}-fonts/${${l:tu}_DISTNAME}:${l:tu}
 .endfor
 
-# Do not use the same OPTIONS directory as "games/tuxpaint".
-LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
-
 .include <bsd.port.options.mk>
 
 # Set DISTFILES and PLIST_FILES according to OPTIONS.

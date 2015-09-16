@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	synfig
-PORTVERSION=	0.64.3
+PORTVERSION=	1.0
 CATEGORIES=	devel graphics multimedia
 MASTER_SITES=	SF/${PORTNAME}/releases/${PORTVERSION}/source
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	woodsb02@gmail.com
 COMMENT=	Vector based 2D animation package
 
 LICENSE=	GPLv3
@@ -16,19 +16,20 @@ LIB_DEPENDS=	libboost_program_options.so:${PORTSDIR}/devel/boost-libs \
 		libltdl.so:${PORTSDIR}/devel/libltdl \
 		libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick \
 		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libmlt.so:${PORTSDIR}/multimedia/mlt \
 		libmng.so:${PORTSDIR}/graphics/libmng \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
 		libdv.so:${PORTSDIR}/multimedia/libdv
 
-USES=		gettext iconv libtool pathfix pkgconfig
+USES=		gettext iconv jpeg libtool pathfix pkgconfig
 USE_GNOME=	cairo glibmm libxml++26
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG}
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -37,7 +38,6 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		'/optimization_flags/s|CXXFLAGS=|#CXXFLAGS=| ; \
 		 /optimization_flags/s|CFLAGS=|#CFLAGS=| ; \
-		 s|"GNU strip"|"strip"| ; \
 		 s|el_GR|el| ; \
 		 s|ja_JP|ja| ; \
 		 s|no_NO|no| ; \

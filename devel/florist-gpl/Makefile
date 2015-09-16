@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	florist-gpl
-PORTVERSION=	2014
+PORTVERSION=	2015
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -12,11 +12,13 @@ COMMENT=	POSIX Ada binding, IEEE Standards 1003.5(b,c)
 
 LICENSE=	GPLv3
 
-USES=		ada
+BUILD_DEPENDS=	gprbuild:${PORTSDIR}/devel/gprbuild
+
+USES=		ada gmake
 GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/florist-src
+SUB_FILES=	florist.gpr
 
 post-extract:
-	${CP} ${FILESDIR}/pconfig.* ${WRKSRC}/configs
+	(cd ${WRKSRC}/configs && ${CP} pconfig.FreeBSD pconfig.DragonFly)
 
 .include <bsd.port.mk>

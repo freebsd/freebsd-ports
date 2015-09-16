@@ -4,19 +4,25 @@
 PORTNAME=	ta2as
 PORTVERSION=	0.8.2
 CATEGORIES=	converters devel
-MASTER_SITES=	GOOGLE_CODE
-DISTNAME=	${PORTNAME}_v${PORTVERSION:S/./_/g}_src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TASM to AT&T asm syntax converter (GNU AS)
 
-OPTIONS_DEFINE=	DOCS
+LICENSE=	TA2AS
+LICENSE_NAME=	TA2AS license
+LICENSE_FILE=	${WRKSRC}/legal.txt
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-USES=		zip
-NO_WRKSUBDIR=	yes
+WRKSRC_SUBDIR=	ta2as
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	mefistotelis
+GH_TAGNAME=	3f4825a
 
 PORTDOCS=	*
 PLIST_FILES=	bin/${PORTNAME}
+
+OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	@${CP} -f ${FILESDIR}/strtolower.c ${WRKSRC}

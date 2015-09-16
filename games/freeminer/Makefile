@@ -39,9 +39,9 @@ LUAJIT_DESC=	LuaJIT support
 
 CLIENT_CMAKE_ON=	-DBUILD_CLIENT=1
 CLIENT_CMAKE_OFF=	-DBUILD_CLIENT=0
-CLIENT_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-			libpng.so:${PORTSDIR}/graphics/png \
+CLIENT_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 			libIrrlicht.so:${PORTSDIR}/x11-toolkits/irrlicht
+CLIENT_USES=		jpeg
 CLIENT_USE=		GL=gl XORG=x11
 SERVER_CMAKE_ON=	-DBUILD_SERVER=1
 SERVER_CMAKE_OFF=	-DBUILD_SERVER=0
@@ -63,10 +63,6 @@ FREETYPE_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
 
 .include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900000
-BROKEN=		does not build on 8.x (lack of long long support)
-.endif
 
 .if ${PORT_OPTIONS:MCLIENT} && ${PORT_OPTIONS:MSOUND}
 USES+=		openal

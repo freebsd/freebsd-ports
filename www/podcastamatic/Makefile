@@ -12,6 +12,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/}
 MAINTAINER=	lars.eggert@gmx.net
 COMMENT=	Automates creation of webpage and RSS feed for a podcast
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/gpl.txt
+
 RUN_DEPENDS=	p5-MP3-Info>=0:${PORTSDIR}/audio/p5-MP3-Info \
 		p5-MP4-Info>=0:${PORTSDIR}/multimedia/p5-MP4-Info
 
@@ -24,8 +27,6 @@ NO_BUILD=	yes
 SUB_LIST=	PORTNAME="${PORTNAME}"
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 do-patch:
 	@${REINPLACE_CMD} -e "s|${PORTNAME}.conf|${PREFIX}/etc/${PORTNAME}.conf|"\
@@ -42,10 +43,10 @@ do-patch:
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/example_${PORTNAME}.conf ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/example_${PORTNAME}.conf ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/style.css ${STAGEDIR}${PREFIX}/share/${PORTNAME}/
+	${INSTALL_DATA} ${WRKSRC}/style.css ${STAGEDIR}${PREFIX}/share/${PORTNAME}/
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/readme.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

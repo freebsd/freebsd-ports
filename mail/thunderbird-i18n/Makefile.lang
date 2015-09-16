@@ -1,9 +1,10 @@
 # $FreeBSD$
 
-THUNDERBIRD_I18N_ALL_=	ar ast be bg bn-BD br ca cs da de el en-GB en-US es-AR \
-			es-ES et eu fi fr fy-NL ga-IE gd gl he hr hu hy-AM id  \
-			is it ja ko lt nb-NO nl nn-NO pa-IN pl pt-BR pt-PT rm  \
-			ro ru si sk sl sq sr sv-SE ta-LK tr uk vi zh-CN zh-TW
+THUNDERBIRD_I18N_ALL_=	ar ast be bg bn-BD br ca cs cy da de dsb el en-GB \
+			en-US es-AR es-ES et eu fi fr fy-NL ga-IE gd gl he \
+			hr hsb hu hy-AM id is it ja ko lt nb-NO nl nn-NO \
+			pa-IN pl pt-BR pt-PT rm ro ru si sk sl sq sr sv-SE \
+			ta-LK tr uk vi zh-CN zh-TW
 
 .if defined(THUNDERBIRD_I18N_ALL) || defined(PACKAGE_BUILDING) || target(package)
 THUNDERBIRD_I18N=   ${THUNDERBIRD_I18N_ALL_}
@@ -32,11 +33,17 @@ THUNDERBIRD_I18N+=  ca
 .if ${PORT_OPTIONS:MLANG_CS}
 THUNDERBIRD_I18N+=  cs
 .endif
+.if ${PORT_OPTIONS:MLANG_CY}
+THUNDERBIRD_I18N+=  cy
+.endif
 .if ${PORT_OPTIONS:MLANG_DA}
 THUNDERBIRD_I18N+=  da
 .endif
 .if ${PORT_OPTIONS:MLANG_DE}
 THUNDERBIRD_I18N+=  de
+.endif
+.if ${PORT_OPTIONS:MLANG_DSB}
+THUNDERBIRD_I18N+=  dsb
 .endif
 .if ${PORT_OPTIONS:MLANG_EL}
 THUNDERBIRD_I18N+=  el
@@ -85,6 +92,9 @@ THUNDERBIRD_I18N+=  hr
 .endif
 .if ${PORT_OPTIONS:MLANG_HU}
 THUNDERBIRD_I18N+=  hu
+.endif
+.if ${PORT_OPTIONS:MLANG_HSB}
+THUNDERBIRD_I18N+=  hsb
 .endif
 .if ${PORT_OPTIONS:MLANG_AM}
 THUNDERBIRD_I18N+=  hy-AM

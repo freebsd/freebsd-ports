@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	actor-framework
-PORTVERSION=	0.13
+PORTVERSION=	0.14.1
 CATEGORIES=	devel
 
 MAINTAINER=	vallentin@icir.org
@@ -13,15 +13,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CXXFLAGS+=	-std=c++11 -Wextra -Wall -pedantic
 LDFLAGS+=	-pthread
-USES=		compiler:c++11-lang cmake:outsource
+USES=		cmake:outsource compiler:c++11-lang
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
+BROKEN_FreeBSD_8=	"undefined reference to `iswalpha_l'"
 
 OPTIONS_DEFINE=	DEBUG TEST STATIC
 OPTIONS_RADIO=	LOG_LEVEL
 OPTIONS_RADIO_LOG_LEVEL=	LOG_LEVEL_ERROR LOG_LEVEL_WARN LOG_LEVEL_INFO LOG_LEVEL_DEBUG LOG_LEVEL_TRACE
 OPTIONS_DEFAULT=	TEST
 OPTIONS_SUB=	yes
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 TEST_DESC=	Build with unit tests
 STATIC_DESC=	Additionally build static version of library
@@ -53,7 +55,10 @@ regression-test: build
 .endif
 
 .if ${OSVERSION} < 1001000
-BROKEN=		require clang & libc++
+# require clang & libc++
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang34:${PORTSDIR}/lang/clang34 \
+		${LOCALBASE}/lib/c++/libstdc++.so:${PORTSDIR}/devel/libc++
+CXXFLAGS+=	-stdlib=libc++ -I${LOCALBASE}/include/c++/v1 -L${LOCALBASE}/lib
 .endif
 
 .include <bsd.port.mk>

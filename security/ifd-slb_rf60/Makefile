@@ -3,7 +3,7 @@
 
 PORTNAME=	ifd-slb_rf60
 PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.linuxnet.com/drivers/readers/files/
 DISTNAME=	${PORTNAME:S/^ifd-//}-drv-${PORTVERSION}
@@ -29,7 +29,7 @@ post-patch:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/pcsc/drivers/
-	${INSTALL_DATA} ${WRKSRC}/libslb_rf60.so \
+	${INSTALL_LIB} ${WRKSRC}/libslb_rf60.so \
 		${STAGEDIR}${PREFIX}/lib/pcsc/drivers
 
 post-install:

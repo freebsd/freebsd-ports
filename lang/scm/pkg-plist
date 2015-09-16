@@ -30,6 +30,7 @@ lib/scm/r4rstest.scm
 lib/scm/ramap.so
 lib/scm/record.so
 lib/scm/require.scm
+lib/scm/slib/rmdsff.scm
 lib/scm/rgx.so
 lib/scm/rwb-isam.scm
 lib/scm/sc2.so

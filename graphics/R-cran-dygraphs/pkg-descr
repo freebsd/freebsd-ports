@@ -1,0 +1,7 @@
+An R interface to the 'dygraphs' JavaScript charting library (a
+copy of which is included in the package). Provides rich facilities
+for charting time-series data in R, including highly configurable
+series- and axis-display and interactive features like zoom/pan and
+series/point highlighting.
+
+WWW: https://cran.r-project.org/web/packages/dygraphs/

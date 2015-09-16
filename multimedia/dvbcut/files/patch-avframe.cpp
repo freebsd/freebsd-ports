@@ -1,5 +1,5 @@
---- src/avframe.cpp~	2013-06-16 11:57:51.000000000 +0200
-+++ src/avframe.cpp	2013-11-29 22:27:30.884805249 +0100
+--- src/avframe.cpp.orig	2013-06-16 09:57:51 UTC
++++ src/avframe.cpp
 @@ -22,6 +22,7 @@
  #include <QImage>
  #include <cstdlib>

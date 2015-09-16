@@ -1,6 +1,6 @@
---- share/gprconfig/linker.xml.orig	2014-02-13 04:59:56.000000000 +0000
+--- share/gprconfig/linker.xml.orig	2015-04-28 14:21:56 UTC
 +++ share/gprconfig/linker.xml
-@@ -599,11 +599,14 @@
+@@ -687,11 +687,14 @@
      </config>
    </configuration>
  
@@ -16,7 +16,7 @@
         <target name="^.*irix.*$" />
      </targets>
      <config>
-@@ -675,10 +678,13 @@
+@@ -763,10 +766,13 @@
      </config>
    </configuration>
  
@@ -31,7 +31,7 @@
      </targets>
      <config>
     for Run_Path_Option  use ("-Wl,-rpath,");
-@@ -1181,6 +1187,12 @@
+@@ -1308,6 +1314,12 @@
         <target name="^.*mingw.*$" />
         <target name="^.*linux.*$" />
         <target name="^.*freebsd.*$" />
@@ -44,7 +44,7 @@
       </targets>
      <compilers negate="true">
         <compiler language="C++" />
-@@ -1265,6 +1277,9 @@
+@@ -1392,6 +1404,9 @@
         <target name="^.*mingw.*$" />
         <target name="^.*linux.*$" />
         <target name="^.*freebsd.*$" />

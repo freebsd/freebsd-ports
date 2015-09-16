@@ -1,0 +1,36 @@
+From c2da83662498a5cd66512c684a0af178228f9d5a Mon Sep 17 00:00:00 2001
+From: Roger Pau Monne <roger.pau@citrix.com>
+Date: Thu, 11 Jun 2015 17:08:26 +0200
+Subject: [PATCH 1/2] libelf: fix elf_parse_bsdsyms call
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+elf_parse_bsdsyms expects the second paramater to be a physical address, not
+a virtual one.
+
+Signed-off-by: Roger Pau Monné <roger.pau@citrix.com>
+Cc: Ian Campbell <ian.campbell@citrix.com>
+Cc: Ian Jackson <ian.jackson@eu.citrix.com>
+Cc: Jan Beulich <jbeulich@suse.com>
+Cc: Tim Deegan <tim@xen.org>
+---
+ xen/common/libelf/libelf-dominfo.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/xen/common/libelf/libelf-dominfo.c b/xen/common/libelf/libelf-dominfo.c
+index 6120dd4..86403b9 100644
+--- a/xen/common/libelf/libelf-dominfo.c
++++ b/xen/common/libelf/libelf-dominfo.c
+@@ -438,7 +438,7 @@ static elf_errorstatus elf_xen_addr_calc_check(struct elf_binary *elf,
+ 
+     if ( parms->bsd_symtab )
+     {
+-        elf_parse_bsdsyms(elf, parms->virt_kend);
++        elf_parse_bsdsyms(elf, elf->pend);
+         if ( elf->bsd_symtab_pend )
+             parms->virt_kend = elf->bsd_symtab_pend + parms->virt_offset;
+     }
+-- 
+1.9.5 (Apple Git-50.3)
+

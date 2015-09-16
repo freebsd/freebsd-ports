@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	xtrabackup
-PORTVERSION=	2.2.6
-PORTREVISION=	1
+PORTVERSION=	2.2.10
 CATEGORIES=	databases
-MASTER_SITES=	http://www.percona.com/downloads/XtraBackup/XtraBackup-${PORTVERSION}/source/tarball/
+MASTER_SITES=	https://www.percona.com/downloads/XtraBackup/Percona-XtraBackup-${PORTVERSION}/source/tarball/
 DISTNAME=	percona-${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 DISTFILES=	percona-xtrabackup-${PORTVERSION}.tar.gz
 EXTRACT_ONLY=	percona-xtrabackup-${PORTVERSION}.tar.gz
@@ -26,7 +25,7 @@ RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
 		qpress:${PORTSDIR}/archivers/qpress
 
 # autotool is in use for 5.1 builds
-USES=		autoreconf:build cpe gettext cmake iconv libtool perl5
+USES=		alias autoreconf:build cpe gettext cmake iconv libtool perl5
 CPE_VENDOR=	percona
 
 PLIST_FILES=	bin/xtrabackup bin/xbstream bin/innobackupex bin/xbcrypt

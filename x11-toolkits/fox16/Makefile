@@ -14,11 +14,10 @@ COMMENT=	Fast and extensive C++ GUI toolkit -- ver.1.6
 
 LICENSE=	LGPL3 # (or later)
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
-USES=		libtool pathfix
+USES=		jpeg libtool pathfix
 USE_GL=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-opengl --with-x --with-xim

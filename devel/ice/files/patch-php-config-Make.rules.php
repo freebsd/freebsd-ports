@@ -1,17 +1,22 @@
---- php/config/Make.rules.php.orig	2013-03-11 15:19:47.000000000 +0000
-+++ php/config/Make.rules.php	2013-06-02 14:36:13.744196194 +0000
-@@ -100,8 +100,8 @@
- endif
+--- php/config/Make.rules.php.orig	2015-06-23 15:30:20.000000000 +0000
++++ php/config/Make.rules.php	2015-06-27 19:48:31.900063596 +0000
+@@ -108,13 +108,8 @@
  
- libdir			= $(top_srcdir)/lib
- ifneq ($(prefix), /usr)
--install_phpdir      = $(prefix)/php
--install_libdir      = $(prefix)/php
-+install_phpdir		= $(prefix)/share/pear
-+install_libdir		= $(prefix)/lib/php/$(PHP_EXT_DIR)
- else
-
-@@ -155,7 +155,8 @@
+ libdir		= $(top_srcdir)/lib
+ 
+-ifndef usr_dir_install
+-    install_phpdir	= $(prefix)/php
+-    install_libdir  	= $(prefix)/php
+-else
+-    install_phpdir  	= $(prefix)/share/php
+-    install_libdir  	= $(shell php -r "echo(ini_get('extension_dir'));")
+-endif
++install_phpdir  	= $(prefix)/share/pear
++install_libdir  	= $(prefix)/lib/php/$(PHP_EXT_DIR)
+ 
+ ifdef ice_src_dist
+     RPATH_DIR	= $(LOADER_PATH)/../../cpp/$(libsubdir)
+@@ -172,7 +167,8 @@
  endif
  
  ifeq ($(installphplib),)

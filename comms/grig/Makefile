@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libhamlib.so:${PORTSDIR}/comms/hamlib
 
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 intltool
 GNU_CONFIGURE=	yes
 USES=		gettext gmake pkgconfig
 

@@ -1,6 +1,0 @@
-Hgrep is a trivial, but cute, front-end for grep. 
-It takes the results of the grep and 
-highlights the word that was searched for. 
-Very nice for some fast text searches.
-
-WWW: http://www.acme.com/software/hgrep/

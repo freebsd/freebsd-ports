@@ -30,14 +30,14 @@ diff --git browser/installer/package-manifest.in browser/installer/package-manif
 index b509fd4..195345c 100644
 --- browser/installer/package-manifest.in
 +++ browser/installer/package-manifest.in
-@@ -583,7 +583,7 @@
- @BINPATH@/components/MozKeyboard.js
- @BINPATH@/components/InputMethod.manifest
+@@ -608,7 +608,7 @@
+ @RESPATH@/components/MozKeyboard.js
+ @RESPATH@/components/InputMethod.manifest
  
 -#ifdef MOZ_DEBUG
 +#if defined(ENABLE_TESTS) && defined(MOZ_DEBUG)
- @BINPATH@/components/TestInterfaceJS.js
- @BINPATH@/components/TestInterfaceJS.manifest
+ @RESPATH@/components/TestInterfaceJS.js
+ @RESPATH@/components/TestInterfaceJS.manifest
  #endif
 diff --git mobile/android/installer/Makefile.in mobile/android/installer/Makefile.in
 index 96dceab..3528ad6 100644

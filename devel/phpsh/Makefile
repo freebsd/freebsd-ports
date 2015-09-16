@@ -5,9 +5,8 @@ PORTNAME=	phpsh
 PORTVERSION=	20110513
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	http://distfiles.pirateparty.in/%SUBDIR%/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	ashish
+MASTER_SITES=	http://distfiles.pirateparty.in/ashish/ \
+		LOCAL/ashish
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Interactive shell for PHP
@@ -37,8 +36,5 @@ USE_PHP+=	pcntl
 post-patch:
 	@${GREP} -Rl '%%ETCDIR%%' ${WRKSRC} |${XARGS} ${REINPLACE_CMD} \
 		-e 's,%%ETCDIR%%,${ETCDIR},g'
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

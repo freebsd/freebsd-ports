@@ -1,11 +1,11 @@
---- configure.orig	2010-05-30 21:34:34.000000000 +0200
-+++ configure	2010-06-09 18:25:08.000000000 +0200
-@@ -2447,7 +2447,7 @@
+--- configure.orig	2015-04-04 08:00:48 UTC
++++ configure
+@@ -2596,7 +2596,7 @@ fi
  
  
  
 -if test "x$ABIWORD" == "x"; then
 +if test "x$ABIWORD" = "x"; then
- 	{ as_fn_set_status 1
- as_fn_error "abiword not found in PATH" "$LINENO" 5; }
+ 	as_fn_error 1 "abiword not found in PATH" "$LINENO" 5
  fi
+ 

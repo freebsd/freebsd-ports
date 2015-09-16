@@ -1,8 +1,6 @@
-Index: sc/source/core/tool/interpr5.cxx
-===================================================================
---- sc/source/core/tool/interpr5.cxx	(revision 1678278)
-+++ sc/source/core/tool/interpr5.cxx	(working copy)
-@@ -1611,7 +1611,7 @@
+--- sc/source/core/tool/interpr5.cxx.orig	2014-09-19 18:03:51 UTC
++++ sc/source/core/tool/interpr5.cxx
+@@ -1611,14 +1611,14 @@ void ScInterpreter::ScPow()
              if (bFlag)
              {   for ( SCSIZE i = 0; i < nCount; i++ )
                      if (pMat->IsValue(i))
@@ -11,7 +9,6 @@ Index: sc/source/core/tool/interpr5.cxx
                      else
                          pResMat->PutString(ScGlobal::GetRscString(STR_NO_VALUE), i);
              }
-@@ -1618,7 +1618,7 @@
              else
              {   for ( SCSIZE i = 0; i < nCount; i++ )
                      if (pMat->IsValue(i))
@@ -20,7 +17,7 @@ Index: sc/source/core/tool/interpr5.cxx
                      else
                          pResMat->PutString(ScGlobal::GetRscString(STR_NO_VALUE), i);
              }
-@@ -1628,7 +1628,7 @@
+@@ -1628,7 +1628,7 @@ void ScInterpreter::ScPow()
              PushIllegalArgument();
      }
      else

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stellarium
-PORTVERSION=	0.12.5
-PORTREVISION=	1
+PORTVERSION=	0.12.6
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/Stellarium-sources/${PORTVERSION}
 PKGNAMESUFFIX=	-qt4
@@ -21,7 +20,6 @@ PORTSCOUT=	limit:^0\.12\.			# track only 0.12.x (legacy)
 USES=		cmake gettext iconv
 USE_QT4=	moc_build rcc_build uic_build qmake_build \
 		corelib gui network opengl
-INSTALLS_ICONS=	yes
 
 PORTDOCS=	AUTHORS ChangeLog README
 

@@ -2,12 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mod_geoip2
-PORTVERSION=	1.2.9
-PORTREVISION=	1
+PORTVERSION=	1.2.10
 CATEGORIES=	www geography
-MASTER_SITES=	https://github.com/maxmind/geoip-api-mod_geoip2/archive/
-DISTNAME=	${PORTVERSION}
-DIST_SUBDIR=    mod_geoip2
 
 MAINTAINER=	jau@iki.fi
 COMMENT=	Apache module that provides the country code of the client IP
@@ -17,6 +13,9 @@ LICENSE=	APACHE20
 BUILD_DEPENDS=	GeoIP>=1.4.4:${PORTSDIR}/net/GeoIP
 RUN_DEPENDS=	GeoIP>=1.4.4:${PORTSDIR}/net/GeoIP
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	maxmind
+GH_PROJECT=	geoip-api-mod_geoip2
 USE_APACHE=	22+
 MODULENAME=	mod_geoip
 AP_FAST_BUILD=	yes
@@ -27,7 +26,7 @@ AP_LIB+=	${LOCALBASE}/lib -lGeoIP
 WRKSRC=		${WRKDIR}/geoip-api-${PORTNAME}-${PORTVERSION}
 
 SUB_FILES+=	pkg-message
-PORTDOCS=	Changes INSTALL README.md README.php
+PORTDOCS=	Changes INSTALL.md README.md README.php
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

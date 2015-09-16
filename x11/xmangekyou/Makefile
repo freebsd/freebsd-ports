@@ -19,8 +19,6 @@ PLIST_FILES=	bin/xmangekyou lib/X11/XMangekyou/animation.dat \
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|= /usr/X11R6|= $${PREFIX}|g ; \
 		 s|gcc |$${CC} |g ; \
@@ -33,9 +31,9 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/xmangekyou.1.gz ${STAGEDIR}${MANPREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/XMangekyou
 	${INSTALL_DATA} ${WRKSRC}/animation.dat ${STAGEDIR}${PREFIX}/lib/X11/XMangekyou
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.euc ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

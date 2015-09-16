@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	gdal
-PORTVERSION=	1.11.2
+PORTVERSION=	2.0.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://download.osgeo.org/gdal/ \
-		ftp://ftp.remotesensing.org/pub/gdal/ \
+MASTER_SITES=	http://download.osgeo.org/gdal/${PORTVERSION}/ \
+		ftp://ftp.remotesensing.org/pub/gdal/${PORTVERSION}/ \
 		LOCAL/sunpoet
 PKGNAMEPREFIX=	php-
 

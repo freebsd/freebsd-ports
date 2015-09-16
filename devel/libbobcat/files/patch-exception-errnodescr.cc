@@ -1,6 +1,6 @@
---- exception/errnodescr.cc.orig	2013-10-02 12:36:00.000000000 +0200
-+++ exception/errnodescr.cc	2013-11-27 15:02:26.000000000 +0100
-@@ -7,16 +7,12 @@
+--- exception/errnodescr.cc.orig	2013-10-01 16:50:34 UTC
++++ exception/errnodescr.cc
+@@ -7,16 +7,12 @@ std::ostream &errnodescr(std::ostream &o
  {
      if (errno != 0)
      {

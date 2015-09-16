@@ -17,11 +17,7 @@ OPTIONS_SUB=	yes
 
 PORTDOCS=	README
 
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MJUPITER}
-MAKE_ARGS+=	JUPITER_FLAGS=
-.endif
+JUPITER_MAKE_ARGS_OFF=	JUPITER_FLAGS=
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=|CFLAGS?=|' \
@@ -34,12 +30,12 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tiocdtr ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/jerm.1 ${STAGEDIR}${PREFIX}/man/man1/
 
-.if ${PORT_OPTIONS:MJUPITER}
+do-install-JUPITER-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/jerm
 	${INSTALL_SCRIPT} ${WRKSRC}/init.sh ${STAGEDIR}${PREFIX}/libexec/jerm/
 	${INSTALL_SCRIPT} ${WRKSRC}/rock.pl ${STAGEDIR}${PREFIX}/libexec/jerm/
-.endif
 
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

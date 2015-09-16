@@ -1,8 +1,0 @@
---- src/hamster-service.orig	2010-11-16 15:25:01.000000000 +0100
-+++ src/hamster-service	2010-11-16 15:25:23.000000000 +0100
-@@ -1,4 +1,4 @@
--#!/usr/bin/python
-+#!/usr/bin/env python
- # nicked off gwibber
- 
- import gobject, dbus

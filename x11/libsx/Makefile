@@ -20,8 +20,6 @@ MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/libsx.a  ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/freq/libfreq.a  ${STAGEDIR}${PREFIX}/lib
@@ -29,11 +27,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/libsx.h ${STAGEDIR}${PREFIX}/include/X11/libsx
 	${INSTALL_DATA} ${WRKSRC}/freq/freq.h ${STAGEDIR}${PREFIX}/include/X11/libsx
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/libsx
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${PREFIX}/share/doc/libsx
 	${GZIP_CMD} ${STAGEDIR}${PREFIX}/share/doc/libsx/*.doc
-.endif
 
 .include <bsd.port.mk>

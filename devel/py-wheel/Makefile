@@ -14,7 +14,6 @@ COMMENT=	Built-package format for Python
 LICENSE=	MIT
 
 OPTIONS_DEFINE=	PIP SIGNATURE
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 PIP_DESC=	Use pip to install wheels
 PIP_RUN_DEPENDS=	pip:${PORTSDIR}/devel/py-pip

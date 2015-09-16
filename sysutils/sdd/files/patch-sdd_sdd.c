@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- sdd/sdd.c.orig	Fri Sep 17 02:28:51 2004
 +++ sdd/sdd.c	Fri Sep 17 02:30:12 2004
 @@ -1654,11 +1654,13 @@

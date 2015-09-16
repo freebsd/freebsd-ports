@@ -13,7 +13,6 @@ MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Strategy game featuring tactical combat
 
 LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libcurl.so:${PORTSDIR}/ftp/curl \
 		libtheora.so:${PORTSDIR}/multimedia/libtheora \
@@ -25,7 +24,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/base/default.cfg:${PORTSDIR}/games/u
 USE_GL=		yes
 USE_SDL=	sdl image mixer ttf
 USE_CXXSTD=	c++11
-USES=		compiler:c++11-lang execinfo gettext gmake openal:soft pkgconfig \
+USES=		compiler:c++11-lang execinfo gettext gmake jpeg openal:soft pkgconfig \
 		python:build tar:bzip2
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-release --target-os=freebsd

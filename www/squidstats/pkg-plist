@@ -19,11 +19,6 @@ bin/squidstats.pl
 %%DATADIR%%/templates/outgoing
 %%DATADIR%%/templates/requests
 www/cgi-bin/graph-summary.cgi
-@dirrm %%ETCDIR%%
-@dirrm %%DATADIR%%/htdocs
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%
-@dirrmtry www/cgi-bin
-@dirrmtry(%%WWWOWN%%,,) /var/db/squidstats/graphs
-@dirrmtry(%%SQUID_USER%%,,) /var/db/squidstats/rrd
-@dirrmtry /var/db/squidstats
+@dir(%%WWWOWN%%,,) /var/db/squidstats/graphs
+@dir(%%SQUID_USER%%,,) /var/db/squidstats/rrd
+@dir /var/db/squidstats

@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 Tags: for-upstream
 
 The standard headers must be included before the behavior gets undefined

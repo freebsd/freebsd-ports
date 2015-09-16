@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	parslet
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -13,6 +13,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-blankslate>=2:${PORTSDIR}/devel/rubygem-blankslate
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

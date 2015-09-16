@@ -3,4 +3,4 @@ calculate a lot of meta data, insert an onMetaData tag, cut FLV files, add cue
 points (onCuePoint), show the FLV structure and print meta data information in
 XML or YAML.
 
-WWW: http://www.inlet-media.de/flvtool2
+WWW: https://github.com/unnu/flvtool2

@@ -1,0 +1,13 @@
+--- Makefile.orig	2015-06-04 12:54:31.348048000 -0500
++++ Makefile	2015-06-04 12:54:49.272840000 -0500
+@@ -1,5 +1,10 @@
+ # $Id: Makefile,v 1.1.1.1 2002/06/09 13:26:27 andrew Exp $
+ 
++BINOWN!=	/usr/bin/id -n -u
++BINGRP!=	/usr/bin/id -n -g
++SHAREOWN=	${BINOWN}
++SHAREGRP=	${BINGRP}
++
+ PROG=	beep
+ SRCS=	${PROG}.c ${PROG}.h
+ LDADD=

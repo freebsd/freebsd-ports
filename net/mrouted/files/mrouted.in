@@ -1,8 +1,6 @@
 #!/bin/sh
 #
-# $NetBSD: mrouted,v 1.6 2002/03/22 04:33:59 thorpej Exp $
 # $FreeBSD$
-#
 
 # PROVIDE: mrouted
 # REQUIRE: netif routing cleanvar
@@ -11,11 +9,12 @@
 . /etc/rc.subr
 
 name="mrouted"
-rcvar=mrouted_enable
-command=%%PREFIX%%/sbin/${name}
+rcvar="${name}_enable"
+command="%%PREFIX%%/sbin/$name"
 pidfile="/var/run/${name}.pid"
-required_files=%%PREFIX%%/etc/${name}.conf
+required_files="%%PREFIX%%/etc/${name}.conf"
 extra_commands="reload"
 
 load_rc_config $name
+: ${mrouted_enable="NO"}
 run_rc_command "$1"

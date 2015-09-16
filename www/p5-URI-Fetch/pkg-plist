@@ -1,4 +1,4 @@
-%%PERL5_MAN3%%/URI::Fetch.3.gz
-%%PERL5_MAN3%%/URI::Fetch::Response.3.gz
 %%SITE_PERL%%/URI/Fetch.pm
 %%SITE_PERL%%/URI/Fetch/Response.pm
+%%PERL5_MAN3%%/URI::Fetch.3.gz
+%%PERL5_MAN3%%/URI::Fetch::Response.3.gz

@@ -3,12 +3,15 @@
 
 PORTNAME=	interchange
 PORTVERSION=	5.6.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www perl5
 MASTER_SITES=	http://ftp.icdevgroup.org/interchange/5.6/tar/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RedHat's database-enabled e-commerce server
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	p5-Safe-Hole>=0.10:${PORTSDIR}/security/p5-Safe-Hole \
 		p5-URI>=1.37:${PORTSDIR}/net/p5-URI \
@@ -17,7 +20,13 @@ RUN_DEPENDS=	p5-Safe-Hole>=0.10:${PORTSDIR}/security/p5-Safe-Hole \
 		p5-Digest-SHA1>=2.11:${PORTSDIR}/security/p5-Digest-SHA1
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-USES=		perl5 tar:bzip2
+USES=		perl5 shebangfix tar:bzip2
+SHEBANG_FILES=	dist/src/compile.pl \
+		dist/src/cpan_local_install \
+		dist/src/mod_perl_tlink.pl \
+		dist/src/testcgi \
+		dist/src/tlink.pl \
+		dist/src/vlink.pl
 USE_PERL5=	configure
 
 OPTIONS_DEFINE=		MYSQL PGSQL
@@ -56,8 +65,7 @@ post-install:
 # This directory has to be created here for check-plist to pass, otherwise it
 # complains the @dirrmtry /var/run/interchange entry does not have a matching
 # directory in the stage tree.
-# Its ownership and mode are properly set in the @exec call when the package is
-# installed.
+# Its ownership and mode are properly set in the @dir plist entry
 	${MKDIR} ${STAGEDIR}/var/run/interchange
 
 .include <bsd.port.mk>

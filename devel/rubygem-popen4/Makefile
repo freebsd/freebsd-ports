@@ -16,6 +16,8 @@ LICENSE_COMB=	dual
 RUN_DEPENDS=	rubygem-open4>=0.4.0:${PORTSDIR}/devel/rubygem-open4 \
 		rubygem-platform>=0.4.0:${PORTSDIR}/devel/rubygem-platform
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

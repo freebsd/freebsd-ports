@@ -10,6 +10,8 @@ COMMENT=	Visualisation tool for CHERI / BERI streamtraces
 
 LICENSE=	MIT
 
+BROKEN_FreeBSD_9=	does not build on FreeBSD 9.x
+
 USES=		gnustep
 USE_GITHUB=	yes
 GH_ACCOUNT=	CTSRD-CHERI

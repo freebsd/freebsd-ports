@@ -1,4 +1,2 @@
-SHA256 (mod_perl-2.0.8.tar.gz) = 35dc1b7a40a90a395ce88bba2df84f22289975f34d1757de6d715560c20a20e6
-SIZE (mod_perl-2.0.8.tar.gz) = 3790026
-SHA256 (mod_perl-2.0.8-r1638352.diff.gz) = abb4dfe56939759c2466f268ae6425e305b80d60528bce03de8fe2745349835f
-SIZE (mod_perl-2.0.8-r1638352.diff.gz) = 146749
+SHA256 (mod_perl-2.0.9.tar.gz) = 0260f26ab771c1c95fadc67544b3400e420bb30b8a77565d2d02ad05498ef52b
+SIZE (mod_perl-2.0.9.tar.gz) = 3846584

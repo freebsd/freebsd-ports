@@ -9,12 +9,3 @@
  	{
  	  winmsg_rendpos[--r] = pn - buf;
  	  continue;
-@@ -2271,8 +2271,6 @@
- 	  while (i-- > 0)
- 	    *pn-- = ' ';
- 	  numpad--;
--	  if (r && p - buf == winmsg_rendpos[r - 1])
--	    winmsg_rendpos[--r] = pn - buf;
- 	}
-     }
-   return pn2;

@@ -1,0 +1,11 @@
+--- libanjuta/Makefile.in.orig	2015-06-10 15:59:14.005088000 -0400
++++ libanjuta/Makefile.in	2015-06-10 15:59:28.001860000 -0400
+@@ -688,7 +688,7 @@
+ 	interfaces/libanjuta-iface-marshallers.h\
+ 	interfaces/libanjuta-interfaces.h
+ 
+-SUBDIRS = interfaces . tests
++SUBDIRS = interfaces .
+ AM_CPPFLAGS = \
+ 	-I$(top_srcdir) \
+ 	-I . \

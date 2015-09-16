@@ -1,5 +1,3 @@
-$FreeBSD$
-
 author:  Tod McQuillin
 
 --- speech_tools/config/rules/install.mak~	Sun May 30 22:51:10 1999

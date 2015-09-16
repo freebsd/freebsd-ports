@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	wireshark
-PORTVERSION=	1.12.4
+PORTVERSION=	1.12.7
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
 		http://ftp.uni-kl.de/pub/wireshark/src/ \
@@ -131,7 +131,7 @@ PLIST_SUB+=	LUA="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MRTP} && !defined(LITE)
-LIB_DEPENDS+=	libportaudio.so.0:${PORTSDIR}/audio/portaudio
+LIB_DEPENDS+=	libportaudio.so:${PORTSDIR}/audio/portaudio
 CONFIGURE_ARGS+=--with-portaudio=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--without-portaudio
@@ -181,6 +181,10 @@ CONFIGURE_ARGS+=--with-libgcrypt-prefix=${LOCALBASE}
 
 .if ! ${PORT_OPTIONS:MGSSAPI}
 CONFIGURE_ARGS+=--with-krb5=no
+.else
+KRB5_CONFIG?=	${LOCALBASE}/bin/krb5-config
+CONFIGURE_ENV+=	KRB5_CONFIG=${KRB5_CONFIG}
+LIB_DEPENDS+=	libkrb5.so:${PORTSDIR}/security/krb5
 .endif
 
 PKG_MESSAGE=	${FILESDIR}/pkg-message

@@ -1,0 +1,10 @@
+This port requires non-defualt configuration options for Apache.
+
+The list of modules and their configuration options are:
+
+* SUBSTITUTE    : mod_substitute
+* EXT_FILTER    : mod_ext_filter
+* SUEXEC        : mod_suexec
+* PROXY_AJP     : mod_proxy_ajp
+* PROXY_CONNECT : mod_proxy_connect
+* PROXY_FPT     : mod_proxy_ftp

@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- microcode/configure.orig
 +++ microcode/configure
 @@ -5214,7 +5214,7 @@

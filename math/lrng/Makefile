@@ -4,9 +4,9 @@
 PORTNAME=	lrng
 PORTVERSION=	20130314
 CATEGORIES=	math
-MASTER_SITES=	http://www.iro.umontreal.ca/%SUBDIR%/:1,2 \
-	${MASTER_SITE_LOCAL:S|%SUBDIR%/$|bf/${PORTNAME}/${PORTVERSION}/:1,2|}
-MASTER_SITE_SUBDIR=	~simardr/rng/:1 ~lecuyer/myftp/papers/:2
+MASTER_SITES=	http://www.iro.umontreal.ca/~simardr/rng/:1 \
+		http://www.iro.umontreal.ca/~lecuyer/myftp/papers/:2 \
+		LOCAL/bf/${PORTNAME}/${PORTVERSION}/:1,2
 DISTFILES=	ex1.c:1 lfsr258.c:1 lfsr113.c:1 WELL1024a.h:1 WELL19937a.h:1 WELL512a.h:1 \
 		WELL44497a.h:1 WELL19937a.c:1 WELL1024a.c:1 WELL512a.c:1 WELL44497a.c:1 \
 		MRG63k3a.c:1 MRG32k3a.c:1 MRG32k5a.c:1 MRG63k3a.h:1 MRG32k5a.h:1 MRG32k3a.h:1 \

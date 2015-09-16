@@ -37,7 +37,28 @@ PGSQL_DESC=	Use PostgreSQL backend (experimental)
 ORACLE_DESC=	Use Oracle backend (experimental)
 EXTRAS_DESC=	Extra dependencies for util scripts
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	FreeBSD/pandora_server \
+		bin/pandora_server \
+		util/integrity_check \
+		util/pandora_backup.sh \
+		util/pandora_count.sh \
+		util/pandora_diagnostic.sh \
+		util/pandora_remote_agent.sh \
+		util/pandora_server \
+		util/pandora_watchdog.sh \
+		util/plugin/babel_plugin/babel_plugin.sh \
+		util/plugin/create_integria_incident.sh \
+		util/plugin/dns_plugin.sh \
+		util/plugin/integria_plugin/integria_plugin.sh \
+		util/plugin/mysql_plugin.sh \
+		util/plugin/packet_loss.sh \
+		util/plugin/ssh_pandoraplugin.sh \
+		util/plugin/udp_nmap_plugin.sh \
+		util/plugin/webcheck_plugin.sh \
+		util/snmptrap_gen.sh \
+		util/tentacle_serverd \
+		util/trap_rate.sh
 USE_PERL5=	build run
 SUB_LIST+=	PERL="${PERL}" DATADIR="${DATADIR}"
 SUB_FILES=	pkg-message

@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- tools/clang/lib/Driver/ToolChains.cpp.orig
 +++ tools/clang/lib/Driver/ToolChains.cpp
 @@ -1950,6 +1950,38 @@

@@ -4,8 +4,7 @@
 PORTNAME=	lmtp2nntp
 PORTVERSION=	1.4.1
 CATEGORIES=	mail news
-MASTER_SITES=	${MASTER_SITE_OSSP}
-MASTER_SITE_SUBDIR=	tool/${PORTNAME}
+MASTER_SITES=	OSSP/tool/${PORTNAME}
 
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	OSSP mail to news gateway
@@ -25,18 +24,14 @@ PORTDOCS=	INSTALL README
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 # Try to fix parallel builds (-jX)
 post-patch:
 	@${REINPLACE_CMD} -e '/^all:/s, _SUBDIRS_all,, ; \
 		/^$$(PROG)/s,$$, _SUBDIRS_all,' ${WRKSRC}/Makefile.in
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-.endif
 
 check: build
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \

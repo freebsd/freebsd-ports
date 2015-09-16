@@ -3,7 +3,7 @@
 
 PORTNAME=	yate
 DISTVERSION=	5.4.0p1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://yate.null.ro/tarballs/yate5/
 DISTNAME=	${PORTNAME}-5.4.0-1
@@ -20,7 +20,13 @@ LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib \
 ONLY_FOR_ARCHS=	i386 amd64 sparc64 armv6
 
 USE_AUTOTOOLS=	autoconf
-USES=		bison gmake
+USES=		bison gmake shebangfix
+SHEBANG_FILES=	share/scripts/banbrutes.php \
+		share/scripts/leavemail.php \
+		share/scripts/queue_in.php \
+		share/scripts/queue_out.php \
+		share/scripts/route.php \
+		share/scripts/voicemail.php
 USE_LDCONFIG=	yes
 WANT_GNOME=	yes
 

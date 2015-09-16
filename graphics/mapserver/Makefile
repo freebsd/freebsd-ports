@@ -2,21 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=		mapserver
-PORTVERSION=		6.4.1
-PORTREVISION=		4
+PORTVERSION=		7.0.0
 CATEGORIES=		graphics www geography
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 
 MAINTAINER=		wen@FreeBSD.org
 COMMENT=		System for developing web-based GIS applications
 
+LICENSE=		MIT
+
 LIB_DEPENDS=		libgd.so:${PORTSDIR}/graphics/gd \
 			libproj.so:${PORTSDIR}/graphics/proj \
 			libpng.so:${PORTSDIR}/graphics/png \
-			libjpeg.so:${PORTSDIR}/graphics/jpeg \
-			libgif.so:${PORTSDIR}/graphics/giflib
+			libgif.so:${PORTSDIR}/graphics/giflib \
+			libharfbuzz.so:${PORTSDIR}/print/harfbuzz
 
-USES=			cmake:outsource
+USES=			cpe cmake:outsource jpeg
+CPE_VENDOR=		umn
 USE_GNOME=		libxml2
 LDFLAGS+=		-L${LOCALBASE} -pthread
 CMAKE_ARGS+=		-DCMAKE_PREFIX_PATH=${LOCALBASE} \
@@ -197,7 +199,7 @@ do-install:
 .endif
 
 post-install:
-	@${LN} -s ${PREFIX}/lib/libmapserver.so.6.4.1 ${STAGEDIR}${PREFIX}/lib/libmapserver.so.1
+	@${LN} -s ${PREFIX}/lib/libmapserver.so.7.0.0 ${STAGEDIR}${PREFIX}/lib/libmapserver.so.1
 	@${LN} -s ${PREFIX}/lib/libmapserver.so.1 ${STAGEDIR}${PREFIX}/lib/libmapserver.so
 
 .if ${PORT_OPTIONS:MPHP}

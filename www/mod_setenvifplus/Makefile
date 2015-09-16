@@ -4,8 +4,7 @@
 PORTNAME=	mod_setenvifplus
 PORTVERSION=	0.22
 CATEGORIES=	www
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	modsetenvifplus
+MASTER_SITES=	SF/modsetenvifplus
 EXTRACT_SUFX=	-src.tar.gz
 DIST_SUBDIR=	apache2
 

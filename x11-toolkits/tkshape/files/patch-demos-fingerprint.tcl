@@ -1,4 +1,3 @@
-$FreeBSD$
 --- demos/fingerprint.tcl	Mon Sep 11 12:01:58 2000
 +++ demos/fingerprint.tcl.new	Sun Mar 14 14:37:13 2004
 @@ -5,9 +5,9 @@

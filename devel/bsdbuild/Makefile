@@ -1,20 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	bsdbuild
-PORTVERSION=	3.0
-PORTREVISION=	2
+PORTVERSION=	3.1
 CATEGORIES=	devel
 MASTER_SITES=	http://stable.hypertriton.com/bsdbuild/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	BSD-licensed portable build system
+MAINTAINER=	vedge@hypertriton.com
+COMMENT=	Portable BSD-style build system
+
+LICENSE=	BSD2CLAUSE
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	*.pl mk/*.pl
 GNU_CONFIGURE=	yes
-
-LICENSE=	BSD2CLAUSE
-
-CONFIGURE_ARGS=	--with-catman=no
 
 .include <bsd.port.mk>

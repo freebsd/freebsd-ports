@@ -1,0 +1,38 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: hitch
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add some of the following variables to /etc/rc.conf to configure hitch:
+# hitch_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable hitch.
+# hitch_config (str):		Default "%%PREFIX%%/etc/hitch.conf"
+#				Set it to the full path to the config file
+#				that hitch will use during the automated
+#				start-up.
+# hitch_pidfile (str):	Default "%%PREFIX%%/var/hitch/hitch.pid"
+#				Set it to the value of 'pid' in
+#				the hitch.conf file.
+#
+
+. /etc/rc.subr
+
+name="hitch"
+rcvar=hitch_enable
+
+load_rc_config $name
+
+: ${hitch_enable="NO"}
+: ${hitch_config="%%PREFIX%%/etc/hitch.conf"}
+
+command="%%PREFIX%%/sbin/hitch-openssl"
+command_args="--daemon -u nobody -g nobody -s --config=${hitch_config}"
+
+required_files=${hitch_config}
+run_rc_command "$1"

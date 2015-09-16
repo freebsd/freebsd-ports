@@ -3,4 +3,3 @@ binary property list files (plist(5)) as defined by Apple. Have a look at
 CFPropertyList::List for more documentation.
 
 WWW: https://github.com/ckruse/CFPropertyList
-RG:  https://rubygems.org/gems/CFPropertyList

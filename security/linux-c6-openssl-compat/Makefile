@@ -3,7 +3,7 @@
 
 PORTNAME=	openssl-compat
 PORTVERSION=	0.9.8e
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security linux
 DISTNAME=	openssl098e-${PORTVERSION}-${RPMVERSION}
 
@@ -22,6 +22,10 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 DESCR=		${.CURDIR}/../openssl/pkg-descr
 
 post-install:
+.	if defined(OVERRIDE_LINUX_BASE_PORT) && ${OVERRIDE_LINUX_BASE_PORT} == "c6_64"
+	@cd ${STAGEDIR}${PREFIX}/usr/lib64 && ${LN} -sf libssl.so.6 libssl.so.7
+.	else
 	@cd ${STAGEDIR}${PREFIX}/usr/lib && ${LN} -sf libssl.so.6 libssl.so.7
+.	endif
 
 .include <bsd.port.mk>

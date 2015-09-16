@@ -7,7 +7,6 @@ PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://proj.llucax.com.ar/home/eventxx/releases/ \
 		LOCAL/glarkin
-MASTER_SITE_SUBDIR=	gahr
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ wrapper for libevent

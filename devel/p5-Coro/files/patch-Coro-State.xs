@@ -1,6 +1,6 @@
---- Coro/State.xs.orig	2008-12-16 03:39:29.000000000 +0800
-+++ Coro/State.xs	2009-03-11 23:28:09.000000000 +0800
-@@ -155,6 +155,10 @@
+--- Coro/State.xs.orig	2015-06-30 12:32:08 UTC
++++ Coro/State.xs
+@@ -102,6 +102,10 @@ static int cctx_max_idle = 4;
  #include "CoroAPI.h"
  #define GCoroAPI (&coroapi) /* very sneaky */
  

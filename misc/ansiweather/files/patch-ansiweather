@@ -1,0 +1,38 @@
+--- ansiweather.orig	2015-07-03 01:51:59 UTC
++++ ansiweather
+@@ -203,8 +203,8 @@ then
+ 	do
+ 		days+=("$(echo $weather | jq ".list[$i]")")
+ 		dates+=("$(epoch_to_date $(echo ${days[$i]} | jq -r '.dt'))")
+-		lows+=("$(printf "%0.0f" $(echo ${days[$i]} | jq -r '.temp.min'))")
+-		highs+=("$(printf "%0.0f" $(echo ${days[$i]} | jq -r '.temp.max'))")
++		lows+=("$(gprintf "%0.0f" $(echo ${days[$i]} | jq -r '.temp.min'))")
++		highs+=("$(gprintf "%0.0f" $(echo ${days[$i]} | jq -r '.temp.max'))")
+ 		humidity+=("$(echo ${days[$i]} | jq -r '.humidity')")
+ 		pressure+=("$(echo ${days[$i]} | jq -r '.pressure')")
+ 		sky+=("$(echo ${days[$i]} | jq -r '.weather[0].main')")
+@@ -213,7 +213,7 @@ then
+ 	done
+ else
+ 	city=$(echo $weather | jq -r '.name')
+-	temperature=$(printf '%.0f' $(echo $weather | jq '.main.temp'))
++	temperature=$(gprintf '%.0f' $(echo $weather | jq '.main.temp'))
+ 	humidity=$(echo $weather | jq '.main.humidity')
+ 	pressure=$(echo $weather | jq '.main.pressure')
+ 	sky=$(echo $weather | jq -r '.weather[0].main')
+@@ -293,13 +293,13 @@ case $units in
+ 		scale="°C"
+ 		speed_unit="m/s"
+ 		pressure_unit="hPa"
+-		pressure=$(printf '%.0f' $pressure)
++		pressure=$(gprintf '%.0f' $pressure)
+ 		;;
+ 	imperial)
+ 		scale="°F"
+ 		speed_unit="mph"
+ 		pressure_unit="inHg"
+-		pressure=$(printf '%.2f' $(echo "$pressure*0.0295" | bc))
++		pressure=$(gprintf '%.2f' $(echo "$pressure*0.0295" | bc))
+ 		;;
+ esac
+ 

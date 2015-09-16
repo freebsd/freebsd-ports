@@ -17,6 +17,8 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 USES=		cmake iconv
 USE_LDCONFIG=	yes
 
+CMAKE_ARGS=	-DIconv_LIBRARY=${ICONV_LIB_PATH}
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .if defined(WITH_DEBUG)

@@ -18,10 +18,9 @@ LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png
 
-USES=		gmake tar:bzip2
+USES=		gmake jpeg tar:bzip2
 USE_GL=		glew
 USE_SDL=	sdl
 MAKEFILE=	Makefile.linux

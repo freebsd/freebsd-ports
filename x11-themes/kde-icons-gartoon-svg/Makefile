@@ -3,9 +3,8 @@
 
 PORTNAME=	gartoon
 PORTVERSION=	1.3
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
+MASTER_SITES=	LOCAL/fluffy \
 		http://ns.ael.ru/ports/distfiles/KDE/
-MASTER_SITE_SUBDIR=	fluffy
 PKGNAMESUFFIX=	-svg
 DISTNAME=	ICONS-Gartoon-SVG-v${PORTVERSION}
 

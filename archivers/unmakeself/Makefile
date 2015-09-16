@@ -3,13 +3,15 @@
 
 PORTNAME=	unmakeself
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	archivers
 DISTFILES=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extract Makeself archives
 
-LDFLAGS+=	-larchive -lbz2 -lz -lcrypto -lmd
+USES=		libarchive
+LDFLAGS+=	-larchive
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/unmakeself

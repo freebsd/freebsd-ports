@@ -5,8 +5,7 @@ PORTNAME=	bsfilter
 PORTVERSION=	1.0.19
 PORTREVISION=	1
 CATEGORIES=	mail ruby
-MASTER_SITES=	SFJP
-MASTER_SITE_SUBDIR=	bsfilter/59804
+MASTER_SITES=	SFJP/bsfilter/59804
 
 MAINTAINER=	yasu@utahime.org
 COMMENT=	Bayesian spam filter written in Ruby

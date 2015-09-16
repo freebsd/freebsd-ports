@@ -19,8 +19,7 @@ LIB_DEPENDS=	librazorback_api.so:${PORTSDIR}/security/razorback-api \
 		libjson-c.so:${PORTSDIR}/devel/json-c
 
 GNU_CONFIGURE=	yes
-USES=		libtool pkgconfig
-USE_AUTOTOOLS=	autoconf
+USES=		autoreconf libtool pkgconfig
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

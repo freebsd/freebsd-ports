@@ -118,13 +118,3 @@ lib/node_modules/uglify-js/test/unit/compress/test/with.js
 lib/node_modules/uglify-js/tmp/hoist.js
 lib/node_modules/uglify-js/tmp/instrument.js
 lib/node_modules/uglify-js/tmp/test.js
-@dirrm lib/node_modules/uglify-js/tmp
-@dirrm lib/node_modules/uglify-js/test/unit/compress/test
-@dirrm lib/node_modules/uglify-js/test/unit/compress/expected
-@dirrm lib/node_modules/uglify-js/test/unit/compress
-@dirrm lib/node_modules/uglify-js/test/unit
-@dirrm lib/node_modules/uglify-js/test
-@dirrm lib/node_modules/uglify-js/lib
-@dirrm lib/node_modules/uglify-js/bin
-@dirrm lib/node_modules/uglify-js
-@dirrm lib/node_modules/.bin

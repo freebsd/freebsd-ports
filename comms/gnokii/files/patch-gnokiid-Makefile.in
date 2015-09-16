@@ -1,6 +1,6 @@
---- gnokiid/Makefile.in.orig	2010-04-21 15:49:27.000000000 +0200
-+++ gnokiid/Makefile.in	2010-04-25 18:04:37.105945495 +0200
-@@ -53,7 +53,7 @@
+--- gnokiid/Makefile.in.orig	2015-06-15 14:14:28 UTC
++++ gnokiid/Makefile.in
+@@ -53,7 +53,7 @@ CONFIG_CLEAN_VPATH_FILES =
  am__installdirs = "$(DESTDIR)$(bindir)"
  PROGRAMS = $(bin_PROGRAMS)
  am_gnokiid_OBJECTS = gnokiid-gnokiid.$(OBJEXT)
@@ -9,7 +9,7 @@
  am__DEPENDENCIES_1 =
  gnokiid_DEPENDENCIES = $(top_builddir)/common/libgnokii.la \
  	$(top_builddir)/common/data/libDATA.la $(am__DEPENDENCIES_1)
-@@ -328,8 +328,8 @@
+@@ -340,8 +340,8 @@ install-binPROGRAMS: $(bin_PROGRAMS)
  	while read type dir files; do \
  	    if test "$$dir" = .; then dir=; else dir=/$$dir; fi; \
  	    test -z "$$files" || { \

@@ -1,10 +1,10 @@
---- data/dconf/defaults/00-upstream-settings.orig	2014-03-21 08:45:14.698486081 +0000
-+++ data/dconf/defaults/00-upstream-settings	2014-03-21 08:45:23.489485407 +0000
+--- data/dconf/defaults/00-upstream-settings.orig	2015-06-18 15:47:40.000000000 +0200
++++ data/dconf/defaults/00-upstream-settings	2015-07-03 09:32:09.925298000 +0200
 @@ -13,7 +13,7 @@
  show-desktop-icons=false
  
  [org/gnome/desktop/default-applications/terminal]
--exec='/bin/true'
+-exec='true'
 +exec='/usr/bin/true'
  
  [org/gnome/desktop/interface]

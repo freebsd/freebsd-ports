@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cdo
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.5
 CATEGORIES=	science rubygems
 MASTER_SITES=	RG
 
@@ -13,6 +13,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	${LOCALBASE}/bin/cdo:${PORTSDIR}/science/cdo
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

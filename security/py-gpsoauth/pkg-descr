@@ -1,0 +1,8 @@
+gpsoauth allows python code to use the "master token" flow that KB
+Sriram described at
+http://sbktech.blogspot.com/2014/01/inside-android-play-services-magic.html.
+
+This is be useful when writing code that poses as a Google app, like
+gmusicapi does.
+
+WWW: http://github.com/simon-weber/gpsoauth

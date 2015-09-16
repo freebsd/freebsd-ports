@@ -5,10 +5,9 @@ PORTNAME=	figlet
 PORTVERSION=	2.2.5
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.figlet.org/pub/figlet/program/unix/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	obrien
+		LOCAL/obrien
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	SysV banner-like program prints strings in large fancy ASCII art
 
 LICENSE=	BSD3CLAUSE

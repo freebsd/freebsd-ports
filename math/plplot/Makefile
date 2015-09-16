@@ -3,6 +3,7 @@
 
 PORTNAME=	plplot
 PORTVERSION=	5.11.0
+PORTREVISION=	1
 CATEGORIES=	math science
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20Source
 
@@ -22,8 +23,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 
 USE_GNOME=	pango
 USE_PERL5=	build
-USE_GHOSTSCRIPT=yes
-USES=		cmake gmake perl5 pkgconfig
+USES=		cmake ghostscript gmake perl5 pkgconfig
 CMAKE_ARGS=	-DENABLE_java:BOOL=OFF \
 		-DENABLE_octave:BOOL=OFF \
 		-DENABLE_pdl:BOOL=OFF \

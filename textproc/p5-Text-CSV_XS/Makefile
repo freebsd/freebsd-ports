@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Text-CSV_XS
-PORTVERSION=	1.16
+PORTVERSION=	1.18
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:HMBRAND
@@ -19,7 +19,6 @@ TEST_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
 
 USES=		perl5 tar:tgz
 USE_PERL5=	configure
-NO_ARCH=	yes
 
 #pre-install:	test
 

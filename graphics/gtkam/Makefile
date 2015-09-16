@@ -16,7 +16,7 @@ LIB_DEPENDS=	libexif-gtk.so:${PORTSDIR}/graphics/libexif-gtk \
 		libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
 
 USES=		gettext gmake pathfix pkgconfig
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 intltool
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

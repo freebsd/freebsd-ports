@@ -44,9 +44,3 @@ share/ibus/component/table.xml
 %%DATADIR%%/icons/tc-mode.svg
 %%DATADIR%%/icons/tcb-mode.svg
 %%DATADIR%%/tables/template.txt
-@dirrmtry share/ibus/component
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/engine
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/tables
-@dirrm %%DATADIR%%

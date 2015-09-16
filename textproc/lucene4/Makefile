@@ -4,8 +4,7 @@
 PORTNAME=	lucene
 PORTVERSION=	4.10.4
 CATEGORIES=	textproc java devel
-MASTER_SITES=	APACHE
-MASTER_SITE_SUBDIR=	${PORTNAME}/java/${PORTVERSION}/
+MASTER_SITES=	APACHE/${PORTNAME}/java/${PORTVERSION}
 
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Full-text search engine for Java, 4.x branch

@@ -1,0 +1,5 @@
+lib/erlang/lib/bbmustache-%%VERSION%%/ebin/bbmustache.app
+lib/erlang/lib/bbmustache-%%VERSION%%/ebin/bbmustache.beam
+lib/erlang/lib/bbmustache-%%VERSION%%/src/bbmustache.app.src
+lib/erlang/lib/bbmustache-%%VERSION%%/src/bbmustache.erl
+%%PORTDOCS%%%%DOCSDIR%%/README.md

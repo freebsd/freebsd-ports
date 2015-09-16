@@ -32,7 +32,7 @@ rotate_logs_cmd="su -m ${rabbitmq_user} -c 'sh -c \"${rabbitmq_ctl} rotate_logs\
 status_cmd="su -m ${rabbitmq_user} -c 'sh -c \"${rabbitmq_ctl} status\"'"
 extra_commands="rotate_logs status"
 
-export HOME=/var/db/${name}
+export RABBITMQ_HOME=/var/db/${name}
 
 # Prevent conflicts with amqp_client and rabbit_common applications that
 # may be installed in ERL_LIBS.
@@ -42,11 +42,11 @@ rabbitmq_start()
 {
 	echo "Starting ${name}."
 
-	if [ -f ${HOME}/.erlang.cookie ]; then
-		chown ${rabbitmq_user}:${rabbitmq_user} ${HOME}/.erlang.cookie
+	if [ -d ${RABBITMQ_HOME} ]; then
+		chown -R ${rabbitmq_user}:${rabbitmq_user} ${RABBITMQ_HOME}
 	fi
 
-	daemon -c -f -u ${rabbitmq_user} -p ${pidfile} ${rabbitmq_server}
+	env HOME=${RABBITMQ_HOME} daemon -c -f -u ${rabbitmq_user} -p ${pidfile} ${rabbitmq_server}
 
 	local _attempt=10
 

@@ -54,6 +54,7 @@ include/gdal_alg.h
 include/gdal_alg_priv.h
 include/gdal_csv.h
 include/gdal_frmts.h
+include/gdal_mdreader.h
 include/gdal_pam.h
 include/gdal_priv.h
 include/gdal_proxy.h
@@ -67,6 +68,8 @@ include/gdalgrid.h
 include/gdalgrid_priv.h
 include/gdaljp2abstractdataset.h
 include/gdaljp2metadata.h
+include/gdaljp2metadatagenerator.h
+include/gdalsse_priv.h
 include/gdalwarper.h
 include/gdalwarpkernel_opencl.h
 include/gvgcpfit.h
@@ -87,6 +90,6 @@ include/vrtdataset.h
 lib/gdalplugins/.keepme
 lib/libgdal.a
 lib/libgdal.so
-lib/libgdal.so.1
+lib/libgdal.so.%%MAJOR_VER%%
 lib/libgdal.so.%%PORTVERSION%%
 libdata/pkgconfig/gdal.pc

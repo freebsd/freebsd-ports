@@ -1,7 +1,7 @@
---- ./src/libtomahawk/sip/PeerInfo.cpp.orig	2013-06-28 17:01:55.000000000 +0200
-+++ ./src/libtomahawk/sip/PeerInfo.cpp	2013-06-28 17:02:45.000000000 +0200
-@@ -312,7 +312,7 @@
-     m_fancyAvatar = 0;
+--- src/libtomahawk/sip/PeerInfo.cpp.orig	2014-11-20 00:17:56 UTC
++++ src/libtomahawk/sip/PeerInfo.cpp
+@@ -333,7 +333,7 @@ PeerInfo::setAvatar( const QPixmap& avat
+     d->fancyAvatar.reset();
  
      Q_ASSERT( !contactId().isEmpty() );
 -    TomahawkUtils::Cache::instance()->putData( "Sources", 7776000000 /* 90 days */, contactId(), ba );

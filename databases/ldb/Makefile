@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=		ldb
-PORTVERSION=		1.1.19
-PORTREVISION=		1
+PORTVERSION=		1.1.21
+PORTREVISION=		0
 PORTEPOCH=		0
 CATEGORIES=		databases
-MASTER_SITES=		${MASTER_SITE_SAMBA}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=		SAMBA
 
 MAINTAINER=		timur@FreeBSD.org
 COMMENT=		LDAP-like embedded database
@@ -26,7 +25,9 @@ PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
 PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
 
 CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man \
-			--infodir=${PREFIX}/${INFO_PATH}/${INFO_SUBDIR}
+			--infodir=${PREFIX}/${INFO_PATH}/${INFO_SUBDIR} \
+			--disable-rpath \
+			--without-gettext
 
 OPTIONS_DEFINE=		MANPAGES
 MANPAGES_DESC=		Build and install manpages (requires textproc/docbook-xsl)

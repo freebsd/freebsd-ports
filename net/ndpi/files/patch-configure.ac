@@ -1,0 +1,28 @@
+--- configure.ac.orig	2015-06-06 19:48:47 UTC
++++ configure.ac
+@@ -9,20 +9,11 @@ LT_INIT
+ AC_PROG_CC
+ AX_PTHREAD
+ 
+-if test -d ".git"; then :
+-     GIT_TAG=`git log -1 --format=%h`
+-     GIT_DATE=`git log -1 --format=%cd`
+-     #
+-     # On CentOS 6 `git rev-list HEAD --count` does not work
+-     # 
+-     #
+-     GIT_NUM=`git log --pretty=oneline | wc -l`
+-     GIT_BRANCH=`git rev-parse --abbrev-ref HEAD`
+-     GIT_RELEASE="${PACKAGE_VERSION}-${GIT_BRANCH}-${GIT_NUM}-${GIT_TAG}"
+-else
+-     GIT_RELEASE="${PACKAGE_VERSION}"
+-     GIT_DATE=`date`
+-fi
++GIT_TAG="a31b0a3"
++GIT_DATE="Sun May 31 19:50:52 2015 +0200"
++GIT_NUM="62"
++GIT_BRANCH="master"
++GIT_RELEASE="${PACKAGE_VERSION}-${GIT_BRANCH}-${GIT_NUM}-${GIT_TAG}"
+ 
+ AC_DEFINE_UNQUOTED(NDPI_GIT_RELEASE, "${GIT_RELEASE}", [GIT Release])
+ AC_DEFINE_UNQUOTED(NDPI_GIT_DATE, "${GIT_DATE}", [Last GIT change])

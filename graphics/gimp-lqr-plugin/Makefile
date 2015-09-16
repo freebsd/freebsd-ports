@@ -16,7 +16,7 @@ LIB_DEPENDS=	libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app \
 
 USES=		tar:bzip2 gettext gmake pkgconfig
 GNU_CONFIGURE=	yes
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 intltool
 
 PLUGIN_DIR?=	libexec/gimp/2.2/plug-ins
 PLIST_SUB=	PLUGIN_DIR=${PLUGIN_DIR}

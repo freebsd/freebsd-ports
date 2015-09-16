@@ -1,9 +1,5 @@
 bin/nb
 @sample etc/nb.conf.sample
-@dir share/nanoblogger/default/cache
-@dir share/nanoblogger/default/plugins
-@dir share/nanoblogger/plugins/entry/mod
-@dir share/nanoblogger/plugins/page/mod
 %%DATADIR%%/default/articles/example.txt
 %%DATADIR%%/default/blog.conf
 %%DATADIR%%/default/data/cat_1.db
@@ -87,3 +83,8 @@ bin/nb
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/copyright
 %%PORTDOCS%%%%DOCSDIR%%/html/nanoblogger.html
+@dir %%DATADIR%%/plugins/page/mod
+@dir %%DATADIR%%/plugins/entry/mod
+@dir %%DATADIR%%/plugins/archive/category
+@dir %%DATADIR%%/default/plugins
+@dir %%DATADIR%%/default/cache

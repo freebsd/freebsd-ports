@@ -3,7 +3,7 @@
 
 PORTNAME=	libflame
 DISTVERSION=	r7421
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 MASTER_SITES=	http://www.cs.utexas.edu/users/%SUBDIR%/:1,2 LOCAL/bf:3
 MASTER_SITE_SUBDIR=	flame/snapshots/:1 field/docs/:2
@@ -296,12 +296,11 @@ do-install:
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS} \
 	${MAKE_ARGS} install-headers
 .if ${PORT_OPTIONS:MSHARED}
-	@cd ${WRKSRC}/lib; ${STRIP_CMD} */libflame.so */libflame.a
+	@cd ${WRKSRC}/lib; ${STRIP_CMD} */libflame.so
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS} \
 	${MAKE_ARGS} install-libs install-lib-symlinks
 .endif
 .if ${PORT_OPTIONS:MSTATIC}
-	@cd ${WRKSRC}_STATIC/lib; ${STRIP_CMD} */libflame.a
 	@cd ${WRKSRC}_STATIC; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS} \
 	${MAKE_ARGS} install-libs
 .endif

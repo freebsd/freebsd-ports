@@ -37,6 +37,7 @@ bin/piperw
 bin/redirfd
 bin/runblock
 bin/shift
+bin/trap
 bin/tryexec
 bin/umask
 bin/unexport
@@ -47,8 +48,8 @@ lib/execline/libexecline.a
 lib/libexecline.so
 lib/libexecline.so.2
 lib/libexecline.so.2.1
-lib/libexecline.so.2.1.1
-lib/libexecline.so.2.1.1.0
+lib/libexecline.so.2.1.3
+lib/libexecline.so.2.1.3.1
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
@@ -102,6 +103,7 @@ lib/libexecline.so.2.1.1.0
 %%PORTDOCS%%%%DOCSDIR%%/redirfd.html
 %%PORTDOCS%%%%DOCSDIR%%/runblock.html
 %%PORTDOCS%%%%DOCSDIR%%/shift.html
+%%PORTDOCS%%%%DOCSDIR%%/trap.html
 %%PORTDOCS%%%%DOCSDIR%%/tryexec.html
 %%PORTDOCS%%%%DOCSDIR%%/umask.html
 %%PORTDOCS%%%%DOCSDIR%%/unexport.html

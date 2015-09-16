@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	librecad
-DISTVERSION=	2.0.7
+DISTVERSION=	2.0.8
 CATEGORIES=	cad
 
 MAINTAINER=	makc@FreeBSD.org
@@ -18,6 +18,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	LibreCAD
 GH_PROJECT=	LibreCAD
 
+# Unhide std::to_string() to fix build with GCC (ports/193528)
+CFLAGS=		-D_GLIBCXX_USE_C99
+
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/share,${PREFIX}/share,' \
 		${WRKSRC}/librecad/src/lib/engine/rs_settings.cpp \
@@ -32,7 +35,11 @@ pre-install:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unix/librecad ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/unix/ttf2lff ${STAGEDIR}${PREFIX}/bin
 	(cd ${WRKSRC}/unix/resources && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
+	(${MKDIR} ${STAGEDIR}${PREFIX}/share/appdata && \
+		${INSTALL_DATA} ${WRKSRC}/unix/appdata/librecad.appdata.xml \
+		${STAGEDIR}${PREFIX}/share/appdata)
 	${INSTALL_DATA} ${WRKSRC}/desktop/librecad.desktop \
 		${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/librecad/res/main/librecad.png \

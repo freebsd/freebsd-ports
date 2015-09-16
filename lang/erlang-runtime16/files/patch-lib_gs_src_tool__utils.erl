@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- lib/gs/src/tool_utils.erl.orig
 +++ lib/gs/src/tool_utils.erl
 @@ -27,6 +27,9 @@

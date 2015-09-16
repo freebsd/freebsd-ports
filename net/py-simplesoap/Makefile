@@ -12,12 +12,12 @@ COMMENT=	Python Simple SOAP Library
 
 LICENSE=	LGPL3
 
-USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
+USE_PYTHON=	autoplist concurrent distutils
 USES=		python
 
 GH_ACCOUNT=	py${PORTNAME}
 GH_PROJECT=	py${PORTNAME}
-GH_TAGNAME=	${PORTVERSION}
 USE_GITHUB=	yes
 
 .include <bsd.port.mk>

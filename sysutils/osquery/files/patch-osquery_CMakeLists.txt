@@ -1,40 +1,11 @@
---- osquery/CMakeLists.txt.orig	2015-05-05 00:16:41 UTC
+--- osquery/CMakeLists.txt.orig	2015-07-03 23:09:06 UTC
 +++ osquery/CMakeLists.txt
-@@ -22,11 +22,14 @@ set(OSQUERY_LIBS
- 
-   readline
-   pthread
--  dl
-   bz2
-   z
- )
- 
-+if(NOT FREEBSD)
-+  set(OSQUERY_LIBS ${OSQUERY_LIBS} dl)
-+endif()
-+
- # Add default linking details (the first argument means SDK + core).
- ADD_OSQUERY_LINK(TRUE "-rdynamic")
- 
-@@ -44,7 +47,7 @@ endif()
+@@ -54,7 +54,7 @@ endif()
  # The remaining boost libraries are discovered with find_library.
- ADD_OSQUERY_LINK(TRUE "boost_system")
- ADD_OSQUERY_LINK(TRUE "boost_filesystem")
--ADD_OSQUERY_LINK(TRUE "boost_regex")
-+ADD_OSQUERY_LINK(TRUE "-lboost_regex")
- ADD_OSQUERY_LINK(TRUE "yara")
+ ADD_OSQUERY_LINK_CORE("boost_system")
+ ADD_OSQUERY_LINK_CORE("boost_filesystem")
+-ADD_OSQUERY_LINK_CORE("boost_regex")
++ADD_OSQUERY_LINK_CORE("-lboost_regex")
+ ADD_OSQUERY_LINK_CORE("yara")
  
  if(DEFINED ENV{SANITIZE})
-@@ -133,7 +136,11 @@ if(NOT OSQUERY_BUILD_SDK_ONLY)
- 
-   # Include the public API includes if make devel.
-   install(TARGETS libosquery ARCHIVE DESTINATION lib COMPONENT devel OPTIONAL)
--  install(DIRECTORY "${CMAKE_SOURCE_DIR}/include/" DESTINATION include COMPONENT devel OPTIONAL)
-+  install(DIRECTORY "${CMAKE_SOURCE_DIR}/include"
-+    DESTINATION include
-+    COMPONENT devel OPTIONAL
-+    PATTERN ".*" EXCLUDE
-+  )
- 
-   # make install (executables)
-   install(TARGETS shell RUNTIME DESTINATION bin COMPONENT main)

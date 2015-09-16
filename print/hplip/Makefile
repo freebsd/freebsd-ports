@@ -3,14 +3,14 @@
 
 PORTNAME=	hplip
 PORTVERSION=	3.14.10
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	SF
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Drivers and utilities for HP Printers and All-in-One devices
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libcupsmime.so:${PORTSDIR}/print/cups-base \
+LIB_DEPENDS=	libcupsmime.so:${PORTSDIR}/print/cups-base \
 		libcups.so:${PORTSDIR}/print/cups-client \
 		libcupsimage.so:${PORTSDIR}/print/cups-image \
 		libdbus-1.so:${PORTSDIR}/devel/dbus
@@ -22,8 +22,8 @@ RUN_DEPENDS=	espgs:${PORTSDIR}/print/cups-pstoraster \
 CONFLICTS_INSTALL=	hpijs-[0-9]*
 
 INSTALL_TARGET=	install-strip
-USES=		dos2unix libtool pkgconfig python shebangfix
-USE_GHOSTSCRIPT_RUN=	yes
+USES=		dos2unix ghostscript:run jpeg libtool pkgconfig python \
+		shebangfix
 USE_GNOME=	pygobject
 USE_LDCONFIG=	yes
 
@@ -99,16 +99,10 @@ SCAN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
 SCAN_CONFIGURE_ENABLE=	scan-build
 
 XSANE_DESC=	Install XSane for scanning (requires SCAN)
+XSANE_IMPLIES=	SCAN
+XSANE_RUN_DEPENDS=	xsane:${PORTSDIR}/graphics/xsane
 
 DOCS_CONFIGURE_ENABLE=	doc-build
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSCAN}
-. if ${PORT_OPTIONS:MXSANE}
-RUN_DEPENDS+=	xsane:${PORTSDIR}/graphics/xsane
-. endif
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|-ldld||g; s|-ldl||g' \
@@ -139,20 +133,20 @@ post-patch:
 		-e 's,^#!/usr/bin/python,#!${PYTHON_CMD},' \
 		-e 's,^#!/usr/bin/env python,#!${PYTHON_CMD},' \
 		-e 's,^#!/bin/env python,#!${PYTHON_CMD},'
-.if !${PORT_OPTIONS:MDOCS}
+
+post-patch-DOCS-off:
 	${REINPLACE_CMD} -e '/[[:space:]]install-docDATA/ s|install-docDATA||' \
 		${WRKSRC}/Makefile.in
-.endif
 
 post-install:
-.if ${PORT_OPTIONS:MQT}
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/xdg/autostart
-	${INSTALL_DATA} ${WRKSRC}/hplip-systray.desktop ${STAGEDIR}${PREFIX}/etc/xdg/autostart/hplip-systray.desktop
-.endif
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/hp
 	${INSTALL_DATA} ${WRKSRC}/hplip.conf ${STAGEDIR}${PREFIX}/etc/hp/hplip.conf.sample
 	${LN} -sf ${LOCALBASE}/bin/foomatic-rip ${STAGEDIR}${PREFIX}/libexec/cups/filter/foomatic-rip-hplip
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/cups/model
 	${LN} -sf ${LOCALBASE}/share/ppd/HP ${STAGEDIR}${PREFIX}/share/cups/model/hplip
+
+post-install-QT-on:
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/xdg/autostart
+	${INSTALL_DATA} ${WRKSRC}/hplip-systray.desktop ${STAGEDIR}${PREFIX}/etc/xdg/autostart/hplip-systray.desktop
 
 .include <bsd.port.mk>

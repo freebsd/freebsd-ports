@@ -1,10 +1,8 @@
 # Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/mail/evolution/Makefile 20048 2014-11-10 09:19:46Z gusi $
 
 PORTNAME=	evolution
-PORTVERSION=	3.12.11
-PORTREVISION=	2
+PORTVERSION=	3.16.5
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -19,23 +17,24 @@ LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss \
 		libgtkspell3-3.so:${PORTSDIR}/textproc/gtkspell3 \
 		libgeocode-glib.so:${PORTSDIR}/net/geocode-glib \
 		libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3 \
+		libcryptui.so:${PORTSDIR}/security/libcryptui \
 		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 		libnotify.so:${PORTSDIR}/devel/libnotify
 RUN_DEPENDS=	highlight:${PORTSDIR}/textproc/highlight \
 		gnome-keyring>=3.0.0:${PORTSDIR}/security/gnome-keyring
 
+PORTSCOUT=	limitw:1,even
+
 USES=		desktop-file-utils bison gettext gmake libtool \
 		pathfix perl5 pkgconfig tar:xz
-USE_GNOME=	evolutiondataserver3 gnomedesktop3 gnomeprefix gtkhtml4 \
-		intlhack
+USE_GNOME=	evolutiondataserver3 gnomedesktop3 intltool
 GNU_CONFIGURE=	yes
 USE_GSTREAMER1=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-nss=yes \
+		--disable-autoar \
 		--with-sub-version=" FreeBSD GNOME Team Port"
-# gtkimageview needs to get a gtk3 release first.
-CONFIGURE_ARGS+=--disable-image-inline
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
@@ -59,7 +58,7 @@ GLIB_SCHEMAS=	org.gnome.evolution.gschema.xml \
 		org.gnome.evolution.plugin.publish-calendar.gschema.xml \
 		org.gnome.evolution.plugin.templates.gschema.xml
 
-EVO_VERSION=	3.12
+EVO_VERSION=	3.16
 PLIST_SUB=	VERSION=${EVO_VERSION} \
 		PORTVERSION=2.12
 
@@ -84,11 +83,11 @@ LDAP_USE=	OPENLDAP=yes
 WEATHER_LIB_DEPENDS=	libgweather-3.so:${PORTSDIR}/net/libgweather
 WEATHER_CONFIGURE_ENABLE=	weather
 
-SPAMASSASSIN_CONFIGURE_ENABLE=	spamassassin
+SPAMASSASSIN_CONFIGURE_WITH=	spamassassin
 SPAMASSASSIN_BUILD_DEPENDS=	spamassassin:${PORTSDIR}/mail/spamassassin
 SPAMASSASSIN_RUN_DEPENDS=	spamassassin:${PORTSDIR}/mail/spamassassin
 
-BOGOFILTER_CONFIGURE_ENABLE=	bogofilter
+BOGOFILTER_CONFIGURE_WITH=	bogofilter
 BOGOFILTER_BUILD_DEPENDS=	bogofilter:${PORTSDIR}/mail/bogofilter
 BOGOFILTER_RUN_DEPENDS=	bogofilter:${PORTSDIR}/mail/bogofilter
 

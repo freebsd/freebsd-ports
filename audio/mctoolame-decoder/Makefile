@@ -19,8 +19,6 @@ PLIST_SUB=	PKGNAMESUFFIX="${PKGNAMESUFFIX}"
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(ARCH)||' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -E \
@@ -29,9 +27,8 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mctoolamed ${STAGEDIR}${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}${PKGNAMESUFFIX}/html
 	${INSTALL_DATA} ${WRKSRC}/html/* ${STAGEDIR}${DOCSDIR}${PKGNAMESUFFIX}/html
-.endif
 
 .include <bsd.port.mk>

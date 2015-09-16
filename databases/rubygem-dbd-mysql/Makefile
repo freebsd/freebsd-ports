@@ -8,6 +8,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	MySQL driver for DBI-for-Ruby
 
+LICENSE=	BSD3CLAUSE
+
 RUN_DEPENDS=	rubygem-dbi>=0:${PORTSDIR}/databases/rubygem-dbi \
 		rubygem-mysql>=0:${PORTSDIR}/databases/rubygem-mysql
 

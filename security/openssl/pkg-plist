@@ -98,7 +98,6 @@ lib/libssl.a
 libdata/pkgconfig/libcrypto.pc
 libdata/pkgconfig/libssl.pc
 libdata/pkgconfig/openssl.pc
-%%SHARED%%@dirrm lib/engines
 man/man1/CA.pl.1.gz
 man/man1/asn1parse.1.gz
 man/man1/c_rehash.1.gz
@@ -1129,6 +1128,7 @@ man/man3/SSL_CIPHER_get_bits.3.gz
 man/man3/SSL_CIPHER_get_name.3.gz
 man/man3/SSL_CIPHER_get_version.3.gz
 man/man3/SSL_COMP_add_compression_method.3.gz
+man/man3/SSL_COMP_free_compression_methods.3.gz
 man/man3/SSL_CONF_CTX_clear_flags.3.gz
 man/man3/SSL_CONF_CTX_free.3.gz
 man/man3/SSL_CONF_CTX_new.3.gz
@@ -1154,6 +1154,7 @@ man/man3/SSL_CTX_ctrl.3.gz
 man/man3/SSL_CTX_flush_sessions.3.gz
 man/man3/SSL_CTX_free.3.gz
 man/man3/SSL_CTX_get0_chain_certs.3.gz
+man/man3/SSL_CTX_get0_param.3.gz
 man/man3/SSL_CTX_get_cert_store.3.gz
 man/man3/SSL_CTX_get_client_CA_list.3.gz
 man/man3/SSL_CTX_get_client_cert_cb.3.gz
@@ -1204,6 +1205,7 @@ man/man3/SSL_CTX_set1_chain.3.gz
 man/man3/SSL_CTX_set1_chain_cert_store.3.gz
 man/man3/SSL_CTX_set1_curves.3.gz
 man/man3/SSL_CTX_set1_curves_list.3.gz
+man/man3/SSL_CTX_set1_param.3.gz
 man/man3/SSL_CTX_set1_verify_cert_store.3.gz
 man/man3/SSL_CTX_set_cert_cb.3.gz
 man/man3/SSL_CTX_set_cert_store.3.gz
@@ -1282,6 +1284,7 @@ man/man3/SSL_do_handshake.3.gz
 man/man3/SSL_flush_sessions.3.gz
 man/man3/SSL_free.3.gz
 man/man3/SSL_get0_chain_certs.3.gz
+man/man3/SSL_get0_param.3.gz
 man/man3/SSL_get1_curves.3.gz
 man/man3/SSL_get_SSL_CTX.3.gz
 man/man3/SSL_get_accept_state.3.gz
@@ -1341,6 +1344,7 @@ man/man3/SSL_set1_chain.3.gz
 man/man3/SSL_set1_chain_cert_store.3.gz
 man/man3/SSL_set1_curves.3.gz
 man/man3/SSL_set1_curves_list.3.gz
+man/man3/SSL_set1_param.3.gz
 man/man3/SSL_set1_verify_cert_store.3.gz
 man/man3/SSL_set_bio.3.gz
 man/man3/SSL_set_cert_cb.3.gz
@@ -1645,9 +1649,5 @@ man/man7/des_modes.7.gz
 %%OPENSSLDIR%%/misc/tsget
 %%OPENSSLDIR%%/openssl.cnf.sample
 %%PORTDOCS%%%%DOCSDIR%%/openssl.txt
-@dirrm include/openssl
-@dirrmtry %%OPENSSLDIR%%/certs
-@dirrm %%OPENSSLDIR%%/misc
-@dirrmtry %%OPENSSLDIR%%/private
-@dirrm %%OPENSSLDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dir %%OPENSSLDIR%%/private
+@dir %%OPENSSLDIR%%/certs

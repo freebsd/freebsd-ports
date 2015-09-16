@@ -13,9 +13,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DEMO_DISTFILE:S/$/:demo/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Development environment used to build 2D/3D/stereo graphics
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
-
-USES=		shebangfix perl5
+USES=		jpeg perl5 shebangfix
 SHEBANG_FILES=	doc/*.pl
 USE_GL=		glu
 USE_XORG=	xmu
@@ -45,12 +43,6 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 .if ${PORT_OPTIONS:MEXAMPLES}
 DEMO_DISTFILE=	${DISTNAME:S,-devel-,-demo-,}${EXTRACT_SUFX}
 DEMO_WRKSRC=	${WRKDIR}/rmdemo
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
 post-patch:
@@ -85,4 +77,4 @@ do-install:
 	${INSTALL_DATA} ${DEMO_WRKSRC}/data/* ${STAGEDIR}${EXAMPLESDIR}/data
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

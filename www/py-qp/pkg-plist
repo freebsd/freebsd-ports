@@ -106,11 +106,3 @@ bin/qpcensus.py
 %%PYTHON_SITELIBDIR%%/qp/setup.py
 %%PYTHON_SITELIBDIR%%/qp/setup.pyc
 %%PYTHON_SITELIBDIR%%/qp/setup.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/qp/pub
-@dirrm %%PYTHON_SITELIBDIR%%/qp/mail
-@dirrm %%PYTHON_SITELIBDIR%%/qp/lib
-@dirrm %%PYTHON_SITELIBDIR%%/qp/hub
-@dirrm %%PYTHON_SITELIBDIR%%/qp/http
-@dirrm %%PYTHON_SITELIBDIR%%/qp/fill
-@dirrm %%PYTHON_SITELIBDIR%%/qp/sites
-@dirrm %%PYTHON_SITELIBDIR%%/qp

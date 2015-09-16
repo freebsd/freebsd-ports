@@ -6,8 +6,7 @@ PORTVERSION=	0.3
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.lysator.liu.se/~astrand/projects/pyobfuscate/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	arved
+		LOCAL/arved
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python source code obfuscator

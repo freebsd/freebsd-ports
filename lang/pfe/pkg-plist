@@ -229,5 +229,3 @@ man/man1/pfe.1.gz
 %%DATADIR%%/test/tt.fs
 %%DATADIR%%/test/wordsets.4th
 %%DATADIR%%/test/wordsets.fs
-%%DATADIR%%/testmodule1.fs
-%%DATADIR%%/testmodule2.fs

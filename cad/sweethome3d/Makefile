@@ -2,21 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	sweethome3d
-PORTVERSION=	4.4
-PORTREVISION=	1
+PORTVERSION=	5.0
 CATEGORIES=	cad java
-MASTER_SITES=	SF/${PORTNAME}/SweetHome3D-source/${DISTNAME}/
+MASTER_SITES=	http://www.sweethome3d.com/downloads/ \
+	SF/${PORTNAME}/SweetHome3D-source/${DISTNAME}/
 DISTNAME=	SweetHome3D-${PORTVERSION}-src
 
 MAINTAINER=	matthias@petermann-it.de
 COMMENT=	Free interior design application
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING.TXT
 
 BUILD_DEPENDS=	java3d>=0:${PORTSDIR}/java/java3d
 RUN_DEPENDS=	java3d>=0:${PORTSDIR}/java/java3d
 
 USES=		zip
+NO_ARCH=	yes
 USE_ANT=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

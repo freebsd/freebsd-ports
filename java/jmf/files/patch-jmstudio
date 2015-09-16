@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- bin/jmstudio.orig	Mon Jan 26 17:10:53 2004
 +++ bin/jmstudio	Mon Jan 26 17:15:31 2004
 @@ -64,9 +64,9 @@

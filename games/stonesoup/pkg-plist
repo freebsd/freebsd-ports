@@ -3,12 +3,9 @@ bin/stonesoup
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.crawlrc
 %%DATADIR%%/dat/clua/autofight.lua
 %%DATADIR%%/dat/clua/automagic.lua
-%%DATADIR%%/dat/clua/gearset.lua
 %%DATADIR%%/dat/clua/kills.lua
 %%DATADIR%%/dat/clua/runrest.lua
 %%DATADIR%%/dat/clua/stash.lua
-%%DATADIR%%/dat/clua/trapwalk.lua
-%%DATADIR%%/dat/clua/wield.lua
 %%DATADIR%%/dat/database/FAQ.txt
 %%DATADIR%%/dat/database/el/monflee.txt
 %%DATADIR%%/dat/database/el/rand_all.txt
@@ -33,6 +30,7 @@ bin/stonesoup
 %%DATADIR%%/dat/database/wpnnoise.txt
 %%DATADIR%%/dat/defaults/autopickup_exceptions.txt
 %%DATADIR%%/dat/defaults/food_colouring.txt
+%%DATADIR%%/dat/defaults/glyph_colours.txt
 %%DATADIR%%/dat/defaults/menu_colours.txt
 %%DATADIR%%/dat/defaults/messages.txt
 %%DATADIR%%/dat/defaults/misc.txt
@@ -88,10 +86,13 @@ bin/stonesoup
 %%DATADIR%%/dat/des/builder/food.des
 %%DATADIR%%/dat/des/builder/layout.des
 %%DATADIR%%/dat/des/builder/layout_caves.des
+%%DATADIR%%/dat/des/builder/layout_cc.des
 %%DATADIR%%/dat/des/builder/layout_cellular.des
 %%DATADIR%%/dat/des/builder/layout_city.des
+%%DATADIR%%/dat/des/builder/layout_delve.des
 %%DATADIR%%/dat/des/builder/layout_forest.des
 %%DATADIR%%/dat/des/builder/layout_geoelf.des
+%%DATADIR%%/dat/des/builder/layout_geoelf_castle.des
 %%DATADIR%%/dat/des/builder/layout_grids.des
 %%DATADIR%%/dat/des/builder/layout_halls.des
 %%DATADIR%%/dat/des/builder/layout_loops.des
@@ -480,6 +481,7 @@ bin/stonesoup
 %%DATADIR%%/dat/dlua/luamark.lua
 %%DATADIR%%/dat/dlua/macro.lua
 %%DATADIR%%/dat/dlua/mapinit.lua
+%%DATADIR%%/dat/dlua/persist.lua
 %%DATADIR%%/dat/dlua/point.lua
 %%DATADIR%%/dat/dlua/profiler.lua
 %%DATADIR%%/dat/dlua/sanity.lua
@@ -507,6 +509,7 @@ bin/stonesoup
 %%SDL%%%%DATADIR%%/dat/tiles/stone_soup_icon-32x32.png
 %%SDL%%%%DATADIR%%/dat/tiles/stone_soup_icon-512x512.png
 %%SDL%%%%DATADIR%%/dat/tiles/stone_soup_icon-win32.png
+%%SDL%%%%DATADIR%%/dat/tiles/title_baconkid_duvessa_dowan.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_baconkid_gastronok.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_baconkid_mnoleg.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_denzi_dragon.png
@@ -533,6 +536,7 @@ bin/stonesoup
 %%DATADIR%%/docs/develop/IRC.txt
 %%DATADIR%%/docs/develop/android.txt
 %%DATADIR%%/docs/develop/coding_conventions.txt
+%%DATADIR%%/docs/develop/ctags.txt
 %%DATADIR%%/docs/develop/gdb_tips.txt
 %%DATADIR%%/docs/develop/levels/advanced.txt
 %%DATADIR%%/docs/develop/levels/introduction.txt
@@ -573,57 +577,10 @@ bin/stonesoup
 %%DATADIR%%/settings/080_monster_glyphs.txt
 %%DATADIR%%/settings/advanced_optioneering.txt
 %%DATADIR%%/settings/colemak_command_keys.txt
+%%DATADIR%%/settings/dec_glyphs.txt
 %%DATADIR%%/settings/dvorak_command_keys.txt
+%%DATADIR%%/settings/ibm_glyphs.txt
 %%DATADIR%%/settings/init.txt
 %%DATADIR%%/settings/no_vi_command_keys.txt
-%%PORTDOCS%%@dir %%DOCSDIR%%
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%
-@dir %%DATADIR%%/dat/clua
-@dir %%DATADIR%%/dat/database/el
-@dir %%DATADIR%%/dat/database/pl
-@dir %%DATADIR%%/dat/database
-@dir %%DATADIR%%/dat/defaults
-@dir %%DATADIR%%/dat/des/altar
-@dir %%DATADIR%%/dat/des/arrival
-@dir %%DATADIR%%/dat/des/branches
-@dir %%DATADIR%%/dat/des/builder
-@dir %%DATADIR%%/dat/des/portals
-@dir %%DATADIR%%/dat/des/serial
-@dir %%DATADIR%%/dat/des/sprint
-@dir %%DATADIR%%/dat/des/test
-@dir %%DATADIR%%/dat/des/traps
-@dir %%DATADIR%%/dat/des/tutorial
-@dir %%DATADIR%%/dat/des/variable
-@dir %%DATADIR%%/dat/des/zotdef
-@dir %%DATADIR%%/dat/des
-@dir %%DATADIR%%/dat/descript/cs
-@dir %%DATADIR%%/dat/descript/da
-@dir %%DATADIR%%/dat/descript/de
-@dir %%DATADIR%%/dat/descript/el
-@dir %%DATADIR%%/dat/descript/es
-@dir %%DATADIR%%/dat/descript/fi
-@dir %%DATADIR%%/dat/descript/fr
-@dir %%DATADIR%%/dat/descript/hu
-@dir %%DATADIR%%/dat/descript/it
-@dir %%DATADIR%%/dat/descript/ja
-@dir %%DATADIR%%/dat/descript/ko
-@dir %%DATADIR%%/dat/descript/lt
-@dir %%DATADIR%%/dat/descript/lv
-@dir %%DATADIR%%/dat/descript/nl
-@dir %%DATADIR%%/dat/descript/pl
-@dir %%DATADIR%%/dat/descript/pt
-@dir %%DATADIR%%/dat/descript/ru
-@dir %%DATADIR%%/dat/descript/sv
-@dir %%DATADIR%%/dat/descript/tr
-@dir %%DATADIR%%/dat/descript/zh
-@dir %%DATADIR%%/dat/descript
-@dir %%DATADIR%%/dat/dlua/layout
-@dir %%DATADIR%%/dat/dlua
-%%SDL%%@dir %%DATADIR%%/dat/tiles
-@dir %%DATADIR%%/dat
-@dir %%DATADIR%%/docs/develop/levels
-@dir %%DATADIR%%/docs/develop
-@dir %%DATADIR%%/docs/license
-@dir %%DATADIR%%/docs
-@dir %%DATADIR%%/settings
-@dir %%DATADIR%%
+%%DATADIR%%/settings/old_unicode_glyphs.txt
+%%DATADIR%%/settings/safe_move_shift.txt

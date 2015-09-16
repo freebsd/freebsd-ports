@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libgda
-PORTVERSION?=	5.2.2
-PORTREVISION?=	1
+PORTVERSION?=	5.2.4
+PORTREVISION?=	0
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX?=	5
@@ -23,7 +23,7 @@ LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
 
 USES+=		gettext gmake libtool pathfix pkgconfig
-USE_GNOME=	gnomeprefix glib20 libxslt intlhack referencehack
+USE_GNOME=	glib20 libxslt intlhack referencehack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

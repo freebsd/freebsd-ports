@@ -3,6 +3,7 @@
 
 PORTNAME=	lcms2
 PORTVERSION=	2.7
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lcms/lcms/${PORTVERSION}
 
@@ -22,13 +23,13 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
-USES=		libtool:keepla pathfix
+USES=		libtool pathfix
 
 PORTDOCS=	*
 
 JPEGICC_CONFIGURE_OFF=	--without-jpeg
 JPEGICC_CONFIGURE_ON=	--with-jpeg=${LOCALBASE}
-JPEGICC_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+JPEGICC_USES=		jpeg
 TIFFICC_CONFIGURE_OFF=	--without-tiff
 TIFFICC_CONFIGURE_ON=	--with-tiff=${LOCALBASE}
 TIFFICC_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff

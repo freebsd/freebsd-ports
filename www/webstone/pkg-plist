@@ -47,7 +47,3 @@ webstone/lgm/keepme
 webstone/lgm/ws20_cgi
 webstone/lgm/ws25_cgi
 webstone/webstone
-@dirrm webstone/bin
-@dirrm webstone/conf
-@dirrm webstone/lgm
-@dirrm webstone

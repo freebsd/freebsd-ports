@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- roboradio/audio/ogg.cc.orig
 +++ roboradio/audio/ogg.cc
 @@ -193,6 +193,7 @@

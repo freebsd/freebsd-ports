@@ -1,0 +1,7 @@
+--- drpython.lin.orig	2014-04-20 17:50:40 UTC
++++ drpython.lin
+@@ -1,2 +1,2 @@
+-#!/bin/bash
+-python ${0%/*}/drpython.pyw
++#!/bin/sh
++%%PYTHON%% ${0%/*}/drpython.pyw

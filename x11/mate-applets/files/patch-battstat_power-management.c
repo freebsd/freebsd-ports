@@ -1,19 +1,19 @@
---- battstat/power-management.c.orig	Thu Aug 25 23:45:47 2005
-+++ battstat/power-management.c	Tue Aug 30 01:28:40 2005
-@@ -64,9 +64,7 @@
+--- battstat/power-management.c.orig	2015-01-22 10:16:53.000000000 +0100
++++ battstat/power-management.c	2015-01-22 17:29:57.507849366 +0100
+@@ -67,6 +67,10 @@
  
  static const char *apm_readinfo (BatteryStatus *status);
  static int pm_initialised;
--#ifdef HAVE_HAL
--static int using_hal;
--#endif
++#ifdef HAVE_HAL
++static int using_hal;
++#endif
 +static int using_hal = FALSE;
  #ifdef HAVE_UPOWER
  static int using_upower;
  #endif
-@@ -173,16 +171,40 @@ apm_readinfo (BatteryStatus *status)
+@@ -178,16 +182,40 @@
  
- #elif __FreeBSD__
+ #elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
  
 +#if defined(__i386__)
  #include <machine/apm_bios.h>
@@ -52,7 +52,7 @@
  static const char *
  apm_readinfo (BatteryStatus *status)
  {
-@@ -190,21 +212,27 @@ apm_readinfo (BatteryStatus *status)
+@@ -195,21 +223,27 @@
  
    if (DEBUG) g_print("apm_readinfo() (FreeBSD)\n");
  
@@ -88,7 +88,7 @@
      fd = open(APMDEVICE, O_RDONLY);
      if (fd == -1) {
        return ERR_OPEN_APMDEV;
-@@ -217,6 +245,9 @@ apm_readinfo (BatteryStatus *status)
+@@ -222,6 +256,9 @@
  
      if(apminfo.ai_status == 0)
        return ERR_APM_E;
@@ -98,7 +98,7 @@
    }
  
    status->present = TRUE;
-@@ -480,6 +511,12 @@ power_management_initialise( int no_hal 
+@@ -483,6 +520,12 @@
    }
    else
      using_acpi = FALSE;
@@ -111,9 +111,9 @@
  #endif
    pm_initialised = 1;
  
-@@ -513,6 +550,9 @@ power_management_cleanup( void )
+@@ -516,6 +559,9 @@
    }
- #elif defined(__FreeBSD__)
+ #elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
    if (using_acpi) {
 +    if (acpiwatch != 0)
 +      g_source_remove(acpiwatch);

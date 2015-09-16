@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	uglifier
-PORTVERSION=	2.7.1
+PORTVERSION=	2.7.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -13,6 +13,8 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-execjs>=0.3.0:${PORTSDIR}/devel/rubygem-execjs \
 		rubygem-json>=1.8.0:${PORTSDIR}/devel/rubygem-json
+
+NO_ARCH=	yes
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

@@ -1,0 +1,282 @@
+# $FreeBSD$
+
+AVIDEMUX_VERSION=	2.6.10
+MASTER_SITES=	\
+		SF/avidemux/avidemux/${PORTVERSION}
+DISTNAME=	avidemux_${PORTVERSION}
+
+BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm \
+		bash:${PORTSDIR}/shells/bash
+LIB_DEPENDS+=	libmad.so:${PORTSDIR}/audio/libmad \
+		libdca.so:${PORTSDIR}/multimedia/libdca \
+		libpng.so:${PORTSDIR}/graphics/png
+
+LICENSE=	GPLv2
+
+USE_GNOME=	libxml2
+USE_QT4=	# empty
+
+OPTIONS_FILE=	${PORT_DBDIR}/${OPTIONS_NAME:C/-.*//}/options
+
+USE_SQLITE=	yes
+WANT_SDL=	yes
+USES=		cmake:outsource pkgconfig iconv gmake compiler:features
+USES+=		dos2unix
+DOS2UNIX_FILES=	cmake/admCheckMiscLibs.cmake po/CMakeLists.txt
+CMAKE_ARGS+=	-DGNUMAKE_EXECUTABLE=gmake
+CMAKE_ARGS+=	-DAVIDEMUX_PACKAGER=none
+CMAKE_ARGS+=	-DQT5:BOOL=OFF
+CXXFLAGS+=	-I${LOCALBASE}/include
+MAKE_JOBS_UNSAFE=	yes
+
+BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
+MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
+
+OPTIONS_DEFINE=	QT4 CLI FREETYPE FONTCONFIG OSS ESOUND JACK \
+		PULSEAUDIO XVIDEO FAAC \
+		FAAD X264 X265 VPX XVID SDL AMR VORBIS NLS LAME VAAPI VDPAU
+OPTIONS_DEFAULT=	QT4 FREETYPE FONTCONFIG OSS XVIDEO VPX XVID \
+			SDL FAAD VORBIS
+CLI_DESC=	Build CLI tool
+
+.if !defined(PACKAGE_BUILDING)
+OPTIONS_DEFAULT+=	LAME FAAC AMR X264
+.endif
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+USES+=		gettext
+PLIST_SUB+=	NLS=""
+. 	if ${PORT_OPTIONS:MQT4}
+PLIST_SUB+=	QT_NLS=""
+.	else
+PLIST_SUB+=	QT_NLS="@comment "
+.	endif
+.else
+CMAKE_ARGS+=	-DNO_NLS:BOOL=ON
+PLIST_SUB+=	NLS="@comment " QT_NLS="@comment "
+.endif
+
+.include <bsd.port.pre.mk>
+
+# is this kosher?  the result seems to run tho...  (see ports/185997)
+.if $(COMPILER_FEATURES:Mlibc++)
+LDFLAGS+=	-lc++
+.endif
+
+#.if ${COMPILER_TYPE} == clang
+USE_GCC=	yes
+#.endif
+
+# for libexecinfo: (so that __builtin_frame_address() finds the top
+# of the stack)
+.if ${ARCH} == "amd64"
+CFLAGS+=	-fno-omit-frame-pointer
+#MAKE_ENV+=	ARCH=x86_64
+#CONFIGURE_ENV+=	ARCH=x86_64
+.endif
+.if ${OSVERSION} < 1000000
+LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+CMAKE_ARGS+=	-DLIBEXECINFO_INCLUDE_DIR=${LOCALBASE}/include
+CMAKE_ARGS+=	-DLIBEXECINFO_LIBRARY_DIR=${LOCALBASE}/lib/libexecinfo.so
+.else
+CMAKE_ARGS+=	-DLIBEXECINFO_INCLUDE_DIR=/usr/include
+CMAKE_ARGS+=	-DLIBEXECINFO_LIBRARY_DIR=-lexecinfo
+.endif
+
+# We haven't ALSA(Never) & Aften(Yet) on FreeBSD
+CMAKE_ARGS+=	-DARTS:BOOL=OFF -DALSA:BOOL=OFF -DAFTEN:BOOL=OFF
+
+.if empty(PORT_OPTIONS:MGTK3) && empty(PORT_OPTIONS:MQT4)
+CMAKE_ARGS+=	-DX11:BOOL=OFF
+.else
+USE_GNOME+=	libxslt
+.endif
+
+.if ${PORT_OPTIONS:MGTK3}
+USE_GNOME+=	gnomeprefix gtk30
+PLIST_SUB+=	GTK=""
+.else
+CMAKE_ARGS+=	-DGTK:BOOL=OFF
+PLIST_SUB+=	GTK="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MQT4}
+CMAKE_ARGS+=	-DLRELEASE_EXECUTABLE=${LOCALBASE}/bin/lrelease-qt4
+USE_QT4=	qmake_build moc_build rcc_build uic_build linguist_build gui
+PLIST_SUB+=	QT4=""
+.else
+CMAKE_ARGS+=	-DQT4:BOOL=OFF
+PLIST_SUB+=	QT4="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MCLI}
+PLIST_SUB+=	CLI=""
+.else
+PLIST_SUB+=	CLI="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MOSS}
+CMAKE_ARGS+=	-DOSS_SUPPORT:BOOL=ON
+.else
+CMAKE_ARGS+=	-DOSS_SUPPORT:BOOL=OFF
+.endif
+
+.if ${PORT_OPTIONS:MESOUND}
+USE_GNOME+=	esound
+PLIST_SUB+=	ESD=""
+.else
+CMAKE_ARGS+=	-DESD:BOOL=OFF
+PLIST_SUB+=	ESD="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MJACK}
+LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack
+PLIST_SUB+=	JACK=""
+.else
+CMAKE_ARGS+=	-DJACK:BOOL=OFF
+PLIST_SUB+=	JACK="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MPULSEAUDIO}
+LIB_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PLIST_SUB+=	PULSE=""
+.else
+CMAKE_ARGS+=	-DPULSEAUDIOSIMPLE:BOOL=OFF
+PLIST_SUB+=	PULSE="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MFREETYPE}
+LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2
+PLIST_SUB+=	FREETYPE=""
+.else
+CMAKE_ARGS+=	-DFREETYPE2:BOOL=OFF
+PLIST_SUB+=	FREETYPE="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MFONTCONFIG}
+LIB_DEPENDS+=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+.else
+CMAKE_ARGS+=	-DFONTCONFIG:BOOL=OFF
+.endif
+
+.if ${PORT_OPTIONS:MXVIDEO}
+#LIB_DEPENDS+=	Xv:${PORTSDIR}/x11/libXv
+USE_XORG+=	xv
+.else
+CMAKE_ARGS+=	-DXVIDEO:BOOL=OFF
+.endif
+
+.if ${PORT_OPTIONS:MFAAC}
+LIB_DEPENDS+=	libfaac.so:${PORTSDIR}/audio/faac
+PLIST_SUB+=	FAAC=""
+.else
+CMAKE_ARGS+=	-DFAAC:BOOL=OFF
+PLIST_SUB+=	FAAC="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MLAME}
+LIB_DEPENDS+=	libmp3lame.so:${PORTSDIR}/audio/lame
+PLIST_SUB+=	LAME=""
+.else
+CMAKE_ARGS+=	-DLAME:BOOL=OFF
+PLIST_SUB+=	LAME="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MFAAD}
+LIB_DEPENDS+=	libfaad.so:${PORTSDIR}/audio/faad
+PLIST_SUB+=	FAAD=""
+.else
+CMAKE_ARGS+=	-DFAAD:BOOL=OFF -DNeAAC:BOOL=OFF
+PLIST_SUB+=	FAAD="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MX264}
+LIB_DEPENDS+=	libx264.so:${PORTSDIR}/multimedia/libx264
+PLIST_SUB+=	X264=""
+.else
+CMAKE_ARGS+=	-DX264:BOOL=OFF
+PLIST_SUB+=	X264="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MX265}
+LIB_DEPENDS+=	libx265.so:${PORTSDIR}/multimedia/x265
+PLIST_SUB+=	X265=""
+.else
+CMAKE_ARGS+=	-DX265:BOOL=OFF
+PLIST_SUB+=	X265="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MVPX}
+LIB_DEPENDS+=	libvpx.so:${PORTSDIR}/multimedia/libvpx
+PLIST_SUB+=	VPX=""
+.else
+CMAKE_ARGS+=	-DVPXDEC:BOOL=OFF
+PLIST_SUB+=	VPX="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MXVID}
+LIB_DEPENDS+=	libxvidcore.so:${PORTSDIR}/multimedia/xvid
+PLIST_SUB+=	XVID=""
+.else
+CMAKE_ARGS+=	-DXVID:BOOL=OFF
+PLIST_SUB+=	XVID="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MSDL}
+USE_SDL=	sdl
+PLIST_SUB+=	SDL=""
+.else
+CMAKE_ARGS+=	-DSDL:BOOL=OFF
+PLIST_SUB+=	SDL="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MVAAPI}
+LIB_DEPENDS+=	libva.so:${PORTSDIR}/multimedia/libva
+PLIST_SUB+=	VAAPI=""
+.else
+CMAKE_ARGS+=	-DVAAPI:BOOL=OFF -DLIBVA:BOOL=OFF
+PLIST_SUB+=	VAAPI="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MVDPAU}
+LIB_DEPENDS+=	libvdpau.so:${PORTSDIR}/multimedia/libvdpau
+PLIST_SUB+=	VDPAU=""
+.else
+CMAKE_ARGS+=	-DVDPAU:BOOL=OFF
+PLIST_SUB+=	VDPAU="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MVORBIS}
+LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+PLIST_SUB+=	VORBIS=""
+.else
+CMAKE_ARGS+=	-DLIBVORBIS:BOOL=OFF -DVORBIS:BOOL=OFF
+PLIST_SUB+=	VORBIS="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MAMR}
+LIB_DEPENDS+=	libopencore-amrnb.so:${PORTSDIR}/audio/opencore-amr
+PLIST_SUB+=	AMRNB=""
+PLIST_SUB+=	AMRWB=""
+.else
+CMAKE_ARGS+=	-DOPENCORE_AMRNB:BOOL=OFF
+PLIST_SUB+=	AMRNB="@comment "
+CMAKE_ARGS+=	-DOPENCORE_AMRWB:BOOL=OFF
+PLIST_SUB+=	AMRWB="@comment "
+.endif
+
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on ia64, powerpc, or sparc64
+.endif
+
+post-patch:
+	@${MKDIR} ${CONFIGURE_WRKSRC}/config
+	@${LN} -s ${LOCALBASE}/include/iconv.h ${CONFIGURE_WRKSRC}/config
+	@${REINPLACE_CMD} 's|-ldl||' ${WRKSRC}/avidemux_core/CMakeLists.txt
+
+post-configure-common:
+	@${FIND} ${CONFIGURE_WRKSRC} -name link.txt -print0 | \
+		${XARGS} -0 ${REINPLACE_CMD} 's|-ldl||g'

@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- build/Makefile.orig
 +++ build/Makefile
 @@ -12,12 +12,12 @@

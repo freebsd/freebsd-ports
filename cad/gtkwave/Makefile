@@ -19,22 +19,15 @@ INSTALLS_ICONS=	yes
 OPTIONS_DEFINE=	TCL GCONF
 TCL_DESC=	Enable support for TCL/TK
 TCL_USES=	tk
+TCL_CONFIGURE_ON=	--with-tcl=${TCL_LIBDIR} \
+			--with-tk=${TK_LIBDIR}
+TCL_CONFIGURE_OFF=	--disable-tcl
+
+GCONF_CONFIGURE_WITH=	gconf
+GCONF_USE=		GNOME=gconf2
 
 PORTDOCS=	gtkwave.odt
 
-.include	<bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MTCL}
-CONFIGURE_ARGS+=	--with-tcl=${TCL_LIBDIR} \
-			--with-tk=${TK_LIBDIR}
-.else
-CONFIGURE_ARGS+=	--disable-tcl
-.endif
-
-.if ${PORT_OPTIONS:MGCONF}
-CONFIGURE_ARGS+=	--with-gconf
-USE_GNOME+=	gconf2
-.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

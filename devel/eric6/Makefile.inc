@@ -6,7 +6,7 @@
 # french/eric6, german/eric6, russian/eric6
 
 PORTNAME=	eric6
-PORTVERSION=	6.0.5
+PORTVERSION=	6.0.8
 MASTER_SITES=	SF/eric-ide/${PORTNAME}/stable/${PORTVERSION}
 DISTNAME?=	${PORTNAME}-i18n-${I18N_LANG}-${PORTVERSION}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -26,6 +26,10 @@ USES+=		python:2
 NO_BUILD=	yes
 PLIST_FILES?=	%%DATADIR%%/i18n/${PORTNAME}_${I18N_LANG}.qm
 EXTRA_PATCHES?=	${.CURDIR}/../../devel/eric6/files/extra-patch-install-i18n.py
+
+.if ! defined(MASTERPORT)
+NO_ARCH=	yes
+.endif
 
 do-install:
 	@(cd ${WRKSRC}; \

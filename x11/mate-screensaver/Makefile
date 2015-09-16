@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-screensaver
-PORTVERSION=	1.8.1
+PORTVERSION=	1.10.2
 CATEGORIES=	x11 mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -24,6 +24,7 @@ USE_GNOME=	glib20 gtk20 intlhack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xscreensaverdir=${XSCREENSAVER_DIR} \
 		--with-xscreensaverhackdir=${LOCALBASE}/bin/xscreensaver-hacks \
+		--with-gtk=2.0 \
 		--with-console-kit=yes \
 		--with-systemd=no
 CPPFLAGS+=	-I${LOCALBASE}/include

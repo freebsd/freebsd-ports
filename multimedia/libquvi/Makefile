@@ -33,14 +33,11 @@ PORTDOCS=	*
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
 LUAJIT_USES_OFF=	lua
 
-.include <bsd.port.options.mk>
-
-post-patch:
-.if ${PORT_OPTIONS:MLUAJIT}
-	@${REINPLACE_CMD} 's|lua >= 5.1|luajit|g' ${WRKSRC}/configure
-.else
+post-patch-LUAJIT-off:
 	@${REINPLACE_CMD} 's|lua-5.1|lua-${LUA_VER}|g' ${WRKSRC}/configure
-.endif
+
+post-patch-LUAJIT-on:
+	@${REINPLACE_CMD} 's|lua >= 5.1|luajit|g' ${WRKSRC}/configure
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/

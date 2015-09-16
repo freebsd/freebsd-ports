@@ -1,0 +1,54 @@
+# Contains the build infrastructural definitions for both
+# mplayer and mencoder....the variables that we need to set
+# before we include bsd.port.pre.mk
+#
+# $FreeBSD$
+
+MPLAYER_SNAPSHOT_DATE=	2015-08-22
+MPLAYER_PORT_VERSION=	1.1.r${MPLAYER_SNAPSHOT_DATE:S/-//g}
+FFMPEG_VERSION=	2.7.2
+MASTER_SITES=	LOCAL/riggs/mplayer:local \
+		http://ffmpeg.org/releases/:ffmpeg
+DISTFILES+=	ffmpeg-${FFMPEG_VERSION}.tar.bz2:ffmpeg \
+		${DISTNAME}.tar.xz:local
+DISTNAME=	mplayer-${MPLAYER_PORT_VERSION:S/.r/./g}
+WRKSRC=		${WRKDIR}/mplayer-export-${MPLAYER_SNAPSHOT_DATE}
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libdvdnav.so:${PORTSDIR}/multimedia/libdvdnav
+
+USES=		compiler:c11 gmake iconv ncurses tar:bzip2 tar:xz
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	TMPDIR="${WRKSRC}"
+CONFIGURE_ARGS=	--cc="${CC}" \
+		--host-cc="${CC}" \
+		--as="${AS}" \
+		--extra-cflags="-I${PREFIX}/include -I${LOCALBASE}/include" \
+		--extra-libs="-L${PREFIX}/lib" \
+		--disable-alsa \
+		--disable-bitmap-font \
+		--disable-crystalhd \
+		--disable-esd \
+		--disable-faad \
+		--disable-ggi \
+		--disable-ggiwmh \
+		--disable-liba52 \
+		--disable-libbs2b \
+		--disable-libdirac-lavc \
+		--disable-libilbc \
+		--disable-libnut \
+		--disable-libvorbis \
+		--disable-live \
+		--disable-joystick \
+		--disable-mad \
+		--disable-libmpeg2 \
+		--disable-nemesi \
+		--disable-speex \
+		--enable-ass-internal
+
+WANT_GNOME=	yes
+WANT_SDL=	yes

@@ -3,6 +3,7 @@
 
 PORTNAME=	libcmime
 PORTVERSION=	0.1.15
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.libcmime.org/files/
 

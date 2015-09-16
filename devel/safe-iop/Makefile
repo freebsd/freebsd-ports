@@ -4,12 +4,12 @@
 PORTNAME=	safe-iop
 PORTVERSION=	0.3.1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Safe integer operation library for C
 
+USES=		tar:tgz
 USE_LDCONFIG=	yes
 ALL_TARGET=	so
 CFLAGS+=	-fPIC

@@ -3,4 +3,4 @@ templating engine for you, so you don't have to screw around in your own
 application.rb when your Gemfile already clearly indicated what templating
 engine you have installed. Hurrah.
 
-WWW: http://github.com/indirect/haml-rails
+WWW: https://github.com/indirect/haml-rails

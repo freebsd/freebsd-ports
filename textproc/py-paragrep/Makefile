@@ -3,8 +3,8 @@
 
 PORTNAME=	paragrep
 PORTVERSION=	3.1.1
+DISTVERSIONPREFIX=	release-
 CATEGORIES=	textproc python
-MASTER_SITES=	http://github.com/bmc/paragrep/zipball/release-${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
@@ -15,9 +15,10 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grizzled>=0.8.1:${PORTSDIR}/devel/py-grizzled
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-WRKSRC=	${WRKDIR}/bmc-${PORTNAME}-e7d5553
 USES=		python
 USE_PYTHON=	distutils autoplist
+USE_GITHUB=	yes
+GH_ACCOUNT=	bmc
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|'man'|'man/man1'|g" ${WRKSRC}/setup.py

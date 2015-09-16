@@ -40,24 +40,13 @@ MANPAGES_BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
 			${DOCBOOK_XSL_NS}:${PORTSDIR}/textproc/docbook-xsl-ns
 MANPAGES_CONFIGURE_WITH=	xsltproc
 
-.include <bsd.port.options.mk>
-
-# The version of binutils in base does not understand the crc32
-# instructions used in this code on amd64.  Use gcc from ports
-# to get a more capable version of binutils.
-.if (${OSVERSION} < 900000 &&  ${ARCH} == amd64)
-USE_GCC=	yes
-.endif
-
-post-install:
-.if ${PORT_OPTIONS:MDOXYGEN}
+post-install-DOXYGEN-on:
 	(cd ${WRKSRC}/doc/doxygen && \
 	${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples && \
 	${INSTALL_DATA} *.c *.py ${STAGEDIR}${EXAMPLESDIR})
-.endif
 
 .include <bsd.port.mk>

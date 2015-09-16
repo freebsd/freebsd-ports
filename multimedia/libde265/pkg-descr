@@ -1,0 +1,9 @@
+libde265 is an open source implementation of the h.265 video codec. It is
+written from scratch and has a plain C API to enable a simple integration
+into other software.
+
+libde265 supports WPP and tile-based multithreading and includes SSE
+optimizations. The decoder includes all features of the Main profile
+and correctly decodes almost all conformance streams.
+
+WWW: http://www.libde265.org

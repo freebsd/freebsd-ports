@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	npretty
-PORTVERSION=	0.9.3.1
+DISTVERSIONPREFIX=	n
+DISTVERSION=	0.9.3-1
 CATEGORIES=	graphics
 
 MAINTAINER=	peter@pean.org
@@ -16,7 +17,6 @@ LIB_DEPENDS=	libMagickCore-6.so:${PORTSDIR}/graphics/ImageMagick
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gammy
-GH_TAGNAME=	n0.9.3-1
 
 NO_BUILD=	yes
 USES=		perl5 shebangfix

@@ -6,9 +6,7 @@ PORTVERSION=	3.6.2
 # Be sure to chase devel/openoffice-devel and textproc/py-lucene
 # when updating this
 CATEGORIES=	textproc java devel
-MASTER_SITES=	APACHE
-MASTER_SITE_SUBDIR=	${PORTNAME}/java/${PORTVERSION}/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	APACHE/${PORTNAME}/java/${PORTVERSION}
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Full-text search engine for Java
@@ -19,6 +17,7 @@ CONFLICTS=	lucene4-[0-9].*
 
 PORTSCOUT=	limit:^3\.
 
+USES=		tar:tgz
 USE_JAVA=	yes
 NO_BUILD=	yes
 JAVA_VERSION=	1.6+

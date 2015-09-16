@@ -1,6 +1,6 @@
---- ./docs/conf/extra/httpd-ssl.conf.in.orig	2012-02-01 08:25:55.000000000 -0800
-+++ ./docs/conf/extra/httpd-ssl.conf.in	2012-02-01 08:27:23.000000000 -0800
-@@ -77,8 +77,8 @@
+--- docs/conf/extra/httpd-ssl.conf.in.orig	2015-05-27 18:59:59 UTC
++++ docs/conf/extra/httpd-ssl.conf.in
+@@ -114,8 +114,8 @@ SSLMutex  "file:@exp_runtimedir@/ssl_mut
  DocumentRoot "@exp_htdocsdir@"
  ServerName www.example.com:@@SSLPort@@
  ServerAdmin you@example.com
@@ -11,7 +11,7 @@
  
  #   SSL Engine Switch:
  #   Enable/Disable SSL for this virtual host.
-@@ -243,7 +243,7 @@
+@@ -263,7 +263,7 @@ BrowserMatch "MSIE [2-5]" \
  #   Per-Server Logging:
  #   The home of a custom SSL log file. Use this when you want a
  #   compact non-error SSL logfile on a virtual host basis.

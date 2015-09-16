@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libdvdread
-PORTVERSION=	5.0.2
+PORTVERSION=	5.0.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.videolan.org/pub/videolan/libdvdread/${PORTVERSION}/ \
 		http://dvdnav.mplayerhq.hu/releases/ \

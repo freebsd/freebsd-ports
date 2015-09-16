@@ -20,41 +20,28 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	PANGO SOUND NLS DEBUG
 OPTIONS_DEFAULT=	SOUND
-PANGO_DESC=	Use sdl_pango instead of sdl_ttf
+
+DEBUG_CONFIGURE_ENABLE=	debug
+
+NLS_USES=		gettext
+NLS_CONFIGURE_ENV=	ac_cv_header_libintl_h=yes
+NLS_CONFIGURE_ENV_OFF=	ac_cv_header_libintl_h=no
+NLS_LDFLAGS=		-lintl
+
+PANGO_DESC=	Use SDL_Pango instead of SDL_ttf
+PANGO_USE=	SDL=pango
+PANGO_USE_OFF=	SDL=ttf
+PANGO_CONFIGURE_ON=	--disable-sdlttf
+
 SOUND_DESC=	Sound support
+SOUND_USE=	SDL=mixer
+SOUND_CONFIGURE_ENABLE=	sound
 
 DESKTOP_ENTRIES="Hex-a-Hop" "${COMMENT}" \
 		"${DATADIR}/icon.bmp" \
 		"hex-a-hop" "LogicGame;Game;" false
 
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=--disable-debug
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-CONFIGURE_ENV+=	ac_cv_header_libintl_h=yes
-LDFLAGS+=	-lintl
-.else
-CONFIGURE_ENV+=	ac_cv_header_libintl_h=no
-.endif
-
-.if ${PORT_OPTIONS:MPANGO}
-USE_SDL+=	pango
-CONFIGURE_ARGS+=--disable-sdlttf
-.else
-USE_SDL+=	ttf
-.endif
-
-.if ${PORT_OPTIONS:MSOUND}
-USE_SDL+=	mixer
-.else
-CONFIGURE_ARGS+=--disable-sound
-.endif
-
-post-patch:	.SILENT
+post-patch:
 	${REINPLACE_CMD} -E '/CFLAGS|CXXFLAGS/s/-g//' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

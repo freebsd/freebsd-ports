@@ -13,8 +13,7 @@ COMMENT=	Tool for image blending with multiresolution splines
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo \
 		OpenEXR>=1.0:${PORTSDIR}/graphics/OpenEXR
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
+LIB_DEPENDS=	liblcms2.so:${PORTSDIR}/graphics/lcms2 \
 		libxmi.so:${PORTSDIR}/graphics/plotutils \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
@@ -23,7 +22,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 RUN_DEPENDS=	OpenEXR>=1.0:${PORTSDIR}/graphics/OpenEXR
 
 USE_AUTOTOOLS=	automake:env autoconf:env
-USES=		gmake compiler:features makeinfo
+USES=		compiler:features gmake jpeg makeinfo
 # We need a newer version of makeinfo for this.
 # Remove this line when we remove texinfo from the base system.
 CONFIGURE_ARGS=	MAKEINFO="${LOCALBASE}/bin/makeinfo"

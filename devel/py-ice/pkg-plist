@@ -131,10 +131,6 @@
 %%PYTHON32%%%%PYTHON_SITELIBDIR%%/Ice/__pycache__/Ice_ServantLocator_ice.cpython-%%PYTHON_SUFFIX%%.pyo
 %%PYTHON32%%%%PYTHON_SITELIBDIR%%/Ice/__pycache__/Ice_SliceChecksumDict_ice.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON32%%%%PYTHON_SITELIBDIR%%/Ice/__pycache__/Ice_SliceChecksumDict_ice.cpython-%%PYTHON_SUFFIX%%.pyo
-%%PYTHON32%%%%PYTHON_SITELIBDIR%%/Ice/__pycache__/Ice_StatsF_ice.cpython-%%PYTHON_SUFFIX%%.pyc
-%%PYTHON32%%%%PYTHON_SITELIBDIR%%/Ice/__pycache__/Ice_StatsF_ice.cpython-%%PYTHON_SUFFIX%%.pyo
-%%PYTHON32%%%%PYTHON_SITELIBDIR%%/Ice/__pycache__/Ice_Stats_ice.cpython-%%PYTHON_SUFFIX%%.pyc
-%%PYTHON32%%%%PYTHON_SITELIBDIR%%/Ice/__pycache__/Ice_Stats_ice.cpython-%%PYTHON_SUFFIX%%.pyo
 %%PYTHON32%%%%PYTHON_SITELIBDIR%%/Ice/__pycache__/Ice_Version_ice.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON32%%%%PYTHON_SITELIBDIR%%/Ice/__pycache__/Ice_Version_ice.cpython-%%PYTHON_SUFFIX%%.pyo
 %%PYTHONPRE32%%%%PYTHON_SITELIBDIR%%/Ice/Glacier2.pyc
@@ -269,10 +265,6 @@
 %%PYTHONPRE32%%%%PYTHON_SITELIBDIR%%/Ice/Ice_ServantLocator_ice.pyo
 %%PYTHONPRE32%%%%PYTHON_SITELIBDIR%%/Ice/Ice_SliceChecksumDict_ice.pyc
 %%PYTHONPRE32%%%%PYTHON_SITELIBDIR%%/Ice/Ice_SliceChecksumDict_ice.pyo
-%%PYTHONPRE32%%%%PYTHON_SITELIBDIR%%/Ice/Ice_StatsF_ice.pyc
-%%PYTHONPRE32%%%%PYTHON_SITELIBDIR%%/Ice/Ice_StatsF_ice.pyo
-%%PYTHONPRE32%%%%PYTHON_SITELIBDIR%%/Ice/Ice_Stats_ice.pyc
-%%PYTHONPRE32%%%%PYTHON_SITELIBDIR%%/Ice/Ice_Stats_ice.pyo
 %%PYTHONPRE32%%%%PYTHON_SITELIBDIR%%/Ice/Ice_Version_ice.pyc
 %%PYTHONPRE32%%%%PYTHON_SITELIBDIR%%/Ice/Ice_Version_ice.pyo
 %%PYTHON_SITELIBDIR%%/Ice/Glacier2.py
@@ -344,6 +336,6 @@
 %%PYTHON_SITELIBDIR%%/Ice/Ice_ServantLocatorF_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice_ServantLocator_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice_SliceChecksumDict_ice.py
-%%PYTHON_SITELIBDIR%%/Ice/Ice_StatsF_ice.py
-%%PYTHON_SITELIBDIR%%/Ice/Ice_Stats_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice_Version_ice.py
+bin/slice2py
+man/man1/slice2py.1.gz

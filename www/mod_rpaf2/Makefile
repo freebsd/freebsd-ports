@@ -1,15 +1,18 @@
 # Created by: Clement Laforet <clement@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	mod_rpaf2
+PORTNAME=	mod_rpaf
 PORTVERSION=	0.6
 PORTREVISION=	3
 CATEGORIES=	www
-MASTER_SITES=	http://www.stderr.net/apache/rpaf/download/
-DISTNAME=	mod_rpaf-${PORTVERSION}
+PKGNAMESUFFIX=	2
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Make proxied requests appear with client IP
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	gnif
+GH_TAGNAME=	bc7a495
 
 USE_APACHE=	22+
 AP_FAST_BUILD=	yes

@@ -14,11 +14,12 @@ LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GNOME=	gtk20 intlhack
-USES=		tar:xz iconv gmake pkgconfig
+USES=		gmake iconv pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	NLS DEBUG DOCKLET NOTIFIER LIBNOTIFY NANCY MOUSE EXTERNAL IPLOOKUP PROXY
 OPTIONS_DEFAULT=	DOCKLET NOTIFIER NANCY MOUSE EXTERNAL
+OPTIONS_SUB=	yes
 
 DOCKLET_DESC=	Docklet / system tray support
 NOTIFIER_DESC=	Popup notifier support
@@ -29,55 +30,22 @@ EXTERNAL_DESC=	External SSH/Telnet support
 IPLOOKUP_DESC=	IP location lookup support
 PROXY_DESC=	Proxy support
 
-.include <bsd.port.options.mk>
+NLS_USES=		gettext
+NLS_USES_OFF=	gettext-tools
+NLS_CPPFLAGS=	-I${LOCALBASE}/include
+NLS_LDFLAGS=	-L${LOCALBASE}/lib
+NLS_CONFIGURE_ENABLE=nls
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-.else
-USES+=		gettext
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=--enable-debug
-.endif
-
-.if empty(PORT_OPTIONS:MDOCKLET)
-CONFIGURE_ARGS+=--disable-docklet
-.endif
-
-.if empty(PORT_OPTIONS:MNOTIFIER)
-CONFIGURE_ARGS+=--disable-notifier
-.endif
-
-.if ${PORT_OPTIONS:MLIBNOTIFY}
-CONFIGURE_ARGS+=--enable-libnotify
-LIB_DEPENDS+=	libnotifa.soy:${PORTSDIR}/devel/libnotify
-.endif
-
-.if empty(PORT_OPTIONS:MNANCY)
-CONFIGURE_ARGS+=--disable-nancy
-.endif
-
-.if empty(PORT_OPTIONS:MMOUSE)
-CONFIGURE_ARGS+=--disable-mouse
-.endif
-
-.if empty(PORT_OPTIONS:MEXTERNAL)
-CONFIGURE_ARGS+=--disable-external
-.endif
-
-.if ${PORT_OPTIONS:MIPLOOKUP}
-CONFIGURE_ARGS+=--enable-iplookup
-.endif
-
-.if ${PORT_OPTIONS:MPROXY}
-CONFIGURE_ARGS+=--enable-proxy
-.endif
+DEBUG_CONFIGURE_ENABLE=		debug
+DOCKLET_CONFIGURE_ENABLE=	docklet
+NOTIFIER_CONFIGURE_ENABLE=	notifier
+LIBNOTIFY_CONFIGURE_ENABLE=	libnotify
+LIBNOTIFY_LIB_DEPENDS=		libnotify.so:${PORTSDIR}/devel/libnotify
+NANCY_CONFIGURE_ENABLE=		nancy
+MOUSE_CONFIGURE_ENABLE=		mouse
+EXTERNAL_CONFIGURE_ENABLE=	external
+IPLOOKUP_CONFIGURE_ENABLE=	iplookup
+PROXY_CONFIGURE_ENABLE=		proxy
 
 post-install:
 	@# create directory for user friendly

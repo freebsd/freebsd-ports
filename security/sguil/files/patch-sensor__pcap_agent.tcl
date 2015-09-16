@@ -1,5 +1,5 @@
---- sensor/pcap_agent.tcl.orig	2012-12-17 22:31:44.000000000 +0000
-+++ sensor/pcap_agent.tcl	2012-12-17 22:42:50.000000000 +0000
+--- sensor/pcap_agent.tcl.orig	2014-03-29 00:41:36 UTC
++++ sensor/pcap_agent.tcl
 @@ -1,6 +1,4 @@
  #!/bin/sh
 -# Run tcl from users PATH \
@@ -7,7 +7,7 @@
  
  # $Id: pcap_agent.tcl,v 1.13 2011/03/10 22:03:33 bamm Exp $ #
  
-@@ -771,13 +769,13 @@
+@@ -771,13 +769,13 @@ foreach arg $argv {
  }
  
  # Parse the config file here
@@ -24,7 +24,7 @@
  
      } elseif { [file exists ./pcap_agent.conf] } {
  
-@@ -786,7 +784,7 @@
+@@ -786,7 +784,7 @@ if { ![info exists CONF_FILE] } {
      } else {
  
          puts "Couldn't determine where the pcap_agent.tcl config file is"

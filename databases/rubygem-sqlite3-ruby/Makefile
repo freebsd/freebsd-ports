@@ -10,18 +10,18 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby interface to the SQLite DB engine version 3
 
-LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+LICENSE=	BSD3CLAUSE
+
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
+LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 RUN_DEPENDS=	rubygem-sqlite3>=1.3.3:${PORTSDIR}/databases/rubygem-sqlite3
 
-CONFIGURE_ARGS+=--with-sqlite3-dir=${LOCALBASE}
-
-GEM_NAME=	${DISTNAME}
-
+CONFIGURE_ARGS=	--with-sqlite3-dir=${LOCALBASE}
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-PLIST_FILES+=	bin/sqlite3_ruby
+PLIST_FILES=	bin/sqlite3_ruby
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flowdock
-PORTVERSION=	0.5.0
+PORTVERSION=	0.7.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -14,6 +14,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-httparty>=0.7:${PORTSDIR}/www/rubygem-httparty \
 		rubygem-multi_json>=0:${PORTSDIR}/devel/rubygem-multi_json
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

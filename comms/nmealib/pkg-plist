@@ -1,0 +1,15 @@
+@comment $FreeBSD$
+include/nmea/config.h
+include/nmea/context.h
+include/nmea/generate.h
+include/nmea/generator.h
+include/nmea/gmath.h
+include/nmea/info.h
+include/nmea/nmea.h
+include/nmea/parse.h
+include/nmea/parser.h
+include/nmea/sentence.h
+include/nmea/time.h
+include/nmea/tok.h
+include/nmea/units.h
+lib/libnmea.a

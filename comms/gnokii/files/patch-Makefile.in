@@ -1,6 +1,6 @@
---- Makefile.in.orig	2010-04-21 15:49:31.000000000 +0200
-+++ Makefile.in	2010-04-24 20:09:03.347837666 +0200
-@@ -301,9 +301,9 @@
+--- Makefile.in.orig	2015-06-15 14:14:28 UTC
++++ Makefile.in
+@@ -313,9 +313,9 @@ target_vendor = @target_vendor@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@

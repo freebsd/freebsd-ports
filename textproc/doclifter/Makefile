@@ -3,6 +3,7 @@
 
 PORTNAME=	doclifter
 PORTVERSION=	2.15
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.catb.org/~esr/doclifter/
 
@@ -11,8 +12,10 @@ COMMENT=	Translates documents written in troff macros to DocBook
 
 RUN_DEPENDS+=	python2:${PORTSDIR}/lang/python2
 
-USES=		python:2
+USES=		python:2 shebangfix
+SHEBANG_FILES=	manlifter
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/doclifter \
 		bin/manlifter \

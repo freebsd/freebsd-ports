@@ -39,11 +39,11 @@
 %%WWWDIR%%/include/iWebCal.css
 %%WWWDIR%%/include/iWebCal.js
 %%WWWDIR%%/index.php
-@dirrm %%WWWDIR%%/include
-@dirrm %%WWWDIR%%/img
-@dirrm %%WWWDIR%%/class
-@dirrm %%WWWDIR%%/base
-@dirrmtry %%WWWDIR%%/cache
-@dirrmtry %%WWWDIR%%
-@owner root
-@group wheel
+@dir %%WWWDIR%%/include
+@dir %%WWWDIR%%/img
+@dir %%WWWDIR%%/class
+@dir %%WWWDIR%%/base
+@dir %%WWWDIR%%/cache
+@dir %%WWWDIR%%
+@owner
+@group

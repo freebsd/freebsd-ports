@@ -1,6 +1,6 @@
---- libk3b/core/k3bglobals.cpp.orig	2010-07-30 06:36:01.794731453 +0000
-+++ libk3b/core/k3bglobals.cpp	2010-07-30 06:37:34.104075238 +0000
-@@ -321,6 +321,13 @@
+--- libk3b/core/k3bglobals.cpp.orig	2014-11-04 18:37:31 UTC
++++ libk3b/core/k3bglobals.cpp
+@@ -322,6 +322,13 @@ QString K3b::externalBinDeviceParameter(
  }
  
  

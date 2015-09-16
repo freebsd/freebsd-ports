@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- flowd.h.orig
 +++ flowd.h
 @@ -34,7 +34,7 @@

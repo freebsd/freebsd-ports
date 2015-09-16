@@ -3,9 +3,8 @@
 
 PORTNAME=	uglifyjs
 PORTVERSION=	1.3.5
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
-MASTER_SITES=	http://github.com/mishoo/UglifyJS/archive/
-DISTNAME=	v${PORTVERSION}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	JavaScript parser/compressor/beautifier
@@ -16,7 +15,9 @@ BUILD_DEPENDS=	npm>=0:${PORTSDIR}/www/npm
 RUN_DEPENDS=	npm>=0:${PORTSDIR}/www/npm
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/UglifyJS-${PORTVERSION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	mishoo
+GH_PROJECT=	UglifyJS
 
 do-install:
 	(cd ${STAGEDIR}${PREFIX}/lib ; ${SETENV} HOME=${WRKDIR} npm install ${WRKSRC})

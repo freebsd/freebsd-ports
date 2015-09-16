@@ -16,7 +16,8 @@ RUN_DEPENDS=	bogofilter:${PORTSDIR}/mail/bogofilter
 
 .if !exists(/usr/lib/libmilter.so)
 LIB_DEPENDS=	libmilter.so:${PORTSDIR}/mail/sendmail
-LDFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
 .endif
 
 MAKE_ARGS=	CPPFLAGS="-DDEF_CONF=\\\"${PREFIX}/etc/bogom.conf\\\"" \
@@ -33,8 +34,6 @@ PORTDOCS=	README CHANGELOG
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/bogom.8
 	${REINPLACE_CMD} -e \
@@ -47,11 +46,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bogom ${STAGEDIR}${PREFIX}/sbin/
 	${INSTALL_MAN} ${WRKSRC}/bogom.8 ${STAGEDIR}${PREFIX}/man/man8/
 	${INSTALL_DATA} ${WRKSRC}/bogom.conf-example ${STAGEDIR}${PREFIX}/etc/
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
-.endif
 
 .include <bsd.port.mk>

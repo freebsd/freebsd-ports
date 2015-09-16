@@ -1,6 +1,6 @@
---- util/grub-mkconfig.in.orig	2014-03-03 11:00:26.000000000 -0500
-+++ util/grub-mkconfig.in	2014-07-03 11:31:47.013881961 -0400
-@@ -278,3 +278,11 @@
+--- util/grub-mkconfig.in.orig	2015-06-03 14:54:01 UTC
++++ util/grub-mkconfig.in
+@@ -281,3 +281,11 @@ fi
  
  gettext "done" >&2
  echo >&2

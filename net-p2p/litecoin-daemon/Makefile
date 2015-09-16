@@ -1,9 +1,27 @@
 # $FreeBSD$
 
-PKGNAMESUFFIX=	-daemon
-COMMENT=	Virtual Peer-to-Peer Currency Software
 MASTERDIR=	${.CURDIR}/../litecoin
-DESCR=		${MASTERDIR}/pkg-descr
+PKGNAMESUFFIX=	-daemon
+
+COMMENT=	Virtual Peer-to-Peer Currency (Daemon)
+
 SLAVE_PORT=	yes
-OPTIONS_EXCLUDE=	X11 DBUS QRCODES
+
+USES+=		cpe
+CPE_VENDOR=	bitcoin
+CPE_PRODUCT=	bitcoind
+CPE_VERSION=	${PORTVERSION:R}
+
+OPTIONS_DEFINE=		DEBUG HARDENING TESTS UPNP WALLET
+OPTIONS_DEFAULT=	HARDENING WALLET
+
+CONFIGURE_ARGS=	--with-daemon \
+		--without-gui \
+		--without-libs \
+		--without-qrencode \
+		--without-utils \
+		--disable-reduce-exports
+
+PLIST_FILES=	bin/litecoind
+
 .include "${MASTERDIR}/Makefile"

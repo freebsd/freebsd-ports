@@ -1,6 +1,6 @@
 --- make-x64/swreceiver/swreceiver.pro.orig
 +++ make-x64/swreceiver/swreceiver.pro
-@@ -180,13 +180,21 @@ LIBS += -lwinmm
+@@ -180,13 +180,19 @@ LIBS += -lwinmm
  #}
  
  #for Fedora use the second set
@@ -23,9 +23,7 @@
  
 +#for FreeBSD use the third set
 +unix {  INCLUDEPATH += ${LOCALBASE}/include/qwt
-+	INCLUDEPATH += ${LOCALBASE}/include/portaudio2
 +	INCLUDEPATH += ${LOCALBASE}/include
-+	QMAKE_LIBDIR = ${LOCALBASE}/lib/portaudio2
 +	QMAKE_LIBDIR += ${LOCALBASE}/lib
 +	LIBS +=  -lqwt -lrt -lsndfile -lsamplerate  -lportaudio -lusb -lfftw3
 +}

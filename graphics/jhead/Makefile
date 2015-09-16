@@ -10,11 +10,10 @@ MASTER_SITES=	http://www.sentex.net/~mwandel/${PORTNAME}/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	EXIF JPEG header manipulation tool
 
-RUN_DEPENDS=	${LOCALBASE}/bin/jpegtran:${PORTSDIR}/graphics/jpeg
-
 OPTIONS_DEFINE=	DOCS
 
 MAKEFILE=	makefile
+USES=		jpeg:run
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz

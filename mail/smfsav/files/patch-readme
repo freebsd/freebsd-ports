@@ -1,0 +1,17 @@
+--- readme.orig	2006-10-26 05:15:10.000000000 +0900
++++ readme	2015-06-02 13:24:39.167974000 +0900
+@@ -38,11 +38,11 @@
+ make
+ make install
+ 
+-  Inspect and edit the /etc/mail/smfs/smf-sav.conf file.
++  Inspect and edit the %%PREFIX%%/etc/smf-sav.conf file.
+ 
+-/usr/local/sbin/smf-sav
++%%PREFIX%%/sbin/smf-sav
+ or
+-/usr/local/sbin/smf-sav -c /etc/mail/smfs/smf-sav.conf
++%%PREFIX%%/sbin/smf-sav -c %%PREFIX%%/etc/smf-sav.conf
+ 
+   Add this milter to start-up scripts before starting a Sendmail daemon.
+ Look at the contributed samples of start-up scripts.

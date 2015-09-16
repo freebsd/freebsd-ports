@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- src/ccd2iso.c.orig	Thu Nov 13 06:43:41 2003
 +++ src/ccd2iso.c	Thu Jun 24 15:31:04 2004
 @@ -22,6 +22,7 @@

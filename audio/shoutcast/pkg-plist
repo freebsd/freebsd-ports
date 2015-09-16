@@ -1,9 +1,8 @@
 sbin/sc_serv
-
 %%PORTDOCS%%%%DOCSDIR%%/DNAS_Server_Changelog.html
 %%PORTDOCS%%%%DOCSDIR%%/Readme_DNAS_Server.html
+%%PORTDOCS%%%%DOCSDIR%%/cacert.pem
 %%PORTDOCS%%%%DOCSDIR%%/tos.txt
-
 %%PORTDOCS%%%%DOCSDIR%%/docs/DNAS_Server_XML_Responses.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/DNAS_Server_Authhash_Management.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/DNAS_Server.html
@@ -11,7 +10,6 @@ sbin/sc_serv
 %%PORTDOCS%%%%DOCSDIR%%/docs/DNAS_Server_JSON_Responses.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/DNAS_Server_CDN_Management.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/DNAS_Server_Source_Support.html
-
 %%PORTDOCS%%%%DOCSDIR%%/docs/res/Linux_Console.png
 %%PORTDOCS%%%%DOCSDIR%%/docs/res/Output_tag_configuration_error.png
 %%PORTDOCS%%%%DOCSDIR%%/docs/res/Stream_Ban_List_Page.png
@@ -43,32 +41,18 @@ sbin/sc_serv
 %%PORTDOCS%%%%DOCSDIR%%/docs/res/Editing.png
 %%PORTDOCS%%%%DOCSDIR%%/docs/res/Console_Windows.png
 %%PORTDOCS%%%%DOCSDIR%%/docs/res/View_Source_Connection_Details.png
-
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sc_serv_basic.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sc_serv_public.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sc_serv_relay.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sc_serv_simple.conf
-
-%%SERVERSETUP%%@dirrm %%WWWDIR%%/setup
-%%SERVERSETUP%%@dirrm %%WWWDIR%%
 %%SERVERSETUP%%%%WWWDIR%%/setup.sh
 %%SERVERSETUP%%%%WWWDIR%%/setup/setup.js
 %%SERVERSETUP%%%%WWWDIR%%/setup/setup.html
 %%SERVERSETUP%%%%WWWDIR%%/setup/setup.txt
-
-@dirrmtry %%ETCDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/res
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-
+@dir %%ETCDIR%%
+@dir %%SHOUTCASTDIR%%/control
+@dir %%SHOUTCASTDIR%%/logs
+@dir %%SHOUTCASTDIR%%
+@dir %%SHOUTCASTLDIR%%
 @unexec if [ ! -s %%SHOUTCASTDIR%%/sc_serv.ban ]; then rm -f %%SHOUTCASTDIR%%/sc_serv.ban; fi
 @unexec if [ ! -s %%SHOUTCASTDIR%%/sc_serv.rip ]; then rm -f %%SHOUTCASTDIR%%/sc_serv.rip; fi
-@unexec rmdir %%SHOUTCASTDIR%% 2>/dev/null || true
-@unexec rmdir %%SHOUTCASTLDIR%% 2>/dev/null || true
-@unexec if [ -d %D/%%ETCDIR%% ]; then echo "==> You should manually remove the "\""%D/%%ETCDIR%%"\"" directory."; fi
-@unexec if [ -d %%SHOUTCASTDIR%% ]; then echo "==> You should manually remove the "\""%%SHOUTCASTDIR%%"\"" directory."; fi
-@unexec if [ -d %%SHOUTCASTLDIR%% ]; then echo "==> You should manually remove the "\""%%SHOUTCASTLDIR%%"\"" directory."; fi
-
-@dirrm %%SHOUTCASTDIR%%/control
-@dirrm %%SHOUTCASTDIR%%/logs

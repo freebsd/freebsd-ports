@@ -3,9 +3,9 @@
 
 PORTNAME=	apvlv
 PORTVERSION=	0.1.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
-MASTER_SITES=	http://cloud.github.com/downloads/naihe2010/apvlv/
+MASTER_SITES=	GHC
 DISTNAME=	${PORTNAME}-${PORTVERSION}-Source
 
 MAINTAINER=	xors@mailup.net
@@ -17,6 +17,8 @@ LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
 
 USE_GNOME=	gtk20
 USES=		cmake pkgconfig
+USE_GITHUB=	yes
+GH_ACCOUNT=	naihe2010
 CMAKE_ARGS+=	-DSYSCONFDIR=${PREFIX}/etc \
 		-DMANDIR=${MANPREFIX}/man \
 		-DDOCDIR=${DOCSDIR} \
@@ -24,6 +26,7 @@ CMAKE_ARGS+=	-DSYSCONFDIR=${PREFIX}/etc \
 		-DAPVLV_WITH_TXT=ON
 CFLAGS+=	-pthread
 LDFLAGS+=	-pthread
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 OPTIONS_DEFINE=	DJVU WEBKIT
 

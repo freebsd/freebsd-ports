@@ -5,10 +5,9 @@ PORTNAME=	pgpgpg
 PORTVERSION=	0.13
 PORTREVISION=	4
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_PACKETSTORM} \
+MASTER_SITES=	PACKETSTORM/crypt/pgpgpg \
 		ftp://ftp.gnupg.org/gcrypt/historic/ \
 		http://www.nessie.de/mroth/pgpgpg/
-MASTER_SITE_SUBDIR=	crypt/pgpgpg
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper for GnuPG to simulate PGP 2.6.x

@@ -1,6 +1,6 @@
---- modules/ssl/ssl_util_ssl.c.orig	2012-08-17 19:30:46.000000000 +0200
-+++ modules/ssl/ssl_util_ssl.c	2015-02-28 10:30:48.557501618 +0100
-@@ -492,7 +492,11 @@
+--- modules/ssl/ssl_util_ssl.c.orig	2012-08-17 17:30:46 UTC
++++ modules/ssl/ssl_util_ssl.c
+@@ -492,7 +492,11 @@ BOOL SSL_X509_INFO_load_path(apr_pool_t 
   * format, possibly followed by a sequence of CA certificates that
   * should be sent to the peer in the SSL Certificate message.
   */

@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.sunet.se/pub/vendor/sco/skunkware/src/shellutil/
 PATCH_SITES=	http://www.isi.edu/~johnh/SOFTWARE/ICAL/
 PATCHFILES=	ical-2.3.1-upvar.patch
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Calendar application
 
 LICENSE=	GPLv2

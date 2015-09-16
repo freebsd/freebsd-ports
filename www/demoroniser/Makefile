@@ -6,8 +6,7 @@ PORTVERSION=	1.0.20030916
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.fourmilab.ch/webtools/demoroniser/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=jedgar
+		LOCAL/jedgar
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org

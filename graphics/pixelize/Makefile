@@ -8,7 +8,6 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://lashwhip.com/pub/ \
 		http://www.c-s.li/ports/ \
 		http://lashwhip.com/pixelize/
-MASTER_SITE_SUBDIR=	apps/graphics/misc
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Use many scaled down images to try to duplicate another image

@@ -5,18 +5,15 @@ PORTNAME=	xbanner
 PORTVERSION=	1.31
 PORTREVISION=	1
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	X11/xutils
+MASTER_SITES=	SUNSITE/X11/xutils
 DISTNAME=	XBanner${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Make your XDM login screen look beautiful
 
-USE_XORG=	xpm x11
+USE_XORG=	x11 xpm
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
@@ -25,13 +22,13 @@ post-patch:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/samples/XBanner.ad \
 		${STAGEDIR}${PREFIX}/lib/X11/app-defaults/XBanner
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/XBanner
 	${INSTALL_DATA} ${WRKSRC}/QuickStart ${STAGEDIR}${PREFIX}/share/doc/XBanner
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${PREFIX}/share/doc/XBanner
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/examples/XBanner
 	${INSTALL_DATA} ${WRKSRC}/samples/_other_ideas/* \
 		${STAGEDIR}${PREFIX}/share/examples/XBanner
-.endif
 
 .include <bsd.port.mk>

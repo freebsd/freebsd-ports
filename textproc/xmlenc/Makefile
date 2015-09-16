@@ -6,13 +6,14 @@ PORTVERSION=	0.52
 PORTREVISION=	2
 CATEGORIES=	textproc java
 MASTER_SITES=	SF
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light-weight XML encoding library for Java
 
+USES=		tar:tgz
 USE_JAVA=	yes
 USE_ANT=	yes
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
 
@@ -37,12 +38,11 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/build/${JARFILE} ${STAGEDIR}${JAVAJARDIR}/
 	@${ECHO_MSG} " [ DONE ]"
 
-.if ${PORT_OPTIONS:MDOCS}
+do-install-DOCS-on:
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}/..."
 	@cd ${WRKSRC}/build/javadoc/ \
 	  && ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \; \
 	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
 	@${ECHO_MSG} " [ DONE ]"
-.endif
 
 .include <bsd.port.post.mk>

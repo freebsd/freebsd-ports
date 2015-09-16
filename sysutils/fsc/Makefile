@@ -5,8 +5,7 @@ PORTNAME=	fsc
 PORTVERSION=	1.0.1
 PORTREVISION=	3
 CATEGORIES=	sysutils
-MASTER_SITES=	LOCAL
-MASTER_SITE_SUBDIR=	trhodes
+MASTER_SITES=	LOCAL/trhodes
 
 MAINTAINER=	trhodes@FreeBSD.org
 COMMENT=	The FreeBSD Services Control family of utilities

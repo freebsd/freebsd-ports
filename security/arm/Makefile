@@ -3,6 +3,7 @@
 
 PORTNAME=	arm
 DISTVERSION=	1.4.5.0
+PORTREVISION=	1
 CATEGORIES=	security net python
 MASTER_SITES=	https://archive.torproject.org/arm/ \
 		http://www.c-s.li/ports/
@@ -14,7 +15,8 @@ COMMENT=	Terminal status monitor for Tor
 LICENSE=	GPLv3
 
 USE_PYTHON=	distutils
-USES=		python tar:bzip2
+USES=		python shebangfix tar:bzip2
+SHEBANG_FILES=	src/resources/torrcOverride/override.py
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}

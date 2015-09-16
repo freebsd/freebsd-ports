@@ -13,6 +13,8 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-addressable>=2.3.6:${PORTSDIR}/www/rubygem-addressable \
 		rubygem-crack>=0.3.2:${PORTSDIR}/devel/rubygem-crack
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

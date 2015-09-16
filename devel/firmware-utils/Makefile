@@ -6,10 +6,12 @@ PORTVERSION=	20111222
 CATEGORIES=	devel
 MASTER_SITES=	http://www.transit.hanse.de/mirror/svn.openwrt.org/firmware-utils/
 
-MAINTAINER=	stb@assitu.de
+MAINTAINER=	stb@lassitu.de
 COMMENT=	Create device firmware images
 
-USES=	tar:bzip2
+LICENSE=	GPLv2
+
+USES=		tar:bzip2
 
 MAKEFILE=	${FILESDIR}/Makefile
 MAKE_ARGS+=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" PREFIX=${PREFIX}

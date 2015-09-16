@@ -1,8 +1,8 @@
---- scripts.orig/TestUtil.py	2013-03-11 15:19:47.000000000 +0000
-+++ scripts/TestUtil.py	2015-03-23 14:08:57.225102620 +0000
-@@ -84,6 +84,25 @@
- def isLinux():
-     return sys.platform.startswith("linux")
+--- scripts/TestUtil.py.orig	2015-06-23 15:30:20.000000000 +0000
++++ scripts/TestUtil.py	2015-06-27 10:59:56.354249500 +0000
+@@ -120,6 +120,25 @@
+ def isSles():
+     return isLinux() and linuxDistribution and linuxDistribution == "SUSE LINUX"
  
 +def isFreeBSD():
 +    return sys.platform.startswith("freebsd")
@@ -26,7 +26,25 @@
  def getCppCompiler():
      compiler = ""
      if os.environ.get("CPP_COMPILER", "") != "":
-@@ -1846,6 +1865,14 @@
+@@ -311,7 +330,7 @@
+     if(p.wait() != 0):
+         print("uname failed:\n" + p.stdout.read().strip())
+         sys.exit(1)
+-    if p.stdout.readline().decode('UTF-8').strip() == "x86_64" and os.environ.get("LP64", "") != "no":
++    if p.stdout.readline().decode('UTF-8').strip() in ["x86_64", "amd64"] and os.environ.get("LP64", "") != "no":
+         x64 = True
+ 
+ #
+@@ -1887,7 +1906,7 @@
+         if lang == "java":
+             addLdPath(os.path.join(getIceDir("cpp"), "bin", "x64" if x64 else ""), env) # Add bin for db53_vc100.dll
+         addLdPath(getCppLibDir(lang), env)
+-    elif lang in ["python", "ruby", "php", "js", "objective-c"]:
++    elif lang in ["cpp", "python", "ruby", "php", "js", "objective-c"]:
+         addLdPath(getCppLibDir(lang), env)
+ 
+     if lang == "java":
+@@ -2233,6 +2252,14 @@
                  print("%s*** test not supported under Darwin%s" % (prefix, suffix))
                  continue
  
@@ -41,12 +59,3 @@
              if not isWin32() and "win32only" in config:
                  print("%s*** test only supported under Win32%s" % (prefix, suffix))
                  continue
-@@ -1929,7 +1929,7 @@
-                     print("  exit 1")
-                 print("fi")
-             else:
--                status = os.system(sys.executable + " " +  quoteArgument(os.path.join(dir, "run.py")) + " " + args)
-+                status = os.system(sys.executable + " " +  quoteArgument(os.path.join(dir, "run.py")) + " " + args) >> 8
- 
-                 if status:
-                     if(num > 0):

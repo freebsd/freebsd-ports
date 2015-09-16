@@ -1,6 +1,7 @@
 %%PERL5_MAN3%%/Plack::Middleware::Session.3.gz
 %%PERL5_MAN3%%/Plack::Middleware::Session::Cookie.3.gz
 %%PERL5_MAN3%%/Plack::Session.3.gz
+%%PERL5_MAN3%%/Plack::Session::Cleanup.3.gz
 %%PERL5_MAN3%%/Plack::Session::State.3.gz
 %%PERL5_MAN3%%/Plack::Session::State::Cookie.3.gz
 %%PERL5_MAN3%%/Plack::Session::Store.3.gz
@@ -11,6 +12,7 @@
 %%SITE_PERL%%/Plack/Middleware/Session.pm
 %%SITE_PERL%%/Plack/Middleware/Session/Cookie.pm
 %%SITE_PERL%%/Plack/Session.pm
+%%SITE_PERL%%/Plack/Session/Cleanup.pm
 %%SITE_PERL%%/Plack/Session/State.pm
 %%SITE_PERL%%/Plack/Session/State/Cookie.pm
 %%SITE_PERL%%/Plack/Session/Store.pm

@@ -1,5 +1,9 @@
 # $FreeBSD$
 
+PROG=	adb
+NO_MAN=
+BINDIR?=/usr/bin
+
 SRCS+= adb.c
 SRCS+= adb_client.c
 SRCS+= adb_auth_host.c
@@ -16,7 +20,7 @@ SRCS+= transport_usb.c
 SRCS+= usb_libusb.c
 SRCS+= usb_vendors.c
 
-VPATH+= ../libcutils
+.PATH: ${.CURDIR}/../libcutils
 SRCS+= socket_inaddr_any_server.c
 SRCS+= socket_local_client.c
 SRCS+= socket_local_server.c
@@ -25,31 +29,20 @@ SRCS+= socket_loopback_server.c
 SRCS+= socket_network_client.c
 SRCS+= load_file.c
 
-VPATH+= ../libzipfile
+.PATH: ${.CURDIR}/../libzipfile
 SRCS+= centraldir.c
 SRCS+= zipfile.c
 
+CFLAGS+= -DADB_HOST=1
+CFLAGS+= -DHAVE_FORKEXEC=1
+CFLAGS+= -DHAVE_SYMLINKS
+CFLAGS+= -DHAVE_TERMIO_H
+CFLAGS+= -DHAVE_SYS_SOCKET_H
+CFLAGS+= -D_FILE_OFFSET_BITS=64
+CFLAGS+= -I${.CURDIR}
+CFLAGS+= -I${.CURDIR}/../include
 
-CPPFLAGS+= -DADB_HOST=1
-CPPFLAGS+= -DHAVE_FORKEXEC=1
-CPPFLAGS+= -DHAVE_SYMLINKS
-CPPFLAGS+= -DHAVE_TERMIO_H
-CPPFLAGS+= -DHAVE_SYS_SOCKET_H
-CPPFLAGS+= -D_FILE_OFFSET_BITS=64
-CPPFLAGS+= -I.
-CPPFLAGS+= -I../include
+LDADD+= -lcrypto -lpthread -lusb -lz
+DPADD+= ${LIBCRYPTO} ${LIBPTHREAD} ${LIBUSB} ${LIBZ}
 
-LIBS+= -lc -pthread -lz -lcrypto -lusb
-
-OBJS= $(SRCS:.c=.o)
-
-all: adb
-
-adb: $(OBJS)
-	$(CC) -o $@ $(LDFLAGS) $(OBJS) $(LIBS)
-
-install: adb
-	${BSD_INSTALL_PROGRAM} adb ${DESTDIR}${PREFIX}/bin/
-
-clean:
-	rm -rf $(OBJS) adb
+.include <bsd.prog.mk>

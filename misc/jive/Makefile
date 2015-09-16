@@ -6,7 +6,7 @@ PORTVERSION=	1.1
 CATEGORIES=	misc
 MASTER_SITES=	LOCAL/obrien ftp://nuxi.ucdavis.edu/pub/misc/
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Filter that converts English text to Jive
 
 CONFLICTS=	filters-2* talkfilters-2*

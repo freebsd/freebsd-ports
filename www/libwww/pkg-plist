@@ -280,5 +280,3 @@ share/w3c-libwww/unknown.doc.xbm
 share/w3c-libwww/unknown.old.xbm
 share/w3c-libwww/unknown.xbm
 share/w3c-libwww/uu.xbm
-@dirrm share/w3c-libwww
-@dirrm include/w3c-libwww

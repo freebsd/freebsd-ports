@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- unix/unix.c.orig	Tue Aug 12 10:36:13 2003
 +++ unix/unix.c	Tue Aug 12 10:38:47 2003
 @@ -14,6 +14,10 @@

@@ -1,6 +1,8 @@
+%%BROADWAY%%bin/broadwayd
 bin/gtk-encode-symbolic-svg
 bin/gtk-launch
 bin/gtk-query-immodules-3.0
+@comment bin/gtk-update-icon-cache
 bin/gtk3-demo
 bin/gtk3-demo-application
 bin/gtk3-icon-browser
@@ -9,8 +11,14 @@ etc/gtk-3.0/im-multipress.conf
 include/gail-3.0/libgail-util/gail-util.h
 include/gail-3.0/libgail-util/gailmisc.h
 include/gail-3.0/libgail-util/gailtextutil.h
+%%BROADWAY%%include/gtk-3.0/gdk/broadway/gdkbroadwaycursor.h
+%%BROADWAY%%include/gtk-3.0/gdk/broadway/gdkbroadwaydisplay.h
+%%BROADWAY%%include/gtk-3.0/gdk/broadway/gdkbroadwayvisual.h
+%%BROADWAY%%include/gtk-3.0/gdk/broadway/gdkbroadwaywindow.h
+include/gtk-3.0/gdk/gdk-autocleanup.h
 include/gtk-3.0/gdk/gdk.h
 include/gtk-3.0/gdk/gdkapplaunchcontext.h
+%%BROADWAY%%include/gtk-3.0/gdk/gdkbroadway.h
 include/gtk-3.0/gdk/gdkcairo.h
 include/gtk-3.0/gdk/gdkconfig.h
 include/gtk-3.0/gdk/gdkcursor.h
@@ -23,6 +31,7 @@ include/gtk-3.0/gdk/gdkenumtypes.h
 include/gtk-3.0/gdk/gdkevents.h
 include/gtk-3.0/gdk/gdkframeclock.h
 include/gtk-3.0/gdk/gdkframetimings.h
+include/gtk-3.0/gdk/gdkglcontext.h
 include/gtk-3.0/gdk/gdkkeys.h
 include/gtk-3.0/gdk/gdkkeysyms-compat.h
 include/gtk-3.0/gdk/gdkkeysyms.h
@@ -42,6 +51,7 @@ include/gtk-3.0/gdk/gdkversionmacros.h
 include/gtk-3.0/gdk/gdkvisual.h
 include/gtk-3.0/gdk/gdkwindow.h
 include/gtk-3.0/gdk/gdkx.h
+include/gtk-3.0/gdk/x11/gdkx-autocleanups.h
 include/gtk-3.0/gdk/x11/gdkx11applaunchcontext.h
 include/gtk-3.0/gdk/x11/gdkx11cursor.h
 include/gtk-3.0/gdk/x11/gdkx11device-core.h
@@ -53,6 +63,7 @@ include/gtk-3.0/gdk/x11/gdkx11devicemanager.h
 include/gtk-3.0/gdk/x11/gdkx11display.h
 include/gtk-3.0/gdk/x11/gdkx11displaymanager.h
 include/gtk-3.0/gdk/x11/gdkx11dnd.h
+include/gtk-3.0/gdk/x11/gdkx11glcontext.h
 include/gtk-3.0/gdk/x11/gdkx11keys.h
 include/gtk-3.0/gdk/x11/gdkx11property.h
 include/gtk-3.0/gdk/x11/gdkx11screen.h
@@ -60,6 +71,7 @@ include/gtk-3.0/gdk/x11/gdkx11selection.h
 include/gtk-3.0/gdk/x11/gdkx11utils.h
 include/gtk-3.0/gdk/x11/gdkx11visual.h
 include/gtk-3.0/gdk/x11/gdkx11window.h
+include/gtk-3.0/gtk/a11y/gtk-a11y-autocleanups.h
 include/gtk-3.0/gtk/a11y/gtkarrowaccessible.h
 include/gtk-3.0/gtk/a11y/gtkbooleancellaccessible.h
 include/gtk-3.0/gtk/a11y/gtkbuttonaccessible.h
@@ -137,6 +149,7 @@ include/gtk-3.0/gtk/deprecated/gtkrc.h
 include/gtk-3.0/gtk/deprecated/gtkrecentaction.h
 include/gtk-3.0/gtk/deprecated/gtkstock.h
 include/gtk-3.0/gtk/deprecated/gtkstyle.h
+include/gtk-3.0/gtk/deprecated/gtkstyleproperties.h
 include/gtk-3.0/gtk/deprecated/gtkstatusicon.h
 include/gtk-3.0/gtk/deprecated/gtksymboliccolor.h
 include/gtk-3.0/gtk/deprecated/gtktable.h
@@ -151,6 +164,7 @@ include/gtk-3.0/gtk/deprecated/gtkvscale.h
 include/gtk-3.0/gtk/deprecated/gtkvscrollbar.h
 include/gtk-3.0/gtk/deprecated/gtkvseparator.h
 include/gtk-3.0/gtk/gtk-a11y.h
+include/gtk-3.0/gtk/gtk-autocleanups.h
 include/gtk-3.0/gtk/gtk.h
 include/gtk-3.0/gtk/gtkaboutdialog.h
 include/gtk-3.0/gtk/gtkaccelgroup.h
@@ -238,6 +252,7 @@ include/gtk-3.0/gtk/gtkgesturerotate.h
 include/gtk-3.0/gtk/gtkgesturesingle.h
 include/gtk-3.0/gtk/gtkgestureswipe.h
 include/gtk-3.0/gtk/gtkgesturezoom.h
+include/gtk-3.0/gtk/gtkglarea.h
 include/gtk-3.0/gtk/gtkgrid.h
 include/gtk-3.0/gtk/gtkheaderbar.h
 include/gtk-3.0/gtk/gtkicontheme.h
@@ -265,6 +280,7 @@ include/gtk-3.0/gtk/gtkmenuitem.h
 include/gtk-3.0/gtk/gtkmenushell.h
 include/gtk-3.0/gtk/gtkmenutoolbutton.h
 include/gtk-3.0/gtk/gtkmessagedialog.h
+include/gtk-3.0/gtk/gtkmodelbutton.h
 include/gtk-3.0/gtk/gtkmodules.h
 include/gtk-3.0/gtk/gtkmountoperation.h
 include/gtk-3.0/gtk/gtknotebook.h
@@ -277,6 +293,7 @@ include/gtk-3.0/gtk/gtkpapersize.h
 include/gtk-3.0/gtk/gtkplacessidebar.h
 include/gtk-3.0/gtk/gtkplug.h
 include/gtk-3.0/gtk/gtkpopover.h
+include/gtk-3.0/gtk/gtkpopovermenu.h
 include/gtk-3.0/gtk/gtkprintcontext.h
 include/gtk-3.0/gtk/gtkprintoperation.h
 include/gtk-3.0/gtk/gtkprintoperationpreview.h
@@ -292,6 +309,7 @@ include/gtk-3.0/gtk/gtkrecentchoosermenu.h
 include/gtk-3.0/gtk/gtkrecentchooserwidget.h
 include/gtk-3.0/gtk/gtkrecentfilter.h
 include/gtk-3.0/gtk/gtkrecentmanager.h
+include/gtk-3.0/gtk/gtkrender.h
 include/gtk-3.0/gtk/gtkrevealer.h
 include/gtk-3.0/gtk/gtkscale.h
 include/gtk-3.0/gtk/gtkscalebutton.h
@@ -313,9 +331,9 @@ include/gtk-3.0/gtk/gtkspinbutton.h
 include/gtk-3.0/gtk/gtkspinner.h
 include/gtk-3.0/gtk/gtkstatusbar.h
 include/gtk-3.0/gtk/gtkstack.h
+include/gtk-3.0/gtk/gtkstacksidebar.h
 include/gtk-3.0/gtk/gtkstackswitcher.h
 include/gtk-3.0/gtk/gtkstylecontext.h
-include/gtk-3.0/gtk/gtkstyleproperties.h
 include/gtk-3.0/gtk/gtkstyleprovider.h
 include/gtk-3.0/gtk/gtkswitch.h
 include/gtk-3.0/gtk/gtktestutils.h
@@ -357,16 +375,19 @@ include/gtk-3.0/gtk/gtkwidget.h
 include/gtk-3.0/gtk/gtkwidgetpath.h
 include/gtk-3.0/gtk/gtkwindow.h
 include/gtk-3.0/gtk/gtkwindowgroup.h
+include/gtk-3.0/gtk/gtkx-autocleanups.h
 include/gtk-3.0/gtk/gtkx.h
 include/gtk-3.0/unix-print/gtk/gtkpagesetupunixdialog.h
 include/gtk-3.0/unix-print/gtk/gtkprinter.h
 include/gtk-3.0/unix-print/gtk/gtkprintjob.h
 include/gtk-3.0/unix-print/gtk/gtkprintunixdialog.h
+include/gtk-3.0/unix-print/gtk/gtkunixprint-autocleanups.h
 include/gtk-3.0/unix-print/gtk/gtkunixprint.h
 lib/girepository-1.0/Gdk-3.0.typelib
 lib/girepository-1.0/GdkX11-3.0.typelib
 lib/girepository-1.0/Gtk-3.0.typelib
 lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-am-et.so
+%%BROADWAY%%lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-broadway.so
 lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-cedilla.so
 lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-cyrillic-translit.so
 lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-inuktitut.so
@@ -392,8 +413,10 @@ lib/libgtk-3.so.0
 lib/libgtk-3.so.%%LIBVERSION%%
 libdata/pkgconfig/gail-3.0.pc
 libdata/pkgconfig/gdk-3.0.pc
+%%BROADWAY%%libdata/pkgconfig/gdk-broadway-3.0.pc
 libdata/pkgconfig/gdk-x11-3.0.pc
 libdata/pkgconfig/gtk+-3.0.pc
+%%BROADWAY%%libdata/pkgconfig/gtk+-broadway-3.0.pc
 libdata/pkgconfig/gtk+-unix-print-3.0.pc
 libdata/pkgconfig/gtk+-x11-3.0.pc
 man/man1/gtk-query-immodules-3.0.1.gz
@@ -405,17 +428,29 @@ share/gir-1.0/Gdk-3.0.gir
 share/gir-1.0/GdkX11-3.0.gir
 share/gir-1.0/Gtk-3.0.gir
 share/gtk-3.0/gtkbuilder.rng
+share/icons/hicolor/16x16/apps/gtk3-demo-symbolic.symbolic.png
 share/icons/hicolor/16x16/apps/gtk3-demo.png
+share/icons/hicolor/16x16/apps/gtk3-widget-factory-symbolic.symbolic.png
 share/icons/hicolor/16x16/apps/gtk3-widget-factory.png
+share/icons/hicolor/22x22/apps/gtk3-demo-symbolic.symbolic.png
 share/icons/hicolor/22x22/apps/gtk3-demo.png
+share/icons/hicolor/22x22/apps/gtk3-widget-factory-symbolic.symbolic.png
 share/icons/hicolor/22x22/apps/gtk3-widget-factory.png
+share/icons/hicolor/24x24/apps/gtk3-demo-symbolic.symbolic.png
 share/icons/hicolor/24x24/apps/gtk3-demo.png
+share/icons/hicolor/24x24/apps/gtk3-widget-factory-symbolic.symbolic.png
 share/icons/hicolor/24x24/apps/gtk3-widget-factory.png
+share/icons/hicolor/256x256/apps/gtk3-demo-symbolic.symbolic.png
 share/icons/hicolor/256x256/apps/gtk3-demo.png
+share/icons/hicolor/256x256/apps/gtk3-widget-factory-symbolic.symbolic.png
 share/icons/hicolor/256x256/apps/gtk3-widget-factory.png
+share/icons/hicolor/32x32/apps/gtk3-demo-symbolic.symbolic.png
 share/icons/hicolor/32x32/apps/gtk3-demo.png
+share/icons/hicolor/32x32/apps/gtk3-widget-factory-symbolic.symbolic.png
 share/icons/hicolor/32x32/apps/gtk3-widget-factory.png
+share/icons/hicolor/48x48/apps/gtk3-demo-symbolic.symbolic.png
 share/icons/hicolor/48x48/apps/gtk3-demo.png
+share/icons/hicolor/48x48/apps/gtk3-widget-factory-symbolic.symbolic.png
 share/icons/hicolor/48x48/apps/gtk3-widget-factory.png
 share/locale/af/LC_MESSAGES/gtk30-properties.mo
 share/locale/af/LC_MESSAGES/gtk30.mo

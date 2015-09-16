@@ -3,7 +3,7 @@
 
 PORTNAME=	dabstick-radio
 PORTVERSION=	0.96
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	comms audio hamradio
 MASTER_SITES=	http://www.sdr-j.tk/ \
 		LOCAL/nox/
@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS+=	librtlsdr.so:${PORTSDIR}/comms/rtl-sdr \
 		libqwt.so:${PORTSDIR}/x11-toolkits/qwt5 \
-		libportaudio.so.2:${PORTSDIR}/audio/portaudio2 \
+		libportaudio.so:${PORTSDIR}/audio/portaudio \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile \
 		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
 		libfftw3.so:${PORTSDIR}/math/fftw3 \
@@ -28,13 +28,13 @@ PORTDOCS=	*
 PLIST_FILES+=	bin/dabreceiver bin/fmreceiver bin/spectrum-viewer
 
 ONLY_FOR_ARCHS=		i386 amd64
-ONLY_FOR_ARCHS_REASON=	uses MMX and SSE2
+ONLY_FOR_ARCHS_REASON=	uses MMX and SSE2 instructions
 
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-.if (${OSVERSION} >= 901000) && exists(${DESTDIR}/usr/bin/clang)
+.if (${OSVERSION} >= 900014) && exists(${DESTDIR}/usr/bin/clang)
 CC=		clang
 CXX=		clang++
 CPP=		clang-cpp
@@ -63,10 +63,9 @@ do-install:
 		${WRKSRC}/dabreceiver-V2/dabreceiver \
 		${WRKSRC}/spectrum-viewer/spectrum-viewer \
 		${STAGEDIR}${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/dabreceiver-V2 ${STAGEDIR}${DOCSDIR}/fmreceiver-dab
 	${INSTALL_DATA} ${WRKSRC}/dabreceiver-V2/README ${STAGEDIR}${DOCSDIR}/dabreceiver-V2
 	${INSTALL_DATA} ${WRKSRC}/fmreceiver-dab/README ${STAGEDIR}${DOCSDIR}/fmreceiver-dab
-.endif
 
 .include <bsd.port.mk>

@@ -21,6 +21,7 @@ include/OpenImageIO/imagebufalgo_util.h
 include/OpenImageIO/imagebufalgo.h
 include/OpenImageIO/imagecache.h
 include/OpenImageIO/imageio.h
+include/OpenImageIO/missing_math.h
 include/OpenImageIO/oiioversion.h
 include/OpenImageIO/optparser.h
 include/OpenImageIO/osdep.h
@@ -32,6 +33,7 @@ include/OpenImageIO/pugixml.cpp
 include/OpenImageIO/pugixml.hpp
 include/OpenImageIO/refcnt.h
 include/OpenImageIO/SHA1.h
+include/OpenImageIO/simd.h
 include/OpenImageIO/strided_ptr.h
 include/OpenImageIO/string_ref.h
 include/OpenImageIO/string_view.h
@@ -49,12 +51,12 @@ include/OpenImageIO/varyingref.h
 include/OpenImageIO/version.h
 lib/libOpenImageIO.so
 lib/libOpenImageIO.so.1
-lib/libOpenImageIO.so.1.4
-lib/libOpenImageIO.so.1.4.15
+lib/libOpenImageIO.so.1.5
+lib/libOpenImageIO.so.%%LIBVERS%%
 lib/libOpenImageIO_Util.so
 lib/libOpenImageIO_Util.so.1
-lib/libOpenImageIO_Util.so.1.4
-lib/libOpenImageIO_Util.so.1.4.15
+lib/libOpenImageIO_Util.so.1.5
+lib/libOpenImageIO_Util.so.%%LIBVERS%%
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/openimageio.pdf

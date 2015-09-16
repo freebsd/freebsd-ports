@@ -8,7 +8,6 @@ CATEGORIES=	textproc python
 MASTER_SITES=	SF/pywordnet/pywordnet/${PORTVERSION}:pywn \
 		http://wordnetcode.princeton.edu/${WN_VERSION}/:wn \
 		ftp://ftp.ims.uni-stuttgart.de/pub/WordNet/${WN_VERSION}/:wn
-MASTER_SITE_SUBDIR=	pywordnet
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	pywordnet-${PORTVERSION}.tar.gz:pywn \
 		WordNet-${WN_VERSION}.tar.gz:wn

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rufus-scheduler
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,6 +11,8 @@ COMMENT=	Ruby job scheduler for at, cron and others
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-tzinfo>=0:${PORTSDIR}/devel/rubygem-tzinfo
+
+NO_ARCH=	yes
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

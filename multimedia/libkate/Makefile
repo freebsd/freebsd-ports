@@ -5,7 +5,7 @@ PORTNAME=	libkate
 PORTVERSION=	0.4.1
 PORTREVISION=	5
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	bar@FreeBSD.org
 COMMENT=	Codec for karaoke and text encapsulation for Ogg

@@ -3,7 +3,7 @@
 
 PORTNAME=	check_smartmon
 PORTVERSION=	20100318
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://nognu.de/s/FreeBSD/distfiles/
 PKGNAMEPREFIX=	nagios-

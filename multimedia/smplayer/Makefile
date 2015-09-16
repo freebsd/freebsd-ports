@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	smplayer
-DISTVERSION=	14.9.0
-PORTREVISION=	1
+DISTVERSION=	14.9.0.6994
 CATEGORIES=	multimedia audio kde
-MASTER_SITES=	SF/${PORTNAME}/SMPlayer/${PORTVERSION}
+#MASTER_SITES=	SF/${PORTNAME}/SMPlayer/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/Unstable/releases
 
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Complete front-end based on Qt4 for mplayer
@@ -24,16 +24,17 @@ ALL_TARGET=	src/smplayer
 CONFIGURE_WRKSRC=	${WRKSRC}/src
 MAKE_ARGS+=	PREFIX=${PREFIX} DESTDIR=${STAGEDIR}
 
-USES=		desktop-file-utils dos2unix gmake qmake tar:bzip2
+USES=		cpe desktop-file-utils dos2unix gmake qmake tar:bzip2
+CPE_VENDOR=	ricardo_villalba
 DOS2UNIX_REGEX=	.*.[^p][^n][^g]$
 INSTALLS_ICONS=	yes
 
-PORTDOCS=	Changelog Not_so_obvious_things.txt Readme.txt \
-		Release_notes.txt Watching_TV.txt
+PORTDOCS=	Changelog Not_so_obvious_things.txt Notes_about_mpv.txt \
+		Readme.txt Release_notes.txt Watching_TV.txt
 OPTIONS_DEFINE=	DOCS DEBUG
 
-# Do not use unstable versions
-PORTSCOUT= skipv:14.3.0.6306
+# Do not use unstable versions, only for Moment use it because Bug 199279
+#PORTSCOUT=	site:http://sourceforge.net/projects/smplayer/files/Unstable/release
 
 SUB_FILES=	pkg-message
 

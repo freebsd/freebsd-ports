@@ -5,7 +5,7 @@ PORTNAME=	liblrdf
 PORTVERSION=	0.5.0
 PORTREVISION=	7
 CATEGORIES=	textproc
-MASTER_SITES=	GENTOO/distfiles
+MASTER_SITES=	GENTOO
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for manipulating RDF files describing LADSPA plugins

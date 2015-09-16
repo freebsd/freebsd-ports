@@ -3,9 +3,8 @@
 
 PORTNAME=	mysqltuner
 PORTVERSION=	1.3.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
-MASTER_SITES=	https://github.com/major/MySQLTuner-perl/archive/
-DISTNAME=	v1.3.0
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Assist you with MySQL Configuration
@@ -14,6 +13,9 @@ LICENSE=	GPLv3
 
 USES=		perl5 shebangfix
 NO_BUILD=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	major
+GH_PROJECT=	MySQLTuner-perl
 
 WRKSRC=		${WRKDIR}/MySQLTuner-perl-${PORTVERSION}
 

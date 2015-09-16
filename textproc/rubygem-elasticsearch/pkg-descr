@@ -4,4 +4,4 @@ Ruby integrations for Elasticsearch that feature:
 * a Ruby API for the Elasticsearch's REST API
 * various extensions and utilities
 
-WWW: https://rubygems.org/gems/elasticsearch
+WWW: http://github.com/elasticsearch/elasticsearch-ruby

@@ -1,0 +1,10 @@
+include/texlua52/lauxlib.h
+include/texlua52/lua.h
+include/texlua52/lua.hpp
+include/texlua52/luaconf.h
+include/texlua52/lualib.h
+lib/libtexlua52.a
+lib/libtexlua52.so
+lib/libtexlua52.so.5
+lib/libtexlua52.so.5.2.4
+libdata/pkgconfig/texlua52.pc

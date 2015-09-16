@@ -4,6 +4,7 @@
 
 PORTNAME=	telepathy-mission-control
 PORTVERSION=	5.16.3
+PORTREVISION=	1
 CATEGORIES=	net-im devel
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/telepathy-mission-control/
 
@@ -14,7 +15,7 @@ LIB_DEPENDS=	libtelepathy.so:${PORTSDIR}/net-im/libtelepathy \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
 USES=		gmake libtool pathfix pkgconfig
-USE_GNOME=	libxslt
+USE_GNOME=	glib20 libxslt
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib

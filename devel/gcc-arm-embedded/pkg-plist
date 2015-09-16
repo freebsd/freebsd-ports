@@ -984,6 +984,9 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/string.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/strings.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_default_fcntl.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_intsup.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_stdint.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_timespec.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_timeval.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_types.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/cdefs.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/config.h
@@ -1009,6 +1012,8 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/syslimits.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/time.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/timeb.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/times.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/timespec.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/tree.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/types.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/unistd.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/utime.h
@@ -4057,6 +4062,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/thumb/libgc
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/ld.html/Xtensa.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/ld.html/i960.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/ld.html/index.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/_005f_005ffsetlocking.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/Arglists.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/Ctype.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/Document-Index.html
@@ -4219,6 +4225,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/thumb/libgc
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/siscanf.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/sprintf.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/sscanf.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/stdio_005fext.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/stpcpy.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/stpncpy.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/strcasecmp.html

@@ -14,6 +14,8 @@ LIB_DEPENDS=	liboop.so:${PORTSDIR}/devel/liboop \
 		libgmp.so:${PORTSDIR}/math/gmp \
 		libnettle.so:${PORTSDIR}/security/nettle
 
+BROKEN_FreeBSD_9=	does not build
+
 USE_CSTD=	c89
 GNU_CONFIGURE=	yes
 USE_XORG=	xau

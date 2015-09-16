@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	cyrus-imapd
-PORTVERSION=	2.3.18
-PORTREVISION=	10
+PORTVERSION=	2.3.19
+#PORTREVISION=	10
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/
 PKGNAMESUFFIX=	23
@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2 \
 		libpcre.so:${PORTSDIR}/devel/pcre
-BUILD_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
 
 CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^3].* cyrus-imapd2[^3]-2.[^3].*
 

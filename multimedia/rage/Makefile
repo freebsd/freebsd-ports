@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rage
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.4
 CATEGORIES=	multimedia enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/
 

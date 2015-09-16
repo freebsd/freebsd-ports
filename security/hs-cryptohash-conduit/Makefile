@@ -2,7 +2,7 @@
 
 PORTNAME=	cryptohash-conduit
 PORTVERSION=	0.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org

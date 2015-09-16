@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unix-compat
-PORTVERSION=	0.4.1.3
-PORTREVISION=	1
+PORTVERSION=	0.4.1.4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

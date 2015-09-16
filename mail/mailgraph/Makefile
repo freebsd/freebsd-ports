@@ -3,7 +3,7 @@
 
 PORTNAME=	mailgraph
 PORTVERSION=	1.14
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	mail
 MASTER_SITES=	http://mailgraph.schweikert.ch/pub/ \
 		http://mailgraph.schweikert.ch/pub/old/
@@ -16,7 +16,7 @@ RUN_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool	\
 
 NO_BUILD=	yes
 USES=		perl5 shebangfix
-SHEBANG_FILES=	mailgraph.pl
+SHEBANG_FILES=	mailgraph.pl mailgraph.cgi
 
 CGIDIR?=	${PREFIX}/www/cgi-bin
 DATADIR?=	/var/db/mailgraph

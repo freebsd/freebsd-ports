@@ -15,6 +15,8 @@ RUN_DEPENDS=	rubygem-descendants_tracker>=0.0.4:${PORTSDIR}/devel/rubygem-descen
 		rubygem-ice_nine>=0.11.0:${PORTSDIR}/devel/rubygem-ice_nine \
 		rubygem-thread_safe>=0.3.1:${PORTSDIR}/devel/rubygem-thread_safe
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

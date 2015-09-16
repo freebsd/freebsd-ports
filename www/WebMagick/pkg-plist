@@ -1,6 +1,4 @@
-@unexec if [ -f %D/etc/webmagickrc ] && cmp -s %D/etc/webmagickrc %D/etc/webmagickrc.dist; then rm -f %D/etc/webmagickrc; fi
-etc/webmagickrc.dist
-@exec [ ! -f %B/webmagickrc ] && cp %B/%f %B/webmagickrc
+@sample etc/webmagickrc.sample
 bin/webmagick
 man/man1/webmagick.1.gz
 www/data/webmagick/aqua_next.gif
@@ -27,5 +25,3 @@ www/data/webmagick/frame-style-4.jpg
 www/data/webmagick/gray_next.gif
 www/data/webmagick/gray_prev.gif
 www/data/webmagick/webmagick.js
-@dirrm www/data/webmagick
-@dirrmtry www/data

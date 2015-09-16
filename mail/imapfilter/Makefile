@@ -2,13 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	imapfilter
-PORTVERSION=	2.5.6
+PORTVERSION=	2.6.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	GH http://www.gegenunendlich.de/distfiles/
 
-MAINTAINER=	stefan@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	IMAP mail filtering utility
 
 LICENSE=	MIT
@@ -44,6 +42,9 @@ MAKE_ARGS=	PREFIX=${PREFIX} \
 		SHAREDIR=${DATADIR} \
 		MANDIR=${MANPREFIX}/man \
 		LIBLUA=-llua-${LUA_VER}
+
+post-patch:
+	${REINPLACE_CMD} 's|-ldl ||' ${WRKSRC}/src/Makefile
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/imapfilter

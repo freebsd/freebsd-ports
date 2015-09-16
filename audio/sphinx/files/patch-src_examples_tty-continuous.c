@@ -1,5 +1,3 @@
-$FreeBSD$
-
 author:  Andriy Gapon
 
 --- src/examples/tty-continuous.c.orig	Thu Dec 13 21:11:15 2001

@@ -5,13 +5,11 @@ PORTNAME=	unroff
 PORTVERSION=	1.0.2
 PORTREVISION=	5
 CATEGORIES=	textproc
-MASTER_SITES=	http://www-rn.informatik.uni-bremen.de/software/unroff/%SUBDIR%/
-MASTER_SITE_SUBDIR=	dist
+MASTER_SITES=	http://www-rn.informatik.uni-bremen.de/software/unroff/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 DIST_SUBDIR=	unroff
 
-PATCH_SITES=	${MASTER_SITES}
-PATCH_SITE_SUBDIR=	contrib
+PATCH_SITES=	http://www-rn.informatik.uni-bremen.de/software/unroff/contrib/
 PATCHFILES=	me-misc-patch.gz misc-patch-2.gz
 PATCH_DIST_STRIP=	-p1
 

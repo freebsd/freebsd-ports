@@ -3,7 +3,6 @@ bin/gbirthday
 %%PYTHON_SITELIBDIR%%/gbirthday/addressbook.py
 %%PYTHON_SITELIBDIR%%/gbirthday/databases/__init__.py
 %%PYTHON_SITELIBDIR%%/gbirthday/databases/csv.py
-%%PYTHON_SITELIBDIR%%/gbirthday/databases/evolution.py
 %%PYTHON_SITELIBDIR%%/gbirthday/databases/lightning.py
 %%PYTHON_SITELIBDIR%%/gbirthday/databases/mysql.py
 %%PYTHON_SITELIBDIR%%/gbirthday/databases/sunbird.py
@@ -20,11 +19,15 @@ bin/gbirthday
 %%PYTHON_SITELIBDIR%%/gbirthday/test_conf.py
 %%PYTHON_SITELIBDIR%%/gbirthday/test_databases.py
 share/applications/gbirthday.desktop
+%%NLS%%share/locale/cs/LC_MESSAGES/gbirthday.mo
+%%NLS%%share/locale/da/LC_MESSAGES/gbirthday.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gbirthday.mo
 %%NLS%%share/locale/en/LC_MESSAGES/gbirthday.mo
 %%NLS%%share/locale/es/LC_MESSAGES/gbirthday.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/gbirthday.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/gbirthday.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/gbirthday.mo
+%%NLS%%share/locale/he/LC_MESSAGES/gbirthday.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gbirthday.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gbirthday.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/gbirthday.mo

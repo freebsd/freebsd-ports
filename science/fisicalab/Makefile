@@ -4,8 +4,7 @@ PORTNAME=	fisicalab
 PORTVERSION=	0.3.3
 PORTREVISION=	2
 CATEGORIES=	science gnustep
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	fisicalab
+MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	theraven@FreeBSD.org
 COMMENT=	Physics simulation program for educational use

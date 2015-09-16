@@ -7,9 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	japanese emulators
 MASTER_SITES=	ftp://ftp.tux.org/pub/knaff/mtools/:mtools  \
 		http://mtools.linux.lu/:mtools \
-		${MASTER_SITE_LOCAL:S/$/:local/} \
-		${MASTER_SITE_PORTS_JP:S/$/:jp/}
-MASTER_SITE_SUBDIR=	steve/:local ./:jp
+		LOCAL/steve:local PORTS_JP:jp
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:mtools \
 		${DISTNAME}.PC98.patch.gz:local,jp
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}

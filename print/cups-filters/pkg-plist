@@ -32,7 +32,6 @@ libexec/cups/filter/imagetopdf
 libexec/cups/filter/imagetops
 libexec/cups/filter/imagetoraster
 libexec/cups/filter/pdftoijs
-libexec/cups/filter/pdftoippprinter
 libexec/cups/filter/pdftoopvp
 libexec/cups/filter/pdftopdf
 libexec/cups/filter/pdftops
@@ -41,6 +40,7 @@ libexec/cups/filter/pstopdf
 libexec/cups/filter/rastertoescpx
 libexec/cups/filter/rastertopclx
 libexec/cups/filter/rastertopdf
+libexec/cups/filter/sys5ippprinter
 libexec/cups/filter/textonly
 libexec/cups/filter/texttopdf
 libexec/cups/filter/texttops
@@ -85,6 +85,7 @@ share/ppd/cupsfilters/Fuji_Xerox-DocuPrint_CM305_df-PDF.ppd
 share/ppd/cupsfilters/Generic-PDF_Printer-PDF.ppd
 share/ppd/cupsfilters/HP-Color_LaserJet_CM3530_MFP-PDF.ppd
 share/ppd/cupsfilters/HP-PhotoSmart_Pro_B8300-hpijs-pdftoijs.ppd
+share/ppd/cupsfilters/Ricoh-PDF_Printer-PDF.ppd
 share/ppd/cupsfilters/pxlcolor.ppd
 share/ppd/cupsfilters/pxlmono.ppd
 share/ppd/cupsfilters/textonly.ppd

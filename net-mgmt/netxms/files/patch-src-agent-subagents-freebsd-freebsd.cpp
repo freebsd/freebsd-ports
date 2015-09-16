@@ -1,6 +1,6 @@
---- src/agent/subagents/freebsd/freebsd.cpp.orig	2014-10-02 16:57:50.000000000 +0400
-+++ src/agent/subagents/freebsd/freebsd.cpp	2014-10-02 16:58:48.000000000 +0400
-@@ -48,14 +48,14 @@
+--- src/agent/subagents/freebsd/freebsd.cpp.orig	2013-12-25 15:01:05 UTC
++++ src/agent/subagents/freebsd/freebsd.cpp
+@@ -48,14 +48,14 @@ static NETXMS_SUBAGENT_PARAM m_parameter
  	{ _T("FileSystem.UsedPerc(*)"),       H_DiskInfo,        (const TCHAR *)DISK_USED_PERC,    DCI_DT_FLOAT,	DCIDESC_FS_USEDPERC },
  
  	{ _T("Net.Interface.AdminStatus(*)"), H_NetIfAdmStatus,  NULL,				DCI_DT_INT,	DCIDESC_NET_INTERFACE_ADMINSTATUS },

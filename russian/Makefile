@@ -33,8 +33,10 @@
     SUBDIR += p5-Text-Hyphen-RU
     SUBDIR += p5-XML-Parser-encodings
     SUBDIR += p5-cyrillic
+    SUBDIR += py-pytils
     SUBDIR += rubygem-russian
     SUBDIR += rubygem-rutils
+    SUBDIR += rux
     SUBDIR += stardict-bars
     SUBDIR += stardict-computer
     SUBDIR += stardict-dal

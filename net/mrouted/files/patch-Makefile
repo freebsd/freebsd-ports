@@ -1,15 +1,49 @@
---- Makefile.orig	2011-10-23 17:03:36.000000000 +0900
-+++ Makefile	2013-10-17 12:59:19.000000000 +0900
-@@ -51,7 +51,7 @@
+--- Makefile.orig	2014-12-28 14:23:52 UTC
++++ Makefile
+@@ -16,8 +16,8 @@ CC           ?= $(CROSS)gcc
+ 
+ prefix       ?= /usr/local
+ sysconfdir   ?= /etc
+-datadir       = $(prefix)/share/doc/mrouted
+-mandir        = $(prefix)/share/man/man8
++datadir      ?= $(prefix)/share/doc/mrouted
++mandir       ?= $(prefix)/share/man/man8
+ 
+ # This magic trick looks like a comment, but works on BSD PMake
+ #include <config.mk>
+@@ -36,15 +36,15 @@ MTRACE_OBJS   = mtrace.o $(EXTRA_OBJS)
+ 
+ ## Common
+ CFLAGS       += $(MCAST_INCLUDE) $(INCLUDES) $(DEFS) $(USERCOMPILE)
+-CFLAGS       += -O2 -W -Wall -Werror
++#CFLAGS       += -O2 -W -Wall -Werror
+ #CFLAGS       += -O -g
+ LDLIBS        = $(EXTRA_LIBS)
+ LDFLAGS      += -Wl,-Map,$@.map
+ OBJS          = $(IGMP_OBJS) $(ROUTER_OBJS) $(MAPPER_OBJS) $(MRINFO_OBJS) \
  		$(MTRACE_OBJS) $(MSTAT_OBJS)
  SRCS          = $(OBJS:.o=.c)
- MANS          = $(addsuffix .8,$(EXECS))
+-MANS          = $(addsuffix .8,$(EXECS))
 -DISTFILES     = README AUTHORS LICENSE ChangeLog
++MANS          = ${EXECS:S/$/.8/}
 +DISTFILES     = README AUTHORS ChangeLog
  
  LINT          = splint
  LINTFLAGS     = $(MCAST_INCLUDE) $(filter-out -W -Wall -Werror, $(CFLAGS)) -posix-lib -weak -skipposixheaders
-@@ -70,13 +70,13 @@
+@@ -52,24 +52,22 @@ LINTFLAGS     = $(MCAST_INCLUDE) $(filte
+ all: $(EXECS) $(MSTAT)
+ 
+ .y.c:
+-	@printf "  YACC    $@\n"
+-	@$(YACC) $<
++	$(YACC) $<
+ 	-@mv y.tab.c $@ || mv $(<:.y=.tab.c) $@
+ 
+ .c.o:
+-	@printf "  CC      $@\n"
+-	@$(CC) $(CFLAGS) $(CPPFLAGS) -c -o $@ $<
++	$(CC) $(CFLAGS) $(CPPFLAGS) -c -o $@ $<
+ 
  install: $(EXECS)
  	@install -d $(DESTDIR)$(prefix)/sbin
  	@install -d $(DESTDIR)$(sysconfdir)
@@ -17,7 +51,8 @@
 +	@[ -z "${doc}" ] || install -d $(DESTDIR)$(datadir)
  	@install -d $(DESTDIR)$(mandir)
  	@for file in $(EXECS); do \
- 		install -m 0755 $$file $(DESTDIR)$(prefix)/sbin/$$file; \
+-		install -m 0755 $$file $(DESTDIR)$(prefix)/sbin/$$file; \
++		install -s -m 0755 $$file $(DESTDIR)$(prefix)/sbin/$$file; \
  	done
  	@install -b -m 0644 $(CONFIG) $(DESTDIR)$(sysconfdir)/$(CONFIG)
 -	@for file in $(DISTFILES); do \
@@ -25,3 +60,36 @@
  		install -m 0644 $$file $(DESTDIR)$(datadir)/$$file; \
  	done
  	@for file in $(MANS); do \
+@@ -87,27 +85,22 @@ uninstall:
+ 	done
+ 
+ mrouted: $(IGMP_OBJS) $(ROUTER_OBJS) $(CMULIBS)
+-	@printf "  LINK    $@\n"
+-	@$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(IGMP_OBJS) $(ROUTER_OBJS) $(LDLIBS)
++	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(IGMP_OBJS) $(ROUTER_OBJS) $(LDLIBS)
+ 
+ vers.c: Makefile
+ 	@echo $(VERSION) | sed -e 's/.*/char todaysversion[]="&";/' > vers.c
+ 
+ map-mbone: $(IGMP_OBJS) $(MAPPER_OBJS)
+-	@printf "  LINK    $@\n"
+-	@$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(IGMP_OBJS) $(MAPPER_OBJS) $(LDLIBS)
++	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(IGMP_OBJS) $(MAPPER_OBJS) $(LDLIBS)
+ 
+ mrinfo: $(IGMP_OBJS) $(MRINFO_OBJS)
+-	@printf "  LINK    $@\n"
+-	@$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(IGMP_OBJS) $(MRINFO_OBJS) $(LDLIBS)
++	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(IGMP_OBJS) $(MRINFO_OBJS) $(LDLIBS)
+ 
+ mtrace: $(IGMP_OBJS) $(MTRACE_OBJS)
+-	@printf "  LINK    $@\n"
+-	@$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(IGMP_OBJS) $(MTRACE_OBJS) $(LDLIBS)
++	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(IGMP_OBJS) $(MTRACE_OBJS) $(LDLIBS)
+ 
+ mstat: $(MSTAT_OBJS) $(CMULIBS)
+-	@printf "  LINK    $@\n"
+-	@$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(MSTAT_OBJS) $(LDLIBS)
++	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(MSTAT_OBJS) $(LDLIBS)
+ 
+ # Runs Clang scan-build on the whole tree
+ check: clean

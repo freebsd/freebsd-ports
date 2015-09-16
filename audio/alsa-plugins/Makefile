@@ -5,7 +5,7 @@ PORTNAME=	alsa-plugins
 PORTVERSION=	1.0.29
 CATEGORIES=	audio
 MASTER_SITES=	ALSA/plugins \
-		GENTOO/distfiles
+		GENTOO
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	ALSA compatibility library plugins
@@ -15,7 +15,7 @@ LICENSE=	LGPL21 # or any later version
 LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
 
 GNU_CONFIGURE=	yes
-USES=		libtool:keepla pkgconfig tar:bzip2
+USES=		alias libtool:keepla pkgconfig tar:bzip2
 EXTRA_PATCHES+=	${FILESDIR}/alsa-plugins.patch
 INSTALL_TARGET=	install-strip
 CPPFLAGS+=	-I${.CURDIR}/../alsa-lib/files
@@ -40,6 +40,7 @@ VERBOSE_CFLAGS=	-DFREEBSD_OSS_DEBUG_VERBOSE
 
 JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
 JACK_CONFIGURE_ENABLE=	jack
+JACK_IMPLIES=		SAMPLERATE
 
 FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 FFMPEG_CONFIGURE_ENABLE=avcodec
@@ -54,12 +55,6 @@ SAMPLERATE_CONFIGURE_ENABLE=samplerate
 SPEEX_LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex
 SPEEX_CONFIGURE_ON=	--with-speex=lib
 SPEEX_CONFIGURE_OFF=	--without-speex
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MJACK} && empty(PORT_OPTIONS:MSAMPLERATE)
-IGNORE=			JACK audio support requires SAMPLERATE
-.endif
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e '/LIBS/s/-ldl//g' \

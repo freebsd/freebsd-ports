@@ -3,7 +3,7 @@
 
 PORTNAME=	xorriso
 PORTVERSION=	1.3.4
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://files.libburnia-project.org/releases/
 DISTNAME=	libisoburn-${PORTVERSION}

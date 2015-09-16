@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://mancubus.net/pub/idgames/idstuff/source/ \
 		http://ftp.mancubus.net/pub/idgames/idstuff/source/ \
 		http://www.gamers.org/pub/idgames/idstuff/source/ \
-		${MASTER_SITE_IDSOFTWARE:S|$|source/|}
+		IDSOFTWARE/source/
 DISTNAME=	${PORTNAME}-${REALVERSION}-source
 
 MAINTAINER=	shirshegsm@gmail.com

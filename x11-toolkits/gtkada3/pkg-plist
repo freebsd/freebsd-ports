@@ -44,6 +44,8 @@ include/gtkada/gdk-frame_clock.adb
 include/gtkada/gdk-frame_clock.ads
 include/gtkada/gdk-frame_timings.adb
 include/gtkada/gdk-frame_timings.ads
+include/gtkada/gdk-gl.adb
+include/gtkada/gdk-gl.ads
 include/gtkada/gdk-input.ads
 include/gtkada/gdk-keyval.adb
 include/gtkada/gdk-keyval.ads
@@ -69,6 +71,8 @@ include/gtkada/gdk-window.ads
 include/gtkada/gdk-window_attr.adb
 include/gtkada/gdk-window_attr.ads
 include/gtkada/gdk.ads
+include/gtkada/gl_h.adb
+include/gtkada/gl_h.ads
 include/gtkada/glib-action.adb
 include/gtkada/glib-action.ads
 include/gtkada/glib-action_group.adb
@@ -92,6 +96,8 @@ include/gtkada/glib-glist.adb
 include/gtkada/glib-glist.ads
 include/gtkada/glib-gnodes.adb
 include/gtkada/glib-gnodes.ads
+include/gtkada/glib-graphs-layouts.adb
+include/gtkada/glib-graphs-layouts.ads
 include/gtkada/glib-graphs.adb
 include/gtkada/glib-graphs.ads
 include/gtkada/glib-gslist.adb
@@ -137,6 +143,7 @@ include/gtkada/glib-xml.ads
 include/gtkada/glib-xml_int.ads
 include/gtkada/glib.adb
 include/gtkada/glib.ads
+include/gtkada/glu_h.ads
 include/gtkada/gtk-about_dialog.adb
 include/gtkada/gtk-about_dialog.ads
 include/gtkada/gtk-accel_group.adb
@@ -291,6 +298,8 @@ include/gtkada/gtk-frame.adb
 include/gtkada/gtk-frame.ads
 include/gtkada/gtk-gentry.adb
 include/gtkada/gtk-gentry.ads
+include/gtkada/gtk-glarea.adb
+include/gtkada/gtk-glarea.ads
 include/gtkada/gtk-gradient.adb
 include/gtkada/gtk-gradient.ads
 include/gtkada/gtk-grange.adb
@@ -560,8 +569,14 @@ include/gtkada/gtkada-canvas_view-astar.adb
 include/gtkada/gtkada-canvas_view-astar.ads
 include/gtkada/gtkada-canvas_view-links.adb
 include/gtkada/gtkada-canvas_view-links.ads
+include/gtkada/gtkada-canvas_view-models-layers.adb
+include/gtkada/gtkada-canvas_view-models-layers.ads
+include/gtkada/gtkada-canvas_view-models.adb
+include/gtkada/gtkada-canvas_view-models.ads
 include/gtkada/gtkada-canvas_view-objects.adb
 include/gtkada/gtkada-canvas_view-objects.ads
+include/gtkada/gtkada-canvas_view-rtrees.adb
+include/gtkada/gtkada-canvas_view-rtrees.ads
 include/gtkada/gtkada-canvas_view-views.adb
 include/gtkada/gtkada-canvas_view-views.ads
 include/gtkada/gtkada-canvas_view.adb
@@ -586,13 +601,6 @@ include/gtkada/gtkada-style.ads
 include/gtkada/gtkada-types.adb
 include/gtkada/gtkada-types.ads
 include/gtkada/gtkada.ads
-include/gtkada/opengl/gdk-gl.adb
-include/gtkada/opengl/gdk-gl.ads
-include/gtkada/opengl/gl_h.adb
-include/gtkada/opengl/gl_h.ads
-include/gtkada/opengl/glu_h.ads
-include/gtkada/opengl/gtk-glarea.adb
-include/gtkada/opengl/gtk-glarea.ads
 include/gtkada/pango-attributes.adb
 include/gtkada/pango-attributes.ads
 include/gtkada/pango-cairo.adb
@@ -625,7 +633,8 @@ include/gtkada/pango-tabs.adb
 include/gtkada/pango-tabs.ads
 include/gtkada/pango.ads
 lib/gnat/gtkada.gpr
-lib/gnat/gtkada_gl.gpr
+lib/gnat/gtkada/gtkada.lgpr
+lib/gnat/gtkada/gtkada_gl.lgpr
 lib/gtkada/relocatable/cairo-font_face.ali
 lib/gtkada/relocatable/cairo-font_options.ali
 lib/gtkada/relocatable/cairo-image_surface.ali
@@ -679,6 +688,7 @@ lib/gtkada/relocatable/glib-g_icon.ali
 lib/gtkada/relocatable/glib-generic_properties.ali
 lib/gtkada/relocatable/glib-glist.ali
 lib/gtkada/relocatable/glib-gnodes.ali
+lib/gtkada/relocatable/glib-graphs-layouts.ali
 lib/gtkada/relocatable/glib-graphs.ali
 lib/gtkada/relocatable/glib-gslist.ali
 lib/gtkada/relocatable/glib-key_file.ali
@@ -916,7 +926,10 @@ lib/gtkada/relocatable/gtkada-c.ali
 lib/gtkada/relocatable/gtkada-canvas.ali
 lib/gtkada/relocatable/gtkada-canvas_view-astar.ali
 lib/gtkada/relocatable/gtkada-canvas_view-links.ali
+lib/gtkada/relocatable/gtkada-canvas_view-models-layers.ali
+lib/gtkada/relocatable/gtkada-canvas_view-models.ali
 lib/gtkada/relocatable/gtkada-canvas_view-objects.ali
+lib/gtkada/relocatable/gtkada-canvas_view-rtrees.ali
 lib/gtkada/relocatable/gtkada-canvas_view-views.ali
 lib/gtkada/relocatable/gtkada-canvas_view.ali
 lib/gtkada/relocatable/gtkada-dialogs.ali
@@ -930,10 +943,12 @@ lib/gtkada/relocatable/gtkada-printing.ali
 lib/gtkada/relocatable/gtkada-style.ali
 lib/gtkada/relocatable/gtkada-types.ali
 lib/gtkada/relocatable/gtkada.ali
-lib/gtkada/relocatable/libgtkada-3.8.so.3
 lib/gtkada/relocatable/libgtkada.so
+lib/gtkada/relocatable/libgtkada.so.3.8
+lib/gtkada/relocatable/libgtkada.so.3.8.3
 lib/gtkada/relocatable/libgtkada_gl.so
-lib/gtkada/relocatable/opengl/libgtkada_gl-3.8.so.3
+lib/gtkada/relocatable/libgtkada_gl.so.3.8
+lib/gtkada/relocatable/libgtkada_gl.so.3.8.3
 lib/gtkada/relocatable/pango-attributes.ali
 lib/gtkada/relocatable/pango-cairo.ali
 lib/gtkada/relocatable/pango-context.ali
@@ -1003,6 +1018,7 @@ lib/gtkada/static/glib-g_icon.ali
 lib/gtkada/static/glib-generic_properties.ali
 lib/gtkada/static/glib-glist.ali
 lib/gtkada/static/glib-gnodes.ali
+lib/gtkada/static/glib-graphs-layouts.ali
 lib/gtkada/static/glib-graphs.ali
 lib/gtkada/static/glib-gslist.ali
 lib/gtkada/static/glib-key_file.ali
@@ -1240,7 +1256,10 @@ lib/gtkada/static/gtkada-c.ali
 lib/gtkada/static/gtkada-canvas.ali
 lib/gtkada/static/gtkada-canvas_view-astar.ali
 lib/gtkada/static/gtkada-canvas_view-links.ali
+lib/gtkada/static/gtkada-canvas_view-models-layers.ali
+lib/gtkada/static/gtkada-canvas_view-models.ali
 lib/gtkada/static/gtkada-canvas_view-objects.ali
+lib/gtkada/static/gtkada-canvas_view-rtrees.ali
 lib/gtkada/static/gtkada-canvas_view-views.ali
 lib/gtkada/static/gtkada-canvas_view.ali
 lib/gtkada/static/gtkada-dialogs.ali
@@ -1255,7 +1274,7 @@ lib/gtkada/static/gtkada-style.ali
 lib/gtkada/static/gtkada-types.ali
 lib/gtkada/static/gtkada.ali
 lib/gtkada/static/libgtkada.a
-lib/gtkada/static/opengl/libgtkada_gl.a
+lib/gtkada/static/libgtkada_gl.a
 lib/gtkada/static/pango-attributes.ali
 lib/gtkada/static/pango-cairo.ali
 lib/gtkada/static/pango-context.ali
@@ -1272,9 +1291,7 @@ lib/gtkada/static/pango-layout.ali
 lib/gtkada/static/pango-matrix.ali
 lib/gtkada/static/pango-tabs.ali
 lib/gtkada/static/pango.ali
-lib/libgtkada-3.8.so.3
 lib/libgtkada.so
-lib/libgtkada_gl-3.8.so.3
 lib/libgtkada_gl.so
 libdata/pkgconfig/gtkada.pc
 share/gps/plug-ins/gtkada.xml

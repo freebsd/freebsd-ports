@@ -11,7 +11,3 @@ dtse/data/body.html
 dtse/data/footer.html
 dtse/data/notfound.html
 dtse/data/pages.html
-@dirrm dtse/bin
-@dirrm dtse/http
-@dirrm dtse/data
-@dirrm dtse

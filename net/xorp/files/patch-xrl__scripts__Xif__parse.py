@@ -1,6 +1,6 @@
---- ./xrl/scripts/Xif/parse.py.orig	2010-07-19 21:10:33.000000000 +0000
-+++ ./xrl/scripts/Xif/parse.py	2014-02-26 21:17:13.000000000 +0000
-@@ -71,8 +71,10 @@
+--- xrl/scripts/Xif/parse.py.orig	2012-01-11 17:56:10 UTC
++++ xrl/scripts/Xif/parse.py
+@@ -71,8 +71,10 @@ def parse_cpp_hash(line):
          pop_file()
          pop_file()
          push_file(file, line)

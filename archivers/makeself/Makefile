@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	makeself
-PORTVERSION=	2.1.5
-PORTREVISION=	1
+PORTVERSION=	2.2.0
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.megastep.org/makeself/
+MASTER_SITES=	http://cdn.megastep.org/makeself/
 EXTRACT_SUFX=	.run
 
 MAINTAINER=	jadawin@FreeBSD.org
@@ -18,11 +17,10 @@ EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	--nox11 --target ${WRKSRC}
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/makeself bin/makeself-header \
 		bin/makeself-header.sh bin/makeself.sh
-
-PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
 
@@ -35,8 +33,5 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${i}.sh ${STAGEDIR}${PREFIX}/bin
 	@${LN} -sf ${i}.sh ${STAGEDIR}${PREFIX}/bin/${i}
 .endfor
-
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

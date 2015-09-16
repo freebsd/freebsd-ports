@@ -16,6 +16,7 @@ LICENSE=	AGPLv3
 ALL_TARGET=	hunspell
 CONFIGURE_ARGS=	--enable-fatverb
 GNU_CONFIGURE=	yes
+NO_ARCH=	yes
 USE_PERL5=	build
 USES=		gmake iconv:build perl5 shebangfix
 SHEBANG_FILES=	${WRKSRC}/pmerge

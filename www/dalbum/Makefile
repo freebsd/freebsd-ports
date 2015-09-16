@@ -13,6 +13,9 @@ COMMENT=	Free, highly customizable PHP photo album
 
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
+USES=		cpe
+CPE_VERSION=	${PORTVERSION:C/^([0-9])([0-9][0-9]).*/\1.\2/}
+CPE_UPDATE=	${PORTVERSION:C/^.*\.//}
 USE_PHP=	session pcre
 NO_BUILD=	yes
 

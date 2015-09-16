@@ -9,8 +9,14 @@ sbin/cgi-wrapper
 sbin/hiawatha
 sbin/wigwam
 lib/hiawatha/libmbedtls.so
-lib/hiawatha/libmbedtls.so.1.3.10
-lib/hiawatha/libmbedtls.so.8
+lib/hiawatha/libmbedcrypto.so
+lib/hiawatha/libmbedcrypto.so.0
+lib/hiawatha/libmbedcrypto.so.2.0.0
+lib/hiawatha/libmbedtls.so.10
+lib/hiawatha/libmbedtls.so.2.0.0
+lib/hiawatha/libmbedx509.so
+lib/hiawatha/libmbedx509.so.0
+lib/hiawatha/libmbedx509.so.2.0.0
 man/man1/cgi-wrapper.1.gz
 man/man1/hiawatha.1.gz
 man/man1/ssi-cgi.1.gz

@@ -5,9 +5,7 @@ PORTNAME=	dillo
 PORTVERSION=	3.0.4.1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.dillo.org/download/ LOCAL/bf/dillo/ \
-		TEX_CTAN:hyphen
-MASTER_SITE_SUBDIR=	\
-	language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/:hyphen
+		TEX_CTAN/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/:hyphen
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -25,7 +23,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec
 CONFLICTS=	dillo-i18n-[0-9]* \
 		dillo-0*
-LATEST_LINK=	dillo2
 
 OPTIONS_DEFINE=		COOKIES HYPHENATION IPV6 SSL THREADS DOCS
 OPTIONS_DEFAULT=	COOKIES HYPHENATION IPV6 SSL THREADS

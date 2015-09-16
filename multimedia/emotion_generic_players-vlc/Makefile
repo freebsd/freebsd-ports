@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vlc
-PORTVERSION=	1.13.0
+PORTVERSION=	1.15.0
 CATEGORIES=	multimedia enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/libs/${PKGNAMEPREFIX:S/-//}/
 PKGNAMEPREFIX=	emotion_generic_players-

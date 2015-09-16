@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	5.1.1.s20150505
+PORTVERSION=	5.2.1.s20150901
 CATEGORIES=	lang java
 MASTER_SITES=	GCC/snapshots/${DISTVERSION}
 PKGNAMESUFFIX=	${SUFFIX}-devel
@@ -25,7 +25,6 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
 
 CPE_VENDOR=	gnu
 CPE_VERSION=	${GCC_VERSION}
-UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 
 # DISTVERSION relates to downloads, GCC_VERSION and SUFFIX to names
 # of executables and directories once installed.  A PORTVERSION of

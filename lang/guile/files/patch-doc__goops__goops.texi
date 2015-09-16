@@ -1,6 +1,6 @@
---- ./doc/goops/goops.texi.orig	2010-12-13 18:24:39.000000000 +0100
-+++ ./doc/goops/goops.texi	2014-06-25 22:51:56.949463365 +0200
-@@ -131,7 +131,7 @@
+--- doc/goops/goops.texi.orig	2010-12-13 17:24:39 UTC
++++ doc/goops/goops.texi
+@@ -131,7 +131,7 @@ info (goops.info) and texinfo format.
  @end menu
  
  @node Running GOOPS, Methods, Getting Started, Getting Started

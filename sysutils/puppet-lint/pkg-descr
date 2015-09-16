@@ -10,4 +10,4 @@ require 'puppet-lint/tasks/puppet-lint' to your Rakefile and then run:
 
 	rake lint
 
-WWW: https://github.com/rodjek/puppet-lint
+WWW: http://puppet-lint.com/

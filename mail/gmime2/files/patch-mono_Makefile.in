@@ -1,6 +1,6 @@
---- mono/Makefile.in.orig	Sun Sep 11 23:59:29 2005
-+++ mono/Makefile.in	Mon Sep 12 00:06:09 2005
-@@ -466,11 +466,11 @@
+--- mono/Makefile.in.orig	2015-06-02 10:27:29 UTC
++++ mono/Makefile.in
+@@ -530,11 +530,11 @@ $(ASSEMBLY): $(build_sources) generated-
  install-data-local:
  	@if test -n '$(TARGET)'; then									\
  	  if test -n '$(DESTDIR)'; then								\

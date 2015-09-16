@@ -659,23 +659,3 @@
 %%WWWDIR%%/user.php
 %%WWWDIR%%/users.php
 @owner
-@dirrm %%WWWDIR%%/templates/widescreen
-@dirrm %%WWWDIR%%/templates/tb
-@dirrm %%WWWDIR%%/templates/sinorca
-@dirrm %%WWWDIR%%/templates/simple
-@dirrm %%WWWDIR%%/templates/leaves
-@dirrm %%WWWDIR%%/templates/default
-@dirrm %%WWWDIR%%/templates/burnt
-@dirrm %%WWWDIR%%/templates/blue_blog/images
-@dirrm %%WWWDIR%%/templates/blue_blog
-@dirrm %%WWWDIR%%/templates
-@dirrm %%WWWDIR%%/smarty
-@dirrm %%WWWDIR%%/plugins
-@dirrm %%WWWDIR%%/misc
-@dirrm %%WWWDIR%%/lang
-@dirrm %%WWWDIR%%/javascript
-@dirrm %%WWWDIR%%/includes
-@dirrm %%WWWDIR%%/images
-@dirrm %%WWWDIR%%/files
-@dirrm %%WWWDIR%%/admin
-@dirrm %%WWWDIR%%

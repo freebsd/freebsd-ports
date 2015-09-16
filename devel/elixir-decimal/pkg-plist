@@ -1,0 +1,8 @@
+lib/elixir/lib/decimal/ebin/Elixir.Decimal.Context.beam
+lib/elixir/lib/decimal/ebin/Elixir.Decimal.Error.beam
+lib/elixir/lib/decimal/ebin/Elixir.Decimal.beam
+lib/elixir/lib/decimal/ebin/Elixir.Inspect.Decimal.beam
+lib/elixir/lib/decimal/ebin/Elixir.String.Chars.Decimal.beam
+lib/elixir/lib/decimal/ebin/decimal.app
+lib/elixir/lib/decimal/lib/decimal.ex
+%%PORTDOCS%%%%DOCSDIR%%/README.md

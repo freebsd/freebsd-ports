@@ -1,0 +1,15 @@
+bitmath simplifies many facets of interacting with file sizes in various units.
+Functionality includes:
+
+- Converting between SI and NIST prefix units (kB to GiB)
+- Converting between units of the same type (SI to SI, or NIST to NIST)
+- Automatic human-readable prefix selection (like in hurry.filesize)
+- Basic arithmetic operations (subtracting 42KiB from 50GiB)
+- Rich comparison operations (1024 Bytes == 1KiB)
+- bitwise operations (<<, >>, &, |, ^)
+- argparse integration
+- progressbar integration
+- String parsing
+- Sorting
+
+WWW:	https://github.com/tbielawa/bitmath

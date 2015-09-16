@@ -1,0 +1,9 @@
+The compiler-rt library provides fallback routines for mathematical
+functions that are not implemented in hardware. For example, when
+compiling for a 32-bit target, converting a double to a 64-bit unsigned
+integer is compiling into a runtime call to the "__fixunsdfdi" function.
+
+This library is a prerequisite for having a working CloudABI toolchain,
+as Clang attempts to link this library into executables unconditionally.
+
+WWW: http://compiler-rt.llvm.org/

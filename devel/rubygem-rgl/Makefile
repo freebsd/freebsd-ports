@@ -2,18 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	rgl
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Framework for graph datastructures and algorithms implemented in Ruby
 
-RUN_DEPENDS=	rubygem-stream>=0.5:${PORTSDIR}/devel/rubygem-stream
+RUN_DEPENDS=	rubygem-algorithms>=0.6.1:${PORTSDIR}/devel/rubygem-algorithms \
+		rubygem-stream>=0.5.0:${PORTSDIR}/devel/rubygem-stream
+
+NO_ARCH=	yes
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-USE_RAKE=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-notes-plugin
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
@@ -20,5 +20,6 @@ USE_GNOME=	glib20 gtk20 intltool intlhack
 USE_XFCE=	panel
 INSTALLS_ICONS=	yes
 USE_XORG=	x11
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

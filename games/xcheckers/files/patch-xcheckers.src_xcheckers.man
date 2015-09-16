@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- xcheckers.src/xcheckers.man.orig	Thu Aug 10 14:18:52 2000
 +++ xcheckers.src/xcheckers.man	Wed Jul 30 20:46:21 2003
 @@ -89,7 +89,7 @@

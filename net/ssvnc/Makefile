@@ -3,7 +3,7 @@
 
 PORTNAME=	ssvnc
 PORTVERSION=	1.0.29
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net security
 MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}.src${EXTRACT_SUFX}
@@ -14,14 +14,13 @@ COMMENT=	Enhanced TightVNC Viewer (SSVNC: SSL/SSH VNC viewer)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	stunnel:${PORTSDIR}/security/stunnel \
 		xterm:${PORTSDIR}/x11/xterm
 
 OPTIONS_DEFINE=	DOCS ULTRAFTP
 ULTRAFTP_DESC=	UltraVNC File Transfer support (Java required)
 
-USES=		imake:env gmake perl5 tk:wrapper
+USES=		gmake imake:env jpeg perl5 tk:wrapper
 USE_OPENSSL=	yes
 USE_PERL5=	run
 USE_XORG=	xi xmu xt xaw ice xpm xext sm
@@ -52,6 +51,7 @@ do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} config
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ssvnc/*.so
 	@${MKDIR} ${STAGEDIR}${MAN1PREFIX}/man/man1
 .for man in ssvnc.1 ssvncviewer.1
 	${INSTALL_MAN} ${WRKSRC}/man/man1/${man} \

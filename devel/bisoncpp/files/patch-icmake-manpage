@@ -1,5 +1,5 @@
---- icmake/manpage.orig	2013-06-21 11:16:34.000000000 +0200
-+++ icmake/manpage	2013-11-27 17:42:34.000000000 +0100
+--- icmake/manpage.orig	2013-06-21 09:16:34 UTC
++++ icmake/manpage
 @@ -3,14 +3,29 @@
  
  void manpage()

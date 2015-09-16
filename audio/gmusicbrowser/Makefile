@@ -34,8 +34,6 @@ LIBNOTIFY_RUN_DEPENDS=	p5-Gtk2-Notify>=0.05:${PORTSDIR}/devel/p5-Gtk2-Notify
 NLS_RUN_DEPENDS=	p5-Locale-gettext>=1.0:${PORTSDIR}/devel/p5-Locale-gettext
 OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man ${STAGEDIR}${MANPREFIX}/man/man1/${MAN1}
@@ -47,9 +45,8 @@ do-install:
 		${INSTALL_SCRIPT} iceserver.pl ${STAGEDIR}${DATADIR})
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
-.if ${PORT_OPTIONS:MNLS}
+do-install-NLS-on:
 	(cd ${WRKSRC}/locale && \
 		${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/share/locale)
-.endif
 
 .include <bsd.port.mk>

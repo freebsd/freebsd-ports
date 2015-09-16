@@ -1,0 +1,11 @@
+Nuxi CloudABI is an application binary interface for UNIX-like operating
+systems built around the concept of capability-based security. In a
+nutshell, it means that you can run processes directly on top of a UNIX
+kernel while keeping complete control over the actions the process is
+allowed to perform.
+
+cloudlibc is a standard C library built on top of CloudABI. It
+implements almost all features of the C11 standard, but also a large
+part of POSIX.1-2008.
+
+WWW: https://github.com/NuxiNL/cloudlibc

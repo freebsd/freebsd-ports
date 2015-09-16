@@ -1,6 +1,6 @@
---- gr-fcd/lib/CMakeLists.txt.orig	2013-08-28 13:27:03.000000000 -0500
-+++ gr-fcd/lib/CMakeLists.txt	2014-03-02 20:20:16.000000000 -0500
-@@ -32,6 +32,7 @@
+--- gr-fcd/lib/CMakeLists.txt.orig	2015-05-12 09:39:44 UTC
++++ gr-fcd/lib/CMakeLists.txt
+@@ -32,6 +32,7 @@ include_directories(
      ${GNURADIO_RUNTIME_INCLUDE_DIRS}
      ${Boost_INCLUDE_DIRS}
      ${LIBUSB_INCLUDE_DIR}
@@ -8,7 +8,7 @@
  )
  
  link_directories(
-@@ -91,6 +92,10 @@
+@@ -90,6 +91,10 @@ add_library(gnuradio-fcd SHARED ${gr_fcd
  if (LINUX)
    list(APPEND fcd_libs rt)
  endif()

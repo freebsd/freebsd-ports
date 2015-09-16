@@ -1,0 +1,98 @@
+#!/bin/sh
+#
+# Usage: genpatch newfile
+#        genpatch oldfile newfile
+#
+# Will output a patch ready for dports (unified diff).
+# If only newfile is given, oldfile is assumed as newfile.intermediate (1st)
+# or newfile.orig (2nd) if such a file exists
+# If the realpath doesn't start with /usr/obj/dports, sends output to stdout
+# Otherwise, the patch file will be created in the current directory with a
+# filename on the file's location relative to worksource.  The patch will be
+# generated from wrksrc location.
+
+#
+# Copyright (c) 2004-2011 The NetBSD Foundation, Inc.
+# Copyright (c) 2011 by Thomas Klausner <wiz@NetBSD.org>
+# Copyright (c) 2012 by John Marino <draco@marino.st>
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR
+# ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+# TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+# PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+# INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+# CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+# ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+# POSSIBILITY OF SUCH DAMAGE.
+#
+# Ensure we always use the same timezone to avoid spurious metadata diffs
+export TZ=UTC
+
+if [ $# -le 1 ]
+then
+	if [ -f "$1.intermediate" ]; then
+		old="$1.intermediate"
+		new="$1"	
+	elif [ -f "$1.orig" ]; then 
+		old="$1.orig"
+		new="$1"
+	else
+		echo $0: need at least one valid argument >&2
+		exit 1;
+	fi
+else
+	if [ $# -eq 2 ]
+	then
+		old="$1"
+		new="$2"
+	else
+		echo $0: more than two arguments detected >&2
+		exit 1;
+	fi
+fi
+
+PKGDIFF_FMT="-p --unified=3"
+
+# Strip out the date on the +++ line to reduce needless
+# differences in regenerated patches
+SEDPLUS='/^---/s|\.[0-9]* +0000$| UTC| ; /^+++/s|\([[:blank:]][-0-9:.+]*\)*$||'
+
+if diff -q ${PKGDIFF_FMT} ${old} ${new} > /dev/null
+then
+	exit 0
+fi
+
+if [ -n "${WORKTREE}" ]; then
+objpath=${WORKTREE}
+else
+objpath=$(realpath %%WORKPATH%%)
+fi
+cnt1=$(echo ${objpath} | wc -c)
+objcount=$(expr $cnt1 - 1)
+fullpath=$(dirname `realpath ${old}`)
+testpath=$(echo ${fullpath} | cut -c "1-${objcount}")
+
+if [ "${testpath}" = "${objpath}" ]; then
+    # Inside standard work area.  Assume genpatch executed from wrksrc
+    # and generate patch with appropriate name
+
+    fname=patch-$(echo ${new} | sed -e 's|_|__|g' -e 's|/|_|g')
+    diff ${PKGDIFF_FMT} ${old} ${new} | sed -e "${SEDPLUS}" > ${fname}
+    echo "generated ${fname}"
+else
+    # Not in standard work area, just send patch to stdout
+    diff ${PKGDIFF_FMT} ${old} ${new} | sed -e "${SEDPLUS}"
+fi

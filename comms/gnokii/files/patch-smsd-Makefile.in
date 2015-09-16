@@ -1,15 +1,15 @@
---- smsd/Makefile.in.orig	2010-04-21 15:49:29.000000000 +0200
-+++ smsd/Makefile.in	2010-04-25 18:09:09.881650463 +0200
-@@ -105,7 +105,7 @@
- @HAVE_POSTGRES_TRUE@am_libsmsd_pq_la_rpath = -rpath $(plugindir)
+--- smsd/Makefile.in.orig	2015-06-15 14:14:28 UTC
++++ smsd/Makefile.in
+@@ -115,7 +115,7 @@ libsmsd_sqlite_la_LINK = $(LIBTOOL) --ta
+ @HAVE_SQLITE_TRUE@am_libsmsd_sqlite_la_rpath = -rpath $(plugindir)
  PROGRAMS = $(bin_PROGRAMS)
  am_smsd_OBJECTS = smsd.$(OBJEXT) lowlevel.$(OBJEXT)
 -smsd_OBJECTS = $(am_smsd_OBJECTS)
 +smsd_OBJECTS = $(am_smsd_OBJECTS) /usr/lib/libsdp.so
  smsd_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
- 	$(am__DEPENDENCIES_1) $(top_builddir)/common/libgnokii.la
- DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)/include
-@@ -442,8 +442,8 @@
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+ 	$(top_builddir)/common/libgnokii.la
+@@ -474,8 +474,8 @@ install-binPROGRAMS: $(bin_PROGRAMS)
  	while read type dir files; do \
  	    if test "$$dir" = .; then dir=; else dir=/$$dir; fi; \
  	    test -z "$$files" || { \

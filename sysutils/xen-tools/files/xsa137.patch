@@ -1,0 +1,231 @@
+From 593fe52faa1b85567a7ec20c69d8cfbc7368ae5b Mon Sep 17 00:00:00 2001
+From: Ian Jackson <ian.jackson@eu.citrix.com>
+Date: Mon, 15 Jun 2015 14:50:42 +0100
+Subject: [PATCH] xl: Sane handling of extra config file arguments
+
+Various xl sub-commands take additional parameters containing = as
+additional config fragments.
+
+The handling of these config fragments has a number of bugs:
+
+ 1. Use of a static 1024-byte buffer.  (If truncation would occur,
+    with semi-trusted input, a security risk arises due to quotes
+    being lost.)
+
+ 2. Mishandling of the return value from snprintf, so that if
+    truncation occurs, the to-write pointer is updated with the
+    wanted-to-write length, resulting in stack corruption.  (This is
+    XSA-137.)
+
+ 3. Clone-and-hack of the code for constructing the appended
+    config file.
+
+These are fixed here, by introducing a new function
+`string_realloc_append' and using it everywhere.  The `extra_info'
+buffers are replaced by pointers, which start off NULL and are
+explicitly freed on all return paths.
+
+The separate variable which will become dom_info.extra_config is
+abolished (which involves moving the clearing of dom_info).
+
+Additional bugs I observe, not fixed here:
+
+ 4. The functions which now call string_realloc_append use ad-hoc
+    error returns, with multiple calls to `return'.  This currently
+    necessitates multiple new calls to `free'.
+
+ 5. Many of the paths in xl call exit(-rc) where rc is a libxl status
+    code.  This is a ridiculous exit status `convention'.
+
+ 6. The loops for handling extra config data are clone-and-hacks.
+
+ 7. Once the extra config buffer is accumulated, it must be combined
+    with the appropriate main config file.  The code to do this
+    combining is clone-and-hacked too.
+
+Signed-off-by: Ian Jackson <Ian.Jackson@eu.citrix.com>
+Tested-by: Ian Jackson <Ian.Jackson@eu.citrix.com>
+Acked-by: Ian Campbell <ian,campbell@citrix.com>
+---
+v2: Use SSIZE_MAX, not INT_MAX.
+    Check *accumulate for NULL, not accumulate.
+    Move memset of dom_info.
+---
+ tools/libxl/xl_cmdimpl.c |   64 +++++++++++++++++++++++++++++-----------------
+ 1 file changed, 40 insertions(+), 24 deletions(-)
+
+diff --git a/tools/libxl/xl_cmdimpl.c b/tools/libxl/xl_cmdimpl.c
+index c858068..c01a851 100644
+--- a/tools/libxl/xl_cmdimpl.c
++++ b/tools/libxl/xl_cmdimpl.c
+@@ -151,7 +151,7 @@ struct domain_create {
+     int console_autoconnect;
+     int checkpointed_stream;
+     const char *config_file;
+-    const char *extra_config; /* extra config string */
++    char *extra_config; /* extra config string */
+     const char *restore_file;
+     int migrate_fd; /* -1 means none */
+     char **migration_domname_r; /* from malloc */
+@@ -4805,11 +4805,25 @@ int main_vm_list(int argc, char **argv)
+     return 0;
+ }
+ 
++static void string_realloc_append(char **accumulate, const char *more)
++{
++    /* Appends more to accumulate.  Accumulate is either NULL, or
++     * points (always) to a malloc'd nul-terminated string. */
++
++    size_t oldlen = *accumulate ? strlen(*accumulate) : 0;
++    size_t morelen = strlen(more) + 1/*nul*/;
++    if (oldlen > SSIZE_MAX || morelen > SSIZE_MAX - oldlen) {
++        fprintf(stderr,"Additional config data far too large\n");
++        exit(-ERROR_FAIL);
++    }
++
++    *accumulate = xrealloc(*accumulate, oldlen + morelen);
++    memcpy(*accumulate + oldlen, more, morelen);
++}
++
+ int main_create(int argc, char **argv)
+ {
+     const char *filename = NULL;
+-    char *p;
+-    char extra_config[1024];
+     struct domain_create dom_info;
+     int paused = 0, debug = 0, daemonize = 1, console_autoconnect = 0,
+         quiet = 0, monitor = 1, vnc = 0, vncautopass = 0;
+@@ -4824,6 +4838,8 @@ int main_create(int argc, char **argv)
+         {0, 0, 0, 0}
+     };
+ 
++    dom_info.extra_config = NULL;
++
+     if (argv[1] && argv[1][0] != '-' && !strchr(argv[1], '=')) {
+         filename = argv[1];
+         argc--; argv++;
+@@ -4863,20 +4879,21 @@ int main_create(int argc, char **argv)
+         break;
+     }
+ 
+-    extra_config[0] = '\0';
+-    for (p = extra_config; optind < argc; optind++) {
++    memset(&dom_info, 0, sizeof(dom_info));
++
++    for (; optind < argc; optind++) {
+         if (strchr(argv[optind], '=') != NULL) {
+-            p += snprintf(p, sizeof(extra_config) - (p - extra_config),
+-                "%s\n", argv[optind]);
++            string_realloc_append(&dom_info.extra_config, argv[optind]);
++            string_realloc_append(&dom_info.extra_config, "\n");
+         } else if (!filename) {
+             filename = argv[optind];
+         } else {
+             help("create");
++            free(dom_info.extra_config);
+             return 2;
+         }
+     }
+ 
+-    memset(&dom_info, 0, sizeof(dom_info));
+     dom_info.debug = debug;
+     dom_info.daemonize = daemonize;
+     dom_info.monitor = monitor;
+@@ -4884,16 +4901,18 @@ int main_create(int argc, char **argv)
+     dom_info.dryrun = dryrun_only;
+     dom_info.quiet = quiet;
+     dom_info.config_file = filename;
+-    dom_info.extra_config = extra_config;
+     dom_info.migrate_fd = -1;
+     dom_info.vnc = vnc;
+     dom_info.vncautopass = vncautopass;
+     dom_info.console_autoconnect = console_autoconnect;
+ 
+     rc = create_domain(&dom_info);
+-    if (rc < 0)
++    if (rc < 0) {
++        free(dom_info.extra_config);
+         return -rc;
++    }
+ 
++    free(dom_info.extra_config);
+     return 0;
+ }
+ 
+@@ -4901,8 +4920,7 @@ int main_config_update(int argc, char **argv)
+ {
+     uint32_t domid;
+     const char *filename = NULL;
+-    char *p;
+-    char extra_config[1024];
++    char *extra_config = NULL;
+     void *config_data = 0;
+     int config_len = 0;
+     libxl_domain_config d_config;
+@@ -4940,15 +4958,15 @@ int main_config_update(int argc, char **argv)
+         break;
+     }
+ 
+-    extra_config[0] = '\0';
+-    for (p = extra_config; optind < argc; optind++) {
++    for (; optind < argc; optind++) {
+         if (strchr(argv[optind], '=') != NULL) {
+-            p += snprintf(p, sizeof(extra_config) - (p - extra_config),
+-                "%s\n", argv[optind]);
++            string_realloc_append(&extra_config, argv[optind]);
++            string_realloc_append(&extra_config, "\n");
+         } else if (!filename) {
+             filename = argv[optind];
+         } else {
+             help("create");
++            free(extra_config);
+             return 2;
+         }
+     }
+@@ -4957,7 +4975,8 @@ int main_config_update(int argc, char **argv)
+         rc = libxl_read_file_contents(ctx, filename,
+                                       &config_data, &config_len);
+         if (rc) { fprintf(stderr, "Failed to read config file: %s: %s\n",
+-                           filename, strerror(errno)); return ERROR_FAIL; }
++                           filename, strerror(errno));
++                  free(extra_config); return ERROR_FAIL; }
+         if (strlen(extra_config)) {
+             if (config_len > INT_MAX - (strlen(extra_config) + 2 + 1)) {
+                 fprintf(stderr, "Failed to attach extra configration\n");
+@@ -4998,7 +5017,7 @@ int main_config_update(int argc, char **argv)
+     libxl_domain_config_dispose(&d_config);
+ 
+     free(config_data);
+-
++    free(extra_config);
+     return 0;
+ }
+ 
+@@ -7255,7 +7274,7 @@ int main_cpupoolcreate(int argc, char **argv)
+ {
+     const char *filename = NULL, *config_src=NULL;
+     const char *p;
+-    char extra_config[1024];
++    char *extra_config = NULL;
+     int opt;
+     static struct option opts[] = {
+         {"defconfig", 1, 0, 'f'},
+@@ -7289,13 +7308,10 @@ int main_cpupoolcreate(int argc, char **argv)
+         break;
+     }
+ 
+-    memset(extra_config, 0, sizeof(extra_config));
+     while (optind < argc) {
+         if ((p = strchr(argv[optind], '='))) {
+-            if (strlen(extra_config) + 1 + strlen(argv[optind]) < sizeof(extra_config)) {
+-                strcat(extra_config, "\n");
+-                strcat(extra_config, argv[optind]);
+-            }
++            string_realloc_append(&extra_config, "\n");
++            string_realloc_append(&extra_config, argv[optind]);
+         } else if (!filename) {
+             filename = argv[optind];
+         } else {
+-- 
+1.7.10.4
+

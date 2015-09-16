@@ -1,14 +1,6 @@
---- src/modules/qt/configure.orig	2014-06-29 20:23:17 UTC
+--- src/modules/qt/configure.orig	2015-03-02 07:08:46 UTC
 +++ src/modules/qt/configure
-@@ -144,6 +144,7 @@
- 			if [ $? -eq 0 ]
- 			then
- 				echo "- Qt version 5.x detected"
-+				without_kde=true
- 				echo QTCXXFLAGS=$(pkg-config --cflags Qt5Core Qt5Gui Qt5Xml Qt5Svg Qt5OpenGL Qt5Widgets) >> config.mak
- 				echo QTLIBS=$(pkg-config --libs Qt5Core Qt5Gui Qt5Xml Qt5Svg Qt5OpenGL Qt5Widgets) >> config.mak
- 			else
-@@ -156,7 +157,7 @@
+@@ -181,7 +181,7 @@ else
  	if [ "$without_kde" = "" ]
  	then
  		kde4-config

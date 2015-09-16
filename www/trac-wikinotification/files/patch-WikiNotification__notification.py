@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- ./WikiNotification/notification.py.orig
 +++ ./WikiNotification/notification.py
 @@ -14,14 +14,13 @@

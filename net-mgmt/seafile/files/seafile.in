@@ -1,0 +1,59 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: seafile
+# REQUIRE: LOGIN cleanvar
+# KEYWORD: shutdown
+#
+
+#
+# Add the following lines to /etc/rc.conf to enable seafile:
+#
+# seafile_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable seafile.
+# seafile_path (str):		Set to "" by default will use the path
+#				/usr/local/www/haiwen/seafile-server.
+#				Set it to a different path. 
+
+. /etc/rc.subr
+
+name="seafile"
+rcvar=seafile_enable
+
+load_rc_config $name
+
+start_cmd="${name}_start"
+restart_cmd="${name}_restart"
+stop_cmd="${name}_stop"
+
+: ${seafile_path:=%%PREFIX%%/www/haiwen/seafile-server}
+
+command="$seafile_path/seafile.sh"
+
+seafile_start()
+{
+	if checkyesno ${name}_enable; then
+		start_script="${seafile_path}/seafile.sh"	
+		echo "Starting seafile service"
+		$command start
+	else
+		return 0 
+	fi
+}
+
+seafile_stop()
+{
+	echo "Stoping seafile service"
+	$command stop
+}
+
+seafile_restart()
+{
+	echo "Restart seafile service"
+	$command restart
+}
+
+load_rc_config $name
+run_rc_command "$1"

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	App-Cmd
-PORTVERSION=	0.326
+PORTVERSION=	0.327
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-Capture-Tiny>=0.13:${PORTSDIR}/devel/p5-Capture-Tiny \
 		p5-IO-TieCombine>=0:${PORTSDIR}/devel/p5-IO-TieCombine \
 		p5-String-RewritePrefix>=0:${PORTSDIR}/textproc/p5-String-RewritePrefix \
 		p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter \
-		p5-Sub-Install>=0:${PORTSDIR}/devel/p5-Sub-Install
+		p5-Sub-Install>=0:${PORTSDIR}/devel/p5-Sub-Install \
+		p5-Module-Pluggable>=5.1:${PORTSDIR}/devel/p5-Module-Pluggable
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Data-Dumper>=0:${PORTSDIR}/devel/p5-Data-Dumper \

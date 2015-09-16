@@ -14,9 +14,9 @@ this:
 Add the following (3) lines to the beginning of the config file, for
 basic functionality:
 
-  $ModLoad immark.so   # provides --MARK-- message capability
-  $ModLoad imuxsock.so # provides support for local system logging
-  $ModLoad imklog.so   # kernel logging
+  module(load="immark")   # provides --MARK-- message capability
+  module(load="imuxsock") # provides support for local system logging
+  module(load="imklog")   # kernel logging
 
 newsyslog(8) has the path of syslogd's pid file hardcoded. To
 make it work seamlessly with rsyslog, add this:

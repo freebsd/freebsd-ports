@@ -1,7 +1,0 @@
---- data/cups.pam.orig	2010-11-18 16:24:16.000000000 +0100
-+++ data/cups.pam	2010-11-18 16:24:50.000000000 +0100
-@@ -1,2 +1,2 @@
--auth	required	/lib/security/pam_pwdb.so nullok shadow
--account	required	/lib/security/pam_pwdb.so
-+auth	include		system
-+account	include		system

@@ -5,4 +5,3 @@ man/man1/cplanet.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cplanet-rss.cs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cplanet.cs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cplanet.hdf
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

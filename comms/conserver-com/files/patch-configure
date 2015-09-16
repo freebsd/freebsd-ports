@@ -1,32 +1,24 @@
---- ./configure.orig	2009-09-26 05:18:38.000000000 -0400
-+++ ./configure	2013-02-15 18:55:19.000000000 -0500
-@@ -7287,6 +7287,7 @@
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
- $ac_includes_default
-+#include <stdio.h>
- #include <gssapi/gssapi.h>
- _ACEOF
- rm -f conftest.$ac_objext
-@@ -7328,6 +7329,7 @@
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
-+#include <stdio.h>
- #include <gssapi/gssapi.h>
- _ACEOF
- if { (ac_try="$ac_cpp conftest.$ac_ext"
-@@ -7405,6 +7407,7 @@
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
+--- configure.orig	2014-04-17 21:55:40.000000000 -0700
++++ configure	2015-08-12 13:31:26.015249000 -0700
+@@ -5307,6 +5307,7 @@
+ $as_echo_n "checking for gssapi library -lgssapi... " >&6; }
+ 	    cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
 +#include <stdio.h>
  #include <gssapi/gssapi.h>
  
  int
-@@ -7513,6 +7516,7 @@
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
+@@ -5332,6 +5333,7 @@
+ $as_echo_n "checking for gssapi library -lgssglue... " >&6; }
+ 		cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
++#include <stdio.h>
+ #include <gssapi/gssapi.h>
+ 
+ int
+@@ -5357,6 +5359,7 @@
+ $as_echo_n "checking for gssapi library -lgss... " >&6; }
+ 		    cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
 +#include <stdio.h>
  #include <gssapi/gssapi.h>

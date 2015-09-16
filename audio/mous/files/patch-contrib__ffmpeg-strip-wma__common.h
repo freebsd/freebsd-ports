@@ -1,6 +1,6 @@
---- ./contrib/ffmpeg-strip-wma/common.h.orig	2014-07-02 10:52:02.000000000 -0400
-+++ ./contrib/ffmpeg-strip-wma/common.h	2014-07-02 10:52:39.000000000 -0400
-@@ -1150,11 +1150,6 @@
+--- contrib/ffmpeg-strip-wma/common.h.orig	2012-06-28 14:58:11 UTC
++++ contrib/ffmpeg-strip-wma/common.h
+@@ -1150,11 +1150,6 @@ if(256*256*256*64%(tcount+tskip_count)==
  
  #define CLAMP_TO_8BIT(d) ((d > 0xff) ? 0xff : (d < 0) ? 0 : d)
  

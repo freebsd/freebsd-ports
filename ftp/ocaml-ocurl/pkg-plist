@@ -4,5 +4,10 @@
 %%OCAML_SITELIBDIR%%/curl/curl.cmi
 %%OCAML_SITELIBDIR%%/curl/curl.cmxa
 %%OCAML_SITELIBDIR%%/curl/curl.mli
+%%LWT%%%%OCAML_SITELIBDIR%%/curl/curl_lwt.cmi
+%%LWT%%%%OCAML_SITELIBDIR%%/curl/curl_lwt.cmo
+%%LWT%%%%OCAML_SITELIBDIR%%/curl/curl_lwt.cmx
+%%LWT%%%%OCAML_SITELIBDIR%%/curl/curl_lwt.mli
+%%LWT%%%%OCAML_SITELIBDIR%%/curl/curl_lwt.o
 %%OCAML_SITELIBDIR%%/curl/dllcurl-helper.so
 %%OCAML_SITELIBDIR%%/curl/libcurl-helper.a

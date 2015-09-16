@@ -3,7 +3,7 @@
 
 PORTNAME=	PerlIO-Layers
 PORTVERSION=	0.011
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,5 +16,8 @@ LICENSE_COMB=	dual
 
 USE_PERL5=	modbuild
 USES=		perl5
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PerlIO/Layers/Layers.so
 
 .include <bsd.port.mk>

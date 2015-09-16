@@ -20,5 +20,3 @@ lib/libpcap-nessus.so.2
 lib/libpcap-nessus.so.2.2.9
 man/man1/nessus-config.1.gz
 sbin/uninstall-nessus
-@dirrm include/nessus/net
-@dirrm include/nessus

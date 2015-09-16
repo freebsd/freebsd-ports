@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	howm
-PORTVERSION=	1.4.1
-PORTREVISION=	5
+PORTVERSION=	1.4.2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://howm.sourceforge.jp/a/
 

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	powerdns
-PORTVERSION=	3.4.4
+PORTVERSION=	3.4.6
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${PORTVERSION}
@@ -13,9 +13,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libboost_serialization.so:${PORTSDIR}/devel/boost-libs
 
-CONFLICTS=	powerdns-devel-[2-3].[0-9]*
-
-USES=		gmake libtool lua pkgconfig tar:bzip2
+USES=		cpe gmake libtool lua pkgconfig tar:bzip2
 USE_LDCONFIG=	YES
 USE_SUBMAKE=	YES
 GNU_CONFIGURE=	YES
@@ -160,7 +158,7 @@ MODULES+=	opendbx
 .if ${PORT_OPTIONS:MPOLARSSL}
 CONFIGURE_ARGS+=	--without-system-polarssl
 .else
-LIB_DEPENDS+=		libpolarssl.so.8:${PORTSDIR}/security/polarssl13
+LIB_DEPENDS+=		libmbedtls.so.9:${PORTSDIR}/security/polarssl13
 .endif
 
 post-install:

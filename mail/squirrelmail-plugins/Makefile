@@ -5,14 +5,9 @@ PORTNAME=	squirrelmail-plugins
 PORTVERSION=	1.0
 PORTREVISION=	2
 CATEGORIES=	mail www
-MASTER_SITES=	# none
-DISTFILES=	# none
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	"meta-port" to install SquirrelMail plugins
-
-NO_BUILD=	yes
-NO_MTREE=	yes
 
 SQUIRRELDIR?=	${PREFIX}/www/squirrelmail
 
@@ -86,7 +81,6 @@ WEBSEARCH_RUN_DEPENDS=	squirrelmail-web_search-plugin>0:${PORTSDIR}/mail/squirre
 WETTER_DESC=	Weather in Germany plugin
 WETTER_RUN_DEPENDS=	squirrelmail-wetteronline-plugin>0:${PORTSDIR}/mail/squirrelmail-wetteronline-plugin
 
-do-install: build
-	@${DO_NADA}
+USES=		metaport
 
 .include <bsd.port.mk>

@@ -1,8 +1,6 @@
 man/man3/parsedate.3.gz
 man/man8/ifmail.8.gz
 man/man8/iftoss.8.gz
-@exec if ! pw usershow %%IFMAIL_RUNAS%% 2>/dev/null; then pw useradd %%IFMAIL_RUNAS%% -g uucp -u 75 -h - -d /nonexistent -s /nonexistent -c "Ifmail Server"; fi
-@unexec if pw usershow %%IFMAIL_RUNAS%% | grep -q 75:66; then pw userdel %%IFMAIL_RUNAS%%; fi
 @owner ifmail
 @group uucp
 libexec/ifmail/ifcico
@@ -17,12 +15,10 @@ libexec/ifmail/ifunpack
 libexec/ifmail/nlpatch
 @owner
 @group
-@dirrm libexec/ifmail
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.ifcico
 %%PORTDOCS%%%%DOCSDIR%%/README.ifgate
 %%PORTDOCS%%%%DOCSDIR%%/README.iflib
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Areas
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/DEBUG
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/FAQ
@@ -158,27 +154,5 @@ libexec/ifmail/nlpatch
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zmailer/routes
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zmailer/scheduler.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zmailer/sm.conf
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cnews
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib/abbs2nf
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib/areafix-0.5.07
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib/areafix-0.5.07-jv10
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib/areafix-0.6.02
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib/mmdf
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib/tic/config
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib/tic
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib/u-tic
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib/news_via_mail
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib/fdpass
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib/iftelnetd
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/exim
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/inn
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/inouttabs
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sendmail/ifmail.m4-srtxg
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sendmail
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/smail
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tcp
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/zmailer
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @exec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^ifcico /etc/services.bak ; echo "ifcico		60179/tcp  #ifcico server (ifmail)") > /etc/services
 @unexec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^ifcico /etc/services.bak ) > /etc/services

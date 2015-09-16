@@ -47,13 +47,13 @@ post-patch:
 	@${REINPLACE_CMD} -e '/mirdef.lnx/d' ${WRKSRC}/Makefile
 
 do-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/irssi/modules
+	${INSTALL_PROGRAM} ${WRKSRC}/libfish.so ${STAGEDIR}${PREFIX}/lib/irssi/modules
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/irssi/modules
-	${INSTALL_PROGRAM} ${WRKSRC}/libfish.so ${STAGEDIR}${PREFIX}/lib/irssi/modules
 
 .include <bsd.port.mk>

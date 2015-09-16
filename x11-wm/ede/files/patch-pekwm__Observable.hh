@@ -1,5 +1,5 @@
---- ./pekwm/Observable.hh.orig	2012-05-18 12:51:49.000000000 +0000
-+++ ./pekwm/Observable.hh	2014-01-05 16:56:43.000000000 +0000
+--- pekwm/Observable.hh.orig	2014-06-21 21:24:41 UTC
++++ pekwm/Observable.hh
 @@ -9,11 +9,7 @@
  #ifndef _OBSERVABLE_HH_
  #define _OBSERVABLE_HH_
@@ -13,7 +13,7 @@
  
  class Observer;
  
-@@ -36,7 +32,7 @@
+@@ -36,7 +32,7 @@ public:
      void removeObserver(Observer *observer); 
  
  private:

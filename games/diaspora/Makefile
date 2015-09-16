@@ -25,13 +25,12 @@ LICENSE_PERMS_CCBYNCSAv3=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-a
 LICENSE_PERMS_VOLITION=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 LIB_DEPENDS+=	libjansson.so:${PORTSDIR}/devel/jansson \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libogg.so:${PORTSDIR}/audio/libogg \
 		libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
 		libtheora.so:${PORTSDIR}/multimedia/libtheora
 
-USES=	autoreconf lua:51 openal pkgconfig tar:lzma
+USES=	autoreconf jpeg lua:51 openal pkgconfig tar:lzma
 USE_GL=	yes
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes

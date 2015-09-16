@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- parser.c.orig
 +++ parser.c
 @@ -77,8 +77,8 @@

@@ -6,4 +6,3 @@ share/pglogd/queries.txt
 share/pglogd/weblog_daily.sql
 share/pglogd/README
 share/pglogd/CHANGELOG
-@dirrm share/pglogd

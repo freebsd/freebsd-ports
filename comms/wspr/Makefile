@@ -2,10 +2,9 @@
 
 PORTNAME=	wspr
 DISTVERSION=	${VERSION}.r${SVN_REV}
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	comms hamradio
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	db
+MASTER_SITES=	LOCAL/db
 DISTNAME=	wspr-r${SVN_REV}
 
 MAINTAINER=	hamradio@FreeBSD.org
@@ -16,15 +15,14 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYTHON_LIBDIR}/tkinter:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/PIL:${PORTSDIR}/graphics/py-pillow \
-		${PYTHON_SITELIBDIR}/scipy:${PORTSDIR}/science/py-scipy \
-		${LOCALBASE}/lib/portaudio2/libportaudio.so:${PORTSDIR}/audio/portaudio2
+		${PYTHON_SITELIBDIR}/scipy:${PORTSDIR}/science/py-scipy
 LIB_DEPENDS=	libhamlib.so:${PORTSDIR}/comms/hamlib \
 		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
-		libsamplerate.so:${PORTSDIR}/audio/libsamplerate
+		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
+		libportaudio.so:${PORTSDIR}/audio/portaudio
 
 DISABLE_MAKE_JOBS=	yes
-USE_AUTOTOOLS=	autoconf
-USES=		fortran gmake libtool tar:bzip2 python:3.3 dos2unix
+USES=		autoreconf dos2unix fortran gmake libtool python:3.3 tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gfortran=${FC} \
 		--with-f2py=f2py-${PYTHON_VER} \

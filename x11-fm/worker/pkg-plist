@@ -98,3 +98,5 @@ share/applications/worker.desktop
 %%DATADIR%%/config-updates/update-3.4.0.conf
 %%DATADIR%%/config-updates/update-3.6.0-utf8.conf
 %%DATADIR%%/config-updates/update-3.6.0.conf
+%%DATADIR%%/config-updates/update-3.7.0-utf8.conf
+%%DATADIR%%/config-updates/update-3.7.0.conf

@@ -12,6 +12,9 @@ etc/bash_completion.d/rinse
 %%ETCDIR%%/fedora-17.packages
 %%ETCDIR%%/fedora-18.packages
 %%ETCDIR%%/fedora-19.packages
+%%ETCDIR%%/fedora-20.packages
+%%ETCDIR%%/fedora-21.packages
+%%ETCDIR%%/fedora-22.packages
 %%ETCDIR%%/fedora-7.packages
 %%ETCDIR%%/fedora-8.packages
 %%ETCDIR%%/fedora-9.packages
@@ -47,6 +50,9 @@ etc/bash_completion.d/rinse
 %%DATADIR%%/fedora-16/post-install.sh
 %%DATADIR%%/fedora-18/post-install.sh
 %%DATADIR%%/fedora-19/post-install.sh
+%%DATADIR%%/fedora-20/post-install.sh
+%%DATADIR%%/fedora-21/post-install.sh
+%%DATADIR%%/fedora-22/post-install.sh
 %%DATADIR%%/fedora-7/post-install.sh
 %%DATADIR%%/fedora-8/post-install.sh
 %%DATADIR%%/fedora-9/post-install.sh

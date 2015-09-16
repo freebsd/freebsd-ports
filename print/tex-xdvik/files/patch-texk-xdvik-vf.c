@@ -1,6 +1,6 @@
---- texk/xdvik/vf.c.orig	2014-09-02 18:41:34.000000000 +0900
-+++ texk/xdvik/vf.c	2015-01-31 21:02:18.000000000 +0900
-@@ -126,7 +126,7 @@
+--- texk/xdvik/vf.c.orig	2008-02-11 22:47:58 UTC
++++ texk/xdvik/vf.c
+@@ -126,7 +126,7 @@ read_VF_index(struct font *fontp, wide_b
  	    len = get_bytes(VF_file, 4);
  	    cc = get_bytes(VF_file, 4);
  	    width = get_bytes(VF_file, 4);
@@ -9,7 +9,7 @@
  		|| (!resource.omega && cc >= 256)) {
  		XDVI_WARNING((stderr, "Virtual character %lu in font %s ignored.",
  			      cc, fontp->fontname));
-@@ -141,6 +141,13 @@
+@@ -141,6 +141,13 @@ read_VF_index(struct font *fontp, wide_b
  	}
  	if (resource.omega) {
  	    maxcc = (cc > maxcc) ? cc : maxcc;

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cucumber-core
-PORTVERSION=	1.1.3
+PORTVERSION=	1.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,6 +13,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-gherkin>=2.12.0:${PORTSDIR}/textproc/rubygem-gherkin
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

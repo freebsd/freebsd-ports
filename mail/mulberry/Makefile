@@ -7,22 +7,19 @@ PORTREVISION=	2
 CATEGORIES=	mail linux
 MASTER_SITES=	http://www.mulberrymail.com/downloads/Mulberry/v${DISTVERSION:S/./_/g}/
 DISTNAME=	Mulberry
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scalable high-performance GUI Internet Mail User Agent
-OPTIONS_DEFINE=	DOCS
 
+USES=		tar:tgz
 NO_WRKSUBDIR=	yes
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
 ONLY_FOR_ARCHS=	i386 amd64
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
-INSTALL_DIR?=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
 PLUGINSDIR=	${PREFIX}/lib/${PORTNAME}/Plug-ins
 RESOURCESDIR=	${PREFIX}/lib/${PORTNAME}/Resources
 PIXMAPSDIR=	${PREFIX}/share/pixmaps
@@ -34,8 +31,8 @@ do-build:
 	${BRANDELF} -t Linux ${WRKSRC}/${PORTNAME}
 
 do-install:
-	${INSTALL_DIR} ${STAGEDIR}${PLUGINSDIR}
-	${INSTALL_DIR} ${STAGEDIR}${PIXMAPSDIR}
+	${MKDIR} ${STAGEDIR}${PLUGINSDIR}
+	${MKDIR} ${STAGEDIR}${PIXMAPSDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 #	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${PORTNAME}.bin
 #	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
@@ -43,14 +40,15 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/Resources
 	${INSTALL_DATA} ${WRKSRC}/.${PORTNAME}/Resources/* ${STAGEDIR}${RESOURCESDIR}
 	${INSTALL_DATA} ${WRKSRC}/.${PORTNAME}/icons/* ${STAGEDIR}${PIXMAPSDIR}
-	${INSTALL_DIR} ${STAGEDIR}${PLUGINSDIR}/Timezones
+	${MKDIR} ${STAGEDIR}${PLUGINSDIR}/Timezones
 	${INSTALL_DATA} ${WRKSRC}/.${PORTNAME}/Plug-ins/Timezones/* ${STAGEDIR}${PLUGINSDIR}/Timezones
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${FILESDIR}/mailcap ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${FILESDIR}/url.helpers ${STAGEDIR}${EXAMPLESDIR}
-.if ${PORT_OPTIONS:MDOCS}
-	${INSTALL_DIR} ${STAGEDIR}${DOCSDIR}
+
+do-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/.${PORTNAME}/CHANGES* ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Mulberry_License ${STAGEDIR}${DOCSDIR}
-.endif
-.include <bsd.port.post.mk>
+
+.include <bsd.port.mk>

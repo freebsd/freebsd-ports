@@ -5,10 +5,10 @@ PORTNAME=	pgtcl
 PORTVERSION=	2.0.0
 PORTREVISION=	1
 CATEGORIES=	databases tcl
-MASTER_SITES=	SF/pgtclng/pgtclng/${PORTVERSION}:src
-MASTER_SITE_SUBDIR=	pgtclng
+MASTER_SITES=	SF/pgtclng/pgtclng/${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	TCL extension for accessing a PostgreSQL server (PGTCL-NG)
@@ -33,7 +33,6 @@ MANUALREL=	20110918
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-EXTRACT_ONLY=	${_DISTFILES:M*tar.gz}
 DISTFILES+=	pgtcldocs-${MANUALREL}.zip:doc
 MASTER_SITES+=	SF/pgtclng/Manual/${MANUALREL}:doc
 .endif

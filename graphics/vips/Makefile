@@ -16,7 +16,6 @@ LIB_DEPENDS=	libcfitsio.so:${PORTSDIR}/astro/cfitsio \
 		liborc-0.4.so:${PORTSDIR}/devel/orc \
 		libGraphicsMagick.so:${PORTSDIR}/graphics/GraphicsMagick \
 		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
 		libexif.so:${PORTSDIR}/graphics/libexif	\
 		libpng.so:${PORTSDIR}/graphics/png \
@@ -27,7 +26,7 @@ LIB_DEPENDS=	libcfitsio.so:${PORTSDIR}/astro/cfitsio \
 		libgirepository-1.0.so:${PORTSDIR}/devel/gobject-introspection
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-USES=		cpe gettext gmake libtool pathfix pkgconfig shebangfix
+USES=		cpe gettext gmake jpeg libtool pathfix pkgconfig shebangfix
 SHEBANG_FILES=	tools/vips-${PORTVERSION:R} tools/vipsprofile
 USE_GNOME=	glib20 libgsf libxml2 pango
 GNU_CONFIGURE=	yes

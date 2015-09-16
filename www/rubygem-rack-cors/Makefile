@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rack-cors
-PORTVERSION=	0.2.9
+PORTVERSION=	0.4.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Middleware that will make Rack-based apps CORS compatible
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-rack>=0.4:${PORTSDIR}/www/rubygem-rack
+NO_ARCH=	yes
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

@@ -3,6 +3,7 @@
 
 PORTNAME=	portsentry
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/sentrytools/${PORTNAME}%201.x/${PORTNAME}-${PORTVERSION}
 
@@ -23,9 +24,9 @@ post-patch:
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/portsentry.conf \
-		${STAGEDIR}${PREFIX}/etc/portsentry.conf.default
+		${STAGEDIR}${PREFIX}/etc/portsentry.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/portsentry.ignore \
-		${STAGEDIR}${PREFIX}/etc/portsentry.ignore.default
+		${STAGEDIR}${PREFIX}/etc/portsentry.ignore.sample
 	${INSTALL_PROGRAM} ${WRKSRC}/portsentry \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKDIR}/portsentry.sh ${STAGEDIR}${PREFIX}/etc/rc.d/

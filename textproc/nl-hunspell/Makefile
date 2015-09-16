@@ -19,6 +19,7 @@ LICENSE_NAME_CCbyNCSA3=Attribution-NonCommercial-ShareAlike 3.0 Unported
 LICENSE_TEXT_CCbyNCSA3=http://creativecommons.org/licenses/by/3.0/legalcode
 LICENSE_PERMS_CCbyNCSA3=dist-mirror pkg-mirror auto-accept
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

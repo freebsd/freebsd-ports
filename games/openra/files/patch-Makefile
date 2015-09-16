@@ -2,7 +2,7 @@
 
 --- Makefile~
 +++ Makefile
-@@ -357,10 +357,28 @@ install-linux-desktop:
+@@ -381,10 +381,28 @@ install-linux-mime:
  install-linux-scripts:
  	@echo "#!/bin/sh" > openra
  	@echo 'cd "$(gameinstalldir)"' >> openra
@@ -18,7 +18,7 @@
 +	@echo 'else' >> openra
 +	@echo '  mono OpenRA.Game.exe "$$@"' >> openra
 +	@echo 'fi' >> openra
- 	@echo 'if [ $$? != 0 ]' >> openra
+ 	@echo 'if [ $$? != 0 -a $$? != 1 ]' >> openra
  	@echo 'then' >> openra
 -	@echo 'ZENITY=`which zenity` || echo "OpenRA needs zenity installed to display a graphical error dialog. See ~/.openra. for log files."' >> openra
 +	@echo '  if [ -z "$$ZENITY" ]' >> openra

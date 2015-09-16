@@ -1,0 +1,4 @@
+Query ElasticSearch using familiar SQL syntax. You can also use ES
+functions in SQL.
+
+WWW: https://github.com/NLPchina/elasticsearch-sql

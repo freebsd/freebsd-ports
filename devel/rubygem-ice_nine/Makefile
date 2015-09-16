@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ice_nine
-PORTVERSION=	0.11.0
+PORTVERSION=	0.11.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,6 +10,8 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Deep freeze Ruby objects
 
 LICENSE=	MIT
+
+NO_ARCH=	yes
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

@@ -67,9 +67,3 @@
 %%PNEWSDIR%%/utils.js
 %%PNEWSDIR%%/version.inc.php
 %%PNEWSDIR%%/xpost.php
-@dirrmtry %%PNEWSDIR%%/auth
-@dirrmtry %%PNEWSDIR%%/css
-@dirrmtry %%PNEWSDIR%%/doc
-@dirrmtry %%PNEWSDIR%%/examples
-@dirrmtry %%PNEWSDIR%%/language
-@dirrmtry %%PNEWSDIR%%

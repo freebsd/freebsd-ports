@@ -30,6 +30,7 @@ sbin/smart-proxy
 %%DATADIR%%/lib/checks.rb
 %%DATADIR%%/lib/daemon.rb
 %%DATADIR%%/lib/poodles-fix.rb
+%%DATADIR%%/lib/proxy/file_lock.rb
 %%DATADIR%%/lib/proxy/error.rb
 %%DATADIR%%/lib/proxy/helpers.rb
 %%DATADIR%%/lib/proxy/http_downloads.rb
@@ -45,8 +46,7 @@ sbin/smart-proxy
 %%DATADIR%%/lib/proxy/virsh.rb
 %%DATADIR%%/lib/proxy.rb
 %%DATADIR%%/lib/rack-patch.rb
-%%DATADIR%%/lib/sinatra/ssl_client_verification.rb
-%%DATADIR%%/lib/sinatra/trusted_hosts.rb
+%%DATADIR%%/lib/sinatra/authorization.rb
 %%DATADIR%%/lib/sinatra-patch.rb
 %%DATADIR%%/lib/smart_proxy.rb
 %%DATADIR%%/lib/smart_proxy_for_testing.rb
@@ -86,6 +86,7 @@ sbin/smart-proxy
 %%DATADIR%%/modules/facts/http_config.ru
 %%DATADIR%%/modules/puppet_proxy/api_request.rb
 %%DATADIR%%/modules/puppet_proxy/class_scanner.rb
+%%DATADIR%%/modules/puppet_proxy/class_scanner_base.rb
 %%DATADIR%%/modules/puppet_proxy/class_scanner_eparser.rb
 %%DATADIR%%/modules/puppet_proxy/config_reader.rb
 %%DATADIR%%/modules/puppet_proxy/customrun.rb
@@ -95,6 +96,7 @@ sbin/smart-proxy
 %%DATADIR%%/modules/puppet_proxy/mcollective.rb
 %%DATADIR%%/modules/puppet_proxy/puppet.rb
 %%DATADIR%%/modules/puppet_proxy/puppet_api.rb
+%%DATADIR%%/modules/puppet_proxy/puppet_cache.rb
 %%DATADIR%%/modules/puppet_proxy/puppet_class.rb
 %%DATADIR%%/modules/puppet_proxy/puppet_plugin.rb
 %%DATADIR%%/modules/puppet_proxy/puppet_ssh.rb

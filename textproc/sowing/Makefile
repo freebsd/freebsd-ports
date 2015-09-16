@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sowing
-PORTVERSION=	1.1.17
+PORTVERSION=	1.1.18
 CATEGORIES=	textproc
 MASTER_SITES=	http://ftp.mcs.anl.gov/pub/sowing/
 
@@ -12,8 +12,7 @@ COMMENT=	Text processing tools to generate documentation from source files
 BUILD_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
 RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
 
-USES=		gmake perl5
-USE_GHOSTSCRIPT=yes
+USES=		ghostscript gmake perl5
 USE_TEX=	latex dvipsk
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR}
@@ -29,8 +28,7 @@ post-patch:
 
 .if defined(MAINTAINER_MODE)
 regression-test: install
-	@(cd ${BUILD_WRKSRC};	\
-	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} testing)
+	@(cd ${BUILD_WRKSRC} && ${DO_MAKE_BUILD} testing)
 .endif
 
 .include <bsd.port.mk>

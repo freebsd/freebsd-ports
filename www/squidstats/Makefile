@@ -3,9 +3,9 @@
 
 PORTNAME=	squidstats
 PORTVERSION=	54
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	squidstats-r${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,11 +16,13 @@ RUN_DEPENDS=	p5-Config-IniFiles>=2.39:${PORTSDIR}/devel/p5-Config-IniFiles \
 		p5-SNMP_Session>=1.11:${PORTSDIR}/net-mgmt/p5-SNMP_Session
 
 USES=		perl5 shebangfix
-SHEBANG_FILES=	graph/src/stats.pl.in
+SHEBANG_FILES=	graph/src/stats.pl.in \
+		graph/src/graph-summary.cgi.in
 
 USERS=		squid
 GROUPS=		squid
 PLIST_SUB+=	WWWOWN=${WWWOWN} SQUID_USER=${USERS}
+NO_ARCH=	yes
 
 SUB_FILES=	pkg-message
 

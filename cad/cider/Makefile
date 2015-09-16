@@ -5,8 +5,7 @@ PORTNAME=	cider
 PORTVERSION=	1.b1
 PORTREVISION=	8
 CATEGORIES=	cad
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	mita
+MASTER_SITES=	LOCAL/mita
 DISTNAME=	cider1b1
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,8 +18,6 @@ USE_XORG=	xt xaw xmu
 OPTIONS_DEFINE=	EXAMPLES
 
 CFLAGS+=	-Wno-return-type
-
-.include <bsd.port.options.mk>
 
 pre-patch:
 	@${CP} -f ${WRKSRC}/spice/common/lib/helpdir/spice.txt \
@@ -72,12 +69,11 @@ do-install:
 		${STAGEDIR}${DATADIR}/spice3/scripts
 	${INSTALL_SCRIPT} ${WRKSRC}/spice/common/lib/scripts/spinit \
 		${STAGEDIR}${DATADIR}/cider/scripts
-.if ${PORT_OPTIONS:MEXAMPLES}
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/spice3
 	${INSTALL_DATA} ${WRKSRC}/spice/common/examples/*.cir \
 		${STAGEDIR}${EXAMPLESDIR}/spice3
 	cd ${WRKSRC}/cider/common/examples && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>

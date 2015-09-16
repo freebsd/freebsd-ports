@@ -7,7 +7,6 @@ CATEGORIES=	audio deskutils
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:VVELOX
 EXTRACT_SUFX=
-EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Loading a M3U file into musicpd
@@ -15,11 +14,11 @@ COMMENT=	Loading a M3U file into musicpd
 RUN_DEPENDS=	${LOCALBASE}/bin/mpc:${PORTSDIR}/audio/musicpc
 
 USES=		perl5
-NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
-post-extract:
+do-extract:
+	@${MKDIR} ${WRKSRC}
 	@${CP} -v ${DISTDIR}/${DISTNAME} ${WRKSRC}
 
 do-build:

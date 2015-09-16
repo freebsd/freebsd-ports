@@ -1,5 +1,5 @@
---- ./build.xml.orig	2014-08-03 13:58:31.000000000 +0200
-+++ ./build.xml	2014-08-03 13:58:41.000000000 +0200
+--- build.xml.orig	2015-05-21 23:38:04 UTC
++++ build.xml
 @@ -221,13 +221,6 @@
          <include name="j3dutils.jar"/>
          <include name="vecmath.jar"/>

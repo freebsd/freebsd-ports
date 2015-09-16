@@ -1,0 +1,13 @@
+The Diff Match and Patch libraries offer robust algorithms to perform the
+operations required for synchronizing plain text.
+
+Diff: Compare two blocks of plain text and efficiently return a list of
+differences.
+
+Match: Given a search string, find its best fuzzy match in a block of plain
+text. Weighted for both accuracy and location.
+
+Patch: Apply a list of patches onto plain text. Use best-effort to apply patch
+even when the underlying text doesn't match.
+
+WWW: https://code.google.com/p/google-diff-match-patch/

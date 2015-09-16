@@ -14,15 +14,14 @@ COMMENT=	Motif X11 Toolkit (industry standard GUI (IEEE 1295))
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 MAKE_JOBS_UNSAFE=	yes
 CONFLICTS=	lesstif-[0-9]*
 # WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WRKSRC=		${WRKDIR}/motif-${PORTVERSION}
 
-USES=		autoreconf gmake iconv libtool:keepla pkgconfig tar:tgz
+USES=		autoreconf gmake iconv jpeg libtool:keepla pkgconfig tar:tgz
 USE_XORG=	x11 xaw xbitmaps xext xft xt
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

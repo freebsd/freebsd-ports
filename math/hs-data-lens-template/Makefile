@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	data-lens-template
-PORTVERSION=	2.1.8
-PORTREVISION=	1
+PORTVERSION=	2.1.9
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org

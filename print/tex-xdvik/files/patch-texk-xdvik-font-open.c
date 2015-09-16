@@ -1,5 +1,5 @@
---- texk/xdvik/font-open.c.orig	2014-09-02 18:41:34.000000000 +0900
-+++ texk/xdvik/font-open.c	2015-01-31 21:02:18.000000000 +0900
+--- texk/xdvik/font-open.c.orig	2013-05-14 05:26:19 UTC
++++ texk/xdvik/font-open.c
 @@ -27,6 +27,9 @@
  #include "xdvi-config.h"
  #include "xdvi.h"
@@ -10,7 +10,7 @@
  #include "util.h"
  #include "events.h"
  #include "dvi-init.h"
-@@ -213,6 +216,38 @@
+@@ -213,6 +216,38 @@ getdefaults(FILE *f)
  		p_node->value = xmemdup(p, len + 1);
  		*p_tail = p_node;
  		p_tail = &p_node->next;
@@ -49,7 +49,7 @@
  	    }
  	}
  
-@@ -446,13 +481,38 @@
+@@ -446,13 +481,38 @@ init_t1_lookup(void)
  		TRACE_FT((stderr, "Encoding[%d]: '%s' = '%s' -> '%s'",
  		  i, enc, name, ptr));
  #  endif
@@ -88,7 +88,7 @@
  			  "Skipping unknown keyword \"%s\" in config file %s.",
  			  keyword, filename);
  	    }
-@@ -1103,7 +1163,7 @@
+@@ -1103,7 +1163,7 @@ process_gs_fontmap(FILE *f)
  	    if (ttype == GS_EOF || ttype == GS_ERR)
  		break;
  	    if (ttype == LPAREN) {
@@ -97,7 +97,7 @@
  		FILE	*f1;
  
  		ttype = get_gs_token(&gsf, pos1, &pos2, "Fontmap");
-@@ -1692,7 +1752,7 @@
+@@ -1692,7 +1752,7 @@ font_open(
  	  const char **font_ret,
  	  int *dpi_ret)
  {
@@ -106,7 +106,7 @@
      kpse_glyph_file_type file_ret;
  #if DELAYED_MKTEXPK
      Boolean message_done = False;
-@@ -1706,6 +1766,12 @@
+@@ -1706,6 +1766,12 @@ font_open(
      fontp->filename = NULL;
      *dpi_ret = fontp->fsize;
  

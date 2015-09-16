@@ -5,14 +5,13 @@
 PORTNAME=	gutenprint
 PORTVERSION=	5.2.10
 CATEGORIES=	print
-MASTER_SITES=	# empty
-DISTFILES=	# empty
-EXTRACT_ONLY=	# empty
 
 MAINTAINER=	cmt@burggraben.net
 COMMENT=	The "meta-port" for GutenPrint
 
 RUN_DEPENDS=	gutenprint-base>0:${PORTSDIR}/print/gutenprint-base
+
+USES=		metaport
 
 OPTIONS_DEFINE=		CUPS GIMP IJS FOOMATIC
 OPTIONS_DEFAULT=	IJS
@@ -24,9 +23,5 @@ CUPS_RUN_DEPENDS=	gutenprint-cups>0:${PORTSDIR}/print/gutenprint-cups
 GIMP_RUN_DEPENDS=	gimp-gutenprint>0:${PORTSDIR}/print/gimp-gutenprint
 IJS_RUN_DEPENDS=	gutenprint-ijs>0:${PORTSDIR}/print/gutenprint-ijs
 FOOMATIC_RUN_DEPENDS+=	gutenprint-foomatic>0:${PORTSDIR}/print/gutenprint-foomatic
-
-NO_BUILD=	yes
-
-do-install:	# empty
 
 .include <bsd.port.mk>

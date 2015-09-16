@@ -1,6 +1,6 @@
---- ./AppHdr.h.orig	2014-08-28 05:28:56.000000000 +0200
-+++ ./AppHdr.h	2014-08-29 18:32:12.007217932 +0200
-@@ -146,7 +146,7 @@
+--- AppHdr.h.orig	2015-03-23 01:49:21 UTC
++++ AppHdr.h
+@@ -147,7 +147,7 @@ static inline double pow(int x, double y
      //
      // WARNING: Filenames passed to this command *are not validated in any way*.
      //

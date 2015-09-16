@@ -1,11 +1,10 @@
---- Makefile.in.orig	2014-09-20 11:19:51.251881889 +0200
-+++ Makefile.in	2014-09-20 11:20:28.024080455 +0200
-@@ -424,7 +424,7 @@
- # this needs client/cd-create-profile
+--- Makefile.in.orig	2015-04-26 18:53:13.990362000 +0200
++++ Makefile.in	2015-04-26 18:54:20.559863000 +0200
+@@ -92,7 +92,6 @@
+ @HAVE_UNIX_TRUE@am__append_1 = \
+ @HAVE_UNIX_TRUE@	man						\
+ @HAVE_UNIX_TRUE@	policy						\
+-@HAVE_UNIX_TRUE@	rules						\
+ @HAVE_UNIX_TRUE@	src
  
- # this needs data/profiles/*.icc
--SUBDIRS = policy man lib rules po client contrib doc examples data src
-+SUBDIRS = policy man lib po client contrib doc examples data src
- DISTCHECK_CONFIGURE_FLAGS = \
- 	--enable-introspection				\
- 	--enable-fd-fallback				\
+ subdir = .

@@ -47,7 +47,7 @@ mud:*:97:97::0:0:MUD Owner:/nonexistent:/bin/sh
 msql:*:98:98::0:0:mSQL-2 pseudo-user:/var/db/msqldb:/bin/sh
 rscsi:*:99:99::0:0:Remote SCSI:/usr/local/rscsi:/usr/local/sbin/rscsi
 squid:*:100:100::0:0:squid caching-proxy pseudo user:/var/squid:/usr/sbin/nologin
-quagga:*:101:101::0:0:Quagga route daemon pseudo user:/usr/local/etc/quagga:/usr/sbin/nologin
+quagga:*:101:101::0:0:Quagga route daemon pseudo user:/var/empty:/usr/sbin/nologin
 ganglia:*:102:102::0:0:Ganglia User:/nonexistent:/usr/sbin/nologin
 sgeadmin:*:103:103::0:0:Sun Grid Engine Admin:/nonexistent:/usr/sbin/nologin
 slimserv:*:104:104::0:0:Slim Devices SlimServer pseudo-user:/nonexistent:/usr/sbin/nologin
@@ -101,6 +101,7 @@ rbldns:*:153:153::0:0:rbldnsd pseudo-user:/nonexistent:/usr/sbin/nologin
 trircd:*:154:154::0:0:& user:/usr/local/etc/tr-ircd:/usr/sbin/nologin
 monetdb:*:156:156::0:0:MonetDB user:/usr/local/monetdb5:/bin/sh
 barman:*:157:157::0:0:Barman user:/var/barman:/bin/sh
+nocat:*:159:159::0:0:NoCat Daemon:/libexec/nocat:/sbin/nologin
 sfs:*:171:171::0:0:Self-Certifying File System:/nonexistent:/usr/sbin/nologin
 agk:*:172:172::0:0:AquaGateKeeper:/nonexistent:/nonexistent
 polipo:*:173:173::0:0:polipo web cache:/nonexistent:/usr/sbin/nologin
@@ -164,6 +165,8 @@ rancid:*:286:286::0:0:RANCID daemon user:/usr/local/var/rancid:/bin/sh
 backuppc:*:300:300::0:0:BackupPC pseudo-user:/nonexistent:/usr/sbin/nologin
 _sphinx:*:312:312::0:0:Sphinxsearch Owner:/nonexistent:/usr/sbin/nologin
 dkfilter:*:325:325::0:0:DK Filter Owner:/nonexistent:/usr/sbin/nologin
+smfs:*:326:326::0:0:SMFSAV Owner:/nonexistent:/usr/sbin/nologin
+orthanc:*:330:330::0:0:Orthanc Daemon:/nonexistent:/usr/sbin/nologin
 _pma:*:336:80::0:0:phpMyAdmin Owner:/nonexistent:/usr/sbin/nologin
 daapd:*:337:337::0:0:daapd User:/nonexistent:/usr/sbin/nologin
 murmur:*:338:338::0:0:& User:/nonexistent:/usr/sbin/nologin
@@ -186,6 +189,7 @@ netmon:*:467:467::0:0:Network monitor account:/var/netmon:/usr/sbin/nologin
 slurm:*:468:468::0:0:SLURM Daemon:/home/slurm:/usr/sbin/nologin
 consul:*:469:469::0:0:Consul Daemon:/var/tmp/consul:/usr/sbin/nologin
 serf:*:470:470::0:0:Serf Daemon:/nonexistent:/usr/sbin/nologin
+vault:*:471:471::0:0:Vault Daemon:/nonexistent:/usr/sbin/nologin
 _bbstored:*:505:505::0:0:Box Backup Store Daemon:/nonexistent:/usr/sbin/nologin
 radmind:*:506:506::0:0:radmind User:/var/radmind:/usr/sbin/nologin
 skkserv:*:507:507::0:0:skkserv User:/nonexistent:/usr/sbin/nologin
@@ -207,6 +211,7 @@ haldaemon:*:560:560::0:0:HAL Daemon User:/nonexistent:/usr/sbin/nologin
 distcc:*:561:561::0:0:Distcc user:/nonexistent:/usr/sbin/nologin
 polkit:*:562:562::0:0:PolicyKit User:/nonexistent:/usr/sbin/nologin
 pulse:*:563:563::0:0:PulseAudio System User:/nonexistent:/usr/sbin/nologin
+polkitd:*:565:565::0:0:Polkit Daemon User:/var/empty:/usr/sbin/nologin
 assp:*:587:587::0:0:ASSP Anti-Spam Proxy:/var/db/assp:/usr/sbin/nologin
 avahi-autoipd:*:588:588::0:0:Avahi Autoipd Daemon user:/nonexistent:/usr/sbin/nologin
 _xsi:*:600:600::0:0:XMLSysInfo User:/nonexistent:/usr/sbin/nologin
@@ -219,7 +224,9 @@ monkeysphere:*:641:641::0:0:Monkeysphere User:/var/monkeysphere:/usr/local/bin/b
 aox:*:666:666::0:0:Archiveopteryx user:/nonexistent:/usr/sbin/nologin
 riak:*:667:667::0:0:Riak user:/usr/local/lib/riak:/bin/sh
 bnetd:*:700:700::0:0:Bnetd user:/nonexistent:/usr/sbin/nologin
+fastnetmon:*:701:701::0:0:FastNetMon user:/nonexistent:/usr/sbin/nologin
 bopm:*:717:717::0:0:Blitzed Open Proxy Monitor:/nonexistent:/bin/sh
+_dnscrypt-wrapper:*:718:65534::0:0:dnscrypt-wrapper user:/var/empty:/usr/sbin/nologin
 openxpki:*:777:777::0:0:OpenXPKI Owner:/nonexistent:/usr/sbin/nologin
 zetacoin:*:780:780::0:0:ZetaCoin Daemon:/nonexistent:/usr/sbin/nologin
 foreman_proxy:*:812:812::0:0:Foreman Smart Proxy:/usr/local/share/foreman-proxy:/usr/sbin/nologin
@@ -237,6 +244,8 @@ munin:*:842:842::0:0:Munin:/var/munin:/usr/sbin/nologin
 subsonic:*:844:844::0:0:Subsonic standalone-server:/nonexistent:/usr/sbin/nologin
 fossy:*:901:901::0:0:FOSSology user:/usr/local/share/fossology:/usr/local/bin/bash
 scanlogd:*:902:902::0:0:scanlogd user:/nonexistent:/usr/sbin/nologin
+_ocserv:*:903:903::0:0:ocserv user:/nonexistent:/usr/sbin/nologin
+influxd:*:907:907::0:0:InfluxDB Daemon:/var/empty:/usr/sbin/nologin
 riemann:*:908:908::0:0:Riemann User:/var/empty:/usr/sbin/nologin
 proxy65:*:909:909::0:0:Proxy65 Daemon:/nonexistent:/usr/sbin/nologin
 bacula:*:910:910::0:0:Bacula Daemon:/var/db/bacula:/usr/sbin/nologin
@@ -319,5 +328,10 @@ emby:*:989:989::0:0:Emby:/nonexistent:/usr/sbin/nologin
 oozie:*:990:990::0:0:Apache Oozie user:/nonexistent:/usr/sbin/nologin
 sguil:*:991:991::0:0:Sguil:/nonexistent:/usr/sbin/nologin
 hive:*:992:992::0:0:Apache Hive user:/nonexistent:/usr/sbin/nologin
+kannel:*:993:993::0:0:Kannel User:/nonexistent:/usr/sbin/nologin
+rcynic:*:994:994::0:0:RPKI validation system:/nonexistent:/usr/sbin/nologin
+rpkirtr:*:995:995::0:0:RPKI router server:/nonexistent:/usr/sbin/nologin
+tarantool:*:996:996::0:0:Tarantool Daemon:/nonexistent:/usr/sbin/nologin
+bareos:*:997:997::0:0:Bareos Daemon:/var/db/bareos:/usr/sbin/nologin
 ebnetd:*:999:999::0:0:EBNETD:/nonexistent:/usr/sbin/nologin
 nobody:*:65534:65534::0:0:Unprivileged user:/nonexistent:/usr/sbin/nologin

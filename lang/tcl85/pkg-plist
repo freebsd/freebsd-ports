@@ -15,12 +15,14 @@ include/tcl%%TCL_VER%%/generic/tclPlatDecls.h
 include/tcl%%TCL_VER%%/generic/tclPort.h
 include/tcl%%TCL_VER%%/generic/tclRegexp.h
 include/tcl%%TCL_VER%%/generic/tclTomMath.h
-include/tcl%%TCL_VER%%/generic/tclTomMathInt.h
 include/tcl%%TCL_VER%%/generic/tclTomMathDecls.h
+include/tcl%%TCL_VER%%/generic/tclTomMathInt.h
 include/tcl%%TCL_VER%%/generic/tommath.h
 include/tcl%%TCL_VER%%/tcl.h
 include/tcl%%TCL_VER%%/tclDecls.h
 include/tcl%%TCL_VER%%/tclPlatDecls.h
+include/tcl%%TCL_VER%%/tclTomMath.h
+include/tcl%%TCL_VER%%/tclTomMathDecls.h
 include/tcl%%TCL_VER%%/unix/tclUnixPort.h
 include/tcl%%TCL_VER%%/unix/tclUnixThrd.h
 lib/libtcl%%SHORT_TCL_VER%%.a

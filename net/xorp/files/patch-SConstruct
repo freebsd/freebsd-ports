@@ -1,6 +1,6 @@
---- ./SConstruct.orig	2012-01-11 17:46:45.000000000 +0000
-+++ ./SConstruct	2014-02-26 21:17:13.000000000 +0000
-@@ -162,22 +162,13 @@
+--- SConstruct.orig	2012-01-11 17:56:10 UTC
++++ SConstruct
+@@ -162,22 +162,13 @@ if (len(COMMAND_LINE_TARGETS) == 0):
  
  # XXX TODO: Make initial CPPPATH/LIBPATH derive from
  # autodetected host system *or* command line.
@@ -20,8 +20,25 @@
  		  BUILDDIR = builddir,
 -		  CPPPATH=['$BUILDDIR'],
 -		  LIBPATH=['usr/lib'],
-+		  CPPPATH=['%%LOCALBASE%%/include', '$BUILDDIR'],
-+		  LIBPATH=['usr/lib', '%%LOCALBASE%%/lib'],
++		  CPPPATH=['/usr/local/include', '$BUILDDIR'],
++		  LIBPATH=['usr/lib', '/usr/local/lib'],
  		  variables = vars)
  
  prefix = env['prefix']
+@@ -858,13 +849,13 @@ if ((build != "i386-pc-mingw32") and
+      host_cpu == "i386" or
+      host_cpu == "x86_64")):
+         env.AppendUnique(CFLAGS = [
+-	        '-Werror',
++	        '-Werror -Wno-unused-function',
+ 		])
+ 	env.AppendUnique(CXXFLAGS = [
+-		'-Werror',
++		'-Werror -Wno-unused-function',
+ 		])
+ else:
+-	print "WARNING:  Detected funky platform, will not enable -Werror compile option: ", host_cpu
++	print "WARNING:  Detected funky platform, will not enable -Werror -Wno-unused-function compile option: ", host_cpu
+ 	
+ 
+ # NOTE: gcc specific flags.

@@ -32,5 +32,3 @@ lib/libQuantis_Extensions.so.2.12.0
 %%COMPAT%%lib/libQuantisUsb-Compat.so
 %%COMPAT%%lib/libQuantisUsb-Compat.so.2
 %%COMPAT%%lib/libQuantisUsb-Compat.so.2.12.0
-@dirrm include/Quantis
-@dirrm include/QuantisExtensions

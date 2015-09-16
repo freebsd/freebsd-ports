@@ -1,5 +1,5 @@
---- ./modules/proxy/mod_proxy_connect.c.orig	2010-12-08 20:31:34.000000000 +0100
-+++ ./modules/proxy/mod_proxy_connect.c	2012-02-02 17:12:20.000000000 +0100
+--- modules/proxy/mod_proxy_connect.c.orig	2010-12-08 19:31:34 UTC
++++ modules/proxy/mod_proxy_connect.c
 @@ -21,6 +21,8 @@
  #include "mod_proxy.h"
  #include "apr_poll.h"
@@ -9,7 +9,7 @@
  module AP_MODULE_DECLARE_DATA proxy_connect_module;
  
  /*
-@@ -71,6 +73,50 @@
+@@ -71,6 +73,50 @@ static int proxy_connect_canon(request_r
      return OK;
  }
  
@@ -60,7 +60,7 @@
  /* CONNECT handler */
  static int proxy_connect_handler(request_rec *r, proxy_worker *worker,
                                   proxy_server_conf *conf,
-@@ -79,11 +125,15 @@
+@@ -79,11 +125,15 @@ static int proxy_connect_handler(request
  {
      apr_pool_t *p = r->pool;
      apr_socket_t *sock;
@@ -78,7 +78,7 @@
      apr_pollset_t *pollset;
      apr_pollfd_t pollfd;
      const apr_pollfd_t *signalled;
-@@ -158,12 +208,10 @@
+@@ -158,12 +208,10 @@ static int proxy_connect_handler(request
              case APR_URI_SNEWS_DEFAULT_PORT:
                  break;
              default:
@@ -93,7 +93,7 @@
      }
  
      /*
-@@ -205,19 +253,57 @@
+@@ -205,19 +253,57 @@ static int proxy_connect_handler(request
          }
      }
  
@@ -158,7 +158,7 @@
  
      /* If we are connecting through a remote proxy, we need to pass
       * the CONNECT request on to it.
-@@ -227,12 +313,11 @@
+@@ -227,12 +313,11 @@ static int proxy_connect_handler(request
       */
          ap_log_error(APLOG_MARK, APLOG_DEBUG, 0, r->server,
               "proxy: CONNECT: sending the CONNECT request to the remote proxy");
@@ -175,7 +175,7 @@
      }
      else {
          ap_log_error(APLOG_MARK, APLOG_DEBUG, 0, r->server,
-@@ -240,11 +325,12 @@
+@@ -240,11 +325,12 @@ static int proxy_connect_handler(request
          nbytes = apr_snprintf(buffer, sizeof(buffer),
                    "HTTP/1.0 200 Connection Established" CRLF);
          ap_xlate_proto_to_ascii(buffer, nbytes);
@@ -190,7 +190,7 @@
  #if 0
          /* This is safer code, but it doesn't work yet.  I'm leaving it
           * here so that I can fix it later.
-@@ -264,28 +350,16 @@
+@@ -264,28 +350,16 @@ static int proxy_connect_handler(request
       *
       * Handle two way transfer of data over the socket (this is a tunnel).
       */
@@ -226,7 +226,7 @@
      while (1) { /* Infinite loop until error (one side closes the connection) */
          if ((rv = apr_pollset_poll(pollset, -1, &pollcnt, &signalled)) != APR_SUCCESS) {
              if (APR_STATUS_IS_EINTR(rv)) { 
-@@ -297,7 +371,7 @@
+@@ -297,7 +371,7 @@ static int proxy_connect_handler(request
          }
  #ifdef DEBUGGING
          ap_log_error(APLOG_MARK, APLOG_DEBUG, 0, r->server,
@@ -235,7 +235,7 @@
  #endif
  
          for (pi = 0; pi < pollcnt; pi++) {
-@@ -307,72 +381,31 @@
+@@ -307,72 +381,31 @@ static int proxy_connect_handler(request
                  pollevent = cur->rtnevents;
                  if (pollevent & APR_POLLIN) {
  #ifdef DEBUGGING
@@ -321,7 +321,7 @@
          }
          if (rv != APR_SUCCESS) {
              break;
-@@ -388,7 +421,9 @@
+@@ -388,7 +421,9 @@ static int proxy_connect_handler(request
       * Close the socket and clean up
       */
  

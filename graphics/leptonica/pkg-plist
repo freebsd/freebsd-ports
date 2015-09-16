@@ -18,6 +18,7 @@ include/leptonica/arrayaccess.h
 include/leptonica/bbuffer.h
 include/leptonica/bilateral.h
 include/leptonica/bmf.h
+include/leptonica/bmfdata.h
 include/leptonica/bmp.h
 include/leptonica/ccbord.h
 include/leptonica/dewarp.h
@@ -37,10 +38,11 @@ include/leptonica/readbarcode.h
 include/leptonica/recog.h
 include/leptonica/regutils.h
 include/leptonica/stack.h
+include/leptonica/stringcode.h
 include/leptonica/sudoku.h
 include/leptonica/watershed.h
 lib/liblept.a
 lib/liblept.so
 lib/liblept.so.4
-lib/liblept.so.4.0.1
+lib/liblept.so.4.0.3
 libdata/pkgconfig/lept.pc

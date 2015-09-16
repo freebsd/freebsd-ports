@@ -5,8 +5,7 @@ PORTNAME=	m17n-lib
 PORTVERSION=	1.6.4
 PORTREVISION=	6
 CATEGORIES=	devel textproc
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	m17n
+MASTER_SITES=	SAVANNAH/m17n
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	Library for the multilingual text handling

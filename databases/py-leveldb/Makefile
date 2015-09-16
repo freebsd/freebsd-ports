@@ -3,7 +3,7 @@
 
 PORTNAME=	leveldb
 PORTVERSION=	0.1.20130428
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases python
 MASTER_SITES=	LOCAL/sunpoet
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libleveldb.so:${PORTSDIR}/databases/leveldb
 
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 USES=		python tar:xz
 
 post-patch:
@@ -24,5 +24,8 @@ post-patch:
 		-e "s|^\(extra_compile_args = \).*$$|\1\['-I${LOCALBASE}/include'\]|" \
 		-e "s|^\(extra_link_args = \).*$$|\1\['-L${LOCALBASE}/lib', '-lleveldb'\]|" \
 			${WRKSRC}/setup.py
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/leveldb.so
 
 .include <bsd.port.mk>

@@ -3,6 +3,7 @@
 
 PORTNAME=	monkeysphere
 PORTVERSION=	0.36
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://archive.monkeysphere.info/debian/pool/monkeysphere/m/monkeysphere/
 # hack for debian orig tarballs
@@ -18,7 +19,8 @@ RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg1 \
 		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
 
 USES=		shebangfix
-SHEBANG_FILES=	src/share/keytrans
+SHEBANG_FILES=	src/share/checkperms src/transitions/0.23 \
+		src/transitions/0.28 src/share/keytrans
 
 USERS=	monkeysphere
 GROUPS=	monkeysphere

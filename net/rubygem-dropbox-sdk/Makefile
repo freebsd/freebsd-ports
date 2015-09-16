@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dropbox-sdk
-PORTVERSION=	1.6.4
+PORTVERSION=	1.6.5
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -13,6 +13,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-json>=0:${PORTSDIR}/devel/rubygem-json
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

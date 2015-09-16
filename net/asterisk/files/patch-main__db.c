@@ -1,6 +1,6 @@
---- ./main/db.c.orig	2010-09-10 22:31:58.000000000 +0200
-+++ ./main/db.c	2010-11-06 14:54:37.000000000 +0100
-@@ -36,6 +36,7 @@
+--- main/db.c.orig	2012-12-10 23:13:48 UTC
++++ main/db.c
+@@ -40,6 +40,7 @@ ASTERISK_FILE_VERSION(__FILE__, "$Revisi
  #include <sys/time.h>
  #include <signal.h>
  #include <dirent.h>
@@ -8,7 +8,7 @@
  
  #include "asterisk/channel.h"
  #include "asterisk/file.h"
-@@ -46,7 +47,6 @@
+@@ -50,7 +51,6 @@ ASTERISK_FILE_VERSION(__FILE__, "$Revisi
  #include "asterisk/utils.h"
  #include "asterisk/lock.h"
  #include "asterisk/manager.h"

@@ -1,6 +1,6 @@
 ********************************* WARNING *********************************
 
-FreeBSD does not, and can not warrant that the certificate authorities
+FreeBSD does not, and can not warrant that the certification authorities
 whose certificates are included in this package have in any way been
 audited for trustworthiness or RFC 3647 compliance.
 

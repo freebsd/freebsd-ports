@@ -6,5 +6,3 @@ man/man1/fcgi_spawn.1.gz
 bin/fcgi_spawn
 etc/fcgi_spawn/fcgi_spawn.conf.sample
 share/doc/p5-FCGI-Spawn/README
-@dirrmtry share/doc/p5-FCGI-Spawn
-@dirrmtry etc/fcgi_spawn

@@ -39,7 +39,7 @@ USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 300
+.if ${PYTHON_REL} < 3000
 TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}unittest2>0:${PORTSDIR}/devel/py-unittest2
 .endif
 

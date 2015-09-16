@@ -12,6 +12,7 @@
     SUBDIR += 3omns
     SUBDIR += 4stattack
     SUBDIR += 54321
+    SUBDIR += 7kaa
     SUBDIR += CaribbeanStud
     SUBDIR += HeroesOfMightAndMagic
     SUBDIR += KnightCap
@@ -306,7 +307,6 @@
     SUBDIR += fxsudoku
     SUBDIR += galaxis
     SUBDIR += galaxyhack
-    SUBDIR += galaxymage
     SUBDIR += garith
     SUBDIR += gbottler
     SUBDIR += gbrainy
@@ -347,6 +347,7 @@
     SUBDIR += gnome-nibbles
     SUBDIR += gnome-robots
     SUBDIR += gnome-sudoku
+    SUBDIR += gnome-taquin
     SUBDIR += gnome-tetravex
     SUBDIR += gnomeattacks
     SUBDIR += gnomebreakout
@@ -372,6 +373,7 @@
     SUBDIR += greed
     SUBDIR += gretools
     SUBDIR += grhino
+    SUBDIR += griels-quest
     SUBDIR += gru
     SUBDIR += grubik
     SUBDIR += gshisen
@@ -387,7 +389,6 @@
     SUBDIR += gturing
     SUBDIR += gtypist
     SUBDIR += gunfudeadlands
-    SUBDIR += gweled
     SUBDIR += hangman
     SUBDIR += hedgewars
     SUBDIR += help_hannahs_horse
@@ -405,6 +406,7 @@
     SUBDIR += hohlin
     SUBDIR += hoichess
     SUBDIR += holotz-castle
+    SUBDIR += hypatia_engine
     SUBDIR += iagno
     SUBDIR += icbm3d
     SUBDIR += icebreaker
@@ -517,8 +519,6 @@
     SUBDIR += lightsoff
     SUBDIR += lincity
     SUBDIR += lincity-ng
-    SUBDIR += linux-candycruncher-demo
-    SUBDIR += linux-coldwar-demo
     SUBDIR += linux-darwinia-demo
     SUBDIR += linux-defcon
     SUBDIR += linux-doom3
@@ -533,9 +533,6 @@
     SUBDIR += linux-enemyterritory-tce
     SUBDIR += linux-etqw-demo-server
     SUBDIR += linux-etqw-server
-    SUBDIR += linux-gorky17-demo
-    SUBDIR += linux-hdb-demo
-    SUBDIR += linux-majesty-demo
     SUBDIR += linux-nerogame
     SUBDIR += linux-ningpo-demo
     SUBDIR += linux-nwnclient
@@ -619,6 +616,7 @@
     SUBDIR += nadar
     SUBDIR += naev
     SUBDIR += naev-data
+    SUBDIR += narcissu2
     SUBDIR += nazghul
     SUBDIR += nehquake
     SUBDIR += nelly
@@ -764,13 +762,13 @@
     SUBDIR += py-fife
     SUBDIR += py-mnemosyne
     SUBDIR += py-poker-eval
-    SUBDIR += py-pychess
     SUBDIR += py-sgflib
     SUBDIR += py-sgfsummary
     SUBDIR += pyawale
     SUBDIR += pycadia
     SUBDIR += pyching
     SUBDIR += pydance
+    SUBDIR += pyfa
     SUBDIR += pykawari
     SUBDIR += pysolfc
     SUBDIR += pyspacewar
@@ -909,6 +907,7 @@
     SUBDIR += spicetrade
     SUBDIR += spider
     SUBDIR += spring
+    SUBDIR += springlobby
     SUBDIR += starfighter
     SUBDIR += starlanes
     SUBDIR += steelstorm
@@ -1046,6 +1045,8 @@
     SUBDIR += worldofpadman
     SUBDIR += wtf
     SUBDIR += wxlauncher
+    SUBDIR += wyrmgus
+    SUBDIR += wyrmsun
     SUBDIR += xabacus
     SUBDIR += xasteroids
     SUBDIR += xataxx

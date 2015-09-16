@@ -1,0 +1,15 @@
+Twiggy is a Pythonic logger.
+
+As near as I can tell, Twiggy is the first totally new design for a logger
+since log4j was developed in 1996. Let me say that again: Twiggy is the first
+new logger in 15 years. 
+
+Twiggy:
+
+  * Uses new-style format strings by default. Way nicer than %s (printf).
+  * Includes easy support for structured logging
+  * Loosely couples loggers and outputs for configuration
+  * Supports asynchronous logging using the multiprocessing module
+  * Solves Your Problems. Pets Your Puppy.
+
+WWW: http://twiggy.wearpants.org

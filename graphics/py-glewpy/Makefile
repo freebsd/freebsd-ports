@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	python
 
 PATCH_SITES=	http://mirror.amdmi3.ru/distfiles/ \
-		${MASTER_SITE_LOCAL:S|%SUBDIR%|amdmi3|}
+		LOCAL/amdmi3
 PATCHFILES=	glewpy-${PORTVERSION}-generatedsources.diff.bz2
 
 MAINTAINER=	acm@FreeBSD.org

@@ -22,8 +22,7 @@ RUN_DEPENDS=	razorback-masterNugget>=0.5.0:${PORTSDIR}/security/razorback-master
 		rubygem-razorback-scriptNugget>=0.5.0:${PORTSDIR}/security/rubygem-razorback-scriptNugget
 
 RB_LIBDIR?=	${PREFIX}/lib/razorback
-USES=		libtool pkgconfig
-USE_AUTOTOOLS=	autoconf
+USES=		autoreconf libtool pkgconfig
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-ruby

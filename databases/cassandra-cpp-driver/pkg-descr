@@ -1,0 +1,5 @@
+DataStax Cpp Driver is modern, feature-rich, and highly tunable C/C++ client
+library for Apache Cassandra (1.2+) and DataStax Enterprise (3.1+) using
+exclusively Cassandra's native protocol and Cassandra Query Language v3.
+
+WWW: http://datastax.github.io/cpp-driver/

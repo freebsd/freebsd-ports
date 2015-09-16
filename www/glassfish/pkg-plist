@@ -991,3 +991,15 @@
 %%DATADIR%%/pkg/lib/pkg-bootstrap.jar
 %%DATADIR%%/pkg/lib/pkg-bootstub.sh
 %%DATADIR%%/pkg/lib/pkg-client.jar
+@dir %%DATADIR%%/glassfish/domains/domain1/applications
+@dir %%DATADIR%%/glassfish/domains/domain1/autodeploy/.autodeploystatus
+@dir %%DATADIR%%/glassfish/domains/domain1/autodeploy/bundles
+@dir %%DATADIR%%/glassfish/domains/domain1/bin
+@dir %%DATADIR%%/glassfish/domains/domain1/lib/applibs
+@dir %%DATADIR%%/glassfish/domains/domain1/lib/classes
+@dir %%DATADIR%%/glassfish/domains/domain1/lib/databases
+@dir %%DATADIR%%/glassfish/domains/domain1/lib/ext
+@dir %%DATADIR%%/glassfish/domains/domain1/logs
+@dir %%DATADIR%%/glassfish/lib/endorsed
+@dir %%DATADIR%%/glassfish/osgi/felix/conf
+@dir %%DATADIR%%/mq/lib/install

@@ -89,6 +89,7 @@ include/glib-2.0/gio/ginetaddressmask.h
 include/glib-2.0/gio/ginetsocketaddress.h
 include/glib-2.0/gio/ginitable.h
 include/glib-2.0/gio/ginputstream.h
+include/glib-2.0/gio/gio-autocleanups.h
 include/glib-2.0/gio/gio.h
 include/glib-2.0/gio/gioenums.h
 include/glib-2.0/gio/gioenumtypes.h
@@ -97,6 +98,8 @@ include/glib-2.0/gio/giomodule.h
 include/glib-2.0/gio/gioscheduler.h
 include/glib-2.0/gio/giostream.h
 include/glib-2.0/gio/giotypes.h
+include/glib-2.0/gio/glistmodel.h
+include/glib-2.0/gio/gliststore.h
 include/glib-2.0/gio/gloadableicon.h
 include/glib-2.0/gio/gmemoryinputstream.h
 include/glib-2.0/gio/gmemoryoutputstream.h
@@ -130,6 +133,7 @@ include/glib-2.0/gio/gsettingsbackend.h
 include/glib-2.0/gio/gsettingsschema.h
 include/glib-2.0/gio/gsimpleaction.h
 include/glib-2.0/gio/gsimpleactiongroup.h
+include/glib-2.0/gio/gsimpleiostream.h
 include/glib-2.0/gio/gsimpleproxyresolver.h
 include/glib-2.0/gio/gsimpleasyncresult.h
 include/glib-2.0/gio/gsimplepermission.h
@@ -202,6 +206,7 @@ include/glib-2.0/glib/gi18n-lib.h
 include/glib-2.0/glib/gi18n.h
 include/glib-2.0/glib/giochannel.h
 include/glib-2.0/glib/gkeyfile.h
+include/glib-2.0/glib/glib-autocleanups.h
 include/glib-2.0/glib/glist.h
 include/glib-2.0/glib/gmacros.h
 include/glib-2.0/glib/gmain.h
@@ -253,6 +258,7 @@ include/glib-2.0/gobject/gclosure.h
 include/glib-2.0/gobject/genums.h
 include/glib-2.0/gobject/glib-types.h
 include/glib-2.0/gobject/gmarshal.h
+include/glib-2.0/gobject/gobject-autocleanups.h
 include/glib-2.0/gobject/gobject.h
 include/glib-2.0/gobject/gobjectnotifyqueue.c
 include/glib-2.0/gobject/gparam.h
@@ -442,4 +448,5 @@ share/locale/zh_TW/LC_MESSAGES/glib20.mo
 @dir lib/gio/modules
 @dir share/GConf/gsettings
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas 2>/dev/null || /usr/bin/true
+@unexec /bin/unlink %D/share/glib-2.0/schemas/gschemas.compiled || /usr/bin/true
 @exec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true

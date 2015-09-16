@@ -12,8 +12,7 @@ COMMENT=	Themed widget set for Tk
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.terms
 
-USES+=		tk
-USE_AUTOTOOLS=	autoconf
+USES=		autoreconf tk
 
 GNU_CONFIGURE=	yes
 TKPKG=		${PORTNAME}${PORTVERSION}

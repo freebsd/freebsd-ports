@@ -12,5 +12,4 @@ Besides this main codec, OpenJPEG integrates several other modules:
 - JPIP (JPEG 2000 standard Part 9)
 - OPJViewer, a GUI viewer for J2K, JP2, JPWL and MJ2 files
 
-WWW: https://code.google.com/p/openjpeg/
-WWW: http://openjpeg.mirror.sourceforge.net/
+WWW: http://www.openjpeg.org/

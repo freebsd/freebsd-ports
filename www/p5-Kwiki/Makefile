@@ -3,7 +3,7 @@
 
 PORTNAME=	Kwiki
 PORTVERSION=	0.39
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	http://www.kwiki.org/downloads/ \
 		LOCAL/clsung/${PORTNAME}
@@ -16,6 +16,8 @@ COMMENT=	Kwiki Wiki Building Framework
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+USES=		shebangfix
+SHEBANG_FILES=	src/plugins/cfedde/bin/rippod
 KWIKIDIR?=	kwiki
 NO_BUILD=	yes
 PLIST_SUB=	KWIKIDIR=${KWIKIDIR}

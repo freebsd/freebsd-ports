@@ -189,7 +189,4 @@ do-install:
 .endfor
 .endif
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.post.mk>

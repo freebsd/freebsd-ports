@@ -5,8 +5,7 @@ PORTNAME=	predict
 PORTVERSION=	2.2.3
 CATEGORIES=	comms astro hamradio
 MASTER_SITES=	ftp://ftp.amsat.org/amsat/software/Linux/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	db
+		LOCAL/db
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Satellite tracking program for amateur radio satellites

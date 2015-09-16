@@ -64,6 +64,5 @@ man/man6/omega.6.gz
 %%DATADIR%%/village4.dat
 %%DATADIR%%/village5.dat
 %%DATADIR%%/village6.dat
-@dirrm %%DATADIR%%
+@dir %%DATADIR%%
 @group
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

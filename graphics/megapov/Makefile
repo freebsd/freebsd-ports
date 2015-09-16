@@ -11,14 +11,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unofficial extensions of POV-Ray
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 #RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray-meta
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 INSTALL_WRKSRC=	${WRKSRC}/unix
 
-USES=		gmake tar:bzip2
+USES=		gmake jpeg tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	COMPILED_BY="ports@FreeBSD.org"
 

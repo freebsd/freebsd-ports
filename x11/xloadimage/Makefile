@@ -5,7 +5,7 @@ PORTNAME=	xloadimage
 PORTVERSION=	4.1.21
 PORTREVISION=	1
 CATEGORIES=	x11 graphics
-MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
+MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}.${VERSION}
 DISTFILES=	${DISTNAME:S/./_/}.orig${EXTRACT_SUFX} \
 		${DISTNAME:S/./_/}-${REVISION}.debian.tar.gz
@@ -15,8 +15,7 @@ COMMENT=	X11 Image Loading Utility
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
 CONFLICTS_INSTALL=	xli-*
@@ -27,6 +26,7 @@ PATCH_STRIP=	-p1
 VERSION=	${PORTVERSION:R}
 REVISION=	${PORTVERSION:E}
 
+USES=		jpeg
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 

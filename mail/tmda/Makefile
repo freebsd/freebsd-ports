@@ -3,22 +3,21 @@
 
 PORTNAME=	tmda
 PORTVERSION=	1.1.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail python
 MASTER_SITES=	ftp://tmda.net/pub/tmda/releases/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	sergei
-EXTRACT_SUFX=	.tgz
+		LOCAL/sergei
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python-based SPAM reduction system
 
-OPTIONS_DEFINE=	CDB DOCS EXAMPLES
-CDB_RUN_DEPENDS=${PYTHON_SITELIBDIR}/cdbmodule.so:${PORTSDIR}/databases/py-cdb
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python
-
+USES=		python shebangfix tar:tgz
+SHEBANG_FILES=	contrib/tofmipd.init
 SUB_FILES=	pkg-message
+NO_ARCH=	yes
 
 DOCS=		CODENAMES CRYPTO README THANKS NEWS UPGRADE
 SAMPLES=	tmda.el tofmipd.sysconfig vtmdarc
@@ -26,6 +25,9 @@ SCRIPTS=	collectaddys def2html printcdb printdbm sendit.sh \
 	 	smtp-check-sender tofmipd.init tofmipd.sysconfig \
 		update-internaldomains vadduser-tmda vmailmgr-vdir.sh \
 		vpopmail-vdir.sh wrapfd3.sh
+
+OPTIONS_DEFINE=	CDB DOCS EXAMPLES
+CDB_RUN_DEPENDS=${PYTHON_SITELIBDIR}/cdbmodule.so:${PORTSDIR}/databases/py-cdb
 
 do-build:
 	cd ${WRKSRC} && ${PYTHON_CMD} ./compileall

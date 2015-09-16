@@ -4,10 +4,10 @@
 PORTNAME=	musicpm
 PORTVERSION=	1.4.4
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	mpm_${PORTVERSION}
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Music Player Minion
 
 XPI_ID=		Music_Player_Minion@code.google.com

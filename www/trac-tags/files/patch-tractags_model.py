@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- tractags/model.py.orig
 +++ tractags/model.py
 @@ -62,17 +62,7 @@

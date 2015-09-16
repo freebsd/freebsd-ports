@@ -47,3 +47,5 @@ share/hal/fdi/information/10freedesktop/30-keymap-module-thinkpad-acpi.fdi
 share/hal/fdi/information/10freedesktop/99-video-quirk-default.fdi
 share/hal/fdi/preprobe/10osvendor/10-ide-drives.fdi
 share/hal/fdi/preprobe/10osvendor/20-broken-usb-sticks.fdi
+@dir share/hal/fdi/preprobe/20thirdparty
+@dir share/hal/fdi/information/20thirdparty

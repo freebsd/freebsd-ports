@@ -1,20 +1,22 @@
 # $FreeBSD$
 
 PORTNAME=	synergy
-PORTVERSION=	1.6.2
+PORTVERSION=	1.7.4
 CATEGORIES=	sysutils
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/archive/
-DISTNAME=	${PORTVERSION}
 
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Mouse and keyboard sharing utility
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
-USES=		cmake
+USES=		cmake cpe
+CPE_VENDOR=	synergy-foss
 USE_XORG=	ice xtst x11 sm
+USE_GITHUB=	yes
+
+DISTVERSIONPREFIX=	v
+DISTVERSIONSUFFIX=	-stable
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
@@ -28,11 +30,6 @@ PORTEXAMPLES=	synergy.conf.example synergy.conf.example-basic \
 		synergy.conf.example-advanced
 
 OPTIONS_DEFINE=	EXAMPLES
-
-post-extract:
-	cd ${WRKSRC}/ext/
-	${MKDIR} ${WRKSRC}/ext/cryptopp562
-	(cd ${WRKSRC}/ext/cryptopp562 && ${TAR} xfz ${WRKSRC}/ext/cryptopp562.zip)
 
 do-install:
 .for f in synergyc synergyd synergys

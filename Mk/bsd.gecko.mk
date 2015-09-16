@@ -128,17 +128,33 @@ MOZ_MK_OPTIONS+=MOZ_OBJDIR="${MOZ_OBJDIR}"
 CPPFLAGS+=		-isystem${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib -Wl,-rpath,${PREFIX}/lib/${MOZILLA}
 
+.if ${OPSYS} != DragonFly # XXX xpcshell crash during install
 # use jemalloc 3.0.0 API for stats/tuning
 MOZ_EXPORT+=	MOZ_JEMALLOC3=1
-.if ${OSVERSION} < 1000012 || ${MOZILLA_VER:R:R} >= 37
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100079
+. if ${MOZILLA_VER:R:R} < 43
+# system jemalloc 4.0.0 vs. bundled jemalloc 3.6.0-204-gb4acf73
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bug1125514
+. endif
+.elif ${OPSYS} != FreeBSD || ${OSVERSION} < 1000012 || ${MOZILLA_VER:R:R} >= 37
 MOZ_OPTIONS+=	--enable-jemalloc
 .endif
+.endif # !DragonFly
 
 # Standard depends
-_ALL_DEPENDS=	cairo event ffi graphite harfbuzz hunspell icu jpeg nspr nss opus png pixman soundtouch sqlite vorbis vpx
+_ALL_DEPENDS=	cairo event ffi graphite harfbuzz hunspell icu jpeg nspr nss opus png pixman soundtouch sqlite vpx
 
+.if ${PORT_OPTIONS:MINTEGER_SAMPLES}
+MOZ_EXPORT+=	MOZ_INTEGER_SAMPLES=1
+_ALL_DEPENDS+=	tremor
+.else
+_ALL_DEPENDS+=	vorbis
+.endif
+
+.if ! ${PORT_OPTIONS:MBUNDLED_CAIRO}
 cairo_LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
 cairo_MOZ_OPTIONS=	--enable-system-cairo
+.endif
 
 event_LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 event_MOZ_OPTIONS=	--with-system-libevent
@@ -161,9 +177,9 @@ icu_LIB_DEPENDS=		libicui18n.so:${PORTSDIR}/devel/icu
 icu_MOZ_OPTIONS=		--with-system-icu --with-intl-api
 
 -jpeg_BUILD_DEPENDS=yasm:${PORTSDIR}/devel/yasm
-# XXX depends on ports/180159 or package flavor support
-#jpeg_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/libjpeg-turbo
-jpeg_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+# XXX JCS_EXTENSIONS API is currently disabled by r371283
+# XXX Remove files/patch-ijg-libjpeg once -turbo is default
+jpeg_USES=		jpeg
 jpeg_MOZ_OPTIONS=	--with-system-jpeg=${LOCALBASE}
 
 nspr_LIB_DEPENDS=	libnspr4.so:${PORTSDIR}/devel/nspr
@@ -200,6 +216,9 @@ sqlite_MOZ_OPTIONS=	--enable-system-sqlite
 theora_LIB_DEPENDS=	libtheora.so:${PORTSDIR}/multimedia/libtheora
 theora_MOZ_OPTIONS=	--with-system-theora
 
+tremor_LIB_DEPENDS=	libvorbisidec.so:${PORTSDIR}/audio/libtremor
+tremor_MOZ_OPTIONS=	--with-system-tremor --with-system-ogg
+
 vorbis_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 vorbis_MOZ_OPTIONS=	--with-system-vorbis --with-system-ogg
 .endif
@@ -217,6 +236,7 @@ ${use:S/-/_WITHOUT_/}=	${TRUE}
 BUILD_DEPENDS+=	${${dep}_BUILD_DEPENDS}
 LIB_DEPENDS+=	${${dep}_LIB_DEPENDS}
 RUN_DEPENDS+=	${${dep}_RUN_DEPENDS}
+USES+=		${${dep}_USES}
 MOZ_OPTIONS+=	${${dep}_MOZ_OPTIONS}
 .else
 BUILD_DEPENDS+=	${-${dep}_BUILD_DEPENDS}
@@ -253,8 +273,13 @@ MOZ_OPTIONS+=	--with-system-zlib		\
 		--disable-updater		\
 		--disable-pedantic
 
-# XXX stolen from www/chromium
-MOZ_EXPORT+=	MOZ_GOOGLE_API_KEY=AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8
+# API keys from www/chromium 
+# http://www.chromium.org/developers/how-tos/api-keys
+# Note: these are for FreeBSD use ONLY. For your own distribution,
+# please get your own set of keys.
+MOZ_EXPORT+=	MOZ_GOOGLE_API_KEY=AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8 \
+				MOZ_GOOGLE_OAUTH_API_CLIENTID=996322985003.apps.googleusercontent.com \
+				MOZ_GOOGLE_OAUTH_API_KEY=IR1za9-1VK0zZ0f_O8MVFicn
 
 .if ${PORT_OPTIONS:MGTK3}
 MOZ_TOOLKIT=	cairo-gtk3
@@ -367,20 +392,21 @@ MOZ_OPTIONS+=	--disable-debug --enable-release
 .endif
 
 .if ${PORT_OPTIONS:MDTRACE}
-. if ${OSVERSION} < 1000510
-BROKEN=			dtrace -G crashes with C++ object files
-. endif
 MOZ_OPTIONS+=	--enable-dtrace
+. if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100061
 LIBS+=			-lelf
+. endif
 STRIP=
 .else
 MOZ_OPTIONS+=	--disable-dtrace
 .endif
 
-.if ${PORT_OPTIONS:MLOGGING} || ${PORT_OPTIONS:MDEBUG}
+.if ${MOZILLA_VER:R:R} < 40
+. if ${PORT_OPTIONS:MLOGGING} || ${PORT_OPTIONS:MDEBUG}
 MOZ_OPTIONS+=	--enable-logging
-.else
+. else
 MOZ_OPTIONS+=	--disable-logging
+. endif
 .endif
 
 .if ${PORT_OPTIONS:MPROFILE}
@@ -406,6 +432,9 @@ MOZ_OPTIONS+=	--enable-strip --enable-install-strip
 # _MAKE_JOBS is only available after bsd.port.post.mk, thus cannot be
 # used in .mozconfig. And client.mk automatically uses -jN where N
 # is what multiprocessing.cpu_count() returns.
+.if defined(DISABLE_MAKE_JOBS) || defined(MAKE_JOBS_UNSAFE)
+MAKE_JOBS_NUMBER=	1
+.endif
 .if defined(MAKE_JOBS_NUMBER)
 MOZ_MAKE_FLAGS+=-j${MAKE_JOBS_NUMBER}
 .endif
@@ -437,14 +466,13 @@ MOZCONFIG_SED?= ${SED} ${MOZ_SED_ARGS}
 USE_BINUTILS=	# intel-gcm.s
 CFLAGS+=	-B${LOCALBASE}/bin
 LDFLAGS+=	-B${LOCALBASE}/bin
-.  if ${OSVERSION} < 1000041 && exists(/usr/lib/libcxxrt.so) && \
-	${CXXFLAGS:M-stdlib=libc++}
+.  if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000041 && \
+	exists(/usr/lib/libcxxrt.so) && ${CXXFLAGS:M-stdlib=libc++}
 LIBS+=		-lcxxrt
 .  endif
 . endif
 .elif ${ARCH:Mpowerpc*}
 USES:=		compiler:gcc-c++11-lib ${USES:Ncompiler*c++11*}
-CFLAGS+=	-D__STDC_CONSTANT_MACROS
 . if ${ARCH} == "powerpc64"
 MOZ_EXPORT+=	UNAME_m="${ARCH}"
 CFLAGS+=	-mminimal-toc

@@ -64,8 +64,8 @@ CIPHERSTRING?=	HIGH:!SSLv2:!aNULL:!eNULL:@STRENGTH
 
 .if ${PORT_OPTIONS:MDIRECTFB} || ${PORT_OPTIONS:MSVGALIB} || ${PORT_OPTIONS:MX11}
 LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libtiff.so:${PORTSDIR}/graphics/tiff
+USES+=		jpeg
 CONFIGURE_ARGS+=	--enable-graphics
 .else
 CONFIGURE_ARGS+=	--disable-graphics --without-libjpeg --without-libtiff

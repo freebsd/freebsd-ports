@@ -1,6 +1,6 @@
---- ./Makefile.PL.orig	2014-07-27 08:07:00.036965435 +0100
-+++ ./Makefile.PL	2014-07-27 08:05:30.848965659 +0100
-@@ -1031,14 +1031,14 @@
+--- Makefile.PL.orig	2014-05-09 04:07:13 UTC
++++ Makefile.PL
+@@ -1031,14 +1031,14 @@ END
          # Guess a default value for {install} based on whether
          # prerequisites were found.
          #
@@ -17,7 +17,7 @@
          # Need to set {install} for each component by prompting.
          foreach my $info (@opt_components) {
              my $missing = $info->{missing};
-@@ -1067,8 +1067,8 @@
+@@ -1067,8 +1067,8 @@ END
                  die;
              }
  
@@ -28,7 +28,7 @@
          }
      }
  }
-@@ -1272,8 +1272,8 @@
+@@ -1272,8 +1272,8 @@ END
      }
  
      # Remove existing non-working 'uninstall' target.

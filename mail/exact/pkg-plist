@@ -5,4 +5,6 @@ man/man8/exact.8.gz
 sbin/exact
 @owner %%MAILUSER%%
 @group %%MAILGROUP%%
-@dirrmtry %%EXACTDIR%%
+@dir %%EXACTDIR%%
+@owner
+@group

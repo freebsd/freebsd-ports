@@ -1,16 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	phabricator
-PORTVERSION=	20150423
+PORTVERSION=	20150626
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	php5-
 
 MAINTAINER=	grembo@FreeBSD.org
-COMMENT=	Open source software development platform
+COMMENT=	Open source, software engineering platform
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-PHP_DESTDIR=	lib/php/phabricator
 RUN_DEPENDS=	php5-libphutil>0:${PORTSDIR}/devel/libphutil \
 		php5-arcanist>0:${PORTSDIR}/devel/arcanist \
 		git:${PORTSDIR}/devel/git
@@ -19,6 +20,11 @@ OPTIONS_DEFINE=	GD OPCACHE
 OPTIONS_DEFAULT=OPCACHE
 OPCACHE_DESC?=	Use OPcache/APCu (APC on PHP < 5.5) to improve performance
 
+USES=		shebangfix
+SHEBANG_FILES=	externals/httpful/build \
+		externals/restful/build-phar \
+		scripts/install/install_rhel-derivs.sh \
+		scripts/install/install_ubuntu.sh
 USE_PHP=	ctype curl fileinfo hash iconv filter mbstring mysql openssl \
 		pcntl posix
 
@@ -32,7 +38,7 @@ USE_PHP+=	opcache
 RUN_DEPENDS+=	 ${PHPBASE}/lib/php/${PHP_EXT_DIR}/apcu.so:${PORTSDIR}/devel/pecl-APCu
 .	else
 USE_PHP+=	apc
-.	endif	
+.	endif
 .endif
 
 USE_GITHUB=	yes
@@ -40,7 +46,9 @@ NO_BUILD=	yes
 USE_RC_SUBR=	phd
 SUB_FILES=	pkg-message
 GH_ACCOUNT=	phacility
-GH_TAGNAME=	cf154ae
+GH_TAGNAME=	cee1835
+
+PHP_DESTDIR=	lib/php/phabricator
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${PHP_DESTDIR}

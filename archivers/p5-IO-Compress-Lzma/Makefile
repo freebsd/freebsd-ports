@@ -5,7 +5,6 @@ PORTNAME=	IO-Compress-Lzma
 PORTVERSION=	2.068
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:PMQS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -21,6 +20,7 @@ TEST_DEPENDS=	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
 		p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod \
 		p7zip>=0:${PORTSDIR}/archivers/p7zip
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

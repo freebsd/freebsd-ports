@@ -39,9 +39,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ventrilo_srv.ini ${STAGEDIR}${PREFIX}/etc/ventrilo_srv.ini.sample
 	${LN} -s ${PREFIX}/etc/ventrilo_srv.ini ${STAGEDIR}${INSTALL_DIR}/ventrilo_srv.ini
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 PKGDEINSTALL=	${PKGINSTALL}
 
 .include <bsd.port.post.mk>

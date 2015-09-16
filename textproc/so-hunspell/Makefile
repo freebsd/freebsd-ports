@@ -4,7 +4,7 @@ PORTNAME=	hunspell
 PORTVERSION=	1.0.2
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	MOZILLA_EXTENDED/addons/13375
+MASTER_SITES=	MOZILLA_ADDONS/addons/13375
 PKGNAMEPREFIX=	so-
 DISTNAME=	qaamuuska_af_soomaaliga-${PORTVERSION}-tb+fx
 EXTRACT_SUFX=	.xpi
@@ -15,6 +15,7 @@ COMMENT=	Somali hunspell dictionaries
 
 LICENSE=	GPLv3
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/dictionaries
 

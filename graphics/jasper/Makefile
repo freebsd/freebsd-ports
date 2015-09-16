@@ -3,28 +3,22 @@
 
 PORTNAME=	jasper
 PORTVERSION=	1.900.1
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ece.uvic.ca/~mdadams/jasper/software/ \
-		${MASTER_SITE_IMAGEMAGICK}
-MASTER_SITE_SUBDIR=	ImageMagick/delegates
+		ftp://ftp.imagemagick.org/pub/ImageMagick/delegates/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Implementation of the codec specified in the JPEG-2000 standard
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
-
 LICENSE=	MIT
 
-USES=		zip libtool:keepla
+USES=		zip libtool:keepla jpeg
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-shared --enable-static
 USE_LDCONFIG=	yes
-
-MASTER_SITE_IMAGEMAGICK=	\
-	ftp://ftp.imagemagick.org/pub/%SUBDIR%/
 
 OPTIONS_DEFINE= OPENGL UUID DOCS
 UUID_DESC=	UUID support (required by GDAL)

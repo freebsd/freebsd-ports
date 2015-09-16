@@ -11,8 +11,12 @@ MASTER_SITES=	http://ports.internal.vlink.ru/distfiles/
 MAINTAINER=	dsh@wizard.volgograd.ru
 COMMENT=	Python Managesieve Server
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		python tar:bzip2
 USE_RC_SUBR=	${PORTNAME}
+NO_ARCH=	yes
 
 PORTEXAMPLES=	pysieved.xinetd
 SUB_LIST=	PORTNAME=${PORTNAME} PYTHON_CMD=${PYTHON_CMD}

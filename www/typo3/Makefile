@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	typo3
-PORTVERSION=	7.2.0
+PORTVERSION=	7.3.1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION}
 
@@ -10,10 +10,15 @@ MAINTAINER=	freebsd-ports@charlieroot.de
 COMMENT=	Typo3 content management system
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+USES=		cpe shebangfix
+SHEBANG_FILES=	typo3/sysext/core/Build/Scripts/xlfcheck.sh
 NO_BUILD=	yes
+NO_ARCH=	yes
 USE_PHP=	ctype fileinfo filter hash json mysqli openssl pcre session soap xml
 WANT_PHP_WEB=	yes
+WRKSRC=		${WRKDIR}/${TYPO3SRC}
 
 TYPO3WWW=	www
 TYPO3SRC=	${PORTNAME}_src-${PORTVERSION}

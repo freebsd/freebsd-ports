@@ -1,4 +1,4 @@
---- storage/tokudb/ft-index/cmake_modules/TokuFeatureDetection.cmake.orig	2014-09-24 22:29:47 UTC
+--- storage/tokudb/ft-index/cmake_modules/TokuFeatureDetection.cmake.orig	2015-06-17 14:54:13 UTC
 +++ storage/tokudb/ft-index/cmake_modules/TokuFeatureDetection.cmake
 @@ -87,13 +87,7 @@ if (NOT HAVE_DLSYM_WITHOUT_DL)
  endif ()

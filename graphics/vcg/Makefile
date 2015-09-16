@@ -23,7 +23,7 @@ USE_XORG=	x11 xext
 MAKE_JOBS_UNSAFE=	yes
 
 pre-patch:
-	@${MKDIR} ${WRKSRC}/preconf/X11ccFreeBSD
+	@${MKDIR} ${WRKSRC}/preconf/X11cc${OPSYS}
 .for file in conf demo.csh globals.h tMakefile
 	@${SED} -e "s:%%CC%%:${CC}:g" \
 	        -e "s:%%CFLAGS%%:${CFLAGS}:g" \
@@ -32,7 +32,7 @@ pre-patch:
 	        -e "s:%%PREFIX%%:${STAGEDIR}${PREFIX}:g" \
 	        -e "s:%%INSTALL_PROGRAM%%:${INSTALL_PROGRAM}:g" \
 	        -e "s:%%INSTALL_MAN%%:${INSTALL_MAN}:g" \
-		< ${FILESDIR}/${file} > ${WRKSRC}/preconf/X11ccFreeBSD/${file}
+		< ${FILESDIR}/${file} > ${WRKSRC}/preconf/X11cc${OPSYS}/${file}
 .endfor
 
 post-patch:

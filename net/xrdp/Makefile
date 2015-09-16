@@ -3,14 +3,17 @@
 
 PORTNAME=	xrdp
 PORTVERSION=	0.6.1
-PORTREVISION=	6
+DISTVERSIONPREFIX=	v
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	net
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	meta+ports@vmeta.jp
 COMMENT=	Open source Remote Desktop Protocol (RDP) server
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf:build libtool pkgconfig
@@ -21,17 +24,17 @@ USE_XORG=	x11 xfixes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	neutrinolabs
-GH_TAGNAME=	5d53758
 
 CONFIGURE_ARGS=	--localstatedir=/var
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
+SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DEBUG
 OPTIONS_DEFAULT=	JP106 X11RDP
 OPTIONS_GROUP=	KEYMAP XSERVER
-OPTIONS_GROUP_KEYMAP= JP106
-OPTIONS_GROUP_XSERVER= X11RDP
+OPTIONS_GROUP_KEYMAP=	JP106
+OPTIONS_GROUP_XSERVER=	X11RDP
 OPTIONS_RADIO=	XVNC
 OPTIONS_RADIO_XVNC=	REALVNC TIGERVNC TIGHTVNC TRIDIAVNC
 REALVNC_DESC=	Use RealVNC
@@ -41,41 +44,26 @@ TRIDIAVNC_DESC=	Use TridiaVNC
 X11RDP_DESC=	Use X11rdp (most recommended)
 JP106_DESC=	Install Japanese JP106 keymap
 
-.include <bsd.port.options.mk>
-
-# Which Xserver to use
-.if ${PORT_OPTIONS:MREALVNC}
-RUN_DEPENDS=	Xvnc:${PORTSDIR}/net/vnc
-.endif
-.if ${PORT_OPTIONS:MTIGERVNC}
-RUN_DEPENDS=	Xvnc:${PORTSDIR}/net/tigervnc
-.endif
-.if ${PORT_OPTIONS:MTIGHTVNC}
-RUN_DEPENDS=	Xvnc:${PORTSDIR}/net/tightvnc
-.endif
-.if ${PORT_OPTIONS:MTRIDIAVNC}
-RUN_DEPENDS=	Xvnc:${PORTSDIR}/net/tridiavnc
-.endif
+# Debug
+DEBUG_CONFIGURE_ENABLE=	xrdpdebug
+# Xvnc
+REALVNC_RUN_DEPENDS=	Xvnc:${PORTSDIR}/net/vnc
+TIGERVNC_RUN_DEPENDS=	Xvnc:${PORTSDIR}/net/tigervnc
+TIGHTVNC_RUN_DEPENDS=	Xvnc:${PORTSDIR}/net/tightvnc
+TRIDIAVNC_RUN_DEPENDS=	Xvnc:${PORTSDIR}/net/tridiavnc
 # X11rdp
-.if ${PORT_OPTIONS:MX11RDP} || exists(${LOCALBASE}/bin/X11rdp)
-RUN_DEPENDS+=	X11rdp:${PORTSDIR}/x11-servers/x11rdp
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-x11rdp_xrdp.ini
-.endif
+X11RDP_RUN_DEPENDS=	X11rdp:${PORTSDIR}/x11-servers/x11rdp
+X11RDP_EXTRA_PATCHES=	${FILESDIR}/extra-patch-x11rdp_xrdp.ini
+# JP106 keymap
+JP106_PLIST_SUB=	JP106=""
+JP106_PLIST_SUB_OFF=	JP106="@comment "
 
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-xrdpdebug
-CFLAGS+=	-DXRDP_DEBUG
-.endif
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJP106}
 KEYMAP_FILES+=	km-0411.ini km-e0010411.ini \
 		km-e0200411.ini km-e0210411.ini
-PLIST_SUB+=	JP106=""
-.else
-PLIST_SUB+=	JP106="@comment "
 .endif
-
-SUB_FILES=	pkg-message
 
 post-patch:
 .for f in sesman/sesman.ini sesman/startwm.sh xrdp/rsakeys.ini xrdp/xrdp.ini

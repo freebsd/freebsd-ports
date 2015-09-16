@@ -4,8 +4,7 @@
 PORTNAME=	rexima
 PORTVERSION=	1.4
 CATEGORIES=	audio
-MASTER_SITES=	SUNSITE
-MASTER_SITE_SUBDIR=	apps/sound/mixers
+MASTER_SITES=	SUNSITE/apps/sound/mixers
 
 MAINTAINER=	jerry@freebsd.se
 COMMENT=	ncurses-based console mixer

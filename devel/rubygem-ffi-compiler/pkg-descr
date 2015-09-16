@@ -3,4 +3,3 @@ for use with ffi. To use, define your own ruby->native API using ffi, implement
 it in C, then use ffi-compiler to compile it.
 
 WWW: https://github.com/ffi/ffi-compiler
-RG:  https://rubygems.org/gems/ffi-compiler

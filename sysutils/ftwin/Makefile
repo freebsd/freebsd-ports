@@ -2,7 +2,7 @@
 
 PORTNAME=	ftwin
 PORTVERSION=	0.8.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://files.etoilebsd.net/ftwin/ \
 		http://download.meroware.org/ftwin/
@@ -11,22 +11,22 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Useful tool to find duplicate files
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1 \
 		libpcre.so:${PORTSDIR}/devel/pcre \
 		libpuzzle.so:${PORTSDIR}/graphics/libpuzzle
 
-OPTIONS_DEFINE=	DOCS
-
-USES=	tar:bzip2
-USE_AUTOTOOLS=	aclocal autoheader automake autoconf
-AUTOMAKE_ARGS=	--add-missing
+USES=		autoreconf libarchive tar:bzip2
+GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	AUTHORS EXAMPLES TODO CHANGES KNOWN_BUGS VERSION README
 PLIST_FILES=	bin/ftwin man/man8/ftwin.8.gz
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e \

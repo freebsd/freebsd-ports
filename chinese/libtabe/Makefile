@@ -47,15 +47,14 @@ pre-everything::
 	@${ECHO_CMD} ""
 .endif
 
-post-patch:
-.if !${PORT_OPTIONS:MX11}
+post-patch-X11-off:
 	${REINPLACE_CMD} -e '/all:/s/ bims//; /bims/d' \
 		${WRKSRC}/src/Makefile.in
-.endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtabe.so
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/tsi-src/README \
 		${STAGEDIR}${DOCSDIR}/README.tsi
@@ -67,6 +66,5 @@ post-install:
 		et26.txt libtabe.sgml
 	${INSTALL_DATA} ${WRKSRC}/doc/${DOC} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

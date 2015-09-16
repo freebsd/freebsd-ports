@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	passenger
-PORTVERSION=	5.0.7
+PORTVERSION=	5.0.16
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
@@ -34,27 +35,9 @@ RUBYGEM_AUTOPLIST=	yes
 USE_APACHE=	22+
 .endif
 
-.if ${PORT_OPTIONS:MNGINX}
-NGINXVERSION!=	${PKG_INFO} -qO www/nginx-devel 2>/dev/null; ${ECHO_CMD}
-NGXPASSENGER!=	nginx -V 2>&1 | sed 's/.*passenger-\(.*\)\/ext.*/\1/g' | tail -1
-.if empty(NGINXVERSION)
-BUILD_DEPENDS+=	nginx:${PORTSDIR}/www/nginx
-.else
-BUILD_DEPENDS+=	nginx:${PORTSDIR}/www/nginx-devel
-.endif
-.if empty(NGXPASSENGER)
-IGNORE=	rebuild nginx with latest passenger module
-.endif
-.if (${NGXPASSENGER} != ${PORTVERSION})
-IGNORE=	rebuild nginx with third-party ${PORTVERSION} module, current verion is ${NGXPASSENGER}
-.endif
-.endif
-
-LIB_DEPENDS+=	libeio.so:${PORTSDIR}/devel/libeio \
+LIB_DEPENDS+=	libuv.so:${PORTSDIR}/devel/libuv \
 		libcurl.so:${PORTSDIR}/ftp/curl
-BUILD_DEPENDS+=	rubygem-fastthread>=1.0.1:${PORTSDIR}/devel/rubygem-fastthread \
-		rubygem-rack>=0:${PORTSDIR}/www/rubygem-rack \
-		rubygem-daemon_controller>=1.2.0:${PORTSDIR}/devel/rubygem-daemon_controller
+BUILD_DEPENDS+= rubygem-rack16>=0:${PORTSDIR}/www/rubygem-rack16
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 SUB_LIST+=	GEM_LIB_DIR=${GEM_LIB_DIR} RUBY=${RUBY}
@@ -89,18 +72,13 @@ pre-patch:
 		s!#{PlatformInfo.debugging_cflags}!${CFLAGS}!g; \
 		s!-O2!!g; \
 		s! -feliminate-unused-debug-symbols -feliminate-unused-debug-types!!g; \
-		212s!true!false!' \
+		215s!true!false!' \
 		${WRKSRC}/build/basics.rb
 .if ${PORT_OPTIONS:NDEBUG}
 	@${REINPLACE_CMD} \
 		's!-DPASSENGER_DEBUG!-DNDEBUG!g' \
 		${WRKSRC}/build/basics.rb
 .endif
-	@${REINPLACE_CMD} \
-		's!-Iext/libeio!!; \
-		s!/usr/include/libeio!${LOCALBASE}/include!; \
-		s!-leio!-L${LOCALBASE}/lib -leio!' \
-		${WRKSRC}/build/common_library.rb
 
 post-build:
 .if ${PORT_OPTIONS:MAPACHE22}

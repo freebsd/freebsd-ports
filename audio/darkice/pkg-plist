@@ -1,6 +1,4 @@
 bin/darkice
-@unexec if cmp -s %D/etc/darkice.cfg.dist %D/etc/darkice.cfg; then rm -f %D/etc/darkice.cfg; fi
-etc/darkice.cfg.dist
-@exec if [ ! -f %D/etc/darkice.cfg ] ; then cp -p %D/%F %B/darkice.cfg; fi
+@sample etc/darkice.cfg.sample
 man/man1/darkice.1.gz
 man/man5/darkice.cfg.5.gz

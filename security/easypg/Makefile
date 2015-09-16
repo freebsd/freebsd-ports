@@ -5,11 +5,10 @@ PORTNAME=	easypg
 PORTVERSION=	0.0.16
 PORTREVISION=	14
 CATEGORIES=	security elisp
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	epg/29289
+MASTER_SITES=	SFJP/epg/29289
 DISTNAME=	epg-${PORTVERSION}
 
-MAINTAINER=	iwazaki8@yahoo.co.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	EasyPG is yet another GnuPG interface for Emacs
 
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg1

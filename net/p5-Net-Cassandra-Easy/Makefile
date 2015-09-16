@@ -3,7 +3,7 @@
 
 PORTNAME=	Net-Cassandra-Easy
 PORTVERSION=	0.15
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +18,12 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	cassidy.pl genthrift.pl
 USE_PERL5=	configure
+NO_ARCH=	yes
+
+post-patch:
+	${REINPLACE_CMD} -i '' -e '1s|#!perl|#!${perl_CMD}|' ${WRKSRC}/lib/Net/Cassandra/Easy.pm
 
 .include <bsd.port.mk>

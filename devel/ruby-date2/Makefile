@@ -8,9 +8,14 @@ MASTER_SITES=	http://www.funaba.org/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Alternative date class for Ruby
 
+BROKEN_RUBY22=	yes
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
@@ -20,28 +25,14 @@ DOCS_JA=	MANUAL MANUAL.rd MANUAL.html README
 EXAMPLES_EN=	cal.rb daylight.rb goodfriday.rb
 EXAMPLES_JA=	ncal.rb
 
-OPTIONS_DEFINE=	DOCS
-
-post-install:
-	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/ja
-.for f in ${EXAMPLES_EN}
-	${INSTALL_DATA} ${WRKSRC}/sample/${f} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
-.endfor
-.for f in ${EXAMPLES_JA}
-	${INSTALL_DATA} ${WRKSRC}/sample/${f} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/ja/
-.endfor
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/ja
-.for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
-.endfor
-.for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
-.endfor
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS_EN} ${STAGEDIR}${RUBY_MODDOCDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS_JA} ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
 
-.include <bsd.port.pre.mk>
+post-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/ja/
+	cd ${WRKSRC}/sample/ && ${INSTALL_DATA} ${EXAMPLES_EN} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
+	cd ${WRKSRC}/sample/ && ${INSTALL_DATA} ${EXAMPLES_JA} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/ja/
 
-.if ${RUBY_VER} >= 2.2
-BROKEN=		Does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

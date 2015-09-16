@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yad
-PORTVERSION=	0.28.1
+PORTVERSION=	0.29.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	SF/${PORTNAME}-dialog/
 
@@ -16,6 +16,7 @@ GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ENV+=	DATADIRNAME=share
+CONFIGURE_ARGS+=	--disable-html
 
 OPTIONS_DEFINE=	NLS ICONBROWSER
 ICONBROWSER_DESC=	Build YAD icon browser
@@ -29,9 +30,9 @@ OPTIONS_DEFAULT=	GTK2
 NLS_CONFIGURE_OFF=	--disable-nls
 NLS_USES=	gettext
 GTK2_CONFIGURE_ON=	--with-gtk=gtk2
-GTK2_USE=		GNOME=gtk20
+GTK2_USE=		GNOME=gtk20,intltool
 GTK3_CONFIGURE_ON=	--with-gtk=gtk3
-GTK3_USE=		GNOME=gtk30
+GTK3_USE=		GNOME=gtk30,intltool
 ICONBROWSER_CONFIGURE_ENABLE=	icon-browser
 
 .include <bsd.port.options.mk>

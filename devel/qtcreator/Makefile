@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	qtcreator
-DISTVERSION=	3.4.0
+DISTVERSION=	3.5.0
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_QT}
-MASTER_SITE_SUBDIR=official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}
+MASTER_SITES=	QT/official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}
 DISTNAME=	qt-creator-opensource-src-${DISTVERSION}
 DIST_SUBDIR=	KDE
 
@@ -13,7 +12,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	C++ and QML IDE for Qt development
 
 USE_LDCONFIG=	${LOCALBASE}/lib/${PORTNAME}
-USES=		qmake:outsource compiler:c++11-lib shebangfix
+USES=		qmake:outsource compiler:c++11-lib
 USE_QT5=	buildtools concurrent core declarative designer gui linguist network\
 		qml quick quickcontrols script script sql svg webkit widgets xml\
 		xmlpatterns
@@ -28,15 +27,13 @@ QMAKE_ARGS+=	DEFINES+=_GLIBCXX_USE_C99
 DESKTOP_ENTRIES="Qt Creator" "" "QtProject-qtcreator" \
 		"${PREFIX}/bin/${PORTNAME}" "Development;Qt;" true
 
-# There seems to be only one file needing a shebangfix (all the others
-# do not get installed).
-SHEBANG_FILES= share/qtcreator/templates/wizards/scriptgeneratedproject/generate.pl
-
 # Fix paths for gnuplot and ant.
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/bin/gnuplot|${LOCALBASE}/bin/gnuplot|' \
 				${WRKSRC}/share/qtcreator/debugger/dumper.py
 	${REINPLACE_CMD} -e 's|/usr/bin/ant|${LOCALBASE}/bin/ant|' \
 				${WRKSRC}/src/plugins/android/androidsettingswidget.cpp
+	${REINPLACE_CMD} -e '/unix:LIBS += -ldl/d' \
+				${WRKSRC}/src/libs/sqlite/sqlite-lib.pri
 
 .include <bsd.port.mk>

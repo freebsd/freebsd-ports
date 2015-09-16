@@ -16,7 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 PROJECTHOST=	git-core
 GIT_VERSION=	2.3.3
-USES=		gmake iconv shebangfix tar:xz
+USES=		cpe gmake iconv shebangfix tar:xz
+CPE_VENDOR=	lars_hjemli
 SHEBANG_FILES=	filters/html-converters/resources/markdown.pl
 
 CFLAGS+=	-I${LOCALBASE}/include

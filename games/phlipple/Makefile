@@ -3,7 +3,7 @@
 
 PORTNAME=	phlipple
 PORTVERSION=	0.8.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -14,10 +14,10 @@ LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libGLEW.so:${PORTSDIR}/graphics/glew
 
-GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		desktop-file-utils pkgconfig
 USE_SDL=	sdl mixer image
 USE_GL=		gl glu
+GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lm

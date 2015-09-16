@@ -19,8 +19,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 
-CONFLICTS_INSTALL=	wine-compholio-[0-9]* wine-devel-[0-9]* i386-wine-[0-9]* \
-			i386-wine-compholio-[0-9]* i386-wine-devel-[0-9]*
+CONFLICTS_INSTALL=	wine-staging-[0-9]* wine-devel-[0-9]* i386-wine-[0-9]* \
+			i386-wine-staging-[0-9]* i386-wine-devel-[0-9]*
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -95,10 +95,10 @@ V4L_LIB_DEPENDS=	libv4l1.so:${PORTSDIR}/multimedia/libv4l
 WINEMAKER_RUN_DEPENDS=	p5-XML-LibXML>0:${PORTSDIR}/textproc/p5-XML-LibXML
 
 X11_CONFIGURE_WITH=	x cms fontconfig freetype glu jpeg opengl png xinput2 xrandr xrender
+X11_USES=		jpeg
 X11_USE=		GL=glu XORG=xcomposite,xcursor,xi,xrandr,xrender
 X11_LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 			libfreetype.so:${PORTSDIR}/print/freetype2 \
-			libjpeg.so:${PORTSDIR}/graphics/jpeg \
 			liblcms2.so:${PORTSDIR}/graphics/lcms2 \
 			libpng.so:${PORTSDIR}/graphics/png
 

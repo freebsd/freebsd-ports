@@ -1,6 +1,6 @@
---- src/modules/Makefile.in.orig	Fri Apr 11 20:36:36 2003
-+++ src/modules/Makefile.in	Wed Sep 14 16:44:15 2005
-@@ -35,7 +35,7 @@
+--- src/modules/Makefile.in.orig	2003-04-11 16:36:36 UTC
++++ src/modules/Makefile.in
+@@ -35,7 +35,7 @@ DCCFLAGS=	@DCCFLAGS@
  CPPFLAGS=	-I.. @CPPFLAGS@
  
  INSTALL=	@INSTALL@

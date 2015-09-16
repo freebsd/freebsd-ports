@@ -3,7 +3,7 @@
 
 PORTNAME=	brickutils
 PORTVERSION=	0.1.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}-obsolete/ \
 		SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}-obsolete/:docs \
@@ -20,12 +20,12 @@ COMMENT=	Utility for building models with LEGO
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	${LOCALBASE}/share/ldraw/models/car.dat:${PORTSDIR}/cad/ldraw \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
-		${PYXML}
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 
 WRKSRC=		${WRKDIR}/BrickUtils-${PORTVERSION}
 
-USES=		python
+NO_ARCH=	yes
+USES=		python:2
 USE_GNOME=	pygtk2
 
 PORTDOCS=	*
@@ -40,12 +40,8 @@ SUB_FILES=	${PORTNAME} \
 INSTALLS_ICONS=	yes
 ICON_SIZES=	32x32 48x48 64x64 72x72 96x96 128x128
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-DISTFILES+=	${PORTNAME}-manual-it.pdf:docs \
+DOCS_DISTFILES=	${PORTNAME}-manual-it.pdf:docs \
 		${PORTNAME}-manual.pdf:docs
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/|${PREFIX}|' \
@@ -76,10 +72,9 @@ do-install:
 	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 
-.if ${PORT_OPTIONS:MDOCS}
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
 	@(cd ${_DISTDIR} && ${CP} -a *.pdf ${STAGEDIR}${DOCSDIR})
-.endif
 
 .include <bsd.port.mk>

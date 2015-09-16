@@ -6,12 +6,13 @@ PORTNAME=	libproxy
 PORTVERSION=	0.4.6
 PORTREVISION?=	0
 CATEGORIES?=	net devel
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	Library that provides automatic proxy configuration management
 
-USES+=		cmake
+USES+=		cmake cpe
+CPE_VENDOR=	libproxy_project
 
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
@@ -22,6 +23,7 @@ CMAKE_ARGS+=	-DWITH_PYTHON:BOOL=OFF  -DWITH_PERL:BOOL=OFF \
 		-DWITH_WEBKIT:BOOL=OFF -DWITH_MOZJS:BOOL=OFF \
 		-DWITH_NETWORKMANAGER:BOOL=OFF -DWITH_VALA:BOOL=ON
 .else
+PORTSCOUT=	ignore:1
 
 # Libproxy is build for the slave ports, since I haven't been able to find
 # out how to only build optional code with cmake.

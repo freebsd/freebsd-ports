@@ -91,6 +91,7 @@ include/mpio.h
 include/mpiof.h
 %%32BIT_ONLY%%lib/lam/liblam_totalview.so
 %%32BIT_ONLY%%lib/lam/liblam_totalview.so.0
+%%32BIT_ONLY%%lib/lam/liblam_totalview.so.0.0.0
 lib/liblam.a
 lib/liblammpi++.a
 lib/liblammpio.a

@@ -35,11 +35,6 @@
 %%CLIENT%%bin/%%CLIENT_SGUILDIR%%/sguil.tk
 @mode
 %%CLIENT%%etc/sguil.conf-sample
-%%CLIENT%%@dirrm bin/%%CLIENT_SGUILDIR%%/lib/tablelist5.11/scripts
-%%CLIENT%%@dirrm bin/%%CLIENT_SGUILDIR%%/lib/tablelist5.11
-%%CLIENT%%@dirrm bin/%%CLIENT_SGUILDIR%%/lib
-%%CLIENT%%@dirrm bin/%%CLIENT_SGUILDIR%%/images
-%%CLIENT%%@dirrm bin/%%CLIENT_SGUILDIR%%
 @mode 751
 %%SENSOR%%bin/%%SENSOR_SGUILDIR%%/log_packets-daemonlogger.sh
 %%SENSOR%%bin/%%SENSOR_SGUILDIR%%/log_packets.sh
@@ -67,13 +62,6 @@
 %%SENSOR%%%%SANCP_SENSOR%%etc/%%SENSOR_SGUILDIR%%/sancp-indexed.conf-sample
 %%SENSOR%%%%SANCP_SENSOR%%etc/%%SENSOR_SGUILDIR%%/pcap_agent-sancp.conf-sample
 %%SENSOR%%%%SANCP_SENSOR%%etc/%%SENSOR_SGUILDIR%%/sancp.conf-sample
-%%SENSOR%%@dirrm share/%%SENSOR_SGUILDIR%%/init
-%%SENSOR%%@dirrm share/%%SENSOR_SGUILDIR%%/contrib/portscan_loader
-%%SENSOR%%@dirrm share/%%SENSOR_SGUILDIR%%/contrib/ossec_agent
-%%SENSOR%%@dirrm share/%%SENSOR_SGUILDIR%%/contrib
-%%SENSOR%%@dirrm share/%%SENSOR_SGUILDIR%%
-%%SENSOR%%@dirrmtry etc/%%SENSOR_SGUILDIR%%
-%%SENSOR%%@dirrm bin/%%SENSOR_SGUILDIR%%
 %%SERVER%%bin/sguild
 %%SERVER%%etc/%%SERVER_SGUILDIR%%/autocat.conf-sample
 %%SERVER%%etc/%%SERVER_SGUILDIR%%/sguild.access-sample
@@ -129,8 +117,3 @@
 %%SERVER%%share/%%SERVER_SGUILDIR%%/update_sguildb_v7-v8.sql
 %%SERVER%%share/%%SERVER_SGUILDIR%%/update_sguildb_v8-v9.sql
 %%SERVER%%share/%%SERVER_SGUILDIR%%/update_sguildb_v9-v10.sql
-%%SERVER%%@dirrm share/%%SERVER_SGUILDIR%%/contrib/init
-%%SERVER%%@dirrm share/%%SERVER_SGUILDIR%%/contrib
-%%SERVER%%@dirrm share/%%SERVER_SGUILDIR%%
-%%SERVER%%@dirrm lib/%%SERVER_SGUILDIR%%
-%%SERVER%%@dirrm etc/%%SERVER_SGUILDIR%%

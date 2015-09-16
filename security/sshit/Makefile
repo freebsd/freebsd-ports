@@ -5,8 +5,7 @@ PORTNAME=	sshit
 PORTVERSION=	0.6
 PORTREVISION=	4
 CATEGORIES=	security
-MASTER_SITES=	http://anp.ath.cx/sshit/ \
-		${MASTER_SITE_LOCAL}
+MASTER_SITES=	http://anp.ath.cx/sshit/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Checks for SSH/FTP bruteforce and blocks given IPs

@@ -5,13 +5,14 @@ PORTNAME=	quirc
 PORTVERSION=	0.9.84
 PORTREVISION=	5
 CATEGORIES=	irc tk
-MASTER_SITES=	${MASTER_SITE_LOCAL:S/$/:local/}
+MASTER_SITES=	LOCAL:local # This ends up being empty.
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk IRC client for the X Window System
 
 OPTIONS_DEFINE=	DOCS
 
+BROKEN=		Unfetchable
 USES=		tk
 USE_XORG=	xt
 

@@ -1,0 +1,10 @@
+How many times have you written
+
+  sub { $obj->something($some, $args, @_) }
+
+or worse still needed to weaken it and had to check and re-check your code to be
+sure you weren't closing over things the wrong way?
+
+Right. That's why I wrote this.
+
+WWW: http://search.cpan.org/dist/curry/

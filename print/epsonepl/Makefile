@@ -3,7 +3,7 @@
 
 PORTNAME=	epsonepl
 PORTVERSION=	0.2.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/GS-IJS%20Plugin%20v${PORTVERSION}
 DISTNAME=	${PORTNAME}ijs-${PORTVERSION}
@@ -13,8 +13,7 @@ COMMENT=	Printer filter for EPSON EPL-5700L etc
 
 LIB_DEPENDS=	libijs.so:${PORTSDIR}/print/libijs
 
-USES=		uidfix tar:tgz
-USE_GHOSTSCRIPT_RUN=	yes
+USES=		ghostscript:run uidfix tar:tgz
 
 MAKEFILE=	${FILESDIR}/Makefile
 SUB_FILES=	pkg-message

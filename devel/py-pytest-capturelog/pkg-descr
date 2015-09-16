@@ -1,0 +1,6 @@
+py.test plugin to capture log messages
+
+If the plugin is installed log messages are captured by default and for each
+failed test will be shown in the same manner as captured stdout and stderr.
+
+WWW: https://bitbucket.org/memedough/pytest-capturelog/overview

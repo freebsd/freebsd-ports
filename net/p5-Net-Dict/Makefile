@@ -5,7 +5,6 @@ PORTNAME=	Net-Dict
 PORTVERSION=	2.19
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:NEILB
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -16,6 +15,7 @@ LICENSE_COMB=	dual
 
 TEST_DEPENDS=	p5-Test-Differences>=0.620:${PORTSDIR}/devel/p5-Test-Differences
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

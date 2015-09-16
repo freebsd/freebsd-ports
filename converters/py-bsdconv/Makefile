@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bsdconv
-PORTVERSION=	11.1.0
+PORTVERSION=	11.3.0
 CATEGORIES=	converters python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -24,5 +24,8 @@ PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S|^${LOCALBASE}/||g}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/setup.py
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/bsdconv.so
 
 .include <bsd.port.mk>

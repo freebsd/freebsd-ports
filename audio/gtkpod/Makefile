@@ -3,7 +3,7 @@
 
 PORTNAME=	gtkpod
 PORTVERSION=	1.0.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -15,8 +15,11 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libid3tag.so:${PORTSDIR}/audio/libid3tag \
 		libgpod.so:${PORTSDIR}/audio/libgpod
 
-USES=		gettext gmake pkgconfig
-USE_GNOME=	gtk20 libglade2
+USES=		gettext gmake pkgconfig shebangfix
+SHEBANG_FILES=	scripts/mab2vcard scripts/sync-evolution.sh \
+		scripts/sync-knotes.sh scripts/sync-ldif.sh \
+		scripts/sync-palm-jppy.py
+USE_GNOME=	gtk20 intltool libglade2
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 

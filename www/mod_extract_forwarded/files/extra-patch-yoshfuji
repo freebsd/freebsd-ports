@@ -1,4 +1,3 @@
-# $FreeBSD$
 diff --git a/INSTALL b/INSTALL
 index fa06d8a..d1f6d56 100644
 --- a/INSTALL

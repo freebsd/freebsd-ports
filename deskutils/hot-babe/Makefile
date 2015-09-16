@@ -6,8 +6,7 @@ PORTVERSION=	0.2.2
 PORTREVISION=	8
 CATEGORIES=	deskutils
 MASTER_SITES=	http://dindinx.net/hotbabe/downloads/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	novel
+		LOCAL/novel
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Small utility which displays the system activity in a special way

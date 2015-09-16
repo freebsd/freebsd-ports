@@ -1,9 +1,0 @@
---- ./src/shaders/CMakeLists.txt.orig	2013-02-15 11:22:42.000000000 +1030
-+++ ./src/shaders/CMakeLists.txt	2013-02-17 07:11:28.389609929 +1030
-@@ -42,5 +42,5 @@
-                    SOURCES ${shader_source} ${shader_headers})
- 
- install (FILES ${shader_headers} ${shader_source} ${shader_objs}
--         DESTINATION shaders)
-+         DESTINATION ${CMAKE_INSTALL_PREFIX}/share/openshadinglanguage/shaders)
- 

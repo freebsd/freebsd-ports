@@ -1,0 +1,15 @@
+Reference:	https://github.com/nant/nant/issues/91
+Obtained from:	https://github.com/nant/nant/commit/69c8ee96493c5d953212397c8ca06c2392372ca4
+		https://github.com/nant/nant/commit/4ad065d009b043996d4ce2d25ce5031d81c6ce60
+
+--- src/NAnt.NUnit/NAnt.NUnit.build.orig	2012-06-09 14:05:54 UTC
++++ src/NAnt.NUnit/NAnt.NUnit.build
+@@ -42,6 +42,8 @@
+         </csc>
+         <csc target="library" define="${current.build.defines}" warnaserror="${build.warnaserror}" debug="${build.debug}" output="${build.dir}/bin/NAnt.NUnit2Tasks.dll" doc="${build.dir}/bin/NAnt.NUnit2Tasks.xml">
+             <nowarn>
++                <!-- do not report obsolete warnings until XslCompiledTransform works with NUnit2 output -->
++                <warning number="0612" />
+                 <!-- do not report deprecation warnings -->
+                 <warning number="0618" />
+             </nowarn>

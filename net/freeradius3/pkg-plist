@@ -44,6 +44,9 @@ include/freeradius/stats.h
 include/freeradius/sysutmp.h
 include/freeradius/token.h
 include/freeradius/udpfromto.h
+%%LIBDIR%%/libfreeradius-dhcp.a
+%%LIBDIR%%/libfreeradius-dhcp.la
+%%LIBDIR%%/libfreeradius-dhcp.so
 %%LIBDIR%%/libfreeradius-eap.a
 %%LIBDIR%%/libfreeradius-eap.la
 %%LIBDIR%%/libfreeradius-eap.so
@@ -460,7 +463,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/certs/server.key
 %%EXAMPLESDIR%%/raddb/certs/server.p12
 %%EXAMPLESDIR%%/raddb/certs/server.pem
-%%EXAMPLESDIR%%/raddb/certs/user@example.com.pem
+%%EXAMPLESDIR%%/raddb/certs/user@example.org.pem
 %%EXAMPLESDIR%%/raddb/certs/xpextensions
 %%EXAMPLESDIR%%/raddb/clients.conf
 %%EXAMPLESDIR%%/raddb/dictionary
@@ -690,8 +693,10 @@ sbin/radmin
 %%DATADIR%%/dictionary.alvarion
 %%DATADIR%%/dictionary.alvarion.wimax.v2_2
 %%DATADIR%%/dictionary.apc
+%%DATADIR%%/dictionary.aptilo
 %%DATADIR%%/dictionary.aptis
 %%DATADIR%%/dictionary.arbor
+%%DATADIR%%/dictionary.arista
 %%DATADIR%%/dictionary.aruba
 %%DATADIR%%/dictionary.ascend
 %%DATADIR%%/dictionary.ascend.illegal
@@ -861,6 +866,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.walabi
 %%DATADIR%%/dictionary.waverider
 %%DATADIR%%/dictionary.wichorus
+%%DATADIR%%/dictionary.wifialliance
 %%DATADIR%%/dictionary.wimax
 %%DATADIR%%/dictionary.wimax.alvarion
 %%DATADIR%%/dictionary.wimax.wichorus
@@ -886,50 +892,6 @@ sbin/radmin
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/schemas
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/vendor
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%EXAMPLESDIR%%/raddb/certs
-@dirrm %%EXAMPLESDIR%%/raddb/mods-available
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/attr_filter
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/files
-%%RLMPERL%%@dirrm %%EXAMPLESDIR%%/raddb/mods-config/perl
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/preprocess
-%%RLMPYTHON%%@dirrm %%EXAMPLESDIR%%/raddb/mods-config/python
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/counter/mysql
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/counter/postgresql
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/counter/sqlite
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/counter
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/cui/mysql
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/cui/postgresql
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/cui/sqlite
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/cui
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/mysql
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/oracle
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/postgresql
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/sqlite
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/mysql
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/oracle
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/sqlite
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/main/mssql
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/main/mysql/extras/wimax
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/main/mysql/extras
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/main/mysql
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/main/ndb
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/main/oracle
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql/extras
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/main/sqlite
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/main
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config/unbound
-@dirrm %%EXAMPLESDIR%%/raddb/mods-config
-@dirrm %%EXAMPLESDIR%%/raddb/mods-enabled
-@dirrm %%EXAMPLESDIR%%/raddb/policy.d
-@dirrm %%EXAMPLESDIR%%/raddb/sites-available
-@dirrm %%EXAMPLESDIR%%/raddb/sites-enabled
-@dirrm %%EXAMPLESDIR%%/raddb
-@dirrm %%EXAMPLESDIR%%
-@dirrm %%DATADIR%%
 @exec if ! [ -d %D/etc/raddb -o -L %D/etc/raddb ]; then cp -RP %D/%%EXAMPLESDIR%%/raddb %D/etc/raddb; echo '===> Bootstrapping default certificates, please wait...'; %D/etc/raddb/certs/bootstrap >/dev/null 2>&1; fi
 @exec chmod -R g-w,o-rwx %D/etc/raddb
 @exec if [ ! -d /var/log/radacct ]; then mkdir -p /var/log/radacct; chmod -R go= /var/log/radacct; fi

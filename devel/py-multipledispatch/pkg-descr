@@ -1,0 +1,7 @@
+A relatively sane approach to multiple dispatch in Python.
+
+This implementation of multiple dispatch is efficient, mostly complete,
+performs static analysis to avoid conflicts, and provides optional namespace
+support. It looks good too.
+
+WWW: https://pypi.python.org/pypi/multipledispatch

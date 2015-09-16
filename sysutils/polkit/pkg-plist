@@ -1,18 +1,14 @@
-bin/pk-example-frobnicate
 bin/pkaction
 bin/pkcheck
-bin/pkexec
+@(root,,4755) bin/pkexec
 bin/pkttyagent
-@unexec if cmp -s %D/etc/dbus-1/system.d/org.freedesktop.PolicyKit1.conf %D/etc/dbus-1/system.d/org.freedesktop.PolicyKit1.conf.dist; then rm -f %D/etc/dbus-1/system.d/org.freedesktop.PolicyKit1.conf ; fi
-etc/dbus-1/system.d/org.freedesktop.PolicyKit1.conf.dist
-@exec [ -f %B/org.freedesktop.PolicyKit1.conf ] || cp %B/%f %B/org.freedesktop.PolicyKit1.conf
+@sample etc/dbus-1/system.d/org.freedesktop.PolicyKit1.conf.sample
 etc/pam.d/polkit-1
-etc/polkit-1/localauthority.conf.d/50-localauthority.conf
-etc/polkit-1/nullbackend.conf.d/50-nullbackend.conf
+etc/polkit-1/rules.d/50-default.rules
 include/polkit-1/polkit/polkit.h
 include/polkit-1/polkit/polkitactiondescription.h
-include/polkit-1/polkit/polkitauthorityfeatures.h
 include/polkit-1/polkit/polkitauthority.h
+include/polkit-1/polkit/polkitauthorityfeatures.h
 include/polkit-1/polkit/polkitauthorizationresult.h
 include/polkit-1/polkit/polkitcheckauthorizationflags.h
 include/polkit-1/polkit/polkitdetails.h
@@ -35,63 +31,33 @@ include/polkit-1/polkitagent/polkitagent.h
 include/polkit-1/polkitagent/polkitagentenumtypes.h
 include/polkit-1/polkitagent/polkitagentlistener.h
 include/polkit-1/polkitagent/polkitagentsession.h
-include/polkit-1/polkitagent/polkitagenttypes.h
 include/polkit-1/polkitagent/polkitagenttextlistener.h
-include/polkit-1/polkitbackend/polkitbackend.h
-include/polkit-1/polkitbackend/polkitbackendactionlookup.h
-include/polkit-1/polkitbackend/polkitbackendauthority.h
-include/polkit-1/polkitbackend/polkitbackendinteractiveauthority.h
-include/polkit-1/polkitbackend/polkitbackendlocalauthority.h
-include/polkit-1/polkitbackend/polkitbackendtypes.h
+include/polkit-1/polkitagent/polkitagenttypes.h
 lib/girepository-1.0/Polkit-1.0.typelib
 lib/girepository-1.0/PolkitAgent-1.0.typelib
-lib/libpolkit-agent-1.a
-lib/libpolkit-agent-1.la
 lib/libpolkit-agent-1.so
 lib/libpolkit-agent-1.so.0
 lib/libpolkit-agent-1.so.0.0.0
-lib/libpolkit-backend-1.a
-lib/libpolkit-backend-1.la
-lib/libpolkit-backend-1.so
-lib/libpolkit-backend-1.so.0
-lib/libpolkit-backend-1.so.0.0.0
-lib/libpolkit-gobject-1.a
-lib/libpolkit-gobject-1.la
 lib/libpolkit-gobject-1.so
 lib/libpolkit-gobject-1.so.0
 lib/libpolkit-gobject-1.so.0.0.0
-lib/polkit-1/extensions/libnullbackend.a
-lib/polkit-1/extensions/libnullbackend.la
-lib/polkit-1/extensions/libnullbackend.so
+@(root,,4755) lib/polkit-1/polkit-agent-helper-1
+lib/polkit-1/polkitd
 libdata/pkgconfig/polkit-agent-1.pc
-libdata/pkgconfig/polkit-backend-1.pc
 libdata/pkgconfig/polkit-gobject-1.pc
-libexec/polkit-agent-helper-1
-libexec/polkitd
 %%MANPAGES%%man/man1/pkaction.1.gz
 %%MANPAGES%%man/man1/pkcheck.1.gz
 %%MANPAGES%%man/man1/pkexec.1.gz
 %%MANPAGES%%man/man1/pkttyagent.1.gz
-%%MANPAGES%%man/man8/pklocalauthority.8.gz
 %%MANPAGES%%man/man8/polkit.8.gz
 %%MANPAGES%%man/man8/polkitd.8.gz
 share/dbus-1/system-services/org.freedesktop.PolicyKit1.service
 share/gir-1.0/Polkit-1.0.gir
 share/gir-1.0/PolkitAgent-1.0.gir
+share/locale/cs/LC_MESSAGES/polkit-1.mo
 share/locale/da/LC_MESSAGES/polkit-1.mo
-share/polkit-1/actions/org.freedesktop.policykit.examples.pkexec.policy
 share/polkit-1/actions/org.freedesktop.policykit.policy
-@dir share/polkit-1/rules.d
-@dir etc/polkit-1/localauthority/90-mandatory.d
-@dir etc/polkit-1/localauthority/50-local.d
-@dir etc/polkit-1/localauthority/30-site.d
-@dir etc/polkit-1/localauthority/20-org.d
-@dir etc/polkit-1/localauthority/10-vendor.d
-@dir /var/lib/polkit-1/localauthority/90-mandatory.d
-@dir /var/lib/polkit-1/localauthority/50-local.d
-@dir /var/lib/polkit-1/localauthority/30-site.d
-@dir /var/lib/polkit-1/localauthority/20-org.d
-@dir /var/lib/polkit-1/localauthority/10-vendor.d
-@dir /var/lib/polkit-1/localauthority
+@dir(polkitd,,700) etc/polkit-1/rules.d
+@dir(polkitd,,700) share/polkit-1/rules.d
 @dir /var/lib/polkit-1
 @dir /var/lib

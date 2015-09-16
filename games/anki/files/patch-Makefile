@@ -1,12 +1,12 @@
---- ./Makefile.orig	2013-12-09 03:51:52.000000000 +0100
-+++ ./Makefile	2013-12-12 21:03:24.000000000 +0100
+--- Makefile.orig	2013-12-09 02:51:52 UTC
++++ Makefile
 @@ -1,4 +1,4 @@
 -PREFIX=/usr
 +PREFIX=/usr/local
  
  all:
  	@echo "You can run Anki with ./runanki"
-@@ -6,24 +6,31 @@
+@@ -6,24 +6,28 @@ all:
  	@echo "Uninstall with 'sudo make uninstall'"
  
  install:
@@ -36,9 +36,6 @@
 +	cp -av anki.1 ${DESTDIR}${PREFIX}/man/man1/
 +	mkdir -p ${DESTDIR}${PREFIX}/share/mime/packages/
 +	cp -av anki.xml ${DESTDIR}${PREFIX}/share/mime/packages/
-+#	xdg-mime install anki.xml --novendor
-+#	xdg-mime default anki.desktop application/x-anki
-+#	xdg-mime default anki.desktop application/x-apkg
  	@echo
  	@echo "Install complete."
  

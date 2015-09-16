@@ -30,6 +30,6 @@ load_rc_config $name
 : ${ntopng_flags="-e -G ${pid_path}"}
 
 command=%%PREFIX%%/bin/ntopng
-command_args="-e -G $pid_path -1 $httpdocs_path -2 $scripts_path -3 $callbacks_path
+command_args="-e -G $pid_path -1 $httpdocs_path -2 $scripts_path -3 $callbacks_path"
 
 run_rc_command "$1"

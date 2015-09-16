@@ -26,7 +26,7 @@ Patch attached with submission follows:
 +    ipaddr="$1";
 +
 +    /sbin/ifconfig \
-+       | /usr/bin/perl -w -e '
++       | %%LOCALBASE%%/bin/perl -w -e '
 +
 +            my $ip = $ARGV[0];
 +

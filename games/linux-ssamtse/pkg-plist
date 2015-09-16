@@ -1,7 +1,5 @@
-@unexec if cmp -s %D/etc/ssamtse.conf %D/etc/ssamtse.conf.sample; then rm -f %D/etc/ssamtse.conf; fi
 bin/ssamtse
-etc/ssamtse.conf.sample
-@exec [ -f %B/ssamtse.conf ] || cp %B/%f %B/ssamtse.conf
+@sample etc/ssamtse.conf.sample
 %%DATADIR%%/ModExt.txt
 %%DATADIR%%/SE1_00.gro
 %%DATADIR%%/SE1_00_Extra.gro
@@ -183,30 +181,3 @@ etc/ssamtse.conf.sample
 %%DATADIR%%/Worlds/TemplatesSE/StatuesGothic.wld
 %%DATADIR%%/Worlds/TemplatesSE/StatuesSouthAmerica.tbn
 %%DATADIR%%/Worlds/TemplatesSE/StatuesSouthAmerica.wld
-@dirrmtry %%DATADIR%%/Bin
-@dirrmtry %%DATADIR%%/Controls/System
-@dirrmtry %%DATADIR%%/Controls
-@dirrmtry %%DATADIR%%/Data/Defaults
-@dirrmtry %%DATADIR%%/Data/Var
-@dirrmtry %%DATADIR%%/Data
-@dirrmtry %%DATADIR%%/Demos
-@dirrmtry %%DATADIR%%/Help
-@dirrmtry %%DATADIR%%/Levels/LevelsMP
-@dirrmtry %%DATADIR%%/Levels
-@dirrmtry %%DATADIR%%/Mods
-@dirrmtry %%DATADIR%%/Scripts/Addons
-@dirrmtry %%DATADIR%%/Scripts/Commands
-@dirrmtry %%DATADIR%%/Scripts/CustomOptions
-@dirrmtry %%DATADIR%%/Scripts/Dedicated/DefaultCoop
-@dirrmtry %%DATADIR%%/Scripts/Dedicated/DefaultFragmatchSE
-@dirrmtry %%DATADIR%%/Scripts/Dedicated/DefaultScorematchSE
-@dirrmtry %%DATADIR%%/Scripts/Dedicated
-@dirrmtry %%DATADIR%%/Scripts/GLSettings
-@dirrmtry %%DATADIR%%/Scripts/menu
-@dirrmtry %%DATADIR%%/Scripts/NetSettings
-@dirrmtry %%DATADIR%%/Scripts/WorldEditorKeys
-@dirrmtry %%DATADIR%%/Scripts
-@dirrmtry %%DATADIR%%/VirtualTrees
-@dirrmtry %%DATADIR%%/Worlds/TemplatesSE
-@dirrmtry %%DATADIR%%/Worlds
-@dirrmtry %%DATADIR%%

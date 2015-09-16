@@ -1,11 +1,11 @@
---- sharedstreambuf/sharedstreambuf.orig	2013-11-22 08:53:40.000000000 +0100
-+++ sharedstreambuf/sharedstreambuf	2013-11-27 14:30:47.000000000 +0100
+--- sharedstreambuf/sharedstreambuf.orig	2014-06-01 13:29:49 UTC
++++ sharedstreambuf/sharedstreambuf
 @@ -1,6 +1,10 @@
  #ifndef INCLUDED_BOBCAT_SHAREDSTREAMBUF_
  #define INCLUDED_BOBCAT_SHAREDSTREAMBUF_
  
-+#ifdef __FreeBSD__
-+#include <stdio.h>
++#if defined(__FreeBSD__) || defined(__DragonFly__)
++#include <cstdio>
 +#endif
 +
  #include <ios>

@@ -3,7 +3,7 @@
 
 PORTNAME=	Readonly-XS
 PORTVERSION=	1.05
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,5 +19,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure
 USES=		perl5
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Readonly/XS/XS.so
 
 .include <bsd.port.mk>

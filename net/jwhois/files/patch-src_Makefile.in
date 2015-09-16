@@ -1,6 +1,6 @@
---- src/Makefile.in.dist	2007-07-01 17:56:14.000000000 +0900
-+++ src/Makefile.in	2008-05-26 13:46:50.000000000 +0900
-@@ -231,6 +231,7 @@
+--- src/Makefile.in.orig	2007-07-01 08:56:14 UTC
++++ src/Makefile.in
+@@ -231,6 +231,7 @@ jwhois_CFLAGS = $(OLDCFLAGS) -DSYSCONFDI
           -DLOCALEDIR="\"$(localedir)\""
  
  jwhois_LDADD = $(top_srcdir)/gl/libgnu.a

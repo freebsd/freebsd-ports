@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PAR
-PORTVERSION=	1.009
+PORTVERSION=	1.010
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,6 +17,7 @@ BUILD_DEPENDS=	p5-Archive-Zip>=1:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-PAR-Dist>=0.32:${PORTSDIR}/devel/p5-PAR-Dist
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

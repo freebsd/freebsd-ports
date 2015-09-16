@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	pcre
-PORTVERSION=	8.35
-PORTREVISION=	2
+PORTVERSION=	8.37
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
-		ftp://ftp.csx.cam.ac.uk/pub/software/programming/%SUBDIR%/ \
-		ftp://ftp.fu-berlin.de/unix/misc/%SUBDIR%/ \
-		ftp://ftp.tin.org/pub/libs/%SUBDIR%/
-MASTER_SITE_SUBDIR=${PORTNAME}
+		ftp://ftp.csx.cam.ac.uk/pub/software/programming/${PORTNAME}/ \
+		ftp://ftp.fu-berlin.de/unix/misc/${PORTNAME}/ \
+		ftp://ftp.tin.org/pub/libs/${PORTNAME}/
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Perl Compatible Regular Expressions library
@@ -30,6 +29,7 @@ OPTIONS_DEFAULT=	STACK_RECURSION
 STACK_RECURSION_DESC=	Use the stack for recursion during matching
 
 LIBEDIT_CONFIGURE_ENABLE=	pcretest-libedit
+LIBEDIT_USES=			libedit
 
 READLINE_USES=			readline
 READLINE_CONFIGURE_ENABLE=	pcretest-libreadline
@@ -50,11 +50,6 @@ PORTDOCS=	*
 # prone to segfaults from stack exhaustion when matching certain patterns
 .if !${PORT_OPTIONS:MSTACK_RECURSION}
 CONFIGURE_ARGS+=	--disable-stack-for-recursion
-.endif
-
-# libedit
-.if ${PORT_OPTIONS:MLIBEDIT}
-CFLAGS+=	-I /usr/include/edit
 .endif
 
 # Optional knobs that accept positive integer parameters (see pcrebuild(3)):

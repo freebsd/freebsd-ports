@@ -3,8 +3,7 @@
 PORTNAME=	python-tools
 PORTVERSION=	${PYTHON_PORTVERSION}
 CATEGORIES=	lang python devel
-MASTER_SITES=	PYTHON
-MASTER_SITE_SUBDIR=	ftp/python/${PORTVERSION}
+MASTER_SITES=	PYTHON/ftp/python/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Python-${PORTVERSION}
 
@@ -23,14 +22,13 @@ DISTINFO_FILE=	${PORTSDIR}/lang/python${PYTHON_SUFFIX}/distinfo
 WRKSRC=		${WRKDIR}/Python-${PORTVERSION}/Tools/scripts
 
 SCRIPT_FILES=	byteyears checkpyc copytime crlf dutree \
-		ftpmirror lfcr ptags untabify
+		lfcr ptags untabify
 PYLIB_FILES=	tabnanny timeit
 PLIST_FILES=	${SCRIPT_FILES:C/^.*/bin\/&/g} ${PYLIB_FILES:C/^.*/bin\/&/g}
 
 SHEBANG_LANG=	python
 SHEBANG_FILES=	${SCRIPT_FILES:C/^.*/&\.py/g} \
 		../../Lib/tabnanny.py ../../Lib/timeit.py
-python_CMD=	${PYTHON_CMD}
 
 UNIQUE_SUFFIX=		-${PYTHON_VER}
 UNIQUE_SUFFIX_FILES=	${SCRIPT_FILES:C/^.*/bin\/&/g} \
@@ -38,7 +36,7 @@ UNIQUE_SUFFIX_FILES=	${SCRIPT_FILES:C/^.*/bin\/&/g} \
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 320
+.if ${PYTHON_REL} < 3200
 SCRIPT_FILES+=	logmerge
 python_OLD_CMD=	/usr/bin/env python
 .else

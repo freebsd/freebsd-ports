@@ -4,8 +4,7 @@
 PORTNAME=	clambc
 DISTVERSION=	0.98.5rc1
 CATEGORIES=	security
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	clamav/${PORTNAME:tl}
+MASTER_SITES=	SF/clamav/${PORTNAME:tl}
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Bytecode signature compiler for ClamAV
@@ -23,6 +22,8 @@ CONFIGURE_ARGS=	--enable-optimized --enable-targets=host-only \
 		--disable-bindings --enable-bindings=none
 
 WRKSRC=		${WRKDIR}/clamav-bytecode-compiler-${DISTNAME}/obj
+
+MAKE_JOBS_UNSAFE=	yes
 
 post-extract:
 	@${MKDIR} ${WRKSRC}

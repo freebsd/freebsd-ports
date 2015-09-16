@@ -5,8 +5,7 @@ PORTNAME=	linux_kdump
 PORTVERSION=	1.5
 PORTREVISION=	3
 CATEGORIES=	devel linux
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	marcel
+MASTER_SITES=	LOCAL/marcel
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Linux-compatibility ktrace.out processor

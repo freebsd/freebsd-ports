@@ -14,6 +14,8 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-posix-spawn>=0.3.6:${PORTSDIR}/devel/rubygem-posix-spawn \
 		rubygem-yajl-ruby>=1.2.0:${PORTSDIR}/devel/rubygem-yajl-ruby
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

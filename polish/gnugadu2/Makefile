@@ -3,7 +3,7 @@
 
 PORTNAME=	gnugadu2
 PORTVERSION=	2.3.0
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	polish net-im
 MASTER_SITES=	SF/ggadu/gg2/${PORTVERSION}
 DISTNAME=	gg2-${PORTVERSION}
@@ -21,6 +21,7 @@ USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xaw ice xscrnsaver
 WANT_GNOME=	yes
+INSTALL_TARGET=	install-strip
 # there is a header conflict here, that breaks build
 CONFLICTS=	qhacc-[0-9]*
 

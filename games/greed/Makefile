@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	greed
-PORTVERSION=	3.11
+PORTVERSION=	4.1
 CATEGORIES=	games
 MASTER_SITES=	http://catb.org/~esr/greed/
 PKGNAMESUFFIX=	-game

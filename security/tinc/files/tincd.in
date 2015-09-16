@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: tincd
-# REQUIRE: ipfilter FILESYSTEMS sysctl netif
+# REQUIRE: ipfilter FILESYSTEMS sysctl netif ldconfig
 # BEFORE:  SERVERS routing
 # KEYWORD: nojail
 #
@@ -39,7 +39,7 @@ tincd_start()
 		for cfg in ${tincd_cfg}
 		do
 			echo "Starting tincd for: ${cfg}"
-			$command -n $cfg
+			$command -n $cfg $tincd_flags
 		done
 	fi
 # code deliberately borrowed from /etc/rc.d/netif

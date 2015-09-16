@@ -1,9 +1,8 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/graphics/libchamplain/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	libchamplain
-PORTVERSION=	0.12.9
+PORTVERSION=	0.12.10
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
@@ -20,7 +19,7 @@ USE_SQLITE=	3
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-gtk-doc-html=no
 INSTALL_TARGET=	install-strip
 

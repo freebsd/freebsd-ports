@@ -1,9 +1,8 @@
 # Created by: marcus@FreeBSD.org
 # $FreeBSD$
-#   $MCom: ports/graphics/poppler/Makefile,v 1.84 2013/03/12 14:53:49 kwm Exp $
 
 PORTNAME=	poppler
-PORTVERSION=	0.30.0
+PORTVERSION=	0.34.0
 PORTREVISION?=	0
 CATEGORIES=	graphics print
 MASTER_SITES=	http://poppler.freedesktop.org/
@@ -14,15 +13,15 @@ COMMENT?=	PDF rendering library
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	poppler-data>0:${PORTSDIR}/graphics/poppler-data
 
-USES=		gmake libtool pathfix pkgconfig tar:xz
+USES=		cpe gmake jpeg libtool pathfix pkgconfig tar:xz
+CPE_VENDOR=	freedesktop
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -33,9 +32,6 @@ CONFIGURE_ARGS=	--enable-zlib \
 		--disable-static
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-# see https://bugs.freedesktop.org/show_bug.cgi?id=72499
-CPPFLAGS+=	 -D__LONG_LONG_SUPPORTED
 
 INSTALL_TARGET=	install-strip
 
@@ -126,7 +122,6 @@ CONFIGURE_ARGS+=--disable-libopenjpeg
 .endif # end of options
 
 post-patch:
-	@${REINPLACE_CMD} '/CXXFLAGS.*-ansi/d' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-fno-check-new||g' ${WRKSRC}/configure
 
 post-install:

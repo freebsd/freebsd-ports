@@ -4,11 +4,10 @@
 PORTNAME=	autoconf
 PORTVERSION=	2.69
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	autoconf
+MASTER_SITES=	GNU
 DISTNAME=	autoconf-${PORTVERSION}
 
-MAINTAINER=	autotools@FreeBSD.org
+MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Automatically configure source code on many Un*x platforms
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \

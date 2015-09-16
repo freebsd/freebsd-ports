@@ -10,10 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Converts JPG images to ASCII
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
-USES=		tar:bzip2
+USES=		jpeg tar:bzip2
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--with-jpeg-prefix=${LOCALBASE} \

@@ -1,0 +1,4 @@
+bin/whoseip
+%%SITE_PERL%%/Whoseip/DB.pm
+%%PERL5_MAN3%%/Whoseip::DB.3.gz
+man/man1/whoseip.1.gz

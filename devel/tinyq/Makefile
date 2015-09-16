@@ -3,7 +3,7 @@
 
 PORTNAME=	tinyq
 PORTVERSION=	3.0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel kde
 MASTER_SITES=	http://www.uwyn.com/download/tinyq/
 
@@ -18,7 +18,6 @@ MAKE_ENV+=	QTDIR="${WRKSRC}" INSTALL_ROOT="${STAGEDIR}"
 REINPLACE_ARGS=	-i ''
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2|${CXXFLAGS}|' \
@@ -28,5 +27,9 @@ post-patch:
 		-e 's|/usr/X11R6|${LOCALBASE}|' \
 		-e 's|release|release thread|' \
 		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/tinyq/bin/qmake
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/tinyq/lib/libtinyq-mt.so
 
 .include <bsd.port.mk>

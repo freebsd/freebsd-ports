@@ -3,7 +3,7 @@
 
 PORTNAME=	openvas-plugins
 PORTVERSION=	1.0.7
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	security
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/588/
 
@@ -32,5 +32,10 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|libnet-config|${LIBNET_CONFIG}|' \
 		${WRKSRC}/plugins/3com_hub/Makefile
+
+post-install:
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/lib/openvas/plugins/*.nes
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/openvas/plugins/*.nes
+	${CHMOD} u-w ${STAGEDIR}${PREFIX}/lib/openvas/plugins/*.nes
 
 .include <bsd.port.mk>

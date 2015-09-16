@@ -11,6 +11,7 @@ COMMENT=	Library for HTTP authentication protocol in RFC 2617
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

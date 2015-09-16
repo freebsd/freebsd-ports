@@ -3,7 +3,7 @@
 
 PORTNAME=	wmbiff
 PORTVERSION=	0.4.27
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	mail windowmaker afterstep
 MASTER_SITES=	SF
 
@@ -14,6 +14,8 @@ LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	GNUTLS
 
+USES=		shebangfix
+SHEBANG_FILES=	scripts/security.debian.rb
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 
@@ -25,20 +27,15 @@ PLIST_FILES=	bin/wmbiff \
 		%%DATADIR%%/skins/wmbiff-master-contrast.xpm \
 		%%DATADIR%%/skins/wmbiff-master-led.xpm
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libgnutls.so:${PORTSDIR}/security/gnutls
-CONFIGURE_ARGS+=	--with-libgnutls-prefix=${LOCALBASE} \
+GNUTLS_LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
+			libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_CONFIGURE_ON=	--with-libgnutls-prefix=${LOCALBASE} \
 			--with-libgcrypt-prefix=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--disable-crypto
-.endif
+GNUTLS_CONFIGURE_OFF=	--disable-crypto
 
 post-install:
 	@${ECHO_MSG} "===>   Installing sample.wmbiffrc to ${DATADIR}"
 	@${ECHO_MSG} "===>   Modify it to suit your needs and copy to ~/.wmbiffrc"
 	${INSTALL_DATA} ${WRKSRC}/wmbiff/sample.wmbiffrc ${STAGEDIR}${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

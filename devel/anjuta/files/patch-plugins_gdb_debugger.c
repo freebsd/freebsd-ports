@@ -5,7 +5,7 @@
  #define GDB_PROMPT  "(gdb)"
  #define FILE_BUFFER_SIZE 1024
 -#define GDB_PATH "gdb"
-+#define GDB_PATH "/usr/local/bin/gdb"
++#define GDB_PATH "/usr/local/bin/gdb791"
  #define MAX_CHILDREN		25		/* Limit the number of variable children
  									 * returned by debugger */
  #define SUMMARY_MAX_LENGTH   90	 /* Should be smaller than 4K to be displayed

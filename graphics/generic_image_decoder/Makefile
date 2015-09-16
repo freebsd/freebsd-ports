@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	generic_image_decoder
-PORTVERSION=	03
+PORTVERSION=	04
 CATEGORIES=	graphics
 MASTER_SITES=	http://sourceforge.net/projects/${SFPATH}/
 DISTNAME=	gid-${PORTVERSION}
@@ -19,8 +19,6 @@ MAKE_ENV+=	Build_Mode=Fast_but_checked
 PORTDOCS=	gid.txt
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 post-extract:
 	${CP} ${FILESDIR}/construct.gpr ${WRKSRC}
@@ -48,9 +46,9 @@ do-install:
 		${STAGEDIR}${PREFIX}/lib/generic_image_decoder
 	(cd ${WRKSRC}/test && ${INSTALL_PROGRAM} to_bmp mini \
 		${STAGEDIR}${PREFIX}/bin)
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/gid.txt ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

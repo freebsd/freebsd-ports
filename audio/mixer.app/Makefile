@@ -5,10 +5,10 @@ PORTNAME=	mixer.app
 PORTVERSION=	1.8.0
 PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
+MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mbeis@xs4all.nl
 COMMENT=	Another mixer intended for the windowmaker dockapp
 
 PLIST_FILES=	bin/Mixer.app

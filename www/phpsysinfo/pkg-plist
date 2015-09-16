@@ -56,6 +56,7 @@
 %%WWWDIR%%/gfx/images/Gobo.png
 %%WWWDIR%%/gfx/images/HPUX.png
 %%WWWDIR%%/gfx/images/Haiku.png
+%%WWWDIR%%/gfx/images/Handy.png
 %%WWWDIR%%/gfx/images/IPFire.png
 %%WWWDIR%%/gfx/images/KaOS.png
 %%WWWDIR%%/gfx/images/Korora.png
@@ -83,6 +84,7 @@
 %%WWWDIR%%/gfx/images/Porteus.png
 %%WWWDIR%%/gfx/images/Puppy.png
 %%WWWDIR%%/gfx/images/QNX.png
+%%WWWDIR%%/gfx/images/Qubes.png
 %%WWWDIR%%/gfx/images/ROSA.png
 %%WWWDIR%%/gfx/images/Raspbian.png
 %%WWWDIR%%/gfx/images/ReactOS.png
@@ -128,6 +130,7 @@
 %%WWWDIR%%/gfx/images/gNewSense.png
 %%WWWDIR%%/gfx/images/iycc.png
 %%WWWDIR%%/gfx/images/openSUSE.png
+%%WWWDIR%%/gfx/images/pfSense.png
 %%WWWDIR%%/gfx/images/unknown.png
 %%WWWDIR%%/gfx/logo_48.png
 %%WWWDIR%%/gfx/next.png
@@ -211,14 +214,15 @@
 %%WWWDIR%%/index.php
 %%WWWDIR%%/js.php
 %%WWWDIR%%/js/jQuery/README
+%%WWWDIR%%/js/jQuery/README_bootstrap
 %%WWWDIR%%/js/jQuery/jquery-1.js
 %%WWWDIR%%/js/jQuery/jquery.dataTables.js
 %%WWWDIR%%/js/jQuery/jquery.jgrowl.js
 %%WWWDIR%%/js/jQuery/jquery.js
 %%WWWDIR%%/js/jQuery/jquery.nyroModal.js
 %%WWWDIR%%/js/jQuery/jquery.timers.js
-%%WWWDIR%%/js/jQuery/jquery.treegrid.js
 %%WWWDIR%%/js/jQuery/jquery.treeTable.js
+%%WWWDIR%%/js/jQuery/jquery.treegrid.js
 %%WWWDIR%%/js/phpSysInfo/phpsysinfo.js
 %%WWWDIR%%/js/phpSysInfo/phpsysinfo_bootstrap.js
 %%WWWDIR%%/js/vendor/README
@@ -283,6 +287,7 @@
 %%WWWDIR%%/plugins/bat/lang/ru.xml
 %%WWWDIR%%/plugins/dmraid/class.dmraid.inc.php
 %%WWWDIR%%/plugins/dmraid/css/dmraid.css
+%%WWWDIR%%/plugins/dmraid/dmraid_bootstrap.html
 %%WWWDIR%%/plugins/dmraid/gfx/error.png
 %%WWWDIR%%/plugins/dmraid/gfx/harddrivefail.png
 %%WWWDIR%%/plugins/dmraid/gfx/harddriveok.png
@@ -294,7 +299,6 @@
 %%WWWDIR%%/plugins/dmraid/lang/fr.xml
 %%WWWDIR%%/plugins/dmraid/lang/ro.xml
 %%WWWDIR%%/plugins/dmraid/lang/ru.xml
-%%WWWDIR%%/plugins/dmraid/dmraid_bootstrap.html
 %%WWWDIR%%/plugins/ipmiinfo/class.ipmiinfo.inc.php
 %%WWWDIR%%/plugins/ipmiinfo/ipmiinfo_bootstrap.html
 %%WWWDIR%%/plugins/ipmiinfo/js/ipmiinfo.js
@@ -422,6 +426,7 @@
 %%WWWDIR%%/sample/distrotest/CentOS/5.6.txt
 %%WWWDIR%%/sample/distrotest/CentOS/6.5-SF.txt
 %%WWWDIR%%/sample/distrotest/CentOS/6.5.txt
+%%WWWDIR%%/sample/distrotest/CentOS/7.1.1503.txt
 %%WWWDIR%%/sample/distrotest/Chakra/2013.02.txt
 %%WWWDIR%%/sample/distrotest/ClearOS/6.4.0-Beta.txt
 %%WWWDIR%%/sample/distrotest/Cloud/5.10.txt
@@ -444,6 +449,7 @@
 %%WWWDIR%%/sample/distrotest/Gentoo/2.2-NAME.txt
 %%WWWDIR%%/sample/distrotest/Gentoo/2.2.txt
 %%WWWDIR%%/sample/distrotest/Gobo/015.beta2.txt
+%%WWWDIR%%/sample/distrotest/Handy/2.0.txt
 %%WWWDIR%%/sample/distrotest/IPFire/2.13.txt
 %%WWWDIR%%/sample/distrotest/KaOS/2014.0301.txt
 %%WWWDIR%%/sample/distrotest/Korora/20.txt
@@ -481,11 +487,13 @@
 %%WWWDIR%%/sample/distrotest/Puppy/5.3-wary.txt
 %%WWWDIR%%/sample/distrotest/Puppy/5.3.3-slacko.txt
 %%WWWDIR%%/sample/distrotest/Puppy/528-lucid.txt
+%%WWWDIR%%/sample/distrotest/Qubes/3.0.txt
 %%WWWDIR%%/sample/distrotest/ROSA/2012.0.0-11-LTS.txt
 %%WWWDIR%%/sample/distrotest/ROSA/2012.0.0-6-LTS.txt
 %%WWWDIR%%/sample/distrotest/ROSA/2012.1.0-20.txt
 %%WWWDIR%%/sample/distrotest/ROSA/6.5-Server.txt
 %%WWWDIR%%/sample/distrotest/Raspbian/7.txt
+%%WWWDIR%%/sample/distrotest/Raspbian/8.0.txt
 %%WWWDIR%%/sample/distrotest/RedFlag/8.0.txt
 %%WWWDIR%%/sample/distrotest/RedHat/6.0.txt
 %%WWWDIR%%/sample/distrotest/RedHat/7.0-Beta.txt
@@ -571,6 +579,7 @@
 %%WWWDIR%%/sample/motherboard/ipmitool/ipmitool1.txt
 %%WWWDIR%%/sample/motherboard/ipmiutil/ipmiutil1.txt
 %%WWWDIR%%/sample/motherboard/lmsensors/lmsensors1.txt
+%%WWWDIR%%/sample/motherboard/lmsensors/lmsensors10.txt
 %%WWWDIR%%/sample/motherboard/lmsensors/lmsensors2.txt
 %%WWWDIR%%/sample/motherboard/lmsensors/lmsensors3.txt
 %%WWWDIR%%/sample/motherboard/lmsensors/lmsensors4.txt
@@ -579,7 +588,6 @@
 %%WWWDIR%%/sample/motherboard/lmsensors/lmsensors7.txt
 %%WWWDIR%%/sample/motherboard/lmsensors/lmsensors8.txt
 %%WWWDIR%%/sample/motherboard/lmsensors/lmsensors9.txt
-%%WWWDIR%%/sample/motherboard/lmsensors/lmsensors10.txt
 %%WWWDIR%%/sample/motherboard/mbm5/MBM51.csv
 %%WWWDIR%%/sample/plugin_bat/README
 %%WWWDIR%%/sample/plugin_bat/ac_state1.txt
@@ -633,6 +641,7 @@
 %%WWWDIR%%/templates/aqua.css
 %%WWWDIR%%/templates/aqua/aq_background.gif
 %%WWWDIR%%/templates/clean.css
+%%WWWDIR%%/templates/cleansyn.css
 %%WWWDIR%%/templates/cream.css
 %%WWWDIR%%/templates/cream/bg.gif
 %%WWWDIR%%/templates/html/error_config.html

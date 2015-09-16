@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	treetop
-PORTVERSION=	1.6.2
+PORTVERSION=	1.6.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,6 +12,8 @@ COMMENT=	Ruby-based DSL for text parsing and interpretation
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-polyglot>=0.3:${PORTSDIR}/devel/rubygem-polyglot
+
+NO_ARCH=	yes
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

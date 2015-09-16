@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opensmtpd
-PORTVERSION=	201502012312
-PORTREVISION=	2
+PORTVERSION=	201506112227
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/ \
@@ -29,7 +28,7 @@ MAILERCONF_DESC=	Activate OpenSMTPD in mailer.conf(5)
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libevent-dir=${LOCALBASE} --sysconfdir=${PREFIX}/etc/mail/ \
-		--with-mailwrapper --with-ssl-dir=${OPENSSLBASE}
+		--with-mailwrapper --with-ssl-dir=${OPENSSLBASE} --enable-table-db
 
 USE_RC_SUBR=	smtpd
 SUB_FILES=	pkg-install pkg-deinstall

@@ -17863,3 +17863,10 @@
 %%TOMCAT_DIR%%/webapps/xsl-portal/WEB-INF/web.xml
 %%TOMCAT_DIR%%/webapps/xsl-portal/sample/new-sample.xml
 %%TOMCAT_DIR%%/webapps/xsl-portal/sample/sample.xml
+@dir %%TOMCAT_DIR%%/webapps/web/WEB-INF/classes
+@dir %%TOMCAT_DIR%%/webapps/portal/WEB-INF/classes
+@dir %%TOMCAT_DIR%%/webapps/portal-render/WEB-INF/classes
+@dir %%TOMCAT_DIR%%/webapps/osp-jsf-resource/WEB-INF/classes
+@dir %%TOMCAT_DIR%%/webapps/login-render/WEB-INF/classes
+@dir %%TOMCAT_DIR%%/webapps/jsf-resource/WEB-INF/classes
+@dir %%TOMCAT_DIR%%/webapps/access/WEB-INF/classes

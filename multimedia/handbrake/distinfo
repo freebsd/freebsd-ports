@@ -1,5 +1,5 @@
-SHA256 (handbrake/HandBrake-0.10.1.tar.bz2) = 7ea42031fd4d5efd04903a9aae79c952c50fd43b6f7bf08fd1a93f6b358a23f5
-SIZE (handbrake/HandBrake-0.10.1.tar.bz2) = 10441776
+SHA256 (handbrake/HandBrake-0.10.2.tar.bz2) = 4cc3828393b26a982dbe00febd700c5090d3443c1d45492e0b373e02da73c699
+SIZE (handbrake/HandBrake-0.10.2.tar.bz2) = 10442635
 SHA256 (handbrake/a52dec-0.7.4.tar.gz) = 54981ab08fc09a675b9924372cf0cca5aa5363b918c4c19065c2d40e2858be47
 SIZE (handbrake/a52dec-0.7.4.tar.gz) = 242978
 SHA256 (handbrake/faac-1.28.tar.gz) = c5141199f4cfb17d749c36ba8cfe4b25f838da67c22f0fec40228b6b9c3d19df
@@ -10,8 +10,6 @@ SHA256 (handbrake/fdk-aac-v0.1.1-6-gbae4553.tar.bz2) = f08584d59a02db5facf548ae8
 SIZE (handbrake/fdk-aac-v0.1.1-6-gbae4553.tar.bz2) = 1843256
 SHA256 (handbrake/libav-v10.1.tar.bz2) = bc3807426d4e73fe8c245730b0df4ba95766cf7e17e47c738ee302f73d066ac9
 SIZE (handbrake/libav-v10.1.tar.bz2) = 5325944
-SHA256 (handbrake/lame-3.98.tar.gz) = 40235e84dfe4760ad3f352590a64b7bda1502a386c97d06229df356426e37686
-SIZE (handbrake/lame-3.98.tar.gz) = 1411318
 SHA256 (handbrake/libbluray-0.5.0.tar.bz2) = d414b548ff97c081e1a2f337c0904f44e65d91a00d2efa4a46a1ecd3de285b4d
 SIZE (handbrake/libbluray-0.5.0.tar.bz2) = 555298
 SHA256 (handbrake/libdca-r81-strapped.tar.gz) = ab2519af6c2f12411a2bd674b83615af9b0d5fb09f28ad5dab714ea1bfab9df1

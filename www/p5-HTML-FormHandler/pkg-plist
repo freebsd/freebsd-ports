@@ -174,6 +174,7 @@
 %%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates/foo/label.tt
 %%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates/foo/start_form.tt
 %%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates/form/form.tt
+%%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates/form/form22.tt
 %%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates/form/form_end.tt
 %%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates/form/form_in_one.tt
 %%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates/form/form_start.tt

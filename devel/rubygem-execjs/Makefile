@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	execjs
-PORTVERSION=	2.5.2
+PORTVERSION=	2.6.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,6 +12,8 @@ COMMENT=	ExecJS lets you run JavaScript code from Ruby
 LICENSE=	MIT
 
 RUN_DEPENDS=	node:${PORTSDIR}/www/node
+
+NO_ARCH=	yes
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

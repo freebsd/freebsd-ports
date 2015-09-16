@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sun Mar 13 02:25:54 2005
-+++ Makefile.in	Sun Mar 13 02:26:11 2005
-@@ -92,7 +92,7 @@
+--- Makefile.in.orig	2008-04-12 01:02:47 UTC
++++ Makefile.in
+@@ -116,7 +116,7 @@ detox.o: detox.c detox_path.h
  # Actions
  #
  

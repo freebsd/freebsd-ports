@@ -1,6 +1,6 @@
---- texk/xdvik/tests/Makefile.am.orig	2014-09-02 18:41:34.000000000 +0900
-+++ texk/xdvik/tests/Makefile.am	2015-01-31 21:02:18.000000000 +0900
-@@ -22,11 +22,17 @@
+--- texk/xdvik/tests/Makefile.am.orig	2013-03-13 20:24:29 UTC
++++ texk/xdvik/tests/Makefile.am
+@@ -22,11 +22,17 @@ run_tests_SOURCES = \
  
  $(run_tests_OBJECTS): ../libxdvi.a $(common_dependencies)
  

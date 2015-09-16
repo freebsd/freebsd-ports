@@ -6,10 +6,12 @@ PORTVERSION=	1.2
 CATEGORIES=	www python
 MASTER_SITES=	http://code.arp242.net/download-gemist/downloads/
 
-MAINTAINER=	martin@arp242.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Download videos from the Dutch uitzending gemist site
 
 LICENSE=	MIT
+
+BROKEN=		does not work (needs to be updated to the latest version)
 
 USES=		python
 NO_BUILD=	yes

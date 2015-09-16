@@ -27,4 +27,3 @@ share/locale/sr@latin/LC_MESSAGES/gnome-web-photo.mo
 share/locale/sv/LC_MESSAGES/gnome-web-photo.mo
 share/locale/uk/LC_MESSAGES/gnome-web-photo.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-web-photo.mo
-@dirrm %%DATADIR%%

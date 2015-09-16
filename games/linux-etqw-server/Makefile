@@ -7,7 +7,7 @@ CATEGORIES=	games linux
 MASTER_SITES=	http://ftp.4players.de/pub/hosted/wolfenstein/users/etqw/server/ \
 		ftp://ftp0.uk.multiplay.co.uk/pub/games/fps/enemyterritory_quakewars/server/linux/ \
 		ftp://ftp0.nl.multiplay.co.uk/pub/games/fps/enemyterritory_quakewars/server/linux/ \
-		${MASTER_SITE_IDSOFTWARE:S|$|etqw/|}
+		IDSOFTWARE/etqw
 PKGNAMEPREFIX=	linux-
 PKGNAMESUFFIX=	-server
 DISTNAME=	ETQW${PKGNAMESUFFIX}-1.5-full.x86

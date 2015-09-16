@@ -3,7 +3,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VERSION}
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN/../../src/5.0
 DIST_SUBDIR=	perl
@@ -53,7 +53,7 @@ PERL_MALLOC_CONFIGURE_OFF=	-Dusemymalloc=n
 PORTSCOUT=	limit:^${PERL_VER}.
 
 # Remember to update Mk/Uses/perl5.mk too.
-PERL_VERSION=	5.20.2
+.include "version.mk"
 PERL_VER=	${PERL_VERSION:C/\.[0-9]+$//}
 PERL_ARCH=	mach
 SITE_PERL_REL?=	lib/perl5/site_perl
@@ -108,7 +108,7 @@ SUB_LIST+=	PERL_VERSION=${PERL_VERSION} \
 		SITEMAN3PREFIX=${SITE_MAN3_PREFIX} \
 		PERL_ARCH=${PERL_ARCH}
 
-SUB_FILES=	perl5_version
+SUB_FILES=	perl5_version perl-man.conf
 
 INSTALL_TARGET=	install-strip
 
@@ -144,8 +144,7 @@ PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
 		PRIV_LIB=${_PRIV_LIB} \
 		ARCH_LIB=${_ARCH_LIB}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.default-versions.mk"
+.include "${.CURDIR}/../../Mk/bsd.default-versions.mk"
 
 # if this port is default due PERL5_DEFAULT
 # change PKGNAME to reflect this
@@ -158,34 +157,21 @@ PKGNAMESUFFIX=	${PERL_VER}
 CONFLICTS_INSTALL+=	perl5-*
 .endif
 
-.if ${OSVERSION} >= 900022
-SUB_FILES+=	perl-man.conf
-PLIST_SUB+=	MANCONF=""
-.else
-# FIXME when 8.4 goes out, remove this
-SUB_FILES+=	use.perl
-PLIST_SUB+=	MANCONF="@comment "
-PKGINSTALL=	${WRKDIR}/use.perl
-PKGDEINSTALL=	${WRKDIR}/use.perl
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-STRIP=
-STRIP_CMD=	${TRUE}
-.endif
 
 # Put a symlink to the future libperl.so.x.yy so that -lperl works.
 post-extract:
 	${LN} -s libperl.so.${PERL_VERSION} ${WRKSRC}/libperl.so
 	${LN} -s libperl.so.${PERL_VERSION} ${WRKSRC}/libperl.so.${PERL_VER}
 
+.if !defined(MAKING_PATCHES)
+# make clean patch makepatch MAKING_PATCHES=
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/Configure ${WRKSRC}/hints/freebsd.sh
-.if ${PORT_OPTIONS:MPTHREAD}
+post-patch-PTHREAD-on:
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|-lpthread|g;' \
 		${WRKSRC}/hints/freebsd.sh
-.else
+post-patch-PTHREAD-off:
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%||g;' \
 		${WRKSRC}/hints/freebsd.sh
 .endif
@@ -213,13 +199,11 @@ post-install:
 			${STRIP_CMD} $$f; \
 			${CHMOD} 444 $$f; \
 		done
-.if ${OSVERSION} >= 900022
 	${INSTALL_DATA} ${WRKDIR}/perl-man.conf ${STAGEDIR}${PREFIX}/etc/man.d/perl${PERL_VER}.conf
-.endif
 
 test: build
 	(cd ${WRKSRC}; TEST_JOBS=${MAKE_JOBS_NUMBER} make test_harness)
 
 regression-test: test
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

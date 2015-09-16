@@ -2,17 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	elementary
-PORTVERSION=	3.0
+PORTVERSION=	3.2.2
 CATEGORIES=	x11-themes gnome
-MASTER_SITES=	https://cooltrainer.org/freebsd-ports/gnome-icons-elementary/
+MASTER_SITES=	https://launchpadlibrarian.net/215062034/ \
+	https://launchpad.net/elementaryicons/3.x/${PORTVERSION}/+download/
+PKGNAMEPREFIX=	gnome-icons-
+DISTNAME=	${PORTNAME}-icon-theme-${PORTVERSION}
 
 MAINTAINER=	root@cooltrainer.org
 COMMENT=	Elementary icon set
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3
 
-USES=	zip:infozip
-EXTRACT_AFTER_ARGS?=	-d ${WRKDIR} -x 'elementary/.bzrignore'
+USES=	tar:xz
+NO_BUILD=	yes
+INSTALLS_ICONS=	yes
 
-.include "${.CURDIR}/../gnome-icons/bsd.gnome-icons.mk"
+do-install:
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/icons/elementary/ \
+		"! -name 'plist' ! -name '*.bak' ! -name '${LICENSE}' ! -path 'stage/*' "
+	${FIND} ${STAGEDIR}${PREFIX}/share/icons/elementary/ -depth 2 \
+		-type d -empty | \
+		${XARGS} ${RMDIR}
+
 .include <bsd.port.mk>

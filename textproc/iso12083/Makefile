@@ -5,8 +5,7 @@ PORTNAME=	iso12083
 PORTVERSION=	1993
 PORTREVISION=	2
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	kuriyama/iso12083
+MASTER_SITES=	LOCAL/kuriyama/iso12083
 DISTFILES=	article.dtd book.dtd maths.dtd serial.dtd
 EXTRACT_ONLY=	# empty
 

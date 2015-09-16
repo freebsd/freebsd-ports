@@ -5,8 +5,7 @@ PORTNAME=	tvdownloader
 PORTVERSION=	0.7.2
 PORTREVISION=	5
 CATEGORIES=	french multimedia
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-MASTER_SITE_SUBDIR=
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Download podcasts and videos from French websites
@@ -22,10 +21,9 @@ RUN_DEPENDS=	msdl:${PORTSDIR}/multimedia/msdl	\
 USES=		python shebangfix
 SHEBANG_FILES=	doc/installdox
 ALL_TARGET=	build
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|@python|${PYTHON_CMD}|'	\
@@ -34,10 +32,11 @@ pre-configure:
 		${WRKSRC}/tvdownloader.sh
 	${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|'	\
 		${WRKSRC}/tvdownload.desktop
-.if empty(PORT_OPTIONS:MDOCS)
-	${REINPLACE_CMD} -e 's|%%DOC%%|#|' ${WRKSRC}/Makefile
-.else
+
+pre-configure-DOCS-on:
 	${REINPLACE_CMD} -e 's|%%DOC%%||' ${WRKSRC}/Makefile
-.endif
+
+pre-configure-DOCS-off:
+	${REINPLACE_CMD} -e 's|%%DOC%%|#|' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

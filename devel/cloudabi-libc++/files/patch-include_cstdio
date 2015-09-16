@@ -1,0 +1,25 @@
+--- include/cstdio.orig	2015-06-17 04:49:22 UTC
++++ include/cstdio
+@@ -151,7 +151,6 @@ using ::setvbuf;
+ using ::fprintf;
+ using ::fscanf;
+ using ::snprintf;
+-using ::sprintf;
+ using ::sscanf;
+ #ifndef _LIBCPP_MSVCRT
+ using ::vfprintf;
+@@ -159,14 +158,12 @@ using ::vfscanf;
+ using ::vsscanf;
+ #endif // _LIBCPP_MSVCRT
+ using ::vsnprintf;
+-using ::vsprintf;
+ using ::fgetc;
+ using ::fgets;
+ using ::fputc;
+ using ::fputs;
+ using ::getc;
+ using ::putc;
+-using ::ungetc;
+ using ::fread;
+ using ::fwrite;
+ using ::fgetpos;

@@ -1,5 +1,4 @@
 bin/mate-power-manager
-bin/mate-power-manager-bugreport
 bin/mate-power-preferences
 bin/mate-power-statistics
 etc/xdg/autostart/mate-power-manager.desktop
@@ -9,7 +8,7 @@ sbin/mate-power-backlight-helper
 share/MateConf/gsettings/mate-power-manager.convert
 share/applications/mate-power-preferences.desktop
 share/applications/mate-power-statistics.desktop
-share/dbus-1/services/mate-power-manager.service
+share/dbus-1/services/org.mate.PowerManager.service
 share/dbus-1/services/org.mate.panel.applet.BrightnessAppletFactory.service
 share/dbus-1/services/org.mate.panel.applet.InhibitAppletFactory.service
 share/help/C/mate-power-manager/figures/applet-brightness.png
@@ -298,6 +297,7 @@ share/locale/en@shaw/LC_MESSAGES/mate-power-manager.mo
 share/locale/en_AU/LC_MESSAGES/mate-power-manager.mo
 share/locale/en_CA/LC_MESSAGES/mate-power-manager.mo
 share/locale/en_GB/LC_MESSAGES/mate-power-manager.mo
+share/locale/en_US/LC_MESSAGES/mate-power-manager.mo
 share/locale/es/LC_MESSAGES/mate-power-manager.mo
 share/locale/et/LC_MESSAGES/mate-power-manager.mo
 share/locale/eu/LC_MESSAGES/mate-power-manager.mo
@@ -316,6 +316,7 @@ share/locale/is/LC_MESSAGES/mate-power-manager.mo
 share/locale/it/LC_MESSAGES/mate-power-manager.mo
 share/locale/ja/LC_MESSAGES/mate-power-manager.mo
 share/locale/ka/LC_MESSAGES/mate-power-manager.mo
+share/locale/kk/LC_MESSAGES/mate-power-manager.mo
 share/locale/kn/LC_MESSAGES/mate-power-manager.mo
 share/locale/ko/LC_MESSAGES/mate-power-manager.mo
 share/locale/ku/LC_MESSAGES/mate-power-manager.mo
@@ -356,15 +357,11 @@ share/locale/vi/LC_MESSAGES/mate-power-manager.mo
 share/locale/zh_CN/LC_MESSAGES/mate-power-manager.mo
 share/locale/zh_HK/LC_MESSAGES/mate-power-manager.mo
 share/locale/zh_TW/LC_MESSAGES/mate-power-manager.mo
-share/mate-2.0/ui/brightness-applet-menu.xml
-share/mate-2.0/ui/inhibit-applet-menu.xml
 share/mate-panel/applets/org.mate.BrightnessApplet.mate-panel-applet
 share/mate-panel/applets/org.mate.InhibitApplet.mate-panel-applet
 %%DATADIR%%/acme.ui
 %%DATADIR%%/gpm-feedback-widget.ui
-%%DATADIR%%/gpm-prefs-deprecated.ui
 %%DATADIR%%/gpm-prefs.ui
-%%DATADIR%%/gpm-statistics-deprecated.ui
 %%DATADIR%%/gpm-statistics.ui
 %%DATADIR%%/icons/hicolor/16x16/actions/gpm-hibernate.png
 %%DATADIR%%/icons/hicolor/16x16/actions/gpm-suspend.png
@@ -701,4 +698,6 @@ share/mate-panel/applets/org.mate.InhibitApplet.mate-panel-applet
 %%DATADIR%%/icons/hicolor/scalable/status/gpm-ups-100-charging.svg
 %%DATADIR%%/icons/hicolor/scalable/status/gpm-ups-100.svg
 %%DATADIR%%/icons/hicolor/scalable/status/gpm-ups-missing.svg
+%%DATADIR%%/ui/brightness-applet-menu.xml
+%%DATADIR%%/ui/inhibit-applet-menu.xml
 share/polkit-1/actions/org.mate.power.policy

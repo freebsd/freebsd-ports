@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	Fri Apr 11 20:36:26 2003
-+++ src/Makefile.in	Thu Sep 15 11:01:15 2005
-@@ -74,9 +74,3 @@
+--- src/Makefile.in.orig	2003-04-11 16:36:26 UTC
++++ src/Makefile.in
+@@ -74,9 +74,3 @@ install-prog:
  	$(INSTALL) -s $(PROG) $(INSTALL_DIR)/ ;
  
  install: install-prog

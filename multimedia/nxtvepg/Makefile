@@ -3,6 +3,7 @@
 
 PORTNAME=	nxtvepg
 PORTVERSION=	2.8.0
+PORTREVISION=	1
 CATEGORIES=	multimedia tcl tk
 MASTER_SITES=	SF
 
@@ -25,6 +26,7 @@ post-patch:
 	@${REINPLACE_CMD} 's|wait.h|sys/&|' ${WRKSRC}/epgdb/ttxgrab.c
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/nxtvepg ${STAGEDIR}${PREFIX}/bin/nxtvepgd
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} README TODO CHANGES manual.html \
 		${STAGEDIR}${DOCSDIR})

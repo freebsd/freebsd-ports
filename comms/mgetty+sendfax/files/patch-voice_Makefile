@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- voice/Makefile.orig
 +++ voice/Makefile
 @@ -13,6 +13,8 @@

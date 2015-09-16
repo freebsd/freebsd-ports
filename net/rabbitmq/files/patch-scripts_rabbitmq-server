@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- scripts/rabbitmq-server.orig
+--- scripts/rabbitmq-server.orig	2015-05-22 10:15:37 UTC
 +++ scripts/rabbitmq-server
-@@ -82,6 +82,7 @@
+@@ -100,6 +100,7 @@ fi
  set -f
  
  RABBITMQ_CONFIG_FILE=$RABBITMQ_CONFIG_FILE \

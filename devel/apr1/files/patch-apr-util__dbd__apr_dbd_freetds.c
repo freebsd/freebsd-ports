@@ -20,7 +20,7 @@
  
  /* This probably needs to change for different applications */
  #define MAX_COL_LEN 256
-@@ -67,6 +67,7 @@
+@@ -67,6 +67,7 @@ struct apr_dbd_t {
      apr_dbd_transaction_t *trans;
      apr_pool_t *pool;
      const char *params;
@@ -28,7 +28,7 @@
      RETCODE err;
  };
  
-@@ -80,20 +81,20 @@
+@@ -80,20 +81,20 @@ struct apr_dbd_results_t {
  
  struct apr_dbd_row_t {
      apr_dbd_results_t *res;
@@ -56,7 +56,7 @@
  
  /* execute a query that doesn't return a result set, mop up,
   * and return and APR-flavoured status
-@@ -102,7 +103,11 @@
+@@ -102,7 +103,11 @@ static RETCODE freetds_exec(DBPROCESS *p
                              int want_results, int *nrows)
  {
      /* TBD */
@@ -69,7 +69,7 @@
      if (rv != SUCCEED) {
          return rv;
      }
-@@ -143,6 +148,7 @@
+@@ -143,6 +148,7 @@ static int dbd_freetds_select(apr_pool_t
       * Ignore seek
       */
  
@@ -77,7 +77,7 @@
      sql->err = freetds_exec(sql->proc, query, 1, NULL);
      if (!dbd_freetds_is_success(sql->err)) {
          if (sql->trans) {
-@@ -190,51 +196,38 @@
+@@ -190,51 +196,38 @@ static int dbd_freetds_select(apr_pool_t
  #endif
      return (sql->err == SUCCEED) ? 0 : 1;
  }
@@ -151,7 +151,7 @@
      }
      strcpy(p_out, p_in);
      return ret;
-@@ -244,8 +237,7 @@
+@@ -244,8 +237,7 @@ static int dbd_freetds_pselect(apr_pool_
                                 apr_dbd_prepared_t *statement,
                                 int seek, const char **values)
  {
@@ -161,7 +161,7 @@
      return dbd_freetds_select(pool, sql, results, query, seek);
  }
  static int dbd_freetds_pvselect(apr_pool_t *pool, apr_dbd_t *sql,
-@@ -273,8 +265,7 @@
+@@ -273,8 +265,7 @@ static int dbd_freetds_pquery(apr_pool_t
                                int *nrows, apr_dbd_prepared_t *statement,
                                const char **values)
  {
@@ -171,7 +171,7 @@
      return dbd_freetds_query(sql, nrows, query);
  }
  static int dbd_freetds_pvquery(apr_pool_t *pool, apr_dbd_t *sql, int *nrows,
-@@ -301,11 +292,13 @@
+@@ -301,11 +292,13 @@ static int dbd_freetds_get_row(apr_pool_
      RETCODE rv = 0;
      apr_dbd_row_t *row = *rowp;
      int sequential = ((rownum >= 0) && res->random) ? 0 : 1;
@@ -185,7 +185,7 @@
      }
      /*
      else {
-@@ -321,18 +314,37 @@
+@@ -321,18 +314,37 @@ static int dbd_freetds_get_row(apr_pool_
          rv = dbnextrow(res->proc);
      }
      else {
@@ -226,7 +226,7 @@
      }
  
      return 0;
-@@ -340,24 +352,27 @@
+@@ -340,24 +352,27 @@ static int dbd_freetds_get_row(apr_pool_
  
  static const char *dbd_freetds_get_entry(const apr_dbd_row_t *row, int n)
  {
@@ -263,7 +263,7 @@
      return apr_psprintf(sql->pool, "Error %d", sql->err);
  }
  
-@@ -367,6 +382,7 @@
+@@ -367,6 +382,7 @@ static int dbd_freetds_query(apr_dbd_t *
          return sql->trans->errnum;
      }
      *nrows = 0;
@@ -271,7 +271,7 @@
      sql->err = freetds_exec(sql->proc, query, 0, nrows);
  
      if (sql->err != SUCCEED) {
-@@ -384,114 +400,39 @@
+@@ -384,114 +400,39 @@ static const char *dbd_freetds_escape(ap
      return arg;
  }
  
@@ -406,7 +406,7 @@
  }
  
  static int dbd_freetds_start_transaction(apr_pool_t *pool, apr_dbd_t *handle,
-@@ -541,9 +482,9 @@
+@@ -541,9 +482,9 @@ static DBPROCESS *freetds_open(apr_pool_
      DBPROCESS *process;
      LOGINREC *login;
      static const char *delims = " \r\n\t;|,";
@@ -419,7 +419,7 @@
      int vlen;
      int klen;
      char *buf;
-@@ -564,7 +505,7 @@
+@@ -564,7 +505,7 @@ static DBPROCESS *freetds_open(apr_pool_
          }
          for (key = ptr-1; apr_isspace(*key); --key);
          klen = 0;
@@ -428,7 +428,7 @@
              --key;
              ++klen;
          }
-@@ -631,6 +572,7 @@
+@@ -631,6 +572,7 @@ static apr_dbd_t *dbd_freetds_open(apr_p
      sql->pool = pool;
      sql->proc = process;
      sql->params = params;
@@ -436,7 +436,7 @@
      return sql;
  }
  
-@@ -686,24 +628,73 @@
+@@ -686,24 +628,73 @@ static int dbd_freetds_num_tuples(apr_db
  static apr_status_t freetds_term(void *dummy)
  {
      dbexit();
@@ -519,7 +519,7 @@
      dberrhandle(freetds_err_handler);
      apr_pool_cleanup_register(pool, NULL, freetds_term, apr_pool_cleanup_null);
  }
-@@ -765,7 +756,11 @@
+@@ -765,7 +756,11 @@ static apr_status_t dbd_freetds_datum_ge
  #endif
  
  APU_MODULE_DECLARE_DATA const apr_dbd_driver_t apr_dbd_freetds_driver = {
@@ -531,7 +531,7 @@
      dbd_freetds_init,
      dbd_freetds_native,
      dbd_freetds_open,
-@@ -787,19 +782,14 @@
+@@ -787,19 +782,14 @@ APU_MODULE_DECLARE_DATA const apr_dbd_dr
      dbd_freetds_pvselect,
      dbd_freetds_pquery,
      dbd_freetds_pselect,

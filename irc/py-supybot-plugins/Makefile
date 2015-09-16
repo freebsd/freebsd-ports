@@ -9,7 +9,7 @@ MASTER_SITES=	SF/supybot/OldFiles
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Supybot-plugins-${PORTVERSION}
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Official plugin pack for Supybot
 
 RUN_DEPENDS=	supybot:${PORTSDIR}/irc/py-supybot

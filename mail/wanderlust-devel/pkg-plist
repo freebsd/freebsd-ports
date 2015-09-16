@@ -51,6 +51,8 @@
 %%WL_LISPDIR%%/elmo-pipe.elc
 %%WL_LISPDIR%%/elmo-pop3.el
 %%WL_LISPDIR%%/elmo-pop3.elc
+%%WL_LISPDIR%%/elmo-rss.el
+%%WL_LISPDIR%%/elmo-rss.elc
 %%WL_LISPDIR%%/elmo-search.el
 %%WL_LISPDIR%%/elmo-search.elc
 %%WL_LISPDIR%%/elmo-sendlog.el

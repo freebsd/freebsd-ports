@@ -27,6 +27,4 @@ WX_CONF_ARGS=	relative
 
 PLIST_FILES=	bin/panoglview
 
-BROKEN_powerpc=		Does not configure on powerpc
-
 .include <bsd.port.mk>

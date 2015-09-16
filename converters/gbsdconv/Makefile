@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gbsdconv
-PORTVERSION=	11.1
+PORTVERSION=	11.3
 CATEGORIES=	converters python
 
 MAINTAINER=	buganini@gmail.com
@@ -26,5 +26,8 @@ PLIST_FILES=	bin/gbsdconv \
 		%%DATADIR%%/gbsdconv.png \
 		%%DATADIR%%/gbsdconv.xml \
 		%%DATADIR%%/gbsdconv2.png
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gbsdconv_taglib.so
 
 .include <bsd.port.mk>

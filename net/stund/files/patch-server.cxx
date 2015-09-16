@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- server.cxx.orig
 +++ server.cxx
 @@ -6,10 +6,14 @@

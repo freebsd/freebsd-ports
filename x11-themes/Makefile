@@ -60,7 +60,6 @@
     SUBDIR += gtk-aluminumalloy-toxic-theme
     SUBDIR += gtk-aluminumalloy-volcanic-theme
     SUBDIR += gtk-aquaextremesunken-theme
-    SUBDIR += gtk-aqualightblue-theme
     SUBDIR += gtk-aurora-engine
     SUBDIR += gtk-blueprint-engine
     SUBDIR += gtk-cleanice-engine
@@ -69,7 +68,6 @@
     SUBDIR += gtk-engines2
     SUBDIR += gtk-envy-theme
     SUBDIR += gtk-equinox-engine
-    SUBDIR += gtk-flat-theme2
     SUBDIR += gtk-gray-theme
     SUBDIR += gtk-lila-theme
     SUBDIR += gtk-lila-theme-extras
@@ -84,7 +82,6 @@
     SUBDIR += gtk-oxygen-engine
     SUBDIR += gtk-qnxtheme
     SUBDIR += gtk-qt4-engine
-    SUBDIR += gtk-theme-engine-clearlooks
     SUBDIR += gtk-xfce-engine
     SUBDIR += gtk3-oxygen-engine
     SUBDIR += gtk3-unico-engine
@@ -151,9 +148,12 @@
     SUBDIR += qt4-style-float
     SUBDIR += qt4-style-phase
     SUBDIR += qt4-style-quantumstyle
+    SUBDIR += qtcurve
     SUBDIR += qtcurve-gtk2
     SUBDIR += qtcurve-kde4
     SUBDIR += qtcurve-qt4
+    SUBDIR += qtcurve-qt5
+    SUBDIR += qtcurve-utils
     SUBDIR += rezlooks
     SUBDIR += sawfish-themes
     SUBDIR += slim-themes

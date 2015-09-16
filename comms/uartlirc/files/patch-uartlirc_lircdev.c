@@ -1,6 +1,6 @@
 --- uartlirc_lircdev.c.orig
 +++ uartlirc_lircdev.c
-@@ -33,6 +33,7 @@ __FBSDID("$FreeBSD$");
+@@ -33,6 +33,7 @@ __FBSDID("$FreeBSD: $");
  #include <sys/conf.h>
  #include <sys/cons.h>
  #include <sys/fcntl.h>

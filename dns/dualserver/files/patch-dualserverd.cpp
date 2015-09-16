@@ -1,5 +1,5 @@
---- dualserverd.cpp	2012-11-09 17:02:36.000000000 +0100
-+++ dualserverd.cpp	2012-11-12 13:17:25.000000000 +0100
+--- dualserverd.cpp.orig	2015-07-27 19:41:31.000000000 +0000
++++ dualserverd.cpp	2015-07-27 19:46:28.000000000 +0000
 @@ -22,10 +22,16 @@
  #include <math.h>
  #include <sys/types.h>
@@ -85,7 +85,39 @@
  
  					newNetwork.dhcpListener.addr.sin_family = AF_INET;
  					newNetwork.dhcpListener.addr.sin_addr.s_addr = INADDR_ANY;
-@@ -9496,8 +9523,11 @@
+@@ -9458,6 +9485,10 @@
+ 	else
+ 		return false;
+ }
++#define MAX(a,b) ((a)>(b)?(a):(b))
++#define NEXTIFR(i)                                              \
++    ((struct ifreq *)((char *)&(i)->ifr_addr                    \
++        + MAX((i)->ifr_addr.sa_len, sizeof((i)->ifr_addr))) )
+ 
+ void getInterfaces(data1 *network)
+ {
+@@ -9469,14 +9500,16 @@
+ 	if (ioctl(cfig.fixedSocket, SIOCGIFCONF, &Ifc) >= 0)
+ 	{
+ 
++		struct ifreq *ifrp, *ifen;
+ 		MYDWORD addr, mask;
+ 		short flags;
+ 		struct ifreq pIfr;
+-		MYBYTE numInterfaces = Ifc.ifc_len / sizeof(ifreq);
++		ifrp = (struct ifreq *)Ifc.ifc_buf;
++		ifen = (struct ifreq *)((char *)Ifc.ifc_buf + Ifc.ifc_len);
+ 
+-		for (MYBYTE i = 0 ; i < numInterfaces; i++)
+-		{
+-			memcpy(&pIfr, &(IfcBuf[i]), sizeof(ifreq));
++		for (; ifrp < ifen;) {
++			memcpy(&pIfr, ifrp, sizeof(ifreq));
++			ifrp = NEXTIFR(ifrp);
+ 
+ 			if (!ioctl(cfig.fixedSocket, SIOCGIFADDR, &pIfr))
+ 				addr = ((struct sockaddr_in*)&pIfr.ifr_addr)->sin_addr.s_addr;
+@@ -9496,8 +9529,11 @@
  
  			if (addr && !(flags & IFF_LOOPBACK))
  				addServer(network->allServers, addr);
@@ -98,7 +130,7 @@
  			{
  				if ((flags & IFF_RUNNING) && (flags & IFF_UP))
  				{
-@@ -9656,6 +9686,12 @@
+@@ -9656,6 +9692,12 @@
  
  MYWORD gdmess(data9 *req, MYBYTE sockInd)
  {
@@ -111,7 +143,7 @@
      //sprintf(logBuff, "Socket=%u", sockInd);
  	//logDHCPMess(logBuff, 1);
      memset(req, 0, sizeof(data9));
-@@ -9671,7 +9707,11 @@
+@@ -9671,7 +9713,11 @@
          req->msg.msg_name = &req->remote;
          req->msg.msg_namelen = sizeof(sockaddr_in);
          req->msg.msg_control = &req->msgcontrol;
@@ -123,7 +155,7 @@
          req->msg.msg_flags = msgflags;
  
          int flags = 0;
-@@ -9680,6 +9720,45 @@
+@@ -9680,6 +9726,45 @@
          if (errno || req->bytes <= 0)
              return 0;
  
@@ -169,7 +201,7 @@
          //printf("%u\n", req->msg.msg_controllen);
          //msgcontrol = (msg_control*)msg.msg_control;
  
-@@ -9711,6 +9790,7 @@
+@@ -9711,6 +9796,7 @@
                  break;
              }
          }

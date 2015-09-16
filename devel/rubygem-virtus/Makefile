@@ -15,6 +15,8 @@ RUN_DEPENDS=	rubygem-axiom-types>=0.1:${PORTSDIR}/devel/rubygem-axiom-types \
 		rubygem-descendants_tracker>=0.0.3:${PORTSDIR}/devel/rubygem-descendants_tracker \
 		rubygem-equalizer>=0.0.9:${PORTSDIR}/devel/rubygem-equalizer
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

@@ -57,25 +57,3 @@
 %%WWWDIR%%/usr/modconf.php
 %%WWWDIR%%/usr/pages.inc
 %%WWWDIR%%/usr/posts.inc
-@dirrm %%WWWDIR%%/docs
-@dirrm %%WWWDIR%%/modules/blogroll
-@dirrm %%WWWDIR%%/modules/categories
-@dirrm %%WWWDIR%%/modules/chtheme
-@dirrm %%WWWDIR%%/modules/comments
-@dirrm %%WWWDIR%%/modules/contacts
-@dirrm %%WWWDIR%%/modules/freehands
-@dirrm %%WWWDIR%%/modules/navbar
-@dirrm %%WWWDIR%%/modules/pages_mgr
-@dirrm %%WWWDIR%%/modules/posts_mgr
-@dirrm %%WWWDIR%%/modules/rssfeeds
-@dirrm %%WWWDIR%%/modules/showfiles
-@dirrm %%WWWDIR%%/modules
-@dirrm %%WWWDIR%%/src
-@dirrm %%WWWDIR%%/themes/colorlite
-@dirrm %%WWWDIR%%/themes/core
-@dirrm %%WWWDIR%%/themes/monochrome
-@dirrm %%WWWDIR%%/themes
-@dirrm %%WWWDIR%%/usr/images/meta
-@dirrm %%WWWDIR%%/usr/images
-@dirrm %%WWWDIR%%/usr
-@dirrm %%WWWDIR%%

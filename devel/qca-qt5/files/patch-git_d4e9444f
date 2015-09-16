@@ -1,0 +1,22 @@
+commit d4e9444f9dd2741cc2a4b3f4d6c510e4a1d7413c
+Author: Raphael Kubo da Costa <rakuco@FreeBSD.org>
+Date:   Sat Jan 17 15:12:03 2015 +0200
+
+    Do not end Cipher::Mode with a comma.
+
+    This solves a build failure with compilers such as GCC 4.2:
+    /usr/local/include/QtCrypto/qca_basic.h:598: error: comma at end of enumerator list
+
+    REVIEW: 122107
+
+--- include/QtCrypto/qca_basic.h
++++ include/QtCrypto/qca_basic.h
+@@ -595,7 +595,7 @@ public:
+ 		CFB, ///< operate in %Cipher FeedBack mode
+ 		ECB, ///< operate in Electronic Code Book mode
+ 		OFB, ///< operate in Output FeedBack Mode
+-		CTR, ///< operate in CounTer Mode
++		CTR  ///< operate in CounTer Mode
+ 	};
+ 
+ 	/**

@@ -1,5 +1,5 @@
---- INSTALL.im.orig	2013-06-21 11:16:33.000000000 +0200
-+++ INSTALL.im	2013-11-27 22:15:51.000000000 +0100
+--- INSTALL.im.orig	2015-04-28 13:26:33 UTC
++++ INSTALL.im
 @@ -15,7 +15,7 @@
  #define LDFLAGS             ""
      // flags passed to the linker

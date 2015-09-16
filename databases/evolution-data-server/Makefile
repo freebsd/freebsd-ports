@@ -1,10 +1,8 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/databases/evolution-data-server/Makefile 20048 2014-11-10 09:19:46Z gusi $
 
 PORTNAME=	evolution-data-server
-PORTVERSION=	3.12.11
-PORTREVISION=	1
+PORTVERSION=	3.16.5
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -26,14 +24,15 @@ LIB_DEPENDS=	libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome \
 		libtasn1.so:${PORTSDIR}/security/libtasn1 \
 		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
 
+PORTSCOUT=	limitw:1,even
+
 USES=		bison gettext gmake gperf libtool pathfix pkgconfig tar:xz
 # Unbreak mail/evolution with webkit-gtk3 on FreeBSD 8 and 9.  Normally
 # this change would be done there, but it is not a C++ application, so it
 # does not link directly to libstdc++ and adding the libstdc++ rpath to
 # the executable does not work at runtime.
 USES+=		compiler:c++11-lib
-USE_GNOME=	gnomeprefix gtk30 intlhack introspection:build \
-		libxml2
+USE_GNOME=	gtk30 intltool introspection:build libxml2
 USE_OPENLDAP=	yes
 USE_SQLITE=	yes
 GNU_CONFIGURE=	yes
@@ -43,6 +42,7 @@ CONFIGURE_ARGS=	--enable-static \
 		--with-openldap=yes \
 		--disable-uoa \
 		--enable-vala-bindings \
+		--disable-gtk-doc \
 		--with-libdb=${LOCALBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR}
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -52,9 +52,10 @@ GLIB_SCHEMAS=	org.gnome.Evolution.DefaultSources.gschema.xml \
 		org.gnome.evolution.eds-shell.gschema.xml \
 		org.gnome.evolution-data-server.addressbook.gschema.xml \
 		org.gnome.evolution-data-server.calendar.gschema.xml \
+		org.gnome.evolution-data-server.gschema.xml \
 		org.gnome.evolution.shell.network-config.gschema.xml
 
-PLIST_SUB=	VERSION="3.12" EVO_VERSION="1.2"
+PLIST_SUB=	VERSION="3.16" EVO_VERSION="1.2"
 
 OPTIONS_DEFINE=	WEATHER KERBEROS
 OPTIONS_DEFAULT=WEATHER KERBEROS

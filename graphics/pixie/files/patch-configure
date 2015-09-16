@@ -1,14 +1,5 @@
 --- configure.orig
 +++ configure
-@@ -12199,7 +12199,7 @@
- old_striplib=
- { $as_echo "$as_me:$LINENO: checking whether stripping libraries is possible" >&5
- $as_echo_n "checking whether stripping libraries is possible... " >&6; }
--if test -n "$STRIP" && $STRIP -V 2>&1 | $GREP "GNU strip" >/dev/null; then
-+if test -n "$STRIP" && $STRIP -V 2>&1 | $GREP "strip" >/dev/null; then
-   test -z "$old_striplib" && old_striplib="$STRIP --strip-debug"
-   test -z "$striplib" && striplib="$STRIP --strip-unneeded"
-   { $as_echo "$as_me:$LINENO: result: yes" >&5
 @@ -18418,10 +18418,10 @@
    if test x$FLTK_CONFIG != xno ; then
    	if test x$STATIC_FLTK != xtrue ; then

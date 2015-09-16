@@ -3,4 +3,4 @@ system & network statistics along with updating output RRD or CSV files.
 The daemon is very fast and allows for frequent polling of values, with
 support for polling as frequent as every 10 seconds.
 
-WWW: http://www.collectd.org/
+WWW: https://www.collectd.org/

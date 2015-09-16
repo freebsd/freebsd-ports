@@ -1,1 +1,1 @@
-libexec/gnome-pty-helper
+@(root,wheel,4755) libexec/gnome-pty-helper

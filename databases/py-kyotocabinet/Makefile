@@ -3,12 +3,12 @@
 
 PORTNAME=	kyotocabinet
 PORTVERSION=	1.22
+DISTVERSIONPREFIX=	python-
 PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	http://fallabs.com/${PORTNAME}/pythonpkg/ \
 		LOCAL/sunpoet
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-python-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python binding of kyotocabinet

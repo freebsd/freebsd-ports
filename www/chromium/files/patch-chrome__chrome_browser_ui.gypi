@@ -1,6 +1,6 @@
---- chrome/chrome_browser_ui.gypi.orig	2014-10-10 09:15:30 UTC
-+++ chrome/chrome_browser_ui.gypi
-@@ -2743,7 +2743,7 @@
+--- chrome/chrome_browser_ui.gypi.orig	2015-07-15 16:29:59.000000000 -0400
++++ chrome/chrome_browser_ui.gypi	2015-07-21 22:40:24.997217000 -0400
+@@ -2922,7 +2922,7 @@
              }],
            ],
          }],
@@ -9,7 +9,7 @@
            'dependencies': [
              # gtk2 is the only component that can interact with gtk2 in our new
              # world.
-@@ -2751,7 +2751,7 @@
+@@ -2930,7 +2930,7 @@
              '../build/linux/system.gyp:gio',
            ],
          }],
@@ -18,17 +18,12 @@
            'sources': [ '<@(chrome_browser_ui_desktop_sources)' ],
          }],
          ['use_aura==1', {
-@@ -2788,7 +2788,7 @@
-         ['enable_printing==1', {
-           'sources': [ '<@(chrome_browser_ui_print_preview_sources)' ],
+@@ -3083,10 +3083,10 @@
+             }],
+           ],
          }],
--        ['OS=="linux" or OS=="android"', {
-+        ['OS=="linux" or OS=="android" or OS=="freebsd"', {
-           'sources': [ '<@(chrome_browser_ui_android_linux_sources)' ],
-         }],
-         ['OS=="android"', {
-@@ -2907,7 +2907,7 @@
-         ['desktop_linux==1', {
+-        ['desktop_linux==1', {
++        ['desktop_linux==1 or os_bsd==1', {
            'sources': [ '<@(chrome_browser_ui_desktop_linux_sources)' ],
          }],
 -        ['OS=="linux"', {  # Both desktop Linux and ChromeOS.

@@ -4,7 +4,7 @@ Sans Serif with 16 weights all accompanied by italic styles. The package also
 includes a Mono Spaced variant with 3 weights (regular, medium and bold). The
 UFO source files are included in examples.
 
-Web Font: EOT, WOFF, TTF, and boilerplate HTML+CSS
+Web Font: EOT, WOFF, WOFF2, TTF, and boilerplate HTML+CSS
 *supports advanced Open Type typographic layout features and languages
 
-WWW: http://www.carrois.com/fira-3-1/
+WWW: http://www.carrois.com/fira-4-1/

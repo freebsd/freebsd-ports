@@ -1,5 +1,5 @@
---- libguile/c-tokenize.c	2010-12-13 20:24:04.000000000 +0100
-+++ libguile/c-tokenize.c	2014-04-13 22:20:33.000000000 +0200
+--- libguile/c-tokenize.c.orig	2010-12-13 19:24:04 UTC
++++ libguile/c-tokenize.c
 @@ -898,13 +898,13 @@ case 3:
  /* rule 3 can match eol */
  YY_RULE_SETUP

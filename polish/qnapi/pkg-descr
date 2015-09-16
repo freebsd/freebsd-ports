@@ -1,5 +1,5 @@
-Free, Qt4-based application designed for automatically downloading and
+Free, Qt5-based application designed for automatically downloading and
 matching subtitles for your movie files.
-It uses NapiProjekt and OpenSubtitles databases.
+It uses NapiProjekt, Napisy24 and OpenSubtitles databases.
 
-WWW: http://sourceforge.net/projects/qnapi/
+WWW: http://qnapi.github.io/

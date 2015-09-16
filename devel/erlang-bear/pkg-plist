@@ -1,0 +1,5 @@
+lib/erlang/lib/bear-%%VERSION%%/ebin/bear.app
+lib/erlang/lib/bear-%%VERSION%%/ebin/bear.beam
+lib/erlang/lib/bear-%%VERSION%%/src/bear.app.src
+lib/erlang/lib/bear-%%VERSION%%/src/bear.erl
+%%PORTDOCS%%%%DOCSDIR%%/README.md

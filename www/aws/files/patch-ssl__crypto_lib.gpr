@@ -1,6 +1,6 @@
---- ssl/crypto_lib.gpr.orig	2010-12-20 12:41:17 +0000
+--- ssl/crypto_lib.gpr.orig	2014-11-15 19:27:52 UTC
 +++ ssl/crypto_lib.gpr
-@@ -29,7 +29,6 @@
+@@ -20,7 +20,6 @@
  
  with "../.build/projects/aws_config";
  with "../.build/projects/aws_lib_shared";

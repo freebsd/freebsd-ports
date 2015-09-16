@@ -84,3 +84,4 @@
 %%DATADIR%%/themes/light.theme
 %%DATADIR%%/themes/liner.theme
 %%DATADIR%%/users.conf
+@comment @dir %%DATADIR%%/var

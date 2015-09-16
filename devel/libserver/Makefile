@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	libserver
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.mammothcheese.ca/
 
 MAINTAINER=	jimmy@mammothcheese.ca
 COMMENT=	Generic TCP server in a library
+
+LICENSE=	BSD3CLAUSE
 
 USE_LDCONFIG=	yes
 

@@ -13,7 +13,6 @@ COMMENT=	Collection of programs for searching DNA and protein databases
 
 NO_CDROM=	May not be sold or incorporated into a commercial product
 WRKSRC=		${WRKDIR}/fasta
-PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
 MAN_FILES=	align.1 fasta.1 lalign.1 prdf.1 prss.1 randseq.1 ssearch.1
@@ -32,19 +31,14 @@ do-extract:
 post-patch:
 	@${REINPLACE_CMD} 's|BIN)|DESTDIR)$$(&|' ${WRKSRC}/Makefile
 
-BROKEN_powerpc=	Does not build: runs out of space on powerpc
-
 post-install:
-	(cd ${WRKSRC} && ${INSTALL_MAN} ${MAN_FILES} \
-		${STAGEDIR}${MAN1PREFIX}/man/man1)
+	${INSTALL_MAN} ${MAN_FILES:S,^,${WRKSRC}/,} \
+		${STAGEDIR}${MAN1PREFIX}/man/man1
 .for mlink in tfasta lfasta plfasta fastx tfastx
-	${LN} -s ${MAN1PREFIX}/man/man1/fasta.1.gz \
-		${STAGEDIR}${MAN1PREFIX}/man/man1/${mlink}.1.gz
+	${LN} -s fasta.1.gz ${STAGEDIR}${MAN1PREFIX}/man/man1/${mlink}.1.gz
 .endfor
-	${LN} -s ${MAN1PREFIX}/man/man1/align.1.gz \
-		${STAGEDIR}${MAN1PREFIX}/man/man1/align0.1.gz
-	${LN} -s ${MAN1PREFIX}/man/man1/align.1.gz \
-		${STAGEDIR}${MAN1PREFIX}/man/man1/plalign.1.gz
+	${LN} -s align.1.gz ${STAGEDIR}${MAN1PREFIX}/man/man1/align0.1.gz
+	${LN} -s align.1.gz ${STAGEDIR}${MAN1PREFIX}/man/man1/plalign.1.gz
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

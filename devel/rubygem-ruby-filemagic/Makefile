@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ruby-filemagic
-PORTVERSION=	0.6.3
+PORTVERSION=	0.7.0
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 

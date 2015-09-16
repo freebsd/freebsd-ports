@@ -1,0 +1,11 @@
+--- mk/commondefs.orig	2015-07-16 19:52:37 UTC
++++ mk/commondefs
+@@ -15,7 +15,7 @@ COMMONCXXFLAGS = -I. \
+ # the sys file or localdefs
+ SYSPICFLAGS = -fPIC -DPIC
+ 
+-LIBRECOLL = -L$(depth)/lib -lrecoll -Wl,-rpath=$(libdir)/recoll
++LIBRECOLL = -L$(depth)/lib -lrecoll -liconv -Wl,-rpath=$(libdir)/recoll
+ 
+ RANLIB = test -f
+ AR=ar

@@ -3,7 +3,7 @@
 
 PORTNAME=	cgihtml
 PORTVERSION=	1.69
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www devel
 MASTER_SITES=	http://www.eekim.com/software/cgihtml/ \
 		ftp://www.eekim.com/pub/users/eekim/cgihtml/ \
@@ -21,6 +21,7 @@ post-extract:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcgihtml.so
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 .for file in CHANGES CREDITS
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}

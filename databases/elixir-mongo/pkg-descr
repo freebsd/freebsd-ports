@@ -1,0 +1,3 @@
+A database driver for MongoDB written in pure Elixir.
+
+WWW: https://github.com/checkiz/elixir-mongo

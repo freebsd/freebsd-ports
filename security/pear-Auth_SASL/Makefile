@@ -11,8 +11,9 @@ COMMENT=	PEAR abstraction of various SASL mechanism responses
 LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${PEARDIR}/Auth/Auth.php:${PORTSDIR}/security/pear-Auth
-RUN_DEPENDS=	${PEARDIR}/Auth/Auth.php:${PORTSDIR}/security/pear-Auth
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		pear
 
 .include <bsd.port.mk>

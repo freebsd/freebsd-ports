@@ -3,6 +3,7 @@
 
 PORTNAME=	sysinfo
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,9 +15,12 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-drydock>=0:${PORTSDIR}/devel/rubygem-drydock \
 		rubygem-storable>=0:${PORTSDIR}/devel/rubygem-storable
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+USES=		shebangfix
+SHEBANG_FILES=	bin/sysinfo
 
 PLIST_FILES=	bin/sysinfo
 

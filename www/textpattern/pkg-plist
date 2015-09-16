@@ -124,28 +124,6 @@
 %%WWWDIR%%/textpattern/update/_to_4.2.0.php
 %%WWWDIR%%/textpattern/update/_update.php
 %%WWWDIR%%/textpattern/update/index.html
-@dirrm %%WWWDIR%%/files
-@dirrm %%WWWDIR%%/images
-@dirrm %%WWWDIR%%/rpc
-@dirrm %%WWWDIR%%/sites/site1/admin/setup
-@dirrm %%WWWDIR%%/sites/site1/admin
-@dirrm %%WWWDIR%%/sites/site1/private
-@dirrm %%WWWDIR%%/sites/site1/public/files
-@dirrm %%WWWDIR%%/sites/site1/public/images
-@dirrm %%WWWDIR%%/sites/site1/public
-@dirrm %%WWWDIR%%/sites/site1
-@dirrm %%WWWDIR%%/sites
-@dirrm %%WWWDIR%%/textpattern/include/import
-@dirrm %%WWWDIR%%/textpattern/include
-@dirrm %%WWWDIR%%/textpattern/lang
-@dirrm %%WWWDIR%%/textpattern/lib
-@dirrm %%WWWDIR%%/textpattern/publish
-@dirrm %%WWWDIR%%/textpattern/setup
-@dirrm %%WWWDIR%%/textpattern/theme/classic
-@dirrm %%WWWDIR%%/textpattern/theme/remora
-@dirrm %%WWWDIR%%/textpattern/theme
-@dirrm %%WWWDIR%%/textpattern/tmp
-@dirrm %%WWWDIR%%/textpattern/txp_img
-@dirrm %%WWWDIR%%/textpattern/update
-@dirrm %%WWWDIR%%/textpattern
-@dirrmtry %%WWWDIR%%
+@dir %%WWWDIR%%/textpattern/tmp
+@dir %%WWWDIR%%/sites/site1/public/files
+@dir %%WWWDIR%%/files

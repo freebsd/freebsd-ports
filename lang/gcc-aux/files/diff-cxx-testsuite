@@ -26,7 +26,7 @@
    ffloat (vlongdouble); /* { dg-warning "conversion" } */
 --- libstdc++-v3/testsuite/lib/libstdc++.exp.orig
 +++ libstdc++-v3/testsuite/lib/libstdc++.exp
-@@ -877,17 +877,18 @@
+@@ -881,17 +881,18 @@
        set f [open $src "w"]
        puts $f "#include <locale>"
        puts $f "#include <cstdio>"

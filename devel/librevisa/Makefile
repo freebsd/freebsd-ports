@@ -3,6 +3,7 @@
 
 PORTNAME=	librevisa
 PORTVERSION=	0.0.20130412
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.librevisa.org/download/
 

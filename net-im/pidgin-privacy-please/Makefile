@@ -18,7 +18,7 @@ RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake libtool pkgconfig
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 intltool
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

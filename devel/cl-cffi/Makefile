@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cffi
-PORTVERSION=	0.11.0
+PORTVERSION=	0.14.0
 CATEGORIES=	devel lisp
 MASTER_SITES=	http://common-lisp.net/project/cffi/releases/:src \
 		http://olgeni.olgeni.com/~olgeni/cffi/${PORTVERSION}/:doc
@@ -20,12 +20,10 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Portable foreign function interface for Common Lisp
 
-BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/alexandria/alexandria.asd:${PORTSDIR}/devel/cl-alexandria \
-${LOCALBASE}/${CL_LIBDIR_REL}/trivial-features/trivial-features.asd:${PORTSDIR}/devel/cl-trivial-features \
-		${LOCALBASE}/${CL_LIBDIR_REL}/babel/babel.asd:${PORTSDIR}/converters/cl-babel
-RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/alexandria/alexandria.asd:${PORTSDIR}/devel/cl-alexandria \
-${LOCALBASE}/${CL_LIBDIR_REL}/trivial-features/trivial-features.asd:${PORTSDIR}/devel/cl-trivial-features \
-		${LOCALBASE}/${CL_LIBDIR_REL}/babel/babel.asd:${PORTSDIR}/converters/cl-babel
+BUILD_DEPENDS=	cl-alexandria>=0:${PORTSDIR}/devel/cl-alexandria \
+		cl-trivial-features>=0:${PORTSDIR}/devel/cl-trivial-features \
+		cl-babel>=0:${PORTSDIR}/converters/cl-babel
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_BUILD=	yes
 

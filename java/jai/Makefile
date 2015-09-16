@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-lib
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	High performance image processing libraries for Java
 
+BROKEN=		unfetchable
+
 USES=		cpe zip
 CPE_VENDOR=	oracle
 USE_JAVA=	yes

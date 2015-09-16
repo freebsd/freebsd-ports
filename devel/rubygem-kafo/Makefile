@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	kafo
-PORTVERSION=	0.6.6
-CATEGORIES=	devel ruby
+PORTVERSION=	0.6.12
+CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	mmoll@FreeBSD.org
@@ -18,9 +18,14 @@ RUN_DEPENDS=	rubygem-clamp>=0.6.2:${PORTSDIR}/devel/rubygem-clamp \
 		rubygem-kafo_parsers>=0.0.3:${PORTSDIR}/devel/rubygem-kafo_parsers \
 		gsed:${PORTSDIR}/textproc/gsed
 
+USES=		cpe
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+
+CPE_VENDOR=	theforeman
 
 PLIST_FILES=	bin/kafo-configure bin/kafo-export-params bin/kafofy
 

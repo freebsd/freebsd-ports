@@ -3,7 +3,7 @@
 
 PORTNAME=		nss-pam-ldapd
 PORTVERSION=		0.8.14
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		net
 MASTER_SITES=		http://arthurdejong.org/nss-pam-ldapd/ \
     			http://mirrors.rit.edu/zi/
@@ -14,6 +14,8 @@ COMMENT?=		Advanced fork of nss_ldap
 LICENSE=		LGPL21 LGPL3
 LICENSE_COMB=		dual
 
+USES=			cpe
+CPE_VENDOR=		arthurdejong
 GNU_CONFIGURE=		yes
 USE_OPENLDAP=		yes
 USE_RC_SUBR=		nslcd
@@ -25,21 +27,24 @@ SUB_FILES+=		pkg-message
 NSLCD_PIDFILE?=		/var/run/nslcd.pid
 NSLCD_SOCKET?=		/var/run/nslcd.ctl
 
+OPTIONS_DEFINE=		KERBEROS
+OPTIONS_DEFAULT=	KERBEROS
+
 .if defined(SLAVE_PORT)
-OPTIONS_DEFINE=		SASL
+OPTIONS_DEFINE+=	SASL
 OPTIONS_MULTI=		MG1
 OPTIONS_MULTI_MG1=	PAM NSS
 PAM_DESC=		Build pam_ldap
 NSS_DESC=		Build nss support
 SASL_DESC=		Build sasl support
-OPTIONS_DEFAULT=	PAM NSS
+OPTIONS_DEFAULT+=	PAM NSS
 CONFLICTS+=		nss-pam-ldapd-[0-9]*
 .else
 OPTIONS_MULTI=		MG1
 OPTIONS_MULTI_MG1=	PAM NSS
 PAM_DESC=		Build pam_ldap
 NSS_DESC=		Build nss support
-OPTIONS_DEFAULT=	PAM NSS
+OPTIONS_DEFAULT+=	PAM NSS
 CONFLICTS+=		nss-pam-ldapd-sasl-[0-9]*
 .endif
 
@@ -61,7 +66,12 @@ CONFIGURE_ARGS+=	--with-ldap-conf-file=${PREFIX}/etc/${CONFIG_FILE}
 PLIST_SUB+=		CONFIG="${CONFIG_FILE}" \
 			PAM_LDAP_SHMAJOR="${PAM_LDAP_SHMAJOR}" \
 			NSS_LDAP_SHMAJOR="${NSS_LDAP_SHMAJOR}"
-SUB_LIST+=		CONFIG_FILE="${PREFIX}/etc/${CONFIG_FILE}"
+SUB_LIST+=		CONFIG_FILE="${PREFIX}/etc/${CONFIG_FILE}" \
+			NSLCD_PIDFILE="${NSLCD_PIDFILE}"
+
+.if empty(PORT_OPTIONS:MKERBEROS)
+CONFIGURE_ARGS+=	--disable-kerberos
+.endif
 
 .if ${PORT_OPTIONS:MSASL}
 WANT_OPENLDAP_SASL=	yes
@@ -109,10 +119,7 @@ post-extract:
 post-configure:
 	${REINPLACE_CMD} -e 's/^\(CFLAGS.*\) \-O2 \(.*\)$$/\1 -O0 \2/' ${WRKSRC}/nss/Makefile
 
-show-pkgmessage::
-	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE} | ${FMT} 75 79; ${ECHO_CMD}
-
-post-install: show-pkgmessage
+post-install:
 .if ${PORT_OPTIONS:MNSS}
 	@${LN} -fs nss_ldap.so.${NSS_LDAP_SHMAJOR} ${STAGEDIR}${PREFIX}/lib/nss_ldap.so
 .endif

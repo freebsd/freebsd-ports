@@ -5,18 +5,14 @@ PORTNAME=	base
 PORTVERSION=	2.6.4
 PORTREVISION=	2
 CATEGORIES=	lang
-MASTER_SITES=	# empty
 PKGNAMEPREFIX=	fpc-
-DISTFILES=	# empty
-EXTRACT_ONLY=	# empty
 
 MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Meta package to install all of the Free Pascal base
 
+USES=		metaport
+USE_FPC_RUN=	yes
 WANT_FPC_BASE=	yes
-NO_BUILD=	yes
-NO_INSTALL=	yes
-NO_MTREE=	yes
 
 OPTIONS_DEFINE=	DOCS
 

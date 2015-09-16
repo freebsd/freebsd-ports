@@ -1,6 +1,6 @@
---- ./src/player/CMakeLists.txt.orig	2014-06-19 06:38:04.000000000 +0930
-+++ ./src/player/CMakeLists.txt	2014-08-13 02:18:55.093462388 +0930
-@@ -4,6 +4,7 @@
+--- src/player/CMakeLists.txt.orig	2014-09-09 18:39:33 UTC
++++ src/player/CMakeLists.txt
+@@ -4,6 +4,7 @@ FILE(GLOB_RECURSE h2player_SRCS *.cpp)
  INCLUDE_DIRECTORIES(
      ${CMAKE_SOURCE_DIR}/src/core/include        # core headers
      ${CMAKE_BINARY_DIR}/src/core/include        # generated config.h

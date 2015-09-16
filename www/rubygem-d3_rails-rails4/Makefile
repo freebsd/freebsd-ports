@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	d3_rails
-PORTVERSION=	3.5.5
+PORTVERSION=	3.5.6
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails4
@@ -13,6 +13,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-railties4>=4.1.4:${PORTSDIR}/www/rubygem-railties4
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

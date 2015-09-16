@@ -1,0 +1,2 @@
+Further configuration is required to connect Chef and foreman-proxy, see:
+http://theforeman.org/plugins/foreman_chef/0.1/

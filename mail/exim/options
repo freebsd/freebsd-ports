@@ -18,8 +18,7 @@ OPTIONS_DEFINE+=	ALT_CONFIG_PREFIX \
 			READLINE \
 			SUID \
 			TCP_WRAPPERS \
-			WISHLIST \
-			XCLIENT
+			WISHLIST
 
 OPTIONS_DEFAULT+=	AUTH_CRAM_MD5 \
 			AUTH_DOVECOT \
@@ -34,7 +33,7 @@ OPTIONS_DEFAULT+=	AUTH_CRAM_MD5 \
 			DSEARCH \
 			EMBEDDED_PERL \
 			ICONV \
-			LTMP \
+			LMTP \
 			LSEARCH \
 			MAILDIR \
 			MAILSTORE \
@@ -61,7 +60,7 @@ OPTIONS_GROUP_LOOKUP=	CDB BDB DNSDB DSEARCH LSEARCH MYSQL NIS OPENLDAP PGSQL RED
 LOOKUP_DESC=	Lookup support
 OPTIONS_GROUP_STORAGE=	MAILDIR MAILSTORE MBX
 STORAGE_DESC=	Supported storage formats
-OPTIONS_GROUP_EXPERIMENTAL= CERTNAMES DANE DCC DMARC DSN EVENT PROXY SPF RSPAMD
+OPTIONS_GROUP_EXPERIMENTAL= CERTNAMES DANE DCC DMARC DSN EVENT INTERNATIONAL PROXY SOCKS SPF
 EXPERIMENTAL_DESC=	Experimental options
 OPTIONS_GROUP=	AUTH LOOKUP STORAGE EXPERIMENTAL
 
@@ -90,6 +89,7 @@ EMBEDDED_PERL_DESC=	Enable embedded Perl interpreter
 EVENT_DESC=		Messages events support (TPDA namely)
 EXIMON_DESC=		Build eximon monitor (requires X libraries)
 ICONV_DESC=		Enable header charset conversion
+INTERNATIONAL_DESC=	Enable support for the transmission of UTF-8 envelope addresses
 LISTMATCH_RHS_DESC=	Enable pre-4.77 behaviour for match_*
 LMTP_DESC=		RFC2033 SMTP over command pipe transport
 LSEARCH_DESC=		Enable wildcarded-file lookups
@@ -110,12 +110,11 @@ READLINE_DESC=		Enable readline(3) library
 REDIS_DESC=		Enable redis lookups (experimental)
 SASLAUTHD_DESC=		Enable use of Cyrus SASL auth daemon
 SA_EXIM_DESC=		Build with Spamassassin local scan
+SOCKS_DESC=		Enable smtp transport via socks5 proxies
 SPF_DESC=		Enable Sender Policy Framework checking
-RSPAMD_DESC=		Build with Rspamd support	
 SQLITE_DESC=		Enable SQLite lookups
 SRS_DESC=		Enable Sender Rewriting Scheme
 SUID_DESC=		Install the exim binary suid root
 TCP_WRAPPERS_DESC=	Enable /etc/hosts.allow access control
 GNUTLS_DESC=		Use GnuTLS instead of OpenSSL for TLS
 WISHLIST_DESC=		Include the unsupported patches
-XCLIENT_DESC=		Enable XCLIENT command in exim

@@ -1,6 +1,6 @@
---- ./Makefile.in.orig	2013-03-28 22:35:00.000000000 +0100
-+++ ./Makefile.in	2014-05-01 14:23:32.000000000 +0200
-@@ -27,39 +27,11 @@
+--- Makefile.in.orig	2015-05-15 16:31:56 UTC
++++ Makefile.in
+@@ -27,39 +27,11 @@ cnagios: $(OBJS) $(HDRS)
  
  
  install:

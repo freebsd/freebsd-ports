@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Archive-Any
-PORTVERSION=	0.09.41
-PORTREVISION=	1
+PORTVERSION=	0.09.42
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,6 +22,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Perl-Critic>=0:${PORTSDIR}/textproc/p5-Test-Perl-Critic \
 		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

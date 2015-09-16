@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- Makefile.settings.in.orig
 +++ Makefile.settings.in
 @@ -40,6 +40,6 @@

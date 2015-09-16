@@ -1,0 +1,13 @@
+Open source library for working with the National Marine Electronics
+Association (NMEA) protocol.
+
+Features:
+
+ * Analysis NMEA sentences and granting GPS data in C structures
+ * Generate NMEA sentences
+ * Supported sentences: GPGGA, GPGSA, GPGSV, GPRMC, GPVTG
+ * Multilevel architecture of algorithms
+ * Additional functions of geographical mathematics and work with navigation
+   data
+
+WWW: http://nmea.sourceforge.net/

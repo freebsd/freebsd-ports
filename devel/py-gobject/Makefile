@@ -4,10 +4,9 @@
 
 PORTNAME=	gobject
 PORTVERSION=	2.28.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel python
-MASTER_SITES=	GNOME
-MASTER_SITE_SUBDIR=	sources/pygobject/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+MASTER_SITES=	GNOME/sources/pygobject/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pygobject-${PORTVERSION}
 DIST_SUBDIR=	gnome2
@@ -20,6 +19,8 @@ LICENSE=	LGPL21
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
 LIB_DEPENDS+=	libffi.so:${PORTSDIR}/devel/libffi
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
+
+PORTSCOUT=	ignore:1
 
 USES=		gmake libtool pathfix pkgconfig python:2 tar:xz
 USE_GNOME=	glib20 introspection:build,run

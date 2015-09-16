@@ -55,12 +55,17 @@ ask() {
 	return 1
 }
 
-[ $# -ne 2 ] && err "$(basename $0) requires 2 arguments: <branch> <revnumber>"
+[ $# -lt 2 ] && err "$(basename $0) requires at least 2 arguments: <branch> <revnumber> [<revnumber>...]"
 branch=$1
-rev=${2##r} # remove a leading "r"
-case ${rev} in
-''|*[!0-9]*) err "revision should be a number" ;;
-esac
+shift
+revs=""
+for rev in $@
+do
+  rev=${rev##r} # remove a leading "r"
+  case ${rev} in
+    ''|*[!0-9]*) err "revision \"${rev}\" should be a number" ;;
+  esac
+done
 
 : ${svnserver:="svn.FreeBSD.org"}
 
@@ -77,24 +82,39 @@ dir=$(mktemp -d /tmp/merge.XXXXXX)
 cd "${dir}"
 "${svn}" co --depth=empty svn+ssh://${svnserver}/ports/branches/"${branch}"
 filelist=""
-# svn:// is faster than svn+ssh://. Use it wherever it's possible.
-for f in $("${svn}" diff --summarize -c ${rev} svn://${svnserver}/ports/head); do
-	case ${f} in
-	*/*) ;;
-	*)continue;;
-	esac
-	f=${f#*/ports/head/}
-	f=${f%/*}
-	filelist="${filelist}${LF}${f}"
+
+echo -n "MFH:" > commit.txt
+for rev in $@
+do
+  rev=${rev##r}
+  echo -n " r${rev}" >> commit.txt
+done
+echo >> commit.txt
+for rev in $@
+do
+  rev=${rev##r}
+  # svn:// is faster than svn+ssh://. Use it wherever it's possible.
+  for f in $("${svn}" diff --summarize -c r${rev} svn://${svnserver}/ports/head); do
+	  case ${f} in
+	  */*) ;;
+	  *)continue;;
+	  esac
+	  f=${f#*/ports/head/}
+	  f=${f%/*}
+	  filelist="${filelist}${LF}${f}"
+  done
+  "${svn}" log -r${rev} svn://${svnserver}/ports/head | sed '1,2d;$d;/^MFH:/d' \
+      | sed '$d' >> commit.txt
 done
 filelist=$(printf '%s\n' "${filelist}" | sort -u)
-echo "MFH: r${rev}" > commit.txt
-"${svn}" log -r${rev} svn://${svnserver}/ports/head | sed '1,2d;$d;/^MFH:/d' \
-    | sed '$d' >> commit.txt
 "${svn}" up --parents $(printf '%s\n' $filelist \
     | sed "s}^}${branch}/}")
 "${svn}" up --quiet "${branch}"
-"${svn}" merge -c r${rev} ^/head/ "${branch}"
+for rev in $@
+do
+  rev=${rev##r}
+  "${svn}" merge -c r${rev} ^/head/ "${branch}"
+done
 "${svn}" up --quiet "${branch}"
 "${svn}" status "${branch}"
 "${svn}" diff "${branch}"

@@ -1,0 +1,11 @@
+include/qt5keychain/keychain.h
+include/qt5keychain/qkeychain_export.h
+lib/cmake/Qt5Keychain/Qt5KeychainConfig.cmake
+lib/cmake/Qt5Keychain/Qt5KeychainConfigVersion.cmake
+lib/cmake/Qt5Keychain/Qt5KeychainLibraryDepends-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/Qt5Keychain/Qt5KeychainLibraryDepends.cmake
+lib/libqt5keychain.so
+lib/libqt5keychain.so.0
+lib/libqt5keychain.so.%%VERSION%%
+%%QT_L10NDIR%%/qtkeychain_de.qm
+%%QT_L10NDIR%%/qtkeychain_ro.qm

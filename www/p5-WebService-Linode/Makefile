@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	WebService-Linode
-PORTVERSION=	0.27
+PORTVERSION=	0.28
 CATEGORIES=	www
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	modbuildtiny
 

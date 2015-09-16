@@ -3,7 +3,7 @@
 
 PORTNAME=	giacxcas
 PORTVERSION=	1.1.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	math
 MASTER_SITES=	http://www-fourier.ujf-grenoble.fr/~parisse/giac/ \
 		http://www.math.jussieu.fr/~han/xcas/sources/v2/
@@ -14,12 +14,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Computer algebra system by Bernard Parisse
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/lib/libntl.a:${PORTSDIR}/math/ntl
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 		libpng.so:${PORTSDIR}/graphics/png \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpari.so:${PORTSDIR}/math/pari \
 		libmpfr.so:${PORTSDIR}/math/mpfr \
 		libgsl.so:${PORTSDIR}/math/gsl \
@@ -28,7 +28,7 @@ LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 NO_CDROM=	French documentation is for non-commercial use only
 
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils gettext gmake libtool shebangfix
+USES=		desktop-file-utils gettext gmake jpeg libtool shebangfix
 USE_GL=		gl
 USE_XORG=	x11 xcursor xft xi
 USE_TEX=	latex:build dvipsk:build
@@ -40,6 +40,7 @@ PORTDOCS=	*
 DATADIR=	${PREFIX}/share/giac
 PORTDATA=	*
 SHEBANG_FILES=	src/pgiac
+INSTALL_TARGET=	install-strip
 
 CONFIGURE_ENV=	X_LIBS=-lX11
 CPPFLAGS+=	-I${FLTKDEV-GIAC} -I${COCOALIB-GIAC}/include -I${LOCALBASE}/include

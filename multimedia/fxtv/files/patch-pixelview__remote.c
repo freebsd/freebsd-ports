@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- pixelview_remote.c.orig
 +++ pixelview_remote.c
 @@ -39,9 +39,16 @@

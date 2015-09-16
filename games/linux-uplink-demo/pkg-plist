@@ -14,5 +14,3 @@ bin/linux-uplink
 %%PORTDOCS%%%%DOCSDIR%%/mods.txt
 %%PORTDOCS%%%%DOCSDIR%%/Readme-UplinkSupport.txt
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%

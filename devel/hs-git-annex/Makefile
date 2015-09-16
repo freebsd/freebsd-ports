@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	git-annex
-PORTVERSION=	5.20140817
-PORTREVISION=	1
+PORTVERSION=	5.20150727
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -11,12 +10,12 @@ COMMENT=	Manage files with git, without checking their contents into git
 
 LICENSE=	GPLv3
 
-USE_CABAL=	MissingH hslogger utf8-string network>=2.0 mtl>=2 HTTP \
-		extensible-exceptions exceptions>=0.5 dataenc SHA json \
-		monad-control MonadCatchIO-transformers IfElse text \
-		QuickCheck>=2.1 bloomfilter edit-distance SafeSemaphore \
-		uuid random dlist unix-compat aeson data-default \
-		case-insensitive
+USE_CABAL=	optparse-applicative>=0.10 cryptohash>=0.11.0 exceptions>=0.6 \
+		QuickCheck>=2.1 stm>=2.3 mtl>=2 data-default case-insensitive \
+		uuid random dlist unix-compat SafeSemaphore async IfElse \
+		MissingH hslogger monad-logger utf8-string text sandi json \
+		monad-control bloomfilter edit-distance resourcet aws>=0.9.2 \
+		http-conduit http-types network>=2.6 network-uri>=2.6
 
 USES=		gmake perl5
 USE_PERL5=	build
@@ -35,9 +34,10 @@ EXECUTABLE=	git-annex git-annex-shell
 STANDALONE=	yes
 
 FLAGS_DEFINE=	S3 WEBDAV INOTIFY ASSISTANT WEBAPP WEBAPP_SECURE PAIRING \
-		XMPP DNS PRODUCTION TDFA FEED QUVI TAHOE CRYPTOHASH EKG
+		XMPP DNS PRODUCTION TDFA FEED QUVI TAHOE DESKTOPNOTIFY \
+		TORRENTPARSER EKG DATABASE
 FLAGS_DEFAULT=	S3 WEBDAV INOTIFY ASSISTANT WEBAPP WEBAPP_SECURE PAIRING \
-		XMPP DNS PRODUCTION TDFA FEED QUVI TAHOE CRYPTOHASH
+		XMPP DNS PRODUCTION TDFA FEED QUVI TAHOE DATABASE
 
 S3_DESC=		S3 support
 S3_FLAG_ENABLE=		S3
@@ -45,19 +45,18 @@ S3_FLAG_CABAL=		hS3
 
 ASSISTANT_DESC=		'assistant' and 'watch' commands
 ASSISTANT_FLAG_ENABLE=	Assistant
-ASSISTANT_FLAG_CABAL=	async stm>=2.3
 
 INOTIFY_DESC=		File system notifications support
 INOTIFY_FLAG_ENABLE=	Inotify
-INOTIFY_FLAG_CABAL=	kqueue
+INOTIFY_FLAG_CABAL=	hinotify
 
 WEBAPP_DESC=		Web application (requires assistant)
 WEBAPP_FLAG_DEPENDS=	ASSISTANT
 WEBAPP_FLAG_ENABLE=	Webapp
-WEBAPP_FLAG_CABAL=	yesod yesod-static yesod-static yesod-form yesod-core \
-			case-insensitive http-types wai wai-logger warp \
-			blaze-builder crypto-api shakespeare clientsession \
-			data-default warp-tls path-pieces
+WEBAPP_FLAG_CABAL=	yesod>=1.2.6 yesod-static>=1.2.4 yesod-form>=1.3.15 \
+			yesod-core>=1.2.19 path-pieces>=0.1.4 warp>=3.0.05 \
+			warp-tls wai wai-extra blaze-builder crypto-api \
+			clientsession aeson shakespeare>=2.0.0
 
 WEBAPP_SECURE_DESC=		Secure webapp (requires webbapp)
 WEBAPP_SECURE_FLAG_DEPENDS=	WEBAPP
@@ -98,17 +97,25 @@ QUVI_DESC=		quvi to download videos
 QUVI_FLAG_ENABLE=	Quvi
 QUVI_FLAG_CABAL=	aeson
 
-CRYPTOHASH_DESC=	cryptohash for checksumming
-CRYPTOHASH_FLAG_ENABLE=	CryptoHash
-CRYPTOHASH_FLAG_CABAL=	cryptohash>=0.10.0
+TAHOE_DESC=		Tahoe special remote
+TAHOE_FLAG_ENABLE=	Tahoe
+TAHOE_FLAG_CABAL=	aeson
+
+DESKTOPNOTIFY_DESC=		Desktop environment notifications
+DESKTOPNOTIFY_FLAG_ENABLE=	DesktopNotify
+
+TORRENTPARSER_DESC=		Use haskell torrent library to parse torrent files
+TORRENTPARSER_FLAG_ENABLE=	TorrentParser
+TORRENTPARSER_FLAG_CABAL=	torrent>=10000.0.0
 
 EKG_DESC=		EKG for run-time monitoring
 EKG_FLAG_ENABLE=	EKG
 EKG_FLAG_CABAL=		ekg
 
-TAHOE_DESC=		Enable the tahoe special remote
-TAHOE_FLAG_ENABLE=	Tahoe
-TAHOE_FLAG_CABAL=	aeson
+DATABASE_DESC=		Build with persistent for database use
+DATABASE_FLAG_ENABLE=	Database
+DATABASE_FLAG_CABAL=	esqueleto persistent-sqlite persistent \
+			persistent-template
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- denyhosts.cfg-dist.orig
 +++ denyhosts.cfg-dist
 @@ -9,10 +9,10 @@

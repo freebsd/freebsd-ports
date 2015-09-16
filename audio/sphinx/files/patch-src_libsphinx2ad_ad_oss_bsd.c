@@ -1,5 +1,3 @@
-$FreeBSD$
-
 author:  Andriy Gapon
 
 --- src/libsphinx2ad/ad_oss_bsd.c.orig	Thu Dec 13 21:11:27 2001

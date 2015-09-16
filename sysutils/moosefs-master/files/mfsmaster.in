@@ -1,21 +1,13 @@
 #!/bin/sh
-#
 # $FreeBSD$
-#
 
 # PROVIDE: mfsmaster
-# REQUIRE: LOGIN 
-# KEYWORD: shutdown
-
+# REQUIRE: DAEMON
+# KEYWORD: nostart shutdown
 #
-# Add the following lines to /etc/rc.conf.local or /etc/rc.conf to enable mfsmaster:
+# Add the following lines to /etc/rc.conf to enable mfsmaster:
 #
-# mfsmaster_enable (bool):   Set to NO by default.
-#                            Set it to YES to enable mfsmaster.
-# mfsmaster_config (path):   Set to %%PREFIX%%/etc/mfs/mfsmaster.cfg
-#                            by default.
-# mfsmaster_flags (str):     Set to ""  by default.
-#                            Extra flags passed to mfsmaster.
+# mfsmaster_enable="YES"
 #
 
 . /etc/rc.subr
@@ -23,13 +15,17 @@
 name=mfsmaster
 rcvar=mfsmaster_enable
 
+config_file=%%PREFIX%%/etc/mfs/${name}.cfg
+
+required_files=${config_file}
+
+command=%%PREFIX%%/sbin/${name}
+pid_file=%%MFS_WORKDIR%%/mfs/.${name}.lock
+command_args="-c $config_file"
+
 load_rc_config $name
 
-: ${mfsmaster_enable=NO}
-: ${mfsmaster_config=%%PREFIX%%/etc/mfs/mfsmaster.cfg}
-
-extra_commands=reload
-command=%%PREFIX%%/sbin/${name}
-command_args="-c ${mfsmaster_config}"
+# set defaults
+: ${mfsmaster_enable="NO"}
 
 run_rc_command "$1"

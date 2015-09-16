@@ -36,8 +36,6 @@ VCHKPW_ALL_TARGET=	cvm-vchkpw
 
 VCHKPW_BUILD_DEPENDS=	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
 
-.include <bsd.port.options.mk>
-
 do-configure:
 	${ECHO_CMD} "${PREFIX}"		> ${WRKSRC}/conf-home
 	${ECHO_CMD} "${STAGEDIR}${PREFIX}/bin"	> ${WRKSRC}/conf-bin
@@ -52,9 +50,9 @@ post-install:
 .for l in command local module qmail sasl sql udp v1client v2client
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}-${l}.so*
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

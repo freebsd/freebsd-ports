@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libidn
-PORTVERSION=	1.29
+PORTVERSION=	1.31
 CATEGORIES=	dns
 MASTER_SITES=	GNU
 
@@ -13,7 +13,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
-USES=		iconv libtool makeinfo pathfix perl5 pkgconfig
+USES=		gmake iconv libtool makeinfo pathfix perl5 pkgconfig
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 

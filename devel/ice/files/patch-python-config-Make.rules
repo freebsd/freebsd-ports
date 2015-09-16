@@ -1,0 +1,99 @@
+--- python/config/Make.rules.orig	2015-06-23 15:30:20.000000000 +0000
++++ python/config/Make.rules	2015-06-27 23:26:40.586161355 +0000
+@@ -11,7 +11,8 @@
+ # Select an installation base directory. The directory will be created
+ # if it does not exist.
+ #
+-prefix			?= /opt/Ice-$(VERSION)
++ICE_HOME		= %%LOCALBASE%%
++prefix			?= %%PREFIX%%
+ 
+ #
+ # The "root directory" for runpath embedded in executables. Can be set
+@@ -49,7 +50,7 @@
+ # version used for building the Ice extension, then set PYTHON to
+ # the specific to the location of the python interpreter.
+ #
+-PYTHON              ?= python
++PYTHON              ?= %%PYTHON_CMD%%
+ 
+ PYTHON_VERSION      ?= python$(shell $(PYTHON) -c "import sys; import distutils.sysconfig as ds; sys.stdout.write(ds.get_python_version())")
+ 
+@@ -91,9 +92,9 @@
+     include $(top_srcdir)/../config/Make.common.rules
+ endif
+ 
+-ifndef usr_dir_install
+-RPATH_DIR	= $(prefix)/$(libsubdir)
+-endif
++#ifndef usr_dir_install
++#RPATH_DIR	= $(prefix)/$(libsubdir)
++#endif
+ 
+ install_bindir          = $(prefix)/$(binsubdir)
+ 
+@@ -108,17 +109,17 @@
+ 
+ libdir                  = $(top_srcdir)/python
+ 
+-ifndef usr_dir_install
+-    install_pythondir		= $(prefix)/python
+-    install_libdir			= $(prefix)/python
+-else
++#ifndef usr_dir_install
++#    install_pythondir		= $(prefix)/python
++#    install_libdir			= $(prefix)/python
++#else
+     #
+     # The install_dir script says where python wants site-packages installed.
+     #
+ 
+-    install_pythondir = $(shell $(PYTHON) $(top_srcdir)/config/install_dir)
+-    install_libdir = $(install_pythondir)
+-endif
++    install_pythondir = %%PYTHON_SITELIBDIR%%/Ice
++    install_libdir = %%PYTHON_SITELIBDIR%%/Ice
++#endif
+ 
+ ifeq ($(UNAME),SunOS)
+     ifeq ($(LP64),yes)
+@@ -127,14 +128,10 @@
+     endif
+ endif
+ 
+-ifdef ice_src_dist
+-    ICE_LIB_DIR = -L$(ice_cpp_dir)/$(libsubdir)
+-    ICE_FLAGS 	= -I$(ice_cpp_dir)/include
+-else
+-    ICE_LIB_DIR = -L$(ice_dir)/$(libsubdir)
+-    ICE_FLAGS	= -I$(ice_dir)/include
+-endif
+-ICE_LIBS = $(ICE_LIB_DIR) -lIceSSL -lIce -lSlice -lIceUtil
++
++ICE_LIB_DIR	= -L%%LOCALBASE%%/$(libsubdir)
++ICE_FLAGS	= -I%%LOCALBASE%%/include
++ICE_LIBS	= $(ICE_LIB_DIR) -lIceSSL -lIce -lSlice -lIceUtil %%ICONV_LIB%%
+ 
+ CPPFLAGS		=
+ ICECPPFLAGS		= -I$(slicedir)
+@@ -143,10 +140,7 @@
+ 
+ ifdef ice_src_dist
+     SLICE2PY    = $(PYTHON) $(top_srcdir)/config/s2py.py
+-    SLICEPARSERLIB	= $(ice_cpp_dir)/$(libsubdir)/$(call mklibfilename,Slice,$(VERSION))
+-    ifeq ($(wildcard $(SLICEPARSERLIB)),)
+-        SLICEPARSERLIB  = $(ice_cpp_dir)/$(lib64subdir)/$(call mklibfilename,Slice,$(VERSION))
+-    endif
++    SLICEPARSERLIB	= /usr/local/lib/$(call mklibfilename,Slice,$(VERSION))
+ else
+     ifeq ($(UNAME),Darwin)
+         SLICE2PY = /usr/local/bin/slice2py
+@@ -171,7 +165,7 @@
+ 
+ all:: $(SRCS)
+ 
+-%_ice.py: $(slicedir)/%.ice
++%_ice.py: $(ICE_HOME)/%.ice
+ 	rm -f $(*F).py
+ 	$(SLICE2PY) $(SLICE2PYFLAGS) $<
+ 	@mkdir -p .depend

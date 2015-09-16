@@ -1,6 +1,6 @@
---- qsstv/sound/soundio.cpp.orig	2014-04-03 11:15:08.000000000 -0700
-+++ qsstv/sound/soundio.cpp	2014-04-09 21:47:59.000000000 -0700
-@@ -328,7 +328,9 @@
+--- qsstv/sound/soundio.cpp.orig	2015-02-28 15:05:28 UTC
++++ qsstv/sound/soundio.cpp
+@@ -328,7 +328,9 @@ int soundIO::capture()
                if ( count == -EPIPE )
                  {
                    // Overrun
@@ -11,7 +11,7 @@
                    snd_pcm_start (captureHandle);
                    qDebug()<< "Overrun";
                  }
-@@ -573,8 +575,6 @@
+@@ -573,8 +575,6 @@ bool soundIO::listCards()
  //  int totalDevices;
    snd_pcm_info_t *pcmInfo;
    snd_ctl_t *cardHandle;
@@ -20,7 +20,7 @@
  
    // No cards found yet
    totalCards = 0;
-@@ -582,6 +582,11 @@
+@@ -582,6 +582,11 @@ bool soundIO::listCards()
    // Start with first card
    cardNum = -1;
  
@@ -32,7 +32,7 @@
    for (;;)
      {
  
-@@ -599,8 +604,6 @@
+@@ -599,8 +604,6 @@ bool soundIO::listCards()
            qDebug() << "Can't open card "<< cardNum << snd_strerror(err);
            continue;
          }
@@ -41,7 +41,7 @@
  
        // Tell ALSA to fill in our snd_ctl_card_info_t with info about this card
        if ((err = snd_ctl_card_info(cardHandle, cardInfo)) >= 0)
-@@ -619,9 +622,6 @@
+@@ -619,9 +622,6 @@ bool soundIO::listCards()
            // NOTE: It's possible that this sound card may have no wave devices on it
            // at all, for example if it's only a MIDI card
            if (devNum < 0) break;
@@ -51,7 +51,7 @@
            memset(pcmInfo, 0, snd_pcm_info_sizeof());
  
            // Tell ALSA which device (number) we want info about
-@@ -636,6 +636,22 @@
+@@ -636,6 +636,22 @@ bool soundIO::listCards()
  //      qDebug() << "Found:" << totalDevices << " digital audio devices on card " <<  cardNum;
      }
  

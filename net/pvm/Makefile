@@ -7,27 +7,26 @@ PORTREVISION=	4
 CATEGORIES=	net parallel
 MASTER_SITES=	NL/pvm3 ftp://ftp.chg.ru/pub/prog/parallel/pvm3/
 DISTNAME=	pvm${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parallel Virtual Machine libraries and environment
 
 LICENSE=	MIT
 
-OPTIONS_DEFINE=	X11
-OPTIONS_DEFAULT=X11
-OPTIONS_SUB=	yes
-X11_USE=	XORG=x11,xaw,xt
-
+USES=		tar:tgz
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/pvm3
-MAKE_ENV+=	PVM_ROOT=${WRKSRC} SHAREDLDFLAGS="-shared"
+MAKE_ENV=	PVM_ROOT=${WRKSRC} SHAREDLDFLAGS="-shared"
 PVM_ROOT_REL=	lib/pvm
 PVM_ROOT=	${PREFIX}/${PVM_ROOT_REL}
-REINPLACE_ARGS=	-i ""
 SUB_FILES=	pkg-message
-NOT_FOR_ARCHS=	powerpc
+
+OPTIONS_DEFINE=	X11
+OPTIONS_DEFAULT=	X11
+OPTIONS_SUB=	yes
+
+X11_USE=	XORG=x11,xaw,xt
 
 .include <bsd.port.options.mk>
 
@@ -52,9 +51,9 @@ do-build:
 		EXTRACFLAGS="${CFLAGS} -fpic" shared)
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PVM_ROOT}/lib/FREEBSD
-	${MKDIR} ${STAGEDIR}${PVM_ROOT}/bin/FREEBSD
-	${MKDIR} ${STAGEDIR}${PVM_ROOT}/conf
+	@${MKDIR} ${STAGEDIR}${PVM_ROOT}/lib/FREEBSD
+	@${MKDIR} ${STAGEDIR}${PVM_ROOT}/bin/FREEBSD
+	@${MKDIR} ${STAGEDIR}${PVM_ROOT}/conf
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/FREEBSD/* ${STAGEDIR}${PVM_ROOT}/bin/FREEBSD
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/FREEBSD/pvmd3 ${STAGEDIR}${PVM_ROOT}/lib/FREEBSD
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/FREEBSD/pvm ${STAGEDIR}${PVM_ROOT}/lib/FREEBSD

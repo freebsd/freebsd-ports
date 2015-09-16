@@ -41,22 +41,18 @@
    case NESSUS_ENCAPS_TLSv1:
      renice_myself();
      cert   = kb_item_get_str(plug_get_kb(args), "SSL/cert");
-@@ -782,12 +792,13 @@ open_stream_connection(args, port, trans
- 	    sslerror(msg);
+@@ -783,8 +793,10 @@ open_stream_connection(args, port, trans
  	  }
       }
--   
-+#ifndef OPENSSL_NO_SSL2   
+    
++#ifndef OPENSSL_NO_SSL2
    case NESSUS_ENCAPS_SSLv2:
      /* We do not need a client certificate in this case */
++#endif
  
      if (open_SSL_connection(fp, timeout, cert, key, passwd, cert_names) <= 0)
      goto failed;
-+#endif
-   break;
- #endif
-  }
-@@ -812,10 +823,14 @@ open_stream_connection_unknown_encaps5(a
+@@ -812,10 +824,14 @@ open_stream_connection_unknown_encaps5(a
    struct timeval	tv1, tv2;
   static int encaps[] = {
  #ifdef HAVE_SSL
@@ -71,7 +67,7 @@
      NESSUS_ENCAPS_IP
    };
   
-@@ -1044,9 +1059,13 @@ read_stream_connection_unbuffered(fd, bu
+@@ -1044,9 +1060,13 @@ read_stream_connection_unbuffered(fd, bu
      {
        /* NESSUS_ENCAPS_IP was treated before with the non-Nessus fd */
  #ifdef HAVE_SSL
@@ -85,7 +81,7 @@
      case NESSUS_ENCAPS_TLSv1:
  # if DEBUG_SSL > 0
        if (getpid() != fp->pid)
-@@ -1280,9 +1299,13 @@ write_stream_connection4(fd, buf0, n, i_
+@@ -1280,9 +1300,13 @@ write_stream_connection4(fd, buf0, n, i_
      break;
  
  #ifdef HAVE_SSL
@@ -99,7 +95,7 @@
    case NESSUS_ENCAPS_TLSv1:
        FD_ZERO(&fdr); FD_ZERO(&fdw); 
        FD_SET(fp->fd, & fdr); FD_SET(fp->fd, & fdw);
-@@ -1504,12 +1527,16 @@ get_encaps_name(code)
+@@ -1504,12 +1528,16 @@ get_encaps_name(code)
   {
    case NESSUS_ENCAPS_IP:
     return "IP";
@@ -116,7 +112,7 @@
    case NESSUS_ENCAPS_TLSv1:
      return "TLSv1";
    default:
-@@ -1527,9 +1554,13 @@ get_encaps_through(code)
+@@ -1527,9 +1555,13 @@ get_encaps_through(code)
   {
    case NESSUS_ENCAPS_IP:
     return "";

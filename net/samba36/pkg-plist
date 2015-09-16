@@ -180,44 +180,6 @@ sbin/nmbd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/validchars/readme
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/validchars/validchr.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/validchars/validchr.com
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/validchars
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tridge
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts/wins_hook
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts/users_and_groups
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts/shares/python
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts/shares/perl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts/shares
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts/printing/cups
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts/printing
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts/mount
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts/idmap
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts/eventlog
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts/debugging/solaris
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts/debugging/linux
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts/debugging
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/printing
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/printer-accounting
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/perfcounter
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pdb
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pcap2nbench
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pam_winbind
-%%PORTEXAMPLES%%%%SMBPASS%%@dirrm %%EXAMPLESDIR%%/pam_smbpass
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/nss
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/misc
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/logon/ntlogon
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/logon/mklogon
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/logon/genlogon
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/logon
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dce-dfs
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bind9-patches
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/autofs
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/auth/crackcheck
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/auth
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ad-bench
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/VFS
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/LDAP
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/MAINTAINERS.txt
 %%PORTDOCS%%%%DOCSDIR%%/Manifest
@@ -245,11 +207,9 @@ sbin/nmbd
 %%PORTDOCS%%%%DOCSDIR%%/registry/WinME_PlainPassword.reg
 %%PORTDOCS%%%%DOCSDIR%%/registry/WinXP_PlainPassword.reg
 %%PORTDOCS%%%%DOCSDIR%%/registry/WindowsTerminalServer.reg
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/registry
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry %%SAMBA_PRIVATEDIR%%
-@dirrmtry %%SAMBA_LOCKDIR%%
-@dirrmtry %%SAMBA_LOGDIR%%
-@dirrmtry %%SAMBA_SPOOL%%
-@dirrmtry %%SAMBA_RUNDIR%%/nmbd
-@dirrmtry %%SAMBA_RUNDIR%%
+@dir %%SAMBA_PRIVATEDIR%%
+@dir %%SAMBA_LOCKDIR%%
+@dir %%SAMBA_LOGDIR%%
+@dir %%SAMBA_SPOOL%%
+@dir %%SAMBA_RUNDIR%%/nmbd
+@dir %%SAMBA_RUNDIR%%

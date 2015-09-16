@@ -1,8 +1,6 @@
-diff --git src/dns.c src/dns.c
-index fe3b672..0c43985 100644
---- src/dns.c
+--- src/dns.c.orig	2015-03-10 14:14:45 UTC
 +++ src/dns.c
-@@ -223,6 +223,15 @@ static void *dns_child_loop (__attribute__((unused)) void *dummy)
+@@ -224,6 +224,15 @@ static int dns_run_pcap_loop (void)
  		pthread_sigmask (SIG_SETMASK, &sigmask, NULL);
  	}
  

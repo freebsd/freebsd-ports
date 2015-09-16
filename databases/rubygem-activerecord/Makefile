@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	activerecord
-PORTVERSION=	3.2.21
-PORTREVISION=	0
+PORTVERSION=	3.2.22
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -17,6 +16,8 @@ RUN_DEPENDS=	rubygem-activemodel>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-a
 		rubygem-arel3>=3.0.3:${PORTSDIR}/databases/rubygem-arel3 \
 		rubygem-tzinfo03>=0.3.29:${PORTSDIR}/devel/rubygem-tzinfo03
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
@@ -25,7 +26,6 @@ OPTIONS_DEFINE=	MYSQL PGSQL SQLITE3
 MYSQL_DESC=	Use native MySQL bindings
 PGSQL_DESC=	Use native PostgreSQL bindings
 SQLITE3_DESC=	Use native SQLite3 bindings
-OPTIONSFILE=	${PORT_DBDIR}/rubygem-${PORTNAME}/options
 
 GEM_ENV+=	LANG=en_US.UTF-8
 

@@ -97,14 +97,3 @@ share/netsurf/toolbar.gtk3.ui
 share/netsurf/toolbarIndices
 share/netsurf/warning.gtk2.ui
 share/netsurf/warning.gtk3.ui
-@dirrm share/netsurf/throbber
-@dirrm share/netsurf/themes/gtk+
-@dirrm share/netsurf/themes
-@dirrm share/netsurf/nl
-@dirrm share/netsurf/ja
-@dirrm share/netsurf/it
-@dirrm share/netsurf/icons
-@dirrm share/netsurf/fr
-@dirrm share/netsurf/en
-@dirrm share/netsurf/de
-@dirrm share/netsurf

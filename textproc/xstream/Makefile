@@ -18,23 +18,22 @@ OPTIONS_DEFINE=	DOCS
 USES=		zip
 USE_JAVA=	yes
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
 PORTDOCS=	*
 
-.include <bsd.port.options.mk>
-
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
-	@${INSTALL_DATA} ${WRKSRC}/lib/${DISTNAME}.jar \
+	${INSTALL_DATA} ${WRKSRC}/lib/${DISTNAME}.jar \
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 	@${ECHO_MSG} " [ DONE ]"
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}/
 	@${ECHO_MSG} " [ DONE ]"
-.endif
 
 .include <bsd.port.mk>

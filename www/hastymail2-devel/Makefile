@@ -11,13 +11,11 @@ DISTNAME=	${PORTNAME}-devel-${HASTYMAIL_REV}
 MAINTAINER=	graudeejs@gmail.com
 COMMENT=	Small, fast and secure yet powerful IMAP webmail
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
-
-INSTALL_DIR?=	www/${PORTNAME}
-PLIST=		${WRKDIR}/pkg-plist
 
 WANT_PHP_WEB=	yes
 USE_PHP=	session imap pcre
@@ -26,9 +24,11 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 FIND_SKIP_OPTS=	-not -name hastymail2.conf.example -not -name '*.orig'
 
-CONFLICTS=	hastymail2-1.[0-9]*
+CONFLICTS_INSTALL=	hastymail2-[0-9]*
 
 HASTYMAIL_REV=	2011.08.22
+
+PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
 OPTIONS_DEFINE=	PGSQL MYSQL DB
 DB_DESC=	Use older pear DB (instead of MDB2)
@@ -59,21 +59,12 @@ post-patch:
 	@${SED} -I.orig -e "s# /etc/hastymail/hastyamil2.rc# ${ETCDIR}/hastyamil2.rc#" \
 		${WRKSRC}/hastymail2.conf.example
 
-pre-install:
-	@${FIND} -s -d ${WRKSRC}/ -type f ${FIND_SKIP_OPTS} \
-		| ${SED} "s#${WRKSRC}#${INSTALL_DIR}#g" > ${PLIST}
-	@${ECHO_CMD} %%ETCDIR%%/hastymail2.conf.sample >> ${PLIST}
-	@${FIND} -s -d ${WRKSRC}/ -type d ${FIND_SKIP_OPTS} \
-		| ${SED} "s#${WRKSRC}#@dirrm ${INSTALL_DIR}#g" >> ${PLIST}
-	@${ECHO_CMD} @dirrmtry %%ETCDIR%% >> ${PLIST}
-
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${INSTALL_DIR}
-	@cd ${WRKSRC} && ${FIND} . ${FIND_SKIP_OPTS} \
-		| ${PAX} -rwd ${STAGEDIR}${PREFIX}/${INSTALL_DIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${INSTALL_DIR}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	cd ${WRKSRC} && ${FIND} . ${FIND_SKIP_OPTS} \
+		| ${PAX} -rwd ${STAGEDIR}${WWWDIR}
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
-	@${INSTALL_DATA} ${WRKSRC}/hastymail2.conf.example \
+	${INSTALL_DATA} ${WRKSRC}/hastymail2.conf.example \
 		${STAGEDIR}${ETCDIR}/hastymail2.conf.sample
 
 .include <bsd.port.mk>

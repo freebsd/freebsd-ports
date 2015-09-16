@@ -37,4 +37,8 @@ test: build
 	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test)
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's/FreeBSD-\*/FreeBSD-*|DragonFly-*/' \
+		${WRKSRC}/configure
+
 .include <bsd.port.mk>

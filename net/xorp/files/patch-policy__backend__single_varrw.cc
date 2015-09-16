@@ -1,6 +1,6 @@
---- ./policy/backend/single_varrw.cc.orig	2010-07-19 21:10:33.000000000 +0000
-+++ ./policy/backend/single_varrw.cc	2014-02-26 21:17:13.000000000 +0000
-@@ -70,7 +70,11 @@
+--- policy/backend/single_varrw.cc.orig	2012-01-11 17:56:10 UTC
++++ policy/backend/single_varrw.cc
+@@ -70,7 +70,11 @@ SingleVarRW::read(const Id& id)
  
  	// out of luck...
  	if(!e)

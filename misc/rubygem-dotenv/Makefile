@@ -1,19 +1,20 @@
 # $FreeBSD$
 
 PORTNAME=	dotenv
-PORTVERSION=	0.11.1
+PORTVERSION=	2.0.2
 CATEGORIES=	misc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Loads environment variables from `.env`
 
-RUN_DEPENDS=	rubygem-dotenv-deployment>=0.0.2:${PORTSDIR}/devel/rubygem-dotenv-deployment
+LICENSE=	MIT
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-PLIST_FILES+=	bin/dotenv
+PLIST_FILES=	bin/dotenv
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	tth
 PORTVERSION=	4.03
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://hutchinson.belmont.ma.us/tth/tth-noncom/ \
 		http://redundancy.redundancy.org/mirror/
@@ -14,8 +14,7 @@ COMMENT=	TeX to HTML translator
 
 RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
 
-USES=		shebangfix tar:tgz
-USE_GHOSTSCRIPT_RUN=	yes
+USES=		ghostscript:run shebangfix tar:tgz
 #USE_TEX=	latex
 SHEBANG_FILES=	Xfonts.fix
 

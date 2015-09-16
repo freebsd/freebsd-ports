@@ -12,12 +12,11 @@ COMMENT=	The Objective-C Foundation Classes library
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libpng.so:${PORTSDIR}/graphics/png \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
 PROJECTHOST=	${PORTNAME}
 USE_SDL=	sdl
-USES=		libtool objc pathfix
+USES=		jpeg libtool objc pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

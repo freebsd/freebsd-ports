@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	owncloud
-PORTVERSION=	8.0.3
+PORTVERSION=	8.1.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.owncloud.org/community/
 
@@ -13,9 +14,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING-AGPL
 
 USES=		cpe tar:bzip2
 USE_PHP=	bz2 ctype curl dom fileinfo filter gd hash iconv json \
-		mbstring pdo session simplexml xml xmlreader xmlwriter \
+		mbstring pdo posix session simplexml xml xmlreader xmlwriter \
 		xsl wddx zip zlib
 WANT_PHP_WEB=	yes
+USE_OPENSSL=	yes
 
 OWNCLOUD_USERNAME?=	${WWWOWN}
 OWNCLOUD_GROUPNAME?=	${WWWGRP}
@@ -29,7 +31,7 @@ PLIST_SUB=	OWNCLOUD_USERNAME=${OWNCLOUD_USERNAME} \
 OPTIONS_DEFINE=	EXIF LDAP MP3INFO SSL
 OPTIONS_MULTI=	DB
 OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
-OPTIONS_DEFAULT=	EXIF LDAP MP3INFO SQLITE SSL
+OPTIONS_DEFAULT=	EXIF LDAP MP3INFO MYSQL SSL
 
 EXIF_DESC=	Image rotation support
 MP3INFO_DESC=	MP3 ID3 tags support
@@ -44,8 +46,18 @@ PGSQL_USE=	PHP=pdo_pgsql,pgsql
 SQLITE_USE=	PHP=pdo_sqlite,sqlite3
 SSL_USE=	PHP=openssl
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1002000
+WITH_OPENSSL_PORT=	yes
+.endif
+
 do-install:
 	@${MKDIR} -m 0755 ${STAGEDIR}${WWWDIR}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${WWWDIR}/data
+	${CHMOD} +x ${STAGEDIR}${WWWDIR}/occ
 
 .include <bsd.port.mk>

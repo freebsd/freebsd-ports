@@ -1,5 +1,5 @@
---- test/v4l_h264/encode/capture.cpp.orig	2012-10-04 15:30:51.000000000 +0200
-+++ test/v4l_h264/encode/capture.cpp	2012-10-11 17:57:55.361081933 +0200
+--- test/v4l_h264/encode/capture.cpp.orig	2015-07-01 07:54:24 UTC
++++ test/v4l_h264/encode/capture.cpp
 @@ -30,6 +30,7 @@
  */
  
@@ -20,7 +20,7 @@
  #include <sys/stat.h>
  #include <sys/mman.h>
  #include <sys/ioctl.h>
-@@ -451,10 +456,15 @@
+@@ -451,10 +456,15 @@ static void init_userp (unsigned int buf
      }
      for (n_buffers = 0; n_buffers < 4; ++n_buffers) {
          buffers[n_buffers].length = buffer_size;

@@ -39,13 +39,12 @@ post-install:
 .for f in AUTHORS ChangeLog NEWS README TODO
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.if ${PORT_OPTIONS:MDOXYGEN}
-	(cd ${WRKSRC}/doc/man/man3 && ${INSTALL_MAN} l*.3 p*.3 \
-		${STAGEDIR}${MAN3PREFIX}/man/man3/)
-	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
-.endif
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${PORTEXAMPLES:S|^|${WRKSRC}/examples/|} \
 		${STAGEDIR}${EXAMPLESDIR}
+post-install-DOXYGEN-on:
+	(cd ${WRKSRC}/doc/man/man3 && ${INSTALL_MAN} l*.3 p*.3 \
+		${STAGEDIR}${MAN3PREFIX}/man/man3/)
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

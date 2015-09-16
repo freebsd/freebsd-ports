@@ -40,7 +40,7 @@ ATLAS_USES=	blaslapack:atlas
 NETLIB_USES=	blaslapack:netlib
 OPENBLAS_USES=	blaslapack:openblas
 SUITESPARSE_LIB_DEPENDS=libumfpack.so:${PORTSDIR}/math/suitesparse
-TESTS_RUN_DEPENDS=	nosetests:${PORTSDIR}/devel/py-nose
+TESTS_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/nose/__init__.py:${PORTSDIR}/devel/py-nose
 
 .include <bsd.port.pre.mk>
 

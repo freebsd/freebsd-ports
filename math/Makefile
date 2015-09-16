@@ -11,6 +11,7 @@
     SUBDIR += R-cran-KFAS
     SUBDIR += R-cran-LearnBayes
     SUBDIR += R-cran-MCMCpack
+    SUBDIR += R-cran-NMF
     SUBDIR += R-cran-RHmm
     SUBDIR += R-cran-RSvgDevice
     SUBDIR += R-cran-RcppArmadillo
@@ -28,6 +29,7 @@
     SUBDIR += R-cran-gtable
     SUBDIR += R-cran-igraph
     SUBDIR += R-cran-inline
+    SUBDIR += R-cran-irlba
     SUBDIR += R-cran-labeling
     SUBDIR += R-cran-memisc
     SUBDIR += R-cran-minqa
@@ -52,6 +54,7 @@
     SUBDIR += algae
     SUBDIR += algotutor
     SUBDIR += alt-ergo
+    SUBDIR += alt-ergo-spark
     SUBDIR += analitza
     SUBDIR += ann
     SUBDIR += apc
@@ -90,6 +93,7 @@
     SUBDIR += cloog
     SUBDIR += clp
     SUBDIR += cminpack
+    SUBDIR += cmlib
     SUBDIR += coinmp
     SUBDIR += concorde
     SUBDIR += convertall
@@ -167,7 +171,9 @@
     SUBDIR += hexcalc
     SUBDIR += hfst
     SUBDIR += hs-Agda
+    SUBDIR += hs-Agda-stdlib
     SUBDIR += hs-NumInstances
+    SUBDIR += hs-adjunctions
     SUBDIR += hs-categories
     SUBDIR += hs-comonad
     SUBDIR += hs-contravariant
@@ -176,9 +182,9 @@
     SUBDIR += hs-distributive
     SUBDIR += hs-erf
     SUBDIR += hs-ieee754
+    SUBDIR += hs-kan-extensions
     SUBDIR += hs-math-functions
     SUBDIR += hs-mwc-random
-    SUBDIR += hs-nats
     SUBDIR += hs-pointed
     SUBDIR += hs-probability
     SUBDIR += hs-semigroupoids
@@ -225,6 +231,7 @@
     SUBDIR += libproj4
     SUBDIR += libqalculate
     SUBDIR += libranlip
+    SUBDIR += librsb
     SUBDIR += libtommath
     SUBDIR += libtsnnls
     SUBDIR += linpack
@@ -234,7 +241,6 @@
     SUBDIR += ltl
     SUBDIR += ltl2ba
     SUBDIR += lybniz
-    SUBDIR += mate-calc
     SUBDIR += mathomatic
     SUBDIR += matio
     SUBDIR += matlab-installer
@@ -287,6 +293,7 @@
     SUBDIR += octave-forge-dataframe
     SUBDIR += octave-forge-dicom
     SUBDIR += octave-forge-divand
+    SUBDIR += octave-forge-doctest
     SUBDIR += octave-forge-econometrics
     SUBDIR += octave-forge-engine
     SUBDIR += octave-forge-fenv
@@ -426,6 +433,7 @@
     SUBDIR += p5-Math-Geometry-Planar
     SUBDIR += p5-Math-Geometry-Planar-GPC
     SUBDIR += p5-Math-Geometry-Planar-GPC-Polygon
+    SUBDIR += p5-Math-Geometry-Planar-GPC-PolygonXS
     SUBDIR += p5-Math-Geometry-Planar-Offset
     SUBDIR += p5-Math-Geometry-Voronoi
     SUBDIR += p5-Math-Gradient
@@ -484,6 +492,7 @@
     SUBDIR += p5-NetCDF
     SUBDIR += p5-Number-Compare
     SUBDIR += p5-Number-Fraction
+    SUBDIR += p5-Number-Misc
     SUBDIR += p5-Number-Uncertainty
     SUBDIR += p5-Number-WithError
     SUBDIR += p5-Number-WithError-LaTeX
@@ -546,8 +555,10 @@
     SUBDIR += py-apgl
     SUBDIR += py-basemap
     SUBDIR += py-basemap-data
+    SUBDIR += py-bitmath
     SUBDIR += py-bitvector
     SUBDIR += py-bottleneck
+    SUBDIR += py-colormath
     SUBDIR += py-cryptominisat
     SUBDIR += py-fastcluster
     SUBDIR += py-ffc

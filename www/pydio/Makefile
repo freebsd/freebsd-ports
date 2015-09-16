@@ -15,7 +15,7 @@ PORTSCOUT=	limitw:1,even
 
 NO_BUILD=	yes
 NO_ARCH=	yes
-USES=		dos2unix shebangfix
+USES=		cpe dos2unix shebangfix
 php_OLD_CMD=	/php
 SHEBANG_FILES=	plugins/core.mq/ws-server.php \
 		plugins/core.mq/vendor/phpws/demo_ssl.php \

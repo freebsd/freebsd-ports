@@ -12,7 +12,6 @@ bin/gpg2
 bin/gpgconf
 bin/gpgkey2ssh
 bin/gpgparsemail
-bin/gpgsm-gencert.sh
 bin/gpgv2
 bin/symcryptrun
 bin/watchgnupg
@@ -28,7 +27,6 @@ libexec/gpg-protect-tool
 %%PORTDOCS%%man/man1/gpg2.1.gz
 %%PORTDOCS%%man/man1/gpgconf.1.gz
 %%PORTDOCS%%man/man1/gpgparsemail.1.gz
-%%PORTDOCS%%man/man1/gpgsm-gencert.sh.1.gz
 %%PORTDOCS%%man/man1/gpgsm.1.gz
 %%PORTDOCS%%man/man1/gpgv2.1.gz
 %%PORTDOCS%%man/man1/scdaemon.1.gz

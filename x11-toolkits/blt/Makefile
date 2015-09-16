@@ -3,7 +3,7 @@
 
 PORTNAME=	blt
 PORTVERSION=	2.5.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits tk
 MASTER_SITES=	SF/wize
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -13,11 +13,13 @@ COMMENT=	Extension to the Tk toolkit
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
-
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:R}
 
-USES=		gmake tk zip
+USES=		gmake jpeg shebangfix tk zip
+SHEBANG_FILES=	demos/scripts/xcolors.tcl
+SHEBANG_LANG=	bltwish
+bltwish_OLD_CMD=../bltwish
+bltwish_CMD=	${PREFIX}/bin/bltwish # installed by this port, so not LOCALBASE
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${TCL_INCLUDEDIR}/generic \

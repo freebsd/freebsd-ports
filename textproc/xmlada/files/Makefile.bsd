@@ -1,0 +1,137 @@
+ADALIB!=	gnatls -v | grep adalib | awk '{print $$1}'
+
+STATIC_FLAGS=	-gnatQ -O2 -gnatn -gnatp -gnatA -j${PROCESSORS}
+DYNAMIC_FLAGS=	-fPIC ${STATIC_FLAGS}
+
+
+#
+# unicode depends on nothing
+#
+
+unicode/lib/static/libxmlada_unicode.a: unicode/dummy_unicode.adb
+	@echo building static ${.TARGET:R} library
+	@rm -f ${.TARGET}
+	gnatmake -c ${.ALLSRC} -D unicode/obj/static ${STATIC_FLAGS}
+	rm unicode/obj/static/dummy*
+	ar cq ${.TARGET} unicode/obj/static/*.o
+	ranlib ${.TARGET}
+
+unicode/lib/relocatable/libxmlada_unicode.so: unicode/dummy_unicode.adb
+	@${ECHO} building shared library ${.TARGET:R}
+	@rm -f ${.TARGET} ${.TARGET}.${LIBVER}
+	gnatmake -c ${.ALLSRC} -D unicode/obj/relocatable ${DYNAMIC_FLAGS}
+	rm unicode/obj/relocatable/dummy*
+	ada -shared -Wl,-rpath,${PREFIX}/lib/xmlada/relocatable \
+	    -L${ADALIB} -lgnat -Wl,-rpath,${ADALIB} \
+	    -o ${.TARGET}.${LIBVER} -Wl,-soname,${.TARGET:T}.${LIBVER} \
+	    unicode/obj/relocatable/*.o
+	ln -s ${.TARGET:T}.${LIBVER} ${.TARGET}
+
+#
+# input sources depends on unicode
+#
+
+input_sources/lib/static/libxmlada_input_sources.a: input_sources/dummy_input_sources.adb unicode/lib/static/libxmlada_unicode.a
+	@echo building static ${.TARGET:R} library
+	@rm -f ${.TARGET}
+	gnatmake -c ${.ALLSRC:M*.adb} -D input_sources/obj/static -aOunicode/obj/static -aIunicode ${STATIC_FLAGS}
+	rm input_sources/obj/static/dummy*
+	ar cq ${.TARGET} input_sources/obj/static/*.o
+	ranlib ${.TARGET}
+
+input_sources/lib/relocatable/libxmlada_input_sources.so: input_sources/dummy_input_sources.adb unicode/lib/relocatable/libxmlada_unicode.so
+	@${ECHO} building shared library ${.TARGET:R}
+	@rm -f ${.TARGET} ${.TARGET}.${LIBVER}
+	gnatmake -c ${.ALLSRC:M*.adb} -D input_sources/obj/relocatable -aOunicode/obj/relocatable -aIunicode ${DYNAMIC_FLAGS}
+	rm input_sources/obj/relocatable/dummy*
+	ada -shared -Wl,-rpath,${PREFIX}/lib/xmlada/relocatable \
+	    -L${ADALIB} -lgnat -Wl,-rpath,${ADALIB} \
+	    -Lunicode/lib/relocatable -lxmlada_unicode \
+	    -o ${.TARGET}.${LIBVER} -Wl,-soname,${.TARGET:T}.${LIBVER} \
+	    input_sources/obj/relocatable/*.o
+	ln -s ${.TARGET:T}.${LIBVER} ${.TARGET}
+
+#
+# sax depends on input sources and unicode (sufficent to limit to I.S)
+#
+
+sax/lib/static/libxmlada_sax.a: sax/dummy_sax.adb input_sources/lib/static/libxmlada_input_sources.a
+	@echo building static ${.TARGET:R} library
+	@rm -f ${.TARGET}
+	gnatmake -c ${.ALLSRC:M*.adb} -D sax/obj/static -aOunicode/obj/static -aOinput_sources/obj/static -aIunicode -aIinput_sources ${STATIC_FLAGS}
+	rm sax/obj/static/dummy*
+	ar cq ${.TARGET} sax/obj/static/*.o
+	ranlib ${.TARGET}
+
+sax/lib/relocatable/libxmlada_sax.so: sax/dummy_sax.adb input_sources/lib/relocatable/libxmlada_input_sources.so
+	@${ECHO} building shared library ${.TARGET:R}
+	@rm -f ${.TARGET} ${.TARGET}.${LIBVER}
+	gnatmake -c ${.ALLSRC:M*.adb} -D sax/obj/relocatable -aOunicode/obj/relocatable -aOinput_sources/obj/relocatable -aIunicode -aIinput_sources ${DYNAMIC_FLAGS}
+	rm sax/obj/relocatable/dummy*
+	ada -shared -Wl,-rpath,${PREFIX}/lib/xmlada/relocatable \
+	    -L${ADALIB} -lgnat -Wl,-rpath,${ADALIB} \
+	    -Lunicode/lib/relocatable -lxmlada_unicode \
+	    -Linput_sources/lib/relocatable -lxmlada_input_sources \
+	    -o ${.TARGET}.${LIBVER} -Wl,-soname,${.TARGET:T}.${LIBVER} \
+	    sax/obj/relocatable/*.o
+	ln -s ${.TARGET:T}.${LIBVER} ${.TARGET}
+
+#
+# dom depends on three other libraries (sufficent to limit to sax)
+#
+
+dom/lib/static/libxmlada_dom.a: dom/dummy_dom.adb sax/lib/static/libxmlada_sax.a
+	@echo building static ${.TARGET:R} library
+	@rm -f ${.TARGET}
+	gnatmake -c ${.ALLSRC:M*.adb} -D dom/obj/static -aOunicode/obj/static -aOinput_sources/obj/static -aOsax/obj/static -aIunicode -aIinput_sources -aIsax ${STATIC_FLAGS}
+	rm dom/obj/static/dummy*
+	ar cq ${.TARGET} dom/obj/static/*.o
+	ranlib ${.TARGET}
+
+dom/lib/relocatable/libxmlada_dom.so: dom/dummy_dom.adb sax/lib/relocatable/libxmlada_sax.so
+	@${ECHO} building shared library ${.TARGET:R}
+	@rm -f ${.TARGET} ${.TARGET}.${LIBVER}
+	gnatmake -c ${.ALLSRC:M*.adb} -D dom/obj/relocatable -aOunicode/obj/relocatable -aOinput_sources/obj/relocatable -aOsax/obj/relocatable -aIunicode -aIinput_sources -aIsax ${DYNAMIC_FLAGS}
+	rm dom/obj/relocatable/dummy*
+	ada -shared -Wl,-rpath,${PREFIX}/lib/xmlada/relocatable \
+	    -L${ADALIB} -lgnat -Wl,-rpath,${ADALIB} \
+	    -Lunicode/lib/relocatable -lxmlada_unicode \
+	    -Linput_sources/lib/relocatable -lxmlada_input_sources \
+	    -Lsax/lib/relocatable -lxmlada_sax \
+	    -o ${.TARGET}.${LIBVER} -Wl,-soname,${.TARGET:T}.${LIBVER} \
+	    dom/obj/relocatable/*.o
+	ln -s ${.TARGET:T}.${LIBVER} ${.TARGET}
+
+#
+# schema depends on four other libraries (sufficent to limit to dom)
+#
+
+schema/lib/static/libxmlada_schema.a: schema/dummy_schema.adb dom/lib/static/libxmlada_dom.a
+	@echo building static ${.TARGET:R} library
+	@rm -f ${.TARGET}
+	gnatmake -c ${.ALLSRC:M*.adb} -D schema/obj/static -aOunicode/obj/static -aOinput_sources/obj/static -aOsax/obj/static -aOdom/obj/static -aIunicode -aIinput_sources -aIsax -aIdom ${STATIC_FLAGS}
+	rm schema/obj/static/dummy*
+	ar cq ${.TARGET} schema/obj/static/*.o
+	ranlib ${.TARGET}
+
+schema/lib/relocatable/libxmlada_schema.so: schema/dummy_schema.adb dom/lib/relocatable/libxmlada_dom.so
+	@${ECHO} building shared library ${.TARGET:R}
+	@rm -f ${.TARGET} ${.TARGET}.${LIBVER}
+	gnatmake -c ${.ALLSRC:M*.adb} -D schema/obj/relocatable -aOunicode/obj/relocatable -aOinput_sources/obj/relocatable -aOsax/obj/relocatable -aOdom/obj/relocatable -aIunicode -aIinput_sources -aIsax -aIdom ${DYNAMIC_FLAGS}
+	rm schema/obj/relocatable/dummy*
+	ada -shared -Wl,-rpath,${PREFIX}/lib/xmlada/relocatable \
+	    -L${ADALIB} -lgnat -Wl,-rpath,${ADALIB} \
+	    -Lunicode/lib/relocatable -lxmlada_unicode \
+	    -Linput_sources/lib/relocatable -lxmlada_input_sources \
+	    -Lsax/lib/relocatable -lxmlada_sax \
+	    -Ldom/lib/relocatable -lxmlada_dom \
+	    -o ${.TARGET}.${LIBVER} -Wl,-soname,${.TARGET:T}.${LIBVER} \
+	    schema/obj/relocatable/*.o
+	ln -s ${.TARGET:T}.${LIBVER} ${.TARGET}
+
+#
+# Sphinx documentation
+#
+
+docs:
+	${MAKE} -e -C docs

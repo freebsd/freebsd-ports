@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-parallel
-PORTVERSION=	2.2.1
+PORTVERSION=	3.0.2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -17,8 +17,6 @@ OCTSRC=		${DISTNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	HOME=${WRKSRC}
-MAKE_JOBS_UNSAFE=	yes
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 

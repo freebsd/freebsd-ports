@@ -11,7 +11,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Database abstraction layer for PHP5
 
 USE_PHP=	yes
-DEFAULT_VERSIONS+=php=5
+PHP_DEFAULT=	5.4
 NO_BUILD=	yes
 
 do-install:

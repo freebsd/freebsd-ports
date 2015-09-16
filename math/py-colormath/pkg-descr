@@ -1,0 +1,15 @@
+colormath is a simple Python module that spares the user from directly dealing
+with color math.
+
+Some features include:
+
+ * Support for a wide range of color spaces. A good chunk of the CIE spaces,
+   RGB, HSL/HSV, CMY/CMYK, and many more.
+ * Conversions between the various color spaces. For example, XYZ to sRGB,
+   Spectral to XYZ, CIE Lab to Adobe RGB.
+ * Calculation of color difference. All CIE Delta E functions, plus CMC.
+ * Chromatic adaptations (changing illuminants).
+ * RGB to hex and vice-versa.
+ * 16-bit RGB support.
+
+WWW: https://pypi.python.org/pypi/colormath

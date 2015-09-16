@@ -1,5 +1,5 @@
---- src/connection.h.orig	2014-12-30 18:40:27.628284595 +0100
-+++ src/connection.h	2014-12-30 18:40:37.947283409 +0100
+--- src/connection.h.orig	2013-11-22 09:33:35 UTC
++++ src/connection.h
 @@ -30,7 +30,7 @@
  #include "cache.h"
  #include "module.h"

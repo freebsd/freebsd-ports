@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	npm
-PORTVERSION=	2.9.1
+PORTVERSION=	2.14.1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -20,9 +20,16 @@ NODE_DEVEL_DESC=Use www/node-devel as backend
 NODE010_DESC=	Use www/node010 as backend
 
 MAKE_ARGS=	npm_config_prefix=${STAGEDIR}${PREFIX}
+NO_ARCH=	yes
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ''
-USES=		cpe python:2 tar:xz
+SHEBANG_FILES=	lib/utils/completion.sh \
+		node_modules/request/node_modules/node-uuid/benchmark/bench.sh \
+		scripts/clean-old.sh \
+		scripts/release.sh \
+		scripts/relocate.sh \
+		test/update-test.sh
+USES=		cpe python:2 shebangfix tar:xz
 
 MANPREFIX=	${PREFIX}/lib/node_modules/npm
 
@@ -33,6 +40,13 @@ IOJS_RUN_DEPENDS=	iojs>=1.0.0:${PORTSDIR}/www/iojs
 NODE_DEVEL_RUN_DEPENDS=	node-devel>=0.8.0:${PORTSDIR}/www/node-devel
 NODE_RUN_DEPENDS=	node>=0.8.0:${PORTSDIR}/www/node
 NODE010_RUN_DEPENDS=	node010>=0.8.0:${PORTSDIR}/www/node010
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+# Workaround for kernel bug 178881
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-bug-178881
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|node cli.js|& --cache ${WRKDIR}/.cache|' ${WRKSRC}/Makefile
@@ -46,6 +60,7 @@ post-install:
 # require: bash, git, gmake, perl, node
 
 MS_DISTNAME=	${PORTNAME}-${MS_VERSION}
+MS_PLIST=	${WRKDIR}/.ms-pkg-plist
 MS_RELEASES=	${MS_WRKSRC}/releases
 MS_VERSION=	`${CAT} ${MS_VERSIONFILE}`
 MS_VERSIONFILE=	${MS_WRKSRC}/.version
@@ -56,6 +71,11 @@ GITHUB_RELEASES=https://github.com/${GITHUB_USER}/${GITHUB_PROJECT}/releases/lat
 GITHUB_TARBALL=	https://github.com/${GITHUB_USER}/${GITHUB_PROJECT}/archive/${GITHUB_VERSION}.tar.gz
 GITHUB_USER=	${PORTNAME}
 GITHUB_VERSION=	v${MS_VERSION}
+
+genplist: do-clean stage
+	@${MAKE_CMD} makeplist > ${MS_PLIST}
+	@${SED} -i '' '1 d; /^lib\/node_modules\/npm\/bin\/node-gyp-bin\/node-gyp$$/ s|^|@(,,755) |' ${MS_PLIST}
+	@${INSTALL} -m 600 ${MS_PLIST} ${PLIST}
 
 maketar: do-clean
 	@${MKDIR} ${MS_WRKSRC}/
@@ -79,4 +99,4 @@ maketar: do-clean
 	@sudo ${INSTALL} -m 644 ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}.tar.xz ${DISTDIR}/
 	@cd ${.CURDIR}/ && ${MAKE_CMD} makesum
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

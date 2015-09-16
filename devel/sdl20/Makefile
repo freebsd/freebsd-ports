@@ -2,7 +2,7 @@
 
 PORTNAME=	sdl2
 PORTVERSION=	2.0.3
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/release/
 DISTNAME=	SDL2-${PORTVERSION}
@@ -25,13 +25,33 @@ CONFIGURE_ARGS+=	--disable-video-opengles \
 			--disable-dbus \
 			--disable-input-tslib \
 			--disable-rpath
+.if defined(MACHINE_CPU) && ${MACHINE_CPU:Mmmx}
+CONFIGURE_ARGS+=	--enable-mmx
+.else
+CONFIGURE_ARGS+=	--disable-mmx
+.endif
+.if defined(MACHINE_CPU) && ${MACHINE_CPU:M3dnow}
+CONFIGURE_ARGS+=	--enable-3dnow
+.else
+CONFIGURE_ARGS+=	--disable-3dnow
+.endif
+.if defined(MACHINE_CPU) && ${MACHINE_CPU:Msse}
+CONFIGURE_ARGS+=	--enable-sse
+.else
+CONFIGURE_ARGS+=	--disable-sse
+.endif
+.if defined(MACHINE_CPU) && ${MACHINE_CPU:Msse2}
+CONFIGURE_ARGS+=	--enable-sse2
+.else
+CONFIGURE_ARGS+=	--disable-sse2
+.endif
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 
-OPTIONS_DEFINE=		ALSA ASM DLOPEN ESOUND MMX NAS OSS \
-			PULSEAUDIO PTHREADS SSE SDL_ATOMIC SDL_AUDIO \
+OPTIONS_DEFINE=		ALSA ASM DLOPEN ESOUND NAS OSS \
+			PULSEAUDIO PTHREADS SDL_ATOMIC SDL_AUDIO \
 			SDL_CPUINFO SDL_EVENTS SDL_FILE SDL_HAPTIC \
 			SDL_JOYSTICK SDL_LOADSO SDL_POWER SDL_RENDER \
 			SDL_THREADS SDL_TIMERS SDL_VIDEO VIDEO_OPENGL VIDEO_X11
@@ -39,8 +59,6 @@ OPTIONS_DEFAULT=	ASM DLOPEN OSS PTHREADS SDL_ATOMIC SDL_AUDIO \
 			SDL_CPUINFO SDL_EVENTS SDL_FILE SDL_HAPTIC \
 			SDL_JOYSTICK SDL_LOADSO SDL_POWER SDL_RENDER \
 			SDL_THREADS SDL_TIMERS SDL_VIDEO VIDEO_OPENGL VIDEO_X11
-OPTIONS_DEFAULT_i386=	MMX SSE
-OPTIONS_DEFAULT_amd64=	MMX SSE
 
 ALSA_DESC=		Audio output via the ALSA audio architecture
 DLOPEN_DESC=		Use dlopen for loading 3rd party libraries
@@ -67,7 +85,6 @@ VIDEO_X11_DESC=		X11 rendering support
 
 ASM_CONFIGURE_ENABLE=		assembly
 DLOPEN_CONFIGURE_ENABLE=	sdl-dlopen
-MMX_CONFIGURE_ENABLE=		mmx 3dnow
 PTHREADS_CONFIGURE_ENABLE=	pthreads pthreads-sem
 SDL_ATOMIC_CONFIGURE_ENABLE=	atomic gcc-atomics
 SDL_AUDIO_CONFIGURE_ENABLE=	audio
@@ -82,7 +99,6 @@ SDL_RENDER_CONFIGURE_ENABLE=	render
 SDL_THREADS_CONFIGURE_ENABLE=	threads
 SDL_TIMERS_CONFIGURE_ENABLE=	timers
 SDL_VIDEO_CONFIGURE_EANBLE=	video
-SSE_CONFIGURE_ENABLE=		sse sse2 ssemath
 
 .include <bsd.port.options.mk>
 
@@ -173,5 +189,8 @@ CONFIGURE_ARGS+=	--disable-video-x11 \
 post-patch:
 	 @${REINPLACE_CMD} -e '/ CheckInputEvents$$/d' \
 		-e 's/-liconv/${ICONV_LIB}/g' ${WRKSRC}/configure
+# Clang does not provide _m_prefetch
+	@${REINPLACE_CMD} 's/_m_prefetch/__builtin_prefetch/' \
+		${WRKSRC}/configure ${WRKSRC}/src/video/SDL_blit_A.c
 
 .include <bsd.port.mk>

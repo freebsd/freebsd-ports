@@ -1,0 +1,15 @@
+--- r10k.gemspec.orig	2015-06-10 21:34:18 UTC
++++ r10k.gemspec
+@@ -24,9 +24,9 @@ Gem::Specification.new do |s|
+     s.specification_version = 4
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+-      s.add_runtime_dependency(%q<colored>, ["= 1.2"])
+-      s.add_runtime_dependency(%q<cri>, ["~> 2.6.1"])
+-      s.add_runtime_dependency(%q<log4r>, ["= 1.1.10"])
++      s.add_runtime_dependency(%q<colored>, [">= 1.2"])
++      s.add_runtime_dependency(%q<cri>, [">= 2.6.1"])
++      s.add_runtime_dependency(%q<log4r>, [">= 1.1.10"])
+       s.add_runtime_dependency(%q<multi_json>, ["~> 1.10"])
+       s.add_runtime_dependency(%q<faraday>, ["~> 0.9.0"])
+       s.add_runtime_dependency(%q<faraday_middleware>, ["~> 0.9.0"])

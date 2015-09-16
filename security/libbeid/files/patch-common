@@ -1,7 +1,5 @@
-Index: common/src/bytearrayreader.cpp
-===================================================================
---- common/src/bytearrayreader.cpp	(revision 1614)
-+++ common/src/bytearrayreader.cpp	(working copy)
+--- cardcomm/pkcs11/src/common/bytearrayreader.cpp.orig	2015-02-19 13:59:02 UTC
++++ cardcomm/pkcs11/src/common/bytearrayreader.cpp
 @@ -24,7 +24,6 @@
  #include "bytearrayreader.h"
  #include "bytearray.h"
@@ -10,10 +8,8 @@ Index: common/src/bytearrayreader.cpp
  
  /***************** ByteArray **************************/
  
-Index: common/src/datafile.cpp
-===================================================================
---- common/src/datafile.cpp	(revision 1614)
-+++ common/src/datafile.cpp	(working copy)
+--- cardcomm/pkcs11/src/common/datafile.cpp.orig	2015-06-02 08:02:25 UTC
++++ cardcomm/pkcs11/src/common/datafile.cpp
 @@ -249,8 +249,7 @@ bool CDataFile::Load(bool bLock)
    while ( !bDone )
      {
@@ -34,17 +30,13 @@ Index: common/src/datafile.cpp
  
  	return nLength;
  }
-Index: common/src/logbase.cpp
-===================================================================
---- common/src/logbase.cpp.orig	2014-09-30 18:10:35 UTC
-+++ common/src/logbase.cpp
-@@ -29,12 +29,8 @@
- #include "mw_util.h"
+--- cardcomm/pkcs11/src/common/logbase.cpp.orig	2015-06-02 08:02:25 UTC
++++ cardcomm/pkcs11/src/common/logbase.cpp
+@@ -30,11 +30,7 @@
  
  #ifndef WIN32
--#include <malloc.h>
+ #include <stdlib.h>
 -#ifdef LINUX
-+#include <stdlib.h>
  #include "wintypes.h"
 -#else
 -#include "PCSC/wintypes.h"
@@ -60,10 +52,8 @@ Index: common/src/logbase.cpp
  		m_f = fopen(utilStringNarrow(filename).c_str(),"a, ccs=UTF-8");
  		if (m_f == NULL) err=errno;	
  #endif
-Index: common/src/mw_util.h
-===================================================================
---- common/src/mw_util.h	(revision 1614)
-+++ common/src/mw_util.h	(working copy)
+--- cardcomm/pkcs11/src/common/mw_util.h.orig	2015-02-19 13:59:02 UTC
++++ cardcomm/pkcs11/src/common/mw_util.h
 @@ -38,7 +38,6 @@
  #endif
  
@@ -72,11 +62,9 @@ Index: common/src/mw_util.h
  #endif
  
  #ifndef HAVE_ERRNO_T
-Index: common/src/util.cpp
-===================================================================
---- common/src/util.cpp	(revision 1614)
-+++ common/src/util.cpp	(working copy)
-@@ -348,7 +348,7 @@ void GetProcessName(wchar_t *wBuffer,uns
+--- cardcomm/pkcs11/src/common/util.cpp.orig	2015-06-02 08:02:25 UTC
++++ cardcomm/pkcs11/src/common/util.cpp
+@@ -376,7 +376,7 @@ void GetProcessName(wchar_t *wBuffer,uns
  	/* Get our PID and build the name of the link in /proc */
  	pid = getpid();
  	

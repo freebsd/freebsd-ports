@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- src/gagui.h.orig	Fri Mar 25 15:17:42 2005
 +++ src/gagui.h	Fri Mar 25 15:18:16 2005
 @@ -11,7 +11,7 @@

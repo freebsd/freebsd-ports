@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	XML-LibXML
-PORTVERSION=	2.0121
+PORTVERSION=	2.0122
 PORTEPOCH=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
@@ -29,7 +29,7 @@ PKGDEINSTALL=	${PKGINSTALL}
 
 CONFLICTS=	p5-XML-LibXML-XPathContext-[0-9]* p5-XML-LibXML-Common-[0-9]*
 
-post-stage:
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/XML/LibXML/LibXML.so
 
 .include <bsd.port.mk>

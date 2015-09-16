@@ -1,8 +1,5 @@
 include/florist/ada_streams.ads
 include/florist/ada_task_identification.ads
-include/florist/deps.adb
-include/florist/deps.ads
-include/florist/deps_no_thread.adb
 include/florist/posix-asynchronous_io.adb
 include/florist/posix-asynchronous_io.ads
 include/florist/posix-c.adb
@@ -126,6 +123,7 @@ lib/florist/posix-calendar.ali
 lib/florist/posix-condition_variables.ali
 lib/florist/posix-configurable_file_limits.ali
 lib/florist/posix-configurable_system_limits.ali
+lib/florist/posix-error_codes.ali
 lib/florist/posix-file_locking.ali
 lib/florist/posix-file_status-extensions.ali
 lib/florist/posix-file_status.ali
@@ -161,10 +159,12 @@ lib/florist/posix-unsafe_process_primitives.ali
 lib/florist/posix-user_database.ali
 lib/florist/posix.ali
 lib/florist/posix_asynchronous_io.ali
+lib/florist/posix_c.ali
 lib/florist/posix_calendar.ali
 lib/florist/posix_condition_variables.ali
 lib/florist/posix_configurable_file_limits.ali
 lib/florist/posix_configurable_system_limits.ali
+lib/florist/posix_error_codes.ali
 lib/florist/posix_file_locking.ali
 lib/florist/posix_file_status.ali
 lib/florist/posix_files.ali
@@ -193,4 +193,5 @@ lib/florist/posix_terminal_functions.ali
 lib/florist/posix_timers.ali
 lib/florist/posix_unsafe_process_primitives.ali
 lib/florist/posix_user_database.ali
+lib/florist/system_storage_elements.ali
 lib/gnat/florist.gpr

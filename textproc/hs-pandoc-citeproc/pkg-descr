@@ -1,0 +1,6 @@
+The pandoc-citeproc library exports functions for using the citeproc
+system with pandoc.  It relies on citeproc-hs, a library for rendering
+bibliographic reference citations into a variety of styles using a macro
+language called Citation Style Language (CSL).
+
+WWW: http://hackage.haskell.org/package/pandoc-citeproc

@@ -11,7 +11,8 @@ COMMENT=	Issue-Tracking System for Knowledge Workers
 
 LICENSE=	PSFL
 
-USES=		gettext python
+USES=		cpe gettext python
+CPE_VENDOR=	roundup-tracker
 USE_PYTHON=	distutils
 
 OPTIONS_DEFINE=	SQLITE PGSQL MYSQL NLS

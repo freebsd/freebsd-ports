@@ -4,7 +4,7 @@
 #
 
 PORTNAME=	pcbsd-role-avstudio
-PORTVERSION=	1428097099
+PORTVERSION=	1428097100
 CATEGORIES=	misc
 MASTER_SITES=	# empty
 DISTFILES=	# none
@@ -13,7 +13,7 @@ MAINTAINER=	joshms@pcbsd.org
 COMMENT=	Includes audio and video production software
 
 RUN_DEPENDS=	audacity>=0:${PORTSDIR}/audio/audacity \
-		avidemux2>=0:${PORTSDIR}/multimedia/avidemux2 \
+		avidemux>=0:${PORTSDIR}/multimedia/avidemux \
 		kdenlive>=0:${PORTSDIR}/multimedia/kdenlive \
 		pacpl>=0:${PORTSDIR}/audio/pacpl \
 		cinepaint>=0:${PORTSDIR}/graphics/cinepaint \

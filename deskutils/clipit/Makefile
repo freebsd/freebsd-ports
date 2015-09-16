@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USES=		gettext gmake pkgconfig
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 intltool
 
 OPTIONS_DEFINE=	NLS XDOTOOL
 XDOTOOL_DESC=	Automatic paste functionality

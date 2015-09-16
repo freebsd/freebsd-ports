@@ -20,3 +20,4 @@ arduino-mk/bin/ard-reset-arduino
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/toneMelody/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/toneMelody/pitches.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/toneMelody/toneMelody.ino
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/BlinkWithoutDelay/build-cli/libs/Ethernet

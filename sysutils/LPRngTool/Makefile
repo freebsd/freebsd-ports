@@ -3,7 +3,7 @@
 
 PORTNAME=	LPRngTool
 PORTVERSION=	1.3.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	sysutils print
 MASTER_SITES=	SF/lprng/lprngtool/LRPngTool-${PORTVERSION}
 
@@ -15,8 +15,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	a2ps:${PORTSDIR}/print/a2ps \
 		mpage:${PORTSDIR}/print/mpage
 
-USES=		tar:tgz tk
-USE_GHOSTSCRIPT_BUILD=	yes
+USES=		ghostscript:build tar:tgz tk
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_WISH=${WISH}
 CONFIGURE_ARGS=	--with-spool_directory=/var/spool/lpd

@@ -12,7 +12,7 @@ DISTFILES=	# none
 MAINTAINER=	kris@pcbsd.org
 COMMENT=	The meta-port pcbsd-meta-vmwareguest
 
-RUN_DEPENDS=	open-vm-tools>=0:${PORTSDIR}/emulators/open-vm-tools-nox11 \
+RUN_DEPENDS=	vmtoolsd:${PORTSDIR}/emulators/open-vm-tools-nox11 \
 		xf86-video-vmware>=0:${PORTSDIR}/x11-drivers/xf86-video-vmware
 
 NO_BUILD=	yes

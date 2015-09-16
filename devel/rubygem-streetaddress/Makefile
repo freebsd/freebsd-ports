@@ -10,6 +10,8 @@ COMMENT=	Parses one line street addresses into normalized address object
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

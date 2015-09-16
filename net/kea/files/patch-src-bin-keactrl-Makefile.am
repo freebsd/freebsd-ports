@@ -1,0 +1,11 @@
+--- src/bin/keactrl/Makefile.am.orig	2015-07-23 16:45:11 UTC
++++ src/bin/keactrl/Makefile.am
+@@ -38,7 +38,7 @@ install-data-local:
+ 	$(mkinstalldirs) $(DESTDIR)/@sysconfdir@/@PACKAGE@
+ 	for f in $(CONFIGFILES) ; do	\
+ 	  if test ! -f $(DESTDIR)$(sysconfdir)/@PACKAGE@/$$f; then	\
+-	    ${INSTALL_DATA} $$f $(DESTDIR)$(sysconfdir)/@PACKAGE@/ ;	\
++	    ${INSTALL_DATA} $$f $(DESTDIR)$(sysconfdir)/@PACKAGE@/$${f}.sample ;	\
+ 	  fi ;	\
+ 	done
+ 

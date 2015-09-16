@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- libAfterImage/configure.orig	Thu Jun 22 21:27:08 2006
 +++ libAfterImage/configure	Thu Jun 22 21:27:53 2006
 @@ -8443,9 +8443,9 @@

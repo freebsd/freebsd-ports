@@ -3,18 +3,19 @@
 
 PORTNAME=	jwhois
 PORTVERSION=	4.0
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	jwhois
+MASTER_SITES=	GNU
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved WHOIS client capable of selecting server to query
 
 LICENSE=	GPLv3
 
+LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
+
 GNU_CONFIGURE=	yes
-USES=		gettext gmake
+USES=		gettext gmake iconv
 CPPFLAGS+=	-I${PREFIX}/include
 LDFLAGS+=	-L${PREFIX}/lib
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/var/jwhois
@@ -22,7 +23,7 @@ CONFIGURE_ARGS=	--localstatedir=${PREFIX}/var/jwhois
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-NLS_CONFIGURE_ENABLE=	nls
+NLS_CONFIGURE_OFF=	--disable-nls --without-libiconv-prefix
 
 INSTALL_TARGET=	install-strip
 

@@ -141,6 +141,11 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/ldap-auth/ssl-ca.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ldap-auth/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ldap-auth/useful.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/leapseconds-cautions.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/leapseconds-conclusion.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/leapseconds-posix.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/leapseconds-testing.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-emulation/conclusion.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-emulation/freebsd-emulation.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-emulation/index.html

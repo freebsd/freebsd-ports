@@ -2,10 +2,9 @@
 
 PORTNAME=	${PYDISTUTILS_PKGNAME:S;^Trac;;S;Plugin$;;:tl}
 PORTVERSION=	0.7.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www devel graphics python
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	brooks
+MASTER_SITES=	LOCAL/brooks
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 
@@ -19,9 +18,10 @@ RUN_DEPENDS+=	urwfonts>0:${PORTSDIR}/x11-fonts/urwfonts \
 		tracd:${PORTSDIR}/www/trac
 
 USES=		python:2
-USE_PYTHON=	distutils
+USE_PYTHON=	autoplist distutils
 PYDISTUTILS_PKGNAME=	graphviz
-WRKSRC=			${WRKDIR}/${PORTNAME}plugin
+NO_ARCH=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}plugin
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \

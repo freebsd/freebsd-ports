@@ -7,38 +7,36 @@ CATEGORIES=	archivers ruby
 MASTER_SITES=	SF/ruby${PORTNAME}/ruby${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby module for reading and writing ZIP files
 
-USE_RUBY=	yes
+LICENSE=	BSD2CLAUSE RUBY
+LICENSE_COMB=	dual
 
-WRKSRC=		${WRKDIR}/rubyzip-${PORTVERSION}
-NO_BUILD=	yes
-
-DOCS=		ChangeLog NEWS README TODO
-EXAMPLES=	samples/*
+BROKEN_RUBY21=	yes
+BROKEN_RUBY22=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
+
+NO_BUILD=	yes
+USE_RUBY=	yes
+USES=		tar:tgz
+WRKSRC=		${WRKDIR}/rubyzip-${PORTVERSION}
+
+DOCS=		ChangeLog NEWS README TODO
 
 do-install:
 	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}/zip
 	${INSTALL_DATA} ${WRKSRC}/lib/zip/*.rb ${STAGEDIR}${RUBY_SITELIBDIR}/zip
-	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
-.for f in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
-.endfor
-	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
-.endfor
 
-.include <bsd.port.pre.mk>
+do-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${RUBY_MODDOCDIR}/
 
-.if ${RUBY_VER} == 2.1
-BROKEN=		Does not build with Ruby 2.1
-.endif
+do-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/samples/* ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

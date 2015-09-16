@@ -11,6 +11,8 @@ COMMENT=	C++ web development framework
 
 LICENSE=	LGPL3
 
+BROKEN_FreeBSD_9=	does not build on 9.x
+
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 USES=		cmake python:2 tar:bzip2

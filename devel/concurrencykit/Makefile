@@ -14,6 +14,8 @@ COMMENT=	Lock-free data structures for high performance concurrent systems
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 i386 powerpc powerpc64 sparc64
+
 OPTIONS_DEFINE=		RTM VMAPACK
 OPTIONS_DEFAULT=	VMAPACK
 

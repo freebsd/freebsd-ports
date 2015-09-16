@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	cups-filters
-PORTVERSION=	1.0.67
+PORTVERSION=	1.0.71
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://www.openprinting.org/download/cups-filters/
 
@@ -10,8 +11,7 @@ COMMENT=	Backends, filters and other software (was part of the core CUPS)
 
 BUILD_DEPENDS=	pdftops:${PORTSDIR}/graphics/poppler-utils
 RUN_DEPENDS=	pdftops:${PORTSDIR}/graphics/poppler-utils
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
+LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libijs.so:${PORTSDIR}/print/libijs \
 		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
@@ -24,10 +24,11 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpoppler.so:${PORTSDIR}/graphics/poppler
 
 MAKE_JOBS_UNSAFE=YES
-USES=		compiler:c++11-lib libtool pathfix pkgconfig shebangfix tar:xz
+USES=		compiler:c++11-lib cpe ghostscript jpeg libtool pathfix \
+		pkgconfig shebangfix tar:xz
+CPE_VENDOR=	linuxfoundation
 SHEBANG_FILES=	filter/textonly
 USE_GNOME=	glib20
-USE_GHOSTSCRIPT=	yes
 USE_RC_SUBR=	cups_browsed
 GNU_CONFIGURE=	yes
 CUPS_SOCKET?=	/var/run/cups.sock
@@ -41,7 +42,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	AVAHI
-OPTIONS_DEFAULT=	AVAHI
 
 AVAHI_CONFIGURE_ENABLE=	avahi
 AVAHI_LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app

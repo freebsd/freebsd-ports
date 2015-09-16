@@ -13,8 +13,7 @@ COMMENT=	Small and fast motif-based image viewer and editor
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libexif.so:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif
 
 OPTIONS_DEFINE=	GIF PCF PNG SANE TIFF WEBP DOCS
 OPTIONS_DEFAULT=	GIF PNG TIFF
@@ -22,7 +21,7 @@ PCD_DESC=	Enable PhotoCD support
 SANE_DESC=	Enable SANE support
 
 USE_PERL5=	build
-USES=		desktop-file-utils iconv gmake motif perl5
+USES=		desktop-file-utils gmake iconv jpeg motif perl5
 MAKEFILE=	GNUmakefile
 MAKE_ARGS=	JPEG_VER=80 verbose=yes
 

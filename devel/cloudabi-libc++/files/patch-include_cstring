@@ -1,0 +1,13 @@
+--- include/cstring.orig	2015-06-24 08:46:34 UTC
++++ include/cstring
+@@ -69,10 +69,7 @@ _LIBCPP_BEGIN_NAMESPACE_STD
+ using ::size_t;
+ using ::memcpy;
+ using ::memmove;
+-using ::strcpy;
+ using ::strncpy;
+-using ::strcat;
+-using ::strncat;
+ using ::memcmp;
+ using ::strcmp;
+ using ::strncmp;

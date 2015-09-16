@@ -1,6 +1,6 @@
---- tigcc_src/sources/gcc/gas-2.16-tigcc-patch.diff	Sun Jul 31 18:48:04 2005
-+++ tigcc/sources/gcc/gas-2.16-tigcc-patch.diff	Mon Jun  5 14:19:37 2006
-@@ -823,7 +823,7 @@
+--- tigcc/sources/gcc/gas-2.16-tigcc-patch.diff.orig	2005-07-31 16:44:47 UTC
++++ tigcc/sources/gcc/gas-2.16-tigcc-patch.diff
+@@ -823,7 +823,7 @@ diff -Naur binutils-2.16.1.orig/gas/conf
   
   
  -                              ac_config_files="$ac_config_files Makefile doc/Makefile po/Makefile.in:po/Make-in"

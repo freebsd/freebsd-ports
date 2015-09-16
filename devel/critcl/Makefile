@@ -3,11 +3,19 @@
 
 PORTNAME=	critcl
 PORTVERSION=	3.1.12
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Compiled Runtime in Tcl
+
+LICENSE=	TclTk
+LICENSE_NAME=	Tcl/Tk License
+LICENSE_FILE=	${WRKSRC}/license.terms
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+RUN_DEPENDS=	${LOCALBASE}/lib/Trf/pkgIndex.tcl:${PORTSDIR}/devel/tcl-trf	\
+		${LOCALBASE}/lib/tcllib/cmdline/pkgIndex.tcl:${PORTSDIR}/devel/tcllib
 
 USES+=		tcl
 USE_GITHUB=	yes

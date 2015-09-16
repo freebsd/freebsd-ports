@@ -1,3 +1,2 @@
 #!/bin/sh
-
-exec java -jar %%DATADIR%%/yed.jar
+exec java -Dawt.useSystemAAFontSettings=on -jar %%DATADIR%%/yed.jar

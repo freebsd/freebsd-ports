@@ -1,7 +1,7 @@
---- config.mk.orig	2014-10-08 21:50:07 UTC
+--- config.mk.orig	2015-05-07 13:21:22 UTC
 +++ config.mk
-@@ -213,7 +213,7 @@ endif
- 
+@@ -241,7 +241,7 @@ ifeq ($(WITH_DOCS),yes)
+ endif
  
  INSTALL?=install
 -prefix=/usr/local

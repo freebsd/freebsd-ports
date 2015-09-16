@@ -1,5 +1,3 @@
-$FreeBSD$
-
 Missing comma causes two strings below to be concatenated, making /usr/local/share/namebench and /usr/local/etc/namebench useless. Not great for us!
 
 --- libnamebench/util.py.orig	2011-08-15 19:59:22.000000000 +0100

@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- Makefile.common.orig
 +++ Makefile.common
 @@ -4,4 +4,4 @@

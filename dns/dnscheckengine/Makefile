@@ -12,6 +12,7 @@ MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	DNS checker from the folks that run the .SE top level domain
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILES=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Crypt-OpenSSL-Random>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-Random \
 		p5-Digest-BubbleBabble>=0:${PORTSDIR}/security/p5-Digest-BubbleBabble \
@@ -47,8 +48,6 @@ SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -delete
 	@${GREP} -Rl '%%[[:alpha:]]\+%%' ${WRKSRC} | \
@@ -62,12 +61,12 @@ post-install:
 	(cd ${STAGEDIR}${PREFIX}/bin && \
 		${LN} -s ../libexec/dnscheck/dnscheck-dispatcher . && \
 		${LN} -s ../libexec/dnscheck/dnscheck dnscheckengine)
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${DOCSDIR}/db
 	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} '${WRKSRC}/doc/DNSCheck Lib Descriptions.pdf' \
 		${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCSDB:S|^|${WRKSRC}/db/|} ${STAGEDIR}${DOCSDIR}/db
-.endif
 
 .include <bsd.port.mk>

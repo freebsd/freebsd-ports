@@ -4,8 +4,7 @@ PORTNAME=	python33
 PORTVERSION=	3.3.5
 PORTREVISION=	6
 CATEGORIES=	lang python ipv6
-MASTER_SITES=	PYTHON
-MASTER_SITE_SUBDIR=	ftp/python/${PORTVERSION}
+MASTER_SITES=	PYTHON/ftp/python/${PORTVERSION}
 DISTNAME=	Python-${PORTVERSION}
 DIST_SUBDIR=	python
 
@@ -29,6 +28,7 @@ CONFIGURE_ENV+=		OPT=""							# Null out OPT to respect user CFLAGS and remove o
 INSTALL_TARGET=		altinstall						# Don't want cloberring of unprefixed files
 MAKE_ARGS+=		INSTALL_SHARED="${INSTALL_LIB}"				# Strip shared library
 MAKE_ARGS+=		LIBPC="${PREFIX}/libdata/pkgconfig"			# Until pathfix gets support for files other than Makefile.in
+MAKE_JOBS_UNSAFE=	yes							# Parser/pgen build bug. See Issue: 200622, 201974
 
 PLIST_SUB=		ABI=${ABIFLAGS} \
 			OSMAJOR=${OSVERSION:C/([0-9]*)[0-9]{5}/\1/}		# For plat-freebsd* in pkg-plist. http://bugs.python.org/issue19554

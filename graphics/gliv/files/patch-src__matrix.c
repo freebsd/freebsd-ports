@@ -1,6 +1,6 @@
---- src/matrix.c.orig	Tue Nov 22 07:30:44 2005
-+++ src/matrix.c	Mon Mar 20 14:13:22 2006
-@@ -35,6 +35,11 @@
+--- src/matrix.c.orig	2010-11-07 19:22:01 UTC
++++ src/matrix.c
+@@ -35,6 +35,11 @@ extern rt_struct *rt;
  extern options_struct *options;
  extern GlivImage *current_image;
  

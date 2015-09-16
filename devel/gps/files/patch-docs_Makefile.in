@@ -1,4 +1,4 @@
---- docs/Makefile.in.orig	2014-05-23 09:12:23 UTC
+--- docs/Makefile.in.orig	2014-11-13 18:15:57 UTC
 +++ docs/Makefile.in
 @@ -1,10 +1,9 @@
  prefix = @prefix@

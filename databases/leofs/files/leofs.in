@@ -108,7 +108,7 @@ fi
 for s in ${leofs_servers}; do
     case "${s}" in
 	ALL)
-	    leofs_servers="gateway manager manager_slave storage"
+	    leofs_servers="manager manager_slave storage gateway"
 	    break
 	    ;;
 	gateway|manager|manager_slave|storage)

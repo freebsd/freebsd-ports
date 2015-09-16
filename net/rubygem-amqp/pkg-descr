@@ -1,7 +1,6 @@
-Simple asynchronous AMQP driver for Ruby/EventMachine.
-This library works with Ruby 1.8, Ruby 1.9, JRuby and Rubinius.
+Ruby amqp gem is a feature-rich, EventMachine-based RabbitMQ client with
+batteries included.
 
-This library was tested primarily with RabbitMQ, although it
-should be compatible with any server implementing the AMQP 0-8 spec.
+It implement AMQP 0.9.1 and support RabbitMQ extensions to AMQP 0.9.1.
 
-WWW: https://github.com/ruby-amqp/amqp
+WWW: http://rubyamqp.info/

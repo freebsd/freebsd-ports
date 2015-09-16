@@ -4,7 +4,7 @@
 PORTNAME=	id3ed
 PORTVERSION=	1.10.4
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_NETBSD}
+MASTER_SITES=	http://code.fluffytapeworm.com/projects/${PORTNAME}/
 
 MAINTAINER=	turutani@scphys.kyoto-u.ac.jp
 COMMENT=	Id3 tag editor for mp3 files

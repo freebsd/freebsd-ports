@@ -3,7 +3,7 @@
 
 PORTNAME=	openscep
 PORTVERSION=	0.4.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	security
 MASTER_SITES=	http://openscep.othello.ch/download/
 
@@ -51,6 +51,7 @@ post-patch:
 		${WRKSRC}/html/Makefile.in
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libscep.so
 	@${MKDIR} ${STAGEDIR}${CONF_DIR}
 	${INSTALL_DATA} ${WRKSRC}/openssl/openscep.cnf \
 		${STAGEDIR}${CONF_DIR}/openscep.cnf.sample

@@ -20,7 +20,6 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tornado>0:${PORTSDIR}/www/py-tornado \
 
 OPTIONS_DEFINE=	TESTS
 TESTS_DESC=	Install tools to run test suite
-OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 USES=		python
 USE_PYTHON=	distutils autoplist

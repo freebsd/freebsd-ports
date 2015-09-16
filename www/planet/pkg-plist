@@ -47,14 +47,3 @@
 %%DATADIR%%/planet/tests/test_main.py
 %%DATADIR%%/planet/tests/test_sanitize.py
 %%DATADIR%%/planet/tests/test_sub.py
-@dirrm %%DATADIR%%/examples/basic
-@dirrm %%DATADIR%%/examples/cache
-@dirrm %%DATADIR%%/examples/fancy
-@dirrm %%DATADIR%%/examples/output/images
-@dirrm %%DATADIR%%/examples/output
-@dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%/planet/compat_logging
-@dirrm %%DATADIR%%/planet/tests/data
-@dirrm %%DATADIR%%/planet/tests
-@dirrm %%DATADIR%%/planet
-@dirrm %%DATADIR%%

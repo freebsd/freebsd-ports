@@ -1,0 +1,264 @@
+#From d3b1545e77fc75bdc2ba2e39e307c36b4683d237 Mon Sep 17 00:00:00 2001
+#From: Victor Julien <victor@inliniac.net>
+#Subject: [PATCH] pcap: implement LINKTYPE_NULL
+# Implement LINKTYPE_NULL for pcap live and pcap file.
+# https://github.com/inliniac/suricata/pull/1416
+
+diff -rupN ./rules/decoder-events.rules ./rules.new/decoder-events.rules
+--- ./rules/decoder-events.rules	2015-02-25 07:31:10.000000000 -0500
++++ ./rules.new/decoder-events.rules	2015-04-16 21:32:05.000000000 -0400
+@@ -116,5 +116,10 @@ alert pkthdr any any -> any any (msg:"SU
+ alert pkthdr any any -> any any (msg:"SURICATA IPv6-in-IPv6 packet too short"; decode-event:ipv6.ipv6_in_ipv6_too_small; sid:2200084; rev:1;)
+ alert pkthdr any any -> any any (msg:"SURICATA IPv6-in-IPv6 invalid protocol"; decode-event:ipv6.ipv6_in_ipv6_wrong_version; sid:2200085; rev:1;)
+ 
+-# next sid is 2200098
++# linktype null
++alert pkthdr any any -> any any (msg:"SURICATA NULL pkt too small"; decode-event:ltnull.pkt_too_small; sid: 2200103; rev:1;)
++# packet has type not supported by Suricata's decoders
++alert pkthdr any any -> any any (msg:"SURICATA NULL unsupported type"; decode-event:ltnull.unsupported_type; sid: 2200104; rev:1;)
++
++# next sid is 2200105
+ 
+diff -rupN ./src/Makefile.am new/src/Makefile.am
+--- ./src/Makefile.am	2015-02-25 07:31:10.000000000 -0500
++++ ./src.new/Makefile.am	2015-04-16 21:33:58.000000000 -0400
+@@ -47,6 +47,7 @@ decode-icmpv4.c decode-icmpv4.h \
+ decode-icmpv6.c decode-icmpv6.h \
+ decode-ipv4.c decode-ipv4.h \
+ decode-ipv6.c decode-ipv6.h \
++decode-null.c decode-null.h \
+ decode-ppp.c decode-ppp.h \
+ decode-pppoe.c decode-pppoe.h \
+ decode-raw.c decode-raw.h \
+diff -rupN ./src/decode-events.h ./src.new/decode-events.h
+--- ./src/decode-events.h	2015-02-25 07:31:10.000000000 -0500
++++ ./src.new/decode-events.h	2015-04-16 21:36:01.000000000 -0400
+@@ -145,6 +145,10 @@ enum {
+     /* RAW EVENTS */
+     IPRAW_INVALID_IPV,              /**< invalid ip version in ip raw */
+ 
++    /* LINKTYPE NULL EVENTS */
++    LTNULL_PKT_TOO_SMALL,           /**< pkt too small for lt:null */
++    LTNULL_UNSUPPORTED_TYPE,        /**< pkt has a type that the decoder doesn't support */
++
+     /* STREAM EVENTS */
+     STREAM_3WHS_ACK_IN_WRONG_DIR,
+     STREAM_3WHS_ASYNC_WRONG_SEQ,
+diff -rupN ./src/decode-null.c ./src.new/decode-null.c
+--- ./src/decode-null.c	1969-12-31 19:00:00.000000000 -0500
++++ ./src.new/decode-null.c	2015-04-16 20:53:44.000000000 -0400
+@@ -0,0 +1,89 @@
++/* Copyright (C) 2015 Open Information Security Foundation
++ *
++ * You can copy, redistribute or modify this Program under the terms of
++ * the GNU General Public License version 2 as published by the Free
++ * Software Foundation.
++ *
++ * This program is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * version 2 along with this program; if not, write to the Free Software
++ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
++ * 02110-1301, USA.
++ */
++
++/**
++ * \ingroup decode
++ *
++ * @{
++ */
++
++
++/**
++ * \file
++ *
++ * \author Victor Julien <victor@inliniac.net>
++ *
++ * Decode linkype null:
++ * http://www.tcpdump.org/linktypes.html
++ */
++
++#include "suricata-common.h"
++#include "decode.h"
++#include "decode-raw.h"
++#include "decode-events.h"
++
++#include "util-unittest.h"
++#include "util-debug.h"
++
++#include "pkt-var.h"
++#include "util-profiling.h"
++#include "host.h"
++
++#define HDR_SIZE 4
++
++int DecodeNull(ThreadVars *tv, DecodeThreadVars *dtv, Packet *p, uint8_t *pkt, uint16_t len, PacketQueue *pq)
++{
++    SCPerfCounterIncr(dtv->counter_null, tv->sc_perf_pca);
++
++    if (unlikely(len < HDR_SIZE)) {
++        ENGINE_SET_INVALID_EVENT(p, LTNULL_PKT_TOO_SMALL);
++        return TM_ECODE_FAILED;
++    }
++
++    uint32_t type = *((uint32_t *)pkt);
++    switch(type) {
++        case AF_INET:
++            SCLogDebug("IPV4 Packet");
++            DecodeIPV4(tv, dtv, p, GET_PKT_DATA(p)+HDR_SIZE, GET_PKT_LEN(p)-HDR_SIZE, pq);
++            break;
++        case AF_INET6:
++            SCLogDebug("IPV6 Packet");
++            DecodeIPV6(tv, dtv, p, GET_PKT_DATA(p)+HDR_SIZE, GET_PKT_LEN(p)-HDR_SIZE, pq);
++            break;
++        default:
++            SCLogDebug("Unknown Null packet type version %" PRIu32 "", type);
++            ENGINE_SET_EVENT(p, LTNULL_UNSUPPORTED_TYPE);
++            break;
++    }
++    return TM_ECODE_OK;
++}
++
++#ifdef UNITTESTS
++
++#endif /* UNITTESTS */
++
++/**
++ * \brief Registers Null unit tests
++ */
++void DecodeNullRegisterTests(void)
++{
++#ifdef UNITTESTS
++#endif /* UNITTESTS */
++}
++/**
++ * @}
++ */
+diff -rupN ./src/decode-null.h ./src.new/decode-null.h
+--- ./src/decode-null.h	1969-12-31 19:00:00.000000000 -0500
++++ ./src.new/decode-null.h	2015-04-16 20:53:44.000000000 -0400
+@@ -0,0 +1,28 @@
++/* Copyright (C) 2007-2010 Open Information Security Foundation
++ *
++ * You can copy, redistribute or modify this Program under the terms of
++ * the GNU General Public License version 2 as published by the Free
++ * Software Foundation.
++ *
++ * This program is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * version 2 along with this program; if not, write to the Free Software
++ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
++ * 02110-1301, USA.
++ */
++
++/**
++ * \file
++ *
++ * \author Victor Julien <victor@inliniac.net>
++ */
++
++#ifndef __DECODE_NULL_H__
++#define __DECODE_NULL_H__
++void DecodeNullRegisterTests(void);
++#endif /* __DECODE_NULL_H__ */
++
+diff -rupN ./src/decode.c ./src.new/decode.c
+--- ./src/decode.c	2015-02-25 07:31:10.000000000 -0500
++++ ./src.new/decode.c	2015-04-16 21:38:28.000000000 -0400
+@@ -387,6 +387,8 @@ void DecodeRegisterPerfCounters(DecodeTh
+                                                SC_PERF_TYPE_UINT64, "NULL");
+     dtv->counter_raw = SCPerfTVRegisterCounter("decoder.raw", tv,
+                                                SC_PERF_TYPE_UINT64, "NULL");
++    dtv->counter_null = SCPerfTVRegisterCounter("decoder.null", tv,
++                                               SC_PERF_TYPE_UINT64, "NULL");
+     dtv->counter_sll = SCPerfTVRegisterCounter("decoder.sll", tv,
+                                                SC_PERF_TYPE_UINT64, "NULL");
+     dtv->counter_tcp = SCPerfTVRegisterCounter("decoder.tcp", tv,
+diff -rupN ./src/decode.h ./src.new/decode.h
+--- ./src/decode.h	2015-02-25 07:31:10.000000000 -0500
++++ ./src.new/decode.h	2015-04-16 21:42:38.000000000 -0400
+@@ -78,6 +78,7 @@ enum PktSrcEnum {
+ #include "decode-udp.h"
+ #include "decode-sctp.h"
+ #include "decode-raw.h"
++#include "decode-null.h"
+ #include "decode-vlan.h"
+ 
+ #include "detect-reference.h"
+@@ -576,6 +577,7 @@ typedef struct DecodeThreadVars_
+     uint16_t counter_eth;
+     uint16_t counter_sll;
+     uint16_t counter_raw;
++    uint16_t counter_null;
+     uint16_t counter_tcp;
+     uint16_t counter_udp;
+     uint16_t counter_sctp;
+@@ -821,6 +823,7 @@ int DecodePPP(ThreadVars *, DecodeThread
+ int DecodePPPOESession(ThreadVars *, DecodeThreadVars *, Packet *, uint8_t *, uint16_t, PacketQueue *);
+ int DecodePPPOEDiscovery(ThreadVars *, DecodeThreadVars *, Packet *, uint8_t *, uint16_t, PacketQueue *);
+ int DecodeTunnel(ThreadVars *, DecodeThreadVars *, Packet *, uint8_t *, uint16_t, PacketQueue *, uint8_t) __attribute__ ((warn_unused_result));
++int DecodeNull(ThreadVars *, DecodeThreadVars *, Packet *, uint8_t *, uint16_t, PacketQueue *);
+ int DecodeRaw(ThreadVars *, DecodeThreadVars *, Packet *, uint8_t *, uint16_t, PacketQueue *);
+ int DecodeIPV4(ThreadVars *, DecodeThreadVars *, Packet *, uint8_t *, uint16_t, PacketQueue *);
+ int DecodeIPV6(ThreadVars *, DecodeThreadVars *, Packet *, uint8_t *, uint16_t, PacketQueue *);
+@@ -921,8 +924,13 @@ void AddressDebugPrint(Address *);
+ #endif
+ #endif
+ 
++#ifndef DLT_NULL
++#define DLT_NULL 0
++#endif
++
+ /** libpcap shows us the way to linktype codes
+  * \todo we need more & maybe put them in a separate file? */
++#define LINKTYPE_NULL       DLT_NULL
+ #define LINKTYPE_ETHERNET   DLT_EN10MB
+ #define LINKTYPE_LINUX_SLL  113
+ #define LINKTYPE_PPP        9
+diff -rupN ./src/detect-engine-event.h ./src.new/detect-engine-event.h
+--- ./src/detect-engine-event.h	2015-02-25 07:31:10.000000000 -0500
++++ ./src.new/detect-engine-event.h	2015-04-16 21:44:38.000000000 -0400
+@@ -154,6 +154,10 @@ struct DetectEngineEvents_ {
+     /* RAW EVENTS */
+     { "ipraw.invalid_ip_version",IPRAW_INVALID_IPV, },
+ 
++    /* LINKTYPE NULL EVENTS */
++    { "ltnull.pkt_too_small", LTNULL_PKT_TOO_SMALL, },
++    { "ltnull.unsupported_type", LTNULL_UNSUPPORTED_TYPE, },
++
+     /* STREAM EVENTS */
+     { "stream.3whs_ack_in_wrong_dir", STREAM_3WHS_ACK_IN_WRONG_DIR, },
+     { "stream.3whs_async_wrong_seq", STREAM_3WHS_ASYNC_WRONG_SEQ, },
+diff -rupN ./src/source-pcap-file.c ./src.new/source-pcap-file.c
+--- ./src/source-pcap-file.c	2015-02-25 07:31:12.000000000 -0500
++++ ./src.new/source-pcap-file.c	2015-04-16 21:47:27.000000000 -0400
+@@ -320,6 +320,9 @@ TmEcode ReceivePcapFileThreadInit(Thread
+         case LINKTYPE_RAW:
+             pcap_g.Decoder = DecodeRaw;
+             break;
++        case LINKTYPE_NULL:
++            pcap_g.Decoder = DecodeNull;
++            break;
+ 
+         default:
+             SCLogError(SC_ERR_UNIMPLEMENTED, "datalink type %" PRId32 " not "
+diff -rupN ./src/source-pcap.c ./src.new/source-pcap.c
+--- ./src/source-pcap.c	2015-02-25 07:31:12.000000000 -0500
++++ ./src.new/source-pcap.c	2015-04-16 21:46:10.000000000 -0400
+@@ -741,6 +741,9 @@ TmEcode DecodePcap(ThreadVars *tv, Packe
+         case LINKTYPE_RAW:
+             DecodeRaw(tv, dtv, p, GET_PKT_DATA(p), GET_PKT_LEN(p), pq);
+             break;
++        case LINKTYPE_NULL:
++            DecodeNull(tv, dtv, p, GET_PKT_DATA(p), GET_PKT_LEN(p), pq);
++            break;
+         default:
+             SCLogError(SC_ERR_DATALINK_UNIMPLEMENTED, "Error: datalink type %" PRId32 " not yet supported in module DecodePcap", p->datalink);
+             break;

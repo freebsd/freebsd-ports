@@ -10,7 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk2 Todo list manager
 
 USES=		pathfix gettext gmake pkgconfig
-USE_GNOME=	gnomeprefix gnomevfs2
+USE_GNOME=	gnomeprefix gnomevfs2 intltool
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

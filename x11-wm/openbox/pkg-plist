@@ -32,13 +32,13 @@ etc/xdg/openbox/rc.xml
 lib/libobrender.a
 lib/libobrender.so
 lib/libobrender.so.29
-lib/libobrender.so.29.0.1
+lib/libobrender.so.29.0.2
 lib/libobt.a
 lib/libobt.so
 lib/libobt.so.2
-lib/libobt.so.2.0.1
-libdata/pkgconfig/obrender-%%VERSION%%.pc
-libdata/pkgconfig/obt-%%VERSION%%.pc
+lib/libobt.so.2.0.2
+libdata/pkgconfig/obrender-3.5.pc
+libdata/pkgconfig/obt-3.5.pc
 libexec/openbox-autostart
 libexec/openbox-xdg-autostart
 man/man1/obxprop.1.gz
@@ -129,6 +129,7 @@ share/xsessions/openbox.desktop
 %%NLS%%share/locale/eu/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/gl_ES/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/he/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/openbox.mo

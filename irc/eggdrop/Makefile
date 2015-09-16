@@ -25,8 +25,6 @@ MAKE_JOBS_UNSAFE=	yes
 SUB_FILES=	pkg-message
 PORTDOCS=	*
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' ${WRKSRC}/eggdrop.conf \
 		> ${WRKSRC}/eggdrop.conf.sample
@@ -100,7 +98,8 @@ do-install:
 .for f in banner motd
 	${INSTALL_DATA} ${WRKSRC}/text/${f} ${STAGEDIR}${DATADIR}/text
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ABOUT BANS BOTNET BUG-REPORT COMPILE-GUIDE CONTENTS \
 	FIRST-SCRIPT KNOWN-PROBLEMS MODULES PARTYLINE PATCH-HOWTO \
@@ -112,6 +111,5 @@ do-install:
 	cd ${WRKSRC}/doc/html && ${INSTALL_DATA} *.html ${STAGEDIR}${DOCSDIR}/html
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/settings
 	cd ${WRKSRC}/doc/settings && ${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR}/settings
-.endif
 
 .include <bsd.port.mk>

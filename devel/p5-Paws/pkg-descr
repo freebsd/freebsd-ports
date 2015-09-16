@@ -1,0 +1,9 @@
+This project is attempting to build an entire AWS SDK from the
+information that is stored in other AWS SDKs.  Other AWS SDKs have a
+"data-driven" approach, meaning that the definitions for the method
+calls are stored in a data structure describing input and output
+parameters.
+
+The project is actually generating all of it's classes from botocore.
+
+WWW: http://search.cpan.org/dist/Paws/

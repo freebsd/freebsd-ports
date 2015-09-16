@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	twistedConch
-PORTVERSION=	15.1.0
+PORTVERSION=	15.2.1
 CATEGORIES=	security devel python
 MASTER_SITES=	http://twistedmatrix.com/Releases/Conch/${PORTVERSION:R}/ \
 		LOCAL/sunpoet
@@ -16,7 +16,8 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1>=0.0.9a:${PORTSDIR}/devel/py-asn1
 
-USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
+USE_PYTHON=	autoplist distutils
 USES=		python:2 tar:bzip2 twisted
 
 .include <bsd.port.mk>

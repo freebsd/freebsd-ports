@@ -1,0 +1,102 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: svscan
+# REQUIRE: %%SVSCAN_REQUIRE%%
+# BEFORE: %%SVSCAN_BEFORE%%
+# KEYWORD: shutdown
+
+# Define these svscan_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#       /etc/rc.conf.d/svscan
+#
+# svscan_enable		Set to "YES" to run svscan.
+# svscan_servicedir	The directory containing the various service.
+#			directories to be monitored.  Professor Daniel J.
+#			Bernstein recommends "/service", but the FreeBSD
+#			port has a default of "/var/service" instead, which
+#			is consistent with the FreeBSD filesystem hierarchy
+#			guidelines as described in the hier(7) manual page.
+# svscan_logdir		If set, then svscan will not log its output through
+#			readproctitle, but through multilog instead, and
+#			the logs will be placed in the specified directory.
+#			The FreeBSD port default is to run svscan through
+#			readproctitle.
+# svscan_lognum		The number of logfiles that multilog will keep if
+#			svscan_logdir is set; the multilog default is 10.
+# svscan_logmax		The maximum logfile size for multilog if svscan_logdir
+#			is set; the multilog default is 99999.
+
+# It would really, really be a Good Thing(tm) for you to enable some
+# of the below control variables and the apropriate ulimit.
+# These are only examples.
+# Furthermore, you should think about additional limits you might need.
+# Or, check login.conf(5) for a suitable alternative.
+# If you want to use these examples, please place into /etc/rc.conf.d/svscan.
+#
+# I really do suggest you use /var/service as your service spool directory.
+# Check hier(7) for reasons.
+
+# 10 Mb
+#MINSEGMENT=10240
+# 20 Mb
+#MAXSEGMENT=20480
+# 10 Mb
+#MAXFILESIZE=10240
+# 100
+#MAXFD=100
+# 40
+#MAXCHILD=40
+
+# ulimits
+#ulimit -d ${MINSEGMENT}
+#ulimit -f ${MAXFILESIZE}
+#ulimit -m ${MAXSEGMENT}
+#ulimit -n ${MAXFD}
+#ulimit -s ${MINSEGMENT}
+#ulimit -u ${MAXCHILD}
+
+. /etc/rc.subr
+
+name="svscan"
+rcvar=svscan_enable
+command="%%PREFIX%%/bin/svscan"
+
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+svscan_enable=${svscan_enable-"NO"}
+svscan_servicedir=${svscan_servicedir-"/var/service"}
+
+start_cmd="svscan_start"
+stop_postcmd="svscan_stop_post"
+
+load_rc_config $name
+
+required_dirs="${svscan_servicedir}"
+if [ -n "${svscan_logdir}" ]; then
+	required_dirs="${required_dirs} ${svscan_logdir}"
+fi
+
+svscan_start () {
+	echo "Starting svscan."
+	EP="/usr/bin/env \
+	PATH=%%PREFIX%%/sbin:%%PREFIX%%/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+	if [ -z "${svscan_logdir}" ]; then
+		${EP} /usr/sbin/daemon /bin/sh -c "$command $svscan_servicedir 2>&1 | %%PREFIX%%/bin/readproctitle service errors: ................................................................................................................................................................................................................................................................................................................................................................................................................ &" > /dev/null
+	else
+		logmax=${svscan_logmax+s$svscan_logmax}
+		lognum=${svscan_lognum+n$svscan_lognum}
+		${EP} /usr/sbin/daemon /bin/sh -c "$command $svscan_servicedir 2>&1 \
+		| %%PREFIX%%/bin/multilog t $logmax $lognum '${svscan_logdir}' &" > /dev/null
+	fi
+}
+
+svscan_stop_post () {
+	find -L "$svscan_servicedir" -mindepth 1 -maxdepth 2 -type d -name '[^.]*' \( \! -path "$svscan_servicedir/*/*" -or -name 'log' \) -print0 | xargs -0 %%PREFIX%%/bin/svc -dx
+}
+
+run_rc_command "$1"

@@ -12,6 +12,7 @@ bin/gtkdoc-scangobj
 bin/gtkdocize
 libdata/pkgconfig/gtk-doc.pc
 share/aclocal/gtk-doc.m4
+%%DATADIR%%/data/devhelp2.xsd
 %%DATADIR%%/data/devhelp2.xsl
 %%DATADIR%%/data/gtk-doc.dcl
 %%DATADIR%%/data/gtk-doc.dsl
@@ -44,6 +45,8 @@ share/help/es/gtk-doc-manual/fdl-appendix.xml
 share/help/es/gtk-doc-manual/index.docbook
 share/help/fr/gtk-doc-manual/fdl-appendix.xml
 share/help/fr/gtk-doc-manual/index.docbook
+share/help/gl/gtk-doc-manual/fdl-appendix.xml
+share/help/gl/gtk-doc-manual/index.docbook
 share/help/gu/gtk-doc-manual/fdl-appendix.xml
 share/help/gu/gtk-doc-manual/index.docbook
 share/help/pt_BR/gtk-doc-manual/fdl-appendix.xml

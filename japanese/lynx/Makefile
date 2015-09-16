@@ -3,7 +3,7 @@
 
 PORTNAME=	lynx
 DISTVERSION=	${VERSION}.${MINOR_VERSION:S/.//}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/ \
 		http://ftp2.uk.freebsd.org/sites/lynx.isc.org/current/
@@ -19,7 +19,8 @@ MINOR_VERSION=	rel.1
 
 CONFLICTS=	lynx-2.* ja-lynx-2.8.8.*
 
-USES=		cpe tar:bzip2
+USES=		cpe shebangfix tar:bzip2
+SHEBANG_FILES=	samples/mailto-form.pl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-screen=ncurses --with-zlib --libdir="${L_LIB}" \
 		--enable-nsl-fork --enable-ipv6 \

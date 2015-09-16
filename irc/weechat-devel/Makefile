@@ -5,8 +5,7 @@ PORTVERSION=	20140213
 PORTREVISION=	5
 CATEGORIES=	irc
 MASTER_SITES=	http://perturb.me.uk/distfiles/weechat-devel/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	jase/weechat-devel
+		LOCAL/jase/weechat-devel
 PKGNAMESUFFIX=	-devel
 DISTNAME=	weechat-devel-${GITREV}
 DISTFILES=	${DISTNAME}.txz
@@ -23,7 +22,8 @@ CONFLICTS=	weechat-0.3*
 
 USE_LDCONFIG=	yes
 USES=		cmake iconv ncurses
-CMAKE_ARGS+=	-DENABLE_GUILE=no
+CMAKE_ARGS+=	-DENABLE_GUILE=no \
+		-DICONV_INCLUDE_PATH=${ICONV_INCLUDE_PATH}
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 GITDESC=	v0.4.3-14-gc324610

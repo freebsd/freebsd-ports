@@ -18,6 +18,6 @@ USE_LDCONFIG=	yes
 
 DOCSDIR=	${PREFIX}/usr/share/doc/tcp_wrappers-${PORTVERSION}
 
-SRC_DISTFILES=	tcp_wrappers-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}
+SRC_DISTFILES=	tcp_wrappers-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}:SOURCE
 
 .include <bsd.port.mk>

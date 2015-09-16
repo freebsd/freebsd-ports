@@ -413,7 +413,6 @@ share/pixmaps/tortoisehg/icons/24x24/actions/hg-incoming.png
 share/pixmaps/tortoisehg/icons/24x24/actions/hg-outgoing.png
 share/pixmaps/tortoisehg/icons/24x24/actions/hg-pull.png
 share/pixmaps/tortoisehg/icons/24x24/actions/hg-push.png
-share/pixmaps/tortoisehg/icons/32x32/actions/hg-bookmarks.png
 share/pixmaps/tortoisehg/icons/32x32/actions/hg-sign.png
 share/pixmaps/tortoisehg/icons/README.txt
 share/pixmaps/tortoisehg/icons/TortoiseMerge.ico
@@ -473,6 +472,7 @@ share/pixmaps/tortoisehg/icons/scalable/actions/hg-archive.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-bisect-bad-good.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-bisect-good-bad.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-bisect.svg
+share/pixmaps/tortoisehg/icons/scalable/actions/hg-bookmarks.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-bundle.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-clone.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-commit.svg
@@ -536,6 +536,7 @@ share/pixmaps/tortoisehg/icons/scalable/actions/thg-shelve-move-left-file.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/thg-shelve-move-right-all.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/thg-shelve-move-right-chunks.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/thg-shelve-move-right-file.svg
+share/pixmaps/tortoisehg/icons/scalable/actions/thg-sync-bookmarks.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/thg-sync.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/view-annotate.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/view-at-revision.svg

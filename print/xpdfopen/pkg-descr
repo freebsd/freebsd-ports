@@ -1,0 +1,2 @@
+This is a X11 implementation of Fabrice Popineau's pdfclose/
+pdfopen commands to control Acrobat Reader, xpdf and evince.

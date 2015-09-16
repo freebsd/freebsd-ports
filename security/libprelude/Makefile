@@ -3,7 +3,7 @@
 
 PORTNAME=	libprelude
 PORTVERSION=	1.0.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/attachments/download/241/
 
@@ -20,6 +20,8 @@ LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
 		libgpg-error.so:${PORTSDIR}/security/libgpg-error \
 		libnettle.so:${PORTSDIR}/security/nettle \
 		libp11-kit.so:${PORTSDIR}/security/p11-kit
+
+BROKEN_sparc64=	does not compile
 
 OPTIONS_DEFINE=	DOCS PERL PYTHON
 OPTIONS_SUB=	yes
@@ -51,10 +53,6 @@ PLIST_SUB+=	PYTHON_VER="${PYTHON_VER}" VERSION="${PORTVERSION}"
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} '\,gnutls/extra\.h,d' \

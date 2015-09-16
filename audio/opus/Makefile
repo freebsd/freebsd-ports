@@ -5,13 +5,16 @@ PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/opus/ \
-		${MASTER_SITE_MOZILLA_EXTENDED}
-MASTER_SITE_SUBDIR=	opus
+		MOZILLA/opus
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	IETF audio codec
 
-USES=		gmake libtool pathfix
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		cpe gmake libtool pathfix
+CPE_VENDOR=	opus-codec
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

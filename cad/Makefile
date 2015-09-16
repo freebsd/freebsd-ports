@@ -38,6 +38,7 @@
     SUBDIR += geda-symcheck
     SUBDIR += geda-utils
     SUBDIR += gerbv
+    SUBDIR += ghdl
     SUBDIR += gmsh
     SUBDIR += gmsh-occ
     SUBDIR += gnucap
@@ -82,7 +83,9 @@
     SUBDIR += scotch
     SUBDIR += slffea
     SUBDIR += spice
+    SUBDIR += stepcode
     SUBDIR += sweethome3d
+    SUBDIR += tkgate
     SUBDIR += tochnog
     SUBDIR += transcalc
     SUBDIR += varkon

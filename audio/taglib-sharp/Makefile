@@ -10,6 +10,7 @@ MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Tagging library for the Mono framework
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_cv_path_MCS=${LOCALBASE}/bin/mcs
 USES=		gmake mono pathfix pkgconfig
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}" \

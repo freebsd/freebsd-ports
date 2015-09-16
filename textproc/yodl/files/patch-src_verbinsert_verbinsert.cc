@@ -1,5 +1,5 @@
---- src/verbinsert/verbinsert.cc.orig	2015-01-20 18:56:00.226610975 +0600
-+++ src/verbinsert/verbinsert.cc	2015-01-20 18:56:46.890607566 +0600
+--- src/verbinsert/verbinsert.cc.orig	2014-09-23 19:16:48 UTC
++++ src/verbinsert/verbinsert.cc
 @@ -2,6 +2,7 @@
  #include <fstream>
  #include <iomanip>
@@ -8,7 +8,7 @@
  #include <unistd.h>
  
  using namespace std;
-@@ -37,19 +38,19 @@
+@@ -37,19 +38,19 @@ int main(int argc, char **argv)
              continue;
  
              case 's':

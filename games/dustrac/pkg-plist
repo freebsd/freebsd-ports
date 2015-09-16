@@ -40,6 +40,7 @@ share/applications/dustrac-game.desktop
 %%DATADIR%%/images/corner45Right.png
 %%DATADIR%%/images/corner45RightPreview.png
 %%DATADIR%%/images/cornerPreview.png
+%%DATADIR%%/images/crashOverlay.png
 %%DATADIR%%/images/creditsHelpBack.png
 %%DATADIR%%/images/cross.png
 %%DATADIR%%/images/cursor.png
@@ -59,7 +60,6 @@ share/applications/dustrac-game.desktop
 %%DATADIR%%/images/lock.png
 %%DATADIR%%/images/logo.png
 %%DATADIR%%/images/mainMenuBack.png
-%%DATADIR%%/images/monospace.png
 %%DATADIR%%/images/mud.png
 %%DATADIR%%/images/pit.png
 %%DATADIR%%/images/plant.png
@@ -68,9 +68,13 @@ share/applications/dustrac-game.desktop
 %%DATADIR%%/images/sand.png
 %%DATADIR%%/images/sandAreaBig.png
 %%DATADIR%%/images/sandAreaCurve.png
+%%DATADIR%%/images/sandEditor.png
 %%DATADIR%%/images/sandGrassCorner.png
 %%DATADIR%%/images/sandGrassCorner2.png
+%%DATADIR%%/images/sandGrassCorner2Editor.png
+%%DATADIR%%/images/sandGrassCornerEditor.png
 %%DATADIR%%/images/sandGrassStraight.png
+%%DATADIR%%/images/sandGrassStraightEditor.png
 %%DATADIR%%/images/settingsBack.png
 %%DATADIR%%/images/skid.png
 %%DATADIR%%/images/sky.png
@@ -116,7 +120,7 @@ share/applications/dustrac-game.desktop
 %%DATADIR%%/sounds/menuClick.ogg
 %%DATADIR%%/sounds/pit.ogg
 %%DATADIR%%/sounds/skid.ogg
-%%DATADIR%%/textures.conf
+%%DATADIR%%/surfaces.conf
 %%DATADIR%%/translations/dustrac-editor_cs.qm
 %%DATADIR%%/translations/dustrac-editor_fi.qm
 %%DATADIR%%/translations/dustrac-editor_fr.qm

@@ -2,4 +2,3 @@
 %%SITE_PERL%%/POE/Component/Client/POP3.pm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/term.perl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.perl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

@@ -13,6 +13,7 @@ COMMENT=	Perl module for calculating time differences
 
 USES=		perl5
 USE_PERL5=	configure patch
+NO_ARCH=	yes
 
 post-patch:
 	@${PERL} -pi -e 's/[a-z][a-z]_[A-Z][A-Z]/$$&.ISO8859-15/g' \

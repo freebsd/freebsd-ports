@@ -11,13 +11,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockable clock applet for Window Maker
 
 LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/dockapps
 
-USES=		pkgconfig
+USES=		autoreconf pkgconfig
 USE_XORG=	xpm
-USE_AUTOTOOLS=	aclocal automake autoconf
-AUTOMAKE_ARGS=	--add-missing --copy
+GNU_CONFIGURE=	yes
 
 OPTIONS_SINGLE=		NLS
 OPTIONS_SINGLE_NLS=	LANG_BR LANG_CS LANG_DA LANG_DE LANG_ES \

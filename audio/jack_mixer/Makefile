@@ -3,14 +3,15 @@
 
 PORTNAME=	jack_mixer
 PORTVERSION=	10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://download.gna.org/${PORTNAME:S/_//}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mixer for the jack audio connection kit
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # only
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/fpconst.py:${PORTSDIR}/math/py-fpconst \
@@ -23,5 +24,6 @@ GCONF_SCHEMAS=	jack_mixer.schemas
 INSTALLS_ICONS=	yes
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

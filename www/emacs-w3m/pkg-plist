@@ -26,6 +26,8 @@
 %%ICONDIR%%/parent-up.xpm
 %%ICONDIR%%/reload-up.png
 %%ICONDIR%%/reload-up.xpm
+%%ICONDIR%%/save-up.png
+%%ICONDIR%%/save-up.xpm
 %%ICONDIR%%/search-up.png
 %%ICONDIR%%/search-up.xpm
 %%ICONDIR%%/spinner.gif
@@ -353,6 +355,8 @@
 %%LISPDIR%%/w3m-proc.elc
 %%LISPDIR%%/w3m-rss.el
 %%LISPDIR%%/w3m-rss.elc
+%%LISPDIR%%/w3m-save.el
+%%LISPDIR%%/w3m-save.elc
 %%LISPDIR%%/w3m-search.el
 %%LISPDIR%%/w3m-search.elc
 %%LISPDIR%%/w3m-session.el

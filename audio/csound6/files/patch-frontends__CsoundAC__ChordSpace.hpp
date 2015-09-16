@@ -1,4 +1,4 @@
---- frontends/CsoundAC/ChordSpace.hpp.orig
+--- frontends/CsoundAC/ChordSpace.hpp.orig	2015-04-25 19:06:23 UTC
 +++ frontends/CsoundAC/ChordSpace.hpp
 @@ -29,6 +29,7 @@
  #include <climits>
@@ -8,7 +8,7 @@
  #include <eigen3/Eigen/Dense>
  #include "Event.hpp"
  #include <iostream>
-@@ -545,7 +546,7 @@
+@@ -554,7 +555,7 @@ public:
  		char buffer[0x1000];
  		std::stringstream stream;
  		for (size_t voice = 0; voice < voices(); ++voice) {

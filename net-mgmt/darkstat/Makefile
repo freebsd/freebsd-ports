@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	darkstat
-PORTVERSION=	3.0.718
+PORTVERSION=	3.0.719
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://unix4lyfe.org/darkstat/
+MASTER_SITES=	https://unix4lyfe.org/darkstat/
 
 MAINTAINER=	emikulic@gmail.com
 COMMENT=	Network statistics gatherer and reporter
 
 USE_RC_SUBR=	darkstat
 
-USES=	tar:bzip2
+USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	AUTHORS INSTALL README

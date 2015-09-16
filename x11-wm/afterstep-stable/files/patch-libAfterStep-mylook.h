@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- libAfterStep/mylook.h.orig	2014-04-12 12:24:55.000000000 -0700
 +++ libAfterStep/mylook.h	2014-04-12 12:25:46.000000000 -0700
 @@ -411,9 +411,9 @@

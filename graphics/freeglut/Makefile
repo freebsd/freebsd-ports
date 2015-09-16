@@ -3,7 +3,7 @@
 
 PORTNAME=	freeglut
 PORTVERSION=	2.8.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -11,10 +11,11 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Alternative to the OpenGL Utility Toolkit (GLUT) library
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	libglut-[0-9].*
 
-USES=		libtool:keepla
+USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	ice xi xxf86vm xrandr
@@ -23,6 +24,7 @@ CONFIGURE_ARGS=	--disable-warnings
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lusbhid -lm
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 DOCS=	download.html freeglut.html freeglut_logo.png		\
 	freeglut_user_interface.html index.html ogl_sm.png	\

@@ -11,11 +11,10 @@ MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Automatic 3D tetrahedral mesh generator
 
 LIB_DEPENDS=	libTix8.4.3.so:${PORTSDIR}/x11-toolkits/tix \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libtogl.so:${PORTSDIR}/graphics/togl
 
 USE_LDCONFIG=	yes
-USES=		gmake libtool tk
+USES=		gmake jpeg libtool tk
 USE_GL=		yes
 USE_XORG=	xmu xi
 GNU_CONFIGURE=	yes
@@ -31,19 +30,14 @@ OCC_DESC=		Compile with OpenCascade geometry kernel
 FFMPEG_DESC=		video recording with FFmpeg
 OPTIONS_DEFAULT=	OCC
 
-BROKEN_sparc64=	internal gcc error (Bug 23159)
-.include <bsd.port.options.mk>
+BROKEN_sparc64=		internal gcc error (Bug 23159)
 
-.if ${PORT_OPTIONS:MOCC}
-LIB_DEPENDS+=	libTKernel.so:${PORTSDIR}/cad/opencascade
-CXXFLAGS+=	-DOCCGEOMETRY -DHAVE_CONFIG_H -D${ARCH} -I${LOCALBASE}/include/OpenCASCADE
-CONFIGURE_ARGS+=	--enable-occ
-.endif
+OCC_LIB_DEPENDS=	libTKernel.so:${PORTSDIR}/cad/opencascade
+OCC_CXXFLAGS=		-DOCCGEOMETRY -DHAVE_CONFIG_H -D${ARCH} -I${LOCALBASE}/include/OpenCASCADE
+OCC_CONFIGURE_ON=	--enable-occ
 
-.if ${PORT_OPTIONS:MFFMPEG}
-LIB_DEPENDS+=	libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0
-CONFIGURE_ARGS+=	--enable-ffmpeg
-.endif
+FFMPEG_LIB_DEPENDS=	libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0
+FFMPEG_CONFIGURE_ON=	--enable-ffmpeg
 
 MACHINE=	${OPSYS:tu}
 
@@ -55,11 +49,11 @@ MAKE_ENV=	TK_VER=${TK_VER} TCL_VER=${TCL_VER}	\
 		MACHINE=${MACHINE} MAKE=${MAKE_CMD}
 
 pre-configure:
-	${REINPLACE_CMD} -e "s|%%DATADIR%%|${DATADIR}|"		\
+	@${REINPLACE_CMD} -e "s|%%DATADIR%%|${DATADIR}|"	\
 		${WRKSRC}/ng/ngappinit.cpp
 
 post-configure:
-	${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|"	\
+	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|"	\
 		${WRKSRC}/configure
 
 post-install:
@@ -67,6 +61,5 @@ post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/include
 	${SH} ${FILESDIR}/netgen_copy_include_for_salome ${WRKSRC} ${STAGEDIR}${PREFIX}
 	${LN} ${STAGEDIR}${PREFIX}/lib/libnglib.so ${STAGEDIR}${PREFIX}/lib/libnglib.so.1
-	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

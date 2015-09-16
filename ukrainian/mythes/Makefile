@@ -13,6 +13,7 @@ COMMENT=	Ukrainian thesaurus
 LICENSE=	LGPL21 GPLv2
 LICENSE_COMB=	dual
 
+NO_ARCH=	yes
 USES=		perl5 tar:tgz
 USE_PERL5=	build
 

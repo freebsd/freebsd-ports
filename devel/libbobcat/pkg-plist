@@ -13,6 +13,7 @@ include/bobcat/clientsocket
 include/bobcat/cmdfinder
 include/bobcat/cmdfinderbase
 include/bobcat/configfile
+include/bobcat/csv
 include/bobcat/datetime
 include/bobcat/decryptbuf
 include/bobcat/diffiehellman
@@ -84,8 +85,10 @@ include/bobcat/redirector
 include/bobcat/refcount
 include/bobcat/repeat
 include/bobcat/selector
+include/bobcat/semaphore
 include/bobcat/serversocket
 include/bobcat/sharedblock
+include/bobcat/sharedcondition
 include/bobcat/sharedmemory
 include/bobcat/sharedmutex
 include/bobcat/sharedpos
@@ -106,6 +109,7 @@ include/bobcat/tablebuf
 include/bobcat/tablelines
 include/bobcat/tablesupport
 include/bobcat/tempstream
+include/bobcat/tty
 include/bobcat/typetrait
 include/bobcat/user
 include/bobcat/x2a
@@ -127,6 +131,7 @@ man/man3/clientsocket.3bobcat.gz
 man/man3/cmdfinder.3bobcat.gz
 man/man3/cmdfinderbase.3bobcat.gz
 man/man3/configfile.3bobcat.gz
+man/man3/csv.3bobcat.gz
 man/man3/datetime.3bobcat.gz
 man/man3/decryptbuf.3bobcat.gz
 man/man3/diffiehellman.3bobcat.gz
@@ -193,10 +198,13 @@ man/man3/repeat.3bobcat.gz
 man/man3/reverseiterator.3bobcat.gz
 man/man3/selector.3bobcat.gz
 man/man3/serversocket.3bobcat.gz
+man/man3/semaphore.3bobcat.gz
 man/man3/sharedblock.3bobcat.gz
+man/man3/sharedcondition.3bobcat.gz
 man/man3/sharedmemory.3bobcat.gz
 man/man3/sharedmutex.3bobcat.gz
 man/man3/sharedpos.3bobcat.gz
+man/man7/sharedreadme.7bobcat.gz
 man/man3/sharedsegment.3bobcat.gz
 man/man3/sharedstream.3bobcat.gz
 man/man3/sharedstreambuf.3bobcat.gz
@@ -212,6 +220,7 @@ man/man3/tablebuf.3bobcat.gz
 man/man3/tablelines.3bobcat.gz
 man/man3/tablesupport.3bobcat.gz
 man/man3/tempstream.3bobcat.gz
+man/man3/tty.3bobcat.gz
 man/man3/typetrait.3bobcat.gz
 man/man3/user.3bobcat.gz
 man/man3/x2a.3bobcat.gz

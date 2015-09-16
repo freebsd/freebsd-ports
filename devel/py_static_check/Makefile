@@ -5,8 +5,7 @@ PORTNAME=	py_static_check
 PORTVERSION=	1.2
 PORTREVISION=	1
 CATEGORIES=	devel python
-MASTER_SITES=	${MASTER_SITE_CHEESESHOP}
-MASTER_SITE_SUBDIR=	source/p/py_static_check
+MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	jnlin@csie.nctu.edu.tw
 COMMENT=	Statically check your python code

@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gramps
-PORTVERSION=	3.4.8
-PORTREVISION=	3
+PORTVERSION=	3.4.9
+PORTREVISION=	1
 CATEGORIES=	science gnome python
 MASTER_SITES=	SF/${PORTNAME}/Stable/${PORTVERSION}
 
@@ -14,12 +14,12 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:${PORTSDIR}/databases/py-bsddb \
-		${PYTHON_PKGNAMEPREFIX}icu>=1.8:${PORTSDIR}/devel/py-icu \
-		${PYXML}
+		${PYTHON_PKGNAMEPREFIX}icu>=1.8:${PORTSDIR}/devel/py-icu
 
+NO_ARCH=	yes
 USE_BDB=	5+
-USES=		desktop-file-utils gettext shared-mime-info gmake python
-USE_GNOME=	pygtk2
+USES=		desktop-file-utils gettext shared-mime-info gmake python:2
+USE_GNOME=	pygtk2 intltool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-mime-install
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -34,23 +34,11 @@ ENCHANT_DESC=		Spellchecking support
 PYWEBKITGTK_DESC=	Use webkit backend for Geographic view
 EXIV_DESC=		Managing exiv metadata support
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGNOME}
-USE_GNOME=	pygnome2 pygnomeextras gnomedocutils
-.endif
-.if ${PORT_OPTIONS:MENCHANT}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}enchant>=0:${PORTSDIR}/textproc/py-enchant
-.endif
-.if ${PORT_OPTIONS:MPYWEBKITGTK}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}webkitgtk>=0:${PORTSDIR}/www/py-webkitgtk
-.endif
-.if ${PORT_OPTIONS:MGRAPHVIZ}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}graphviz>-0:${PORTSDIR}/graphics/py-graphviz
-.endif
-.if ${PORT_OPTIONS:MEXIV}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}exiv2>=0.1.3:${PORTSDIR}/graphics/py-exiv2
-.endif
+ENCHANT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enchant>=0:${PORTSDIR}/textproc/py-enchant
+EXIV_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}exiv2>=0.1.3:${PORTSDIR}/graphics/py-exiv2
+GNOME_USE=		GNOME=pygnome2,gnomedocutils
+GRAPHVIZ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}graphviz>-0:${PORTSDIR}/graphics/py-graphviz
+PYWEBKITGTK_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}webkitgtk>=0:${PORTSDIR}/www/py-webkitgtk
 
 pre-extract:
 	@${ECHO_MSG} "=========================================================="

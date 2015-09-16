@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- wmSun.c.orig	Thu Aug 15 18:04:04 2002
 +++ wmSun.c	Thu Aug 15 18:06:24 2002
 @@ -76,7 +76,8 @@

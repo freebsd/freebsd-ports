@@ -14,6 +14,8 @@ include/generic_image_decoder/gid-decoding_png-huffman.adb
 include/generic_image_decoder/gid-decoding_png-huffman.ads
 include/generic_image_decoder/gid-decoding_png.adb
 include/generic_image_decoder/gid-decoding_png.ads
+include/generic_image_decoder/gid-decoding_pnm.adb
+include/generic_image_decoder/gid-decoding_pnm.ads
 include/generic_image_decoder/gid-decoding_tga.adb
 include/generic_image_decoder/gid-decoding_tga.ads
 include/generic_image_decoder/gid-headers.adb
@@ -27,6 +29,7 @@ lib/generic_image_decoder/gid-decoding_gif.ali
 lib/generic_image_decoder/gid-decoding_jpg.ali
 lib/generic_image_decoder/gid-decoding_png-huffman.ali
 lib/generic_image_decoder/gid-decoding_png.ali
+lib/generic_image_decoder/gid-decoding_pnm.ali
 lib/generic_image_decoder/gid-decoding_tga.ali
 lib/generic_image_decoder/gid-headers.ali
 lib/generic_image_decoder/gid.ali

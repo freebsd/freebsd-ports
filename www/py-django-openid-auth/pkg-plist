@@ -57,9 +57,3 @@
 %%PYTHON_SITELIBDIR%%/django_openid_auth/views.py
 %%PYTHON_SITELIBDIR%%/django_openid_auth/views.pyc
 %%PYTHON_SITELIBDIR%%/django_openid_auth/views.pyo
-@dirrmtry %%PYTHON_SITELIBDIR%%/django_openid_auth/tests
-@dirrmtry %%PYTHON_SITELIBDIR%%/django_openid_auth/management/commands
-@dirrmtry %%PYTHON_SITELIBDIR%%/django_openid_auth/management
-@dirrmtry %%PYTHON_SITELIBDIR%%/django_openid_auth/templates/openid
-@dirrmtry %%PYTHON_SITELIBDIR%%/django_openid_auth/templates
-@dirrmtry %%PYTHON_SITELIBDIR%%/django_openid_auth

@@ -37,8 +37,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.3.2:${PORTSDIR}/www/py-beau
 		webkit-gtk3>=2.4.8:${PORTSDIR}/www/webkit-gtk3 \
 		yelp>=3.14.1:${PORTSDIR}/x11/yelp
 
-python_CMD=	${PYTHON_CMD}
-
 SHEBANG_FILES=	bin/variety data/scripts/*
 
 USES=	desktop-file-utils gettext python:2 shebangfix

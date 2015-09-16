@@ -11,8 +11,6 @@ MASTER_SITES=	LOCAL/crees/${PORTNAME} \
 MAINTAINER=	avg@icyb.net.ua
 COMMENT=	KDE RSI prevention tool
 
-LATEST_LINK=	${PORTNAME}-kde4
-
 USES=		cmake gettext tar:bzip2
 USE_QT4=	qmake_build moc_build rcc_build uic_build
 USE_KDE4=	kdeprefix kdelibs automoc4

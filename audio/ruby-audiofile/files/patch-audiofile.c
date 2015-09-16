@@ -1,5 +1,5 @@
---- audiofile.c.orig	2003-08-10 00:29:57.000000000 +0100
-+++ audiofile.c	2011-04-18 06:58:15.000000000 +0100
+--- audiofile.c.orig	2003-08-09 23:29:57 UTC
++++ audiofile.c
 @@ -161,7 +161,7 @@
  
              /* get mode into a C-string */

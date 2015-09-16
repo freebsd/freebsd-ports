@@ -39,7 +39,6 @@ do-install:
 .for f in ${CATALOG_FILES}
 	${INSTALL_DATA} ${WRKDIR}/${f} ${STAGEDIR}${PREFIX}/${DTDDIR}
 .endfor
-	@${ECHO_CMD} "@dirrm share/xml/${DTD_NAME}/${DTD_VERSION}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rmdir %D/share/xml/${DTD_NAME} 2>/dev/null || :" >> ${TMPPLIST}
 
 .include <bsd.port.mk>

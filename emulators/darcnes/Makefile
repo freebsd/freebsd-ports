@@ -6,8 +6,7 @@ PORTVERSION=	9b0401
 PORTREVISION=	6
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.dridus.com/~nyef/darcnes/download/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR= grembo
+		LOCAL/grembo
 DISTNAME=	dn${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

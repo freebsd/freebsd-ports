@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	FSM
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org

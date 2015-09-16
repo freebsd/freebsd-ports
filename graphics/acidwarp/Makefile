@@ -4,8 +4,7 @@
 PORTNAME=	acidwarp
 PORTVERSION=	1.0
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/graphics/hacks/svgalib
+MASTER_SITES=	SUNSITE/apps/graphics/hacks/svgalib
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	SVGAlib demo which displays trippy mathematical images in cycling colors

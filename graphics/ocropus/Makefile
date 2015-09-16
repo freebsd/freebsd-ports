@@ -5,13 +5,12 @@ PORTNAME=	ocropus
 PORTVERSION=	0.4
 PORTREVISION=	14
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	The OCRopus(tm) open source document analysis and OCR system
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libiulib.so:${PORTSDIR}/graphics/iulib \
 		libgsl.so:${PORTSDIR}/math/gsl
@@ -23,7 +22,7 @@ SDL_DESC=	Enable SDL for graphical debugging
 LEPTONICA_DESC=	Enable Leptonica image analysis
 
 MAKE_JOBS_UNSAFE=	yes
-USES=		autoreconf gmake python:build
+USES=		autoreconf gmake jpeg python:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-fst --without-tesseract --with-iulib=${LOCALBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include

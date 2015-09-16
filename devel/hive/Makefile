@@ -20,6 +20,8 @@ BUILD_DEPENDS=	${LOCALBASE}/share/java/maven3/bin/mvn:${PORTSDIR}/devel/maven3 \
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		yarn:${PORTSDIR}/devel/hadoop2
 
+USES=		cpe
+CPE_VENDOR=	apache
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 WRKSRC=		${WRKDIR}/apache-${PORTNAME}-${PORTVERSION}-src

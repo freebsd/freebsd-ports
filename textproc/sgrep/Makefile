@@ -6,8 +6,7 @@ PORTVERSION=	0.99
 PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cs.helsinki.fi/pub/Software/Local/Sgrep/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	jkoshy
+		LOCAL/jkoshy
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Grep for structured text like SGML and HTML

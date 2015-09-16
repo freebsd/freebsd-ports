@@ -1,14 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	wxc
-PORTVERSION=	0.90.1.1
-PORTREVISION=	1
+PORTVERSION=	0.91.0.0
 CATEGORIES=	x11-toolkits haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	wxHaskell C++ wrapper
 
-USE_CABAL=	wxdirect>=0.90.1.0
+USE_CABAL=	wxdirect>=0.91
 
 USES=		dos2unix
 USE_WX=		3.0
@@ -25,10 +24,12 @@ post-patch::
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 
-.if ${OSVERSION} >= 1000000
-EXTRA_PATCHES+=		${PATCHDIR}/nopatch0-wxc.cabal
-.else
-EXTRA_PATCHES+=		${PATCHDIR}/nopatch1-wxc.cabal
+.if ${PORT_OPTIONS:MPCLANG} || ${PORT_OPTIONS:MBCLANG}
+LIB_DEPENDS+=	libc++.so.1:${PORTSDIR}/devel/libc++
+
+.if ${OSVERSION} < 1000000
+CONFIGURE_ARGS+=	--extra-include-dirs=${LOCALBASE}/include/c++/v1
+.endif
 .endif
 
 .include <bsd.port.mk>

@@ -2,5 +2,3 @@ share/guile/www/cgi.scm
 share/guile/www/http.scm
 share/guile/www/main.scm
 share/guile/www/url.scm
-@dirrm share/guile/www
-@dirrmtry share/guile

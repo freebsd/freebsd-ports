@@ -13,10 +13,9 @@ COMMENT=	Scriptable space flight simulator for X11
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
-USES=		gettext gmake libtool lua pkgconfig
+USES=		gettext gmake jpeg libtool lua pkgconfig
 USE_GL=		gl
 GNU_CONFIGURE=	yes
 EXTRA_PATCHES=	${FILESDIR}/celestia-1.6.1-lua-5.2.patch:-p1 \

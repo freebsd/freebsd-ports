@@ -4,7 +4,7 @@
 PORTNAME=	battray
 PORTVERSION=	1.5
 CATEGORIES=	sysutils python
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	martin@arp242.net
 COMMENT=	Display notebook battery status in tray

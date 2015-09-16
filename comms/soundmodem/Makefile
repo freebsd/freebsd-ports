@@ -6,8 +6,7 @@ CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.baycom.org/~tom/ham/soundmodem/ \
 		http://soundmodem.vk4msl.yi.org/ \
 		http://pv529.ncsrv.de/soundmodem/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	shurd
+		LOCAL/shurd
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio sound modem

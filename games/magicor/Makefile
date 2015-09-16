@@ -3,7 +3,7 @@
 
 PORTNAME=	magicor
 PORTVERSION=	1.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}-source-${PORTVERSION}${EXTRACT_SUFX} \
@@ -37,9 +37,7 @@ OPTIONS_DEFAULT=EDITOR
 OPTIONS_SUB=	yes
 
 EDITOR_DESC=	Enable editor
-EDITOR_RUN_DEPEND=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2
-
-.include <bsd.port.options.mk>
+EDITOR_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|###CONFIG_PATH###|${PREFIX}/etc/magicor/magicor.conf|' \
@@ -58,11 +56,13 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/Magicor.py ${STAGEDIR}${PREFIX}/bin/magicor
 	${INSTALL_DATA} ${WRKSRC}/etc/magicor.conf \
 		${STAGEDIR}${PREFIX}/etc/magicor/magicor.conf.dist
-.if ${PORT_OPTIONS:MEDITOR}
+
+do-install-EDITOR-on:
 	${INSTALL_SCRIPT} ${WRKSRC}/Magicor-LevelEditor.py ${STAGEDIR}${PREFIX}/bin/magicor-editor
 	${INSTALL_DATA} ${WRKSRC}/etc/magicor-editor.conf \
 		${STAGEDIR}${PREFIX}/etc/magicor/magicor-editor.conf.dist
-.endif
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
 

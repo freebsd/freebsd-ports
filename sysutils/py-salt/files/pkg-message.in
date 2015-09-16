@@ -5,7 +5,7 @@ To configure a Salt Master, do the following:
 
   o Copy %%PREFIX%%/etc/salt/master.sample to %%PREFIX%%/etc/salt/master
   o Update to meet your needs
-  o Set salt_master_enable="YES" in rc.conf
+  o sysrc salt_master_enable="YES"
 
 ---------------------------------------------------------------------------------------------------
 
@@ -13,8 +13,7 @@ To configure a Salt Minion, do the following:
 
   o Copy %%PREFIX%%/etc/salt/minion.sample to %%PREFIX%%/etc/salt/minion
   o Update 'master: salt' to point to your Salt Master's hostname or IP
-  o Set salt_minion_enable="YES" in rc.conf
-  o Set salt_minion_paths="/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin" in rc.conf
+  o sysrc salt_minion_enable="YES"
 
 ===================================================================================================
 

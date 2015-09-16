@@ -1,6 +1,6 @@
---- console/tidy.c.orig	Sat Mar  6 08:59:12 2004
-+++ console/tidy.c	Fri Mar 12 18:16:30 2004
-@@ -505,6 +505,9 @@
+--- console/tidy.c.orig	2008-03-22 20:53:08 UTC
++++ console/tidy.c
+@@ -1031,6 +1031,9 @@ int main( int argc, char** argv )
              else if ( strcasecmp(arg, "quiet") == 0 )
                  tidyOptSetBool( tdoc, TidyQuiet, yes );
  

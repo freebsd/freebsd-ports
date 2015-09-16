@@ -1,0 +1,4 @@
+CassTcl provides a Tcl interface to the Cassandra database using DataStax
+cpp-driver C/C++ API.
+
+WWW: https://github.com/flightaware/casstcl

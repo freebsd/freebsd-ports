@@ -16,9 +16,6 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS+=	${PYNUMPY}
 RUN_DEPENDS+=	${PYNUMPY}
 
-LATEST_LINK=	py-${PORTNAME}
-OPTIONSFILE=	${PORT_DBDIR}/py-numpy/options
-
 USES=		fortran python:2
 USE_PYTHON=	distutils autoplist
 

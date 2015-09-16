@@ -30,7 +30,6 @@ post-install:
 	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR}
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include "${.CURDIR}/../../www/trac/plugin.mk"
 .include <bsd.port.mk>

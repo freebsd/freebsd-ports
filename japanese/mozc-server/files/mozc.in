@@ -37,10 +37,11 @@ stop_server()
 {
 	if [ -r "${MOZCDIR}/mozc_server.pid" ]; then
 		pkill -F "${MOZCDIR}/mozc_server.pid"
+	else
+		for p in $(pgrep -U $(id -u) mozc_server); do
+			kill $p
+		done
 	fi
-	for p in $(pgrep -U $(id -u) mozc_server); do
-		kill $p
-	done
 }
 
 case $1 in

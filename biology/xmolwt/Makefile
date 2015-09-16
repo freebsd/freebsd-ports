@@ -19,16 +19,11 @@ ALL_TARGET=	gmolwt
 PORTDOCS=	*
 PLIST_FILES=	bin/gmolwt bin/molwt
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGTK2}
-USES+=		pkgconfig
-USE_GNOME=	gtk20
-MAKE_ENV+=	GTKCONFIG="pkg-config gtk+-2.0"
-.else
-USE_GNOME=	gtk12
-MAKE_ENV+=	GTKCONFIG="${GTK_CONFIG}"
-.endif
+GTK2_USES=		pkgconfig
+GTK2_USE=	GNOME=gtk20
+GTK2_MAKE_ENV=	GTKCONFIG="pkg-config gtk+-2.0"
+GTK2_USE_OFF=	GNOME=gtk12
+GTK2_MAKE_ENV_OFF=	GTKCONFIG="${GTK_CONFIG}"
 
 post-patch:
 	@${REINPLACE_CMD} -e \

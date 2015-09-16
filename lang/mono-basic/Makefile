@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mono-basic
-PORTVERSION=	3.8
+PORTVERSION=	4.0.1
 CATEGORIES=	lang
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/ \
 		http://ftp.novell.com/pub/mono/sources/${PORTNAME}/

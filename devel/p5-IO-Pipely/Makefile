@@ -16,14 +16,15 @@ LICENSE_COMB=	dual
 
 TEST_DEPENDS=	p5-Scalar-List-Utils>=1.29:${PORTSDIR}/lang/p5-Scalar-List-Utils
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501800
-BUILD_DEPENDS=	p5-Exporter>=5.68:${PORTSDIR}/devel/p5-Exporter
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS+=	p5-Exporter>=5.68:${PORTSDIR}/devel/p5-Exporter
+RUN_DEPENDS+=	p5-Exporter>=5.68:${PORTSDIR}/devel/p5-Exporter
 .endif
 
 .include <bsd.port.post.mk>

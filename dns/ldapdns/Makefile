@@ -3,7 +3,7 @@
 
 PORTNAME=	ldapdns
 PORTVERSION=	2.07
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://bsdforge.com/projects/source/dns/ldapdns/
 
@@ -11,6 +11,7 @@ MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	LDAP-backed DNS server
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools \
 		tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
@@ -23,7 +24,8 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_CSTD=	gnu89
-USES=		tar:xz
+USES=		shebangfix tar:xz
+SHEBANG_FILES=	admin/*
 
 ALL_TARGET=	default
 

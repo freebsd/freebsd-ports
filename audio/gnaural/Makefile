@@ -3,7 +3,7 @@
 
 PORTNAME=	gnaural
 PORTVERSION=	1.0.20110606
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/Gnaural/
 
@@ -13,7 +13,7 @@ COMMENT=	Binaural beat generator
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libportaudio.so.2:${PORTSDIR}/audio/portaudio2 \
+LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile
 
 GNU_CONFIGURE=	yes

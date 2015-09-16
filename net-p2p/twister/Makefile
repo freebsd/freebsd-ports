@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	twister-core
-PORTVERSION=	0.9.29
-PORTREVISION=	1
+PORTVERSION=	0.9.30
+DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	net-p2p
 
@@ -22,8 +22,6 @@ OPTIONS_DEFINE=	DOCS
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	miguelfreitas
-GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	v${PORTVERSION}
 
 USE_BDB=	yes
 WANT_BDB_VER=	48
@@ -61,9 +59,9 @@ pre-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/twisterd ${STAGEDIR}${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

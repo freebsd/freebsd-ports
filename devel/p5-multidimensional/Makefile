@@ -24,10 +24,4 @@ RUN_DEPENDS=	p5-B-Hooks-OP-Check>=0.19:${PORTSDIR}/devel/p5-B-Hooks-OP-Check \
 USE_PERL5=	configure
 USES=		perl5
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501600
-BUILD_DEPENDS+=	p5-CPAN-Meta>=2.112580:${PORTSDIR}/devel/p5-CPAN-Meta
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

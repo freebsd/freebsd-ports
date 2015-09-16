@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	stellarium
-PORTVERSION=	0.13.2
+PORTVERSION=	0.13.3
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/Stellarium-sources/${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -15,10 +16,9 @@ LICENSE=	GPLv2
 
 CONFLICTS_INSTALL=	${PORTNAME}-qt4-0.12.*
 
-USES=		cmake gettext iconv
+USES=		cmake gettext
 USE_QT5=	qmake_build buildtools_build linguisttools_build \
 		core concurrent declarative
-INSTALLS_ICONS=	yes
 
 PORTDOCS=	AUTHORS ChangeLog README
 

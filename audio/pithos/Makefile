@@ -3,7 +3,7 @@
 
 PORTNAME=	pithos
 PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 
 MAINTAINER=	kmoore@freebsd.org
@@ -22,7 +22,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py3-xdg \
 USE_GNOME=	gtk30 py3gobject3
 USES=		python:3
 USE_PYTHON=	distutils autoplist
-USE_GSTREAMER=	core good bad soup
+USE_GSTREAMER1=	core good bad soup
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}

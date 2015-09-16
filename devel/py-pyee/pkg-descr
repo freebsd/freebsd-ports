@@ -1,0 +1,4 @@
+pyee supplies an event_emitter object that acts similar
+to the EventEmitter that comes with node.js.
+
+WWW: https://github.com/jesusabdullah/pyee

@@ -3,7 +3,7 @@
 
 PORTNAME=	libquicktime
 PORTVERSION=	1.2.4
-PORTREVISION?=	10
+PORTREVISION?=	11
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -78,7 +78,7 @@ CONFIGURE_ARGS+=	--without-libdv
 .endif
 
 .if ${PORT_OPTIONS:MJPEG}
-LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+USES+=		jpeg
 CONFIGURE_ARGS+=	--with-libjpeg
 .else
 CONFIGURE_ARGS+=	--without-libjpeg

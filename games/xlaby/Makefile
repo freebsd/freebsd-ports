@@ -5,9 +5,8 @@ PORTNAME=	xlaby
 PORTVERSION=	2.0.1
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
+MASTER_SITES=	SUNSITE/games/strategy \
 		ftp://quatramaran.ens.fr/pub/madore/xlaby/
-MASTER_SITE_SUBDIR=	games/strategy
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Daemonic X Labyrinth played directly with the mouse pointer

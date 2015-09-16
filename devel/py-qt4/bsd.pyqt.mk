@@ -13,11 +13,11 @@ PYQT_MAINTAINER=	kde@FreeBSD.org
 MASTER_SITE_RIVERBANK=	http://www.riverbankcomputing.com/static/Downloads/%SUBDIR%/
 
 MASTER_SITES_SIP=	SF/pyqt/sip/sip-${PORTVERSION} \
-			${MASTER_SITE_GENTOO:S,%SUBDIR%,distfiles,}
+			GENTOO
 MASTER_SITES_PYQT4=	SF/pyqt/PyQt4/PyQt-${PORTVERSION} \
-			${MASTER_SITE_GENTOO:S,%SUBDIR%,distfiles,}
+			GENTOO
 MASTER_SITES_QSCI2=	SF/pyqt/QScintilla2/QScintilla-${PORTVERSION} \
-			${MASTER_SITE_GENTOO:S,%SUBDIR%,distfiles,}
+			GENTOO
 
 SIP_VERSION=		4.16.5
 PYQT4_VERSION=		4.11.3
@@ -98,7 +98,6 @@ USES+=		python
 QT_NONSTANDARD=	yes  # Do not add unknown arguments to CONFIGURE_ARGS.
 
 PATCHDIR=	${.CURDIR}/../../devel/py-qt4-core/files
-OPTIONSFILE?=	${PORT_DBDIR}/py-qt4-${PORTNAME}/options
 SIPDIR=		${PREFIX}/share/py-sip
 QSCIDIR=	${PREFIX}/share/qt4/qsci
 CONFIGURE_ARGS+=-b ${PREFIX}/bin \

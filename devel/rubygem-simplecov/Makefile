@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	simplecov
-PORTVERSION=	0.9.1
+PORTVERSION=	0.10.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,6 +14,7 @@ RUN_DEPENDS=	rubygem-docile>=1.1.0:${PORTSDIR}/devel/rubygem-docile \
 		rubygem-multi_json>=1.0:${PORTSDIR}/devel/rubygem-multi_json \
 		rubygem-simplecov-html>=0.8.0:${PORTSDIR}/textproc/rubygem-simplecov-html
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

@@ -6,7 +6,7 @@
 # Usage:	USES=		pgsql[:version]
 #
 #		Maintainer can set version required.  Minimum and maximum
-#		versions can be specified; e.g. 9.0-, 8.4+
+#		versions can be specified; e.g. 9.0-, 9.2+
 #
 #		WANT_PGSQL=	server[:fetch] pltcl plperl
 #
@@ -31,7 +31,7 @@ _INCLUDE_USES_PGSQL_MK=	yes
 #	to add dependencies; use WANT_PGSQL as explained above
 #
 
-VALID_PGSQL_VER=	8.4 9.0 9.1 9.2 9.3 9.4
+VALID_PGSQL_VER=	9.0 9.1 9.2 9.3 9.4
 
 # Override non-default LIBVERS like this:
 #PGSQL99_LIBVER=6
@@ -128,10 +128,10 @@ LIB_DEPENDS+=	libpq.so.${PGSQL${PGSQL_VER_NODOT}_LIBVER}:${PORTSDIR}/databases/p
 _USE_PGSQL_DEP=		client contrib docs pgtcl pltcl plperl server
 _USE_PGSQL_DEP_client=	psql
 _USE_PGSQL_DEP_contrib=	pgbench
-_USE_PGSQL_DEP_docs=	postgresql${PGSQL_VER}-docs>0
+_USE_PGSQL_DEP_docs=	postgresql${PGSQL_VER_NODOT}-docs>0
 _USE_PGSQL_DEP_pgtcl=	${LOCALBASE}/lib/pgtcl/pkgIndex.tcl
-_USE_PGSQL_DEP_plperl=	postgresql${PGSQL_VER}-plperl>0
-_USE_PGSQL_DEP_pltcl=	postgresql${PGSQL_VER}-pltcl>0
+_USE_PGSQL_DEP_plperl=	postgresql${PGSQL_VER_NODOT}-plperl>0
+_USE_PGSQL_DEP_pltcl=	postgresql${PGSQL_VER_NODOT}-pltcl>0
 _USE_PGSQL_DEP_server=	postgres
 .    if defined(WANT_PGSQL)
 .      for depend in ${_USE_PGSQL_DEP}

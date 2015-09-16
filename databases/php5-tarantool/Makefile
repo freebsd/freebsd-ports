@@ -13,14 +13,20 @@ USE_GITHUB=	yes
 USE_PHP=	yes
 USE_PHPEXT=	yes
 USE_PHPIZE=	yes
-DEFAULT_PHP_VER=5
+PHP_DEFAULT=	5.4
 
 PHP_MODNAME=	${PORTNAME}
 GH_PROJECT=	${PORTNAME}-php
 GH_ACCOUNT=	tarantool
-GH_TAGNAME=	d88ac7b
-TR_VER=		20131031
+GH_TAGNAME=	3f24c5e
+TR_VER=		20150708
 
 CONFIGURE_ARGS+=	--with-tarantool
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 900000
+IGNORE=	does not support FreeBSD versions < 9.0
+.endif
+
+.include <bsd.port.post.mk>

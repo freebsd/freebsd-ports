@@ -1,6 +1,6 @@
---- configure.in.orig	2010-12-13 18:24:39.000000000 +0100
-+++ configure.in	2011-07-31 13:17:56.000000000 +0200
-@@ -659,7 +659,7 @@
+--- configure.in.orig	2010-12-13 17:24:39 UTC
++++ configure.in
+@@ -659,7 +659,7 @@ AC_SUBST([SCM_I_GSC_HAVE_STRUCT_DIRENT64
  #
  AC_CHECK_HEADERS([complex.h fenv.h io.h libc.h limits.h malloc.h memory.h process.h string.h \
  regex.h rxposix.h rx/rxposix.h sys/dir.h sys/ioctl.h sys/select.h \
@@ -9,7 +9,7 @@
  sys/utime.h time.h unistd.h utime.h pwd.h grp.h sys/utsname.h \
  direct.h strings.h machine/fpu.h])
  
-@@ -762,6 +762,7 @@
+@@ -762,6 +762,7 @@ AC_CHECK_FUNCS([DINFINITY DQNAN cexp chs
  #   sys/param.h - not in mingw
  #   pthread.h - only available with pthreads.  ACX_PTHREAD doesn't
  #       check this specifically, we need it for the timespec test below.
@@ -17,7 +17,7 @@
  #   sethostname - the function itself check because it's not in mingw,
  #       the DECL is checked because Solaris 10 doens't have in any header
  #   strncasecmp - on NetBSD 1.6 the symbol is available in libc but the
-@@ -779,7 +780,7 @@
+@@ -779,7 +780,7 @@ AC_CHECK_FUNCS([DINFINITY DQNAN cexp chs
  #   vsnprintf - on AIX 5.3, the declaration is only visible with
  #       `_XOPEN_SOURCE >= 500' or `_ISOC99_SOURCE'.
  #
@@ -26,7 +26,7 @@
  AC_CHECK_FUNCS(chroot flock getlogin cuserid getpriority setpriority getpass sethostname gethostname)
  AC_CHECK_DECLS([sethostname, strncasecmp, unsetenv, hstrerror, cuserid, flock, vsnprintf])
  
-@@ -1298,9 +1299,11 @@
+@@ -1298,9 +1299,11 @@ case "$with_threads" in
      #         all; not present on MacOS X or Solaris 10
      #     pthread_get_stackaddr_np - "np" meaning "non portable" says it
      #         all; specific to MacOS X
@@ -39,7 +39,7 @@
  
      # On past versions of Solaris, believe 8 through 10 at least, you
      # had to write "pthread_once_t foo = { PTHREAD_ONCE_INIT };".
-@@ -1315,7 +1318,7 @@
+@@ -1315,7 +1318,7 @@ case "$with_threads" in
      if test "$GCC" = "yes"; then
        # Since GCC only issues a warning for missing braces, so we need
        # `-Werror' to catch it.
@@ -48,7 +48,7 @@
      fi
  
      AC_CACHE_CHECK([whether PTHREAD_ONCE_INIT needs braces],
-@@ -1466,7 +1469,7 @@
+@@ -1466,7 +1469,7 @@ case "$GCC" in
      # not be "warning free"
      if test "${GUILE_ERROR_ON_WARNING}" = yes
      then

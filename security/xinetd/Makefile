@@ -5,7 +5,7 @@ PORTNAME=	xinetd
 PORTVERSION=	2.3.15
 PORTREVISION=	1
 CATEGORIES=	security ipv6
-MASTER_SITES=	GENTOO/distfiles
+MASTER_SITES=	GENTOO
 
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Replacement for inetd with better control and logging

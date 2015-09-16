@@ -1,6 +1,6 @@
---- setup.py.orig	2015-01-24 14:55:05.507732433 -0700
-+++ setup.py	2015-01-24 14:59:07.595716022 -0700
-@@ -621,8 +621,8 @@
+--- setup.py.orig	2015-04-17 18:44:50 UTC
++++ setup.py
+@@ -623,8 +623,8 @@ class SaltDistribution(distutils.dist.Di
      def _property_data_files(self):
          # Data files common to all scenarios
          data_files = [

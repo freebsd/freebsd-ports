@@ -1,6 +1,6 @@
---- src/tooracleconnection.cpp.orig	2008-10-29 16:59:11.000000000 +0100
-+++ src/tooracleconnection.cpp	2009-05-07 19:16:09.390371657 +0200
-@@ -57,7 +57,6 @@
+--- src/tooracleconnection.cpp.orig	2010-09-19 09:27:38 UTC
++++ src/tooracleconnection.cpp
+@@ -58,7 +58,6 @@
  
  #define OTL_STL
  #define OTL_EXCEPTION_ENABLE_ERROR_OFFSET

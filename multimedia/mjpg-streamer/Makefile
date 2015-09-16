@@ -4,8 +4,7 @@
 PORTNAME=	mjpg-streamer
 PORTVERSION=	r63
 CATEGORIES=	multimedia net
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/Sourcecode
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Sourcecode
 
 MAINTAINER=	kozlov.sergey.404@gmail.com
 COMMENT=	HTTP video streaming daemon
@@ -42,7 +41,7 @@ MJPEG_STREAMER_PLUGINS+=	input_testpicture.so
 
 .if ${PORT_OPTIONS:MUVC}
 MJPEG_STREAMER_PLUGINS+=	input_uvc.so
-LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+USES+=		jpeg
 .endif
 
 .if ${PORT_OPTIONS:MHTTP}

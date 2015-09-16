@@ -3,9 +3,9 @@
 
 PORTNAME=	cld
 PORTVERSION=	20150113
+PORTREVISION=	1
 CATEGORIES=	devel python
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	demon
+MASTER_SITES=	LOCAL/demon
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	chromium_compact_language_detector-${PORTVERSION}
 
@@ -18,7 +18,9 @@ LIB_DEPENDS=	libcld2.so:${PORTSDIR}/devel/cld2
 
 USES=		python
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/cld2.so %%PYTHON_SITELIBDIR%%/cld2full.so
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/chromium_compact_language_detector-2.0-py%%PYTHON_VER%%.egg-info \
+		%%PYTHON_SITELIBDIR%%/cld2.so \
+		%%PYTHON_SITELIBDIR%%/cld2full.so
 
 post-patch:
 	${REINPLACE_CMD} -e "s#\.\./cld2#${LOCALBASE}/include/cld#" ${WRKSRC}/setup.py ${WRKSRC}/setup_full.py

@@ -1,0 +1,29 @@
+domctl/sysctl: don't leak hypervisor stack to toolstacks
+
+This is XSA-132.
+
+Signed-off-by: Andrew Cooper <andrew.cooper3@citrix.com>
+Reviewed-by: Jan Beulich <jbeulich@suse.com>
+
+--- a/xen/arch/x86/domctl.c
++++ b/xen/arch/x86/domctl.c
+@@ -884,7 +884,7 @@ long arch_do_domctl(
+ 
+     case XEN_DOMCTL_gettscinfo:
+     {
+-        xen_guest_tsc_info_t info;
++        xen_guest_tsc_info_t info = { 0 };
+ 
+         ret = -EINVAL;
+         if ( d == current->domain ) /* no domain_pause() */
+--- a/xen/common/sysctl.c
++++ b/xen/common/sysctl.c
+@@ -76,7 +76,7 @@ long do_sysctl(XEN_GUEST_HANDLE_PARAM(xe
+     case XEN_SYSCTL_getdomaininfolist:
+     { 
+         struct domain *d;
+-        struct xen_domctl_getdomaininfo info;
++        struct xen_domctl_getdomaininfo info = { 0 };
+         u32 num_domains = 0;
+ 
+         rcu_read_lock(&domlist_read_lock);

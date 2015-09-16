@@ -2,4 +2,3 @@ sbin/pserv
 etc/pserv/mime.types
 etc/pserv/pserv.conf.sample
 etc/rc.d/pserv.sh
-@dirrm etc/pserv

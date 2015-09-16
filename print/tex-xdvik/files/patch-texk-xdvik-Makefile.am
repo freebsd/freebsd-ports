@@ -1,6 +1,6 @@
---- texk/xdvik/Makefile.am.orig	2014-09-02 18:41:34.000000000 +0900
-+++ texk/xdvik/Makefile.am	2015-01-31 21:02:18.000000000 +0900
-@@ -87,6 +87,19 @@
+--- texk/xdvik/Makefile.am.orig	2013-04-16 07:22:53 UTC
++++ texk/xdvik/Makefile.am
+@@ -87,6 +87,19 @@ libxdvi_a_SOURCES = \
  	xdvi-debug.h \
  	xserver-info.c \
  	xdvi.h \
@@ -20,7 +20,7 @@
  	xserver-info.h
  
  ## We cannot easily use two different libraries due to the mutual
-@@ -173,9 +186,14 @@
+@@ -173,9 +186,14 @@ bin_PROGRAMS = xdvi-bin
  
  xdvi_bin_SOURCES = main.c
  
@@ -37,7 +37,7 @@
  
  # When cross-compiling, EXEEXT for the build and host systems may differ.
  # Thus we depend on the auxiliary file squeeze/stamp-squeeze.
-@@ -206,14 +224,14 @@
+@@ -206,14 +224,14 @@ dist_xdvi_DATA = texmf/XDvi
  pixmapdir = $(datarootdir)/texmf-dist/xdvi/pixmap
  dist_pixmap_DATA = pixmaps/toolbar.xpm pixmaps/toolbar2.xpm
  

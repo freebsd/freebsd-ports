@@ -15,8 +15,6 @@ USES=		perl5
 USE_PERL5=	configure
 
 post-install:
-	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Unicode/Map/Map.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Unicode/Map/Map.so
-	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Unicode/Map/Map.so
 
 .include <bsd.port.mk>

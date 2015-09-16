@@ -11,10 +11,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/apidocs-oracle-thin/index.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs-oracle-thin/overview-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs-oracle-thin/package-list
-%%PORTDOCS%%%%DOCSDIR%%/apidocs-oracle-thin/resources/background.gif
-%%PORTDOCS%%%%DOCSDIR%%/apidocs-oracle-thin/resources/tab.gif
-%%PORTDOCS%%%%DOCSDIR%%/apidocs-oracle-thin/resources/titlebar.gif
-%%PORTDOCS%%%%DOCSDIR%%/apidocs-oracle-thin/resources/titlebar_end.gif
+%%PORTDOCS%%%%DOCSDIR%%/apidocs-oracle-thin/script.js
 %%PORTDOCS%%%%DOCSDIR%%/apidocs-oracle-thin/stylesheet.css
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/allclasses-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/allclasses-noframe.html
@@ -59,10 +56,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/debug/AfterCloseLoggingConnectionWrapper.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/debug/CloseLoggingComboPooledDataSource.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/debug/CloseLoggingConnectionWrapper.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/debug/ConstructionLoggingComboPooledDataSource.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/debug/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/debug/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/debug/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/example/InitSqlConnectionCustomizer.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/example/IsValidOnlyConnectionTester30.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/example/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/example/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/example/package-tree.html
@@ -174,6 +173,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/test/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/util/CloseReportingConnectionWrapper.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/util/ConnectionEventSupport.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/util/IsValidOnlyConnectionTester.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/util/StatementEventSupport.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/util/TestUtils.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/util/package-frame.html
@@ -203,10 +203,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/overview-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/overview-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/package-list
-%%PORTDOCS%%%%DOCSDIR%%/apidocs/resources/background.gif
-%%PORTDOCS%%%%DOCSDIR%%/apidocs/resources/tab.gif
-%%PORTDOCS%%%%DOCSDIR%%/apidocs/resources/titlebar.gif
-%%PORTDOCS%%%%DOCSDIR%%/apidocs/resources/titlebar_end.gif
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/script.js
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/serialized-form.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/stylesheet.css
 %%PORTDOCS%%%%DOCSDIR%%/arrow_sm.png

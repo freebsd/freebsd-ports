@@ -3,18 +3,22 @@
 
 PORTNAME=	Crypt-UnixCrypt_XS
 PORTVERSION=	0.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	brix@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl XS interface for a portable traditional crypt function
 
-LICENSE=	ARTPERL10
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
+MAKE_JOBS_UNSAFE=	yes
 USES=		perl5
 USE_PERL5=	configure
-MAKE_JOBS_UNSAFE=	yes
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Crypt/UnixCrypt_XS/UnixCrypt_XS.so
 
 .include <bsd.port.mk>

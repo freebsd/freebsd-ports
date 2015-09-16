@@ -5,7 +5,7 @@ PORTNAME=	ibus-m17n
 PORTVERSION=	1.3.3
 PORTREVISION=	5
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	The m17n IMEngine for IBus framework

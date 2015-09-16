@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gnatcoll
-PORTVERSION=	2014
-PORTREVISION=	4
+PORTVERSION=	2015
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	${PORTNAME}-gpl-${PORTVERSION}-src
@@ -15,31 +15,34 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	gprbuild>=20120510:${PORTSDIR}/devel/gprbuild \
 		gnat_util>=20140422:${PORTSDIR}/lang/gnat_util
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgtkada.so:${PORTSDIR}/x11-toolkits/gtkada3 \
+		libgmp.so:${PORTSDIR}/math/gmp
+RUN_DEPENDS=	gnat_util>=20140422:${PORTSDIR}/lang/gnat_util
 
-USES=		ada gmake
+USES=		ada gmake pkgconfig python
+USE_GNOME=	pygobject3
+PYCOMPILE=	${PREFIX}/lib/${PYTHON_VERSION}/compileall.py
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-lm
 PORTDOCS=	html gnatcoll.pdf
 PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=		READLINE SYSLOG SQLITE PYTHON GTK PGSQL ICONV \
-			DOCS EXAMPLES
-OPTIONS_DEFAULT=	READLINE SYSLOG SQLITE PYTHON GTK PGSQL
+MAKE_ARGS=	PROCESSORS=${MAKE_JOBS_NUMBER} \
+		Gnatcoll_Build=Production
+
+OPTIONS_DEFINE=		READLINE SYSLOG PGSQL ICONV DOCS EXAMPLES
+OPTIONS_DEFAULT=	READLINE SYSLOG
 OPTIONS_SUB=		yes
 DOCS_BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
-GTK_LIB_DEPENDS=	libgtkada.so:${PORTSDIR}/x11-toolkits/gtkada3
-SYSLOG_CONFIGURE_ENABLE=syslog
-
-GTK_DESC=		GTK3 toolkit support
+SYSLOG_CONFIGURE_ENABLE=	syslog
 
 CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-aux-${OPSYS:tl}${OSREL}
 CONFIGURE_ARGS=		--with-gmp=${PREFIX} \
+			--with-sqlite=embedded \
+			--with-python=${PREFIX} \
+			--with-gtk=3.0 \
+			--enable-pygobject \
 			--disable-shared \
 			--disable-pygtk
-
-MAKE_ARGS+=		PROCESSORS=${MAKE_JOBS_NUMBER}
-MAKE_ARGS+=		Gnatcoll_Build=Production
 
 .include <bsd.port.options.mk>
 
@@ -48,12 +51,6 @@ USES+=			readline:port
 CONFIGURE_ARGS+=	--enable-gpl
 .else
 CONFIGURE_ARGS+=	--disable-readline
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE}
-CONFIGURE_ARGS+=	--with-sqlite=embedded
-.else
-CONFIGURE_ARGS+=	--without-sqlite
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
@@ -72,24 +69,6 @@ CONFIGURE_ARGS+=	--with-iconv=${ICONV_PREFIX}
 CONFIGURE_ARGS+=	--without-iconv
 .endif
 
-.if ${PORT_OPTIONS:MPYTHON}
-CONFIGURE_ARGS+=	--with-python=${PREFIX} \
-			--enable-pygobject
-USES+=			python
-USE_GNOME=		pygobject3
-PYCOMPILE=		${PREFIX}/lib/${PYTHON_VERSION}/compileall.py
-.else
-CONFIGURE_ARGS+=	--without-python \
-			--disable-pygobject
-.endif
-
-.if ${PORT_OPTIONS:MGTK}
-USES+=			pkgconfig
-CONFIGURE_ARGS+=	--with-gtk=3.0
-.else
-CONFIGURE_ARGS+=	--without-gtk
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|@PREFIX@|${PREFIX}|g" \
 	    ${WRKSRC}/src/gnatcoll_readline.gpr.in
@@ -102,14 +81,11 @@ do-build:
 		${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET}
 
 post-install:
-	${RM} -rf ${STAGEDIR}${DOCSDIR}/html/_sources
-	${RM} -rf ${STAGEDIR}${PREFIX}/share/gps
+	${RM} -r ${STAGEDIR}${DOCSDIR}/html/_sources
+	${RM} -r ${STAGEDIR}${PREFIX}/share/gps
+	${RM} -r ${STAGEDIR}${EXAMPLESDIR}/library
 .if ! ${PORT_OPTIONS:MEXAMPLES}
-	${RM} -rf ${STAGEDIR}${EXAMPLESDIR}
-.endif
-.if ${PORT_OPTIONS:MSQLITE}
-	# Rename gnatinspect to gnatinspect-xref to avoid GPS conflict
-	cd ${STAGEDIR}${PREFIX}/bin && ${MV} gnatinspect gnatinspect-xref
+	${RM} -r ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

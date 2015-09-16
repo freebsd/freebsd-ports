@@ -1,6 +1,6 @@
---- ./server/core.c.orig	2009-07-02 17:30:36.000000000 -0400
-+++ ./server/core.c	2010-05-06 19:37:54.278731038 -0400
-@@ -500,6 +500,7 @@
+--- server/core.c.orig	2014-08-21 17:33:48 UTC
++++ server/core.c
+@@ -512,6 +512,7 @@ static void *merge_core_server_configs(a
      core_server_config *base = (core_server_config *)basev;
      core_server_config *virt = (core_server_config *)virtv;
      core_server_config *conf;
@@ -8,7 +8,7 @@
  
      conf = (core_server_config *)apr_pmemdup(p, virt, sizeof(core_server_config));
  
-@@ -515,6 +516,25 @@
+@@ -527,6 +528,25 @@ static void *merge_core_server_configs(a
          conf->protocol = base->protocol;
      }
  
@@ -34,7 +34,7 @@
      conf->sec_dir = apr_array_append(p, base->sec_dir, virt->sec_dir);
      conf->sec_url = apr_array_append(p, base->sec_url, virt->sec_url);
  
-@@ -2750,7 +2770,7 @@
+@@ -2778,7 +2798,7 @@ AP_DECLARE(void) ap_get_server_revision(
  AP_DECLARE(const char *) ap_get_server_description(void)
  {
      return server_description ? server_description :
@@ -43,7 +43,7 @@
  }
  
  AP_DECLARE(const char *) ap_get_server_banner(void)
-@@ -2811,7 +2831,7 @@
+@@ -2839,7 +2859,7 @@ static void set_banner(apr_pool_t *pconf
          ap_add_version_component(pconf, AP_SERVER_BASEPRODUCT "/" AP_SERVER_MAJORVERSION);
      }
      else {
@@ -52,7 +52,7 @@
      }
  
      /*
-@@ -2821,7 +2841,7 @@
+@@ -2849,7 +2869,7 @@ static void set_banner(apr_pool_t *pconf
      if (ap_server_tokens != SrvTk_FULL) {
          banner_locked++;
      }

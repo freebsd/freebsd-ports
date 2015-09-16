@@ -1,0 +1,9 @@
+This is the Offtrac project. It aims to be a python based xmlrpc client
+library for trac instances.
+
+There is the offtrac python library which offers the TracServer class. This
+object is how one interacts with a Trac instance via xmlrpc. An example
+script (fedora-hosted.py) is provided to show how a client program might 
+make use of the library to get things done. 
+
+WWW: http://fedorahosted.org/offtrac

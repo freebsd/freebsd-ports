@@ -9,6 +9,11 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Fast RDoc documentation browser for ruby
 
+LICENSE=	GPLv2 RUBY
+LICENSE_COMB=	dual
+
+NO_ARCH=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

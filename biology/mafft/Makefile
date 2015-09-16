@@ -1,8 +1,8 @@
-# Created by: Reed A. Cartwright <reed@cartwrig.ht>
+# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
 # $FreeBSD$
 
 PORTNAME=	mafft
-PORTVERSION=	7.149
+PORTVERSION=	7.221
 CATEGORIES=	biology
 MASTER_SITES=	http://mafft.cbrc.jp/alignment/software/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-without-extensions-src
@@ -19,25 +19,21 @@ BUILD_WRKSRC=	${WRKSRC}/core
 
 USES=		gmake shebangfix tar:tgz
 
-SHEBANG_FILES=	core/mafftash_premafft.tmpl
+SHEBANG_FILES=	core/mafftash_premafft.tmpl core/seekquencer_premafft.tmpl
 
 LIBEXEC_FILES=	dvtditr dndfast7 dndblast sextet5 mafft-distance pairlocalalign \
 		pair2hat3s multi2hat3s pairash addsingle splittbfast \
 		disttbfast tbfast mafft-profile f2cl mccaskillwrap contrafoldwrap \
 		countlen seq2regtable regtable2seq score getlag dndpre \
 		setcore replaceu restoreu setdirection makedirectionlist version
-PERL_LIBEXEC_FILES=	mafftash_premafft.pl
+PERL_LIBEXEC_FILES=	mafftash_premafft.pl seekquencer_premafft.pl
 SCRIPT_FILES=	mafft mafft-homologs.rb
 LN_FILES=	einsi fftns fftnsi ginsi linsi mafft-einsi mafft-fftns \
 		mafft-fftnsi mafft-ginsi mafft-linsi mafft-nwns mafft-nwnsi \
 		mafft-qinsi mafft-xinsi nwns nwnsi
 MAN1_FILES=	mafft.1 mafft-homologs.1
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not install on sparc64: depends on thread-local storage
-.endif
+BROKEN_sparc64=		Does not install on sparc64: depends on thread-local storage
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^PREFIX = .*$$||' \
@@ -71,4 +67,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/readme ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/license ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

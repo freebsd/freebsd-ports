@@ -1,0 +1,6 @@
+SHA256 (jbeich-platform_system_extras-android-m-preview-136-g89a2254_GH0.tar.gz) = 33813515ba14743085b8e95a4a74025ac4cefd7d308d5870cc8e279ef5380d4a
+SIZE (jbeich-platform_system_extras-android-m-preview-136-g89a2254_GH0.tar.gz) = 665360
+SHA256 (android-platform_bionic-android-m-preview-232-gb4f2112_GH0.tar.gz) = 88767af6ed1b4377c03aee44e61c175f69decc9169eea2b39661c940186eec5e
+SIZE (android-platform_bionic-android-m-preview-232-gb4f2112_GH0.tar.gz) = 3438328
+SHA256 (android-platform_system_core-android-m-preview-868-gb81c410_GH0.tar.gz) = e013cf5538e25d8123bb7e423ab4269826f74d0af3d44e3e316942c2b1b5a362
+SIZE (android-platform_system_core-android-m-preview-868-gb81c410_GH0.tar.gz) = 1335909

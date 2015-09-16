@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	leo
-PORTVERSION=	5.0
+PORTVERSION=	5.1
+PORTREVISION=	1
 CATEGORIES=	editors python
 MASTER_SITES=	SF/${PORTNAME}/Leo/${PORTVERSION}-final
 DISTNAME=	Leo-${PORTVERSION}-final
@@ -22,10 +23,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 
 NO_ARCH=	yes
 
-WRKSRC=		${WRKDIR}/Leo${PORTVERSION}-final
-
 USES=		python shebangfix zip
-SHEBANG_FILES=	leo/doc/html/fixup.pl
+SHEBANG_FILES=	leo/doc/html/fixup.pl leo/external/saveleo
 USE_PYTHON=	autoplist distutils
 
 DESKTOP_ENTRIES="Leo" "Literate Editor with Outlines" \
@@ -33,7 +32,7 @@ DESKTOP_ENTRIES="Leo" "Literate Editor with Outlines" \
 
 OPTIONS_DEFINE=		DOCS PYENCHANT
 
-PYENCHANT_DESC=		Enable PyEnchant support
+PYENCHANT_DESC=		Spell checking support via PyEnchant
 PYENCHANT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enchant>0:${PORTSDIR}/textproc/py-enchant
 
 .include <bsd.port.mk>

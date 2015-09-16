@@ -2,6 +2,7 @@
 
 PORTNAME=	riak
 PORTVERSION=	1.4.12
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://s3.amazonaws.com/downloads.basho.com/riak/${PORTVERSION:R}/${PORTVERSION}/ \
 		http://downloads.basho.com.s3.amazonaws.com/riak/${PORTVERSION:R}/${PORTVERSION}/
@@ -13,7 +14,12 @@ LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/erlang15/bin/erlc:${PORTSDIR}/lang/erlang-runtime15
 
-USES=		gmake readline
+USES=		gmake readline shebangfix
+SHEBANG_FILES=	deps/eper/priv/bin/dtop \
+		deps/eper/priv/bin/gperf \
+		deps/eper/priv/bin/ntop \
+		deps/eper/priv/bin/redbug \
+		deps/eper/priv/bin/sherk
 USE_RC_SUBR=	riak
 
 PLIST=		${WRKDIR}/pkg-plist

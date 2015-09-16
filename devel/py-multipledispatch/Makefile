@@ -1,0 +1,18 @@
+# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	multipledispatch
+PORTVERSION=	0.4.7
+CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	skreuzer@FreeBSD.org
+COMMENT=	Relatively sane approach to multiple dispatch in Python
+
+LICENSE=	BSD3CLAUSE
+
+USES=		python
+USE_PYTHON=	autoplist distutils
+
+.include <bsd.port.mk>

@@ -4,6 +4,7 @@ bin/gdk-pixbuf-query-loaders
 include/gdk-pixbuf-2.0/gdk-pixbuf-xlib/gdk-pixbuf-xlib.h
 include/gdk-pixbuf-2.0/gdk-pixbuf-xlib/gdk-pixbuf-xlibrgb.h
 include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-animation.h
+include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-autocleanups.h
 include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-core.h
 include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-enum-types.h
 include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-features.h
@@ -34,10 +35,10 @@ lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-xpm.so
 lib/girepository-1.0/GdkPixbuf-2.0.typelib
 lib/libgdk_pixbuf-2.0.so
 lib/libgdk_pixbuf-2.0.so.0
-lib/libgdk_pixbuf-2.0.so.0.3100.2
+lib/libgdk_pixbuf-2.0.so.0.3100.7
 lib/libgdk_pixbuf_xlib-2.0.so
 lib/libgdk_pixbuf_xlib-2.0.so.0
-lib/libgdk_pixbuf_xlib-2.0.so.0.3100.2
+lib/libgdk_pixbuf_xlib-2.0.so.0.3100.7
 libdata/pkgconfig/gdk-pixbuf-2.0.pc
 libdata/pkgconfig/gdk-pixbuf-xlib-2.0.pc
 man/man1/gdk-pixbuf-csource.1.gz
@@ -91,6 +92,7 @@ share/gir-1.0/GdkPixbuf-2.0.gir
 %%NLS%%share/locale/it/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%share/locale/ka/LC_MESSAGES/gdk-pixbuf.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%share/locale/km/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%share/locale/kn/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/gdk-pixbuf.mo

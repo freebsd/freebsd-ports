@@ -1,10 +1,9 @@
-libb64 is a library of ANSI C routines for fast encoding/decoding data 
-into and from a base64-encoded format. 
-C++ wrappers are included, as well as the source code for 
-standalone encoding and decoding executables.
+libb64 is a library of ANSI C routines for fast encoding/decoding of data
+into and from a Base64-encoded format.  C++ wrappers are included, as well
+as the source code for standalone encoding and decoding executables.
 
-Base64 uses a subset of displayable ASCII characters, and is 
-therefore a useful encoding for storing binary data in a text file,
-such as XML, or sending binary data over text-only email. 
+Base64 uses a subset of displayable ASCII characters, and is therefore a
+useful encoding for storing binary data in a text file, such as XML, or
+sending binary data over text-only communication channels.
 
-WWW: http://libb64.sourceforge.net
+WWW: http://libb64.sourceforge.net/
