@@ -28,7 +28,7 @@ rcvar=h2o_enable
 pidfile=`grep pid-file ${h2o_config} | cut -d' ' -f2`
 command="%%PREFIX%%/bin/${name}"
 command_args="-m daemon -c ${h2o_config}"
-procname="perl"
+procname="%%LOCALBASE%%/bin/perl"
 
 load_rc_config $name
 run_rc_command "$1"
