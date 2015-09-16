@@ -5,6 +5,25 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150916:
+  AFFECTS: users of graphics/jpeg
+  AUTHOR: antoine@FreeBSD.org
+
+  Default implementation of jpeg has been switched from graphics/jpeg to
+  graphics/jpeg-turbo.  To perform the upgrade, use instructions below.
+
+  If using binary packages: 'pkg upgrade' will do the right thing.
+
+  If using portmgaster:
+  # portmaster -o graphics/jpeg-turbo graphics/jpeg
+
+  If using portupgrade:
+  # portupgrade -f -o graphics/jpeg-turbo graphics/jpeg
+
+  If you compile your ports and want to keep using IJG's jpeg implementation,
+  add this line to your /etc/make.conf file:
+  JPEG_PORT=graphics/jpeg
+
 20150914:
   AFFECTS: users of lang/perl5*
   AUTHOR: mat@FreeBSD.org
