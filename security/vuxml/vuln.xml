@@ -58,6 +58,40 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="31ea7f73-5c55-11e5-8607-74d02b9a84d5">
+    <topic>h2o -- directory traversal vulnerability</topic>
+    <affects>
+      <package>
+	<name>h2o</name>
+	<range><lt>1.4.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Yakuzo reports:</p>
+	<blockquote cite="https://h2o.examp1e.net/vulnerabilities.html">
+	  <p>H2O (up to version 1.4.4 / 1.5.0-beta1) contains a flaw in its URL
+	    normalization logic.</p>
+	  <p>When file.dir directive is used, this flaw
+	    allows a remote attacker to retrieve arbitrary files that exist
+	    outside the directory specified by the directive.</p>
+	  <p>H2O version 1.4.5 and version 1.5.0-beta2 have been released
+	    to address this vulnerability.</p>
+	  <p>Users are advised to upgrade their servers immediately.</p>
+	  <p>The vulnerability was reported by: Yusuke OSUMI.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5638</cvename>
+      <url>http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5638</url>
+    </references>
+    <dates>
+      <discovery>2015-09-14</discovery>
+      <entry>2015-09-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f4ce64c2-5bd4-11e5-9040-3c970e169bc2">
     <topic>wordpress -- multiple vulnerabilities</topic>
     <affects>
