@@ -1,7 +1,7 @@
---- include/openssl/opensslv.h.orig	2015-07-26 14:58:42 UTC
+--- include/openssl/opensslv.h.orig	2015-09-11 22:35:14 UTC
 +++ include/openssl/opensslv.h
 @@ -7,7 +7,7 @@
- #define LIBRESSL_VERSION_TEXT	"LibreSSL 2.2.2"
+ #define LIBRESSL_VERSION_TEXT	"LibreSSL 2.3.0"
  
  /* These will never change */
 -#define OPENSSL_VERSION_NUMBER	0x20000000L
