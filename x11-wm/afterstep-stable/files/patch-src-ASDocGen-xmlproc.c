@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- src/ASDocGen/xmlproc.c.orig	2013-05-01 06:34:11.000000000 -0700
 +++ src/ASDocGen/xmlproc.c	2014-04-13 10:29:12.000000000 -0700
 @@ -179,7 +179,7 @@
