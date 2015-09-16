@@ -7868,3 +7868,4 @@ devel/cloudabi-libunwind||2015-09-12|Moved to the CloudABI Ports Collection
 japanese/marumoji-fonts|japanese/font-marumoji|2015-09-13|Renamed
 www/asp-php||2015-09-13|Unmaintained upstream, generate unsupported php
 textproc/py-xmltools||2015-09-15|Remove port marked broken for six months: fetch failed
+security/krb5-111|security/krb5-112|2015-09-15|krb5-1.11 EOLed by MIT in December 2014

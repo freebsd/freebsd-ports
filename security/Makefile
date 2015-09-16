@@ -261,7 +261,6 @@
     SUBDIR += kpcli
     SUBDIR += kqoauth
     SUBDIR += krb5
-    SUBDIR += krb5-111
     SUBDIR += krb5-112
     SUBDIR += krb5-appl
     SUBDIR += kripp
