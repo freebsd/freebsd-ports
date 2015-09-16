@@ -39,10 +39,6 @@ CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
 regression-test: build
 	cd ${WRKSRC} && ${MAKE} check
 
-OPTIONS_DEFINE= MAN3
-OPTIONS_DEFAULT=MAN3
-MAN3_DESC=      Install API manpages (section 3)
-
 post-install-MAN3-off:
 	${RM} -rf ${STAGEDIR}/${PREFIX}/man/man3
 	${REINPLACE_CMD} -e '/^man\/man3/d' ${TMPPLIST}
