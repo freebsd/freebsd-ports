@@ -117,7 +117,7 @@ Notes:
   </vuln>
 
   <vuln vid="bab05188-5d4b-11e5-9ad8-14dae9d210b8">
-    <topic>optipng -- use-after-free</topic>
+    <topic>optipng -- use-after-free vulnerability</topic>
     <affects>
       <package>
 	<name>optipng</name>
@@ -143,7 +143,7 @@ Notes:
   </vuln>
 
   <vuln vid="3c259621-5d4a-11e5-9ad8-14dae9d210b8">
-    <topic>openslp -- DoS</topic>
+    <topic>openslp -- denial of service vulnerability</topic>
     <affects>
       <package>
 	<name>openslp</name>
@@ -325,7 +325,7 @@ Notes:
   </vuln>
 
   <vuln vid="4910d161-58a4-11e5-9ad8-14dae9d210b8">
-    <topic>openldap -- denial of service</topic>
+    <topic>openldap -- denial of service vulnerability</topic>
     <affects>
       <package>
 	<name>openldap-server</name>
