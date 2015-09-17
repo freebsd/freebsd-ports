@@ -3,30 +3,28 @@
 
 PORTNAME=	smi
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc www
 MASTER_SITES=	http://bsdforge.com/projects/source/textproc/${PORTNAME}/
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Simple Markdown Interpreter / filter for simplified markup dialect
 
-LICENSE=	MIT BSD2CLAUSE
-LICENSE_COMB=	multi
+LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PORTDOCS=	README.md
 
 PLIST_FILES=	bin/smi man/man1/smi.1.gz
 
-USES=		tar:xz
+USES=		tar:xz uidfix
+MAKEFILE=	/usr/share/mk/bsd.prog.mk
+MAKE_ENV=	PROG="${PORTNAME}" FILES="${PORTDOCS}" \
+		BINDIR="${PREFIX}/bin" FILESDIR="${DOCSDIR}" \
+		MANDIR="${MANPREFIX}/man/man"
+CFLAGS+=	-DVERSION=${PORTVERSION}
 
-post-patch:
-	${REINPLACE_CMD} -e 's|^CC = .*|CC = ${CC}|' ${WRKSRC}/config.mk
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/smi ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/smi.1 ${STAGEDIR}${MANPREFIX}/man/man1
+pre-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
