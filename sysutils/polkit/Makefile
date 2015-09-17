@@ -3,6 +3,7 @@
 
 PORTNAME=	polkit
 PORTVERSION=	0.113
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.freedesktop.org/software/polkit/releases/
 
@@ -16,8 +17,8 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libmozjs-17.0.so:${PORTSDIR}/lang/spidermonkey170
 RUN_DEPENDS=	dbus-launch:${PORTSDIR}/devel/dbus
 
-USERS=	polkitd
-GROUPS=	polkitd
+USERS=		polkitd
+GROUPS=		polkitd
 
 USE_GNOME=	glib20 intlhack introspection:build
 USES=		gettext gmake libtool pathfix pkgconfig shebangfix
@@ -60,5 +61,9 @@ post-install:
 	@${MKDIR} ${STAGEDIR}/var/lib/polkit-1
 	${INSTALL_DATA} ${WRKSRC}/data/org.freedesktop.PolicyKit1.conf \
 		${STAGEDIR}${PREFIX}/etc/dbus-1/system.d/org.freedesktop.PolicyKit1.conf.sample
+.for i in 10-vendor.d 20-org.d 30-site.d 50-local.d 90-mandatory.d
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/polkit-1/localauthority/${i}
+	${MKDIR} ${STAGEDIR}/var/lib/polkit-1/localauthority/${i}
+.endfor
 
 .include <bsd.port.mk>
