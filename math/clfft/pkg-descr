@@ -1,0 +1,9 @@
+clFFT
+
+a software library containing FFT functions written in OpenCL
+
+clFFT is a software library containing FFT functions written in OpenCL. In
+addition to GPU devices, the libraries also support running on CPU devices to
+facilitate debugging and heterogeneous programming.
+
+WWW: https://github.com/clMathLibraries/clFFt
