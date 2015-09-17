@@ -105,7 +105,8 @@ memcached_poststop()
 command=%%PREFIX%%/bin/memcached
 command_args="-d -u ${memcached_user} -P ${pidfile} "
 
-start_precmd="install -d -o $memcached_user -g $memcached_user -m 755 $_piddir"
+memcached_group=`id -gn $memcached_user`
+start_precmd="install -d -o $memcached_user -g $memcached_group -m 755 $_piddir"
 start_postcmd="${name}_poststart"
 stop_postcmd="${name}_poststop"
 
