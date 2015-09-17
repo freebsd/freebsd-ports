@@ -15,7 +15,7 @@
  // Other platforms.
  #else
  
-@@ -421,6 +429,386 @@ uint64 System::get_process_virtual_memor
+@@ -421,6 +429,390 @@ uint64 System::get_process_virtual_memor
      return static_cast<uint64>(rss) * sysconf(_SC_PAGESIZE);
  }
  
@@ -43,26 +43,30 @@
 +    size_t linesize;
 +} mycaches[3];
 +
-+// %ebx is used to point to GOT (Global Offset Table) for PIC (Position
-+// Independent Code) on 32-bit x86, so use %edi to preserve %ebx across
-+// the call and %esi when passing CPUID arguments and return values.
++// %ebx may be used to point to GOT (Global Offset Table) for PIC (Position
++// Independent Code) on 32-bit x86, so it must be preserved.  Normally
++// compilers handle this implicitly because %ebx is also callee saved, but
++// GCC before 5.0 forbids any use of %ebx with PIC, so it must be performed
++// explicitly.  Unfortunately, we need a separate implementation for x86-64
++// to preserve %rbx because 32-bit operations would set the upper 32 bits
++// to zero.
 +static inline void
-+cpuid(uint32_t* data)
++cpuid(uint32_t* regs)
 +{
-+    asm("movl %%ebx, %%edi\n\t"
-+        "movl %%esi, %%ebx\n\t"
++    asm(
++#if __x86_64__
++        "movq %%rbx, %q1\n\t"
 +        "cpuid\n\t"
-+        "movl %%ebx, %%esi\n\t"
-+        "movl %%edi, %%ebx"
-+      : "=a" (data[eax]),
-+        "=S" (data[ebx]),
-+        "=c" (data[ecx]),
-+        "=d" (data[edx])
-+      :  "a" (data[eax]),
-+         "S" (data[ebx]),
-+         "c" (data[ecx]),
-+         "d" (data[edx])
-+      : "%edi");
++        "xchgq %%rbx, %q1"
++#else
++        "movl %%ebx, %1\n\t"
++        "cpuid\n\t"
++        "xchgl %%ebx, %1"
++#endif
++      : "+a" (regs[eax]),
++        "=r" (regs[ebx]),
++        "+c" (regs[ecx]),
++        "=d" (regs[edx]));
 +}
 +
 +// For modern CPUs, we use Deterministic Cache Parameters (Function 04h) to
