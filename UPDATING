@@ -12,9 +12,11 @@ you update your ports collection, before attempting any port upgrades.
   Default implementation of jpeg has been switched from graphics/jpeg to
   graphics/jpeg-turbo.  To perform the upgrade, use instructions below.
 
-  If using binary packages: 'pkg upgrade' will do the right thing.
+  If using binary packages: 'pkg upgrade' will do the right thing.  If it
+  doesn't and complains about 'Cannot solve problem using SAT solver', run
+  'pkg install jpeg-turbo' before 'pkg upgrade'.
 
-  If using portmgaster:
+  If using portmaster:
   # portmaster -o graphics/jpeg-turbo graphics/jpeg
 
   If using portupgrade:
