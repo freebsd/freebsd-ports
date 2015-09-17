@@ -15,6 +15,7 @@ HAS_CONFIGURE=	yes
 USE_SDL=	sdl
 
 CONFIGURE_ARGS=	--with-sdl-prefix=${LOCALBASE} \
+		--with-jpeg-prefix=${LOCALBASE} \
 		--disable-alsa \
 		--with-zlib-prefix=/usr \
 		--disable-debug \
