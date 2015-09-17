@@ -12,6 +12,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Convert Oracle NLS_DATE_FORMAT <-> strftime format strings
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
