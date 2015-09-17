@@ -58,6 +58,35 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3c259621-5d4a-11e5-9ad8-14dae9d210b8">
+    <topic>openslp -- DoS</topic>
+    <affects>
+      <package>
+	<name>openslp</name>
+	<range><lt>2.0.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Qinghao Tang reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2015/q3/559">
+	  <p>The function ParseExtension() in openslp 1.2.1 exists a
+	    vulnerability , an attacher can cause a denial of service
+	    (infinite loop) via a  packet with crafted "nextoffset"
+	    value and "extid" value.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://seclists.org/oss-sec/2015/q3/559</url>
+      <cvename>CVE-2015-5155</cvename>
+    </references>
+    <dates>
+      <discovery>2015-09-16</discovery>
+      <entry>2015-09-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8f5c9dd6-5cac-11e5-9ad8-14dae9d210b8">
     <topic>p7zip -- directory traversal vulnerability</topic>
     <affects>
