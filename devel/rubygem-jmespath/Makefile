@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jmespath
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ COMMENT=	JMESPath for Ruby
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	rubygem-multi_json>=1.0:${PORTSDIR}/devel/rubygem-multi_json
+RUN_DEPENDS=	rubygem-json>=1.8:${PORTSDIR}/devel/rubygem-json
 
 NO_ARCH=	yes
 USE_RUBY=	yes
