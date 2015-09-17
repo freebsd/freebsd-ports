@@ -79,6 +79,7 @@ libdata/pkgconfig/libupsclient.pc
 %%NUT_SERIAL%%libexec/nut/mge-utalk
 %%NUT_SERIAL%%libexec/nut/microdowell
 %%NUT_SERIAL%%libexec/nut/mge-shut
+libexec/nut/netxml-ups
 %%NUT_SERIAL%%libexec/nut/oldmge-shut
 %%NUT_SERIAL%%libexec/nut/oneac
 %%NUT_SERIAL%%libexec/nut/optiups
@@ -176,6 +177,7 @@ man/man5/upssched.conf.5.gz
 %%NUT_SERIAL%%man/man8/apcupsd-ups.8.gz
 %%NUT_SERIAL%%man/man8/blazer_ser.8.gz
 %%NUT_USB%%man/man8/blazer_usb.8.gz
+man/man8/netxml-ups.8.gz
 man/man8/nut-recorder.8.gz
 man/man8/nut-scanner.8.gz
 %%NUT_USB%%man/man8/nutdrv_atcl_usb.8.gz
@@ -243,13 +245,4 @@ sbin/upsd
 sbin/upsdrvctl
 sbin/upsmon
 sbin/upssched
-@exec mkdir %%STATEDIR%%
-@exec chown %%NUT_USER%%:%%NUT_GROUP%% %%STATEDIR%%
-@exec chmod 750 %%STATEDIR%%
-@unexec test -d %%STATEDIR%% && rmdir %%STATEDIR%%
-%%NUT_CGI%%@dirrmtry %%CGIDIR%%
-@dirrmtry %%ETCDIR%%
-%%NUT_CGI%%@dirrmtry www/cgi-bin
-%%BASH%%@dirrmtry etc/bash_completion.d
-@dirrmtry libexec/nut
-%%NUT_CGI%%@dirrmtry %%WWWDIR%%
+@dir(%%NUT_USER%%,%%NUT_GROUP%%,750) %%STATEDIR%%

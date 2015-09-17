@@ -3,6 +3,7 @@
 
 PORTNAME=	nut
 PORTVERSION=	2.7.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
@@ -165,8 +166,9 @@ pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nut
 	@${REINPLACE_CMD} -e 's/device-name\*/cdev/g' ${WRKSRC}/scripts/devd/nut-usb.conf
 
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
+	@${MKDIR} ${STAGEDIR}${STATEDIR}
+.if ${PORT_OPTIONS:MDOCS}
 .if ${PORT_OPTIONS:MBASH}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d/
 	${INSTALL_DATA} ${WRKSRC}/scripts/misc/nut.bash_completion ${STAGEDIR}${PREFIX}/etc/bash_completion.d/
