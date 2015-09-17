@@ -117,7 +117,7 @@ Notes:
   </vuln>
 
   <vuln vid="bab05188-5d4b-11e5-9ad8-14dae9d210b8">
-    <topic>optipng -- use after free</topic>
+    <topic>optipng -- use-after-free</topic>
     <affects>
       <package>
 	<name>optipng</name>
@@ -1052,7 +1052,7 @@ Notes:
   </vuln>
 
   <vuln vid="da434a78-e342-4d9a-87e2-7497e5f117ba">
-    <topic>ffmpeg -- use after free</topic>
+    <topic>ffmpeg -- use-after-free</topic>
     <affects>
       <package>
 	<name>libav</name>
@@ -1539,7 +1539,7 @@ Notes:
   </vuln>
 
   <vuln vid="9a71953a-474a-11e5-adde-14dae9d210b8">
-    <topic>libpgf -- use after free</topic>
+    <topic>libpgf -- use-after-free</topic>
     <affects>
       <package>
 	<name>libpgf</name>
@@ -1882,7 +1882,7 @@ Notes:
   </vuln>
 
   <vuln vid="ee99899d-4347-11e5-93ad-002590263bf5">
-    <topic>qemu, xen-tools -- use after free in QEMU/Xen block unplug protocol</topic>
+    <topic>qemu, xen-tools -- use-after-free in QEMU/Xen block unplug protocol</topic>
     <affects>
       <package>
 	<name>qemu</name>
@@ -9527,7 +9527,7 @@ Notes:
   </vuln>
 
   <vuln vid="738fc80d-5f13-4ccb-aa9a-7965699e5a10">
-    <topic>mozilla -- use after free</topic>
+    <topic>mozilla -- use-after-free</topic>
     <affects>
       <package>
 	<name>firefox</name>
@@ -21943,7 +21943,7 @@ JavaScript code would be executed.</p>
   </vuln>
 
   <vuln vid="9a57c607-3cab-11e3-b4d9-bcaec565249c">
-    <topic>xorg-server -- use after free</topic>
+    <topic>xorg-server -- use-after-free</topic>
     <affects>
       <package>
 	<name>xorg-server</name>
@@ -27437,7 +27437,7 @@ affected..</p>
   </vuln>
 
   <vuln vid="630c8c08-880f-11e2-807f-d43d7e0c7c02">
-    <topic>mozilla -- Use-after-free in HTML Editor</topic>
+    <topic>mozilla -- use-after-free in HTML Editor</topic>
     <affects>
       <package>
 	<name>firefox</name>
@@ -38760,7 +38760,7 @@ executed in your Internet Explorer while displaying the email.</p>
   </vuln>
 
   <vuln vid="eba9aa94-549c-11e1-b6b7-0011856a6e37">
-    <topic>mozilla -- use after free in nsXBLDocumentInfo::ReadPrototypeBindings</topic>
+    <topic>mozilla -- use-after-free in nsXBLDocumentInfo::ReadPrototypeBindings</topic>
     <affects>
       <package>
 	<name>firefox</name>
