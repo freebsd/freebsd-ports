@@ -58,6 +58,33 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a233d51f-5d4c-11e5-9ad8-14dae9d210b8">
+    <topic>openjpeg -- use-after-free vulnerability</topic>
+    <affects>
+      <package>
+	<name>openjpeg</name>
+	<range><lt>2.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Feist Josselin reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2015/q3/550">
+	  <p>Use-after-free was found in openjpeg. The vuln is fixed in
+	    version 2.1.1 and was located in opj_j2k_write_mco function.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://seclists.org/oss-sec/2015/q3/550</url>
+      <url>https://github.com/uclouvain/openjpeg/issues/563</url>
+    </references>
+    <dates>
+      <discovery>2015-08-14</discovery>
+      <entry>2015-09-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bab05188-5d4b-11e5-9ad8-14dae9d210b8">
     <topic>optipng -- use after free</topic>
     <affects>
