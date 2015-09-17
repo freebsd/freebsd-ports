@@ -3961,6 +3961,7 @@
     SUBDIR += py-eggtestinfo
     SUBDIR += py-enum34
     SUBDIR += py-epsilon
+    SUBDIR += py-evdev
     SUBDIR += py-event
     SUBDIR += py-experimental.cssselect
     SUBDIR += py-extras
