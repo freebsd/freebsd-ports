@@ -3,6 +3,7 @@
 
 PORTNAME=	exabgp
 PORTVERSION=	3.4.12
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	GH \
 		http://mirrors.rit.edu/zi/
