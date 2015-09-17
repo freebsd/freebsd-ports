@@ -1,4 +1,5 @@
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTING.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/alchemist-refcard.pdf
 %%PORTDOCS%%%%DOCSDIR%%/alchemist-refcard.tex
