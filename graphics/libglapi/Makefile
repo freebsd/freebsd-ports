@@ -3,14 +3,14 @@
 
 PORTNAME=	libglapi
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	${LIBGLAPI_REVISION}
+PORTREVISION=	0
 CATEGORIES=	graphics
 
 COMMENT=	Common GL api library used by Mesa based ports
 
 LIB_DEPENDS+=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs
 
-USE_XORG=	x11 xau xcb xdmcp
+USE_XORG=	x11 xau xcb xdmcp xvmc
 
 # stuff not needed by libglapi but configure wants it
 USE_XORG+=	glproto dri2proto xext xdamage xfixes presentproto \
@@ -19,20 +19,16 @@ LIB_DEPENDS+=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libdrm.so:${PORTSDIR}/graphics/libdrm
 
 .include <bsd.port.options.mk>
-.include "${.CURDIR}/../../graphics/libGL/bsd.mesalib.mk"
+.include "${.CURDIR}/../../graphics/libGL/Makefile.common"
 
-.if defined (WITH_NEW_MESA)
-LIBGLAPI_REVISION=	0
-.else
-LIBGLAPI_REVISION=	2
-.endif
+MESA_BUILD_WRKSRC=	src/mapi
+MESA_INSTALL_WRKSRC=	src/mapi
 
-.if defined (WITH_NEW_MESA)
-BUILD_WRKSRC=	${WRKSRC}/src/mapi
-INSTALL_WRKSRC=	${WRKSRC}/src/mapi
-.else
-BUILD_WRKSRC=	${WRKSRC}/src/mapi/shared-glapi
-INSTALL_WRKSRC=	${WRKSRC}/src/mapi/shared-glapi
-.endif
+.include "${.CURDIR}/../../graphics/libGL/Makefile.targets"
+
+post-install:
+	@${RM} -rf ${STAGEDIR}${PREFIX}/include/GLES*
+	@${RM} -f ${STAGEDIR}${PREFIX}/lib/libGLESv2.so*
+	@${RM} -f ${STAGEDIR}${PREFIX}/libdata/pkgconfig/glesv2.pc
 
 .include <bsd.port.mk>

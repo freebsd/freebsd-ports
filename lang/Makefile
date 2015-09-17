@@ -19,6 +19,7 @@
     SUBDIR += awka
     SUBDIR += bas2tap
     SUBDIR += basic256
+    SUBDIR += beignet
     SUBDIR += bf2c
     SUBDIR += bigloo
     SUBDIR += bsh
@@ -42,6 +43,7 @@
     SUBDIR += clojure
     SUBDIR += clojure-mode.el
     SUBDIR += cloudabi-clang
+    SUBDIR += clover
     SUBDIR += cmucl
     SUBDIR += cmucl-extra
     SUBDIR += cocor

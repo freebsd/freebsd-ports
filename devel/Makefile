@@ -252,6 +252,7 @@
     SUBDIR += cld2
     SUBDIR += clewn
     SUBDIR += clig
+    SUBDIR += clinfo
     SUBDIR += clisp-hyperspec
     SUBDIR += clojure-cider
     SUBDIR += cloudabi-binutils
