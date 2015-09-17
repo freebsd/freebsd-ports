@@ -21,6 +21,7 @@ BUILD_DEPENDS=	p5-HTML-Parser>=3.64:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-Marpa-XS>=0.026:${PORTSDIR}/lang/p5-Marpa-XS
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USE_PERL5=	modbuild
 USES=		perl5
 
