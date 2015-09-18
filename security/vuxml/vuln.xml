@@ -58,6 +58,36 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b55ecf12-5d98-11e5-9909-002590263bf5">
+    <topic>remind -- buffer overflow with malicious reminder file input</topic>
+    <affects>
+      <package>
+	<name>remind</name>
+	<range><lt>3.1.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Dianne Skoll reports:</p>
+	<blockquote cite="http://lists.roaringpenguin.com/pipermail/remind-fans/2015/003172.html">
+	  <p>BUG FIX: Fix a buffer overflow found by Alexander Keller.</p>
+	</blockquote>
+	<p>The bug can be manifested by an extended DUMP command using a system
+	  variable (that is a special variable whose name begins with '$')</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5957</cvename>
+      <freebsdpr>ports/202942</freebsdpr>
+      <url>http://lists.roaringpenguin.com/pipermail/remind-fans/2015/003172.html</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/08/07/1</url>
+    </references>
+    <dates>
+      <discovery>2015-07-27</discovery>
+      <entry>2015-09-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d45ad7ae-5d56-11e5-9ad8-14dae9d210b8">
     <topic>shutter -- arbitrary code execution</topic>
     <affects>
