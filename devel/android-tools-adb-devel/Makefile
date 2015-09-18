@@ -22,10 +22,16 @@ ALL_TARGET=	all
 
 OPTIONS_DEFINE=	TEST
 
-TEST_BUILD_DEPENDS=googletest>=1.6.0:${PORTSDIR}/devel/googletest
+TEST_BUILD_DEPENDS=googletest>=1.6.0:${PORTSDIR}/devel/googletest \
+		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
+TEST_USES=	python:2.7,build
 TEST_ALL_TARGET=adb_test
 
 pre-install-TEST-on:
 	${BUILD_WRKSRC}/adb_test
+	PATH=${BUILD_WRKSRC}:${PATH} PYTHONPATH=${WRKSRC} \
+		${PYTHON_CMD} ${BUILD_WRKSRC}/test_adb.py
+	PATH=${BUILD_WRKSRC}:${PATH} PYTHONPATH=${WRKSRC} \
+		${PYTHON_CMD} ${BUILD_WRKSRC}/test_device.py
 
 .include "${MASTERDIR}/Makefile"
