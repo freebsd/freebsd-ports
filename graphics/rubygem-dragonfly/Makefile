@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dragonfly
-PORTVERSION=	1.0.11
+PORTVERSION=	1.0.12
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
