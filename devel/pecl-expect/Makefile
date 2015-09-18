@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	expect
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.3
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
