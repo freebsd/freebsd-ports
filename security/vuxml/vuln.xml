@@ -58,6 +58,47 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d3a98c2d-5da1-11e5-9909-002590263bf5">
+    <topic>squid -- TLS/SSL parser denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><ge>3.5.0.1</ge><lt>3.5.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Amos Jeffries, release manager of the Squid-3 series, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/09/18/1">
+	  <p>Vulnerable versions are 3.5.0.1 to 3.5.8 (inclusive), which are
+	    built with OpenSSL and configured for "SSL-Bump" decryption.</p>
+	  <p>Integer overflows can lead to invalid pointer math reading from
+	    random memory on some CPU architectures. In the best case this leads
+	    to wrong TLS extensiosn being used for the client, worst-case a
+	    crash of the proxy terminating all active transactions.</p>
+	  <p>Incorrect message size checks and assumptions about the existence
+	    of TLS extensions in the SSL/TLS handshake message can lead to very
+	    high CPU consumption (up to and including 'infinite loop'
+	    behaviour).</p>
+	  <p>The above can be triggered remotely. Though there is one layer of
+	    authorization applied before this processing to check that the
+	    client is allowed to use the proxy, that check is generally weak. MS
+	    Skype on Windows XP is known to trigger some of these.</p>
+	</blockquote>
+	<p>The FreeBSD port does not use SSL by default and is not vulnerable
+	  in the default configuration.</p>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/203186</freebsdpr>
+      <url>http://www.openwall.com/lists/oss-security/2015/09/18/1</url>
+    </references>
+    <dates>
+      <discovery>2015-09-18</discovery>
+      <entry>2015-09-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b55ecf12-5d98-11e5-9909-002590263bf5">
     <topic>remind -- buffer overflow with malicious reminder file input</topic>
     <affects>
