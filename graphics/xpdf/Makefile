@@ -2,7 +2,7 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	3.04
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics print
 MASTER_SITES=	http://mirrors.rit.edu/zi/ \
 		ftp://ftp.foolabs.com/pub/xpdf/ \
