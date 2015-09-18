@@ -8751,8 +8751,7 @@ Notes:
       </package>
       <package>
 	<name>lightzone</name>
-	<!-- no known fixed version -->
-	<range><ge>0</ge></range>
+	<range><lt>4.1.2</lt></range>
       </package>
       <package>
 	<name>netpbm</name>
@@ -8797,7 +8796,7 @@ Notes:
     <dates>
       <discovery>2015-04-24</discovery>
       <entry>2015-05-15</entry>
-      <modified>2015-07-01</modified>
+      <modified>2015-09-18</modified>
     </dates>
   </vuln>
 
