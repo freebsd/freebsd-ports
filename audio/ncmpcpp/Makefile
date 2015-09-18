@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ncmpcpp
-PORTVERSION=	0.6.5
-PORTREVISION=	1
+PORTVERSION=	0.6.7
 CATEGORIES=	audio
 MASTER_SITES=	http://ncmpcpp.rybczak.net/stable/
 
