@@ -1,6 +1,6 @@
---- ext/openssl/ossl_ssl.c.orig	2014-01-27 08:47:11.000000000 +0100
-+++ ext/openssl/ossl_ssl.c	2015-09-18 11:29:48.512712383 +0200
-@@ -134,9 +134,12 @@ struct {
+--- ext/openssl/ossl_ssl.c.orig	2014-01-30 16:51:02.000000000 +0100
++++ ext/openssl/ossl_ssl.c	2015-09-18 11:45:31.935648580 +0200
+@@ -129,9 +129,12 @@ struct {
      OSSL_SSL_METHOD_ENTRY(SSLv2_server),
      OSSL_SSL_METHOD_ENTRY(SSLv2_client),
  #endif
