@@ -24,6 +24,7 @@
 #  GSSAPILIBDIR
 #  GSSAPILIBS
 #  GSSAPI_CONFIGURE_ARGS
+#  KRB5CONFIG
 #
 # Affected variables:
 #  PREFIX (bootstrap)
@@ -133,6 +134,8 @@ IGNORE=	USES=gssapi - invalid args: [${_local}] specified
 .endif
 .endfor
 
+KRB5CONFIG=${GSSAPIBASEDIR}/bin/krb5-config
+
 # Fix up -Wl,-rpath in LDFLAGS
 .if defined(_RPATH) && !empty(_RPATH)
 .if !empty(LDFLAGS:M-Wl,-rpath,*)
@@ -153,7 +156,8 @@ LDADD+=		${GSSAPILIBS}
 GSSAPI_CONFIGURE_ARGS=	\
 	CFLAGS="${GSSAPICPPFLAGS} ${CFLAGS}" \
 	LDFLAGS="${GSSAPILDFLAGS} ${LDFLAGS}" \
-	LIBS="${GSSAPILIBS} ${LIBS}"
+	LIBS="${GSSAPILIBS} ${LIBS}" \
+	KRB5CONFIG="${KRB5CONFIG}"
 
 debug-krb:
 	@(for I in ${_HEADERS}; do echo "#include <$$I>"; done; \
@@ -174,6 +178,7 @@ debug-krb:
 	@echo "GSSAPICPPFLAGS: ${GSSAPICPPFLAGS}"
 	@echo "GSSAPILDFLAGS: ${GSSAPILDFLAGS}"
 	@echo "GSSAPI_CONFIGURE_ARGS: ${GSSAPI_CONFIGURE_ARGS}"
+	@echo "KRB5CONFIG: ${KRB5CONFIG}"
 	@echo "CFLAGS: ${CFLAGS}"
 	@echo "LDFLAGS: ${LDFLAGS}"
 	@echo "LDADD: ${LDADD}"
