@@ -22,6 +22,13 @@ SRCS+= transport.cpp
 SRCS+= transport_local.cpp
 SRCS+= transport_usb.cpp
 
+TEST_SRCS+= adb_io_test.cpp
+TEST_SRCS+= adb_utils_test.cpp
+TEST_SRCS+= fdevent_test.cpp
+TEST_SRCS+= shell_service_protocol_test.cpp
+TEST_SRCS+= transport_test.cpp
+CFLAGS.shell_service_protocol_test.cpp+= -Dsighandler_t=sig_t
+
 .PATH: ${.CURDIR}/client
 SRCS+= main.cpp
 
@@ -34,6 +41,12 @@ SRCS+= file.cpp
 SRCS+= logging.cpp
 SRCS+= strings.cpp
 SRCS+= stringprintf.cpp
+TEST_SRCS+= file_test.cpp
+TEST_SRCS+= logging_test.cpp
+TEST_SRCS+= stringprintf_test.cpp
+TEST_SRCS+= strings_test.cpp
+TEST_SRCS+= test_main.cpp
+TEST_SRCS+= test_utils.cpp
 
 .PATH: ${.CURDIR}/../libcutils
 SRCS+= socket_inaddr_any_server.c
@@ -65,7 +78,18 @@ CFLAGS+=${CFLAGS.${.IMPSRC:T}}
 CXXFLAGS+= -std=gnu++11
 CXXFLAGS+= ${CFLAGS:N-std*}
 
+TEST_CFLAGS+= $$(${GTEST_CONFIG} --cppflags)
+.for f in ${TEST_SRCS}
+CFLAGS.${f}+= ${TEST_CFLAGS}
+.endfor
+
 LDADD+= -lcrypto -lpthread -lusb -lz
 DPADD+= ${LIBCRYPTO} ${LIBPTHREAD} ${LIBUSB} ${LIBZ}
+TEST_LDADD+= $$(${GTEST_CONFIG} --libs --ldflags)
+
+GTEST_CONFIG?= gtest-config
+
+adb_test: ${SRCS:R:S/$/.o/:Nmain.o:Ncommandline.o} ${TEST_SRCS:R:S/$/.o/}
+	${CXX} ${CXXFLAGS} ${LDFLAGS} -o $@ $> ${LDADD} ${TEST_LDADD}
 
 .include <bsd.prog.mk>
