@@ -7,12 +7,13 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.physics.purdue.edu/pub/pundits/ \
 		http://www.komquats.com/distfiles/ \
 		http://people.freebsd.org/~cy/distfiles/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Meta source fake-out script for building ksb tools
 
+USES=		tar:tgz
 NO_BUILD=	yes
+NO_ARCH=	yes
 PLIST_FILES=	bin/makeme
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.6
 
