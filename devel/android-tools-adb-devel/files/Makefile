@@ -49,6 +49,7 @@ SRCS+= threads.c
 .PATH: ${.CURDIR}/../liblog
 SRCS+= fake_log_device.c
 SRCS+= logd_write.c
+CFLAGS.logd_write.c+= -DFAKE_LOG_DEVICE=1
 
 CFLAGS+= -DADB_HOST=1
 CFLAGS+= -DHAVE_FORKEXEC=1
@@ -56,10 +57,10 @@ CFLAGS+= -DHAVE_SYMLINKS
 CFLAGS+= -DHAVE_TERMIO_H
 CFLAGS+= -DHAVE_SYS_SOCKET_H
 CFLAGS+= -D_FILE_OFFSET_BITS=64
-CFLAGS+= -DFAKE_LOG_DEVICE=1
 CFLAGS+= -I${.CURDIR}
 CFLAGS+= -I${.CURDIR}/../include
 CFLAGS+= -I${.CURDIR}/../base/include
+CFLAGS+=${CFLAGS.${.IMPSRC:T}}
 
 CXXFLAGS+= -std=gnu++11
 CXXFLAGS+= ${CFLAGS:N-std*}
