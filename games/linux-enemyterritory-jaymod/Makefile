@@ -3,6 +3,7 @@
 
 PORTNAME=	jaymod
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://jaymod.clanfu.org/lib/downloads/ \
 		http://www.zenenterprises.biz/bud/jaymod/
@@ -13,6 +14,9 @@ COMMENT=	Jaymod - An Enemy Territory Modification
 
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
 
+USES=		shebangfix
+SHEBANG_FILES=	linux/convert_shrub
+perl_OLD_CMD=	/bin/env perl
 USE_LINUX=	yes
 
 OPTIONS_DEFINE=	DOCS OMNIBOT
@@ -25,8 +29,6 @@ CLIENT_PK3=	${PORTNAME}-${PORTVERSION}.pk3
 PLIST_SUB=	CLIENT_PK3="${CLIENT_PK3}"
 
 OMNIBOT_RUN_DEPENDS=	et-omni-bot:${PORTSDIR}/games/linux-enemyterritory-omni-bot
-
-.include <bsd.port.options.mk>
 
 do-build:
 .for f in et etded
@@ -46,6 +48,8 @@ do-install:
 	@${CP} -p ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}/${f}.sample
 .endfor
 	@${CP} -r ${WRKSRC}/linux ${WRKSRC}/mapscripts ${STAGEDIR}${DATADIR}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in README.txt doc/jaymod.pdf
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${f} ${STAGEDIR}${DOCSDIR}
