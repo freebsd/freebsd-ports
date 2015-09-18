@@ -1265,6 +1265,7 @@
     SUBDIR += py-sphinxcontrib-adadomain
     SUBDIR += py-sphinxcontrib-bitbucket
     SUBDIR += py-sphinxcontrib-httpdomain
+    SUBDIR += py-sphinxcontrib-programoutput
     SUBDIR += py-syck
     SUBDIR += py-texttable
     SUBDIR += py-tinycss
