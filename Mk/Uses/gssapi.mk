@@ -94,7 +94,7 @@ _HEADERS+=	gssapi/gssapi.h gssapi/gssapi_krb5.h krb5.h
 GSSAPICPPFLAGS=	-I"${GSSAPIINCDIR}"
 GSSAPILIBS=	-lkrb5 -lgssapi -lgssapi_krb5
 GSSAPILDFLAGS=	-L"${GSSAPILIBDIR}"
-.if empty(OSREL:N9.*:N10.0])
+.if empty(OSREL:N9.3)
 _FIXUP_KRB5CONFIG=	yes
 .endif
 .elif ${_local} == "heimdal"
@@ -143,10 +143,10 @@ IGNORE=	USES=gssapi - invalid args: [${_local}] specified
 # libgssapi_krb5 for some interfaces of GSS-API is missing.
 .if defined(_FIXUP_KRB5CONFIG)
 KRB5CONFIG=${WRKDIR}/krb5-config
-krb5config-fix::
+_USES_configure+=	290:krb5config-fix
+krb5config-fix:
 	${SED} -e 's,\$$lib_flags -lgssapi -lheimntlm,\$$lib_flags -lgssapi -lgssapi_krb5 -lheimntlm,' < ${GSSAPIBASEDIR}/bin/krb5-config > ${KRB5CONFIG}
 	${CHMOD} a+rx ${KRB5CONFIG}
-pre-configure: krb5config-fix
 .else
 KRB5CONFIG=${GSSAPIBASEDIR}/bin/krb5-config
 .endif
