@@ -3,7 +3,7 @@
 
 PORTNAME=	hamlib
 PORTVERSION=	1.2.15.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF
 
@@ -15,7 +15,8 @@ LICENSE=	LGPL20
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
 
-USES=		perl5 libtool:keepla pkgconfig pathfix python tcl
+USES=		libtool:keepla pathfix perl5 pkgconfig python shebangfix tcl
+SHEBANG_FILES=	bindings/perltest.pl
 USE_PERL5=	build run
 USE_GNOME=	libxml2
 USE_AUTOTOOLS=	autoconf
@@ -43,11 +44,11 @@ post-build:
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for d in ${WRKSRC}/AUTHORS ${WRKSRC}/COPYING ${WRKSRC}/COPYING.LIB \
-	${WRKSRC}/ChangeLog ${WRKSRC}/INSTALL ${WRKSRC}/LICENSE \
-	${WRKSRC}/NEWS ${WRKSRC}/PLAN ${WRKSRC}/README \
-	${WRKSRC}/README.betatester ${WRKSRC}/README.win32 \
-	${WRKSRC}/THANKS
-	@${INSTALL_DATA} ${WRKSRC}/${d} ${STAGEDIR}${DOCSDIR}
+		${WRKSRC}/ChangeLog ${WRKSRC}/INSTALL ${WRKSRC}/LICENSE \
+		${WRKSRC}/NEWS ${WRKSRC}/PLAN ${WRKSRC}/README \
+		${WRKSRC}/README.betatester ${WRKSRC}/README.win32 \
+		${WRKSRC}/THANKS
+	${INSTALL_DATA} ${WRKSRC}/${d} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>
