@@ -26,8 +26,8 @@ TEST_SRCS+= adb_io_test.cpp
 TEST_SRCS+= adb_utils_test.cpp
 TEST_SRCS+= fdevent_test.cpp
 TEST_SRCS+= shell_service_protocol_test.cpp
+TEST_SRCS+= socket_test.cpp
 TEST_SRCS+= transport_test.cpp
-CFLAGS.shell_service_protocol_test.cpp+= -Dsighandler_t=sig_t
 
 .PATH: ${.CURDIR}/client
 SRCS+= main.cpp
