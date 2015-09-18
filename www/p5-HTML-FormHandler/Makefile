@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTML-FormHandler
-PORTVERSION=	0.40063
+PORTVERSION=	0.40064
 PORTEPOCH=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
@@ -22,6 +22,7 @@ BUILD_DEPENDS=	p5-Class-Load>=0.06:${PORTSDIR}/devel/p5-Class-Load \
 		p5-Email-Valid>=0:${PORTSDIR}/mail/p5-Email-Valid \
 		p5-File-ShareDir-Install>=0.3:${PORTSDIR}/devel/p5-File-ShareDir-Install \
 		p5-File-ShareDir>=0:${PORTSDIR}/devel/p5-File-ShareDir \
+		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
 		p5-Locale-Maketext>=1.09:${PORTSDIR}/devel/p5-Locale-Maketext \
