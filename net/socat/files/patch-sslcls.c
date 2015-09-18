@@ -1,5 +1,31 @@
 --- sslcls.c.orig	2015-01-24 10:15:22 UTC
 +++ sslcls.c
+@@ -55,6 +55,7 @@ const SSL_METHOD *sycSSLv2_server_method(void) {
+ }
+ #endif
+ 
++#ifdef HAVE_SSLv3_client_method
+ const SSL_METHOD *sycSSLv3_client_method(void) {
+    const SSL_METHOD *result;
+    Debug("SSLv3_client_method()");
+@@ -62,7 +63,9 @@ const SSL_METHOD *sycSSLv3_client_method(void) {
+    Debug1("SSLv3_client_method() -> %p", result);
+    return result;
+ }
++#endif
+ 
++#ifdef HAVE_SSLv3_server_method
+ const SSL_METHOD *sycSSLv3_server_method(void) {
+    const SSL_METHOD *result;
+    Debug("SSLv3_server_method()");
+@@ -70,6 +73,7 @@ const SSL_METHOD *sycSSLv3_server_method(void) {
+    Debug1("SSLv3_server_method() -> %p", result);
+    return result;
+ }
++#endif
+ 
+ const SSL_METHOD *sycSSLv23_client_method(void) {
+    const SSL_METHOD *result;
 @@ -331,6 +331,7 @@ void sycSSL_free(SSL *ssl) {
     return;
  }

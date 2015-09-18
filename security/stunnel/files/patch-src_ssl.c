@@ -5,7 +5,7 @@
      }
      s_log(LOG_DEBUG, "RAND_screen failed to sufficiently seed PRNG");
 -#else
-+#elif HAVE_RAND_EGD
++#elif !defined(OPENSSL_NO_EGD)
      if(global->egd_sock) {
          if((bytes=RAND_egd(global->egd_sock))==-1) {
              s_log(LOG_WARNING, "EGD Socket %s failed", global->egd_sock);

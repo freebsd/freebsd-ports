@@ -1,0 +1,12 @@
+$OpenBSD: patch-libs_tcpd_configure_ac,v 1.1 2015/07/20 07:17:40 jca Exp $
+--- libs/tcpd/configure.ac.orig	Sat Jul 18 19:01:58 2015
++++ libs/tcpd/configure.ac	Sat Jul 18 19:03:20 2015
+@@ -507,7 +507,7 @@ RAND_pseudo_bytes(dummy, 1);
+ ]
+ )
+ 		LIBS="-lssl $LIBS"
+-		AC_CHECK_FUNCS(TLSv1_1_method TLSv1_2_method)
++		AC_CHECK_FUNCS(SSLv3_method TLSv1_1_method TLSv1_2_method)
+ 		LIBS="$save_LIBS"
+ 
+ 		TLSLIBRARY="$LIBCOURIERTLSOPENSSL"

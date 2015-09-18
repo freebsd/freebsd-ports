@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure_ac,v 1.6 2015/08/25 17:44:09 jca Exp $
+
+Fixed upstream
+
+  https://gitlab.com/fetchmail/fetchmail/commit/a2ae6f8d15d7caf815d7bdd13df833fd1b2af5cc
+
+--- configure.ac.orig	Fri Jul 17 22:20:20 2015
++++ configure.ac	Fri Jul 17 22:20:34 2015
+@@ -803,6 +803,7 @@ fi
+ 
+ case "$LIBS" in *-lssl*)
+ 	AC_CHECK_DECLS([SSLv2_client_method],,,[#include <openssl/ssl.h>])
++	AC_CHECK_DECLS([SSLv3_client_method],,,[#include <openssl/ssl.h>])
+ 	;;
+ esac
+ 
