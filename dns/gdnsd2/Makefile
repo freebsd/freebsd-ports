@@ -43,12 +43,6 @@ URCU_DESC=		Read-Copy-Update Support (Faster Zone Parsing)
 URCU_CONFIGURE_WITH=	urcu
 URCU_LIB_DEPENDS=	liburcu.so:${PORTSDIR}/sysutils/liburcu
 
-.include <bsd.port.pre.mk>
-
-.if (${OSVERSION} >= 900000 && ${OSVERSION} < 903000)
-IGNORE=		you must be running FreeBSD 9.3 or higher
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${localstatedir}/lib/$${PACKAGE_NAME}|/var/db/${PORTNAME}|g' \
 		${WRKSRC}/configure
@@ -60,4 +54,4 @@ post-install:
 		${STAGEDIR}${PREFIX}/etc/gdnsd/zones \
 		${STAGEDIR}/var/run/gdnsd
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
