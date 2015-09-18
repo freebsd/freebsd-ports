@@ -32,7 +32,7 @@ PLIST_FILES=	bin/adb \
 		%%BASH%%etc/bash_completion.d/adb
 PORTDOCS=	*.txt *.TXT
 
-OPTIONS_DEFINE=	BASH DOCS
+OPTIONS_DEFINE+=BASH DOCS
 OPTIONS_SUB=	yes
 
 BASH_VARS=	LICENSE+=MIT LICENSE_COMB=multi # debian/copyright
