@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	corsixth
-PORTVERSION=	0.40
+PORTVERSION=	0.50
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -12,29 +12,27 @@ COMMENT=	Open source clone of Theme Hospital
 LICENSE=	MIT
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+RUN_DEPENDS=	${LUA_MODLIBDIR}/lfs.so:${PORTSDIR}/devel/luafilesystem \
+		${LUA_MODLIBDIR}/lpeg.so:${PORTSDIR}/devel/lua-lpeg
 
-USES=		cmake compiler:c++11-lang dos2unix pkgconfig
-USE_SDL=	mixer
+USES=		cmake compiler:c++11-lang dos2unix iconv lua pkgconfig
+USE_SDL=	mixer2
 DOS2UNIX_FILES=	CMake/FindFFmpeg.cmake \
 		CorsixTH/CMakeLists.txt \
 		CorsixTH/Src/iso_fs.cpp
+CMAKE_ARGS=	-DWITH_LUAJIT=OFF
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	CorsixTH
 GH_PROJECT=	CorsixTH
 
-OPTIONS_DEFINE=	LUAJIT MOVIES
-OPTIONS_DEFAULT=	LUAJIT MOVIES
-LUAJIT_DESC=	Use LUAJIT compiler
+OPTIONS_DEFINE=	MOVIES
+OPTIONS_DEFAULT=	MOVIES
 MOVIES_DESC=	Play in-game movies
 
 MOVIES_CMAKE_ON=	-DWITH_MOVIES=ON
 MOVIES_CMAKE_OFF=	-DWITH_MOVIES=OFF
 MOVIES_LIB_DEPENDS=	libswresample.so:${PORTSDIR}/multimedia/ffmpeg
-LUAJIT_CMAKE_ON=	-DWITH_LUAJIT=ON
-LUAJIT_CMAKE_OFF=	-DWITH_LUAJIT=OFF
-LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
-LUAJIT_USES_OFF=	lua:51
 
 post-patch:
 # Allow the game to find its resources without wrapper scripts

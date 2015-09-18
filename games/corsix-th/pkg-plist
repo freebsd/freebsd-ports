@@ -336,6 +336,7 @@ bin/CorsixTH
 %%DATADIR%%/Lua/rooms/ultrascan.lua
 %%DATADIR%%/Lua/rooms/ward.lua
 %%DATADIR%%/Lua/rooms/x_ray_room.lua
+%%DATADIR%%/Lua/run_debugger.lua
 %%DATADIR%%/Lua/sprite_viewer.lua
 %%DATADIR%%/Lua/staff_profile.lua
 %%DATADIR%%/Lua/strict.lua
