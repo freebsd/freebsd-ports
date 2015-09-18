@@ -20,12 +20,6 @@ PLIST_FILES=	sbin/${PORTNAME} etc/${PORTNAME}.conf.sample \
 		man/man8/bftpd.8.gz
 PORTDOCS=	en pl sk
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 900000
-BROKEN=		does not compile on and 8.x
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/bftpd.conf,${PREFIX}/etc/bftpd.conf,' \
 		${WRKSRC}/mypaths.h
@@ -38,4 +32,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/bftpd.conf ${STAGEDIR}${PREFIX}/etc/bftpd.conf.sample
 	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
