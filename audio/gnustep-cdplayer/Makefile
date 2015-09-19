@@ -2,7 +2,7 @@
 
 PORTNAME=	cdplayer
 PORTVERSION=	0.5.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio gnustep
 MASTER_SITES=	SF/gsburn/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	gnustep-
@@ -23,12 +23,11 @@ USES=		tar:bzip2 gnustep
 USE_GNUSTEP=	back build
 
 WRKSRC=		${WRKDIR}/CDPlayer-${PORTVERSION}
-MAKE_ENV+=	GNUSTEP_INSTALLATION_DIR=${GNUSTEP_LOCAL_ROOT}
 
 post-install:
 	${STRIP_CMD} \
-		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/Bundles/AudioCD.bundle/AudioCD \
-		${STAGEDIR}${PREFIX}/GNUstep/Local/Library/Bundles/AudioCD.prefs/AudioCD \
-		${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/CDPlayer.app/CDPlayer
+		${STAGEDIR}${PREFIX}/GNUstep/System/Library/Bundles/AudioCD.bundle/AudioCD \
+		${STAGEDIR}${PREFIX}/GNUstep/System/Library/Bundles/AudioCD.prefs/AudioCD \
+		${STAGEDIR}${PREFIX}/GNUstep/System/Applications/CDPlayer.app/CDPlayer
 
 .include <bsd.port.mk>

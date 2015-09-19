@@ -3,7 +3,7 @@
 
 PORTNAME=	cenon
 PORTVERSION=	4.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://www.vhf-group.com/vhf-interservice/download/source/
 DISTNAME=	Cenon-${MAINVERSION}
@@ -20,7 +20,7 @@ USE_GNUSTEP=	back build
 WRKSRC=		${WRKDIR}/Cenon
 MAINVERSION=	4.0.2
 FULLVERSION=	4.0.0
-CENON_LIB_DIR=	${GNUSTEP_LOCAL_ROOT}/Library/Cenon
+CENON_LIB_DIR=	${GNUSTEP_SYSTEM_ROOT}/Library/Cenon
 
 OPTIONS_DEFINE=	FULL_LIBRARY
 FULL_LIBRARY_DESC=	Install complete Cenon Library
@@ -29,10 +29,14 @@ FULL_LIBRARY_DESC=	Install complete Cenon Library
 
 DISTFILES+=	CenonLibrary-${FULLVERSION}-1${EXTRACT_SUFX}
 
+post-patch:
+	${REINPLACE_CMD} -e 's|^GNUSTEP_INSTALLATION_DOMAIN|#GNUSTEP_INSTALLATION_DOMAIN|' \
+		${WRKSRC}/GNUmakefile
+
 pre-install:
-	${MKDIR} ${STAGEDIR}${GNUSTEP_LOCAL_ROOT}/Library/
+	${MKDIR} ${STAGEDIR}${GNUSTEP_SYSTEM_ROOT}/Library/
 	${TAR} -xyvf ${_DISTDIR}/CenonLibrary-${FULLVERSION}-1${EXTRACT_SUFX} \
-		-C ${STAGEDIR}${GNUSTEP_LOCAL_ROOT}/Library/ \
+		-C ${STAGEDIR}${GNUSTEP_SYSTEM_ROOT}/Library/ \
 		--exclude COPYING --exclude '._*'
 
 .include <bsd.port.mk>
