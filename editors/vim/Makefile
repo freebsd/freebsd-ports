@@ -4,6 +4,7 @@
 PORTNAME=	vim
 PORTVERSION=	7.4.865
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES?=	editors
 
 MAINTAINER?=	sunpoet@FreeBSD.org
@@ -115,7 +116,7 @@ post-patch:
 	@${ECHO_CMD} '#define SYS_GVIMRC_FILE "'${ETCDIR}'/gvimrc"' >> ${WRKSRC}/src/feature.h
 
 post-patch-EXUBERANT_CTAGS-off:
-	@${FIND} ${WRKSRC}/runtime/ -name 'menu*.vim' -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's|ctags -R \.|${FIND} . -type f \| ${XARGS} ctags|g'
+	@${FIND} ${WRKSRC}/runtime/ -name 'menu*.vim' -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's|ctags -R \.|${FIND} . -type f \\\| ${XARGS} ctags|g'
 
 post-patch-EXUBERANT_CTAGS-on:
 	@${FIND} ${WRKSRC}/runtime/ -name 'menu*.vim' -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's|ctags -R \.|exctags -R .|g'
