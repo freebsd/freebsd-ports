@@ -1,5 +1,5 @@
---- ./Imakefile.orig	1992-07-28 23:56:27.000000000 +0000
-+++ ./Imakefile	2013-05-31 12:26:22.000000000 +0000
+--- Imakefile.orig	1992-07-28 23:56:27 UTC
++++ Imakefile
 @@ -1,7 +1,7 @@
  
 -     SCORE_FILE = -DSCORE_FILE=\"/usr/games/lib/xpipescores\"
@@ -20,7 +20,7 @@
  all:: xpipeman
  
  ComplexProgramTarget(xpipeman)
-@@ -19,4 +22,3 @@
+@@ -19,4 +22,3 @@ ComplexProgramTarget(xpipeman)
   *  InstallManPage(xpipeman,$(MANDIR))
   *  InstallProgram(xpipeman,$(BINDIR))
   */
