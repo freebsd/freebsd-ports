@@ -15,13 +15,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	weizhongli
 GH_PROJECT=	cdhit
 
-USES=		gmake shebangfix
+USES=		compiler:openmp gmake shebangfix
 WRKSRC=		${WRKDIR}/cdhit-${PORTVERSION}
-# Only for OpenMP
-USE_GCC=	yes
 SHEBANG_FILES=	${WRKSRC}/*.pl
 
-#MAKEFILE=	makefile
 MAKE_FLAGS=	openmp=yes
 
 post-patch:
