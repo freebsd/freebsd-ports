@@ -20,8 +20,10 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE-APACHE \
 		${WRKSRC}/LICENSE-MIT
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	requires prebuilt bootstrap compiler
+
+DISTINFO_FILE=	${MASTERDIR}/distinfo.${ARCH}
 
 # FIXME: The bootstrapped rustc adds -L/usr/local/lib in front of
 # the LDFLAGS. When stage0's rustc is linked, it picks the installed
@@ -31,8 +33,10 @@ CONFLICTS_BUILD=	rust \
 CONFLICTS_INSTALL=	rust-nightly
 
 RUST_SOURCE=	${DISTNAME}-src${EXTRACT_SUFX}
-RUST_BOOT=	rust-stage0-${RUST_BOOT_SIG}.tar.bz2
-RUST_BOOT_SIG=	2015-07-26-a5c12f4-freebsd-x86_64-bc50b0f8d7f6d62f4f5ffa136f5387f5bf6524fd
+RUST_BOOT=	rust-stage0-${RUST_BOOT_SIG_${ARCH}}.tar.bz2
+
+RUST_BOOT_SIG_amd64=	2015-07-26-a5c12f4-freebsd-x86_64-bc50b0f8d7f6d62f4f5ffa136f5387f5bf6524fd
+RUST_BOOT_SIG_i386=	2015-07-26-a5c12f4-freebsd-i386-2fee22adec101e2f952a5548fd1437ce1bd8d26f
 
 # Rust's libraries are named librustc_${component}-${RUST_VSN_HASH}.so.
 # The hash depends on Rust version and, if the channel is not "stable",
@@ -42,7 +46,10 @@ RUST_CHANNEL=	stable
 RUST_VSN_HASH!=	/usr/bin/printf '%s' ${RUST_VSN} | /sbin/md5 -q | cut -c 1-8
 PLIST_SUB+=	RUST_VSN_HASH=${RUST_VSN_HASH}
 
-PLIST_SUB+=	RUST_TARGET=x86_64-unknown-${OPSYS:tl}
+# Rust's target arch string is different from *BSD arch strings
+RUST_ARCH_amd64=	x86_64
+RUST_ARCH_i386=		i686
+PLIST_SUB+=	RUST_TARGET=${RUST_ARCH_${ARCH}}-unknown-${OPSYS:tl}
 
 USES=		gmake libedit python:2,build
 HAS_CONFIGURE=	yes
