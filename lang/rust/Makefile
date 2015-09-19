@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 CATEGORIES=	lang
 MASTER_SITES=	http://static.rust-lang.org/dist/:src \
 		http://static.rust-lang.org/stage0-snapshots/:bootstrap
@@ -32,7 +32,7 @@ CONFLICTS_INSTALL=	rust-nightly
 
 RUST_SOURCE=	${DISTNAME}-src${EXTRACT_SUFX}
 RUST_BOOT=	rust-stage0-${RUST_BOOT_SIG}.tar.bz2
-RUST_BOOT_SIG=	2015-05-24-ba0e1cd-freebsd-x86_64-370db40613f5c08563ed7e38357826dd42d4e0f8
+RUST_BOOT_SIG=	2015-07-26-a5c12f4-freebsd-x86_64-bc50b0f8d7f6d62f4f5ffa136f5387f5bf6524fd
 
 # Rust's libraries are named librustc_${component}-${RUST_VSN_HASH}.so.
 # The hash depends on Rust version and, if the channel is not "stable",
