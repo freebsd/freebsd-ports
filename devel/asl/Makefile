@@ -12,6 +12,7 @@ COMMENT=	Assembler for a variety of microcontrollers/-processors
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+USES=		alias
 MAKE_ENV+=	STAGEDIR=${STAGEDIR}
 
 post-extract:
