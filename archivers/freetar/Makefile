@@ -2,7 +2,7 @@
 
 PORTNAME=	freetar
 PORTVERSION=	0.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	archivers gnustep
 MASTER_SITES=	http://download.gna.org/freetar/
 DISTNAME=	FreeTar-${PORTVERSION}
@@ -18,6 +18,6 @@ USE_GNUSTEP=	back build
 WRKSRC=		${WRKDIR}/FreeTar_1_1_1_Source
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${GNUSTEP_PREFIX}/Local/Applications/FreeTar.app/FreeTar
+	@${STRIP_CMD} ${STAGEDIR}${GNUSTEP_PREFIX}/System/Applications/FreeTar.app/FreeTar
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 
 PORTNAME=	toolbox
 PORTVERSION=	0.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils gnustep
 MASTER_SITES=	http://ftp.azc.uam.mx/mirrors/gnu/savannah/files/toolbox/Release.pkg/0.8/ \
 		LOCAL/dinoex
@@ -21,6 +21,6 @@ USE_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 WRKSRC=		${WRKDIR}/Toolbox/Toolbox
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/Local/Library/Libraries/libToolbox.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/System/Library/Libraries/libToolbox.so
 
 .include <bsd.port.mk>

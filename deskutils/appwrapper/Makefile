@@ -2,7 +2,7 @@
 
 PORTNAME=	appwrapper
 PORTVERSION=	0.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	deskutils gnustep
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/AppWrapper%20${PORTVERSION}
 DISTNAME=	AppWrapper.${PORTVERSION}
@@ -24,6 +24,6 @@ post-patch:
 		${WRKSRC}/GNUmakefile
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/AppWrapper.app/AppWrapper
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/System/Applications/AppWrapper.app/AppWrapper
 
 .include <bsd.port.mk>
