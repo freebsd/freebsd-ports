@@ -1,4 +1,4 @@
-For a given port determine its dependences using any combination of the
+For a given port determine its dependencies using any combination of the
  - FETCH_DEPENDS
  - EXTRACT_DEPENDS
  - PATCH_DEPENDS

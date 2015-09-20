@@ -9,8 +9,8 @@ Features:
   leastconns+roundrobin)
 - If a server fails to answer, it's removed from the pool - the client that
   failed to connect gets transparently failed over to a new host.
-- xml based configuration file (see a sample)
-- seperate management thread that periodically re-adds failed hosts if they've
+- XML based configuration file (see a sample)
+- separate management thread that periodically re-adds failed hosts if they've
   come back up.
 - optional builtin webserver for admin (sample of the running screen)
 - webserver has methods suitable for both interactive and automated systems
