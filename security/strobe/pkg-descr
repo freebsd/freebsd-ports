@@ -1,5 +1,5 @@
 strobe   is  a  network/security  tool  that  locates  and
-describes all listening tcp ports on a (remote) host or on
+describes all listening TCP ports on a (remote) host or on
 many hosts in a bandwidth utilisation maximising, and pro-
 cess resource minimizing manner.
 

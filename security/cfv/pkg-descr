@@ -2,7 +2,7 @@ cfv is a utility to both test and create .sfv, .csv and md5sum files. These
 files are commonly used to ensure the correct retrieval or storage of data.
 
 Features:
-   - supports .sfv, .csv(2, 3, and 4 field variants), md5sum, bsd md5
+   - supports .sfv, .csv(2, 3, and 4 field variants), md5sum, BSD md5
      sha1sum, .torrent and (test-only) .par, .par2 file formats
    - automatic checksum file naming ability in create mode
    - recursive operation
