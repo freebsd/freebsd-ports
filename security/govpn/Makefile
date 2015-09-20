@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	govpn
-PORTVERSION=	3.5
+PORTVERSION=	4.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.cypherpunks.ru/govpn/download/ \
 		http://sourceforge.net/projects/govpn/files/
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	go:${PORTSDIR}/lang/go
 USES=		tar:xz
 MAKEFILE=	BSDmakefile
 
-PORTDOCS=	AUTHORS INSTALL NEWS README THANKS
+PORTDOCS=	AUTHORS INSTALL NEWS README THANKS README.RU
 INFO=		govpn
 INSTALL_TARGET=	install-strip
 
