@@ -1,0 +1,14 @@
+--- dh_fixperms.orig	2015-09-19 09:06:22 UTC
++++ dh_fixperms
+@@ -57,8 +57,10 @@ foreach my $package (@{$dh{DOPACKAGES}})
+ 	}
+ 
+ 	# General permissions fixing.
++	#complex_doit("find $tmp $find_options -print0",
++	#	"2>/dev/null | xargs -0r chown --no-dereference 0:0");
+ 	complex_doit("find $tmp $find_options -print0",
+-		"2>/dev/null | xargs -0r chown --no-dereference 0:0");
++		"2>/dev/null | xargs -0r chown 0:0");
+ 	complex_doit("find $tmp ! -type l $find_options -print0",
+ 		"2>/dev/null | xargs -0r chmod go=rX,u+rw,a-s");
+ 	
