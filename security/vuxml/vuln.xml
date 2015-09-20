@@ -10636,6 +10636,22 @@ Notes:
 	<name>libzip</name>
 	<range><lt>0.11.2_2</lt></range>
       </package>
+      <package>
+	<name>ppsspp</name>
+	<range><lt>1.0.1_5</lt></range>
+      </package>
+      <package>
+	<name>ppsspp-devel</name>
+	<range><lt>1.0.1.2668_1</lt></range>
+      </package>
+      <package>
+	<name>radare2</name>
+	<range><lt>0.9.8_1</lt></range>
+      </package>
+      <package>
+	<name>openlierox</name>
+	<range><lt>0.58.r3_5,1</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -10654,6 +10670,7 @@ Notes:
     <dates>
       <discovery>2015-03-18</discovery>
       <entry>2015-03-28</entry>
+      <modified>2015-09-20</modified>
     </dates>
   </vuln>
 
