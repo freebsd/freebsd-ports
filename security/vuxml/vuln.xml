@@ -114,7 +114,7 @@ Notes:
 	<name>avidemux2</name>
 	<name>avidemux26</name>
 	<!-- avidemux-2.6.10 has ffmpeg-2.6.1 -->
-	<range><ge>2.6.11</ge></range>
+	<range><lt>2.6.11</lt></range>
       </package>
       <package>
 	<name>kodi</name>
@@ -241,6 +241,7 @@ Notes:
     <dates>
       <discovery>2015-09-05</discovery>
       <entry>2015-09-20</entry>
+      <modified>2015-09-20</modified>
     </dates>
   </vuln>
 
@@ -1298,7 +1299,7 @@ Notes:
 	<name>avidemux</name>
 	<name>avidemux26</name>
 	<!-- avidemux-2.6.10 has ffmpeg-2.6.1 -->
-	<range><ge>2.6.11</ge></range>
+	<range><lt>2.6.11</lt></range>
       </package>
       <package>
 	<name>kodi</name>
