@@ -31,8 +31,6 @@ CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-BROKEN_sparc64=		does not compile on sparc64
-
 FFTW3_LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3
 FFTW3_CONFIGURE_WITH=	fftw
 

@@ -18,8 +18,6 @@ LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
 		libcurl.so:${PORTSDIR}/ftp/curl \
 		libpng.so:${PORTSDIR}/graphics/png
 
-BROKEN_powerpc=	does not configure on powerpc
-
 USES=		alias cmake compiler:c++11-lib dos2unix gettext \
 		gmake jpeg openal:al pkgconfig tar:xz
 USE_GL=		gl glu

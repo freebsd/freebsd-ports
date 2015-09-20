@@ -7,7 +7,7 @@ CATEGORIES=	x11-fm
 MASTER_SITES=	SF/xffm/${PORTVERSION}
 
 MAINTAINER=	rodrigo@FreeBSD.org
-COMMENT=	Fast, small and powerful file manager
+COMMENT=	Fast, small, and powerful file manager
 
 LICENSE=	GPLv3
 
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 USES=		desktop-file-utils gmake libtool:keepla pkgconfig tar:bzip2 shebangfix
 USE_GNOME=	glib20 gtk20 librsvg2 libxml2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--docdir=${DOCSDIR}
+CONFIGURE_ARGS=	--docdir=${DOCSDIR}
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
@@ -38,9 +38,5 @@ NLS_CONFIGURE_ENABLE=	nls
 #post-patch:
 #	${REINPLACE_CMD} -e 's,^\(docdir = \).*,\1${DOCSDIR},' \
 #		${WRKSRC}/Build/share/Makefile.in
-
-.for a in ia64 powerpc sparc63
-BROKEN_${a}=		Does not compile on ia64, powerpc, or sparc64
-.endfor
 
 .include <bsd.port.mk>

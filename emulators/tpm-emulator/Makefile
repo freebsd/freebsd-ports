@@ -27,8 +27,6 @@ GROUPS=		_tss
 SUB_LIST=	USERS="${USERS}" GROUPS="${GROUPS}"
 PLIST_SUB=	USERS="${USERS}" GROUPS="${GROUPS}"
 
-BROKEN_powerpc=		Does not compile on powerpc
-
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/run/tpm
 	@${MKDIR} ${STAGEDIR}${PREFIX}/var/db/tpm
