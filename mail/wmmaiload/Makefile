@@ -40,10 +40,6 @@ MAKE_ENV+=	GTK_CFLAGS="pkg-config --cflags gtk+" \
 		GTK_LIBS="pkg-config --libs gtk+"
 .endif
 
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64
-.endif
-
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \
 		's| =| ?=|'

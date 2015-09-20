@@ -18,6 +18,4 @@ MAKE_ENV+=	NO_WERROR="defined"
 PLIST_FILES=	sbin/widentd man/man8/widentd.8.gz
 USE_RC_SUBR=	widentd
 
-BROKEN_powerpc=		Does not compile on powerpc
-
 .include <bsd.port.mk>
