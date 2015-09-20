@@ -1,8 +1,12 @@
+lib/elixir/lib/maru/ebin/Elixir.Maru.Builder.DSLs.beam
+lib/elixir/lib/maru/ebin/Elixir.Maru.Builder.Exceptions.beam
+lib/elixir/lib/maru/ebin/Elixir.Maru.Builder.Methods.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Builder.Namespaces.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Builder.Params.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Builder.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Config.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Exceptions.InvalidFormatter.beam
+lib/elixir/lib/maru/ebin/Elixir.Maru.Exceptions.MethodNotAllow.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Exceptions.NotFound.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Exceptions.UndefinedValidator.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Exceptions.Validation.beam
@@ -37,7 +41,6 @@ lib/elixir/lib/maru/ebin/Elixir.Maru.Router.Path.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Router.Resource.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Router.Validator.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Router.beam
-lib/elixir/lib/maru/ebin/Elixir.Maru.Supervisor.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Test.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Utils.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Validations.AllowBlank.beam
@@ -52,6 +55,9 @@ lib/elixir/lib/maru/ebin/Elixir.Mix.Tasks.Maru.Routers.beam
 lib/elixir/lib/maru/ebin/maru.app
 lib/elixir/lib/maru/lib/maru.ex
 lib/elixir/lib/maru/lib/maru/builder.ex
+lib/elixir/lib/maru/lib/maru/builder/dsls.ex
+lib/elixir/lib/maru/lib/maru/builder/exceptions.ex
+lib/elixir/lib/maru/lib/maru/builder/methods.ex
 lib/elixir/lib/maru/lib/maru/builder/namespaces.ex
 lib/elixir/lib/maru/lib/maru/builder/params.ex
 lib/elixir/lib/maru/lib/maru/config.ex
@@ -71,7 +77,6 @@ lib/elixir/lib/maru/lib/maru/response.ex
 lib/elixir/lib/maru/lib/maru/router.ex
 lib/elixir/lib/maru/lib/maru/router/endpoint.ex
 lib/elixir/lib/maru/lib/maru/router/path.ex
-lib/elixir/lib/maru/lib/maru/supervisor.ex
 lib/elixir/lib/maru/lib/maru/test.ex
 lib/elixir/lib/maru/lib/maru/utils.ex
 lib/elixir/lib/maru/lib/maru/validations.ex
