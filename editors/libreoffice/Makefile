@@ -25,7 +25,6 @@ LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1 \
 		liborcus-0.10.so:${PORTSDIR}/devel/liborcus \
 		libcurl.so:${PORTSDIR}/ftp/curl \
 		libcairo.so:${PORTSDIR}/graphics/cairo \
-		libGLEW.so:${PORTSDIR}/graphics/glew \
 		libgraphite2.so:${PORTSDIR}/graphics/graphite2 \
 		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
 		libcdr-0.1.so:${PORTSDIR}/graphics/libcdr01 \
@@ -83,7 +82,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${LOVERSION}
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf aclocal
-USE_GL=		gl glu
+USE_GL=		gl glew glu
 USE_OPENLDAP=	yes
 USE_PERL5=	build
 USE_QT4=	# empty but required

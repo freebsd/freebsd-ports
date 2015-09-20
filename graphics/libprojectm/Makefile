@@ -13,10 +13,10 @@ COMMENT=	Awesome music visualiser
 LICENSE=	LGPL21
 
 LIB_DEPENDS=	libftgl.so:${PORTSDIR}/graphics/ftgl \
-		libGLEW.so:${PORTSDIR}/graphics/glew \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
 USES=		cmake
+USE_GL=		glew
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 

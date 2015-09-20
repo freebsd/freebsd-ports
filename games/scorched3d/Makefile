@@ -13,8 +13,7 @@ COMMENT=	3D version of the classic DOS game Scorched Earth
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libGLEW.so:${PORTSDIR}/graphics/glew \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
+LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
@@ -24,7 +23,7 @@ OPTIONS_DEFINE=	MYSQL
 
 WRKSRC=		${WRKDIR}/scorched
 
-USE_GL=		glu
+USE_GL=		glew glu
 USE_SDL=	mixer net sdl
 USE_WX=		2.8
 WX_CONF_ARGS=	absolute
