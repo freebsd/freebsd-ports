@@ -31,7 +31,6 @@ LIB_DEPENDS=	libass.so:${PORTSDIR}/multimedia/libass \
 		libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libdrm.so:${PORTSDIR}/graphics/libdrm \
 		libenca.so:${PORTSDIR}/converters/enca \
-		libGLEW.so:${PORTSDIR}/graphics/glew \
 		libFLAC.so:${PORTSDIR}/audio/flac \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
@@ -65,15 +64,20 @@ USES=		autoreconf:build gettext gmake iconv:wchar_t jpeg libtool \
 		pkgconfig python:2
 GNU_CONFIGURE=	yes
 USE_XORG=	xt xmu xtst xrandr
-USE_GL=		glu
+USE_GL=		glu glew
 USE_SDL=	image sdl2
 USE_JAVA=	yes
 JAVA_BUILD=	jre
 NOPRECIOUSMAKEVARS=	yes
 INSTALLS_ICONS=	yes
+
 ONLY_FOR_ARCHS=	i386 amd64
+KODI_ARCH_i386=	x86
+KODI_ARCH_amd64=x86_64
 
 WRKSRC=		${WRKDIR}/xbmc-${DISTVERSION}-Helix
+
+PLIST_SUB=	ARCH=${KODI_ARCH_${ARCH}}
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	AIRPLAY AIRTUNES AVAHI CEC DOCS \
@@ -113,6 +117,8 @@ NFS_LIB_DEPENDS=	libnfs.so:${PORTSDIR}/net/libnfs
 NFS_CONFIGURE_ENABLE=	nfs
 
 NONFREE_CONFIGURE_ENABLE=	non-free
+NONFREE_VARS=		NO_CDROM="Restricted binary distribution" \
+			NO_PACKAGE="Restricted binary distribution"
 
 RTMP_LIB_DEPENDS=	librtmp.so:${PORTSDIR}/multimedia/librtmp
 RTMP_CONFIGURE_ENABLE=	rtmp
@@ -135,25 +141,6 @@ SFTP_RUN_DEPENDS=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh
 SFTP_CONFIGURE_ENABLE=	ssh
 
 CONFIGURE_ARGS+=	--disable-debug --disable-alsa --disable-pulse
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == i386
-PLIST_SUB+=	ARCH="x86"
-.else
-PLIST_SUB+=	ARCH="x86_64"
-.endif
-
-.if ${OSVERSION} < 900033
-BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
-CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
-MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
-.endif
-
-.if ${PORT_OPTIONS:MNONFREE}
-NO_CDROM=	Restricted binary distribution
-NO_PACKAGE=	${NO_CDROM}
-.endif
 
 post-extract:
 	${MKDIR} ${WRKSRC}/tools/depends/target/ffmpeg/${GH_PROJECT}-${GH_TAGNAME}
