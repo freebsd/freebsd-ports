@@ -3,7 +3,7 @@
 
 PORTNAME=	nut
 PORTVERSION=	2.7.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
@@ -124,6 +124,7 @@ PLIST_SUB+=	NUT_PDU="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MBASH}
+BUILD_DEPENDS+=	${LOCALBASE}/share/bash-completion/bash_completion.sh:${PORTSDIR}/shells/bash-completion
 RUN_DEPENDS+=	${LOCALBASE}/share/bash-completion/bash_completion.sh:${PORTSDIR}/shells/bash-completion
 PLIST_SUB+=	BASH=""
 .else
@@ -132,6 +133,7 @@ PLIST_SUB+=	BASH="@comment "
 
 .if ${PORT_OPTIONS:MAVAHI}
 BUILD_DEPENDS+=	${LOCALBASE}/include/avahi-ui/avahi-ui.h:${PORTSDIR}/net/avahi-header
+BUILD_DEPENDS+=	avahi-daemon:${PORTSDIR}/net/avahi-app
 RUN_DEPENDS+=	avahi-daemon:${PORTSDIR}/net/avahi-app
 CONFIGURE_ARGS+=	--with-avahi
 .else
