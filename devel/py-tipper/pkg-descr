@@ -4,7 +4,7 @@ Python processes.
 Included is a module that, when imported, installs a `signal handler`_
 for `SIGUSR1`_. Running ``kill -SIGUSR1 [pid]`` will cause the process
 to dump the current stack trace of each thread to
-``$TMPDIR/tipper-[unix timestamp]-[parent pid]-[pid].log``.
+``$TMPDIR/tipper-[Unix timestamp]-[parent pid]-[pid].log``.
 
 WWW: https://pypi.python.org/pypi/tipper
 
