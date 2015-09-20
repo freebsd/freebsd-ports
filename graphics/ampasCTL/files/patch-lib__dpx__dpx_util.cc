@@ -1,8 +1,10 @@
---- ./lib/dpx/dpx_util.cc.orig	2013-10-12 18:55:34.000000000 +0200
-+++ ./lib/dpx/dpx_util.cc	2013-10-12 18:55:55.000000000 +0200
-@@ -57,6 +57,7 @@
+--- lib/dpx/dpx_util.cc.orig	2014-06-03 01:11:24 UTC
++++ lib/dpx/dpx_util.cc
+@@ -55,8 +55,8 @@
+ #include "dpx_util.hh"
+ #include <stdarg.h>
  #include <stdio.h>
- 
+-#include <alloca.h>
  #include <string.h>
 +#include <stdlib.h>
  
