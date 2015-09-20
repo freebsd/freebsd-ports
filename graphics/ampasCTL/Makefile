@@ -41,10 +41,6 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|#include <alloca.h>||' \
-		${WRKSRC}/lib/dpx/dpx_util.cc ${WRKSRC}/lib/IlmCtl/CtlExc.cpp \
-		${WRKSRC}/lib/IlmCtl/CtlTypeStorage.cpp ${WRKSRC}/ctlrender/tiff_file.cc
-
 	@${REINPLACE_CMD} -e 's|lib/CMake|lib/cmake|' \
 		-e 's|add_subdirectory(doc)||' \
 		-e 's|lib/pkgconfig|libdata/pkgconfig|' \
