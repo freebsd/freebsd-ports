@@ -15,37 +15,19 @@ OPTIONS_DEFAULT=	BZIP2 HIGHEST_COMPRESSION
 BZIP2_DESC=	bzip2 instead of gzip for compressing
 HIGHEST_COMPRESSION_DESC=	Highest rather than fastest compression
 
-DOCS=		README
-
-.include <bsd.port.options.mk>
-do-configure:
-# C{C,FLAGS} safeness
-	@${REINPLACE_CMD} -E \
-		-e 's|^(CC[[:space:]]*=).*$$|\1${CC}|' \
-		-e 's|^(CFLAGS[[:space:]]*=.*)$$|\1 ${CFLAGS}|' \
-		${BUILD_WRKSRC}/${MAKEFILE}
-
-do-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-. for _file in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${_file} ${STAGEDIR}${DOCSDIR}/
-. endfor
-.endif
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-
 # Correctly depend upon bzip2 if necessary
-.if ${PORT_OPTIONS:MBZIP2}
-EXTRA_PATCHES+=	${FILESDIR}/extra-bzip2-patch-dolly.c
-.endif
+BZIP2_EXTRA_PATCHES=	${FILESDIR}/extra-bzip2-patch-dolly.c
+
+DOCS=		README
 
 post-patch:
 # fix comment error
 	@${REINPLACE_CMD} -E \
 		-e 's|use gzip|use gunzip|' \
 		${WRKSRC}/dolly.c
+
+post-patch-BZIP2-on:
 # Properly reference bzip2 instead of gzip
-.if ${PORT_OPTIONS:MBZIP2}
 	@${REINPLACE_CMD} -E \
 		-e 's|/usr/bin/gzip|${BZIP2_CMD}|' \
 		-e 's|gzip|bzip2|' \
@@ -64,12 +46,27 @@ post-patch:
 		-e 's|gunzip|bzcat|' \
 		-e 's|\.gz|\.bz2|g' \
 		${WRKSRC}/*
-.endif
+
+post-patch-HIGHEST_COMPRESSION-on:
 # Highest compression possible
-.if ${PORT_OPTIONS:MHIGHEST_COMPRESSION}
 	@${REINPLACE_CMD} -E \
 		-e 's|-cf|-9cf|' \
 		${WRKSRC}/dolly.c
-.endif
+
+do-configure:
+# C{C,FLAGS} safeness
+	@${REINPLACE_CMD} -E \
+		-e 's|^(CC[[:space:]]*=).*$$|\1${CC}|' \
+		-e 's|^(CFLAGS[[:space:]]*=.*)$$|\1 ${CFLAGS}|' \
+		${BUILD_WRKSRC}/${MAKEFILE}
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for _file in ${DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${_file} ${STAGEDIR}${DOCSDIR}/
+.endfor
 
 .include <bsd.port.mk>
