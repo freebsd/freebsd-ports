@@ -83,6 +83,8 @@ PORTDOCS=	AUTHORS COPYING COPYRIGHT ChangeLog DIFFSTAT FAQ.html NEWS README SHOR
 BROKEN_sparc64=	Does not install on sparc64
 
 .if ${PORT_OPTIONS:MZIPPY}
+USES+=		shebangfix
+SHEBANG_FILES+=	./texi2man
 PORTDOCS+=	zippy.README
 .endif
 
