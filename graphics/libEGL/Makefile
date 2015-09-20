@@ -11,9 +11,9 @@ COMMENT=	OpenEGL library
 LIB_DEPENDS+=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
 		libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libdevq.so:${PORTSDIR}/devel/libdevq \
-		libdrm.so:${PORTSDIR}/graphics/libdrm \
-		libgbm.so:${PORTSDIR}/graphics/gbm
+		libdrm.so:${PORTSDIR}/graphics/libdrm
 
+USE_GL=		gbm
 USE_XORG=	x11 xau xcb xdmcp
 
 # stuff not needed by libEGL but configure wants it
