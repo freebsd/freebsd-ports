@@ -9,13 +9,16 @@ PKGNAMEPREFIX=	redmine-
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Basecamp Theme for Redmine
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	redmine>=0.9:${PORTSDIR}/www/redmine
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	theill
 GH_PROJECT=	redmine-basecamp-theme
-GH_TAGNAME=     6812d61
+GH_TAGNAME=	6812d61
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 WWWDIR?=	${PREFIX}/www/redmine/public/themes/${PORTNAME}
