@@ -58,6 +58,192 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3d950687-b4c9-4a86-8478-c56743547af8">
+    <topic>ffmpeg -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libav</name>
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>gstreamer1-libav</name>
+	<!-- gst-libav-1.4.5 has libav-10.5 -->
+	<range><lt>1.5.90</lt></range>
+      </package>
+      <package>
+	<name>gstreamer-ffmpeg</name>
+	<!-- gst-ffmpeg-0.10.13 has libav-0.7.2 (0.7.7 in freebsd port) -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>handbrake</name>
+	<!-- handbrake-0.10.2 has libav-10.1 -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>ffmpeg</name>
+	<range><lt>2.7.2,1</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg26</name>
+	<range><lt>2.6.4</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg25</name>
+	<range><lt>2.5.8</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg24</name>
+	<range><lt>2.4.11</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg-devel</name>
+	<name>ffmpeg23</name>
+	<name>ffmpeg2</name>
+	<name>ffmpeg1</name>
+	<name>ffmpeg-011</name>
+	<name>ffmpeg0</name>
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>avidemux</name>
+	<name>avidemux2</name>
+	<name>avidemux26</name>
+	<!-- avidemux-2.6.10 has ffmpeg-2.6.1 -->
+	<range><ge>2.6.11</ge></range>
+      </package>
+      <package>
+	<name>kodi</name>
+	<!-- kodi-14.2 has ffmpeg-2.4.6 -->
+	<range><lt>15.1</lt></range>
+      </package>
+      <package>
+	<name>mplayer</name>
+	<name>mencoder</name>
+	<!-- mplayer-1.1.r20150403 has ffmpeg-2.7.0+ (snapshot, c299fbb) -->
+	<range><lt>1.1.r20150822</lt></range>
+      </package>
+      <package>
+	<name>mythtv</name>
+	<name>mythtv-frontend</name>
+	<!-- mythtv-0.27.0.20140121 has ffmpeg-1.2.2+ (snapshot, f9c8726) -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>plexhometheater</name>
+	<!-- plexhometheater-1.4.1 has ffmpeg-0.10.2 fork -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NVD reports:</p>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-6818">
+	  <p>The decode_ihdr_chunk function in libavcodec/pngdec.c in
+	    FFmpeg before 2.7.2 does not enforce uniqueness of the IHDR
+	    (aka image header) chunk in a PNG image, which allows remote
+	    attackers to cause a denial of service (out-of-bounds array
+	    access) or possibly have unspecified other impact via a
+	    crafted image with two or more of these chunks.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-6819">
+	  <p>Multiple integer underflows in the ff_mjpeg_decode_frame
+	    function in libavcodec/mjpegdec.c in FFmpeg before 2.7.2
+	    allow remote attackers to cause a denial of service
+	    (out-of-bounds array access) or possibly have unspecified
+	    other impact via crafted MJPEG data.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-6820">
+	  <p>The ff_sbr_apply function in libavcodec/aacsbr.c in
+	    FFmpeg before 2.7.2 does not check for a matching AAC frame
+	    syntax element before proceeding with Spectral Band
+	    Replication calculations, which allows remote attackers to
+	    cause a denial of service (out-of-bounds array access) or
+	    possibly have unspecified other impact via crafted AAC
+	    data.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-6821">
+	  <p>The ff_mpv_common_init function in libavcodec/mpegvideo.c
+	    in FFmpeg before 2.7.2 does not properly maintain the
+	    encoding context, which allows remote attackers to cause a
+	    denial of service (invalid pointer access) or possibly have
+	    unspecified other impact via crafted MPEG data.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-6822">
+	  <p>The destroy_buffers function in libavcodec/sanm.c in
+	    FFmpeg before 2.7.2 does not properly maintain height and
+	    width values in the video context, which allows remote
+	    attackers to cause a denial of service (segmentation
+	    violation and application crash) or possibly have
+	    unspecified other impact via crafted LucasArts Smush video
+	    data.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-6823">
+	  <p>The allocate_buffers function in libavcodec/alac.c in
+	    FFmpeg before 2.7.2 does not initialize certain context
+	    data, which allows remote attackers to cause a denial of
+	    service (segmentation violation) or possibly have
+	    unspecified other impact via crafted Apple Lossless Audio
+	    Codec (ALAC) data.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-6824">
+	  <p>The sws_init_context function in libswscale/utils.c in
+	    FFmpeg before 2.7.2 does not initialize certain pixbuf data
+	    structures, which allows remote attackers to cause a denial
+	    of service (segmentation violation) or possibly have
+	    unspecified other impact via crafted video data.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-6825">
+	  <p>The ff_frame_thread_init function in
+	    libavcodec/pthread_frame.c in FFmpeg before 2.7.2 mishandles
+	    certain memory-allocation failures, which allows remote
+	    attackers to cause a denial of service (invalid pointer
+	    access) or possibly have unspecified other impact via a
+	    crafted file, as demonstrated by an AVI file.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-6826">
+	  <p>The ff_rv34_decode_init_thread_copy function in
+	    libavcodec/rv34.c in FFmpeg before 2.7.2 does not initialize
+	    certain structure members, which allows remote attackers to
+	    cause a denial of service (invalid pointer access) or
+	    possibly have unspecified other impact via crafted (1) RV30
+	    or (2) RV40 RealVideo data.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-6818</cvename>
+      <cvename>CVE-2015-6819</cvename>
+      <cvename>CVE-2015-6820</cvename>
+      <cvename>CVE-2015-6821</cvename>
+      <cvename>CVE-2015-6822</cvename>
+      <cvename>CVE-2015-6823</cvename>
+      <cvename>CVE-2015-6824</cvename>
+      <cvename>CVE-2015-6825</cvename>
+      <cvename>CVE-2015-6826</cvename>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=47f4e2d8960ca756ca153ab8e3e93d80449b8c91</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=84afc6b70d24fc0bf686e43138c96cf60a9445fe</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=79a98294da6cd85f8c86b34764c5e0c43b09eea3</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=b160fc290cf49b516c5b6ee0730fd9da7fc623b1</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=39bbdebb1ed8eb9c9b0cd6db85afde6ba89d86e4</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=f7068bf277a37479aecde2832208d820682b35e6</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=a5d44d5c220e12ca0cb7a4eceb0f74759cb13111</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=f1a38264f20382731cf2cc75fdd98f4c9a84a626</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=3197c0aa87a3b7190e17d49e6fbc7b554e4b3f0a</url>
+      <url>https://ffmpeg.org/security.html</url>
+    </references>
+    <dates>
+      <discovery>2015-09-05</discovery>
+      <entry>2015-09-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c2fcbec2-5daa-11e5-9909-002590263bf5">
     <topic>moodle -- multiple vulnerabilities</topic>
     <affects>
