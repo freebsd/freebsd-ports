@@ -8,7 +8,7 @@ Features so far:
     * Creating Video CDs (VCD 1.1, 2.0, SVCD, CD-i support (Version 4))
     * Creating mixed-mode CDs (CD-Extra (CD-Plus, Enhanced Audio CD))
     * Creating eMovix CDs
-    * CD Copy (single + multi session, audio, enghanced audio, cloning)
+    * CD Copy (single + multi session, audio, enhanced audio, cloning)
     * DVD burning (DVD-R(W), DVD+R(W), eMovix, Formatting DVD-RWs and DVD+RWs)
     * CD Ripping (CDDB support, CD-TEXT reading, several formats)
     * DVD Ripping and DivX/XviD encoding
@@ -17,7 +17,7 @@ Features so far:
     * Writing existing iso images to CD and DVD.
     * Writing cue/bin files created for CDRWIN
     * DVD copy (no video transcoding yet)
-    * Enhanced cd decive handling (burnfree and justlink support)
+    * Enhanced cd device handling (burnfree and justlink support)
     * KParts plugin
 
 WWW: http://www.k3b.org/

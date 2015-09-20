@@ -1,8 +1,8 @@
 encode and decode strings into and from application/x-www-form-urlencoded
 
 The application/x-www-form-urlencoded format encodes a ordered data sets of
-pairs consisting of a name and a value, with pairs seperated by ampersand or
-semicolon and names and values seperated by the equal sign. Space characters
+pairs consisting of a name and a value, with pairs separated by ampersand or
+semicolon and names and values separated by the equal sign. Space characters
 are replaced with plus sign and any characters not in the unreserved character
 set is encoded using the percent-encoding scheme also used for resource
 identifiers. 
