@@ -1,3 +1,5 @@
+Obtained from:	https://github.com/facebook/rocksdb/commit/4b0b0201c9abb7675413ce25e5044b1c9a8853c8
+
 --- tools/db_stress.cc.orig	2015-08-31 18:23:39 UTC
 +++ tools/db_stress.cc
 @@ -222,7 +222,7 @@ DEFINE_int32(set_options_one_in, 0,
