@@ -17,14 +17,9 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 shebangfix uidfix
 SHEBANG_FILES=	sysgather.pl
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	EXAMPLES
-
-.include <bsd.port.options.mk>
-
-.if empty(PORT_OPTIONS:MEXAMPLES)
-MAKE_ENV+=	EXAMPLESDIR="${WRKDIR}"
-.endif
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/sysgather.conf.default \
