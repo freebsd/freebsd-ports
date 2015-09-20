@@ -3,7 +3,7 @@
 
 PORTNAME=	MouseX-NativeTraits
 PORTVERSION=	1.09
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extend your attribute interfaces for Mouse
 
-BUILD_DEPENDS=	p5-Any-Moose>=0.13:${PORTSDIR}/devel/p5-Any-Moose \
-		p5-Mouse>=0.82:${PORTSDIR}/devel/p5-Mouse
+BUILD_DEPENDS=	p5-Mouse>=0.82:${PORTSDIR}/devel/p5-Mouse
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Fatal>=0.003:${PORTSDIR}/devel/p5-Test-Fatal
+TEST_DEPENDS=	p5-Any-Moose>=0.13:${PORTSDIR}/devel/p5-Any-Moose \
+		p5-Test-Fatal>=0.003:${PORTSDIR}/devel/p5-Test-Fatal
 
 USE_PERL5=	configure
 USES=		perl5
