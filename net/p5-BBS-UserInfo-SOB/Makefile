@@ -18,6 +18,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Expect>=0:${PORTSDIR}/lang/p5-Expect
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
