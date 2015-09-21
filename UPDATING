@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20150921:
+  AFFECTS: users of mail/rspamd
+  AUTHOR: vsevolod@FreeBSD.org
+
+  rspamd has been updated to the version 1.0.
+  For migration from the previous releases, please read the following document:
+  https://rspamd.com/doc/migration.html
+
 20150919:
   AFFECTS: users of multimedia/ffmpeg
   AUTHOR: riggs@FreeBSD.org
