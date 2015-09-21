@@ -7873,3 +7873,4 @@ textproc/py-xml||2015-09-16|Remove: this package is available in standard python
 x11-toolkits/wxgtk28-unicode|x11-toolkits/wxgtk28|2015-09-16|Make wxGTK now only unicode
 x11-toolkits/wxgtk28-unicode-contrib|x11-toolkits/wxgtk28-contrib|2015-09-16|Make wxGTK now only unicode
 x11-toolkits/py-wxPython28-unicode|x11-toolkits/py-wxPython28|2015-09-16|Make wxGTK now only unicode
+japanese/font-mplus|japanese/font-mplus-outline|2015-09-21|Renamed

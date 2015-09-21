@@ -1,6 +1,6 @@
---- install_mplus_fonts.orig	2005-03-19 23:45:12.000000000 +0900
-+++ install_mplus_fonts	2009-05-14 11:07:01.000000000 +0900
-@@ -29,18 +29,6 @@
+--- install_mplus_fonts.orig	2005-03-19 14:45:12 UTC
++++ install_mplus_fonts
+@@ -29,18 +29,6 @@ CURPTH=/usr/X11R6/lib/X11/fonts/misc
  
  
  
@@ -19,7 +19,7 @@
  # Install M+ BITMAP FONTS E
  echo -e "\nInstall M+ BITMAP FONTS E (iso8859-1)..."
  cd fonts_e
-@@ -54,8 +42,6 @@
+@@ -54,8 +42,6 @@ do
  	echo "create: $b.pcf.gz"
  	bdftopcf $f | gzip > $PREFIX/$b.pcf.gz
  done
@@ -28,7 +28,7 @@
  cd -
  
  # Install M+ BITMAP FONTS EURO
-@@ -79,8 +65,6 @@
+@@ -79,8 +65,6 @@ if [ "$EURO15" != "NO" ]; then
  	| gzip > $PREFIX/mplus_h12rw-euro.pcf.gz
  
  #	rm $b-euro.bdf
@@ -37,7 +37,7 @@
  	cd -
  fi
  
-@@ -145,8 +129,6 @@
+@@ -145,8 +129,6 @@ if [ "$MPLUSJ" != "NO" ]; then
  	done
  
  #	rm mplus_j1*b.bdf
@@ -46,7 +46,7 @@
  	cd -
  fi
  
-@@ -166,12 +148,3 @@
+@@ -166,12 +148,3 @@ if [ "$CURSOR" != "NO" ]; then
  		echo "ERROR: No such file !"
  	fi
  fi
