@@ -10,6 +10,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby library to interact with HipChat
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-httparty>=0:${PORTSDIR}/www/rubygem-httparty \
 		rubygem-mimemagic>=0:${PORTSDIR}/misc/rubygem-mimemagic
