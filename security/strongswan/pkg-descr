@@ -1,4 +1,5 @@
 Strongswan is an open source IPsec-based VPN solution.
-Strongswan for FreeBSD supports IKEv2 but NOT IKEv1.
+Strongswan for FreeBSD implements both the IKEv1 and IKEv2 (RFC 5996) key
+exchange protocols.
 
 WWW: http://www.strongswan.org
