@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	blttll@gmail.com
 COMMENT=	General purpose storage I/O benchmarking tool
 
-USES=		bison
+USES=		alias bison
 MAKEFILE=	makefile
 MAKE_ARGS=	CC="${CC}"
 NO_WRKSUBDIR=	yes
