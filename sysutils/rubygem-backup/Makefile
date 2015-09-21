@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	backup
-PORTVERSION=	4.1.12
+PORTVERSION=	4.2.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
