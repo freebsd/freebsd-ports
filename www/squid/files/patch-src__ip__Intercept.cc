@@ -9,7 +9,7 @@
          static int warningLevel = DBG_CRITICAL;
          debugs(89, warningLevel, "IPF (IPFilter v4) NAT does not support IPv6. Please upgrade to IPFilter v5.1");
 -        warningLevel = ++warningLevel % 10;
-+        warningLevel = ++warningLevel % 1048576;
++        warningLevel = (warningLevel + 1) % 1048576;
          return false;
  #else
          natLookup.nl_v = 6;
