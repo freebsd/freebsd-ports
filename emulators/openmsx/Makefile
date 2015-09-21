@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	openmsx
-PORTVERSION=	0.11.0
-PORTREVISION=	2
+PORTVERSION=	0.12.0
 CATEGORIES=	emulators
-MASTER_SITES=	SF
+MASTER_SITES=	https://github.com/openMSX/openMSX/releases/download/RELEASE_${PORTVERSION:S/./_/g}/
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Open source MSX emulator

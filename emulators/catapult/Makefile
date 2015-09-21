@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	catapult
-PORTVERSION=	0.11.0
-PORTREVISION=	1
+PORTVERSION=	0.12.0
 CATEGORIES=	emulators
-MASTER_SITES=	SF/openmsx/openmsx/${PORTVERSION}
+MASTER_SITES=	https://github.com/openMSX/openMSX/releases/download/RELEASE_${PORTVERSION:S/./_/g}/
 DISTNAME=	openmsx-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	johans@FreeBSD.org
@@ -23,7 +22,6 @@ USE_GCC=	yes
 USE_CXXSTD=	gnu++0x
 USE_GNOME=	gtk20 libxml2
 USE_WX=		2.8
-WX_UNICODE=	yes
 MAKEFILE=	GNUmakefile
 MAKE_ARGS=	INSTALL_BASE="${PREFIX}" \
 		INSTALL_SHARE_DIR="${DATADIR}" \
@@ -75,10 +73,10 @@ post-patch:
 		>> ${WRKSRC}/build/flavour-portbld.mk
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}/resources/icons
-	@${INSTALL_DATA} ${WRKSRC}/src/catapult.xpm \
+	${MKDIR} ${STAGEDIR}${DATADIR}/resources/icons
+	${INSTALL_DATA} ${WRKSRC}/src/catapult.xpm \
 		${STAGEDIR}${DATADIR}/resources/icons
-	@cd ${WRKSRC}/desktop && ${INSTALL_DATA} openMSX-Catapult.desktop \
+	cd ${WRKSRC}/desktop && ${INSTALL_DATA} openMSX-Catapult.desktop \
 		${STAGEDIR}${DESKTOPDIR}
 
 .include <bsd.port.post.mk>
