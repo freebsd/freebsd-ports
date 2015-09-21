@@ -73,8 +73,9 @@
     SUBDIR += font-migu
     SUBDIR += font-mona-ipa
     SUBDIR += font-motoya-al
-    SUBDIR += font-mplus
+    SUBDIR += font-mplus-bitmap
     SUBDIR += font-mplus-ipa
+    SUBDIR += font-mplus-outline
     SUBDIR += font-ricty
     SUBDIR += font-ricty-discord
     SUBDIR += font-sazanami
