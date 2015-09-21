@@ -1,6 +1,6 @@
---- src/ipc/mem/Segment.cc.orig	2015-04-15 10:38:29.724278000 +0300
-+++ src/ipc/mem/Segment.cc	2015-04-15 10:39:37.130756000 +0300
-@@ -150,7 +150,7 @@
+--- src/ipc/mem/Segment.cc.orig	2015-08-01 06:08:17 UTC
++++ src/ipc/mem/Segment.cc
+@@ -150,7 +150,7 @@ Ipc::Mem::Segment::attach()
      assert(theSize == static_cast<off_t>(static_cast<size_t>(theSize)));
  
      void *const p =
