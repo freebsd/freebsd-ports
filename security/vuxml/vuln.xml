@@ -58,6 +58,138 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2d56c7f4-b354-428f-8f48-38150c607a05">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>41.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>41.0,1</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.38</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.38</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>38.3.0,1</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><lt>38.3.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>38.3.0</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>38.3.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/advisories/">
+	  <p>MFSA 2015-96 Miscellaneous memory safety hazards (rv:41.0
+	    / rv:38.3)</p>
+	  <p>MFSA 2015-97 Memory leak in mozTCPSocket to servers</p>
+	  <p>MFSA 2015-98 Out of bounds read in QCMS library with ICC
+	    V4 profile attributes</p>
+	  <p>MFSA 2015-99 Site attribute spoofing on Android by
+	    pasting URL with unknown scheme</p>
+	  <p>MFSA 2015-100 Arbitrary file manipulation by local user
+	    through Mozilla updater</p>
+	  <p>MFSA 2015-101 Buffer overflow in libvpx while parsing vp9
+	    format video</p>
+	  <p>MFSA 2015-102 Crash when using debugger with SavedStacks
+	    in JavaScript</p>
+	  <p>MFSA 2015-103 URL spoofing in reader mode</p>
+	  <p>MFSA 2015-104 Use-after-free with shared workers and
+	    IndexedDB</p>
+	  <p>MFSA 2015-105 Buffer overflow while decoding WebM
+	    video</p>
+	  <p>MFSA 2015-106 Use-after-free while manipulating HTML
+	    media content</p>
+	  <p>MFSA 2015-107 Out-of-bounds read during 2D canvas display
+	    on Linux 16-bit color depth systems</p>
+	  <p>MFSA 2015-108 Scripted proxies can access inner
+	    window</p>
+	  <p>MFSA 2015-109 JavaScript immutable property enforcement
+	    can be bypassed</p>
+	  <p>MFSA 2015-110 Dragging and dropping images exposes final
+	    URL after redirects</p>
+	  <p>MFSA 2015-111 Errors in the handling of CORS preflight
+	    request headers</p>
+	  <p>MFSA 2015-112 Vulnerabilities found through code
+	    inspection</p>
+	  <p>MFSA 2015-113 Memory safety errors in libGLES in the
+	    ANGLE graphics library</p>
+	  <p>MFSA 2015-114 Information disclosure via the High
+	    Resolution Time API</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4476</cvename>
+      <cvename>CVE-2015-4500</cvename>
+      <cvename>CVE-2015-4501</cvename>
+      <cvename>CVE-2015-4502</cvename>
+      <cvename>CVE-2015-4503</cvename>
+      <cvename>CVE-2015-4504</cvename>
+      <cvename>CVE-2015-4505</cvename>
+      <cvename>CVE-2015-4506</cvename>
+      <cvename>CVE-2015-4507</cvename>
+      <cvename>CVE-2015-4508</cvename>
+      <cvename>CVE-2015-4509</cvename>
+      <cvename>CVE-2015-4510</cvename>
+      <cvename>CVE-2015-4512</cvename>
+      <cvename>CVE-2015-4516</cvename>
+      <cvename>CVE-2015-4517</cvename>
+      <cvename>CVE-2015-4519</cvename>
+      <cvename>CVE-2015-4520</cvename>
+      <cvename>CVE-2015-4521</cvename>
+      <cvename>CVE-2015-4522</cvename>
+      <cvename>CVE-2015-7174</cvename>
+      <cvename>CVE-2015-7175</cvename>
+      <cvename>CVE-2015-7176</cvename>
+      <cvename>CVE-2015-7177</cvename>
+      <cvename>CVE-2015-7178</cvename>
+      <cvename>CVE-2015-7179</cvename>
+      <cvename>CVE-2015-7180</cvename>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-96/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-97/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-98/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-99/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-100/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-101/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-102/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-103/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-104/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-105/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-106/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-107/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-108/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-109/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-110/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-111/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-112/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-113/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-114/</url>
+    </references>
+    <dates>
+      <discovery>2015-09-22</discovery>
+      <entry>2015-09-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3d950687-b4c9-4a86-8478-c56743547af8">
     <topic>ffmpeg -- multiple vulnerabilities</topic>
     <affects>
@@ -2766,11 +2898,15 @@ Notes:
       </package>
       <package>
 	<name>seamonkey</name>
-	<range><lt>2.37</lt></range>
+	<range><ge>2.36</ge><lt>2.37</lt></range>
+	<!-- seamonkey-2.35 milestone.txt: 38.2.0esrpre -->
+	<range><lt>2.35</lt></range>
       </package>
       <package>
 	<name>linux-seamonkey</name>
-	<range><lt>2.37</lt></range>
+	<range><ge>2.36</ge><lt>2.37</lt></range>
+	<!-- seamonkey-2.35 milestone.txt: 38.2.0esrpre -->
+	<range><lt>2.35</lt></range>
       </package>
       <package>
 	<name>firefox-esr</name>
@@ -2855,7 +2991,7 @@ Notes:
     <dates>
       <discovery>2015-08-11</discovery>
       <entry>2015-08-11</entry>
-      <modified>2015-08-11</modified>
+      <modified>2015-08-22</modified>
     </dates>
   </vuln>
 
@@ -3921,11 +4057,13 @@ Notes:
       </package>
       <package>
 	<name>seamonkey</name>
-	<range><lt>2.36</lt></range>
+	<!-- seamonkey-2.35 milestone.txt: 38.2.0esrpre -->
+	<range><lt>2.35</lt></range>
       </package>
       <package>
 	<name>linux-seamonkey</name>
-	<range><lt>2.36</lt></range>
+	<!-- seamonkey-2.35 milestone.txt: 38.2.0esrpre -->
+	<range><lt>2.35</lt></range>
       </package>
       <package>
 	<name>firefox-esr</name>
@@ -4021,6 +4159,7 @@ Notes:
     <dates>
       <discovery>2015-07-02</discovery>
       <entry>2015-07-16</entry>
+      <modified>2015-09-22</modified>
     </dates>
   </vuln>
 
