@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libxul
-DISTVERSION=	38.2.1
+DISTVERSION=	38.3.0
 CATEGORIES?=	www devel
 MASTER_SITES=	MOZILLA/firefox/releases/${DISTVERSION}esr/source \
 		MOZILLA/firefox/candidates/${DISTVERSION}esr-candidates/build2/source
