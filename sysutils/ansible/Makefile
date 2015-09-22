@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ansible
-PORTVERSION=	1.9.2
+PORTVERSION=	1.9.3
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://releases.ansible.com/ansible/
 
@@ -19,8 +19,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml \
 
 OPTIONS_DEFINE=	EXAMPLES
 
+NO_ARCH=	yes
 USES=		cpe python:2 shebangfix
 USE_PYTHON=	autoplist distutils
+python_CMD=	${LOCALBASE}/bin/python
 SHEBANG_FILES=	lib/ansible/runner/action_plugins/synchronize.py \
 		lib/ansible/modules/core/*/*.py \
 		lib/ansible/modules/core/*/*/*.py \
