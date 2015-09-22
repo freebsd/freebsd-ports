@@ -76,6 +76,8 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/www/src/components/app.jsx
 %%DATADIR%%/www/src/components/dashboard.jsx
 %%DATADIR%%/www/src/components/login.jsx
+%%DATADIR%%/www/src/components/piechart.jsx
+%%DATADIR%%/www/src/components/rrdgraph.jsx
 %%DATADIR%%/www/src/package.json
 man/man1/rspamc.1.gz
 man/man8/rspamd.8.gz
