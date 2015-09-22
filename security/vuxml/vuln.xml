@@ -58,6 +58,36 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9770d6ac-614d-11e5-b379-14dae9d210b8">
+    <topic>libssh2 -- denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>libssh2</name>
+	<range><lt>1.5.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mariusz Ziulek reports:</p>
+	<blockquote cite="http://www.libssh2.org/adv_20150311.html">
+	  <p>A malicious attacker could man in the middle a real server
+	    and cause libssh2 using clients to crash (denial of service) or
+	    otherwise read and use completely unintended memory areas in this
+	    process.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.libssh2.org/adv_20150311.html</url>
+      <url>https://trac.libssh2.org/ticket/294</url>
+      <cvename>CVE-2015-1782</cvename>
+    </references>
+    <dates>
+      <discovery>2015-01-25</discovery>
+      <entry>2015-09-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2d56c7f4-b354-428f-8f48-38150c607a05">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
