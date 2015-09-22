@@ -1,6 +1,6 @@
---- tools/scan6.c.orig	2013-02-17 06:55:02.000000000 +0900
-+++ tools/scan6.c	2013-02-17 06:56:04.000000000 +0900
-@@ -969,9 +969,11 @@
+--- tools/scan6.c.orig	2015-04-05 14:03:21 UTC
++++ tools/scan6.c
+@@ -1504,9 +1504,11 @@ int main(int argc, char **argv){
  	if(!pps_f && !bps_f)
  		pktinterval= 1000;
  
@@ -13,4 +13,4 @@
 +		strncpy(configfile, IPV6TOOLKITCONF, MAX_FILENAME_SIZE);
  	}
  
- 	if(tgt_vendor_f){
+ 	if(tgt_vendor_f || portscan_f){
