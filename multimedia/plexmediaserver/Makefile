@@ -12,10 +12,14 @@ DISTNAME=	PlexMediaServer-${PORTVERSION}-${PLEX_BUILD}-freebsd-${ARCH}
 MAINTAINER?=	feld@FreeBSD.org
 COMMENT=	Plex Media Server component
 
-USES=	tar:bzip2
+USES=		cpe tar:bzip2
 PLEX_BUILD?=	8403350
 NO_BUILD=	yes
 WRKSRC=	${WRKDIR}/PlexMediaServer-${PORTVERSION}-${PLEX_BUILD}
+
+CPE_VENDOR=	plex
+CPE_PRODUCT=	plex_media_server
+CPE_VERSION=	${PORTVERSION:R}
 
 USE_RC_SUBR?=	${PORTNAME}
 
