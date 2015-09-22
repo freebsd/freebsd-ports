@@ -640,6 +640,11 @@
 %%WWWDIR%%/sample/ups/powersoftplus1.txt
 %%WWWDIR%%/templates/aqua.css
 %%WWWDIR%%/templates/aqua/aq_background.gif
+%%WWWDIR%%/templates/blue.css
+%%WWWDIR%%/templates/blue/bar.png
+%%WWWDIR%%/templates/blue/barwarn.png
+%%WWWDIR%%/templates/blue/bg.png
+%%WWWDIR%%/templates/blue/title.png
 %%WWWDIR%%/templates/clean.css
 %%WWWDIR%%/templates/cleansyn.css
 %%WWWDIR%%/templates/cream.css

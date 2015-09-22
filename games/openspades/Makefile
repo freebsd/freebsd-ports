@@ -16,8 +16,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick # for building icons
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libGLEW.so:${PORTSDIR}/graphics/glew
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 BROKEN_FreeBSD_9=	does not build on FreeBSD 9.x
 
@@ -30,7 +29,7 @@ CMAKE_ARGS=	-DOPENSPADES_RESOURCES=OFF \
 		-DOPENSPADES_INSTALL_BINARY="bin" \
 		-DOPENSPADES_INSTALL_RESOURCES="${DATADIR_REL}"
 USE_SDL=	sdl2 image2
-USE_GL=		gl
+USE_GL=		gl glew
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	*

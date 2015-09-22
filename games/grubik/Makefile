@@ -15,8 +15,6 @@ LICENSE=	GPLv2 # or later
 USES=		tar:tgz gnustep
 USE_GNUSTEP=	back build
 
-MAKE_ENV+=	GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
-
 post-patch:
 	${RM} -rf ${WRKSRC}/GRubik.app/ix86
 	${REINPLACE_CMD} -e 's|^//|# //|' \

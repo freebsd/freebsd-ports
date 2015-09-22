@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Handle and create CouchDB views in Perl
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-Data-Dump-Streamer>=0:${PORTSDIR}/devel/p5-Data-Dump-Streamer \
 		p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS \
 		p5-PadWalker>=0:${PORTSDIR}/devel/p5-PadWalker \
@@ -18,6 +21,7 @@ BUILD_DEPENDS=	p5-Data-Dump-Streamer>=0:${PORTSDIR}/devel/p5-Data-Dump-Streamer 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

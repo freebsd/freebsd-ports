@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lives
-PORTVERSION=	2.4.1
-PORTREVISION=	1
+PORTVERSION=	2.4.2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/ 
 
@@ -96,11 +95,14 @@ post-patch:
 	@${REINPLACE_CMD} '/selectRandom/d' \
 		${WRKSRC}/lives-plugins/weed-plugins/projectM.cpp
 
+pre-build:
+.if ${PORT_OPTIONS:MNLS}
+	@cd ${WRKSRC}/po && ${DO_MAKE_BUILD} update-po
+.endif
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOC_FILES:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-	(cd ${STAGEDIR}${PREFIX}/bin && ${RM} lives && ${LN} -s lives-exe lives)
-
 .if ${PORT_OPTIONS:MDOXYGEN}
 	@(cd ${STAGEDIR}${PREFIX} && ${FIND} ${DOCSDIR:S|${PREFIX}/||}/html \
 		! -type d >> ${TMPPLIST})

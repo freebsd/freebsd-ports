@@ -704,7 +704,7 @@ CONFIGURE_ARGS+=--without-http_rewrite_module \
 .endif
 
 .if ${PORT_OPTIONS:MPASSENGER}
-PASSENGER_VERSION=	5.0.16
+PASSENGER_VERSION=	5.0.18
 MASTER_SITES+=	http://s3.amazonaws.com/phusion-passenger/releases/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
@@ -858,7 +858,7 @@ NGINX_OPENSSL=	yes
 USE_HTTP_SSL=	yes
 CONFIGURE_ARGS+=--with-http_v2_module
 USE_OPENSSL_PORT=	yes
-NGINX_HTTPV2_VERSION=	4
+NGINX_HTTPV2_VERSION=	6
 PATCH_SITES+=	http://nginx.org/patches/http2/:httpv2
 PATCHFILES+=	patch.http2-v${NGINX_HTTPV2_VERSION}_${PORTVERSION}.txt:httpv2
 PATCH_DIST_STRIP=	-p1

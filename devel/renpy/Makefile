@@ -18,7 +18,6 @@ LICENSE_PERMS_DejaVu=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game_sdl2>0:${PORTSDIR}/devel/py-game_sdl2 \
 		cython:${PORTSDIR}/lang/cython
 LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi \
-		libGLEW.so:${PORTSDIR}/graphics/glew \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
 		libfreetype.so:${PORTSDIR}/print/freetype2
@@ -28,6 +27,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game_sdl2>=6.99.6:${PORTSDIR}/devel/py-game_
 PORTSCOUT=	site:http://www.renpy.org/dl/release/
 
 USES=		python:2.7 shebangfix tar:bz2
+USE_GL=		glew
 USE_PYTHON=	autoplist distutils
 USE_SDL=	sdl2
 EXCLUDE=	gen 'module/*.py[co]' 'renpy/*.py[co]'

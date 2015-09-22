@@ -57,6 +57,4 @@ post-install-DOCS-on:
 
 TEST_USES=	perl5
 
-BROKEN_powerpc=		Does not compile on powerpc
-
 .include <bsd.port.mk>

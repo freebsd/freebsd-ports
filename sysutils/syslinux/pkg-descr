@@ -1,4 +1,4 @@
-The syslinux program installs a linux bootloader on a FAT-formatted
+The syslinux program installs a Linux bootloader on a FAT-formatted
 filesystem or disk image.
 
 This FreeBSD port can additionally operate on plain files containing

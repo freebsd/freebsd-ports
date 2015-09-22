@@ -1,0 +1,30 @@
+# Created by: Matthew Seaman <matthew@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	Log-Syslog-Fast
+PORTVERSION=	0.65
+CATEGORIES=	sysutils perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	matthew@FreeBSD.org
+COMMENT=	Send syslog messages over TCP, UDP, or UNIX sockets
+
+RUN_DEPENDS=	p5-IO-Socket-IP>=0.19:${PORTSDIR}/net/p5-IO-Socket-IP \
+		p5-Log-Syslog-Constants>-1.01:${PORTSDIR}/sysutils/p5-Log-Syslog-Constants
+BUILD_DEPENDS=	p5-IO-Socket-IP>=0.19:${PORTSDIR}/net/p5-IO-Socket-IP \
+		p5-Log-Syslog-Constants>-1.01:${PORTSDIR}/sysutils/p5-Log-Syslog-Constants
+
+USES=		perl5
+USE_PERL5=	configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Log/Syslog/Fast/Fast.so
+
+# Note: the regression tests for this module depend on receiving an
+# ICMP 'port unreachable' message for several of the UDP transmission
+# tests.  These won't return the expected output if you have sysctl
+# net.inet.udp.blackhole set to 1, and they'll quite likely be
+# confused by a some common firewall configurations.
+
+.include <bsd.port.mk>

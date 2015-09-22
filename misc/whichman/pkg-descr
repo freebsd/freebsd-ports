@@ -3,7 +3,7 @@ Approximate matching searching utilities to search for manpages and files.
 This package holds THREE little search utilities:
 
 * whichman -- search utility for man pages and it works
-  much like the well known unix command "where".
+  much like the well known Unix command "where".
 
 * ftff -- a fault tolerant file finder
 

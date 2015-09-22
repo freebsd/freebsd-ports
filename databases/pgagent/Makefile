@@ -3,7 +3,7 @@
 
 PORTNAME=	pgagent
 PORTVERSION=	3.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	PGSQL/pgadmin3/release/pgagent
 DISTNAME=	pgAgent-${PORTVERSION}-Source

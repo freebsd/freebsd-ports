@@ -3,7 +3,7 @@
 
 PORTNAME=	amule
 PORTVERSION=	10834
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://amule.sourceforge.net/tarballs/
 PKGNAMESUFFIX=	-devel

@@ -1,4 +1,4 @@
-cw is a non-intrusive real-time ANSI color wrapper for common unix-based
+cw is a non-intrusive real-time ANSI color wrapper for common Unix-based
 command.
 
 cw is designed to simulate the environment of the commands being

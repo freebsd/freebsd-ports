@@ -1,9 +1,8 @@
 #!/bin/sh
 PDNSDB=/var/db/pdnsd
 
-mkdir -p ${PDNSDB}
-chown nobody ${PDNSDB}
-chmod 755 ${PDNSDB}
-touch ${PDNSDB}/pdnsd.cache
-chown nobody ${PDNSDB}/pdnsd.cache
-chmod 640 ${PDNSDB}/pdnsd.cache
+if [ "${2}" = "POST-INSTALL" ] ; then
+	touch ${PDNSDB}/pdnsd.cache
+	chown nobody ${PDNSDB}/pdnsd.cache
+	chmod 640 ${PDNSDB}/pdnsd.cache
+fi

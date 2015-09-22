@@ -3,7 +3,7 @@
 
 PORTNAME=	flacon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.1
+DISTVERSION=	1.2.0
 CATEGORIES=	audio
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -15,9 +15,19 @@ LIB_DEPENDS=	libuchardet.so:${PORTSDIR}/textproc/uchardet
 
 USE_GITHUB=	yes
 
-USES=		cmake pkgconfig
-USE_QT4=	gui network \
-		linguisttools_build moc_build qmake_build rcc_build uic_build
-INSTALLS_ICONS=	yes
+USES=		cmake desktop-file-utils pkgconfig
+
+OPTIONS_DEFINE=	QT5
+QT5_DESC=	Build against Qt 5 instead of Qt 4
+
+QT5_CMAKE_ARGS=	-DUSE_QT5:BOOL=ON
+# :ts, would be handy here but is not available in fmake(1)
+QT5_USE=	QT5=${_QT5_DEPS},${_QT5_BDEPS:C/,/_build&/g:%=_build}
+QT5_USE_OFF=	QT4=${_QT4_DEPS},${_QT4_BDEPS:C/,/_build&/g:%=_build}
+
+_QT4_DEPS=	gui,network
+_QT4_BDEPS=	linguisttools,moc,qmake,rcc,uic
+_QT5_DEPS=	gui,network,widgets
+_QT5_BDEPS=	qmake,buildtools,linguisttools
 
 .include <bsd.port.mk>

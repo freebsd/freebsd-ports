@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	v4l_compat>=1.0.20110603:${PORTSDIR}/multimedia/v4l_compat
 RUN_DEPENDS=	v4l_compat>=1.0.20110603:${PORTSDIR}/multimedia/v4l_compat
 
-USES=		gmake libtool pathfix pkgconfig python:build tar:xz
+USES=		gmake libtool pathfix python:build tar:xz
 EXTRACT_AFTER_ARGS=	--exclude include # v4l_compat
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_DOXYGEN=""

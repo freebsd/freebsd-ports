@@ -38,8 +38,6 @@ OPTIONS_DEFAULT=	ANIMATION
 ANIMATION_DESC=	Enable animation support
 ANIMATION_CONFIGURE_ENABLE=	animation
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${FIND} ${WRKDIR} -name 'gtkrc' -exec \
 	    ${REINPLACE_CMD} -e 's!^include "apps/nautilus\.rc"!#&!' {} +
@@ -54,15 +52,15 @@ post-install:
 .endfor
 	${FIND} ${STAGEDIR}${DATADIR} -type d -exec ${CHMOD} 755 {} +
 	${FIND} ${STAGEDIR}${DATADIR} -type f -exec ${CHMOD} ${SHAREMODE} {} +
-.if ${PORT_OPTIONS:MEXAMPLES}
+
+post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for i in ${EXAMPLES}
 	${INSTALL_DATA} ${WRKDIR}/$i ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-.endif
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

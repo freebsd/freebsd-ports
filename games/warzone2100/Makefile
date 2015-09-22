@@ -17,7 +17,6 @@ LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libtheora.so:${PORTSDIR}/multimedia/libtheora \
-		libGLEW.so:${PORTSDIR}/graphics/glew \
 		libfribidi.so:${PORTSDIR}/converters/fribidi \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
@@ -25,7 +24,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-font
 
 USES=		tar:xz bison gmake openal:al pkgconfig compiler:c++11-lang # actually, old gcc fails on unknown -W flag
 GNU_CONFIGURE=	yes
-USE_GL=		yes
+USE_GL=		glew glu
 USE_SDL=	sdl
 USE_QT4=	corelib network script gui moc_build
 QT_NONSTANDARD=	yes

@@ -10,6 +10,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Gem for Flowdock API
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-httparty>=0.7:${PORTSDIR}/www/rubygem-httparty \
 		rubygem-multi_json>=0:${PORTSDIR}/devel/rubygem-multi_json

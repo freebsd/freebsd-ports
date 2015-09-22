@@ -15,17 +15,17 @@ COMMENT=	Realtime strategy game inspired by Settlers II
 LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libGLEW.so:${PORTSDIR}/graphics/glew \
-		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
-USES=		cmake:outsource compiler:c++11-lib gettext lua:51 tar:bzip2 python:build
+USES=		cmake:outsource compiler:c++11-lib execinfo gettext \
+		lua:51 tar:bzip2 python:build
 CMAKE_ARGS=	-DWL_INSTALL_PREFIX="${PREFIX}" \
 		-DWL_INSTALL_DATADIR="share/widelands" \
 		-DWL_INSTALL_BINDIR="bin" \
 		-DWL_VERSION="${DISTVERSION}" \
 		-DWL_COMPILERFLAG_OPTIMIZATIONS=""
+USE_GL=		glew
 USE_SDL=	sdl mixer image net ttf gfx
 
 PLIST_FILES=	bin/widelands

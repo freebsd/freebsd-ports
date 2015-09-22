@@ -11,6 +11,8 @@ MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php?&format=fil
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Unicode font supporting all the Myanmar characters
 
+LICENSE=	OFL11
+
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}
 NO_BUILD=	yes
 USES=		fonts zip
