@@ -3,6 +3,7 @@
 PORTNAME=	luarocks
 PORTVERSION=	2.2.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
@@ -50,7 +51,8 @@ SVN_DESC=		Subversion support
 SVN_RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion
 
 LUAJIT_DESC=		Use LuaJIT instead of Lua
-LUAJIT_LIB_DEPENDS=	libluajit-${LUA_VER}.so:${PORTSDIR}/lang/luajit
+LUAJIT_BUILD_DEPENDS=	luajit:${PORTSDIR}/lang/luajit
+LUAJIT_RUN_DEPENDS=	luajit:${PORTSDIR}/lang/luajit
 LUAJIT_CONFIGURE_ON=	--lua-suffix=jit
 LUAJIT_PLIST_SUB=	LUA_VER=${LUA_VER} \
 			LUA_MODSHAREDIR=share/lua/${LUA_VER}
