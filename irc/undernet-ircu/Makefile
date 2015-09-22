@@ -28,7 +28,7 @@ PLIST_FILES=	bin/undernet-convert-conf \
 
 CONFIGURE_ARGS+=	--with-dpath=${PREFIX}/etc/ --with-symlink=no
 
-OPTIONS_DEFINE=	DOCS EXAMPLES IPV6 POLL DEBUG ASSERTS PEDANTIC WARNINGS \
+OPTIONS_DEFINE=	DOCS IPV6 POLL DEBUG ASSERTS PEDANTIC WARNINGS \
 		INLINES DEVPOLL KQUEUE EPOLL LEAKDETECT
 OPTIONS_DEFAULT=ASSERTS INLINES DEVPOLL KQUEUE EPOLL
 POLL_DESC=	Force poll to be used even if not a sys call
@@ -57,24 +57,16 @@ LEAKDETECT_CONFIGURE_WITH=	leak-detect
 CONFIGURE_ARGS+=	--enable-profile
 .endif
 
-.include <bsd.port.options.mk>
-
-# always disable profile support on 8.x
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900000
-CONFIGURE_ARGS:=	${CONFIGURE_ARGS:N--enable-profile}
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ircd/ircd ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/ircd/convert-conf \
 		${STAGEDIR}${PREFIX}/bin/undernet-convert-conf
 	${INSTALL_PROGRAM} ${WRKSRC}/ircd/umkpasswd \
 		${STAGEDIR}${PREFIX}/bin/undernet-umkpasswd
-.if ${PORT_OPTIONS:MEXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/doc/example.conf \
 		${STAGEDIR}${PREFIX}/etc/ircd.conf.sample
-.endif
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/api ${STAGEDIR}${DOCSDIR}/history
 	(cd ${WRKSRC} && ${INSTALL_DATA} ChangeLog ChangeLog.11 INSTALL \
 		INSTALL_FR README RELEASE.NOTES ${STAGEDIR}${DOCSDIR})
@@ -92,6 +84,5 @@ do-install:
 	(cd ${WRKSRC}/doc/history && ${INSTALL_DATA} 2.4.notes README-2.6 \
 		2.7-New ChangeLog.07 ChangeLog.10 Manual README.patches \
 		history.pre24 overview.u2.9 ${STAGEDIR}${DOCSDIR}/history)
-.endif
 
 .include <bsd.port.mk>
