@@ -32,7 +32,7 @@ BUILD_DEPENDS+=	makedepend:${PORTSDIR}/devel/makedepend
 LIB_DEPENDS+=	libdevq.so:${PORTSDIR}/devel/libdevq
 
 USES+=		compiler:c++11-lib gettext-tools gmake libtool \
-		pathfix pkgconfig shebangfix tar:xz
+		pathfix pkgconfig python:2,build shebangfix tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-isystem${LOCALBASE}/include
