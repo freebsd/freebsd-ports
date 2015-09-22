@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libssh2
-PORTVERSION=	1.4.3
-PORTREVISION=	6
+PORTVERSION=	1.6.0
+PORTREVISION=	0
 PORTEPOCH=	2
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.libssh2.org/download/ \
