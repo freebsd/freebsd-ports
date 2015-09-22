@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.9.4
+PORTVERSION=	1.9.5
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	LOCAL/osa
@@ -51,7 +51,6 @@ OPTIONS_DEFINE=	\
 	MAIL_POP3 \
 	MAIL_SMTP \
 	MAIL_SSL \
-	SPDY \
 	HTTPV2 \
 	STREAM \
 	STREAM_SSL \
@@ -147,7 +146,6 @@ MAIL_IMAP_DESC=			Enable IMAP4 proxy module
 MAIL_POP3_DESC=			Enable POP3 proxy module
 MAIL_SMTP_DESC=			Enable SMTP proxy module
 MAIL_SSL_DESC=			Enable mail_ssl module
-SPDY_DESC=			Enable SPDY protocol support (SSL req.)
 HTTPV2_DESC=			Enable HTTP/2 protocol support (SSL req.)
 STREAM_DESC=			Enable stream module
 STREAM_SSL_DESC=		Enable stream_ssl module (SSL req.)
@@ -843,25 +841,11 @@ GH_TAGNAME+=	v${NGINX_XSS_VERSION}:xss
 CONFIGURE_ARGS+=--add-module=${WRKSRC_xss}
 .endif
 
-.if ${PORT_OPTIONS:MSPDY} && ${PORT_OPTIONS:MHTTPV2}
-IGNORE=		current HTTP/2 implementation replaces SPDY module support, please disable SPDY
-.endif
-
-.if ${PORT_OPTIONS:MSPDY}
-NGINX_OPENSSL=	yes
-USE_HTTP_SSL=	yes
-CONFIGURE_ARGS+=--with-http_spdy_module
-.endif
-
 .if ${PORT_OPTIONS:MHTTPV2}
 NGINX_OPENSSL=	yes
 USE_HTTP_SSL=	yes
 CONFIGURE_ARGS+=--with-http_v2_module
 USE_OPENSSL_PORT=	yes
-NGINX_HTTPV2_VERSION=	6
-PATCH_SITES+=	http://nginx.org/patches/http2/:httpv2
-PATCHFILES+=	patch.http2-v${NGINX_HTTPV2_VERSION}_${PORTVERSION}.txt:httpv2
-PATCH_DIST_STRIP=	-p1
 .endif
 
 .if ${PORT_OPTIONS:MSTREAM}
@@ -943,11 +927,6 @@ GROUPS?=${WWWGRP}
 
 .if defined(NGINX_OPENSSL)
 USE_OPENSSL=	yes
-.if ${PORT_OPTIONS:MSPDY}
-.if ${OSVERSION} < 1000028
-WITH_OPENSSL_PORT=	yes
-.endif
-.endif
 .endif
 
 pre-everything::
