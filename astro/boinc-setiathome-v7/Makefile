@@ -3,7 +3,7 @@
 
 PORTNAME=	boinc-setiathome-v7
 PORTVERSION=	7.00
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	astro
 MASTER_SITES=	LOCAL/rene
 DISTNAME=	setiathome-svn-1924 # modified archive, see leftout in top directory
@@ -30,7 +30,7 @@ CFLAGS+=	-march=${CPUTYPE}
 
 # these must match settings in ${PORTSDIR}/net/boinc-client/Makefile
 BOINC_CLIENT_USER?=	boinc
-BOINC_CLIENT_GROUP?=	nobody
+BOINC_CLIENT_GROUP?=	boinc
 BOINC_CLIENT_HOME?=	/var/db/boinc
 
 OPTIONS_DEFINE=	X11
