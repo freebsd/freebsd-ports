@@ -63,7 +63,7 @@ Notes:
     <affects>
       <package>
 	<name>libssh2</name>
-	<range><lt>1.5.0</lt></range>
+	<range><lt>1.5.0,2</lt></range>
       </package>
     </affects>
     <description>
@@ -85,6 +85,7 @@ Notes:
     <dates>
       <discovery>2015-01-25</discovery>
       <entry>2015-09-22</entry>
+      <modified>2015-09-22</modified>
     </dates>
   </vuln>
 
