@@ -627,6 +627,7 @@
     SUBDIR += p5-Lchown
     SUBDIR += p5-Linux-Cpuinfo
     SUBDIR += p5-Log-Syslog-Constants
+    SUBDIR += p5-Log-Syslog-Fast
     SUBDIR += p5-MogileFS-Client
     SUBDIR += p5-MogileFS-Network
     SUBDIR += p5-MogileFS-Server
