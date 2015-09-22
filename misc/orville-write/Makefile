@@ -20,22 +20,6 @@ PLIST_FILES=	"@(,,4711) bin/amin" "@(,,4711) bin/helpers" "@(,,4711) bin/huh" \
 
 MAKE_JOBS_UNSAFE=yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 900006
-EXTRA_PATCHES=	${PATCHDIR}/utmpx-wrttmp.h \
-		${PATCHDIR}/utmpx-wrt_him.c \
-		${PATCHDIR}/utmpx-wrt_me.c \
-		${PATCHDIR}/utmpx-lib_common.c \
-		${PATCHDIR}/utmpx-lib_common.h \
-		${PATCHDIR}/utmpx-getutent.h \
-		${PATCHDIR}/utmpx-getutent.c \
-		${PATCHDIR}/utmpx-mesg.c \
-		${PATCHDIR}/utmpx-amin.c \
-		${PATCHDIR}/utmpx-huh.c \
-		${PATCHDIR}/utmpx-helpers.c
-.endif
-
 do-install:
 .for i in amin helpers huh mesg
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
@@ -56,4 +40,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${MANPREFIX}/man/man1
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
