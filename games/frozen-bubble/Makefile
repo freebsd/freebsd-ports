@@ -22,10 +22,15 @@ RUN_DEPENDS=	p5-SDL>=2.511:${PORTSDIR}/devel/p5-SDL \
 		p5-Compress-Bzip2>=0:${PORTSDIR}/archivers/p5-Compress-Bzip2 \
 		p5-Alien-SDL>=1.413:${PORTSDIR}/devel/p5-Alien-SDL
 
-USES=		perl5 pkgconfig tar:bzip2
+USES=		compiler:features perl5 pkgconfig tar:bzip2
 USE_PERL5=	modbuild
 USE_SDL=	mixer pango sdl ttf
+
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE:Mclang}
 CFLAGS+=	-Qunused-arguments
+.endif
 
 DESKTOP_ENTRIES=	"Frozen Bubble" "" \
 			"${PREFIX}/share/pixmaps/frozen-bubble.png" \
@@ -35,4 +40,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/share/icons/frozen-bubble-icon-64x64.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/frozen-bubble.png
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
