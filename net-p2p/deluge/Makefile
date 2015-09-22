@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	deluge
-PORTVERSION=	1.3.11
-PORTREVISION=	2
+PORTVERSION=	1.3.12
 PORTEPOCH=	1
 CATEGORIES=	net-p2p python
 MASTER_SITES=	http://download.deluge-torrent.org/source/
@@ -22,10 +21,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>=0.18:${PORTSDIR}/devel/py-xdg \
 USE_RC_SUBR=	deluged deluge_web
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
-USES=		gettext tar:lzma python:2 twisted:run,web
+NO_ARCH=	yes
+USES=		gettext python:2 tar:lzma twisted:run,web
 USE_PYTHON=	autoplist distutils
 USE_OPENSSL=	yes
-WANT_GNOME=	yes
 
 OPTIONS_DEFINE=	GTK2
 OPTIONS_DEFAULT=GTK2
