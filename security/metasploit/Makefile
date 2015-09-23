@@ -3,7 +3,7 @@
 
 PORTNAME=	metasploit
 PORTVERSION=	4.11.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -39,7 +39,19 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	rapid7
 GH_PROJECT=	metasploit-framework
 
-USES=		ncurses:port
+USES=		ncurses:port shebangfix
+SHEBANG_FILES=	data/cpuinfo/build.sh \
+		data/john/run.*/*.rb \
+		data/john/run.*/*.pl \
+		data/templates/src/pe/dll/build.sh \
+		external/ruby-kissfft/tests/test_kissfft.rb \
+		external/source/exploits/*/*.sh \
+		external/source/metsvc/test.rb \
+		external/source/msfJavaToolkit/*.sh \
+		external/source/msfJavaToolkit/*.rb \
+		external/source/pxesploit/regeditor/compile.sh \
+		external/source/shellcode/windows/build.sh \
+		lib/net/ssh/test.rb
 USE_RUBY=	yes
 
 OPTIONS_DEFINE=	DB
