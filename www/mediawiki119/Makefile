@@ -3,6 +3,7 @@
 
 PORTNAME=	mediawiki
 PORTVERSION=	1.19.24
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://releases.wikimedia.org/mediawiki/${PORTVERSION:R}/
 PKGNAMESUFFIX=	119
@@ -17,6 +18,17 @@ CONFLICTS=	mediawiki12[3-5]-[0-9]*
 DEPRECATED=		Please upgrade to mediawiki-1.25
 EXPIRATION_DATE=	2015-11-27
 
+USES=		shebangfix
+SHEBANG_FILES=	bin/*.sh \
+		extensions/WikiEditor/modules/images/toolbar/png24/generate.sh \
+		maintenance/cssjanus/*.py \
+		maintenance/dev/*.sh \
+		maintenance/hiphop/make \
+		maintenance/hiphop/run-server \
+		maintenance/storage/make-blobs
+SHEBANG_LANG=	hphpi
+hphpi_OLD_CMD=	/usr/bin/hphpi
+hphpi_CMD=	${LOCALBASE}/bin/hphpi # not installed by anything yet
 USE_PHP=	ctype iconv mbstring pcre session xml zlib readline dom
 WANT_PHP_WEB=	yes
 MEDIAWIKIDIR?=	www/mediawiki
