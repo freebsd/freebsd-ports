@@ -10304,16 +10304,19 @@ Notes:
     <topic>Ruby -- OpenSSL Hostname Verification Vulnerability</topic>
     <affects>
       <package>
+	<name>ruby</name>
 	<name>ruby20</name>
-	<range><lt>2.0.0.645,1</lt></range>
+	<range><ge>2.0,1</ge><lt>2.0.0.645,1</lt></range>
       </package>
       <package>
 	<name>ruby</name>
-	<range><lt>2.1.6,1</lt></range>
+	<name>ruby21</name>
+	<range><ge>2.1,1</ge><lt>2.1.6,1</lt></range>
       </package>
       <package>
+	<name>ruby</name>
 	<name>ruby22</name>
-	<range><lt>2.2.2,1</lt></range>
+	<range><ge>2.2,1</ge><lt>2.2.2,1</lt></range>
       </package>
     </affects>
     <description>
@@ -10337,6 +10340,7 @@ Notes:
     <dates>
       <discovery>2015-04-13</discovery>
       <entry>2015-04-14</entry>
+      <modified>2015-09-23</modified>
     </dates>
   </vuln>
 
