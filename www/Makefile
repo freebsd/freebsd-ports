@@ -347,7 +347,6 @@
     SUBDIR += imgsizer
     SUBDIR += impresscms
     SUBDIR += interchange
-    SUBDIR += iojs
     SUBDIR += itop
     SUBDIR += iwebcal
     SUBDIR += jawstats
