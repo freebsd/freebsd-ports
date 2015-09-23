@@ -1,5 +1,5 @@
---- tools/depends/target/ffmpeg/autobuild.sh.orig	2014-12-23 00:11:35.000000000 +0100
-+++ tools/depends/target/ffmpeg/autobuild.sh	2014-12-24 16:22:20.000000000 +0100
+--- tools/depends/target/ffmpeg/autobuild.sh.orig	2015-03-31 16:37:07 UTC
++++ tools/depends/target/ffmpeg/autobuild.sh
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
@@ -65,17 +65,17 @@
  
  CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" \
  ./configure --prefix=$FFMPEG_PREFIX \
-@@ -157,11 +166,11 @@
- 	--enable-zlib \
+@@ -161,11 +170,11 @@
+ 	--disable-mipsdspr2 \
          ${FLAGS}
  
 -make -j ${BUILDTHREADS} 
 +gmake -j ${BUILDTHREADS} 
  if [ $? -eq 0 ]
  then
-   [ ${SUDO} ] && echo "Root priviledges are required to install to ${FFMPEG_PREFIX}"
+   [ ${SUDO} ] && echo "Root privileges are required to install to ${FFMPEG_PREFIX}"
 -  ${SUDO} make install && echo "$VERSION" > ../.ffmpeg-installed
 +  ${SUDO} gmake install && echo "$VERSION" > ../.ffmpeg-installed
  else
-   echo "ERROR: building ffmpeg failed"
+   echo "ERROR: Building ffmpeg failed"
    exit 1
