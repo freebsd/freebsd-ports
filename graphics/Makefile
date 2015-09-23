@@ -1030,6 +1030,7 @@
     SUBDIR += volpack
     SUBDIR += vp
     SUBDIR += waffle
+    SUBDIR += waifu2x-converter-cpp
     SUBDIR += webp
     SUBDIR += whirlgif
     SUBDIR += white_dune
