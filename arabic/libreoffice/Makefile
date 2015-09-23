@@ -1,7 +1,8 @@
 # $FreeBSD$
 
+CATEGORIES=	arabic
 LO_I18N=	ar
-CATEGORIES=	arabic editors
 
-.include "${.CURDIR}/../../editors/libreoffice/Makefile.common"
+.include "${.CURDIR}/../../editors/libreoffice/Makefile.i18n"
+
 .include <bsd.port.mk>

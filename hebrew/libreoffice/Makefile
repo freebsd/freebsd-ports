@@ -1,9 +1,9 @@
 # $FreeBSD$
 
+CATEGORIES=	hebrew
 LO_I18N=	he
 LO_HAS_HELPPACK=	yes
-CATEGORIES=	hebrew editors
 
-.include "${.CURDIR}/../../editors/libreoffice/Makefile.common"
+.include "${.CURDIR}/../../editors/libreoffice/Makefile.i18n"
 
 .include <bsd.port.mk>
