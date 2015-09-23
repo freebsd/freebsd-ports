@@ -3,7 +3,12 @@
 PORTNAME=	waifu2x-converter-cpp
 DISTVERSION=	1.0.0-237
 DISTVERSIONSUFFIX=	-gca65c93
+PORTREVISION=	1
 CATEGORIES=	graphics
+MASTER_SITES=	https://aur.archlinux.org/cgit/aur.git/plain/:manpage
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${PORTNAME:C/-.*//}.1.gz?h=${PORTNAME:C/-.*//}-git\&id=5c150a5:manpage
+EXTRACT_ONLY=	${DISTFILES:N*\:manpage:C/:.*//}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Scale and denoise images using convolutional neural networks
@@ -21,13 +26,16 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	tanakamura
 
 USES=		cmake compiler:c++11-lib dos2unix
+DOS2UNIX_GLOB=	*.cpp *.hpp
 CMAKE_ARGS=	-DOPENCV_PREFIX="${LOCALBASE}" \
-		-DOpenCL_LIBRARY="${LOCALBASE}/lib/libOpenCL.so"
+		-DOpenCL_LIBRARY="${LOCALBASE}/lib/libOpenCL.so" \
+		-DCMAKE_SKIP_RPATH=on # XXX use cmake install() instead
 CFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH_TR1 \
 		-D_DECLARE_C99_LDBL_MATH # XXX ports/193528
 LDFLAGS+=	-Wl,--as-needed # avoid overlinking (opencv deps)
 USE_LDCONFIG=	yes
 PLIST_FILES=	bin/${PORTNAME} \
+		man/man1/${PORTNAME}.1.gz \
 		include/w2xconv.h \
 		lib/libw2xc.so
 PORTDATA=	models_rgb
@@ -38,20 +46,30 @@ OPTIONS_DEFAULT=SIMD
 
 SIMD_CMAKE_OFF=	-DX86OPT=off
 
+post-extract:
+	@${GZCAT} ${_DISTDIR}/${DISTFILES:M*\:manpage:C/:.*//} \
+		>${WRKDIR}/${PORTNAME}.1
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,-O2,,; /SYMBOL/s,-s,,' \
 		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e '/"models/s,","${DATADIR}/,' \
+		-e '/CmdLine/s,${PORTVERSION:R},${DISTVERSIONFULL},' \
 		${WRKSRC}/src/main.cpp
+	@${REINPLACE_CMD} -e 's,${PORTNAME:C/-.*//},${PORTNAME},' \
+		-e 's,\(version\) [^"]*,\1 ${DISTVERSIONFULL},' \
+		${WRKDIR}/${PORTNAME}.1
 
 pre-install:
 # XXX Fails on 9.x with error code 10
-	-(cd ${WRKSRC} && ./runtest)
+	-(cd ${WRKSRC} && LD_LIBRARY_PATH=. ./runtest)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKDIR}/${PORTNAME}.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1
 	${INSTALL_LIB} ${WRKSRC}/libw2xc.so ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/src/w2xconv.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} -p ${WRKSRC}/src/w2xconv.h ${STAGEDIR}${PREFIX}/include
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
 		"${PORTDATA}" ${STAGEDIR}${DATADIR})
 
