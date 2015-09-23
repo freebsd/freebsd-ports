@@ -2,10 +2,13 @@ bin/kodi
 bin/kodi-standalone
 bin/xbmc
 bin/xbmc-standalone
+include/kodi/AEChannelData.h
 include/kodi/DVDDemuxPacket.h
+include/kodi/kodi_audiodec_dll.h
+include/kodi/kodi_audiodec_types.h
+include/kodi/libKODI_guilib.h
 include/kodi/libXBMC_addon.h
 include/kodi/libXBMC_codec.h
-include/kodi/libXBMC_gui.h
 include/kodi/libXBMC_pvr.h
 include/kodi/xbmc_addon_cpp_dll.h
 include/kodi/xbmc_addon_dll.h
@@ -23,9 +26,9 @@ include/kodi/xbmc_vis_dll.h
 include/kodi/xbmc_vis_types.h
 include/xbmc
 lib/kodi/addon-helpers.cmake
+lib/kodi/addons/library.kodi.guilib/libKODI_guilib-%%ARCH%%-freebsd.so
 lib/kodi/addons/library.xbmc.addon/libXBMC_addon-%%ARCH%%-freebsd.so
 lib/kodi/addons/library.xbmc.codec/libXBMC_codec-%%ARCH%%-freebsd.so
-lib/kodi/addons/library.xbmc.gui/libXBMC_gui-%%ARCH%%-freebsd.so
 lib/kodi/addons/library.xbmc.pvr/libXBMC_pvr-%%ARCH%%-freebsd.so
 lib/kodi/addons/screensaver.rsxs.euphoria/Euphoria.xbs
 lib/kodi/addons/screensaver.rsxs.plasma/Plasma.xbs
@@ -35,22 +38,18 @@ lib/kodi/addons/visualization.glspectrum/opengl_spectrum.vis
 lib/kodi/addons/visualization.projectm/projectM.vis
 lib/kodi/addons/visualization.waveform/Waveform.vis
 lib/kodi/addoptions.cmake
+lib/kodi/check_target_platform.cmake
+lib/kodi/handle-depends.cmake
 lib/kodi/kodi-config.cmake
 lib/kodi/kodi-xrandr
 lib/kodi/kodi.bin
 lib/kodi/prepare-env.cmake
 lib/kodi/system/ImageLib-%%ARCH%%-freebsd.so
 lib/kodi/system/hdhomerun-%%ARCH%%-freebsd.so
-%%MYSQL%%lib/kodi/system/libcmyth-%%ARCH%%-freebsd.so
 lib/kodi/system/libcpluff-%%ARCH%%-freebsd.so
 lib/kodi/system/libexif-%%ARCH%%-freebsd.so
 lib/kodi/system/players/dvdplayer/libdvdcss-%%ARCH%%-freebsd.so
 lib/kodi/system/players/dvdplayer/libdvdnav-%%ARCH%%-freebsd.so
-lib/kodi/system/players/paplayer/libsidplay2-%%ARCH%%-freebsd.so
-lib/kodi/system/players/paplayer/nosefart-%%ARCH%%-freebsd.so
-lib/kodi/system/players/paplayer/stsoundlibrary-%%ARCH%%-freebsd.so
-lib/kodi/system/players/paplayer/timidity-%%ARCH%%-freebsd.so
-lib/kodi/system/players/paplayer/vgmstream-%%ARCH%%-freebsd.so
 lib/kodi/xbmc-config.cmake
 lib/xbmc
 man/man1/kodi.1.gz
@@ -68,7 +67,6 @@ share/icons/hicolor/256x256/apps/kodi.png
 share/icons/hicolor/32x32/apps/kodi.png
 share/icons/hicolor/48x48/apps/kodi.png
 share/icons/hicolor/64x64/apps/kodi.png
-%%DATADIR%%/FEH.py
 %%DATADIR%%/addons/audioencoder.xbmc.builtin.aac/addon.xml
 %%DATADIR%%/addons/audioencoder.xbmc.builtin.aac/icon.png
 %%DATADIR%%/addons/audioencoder.xbmc.builtin.aac/resources/language/English/strings.po
@@ -77,11 +75,18 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/addons/audioencoder.xbmc.builtin.wma/icon.png
 %%DATADIR%%/addons/audioencoder.xbmc.builtin.wma/resources/language/English/strings.po
 %%DATADIR%%/addons/audioencoder.xbmc.builtin.wma/resources/settings.xml
+%%DATADIR%%/addons/kodi.audiodecoder/addon.xml
+%%DATADIR%%/addons/kodi.guilib/addon.xml
+%%DATADIR%%/addons/kodi.guilib/addon.xml.in
+%%DATADIR%%/addons/kodi.resource/addon.xml
+%%DATADIR%%/addons/kodi.resource/icon.png
+%%DATADIR%%/addons/kodi.resource/language.xsd
+%%DATADIR%%/addons/kodi.resource/uisounds.xsd
+%%DATADIR%%/addons/library.kodi.guilib/libKODI_guilib.h
 %%DATADIR%%/addons/library.xbmc.addon/dlfcn-win32.cpp
 %%DATADIR%%/addons/library.xbmc.addon/dlfcn-win32.h
 %%DATADIR%%/addons/library.xbmc.addon/libXBMC_addon.h
 %%DATADIR%%/addons/library.xbmc.codec/libXBMC_codec.h
-%%DATADIR%%/addons/library.xbmc.gui/libXBMC_gui.h
 %%DATADIR%%/addons/library.xbmc.pvr/libXBMC_pvr.h
 %%DATADIR%%/addons/metadata.album.universal/addon.xml
 %%DATADIR%%/addons/metadata.album.universal/albumuniversal.xml
@@ -204,15 +209,9 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/addons/metadata.common.allmusic.com/addon.xml
 %%DATADIR%%/addons/metadata.common.allmusic.com/allmusic.xml
 %%DATADIR%%/addons/metadata.common.allmusic.com/icon.png
-%%DATADIR%%/addons/metadata.common.amazon.de/addon.xml
-%%DATADIR%%/addons/metadata.common.amazon.de/amazonde.xml
-%%DATADIR%%/addons/metadata.common.amazon.de/icon.png
 %%DATADIR%%/addons/metadata.common.fanart.tv/addon.xml
 %%DATADIR%%/addons/metadata.common.fanart.tv/fanarttv.xml
 %%DATADIR%%/addons/metadata.common.fanart.tv/icon.png
-%%DATADIR%%/addons/metadata.common.hdtrailers.net/addon.xml
-%%DATADIR%%/addons/metadata.common.hdtrailers.net/hdtrailers.xml
-%%DATADIR%%/addons/metadata.common.hdtrailers.net/icon.png
 %%DATADIR%%/addons/metadata.common.htbackdrops.com/addon.xml
 %%DATADIR%%/addons/metadata.common.htbackdrops.com/htbackdrops.xml
 %%DATADIR%%/addons/metadata.common.htbackdrops.com/icon.png
@@ -426,6 +425,19 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/addons/metadata.tvdb.com/tvdb.xml
 %%DATADIR%%/addons/repository.xbmc.org/addon.xml
 %%DATADIR%%/addons/repository.xbmc.org/icon.png
+%%DATADIR%%/addons/resource.language.en_gb/addon.xml
+%%DATADIR%%/addons/resource.language.en_gb/icon.png
+%%DATADIR%%/addons/resource.language.en_gb/resources/langinfo.xml
+%%DATADIR%%/addons/resource.language.en_gb/resources/strings.po
+%%DATADIR%%/addons/resource.uisounds.confluence/addon.xml
+%%DATADIR%%/addons/resource.uisounds.confluence/icon.png
+%%DATADIR%%/addons/resource.uisounds.confluence/resources/back.wav
+%%DATADIR%%/addons/resource.uisounds.confluence/resources/click.wav
+%%DATADIR%%/addons/resource.uisounds.confluence/resources/cursor.wav
+%%DATADIR%%/addons/resource.uisounds.confluence/resources/notify.wav
+%%DATADIR%%/addons/resource.uisounds.confluence/resources/out.wav
+%%DATADIR%%/addons/resource.uisounds.confluence/resources/shutter.wav
+%%DATADIR%%/addons/resource.uisounds.confluence/resources/sounds.xml
 %%DATADIR%%/addons/screensaver.rsxs.euphoria/addon.xml
 %%DATADIR%%/addons/screensaver.rsxs.euphoria/icon.png
 %%DATADIR%%/addons/screensaver.rsxs.plasma/addon.xml
@@ -436,62 +448,64 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/addons/screensaver.xbmc.builtin.black/icon.png
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/addon.xml
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/icon.png
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Afrikaans/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Albanian/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Amharic/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Arabic/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Basque/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Belarusian/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Bulgarian/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Burmese/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Catalan/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Chinese (Simple)/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Chinese (Traditional)/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Croatian/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Czech/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Danish/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Dutch/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/English (Australia)/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/English (New Zealand)/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/English (US)/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/English/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Estonian/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Finnish/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/French (Canada)/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/French/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Galician/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/German/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Greek/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Hebrew/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Hindi (Devanagiri)/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Hungarian/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Icelandic/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Indonesian/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Italian/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Japanese/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Korean/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Latvian/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Lithuanian/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Macedonian/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Malay/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Norwegian/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Polish/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Portuguese (Brazil)/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Portuguese/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Romanian/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Russian/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Slovak/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Slovenian/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Spanish (Argentina)/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Spanish (Mexico)/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Spanish/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Swedish/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Tajik/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Thai/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Turkish/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Ukrainian/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Vietnamese/strings.po
-%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Welsh/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.af_za/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.am_et/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.ar_sa/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.be_by/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.bg_bg/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.ca_es/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.cs_cz/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.cy_gb/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.da_dk/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.de_de/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.el_gr/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.en_au/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.en_gb/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.en_nz/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.en_us/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.es_ar/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.es_es/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.es_mx/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.et_ee/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.eu_es/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.fa_ir/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.fi_fi/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.fr_ca/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.fr_fr/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.gl_es/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.he_il/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.hi_in/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.hr_hr/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.hu_hu/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.id_id/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.is_is/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.it_it/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.ja_jp/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.ko_kr/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.lt_lt/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.lv_lv/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.mk_mk/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.ms_my/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.my_mm/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.nb_no/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.nl_nl/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.pl_pl/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.pt_br/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.pt_pt/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.ro_ro/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.ru_ru/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.sk_sk/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.sl_si/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.sq_al/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.sr_rs/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.sv_se/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.tg_tj/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.th_th/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.tr_tr/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.uk_ua/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.vi_vn/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.zh_cn/strings.po
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/resource.language.zh_tw/strings.po
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/settings.xml
 %%DATADIR%%/addons/script.module.pil/addon.xml
 %%DATADIR%%/addons/service.xbmc.versioncheck/LICENSE.txt
@@ -512,6 +526,7 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Amharic/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Arabic/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Armenian/strings.po
+%%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Asturian/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Basque/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Belarusian/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Bosnian/strings.po
@@ -569,6 +584,7 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Spanish (Mexico)/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Spanish/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Swedish/strings.po
+%%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Tamil (India)/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Thai/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Turkish/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Ukrainian/strings.po
@@ -695,89 +711,85 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/addons/skin.confluence/build.bat
 %%DATADIR%%/addons/skin.confluence/changelog.txt
 %%DATADIR%%/addons/skin.confluence/colors/defaults.xml
-%%DATADIR%%/addons/skin.confluence/fonts/NOTICE.txt
+%%DATADIR%%/addons/skin.confluence/fonts/LICENCE.txt
 %%DATADIR%%/addons/skin.confluence/fonts/README.txt
 %%DATADIR%%/addons/skin.confluence/fonts/Roboto-Bold.ttf
 %%DATADIR%%/addons/skin.confluence/fonts/Roboto-Regular.ttf
 %%DATADIR%%/addons/skin.confluence/icon.png
-%%DATADIR%%/addons/skin.confluence/language/Afrikaans/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Albanian/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Amharic/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Arabic/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Armenian/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Azerbaijani/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Basque/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Belarusian/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Bosnian/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Bulgarian/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Burmese/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Catalan/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Chinese (Simple)/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Chinese (Traditional)/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Croatian/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Czech/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Danish/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Dutch/strings.po
-%%DATADIR%%/addons/skin.confluence/language/English (Australia)/strings.po
-%%DATADIR%%/addons/skin.confluence/language/English (New Zealand)/strings.po
-%%DATADIR%%/addons/skin.confluence/language/English (US)/strings.po
-%%DATADIR%%/addons/skin.confluence/language/English/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Esperanto/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Estonian/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Faroese/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Filipino/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Finnish/strings.po
-%%DATADIR%%/addons/skin.confluence/language/French (Canada)/strings.po
-%%DATADIR%%/addons/skin.confluence/language/French/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Galician/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Georgian/strings.po
-%%DATADIR%%/addons/skin.confluence/language/German/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Greek/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Hebrew/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Hindi (Devanagiri)/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Hungarian/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Icelandic/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Indonesian/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Italian/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Japanese/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Korean/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Latvian/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Lithuanian/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Macedonian/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Malay/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Malayalam/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Maltese/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Maori/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Mongolian (Mongolia)/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Norwegian/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Ossetic/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Persian (Iran)/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Persian/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Polish/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Portuguese (Brazil)/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Portuguese/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Romanian/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Romansh/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Russian/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Serbian (Cyrillic)/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Serbian/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Sinhala/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Slovak/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Slovenian/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Spanish (Argentina)/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Spanish (Mexico)/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Spanish/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Swedish/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Tajik/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Tamil (India)/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Tatar/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Telugu/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Thai/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Turkish/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Ukrainian/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Uzbek/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Vietnamese/strings.po
-%%DATADIR%%/addons/skin.confluence/language/Welsh/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.af_za/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.am_et/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.ar_sa/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.az_az/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.be_by/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.bg_bg/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.bs_ba/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.ca_es/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.cs_cz/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.cy_gb/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.da_dk/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.de_de/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.el_gr/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.en_au/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.en_gb/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.en_nz/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.en_us/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.eo/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.es_ar/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.es_es/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.es_mx/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.et_ee/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.eu_es/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.fa_af/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.fa_ir/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.fi_fi/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.fo_fo/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.fr_ca/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.fr_fr/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.gl_es/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.he_il/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.hi_in/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.hr_hr/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.hu_hu/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.hy_am/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.id_id/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.is_is/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.it_it/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.ja_jp/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.ko_kr/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.lt_lt/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.lv_lv/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.mi/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.mk_mk/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.ml_in/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.mn_mn/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.ms_my/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.mt_mt/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.my_mm/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.nb_no/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.nl_nl/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.pl_pl/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.pt_br/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.pt_pt/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.ro_ro/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.ru_ru/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.si_lk/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.sk_sk/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.sl_si/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.sq_al/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.sr_rs/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.sr_rs@latin/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.sv_se/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.szl/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.ta_in/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.te_in/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.tg_tj/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.th_th/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.tr_tr/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.uk_ua/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.uz_uz/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.vi_vn/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.zh_cn/strings.po
+%%DATADIR%%/addons/skin.confluence/language/resource.language.zh_tw/strings.po
 %%DATADIR%%/addons/skin.confluence/media/CalibrateBottomRight.png
 %%DATADIR%%/addons/skin.confluence/media/CalibratePixelRatio.png
 %%DATADIR%%/addons/skin.confluence/media/CalibrateSubtitles.png
@@ -796,9 +808,12 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultAddon.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultAddonAlbumInfo.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultAddonArtistInfo.png
+%%DATADIR%%/addons/skin.confluence/media/DefaultAddonAudioDecoder.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultAddonAudioEncoder.png
+%%DATADIR%%/addons/skin.confluence/media/DefaultAddonContextItem.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultAddonHelper.png
-%%DATADIR%%/addons/skin.confluence/media/DefaultAddonInfoLibrary.png
+%%DATADIR%%/addons/skin.confluence/media/DefaultAddonInfoProvider.png
+%%DATADIR%%/addons/skin.confluence/media/DefaultAddonLanguage.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultAddonLibrary.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultAddonLyrics.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultAddonMovieInfo.png
@@ -814,6 +829,7 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultAddonSkin.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultAddonSubtitles.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultAddonTvInfo.png
+%%DATADIR%%/addons/skin.confluence/media/DefaultAddonUISounds.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultAddonVideo.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultAddonVisualization.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultAddonWeather.png
@@ -852,9 +868,12 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultRecentlyAddedEpisodes.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultRecentlyAddedMovies.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultRecentlyAddedMusicVideos.png
+%%DATADIR%%/addons/skin.confluence/media/DefaultRemovableDisk.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultTVShows.png
+%%DATADIR%%/addons/skin.confluence/media/DefaultVCD.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultVideo.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultVideoCover.png
+%%DATADIR%%/addons/skin.confluence/media/DefaultVideoDeleted.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultVideoPlaylists.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultVideoPlugins.png
 %%DATADIR%%/addons/skin.confluence/media/DialogBack.png
@@ -1049,7 +1068,6 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/addons/skin.confluence/media/Subtitles/flags/zh.png
 %%DATADIR%%/addons/skin.confluence/media/Subtitles/icon_close_caption.png
 %%DATADIR%%/addons/skin.confluence/media/Subtitles/icon_sync.png
-%%DATADIR%%/addons/skin.confluence/media/Textures.xbt
 %%DATADIR%%/addons/skin.confluence/media/ThumbBG.png
 %%DATADIR%%/addons/skin.confluence/media/ThumbBorder.png
 %%DATADIR%%/addons/skin.confluence/media/ThumbShadow.png
@@ -1126,7 +1144,10 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/mp3.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/ogg.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/opus.png
+%%DATADIR%%/addons/skin.confluence/media/flagging/audio/pcm.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/pcm_bluray.png
+%%DATADIR%%/addons/skin.confluence/media/flagging/audio/pcm_s16le.png
+%%DATADIR%%/addons/skin.confluence/media/flagging/audio/pcm_s24le.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/truehd.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/vorbis.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/wav.png
@@ -1155,6 +1176,7 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/video/540.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/video/576.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/video/720.png
+%%DATADIR%%/addons/skin.confluence/media/flagging/video/Set.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/video/avc1.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/video/bluray.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/video/divx.png
@@ -1163,7 +1185,9 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/video/h264.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/video/hddvd.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/video/hdmv.png
+%%DATADIR%%/addons/skin.confluence/media/flagging/video/hev1.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/video/hevc.png
+%%DATADIR%%/addons/skin.confluence/media/flagging/video/hvc1.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/video/mpeg1video.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/video/mpeg2video.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/video/tv.png
@@ -1171,6 +1195,8 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/video/vhs.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/video/vp8.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/video/vp9.png
+%%DATADIR%%/addons/skin.confluence/media/flagging/video/wmv.png
+%%DATADIR%%/addons/skin.confluence/media/flagging/video/wmv3.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/video/wvc1.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/video/xvid.png
 %%DATADIR%%/addons/skin.confluence/media/floor.png
@@ -1222,233 +1248,231 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/addons/skin.confluence/media/separator2.png
 %%DATADIR%%/addons/skin.confluence/media/separator_vertical.png
 %%DATADIR%%/addons/skin.confluence/media/unknown-user.png
-%%DATADIR%%/addons/skin.confluence/sounds/back.wav
-%%DATADIR%%/addons/skin.confluence/sounds/click.wav
-%%DATADIR%%/addons/skin.confluence/sounds/cursor.wav
-%%DATADIR%%/addons/skin.confluence/sounds/notify.wav
-%%DATADIR%%/addons/skin.confluence/sounds/out.wav
-%%DATADIR%%/addons/skin.confluence/sounds/shutter.wav
-%%DATADIR%%/addons/skin.confluence/sounds/sounds.xml
 %%DATADIR%%/addons/visualization.fishbmc/LICENSE
 %%DATADIR%%/addons/visualization.fishbmc/addon.xml
 %%DATADIR%%/addons/visualization.fishbmc/changelog.txt
 %%DATADIR%%/addons/visualization.fishbmc/icon.png
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Afrikaans/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Albanian/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Amharic/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Arabic/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Armenian/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Azerbaijani/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Basque/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Belarusian/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Bosnian/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Bulgarian/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Burmese/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Catalan/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Chinese (Simple)/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Chinese (Traditional)/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Croatian/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Czech/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Danish/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Dutch/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/English (Australia)/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/English (New Zealand)/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/English (US)/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/English/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Esperanto/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Estonian/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Faroese/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Finnish/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/French (Canada)/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/French/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Galician/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/German/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Greek/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Hebrew/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Hindi (Devanagiri)/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Hungarian/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Icelandic/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Indonesian/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Italian/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Japanese/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Korean/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Latvian/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Lithuanian/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Macedonian/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Malay/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Maltese/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Maori/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Norwegian/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Persian (Iran)/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Persian/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Polish/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Portuguese (Brazil)/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Portuguese/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Romanian/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Russian/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Serbian (Cyrillic)/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Serbian/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Sinhala/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Slovak/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Slovenian/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Spanish (Argentina)/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Spanish (Mexico)/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Spanish/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Swedish/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Tajik/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Tamil (India)/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Thai/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Turkish/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Ukrainian/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Uzbek/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Vietnamese/strings.po
-%%DATADIR%%/addons/visualization.fishbmc/resources/language/Welsh/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.af_za/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.am_et/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.ar_sa/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.az_az/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.be_by/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.bg_bg/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.bs_ba/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.ca_es/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.cs_cz/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.cy_gb/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.da_dk/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.de_de/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.el_gr/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.en_au/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.en_gb/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.en_nz/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.en_us/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.eo/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.es_ar/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.es_es/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.es_mx/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.et_ee/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.eu_es/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.fa_af/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.fa_ir/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.fi_fi/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.fo_fo/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.fr_ca/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.fr_fr/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.gl_es/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.he_il/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.hi_in/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.hr_hr/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.hu_hu/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.hy_am/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.id_id/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.is_is/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.it_it/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.ja_jp/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.ko_kr/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.lt_lt/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.lv_lv/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.mi/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.mk_mk/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.mn_mn/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.ms_my/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.mt_mt/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.my_mm/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.nb_no/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.nl_nl/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.pl_pl/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.pt_br/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.pt_pt/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.ro_ro/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.ru_ru/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.si_lk/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.sk_sk/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.sl_si/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.sq_al/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.sr_rs/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.sr_rs@latin/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.sv_se/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.szl/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.ta_in/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.tg_tj/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.th_th/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.tr_tr/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.uk_ua/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.uz_uz/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.vi_vn/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.zh_cn/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/resource.language.zh_tw/strings.po
 %%DATADIR%%/addons/visualization.fishbmc/resources/settings.xml
 %%DATADIR%%/addons/visualization.glspectrum/addon.xml
 %%DATADIR%%/addons/visualization.glspectrum/icon.png
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Afrikaans/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Albanian/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Amharic/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Arabic/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Armenian/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Azerbaijani/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Basque/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Belarusian/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Bosnian/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Bulgarian/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Burmese/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Catalan/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Chinese (Simple)/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Chinese (Traditional)/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Croatian/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Czech/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Danish/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Dutch/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/English (Australia)/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/English (New Zealand)/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/English (US)/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/English/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Esperanto/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Estonian/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Faroese/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Finnish/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/French (Canada)/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/French/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Galician/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/German/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Greek/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Haitian (Haitian Creole)/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Hebrew/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Hindi (Devanagiri)/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Hungarian/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Icelandic/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Indonesian/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Italian/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Japanese/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Korean/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Latvian/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Lithuanian/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Macedonian/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Malay/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Maltese/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Maori/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Mongolian (Mongolia)/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Norwegian/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Persian (Iran)/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Persian/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Polish/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Portuguese (Brazil)/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Portuguese/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Romanian/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Russian/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Serbian (Cyrillic)/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Serbian/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Sinhala/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Slovak/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Slovenian/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Spanish (Argentina)/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Spanish (Mexico)/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Spanish/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Swedish/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Tajik/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Tamil (India)/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Thai/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Turkish/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Ukrainian/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Uzbek/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Vietnamese/strings.po
-%%DATADIR%%/addons/visualization.glspectrum/resources/language/Welsh/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.af_za/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.am_et/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.ar_sa/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.az_az/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.be_by/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.bg_bg/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.bs_ba/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.ca_es/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.cs_cz/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.cy_gb/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.da_dk/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.de_de/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.el_gr/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.en_au/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.en_gb/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.en_nz/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.en_us/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.eo/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.es_ar/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.es_es/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.es_mx/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.et_ee/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.eu_es/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.fa_af/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.fa_ir/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.fi_fi/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.fo_fo/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.fr_ca/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.fr_fr/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.gl_es/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.he_il/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.hi_in/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.hr_hr/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.hu_hu/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.hy_am/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.id_id/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.is_is/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.it_it/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.ja_jp/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.ko_kr/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.lt_lt/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.lv_lv/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.mi/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.mk_mk/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.mn_mn/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.ms_my/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.mt_mt/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.my_mm/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.nb_no/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.nl_nl/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.pl_pl/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.pt_br/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.pt_pt/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.ro_ro/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.ru_ru/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.si_lk/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.sk_sk/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.sl_si/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.sq_al/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.sr_rs/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.sr_rs@latin/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.sv_se/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.szl/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.ta_in/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.te_in/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.tg_tj/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.th_th/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.tr_tr/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.uk_ua/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.uz_uz/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.vi_vn/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.zh_cn/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/resource.language.zh_tw/strings.po
 %%DATADIR%%/addons/visualization.glspectrum/resources/settings.xml
 %%DATADIR%%/addons/visualization.projectm/addon.xml
 %%DATADIR%%/addons/visualization.projectm/icon.png
-%%DATADIR%%/addons/visualization.projectm/resources/language/Afrikaans/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Albanian/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Amharic/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Arabic/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Armenian/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Basque/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Belarusian/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Bosnian/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Bulgarian/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Burmese/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Catalan/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Chinese (Simple)/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Chinese (Traditional)/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Croatian/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Czech/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Danish/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Dutch/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/English (Australia)/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/English (New Zealand)/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/English (US)/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/English/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Esperanto/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Estonian/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Faroese/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Finnish/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/French (Canada)/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/French/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Galician/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/German/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Greek/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Hebrew/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Hindi (Devanagiri)/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Hungarian/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Icelandic/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Indonesian/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Italian/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Japanese/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Korean/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Latvian/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Lithuanian/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Macedonian/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Malay/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Maltese/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Maori/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Norwegian/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Persian (Iran)/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Polish/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Portuguese (Brazil)/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Portuguese/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Romanian/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Russian/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Serbian (Cyrillic)/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Serbian/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Sinhala/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Slovak/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Slovenian/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Spanish (Argentina)/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Spanish (Mexico)/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Spanish/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Swedish/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Tajik/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Tamil (India)/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Thai/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Turkish/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Ukrainian/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Uzbek/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Vietnamese/strings.po
-%%DATADIR%%/addons/visualization.projectm/resources/language/Welsh/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.af_za/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.am_et/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.ar_sa/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.be_by/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.bg_bg/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.bs_ba/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.ca_es/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.cs_cz/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.cy_gb/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.da_dk/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.de_de/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.el_gr/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.en_au/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.en_gb/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.en_nz/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.en_us/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.eo/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.es_ar/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.es_es/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.es_mx/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.et_ee/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.eu_es/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.fa_ir/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.fi_fi/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.fo_fo/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.fr_ca/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.fr_fr/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.gl_es/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.he_il/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.hi_in/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.hr_hr/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.hu_hu/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.hy_am/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.id_id/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.is_is/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.it_it/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.ja_jp/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.ko_kr/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.lt_lt/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.lv_lv/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.mi/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.mk_mk/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.mn_mn/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.ms_my/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.mt_mt/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.my_mm/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.nb_no/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.nl_nl/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.pl_pl/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.pt_br/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.pt_pt/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.ro_ro/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.ru_ru/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.si_lk/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.sk_sk/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.sl_si/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.sq_al/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.sr_rs/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.sr_rs@latin/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.sv_se/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.szl/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.ta_in/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.tg_tj/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.th_th/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.tr_tr/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.uk_ua/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.uz_uz/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.vi_vn/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.zh_cn/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/resource.language.zh_tw/strings.po
 %%DATADIR%%/addons/visualization.projectm/resources/presets.zip
 %%DATADIR%%/addons/visualization.projectm/resources/settings.xml
 %%DATADIR%%/addons/visualization.vortex/addon.xml
@@ -1522,60 +1546,63 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/addons/visualization.vortex/resources/Textures/skybox.dds
 %%DATADIR%%/addons/visualization.vortex/resources/Textures/trail2.dds
 %%DATADIR%%/addons/visualization.vortex/resources/Textures/vortex-v.jpg
-%%DATADIR%%/addons/visualization.vortex/resources/language/Afrikaans/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Albanian/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Amharic/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Arabic/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Belarusian/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Bulgarian/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Burmese/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Catalan/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Chinese (Simple)/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Chinese (Traditional)/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Croatian/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Czech/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Danish/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Dutch/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/English (Australia)/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/English (New Zealand)/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/English (US)/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/English/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Estonian/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Finnish/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/French (Canada)/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/French/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Galician/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/German/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Greek/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Hebrew/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Hungarian/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Icelandic/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Indonesian/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Italian/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Japanese/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Korean/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Latvian/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Lithuanian/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Macedonian/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Norwegian/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Polish/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Portuguese (Brazil)/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Portuguese/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Romanian/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Russian/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Serbian/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Slovak/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Slovenian/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Spanish (Argentina)/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Spanish (Mexico)/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Spanish/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Swedish/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Tajik/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Thai/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Turkish/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Ukrainian/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Vietnamese/strings.po
-%%DATADIR%%/addons/visualization.vortex/resources/language/Welsh/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.af_za/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.am_et/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.ar_sa/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.be_by/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.bg_bg/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.ca_es/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.cs_cz/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.cy_gb/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.da_dk/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.de_de/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.el_gr/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.en_au/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.en_gb/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.en_nz/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.en_us/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.es_ar/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.es_es/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.es_mx/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.et_ee/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.fa_ir/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.fi_fi/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.fr_ca/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.fr_fr/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.gl_es/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.he_il/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.hr_hr/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.hu_hu/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.id_id/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.is_is/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.it_it/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.ja_jp/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.ko_kr/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.lt_lt/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.lv_lv/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.mk_mk/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.ms_my/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.my_mm/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.nb_no/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.nl_nl/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.pl_pl/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.pt_br/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.pt_pt/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.ro_ro/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.ru_ru/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.sk_sk/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.sl_si/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.sq_al/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.sr_rs@latin/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.sv_se/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.ta_in/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.tg_tj/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.th_th/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.tr_tr/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.uk_ua/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.vi_vn/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.zh_cn/strings.po
+%%DATADIR%%/addons/visualization.vortex/resources/language/resource.language.zh_tw/strings.po
 %%DATADIR%%/addons/visualization.vortex/resources/settings.xml
 %%DATADIR%%/addons/visualization.waveform/addon.xml
 %%DATADIR%%/addons/visualization.waveform/icon.png
@@ -1603,6 +1630,7 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/addons/xbmc.addon/addon.xml.in
 %%DATADIR%%/addons/xbmc.addon/metadata.xsd
 %%DATADIR%%/addons/xbmc.addon/repository.xsd
+%%DATADIR%%/addons/xbmc.audioencoder/addon.xml
 %%DATADIR%%/addons/xbmc.codec/addon.xml
 %%DATADIR%%/addons/xbmc.core/addon.xml
 %%DATADIR%%/addons/xbmc.gui/addon.xml
@@ -1614,158 +1642,13 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/addons/xbmc.pvr/addon.xml
 %%DATADIR%%/addons/xbmc.pvr/icon.png
 %%DATADIR%%/addons/xbmc.python/addon.xml
+%%DATADIR%%/addons/xbmc.python/contextitem.xsd
 %%DATADIR%%/addons/xbmc.python/icon.png
 %%DATADIR%%/addons/xbmc.python/pluginsource.xsd
 %%DATADIR%%/addons/xbmc.python/script.xsd
-%%DATADIR%%/language/Afrikaans/langinfo.xml
-%%DATADIR%%/language/Afrikaans/strings.po
-%%DATADIR%%/language/Albanian/langinfo.xml
-%%DATADIR%%/language/Albanian/strings.po
-%%DATADIR%%/language/Amharic/langinfo.xml
-%%DATADIR%%/language/Amharic/strings.po
-%%DATADIR%%/language/Arabic/langinfo.xml
-%%DATADIR%%/language/Arabic/strings.po
-%%DATADIR%%/language/Armenian/langinfo.xml
-%%DATADIR%%/language/Armenian/strings.po
-%%DATADIR%%/language/Azerbaijani/langinfo.xml
-%%DATADIR%%/language/Azerbaijani/strings.po
-%%DATADIR%%/language/Basque/langinfo.xml
-%%DATADIR%%/language/Basque/strings.po
-%%DATADIR%%/language/Belarusian/langinfo.xml
-%%DATADIR%%/language/Belarusian/strings.po
-%%DATADIR%%/language/Bosnian/langinfo.xml
-%%DATADIR%%/language/Bosnian/strings.po
-%%DATADIR%%/language/Bulgarian/langinfo.xml
-%%DATADIR%%/language/Bulgarian/strings.po
-%%DATADIR%%/language/Burmese/langinfo.xml
-%%DATADIR%%/language/Burmese/strings.po
-%%DATADIR%%/language/Catalan/langinfo.xml
-%%DATADIR%%/language/Catalan/strings.po
-%%DATADIR%%/language/Chinese (Simple)/langinfo.xml
-%%DATADIR%%/language/Chinese (Simple)/strings.po
-%%DATADIR%%/language/Chinese (Traditional)/langinfo.xml
-%%DATADIR%%/language/Chinese (Traditional)/strings.po
-%%DATADIR%%/language/Croatian/langinfo.xml
-%%DATADIR%%/language/Croatian/strings.po
-%%DATADIR%%/language/Czech/langinfo.xml
-%%DATADIR%%/language/Czech/strings.po
-%%DATADIR%%/language/Danish/langinfo.xml
-%%DATADIR%%/language/Danish/strings.po
-%%DATADIR%%/language/Dutch/langinfo.xml
-%%DATADIR%%/language/Dutch/strings.po
-%%DATADIR%%/language/English (Australia)/langinfo.xml
-%%DATADIR%%/language/English (Australia)/strings.po
-%%DATADIR%%/language/English (New Zealand)/langinfo.xml
-%%DATADIR%%/language/English (New Zealand)/strings.po
-%%DATADIR%%/language/English (US)/langinfo.xml
-%%DATADIR%%/language/English (US)/strings.po
-%%DATADIR%%/language/English/langinfo.xml
-%%DATADIR%%/language/English/strings.po
-%%DATADIR%%/language/Esperanto/langinfo.xml
-%%DATADIR%%/language/Esperanto/strings.po
-%%DATADIR%%/language/Estonian/langinfo.xml
-%%DATADIR%%/language/Estonian/strings.po
-%%DATADIR%%/language/Faroese/langinfo.xml
-%%DATADIR%%/language/Faroese/strings.po
-%%DATADIR%%/language/Finnish/langinfo.xml
-%%DATADIR%%/language/Finnish/strings.po
-%%DATADIR%%/language/French (Canada)/langinfo.xml
-%%DATADIR%%/language/French (Canada)/strings.po
-%%DATADIR%%/language/French/langinfo.xml
-%%DATADIR%%/language/French/strings.po
-%%DATADIR%%/language/Galician/langinfo.xml
-%%DATADIR%%/language/Galician/strings.po
-%%DATADIR%%/language/German/keyboardmap.xml
-%%DATADIR%%/language/German/langinfo.xml
-%%DATADIR%%/language/German/strings.po
-%%DATADIR%%/language/Greek/langinfo.xml
-%%DATADIR%%/language/Greek/strings.po
-%%DATADIR%%/language/Hebrew/langinfo.xml
-%%DATADIR%%/language/Hebrew/strings.po
-%%DATADIR%%/language/Hindi (Devanagiri)/langinfo.xml
-%%DATADIR%%/language/Hindi (Devanagiri)/strings.po
-%%DATADIR%%/language/Hungarian/langinfo.xml
-%%DATADIR%%/language/Hungarian/strings.po
-%%DATADIR%%/language/Icelandic/langinfo.xml
-%%DATADIR%%/language/Icelandic/strings.po
-%%DATADIR%%/language/Indonesian/langinfo.xml
-%%DATADIR%%/language/Indonesian/strings.po
-%%DATADIR%%/language/Italian/langinfo.xml
-%%DATADIR%%/language/Italian/strings.po
-%%DATADIR%%/language/Japanese/langinfo.xml
-%%DATADIR%%/language/Japanese/strings.po
-%%DATADIR%%/language/Korean/langinfo.xml
-%%DATADIR%%/language/Korean/strings.po
-%%DATADIR%%/language/Latvian/langinfo.xml
-%%DATADIR%%/language/Latvian/strings.po
-%%DATADIR%%/language/Lithuanian/langinfo.xml
-%%DATADIR%%/language/Lithuanian/strings.po
-%%DATADIR%%/language/Macedonian/langinfo.xml
-%%DATADIR%%/language/Macedonian/strings.po
-%%DATADIR%%/language/Malay/langinfo.xml
-%%DATADIR%%/language/Malay/strings.po
-%%DATADIR%%/language/Malayalam/langinfo.xml
-%%DATADIR%%/language/Malayalam/strings.po
-%%DATADIR%%/language/Maltese/langinfo.xml
-%%DATADIR%%/language/Maltese/strings.po
-%%DATADIR%%/language/Maori/langinfo.xml
-%%DATADIR%%/language/Maori/strings.po
-%%DATADIR%%/language/Mongolian (Mongolia)/langinfo.xml
-%%DATADIR%%/language/Mongolian (Mongolia)/strings.po
-%%DATADIR%%/language/Norwegian/langinfo.xml
-%%DATADIR%%/language/Norwegian/strings.po
-%%DATADIR%%/language/Ossetic/langinfo.xml
-%%DATADIR%%/language/Ossetic/strings.po
-%%DATADIR%%/language/Persian (Iran)/langinfo.xml
-%%DATADIR%%/language/Persian (Iran)/strings.po
-%%DATADIR%%/language/Persian/langinfo.xml
-%%DATADIR%%/language/Persian/strings.po
-%%DATADIR%%/language/Polish/langinfo.xml
-%%DATADIR%%/language/Polish/strings.po
-%%DATADIR%%/language/Portuguese (Brazil)/langinfo.xml
-%%DATADIR%%/language/Portuguese (Brazil)/strings.po
-%%DATADIR%%/language/Portuguese/langinfo.xml
-%%DATADIR%%/language/Portuguese/strings.po
-%%DATADIR%%/language/Romanian/langinfo.xml
-%%DATADIR%%/language/Romanian/strings.po
-%%DATADIR%%/language/Russian/langinfo.xml
-%%DATADIR%%/language/Russian/strings.po
-%%DATADIR%%/language/Serbian (Cyrillic)/langinfo.xml
-%%DATADIR%%/language/Serbian (Cyrillic)/strings.po
-%%DATADIR%%/language/Serbian/langinfo.xml
-%%DATADIR%%/language/Serbian/strings.po
-%%DATADIR%%/language/Sinhala/langinfo.xml
-%%DATADIR%%/language/Sinhala/strings.po
-%%DATADIR%%/language/Slovak/langinfo.xml
-%%DATADIR%%/language/Slovak/strings.po
-%%DATADIR%%/language/Slovenian/langinfo.xml
-%%DATADIR%%/language/Slovenian/strings.po
-%%DATADIR%%/language/Spanish (Argentina)/langinfo.xml
-%%DATADIR%%/language/Spanish (Argentina)/strings.po
-%%DATADIR%%/language/Spanish (Mexico)/langinfo.xml
-%%DATADIR%%/language/Spanish (Mexico)/strings.po
-%%DATADIR%%/language/Spanish/langinfo.xml
-%%DATADIR%%/language/Spanish/strings.po
-%%DATADIR%%/language/Swedish/langinfo.xml
-%%DATADIR%%/language/Swedish/strings.po
-%%DATADIR%%/language/Tajik/langinfo.xml
-%%DATADIR%%/language/Tajik/strings.po
-%%DATADIR%%/language/Tamil (India)/langinfo.xml
-%%DATADIR%%/language/Tamil (India)/strings.po
-%%DATADIR%%/language/Telugu/langinfo.xml
-%%DATADIR%%/language/Telugu/strings.po
-%%DATADIR%%/language/Thai/langinfo.xml
-%%DATADIR%%/language/Thai/strings.po
-%%DATADIR%%/language/Turkish/langinfo.xml
-%%DATADIR%%/language/Turkish/strings.po
-%%DATADIR%%/language/Ukrainian/langinfo.xml
-%%DATADIR%%/language/Ukrainian/strings.po
-%%DATADIR%%/language/Uzbek/langinfo.xml
-%%DATADIR%%/language/Uzbek/strings.po
-%%DATADIR%%/language/Vietnamese/langinfo.xml
-%%DATADIR%%/language/Vietnamese/strings.po
-%%DATADIR%%/language/Welsh/langinfo.xml
-%%DATADIR%%/language/Welsh/strings.po
+%%DATADIR%%/addons/xbmc.python/service.xsd
+%%DATADIR%%/addons/xbmc.webinterface/addon.xml
+%%DATADIR%%/addons/xbmc.webinterface/webinterface.xsd
 %%DATADIR%%/media/Fonts/arial.ttf
 %%DATADIR%%/media/Fonts/teletext.ttf
 %%DATADIR%%/media/Splash.png
@@ -1775,13 +1658,28 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/media/icon32x32.png
 %%DATADIR%%/media/icon48x48.png
 %%DATADIR%%/media/weather.zip
-%%DATADIR%%/sounds/Bursting Bubbles/nav.wav
-%%DATADIR%%/sounds/Bursting Bubbles/sounds.xml
 %%DATADIR%%/system/IRSSmap.xml
 %%DATADIR%%/system/Lircmap.xml
 %%DATADIR%%/system/X10-Lola-IRSSmap.xml
 %%DATADIR%%/system/colors.xml
-%%DATADIR%%/system/keyboardlayouts.xml
+%%DATADIR%%/system/keyboardlayouts/arabic.xml
+%%DATADIR%%/system/keyboardlayouts/bulgarian.xml
+%%DATADIR%%/system/keyboardlayouts/danish.xml
+%%DATADIR%%/system/keyboardlayouts/english.xml
+%%DATADIR%%/system/keyboardlayouts/german.xml
+%%DATADIR%%/system/keyboardlayouts/greek.xml
+%%DATADIR%%/system/keyboardlayouts/hebrew.xml
+%%DATADIR%%/system/keyboardlayouts/hungarian.xml
+%%DATADIR%%/system/keyboardlayouts/lithuanian.xml
+%%DATADIR%%/system/keyboardlayouts/norwegian.xml
+%%DATADIR%%/system/keyboardlayouts/polish.xml
+%%DATADIR%%/system/keyboardlayouts/portuguese.xml
+%%DATADIR%%/system/keyboardlayouts/romanian.xml
+%%DATADIR%%/system/keyboardlayouts/russian.xml
+%%DATADIR%%/system/keyboardlayouts/spanish.xml
+%%DATADIR%%/system/keyboardlayouts/swedish.xml
+%%DATADIR%%/system/keyboardlayouts/turkish.xml
+%%DATADIR%%/system/keyboardlayouts/ukrainian.xml
 %%DATADIR%%/system/keymaps/appcommand.xml
 %%DATADIR%%/system/keymaps/gamepad.xml
 %%DATADIR%%/system/keymaps/joystick.Alienware.Dual.Compatible.Controller.xml
@@ -1792,7 +1690,9 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/system/keymaps/joystick.Microsoft.Xbox.360.Controller.xml
 %%DATADIR%%/system/keymaps/joystick.Microsoft.Xbox.Controller.S.xml
 %%DATADIR%%/system/keymaps/joystick.Nintendo.Wii.U.Pro.Controller.xml
+%%DATADIR%%/system/keymaps/joystick.Ouya.Controller.xml
 %%DATADIR%%/system/keymaps/joystick.PS3.Remote.Keyboard.xml
+%%DATADIR%%/system/keymaps/joystick.PS4.Controller.xml
 %%DATADIR%%/system/keymaps/joystick.Sony.PLAYSTATION(R)3.Controller.xml
 %%DATADIR%%/system/keymaps/joystick.WiiRemote.xml
 %%DATADIR%%/system/keymaps/joystick.xml.sample
@@ -1801,6 +1701,28 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/system/keymaps/nyxboard/keyboard.xml
 %%DATADIR%%/system/keymaps/remote.xml
 %%DATADIR%%/system/keymaps/touchscreen.xml
+%%DATADIR%%/system/library/music/albums.xml
+%%DATADIR%%/system/library/music/artists.xml
+%%DATADIR%%/system/library/music/compilations.xml
+%%DATADIR%%/system/library/music/genres.xml
+%%DATADIR%%/system/library/music/musicvideos/albums.xml
+%%DATADIR%%/system/library/music/musicvideos/artists.xml
+%%DATADIR%%/system/library/music/musicvideos/directors.xml
+%%DATADIR%%/system/library/music/musicvideos/genres.xml
+%%DATADIR%%/system/library/music/musicvideos/index.xml
+%%DATADIR%%/system/library/music/musicvideos/studios.xml
+%%DATADIR%%/system/library/music/musicvideos/tags.xml
+%%DATADIR%%/system/library/music/musicvideos/titles.xml
+%%DATADIR%%/system/library/music/musicvideos/years.xml
+%%DATADIR%%/system/library/music/playlists.xml
+%%DATADIR%%/system/library/music/recentlyaddedalbums.xml
+%%DATADIR%%/system/library/music/recentlyplayedalbums.xml
+%%DATADIR%%/system/library/music/singles.xml
+%%DATADIR%%/system/library/music/songs.xml
+%%DATADIR%%/system/library/music/top100/index.xml
+%%DATADIR%%/system/library/music/top100/top100albums.xml
+%%DATADIR%%/system/library/music/top100/top100songs.xml
+%%DATADIR%%/system/library/music/years.xml
 %%DATADIR%%/system/library/video/addons.xml
 %%DATADIR%%/system/library/video/files.xml
 %%DATADIR%%/system/library/video/inprogressshows.xml
@@ -1895,8 +1817,10 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/system/settings/darwin_ios_atv2.xml
 %%DATADIR%%/system/settings/darwin_osx.xml
 %%DATADIR%%/system/settings/freebsd.xml
+%%DATADIR%%/system/settings/imx6.xml
 %%DATADIR%%/system/settings/linux.xml
 %%DATADIR%%/system/settings/rbp.xml
+%%DATADIR%%/system/settings/rbp2.xml
 %%DATADIR%%/system/settings/settings.xml
 %%DATADIR%%/system/settings/win32.xml
 %%DATADIR%%/system/shaders/convolution-4x4.glsl
@@ -1911,6 +1835,8 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/system/shaders/guishader_frag_multi_blendcolor.glsl
 %%DATADIR%%/system/shaders/guishader_frag_rgba.glsl
 %%DATADIR%%/system/shaders/guishader_frag_rgba_blendcolor.glsl
+%%DATADIR%%/system/shaders/guishader_frag_rgba_bob.glsl
+%%DATADIR%%/system/shaders/guishader_frag_rgba_bob_oes.glsl
 %%DATADIR%%/system/shaders/guishader_frag_rgba_oes.glsl
 %%DATADIR%%/system/shaders/guishader_frag_texture.glsl
 %%DATADIR%%/system/shaders/guishader_frag_texture_noblend.glsl
@@ -1931,9 +1857,6 @@ share/icons/hicolor/64x64/apps/kodi.png
 %%DATADIR%%/system/shaders/yuv2rgb_vertex.glsl
 %%DATADIR%%/system/shaders/yuv2rgb_vertex_gles.glsl
 %%DATADIR%%/userdata/ModeLines_template.xml
-%%DATADIR%%/userdata/PictureIcon/Picon/tuxbox.png
-%%DATADIR%%/userdata/PictureIcon/Readme.txt
-%%DATADIR%%/userdata/PictureIcon/picon.xml
 %%DATADIR%%/userdata/RssFeeds.xml
 share/xbmc
 share/xsessions/kodi.desktop
