@@ -13,6 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Remake of the ubiquitous "Snake" and "Worm" games
 
 RESTRICTED=	No redistribution allowed
+BROKEN=		does not fetch: connect timeout
 
 USES=		gmake zip
 USE_SDL=	sdl
