@@ -17,17 +17,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 OPTIONS_DEFINE=	TCPWRAPPERS DOCS
 TCPWRAPPERS_DESC=	libwrap support
 
+TCPWRAPPERS_CONFIGURE_ON=	--with-libwrap
+
 USE_RC_SUBR=	${PORTNAME}
 SUB_FILES+=	pkg-message
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-client
 USE_OPENSSL=	yes
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MTCPWRAPPERS}
-CONFIGURE_ARGS+=--with-libwrap
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's^#include <utmp.h>^/*utmp.h not for FreeBSD*/^' \
@@ -40,6 +36,7 @@ post-patch:
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MV} ${STAGEDIR}${ETCDIR}/tunnel.conf.default ${STAGEDIR}${ETCDIR}/tunnel.conf.sample
 	${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/server.README
 	${INSTALL_MAN} ${WRKSRC}/LISEZ-MOI ${STAGEDIR}${DOCSDIR}/server.LISEZ-MOI
 	${INSTALL_DATA} ${WRKSRC}/server/users.new ${STAGEDIR}${ETCDIR}/users.sample
