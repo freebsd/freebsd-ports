@@ -12,19 +12,18 @@ MAINTAINER=	gelraen.ua@gmail.com
 COMMENT=	Modular packet filter
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 SSP_UNSAFE=	kernel module does not support ssp
-USES=		cmake:outsource kmod tar:xz
+USES=		cmake:outsource kmod tar:xz uidfix
 USE_LDCONFIG=	yes
+
+BROKEN_powerpc=	does not compile
 
 .include <bsd.port.pre.mk>
 
 .if !exists(${SRC_BASE}/sys/sys/module.h)
 IGNORE=		requires kernel source files
-.endif
-
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not compile on powerpc
 .endif
 
 CMAKE_ARGS+=	-DDOMAIN_STUB:BOOL=OFF
