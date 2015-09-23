@@ -56,7 +56,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/"models/s,","${DATADIR}/,' \
 		-e '/CmdLine/s,${PORTVERSION:R},${DISTVERSIONFULL},' \
 		${WRKSRC}/src/main.cpp
-	@${REINPLACE_CMD} -e 's,${PORTNAME:C/-.*//},${PORTNAME},' \
+	@${REINPLACE_CMD} -e 's,[^"]*"),${PORTNAME}"),' \
 		-e 's,\(version\) [^"]*,\1 ${DISTVERSIONFULL},' \
 		${WRKDIR}/${PORTNAME}.1
 
