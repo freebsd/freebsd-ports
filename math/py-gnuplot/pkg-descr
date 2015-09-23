@@ -8,7 +8,7 @@ Python makes it is easy to automate things, including to create crude
 
 Commands are communicated to gnuplot through a pipe and data either through
 the same pipe (as "inline" data) or through temporary files. It has been
-written and tested on a unix computer.
+written and tested on a Unix computer.
 
 This package has an object-oriented design that allows the user flexibility to
 set plot options and to run multiple gnuplot sessions simultaneously. If you

@@ -1,6 +1,6 @@
 former QueSO home page <URL:http://www.apostols.org/projectz/queso/>:
 
-How we can determine the remote OS using simple tcp packets?  Well,
+How we can determine the remote OS using simple TCP packets?  Well,
 it's easy, they're packets that don't make any sense, so the RFCs
 don't clearly state what to answer in these kind of situations.
 Facing this ambiguous, each TCP/IP stack takes a different approach

@@ -11,7 +11,7 @@ oriented API.
 * SIP transaction state machines with lastest corrections (RFC6026)
 * automatic management of request refreshes with network disconnection
   resiliency thanks to the "refresher" object
-* supported platforms: Linux, Mac OSX, windows XP+, iOS, Android,
+* supported platforms: Linux, Mac OSX, Windows XP+, iOS, Android,
   Blackberry 10
 
 WWW: https://www.linphone.org/technical-corner/belle-sip.html

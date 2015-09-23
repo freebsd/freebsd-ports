@@ -1,16 +1,16 @@
 # $FreeBSD$
 
 PORTNAME=	relx
-PORTVERSION=	3.5.0
+PORTVERSION=	3.6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 MASTER_SITES+=	LOCAL/olgeni:deps \
 		http://olgeni.olgeni.com/~olgeni/distfiles/:deps \
 		https://s3.amazonaws.com/s3.hex.pm/tarballs/:hex
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		relx-cache-8.tar.gz:deps
+		relx-cache-9.tar.gz:deps
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
-		relx-cache-8.tar.gz
+		relx-cache-9.tar.gz
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Sane, simple release creation for Erlang
@@ -29,7 +29,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	erlware
 
 REBAR_DEPS=	bbmustache-1.0.3 \
-		erlware_commons-0.15.0 \
+		erlware_commons-0.16.0 \
 		getopt-0.8.2 \
 		providers-1.4.1
 
@@ -48,6 +48,10 @@ post-extract:
 	@${TAR} xOf ${DISTDIR}/${_dep}.tar contents.tar.gz |\
 		${TAR} xfz - -C ${WRKSRC}/_build/default/lib/${_dep:C/-.*//}
 .endfor
+
+post-patch:
+	@${REINPLACE_CMD} -i '' -e 's/{ *vsn,.*}/{vsn, "${PORTVERSION}"}/' \
+		${WRKSRC}/src/${PORTNAME}.app.src
 
 do-build:
 	@${RM} ${WRKSRC}/rebar.lock

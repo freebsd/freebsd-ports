@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	backup
-PORTVERSION=	4.1.12
+PORTVERSION=	4.2.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -10,6 +10,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perform backup operations on remote and local environment
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-CFPropertyList>=2.3.1:${PORTSDIR}/devel/rubygem-CFPropertyList \
 		rubygem-addressable>=2.3.5:${PORTSDIR}/www/rubygem-addressable \

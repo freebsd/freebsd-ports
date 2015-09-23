@@ -234,4 +234,6 @@ man/man1/gforth.1.gz
 %%DATADIR%%/%%PORTVERSION%%/wordinfo.fs
 %%DATADIR%%/%%PORTVERSION%%/wordsets.fs
 %%DATADIR%%/%%PORTVERSION%%/xwords.fs
+@dir %%DATADIR%%/%%PORTVERSION%%/vmgen-ex
 @dir %%DATADIR%%/site-forth
+@dir lib/gforth/site-forth

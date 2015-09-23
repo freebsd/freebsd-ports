@@ -9,5 +9,5 @@ include/casstcl_log.h
 include/casstcl_prepared.h
 include/casstcl_types.h
 lib/casstcl%%PORTVERSION%%/casstcl.tcl
-lib/casstcl%%PORTVERSION%%/libcasstcl.so.1
+lib/casstcl%%PORTVERSION%%/libcasstcl.so
 lib/casstcl%%PORTVERSION%%/pkgIndex.tcl

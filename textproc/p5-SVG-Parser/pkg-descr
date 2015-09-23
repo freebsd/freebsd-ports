@@ -7,7 +7,7 @@ function.
 
 A list of preferred parsers may be specified in the import list - SVG::Parser
 will use the first parser that successfully loads. Some basic measures are taken
-to provide cross-compatability. Applications requiring more advanced parser
+to provide cross-compatibility. Applications requiring more advanced parser
 features should use the relevant parser module directly; see SVG::Parser::Expat
 and SVG::Parser::SAX.
 

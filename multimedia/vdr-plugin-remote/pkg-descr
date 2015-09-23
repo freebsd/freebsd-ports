@@ -3,7 +3,7 @@ http://www.linuxtv.org/vdrwiki/index.php/Remote-plugin
 This plugin extends the remote control capabilities of vdr.
 The following remote control devices are supported:
 
-(a) linux input device driver ('/dev/input/eventX', X=0,1,2,...)
+(a) Linux input device driver ('/dev/input/eventX', X=0,1,2,...)
     (currently not supported on FreeBSD)
 
 (b) keyboard (tty driver): /dev/console, /dev/ttyX

@@ -2,7 +2,7 @@
 
 PORTNAME=	remotedesk
 PORTVERSION=	0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net gnustep
 MASTER_SITES=	SAVANNAH/gap
 DISTNAME=	RemoteDesk-${PORTVERSION}
@@ -22,6 +22,6 @@ post-patch:
 		${WRKSRC}/GNUmakefile
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/RemoteDesk.app/RemoteDesk
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/System/Applications/RemoteDesk.app/RemoteDesk
 
 .include <bsd.port.mk>

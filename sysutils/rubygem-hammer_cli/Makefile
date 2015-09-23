@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hammer_cli
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.0
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Provides CLI interfaces for Ruby apps
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	rubygem-apipie-bindings>=0.0.10:${PORTSDIR}/devel/rubygem-apipie-bindings \
+RUN_DEPENDS=	rubygem-apipie-bindings>=0.0.14:${PORTSDIR}/devel/rubygem-apipie-bindings \
 		rubygem-awesome_print>=1.1.0:${PORTSDIR}/devel/rubygem-awesome_print \
 		rubygem-clamp>=1.0.0:${PORTSDIR}/devel/rubygem-clamp \
 		rubygem-fast_gettext>=0.8.1:${PORTSDIR}/devel/rubygem-fast_gettext \
@@ -19,8 +19,6 @@ RUN_DEPENDS=	rubygem-apipie-bindings>=0.0.10:${PORTSDIR}/devel/rubygem-apipie-bi
 		rubygem-json>=1.8.1:${PORTSDIR}/devel/rubygem-json \
 		rubygem-locale>=2.0.6:${PORTSDIR}/devel/rubygem-locale \
 		rubygem-logging>=1.8.1:${PORTSDIR}/devel/rubygem-logging \
-		rubygem-mime-types>=1.0:${PORTSDIR}/misc/rubygem-mime-types \
-		rubygem-rest-client>=1.6.7:${PORTSDIR}/www/rubygem-rest-client \
 		rubygem-table_print>=1.5.1:${PORTSDIR}/devel/rubygem-table_print
 
 NO_ARCH=	yes

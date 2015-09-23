@@ -1,6 +1,4 @@
-@unexec if cmp -s %D/etc/pdnsd.conf %D/etc/pdnsd.conf.sample; then rm %D/etc/pdnsd.conf; fi
-etc/pdnsd.conf.sample
-@exec [ -f %D/etc/pdnsd.conf ] || install -m 644 %D/etc/pdnsd.conf.sample %D/etc/pdnsd.conf
+@sample etc/pdnsd.conf.sample
 man/man5/pdnsd.conf.5.gz
 man/man8/pdnsd-ctl.8.gz
 man/man8/pdnsd.8.gz
@@ -13,4 +11,4 @@ sbin/pdnsd-ctl
 %%PORTDOCS%%%%DOCSDIR%%/faq.txt
 %%PORTDOCS%%%%DOCSDIR%%/intro.txt
 %%PORTDOCS%%%%DOCSDIR%%/manual.txt
-@unexec rm -rf /var/db/pdnsd 2>&1 >/dev/null || true
+@dir(nobody,,755) /var/db/pdnsd

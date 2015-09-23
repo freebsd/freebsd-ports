@@ -17,7 +17,7 @@ USE_PERL5=	configure
 
 # new upstream author added myriads of his own perl modules as dependencies
 # in new releases. those dependencies come with no additional value.
-PORTSCOUT=	ignore
+PORTSCOUT=	ignore:1
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Term/EditLine/EditLine.so

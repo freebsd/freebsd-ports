@@ -3,7 +3,7 @@
 
 PORTNAME=	edenmath
 PORTVERSION=	1.1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math gnustep
 MASTER_SITES=	http://www.eskimo.com/~pburns/EdenMath/files/
 DISTNAME=	EdenMath_GNUstep-${PORTVERSION}
@@ -21,6 +21,6 @@ post-patch:
 		${WRKSRC}/GNUmakefile
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/EdenMath.app/EdenMath
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/System/Applications/EdenMath.app/EdenMath
 
 .include <bsd.port.mk>

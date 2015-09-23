@@ -12,6 +12,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple way to trace execution of Perl statements in PL/Perl
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

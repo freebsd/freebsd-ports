@@ -1,6 +1,6 @@
 The LogAnalyzer project provides an easy to use but powerful frontend for
 searching, reviewing and analyzing network event data, including syslog,
-windows event log and many other event sources. It focuses on the
+Windows event log and many other event sources. It focuses on the
 user-interface side of this project, so the data itself needs to be
 gathered by another program, for example the stock syslogd, rsyslog (often
 the distro's default syslogd), WinSyslog or MonitorWare Agent. LogAnalyzer

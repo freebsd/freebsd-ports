@@ -13,7 +13,6 @@ COMMENT=	Postscript and Pdf Viewer for GNUstep
 USES=		ghostscript gnustep
 USE_GNUSTEP=	back build
 
-MAKE_ENV=	GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/System/Applications/GSPdf.app/GSPdf

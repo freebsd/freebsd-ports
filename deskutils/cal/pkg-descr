@@ -1,4 +1,4 @@
-CAL is a nicely-enhanced version of the unix `cal' command.
+CAL is a nicely-enhanced version of the Unix `cal' command.
 Features:
 
  * Hilights today's date when displaying a monthly calendar.
@@ -19,10 +19,10 @@ Features:
  * Completely configurable colors -- eight separate color attributes.
 
  * No ANSI driver needed for colors, and the output may be redirected
-   anywhere, just like the unix version.  However, ANSI color control may
-   be enabled (e.g. for unix) with a #define in the source code.
+   anywhere, just like the Unix version.  However, ANSI color control may
+   be enabled (e.g. for Unix) with a #define in the source code.
 
- * Commandline-compatible with unix `cal' command, but with several
+ * Commandline-compatible with Unix `cal' command, but with several
    enhanced switch settings.
 
 Requests, bug reports, suggestions, donations, proposals for

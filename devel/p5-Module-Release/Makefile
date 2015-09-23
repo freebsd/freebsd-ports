@@ -26,6 +26,7 @@ TEST_DEPENDS=	p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output \
 		p5-Test-Pod-Coverage>=1:${PORTSDIR}/devel/p5-Test-Pod-Coverage \
 		p5-Test-Without-Module>=0:${PORTSDIR}/devel/p5-Test-Without-Module
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

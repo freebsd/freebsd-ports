@@ -26,7 +26,6 @@ WRKSRC=		${WRKDIR}/gworkspace-${PORTVERSION}/GWMetadata
 CONFIGURE_ARGS+=	--with-sqlite-include=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-sqlite-library=${LOCALBASE}/lib
 DEFAULT_LIBVERSION=	0.1.0
-MAKE_ENV+=	GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
 
 post-patch:
 	${CP} ${WRKSRC}/gmds/mdextractor/Extractors/JpegExtractor/GNUmakefile.in \

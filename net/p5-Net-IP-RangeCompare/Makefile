@@ -18,6 +18,7 @@ BUILD_DEPENDS=	p5-Data-IPV4-Range-Parse>=0.05:${PORTSDIR}/net/p5-Data-IPV4-Range
 		p5-Data-Range-Compare>=1.030:${PORTSDIR}/devel/p5-Data-Range-Compare
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

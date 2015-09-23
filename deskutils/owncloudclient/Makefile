@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	owncloudclient
-PORTVERSION=	1.8.4
+PORTVERSION=	2.0.1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://download.owncloud.com/desktop/stable/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yonas@fizk.net
 COMMENT=	OwnCloud Desktop Syncing Client
 
 LICENSE=	GPLv2

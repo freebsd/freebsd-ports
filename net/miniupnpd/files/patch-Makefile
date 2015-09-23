@@ -1,6 +1,30 @@
---- Makefile.orig	2014-06-30 12:03:05 UTC
+--- Makefile.orig	2015-04-30 09:08:34 UTC
 +++ Makefile
-@@ -204,7 +204,7 @@ depend:	config.h
+@@ -160,8 +160,7 @@ LIBS += -lssl -lcrypto
+ 
+ INSTALLBINDIR = $(PREFIX)/sbin
+ INSTALLETCDIR = $(PREFIX)/etc
+-# INSTALLMANDIR = $(PREFIX)/man
+-INSTALLMANDIR = /usr/share/man
++INSTALLMANDIR = $(MANPREFIX)/man
+ 
+ all:	$(EXECUTABLES)
+ 
+@@ -178,10 +177,10 @@ install:	miniupnpd genuuid
+ 	$(INSTALL) -d $(DESTDIR)$(INSTALLBINDIR)
+ 	$(INSTALL) -m 755 miniupnpd $(DESTDIR)$(INSTALLBINDIR)
+ 	$(INSTALL) -d $(DESTDIR)$(INSTALLETCDIR)
+-	$(INSTALL) -b miniupnpd.conf $(DESTDIR)$(INSTALLETCDIR)
++	$(INSTALL) -b miniupnpd.conf $(DESTDIR)$(INSTALLETCDIR)/miniupnpd.conf.sample
+ 	# TODO : install man page correctly
+-#	$(INSTALL) -d $(INSTALLMANDIR)
+-#	$(INSTALL) miniupnpd.8 $(INSTALLMANDIR)/cat8/miniupnpd.0
++	$(INSTALL) -d $(DESTDIR)$(INSTALLMANDIR)/man8
++	$(INSTALL) miniupnpd.8 $(DESTDIR)$(INSTALLMANDIR)/man8/miniupnpd.8
+ 
+ # genuuid is using the uuid cli tool available under OpenBSD 4.0 in
+ # the uuid-1.5.0 package
+@@ -204,7 +203,7 @@ depend:	config.h
  	testgetroute.c testportinuse.c testasyncsendto.c
  
  miniupnpd: config.h $(ALLOBJS)

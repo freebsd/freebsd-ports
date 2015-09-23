@@ -23,7 +23,6 @@ SRCS+=	thread_tree.cpp
 SRCS+=	utils.cpp
 
 TEST_SRCS+=	command_test.cpp
-TEST_SRCS+=	gtest_main.cpp
 TEST_SRCS+=	record_test.cpp
 TEST_SRCS+=	sample_tree_test.cpp
 
@@ -33,6 +32,12 @@ SRCS+=	file.cpp
 SRCS+=	logging.cpp
 SRCS+=	stringprintf.cpp
 SRCS+=	strings.cpp
+TEST_SRCS+= file_test.cpp
+TEST_SRCS+= logging_test.cpp
+TEST_SRCS+= stringprintf_test.cpp
+TEST_SRCS+= strings_test.cpp
+TEST_SRCS+= test_main.cpp
+TEST_SRCS+= test_utils.cpp
 
 # required by base
 .PATH:	${.CURDIR}/../liblog

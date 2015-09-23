@@ -5,7 +5,7 @@ provided by R.
 Rcpp provides matching C++ classes for a large number of basic R
 data types. Hence, a package author can keep his data in normal R
 data structures without having to worry about translation or
-transfering to C++. At the same time, the data structures can be
+transferring to C++. At the same time, the data structures can be
 accessed as easily at the C++ level, and used in the normal manner.
 
 The mapping of data types works in both directions. It is as

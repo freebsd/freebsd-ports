@@ -1,0 +1,25 @@
+--- configure.orig	2015-09-17 05:07:32 UTC
++++ configure
+@@ -2300,9 +2300,9 @@ case $_host_os in
+ 		LDFLAGS="$LDFLAGS -L$DEVKITPRO/libnds/lib"
+ 		LIBS="$LIBS -lnds9"
+ 		;;
+-	freebsd*)
+-		LDFLAGS="$LDFLAGS -L/usr/local/lib"
+-		CXXFLAGS="$CXXFLAGS -I/usr/local/include"
++	dragonfly*|freebsd*)
++		LDFLAGS="$LDFLAGS -L$(prefix)/lib"
++		CXXFLAGS="$CXXFLAGS -I$(prefix)/include"
+ 		;;
+ 	gamecube)
+ 		_optimization_level=-Os
+@@ -3106,6 +3106,9 @@ case $_host_os in
+ 	android | beos* | bsd* | darwin* | freebsd* | gnu* | gph-linux | haiku* | hpux* | iphone | irix*| k*bsd*-gnu* | linux* | maemo | mint* | netbsd* | openbsd* | solaris* | sunos* | uclinux* | webos)
+ 		_posix=yes
+ 		;;
++	dragonfly*)
++		_posix=yes
++		;;
+ 	os2-emx*)
+ 		_posix=yes	# FIXME: Really???
+ 		;;

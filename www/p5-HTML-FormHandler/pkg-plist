@@ -56,9 +56,11 @@
 %%SITE_PERL%%/HTML/FormHandler/I18N.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N/ar_kw.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N/bg_bg.pm
+%%SITE_PERL%%/HTML/FormHandler/I18N/ca_es.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N/cs_cz.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N/de_de.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N/en_us.pm
+%%SITE_PERL%%/HTML/FormHandler/I18N/es_es.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N/hu_hu.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N/it_it.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N/ja_jp.pm
@@ -241,9 +243,11 @@
 %%PERL5_MAN3%%/HTML::FormHandler::I18N.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::I18N::ar_kw.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::I18N::bg_bg.3.gz
+%%PERL5_MAN3%%/HTML::FormHandler::I18N::ca_es.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::I18N::cs_cz.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::I18N::de_de.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::I18N::en_us.3.gz
+%%PERL5_MAN3%%/HTML::FormHandler::I18N::es_es.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::I18N::hu_hu.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::I18N::it_it.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::I18N::ja_jp.3.gz

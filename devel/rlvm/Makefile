@@ -13,8 +13,7 @@ LICENSE_COMB=	multi
 BUILD_DEPENDS=	${LOCALBASE}/include/utf8.h:${PORTSDIR}/devel/utf8cpp
 LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
 		libboost_serialization.so:${PORTSDIR}/devel/boost-libs \
-		libguichan.so:${PORTSDIR}/devel/guichan \
-		libGLEW.so:${PORTSDIR}/graphics/glew
+		libguichan.so:${PORTSDIR}/devel/guichan
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu
 
 USE_GITHUB=	yes
@@ -22,7 +21,7 @@ GH_ACCOUNT=	eglaysher
 GH_TAGNAME=	373a3db # release-${PORTVERSION}
 
 USES=		compiler:c++11-lib pkgconfig scons
-USE_GL=		yes
+USE_GL=		glew glu
 USE_GNOME=	gtk20
 USE_SDL=	image mixer ttf
 EXCLUDE=	GLEW SDL_image SDL_mixer SDL_ttf gmock gtest guichan \

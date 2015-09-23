@@ -5,7 +5,7 @@ sendfile, epoll and OpenSSL), OS level functionality (random number
 generation, system status, etc), and native process handling (shared memory,
 NT pipes and Unix sockets).
 
-These features allows making Tomcat a general purposewebserver, will
+These features allows making Tomcat a general purpose webserver, will
 enable much better integration with other native web technologies, and
 overall make Java much more viable as a full fledged webserver platform
 rather than simply a backend focused technology.

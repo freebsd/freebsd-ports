@@ -7723,7 +7723,7 @@ security/rubygem-net-ssh27||2015-07-20|Has expired: not used by other ports anym
 graphics/kuickshow-kde4||2015-07-21|Has expired: Broken for more than 6 months
 graphics/sng||2015-07-21|Has expired: Broken for more than 6 months
 japanese/netype||2015-07-21|Has expired: Broken for more than 6 months
-databases/p5-DBD-Pg32|databases/p5-DBD-Pg|2015-07-22|Has expired: Use databases/p5-DBD-Pg instead, compatability probles are fixed
+databases/p5-DBD-Pg32|databases/p5-DBD-Pg|2015-07-22|Has expired: Use databases/p5-DBD-Pg instead, compatibility probles are fixed
 textproc/py-asciinema|textproc/asciinema|2015-07-23|Has expired: use textproc/asciinema instead
 devel/libiomp5-devel|devel/llvm-devel|2015-07-24|Merged with devel/llvm-devel
 devel/amd64-binutils||2015-07-25|No real use
@@ -7871,3 +7871,7 @@ www/asp-php||2015-09-13|Unmaintained upstream, generate unsupported php
 textproc/py-xmltools||2015-09-15|Remove port marked broken for six months: fetch failed
 security/krb5-111|security/krb5-112|2015-09-15|krb5-1.11 EOLed by MIT in December 2014
 textproc/py-xml||2015-09-16|Remove: this package is available in standard python library since 2.2
+x11-toolkits/wxgtk28-unicode|x11-toolkits/wxgtk28|2015-09-16|Make wxGTK now only unicode
+x11-toolkits/wxgtk28-unicode-contrib|x11-toolkits/wxgtk28-contrib|2015-09-16|Make wxGTK now only unicode
+x11-toolkits/py-wxPython28-unicode|x11-toolkits/py-wxPython28|2015-09-16|Make wxGTK now only unicode
+japanese/font-mplus|japanese/font-mplus-outline|2015-09-21|Renamed

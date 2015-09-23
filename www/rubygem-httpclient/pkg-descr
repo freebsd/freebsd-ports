@@ -11,7 +11,7 @@ Features:
           o streaming POST (POST with File/IO)
           o Digest auth
           o Negotiate/NTLM auth for WWW-Authenticate (requires net/htlm module)
-          o NTLM auth for Proxy-Authenticate (requires win32/sspi module)
+          o NTLM auth for Proxy-Authenticate (requires Win32/sspi module)
           o extensible with filter interface
           o you dont have to care HTTP/1.1 persistent connection (httpclient cares instead of you)
     * Not supported now

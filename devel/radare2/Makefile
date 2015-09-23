@@ -3,6 +3,7 @@
 
 PORTNAME=	radare2
 PORTVERSION=	0.9.8
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://rada.re/get/
 

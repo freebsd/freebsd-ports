@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	openslp
-PORTVERSION=	1.2.1
-PORTREVISION=	5
+PORTVERSION=	2.0.0
 CATEGORIES=	net
-MASTER_SITES=	SF/${PORTNAME}/OpenSLP/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/${PORTVERSION}%20Release
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Open-source implementation of the Service Location Protocol
