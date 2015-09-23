@@ -67,6 +67,7 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/www/img/spinner.gif
 %%DATADIR%%/www/img/spinner.png
 %%DATADIR%%/www/index.html
+%%DATADIR%%/www/js/d3pie.min.js
 %%DATADIR%%/www/js/jquery.paginatetable.js
 %%DATADIR%%/www/js/rspamd.js
 %%DATADIR%%/www/plugins.txt
