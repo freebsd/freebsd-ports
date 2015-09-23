@@ -3,7 +3,7 @@
 PORTNAME=	waifu2x-converter-cpp
 DISTVERSION=	1.0.0-237
 DISTVERSIONSUFFIX=	-gca65c93
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://aur.archlinux.org/cgit/aur.git/plain/:manpage
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -54,9 +54,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,-O2,,; /SYMBOL/s,-s,,' \
 		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e '/"models/s,","${DATADIR}/,' \
-		-e '/CmdLine/s,${PORTVERSION:R},${DISTVERSIONFULL},' \
+		-e '/CmdLine/s,[^"]*"),${DISTVERSIONFULL}"),' \
 		${WRKSRC}/src/main.cpp
-	@${REINPLACE_CMD} -e 's,[^"]*"),${PORTNAME}"),' \
+	@${REINPLACE_CMD} -e 's,${PORTNAME:C/-.*//},${PORTNAME},' \
 		-e 's,\(version\) [^"]*,\1 ${DISTVERSIONFULL},' \
 		${WRKDIR}/${PORTNAME}.1
 
