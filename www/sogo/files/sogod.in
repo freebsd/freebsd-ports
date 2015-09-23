@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: sogod
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=sogod
+rcvar=sogod_enable
+
+load_rc_config ${name}
+
+: ${sogod_enable:=NO}
+
+command=%%GNUSTEP_LOCAL_TOOLS%%/Admin/${name}
+pidfile=/var/run/sogo/sogo.pid
+
+sogod_user=${name}
+sogod_group=${name}
+
+start_precmd="cd /; . %%GNUSTEP_MAKEFILES%%/GNUstep.sh; install -d -m 775 -g ${sogod_group} /var/log/sogo /var/run/sogo"
+stop_precmd='cd /; . %%GNUSTEP_MAKEFILES%%/GNUstep.sh'
+restart_precmd='cd /; . %%GNUSTEP_MAKEFILES%%/GNUstep.sh'
+
+run_rc_command "$1"

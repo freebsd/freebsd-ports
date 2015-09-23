@@ -1,0 +1,14 @@
+--- Tests/Unit/GNUmakefile.orig	2015-09-16 18:41:31 UTC
++++ Tests/Unit/GNUmakefile
+@@ -35,7 +35,10 @@ $(TEST_TOOL)_CPPFLAGS += \
+ 	-Wall -D_GNU_SOURCE -I../../SOPE/ -I../../SoObjects/ -I../../UI/
+ 
+ ADDITIONAL_LIB_DIRS += \
+-	-L../../SoObjects/SOGo/SOGo.framework/Versions/Current/sogo -L../../SOPE/NGCards/obj -L../../SOPE/GDLContentStore/obj -lSOGo -lNGMime -lNGCards -lGDLContentStore -lNGExtensions -lSBJson -lobjc \
++	-L../../SoObjects/SOGo/SOGo.framework/Versions/Current/sogo -L../../SOPE/NGCards/obj -L../../SOPE/GDLContentStore/obj \
++	-lSOGo -lNGMime -lNGCards -lGDLContentStore -lNGExtensions \
++	-lSBJson -lGDLAccess -lNGObjWeb -lNGStreams -lEOControl -lDOM \
++	-lNGLdap -lobjc \
+ 	-L/usr/local/lib  -lSaxObjC \
+ 	-Wl,-rpath,../../SoObjects/SOGo/SOGo.framework/Versions/Current/sogo -Wl,-rpath,../../SOPE/NGCards/obj -Wl,-rpath,../../SOPE/GDLContentStore/obj
+ ADDITIONAL_LDFLAGS += -Wl,--no-as-needed
