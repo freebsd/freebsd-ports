@@ -60,8 +60,8 @@ GH_PROJECT=	ffmpeg
 GH_TAGNAME=	2.6.4-Isengard
 KODI_COMMIT=	f4dda26
 
-USES=		autoreconf:build gettext gmake iconv jpeg libtool \
-		pkgconfig python:2
+USES=		autoreconf:build compiler:c++11-lib gettext gmake iconv jpeg \
+		libtool pkgconfig python:2
 GNU_CONFIGURE=	yes
 USE_XORG=	xmu xrandr xt xtst
 USE_GL=		glu glew
@@ -144,11 +144,6 @@ SFTP_CONFIGURE_ENABLE=	ssh
 
 CONFIGURE_ARGS+=	--disable-debug --disable-alsa --disable-pulse
 
-.include <bsd.port.pre.mk>
-.if ${OPSYS} == "FreeBSD" && ${OSVERSION} < 1000000
-USE_GCC=		yes
-.endif
-
 post-extract:
 	${MKDIR} ${WRKSRC}/tools/depends/target/ffmpeg/${GH_PROJECT}-${GH_TAGNAME}
 	${TAR} --strip-components=1 -xf ${DISTDIR}/${GH_PROJECT}-${GH_TAGNAME}.tar.gz \
@@ -172,4 +167,4 @@ post-install:
 		| ${XARGS} ${STRIP_CMD}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/kodi/kodi-xrandr
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
