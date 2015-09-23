@@ -23,6 +23,7 @@ RUN_DEPENDS=	xpdf:${PORTSDIR}/graphics/xpdf \
 		${FONTSDIR}/MSung-Light:${PORTSDIR}/chinese/font-std
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
 SUB_FILES=	dot.xpdfrc
 SUB_LIST=	ADOBECMAPDIR=${ADOBECMAPDIR} \
