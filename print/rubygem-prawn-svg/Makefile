@@ -9,6 +9,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	SVG renderer for Prawn PDF library
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-css_parser>=1.3:${PORTSDIR}/textproc/rubygem-css_parser \
 		rubygem-prawn>=0.8.4:${PORTSDIR}/print/rubygem-prawn
