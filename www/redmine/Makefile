@@ -3,7 +3,7 @@
 
 PORTNAME=	redmine
 PORTVERSION=	2.6.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://www.redmine.org/releases/
 
@@ -36,8 +36,8 @@ GROUPS=		${WWWGRP}
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 SUB_LIST=	RUBY_NAME=${RUBY_NAME}
 
-OPTIONS_DEFINE=	MYSQL MYSQL2 POSTGRESQL RMAGIC WWWSERVER
-OPTIONS_DEFAULT=MYSQL2 RMAGIC WWWSERVER THIN
+OPTIONS_DEFINE=	MYSQL MYSQL2 POSTGRESQL RMAGIC
+OPTIONS_DEFAULT=MYSQL2 RMAGIC THIN
 OPTIONS_SINGLE=	WWWSERVER
 OPTIONS_SINGLE_WWWSERVER=	THIN PASSENGER
 POSTGRESQL_DESC=Enable PostgreSQL support
@@ -49,24 +49,14 @@ NO_OPTIONS_SORT=yes
 
 MYSQL_RUN_DEPENDS=	rubygem-mysql>=2.8.1:${PORTSDIR}/databases/rubygem-mysql
 MYSQL2_RUN_DEPENDS=	rubygem-mysql2>=0:${PORTSDIR}/databases/rubygem-mysql2
+PASSENGER_RUN_DEPENDS=	passenger-config:${PORTSDIR}/www/rubygem-passenger
 POSTGRESQL_RUN_DEPENDS=	rubygem-pg>=0:${PORTSDIR}/databases/rubygem-pg
 RMAGIC_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-Gemfile
 RMAGIC_RUN_DEPENDS=	rubygem-rmagick>=2.0.0:${PORTSDIR}/graphics/rubygem-rmagick
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MWWWSERVER}
-.if ${PORT_OPTIONS:MTHIN}
-RUN_DEPENDS+=	thin:${PORTSDIR}/www/rubygem-thin
-USE_RC_SUBR=	redmine
-SUB_LIST+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-thin-Gemfile
-.endif
-
-.if ${PORT_OPTIONS:MPASSENGER}
-RUN_DEPENDS+=	passenger-config:${PORTSDIR}/www/rubygem-passenger
-.endif
-.endif
+THIN_EXTRA_PATCHES=	${FILESDIR}/extra-patch-thin-Gemfile
+THIN_RUN_DEPENDS=	thin:${PORTSDIR}/www/rubygem-thin
+THIN_SUB_LIST=		WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+THIN_VARS=		USE_RC_SUBR=redmine
 
 post-extract:
 	@${RM} ${WRKSRC}/.hgignore ${WRKSRC}/.travis.yml

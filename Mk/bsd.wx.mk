@@ -46,11 +46,6 @@
 # WX_PREMK	- Define to determine version and define WX_CONFIG/WX_VERSION
 #		  after <bsd.port.pre.mk> (in case the port needs to manually run
 #		  the script).
-# WX_UNICODE	- Define if the port needs the Unicode version of the
-#		  wxWidgets library and/or contributed libraries.
-#		  NOTE: this should NOT be used for ports that can be compiled
-#		  with Unicode or not, but for the ones that require it.
-# WANT_UNICODE	- Define if the port prefers Unicode, but doesn't require it.
 # WANT_WX	- Set to "yes" or a valid single version (no ranges, etc).
 #		  In both cases it will detect the installed wxWidgets
 #		  components and add them to the variable HAVE_WX. If a
@@ -66,29 +61,20 @@
 #
 # The following variables are intended for the user and can be defined in
 # make.conf.
-# WITH_UNICODE	- Define if you prefer the Unicode version when available.
-# WITHOUT_UNICODE
-#		- Define if you prefer the non Unicode version (this
-#		  variable disables WITH_UNICODE and WANT_UNICODE).
 # WITH_WX_VER	- Define to the list of prefered versions in reverse order.
 #
 # The following variables are defined by this file, to be read from the port.
 # WX_CONFIG	- The path to the wx-config program (with different name).
 # WXRC_CMD	- The path to the wxrc program (with different name).
 # WX_VERSION	- The wxWidgets version that is going to be used.
-# WX_UNICODE	- If this variable is not defined by the port (which means it
-#		  requires the Unicode version of wxWidgets), it will be
-#		  defined in the case the Unicode version is used (enabled by
-#		  WITH_UNICODE or WANT_UNICODE).
 # HAVE_WX	- The list of wxWidgets components installed, if WANT_WX was
 #		  defined. The components will have version suffix if it was
 #		  set to "yes".
 #
 # Examples:
-# - A port that needs wxWidgets 2.8 and contributed libraries with Unicode.
+# - A port that needs wxWidgets 2.8 and contributed libraries
 #	USE_WX=		2.8
 #	WX_COMPS=	wx contrib
-#	WX_UNICODE=	yes
 # - A port that needs WxPython 2.8 for running.
 #	USE_PYTHON=	yes
 #	USE_WX=		2.8
@@ -140,13 +126,13 @@ _WX_VERS_LISTS=		WANT_WX_VER WITH_WX_VER _WX_VER_INSTALLED
 #
 
 # wxgtk 2.8
-_WX_PORT_wx_2.8=	x11-toolkits/wxgtk28${_WX_UCL}
+_WX_PORT_wx_2.8=	x11-toolkits/wxgtk28
 _WX_LIB_wx_2.8=		wx_base${_WX_UC}-2.8
 
-_WX_PORT_contrib_2.8=	x11-toolkits/wxgtk28${_WX_UCL}-contrib
+_WX_PORT_contrib_2.8=	x11-toolkits/wxgtk28-contrib
 _WX_LIB_contrib_2.8=	wx_gtk2${_WX_UC}_fl-2.8
 
-_WX_PORT_python_2.8=	x11-toolkits/py-wxPython28${_WX_UCL}
+_WX_PORT_python_2.8=	x11-toolkits/py-wxPython28
 _WX_FILE_python_2.8=	${PYTHON_SITELIBDIR}/wx-2.8-gtk2${_WX_PYSUFX}/wx/__init__.py
 
 # wxgtk 3.0
@@ -176,17 +162,6 @@ _WX_DEPTYPE_${comp}_${ver}=	lib
 .endif		# !_WX_Defined_Done
 
 #
-# Check if the user/port wants Unicode.
-#
-
-.if (!defined(WITHOUT_UNICODE) && \
-    (defined(WITH_UNICODE) || defined(WANT_UNICODE)))
-_WX_UC_AVAILABLE=	yes
-.else
-.	undef _WX_UC_AVAILABLE
-.endif
-
-#
 # Check if we are going to determine the version.
 #
 
@@ -214,28 +189,11 @@ _WANT_WX=		yes
 
 .if defined(_WANT_WX)
 
-# Check if Unicode will be used.
-
-.	for __WANT_WX in ${_WANT_WX}
-.		if defined(_WX_UC_AVAILABLE) && \
-		   (${_WX_VERS_UC_ALL:M${__WANT_WX}} != "" || ${_WANT_WX:tl} == "yes")
-_WX_WANT_UNICODE=		yes
-.		endif
-.	endfor
-
 # These variables are reprocessed later so they won't affect other parts.
 
-.	if defined(WX_UNICODE) || defined(_WX_WANT_UNICODE)
 _WX_VER_FINAL=		${_WX_VERS_UC_ALL}
 _WX_UC=			u
-_WX_UCL=		-unicode
 _WX_PYSUFX=		-unicode
-.	else
-_WX_VER_FINAL=		${_WX_VERS_ALL}
-_WX_UC=			#
-_WX_UCL=		#
-_WX_PYSUFX=		-ansi
-.	endif
 
 # Fill _HAVE_WX with the installed components.
 
@@ -407,37 +365,11 @@ _WX_VER_UC+=		${ver}
 .	endif
 .endfor
 
-# Requested by the user or port (optional).
-
-.if defined(_WX_UC_AVAILABLE)
-.	for ver in ${_WX_VER_UC}
-.		if ${_WX_VERS_UC_ALL:M${ver}} != ""
-WX_UNICODE=		yes
-.		endif
-.	endfor
-.endif
-
-# Requested by the port (mandatory).
-
-.if defined(WX_UNICODE)
-.	if empty(_WX_VER_UC)
-IGNORE?=		selected a wxWidgets version which does not support Unicode: ${_WX_VER_MERGED}
-.	endif
-.endif
-
 # Set Unicode variables.
 
-.if defined(WX_UNICODE)
 _WX_VER_FINAL=		${_WX_VER_UC}
 _WX_UC=			u
-_WX_UCL=		-unicode
 _WX_PYSUFX=		-unicode
-.else
-_WX_VER_FINAL=		${_WX_VER_MERGED}
-_WX_UC=			#
-_WX_UCL=		#
-_WX_PYSUFX=		-ansi
-.endif
 
 # Remove unusable installed versions.
 

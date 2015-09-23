@@ -1,5 +1,20 @@
 --- cpp/config/Make.rules.orig	2015-06-23 15:30:20.000000000 +0000
-+++ cpp/config/Make.rules	2015-06-27 10:26:42.692387147 +0000
++++ cpp/config/Make.rules	2015-09-14 21:31:28.253993994 +0000
+@@ -203,11 +201,11 @@
+     ICEUTIL_FLAGS     	= -DICE_PRIO_INHERIT
+ endif
+ 
+-OPENSSL_FLAGS           += $(if $(OPENSSL_HOME),-I$(OPENSSL_HOME)/include)
++OPENSSL_FLAGS           += -I%%OPENSSLINC%%
+ ifeq ($(OPENSSL_LIBS),)
+-    OPENSSL_LIBS	= $(if $(OPENSSL_HOME),-L$(OPENSSL_HOME)/$(libsubdir)) -lssl -lcrypto
++    OPENSSL_LIBS	= -L%%OPENSSLLIB%% -lssl -lcrypto
+ endif
+-OPENSSL_RPATH_LINK      = $(if $(OPENSSL_HOME),$(call rpathlink,$(OPENSSL_HOME)/$(libsubdir)))
++OPENSSL_RPATH_LINK      = $(if %%OPENSSLRPATH%%,$(call rpathlink,%%OPENSSLRPATH%%))
+ 
+ ifeq ($(SSL_OS_LIBS),)
+ 	SSL_OS_LIBS = $(OPENSSL_LIBS)
 @@ -240,7 +240,9 @@
  	    DB_FLAGS          = -I/usr/local/include/db53
  	    DB_LIBS           = -L/usr/local/$(libsubdir)/db53 -ldb_cxx
@@ -11,3 +26,12 @@
  	endif
     endif
  endif
+@@ -381,7 +381,7 @@
+ .cpp.o:
+ 	$(CXX) -c $(CPPFLAGS) $(CXXFLAGS) $<
+ 	@mkdir -p .depend
+-	@$(CXX) -DMAKEDEPEND -MM $(CPPFLAGS) $< > .depend/$(*F).d
++	@$(CXX) -DMAKEDEPEND -MM $(CPPFLAGS) $(CXXFLAGS) $< > .depend/$(*F).d
+ 
+ .c.o:
+ 	$(CC) -c $(CPPFLAGS) $(CFLAGS) $<

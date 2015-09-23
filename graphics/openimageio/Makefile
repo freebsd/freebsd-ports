@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openimageio
-PORTVERSION=	1.5.16
+PORTVERSION=	1.5.18
 DISTVERSIONPREFIX=	Release-
 PORTREVISION?=	0
 CATEGORIES?=	graphics multimedia
@@ -66,7 +66,7 @@ PLIST_SUB+=		LIBVERS=${PORTVERSION}
 LIB_DEPENDS+=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
 		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libhdf5.so:${PORTSDIR}/science/hdf5 \
-		libopencv_legacy.so:${PORTSDIR}/graphics/opencv \
+		libopencv_highgui.so:${PORTSDIR}/graphics/opencv \
 		libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15 \
 		libwebp.so:${PORTSDIR}/graphics/webp
 USE_LDCONFIG=	yes

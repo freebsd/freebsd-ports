@@ -4,7 +4,6 @@
 @comment include/EGL/eglextchromium.h
 @comment include/EGL/eglmesaext.h
 @comment include/EGL/eglplatform.h
-include/GL/internal/dri_interface.h
 @comment include/GL/gl.h
 @comment include/GL/gl_mangle.h
 @comment include/GL/glcorearb.h
@@ -12,31 +11,53 @@ include/GL/internal/dri_interface.h
 @comment include/GL/glx.h
 @comment include/GL/glx_mangle.h
 @comment include/GL/glxext.h
+include/GL/internal/dri_interface.h
 @comment include/GL/osmesa.h
 @comment include/GL/wglext.h
 @comment include/GL/wmesa.h
+@comment include/GLES2/gl2.h
+@comment include/GLES2/gl2ext.h
+@comment include/GLES2/gl2platform.h
+@comment include/GLES3/gl3.h
+@comment include/GLES3/gl31.h
+@comment include/GLES3/gl3ext.h
+@comment include/GLES3/gl3platform.h
 @comment include/KHR/khrplatform.h
 @comment include/gbm.h
-%%GALLIUM%%lib/dri/kms_swrast_dri.so
 %%I915_DRIVER%%lib/dri/i915_dri.so
 %%I965_DRIVER%%lib/dri/i965_dri.so
+lib/dri/kms_swrast_dri.so
 %%R200_DRIVER%%lib/dri/r200_dri.so
-%%GALLIUM%%lib/dri/r300_dri.so
-%%GALLIUM%%lib/dri/r600_dri.so
+lib/dri/r300_dri.so
+lib/dri/r600_dri.so
 %%RADEON_DRIVER%%lib/dri/radeon_dri.so
-%%GALLIUM%%lib/dri/radeonsi_dri.so
+lib/dri/radeonsi_dri.so
 %%SWRAST_DRIVER%%lib/dri/swrast_dri.so
-%%GALLIUM%%lib/dri/vmwgfx_dri.so
-%%GALLIUM%%lib/libXvMCr600.so
-%%GALLIUM%%lib/libXvMCr600.so.1
-%%GALLIUM%%lib/libXvMCr600.so.1.0
-%%GALLIUM%%lib/libXvMCr600.so.1.0.0
+lib/dri/vmwgfx_dri.so
+@comment lib/gallium-pipe/pipe_r300.so
+@comment lib/gallium-pipe/pipe_r600.so
+@comment lib/gallium-pipe/pipe_radeonsi.so
+@comment lib/gallium-pipe/pipe_swrast.so
+@comment lib/gallium-pipe/pipe_vmwgfx.so
 @comment lib/libEGL.so
 @comment lib/libEGL.so.1
 @comment lib/libEGL.so.1.0.0
 @comment lib/libGL.so
 @comment lib/libGL.so.1
 @comment lib/libGL.so.1.2.0
+@comment lib/libGLESv2.so
+@comment lib/libGLESv2.so.2
+@comment lib/libGLESv2.so.2.0.0
+@comment lib/libMesaOpenCL.so
+@comment lib/libMesaOpenCL.so.1
+@comment lib/libMesaOpenCL.so.1.0.0
+@comment lib/libOSMesa.so
+@comment lib/libOSMesa.so.8
+@comment lib/libOSMesa.so.8.0.0
+lib/libXvMCr600.so
+lib/libXvMCr600.so.1
+lib/libXvMCr600.so.1.0
+lib/libXvMCr600.so.1.0.0
 @comment lib/libgbm.so
 @comment lib/libgbm.so.1
 @comment lib/libgbm.so.1.0.0
@@ -55,7 +76,9 @@ include/GL/internal/dri_interface.h
 %%VDPAU%%lib/vdpau/libvdpau_radeonsi.so.1
 %%VDPAU%%lib/vdpau/libvdpau_radeonsi.so.1.0
 %%VDPAU%%lib/vdpau/libvdpau_radeonsi.so.1.0.0
-@comment libdata/pkgconfig/egl.pc
 libdata/pkgconfig/dri.pc
+@comment libdata/pkgconfig/egl.pc
 @comment libdata/pkgconfig/gbm.pc
 @comment libdata/pkgconfig/gl.pc
+@comment libdata/pkgconfig/glesv2.pc
+@comment libdata/pkgconfig/osmesa.pc

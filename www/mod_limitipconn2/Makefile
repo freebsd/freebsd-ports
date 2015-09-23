@@ -3,6 +3,7 @@
 
 PORTNAME=	mod_limitipconn
 PORTVERSION=	0.24
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://dominia.org/djao/limit/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -15,12 +16,10 @@ COMMENT=	Allows you to limit the number of simultaneous connexions
 LICENSE=	APACHE20
 
 USE_APACHE=	22+
-USES=	tar:bzip2
+USES=		tar:bzip2
 
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
-
-PLIST_FILES+=	${APACHEMODDIR}/${PORTNAME}.so
 
 PORTDOCS=	ChangeLog INSTALL README
 

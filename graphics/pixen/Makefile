@@ -2,7 +2,7 @@
 
 PORTNAME=	pixen
 PORTVERSION=	0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://download.gna.org/gsimageapps/
 DISTNAME=	Pixen-${PORTVERSION}
@@ -19,6 +19,6 @@ USE_GNUSTEP=	back build
 ADDITIONAL_OBJCFLAGS+=	-Dlog2=logb
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/Pixen.app/Pixen
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/System/Applications/Pixen.app/Pixen
 
 .include <bsd.port.mk>

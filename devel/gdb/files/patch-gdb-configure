@@ -22,16 +22,3 @@ index 355f190..9c60e01 100755
  "
  if test "x$ac_cv_member_struct_reg_r_gs" = x""yes; then :
  
-@@ -12945,10 +12947,9 @@ fi
- 
- build_warnings="-Wall -Wdeclaration-after-statement -Wpointer-arith \
- -Wpointer-sign \
---Wno-unused -Wunused-value -Wunused-function \
-+-Wno-unused -Wunused-value \
- -Wno-switch -Wno-char-subscripts -Wmissing-prototypes \
---Wdeclaration-after-statement -Wempty-body -Wmissing-parameter-type \
---Wold-style-declaration -Wold-style-definition"
-+-Wdeclaration-after-statement -Wempty-body -Wold-style-definition"
- 
- # Enable -Wno-format by default when using gcc on mingw since many
- # GCC versions complain about %I64.

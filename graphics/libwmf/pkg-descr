@@ -1,4 +1,4 @@
-libwmf is a library for unix like machines that can convert wmf
+libwmf is a library for Unix like machines that can convert wmf
 files into other formats, currently it supports a gd binding
 to convert to png, and an X one to draw direct to an X window
 or pixmap.

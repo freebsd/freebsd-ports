@@ -3,6 +3,7 @@
 
 PORTNAME=	psychopy
 PORTVERSION=	1.82.02
+PORTREVISION=	1
 CATEGORIES=	science python
 MASTER_SITES=	SF/psychpy/PsychoPy
 DISTNAME=	PsychoPy-${PORTVERSION}

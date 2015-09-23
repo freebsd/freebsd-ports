@@ -1,5 +1,5 @@
---- rijndael.hpp.orig	2014-06-11 01:14:06.000000000 +0800
-+++ rijndael.hpp	2014-08-05 01:31:59.971584264 +0800
+--- rijndael.hpp.orig	2014-06-10 17:14:06 UTC
++++ rijndael.hpp
 @@ -16,6 +16,9 @@
  class Rijndael
  { 

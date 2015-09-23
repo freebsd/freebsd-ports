@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	remind
-PORTVERSION=	3.1.13
+PORTVERSION=	3.1.15
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.roaringpenguin.com/files/download/ \
 		http://freebsd.unixfreunde.de/sources/
-DISTNAME=	${PORTNAME}-03.01.13
+DISTNAME=	${PORTNAME}-03.01.15
 
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Sophisticated calendar and alarm program

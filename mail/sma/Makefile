@@ -15,8 +15,6 @@ DOCSFILES=	BUGS COPYRIGHT HISTORY README TODO
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.options.mk>
-
 do-configure:
 	${REINPLACE_CMD} -e "s,CC	=,CC?=	," \
 		-e "s,CFLAGS	= -Wall -O,CFLAGS+=	," \
@@ -25,17 +23,17 @@ do-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sma ${STAGEDIR}${PREFIX}/bin/sma
 	${INSTALL_MAN} ${WRKSRC}/sma.8 ${STAGEDIR}${PREFIX}/man/man8/
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${DOCSFILES}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
 .endfor
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+
+do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for i in ${SAMPLEFILES}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${EXAMPLESDIR}/
 .endfor
-.endif
 
 .include <bsd.port.mk>

@@ -80,10 +80,6 @@ MAKE_ENV+=	DEBUG=1
 STRIP=
 .endif
 
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64
-.endif
-
 PLIST_FILES+=	${bin:S,^,bin/,} ${sbin:S,^,sbin/,} sbin/gatling_wrapper
 
 pre-install:

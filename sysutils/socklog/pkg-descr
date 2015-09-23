@@ -1,10 +1,10 @@
 socklog in cooperation with the runit package is a small and secure replacement
 for syslogd. There are three main features, syslogd provides:
 
-- receiving syslog messages from an unix domain socket (/dev/log) or UDP socket
+- receiving syslog messages from an Unix domain socket (/dev/log) or UDP socket
   (0.0.0.0:514) and writing them to various files on disk depending on facility
   and priority.  
-- writing received syslog messages to an udp socket (a.b.c.d:514)
+- writing received syslog messages to an UDP socket (a.b.c.d:514)
 
 socklog provides these features with the help of runit's runsvdir,
 runsv, and svlogd, provides a different network logging concept, and

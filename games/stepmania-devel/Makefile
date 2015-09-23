@@ -18,8 +18,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/Docs/Licenses.txt
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad \
-		libGLEW.so:${PORTSDIR}/graphics/glew
+LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad
 
 OPTIONS_DEFINE=	PULSEAUDIO VORBIS DOCS
 OPTIONS_DEFAULT=VORBIS
@@ -28,7 +27,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-SM5-alpha3
 
 USES=		iconv pathfix perl5 pkgconfig shebangfix tar:bzip2
 USE_XORG=	x11 xau xdmcp xext xrandr xrender xtst
-USE_GL=		gl glu
+USE_GL=		gl glu glew
 USE_GNOME=	gtk20
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
@@ -43,13 +42,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lX11 -lpthread
 VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 VORBIS_CONFIGURE_WITH=	vorbis
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
-.else
-CONFIGURE_ENV+=	ac_cv_lib_pulse_pa_stream_new=no
-.endif
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_CONFIGURE_ENV_OFF=	ac_cv_lib_pulse_pa_stream_new=no
 
 post-patch:
 	@${REINPLACE_CMD} -e \

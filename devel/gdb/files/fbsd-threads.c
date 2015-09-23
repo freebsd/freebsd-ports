@@ -675,7 +675,7 @@ attach_thread (ptid_t ptid, const td_thrhandle_t *th_p,
     memset(private, 0, sizeof(struct private_thread_info));
 
     tp = add_thread_with_info(ptid, private);
-    tp->private = private;
+    tp->priv = private;
     tp->private_dtor = free_private_thread_info;
   }
 
@@ -1176,9 +1176,9 @@ fbsd_thread_pid_to_str (struct target_ops *ops, ptid_t ptid)
       if (ti.ti_lid != 0)
         {
           // Need to find the name of this LWP, even though it shouldn't change
-          fbsd_find_lwp_name(ti.ti_lid, tinfo->private);
+          fbsd_find_lwp_name(ti.ti_lid, tinfo->priv);
 
-          if (tinfo->private->lwp_name == NULL)
+          if (tinfo->priv->lwp_name == NULL)
             {
               snprintf(buf, sizeof (buf), "Thread %llx (LWP %d)",
                   (unsigned long long)th.th_thread, ti.ti_lid);
@@ -1187,7 +1187,7 @@ fbsd_thread_pid_to_str (struct target_ops *ops, ptid_t ptid)
             {
               snprintf(buf, sizeof (buf), "Thread %llx (LWP %d %s)",
                   (unsigned long long)th.th_thread, ti.ti_lid,
-                  tinfo->private->lwp_name);
+                  tinfo->priv->lwp_name);
             }
         }
       else

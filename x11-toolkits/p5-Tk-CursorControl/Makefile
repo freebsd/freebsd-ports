@@ -18,6 +18,7 @@ BUILD_DEPENDS=	p5-Tk>=800.015:${PORTSDIR}/x11-toolkits/p5-Tk
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 ALL_TARGETS=	pure_install
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

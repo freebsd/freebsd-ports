@@ -67,7 +67,7 @@ do
   esac
 done
 
-: ${svnserver:="svn.FreeBSD.org"}
+: ${svnserver:="svn+ssh://repo.FreeBSD.org"}
 
 if [ -n "$(type svn 2>/dev/null)" ]; then
 	svn=svn
@@ -80,7 +80,7 @@ fi
 trap "rc=\$? ; rm -rf \"\${dir}\" ; exit \$rc" EXIT
 dir=$(mktemp -d /tmp/merge.XXXXXX)
 cd "${dir}"
-"${svn}" co --depth=empty svn+ssh://${svnserver}/ports/branches/"${branch}"
+"${svn}" co --depth=empty ${svnserver}/ports/branches/"${branch}"
 filelist=""
 
 echo -n "MFH:" > commit.txt
@@ -93,8 +93,7 @@ echo >> commit.txt
 for rev in $@
 do
   rev=${rev##r}
-  # svn:// is faster than svn+ssh://. Use it wherever it's possible.
-  for f in $("${svn}" diff --summarize -c r${rev} svn://${svnserver}/ports/head); do
+  for f in $("${svn}" diff --summarize -c r${rev} ${svnserver}/ports/head); do
 	  case ${f} in
 	  */*) ;;
 	  *)continue;;
@@ -103,7 +102,7 @@ do
 	  f=${f%/*}
 	  filelist="${filelist}${LF}${f}"
   done
-  "${svn}" log -r${rev} svn://${svnserver}/ports/head | sed '1,2d;$d;/^MFH:/d' \
+  "${svn}" log -r${rev} ${svnserver}/ports/head | sed '1,2d;$d;/^MFH:/d' \
       | sed '$d' >> commit.txt
 done
 filelist=$(printf '%s\n' "${filelist}" | sort -u)

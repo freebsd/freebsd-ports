@@ -34,6 +34,7 @@ TEST_DEPENDS=	p5-Math-Int128>=0:${PORTSDIR}/math/p5-Math-Int128 \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Number-Delta>=0:${PORTSDIR}/devel/p5-Test-Number-Delta
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

@@ -4,7 +4,7 @@ Generator is an open source emulator designed to emulate the Sega Genesis /
 Mega Drive console, a popular games machine produced in the early 1990s. It is
 a portable program written in C and has been ported to the Amiga, Macintosh,
 Windows and even pocket PCs such as the iPAQ and Cassiopeia. Natively it
-compiles under unix for X Windows with either tcl/tk or gtk/SDL, for svgalib
+compiles under Unix for X Windows with either tcl/tk or gtk/SDL, for svgalib
 and even cross-compiles to DOS with djgpp/allegro.
 
 Generator uses it's own custom 68000 processor emulation which is and uses

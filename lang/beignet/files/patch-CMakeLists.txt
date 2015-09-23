@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2015-03-16 05:39:34.000000000 +0100
++++ CMakeLists.txt	2015-03-27 20:29:34.695731000 +0100
+@@ -101,7 +101,7 @@
+ ENDIF (USE_STANDALONE_GBE_COMPILER STREQUAL "true")
+ 
+ 
+-set (CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,-Bsymbolic -Wl,--no-undefined ${LLVM_LDFLAGS}")
++set (CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,-Bsymbolic ${LLVM_LDFLAGS}")
+ 
+ # XLib
+ Find_Package(X11)
+@@ -190,7 +190,7 @@
+     "intel-beignet.icd.in"
+     "${ICD_FILE_NAME}"
+   )
+-  install (FILES ${CMAKE_CURRENT_BINARY_DIR}/${ICD_FILE_NAME} DESTINATION /etc/OpenCL/vendors)
++  install (FILES ${CMAKE_CURRENT_BINARY_DIR}/${ICD_FILE_NAME} DESTINATION ${CMAKE_INSTALL_PREFIX}/etc/OpenCL/vendors)
+ ELSE(OCLIcd_FOUND)
+   MESSAGE(STATUS "Looking for OCL ICD header file - not found")
+ ENDIF(OCLIcd_FOUND)

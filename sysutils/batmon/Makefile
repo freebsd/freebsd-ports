@@ -2,7 +2,7 @@
 
 PORTNAME=	batmon
 PORTVERSION=	0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils gnustep
 MASTER_SITES=	SAVANNAH/gap
 
@@ -19,6 +19,6 @@ post-patch:
 		${WRKSRC}/GNUmakefile
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/batmon.app/batmon
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/System/Applications/batmon.app/batmon
 
 .include <bsd.port.mk>

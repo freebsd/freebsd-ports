@@ -1,6 +1,6 @@
---- configure.orig	2014-11-21 12:54:55.273970976 +0100
-+++ configure	2014-11-21 12:55:25.070967392 +0100
-@@ -853,6 +853,8 @@
+--- configure.orig	2015-03-29 12:20:36.346485000 +0200
++++ configure	2015-03-29 12:21:17.768637000 +0200
+@@ -863,6 +863,8 @@
  GLPROTO_CFLAGS
  XLIBGL_LIBS
  XLIBGL_CFLAGS
@@ -9,7 +9,7 @@
  LIBUDEV_LIBS
  LIBUDEV_CFLAGS
  LIBDRM_LIBS
-@@ -1143,6 +1145,8 @@
+@@ -1158,6 +1160,8 @@
  LIBDRM_LIBS
  LIBUDEV_CFLAGS
  LIBUDEV_LIBS
@@ -18,7 +18,7 @@
  XLIBGL_CFLAGS
  XLIBGL_LIBS
  GLPROTO_CFLAGS
-@@ -1942,6 +1946,10 @@
+@@ -1966,6 +1970,10 @@
                C compiler flags for LIBUDEV, overriding pkg-config
    LIBUDEV_LIBS
                linker flags for LIBUDEV, overriding pkg-config
@@ -29,24 +29,24 @@
    XLIBGL_CFLAGS
                C compiler flags for XLIBGL, overriding pkg-config
    XLIBGL_LIBS linker flags for XLIBGL, overriding pkg-config
-@@ -5085,6 +5093,7 @@
+@@ -5232,6 +5240,7 @@
  DRI3PROTO_REQUIRED=1.0
  PRESENTPROTO_REQUIRED=1.0
  LIBUDEV_REQUIRED=151
 +LIBDEVQ_REQUIRED=0.0.2
  GLPROTO_REQUIRED=1.4.14
  LIBOMXIL_BELLAGIO_REQUIRED=0.0
- VDPAU_REQUIRED=0.4.1
-@@ -6503,7 +6512,7 @@
+ LIBVA_REQUIRED=0.35.0
+@@ -6675,7 +6686,7 @@
          fi
- 
- 
+
+
 -for ac_prog in python2 python
 +for ac_prog in python2.7 python2 python
  do
    # Extract the first word of "$ac_prog", so it can be a program name with args.
  set dummy $ac_prog; ac_word=$2
-@@ -20025,7 +20034,7 @@
+@@ -20709,7 +20718,7 @@
  
  
  case "$host_os" in
@@ -55,7 +55,7 @@
      dri3_default=yes
      ;;
  *)
-@@ -20543,6 +20552,78 @@
+@@ -21227,6 +21236,78 @@
  	have_libudev=yes
  fi
  
@@ -134,7 +134,7 @@
  # Check whether --enable-sysfs was given.
  if test "${enable_sysfs+set}" = set; then :
    enableval=$enable_sysfs; have_sysfs="$enableval"
-@@ -21258,6 +21339,10 @@
+@@ -21942,6 +22023,10 @@
      DEFINES="$DEFINES -DHAVE_LIBUDEV"
      have_pci_id=yes
  fi
@@ -145,7 +145,7 @@
  
  if test "$have_sysfs" = yes; then
      DEFINES="$DEFINES -DHAVE_SYSFS"
-@@ -21385,6 +21470,22 @@
+@@ -22069,6 +22154,22 @@
          ;;
      gnu*)
          DEFINES="$DEFINES -DHAVE_ALIAS"
@@ -168,7 +168,7 @@
          ;;
      cygwin*)
          if test "x$with_dri_drivers" = "xyes"; then
-@@ -22205,6 +22306,8 @@
+@@ -22889,6 +22990,8 @@
  
  if test "x$need_pci_id$have_libudev" = xyesyes; then
      GBM_PC_REQ_PRIV="libudev >= $LIBUDEV_REQUIRED"
@@ -177,7 +177,27 @@
  else
      GBM_PC_REQ_PRIV=""
  fi
-@@ -23628,9 +23731,6 @@
+@@ -23664,9 +23767,19 @@
+         as_fn_error $? "cannot enable OpenCL without Gallium" "$LINENO" 5
+     fi
+ 
++    if test "x$acv_mesa_CLANG" = xno; then
++
++    GCC_VERSION=`$CC -dumpversion`
++    if test $? -eq 0; then
++        GCC_VERSION_MAJOR=`echo $GCC_VERSION | cut -d. -f1`
++        GCC_VERSION_MINOR=`echo $GCC_VERSION | cut -d. -f2`
++    fi
++
+     if test $GCC_VERSION_MAJOR -lt 4 -o $GCC_VERSION_MAJOR -eq 4 -a $GCC_VERSION_MINOR -lt 7; then
+         as_fn_error $? "gcc >= 4.7 is required to build clover" "$LINENO" 5
+     fi
++# end of clang test.
++    fi
+ 
+     if test "x$have_libclc" = xno; then
+         as_fn_error $? "pkg-config cannot find libclc.pc which is required to build clover.
+@@ -24510,9 +24623,6 @@
                  CLANG_LIBDIR=${LLVM_LIBDIR}
              fi
              CLANG_RESOURCE_DIR=$CLANG_LIBDIR/clang/${LLVM_VERSION}

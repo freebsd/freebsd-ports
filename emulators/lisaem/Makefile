@@ -3,7 +3,7 @@
 
 PORTNAME=	lisaem
 DISTVERSION=	1.2.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	emulators
 MASTER_SITES=	http://lisaem.sunder.net/downloads/
 

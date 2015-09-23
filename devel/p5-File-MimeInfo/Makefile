@@ -15,11 +15,10 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-File-BaseDir>=0.03:${PORTSDIR}/devel/p5-File-BaseDir \
 		p5-File-DesktopEntry>=0.04:${PORTSDIR}/devel/p5-File-DesktopEntry
-RUN_DEPENDS=	p5-File-BaseDir>=0.03:${PORTSDIR}/devel/p5-File-BaseDir \
-		p5-File-DesktopEntry>=0.04:${PORTSDIR}/devel/p5-File-DesktopEntry \
-		update-mime-database:${PORTSDIR}/misc/shared-mime-info
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USE_PERL5=	configure
-USES=		perl5
+USES=		perl5 shared-mime-info
 
 .include <bsd.port.mk>

@@ -4,6 +4,8 @@ lib/elixir/lib/calendar/ebin/Elixir.Calendar.ContainsDate.Calendar.DateTime.beam
 lib/elixir/lib/calendar/ebin/Elixir.Calendar.ContainsDate.Calendar.NaiveDateTime.beam
 lib/elixir/lib/calendar/ebin/Elixir.Calendar.ContainsDate.Tuple.beam
 lib/elixir/lib/calendar/ebin/Elixir.Calendar.ContainsDate.beam
+lib/elixir/lib/calendar/ebin/Elixir.Calendar.ContainsDateTime.Calendar.DateTime.beam
+lib/elixir/lib/calendar/ebin/Elixir.Calendar.ContainsDateTime.beam
 lib/elixir/lib/calendar/ebin/Elixir.Calendar.ContainsNaiveDateTime.Calendar.DateTime.beam
 lib/elixir/lib/calendar/ebin/Elixir.Calendar.ContainsNaiveDateTime.Calendar.NaiveDateTime.beam
 lib/elixir/lib/calendar/ebin/Elixir.Calendar.ContainsNaiveDateTime.Tuple.beam

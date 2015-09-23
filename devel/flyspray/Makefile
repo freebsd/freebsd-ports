@@ -3,11 +3,11 @@
 
 PORTNAME=	flyspray
 PORTVERSION=	0.9.9.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel www
 MASTER_SITES=	http://flyspray.org/
 
-MAINTAINER=	nick@foobar.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple, easy-to-use web based bug tracking system
 
 RUN_DEPENDS=	${LOCALBASE}/share/adodb/adodb.inc.php:${PORTSDIR}/databases/adodb
@@ -17,12 +17,15 @@ USES=		dos2unix zip
 WANT_PHP_WEB=	yes
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
 
 DOS2UNIX_REGEX=	.php
 
 OPTIONS_DEFINE=	GRAPHVIZ MYSQL MYSQLI PGSQL DOCS
 OPTIONS_DEFAULT=	MYSQLI
+
+DOCS_SUB_FILES=	pkg-message
 
 MYSQLI_DESC=	Use MySQLi Database Interface
 
@@ -44,15 +47,7 @@ FLYSPRAY_FILES=	cache docs/licences/gnu_lgpl.html favicon.ico \
 		includes index.php javascript lang plugins robots.txt \
 		schedule.php scripts setup templates themes
 
-SUB_FILES+=	pkg-message pkg-install
-SUB_LIST+=	FLYSPRAYDIR="${FLYSPRAYDIR}" \
-		ATTACHMENTDIR="${ATTACHMENTDIR}" \
-		MKDIR="${MKDIR}" \
-		CHOWN="${CHOWN}" \
-		CHMOD="${CHMOD}" \
-		WWWGRP="${WWWGRP}" \
-		WWWOWN="${WWWOWN}"
-PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 MYSQL_USE=	PHP=mysql
 MYSQLI_USE=	PHP=mysqli
@@ -78,6 +73,9 @@ do-install:
 		(cd ${FSINSTALLDIR} && ${TAR} -xf -)
 	${LN} -sf ${ATTACHMENTDIR} ${FSINSTALLDIR}/attachments
 	${LN} -sf ${PREFIX}/share/adodb ${FSINSTALLDIR}
+	${MKDIR} ${STAGEDIR}${ATTACHMENTDIR}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${DOC_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/docs/${file} ${STAGEDIR}${DOCSDIR}

@@ -14,6 +14,9 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-amq-protocol>=1.9.0:${PORTSDIR}/net/rubygem-amq-protocol \
 		rubygem-eventmachine>=0:${PORTSDIR}/devel/rubygem-eventmachine
 
+DEPRECATED=	Deprecated by Upstream. It is part of net/rubygem-amqp codebase now
+EXPIRATION_DATE=2015-09-30
+
 NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
