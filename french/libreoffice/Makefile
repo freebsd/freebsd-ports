@@ -1,9 +1,9 @@
 # $FreeBSD$
 
+CATEGORIES=	french
 LO_I18N=	fr
 LO_HAS_HELPPACK=	yes
-CATEGORIES=	french editors
 
-.include "${.CURDIR}/../../editors/libreoffice/Makefile.common"
+.include "${.CURDIR}/../../editors/libreoffice/Makefile.i18n"
 
 .include <bsd.port.mk>
