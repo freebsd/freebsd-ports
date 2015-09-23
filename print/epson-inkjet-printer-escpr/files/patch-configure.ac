@@ -1,0 +1,77 @@
+--- configure.ac.orig	2015-08-21 11:53:00.000000000 +0900
++++ configure.ac	2015-09-22 21:45:18.055998000 +0900
+@@ -58,7 +58,7 @@
+ if test "xno" = "x${with_cupsfilterdir}"; then
+    if test "xyes" = "x$have_cups_config" ; then
+       dnl `@<:@' , `@:>@' are replaced with  `[' , `]'
+-      CUPS_FILTER_DIR="${cups_default_prefix}`cups-config --serverbin | sed -e 's,^/@<:@^/@:>@@<:@^/@:>@*,,'`/filter"
++      CUPS_FILTER_DIR="`cups-config --serverbin`/filter"
+    else
+       CUPS_FILTER_DIR="${cups_default_prefix}/lib/cups/filter"
+    fi
+@@ -76,7 +76,7 @@
+       CUPS_PPD_DIR="${cups_default_prefix}/share/ppd"
+    elif test "xyes" = "x$have_cups_config" ; then
+       dnl `@<:@' , `@:>@' are replaced with  `[' , `]'
+-      CUPS_PPD_DIR="${cups_default_prefix}/`cups-config --datadir | sed -e 's,^/@<:@^/@:>@@<:@^/@:>@*,,'`/model"
++      CUPS_PPD_DIR="`cups-config --datadir`/model"
+    else
+       CUPS_PPD_DIR="${cups_default_prefix}/share/cups/model"
+    fi
+@@ -87,6 +87,13 @@
+ AC_SUBST(CUPS_FILTER_DIR)
+ AC_SUBST(CUPS_PPD_DIR)
+ 
++if test "xyes" = "x$have_cups_config"; then
++	CUPS_CPPFLAGS=`cups-config --cflags`
++	CUPS_LDFLAGS=`cups-config --ldflags`
++fi
++
++AC_SUBST(CUPS_CPPFLAGS)
++AC_SUBST(CUPS_LDFLAGS)
+ 
+ dnl Checks for header files.
+ AC_HEADER_STDC
+@@ -96,11 +103,14 @@
+ AC_TYPE_PID_T
+ AC_TYPE_SIZE_T
+ 
++old_CPPFLAGS=$CPPFLAGS
++CPPFLAGS="$CUPS_CPPFLAGS $CPPFLAGS"
+ AC_CHECK_HEADERS([\
+         cups/cups.h \
+         cups/ppd.h \
+         cups/raster.h \
+         ])
++CPPFLAGS=$old_CPPFLAGS
+ AC_CHECK_HEADERS([\
+         ctype.h \
+         errno.h \
+@@ -117,10 +127,6 @@
+         unistd.h \
+         ])
+ 
+-# Checks for libraries.
+-AC_CHECK_LIB([cups], [ppdOpenFile])
+-AC_CHECK_LIB([cupsimage], [cupsRasterOpen])
+-
+ # Checks for library functions.
+ AC_FUNC_MALLOC
+ AC_FUNC_MEMCMP
+@@ -132,6 +138,16 @@
+         strrchr \
+         ])
+ 
++# Checks for libraries.
++old_CPPFLAGS=$CPPFLAGS
++CPPFLAGS="$CUPS_CPPFLAGS $CPPFLAGS"
++old_LDFLAGS=$LDFLAGS
++LDFLAGS="$CUPS_LDFLAGS $LDFLAGS"
++AC_CHECK_LIB([cups], [ppdOpenFile])
++AC_CHECK_LIB([cupsimage], [cupsRasterOpen])
++LDFLAGS=$old_LDFLAGS
++CPPFLAGS=$old_CPPFLAGS
++
+ AC_CONFIG_FILES([\
+         Makefile \
+         epson-inkjet-printer-escpr.spec \
