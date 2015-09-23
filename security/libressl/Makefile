@@ -3,6 +3,7 @@
 
 PORTNAME=	libressl
 PORTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	https://brnrd.eu/pub/OpenBSD/LibreSSL/ \
 		OPENBSD/LibreSSL
