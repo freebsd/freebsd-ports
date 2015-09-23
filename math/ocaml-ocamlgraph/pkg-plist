@@ -72,3 +72,4 @@
 %%GUI%%%%OCAMLGRAPHDIR%%/viewgraph.o
 %%GUI%%%%OCAMLGRAPHDIR%%/xDot.mli
 %%GUI%%%%OCAMLGRAPHDIR%%/xDotDraw.mli
+@comment @dir %%OCAML_SITELIBDIR%%
