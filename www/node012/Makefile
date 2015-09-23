@@ -6,6 +6,7 @@ PORTVERSION=	0.12.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
+PKGNAMESUFFIX=	012
 
 MAINTAINER=	linpct@gmail.com
 COMMENT=	V8 JavaScript for client and server
