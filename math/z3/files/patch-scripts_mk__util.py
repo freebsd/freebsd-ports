@@ -1,5 +1,14 @@
 --- scripts/mk_util.py.orig	2015-04-29 14:40:46 UTC
 +++ scripts/mk_util.py
+@@ -41,7 +41,7 @@ CXX_COMPILERS=['g++', 'clang++']
+ C_COMPILERS=['gcc', 'clang']
+ JAVAC=None
+ JAR=None
+-PYTHON_PACKAGE_DIR=distutils.sysconfig.get_python_lib()
++PYTHON_PACKAGE_DIR=distutils.sysconfig.get_python_lib(prefix=getenv("PREFIX", None))
+ BUILD_DIR='build'
+ REV_BUILD_DIR='..'
+ SRC_DIR='src'
 @@ -948,7 +948,7 @@ class LibComponent(Component):
  
      def mk_install(self, out):
