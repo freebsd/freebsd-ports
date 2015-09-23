@@ -96,20 +96,17 @@ USES+=		libedit
 USE_LDCONFIG=	yes
 CLIENT_BIN=	gpre isql-fb qli
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
-.if ${PORT_OPTIONS:MDOCS}
-PORTDOCS=	*
+DOCS_PORTDOCS=	*
+
 FB_DOCS_FILES=	WhatsNew README.* Firebird* ReleaseNotes.pdf ambiguity.txt \
 		ods11-index-structure.html
 FB_DOCS_DIRS=	sql.extensions license upgrade
 .endif
-.endif
 
 MAKE_ENV+=	FIREBIRD_TMP="${WRKDIR}" FIREBIRD_LOCK="${WRKDIR}"
 MAKE_ARGS+=	PREFIX="${STAGEDIR}${PREFIX}"
-
-OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	@${RM} -rf ${WRKSRC}/extern/icu
@@ -204,7 +201,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/gen/firebird/*.msg ${STAGEDIR}${DATADIR}
 
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
 	@${MKDIR} ${FB_DOCS_DIRS:S!^!${STAGEDIR}${DOCSDIR}/!}
 	@${INSTALL_DATA} ${FB_DOCS_FILES:S!^!${WRKSRC}/doc/!} ${STAGEDIR}${DOCSDIR}
@@ -212,7 +209,6 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/sql.extensions/* ${STAGEDIR}${DOCSDIR}/sql.extensions
 	@${INSTALL_DATA} ${WRKSRC}/doc/license/* ${STAGEDIR}${DOCSDIR}/license
 	@${INSTALL_DATA} ${WRKSRC}/src/misc/upgrade/v2/* ${STAGEDIR}${DOCSDIR}/upgrade
-.endif
 .endif
 
 .include <bsd.port.post.mk>
