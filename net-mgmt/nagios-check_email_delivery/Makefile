@@ -3,7 +3,7 @@
 
 PORTNAME=	check_email_delivery
 PORTVERSION=	0.7.1b
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://buhacoff.net/software/check_email_delivery/archive/ \
 		http://mirrors.rit.edu/zi/
