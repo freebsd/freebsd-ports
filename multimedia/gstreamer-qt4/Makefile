@@ -9,7 +9,7 @@ MASTER_SITES=	http://gstreamer.freedesktop.org/src/qt-${PORTNAME}/
 PKGNAMESUFFIX=	-qt4
 DISTNAME=	qt-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	fluffy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt4 bindings for GStreamer multimedia library
 
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs

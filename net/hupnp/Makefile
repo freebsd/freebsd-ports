@@ -8,7 +8,7 @@ CATEGORIES=	net devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 DISTNAME=	herqq-${PORTVERSION}
 
-MAINTAINER=	fluffy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for building UPnP devices and control points
 
 USES=		gmake qmake zip

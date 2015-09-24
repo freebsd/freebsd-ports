@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	palm
 MASTER_SITES=	http://www.jlogday.com/code/libmal/
 
-MAINTAINER=	fluffy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library encapsulating malsync
 
 LICENSE=	MPL

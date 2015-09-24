@@ -6,7 +6,7 @@ DISTVERSION=	1.10.0
 PORTREVISION=	6
 CATEGORIES=	graphics
 
-MAINTAINER=	fluffy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VIGRA stands for "Vision with Generic Algorithms"
 
 LICENSE=	MIT

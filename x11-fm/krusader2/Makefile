@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	x11-fm kde
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}/
 
-MAINTAINER=	fluffy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Twin panel file manager for KDE, like midnight or norton commander
 
 USES=		cmake:outsource gettext tar:bzip2
