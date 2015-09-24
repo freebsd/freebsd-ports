@@ -3,10 +3,8 @@
 
 PORTNAME=	libressl
 PORTVERSION=	2.3.0
-PORTREVISION=	1
 CATEGORIES=	security devel
-MASTER_SITES=	https://brnrd.eu/pub/OpenBSD/LibreSSL/ \
-		OPENBSD/LibreSSL
+MASTER_SITES=	OPENBSD/LibreSSL
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Free version of the SSL/TLS protocol forked from OpenSSL
@@ -21,8 +19,6 @@ OPTIONS_DEFAULT=MAN3
 MAN3_DESC=      Install API manpages (section 3)
 
 CONFLICTS?=	openssl-[0-9]* \
-		libressl22-[0-9]* \
-		tcltls-[0-9]*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-silent-rules
@@ -33,12 +29,16 @@ INSTALL_TARGET=	install-strip
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
-.endif
+#.if ${ARCH} == "amd64"
+#CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
+#.endif
 
 regression-test: build
 	cd ${WRKSRC} && ${MAKE} check
+
+OPTIONS_DEFINE= MAN3
+OPTIONS_DEFAULT=MAN3
+MAN3_DESC=      Install API manpages (section 3)
 
 post-install-MAN3-off:
 	${RM} -rf ${STAGEDIR}/${PREFIX}/man/man3
