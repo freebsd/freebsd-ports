@@ -823,6 +823,7 @@
     SUBDIR += reoback
     SUBDIR += reptyr
     SUBDIR += respond
+    SUBDIR += restic
     SUBDIR += retail
     SUBDIR += rfstool
     SUBDIR += rhc
