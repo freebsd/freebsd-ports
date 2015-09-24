@@ -36,12 +36,6 @@ CONFIGURE_ARGS?=--disable-python \
 
 CPE_VENDOR=	nalin_dahyabhai
 
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 900007
-EXTRA_PATCHES+=		${FILESDIR}/extra-patch-gnome-pty-helper_gnome-utmp.c
-.endif
-
 .include <bsd.port.mk>
 
 .endif
