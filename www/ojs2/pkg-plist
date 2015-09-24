@@ -296,9 +296,7 @@
 %%WWWDIR%%/classes/xml/XMLNode.inc.php
 %%WWWDIR%%/classes/xml/XMLParser.inc.php
 %%WWWDIR%%/classes/xml/XMLParserDOMHandler.inc.php
-@unexec if cmp -s %D/%%WWWDIR%%/config.inc.php.sample %D/%%WWWDIR%%/config.inc.php; then rm -f %D/%%WWWDIR%%/config.inc.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/config.inc.php has not been removed"; fi
-%%WWWDIR%%/config.inc.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/config.inc.php ]; then cp -p %D/%F %B/config.inc.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/config.inc.php has not been overwritten"; fi
+@sample %%WWWDIR%%/config.inc.php.sample
 %%WWWDIR%%/dbscripts/xml/data/email_templates.xml
 %%WWWDIR%%/dbscripts/xml/data/locale/de_DE/email_templates_data.xml
 %%WWWDIR%%/dbscripts/xml/data/locale/el_GR/email_templates_data.xml
