@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-freebsdport
 PORTREVISION=	1
 CATEGORIES=	deskutils
 
-MAINTAINER=	fluffy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful e-book reader
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \

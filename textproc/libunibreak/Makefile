@@ -8,7 +8,7 @@ PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/vimgadgets/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	fluffy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of the line and word breaking algorithm for Unicode
 
 GNU_CONFIGURE=	yes
