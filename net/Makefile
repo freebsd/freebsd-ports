@@ -248,6 +248,7 @@
     SUBDIR += ipsumdump
     SUBDIR += ipsvd
     SUBDIR += irrd
+    SUBDIR += isboot-kmod
     SUBDIR += isc-dhcp41-client
     SUBDIR += isc-dhcp41-relay
     SUBDIR += isc-dhcp41-server
