@@ -11,6 +11,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple, blog aware, static site generator
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-classifier-reborn>=2.0:${PORTSDIR}/devel/rubygem-classifier-reborn \
 		rubygem-colorator>=0.1:${PORTSDIR}/textproc/rubygem-colorator \
