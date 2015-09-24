@@ -12,6 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Non-blocking message queue system based on AnyEvent
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
@@ -21,6 +24,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle \
 		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
