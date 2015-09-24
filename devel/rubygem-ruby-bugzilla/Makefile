@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	ruby-bugzilla
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.3.1
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RG
+MASTER_SITES=	http://bitbucket.org/linuxgeek247/${PORTNAME}/downloads/
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Access to Bugzilla through WebService APIs in Ruby
