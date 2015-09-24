@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dnstable
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.0
 CATEGORIES=	dns
 MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 
@@ -12,8 +12,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 BUILD_DEPENDS=	sie-nmsg>0:${PORTSDIR}/net/sie-nmsg
-LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson	\
-		libmtbl.so:${PORTSDIR}/devel/mtbl	\
+LIB_DEPENDS=	libmtbl.so:${PORTSDIR}/devel/mtbl	\
+		libyajl.so:${PORTSDIR}/devel/yajl	\
 		libwdns.so:${PORTSDIR}/dns/wdns 	\
 		libnmsg.so:${PORTSDIR}/net/nmsg
 RUN_DEPENDS=	sie-nmsg>0:${PORTSDIR}/net/sie-nmsg
@@ -23,7 +23,7 @@ USE_LDCONFIG=	yes
 USES=		gmake libtool pathfix pkgconfig
 INSTALL_TARGET=	install-strip
 
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/yajl
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-install:
