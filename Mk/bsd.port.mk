@@ -294,7 +294,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  if a particular version is desired.
 # LIB_DEPENDS	- A list of "lib:dir[:target]" tuples of other ports this
 #				  package depends on.  "lib" is the name of a shared library.
-#				  lib can contain extended regular expressions.
 # DEPENDS_TARGET
 #				- The default target to execute when a port is calling a
 #				  dependency.
