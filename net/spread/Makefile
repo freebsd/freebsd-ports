@@ -36,6 +36,8 @@ HEADERFILES=	sp_func.h sp_func.h sp_events.h
 PERL_CONFIGURE_ARGS=	CC="${CC}" CCFLAGS="${CFLAGS}" PREFIX="${PREFIX}" \
 			INSTALLPRIVLIB="${PREFIX}/lib" INSTALLARCHLIB="${PREFIX}/lib"
 
+TARGET_ORDER_OVERRIDE=	710:fix-perl-things
+
 post-configure:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/docs/${PORTNAME}.1 ${WRKSRC}/docs/spmonitor.1
@@ -65,7 +67,5 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libspread.so.1
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtspread.so.1
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Spread/Spread.so
-	${REINPLACE_CMD} -i '' -e 's|^${STAGEDIR}||' ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Spread/.packlist
-	${ECHO_CMD} ${PREFIX}/${SITE_ARCH_REL}/auto/Spread/.packlist >> ${TMPPLIST}
 
 .include <bsd.port.mk>
