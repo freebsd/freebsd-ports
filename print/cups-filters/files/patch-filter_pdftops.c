@@ -1,6 +1,6 @@
---- filter/pdftops.c.orig	2014-08-21 10:11:24.448404905 -0400
-+++ filter/pdftops.c	2014-08-21 10:12:00.298402116 -0400
-@@ -535,7 +535,7 @@
+--- filter/pdftops.c.orig	2015-07-04 11:21:47 UTC
++++ filter/pdftops.c
+@@ -535,7 +535,7 @@ main(int  argc,				/* I - Number of comm
  
    if (renderer == PDFTOPS)
    {
