@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${SVNREVISION}
-PORTREVISION=	2
+#PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	editors java
 MASTER_SITES=	http://ci.apache.org/projects/openoffice/milestones/${AOOVERSION}-${AOORC}-r${SVNREVISION}/source/ \
@@ -100,7 +100,7 @@ AOOVERSION2=	2
 AOOVERSION3=	0
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
 AOOTAG=		AOO420m1\(Build:9800\)
-SVNREVISION=	1697984
+SVNREVISION=	1704217
 #AOORC=rc3
 EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 
@@ -204,7 +204,8 @@ GNU_CONFIGURE=	yes
 WRKSUBDIR=	${WRKDIR}/aoo-${AOOVERSION}
 WRKSRC?=	${WRKSUBDIR}/main
 SUB_FILES=	pkg-message
-SUB_LIST=	EXECBASE=${EXECBASE} AOOTAG=${AOOTAG} AOOUDIR=${AOOUDIR}
+SUB_LIST=	EXECBASE=${EXECBASE} AOOTAG=${AOOTAG} AOOUDIR=${AOOUDIR} \
+		PRINSTALLATION_BASEDIR=${PRINSTALLATION_BASEDIR}
 
 CONFIGURE_ARGS+=							\
 			--with-unix-wrapper=${EXECBASE}			\
@@ -397,7 +398,8 @@ do-build:
 	LANG=C LC_ALL=C build.pl --all -P$${numproc} -- -P$${dmproc}
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PRINSTALLATION_BASEDIR}/extensions/ \
+	@${MKDIR} ${STAGEDIR}${PRINSTALLATION_BASEDIR}/extensions \
+		${STAGEDIR}${OOPATH}/uno_packages/cache/uno_packages \
 		${STAGEDIR}${DESKTOPDIR}
 	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/Apache_OpenOffice/archive/install/${LOCALIZED_LANG}/ ; \
 		for i in *.tar.?z ; do \
@@ -413,8 +415,7 @@ do-install:
 		${ECHO_CMD} "stripping executables and shared libraries" ; \
 		${STRIP_CMD} crashrep pagein uri-encode javaldx regmerge \
 			regview *.so* *.bin ; \
-		${ECHO_CMD} "fixing permissions" ; \
-		${FIND} . -type d -exec ${CHMOD} 755 {} \;
+	${FIND} ${STAGEDIR}${PRINSTALLATION_BASEDIR} -type d -exec ${CHMOD} 755 {} \;
 	${REINPLACE_CMD} \
 		-e '/^UserInstallation/s/=.*/=$$SYSUSERCONFIG\/${AOOUDIR}/' \
 		${STAGEDIR}${OOPATH}/program/bootstraprc
