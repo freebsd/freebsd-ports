@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://dside.dyndns.org/files/rusxmms/ \
 		LOCAL/fluffy
 
-MAINTAINER=	fluffy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library used by rusxmms for language autodetection
 
 LIB_DEPENDS=	librcd.so:${PORTSDIR}/devel/librcd \

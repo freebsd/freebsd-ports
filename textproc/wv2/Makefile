@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	textproc
 MASTER_SITES=	SF/wvware/
 
-MAINTAINER=	fluffy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library providing routines to access Microsoft Word files
 
 USE_GNOME=	libgsf

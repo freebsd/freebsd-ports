@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.jedrea.com/chmlib/
 
-MAINTAINER=	fluffy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for dealing with Microsoft ITSS/CHM format files
 
 GNU_CONFIGURE=	yes
