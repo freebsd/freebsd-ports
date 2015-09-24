@@ -1,13 +1,13 @@
---- code/apis/JoystickManager.cpp.orig	2015-04-11 22:15:55 UTC
+--- code/apis/JoystickManager.cpp.orig	2015-08-26 04:54:06 UTC
 +++ code/apis/JoystickManager.cpp
-@@ -65,8 +65,10 @@ bool JoyMan::IsInitialized() {
+@@ -84,9 +84,9 @@ bool JoyMan::IsInitialized() {
+ \sa JoyMan::WasCompiledIn()
  */
- bool JoyMan::Initialize() {
- 	if ( JoyMan::IsInitialized() ) {
+ bool JoyMan::Initialize(ApiType apiType) {
 +#if USE_JOYSTICK
- 		wxLogDebug(_T("JoyMan already initialized with %d joysticks"),
- 			joysticks.Count());
-+#endif
- 		return true;
- 	}
+ 	currentApi = apiType;
  
+-#if USE_JOYSTICK
+ 	if ( JoyMan::IsInitialized() ) {
+ 		wxLogDebug(_T("JoyMan already initialized"));
+ 		return true;
