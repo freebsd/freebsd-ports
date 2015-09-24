@@ -21,6 +21,7 @@ lib/libfontembed.so.1
 lib/libfontembed.so.1.0.0
 libdata/pkgconfig/libcupsfilters.pc
 libdata/pkgconfig/libfontembed.pc
+libexec/cups/backend/implicitclass
 libexec/cups/backend/parallel
 libexec/cups/backend/serial
 libexec/cups/filter/bannertopdf
