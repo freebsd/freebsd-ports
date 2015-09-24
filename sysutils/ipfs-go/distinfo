@@ -1,0 +1,6 @@
+SHA256 (ipfs-go-ipfs-v0.3.7_GH0.tar.gz) = 4f811ff9a949162513585a073b97973029788561eace2f8b956884af968f717d
+SIZE (ipfs-go-ipfs-v0.3.7_GH0.tar.gz) = 2500872
+SHA256 (golang-crypto-74f810a_GH0.tar.gz) = 25e0c9cb7c6d6a5935aa318c9792fa6e18c8e0238994b5be039f90c8d58fd680
+SIZE (golang-crypto-74f810a_GH0.tar.gz) = 864642
+SHA256 (codahale-metrics-7c37910_GH0.tar.gz) = 6d8da9cd2be5f02afadbd12154a6ebdd5a79bc3dd2904339b017db3cd7607492
+SIZE (codahale-metrics-7c37910_GH0.tar.gz) = 5282
