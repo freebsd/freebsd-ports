@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	portshaker-config
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	romain@FreeBSD.org
@@ -22,6 +22,6 @@ pre-install:
 
 post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/etc/portshaker.conf \
-		${STAGEDIR}${PREFIX}/etc/portshaker.conf.sample-config
+		${STAGEDIR}${PREFIX}/etc/portshaker.conf.sample
 
 .include "${MASTERDIR}/Makefile"
