@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdal
-PORTVERSION=	2.0.0
-PORTREVISION=	2
+PORTVERSION=	2.0.1
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/gdal/${PORTVERSION}/ \
 		ftp://ftp.remotesensing.org/pub/gdal/${PORTVERSION}/ \
@@ -13,6 +12,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Translator library for raster geospatial data formats
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 LIB_DEPENDS=	libgeotiff.so:${PORTSDIR}/graphics/libgeotiff \
 		libgif.so:${PORTSDIR}/graphics/giflib \
