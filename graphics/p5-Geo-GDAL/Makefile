@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Geo-GDAL
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://download.osgeo.org/gdal/${PORTVERSION}/ \
 		ftp://ftp.remotesensing.org/pub/gdal/${PORTVERSION}/ \
@@ -14,6 +14,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl binding for GDAL
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/../../LICENSE.TXT
 
 LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal
 
