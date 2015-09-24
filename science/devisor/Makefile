@@ -27,18 +27,16 @@ PLIST_FILES=	bin/devisorgrid
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/devisorgrid.sh ${STAGEDIR}${PREFIX}/bin/devisorgrid
 	cd ${WRKSRC} \
 	  && ${COPYTREE_SHARE} "${DATAFILES}" ${STAGEDIR}${DATADIR} "-not -name *\.pdf"
 	cd ${WRKSRC} \
 	  && ${COPYTREE_SHARE} "${CLASSFILES}" ${STAGEDIR}${DATADIR} "-name *\.class"
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	cd ${WRKSRC}/manual \
 	  && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} "-name *\.pdf"
-.endif
 
 post-install:
 	@cd ${WRKSRC} \
