@@ -16,7 +16,7 @@ COMMENT=	PSP emulator in C++ with dynarec JIT for x86, ARM, MIPS
 
 LICENSE=	GPLv2 # or any later version
 
-LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USE_GITHUB=	yes
@@ -32,7 +32,7 @@ GH_PROJECT+=	native:native
 CONFLICTS_INSTALL?=	${PORTNAME}-devel-[0-9]*
 
 USES=		compiler:c++11-lib pkgconfig
-USE_GL=		glu
+USE_GL+=	glu
 USE_SDL=	sdl2 # joystick
 CMAKE_ARGS=	-DUSE_SYSTEM_FFMPEG=on
 QMAKE_SOURCE_PATH=	${WRKSRC}/Qt/PPSSPPQt.pro
@@ -71,7 +71,7 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/share,${PREFIX}/share,' \
 		${WRKSRC}/UI/NativeApp.cpp
-	@${REINPLACE_CMD} -e '/find_package(Git)/d' \
+	@${REINPLACE_CMD} \
 		-e 's/"unknown"/"${GH_TAGNAME}"/' \
 		-e 's/^\(VERSION =\).*/\1 ${GH_TAGNAME}/' \
 		${WRKSRC}/git-version.cmake \
@@ -92,8 +92,10 @@ do-install-SDL-off:
 		${STAGEDIR}${PREFIX}/bin
 
 post-install:
+.ifndef PKGNAMESUFFIX
 	${INSTALL_MAN} ${WRKSRC}/debian/${PORTNAME}.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1
+.endif
 	(cd ${WRKSRC}/assets/unix-icons && ${COPYTREE_SHARE} \
 		"hicolor" ${STAGEDIR}${PREFIX}/share/icons)
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
