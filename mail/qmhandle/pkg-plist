@@ -1,4 +1,2 @@
 bin/qmHandle
-@unexec if cmp -s %D/etc/qmHandle.conf %D/etc/qmHandle.conf.sample; then rm -f %D/etc/qmHandle.conf; fi
-etc/qmHandle.conf.sample
-@exec [ -f %B/qmHandle.conf ] || cp %B/%f %B/qmHandle.conf
+@sample etc/qmHandle.conf.sample
