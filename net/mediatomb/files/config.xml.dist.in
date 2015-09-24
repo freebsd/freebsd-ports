@@ -29,7 +29,6 @@
     <custom-http-headers>
       <add header="X-User-Agent: redsonic"/>
     </custom-http-headers>
-
     <manufacturerURL>redsonic.com</manufacturerURL>
     <modelNumber>105</modelNumber>
     -->
@@ -37,8 +36,17 @@
     <!--
        <upnp-string-limit>101</upnp-string-limit>
     -->
+    <!--
+     <custom-http-headers>
+      <add header="transferMode.dlna.org: Streaming"/>
+      <add header="contentFeatures.dlna.org: DLNA.ORG_OP=01;DLNA.ORG_CI=0;DLNA.ORG_FLAGS=01700000000000000000000000000000"/>
+    </custom-http-headers>
+    -->
   </server>
   <import hidden-files="no">
+  <filesystem-charset>UTF-8</filesystem-charset>
+  <metadata-charset>UTF-8</metadata-charset>
+  <playlist-charset>UTF-8</playlist-charset>
     <scripting script-charset="UTF-8">
       <common-script>%%DATADIR%%/js/common.js</common-script>
       <playlist-script>%%DATADIR%%/js/playlists.js</playlist-script>
@@ -67,6 +75,8 @@
         <map from="m3u" to="audio/x-mpegurl"/>
         <map from="pls" to="audio/x-scpls"/>
         <map from="flv" to="video/x-flv"/>
+	<map from="mkv" to="video/x-mkv"/>
+        <map from="avi" to="video/x-msvideo"/>
         <!-- Uncomment the line below for PS3 divx support -->
         <!-- <map from="avi" to="video/divx"/> -->
         <!-- Uncomment the line below for D-Link DSM / ZyXEL DMA-1000 -->
