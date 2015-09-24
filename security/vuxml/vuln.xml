@@ -427,15 +427,32 @@ Notes:
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Moodle Release Notes report:</p>
-	<blockquote cite="https://docs.moodle.org/dev/Moodle_2.9.2_release_notes">
-	  <p>A number of security related issues were resolved. Details of
-	    these issues will be released after a period of approximately one
-	    week to allow system administrators to safely update to the latest
-	    version.</p>
+	<blockquote cite="https://docs.moodle.org/dev/Moodle_2.7.10_release_notes">
+	  <p>MSA-15-0030: Students can re-attempt answering questions in the
+	    lesson (CVE-2015-5264)</p>
+	  <p>MSA-15-0031: Teacher in forum can still post to "all participants"
+	    and groups they are not members of (CVE-2015-5272 - 2.7.10 only)</p>
+	  <p>MSA-15-0032: Users can delete files uploaded by other users in wiki
+	    (CVE-2015-5265)</p>
+	  <p>MSA-15-0033: Meta course synchronization enrolls suspended students
+	    as managers for a short period of time (CVE-2015-5266)</p>
+	  <p>MSA-15-0034: Vulnerability in password recovery mechanism
+	    (CVE-2015-5267)</p>
+	  <p>MSA-15-0035: Rating component does not check separate groups
+	    (CVE-2015-5268)</p>
+	  <p>MSA-15-0036: XSS in grouping description (CVE-2015-5269)</p>
 	</blockquote>
       </body>
     </description>
     <references>
+      <cvename>CVE-2015-5264</cvename>
+      <cvename>CVE-2015-5272</cvename>
+      <cvename>CVE-2015-5265</cvename>
+      <cvename>CVE-2015-5266</cvename>
+      <cvename>CVE-2015-5267</cvename>
+      <cvename>CVE-2015-5268</cvename>
+      <cvename>CVE-2015-5269</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/09/21/1</url>
       <url>https://docs.moodle.org/dev/Moodle_2.7.10_release_notes</url>
       <url>https://docs.moodle.org/dev/Moodle_2.8.8_release_notes</url>
       <url>https://docs.moodle.org/dev/Moodle_2.9.2_release_notes</url>
@@ -443,6 +460,7 @@ Notes:
     <dates>
       <discovery>2015-09-14</discovery>
       <entry>2015-09-18</entry>
+      <modified>2015-09-24</modified>
     </dates>
   </vuln>
 
