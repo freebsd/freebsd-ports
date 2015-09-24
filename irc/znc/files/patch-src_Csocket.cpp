@@ -1,4 +1,4 @@
---- src/Csocket.cpp.orig	2015-04-16 15:00:34 UTC
+--- src/Csocket.cpp.orig	2015-08-03 23:00:04 UTC
 +++ src/Csocket.cpp
 @@ -47,6 +47,7 @@
  #include <stdio.h>
@@ -8,29 +8,69 @@
  #endif /* HAVE_LIBSSL */
  
  #ifdef HAVE_ICU
-@@ -55,6 +55,7 @@ const SSL_METHOD *sycSSLv2_server_method(void) {
- }
- #endif
+@@ -1463,14 +1464,6 @@ bool Csock::SSLClientSetup()
  
-+#ifdef HAVE_SSLv3_client_method
- const SSL_METHOD *sycSSLv3_client_method(void) {
-    const SSL_METHOD *result;
-    Debug("SSLv3_client_method()");
-@@ -62,7 +63,9 @@ const SSL_METHOD *sycSSLv3_client_method(void) {
-    Debug1("SSLv3_client_method() -> %p", result);
-    return result;
- }
-+#endif
- 
-+#ifdef HAVE_SSLv3_server_method
- const SSL_METHOD *sycSSLv3_server_method(void) {
-    const SSL_METHOD *result;
-    Debug("SSLv3_server_method()");
-@@ -70,6 +73,7 @@ const SSL_METHOD *sycSSLv3_server_method(void) {
-    Debug1("SSLv3_server_method() -> %p", result);
-    return result;
- }
-+#endif
- 
- const SSL_METHOD *sycSSLv23_client_method(void) {
-    const SSL_METHOD *result;
+ 	switch( m_iMethod )
+ 	{
+-	case SSL3:
+-		m_ssl_ctx = SSL_CTX_new( SSLv3_client_method() );
+-		if( !m_ssl_ctx )
+-		{
+-			CS_DEBUG( "WARNING: MakeConnection .... SSLv3_client_method failed!" );
+-			return( false );
+-		}
+-		break;
+ 	case TLS12:
+ #if defined( TLS1_2_VERSION ) && defined( OPENSSL_VERSION_NUMBER ) && OPENSSL_VERSION_NUMBER >= 0x1000100f
+ 		m_ssl_ctx = SSL_CTX_new( TLSv1_2_client_method() );
+@@ -1510,6 +1503,17 @@ bool Csock::SSLClientSetup()
+ 		break;
+ #endif /* OPENSSL_NO_SSL2 */
+ 		/* Fall through if SSL2 is disabled */
++#ifndef OPENSSL_NO_SSL3
++	case SSL3:
++		m_ssl_ctx = SSL_CTX_new( SSLv3_client_method() );
++		if( !m_ssl_ctx )
++		{
++			CS_DEBUG( "WARNING: MakeConnection .... SSLv3_client_method failed!" );
++			return( false );
++		}
++		break;
++#endif /* OPENSSL_NO_SSL3 */
++		/* Fall through if SSL3 is disabled */
+ 	case SSL23:
+ 	default:
+ 		if( m_iMethod != SSL23 )
+@@ -1585,14 +1589,6 @@ SSL_CTX * Csock::SetupServerCTX()
+ 	SSL_CTX * pCTX = NULL;
+ 	switch( m_iMethod )
+ 	{
+-	case SSL3:
+-		pCTX = SSL_CTX_new( SSLv3_server_method() );
+-		if( !pCTX )
+-		{
+-			CS_DEBUG( "WARNING: MakeConnection .... SSLv3_server_method failed!" );
+-			return( NULL );
+-		}
+-		break;
+ 	case TLS12:
+ #if defined( TLS1_2_VERSION ) && defined( OPENSSL_VERSION_NUMBER ) && OPENSSL_VERSION_NUMBER >= 0x1000100f
+ 		pCTX = SSL_CTX_new( TLSv1_2_server_method() );
+@@ -1632,6 +1628,17 @@ SSL_CTX * Csock::SetupServerCTX()
+ 		break;
+ #endif /* OPENSSL_NO_SSL2 */
+ 		/* Fall through if SSL2 is disabled */
++#ifndef OPENSSL_NO_SSL3
++	case SSL3:
++		pCTX = SSL_CTX_new( SSLv3_server_method() );
++		if( !pCTX )
++		{
++			CS_DEBUG( "WARNING: MakeConnection .... SSLv3_server_method failed!" );
++			return( NULL );
++		}
++		break;
++#endif /* OPENSSL_NO_SSL3 */
++		/* Fall through if SSL3 is disabled */
+ 	case SSL23:
+ 	default:
+ 		if( m_iMethod != SSL23 )
