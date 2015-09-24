@@ -40,6 +40,13 @@ QMAKE_ARGS=	CONFIG+="system_ffmpeg" LREL_TOOL="${LRELEASE}"
 NINJA_VERBOSE=	yes
 NO_INSTALL=	yes # ports/202949
 
+DESKTOP_ENTRIES="PPSSPP" \
+		"" \
+		"${PORTNAME}" \
+		"${PORTNAME} %f" \
+		"Game;Emulator;" \
+		""
+
 OPTIONS_DEFAULT=QT5
 OPTIONS_SINGLE=	GUI
 OPTIONS_SINGLE_GUI=	QT4 QT5 SDL
@@ -85,8 +92,6 @@ do-install-SDL-off:
 		${STAGEDIR}${PREFIX}/bin
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/debian/${PORTNAME}.desktop \
-		${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_MAN} ${WRKSRC}/debian/${PORTNAME}.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1
 	(cd ${WRKSRC}/assets/unix-icons && ${COPYTREE_SHARE} \
