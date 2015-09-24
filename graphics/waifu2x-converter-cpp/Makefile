@@ -3,7 +3,7 @@
 PORTNAME=	waifu2x-converter-cpp
 DISTVERSION=	1.0.0-237
 DISTVERSIONSUFFIX=	-gca65c93
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	https://aur.archlinux.org/cgit/aur.git/plain/:manpage
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -56,8 +56,10 @@ post-patch:
 	@${REINPLACE_CMD} -e '/"models/s,","${DATADIR}/,' \
 		-e '/CmdLine/s,[^"]*"),${DISTVERSIONFULL}"),' \
 		${WRKSRC}/src/main.cpp
-	@${REINPLACE_CMD} -e 's,${PORTNAME:C/-.*//},${PORTNAME},' \
-		-e 's,\(version\) [^"]*,\1 ${DISTVERSIONFULL},' \
+# Undo AUR rename and use version from |git describe --tags|
+	@${REINPLACE_CMD} -e '/AUTHORS/,$$! { /\.B mai/! \
+			s,${PORTNAME:C/-.*//},${PORTNAME},; }' \
+		-e '1s,\(version\) [^"]*,\1 ${DISTVERSIONFULL},' \
 		${WRKDIR}/${PORTNAME}.1
 
 pre-install:
@@ -69,7 +71,8 @@ do-install:
 	${INSTALL_MAN} ${WRKDIR}/${PORTNAME}.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1
 	${INSTALL_LIB} ${WRKSRC}/libw2xc.so ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_DATA} -p ${WRKSRC}/src/w2xconv.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} -p ${WRKSRC}/src/w2xconv.h \
+		${STAGEDIR}${PREFIX}/include
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
 		"${PORTDATA}" ${STAGEDIR}${DATADIR})
 
