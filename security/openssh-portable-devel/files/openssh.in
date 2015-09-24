@@ -35,8 +35,7 @@ pidfile=${openssh_pidfile:="/var/run/sshd.pid"}
 
 openssh_keygen()
 {
-	if [ -f %%ETCDIR%%/ssh_host_key -a \
-	    -f %%ETCDIR%%/ssh_host_dsa_key -a \
+	if [ -f %%ETCDIR%%/ssh_host_dsa_key -a \
 	    -f %%ETCDIR%%/ssh_host_rsa_key -a \
 	    -f %%ETCDIR%%/ssh_host_ecdsa_key -a \
 	    -f %%ETCDIR%%/ssh_host_ed25519_key ]; then
@@ -48,15 +47,6 @@ openssh_keygen()
 	# Can't do anything if ssh is not installed
 	[ -x %%PREFIX%%/bin/ssh-keygen ] ||
 		err 1 "%%PREFIX%%/bin/ssh-keygen does not exist."
-
-	if [ -f %%ETCDIR%%/ssh_host_key ]; then
-		echo "You already have an RSA host key" \
-			"in %%ETCDIR%%/ssh_host_key"
-		echo "Skipping protocol version 1 RSA Key Generation"
-	else
-		%%PREFIX%%/bin/ssh-keygen -t rsa1 -b 1024 \
-			-f %%ETCDIR%%/ssh_host_key -N ''
-	fi
 
 	if [ -f %%ETCDIR%%/ssh_host_dsa_key ]; then
 		echo "You already have a DSA host key" \
