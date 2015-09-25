@@ -20,6 +20,7 @@
     SUBDIR += fasta
     SUBDIR += fasta3
     SUBDIR += fastdnaml
+    SUBDIR += fastool
     SUBDIR += fasttree
     SUBDIR += fastx-toolkit
     SUBDIR += fluctuate
