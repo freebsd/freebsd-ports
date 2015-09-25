@@ -17,6 +17,8 @@ LICENSE=	MIT
 
 RELEASE=	5.9
 
+BROKEN_sparc64=	cannot build: coredump: illegal instruction
+
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=../configure
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/misc --disable-overwrite \
