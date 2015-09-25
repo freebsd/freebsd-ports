@@ -188,6 +188,7 @@
     SUBDIR += gtknetcat
     SUBDIR += gupnp
     SUBDIR += gupnp-av
+    SUBDIR += gupnp-dlna
     SUBDIR += gupnp-igd
     SUBDIR += gupnp-ui
     SUBDIR += gutenfetch
