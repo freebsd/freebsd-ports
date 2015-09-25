@@ -10,6 +10,9 @@ COMMENT=	High performance load generator for TCP and WebSocket servers
 
 LICENSE=	BSD2CLAUSE
 
+ONLY_FOR_ARCHS=	amd64 i386 ia64
+ONLY_FOR_ARCHS_REASON=	uses i386 assembler
+
 GNU_CONFIGURE=	yes
 USES=		autoreconf libtool gmake
 
