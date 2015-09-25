@@ -13,6 +13,7 @@ LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_LDCONFIG=	yes
+BUILD_WRKSRC=	${WRKSRC}/src
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|' ${WRKSRC}/src/Makefile
