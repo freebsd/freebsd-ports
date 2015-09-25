@@ -2,7 +2,7 @@
 
 PORTNAME=	sazanami
 PORTVERSION=	20040629
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	SFJP/efont/10087
 PKGNAMEPREFIX=	ja-font-
@@ -12,6 +12,7 @@ COMMENT=	Sazanami Japanese TrueType fonts
 
 USES=		fonts:fc tar:bzip2
 FONTNAME=	TTF
+NO_ARCH=	yes
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install

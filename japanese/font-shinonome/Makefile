@@ -3,7 +3,7 @@
 
 PORTNAME=	shinonome
 PORTVERSION=	0.9.11.p1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://openlab.jp/efont/dist/shinonome/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
@@ -17,6 +17,7 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 
 USES=		fonts tar:bzip2
 FONTNAME=	misc
+NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME:C/^font-//}-${PORTVERSION:C/.p.*$//}
 DATADIR=	${PREFIX}/share/font-${PORTNAME}
 SUB_FILES=	pkg-install

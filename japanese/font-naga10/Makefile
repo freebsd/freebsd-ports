@@ -3,6 +3,7 @@
 
 PORTNAME=	naga10
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA013391/fonts/
 PKGNAMEPREFIX=	ja-font-
@@ -16,6 +17,7 @@ BUILD_DEPENDS=	mkbold:${PORTSDIR}/x11-fonts/mkbold-mkitalic \
 
 USES=		fonts
 FONTNAME=	misc
+NO_ARCH=	yes
 SUB_FILES=	Makefile pkg-install
 SUB_LIST=	FONTSALIAS="${DATADIR}/fonts.alias"
 MAKEFILE=	${WRKDIR}/Makefile

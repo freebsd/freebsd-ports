@@ -14,6 +14,7 @@ COMMENT=	Kochi Japanese TrueType font
 
 USES=		fonts:fc tar:bzip2
 FONTNAME=	TTF
+NO_ARCH=	yes
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install

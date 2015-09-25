@@ -3,6 +3,7 @@
 
 PORTNAME=	kappa20
 PORTVERSION=	0.396
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	LOCAL/hrs
 PKGNAMEPREFIX=	ja-font-
@@ -16,6 +17,7 @@ BUILD_DEPENDS=	mkitalic:${PORTSDIR}/x11-fonts/mkbold-mkitalic \
 
 USES=		fonts tar:bzip2
 FONTNAME=	misc
+NO_ARCH=	yes
 MAKE_ARGS=	FONTSDIR="${FONTSDIR:S,${PREFIX},,}"
 MAKEFILE=	${WRKDIR}/Makefile
 SUB_FILES=	Makefile pkg-install
