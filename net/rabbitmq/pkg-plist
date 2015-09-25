@@ -154,12 +154,14 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_version.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_vhost.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_vm.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_writer.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/ssl_compat.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/supervised_lifecycle.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/supervisor2.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/tcp_acceptor.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/tcp_acceptor_sup.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/tcp_listener.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/tcp_listener_sup.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/time_compat.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/truncate.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/vm_memory_monitor.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/worker_pool.beam
