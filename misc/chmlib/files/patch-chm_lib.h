@@ -1,6 +1,6 @@
---- src/chm_lib.h.orig	Fri Feb 25 21:26:09 2005
-+++ src/chm_lib.h	Fri Feb 25 21:26:57 2005
-@@ -78,6 +78,12 @@
+--- src/chm_lib.h.orig	2009-05-23 14:43:31 UTC
++++ src/chm_lib.h
+@@ -82,6 +82,12 @@ struct chmUnitInfo
      char               path[CHM_MAX_PATHLEN+1];
  };
  
@@ -13,7 +13,7 @@
  /* open an ITS archive */
  #ifdef PPC_BSTR
  /* RWE 6/12/2003 */
-@@ -133,6 +139,7 @@
+@@ -137,6 +143,7 @@ int chm_enumerate_dir(struct chmFile *h,
                        CHM_ENUMERATOR e,
                        void *context);
  
@@ -21,5 +21,3 @@
  #ifdef __cplusplus
  }
  #endif
-
-
