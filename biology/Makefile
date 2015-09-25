@@ -20,6 +20,7 @@
     SUBDIR += fasta
     SUBDIR += fasta3
     SUBDIR += fastdnaml
+    SUBDIR += fasttree
     SUBDIR += fastx-toolkit
     SUBDIR += fluctuate
     SUBDIR += garlic
