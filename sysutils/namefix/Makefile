@@ -28,6 +28,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}.pl
 NO_BUILD=	yes
 NO_ARCH=	yes
 
+BROKEN_sparc64=	cannot extract: coredump in extract phase
+
 USES=		perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	namefix-cli.pl namefix.pl
