@@ -1,26 +1,25 @@
-# Created by: Tomoyuki Sakurai <cherry@trombik.mine.nu>
 # $FreeBSD$
 
 PORTNAME=	puppet
-PORTVERSION=	3.8.2
-PORTREVISION=	1
+PORTVERSION=	4.2.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
+PKGNAMESUFFIX=	4
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	mmoll@FreeBSD.org
 COMMENT=	Configuration management framework written in Ruby
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	rubygem-facter>=0:${PORTSDIR}/sysutils/rubygem-facter \
-		rubygem-hiera1>=0:${PORTSDIR}/sysutils/rubygem-hiera1
-RUN_DEPENDS=	rubygem-facter>=0:${PORTSDIR}/sysutils/rubygem-facter \
-		rubygem-ruby-augeas>=0:${PORTSDIR}/textproc/rubygem-ruby-augeas \
-		rubygem-hiera1>=0:${PORTSDIR}/sysutils/rubygem-hiera1
+BUILD_DEPENDS=	rubygem-hiera>=2.0:${PORTSDIR}/sysutils/rubygem-hiera \
+		rubygem-json_pure>=0:${PORTSDIR}/devel/rubygem-json_pure
+RUN_DEPENDS=	rubygem-hiera>=2.0:${PORTSDIR}/sysutils/rubygem-hiera \
+		rubygem-json_pure>=0:${PORTSDIR}/devel/rubygem-json_pure \
+		rubygem-ruby-augeas>=0:${PORTSDIR}/textproc/rubygem-ruby-augeas
 
 USES=		cpe
 CPE_VENDOR=	puppetlabs
-CONFLICTS_INSTALL=	puppet37-* puppet4-*
+CONFLICTS_INSTALL=	puppet-* puppet37-*
 NO_BUILD=	yes
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	iconv
@@ -33,41 +32,46 @@ SUB_FILES+=	pkg-message
 SUB_LIST=	RUBY=${RUBY}
 
 OPTIONS_DEFINE=		DOCS EXAMPLES
-OPTIONS_DEFAULT=	PACKAGE_ORIGIN
-OPTIONS_RADIO=		PATCHES
-OPTIONS_RADIO_PATCHES=	PACKAGE_ORIGIN PACKAGE_ROOT
-PACKAGE_ORIGIN_DESC=	Use port origin as package name
-PACKAGE_ROOT_DESC=	Use PACKAGEROOT instead of PACKAGESITE
-PATCHES_DESC=		Optional exclusive patches
+OPTIONS_DEFAULT=	RFACTER
+OPTIONS_RADIO=		FACTER
+OPTIONS_RADIO_FACTER=	CFACTER RFACTER
+
+RFACTER_DESC=	Use facter 2.x (written in Ruby)
+CFACTER_DESC=	Use facter 3.x (experimental rewrite in C++)
+
+RFACTER_BUILD_DEPENDS=	rubygem-facter>=2.0:${PORTSDIR}/sysutils/rubygem-facter
+RFACTER_RUN_DEPENDS=	rubygem-facter>=2.0:${PORTSDIR}/sysutils/rubygem-facter
+
+CFACTER_BUILD_DEPENDS=	facter>=3.0:${PORTSDIR}/sysutils/facter
+CFACTER_RUN_DEPENDS=	facter>=3.0:${PORTSDIR}/sysutils/facter
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MPACKAGE_ROOT}
-.if ! ${PORT_OPTIONS:MPACKAGE_ORIGIN}
-EXTRA_PATCHES+=	${FILESDIR}/optpatch-package_root
-.else
-BROKEN=	PACKAGE_ROOT option patch is incompatible with PACKAGE_ORIGIN patch.
-.endif
-.endif
-
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MPACKAGE_ORIGIN}
-EXTRA_PATCHES+=	${FILESDIR}/optpatch-package_origin
-RUN_DEPENDS+=	rubygem-bzip2-ruby>=0:${PORTSDIR}/archivers/rubygem-bzip2-ruby
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e "s|/etc/puppet|${ETCDIR}|" \
+	@${REINPLACE_CMD} -e "s|/etc/puppetlabs/puppet|${ETCDIR}|" \
 		${WRKSRC}/install.rb \
 		${WRKSRC}/lib/puppet/reference/configuration.rb \
-		${WRKSRC}/lib/puppet/defaults.rb \
 		${WRKSRC}/lib/puppet/util/run_mode.rb
-	@${REINPLACE_CMD} -e "s|/var/lib/puppet|/var/puppet|" \
+	@${REINPLACE_CMD} -e "s|/etc/puppetlabs/code|${ETCDIR}|" \
+		${WRKSRC}/install.rb \
 		${WRKSRC}/lib/puppet/reference/configuration.rb \
 		${WRKSRC}/lib/puppet/util/run_mode.rb
-	@${REINPLACE_CMD} -e "s|\$$vardir/run|/var/run/puppet|" \
+	@${REINPLACE_CMD} -e "s|/opt/puppetlabs/puppet/cache|/var/puppet|" \
+		${WRKSRC}/install.rb \
+		${WRKSRC}/lib/puppet/reference/configuration.rb \
 		${WRKSRC}/lib/puppet/util/run_mode.rb
+	@${REINPLACE_CMD} -e "s|/var/run/puppetlabs|/var/run/puppet|" \
+		${WRKSRC}/install.rb \
+		${WRKSRC}/lib/puppet/util/run_mode.rb
+	@${REINPLACE_CMD} -e "s|/var/log/puppetlabs/puppet|/var/log/puppet|" \
+		${WRKSRC}/install.rb \
+		${WRKSRC}/lib/puppet/util/run_mode.rb
+	@${REINPLACE_CMD} -e "s|/opt/puppetlabs/puppet/modules|${ETCDIR}/modules|" \
+		${WRKSRC}/lib/puppet/defaults.rb
+	@${REINPLACE_CMD} -e "s|/opt/puppetlabs/puppet/bin/gem|${LOCALBASE}/bin/gem|" \
+		${WRKSRC}/lib/puppet/provider/package/puppet_gem.rb
 	@${REINPLACE_CMD} -e "s|\$$confdir/ssl|/var/puppet/ssl|" \
 		${WRKSRC}/lib/puppet/defaults.rb
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" \
@@ -86,6 +90,7 @@ post-install:
 		--rundir=/var/run/puppet \
 		--vardir=/var/puppet \
 		--logdir=/var/log/puppet \
+		--codedir=${ETCDIR} \
 		> ${STAGEDIR}${ETCDIR}/puppet.conf-dist
 	@${ECHO} ${STAGEDIR}${RUBY_SITELIBDIR}/puppet.rb | \
 		${SED} 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
