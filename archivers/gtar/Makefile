@@ -36,13 +36,8 @@ NLS_CONFIGURE_ENABLE=	nls
 STATIC_LDFLAGS=	-static
 STATIC_CONFIGURE_ENV=	SHLIBEXT=""
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSTATIC}
-STATIC_ARGS=	build
-.else
-STATIC_ARGS=	lib
-.endif
+STATIC_VARS=	STATIC_ARGS=build
+STATIC_VARS_OFF=	STATIC_ARGS=lib
 
 # Tests 161 163 are known to fail because path resolution of ".."
 # in a removed directory fails.
