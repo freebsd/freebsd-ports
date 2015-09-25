@@ -10,11 +10,11 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Use Pry as your rails console
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENCE
 
 RUN_DEPENDS=	rubygem-pry>=0.9.10:${PORTSDIR}/devel/rubygem-pry
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
