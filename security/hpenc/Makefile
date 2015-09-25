@@ -12,6 +12,8 @@ COMMENT=	Fast authenticated encryption CLI tool
 LICENSE=	BSD2CLAUSE
 
 BROKEN_FreeBSD_9=	does not build
+NOT_FOR_ARCHS=		sparc64
+NOT_FOR_ARCHS_REASON=	not yet ported to this architecture
 
 USES=		tar:xz compiler:c++11-lib gmake
 USE_OPENSSL=	yes
