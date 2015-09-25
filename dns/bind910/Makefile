@@ -5,18 +5,26 @@ PORTNAME=	bind
 PORTVERSION=	${ISCVERSION:S/-P/P/}
 .if defined(BIND_TOOLS_SLAVE)
 # dns/bind-tools here
-PORTREVISION=	0
+PORTREVISION=	1
 .else
 # dns/bind910 here
-PORTREVISION=	0
+PORTREVISION=	1
 .endif
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
-PKGNAMESUFFIX?=	910
+.if defined(BIND_TOOLS_SLAVE)
+PKGNAMESUFFIX=	-tools
+.else
+PKGNAMESUFFIX=	910
+.endif
 DISTNAME=	${PORTNAME}-${ISCVERSION}
 
 MAINTAINER=	mat@FreeBSD.org
-COMMENT?=	BIND DNS suite with updated DNSSEC and DNS64
+.if defined(BIND_TOOLS_SLAVE)
+COMMENT=	Command line tools from BIND: delv, dig, host, nslookup...
+.else
+COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
+.endif
 
 LICENSE=	ISCL
 
@@ -40,7 +48,11 @@ CONFIGURE_ARGS+=	--localstatedir=/var --disable-linux-caps \
 		--disable-symtable \
 		--with-randomdev=/dev/random \
 		--with-libxml2=${LOCALBASE} \
+		--with-readline=-ledit \
 		--sysconfdir=${ETCDIR}
+.if defined(BIND_TOOLS_SLAVE)
+CONFIGURE_ARGS+=	--disable-shared
+.endif
 ETCDIR=		${PREFIX}/etc/namedb
 
 CONFLICTS+=	bind9*-9.[456789].* bind9*-sdb-9.[456789].*
@@ -107,7 +119,9 @@ MINCACHE_EXTRA_PATCHES=	${FILESDIR}/extrapatch-bind-min-override-ttl
 FETCHLIMIT_CONFIGURE_ENABLE=	fetchlimit
 QUERYTRACE_CONFIGURE_ENABLE=	querytrace
 
-.if !defined(BIND_TOOLS_SLAVE)
+.if defined(BIND_TOOLS_SLAVE)
+CONFLICTS+=		bind910-9.10.*
+.else
 CONFLICTS+=		bind-tools-9.*
 .endif	# BIND_TOOLS_SLAVE
 
@@ -221,16 +235,30 @@ PKGDEINSTALL=	${PKGINSTALL}
 
 PORTDOCS=	*
 
-.if !defined(BIND_TOOLS_SLAVE)
 post-patch:
-.for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.1 \
+	@${REINPLACE_CMD} -e 's|readline/readline.h|editline/readline.h|; \
+		s|readline/history.h|histedit.h|' \
+		${WRKSRC}/bin/dig/nslookup.c ${WRKSRC}/bin/nsupdate/nsupdate.c
+.if defined(BIND_TOOLS_SLAVE)
+	@${REINPLACE_CMD} -e 's#^SUBDIRS.*#SUBDIRS = lib bin#' \
+		-e 's#isc-config.sh installdirs#installdirs#' \
+		-e 's#.*INSTALL.*isc-config.*##' \
+		-e 's#.*INSTALL.*bind.keys.*##' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's#^SUBDIRS.*#SUBDIRS = delv dig dnssec nsupdate \\#' \
+		-e 's#^	.*check confgen ##' \
+		${WRKSRC}/bin/Makefile.in
+.else
+.  for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.1 \
 	rndc/rndc.8
 	@${REINPLACE_CMD} -e 's#/etc/named.conf#${ETCDIR}/named.conf#g' \
 		-e 's#/etc/rndc.conf#${ETCDIR}/rndc.conf#g' \
 		-e "s#/var\/run\/named\/named.pid#/var/run/named/pid#" \
 		${WRKSRC}/bin/${FILE}
-.endfor
+.  endfor
+.endif
 
+.if !defined(BIND_TOOLS_SLAVE)
 .if ${PORTREVISION:N0}
 post-patch-PORTREVISION-on:
 	@${REINPLACE_CMD} -e '/EXTENSIONS/s#=$$#=_${PORTREVISION}#' \
