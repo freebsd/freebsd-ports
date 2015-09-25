@@ -957,6 +957,7 @@
     SUBDIR += ssid
     SUBDIR += ssync
     SUBDIR += stalepid
+    SUBDIR += stanchion
     SUBDIR += stmpclean
     SUBDIR += storcli
     SUBDIR += stow
