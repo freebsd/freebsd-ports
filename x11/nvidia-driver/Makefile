@@ -284,7 +284,7 @@ post-install: .SILENT
 .endif
 .if ${NVVERSION} < 180.029
 	${REINPLACE_CMD} -e '/vdpau/d' ${TMPPLIST}
-.else if ${NVVERSION} >= 304.128 && ${NVVERSION} < 310.019
+.elif ${NVVERSION} >= 304.128 && ${NVVERSION} < 310.019
 	${REINPLACE_CMD} -E '/libvdpau(_trace)?\.so/d' ${TMPPLIST}
 .endif
 .if ${NVVERSION} < 185.01829
