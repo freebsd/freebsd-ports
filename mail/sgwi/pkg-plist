@@ -3,7 +3,6 @@
 www/sgwi/awl.php
 www/sgwi/connect.php
 www/sgwi/includes/awl.inc.php
-@exec [ -f %D/www/sgwi/config.inc.php ] && mv -f %D/www/sgwi/config.inc.php %D/www/sgwi/includes/config.inc.php
 @sample www/sgwi/includes/config.inc.php.sample
 www/sgwi/includes/connect.inc.php
 www/sgwi/includes/copyright.inc.php
