@@ -13,36 +13,26 @@ COMMENT=	Library for Large Linear Classification
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-OPTIONS_DEFINE=	OPTIMIZED_CFLAGS DOCS
-OPTIONS_DEFAULT=OPTIMIZED_CFLAGS
-
 USES=		zip
 
-TXT_DOCS=	COPYRIGHT README
+PORTDOCS=	COPYRIGHT README
 
 PLIST_FILES=	bin/train bin/predict
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS DOCS
+OPTIONS_DEFAULT=OPTIMIZED_CFLAGS
 
-.if ${PORT_OPTIONS:MDOCS}
-PORTDOCS=	${TXT_DOCS}
-.endif
-
-.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 # same as LIBLINEAR itself
-CFLAGS=		-Wall -O3
-.endif
+OPTIMIZED_CFLAGS_CFLAGS=		-Wall -O3
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/train ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/predict ${STAGEDIR}${PREFIX}/bin
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	for f in ${TXT_DOCS}; do \
-	  ${INSTALL_DATA} ${WRKSRC}/$$f ${STAGEDIR}${DOCSDIR}; \
+	for f in ${PORTDOCS}; do \
+		${INSTALL_DATA} ${WRKSRC}/$$f ${STAGEDIR}${DOCSDIR}; \
 	done
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
