@@ -1,4 +1,4 @@
-@sampleetc/stone.cnf.sample
+@sample etc/stone.cnf.sample
 bin/stone
 man/ja/man1/stone.1.gz
 man/man1/stone.1.gz
