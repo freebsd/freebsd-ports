@@ -3,7 +3,7 @@
 
 PORTNAME=	vlgothic
 PORTVERSION=	20141206
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	SFJP/vlgothic/62375
 PKGNAMEPREFIX=	ja-font-
@@ -14,6 +14,7 @@ COMMENT=	VLGothic Japanese TrueType fonts
 
 USES=		fonts:fc tar:xz
 FONTNAME=	TTF
+NO_ARCH=	yes
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install

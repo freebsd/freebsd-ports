@@ -2,7 +2,7 @@
 
 PORTNAME=	mona-ipa
 PORTVERSION=	1.0.8
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://www.geocities.jp/ipa_mona/
 PKGNAMEPREFIX=	ja-font-
@@ -13,6 +13,7 @@ COMMENT=	IPA Japanese TrueType fonts with Mona font
 
 USES=		fonts:fc
 FONTNAME=	TTF
+NO_ARCH=	yes
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install
