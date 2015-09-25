@@ -2,7 +2,7 @@
 
 PORTNAME=	takao
 PORTVERSION=	003.02.01
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://launchpadlibrarian.net/40218948/
 PKGNAMEPREFIX=	ja-font-
@@ -13,6 +13,7 @@ COMMENT=	Improved IPA Japanese fonts
 
 USES=		fonts:fc
 FONTNAME=	OTF
+NO_ARCH=	yes
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install

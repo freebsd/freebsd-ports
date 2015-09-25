@@ -2,7 +2,7 @@
 
 PORTNAME=	ipa-uigothic
 PORTVERSION=	00203
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://info.openlab.ipa.go.jp/ipafont/fontdata/old/
 PKGNAMEPREFIX=	ja-font-
@@ -17,6 +17,7 @@ CONFLICTS=	ja-font-mplus-ipa-1.0.20060520.p1 \
 
 USES=		fonts:fc zip
 FONTNAME=	TTF
+NO_ARCH=	yes
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install
