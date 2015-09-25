@@ -1,0 +1,16 @@
+include/gtextutils/gtextutils/container_join.h
+include/gtextutils/gtextutils/exit_manip.h
+include/gtextutils/gtextutils/inbuf1.hpp
+include/gtextutils/gtextutils/natsort.h
+include/gtextutils/gtextutils/outbuf3.hpp
+include/gtextutils/gtextutils/pipe_fitter.h
+include/gtextutils/gtextutils/stream_wrapper.h
+include/gtextutils/gtextutils/string_tokenize.h
+include/gtextutils/gtextutils/strnatcmp.h
+include/gtextutils/gtextutils/text_line_reader.h
+include/gtextutils/gtextutils/tuple_parser.h
+lib/libgtextutils-0.7.so.0
+lib/libgtextutils-0.7.so.0.0.0
+lib/libgtextutils.a
+lib/libgtextutils.so
+libdata/pkgconfig/gtextutils.pc
