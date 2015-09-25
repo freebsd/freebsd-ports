@@ -1,8 +1,0 @@
-%%FONTSDIR%%/kanji26.pcf.gz
-%%FONTSDIR%%/kanji26b.pcf.gz
-%%FONTSDIR%%/kanji26bi.pcf.gz
-%%FONTSDIR%%/kanji26i.pcf.gz
-%%PORTDOCS%%share/doc/kanji26/26to24.sed
-%%PORTDOCS%%share/doc/kanji26/README.kanji26
-%%PORTDOCS%%share/doc/kanji26/kanji24.alias
-%%PORTDOCS%%share/doc/kanji26/kanji26.alias

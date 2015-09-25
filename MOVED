@@ -7875,3 +7875,12 @@ x11-toolkits/wxgtk28-unicode-contrib|x11-toolkits/wxgtk28-contrib|2015-09-16|Mak
 x11-toolkits/py-wxPython28-unicode|x11-toolkits/py-wxPython28|2015-09-16|Make wxGTK now only unicode
 japanese/font-mplus|japanese/font-mplus-outline|2015-09-21|Renamed
 www/iojs|www/node|2015-09-23|io.js has been merged back to Node.js
+japanese/k10|japanese/font-naga10|2015-09-25|Renamed
+japanese/k12|japanese/font-kaname12|2015-09-25|Renamed
+japanese/elisa8x8|japanese/font-elisa8|2015-09-25|Renamed
+japanese/kanji18|japanese/font-kanji18|2015-09-25|Renamed
+japanese/kanji26|japanese/font-kanji26|2015-09-25|Renamed
+japanese/kappa20|japanese/font-kappa20|2015-09-25|Renamed
+japanese/mikachan-ttfonts|japanese/font-mikachan|2015-09-25|Renamed
+japanese/monafonts-ttf|japanese/font-mona-ttf|2015-09-25|Renamed
+japanese/monafonts|japanese/font-mona|2015-09-25|Renamed

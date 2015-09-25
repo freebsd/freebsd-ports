@@ -1,0 +1,26 @@
+--- Makefile.orig	2003-09-10 02:54:10 UTC
++++ Makefile
+@@ -18,11 +18,10 @@ GZIP_SUFFIX	= gz
+ #GZIP_SUFFIX	= Z
+ 
+ DESTDIR		=
+-X11BINDIR	= /usr/X11R6/bin
+-X11FONTDIR	= $(DESTDIR)/usr/X11R6/lib/X11/fonts/local
+-BDFTOPCF	= $(X11BINDIR)/bdftopcf
+-MKDIRHIER	= $(X11BINDIR)/mkdirhier	# 'mkdir -p' may also work.
+-MKFONTDIR	= $(X11BINDIR)/mkfontdir
++X11FONTDIR	= $(DESTDIR)$(DATADIR)
++BDFTOPCF	= bdftopcf
++MKDIRHIER	= mkdir -p	# 'mkdir -p' may also work.
++MKFONTDIR	= mkfontdir
+ 
+ MY_RPM_ROOT	= /tmp/rpm-root
+ 
+@@ -258,7 +257,6 @@ install: bdf
+ 		$(BDFTOPCF) dist/$$i.bdf | \
+ 		$(GZIP_CMD) -c > $(X11FONTDIR)/$$i.pcf.$(GZIP_SUFFIX); \
+ 	done
+-	$(MKFONTDIR) $(X11FONTDIR)
+ 
+ # append fonts.alias
+ install-alias:
