@@ -1,3 +1,5 @@
+bin/tlmgr
+share/tlpkg
 %%SITE_PERL%%/TeXLive/TLConfFile.pm
 %%SITE_PERL%%/TeXLive/TLConfig.pm
 %%SITE_PERL%%/TeXLive/TLDownload.pm
@@ -10,3 +12,10 @@
 %%SITE_PERL%%/TeXLive/TLWinGoo.pm
 %%SITE_PERL%%/TeXLive/TeXCatalogue.pm
 %%TEXMFDISTDIR%%/.texlive-tlmgr
+%%TEXMFDISTDIR%%/scripts/texlive/tlmgr.pl
+/var/db/tlpkg/texlive.tlpdb
+/var/db/tlpkg/texmf.cnf
+/var/db/tlpkg/tlmgr.log
+@dir /var/db/tlpkg/backups
+@dir /var/db/tlpkg/tlpobj
+@dir /var/db/tlpkg
