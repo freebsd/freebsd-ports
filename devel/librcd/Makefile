@@ -3,7 +3,7 @@
 
 PORTNAME=	librcd
 PORTVERSION=	0.1.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://dside.dyndns.org/files/rusxmms/ \
 		LOCAL/fluffy
@@ -11,8 +11,12 @@ MASTER_SITES=	http://dside.dyndns.org/files/rusxmms/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library used by rusxmms for autodetection of Russian charset
 
+LICENSE=	LGPL21 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
 USES=		gmake libtool pathfix tar:bzip2
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
