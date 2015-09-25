@@ -22,6 +22,6 @@ pre-install:
 
 post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/etc/portshaker.conf \
-		${STAGEDIR}${PREFIX}/etc/portshaker.conf.sample
+		${STAGEDIR}${PREFIX}/etc/portshaker.conf.sample-config
 
 .include "${MASTERDIR}/Makefile"
