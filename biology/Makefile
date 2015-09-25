@@ -32,6 +32,7 @@
     SUBDIR += jalview
     SUBDIR += lagan
     SUBDIR += lamarc
+    SUBDIR += libgtextutils
     SUBDIR += libsbml
     SUBDIR += linux-foldingathome
     SUBDIR += mafft
