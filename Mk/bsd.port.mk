@@ -1815,7 +1815,6 @@ PKGUPGRADE?=		${PKGDIR}/pkg-upgrade
 
 _FORCE_POST_PATTERNS=	rmdir fc-cache \
 						fonts.dir fonts.scale gtk-update-icon-cache \
-						gio-querymodules \
 						gtk-query-immodules \
 						load-octave-pkg \
 						ocamlfind \
