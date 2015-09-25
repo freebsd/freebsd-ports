@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	isboot-kmod
-PORTVERSION=	0.2.10
+PORTVERSION=	0.2.11
 CATEGORIES=	net
 MASTER_SITES=	http://www.peach.ne.jp/archives/isboot/
 DISTNAME=	isboot-${PORTVERSION}
