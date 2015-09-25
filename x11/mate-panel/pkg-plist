@@ -396,4 +396,4 @@ share/mate-panel/ui/window-menu-menu.xml
 share/mate-panel/ui/workspace-switcher-menu.xml
 share/mate-panel/ui/workspace-switcher.ui
 @dir lib/mate-panel/modules
-@exec %D/bin/gio-querymodules %D/lib/mate-panel/modules
+@postexec %D/bin/gio-querymodules %D/lib/mate-panel/modules
