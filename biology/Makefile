@@ -11,6 +11,7 @@
     SUBDIR += biococoa
     SUBDIR += biojava
     SUBDIR += blat
+    SUBDIR += bwa
     SUBDIR += cd-hit
     SUBDIR += cdbfasta
     SUBDIR += chemeq
