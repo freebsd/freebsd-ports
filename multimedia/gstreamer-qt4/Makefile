@@ -12,6 +12,9 @@ DISTNAME=	qt-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt4 bindings for GStreamer multimedia library
 
+LICENSE=	LGPL21 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
 USES=		bison cmake gmake pkgconfig tar:bzip2
@@ -30,7 +33,7 @@ CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH:STRING="${LOCALBASE}/include"
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-extract:
-	${REINPLACE_CMD} -e 's|$${CMAKE_INSTALL_LIBDIR}/pkgconfig|$${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig|' \
+	@${REINPLACE_CMD} -e 's|$${CMAKE_INSTALL_LIBDIR}/pkgconfig|$${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
