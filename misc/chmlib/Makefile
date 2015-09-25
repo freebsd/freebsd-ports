@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.jedrea.com/chmlib/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Library for dealing with Microsoft ITSS/CHM format files
 
 LICENSE=	LGPL21
