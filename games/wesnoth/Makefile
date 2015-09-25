@@ -2,8 +2,8 @@
 
 PORTNAME=	wesnoth
 PORTVERSION=	1.12.4
-PORTEPOCH=	1
 PORTREVISION=	1
+PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTNAME}-${PORTVERSION} \
 		http://files.wesnoth.org/ \
@@ -22,6 +22,8 @@ LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
 LDFLAGS+=	-L${LOCALBASE}/lib -lboost_system
+
+PORTSCOUT=	limitw:1,even
 
 USE_SDL=	image mixer net ttf
 USE_GNOME=	pango
