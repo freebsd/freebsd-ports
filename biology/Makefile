@@ -12,6 +12,7 @@
     SUBDIR += biojava
     SUBDIR += blat
     SUBDIR += cd-hit
+    SUBDIR += cdbfasta
     SUBDIR += chemeq
     SUBDIR += clustalw
     SUBDIR += consed
