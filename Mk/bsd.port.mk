@@ -1045,7 +1045,7 @@ SCRIPTSDIR?=	${PORTSDIR}/Mk/Scripts
 LIB_DIRS?=		/lib /usr/lib ${LOCALBASE}/lib
 STAGEDIR?=	${WRKDIR}/stage
 NOTPHONY?=
-MINIMAL_PKG_VERSION=	1.3.8
+MINIMAL_PKG_VERSION=	1.6.0
 
 # make sure bmake treats -V as expected
 .MAKE.EXPAND_VARIABLES= yes
