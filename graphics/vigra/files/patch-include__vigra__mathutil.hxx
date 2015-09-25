@@ -1,6 +1,6 @@
---- include/vigra/mathutil.hxx.orig	2011-09-20 18:38:36.000000000 +0000
+--- include/vigra/mathutil.hxx.orig	2013-11-18 16:48:16 UTC
 +++ include/vigra/mathutil.hxx
-@@ -553,7 +553,12 @@ VIGRA_DEFINE_NORM(int)
+@@ -637,7 +637,12 @@ VIGRA_DEFINE_NORM(int)
  VIGRA_DEFINE_NORM(unsigned int)
  VIGRA_DEFINE_NORM(long)
  VIGRA_DEFINE_NORM(unsigned long)
