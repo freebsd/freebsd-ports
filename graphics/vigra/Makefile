@@ -10,8 +10,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VIGRA stands for "Vision with Generic Algorithms"
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USE_GITHUB=
+USE_GITHUB=	yes
 GH_ACCOUNT=     ukoethe
 GH_TAGNAME=     e6c21f3
 
