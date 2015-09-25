@@ -2,6 +2,7 @@
 
 PORTNAME=	kodi
 DISTVERSION=	15.1
+PORTREVISION=	1
 CATEGORIES=	multimedia java
 MASTER_SITES=	https://codeload.github.com/xbmc/xbmc/tar.gz/${KODI_COMMIT}?dummy=/ \
 		GH:ffmpeg
