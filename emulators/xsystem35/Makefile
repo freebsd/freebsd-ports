@@ -35,7 +35,7 @@ MMX_BUILD_DEPENDS=nasm:${PORTSDIR}/devel/nasm
 MMX_CONFIGURE_ENABLE=mmx
 
 EXTRACT_AFTER_ARGS=--exclude libltdl
-USES=		gettext gmake jpeg libtool shebangfix
+USES=		gettext gmake jpeg libtool localbase shebangfix
 SHEBANG_FILES=	contrib/instgame
 USE_XORG=	x11 xext xxf86vm
 GNU_CONFIGURE=	yes
@@ -47,8 +47,6 @@ CONFIGURE_ARGS=	\
 		--with-default-output=oss \
 		--enable-midi=seq,extp,raw \
 		--enable-cdrom=bsd,mp3
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 SUB_FILES=	pkg-message
