@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-base
 PORTVERSION=	1.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math
 MASTER_SITES=	#none
 DISTFILES=	#none
@@ -14,7 +14,7 @@ COMMENT=	Octave-forge baseport for all packages
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS+=	octave:${PORTSDIR}/math/octave \
+RUN_DEPENDS=	octave:${PORTSDIR}/math/octave \
 		gmake:${PORTSDIR}/devel/gmake \
 		p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \
 		p5-IO-Zlib>=0:${PORTSDIR}/archivers/p5-IO-Zlib \
@@ -22,10 +22,8 @@ RUN_DEPENDS+=	octave:${PORTSDIR}/math/octave \
 
 USES=		perl5
 SUB_FILES=	load-octave-pkg
-SUB_LIST+=	PERL=${PERL}
-
-do-build:
-	@${DO_NADA}
+SUB_LIST=	PERL=${PERL}
+NO_BUILD=	yes
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/octave/tarballs
