@@ -1,0 +1,8 @@
+bin/elixir
+bin/elixirc
+bin/iex
+bin/mix
+man/man1/elixir.1.gz
+man/man1/elixirc.1.gz
+man/man1/iex.1.gz
+man/man1/mix.1.gz
