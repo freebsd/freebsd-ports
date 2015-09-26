@@ -17,6 +17,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_FreeBSD_9=	does not build
+BROKEN_sparc64=	fails to compile at bootstrap phase
 
 CONFLICTS=	emacs-19.* emacs21-[0-9]* emacs22-[0-9]* emacs23-[0-9]* \
 		emacs24-[0-9]* xemacs-[0-9]* xemacs-devel-[0-9]* \
