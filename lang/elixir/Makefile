@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	elixir
-PORTVERSION=	1.0.5
+PORTVERSION=	1.1.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	lang
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -21,18 +20,18 @@ GH_ACCOUNT=	elixir-lang
 USES=		gmake
 MAKE_ENV=	LANG=en_US.UTF-8
 ALL_TARGET=	#empty
+REINPLACE_ARGS=	-i ""
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	SRC
-OPTIONS_DEFAULT=SRC
 
 SRC_DESC=	Install source code
 
-PLIST_FILES=	bin/elixir \
-		bin/elixirc \
-		bin/iex \
-		bin/mix
-
 .include <bsd.port.options.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/Makefile
+	@${RM} ${WRKSRC}/bin/*.orig
 
 post-install:
 .if ${PORT_OPTIONS:MSRC}
