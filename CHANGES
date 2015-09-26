@@ -10,6 +10,18 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20150926
+AUTHOR: bapt@FreeBSD.org
+
+  New keywords are supported in pkg since 1.5.x:
+  @preexec <command>: execute the <command> during pre-install scripts
+  @postexec <command>: execute the <command> during post-install scripts
+  @preunexec <command>: execute the <command> during pre-deinstall scripts
+  @postunexec <command>: execute the <command> during post-deinstall scripts
+
+  @exec does not specify when if should be executed and is now considered as
+  deprecated.
+
 20150914:
 AUTHOR: mat@FreeBSD.org
 
