@@ -3,6 +3,7 @@
 
 PORTNAME=	joe
 PORTVERSION=	4.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES?=	editors
 MASTER_SITES=	SF/joe-editor/JOE%20sources/joe-${PORTVERSION}
@@ -31,7 +32,7 @@ post-patch:
 
 post-install:
 	for rc in jmacsrc joerc jpicorc jstarrc rjoerc; do \
-		${MV} ${STAGEDIR}${ETCDIR}/$${rc} ${STAGEDIR}${ETCDIR}/$${rc}.dist ; \
+		${MV} ${STAGEDIR}${ETCDIR}/$${rc} ${STAGEDIR}${ETCDIR}/$${rc}.sample ; \
 	done
 
 .include <bsd.port.mk>
