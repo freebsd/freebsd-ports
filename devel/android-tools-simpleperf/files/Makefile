@@ -10,7 +10,6 @@ SRCS+=	cmd_help.cpp
 SRCS+=	cmd_report.cpp
 SRCS+=	command.cpp
 SRCS+=	dso.cpp
-SRCS+=	environment_fake.cpp
 SRCS+=	event_attr.cpp
 SRCS+=	event_type.cpp
 SRCS+=	main.cpp
@@ -25,6 +24,9 @@ SRCS+=	utils.cpp
 TEST_SRCS+=	command_test.cpp
 TEST_SRCS+=	record_test.cpp
 TEST_SRCS+=	sample_tree_test.cpp
+
+.PATH: ${.CURDIR}/darwin_support
+SRCS+=	darwin_support.cpp
 
 # required by simpleperf
 .PATH: ${.CURDIR}/../base
@@ -51,7 +53,8 @@ SRCS+= threads.c
 
 CFLAGS+=-D_WITH_GETLINE
 CFLAGS+=-DUSE_BIONIC_UAPI_HEADERS
-CFLAGS+=-I${.CURDIR}/darwin_support
+CFLAGS+=-I${.CURDIR}
+CFLAGS+=-I${.CURDIR}/darwin_support/include
 CFLAGS+=-I${.CURDIR}/../include
 CFLAGS+=-I${.CURDIR}/../base/include
 CFLAGS+=-I${.CURDIR}/../bionic/libc/kernel
