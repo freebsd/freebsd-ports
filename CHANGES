@@ -10,7 +10,16 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
-20150926
+20150926:
+AUTHOR: bapt@FreeBSD.org
+
+  @sample now accept arguments, so it can now be used the following way:
+
+  @sample afile.sample
+  or
+  @sample path/to/example etc/target
+
+20150926:
 AUTHOR: bapt@FreeBSD.org
 
   New keywords are supported in pkg since 1.5.x:
