@@ -15,5 +15,3 @@ share/locale/pl/LC_MESSAGES/kanatest.mo
 share/locale/pt/LC_MESSAGES/kanatest.mo
 share/locale/ru/LC_MESSAGES/kanatest.mo
 share/pixmaps/kanatest.png
-@exec %%LOCALBASE%%/bin/update-desktop-database %D/share/applications 2>/dev/null || true
-@unexec %%LOCALBASE%%/bin/update-desktop-database %D/share/applications 2>/dev/null || true
