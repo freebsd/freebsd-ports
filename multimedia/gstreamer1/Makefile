@@ -1,12 +1,11 @@
 # Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	gstreamer1
-PORTVERSION=	1.4.5
-PORTREVISION=	1
+PORTNAME=	gstreamer
+PORTVERSION=	1.6.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/
-DISTNAME=	${PORTNAME:S/1//}-${PORTVERSION}
+PKGNAMESUFFIX=	1
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Media applications framework
@@ -28,7 +27,7 @@ CONFIGURE_ARGS=	--disable-tests \
 CONFIGURE_ENV=	ac_cv_func_register_printf_function="no"
 INSTALL_TARGET=	install-strip
 PLIST_SUB=	VERSION=${GST10_VERSION} \
-		SOVERSION=0.405.0
+		SOVERSION=0.600.0
 USE_LDCONFIG=	yes
 GST10_VERSION=	1.0
 
@@ -39,12 +38,6 @@ LIBCHECK_CONFIGURE_ENABLE=	check
 LIBCHECK_LIB_DEPENDS=	libcheck.so:${PORTSDIR}/devel/libcheck
 
 .include <bsd.port.options.mk>
-
-# workaround a crash in clang 3.3 crash llvm bug # 15840
-.if ((${OSVERSION} >= 901504 && ${OSVERSION} < 902502) || \
-     (${OSVERSION} >= 1000037 && ${OSVERSION} < 1000056))
-USE_GCC=	any
-.endif
 
 .if ${OSVERSION} < 1000033
 BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
