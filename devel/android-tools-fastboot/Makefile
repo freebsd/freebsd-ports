@@ -28,15 +28,13 @@ GH_PROJECT=	platform_system_core platform_system_extras:extras \
 
 CONFLICTS_INSTALL?=	${PORTNAME}-devel-*
 
-USES+=		uidfix
+USES+=		localbase uidfix
 BUILD_WRKSRC=	${WRKSRC}/fastboot
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 MAKEFILE=	${FILESDIR}/Makefile
 MAKE_ENV=	FILESDIR="${FILESDIR}" BINDIR="${PREFIX}/bin" \
 		MANDIR="${PREFIX}/man/man" \
 		LIBPCRE="${LOCALBASE}/lib/libpcre.a"
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_FILES=	bin/fastboot \
 		%%BASH%%etc/bash_completion.d/fastboot \
 		man/man1/fastboot.1.gz

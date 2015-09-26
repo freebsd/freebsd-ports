@@ -31,7 +31,7 @@ GH_PROJECT+=	native:native
 
 CONFLICTS_INSTALL?=	${PORTNAME}-devel-[0-9]*
 
-USES=		compiler:c++11-lib pkgconfig
+USES=		compiler:c++11-lib localbase pkgconfig
 USE_GL+=	glu
 USE_SDL=	sdl2 # joystick
 CMAKE_ARGS=	-DUSE_SYSTEM_FFMPEG=on
@@ -58,7 +58,6 @@ QT5_USE=	QT5=qmake_build,buildtools_build,linguisttools_build,gui,opengl,widgets
 SDL_USES=	cmake:outsource ninja
 SDL_BUILD_DEPENDS=	png>=1.6:${PORTSDIR}/graphics/png
 SDL_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
-SDL_LDFLAGS=	-L${LOCALBASE}/lib # ffmpeg
 SDL_VARS=	PORTDATA+="assets ${PORTNAME}"
 
 post-extract:

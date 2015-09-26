@@ -41,11 +41,10 @@ GEN_LIB_DEPENDS=libcurl.so:${PORTSDIR}/ftp/curl \
 GEN_RUN_DEPENDS=${LOCALBASE}/share/transmission/web/index.html:${PORTSDIR}/www/transmission-web
 
 # This is master port of transmission-*, so don't override USES definition 
-USES+=		gmake iconv libtool pkgconfig
+USES+=		gmake iconv libtool localbase pkgconfig
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include -DWITH_UTP=1
-LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-DWITH_UTP=1
 LIBS+=		${ICONV_LIB}
 CONFIGURE_ARGS=--with-zlib=/usr \
 		 --without-inotify \
