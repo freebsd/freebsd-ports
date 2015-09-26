@@ -20,7 +20,6 @@ WRKSRC=		${WRKDIR}/usr/lib/compat
 NO_BUILD=	yes
 TARGET_DIR=	${PREFIX}/lib/compat
 TARGET32_DIR=	${PREFIX}/lib32/compat
-LDCONFIG_LIB32=	${LDCONFIG} -32
 
 .include <bsd.port.pre.mk>
 
@@ -50,7 +49,6 @@ PLIST_SUB+=		I386_ONLY="@comment "
 
 .if ${ARCH} == amd64
 PLIST_SUB+=		AMD64_ONLY="" AMD64NA="@comment "
-PLIST_SUB+=		LDCONFIG_LIB32="${LDCONFIG} -32"
 USE_LDCONFIG32=		${TARGET32_DIR}
 .else
 USE_LDCONFIG=		${TARGET_DIR}
