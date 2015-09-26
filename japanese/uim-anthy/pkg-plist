@@ -2,7 +2,7 @@
 lib/uim/plugin/libuim-anthy.so
 lib/uim/plugin/libuim-anthy-utf8.so
 %%X11%%%%DATADIR%%/helperdata/uim-dict-ui.xml
-@exec uim-module-manager --register anthy
-@exec uim-module-manager --register anthy-utf8
-@unexec uim-module-manager --unregister anthy
-@unexec uim-module-manager --unregister anthy-utf8
+@postexec uim-module-manager --register anthy
+@postexec uim-module-manager --register anthy-utf8
+@preunexec uim-module-manager --unregister anthy
+@preunexec uim-module-manager --unregister anthy-utf8
