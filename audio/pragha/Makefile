@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pragha
-PORTVERSION=	1.3.2.2
+PORTVERSION=	1.3.3
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/pragha-music-player/${PORTNAME}/releases/download/v${PORTVERSION}/
 
