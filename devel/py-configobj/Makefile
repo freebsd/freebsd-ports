@@ -3,7 +3,7 @@
 
 PORTNAME=	configobj
 PORTVERSION=	5.0.6
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,9 @@ COMMENT=	Simple but powerful config file reader and writer
 
 LICENSE=	BSD3CLAUSE
 
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six
+
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
