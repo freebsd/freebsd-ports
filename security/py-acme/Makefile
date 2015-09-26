@@ -4,6 +4,7 @@
 PORTNAME=	acme
 PORTVERSION=	0.0.b1
 CATEGORIES=	security python
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	cpm@fbsd.es
 COMMENT=	ACME implementation
