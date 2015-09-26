@@ -1813,8 +1813,16 @@ PKGPREUPGRADE?=		${PKGDIR}/pkg-pre-upgrade
 PKGPOSTUPGRADE?=	${PKGDIR}/pkg-post-upgrade
 PKGUPGRADE?=		${PKGDIR}/pkg-upgrade
 
-_FORCE_POST_PATTERNS=	rmdir fc-cache \
+_FORCE_POST_PATTERNS=	rmdir kldxref mkfontscale mkfontdir fc-cache \
 						fonts.dir fonts.scale gtk-update-icon-cache \
+						gio-querymodules \
+						gtk-query-immodules \
+						ldconfig \
+						load-octave-pkg \
+						ocamlfind \
+						update-desktop-database update-mime-database \
+						gdk-pixbuf-query-loaders catalog.ports \
+						glib-compile-schemas \
 						ccache-update-links
 
 .if defined(USE_LOCAL_MK)
