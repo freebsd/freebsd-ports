@@ -1,4 +1,3 @@
 bin/diff
-bin/gnudiff
 bin/bsddiff
 man/man1/bsddiff.1.gz
