@@ -24,3 +24,14 @@
  
  		if (ssl->version == TLS1_VERSION)
  			sessInfo.version = TLS::TLS_v1;
+@@ -7129,8 +7135,10 @@ public:
+ 			return new opensslInfoContext(this);
+ 		else if ( type == "sha1" )
+ 			return new opensslHashContext( EVP_sha1(), this, type);
++#ifndef OPENSSL_NO_SHA0 
+ 		else if ( type == "sha0" )
+ 			return new opensslHashContext( EVP_sha(), this, type);
++#endif
+ 		else if ( type == "ripemd160" )
+ 			return new opensslHashContext( EVP_ripemd160(), this, type);
+ #ifdef HAVE_OPENSSL_MD2
