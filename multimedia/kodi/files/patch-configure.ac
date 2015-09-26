@@ -1,6 +1,6 @@
---- configure.in.orig	2015-03-26 19:25:20.000000000 +0100
-+++ configure.in	2015-04-08 15:23:22.000000000 +0200
-@@ -628,10 +628,12 @@
+--- configure.ac.orig	2015-08-16 14:37:32 UTC
++++ configure.ac
+@@ -636,10 +636,12 @@
    i386-*-freebsd*)
       ARCH="x86-freebsd"
       MAKE="gmake"
@@ -13,7 +13,7 @@
       ;;
    arm-apple-darwin*)
       use_joystick=no
-@@ -788,10 +790,16 @@
+@@ -824,10 +826,16 @@
  # platform specific flags
  if echo "$ARCH" | grep -q "freebsd" ; then
    LOCALBASE="${LOCALBASE:-/usr/local}"
@@ -33,7 +33,7 @@
  fi
  if test "$host_vendor" = "apple" ; then
    # standard application paths
-@@ -924,6 +932,7 @@
+@@ -960,6 +968,7 @@
  
  # Check inotify availability
  AC_CHECK_HEADER([sys/inotify.h], AC_DEFINE([HAVE_INOTIFY],[1],[Define if we have inotify]),)
@@ -41,7 +41,7 @@
  
  # Checks for boost headers using CXX instead of CC
  AC_LANG_PUSH([C++])
-@@ -1191,7 +1200,7 @@
+@@ -1257,12 +1266,13 @@
  )
  
  #Check to see if libs are needed for functions that are often built-in to libc
@@ -50,7 +50,13 @@
  AC_SEARCH_LIBS([dlopen],dl)
  AC_SEARCH_LIBS([clock_gettime],rt)
  AC_SEARCH_LIBS([dn_expand],  resolv)
-@@ -1706,7 +1715,7 @@
+ AC_SEARCH_LIBS([_dn_expand], resolv)
+ AC_SEARCH_LIBS([__dn_expand],resolv)
++AC_SEARCH_LIBS([__atomic_load_8], [atomic])
+ 
+ # platform dependent libraries
+ if test "$host_vendor" = "apple" ; then
+@@ -1727,7 +1737,7 @@
  
    if test "$cross_compiling" != "yes"; then
      if test "$use_debug" != "yes"; then
@@ -59,7 +65,7 @@
      fi
      if test "$use_optimizations" != "yes"; then
        FFMPEG_OPTS="${FFMPEG_OPTS} --disable-optimizations"
-@@ -1717,7 +1726,7 @@
+@@ -1738,7 +1748,7 @@
        SAVE_LIBS="$LIBS"
        # check for system installed ffmpeg. We require minimum versions.
        PKG_CHECK_MODULES([FFMPEG], [$FFMPEG_LIBNAMES],
@@ -68,7 +74,7 @@
          [FFMPEG_FOUND="false"])
  
        if test "${USE_STATIC_FFMPEG}" = "1" && test "$FFMPEG_FOUND" = "true"; then
-@@ -1744,7 +1753,7 @@
+@@ -1765,7 +1775,7 @@
      elif test "$with_ffmpeg" = "force"; then
        # always build our ffmpeg
        AC_MSG_NOTICE("FFmpeg installation forced by user - installing our version")
@@ -77,7 +83,7 @@
        export PKG_CONFIG_PATH="${ffmpeg_build}/ffmpeg-install/lib/pkgconfig:$PKG_CONFIG_PATH"
  
      elif test "$with_ffmpeg" != "no"; then
-@@ -1757,7 +1766,7 @@
+@@ -1778,7 +1788,7 @@
  
  if test "$FFMPEG_FOUND" != "true"; then
    PKG_CHECK_MODULES([FFMPEG], [$FFMPEG_LIBNAMES],
@@ -86,12 +92,30 @@
      [AC_MSG_ERROR("ffmpeg not found")])
  fi
  
-@@ -2415,6 +2424,8 @@
+@@ -2173,7 +2183,7 @@
+ # we don't compile with default upstream squish, so we use our own one
+ # even on non unified deps platforms
+ if test "$cross_compiling" != "yes"; then
+-  make -C ${abs_top_srcdir}/tools/depends/native/libsquish-native CXX=${CXX}
++  $MAKE -C ${abs_top_srcdir}/tools/depends/native/libsquish-native CXX=${CXX}
+   export PKG_CONFIG_PATH="${abs_top_srcdir}/tools/depends/native/libsquish-native/squish-install/lib/pkgconfig:$PKG_CONFIG_PATH"
+ fi
+ PKG_CHECK_MODULES([SQUISH], [squish],
+@@ -2184,7 +2194,7 @@
+   AC_PATH_PROG([TEXTUREPACKER], [TexturePacker], ["none"],
+     [$PATH$PATH_SEPARATOR${abs_top_srcdir}/tools/depends/native/TexturePacker/bin])
+   if test "$TEXTUREPACKER" = "none"; then
+-    make -C ${abs_top_srcdir}/tools/depends/native/TexturePacker
++    $MAKE -C ${abs_top_srcdir}/tools/depends/native/TexturePacker
+     TEXTUREPACKER="${abs_top_srcdir}/tools/depends/native/TexturePacker/bin/TexturePacker"
+   fi
+   if test -x "$TEXTUREPACKER"; then
+@@ -2448,6 +2458,8 @@
    LIBS="$LIBS -L\$(abs_top_srcdir)/lib/ffmpeg/libswscale -lswscale"
  fi
  
 +LIBS=$(echo "$LIBS" | tr "\n" " ")
 +
- USE_PVR_ADDONS=0
- DISABLE_PVR_ADDON_CONFIG=1
- if [[ -f "pvr-addons/Makefile.am" ]]; then
+ OUTPUT_FILES="Makefile \
+     Makefile.include \
+     addons/skin.confluence/media/Makefile \
