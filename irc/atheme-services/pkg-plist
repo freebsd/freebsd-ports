@@ -2,15 +2,11 @@ bin/atheme-services
 bin/dbverify
 @group ircservices
 @mode 640
-@unexec if cmp -s %D/etc/atheme/atheme.conf %D/etc/atheme/atheme.conf.example ; then rm -f %D/etc/atheme/atheme.conf ; fi
-etc/atheme/atheme.conf.example
-@exec if [ ! -f %D/etc/atheme/atheme.conf ]; then cp -p %D/%F %B/atheme.conf; fi
+@sample etc/atheme/atheme.conf.example etc/atheme/atheme.conf
 etc/atheme/atheme.conf.operserv-example
 etc/atheme/atheme.conf.userserv-example
 etc/atheme/atheme.cron.example
-@unexec if cmp -s %D/etc/atheme/atheme.motd %D/etc/atheme/atheme.motd.example ; then rm -f %D/etc/atheme/atheme.motd ; fi
-etc/atheme/atheme.motd.example
-@exec if [ ! -f %D/etc/atheme/atheme.motd ]; then cp -p %D/%F %B/atheme.motd; fi
+@sample etc/atheme/atheme.motd.example etc/atheme/atheme.motd
 @group
 @mode
 include/atheme/abirev.h
