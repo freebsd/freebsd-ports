@@ -45,28 +45,31 @@ TEST_SRCS+= test_utils.cpp
 .PATH:	${.CURDIR}/../liblog
 SRCS+=	fake_log_device.c
 SRCS+=	logd_write.c
-CFLAGS.logd_write.c+=	-DFAKE_LOG_DEVICE=1
+CPPFLAGS.logd_write.c+=	-DFAKE_LOG_DEVICE=1
 
 # required by base
 .PATH: ${.CURDIR}/../libcutils
 SRCS+= threads.c
 
-CFLAGS+=-D_WITH_GETLINE
-CFLAGS+=-DUSE_BIONIC_UAPI_HEADERS
-CFLAGS+=-I${.CURDIR}
-CFLAGS+=-I${.CURDIR}/darwin_support/include
-CFLAGS+=-I${.CURDIR}/../include
-CFLAGS+=-I${.CURDIR}/../base/include
-CFLAGS+=-I${.CURDIR}/../bionic/libc/kernel
-CFLAGS+=$$(${LLVM_CONFIG} --cppflags)
-CFLAGS+=${CFLAGS.${.IMPSRC:T}}
+CPPFLAGS+=	-D_WITH_GETLINE
+CPPFLAGS+=	-DUSE_BIONIC_UAPI_HEADERS
+CPPFLAGS+=	-I${.CURDIR}
+CPPFLAGS+=	-I${.CURDIR}/darwin_support/include
+CPPFLAGS+=	-I${.CURDIR}/../include
+CPPFLAGS+=	-I${.CURDIR}/../base/include
+CPPFLAGS+=	-I${.CURDIR}/../bionic/libc/kernel
+CPPFLAGS+=	$$(${LLVM_CONFIG} --cppflags)
+CPPFLAGS+=	${CPPFLAGS.${.IMPSRC:T}}
+CXXFLAGS+=	-std=gnu++11
 
-CXXFLAGS+=-std=gnu++11
-CXXFLAGS+=${CFLAGS:N-std*}
+.ifndef COMPILE.c
+CFLAGS+=	${CPPFLAGS}
+CXXFLAGS+=	${CPPFLAGS}
+.endif
 
-TEST_CFLAGS+=	$$(${GTEST_CONFIG} --cppflags)
+TEST_CPPFLAGS+=	$$(${GTEST_CONFIG} --cppflags)
 .for f in ${TEST_SRCS}
-CFLAGS.${f}+=	${TEST_CFLAGS}
+CPPFLAGS.${f}+=	${TEST_CPPFLAGS}
 .endfor
 
 LDADD+=		$$(${LLVM_CONFIG} --system-libs --libs --ldflags)
@@ -76,6 +79,6 @@ LLVM_CONFIG?=	llvm-config
 GTEST_CONFIG?=	gtest-config
 
 simpleperf_unit_test: ${SRCS:R:S/$/.o/:Nmain.o} ${TEST_SRCS:R:S/$/.o/}
-	${CXX} ${CXXFLAGS} ${LDFLAGS} -o $@ $> ${LDADD} ${TEST_LDADD}
+	${CXX} ${CPPFLAGS} ${CXXFLAGS} ${LDFLAGS} -o $@ $> ${LDADD} ${TEST_LDADD}
 
 .include <bsd.prog.mk>
