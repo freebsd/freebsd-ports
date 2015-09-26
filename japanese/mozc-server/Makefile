@@ -272,8 +272,8 @@ PLIST_FILES+=	lib/uim/plugin/libuim-mozc.so \
 		%%DATADIR%%/mozc-custom.scm \
 		%%DATADIR%%/mozc-key-custom.scm \
 		%%DATADIR%%/pixmaps/mozc.png \
-		"@exec ${LOCALBASE}/bin/uim-module-manager --register mozc" \
-		"@unexec ${LOCALBASE}/bin/uim-module-manager --unregister mozc"
+		"@postexec ${LOCALBASE}/bin/uim-module-manager --register mozc" \
+		"@preunexec ${LOCALBASE}/bin/uim-module-manager --unregister mozc"
 
 GYP_OPTIONS+=	--noqt
 GYP_DEFINES+=	use_libibus=0 \
