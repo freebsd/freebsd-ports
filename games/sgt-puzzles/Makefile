@@ -12,6 +12,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simon Tatham's Portable Puzzle Collection
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENCE
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
