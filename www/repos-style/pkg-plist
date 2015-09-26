@@ -1,8 +1,6 @@
 %%WWWDIR%%/Cezanne-LICENSE.txt
 %%WWWDIR%%/LICENSE-2.0.txt
-@unexec if cmp -s %D/%%WWWDIR%%/open/log/index.dist.php %D/%%WWWDIR%%/open/log/index.php; then rm -f %D/%%WWWDIR%%/open/log/index.php; fi
-%%WWWDIR%%/open/log/index.dist.php
-@exec if [ ! -f %D/%%WWWDIR%%/open/log/index.php ]; then cp -p %D/%%WWWDIR%%/open/log/index.dist.php %D/%%WWWDIR%%/open/log/index.php; fi
+@sample %%WWWDIR%%/open/log/index.dist.php %%WWWDIR%%/open/log/index.php
 %%WWWDIR%%/style/commands/16x16/back.png
 %%WWWDIR%%/style/commands/16x16/download.png
 %%WWWDIR%%/style/commands/16x16/history.png
