@@ -3,7 +3,7 @@
 
 PORTNAME=	diff
 PORTVERSION=	20120705
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	LOCAL/gabor
 PKGNAMEPREFIX=	bsd-
@@ -20,6 +20,5 @@ MAKE_ENV+=	BINDIR="${PREFIX}/bin" \
 
 post-install:
 	${LN} -sf ${PREFIX}/bin/bsddiff ${STAGEDIR}${PREFIX}/bin/diff
-	${LN} -sf ${PREFIX}/bin/bsddiff ${STAGEDIR}${PREFIX}/bin/gnudiff
 
 .include <bsd.port.mk>
