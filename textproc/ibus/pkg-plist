@@ -3,8 +3,8 @@ bin/ibus-setup
 bin/ibus
 etc/xdg/autostart/ibus.desktop
 %%DCONF%%etc/dconf/db/ibus.d/00-upstream-settings
-%%DCONF%%@unexec rm -f %D/etc/dconf/db/ibus
-%%DCONF%%@exec dconf update
+%%DCONF%%@postunexec rm -f %D/etc/dconf/db/ibus
+%%DCONF%%@postexec dconf update
 %%DCONF%%etc/dconf/profile/ibus
 include/ibus-1.0/ibus.h
 include/ibus-1.0/ibusattribute.h
@@ -323,7 +323,7 @@ share/bash-completion/completions/ibus.bash
 %%PYTHON_LIB%%@dir %%PYTHON_SITELIBDIR%%/ibus
 @dir include/ibus-1.0
 %%DCONF%%@dir etc/dconf/db/ibus.d
-%%GTK3%%@exec %%LOCALBASE%%/bin/gtk-query-immodules-3.0 --update-cache
-%%GTK2%%@exec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache
-%%GTK3%%@unexec %%LOCALBASE%%/bin/gtk-query-immodules-3.0 --update-cache
-%%GTK2%%@unexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache
+%%GTK3%%@postexec %%LOCALBASE%%/bin/gtk-query-immodules-3.0 --update-cache
+%%GTK2%%@postexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache
+%%GTK3%%@postunexec %%LOCALBASE%%/bin/gtk-query-immodules-3.0 --update-cache
+%%GTK2%%@postunexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache
