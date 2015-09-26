@@ -3447,8 +3447,8 @@
     SUBDIR += pccts
     SUBDIR += pcl
     SUBDIR += pcre
-    SUBDIR += pcre2
     SUBDIR += pcre++
+    SUBDIR += pcre2
     SUBDIR += pcsc-ada
     SUBDIR += pcsc-lite
     SUBDIR += pdcurses
