@@ -231,9 +231,5 @@ share/mime/packages/xboard.xml
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
 @sample etc/xboard.conf.sample
-@postexec /usr/local/bin/update-mime-database %D/share/mime
-@postunexec /usr/local/bin/update-mime-database %D/share/mime
 @postexec /usr/local/bin/gtk-update-icon-cache -q -f %D/share/icons/hicolor 2>/dev/null || /usr/bin/true
 @postunexec /usr/local/bin/gtk-update-icon-cache -q -f %D/share/icons/hicolor 2>/dev/null || /usr/bin/true
-@postexec /usr/local/bin/update-desktop-database -q > /dev/null || /usr/bin/true
-@postunexec /usr/local/bin/update-desktop-database -q > /dev/null || /usr/bin/true
