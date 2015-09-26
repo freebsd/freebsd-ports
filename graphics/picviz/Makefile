@@ -12,6 +12,8 @@ MAINTAINER=	ports@timit.nl
 COMMENT=	Parallel coordinates plotter
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-10-31
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libcairo.so:${PORTSDIR}/graphics/cairo

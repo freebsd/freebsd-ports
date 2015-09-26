@@ -18,6 +18,8 @@ USES=		gmake libtool pkgconfig tar:xz
 INSTALL_TARGET=	install-strip
 
 BROKEN=		Don't build with EFL 1.13.0
+DEPRECATED=	Broken for more than 7 months
+EXPIRATION_DATE=	2015-10-31
 
 .include "../enlightenment/Makefile.plist"
 

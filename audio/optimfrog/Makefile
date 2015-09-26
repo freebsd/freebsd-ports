@@ -13,6 +13,8 @@ COMMENT=	Lossless audio codec
 ONLY_FOR_ARCHS=	amd64 i386
 
 BROKEN=		No public distfiles
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-10-31
 
 NO_CDROM=	No commercial use
 NO_BUILD=	yes

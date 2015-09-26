@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ultra-liberal feed finder
 
 BROKEN=		No public distfiles
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-10-31
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast Mercurial log navigator written in pyqt4
 
 BROKEN=		Logilab mirrors have gone
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-10-31
 
 RUN_DEPENDS=	hg:${PORTSDIR}/devel/mercurial \
 		${PYTHON_PKGNAMEPREFIX}qt4-gui>0:${PORTSDIR}/x11-toolkits/py-qt4-gui \
