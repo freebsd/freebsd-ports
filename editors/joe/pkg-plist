@@ -11,21 +11,11 @@ bin/termidx
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%ETCDIR%%/ftyperc
 %%ETCDIR%%/jicerc.ru
-@unexec if cmp -s %D/%%ETCDIR%%/jmacsrc.dist %D/%%ETCDIR%%/jmacsrc; then rm -f %D/%%ETCDIR%%/jmacsrc; fi
-%%ETCDIR%%/jmacsrc.dist
-@exec if [ ! -f %D/%%ETCDIR%%/jmacsrc ]; then cp %D/%%ETCDIR%%/%f %D/%%ETCDIR%%/jmacsrc; fi
-@unexec if cmp -s %D/%%ETCDIR%%/joerc.dist %D/%%ETCDIR%%/joerc; then rm -f %D/%%ETCDIR%%/joerc; fi
-%%ETCDIR%%/joerc.dist
-@exec if [ ! -f %D/%%ETCDIR%%/joerc ]; then cp %D/%%ETCDIR%%/%f %D/%%ETCDIR%%/joerc; fi
-@unexec if cmp -s %D/%%ETCDIR%%/jpicorc.dist %D/%%ETCDIR%%/jpicorc; then rm -f %D/%%ETCDIR%%/jpicorc; fi
-%%ETCDIR%%/jpicorc.dist
-@exec if [ ! -f %D/%%ETCDIR%%/jpicorc ]; then cp %D/%%ETCDIR%%/%f %D/%%ETCDIR%%/jpicorc; fi
-@unexec if cmp -s %D/%%ETCDIR%%/jstarrc.dist %D/%%ETCDIR%%/jstarrc; then rm -f %D/%%ETCDIR%%/jstarrc; fi
-%%ETCDIR%%/jstarrc.dist
-@exec if [ ! -f %D/%%ETCDIR%%/jstarrc ]; then cp %D/%%ETCDIR%%/%f %D/%%ETCDIR%%/jstarrc; fi
-@unexec if cmp -s %D/%%ETCDIR%%/rjoerc.dist %D/%%ETCDIR%%/rjoerc; then rm -f %D/%%ETCDIR%%/rjoerc; fi
-%%ETCDIR%%/rjoerc.dist
-@exec if [ ! -f %D/%%ETCDIR%%/rjoerc ]; then cp %D/%%ETCDIR%%/%f %D/%%ETCDIR%%/rjoerc; fi
+@sample %%ETCDIR%%/jmacsrc.sample
+@sample %%ETCDIR%%/joerc.sample
+@sample %%ETCDIR%%/jpicorc.sample
+@sample %%ETCDIR%%/jstarrc.sample
+@sample %%ETCDIR%%/rjoerc.sample
 %%ETCDIR%%/shell.csh
 %%ETCDIR%%/shell.sh
 %%DATADIR%%/charmaps/klingon
