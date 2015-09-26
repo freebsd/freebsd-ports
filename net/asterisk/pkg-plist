@@ -1,288 +1,98 @@
-@unexec if cmp -s %D/%%ETCDIR%%/ais.conf %D/%%ETCDIR%%/ais.conf-dist; then rm -f %D/%%ETCDIR%%/ais.conf; fi
-%%ETCDIR%%/ais.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/ais.conf ]; then cp -p %D/%%ETCDIR%%/ais.conf-dist %D/%%ETCDIR%%/ais.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/cdr_adaptive_odbc.conf %D/%%ETCDIR%%/cdr_adaptive_odbc.conf-dist; then rm -f %D/%%ETCDIR%%/cdr_adaptive_odbc.conf; fi
-%%ETCDIR%%/cdr_adaptive_odbc.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/cdr_adaptive_odbc.conf ]; then cp -p %D/%%ETCDIR%%/cdr_adaptive_odbc.conf-dist %D/%%ETCDIR%%/cdr_adaptive_odbc.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/cdr_sqlite3_custom.conf %D/%%ETCDIR%%/cdr_sqlite3_custom.conf-dist; then rm -f %D/%%ETCDIR%%/cdr_sqlite3_custom.conf; fi
-%%ETCDIR%%/cdr_sqlite3_custom.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/cdr_sqlite3_custom.conf ]; then cp -p %D/%%ETCDIR%%/cdr_sqlite3_custom.conf-dist %D/%%ETCDIR%%/cdr_sqlite3_custom.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/cdr_syslog.conf %D/%%ETCDIR%%/cdr_syslog.conf-dist; then rm -f %D/%%ETCDIR%%/cdr_syslog.conf; fi
-%%ETCDIR%%/cdr_syslog.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/cdr_syslog.conf ]; then cp -p %D/%%ETCDIR%%/cdr_syslog.conf-dist %D/%%ETCDIR%%/cdr_syslog.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/cli.conf %D/%%ETCDIR%%/cli.conf-dist; then rm -f %D/%%ETCDIR%%/cli.conf; fi
-%%ETCDIR%%/cli.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/cli.conf ]; then cp -p %D/%%ETCDIR%%/cli.conf-dist %D/%%ETCDIR%%/cli.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/cli_aliases.conf %D/%%ETCDIR%%/cli_aliases.conf-dist; then rm -f %D/%%ETCDIR%%/cli_aliases.conf; fi
-%%ETCDIR%%/cli_aliases.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/cli_aliases.conf ]; then cp -p %D/%%ETCDIR%%/cli_aliases.conf-dist %D/%%ETCDIR%%/cli_aliases.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/cli_permissions.conf %D/%%ETCDIR%%/cli_permissions.conf-dist; then rm -f %D/%%ETCDIR%%/cli_permissions.conf; fi
-%%ETCDIR%%/cli_permissions.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/cli_permissions.conf ]; then cp -p %D/%%ETCDIR%%/cli_permissions.conf-dist %D/%%ETCDIR%%/cli_permissions.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/console.conf %D/%%ETCDIR%%/console.conf-dist; then rm -f %D/%%ETCDIR%%/console.conf; fi
-%%ETCDIR%%/console.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/console.conf ]; then cp -p %D/%%ETCDIR%%/console.conf-dist %D/%%ETCDIR%%/console.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/dbsep.conf %D/%%ETCDIR%%/dbsep.conf-dist; then rm -f %D/%%ETCDIR%%/dbsep.conf; fi
-%%ETCDIR%%/dbsep.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/dbsep.conf ]; then cp -p %D/%%ETCDIR%%/dbsep.conf-dist %D/%%ETCDIR%%/dbsep.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/dsp.conf %D/%%ETCDIR%%/dsp.conf-dist; then rm -f %D/%%ETCDIR%%/dsp.conf; fi
-%%ETCDIR%%/dsp.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/dsp.conf ]; then cp -p %D/%%ETCDIR%%/dsp.conf-dist %D/%%ETCDIR%%/dsp.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/extensions.lua %D/%%ETCDIR%%/extensions.lua-dist; then rm -f %D/%%ETCDIR%%/extensions.lua; fi
-%%ETCDIR%%/extensions.lua-dist
-@exec if [ ! -f %D/%%ETCDIR%%/extensions.lua ]; then cp -p %D/%%ETCDIR%%/extensions.lua-dist %D/%%ETCDIR%%/extensions.lua; fi
-@unexec if cmp -s %D/%%ETCDIR%%/extensions_minivm.conf %D/%%ETCDIR%%/extensions_minivm.conf-dist; then rm -f %D/%%ETCDIR%%/extensions_minivm.conf; fi
-%%ETCDIR%%/extensions_minivm.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/extensions_minivm.conf ]; then cp -p %D/%%ETCDIR%%/extensions_minivm.conf-dist %D/%%ETCDIR%%/extensions_minivm.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/jingle.conf %D/%%ETCDIR%%/jingle.conf-dist; then rm -f %D/%%ETCDIR%%/jingle.conf; fi
-%%ETCDIR%%/jingle.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/jingle.conf ]; then cp -p %D/%%ETCDIR%%/jingle.conf-dist %D/%%ETCDIR%%/jingle.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/minivm.conf %D/%%ETCDIR%%/minivm.conf-dist; then rm -f %D/%%ETCDIR%%/minivm.conf; fi
-%%ETCDIR%%/minivm.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/minivm.conf ]; then cp -p %D/%%ETCDIR%%/minivm.conf-dist %D/%%ETCDIR%%/minivm.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/phoneprov.conf %D/%%ETCDIR%%/phoneprov.conf-dist; then rm -f %D/%%ETCDIR%%/phoneprov.conf; fi
-%%ETCDIR%%/phoneprov.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/phoneprov.conf ]; then cp -p %D/%%ETCDIR%%/phoneprov.conf-dist %D/%%ETCDIR%%/phoneprov.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/queuerules.conf %D/%%ETCDIR%%/queuerules.conf-dist; then rm -f %D/%%ETCDIR%%/queuerules.conf; fi
-%%ETCDIR%%/queuerules.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/queuerules.conf ]; then cp -p %D/%%ETCDIR%%/queuerules.conf-dist %D/%%ETCDIR%%/queuerules.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/res_ldap.conf %D/%%ETCDIR%%/res_ldap.conf-dist; then rm -f %D/%%ETCDIR%%/res_ldap.conf; fi
-%%ETCDIR%%/res_ldap.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/res_ldap.conf ]; then cp -p %D/%%ETCDIR%%/res_ldap.conf-dist %D/%%ETCDIR%%/res_ldap.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/unistim.conf %D/%%ETCDIR%%/unistim.conf-dist; then rm -f %D/%%ETCDIR%%/unistim.conf; fi
-%%ETCDIR%%/unistim.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/unistim.conf ]; then cp -p %D/%%ETCDIR%%/unistim.conf-dist %D/%%ETCDIR%%/unistim.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/adsi.conf %D/%%ETCDIR%%/adsi.conf-dist; then rm -f %D/%%ETCDIR%%/adsi.conf; fi
-%%ETCDIR%%/adsi.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/adsi.conf ]; then cp -p %D/%F %D/%%ETCDIR%%/adsi.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/agents.conf %D/%%ETCDIR%%/agents.conf-dist; then rm -f %D/%%ETCDIR%%/agents.conf; fi
-%%ETCDIR%%/agents.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/agents.conf ]; then cp -p %D/%%ETCDIR%%/agents.conf-dist %D/%%ETCDIR%%/agents.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/alarmreceiver.conf %D/%%ETCDIR%%/alarmreceiver.conf-dist; then rm -f %D/%%ETCDIR%%/alarmreceiver.conf; fi
-%%ETCDIR%%/alarmreceiver.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/alarmreceiver.conf ]; then cp -p %D/%%ETCDIR%%/alarmreceiver.conf-dist %D/%%ETCDIR%%/alarmreceiver.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/alsa.conf %D/%%ETCDIR%%/alsa.conf-dist; then rm -f %D/%%ETCDIR%%/alsa.conf; fi
-%%ETCDIR%%/alsa.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/alsa.conf ]; then cp -p %D/%%ETCDIR%%/alsa.conf-dist %D/%%ETCDIR%%/alsa.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/asterisk.adsi %D/%%ETCDIR%%/asterisk.adsi-dist; then rm -f %D/%%ETCDIR%%/asterisk.adsi; fi
-%%ETCDIR%%/asterisk.adsi-dist
-@exec if [ ! -f %D/%%ETCDIR%%/asterisk.adsi ]; then cp -p %D/%%ETCDIR%%/asterisk.adsi-dist %D/%%ETCDIR%%/asterisk.adsi; fi
-@unexec if cmp -s %D/%%ETCDIR%%/asterisk.conf %D/%%ETCDIR%%/asterisk.conf-dist; then rm -f %D/%%ETCDIR%%/asterisk.conf; fi
-%%ETCDIR%%/asterisk.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/asterisk.conf ]; then cp -p %D/%%ETCDIR%%/asterisk.conf-dist %D/%%ETCDIR%%/asterisk.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/calendar.conf %D/%%ETCDIR%%/calendar.conf-dist; then rm -f %D/%%ETCDIR%%/calendar.conf; fi
-%%ETCDIR%%/calendar.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/calendar.conf ]; then cp -p %D/%%ETCDIR%%/calendar.conf-dist %D/%%ETCDIR%%/calendar.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/ccss.conf %D/%%ETCDIR%%/ccss.conf-dist; then rm -f %D/%%ETCDIR%%/ccss.conf; fi
-%%ETCDIR%%/ccss.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/ccss.conf ]; then cp -p %D/%%ETCDIR%%/ccss.conf-dist %D/%%ETCDIR%%/ccss.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/cdr.conf %D/%%ETCDIR%%/cdr.conf-dist; then rm -f %D/%%ETCDIR%%/cdr.conf; fi
-%%ETCDIR%%/cdr.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/cdr.conf ]; then cp -p %D/%%ETCDIR%%/cdr.conf-dist %D/%%ETCDIR%%/cdr.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/cdr_custom.conf %D/%%ETCDIR%%/cdr_custom.conf-dist; then rm -f %D/%%ETCDIR%%/cdr_custom.conf; fi
-%%ETCDIR%%/cdr_custom.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/cdr_custom.conf ]; then cp -p %D/%%ETCDIR%%/cdr_custom.conf-dist %D/%%ETCDIR%%/cdr_custom.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/cdr_manager.conf %D/%%ETCDIR%%/cdr_manager.conf-dist; then rm -f %D/%%ETCDIR%%/cdr_manager.conf; fi
-%%ETCDIR%%/cdr_manager.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/cdr_manager.conf ]; then cp -p %D/%%ETCDIR%%/cdr_manager.conf-dist %D/%%ETCDIR%%/cdr_manager.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/cdr_mysql.conf %D/%%ETCDIR%%/cdr_mysql.conf-dist; then rm -f %D/%%ETCDIR%%/cdr_mysql.conf; fi
-%%ETCDIR%%/cdr_mysql.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/cdr_mysql.conf ]; then cp -p %D/%%ETCDIR%%/cdr_mysql.conf-dist %D/%%ETCDIR%%/cdr_mysql.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/cdr_odbc.conf %D/%%ETCDIR%%/cdr_odbc.conf-dist; then rm -f %D/%%ETCDIR%%/cdr_odbc.conf; fi
-%%ETCDIR%%/cdr_odbc.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/cdr_odbc.conf ]; then cp -p %D/%%ETCDIR%%/cdr_odbc.conf-dist %D/%%ETCDIR%%/cdr_odbc.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/cdr_pgsql.conf %D/%%ETCDIR%%/cdr_pgsql.conf-dist; then rm -f %D/%%ETCDIR%%/cdr_pgsql.conf; fi
-%%ETCDIR%%/cdr_pgsql.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/cdr_pgsql.conf ]; then cp -p %D/%%ETCDIR%%/cdr_pgsql.conf-dist %D/%%ETCDIR%%/cdr_pgsql.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/cdr_tds.conf %D/%%ETCDIR%%/cdr_tds.conf-dist; then rm -f %D/%%ETCDIR%%/cdr_tds.conf; fi
-%%ETCDIR%%/cdr_tds.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/cdr_tds.conf ]; then cp -p %D/%%ETCDIR%%/cdr_tds.conf-dist %D/%%ETCDIR%%/cdr_tds.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/cel.conf %D/%%ETCDIR%%/cel.conf-dist; then rm -f %D/%%ETCDIR%%/cel.conf; fi
-%%ETCDIR%%/cel.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/cel.conf ]; then cp -p %D/%%ETCDIR%%/cel.conf-dist %D/%%ETCDIR%%/cel.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/cel_custom.conf %D/%%ETCDIR%%/cel_custom.conf-dist; then rm -f %D/%%ETCDIR%%/cel_custom.conf; fi
-%%ETCDIR%%/cel_custom.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/cel_custom.conf ]; then cp -p %D/%%ETCDIR%%/cel_custom.conf-dist %D/%%ETCDIR%%/cel_custom.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/cel_odbc.conf %D/%%ETCDIR%%/cel_odbc.conf-dist; then rm -f %D/%%ETCDIR%%/cel_odbc.conf; fi
-%%ETCDIR%%/cel_odbc.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/cel_odbc.conf ]; then cp -p %D/%%ETCDIR%%/cel_odbc.conf-dist %D/%%ETCDIR%%/cel_odbc.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/cel_pgsql.conf %D/%%ETCDIR%%/cel_pgsql.conf-dist; then rm -f %D/%%ETCDIR%%/cel_pgsql.conf; fi
-%%ETCDIR%%/cel_pgsql.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/cel_pgsql.conf ]; then cp -p %D/%%ETCDIR%%/cel_pgsql.conf-dist %D/%%ETCDIR%%/cel_pgsql.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/cel_sqlite3_custom.conf %D/%%ETCDIR%%/cel_sqlite3_custom.conf-dist; then rm -f %D/%%ETCDIR%%/cel_sqlite3_custom.conf; fi
-%%ETCDIR%%/cel_sqlite3_custom.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/cel_sqlite3_custom.conf ]; then cp -p %D/%%ETCDIR%%/cel_sqlite3_custom.conf-dist %D/%%ETCDIR%%/cel_sqlite3_custom.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/cel_tds.conf %D/%%ETCDIR%%/cel_tds.conf-dist; then rm -f %D/%%ETCDIR%%/cel_tds.conf; fi
-%%ETCDIR%%/cel_tds.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/cel_tds.conf ]; then cp -p %D/%%ETCDIR%%/cel_tds.conf-dist %D/%%ETCDIR%%/cel_tds.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/codecs.conf %D/%%ETCDIR%%/codecs.conf-dist; then rm -f %D/%%ETCDIR%%/codecs.conf; fi
-%%ETCDIR%%/codecs.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/codecs.conf ]; then cp -p %D/%%ETCDIR%%/codecs.conf-dist %D/%%ETCDIR%%/codecs.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/dnsmgr.conf %D/%%ETCDIR%%/dnsmgr.conf-dist; then rm -f %D/%%ETCDIR%%/dnsmgr.conf; fi
-%%ETCDIR%%/dnsmgr.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/dnsmgr.conf ]; then cp -p %D/%%ETCDIR%%/dnsmgr.conf-dist %D/%%ETCDIR%%/dnsmgr.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/dundi.conf %D/%%ETCDIR%%/dundi.conf-dist; then rm -f %D/%%ETCDIR%%/dundi.conf; fi
-%%ETCDIR%%/dundi.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/dundi.conf ]; then cp -p %D/%%ETCDIR%%/dundi.conf-dist %D/%%ETCDIR%%/dundi.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/enum.conf %D/%%ETCDIR%%/enum.conf-dist; then rm -f %D/%%ETCDIR%%/enum.conf; fi
-%%ETCDIR%%/enum.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/enum.conf ]; then cp -p %D/%%ETCDIR%%/enum.conf-dist %D/%%ETCDIR%%/enum.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/extconfig.conf %D/%%ETCDIR%%/extconfig.conf-dist; then rm -f %D/%%ETCDIR%%/extconfig.conf; fi
-%%ETCDIR%%/extconfig.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/extconfig.conf ]; then cp -p %D/%%ETCDIR%%/extconfig.conf-dist %D/%%ETCDIR%%/extconfig.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/extensions.ael %D/%%ETCDIR%%/extensions.ael-dist; then rm -f %D/%%ETCDIR%%/extensions.ael; fi
-%%ETCDIR%%/extensions.ael-dist
-@exec if [ ! -f %D/%%ETCDIR%%/extensions.ael ]; then cp -p %D/%%ETCDIR%%/extensions.ael-dist %D/%%ETCDIR%%/extensions.ael; fi
-@unexec if cmp -s %D/%%ETCDIR%%/extensions.conf %D/%%ETCDIR%%/extensions.conf-dist; then rm -f %D/%%ETCDIR%%/extensions.conf; fi
-%%ETCDIR%%/extensions.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/extensions.conf ]; then cp -p %D/%%ETCDIR%%/extensions.conf-dist %D/%%ETCDIR%%/extensions.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/features.conf %D/%%ETCDIR%%/features.conf-dist; then rm -f %D/%%ETCDIR%%/features.conf; fi
-%%ETCDIR%%/features.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/features.conf ]; then cp -p %D/%%ETCDIR%%/features.conf-dist %D/%%ETCDIR%%/features.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/festival.conf %D/%%ETCDIR%%/festival.conf-dist; then rm -f %D/%%ETCDIR%%/festival.conf; fi
-%%ETCDIR%%/festival.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/festival.conf ]; then cp -p %D/%%ETCDIR%%/festival.conf-dist %D/%%ETCDIR%%/festival.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/iax.conf %D/%%ETCDIR%%/iax.conf-dist; then rm -f %D/%%ETCDIR%%/iax.conf; fi
-%%ETCDIR%%/iax.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/iax.conf ]; then cp -p %D/%%ETCDIR%%/iax.conf-dist %D/%%ETCDIR%%/iax.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/iaxprov.conf %D/%%ETCDIR%%/iaxprov.conf-dist; then rm -f %D/%%ETCDIR%%/iaxprov.conf; fi
-%%ETCDIR%%/iaxprov.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/iaxprov.conf ]; then cp -p %D/%%ETCDIR%%/iaxprov.conf-dist %D/%%ETCDIR%%/iaxprov.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/indications.conf %D/%%ETCDIR%%/indications.conf-dist; then rm -f %D/%%ETCDIR%%/indications.conf; fi
-%%ETCDIR%%/indications.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/indications.conf ]; then cp -p %D/%%ETCDIR%%/indications.conf-dist %D/%%ETCDIR%%/indications.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/logger.conf %D/%%ETCDIR%%/logger.conf-dist; then rm -f %D/%%ETCDIR%%/logger.conf; fi
-%%ETCDIR%%/logger.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/logger.conf ]; then cp -p %D/%%ETCDIR%%/logger.conf-dist %D/%%ETCDIR%%/logger.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/manager.conf %D/%%ETCDIR%%/manager.conf-dist; then rm -f %D/%%ETCDIR%%/manager.conf; fi
-%%ETCDIR%%/manager.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/manager.conf ]; then cp -p %D/%%ETCDIR%%/manager.conf-dist %D/%%ETCDIR%%/manager.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/meetme.conf %D/%%ETCDIR%%/meetme.conf-dist; then rm -f %D/%%ETCDIR%%/meetme.conf; fi
-%%ETCDIR%%/meetme.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/meetme.conf ]; then cp -p %D/%%ETCDIR%%/meetme.conf-dist %D/%%ETCDIR%%/meetme.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/mgcp.conf %D/%%ETCDIR%%/mgcp.conf-dist; then rm -f %D/%%ETCDIR%%/mgcp.conf; fi
-%%ETCDIR%%/mgcp.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/mgcp.conf ]; then cp -p %D/%%ETCDIR%%/mgcp.conf-dist %D/%%ETCDIR%%/mgcp.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/misdn.conf %D/%%ETCDIR%%/misdn.conf-dist; then rm -f %D/%%ETCDIR%%/misdn.conf; fi
-%%ETCDIR%%/misdn.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/misdn.conf ]; then cp -p %D/%%ETCDIR%%/misdn.conf-dist %D/%%ETCDIR%%/misdn.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/modules.conf %D/%%ETCDIR%%/modules.conf-dist; then rm -f %D/%%ETCDIR%%/modules.conf; fi
-%%ETCDIR%%/modules.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/modules.conf ]; then cp -p %D/%%ETCDIR%%/modules.conf-dist %D/%%ETCDIR%%/modules.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/musiconhold.conf %D/%%ETCDIR%%/musiconhold.conf-dist; then rm -f %D/%%ETCDIR%%/musiconhold.conf; fi
-%%ETCDIR%%/musiconhold.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/musiconhold.conf ]; then cp -p %D/%%ETCDIR%%/musiconhold.conf-dist %D/%%ETCDIR%%/musiconhold.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/osp.conf %D/%%ETCDIR%%/osp.conf-dist; then rm -f %D/%%ETCDIR%%/osp.conf; fi
-%%ETCDIR%%/osp.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/osp.conf ]; then cp -p %D/%%ETCDIR%%/osp.conf-dist %D/%%ETCDIR%%/osp.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/oss.conf %D/%%ETCDIR%%/oss.conf-dist; then rm -f %D/%%ETCDIR%%/oss.conf; fi
-%%ETCDIR%%/oss.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/oss.conf ]; then cp -p %D/%%ETCDIR%%/oss.conf-dist %D/%%ETCDIR%%/oss.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/phone.conf %D/%%ETCDIR%%/phone.conf-dist; then rm -f %D/%%ETCDIR%%/phone.conf; fi
-%%ETCDIR%%/phone.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/phone.conf ]; then cp -p %D/%%ETCDIR%%/phone.conf-dist %D/%%ETCDIR%%/phone.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/queues.conf %D/%%ETCDIR%%/queues.conf-dist; then rm -f %D/%%ETCDIR%%/queues.conf; fi
-%%ETCDIR%%/queues.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/queues.conf ]; then cp -p %D/%%ETCDIR%%/queues.conf-dist %D/%%ETCDIR%%/queues.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/res_config_mysql.conf %D/%%ETCDIR%%/res_config_mysql.conf-dist; then rm -f %D/%%ETCDIR%%/res_config_mysql.conf; fi
-%%ETCDIR%%/res_config_mysql.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/res_config_mysql.conf ]; then cp -p %D/%%ETCDIR%%/res_config_mysql.conf-dist %D/%%ETCDIR%%/res_config_mysql.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/res_pgsql.conf %D/%%ETCDIR%%/res_pgsql.conf-dist; then rm -f %D/%%ETCDIR%%/res_pgsql.conf; fi
-%%ETCDIR%%/res_pgsql.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/res_pgsql.conf ]; then cp -p %D/%%ETCDIR%%/res_pgsql.conf-dist %D/%%ETCDIR%%/res_pgsql.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/res_pktccops.conf %D/%%ETCDIR%%/res_pktccops.conf-dist; then rm -f %D/%%ETCDIR%%/res_pktccops.conf; fi
-%%ETCDIR%%/res_pktccops.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/res_pktccops.conf ]; then cp -p %D/%%ETCDIR%%/res_pktccops.conf-dist %D/%%ETCDIR%%/res_pktccops.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/res_odbc.conf %D/%%ETCDIR%%/res_odbc.conf-dist; then rm -f %D/%%ETCDIR%%/res_odbc.conf; fi
-%%ETCDIR%%/res_odbc.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/res_odbc.conf ]; then cp -p %D/%%ETCDIR%%/res_odbc.conf-dist %D/%%ETCDIR%%/res_odbc.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/rtp.conf %D/%%ETCDIR%%/rtp.conf-dist; then rm -f %D/%%ETCDIR%%/rtp.conf; fi
-%%ETCDIR%%/rtp.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/rtp.conf ]; then cp -p %D/%%ETCDIR%%/rtp.conf-dist %D/%%ETCDIR%%/rtp.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/sip.conf %D/%%ETCDIR%%/sip.conf-dist; then rm -f %D/%%ETCDIR%%/sip.conf; fi
-%%ETCDIR%%/sip.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/sip.conf ]; then cp -p %D/%%ETCDIR%%/sip.conf-dist %D/%%ETCDIR%%/sip.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/sip_notify.conf %D/%%ETCDIR%%/sip_notify.conf-dist; then rm -f %D/%%ETCDIR%%/sip_notify.conf; fi
-%%ETCDIR%%/sip_notify.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/sip_notify.conf ]; then cp -p %D/%%ETCDIR%%/sip_notify.conf-dist %D/%%ETCDIR%%/sip_notify.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/skinny.conf %D/%%ETCDIR%%/skinny.conf-dist; then rm -f %D/%%ETCDIR%%/skinny.conf; fi
-%%ETCDIR%%/skinny.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/skinny.conf ]; then cp -p %D/%%ETCDIR%%/skinny.conf-dist %D/%%ETCDIR%%/skinny.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/telcordia-1.adsi %D/%%ETCDIR%%/telcordia-1.adsi-dist; then rm -f %D/%%ETCDIR%%/telcordia-1.adsi; fi
-%%ETCDIR%%/telcordia-1.adsi-dist
-@exec if [ ! -f %D/%%ETCDIR%%/telcordia-1.adsi ]; then cp -p %D/%%ETCDIR%%/telcordia-1.adsi-dist %D/%%ETCDIR%%/telcordia-1.adsi; fi
-@unexec if cmp -s %D/%%ETCDIR%%/voicemail.conf %D/%%ETCDIR%%/voicemail.conf-dist; then rm -f %D/%%ETCDIR%%/voicemail.conf; fi
-%%ETCDIR%%/voicemail.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/voicemail.conf ]; then cp -p %D/%%ETCDIR%%/voicemail.conf-dist %D/%%ETCDIR%%/voicemail.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/vpb.conf %D/%%ETCDIR%%/vpb.conf-dist; then rm -f %D/%%ETCDIR%%/vpb.conf; fi
-%%ETCDIR%%/vpb.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/vpb.conf ]; then cp -p %D/%%ETCDIR%%/vpb.conf-dist %D/%%ETCDIR%%/vpb.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/chan_dahdi.conf %D/%%ETCDIR%%/chan_dahdi.conf-dist; then rm -f %D/%%ETCDIR%%/chan_dahdi.conf; fi
-%%ETCDIR%%/chan_dahdi.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/chan_dahdi.conf ]; then cp -p %D/%%ETCDIR%%/chan_dahdi.conf-dist %D/%%ETCDIR%%/chan_dahdi.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/chan_mobile.conf %D/%%ETCDIR%%/chan_mobile.conf-dist; then rm -f %D/%%ETCDIR%%/chan_mobile.conf; fi
-%%ETCDIR%%/chan_mobile.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/chan_mobile.conf ]; then cp -p %D/%%ETCDIR%%/chan_mobile.conf-dist %D/%%ETCDIR%%/chan_mobile.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/chan_ooh323.conf %D/%%ETCDIR%%/chan_ooh323.conf-dist; then rm -f %D/%%ETCDIR%%/chan_ooh323.conf; fi
-%%ETCDIR%%/chan_ooh323.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/chan_ooh323.conf ]; then cp -p %D/%%ETCDIR%%/chan_ooh323.conf-dist %D/%%ETCDIR%%/chan_ooh323.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/udptl.conf %D/%%ETCDIR%%/udptl.conf-dist; then rm -f %D/%%ETCDIR%%/udptl.conf; fi
-%%ETCDIR%%/udptl.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/udptl.conf ]; then cp -p %D/%%ETCDIR%%/udptl.conf-dist %D/%%ETCDIR%%/udptl.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/users.conf %D/%%ETCDIR%%/users.conf-dist; then rm -f %D/%%ETCDIR%%/users.conf; fi
-%%ETCDIR%%/users.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/users.conf ]; then cp -p %D/%%ETCDIR%%/users.conf-dist %D/%%ETCDIR%%/users.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/smdi.conf %D/%%ETCDIR%%/smdi.conf-dist; then rm -f %D/%%ETCDIR%%/smdi.conf; fi
-%%ETCDIR%%/smdi.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/smdi.conf ]; then cp -p %D/%%ETCDIR%%/smdi.conf-dist %D/%%ETCDIR%%/smdi.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/sla.conf %D/%%ETCDIR%%/sla.conf-dist; then rm -f %D/%%ETCDIR%%/sla.conf; fi
-%%ETCDIR%%/sla.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/sla.conf ]; then cp -p %D/%%ETCDIR%%/sla.conf-dist %D/%%ETCDIR%%/sla.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/say.conf %D/%%ETCDIR%%/say.conf-dist; then rm -f %D/%%ETCDIR%%/say.conf; fi
-%%ETCDIR%%/say.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/say.conf ]; then cp -p %D/%%ETCDIR%%/say.conf-dist %D/%%ETCDIR%%/say.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/res_snmp.conf %D/%%ETCDIR%%/res_snmp.conf-dist; then rm -f %D/%%ETCDIR%%/res_snmp.conf; fi
-%%ETCDIR%%/res_snmp.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/res_snmp.conf ]; then cp -p %D/%%ETCDIR%%/res_snmp.conf-dist %D/%%ETCDIR%%/res_snmp.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/res_stun_monitor.conf %D/%%ETCDIR%%/res_stun_monitor.conf-dist; then rm -f %D/%%ETCDIR%%/res_stun_monitor.conf; fi
-%%ETCDIR%%/res_stun_monitor.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/res_stun_monitor.conf ]; then cp -p %D/%%ETCDIR%%/res_stun_monitor.conf-dist %D/%%ETCDIR%%/res_stun_monitor.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/muted.conf %D/%%ETCDIR%%/muted.conf-dist; then rm -f %D/%%ETCDIR%%/muted.conf; fi
-%%ETCDIR%%/muted.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/muted.conf ]; then cp -p %D/%%ETCDIR%%/muted.conf-dist %D/%%ETCDIR%%/muted.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/jabber.conf %D/%%ETCDIR%%/jabber.conf-dist; then rm -f %D/%%ETCDIR%%/jabber.conf; fi
-%%ETCDIR%%/jabber.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/jabber.conf ]; then cp -p %D/%%ETCDIR%%/jabber.conf-dist %D/%%ETCDIR%%/jabber.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/http.conf %D/%%ETCDIR%%/http.conf-dist; then rm -f %D/%%ETCDIR%%/http.conf; fi
-%%ETCDIR%%/http.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/http.conf ]; then cp -p %D/%%ETCDIR%%/http.conf-dist %D/%%ETCDIR%%/http.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/h323.conf %D/%%ETCDIR%%/h323.conf-dist; then rm -f %D/%%ETCDIR%%/h323.conf; fi
-%%ETCDIR%%/h323.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/h323.conf ]; then cp -p %D/%%ETCDIR%%/h323.conf-dist %D/%%ETCDIR%%/h323.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/gtalk.conf %D/%%ETCDIR%%/gtalk.conf-dist; then rm -f %D/%%ETCDIR%%/gtalk.conf; fi
-%%ETCDIR%%/gtalk.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/gtalk.conf ]; then cp -p %D/%%ETCDIR%%/gtalk.conf-dist %D/%%ETCDIR%%/gtalk.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/func_odbc.conf %D/%%ETCDIR%%/func_odbc.conf-dist; then rm -f %D/%%ETCDIR%%/func_odbc.conf; fi
-%%ETCDIR%%/func_odbc.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/func_odbc.conf ]; then cp -p %D/%%ETCDIR%%/func_odbc.conf-dist %D/%%ETCDIR%%/func_odbc.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/followme.conf %D/%%ETCDIR%%/followme.conf-dist; then rm -f %D/%%ETCDIR%%/followme.conf; fi
-%%ETCDIR%%/followme.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/followme.conf ]; then cp -p %D/%%ETCDIR%%/followme.conf-dist %D/%%ETCDIR%%/followme.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/amd.conf %D/%%ETCDIR%%/amd.conf-dist; then rm -f %D/%%ETCDIR%%/amd.conf; fi
-%%ETCDIR%%/amd.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/amd.conf ]; then cp -p %D/%%ETCDIR%%/amd.conf-dist %D/%%ETCDIR%%/amd.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/app_mysql.conf %D/%%ETCDIR%%/app_mysql.conf-dist; then rm -f %D/%%ETCDIR%%/app_mysql.conf; fi
-%%ETCDIR%%/app_mysql.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/app_mysql.conf ]; then cp -p %D/%%ETCDIR%%/app_mysql.conf-dist %D/%%ETCDIR%%/app_mysql.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/res_config_sqlite.conf %D/%%ETCDIR%%/res_config_sqlite.conf-dist; then rm -f %D/%%ETCDIR%%/res_config_sqlite.conf; fi
-%%ETCDIR%%/res_config_sqlite.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/res_config_sqlite.conf ]; then cp -p %D/%%ETCDIR%%/res_config_sqlite.conf-dist %D/%%ETCDIR%%/res_config_sqlite.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/res_curl.conf %D/%%ETCDIR%%/res_curl.conf-dist; then rm -f %D/%%ETCDIR%%/res_curl.conf; fi
-%%ETCDIR%%/res_curl.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/res_curl.conf ]; then cp -p %D/%%ETCDIR%%/res_curl.conf-dist %D/%%ETCDIR%%/res_curl.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/res_fax.conf %D/%%ETCDIR%%/res_fax.conf-dist; then rm -f %D/%%ETCDIR%%/res_fax.conf; fi
-%%ETCDIR%%/res_fax.conf-dist
-@exec if [ ! -f %D/%%ETCDIR%%/res_fax.conf ]; then cp -p %D/%%ETCDIR%%/res_fax.conf-dist %D/%%ETCDIR%%/res_fax.conf; fi
+@sample %%ETCDIR%%/ais.conf-dist %%ETCDIR%%/ais.conf
+@sample %%ETCDIR%%/cdr_adaptive_odbc.conf-dist %%ETCDIR%%/cdr_adaptive_odbc.conf
+@sample %%ETCDIR%%/cdr_sqlite3_custom.conf-dist %%ETCDIR%%/cdr_sqlite3_custom.conf
+@sample %%ETCDIR%%/cdr_syslog.conf-dist %%ETCDIR%%/cdr_syslog.conf
+@sample %%ETCDIR%%/cli.conf-dist %%ETCDIR%%/cli.conf
+@sample %%ETCDIR%%/cli_aliases.conf-dist %%ETCDIR%%/cli_aliases.conf
+@sample %%ETCDIR%%/cli_permissions.conf-dist %%ETCDIR%%/cli_permissions.conf
+@sample %%ETCDIR%%/console.conf-dist %%ETCDIR%%/console.conf
+@sample %%ETCDIR%%/dbsep.conf-dist %%ETCDIR%%/dbsep.conf
+@sample %%ETCDIR%%/dsp.conf-dist %%ETCDIR%%/dsp.conf
+@sample %%ETCDIR%%/extensions.lua-dist %%ETCDIR%%/extensions.lua
+@sample %%ETCDIR%%/extensions_minivm.conf-dist %%ETCDIR%%/extensions_minivm.conf
+@sample %%ETCDIR%%/jingle.conf-dist %%ETCDIR%%/jingle.conf
+@sample %%ETCDIR%%/minivm.conf-dist %%ETCDIR%%/minivm.conf
+@sample %%ETCDIR%%/phoneprov.conf-dist %%ETCDIR%%/phoneprov.conf
+@sample %%ETCDIR%%/queuerules.conf-dist %%ETCDIR%%/queuerules.conf
+@sample %%ETCDIR%%/res_ldap.conf-dist %%ETCDIR%%/res_ldap.conf
+@sample %%ETCDIR%%/unistim.conf-dist %%ETCDIR%%/unistim.conf
+@sample %%ETCDIR%%/adsi.conf-dist %%ETCDIR%%/adsi.conf
+@sample %%ETCDIR%%/agents.conf-dist %%ETCDIR%%/agents.conf
+@sample %%ETCDIR%%/alarmreceiver.conf-dist %%ETCDIR%%/alarmreceiver.conf
+@sample %%ETCDIR%%/alsa.conf-dist %%ETCDIR%%/alsa.conf
+@sample %%ETCDIR%%/asterisk.adsi-dist %%ETCDIR%%/asterisk.adsi
+@sample %%ETCDIR%%/asterisk.conf-dist %%ETCDIR%%/asterisk.conf
+@sample %%ETCDIR%%/calendar.conf-dist %%ETCDIR%%/calendar.conf
+@sample %%ETCDIR%%/ccss.conf-dist %%ETCDIR%%/ccss.conf
+@sample %%ETCDIR%%/cdr.conf-dist %%ETCDIR%%/cdr.conf
+@sample %%ETCDIR%%/cdr_custom.conf-dist %%ETCDIR%%/cdr_custom.conf
+@sample %%ETCDIR%%/cdr_manager.conf-dist %%ETCDIR%%/cdr_manager.conf
+@sample %%ETCDIR%%/cdr_mysql.conf-dist %%ETCDIR%%/cdr_mysql.conf
+@sample %%ETCDIR%%/cdr_odbc.conf-dist %%ETCDIR%%/cdr_odbc.conf
+@sample %%ETCDIR%%/cdr_pgsql.conf-dist %%ETCDIR%%/cdr_pgsql.conf
+@sample %%ETCDIR%%/cdr_tds.conf-dist %%ETCDIR%%/cdr_tds.conf
+@sample %%ETCDIR%%/cel.conf-dist %%ETCDIR%%/cel.conf
+@sample %%ETCDIR%%/cel_custom.conf-dist %%ETCDIR%%/cel_custom.conf
+@sample %%ETCDIR%%/cel_odbc.conf-dist %%ETCDIR%%/cel_odbc.conf
+@sample %%ETCDIR%%/cel_pgsql.conf-dist %%ETCDIR%%/cel_pgsql.conf
+@sample %%ETCDIR%%/cel_sqlite3_custom.conf-dist %%ETCDIR%%/cel_sqlite3_custom.conf
+@sample %%ETCDIR%%/cel_tds.conf-dist %%ETCDIR%%/cel_tds.conf
+@sample %%ETCDIR%%/codecs.conf-dist %%ETCDIR%%/codecs.conf
+@sample %%ETCDIR%%/dnsmgr.conf-dist %%ETCDIR%%/dnsmgr.conf
+@sample %%ETCDIR%%/dundi.conf-dist %%ETCDIR%%/dundi.conf
+@sample %%ETCDIR%%/enum.conf-dist %%ETCDIR%%/enum.conf
+@sample %%ETCDIR%%/extconfig.conf-dist %%ETCDIR%%/extconfig.conf
+@sample %%ETCDIR%%/extensions.ael-dist %%ETCDIR%%/extensions.ael
+@sample %%ETCDIR%%/extensions.conf-dist %%ETCDIR%%/extensions.conf
+@sample %%ETCDIR%%/features.conf-dist %%ETCDIR%%/features.conf
+@sample %%ETCDIR%%/festival.conf-dist %%ETCDIR%%/festival.conf
+@sample %%ETCDIR%%/iax.conf-dist %%ETCDIR%%/iax.conf
+@sample %%ETCDIR%%/iaxprov.conf-dist %%ETCDIR%%/iaxprov.conf
+@sample %%ETCDIR%%/indications.conf-dist %%ETCDIR%%/indications.conf
+@sample %%ETCDIR%%/logger.conf-dist %%ETCDIR%%/logger.conf
+@sample %%ETCDIR%%/manager.conf-dist %%ETCDIR%%/manager.conf
+@sample %%ETCDIR%%/meetme.conf-dist %%ETCDIR%%/meetme.conf
+@sample %%ETCDIR%%/mgcp.conf-dist %%ETCDIR%%/mgcp.conf
+@sample %%ETCDIR%%/misdn.conf-dist %%ETCDIR%%/misdn.conf
+@sample %%ETCDIR%%/modules.conf-dist %%ETCDIR%%/modules.conf
+@sample %%ETCDIR%%/musiconhold.conf-dist %%ETCDIR%%/musiconhold.conf
+@sample %%ETCDIR%%/osp.conf-dist %%ETCDIR%%/osp.conf
+@sample %%ETCDIR%%/oss.conf-dist %%ETCDIR%%/oss.conf
+@sample %%ETCDIR%%/phone.conf-dist %%ETCDIR%%/phone.conf
+@sample %%ETCDIR%%/queues.conf-dist %%ETCDIR%%/queues.conf
+@sample %%ETCDIR%%/res_config_mysql.conf-dist %%ETCDIR%%/res_config_mysql.conf
+@sample %%ETCDIR%%/res_pgsql.conf-dist %%ETCDIR%%/res_pgsql.conf
+@sample %%ETCDIR%%/res_pktccops.conf-dist %%ETCDIR%%/res_pktccops.conf
+@sample %%ETCDIR%%/res_odbc.conf-dist %%ETCDIR%%/res_odbc.conf
+@sample %%ETCDIR%%/rtp.conf-dist %%ETCDIR%%/rtp.conf
+@sample %%ETCDIR%%/sip.conf-dist %%ETCDIR%%/sip.conf
+@sample %%ETCDIR%%/sip_notify.conf-dist %%ETCDIR%%/sip_notify.conf
+@sample %%ETCDIR%%/skinny.conf-dist %%ETCDIR%%/skinny.conf
+@sample %%ETCDIR%%/telcordia-1.adsi-dist %%ETCDIR%%/telcordia-1.adsi
+@sample %%ETCDIR%%/voicemail.conf-dist %%ETCDIR%%/voicemail.conf
+@sample %%ETCDIR%%/vpb.conf-dist %%ETCDIR%%/vpb.conf
+@sample %%ETCDIR%%/chan_dahdi.conf-dist %%ETCDIR%%/chan_dahdi.conf
+@sample %%ETCDIR%%/chan_mobile.conf-dist %%ETCDIR%%/chan_mobile.conf
+@sample %%ETCDIR%%/chan_ooh323.conf-dist %%ETCDIR%%/chan_ooh323.conf
+@sample %%ETCDIR%%/udptl.conf-dist %%ETCDIR%%/udptl.conf
+@sample %%ETCDIR%%/users.conf-dist %%ETCDIR%%/users.conf
+@sample %%ETCDIR%%/smdi.conf-dist %%ETCDIR%%/smdi.conf
+@sample %%ETCDIR%%/sla.conf-dist %%ETCDIR%%/sla.conf
+@sample %%ETCDIR%%/say.conf-dist %%ETCDIR%%/say.conf
+@sample %%ETCDIR%%/res_snmp.conf-dist %%ETCDIR%%/res_snmp.conf
+@sample %%ETCDIR%%/res_stun_monitor.conf-dist %%ETCDIR%%/res_stun_monitor.conf
+@sample %%ETCDIR%%/muted.conf-dist %%ETCDIR%%/muted.conf
+@sample %%ETCDIR%%/jabber.conf-dist %%ETCDIR%%/jabber.conf
+@sample %%ETCDIR%%/http.conf-dist %%ETCDIR%%/http.conf
+@sample %%ETCDIR%%/h323.conf-dist %%ETCDIR%%/h323.conf
+@sample %%ETCDIR%%/gtalk.conf-dist %%ETCDIR%%/gtalk.conf
+@sample %%ETCDIR%%/func_odbc.conf-dist %%ETCDIR%%/func_odbc.conf
+@sample %%ETCDIR%%/followme.conf-dist %%ETCDIR%%/followme.conf
+@sample %%ETCDIR%%/amd.conf-dist %%ETCDIR%%/amd.conf
+@sample %%ETCDIR%%/app_mysql.conf-dist %%ETCDIR%%/app_mysql.conf
+@sample %%ETCDIR%%/res_config_sqlite.conf-dist %%ETCDIR%%/res_config_sqlite.conf
+@sample %%ETCDIR%%/res_curl.conf-dist %%ETCDIR%%/res_curl.conf
+@sample %%ETCDIR%%/res_fax.conf-dist %%ETCDIR%%/res_fax.conf
 include/asterisk/doxygen/architecture.h
 include/asterisk/doxygen/asterisk-git-howto.h
 include/asterisk/doxygen/commits.h
