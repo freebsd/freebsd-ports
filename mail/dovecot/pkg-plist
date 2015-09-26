@@ -105,22 +105,12 @@ libexec/dovecot/ssl-build-param
 libexec/dovecot/threadview
 sbin/dovecot
 sbin/dovecotpw
-%%BDB%%@unexec if cmp -s %D/%%EXAMPLESDIR%%/dovecot-db.conf %D/etc/dovecot-db.conf; then rm -f %D/etc/dovecot-db.conf; fi
-%%EXAMPLESDIR%%/dovecot-db.conf
-%%BDB%%@exec if [ ! -f %D/etc/dovecot-db.conf ]; then cp -p %D/%%EXAMPLESDIR%%/dovecot-db.conf %D/etc/dovecot-db.conf; fi
-%%SQL%%@unexec if cmp -s %D/%%EXAMPLESDIR%%/dovecot-dict-sql.conf %D/etc/dovecot-dict-sql.conf; then rm -f %D/etc/dovecot-dict-sql.conf; fi
-%%EXAMPLESDIR%%/dovecot-dict-sql.conf
-%%SQL%%@exec if [ ! -f %D/etc/dovecot-dict-sql.conf ]; then cp -p %D/%%EXAMPLESDIR%%/dovecot-dict-sql.conf %D/etc/dovecot-dict-sql.conf; fi
-%%LDAP%%@unexec if cmp -s %D/%%EXAMPLESDIR%%/dovecot-ldap.conf %D/etc/dovecot-ldap.conf; then rm -f %D/etc/dovecot-ldap.conf; fi
-%%EXAMPLESDIR%%/dovecot-ldap.conf
-%%LDAP%%@exec if [ ! -f %D/etc/dovecot-ldap.conf ]; then cp -p %D/%%EXAMPLESDIR%%/dovecot-ldap.conf %D/etc/dovecot-ldap.conf; fi
+@sample %%EXAMPLESDIR%%/dovecot-db.conf etc/dovecot-db.conf
+%%SQL%%@sample %%EXAMPLESDIR%%/dovecot-dict-sql.conf etc/dovecot-dict-sql.conf
+%%LDAP%%@sample %%EXAMPLESDIR%%/dovecot-ldap.conf etc/dovecot-ldap.conf
 %%EXAMPLESDIR%%/dovecot-openssl.cnf
-%%SQL%%@unexec if cmp -s %D/%%EXAMPLESDIR%%/dovecot-sql.conf %D/etc/dovecot-sql.conf; then rm -f %D/etc/dovecot-sql.conf; fi
-%%EXAMPLESDIR%%/dovecot-sql.conf
-%%SQL%%@exec if [ ! -f %D/etc/dovecot-sql.conf ]; then cp -p %D/%%EXAMPLESDIR%%/dovecot-sql.conf %D/etc/dovecot-sql.conf; fi
-@unexec if cmp -s %D/%%EXAMPLESDIR%%/dovecot.conf %D/etc/dovecot.conf; then rm -f %D/etc/dovecot.conf; fi
-%%EXAMPLESDIR%%/dovecot.conf
-@exec if [ ! -f %D/etc/dovecot.conf ]; then cp -p %D/%%EXAMPLESDIR%%/dovecot.conf %D/etc/dovecot.conf; fi
+%%SQL%%@sample %%EXAMPLESDIR%%/dovecot-sql.conf etc/dovecot-sql.conf
+@sample %%EXAMPLESDIR%%/dovecot.conf etc/dovecot.conf
 %%EXAMPLESDIR%%/mkcert.sh
 @dir include/dovecot
 @dir lib/dovecot/auth
