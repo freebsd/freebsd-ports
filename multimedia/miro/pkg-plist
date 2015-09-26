@@ -1676,5 +1676,3 @@ share/locale/zh_TW/LC_MESSAGES/miro.mo
 share/locale/zu/LC_MESSAGES/miro.mo
 share/mime/packages/miro.xml
 share/pixmaps/miro.xpm
-@postexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@postunexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
