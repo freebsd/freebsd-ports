@@ -36,7 +36,7 @@ SRCS+=	init.c
 SRCS+=	label.c
 SRCS+=	label_android_property.c
 SRCS+=	label_file.c
-CFLAGS.init.c+=		-DDARWIN # statfs
+CPPFLAGS.init.c+=	-DDARWIN # statfs
 
 .PATH:	${.CURDIR}/../libsparse
 SRCS+=	backed_block.c
@@ -49,21 +49,25 @@ SRCS+=	sparse_read.c
 .PATH:	${.CURDIR}/../libzipfile
 SRCS+=	centraldir.c
 SRCS+=	zipfile.c
-CFLAGS.centraldir.c+=	-Ulseek64 # utils/Compat.h
+CPPFLAGS.centraldir.c+=	-Ulseek64 # utils/Compat.h
 
-CFLAGS+=-D_FILE_OFFSET_BITS=64 # utils/Compat.h
-CFLAGS+=-Doff64_t=off_t
-CFLAGS+=-Dftruncate64=ftruncate
-CFLAGS+=-Dlseek64=lseek
-CFLAGS+=-Dmmap64=mmap
-CFLAGS+=-I${.CURDIR}
-CFLAGS+=-I${.CURDIR}/../include
-CFLAGS+=-I${.CURDIR}/../mkbootimg
-CFLAGS+=-I${.CURDIR}/../ext4_utils
-CFLAGS+=-I${.CURDIR}/../f2fs_utils
-CFLAGS+=-I${.CURDIR}/../libselinux/include
-CFLAGS+=-I${.CURDIR}/../libsparse/include
-CFLAGS+=${CFLAGS.${.IMPSRC:T}}
+CPPFLAGS+=	-D_FILE_OFFSET_BITS=64 # utils/Compat.h
+CPPFLAGS+=	-Doff64_t=off_t
+CPPFLAGS+=	-Dftruncate64=ftruncate
+CPPFLAGS+=	-Dlseek64=lseek
+CPPFLAGS+=	-Dmmap64=mmap
+CPPFLAGS+=	-I${.CURDIR}
+CPPFLAGS+=	-I${.CURDIR}/../include
+CPPFLAGS+=	-I${.CURDIR}/../mkbootimg
+CPPFLAGS+=	-I${.CURDIR}/../ext4_utils
+CPPFLAGS+=	-I${.CURDIR}/../f2fs_utils
+CPPFLAGS+=	-I${.CURDIR}/../libselinux/include
+CPPFLAGS+=	-I${.CURDIR}/../libsparse/include
+CPPFLAGS+=	${CPPFLAGS.${.IMPSRC:T}}
+
+.ifndef COMPILE.c
+CFLAGS+=	${CPPFLAGS}
+.endif
 
 LDADD+=	-lpcre -lusb -lz
 DPADD+=	${LIBPCRE} ${LIBUSB} ${LIBZ}
