@@ -24,6 +24,7 @@ REINPLACE_ARGS=	-i ""
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	SRC
+OPTIONS_DEFAULT=SRC
 
 SRC_DESC=	Install source code
 
