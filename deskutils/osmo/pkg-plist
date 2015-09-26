@@ -19,6 +19,7 @@ share/locale/fi/LC_MESSAGES/osmo.mo
 share/locale/fr/LC_MESSAGES/osmo.mo
 share/locale/gl/LC_MESSAGES/osmo.mo
 share/locale/gl_ES/LC_MESSAGES/osmo.mo
+share/locale/he/LC_MESSAGES/osmo.mo
 share/locale/hu/LC_MESSAGES/osmo.mo
 share/locale/it/LC_MESSAGES/osmo.mo
 share/locale/ja/LC_MESSAGES/osmo.mo
@@ -29,6 +30,7 @@ share/locale/pt/LC_MESSAGES/osmo.mo
 share/locale/pt_BR/LC_MESSAGES/osmo.mo
 share/locale/ro/LC_MESSAGES/osmo.mo
 share/locale/ru/LC_MESSAGES/osmo.mo
+share/locale/sr/LC_MESSAGES/osmo.mo
 share/locale/sv/LC_MESSAGES/osmo.mo
 share/locale/te/LC_MESSAGES/osmo.mo
 share/locale/tr/LC_MESSAGES/osmo.mo
