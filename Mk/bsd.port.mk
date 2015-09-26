@@ -1815,12 +1815,9 @@ PKGUPGRADE?=		${PKGDIR}/pkg-upgrade
 
 _FORCE_POST_PATTERNS=	rmdir fc-cache \
 						fonts.dir fonts.scale gtk-update-icon-cache \
-						gtk-query-immodules \
 						load-octave-pkg \
 						ocamlfind \
 						update-desktop-database update-mime-database \
-						gdk-pixbuf-query-loaders catalog.ports \
-						glib-compile-schemas \
 						ccache-update-links
 
 .if defined(USE_LOCAL_MK)

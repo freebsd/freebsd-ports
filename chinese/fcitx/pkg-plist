@@ -117,11 +117,11 @@ lib/fcitx/libexec/fcitx-scanner
 %%QT4%%lib/fcitx/qt/libfcitx-quickphrase-editor.so
 lib/girepository-1.0/Fcitx-1.0.typelib
 %%GTK2%%lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-fcitx.so
-%%GTK2%%@exec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache
-%%GTK2%%@unexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache
+%%GTK2%%@postexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache
+%%GTK2%%@postunexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache
 %%GTK3%%lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-fcitx.so
-%%GTK3%%@exec %%LOCALBASE%%/bin/gtk-query-immodules-3.0 --update-cache
-%%GTK3%%@unexec %%LOCALBASE%%/bin/gtk-query-immodules-3.0 --update-cache
+%%GTK3%%@postexec %%LOCALBASE%%/bin/gtk-query-immodules-3.0 --update-cache
+%%GTK3%%@postunexec %%LOCALBASE%%/bin/gtk-query-immodules-3.0 --update-cache
 %%QT4%%lib/qt4/plugins/inputmethods/qtim-fcitx.so
 lib/libfcitx-config.so
 lib/libfcitx-config.so.4
