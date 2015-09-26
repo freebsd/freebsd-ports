@@ -471,5 +471,3 @@ share/rawspeed/cameras.xml
 %%DATADIR%%/profiles/sRGB.icc
 %%DATADIR%%/rawstudio.gtkrc
 %%DATADIR%%/ui.xml
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
