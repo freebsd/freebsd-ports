@@ -429,6 +429,7 @@
     SUBDIR += elixir-exjsx
     SUBDIR += elixir-exprotobuf
     SUBDIR += elixir-exrm
+    SUBDIR += elixir-gettext
     SUBDIR += elixir-hex
     SUBDIR += elixir-inflex
     SUBDIR += elixir-lager_logger
