@@ -22,13 +22,12 @@ There are some wrappers installed for faster startup.  Add "%%PREFIX%%/bin/"
 to your PATH and you will be able to use them.
 
 %%PREFIX%%/bin/%%EXECBASE%%
+%%PREFIX%%/bin/%%EXECBASE%%-printeradmin
 %%PREFIX%%/bin/%%EXECBASE%%-sbase
 %%PREFIX%%/bin/%%EXECBASE%%-scalc
 %%PREFIX%%/bin/%%EXECBASE%%-sdraw
-%%PREFIX%%/bin/%%EXECBASE%%-setofficelang
-%%PREFIX%%/bin/%%EXECBASE%%-smath
 %%PREFIX%%/bin/%%EXECBASE%%-simpress
-%%PREFIX%%/bin/%%EXECBASE%%-spadmin
+%%PREFIX%%/bin/%%EXECBASE%%-smath
 %%PREFIX%%/bin/%%EXECBASE%%-swriter
 
 OpenOffice does need $LANG to be set to a suitable value.
