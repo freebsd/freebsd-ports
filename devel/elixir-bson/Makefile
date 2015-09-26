@@ -2,6 +2,7 @@
 
 PORTNAME=	elixir-bson
 PORTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	vanilla@FreeBSD.org
