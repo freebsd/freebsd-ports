@@ -23,6 +23,8 @@ SUB_FILES=	ningpo
 PORTDOCS=	README README.licenses license.txt
 
 BROKEN=		Does not fetch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-10-31
 
 .include <bsd.port.pre.mk>
 

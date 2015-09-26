@@ -12,6 +12,8 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	HTML rendering library
 
 BROKEN=		No public distfiles
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-10-31
 
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	amd64 i386
