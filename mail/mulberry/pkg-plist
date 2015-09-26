@@ -33,11 +33,7 @@ lib/%%PORTNAME%%/Resources/UI.xml
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES-DEV-v4
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES-v4
 %%PORTDOCS%%%%DOCSDIR%%/Mulberry_License
-@unexec if cmp -s %D/etc/mailcap %D/%%EXAMPLESDIR%%/mailcap; then rm -f %D/etc/mailcap; fi
-%%EXAMPLESDIR%%/mailcap
-@exec [ -f %D/etc/mailcap ] || cp %D/%%EXAMPLESDIR%%/mailcap %D/etc/mailcap
-@unexec if cmp -s %D/lib/url.helpers %D/%%EXAMPLESDIR%%/url.helpers; then rm -f %D/lib/url.helpers; fi
-%%EXAMPLESDIR%%/url.helpers
-@exec [ -f %D/lib/url.helpers ] || cp %D/%%EXAMPLESDIR%%/url.helpers %D/lib/url.helpers
+@sample %%EXAMPLESDIR%%/mailcap etc/mailcap
+@sample %%EXAMPLESDIR%%/url.helpers lib/url.helpers
 share/pixmaps/%%PORTNAME%%.png
 share/pixmaps/%%PORTNAME%%.xpm
