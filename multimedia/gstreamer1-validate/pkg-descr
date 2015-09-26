@@ -1,0 +1,13 @@
+The goal of GstValidate is to be able to detect when elements are not
+behaving as expected and report it to the user so he knows how things
+are supposed to work inside a GstPipeline. In the end, fixing issues
+found by the tool will ensure that all elements behave all together in
+the expected way.
+
+The easiest way of using GstValidate is to use one of its command-line
+tools, located at tools/ directory. It is also possible to monitor
+GstPipelines from any application by using the LD_PRELOAD gstvalidate
+lib. The third way of using it is to write your own application that
+links and uses libgstvalidate.
+
+WWW: http://gstreamer.freedesktop.org/

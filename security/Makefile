@@ -171,6 +171,7 @@
     SUBDIR += gsasl
     SUBDIR += gsfv
     SUBDIR += gss
+    SUBDIR += gstreamer1-plugins-dtls
     SUBDIR += gtk-knocker
     SUBDIR += gtkpasman
     SUBDIR += gwee

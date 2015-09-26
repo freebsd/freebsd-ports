@@ -130,8 +130,10 @@
     SUBDIR += gstreamer1-plugins-good
     SUBDIR += gstreamer1-plugins-hls
     SUBDIR += gstreamer1-plugins-kate
+    SUBDIR += gstreamer1-plugins-libde265
     SUBDIR += gstreamer1-plugins-mpeg2dec
     SUBDIR += gstreamer1-plugins-mpeg2enc
+    SUBDIR += gstreamer1-plugins-openh264
     SUBDIR += gstreamer1-plugins-resindvd
     SUBDIR += gstreamer1-plugins-rtmp
     SUBDIR += gstreamer1-plugins-schroedinger
@@ -140,8 +142,11 @@
     SUBDIR += gstreamer1-plugins-v4l2
     SUBDIR += gstreamer1-plugins-vpx
     SUBDIR += gstreamer1-plugins-x264
+    SUBDIR += gstreamer1-plugins-x265
     SUBDIR += gstreamer1-qt4
+    SUBDIR += gstreamer1-rtsp-server
     SUBDIR += gstreamer1-vaapi
+    SUBDIR += gstreamer1-validate
     SUBDIR += gstreamermm
     SUBDIR += gtk-recordmydesktop
     SUBDIR += gtk-youtube-viewer
