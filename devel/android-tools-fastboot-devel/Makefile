@@ -16,6 +16,6 @@ FILESDIR=	${.CURDIR}/files
 EXTRA_PATCHES+=	${.CURDIR}/files/patch-*
 
 USES=		compiler:c++11-lib
-CFLAGS+=	-DFASTBOOT_REVISION='\"${DISTVERSIONSUFFIX:S/-g//}-android\"'
+CPPFLAGS+=	-DFASTBOOT_REVISION='\"${DISTVERSIONSUFFIX:S/-g//}-android\"'
 
 .include "${MASTERDIR}/Makefile"

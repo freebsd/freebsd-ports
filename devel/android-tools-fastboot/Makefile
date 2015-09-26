@@ -35,7 +35,7 @@ MAKEFILE=	${FILESDIR}/Makefile
 MAKE_ENV=	FILESDIR="${FILESDIR}" BINDIR="${PREFIX}/bin" \
 		MANDIR="${PREFIX}/man/man" \
 		LIBPCRE="${LOCALBASE}/lib/libpcre.a"
-CFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_FILES=	bin/fastboot \
 		%%BASH%%etc/bash_completion.d/fastboot \
