@@ -223,5 +223,3 @@ share/docear/docear-icon48x48.png
 %%JAVASHAREDIR%%/docear/scripts/freeplane.dsld
 %%JAVASHAREDIR%%/docear/scripts/installScriptAddOn.groovy
 share/mime/packages/docear.xml
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || :
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
