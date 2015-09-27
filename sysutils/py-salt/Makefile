@@ -3,6 +3,7 @@
 
 PORTNAME=	salt
 PORTVERSION=	2015.8.0
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -56,7 +57,9 @@ PYDISTUTILS_INSTALLARGS+=\
 		--salt-logs-dir=/var/log/salt \
 		--salt-pidfile-dir=/var/run
 
-USE_RC_SUBR=	salt_master \
+USE_RC_SUBR=	salt_api \
+		salt_proxy \
+		salt_master \
 		salt_minion \
 		salt_syndic
 
