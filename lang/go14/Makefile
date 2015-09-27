@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	go14
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	lang
 MASTER_SITES=	http://golang.org/dl/
 DISTNAME=	go${PORTVERSION}.src
@@ -11,7 +11,7 @@ COMMENT=	Go programming language
 
 LICENSE=	BSD3CLAUSE
 
-USES=		shebangfix
+USES=		compiler shebangfix
 SHEBANG_LANG=	sh
 SHEBANG_FILES=	${WRKSRC}/src/*.bash \
 		${WRKSRC}/doc/progs/run \
@@ -25,6 +25,11 @@ WRKSRC=		${WRKDIR}/go
 ONLY_FOR_ARCHS=	i386 amd64 armv6
 
 .include <bsd.port.pre.mk>
+
+# If cc is clang, change it to clang to help Go identify the compiler
+.if ${COMPILER_TYPE} == "clang" && ${CC} == "cc"
+CC=clang
+.endif
 
 .if ${ARCH} == "i386"
 GOARCH=386
@@ -50,6 +55,7 @@ do-build:
 		CC=${CC} \
 		GOROOT=${WRKSRC} GOROOT_FINAL=${PREFIX}/go14 \
 		GOBIN= GOARCH=${GOARCH} GOOS=${OPSYS:tl} \
+		CGO_ENABLED=0 \
 		${SH} make.bash
 
 do-install:
