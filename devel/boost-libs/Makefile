@@ -13,6 +13,9 @@ OPTIONS_DEFAULT=	ICU
 VERBOSE_BUILD_DESC=	Show compiler messages
 ICU_DESC=		Boost.Regex with ICU unicode support
 
+ICU_LIB_DEPENDS=	libicuuc.so:${PORTSDIR}/devel/icu
+ICU_USES_OFF=		iconv
+
 .include "${.CURDIR}/../boost-all/common.mk"
 
 .include "${.CURDIR}/../boost-all/compiled.mk"
@@ -28,11 +31,9 @@ PLIST_SUB+=	COROUTINE="" CONTEXT="" LOCALE="" LOG=""
 .endif
 
 .if ${PORT_OPTIONS:MICU}
-LIB_DEPENDS+=	libicuuc.so:${PORTSDIR}/devel/icu
 BJAM_ARGS+=	-sICU_PATH=${LOCALBASE}
 .else
-USES+=		iconv
-BJAM_ARGS+=	-sICONV_PATH=${LOCALBASE}
+BJAM_ARGS+=	-sICONV_PATH=${ICONV_PREFIX}
 .endif
 
 do-build:
