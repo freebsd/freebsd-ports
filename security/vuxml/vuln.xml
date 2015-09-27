@@ -58,6 +58,49 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0e425bb7-64f2-11e5-b2fd-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>45.0.2454.101</lt></range>
+      </package>
+      <package>
+	<!-- pcbsd -->
+	<name>chromium-npapi</name>
+	<range><lt>45.0.2454.101</lt></range>
+      </package>
+      <package>
+	<!-- pcbsd -->
+	<name>chromium-pulse</name>
+	<range><lt>45.0.2454.101</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/2015/09/stable-channel-update_24.html">
+	  <p>Two vulnerabilities were fixed in this release:</p>
+	  <ul>
+	    <li>[530301] High CVE-2015-1303: Cross-origin bypass in DOM. Credit
+	      to Mariusz Mlynski.</li>
+	    <li>[531891] High CVE-2015-1304: Cross-origin bypass in V8. Credit
+	      to Mariusz Mlynski.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1303</cvename>
+      <cvename>CVE-2015-1304</cvename>
+      <url>http://googlechromereleases.blogspot.nl/2015/09/stable-channel-update_24.html</url>
+    </references>
+    <dates>
+      <discovery>2015-09-24</discovery>
+      <entry>2015-09-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9770d6ac-614d-11e5-b379-14dae9d210b8">
     <topic>libssh2 -- denial of service vulnerability</topic>
     <affects>
