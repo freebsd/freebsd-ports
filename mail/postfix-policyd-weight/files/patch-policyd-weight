@@ -1,4 +1,4 @@
---- policyd-weight.orig	2011-09-03 13:55:02 UTC
+--- policyd-weight.orig	2015-09-27 11:41:56 UTC
 +++ policyd-weight
 @@ -320,7 +320,7 @@ $SIG{__DIE__} = sub {
  
@@ -139,7 +139,7 @@
              unpack('n   n    n    n     n     n     a*', $buf);
  
 -            my ($dn, $offset) = dn_expand(\$qb, 0);
-+            my ($dn, $offset) = Net::DNS::Packet::dn_expand(\$qb, 0);
++            my ($dn, $offset) = decode Net::DNS::DomainName(\$qb, 0);
  
              if(($id && $anc) && ($id == $oid) && ($query eq $dn))
              {
