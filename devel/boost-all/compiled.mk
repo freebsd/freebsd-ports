@@ -13,10 +13,6 @@ PKG_MESSAGE_FILE_PYTHON=	${PORTSDIR}/devel/boost-all/pkg-message.python
 BJAM_ARGS=	--layout=system \
 		--prefix=${PREFIX} \
 
-.if ${ARCH} == amd64
-BJAM_ARGS+=	cxxflags=-fPIC
-.endif
-
 # Our compiler-flags will be added AFTER those set by bjam. We remove
 # the optimization level, because Boost sets it itself (to -O3 in case
 # of gcc/g++):
