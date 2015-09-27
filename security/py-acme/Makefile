@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1>0:${PORTSDIR}/devel/py-asn1 \
 USES=		gmake python
 USE_PYTHON=	autoplist distutils
 
-WRKSRC=		${WRKDIR}/letsencrypt-22260a8/acme
+WRKSRC_SUBDIR=	acme
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	letsencrypt
