@@ -23,7 +23,7 @@ BOINC_CLIENT_USER?=	boinc
 BOINC_CLIENT_GROUP?=	boinc
 BOINC_CLIENT_HOME?=	/var/db/boinc
 
-SUB_FILES=	pkg-install
+SUB_FILES=	pkg-install pkg-deinstall
 SUB_LIST=	BOINC_CLIENT_HOME="${BOINC_CLIENT_HOME}" \
 		BOINC_CLIENT_USER="${BOINC_CLIENT_USER}" \
 		BOINC_CLIENT_GROUP="${BOINC_CLIENT_GROUP}" \
@@ -74,10 +74,6 @@ X11_CONFIGURE_OFF=	ax_cv_check_glut_libglut=no
 
 .if ${PORT_OPTIONS:MMANAGER}
 WX_CONF_ARGS=	absolute
-WX_UNICODE=	yes
-. if ${OSVERSION} < 900506 || (${OSVERSION} >= 1000000 && ${OSVERSION} < 1000002)
-CPPFLAGS+=	-DNO_PER_THREAD_LOCALE
-. endif
 SUB_LIST+=	OPTION_MANAGER="true"
 .else
 SUB_LIST+=	OPTION_MANAGER=""
@@ -114,35 +110,33 @@ post-patch:
 	    ${WRKSRC}/zip/zip/zipup.c
 
 post-install:
-.if ${PORT_OPTIONS:MMANAGER} || ${PORT_OPTIONS:MX11}
+.for name in config.h project_specific_defines.h api/reduce.h \
+	lib/opencl_boinc.h lib/shmem.h lib/std_fixes.h
+	${INSTALL_DATA} ${WRKSRC}/${name} ${STAGEDIR}${PREFIX}/include/boinc
+.endfor
+
+post-install-MANAGER-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/boinc
-.endif
-.if ${PORT_OPTIONS:MMANAGER}
-. for name in 16 32 48
+.for name in 16 32 48
 	${INSTALL_DATA} ${WRKSRC}/clientgui/res/boincmgr.${name}x${name}.png \
 	    ${STAGEDIR}${PREFIX}/share/pixmaps
-. endfor
-. if ${PORT_OPTIONS:MSKINS}
+.endfor
+.if ${PORT_OPTIONS:MSKINS}
 	(cd ${WRKSRC}/clientgui && \
 	${COPYTREE_SHARE} skins ${STAGEDIR}${PREFIX}/share/boinc/ )
-. else
+.else
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/boinc/skins
 	(cd ${WRKSRC}/clientgui/skins && \
 	${COPYTREE_SHARE} Default ${STAGEDIR}${PREFIX}/share/boinc/skins/ )
-. endif
 .endif
-. for name in config.h project_specific_defines.h api/reduce.h \
-	lib/opencl_boinc.h lib/shmem.h lib/std_fixes.h
-	${INSTALL_DATA} ${WRKSRC}/${name} ${STAGEDIR}${PREFIX}/include/boinc
-. endfor
-.if ${PORT_OPTIONS:MX11}
-. for name in api/boinc_gl.h api/graphics_api.h api/graphics_data.h \
+
+post-install-X11-on:
+.for name in api/boinc_gl.h api/graphics_api.h api/graphics_data.h \
 	api/ttfont.h
 	${INSTALL_DATA} ${WRKSRC}/${name} ${STAGEDIR}${PREFIX}/include/boinc
-. endfor
+.endfor
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/boinc/ttf
 	(cd ${WRKSRC}/api/ttf/liberation-fonts-ttf-2.00.0 && \
 	    ${COPYTREE_SHARE} \*.ttf ${STAGEDIR}${PREFIX}/share/boinc/ttf/ )
-.endif
 
 .include <bsd.port.mk>
