@@ -24,6 +24,7 @@ OPTIONS_SUB=		yes
 GNOME_CONFIGURE_ON=	--with-gnomedoc-prefix=${PREFIX}/share
 GNOME_CONFIGURE_OFF=	--disable-gnome
 GNOME_USE=		GNOME=gnomeprefix,libgnomeui
+GNOME_VARS=		INSTALLS_OMF=yes
 
 OPENGL_CONFIGURE_ON=	--with-lib-GL
 OPENGL_CONFIGURE_OFF=	--disable-opengl
@@ -39,10 +40,6 @@ PGPLOT_RUN_DEPENDS_OFF=	gnuplot:${PORTSDIR}/math/gnuplot
 PGPLOT_USES=		fortran
 
 .include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MGNOME}
-INSTALLS_OMF=	yes
-.endif
 
 post-patch:
 .if ${COMPILER_TYPE} == clang
