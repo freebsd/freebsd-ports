@@ -13,6 +13,8 @@ COMMENT=	Lightweight PDF viewer and toolkit
 
 LICENSE=	AGPLv3
 
+BROKEN=		fails to link with openjpeg 2.1.1
+
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libjbig2dec.so:${PORTSDIR}/graphics/jbig2dec \
