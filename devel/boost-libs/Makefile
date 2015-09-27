@@ -14,7 +14,9 @@ VERBOSE_BUILD_DESC=	Show compiler messages
 ICU_DESC=		Boost.Regex with ICU unicode support
 
 ICU_LIB_DEPENDS=	libicuuc.so:${PORTSDIR}/devel/icu
+ICU_VARS=		BJAM_ARGS+=-sICU_PATH=${LOCALBASE}
 ICU_USES_OFF=		iconv
+ICU_VARS_OFF=		BJAM_ARGS+=-sICONV_PATH=${ICONV_PREFIX}
 
 .include "${.CURDIR}/../boost-all/common.mk"
 
@@ -28,12 +30,6 @@ PLIST_SUB+=	COROUTINE="@comment " CONTEXT="@comment " \
 		LOCALE="@comment " LOG="@comment "
 .else
 PLIST_SUB+=	COROUTINE="" CONTEXT="" LOCALE="" LOG=""
-.endif
-
-.if ${PORT_OPTIONS:MICU}
-BJAM_ARGS+=	-sICU_PATH=${LOCALBASE}
-.else
-BJAM_ARGS+=	-sICONV_PATH=${ICONV_PREFIX}
 .endif
 
 do-build:
@@ -64,4 +60,4 @@ post-install:
 		-e "s|%%PYTHON_LIBDIR%%|${PYTHON_LIBDIR}|g" \
 		-e "s|%%PYTHON_VERSION%%|${PYTHON_VERSION}|g" ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
