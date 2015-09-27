@@ -12,7 +12,8 @@ PKGNAMEPREFIX=	postfix-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Weighted policy daemon for postfix
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	p5-Net-DNS>=0.72:${PORTSDIR}/dns/p5-Net-DNS \
 		p5-Net-IP>0:${PORTSDIR}/net-mgmt/p5-Net-IP
@@ -30,6 +31,7 @@ USE_RC_SUBR+=	policyd-weight
 USES=		perl5 shebangfix
 USE_PERL5=	run
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 SHEBANG_LANG=	perl
 perl_OLD_CMD=	${SETENV} perl
