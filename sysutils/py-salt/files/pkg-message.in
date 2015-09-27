@@ -15,5 +15,13 @@ To configure a Salt Minion, do the following:
   o Update 'master: salt' to point to your Salt Master's hostname or IP
   o sysrc salt_minion_enable="YES"
 
+---------------------------------------------------------------------------------------------------
+
+To configure a Salt Proxy Minion, do the following:
+
+  o sysrc salt_proxy_enable="YES"
+  o sysrc salt_proxy_list=""
+  o Update the salt_proxy_list with the proxy minion name(s)  
+
 ===================================================================================================
 
