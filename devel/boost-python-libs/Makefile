@@ -13,10 +13,6 @@ VERBOSE_BUILD_DESC=	Show compiler messages
 
 .include "${.CURDIR}/../boost-all/compiled.mk"
 
-.if ${ARCH} == "sparc64"
-CXXFLAGS=	-O0
-.endif
-
 MAKE_ENV+=	PYTHON_ROOT="${LOCALBASE}"\
 		PYTHON_VERSION="${PYTHON_VERSION}"\
 		PYTHON_INCLUDES="${PYTHON_INCLUDEDIR}"\
