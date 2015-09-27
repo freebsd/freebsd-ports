@@ -77,7 +77,7 @@ _USE_GNOME_ALL+= atk atspi cairo gal2 \
 		libbonoboui libgda4 libglade2 libgnome \
 		libgnomecanvas libgnomekbd libgnomeprint libgnomeprintui \
 		libgnomeui libgsf libgtkhtml libidl librsvg2 libwnck \
-		libxml2 libxslt linc \
+		libxml2 libxslt \
 		orbit2 pango pangox-compat pygnome2 pygobject pygtk2 \
 		pygtksourceview vte
 
@@ -246,10 +246,6 @@ gtk30_LIB_DEPENDS=	libgtk-3.so:${PORTSDIR}/x11-toolkits/gtk30
 gtk30_DETECT=		${LOCALBASE}/libdata/pkgconfig/gtk+-3.0.pc
 gtk30_USE_GNOME_IMPL=	atk pango
 GTK3_VERSION=		3.0.0
-
-linc_LIB_DEPENDS=	liblinc.so:${PORTSDIR}/net/linc
-linc_DETECT=		${LOCALBASE}/libdata/pkgconfig/linc.pc
-linc_USE_GNOME_IMPL=	glib20
 
 libidl_LIB_DEPENDS=	libIDL-2.so:${PORTSDIR}/devel/libIDL
 libidl_DETECT=		${LOCALBASE}/libdata/pkgconfig/libIDL-2.0.pc
