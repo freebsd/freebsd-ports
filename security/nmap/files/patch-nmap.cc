@@ -1,8 +1,8 @@
---- nmap.cc.orig	Sat Dec 22 07:32:03 2007
-+++ nmap.cc	Thu Jan 10 20:41:30 2008
-@@ -99,6 +99,7 @@
+--- nmap.cc.orig	2015-09-21 13:49:51 UTC
++++ nmap.cc
+@@ -123,6 +123,7 @@
  
- /* $Id: nmap.cc 6633 2007-12-22 06:32:03Z fyodor $ */
+ /* $Id: nmap.cc 35268 2015-09-21 13:49:51Z dmiller $ */
  
 +#include <getopt.h>
  #include "nmap.h"
