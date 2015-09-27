@@ -3,13 +3,13 @@
 
 PORTNAME=	policyd-weight
 PORTVERSION=	0.1.15.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.policyd-weight.org/releases/ \
 		LOCAL/ohauer
 PKGNAMEPREFIX=	postfix-
 
-MAINTAINER=	ohauer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Weighted policy daemon for postfix
 
 LICENSE=	GPLv2
