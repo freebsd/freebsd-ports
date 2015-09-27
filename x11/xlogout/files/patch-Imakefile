@@ -1,9 +1,0 @@
---- Imakefile.orig	1989-11-30 00:29:33.000000000 +0100
-+++ Imakefile	2009-03-27 18:58:05.000000000 +0100
-@@ -1,5 +1,5 @@
-         DEPLIBS = XawClientDepLibs
--LOCAL_LIBRARIES = XawClientsLibs
-+LOCAL_LIBRARIES = XawClientLibs
-            SRCS = xlogout.c 
-            OBJS = xlogout.o 
- 
