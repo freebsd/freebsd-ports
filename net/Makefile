@@ -356,8 +356,6 @@
     SUBDIR += libzmq3
     SUBDIR += libzmq4
     SUBDIR += liferea
-    SUBDIR += linc
-    SUBDIR += linc-reference
     SUBDIR += linknx
     SUBDIR += linphone
     SUBDIR += linux-c6-avahi-libs
