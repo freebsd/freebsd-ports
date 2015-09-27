@@ -1,6 +1,6 @@
---- tcpip.cc.orig	Fri Dec  8 04:01:19 2006
-+++ tcpip.cc	Wed Jan  3 17:15:05 2007
-@@ -133,6 +133,8 @@
+--- tcpip.cc.orig	2015-06-16 13:59:33 UTC
++++ tcpip.cc
+@@ -154,6 +154,8 @@
  #endif /* NETINET_IF_ETHER_H */
  #endif /* HAVE_NETINET_IF_ETHER_H */
  
