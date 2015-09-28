@@ -754,6 +754,7 @@
     SUBDIR += py-pyPgSQL
     SUBDIR += py-pyhs
     SUBDIR += py-pylibmc
+    SUBDIR += py-pymssql
     SUBDIR += py-pymysql
     SUBDIR += py-pypuppetdb
     SUBDIR += py-pytc
