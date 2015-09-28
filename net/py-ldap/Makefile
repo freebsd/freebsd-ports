@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ldap
-PORTVERSION=	2.4.20
+PORTVERSION=	2.4.21
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -40,5 +40,8 @@ do-configure:
 	@cd ${WRKSRC} && ${PYTHON_CMD} setup.py -q setopt -c _ldap -s HAVE_TLS -o defines
 	@cd ${WRKSRC} && ${PYTHON_CMD} setup.py -q saveopts
 .endif
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_ldap.so
 
 .include <bsd.port.mk>
