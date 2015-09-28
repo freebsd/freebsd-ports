@@ -58,6 +58,157 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5114cd11-6571-11e5-9909-002590263bf5">
+    <topic>codeigniter -- SQL injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>codeigniter</name>
+	<range><lt>2.2.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The CodeIgniter changelog reports:</p>
+	<blockquote cite="https://codeigniter.com/userguide2/changelog.html">
+	  <p>Security: Fixed an SQL injection vulnerability in Active Record
+	    method offset().</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/203401</freebsdpr>
+      <url>https://codeigniter.com/userguide2/changelog.html</url>
+    </references>
+    <dates>
+      <discovery>2015-08-20</discovery>
+      <entry>2015-09-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="01bce4c6-6571-11e5-9909-002590263bf5">
+    <topic>codeigniter -- mysql database driver vulnerability</topic>
+    <affects>
+      <package>
+	<name>codeigniter</name>
+	<range><lt>2.2.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The CodeIgniter changelog reports:</p>
+	<blockquote cite="https://codeigniter.com/userguide2/changelog.html">
+	  <p>Security: Removed a fallback to mysql_escape_string() in the mysql
+	   database driver (escape_str() method) when there's no active database
+	   connection.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/203401</freebsdpr>
+      <url>https://codeigniter.com/userguide2/changelog.html</url>
+    </references>
+    <dates>
+      <discovery>2015-07-15</discovery>
+      <entry>2015-09-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c21f4e61-6570-11e5-9909-002590263bf5">
+    <topic>codeigniter -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>codeigniter</name>
+	<range><lt>2.2.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The CodeIgniter changelog reports:</p>
+	<blockquote cite="https://codeigniter.com/userguide2/changelog.html">
+	  <p>Security: Added HTTP "Host" header character validation to prevent
+	    cache poisoning attacks when base_url auto-detection is used.</p>
+	  <p>Security: Added FSCommand and seekSegmentTime to the "evil
+	    attributes" list in CI_Security::xss_clean().</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/203401</freebsdpr>
+      <url>https://codeigniter.com/userguide2/changelog.html</url>
+    </references>
+    <dates>
+      <discovery>2015-04-15</discovery>
+      <entry>2015-09-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f838dcb4-656f-11e5-9909-002590263bf5">
+    <topic>codeigniter -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>codeigniter</name>
+	<range><lt>2.2.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The CodeIgniter changelog reports:</p>
+	<blockquote cite="https://codeigniter.com/userguide2/changelog.html">
+	  <p>Security: The xor_encode() method in the Encrypt Class has been
+	    removed. The Encrypt Class now requires the Mcrypt extension to be
+	    installed.</p>
+	  <p>Security: The Session Library now uses HMAC authentication instead
+	    of a simple MD5 checksum.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/203401</freebsdpr>
+      <url>https://codeigniter.com/userguide2/changelog.html</url>
+    </references>
+    <dates>
+      <discovery>2014-06-05</discovery>
+      <entry>2015-09-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b7d785ea-656d-11e5-9909-002590263bf5">
+    <topic>codeigniter -- SQL injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>codeigniter</name>
+	<range><lt>2.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The CodeIgniter changelog reports:</p>
+	<blockquote cite="https://codeigniter.com/userguide2/changelog.html">
+	  <p>An improvement was made to the MySQL and MySQLi drivers to prevent
+	    exposing a potential vector for SQL injection on sites using
+	    multi-byte character sets in the database client connection.</p>
+	  <p>An incompatibility in PHP versions &lt; 5.2.3 and MySQL &gt; 5.0.7
+	    with mysql_set_charset() creates a situation where using multi-byte
+	    character sets on these environments may potentially expose a SQL
+	    injection attack vector. Latin-1, UTF-8, and other "low ASCII"
+	    character sets are unaffected on all environments.</p>
+	  <p>If you are running or considering running a multi-byte character
+	    set for your database connection, please pay close attention to the
+	    server environment you are deploying on to ensure you are not
+	    vulnerable.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/156486</freebsdpr>
+      <url>https://codeigniter.com/userguide2/changelog.html</url>
+    </references>
+    <dates>
+      <discovery>2011-08-20</discovery>
+      <entry>2015-09-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0e425bb7-64f2-11e5-b2fd-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
