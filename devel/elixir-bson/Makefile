@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	elixir-bson
-PORTVERSION=	0.4.3
-PORTREVISION=	1
+PORTVERSION=	0.4.4
 CATEGORIES=	devel
 
 MAINTAINER=	vanilla@FreeBSD.org
