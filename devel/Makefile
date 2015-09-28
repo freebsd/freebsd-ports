@@ -3968,6 +3968,7 @@
     SUBDIR += py-efl
     SUBDIR += py-eggtestinfo
     SUBDIR += py-enum34
+    SUBDIR += py-epdb
     SUBDIR += py-epsilon
     SUBDIR += py-evdev
     SUBDIR += py-event
