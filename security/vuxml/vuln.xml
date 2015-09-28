@@ -58,6 +58,85 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4e3e8a50-65c1-11e5-948e-bcaec565249c">
+    <topic>flash -- multiple vulnabilities</topic>
+    <affects>
+      <package>
+	<name>linux-c6-flashplugin</name>
+	<name>linux-f10-flashplugin</name>
+	<name>linux-c6_64-flashplugin</name>
+	<range><lt>11.2r202.521</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="https://helpx.adobe.com/security/products/flash-player/apsb15-23.html">
+	  <p>These updates resolve a type confusion vulnerability that could
+	    lead to code execution (CVE-2015-5573).</p>
+
+	  <p>These updates resolve use-after-free vulnerabilities that could
+	     lead to code execution (CVE-2015-5570, CVE-2015-5574, CVE-2015-5581, CVE-2015-5584, CVE-2015-6682).</p>
+
+	  <p>These updates resolve buffer overflow vulnerabilities that could
+	    lead to code execution (CVE-2015-6676, CVE-2015-6678).</p>
+
+	  <p>These updates resolve memory corruption vulnerabilities that
+	    could lead to code execution (CVE-2015-5575, CVE-2015-5577,
+	    CVE-2015-5578, CVE-2015-5580, CVE-2015-5582, CVE-2015-5588,
+	    CVE-2015-6677).</p>
+
+	  <p>These updates include additional validation checks to ensure
+	    that Flash Player rejects malicious content from vulnerable
+	    JSONP callback APIs  (CVE-2015-5571).</p>
+
+	  <p>These updates resolve a memory leak vulnerability
+	    (CVE-2015-5576).</p>
+
+	  <p>These updates include further hardening to a mitigation to
+	    defend against vector length corruptions  (CVE-2015-5568).</p>
+
+	  <p>These updates resolve stack corruption vulnerabilities that
+	    could lead to code execution (CVE-2015-5567, CVE-2015-5579).</p>
+
+	  <p>These updates resolve a stack overflow vulnerability that could
+	    lead to code execution (CVE-2015-5587).</p>
+
+	  <p>These updates resolve a security bypass vulnerability that could
+	    lead to information disclosure (CVE-2015-5572).</p>
+
+	  <p>These updates resolve a vulnerability that could be exploited to
+	    bypass the same-origin-policy and lead to information disclosure
+	    (CVE-2015-6679).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5567</cvename>
+      <cvename>CVE-2015-5568</cvename>
+      <cvename>CVE-2015-5570</cvename>
+      <cvename>CVE-2015-5571</cvename>
+      <cvename>CVE-2015-5572</cvename>
+      <cvename>CVE-2015-5573</cvename>
+      <cvename>CVE-2015-5574</cvename>
+      <cvename>CVE-2015-5575</cvename>
+      <cvename>CVE-2015-5576</cvename>
+      <cvename>CVE-2015-5577</cvename>
+      <cvename>CVE-2015-5578</cvename>
+      <cvename>CVE-2015-5588</cvename>
+      <cvename>CVE-2015-6676</cvename>
+      <cvename>CVE-2015-6677</cvename>
+      <cvename>CVE-2015-6678</cvename>
+      <cvename>CVE-2015-6679</cvename>
+      <cvename>CVE-2015-6682</cvename>
+      <url>https://helpx.adobe.com/security/products/flash-player/apsb15-23.html</url>
+    </references>
+    <dates>
+      <discovery>2015-09-21</discovery>
+      <entry>2015-09-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5114cd11-6571-11e5-9909-002590263bf5">
     <topic>codeigniter -- SQL injection vulnerability</topic>
     <affects>
