@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	go
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://golang.org/dl/
@@ -13,7 +13,7 @@ COMMENT=	Go programming language
 
 LICENSE=	BSD3CLAUSE
 
-USES=		shebangfix
+USES=		compiler shebangfix
 SHEBANG_LANG=	sh
 SHEBANG_FILES=	${WRKSRC}/src/*.bash \
 		${WRKSRC}/doc/progs/run \
@@ -27,6 +27,11 @@ WRKSRC=		${WRKDIR}/go
 ONLY_FOR_ARCHS=	i386 amd64
 
 .include <bsd.port.pre.mk>
+
+# If cc is clang, change it to clang to help Go identify the compiler
+.if ${COMPILER_TYPE} == "clang" && ${CC} == "cc"
+CC=clang
+.endif
 
 .if ${ARCH} == "i386"
 GOARCH=386
