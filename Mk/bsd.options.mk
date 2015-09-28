@@ -162,6 +162,7 @@ _OPTIONS_TARGETS=	fetch:300:pre fetch:500:do fetch:700:post \
 			configure:300:pre configure:500:do configure:700:post \
 			build:300:pre build:500:do build:700:post \
 			install:300:pre install:500:do install:700:post  \
+			test:300:pre test:500:do test:700:post  \
 			package:300:pre package:500:do package:700:post \
 			stage:800:post
 
