@@ -109,6 +109,7 @@
     SUBDIR += freebsd-doc-hu
     SUBDIR += freebsd-doc-it
     SUBDIR += freebsd-doc-ja
+    SUBDIR += freebsd-doc-ko
     SUBDIR += freebsd-doc-mn
     SUBDIR += freebsd-doc-nl
     SUBDIR += freebsd-doc-pl
