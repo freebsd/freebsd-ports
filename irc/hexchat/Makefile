@@ -6,7 +6,7 @@ PORTVERSION=	2.10.2
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	http://dl.hexchat.net/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	serio.jeffrey@riseup.net
 COMMENT=	IRC chat program with GTK and Text Frontend
 
 LICENSE=	GPLv2
