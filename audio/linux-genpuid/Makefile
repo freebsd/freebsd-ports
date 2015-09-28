@@ -4,15 +4,15 @@
 PORTNAME=	genpuid
 PORTVERSION=	1.4
 CATEGORIES=	audio linux
-MASTER_SITES=	https://secure.musicip.com/dns/files/
+MASTER_SITES=	http://www.spicefly.com/files/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}_linux_${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application for generating MusicIP puids
 
-BROKEN=		Unfetchable
+USES=		tar:tgz
+
 USE_LINUX=		yes
 NO_BUILD=		yes
 IA32_BINARY_PORT=	yes
