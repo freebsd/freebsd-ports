@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freebsd-doc
-PORTVERSION=	47011
+PORTVERSION=	47441
 PORTEPOCH=	1
 CATEGORIES=	misc docs
 MASTER_SITES=	LOCAL/blackend
@@ -11,7 +11,7 @@ PKGNAMEPREFIX?=	en-
 MAINTAINER=	doceng@FreeBSD.org
 COMMENT?=	Documentation from the FreeBSD Documentation Project
 
-BUILD_DEPENDS=	docproj>=2.0_1:${PORTSDIR}/textproc/docproj
+BUILD_DEPENDS=	docproj>=2.0_6:${PORTSDIR}/textproc/docproj
 
 USES=		uidfix
 WRKSRC=		${WRKDIR}/doc
@@ -25,6 +25,7 @@ MAKE_ARGS=	FORMATS="${DOCFORMAT}" \
 		DOCOWN=${SHAREOWN} \
 		DOCGRP=${SHAREGRP}
 MAKE_JOBS_UNSAFE=	yes
+NO_ARCH=	yes
 
 # To populate correctly the stage directory
 TMPDESTDIR=	${STAGEDIR}${DESTDIR}/${PREFIX}/${DOCBASE}
@@ -67,7 +68,8 @@ BUILD_DEPENDS+=	fop:${PORTSDIR}/textproc/fop \
 		${LOCALBASE}/share/fonts/Lohit/Lohit-Bengali.ttf:${PORTSDIR}/x11-fonts/lohit \
 		${LOCALBASE}/share/fonts/dejavu/DejaVuSansMono.ttf:${PORTSDIR}/x11-fonts/dejavu \
 		${LOCALBASE}/share/fonts/TrueType/gkai00mp.ttf:${PORTSDIR}/chinese/arphicttf \
-		${LOCALBASE}/share/fonts/OTF/ipam.otf:${PORTSDIR}/japanese/font-ipa
+		${LOCALBASE}/share/fonts/OTF/ipam.otf:${PORTSDIR}/japanese/font-ipa \
+		${LOCALBASE}/share/fonts/nanum-ttf/NanumBarunGothic.ttf:${PORTSDIR}/korean/nanumfonts-ttf
 .endif
 
 # when html or html-split is defined as the format, add HTML_COMMON.
