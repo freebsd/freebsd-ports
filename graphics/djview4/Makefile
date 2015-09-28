@@ -52,6 +52,5 @@ post-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/desktopfiles/djvulibre-djview4.desktop \
 		${STAGEDIR}${PREFIX}/share/applications
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/djview4/plugins/nsdejavu.so
 
 .include <bsd.port.mk>
