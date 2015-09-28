@@ -38,7 +38,6 @@ DOS2UNIX_REGEX=	.*\.([ch]p{0,2}|make)
 
 USE_WX=		2.8+
 WX_COMPS=	wx:lib
-WX_UNICODE=	yes
 MAKE_ENV+=	JOBS=${_MAKE_JOBS}
 
 MANUAL_PACKAGE_BUILD=	huge
