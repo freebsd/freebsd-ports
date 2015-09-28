@@ -17,8 +17,8 @@ AUTHOR: amdmi3@FreeBSD.org
 
   You can now `make test' on any port to run test sequence, no-op by default.
   If a port defines TEST_TARGET, it'll run sub-make with specified target,
-  usually `check' or `test' if upstream supports that. The port may also
-  define custom do-test target, as well as usual satellite targets:
+  usually `check' or `test', useful if upstream supports that. The port may
+  instead define custom do-test target, as well as usual satellite targets:
 
     {pre,do,post}-test, {pre,do,post}-test-OPT, {pre,do,post}-test-OPT-off
 
