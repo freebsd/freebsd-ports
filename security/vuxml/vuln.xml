@@ -7721,11 +7721,12 @@ Notes:
       <cvename>CVE-2014-9721</cvename>
       <url>https://github.com/zeromq/libzmq/issues/1273</url>
       <mlist>http://www.openwall.com/lists/oss-security/2015/05/07/8</mlist>
-      <freebsdpr>200502</freebsdpr>
+      <freebsdpr>ports/200502</freebsdpr>
     </references>
     <dates>
       <discovery>2014-12-04</discovery>
       <entry>2015-06-10</entry>
+      <modified>2015-09-28</modified>
     </dates>
   </vuln>
 
@@ -7750,11 +7751,12 @@ Notes:
       <cvename>CVE-2015-4054</cvename>
       <url>https://pgbouncer.github.io/2015/04/pgbouncer-1-5-5/</url>
       <mlist>http://www.openwall.com/lists/oss-security/2015/05/21/2</mlist>
-      <freebsdpr>200507</freebsdpr>
+      <freebsdpr>ports/200507</freebsdpr>
     </references>
     <dates>
       <discovery>2015-04-08</discovery>
       <entry>2015-06-10</entry>
+      <modified>2015-09-28</modified>
     </dates>
   </vuln>
 
@@ -7802,7 +7804,7 @@ Notes:
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>trongSwan Project reports</p>
+	<p>StrongSwan Project reports</p>
 	<blockquote cite="https://www.strongswan.org/blog/2015/06/01/strongswan-vulnerability-(cve-2015-3991).html">
 	  <p>A denial-of-service and potential remote code execution vulnerability
 	    triggered by crafted IKE messages was discovered in strongSwan. Versions
@@ -7817,6 +7819,7 @@ Notes:
     <dates>
       <discovery>2015-05-15</discovery>
       <entry>2015-06-09</entry>
+      <modified>2015-09-28</modified>
     </dates>
   </vuln>
 
@@ -8172,12 +8175,13 @@ Notes:
       <cvename>CVE-2014-9604</cvename>
       <cvename>CVE-2015-1872</cvename>
       <cvename>CVE-2015-3417</cvename>
-      <freebsdpr>200507</freebsdpr>
+      <freebsdpr>ports/200507</freebsdpr>
       <url>http://advisories.mageia.org/MGASA-2015-0233.html</url>
     </references>
     <dates>
       <discovery>2015-05-18</discovery>
       <entry>2015-06-01</entry>
+      <modified>2015-09-28</modified>
     </dates>
   </vuln>
 
@@ -8201,13 +8205,14 @@ Notes:
     </description>
     <references>
       <cvename>CVE-2015-3448</cvename>
-      <freebsdpr>200504</freebsdpr>
+      <freebsdpr>ports/200504</freebsdpr>
       <url>https://github.com/rest-client/rest-client/issues/349</url>
       <url>http://osvdb.org/show/osvdb/117461</url>
     </references>
     <dates>
       <discovery>2015-01-12</discovery>
       <entry>2015-05-31</entry>
+      <modified>2015-09-28</modified>
     </dates>
   </vuln>
 
@@ -8231,12 +8236,13 @@ Notes:
     </description>
     <references>
       <cvename>CVE-2015-1820</cvename>
-      <freebsdpr>200504</freebsdpr>
+      <freebsdpr>ports/200504</freebsdpr>
       <url>https://github.com/rest-client/rest-client/issues/369</url>
     </references>
     <dates>
       <discovery>2015-03-24</discovery>
       <entry>2015-05-31</entry>
+      <modified>2015-09-28</modified>
     </dates>
   </vuln>
 
@@ -9203,9 +9209,9 @@ Notes:
     </description>
     <references>
       <cvename>CVE-2015-3456</cvename>
-      <freebsdpr>200255</freebsdpr>
-      <freebsdpr>200256</freebsdpr>
-      <freebsdpr>200257</freebsdpr>
+      <freebsdpr>ports/200255</freebsdpr>
+      <freebsdpr>ports/200256</freebsdpr>
+      <freebsdpr>ports/200257</freebsdpr>
       <url>http://venom.crowdstrike.com/</url>
       <url>http://www.oracle.com/technetwork/topics/security/alert-cve-2015-3456-2542656.html</url>
       <url>http://xenbits.xen.org/xsa/advisory-133.html</url>
@@ -9213,7 +9219,7 @@ Notes:
     <dates>
       <discovery>2015-04-29</discovery>
       <entry>2015-05-17</entry>
-      <modified>2015-05-23</modified>
+      <modified>2015-09-28</modified>
     </dates>
   </vuln>
 
@@ -17371,13 +17377,14 @@ Notes:
     <references>
       <cvename>CVE-2014-2655</cvename>
       <bid>66455</bid>
-      <freebsdpr>189248</freebsdpr>
+      <freebsdpr>ports/189248</freebsdpr>
       <mlist>http://www.openwall.com/lists/oss-security/2014/03/26/6</mlist>
       <url>https://www.debian.org/security/2014/dsa-2889</url>
     </references>
     <dates>
       <discovery>2014-03-28</discovery>
       <entry>2014-07-13</entry>
+      <modified>2015-09-28</modified>
     </dates>
   </vuln>
 
@@ -97372,7 +97379,7 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
-      <freebsdpr>73144</freebsdpr>
+      <freebsdpr>ports/73144</freebsdpr>
       <cvename>CVE-2004-1007</cvename>
       <mlist msgid="20041008143604.GA14934@scowler.net">http://article.gmane.org/gmane.mail.bogofilter.devel/3308</mlist>
       <mlist msgid="m3r7o892vj.fsf@merlin.emma.line.org">http://article.gmane.org/gmane.mail.bogofilter.devel/3317</mlist>
@@ -97382,7 +97389,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2004-10-09</discovery>
       <entry>2004-10-26</entry>
-      <modified>2004-11-03</modified>
+      <modified>2015-09-28</modified>
     </dates>
   </vuln>
 
