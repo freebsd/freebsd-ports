@@ -1,5 +1,7 @@
 bin/rspamd-%%RSPAMDVERSION%%
 bin/rspamd
+bin/rspamadm-%%RSPAMDVERSION%%
+bin/rspamadm
 bin/rspamc-%%RSPAMDVERSION%%
 bin/rspamc
 %%REDIRECTOR%%bin/rspamd-redirector
@@ -80,6 +82,7 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/www/src/components/piechart.jsx
 %%DATADIR%%/www/src/components/rrdgraph.jsx
 %%DATADIR%%/www/src/package.json
+man/man1/rspamadm.1.gz
 man/man1/rspamc.1.gz
 man/man8/rspamd.8.gz
 @dir %%EXAMPLESDIR%%
