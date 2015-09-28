@@ -1,10 +1,8 @@
---- mix.exs.orig	2015-09-26 08:36:49 UTC
+--- mix.exs.orig	2015-09-28 11:36:41 UTC
 +++ mix.exs
-@@ -4,10 +4,8 @@ defmodule LagerLogger.Mixfile do
-   def project do
-     [app: :lager_logger,
-      version: "1.0.0",
--     elixir: "~> 1.0.0",
+@@ -6,8 +6,7 @@ defmodule LagerLogger.Mixfile do
+      version: "1.0.1",
+      elixir: ">= 1.0.0 and <= 1.2.0",
       package: package,
 -     description: description,
 -     deps: deps]
