@@ -113,6 +113,7 @@
     SUBDIR += easypg
     SUBDIR += elixir-comeonin
     SUBDIR += engine_pkcs11
+    SUBDIR += erlang-jose
     SUBDIR += erlang-p1tls
     SUBDIR += expiretable
     SUBDIR += f-prot
