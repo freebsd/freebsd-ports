@@ -10,6 +10,7 @@ SRCS+= adb_auth_host.cpp
 SRCS+= adb_client.cpp
 SRCS+= adb_io.cpp
 SRCS+= adb_listeners.cpp
+SRCS+= adb_trace.cpp
 SRCS+= adb_utils.cpp
 SRCS+= commandline.cpp
 SRCS+= console.cpp
