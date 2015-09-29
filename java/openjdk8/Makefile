@@ -45,7 +45,7 @@ GNU_CONFIGURE=	yes
 BUILD_DEPENDS+=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 .endif
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64 armv6
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 DOS2UNIX_FILES= jdk/src/bsd/doc/man/appletviewer.1 \
@@ -189,7 +189,7 @@ JRE_IMAGEDIR=	${JDK_BUILDDIR}/images/j2sdk-image/jre
 .else
 JRE_IMAGEDIR=	${JDK_BUILDDIR}/images/j2re-image
 .endif
-JDK_OSARCH=	bsd-${ARCH:S/i386/x86/:S/amd64/x86_64/}
+JDK_OSARCH=	bsd-${ARCH:S/i386/x86/:S/amd64/x86_64/:S/armv6/arm/}
 INSTALLDIR=	${PREFIX}/${PKGBASE}
 
 NO_CCACHE=		yes
@@ -260,6 +260,16 @@ JAVAVMS_COMMENT+=	JRE
 
 .include <bsd.port.options.mk>
 
+.if ${ARCH} == "armv6"
+CONFIGURE_ARGS+=	--with-jvm-variants=zero
+
+# we're building a zero build
+JDK_BUILDDIR=	${WRKSRC}/build/${JDK_OSARCH}-normal-zero-${JDK_BUILD_TYPE}
+
+# libffi is needed for zerobuild
+LIB_DEPENDS+=	libffi.so:${PORTSDIR}/devel/libffi
+.endif
+
 .if ${PORT_OPTIONS:MDEBUG}
 JDK_BUILD_TYPE=	slowdebug
 .elif ${PORT_OPTIONS:MDEBUGFAST}
@@ -273,8 +283,12 @@ OBJCOPY=	${LOCALBASE}/bin/objcopy
 
 .include <bsd.port.pre.mk>
 
-BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk8 \
-		${LOCALBASE}/openjdk7
+BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk8
+.if ${ARCH} == "armv6"
+BOOTSTRAP_JDKS+= ${LOCALBASE}/bootstrap-openjdk
+.else
+BOOTSTRAP_JDKS+= ${LOCALBASE}/openjdk7
+.endif
 
 # do we have valid native jdk installed?
 .for BJDK in ${BOOTSTRAP_JDKS}
@@ -285,8 +299,14 @@ BOOTSTRAPJDKDIR=	${BJDK}
 
 # if no valid jdk found, set dependency
 .if !defined(BOOTSTRAPJDKDIR)
+.  if ${ARCH} == "armv6"
+# bootstrap-openjdk is based on openjdk7 and can compile openjdk8
+BOOTSTRAPJDKDIR?=	${LOCALBASE}/bootstrap-openjdk
+BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:${PORTSDIR}/java/bootstrap-openjdk
+.  else
 BOOTSTRAPJDKDIR?=	${LOCALBASE}/openjdk7
 BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:${PORTSDIR}/java/openjdk7
+.  endif
 .endif
 
 # PR193009: work around the rtld bug
@@ -358,6 +378,34 @@ post-patch:
 .endif
 	@${CHMOD} 755 ${WRKSRC}/configure
 
+.if ${ARCH} == "armv6"
+	# From NetBSD http://cvsweb.netbsd.org/bsdweb.cgi/pkgsrc/lang/openjdk7/hacks.mk
+	# Workaround incorrect constant folding of subnormals in javac when the FPU
+	# does not handle subnormal arithmetic, like on ARM in Flush-to-zero mode.
+	# These workarounds avoid underflow conditions during the bootstrap so the
+	# JDK can correctly build itself. Compiling or running programs other than
+	# openjdk itself on such hardware may still cause unexpected behaviour.
+	#
+	@${REINPLACE_CMD} -e 's|2.2250738585072014e-308d*|Double.longBitsToDouble(0x10000000000000L)|ig' \
+		-e 's|0x1.0p-1022d*|Double.longBitsToDouble(0x10000000000000L)|ig' \
+		-e 's|4.9e-324d*|Double.longBitsToDouble(0x1L)|ig' \
+		-e 's|0x0.0000000000001p-1022d*|Double.longBitsToDouble(0x1L)|ig' \
+		${WRKSRC}/jdk/src/share/classes/sun/misc/DoubleConsts.java \
+		${WRKSRC}/jdk/src/share/classes/java/lang/Double.java
+	@${REINPLACE_CMD} -e 's|1.17549435e-38f*|Float.intBitsToFloat(0x800000)|ig' \
+		-e 's|0x1.0p-126f*|Float.intBitsToFloat(0x800000)|ig' \
+		-e 's|1.4e-45f*|Float.intBitsToFloat(0x1)|ig' \
+		-e 's|0x0.000002P-126f*|Float.intBitsToFloat(0x1)|ig' \
+		${WRKSRC}/jdk/src/share/classes/sun/misc/FloatConsts.java \
+		${WRKSRC}/jdk/src/share/classes/java/lang/Float.java
+	@${REINPLACE_CMD} -e 's|n.floatValue() == 0.0f && !isZero(proper)|& \&\& Float.floatToIntBits(n) != 0x1|' \
+		-e 's|n.doubleValue() == 0.0d && !isZero(proper)|& \&\& Double.doubleToLongBits(n) != 0x1L|' \
+		${WRKSRC}/langtools/src/share/classes/com/sun/tools/javac/parser/JavacParser.java
+	@${REINPLACE_CMD} -e 's|x == 0.0f && 1.0f / x > 0.0f|Float.floatToIntBits(x) == 0x0|g' \
+		-e 's|x == 0.0d && 1.0d / x > 0.0d|Double.doubleToLongBits(x) == 0x0L|g' \
+		${WRKSRC}/langtools/src/share/classes/com/sun/tools/javac/jvm/Items.java
+.endif
+
 run-autotools-autoconf:
 	@cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} bash autogen.sh
 
@@ -384,14 +432,14 @@ do-install:
 	@cd ${JDK_IMAGEDIR} && ${COPYTREE_SHARE} . ${STAGEDIR}${INSTALLDIR}
 	@cd ${STAGEDIR}${INSTALLDIR} && \
 	    ${FIND} bin jre/bin -type f -exec ${CHMOD} ${BINMODE} {} \; && \
-	    ${CHMOD} ${BINMODE} jre/lib/${ARCH}/jexec \
-	    jre/lib/${ARCH}/jspawnhelper lib/${ARCH}/jexec
+	    ${CHMOD} ${BINMODE} jre/lib/${ARCH:S/armv6/arm/}/jexec \
+	    jre/lib/${ARCH:S/armv6/arm/}/jspawnhelper lib/${ARCH:S/armv6/arm/}/jexec
 	@${ECHO} "@dir ${INSTALLDIR}/jre/lib/applet" >> ${TMPPLIST}
 .else
 	@cd ${JRE_IMAGEDIR} && ${COPYTREE_SHARE} . ${STAGEDIR}${INSTALLDIR}
 	@cd ${STAGEDIR}${INSTALLDIR} && \
 	    ${FIND} bin -type f -exec ${CHMOD} ${BINMODE} {} \; && \
-	    ${CHMOD} ${BINMODE} lib/${ARCH}/jexec lib/${ARCH}/jspawnhelper
+	    ${CHMOD} ${BINMODE} lib/${ARCH:S/armv6/arm/}/jexec lib/${ARCH:S/armv6/arm/}/jspawnhelper
 	@${ECHO} "@dir ${INSTALLDIR}/lib/applet" >> ${TMPPLIST}
 .endif
 	@${ECHO} "@unexec ${LOCALBASE}/bin/unregistervm ${INSTALLDIR}/bin/java" >> ${TMPPLIST}
