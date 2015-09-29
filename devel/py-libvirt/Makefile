@@ -9,7 +9,7 @@ MASTER_SITES=	http://libvirt.org/sources/python/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-python-${PORTVERSION}
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Python bindings for Libvirt virtualization API
 
 LICENSE=	GPLv2
