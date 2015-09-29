@@ -1,5 +1,6 @@
 # $FreeBSD$
 
+# Hint: git describe --abbrev=12 --match android-m-preview
 DISTVERSION=	m-preview-1212
 DISTVERSIONSUFFIX=	-g94c617ccbba4
 PORTREVISION=	0
