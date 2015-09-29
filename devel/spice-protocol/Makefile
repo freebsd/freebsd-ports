@@ -6,7 +6,7 @@ PORTVERSION=	0.12.9
 CATEGORIES=	devel
 MASTER_SITES=	http://www.spice-space.org/download/releases/
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Simple Protocol for Independent Computing Environments
 
 LICENSE=	BSD3CLAUSE

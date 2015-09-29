@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Toolkit to interact with virtualization capabilities
 
 LICENSE=	LGPL3
