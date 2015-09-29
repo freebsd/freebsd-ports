@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	joken
-PORTVERSION=	0.15.0
+PORTVERSION=	0.16.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	elixir-
 
@@ -15,5 +14,9 @@ LICENSE=	APACHE20
 USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	bryanjos
+
+MIX_BUILD_DEPS=	devel/elixir-plug \
+		security/elixir-jose
+MIX_RUN_DEPS:=	${MIX_BUILD_DEPS}
 
 .include <bsd.port.mk>
