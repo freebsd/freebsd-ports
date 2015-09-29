@@ -781,10 +781,10 @@
     SUBDIR += py-tarantool
     SUBDIR += py-umemcache
     SUBDIR += py-whisper
-    SUBDIR += pypy-gdbm
-    SUBDIR += pypy-sqlite3
     SUBDIR += pydbx
     SUBDIR += pymongo
+    SUBDIR += pypy-gdbm
+    SUBDIR += pypy-sqlite3
     SUBDIR += pyspatialite
     SUBDIR += qdbm
     SUBDIR += qdbm-plus
@@ -831,11 +831,11 @@
     SUBDIR += rubygem-activemodel4
     SUBDIR += rubygem-activemodel41
     SUBDIR += rubygem-activerecord
-    SUBDIR += rubygem-activerecord41
     SUBDIR += rubygem-activerecord-jdbc-adapter
     SUBDIR += rubygem-activerecord-jdbcmysql-adapter
     SUBDIR += rubygem-activerecord-mysql-adapter
     SUBDIR += rubygem-activerecord4
+    SUBDIR += rubygem-activerecord41
     SUBDIR += rubygem-amalgalite
     SUBDIR += rubygem-arel
     SUBDIR += rubygem-arel-helpers
