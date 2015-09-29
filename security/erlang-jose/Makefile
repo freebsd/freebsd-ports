@@ -14,6 +14,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	potatosalad
 
 ERL_BUILD_DEPS=	converters/erlang-base64url
-ERL_RUN_DEP:=	${ERL_BUILD_DEPS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 .include <bsd.port.mk>
