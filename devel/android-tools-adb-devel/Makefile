@@ -27,8 +27,23 @@ TEST_BUILD_DEPENDS=googletest>=1.6.0:${PORTSDIR}/devel/googletest \
 TEST_USES=	python:2.7,build
 TEST_ALL_TARGET=adb_test
 
+post-patch:	slave-post-patch
+slave-post-patch:
+# XXX C++ exception with description "regex_error" thrown in the test body.
+	@if [ ${OPSYS} = FreeBSD -a ${OSREL:R} -lt 10 ]; then \
+		${REINPLACE_CMD} -Ee '/^TEST/\
+			s/ (LOG|PLOG|UNIMPLEMENTED)/ DISABLED_\1/' \
+		${WRKSRC}/base/logging_test.cpp; \
+	fi
+.if defined(PACKAGE_BUILDING)
+# XXX /dev/full isn't mounted by poudriere/tinderbox
+	@${REINPLACE_CMD} -e '/^TEST/s/[^ ]*ENOSPC/DISABLED_&/' \
+		${WRKSRC}/adb/adb_io_test.cpp
+.endif
+
 pre-install-TEST-on:
 	${BUILD_WRKSRC}/adb_test
+# XXX python tests may leave behind running adb server
 	PATH=${BUILD_WRKSRC}:${PATH} PYTHONPATH=${WRKSRC} \
 		${PYTHON_CMD} ${BUILD_WRKSRC}/test_adb.py
 	PATH=${BUILD_WRKSRC}:${PATH} PYTHONPATH=${WRKSRC} \
