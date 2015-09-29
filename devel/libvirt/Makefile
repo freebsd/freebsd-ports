@@ -100,6 +100,10 @@ STRIP_FILES+=	lib/libvirt/connection-driver/libvirt_driver_bhyve.so
 PLIST_FILES+=	lib/libvirt/connection-driver/libvirt_driver_bhyve.so
 .endif
 
+.if !${PLIST_SUB:MXEN}
+PLIST_SUB+=     XEN="@comment "
+.endif
+
 post-patch:
 .if ${OSVERSION} < 900000
 	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||' \
