@@ -5,6 +5,6 @@ ghostscript, the interpreter and compiler have been renamed
 "gsi-gambit" and "gsc-gambit" respectively.
 
 However, documentation is still accessible through "man gsi" or
-"info gambit-c"
+"info gambit"
 
 ======================================================================
