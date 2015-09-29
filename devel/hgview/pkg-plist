@@ -131,6 +131,9 @@ bin/hgview
 %%PYTHON_SITELIBDIR%%/hgviewlib/qt4/quickbar.py
 %%PYTHON_SITELIBDIR%%/hgviewlib/qt4/quickbar.pyc
 %%PYTHON_SITELIBDIR%%/hgviewlib/qt4/quickbar.pyo
+%%PYTHON_SITELIBDIR%%/hgviewlib/qt4/styleditemdelegate.py
+%%PYTHON_SITELIBDIR%%/hgviewlib/qt4/styleditemdelegate.pyc
+%%PYTHON_SITELIBDIR%%/hgviewlib/qt4/styleditemdelegate.pyo
 %%PYTHON_SITELIBDIR%%/hgviewlib/util.py
 %%PYTHON_SITELIBDIR%%/hgviewlib/util.pyc
 %%PYTHON_SITELIBDIR%%/hgviewlib/util.pyo
