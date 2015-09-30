@@ -159,6 +159,7 @@
     SUBDIR += libmemcache
     SUBDIR += libmemcached
     SUBDIR += libmongo-client
+    SUBDIR += libnvpair
     SUBDIR += libodbc++
     SUBDIR += libpbl
     SUBDIR += libpqtypes
