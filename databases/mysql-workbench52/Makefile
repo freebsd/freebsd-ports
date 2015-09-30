@@ -24,7 +24,7 @@ LIB_DEPENDS=	libzip.so:${PORTSDIR}/archivers/libzip \
 		libcairo.so:${PORTSDIR}/graphics/cairo \
 		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
 		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring \
-		libctemplate.so:${PORTSDIR}/textproc/ctemplate \
+		libctemplate.so:${PORTSDIR}/textproc/google-ctemplate \
 		libtinyxml.so:${PORTSDIR}/textproc/tinyxml \
 		libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \

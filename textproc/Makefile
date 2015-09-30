@@ -96,7 +96,6 @@
     SUBDIR += csb-aspell
     SUBDIR += csv2latex
     SUBDIR += csvdiff
-    SUBDIR += ctemplate
     SUBDIR += ctpl
     SUBDIR += ctpp2
     SUBDIR += cwtext
@@ -216,6 +215,7 @@
     SUBDIR += go-text
     SUBDIR += go.text
     SUBDIR += goldendict
+    SUBDIR += google-ctemplate
     SUBDIR += google-translate-cli
     SUBDIR += gpp
     SUBDIR += grap
