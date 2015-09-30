@@ -1,24 +1,28 @@
 # Created by: ijliao
 # $FreeBSD$
 
-PORTNAME=	google-ctemplate
-PORTVERSION=	2.2
-PORTREVISION=	3
+PORTNAME=	ctemplate
+PORTVERSION=	2.3
 CATEGORIES=	textproc
-MASTER_SITES=	GOOGLE_CODE
-PROJECTHOST=	ctemplate
-DISTNAME=	ctemplate-${PORTVERSION}
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Simple but powerful template language for C++
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 OPTIONS_DEFINE=	DOCS
 
-USES=		libtool pathfix pkgconfig shebangfix
+USES=		libtool pathfix pkgconfig python shebangfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules
-SHEBANG_FILES=	src/template-converter
+SHEBANG_FILES=	src/template-converter src/htmlparser/generate_fsm.py src/htmlparser/fsm_config.py
 USE_LDCONFIG=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	OlafvdSpek
+GH_TAGNAME=	359a9f0
+python_OLD_CMD=	/usr/bin/env python
+INSTALL_target=	install-strip
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -32,6 +36,10 @@ post-patch-DOCS-off:
 	@${REINPLACE_CMD} -e \
 		'/install-data-am/ s|install-dist_docDATA||' \
 		${WRKSRC}/Makefile.in
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/lib/libctemplate.so.3.0.0
+	@${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/lib/libctemplate_nothreads.so.3.0.0
 
 regression-test: build
 	@${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
