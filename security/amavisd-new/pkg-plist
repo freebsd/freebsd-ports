@@ -61,9 +61,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/images/toc-plus.png
 %%PORTDOCS%%%%DOCSDIR%%/images/up.png
 %%PORTDOCS%%%%DOCSDIR%%/images/warning.png
-%%PORTDOCS%%@dir %%DOCSDIR%%/images/callouts
-%%PORTDOCS%%@dir %%DOCSDIR%%/images
-%%PORTDOCS%%@dir %%DOCSDIR%%
 @sample etc/amavisd-custom.conf.sample
 etc/amavisd.conf-default
 @sample etc/amavisd.conf.sample
@@ -74,3 +71,8 @@ sbin/amavisd-nanny
 sbin/amavisd-release
 sbin/amavisd-requeue
 sbin/amavisd-snmp-subagent
+@dir(%%AMAVISUSER%%,%%AMAVISGROUP%%,750) %%AMAVISQUARANTINE%%
+@dir(%%AMAVISUSER%%,%%AMAVISGROUP%%,750) %%AMAVISDIR%%/var
+@dir(%%AMAVISUSER%%,%%AMAVISGROUP%%,750) %%AMAVISDIR%%/tmp
+@dir(%%AMAVISUSER%%,%%AMAVISGROUP%%,750) %%AMAVISDIR%%/db
+@dir(%%AMAVISUSER%%,%%AMAVISGROUP%%,750) %%AMAVISDIR%%
