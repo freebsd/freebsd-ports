@@ -1,0 +1,42 @@
+--- src/Makefile.orig	1994-05-28 07:10:55 UTC
++++ src/Makefile
+@@ -1,14 +1,13 @@
+ #
+ #	Makefile	1.8	83/07/27
+ #
+-DEST	      = /usr/local/bin
+-DFLAG         = -g -O2
++DEST	      = ${PREFIX}/bin
+ 
+ HELPFILE      = cpm.hlp
+-HELPFILEDIR   = /usr/local/lib
++HELPFILEDIR   = ${PREFIX}/share/cpm
+ 
+ # CFLAGS	      = -O -DVAX ${DFLAG}
+-CFLAGS	      = ${DFLAG} -DHELPFILE=\"$(HELPFILEDIR)/$(HELPFILE)\"  # -DDEBUG
++CFLAGS	      += -DHELPFILE=\"$(HELPFILEDIR)/$(HELPFILE)\"  # -DDEBUG
+ 
+ EXTHDRS	      = /usr/include/ctype.h \
+ 		/usr/include/stdio.h
+@@ -23,7 +22,7 @@ LIBLIST       =
+ 
+ LIST	      = ls -C
+ 
+-LOADER	      = cc
++LOADER	      = ${CC}
+ 
+ MAKEFILE      = Makefile
+ 
+@@ -86,9 +85,9 @@ debug:;		@echo DFLAG = -g -DDEBUG > Make
+ clean:;		@rm -f $(OBJS)
+ 
+ install:	$(PROGRAM)
+-		@echo Installing $(PROGRAM) in $(DEST)
+-		@install -s $(PROGRAM) $(DEST)
+-		@cp $(HELPFILE) $(HELPFILEDIR)
++		${BSD_INSTALL_PROGRAM} $(PROGRAM) ${DESTDIR}$(DEST)
++		mkdir -p ${DESTDIR}$(HELPFILEDIR)
++		${BSD_INSTALL_DATA} $(HELPFILE) ${DESTDIR}$(HELPFILEDIR)
+ 
+ depend:;	@mkmf PROGRAM=$(PROGRAM) DEST=$(DEST)
+ 
