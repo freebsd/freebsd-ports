@@ -12,7 +12,7 @@ LICENSE=	BSD3CLAUSE
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		autoreconf libtool
+USES=		pkgconfig autoreconf libtool
 CONFIGURE_ARGS=	--disable-gtest
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
