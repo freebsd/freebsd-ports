@@ -58,6 +58,40 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1e7f0c11-673a-11e5-98c8-60a44c524f57">
+    <topic>otrs -- Scheduler Process ID File Access</topic>
+    <affects>
+      <package>
+	<name>otrs</name>
+	<range><gt>3.2.*</gt><lt>3.2.18</lt></range>
+	<range><gt>3.3.*</gt><lt>3.3.15</lt></range>
+	<range><gt>4.0.*</gt><lt>4.0.13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OTRS project reports:</p>
+	<blockquote cite="https://www.otrs.com/security-advisory-2015-02-scheduler-process-id-file-access/">
+	  <p>An attacker with valid LOCAL credentials could access and
+	     manipulate the process ID file for bin/otrs.schduler.pl from the
+	     CLI.</p>
+	  <p>The Proc::Daemon module 0.14 for Perl uses world-writable
+	     permissions for a file that stores a process ID, which allows local
+	     users to have an unspecified impact by modifying this file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.otrs.com/security-advisory-2015-02-scheduler-process-id-file-access/</url>
+      <cvename>CVE-2015-6842</cvename>
+      <cvename>CVE-2013-7135</cvename>
+    </references>
+    <dates>
+      <discovery>2015-09-17</discovery>
+      <entry>2015-09-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4e3e8a50-65c1-11e5-948e-bcaec565249c">
     <topic>flash -- multiple vulnabilities</topic>
     <affects>
