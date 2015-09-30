@@ -24,25 +24,18 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CONFLICTS=	ltrace-0*
 
 OPTIONS_DEFINE=	GNUPLOT OPENSSL PERL ZLIB
+OPTIONS_DEFAULT=OPENSSL ZLIB
 
 GNUPLOT_DESC=	GNUPlot for full reporting functionality
 OPENSSL_DESC=	Enable SSL/HTTPS support
 PERL_DESC=	Install Perl for PolyGraph tools
 ZLIB_DESC=	Enable HTTP compression support
 
-OPTIONS_DEFAULT=	OPENSSL ZLIB
-
-GNUPLOT_RUN_DEPENDS=	 gnuplot:${PORTSDIR}/math/gnuplot
-
+GNUPLOT_RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 OPENSSL_USE=		OPENSSL=yes
+OPENSSL_CONFIGURE_ON=	--with-ssl=${OPENSSLBASE}
 PERL_USES=		perl5
 PERL_USE=		PERL5=run
 ZLIB_CONFIGURE_WITH=	zlib=/usr
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MOPENSSL}
-CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
-.endif
 
 .include <bsd.port.mk>
