@@ -1,5 +1,5 @@
---- src/base/small_map.h.orig	2012-02-02 16:18:30.000000000 +0800
-+++ src/base/small_map.h	2012-02-02 16:18:47.000000000 +0800
+--- src/base/small_map.h.orig	2014-03-19 19:34:51 UTC
++++ src/base/small_map.h
 @@ -52,6 +52,8 @@
  #include <assert.h>
  #include <utility>   // for make_pair()
