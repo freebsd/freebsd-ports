@@ -4,6 +4,7 @@
 PORTNAME=	ctemplate
 PORTVERSION=	2.3
 CATEGORIES=	textproc
+PKGNAMEPREFIX=	google-
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Simple but powerful template language for C++
