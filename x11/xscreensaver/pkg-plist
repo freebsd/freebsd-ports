@@ -216,6 +216,7 @@ bin/xscreensaver-hacks/xrayswarm
 bin/xscreensaver-hacks/xspirograph
 bin/xscreensaver-hacks/zoom
 bin/xscreensaver-text
+%%NO_PAM%%etc/pam.d/xscreensaver.pam
 %%PAM%%etc/pam.d/xscreensaver
 lib/X11/app-defaults/XScreenSaver
 man/man1/xscreensaver-command.1.gz
@@ -680,7 +681,3 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/glade/screensaver-power.png
 %%DATADIR%%/glade/screensaver-snap.png
 %%DATADIR%%/glade/xscreensaver-demo.glade2
-@dirrmtry bin/xscreensaver-hacks
-@dirrmtry %%DATADIR%%/config
-@dirrmtry %%DATADIR%%/glade
-@dirrmtry %%DATADIR%%
