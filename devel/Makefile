@@ -1318,6 +1318,7 @@
     SUBDIR += libuninum
     SUBDIR += libunistring
     SUBDIR += libunwind
+    SUBDIR += libuutil
     SUBDIR += libuv
     SUBDIR += libvanessa_adt
     SUBDIR += libvanessa_logger
