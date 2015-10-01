@@ -9,6 +9,9 @@ MASTER_SITES=	http://www.chruetertee.ch/files/download/
 MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Shows WITH(OUT)-knobs of a port makefile
 
+DEPRECATED=	Deprecated by optionsng
+EXPIRATION_DATE=	2015-11-01
+
 NO_BUILD=	yes
 
 PLIST_FILES=	sbin/portsopt
