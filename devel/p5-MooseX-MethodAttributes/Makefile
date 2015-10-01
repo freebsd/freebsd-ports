@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-MethodAttributes
-PORTVERSION=	0.30
+PORTVERSION=	0.31
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,6 +23,6 @@ TEST_DEPENDS=	p5-MooseX-Role-Parameterized>=0:${PORTSDIR}/devel/p5-MooseX-Role-P
 
 NO_ARCH=	yes
 USES=		perl5
-USE_PERL5=	modbuildtiny
+USE_PERL5=	configure
 
 .include <bsd.port.mk>
