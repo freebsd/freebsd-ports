@@ -18,6 +18,7 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	MAKEINFOFLAGS=--no-split
 MAKE_JOBS_UNSAFE=	yes
+TEST_TARGET=	check
 USE_LDCONFIG=	yes
 USES=		fortran libtool makeinfo pathfix
 
@@ -26,8 +27,5 @@ USE_GITHUB=	yes
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnetcdff.so.6.0.1
-
-regression-test test: build
-	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 
 .include <bsd.port.mk>
