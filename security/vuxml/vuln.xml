@@ -58,6 +58,39 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="be3069c9-67e7-11e5-9909-002590263bf5">
+    <topic>james -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>james</name>
+	<range><lt>2.3.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache James Project reports:</p>
+	<blockquote cite="http://james.apache.org/download.cgi#Apache_James_Server">
+	  <p>This release has many enhancements and bug fixes over the previous
+	    release. See the Release Notes for a detailed list of changes. Some
+	    of the earlier defects could turn a James mail server into an Open
+	    Relay and allow files to be written on disk. All users of James
+	    Server are urged to upgrade to version v2.3.2.1 as soon as
+	    possible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/203461</freebsdpr>
+      <certvu>988628</certvu>
+      <url>http://james.apache.org/download.cgi#Apache_James_Server</url>
+      <url>https://blogs.apache.org/james/entry/apache_james_server_2_3</url>
+    </references>
+    <dates>
+      <discovery>2015-09-30</discovery>
+      <entry>2015-10-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1e7f0c11-673a-11e5-98c8-60a44c524f57">
     <topic>otrs -- Scheduler Process ID File Access</topic>
     <affects>
