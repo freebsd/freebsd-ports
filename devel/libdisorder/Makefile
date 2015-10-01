@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USE_LDCONFIG=	yes
 BUILD_WRKSRC=	${WRKSRC}/src
 
+MAKE_JOBS_UNSAFE=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|' ${WRKSRC}/src/Makefile
 
