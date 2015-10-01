@@ -1098,6 +1098,7 @@ include/ace/config-kfreebsd.h
 include/ace/config-linux.h
 include/ace/config-lite.h
 include/ace/config-lynxos.h
+include/ace/config-macosx-elcapitan.h
 include/ace/config-macosx-iOS-hardware.h
 include/ace/config-macosx-iOS-simulator.h
 include/ace/config-macosx-leopard.h
@@ -1135,6 +1136,7 @@ include/ace/config-vxworks6.6.h
 include/ace/config-vxworks6.7.h
 include/ace/config-vxworks6.8.h
 include/ace/config-vxworks6.9.h
+include/ace/config-vxworks7.0.h
 include/ace/config-win32-borland.h
 include/ace/config-win32-cegcc.h
 include/ace/config-win32-common.h
@@ -1509,6 +1511,7 @@ libdata/pkgconfig/Kokyu.pc
 %%DATADIR%%/include/makeinclude/platform_lynxos.GNU
 %%DATADIR%%/include/makeinclude/platform_macosx.GNU
 %%DATADIR%%/include/makeinclude/platform_macosx_common.GNU
+%%DATADIR%%/include/makeinclude/platform_macosx_elcapitan.GNU
 %%DATADIR%%/include/makeinclude/platform_macosx_iOS.GNU
 %%DATADIR%%/include/makeinclude/platform_macosx_icc.GNU
 %%DATADIR%%/include/makeinclude/platform_macosx_leopard.GNU
@@ -1539,6 +1542,7 @@ libdata/pkgconfig/Kokyu.pc
 %%DATADIR%%/include/makeinclude/platform_vxworks6.7.GNU
 %%DATADIR%%/include/makeinclude/platform_vxworks6.8.GNU
 %%DATADIR%%/include/makeinclude/platform_vxworks6.9.GNU
+%%DATADIR%%/include/makeinclude/platform_vxworks7.0.GNU
 %%DATADIR%%/include/makeinclude/platform_win32_dmc.GNU
 %%DATADIR%%/include/makeinclude/platform_win32_icc.GNU
 %%DATADIR%%/include/makeinclude/platform_win32_interix.GNU
