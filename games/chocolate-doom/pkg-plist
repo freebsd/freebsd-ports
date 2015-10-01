@@ -25,6 +25,10 @@ man/man6/chocolate-server.6.gz
 man/man6/chocolate-setup.6.gz
 man/man6/chocolate-strife-setup.6.gz
 man/man6/chocolate-strife.6.gz
+share/appdata/chocolate-doom.appdata.xml
+share/appdata/chocolate-heretic.appdata.xml
+share/appdata/chocolate-hexen.appdata.xml
+share/appdata/chocolate-strife.appdata.xml
 share/applications/chocolate-doom.desktop
 share/applications/chocolate-heretic.desktop
 share/applications/chocolate-hexen.desktop
