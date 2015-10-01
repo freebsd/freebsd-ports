@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-PORTVERSION=	4.3
+PORTVERSION=	4.3.1
 DISTVERSIONSUFFIX=	-zh_CN
 CATEGORIES=	chinese www
-MASTER_SITES=	http://cn.wordpress.org/ \
-		http://mirror.joehorn.idv.tw/wordpress/
+MASTER_SITES=	http://cn.wordpress.org/
 PKGNAMESUFFIX=	-zh_CN
 
 MAINTAINER=	ports@FreeBSD.org
