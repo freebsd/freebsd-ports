@@ -12,6 +12,7 @@
 
 PORTNAME=	mlton
 PORTVERSION=	20100608
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	SF http://www.tbrk.org/distfiles/
 DISTFILES=	${SRC_DIST} ${BOOT_DIST}
@@ -31,7 +32,7 @@ SMLNJ_DESC=	Bootstrap with SML/NJ (can take >15 hours)
 MINGW32_DESC=	Add the mingw32 target (requires wine)
 
 MAKE_JOBS_UNSAFE=	yes
-USES=	gmake
+USES=		gmake shebangfix
 USE_GCC=	any
 
 .include <bsd.port.options.mk>
@@ -115,15 +116,15 @@ post-extract:
 .endif
 
 post-patch:
-	${REINPLACE_CMD} 's/CC := gcc -std=gnu99/CC := ${CC} -std=gnu99/g' \
+	@${REINPLACE_CMD} 's/CC := gcc -std=gnu99/CC := ${CC} -std=gnu99/g' \
 		${WRKSRC}/runtime/Makefile \
 		${BOOT_WRKSRC}/lib/mlton/sml/mlnlffi-lib/Makefile
-	${REINPLACE_CMD} 's/gcc -v/${CC} -v/g' ${WRKSRC}/runtime/util/Makefile
-	${REINPLACE_CMD} 's/CC = gcc -std=gnu99/CC = ${CC} -std=gnu99/g' ${WRKSRC}/runtime/util/Makefile
+	@${REINPLACE_CMD} 's/gcc -v/${CC} -v/g' ${WRKSRC}/runtime/util/Makefile
+	@${REINPLACE_CMD} 's/CC = gcc -std=gnu99/CC = ${CC} -std=gnu99/g' ${WRKSRC}/runtime/util/Makefile
 .if ${ARCH} == "i386"
-	${REINPLACE_CMD} 's/ram-slop 0\.7/max-heap 800m/g' ${WRKSRC}/mlton/Makefile
+	@${REINPLACE_CMD} 's/ram-slop 0\.7/max-heap 800m/g' ${WRKSRC}/mlton/Makefile
 .else
-	${REINPLACE_CMD} 's/ram-slop 0\.7/max-heap 2g/g' ${WRKSRC}/mlton/Makefile
+	@${REINPLACE_CMD} 's/ram-slop 0\.7/max-heap 2g/g' ${WRKSRC}/mlton/Makefile
 .endif
 .if ! ${PORT_OPTIONS:MSMLNJ}
 	@${REINPLACE_CMD} -e \
@@ -177,9 +178,13 @@ post-patch:
 		${WRKSRC}/doc/guide/Installation.bak
 
 post-build:
-.if ${PORT_OPTIONS:MMINGW32}
+	@${REINPLACE_CMD} -i '' -e '1s|/usr/bin/perl|${perl_CMD}|' \
+		${WRKSRC}/build/lib/sml/mlrisc-lib/cm/makecm \
+		${WRKSRC}/build/lib/sml/mlrisc-lib/cm/makeallcm \
+		${WRKSRC}/build/lib/sml/mlrisc-lib/Doc/html/mltex2html
+
+post-build-MINGW32-on:
 	@${ECHO} Adding mingw32 target...
 	${WRKSRC}/bin/add-local-cross mingw32 x86 mingw
-.endif
 
 .include <bsd.port.mk>
