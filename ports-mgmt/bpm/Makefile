@@ -10,11 +10,13 @@ MASTER_SITES=	http://www.meowfishies.com/code/bpm/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical BSD ports collection manager
 
+LICENSE=	BSD4CLAUSE
+
 RUN_DEPENDS=	portupgrade:${PORTSDIR}/ports-mgmt/portupgrade \
   		gnomesu:${PORTSDIR}/security/libgnomesu \
 		gdialog:${PORTSDIR}/x11/zenity
 
-USES=		desktop-file-utils pkgconfig tar:tgz
+USES=		pkgconfig tar:tgz
 USE_GNOME=	gtk20
 
 MAKE_ENV+=	OSTYPE="${OPSYS}"
