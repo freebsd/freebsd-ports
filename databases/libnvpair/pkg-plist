@@ -1,6 +1,0 @@
-include/libnvpair.h
-include/nvpair.h
-include/nvpair_type_compat.h
-lib/libnvpair.a
-lib/libnvpair.so
-lib/libnvpair.so.1
