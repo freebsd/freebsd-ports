@@ -22,7 +22,7 @@ CONFLICTS_INSTALL=	hdf-4.[0-9]* hdf5-1.6.[0-9]*
 PORTSCOUT=	skipv:1.8.15-patch1
 
 OPTIONS_DEFINE=	DEBUG EXAMPLES FORTRAN SZIP
-OPTIONS_DEFAULT=SZIP
+#OPTIONS_DEFAULT=SZIP
 OPTIONS_SUB=	yes
 
 CONFIGURE_ARGS=	--enable-cxx \
@@ -32,6 +32,7 @@ CONFIGURE_ARGS=	--enable-cxx \
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes
+TEST_TARGET=	check
 USE_LDCONFIG=	yes
 USES=		libtool tar:bzip2
 
@@ -57,8 +58,5 @@ post-patch:
 		-e 's|(INSTALL)|(INSTALL_DATA)|' \
 			`${FIND} ${WRKSRC} -regex '.*/examples/Makefile.in'`
 	@${REINPLACE_CMD} -e 's|\[ -a|\[ -f|g' `${FIND} ${WRKSRC} -name \*.sh\*`
-
-regression-test test: build
-	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 
 .include <bsd.port.mk>
