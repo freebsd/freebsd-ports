@@ -1,7 +1,7 @@
---- bin/shutdown.sh.orig	2008-03-11 17:53:00.000000000 +0100
-+++ bin/shutdown.sh	2008-03-11 17:53:22.000000000 +0100
+--- bin/shutdown.sh.orig	2015-09-30 16:13:46 UTC
++++ bin/shutdown.sh
 @@ -5,20 +5,6 @@
- # $Id: shutdown.sh 7290 2007-07-23 18:57:27Z jdeolive $
+ # $Id$
  # -----------------------------------------------------------------------------
  
 -# Make sure prerequisite environment variables are set
@@ -21,9 +21,9 @@
  if [ -z $GEOSERVER_HOME ]; then
    #If GEOSERVER_HOME not set then guess a few locations before giving
    # up and demanding user set it.
-@@ -52,4 +38,4 @@
+@@ -52,4 +38,4 @@ if [ ! -r "$GEOSERVER_HOME"/start.jar ];
  fi
  
  cd "$GEOSERVER_HOME"
--exec "$_RUNJAVA" -DSTOP.PORT=8079 -DSTOP.KEY=geoserver -jar start.jar --stop
+-exec "$_RUNJAVA" $JAVA_OPTS -DSTOP.PORT=8079 -DSTOP.KEY=geoserver -jar start.jar --stop
 +exec %%JAVA%% -DSTOP.PORT=8079 -DSTOP.KEY=geoserver -jar start.jar --stop
