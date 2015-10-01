@@ -3,7 +3,7 @@
 
 PORTNAME=	plan9port
 PORTVERSION=	20140306
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel plan9
 MASTER_SITES=	http://swtch.com/${PORTNAME}/
 
@@ -15,7 +15,30 @@ LICENSE_NAME=	Lucent Public License Version 1.02
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		perl5 tar:tgz
+BROKEN_ia64=	does not install: cleanname not found
+BROKEN_sparc64=	does not install: cleanname not found
+
+RUN_DEPENDS=	rc:${PORTSDIR}/shells/rc
+
+USES=		perl5 shebangfix tar:tgz
+SHEBANG_LANG=	rc
+rc_OLD_CMD=	/bin/rc
+rc_CMD=		${LOCALBASE}/bin/rc
+SHEBANG_FILES=	acid/transcript \
+		acid/window \
+		mac/9term.app/Contents/MacOS/9term \
+		mac/Plumb.app/Contents/MacOS/plumb \
+		src/cmd/9660/mk9660.rc \
+		src/cmd/dict/egfix \
+		src/cmd/dict/egfix2 \
+		src/cmd/dict/gefix \
+		src/cmd/dict/getneeds \
+		src/cmd/lp/lpsend.rc \
+		src/cmd/map/map.rc \
+		src/cmd/map/mapdemo.rc \
+		src/cmd/spell/spell.rc \
+		src/cmd/upas/filterkit/pipefrom.sample \
+		unix/man/fixurls
 USE_PERL5=	build
 USE_XORG=	x11 xt xi xaw
 WRKSRC=		${WRKDIR}/plan9
@@ -74,10 +97,4 @@ install-user:
 	@${MKDIR} ${HOME}/lib
 	${INSTALL_DATA} ${PLAN9}/plumb/initial.plumbing ${HOME}/lib/plumbing
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
-BROKEN=		Does not install: cleanname not found
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
