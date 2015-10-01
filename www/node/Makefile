@@ -39,7 +39,7 @@ CFLAGS+=	-Wno-unused-const-variable
 .endif
 .else
 MAKE_ARGS+=	strictaliasing=off
-USE_GCC=	any
+USE_GCC=	4.8+
 .endif
 
 post-patch:
