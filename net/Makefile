@@ -477,6 +477,7 @@
     SUBDIR += openospfd
     SUBDIR += openpgm
     SUBDIR += openradius
+    SUBDIR += opensips
     SUBDIR += openslp
     SUBDIR += opentracker
     SUBDIR += openvswitch
