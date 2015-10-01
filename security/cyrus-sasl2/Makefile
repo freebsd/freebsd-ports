@@ -1,11 +1,12 @@
 # $FreeBSD$
 
-PORTNAME=	cyrus-sasl
+PORTNAME=	cyrus-sasl2
 PORTVERSION=	2.1.26
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-sasl/ \
 		http://cyrusimap.org/releases/
+DISTNAME=	cyrus-sasl-${PORTVERSION}
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)

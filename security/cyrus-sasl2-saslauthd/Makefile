@@ -2,12 +2,12 @@
 
 PORTNAME=	saslauthd
 PORTVERSION=	2.1.26
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-sasl/ \
 		http://cyrusimap.org/releases/
-PKGNAMEPREFIX=	cyrus-sasl-
-DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}
+PKGNAMEPREFIX=	cyrus-sasl2-
+DISTNAME=	cyrus-sasl-${PORTVERSION}
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	SASL authentication server for cyrus-sasl2
