@@ -18,7 +18,6 @@ USES=		desktop-file-utils pkgconfig tar:bzip2
 USE_XORG=	x11
 USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes
-MAKE_ENV=	INSTALL="install -U"
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
@@ -26,5 +25,11 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext pkgconfig
 NLS_CFLAGS_OFF=	-DWITHOUT_NLS
 NLS_MAKE_ENV_OFF=	WITHOUT_NLS=yes
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD
+MAKE_ENV=	INSTALL="install -U"
+.endif
 
 .include <bsd.port.mk>
