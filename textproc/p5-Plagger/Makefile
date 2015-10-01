@@ -41,6 +41,7 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-URI-Fetch>=0:${PORTSDIR}/www/p5-URI-Fetch \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 
+NO_ARCH=	yes
 USES=		perl5 shebangfix
 USE_PERL5=	configure
 
