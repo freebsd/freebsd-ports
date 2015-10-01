@@ -25,6 +25,12 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PLIST_FILES=	bin/umlgraph %%JAVAJARDIR%%/UmlGraph.jar
 
+.include <bsd.port.pre.mk>
+
+.if ${JAVA_PORT_VERSION:M1.8.*}
+EXTRA_PATCHES=  ${PATCHDIR}/extra-patch-src_org_umlgraph_doclet_WrappedClassDoc.java
+.endif
+
 post-configure:
 	${REINPLACE_CMD} -e 's|%%JAVA_HOME%%|${JAVA_HOME}|; \
 		s|%%JAVAJARDIR%%|${JAVAJARDIR}|' \
@@ -35,4 +41,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/UmlGraph.jar ${STAGEDIR}${JAVAJARDIR}/
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/umlgraph ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
