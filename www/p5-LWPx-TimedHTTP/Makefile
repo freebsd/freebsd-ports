@@ -18,6 +18,7 @@ BUILD_DEPENDS=	p5-HTTP-Daemon>=0:${PORTSDIR}/www/p5-HTTP-Daemon \
 		p5-libwww>=6:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	p5-libwww>=6:${PORTSDIR}/www/p5-libwww
 
+NO_ARCH=	yes
 USE_PERL5=	modbuild
 USES=		perl5
 
