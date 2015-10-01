@@ -23,6 +23,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Plack>=0:${PORTSDIR}/www/p5-Plack \
 		p5-Twiggy>=0:${PORTSDIR}/www/p5-Twiggy
 
+NO_ARCH=	yes
 USE_PERL5=	modbuild
 USES=		perl5
 
