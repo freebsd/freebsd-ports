@@ -3,7 +3,7 @@
 
 PORTNAME=	grass
 PORTVERSION=	6.4.5
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	databases geography
 MASTER_SITES=	http://grass.osgeo.org/%SUBDIR%/ \
@@ -37,14 +37,21 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 USES=		fortran gettext gmake iconv jpeg perl5 pkgconfig python:2 \
 		readline shebangfix tk
 SHEBANG_FILES=	scripts/i.spectral/i.spectral \
-		scripts/r.tileset/r.tileset
+		scripts/r.tileset/r.tileset \
+		visualization/nviz/scripts/nviz2.2_script \
+		visualization/nviz/scripts/script_file_tools \
+		visualization/nviz/scripts/script_get_line \
+		visualization/nviz/scripts/script_play \
+		visualization/nviz/scripts/script_tools
+SHEBANG_LANG=	nviz
+nviz_OLD_CMD=	nviz
+nviz_CMD=	${PREFIX}/${GRASS_INST_DIR}/bin/nviz
 PATCH_TCL_SCRIPTS=lib/init/init.sh
 PATCH_TK_SCRIPTS=lib/init/init.sh
 USE_XORG=	sm ice x11 xext xi xmu xt
 USE_GL=		glu
 USE_GNOME=	cairo
 USE_WX=		2.8
-WX_UNICODE=	yes
 WX_COMPS=	wx:build python:run
 USE_GCC=	yes
 GNU_CONFIGURE=	yes
