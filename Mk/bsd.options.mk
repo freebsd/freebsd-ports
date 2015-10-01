@@ -476,12 +476,12 @@ USE_${_u:tu}+=	${option:C/.*=//g:C/,/ /g}
 .      endfor
 .    endif
 .    if defined(${opt}_VARS)
-.      for var in ${${opt}_VARS}
-_u=		${var:C/=.*//}
+.      for var in ${${opt}_VARS:C/=.*//:O:u}
+_u=			${var}
 .        if ${_u:M*+}
-${_u:C/.$//:tu}+=	${var:C/[^+]*\+=//:C/^"(.*)"$$/\1/}
+${_u:C/.$//:tu}+=	${${opt}_VARS:M${var}=*:C/[^+]*\+=//:C/^"(.*)"$$/\1/}
 .        else
-${_u:tu}=	${var:C/[^=]*=//:C/^"(.*)"$$/\1/}
+${_u:tu}=		${${opt}_VARS:M${var}=*:C/[^=]*=//:C/^"(.*)"$$/\1/}
 .        endif
 .      endfor
 .    endif
@@ -524,12 +524,12 @@ USE_${_u:tu}+=	${option:C/.*=//g:C/,/ /g}
 .      endfor
 .    endif
 .    if defined(${opt}_VARS_OFF)
-.      for var in ${${opt}_VARS_OFF}
-_u=		${var:C/=.*//}
+.      for var in ${${opt}_VARS_OFF:C/=.*//:O:u}
+_u=			${var}
 .        if ${_u:M*+}
-${_u:C/.$//:tu}+=	${var:C/[^+]*\+=//:C/^"(.*)"$$/\1/}
+${_u:C/.$//:tu}+=	${${opt}_VARS_OFF:M${var}=*:C/[^+]*\+=//:C/^"(.*)"$$/\1/}
 .        else
-${_u:tu}=	${var:C/[^=]*=//:C/^"(.*)"$$/\1/}
+${_u:tu}=		${${opt}_VARS_OFF:M${var}=*:C/[^=]*=//:C/^"(.*)"$$/\1/}
 .        endif
 .      endfor
 .    endif
