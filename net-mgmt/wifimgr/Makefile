@@ -26,10 +26,7 @@ NLS_USES=	gettext pkgconfig
 NLS_CFLAGS_OFF=	-DWITHOUT_NLS
 NLS_MAKE_ENV_OFF=	WITHOUT_NLS=yes
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD
-MAKE_ENV=	INSTALL="install -U"
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e 's/-o root -g wheel//' ${WRKSRC}/src/Makefile
 
 .include <bsd.port.mk>
