@@ -2,21 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	boost-libs
-COMMENT=	Free portable C++ libraries (without Boost.Python)
+PORTREVISION=	9
 
-PORTREVISION=	8
+COMMENT=	Free portable C++ libraries (without Boost.Python)
 
 BUILD_DEPENDS+=	bjam:${PORTSDIR}/devel/boost-jam
 
-OPTIONS_DEFINE=	VERBOSE_BUILD DEBUG ICU OPTIMIZED_CFLAGS
-OPTIONS_DEFAULT=	ICU
+OPTIONS_DEFINE=		VERBOSE_BUILD DEBUG OPTIMIZED_CFLAGS
+OPTIONS_MULTI=		LOCALE
+OPTIONS_MULTI_LOCALE=	ICONV ICU
+OPTIONS_DEFAULT=	ICONV ICU
 VERBOSE_BUILD_DESC=	Show compiler messages
-ICU_DESC=		Boost.Regex with ICU unicode support
+ICONV_DESC=		Boost.Locale with iconv encoding support
+ICU_DESC=		Boost.Regex/Locale with ICU unicode support
 
+ICONV_USES=		iconv
+ICONV_VARS=		BJAM_ARGS+=-sICONV_PATH=${ICONV_PREFIX}
+ICONV_VARS_OFF=		BJAM_ARGS+=boost.locale.iconv=off
 ICU_LIB_DEPENDS=	libicuuc.so:${PORTSDIR}/devel/icu
 ICU_VARS=		BJAM_ARGS+=-sICU_PATH=${LOCALBASE}
-ICU_USES_OFF=		iconv
-ICU_VARS_OFF=		BJAM_ARGS+=-sICONV_PATH=${ICONV_PREFIX}
+ICU_VARS_OFF=		BJAM_ARGS+=boost.locale.icu=off
 
 .include "${.CURDIR}/../boost-all/common.mk"
 
