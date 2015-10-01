@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	geoserver
-PORTVERSION=	2.7.2
+PORTVERSION=	2.8.0
 CATEGORIES=	graphics geography java
 MASTER_SITES=	SF/${PORTNAME}/GeoServer/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Open Source GIS server
 
 LICENSE=	GPLv2
