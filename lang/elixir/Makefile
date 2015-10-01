@@ -4,7 +4,12 @@
 PORTNAME=	elixir
 PORTVERSION=	1.1.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	lang
+MASTER_SITES+=	http://github.com/elixir-lang/elixir/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/:doc
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		Docs.zip:doc
+DIST_SUBDIR=	elixir
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Functional, meta-programming aware language built on top of Erlang VM
@@ -22,9 +27,10 @@ MAKE_ENV=	LANG=en_US.UTF-8
 ALL_TARGET=	#empty
 REINPLACE_ARGS=	-i ""
 NO_ARCH=	yes
+OPTIONS_SUB=	yes
 
-OPTIONS_DEFINE=	SRC
-OPTIONS_DEFAULT=SRC
+OPTIONS_DEFINE=	SRC DOCS
+OPTIONS_DEFAULT=SRC DOCS
 
 SRC_DESC=	Install source code
 
@@ -34,17 +40,16 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/Makefile
 	@${RM} ${WRKSRC}/bin/*.orig
 
-post-install:
-.if ${PORT_OPTIONS:MSRC}
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKDIR}/doc/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}
+
+post-install-SRC-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/elixir/lib
 	cd ${WRKSRC}/lib/ && for lib in *; do \
 		${MKDIR} ${STAGEDIR}${PREFIX}/lib/elixir/lib/$${lib}/lib; \
 		cd ${WRKSRC}/lib/$${lib}/lib && \
 			${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/lib/elixir/lib/$${lib}/lib; \
 	done
-.endif
-	@cd ${STAGEDIR}${PREFIX}; ${FIND} lib/elixir/* -type f -o -type l \
-		| ${SORT} \
-		>> ${TMPPLIST}
 
 .include <bsd.port.mk>
