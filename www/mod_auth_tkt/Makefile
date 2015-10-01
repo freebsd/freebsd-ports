@@ -2,7 +2,7 @@
 
 PORTNAME=	mod_auth_tkt
 PORTVERSION=	2.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/kuriyama \
 		http://www.openfusion.com.au/labs/dist/mod_auth_tkt/
@@ -10,6 +10,9 @@ MASTER_SITES=	LOCAL/kuriyama \
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Lightweight single-sign-on authentication module for apache
 
+USES=		shebangfix
+SHEBANG_FILES=	../cgi/login.cgi \
+		../cgi/logout.cgi
 USE_APACHE=	22+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -29,7 +32,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-query-separator
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|.usr/share/man|${STAGEDIR}${PREFIX}/man|' ${WRKSRC}/../Makedefs
+	@${REINPLACE_CMD} -e 's|.usr/share/man|${STAGEDIR}${PREFIX}/man|' ${WRKSRC}/../Makedefs
 
 post-build:
 	cd ${WRKSRC}/../doc; ${MAKE} all
