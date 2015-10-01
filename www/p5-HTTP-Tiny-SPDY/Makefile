@@ -20,6 +20,7 @@ BUILD_DEPENDS=	p5-IO-Socket-SSL>=1.560:${PORTSDIR}/security/p5-IO-Socket-SSL \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Mozilla-CA>=0:${PORTSDIR}/www/p5-Mozilla-CA
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
