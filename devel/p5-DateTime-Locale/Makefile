@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DateTime-Locale
-PORTVERSION=	0.46
+PORTVERSION=	0.92
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	p5-Dist-CheckConflicts>=0.02:${PORTSDIR}/devel/p5-Dist-CheckConfl
 		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
