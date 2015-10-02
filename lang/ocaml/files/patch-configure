@@ -1,25 +1,79 @@
-Remove attempts add the -O compiler option -- this ends up lowering optimization
-level for most people (from -O2 to -O).
-
-	-mi
-
---- configure	2015-05-12 14:46:37 UTC
-+++ configure	2015-09-22 22:15:58 UTC
-@@ -447,5 +447,5 @@
- # Configure compiler to use in further tests
+--- configure.orig	2014-10-03 19:25:46 UTC
++++ configure
+@@ -85,10 +85,6 @@ exec 3>&1
  
--cc="$bytecc -O $bytecclinkopts"
-+cc="$bytecc $bytecclinkopts"
- export cc cclibs verbose
+ # Parse command-line arguments
  
-@@ -1687,10 +1687,4 @@
- fi
- 
--# Add Unix-style optimization flag
--bytecccompopts="-O $bytecccompopts"
--dllcccompopts="-O $dllcccompopts"
--nativecccompopts="-O $nativecccompopts"
--sharedcccompopts="-O $sharedcccompopts"
+-if echo "$configure_options" | grep -q -e '--\?[a-zA-Z0-9-]\+='; then
+-  err "Arguments to this script look like '-prefix /foo/bar', not '-prefix=/foo/bar' (note the '=')."
+-fi
 -
- # Final twiddling of compiler options to work around known bugs
- 
+ while : ; do
+   case "$1" in
+     "") break;;
+@@ -659,7 +659,8 @@ if test $with_sharedlibs = "yes"; then
+       mksharedlib="$flexlink"
+       mkmaindll="$flexlink -maindll"
+       shared_libraries_supported=true;;
+-    *-*-linux-gnu|*-*-linux|*-*-freebsd[3-9]*|*-*-freebsd[1-9][0-9]*|*-*-openbsd*|*-*-netbsd*|*-*-gnu*|*-*-haiku*)
++    *-*-linux-gnu|*-*-linux|*-*-freebsd[3-9]*|*-*-freebsd[1-9][0-9]*| \
++    *-*-dragonfly*|*-*-openbsd*|*-*-netbsd*|*-*-gnu*|*-*-haiku*)
+       sharedcccompopts="-fPIC"
+       mksharedlib="$bytecc -shared"
+       bytecclinkopts="$bytecclinkopts -Wl,-E"
+@@ -761,11 +758,13 @@ if test $with_sharedlibs = "yes"; then
+       fi;;
+     x86_64-*-darwin*)             natdynlink=true;;
+     powerpc*-*-linux*)            natdynlink=true;;
++    powerpc*-*-freebsd*)          natdynlink=true;;
+     sparc*-*-linux*)              natdynlink=true;;
+     i686-*-kfreebsd*)             natdynlink=true;;
+     x86_64-*-kfreebsd*)           natdynlink=true;;
+     i[3456]86-*-freebsd*)         natdynlink=true;;
+     x86_64-*-freebsd*)            natdynlink=true;;
++    x86_64-*-dragonfly*)          natdynlink=true;;
+     i[3456]86-*-openbsd*)         natdynlink=true;;
+     x86_64-*-openbsd*)            natdynlink=true;;
+     i[3456]86-*-netbsd*)          natdynlink=true;;
+@@ -815,6 +814,7 @@ case "$target" in
+   i[3456]86-*-gnu*)             arch=i386; system=gnu;;
+   i[3456]86-*-mingw*)           arch=i386; system=mingw;;
+   powerpc*-*-linux*)            arch=power; model=ppc; system=elf;;
++  powerpc-*-freebsd*)           arch=power; model=ppc; system=bsd_elf;;
+   powerpc-*-netbsd*)            arch=power; model=ppc; system=elf;;
+   powerpc-*-openbsd*)           arch=power; model=ppc; system=bsd_elf;;
+   powerpc-*-rhapsody*)          arch=power; model=ppc; system=rhapsody;;
+@@ -833,6 +833,7 @@ case "$target" in
+   zaurus*-*-openbsd*)           arch=arm; system=bsd;;
+   x86_64-*-linux*)              arch=amd64; system=linux;;
+   x86_64-*-gnu*)                arch=amd64; system=gnu;;
++  x86_64-*-dragonfly*)          arch=amd64; system=dragonfly;;
+   x86_64-*-freebsd*)            arch=amd64; system=freebsd;;
+   x86_64-*-netbsd*)             arch=amd64; system=netbsd;;
+   x86_64-*-openbsd*)            arch=amd64; system=openbsd;;
+@@ -905,6 +908,8 @@ case "$arch,$system" in
+                   aspp="${TOOLPREF}cc -c";;
+   *,freebsd)      as="${TOOLPREF}as"
+                   aspp="${TOOLPREF}cc -c";;
++  *,dragonfly)    as="as"
++                  aspp="cc -c";;
+   amd64,*|arm,*|arm64,*|i386,*|power,bsd*|sparc,*)
+                   as="${TOOLPREF}as"
+                   aspp="${TOOLPREF}gcc -c";;
+@@ -1390,7 +1395,7 @@ if test "$pthread_wanted" = "yes"; then
+     bytecccompopts="$bytecccompopts -D_REENTRANT"
+     nativecccompopts="$nativecccompopts -D_REENTRANT"
+     case "$target" in
+-      *-*-freebsd*)
++      *-*-freebsd*|*-*-dragonfly*)
+           bytecccompopts="$bytecccompopts -D_THREAD_SAFE"
+           nativecccompopts="$nativecccompopts -D_THREAD_SAFE";;
+       *-*-openbsd*)
+@@ -1560,6 +1565,7 @@ if test "$x11_include" = "not found"; th
+       else
+         x11_libs="-L$dir"
+         case "$target" in
++          *-*-freebsd*|*-*-dragonfly*) x11_link="-L$dir -lX11";;
+           *-kfreebsd*-gnu) x11_link="-L$dir -lX11";;
+           *-*-*bsd*) x11_link="-R$dir -L$dir -lX11";;
+           *) x11_link="-L$dir -lX11";;
