@@ -68,6 +68,7 @@
     SUBDIR += chrony
     SUBDIR += citrix_ica
     SUBDIR += clamz
+    SUBDIR += cli53
     SUBDIR += cloud-init
     SUBDIR += clusterit
     SUBDIR += cnd
@@ -757,6 +758,7 @@
     SUBDIR += p5-SOAP-Data-Builder
     SUBDIR += p5-SOAP-Lite
     SUBDIR += p5-SOAP-MySOAP
+    SUBDIR += p5-SOAP-XML-Client
     SUBDIR += p5-Samba-LDAP
     SUBDIR += p5-Server-Starter
     SUBDIR += p5-Socket
