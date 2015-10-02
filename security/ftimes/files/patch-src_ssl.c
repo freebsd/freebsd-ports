@@ -8,7 +8,7 @@
    psProperties->psslCTX = SSL_CTX_new(SSLv3_client_method());
 +#else
 +  psProperties->psslCTX = SSL_CTX_new(SSLv23_client_method());
-+  SSL_CTX_set_options(psProperties->psslCTX, SSL_OP_NO_SSLv3 | SSL_OP_NO_TLSv1
++  SSL_CTX_set_options(psProperties->psslCTX, SSL_OP_NO_SSLv2 | SSL_OP_NO_TLSv1
 +#ifdef SSL_OP_NO_TLSv1_2
 +  | SSL_OP_NO_TLSv1_1 | SSL_OP_NO_TLSv1_2
 +#endif
