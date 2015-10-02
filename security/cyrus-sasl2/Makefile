@@ -1,12 +1,11 @@
 # $FreeBSD$
 
-PORTNAME=	cyrus-sasl2
+PORTNAME=	cyrus-sasl
 PORTVERSION=	2.1.26
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-sasl/ \
 		http://cyrusimap.org/releases/
-DISTNAME=	cyrus-sasl-${PORTVERSION}
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
@@ -34,6 +33,8 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--disable-gssapi \
 		--disable-krb4
 MAKE_ENV+=	INSTALL_STRIP_FLAG=${STRIP}
+
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}2
 
 CPE_VENDOR=	cmu
 
