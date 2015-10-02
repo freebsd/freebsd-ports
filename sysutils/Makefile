@@ -774,6 +774,7 @@
     SUBDIR += py-honcho
     SUBDIR += py-iowait
     SUBDIR += py-nagiosplugin
+    SUBDIR += py-pkginfo
     SUBDIR += py-ploy
     SUBDIR += py-ploy_ansible
     SUBDIR += py-ploy_ec2
