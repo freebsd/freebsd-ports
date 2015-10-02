@@ -68,7 +68,6 @@
     SUBDIR += chrony
     SUBDIR += citrix_ica
     SUBDIR += clamz
-    SUBDIR += cli53
     SUBDIR += cloud-init
     SUBDIR += clusterit
     SUBDIR += cnd
