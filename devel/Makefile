@@ -4237,6 +4237,7 @@
     SUBDIR += py-rope
     SUBDIR += py-rose
     SUBDIR += py-roxlib
+    SUBDIR += py-rq
     SUBDIR += py-rtree
     SUBDIR += py-ruledispatch
     SUBDIR += py-sanetime
