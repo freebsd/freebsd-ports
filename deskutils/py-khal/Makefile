@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	khal
-PORTVERSION=	0.4.0
+PORTVERSION=	0.6.0
 CATEGORIES=	deskutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,9 +21,18 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=3.2:${PORTSDIR}/devel/py-click \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=2.3:${PORTSDIR}/devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}configobj>=5.0.6:${PORTSDIR}/devel/py-configobj \
 		${PYTHON_PKGNAMEPREFIX}tzlocal>=1.0:${PORTSDIR}/devel/py-tzlocal \
-		${PYTHON_PKGNAMEPREFIX}vdirsyncer>=0.4.3:${PORTSDIR}/deskutils/py-vdirsyncer
+		${PYTHON_PKGNAMEPREFIX}vdirsyncer>=0.4.3:${PORTSDIR}/deskutils/py-vdirsyncer \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}pkginfo>0:${PORTSDIR}/sysutils/py-pkginfo
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+
+PLIST_FILES=	share/zsh/site-functions/__khal
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
+	${INSTALL_DATA} ${WRKSRC}/misc/__khal \
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions
 
 .include <bsd.port.mk>
