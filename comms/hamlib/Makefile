@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hamlib
-PORTVERSION=	1.2.15.3
-PORTREVISION=	4
+PORTVERSION=	3.0
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF
 
@@ -15,28 +14,28 @@ LICENSE=	LGPL20
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
 
-USES=		libtool:keepla pathfix perl5 pkgconfig python shebangfix tcl
+USES=		autoreconf libtool:keepla pathfix perl5 pkgconfig python shebangfix tcl
 SHEBANG_FILES=	bindings/perltest.pl
 USE_PERL5=	build run
 USE_GNOME=	libxml2
-USE_AUTOTOOLS=	autoconf
 USE_LDCONFIG=	yes
+# $TCL_INCLUDE_SPEC
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-perl-binding \
-		--enable-tcl-binding --with-tcl=${TCL_LIBDIR} \
+CONFIGURE_ARGS= --with-perl-binding \
+		--with-tcl-binding --with-tcl=${TCL_LIBDIR} \
 		--with-python-binding --without-rigmatrix
 PLIST_SUB=	VER=${PORTVERSION} TCL_VER=${TCL_VER}
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	${REINPLACE_CMD} -e 's|%%PYTHON_SITELIBDIR%%|${PYTHON_SITELIBDIR}|g' \
-		-e 's|%%TCL_LIBDIR%%|${TCL_LIBDIR}/hamlib|g' \
-		${WRKSRC}/bindings/Makefile.in
-	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|%%PYTHON_SITELIBDIR%%|${PYTHON_SITELIBDIR}|g' \
+		-e 's|%%TCL_LIBDIR%%|${TCL_LIBDIR}|g' \
+		${WRKSRC}/bindings/Makefile.am
+	@${REINPLACE_CMD} -e 's|%%TCLSH%%|${TCLSH}|g' \
+		${WRKSRC}/bindings/tcltest.tcl
 post-build:
 	${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' \
 		${STAGEDIR}${WRKSRC}/bindings/Hamlib-pl.mk
