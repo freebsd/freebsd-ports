@@ -285,6 +285,7 @@
     SUBDIR += freebsd-snapshot
     SUBDIR += freecolor
     SUBDIR += freedt
+    SUBDIR += freenas-dispatcher
     SUBDIR += freeipmi
     SUBDIR += freesbie
     SUBDIR += froxlor
@@ -767,6 +768,7 @@
     SUBDIR += py-drmaa
     SUBDIR += py-execnet
     SUBDIR += py-ezjailremote
+    SUBDIR += py-fnutils
     SUBDIR += py-filelike
     SUBDIR += py-glances
     SUBDIR += py-halite
