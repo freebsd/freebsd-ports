@@ -14,7 +14,7 @@
 +	    server_list[server].meth = SSLv23_client_method();
 +	    SSL_load_error_strings();
 +	    server_list[server].ctx = SSL_CTX_new(server_list[server].meth);
-+	    SSL_CTX_set_options(server_list[server].ctx, SSL_OP_NO_SSLv3 | SSL_OP_NO_SSLv2);
++	    SSL_CTX_set_options(server_list[server].ctx, SSL_OP_NO_SSLv2);
 +#endif
              CHK_NULL(server_list[server].ctx);
              server_list[server].ssl_fd = SSL_new(server_list[server].ctx);
