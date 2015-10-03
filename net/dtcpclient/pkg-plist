@@ -1,5 +1,0 @@
-man/man8/dtcpclient.8.gz
-sbin/dtcpclient
-@unexec if cmp -s %D/etc/dtcpclient.script %D/%%EXAMPLESDIR%%/dtcpclient.script; then rm -f %D/etc/dtcpclient.script; fi
-%%EXAMPLESDIR%%/dtcpclient.script
-@exec [ -f %D/etc/dtcpclient.script ] || cp %B/%f %D/etc/dtcpclient.script

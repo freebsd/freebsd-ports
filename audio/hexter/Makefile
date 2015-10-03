@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hexter
-PORTVERSION=	1.0.2
-PORTREVISION=	3
+PORTVERSION=	1.0.3
 CATEGORIES=	audio
 MASTER_SITES=	SF/dssi/${PORTNAME}/${PORTVERSION}
 
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libdssialsacompat.so:${PORTSDIR}/audio/libdssialsacompat \
 		libjack.so:${PORTSDIR}/audio/jack
 BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:${PORTSDIR}/audio/dssi
 
-USES=		gmake pkgconfig libtool
+USES=		gmake libtool pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 

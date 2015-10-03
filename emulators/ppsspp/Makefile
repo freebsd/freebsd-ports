@@ -16,7 +16,7 @@ COMMENT=	PSP emulator in C++ with dynarec JIT for x86, ARM, MIPS
 
 LICENSE=	GPLv2 # or any later version
 
-LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USE_GITHUB=	yes
@@ -31,14 +31,21 @@ GH_PROJECT+=	native:native
 
 CONFLICTS_INSTALL?=	${PORTNAME}-devel-[0-9]*
 
-USES=		compiler:c++11-lib pkgconfig
-USE_GL=		glu
+USES=		compiler:c++11-lib localbase pkgconfig
+USE_GL+=	glu
 USE_SDL=	sdl2 # joystick
 CMAKE_ARGS=	-DUSE_SYSTEM_FFMPEG=on
 QMAKE_SOURCE_PATH=	${WRKSRC}/Qt/PPSSPPQt.pro
 QMAKE_ARGS=	CONFIG+="system_ffmpeg" LREL_TOOL="${LRELEASE}"
 NINJA_VERBOSE=	yes
 NO_INSTALL=	yes # ports/202949
+
+DESKTOP_ENTRIES="PPSSPP" \
+		"" \
+		"${PORTNAME}" \
+		"${PORTNAME} %f" \
+		"Game;Emulator;" \
+		""
 
 OPTIONS_DEFAULT=QT5
 OPTIONS_SINGLE=	GUI
@@ -51,7 +58,6 @@ QT5_USE=	QT5=qmake_build,buildtools_build,linguisttools_build,gui,opengl,widgets
 SDL_USES=	cmake:outsource ninja
 SDL_BUILD_DEPENDS=	png>=1.6:${PORTSDIR}/graphics/png
 SDL_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
-SDL_LDFLAGS=	-L${LOCALBASE}/lib # ffmpeg
 SDL_VARS=	PORTDATA+="assets ${PORTNAME}"
 
 post-extract:
@@ -64,7 +70,7 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/share,${PREFIX}/share,' \
 		${WRKSRC}/UI/NativeApp.cpp
-	@${REINPLACE_CMD} -e '/find_package(Git)/d' \
+	@${REINPLACE_CMD} \
 		-e 's/"unknown"/"${GH_TAGNAME}"/' \
 		-e 's/^\(VERSION =\).*/\1 ${GH_TAGNAME}/' \
 		${WRKSRC}/git-version.cmake \
@@ -85,10 +91,10 @@ do-install-SDL-off:
 		${STAGEDIR}${PREFIX}/bin
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/debian/${PORTNAME}.desktop \
-		${STAGEDIR}${DESKTOPDIR}
+.ifndef PKGNAMESUFFIX
 	${INSTALL_MAN} ${WRKSRC}/debian/${PORTNAME}.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1
+.endif
 	(cd ${WRKSRC}/assets/unix-icons && ${COPYTREE_SHARE} \
 		"hicolor" ${STAGEDIR}${PREFIX}/share/icons)
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps

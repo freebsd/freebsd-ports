@@ -9,21 +9,16 @@ MASTER_SITES=	http://libdisorder.freshdefense.net/releases/
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Simple C library for entropy measurement
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_LDCONFIG=	yes
+BUILD_WRKSRC=	${WRKSRC}/src
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 900027
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-disorder.c
-.endif
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|' ${WRKSRC}/src/Makefile
-
-do-build:
-	cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${MAKE}
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/include/disorder.h ${STAGEDIR}${PREFIX}/include
@@ -33,4 +28,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tool/ropy ${STAGEDIR}${PREFIX}/bin
 	${LN} -sf ${PREFIX}/lib/libdisorder.so.1 ${STAGEDIR}${PREFIX}/lib/libdisorder.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

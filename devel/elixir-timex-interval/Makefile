@@ -10,6 +10,8 @@ COMMENT=	Date/time interval library for Elixir
 
 LICENSE=	APACHE20
 
+IGNORE=		does not build with Elixir 1.1
+
 USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	atabary

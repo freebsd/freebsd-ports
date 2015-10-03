@@ -1,4 +1,2 @@
 bin/cgichk
-@unexec if cmp -s %D/etc/cgichk.cfg %D/etc/cgichk.cfg.sample; then rm -f %D/etc/cgichk.cfg; fi
-etc/cgichk.cfg.sample
-@exec if [ ! -f %B/cgichk.cfg ]; then cp -p %B/%f %B/cgichk.cfg; fi
+@sample etc/cgichk.cfg.sample

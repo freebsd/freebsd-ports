@@ -7,9 +7,11 @@ PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 
-MAINTAINER=	fluffy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Barcode library for KDE
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libdmtx.so:${PORTSDIR}/graphics/libdmtx \
 		libqrencode.so:${PORTSDIR}/graphics/libqrencode

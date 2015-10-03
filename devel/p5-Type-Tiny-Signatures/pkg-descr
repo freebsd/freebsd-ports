@@ -1,0 +1,8 @@
+This module uses Function::Parameters to extends Perl with keywords that
+let you define methods and functions with parameter lists which can be
+validated using Type::Tiny type constraints. The type constraints can be
+provided by the Type::Tiny standard library, Types::Standard, or any
+supported user-defined type library which can be a Moose, MooseX::Type,
+MouseX::Type, or Type::Library library.
+
+WWW: http://search.cpan.org/dist/Type-Tiny-Signatures/

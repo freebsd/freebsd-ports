@@ -1,5 +1,5 @@
---- ./hupnp/src/devicehosting/devicehost/hpresence_announcer_p.h.orig	2012-01-24 10:41:39.103825710 +0100
-+++ ./hupnp/src/devicehosting/devicehost/hpresence_announcer_p.h	2012-01-24 10:42:13.739148738 +0100
+--- hupnp/src/devicehosting/devicehost/hpresence_announcer_p.h.orig	2011-03-27 20:42:32 UTC
++++ hupnp/src/devicehosting/devicehost/hpresence_announcer_p.h
 @@ -31,6 +31,7 @@
  //
  

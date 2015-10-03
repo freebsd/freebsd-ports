@@ -17,9 +17,13 @@ lib/elixir/lib/hex/ebin/Elixir.Hex.RemoteConverger.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Resolver.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.SCM.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Shell.beam
+lib/elixir/lib/hex/ebin/Elixir.Hex.State.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Tar.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Utils.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.beam
+lib/elixir/lib/hex/ebin/Elixir.Mix.Hex.Build.beam
+lib/elixir/lib/hex/ebin/Elixir.Mix.Hex.Utils.beam
+lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.Build.beam
 lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.Config.beam
 lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.Docs.beam
 lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.Info.beam
@@ -27,9 +31,9 @@ lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.Key.beam
 lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.Outdated.beam
 lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.Owner.beam
 lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.Publish.beam
+lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.Registry.beam
 lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.Search.beam
 lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.User.beam
-lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.Utils.beam
 lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.beam
 lib/elixir/lib/hex/ebin/hex.app
 lib/elixir/lib/hex/lib/hex.ex
@@ -52,9 +56,13 @@ lib/elixir/lib/hex/lib/hex/remote_converger.ex
 lib/elixir/lib/hex/lib/hex/resolver.ex
 lib/elixir/lib/hex/lib/hex/scm.ex
 lib/elixir/lib/hex/lib/hex/shell.ex
+lib/elixir/lib/hex/lib/hex/state.ex
 lib/elixir/lib/hex/lib/hex/tar.ex
 lib/elixir/lib/hex/lib/hex/utils.ex
+lib/elixir/lib/hex/lib/mix/hex/build.ex
+lib/elixir/lib/hex/lib/mix/hex/utils.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex.ex
+lib/elixir/lib/hex/lib/mix/tasks/hex/build.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex/config.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex/docs.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex/info.ex
@@ -62,7 +70,7 @@ lib/elixir/lib/hex/lib/mix/tasks/hex/key.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex/outdated.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex/owner.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex/publish.ex
+lib/elixir/lib/hex/lib/mix/tasks/hex/registry.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex/search.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex/user.ex
-lib/elixir/lib/hex/lib/mix/tasks/hex/utils.ex
 %%PORTDOCS%%%%DOCSDIR%%/README.md

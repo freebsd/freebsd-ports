@@ -32,11 +32,6 @@ USE_RC_SUBR=	spiped
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-.if ${OSVERSION} < 900503
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-proto_proto__conn.c
-.endif
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}

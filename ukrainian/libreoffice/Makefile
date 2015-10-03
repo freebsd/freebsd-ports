@@ -1,9 +1,9 @@
 # $FreeBSD$
 
+CATEGORIES=	ukrainian
 LO_I18N=	uk
 LO_HAS_HELPPACK=	yes
-CATEGORIES=	ukrainian editors
 
-.include "${.CURDIR}/../../editors/libreoffice/Makefile.common"
+.include "${.CURDIR}/../../editors/libreoffice/Makefile.i18n"
 
 .include <bsd.port.mk>

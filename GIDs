@@ -95,6 +95,7 @@ trircd:*:154:
 xorp:*:155:
 monetdb:*:156:
 barman:*:157:
+pootle:*:158:
 nocat:*:159:
 sfs:*:171:
 agk:*:172:
@@ -237,6 +238,7 @@ tcpcryptd:*:841:
 munin:*:842:
 dahdi:*:843:asterisk
 subsonic:*:844:
+sogod:*:846:
 fossy:*:901:www
 scanlogd:*:902:
 _ocserv:*:903:
@@ -279,6 +281,7 @@ teamspeak:*:942:
 dnetfold:*:943:
 bbs:*:944:
 dbxml:*:945:
+mediatomb:*:946:
 gnokii:*:947:
 dnrd:*:948:
 _lldpd:*:949:

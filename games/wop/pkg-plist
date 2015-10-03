@@ -1,4 +1,2 @@
 bin/wop
-@unexec if cmp -s %D/etc/woprc %D/etc/woprc.sample; then rm -f %D/etc/woprc; fi
-etc/woprc.sample
-@exec if [ ! -f  %D/etc/woprc ]; then cp -p %D/etc/woprc.sample %D/etc/woprc; fi
+@sample etc/woprc.sample

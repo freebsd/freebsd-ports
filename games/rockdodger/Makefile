@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rockdodger
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	games
 MASTER_SITES=	https://bitbucket.org/rpkrawczyk/rockdodger/downloads/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/:addons

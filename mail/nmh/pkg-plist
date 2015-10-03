@@ -47,93 +47,35 @@ bin/sortm
 bin/unseen
 bin/whatnow
 bin/whom
-@unexec if cmp -s %D/etc/nmh/MailAliases %D/etc/nmh/MailAliases-dist; then rm -f %D/etc/nmh/MailAliases; else echo 'Local changes: %D/etc/nmh/MailAliases (not removed)' >&2; fi
-etc/nmh/MailAliases-dist
-@exec [ -f %D/etc/nmh/MailAliases ] || cp %D/etc/nmh/MailAliases-dist %D/etc/nmh/MailAliases
-@unexec if cmp -s %D/etc/nmh/components %D/etc/nmh/components-dist; then rm -f %D/etc/nmh/components; else echo 'Local changes: %D/etc/nmh/components (not removed)' >&2; fi
-etc/nmh/components-dist
-@exec [ -f %D/etc/nmh/components ] || cp %D/etc/nmh/components-dist %D/etc/nmh/components
-@unexec if cmp -s %D/etc/nmh/digestcomps %D/etc/nmh/digestcomps-dist; then rm -f %D/etc/nmh/digestcomps; else echo 'Local changes: %D/etc/nmh/digestcomps (not removed)' >&2; fi
-etc/nmh/digestcomps-dist
-@exec [ -f %D/etc/nmh/digestcomps ] || cp %D/etc/nmh/digestcomps-dist %D/etc/nmh/digestcomps
-@unexec if cmp -s %D/etc/nmh/distcomps %D/etc/nmh/distcomps-dist; then rm -f %D/etc/nmh/distcomps; else echo 'Local changes: %D/etc/nmh/distcomps (not removed)' >&2; fi
-etc/nmh/distcomps-dist
-@exec [ -f %D/etc/nmh/distcomps ] || cp %D/etc/nmh/distcomps-dist %D/etc/nmh/distcomps
-@unexec if cmp -s %D/etc/nmh/forwcomps %D/etc/nmh/forwcomps-dist; then rm -f %D/etc/nmh/forwcomps; else echo 'Local changes: %D/etc/nmh/forwcomps (not removed)' >&2; fi
-etc/nmh/forwcomps-dist
-@exec [ -f %D/etc/nmh/forwcomps ] || cp %D/etc/nmh/forwcomps-dist %D/etc/nmh/forwcomps
-@unexec if cmp -s %D/etc/nmh/mhl.body %D/etc/nmh/mhl.body-dist; then rm -f %D/etc/nmh/mhl.body; else echo 'Local changes: %D/etc/nmh/mhl.body (not removed)' >&2; fi
-etc/nmh/mhl.body-dist
-@exec [ -f %D/etc/nmh/mhl.body ] || cp %D/etc/nmh/mhl.body-dist %D/etc/nmh/mhl.body
-@unexec if cmp -s %D/etc/nmh/mhl.digest %D/etc/nmh/mhl.digest-dist; then rm -f %D/etc/nmh/mhl.digest; else echo 'Local changes: %D/etc/nmh/mhl.digest (not removed)' >&2; fi
-etc/nmh/mhl.digest-dist
-@exec [ -f %D/etc/nmh/mhl.digest ] || cp %D/etc/nmh/mhl.digest-dist %D/etc/nmh/mhl.digest
-@unexec if cmp -s %D/etc/nmh/mhl.format %D/etc/nmh/mhl.format-dist; then rm -f %D/etc/nmh/mhl.format; else echo 'Local changes: %D/etc/nmh/mhl.format (not removed)' >&2; fi
-etc/nmh/mhl.format-dist
-@exec [ -f %D/etc/nmh/mhl.format ] || cp %D/etc/nmh/mhl.format-dist %D/etc/nmh/mhl.format
-@unexec if cmp -s %D/etc/nmh/mhl.forward %D/etc/nmh/mhl.forward-dist; then rm -f %D/etc/nmh/mhl.forward; else echo 'Local changes: %D/etc/nmh/mhl.forward (not removed)' >&2; fi
-etc/nmh/mhl.forward-dist
-@exec [ -f %D/etc/nmh/mhl.forward ] || cp %D/etc/nmh/mhl.forward-dist %D/etc/nmh/mhl.forward
-@unexec if cmp -s %D/etc/nmh/mhl.headers %D/etc/nmh/mhl.headers-dist; then rm -f %D/etc/nmh/mhl.headers; else echo 'Local changes: %D/etc/nmh/mhl.headers (not removed)' >&2; fi
-etc/nmh/mhl.headers-dist
-@exec [ -f %D/etc/nmh/mhl.headers ] || cp %D/etc/nmh/mhl.headers-dist %D/etc/nmh/mhl.headers
-@unexec if cmp -s %D/etc/nmh/mhl.reply %D/etc/nmh/mhl.reply-dist; then rm -f %D/etc/nmh/mhl.reply; else echo 'Local changes: %D/etc/nmh/mhl.reply (not removed)' >&2; fi
-etc/nmh/mhl.reply-dist
-@exec [ -f %D/etc/nmh/mhl.reply ] || cp %D/etc/nmh/mhl.reply-dist %D/etc/nmh/mhl.reply
-@unexec if cmp -s %D/etc/nmh/mhn.defaults %D/etc/nmh/mhn.defaults-dist; then rm -f %D/etc/nmh/mhn.defaults; else echo 'Local changes: %D/etc/nmh/mhn.defaults (not removed)' >&2; fi
-etc/nmh/mhn.defaults-dist
-@exec [ -f %D/etc/nmh/mhn.defaults ] || cp %D/etc/nmh/mhn.defaults-dist %D/etc/nmh/mhn.defaults
-@unexec if cmp -s %D/etc/nmh/mhshow.marker %D/etc/nmh/mhshow.marker-dist; then rm -f %D/etc/nmh/mhshow.marker; else echo 'Local changes: %D/etc/nmh/mhshow.marker (not removed)' >&2; fi
-etc/nmh/mhshow.marker-dist
-@exec [ -f %D/etc/nmh/mhshow.marker ] || cp %D/etc/nmh/mhshow.marker-dist %D/etc/nmh/mhshow.marker
-@unexec if cmp -s %D/etc/nmh/mts.conf %D/etc/nmh/mts.conf-dist; then rm -f %D/etc/nmh/mts.conf; else echo 'Local changes: %D/etc/nmh/mts.conf (not removed)' >&2; fi
-etc/nmh/mts.conf-dist
-@exec [ -f %D/etc/nmh/mts.conf ] || cp %D/etc/nmh/mts.conf-dist %D/etc/nmh/mts.conf
-@unexec if cmp -s %D/etc/nmh/rcvdistcomps %D/etc/nmh/rcvdistcomps-dist; then rm -f %D/etc/nmh/rcvdistcomps; else echo 'Local changes: %D/etc/nmh/rcvdistcomps (not removed)' >&2; fi
-etc/nmh/rcvdistcomps-dist
-@exec [ -f %D/etc/nmh/rcvdistcomps ] || cp %D/etc/nmh/rcvdistcomps-dist %D/etc/nmh/rcvdistcomps
-@unexec if cmp -s %D/etc/nmh/rcvdistcomps.outbox %D/etc/nmh/rcvdistcomps.outbox-dist; then rm -f %D/etc/nmh/rcvdistcomps.outbox; else echo 'Local changes: %D/etc/nmh/rcvdistcomps.outbox (not removed)' >&2; fi
-etc/nmh/rcvdistcomps.outbox-dist
-@exec [ -f %D/etc/nmh/rcvdistcomps.outbox ] || cp %D/etc/nmh/rcvdistcomps.outbox-dist %D/etc/nmh/rcvdistcomps.outbox
-@unexec if cmp -s %D/etc/nmh/replcomps %D/etc/nmh/replcomps-dist; then rm -f %D/etc/nmh/replcomps; else echo 'Local changes: %D/etc/nmh/replcomps (not removed)' >&2; fi
-etc/nmh/replcomps-dist
-@exec [ -f %D/etc/nmh/replcomps ] || cp %D/etc/nmh/replcomps-dist %D/etc/nmh/replcomps
-@unexec if cmp -s %D/etc/nmh/replgroupcomps %D/etc/nmh/replgroupcomps-dist; then rm -f %D/etc/nmh/replgroupcomps; else echo 'Local changes: %D/etc/nmh/replgroupcomps (not removed)' >&2; fi
-etc/nmh/replgroupcomps-dist
-@exec [ -f %D/etc/nmh/replgroupcomps ] || cp %D/etc/nmh/replgroupcomps-dist %D/etc/nmh/replgroupcomps
-@unexec if cmp -s %D/etc/nmh/scan.MMDDYY %D/etc/nmh/scan.MMDDYY-dist; then rm -f %D/etc/nmh/scan.MMDDYY; else echo 'Local changes: %D/etc/nmh/scan.MMDDYY (not removed)' >&2; fi
-etc/nmh/scan.MMDDYY-dist
-@exec [ -f %D/etc/nmh/scan.MMDDYY ] || cp %D/etc/nmh/scan.MMDDYY-dist %D/etc/nmh/scan.MMDDYY
-@unexec if cmp -s %D/etc/nmh/scan.YYYYMMDD %D/etc/nmh/scan.YYYYMMDD-dist; then rm -f %D/etc/nmh/scan.YYYYMMDD; else echo 'Local changes: %D/etc/nmh/scan.YYYYMMDD (not removed)' >&2; fi
-etc/nmh/scan.YYYYMMDD-dist
-@exec [ -f %D/etc/nmh/scan.YYYYMMDD ] || cp %D/etc/nmh/scan.YYYYMMDD-dist %D/etc/nmh/scan.YYYYMMDD
-@unexec if cmp -s %D/etc/nmh/scan.curses %D/etc/nmh/scan.curses-dist; then rm -f %D/etc/nmh/scan.curses; else echo 'Local changes: %D/etc/nmh/scan.curses (not removed)' >&2; fi
-etc/nmh/scan.curses-dist
-@exec [ -f %D/etc/nmh/scan.curses ] || cp %D/etc/nmh/scan.curses-dist %D/etc/nmh/scan.curses
-@unexec if cmp -s %D/etc/nmh/scan.default %D/etc/nmh/scan.default-dist; then rm -f %D/etc/nmh/scan.default; else echo 'Local changes: %D/etc/nmh/scan.default (not removed)' >&2; fi
-etc/nmh/scan.default-dist
-@exec [ -f %D/etc/nmh/scan.default ] || cp %D/etc/nmh/scan.default-dist %D/etc/nmh/scan.default
-@unexec if cmp -s %D/etc/nmh/scan.highlighted %D/etc/nmh/scan.highlighted-dist; then rm -f %D/etc/nmh/scan.highlighted; else echo 'Local changes: %D/etc/nmh/scan.highlighted (not removed)' >&2; fi
-etc/nmh/scan.highlighted-dist
-@exec [ -f %D/etc/nmh/scan.highlighted ] || cp %D/etc/nmh/scan.highlighted-dist %D/etc/nmh/scan.highlighted
-@unexec if cmp -s %D/etc/nmh/scan.mailx %D/etc/nmh/scan.mailx-dist; then rm -f %D/etc/nmh/scan.mailx; else echo 'Local changes: %D/etc/nmh/scan.mailx (not removed)' >&2; fi
-etc/nmh/scan.mailx-dist
-@exec [ -f %D/etc/nmh/scan.mailx ] || cp %D/etc/nmh/scan.mailx-dist %D/etc/nmh/scan.mailx
-@unexec if cmp -s %D/etc/nmh/scan.nomime %D/etc/nmh/scan.nomime-dist; then rm -f %D/etc/nmh/scan.nomime; else echo 'Local changes: %D/etc/nmh/scan.nomime (not removed)' >&2; fi
-etc/nmh/scan.nomime-dist
-@exec [ -f %D/etc/nmh/scan.nomime ] || cp %D/etc/nmh/scan.nomime-dist %D/etc/nmh/scan.nomime
-@unexec if cmp -s %D/etc/nmh/scan.size %D/etc/nmh/scan.size-dist; then rm -f %D/etc/nmh/scan.size; else echo 'Local changes: %D/etc/nmh/scan.size (not removed)' >&2; fi
-etc/nmh/scan.size-dist
-@exec [ -f %D/etc/nmh/scan.size ] || cp %D/etc/nmh/scan.size-dist %D/etc/nmh/scan.size
-@unexec if cmp -s %D/etc/nmh/scan.time %D/etc/nmh/scan.time-dist; then rm -f %D/etc/nmh/scan.time; else echo 'Local changes: %D/etc/nmh/scan.time (not removed)' >&2; fi
-etc/nmh/scan.time-dist
-@exec [ -f %D/etc/nmh/scan.time ] || cp %D/etc/nmh/scan.time-dist %D/etc/nmh/scan.time
-@unexec if cmp -s %D/etc/nmh/scan.timely %D/etc/nmh/scan.timely-dist; then rm -f %D/etc/nmh/scan.timely; else echo 'Local changes: %D/etc/nmh/scan.timely (not removed)' >&2; fi
-etc/nmh/scan.timely-dist
-@exec [ -f %D/etc/nmh/scan.timely ] || cp %D/etc/nmh/scan.timely-dist %D/etc/nmh/scan.timely
-@unexec if cmp -s %D/etc/nmh/scan.unseen %D/etc/nmh/scan.unseen-dist; then rm -f %D/etc/nmh/scan.unseen; else echo 'Local changes: %D/etc/nmh/scan.unseen (not removed)' >&2; fi
-etc/nmh/scan.unseen-dist
-@exec [ -f %D/etc/nmh/scan.unseen ] || cp %D/etc/nmh/scan.unseen-dist %D/etc/nmh/scan.unseen
+@sample etc/nmh/MailAliases-dist etc/nmh/MailAliases
+@sample etc/nmh/components-dist etc/nmh/components
+@sample etc/nmh/digestcomps-dist etc/nmh/digestcomps
+@sample etc/nmh/distcomps-dist etc/nmh/distcomps
+@sample etc/nmh/forwcomps-dist etc/nmh/forwcomps
+@sample etc/nmh/mhl.body-dist etc/nmh/mhl.body
+@sample etc/nmh/mhl.digest-dist etc/nmh/mhl.digest
+@sample etc/nmh/mhl.format-dist etc/nmh/mhl.format
+@sample etc/nmh/mhl.forward-dist etc/nmh/mhl.forward
+@sample etc/nmh/mhl.headers-dist etc/nmh/mhl.headers
+@sample etc/nmh/mhl.reply-dist etc/nmh/mhl.reply
+@sample etc/nmh/mhn.defaults-dist etc/nmh/mhn.defaults
+@sample etc/nmh/mhshow.marker-dist etc/nmh/mhshow.marker
+@sample etc/nmh/mts.conf-dist etc/nmh/mts.conf
+@sample etc/nmh/rcvdistcomps-dist etc/nmh/rcvdistcomps
+@sample etc/nmh/rcvdistcomps.outbox-dist etc/nmh/rcvdistcomps.outbox
+@sample etc/nmh/replcomps-dist etc/nmh/replcomps
+@sample etc/nmh/replgroupcomps-dist etc/nmh/replgroupcomps
+@sample etc/nmh/scan.MMDDYY-dist etc/nmh/scan.MMDDYY
+@sample etc/nmh/scan.YYYYMMDD-dist etc/nmh/scan.YYYYMMDD
+@sample etc/nmh/scan.curses-dist etc/nmh/scan.curses
+@sample etc/nmh/scan.default-dist etc/nmh/scan.default
+@sample etc/nmh/scan.highlighted-dist etc/nmh/scan.highlighted
+@sample etc/nmh/scan.mailx-dist etc/nmh/scan.mailx
+@sample etc/nmh/scan.nomime-dist etc/nmh/scan.nomime
+@sample etc/nmh/scan.size-dist etc/nmh/scan.size
+@sample etc/nmh/scan.time-dist etc/nmh/scan.time
+@sample etc/nmh/scan.timely-dist etc/nmh/scan.timely
+@sample etc/nmh/scan.unseen-dist etc/nmh/scan.unseen
 libexec/nmh/ap
 libexec/nmh/conflict
 libexec/nmh/dp
@@ -244,7 +186,3 @@ man/man8/post.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/contrib/ml
 %%PORTDOCS%%%%DOCSDIR%%/contrib/replyfilter
 %%PORTDOCS%%%%DOCSDIR%%/contrib/vpick
-@dirrmtry etc/nmh
-@dirrm libexec/nmh
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

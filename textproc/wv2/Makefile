@@ -7,18 +7,18 @@ PORTREVISION=	6
 CATEGORIES=	textproc
 MASTER_SITES=	SF/wvware/
 
-MAINTAINER=	fluffy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library providing routines to access Microsoft Word files
+
+LICENSE=	LGPL20
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 USE_GNOME=	libgsf
 GNU_CONFIGURE=	yes
-USES=		cmake:outsource iconv pkgconfig libtool tar:bzip2
+USES=		cmake:outsource iconv libtool pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|LIBGSF_INCLUDE_DIR|PC_LIBGSF_INCLUDE_DIRS|g' \
-		-e 's|LIBGSF_LIBRARIES|PC_LIBGSF_LIBRARIES|g' \
-		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|glib/giochannel.h|glib.h|g' \
 		${WRKSRC}/src/olestream.h
 

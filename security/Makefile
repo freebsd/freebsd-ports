@@ -112,7 +112,9 @@
     SUBDIR += easy-rsa
     SUBDIR += easypg
     SUBDIR += elixir-comeonin
+    SUBDIR += elixir-jose
     SUBDIR += engine_pkcs11
+    SUBDIR += erlang-jose
     SUBDIR += erlang-p1tls
     SUBDIR += expiretable
     SUBDIR += f-prot
@@ -171,6 +173,7 @@
     SUBDIR += gsasl
     SUBDIR += gsfv
     SUBDIR += gss
+    SUBDIR += gstreamer1-plugins-dtls
     SUBDIR += gtk-knocker
     SUBDIR += gtkpasman
     SUBDIR += gwee
@@ -785,6 +788,7 @@
     SUBDIR += py-Products.PluggableAuthService
     SUBDIR += py-RestrictedPython
     SUBDIR += py-SecretStorage
+    SUBDIR += py-acme
     SUBDIR += py-artifacts
     SUBDIR += py-bcrypt
     SUBDIR += py-borg.localrole

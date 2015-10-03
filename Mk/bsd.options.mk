@@ -162,6 +162,7 @@ _OPTIONS_TARGETS=	fetch:300:pre fetch:500:do fetch:700:post \
 			configure:300:pre configure:500:do configure:700:post \
 			build:300:pre build:500:do build:700:post \
 			install:300:pre install:500:do install:700:post  \
+			test:300:pre test:500:do test:700:post  \
 			package:300:pre package:500:do package:700:post \
 			stage:800:post
 
@@ -475,12 +476,12 @@ USE_${_u:tu}+=	${option:C/.*=//g:C/,/ /g}
 .      endfor
 .    endif
 .    if defined(${opt}_VARS)
-.      for var in ${${opt}_VARS}
-_u=		${var:C/=.*//}
+.      for var in ${${opt}_VARS:C/=.*//:O:u}
+_u=			${var}
 .        if ${_u:M*+}
-${_u:C/.$//:tu}+=	${var:C/[^+]*\+=//:C/^"(.*)"$$/\1/}
+${_u:C/.$//:tu}+=	${${opt}_VARS:M${var}=*:C/[^+]*\+=//:C/^"(.*)"$$/\1/}
 .        else
-${_u:tu}=	${var:C/[^=]*=//:C/^"(.*)"$$/\1/}
+${_u:tu}=		${${opt}_VARS:M${var}=*:C/[^=]*=//:C/^"(.*)"$$/\1/}
 .        endif
 .      endfor
 .    endif
@@ -523,12 +524,12 @@ USE_${_u:tu}+=	${option:C/.*=//g:C/,/ /g}
 .      endfor
 .    endif
 .    if defined(${opt}_VARS_OFF)
-.      for var in ${${opt}_VARS_OFF}
-_u=		${var:C/=.*//}
+.      for var in ${${opt}_VARS_OFF:C/=.*//:O:u}
+_u=			${var}
 .        if ${_u:M*+}
-${_u:C/.$//:tu}+=	${var:C/[^+]*\+=//:C/^"(.*)"$$/\1/}
+${_u:C/.$//:tu}+=	${${opt}_VARS_OFF:M${var}=*:C/[^+]*\+=//:C/^"(.*)"$$/\1/}
 .        else
-${_u:tu}=	${var:C/[^=]*=//:C/^"(.*)"$$/\1/}
+${_u:tu}=		${${opt}_VARS_OFF:M${var}=*:C/[^=]*=//:C/^"(.*)"$$/\1/}
 .        endif
 .      endfor
 .    endif

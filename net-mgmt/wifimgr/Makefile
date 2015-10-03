@@ -11,31 +11,22 @@ MASTER_SITES=	http://opal.com/freebsd/ports/net-mgmt/wifimgr/ \
 MAINTAINER=	fbsd@opal.com
 COMMENT=	WiFi Networks Manager
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USES=		desktop-file-utils pkgconfig tar:bzip2
 USE_XORG=	x11
 USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 901504
-MAKE_ENV+=	INSTALL="install -U"
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext pkgconfig
-PLIST_SUB+=	NLS=""
-.else
-CFLAGS+=	-DWITHOUT_NLS
-PLIST_SUB+=	NLS="@comment "
-MAKE_ENV+=	WITHOUT_NLS=${WITHOUT_NLS}
-.endif
+NLS_USES=	gettext pkgconfig
+NLS_CFLAGS_OFF=	-DWITHOUT_NLS
+NLS_MAKE_ENV_OFF=	WITHOUT_NLS=yes
 
 post-patch:
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 901504
 	@${REINPLACE_CMD} -e 's/-o root -g wheel//' ${WRKSRC}/src/Makefile
-.endif
 
 .include <bsd.port.mk>

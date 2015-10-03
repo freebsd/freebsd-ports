@@ -1,11 +1,24 @@
---- ./build.xml	
-+++ ./build.xml	
-@@ -44,6 +44,7 @@ 
+--- build.xml.orig	2015-01-28 10:02:16 UTC
++++ build.xml
+@@ -22,13 +22,12 @@
+ 
+ 		<javac srcdir="${basedir}" destdir="${output}"
+ 					debuglevel="lines,source"
++                                        encoding="UTF-8"
+ 					source="1.6"
+ 					target="1.6">
+ 			<compilerarg line="-Xlint:none"/>
+ 		</javac>
+ 
+-		<delete file="${basedir}/META-INF/MANIFEST.MF" failonerror="false"/>
+-		<copy tofile="${basedir}/META-INF/MANIFEST.MF" file="${basedir}/scripts/binary/META-INF/MANIFEST.MF"/>
+ 		<zip destfile="${basedir}/${jar_file}">
+ 			<fileset dir="${output}" />
  			<fileset dir="${basedir}">
- 				<include name="about.html"/>
- 				<include name="**/*.rsc"/>
-+				<include name="**/readableNames.props"/>
- 				<include name="META-INF/**"/>
- 				<include name="**/*.properties"/>
- 				<exclude name="META-INF/eclipse.inf"/>
-
+@@ -43,4 +42,4 @@
+ 		</zip>
+ 		<delete dir="${output}" />
+ 	</target>
+-</project>
+\ No newline at end of file
++</project>

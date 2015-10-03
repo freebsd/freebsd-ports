@@ -11,7 +11,6 @@ MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/c-news/ \
 		ftp://ftp.dinoex.org/pub/c-news/ \
 		ftp://ftp.dinoex.org/pub/c-news/:pgp
 DISTNAME=	c-news
-EXTRACT_SUFX=	.tar.Z
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		pgpverify-1.12:pgp
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -38,6 +37,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 MAKE_JOBS_UNSAFE=	yes
 
+USES=		tar:Z
 USE_GCC=	any
 
 DIST_SUBDIR=	${DISTNAME}

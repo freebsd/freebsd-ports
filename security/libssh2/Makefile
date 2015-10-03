@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libssh2
-PORTVERSION=	1.4.3
-PORTREVISION=	6
+PORTVERSION=	1.6.0
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.libssh2.org/download/ \
@@ -47,5 +47,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/LIBSREQUIRED=libssl,libcrypto/LIBS="$$LIBS -lssl -lcrypto"/' \
 		${WRKSRC}/configure
 .endif
+
+post-build:
+	@${REINPLACE_CMD} -E -e '/Requires.private:/{s/[[:<:]]zlib[[:>:]]//;s/,,/,/;s/ ,/ /;s/,$$//;}' \
+		${WRKSRC}/libssh2.pc
 
 .include <bsd.port.post.mk>

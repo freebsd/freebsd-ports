@@ -86,7 +86,6 @@ do-install:
 	-@${MKDIR} ${STAGEDIR}${PREFIX}/lib/oss/include/sys 2>/dev/null
 	${INSTALL_DATA} ${PROTO_OSSLIBDIR}/include/sys/soundcard.h \
 	    ${STAGEDIR}${PREFIX}/lib/oss/include/sys/
-	-@${MKDIR} ${STAGEDIR}${PREFIX}/lib/oss/logs 2>/dev/null
 	${INSTALL_KLD} ${PROTO_OSSLIBDIR}/modules/*.ko ${STAGEDIR}${KMODDIR}
 	${INSTALL_MAN} ${PROTO_MANDIR}/man1/*.1.gz \
 	    ${STAGEDIR}${PREFIX}/man/man1/

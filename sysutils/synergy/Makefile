@@ -31,6 +31,8 @@ PORTEXAMPLES=	synergy.conf.example synergy.conf.example-basic \
 
 OPTIONS_DEFINE=	EXAMPLES
 
+BROKEN_sparc64=	cannot build: C++ code errors
+
 do-install:
 .for f in synergyc synergyd synergys
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${STAGEDIR}${PREFIX}/bin

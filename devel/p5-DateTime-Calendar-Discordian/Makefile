@@ -15,6 +15,7 @@ RUN_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-Locale>=0:${PORTSDIR}/devel/p5-DateTime-Locale \
 		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

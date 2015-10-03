@@ -2,7 +2,7 @@
 
 PORTNAME=	ipamjm
 PORTVERSION=	00301
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://dl.mojikiban.ipa.go.jp/IPAmjMincho/
 PKGNAMEPREFIX=	ja-font-
@@ -18,6 +18,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		fonts:fc zip
 FONTNAME=	OTF
+NO_ARCH=	yes
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install

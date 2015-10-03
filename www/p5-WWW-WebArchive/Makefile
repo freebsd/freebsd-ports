@@ -19,6 +19,7 @@ BUILD_DEPENDS=	p5-App-Options>=0:${PORTSDIR}/devel/p5-App-Options \
 		p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

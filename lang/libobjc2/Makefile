@@ -16,6 +16,7 @@ SSP_UNSAFE=	yes
 
 USES=		cmake objc:compiler
 BROKEN_powerpc=		Does not compile on powerpc: Unsupported relocation type 10
+BROKEN_sparc64=		Does not compile on sparc64: Cannot configure clang properly
 
 .include <bsd.port.options.mk>
 
@@ -45,6 +46,5 @@ post-install:
 post-install:
 	${LN} -sf libobjc.so.${SHLIB_MAJOR}.${SHLIB_MINOR} ${STAGEDIR}${PREFIX}/lib/libobjc.so.${SHLIB_MAJOR}
 .endif
-
 
 .include <bsd.port.mk>

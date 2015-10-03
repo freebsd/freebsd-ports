@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# $FreeBSD: $
+# $FreeBSD$
 #
 # PROVIDE: dnscrypt_proxy
-# REQUIRE: SERVERS cleanvar
+# REQUIRE: SERVERS cleanvar ldconfig
 # BEFORE: named local_unbound unbound
 # KEYWORD: shutdown
 #

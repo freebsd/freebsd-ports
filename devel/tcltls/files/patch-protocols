@@ -69,21 +69,6 @@
 +    ;
      int proto = 0;
      int verify = 0, require = 0, request = 1;
-@@ -1029,9 +1029,9 @@
-     State *statePtr;
-     int proto;
--    char *key;
--    char *cert;
--    char *CAdir;
--    char *CAfile;
--    char *ciphers;
-+    const char *key;
-+    const char *cert;
-+    const char *CAdir;
-+    const char *CAfile;
-+    const char *ciphers;
- {
-     Tcl_Interp *interp = statePtr->interp;
 @@ -1050,5 +1050,5 @@
  #if defined(NO_SSL2)
      if (ENABLED(proto, TLS_PROTO_SSL2)) {

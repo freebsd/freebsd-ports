@@ -6,6 +6,15 @@ lib/elixir/lib/calecto/ebin/Elixir.Calecto.NaiveDateTime.beam
 lib/elixir/lib/calecto/ebin/Elixir.Calecto.Time.beam
 lib/elixir/lib/calecto/ebin/Elixir.Calecto.Utils.beam
 lib/elixir/lib/calecto/ebin/Elixir.Calecto.beam
+lib/elixir/lib/calecto/ebin/Elixir.Calendar.ContainsDate.Calecto.Date.beam
+lib/elixir/lib/calecto/ebin/Elixir.Calendar.ContainsDate.Calecto.DateTimeUTC.beam
+lib/elixir/lib/calecto/ebin/Elixir.Calendar.ContainsDate.Calecto.NaiveDateTime.beam
+lib/elixir/lib/calecto/ebin/Elixir.Calendar.ContainsDateTime.Calecto.DateTimeUTC.beam
+lib/elixir/lib/calecto/ebin/Elixir.Calendar.ContainsNaiveDateTime.Calecto.DateTimeUTC.beam
+lib/elixir/lib/calecto/ebin/Elixir.Calendar.ContainsNaiveDateTime.Calecto.NaiveDateTime.beam
+lib/elixir/lib/calecto/ebin/Elixir.Calendar.ContainsTime.Calecto.DateTimeUTC.beam
+lib/elixir/lib/calecto/ebin/Elixir.Calendar.ContainsTime.Calecto.NaiveDateTime.beam
+lib/elixir/lib/calecto/ebin/Elixir.Calendar.ContainsTime.Calecto.Time.beam
 lib/elixir/lib/calecto/ebin/Elixir.Mix.Tasks.Calecto.AddTypeMigration.beam
 lib/elixir/lib/calecto/ebin/calecto.app
 lib/elixir/lib/calecto/lib/calecto.ex

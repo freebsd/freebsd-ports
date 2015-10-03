@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_SITELIBDIR}/gtk-2.0/vtemodule.so:${PORTSDIR}/x11-toolkits/py-vte
 
 USE_GNOME=	pygtk2 gnomedocutils libxslt glib20 intltool
-USES=		gettext python tar:bzip2 waf
+USES=		gettext python tar:bzip2 waf desktop-file-utils
 INSTALLS_ICONS=	yes
 
 B64DECODE?=	/usr/bin/b64decode

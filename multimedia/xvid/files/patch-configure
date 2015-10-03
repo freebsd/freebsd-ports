@@ -1,8 +1,8 @@
---- configure.orig	Mon Aug 11 17:59:21 2003
-+++ configure	Mon Aug 11 17:59:37 2003
-@@ -3660,7 +3660,7 @@
- 	echo "$as_me:$LINENO: result: -Wl,-soname,libxvidcore.so -shared -lc -lm" >&5
- echo "${ECHO_T}-Wl,-soname,libxvidcore.so -shared -lc -lm" >&6
+--- configure.orig	2011-05-23 10:22:01 UTC
++++ configure
+@@ -4332,7 +4332,7 @@ $as_echo "ok" >&6; }
+ 	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: ok" >&5
+ $as_echo "ok" >&6; }
  	STATIC_LIB="libxvidcore.\$(STATIC_EXTENSION)"
 -	SHARED_LIB="libxvidcore.\$(SHARED_EXTENSION).\$(API_MAJOR).\$(API_MINOR)"
 +	SHARED_LIB="libxvidcore.\$(SHARED_EXTENSION).\$(API_MAJOR)"

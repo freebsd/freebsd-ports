@@ -10,6 +10,7 @@ SRCS+= adb_auth_host.cpp
 SRCS+= adb_client.cpp
 SRCS+= adb_io.cpp
 SRCS+= adb_listeners.cpp
+SRCS+= adb_trace.cpp
 SRCS+= adb_utils.cpp
 SRCS+= commandline.cpp
 SRCS+= console.cpp
@@ -62,25 +63,28 @@ SRCS+= threads.c
 .PATH: ${.CURDIR}/../liblog
 SRCS+= fake_log_device.c
 SRCS+= logd_write.c
-CFLAGS.logd_write.c+= -DFAKE_LOG_DEVICE=1
+CPPFLAGS.logd_write.c+= -DFAKE_LOG_DEVICE=1
 
-CFLAGS+= -DADB_HOST=1
-CFLAGS+= -DHAVE_FORKEXEC=1
-CFLAGS+= -DHAVE_SYMLINKS
-CFLAGS+= -DHAVE_TERMIO_H
-CFLAGS+= -DHAVE_SYS_SOCKET_H
-CFLAGS+= -D_FILE_OFFSET_BITS=64
-CFLAGS+= -I${.CURDIR}
-CFLAGS+= -I${.CURDIR}/../include
-CFLAGS+= -I${.CURDIR}/../base/include
-CFLAGS+=${CFLAGS.${.IMPSRC:T}}
-
+CPPFLAGS+= -DADB_HOST=1
+CPPFLAGS+= -DHAVE_FORKEXEC=1
+CPPFLAGS+= -DHAVE_SYMLINKS
+CPPFLAGS+= -DHAVE_TERMIO_H
+CPPFLAGS+= -DHAVE_SYS_SOCKET_H
+CPPFLAGS+= -D_FILE_OFFSET_BITS=64
+CPPFLAGS+= -I${.CURDIR}
+CPPFLAGS+= -I${.CURDIR}/../include
+CPPFLAGS+= -I${.CURDIR}/../base/include
+CPPFLAGS+= ${CPPFLAGS.${.IMPSRC:T}}
 CXXFLAGS+= -std=gnu++11
-CXXFLAGS+= ${CFLAGS:N-std*}
 
-TEST_CFLAGS+= $$(${GTEST_CONFIG} --cppflags)
+.ifndef COMPILE.c
+CFLAGS+= ${CPPFLAGS}
+CXXFLAGS+= ${CPPFLAGS}
+.endif
+
+TEST_CPPFLAGS+= $$(${GTEST_CONFIG} --cppflags)
 .for f in ${TEST_SRCS}
-CFLAGS.${f}+= ${TEST_CFLAGS}
+CPPFLAGS.${f}+= ${TEST_CPPFLAGS}
 .endfor
 
 LDADD+= -lcrypto -lpthread -lusb -lz
@@ -90,6 +94,6 @@ TEST_LDADD+= $$(${GTEST_CONFIG} --libs --ldflags)
 GTEST_CONFIG?= gtest-config
 
 adb_test: ${SRCS:R:S/$/.o/:Nmain.o:Ncommandline.o} ${TEST_SRCS:R:S/$/.o/}
-	${CXX} ${CXXFLAGS} ${LDFLAGS} -o $@ $> ${LDADD} ${TEST_LDADD}
+	${CXX} ${CPPFLAGS} ${CXXFLAGS} ${LDFLAGS} -o $@ $> ${LDADD} ${TEST_LDADD}
 
 .include <bsd.prog.mk>

@@ -12,6 +12,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-fullsrc
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Original logic game with arcade and tactics modes
 
+LICENSE=	ZLIB
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
 USE_SDL=	sdl mixer image
 USES=		dos2unix
 DOS2UNIX_FILES=	biniax.c

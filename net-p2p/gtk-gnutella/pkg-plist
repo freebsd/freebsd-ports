@@ -44,6 +44,7 @@ share/applications/gtk-gnutella.desktop
 %%DATADIR%%/pixmaps/magnet.64x64.png
 %%DATADIR%%/pixmaps/natpmp.xpm
 %%DATADIR%%/pixmaps/no_firewall.xpm
+%%DATADIR%%/pixmaps/no_listening.xpm
 %%DATADIR%%/pixmaps/offline.xpm
 %%DATADIR%%/pixmaps/online.xpm
 %%DATADIR%%/pixmaps/pause.xpm

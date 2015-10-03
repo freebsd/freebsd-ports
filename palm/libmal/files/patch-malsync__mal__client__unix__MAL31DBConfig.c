@@ -1,5 +1,5 @@
---- malsync/mal/client/unix/MAL31DBConfig.c.orig	2008-04-15 19:49:54.000000000 +0200
-+++ malsync/mal/client/unix/MAL31DBConfig.c	2008-04-15 19:50:04.000000000 +0200
+--- malsync/mal/client/unix/MAL31DBConfig.c.orig	2009-02-16 16:07:04 UTC
++++ malsync/mal/client/unix/MAL31DBConfig.c
 @@ -20,7 +20,7 @@
   */
  

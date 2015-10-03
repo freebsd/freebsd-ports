@@ -2,7 +2,7 @@
 
 PORTNAME=	ume
 PORTVERSION=	0.0.470
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	SOURCEFORGE_JP/${PORTNAME}-font/22212
 PKGNAMEPREFIX=	ja-font-
@@ -13,6 +13,7 @@ COMMENT=	Ume Japanese TrueType fonts
 
 USES=		fonts:fc tar:xz
 FONTNAME=	TTF
+NO_ARCH=	yes
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install

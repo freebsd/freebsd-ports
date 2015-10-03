@@ -1,4 +1,4 @@
---- src/dominoex/dominoex.cxx.orig	2015-04-22 15:17:06 UTC
+--- src/dominoex/dominoex.cxx.orig	2015-08-12 20:42:39 UTC
 +++ src/dominoex/dominoex.cxx
 @@ -63,7 +63,7 @@ void dominoex::tx_init(SoundBase *sc)
  

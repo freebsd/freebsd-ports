@@ -1,4 +1,4 @@
---- src/wefax/wefax.cxx.orig	2015-04-22 15:17:06 UTC
+--- src/wefax/wefax.cxx.orig	2015-09-12 20:02:06 UTC
 +++ src/wefax/wefax.cxx
 @@ -556,7 +556,7 @@ private:
  			= wf->powerDensity(m_carrier - 2 * m_apt_start_freq, bandwidth_apt_start)

@@ -116,7 +116,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-pre.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-start.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/ch11s06.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/ch10s06.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/colophon.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/common-tasks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/config-tuning.html
@@ -162,18 +162,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/handbook.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/history.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/index.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/install-advanced.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/install-choosing.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/install-diff-media.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/install-final-warning.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/install-hardware.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/install-media.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/install-post.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/install-pre.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/install-start.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/install-steps.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/install-trouble.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/install.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/introduction.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ipsec.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ix01.html
@@ -280,7 +268,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-bsdinstall.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-live-cd.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-localization.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-sysinstall.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/video-playback.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-config.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-fonts.html

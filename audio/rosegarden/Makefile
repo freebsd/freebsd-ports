@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	rosegarden
-PORTVERSION=	14.12
+PORTVERSION=	15.08
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose music editor and sequencer suite
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	dssi_osc_update:${PORTSDIR}/audio/dssi \
 		makedepend:${PORTSDIR}/devel/makedepend
@@ -21,16 +22,22 @@ LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib \
 RUN_DEPENDS=	dssi_osc_update:${PORTSDIR}/audio/dssi \
 		lilypond:${PORTSDIR}/print/lilypond
 
-USES=		tar:bzip2 desktop-file-utils gmake pkgconfig shared-mime-info
+USES=		compiler:c++0x desktop-file-utils gmake pkgconfig \
+		shared-mime-info tar:bzip2
+USE_QT4=	gui network xml \
+		linguisttools_build moc_build rcc_build uic_build
+QT_NONSTANDARD=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	QTLIBDIR=${QT_LIBDIR}
-USE_QT4=	gui network xml rcc_build moc_build uic_build linguisttools_build
-INSTALLS_ICONS=	yes
+CONFIGURE_ARGS=	--with-qtdir=${QT_PREFIX} \
+		--with-qtlibdir=${QT_LIBDIR}
 
-CXXFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+post-patch:
+	@${REINPLACE_CMD} '/LIBS/s|-ldl||' ${WRKSRC}/configure
+
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rosegarden
 
 .include <bsd.port.mk>

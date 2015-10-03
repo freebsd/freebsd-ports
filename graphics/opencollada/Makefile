@@ -22,6 +22,8 @@ USES=		cmake:outsource compiler iconv pkgconfig
 CFLAGS+=	-I/${LOCALBASE}/include
 CMAKE_ARGS+=	-DUSE_SHARED:BOOL=ON -DUSE_STATIC:BOOL=OFF
 
+BROKEN_sparc64=	cannot build: runaway process
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${OPENCOLLADA_INST_LIBRARY}/cmake|${PREFIX}/share/cmake/Modules|' \
 		${WRKSRC}/CMakeLists.txt

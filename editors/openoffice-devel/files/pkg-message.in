@@ -22,19 +22,23 @@ There are some wrappers installed for faster startup.  Add "%%PREFIX%%/bin/"
 to your PATH and you will be able to use them.
 
 %%PREFIX%%/bin/%%EXECBASE%%
+%%PREFIX%%/bin/%%EXECBASE%%-printeradmin
 %%PREFIX%%/bin/%%EXECBASE%%-sbase
 %%PREFIX%%/bin/%%EXECBASE%%-scalc
 %%PREFIX%%/bin/%%EXECBASE%%-sdraw
-%%PREFIX%%/bin/%%EXECBASE%%-setofficelang
-%%PREFIX%%/bin/%%EXECBASE%%-smath
 %%PREFIX%%/bin/%%EXECBASE%%-simpress
-%%PREFIX%%/bin/%%EXECBASE%%-spadmin
+%%PREFIX%%/bin/%%EXECBASE%%-smath
 %%PREFIX%%/bin/%%EXECBASE%%-swriter
 
 OpenOffice does need $LANG to be set to a suitable value.
 
-4. If you run into problems
---------------------------------------------------
+4. Wiki Publisher Extension
+---------------------------
+The Wiki Publisher extension can be installed from
+%%PRINSTALLATION_BASEDIR%%/extensions/
+
+5. If you run into problems
+---------------------------
 If you somehow run into problems, please remove the already installed
 "%%AOOUDIR%%" directory in your home directory, then redo the
 user installation and the problems should go away.

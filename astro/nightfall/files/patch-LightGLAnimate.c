@@ -1,5 +1,5 @@
---- LightGLAnimate.c.orig	Tue Nov 25 00:21:36 2003
-+++ LightGLAnimate.c	Tue Nov 25 00:24:22 2003
+--- LightGLAnimate.c.orig	2014-05-13 08:45:46 UTC
++++ LightGLAnimate.c
 @@ -25,6 +25,7 @@
  #include <stdio.h>
  #include <stdlib.h>

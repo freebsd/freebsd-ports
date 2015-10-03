@@ -7,6 +7,11 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/what-a-real-unix.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/why-is-bsd-not-better-known.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/leapseconds-cautions.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/leapseconds-conclusion.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/leapseconds-posix.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/leapseconds-testing.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-followup.html

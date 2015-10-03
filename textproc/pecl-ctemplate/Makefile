@@ -2,22 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	cTemplate
-PORTVERSION=	1.11
-PORTREVISION=	0
+PORTVERSION=	1.12
 CATEGORIES=	textproc pear
-MASTER_SITES=	LOCAL/vanilla
+DISTVERSIONPREFIX=	v
 PKGNAMEPREFIX=	pecl-
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	vanilla@FreeBSD.org
-COMMENT=	PECL extension for Google ctemplate library
+COMMENT=	PECL extension for ctemplate library
 
 LIB_DEPENDS=	libctemplate.so:${PORTSDIR}/textproc/google-ctemplate
 
 USES=		tar:xz
 USE_PHP=	yes
 USE_PHPEXT=	yes
-DEFAULT_PHP_VER=	5
+USE_GITHUB=	yes
+GH_ACCOUNT=	vanillahsu
+GH_PROJECT=	pecl-ctemplate
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${EXTRA_LIBS}

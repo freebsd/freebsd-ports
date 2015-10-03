@@ -1,3 +1,3 @@
 lib/uim/plugin/libuim-m17nlib.so
-@exec uim-module-manager --register m17nlib
-@unexec uim-module-manager --unregister m17nlib
+@postexec uim-module-manager --register m17nlib
+@preunexec uim-module-manager --unregister m17nlib

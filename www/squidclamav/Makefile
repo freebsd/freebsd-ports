@@ -12,6 +12,8 @@ COMMENT=	Clamav c-icap service and redirector for Squid
 
 LICENSE=	GPLv3
 
+BROKEN=		Not fetchable
+
 LIB_DEPENDS+=	libicapapi.so:${PORTSDIR}/www/c-icap
 
 GNU_CONFIGURE=	yes

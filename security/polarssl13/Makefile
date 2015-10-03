@@ -14,6 +14,8 @@ COMMENT=	SSL/TLS and cryptography library
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_sparc64=	fails to compile: relocation error
+
 ALL_TARGET=	no_test
 MAKE_ENV=	SHARED=1
 USES=		cpe gmake tar:tgz

@@ -226,7 +226,6 @@ bin/texliveonfly
 bin/texloganalyser
 bin/texmfstart
 bin/thumbpdf
-bin/tlmgr
 bin/tpic2pdftex
 bin/ttf2kotexfont
 bin/ttf2pk
@@ -484,7 +483,6 @@ man/man5/updmap.cfg.5.gz
 %%TEXMFDISTDIR%%/scripts/texlive/texconfig-sys.sh
 %%TEXMFDISTDIR%%/scripts/texlive/texconfig.sh
 %%TEXMFDISTDIR%%/scripts/texlive/texlinks.sh
-%%TEXMFDISTDIR%%/scripts/texlive/tlmgr.pl
 %%TEXMFDISTDIR%%/scripts/texlive/updmap-sys.sh
 %%TEXMFDISTDIR%%/scripts/texlive/updmap.pl
 %%TEXMFDISTDIR%%/scripts/texliveonfly/texliveonfly.py

@@ -2,7 +2,7 @@
 
 PORTNAME=	cyrus-sasl
 PORTVERSION=	2.1.26
-PORTREVISION=	9
+PORTREVISION=	12
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-sasl/ \
 		http://cyrusimap.org/releases/
@@ -138,26 +138,15 @@ HTDOCS=	advanced appconvert components gssapi index install macosx \
 	mechanisms options plugprog programming readme sysadmin upgrading \
 	windows
 
+SUB_FILES=	pkg-deinstall pkg-install pkg-message
+SUB_LIST=	CYRUS_USER=${CYRUS_USER} CYRUS_GROUP=${CYRUS_GROUP} \
+		SASLDB=${SASLDB_NAME}
+
 PLIST_SUB+=	PREFIX=${PREFIX} \
 		SQL=${SQL} \
 		DOCSDIR=${DOCSDIR:S/^${PREFIX}\///}
 
-PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-PKGINSTALL=	${WRKDIR}/pkg-install
-PKGMESSAGE=	${WRKDIR}/pkg-message
-
 post-patch:
-# Fix sasldb name in pkg-install/deinstall scripts
-	@${SED} -e "s;%%SASLDB%%;${SASLDB_NAME};g" \
-		-e "s;%%CYRUS_USER%%;${CYRUS_USER};g" \
-		-e "s;%%CYRUS_GROUP%%;${CYRUS_GROUP};g" \
-		${.CURDIR}/pkg-install > ${PKGINSTALL}
-	@${SED} -e "s;%%SASLDB%%;${SASLDB_NAME};g" \
-		-e "s;%%CYRUS_USER%%;${CYRUS_USER};g" \
-		-e "s;%%CYRUS_GROUP%%;${CYRUS_GROUP};g" \
-		${.CURDIR}/pkg-deinstall > ${PKGDEINSTALL}
-	@${SED} -e "s;%%PREFIX%%;${PREFIX};g" \
-		${.CURDIR}/pkg-message > ${PKGMESSAGE}
 # Try to unbreak parallel (-jX) builds, part 1: make build commands atomic
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${PERL} -w0pi.bak \
 		-e 's/(^\@am__fastdepCC_TRUE\@.*?) \
