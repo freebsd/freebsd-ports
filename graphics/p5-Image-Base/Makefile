@@ -13,6 +13,7 @@ COMMENT=	Base class for loading, manipulating, and saving images
 
 LICENSE=	LGPL3
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
