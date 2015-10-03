@@ -13,8 +13,6 @@ PKGNAMESUFFIX?=	${CNEWS_SUFFIX}${PKGNAMESUFFIX2}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Receives/sends news to/from localhost via NNTP
 
-BROKEN=		fails to link
-
 CONFLICTS?=	suckblow-1.*
 
 USES=		gmake shebangfix
@@ -50,6 +48,7 @@ CONFLICTS+=	suck-4.*
 .endif
 
 .if ${PORT_OPTIONS:MINN}
+BROKEN=		fails to link
 CFLAGS+=	-DNO_CONFIGDATA -I${LOCALBASE}/include/inn
 MAKE_ENV+=	DB_TYPE="-DUSE_INN23 -DDO_TAGGED_HASH"
 MAKE_ENV+=	DB_LIB="-linn -lstorage"
