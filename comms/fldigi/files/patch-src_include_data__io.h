@@ -1,4 +1,4 @@
---- src/include/data_io.h.orig	2015-04-18 13:26:19 UTC
+--- src/include/data_io.h.orig	2015-08-12 20:42:40 UTC
 +++ src/include/data_io.h
 @@ -27,6 +27,8 @@
  #ifndef fldigi_data_io_h

@@ -1,4 +1,4 @@
---- src/thor/thor.cxx.orig	2015-04-22 15:17:06 UTC
+--- src/thor/thor.cxx.orig	2015-09-30 11:23:49 UTC
 +++ src/thor/thor.cxx
 @@ -63,7 +63,7 @@ void thor::tx_init(SoundBase *sc)
  	videoText();
