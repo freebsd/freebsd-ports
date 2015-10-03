@@ -48,6 +48,7 @@ CONFLICTS+=	suck-4.*
 .endif
 
 .if ${PORT_OPTIONS:MINN}
+BROKEN=		fails to link
 CFLAGS+=	-DNO_CONFIGDATA -I${LOCALBASE}/include/inn
 MAKE_ENV+=	DB_TYPE="-DUSE_INN23 -DDO_TAGGED_HASH"
 MAKE_ENV+=	DB_LIB="-linn -lstorage"
