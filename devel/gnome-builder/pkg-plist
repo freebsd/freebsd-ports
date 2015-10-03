@@ -1,0 +1,34 @@
+bin/gnome-builder
+lib/libide-1.0.so
+lib/girepository-1.0/Ide-1.0.typelib
+libdata/pkgconfig/libide-1.0.pc
+share/appdata/org.gnome.Builder.appdata.xml
+share/applications/org.gnome.Builder.desktop
+share/dbus-1/services/org.gnome.Builder.service
+share/gir-1.0/Ide-1.0.gir
+share/gtksourceview-3.0/styles/builder-dark.xml
+share/gtksourceview-3.0/styles/builder.xml
+share/icons/hicolor/16x16/apps/builder.png
+share/icons/hicolor/24x24/apps/builder.png
+share/icons/hicolor/256x256/apps/builder.png
+share/icons/hicolor/32x32/apps/builder.png
+share/icons/hicolor/48x48/apps/builder.png
+share/icons/hicolor/512x512/apps/builder.png
+share/icons/hicolor/scalable/apps/builder-symbolic.svg
+share/locale/bs/LC_MESSAGES/gnome-builder.mo
+share/locale/cs/LC_MESSAGES/gnome-builder.mo
+share/locale/de/LC_MESSAGES/gnome-builder.mo
+share/locale/es/LC_MESSAGES/gnome-builder.mo
+share/locale/fr/LC_MESSAGES/gnome-builder.mo
+share/locale/gl/LC_MESSAGES/gnome-builder.mo
+share/locale/he/LC_MESSAGES/gnome-builder.mo
+share/locale/id/LC_MESSAGES/gnome-builder.mo
+share/locale/ko/LC_MESSAGES/gnome-builder.mo
+share/locale/pl/LC_MESSAGES/gnome-builder.mo
+share/locale/sl/LC_MESSAGES/gnome-builder.mo
+share/locale/sr/LC_MESSAGES/gnome-builder.mo
+share/locale/tr/LC_MESSAGES/gnome-builder.mo
+share/locale/uk/LC_MESSAGES/gnome-builder.mo
+share/locale/zh_TW/LC_MESSAGES/gnome-builder.mo
+@postexec /usr/local/bin/gtk-update-icon-cache -q -f %D/share/icons/hicolor 2>/dev/null || /usr/bin/true
+@postunexec /usr/local/bin/gtk-update-icon-cache -q -f %D/share/icons/hicolor 2>/dev/null || /usr/bin/true
