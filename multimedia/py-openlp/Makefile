@@ -40,6 +40,7 @@ USE_GSTREAMER=	good bad ugly
 USE_QT4=	linguist phonon-gst
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 QT_LRELEASE=	${LOCALBASE}/bin/lrelease-qt4
+NO_ARCH=	yes
 
 pre-build:
 	@${RM} -f ${WRKSRC}/resources/__init__.py
