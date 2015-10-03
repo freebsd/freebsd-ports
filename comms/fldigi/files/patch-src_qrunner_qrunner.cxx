@@ -1,4 +1,4 @@
---- src/qrunner/qrunner.cxx.orig	2015-03-21 00:29:04 UTC
+--- src/qrunner/qrunner.cxx.orig	2015-08-12 20:42:38 UTC
 +++ src/qrunner/qrunner.cxx
 @@ -103,7 +103,7 @@ void qrunner::execute(int fd, void *arg)
  		return;
