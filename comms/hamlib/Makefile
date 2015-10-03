@@ -3,6 +3,7 @@
 
 PORTNAME=	hamlib
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF
 
@@ -14,6 +15,7 @@ LICENSE=	LGPL20
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
 
+INFO=		hamlib
 USES=		autoreconf libtool:keepla pathfix perl5 pkgconfig python shebangfix tcl
 SHEBANG_FILES=	bindings/perltest.pl
 USE_PERL5=	build run
@@ -23,10 +25,11 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --with-perl-binding \
+CONFIGURE_ARGS=	--with-perl-binding \
 		--with-tcl-binding --with-tcl=${TCL_LIBDIR} \
 		--with-python-binding --without-rigmatrix
 PLIST_SUB=	VER=${PORTVERSION} TCL_VER=${TCL_VER}
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS
 
