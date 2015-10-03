@@ -3,7 +3,7 @@
 
 PORTNAME=	squirrelmail
 PORTVERSION=	20150324
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail www
 MASTER_SITES=	LOCAL/adamw/squirrelmail
 DISTNAME=	${PORTNAME}-${PORTVERSION}_0200-SVN.stable
@@ -52,7 +52,7 @@ DATABASE_RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-
 LDAP_USE=	PHP=ldap
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|ispell|${LOCALBASE}/bin/ispell|g' \
+	@${REINPLACE_CMD} -e 's|ispell|${LOCALBASE}/bin/aspell|g' \
 		${WRKSRC}/plugins/squirrelspell/sqspell_config.php
 	@${REINPLACE_CMD} -e 's|/usr/bin/fortune|/usr/games/fortune|g' \
 		${WRKSRC}/plugins/fortune/fortune_functions.php
