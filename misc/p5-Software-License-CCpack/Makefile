@@ -17,6 +17,7 @@ BUILD_DEPENDS=	p5-Software-License>=0:${PORTSDIR}/misc/p5-Software-License
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-CheckDeps>=0.010:${PORTSDIR}/devel/p5-Test-CheckDeps
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
