@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		mysql-connector-python
-PORTVERSION=		2.0.4
+PORTVERSION=		2.1.3
 CATEGORIES=		databases python
 MASTER_SITES=		MYSQL/Connector-Python
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
@@ -13,9 +13,12 @@ COMMENT=		MySQL driver written in Python
 
 LICENSE=		GPLv2
 
-PORTSCOUT=		skipv:2.1.1,2.1.2 # BETA version
 NO_ARCH=		yes
 USES=			python
-USE_PYTHON=		distutils autoplist
+USE_PYTHON=		autoplist distutils
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+PYDISTUTILS_INSTALLARGS:=	${PYDISTUTILS_INSTALLARGS:N--single-version-externally-managed}
+
+.include <bsd.port.post.mk>
