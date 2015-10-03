@@ -19,6 +19,7 @@ BUILD_DEPENDS=	p5-Net-DNS-Codes>=0.09:${PORTSDIR}/dns/p5-Net-DNS-Codes \
 		p5-Net-DNSBL-MultiDaemon>=0.26:${PORTSDIR}/dns/p5-Net-DNSBL-MultiDaemon
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
