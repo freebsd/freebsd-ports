@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-DBIx-Class
-PORTVERSION=	0.43
-PORTREVISION=	1
+PORTVERSION=	0.44
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -34,6 +33,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0.106:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
