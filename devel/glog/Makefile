@@ -19,6 +19,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
+TEST_TARGET=	check
 USE_LDCONFIG=	yes
 USES=		execinfo libtool pathfix
 
@@ -29,8 +30,5 @@ USE_GITHUB=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^docdir = / s| = .*| = ${DOCSDIR}|' ${WRKSRC}/Makefile.in
-
-regression-test test: build
-	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 
 .include <bsd.port.mk>
