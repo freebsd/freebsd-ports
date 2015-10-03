@@ -15,14 +15,12 @@ CMAKE_ARGS=	-DBUILD_SHARED_LIBS=ON \
 		-DBUILD_STATIC_LIBS=ON \
 		-DBUILD_TESTING=ON \
 		-DGFLAGS_NAMESPACE=gflags
+TEST_TARGET=	test
 USE_LDCONFIG=	yes
 USES=		cmake shebangfix
 
 USE_GITHUB=	yes
 
 SHEBANG_FILES=	src/gflags_completions.sh
-
-regression-test test: build
-	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} test
 
 .include <bsd.port.mk>
