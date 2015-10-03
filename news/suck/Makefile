@@ -13,6 +13,8 @@ PKGNAMESUFFIX?=	${CNEWS_SUFFIX}${PKGNAMESUFFIX2}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Receives/sends news to/from localhost via NNTP
 
+BROKEN=		fails to link
+
 CONFLICTS?=	suckblow-1.*
 
 USES=		gmake shebangfix
