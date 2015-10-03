@@ -14,6 +14,7 @@ COMMENT=	Send plain/html e-mails through SMTP servers
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
