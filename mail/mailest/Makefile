@@ -20,7 +20,7 @@ LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2 \
 		libestraier.so:${PORTSDIR}/textproc/hyperestraier
 RUN_DEPENDS=	mewl:${PORTSDIR}/mail/mew
 
-USES=		iconv
+USES=		iconv fakeroot
 USE_EMACS=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	yasuoka
