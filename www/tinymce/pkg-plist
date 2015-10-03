@@ -39,6 +39,7 @@
 %%WWWDIR%%/js/tinymce/plugins/fullscreen/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/hr/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/image/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/imagetools/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/importcss/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/insertdatetime/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/layer/plugin.min.js
