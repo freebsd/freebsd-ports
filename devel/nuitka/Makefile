@@ -11,6 +11,7 @@ MAINTAINER=	python@FreeBSD.org
 COMMENT=	Compatible and efficient Python compiler
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		python tar:bzip2
 USE_PYTHON=	autoplist distutils
