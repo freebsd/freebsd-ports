@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fcitx-libpinyin
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	chinese
 MASTER_SITES=	http://download.fcitx-im.org/${PORTNAME}/:body \
 		http://download.fcitx-im.org/data/:data
