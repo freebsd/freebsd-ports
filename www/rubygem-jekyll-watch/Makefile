@@ -3,6 +3,7 @@
 
 PORTNAME=	jekyll-watch
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ COMMENT=	Handles rebuilding of Jekyll sites when a file changes
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-listen2>=2.7:${PORTSDIR}/devel/rubygem-listen2
+RUN_DEPENDS=	rubygem-listen>=3.0:${PORTSDIR}/devel/rubygem-listen
 
 NO_ARCH=	yes
 USE_RUBY=	yes
