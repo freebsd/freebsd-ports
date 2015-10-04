@@ -17128,6 +17128,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 @dir %%RUBY_LIBDIR%%/racc/rdoc
 @dir %%RUBY_SITEARCHLIBDIR%%
 @dir %%RUBY_VENDORARCHLIBDIR%%
+%%NO_CAPIDOCS%%%%NO_DOCS%%%%RDOC%%@dir %%RUBY_DOCDIR%%
 %%RDOC%%@dir %%RUBY_SITERIDIR%%
 %%CAPIDOCS%%@dir %%RUBY_RIDIR%%
-%%NO_DOCS%%%%NO_RDOC%%@dir %%RUBY_DOCDIR%%
