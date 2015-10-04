@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 USE_MYSQL=	51+
 USE_OPENSSL=	yes
-#WITH_OPENSSL_PORT=yes
+WITH_OPENSSL_PORT=yes
 USES=		cmake:outsource compiler:features
 CMAKE_ARGS+=	WITH_SSL=${OPENSSLBASE} \
 		-DOPENSSL_INCLUDE_DIR=${LOCALBASE}/include/openssl
