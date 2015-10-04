@@ -1,5 +1,5 @@
---- kccommon.h.orig	2012-05-25 00:27:59.000000000 +0800
-+++ kccommon.h	2013-12-28 01:25:49.838357594 +0800
+--- kccommon.h.orig	2012-05-24 16:27:59 UTC
++++ kccommon.h
 @@ -82,7 +82,7 @@
  using ::snprintf;
  }
