@@ -18,7 +18,7 @@ OPTIONS_DEFINE= MAN3
 OPTIONS_DEFAULT=MAN3
 MAN3_DESC=      Install API manpages (section 3)
 
-CONFLICTS?=	openssl-[0-9]*
+CONFLICTS?=	openssl-[0-9]* \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-silent-rules
@@ -35,6 +35,10 @@ INSTALL_TARGET=	install-strip
 
 regression-test: build
 	cd ${WRKSRC} && ${MAKE} check
+
+OPTIONS_DEFINE= MAN3
+OPTIONS_DEFAULT=MAN3
+MAN3_DESC=      Install API manpages (section 3)
 
 post-install-MAN3-off:
 	${RM} -rf ${STAGEDIR}/${PREFIX}/man/man3
