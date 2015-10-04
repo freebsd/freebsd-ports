@@ -10,6 +10,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Core library for the Cucumber BDD app
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-gherkin3>=3.1.0:${PORTSDIR}/textproc/rubygem-gherkin3
 
