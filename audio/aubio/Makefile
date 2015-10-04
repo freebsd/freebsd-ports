@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aubio
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	audio
 MASTER_SITES=	http://aubio.org/pub/
 
@@ -10,74 +10,43 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for audio labelling
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	txt2man:${PORTSDIR}/textproc/txt2man
 
 USES=		pkgconfig tar:bzip2 waf
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 USE_LDCONFIG=	yes
 
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
+OPTIONS_DEFINE=		COMPLEX DOXYGEN FFMPEG FFTW JACK SAMPLERATE SNDFILE
+OPTIONS_DEFAULT=	JACK SAMPLERATE SNDFILE FFTW
+OPTIONS_SUB=		yes
 
-OPTIONS_DEFINE=	COMPLEX DOXYGEN FFMPEG JACK SAMPLERATE SNDFILE
-OPTIONS_DEFAULT=	FFTW JACK SAMPLERATE SNDFILE SINGLE
-
-COMPLEX_DESC=	Compile with C99 complex.h
+COMPLEX_DESC=		Compile with C99 complex.h
 COMPLEX_CONFIGURE_ENABLE=	complex
-
-DOXYGEN_CONFIGURE_OFF=	--disable-doxygen
 DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
-
-FFMPEG_CONFIGURE_ENABLE=	avcodec
+DOXYGEN_CONFIGURE_OFF=	--disable-doxygen
 FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
-
-JACK_CONFIGURE_ENABLE=	jack
+FFMPEG_CONFIGURE_ENABLE=	avcodec
 JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
-
-SAMPLERATE_CONFIGURE_ENABLE=	samplerate
+JACK_CONFIGURE_ENABLE=	jack
 SAMPLERATE_LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
-
-SNDFILE_CONFIGURE_ENABLE=	sndfile
+SAMPLERATE_CONFIGURE_ENABLE=	samplerate
+FFTW_DESC=		Use single precision FFTW3 instead of built-in OOURA
+FFTW_CONFIGURE_ENABLE=	fftw3f
+FFTW_BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
+FFTW_LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float
 SNDFILE_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
-
-OPTIONS_SINGLE=	FFT PRECISION
-OPTIONS_SINGLE_FFT=	FFTW OOURA
-OPTIONS_SINGLE_PRECISION=	DOUBLE SINGLE
-
-FFT_DESC=	FFT implementation
-FFTW_DESC=	FFTW3/FFTW3F (depending on precision)
-OOURA_DESC=	Ooura (last resort)
-
-PRECISION_DESC=	Precision
-DOUBLE_DESC=	Double precision mode
-SINGLE_DESC=	Single precision mode
-DOUBLE_CONFIGURE_ENABLE=	double
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOXYGEN}
-PLIST_SUB+=	DOXYGEN=""
-.else
-PLIST_SUB+=	DOXYGEN="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MFFTW}
-.  if ${PORT_OPTIONS:MDOUBLE}
-LIB_DEPENDS+=	libfftw3.so:${PORTSDIR}/math/fftw3
-.  else
-LIB_DEPENDS+=	libfftw3f.so:${PORTSDIR}/math/fftw3-float
-.  endif
-.endif
+SNDFILE_CONFIGURE_ENABLE=	sndfile
 
 post-patch:
-	@${REINPLACE_CMD} -e '/pkgconfig/s,$${LIBDIR},&data,' \
-		${WRKSRC}/waflib/TaskGen.py
+	@${REINPLACE_CMD} -e \
+		'/pkgconfig/s|$${LIBDIR}|&data|' ${WRKSRC}/waflib/TaskGen.py
 
-.if !defined(WITH_DEBUG) || defined(WITHOUT_DEBUG) || defined(INSTALL_STRIPPED)
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so
-.  for b in mfcc notes onset pitch quiet track
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}${b}
-.  endfor
-.endif
+.for b in mfcc notes onset pitch quiet track
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/aubio${b}
+.endfor
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaubio.so
 
 .include <bsd.port.mk>
