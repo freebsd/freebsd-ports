@@ -1,6 +1,6 @@
---- etc/Makefile.in.orig	2013-11-28 12:16:25.000000000 +0100
-+++ etc/Makefile.in	2014-11-22 12:36:09.272204737 +0100
-@@ -334,11 +334,11 @@
+--- etc/Makefile.in.orig	2015-04-13 09:58:51.000000000 +0200
++++ etc/Makefile.in	2015-10-04 10:13:29.313945122 +0200
+@@ -335,13 +335,13 @@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
@@ -8,13 +8,15 @@
 +sysconf_DATA = c2s.xml.sample router.xml.sample s2s.xml.sample sm.xml.sample jabberd.cfg.sample router-users.xml.sample router-filter.xml.sample
  initdir = $(prefix)/etc/init
  init_DATA = jabberd-c2s.conf jabberd-router.conf jabberd-s2s.conf jabberd-sm.conf
- configs = $(sysconf_DATA) $(init_DATA)
--EXTRA_DIST = $(sysconf_DATA:%.dist=%.dist.in) $(init_DATA:%.conf=%.conf.in)
-+EXTRA_DIST = $(sysconf_DATA:%.sample=%.sample.in) $(init_DATA:%.conf=%.conf.in)
+ systemddir = $(prefix)/lib/systemd/system
+ systemd_DATA = jabberd-sm.service jabberd.service jabberd-s2s.service jabberd-router.service jabberd-c2s.service
+ configs = $(sysconf_DATA) $(init_DATA) $(systemd_DATA)
+-EXTRA_DIST = $(sysconf_DATA:%.dist=%.dist.in) $(init_DATA:%.conf=%.conf.in) $(systemd_DATA:%.service=%.service.in)
++EXTRA_DIST = $(sysconf_DATA:%.sample=%.sample.in) $(init_DATA:%.conf=%.conf.in) $(systemd_DATA:%.service=%.service.in)
  SUBDIRS = templates
  jabberd_bin = router sm s2s c2s
  edit = sed \
-@@ -599,7 +599,7 @@
+@@ -623,7 +623,7 @@
  uninstall: uninstall-recursive
  
  install-am: all-am
@@ -23,12 +25,21 @@
  
  installcheck: installcheck-recursive
  install-strip:
-@@ -709,7 +709,7 @@
- 	uninstall-am uninstall-initDATA uninstall-sysconfDATA
+@@ -735,7 +735,7 @@
+ 	uninstall-sysconfDATA uninstall-systemdDATA
  
  
--$(configs): $(sysconf_DATA:%.dist=@srcdir@/%.dist.in) $(init_DATA:%.conf=@srcdir@/%.conf.in)
-+$(configs): $(sysconf_DATA:%.sample=@srcdir@/%.sample.in) $(init_DATA:%.conf=@srcdir@/%.conf.in)
+-$(configs): $(sysconf_DATA:%.dist=@srcdir@/%.dist.in) $(init_DATA:%.conf=@srcdir@/%.conf.in) $(systemd_DATA:%.service=%.service.in)
++$(configs): $(sysconf_DATA:%.sample=@srcdir@/%.sample.in) $(init_DATA:%.conf=@srcdir@/%.conf.in) $(systemd_DATA:%.service=%.service.in)
  	@echo "generating $@ from $@.in"; \
      edit='$(edit)'; \
      list='$(jabberd_bin)'; for p in $$list; do \
+@@ -748,7 +748,7 @@
+ 
+ install-data-hook:
+ 	@list='$(sysconf_DATA)'; for p in $$list; do \
+-      dest=`echo $$p | sed -e s/.dist//`; \
++      dest=`echo $$p | sed -e s/.sample//`; \
+ 	  if test -f $(DESTDIR)$(sysconfdir)/$$dest; then \
+         echo "$@ will not overwrite existing $(DESTDIR)$(sysconfdir)/$$dest"; \
+       else \
