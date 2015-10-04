@@ -2,34 +2,34 @@
 # $FreeBSD$
 
 PORTNAME=	james
-PORTVERSION=	2.3.1
-PORTREVISION=	1
+PORTVERSION=	2.3.2.1
 CATEGORIES=	mail java
-MASTER_SITES=	APACHE/${PORTNAME}/server/binaries
+MASTER_SITES=	APACHE/${PORTNAME}/server/
 DISTNAME=	${PORTNAME}-binary-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java SMTP and POP3 Mail server and NNTP News server
 
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
 USES=		cpe
 CPE_VENDOR=	apache
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-NO_BUILD=	YES
+NO_ARCH=	yes
+NO_BUILD=	yes
 
 USE_RC_SUBR=	james
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 APP_HOME?=	${PREFIX}/${PKGBASE}${PORTVERSION}
-PID_FILE=	/var/run/${APP_SHORTNAME}.pid
+PID_FILE=	/var/run/${PORTNAME}.pid
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
 
 SUB_LIST=	JAVA_HOME=${JAVA_HOME} \
 		PID_FILE=${PID_FILE} \
-		JAMES_HOME=${APP_HOME} \
-		JAMES_VERSION=${PORTVERSION:S/.//g}
-
-.include <bsd.port.pre.mk>
+		JAMES_HOME=${APP_HOME}
 
 pre-patch:
 	@${ECHO_MSG} "Installation settings:"
@@ -60,4 +60,4 @@ do-install:
 post-install:
 	@${ECHO_MSG} "${PORTNAME} ${PORTVERSION} has been installed in ${APP_HOME}."
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
