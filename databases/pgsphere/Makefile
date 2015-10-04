@@ -18,6 +18,7 @@ OPTIONS_DEFINE=	DOCS
 MAKE_ARGS=	PG_CONFIG=${LOCALBASE}/bin/pg_config USE_PGXS=1 \
 		docdir=${DOCSDIR} \
 		install_bin=/usr/bin/install
+TEST_TARGET=	installcheck
 USE_LDCONFIG=	yes
 USES=		gmake pgsql
 
@@ -35,8 +36,5 @@ post-patch:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/pg_sphere.so
-
-regression-test test: build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} installcheck
 
 .include <bsd.port.mk>
