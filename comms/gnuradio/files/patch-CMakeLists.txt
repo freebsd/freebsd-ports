@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2015-05-12 09:39:44 UTC
+--- CMakeLists.txt.orig	2015-07-25 20:27:13 UTC
 +++ CMakeLists.txt
 @@ -29,6 +29,11 @@ cmake_minimum_required(VERSION 2.6)
  project(gnuradio CXX C)
@@ -15,7 +15,7 @@
 @@ -144,6 +149,14 @@ string(REPLACE "\n" " \\n" COMPILER_INFO
  ########################################################################
  include(GrPlatform) #define LIB_SUFFIX
- set(GR_RUNTIME_DIR      bin)
+ set(GR_RUNTIME_DIR     bin CACHE PATH "Path to install all binaries")
 +########################################################################
 +# FreeBSD libdata vs. lib
 +#
@@ -24,10 +24,10 @@
 +else()
 +set(GR_PKGCONFIG_DIR      lib${LIB_SUFFIX})
 +endif()
- set(GR_LIBRARY_DIR      lib${LIB_SUFFIX})
- set(GR_INCLUDE_DIR      include)
- set(GR_DATA_DIR         share)
-@@ -228,6 +241,42 @@ add_custom_target(uninstall
+ set(GR_LIBRARY_DIR     lib${LIB_SUFFIX} CACHE PATH "Path to install libraries")
+ set(GR_INCLUDE_DIR     include CACHE PATH "Path to install header files")
+ set(GR_DATA_DIR        share CACHE PATH "Base location for data")
+@@ -229,6 +242,42 @@ add_custom_target(uninstall
  include(GrBoost)
  
  ########################################################################
@@ -70,7 +70,7 @@
  # Enable python component
  ########################################################################
  find_package(PythonLibs 2)
-@@ -353,11 +402,13 @@ GR_LOGGING()
+@@ -354,11 +403,13 @@ GR_LOGGING()
  ########################################################################
  # Distribute the README file
  ########################################################################
