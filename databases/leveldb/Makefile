@@ -16,6 +16,7 @@ OPTIONS_DEFINE=	GPERFTOOLS SNAPPY
 OPTIONS_DEFAULT=SNAPPY
 
 LDFLAGS+=	-L${LOCALBASE}/lib
+TEST_TARGET=	check
 USE_LDCONFIG=	yes
 USES=		compiler:c++0x gmake
 
@@ -63,8 +64,5 @@ do-install:
 	${GREP} '^PLATFORM_CXXFLAGS=' ${WRKSRC}/build_config.mk | ${SED} 's|PLATFORM_CXXFLAGS|PORT_CFLAGS|' >> ${WRKSRC}/build_config.mk
 	${GREP} '^PLATFORM_CXXFLAGS=' ${WRKSRC}/build_config.mk | ${SED} 's|PLATFORM_CXXFLAGS|PLATFORM_CFLAGS|' >> ${WRKSRC}/build_config.mk
 	${INSTALL_DATA} ${WRKSRC}/build_config.mk ${STAGEDIR}${DATADIR}/
-
-regression-test test: build
-	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 
 .include <bsd.port.mk>
