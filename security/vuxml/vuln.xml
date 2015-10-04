@@ -109,12 +109,14 @@ Notes:
     <references>
       <freebsdpr>ports/203461</freebsdpr>
       <certvu>988628</certvu>
+      <cvename>CVE-2015-7611</cvename>
       <url>http://james.apache.org/download.cgi#Apache_James_Server</url>
       <url>https://blogs.apache.org/james/entry/apache_james_server_2_3</url>
     </references>
     <dates>
       <discovery>2015-09-30</discovery>
       <entry>2015-10-01</entry>
+      <modified>2015-10-04</modified>
     </dates>
   </vuln>
 
