@@ -58,6 +58,33 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ee7bdf7f-11bb-4eea-b054-c692ab848c20">
+    <topic>OpenSMTPD -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>smtpd</name>
+	<range><lt>5.7.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenSMTPD developers report:</p>
+	<blockquote cite="https://www.opensmtpd.org/announces/release-5.7.2.txt">
+	  <p>This is a minor release with security and reliability fixes only.
+	    You are encouraged to update as soon as possible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.opensmtpd.org/announces/release-5.7.2.txt</url>
+      <cvename>CVE-2015-7687</cvename>
+    </references>
+    <dates>
+      <discovery>2015-10-02</discovery>
+      <entry>2015-10-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="be3069c9-67e7-11e5-9909-002590263bf5">
     <topic>james -- multiple vulnerabilities</topic>
     <affects>
