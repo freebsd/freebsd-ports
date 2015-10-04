@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-base
-PORTVERSION=	1.2
-PORTREVISION=	6
+PORTVERSION=	1.3
 CATEGORIES=	math
 MASTER_SITES=	#none
 DISTFILES=	#none
