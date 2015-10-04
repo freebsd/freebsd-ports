@@ -3,6 +3,7 @@
 
 PORTNAME=	brotli
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	archivers
 
@@ -12,7 +13,6 @@ COMMENT=	Generic-purpose lossless compression algorithm
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_CXXSTD=	c++0x
 USE_PYTHON=	autoplist distutils
 USES=		compiler:c++0x python
 
