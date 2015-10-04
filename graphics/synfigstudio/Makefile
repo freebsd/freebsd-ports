@@ -2,21 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	synfigstudio
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	SF/synfig/releases/${PORTVERSION}/source
 
 MAINTAINER=	woodsb02@gmail.com
 COMMENT=	Vector-based 2D animation software package
 
-LICENSE=	GPLv3
+LICENSE=	GPLv2 # (or later)
 
-BUILD_DEPENDS=	etl>=0.04.17:${PORTSDIR}/devel/etl
+BUILD_DEPENDS=	etl>=0.04.18:${PORTSDIR}/devel/etl
 LIB_DEPENDS=	libsynfig.so:${PORTSDIR}/devel/synfig
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
-USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
-		shared-mime-info
+USES=		desktop-file-utils gmake libtool pathfix pkgconfig shared-mime-info
 USE_GNOME=	gtkmm30 intltool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-update-mimedb
@@ -27,15 +26,22 @@ INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS JACK NLS
+OPTIONS_SUB=	yes
+
+JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_CONFIGURE_ENABLE=	jack
+
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
+
+BROKEN_FreeBSD_9=	Does not build on FreeBSD < 10.x
 
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/optimization_flags/s|CXXFLAGS=|#CXXFLAGS=| ; \
 		 /optimization_flags/s|CFLAGS=|#CFLAGS=| ; \
-		 /DATADIRNAME/s|lib|share| ; \
-		 s|<tr1/|<| ; \
-		 s|::tr1||' \
+		 /DATADIRNAME/s|lib|share|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		's|el_GR|el| ; \
@@ -43,7 +49,8 @@ post-patch:
 		 s|no_NO|no| ; \
 		 s|pl_PL|pl| ; \
 		 s|sk_SK|sk| ; \
-		 s|sv_SE|sv|' ${WRKSRC}/po/LINGUAS
+		 s|sv_SE|sv|' \
+		${WRKSRC}/po/LINGUAS
 
 pre-build:
 # FIX LC_MESSAGES

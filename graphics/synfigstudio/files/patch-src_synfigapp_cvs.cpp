@@ -1,6 +1,6 @@
---- src/synfigapp/cvs.cpp.orig	2007-11-13 18:13:07.000000000 +0900
-+++ src/synfigapp/cvs.cpp	2008-03-14 19:39:08.000000000 +0900
-@@ -62,7 +62,7 @@
+--- src/synfigapp/cvs.cpp.orig	2015-03-28 10:15:01 UTC
++++ src/synfigapp/cvs.cpp
+@@ -62,7 +62,7 @@ using namespace synfigapp;
  #define HAVE_STRPTIME
  #endif
  
