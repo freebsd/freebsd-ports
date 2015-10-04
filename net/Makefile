@@ -1350,6 +1350,7 @@
     SUBDIR += zebra
     SUBDIR += zebra-server
     SUBDIR += zeroconf-ioslave
+    SUBDIR += zerotier
     SUBDIR += zillion
     SUBDIR += zsync
 
