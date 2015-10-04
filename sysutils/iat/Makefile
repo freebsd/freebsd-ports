@@ -9,6 +9,10 @@ MASTER_SITES=	BERLIOS
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Converter of many types of CD-ROM image file formats into ISO-9660
 
+LICENSE=	GPLv2 GPLv3 # code says GPLv2, COPYING says GPLv3
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
+
 USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 
