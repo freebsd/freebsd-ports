@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	variety
-PORTVERSION=	0.5.3
-PORTREVISION=	1
+PORTVERSION=	0.5.4
+PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	https://launchpad.net/variety/trunk/${PORTVERSION}/+download/ \
 		http://nivit.altervista.org/FreeBSD/ports/distfiles/
@@ -46,6 +46,7 @@ WRKSRC=	${WRKDIR}/variety
 
 post-patch:
 	@(cd ${WRKSRC} && ${REINPLACE_CMD} \
+		-i '' \
 		-E -e 's,%%LOCALBASE%%,${LOCALBASE},1' \
 		-e 's,%%PREFIX%%,${PREFIX},1' \
 		-e 's,/usr(/share/backgrounds),${LOCALBASE}\1,1' \
