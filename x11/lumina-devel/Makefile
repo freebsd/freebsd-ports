@@ -33,11 +33,11 @@ RUN_DEPENDS+=	gstreamer-plugins-core>=0:${PORTSDIR}/multimedia/gstreamer-plugins
 
 MAKE_JOBS_UNSAFE=yes
 
-USE_XORG=	x11 xcomposite xdamage xrender
+USE_XORG=	x11 xdamage
 USE_XCB=		x11extras wm
 USE_LDCONFIG=	yes
 USE_QT5=	core gui network quick svg linguist multimedia imageformats \
-		buildtools x11extras
+		buildtools x11extras concurrent
 USES=		desktop-file-utils qmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	pcbsd
