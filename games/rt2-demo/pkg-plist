@@ -1,3 +1,4 @@
+bin/rt2_demo
 lib/rt2_demo/Manual/Imagesm/C101_raise_lower.jpg
 lib/rt2_demo/Manual/Imagesm/C102_paint_terrain.jpg
 lib/rt2_demo/Manual/Imagesm/C103_fill_terrain.jpg
@@ -104,12 +105,3 @@ lib/rt2_demo/maps/Heartland, USA.mp2
 lib/rt2_demo/maps/Hell or High Water.mp2
 lib/rt2_demo/rt2_demo.x86
 lib/rt2_demo/splash.bmp
-@exec ln -sf %D/lib/rt2_demo/rt2_demo.x86 %D/bin/rt2_demo
-@unexec rm -f %D/bin/rt2_demo
-@dirrm lib/rt2_demo/maps
-@dirrm lib/rt2_demo/games
-@dirrm lib/rt2_demo/data
-@dirrm lib/rt2_demo/anim
-@dirrm lib/rt2_demo/Manual/Imagesm
-@dirrm lib/rt2_demo/Manual
-@dirrm lib/rt2_demo
