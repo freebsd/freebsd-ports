@@ -185,6 +185,7 @@
     SUBDIR += lsw
     SUBDIR += luit
     SUBDIR += lumina
+    SUBDIR += lumina-devel
     SUBDIR += lumina-i18n
     SUBDIR += lupe
     SUBDIR += lxde-meta
