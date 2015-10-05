@@ -58,6 +58,48 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6b3374d4-6b0b-11e5-9909-002590263bf5">
+    <topic>plone -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>plone</name>
+	<range><lt>4.3.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Plone.org reports:</p>
+	<blockquote cite="https://plone.org/products/plone/security/advisories/20150910-announcement">
+	  <p>Versions Affected: All current Plone versions.</p>
+	  <p>Versions Not Affected: None.</p>
+	  <p>Nature of vulnerability: Allows creation of members by anonymous
+	    users on sites that have self-registration enabled, allowing bypass
+	    of CAPTCHA and similar protections against scripted attacks.</p>
+	  <p>The patch can be added to buildouts as Products.PloneHotfix20150910
+	    (available from PyPI) or downloaded from Plone.org.</p>
+	  <p>Immediate Measures You Should Take: Disable self-registration until
+	    you have applied the patch.</p>
+	</blockquote>
+	<blockquote cite="https://plone.org/security/20150910/non-persistent-xss-in-plone">
+	  <p>Plone's URL checking infrastructure includes a method for checking
+	    if URLs valid and located in the Plone site. By passing HTML into
+	    this specially crafted url, XSS can be achieved.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/203255</freebsdpr>
+      <url>https://plone.org/products/plone-hotfix/releases/20150910</url>
+      <url>https://plone.org/products/plone/security/advisories/20150910-announcement</url>
+      <url>https://plone.org/security/20150910/non-persistent-xss-in-plone</url>
+      <url>https://github.com/plone/Products.CMFPlone/commit/3da710a2cd68587f0bf34f2e7ea1167d6eeee087</url>
+    </references>
+    <dates>
+      <discovery>2015-09-10</discovery>
+      <entry>2015-10-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c1da8b75-6aef-11e5-9909-002590263bf5">
     <topic>php -- multiple vulnerabilities</topic>
     <affects>
