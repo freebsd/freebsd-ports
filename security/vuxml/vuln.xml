@@ -58,6 +58,47 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c1da8b75-6aef-11e5-9909-002590263bf5">
+    <topic>php -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>php5-phar</name>
+	<range><le>5.4.45</le></range>
+      </package>
+      <package>
+	<name>php55-phar</name>
+	<range><lt>5.5.30</lt></range>
+      </package>
+      <package>
+	<name>php56-phar</name>
+	<range><lt>5.6.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PHP reports:</p>
+	<blockquote cite="http://php.net/ChangeLog-5.php#5.5.30">
+	  <p>Phar:</p>
+	  <ul>
+	    <li>Fixed bug #69720 (Null pointer dereference in
+	      phar_get_fp_offset()).</li>
+	    <li>Fixed bug #70433 (Uninitialized pointer in phar_make_dirstream
+	      when zip entry filename is "/").</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/203541</freebsdpr>
+      <url>http://php.net/ChangeLog-5.php#5.5.30</url>
+      <url>http://php.net/ChangeLog-5.php#5.6.14</url>
+    </references>
+    <dates>
+      <discovery>2015-10-01</discovery>
+      <entry>2015-10-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ee7bdf7f-11bb-4eea-b054-c692ab848c20">
     <topic>OpenSMTPD -- multiple vulnerabilities</topic>
     <affects>
