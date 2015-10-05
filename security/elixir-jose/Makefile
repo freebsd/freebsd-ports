@@ -2,6 +2,7 @@
 
 PORTNAME=	jose
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	security
 PKGNAMEPREFIX=	elixir-
 
@@ -14,6 +15,7 @@ USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	potatosalad
 GH_PROJECT=	erlang-jose
+DOCSDIR=	${PREFIX}/share/doc/elixir-${PORTNAME}
 
 MIX_BUILD_DEPS=	converters/erlang-base64url \
 		security/erlang-jose
