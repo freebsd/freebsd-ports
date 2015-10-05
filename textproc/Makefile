@@ -223,6 +223,7 @@
     SUBDIR += groff
     SUBDIR += groonga
     SUBDIR += gsed
+    SUBDIR += gspell
     SUBDIR += gtk-doc
     SUBDIR += gtkspell
     SUBDIR += gtkspell-reference
