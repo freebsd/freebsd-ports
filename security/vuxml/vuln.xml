@@ -71,7 +71,7 @@ Notes:
 	<p>reports:</p>
 	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/10/02/9">
 	  <p>We found a heap overflow and a DoS in the gdk-pixbuf
-	    implementation triggered by the scaling of tga file.<p>
+	    implementation triggered by the scaling of tga file.</p>
 	</blockquote>
 	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/10/02/10">
 	  <p>We found a heap overflow in the gdk-pixbuf implementation
