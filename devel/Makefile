@@ -4600,6 +4600,7 @@
     SUBDIR += rubygem-ascii85
     SUBDIR += rubygem-aspectr
     SUBDIR += rubygem-ast
+    SUBDIR += rubygem-astrolabe
     SUBDIR += rubygem-atomic
     SUBDIR += rubygem-atoulme-antwrap
     SUBDIR += rubygem-attic
