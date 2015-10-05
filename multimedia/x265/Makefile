@@ -8,7 +8,7 @@ MASTER_SITES=	http://bitbucket.org/multicoreware/${PORTNAME}/get/
 DISTNAME=	${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	H.265/High Efficiency Video Coding (HEVC) format
 
 LICENSE=	GPLv2
