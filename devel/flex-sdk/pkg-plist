@@ -655,19 +655,10 @@ bin/optimizer
 %%DATADIR%%/frameworks/projects/air/Core/src/air/net/ServiceMonitor.as
 %%DATADIR%%/frameworks/projects/air/Core/src/air/net/SocketMonitor.as
 %%DATADIR%%/frameworks/projects/air/Core/src/air/net/URLMonitor.as
-%%DATADIR%%/frameworks/projects/air/Licensing/Android/AndroidLicensingJavaProject/src/com/adobe/air/sampleextensions/android/licensing/._AndroidLicenseCheckerCallback.java
-%%DATADIR%%/frameworks/projects/air/Licensing/Android/AndroidLicensingJavaProject/src/com/adobe/air/sampleextensions/android/licensing/._AndroidLicensing.java
-%%DATADIR%%/frameworks/projects/air/Licensing/Android/AndroidLicensingJavaProject/src/com/adobe/air/sampleextensions/android/licensing/._AndroidLicensingExtension.java
-%%DATADIR%%/frameworks/projects/air/Licensing/Android/AndroidLicensingJavaProject/src/com/adobe/air/sampleextensions/android/licensing/._AndroidLicensingExtensionContext.java
 %%DATADIR%%/frameworks/projects/air/Licensing/Android/AndroidLicensingJavaProject/src/com/adobe/air/sampleextensions/android/licensing/AndroidLicenseCheckerCallback.java
 %%DATADIR%%/frameworks/projects/air/Licensing/Android/AndroidLicensingJavaProject/src/com/adobe/air/sampleextensions/android/licensing/AndroidLicensing.java
 %%DATADIR%%/frameworks/projects/air/Licensing/Android/AndroidLicensingJavaProject/src/com/adobe/air/sampleextensions/android/licensing/AndroidLicensingExtension.java
 %%DATADIR%%/frameworks/projects/air/Licensing/Android/AndroidLicensingJavaProject/src/com/adobe/air/sampleextensions/android/licensing/AndroidLicensingExtensionContext.java
-%%DATADIR%%/frameworks/projects/air/Licensing/Android/AndroidLicensingLib/src/._extension.xml
-%%DATADIR%%/frameworks/projects/air/Licensing/Android/AndroidLicensingLib/src/com/adobe/air/sampleextensions/android/licensing/._LicenseChecker.as
-%%DATADIR%%/frameworks/projects/air/Licensing/Android/AndroidLicensingLib/src/com/adobe/air/sampleextensions/android/licensing/._LicenseStatus.as
-%%DATADIR%%/frameworks/projects/air/Licensing/Android/AndroidLicensingLib/src/com/adobe/air/sampleextensions/android/licensing/._LicenseStatusEvent.as
-%%DATADIR%%/frameworks/projects/air/Licensing/Android/AndroidLicensingLib/src/com/adobe/air/sampleextensions/android/licensing/._LicenseStatusReason.as
 %%DATADIR%%/frameworks/projects/air/Licensing/Android/AndroidLicensingLib/src/com/adobe/air/sampleextensions/android/licensing/LicenseChecker.as
 %%DATADIR%%/frameworks/projects/air/Licensing/Android/AndroidLicensingLib/src/com/adobe/air/sampleextensions/android/licensing/LicenseStatus.as
 %%DATADIR%%/frameworks/projects/air/Licensing/Android/AndroidLicensingLib/src/com/adobe/air/sampleextensions/android/licensing/LicenseStatusEvent.as
@@ -4078,3 +4069,10 @@ bin/optimizer
 %%DOCSDIR%%/license-adobesdk-fr.htm
 %%DOCSDIR%%/license-mpl.htm
 %%DOCSDIR%%/readme.htm
+@dir %%DATADIR%%/frameworks/projects/mobilecomponents/src/spark/transitions/supportClasses
+@dir %%DATADIR%%/frameworks/projects/mobilecomponents/bundles/zh_CN
+@dir %%DATADIR%%/frameworks/projects/mobilecomponents/bundles/ru_RU
+@dir %%DATADIR%%/frameworks/projects/mobilecomponents/bundles/ja_JP
+@dir %%DATADIR%%/frameworks/projects/mobilecomponents/bundles/fr_FR
+@dir %%DATADIR%%/frameworks/projects/mobilecomponents/bundles/en_US
+@dir %%DATADIR%%/frameworks/projects/mobilecomponents/bundles/de_DE
