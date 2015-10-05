@@ -12,7 +12,7 @@ COMMENT=	HTTP/FTP downloader with a nice GUI
 
 WRKSRC_SUBDIR=	src
 
-USES=		dos2unix
+USES=		alias dos2unix
 USE_WX=		2.8
 WX_UNICODE=	yes
 MAKEFILE=	makefile
