@@ -3,7 +3,7 @@
 
 PORTNAME=	pinot
 PORTVERSION=	1.06
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	deskutils
 MASTER_SITES=	GOOGLE_CODE
 #MASTER_SITES=	http://colinf.chez.com/pinot/
@@ -35,7 +35,8 @@ RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info	\
 		catppt:${PORTSDIR}/textproc/catdoc			\
 		unzip:${PORTSDIR}/archivers/unzip			\
 		unrtf:${PORTSDIR}/textproc/unrtf			\
-		catdvi:${PORTSDIR}/print/catdvi
+		catdvi:${PORTSDIR}/print/catdvi				\
+		bash:${PORTSDIR}/shells/bash
 
 PROJECTHOST=	${PORTNAME}-search
 
@@ -51,7 +52,6 @@ USE_OPENSSL=	yes
 USE_SQLITE=	3
 USE_XORG=	pixman
 USE_LDCONFIG=	${PREFIX}/lib/pinot/backends ${PREFIX}/lib/pinot/filters
-SHEBANG_LANG=	bash
 SHEBANG_FILES=	scripts/bash/*.sh
 
 OPTIONS_DEFINE=	DEBUG CHMLIB DOCS
