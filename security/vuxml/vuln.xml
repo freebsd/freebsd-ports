@@ -58,6 +58,41 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9272a5b0-6b40-11e5-bd7f-bcaec565249c">
+    <topic>gdk-pixbuf2 -- head overflow and DoS</topic>
+    <affects>
+      <package>
+	<name>gdk-pixbuf2</name>
+	<range><lt>2.32.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/10/02/9">
+	  <p>We found a heap overflow and a DoS in the gdk-pixbuf
+	    implementation triggered by the scaling of tga file.<p>
+	</blockquote>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/10/02/10">
+	  <p>We found a heap overflow in the gdk-pixbuf implementation
+	    triggered by the scaling of gif file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7673</cvename>
+      <cvename>CVE-2015-7674</cvename>
+      <url>https://mail.gnome.org/archives/ftp-release-list/2015-September/msg00201.html</url>
+      <url>https://mail.gnome.org/archives/ftp-release-list/2015-September/msg00287.html</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/10/02/9</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/10/02/10</url>
+    </references>
+    <dates>
+      <discovery>2015-10-02</discovery>
+      <entry>2015-10-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6b3374d4-6b0b-11e5-9909-002590263bf5">
     <topic>plone -- multiple vulnerabilities</topic>
     <affects>
