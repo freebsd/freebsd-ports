@@ -4843,6 +4843,7 @@
     SUBDIR += rubygem-orm_adapter
     SUBDIR += rubygem-paint
     SUBDIR += rubygem-paperclip
+    SUBDIR += rubygem-parser
     SUBDIR += rubygem-piston
     SUBDIR += rubygem-pkg-config
     SUBDIR += rubygem-platform
