@@ -76,6 +76,7 @@
     SUBDIR += icinga-classicweb
     SUBDIR += icinga-core
     SUBDIR += icinga2
+    SUBDIR += icingaweb2
     SUBDIR += icli
     SUBDIR += icmpmonitor
     SUBDIR += icmpquery
