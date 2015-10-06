@@ -58,6 +58,37 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="42852f72-6bd3-11e5-9909-002590263bf5">
+    <topic>OpenSMTPD -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>opensmtpd</name>
+	<range><lt>5.7.3,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenSMTPD developers report:</p>
+	<blockquote cite="https://www.opensmtpd.org/announces/release-5.7.3.txt">
+	  <p>fix an mda buffer truncation bug which allows a user to create
+	    forward files that pass session checks but fail delivery later down
+	    the chain, within the user mda</p>
+	  <p>fix remote buffer overflow in unprivileged pony process</p>
+	  <p>reworked offline enqueue to better protect against hardlink
+	    attacks</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openwall.com/lists/oss-security/2015/10/04/2</url>
+      <url>https://www.opensmtpd.org/announces/release-5.7.3.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-10-04</discovery>
+      <entry>2015-10-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5d280761-6bcf-11e5-9909-002590263bf5">
     <topic>mbedTLS/PolarSSL -- multiple vulnerabilities</topic>
     <affects>
@@ -254,16 +285,33 @@ Notes:
     <topic>OpenSMTPD -- multiple vulnerabilities</topic>
     <affects>
       <package>
-	<name>smtpd</name>
-	<range><lt>5.7.2</lt></range>
+	<name>opensmtpd</name>
+	<range><lt>5.7.2,1</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>OpenSMTPD developers report:</p>
 	<blockquote cite="https://www.opensmtpd.org/announces/release-5.7.2.txt">
-	  <p>This is a minor release with security and reliability fixes only.
-	    You are encouraged to update as soon as possible.</p>
+	  <p>an oversight in the portable version of fgetln() that allows
+	    attackers to read and write out-of-bounds memory</p>
+	  <p>multiple denial-of-service vulnerabilities that allow local users
+	    to kill or hang OpenSMTPD</p>
+	  <p>a stack-based buffer overflow that allows local users to crash
+	    OpenSMTPD, or execute arbitrary code as the non-chrooted _smtpd
+	    user</p>
+	  <p>a hardlink attack (or race-conditioned symlink attack) that allows
+	    local users to unset the chflags() of arbitrary files</p>
+	  <p>a hardlink attack that allows local users to read the first line of
+	    arbitrary files (for example, root's hash from /etc/master.passwd)
+	    </p>
+	  <p>a denial-of-service vulnerability that allows remote attackers to
+	    fill OpenSMTPD's queue or mailbox hard-disk partition</p>
+	  <p>an out-of-bounds memory read that allows remote attackers to crash
+	    OpenSMTPD, or leak information and defeat the ASLR protection</p>
+	  <p>a use-after-free vulnerability that allows remote attackers to
+	    crash OpenSMTPD, or execute arbitrary code as the non-chrooted
+	    _smtpd user</p>
 	</blockquote>
       </body>
     </description>
@@ -274,6 +322,7 @@ Notes:
     <dates>
       <discovery>2015-10-02</discovery>
       <entry>2015-10-04</entry>
+      <modified>2015-10-06</modified>
     </dates>
   </vuln>
 
