@@ -2,7 +2,7 @@
 IMPORTANT! MAKE SURE TO READ THE FOLLOWING!
 
 To start the YATE sever automatically when the system is started, append
-the following in your /etc/rc.conf file:
+the following in your ${PREFIX}/etc/rc.conf file:
 
 yate_enable="YES"		# YATE iPBX/Softswitch server
 
