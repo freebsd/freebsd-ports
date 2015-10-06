@@ -36,12 +36,3 @@
  	}
  	else if (exec && (uintptr_t) map_hint > 0xFFFFFFFFULL)
  	{
-@@ -160,7 +182,7 @@ void* AllocateExecutableMemory(size_t si
- 	// printf("Mapped executable memory at %p (size %ld)\n", ptr,
- 	//	(unsigned long)size);
- 
--#if defined(__FreeBSD__)
-+#if !defined(_WIN32) && !defined(__SYMBIAN32__)
- 	if (ptr == MAP_FAILED)
- 	{
- 		ptr = NULL;
