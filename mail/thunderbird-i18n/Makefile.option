@@ -37,7 +37,6 @@ OPTIONS_DEFINE=	LANG_AR \
 		LANG_JA \
 		LANG_KO \
 		LANG_LT \
-		LANG_LV \
 		LANG_NB \
 		LANG_NL \
 		LANG_NN \
