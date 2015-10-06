@@ -4,6 +4,7 @@
 PORTNAME=	postgresql
 CATEGORIES=	databases
 PKGNAMESUFFIX?=	${DISTVERSION:R:S/.//}${COMPONENT}
+PORTREVISION=	1
 
 MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	The contrib utilities from the PostgreSQL distribution
