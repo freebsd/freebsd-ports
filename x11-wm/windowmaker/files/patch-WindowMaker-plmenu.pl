@@ -1,5 +1,5 @@
---- WindowMaker/plmenu.pl.orig	2013-05-03 03:12:25.000000000 +0900
-+++ WindowMaker/plmenu.pl	2013-05-03 03:12:17.000000000 +0900
+--- WindowMaker/plmenu.pl.orig	2015-08-11 18:41:14 UTC
++++ WindowMaker/plmenu.pl
 @@ -32,7 +32,7 @@
  			("LyX",                 EXEC, "lyx"),
    			("Ghostview",           EXEC, "gv %a(Gv,Wprowadz nazwe pliku *.ps *.pdf *.no:)"),

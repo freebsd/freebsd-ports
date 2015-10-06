@@ -1,5 +1,5 @@
---- WindowMaker/plmenu.ja.orig	2013-05-03 03:12:25.000000000 +0900
-+++ WindowMaker/plmenu.ja	2013-05-03 03:12:17.000000000 +0900
+--- WindowMaker/plmenu.ja.orig	2015-08-11 18:41:14 UTC
++++ WindowMaker/plmenu.ja
 @@ -23,7 +23,7 @@
    ("LyX", EXEC, "lyx"),
    ("Netscape", EXEC, "netscape"),

@@ -1,6 +1,6 @@
---- WINGs/WINGs/WINGsP.h.orig	2013-03-06 03:52:04.000000000 +0900
-+++ WINGs/WINGs/WINGsP.h	2013-03-06 03:51:32.000000000 +0900
-@@ -14,7 +14,13 @@
+--- WINGs/WINGs/WINGsP.h.orig	2015-08-11 18:41:14 UTC
++++ WINGs/WINGs/WINGsP.h
+@@ -17,7 +17,13 @@
  
  #include <assert.h>
  

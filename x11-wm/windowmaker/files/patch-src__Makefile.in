@@ -1,8 +1,8 @@
---- src/Makefile.in.orig	2014-09-05 04:06:51.000000000 +0900
-+++ src/Makefile.in	2014-09-05 04:07:46.000000000 +0900
-@@ -124,8 +124,7 @@
- 	$(am__objects_3) $(am__objects_4)
- wmaker_OBJECTS = $(am_wmaker_OBJECTS)
+--- src/Makefile.in.orig	2015-10-06 04:12:09 UTC
++++ src/Makefile.in
+@@ -164,8 +164,7 @@ am_wmaker_OBJECTS = actions.$(OBJEXT) ap
+ @USE_NESTED_FUNC_FALSE@	xmodifier.hack_nf.$(OBJEXT)
+ wmaker_OBJECTS = $(am_wmaker_OBJECTS) $(nodist_wmaker_OBJECTS)
  wmaker_DEPENDENCIES = $(top_builddir)/WINGs/libWINGs.la \
 -	$(top_builddir)/WINGs/libWUtil.la \
 -	$(top_builddir)/wrlib/libwraster.la
@@ -10,10 +10,10 @@
  AM_V_lt = $(am__v_lt_@AM_V@)
  am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
  am__v_lt_0 = --silent
-@@ -353,13 +352,12 @@
+@@ -424,13 +423,12 @@ wmaker_SOURCES = GNUstep.h WindowMaker.h
+ @USE_NESTED_FUNC_FALSE@CLEANFILES = $(nodist_wmaker_SOURCES)
  AM_CFLAGS = 
- AM_CPPFLAGS = \
- 	$(DFLAGS) -DLOCALEDIR=\"$(NLSDIR)\" \
+ AM_CPPFLAGS = $(DFLAGS) \
 -	-I$(top_srcdir)/wrlib \
  	-I$(top_srcdir)/WINGs @HEADER_SEARCH_PATH@ 
  

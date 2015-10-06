@@ -1,5 +1,5 @@
---- WindowMaker/menu.ru.orig	2013-05-03 03:12:25.000000000 +0900
-+++ WindowMaker/menu.ru	2013-05-03 03:12:17.000000000 +0900
+--- WindowMaker/menu.ru.orig	2015-08-11 18:41:14 UTC
++++ WindowMaker/menu.ru
 @@ -77,7 +77,7 @@
  		"LyX" EXEC lyx
  		"Netscape" EXEC netscape 

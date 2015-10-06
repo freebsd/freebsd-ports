@@ -1,5 +1,5 @@
---- WindowMaker/menu.pl.orig	2013-05-03 03:12:25.000000000 +0900
-+++ WindowMaker/menu.pl	2013-05-03 03:12:17.000000000 +0900
+--- WindowMaker/menu.pl.orig	2015-08-11 18:41:14 UTC
++++ WindowMaker/menu.pl
 @@ -134,7 +134,7 @@
  			"LyX"                 EXEC lyx
    			"Ghostview"           EXEC gv %a(GhostView,Wprowadz nazwe pliku *.ps *.pdf *.no:)
