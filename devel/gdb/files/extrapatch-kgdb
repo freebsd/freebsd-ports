@@ -1,0 +1,226 @@
+diff --git gdb/Makefile.in gdb/Makefile.in
+index dfaa8a3..182d875 100644
+--- gdb/Makefile.in
++++ gdb/Makefile.in
+@@ -650,7 +650,8 @@ ALL_64_TARGET_OBS = \
+ 	ia64-linux-tdep.o ia64-vms-tdep.o ia64-tdep.o \
+ 	mips64obsd-tdep.o \
+ 	sparc64fbsd-tdep.o sparc64-linux-tdep.o sparc64nbsd-tdep.o \
+-	sparc64obsd-tdep.o sparc64-sol2-tdep.o sparc64-tdep.o
++	sparc64obsd-tdep.o sparc64-sol2-tdep.o sparc64-tdep.o \
++	amd64fbsd-kern.o sparc64fbsd-kern.o
+ 
+ # All other target-dependent objects files (used with --enable-targets=all).
+ ALL_TARGET_OBS = \
+@@ -672,6 +673,7 @@ ALL_TARGET_OBS = \
+ 	i386-sol2-tdep.o i386-tdep.o i387-tdep.o \
+ 	i386-dicos-tdep.o i386-darwin-tdep.o \
+ 	iq2000-tdep.o \
++	fbsd-kld.o fbsd-kthr.o fbsd-kvm.o i386fbsd-kern.o ppcfbsd-kern.o \
+ 	linux-tdep.o \
+ 	lm32-tdep.o \
+ 	m32c-tdep.o \
+@@ -1123,7 +1125,7 @@ generated_files = config.h observer.h observer.inc ada-lex.c jit-reader.h \
+ 	$(COMPILE) $<
+ 	$(POSTCOMPILE)
+ 
+-all: gdb$(EXEEXT) $(CONFIG_ALL)
++all: gdb$(EXEEXT) kgdb$(EXEEXT) $(CONFIG_ALL)
+ 	@$(MAKE) $(FLAGS_TO_PASS) DO=all "DODIRS=`echo $(SUBDIRS) | sed 's/testsuite//'`" subdir_do
+ 
+ installcheck:
+@@ -1393,6 +1395,12 @@ gdb$(EXEEXT): gdb.o $(LIBGDB_OBS) $(ADD_DEPS) $(CDEPS) $(TDEPLIBS)
+ 		-o gdb$(EXEEXT) gdb.o $(LIBGDB_OBS) \
+ 		$(TDEPLIBS) $(TUI_LIBRARY) $(CLIBS) $(LOADLIBES)
+ 
++kgdb$(EXEEXT): kgdb-main.o $(LIBGDB_OBS) $(ADD_DEPS) $(CDEPS) $(TDEPLIBS)
++	rm -f kgdb$(EXEEXT)
++	$(CC_LD) $(INTERNAL_LDFLAGS) $(WIN32LDAPP) \
++		-o kgdb$(EXEEXT) kgdb-main.o $(LIBGDB_OBS) \
++		$(TDEPLIBS) $(TUI_LIBRARY) $(CLIBS) $(LOADLIBES)
++
+ # Convenience rule to handle recursion.
+ $(LIBGNU) $(GNULIB_H): all-lib
+ all-lib: $(GNULIB_BUILDDIR)/Makefile
+@@ -1437,7 +1445,7 @@ clean mostlyclean: $(CONFIG_CLEAN)
+ 	@$(MAKE) $(FLAGS_TO_PASS) DO=clean "DODIRS=$(CLEANDIRS)" subdir_do
+ 	rm -f *.o *.a $(ADD_FILES) *~ init.c-tmp init.l-tmp version.c-tmp
+ 	rm -f init.c version.c observer.h observer.inc
+-	rm -f gdb$(EXEEXT) core make.log
++	rm -f gdb$(EXEEXT) core make.log kgdb$(EXEEXT)
+ 	rm -f gdb[0-9]$(EXEEXT)
+ 	rm -f test-cp-name-parser$(EXEEXT)
+ 	rm -f xml-builtin.c stamp-xml
+@@ -1667,6 +1675,9 @@ ALLDEPFILES = \
+ 	core-regset.c \
+ 	dcache.c dicos-tdep.c darwin-nat.c \
+ 	exec.c \
++	fbsd-kld.c fbsd-kthr.c fbsd-kvm.c \
++	amd64fbsd-kern.c i386fbsd-kern.c ppcfbsd-kern.c \
++	sparc64fbsd-kern.c \
+ 	fbsd-nat.c \
+ 	fbsd-tdep.c \
+ 	fork-child.c \
+diff --git gdb/config.in gdb/config.in
+index 9ef53b3..c55c01b 100644
+--- gdb/config.in
++++ gdb/config.in
+@@ -216,6 +216,9 @@
+ /* Define to 1 if your system has the kinfo_getvmmap function. */
+ #undef HAVE_KINFO_GETVMMAP
+ 
++/* Define to 1 if your system has the kvm_open2 function. */
++#undef HAVE_KVM_OPEN2
++
+ /* Define if you have <langinfo.h> and nl_langinfo(CODESET). */
+ #undef HAVE_LANGINFO_CODESET
+ 
+diff --git gdb/configure gdb/configure
+index 48acfe5..f0cd958 100755
+--- gdb/configure
++++ gdb/configure
+@@ -7104,6 +7104,66 @@ $as_echo "#define HAVE_KINFO_GETVMMAP 1" >>confdefs.h
+ fi
+ 
+ 
++# kgdb needs kvm_open2 for cross-debugging
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for library containing kvm_open2" >&5
++$as_echo_n "checking for library containing kvm_open2... " >&6; }
++if test "${ac_cv_search_kvm_open2+set}" = set; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_func_search_save_LIBS=$LIBS
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char kvm_open2 ();
++int
++main ()
++{
++return kvm_open2 ();
++  ;
++  return 0;
++}
++_ACEOF
++for ac_lib in '' kvm; do
++  if test -z "$ac_lib"; then
++    ac_res="none required"
++  else
++    ac_res=-l$ac_lib
++    LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
++  fi
++  if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_search_kvm_open2=$ac_res
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext
++  if test "${ac_cv_search_kvm_open2+set}" = set; then :
++  break
++fi
++done
++if test "${ac_cv_search_kvm_open2+set}" = set; then :
++
++else
++  ac_cv_search_kvm_open2=no
++fi
++rm conftest.$ac_ext
++LIBS=$ac_func_search_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_search_kvm_open2" >&5
++$as_echo "$ac_cv_search_kvm_open2" >&6; }
++ac_res=$ac_cv_search_kvm_open2
++if test "$ac_res" != no; then :
++  test "$ac_res" = "none required" || LIBS="$ac_res $LIBS"
++
++$as_echo "#define HAVE_KVM_OPEN2 1" >>confdefs.h
++
++fi
++
++
+ 
+ 
+ 
+diff --git gdb/configure.ac gdb/configure.ac
+index a40860a..9035d48 100644
+--- gdb/configure.ac
++++ gdb/configure.ac
+@@ -539,6 +539,11 @@ AC_SEARCH_LIBS(kinfo_getvmmap, util,
+   [AC_DEFINE(HAVE_KINFO_GETVMMAP, 1,
+             [Define to 1 if your system has the kinfo_getvmmap function. ])])
+ 
++# kgdb needs kvm_open2 for cross-debugging
++AC_SEARCH_LIBS(kvm_open2, kvm,
++  [AC_DEFINE(HAVE_KVM_OPEN2, 1,
++            [Define to 1 if your system has the kvm_open2 function. ])])
++
+ AM_ICONV
+ 
+ # GDB may fork/exec the iconv program to get the list of supported character
+diff --git gdb/defs.h gdb/defs.h
+index ccdab18..499944f 100644
+--- gdb/defs.h
++++ gdb/defs.h
+@@ -549,6 +549,7 @@ enum gdb_osabi
+   GDB_OSABI_LINUX,
+   GDB_OSABI_FREEBSD_AOUT,
+   GDB_OSABI_FREEBSD_ELF,
++  GDB_OSABI_FREEBSD_ELF_KERNEL,
+   GDB_OSABI_NETBSD_AOUT,
+   GDB_OSABI_NETBSD_ELF,
+   GDB_OSABI_OPENBSD_ELF,
+diff --git gdb/osabi.c gdb/osabi.c
+index 3581eb3..d12656e 100644
+--- gdb/osabi.c
++++ gdb/osabi.c
+@@ -66,6 +66,7 @@ static const struct osabi_names gdb_osabi_names[] =
+   { "GNU/Linux", "linux(-gnu)?" },
+   { "FreeBSD a.out", NULL },
+   { "FreeBSD ELF", NULL },
++  { "FreeBSD ELF kernel", NULL },
+   { "NetBSD a.out", NULL },
+   { "NetBSD ELF", NULL },
+   { "OpenBSD ELF", NULL },
+diff --git gdb/regcache.c gdb/regcache.c
+index 86e648a..26a0fd5 100644
+--- gdb/regcache.c
++++ gdb/regcache.c
+@@ -1065,6 +1065,20 @@ regcache_raw_supply (struct regcache *regcache, int regnum, const void *buf)
+     }
+ }
+ 
++void
++regcache_raw_supply_unsigned (struct regcache *regcache, int regnum,
++			      ULONGEST val)
++{
++  void *buf;
++
++  gdb_assert (regcache != NULL);
++  gdb_assert (regnum >=0 && regnum < regcache->descr->nr_raw_registers);
++  buf = alloca (regcache->descr->sizeof_register[regnum]);
++  store_unsigned_integer (buf, regcache->descr->sizeof_register[regnum],
++			  gdbarch_byte_order (regcache->descr->gdbarch), val);
++  regcache_raw_supply (regcache, regnum, buf);
++}
++
+ /* Collect register REGNUM from REGCACHE and store its contents in BUF.  */
+ 
+ void
+diff --git gdb/regcache.h gdb/regcache.h
+index a9fb44b..a156918 100644
+--- gdb/regcache.h
++++ gdb/regcache.h
+@@ -147,6 +147,8 @@ extern void regcache_write_pc (struct regcache *regcache, CORE_ADDR pc);
+ 
+ extern void regcache_raw_supply (struct regcache *regcache,
+ 				 int regnum, const void *buf);
++extern void regcache_raw_supply_unsigned (struct regcache *regcache,
++					  int regnum, ULONGEST val);
+ extern void regcache_raw_collect (const struct regcache *regcache,
+ 				  int regnum, void *buf);
+ 
