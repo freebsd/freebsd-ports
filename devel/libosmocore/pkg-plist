@@ -16,6 +16,7 @@ include/osmocom/core/crc64gen.h
 include/osmocom/core/crc8gen.h
 include/osmocom/core/crcgen.h
 include/osmocom/core/defs.h
+include/osmocom/core/endian.h
 include/osmocom/core/gsmtap.h
 include/osmocom/core/gsmtap_util.h
 include/osmocom/core/linuxlist.h
@@ -54,6 +55,7 @@ include/osmocom/gprs/protocol/gsm_08_16.h
 include/osmocom/gprs/protocol/gsm_08_18.h
 include/osmocom/gsm/a5.h
 include/osmocom/gsm/abis_nm.h
+include/osmocom/gsm/apn.h
 include/osmocom/gsm/comp128.h
 include/osmocom/gsm/comp128v23.h
 include/osmocom/gsm/gan.h
@@ -110,8 +112,8 @@ lib/libosmocore.so.6
 lib/libosmocore.so.6.0.0
 lib/libosmogb.a
 lib/libosmogb.so
-lib/libosmogb.so.3
-lib/libosmogb.so.3.0.1
+lib/libosmogb.so.4
+lib/libosmogb.so.4.0.0
 lib/libosmogsm.a
 lib/libosmogsm.so
 lib/libosmogsm.so.5
@@ -122,8 +124,8 @@ lib/libosmosim.so.0
 lib/libosmosim.so.0.0.0
 lib/libosmovty.a
 lib/libosmovty.so
-lib/libosmovty.so.1
-lib/libosmovty.so.1.0.0
+lib/libosmovty.so.2
+lib/libosmovty.so.2.0.0
 lib/libosmoctrl.a
 lib/libosmoctrl.so
 lib/libosmoctrl.so.0

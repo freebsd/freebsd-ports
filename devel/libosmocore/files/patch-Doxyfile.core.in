@@ -1,5 +1,5 @@
---- ./Doxyfile.core.in.orig	2014-03-31 15:40:46.000000000 +0200
-+++ ./Doxyfile.core.in	2014-08-11 15:10:30.000000000 +0200
+--- Doxyfile.core.in.orig	2015-08-23 15:39:14 UTC
++++ Doxyfile.core.in
 @@ -1,109 +1,129 @@
 -# Doxyfile 1.7.4
 +# Doxyfile 1.8.7
@@ -185,7 +185,7 @@
  
  ALWAYS_DETAILED_SEC    = NO
  
-@@ -111,153 +131,207 @@
+@@ -111,153 +131,207 @@ ALWAYS_DETAILED_SEC    = NO
  # inherited members of a class in the documentation of that class as if those
  # members were ordinary class members. Constructors, destructors and assignment
  # operators of the base classes will not be shown.
@@ -473,7 +473,7 @@
  
  IDL_PROPERTY_SUPPORT   = YES
  
-@@ -265,394 +339,472 @@
+@@ -265,394 +339,472 @@ IDL_PROPERTY_SUPPORT   = YES
  # tag is set to YES, then doxygen will reuse the documentation of the first
  # member in the group (if any) for the other members of the group. By default
  # all members of a group must be documented explicitly.
@@ -1149,7 +1149,7 @@
  
  EXCLUDE_PATTERNS       =
  
-@@ -661,740 +813,1076 @@
+@@ -661,740 +813,1076 @@ EXCLUDE_PATTERNS       =
  # output. The symbol name can be a fully qualified name, a word, or if the
  # wildcard * is used, a substring. Examples: ANamespace, AClass,
  # AClass::ANamespace, ANamespace::*Test
@@ -2620,7 +2620,7 @@
  
  PERLMOD_MAKEVAR_PREFIX =
  
-@@ -1402,110 +1890,128 @@
+@@ -1402,110 +1890,128 @@ PERLMOD_MAKEVAR_PREFIX =
  # Configuration options related to the preprocessor
  #---------------------------------------------------------------------------
  
@@ -2804,7 +2804,7 @@
  
  PERL_PATH              = /usr/bin/perl
  
-@@ -1513,204 +2019,293 @@
+@@ -1513,204 +2019,293 @@ PERL_PATH              = /usr/bin/perl
  # Configuration options related to the dot tool
  #---------------------------------------------------------------------------
  
