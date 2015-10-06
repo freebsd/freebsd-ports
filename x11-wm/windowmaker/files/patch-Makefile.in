@@ -1,11 +1,11 @@
---- Makefile.in.orig
+--- Makefile.in.orig	2015-10-06 04:12:09 UTC
 +++ Makefile.in
-@@ -271,7 +271,7 @@
- BUILT_SOURCES = config-paths.h
- DISTCLEANFILES = config-paths.h
- ACLOCAL_AMFLAGS = -I m4
--SUBDIRS = wrlib WINGs src util po WindowMaker wmlib WPrefs.app doc test
-+SUBDIRS = WINGs src util po WindowMaker wmlib WPrefs.app doc test
- EXTRA_DIST = TODO BUGS BUGFORM FAQ FAQ.I18N INSTALL \
- 	INSTALL-WMAKER README.definable-cursor \
- 	The-perfect-Window-Maker-patch.txt \
+@@ -374,7 +374,7 @@ ACLOCAL_AMFLAGS = -I m4
+ 
+ # Improve coverage in 'make distcheck' by checking that translations work
+ AM_DISTCHECK_CONFIGURE_FLAGS = --enable-silent-rules LINGUAS='*'
+-SUBDIRS = wrlib WINGs src util po WindowMaker wmlib WPrefs.app doc
++SUBDIRS = WINGs src util po WindowMaker wmlib WPrefs.app doc
+ DIST_SUBDIRS = $(SUBDIRS) test
+ EXTRA_DIST = TODO BUGS BUGFORM FAQ INSTALL \
+ 	INSTALL-WMAKER README.i18n README.definable-cursor \

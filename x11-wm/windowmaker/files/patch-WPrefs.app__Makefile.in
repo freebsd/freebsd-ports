@@ -1,9 +1,9 @@
---- WPrefs.app/Makefile.in.orig	2014-09-05 04:29:28.000000000 +0900
-+++ WPrefs.app/Makefile.in	2014-09-05 04:30:48.000000000 +0900
-@@ -395,13 +395,14 @@
+--- WPrefs.app/Makefile.in.orig	2015-10-06 04:12:10 UTC
++++ WPrefs.app/Makefile.in
+@@ -455,13 +455,14 @@ WPrefs_SOURCES = \
  #	Themes.c
  AM_CFLAGS = 
- AM_CPPFLAGS = -DLOCALEDIR=\"$(NLSDIR)\" -DRESOURCE_PATH=\"$(wpdatadir)\" -DWMAKER_RESOURCE_PATH=\"$(pkgdatadir)\" \
+ AM_CPPFLAGS = -DRESOURCE_PATH=\"$(wpdatadir)\" -DWMAKER_RESOURCE_PATH=\"$(pkgdatadir)\" \
 -	 -I$(top_srcdir)/wrlib -I$(top_srcdir)/WINGs @HEADER_SEARCH_PATH@ 
 +	 -DPREFIX=\"$(prefix)\" \
 +	 -I$(top_srcdir)/WINGs @HEADER_SEARCH_PATH@ 
@@ -15,5 +15,5 @@
 -	$(top_builddir)/wrlib/libwraster.la \
 +	-lwraster \
  	@XLFLAGS@ @XLIBS@ \
+ 	@LIBM@ \
  	@FCLIBS@ \
- 	@INTLIBS@
