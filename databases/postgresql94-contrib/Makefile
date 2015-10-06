@@ -3,6 +3,7 @@
 
 PORTNAME=	postgresql
 CATEGORIES=	databases
+PORTREVISION=	1
 
 MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	The contrib utilities from the PostgreSQL distribution
