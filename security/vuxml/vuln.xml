@@ -58,6 +58,35 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d3324fdb-6bf0-11e5-bc5e-00505699053e">
+    <topic>ZendFramework1 -- SQL injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>ZendFramework1</name>
+	<range><lt>1.12.16</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Zend Framework developers report:</p>
+	<blockquote cite="http://framework.zend.com/security/advisory/ZF2015-08">
+	  <p>The PDO adapters of Zend Framework 1 do not filter null bytes values
+	    in SQL statements. A PDO adapter can treat null bytes in a query as a
+	    string terminator, allowing an attacker to add arbitrary SQL
+	    following a null byte, and thus create a SQL injection.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openwall.com/lists/oss-security/2015/09/30/6</url>
+      <url>http://framework.zend.com/security/advisory/ZF2015-08</url>
+    </references>
+    <dates>
+      <discovery>2015-09-15</discovery>
+      <entry>2015-10-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="42852f72-6bd3-11e5-9909-002590263bf5">
     <topic>OpenSMTPD -- multiple vulnerabilities</topic>
     <affects>
