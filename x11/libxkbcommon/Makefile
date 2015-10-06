@@ -23,6 +23,7 @@ CONFIGURE_ARGS=	--without-default-layout \
 		--without-default-options \
 		--without-default-rules \
 		--without-default-variant \
-		--without-doxygen
+		--without-doxygen \
+		--with-x-locale-root=${PREFIX}/lib/X11/locale
 
 .include <bsd.port.mk>
