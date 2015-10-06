@@ -1,7 +1,5 @@
 bin/zf
 bin/zf.php
-@owner %%WWWOWN%%
-@group %%WWWGRP%%
 %%DATADIR%%/externals/dojo/dijit/Calendar.js
 %%DATADIR%%/externals/dojo/dijit/CheckedMenuItem.js
 %%DATADIR%%/externals/dojo/dijit/ColorPalette.js
@@ -2199,7 +2197,7 @@ bin/zf.php
 %%DATADIR%%/externals/dojo/dojox/highlight/languages/_all.js
 %%DATADIR%%/externals/dojo/dojox/highlight/languages/_dynamic.js
 %%DATADIR%%/externals/dojo/dojox/highlight/languages/_static.js
-%%DATADIR%%/externals/dojo/dojox/highlight/languages/_www.js
+%%DATADIR%%/externals/dojo/dojox/highlight/languages/_%%WWWOWN%%.js
 %%DATADIR%%/externals/dojo/dojox/highlight/languages/cpp.js
 %%DATADIR%%/externals/dojo/dojox/highlight/languages/css.js
 %%DATADIR%%/externals/dojo/dojox/highlight/languages/delphi.js
@@ -2209,7 +2207,7 @@ bin/zf.php
 %%DATADIR%%/externals/dojo/dojox/highlight/languages/java.js
 %%DATADIR%%/externals/dojo/dojox/highlight/languages/javascript.js
 %%DATADIR%%/externals/dojo/dojox/highlight/languages/pygments/_html.js
-%%DATADIR%%/externals/dojo/dojox/highlight/languages/pygments/_www.js
+%%DATADIR%%/externals/dojo/dojox/highlight/languages/pygments/_%%WWWOWN%%.js
 %%DATADIR%%/externals/dojo/dojox/highlight/languages/pygments/css.js
 %%DATADIR%%/externals/dojo/dojox/highlight/languages/pygments/html.js
 %%DATADIR%%/externals/dojo/dojox/highlight/languages/pygments/javascript.js
@@ -3951,6 +3949,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Http/Exception.php
 %%DATADIR%%/library/Zend/Http/Header/Exception/InvalidArgumentException.php
 %%DATADIR%%/library/Zend/Http/Header/Exception/RuntimeException.php
+%%DATADIR%%/library/Zend/Http/Header/HeaderValue.php
 %%DATADIR%%/library/Zend/Http/Header/SetCookie.php
 %%DATADIR%%/library/Zend/Http/Response.php
 %%DATADIR%%/library/Zend/Http/Response/Stream.php
@@ -4087,6 +4086,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Locale/Data/ar_SA.xml
 %%DATADIR%%/library/Zend/Locale/Data/ar_SD.xml
 %%DATADIR%%/library/Zend/Locale/Data/ar_SO.xml
+%%DATADIR%%/library/Zend/Locale/Data/ar_SS.xml
 %%DATADIR%%/library/Zend/Locale/Data/ar_SY.xml
 %%DATADIR%%/library/Zend/Locale/Data/ar_TD.xml
 %%DATADIR%%/library/Zend/Locale/Data/ar_TN.xml
@@ -4134,6 +4134,9 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Locale/Data/ca.xml
 %%DATADIR%%/library/Zend/Locale/Data/ca_AD.xml
 %%DATADIR%%/library/Zend/Locale/Data/ca_ES.xml
+%%DATADIR%%/library/Zend/Locale/Data/ca_ES_VALENCIA.xml
+%%DATADIR%%/library/Zend/Locale/Data/ca_FR.xml
+%%DATADIR%%/library/Zend/Locale/Data/ca_IT.xml
 %%DATADIR%%/library/Zend/Locale/Data/cgg.xml
 %%DATADIR%%/library/Zend/Locale/Data/cgg_UG.xml
 %%DATADIR%%/library/Zend/Locale/Data/characters.xml
@@ -4146,6 +4149,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Locale/Data/cy_GB.xml
 %%DATADIR%%/library/Zend/Locale/Data/da.xml
 %%DATADIR%%/library/Zend/Locale/Data/da_DK.xml
+%%DATADIR%%/library/Zend/Locale/Data/da_GL.xml
 %%DATADIR%%/library/Zend/Locale/Data/dav.xml
 %%DATADIR%%/library/Zend/Locale/Data/dav_KE.xml
 %%DATADIR%%/library/Zend/Locale/Data/dayPeriods.xml
@@ -4173,8 +4177,10 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Locale/Data/el_CY.xml
 %%DATADIR%%/library/Zend/Locale/Data/el_GR.xml
 %%DATADIR%%/library/Zend/Locale/Data/en.xml
+%%DATADIR%%/library/Zend/Locale/Data/en_001.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_150.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_AG.xml
+%%DATADIR%%/library/Zend/Locale/Data/en_AI.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_AS.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_AU.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_BB.xml
@@ -4184,11 +4190,17 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Locale/Data/en_BW.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_BZ.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_CA.xml
+%%DATADIR%%/library/Zend/Locale/Data/en_CC.xml
+%%DATADIR%%/library/Zend/Locale/Data/en_CK.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_CM.xml
+%%DATADIR%%/library/Zend/Locale/Data/en_CX.xml
+%%DATADIR%%/library/Zend/Locale/Data/en_DG.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_DM.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_Dsrt.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_Dsrt_US.xml
+%%DATADIR%%/library/Zend/Locale/Data/en_ER.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_FJ.xml
+%%DATADIR%%/library/Zend/Locale/Data/en_FK.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_FM.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_GB.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_GD.xml
@@ -4202,6 +4214,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Locale/Data/en_IE.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_IM.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_IN.xml
+%%DATADIR%%/library/Zend/Locale/Data/en_IO.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_JE.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_JM.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_KE.xml
@@ -4213,27 +4226,39 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Locale/Data/en_LS.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_MG.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_MH.xml
+%%DATADIR%%/library/Zend/Locale/Data/en_MO.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_MP.xml
+%%DATADIR%%/library/Zend/Locale/Data/en_MS.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_MT.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_MU.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_MW.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_NA.xml
+%%DATADIR%%/library/Zend/Locale/Data/en_NF.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_NG.xml
+%%DATADIR%%/library/Zend/Locale/Data/en_NR.xml
+%%DATADIR%%/library/Zend/Locale/Data/en_NU.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_NZ.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_PG.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_PH.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_PK.xml
+%%DATADIR%%/library/Zend/Locale/Data/en_PN.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_PR.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_PW.xml
+%%DATADIR%%/library/Zend/Locale/Data/en_RW.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_SB.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_SC.xml
+%%DATADIR%%/library/Zend/Locale/Data/en_SD.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_SG.xml
+%%DATADIR%%/library/Zend/Locale/Data/en_SH.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_SL.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_SS.xml
+%%DATADIR%%/library/Zend/Locale/Data/en_SX.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_SZ.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_TC.xml
+%%DATADIR%%/library/Zend/Locale/Data/en_TK.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_TO.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_TT.xml
+%%DATADIR%%/library/Zend/Locale/Data/en_TV.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_TZ.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_UG.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_UM.xml
@@ -4248,6 +4273,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Locale/Data/en_ZM.xml
 %%DATADIR%%/library/Zend/Locale/Data/en_ZW.xml
 %%DATADIR%%/library/Zend/Locale/Data/eo.xml
+%%DATADIR%%/library/Zend/Locale/Data/eo_001.xml
 %%DATADIR%%/library/Zend/Locale/Data/es.xml
 %%DATADIR%%/library/Zend/Locale/Data/es_419.xml
 %%DATADIR%%/library/Zend/Locale/Data/es_AR.xml
@@ -4285,6 +4311,9 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Locale/Data/fa_AF.xml
 %%DATADIR%%/library/Zend/Locale/Data/fa_IR.xml
 %%DATADIR%%/library/Zend/Locale/Data/ff.xml
+%%DATADIR%%/library/Zend/Locale/Data/ff_CM.xml
+%%DATADIR%%/library/Zend/Locale/Data/ff_GN.xml
+%%DATADIR%%/library/Zend/Locale/Data/ff_MR.xml
 %%DATADIR%%/library/Zend/Locale/Data/ff_SN.xml
 %%DATADIR%%/library/Zend/Locale/Data/fi.xml
 %%DATADIR%%/library/Zend/Locale/Data/fi_FI.xml
@@ -4327,6 +4356,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Locale/Data/fr_NC.xml
 %%DATADIR%%/library/Zend/Locale/Data/fr_NE.xml
 %%DATADIR%%/library/Zend/Locale/Data/fr_PF.xml
+%%DATADIR%%/library/Zend/Locale/Data/fr_PM.xml
 %%DATADIR%%/library/Zend/Locale/Data/fr_RE.xml
 %%DATADIR%%/library/Zend/Locale/Data/fr_RW.xml
 %%DATADIR%%/library/Zend/Locale/Data/fr_SC.xml
@@ -4336,9 +4366,12 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Locale/Data/fr_TG.xml
 %%DATADIR%%/library/Zend/Locale/Data/fr_TN.xml
 %%DATADIR%%/library/Zend/Locale/Data/fr_VU.xml
+%%DATADIR%%/library/Zend/Locale/Data/fr_WF.xml
 %%DATADIR%%/library/Zend/Locale/Data/fr_YT.xml
 %%DATADIR%%/library/Zend/Locale/Data/fur.xml
 %%DATADIR%%/library/Zend/Locale/Data/fur_IT.xml
+%%DATADIR%%/library/Zend/Locale/Data/fy.xml
+%%DATADIR%%/library/Zend/Locale/Data/fy_NL.xml
 %%DATADIR%%/library/Zend/Locale/Data/ga.xml
 %%DATADIR%%/library/Zend/Locale/Data/ga_IE.xml
 %%DATADIR%%/library/Zend/Locale/Data/gd.xml
@@ -4348,11 +4381,13 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Locale/Data/gl_ES.xml
 %%DATADIR%%/library/Zend/Locale/Data/gsw.xml
 %%DATADIR%%/library/Zend/Locale/Data/gsw_CH.xml
+%%DATADIR%%/library/Zend/Locale/Data/gsw_LI.xml
 %%DATADIR%%/library/Zend/Locale/Data/gu.xml
 %%DATADIR%%/library/Zend/Locale/Data/gu_IN.xml
 %%DATADIR%%/library/Zend/Locale/Data/guz.xml
 %%DATADIR%%/library/Zend/Locale/Data/guz_KE.xml
 %%DATADIR%%/library/Zend/Locale/Data/gv.xml
+%%DATADIR%%/library/Zend/Locale/Data/gv_IM.xml
 %%DATADIR%%/library/Zend/Locale/Data/ha.xml
 %%DATADIR%%/library/Zend/Locale/Data/ha_Latn.xml
 %%DATADIR%%/library/Zend/Locale/Data/ha_Latn_GH.xml
@@ -4435,12 +4470,16 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Locale/Data/kw.xml
 %%DATADIR%%/library/Zend/Locale/Data/kw_GB.xml
 %%DATADIR%%/library/Zend/Locale/Data/ky.xml
+%%DATADIR%%/library/Zend/Locale/Data/ky_Cyrl.xml
+%%DATADIR%%/library/Zend/Locale/Data/ky_Cyrl_KG.xml
 %%DATADIR%%/library/Zend/Locale/Data/lag.xml
 %%DATADIR%%/library/Zend/Locale/Data/lag_TZ.xml
 %%DATADIR%%/library/Zend/Locale/Data/languageInfo.xml
 %%DATADIR%%/library/Zend/Locale/Data/lg.xml
 %%DATADIR%%/library/Zend/Locale/Data/lg_UG.xml
 %%DATADIR%%/library/Zend/Locale/Data/likelySubtags.xml
+%%DATADIR%%/library/Zend/Locale/Data/lkt.xml
+%%DATADIR%%/library/Zend/Locale/Data/lkt_US.xml
 %%DATADIR%%/library/Zend/Locale/Data/ln.xml
 %%DATADIR%%/library/Zend/Locale/Data/ln_AO.xml
 %%DATADIR%%/library/Zend/Locale/Data/ln_CD.xml
@@ -4496,6 +4535,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Locale/Data/naq_NA.xml
 %%DATADIR%%/library/Zend/Locale/Data/nb.xml
 %%DATADIR%%/library/Zend/Locale/Data/nb_NO.xml
+%%DATADIR%%/library/Zend/Locale/Data/nb_SJ.xml
 %%DATADIR%%/library/Zend/Locale/Data/nd.xml
 %%DATADIR%%/library/Zend/Locale/Data/nd_ZW.xml
 %%DATADIR%%/library/Zend/Locale/Data/ne.xml
@@ -4504,6 +4544,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Locale/Data/nl.xml
 %%DATADIR%%/library/Zend/Locale/Data/nl_AW.xml
 %%DATADIR%%/library/Zend/Locale/Data/nl_BE.xml
+%%DATADIR%%/library/Zend/Locale/Data/nl_BQ.xml
 %%DATADIR%%/library/Zend/Locale/Data/nl_CW.xml
 %%DATADIR%%/library/Zend/Locale/Data/nl_NL.xml
 %%DATADIR%%/library/Zend/Locale/Data/nl_SR.xml
@@ -4678,6 +4719,9 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Locale/Data/tzm.xml
 %%DATADIR%%/library/Zend/Locale/Data/tzm_Latn.xml
 %%DATADIR%%/library/Zend/Locale/Data/tzm_Latn_MA.xml
+%%DATADIR%%/library/Zend/Locale/Data/ug.xml
+%%DATADIR%%/library/Zend/Locale/Data/ug_Arab.xml
+%%DATADIR%%/library/Zend/Locale/Data/ug_Arab_CN.xml
 %%DATADIR%%/library/Zend/Locale/Data/uk.xml
 %%DATADIR%%/library/Zend/Locale/Data/uk_UA.xml
 %%DATADIR%%/library/Zend/Locale/Data/ur.xml
@@ -4700,6 +4744,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Locale/Data/vi.xml
 %%DATADIR%%/library/Zend/Locale/Data/vi_VN.xml
 %%DATADIR%%/library/Zend/Locale/Data/vo.xml
+%%DATADIR%%/library/Zend/Locale/Data/vo_001.xml
 %%DATADIR%%/library/Zend/Locale/Data/vun.xml
 %%DATADIR%%/library/Zend/Locale/Data/vun_TZ.xml
 %%DATADIR%%/library/Zend/Locale/Data/wae.xml
@@ -4714,7 +4759,10 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Locale/Data/yav.xml
 %%DATADIR%%/library/Zend/Locale/Data/yav_CM.xml
 %%DATADIR%%/library/Zend/Locale/Data/yo.xml
+%%DATADIR%%/library/Zend/Locale/Data/yo_BJ.xml
 %%DATADIR%%/library/Zend/Locale/Data/yo_NG.xml
+%%DATADIR%%/library/Zend/Locale/Data/zgh.xml
+%%DATADIR%%/library/Zend/Locale/Data/zgh_MA.xml
 %%DATADIR%%/library/Zend/Locale/Data/zh.xml
 %%DATADIR%%/library/Zend/Locale/Data/zh_Hans.xml
 %%DATADIR%%/library/Zend/Locale/Data/zh_Hans_CN.xml
@@ -4756,6 +4804,8 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Log/Writer/ZendMonitor.php
 %%DATADIR%%/library/Zend/Mail.php
 %%DATADIR%%/library/Zend/Mail/Exception.php
+%%DATADIR%%/library/Zend/Mail/Header/HeaderName.php
+%%DATADIR%%/library/Zend/Mail/Header/HeaderValue.php
 %%DATADIR%%/library/Zend/Mail/Message.php
 %%DATADIR%%/library/Zend/Mail/Message/File.php
 %%DATADIR%%/library/Zend/Mail/Message/Interface.php
@@ -5283,153 +5333,19 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Service/Amazon/Sqs.php
 %%DATADIR%%/library/Zend/Service/Amazon/Sqs/Exception.php
 %%DATADIR%%/library/Zend/Service/Audioscrobbler.php
+%%DATADIR%%/library/Zend/Service/Console/Command.php
+%%DATADIR%%/library/Zend/Service/Console/Command/ParameterSource/Argv.php
+%%DATADIR%%/library/Zend/Service/Console/Command/ParameterSource/ConfigFile.php
+%%DATADIR%%/library/Zend/Service/Console/Command/ParameterSource/Env.php
+%%DATADIR%%/library/Zend/Service/Console/Command/ParameterSource/ParameterSourceInterface.php
+%%DATADIR%%/library/Zend/Service/Console/Command/ParameterSource/Prompt.php
+%%DATADIR%%/library/Zend/Service/Console/Command/ParameterSource/StdIn.php
+%%DATADIR%%/library/Zend/Service/Console/Exception.php
 %%DATADIR%%/library/Zend/Service/Delicious.php
 %%DATADIR%%/library/Zend/Service/Delicious/Exception.php
 %%DATADIR%%/library/Zend/Service/Delicious/Post.php
 %%DATADIR%%/library/Zend/Service/Delicious/PostList.php
 %%DATADIR%%/library/Zend/Service/Delicious/SimplePost.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/BaseUserService.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/BaseUserService/AccountBalance.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Client/ClientAbstract.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Client/Exception.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Client/Soap.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/ConferenceCall.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/ConferenceCall/ConferenceAccount.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/ConferenceCall/ConferenceDetail.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/ConferenceCall/ConferenceSchedule.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/ConferenceCall/Exception.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/ConferenceCall/Participant.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/ConferenceCall/ParticipantDetail.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/ConferenceCall/ParticipantStatus.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Credential.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Exception.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/IpLocation.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/IpLocation/IpAddress.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/LocalSearch.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/LocalSearch/Exception.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/LocalSearch/SearchParameters.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/BaseUserService/ChangeQuotaPool.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/BaseUserService/GetAccountBalance.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/BaseUserService/GetQuotaInformation.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/ConferenceCall/AddConferenceTemplateParticipantRequest.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/ConferenceCall/CommitConferenceRequest.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/ConferenceCall/CreateConferenceRequest.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/ConferenceCall/CreateConferenceTemplateRequest.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/ConferenceCall/GetConferenceListRequest.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/ConferenceCall/GetConferenceStatusRequest.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/ConferenceCall/GetConferenceTemplateListRequest.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/ConferenceCall/GetConferenceTemplateParticipantRequest.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/ConferenceCall/GetConferenceTemplateRequest.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/ConferenceCall/GetParticipantStatusRequest.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/ConferenceCall/GetRunningConferenceRequest.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/ConferenceCall/NewParticipantRequest.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/ConferenceCall/RemoveConferenceRequest.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/ConferenceCall/RemoveConferenceTemplateParticipantRequest.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/ConferenceCall/RemoveConferenceTemplateRequest.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/ConferenceCall/RemoveParticipantRequest.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/ConferenceCall/UpdateConferenceRequest.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/ConferenceCall/UpdateConferenceTemplateParticipantRequest.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/ConferenceCall/UpdateConferenceTemplateRequest.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/ConferenceCall/UpdateParticipantRequest.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/Exception.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/IpLocation/LocateIPRequest.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/LocalSearch/LocalSearchRequest.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/RequestAbstract.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/SendSms/SendFlashSMS.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/SendSms/SendSMS.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/SendSms/SendSmsAbstract.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/SmsValidation/GetValidatedNumbers.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/SmsValidation/Invalidate.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/SmsValidation/SendValidationKeyword.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/SmsValidation/Validate.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/VoiceButler/CallStatus.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/VoiceButler/NewCall.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/VoiceButler/NewCallSequenced.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/VoiceButler/TearDownCall.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/VoiceButler/VoiceButlerAbstract.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/BaseType.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/BaseUserService/ChangeQuotaPoolResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/BaseUserService/GetAccountBalanceResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/BaseUserService/GetQuotaInformationResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/AddConferenceTemplateParticipantResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/AddConferenceTemplateParticipantResponseType.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/CCSResponseType.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/CommitConferenceResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/ConferenceCallAbstract.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/CreateConferenceResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/CreateConferenceResponseType.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/CreateConferenceTemplateResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/CreateConferenceTemplateResponseType.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/GetConferenceListResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/GetConferenceListResponseType.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/GetConferenceStatusResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/GetConferenceStatusResponseType.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/GetConferenceTemplateListResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/GetConferenceTemplateListResponseType.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/GetConferenceTemplateParticipantResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/GetConferenceTemplateParticipantResponseType.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/GetConferenceTemplateResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/GetConferenceTemplateResponseType.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/GetParticipantStatusResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/GetParticipantStatusResponseType.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/GetRunningConferenceResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/GetRunningConferenceResponseType.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/NewParticipantResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/NewParticipantResponseType.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/RemoveConferenceResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/RemoveConferenceTemplateParticipantResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/RemoveConferenceTemplateResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/RemoveParticipantResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/UpdateConferenceResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/UpdateConferenceTemplateParticipantResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/UpdateConferenceTemplateResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/UpdateParticipantResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/Exception.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/IpLocation/CityType.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/IpLocation/GeoCoordinatesType.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/IpLocation/IPAddressLocationType.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/IpLocation/LocateIPResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/IpLocation/LocateIPResponseType.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/IpLocation/RegionType.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/LocalSearch/LocalSearchResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/LocalSearch/LocalSearchResponseType.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ResponseAbstract.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/SecurityTokenServer/Exception.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/SecurityTokenServer/GetTokensResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/SecurityTokenServer/Interface.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/SecurityTokenServer/SecurityTokenResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/SendSms/SendFlashSMSResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/SendSms/SendSMSResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/SendSms/SendSmsAbstract.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/SmsValidation/GetValidatedNumbersResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/SmsValidation/InvalidateResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/SmsValidation/SendValidationKeywordResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/SmsValidation/ValidateResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/SmsValidation/ValidatedNumber.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/VoiceButler/CallStatus2Response.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/VoiceButler/CallStatusResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/VoiceButler/NewCallResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/VoiceButler/NewCallSequencedResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/VoiceButler/TearDownCallResponse.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/VoiceButler/VoiceButlerAbstract.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/SecurityTokenServer.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/SecurityTokenServer/Cache.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/SendSms.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/SmsValidation.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/VoiceCall.php
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Wsdl/IPLocation.wsdl
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Wsdl/IPLocation.xsd
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Wsdl/ODGBaseUserService.wsdl
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Wsdl/ODGBaseUserService.xsd
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Wsdl/SmsService.wsdl
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Wsdl/SmsValidationUserService.wsdl
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Wsdl/TokenService.wsdl
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Wsdl/VoiceButlerService.wsdl
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Wsdl/VoiceButlerService.xsd
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Wsdl/ccsPort.wsdl
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Wsdl/ccsPort.xsd
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Wsdl/localsearch.wsdl
-%%DATADIR%%/library/Zend/Service/DeveloperGarden/Wsdl/localsearch.xsd
 %%DATADIR%%/library/Zend/Service/Ebay/Abstract.php
 %%DATADIR%%/library/Zend/Service/Ebay/Exception.php
 %%DATADIR%%/library/Zend/Service/Ebay/Finding.php
@@ -5514,26 +5430,6 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Service/StrikeIron/SalesUseTaxBasic.php
 %%DATADIR%%/library/Zend/Service/StrikeIron/USAddressVerification.php
 %%DATADIR%%/library/Zend/Service/StrikeIron/ZipCodeInfo.php
-%%DATADIR%%/library/Zend/Service/Technorati.php
-%%DATADIR%%/library/Zend/Service/Technorati/Author.php
-%%DATADIR%%/library/Zend/Service/Technorati/BlogInfoResult.php
-%%DATADIR%%/library/Zend/Service/Technorati/CosmosResult.php
-%%DATADIR%%/library/Zend/Service/Technorati/CosmosResultSet.php
-%%DATADIR%%/library/Zend/Service/Technorati/DailyCountsResult.php
-%%DATADIR%%/library/Zend/Service/Technorati/DailyCountsResultSet.php
-%%DATADIR%%/library/Zend/Service/Technorati/Exception.php
-%%DATADIR%%/library/Zend/Service/Technorati/GetInfoResult.php
-%%DATADIR%%/library/Zend/Service/Technorati/KeyInfoResult.php
-%%DATADIR%%/library/Zend/Service/Technorati/Result.php
-%%DATADIR%%/library/Zend/Service/Technorati/ResultSet.php
-%%DATADIR%%/library/Zend/Service/Technorati/SearchResult.php
-%%DATADIR%%/library/Zend/Service/Technorati/SearchResultSet.php
-%%DATADIR%%/library/Zend/Service/Technorati/TagResult.php
-%%DATADIR%%/library/Zend/Service/Technorati/TagResultSet.php
-%%DATADIR%%/library/Zend/Service/Technorati/TagsResult.php
-%%DATADIR%%/library/Zend/Service/Technorati/TagsResultSet.php
-%%DATADIR%%/library/Zend/Service/Technorati/Utils.php
-%%DATADIR%%/library/Zend/Service/Technorati/Weblog.php
 %%DATADIR%%/library/Zend/Service/Twitter.php
 %%DATADIR%%/library/Zend/Service/Twitter/Exception.php
 %%DATADIR%%/library/Zend/Service/Twitter/Response.php
@@ -5644,6 +5540,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Session/SaveHandler/Exception.php
 %%DATADIR%%/library/Zend/Session/SaveHandler/Interface.php
 %%DATADIR%%/library/Zend/Session/Validator/Abstract.php
+%%DATADIR%%/library/Zend/Session/Validator/Exception.php
 %%DATADIR%%/library/Zend/Session/Validator/HttpUserAgent.php
 %%DATADIR%%/library/Zend/Session/Validator/Interface.php
 %%DATADIR%%/library/Zend/Soap/AutoDiscover.php
@@ -6119,8 +6016,6 @@ bin/zf.php
 %%DATADIR%%/library/Zend/XmlRpc/Value/Scalar.php
 %%DATADIR%%/library/Zend/XmlRpc/Value/String.php
 %%DATADIR%%/library/Zend/XmlRpc/Value/Struct.php
-@owner
-@group
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/manual/coding-standard.coding-style.html
@@ -6470,10 +6365,7 @@ bin/zf.php
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.loader.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.loader.load.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.loader.pluginloader.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/zend.loader.spl-autoloader.methods.autoload.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/zend.loader.spl-autoloader.methods.constructor.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/zend.loader.spl-autoloader.methods.register.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/zend.loader.spl-autoloader.methods.set-options.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/zend.loader.spl-autoloader.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.loader.standard-autoloader.methods.autoload.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.loader.standard-autoloader.methods.constructor.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.loader.standard-autoloader.methods.is-fallback-autoloader.html
@@ -6612,7 +6504,6 @@ bin/zf.php
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.amazon.sqs.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.audioscrobbler.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.delicious.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.developergarden.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.ebay.finding.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.ebay.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.flickr.html
@@ -6628,7 +6519,6 @@ bin/zf.php
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.strikeiron.advanced-uses.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.strikeiron.bundled-services.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.strikeiron.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.technorati.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.twitter.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.windowsazure.diagnostics.manager.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.windowsazure.html
@@ -6710,8 +6600,6 @@ bin/zf.php
 %%PORTDOCS%%%%DOCSDIR%%/manual/zendx.jquery.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zendx.jquery.introduction.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zendx.jquery.view.html
-@owner %%WWWOWN%%
-@group %%WWWGRP%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/.zfproject.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/README.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/Bootstrap.php
@@ -8931,6 +8819,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/_files/testImage.jpg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/ClientTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/CommonHttpTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/CurlTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/ProxyAdapterTest.php
@@ -8955,9 +8844,13 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/testHeaders.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/testHttpAuth.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/testMultibyteChunkedResponseZF6218.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/testOptionsData.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/testPatchData.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/testPostData.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/testPutData.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/testRawDeleteData.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/testRawOptionsData.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/testRawPatchData.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/testRawPostData.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/testRawPutData.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/testRedirections.php
@@ -8969,6 +8862,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/CookieJarTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/CookieTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Header/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Header/HeaderValueTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Header/SetCookieTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/ResponseTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/TestAsset/DesktopDevice.php
@@ -8990,6 +8884,9 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_403_nomessage
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_404
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_500
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_587
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_587_empty
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_587_null
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_chunked
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_chunked_case
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_crlf
@@ -9082,6 +8979,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/Autoloader/_files/models/ZendLoaderAutoloaderResourceMethodOverloading.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/Autoloader/_files/models/ZendLoaderAutoloaderResourceTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/Autoloader/_files/services/ZendLoaderAutoloaderResourceTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/AutoloaderFactoryClassMapLoaderTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/AutoloaderFactoryTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/AutoloaderMultiVersionTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/AutoloaderTest.php
@@ -9145,6 +9043,9 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/_files/Zfns/Writer.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/FileTransportTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/Header/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/Header/HeaderNameTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/Header/HeaderValueTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/ImapTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/InterfaceTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/MailTest.php
@@ -9311,6 +9212,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/Filter/RunLengthTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/NamedDestinationsTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/ProcessingTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/_files/PdfWithFields.pdf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/_files/ZF-8462.pdf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/_files/pdfarchiving.pdf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/_files/stamp.jpg
@@ -9329,6 +9231,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/_fonts/VeraMono.ttf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/_fonts/VeraSe.ttf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Pdf/_fonts/VeraSeBd.ttf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/PdfTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/ProgressBar/Adapter/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/ProgressBar/Adapter/ConsoleTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/ProgressBar/Adapter/JsPullTest.php
@@ -9533,6 +9436,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/SimpleDb/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/SimpleDb/OfflineTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/SimpleDb/OnlineTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/SimpleDb/PageTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Sqs/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Sqs/OfflineTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Sqs/OnlineTest.php
@@ -9557,24 +9461,6 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Delicious/PublicDataTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Delicious/SimplePostTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Delicious/SkipTests.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/DeveloperGarden/AllOfflineTests.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/DeveloperGarden/AllOnlineTests.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/DeveloperGarden/AllTests.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/DeveloperGarden/BaseUserServiceTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/DeveloperGarden/ConferenceCallTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/DeveloperGarden/IpLocationTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/DeveloperGarden/LocalSearchTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/DeveloperGarden/OfflineBaseUserServiceTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/DeveloperGarden/OfflineClientTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/DeveloperGarden/OfflineConferenceCallTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/DeveloperGarden/OfflineCredentialTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/DeveloperGarden/OfflineIpLocationTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/DeveloperGarden/OfflineLocalSearchParametersTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/DeveloperGarden/OfflineSecurityTokenServerTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/DeveloperGarden/SecurityTokenServerTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/DeveloperGarden/SendSmsTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/DeveloperGarden/SmsValidationTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/DeveloperGarden/VoiceCallTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Ebay/AbstractTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Ebay/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Ebay/Finding/AllTests.php
@@ -9767,70 +9653,6 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/StrikeIron/StrikeIronTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/StrikeIron/USAddressVerificationTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/StrikeIron/ZipCodeInfoTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/AllTests.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/AuthorTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/BlogInfoResultTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/CosmosResultSetTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/CosmosResultTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/DailyCountsResultSetTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/DailyCountsResultTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/GetInfoResultTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/KeyInfoResultTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/ResultSetTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/ResultTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/SearchResultSetTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/SearchResultTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/TagResultSetTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/TagResultTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/TagsResultSetTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/TagsResultTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/TechnoratiTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/TestCase.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/UtilsTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/WeblogTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/MISSING
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestAuthor.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestAuthorNullFields.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestBlogInfoError.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestBlogInfoErrorUrlNotWeblog.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestBlogInfoResult.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestBlogInfoResultUrlWithInvalidSchema.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestBlogInfoSuccess.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestBlogPostTagsError.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestBlogPostTagsErrorUrlNotWeblog.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestBlogPostTagsSuccess.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestCosmosError.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestCosmosResultSet.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestCosmosResultSetBlogLink.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestCosmosResultSetBlogLinkClaim.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestCosmosResultSetBlogWeblog.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestCosmosResultSetBlogWeblogClaim.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestCosmosResultSetBlogWeblogClaim2.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestCosmosResultSetSiteLink.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestCosmosResultSetSiteUrlWithInvalidSchema.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestCosmosResultSetSiteWeblog.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestCosmosResultSetSiteWeblogWithMissingInboundblogs.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestCosmosSuccess.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestDailyCountsError.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestDailyCountsResultSet.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestDailyCountsSuccess.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestError.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestGetInfoError.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestGetInfoResult.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestGetInfoSuccess.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestKeyInfoError.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestKeyInfoResult.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestKeyInfoSuccess.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestSearchResultSet.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestSearchSuccess.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestTagError.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestTagResultSet.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestTagSuccess.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestTagsResultSet.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestTopTagsError.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestTopTagsSuccess.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestWeblog.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestWeblogTwoAuthors.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Twitter/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Twitter/TwitterTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Twitter/_files/account.verify_credentials.json
@@ -10369,7 +10191,9 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Wildfire/WildfireTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Wildfire/_files/IndexController.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Xml/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Xml/MultibyteTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Xml/SecurityTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Xml/TestAsset/Security.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/XmlRpc/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/XmlRpc/BigIntegerValueTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/XmlRpc/ClientTest.php
@@ -10395,2091 +10219,14 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/_files/_testDir1/ClassNonexistent.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/_files/_testDir1/Interface1.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/_files/_testDir2/Class2.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/install_dependencies.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/config.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/php52_config.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/php52_install_dependencies.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/php7_config.ini
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/phpunit.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/resources/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/resources/languages/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/resources/languages/Zend_ValidateTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/runalltests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/runtests.sh
-@dir %%DATADIR%%/externals/dojo/dijit/_base
-@dir %%DATADIR%%/externals/dojo/dijit/_editor/nls/ar
-@dir %%DATADIR%%/externals/dojo/dijit/_editor/nls/ca
-@dir %%DATADIR%%/externals/dojo/dijit/_editor/nls/cs
-@dir %%DATADIR%%/externals/dojo/dijit/_editor/nls/da
-@dir %%DATADIR%%/externals/dojo/dijit/_editor/nls/de
-@dir %%DATADIR%%/externals/dojo/dijit/_editor/nls/el
-@dir %%DATADIR%%/externals/dojo/dijit/_editor/nls/es
-@dir %%DATADIR%%/externals/dojo/dijit/_editor/nls/fi
-@dir %%DATADIR%%/externals/dojo/dijit/_editor/nls/fr
-@dir %%DATADIR%%/externals/dojo/dijit/_editor/nls/he
-@dir %%DATADIR%%/externals/dojo/dijit/_editor/nls/hu
-@dir %%DATADIR%%/externals/dojo/dijit/_editor/nls/it
-@dir %%DATADIR%%/externals/dojo/dijit/_editor/nls/ja
-@dir %%DATADIR%%/externals/dojo/dijit/_editor/nls/kk
-@dir %%DATADIR%%/externals/dojo/dijit/_editor/nls/ko
-@dir %%DATADIR%%/externals/dojo/dijit/_editor/nls/nb
-@dir %%DATADIR%%/externals/dojo/dijit/_editor/nls/nl
-@dir %%DATADIR%%/externals/dojo/dijit/_editor/nls/pl
-@dir %%DATADIR%%/externals/dojo/dijit/_editor/nls/pt
-@dir %%DATADIR%%/externals/dojo/dijit/_editor/nls/pt-pt
-@dir %%DATADIR%%/externals/dojo/dijit/_editor/nls/ro
-@dir %%DATADIR%%/externals/dojo/dijit/_editor/nls/ru
-@dir %%DATADIR%%/externals/dojo/dijit/_editor/nls/sk
-@dir %%DATADIR%%/externals/dojo/dijit/_editor/nls/sl
-@dir %%DATADIR%%/externals/dojo/dijit/_editor/nls/sv
-@dir %%DATADIR%%/externals/dojo/dijit/_editor/nls/th
-@dir %%DATADIR%%/externals/dojo/dijit/_editor/nls/tr
-@dir %%DATADIR%%/externals/dojo/dijit/_editor/nls/zh
-@dir %%DATADIR%%/externals/dojo/dijit/_editor/nls/zh-tw
-@dir %%DATADIR%%/externals/dojo/dijit/_editor/nls
-@dir %%DATADIR%%/externals/dojo/dijit/_editor/plugins
-@dir %%DATADIR%%/externals/dojo/dijit/_editor
-@dir %%DATADIR%%/externals/dojo/dijit/_tree
-@dir %%DATADIR%%/externals/dojo/dijit/form/nls/ar
-@dir %%DATADIR%%/externals/dojo/dijit/form/nls/ca
-@dir %%DATADIR%%/externals/dojo/dijit/form/nls/cs
-@dir %%DATADIR%%/externals/dojo/dijit/form/nls/da
-@dir %%DATADIR%%/externals/dojo/dijit/form/nls/de
-@dir %%DATADIR%%/externals/dojo/dijit/form/nls/el
-@dir %%DATADIR%%/externals/dojo/dijit/form/nls/es
-@dir %%DATADIR%%/externals/dojo/dijit/form/nls/fi
-@dir %%DATADIR%%/externals/dojo/dijit/form/nls/fr
-@dir %%DATADIR%%/externals/dojo/dijit/form/nls/he
-@dir %%DATADIR%%/externals/dojo/dijit/form/nls/hu
-@dir %%DATADIR%%/externals/dojo/dijit/form/nls/it
-@dir %%DATADIR%%/externals/dojo/dijit/form/nls/ja
-@dir %%DATADIR%%/externals/dojo/dijit/form/nls/kk
-@dir %%DATADIR%%/externals/dojo/dijit/form/nls/ko
-@dir %%DATADIR%%/externals/dojo/dijit/form/nls/nb
-@dir %%DATADIR%%/externals/dojo/dijit/form/nls/nl
-@dir %%DATADIR%%/externals/dojo/dijit/form/nls/pl
-@dir %%DATADIR%%/externals/dojo/dijit/form/nls/pt
-@dir %%DATADIR%%/externals/dojo/dijit/form/nls/pt-pt
-@dir %%DATADIR%%/externals/dojo/dijit/form/nls/ro
-@dir %%DATADIR%%/externals/dojo/dijit/form/nls/ru
-@dir %%DATADIR%%/externals/dojo/dijit/form/nls/sk
-@dir %%DATADIR%%/externals/dojo/dijit/form/nls/sl
-@dir %%DATADIR%%/externals/dojo/dijit/form/nls/sv
-@dir %%DATADIR%%/externals/dojo/dijit/form/nls/th
-@dir %%DATADIR%%/externals/dojo/dijit/form/nls/tr
-@dir %%DATADIR%%/externals/dojo/dijit/form/nls/zh
-@dir %%DATADIR%%/externals/dojo/dijit/form/nls/zh-tw
-@dir %%DATADIR%%/externals/dojo/dijit/form/nls
-@dir %%DATADIR%%/externals/dojo/dijit/form/templates
-@dir %%DATADIR%%/externals/dojo/dijit/form
-@dir %%DATADIR%%/externals/dojo/dijit/icons/images
-@dir %%DATADIR%%/externals/dojo/dijit/icons
-@dir %%DATADIR%%/externals/dojo/dijit/layout/templates
-@dir %%DATADIR%%/externals/dojo/dijit/layout
-@dir %%DATADIR%%/externals/dojo/dijit/nls/ar
-@dir %%DATADIR%%/externals/dojo/dijit/nls/ca
-@dir %%DATADIR%%/externals/dojo/dijit/nls/cs
-@dir %%DATADIR%%/externals/dojo/dijit/nls/da
-@dir %%DATADIR%%/externals/dojo/dijit/nls/de
-@dir %%DATADIR%%/externals/dojo/dijit/nls/el
-@dir %%DATADIR%%/externals/dojo/dijit/nls/es
-@dir %%DATADIR%%/externals/dojo/dijit/nls/fi
-@dir %%DATADIR%%/externals/dojo/dijit/nls/fr
-@dir %%DATADIR%%/externals/dojo/dijit/nls/he
-@dir %%DATADIR%%/externals/dojo/dijit/nls/hu
-@dir %%DATADIR%%/externals/dojo/dijit/nls/it
-@dir %%DATADIR%%/externals/dojo/dijit/nls/ja
-@dir %%DATADIR%%/externals/dojo/dijit/nls/kk
-@dir %%DATADIR%%/externals/dojo/dijit/nls/ko
-@dir %%DATADIR%%/externals/dojo/dijit/nls/nb
-@dir %%DATADIR%%/externals/dojo/dijit/nls/nl
-@dir %%DATADIR%%/externals/dojo/dijit/nls/pl
-@dir %%DATADIR%%/externals/dojo/dijit/nls/pt
-@dir %%DATADIR%%/externals/dojo/dijit/nls/pt-pt
-@dir %%DATADIR%%/externals/dojo/dijit/nls/ro
-@dir %%DATADIR%%/externals/dojo/dijit/nls/ru
-@dir %%DATADIR%%/externals/dojo/dijit/nls/sk
-@dir %%DATADIR%%/externals/dojo/dijit/nls/sl
-@dir %%DATADIR%%/externals/dojo/dijit/nls/sv
-@dir %%DATADIR%%/externals/dojo/dijit/nls/th
-@dir %%DATADIR%%/externals/dojo/dijit/nls/tr
-@dir %%DATADIR%%/externals/dojo/dijit/nls/zh
-@dir %%DATADIR%%/externals/dojo/dijit/nls/zh-tw
-@dir %%DATADIR%%/externals/dojo/dijit/nls
-@dir %%DATADIR%%/externals/dojo/dijit/resources
-@dir %%DATADIR%%/externals/dojo/dijit/templates
-@dir %%DATADIR%%/externals/dojo/dijit/tests/_data
-@dir %%DATADIR%%/externals/dojo/dijit/tests
-@dir %%DATADIR%%/externals/dojo/dijit/themes/a11y
-@dir %%DATADIR%%/externals/dojo/dijit/themes/claro/form/images
-@dir %%DATADIR%%/externals/dojo/dijit/themes/claro/form
-@dir %%DATADIR%%/externals/dojo/dijit/themes/claro/images
-@dir %%DATADIR%%/externals/dojo/dijit/themes/claro/layout/images
-@dir %%DATADIR%%/externals/dojo/dijit/themes/claro/layout
-@dir %%DATADIR%%/externals/dojo/dijit/themes/claro
-@dir %%DATADIR%%/externals/dojo/dijit/themes/nihilo/form
-@dir %%DATADIR%%/externals/dojo/dijit/themes/nihilo/images
-@dir %%DATADIR%%/externals/dojo/dijit/themes/nihilo/layout
-@dir %%DATADIR%%/externals/dojo/dijit/themes/nihilo
-@dir %%DATADIR%%/externals/dojo/dijit/themes/soria/form
-@dir %%DATADIR%%/externals/dojo/dijit/themes/soria/images
-@dir %%DATADIR%%/externals/dojo/dijit/themes/soria/layout
-@dir %%DATADIR%%/externals/dojo/dijit/themes/soria
-@dir %%DATADIR%%/externals/dojo/dijit/themes/themeTesterImages
-@dir %%DATADIR%%/externals/dojo/dijit/themes/tundra/form
-@dir %%DATADIR%%/externals/dojo/dijit/themes/tundra/images
-@dir %%DATADIR%%/externals/dojo/dijit/themes/tundra/layout
-@dir %%DATADIR%%/externals/dojo/dijit/themes/tundra
-@dir %%DATADIR%%/externals/dojo/dijit/themes
-@dir %%DATADIR%%/externals/dojo/dijit/tree
-@dir %%DATADIR%%/externals/dojo/dijit
-@dir %%DATADIR%%/externals/dojo/dojo/_base/_loader
-@dir %%DATADIR%%/externals/dojo/dojo/_base
-@dir %%DATADIR%%/externals/dojo/dojo/_firebug
-@dir %%DATADIR%%/externals/dojo/dojo/cldr/nls/ar
-@dir %%DATADIR%%/externals/dojo/dojo/cldr/nls/ca
-@dir %%DATADIR%%/externals/dojo/dojo/cldr/nls/cs
-@dir %%DATADIR%%/externals/dojo/dojo/cldr/nls/da
-@dir %%DATADIR%%/externals/dojo/dojo/cldr/nls/de
-@dir %%DATADIR%%/externals/dojo/dojo/cldr/nls/el
-@dir %%DATADIR%%/externals/dojo/dojo/cldr/nls/en
-@dir %%DATADIR%%/externals/dojo/dojo/cldr/nls/en-au
-@dir %%DATADIR%%/externals/dojo/dojo/cldr/nls/en-ca
-@dir %%DATADIR%%/externals/dojo/dojo/cldr/nls/en-gb
-@dir %%DATADIR%%/externals/dojo/dojo/cldr/nls/es
-@dir %%DATADIR%%/externals/dojo/dojo/cldr/nls/fi
-@dir %%DATADIR%%/externals/dojo/dojo/cldr/nls/fr
-@dir %%DATADIR%%/externals/dojo/dojo/cldr/nls/he
-@dir %%DATADIR%%/externals/dojo/dojo/cldr/nls/hu
-@dir %%DATADIR%%/externals/dojo/dojo/cldr/nls/it
-@dir %%DATADIR%%/externals/dojo/dojo/cldr/nls/ja
-@dir %%DATADIR%%/externals/dojo/dojo/cldr/nls/ko
-@dir %%DATADIR%%/externals/dojo/dojo/cldr/nls/nb
-@dir %%DATADIR%%/externals/dojo/dojo/cldr/nls/nl
-@dir %%DATADIR%%/externals/dojo/dojo/cldr/nls/pl
-@dir %%DATADIR%%/externals/dojo/dojo/cldr/nls/pt
-@dir %%DATADIR%%/externals/dojo/dojo/cldr/nls/pt-pt
-@dir %%DATADIR%%/externals/dojo/dojo/cldr/nls/ru
-@dir %%DATADIR%%/externals/dojo/dojo/cldr/nls/sk
-@dir %%DATADIR%%/externals/dojo/dojo/cldr/nls/sl
-@dir %%DATADIR%%/externals/dojo/dojo/cldr/nls/sv
-@dir %%DATADIR%%/externals/dojo/dojo/cldr/nls/th
-@dir %%DATADIR%%/externals/dojo/dojo/cldr/nls/tr
-@dir %%DATADIR%%/externals/dojo/dojo/cldr/nls/zh
-@dir %%DATADIR%%/externals/dojo/dojo/cldr/nls/zh-tw
-@dir %%DATADIR%%/externals/dojo/dojo/cldr/nls
-@dir %%DATADIR%%/externals/dojo/dojo/cldr
-@dir %%DATADIR%%/externals/dojo/dojo/data/api
-@dir %%DATADIR%%/externals/dojo/dojo/data/util
-@dir %%DATADIR%%/externals/dojo/dojo/data
-@dir %%DATADIR%%/externals/dojo/dojo/date
-@dir %%DATADIR%%/externals/dojo/dojo/dnd
-@dir %%DATADIR%%/externals/dojo/dojo/fx
-@dir %%DATADIR%%/externals/dojo/dojo/io
-@dir %%DATADIR%%/externals/dojo/dojo/nls/ar
-@dir %%DATADIR%%/externals/dojo/dojo/nls/ca
-@dir %%DATADIR%%/externals/dojo/dojo/nls/cs
-@dir %%DATADIR%%/externals/dojo/dojo/nls/da
-@dir %%DATADIR%%/externals/dojo/dojo/nls/de
-@dir %%DATADIR%%/externals/dojo/dojo/nls/el
-@dir %%DATADIR%%/externals/dojo/dojo/nls/es
-@dir %%DATADIR%%/externals/dojo/dojo/nls/fi
-@dir %%DATADIR%%/externals/dojo/dojo/nls/fr
-@dir %%DATADIR%%/externals/dojo/dojo/nls/he
-@dir %%DATADIR%%/externals/dojo/dojo/nls/hu
-@dir %%DATADIR%%/externals/dojo/dojo/nls/it
-@dir %%DATADIR%%/externals/dojo/dojo/nls/ja
-@dir %%DATADIR%%/externals/dojo/dojo/nls/kk
-@dir %%DATADIR%%/externals/dojo/dojo/nls/ko
-@dir %%DATADIR%%/externals/dojo/dojo/nls/nb
-@dir %%DATADIR%%/externals/dojo/dojo/nls/nl
-@dir %%DATADIR%%/externals/dojo/dojo/nls/pl
-@dir %%DATADIR%%/externals/dojo/dojo/nls/pt
-@dir %%DATADIR%%/externals/dojo/dojo/nls/pt-pt
-@dir %%DATADIR%%/externals/dojo/dojo/nls/ro
-@dir %%DATADIR%%/externals/dojo/dojo/nls/ru
-@dir %%DATADIR%%/externals/dojo/dojo/nls/sk
-@dir %%DATADIR%%/externals/dojo/dojo/nls/sl
-@dir %%DATADIR%%/externals/dojo/dojo/nls/sv
-@dir %%DATADIR%%/externals/dojo/dojo/nls/th
-@dir %%DATADIR%%/externals/dojo/dojo/nls/tr
-@dir %%DATADIR%%/externals/dojo/dojo/nls/zh
-@dir %%DATADIR%%/externals/dojo/dojo/nls/zh-tw
-@dir %%DATADIR%%/externals/dojo/dojo/nls
-@dir %%DATADIR%%/externals/dojo/dojo/resources/images
-@dir %%DATADIR%%/externals/dojo/dojo/resources
-@dir %%DATADIR%%/externals/dojo/dojo/rpc
-@dir %%DATADIR%%/externals/dojo/dojo
 @dir %%DATADIR%%/externals/dojo/dojox/analytics/logger/logs
-@dir %%DATADIR%%/externals/dojo/dojox/analytics/logger
-@dir %%DATADIR%%/externals/dojo/dojox/analytics/plugins
-@dir %%DATADIR%%/externals/dojo/dojox/analytics/profiles
-@dir %%DATADIR%%/externals/dojo/dojox/analytics
-@dir %%DATADIR%%/externals/dojo/dojox/atom/io
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ar
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ca
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/cs
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/da
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/de
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/el
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/es
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/fi
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/fr
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/he
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/hu
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/it
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ja
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/kk
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ko
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/nb
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/nl
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/pl
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/pt
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/pt-pt
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ro
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ru
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/sk
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/sl
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/sv
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/th
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/tr
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/zh
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/zh-tw
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget/nls
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget/templates/css
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget/templates
-@dir %%DATADIR%%/externals/dojo/dojox/atom/widget
-@dir %%DATADIR%%/externals/dojo/dojox/atom
-@dir %%DATADIR%%/externals/dojo/dojox/av/resources
-@dir %%DATADIR%%/externals/dojo/dojox/av/widget/resources/images
-@dir %%DATADIR%%/externals/dojo/dojox/av/widget/resources
-@dir %%DATADIR%%/externals/dojo/dojox/av/widget
-@dir %%DATADIR%%/externals/dojo/dojox/av
-@dir %%DATADIR%%/externals/dojo/dojox/charting/action2d
-@dir %%DATADIR%%/externals/dojo/dojox/charting/axis2d
-@dir %%DATADIR%%/externals/dojo/dojox/charting/plot2d
-@dir %%DATADIR%%/externals/dojo/dojox/charting/plot3d
-@dir %%DATADIR%%/externals/dojo/dojox/charting/scaler
-@dir %%DATADIR%%/externals/dojo/dojox/charting/themes/ET
-@dir %%DATADIR%%/externals/dojo/dojox/charting/themes/PlotKit
-@dir %%DATADIR%%/externals/dojo/dojox/charting/themes
-@dir %%DATADIR%%/externals/dojo/dojox/charting/widget
-@dir %%DATADIR%%/externals/dojo/dojox/charting
-@dir %%DATADIR%%/externals/dojo/dojox/collections
-@dir %%DATADIR%%/externals/dojo/dojox/color
-@dir %%DATADIR%%/externals/dojo/dojox/cometd
-@dir %%DATADIR%%/externals/dojo/dojox/css3
-@dir %%DATADIR%%/externals/dojo/dojox/data/s3
-@dir %%DATADIR%%/externals/dojo/dojox/data/util
-@dir %%DATADIR%%/externals/dojo/dojox/data
-@dir %%DATADIR%%/externals/dojo/dojox/date/buddhist
-@dir %%DATADIR%%/externals/dojo/dojox/date/hebrew
-@dir %%DATADIR%%/externals/dojo/dojox/date/islamic
-@dir %%DATADIR%%/externals/dojo/dojox/date/zoneinfo
-@dir %%DATADIR%%/externals/dojo/dojox/date
-@dir %%DATADIR%%/externals/dojo/dojox/dnd
-@dir %%DATADIR%%/externals/dojo/dojox/drawing/annotations
-@dir %%DATADIR%%/externals/dojo/dojox/drawing/library
-@dir %%DATADIR%%/externals/dojo/dojox/drawing/manager
-@dir %%DATADIR%%/externals/dojo/dojox/drawing/plugins/drawing
-@dir %%DATADIR%%/externals/dojo/dojox/drawing/plugins/tools
-@dir %%DATADIR%%/externals/dojo/dojox/drawing/plugins
-@dir %%DATADIR%%/externals/dojo/dojox/drawing/resources/images
-@dir %%DATADIR%%/externals/dojo/dojox/drawing/resources
-@dir %%DATADIR%%/externals/dojo/dojox/drawing/stencil
-@dir %%DATADIR%%/externals/dojo/dojox/drawing/tools/custom
-@dir %%DATADIR%%/externals/dojo/dojox/drawing/tools
-@dir %%DATADIR%%/externals/dojo/dojox/drawing/ui/dom
-@dir %%DATADIR%%/externals/dojo/dojox/drawing/ui
-@dir %%DATADIR%%/externals/dojo/dojox/drawing/util
-@dir %%DATADIR%%/externals/dojo/dojox/drawing
-@dir %%DATADIR%%/externals/dojo/dojox/dtl/contrib
-@dir %%DATADIR%%/externals/dojo/dojox/dtl/ext-dojo
-@dir %%DATADIR%%/externals/dojo/dojox/dtl/filter
-@dir %%DATADIR%%/externals/dojo/dojox/dtl/render
-@dir %%DATADIR%%/externals/dojo/dojox/dtl/tag
-@dir %%DATADIR%%/externals/dojo/dojox/dtl/utils
-@dir %%DATADIR%%/externals/dojo/dojox/dtl
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ar
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ca
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/cs
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/da
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/de
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/el
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/es
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/fi
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/fr
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/he
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/hu
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/it
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ja
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/kk
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ko
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/nb
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/nl
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pl
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pt
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pt-pt
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ro
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ru
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/sk
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/sl
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/sv
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/th
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/tr
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh-tw
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/css
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/emoticons
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/claro
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/nihilo
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/soria
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/tundra
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images/blockelems
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images/claro
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images/nihilo
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images/soria
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images/tundra
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins/resources
-@dir %%DATADIR%%/externals/dojo/dojox/editor/plugins
-@dir %%DATADIR%%/externals/dojo/dojox/editor
-@dir %%DATADIR%%/externals/dojo/dojox/embed/IE
-@dir %%DATADIR%%/externals/dojo/dojox/embed/resources
-@dir %%DATADIR%%/externals/dojo/dojox/embed
-@dir %%DATADIR%%/externals/dojo/dojox/encoding/compression
-@dir %%DATADIR%%/externals/dojo/dojox/encoding/crypto
-@dir %%DATADIR%%/externals/dojo/dojox/encoding/digests
-@dir %%DATADIR%%/externals/dojo/dojox/encoding
-@dir %%DATADIR%%/externals/dojo/dojox/flash
-@dir %%DATADIR%%/externals/dojo/dojox/form/manager
-@dir %%DATADIR%%/externals/dojo/dojox/form/nls/ar
-@dir %%DATADIR%%/externals/dojo/dojox/form/nls/ca
-@dir %%DATADIR%%/externals/dojo/dojox/form/nls/cs
-@dir %%DATADIR%%/externals/dojo/dojox/form/nls/da
-@dir %%DATADIR%%/externals/dojo/dojox/form/nls/de
-@dir %%DATADIR%%/externals/dojo/dojox/form/nls/el
-@dir %%DATADIR%%/externals/dojo/dojox/form/nls/es
-@dir %%DATADIR%%/externals/dojo/dojox/form/nls/fi
-@dir %%DATADIR%%/externals/dojo/dojox/form/nls/fr
-@dir %%DATADIR%%/externals/dojo/dojox/form/nls/he
-@dir %%DATADIR%%/externals/dojo/dojox/form/nls/hu
-@dir %%DATADIR%%/externals/dojo/dojox/form/nls/it
-@dir %%DATADIR%%/externals/dojo/dojox/form/nls/ja
-@dir %%DATADIR%%/externals/dojo/dojox/form/nls/kk
-@dir %%DATADIR%%/externals/dojo/dojox/form/nls/ko
-@dir %%DATADIR%%/externals/dojo/dojox/form/nls/nb
-@dir %%DATADIR%%/externals/dojo/dojox/form/nls/nl
-@dir %%DATADIR%%/externals/dojo/dojox/form/nls/pl
-@dir %%DATADIR%%/externals/dojo/dojox/form/nls/pt
-@dir %%DATADIR%%/externals/dojo/dojox/form/nls/pt-pt
-@dir %%DATADIR%%/externals/dojo/dojox/form/nls/ro
-@dir %%DATADIR%%/externals/dojo/dojox/form/nls/ru
-@dir %%DATADIR%%/externals/dojo/dojox/form/nls/sk
-@dir %%DATADIR%%/externals/dojo/dojox/form/nls/sl
-@dir %%DATADIR%%/externals/dojo/dojox/form/nls/sv
-@dir %%DATADIR%%/externals/dojo/dojox/form/nls/th
-@dir %%DATADIR%%/externals/dojo/dojox/form/nls/tr
-@dir %%DATADIR%%/externals/dojo/dojox/form/nls/zh
-@dir %%DATADIR%%/externals/dojo/dojox/form/nls/zh-tw
-@dir %%DATADIR%%/externals/dojo/dojox/form/nls
-@dir %%DATADIR%%/externals/dojo/dojox/form/resources/images
-@dir %%DATADIR%%/externals/dojo/dojox/form/resources
-@dir %%DATADIR%%/externals/dojo/dojox/form
-@dir %%DATADIR%%/externals/dojo/dojox/fx/ext-dojo
-@dir %%DATADIR%%/externals/dojo/dojox/fx/resources
-@dir %%DATADIR%%/externals/dojo/dojox/fx
-@dir %%DATADIR%%/externals/dojo/dojox/geo/charting/resources/data
-@dir %%DATADIR%%/externals/dojo/dojox/geo/charting/resources/img
-@dir %%DATADIR%%/externals/dojo/dojox/geo/charting/resources/markers
-@dir %%DATADIR%%/externals/dojo/dojox/geo/charting/resources
-@dir %%DATADIR%%/externals/dojo/dojox/geo/charting/widget
-@dir %%DATADIR%%/externals/dojo/dojox/geo/charting
-@dir %%DATADIR%%/externals/dojo/dojox/geo
-@dir %%DATADIR%%/externals/dojo/dojox/gfx/resources
-@dir %%DATADIR%%/externals/dojo/dojox/gfx
-@dir %%DATADIR%%/externals/dojo/dojox/gfx3d
-@dir %%DATADIR%%/externals/dojo/dojox/grid/cells
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/dnd
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/ar
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/ca
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/cs
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/da
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/de
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/el
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/es
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/fi
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/fr
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/he
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/hu
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/it
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/ja
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/kk
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/ko
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/nb
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/nl
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/pl
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/pt
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/pt-pt
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/ro
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/ru
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/sk
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/sl
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/sv
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/th
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/tr
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/zh
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/zh-tw
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/plugins
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/resources/images
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced/resources
-@dir %%DATADIR%%/externals/dojo/dojox/grid/enhanced
-@dir %%DATADIR%%/externals/dojo/dojox/grid/resources/images
-@dir %%DATADIR%%/externals/dojo/dojox/grid/resources
-@dir %%DATADIR%%/externals/dojo/dojox/grid
-@dir %%DATADIR%%/externals/dojo/dojox/help
-@dir %%DATADIR%%/externals/dojo/dojox/highlight/languages/pygments
-@dir %%DATADIR%%/externals/dojo/dojox/highlight/languages
-@dir %%DATADIR%%/externals/dojo/dojox/highlight/resources/pygments
-@dir %%DATADIR%%/externals/dojo/dojox/highlight/resources
-@dir %%DATADIR%%/externals/dojo/dojox/highlight
-@dir %%DATADIR%%/externals/dojo/dojox/html/ext-dojo
-@dir %%DATADIR%%/externals/dojo/dojox/html/resources
-@dir %%DATADIR%%/externals/dojo/dojox/html
-@dir %%DATADIR%%/externals/dojo/dojox/image/resources/images
-@dir %%DATADIR%%/externals/dojo/dojox/image/resources
-@dir %%DATADIR%%/externals/dojo/dojox/image
-@dir %%DATADIR%%/externals/dojo/dojox/io/proxy
-@dir %%DATADIR%%/externals/dojo/dojox/io
-@dir %%DATADIR%%/externals/dojo/dojox/jq
-@dir %%DATADIR%%/externals/dojo/dojox/json
-@dir %%DATADIR%%/externals/dojo/dojox/jsonPath
-@dir %%DATADIR%%/externals/dojo/dojox/lang/aspect
-@dir %%DATADIR%%/externals/dojo/dojox/lang/async
-@dir %%DATADIR%%/externals/dojo/dojox/lang/functional
-@dir %%DATADIR%%/externals/dojo/dojox/lang/oo
-@dir %%DATADIR%%/externals/dojo/dojox/lang
-@dir %%DATADIR%%/externals/dojo/dojox/layout/dnd
-@dir %%DATADIR%%/externals/dojo/dojox/layout/ext-dijit/layout
-@dir %%DATADIR%%/externals/dojo/dojox/layout/ext-dijit
-@dir %%DATADIR%%/externals/dojo/dojox/layout/resources/icons
-@dir %%DATADIR%%/externals/dojo/dojox/layout/resources
-@dir %%DATADIR%%/externals/dojo/dojox/layout
-@dir %%DATADIR%%/externals/dojo/dojox/math/random
-@dir %%DATADIR%%/externals/dojo/dojox/math
-@dir %%DATADIR%%/externals/dojo/dojox/mdnd/adapter
-@dir %%DATADIR%%/externals/dojo/dojox/mdnd/dropMode
-@dir %%DATADIR%%/externals/dojo/dojox/mdnd/resources
-@dir %%DATADIR%%/externals/dojo/dojox/mdnd
-@dir %%DATADIR%%/externals/dojo/dojox/mobile/app
-@dir %%DATADIR%%/externals/dojo/dojox/mobile/build/profiles
-@dir %%DATADIR%%/externals/dojo/dojox/mobile/build
-@dir %%DATADIR%%/externals/dojo/dojox/mobile/themes/android/compat
-@dir %%DATADIR%%/externals/dojo/dojox/mobile/themes/android
-@dir %%DATADIR%%/externals/dojo/dojox/mobile/themes/compat
-@dir %%DATADIR%%/externals/dojo/dojox/mobile/themes/iphone/compat
-@dir %%DATADIR%%/externals/dojo/dojox/mobile/themes/iphone/images
-@dir %%DATADIR%%/externals/dojo/dojox/mobile/themes/iphone
-@dir %%DATADIR%%/externals/dojo/dojox/mobile/themes
-@dir %%DATADIR%%/externals/dojo/dojox/mobile
-@dir %%DATADIR%%/externals/dojo/dojox/rails
-@dir %%DATADIR%%/externals/dojo/dojox/resources
-@dir %%DATADIR%%/externals/dojo/dojox/robot
-@dir %%DATADIR%%/externals/dojo/dojox/rpc/SMDLibrary
-@dir %%DATADIR%%/externals/dojo/dojox/rpc
-@dir %%DATADIR%%/externals/dojo/dojox/secure
-@dir %%DATADIR%%/externals/dojo/dojox/sketch/resources/images
-@dir %%DATADIR%%/externals/dojo/dojox/sketch/resources
-@dir %%DATADIR%%/externals/dojo/dojox/sketch
-@dir %%DATADIR%%/externals/dojo/dojox/sql
-@dir %%DATADIR%%/externals/dojo/dojox/storage
-@dir %%DATADIR%%/externals/dojo/dojox/string
-@dir %%DATADIR%%/externals/dojo/dojox/testing
-@dir %%DATADIR%%/externals/dojo/dojox/timing
-@dir %%DATADIR%%/externals/dojo/dojox/uuid
-@dir %%DATADIR%%/externals/dojo/dojox/validate
-@dir %%DATADIR%%/externals/dojo/dojox/widget/Calendar
-@dir %%DATADIR%%/externals/dojo/dojox/widget/ColorPicker/images
-@dir %%DATADIR%%/externals/dojo/dojox/widget/ColorPicker
-@dir %%DATADIR%%/externals/dojo/dojox/widget/Dialog/images
-@dir %%DATADIR%%/externals/dojo/dojox/widget/Dialog
-@dir %%DATADIR%%/externals/dojo/dojox/widget/DocTester
-@dir %%DATADIR%%/externals/dojo/dojox/widget/FilePicker/images
-@dir %%DATADIR%%/externals/dojo/dojox/widget/FilePicker
-@dir %%DATADIR%%/externals/dojo/dojox/widget/FisheyeList
-@dir %%DATADIR%%/externals/dojo/dojox/widget/Loader/icons
-@dir %%DATADIR%%/externals/dojo/dojox/widget/Loader
-@dir %%DATADIR%%/externals/dojo/dojox/widget/Pager/images
-@dir %%DATADIR%%/externals/dojo/dojox/widget/Pager
-@dir %%DATADIR%%/externals/dojo/dojox/widget/Portlet/images
-@dir %%DATADIR%%/externals/dojo/dojox/widget/Portlet
-@dir %%DATADIR%%/externals/dojo/dojox/widget/RollingList
-@dir %%DATADIR%%/externals/dojo/dojox/widget/SortList
-@dir %%DATADIR%%/externals/dojo/dojox/widget/Standby/images
-@dir %%DATADIR%%/externals/dojo/dojox/widget/Standby
-@dir %%DATADIR%%/externals/dojo/dojox/widget/Toaster
-@dir %%DATADIR%%/externals/dojo/dojox/widget/UpgradeBar
-@dir %%DATADIR%%/externals/dojo/dojox/widget/Wizard
-@dir %%DATADIR%%/externals/dojo/dojox/widget/gauge
-@dir %%DATADIR%%/externals/dojo/dojox/widget/nls/ar
-@dir %%DATADIR%%/externals/dojo/dojox/widget/nls/ca
-@dir %%DATADIR%%/externals/dojo/dojox/widget/nls/cs
-@dir %%DATADIR%%/externals/dojo/dojox/widget/nls/da
-@dir %%DATADIR%%/externals/dojo/dojox/widget/nls/de
-@dir %%DATADIR%%/externals/dojo/dojox/widget/nls/el
-@dir %%DATADIR%%/externals/dojo/dojox/widget/nls/es
-@dir %%DATADIR%%/externals/dojo/dojox/widget/nls/fi
-@dir %%DATADIR%%/externals/dojo/dojox/widget/nls/fr
-@dir %%DATADIR%%/externals/dojo/dojox/widget/nls/he
-@dir %%DATADIR%%/externals/dojo/dojox/widget/nls/hu
-@dir %%DATADIR%%/externals/dojo/dojox/widget/nls/it
-@dir %%DATADIR%%/externals/dojo/dojox/widget/nls/ja
-@dir %%DATADIR%%/externals/dojo/dojox/widget/nls/kk
-@dir %%DATADIR%%/externals/dojo/dojox/widget/nls/ko
-@dir %%DATADIR%%/externals/dojo/dojox/widget/nls/nb
-@dir %%DATADIR%%/externals/dojo/dojox/widget/nls/nl
-@dir %%DATADIR%%/externals/dojo/dojox/widget/nls/pl
-@dir %%DATADIR%%/externals/dojo/dojox/widget/nls/pt
-@dir %%DATADIR%%/externals/dojo/dojox/widget/nls/pt-pt
-@dir %%DATADIR%%/externals/dojo/dojox/widget/nls/ro
-@dir %%DATADIR%%/externals/dojo/dojox/widget/nls/ru
-@dir %%DATADIR%%/externals/dojo/dojox/widget/nls/sk
-@dir %%DATADIR%%/externals/dojo/dojox/widget/nls/sl
-@dir %%DATADIR%%/externals/dojo/dojox/widget/nls/sv
-@dir %%DATADIR%%/externals/dojo/dojox/widget/nls/th
-@dir %%DATADIR%%/externals/dojo/dojox/widget/nls/tr
-@dir %%DATADIR%%/externals/dojo/dojox/widget/nls/zh
-@dir %%DATADIR%%/externals/dojo/dojox/widget/nls/zh-tw
-@dir %%DATADIR%%/externals/dojo/dojox/widget/nls
-@dir %%DATADIR%%/externals/dojo/dojox/widget/rotator
-@dir %%DATADIR%%/externals/dojo/dojox/widget
-@dir %%DATADIR%%/externals/dojo/dojox/wire/ml
-@dir %%DATADIR%%/externals/dojo/dojox/wire
-@dir %%DATADIR%%/externals/dojo/dojox/xml
-@dir %%DATADIR%%/externals/dojo/dojox/xmpp/widget/templates
-@dir %%DATADIR%%/externals/dojo/dojox/xmpp/widget
-@dir %%DATADIR%%/externals/dojo/dojox/xmpp
-@dir %%DATADIR%%/externals/dojo/dojox
-@dir %%DATADIR%%/externals/dojo/util/buildscripts/cldr/ldml
-@dir %%DATADIR%%/externals/dojo/util/buildscripts/cldr/lib
-@dir %%DATADIR%%/externals/dojo/util/buildscripts/cldr
-@dir %%DATADIR%%/externals/dojo/util/buildscripts/jslib
-@dir %%DATADIR%%/externals/dojo/util/buildscripts/profiles
-@dir %%DATADIR%%/externals/dojo/util/buildscripts/tests/css/blue/two
-@dir %%DATADIR%%/externals/dojo/util/buildscripts/tests/css/blue
-@dir %%DATADIR%%/externals/dojo/util/buildscripts/tests/css
-@dir %%DATADIR%%/externals/dojo/util/buildscripts/tests/foo/page
-@dir %%DATADIR%%/externals/dojo/util/buildscripts/tests/foo
-@dir %%DATADIR%%/externals/dojo/util/buildscripts/tests/profiles
-@dir %%DATADIR%%/externals/dojo/util/buildscripts/tests
-@dir %%DATADIR%%/externals/dojo/util/buildscripts/webbuild/server/js
-@dir %%DATADIR%%/externals/dojo/util/buildscripts/webbuild/server/lib
-@dir %%DATADIR%%/externals/dojo/util/buildscripts/webbuild/server/src/org/dtk
-@dir %%DATADIR%%/externals/dojo/util/buildscripts/webbuild/server/src/org
-@dir %%DATADIR%%/externals/dojo/util/buildscripts/webbuild/server/src
-@dir %%DATADIR%%/externals/dojo/util/buildscripts/webbuild/server/web/WEB-INF
-@dir %%DATADIR%%/externals/dojo/util/buildscripts/webbuild/server/web
-@dir %%DATADIR%%/externals/dojo/util/buildscripts/webbuild/server
-@dir %%DATADIR%%/externals/dojo/util/buildscripts/webbuild
-@dir %%DATADIR%%/externals/dojo/util/buildscripts/zoneinfo
-@dir %%DATADIR%%/externals/dojo/util/buildscripts
-@dir %%DATADIR%%/externals/dojo/util/doh/_sounds
-@dir %%DATADIR%%/externals/dojo/util/doh/robot
-@dir %%DATADIR%%/externals/dojo/util/doh/tests
-@dir %%DATADIR%%/externals/dojo/util/doh
-@dir %%DATADIR%%/externals/dojo/util/migration
-@dir %%DATADIR%%/externals/dojo/util/shrinksafe/src/org/dojotoolkit/shrinksafe/resources
-@dir %%DATADIR%%/externals/dojo/util/shrinksafe/src/org/dojotoolkit/shrinksafe
-@dir %%DATADIR%%/externals/dojo/util/shrinksafe/src/org/dojotoolkit
-@dir %%DATADIR%%/externals/dojo/util/shrinksafe/src/org
-@dir %%DATADIR%%/externals/dojo/util/shrinksafe/src
-@dir %%DATADIR%%/externals/dojo/util/shrinksafe/tests
-@dir %%DATADIR%%/externals/dojo/util/shrinksafe
-@dir %%DATADIR%%/externals/dojo/util
-@dir %%DATADIR%%/externals/dojo
-@dir %%DATADIR%%/externals
-@dir %%DATADIR%%/extras/library/ZendX/Application/Resource
-@dir %%DATADIR%%/extras/library/ZendX/Application
-@dir %%DATADIR%%/extras/library/ZendX/Console/Process
-@dir %%DATADIR%%/extras/library/ZendX/Console
-@dir %%DATADIR%%/extras/library/ZendX/Db/Adapter/Firebird
-@dir %%DATADIR%%/extras/library/ZendX/Db/Adapter
-@dir %%DATADIR%%/extras/library/ZendX/Db/Statement/Firebird
-@dir %%DATADIR%%/extras/library/ZendX/Db/Statement
-@dir %%DATADIR%%/extras/library/ZendX/Db
-@dir %%DATADIR%%/extras/library/ZendX/JQuery/Controller/Action/Helper
-@dir %%DATADIR%%/extras/library/ZendX/JQuery/Controller/Action
-@dir %%DATADIR%%/extras/library/ZendX/JQuery/Controller
-@dir %%DATADIR%%/extras/library/ZendX/JQuery/Form/Decorator
-@dir %%DATADIR%%/extras/library/ZendX/JQuery/Form/Element
-@dir %%DATADIR%%/extras/library/ZendX/JQuery/Form
-@dir %%DATADIR%%/extras/library/ZendX/JQuery/View/Helper/JQuery
-@dir %%DATADIR%%/extras/library/ZendX/JQuery/View/Helper
-@dir %%DATADIR%%/extras/library/ZendX/JQuery/View
-@dir %%DATADIR%%/extras/library/ZendX/JQuery
-@dir %%DATADIR%%/extras/library/ZendX
-@dir %%DATADIR%%/extras/library
-@dir %%DATADIR%%/extras
-@dir %%DATADIR%%/library/Zend/Acl/Assert
-@dir %%DATADIR%%/library/Zend/Acl/Resource
-@dir %%DATADIR%%/library/Zend/Acl/Role/Registry
-@dir %%DATADIR%%/library/Zend/Acl/Role
-@dir %%DATADIR%%/library/Zend/Acl
-@dir %%DATADIR%%/library/Zend/Amf/Adobe
-@dir %%DATADIR%%/library/Zend/Amf/Auth
-@dir %%DATADIR%%/library/Zend/Amf/Parse/Amf0
-@dir %%DATADIR%%/library/Zend/Amf/Parse/Amf3
-@dir %%DATADIR%%/library/Zend/Amf/Parse/Resource
-@dir %%DATADIR%%/library/Zend/Amf/Parse
-@dir %%DATADIR%%/library/Zend/Amf/Request
-@dir %%DATADIR%%/library/Zend/Amf/Response
-@dir %%DATADIR%%/library/Zend/Amf/Server
-@dir %%DATADIR%%/library/Zend/Amf/Util
-@dir %%DATADIR%%/library/Zend/Amf/Value/Messaging
-@dir %%DATADIR%%/library/Zend/Amf/Value
-@dir %%DATADIR%%/library/Zend/Amf
-@dir %%DATADIR%%/library/Zend/Application/Bootstrap
-@dir %%DATADIR%%/library/Zend/Application/Module
-@dir %%DATADIR%%/library/Zend/Application/Resource
-@dir %%DATADIR%%/library/Zend/Application
-@dir %%DATADIR%%/library/Zend/Auth/Adapter/Http/Resolver
-@dir %%DATADIR%%/library/Zend/Auth/Adapter/Http
-@dir %%DATADIR%%/library/Zend/Auth/Adapter
-@dir %%DATADIR%%/library/Zend/Auth/Storage
-@dir %%DATADIR%%/library/Zend/Auth
-@dir %%DATADIR%%/library/Zend/Barcode/Object
-@dir %%DATADIR%%/library/Zend/Barcode/Renderer
-@dir %%DATADIR%%/library/Zend/Barcode
-@dir %%DATADIR%%/library/Zend/Cache/Backend/ZendServer
-@dir %%DATADIR%%/library/Zend/Cache/Backend
-@dir %%DATADIR%%/library/Zend/Cache/Frontend
-@dir %%DATADIR%%/library/Zend/Cache
-@dir %%DATADIR%%/library/Zend/Captcha
-@dir %%DATADIR%%/library/Zend/Cloud/DocumentService/Adapter/SimpleDb
-@dir %%DATADIR%%/library/Zend/Cloud/DocumentService/Adapter/WindowsAzure
-@dir %%DATADIR%%/library/Zend/Cloud/DocumentService/Adapter
-@dir %%DATADIR%%/library/Zend/Cloud/DocumentService
-@dir %%DATADIR%%/library/Zend/Cloud/Infrastructure/Adapter
-@dir %%DATADIR%%/library/Zend/Cloud/Infrastructure
-@dir %%DATADIR%%/library/Zend/Cloud/QueueService/Adapter
-@dir %%DATADIR%%/library/Zend/Cloud/QueueService
-@dir %%DATADIR%%/library/Zend/Cloud/StorageService/Adapter
-@dir %%DATADIR%%/library/Zend/Cloud/StorageService
-@dir %%DATADIR%%/library/Zend/Cloud
-@dir %%DATADIR%%/library/Zend/CodeGenerator/Php/Docblock/Tag
-@dir %%DATADIR%%/library/Zend/CodeGenerator/Php/Docblock
-@dir %%DATADIR%%/library/Zend/CodeGenerator/Php/Member
-@dir %%DATADIR%%/library/Zend/CodeGenerator/Php/Parameter
-@dir %%DATADIR%%/library/Zend/CodeGenerator/Php/Property
-@dir %%DATADIR%%/library/Zend/CodeGenerator/Php
-@dir %%DATADIR%%/library/Zend/CodeGenerator
-@dir %%DATADIR%%/library/Zend/Config/Writer
-@dir %%DATADIR%%/library/Zend/Config
-@dir %%DATADIR%%/library/Zend/Console/Getopt
-@dir %%DATADIR%%/library/Zend/Console
-@dir %%DATADIR%%/library/Zend/Controller/Action/Helper/AutoComplete
-@dir %%DATADIR%%/library/Zend/Controller/Action/Helper
-@dir %%DATADIR%%/library/Zend/Controller/Action/HelperBroker
-@dir %%DATADIR%%/library/Zend/Controller/Action
-@dir %%DATADIR%%/library/Zend/Controller/Dispatcher
-@dir %%DATADIR%%/library/Zend/Controller/Plugin
-@dir %%DATADIR%%/library/Zend/Controller/Request
-@dir %%DATADIR%%/library/Zend/Controller/Response
-@dir %%DATADIR%%/library/Zend/Controller/Router/Route
-@dir %%DATADIR%%/library/Zend/Controller/Router
-@dir %%DATADIR%%/library/Zend/Controller
-@dir %%DATADIR%%/library/Zend/Crypt/DiffieHellman
-@dir %%DATADIR%%/library/Zend/Crypt/Hmac
-@dir %%DATADIR%%/library/Zend/Crypt/Math/BigInteger
-@dir %%DATADIR%%/library/Zend/Crypt/Math
-@dir %%DATADIR%%/library/Zend/Crypt/Rsa/Key
-@dir %%DATADIR%%/library/Zend/Crypt/Rsa
-@dir %%DATADIR%%/library/Zend/Crypt
-@dir %%DATADIR%%/library/Zend/Currency
-@dir %%DATADIR%%/library/Zend/Date
-@dir %%DATADIR%%/library/Zend/Db/Adapter/Db2
-@dir %%DATADIR%%/library/Zend/Db/Adapter/Mysqli
-@dir %%DATADIR%%/library/Zend/Db/Adapter/Oracle
-@dir %%DATADIR%%/library/Zend/Db/Adapter/Pdo/Ibm
-@dir %%DATADIR%%/library/Zend/Db/Adapter/Pdo
-@dir %%DATADIR%%/library/Zend/Db/Adapter/Sqlsrv
-@dir %%DATADIR%%/library/Zend/Db/Adapter
-@dir %%DATADIR%%/library/Zend/Db/Profiler
-@dir %%DATADIR%%/library/Zend/Db/Select
-@dir %%DATADIR%%/library/Zend/Db/Statement/Db2
-@dir %%DATADIR%%/library/Zend/Db/Statement/Mysqli
-@dir %%DATADIR%%/library/Zend/Db/Statement/Oracle
-@dir %%DATADIR%%/library/Zend/Db/Statement/Pdo
-@dir %%DATADIR%%/library/Zend/Db/Statement/Sqlsrv
-@dir %%DATADIR%%/library/Zend/Db/Statement
-@dir %%DATADIR%%/library/Zend/Db/Table/Row
-@dir %%DATADIR%%/library/Zend/Db/Table/Rowset
-@dir %%DATADIR%%/library/Zend/Db/Table/Select
-@dir %%DATADIR%%/library/Zend/Db/Table
-@dir %%DATADIR%%/library/Zend/Db
-@dir %%DATADIR%%/library/Zend/Dojo/Form/Decorator
-@dir %%DATADIR%%/library/Zend/Dojo/Form/Element
-@dir %%DATADIR%%/library/Zend/Dojo/Form
-@dir %%DATADIR%%/library/Zend/Dojo/View/Helper/Dojo
-@dir %%DATADIR%%/library/Zend/Dojo/View/Helper
-@dir %%DATADIR%%/library/Zend/Dojo/View
-@dir %%DATADIR%%/library/Zend/Dojo
-@dir %%DATADIR%%/library/Zend/Dom/Query
-@dir %%DATADIR%%/library/Zend/Dom
-@dir %%DATADIR%%/library/Zend/EventManager/Exception
-@dir %%DATADIR%%/library/Zend/EventManager/Filter
-@dir %%DATADIR%%/library/Zend/EventManager
-@dir %%DATADIR%%/library/Zend/Feed/Builder/Header
-@dir %%DATADIR%%/library/Zend/Feed/Builder
-@dir %%DATADIR%%/library/Zend/Feed/Entry
-@dir %%DATADIR%%/library/Zend/Feed/Pubsubhubbub/Model
-@dir %%DATADIR%%/library/Zend/Feed/Pubsubhubbub/Subscriber
-@dir %%DATADIR%%/library/Zend/Feed/Pubsubhubbub
-@dir %%DATADIR%%/library/Zend/Feed/Reader/Collection
-@dir %%DATADIR%%/library/Zend/Feed/Reader/Entry
-@dir %%DATADIR%%/library/Zend/Feed/Reader/Extension/Atom
-@dir %%DATADIR%%/library/Zend/Feed/Reader/Extension/Content
-@dir %%DATADIR%%/library/Zend/Feed/Reader/Extension/CreativeCommons
-@dir %%DATADIR%%/library/Zend/Feed/Reader/Extension/DublinCore
-@dir %%DATADIR%%/library/Zend/Feed/Reader/Extension/Podcast
-@dir %%DATADIR%%/library/Zend/Feed/Reader/Extension/Slash
-@dir %%DATADIR%%/library/Zend/Feed/Reader/Extension/Syndication
-@dir %%DATADIR%%/library/Zend/Feed/Reader/Extension/Thread
-@dir %%DATADIR%%/library/Zend/Feed/Reader/Extension/WellFormedWeb
-@dir %%DATADIR%%/library/Zend/Feed/Reader/Extension
-@dir %%DATADIR%%/library/Zend/Feed/Reader/Feed/Atom
-@dir %%DATADIR%%/library/Zend/Feed/Reader/Feed
-@dir %%DATADIR%%/library/Zend/Feed/Reader
-@dir %%DATADIR%%/library/Zend/Feed/Writer/Exception
-@dir %%DATADIR%%/library/Zend/Feed/Writer/Extension/Atom/Renderer
-@dir %%DATADIR%%/library/Zend/Feed/Writer/Extension/Atom
-@dir %%DATADIR%%/library/Zend/Feed/Writer/Extension/Content/Renderer
-@dir %%DATADIR%%/library/Zend/Feed/Writer/Extension/Content
-@dir %%DATADIR%%/library/Zend/Feed/Writer/Extension/DublinCore/Renderer
-@dir %%DATADIR%%/library/Zend/Feed/Writer/Extension/DublinCore
-@dir %%DATADIR%%/library/Zend/Feed/Writer/Extension/ITunes/Renderer
-@dir %%DATADIR%%/library/Zend/Feed/Writer/Extension/ITunes
-@dir %%DATADIR%%/library/Zend/Feed/Writer/Extension/Slash/Renderer
-@dir %%DATADIR%%/library/Zend/Feed/Writer/Extension/Slash
-@dir %%DATADIR%%/library/Zend/Feed/Writer/Extension/Threading/Renderer
-@dir %%DATADIR%%/library/Zend/Feed/Writer/Extension/Threading
-@dir %%DATADIR%%/library/Zend/Feed/Writer/Extension/WellFormedWeb/Renderer
-@dir %%DATADIR%%/library/Zend/Feed/Writer/Extension/WellFormedWeb
-@dir %%DATADIR%%/library/Zend/Feed/Writer/Extension
-@dir %%DATADIR%%/library/Zend/Feed/Writer/Feed
-@dir %%DATADIR%%/library/Zend/Feed/Writer/Renderer/Entry/Atom
-@dir %%DATADIR%%/library/Zend/Feed/Writer/Renderer/Entry
-@dir %%DATADIR%%/library/Zend/Feed/Writer/Renderer/Feed/Atom
-@dir %%DATADIR%%/library/Zend/Feed/Writer/Renderer/Feed
-@dir %%DATADIR%%/library/Zend/Feed/Writer/Renderer
-@dir %%DATADIR%%/library/Zend/Feed/Writer
-@dir %%DATADIR%%/library/Zend/Feed
-@dir %%DATADIR%%/library/Zend/File/Transfer/Adapter
-@dir %%DATADIR%%/library/Zend/File/Transfer
-@dir %%DATADIR%%/library/Zend/File
-@dir %%DATADIR%%/library/Zend/Filter/Compress
-@dir %%DATADIR%%/library/Zend/Filter/Encrypt
-@dir %%DATADIR%%/library/Zend/Filter/File
-@dir %%DATADIR%%/library/Zend/Filter/Word/Separator
-@dir %%DATADIR%%/library/Zend/Filter/Word
-@dir %%DATADIR%%/library/Zend/Filter
-@dir %%DATADIR%%/library/Zend/Form/Decorator/Captcha
-@dir %%DATADIR%%/library/Zend/Form/Decorator/Marker/File
-@dir %%DATADIR%%/library/Zend/Form/Decorator/Marker
-@dir %%DATADIR%%/library/Zend/Form/Decorator
-@dir %%DATADIR%%/library/Zend/Form/Element
-@dir %%DATADIR%%/library/Zend/Form
-@dir %%DATADIR%%/library/Zend/Gdata/Analytics/Extension
-@dir %%DATADIR%%/library/Zend/Gdata/Analytics
-@dir %%DATADIR%%/library/Zend/Gdata/App/Extension
-@dir %%DATADIR%%/library/Zend/Gdata/App
-@dir %%DATADIR%%/library/Zend/Gdata/Books/Extension
-@dir %%DATADIR%%/library/Zend/Gdata/Books
-@dir %%DATADIR%%/library/Zend/Gdata/Calendar/Extension
-@dir %%DATADIR%%/library/Zend/Gdata/Calendar
-@dir %%DATADIR%%/library/Zend/Gdata/Docs
-@dir %%DATADIR%%/library/Zend/Gdata/DublinCore/Extension
-@dir %%DATADIR%%/library/Zend/Gdata/DublinCore
-@dir %%DATADIR%%/library/Zend/Gdata/Exif/Extension
-@dir %%DATADIR%%/library/Zend/Gdata/Exif
-@dir %%DATADIR%%/library/Zend/Gdata/Extension
-@dir %%DATADIR%%/library/Zend/Gdata/Gapps/Extension
-@dir %%DATADIR%%/library/Zend/Gdata/Gapps
-@dir %%DATADIR%%/library/Zend/Gdata/Gbase/Extension
-@dir %%DATADIR%%/library/Zend/Gdata/Gbase
-@dir %%DATADIR%%/library/Zend/Gdata/Geo/Extension
-@dir %%DATADIR%%/library/Zend/Gdata/Geo
-@dir %%DATADIR%%/library/Zend/Gdata/Health/Extension
-@dir %%DATADIR%%/library/Zend/Gdata/Health
-@dir %%DATADIR%%/library/Zend/Gdata/Kind
-@dir %%DATADIR%%/library/Zend/Gdata/Media/Extension
-@dir %%DATADIR%%/library/Zend/Gdata/Media
-@dir %%DATADIR%%/library/Zend/Gdata/Photos/Extension
-@dir %%DATADIR%%/library/Zend/Gdata/Photos
-@dir %%DATADIR%%/library/Zend/Gdata/Spreadsheets/Extension
-@dir %%DATADIR%%/library/Zend/Gdata/Spreadsheets
-@dir %%DATADIR%%/library/Zend/Gdata/YouTube/Extension
-@dir %%DATADIR%%/library/Zend/Gdata/YouTube
-@dir %%DATADIR%%/library/Zend/Gdata
-@dir %%DATADIR%%/library/Zend/Http/Client/Adapter
-@dir %%DATADIR%%/library/Zend/Http/Client
-@dir %%DATADIR%%/library/Zend/Http/Header/Exception
-@dir %%DATADIR%%/library/Zend/Http/Header
-@dir %%DATADIR%%/library/Zend/Http/Response
-@dir %%DATADIR%%/library/Zend/Http/UserAgent/Features/Adapter
-@dir %%DATADIR%%/library/Zend/Http/UserAgent/Features
-@dir %%DATADIR%%/library/Zend/Http/UserAgent/Storage
-@dir %%DATADIR%%/library/Zend/Http/UserAgent
-@dir %%DATADIR%%/library/Zend/Http
-@dir %%DATADIR%%/library/Zend/Json/Server/Request
-@dir %%DATADIR%%/library/Zend/Json/Server/Response
-@dir %%DATADIR%%/library/Zend/Json/Server/Smd
-@dir %%DATADIR%%/library/Zend/Json/Server
-@dir %%DATADIR%%/library/Zend/Json
-@dir %%DATADIR%%/library/Zend/Layout/Controller/Action/Helper
-@dir %%DATADIR%%/library/Zend/Layout/Controller/Action
-@dir %%DATADIR%%/library/Zend/Layout/Controller/Plugin
-@dir %%DATADIR%%/library/Zend/Layout/Controller
-@dir %%DATADIR%%/library/Zend/Layout
-@dir %%DATADIR%%/library/Zend/Ldap/Collection/Iterator
-@dir %%DATADIR%%/library/Zend/Ldap/Collection
-@dir %%DATADIR%%/library/Zend/Ldap/Converter
-@dir %%DATADIR%%/library/Zend/Ldap/Filter
-@dir %%DATADIR%%/library/Zend/Ldap/Ldif
-@dir %%DATADIR%%/library/Zend/Ldap/Node/RootDse
-@dir %%DATADIR%%/library/Zend/Ldap/Node/Schema/AttributeType
-@dir %%DATADIR%%/library/Zend/Ldap/Node/Schema/ObjectClass
-@dir %%DATADIR%%/library/Zend/Ldap/Node/Schema
-@dir %%DATADIR%%/library/Zend/Ldap/Node
-@dir %%DATADIR%%/library/Zend/Ldap
-@dir %%DATADIR%%/library/Zend/Loader/Autoloader
-@dir %%DATADIR%%/library/Zend/Loader/Exception
-@dir %%DATADIR%%/library/Zend/Loader/PluginLoader
-@dir %%DATADIR%%/library/Zend/Loader
-@dir %%DATADIR%%/library/Zend/Locale/Data
-@dir %%DATADIR%%/library/Zend/Locale/Math
-@dir %%DATADIR%%/library/Zend/Locale
-@dir %%DATADIR%%/library/Zend/Log/Filter
-@dir %%DATADIR%%/library/Zend/Log/Formatter
-@dir %%DATADIR%%/library/Zend/Log/Writer
-@dir %%DATADIR%%/library/Zend/Log
-@dir %%DATADIR%%/library/Zend/Mail/Message
-@dir %%DATADIR%%/library/Zend/Mail/Part
-@dir %%DATADIR%%/library/Zend/Mail/Protocol/Smtp/Auth
-@dir %%DATADIR%%/library/Zend/Mail/Protocol/Smtp
-@dir %%DATADIR%%/library/Zend/Mail/Protocol
-@dir %%DATADIR%%/library/Zend/Mail/Storage/Folder
-@dir %%DATADIR%%/library/Zend/Mail/Storage/Writable
-@dir %%DATADIR%%/library/Zend/Mail/Storage
-@dir %%DATADIR%%/library/Zend/Mail/Transport
-@dir %%DATADIR%%/library/Zend/Mail
-@dir %%DATADIR%%/library/Zend/Markup/Parser
-@dir %%DATADIR%%/library/Zend/Markup/Renderer/Html
-@dir %%DATADIR%%/library/Zend/Markup/Renderer
-@dir %%DATADIR%%/library/Zend/Markup
-@dir %%DATADIR%%/library/Zend/Measure/Cooking
-@dir %%DATADIR%%/library/Zend/Measure/Flow
-@dir %%DATADIR%%/library/Zend/Measure/Viscosity
-@dir %%DATADIR%%/library/Zend/Measure
-@dir %%DATADIR%%/library/Zend/Memory/Container
-@dir %%DATADIR%%/library/Zend/Memory
-@dir %%DATADIR%%/library/Zend/Mime
-@dir %%DATADIR%%/library/Zend/Mobile/Push/Exception
-@dir %%DATADIR%%/library/Zend/Mobile/Push/Message/Mpns
-@dir %%DATADIR%%/library/Zend/Mobile/Push/Message
-@dir %%DATADIR%%/library/Zend/Mobile/Push/Response
-@dir %%DATADIR%%/library/Zend/Mobile/Push/Test
-@dir %%DATADIR%%/library/Zend/Mobile/Push
-@dir %%DATADIR%%/library/Zend/Mobile
-@dir %%DATADIR%%/library/Zend/Navigation/Page
-@dir %%DATADIR%%/library/Zend/Navigation
-@dir %%DATADIR%%/library/Zend/Oauth/Config
-@dir %%DATADIR%%/library/Zend/Oauth/Http
-@dir %%DATADIR%%/library/Zend/Oauth/Signature
-@dir %%DATADIR%%/library/Zend/Oauth/Token
-@dir %%DATADIR%%/library/Zend/Oauth
-@dir %%DATADIR%%/library/Zend/OpenId/Consumer/Storage
-@dir %%DATADIR%%/library/Zend/OpenId/Consumer
-@dir %%DATADIR%%/library/Zend/OpenId/Extension
-@dir %%DATADIR%%/library/Zend/OpenId/Provider/Storage
-@dir %%DATADIR%%/library/Zend/OpenId/Provider/User
-@dir %%DATADIR%%/library/Zend/OpenId/Provider
-@dir %%DATADIR%%/library/Zend/OpenId
-@dir %%DATADIR%%/library/Zend/Paginator/Adapter
-@dir %%DATADIR%%/library/Zend/Paginator/ScrollingStyle
-@dir %%DATADIR%%/library/Zend/Paginator
-@dir %%DATADIR%%/library/Zend/Pdf/Action
-@dir %%DATADIR%%/library/Zend/Pdf/Annotation
-@dir %%DATADIR%%/library/Zend/Pdf/Canvas
-@dir %%DATADIR%%/library/Zend/Pdf/Cmap/ByteEncoding
-@dir %%DATADIR%%/library/Zend/Pdf/Cmap
-@dir %%DATADIR%%/library/Zend/Pdf/Color
-@dir %%DATADIR%%/library/Zend/Pdf/Destination
-@dir %%DATADIR%%/library/Zend/Pdf/Element/Object
-@dir %%DATADIR%%/library/Zend/Pdf/Element/Reference
-@dir %%DATADIR%%/library/Zend/Pdf/Element/String
-@dir %%DATADIR%%/library/Zend/Pdf/Element
-@dir %%DATADIR%%/library/Zend/Pdf/ElementFactory
-@dir %%DATADIR%%/library/Zend/Pdf/FileParser/Font/OpenType
-@dir %%DATADIR%%/library/Zend/Pdf/FileParser/Font
-@dir %%DATADIR%%/library/Zend/Pdf/FileParser/Image
-@dir %%DATADIR%%/library/Zend/Pdf/FileParser
-@dir %%DATADIR%%/library/Zend/Pdf/FileParserDataSource
-@dir %%DATADIR%%/library/Zend/Pdf/Filter/Compression
-@dir %%DATADIR%%/library/Zend/Pdf/Filter
-@dir %%DATADIR%%/library/Zend/Pdf/Outline
-@dir %%DATADIR%%/library/Zend/Pdf/Resource/Font/CidFont
-@dir %%DATADIR%%/library/Zend/Pdf/Resource/Font/Simple/Parsed
-@dir %%DATADIR%%/library/Zend/Pdf/Resource/Font/Simple/Standard
-@dir %%DATADIR%%/library/Zend/Pdf/Resource/Font/Simple
-@dir %%DATADIR%%/library/Zend/Pdf/Resource/Font
-@dir %%DATADIR%%/library/Zend/Pdf/Resource/Image
-@dir %%DATADIR%%/library/Zend/Pdf/Resource
-@dir %%DATADIR%%/library/Zend/Pdf/Trailer
-@dir %%DATADIR%%/library/Zend/Pdf
-@dir %%DATADIR%%/library/Zend/ProgressBar/Adapter
-@dir %%DATADIR%%/library/Zend/ProgressBar
-@dir %%DATADIR%%/library/Zend/Queue/Adapter/Db
-@dir %%DATADIR%%/library/Zend/Queue/Adapter
-@dir %%DATADIR%%/library/Zend/Queue/Message
-@dir %%DATADIR%%/library/Zend/Queue/Stomp/Client
-@dir %%DATADIR%%/library/Zend/Queue/Stomp
-@dir %%DATADIR%%/library/Zend/Queue
-@dir %%DATADIR%%/library/Zend/Reflection/Docblock/Tag
-@dir %%DATADIR%%/library/Zend/Reflection/Docblock
-@dir %%DATADIR%%/library/Zend/Reflection
-@dir %%DATADIR%%/library/Zend/Rest/Client/Result
-@dir %%DATADIR%%/library/Zend/Rest/Client
-@dir %%DATADIR%%/library/Zend/Rest/Server
-@dir %%DATADIR%%/library/Zend/Rest
-@dir %%DATADIR%%/library/Zend/Search/Lucene/Analysis/Analyzer/Common/Text
-@dir %%DATADIR%%/library/Zend/Search/Lucene/Analysis/Analyzer/Common/TextNum
-@dir %%DATADIR%%/library/Zend/Search/Lucene/Analysis/Analyzer/Common/Utf8
-@dir %%DATADIR%%/library/Zend/Search/Lucene/Analysis/Analyzer/Common/Utf8Num
-@dir %%DATADIR%%/library/Zend/Search/Lucene/Analysis/Analyzer/Common
-@dir %%DATADIR%%/library/Zend/Search/Lucene/Analysis/Analyzer
-@dir %%DATADIR%%/library/Zend/Search/Lucene/Analysis/TokenFilter
-@dir %%DATADIR%%/library/Zend/Search/Lucene/Analysis
-@dir %%DATADIR%%/library/Zend/Search/Lucene/Document
-@dir %%DATADIR%%/library/Zend/Search/Lucene/Index/SegmentWriter
-@dir %%DATADIR%%/library/Zend/Search/Lucene/Index/TermsStream
-@dir %%DATADIR%%/library/Zend/Search/Lucene/Index
-@dir %%DATADIR%%/library/Zend/Search/Lucene/Interface
-@dir %%DATADIR%%/library/Zend/Search/Lucene/Search/Highlighter
-@dir %%DATADIR%%/library/Zend/Search/Lucene/Search/Query/Preprocessing
-@dir %%DATADIR%%/library/Zend/Search/Lucene/Search/Query
-@dir %%DATADIR%%/library/Zend/Search/Lucene/Search/QueryEntry
-@dir %%DATADIR%%/library/Zend/Search/Lucene/Search/Similarity
-@dir %%DATADIR%%/library/Zend/Search/Lucene/Search/Weight
-@dir %%DATADIR%%/library/Zend/Search/Lucene/Search
-@dir %%DATADIR%%/library/Zend/Search/Lucene/Storage/Directory
-@dir %%DATADIR%%/library/Zend/Search/Lucene/Storage/File
-@dir %%DATADIR%%/library/Zend/Search/Lucene/Storage
-@dir %%DATADIR%%/library/Zend/Search/Lucene
-@dir %%DATADIR%%/library/Zend/Search
-@dir %%DATADIR%%/library/Zend/Serializer/Adapter
-@dir %%DATADIR%%/library/Zend/Serializer
-@dir %%DATADIR%%/library/Zend/Server/Method
-@dir %%DATADIR%%/library/Zend/Server/Reflection/Function
-@dir %%DATADIR%%/library/Zend/Server/Reflection
-@dir %%DATADIR%%/library/Zend/Server
-@dir %%DATADIR%%/library/Zend/Service/Amazon/Authentication
-@dir %%DATADIR%%/library/Zend/Service/Amazon/Ec2/Instance
-@dir %%DATADIR%%/library/Zend/Service/Amazon/Ec2
-@dir %%DATADIR%%/library/Zend/Service/Amazon/S3
-@dir %%DATADIR%%/library/Zend/Service/Amazon/SimpleDb
-@dir %%DATADIR%%/library/Zend/Service/Amazon/Sqs
-@dir %%DATADIR%%/library/Zend/Service/Amazon
-@dir %%DATADIR%%/library/Zend/Service/Delicious
-@dir %%DATADIR%%/library/Zend/Service/DeveloperGarden/BaseUserService
-@dir %%DATADIR%%/library/Zend/Service/DeveloperGarden/Client
-@dir %%DATADIR%%/library/Zend/Service/DeveloperGarden/ConferenceCall
-@dir %%DATADIR%%/library/Zend/Service/DeveloperGarden/IpLocation
-@dir %%DATADIR%%/library/Zend/Service/DeveloperGarden/LocalSearch
-@dir %%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/BaseUserService
-@dir %%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/ConferenceCall
-@dir %%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/IpLocation
-@dir %%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/LocalSearch
-@dir %%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/SendSms
-@dir %%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/SmsValidation
-@dir %%DATADIR%%/library/Zend/Service/DeveloperGarden/Request/VoiceButler
-@dir %%DATADIR%%/library/Zend/Service/DeveloperGarden/Request
-@dir %%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/BaseUserService
-@dir %%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/ConferenceCall
-@dir %%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/IpLocation
-@dir %%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/LocalSearch
-@dir %%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/SecurityTokenServer
-@dir %%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/SendSms
-@dir %%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/SmsValidation
-@dir %%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/VoiceButler
-@dir %%DATADIR%%/library/Zend/Service/DeveloperGarden/Response
-@dir %%DATADIR%%/library/Zend/Service/DeveloperGarden/SecurityTokenServer
-@dir %%DATADIR%%/library/Zend/Service/DeveloperGarden/Wsdl
-@dir %%DATADIR%%/library/Zend/Service/DeveloperGarden
-@dir %%DATADIR%%/library/Zend/Service/Ebay/Finding/Aspect/Histogram/Value
-@dir %%DATADIR%%/library/Zend/Service/Ebay/Finding/Aspect/Histogram
-@dir %%DATADIR%%/library/Zend/Service/Ebay/Finding/Aspect
-@dir %%DATADIR%%/library/Zend/Service/Ebay/Finding/Category/Histogram
-@dir %%DATADIR%%/library/Zend/Service/Ebay/Finding/Category
-@dir %%DATADIR%%/library/Zend/Service/Ebay/Finding/Error/Data
-@dir %%DATADIR%%/library/Zend/Service/Ebay/Finding/Error
-@dir %%DATADIR%%/library/Zend/Service/Ebay/Finding/Response
-@dir %%DATADIR%%/library/Zend/Service/Ebay/Finding/Search/Item
-@dir %%DATADIR%%/library/Zend/Service/Ebay/Finding/Search
-@dir %%DATADIR%%/library/Zend/Service/Ebay/Finding/Set
-@dir %%DATADIR%%/library/Zend/Service/Ebay/Finding
-@dir %%DATADIR%%/library/Zend/Service/Ebay
-@dir %%DATADIR%%/library/Zend/Service/Flickr
-@dir %%DATADIR%%/library/Zend/Service/LiveDocx
-@dir %%DATADIR%%/library/Zend/Service/Rackspace/Files
-@dir %%DATADIR%%/library/Zend/Service/Rackspace/Servers
-@dir %%DATADIR%%/library/Zend/Service/Rackspace
-@dir %%DATADIR%%/library/Zend/Service/ReCaptcha/MailHide
-@dir %%DATADIR%%/library/Zend/Service/ReCaptcha
-@dir %%DATADIR%%/library/Zend/Service/ShortUrl
-@dir %%DATADIR%%/library/Zend/Service/SlideShare
-@dir %%DATADIR%%/library/Zend/Service/SqlAzure/Management
-@dir %%DATADIR%%/library/Zend/Service/SqlAzure
-@dir %%DATADIR%%/library/Zend/Service/StrikeIron
-@dir %%DATADIR%%/library/Zend/Service/Technorati
-@dir %%DATADIR%%/library/Zend/Service/Twitter
-@dir %%DATADIR%%/library/Zend/Service/WindowsAzure/CommandLine/PackageScaffolder
-@dir %%DATADIR%%/library/Zend/Service/WindowsAzure/CommandLine/Scaffolders/DefaultScaffolder/resources/PhpOnAzure.Web/bin
-@dir %%DATADIR%%/library/Zend/Service/WindowsAzure/CommandLine/Scaffolders/DefaultScaffolder/resources/PhpOnAzure.Web/resources/WebPICmdLine
-@dir %%DATADIR%%/library/Zend/Service/WindowsAzure/CommandLine/Scaffolders/DefaultScaffolder/resources/PhpOnAzure.Web/resources
-@dir %%DATADIR%%/library/Zend/Service/WindowsAzure/CommandLine/Scaffolders/DefaultScaffolder/resources/PhpOnAzure.Web
-@dir %%DATADIR%%/library/Zend/Service/WindowsAzure/CommandLine/Scaffolders/DefaultScaffolder/resources
-@dir %%DATADIR%%/library/Zend/Service/WindowsAzure/CommandLine/Scaffolders/DefaultScaffolder
-@dir %%DATADIR%%/library/Zend/Service/WindowsAzure/CommandLine/Scaffolders
-@dir %%DATADIR%%/library/Zend/Service/WindowsAzure/CommandLine
-@dir %%DATADIR%%/library/Zend/Service/WindowsAzure/Credentials
-@dir %%DATADIR%%/library/Zend/Service/WindowsAzure/Diagnostics
-@dir %%DATADIR%%/library/Zend/Service/WindowsAzure/Log/Formatter
-@dir %%DATADIR%%/library/Zend/Service/WindowsAzure/Log/Writer
-@dir %%DATADIR%%/library/Zend/Service/WindowsAzure/Log
-@dir %%DATADIR%%/library/Zend/Service/WindowsAzure/Management
-@dir %%DATADIR%%/library/Zend/Service/WindowsAzure/RetryPolicy
-@dir %%DATADIR%%/library/Zend/Service/WindowsAzure/Storage/Blob
-@dir %%DATADIR%%/library/Zend/Service/WindowsAzure/Storage
-@dir %%DATADIR%%/library/Zend/Service/WindowsAzure
-@dir %%DATADIR%%/library/Zend/Service/Yahoo
-@dir %%DATADIR%%/library/Zend/Service
-@dir %%DATADIR%%/library/Zend/Session/SaveHandler
-@dir %%DATADIR%%/library/Zend/Session/Validator
-@dir %%DATADIR%%/library/Zend/Session
-@dir %%DATADIR%%/library/Zend/Soap/AutoDiscover
-@dir %%DATADIR%%/library/Zend/Soap/Client
-@dir %%DATADIR%%/library/Zend/Soap/Server
-@dir %%DATADIR%%/library/Zend/Soap/Wsdl/Strategy
-@dir %%DATADIR%%/library/Zend/Soap/Wsdl
-@dir %%DATADIR%%/library/Zend/Soap
-@dir %%DATADIR%%/library/Zend/Stdlib/Exception
-@dir %%DATADIR%%/library/Zend/Stdlib
-@dir %%DATADIR%%/library/Zend/Tag/Cloud/Decorator
-@dir %%DATADIR%%/library/Zend/Tag/Cloud
-@dir %%DATADIR%%/library/Zend/Tag
-@dir %%DATADIR%%/library/Zend/Test/PHPUnit/Constraint
-@dir %%DATADIR%%/library/Zend/Test/PHPUnit/Db/DataSet
-@dir %%DATADIR%%/library/Zend/Test/PHPUnit/Db/Metadata
-@dir %%DATADIR%%/library/Zend/Test/PHPUnit/Db/Operation
-@dir %%DATADIR%%/library/Zend/Test/PHPUnit/Db
-@dir %%DATADIR%%/library/Zend/Test/PHPUnit
-@dir %%DATADIR%%/library/Zend/Test
-@dir %%DATADIR%%/library/Zend/Text/Figlet
-@dir %%DATADIR%%/library/Zend/Text/Table/Decorator
-@dir %%DATADIR%%/library/Zend/Text/Table
-@dir %%DATADIR%%/library/Zend/Text
-@dir %%DATADIR%%/library/Zend/TimeSync
-@dir %%DATADIR%%/library/Zend/Tool/Framework/Action
-@dir %%DATADIR%%/library/Zend/Tool/Framework/Client/Console/ResponseDecorator
-@dir %%DATADIR%%/library/Zend/Tool/Framework/Client/Console
-@dir %%DATADIR%%/library/Zend/Tool/Framework/Client/Interactive
-@dir %%DATADIR%%/library/Zend/Tool/Framework/Client/Response/ContentDecorator
-@dir %%DATADIR%%/library/Zend/Tool/Framework/Client/Response
-@dir %%DATADIR%%/library/Zend/Tool/Framework/Client/Storage
-@dir %%DATADIR%%/library/Zend/Tool/Framework/Client
-@dir %%DATADIR%%/library/Zend/Tool/Framework/Loader/IncludePathLoader
-@dir %%DATADIR%%/library/Zend/Tool/Framework/Loader
-@dir %%DATADIR%%/library/Zend/Tool/Framework/Manifest
-@dir %%DATADIR%%/library/Zend/Tool/Framework/Metadata
-@dir %%DATADIR%%/library/Zend/Tool/Framework/Provider
-@dir %%DATADIR%%/library/Zend/Tool/Framework/Registry
-@dir %%DATADIR%%/library/Zend/Tool/Framework/System/Action
-@dir %%DATADIR%%/library/Zend/Tool/Framework/System/Provider
-@dir %%DATADIR%%/library/Zend/Tool/Framework/System
-@dir %%DATADIR%%/library/Zend/Tool/Framework
-@dir %%DATADIR%%/library/Zend/Tool/Project/Context/Content/Engine
-@dir %%DATADIR%%/library/Zend/Tool/Project/Context/Content
-@dir %%DATADIR%%/library/Zend/Tool/Project/Context/Filesystem
-@dir %%DATADIR%%/library/Zend/Tool/Project/Context/System
-@dir %%DATADIR%%/library/Zend/Tool/Project/Context/Zf
-@dir %%DATADIR%%/library/Zend/Tool/Project/Context
-@dir %%DATADIR%%/library/Zend/Tool/Project/Profile/FileParser
-@dir %%DATADIR%%/library/Zend/Tool/Project/Profile/Iterator
-@dir %%DATADIR%%/library/Zend/Tool/Project/Profile/Resource
-@dir %%DATADIR%%/library/Zend/Tool/Project/Profile
-@dir %%DATADIR%%/library/Zend/Tool/Project/Provider
-@dir %%DATADIR%%/library/Zend/Tool/Project
-@dir %%DATADIR%%/library/Zend/Tool
-@dir %%DATADIR%%/library/Zend/Translate/Adapter
-@dir %%DATADIR%%/library/Zend/Translate
-@dir %%DATADIR%%/library/Zend/Uri
-@dir %%DATADIR%%/library/Zend/Validate/Barcode
-@dir %%DATADIR%%/library/Zend/Validate/Db
-@dir %%DATADIR%%/library/Zend/Validate/File
-@dir %%DATADIR%%/library/Zend/Validate/Hostname
-@dir %%DATADIR%%/library/Zend/Validate/Ldap
-@dir %%DATADIR%%/library/Zend/Validate/Sitemap
-@dir %%DATADIR%%/library/Zend/Validate
-@dir %%DATADIR%%/library/Zend/View/Helper/Navigation
-@dir %%DATADIR%%/library/Zend/View/Helper/Partial
-@dir %%DATADIR%%/library/Zend/View/Helper/Placeholder/Container
-@dir %%DATADIR%%/library/Zend/View/Helper/Placeholder/Registry
-@dir %%DATADIR%%/library/Zend/View/Helper/Placeholder
-@dir %%DATADIR%%/library/Zend/View/Helper
-@dir %%DATADIR%%/library/Zend/View
-@dir %%DATADIR%%/library/Zend/Wildfire/Channel
-@dir %%DATADIR%%/library/Zend/Wildfire/Plugin/FirePhp
-@dir %%DATADIR%%/library/Zend/Wildfire/Plugin
-@dir %%DATADIR%%/library/Zend/Wildfire/Protocol
-@dir %%DATADIR%%/library/Zend/Wildfire
-@dir %%DATADIR%%/library/Zend/Xml
-@dir %%DATADIR%%/library/Zend/XmlRpc/Client
-@dir %%DATADIR%%/library/Zend/XmlRpc/Generator
-@dir %%DATADIR%%/library/Zend/XmlRpc/Request
-@dir %%DATADIR%%/library/Zend/XmlRpc/Response
-@dir %%DATADIR%%/library/Zend/XmlRpc/Server
-@dir %%DATADIR%%/library/Zend/XmlRpc/Value
-@dir %%DATADIR%%/library/Zend/XmlRpc
-@dir %%DATADIR%%/library/Zend
-@dir %%DATADIR%%/library
-@dir %%DATADIR%%
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/configs
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/controllers
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/views/scripts/document
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/views/scripts/error
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/views/scripts/index
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/views/scripts/queue
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/views/scripts/storage
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/views/scripts
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/views
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/library/CloudExplorer
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/library
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/public
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Cloud
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Feeds
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Gdata/3LeggedOAuth
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Gdata/BooksBrowser
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Gdata/MyLibrary
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Gdata/YouTubeVideoApp
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Gdata/YouTubeVideoBrowser
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Gdata
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Locale
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Mail/maildir
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Mail/mbox/subfolder
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Mail/mbox
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Mail
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Mobile/Push
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Mobile
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/OpenId/mvc_auth/application/controllers
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/OpenId/mvc_auth/application/views/scripts/error
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/OpenId/mvc_auth/application/views/scripts/index
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/OpenId/mvc_auth/application/views/scripts
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/OpenId/mvc_auth/application/views
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/OpenId/mvc_auth/application
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/OpenId/mvc_auth/html
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/OpenId/mvc_auth
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/OpenId/templates
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/OpenId
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Pdf
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/ProgressBar
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Search/Lucene/feed-search
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Search/Lucene/indexing/IndexSource
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Search/Lucene/indexing
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Search/Lucene
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Search
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/bitmaps
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/conference-pass
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/constructors
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/convert
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/images
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/license-agreement
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/metafiles
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/pdf-security
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/supported-fonts
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/supported-formats
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/telephone-bill
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/template-info
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/templates
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Service
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/WebServices/Amazon
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/WebServices/Flickr
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/WebServices/Protocols
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/WebServices/Yahoo
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/WebServices
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Wildfire/application/controllers/Boot/Zend-Db-Profiler-Firebug
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Wildfire/application/controllers/Boot/Zend-Log-Writer-Firebug
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Wildfire/application/controllers/Boot
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Wildfire/application/controllers
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Wildfire/application/views/scripts/error
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Wildfire/application/views/scripts/index
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Wildfire/application/views/scripts/zend-db-profiler-firebug
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Wildfire/application/views/scripts/zend-log-writer-firebug
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Wildfire/application/views/scripts/zend-wildfire-plugin-firephp
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Wildfire/application/views/scripts
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Wildfire/application/views
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Wildfire/application
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Wildfire/public/Boot/Zend-Db-Profiler-Firebug
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Wildfire/public/Boot/Zend-Log-Writer-Firebug
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Wildfire/public/Boot
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Wildfire/public
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend/Wildfire
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos/Zend
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/demos
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Acl/_files/UseCase1
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Acl/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Acl
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/AllTests/StreamWrapper
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/AllTests
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Amf/Adobe/TestAsset
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Amf/Adobe/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Amf/Adobe
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Amf/Request/mock
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Amf/Request
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Amf/Resources
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Amf/Response/mock
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Amf/Response
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Amf/Util
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Amf/Value
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Amf/_files/services/My
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Amf/_files/services
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Amf/_files/zf-6130/services
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Amf/_files/zf-6130
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Amf/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Amf
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Application/Bootstrap
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Application/Module
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Application/Resource/TestAsset
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Application/Resource/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Application/Resource
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/bar/controllers
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/bar
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/baz/controllers
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/baz
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/default
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/foo/controllers
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/foo
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/foo-bar
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/zfappbootstrap/controllers
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/zfappbootstrap
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Application/_files/more_modules/bat/controllers
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Application/_files/more_modules/bat
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Application/_files/more_modules/foobaz/controllers
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Application/_files/more_modules/foobaz
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Application/_files/more_modules
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Application/_files/resources
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Application/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Application
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Auth/Adapter/DbTable/BasicSqliteTest
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Auth/Adapter/DbTable
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Auth/Adapter/Digest/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Auth/Adapter/Digest
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Auth/Adapter/Http/Resolver
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Auth/Adapter/Http/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Auth/Adapter/Http
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Auth/Adapter/Ldap
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Auth/Adapter/OpenId
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Auth/Adapter
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Auth
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Barcode/Object/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Barcode/Object/_fonts
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Barcode/Object
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Barcode/Renderer/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Barcode/Renderer
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Barcode
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Cache
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Captcha
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Cloud/DocumentService/Adapter
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Cloud/DocumentService
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Cloud/Infrastructure/Adapter/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Cloud/Infrastructure/Adapter
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Cloud/Infrastructure
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Cloud/QueueService/Adapter
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Cloud/QueueService/_files/config
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Cloud/QueueService/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Cloud/QueueService
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Cloud/StorageService/Adapter
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Cloud/StorageService/_files/config
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Cloud/StorageService/_files/data
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Cloud/StorageService/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Cloud/StorageService
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Cloud
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/Docblock/Tag
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/Docblock
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/Property
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/CodeGenerator
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Config/Writer/files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Config/Writer
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Config/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Config
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Console
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/Action/Helper
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/Action/HelperBroker
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/Action
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/Dispatcher
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/Plugin
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/Request
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/Response
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/Router/Route
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/Router
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/_files/Admin
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/_files/Helpers
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/_files/modules/bar/controllers
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/_files/modules/bar/views/scripts/index
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/_files/modules/bar/views/scripts/test
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/_files/modules/bar/views/scripts
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/_files/modules/bar/views
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/_files/modules/bar
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/_files/modules/baz-bat/controllers
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/_files/modules/baz-bat
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/_files/modules/default/controllers/Admin
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/_files/modules/default/controllers
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/_files/modules/default/views/helpers
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/_files/modules/default/views/scripts/admin/helper
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/_files/modules/default/views/scripts/admin
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/_files/modules/default/views/scripts
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/_files/modules/default/views
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/_files/modules/default
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/_files/modules/foo/controllers/Admin
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/_files/modules/foo/controllers
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/_files/modules/foo/views/helpers
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/_files/modules/foo/views/scripts/admin/index
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/_files/modules/foo/views/scripts/admin
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/_files/modules/foo/views/scripts
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/_files/modules/foo/views
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/_files/modules/foo
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/_files/modules
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/views/scripts/custom
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/views/scripts/foo-bar
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/views/scripts/view
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/views/scripts
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller/views
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Controller
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Crypt/Math/BigInteger
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Crypt/Math
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Crypt/Rsa/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Crypt/Rsa
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Crypt
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Currency
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Date
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db/Adapter/Pdo
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db/Adapter/_files/Test/MyCompany1/Db
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db/Adapter/_files/Test/MyCompany1
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db/Adapter/_files/Test/Mycompany2
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db/Adapter/_files/Test
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db/Adapter/_files/Testnamespace
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db/Adapter/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db/Adapter
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db/Profiler/Pdo
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db/Profiler
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db/Select/Pdo
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db/Select
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db/Statement/Pdo
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db/Statement
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db/Table/Pdo
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db/Table/Relationships/Pdo
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db/Table/Relationships
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db/Table/Row/Pdo
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db/Table/Row
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db/Table/Rowset/Pdo
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db/Table/Rowset
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db/Table/Select/Pdo
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db/Table/Select
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db/Table/_files/My/ZendDbTable/Row
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db/Table/_files/My/ZendDbTable/Rowset
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db/Table/_files/My/ZendDbTable
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db/Table/_files/My
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db/Table/_files/cachefiles
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db/Table/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db/Table
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db/TestUtil/Pdo
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db/TestUtil
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Db
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Dojo/Form/Decorator
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Dojo/Form/Element/_files/locale
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Dojo/Form/Element/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Dojo/Form/Element
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Dojo/Form
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Dojo/View/Helper
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Dojo/View
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Dojo/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Dojo
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Dom/Query
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Dom/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Dom
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/EventManager/TestAsset
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/EventManager
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Entry
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Pubsubhubbub/Model
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Pubsubhubbub/Subscriber/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Pubsubhubbub/Subscriber
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Pubsubhubbub/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Pubsubhubbub
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/author/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/author
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/baseurl/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/baseurl
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/category/plain/dc10
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/category/plain/dc11
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/category/plain/none
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/category/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/category
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/commentcount/plain/atom10
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/commentcount/plain/none
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/commentcount/plain/thread10
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/commentcount/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/commentcount
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/commentlink/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/commentlink
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/content/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/content
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/datecreated/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/datecreated
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/datemodified/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/datemodified
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/description/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/description
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/enclosure/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/enclosure
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/id/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/id
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/link/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/link
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/links/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/links
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/title/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom/title
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Atom
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/AtomStandaloneEntry/author
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/AtomStandaloneEntry/category
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/AtomStandaloneEntry/commentlink
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/AtomStandaloneEntry/content
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/AtomStandaloneEntry/datecreated
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/AtomStandaloneEntry/datemodified
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/AtomStandaloneEntry/description
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/AtomStandaloneEntry/enclosure
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/AtomStandaloneEntry/id
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/AtomStandaloneEntry/link
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/AtomStandaloneEntry/links
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/AtomStandaloneEntry/title
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/AtomStandaloneEntry
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Common
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/dc10
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/dc11
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain/none
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/author
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/category/plain/atom10
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/category/plain/dc10
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/category/plain/dc11
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/category/plain/none
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/category/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/category
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/atom10
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/none
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/slash10
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain/thread10
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentcount
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/atom10
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/none
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/thread10
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain/wellformedweb
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentfeedlink
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentlink/plain/atom10
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentlink/plain/none
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentlink/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/commentlink
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/content/plain/description
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/content/plain/none
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/content/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/content
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/atom10
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/dc10
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/dc11
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/none
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/dc10
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/dc11
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/none
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/enclosure/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/enclosure
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/dc10
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/dc11
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/none
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain/title
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/id
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/link/plain/none
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/link/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/link
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/links/plain/none
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/links/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/links
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/dc10
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/dc11
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain/none
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/title
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/author/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/author
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/category/plain/dc10
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/category/plain/dc11
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/category/plain/none
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/category/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/category
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/copyright/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/copyright
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/datecreated/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/datecreated
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/datemodified/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/datemodified
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/description/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/description
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/feedlink/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/feedlink
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/generator/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/generator
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/hubs/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/hubs
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/icon/plain/none
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/icon/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/icon
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/id/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/id
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/image/plain/none
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/image/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/image
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/language/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/language
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/link/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/link
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/title/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/title
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/AtomSource/author
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/AtomSource/category
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/AtomSource/copyright
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/AtomSource/datecreated
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/AtomSource/datemodified
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/AtomSource/description
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/AtomSource/feedlink
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/AtomSource/generator
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/AtomSource/hubs
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/AtomSource/id
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/AtomSource/language
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/AtomSource/link
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/AtomSource/title
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/AtomSource
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Common
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/atom10
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/dc10
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/dc11
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain/none
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/author
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/category/plain/atom10
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/category/plain/dc10
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/category/plain/dc11
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/category/plain/none
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/category/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/category
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/dc10
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/dc11
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain/none
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/copyright
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/atom10
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/dc10
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/dc11
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/none
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/dc10
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/dc11
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/none
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/feedlink/plain/none
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/feedlink/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/feedlink
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/generator/plain/none
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/generator/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/generator
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/hubs/plain/atom10
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/hubs/plain/none
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/hubs/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/hubs
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/image/plain/none
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/image/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/image
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/dc10
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/dc11
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/none
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/rdf
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/lastbuilddate/plain/none
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/lastbuilddate/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/lastbuilddate
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/link/plain/none
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/link/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/link
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/atom10
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/dc10
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/dc11
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain/none
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title/plain
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/title
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Integration/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Integration
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/_files/My/Extension/JungleBooks
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/_files/My/Extension
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/_files/My
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/_files/Reader
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Reader
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Writer/Extension/ITunes
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Writer/Extension
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Writer/Renderer/Entry
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Writer/Renderer/Feed
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Writer/Renderer
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/Writer
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Feed
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/File/TestAsset
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/File/Transfer/Adapter/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/File/Transfer/Adapter
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/File/Transfer
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/File/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/File
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Filter/Compress
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Filter/Encrypt
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Filter/File
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Filter/Word
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Filter/_files/TestNamespace
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Filter/_files/_testDir2
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Filter/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Filter
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Form/Decorator
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Form/Element/_files/Captcha
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Form/Element/_files/TransferAdapter
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Form/Element/_files/filter
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Form/Element/_files/validator
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Form/Element/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Form/Element
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Form/_files/config
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Form/_files/decorators
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Form/_files/locale
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Form/_files/views
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Form/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Form
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Gdata/Analytics/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Gdata/Analytics
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Gdata/App/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Gdata/App
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Gdata/Books/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Gdata/Books
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Gdata/Calendar/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Gdata/Calendar
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Gdata/Docs/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Gdata/Docs
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Gdata/Photos/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Gdata/Photos
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Gdata/Spreadsheets/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Gdata/Spreadsheets
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Gdata/TestUtility
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Gdata/YouTube/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Gdata/YouTube
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Gdata/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Gdata
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Http/Client/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Http/Client
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Http/Header
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Http/TestAsset/Device/Browser/Features
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Http/TestAsset/Device/Browser
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Http/TestAsset/Device
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Http/TestAsset
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Http/UserAgent/Features/Adapter
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Http/UserAgent/Features
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Http/UserAgent
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Http/_files/var/cache/mobile
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Http/_files/var/cache
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Http/_files/var
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Http/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Http
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Json/Server/Smd
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Json/Server
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Json/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Json
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Layout/_files/functional-test-app/controllers
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Layout/_files/functional-test-app/layouts
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Layout/_files/functional-test-app/views/scripts/zend-layout-functional-test-error
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Layout/_files/functional-test-app/views/scripts/zend-layout-functional-test-test
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Layout/_files/functional-test-app/views/scripts
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Layout/_files/functional-test-app/views
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Layout/_files/functional-test-app
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Layout/_files/layouts/test
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Layout/_files/layouts
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Layout/_files/layouts-basepath/helpers
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Layout/_files/layouts-basepath/scripts
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Layout/_files/layouts-basepath
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Layout/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Layout
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Ldap/Dn
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Ldap/Ldif
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Ldap/Node
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Ldap/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Ldap
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Loader/Autoloader/_files/forms
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Loader/Autoloader/_files/models
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Loader/Autoloader/_files/services
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Loader/Autoloader/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Loader/Autoloader
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Loader/TestAsset/Name_Space/Namespaced
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Loader/TestAsset/Name_Space
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Loader/TestAsset/TestPlugins
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Loader/TestAsset/TestPrefix
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Loader/TestAsset/UnusualPrefix
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Loader/TestAsset
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Loader/_files/ZendLoaderAutoloader
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Loader/_files/ZfTest
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Loader/_files/Zfns/Foo
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Loader/_files/Zfns
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Loader/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Loader
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Locale
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Log/Filter
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Log/Formatter
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Log/Writer/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Log/Writer
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Log/_files/Zfns
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Log/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Log
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Mail/_files/test.maildir
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Mail/_files/test.mbox/subfolder
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Mail/_files/test.mbox
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Mail/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Mail
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Markup/Test/Parser
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Markup/Test/Renderer/Html
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Markup/Test/Renderer
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Markup/Test
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Markup
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Measure/Cooking
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Measure/Flow
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Measure/Viscosity
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Measure
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Memory
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Mime
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Mobile/Push/Message/Mpns
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Mobile/Push/Message
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Mobile/Push/Response
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Mobile/Push
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Mobile
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Navigation/Page
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Navigation/_files/My
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Navigation/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Navigation
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Oauth/Oauth/Http
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Oauth/Oauth/Signature
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Oauth/Oauth/Token
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Oauth/Oauth
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Oauth
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/OpenId/Consumer/Storage
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/OpenId/Consumer
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/OpenId/Extension
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/OpenId/Provider/Storage
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/OpenId/Provider/User
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/OpenId/Provider
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/OpenId
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Paginator/Adapter/DbSelect
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Paginator/Adapter/DbTableSelect
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Paginator/Adapter
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Paginator/ScrollingStyle
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Paginator/_files/scripts
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Paginator/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Paginator
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Pdf/Element/Object
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Pdf/Element/String
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Pdf/Element
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Pdf/Filter
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Pdf/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Pdf/_fonts
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Pdf
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/ProgressBar/Adapter
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/ProgressBar
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Queue/Adapter
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Queue/Custom
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Queue/Message
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Queue/Stomp
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Queue
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Reflection/Docblock/Tag
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Reflection/Docblock
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Reflection/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Reflection
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Rest/responses
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Rest
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Search/Lucene/Index/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Search/Lucene/Index/_source/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Search/Lucene/Index/_source
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Search/Lucene/Index
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Search/Lucene/Storage/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Search/Lucene/Storage
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Search/Lucene/_index23Sample/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Search/Lucene/_index23Sample
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Search/Lucene/_indexSample/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Search/Lucene/_indexSample/_nonCompoundIndexFiles
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Search/Lucene/_indexSample
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Search/Lucene/_indexSource/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Search/Lucene/_indexSource
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Search/Lucene/_openXmlDocuments
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Search/Lucene
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Search
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Serializer/Adapter
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Serializer/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Serializer
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Server/Method
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Server/Reflection
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Server
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Authentication/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Authentication
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Ec2
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/Amazon/S3/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/Amazon/S3
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/Amazon/SimpleDb
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Sqs
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/Amazon/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/Amazon
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/Audioscrobbler/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/Audioscrobbler
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/Delicious
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/DeveloperGarden
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/Ebay/Finding/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/Ebay/Finding
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/Ebay/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/Ebay
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/Flickr/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/Flickr
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/LiveDocx/MailMerge
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/LiveDocx
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/Rackspace/Files/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/Rackspace/Files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/Rackspace/Servers/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/Rackspace/Servers
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/Rackspace/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/Rackspace
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/ReCaptcha
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/ShortUrl
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/SlideShare/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/SlideShare
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/SqlAzure/Management/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/SqlAzure/Management
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/SqlAzure
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/StrikeIron
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/Technorati
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/Twitter/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/Twitter
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/WindowsAzure/Credentials
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/WindowsAzure/Diagnostics
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/WindowsAzure/Management/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/WindowsAzure/Management
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/WindowsAzure/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/WindowsAzure
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service/Yahoo
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Service
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Session/SaveHandler
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Session/Validator
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Session
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Soap/AutoDiscover
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Soap/TestAsset
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Soap/Wsdl
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Soap/_files/fulltests
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Soap/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Soap/schemas
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Soap
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Stdlib/TestAsset/SignalHandlers
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Stdlib/TestAsset
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Stdlib
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Tag/Cloud/Decorator
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Tag/Cloud/_classes
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Tag/Cloud
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Tag
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Constraint
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/DataSet
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/Integration/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/Integration
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/Metadata
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/Operation/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db/Operation
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/Db
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/_files/application/controllers
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/_files/application/plugins
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/_files/application/views/scripts/error
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/_files/application/views/scripts/zend-test-php-unit-foo
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/_files/application/views/scripts
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/_files/application/views
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/_files/application
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Test/PHPUnit
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Test
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Text/Figlet
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Text
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Action/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Action
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Client/Console
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Client
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Loader
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Manifest/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Manifest
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Metadata
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Provider/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Tool/Framework/Provider
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Tool/Framework/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Tool/Framework
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Tool/Project/Context
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Tool/Project/Provider
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Tool/Project/_files/project1
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Tool/Project/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Tool/Project
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Tool
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testarray/de_AT/LC_TEST
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testarray/de_AT
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testarray/en_GB/LC_OTHER
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testarray/en_GB
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testarray/ja
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testarray
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testcsv/de_AT/LC_TEST
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testcsv/de_AT
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testcsv/en_GB/LC_OTHER
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testcsv/en_GB
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testcsv
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testini/de_AT/LC_TEST
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testini/de_AT
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testini/en_GB/LC_OTHER
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testini/en_GB
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testini
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testmo/de_AT/LC_TEST
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testmo/de_AT
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testmo/en_GB/LC_OTHER
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testmo/en_GB
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testmo
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testtbx/de_AT/LC_TEST
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testtbx/de_AT
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testtbx/en_GB/LC_OTHER
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testtbx/en_GB
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testtbx
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testtmx/de_AT/LC_TEST
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testtmx/de_AT
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testtmx/en_GB/LC_OTHER
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testtmx/en_GB
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testtmx
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testts/de_AT/LC_TEST
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testts/de_AT
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testts/en_GB/LC_OTHER
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testts/en_GB
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testts
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testxliff/de_AT/LC_TEST
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testxliff/de_AT
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testxliff/en_GB/LC_OTHER
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testxliff/en_GB
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testxliff
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testxmltm/de_AT/LC_TEST
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testxmltm/de_AT
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testxmltm/en_GB/LC_OTHER
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testxmltm/en_GB
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files/testxmltm
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate/Adapter
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Translate
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Uri/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Uri
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Validate/Db/_files/Db
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Validate/Db/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Validate/Db
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Validate/File/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Validate/File
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Validate/Sitemap
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Validate/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Validate
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/bc
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/menu
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected/sitemap
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/expected
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/helpers
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/mvc/views
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files/mvc
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View/Helper/Navigation
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View/Helper/Placeholder
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/default/controllers
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/default/views/scripts/action-bar
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/default/views/scripts/action-foo
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/default/views/scripts
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/default/views
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/default
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/foo/controllers
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/foo/views/scripts/baz
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/foo/views/scripts/foo
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/foo/views/scripts
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/foo/views
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/foo
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/scripts
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View/Helper/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View/Helper
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View/_stubs/FilterDir1
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View/_stubs/HelperDir1
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View/_stubs/HelperDir2
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View/_stubs/scripts
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View/_stubs
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View/_templates
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/View
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Wildfire/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Wildfire
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/Xml
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/XmlRpc/Request
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/XmlRpc/Server
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/XmlRpc/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/XmlRpc
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/_files/_testDir1/Class1
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/_files/_testDir1
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/_files/_testDir2
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend/_files
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/Zend
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/resources/languages
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests/resources
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/tests
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%
-@owner
-@group
