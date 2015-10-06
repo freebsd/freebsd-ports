@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opendnssec
-PORTVERSION=	1.4.7
+PORTVERSION=	1.4.8.2
 CATEGORIES=	dns
 MASTER_SITES=	http://dist.opendnssec.org/source/
 
@@ -49,7 +49,8 @@ SQLITE_USE=	yes
 CONFIGURE_ARGS+=	--with-database-backend=mysql
 USE_MYSQL=	compat
 SCRIPTDATA=	migrate_adapters_1.mysql migrate_keyshare_mysql.pl \
-		migrate_zone_delete.mysql migrate_id_mysql.pl migrate_to_ng_mysql.pl
+		migrate_zone_delete.mysql migrate_id_mysql.pl \
+		migrate_to_ng_mysql.pl migrate_1_4_8.mysql
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
@@ -57,13 +58,16 @@ CONFIGURE_ARGS+=	--with-sqlite3=${LOCALBASE}
 CONFIGURE_ARGS+=	--with-database-backend=sqlite3
 BUILD_DEPENDS+=	sqlite3>=3.3.9:${PORTSDIR}/databases/sqlite3
 SCRIPTDATA=	database_create.sqlite3 migrate_keyshare_sqlite3.pl \
-		migrate_adapters_1.sqlite3 migrate_to_ng_sqlite.pl
+		migrate_adapters_1.sqlite3 migrate_to_ng_sqlite.pl \
+		migrate_1_4_8.sqlite3
 .endif
 
 .if ${PORT_OPTIONS:MSOFTHSM}
 CONFIGURE_ARGS+=	--with-pkcs11-softhsm=${LOCALBASE}/lib/softhsm/libsofthsm.so
 RUN_DEPENDS+=	softhsm>=1.2.0:${PORTSDIR}/security/softhsm
 .endif
+
+SCRIPTDATA+=	convert_database.pl
 
 PKGMESSAGE=	${WRKSRC}/MIGRATION
 
