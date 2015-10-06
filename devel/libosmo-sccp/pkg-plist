@@ -2,10 +2,12 @@ include/osmocom/sccp/sccp_types.h
 include/osmocom/sccp/sccp.h
 include/osmocom/mtp/mtp_level3.h
 include/osmocom/mtp/mtp_pcap.h
-include/osmocom/m2ua/m2ua_types.h
-include/osmocom/m2ua/m2ua_msg.h
+include/osmocom/sigtran/m2ua_types.h
+include/osmocom/sigtran/m3ua_types.h
+include/osmocom/sigtran/xua_msg.h
+include/osmocom/sigtran/xua_types.h
+lib/libxua.a
 lib/libsccp.a
 lib/libmtp.a
-lib/libm2ua.a
 libdata/pkgconfig/libosmo-sccp.pc
 libdata/pkgconfig/libosmo-mtp.pc
