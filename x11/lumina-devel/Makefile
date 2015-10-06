@@ -4,6 +4,7 @@
 PORTNAME=	lumina
 PORTVERSION=	20151005
 CATEGORIES=	x11
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	Lumina Desktop Environment
@@ -18,6 +19,8 @@ RUN_DEPENDS=	xorg>=0:${PORTSDIR}/x11/xorg \
 		xscreensaver-demo:${PORTSDIR}/x11/xscreensaver \
 		xbrightness:${PORTSDIR}/x11/xbrightness \
 		numlockx:${PORTSDIR}/x11/numlockx
+
+CONFLICTS=	lumina-0*
 
 OPTIONS_DEFINE=	MULTIMEDIA
 OPTIONS_DEFAULT=	MULTIMEDIA

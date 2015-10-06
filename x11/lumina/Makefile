@@ -22,6 +22,8 @@ RUN_DEPENDS=	xorg>=0:${PORTSDIR}/x11/xorg \
 		xbrightness:${PORTSDIR}/x11/xbrightness \
 		numlockx:${PORTSDIR}/x11/numlockx
 
+CONFLICTS=      lumina-devel-0*
+
 OPTIONS_DEFINE=	MULTIMEDIA
 OPTIONS_DEFAULT=	MULTIMEDIA
 MULTIMEDIA_DESC=	Install multimedia support backend (gstreamer)
