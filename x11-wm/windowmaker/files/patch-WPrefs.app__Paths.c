@@ -1,6 +1,6 @@
---- WPrefs.app/Paths.c.orig	2013-05-03 02:52:46.000000000 +0900
-+++ WPrefs.app/Paths.c	2013-05-03 02:59:08.000000000 +0900
-@@ -78,9 +78,9 @@
+--- WPrefs.app/Paths.c.orig	2015-08-11 18:41:14 UTC
++++ WPrefs.app/Paths.c
+@@ -78,9 +78,9 @@ static void showData(_Panel * panel)
  			wwarning(_("bad value in option IconPath. Using default path list"));
  		addPathToList(panel->icoL, -1, "~/pixmaps");
  		addPathToList(panel->icoL, -1, "~/GNUstep/Library/Icons");
@@ -13,7 +13,7 @@
  		addPathToList(panel->icoL, -1, "/usr/share/WindowMaker/Icons");
  	} else {
  		for (i = 0; i < WMGetPropListItemCount(array); i++) {
-@@ -95,7 +95,7 @@
+@@ -95,7 +95,7 @@ static void showData(_Panel * panel)
  			wwarning(_("bad value in option PixmapPath. Using default path list"));
  		addPathToList(panel->pixL, -1, "~/pixmaps");
  		addPathToList(panel->pixL, -1, "~/GNUstep/Library/WindowMaker/Pixmaps");

@@ -1,6 +1,6 @@
---- WINGs/Extras/Makefile.in.orig
+--- WINGs/Extras/Makefile.in.orig	2015-10-06 04:12:10 UTC
 +++ WINGs/Extras/Makefile.in
-@@ -86,7 +86,6 @@
+@@ -145,7 +145,6 @@ PROGRAMS = $(noinst_PROGRAMS)
  test_SOURCES = test.c
  test_OBJECTS = test.$(OBJEXT)
  am__DEPENDENCIES_1 = $(top_builddir)/WINGs/libWINGs.la \
@@ -8,7 +8,7 @@
  	$(top_builddir)/WINGs/libWUtil.la
  test_DEPENDENCIES = wtableview.o wtabledelegates.o \
  	$(am__DEPENDENCIES_1)
-@@ -288,10 +287,10 @@
+@@ -386,10 +385,10 @@ libExtraWINGs_la_SOURCES = \
  	wtableview.h \
  	wtabledelegates.h 
  
