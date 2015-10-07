@@ -24,6 +24,7 @@ CONFIGURE_ARGS=	--disable-csharp --disable-java --disable-openmp \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 USES=		charsetfix cpe gettext-runtime iconv libtool tar:xz
 USE_LDCONFIG=	yes
 WRKSRC_SUBDIR=	gettext-tools
@@ -64,8 +65,5 @@ post-patch:
 # Use libasprintf installed by gettext-runtime.
 	@${REINPLACE_CMD} 's,[^ ]*libasprintf.la,-lasprintf,' \
 		${WRKSRC}/tests/lang-c++
-
-regression-test: build
-	@(cd ${WRKSRC} && ${MAKE_CMD} check)
 
 .include <bsd.port.mk>
