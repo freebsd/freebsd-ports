@@ -13,6 +13,9 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Text progress bar library for Ruby
 
+DEPRECATED=	Abandoned upstream, superseded by devel/rubygem-ruby-progressbar
+EXPIRATION_DATE=	2015-10-22
+
 CONFLICTS_INSTALL=	rubygem-ruby-progressbar-*
 USE_RUBY=	yes
 NO_BUILD=	yes
