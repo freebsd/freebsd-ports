@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	numpy
-PORTVERSION=	1.9.2
+PORTVERSION=	1.10.0
 PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://docs.scipy.org/doc/${PORTNAME}/:doc \
-		SF/${PORTNAME}/NumPy/${PORTVERSION}:source
+		CHEESESHOP:source
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	numpy-${PORTVERSION:S/r/rc/}${EXTRACT_SUFX}:source \
 		numpy-ref-${DOCVERSION}.pdf:doc \
@@ -90,6 +90,7 @@ post-install:
 .if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
 	${LN} -sf ${MANPREFIX}/man/man1/f2py-${PYTHON_VER}.1 ${STAGEDIR}${MANPREFIX}/man/man1/f2py.1
 .endif
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' | ${XARGS} ${STRIP_CMD}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
