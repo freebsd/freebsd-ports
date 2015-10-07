@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tnftp
-PORTVERSION=	20141104
-PORTREVISION=	1
+PORTVERSION=	20151004
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/tnftp/
 
