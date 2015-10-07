@@ -24,4 +24,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-vala
 INSTALL_TARGET=	install-strip
 
+DOCSDIR=	${PREFIX}/share/doc/gnome-keyring
+
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>
