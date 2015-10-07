@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tar
-PORTVERSION=	0.4.0.1
-PORTREVISION=	8
+PORTVERSION=	0.4.2.1
 CATEGORIES=	archivers haskell
 
 MAINTAINER=	haskell@FreeBSD.org

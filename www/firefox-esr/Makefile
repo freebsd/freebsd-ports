@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	38.1.0
+DISTVERSION=	38.3.0
 DISTVERSIONSUFFIX=esr.source
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}esr/source \
-		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}esr-candidates/build1/source
+		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}esr-candidates/build2/source
 PKGNAMESUFFIX=	-esr
 
 MAINTAINER=	gecko@FreeBSD.org
@@ -16,11 +16,10 @@ COMMENT=	Web browser based on the browser portion of Mozilla
 BUILD_DEPENDS=	nspr>=4.10.8:${PORTSDIR}/devel/nspr \
 		nss>=3.19.2:${PORTSDIR}/security/nss \
 		libevent2>=2.0.21_2:${PORTSDIR}/devel/libevent2 \
-		cairo>=1.12.16_1,2:${PORTSDIR}/graphics/cairo \
 		soundtouch>=1.8.0:${PORTSDIR}/audio/soundtouch \
-		harfbuzz>=0.9.25:${PORTSDIR}/print/harfbuzz \
+		harfbuzz>=0.9.34:${PORTSDIR}/print/harfbuzz \
 		graphite2>=1.2.4:${PORTSDIR}/graphics/graphite2 \
-		libvorbis>=1.3.4:${PORTSDIR}/audio/libvorbis \
+		libvorbis>=1.3.5:${PORTSDIR}/audio/libvorbis \
 		libvpx>=1.3.0:${PORTSDIR}/multimedia/libvpx \
 		sqlite3>=3.8.9:${PORTSDIR}/databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
@@ -63,6 +62,10 @@ WRKSRC:=	${WRKDIR}/mozilla-esr38
 
 .if ${PORT_OPTIONS:MALSA}
 RUN_DEPENDS+=	alsa-lib>=1.0.27.2_1:${PORTSDIR}/audio/alsa-lib
+.endif
+
+.if ! ${PORT_OPTIONS:MBUNDLED_CAIRO}
+BUILD_DEPENDS+=	cairo>=1.12.16_1,2:${PORTSDIR}/graphics/cairo
 .endif
 
 .if ${PORT_OPTIONS:MGSTREAMER}

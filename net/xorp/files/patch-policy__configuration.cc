@@ -1,6 +1,6 @@
---- ./policy/configuration.cc.orig	2011-03-16 21:27:54.000000000 +0000
-+++ ./policy/configuration.cc	2014-02-26 21:17:13.000000000 +0000
-@@ -766,7 +766,9 @@
+--- policy/configuration.cc.orig	2012-01-11 17:56:10 UTC
++++ policy/configuration.cc
+@@ -766,7 +766,9 @@ IEMap::link_code(const string& proto, Co
      POLICY* p = find_policy(proto);
      XLOG_ASSERT(p);
  

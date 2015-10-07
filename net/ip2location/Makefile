@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ip2location
-PORTVERSION=	7.0.1
+PORTVERSION=	7.0.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.ip2location.com/downloads/
 DISTNAME=	${PORTNAME}-c-${PORTVERSION}

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nyancat
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 PORTEPOCH=	1
 CATEGORIES=	net games
 

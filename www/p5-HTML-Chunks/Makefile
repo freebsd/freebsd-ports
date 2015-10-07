@@ -8,14 +8,18 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	fbsd@meersau.de
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple nested template engine for HTML, XML and XHTML
 
-RUN_DEPENDS=	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
-USES=		perl5
+BUILD_DEPENDS=	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+NO_ARCH=	yes
 USE_PERL5=	configure
-
+USES=		perl5
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.mk>

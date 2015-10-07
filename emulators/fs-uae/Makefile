@@ -11,6 +11,7 @@ MAINTAINER=	tomse@oagd.net
 COMMENT=	Amiga emulator
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libopenal.so:${PORTSDIR}/audio/openal-soft
@@ -24,10 +25,4 @@ MAKE_ARGS+=	prefix=${PREFIX}
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 900000
-CFLAGS+=	-DFreeBSD8
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

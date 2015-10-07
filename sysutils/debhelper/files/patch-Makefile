@@ -1,6 +1,13 @@
---- Makefile.orig	2013-11-11 03:11:15.000000000 +0800
-+++ Makefile	2014-07-01 01:06:16.800481843 +0800
-@@ -88,17 +88,16 @@
+--- Makefile.orig	2014-11-16 15:43:09 UTC
++++ Makefile
+@@ -1,5 +1,5 @@
+ # List of files of dh_* commands. Sorted for debhelper man page.
+-COMMANDS=$(shell find . -maxdepth 1 -type f -perm /100 -name "dh_*" -printf "%f\n" | sort)
++COMMANDS=$(shell find . -maxdepth 1 -type f -perm +a+x -name "dh_*" -print | cut -c3- | sort)
+ 
+ # Find deprecated commands by looking at their synopsis.
+ DEPRECATED=$(shell egrep -l '^dh_.* - .*deprecated' $(COMMANDS))
+@@ -88,17 +88,16 @@ endif
  	done;
  
  install:

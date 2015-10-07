@@ -8,5 +8,5 @@ bin/mpd-rate
 %%PERL5_MAN3%%/Audio::MPD::Collection.3.gz
 %%PERL5_MAN3%%/Audio::MPD::Playlist.3.gz
 %%PERL5_MAN3%%/Audio::MPD::Types.3.gz
-man/man1/mpd-dynamic.1.gz
-man/man1/mpd-rate.1.gz
+%%PERL5_MAN1%%/mpd-dynamic.1.gz
+%%PERL5_MAN1%%/mpd-rate.1.gz

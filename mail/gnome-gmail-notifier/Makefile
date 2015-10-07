@@ -15,7 +15,7 @@ LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake pkgconfig tar:bzip2
-USE_GNOME=	glib20 gtk20 gconf2 libxml2 librsvg2
+USE_GNOME=	glib20 gtk20 gconf2 intltool libxml2 librsvg2
 USE_GSTREAMER=	good
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 

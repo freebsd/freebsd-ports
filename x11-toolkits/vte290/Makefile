@@ -27,7 +27,7 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/gnome-pty-helper:${PORTSDIR}/x11-toolkits/gno
 USES+=		bison gettext gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME?=	gnomeprefix gtk30 referencehack introspection:build
+USE_GNOME?=	gnomeprefix gtk30 referencehack intltool introspection:build
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS?=--disable-python \
@@ -42,20 +42,12 @@ INSTALL_TARGET=	install-strip
 .if !defined(MASTERDIR)
 OPTIONS_DEFINE=	GLX
 GLX_DESC=	Support for DRI/GLX rendering
+
+GLX_CONFIGURE_ON=	--with-glX
+GLX_USE=		GL=yes
 .endif
 
 PLIST_SUB=	VERSION=2.90
-
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 900007
-EXTRA_PATCHES+=		${FILESDIR}/extra-patch-gnome-pty-helper_gnome-utmp.c
-.endif
-
-.if ${PORT_OPTIONS:MGLX} && !defined(MASTERDIR)
-CONFIGURE_ARGS+=	--with-glX
-USE_GL=			yes
-.endif
 
 post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/etc/profile.d/vte.sh \

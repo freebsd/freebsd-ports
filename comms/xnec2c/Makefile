@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xnec2c
-PORTVERSION=	3.3
-PORTEVISION=	1
+PORTVERSION=	3.4
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.qsl.net/5b4az/pkg/nec2/xnec2c/ \
 		LOCAL/shurd
@@ -17,23 +16,17 @@ LIB_DEPENDS=	libccm.so:${PORTSDIR}/math/ccmath
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake pkgconfig tar:bzip2
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 intltool
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
 
-.include <bsd.port.pre.mk>
-
 post-extract:
 	${CP} ${PATCHDIR}/clog.c ${WRKSRC}/src
-.if	${OSVERSION} < 900000
-	${CP} ${PATCHDIR}/cexp.[ch] ${WRKSRC}/src
-.else
 	${TOUCH} ${WRKSRC}/src/cexp.c
 	${TOUCH} ${WRKSRC}/src/cexp.h
-.endif
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/xnec2c.html ${STAGEDIR}${DOCSDIR}/xnec2c.html
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/images
@@ -45,4 +38,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/images/radiation.png ${STAGEDIR}${DOCSDIR}/images/radiation.png
 	${INSTALL_DATA} ${WRKSRC}/doc/images/wire.png ${STAGEDIR}${DOCSDIR}/images/wire.png
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

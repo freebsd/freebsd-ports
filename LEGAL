@@ -48,11 +48,9 @@ bicom*			archivers/bicom		Contact author personally regarding commercial use
 boodler-*		audio/boodler		Not for commercial use
 Browser*.tar.gz		net/ldapbrowser		No reply from author regarding redistribution licensing
 bzip-*			archivers/bzip		Some algorithms used may infringe certain US patents.  Opinions differ.  Commercial use could render you liable to unfriendly legal action
-candycruncher_demo*	games/linux-candycruncher-demo	Redistribution is limited, see license
 citrix_ica-*		net/citrix_ica		License prohibits redistribution
 arcconf-v*		sysutils/arcconf	May not be redistributed in binary form
 clustalw-*		biology/clustalw	No commercial use
-coldwar_demo*		games/linux-coldwar-demo	Redistribution is limited, see license
 cos-*			java/cos		Special conditions apply for commercial use
 cosmo/*			games/cosmo		Possible copyright infringement
 CrystalSVGforGnomeIcons* x11-themes/gnome-icons-crystal Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
@@ -107,10 +105,8 @@ giftool*		graphics/giftool	Do not redistribute for profit
 gishdemo-*		games/gish-demo		(c) Copyright 2004 Chronic Logic All rights reserved
 gnome2/mcitymicrogui-default* x11-themes/metacity-theme-microgui Themes may contain artwork not done by the author.  Keep FreeBSD safe if the theme author violated copyrights
 GoogleEarthLinux-*	astro/google-earth	Not really sure about the redistribution terms
-gorky17_demo*		games/linux-gorky17-demo	Redistribution is limited, see license
 groupoffice-com-*	www/groupoffice		Free for personal use only
 gsview*			print/gsview		Can only be distributed for free
-hdb_demo*		games/linux-hdb-demo	Redistribution is limited, see license
 HeroesOfMightAndMagic-*	games/HeroesOfMightAndMagic	Software is commercial
 homard-*		french/homard		The free downloading of HOMARD software is only allowed for coupling with Code_Aster. For any other use, a license agreement is requested. Please contact HOMARD project: <homard@edf.fr>.
 hplip-*-plugin.run	print/hplip-plugin	License agreement is required
@@ -164,7 +160,6 @@ l_cc_p*_*.*.*.tar.gz	lang/icc		No redistribution allowed
 l_fc_p*_*.*.*.tar.gz	lang/ifc		Intel forbids any redistribution
 macopix-*.tar.gz	games/macopix		Contains commercial character data
 madfufw-*		audio/madfufw		No redistribution of firmware files
-majesty_demo*		games/linux-majesty-demo	Redistribution is limited, see license
 malo-fw-*.tar.gz	net/malo-firmware-kmod	Marvell refuses to grant distribution rights
 mb339pan_*		games/flightgear-mb339-pan Redistribution prohibited
 mikachan-ttfonts/ver*.*	japanese/mikachan-ttfonts Do not sell distfile
@@ -216,6 +211,7 @@ serious.sam*		games/linux-ssamtfe	Redistribution limited
 serious.sam*		games/linux-ssamtse	Redistribution limited
 sharefonts-*		x11-fonts/sharefonts	Shareware: cannot be distributed without prior authorization
 shorten-*		audio/shorten		May not be sold.  May not be distributed if modified
+shoutcast		audio/shoutcast		Personal use only.  See tos.txt in this port for full details
 sid-milter-*		mail/sid-milter		May incorporate intellectual property, possible patent issues
 simian-*		devel/simian		Have to agree to license before download
 skype*			net-im/skype		Redistribution prohibited
@@ -278,3 +274,4 @@ gmsh-occ-*		cad/gmsh-occ		Contact appropriate authors for commercial purposes if
 btsync_*		net-p2p/btsync		Redistribution forbidden by license
 sas2ircu-*		sysutils/sas2ircu	May not be redistributed. Must accept license to download.
 snes9x-*		emulators/snes9x-gtk	Commercial users must seek permission from copyright holders.
+rainloop-1.*.zip	mail/rainloop		Redistribution in any form is prohibited

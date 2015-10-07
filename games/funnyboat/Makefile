@@ -11,12 +11,18 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Side scrolling shooter game starring a steamboat on the sea
 
+LICENSE=	GPLv2 MIT
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE-CODE.txt
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MEDIA.txt
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		python:run zip
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 SUB_FILES=	funnyboat_
 SUB_LIST=	PROGRAM_DIR="${PREFIX}/lib/${PORTNAME}"

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	inn
-PORTVERSION=	2.5.5
+PORTVERSION=	2.6.0
 CATEGORIES=	news ipv6
 MASTER_SITES=	ISC/${PORTNAME}
 
@@ -17,9 +17,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_RC_SUBR=	innd
 SUB_FILES=	pkg-install
 
-LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
-
-USES=		cpe gmake perl5 uidfix
+USES=		cpe gmake libtool perl5 uidfix
 CPE_VENDOR=	isc
 
 CONFLICTS?=	inn-stable-[0-9]* inn-current-[0-9]*
@@ -54,28 +52,31 @@ CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man		\
 			--with-run-dir=${INN_RUNDIR}		\
 			--with-db-dir=${INN_DBDIR}		\
 			--datarootdir=${INN_SHAREDIR}		\
-			--enable-ipv6 --with-perl
+			--with-perl
+
+LIBVER_LONG=		3.0.0
+PLIST_SUB+=		LIBVER=${LIBVER_LONG:R:R} LIBVER_LONG=${LIBVER_LONG}
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBERKELEYDB}
 USE_BDB=		44+
-CONFIGURE_ENV+=		DB_VER=db${BDB_VER}
-CONFIGURE_ENV+=		DB_LIB=${BDB_LIB_NAME}
-CONFIGURE_ARGS+=	--with-berkeleydb=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-bdb=${LOCALBASE} \
+			--with-bdb-lib=${LOCALBASE}/lib \
+			--with-bdb-include=${BDB_INCLUDE_DIR}
 .endif
 
 .if ${PORT_OPTIONS:MKERBEROS}
 .    if exists(${LOCALBASE}/bin/krb5-config)
 LIB_DEPENDS+=		libgssapi_krb5.so:${PORTSDIR}/security/krb5
-CONFIGURE_ARGS+=	--with-kerberos=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-krb5=${LOCALBASE}
 .    else
-CONFIGURE_ARGS+=	--with-kerberos=/usr
+CONFIGURE_ARGS+=	--with-krb5=/usr
 .    endif
 CONFIGURE_ENV+=		ac_cv_search_krb5_parse_name="-lcrypt -lcrypto -lkrb5 -lasn1 -lroken -lhx509"
 CONFIGURE_ENV+=		ac_cv_func_krb5_init_ets=yes
 .else
-CONFIGURE_ARGS+=	--without-kerberos
+CONFIGURE_ARGS+=	--without-krb5
 .endif
 
 .if ${PORT_OPTIONS:MLARGE_FILES}
@@ -120,28 +121,27 @@ RUN_DEPENDS+=		gpg:${PORTSDIR}/security/gnupg
 
 PORTDOCS=	CONTRIBUTORS HACKING INSTALL LICENSE MANIFEST NEWS README TODO
 
-TO_BE_STRIPPED=	bin/auth/resolv/domain bin/actsync bin/archive \
-	bin/auth/passwd/ckpasswd bin/auth/passwd/radius bin/auth/resolv/ident \
-	bin/batcher bin/buffchan bin/buffindexed_d bin/convdate bin/ctlinnd \
-	bin/cvtbatch bin/expire bin/expireover bin/fastrm bin/filechan \
-	bin/getlist bin/grephistory bin/imapfeed bin/inews bin/innbind \
-	bin/innconfval bin/innd bin/inndf bin/innfeed bin/innxbatch \
-	bin/innxmit bin/makedbz bin/makehistory bin/ninpaths bin/nnrpd \
-	bin/nntpget bin/ovdb_init bin/ovdb_monitor bin/ovdb_server \
+TO_BE_STRIPPED=	bin/actsync bin/archive bin/auth/passwd/auth_krb5 \
+	bin/auth/passwd/ckpasswd bin/auth/passwd/radius bin/auth/resolv/domain \
+	bin/auth/resolv/ident bin/batcher bin/buffchan bin/buffindexed_d \
+	bin/convdate bin/ctlinnd bin/cvtbatch bin/expire bin/expireover \
+	bin/fastrm bin/filechan bin/getlist bin/grephistory bin/imapfeed \
+	bin/inews bin/innbind bin/innconfval bin/innd bin/inndf bin/innfeed \
+	bin/innxbatch bin/innxmit bin/makedbz bin/makehistory bin/ninpaths \
+	bin/nnrpd bin/nntpget bin/ovdb_init bin/ovdb_monitor bin/ovdb_server \
 	bin/ovdb_stat bin/overchan bin/prunehistory bin/rnews \
 	bin/rnews.libexec/decode bin/rnews.libexec/encode bin/shlock \
-	bin/shrinkfile bin/sm bin/tdx-util bin/tinyleaf
+	bin/shrinkfile bin/sm bin/tdx-util bin/tinyleaf \
+	lib/libinn.so.${LIBVER_LONG} lib/libinnhist.so.${LIBVER_LONG} \
+	lib/libstorage.so.${LIBVER_LONG}
 
 CONFIG_FILES=	actsync.cfg actsync.ign buffindexed.conf control.ctl \
-		control.ctl.local cycbuff.conf \
-		distrib.pats distributions \
-		expire.ctl localgroups incoming.conf inn.conf innfeed.conf \
-		innreport.conf innshellvars.local innshellvars.pl.local \
-		innshellvars.tcl.local innwatch.ctl moderators news2mail.cf \
-		newsfeeds nocem.ctl \
-		nnrpd.track nntpsend.ctl ovdb.conf \
-		passwd.nntp readers.conf send-uucp.cf \
-		storage.conf subscriptions
+	control.ctl.local cycbuff.conf distrib.pats distributions expire.ctl \
+	localgroups incoming.conf inn.conf innfeed.conf innreport.conf \
+	innshellvars.local innshellvars.pl.local innshellvars.tcl.local \
+	innwatch.ctl moderators news2mail.cf newsfeeds nocem.ctl nnrpd.track \
+	nntpsend.ctl ovdb.conf passwd.nntp readers.conf send-uucp.cf \
+	storage.conf subscriptions
 
 SUB_LIST+=	EGDIR="${EXAMPLESDIR:C,^${PREFIX},\\$\\${PREFIX},}"
 PLIST_SUB+=	ETCFILES="${CONFIG_FILES}"
@@ -157,7 +157,10 @@ post-patch:
 	                  ${WRKSRC}/site/Makefile
 	@${REINPLACE_CMD} -e 's!et/com_err\.h!com_err.h!g'	\
 	                  -e 's!-lk5crypto!!g'			\
-	                  ${WRKSRC}/configure
+	                  ${WRKSRC}/configure ${WRKSRC}/authprogs/auth_krb5.c
+.if ${PORT_OPTIONS:MBERKELEYDB}
+	@${REINPLACE_CMD} -e 's!-ldb!-ldb-${BDB_VER}!' ${WRKSRC}/configure
+.endif
 	@${ECHO_CMD} '/^$$D$$(PATH_HISTORY)' >  ${WRKDIR}/ex.script
 	@${ECHO_CMD} '+'                     >> ${WRKDIR}/ex.script
 	@${ECHO_CMD} 'mark t'                >> ${WRKDIR}/ex.script
@@ -182,7 +185,8 @@ post-build:
 
 post-install:
 .for FILE in ${TO_BE_STRIPPED}
-	${STRIP_CMD} ${STAGEDIR}${INN_NEWSBASE}/${FILE}
+	-${TEST} -f ${STAGEDIR}${INN_NEWSBASE}/${FILE} && \
+		${STRIP_CMD} ${STAGEDIR}${INN_NEWSBASE}/${FILE}
 .endfor
 	${MKDIR} ${STAGEDIR}${INN_NEWSSPOOL}
 	${MKDIR} ${STAGEDIR}${INN_CONFDIR}

@@ -19,15 +19,16 @@ libdata/pkgconfig/libdevhelp-3.0.pc
 share/GConf/gsettings/devhelp.convert
 share/appdata/devhelp.appdata.xml
 share/applications/devhelp.desktop
-share/devhelp/assistant/assistant.css
-share/devhelp/assistant/assistant.js
-share/devhelp/dtd/devhelp-1.dtd
+%%DATADIR%%/assistant/assistant.css
+%%DATADIR%%/assistant/assistant.js
+%%DATADIR%%/dtd/devhelp-1.dtd
 share/icons/hicolor/16x16/apps/devhelp.png
 share/icons/hicolor/22x22/apps/devhelp.png
 share/icons/hicolor/24x24/apps/devhelp.png
 share/icons/hicolor/256x256/apps/devhelp.png
 share/icons/hicolor/32x32/apps/devhelp.png
 share/icons/hicolor/48x48/apps/devhelp.png
+share/icons/hicolor/symbolic/apps/devhelp-symbolic.svg
 share/locale/am/LC_MESSAGES/devhelp.mo
 share/locale/ar/LC_MESSAGES/devhelp.mo
 share/locale/as/LC_MESSAGES/devhelp.mo
@@ -38,6 +39,7 @@ share/locale/be@latin/LC_MESSAGES/devhelp.mo
 share/locale/bg/LC_MESSAGES/devhelp.mo
 share/locale/bn/LC_MESSAGES/devhelp.mo
 share/locale/bn_IN/LC_MESSAGES/devhelp.mo
+share/locale/bs/LC_MESSAGES/devhelp.mo
 share/locale/ca/LC_MESSAGES/devhelp.mo
 share/locale/ca@valencia/LC_MESSAGES/devhelp.mo
 share/locale/cs/LC_MESSAGES/devhelp.mo

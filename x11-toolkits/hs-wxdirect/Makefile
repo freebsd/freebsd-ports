@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wxdirect
-PORTVERSION=	0.90.1.1
-PORTREVISION=	1
+PORTVERSION=	0.91.0.0
 CATEGORIES=	x11-toolkits haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -10,6 +9,7 @@ COMMENT=	Helper tool for building wxHaskell
 
 LICENSE=	BSD3CLAUSE
 
+USES=		dos2unix
 USE_CABAL=	parsec>=2.1.0 strict
 
 EXECUTABLE=	wxdirect

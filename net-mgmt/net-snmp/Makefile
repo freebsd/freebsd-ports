@@ -3,7 +3,7 @@
 
 PORTNAME=	snmp
 PORTVERSION=	5.7.3
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	SF/net-${PORTNAME}/net-${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	net-
@@ -52,9 +52,12 @@ CONFIGURE_ARGS+=--enable-shared --enable-internal-md5 \
 		--with-logfile="${NET_SNMP_LOGFILE}" \
 		--with-persistent-directory="${NET_SNMP_PERSISTENTDIR}" \
 		--with-gnu-ld --with-libwrap \
-		--with-libs="-lssp_nonshared" \
 		--with-ldflags="-lm -lkvm -ldevstat -L${PKG_PREFIX}/lib -L${LOCALBASE}/lib ${LCRYPTO}"
 SUB_FILES=	pkg-message
+
+.if !defined(WITHOUT_SSP)
+CONFIGURE_ARGS+=--with-libs="-lssp_nonshared"
+.endif
 
 .if defined(BATCH)
 CONFIGURE_ARGS+=--with-defaults

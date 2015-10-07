@@ -4,12 +4,12 @@ bin/find-updated
 bin/make-readmes
 bin/portindex
 bin/portdepends
-man/man1/cache-init.1.gz
-man/man1/cache-update.1.gz
-man/man1/find-updated.1.gz
-man/man1/make-readmes.1.gz
-man/man1/portdepends.1.gz
-man/man1/portindex.1.gz
+%%PERL5_MAN1%%/cache-init.1.gz
+%%PERL5_MAN1%%/cache-update.1.gz
+%%PERL5_MAN1%%/find-updated.1.gz
+%%PERL5_MAN1%%/make-readmes.1.gz
+%%PERL5_MAN1%%/portdepends.1.gz
+%%PERL5_MAN1%%/portindex.1.gz
 @sample etc/portindex.cfg.sample
 %%SITE_PERL%%/FreeBSD/Portindex/Category.pm
 %%SITE_PERL%%/FreeBSD/Portindex/Config.pm

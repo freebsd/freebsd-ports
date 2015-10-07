@@ -1,0 +1,4 @@
+This package implements the libyaml YAML 1.1 parser and emitter for
+R.
+
+WWW: https://cran.r-project.org/web/packages/yaml/

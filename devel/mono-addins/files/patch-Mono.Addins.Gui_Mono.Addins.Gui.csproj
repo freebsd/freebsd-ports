@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- Mono.Addins.Gui/Mono.Addins.Gui.csproj.orig
 +++ Mono.Addins.Gui/Mono.Addins.Gui.csproj
 @@ -52,7 +52,7 @@

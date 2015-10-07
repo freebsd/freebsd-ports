@@ -1,76 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	libreoffice
-PORTVERSION=	4.3.7
-RCVER=		2
-#PRERELEASE=	yes
-LOVERSION=	${PORTVERSION}.${RCVER}
-CATEGORIES?=	editors
-MAINTAINER?=	office@FreeBSD.org
+PORTVERSION=	5.0.2
+CATEGORIES+=	editors
+ 
+MAINTAINER=	office@FreeBSD.org
 
 LICENSE=	LGPL3 MPL
 LICENSE_COMB=	dual
 
-.if defined(PRERELEASE)
-MASTER_SITES?=	http://dev-builds.libreoffice.org/pre-releases/${MASTER_SITE_SUBDIR}
-.else
-MASTER_SITES?=	http://download.documentfoundation.org/libreoffice/${MASTER_SITE_SUBDIR}/
-.endif
-
-ONLY_FOR_ARCH=	i386 amd64
-
-# for dynamic plist generation
-PLISTD?=	${WRKDIR}/plist_dirs
-PLISTF?=	${WRKDIR}/plist_files
-
-.if defined(LO_I18N)
-NO_ARCH=	yes
-NO_BUILD=	yes
-
-RUN_DEPENDS=	libreoffice:${PORTSDIR}/editors/libreoffice
-
-.if defined(PRERELEASE)
-MASTER_SITE_SUBDIR=	deb/x86/
-LO_I18N_FILE=	LibreOffice_${LOVERSION}_Linux_x86_deb
-.else
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/deb/x86/
-LO_I18N_FILE=	LibreOffice_${PORTVERSION}_Linux_x86_deb
-.endif
-
-DIST_SUBDIR?=	libreoffice/i18n
-
-PKGNAMEPREFIX=	${LO_I18N}-
-
-DISTFILES=	${LO_I18N_FILE}_langpack_${LO_I18N:S/_/-/}${EXTRACT_SUFX}
-.if defined(LO_HAS_HELPPACK)
-DISTFILES+=	${LO_I18N_FILE}_helppack_${LO_I18N:S/_/-/}${EXTRACT_SUFX}
-.endif
-COMMENT?=	${LO_I18N} language pack for ${PORTNAME}
-
-EXTRACT_AFTER_ARGS=	--exclude '${PORTNAME}*-dict-*.deb' \
-			--strip-components 1
-
-post-extract:
-	@${MKDIR} ${WRKSRC}; \
-	for deb in ${WRKDIR}/DEBS/*.deb ; do \
-		${TAR} xfO $${deb} data.tar.gz | ${TAR} -C ${WRKSRC} -xf - ; \
-	done ; \
-
-do-install:
-	@${RM} -f ${PLISTF}
-	cd ${WRKSRC}/opt/${PORTNAME}${PORTVERSION:R} ; ${FIND} * \( -type f -o -type l \) -exec ${ECHO_CMD} "lib/${PORTNAME}/{} " \; >> ${PLISTF}
-
-	${SORT} ${PLISTF} >> ${TMPPLIST}
-
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
-	cd ${WRKSRC}/opt/${PORTNAME}${PORTVERSION:R} ; \
-	    ${PAX} -rw . ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
-.else
-MASTER_SITES+=	http://dev-www.libreoffice.org/src/:src \
-		http://dev-www.libreoffice.org/extern/:ext
-.if defined(PRERELEASE)
-MASTER_SITE_SUBDIR=	src/
-.else
-MASTER_SITE_SUBDIR=	src/${PORTVERSION}/
-.endif
-.endif
+LOVERSION=	${PORTVERSION}.${RCVER}
+RCVER=		2

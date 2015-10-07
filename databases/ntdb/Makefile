@@ -24,6 +24,7 @@ PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
 
 CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man \
 			--infodir=${PREFIX}/${INFO_PATH}/${INFO_SUBDIR} \
+			--disable-rpath \
 			--without-gettext
 
 OPTIONS_DEFINE=		MANPAGES

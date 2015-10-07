@@ -14,7 +14,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xpcom/vboxxpcom.py:${PORTSDIR}/emulators/virtu
 
 USES=		python
 USE_PYTHON=	distutils autoplist
-USE_GNOME=	gtk30 pygtk2
+USE_GNOME=	gtk30 intltool pygtk2
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	NLS

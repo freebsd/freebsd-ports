@@ -346,57 +346,23 @@ lib/activemq/webapps/styles/type-settings.css
 %%PORTDOCS%%%%DOCSDIR%%/user-guide.html
 @owner %%MQUSER%%
 @group %%MQGROUP%%
-@unexec if cmp -s %D/%%ETCDIR%%/activemq.xml %D/%%ETCDIR%%/activemq.xml.sample ; then rm -f %D/%%ETCDIR%%/activemq.xml ; fi
-%%ETCDIR%%/activemq.xml.sample
-@exec if [ ! -f %B/activemq.xml ]; then cp -p %D/%F %B/activemq.xml; fi
-@unexec if cmp -s %D/%%ETCDIR%%/credentials-enc.properties %D/%%ETCDIR%%/credentials-enc.properties.sample ; then rm -f %D/%%ETCDIR%%/credentials-enc.properties ; fi
-%%ETCDIR%%/credentials-enc.properties.sample
-@exec if [ ! -f %B/credentials-enc.properties ]; then cp -p %D/%F %B/credentials-enc.properties; fi
-@unexec if cmp -s %D/%%ETCDIR%%/credentials.properties %D/%%ETCDIR%%/credentials.properties.sample ; then rm -f %D/%%ETCDIR%%/credentials.properties ; fi
-%%ETCDIR%%/credentials.properties.sample
-@exec if [ ! -f %B/credentials.properties ]; then cp -p %D/%F %B/credentials.properties; fi
-@unexec if cmp -s %D/%%ETCDIR%%/jetty-realm.properties %D/%%ETCDIR%%/jetty-realm.properties.sample ; then rm -f %D/%%ETCDIR%%/jetty-realm.properties ; fi
-%%ETCDIR%%/jetty-realm.properties.sample
-@exec if [ ! -f %B/jetty-realm.properties ]; then cp -p %D/%F %B/jetty-realm.properties; fi
-@unexec if cmp -s %D/%%ETCDIR%%/jetty.xml %D/%%ETCDIR%%/jetty.xml.sample ; then rm -f %D/%%ETCDIR%%/jetty.xml ; fi
-%%ETCDIR%%/jetty.xml.sample
-@exec if [ ! -f %B/jetty.xml ]; then cp -p %D/%F %B/jetty.xml; fi
-@unexec if cmp -s %D/%%ETCDIR%%/jmx.access %D/%%ETCDIR%%/jmx.access.sample ; then rm -f %D/%%ETCDIR%%/jmx.access ; fi
-%%ETCDIR%%/jmx.access.sample
-@exec if [ ! -f %B/jmx.access ]; then cp -p %D/%F %B/jmx.access; fi
-@unexec if cmp -s %D/%%ETCDIR%%/jmx.password %D/%%ETCDIR%%/jmx.password.sample ; then rm -f %D/%%ETCDIR%%/jmx.password ; fi
-%%ETCDIR%%/jmx.password.sample
-@exec if [ ! -f %B/jmx.password ]; then cp -p %D/%F %B/jmx.password; fi
-@unexec if cmp -s %D/%%ETCDIR%%/log4j.properties %D/%%ETCDIR%%/log4j.properties.sample ; then rm -f %D/%%ETCDIR%%/log4j.properties ; fi
-%%ETCDIR%%/log4j.properties.sample
-@exec if [ ! -f %B/log4j.properties ]; then cp -p %D/%F %B/log4j.properties; fi
-@unexec if cmp -s %D/%%ETCDIR%%/logging.properties %D/%%ETCDIR%%/logging.properties.sample ; then rm -f %D/%%ETCDIR%%/logging.properties ; fi
-%%ETCDIR%%/logging.properties.sample
-@exec if [ ! -f %B/logging.properties ]; then cp -p %D/%F %B/logging.properties; fi
-@unexec if cmp -s %D/%%ETCDIR%%/broker-localhost.cert %D/%%ETCDIR%%/broker-localhost.cert.sample ; then rm -f %D/%%ETCDIR%%/broker-localhost.cert ; fi
-%%ETCDIR%%/broker-localhost.cert.sample
-@exec if [ ! -f %B/broker-localhost.cert ]; then cp -p %D/%F %B/broker-localhost.cert; fi
-@unexec if cmp -s %D/%%ETCDIR%%/broker.ks %D/%%ETCDIR%%/broker.ks.sample ; then rm -f %D/%%ETCDIR%%/broker.ks ; fi
-%%ETCDIR%%/broker.ks.sample
-@exec if [ ! -f %B/broker.ks ]; then cp -p %D/%F %B/broker.ks; fi
-@unexec if cmp -s %D/%%ETCDIR%%/broker.ts %D/%%ETCDIR%%/broker.ts.sample ; then rm -f %D/%%ETCDIR%%/broker.ts ; fi
-%%ETCDIR%%/broker.ts.sample
-@exec if [ ! -f %B/broker.ts ]; then cp -p %D/%F %B/broker.ts; fi
-@unexec if cmp -s %D/%%ETCDIR%%/client.ks %D/%%ETCDIR%%/client.ks.sample ; then rm -f %D/%%ETCDIR%%/client.ks ; fi
-%%ETCDIR%%/client.ks.sample
-@exec if [ ! -f %B/client.ks ]; then cp -p %D/%F %B/client.ks; fi
-@unexec if cmp -s %D/%%ETCDIR%%/client.ts %D/%%ETCDIR%%/client.ts.sample ; then rm -f %D/%%ETCDIR%%/client.ts ; fi
-%%ETCDIR%%/client.ts.sample
-@exec if [ ! -f %B/client.ts ]; then cp -p %D/%F %B/client.ts; fi
-@unexec if cmp -s %D/%%ETCDIR%%/groups.properties %D/%%ETCDIR%%/groups.properties.sample ; then rm -f %D/%%ETCDIR%%/groups.properties ; fi
-%%ETCDIR%%/groups.properties.sample
-@exec if [ ! -f %B/groups.properties ]; then cp -p %D/%F %B/groups.properties; fi
-@unexec if cmp -s %D/%%ETCDIR%%/login.config %D/%%ETCDIR%%/login.config.sample ; then rm -f %D/%%ETCDIR%%/login.config ; fi
-%%ETCDIR%%/login.config.sample
-@exec if [ ! -f %B/login.config ]; then cp -p %D/%F %B/login.config; fi
-@unexec if cmp -s %D/%%ETCDIR%%/users.properties %D/%%ETCDIR%%/users.properties.sample ; then rm -f %D/%%ETCDIR%%/users.properties ; fi
-%%ETCDIR%%/users.properties.sample
-@exec if [ ! -f %B/users.properties ]; then cp -p %D/%F %B/users.properties; fi
+@sample %%ETCDIR%%/activemq.xml.sample
+@sample %%ETCDIR%%/credentials-enc.properties.sample
+@sample %%ETCDIR%%/credentials.properties.sample
+@sample %%ETCDIR%%/jetty-realm.properties.sample
+@sample %%ETCDIR%%/jetty.xml.sample
+@sample %%ETCDIR%%/jmx.access.sample
+@sample %%ETCDIR%%/jmx.password.sample
+@sample %%ETCDIR%%/log4j.properties.sample
+@sample %%ETCDIR%%/logging.properties.sample
+@sample %%ETCDIR%%/broker-localhost.cert.sample
+@sample %%ETCDIR%%/broker.ks.sample
+@sample %%ETCDIR%%/broker.ts.sample
+@sample %%ETCDIR%%/client.ks.sample
+@sample %%ETCDIR%%/client.ts.sample
+@sample %%ETCDIR%%/groups.properties.sample
+@sample %%ETCDIR%%/login.config.sample
+@sample %%ETCDIR%%/users.properties.sample
 @owner root
 @group wheel
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/amqp/java/pom.xml

@@ -21,6 +21,7 @@ bin/icclu
 bin/illumread
 bin/invprofcheck
 bin/kodak2ti3
+bin/ls2ti3
 bin/mppcheck
 bin/mpplu
 bin/mppprof
@@ -47,9 +48,9 @@ share/argyll/License.txt
 share/argyll/ref/3dap5k.sp
 share/argyll/ref/CIE_C.sp
 share/argyll/ref/CMP_DT_003.cht
-share/argyll/ref/CMP_Digital_Target-3.cht
-share/argyll/ref/CMP_Digital_Target-3.cie
-share/argyll/ref/CMP_Digital_Target-3.ti2
+share/argyll/ref/CMP_Digital_Target-4.cht
+share/argyll/ref/CMP_Digital_Target-4.cie
+share/argyll/ref/CMP_Digital_Target-4.ti2
 share/argyll/ref/ClayRGB1998.icm
 share/argyll/ref/ColorChecker.cht
 share/argyll/ref/ColorChecker.cie
@@ -59,6 +60,7 @@ share/argyll/ref/ColorCheckerDC.ti2
 share/argyll/ref/ColorCheckerPassport.cht
 share/argyll/ref/ColorCheckerPassport.cie
 share/argyll/ref/ColorCheckerSG.cht
+share/argyll/ref/ColorCheckerSG.ti2
 share/argyll/ref/D50_0.0.sp
 share/argyll/ref/D50_0.1.sp
 share/argyll/ref/D50_0.3.sp

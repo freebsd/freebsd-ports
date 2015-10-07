@@ -5,7 +5,7 @@ PORTVERSION=	0.6
 PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://bitbucket.org/acoustid/${PORTNAME}/downloads/ \
-		http://cloud.github.com/downloads/lalinsky/${PORTNAME}/
+		GHC
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	AcoustID audio fingerprint submission tool
@@ -19,6 +19,9 @@ LIB_DEPENDS=	libchromaprint.so:${PORTSDIR}/audio/chromaprint \
 USES=		cmake
 USE_QT4=	gui network \
 		qmake_build moc_build rcc_build uic_build
+USE_GITHUB=	yes
+GH_ACCOUNT=	lalinsky
+
 INSTALLS_ICONS=	yes
 
 post-patch:

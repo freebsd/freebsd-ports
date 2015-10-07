@@ -15,12 +15,15 @@
     SUBDIR += ImageMagick7-nox11
     SUBDIR += O2-tools
     SUBDIR += OpenEXR
+    SUBDIR += R-cran-DiagrammeR
     SUBDIR += R-cran-GDD
     SUBDIR += R-cran-RColorBrewer
     SUBDIR += R-cran-colorspace
     SUBDIR += R-cran-diagram
     SUBDIR += R-cran-dichromat
+    SUBDIR += R-cran-dygraphs
     SUBDIR += R-cran-ggplot2
+    SUBDIR += R-cran-gridBase
     SUBDIR += R-cran-munsell
     SUBDIR += R-cran-pixmap
     SUBDIR += R-cran-png
@@ -44,6 +47,7 @@
     SUBDIR += aoi
     SUBDIR += apngasm
     SUBDIR += apngdis
+    SUBDIR += appleseed
     SUBDIR += apvlv
     SUBDIR += aqsis
     SUBDIR += argyllcms
@@ -314,6 +318,7 @@
     SUBDIR += gstreamer1-plugins-opencv
     SUBDIR += gstreamer1-plugins-openjpeg
     SUBDIR += gstreamer1-plugins-png
+    SUBDIR += gstreamer1-plugins-rsvg
     SUBDIR += gstreamer1-plugins-webp
     SUBDIR += gstreamer1-plugins-zbar
     SUBDIR += gthumb
@@ -325,6 +330,7 @@
     SUBDIR += guilib
     SUBDIR += gwenview-kde4
     SUBDIR += gx
+    SUBDIR += hdr_tools
     SUBDIR += hobbes-icons-xpm
     SUBDIR += hppsmtools
     SUBDIR += hs-HGL
@@ -332,7 +338,6 @@
     SUBDIR += hs-cairo
     SUBDIR += hs-dia-base
     SUBDIR += hs-dia-functions
-    SUBDIR += hs-soegtk
     SUBDIR += hs-svgcairo
     SUBDIR += hsetroot
     SUBDIR += hugin
@@ -448,7 +453,6 @@
     SUBDIR += ksaneplugin
     SUBDIR += ksnapshot
     SUBDIR += kudu
-    SUBDIR += kuickshow-kde4
     SUBDIR += l2p
     SUBDIR += laternamagica
     SUBDIR += lcdtest
@@ -472,6 +476,7 @@
     SUBDIR += libcaca
     SUBDIR += libcdr01
     SUBDIR += libchamplain
+    SUBDIR += libchamplain08
     SUBDIR += libdmtx
     SUBDIR += libdrm
     SUBDIR += libecwj2
@@ -582,6 +587,7 @@
     SUBDIR += mhgui
     SUBDIR += ming
     SUBDIR += mirage
+    SUBDIR += mitsuba
     SUBDIR += mmrecover
     SUBDIR += mozjpeg
     SUBDIR += mscgen
@@ -766,6 +772,7 @@
     SUBDIR += picpuz
     SUBDIR += picviz
     SUBDIR += piddle
+    SUBDIR += pikopixel
     SUBDIR += pinpoint
     SUBDIR += pinta
     SUBDIR += pixelize
@@ -807,7 +814,6 @@
     SUBDIR += pstoedit
     SUBDIR += pstoepsi
     SUBDIR += pure-gl
-    SUBDIR += py-pyganim
     SUBDIR += py-PyX
     SUBDIR += py-PyX12
     SUBDIR += py-aafigure
@@ -852,6 +858,7 @@
     SUBDIR += py-pycha
     SUBDIR += py-pydot
     SUBDIR += py-pygal
+    SUBDIR += py-pyganim
     SUBDIR += py-pyggel
     SUBDIR += py-pyglet
     SUBDIR += py-pygooglechart
@@ -974,9 +981,8 @@
     SUBDIR += simpleviewer
     SUBDIR += sk1libs
     SUBDIR += skanlite
-    SUBDIR += skencil
     SUBDIR += sketch
-    SUBDIR += sng
+    SUBDIR += smillaenlarger
     SUBDIR += springgraph
     SUBDIR += squish
     SUBDIR += sswf
@@ -1025,6 +1031,7 @@
     SUBDIR += volpack
     SUBDIR += vp
     SUBDIR += waffle
+    SUBDIR += waifu2x-converter-cpp
     SUBDIR += webp
     SUBDIR += whirlgif
     SUBDIR += white_dune
@@ -1052,6 +1059,7 @@
     SUBDIR += xournal
     SUBDIR += xpaint
     SUBDIR += xpdf
+    SUBDIR += xpeps
     SUBDIR += xpx
     SUBDIR += xsane
     SUBDIR += xsvg

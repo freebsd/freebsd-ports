@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2010-03-26 06:08:58 UTC
++++ Makefile.am
+@@ -14,7 +14,7 @@ VERSION=@QA_VERSION@
+ #
+ # Install qmailadmin setuid to @vpopuser@
+ #
+-INSTALL_PROGRAM=${INSTALL} -o @vpopuser@ -m 6755 -g @vpopgroup@ $(AM_INSTALL_PROGRAM_FLAGS)
++INSTALL_PROGRAM=${INSTALL} $(AM_INSTALL_PROGRAM_FLAGS)
+ INSTALL_STRIP_PROGRAM=${INSTALL_PROGRAM} -s
+ 
+ bindir=@cgibindir@

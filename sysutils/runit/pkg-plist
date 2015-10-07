@@ -1,21 +1,9 @@
-@unexec cmp -s %D/%%ETCDIR%%/1 %D/%%ETCDIR%%/1.sample && rm -f %D/%%ETCDIR%%/1
-%%ETCDIR%%/1.sample
-@exec [ ! -f %D/%%ETCDIR%%/1 ] && cp -p %D/%F %B/1
-@unexec cmp -s %D/%%ETCDIR%%/2 %D/%%ETCDIR%%/2.sample && rm -f %D/%%ETCDIR%%/2
-%%ETCDIR%%/2.sample
-@exec [ ! -f %D/%%ETCDIR%%/2 ] && cp -p %D/%F %B/2
-@unexec cmp -s %D/%%ETCDIR%%/3 %D/%%ETCDIR%%/3.sample && rm -f %D/%%ETCDIR%%/3
-%%ETCDIR%%/3.sample
-@exec [ ! -f %D/%%ETCDIR%%/3 ] && cp -p %D/%F %B/3
-@unexec cmp -s %D/%%ETCDIR%%/ctrlaltdel %D/%%ETCDIR%%/ctrlaltdel.sample && rm -f %D/%%ETCDIR%%/ctrlaltdel
-%%ETCDIR%%/ctrlaltdel.sample
-@exec [ ! -f %D/%%ETCDIR%%/ctrlaltdel ] && cp -p %D/%F %B/ctrlaltdel
-@unexec cmp -s %D/%%ETCDIR%%/getty-ttyv4/run %D/%%ETCDIR%%/getty-ttyv4/run.sample && rm -f %D/%%ETCDIR%%/getty-ttyv4/run
-%%ETCDIR%%/getty-ttyv4/run.sample
-@exec [ ! -f %D/%%ETCDIR%%/getty-ttyv4/run ] && cp -p %D/%F %B/run
-@unexec cmp -s %D/%%ETCDIR%%/getty-ttyv4/finish %D/%%ETCDIR%%/getty-ttyv4/finish.sample && rm -f %D/%%ETCDIR%%/getty-ttyv4/finish
-%%ETCDIR%%/getty-ttyv4/finish.sample
-@exec [ ! -f %D/%%ETCDIR%%/getty-ttyv4/finish ] && cp -p %D/%F %B/finish
+@sample %%ETCDIR%%/1.sample
+@sample %%ETCDIR%%/2.sample
+@sample %%ETCDIR%%/3.sample
+@sample %%ETCDIR%%/ctrlaltdel.sample
+@sample %%ETCDIR%%/getty-ttyv4/run.sample
+@sample %%ETCDIR%%/getty-ttyv4/finish.sample
 man/man8/chpst.8.gz
 man/man8/runit-init.8.gz
 man/man8/runit.8.gz

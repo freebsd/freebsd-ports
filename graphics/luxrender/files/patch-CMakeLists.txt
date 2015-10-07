@@ -1,15 +1,14 @@
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -179,7 +179,7 @@ IF(NOT APPLE AND NOT WIN32)
+@@ -210,7 +210,6 @@ IF(NOT APPLE AND NOT WIN32)
  	STRING(REGEX MATCH "(x86_64-*)|(X86_64-*)|(AMD64-*)|(amd64-*)" _mach_x86_64 ${MACHINE})
  	IF (_mach_x86_64)
  		SET(ARCH_X86_64 1)
 -		SET(LIB_SUFFIX 64)
-+		#SET(LIB_SUFFIX 64)
  		#jromang - Hack to avoid boost bug on x64  Ubuntu 8.10 and Fedora 10 (http://www.luxrender.net/mantis/view.php?id=433)
  		ADD_DEFINITIONS(-DBOOST_NO_INTRINSIC_INT64_T)
  	ENDIF (_mach_x86_64)
-@@ -298,7 +298,7 @@ ELSEIF(MSVC)
+@@ -402,7 +401,7 @@ ELSEIF(MSVC)
  ELSE(APPLE)
  	# Dade - default compiler options
  	# Removed "-O3" from definitions in order to have CMake Release/Debug options to work

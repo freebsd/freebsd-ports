@@ -19,19 +19,13 @@ OPTIONS_DEFINE=	SSL NLS DOCS
 OPTIONS_DEFAULT=SSL
 SSL_DESC=	Use netUstad with SSL support
 
-LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
-
 SSL_USE=		OPENSSL=yes
 SSL_CONFIGURE_WITH=	ssl
 
 NLS_CONFIGURE_WITH=	nls
 
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MDOCS}
-post-patch:
+post-patch-DOCS-off:
 	${REINPLACE_CMD} "s/^install-data-am:.*/install-data-am:/" ${WRKSRC}/Makefile.in
-.endif
 
 post-install:
 	@${MV} ${STAGEDIR}${ETCDIR}/netustad.conf-dist ${STAGEDIR}${ETCDIR}/netustad.conf.sample

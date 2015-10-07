@@ -1,0 +1,52 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# A shell-script wrapper for E-MailRelay for use in the FreeBSD rc.d system.
+#
+# Additional command-line options for the emailrelay daemon are sourced from
+# the file "/usr/local/etc/emailrelay.conf" if it exists.  Uncommented lines
+# in this file have "--" prepended to them and then they are pasted onto the
+# command line.
+#
+# usage: emailrelay { start | stop | restart | force-reload | status }
+#
+
+# PROVIDE: emailrelay
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=emailrelay
+rcvar=emailrelay_enable
+command=%%PREFIX%%/sbin/emailrelay
+
+emailrelay_config_file=%%PREFIX%%/etc/emailrelay.conf
+
+pidfile=/var/run/emailrelay.pid
+required_files=$config_file
+start_precmd=emailrelay_prestart
+
+load_rc_config $name
+
+: ${emailrelay_enable:=no}
+
+emailrelay_config_options()
+{
+	# echo --options from the config file
+	egrep -v '^#|^gui-|^ *$' < $emailrelay_config_file | sed 's/^/--/'
+}
+
+emailrelay_start_options()
+{
+	# echo start command tail
+	echo --as-server --pid-file $pidfile `emailrelay_config_options`
+}
+
+emailrelay_prestart()
+{
+	rc_flags=`emailrelay_start_options`
+}
+
+run_rc_command "$1"

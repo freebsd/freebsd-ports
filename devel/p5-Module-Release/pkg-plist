@@ -7,6 +7,7 @@ bin/release
 %%SITE_PERL%%/Module/Release/Prereq.pm
 %%SITE_PERL%%/Module/Release/SVN.pm
 %%SITE_PERL%%/Module/Release/WebUpload/Mojo.pm
+%%PERL5_MAN1%%/release.1.gz
 %%PERL5_MAN3%%/Module::Release.3.gz
 %%PERL5_MAN3%%/Module::Release::FTP.3.gz
 %%PERL5_MAN3%%/Module::Release::Kwalitee.3.gz
@@ -15,4 +16,3 @@ bin/release
 %%PERL5_MAN3%%/Module::Release::Prereq.3.gz
 %%PERL5_MAN3%%/Module::Release::SVN.3.gz
 %%PERL5_MAN3%%/Module::Release::WebUpload::Mojo.3.gz
-man/man1/release.1.gz

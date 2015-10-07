@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zfs-stats-lite
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://druidbsd.sourceforge.net/download/
 

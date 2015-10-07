@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	puppet
-PORTVERSION=	3.8.1
+PORTVERSION=	3.8.2
 PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
@@ -13,14 +13,14 @@ COMMENT=	Configuration management framework written in Ruby
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	rubygem-facter>=0:${PORTSDIR}/sysutils/rubygem-facter \
-		rubygem-hiera>=0:${PORTSDIR}/sysutils/rubygem-hiera
+		rubygem-hiera1>=0:${PORTSDIR}/sysutils/rubygem-hiera1
 RUN_DEPENDS=	rubygem-facter>=0:${PORTSDIR}/sysutils/rubygem-facter \
 		rubygem-ruby-augeas>=0:${PORTSDIR}/textproc/rubygem-ruby-augeas \
-		rubygem-hiera>=0:${PORTSDIR}/sysutils/rubygem-hiera
+		rubygem-hiera1>=0:${PORTSDIR}/sysutils/rubygem-hiera1
 
 USES=		cpe
 CPE_VENDOR=	puppetlabs
-CONFLICTS_INSTALL=	puppet37-*
+CONFLICTS_INSTALL=	puppet37-* puppet4-*
 NO_BUILD=	yes
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	iconv
@@ -51,11 +51,6 @@ BROKEN=	PACKAGE_ROOT option patch is incompatible with PACKAGE_ORIGIN patch.
 .endif
 
 .include <bsd.port.pre.mk>
-
-# puppet 4.x should support ruby 2.2.x
-.if ${RUBY_VER} >= 2.2
-BROKEN=		Does not work with Ruby 2.2
-.endif
 
 .if ${PORT_OPTIONS:MPACKAGE_ORIGIN}
 EXTRA_PATCHES+=	${FILESDIR}/optpatch-package_origin

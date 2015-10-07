@@ -9,4 +9,4 @@ bin/tidy_changelog
 %%PERL5_MAN3%%/CPAN::Changes::Release.3.gz
 %%PERL5_MAN3%%/CPAN::Changes::Spec.3.gz
 %%PERL5_MAN3%%/Test::CPAN::Changes.3.gz
-man/man1/tidy_changelog.1.gz
+%%PERL5_MAN1%%/tidy_changelog.1.gz

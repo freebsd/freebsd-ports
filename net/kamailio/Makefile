@@ -1,9 +1,9 @@
 # Created by: Oliver Mahmoudi <olivermahmoudi@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	kamailio
-PORTVERSION=	4.2.4
+PORTVERSION=	4.3.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.kamailio.org/pub/kamailio/${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
@@ -12,15 +12,17 @@ MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Very fast and configurable open source SIP proxy
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libxml2.so:${PORTSDIR}/textproc/libxml2 \
 		libcurl.so:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
-USES=		gmake shebangfix readline
+USES=		gmake readline shebangfix
 USE_LDCONFIG=	yes
-SHEBANG_FILES=	utils/kamctl/kamctl utils/kamctl/kamdbctl
+SHEBANG_FILES=	utils/kamctl/dbtextdb/dbtextdb.py \
+		utils/kamctl/kamctl utils/kamctl/kamdbctl
 CFLAGS+=	-Wall
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -30,12 +32,15 @@ USE_RC_SUBR=	kamailio
 USERS=		kamailio
 GROUPS=		kamailio
 
-OPTIONS_DEFINE=	DOCS MYSQL PGSQL RADIUS JITSI JABBER TLS UNIXODBC PRESENCE
+OPTIONS_DEFINE=	DOCS MYSQL PGSQL PERL RADIUS JITSI JABBER SCTP TLS \
+		UNIXODBC PRESENCE WEBSOCKET
 OPTIONS_DEFAULT=MYSQL RADIUS JABBER TLS PRESENCE
 OPTIONS_SUB=	YES
 
 JITSI_DESC=	VoIP Frontend GUI via Jitsi
+SCTP_DESC=	SCTP support
 PRESENCE_DESC=	Presence support
+WEBSOCKET_DESC=	Websocket support
 
 MYSQL_USE=	mysql=yes
 PGSQL_USES=	pgsql
@@ -45,6 +50,15 @@ RADIUS_LIB_DEPENDS=	libradiusclient-ng.so:${PORTSDIR}/net/radiusclient
 TLS_USE=		OPENSSL=yes
 
 .include <bsd.port.options.mk>
+
+# avoid slow locks, use fast atomic ops
+.if ${ARCH} == "amd64"
+EXTRA_PATCHES+=	${.CURDIR}/files/extra-patch-atomic-amd64
+.endif
+
+.if ${ARCH} == "i386"
+EXTRA_PATCHES+=	${.CURDIR}/files/extra-patch-atomic-i386
+.endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 900000
 BUILD_DEPENDS+=	clang33:${PORTSDIR}/lang/clang33
@@ -60,6 +74,14 @@ EXTRA_GROUPS+=	mysql
 EXTRA_GROUPS+=	postgres
 .endif
 
+.if ${PORT_OPTIONS:MPERL}
+USES+=		perl5
+EXTRA_MODULES+=	app_perl
+MAKE_ENV+=	PERLLDOPTS=`perl -MExtUtils::Embed -e ldopts` \
+		PERLCCOPTS=`perl -MExtUtils::Embed -e ccopts` \
+		TYPEMAP=`perl -MConfig -e 'print $Config{installprivlib}'`/ExtUtils/typemap
+.endif
+
 .if ${PORT_OPTIONS:MUNIXODBC}
 EXTRA_MODULES+=	db_unixodbc
 .endif
@@ -72,12 +94,21 @@ EXTRA_GROUPS+=	radius
 EXTRA_MODULES+=	jabber
 .endif
 
+.if ${PORT_OPTIONS:MSCTP}
+EXTRA_MODULES+=	sctp
+.endif
+
 .if ${PORT_OPTIONS:MTLS}
 EXTRA_MODULES+=	tls
 .endif
 
 .if ${PORT_OPTIONS:MPRESENCE}
 EXTRA_GROUPS+=	presence
+.endif
+
+.if ${PORT_OPTIONS:MWEBSOCKET}
+EXTRA_MODULES+=	websocket
+LIB_DEPENDS+=	libunistring.so:${PORTSDIR}/devel/libunistring
 .endif
 
 .if !empty (EXTRA_GROUPS)
@@ -106,9 +137,6 @@ do-build:
 	cd ${WRKSRC} && ${GMAKE} ${ALL_TARGET}
 
 post-stage:
-# Do not install anything beyond ${PREFIX}
-	${RM} /root/.rnd
-
 # Strip modules in lib/kamailio/modules
 	@${ECHO_CMD} "Stripping modules in ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/modules/"
 
@@ -138,7 +166,9 @@ post-stage:
 	presence_mwi \
 	presence_profile presence_reginfo presence_xml pua_bla \
 	pua_dialoginfo pua_mi pua_reginfo pua_usrloc rls \
-	acc_radius misc_radius peering pua pua_xmpp xcap_client xcap_server
+	acc_radius misc_radius peering pua pua_xmpp xcap_client xcap_server \
+	tcpops auth_xkeys statsd dmq_usrloc rtjson websocket sctp \
+	app_perl
 	@if [ -e ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/modules/${i}.so ]; then \
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/modules/${i}.so; \
 	fi
@@ -167,5 +197,8 @@ post-stage:
 
 do-install:
 	cd ${WRKSRC} && ${GMAKE} ${INSTALL_TARGET}
+.if ! ${PORT_OPTIONS:MMYSQL} && ! ${PORT_OPTIONS:MPGSQL}
+	${RMDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}
+.endif
 
 .include <bsd.port.mk>

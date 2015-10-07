@@ -1,0 +1,11 @@
+--- uhidd/Makefile.orig	2012-10-14 00:38:33 UTC
++++ uhidd/Makefile
+@@ -8,7 +8,7 @@ GENSRCS=	usage_in_page.c usage_page.c
+ CLEANFILES=	${GENSRCS}
+ MAN=		uhidd.conf.5 uhidd.8
+ 
+-WARNS?=	6
++WARNS?=	5
+ 
+ PREFIX?=	/usr/local
+ LOCALBASE?=	/usr/local

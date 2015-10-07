@@ -1,10 +1,8 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/editors/gedit/Makefile 20047 2014-11-10 07:28:52Z gusi $
 
 PORTNAME=	gedit
-PORTVERSION=	3.14.3
-PORTREVISION=	1
+PORTVERSION=	3.16.3
 CATEGORIES=	editors gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -23,9 +21,11 @@ RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
 		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
 		${PYTHON_PKGNAMEPREFIX}libpeas>=0:${PORTSDIR}/devel/py3-libpeas
 
+PORTSCOUT=	limitw:1,even
+
 USES=		desktop-file-utils gettext gmake libtool \
 		pathfix pkgconfig python:3 tar:xz
-USE_GNOME=	gnomeprefix gtksourceview3 intlhack introspection:build \
+USE_GNOME=	gtksourceview3 intlhack introspection:build \
 		libxml2 py3gobject3
 USE_XORG=	sm
 GNU_CONFIGURE=	yes
@@ -35,7 +35,7 @@ CONFIGURE_ARGS+=--disable-zeitgeist \
 CPPFLAGS+=	-I${LOCALBASE}/include -Wno-error=format-nonliteral
 CFLAGS+=	-I${LOCALBASE}/include -Wno-error=format-nonliteral
 LDFLAGS+=	-L${LOCALBASE}/lib
-PLIST_SUB=	VERSION="3.12"
+PLIST_SUB=	VERSION="3.14"
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.gedit.enums.xml \

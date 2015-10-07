@@ -1,0 +1,4 @@
+Wrappers around the XML and httr packages to make it easy to download,
+then manipulate, both html and xml.
+
+WWW: https://cran.r-project.org/web/packages/rvest/

@@ -1,7 +1,3 @@
-%%ELISPDIR%%/git-commit-mode.el
-%%ELISPDIR%%/git-commit-mode.elc
-%%ELISPDIR%%/git-rebase-mode.el
-%%ELISPDIR%%/git-rebase-mode.elc
 %%ELISPDIR%%/gitattributes-mode.el
 %%ELISPDIR%%/gitattributes-mode.elc
 %%ELISPDIR%%/gitconfig-mode.el

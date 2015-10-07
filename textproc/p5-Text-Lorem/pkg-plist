@@ -1,4 +1,4 @@
 bin/lorem
 %%PERL5_MAN3%%/Text::Lorem.3.gz
 %%SITE_PERL%%/Text/Lorem.pm
-man/man1/lorem.1.gz
+%%PERL5_MAN1%%/lorem.1.gz

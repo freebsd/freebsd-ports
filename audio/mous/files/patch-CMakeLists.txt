@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2012-06-15 04:46:40.000000000 +0200
-+++ CMakeLists.txt	2012-07-18 17:04:03.462575000 +0200
-@@ -292,7 +292,7 @@
+--- CMakeLists.txt.orig	2012-06-28 14:58:11 UTC
++++ CMakeLists.txt
+@@ -306,7 +306,7 @@ if(WithFrontendQt)
          RUNTIME DESTINATION bin)
      install(
          CODE "file(GLOB TRANSLATION_FILES \"${PROJECT_BINARY_DIR}/*.qm\")"
@@ -9,7 +9,7 @@
      )
  endif()
  
-@@ -307,7 +307,7 @@
+@@ -321,7 +321,7 @@ install(
  )
  
  file(GLOB RESOURCE_FILES "${MOUS_SOURCE_DIR}/resource/*")

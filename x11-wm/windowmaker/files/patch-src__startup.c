@@ -1,6 +1,6 @@
---- src/startup.c.orig	2013-01-10 06:42:39.000000000 +0900
-+++ src/startup.c	2013-05-03 03:30:24.000000000 +0900
-@@ -758,7 +758,7 @@
+--- src/startup.c.orig	2015-08-11 18:41:14 UTC
++++ src/startup.c
+@@ -666,7 +666,7 @@ void StartUp(Bool defaultScreenOnly)
  		wMenuRestoreState(wScreen[j]);
  
  		/* If we're not restarting, restore session */

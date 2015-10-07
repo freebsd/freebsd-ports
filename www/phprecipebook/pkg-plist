@@ -568,7 +568,7 @@
 %%WWWDIR%%/modules/restaurants/view_picture.php
 %%WWWDIR%%/modules/reviews/review.php
 %%WWWDIR%%/modules/reviews/update.php
-@exec mkdir -p %D/%%WWWDIR%%/modules/settings
+@postexec mkdir -p %D/%%WWWDIR%%/modules/settings
 %%WWWDIR%%/modules/utils/converter.php
 %%WWWDIR%%/modules/utils/index.php
 %%WWWDIR%%/modules/utils/resources.php

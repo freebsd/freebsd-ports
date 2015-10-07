@@ -57,15 +57,13 @@ post-install:
 	(cd ${WRKSRC}/params && ${INSTALL_DATA} * ${STAGEDIR}${DATADIR}/params)
 	${MKDIR} ${STAGEDIR}${DATADIR}/test
 	(cd ${WRKSRC}/test && ${INSTALL_DATA} * ${STAGEDIR}${DATADIR}/test)
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${INSTALL_DATA} 0README *.pdf *.txt ${STAGEDIR}${DOCSDIR})
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/example && ${INSTALL_DATA} \
 		0README *.make *.dyn *.int *.frac *.key *.seq *.pdb *.xyz \
 		${STAGEDIR}${EXAMPLESDIR})
-.endif
 
 .include <bsd.port.mk>

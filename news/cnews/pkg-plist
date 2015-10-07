@@ -140,16 +140,6 @@ man/man8/rnews.8cn.gz
 %%NEWSBIN%%/config
 @exec chown news:news %D/%%NEWSBIN%%/input/newsspool
 @exec chmod 6555  %D/%%NEWSBIN%%/input/newsspool
-@dirrm %%NEWSBIN%%/batch
-@dirrm %%NEWSBIN%%/ctl
-@dirrm %%NEWSBIN%%/decompressors
-@dirrm %%NEWSBIN%%/expire
-@dirrm %%NEWSBIN%%/inject
-@dirrm %%NEWSBIN%%/input
-@dirrm %%NEWSBIN%%/maint
-@dirrm %%NEWSBIN%%/nov
-@dirrm %%NEWSBIN%%/relay
-@dirrm %%NEWSBIN%%
 @owner news
 @group news
 @exec mkdir -p %%VARBASE%%/%%NEWSCTL%%
@@ -175,8 +165,6 @@ man/man8/rnews.8cn.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/versionname
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/whoami
 %%PORTEXAMPLES%%@exec for i in %%NEWSCTL_FILES%%; do if test ! -f %%VARBASE%%/%%NEWSCTL%%/$i; then cp -p %D/%%EXAMPLESDIR%%/newsctl/$i %%VARBASE%%/%%NEWSCTL%%/$i; else echo "preservering %%VARBASE%%/%%NEWSCTL%%/$i"; fi; done
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/newsctl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @exec mkdir -p %%VARBASE%%/%%NEWSARTS%%/control
 @exec mkdir -p %%VARBASE%%/%%NEWSARTS%%/junk
 @exec mkdir -p %%VARBASE%%/%%NEWSARTS%%/news/announce/newusers
@@ -191,19 +179,5 @@ man/man8/rnews.8cn.gz
 @exec chown news:news %%VARBASE%%/%%NEWSARTS%%/news/announce/newusers
 @exec mkdir -p %%VARBASE%%/%%NEWSOV%%
 @exec chown news:news %%VARBASE%%/%%NEWSOV%%
-@dirrmtry %%VARBASE%%/%%NEWSCTL%%
-@dirrmtry %%VARBASE%%/%%NEWSCTLBASE%%
-@dirrmtry %%VARBASE%%/%%NEWSOV%%
-@dirrmtry %%VARBASE%%/%%NEWSARTS%%/control
-@dirrmtry %%VARBASE%%/%%NEWSARTS%%/junk
-@dirrmtry %%VARBASE%%/%%NEWSARTS%%/news/announce/newusers
-@dirrmtry %%VARBASE%%/%%NEWSARTS%%/news/announce
-@dirrmtry %%VARBASE%%/%%NEWSARTS%%/news
-@dirrmtry %%VARBASE%%/%%NEWSARTS%%/in.coming/bad
-@dirrmtry %%VARBASE%%/%%NEWSARTS%%/in.coming
-@dirrmtry %%VARBASE%%/%%NEWSARTS%%/out.going
-@dirrmtry %%VARBASE%%/%%NEWSARTS%%/out.master
-@dirrmtry %%VARBASE%%/%%NEWSARTS%%/out.nntp
-@dirrmtry %%VARBASE%%/%%NEWSARTS%%
 @owner
 @group

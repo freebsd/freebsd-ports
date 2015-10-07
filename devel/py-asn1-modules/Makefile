@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	asn1-modules
-PORTVERSION=	0.0.6
+PORTVERSION=	0.0.7
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,19 +11,20 @@ MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Collection of ASN.1 data structures for py-asn1
 
 LICENSE=	BSD2CLAUSE
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1>=0.1.4:${PORTSDIR}/devel/py-asn1
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1>=0.1.8:${PORTSDIR}/devel/py-asn1
 
+NO_ARCH=	yes
 USES=		python shebangfix
 SHEBANG_FILES=	tools/*.py
 USE_PYTHON=	autoplist distutils
 
 DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
-PORTDOCS=	CHANGES README
+PORTDOCS=	CHANGES.txt README.txt
 TOOLS=		cmpdump.py crldump.py crmfdump.py ocspclient.py ocspreqdump.py \
-		ocsprspdump.py ocspserver.py pkcs10dump.py pkcs1dump.py \
-		pkcs7dump.py pkcs8dump.py snmpget.py x509dump.py
+		ocsprspdump.py pkcs10dump.py pkcs1dump.py pkcs7dump.py \
+		pkcs8dump.py snmpget.py x509dump.py
 
 post-install:
 	${INSTALL_SCRIPT} ${TOOLS:S|^|${WRKSRC}/tools/|} ${STAGEDIR}${PREFIX}/bin

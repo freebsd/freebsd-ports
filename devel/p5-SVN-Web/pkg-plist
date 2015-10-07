@@ -39,7 +39,7 @@ bin/svnweb-install
 %%SITE_PERL%%/SVN/Web/View.pm
 %%SITE_PERL%%/SVN/Web/X.pm
 %%SITE_PERL%%/SVN/Web/action.pm
-man/man1/svnweb-install.1.gz
+%%PERL5_MAN1%%/svnweb-install.1.gz
 %%WWWDIR%%/SVN-Web.psgi
 %%WWWDIR%%/css/common.css
 %%WWWDIR%%/css/styles-hlb.css

@@ -1,53 +1,54 @@
+@sample %%ETCDIR%%/settings.d/bmc.yml.sample
+@sample %%ETCDIR%%/settings.d/dhcp.yml.sample
+@sample %%ETCDIR%%/settings.d/dns.yml.sample
+@sample %%ETCDIR%%/settings.d/facts.yml.sample
+@sample %%ETCDIR%%/settings.d/puppet.yml.sample
+@sample %%ETCDIR%%/settings.d/puppetca.yml.sample
+@sample %%ETCDIR%%/settings.d/realm.yml.sample
+@sample %%ETCDIR%%/settings.d/templates.yml.sample
+@sample %%ETCDIR%%/settings.d/tftp.yml.sample
+@sample %%ETCDIR%%/settings.yml.sample
 sbin/smart-proxy
-@sample etc/foreman-proxy/settings.yml.sample
-@sample etc/foreman-proxy/settings.d/bmc.yml.sample
-@sample etc/foreman-proxy/settings.d/dhcp.yml.sample
-@sample etc/foreman-proxy/settings.d/dns.yml.sample
-@sample etc/foreman-proxy/settings.d/facts.yml.sample
-@sample etc/foreman-proxy/settings.d/puppet.yml.sample
-@sample etc/foreman-proxy/settings.d/puppetca.yml.sample
-@sample etc/foreman-proxy/settings.d/realm.yml.sample
-@sample etc/foreman-proxy/settings.d/templates.yml.sample
-@sample etc/foreman-proxy/settings.d/tftp.yml.sample
 %%DATADIR%%/CHANGELOG
 %%DATADIR%%/Contributors
 %%DATADIR%%/Gemfile
 %%DATADIR%%/Gemfile.in
 %%DATADIR%%/LICENSE
-%%DATADIR%%/README
-%%DATADIR%%/Rakefile
+%%DATADIR%%/README.md
 %%DATADIR%%/VERSION
 %%DATADIR%%/bundler.d/bmc.rb
 %%DATADIR%%/bundler.d/development.rb
 %%DATADIR%%/bundler.d/krb5.rb
 %%DATADIR%%/bundler.d/puppet.rb
 %%DATADIR%%/bundler.d/test.rb
+%%DATADIR%%/bundler.d/windows.rb
 %%DATADIR%%/config
 %%DATADIR%%/config.ru
 %%DATADIR%%/extra/migrate_settings.rb
+%%DATADIR%%/extra/migrations/20150327000000_migrate_monolithic_config.rb
 %%DATADIR%%/extra/query.rb
 %%DATADIR%%/lib/bundler_helper.rb
 %%DATADIR%%/lib/checks.rb
 %%DATADIR%%/lib/daemon.rb
 %%DATADIR%%/lib/poodles-fix.rb
-%%DATADIR%%/lib/proxy/file_lock.rb
+%%DATADIR%%/lib/proxy.rb
 %%DATADIR%%/lib/proxy/error.rb
+%%DATADIR%%/lib/proxy/file_lock.rb
 %%DATADIR%%/lib/proxy/helpers.rb
 %%DATADIR%%/lib/proxy/http_downloads.rb
 %%DATADIR%%/lib/proxy/kerberos.rb
 %%DATADIR%%/lib/proxy/log.rb
 %%DATADIR%%/lib/proxy/plugin.rb
 %%DATADIR%%/lib/proxy/request.rb
+%%DATADIR%%/lib/proxy/settings.rb
 %%DATADIR%%/lib/proxy/settings/global.rb
 %%DATADIR%%/lib/proxy/settings/plugin.rb
-%%DATADIR%%/lib/proxy/settings.rb
 %%DATADIR%%/lib/proxy/util.rb
 %%DATADIR%%/lib/proxy/validations.rb
 %%DATADIR%%/lib/proxy/virsh.rb
-%%DATADIR%%/lib/proxy.rb
 %%DATADIR%%/lib/rack-patch.rb
-%%DATADIR%%/lib/sinatra/authorization.rb
 %%DATADIR%%/lib/sinatra-patch.rb
+%%DATADIR%%/lib/sinatra/authorization.rb
 %%DATADIR%%/lib/smart_proxy.rb
 %%DATADIR%%/lib/smart_proxy_for_testing.rb
 %%DATADIR%%/modules/bmc/base.rb
@@ -57,6 +58,7 @@ sbin/smart-proxy
 %%DATADIR%%/modules/bmc/http_config.ru
 %%DATADIR%%/modules/bmc/ipmi.rb
 %%DATADIR%%/modules/bmc/shell.rb
+%%DATADIR%%/modules/dhcp/dhcp.rb
 %%DATADIR%%/modules/dhcp/dhcp_api.rb
 %%DATADIR%%/modules/dhcp/dhcp_plugin.rb
 %%DATADIR%%/modules/dhcp/http_config.ru
@@ -66,12 +68,11 @@ sbin/smart-proxy
 %%DATADIR%%/modules/dhcp/providers/server/ms.rb
 %%DATADIR%%/modules/dhcp/providers/server/native_ms.rb
 %%DATADIR%%/modules/dhcp/providers/server/virsh.rb
+%%DATADIR%%/modules/dhcp/record.rb
 %%DATADIR%%/modules/dhcp/record/lease.rb
 %%DATADIR%%/modules/dhcp/record/reservation.rb
-%%DATADIR%%/modules/dhcp/record.rb
 %%DATADIR%%/modules/dhcp/server.rb
 %%DATADIR%%/modules/dhcp/subnet.rb
-%%DATADIR%%/modules/dhcp/dhcp.rb
 %%DATADIR%%/modules/dns/dns.rb
 %%DATADIR%%/modules/dns/dns_api.rb
 %%DATADIR%%/modules/dns/dns_plugin.rb
@@ -88,12 +89,14 @@ sbin/smart-proxy
 %%DATADIR%%/modules/puppet_proxy/class_scanner.rb
 %%DATADIR%%/modules/puppet_proxy/class_scanner_base.rb
 %%DATADIR%%/modules/puppet_proxy/class_scanner_eparser.rb
+%%DATADIR%%/modules/puppet_proxy/class_scanner_factory.rb
 %%DATADIR%%/modules/puppet_proxy/config_reader.rb
 %%DATADIR%%/modules/puppet_proxy/customrun.rb
 %%DATADIR%%/modules/puppet_proxy/environment.rb
 %%DATADIR%%/modules/puppet_proxy/http_config.ru
 %%DATADIR%%/modules/puppet_proxy/initializer.rb
 %%DATADIR%%/modules/puppet_proxy/mcollective.rb
+%%DATADIR%%/modules/puppet_proxy/memory_store.rb
 %%DATADIR%%/modules/puppet_proxy/puppet.rb
 %%DATADIR%%/modules/puppet_proxy/puppet_api.rb
 %%DATADIR%%/modules/puppet_proxy/puppet_cache.rb

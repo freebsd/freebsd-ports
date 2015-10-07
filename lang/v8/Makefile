@@ -3,6 +3,7 @@
 
 PORTNAME=	v8
 PORTVERSION=	3.18.5
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/vanilla
 
@@ -26,8 +27,7 @@ USES=		alias compiler cpe execinfo gmake python:2 shebangfix tar:xz
 CPE_VENDOR=	google
 
 SHEBANG_FILES=	build/gyp/gyp
-python_OLD_CMD=	${SETENV} python
-python_CMD=	${PYTHON_CMD}
+python_OLD_CMD=	/usr/bin/env python
 
 .include <bsd.port.pre.mk>
 

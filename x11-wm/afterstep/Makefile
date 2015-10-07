@@ -16,7 +16,6 @@ RUN_DEPENDS=	asclock:${PORTSDIR}/x11-clocks/asclock
 
 CONFLICTS?=	afterstep-2*
 PORTSCOUT=	limit:^1\.[0-9.]*$$
-NO_LATEST_LINK=	yes
 
 USES=		imake
 USE_XORG=	xpm xext x11

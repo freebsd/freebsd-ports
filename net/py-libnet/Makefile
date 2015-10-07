@@ -3,7 +3,7 @@
 
 PORTNAME=	libnet
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,6 +11,7 @@ MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Python module for the libnet packet construction library
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
 
@@ -27,16 +28,14 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 OPTIONS_DEFINE=	EXAMPLES
 OSVER=		uname -r
 
-.include <bsd.port.options.mk>
-
 do-install:
-	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
-	${INSTALL_DATA} \
+	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+	${INSTALL_LIB} \
 	${WRKSRC}/build/lib.${OPSYS:tl}-$$(${OSVER})-${ARCH}-${PYTHON_VER}/${PORTNAME}.so \
-	${STAGEDIR}${PYTHON_SITELIBDIR}
-.if ${PORT_OPTIONS:MEXAMPLES}
+	${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
-.endif
 
 .include <bsd.port.mk>

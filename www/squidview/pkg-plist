@@ -5,5 +5,3 @@ man/man1/squidview.1.gz
 %%DATADIR%%/aliases
 %%DATADIR%%/users
 %%DATADIR%%/words
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

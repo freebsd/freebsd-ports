@@ -86,10 +86,7 @@ index 70265a7..0a9b21a 100644
  MOZ_JEMALLOC_API void
  jemalloc_stats_impl(jemalloc_stats_t *stats)
  {
-@@ -93,7 +147,8 @@ jemalloc_stats_impl(jemalloc_stats_t *stats)
-   // We could get this value out of base.c::base_pages, but that really should
-   // be an upstream change, so don't worry about it for now.
-   stats->bookkeeping = 0;
+@@ -96,4 +150,5 @@ jemalloc_stats_impl(jemalloc_stats_t *stats)
 -  stats->bin_unused = 0;
 +
 +  stats->bin_unused = compute_bin_unused(narenas);

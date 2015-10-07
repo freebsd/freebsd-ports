@@ -441,3 +441,6 @@ lib/sams2/libloadavg.so.1.0.0
 %%WWWDIR%%/trangeclass.php
 %%WWWDIR%%/tray.php
 %%WWWDIR%%/userclass.php
+@dir %%WWWDIR%%/plugins/squid/lang
+@dir %%WWWDIR%%/data
+@dir %%WWWDIR%%/backup

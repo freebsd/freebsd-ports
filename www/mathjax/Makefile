@@ -5,8 +5,11 @@ PORTNAME=	MathJax
 PORTVERSION=	2.4.0
 CATEGORIES=	www
 
-MAINTAINER=	lukasz.stelmach@iem.pw.edu.pl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-browser JavaScript display engine for mathematics
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_BUILD=	yes
 NO_ARCH=	yes

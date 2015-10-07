@@ -290,10 +290,3 @@
 %%WWWDIR%%/wsdl.tt
 %%WWWDIR%%/wsdldoc.tt
 %%WWWDIR%%/yapcna2007.pdf
-@dirrmtry %%WWWDIR%%/sfbb
-@dirrmtry %%WWWDIR%%/moxie
-@dirrmtry %%WWWDIR%%/js
-@dirrmtry %%WWWDIR%%/images/tenttut
-@dirrmtry %%WWWDIR%%/images
-@dirrmtry %%WWWDIR%%/css
-@dirrmtry %%WWWDIR%%

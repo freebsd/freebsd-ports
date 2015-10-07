@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Plack-Middleware-MethodOverride
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,6 +19,7 @@ TEST_DEPENDS=	p5-Test-Pod>=1.41:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=1.06:${PORTSDIR}/devel/p5-Test-Pod-Coverage \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

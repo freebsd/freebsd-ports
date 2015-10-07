@@ -1,6 +1,6 @@
---- src/libcw/Makefile.in.orig	2014-12-12 03:00:52.000000000 -0800
-+++ src/libcw/Makefile.in	2014-12-12 03:04:21.000000000 -0800
-@@ -663,7 +663,7 @@
+--- src/libcw/Makefile.in.orig	2015-06-10 20:55:54 UTC
++++ src/libcw/Makefile.in
+@@ -690,7 +690,7 @@ libcw_test_simple_gen_LDADD = -lm -lpthr
  libcw_test_simple_gen_CFLAGS = -rdynamic
  
  # target: libcw.pc

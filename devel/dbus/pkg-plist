@@ -24,11 +24,11 @@ include/dbus-%%VERSION%%/dbus/dbus-syntax.h
 include/dbus-%%VERSION%%/dbus/dbus-threads.h
 include/dbus-%%VERSION%%/dbus/dbus-types.h
 include/dbus-%%VERSION%%/dbus/dbus.h
-include/dbus-%%VERSION%%/include/dbus/dbus-arch-deps.h
+lib/dbus-%%VERSION%%/include/dbus/dbus-arch-deps.h
 lib/libdbus-1.a
 lib/libdbus-1.so
 lib/libdbus-1.so.3
-lib/libdbus-1.so.3.8.11
+lib/libdbus-1.so.3.8.13
 libdata/pkgconfig/dbus-1.pc
 @(,%%GROUPS%%,4750) libexec/dbus-daemon-launch-helper
 %%MANPAGES%%man/man1/dbus-cleanup-sockets.1.gz

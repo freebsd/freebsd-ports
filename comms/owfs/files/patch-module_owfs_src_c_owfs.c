@@ -1,6 +1,6 @@
---- module/owfs/src/c/owfs.c.orig	2014-10-11 03:23:18.000000000 +0400
-+++ module/owfs/src/c/owfs.c	2014-12-30 19:53:53.000000000 +0300
-@@ -129,7 +129,7 @@
+--- module/owfs/src/c/owfs.c.orig	2015-02-23 03:46:11 UTC
++++ module/owfs/src/c/owfs.c
+@@ -128,7 +128,7 @@ int main(int argc, char *argv[])
  
  	// Unmount just in case
  	// No checks -- can fail without consequences

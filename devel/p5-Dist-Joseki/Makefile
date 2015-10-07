@@ -20,16 +20,11 @@ BUILD_DEPENDS=	p5-App-Cmd>=0:${PORTSDIR}/devel/p5-App-Cmd \
 		p5-Error>=0:${PORTSDIR}/lang/p5-Error \
 		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-Getopt-Attribute>=0:${PORTSDIR}/devel/p5-Getopt-Attribute \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
-RUN_DEPENDS=	p5-App-Cmd>=0:${PORTSDIR}/devel/p5-App-Cmd \
-		p5-Class-Accessor-Complex>=0:${PORTSDIR}/devel/p5-Class-Accessor-Complex \
-		p5-Data-Rmap>=0:${PORTSDIR}/devel/p5-Data-Rmap \
-		p5-Error>=0:${PORTSDIR}/lang/p5-Error \
-		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
-		p5-Getopt-Attribute>=0:${PORTSDIR}/devel/p5-Getopt-Attribute \
-		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS+=	p5-URI>=0:${PORTSDIR}/net/p5-URI
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

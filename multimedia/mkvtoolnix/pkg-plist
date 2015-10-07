@@ -1,3 +1,12 @@
+%%QT5%%bin/mkvtoolnix-gui
+%%QT5%%man/de/man1/mkvtoolnix-gui.1.gz
+%%QT5%%man/es/man1/mkvtoolnix-gui.1.gz
+%%QT5%%man/ja/man1/mkvtoolnix-gui.1.gz
+%%QT5%%man/man1/mkvtoolnix-gui.1.gz
+%%QT5%%man/nl/man1/mkvtoolnix-gui.1.gz
+%%QT5%%man/uk/man1/mkvtoolnix-gui.1.gz
+%%QT5%%man/zh_CN/man1/mkvtoolnix-gui.1.gz
+%%QT5%%share/applications/mkvtoolnix-gui.desktop
 %%WXGTK%%%%DOCSDIR%%/guide/en/images/addingremovingattachments.gif
 %%WXGTK%%%%DOCSDIR%%/guide/en/images/addremovefiles.gif
 %%WXGTK%%%%DOCSDIR%%/guide/en/images/attachmentoptions.gif
@@ -117,6 +126,7 @@
 %%WXGTK%%man/de/man1/mkvmerge.1.gz
 %%WXGTK%%man/de/man1/mkvpropedit.1.gz
 %%WXGTK%%man/de/man1/mmg.1.gz
+%%WXGTK%%man/es/man1/mmg.1.gz
 %%WXGTK%%man/ja/man1/mmg.1.gz
 %%WXGTK%%man/man1/mmg.1.gz
 %%WXGTK%%man/nl/man1/mmg.1.gz
@@ -124,7 +134,6 @@
 %%WXGTK%%man/zh_CN/man1/mmg.1.gz
 %%WXGTK%%share/applications/mkvinfo.desktop
 %%WXGTK%%share/applications/mkvmergeGUI.desktop
-%%WXGTK%%share/applications/mkvtoolnix-gui.desktop
 %%WXGTK%%share/icons/hicolor/128x128/apps/mkvextract.png
 %%WXGTK%%share/icons/hicolor/128x128/apps/mkvinfo.png
 %%WXGTK%%share/icons/hicolor/128x128/apps/mkvmerge.png
@@ -190,6 +199,10 @@ bin/mkvextract
 bin/mkvinfo
 bin/mkvmerge
 bin/mkvpropedit
+man/es/man1/mkvextract.1.gz
+man/es/man1/mkvinfo.1.gz
+man/es/man1/mkvmerge.1.gz
+man/es/man1/mkvpropedit.1.gz
 man/ja/man1/mkvextract.1.gz
 man/ja/man1/mkvinfo.1.gz
 man/ja/man1/mkvmerge.1.gz

@@ -23,7 +23,6 @@ SHEBANG_FILES=	admin/CTK/CTK-run.pre admin/server.py \
 		doc/test_images.py doc/test_links.py \
 		po/admin/generate_POTFILESin.py po/po_stats.py \
 		qa/fcgi.py qa/run-tests.py
-python_CMD=	${PYTHON_CMD}
 USE_RC_SUBR=	cherokee
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes

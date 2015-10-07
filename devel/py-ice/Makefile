@@ -22,7 +22,6 @@ INSTALL_WRKSRC=	${WRKSRC}/python
 
 SHEBANG_LANG=	python
 python_OLD_CMD=	/usr/bin/env python
-python_CMD=	${PYTHON_CMD}
 SHEBANG_FILES=	${BUILD_WRKSRC}/config/s2py.py
 
 MAKE_ENV+=	PYTHON_VERSION=${PYTHON_VERSION}
@@ -30,8 +29,6 @@ MAKE_ENV+=	PYTHON_VERSION=${PYTHON_VERSION}
 LIB_VRS=	${PORTVERSION:S|.||g:C|[0-9]$||}
 PLIST_SUB=	LIB_VERSION="${PORTVERSION}" LIB_VRS="${LIB_VRS}"
 
-# bypass infrastructure bug (taken from www/py-django)
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 OPTIONS_DEFINE=	DEBUG TESTS
 OPTIONS_DEFAULT=TESTS
 TESTS_DESC=	Run tests

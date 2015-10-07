@@ -48,11 +48,11 @@
 %%WWWDIR%%/css/images/ui-bg_gloss-wave_35_f6a828_500x100.png
 %%WWWDIR%%/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
 %%WWWDIR%%/css/images/ui-bg_highlight-soft_75_ffe45c_1x100.png
-%%WWWDIR%%/css/images/ui-icons_222222_256x240.png
-%%WWWDIR%%/css/images/ui-icons_228ef1_256x240.png
-%%WWWDIR%%/css/images/ui-icons_ef8c08_256x240.png
-%%WWWDIR%%/css/images/ui-icons_ffd27a_256x240.png
-%%WWWDIR%%/css/images/ui-icons_ffffff_256x240.png
+%%WWWDIR%%/css/images/ui-icons_222222_256x%%APACHE_VERSION%%0.png
+%%WWWDIR%%/css/images/ui-icons_228ef1_256x%%APACHE_VERSION%%0.png
+%%WWWDIR%%/css/images/ui-icons_ef8c08_256x%%APACHE_VERSION%%0.png
+%%WWWDIR%%/css/images/ui-icons_ffd27a_256x%%APACHE_VERSION%%0.png
+%%WWWDIR%%/css/images/ui-icons_ffffff_256x%%APACHE_VERSION%%0.png
 %%WWWDIR%%/css/jquery-ui.min.css
 %%WWWDIR%%/customer_domains.php
 %%WWWDIR%%/customer_email.php
@@ -99,517 +99,161 @@
 %%WWWDIR%%/js/jquery.min.js
 %%WWWDIR%%/js/jquery.tablesorter.min.js
 %%WWWDIR%%/js/plugins/jquery.flot.resize.min.js
+%%WWWDIR%%/js/plugins/jquery.tablesorter.sizeparser.min.js
 %%WWWDIR%%/lib/ajax.php
 %%WWWDIR%%/lib/classes/Smarty
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/COPYING.lib
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/README
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/SMARTY_2_BC_NOTES.txt
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/SMARTY_3.0_BC_NOTES.txt
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/SMARTY_3.1_NOTES.txt
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/change_log.txt
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/demo/configs/test.conf
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/demo/index.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/demo/plugins/cacheresource.apc.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/demo/plugins/cacheresource.memcache.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/demo/plugins/cacheresource.mysql.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/demo/plugins/resource.extendsall.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/demo/plugins/resource.mysql.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/demo/plugins/resource.mysqls.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/demo/templates/footer.tpl
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/demo/templates/header.tpl
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/demo/templates/index.tpl
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/Smarty.class.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/SmartyBC.class.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/debug.tpl
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/block.textformat.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/function.counter.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/function.cycle.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/function.fetch.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/function.html_checkboxes.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/function.html_image.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/function.html_options.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/function.html_radios.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/function.html_select_date.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/function.html_select_time.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/function.html_table.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/function.mailto.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/function.math.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/modifier.capitalize.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/modifier.date_format.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/modifier.debug_print_var.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/modifier.escape.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/modifier.regex_replace.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/modifier.replace.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/modifier.spacify.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/modifier.truncate.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/modifiercompiler.cat.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/modifiercompiler.count_characters.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/modifiercompiler.count_paragraphs.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/modifiercompiler.count_sentences.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/modifiercompiler.count_words.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/modifiercompiler.default.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/modifiercompiler.escape.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/modifiercompiler.from_charset.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/modifiercompiler.indent.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/modifiercompiler.lower.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/modifiercompiler.noprint.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/modifiercompiler.string_format.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/modifiercompiler.strip.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/modifiercompiler.strip_tags.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/modifiercompiler.to_charset.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/modifiercompiler.unescape.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/modifiercompiler.upper.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/modifiercompiler.wordwrap.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/outputfilter.trimwhitespace.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/shared.escape_special_chars.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/shared.literal_compiler_param.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/shared.make_timestamp.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/shared.mb_str_replace.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/shared.mb_unicode.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/shared.mb_wordwrap.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins/variablefilter.htmlspecialchars.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_cacheresource.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_cacheresource_custom.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_cacheresource_keyvaluestore.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_config_source.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_cacheresource_file.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_append.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_assign.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_block.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_break.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_call.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_capture.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_config_load.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_continue.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_debug.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_eval.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_extends.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_for.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_foreach.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_function.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_if.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_include.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_include_php.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_insert.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_ldelim.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_nocache.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_private_block_plugin.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_private_function_plugin.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_private_modifier.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_private_object_block_function.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_private_object_function.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_private_print_expression.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_private_registered_block.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_private_registered_function.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_private_special_variable.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_rdelim.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_section.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_setfilter.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compile_while.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_compilebase.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_config.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_config_file_compiler.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_configfilelexer.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_configfileparser.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_data.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_debug.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_filter_handler.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_function_call_handler.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_get_include_path.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_nocache_insert.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_parsetree.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_resource_eval.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_resource_extends.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_resource_file.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_resource_php.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_resource_registered.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_resource_stream.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_resource_string.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_smartytemplatecompiler.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_template.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_templatebase.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_templatecompilerbase.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_templatelexer.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_templateparser.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_utility.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_internal_write_file.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_resource.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_resource_custom.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_resource_recompiled.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_resource_uncompiled.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins/smarty_security.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/COPYING.lib
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/README
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/SMARTY_2_BC_NOTES.txt
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/SMARTY_3.0_BC_NOTES.txt
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/SMARTY_3.1_NOTES.txt
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/change_log.txt
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/demo/configs/test.conf
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/demo/index.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/demo/plugins/cacheresource.apc.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/demo/plugins/cacheresource.memcache.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/demo/plugins/cacheresource.mysql.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/demo/plugins/resource.extendsall.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/demo/plugins/resource.mysql.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/demo/plugins/resource.mysqls.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/demo/templates/footer.tpl
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/demo/templates/header.tpl
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/demo/templates/index.tpl
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/Smarty.class.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/SmartyBC.class.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/debug.tpl
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/block.textformat.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/function.counter.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/function.cycle.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/function.fetch.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/function.html_checkboxes.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/function.html_image.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/function.html_options.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/function.html_radios.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/function.html_select_date.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/function.html_select_time.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/function.html_table.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/function.mailto.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/function.math.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifier.capitalize.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifier.date_format.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifier.debug_print_var.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifier.escape.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifier.regex_replace.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifier.replace.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifier.spacify.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifier.truncate.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.cat.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.count_characters.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.count_paragraphs.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.count_sentences.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.count_words.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.default.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.escape.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.from_charset.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.indent.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.lower.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.noprint.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.string_format.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.strip.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.strip_tags.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.to_charset.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.unescape.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.upper.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.wordwrap.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/outputfilter.trimwhitespace.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/shared.escape_special_chars.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/shared.literal_compiler_param.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/shared.make_timestamp.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/shared.mb_str_replace.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/shared.mb_unicode.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/shared.mb_wordwrap.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/variablefilter.htmlspecialchars.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_cacheresource.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_cacheresource_custom.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_cacheresource_keyvaluestore.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_config_source.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_cacheresource_file.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_append.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_assign.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_block.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_break.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_call.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_capture.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_config_load.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_continue.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_debug.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_eval.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_extends.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_for.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_foreach.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_function.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_if.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_include.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_include_php.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_insert.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_ldelim.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_nocache.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_private_block_plugin.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_private_function_plugin.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_private_modifier.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_private_object_block_function.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_private_object_function.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_private_print_expression.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_private_registered_block.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_private_registered_function.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_private_special_variable.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_rdelim.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_section.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_setfilter.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_while.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compilebase.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_config.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_config_file_compiler.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_configfilelexer.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_configfileparser.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_data.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_debug.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_filter_handler.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_function_call_handler.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_get_include_path.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_nocache_insert.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_parsetree.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_resource_eval.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_resource_extends.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_resource_file.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_resource_php.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_resource_registered.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_resource_stream.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_resource_string.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_smartytemplatecompiler.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_template.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_templatebase.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_templatecompilerbase.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_templatelexer.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_templateparser.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_utility.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_write_file.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_resource.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_resource_custom.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_resource_recompiled.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_resource_uncompiled.php
+%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_security.php
+%%WWWDIR%%/lib/classes/bulk/class.DomainBulkAction.php
 %%WWWDIR%%/lib/classes/database/class.Database.php
 %%WWWDIR%%/lib/classes/database/class.DbManager.php
 %%WWWDIR%%/lib/classes/database/manager/class.DbManagerMySQL.php
-%%WWWDIR%%/lib/classes/htmlpurifier/CREDITS
-%%WWWDIR%%/lib/classes/htmlpurifier/LICENSE
-%%WWWDIR%%/lib/classes/htmlpurifier/VERSION
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier.auto.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier.autoload.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier.composer.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier.func.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier.includes.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier.kses.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier.path.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier.safe-includes.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrCollections.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/AlphaValue.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Background.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/BackgroundPosition.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Border.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Color.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Composite.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/DenyElementDecorator.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Filter.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Font.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/FontFamily.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Ident.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/ImportantDecorator.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Length.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/ListStyle.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Multiple.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Number.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Percentage.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/TextDecoration.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/URI.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/Clone.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/Enum.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/Bool.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/Class.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/Color.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/FrameTarget.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/ID.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/Length.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/LinkTypes.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/MultiLength.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/Nmtokens.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/Pixels.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/Integer.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/Lang.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/Switch.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/Text.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/URI.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/URI/Email.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/URI/Email/SimpleCheck.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/URI/Host.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/URI/IPv4.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/URI/IPv6.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/Background.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/BdoDir.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/BgColor.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/BoolToCSS.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/Border.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/EnumToCSS.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/ImgRequired.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/ImgSpace.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/Input.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/Lang.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/Length.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/Name.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/NameSync.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/Nofollow.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/SafeEmbed.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/SafeObject.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/SafeParam.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/ScriptRequired.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/TargetBlank.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/Textarea.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTypes.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrValidator.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Bootstrap.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/CSSDefinition.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ChildDef.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ChildDef/Chameleon.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ChildDef/Custom.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ChildDef/Empty.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ChildDef/List.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ChildDef/Optional.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ChildDef/Required.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ChildDef/StrictBlockquote.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ChildDef/Table.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Config.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/Builder/ConfigSchema.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/Builder/Xml.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/Exception.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/Interchange.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/Interchange/Directive.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/Interchange/Id.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/InterchangeBuilder.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/Validator.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/ValidatorAtom.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema.ser
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.AllowedClasses.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.AllowedFrameTargets.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.AllowedRel.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.AllowedRev.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.ClassUseCDATA.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.DefaultImageAlt.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.DefaultInvalidImage.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.DefaultInvalidImageAlt.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.DefaultTextDir.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.EnableID.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.ForbiddenClasses.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDBlacklist.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDBlacklistRegexp.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefix.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefixLocal.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.AutoParagraph.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.Custom.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.DisplayLinkURI.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.Linkify.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.PurifierLinkify.DocURL.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.PurifierLinkify.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.RemoveNbsp.Exceptions.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.RemoveNbsp.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveSpansWithoutAttributes.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.AllowImportant.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.AllowTricky.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.AllowedFonts.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.AllowedProperties.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.DefinitionRev.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.ForbiddenProperties.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.MaxImgLength.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.Proprietary.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.Trusted.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Cache.DefinitionImpl.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Cache.SerializerPath.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Cache.SerializerPermissions.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.AggressivelyFixLt.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.CollectErrors.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.ColorKeywords.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.ConvertDocumentToFragment.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.DirectLexLineNumberSyncInterval.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.DisableExcludes.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.EnableIDNA.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.Encoding.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.EscapeInvalidChildren.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.EscapeInvalidTags.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.EscapeNonASCIICharacters.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.HiddenElements.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.Language.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.LexerImpl.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.MaintainLineNumbers.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.NormalizeNewlines.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.RemoveInvalidImg.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.RemoveProcessingInstructions.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.RemoveScriptContents.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.Custom.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.Escaping.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.Scope.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.TidyImpl.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.YouTube.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Allowed.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedAttributes.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedComments.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedCommentsRegexp.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedElements.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedModules.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Attr.Name.UseCDATA.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.BlockWrapper.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.CoreModules.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.CustomDoctype.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.DefinitionID.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.DefinitionRev.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Doctype.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.FlashAllowFullScreen.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.ForbiddenAttributes.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.ForbiddenElements.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.MaxImgLength.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Nofollow.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Parent.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Proprietary.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.SafeEmbed.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.SafeIframe.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.SafeObject.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.SafeScripting.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Strict.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.TargetBlank.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.TidyAdd.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.TidyLevel.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.TidyRemove.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Trusted.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.XHTML.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.CommentScriptContents.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.FixInnerHTML.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.FlashCompat.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.Newline.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.SortAttr.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.TidyFormat.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Test.ForceNoIconv.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.AllowedSchemes.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.Base.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DefaultScheme.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DefinitionID.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DefinitionRev.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.Disable.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DisableExternal.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DisableExternalResources.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DisableResources.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.Host.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.HostBlacklist.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.MakeAbsolute.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.Munge.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.MungeResources.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.MungeSecretKey.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.OverrideAllowedSchemes.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.SafeIframeRegexp.txt
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/info.ini
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ContentSets.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Context.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Definition.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/DefinitionCache.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/DefinitionCache/Decorator.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/DefinitionCache/Decorator/Cleanup.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/DefinitionCache/Decorator/Memory.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/DefinitionCache/Decorator/Template.php.in
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/DefinitionCache/Null.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer/README
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/DefinitionCacheFactory.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Doctype.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/DoctypeRegistry.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ElementDef.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Encoder.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/EntityLookup.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/EntityLookup/entities.ser
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/EntityParser.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ErrorCollector.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ErrorStruct.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Exception.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Filter.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Filter/ExtractStyleBlocks.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Filter/YouTube.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Generator.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLDefinition.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Bdo.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/CommonAttributes.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Edit.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Forms.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Hypertext.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Iframe.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Image.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Legacy.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/List.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Name.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Nofollow.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/NonXMLCommonAttributes.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Object.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Presentation.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Proprietary.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Ruby.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/SafeEmbed.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/SafeObject.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/SafeScripting.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Scripting.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/StyleAttribute.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Tables.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Target.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/TargetBlank.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Text.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Tidy.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Tidy/Name.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Tidy/Proprietary.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Tidy/Strict.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Tidy/Transitional.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Tidy/XHTML.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Tidy/XHTMLAndHTML4.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/XMLCommonAttributes.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModuleManager.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/IDAccumulator.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Injector.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Injector/AutoParagraph.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Injector/DisplayLinkURI.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Injector/Linkify.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Injector/PurifierLinkify.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Injector/RemoveEmpty.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Injector/RemoveSpansWithoutAttributes.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Injector/SafeObject.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Language.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Language/classes/en-x-test.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Language/messages/en-x-test.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Language/messages/en-x-testmini.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Language/messages/en.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/LanguageFactory.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Length.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Lexer.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Lexer/DOMLex.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Lexer/DirectLex.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Lexer/PEARSax3.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Lexer/PH5P.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/PercentEncoder.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Printer.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Printer/CSSDefinition.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Printer/ConfigForm.css
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Printer/ConfigForm.js
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Printer/ConfigForm.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Printer/HTMLDefinition.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/PropertyList.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/PropertyListIterator.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Strategy.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Strategy/Composite.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Strategy/Core.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Strategy/FixNesting.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Strategy/MakeWellFormed.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Strategy/RemoveForeignElements.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Strategy/ValidateAttributes.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/StringHash.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/StringHashParser.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/TagTransform.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/TagTransform/Font.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/TagTransform/Simple.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Token.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Token/Comment.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Token/Empty.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Token/End.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Token/Start.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Token/Tag.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Token/Text.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/TokenFactory.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/URI.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/URIDefinition.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/URIFilter.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/URIFilter/DisableExternal.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/URIFilter/DisableExternalResources.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/URIFilter/DisableResources.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/URIFilter/HostBlacklist.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/URIFilter/MakeAbsolute.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/URIFilter/Munge.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/URIFilter/SafeIframe.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/URIParser.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/URIScheme.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/URIScheme/data.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/URIScheme/file.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/URIScheme/ftp.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/URIScheme/http.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/URIScheme/https.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/URIScheme/mailto.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/URIScheme/news.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/URIScheme/nntp.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/URISchemeRegistry.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/UnitConverter.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/VarParser.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/VarParser/Flexible.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/VarParser/Native.php
-%%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/VarParserException.php
 %%WWWDIR%%/lib/classes/idna/class.idna_convert.php
 %%WWWDIR%%/lib/classes/idna/class.idna_convert_wrapper.php
 %%WWWDIR%%/lib/classes/idna/npdata.ser
 %%WWWDIR%%/lib/classes/integrity/class.IntegrityCheck.php
+%%WWWDIR%%/lib/classes/io/class.frxDirectory.php
 %%WWWDIR%%/lib/classes/logger/abstract.AbstractLogger.php
 %%WWWDIR%%/lib/classes/logger/class.FileLogger.php
 %%WWWDIR%%/lib/classes/logger/class.FroxlorLogger.php
 %%WWWDIR%%/lib/classes/logger/class.MysqlLogger.php
 %%WWWDIR%%/lib/classes/logger/class.SysLogger.php
 %%WWWDIR%%/lib/classes/mail/class.mailLogParser.php
-%%WWWDIR%%/lib/classes/output/class.Minify_HTML.php
 %%WWWDIR%%/lib/classes/output/class.htmlform.php
 %%WWWDIR%%/lib/classes/output/class.languageSelect.php
 %%WWWDIR%%/lib/classes/output/class.linker.php
@@ -630,9 +274,11 @@
 %%WWWDIR%%/lib/configfiles/gentoo.inc.php
 %%WWWDIR%%/lib/configfiles/lucid.inc.php
 %%WWWDIR%%/lib/configfiles/precise.inc.php
+%%WWWDIR%%/lib/configfiles/rhel7.inc.php
 %%WWWDIR%%/lib/configfiles/sle10.inc.php
+%%WWWDIR%%/lib/configfiles/sle11.inc.php
 %%WWWDIR%%/lib/configfiles/squeeze.inc.php
-%%WWWDIR%%/lib/configfiles/suse11.inc.php
+%%WWWDIR%%/lib/configfiles/trusty.inc.php
 %%WWWDIR%%/lib/configfiles/wheezy.inc.php
 %%WWWDIR%%/lib/configfiles_index.inc.php
 %%WWWDIR%%/lib/cron_init.php
@@ -644,6 +290,7 @@
 %%WWWDIR%%/lib/formfields/admin/customer/formfield.customer_edit.php
 %%WWWDIR%%/lib/formfields/admin/domains/formfield.domains_add.php
 %%WWWDIR%%/lib/formfields/admin/domains/formfield.domains_edit.php
+%%WWWDIR%%/lib/formfields/admin/domains/formfield.domains_import.php
 %%WWWDIR%%/lib/formfields/admin/ipsandports/formfield.ipsandports_add.php
 %%WWWDIR%%/lib/formfields/admin/ipsandports/formfield.ipsandports_edit.php
 %%WWWDIR%%/lib/formfields/admin/phpconfig/formfield.phpconfig_add.php
@@ -679,7 +326,6 @@
 %%WWWDIR%%/lib/functions/database/function.correctMysqlUsers.php
 %%WWWDIR%%/lib/functions/filedir/function.fileImmutable.php
 %%WWWDIR%%/lib/functions/filedir/function.findDirs.php
-%%WWWDIR%%/lib/functions/filedir/function.isConfigDir.php
 %%WWWDIR%%/lib/functions/filedir/function.makeChownWithNewStats.php
 %%WWWDIR%%/lib/functions/filedir/function.makeCorrectDir.php
 %%WWWDIR%%/lib/functions/filedir/function.makeCorrectFile.php
@@ -695,6 +341,8 @@
 %%WWWDIR%%/lib/functions/formfields/date/function.getFormFieldOutputDate.php
 %%WWWDIR%%/lib/functions/formfields/date/function.manipulateFormFieldDataDate.php
 %%WWWDIR%%/lib/functions/formfields/date/function.validateFormFieldDate.php
+%%WWWDIR%%/lib/functions/formfields/file/function.getFormFieldOutputFile.php
+%%WWWDIR%%/lib/functions/formfields/file/function.validateFormFieldFile.php
 %%WWWDIR%%/lib/functions/formfields/function.buildForm.php
 %%WWWDIR%%/lib/functions/formfields/function.buildFormEx.php
 %%WWWDIR%%/lib/functions/formfields/function.checkPlausibilityFormField.php
@@ -730,7 +378,6 @@
 %%WWWDIR%%/lib/functions/%%AP_NAME%%/function.CorrectErrorDocument.php
 %%WWWDIR%%/lib/functions/%%AP_NAME%%/function.CronjobFunctions.php
 %%WWWDIR%%/lib/functions/%%AP_NAME%%/function.checkCrondConfigurationFile.php
-%%WWWDIR%%/lib/functions/%%AP_NAME%%/function.convertUtf8.php
 %%WWWDIR%%/lib/functions/%%AP_NAME%%/function.createAWStatsConf.php
 %%WWWDIR%%/lib/functions/%%AP_NAME%%/function.customerHasPerlEnabled.php
 %%WWWDIR%%/lib/functions/%%AP_NAME%%/function.domainHasMainSubDomains.php
@@ -746,8 +393,8 @@
 %%WWWDIR%%/lib/functions/%%AP_NAME%%/function.getThemes.php
 %%WWWDIR%%/lib/functions/%%AP_NAME%%/function.inserttask.php
 %%WWWDIR%%/lib/functions/%%AP_NAME%%/function.isCustomerStdSubdomain.php
-%%WWWDIR%%/lib/functions/%%AP_NAME%%/function.isUtf8.php
 %%WWWDIR%%/lib/functions/%%AP_NAME%%/function.loadConfigArrayDir.php
+%%WWWDIR%%/lib/functions/%%AP_NAME%%/function.moveCustomerToAdmin.php
 %%WWWDIR%%/lib/functions/%%AP_NAME%%/function.phpErrHandler.php
 %%WWWDIR%%/lib/functions/%%AP_NAME%%/function.updateCounters.php
 %%WWWDIR%%/lib/functions/%%AP_NAME%%/function.updateFunctions.php
@@ -756,6 +403,7 @@
 %%WWWDIR%%/lib/functions/output/function.RedirectCode.php
 %%WWWDIR%%/lib/functions/output/function.ask_yesno.php
 %%WWWDIR%%/lib/functions/output/function.buildNavigation.php
+%%WWWDIR%%/lib/functions/output/function.dieWithMail.php
 %%WWWDIR%%/lib/functions/output/function.getCorrectFullUserDetails.php
 %%WWWDIR%%/lib/functions/output/function.getCorrectUserSalutation.php
 %%WWWDIR%%/lib/functions/output/function.getTemplate.php
@@ -787,6 +435,7 @@
 %%WWWDIR%%/lib/functions/settings/function.storeSettingResetCatchall.php
 %%WWWDIR%%/lib/functions/smarty_plugins/gettext-prefilter.php
 %%WWWDIR%%/lib/functions/system/function.checklastguid.php
+%%WWWDIR%%/lib/functions/system/function.getAvailablePasswordHashes.php
 %%WWWDIR%%/lib/functions/system/function.isFreeBSD.php
 %%WWWDIR%%/lib/functions/system/function.makeCryptPassword.php
 %%WWWDIR%%/lib/functions/validate/function.appendOpenbasedirPath.php
@@ -805,6 +454,7 @@
 %%WWWDIR%%/lib/functions/validate/function.validateDomain.php
 %%WWWDIR%%/lib/functions/validate/function.validateEmail.php
 %%WWWDIR%%/lib/functions/validate/function.validatePassword.php
+%%WWWDIR%%/lib/functions/validate/function.validatePasswordLogin.php
 %%WWWDIR%%/lib/functions/validate/function.validateSqlInterval.php
 %%WWWDIR%%/lib/functions/validate/function.validateUrl.php
 %%WWWDIR%%/lib/functions/validate/function.validateUsername.php
@@ -825,6 +475,7 @@
 %%WWWDIR%%/locales/de/LC_MESSAGES/default.po
 %%WWWDIR%%/locales/en/LC_MESSAGES/default.po
 %%WWWDIR%%/logs/.keep
+%%WWWDIR%%/logs/index.html
 %%WWWDIR%%/scripts/%%AP_NAME%%_master_cronjob.php
 %%WWWDIR%%/scripts/jobs/cron_mailboxsize.php
 %%WWWDIR%%/scripts/jobs/cron_tasks.inc.dns.10.bind.php
@@ -868,6 +519,7 @@
 %%WWWDIR%%/templates/Sparkle/admin/domains/domains_add.tpl
 %%WWWDIR%%/templates/Sparkle/admin/domains/domains_domain.tpl
 %%WWWDIR%%/templates/Sparkle/admin/domains/domains_edit.tpl
+%%WWWDIR%%/templates/Sparkle/admin/domains/domains_import.tpl
 %%WWWDIR%%/templates/Sparkle/admin/index/change_language.tpl
 %%WWWDIR%%/templates/Sparkle/admin/index/change_password.tpl
 %%WWWDIR%%/templates/Sparkle/admin/index/change_theme.tpl
@@ -937,9 +589,7 @@
 %%WWWDIR%%/templates/Sparkle/assets/css/%%AP_NAME%%.css
 %%WWWDIR%%/templates/Sparkle/assets/css/main.css
 %%WWWDIR%%/templates/Sparkle/assets/css/main_ie.css
-%%WWWDIR%%/templates/Sparkle/assets/img/default.png
 %%WWWDIR%%/templates/Sparkle/assets/img/favicon.ico
-%%WWWDIR%%/templates/Sparkle/assets/img/header_g_%%AP_NAME%%.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/add.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/aps_big.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/aps_upload_big.png
@@ -981,6 +631,7 @@
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/htpasswd_add_big.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/htpasswd_big.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/htpasswd_edit_big.png
+%%WWWDIR%%/templates/Sparkle/assets/img/icons/info.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/info_big.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/ipsports_add_big.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/ipsports_big.png
@@ -1090,6 +741,7 @@
 %%WWWDIR%%/templates/Sparkle/customer/traffic/traffic_traffic.tpl
 %%WWWDIR%%/templates/Sparkle/footer.tpl
 %%WWWDIR%%/templates/Sparkle/formfields/bool.tpl
+%%WWWDIR%%/templates/Sparkle/formfields/file.tpl
 %%WWWDIR%%/templates/Sparkle/formfields/hidden.tpl
 %%WWWDIR%%/templates/Sparkle/formfields/hiddenstring.tpl
 %%WWWDIR%%/templates/Sparkle/formfields/label.tpl
@@ -1106,6 +758,7 @@
 %%WWWDIR%%/templates/Sparkle/misc/configurehint.tpl
 %%WWWDIR%%/templates/Sparkle/misc/dberrornice.tpl
 %%WWWDIR%%/templates/Sparkle/misc/error.tpl
+%%WWWDIR%%/templates/Sparkle/misc/form/input_file.tpl
 %%WWWDIR%%/templates/Sparkle/misc/form/input_text.tpl
 %%WWWDIR%%/templates/Sparkle/misc/form/input_textarea.tpl
 %%WWWDIR%%/templates/Sparkle/misc/form/table_end.tpl
@@ -1132,6 +785,7 @@
 %%WWWDIR%%/templates/Sparkle/webftp/webftp_main_multiple.tpl
 %%WWWDIR%%/templates/Sparkle/webftp/webftp_main_prompt.tpl
 %%WWWDIR%%/templates/Sparkle/webftp/webftp_main_rename.tpl
+%%WWWDIR%%/templates/Sparkle/webftp/webftp_navigation_element.tpl
 %%WWWDIR%%/templates/misc/awstatsmodel/awstats.%%AP_NAME%%.model.conf
 %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/apache2/etc_apache2_mods-enabled_fastcgi.conf
 %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/courier/etc_courier_authdaemonrc
@@ -1192,7 +846,9 @@
 %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/dovecot/etc_dovecot_conf.d_10-master.conf
 %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/dovecot/etc_dovecot_conf.d_15-lda.conf
 %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/dovecot/etc_dovecot_conf.d_20-imap.conf
+%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/dovecot/etc_dovecot_conf.d_20-managesieve.conf
 %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/dovecot/etc_dovecot_conf.d_20-pop3.conf
+%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/dovecot/etc_dovecot_conf.d_90-sieve.conf
 %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/dovecot/etc_dovecot_conf.d_auth-sql.conf.ext
 %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/dovecot/etc_dovecot_dovecot-sql.conf.ext
 %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/dovecot/etc_dovecot_dovecot.conf
@@ -1263,6 +919,8 @@
 %%WWWDIR%%/templates/misc/configfiles/freebsd/postfix_mxaccess/etc_postfix_mx_access
 %%WWWDIR%%/templates/misc/configfiles/freebsd/powerdns/usr_local_etc_pdns_pdns.conf
 %%WWWDIR%%/templates/misc/configfiles/freebsd/proftpd/etc_proftpd_proftpd.conf
+%%WWWDIR%%/templates/misc/configfiles/freebsd/pure-ftpd/usr_local_etc_pure-ftpd.conf
+%%WWWDIR%%/templates/misc/configfiles/freebsd/pure-ftpd/usr_local_etc_pureftpd-mysql.conf
 %%WWWDIR%%/templates/misc/configfiles/gentoo/apache2/etc_apache2_modules.d_70_fastcgi.conf
 %%WWWDIR%%/templates/misc/configfiles/gentoo/bind/etc_bind_default.zone
 %%WWWDIR%%/templates/misc/configfiles/gentoo/courier/etc_courier-imap_imapd
@@ -1334,6 +992,28 @@
 %%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/proftpd/etc_proftpd_proftpd.conf
 %%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/pure-ftpd/etc_pure-ftpd.conf
 %%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/pure-ftpd/etc_pure-ftpd_mysql.conf
+%%WWWDIR%%/templates/misc/configfiles/rhel7/cron/etc_cron.d_%%AP_NAME%%
+%%WWWDIR%%/templates/misc/configfiles/rhel7/dovecot/etc_dovecot_conf.d_10-auth.conf
+%%WWWDIR%%/templates/misc/configfiles/rhel7/dovecot/etc_dovecot_conf.d_10-logging.conf
+%%WWWDIR%%/templates/misc/configfiles/rhel7/dovecot/etc_dovecot_conf.d_10-mail.conf
+%%WWWDIR%%/templates/misc/configfiles/rhel7/dovecot/etc_dovecot_conf.d_10-master.conf
+%%WWWDIR%%/templates/misc/configfiles/rhel7/dovecot/etc_dovecot_conf.d_10-ssl.conf
+%%WWWDIR%%/templates/misc/configfiles/rhel7/dovecot/etc_dovecot_conf.d_15-lda.conf
+%%WWWDIR%%/templates/misc/configfiles/rhel7/dovecot/etc_dovecot_conf.d_15-mailboxes.conf
+%%WWWDIR%%/templates/misc/configfiles/rhel7/dovecot/etc_dovecot_conf.d_20-imap.conf
+%%WWWDIR%%/templates/misc/configfiles/rhel7/dovecot/etc_dovecot_conf.d_20-lmtp.conf
+%%WWWDIR%%/templates/misc/configfiles/rhel7/dovecot/etc_dovecot_conf.d_20-managesieve.conf
+%%WWWDIR%%/templates/misc/configfiles/rhel7/dovecot/etc_dovecot_conf.d_20-pop3.conf
+%%WWWDIR%%/templates/misc/configfiles/rhel7/dovecot/etc_dovecot_conf.d_90-sieve.conf
+%%WWWDIR%%/templates/misc/configfiles/rhel7/dovecot/etc_dovecot_dovecot-sql.conf.ext
+%%WWWDIR%%/templates/misc/configfiles/rhel7/dovecot/etc_dovecot_dovecot.conf
+%%WWWDIR%%/templates/misc/configfiles/rhel7/postfix/etc_postfix_main.cf
+%%WWWDIR%%/templates/misc/configfiles/rhel7/postfix/etc_postfix_master.cf
+%%WWWDIR%%/templates/misc/configfiles/rhel7/postfix/etc_postfix_mysql-virtual_alias_maps.cf
+%%WWWDIR%%/templates/misc/configfiles/rhel7/postfix/etc_postfix_mysql-virtual_mailbox_domains.cf
+%%WWWDIR%%/templates/misc/configfiles/rhel7/postfix/etc_postfix_mysql-virtual_mailbox_maps.cf
+%%WWWDIR%%/templates/misc/configfiles/rhel7/postfix/etc_postfix_mysql-virtual_sender_permissions.cf
+%%WWWDIR%%/templates/misc/configfiles/rhel7/proftpd/etc_proftpd_proftpd.conf
 %%WWWDIR%%/templates/misc/configfiles/sle_10/courier/etc_authlib_authdaemonrc
 %%WWWDIR%%/templates/misc/configfiles/sle_10/courier/etc_authlib_authmysqlrc
 %%WWWDIR%%/templates/misc/configfiles/sle_10/cron/etc_cron.d_%%AP_NAME%%
@@ -1443,287 +1123,50 @@
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/pure-ftpd/etc_pure-ftpd_conf_NoAnonymous
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/pure-ftpd/etc_pure-ftpd_conf_PAMAuthentication
 %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/pure-ftpd/etc_pure-ftpd_db_mysql.conf
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/apache2/etc_apache2_mods-enabled_fastcgi.conf
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/courier/etc_courier_authdaemonrc
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/courier/etc_courier_authmysqlrc
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/cron/etc_cron.d_%%AP_NAME%%
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/dovecot/etc_dovecot_conf.d_01_mail_stack_delivery.conf
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/dovecot/etc_dovecot_conf.d_10_auth.conf
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/dovecot/etc_dovecot_dovecot-sql.conf.ext
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/libnss/etc_libnss-mysql-root.cfg
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/libnss/etc_libnss-mysql.cfg
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/libnss/etc_nsswitch.conf
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/lighttpd/etc_lighttpd.conf
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/logrotate/etc_logrotated_%%AP_NAME%%
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/nginx/etc_init.d_php-fcgi
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/nginx/etc_nginx_fastcgi.conf
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/nginx/etc_nginx_nginx.conf
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/postfix_courier/etc_postfix_main.cf
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/postfix_courier/etc_postfix_mysql-virtual_alias_maps.cf
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/postfix_courier/etc_postfix_mysql-virtual_mailbox_domains.cf
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/postfix_courier/etc_postfix_mysql-virtual_mailbox_maps.cf
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/postfix_courier/etc_postfix_mysql-virtual_sender_permissions.cf
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/postfix_courier/etc_postfix_sasl_smtpd.conf
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/postfix_dovecot/etc_postfix_main.cf
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/postfix_dovecot/etc_postfix_master.cf
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/postfix_dovecot/etc_postfix_mysql-virtual_alias_maps.cf
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/postfix_dovecot/etc_postfix_mysql-virtual_mailbox_domains.cf
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/postfix_dovecot/etc_postfix_mysql-virtual_mailbox_maps.cf
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/postfix_dovecot/etc_postfix_mysql-virtual_sender_permissions.cf
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/postfix_mxaccess/etc_postfix_main.cf
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/postfix_mxaccess/etc_postfix_mx_access
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/powerdns/etc_powerdns_pdns-%%AP_NAME%%.conf
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/powerdns/etc_powerdns_pdns.conf
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/proftpd/etc_proftpd_modules.conf
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/proftpd/etc_proftpd_proftpd.conf
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/proftpd/etc_proftpd_sql.conf
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/pure-ftpd/etc_default_pure-ftpd-common
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/pure-ftpd/etc_pure-ftpd_conf_Bind
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/pure-ftpd/etc_pure-ftpd_conf_ChrootEveryone
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/pure-ftpd/etc_pure-ftpd_conf_CustomerProof
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/pure-ftpd/etc_pure-ftpd_conf_MaxIdleTime
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/pure-ftpd/etc_pure-ftpd_conf_MinUID
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/pure-ftpd/etc_pure-ftpd_conf_MySQLConfigFile
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/pure-ftpd/etc_pure-ftpd_conf_NoAnonymous
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/pure-ftpd/etc_pure-ftpd_conf_PAMAuthentication
+%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/pure-ftpd/etc_pure-ftpd_db_mysql.conf
 %%WWWDIR%%/templates/misc/standardcustomer/index.html
 %%WWWDIR%%/templates_c/.keep
 %%WWWDIR%%/webftp.php
-@dirrmtry %%WWWDIR%%/actions/admin/settings
-@dirrmtry %%WWWDIR%%/actions/admin
-@dirrmtry %%WWWDIR%%/actions
-@dirrmtry %%WWWDIR%%/cache
-@dirrmtry %%WWWDIR%%/css/images
-@dirrmtry %%WWWDIR%%/css
-@dirrmtry %%WWWDIR%%/install/lib
-@dirrmtry %%WWWDIR%%/install/lng
-@dirrmtry %%WWWDIR%%/install/scripts
-@dirrmtry %%WWWDIR%%/install/templates/assets/css
-@dirrmtry %%WWWDIR%%/install/templates/assets/img
-@dirrmtry %%WWWDIR%%/install/templates/assets
-@dirrmtry %%WWWDIR%%/install/templates
-@dirrmtry %%WWWDIR%%/install/updates/%%AP_NAME%%/0.9
-@dirrmtry %%WWWDIR%%/install/updates/%%AP_NAME%%
-@dirrmtry %%WWWDIR%%/install/updates/preconfig/0.9
-@dirrmtry %%WWWDIR%%/install/updates/preconfig
-@dirrmtry %%WWWDIR%%/install/updates
-@dirrmtry %%WWWDIR%%/install
-@dirrmtry %%WWWDIR%%/js/plugins
-@dirrmtry %%WWWDIR%%/js
-@dirrmtry %%WWWDIR%%/lib/classes/Smarty-3.1.15/demo/configs
-@dirrmtry %%WWWDIR%%/lib/classes/Smarty-3.1.15/demo/plugins
-@dirrmtry %%WWWDIR%%/lib/classes/Smarty-3.1.15/demo/templates
-@dirrmtry %%WWWDIR%%/lib/classes/Smarty-3.1.15/demo
-@dirrmtry %%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/plugins
-@dirrmtry %%WWWDIR%%/lib/classes/Smarty-3.1.15/libs/sysplugins
-@dirrmtry %%WWWDIR%%/lib/classes/Smarty-3.1.15/libs
-@dirrmtry %%WWWDIR%%/lib/classes/Smarty-3.1.15
-@dirrmtry %%WWWDIR%%/lib/classes/database/manager
-@dirrmtry %%WWWDIR%%/lib/classes/database
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/HTML
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/URI/Email
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/URI
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ChildDef
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/Builder
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/Interchange
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/DefinitionCache/Decorator
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/DefinitionCache
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/EntityLookup
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Filter
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Tidy
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Injector
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Language/classes
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Language/messages
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Language
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Lexer
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Printer
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Strategy
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/TagTransform
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/Token
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/URIFilter
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/URIScheme
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier/VarParser
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library/HTMLPurifier
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier/library
-@dirrmtry %%WWWDIR%%/lib/classes/htmlpurifier
-@dirrmtry %%WWWDIR%%/lib/classes/idna
-@dirrmtry %%WWWDIR%%/lib/classes/integrity
-@dirrmtry %%WWWDIR%%/lib/classes/logger
-@dirrmtry %%WWWDIR%%/lib/classes/mail
-@dirrmtry %%WWWDIR%%/lib/classes/output
-@dirrmtry %%WWWDIR%%/lib/classes/phpinterface
-@dirrmtry %%WWWDIR%%/lib/classes/phpmailer
-@dirrmtry %%WWWDIR%%/lib/classes/settings
-@dirrmtry %%WWWDIR%%/lib/classes/ticket
-@dirrmtry %%WWWDIR%%/lib/classes/webserver
-@dirrmtry %%WWWDIR%%/lib/classes
-@dirrmtry %%WWWDIR%%/lib/configfiles
-@dirrmtry %%WWWDIR%%/lib/formfields/admin/admin
-@dirrmtry %%WWWDIR%%/lib/formfields/admin/cronjobs
-@dirrmtry %%WWWDIR%%/lib/formfields/admin/customer
-@dirrmtry %%WWWDIR%%/lib/formfields/admin/domains
-@dirrmtry %%WWWDIR%%/lib/formfields/admin/ipsandports
-@dirrmtry %%WWWDIR%%/lib/formfields/admin/phpconfig
-@dirrmtry %%WWWDIR%%/lib/formfields/admin/templates
-@dirrmtry %%WWWDIR%%/lib/formfields/admin/tickets
-@dirrmtry %%WWWDIR%%/lib/formfields/admin
-@dirrmtry %%WWWDIR%%/lib/formfields/customer/domains
-@dirrmtry %%WWWDIR%%/lib/formfields/customer/email
-@dirrmtry %%WWWDIR%%/lib/formfields/customer/extras
-@dirrmtry %%WWWDIR%%/lib/formfields/customer/ftp
-@dirrmtry %%WWWDIR%%/lib/formfields/customer/mysql
-@dirrmtry %%WWWDIR%%/lib/formfields/customer/tickets
-@dirrmtry %%WWWDIR%%/lib/formfields/customer
-@dirrmtry %%WWWDIR%%/lib/formfields
-@dirrmtry %%WWWDIR%%/lib/functions/database
-@dirrmtry %%WWWDIR%%/lib/functions/filedir
-@dirrmtry %%WWWDIR%%/lib/functions/formfields/bool
-@dirrmtry %%WWWDIR%%/lib/functions/formfields/date
-@dirrmtry %%WWWDIR%%/lib/functions/formfields/hidden
-@dirrmtry %%WWWDIR%%/lib/functions/formfields/hiddenstring
-@dirrmtry %%WWWDIR%%/lib/functions/formfields/int
-@dirrmtry %%WWWDIR%%/lib/functions/formfields/label
-@dirrmtry %%WWWDIR%%/lib/functions/formfields/option
-@dirrmtry %%WWWDIR%%/lib/functions/formfields/string
-@dirrmtry %%WWWDIR%%/lib/functions/formfields/text
-@dirrmtry %%WWWDIR%%/lib/functions/formfields
-@dirrmtry %%WWWDIR%%/lib/functions/%%AP_NAME%%
-@dirrmtry %%WWWDIR%%/lib/functions/logger
-@dirrmtry %%WWWDIR%%/lib/functions/output
-@dirrmtry %%WWWDIR%%/lib/functions/phphelpers
-@dirrmtry %%WWWDIR%%/lib/functions/settings
-@dirrmtry %%WWWDIR%%/lib/functions/smarty_plugins
-@dirrmtry %%WWWDIR%%/lib/functions/system
-@dirrmtry %%WWWDIR%%/lib/functions/validate
-@dirrmtry %%WWWDIR%%/lib/functions
-@dirrmtry %%WWWDIR%%/lib/navigation
-@dirrmtry %%WWWDIR%%/lib
-@dirrmtry %%WWWDIR%%/lng
-@dirrmtry %%WWWDIR%%/locales/de/LC_MESSAGES
-@dirrmtry %%WWWDIR%%/locales/de
-@dirrmtry %%WWWDIR%%/locales/en/LC_MESSAGES
-@dirrmtry %%WWWDIR%%/locales/en
-@dirrmtry %%WWWDIR%%/locales
-@dirrmtry %%WWWDIR%%/logs
-@dirrmtry %%WWWDIR%%/scripts/jobs
-@dirrmtry %%WWWDIR%%/scripts
-@dirrmtry %%WWWDIR%%/templates/Sparkle/admin/admins
-@dirrmtry %%WWWDIR%%/templates/Sparkle/admin/configfiles
-@dirrmtry %%WWWDIR%%/templates/Sparkle/admin/cronjobs
-@dirrmtry %%WWWDIR%%/templates/Sparkle/admin/customers
-@dirrmtry %%WWWDIR%%/templates/Sparkle/admin/domains
-@dirrmtry %%WWWDIR%%/templates/Sparkle/admin/index
-@dirrmtry %%WWWDIR%%/templates/Sparkle/admin/ipsandports
-@dirrmtry %%WWWDIR%%/templates/Sparkle/admin/logger
-@dirrmtry %%WWWDIR%%/templates/Sparkle/admin/message
-@dirrmtry %%WWWDIR%%/templates/Sparkle/admin/phpconfig
-@dirrmtry %%WWWDIR%%/templates/Sparkle/admin/settings/phpinfo
-@dirrmtry %%WWWDIR%%/templates/Sparkle/admin/settings
-@dirrmtry %%WWWDIR%%/templates/Sparkle/admin/templates
-@dirrmtry %%WWWDIR%%/templates/Sparkle/admin/tickets
-@dirrmtry %%WWWDIR%%/templates/Sparkle/admin/traffic
-@dirrmtry %%WWWDIR%%/templates/Sparkle/admin/update
-@dirrmtry %%WWWDIR%%/templates/Sparkle/admin
-@dirrmtry %%WWWDIR%%/templates/Sparkle/assets/css
-@dirrmtry %%WWWDIR%%/templates/Sparkle/assets/img/icons
-@dirrmtry %%WWWDIR%%/templates/Sparkle/assets/img
-@dirrmtry %%WWWDIR%%/templates/Sparkle/assets/js
-@dirrmtry %%WWWDIR%%/templates/Sparkle/assets
-@dirrmtry %%WWWDIR%%/templates/Sparkle/customer/domains
-@dirrmtry %%WWWDIR%%/templates/Sparkle/customer/email
-@dirrmtry %%WWWDIR%%/templates/Sparkle/customer/extras
-@dirrmtry %%WWWDIR%%/templates/Sparkle/customer/ftp
-@dirrmtry %%WWWDIR%%/templates/Sparkle/customer/index
-@dirrmtry %%WWWDIR%%/templates/Sparkle/customer/mysql
-@dirrmtry %%WWWDIR%%/templates/Sparkle/customer/tickets
-@dirrmtry %%WWWDIR%%/templates/Sparkle/customer/traffic
-@dirrmtry %%WWWDIR%%/templates/Sparkle/customer
-@dirrmtry %%WWWDIR%%/templates/Sparkle/formfields
-@dirrmtry %%WWWDIR%%/templates/Sparkle/login
-@dirrmtry %%WWWDIR%%/templates/Sparkle/misc/form
-@dirrmtry %%WWWDIR%%/templates/Sparkle/misc
-@dirrmtry %%WWWDIR%%/templates/Sparkle/webftp
-@dirrmtry %%WWWDIR%%/templates/Sparkle
-@dirrmtry %%WWWDIR%%/templates/misc/awstatsmodel
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/apache2
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/courier
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/cron
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/dkim
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/dovecot
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/exim4
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/libnss
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/lighttpd
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/logrotate
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/nginx
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/postfix_courier
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/postfix_dovecot
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/postfix_mxaccess
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/powerdns
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/proftpd
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_squeeze/pure-ftpd
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_squeeze
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/apache2
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/courier
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/cron
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/dkim
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/dovecot
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/exim4
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/libnss
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/lighttpd
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/logrotate
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/nginx
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/postfix_courier
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/postfix_dovecot
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/postfix_mxaccess
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/powerdns
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/proftpd
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_wheezy/pure-ftpd
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/debian_wheezy
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/freebsd/bind9
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/freebsd/dkim
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/freebsd/dovecot
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/freebsd/dovecot2
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/freebsd/libnss
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/freebsd/logrotate
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/freebsd/nginx
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/freebsd/postfix
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/freebsd/postfix_mxaccess
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/freebsd/powerdns
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/freebsd/proftpd
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/freebsd
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/gentoo/apache2
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/gentoo/bind
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/gentoo/courier
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/gentoo/cron
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/gentoo/dkim
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/gentoo/dovecot
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/gentoo/libnss
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/gentoo/lighttpd
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/gentoo/logrotate
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/gentoo/nginx
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/gentoo/postfix_courier
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/gentoo/postfix_dovecot
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/gentoo/postfix_mxaccess
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/gentoo/proftpd
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/gentoo/pureftpd
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/gentoo
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/courier
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/cron
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/dkim
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/dovecot
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/exim4
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/postfix
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/postfix_dovecot
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/postfix_mxaccess
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/proftpd
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/pure-ftpd
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/opensuse_11_x
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/sle_10/courier
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/sle_10/cron
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/sle_10/dkim
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/sle_10/postfix
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/sle_10/postfix_mxaccess
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/sle_10/proftpd
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/sle_10
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/apache2
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/courier
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/cron
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/dkim
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/dovecot
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/exim4
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/libnss
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/lighttpd
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/logrotate
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/nginx
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/postfix_courier
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/postfix_dovecot
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/postfix_mxaccess
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/powerdns
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/proftpd
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/pure-ftpd
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/apache2
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/courier
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/cron
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/dovecot
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/libnss
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/lighttpd
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/logrotate
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/nginx
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/postfix_courier
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/postfix_dovecot
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/postfix_mxaccess
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/powerdns
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/proftpd
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/pure-ftpd
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles/ubuntu_precise
-@dirrmtry %%WWWDIR%%/templates/misc/configfiles
-@dirrmtry %%WWWDIR%%/templates/misc/standardcustomer
-@dirrmtry %%WWWDIR%%/templates/misc
-@dirrmtry %%WWWDIR%%/templates
-@dirrmtry %%WWWDIR%%/templates_c
-@dirrmtry %%WWWDIR%%

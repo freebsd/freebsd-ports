@@ -1,0 +1,12 @@
+--- dh_installman.orig	2015-09-19 09:06:22 UTC
++++ dh_installman
+@@ -201,7 +201,8 @@ foreach my $package (@{$dh{DOPACKAGES}})
+ 	}
+ 
+ 	# Now utf-8 conversion.
+-	if (defined `man --version`) {
++	my $man_version = `man --version 2> /dev/null`;
++	if (defined $man_version && length($man_version)) {
+ 		foreach my $dir (qw{usr/share/man}) {
+ 			next unless -e "$tmp/$dir";
+ 			find(sub {

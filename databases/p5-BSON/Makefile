@@ -22,6 +22,7 @@ TEST_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

@@ -1,6 +1,6 @@
 bin/tinyrepl
 %%SITE_PERL%%/Eval/WithLexicals.pm
 %%SITE_PERL%%/Eval/WithLexicals/WithHintPersistence.pm
-man/man1/tinyrepl.1.gz
+%%PERL5_MAN1%%/tinyrepl.1.gz
 %%PERL5_MAN3%%/Eval::WithLexicals.3.gz
 %%PERL5_MAN3%%/Eval::WithLexicals::WithHintPersistence.3.gz

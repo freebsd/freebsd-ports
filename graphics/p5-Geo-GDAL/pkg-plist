@@ -6,3 +6,4 @@
 %%SITE_ARCH%%/auto/Geo/GDAL/GDAL.so
 %%SITE_ARCH%%/auto/Geo/OGR/OGR.so
 %%SITE_ARCH%%/auto/Geo/OSR/OSR.so
+%%PERL5_MAN3%%/Geo::GDAL.3.gz

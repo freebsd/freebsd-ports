@@ -8,7 +8,7 @@ web server configuration file.
 
 Example apache22 configuration:
 
-    Alias /ganglia/ "%%WWWDIR%%"
+    Alias /ganglia "%%WWWDIR%%/"
     <Directory "%%WWWDIR%%">
         Options Indexes FollowSymlinks MultiViews
         AllowOverride None
@@ -18,12 +18,20 @@ Example apache22 configuration:
 
 Example apache24 configuration:
 
-    Alias /ganglia/ "%%WWWDIR%%"
+    Alias /ganglia "%%WWWDIR%%/"
     <Directory "%%WWWDIR%%">
         Options Indexes FollowSymlinks MultiViews
         AllowOverride None
 	Require all granted
     </Directory>
+
+Nginx configuration:
+
+    If you are running Nginx and your document root is set to
+    %%PREFIX%%/www,
+    then you just need to ensure PHP files are handled correctly.
+    If you are using a different document root, then you will need to create
+    the appropriate location directive.
 
 The default configuration is stored in 
 %%WWWDIR%%/conf_default.php.

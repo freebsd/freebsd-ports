@@ -2,6 +2,7 @@
 
 PORTNAME=	libstrophe
 PORTVERSION=	0.8.7
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	arved@FreeBSD.org

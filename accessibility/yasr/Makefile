@@ -22,6 +22,7 @@ NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-yasr__main.c
 
 PLIST_FILES=	bin/yasr \
 		man/man1/yasr.1.gz \
@@ -29,12 +30,6 @@ PLIST_FILES=	bin/yasr \
 		%%NLS%%share/locale/es/LC_MESSAGES/yasr.mo \
 		%%NLS%%share/locale/fr/LC_MESSAGES/yasr.mo
 PLIST_DIRS=	%%DATADIR%%
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} > 900007
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-yasr__main.c
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/csh|' ${WRKSRC}/yasr.conf

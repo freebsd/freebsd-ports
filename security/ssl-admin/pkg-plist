@@ -3,4 +3,3 @@ bin/ssl-admin
 %%ETCDIR%%/ssl-admin.conf.sample
 man/man1/ssl-admin.1.gz
 man/man5/ssl-admin.conf.5.gz
-@dirrmtry %%ETCDIR%%

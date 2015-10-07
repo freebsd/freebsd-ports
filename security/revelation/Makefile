@@ -21,7 +21,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 USES=		desktop-file-utils gettext gmake pathfix pkgconfig python \
 		shared-mime-info shebangfix tar:bzip2
 SHEBANG_FILES=	src/revelation.py
-USE_GNOME=	gnomeprefix pygnome2
+USE_GNOME=	gnomeprefix pygnome2 intltool
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--without-applet --disable-desktop-update --disable-mime-update

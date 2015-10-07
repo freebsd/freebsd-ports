@@ -8,4 +8,4 @@ mail could be spam, then spampd will ask SA to add some headers and a report to
 the message indicating it's spam and why. spampd is written in Perl and should
 theoretically run on any platform supported by Perl and SpamAssassin.
 
-WWW: http://www.worlddesign.com/index.cfm/rd/mta/spampd.htm
+WWW: https://github.com/mpaperno/spampd

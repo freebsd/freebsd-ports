@@ -25,6 +25,6 @@ bin/dbfcstocs
 %%PERL5_MAN3%%/Cz::Cstocs.3.gz
 %%PERL5_MAN3%%/Cz::Sort.3.gz
 %%PERL5_MAN3%%/Cz::Time.3.gz
-man/man1/cssort.1.gz
-man/man1/cstocs.1.gz
-man/man1/dbfcstocs.1.gz
+%%PERL5_MAN1%%/cssort.1.gz
+%%PERL5_MAN1%%/cstocs.1.gz
+%%PERL5_MAN1%%/dbfcstocs.1.gz

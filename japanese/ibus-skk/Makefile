@@ -5,7 +5,7 @@ PORTNAME=	ibus-skk
 PORTVERSION=	1.4.1
 PORTREVISION=	3
 CATEGORIES=	japanese
-MASTER_SITES=	http://cloud.github.com/downloads/ueno/ibus-skk/
+MASTER_SITES=	GHC
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese SKK input engine for IBus
@@ -16,6 +16,8 @@ LIB_DEPENDS=	libskk.so:${PORTSDIR}/japanese/libskk \
 
 USES=		gettext gmake pkgconfig python
 USE_GNOME=	intltool
+USE_GITHUB=	yes
+GH_ACCOUNT=	ueno
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	DATADIRNAME=share
 

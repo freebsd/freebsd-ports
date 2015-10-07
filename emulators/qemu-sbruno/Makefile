@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	2.3.50.g20150713
+PORTVERSION=	2.4.50.g20150814
 CATEGORIES=	emulators
 MASTER_SITES=	GH \
 		LOCAL/nox \
@@ -20,7 +20,7 @@ COMMENT?=	QEMU CPU Emulator - github bsd-user branch
 USE_GITHUB=	yes
 GH_ACCOUNT=	seanbruno
 GH_PROJECT=	${PORTNAME}-bsd-user
-GH_TAGNAME=	754fb51
+GH_TAGNAME=	6764363
 HAS_CONFIGURE=	yes
 USES=		gmake pkgconfig bison perl5 python:2,build
 USE_PERL5=	build
@@ -60,7 +60,7 @@ SUB_LIST=	NAME=qemu_user_static
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS+=	--localstatedir=/var
-CONFIGURE_ARGS+=	--extra-ldflags=-L${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--extra-ldflags=-L\"${LOCALBASE}/lib\"
 CONFIGURE_ARGS+=	--disable-smartcard-nss --disable-libssh2
 PORTDOCS=	docs qemu-doc.html qemu-tech.html qmp-commands.txt
 
@@ -292,8 +292,6 @@ post-install:
 .endif
 	${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup.sample ${STAGEDIR}${PREFIX}/etc
 	${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifdown.sample ${STAGEDIR}${PREFIX}/etc
-	@(cd ${STAGEDIR}${PREFIX}/etc/qemu && \
-		${MV} -i target-x86_64.conf target-x86_64.conf.sample)
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qemu-*
 .endif
 

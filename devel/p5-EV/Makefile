@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	EV
-PORTVERSION=	4.18
+PORTVERSION=	4.21
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -16,7 +16,8 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-common-sense>=0:${PORTSDIR}/devel/p5-common-sense
-BUILD_DEPENDS=	p5-common-sense>=0:${PORTSDIR}/devel/p5-common-sense
+BUILD_DEPENDS=	p5-common-sense>=0:${PORTSDIR}/devel/p5-common-sense \
+		p5-Canary-Stability>=0:${PORTSDIR}/devel/p5-Canary-Stability
 
 USES=		perl5
 USE_PERL5=	configure

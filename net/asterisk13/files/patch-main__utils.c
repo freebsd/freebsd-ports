@@ -1,6 +1,6 @@
---- main/utils.c.orig	2014-09-18 19:22:39 UTC
+--- main/utils.c.orig	2015-07-24 22:20:17 UTC
 +++ main/utils.c
-@@ -1220,8 +1220,8 @@ int ast_pthread_create_stack(pthread_t *
+@@ -1256,8 +1256,8 @@ int ast_pthread_create_stack(pthread_t *
  		pthread_attr_init(attr);
  	}
  

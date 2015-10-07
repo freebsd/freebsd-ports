@@ -40,7 +40,11 @@ perl_CMD?=	${LOCALBASE}/bin/perl
 php_OLD_CMD?=	/usr/bin/php
 php_CMD?=	${LOCALBASE}/bin/php
 python_OLD_CMD?=	/usr/bin/python
+.if ${USES:Mpython*}
+python_CMD?=	${PYTHON_CMD}
+.else
 python_CMD?=	${LOCALBASE}/bin/python
+.endif
 ruby_OLD_CMD?=	/usr/bin/ruby
 ruby_CMD?=	${LOCALBASE}/bin/ruby
 tcl_OLD_CMD?=	/usr/bin/tclsh
@@ -60,6 +64,7 @@ IGNORE+=	missing definition for ${lang}_OLD_CMD
 _SHEBANG_REINPLACE_ARGS+=	-e "1s|^\#![[:space:]]*${${lang}_OLD_CMD}|\#!${${lang}_CMD}|"
 .endfor
 
+_USES_patch+=	210:fix-shebang
 fix-shebang:
 	@cd ${WRKSRC}; \
 		${ECHO_CMD} ${SHEBANG_FILES} | ${XARGS} ${SED} -i '' ${_SHEBANG_REINPLACE_ARGS}

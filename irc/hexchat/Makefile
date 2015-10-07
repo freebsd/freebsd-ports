@@ -6,7 +6,7 @@ PORTVERSION=	2.10.2
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	http://dl.hexchat.net/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	serio.jeffrey@riseup.net
 COMMENT=	IRC chat program with GTK and Text Frontend
 
 LICENSE=	GPLv2
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libproxy.so:${PORTSDIR}/net/libproxy
 
 USES=		gmake desktop-file-utils libtool pkgconfig tar:xz
-USE_GNOME=	gtk20 libxml2
+USE_GNOME=	gtk20 intltool libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-openssl --enable-gtkfe --disable-sysinfo \
 		--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig

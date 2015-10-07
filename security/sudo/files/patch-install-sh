@@ -1,6 +1,6 @@
---- install-sh.orig	2014-09-24 01:40:15.000000000 +0900
-+++ install-sh	2014-10-10 07:26:54.000000000 +0900
-@@ -171,12 +171,6 @@
+--- install-sh.orig	2015-07-15 18:38:05 UTC
++++ install-sh
+@@ -171,12 +171,6 @@ if ${DIRMODE} ; then
  	if [ ! -d "${DEST}" ] ; then
  	    ${MKDIR} "${DEST}" || exit 1
  	fi
@@ -13,7 +13,7 @@
  	if ${CHMODIT} ; then
  	    ${CHMOD} "${MODE}"  "${DEST}" || exit 1
  	fi
-@@ -227,12 +221,6 @@
+@@ -227,12 +221,6 @@ fi
  if ${STRIPIT} ; then
      ${STRIP} "${DEST}" || exit 1
  fi

@@ -20,6 +20,8 @@ USES=		desktop-file-utils execinfo pkgconfig qmake tar:xz
 USE_QT5=	core concurrent gui  network script webkit xml \
 		buildtools_build linguisttools_build \
 		imageformats_run sql-sqlite3_run
+USE_XORG=	x11
+USE_OPENSSL=	yes
 CONFIGURE_ENV=	QUPZILLA_PREFIX=${PREFIX}/
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes

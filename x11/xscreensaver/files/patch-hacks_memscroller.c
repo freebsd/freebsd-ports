@@ -1,12 +1,16 @@
---- hacks/memscroller.c.orig	2014-06-12 20:55:52.000000000 +0200
-+++ hacks/memscroller.c	2014-06-12 20:56:03.000000000 +0200
-@@ -349,9 +349,6 @@
-          from earlier days before the advent of virtual memory management."
-             -- sbrk(2) man page on MacOS
-        */
--#  if (__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 2)) /* gcc >= 4.2 */
--#   pragma GCC diagnostic ignored "-Wdeprecated-declarations"
--#  endif
-       himem = ((unsigned char *) sbrk(0)) - (2 * sizeof(void *));
- # endif
+--- hacks/memscroller.c.orig	2014-09-13 20:34:45 UTC
++++ hacks/memscroller.c
+@@ -306,13 +306,6 @@ open_file (state *st)
+    from earlier days before the advent of virtual memory management."
+       -- sbrk(2) man page on BSD systems, as of 1995 or so.
+  */
+-#ifdef HAVE_SBRK
+-# if (__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 2)) /* gcc >= 4.2 */
+-   /* Don't print "warning: 'sbrk' is deprecated". */
+-#  pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+-# endif
+-#endif
+-
  
+ static unsigned int
+ more_bits (state *st, scroller *sc)

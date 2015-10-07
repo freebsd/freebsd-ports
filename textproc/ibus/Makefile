@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ibus
-PORTVERSION=	1.5.9
-PORTREVISION=	2
+PORTVERSION=	1.5.11
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/ \
 		http://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/
@@ -24,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.0:${PORTSDIR}/devel/py-dbus \
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
 USES=		compiler cpe gmake libtool pathfix pkgconfig python
-USE_GNOME=	glib20 librsvg2 pygobject3
+USE_GNOME=	glib20 intltool librsvg2 pygobject3
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

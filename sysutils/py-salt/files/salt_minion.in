@@ -10,19 +10,24 @@
 
 # Add the following to /etc/rc.conf[.local] to enable this service
 #
-# salt_minion_enable="YES"
+# salt_minion_enable (bool):       Set to NO by default.
+#               Set it to YES to enable salt_minion
+# salt_minion_paths (string):      Set to "/sbin:/bin:/usr/sbin:/usr/bin:%%PREFIX%%/bin:%%PREFIX%%/sbin" by default.
+#               Default $PATH for salt_minion
+# salt_minion_eggcache (string):   Set to "/tmp" by default.
+#               Allows defining egg cache directory to fix runtime on diskless systems.
 #
 
 . /etc/rc.subr
 
-name="salt_minion"
+name=salt_minion
 rcvar=salt_minion_enable
 
 load_rc_config ${name}
 
-: ${salt_minion_enable:="NO"}
-: ${salt_minion_paths="$PATH"}
-: ${salt_minion_eggcache="/tmp"}
+: ${salt_minion_enable:=NO}
+: ${salt_minion_paths=/sbin:/bin:/usr/sbin:/usr/bin:%%PREFIX%%/bin:%%PREFIX%%/sbin}
+: ${salt_minion_eggcache=/tmp}
 
 command="%%PREFIX%%/bin/salt-minion"
 command_interpreter="%%PYTHON_CMD%%"

@@ -20,7 +20,7 @@ LICENSE_COMB=	dual
 LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libpng.so:${PORTSDIR}/graphics/png
 
-USES=		gmake jpeg tar:bzip2
+USES=		alias gmake jpeg tar:bzip2
 USE_GL=		glew
 USE_SDL=	sdl
 MAKEFILE=	Makefile.linux

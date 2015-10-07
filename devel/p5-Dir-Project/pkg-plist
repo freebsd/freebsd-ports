@@ -3,5 +3,5 @@ bin/project_dir
 %%PERL5_MAN3%%/Dir::Project.3.gz
 %%SITE_PERL%%/Dir/Project.pm
 lib/project_dir.mk
-man/man1/project_bin.1.gz
-man/man1/project_dir.1.gz
+%%PERL5_MAN1%%/project_bin.1.gz
+%%PERL5_MAN1%%/project_dir.1.gz

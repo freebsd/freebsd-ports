@@ -28,7 +28,6 @@ include/claws-mail/avatars.h
 include/claws-mail/browseldap.h
 include/claws-mail/claws-features.h
 include/claws-mail/codeconv.h
-include/claws-mail/common/base64.h
 include/claws-mail/common/claws.h
 include/claws-mail/common/defs.h
 include/claws-mail/common/hooks.h
@@ -315,17 +314,10 @@ share/icons/hicolor/64x64/apps/claws-mail.png
 %%NLS%%share/locale/he/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/id_ID/LC_MESSAGES/claws-mail.mo
-%%NLS%%share/locale/it/LC_MESSAGES/claws-mail.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/claws-mail.mo
-%%NLS%%share/locale/pt_PT/LC_MESSAGES/claws-mail.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/claws-mail.mo
-%%NLS%%share/locale/uk/LC_MESSAGES/claws-mail.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/claws-mail.mo
-%%NLS%%share/locale/zh_TW/LC_MESSAGES/claws-mail.mo

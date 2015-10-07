@@ -2,7 +2,7 @@
 
 PORTNAME=	mplayer2
 PORTVERSION=	${MPLAYER2_PORT_VERSION}
-PORTREVISION=	13
+PORTREVISION=	16
 CATEGORIES=	multimedia audio
 MASTER_SITES=	LOCAL/gblach/
 
@@ -13,21 +13,17 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libdvdread.so:${PORTSDIR}/multimedia/libdvdread
-BUILD_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
-		python3:${PORTSDIR}/lang/python3 \
+		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+BUILD_DEPENDS=	python3:${PORTSDIR}/lang/python3 \
 		rst2man:${PORTSDIR}/textproc/py-docutils
-RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
 
 USES=		cpe gmake iconv ncurses pkgconfig tar:xz
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	TMPDIR="${WRKSRC}"
 CONFIGURE_ARGS=	--cc=${CC} \
-		--extra-libs='-lavresample ${PORTAUDIOLIB}' \
+		--extra-libs='${LIBS}' \
 		--mandir=${PREFIX}/man \
-		--enable-libavresample \
 		--disable-alsa \
-		--disable-liba52 \
 		--disable-directfb \
 		--disable-faad \
 		--disable-mng \
@@ -41,219 +37,139 @@ MAKE_ARGS+=	BINDIR=${STAGEDIR}${PREFIX}/bin \
 MPLAYER2_SNAPSHOT_DATE=	2013-04-28
 MPLAYER2_PORT_VERSION=	2.0.${MPLAYER2_SNAPSHOT_DATE:S/-//g}
 
+OPTIONS_DEFINE=	A52 ASS CACA CDIO DEBUG DV DVDREAD DVDNAV GIF IPV6 JACK LADSPA \
+		LIBBLURAY LIRC MAD OPENGL PORTAUDIO PULSEAUDIO REALPLAYER \
+		RTC SDL SMB SPEEX THEORA V4L VDPAU X11 XINERAMA
+OPTIONS_DEFAULT=A52 ASS ENCA DVDREAD DVDNAV X11
+OPTIONS_SUB=	yes
 
-OPTIONS_DEFINE=	DEBUG RTC IPV6 SMB LIBBLURAY DV THEORA \
-		X11 XINERAMA OPENGL SDL VDPAU GIF CACA \
-		MAD SPEEX LIBCDIO LADSPA REALPLAYER \
-		JACK PULSE PORTAUDIO ASS LIRC
-OPTIONS_DEFAULT=X11 ASS
-
+OPTIONS_DEFINE_i386+=		WIN32
 .if !defined(PACKAGE_BUILDING)
-OPTIONS_DEFINE+=	WIN32
-OPTIONS_DEFAULT+=	WIN32
+# Depend on RESTRICTED package only when building manually
+OPTIONS_DEFAULT_i386+=		WIN32
 .endif
 
-RTC_DESC=	Enable kernel realtime clock timing
-PULSE_DESC=	Enable PulseAudio support
-THEORA_DESC=	Enable ogg theora video support
+.for _arch in i386 amd64 powerpc powerpc64
+OPTIONS_DEFAULT_${_arch}+=	RTCPU
+OPTIONS_DEFINE_${_arch}+=	RTCPU
+.endfor
+
 ASS_DESC=	Enable ASS/SSA subtitle rendering
-WIN32_DESC=	Enable win32 codec set on the IA32 arch
+DVDREAD_DESC=	DVD Playback support
+DVDNAV_DESC=	DVD menu navigation
 REALPLAYER_DESC=Enable realplayer plugin
-LIRC_DESC=	Enable lirc support
-LIBCDIO_DESC=	Enable libcdio support
-V4L_DESC=	Enable Video4Linux TV support
+RTC_DESC=	Enable kernel realtime clock timing
+RTCPU_DESC=	Allow runtime CPU detection
+WIN32_DESC=	Enable win32 codec set on the IA32 arch
 
 SUB_FILES=	pkg-message
 
 CONFLICTS=	mplayer-1.*
 
-.include <bsd.port.options.mk>
+BROKEN_sparc64=	Does not compile on sparc64
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
+A52_LIB_DEPENDS=	liba52.so:${PORTSDIR}/audio/liba52
+A52_CONFIGURE_OFF=	--disable-liba52
+
+ASS_LIB_DEPENDS=	libass.so:${PORTSDIR}/multimedia/libass
+ASS_CONFIGURE_OFF=	--disable-libass
+
+CACA_LIB_DEPENDS=	libcaca.so:${PORTSDIR}/graphics/libcaca
+CACA_CONFIGURE_OFF=	--disable-caca
+
+CDIO_LIB_DEPENDS=	libcdio_paranoia.so:${PORTSDIR}/sysutils/libcdio-paranoia
+CDIO_CONFIGURE_OFF=	--disable-libcdio
+
+DEBUG_CONFIGURE_ON=	--enable-debug=3
+DEBUG_CONFIGURE_OFF=	--disable-debug
+
+DV_LIB_DEPENDS=		libdv.so:${PORTSDIR}/multimedia/libdv
+DV_CONFIGURE_OFF=	--disable-libdv
+
+DVDREAD_LIB_DEPENDS=	libdvdread.so:${PORTSDIR}/multimedia/libdvdread
+DVDREAD_CONFIGURE_OFF=	--disable-dvdread
+
+DVDNAV_LIB_DEPENDS=	libdvdnav.so:${PORTSDIR}/multimedia/libdvdnav
+DVDNAV_CONFIGURE_OFF=	--disable-dvdnav
+
+ENCA_LIB_DEPENDS=	libenca.so:${PORTSDIR}/converters/enca
+ENCA_CONFIGURE_OFF=	--disable-enca
+
+GIF_LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib
+GIF_CONFIGURE_ON=	--enable-gif
+GIF_CONFIGURE_OFF=	--disable-gif
+
+IPV6_CATEGORIES=	ipv6
+IPV6_CONFIGURE_OFF=	--disable-inet6
+
+JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_CONFIGURE_OFF=	--disable-jack
+
+LADSPA_RUN_DEPENDS=	${LOCALBASE}/lib/ladspa/amp.so:${PORTSDIR}/audio/ladspa
+LADSPA_CONFIGURE_OFF=	--disable-ladspa
+
+LIBBLURAY_LIB_DEPENDS=	libbluray.so:${PORTSDIR}/multimedia/libbluray
+LIBBLURAY_CONFIGURE_OFF=--disable-bluray
+
+LIRC_LIB_DEPENDS=	liblirc_client.so:${PORTSDIR}/comms/lirc
+LIRC_CONFIGURE_OFF=	--disable-lirc
+
+MAD_LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad
+MAD_CONFIGURE_OFF=	--disable-mad
+
+OPENGL_USE=		GL=gl XORG=glproto
+OPENGL_CONFIGURE_OFF=	--disable-gl
+OPENGL_IMPLIES=		X11
+
+PORTAUDIO_LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio
+PORTAUDIO_CONFIGURE_OFF=--disable-portaudio
+
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_CONFIGURE_OFF=--disable-pulse
+
+REALPLAYER_BUILD_DEPENDS=realplay:${PORTSDIR}/multimedia/linux-realplayer
+REALPLAYER_RUN_DEPENDS=	realplay:${PORTSDIR}/multimedia/linux-realplayer
+REALPLAYER_CONFIGURE_OFF=--disable-real
+
+RTC_BUILD_DEPENDS=	${LOCALBASE}/modules/rtc.ko:${PORTSDIR}/emulators/rtc
+RTC_RUN_DEPENDS=	${LOCALBASE}/modules/rtc.ko:${PORTSDIR}/emulators/rtc
+RTC_CONFIGURE_OFF=	--disable-rtc
+
+RTCPU_CONFIGURE_ON=	--enable-runtime-cpudetection
+RTCPU_CONFIGURE_OFF=	--disable-runtime-cpudetection
+
+SDL_USE=		SDL=sdl
+SDL_CONFIGURE_OFF=	--disable-sdl
+
+SMB_LIB_DEPENDS=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
+SMB_CONFIGURE_OFF=	--disable-smb
+
+SPEEX_LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex
+SPEEX_CONFIGURE_OFF=	--disable-speex
+
+THEORA_LIB_DEPENDS=	libtheora.so:${PORTSDIR}/multimedia/libtheora
+THEORA_CONFIGURE_OFF=	--disable-theora
+
+V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
+V4L_LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
+V4L_CONFIGURE_OFF=	--disable-tv-v4l2
+V4L_LIBS=		-lv4l2
+
+VDPAU_LIB_DEPENDS=	libvdpau.so:${PORTSDIR}/multimedia/libvdpau
+VDPAU_CONFIGURE_OFF=	--disable-vdpau
+
+WIN32_RUN_DEPENDS=	win32-codecs>0:${PORTSDIR}/multimedia/win32-codecs
+WIN32_CONFIGURE_ON=	--codecsdir=${LOCALBASE}/lib/win32
+WIN32_CONFIGURE_OFF=	--disable-win32dll --disable-qtx
+
+X11_USE=		XORG=x11,xv,xxf86vm
+X11_CONFIGURE_OFF=	--disable-x11
+
+XINERAMA_USE=		XORG=xinerama,xineramaproto
+XINERAMA_CONFIGURE_OFF=	--disable-xinerama
+XINERAMA_IMPLIES=	X11
 
 WITH_CDROM_DEVICE?=	/dev/cd0
-
-#On i386, gcc runs out of general purpose registers when
-#trying to compile a debug version with the default flags.
-.if ${PORT_OPTIONS:MDEBUG}
-.if ${ARCH} == "i386"
-DEBUG_FLAGS=		-g -O -fomit-frame-pointer
-.endif
-.else
-.if defined(PACKAGE_BUILDING)
-CONFIGURE_ARGS+=	--enable-runtime-cpudetection
-CFLAGS+=		-O2 -fomit-frame-pointer
-.else
-CONFIGURE_ENV+=		CPPFLAGS= CFLAGS= LDFLAGS=
-.endif
-.endif
-
-.if ${PORT_OPTIONS:MIPV6}
-CATEGORIES+=		ipv6
-.else
-CONFIGURE_ARGS+=	--disable-inet6
-.endif
-
-.if ${PORT_OPTIONS:MGIF}
-LIB_DEPENDS+=		libgif.so:${PORTSDIR}/graphics/giflib
-.else
-CONFIGURE_ARGS+=	--disable-gif
-.endif
-
-.if ${PORT_OPTIONS:MMAD}
-LIB_DEPENDS+=		libmad.so:${PORTSDIR}/audio/libmad
-.else
-CONFIGURE_ARGS+=	--disable-mad
-.endif
-
-.if ${PORT_OPTIONS:MDV}
-LIB_DEPENDS+=		libdv.so:${PORTSDIR}/multimedia/libdv
-.else
-CONFIGURE_ARGS+=	--disable-libdv
-.endif
-
-.if ${PORT_OPTIONS:MTHEORA}
-LIB_DEPENDS+=		libtheora.so:${PORTSDIR}/multimedia/libtheora
-.else
-CONFIGURE_ARGS+=	--disable-theora
-.endif
-
-.if ${PORT_OPTIONS:MSPEEX}
-LIB_DEPENDS+=		libspeex.so:${PORTSDIR}/audio/speex
-.else
-CONFIGURE_ARGS+=	--disable-speex
-.endif
-
-.if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=		libjack.so:${PORTSDIR}/audio/jack
-.else
-CONFIGURE_ARGS+=	--disable-jack
-.endif
-
-.if ${PORT_OPTIONS:MPULSE}
-LIB_DEPENDS+=		libpulse.so:${PORTSDIR}/audio/pulseaudio
-.else
-CONFIGURE_ARGS+=	--disable-pulse
-.endif
-
-.if ${PORT_OPTIONS:MPORTAUDIO}
-LIB_DEPENDS+=		libportaudio.so:${PORTSDIR}/audio/portaudio
-PORTAUDIOLIB=		-lportaudio
-.else
-CONFIGURE_ARGS+=	--disable-portaudio
-.endif
-
-.if ${PORT_OPTIONS:MLIBBLURAY}
-LIB_DEPENDS+=		libbluray.so:${PORTSDIR}/multimedia/libbluray
-.else
-CONFIGURE_ARGS+=	--disable-bluray
-.endif
-
-.if ${PORT_OPTIONS:MSMB}
-LIB_DEPENDS+=		libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
-.else
-CONFIGURE_ARGS+=	--disable-smb
-.endif
-
-.if ${PORT_OPTIONS:MLIBCDIO}
-LIB_DEPENDS+=		libcdio_paranoia.so:${PORTSDIR}/sysutils/libcdio-paranoia
-.else
-CONFIGURE_ARGS+=	--disable-libcdio
-.endif
-
-.if ${PORT_OPTIONS:MLADSPA}
-RUN_DEPENDS+=		${LOCALBASE}/lib/ladspa/amp.so:${PORTSDIR}/audio/ladspa
-.else
-CONFIGURE_ARGS+=	--disable-ladspa
-.endif
-
-.if ${ARCH} == "i386" || ${ARCH} == "amd64"
-.if ${PORT_OPTIONS:MWIN32} && !defined(PACKAGE_BUILDING) && ${ARCH} == "i386"
-CODEC_PORT=		${PORTSDIR}/multimedia/win32-codecs
-CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
-RUN_DEPENDS+=		${CODEC_DETECTION_FILE}:${CODEC_PORT}
-CONFIGURE_ARGS+=	--codecsdir=${LOCALBASE}/lib/win32
-.else
-CONFIGURE_ARGS+=	--disable-win32dll --disable-qtx
-.endif
-.endif # ARCH == i386/amd64
-
-.if ${PORT_OPTIONS:MREALPLAYER}
-RUN_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
-BUILD_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
-.else
-CONFIGURE_ARGS+=	--disable-real
-.endif
-
-#.if ${PORT_OPTIONS:MV4L}
-#BUILD_DEPENDS+=		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
-#LIB_DEPENDS+=		libv4l2.so:${PORTSDIR}/multimedia/libv4l
-#CONFIGURE_ARGS+=	--enable-tv-v4l2
-#EXTRA_LIBS+=		-lv4l2
-#.else
-CONFIGURE_ARGS+=	--disable-tv-v4l2
-#.endif
-
-#.if defined(EXTRA_LIBS)
-#CONFIGURE_ARGS+=	--extra-libs="${EXTRA_LIBS}"
-#.endif
-
-.if ${PORT_OPTIONS:MASS}
-LIB_DEPENDS+=		libass.so:${PORTSDIR}/multimedia/libass
-.else
-CONFIGURE_ARGS+=	--disable-libass --disable-enca
-.endif
-
-.if ${PORT_OPTIONS:MX11}
-USE_XORG=		x11 xv xxf86vm
-.if ${PORT_OPTIONS:MOPENGL}
-USE_XORG+=		glproto
-LIB_DEPENDS+=		libGL.so:${PORTSDIR}/graphics/libGL
-.else
-CONFIGURE_ARGS+=	--disable-gl
-.endif
-.if ${PORT_OPTIONS:MXINERAMA}
-USE_XORG+=		xinerama xineramaproto
-.else
-CONFIGURE_ARGS+=	--disable-xinerama
-.endif
-.else			#WITHOUT_X11
-CONFIGURE_ARGS+=	--disable-x11
-.endif
-
-.if ${PORT_OPTIONS:MVDPAU}
-LIB_DEPENDS+=		libvdpau.so:${PORTSDIR}/multimedia/libvdpau
-.else
-CONFIGURE_ARGS+=	--disable-vdpau
-.endif
-
-.if ${PORT_OPTIONS:MRTC}
-BUILD_DEPENDS+=	${LOCALBASE}/modules/rtc.ko:${PORTSDIR}/emulators/rtc
-RUN_DEPENDS+=	${LOCALBASE}/modules/rtc.ko:${PORTSDIR}/emulators/rtc
-CONFIGURE_ARGS+=	--enable-rtc
-.else
-CONFIGURE_ARGS+=	--disable-rtc
-.endif
-
-.if ${PORT_OPTIONS:MLIBCACA}
-LIB_DEPENDS+=		libcaca.so:${PORTSDIR}/graphics/libcaca
-.else
-CONFIGURE_ARGS+=	--disable-caca
-.endif
-
-.if ${PORT_OPTIONS:MLIRC}
-LIB_DEPENDS+=		liblirc_client.so:${PORTSDIR}/comms/lirc
-.else
-CONFIGURE_ARGS+=	--disable-lirc
-.endif
-
-.if ${PORT_OPTIONS:MSDL}
-USE_SDL=		sdl
-.else
-CONFIGURE_ARGS+=	--disable-sdl
-.endif
 
 .if defined(WITH_KERN_HZ)
 DEFAULT_KERN_HZ=${WITH_KERN_HZ}
@@ -269,11 +185,9 @@ pre-everything::
 	@${ECHO_MSG} "order to learn more about them."
 
 post-patch:
-.if ${OSVERSION} >= 900010
 	@${REINPLACE_CMD} -e \
 		'/CFLAGS.*-D_LARGEFILE64_SOURCE/ s/-D_LARGEFILE64_SOURCE/-D_FILE_OFFSET_BITS=64/' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-.endif
 	@${REINPLACE_CMD} \
 		-e 's|/dev/acd0|${WITH_CDROM_DEVICE}|' \
 		-e 's|/usr/local|${LOCALBASE}|' \
@@ -292,17 +206,17 @@ post-patch:
 		's|/usr/\\:local/\\:etc/\\:mplayer|${DATADIR:S/\//\/\\\:/g}|g ; \
 		 s|/dev/\\:(dvd[[:alnum:]]*[[:>:]])|${WITH_CDROM_DEVICE:S/dev\//dev\/\\\:/}|g ; \
 		 s|/dev/\\:(cdrom[[:alnum:]]*[[:>:]])|${WITH_CDROM_DEVICE:S/dev\//dev\/\\\:/}|g'
-.if ${PORT_OPTIONS:MRTC}
+
+post-patch-RTC-on:
 	@${REINPLACE_CMD} -e \
 		's|irqp = 1024|irqp = ${DEFAULT_KERN_HZ}|' \
 		${WRKSRC}/mplayer.c
-.endif
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/etc/example.conf \
+	${INSTALL_DATA} ${WRKSRC}/etc/example.conf \
 		${STAGEDIR}${PREFIX}/etc/mplayer/mplayer.conf.sample
 .for conf in codecs input
-	@${INSTALL_DATA} ${WRKSRC}/etc/${conf}.conf \
+	${INSTALL_DATA} ${WRKSRC}/etc/${conf}.conf \
 		${STAGEDIR}${PREFIX}/etc/mplayer/${conf}.conf.sample
 .endfor
 

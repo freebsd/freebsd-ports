@@ -5,6 +5,6 @@ MASTERDIR=	${.CURDIR}/../mpqc
 
 PKGNAMESUFFIX=	-mpich
 
-WITH_MPICH=	yes
+OPTIONS_SLAVE=	MPICH
 
 .include "${MASTERDIR}/Makefile"

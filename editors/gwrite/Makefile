@@ -22,7 +22,7 @@ RUN_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme \
 		${PYTHON_PKGNAMEPREFIX}webkitgtk>=0:${PORTSDIR}/www/py-webkitgtk
 
 USES=		desktop-file-utils gettext-tools python
-USE_GNOME=	pygtk2
+USE_GNOME=	intltool pygtk2
 USE_PYTHON=	distutils
 
 .include <bsd.port.mk>

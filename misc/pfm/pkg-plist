@@ -1,5 +1,5 @@
 bin/pfm
-man/man1/pfm.1.gz
+%%PERL5_MAN1%%/pfm.1.gz
 %%PERL5_MAN3%%/App::PFM::Abstract.3.gz
 %%PERL5_MAN3%%/App::PFM::Application.3.gz
 %%PERL5_MAN3%%/App::PFM::Browser.3.gz

@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libgphoto2
-PORTVERSION=	2.5.7
+PORTVERSION=	2.5.8
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/libgphoto/${PORTVERSION}
 
@@ -10,7 +11,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Universal digital camera control library
 
 LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
 
@@ -55,9 +55,9 @@ CONFIGURE_ENV+=	LIBUSB1_CFLAGS=" " LIBUSB1_LIBS="-lusb"
 post-patch:
 .for i in configure libgphoto2_port/configure
 	@${REINPLACE_CMD} -e \
-		's|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig| ; \
-		 /FLAGS/s|-g|| ; \
-		 /grep -i linux/s|; fi ; then|; else false; fi ; then|' \
+		'/FLAGS/s|-g|| ; \
+		 /grep -i linux/s|; fi ; then|; else false; fi ; then| ; \
+		 /pkgconfig/s|$${libdir}|$${prefix}/libdata|' \
 		${WRKSRC}/${i}
 .endfor
 	@${REINPLACE_CMD} -e \

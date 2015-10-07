@@ -13,6 +13,5 @@ COMMENT=	Manage intrusion attempts recorded in the system log
 USES=		python shebangfix
 SHEBANG_FILES=	abck
 python_OLD_CMD=	/usr/local/bin/python
-python_CMD=	${PYTHON_CMD}
 
 .include <bsd.port.mk>

@@ -1,6 +1,4 @@
-@unexec if cmp -s %D/%%ETCDIR%%/policyd-spf.conf.sample %D/%%ETCDIR%%/policyd-spf.conf; then rm -f %D/%%ETCDIR%%/policyd-spf.conf; fi
-%%ETCDIR%%/policyd-spf.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/policyd-spf.conf ] ; then cp -p %D/%F %B/policyd-spf.conf; fi
+@sample %%ETCDIR%%/policyd-spf.conf.sample
 bin/policyd-spf
 man/man1/policyd-spf.1.gz
 man/man5/policyd-spf.conf.5.gz

@@ -1,4 +1,4 @@
 bin/RomanDate
 %%SITE_PERL%%/Date/Roman.pm
-man/man1/RomanDate.1.gz
+%%PERL5_MAN1%%/RomanDate.1.gz
 %%PERL5_MAN3%%/Date::Roman.3.gz

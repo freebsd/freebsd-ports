@@ -16,13 +16,9 @@ INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS DOXYGEN
 OPTIONS_SUB=	yes
+DOXYGEN_IMPLIES=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MDOXYGEN}
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
-.else
-CONFIGURE_ARGS=	--disable-documentation
-.endif
+DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOXYGEN_CONFIGURE_OFF=	--disable-documentation
 
 .include <bsd.port.mk>

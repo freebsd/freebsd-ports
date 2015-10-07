@@ -3,10 +3,11 @@
 
 PORTNAME=	automake
 PORTVERSION=	1.15
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
-MAINTAINER=	autotools@FreeBSD.org
+MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	GNU Standards-compliant Makefile generator
 
 BUILD_DEPENDS=	autoconf-2.69:${PORTSDIR}/devel/autoconf

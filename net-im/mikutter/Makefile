@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mikutter
-PORTVERSION=	3.2.4
+PORTVERSION=	3.2.7
 CATEGORIES=	net-im ruby
 MASTER_SITES=	http://mikutter.hachune.net/bin/ \
 		LOCAL/tota/${PORTNAME}
@@ -16,9 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-gtk2>=2.2.5:${PORTSDIR}/x11-toolkits/rubygem-gtk2 \
 		rubygem-cairo>=1.12.9:${PORTSDIR}/graphics/rubygem-cairo \
-		rubygem-addressable>=2.3.6:${PORTSDIR}/www/rubygem-addressable \
+		rubygem-addressable>=2.3.8:${PORTSDIR}/www/rubygem-addressable \
 		rubygem-ruby-hmac>=0.4.0:${PORTSDIR}/security/rubygem-ruby-hmac \
-		rubygem-json_pure>=1.8.1:${PORTSDIR}/devel/rubygem-json_pure \
+		rubygem-json_pure>=1.8.2:${PORTSDIR}/devel/rubygem-json_pure \
 		rubygem-memoize>=1.3.1:${PORTSDIR}/devel/rubygem-memoize \
 		rubygem-oauth>=0.4.7:${PORTSDIR}/net/rubygem-oauth \
 		rubygem-typed-array>=0.1.2:${PORTSDIR}/devel/rubygem-typed-array \
@@ -30,6 +30,7 @@ RUN_DEPENDS=	rubygem-gtk2>=2.2.5:${PORTSDIR}/x11-toolkits/rubygem-gtk2 \
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USES=	shebangfix
 NO_BUILD=	yes

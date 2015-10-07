@@ -1,4 +1,4 @@
 bin/latex2pod
 %%PERL5_MAN3%%/LaTeX::Pod.3.gz
 %%SITE_PERL%%/LaTeX/Pod.pm
-man/man1/latex2pod.1.gz
+%%PERL5_MAN1%%/latex2pod.1.gz

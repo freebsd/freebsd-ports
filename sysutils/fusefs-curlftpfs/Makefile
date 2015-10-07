@@ -27,8 +27,5 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-64-ftpfs.h
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extra-32-ftpfs.h
 .endif
-.if ${OSVERSION} < 900000
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-ftpfs.c
-.endif
 
 .include <bsd.port.post.mk>

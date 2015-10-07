@@ -2,7 +2,7 @@
 
 PORTNAME=	cherivis-devel
 PORTVERSION=	0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel gnustep
 
 MAINTAINER=	theraven@FreeBSD.org

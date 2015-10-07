@@ -26,4 +26,4 @@ bin/scrappy
 %%PERL5_MAN3%%/Scrappy::Scraper::Control.3.gz
 %%PERL5_MAN3%%/Scrappy::Scraper::Parser.3.gz
 %%PERL5_MAN3%%/Scrappy::Session.3.gz
-man/man1/scrappy.1.gz
+%%PERL5_MAN1%%/scrappy.1.gz

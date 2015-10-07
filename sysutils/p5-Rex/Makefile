@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	Rex
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.3
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:JFRIED
+MASTER_SITE_SUBDIR=	CPAN:FERKI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	az@FreeBSD.org
@@ -30,7 +30,6 @@ BUILD_DEPENDS=	\
 	p5-Expect>=0:${PORTSDIR}/lang/p5-Expect \
 	p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
 	p5-HTTP-Date>=0:${PORTSDIR}/www/p5-HTTP-Date \
-	p5-String-Escape>=0:${PORTSDIR}/textproc/p5-String-Escape \
 	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
 	p5-Net-SSH2>=0:${PORTSDIR}/net/p5-Net-SSH2 \
 	p5-Net-OpenSSH>=0:${PORTSDIR}/net/p5-Net-OpenSSH \

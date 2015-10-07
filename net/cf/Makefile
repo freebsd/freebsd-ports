@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cf
-PORTVERSION=	6.11.2
+PORTVERSION=	6.12.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -22,8 +22,6 @@ PORTDOCS=	BUILDING.md CHANGELOG.md INSTALL.md LICENSE README.md VERSION
 STRIP=		# stripping can break go binaries
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e "s/BUILT_FROM_SOURCE/${PORTVERSION}/g" ${WRKSRC}/cf/app_constants.go
@@ -46,11 +44,11 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/out/cf \
 		${STAGEDIR}${PREFIX}/bin/
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for x in ${PORTDOCS}
 	${INSTALL_MAN} ${WRKSRC}/${x} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

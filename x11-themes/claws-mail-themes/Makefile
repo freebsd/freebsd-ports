@@ -9,6 +9,7 @@ MASTER_SITES=	http://www.claws-mail.org/themes/
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Claws Mail icon themes
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 THEMESDIR?=	${PREFIX}/share/claws-mail/themes

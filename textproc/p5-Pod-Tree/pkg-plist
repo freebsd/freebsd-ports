@@ -30,7 +30,7 @@ bin/podtree2html
 %%PERL5_MAN3%%/Pod::Tree::PerlPod.3.gz
 %%PERL5_MAN3%%/Pod::Tree::PerlTop.3.gz
 %%PERL5_MAN3%%/Pod::Tree::Pod.3.gz
-man/man1/mod2html.1.gz
-man/man1/perl2html.1.gz
-man/man1/pods2html.1.gz
-man/man1/podtree2html.1.gz
+%%PERL5_MAN1%%/mod2html.1.gz
+%%PERL5_MAN1%%/perl2html.1.gz
+%%PERL5_MAN1%%/pods2html.1.gz
+%%PERL5_MAN1%%/podtree2html.1.gz

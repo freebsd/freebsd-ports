@@ -2,6 +2,7 @@
 
 PORTNAME=	kpathsea
 PORTVERSION=	6.2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2015/
 PKGNAMEPREFIX=	tex-
@@ -11,13 +12,13 @@ DIST_SUBDIR=	TeX
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Path searching library for TeX
 
-USES=		gmake tar:xz libtool
+USES=		libtool tar:xz
 USE_LDCONFIG=	yes
 USE_TEX=	yes
-EXTRACT_AFTER_ARGS=	${EXTRACT_FILES}
-EXTRACT_FILES=	${DISTNAME}/build-aux \
-		${DISTNAME}/texk/kpathsea \
-		${DISTNAME}/texk/texlive/tl_scripts
+EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
+EXTRACT_FILES=	build-aux \
+		texk/kpathsea \
+		texk/texlive/tl_scripts
 WRKSRC=		${WRKDIR}/${DISTNAME}/texk/kpathsea
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

@@ -15,5 +15,6 @@ TEST_DEPENDS=	p5-PerlIO-locale>=0:${PORTSDIR}/devel/p5-PerlIO-locale
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

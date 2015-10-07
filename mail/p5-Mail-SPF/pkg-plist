@@ -49,4 +49,4 @@ sbin/spfd.pl
 %%PERL5_MAN3%%/Mail::SPF::Util.3.gz
 %%PERL5_MAN3%%/Mail::SPF::v1::Record.3.gz
 %%PERL5_MAN3%%/Mail::SPF::v2::Record.3.gz
-man/man1/spfquery.pl.1.gz
+%%PERL5_MAN1%%/spfquery.pl.1.gz

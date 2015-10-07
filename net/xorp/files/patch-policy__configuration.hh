@@ -1,6 +1,6 @@
---- ./policy/configuration.hh.orig	2011-03-16 21:27:54.000000000 +0000
-+++ ./policy/configuration.hh	2014-02-26 21:17:13.000000000 +0000
-@@ -43,11 +43,19 @@
+--- policy/configuration.hh.orig	2012-01-11 17:56:10 UTC
++++ policy/configuration.hh
+@@ -43,11 +43,19 @@ typedef map<string, string> RESOURCES;
  
  // XXX we go reverse in order to make peer specific policies override global
  // ones.  Global is "" so it's always smallest (first).

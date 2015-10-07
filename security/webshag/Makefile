@@ -2,6 +2,7 @@
 
 PORTNAME=	webshag
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=	http://www.scrt.ch/outils/webshag/
 DISTNAME=	ws110
@@ -29,6 +30,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/nmap:${PORTSDIR}/security/nmap
 
 .if ${PORT_OPTIONS:MWXGTK}
 USE_WX=		2.6+
+WX_UNICODE=	yes
 WX_COMPS=	python:run
 .endif
 

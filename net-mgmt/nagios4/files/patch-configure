@@ -1,6 +1,6 @@
---- configure.orig	2014-08-12 15:00:01 UTC
+--- configure.orig	2015-08-19 21:49:52 UTC
 +++ configure
-@@ -6014,7 +6014,6 @@ cat >>confdefs.h <<_ACEOF
+@@ -6016,7 +6016,6 @@ cat >>confdefs.h <<_ACEOF
  #define DEFAULT_NAGIOS_GROUP "$nagios_grp"
  _ACEOF
  
@@ -8,7 +8,7 @@
  
  
  
-@@ -6035,7 +6034,6 @@ fi
+@@ -6037,7 +6036,6 @@ fi
  
  
  
@@ -16,7 +16,7 @@
  
  
  MAIL_PROG=no
-@@ -7766,7 +7764,7 @@ $as_echo_n "checking for linker flags fo
+@@ -7768,7 +7766,7 @@ $as_echo_n "checking for linker flags fo
  			MOD_LDFLAGS="-shared"
  			MOD_CFLAGS="-fPIC"
  		;;

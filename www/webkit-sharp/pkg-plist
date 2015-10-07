@@ -5,6 +5,3 @@ lib/monodoc/sources/webkit-sharp-docs.source
 lib/monodoc/sources/webkit-sharp-docs.tree
 lib/monodoc/sources/webkit-sharp-docs.zip
 libdata/pkgconfig/webkit-sharp-1.0.pc
-@dirrm lib/mono/webkit-sharp
-@dirrm lib/mono/gac/webkit-sharp/%%ASSEMBLY_VERSION%%.0__eaa1d335d2e19745
-@dirrm lib/mono/gac/webkit-sharp

@@ -487,6 +487,8 @@
 %%QT_MKSPECDIR%%/win32-msvc2012/qplatformdefs.h
 %%QT_MKSPECDIR%%/win32-msvc2013/qmake.conf
 %%QT_MKSPECDIR%%/win32-msvc2013/qplatformdefs.h
+%%QT_MKSPECDIR%%/win32-msvc2015/qmake.conf
+%%QT_MKSPECDIR%%/win32-msvc2015/qplatformdefs.h
 %%QT_MKSPECDIR%%/wince50standard-armv4i-msvc2005/default_post.prf
 %%QT_MKSPECDIR%%/wince50standard-armv4i-msvc2005/qmake.conf
 %%QT_MKSPECDIR%%/wince50standard-armv4i-msvc2005/qplatformdefs.h

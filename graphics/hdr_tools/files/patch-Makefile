@@ -1,0 +1,47 @@
+--- Makefile.orig	2010-11-23 21:27:55 UTC
++++ Makefile
+@@ -31,8 +31,12 @@ DEPENDENCY_HEADERS = \
+ 
+ 
+ ifeq (${PLATFORM},linux)
+-CFLAGS = -pthread -fopenmp -Wall -msse2 -mfpmath=sse -I/usr/include/ImageMagick -I/usr/include/OpenEXR
+-LDFLAGS = -lIlmImf -lMagick++ -ltiff -lpopt -lstdc++ -lm
++CXX?=		c++
++CXXFLAGS+=	-Wall
++CPPFLAGS+=	`pkg-config --cflags popt` `pkg-config --cflags OpenEXR` \
++		`Magick++-config --cppflags`
++LDFLAGS+=	`pkg-config --libs popt` `pkg-config --libs libtiff-4` \
++		`pkg-config --libs OpenEXR` `Magick++-config --libs`
+ EXECUTABLES = ${TARGET_SOURCES:%.cc=%}
+ endif
+ 
+@@ -64,14 +68,24 @@ CFLAGS := -O3 -funroll-loops -fomit-fram
+ endif
+ 
+ 
++TARGET_OBJS = $(TARGET_SOURCES:%.cc=%.o)
++DEPENDENCY_OBJS = $(DEPENDENCY_SOURCES:%.cc=%.o)
++
+ .PHONY : all
+-all : ${TARGET_SOURCES:%.cc=%}
++all : $(EXECUTABLES)
+ 
+-% : %.cc $(DEPENDENCY_HEADERS) $(DEPENDENCY_SOURCES) Makefile
+-	@echo "----  building \"$@\" from \"$<\" ($(PLATFORM)/$(BUILD))  ----"
+-	g++ $(CFLAGS) $< $(DEPENDENCY_SOURCES) -o $@ $(LDFLAGS)
+-	@echo
++$(TARGET_OBJS) $(DEPENDENCY_OBJS) : $(DEPENDENCY_HEADERS)
++$(EXECUTABLES) : $(DEPENDENCY_OBJS)
++$(foreach prog,$(EXECUTABLES),$(eval $$prog : $$prog.o))
++
++%.o : %.cc
++# Clang cannot compile image.cc and squish_luminance.cc with -O2 and above
++	$(CXX) $(if $(and $(shell $(CXX) -v 2>&1 | grep clang),$(filter \
++		image.cc squish_luminance.cc,$<)),$(CXXFLAGS:-O%=-O1), \
++		$(CXXFLAGS)) $(CPPFLAGS) -o $@ -c $<
+ 
++% : %.o
++	$(CXX) $(CXXFLAGS) $(LDFLAGS) $^ -o $@
+ 
+ .PHONY : strip
+ strip : all

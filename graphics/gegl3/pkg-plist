@@ -119,6 +119,7 @@ lib/gegl-%%GEGL_VER%%/deinterlace.so
 lib/gegl-%%GEGL_VER%%/difference-of-gaussians.so
 lib/gegl-%%GEGL_VER%%/difference.so
 lib/gegl-%%GEGL_VER%%/diffraction-patterns.so
+lib/gegl-%%GEGL_VER%%/displace.so
 lib/gegl-%%GEGL_VER%%/display.so
 lib/gegl-%%GEGL_VER%%/distance-transform.so
 lib/gegl-%%GEGL_VER%%/divide.so
@@ -143,7 +144,9 @@ lib/gegl-%%GEGL_VER%%/fattal02.so
 lib/gegl-%%GEGL_VER%%/fractal-explorer.so
 lib/gegl-%%GEGL_VER%%/fractal-trace.so
 lib/gegl-%%GEGL_VER%%/gamma.so
+lib/gegl-%%GEGL_VER%%/gaussian-blur-iir.so
 lib/gegl-%%GEGL_VER%%/gaussian-blur.so
+lib/gegl-%%GEGL_VER%%/gblur-1d.so
 lib/gegl-%%GEGL_VER%%/gegl-buffer-load-op.so
 lib/gegl-%%GEGL_VER%%/gegl-buffer-save-op.so
 lib/gegl-%%GEGL_VER%%/grey.so
@@ -254,6 +257,7 @@ lib/gegl-%%GEGL_VER%%/svg-saturate.so
 lib/gegl-%%GEGL_VER%%/texturize-canvas.so
 lib/gegl-%%GEGL_VER%%/threshold.so
 lib/gegl-%%GEGL_VER%%/tile-glass.so
+lib/gegl-%%GEGL_VER%%/tile-paper.so
 lib/gegl-%%GEGL_VER%%/tile-seamless.so
 lib/gegl-%%GEGL_VER%%/tile.so
 lib/gegl-%%GEGL_VER%%/transformops.so
@@ -291,6 +295,7 @@ libdata/pkgconfig/gegl-sc-%%GEGL_VER%%.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%3/hello-world.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%3/sdl-draw.c
 share/gir-1.0/Gegl-%%GEGL_VER%%.gir
+share/locale/bs/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/ca/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/de/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/el/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
@@ -304,6 +309,7 @@ share/locale/id/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/it/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/ko/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/lv/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
+share/locale/oc/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/pl/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/pt_BR/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/ru/LC_MESSAGES/gegl-%%GEGL_VER%%.mo

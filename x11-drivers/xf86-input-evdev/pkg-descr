@@ -1,0 +1,5 @@
+This package contains the X.Org xf86-input-evdev driver. It supports
+all input devices that webcamd knows about, including tablets,
+touchscreens, joysticks and HIDs.
+
+WWW: http://www.x.org

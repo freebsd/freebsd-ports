@@ -5,7 +5,7 @@ PORTNAME=	sssd
 DISTVERSION=	1.11.7
 PORTREVISION=	2
 CATEGORIES=	security
-MASTER_SITES=   https://fedorahosted.org/released/${PORTNAME}/ \
+MASTER_SITES=	https://fedorahosted.org/released/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
 
 MAINTAINER=	lukas.slebodnik@intrak.sk
@@ -47,7 +47,7 @@ CONFIGURE_ARGS=	--with-selinux=no --with-semanage=no \
 		--disable-cifs-idmap-plugin --disable-config-lib
 CFLAGS+=	-fstack-protector-all
 PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
-#DEBUG_FLAGS=  -g
+#DEBUG_FLAGS=	-g
 MAKE_ENV+=	LINGUAS="bg de eu es fr hu id it ja nb nl pl pt ru sv tg tr uk zh_CN zh_TW"
 SUB_FILES=	pkg-message
 
@@ -59,7 +59,7 @@ PATHFIX_MAKEFILEIN=	Makefile.am
 INSTALL_TARGET=	install-strip
 CPE_VENDOR=	fedoraproject
 
-python_CMD=   ${SETENV} python2
+python_CMD=	${SETENV} python2
 SHEBANG_FILES=	src/tools/sss_obfuscate \
 		src/sbus/sbus_codegen
 
@@ -75,10 +75,6 @@ SMB_BUILD_DEPENDS=	samba41>=4.1.0:${PORTSDIR}/net/samba41
 SMB_CONFIGURE_WITH=	samba
 
 .include <bsd.port.options.mk>
-
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not link on ia64, powerpc, or sparc64
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|SIGCLD|SIGCHLD|g' ${WRKSRC}/src/util/signal.c
@@ -102,14 +98,14 @@ post-patch:
 	@${CP} ${FILESDIR}/sss_bsd_errno.h ${WRKSRC}/src/util/sss_bsd_errno.h
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/src/examples/sssd-example.conf ${STAGEDIR}${ETCDIR}/sssd.conf.sample
-	(cd ${STAGEDIR}${PREFIX}/lib && ${LN} -s nss_sss.so nss_sss.so.1)
-
-	# clean these up from the install; we create them in rc script start_precmd
-.for VARDIRS in db/sss db/sss_mc log/sssd run/sss/krb5.include.d run/sss/private run/sss
-	@${RMDIR} ${STAGEDIR}/var/${VARDIRS}
+	${INSTALL_DATA} ${WRKSRC}/src/examples/sssd-example.conf \
+		${STAGEDIR}${ETCDIR}/sssd.conf.sample
+	${LN} -sf nss_sss.so ${STAGEDIR}${PREFIX}/lib/nss_sss.so.1
+# clean these up from the install; we create them in rc script start_precmd
+.for d in db/sss db/sss_mc log/sssd run/sss/krb5.include.d run/sss/private run/sss
+	@${RMDIR} ${STAGEDIR}/var/${d}
 .endfor
-	# clean unused man dirs
+# clean unused man dirs
 .for i in nl/man1 nl/man5 pt/man1 pt/man5
 	@${RMDIR} ${STAGEDIR}${PREFIX}/man/${i}
 .endfor

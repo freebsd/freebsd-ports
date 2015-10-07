@@ -22,4 +22,7 @@ USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include" DEFINE="-DCRACKLIB_DICTPATH=\\\"${PREFIX}/libdata/cracklib/pw_dict\\\""
 
+post-patch:
+	@${REINPLACE_CMD} 's/-Werror//' ${WRKSRC}/Makefile.PL
+
 .include <bsd.port.mk>

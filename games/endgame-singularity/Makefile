@@ -16,10 +16,11 @@ RUN_DEPENDS=	py*-game>=1.8:${PORTSDIR}/devel/py-game \
 		${PYNUMPY}
 
 USES=		python
-USE_PYTHON=	distutils
+USE_PYTHON=	autoplist distutils
 USE_SDL=	image mixer
 PORTDOCS=	AUTHORS Changelog README.txt TODO
 PROJECTHOST=	${PKGNAMEPREFIX}${PORTNAME}
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	MUSIC DOCS
 OPTIONS_DEFAULT=	MUSIC

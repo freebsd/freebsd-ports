@@ -1,0 +1,28 @@
+commit 1aa25a3
+Author: Michael Neumann <mneumann@ntecs.de>
+Date:   Tue Aug 5 03:06:02 2014 +0200
+
+    Support DragonFlyBSD
+    
+    Note that in contrast to FreeBSD, DragonFly does not work
+    with force_lazy_lock enabled.
+---
+ configure.ac | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git mozilla/memory/jemalloc/src/configure.ac mozilla/memory/jemalloc/src/configure.ac
+index 645bd46..83c60ec 100644
+--- mozilla/memory/jemalloc/src/configure.ac
++++ mozilla/memory/jemalloc/src/configure.ac
+@@ -283,6 +283,11 @@ case "${host}" in
+ 	AC_DEFINE([JEMALLOC_PURGE_MADVISE_FREE], [ ])
+ 	force_lazy_lock="1"
+ 	;;
++  *-*-dragonfly*)
++	CFLAGS="$CFLAGS"
++	abi="elf"
++	AC_DEFINE([JEMALLOC_PURGE_MADVISE_FREE], [ ])
++	;;
+   *-*-linux*)
+ 	CFLAGS="$CFLAGS"
+ 	CPPFLAGS="$CPPFLAGS -D_GNU_SOURCE"

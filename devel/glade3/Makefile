@@ -14,7 +14,7 @@ CONFLICTS=	glade-3.*
 PORTSCOUT=	ignore
 
 INSTALLS_ICONS=	yes
-USE_GNOME=	gtk20 libxml2 gnomedocutils
+USE_GNOME=	gtk20 intltool libxml2 gnomedocutils
 USES=		gmake gettext libtool pathfix desktop-file-utils pkgconfig tar:xz
 INSTALLS_OMF=	yes
 INSTALL_TARGET=	install-strip

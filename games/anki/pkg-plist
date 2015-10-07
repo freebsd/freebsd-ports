@@ -728,6 +728,7 @@ share/applications/anki.desktop
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/anki.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/anki.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/sco/LC_MESSAGES/anki.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/anki.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/anki.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/anki.mo

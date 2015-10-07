@@ -3,7 +3,7 @@
 
 PORTNAME=	engine_pkcs11
 PORTVERSION=	0.1.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF/opensc/${PORTNAME}
 
@@ -25,10 +25,6 @@ CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 
 PORTDOCS=	*
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-CONFIGURE_ARGS+=--enable-doc
-.endif
+DOCS_CONFIGURE_ON=	--enable-doc
 
 .include <bsd.port.mk>

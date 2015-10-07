@@ -4,3 +4,4 @@ etc/antivirus.conf-clamav
 @dir(nobody,nobody,) %%ANTIVIRUS%%/spool
 @dir(nobody,nobody,) %%ANTIVIRUS%%/quarantine
 @dir(nobody,nobody,) %%ANTIVIRUS%%/run
+@dir(nobody,nobody,) %%ANTIVIRUS%%

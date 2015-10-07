@@ -1,6 +1,6 @@
---- ./rtrmgr/module_manager.hh.orig	2011-09-20 00:33:28.000000000 +0000
-+++ ./rtrmgr/module_manager.hh	2014-02-26 21:17:13.000000000 +0000
-@@ -144,7 +144,9 @@
+--- rtrmgr/module_manager.hh.orig	2012-01-11 17:56:10 UTC
++++ rtrmgr/module_manager.hh
+@@ -144,7 +144,9 @@ private:
      string	_expath;	// The expanded absolute path to the program
      bool	_do_exec;	// false indicates we're running in test mode,
  				// when we may not actually start any processes

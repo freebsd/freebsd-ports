@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1>=0.1.7:${PORTSDIR}/devel/py-asn1 \
 		${PYTHON_PKGNAMEPREFIX}six>=1.6.1:${PORTSDIR}/devel/py-six
 
 NO_ARCH=	yes
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 USES=		python
 
 .include <bsd.port.mk>

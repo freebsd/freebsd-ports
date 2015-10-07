@@ -4,4 +4,4 @@ bin/acidrip
 %%SITE_PERL%%/AcidRip/logo.png
 %%SITE_PERL%%/AcidRip/messages.pm
 %%SITE_PERL%%/AcidRip/signals.pm
-man/man1/acidrip.1.gz
+%%PERL5_MAN1%%/acidrip.1.gz

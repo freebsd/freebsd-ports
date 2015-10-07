@@ -23,14 +23,10 @@ WRKSRC=		${WRKDIR}/eTktab-${PORTVERSION}
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	*
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-DISTFILES+=	canada_multi-3.2.etk:keyboard \
+DOCS_DISTFILES=	canada_multi-3.2.etk:keyboard \
 		dvorak-3.2.etk:keyboard \
 		uk-3.2.etk:keyboard \
 		us-3.2.etk:keyboard
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|wish|${WISH}|g' ${WRKSRC}/eTktab
@@ -42,12 +38,11 @@ post-extract:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/eTktab ${STAGEDIR}${PREFIX}/bin/etktab
-.if ${PORT_OPTIONS:MDOCS}
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in CHANGES.html LICENSE.html README.html eTktab-small.xpm eTktab.xpm \
 		canada_multi-3.2.etk dvorak-3.2.etk uk-3.2.etk us-3.2.etk
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

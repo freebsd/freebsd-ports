@@ -1,5 +1,5 @@
---- stream/tvi_v4l2.c~	2012-05-10 23:45:22.000000000 -0500
-+++ stream/tvi_v4l2.c	2012-05-11 00:08:34.930938536 -0500
+--- stream/tvi_v4l2.c.orig	2013-07-09 16:33:36 UTC
++++ stream/tvi_v4l2.c
 @@ -52,7 +52,6 @@ known issues:
  #ifdef HAVE_SYS_VIDEOIO_H
  #include <sys/videoio.h>

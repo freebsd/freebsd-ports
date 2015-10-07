@@ -1,5 +1,5 @@
---- mtrace.c.orig	2011-10-23 10:03:36.000000000 +0200
-+++ mtrace.c	2014-12-20 20:31:14.000000000 +0100
+--- mtrace.c.orig	2014-12-28 14:23:52 UTC
++++ mtrace.c
 @@ -903,6 +903,12 @@ void stat_line(struct tr_resp *r, struct
      }
  }

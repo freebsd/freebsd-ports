@@ -1,6 +1,6 @@
---- configure.orig	2014-06-21 01:12:25.000000000 +0200
-+++ configure	2014-07-30 00:01:20.820891824 +0200
-@@ -4720,9 +4720,9 @@
+--- configure.orig	2014-08-17 22:31:23 UTC
++++ configure
+@@ -4698,9 +4698,9 @@ astetcdir='${sysconfdir}/asterisk'
  astheaderdir='${includedir}/asterisk'
  astlibdir='${libdir}/asterisk'
  astmandir='${mandir}'
@@ -12,7 +12,7 @@
  astkeydir='${astvarlibdir}'
  astspooldir='${localstatedir}/spool/asterisk'
  astlogdir='${localstatedir}/log/asterisk'
-@@ -4745,8 +4745,6 @@
+@@ -4723,8 +4723,6 @@ esac
  case "${host_os}" in
       freebsd*)
       ac_default_prefix=/usr/local
@@ -21,7 +21,7 @@
       ;;
       openbsd*)
       ac_default_prefix=/usr/local
-@@ -18493,6 +18491,8 @@
+@@ -18470,6 +18468,8 @@ $as_echo_n "checking if \"struct ifaddrs
  
  	cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
@@ -30,7 +30,7 @@
   #include <ifaddrs.h>
  int
  main ()
-@@ -26268,7 +26268,7 @@
+@@ -26245,7 +26245,7 @@ $as_echo "${OPENH323_BUILD}" >&6; }
  
  	fi
  
@@ -39,7 +39,7 @@
  
  	if test "${HAS_OPENH323:-unset}" != "unset"; then
  	   { $as_echo "$as_me:${as_lineno-$LINENO}: checking OpenH323 installation validity" >&5
-@@ -26366,13 +26366,13 @@
+@@ -26343,13 +26343,13 @@ if test "x${PBX_LUA}" != "x1" -a "${USE_
        ast_ext_lib_check_save_CFLAGS="${CFLAGS}"
        CFLAGS="${CFLAGS} "
        as_ac_Lib=`$as_echo "ac_cv_lib_lua5.2_${pbxfuncname}" | $as_tr_sh`
@@ -56,7 +56,7 @@
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -26414,18 +26414,18 @@
+@@ -26391,18 +26391,18 @@ fi
  
     # now check for the header.
     if test "${AST_LUA_FOUND}" = "yes"; then
@@ -78,7 +78,7 @@
  if test "x$ac_cv_header_lua5_2_lua_h" = xyes; then :
    LUA_HEADER_FOUND=1
  else
-@@ -26478,13 +26478,13 @@
+@@ -26455,13 +26455,13 @@ if test "x${PBX_LUA}" != "x1" -a "${USE_
        ast_ext_lib_check_save_CFLAGS="${CFLAGS}"
        CFLAGS="${CFLAGS} "
        as_ac_Lib=`$as_echo "ac_cv_lib_lua5.1_${pbxfuncname}" | $as_tr_sh`
@@ -95,7 +95,7 @@
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -26526,18 +26526,18 @@
+@@ -26503,18 +26503,18 @@ fi
  
     # now check for the header.
     if test "${AST_LUA_FOUND}" = "yes"; then

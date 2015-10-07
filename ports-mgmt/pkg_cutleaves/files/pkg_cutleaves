@@ -286,7 +286,7 @@ sub set_excl_pattern {
   $exclpattern = @excludes 
     ? join('|', map{qr(\Q$_\E)} @excludes) 
     : ' '; # default non-exclusive 
-  $exclpattern = qr{^($exclpattern)}o;
+  $exclpattern = qr{^($exclpattern)$}o;
 }
 
 #
@@ -317,7 +317,7 @@ sub get_excludelist {
 #
 sub get_packages {
   my @pkgs;
-  open(PKGQUERY, '-|', @pkgquery, '-a', '%n-%v\t%?r\t%c')
+  open(PKGQUERY, '-|', @pkgquery, '-a', '%n\t%n-%v\t%?r\t%c')
     or die "Couldn't read output from $pkgquery[0]!";
   while (my $p = <PKGQUERY>) {
     chomp($p);
@@ -334,9 +334,9 @@ sub get_leaves {
   my %leaves;
   my @pkgs = get_packages(); 
   foreach my $pkg (@pkgs) {
-    my ($file, $required, $comment) = @$pkg;
+    my ($name, $file, $required, $comment) = @$pkg;
     unless ($required) {
-      if ($file =~ $exclpattern) {
+      if ($name =~ $exclpattern) {
         $leavestokeep{$file} = 1;
       }
       else {

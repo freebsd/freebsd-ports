@@ -6,6 +6,7 @@ bin/knsec3hash
 bin/knsupdate
 include/dnssec/binary.h
 include/dnssec/crypto.h
+include/dnssec/dnssec.h
 include/dnssec/error.h
 include/dnssec/event.h
 include/dnssec/kasp.h
@@ -50,6 +51,7 @@ include/libknot/internal/tolower.h
 include/libknot/internal/trie/hat-trie.h
 include/libknot/internal/trie/murmurhash3.h
 include/libknot/internal/utils.h
+include/libknot/internal/wire_ctx.h
 include/libknot/libknot.h
 include/libknot/packet/compr.h
 include/libknot/packet/pkt.h
@@ -73,8 +75,15 @@ include/libknot/rrtype/rdname.h
 include/libknot/rrtype/rrsig.h
 include/libknot/rrtype/soa.h
 include/libknot/rrtype/tsig.h
+include/libknot/rrtype/txt.h
 include/libknot/tsig-op.h
 include/libknot/tsig.h
+include/libknot/yparser/yparser.h
+include/libknot/yparser/ypformat.h
+include/libknot/yparser/ypscheme.h
+include/libknot/yparser/yptrafo.h
+include/zscanner/error.h
+include/zscanner/scanner.h
 lib/libdnssec.a
 lib/libdnssec.so
 lib/libdnssec.so.0

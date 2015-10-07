@@ -15,6 +15,7 @@ RUBY_NO_BUILD_DEPENDS=	yes
 RUBY_SHEBANG_FILES=	zfs-snapshot-mgmt
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 SUB_FILES=	pkg-message
 

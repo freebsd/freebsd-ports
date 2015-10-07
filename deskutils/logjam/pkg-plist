@@ -1,6 +1,6 @@
 bin/logjam
 man/man1/logjam.1.gz
-%%WITH_XMMS%%bin/logjam-xmms-client
+%%XMMS%%bin/logjam-xmms-client
 share/applications/logjam.desktop
 share/pixmaps/logjam_goat.png
 share/pixmaps/logjam_pencil.png

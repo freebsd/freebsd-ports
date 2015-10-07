@@ -4,9 +4,9 @@
 #  - etc/*.sample support
 
 PORTNAME=	openmpi
-DISTVERSION=	1.8.7
+PORTVERSION=	1.10.0
 CATEGORIES=	net parallel
-MASTER_SITES=	http://www.open-mpi.org/software/ompi/v1.8/downloads/
+MASTER_SITES=	http://www.open-mpi.org/software/ompi/v${PORTVERSION:R}/downloads/
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	High Performance Message Passing Library
@@ -15,8 +15,6 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libhwloc.so:${PORTSDIR}/devel/hwloc \
 		libltdl.so:${PORTSDIR}/devel/libltdl
 
-CONFLICTS=	openmpi-devel-1.7.*
-
 HAS_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 # :keepla because port uses lt_dlopen
@@ -24,7 +22,7 @@ USES=		fortran gmake libtool:keepla perl5 pkgconfig tar:bzip2
 USE_PERL5=	build
 
 MPIBASE?=	mpi
-MPIDIR?=	${MPIBASE}/${UNIQUENAME}
+MPIDIR?=	${MPIBASE}/${PKGBASE}
 
 PLIST_SUB+=	MPIBASE=${MPIBASE}
 PLIST_SUB+=	MPIDIR=${MPIDIR}
@@ -44,7 +42,7 @@ OPTIONS_DEFINE=	IPV6 SLURM TORQUE VT
 TORQUE_DESC=	Enable Torque support
 SLURM_DESC=	Enable SLURM support
 VT_DESC=		Enable VampirTrace support
-OPTIONS_DEFAULT=	IPV6
+OPTIONS_DEFAULT=	IPV6 SLURM
 OPTIONS_SUB=	yes
 
 IPV6_CONFIGURE_ENABLE=	ipv6
@@ -62,7 +60,7 @@ TORQUE_PLIST_FILES=	${MPIDIR}/lib/openmpi/mca_plm_tm.so \
 			${MPIDIR}/share/openmpi/help-ras-tm.txt
 
 SLURM_CONFIGURE_WITH=	slurm
-SLURM_LIB_DEPENDS=	libslurm.so:${PORTSDIR}/sysutils/slurm-hpc
+SLURM_LIB_DEPENDS=	libslurm.so:${PORTSDIR}/sysutils/slurm-wlm
 SLURM_PLIST_FILES=	${MPIDIR}/lib/openmpi/mca_ess_slurm.la \
 			${MPIDIR}/lib/openmpi/mca_ess_slurm.so \
 			${MPIDIR}/lib/openmpi/mca_plm_slurm.la \

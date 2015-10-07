@@ -19,6 +19,7 @@ include/GeographicLib/Constants.hpp
 include/GeographicLib/DMS.hpp
 include/GeographicLib/Ellipsoid.hpp
 include/GeographicLib/EllipticFunction.hpp
+include/GeographicLib/GARS.hpp
 include/GeographicLib/GeoCoords.hpp
 include/GeographicLib/Geocentric.hpp
 include/GeographicLib/Geodesic.hpp
@@ -27,6 +28,7 @@ include/GeographicLib/GeodesicLine.hpp
 include/GeographicLib/GeodesicLineExact.hpp
 include/GeographicLib/Geohash.hpp
 include/GeographicLib/Geoid.hpp
+include/GeographicLib/Georef.hpp
 include/GeographicLib/Gnomonic.hpp
 include/GeographicLib/GravityCircle.hpp
 include/GeographicLib/GravityModel.hpp
@@ -52,7 +54,7 @@ include/GeographicLib/Utility.hpp
 lib/libGeographic.a
 lib/libGeographic.so
 lib/libGeographic.so.14
-lib/libGeographic.so.14.0.3
+lib/libGeographic.so.14.2.0
 %%PYTHON_SITELIBDIR%%/geographiclib/__init__.py
 %%PYTHON_SITELIBDIR%%/geographiclib/accumulator.py
 %%PYTHON_SITELIBDIR%%/geographiclib/constants.py
@@ -112,6 +114,8 @@ share/cmake/GeographicLib/FindGeographicLib.cmake
 %%GRAVITY_WGS84%%%%DATADIR%%/gravity/wgs84.egm.cof
 %%MAGNETIC_EMM2010%%%%DATADIR%%/magnetic/emm2010.wmm
 %%MAGNETIC_EMM2010%%%%DATADIR%%/magnetic/emm2010.wmm.cof
+%%MAGNETIC_EMM2015%%%%DATADIR%%/magnetic/emm2015.wmm
+%%MAGNETIC_EMM2015%%%%DATADIR%%/magnetic/emm2015.wmm.cof
 %%MAGNETIC_IGRF11%%%%DATADIR%%/magnetic/igrf11.wmm
 %%MAGNETIC_IGRF11%%%%DATADIR%%/magnetic/igrf11.wmm.cof
 %%MAGNETIC_IGRF12%%%%DATADIR%%/magnetic/igrf12.wmm
@@ -181,7 +185,6 @@ share/matlab/geographiclib/private/A3coeff.m
 share/matlab/geographiclib/private/A3f.m
 share/matlab/geographiclib/private/AngDiff.m
 share/matlab/geographiclib/private/AngNormalize.m
-share/matlab/geographiclib/private/AngNormalize2.m
 share/matlab/geographiclib/private/AngRound.m
 share/matlab/geographiclib/private/C1f.m
 share/matlab/geographiclib/private/C1pf.m
@@ -192,13 +195,16 @@ share/matlab/geographiclib/private/C4coeff.m
 share/matlab/geographiclib/private/C4f.m
 share/matlab/geographiclib/private/G4coeff.m
 share/matlab/geographiclib/private/GeoRotation.m
+share/matlab/geographiclib/private/LatFix.m
 share/matlab/geographiclib/private/SinCosSeries.m
+share/matlab/geographiclib/private/atan2dx.m
 share/matlab/geographiclib/private/cbrtx.m
 share/matlab/geographiclib/private/cvmgt.m
 share/matlab/geographiclib/private/eatanhe.m
 share/matlab/geographiclib/private/geoid_file.m
 share/matlab/geographiclib/private/geoid_load_file.m
 share/matlab/geographiclib/private/norm2.m
+share/matlab/geographiclib/private/sincosdx.m
 share/matlab/geographiclib/private/sumx.m
 share/matlab/geographiclib/private/swap.m
 share/matlab/geographiclib/private/tauf.m

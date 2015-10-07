@@ -26,7 +26,6 @@ USES=		dos2unix python
 USES+=		shebangfix
 SHEBANG_FILES=	*.py dynagen pemu-start.sh
 SHEBANG_LANG=	python_env python_bol python_cnf
-python_CMD=	${PYTHON_CMD}
 python_env_OLD_CMD=/usr/bin/env[[:space:]]*python
 python_env_CMD=	${PYTHON_CMD}
 python_bol_OLD_CMD=the an incredible combination

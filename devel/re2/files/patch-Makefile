@@ -1,6 +1,6 @@
---- Makefile.orig	2015-05-29 02:13:42 UTC
+--- Makefile.orig	2015-08-01 03:10:18 UTC
 +++ Makefile
-@@ -25,6 +25,7 @@ exec_prefix=$(prefix)
+@@ -23,6 +23,7 @@ exec_prefix=$(prefix)
  bindir=$(exec_prefix)/bin
  includedir=$(prefix)/include
  libdir=$(exec_prefix)/lib
@@ -8,17 +8,17 @@
  INSTALL=install
  INSTALL_PROGRAM=$(INSTALL)
  INSTALL_DATA=$(INSTALL) -m 644
-@@ -245,13 +246,13 @@ shared-bigtest: $(STESTS) $(SBIGTESTS)
+@@ -258,13 +259,13 @@ shared-bigtest: $(STESTS) $(SBIGTESTS)
  benchmark: obj/test/regexp_benchmark
  
- install: obj/libre2.a obj/so/libre2.so
+ install: obj/libre2.a obj/so/libre2.$(SOEXT)
 -	mkdir -p $(DESTDIR)$(includedir)/re2 $(DESTDIR)$(libdir)/pkgconfig
 +	mkdir -p $(DESTDIR)$(includedir)/re2 $(DESTDIR)$(libdatadir)/pkgconfig
  	$(INSTALL_DATA) $(INSTALL_HFILES) $(DESTDIR)$(includedir)/re2
  	$(INSTALL) obj/libre2.a $(DESTDIR)$(libdir)/libre2.a
- 	$(INSTALL) obj/so/libre2.so $(DESTDIR)$(libdir)/libre2.so.$(SONAME).0.0
- 	ln -sf libre2.so.$(SONAME).0.0 $(DESTDIR)$(libdir)/libre2.so.$(SONAME)
- 	ln -sf libre2.so.$(SONAME).0.0 $(DESTDIR)$(libdir)/libre2.so
+ 	$(INSTALL) obj/so/libre2.$(SOEXT) $(DESTDIR)$(libdir)/libre2.$(SOEXTVER00)
+ 	ln -sf libre2.$(SOEXTVER00) $(DESTDIR)$(libdir)/libre2.$(SOEXTVER)
+ 	ln -sf libre2.$(SOEXTVER00) $(DESTDIR)$(libdir)/libre2.$(SOEXT)
 -	sed -e "s#@prefix@#${prefix}#" re2.pc >$(DESTDIR)$(libdir)/pkgconfig/re2.pc
 +	sed -e "s#@prefix@#${prefix}#" re2.pc >$(DESTDIR)$(libdatadir)/pkgconfig/re2.pc
  

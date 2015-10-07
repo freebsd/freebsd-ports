@@ -11,6 +11,9 @@ COMMENT=	Create a tags file from PHP sources
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	abandoned upstream
+EXPIRATION_DATE=	2015-11-08
+
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/phptags etc/phptags.conf.sample man/man1/phptags.1.gz

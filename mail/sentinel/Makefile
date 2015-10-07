@@ -35,10 +35,10 @@ do-install:
 	@${MKDIR} ${STAGEDIR}/var/spool/sentinel
 	${INSTALL_DATA} ${FILESDIR}/000.sentinel.sh ${STAGEDIR}${PREFIX}/etc/rc.d/sentinel.sh-dist
 	${INSTALL_DATA} ${WRKSRC}/sentinel.cf.SAMPLE ${STAGEDIR}${PREFIX}/etc/sentinel.cf.dist
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.FreeBSD ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.post.mk>

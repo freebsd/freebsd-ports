@@ -2,5 +2,7 @@
 
 LDLIBS += -lncursesw
 LDLIBS += -ldialog
-pkg_cleanup: pkg_cleanup.c
 
+all: pkg_cleanup
+
+pkg_cleanup: pkg_cleanup.c

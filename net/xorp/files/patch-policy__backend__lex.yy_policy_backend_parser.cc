@@ -1,6 +1,6 @@
---- ./policy/backend/lex.yy_policy_backend_parser.cc.orig	2010-07-19 21:10:33.000000000 +0000
-+++ ./policy/backend/lex.yy_policy_backend_parser.cc	2014-02-26 21:17:13.000000000 +0000
-@@ -617,6 +617,8 @@
+--- policy/backend/lex.yy_policy_backend_parser.cc.orig	2012-01-11 17:56:10 UTC
++++ policy/backend/lex.yy_policy_backend_parser.cc
+@@ -617,6 +617,8 @@ static void yy_flex_strncpy (char *,yyco
  static int yy_flex_strlen (yyconst char * );
  #endif
  

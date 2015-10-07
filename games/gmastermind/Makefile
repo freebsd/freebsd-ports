@@ -2,7 +2,7 @@
 
 PORTNAME=	gmastermind
 PORTVERSION=	0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games gnustep
 MASTER_SITES=	SAVANNAH/gap
 DISTNAME=	GMastermind-${PORTVERSION}
@@ -17,6 +17,6 @@ USES=		gnustep
 USE_GNUSTEP=	back build
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/GMastermind.app/GMastermind
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/System/Applications/GMastermind.app/GMastermind
 
 .include <bsd.port.mk>

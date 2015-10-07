@@ -20,6 +20,8 @@ LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 
 CONFLICTS_INSTALL=	guile-[0-9]*
 
+BROKEN_sparc64=	fails to compile: errors in complex.h
+
 USES=		charsetfix gmake libtool ncurses pathfix pkgconfig readline
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

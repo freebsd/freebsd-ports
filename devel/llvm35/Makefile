@@ -2,6 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.5.2
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/3.5.2/
 DISTNAME=	${PORTNAME}-${DISTVERSION}.src
@@ -14,11 +15,10 @@ LLVM_SUFFIX=	${PORTVERSION:C/([0-9]\.[0-9]).*/\1/:S/.//g:C/r.//}
 LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
 DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
-UNIQUENAME=	${PORTNAME}${LLVM_SUFFIX}
 
 WRKSRC=		${WRKDIR}/llvm-${DISTVERSION}.src
 
-USES=		compiler:c++11-lib execinfo gmake perl5 tar:xz
+USES=		compiler:c++11-lib execinfo gmake perl5 tar:xz libedit
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_PREFIX=	${LLVM_PREFIX}
 USE_LDCONFIG=	${LLVM_PREFIX}/lib

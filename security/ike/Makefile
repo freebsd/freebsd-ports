@@ -3,7 +3,7 @@
 
 PORTNAME=	ike
 PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net
 MASTER_SITES=	https://www.shrew.net/download/ike/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-release
@@ -15,7 +15,7 @@ COMMENT=	Shrew Soft IKE daemon and client tools
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_RC_SUBR=	iked
-USES=		bison cmake tar:bzip2
+USES=		bison cmake libedit tar:bzip2
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

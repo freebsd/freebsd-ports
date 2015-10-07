@@ -23,6 +23,8 @@ USES=		libtool python
 # LDFLAGS detection wrong
 LDFLAGS=	-L${LOCALBASE}/lib
 
+MAKE_JOBS_UNSAFE=	yes
+
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/jep.jar ${STAGEDIR}${JAVAJARDIR}/
 

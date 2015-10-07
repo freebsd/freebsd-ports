@@ -1,5 +1,3 @@
-$FreeBSD$
-
 Use <sys/endian.h> instead of the linux-ish <endian.h>
 
 Use __attribute__ ((__nothrow__)) instead of the linux-ish __THROW (from the

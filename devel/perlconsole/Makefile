@@ -19,6 +19,7 @@ RUN_DEPENDS=	p5-ReadLine-Gnu>=0:${PORTSDIR}/devel/p5-ReadLine-Gnu \
 USES=		perl5 shebangfix
 USE_PERL5=	configure
 SHEBANG_FILES=	perlconsole
+NO_ARCH=	yes
 
 PORTDOCS=	README \
 		AUTHORS \
@@ -32,20 +33,18 @@ PLIST_FILES=	bin/perlconsole \
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in README AUTHORS CHANGES
-	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
-.endfor
-.endif
 	${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/PerlConsole/
 	${CP} -R ${WRKSRC}/lib/PerlConsole/ \
 		${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/PerlConsole/
 	${CP} ${WRKSRC}/lib/PerlConsole.pm \
 		${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/PerlConsole.pm
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+
+do-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in README AUTHORS CHANGES
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>

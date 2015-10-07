@@ -20,29 +20,19 @@ USES=		gmake pkgconfig tar:xz
 USE_XORG=	x11 xtst xext
 INSTALLS_ICONS=	YES
 USE_LDCONFIG=	YES
+
 OPTIONS_DEFINE=	ANTHY QT_IM_MODULE DOCS
+OPTIONS_SUB=	yes
 ANTHY_DESC=	Japanese anthy IM module
 QT_IM_MODULE_DESC=	QT IM module
 
-.include <bsd.port.options.mk>
+QT_IM_MODULE_USE=	QT4=inputmethods,qmake_build,moc_build,corelib,gui
+QT_IM_MODULE_LIB_DEPENDS=	libmng.so:${PORTSDIR}/graphics/libmng
+QT_IM_MODULE_CONFIGURE_OFF=	--use_qt4=N
 
-.if ${PORT_OPTIONS:MQT_IM_MODULE}
-USE_QT4=	inputmethods qmake_build moc_build corelib gui
-LIB_DEPENDS+=	libmng.so:${PORTSDIR}/graphics/libmng
-PLIST_SUB+=	QT_IM_MODULE=""
-.else
-CONFIGURE_ARGS+=	--use_qt4=N
-PLIST_SUB+=	QT_IM_MODULE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MANTHY}
-BUILD_DEPENDS+=	${LOCALBASE}/include/anthy/anthy.h:${PORTSDIR}/japanese/anthy
-LIB_DEPENDS+=	libanthy.so:${PORTSDIR}/japanese/anthy
-PLIST_SUB+=	ANTHY_MODULE=""
-.else
-CONFIGURE_ARGS+=	--use_anthy=N
-PLIST_SUB+=	ANTHY_MODULE="@comment "
-.endif
+ANTHY_BUILD_DEPENDS=	${LOCALBASE}/include/anthy/anthy.h:${PORTSDIR}/japanese/anthy
+ANTHY_LIB_DEPENDS=	libanthy.so:${PORTSDIR}/japanese/anthy
+ANTHY_CONFIGURE_OFF=	--use_anthy=N
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,&,,; 1 s,##!/bin/bash,#!/bin/sh,; \
@@ -78,9 +68,8 @@ post-patch:
 		${WRKSRC}/scripts/utf8-edit
 	@${REINPLACE_CMD} -e '/make/ d' ${WRKSRC}/IMdkit/lib/Makefile
 	@${REINPLACE_CMD} -e 's,/usr/X11R6/lib,${LOCALBASE}/lib,' ${WRKSRC}/im-client/Makefile
-.if empty(PORT_OPTIONS:MDOCS)
+post-patch-DOCS-off:
 	@${REINPLACE_CMD} '/install.*DOC_DIR/d' ${WRKSRC}/Makefile
-.endif
 
 post-build:
 .if !defined(DEBUG_FLAGS)

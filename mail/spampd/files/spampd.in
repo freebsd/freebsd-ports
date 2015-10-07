@@ -24,27 +24,7 @@ load_rc_config $name
 
 command="%%PREFIX%%/sbin/$name"
 command_args="--pid=${spampd_pidfile}"
+command_interpreter="%%PERL%% -T"
 pidfile="${spampd_pidfile}"
-sig_stop="KILL"
-stop_cmd="stop_cmd"
-status_cmd="status_cmd"
-
-stop_cmd()
-{
-	if [ -f "$pidfile" ]; then
-		kill `cat $pidfile`
-		rm -f $pidfile
-		echo -n " spampd"
-	fi
-}
-
-status_cmd()
-{
-	if [ -f "$pidfile" ]; then
-		echo "${name} is running as pid `cat $pidfile`."
-	else
-		echo "${name} is not running."
-	fi
-}
 
 run_rc_command $1

@@ -1,5 +1,5 @@
---- qsstv/drmrx/getmode.cpp.orig	2014-04-08 02:02:16.000000000 -0700
-+++ qsstv/drmrx/getmode.cpp	2014-04-08 02:03:32.000000000 -0700
+--- qsstv/drmrx/getmode.cpp.orig	2014-12-06 14:41:00 UTC
++++ qsstv/drmrx/getmode.cpp
 @@ -34,7 +34,6 @@
  #include <stdlib.h>
  #include <math.h>

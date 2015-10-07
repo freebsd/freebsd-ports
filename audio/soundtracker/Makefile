@@ -3,7 +3,7 @@
 
 PORTNAME=	soundtracker
 PORTVERSION=	0.6.8
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	audio
 MASTER_SITES=	http://www.soundtracker.org/dl/v${PORTVERSION:R}/
 
@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 
 GNU_CONFIGURE=	yes
-USES=		pathfix pkgconfig
+USES=		compiler pathfix pkgconfig
 USE_GNOME=	esound gdkpixbuf
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -23,6 +23,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	JACK SDL NLS
 OPTIONS_DEFINE_i386=	ASM
+OPTIONS_SUB=	yes
 ASM_DESC=	Use optimized assembly (potentially unstable)
 
 CONFIGURE_ARGS+=	--disable-gnome
@@ -31,30 +32,21 @@ DESKTOP_ENTRIES="SoundTracker" "Pattern-oriented music editor" \
 		"${PREFIX}/share/pixmaps/${PORTNAME}.xpm" \
 		"soundtracker" "AudioVideo;Audio;AudioVideoEditing;" false
 
-.include <bsd.port.options.mk>
+ASM_CONFIGURE_ON=	--enable-asm
 
-.if ${PORT_OPTIONS:MASM}
-CONFIGURE_ARGS+=	--enable-asm
-.endif
+JACK_LIB_DEPENDS=		libjack.so:${PORTSDIR}/audio/jack
+JACK_CONFIGURE_OFF=	--disable-jack
 
-.if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=		libjack.so:${PORTSDIR}/audio/jack
-.else
-CONFIGURE_ARGS+=	--disable-jack
-.endif
+SDL_USE=		SDL=sdl
+SDL_CONFIGURE_OFF=	--disable-sdl
 
-.if ${PORT_OPTIONS:MSDL}
-USE_SDL=	sdl
-.else
-CONFIGURE_ARGS+=	--disable-sdl
-.endif
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MASM} && ${CHOSEN_COMPILER_TYPE} == "clang"
+CFLAGS+=	-no-integrated-as
 .endif
 
 post-patch:
@@ -67,13 +59,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|PREFIX"/share/soundtracker|DATADIR"|' \
 		${WRKSRC}/app/gui.c
 
-pre-build:
-.if ${PORT_OPTIONS:MNLS}
+pre-build-NLS-on:
 	cd ${WRKSRC}/po && ${LOCALBASE}/bin/msgfmt -c -o ja.gmo ja.po
-.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/sharp.xpm \
 		${STAGEDIR}${PREFIX}/share/pixmaps/soundtracker.xpm
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

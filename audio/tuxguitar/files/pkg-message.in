@@ -1,0 +1,7 @@
+
+SoundFonts for the FluidSynth plugin are available at:
+
+    %%DATADIR%%/8MBGMSFX.SF2
+
+Add this path in the FluidSynth plugin configuration to enable them.
+

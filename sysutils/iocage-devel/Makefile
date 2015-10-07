@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	iocage
-PORTVERSION=	1.6.6
+PORTVERSION=	20150921
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
 
@@ -13,16 +13,11 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	pannon
-GH_TAGNAME=	52a68cf
-
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900044
-BROKEN=		This port works only on FreeBSD 9 and newer
-.endif
+GH_ACCOUNT=	iocage
+GH_TAGNAME=	8c78110
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local/lib/iocage|${PREFIX}/lib/iocage|g" ${WRKSRC}/iocage
@@ -36,4 +31,4 @@ do-install:
 	(cd ${WRKSRC}/lib/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/iocage)
 	${INSTALL_MAN} ${WRKSRC}/iocage.8 ${STAGEDIR}${PREFIX}/man/man8
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

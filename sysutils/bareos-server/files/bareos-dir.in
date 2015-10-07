@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# $FreeBSD: head/sysutils/bareos-server/files/bareos-dir.in 323275 2013-07-19 09:44:58Z rm $
+#
+# PROVIDE: bareos_dir
+# REQUIRE: DAEMON %%REQ_MYSQL%% %%REQ_PGSQL%%
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# bareos_dir_enable  (bool):   Set to NO by default.
+#                Set it to YES to enable bareos_dir.
+# bareos_dir_flags (params):   Set params used to start bareos_dir.
+#
+
+. /etc/rc.subr
+
+name="bareos_dir"
+rcvar=${name}_enable
+command=%%PREFIX%%/sbin/bareos-dir
+
+load_rc_config $name
+
+: ${bareos_dir_enable="NO"}
+: ${bareos_dir_flags=" -u bareos -g bareos -v -c %%PREFIX%%/etc/bareos/bareos-dir.conf"}
+: ${bareos_dir_pidfile="/var/run/bareos/bareos-dir.9101.pid"}
+
+pidfile="${bareos_dir_pidfile}"
+
+run_rc_command "$1"

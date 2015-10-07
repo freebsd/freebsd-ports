@@ -1,12 +1,12 @@
---- ./activehs-base.cabal.orig	2012-09-11 09:56:08.000000000 +0200
-+++ ./activehs-base.cabal	2014-07-12 18:56:46.000000000 +0200
-@@ -21,7 +21,7 @@
+--- activehs-base.cabal.orig	2012-09-11 07:56:08 UTC
++++ activehs-base.cabal
+@@ -21,7 +21,7 @@ Library 
    Exposed-Modules:
      ActiveHs.Base
    Build-Depends:
 -    base >= 4.0 && < 4.7,
 -    QuickCheck >= 2.4 && < 2.6
-+    base >= 4.0 && < 4.8,
-+    QuickCheck >= 2.4 && < 2.7
++    base >= 4.0 && < 4.9,
++    QuickCheck >= 2.4 && < 2.9
  
  

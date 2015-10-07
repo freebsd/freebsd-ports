@@ -6,6 +6,8 @@ PORTREVISION=	0
 
 COMMENT=	Mail archiver plugin for Claws Mail
 
+USES=		libarchive
+
 CLAWS_PLUGINS_BUILD=	archive
 
 .include "../claws-mail/Makefile.claws"

@@ -1,5 +1,5 @@
---- libmpdemux/demux_ogg.c.orig	2013-07-09 18:33:16.000000000 +0200
-+++ libmpdemux/demux_ogg.c	2015-03-25 01:47:19.439377000 +0100
+--- libmpdemux/demux_ogg.c.orig	2013-07-09 16:33:16 UTC
++++ libmpdemux/demux_ogg.c
 @@ -50,21 +50,21 @@
  #endif
  
@@ -28,7 +28,7 @@
  } theora_struct_t;
  #endif
  
-@@ -117,7 +117,7 @@
+@@ -117,7 +117,7 @@ typedef struct ogg_stream {
      float   samplerate; /// granulpos 2 time
      int64_t lastpos;
      int32_t lastsize;
@@ -37,7 +37,7 @@
  
      // Logical stream state
      ogg_stream_state stream;
-@@ -300,11 +300,10 @@
+@@ -300,11 +300,10 @@ static unsigned char *demux_ogg_read_pac
             have theora_state st, until all header packets were passed to the
             decoder. */
          if (!pack->bytes || !(*data&0x80)) {
@@ -51,7 +51,7 @@
                  os->lastpos += pack->granulepos & iframemask;
                  *keyframe = (pack->granulepos & iframemask) == 0;
              } else {
-@@ -888,14 +887,15 @@
+@@ -888,14 +887,15 @@ int demux_ogg_open(demuxer_t *demuxer)
  #ifdef CONFIG_OGGTHEORA
          } else if (pack.bytes >= 7 && !strncmp (&pack.packet[1], "theora", 6)) {
              int errorCode = 0;
@@ -73,7 +73,7 @@
                  mp_msg(MSGT_DEMUX, MSGL_ERR,
                         "Theora header parsing failed: %i \n", errorCode);
              } else {
-@@ -904,30 +904,32 @@
+@@ -904,30 +904,32 @@ int demux_ogg_open(demuxer_t *demuxer)
                  sh_v->bih = calloc(1, sizeof(*sh_v->bih));
                  sh_v->bih->biSize        = sizeof(*sh_v->bih);
                  sh_v->bih->biCompression = sh_v->format = FOURCC_THEORA;

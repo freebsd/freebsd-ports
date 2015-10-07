@@ -1,5 +1,5 @@
---- src/somnec.c.orig	2013-12-01 23:01:31.000000000 -0800
-+++ src/somnec.c	2014-06-08 17:51:47.000000000 -0700
+--- src/somnec.c.orig	2015-02-18 05:31:10 UTC
++++ src/somnec.c
 @@ -38,6 +38,9 @@
  #include "somnec.h"
  #include "shared.h"

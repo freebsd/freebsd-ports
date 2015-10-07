@@ -60,15 +60,3 @@
 %%WWWDIR%%/skins/larry/templates/editsieverule.html
 %%WWWDIR%%/skins/larry/templates/setupsieverules.html
 %%WWWDIR%%/skins/larry/templates/sieverules.html
-@dirrm %%WWWDIR%%/skins/larry/templates
-@dirrm %%WWWDIR%%/skins/larry/images
-@dirrm %%WWWDIR%%/skins/larry
-@dirrm %%WWWDIR%%/skins/classic/templates
-@dirrm %%WWWDIR%%/skins/classic/images
-@dirrm %%WWWDIR%%/skins/classic
-@dirrm %%WWWDIR%%/skins
-@dirrm %%WWWDIR%%/localization
-@dirrm %%WWWDIR%%/lib/Roundcube
-@dirrm %%WWWDIR%%/lib
-@dirrm %%WWWDIR%%/importFilters
-@dirrmtry %%WWWDIR%%

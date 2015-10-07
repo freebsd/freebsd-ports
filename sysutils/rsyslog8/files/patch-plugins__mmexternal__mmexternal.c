@@ -1,4 +1,4 @@
---- plugins/mmexternal/mmexternal.c.orig	2014-11-25 15:45:35 UTC
+--- plugins/mmexternal/mmexternal.c.orig	2015-04-30 08:50:16 UTC
 +++ plugins/mmexternal/mmexternal.c
 @@ -31,7 +31,7 @@
  #include <errno.h>

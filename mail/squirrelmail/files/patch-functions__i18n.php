@@ -1,6 +1,6 @@
---- ./functions/i18n.php.orig	2010-06-02 11:26:40.000000000 -0400
-+++ ./functions/i18n.php	2010-06-02 11:28:33.000000000 -0400
-@@ -683,7 +683,8 @@
+--- functions/i18n.php.orig	2015-01-03 03:56:32 UTC
++++ functions/i18n.php
+@@ -683,7 +683,8 @@ function japanese_charset_xtra() {
              $useragent = func_get_arg(2);
              if (strstr($useragent, 'Windows') !== false ||
                  strstr($useragent, 'Mac_') !== false) {

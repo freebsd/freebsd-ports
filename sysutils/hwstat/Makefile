@@ -6,7 +6,7 @@ PORTVERSION=	0.5.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://pub.rhaamo.li/Archives/hwstat/
 
-MAINTAINER=	rhaamo@gruik.at
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line tool to display CPU temp and battery infos
 
 LICENSE=	BSD2CLAUSE

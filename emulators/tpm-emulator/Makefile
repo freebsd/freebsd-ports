@@ -18,7 +18,7 @@ CONFLICTS=	trousers-tddl-[0-9]*
 
 USES=		cmake:outsource
 USE_RC_SUBR=	tpmd
-CMAKE_ENV=	PREFIX="${PREFIX}"
+CONFIGURE_ENV=	PREFIX="${PREFIX}"
 CMAKE_ARGS=	-DTPM_INCLUDE_DIRS:STRING="${LOCALBASE}/include" \
 		-DTPM_LIBRARY_DIRS:STRING="${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
@@ -26,8 +26,6 @@ USERS=		_tss
 GROUPS=		_tss
 SUB_LIST=	USERS="${USERS}" GROUPS="${GROUPS}"
 PLIST_SUB=	USERS="${USERS}" GROUPS="${GROUPS}"
-
-BROKEN_powerpc=		Does not compile on powerpc
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/run/tpm

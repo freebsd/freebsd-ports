@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 Fix build on FreeBSD 8
 https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=198404#c6
 

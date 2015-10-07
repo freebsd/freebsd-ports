@@ -2,15 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	sfcgal
-PORTVERSION=	1.0.5
+PORTVERSION=	1.1.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	databases math graphics
 
 MAINTAINER=	coder@tuxfamily.org
 COMMENT=	Wrapper library around CGAL for PostGIS
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libCGAL.so:${PORTSDIR}/math/cgal \
 		libboost_system.so:${PORTSDIR}/devel/boost-libs \

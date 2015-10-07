@@ -44,7 +44,6 @@ USE_PYTHON=	distutils autoplist
 USE_RC_SUBR=		rhodecode
 SUB_FILES=		pkg-message
 
-OPTIONSFILE?=		${PORT_DBDIR}/py-${PORTNAME}/options
 OPTIONS_DEFINE=		LDAP GIT
 OPTIONS_DEFAULT=	GIT
 

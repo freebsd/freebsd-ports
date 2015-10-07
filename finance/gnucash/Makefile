@@ -2,7 +2,7 @@
 #   $MCom: ports/finance/gnucash/Makefile,v 1.26 2008/12/31 03:25:18 mezz Exp $
 
 PORTNAME=	gnucash
-PORTVERSION=	2.6.7
+PORTVERSION=	2.6.8
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
@@ -61,7 +61,7 @@ USE_XORG=	x11
 USES=		compiler:c++11-lib desktop-file-utils gettext gmake libtool perl5 \
 		pkgconfig shebangfix tar:bzip2
 INSTALLS_ICONS=	yes
-USE_GNOME+=	gtk20 libgnomecanvas libxml2 libxslt:build
+USE_GNOME+=	gtk20 intltool libgnomecanvas libxml2 libxslt:build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

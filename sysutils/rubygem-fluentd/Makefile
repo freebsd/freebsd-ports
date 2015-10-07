@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fluentd
-PORTVERSION=	0.10.53
-PORTREVISION=	1
+PORTVERSION=	0.12.14
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -12,12 +11,13 @@ COMMENT=	Fluent event collector
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	\
-	rubygem-cool.io>=1.1.1:${PORTSDIR}/devel/rubygem-cool.io \
-	rubygem-http_parser.rb>=0.5.1:${PORTSDIR}/net/rubygem-http_parser.rb \
+	rubygem-msgpack>=0.5.11:${PORTSDIR}/devel/rubygem-msgpack \
 	rubygem-json>=1.4.3:${PORTSDIR}/devel/rubygem-json \
-	rubygem-msgpack>=0.5.4:${PORTSDIR}/devel/rubygem-msgpack \
+	rubygem-yajl-ruby>=1.0:${PORTSDIR}/devel/rubygem-yajl-ruby \
+	rubygem-cool.io>=1.2.2:${PORTSDIR}/devel/rubygem-cool.io \
+	rubygem-http_parser.rb>=0.5.1:${PORTSDIR}/net/rubygem-http_parser.rb \
 	rubygem-sigdump>=0.2.2:${PORTSDIR}/devel/rubygem-sigdump \
-	rubygem-yajl-ruby>=1.0:${PORTSDIR}/devel/rubygem-yajl-ruby
+	rubygem-tzinfo>=1.0.0:${PORTSDIR}/devel/rubygem-tzinfo
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
@@ -29,9 +29,17 @@ USE_RC_SUBR=	fluentd
 USERS=		fluentd
 GROUPS=		fluentd
 SUB_LIST+=	USER=${USERS} GROUP=${GROUPS} RUBY=${RUBY}
+NO_ARCH=	YES
+NO_LATEST_LINK=	YES
+
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} == 2.0
+RUN_DEPENDS+=	rubygem-string-scrub>=0.0.3:${PORTSDIR}/textproc/rubygem-string-scrub
+.endif
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/fluentd/plugin
 	${CP} ${WRKSRC}/fluent.conf.sample ${STAGEDIR}${PREFIX}/etc/fluentd/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

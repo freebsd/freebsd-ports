@@ -19,11 +19,8 @@ USE_PYTHON=	distutils autoplist
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/changes.txt ${STAGEDIR}${DOCSDIR}
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

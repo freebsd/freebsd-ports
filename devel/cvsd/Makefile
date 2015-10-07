@@ -41,9 +41,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/cvsd.conf-dist ${STAGEDIR}${PREFIX}/etc/cvsd/cvsd.conf.sample
 	${INSTALL_MAN} ${WRKSRC}/*.5 ${STAGEDIR}${MAN5PREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/*.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.post.mk>

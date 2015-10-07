@@ -31,7 +31,7 @@ CONFIGURE_ARGS+=--enable-gtk-doc=no --with-webkit=3.0
 DATADIR=	share/seed-gtk3
 INSTALL_TARGET=	install-strip
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|== x|= x|g' \
@@ -39,10 +39,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||g' \
 		${WRKSRC}/libseed/Makefile.in
 	@${REINPLACE_CMD} -e 's|reference||g' ${WRKSRC}/doc/Makefile.in
-.if ! ${PORT_OPTIONS:MDOCS}
+
+post-patch-DOCS-off:
 	@${REINPLACE_CMD} -e 's| install-seeddocDATA||g ; s|doc$$||g' \
 		${WRKSRC}/Makefile.in
-.endif
 
 pre-build:
 	cd ${WRKSRC}/extensions && ${SETENV} ${MAKE_ENV} ${GMAKE} \

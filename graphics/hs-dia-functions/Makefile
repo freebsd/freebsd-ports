@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dia-functions
-PORTVERSION=	0.2.1.3
-PORTREVISION=	8
+PORTVERSION=	0.2.1.4
 CATEGORIES=	graphics haskell
 
 MAINTAINER=	haskell@FreeBSD.org

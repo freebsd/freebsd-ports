@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gsasl
-PORTVERSION=	0.3.5
-PORTREVISION=	1
+PORTVERSION=	0.3.6
 CATEGORIES=	net haskell
 
 MAINTAINER=	haskell@FreeBSD.org

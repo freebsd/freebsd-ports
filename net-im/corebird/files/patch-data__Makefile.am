@@ -1,5 +1,5 @@
---- data/Makefile.am.orig	2015-03-19 18:38:24.000000000 +0100
-+++ data/Makefile.am	2015-03-30 18:12:15.956014000 +0200
+--- data/Makefile.am.orig	2015-07-17 13:15:47 UTC
++++ data/Makefile.am
 @@ -1,6 +1,6 @@
  
  desktopdir = $(prefix)/share/applications

@@ -1,3 +1,4 @@
+share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca/Makefile
 share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca/README.md
 share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca/convenience.js
 share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca/extension.js

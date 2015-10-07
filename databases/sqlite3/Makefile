@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.8.10.2
+PORTVERSION=	3.8.11.1
+PORTREVISION=	1
 CATEGORIES=	databases
-MASTER_SITES=	http://www.sqlite.org/2015/ http://www2.sqlite.org/2015/ http://www3.sqlite.org/2015/
-DISTNAME=	sqlite-autoconf-${PORTVERSION:S|.10|10|:S|.|0|g}
+MASTER_SITES=	https://www.sqlite.org/2015/ http://www2.sqlite.org/2015/ http://www3.sqlite.org/2015/
+DISTNAME=	sqlite-autoconf-${PORTVERSION:S|8.|8|:S|.|0|g}
 
 MAINTAINER=	pavelivolkov@gmail.com
 COMMENT=	SQL database engine in a C library
@@ -17,10 +18,11 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 CONFLICTS=	sqlite34-[0-9]* sqlcipher-[0-9]*
 
-USES=		pathfix libtool ncurses
+USES=		libtool ncurses pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+CFLAGS+=	-Os
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -79,8 +81,8 @@ RTREE_DESC=		Enable R*Tree module
 RTREE_INT_DESC=		Store 32-bit sig int (no float) coordinates
 
 OPTIONS_DEFAULT=	FTS4 URI METADATA SECURE_DELETE UNLOCK_NOTIFY THREADS \
-			EXTENSION TS1 UNICODE61 RTREE READLINE
-# SECURE_DELETE, UNLOCK_NOTIFY used by www/firefox, www/libxul
+			EXTENSION TS1 UNICODE61 RTREE READLINE DBSTAT
+# SECURE_DELETE, UNLOCK_NOTIFY, DBSTAT (since 41.0) used by www/firefox et al.
 # RTREE used by graphics/mapnik, databases/spatialite
 
 PLIST_FILES=	bin/sqlite3 include/sqlite3.h include/sqlite3ext.h \
@@ -146,6 +148,7 @@ READLINE_USES=	readline
 post-configure:
 	@${ECHO_MSG} "===> CONFIGURE_ARGS=${CONFIGURE_ARGS}"
 	@${ECHO_MSG} "===> CPPFLAGS=${CPPFLAGS}"
+	@${ECHO_MSG} "===> CFLAGS=${CFLAGS}"
 	@${ECHO_MSG} "===> LDFLAGS=${LDFLAGS}"
 
 post-build:

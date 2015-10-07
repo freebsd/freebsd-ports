@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jabberd
-PORTVERSION=	2.3.1
-PORTREVISION=	8
+PORTVERSION=	2.3.3
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/jabberd2/jabberd2/releases/download/${PORTNAME}-${DISTVERSION}/ \
 		LOCAL/matthew/${PORTNAME}
@@ -18,9 +17,7 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libudns.so:${PORTSDIR}/dns/udns
 
 OPTIONS_DEFINE=	MYSQL PGSQL LDAP BDB SQLITE PAM PIPE ANON FS DEBUG REQUIRES \
-		DOCS SUPERSEDED EXPERIMENTAL
-OPTIONS_SINGLE=	SASL
-OPTIONS_SINGLE_SASL=	CYRUS GSASL
+		DOCS SUPERSEDED EXPERIMENTAL GSASL
 OPTIONS_DEFAULT=MYSQL DEBUG GSASL
 OPTIONS_SUB=	yes
 
@@ -95,9 +92,9 @@ PIPE_DESC=		Enable pipe (auth/reg)
 ANON_CONFIGURE_ENABLE=	anon
 ANON_DESC=		Enable anonymous (auth/reg)
 
-CYRUS_CONFIGURE_ON=	--with-sasl=cyrus
-CYRUS_DESC=		Use Cyrus SASL backend (not supported)
-CYRUS_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+#CYRUS_CONFIGURE_ON=	--with-sasl=cyrus
+#CYRUS_DESC=		Use Cyrus SASL backend (not supported)
+#CYRUS_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 
 GSASL_CONFIGURE_ON=	--with-sasl=gsasl
 GSASL_DESC=		Use GSASL backend
@@ -148,10 +145,10 @@ post-patch:
 .endfor
 	@${REINPLACE_CMD} -e 's|%%PERL%%|${PERL}|g' \
 		${WRKSRC}/tools/jabberd.in
-.if ${PORT_OPTIONS:MCYRUS}
-	@${REINPLACE_CMD} -e '/^#error /d' \
-		${WRKSRC}/sx/sasl_cyrus.c
-.endif
+#.if ${PORT_OPTIONS:MCYRUS}
+#	@${REINPLACE_CMD} -e '/^#error /d' \
+#		${WRKSRC}/sx/sasl_cyrus.c
+#.endif
 
 post-install:
 .for DIR in db logs pid

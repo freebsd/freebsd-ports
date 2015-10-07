@@ -1,2 +1,2 @@
 bin/grepmail
-man/man1/grepmail.1.gz
+%%PERL5_MAN1%%/grepmail.1.gz

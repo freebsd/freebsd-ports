@@ -12,7 +12,7 @@ COMMENT=	LINGOT is a musical instrument tuner
 
 LICENSE=	GPLv2
 
-USE_GNOME=	gtk20 libglade2
+USE_GNOME=	gtk20 intltool libglade2
 GNU_CONFIGURE=	yes
 USES=		gettext gmake pkgconfig
 

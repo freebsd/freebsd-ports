@@ -23,10 +23,6 @@ PATCH_STRIP=	-p1
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 
-# Workaround for UNIQUENAME v.s. OptionsNG problem.
-#   http://lists.freebsd.org/pipermail/freebsd-ports/2012-June/075466.html
-UNIQUENAME=	ap22-${PORTNAME}
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MYOSHFUJI}

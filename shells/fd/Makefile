@@ -11,10 +11,10 @@ DISTNAME=	FD-${PORTVERSION}
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	CUI-based file and directory management tool
 
-OPTIONS_DEFINE=	DOCS
-
 MAKE_ENV=	LANG=ja
-MAKE_ARGS=	CC="${CC}" PREFIX="\$$(DESTDIR)${PREFIX}" CONFDIR="\$$(DESTDIR)${PREFIX}/etc"
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
+		PREFIX="\$$(DESTDIR)${PREFIX}" \
+		CONFDIR="\$$(DESTDIR)${PREFIX}/etc" \
 
 DOCS_EN=	FAQ.eng \
 		LICENSES.eng \
@@ -28,21 +28,18 @@ DOCS_JA=	FAQ \
 		TECHKNOW \
 		ToAdmin
 
-BROKEN_powerpc=		Does not compile on powerpc: tzfile.h: No such file or directory
-
-post-configure:
-	${REINPLACE_CMD} -E -e 's|^(#[[:space:]]*define[[:space:]]+EXTENDCCOPT[[:space:]]+"([^"]+ )?)-O(["[:space:]])|\1${CFLAGS}\3|' ${WRKSRC}/machine.h
+OPTIONS_DEFINE=	DOCS
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/_fdrc.orig ${STAGEDIR}${PREFIX}/etc/fd2rc.dist
-	@${INSTALL_DATA} ${WRKSRC}/_fdrc ${STAGEDIR}${PREFIX}/etc/fd2rc.sample
+	${INSTALL_DATA} ${WRKSRC}/_fdrc.orig \
+		${STAGEDIR}${PREFIX}/etc/fd2rc.dist
+	${INSTALL_DATA} ${WRKSRC}/_fdrc ${STAGEDIR}${PREFIX}/etc/fd2rc.sample
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/ja/${PORTNAME}
-	@for i in ${DOCS_EN}; do \
-		${INSTALL_DATA} ${WRKSRC}/$$i ${STAGEDIR}${DOCSDIR}; \
-	done
-	@for i in ${DOCS_JA}; do \
-		${INSTALL_DATA} ${WRKSRC}/$$i ${STAGEDIR}${PREFIX}/share/doc/ja/${PORTNAME}; \
-	done
+	${INSTALL_DATA} ${DOCS_EN:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCS_JA:S,^,${WRKSRC}/,} \
+		${STAGEDIR}${PREFIX}/share/doc/ja/${PORTNAME}
 
 .include <bsd.port.mk>

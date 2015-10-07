@@ -24,10 +24,8 @@ bin/dancer2
 %%SITE_PERL%%/Dancer2/Core/Role/Engine.pm
 %%SITE_PERL%%/Dancer2/Core/Role/Handler.pm
 %%SITE_PERL%%/Dancer2/Core/Role/HasLocation.pm
-%%SITE_PERL%%/Dancer2/Core/Role/Headers.pm
 %%SITE_PERL%%/Dancer2/Core/Role/Hookable.pm
 %%SITE_PERL%%/Dancer2/Core/Role/Logger.pm
-%%SITE_PERL%%/Dancer2/Core/Role/Response.pm
 %%SITE_PERL%%/Dancer2/Core/Role/Serializer.pm
 %%SITE_PERL%%/Dancer2/Core/Role/SessionFactory.pm
 %%SITE_PERL%%/Dancer2/Core/Role/SessionFactory/File.pm
@@ -114,10 +112,8 @@ bin/dancer2
 %%PERL5_MAN3%%/Dancer2::Core::Role::Engine.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Role::Handler.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Role::HasLocation.3.gz
-%%PERL5_MAN3%%/Dancer2::Core::Role::Headers.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Role::Hookable.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Role::Logger.3.gz
-%%PERL5_MAN3%%/Dancer2::Core::Role::Response.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Role::Serializer.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Role::SessionFactory.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Role::SessionFactory::File.3.gz
@@ -157,4 +153,4 @@ bin/dancer2
 %%PERL5_MAN3%%/Dancer2::Template::Tiny.3.gz
 %%PERL5_MAN3%%/Dancer2::Test.3.gz
 %%PERL5_MAN3%%/Dancer2::Tutorial.3.gz
-man/man1/dancer2.1.gz
+%%PERL5_MAN1%%/dancer2.1.gz

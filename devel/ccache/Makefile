@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	ccache
-PORTVERSION=	3.2.2
-PORTREVISION=	1
+PORTVERSION=	3.2.3
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.samba.org/ftp/ccache/ \
 		LOCAL/bdrewery
@@ -29,6 +29,9 @@ LLVMLINK_DESC=	Create llvm compiler links if llvm is installed
 TINDERBOX_DESC=	Create tarball for tinderbox usage
 
 USES=		compiler
+# Don't allow autoreconf. We want no dependencies on this to keep
+# WITH_CCACHE_BUILD working.
+USES:=		${USES:Nautoreconf}
 
 OPTIONS_SUB=	yes
 
@@ -52,7 +55,7 @@ GNU_COMPILERS+=		34 42 43 44 45 46 47 48 49 5 6
 CCACHE_COMPILERS+=	cc c++ CC gcc g++ ${GNU_COMPILERS:S|^|gcc|} ${GNU_COMPILERS:S|^|g++|}
 
 .if ${PORT_OPTIONS:MCLANGLINK}
-CLANG_COMPILERS+=	31 32 33 34 35 36 -devel
+CLANG_COMPILERS+=	33 34 35 36 37 -devel
 CCACHE_COMPILERS+=	clang clang++ ${CLANG_COMPILERS:S|^|clang|} ${CLANG_COMPILERS:S|^|clang++|}
 .endif
 

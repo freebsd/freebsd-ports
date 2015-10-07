@@ -6,7 +6,6 @@ PORTVERSION=	0.11
 PORTREVISION=	1
 CATEGORIES=	www net perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:CLSUNG
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -28,6 +27,7 @@ BUILD_DEPENDS=	p5-AnyEvent-HTTP>=0:${PORTSDIR}/www/p5-AnyEvent-HTTP \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

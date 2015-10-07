@@ -1,4 +1,13 @@
-MP is an easy to use programmer's text editor. It supports automatic
-syntax highlighting, macros and ctags and also has online help.
+Minimum Profit is an easy to use programmer's text editor.  Its features:
+
+  - Syntax highlighting for many popular languages and file formats
+  - Fully scriptable using a C-like scripting language
+  - Unlimited undo levels; configurable keys, menus, and colors
+  - Can edit multiple files at the same time (shared copy/paste buffer)
+  - Creative use of tags, symbol name auto-completion
+  - Intelligent, context-dependent help system
+  - Automatic indentation, word wrapping, internal grep, etc.
+  - Spellchecking support (via the ispell package)
+  - Multilingual; has complete Unicode support
 
 WWW: http://www.triptico.com/software/mp.html

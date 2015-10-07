@@ -6,7 +6,7 @@ CATEGORIES=	devel
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	autotools@FreeBSD.org
+MAINTAINER=	tijl@FreeBSD.org
 COMMENT?=	Wrapper script for GNU autoconf
 
 WRKSRC=		${WRKDIR}

@@ -203,7 +203,6 @@ share/icons/HighContrast/16x16/apps/multimedia-volume-control.png
 share/icons/HighContrast/16x16/apps/palimpsest.png
 share/icons/HighContrast/16x16/apps/pidgin.png
 share/icons/HighContrast/16x16/apps/pino.png
-share/icons/HighContrast/16x16/apps/polari.png
 share/icons/HighContrast/16x16/apps/preferences-color.png
 share/icons/HighContrast/16x16/apps/preferences-desktop-accessibility.png
 share/icons/HighContrast/16x16/apps/preferences-desktop-display.png
@@ -741,7 +740,6 @@ share/icons/HighContrast/22x22/apps/multimedia-volume-control.png
 share/icons/HighContrast/22x22/apps/palimpsest.png
 share/icons/HighContrast/22x22/apps/pidgin.png
 share/icons/HighContrast/22x22/apps/pino.png
-share/icons/HighContrast/22x22/apps/polari.png
 share/icons/HighContrast/22x22/apps/preferences-color.png
 share/icons/HighContrast/22x22/apps/preferences-desktop-accessibility.png
 share/icons/HighContrast/22x22/apps/preferences-desktop-display.png
@@ -1279,7 +1277,6 @@ share/icons/HighContrast/24x24/apps/multimedia-volume-control.png
 share/icons/HighContrast/24x24/apps/palimpsest.png
 share/icons/HighContrast/24x24/apps/pidgin.png
 share/icons/HighContrast/24x24/apps/pino.png
-share/icons/HighContrast/24x24/apps/polari.png
 share/icons/HighContrast/24x24/apps/preferences-color.png
 share/icons/HighContrast/24x24/apps/preferences-desktop-accessibility.png
 share/icons/HighContrast/24x24/apps/preferences-desktop-display.png
@@ -1816,7 +1813,6 @@ share/icons/HighContrast/256x256/apps/multimedia-volume-control.png
 share/icons/HighContrast/256x256/apps/palimpsest.png
 share/icons/HighContrast/256x256/apps/pidgin.png
 share/icons/HighContrast/256x256/apps/pino.png
-share/icons/HighContrast/256x256/apps/polari.png
 share/icons/HighContrast/256x256/apps/preferences-color.png
 share/icons/HighContrast/256x256/apps/preferences-desktop-accessibility.png
 share/icons/HighContrast/256x256/apps/preferences-desktop-display.png
@@ -2354,7 +2350,6 @@ share/icons/HighContrast/32x32/apps/multimedia-volume-control.png
 share/icons/HighContrast/32x32/apps/palimpsest.png
 share/icons/HighContrast/32x32/apps/pidgin.png
 share/icons/HighContrast/32x32/apps/pino.png
-share/icons/HighContrast/32x32/apps/polari.png
 share/icons/HighContrast/32x32/apps/preferences-color.png
 share/icons/HighContrast/32x32/apps/preferences-desktop-accessibility.png
 share/icons/HighContrast/32x32/apps/preferences-desktop-display.png
@@ -2895,7 +2890,6 @@ share/icons/HighContrast/48x48/apps/multimedia-volume-control.png
 share/icons/HighContrast/48x48/apps/palimpsest.png
 share/icons/HighContrast/48x48/apps/pidgin.png
 share/icons/HighContrast/48x48/apps/pino.png
-share/icons/HighContrast/48x48/apps/polari.png
 share/icons/HighContrast/48x48/apps/preferences-color.png
 share/icons/HighContrast/48x48/apps/preferences-desktop-accessibility.png
 share/icons/HighContrast/48x48/apps/preferences-desktop-display.png
@@ -3594,23 +3588,6 @@ share/themes/Adwaita/gtk-2.0/Toolbar/inline-toolbar.png
 share/themes/Adwaita/gtk-2.0/gtkrc
 share/themes/Adwaita/gtk-3.0/gtk.css
 share/themes/Adwaita/index.theme
-share/themes/Adwaita/metacity-1/metacity-theme-3.xml
 share/themes/HighContrast/gtk-2.0/gtkrc
 share/themes/HighContrast/gtk-3.0/gtk.css
-share/themes/HighContrast/gtk-3.0/gtk.gresource
-share/themes/HighContrast/gtk-3.0/settings.ini
 share/themes/HighContrast/index.theme
-share/themes/HighContrast/metacity-1/metacity-theme-3.xml
-@dir share/locale/an/LC_MESSAGES
-@dir share/locale/as/LC_MESSAGES
-@dir share/locale/bn_IN/LC_MESSAGES
-@dir share/locale/ca@valencia/LC_MESSAGES
-@dir share/locale/fur/LC_MESSAGES
-@dir share/locale/fy/LC_MESSAGES
-@dir share/locale/km/LC_MESSAGES
-@dir share/locale/mr/LC_MESSAGES
-@dir share/locale/sr@latin/LC_MESSAGES
-@dir share/locale/te/LC_MESSAGES
-@dir share/locale/ug/LC_MESSAGES
-@dir share/locale/uz@cyrillic/LC_MESSAGES
-@dir share/locale/zh_HK/LC_MESSAGES

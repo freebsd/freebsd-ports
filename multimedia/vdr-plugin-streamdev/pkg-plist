@@ -1,12 +1,7 @@
 lib/vdr/libvdr-streamdev-client.so.%%APIVERSION%%
 lib/vdr/libvdr-streamdev-server.so.%%APIVERSION%%
-@unexec if cmp -s %D/etc/vdr/plugins/streamdev-server/externremux.sh.sample %D/etc/vdr/plugins/streamdev-server/externremux.sh; then rm -f %D/etc/vdr/plugins/streamdev-server/externremux.sh; fi
-etc/vdr/plugins/streamdev-server/externremux.sh.sample
-@exec if [ ! -f %D/etc/vdr/plugins/streamdev-server/externremux.sh ] ; then cp -p %D/%F %B/externremux.sh; fi
-@unexec if cmp -s %D/etc/vdr/plugins/streamdev-server/streamdevhosts.conf.sample %D/etc/vdr/plugins/streamdev-server/streamdevhosts.conf; then rm -f %D/etc/vdr/plugins/streamdev-server/streamdevhosts.conf; fi
-etc/vdr/plugins/streamdev-server/streamdevhosts.conf.sample
-@exec if [ ! -f %D/etc/vdr/plugins/streamdev-server/streamdevhosts.conf ] ; then cp -p %D/%F %B/streamdevhosts.conf; fi
-@dirrmtry etc/vdr/plugins/streamdev-server
+@sample etc/vdr/plugins/streamdev-server/externremux.sh.sample
+@sample etc/vdr/plugins/streamdev-server/streamdevhosts.conf.sample
 %%NLS%%share/locale/de_DE/LC_MESSAGES/vdr-streamdev-client.mo
 %%NLS%%share/locale/de_DE/LC_MESSAGES/vdr-streamdev-server.mo
 %%NLS%%share/locale/es_ES/LC_MESSAGES/vdr-streamdev-client.mo

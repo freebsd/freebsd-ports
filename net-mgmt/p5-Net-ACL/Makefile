@@ -20,6 +20,7 @@ BUILD_DEPENDS=	p5-Cisco-Reconfig>=0.05:${PORTSDIR}/net-mgmt/p5-Cisco-Reconfig \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Signature>=1.04:${PORTSDIR}/devel/p5-Test-Signature
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

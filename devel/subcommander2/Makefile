@@ -16,7 +16,6 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libsvn_client-1.so:${PORTSDIR}/devel/subversion
 
-LATEST_LINK=	subcommander2
 CONFLICTS=	subcommander-1.*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R:S,.b,b,}p${PORTVERSION:E}

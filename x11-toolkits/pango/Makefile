@@ -4,7 +4,7 @@
 
 PORTNAME=	pango
 PORTVERSION=	1.36.8
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -23,6 +23,8 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	xorg-fonts-truetype>0:${PORTSDIR}/x11-fonts/xorg-fonts-truetype \
 		${FONTENCOD}:${PORTSDIR}/x11-fonts/encodings
+
+PORTSCOUT=	limitw:1,even
 
 USES+=		gettext gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes

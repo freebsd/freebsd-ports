@@ -126,51 +126,6 @@
 %%SQUIRRELDIR%%/plugins/avelsieve/edit.php
 %%SQUIRRELDIR%%/plugins/avelsieve/addspamrule.php
 %%SQUIRRELDIR%%/plugins/avelsieve/addrule.php
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/zh_CN/LC_MESSAGES
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/zh_CN
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/ru_RU/LC_MESSAGES
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/ru_RU
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/ro_RO/LC_MESSAGES
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/ro_RO
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/pt_BR/LC_MESSAGES
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/pt_BR
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/pl_PL/LC_MESSAGES
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/pl_PL
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/nn_NO/LC_MESSAGES
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/nn_NO
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/nl_NL/LC_MESSAGES
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/nl_NL
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/nb_NO/LC_MESSAGES
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/nb_NO
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/lt_LT/LC_MESSAGES
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/lt_LT
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/it_IT/LC_MESSAGES
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/it_IT
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/is_IS/LC_MESSAGES
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/is_IS
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/fr_FR/LC_MESSAGES
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/fr_FR
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/fi_FI/LC_MESSAGES
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/fi_FI
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/es_ES/LC_MESSAGES
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/es_ES
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/el_GR/LC_MESSAGES
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/el_GR
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/de_DE/LC_MESSAGES
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/de_DE
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/cs_CZ/LC_MESSAGES
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/cs_CZ
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/bg_BG/LC_MESSAGES
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale/bg_BG
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/locale
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/lib
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/include
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/images/plain_obsolete
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/images/bluecurve_24x24
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/images/bluecurve_16x16
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/images
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/doc/style
-@dirrm %%SQUIRRELDIR%%/plugins/avelsieve/doc
-@dirrmtry %%SQUIRRELDIR%%/plugins/avelsieve/config
-@dirrmtry %%SQUIRRELDIR%%/plugins/avelsieve
+@dir %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/lib
+@dir %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/locale/nn_NO/LC_MESSAGES
 @exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin %%SQUIRREL_PLUGIN_NAME%%; fi

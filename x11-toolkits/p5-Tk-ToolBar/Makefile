@@ -18,6 +18,7 @@ BUILD_DEPENDS=	p5-Tk-CursorControl>=0:${PORTSDIR}/x11-toolkits/p5-Tk-CursorContr
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=1.14:${PORTSDIR}/devel/p5-Test-Pod
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5 zip
 

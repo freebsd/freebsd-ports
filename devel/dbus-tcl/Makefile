@@ -13,6 +13,7 @@ COMMENT=	Tcl interface to the D-Bus messaging system
 LICENSE=	ISCL
 
 LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
+BUILD_DEPENDS=	dtplite:${PORTSDIR}/devel/tcllib
 
 OPTIONS_DEFINE=	DOCS
 DOCSDIR=	${PREFIX}/share/doc/dbus
@@ -26,12 +27,6 @@ CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
 PLIST_FILES=	lib/dbus/libdbus21.so.1 \
 		lib/dbus/pkgIndex.tcl \
 		man/mann/dbus.n.gz
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS=	dtplite:${PORTSDIR}/devel/tcllib
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e '/^INSTALL_PROGRAM/s|$$| -s|' \

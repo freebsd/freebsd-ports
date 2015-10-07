@@ -4,7 +4,7 @@
 
 PORTNAME=	PackageKit
 PORTVERSION=	0.6.11
-PORTREVISION?=	7
+PORTREVISION?=	8
 CATEGORIES=	ports-mgmt sysutils
 MASTER_SITES=	http://www.packagekit.org/releases/
 
@@ -17,6 +17,8 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libck-connector.so:${PORTSDIR}/sysutils/consolekit
 RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof \
 		bash:${PORTSDIR}/shells/bash
+
+IGNORE=		does not build with new polkit
 
 USES=		cpe execinfo gettext gmake iconv libtool pathfix pkgconfig \
 		python:build shared-mime-info shebangfix

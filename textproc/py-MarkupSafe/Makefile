@@ -8,11 +8,11 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Implements a XML/HTML/XHTML Markup safe string for Python
+COMMENT=	Implements XML/HTML/XHTML Markup safe string for Python
 
 LICENSE=	BSD3CLAUSE
 
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 USES=		python
 
 .include <bsd.port.mk>

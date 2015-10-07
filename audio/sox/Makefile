@@ -92,14 +92,10 @@ TWOLAME_LIB_DEPENDS=	libtwolame.so:${PORTSDIR}/audio/twolame
 OPUS_CONFIGURE_WITH=	opus
 OPUS_LIB_DEPENDS=	libopusfile.so:${PORTSDIR}/audio/opusfile
 
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MGSM}
 # We cannot ask for gsm to be enabled without it trying to use external gsm,
 # so force the autoconf checks to fail
-CONFIGURE_ENV+=	ac_cv_header_gsm_h=no ac_cv_header_gsm_gsm_h=no \
+GSM_CONFIGURE_ENV_OFF=	ac_cv_header_gsm_h=no ac_cv_header_gsm_gsm_h=no \
 		ac_cv_lib_gsm_gsm_create=no
-.endif
 
 INSTALL_TARGET=		install-strip
 

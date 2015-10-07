@@ -17,13 +17,8 @@ ALL_TARGET=	all # vcheck
 
 OPTIONS_DEFINE=	NLS
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_FILES+=	share/locale/de/LC_MESSAGES/lrzsz.mo
-.else
-CONFIGURE_ARGS+=	--disable-nls
-.endif
+NLS_USES=		gettext
+NLS_PLIST_FILES=	share/locale/de/LC_MESSAGES/lrzsz.mo
+NLS_CONFIGURE_ENABLE=	nls
 
 .include <bsd.port.mk>

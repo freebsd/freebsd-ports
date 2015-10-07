@@ -1,6 +1,6 @@
---- spampd.orig	Mon Nov 29 16:34:40 2004
-+++ spampd	Mon Nov 29 16:34:50 2004
-@@ -825,7 +825,7 @@
+--- spampd.pl.orig	2013-12-08 11:34:02 UTC
++++ spampd.pl
+@@ -961,7 +961,7 @@ my $server = bless {
  				syslog_ident => 'spampd',
  				syslog_facility => 'mail',
  				background => $background,

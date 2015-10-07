@@ -1,9 +1,7 @@
 bin/pear
 bin/peardev
 bin/pecl
-@unexec if cmp -s %D/etc/pear.conf %D/etc/pear.conf.sample; then rm -f %D/etc/pear.conf; fi
-etc/pear.conf.sample
-@exec [ -f %B/pear.conf ] || cp %B/%f %B/pear.conf
+@sample etc/pear.conf.sample
 %%DOCSDIR%%/Archive_Tar/docs/Archive_Tar.txt
 %%DOCSDIR%%/PEAR/INSTALL
 %%DOCSDIR%%/PEAR/LICENSE

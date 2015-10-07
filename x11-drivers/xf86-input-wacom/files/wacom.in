@@ -26,7 +26,7 @@ stop_cmd="wacom_stop"
 
 wacom_prepare()
 {
-	load_kld -e usb_quirk usb_quirk
+	kldload -n usb_quirk
 }
 
 wacom_start()

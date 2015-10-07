@@ -752,9 +752,9 @@ lib/libwx_gtk2u_richtext-3.0.so.0.2.0
 lib/libwx_gtk2u_stc-3.0.so
 lib/libwx_gtk2u_stc-3.0.so.0
 lib/libwx_gtk2u_stc-3.0.so.0.2.0
-lib/libwx_gtk2u_webview-3.0.so
-lib/libwx_gtk2u_webview-3.0.so.0
-lib/libwx_gtk2u_webview-3.0.so.0.2.0
+%%WEBKIT%%lib/libwx_gtk2u_webview-3.0.so
+%%WEBKIT%%lib/libwx_gtk2u_webview-3.0.so.0
+%%WEBKIT%%lib/libwx_gtk2u_webview-3.0.so.0.2.0
 lib/libwx_gtk2u_xrc-3.0.so
 lib/libwx_gtk2u_xrc-3.0.so.0
 lib/libwx_gtk2u_xrc-3.0.so.0.2.0

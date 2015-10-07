@@ -1,6 +1,6 @@
---- plugins/sudoers/Makefile.in.orig	2014-10-08 05:26:20.000000000 +0900
-+++ plugins/sudoers/Makefile.in	2014-10-10 07:23:21.000000000 +0900
-@@ -323,8 +323,7 @@
+--- plugins/sudoers/Makefile.in.orig	2015-07-15 18:44:07 UTC
++++ plugins/sudoers/Makefile.in
+@@ -336,8 +336,7 @@ install-plugin: sudoers.la install-dirs
  
  install-sudoers: install-dirs
  	$(INSTALL) -d $(INSTALL_OWNER) -m 0750 $(DESTDIR)$(sudoersdir)/sudoers.d
@@ -9,4 +9,4 @@
 +	$(INSTALL) $(INSTALL_OWNER) -m $(sudoers_mode) sudoers $(DESTDIR)$(sudoersdir)/sudoers
  
  uninstall:
- 	-$(LIBTOOL) --mode=uninstall rm -f $(DESTDIR)$(plugindir)/sudoers.la
+ 	-$(LIBTOOL) $(LTFLAGS) --mode=uninstall rm -f $(DESTDIR)$(plugindir)/sudoers.la

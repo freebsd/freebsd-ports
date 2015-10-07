@@ -1,53 +1,62 @@
-diff --git readme.html readme.html
-index fc3d3d2..54553ee 100644
---- readme.html
+--- readme.html.orig	2015-09-25 12:54:00 UTC
 +++ readme.html
-@@ -285,7 +285,7 @@ update request, i.e., both ip address types may be sent in a comma delimited lis
+@@ -284,7 +284,7 @@ update request, i.e., both ip address ty
  </p>
- <p style="margin-left: 20px;">'--input_file &#60;path/file&#62;': input file name that
- contains inadyn-mt command options (adds to those already present in the cmd line).
--The default configuration file name is '/etc/inadyn-mt.conf'. It is only
-+The default configuration file name is '%%PREFIX%%/etc/inadyn-mt.conf'. It is only
- used if inadyn-mt is called without any command line options. This allows
- inadyn-mt to be called without any arguments. The format is as expected
- for a **NIX config&nbsp; file. See below for details.<br>
-@@ -345,7 +345,7 @@ DEFAULT value is intended for default service at dyndns.org: dyndns@dyndns.org<b
- '--retry_interval &#60;#&#62;': network comm miliseconds retry interval.  0 to 30,000, default 1,000.<br>
- '--retry_pending': retry ip update even after network comm retries exhausted,  default on.<br>
- '--retry_pending_interval &#60;#&#62;': network comm seconds update retry interval, after retries exhausted,  5 to 3600, default 300.<br>
--'--lang_file &#60;path/file&#62;':  [language file path, and file name]. defaults to either ../inadyn-mt/lang/en.lng, or /etc/inadyn-mt/en.lng.  No parameter option gives hard coded defaults<br>
-+'--lang_file &#60;path/file&#62;':  [language file path, and file name]. defaults to either ../inadyn-mt/lang/en.lng, or %%PREFIX%%/etc/inadyn-mt/en.lng.  No parameter option gives hard coded defaults<br>
- '--online_check_url &#60;srv_name[:port] url&#62;': server name, optional port, and url to reach to confirm online status.<br>
- '--status_interval &#60;#&#62;': seconds [30..864000] interval at which to check online status, default 600.<br>
- '--alert_retries &#60;#&#62;':  network retries before audible network status alerts. [0..100], default 0.<br>
-@@ -377,7 +377,7 @@ DEFAULT value is intended for default service at dyndns.org: dyndns@dyndns.org<b
+ <p style="margin-left: 20px;">'-x [-n &#60;service name&#62;]': remove service<br>
+ </p>
+-<p style="margin-left: 20px;">'--input_file &#60;path/file&#62;': input file name that contains inadyn-mt command options (adds to those already present in the cmd line).  The default configuration file name is '/etc/inadyn-mt.conf'. It is only
++<p style="margin-left: 20px;">'--input_file &#60;path/file&#62;': input file name that contains inadyn-mt command options (adds to those already present in the cmd line).  The default configuration file name is '%%PREFIX%%/etc/inadyn-mt.conf'. It is only
+ used if inadyn-mt is called without any command line options. This allows inadyn-mt to be called without any arguments. The format is as expected for a **NIX config&nbsp; file. See below for details.<br>
+ </p>
+ <p style="margin-left: 20px;">'--ip_server_name &#60;name&#62;[:port] &#60;url&#62;': The client
+@@ -368,7 +368,7 @@ DEFAULT value is intended for default se
+ '--retry_pending': retry ip update even after network comm retries exhausted,  default on.<br><br>
+ '--retry_pending_interval &#60;#&#62;': network comm seconds update retry interval, after retries exhausted,  5 to 3600,<br> &nbsp;&nbsp;&nbsp;&nbsp;default 300.<br><br>
+ '--lang_file &#60;path/file&#62;':  [language file path, and file name]. defaults to either ../inadyn-mt/lang/en.lng,<br>
+-&nbsp;&nbsp;&nbsp;&nbsp;or /etc/inadyn-mt/en.lng.  No parameter option gives hard coded defaults<br><br>
++&nbsp;&nbsp;&nbsp;&nbsp;or %%PREFIX%%/etc/inadyn-mt/en.lng.  No parameter option gives hard coded defaults<br><br>
+ '--online_check_url &#60;srv_name[:port] url&#62;': server name, optional port, and url to reach to confirm online status.<br><br>
+ '--status_interval &#60;#&#62;': seconds [30..864000] interval at which to check online status, default 600.<br><br>
+ '--alert_retries &#60;#&#62;':  network retries before audible network status alerts. [0..100], default 0.<br><br>
+@@ -388,8 +388,8 @@ DEFAULT value is intended for default se
+ &nbsp;&nbsp;&nbsp;&nbsp;representing custom DDNS server non-fatal update failure return values, e.g., "dnserr,911,unknown error".<br><br>
+ '--svr_ip_param &#60;custom DDNS server ip name parameter&#62;':  Optional for custom DDNS updates.  DDNS url parameter for ip address,<br> &nbsp;&nbsp;&nbsp;&nbsp;e.g., myip.<br><br>
+ '--svr_ip_in_rsp': Optional for custom DDNS updates.  Flag that custom DDNS server returns your ip address on update success.<br> &nbsp;&nbsp;&nbsp;&nbsp;Defaults to false.<br><br>
+-'--svr_add_cfg &#60;full path, file name&#62;': Additional servers file.  Default search for servers_additional.cfg in ./extra, /etc, /etc/inadyn-mt,<br>&nbsp;&nbsp;&nbsp;&nbsp; 
+-/etc/inadyn-mt/extra.  Contains additional preconfigured DDNS servers to be used as --dyndns_system option parameter in same<br>&nbsp;&nbsp;&nbsp;&nbsp;
++'--svr_add_cfg &#60;full path, file name&#62;': Additional servers file.  Default search for servers_additional.cfg in ./extra, %%PREFIX%%/etc, %%PREFIX%%/etc/inadyn-mt,<br>&nbsp;&nbsp;&nbsp;&nbsp; 
++%%PREFIX%%/etc/inadyn-mt/extra.  Contains additional preconfigured DDNS servers to be used as --dyndns_system option parameter in same<br>&nbsp;&nbsp;&nbsp;&nbsp;
+ fashion as servers inadyn-mt supports natively.  Should appear before any dyndns_system option in inadyn-mt.conf or command<br>&nbsp;&nbsp;&nbsp;&nbsp;
+ line if not using inadyn-mt.conf.<br><br>
+ '--if &#60;network interface name&#62;':  Name of network interface to use for ip server, and DDNS server comm.  Defaults to<br> &nbsp;&nbsp;&nbsp;&nbsp;system configured default.<br><br>
+@@ -412,7 +412,7 @@ There are two cache files: inadyn_time.c
    
-   3. Update every minute, in daemon mode, with configuration read from file of an address from freedns.afraid.org <br>
+   3. Update freedns.afraid.org, every minute, in daemon mode, with configuration read from file.<br><br>
    
--  Config file (can be placed anywhere, but in linux is convenient in default location: /etc/inadyn-mt.conf<br>
-+  Config file (can be placed anywhere, but in linux is convenient in default location: %%PREFIX%%/etc/inadyn-mt.conf<br>
-   Content of cfg file:<br>
+-  Config file can be placed anywhere.  In linux, default location: /etc/inadyn-mt.conf<br><br>
++  Config file can be placed anywhere.  In linux, default location: %%PREFIX%%/etc/inadyn-mt.conf<br><br>
+ 
+   Content of config file:<br><br>
    
-   --update_period 60000 <br>
-@@ -385,7 +385,7 @@ DEFAULT value is intended for default service at dyndns.org: dyndns@dyndns.org<b
-   --log_file /var/log/inadyn.log <br>
-   --change_persona 10012 #to change to another user id after init. (less rights, more secure)
-   <br>
--  Launching of inadyn-mt does not need any params. It looks for /etc/inadyn.config
-+  Launching of inadyn-mt does not need any params. It looks for %%PREFIX%%/etc/inadyn.config
-   <br>
-   <br>
-   4. Freedns update in console <br>
-@@ -396,7 +396,7 @@ DEFAULT value is intended for default service at dyndns.org: dyndns@dyndns.org<b
- inadyn-mt can read the very same options which can be present in the
+@@ -421,7 +421,7 @@ There are two cache files: inadyn_time.c
+   --log_file /var/log/inadyn.log<br>
+   --change_persona 10012 #to change to another user id after init.<br><br>
+ 
+-  Launching of inadyn-mt does not need any params. It looks for /etc/inadyn-mt.conf<br><br>
++  Launching of inadyn-mt does not need any params. It looks for %%PREFIX%%/etc/inadyn-mt.conf<br><br>
+ 
+   4. Freedns update in console<br><br>
+ 
+@@ -434,7 +434,7 @@ inadyn-mt can read the very same options
  command line from a configuration file. This feature allows the user to
- write the options only once, and avoids frequent retyping.<br>
+ write the options only once, and avoids frequent retyping.<br><br>
+ 
 -<i>Default configuration file</i> is /etc/inadyn.conf under Unix systems. <br>
 +<i>Default configuration file</i> is %%PREFIX%%/etc/inadyn.conf under Unix systems. <br>
- The location of the config file can be given to inadyn-mt via --input_file option <br><br>
- <i>The format</i> :<br>
- - '#' is a comment sign. <br>
-@@ -766,7 +766,7 @@ Ver.&nbsp; inadyn-mt 2.18.28 - June 2010<br>
+ The location of the config file can be given to inadyn-mt via --input_file option<br><br>
+ 
+ <i>The format</i> :<br><br>
+@@ -871,7 +871,7 @@ Ver.&nbsp; inadyn-mt 2.18.28 - June 2010
  Ver.&nbsp; inadyn-mt 2.18.26 - June 2010<br>
  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; Changes:<br>
  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; - inadyn man files updated to inadyn-mt<br>
@@ -56,7 +65,7 @@ index fc3d3d2..54553ee 100644
  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; - added debian dpkg-buildpackage directory, et al<br>
  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; - moved *nix meta files to /usr/share<br><br>
  
-@@ -776,7 +776,7 @@ Ver.&nbsp; inadyn-mt 2.18.24 - May 2010<br>
+@@ -881,7 +881,7 @@ Ver.&nbsp; inadyn-mt 2.18.24 - May 2010<
  
  Ver.&nbsp; inadyn-mt 2.18.22 - May 2010<br>
  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; Changes:<br>
@@ -65,7 +74,7 @@ index fc3d3d2..54553ee 100644
  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; - too many params compiler warning fixed<br><br>
  
  Ver.&nbsp; inadyn-mt 2.18.20 - May 2010<br>
-@@ -1073,8 +1073,8 @@ Ver.&nbsp; inadyn-mt 2.12.02 - May 2008<br>
+@@ -1178,8 +1178,8 @@ Ver.&nbsp; inadyn-mt 2.12.02 - May 2008<
  inadyn-mt<br>
  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; - updated inadyn-mt man files' original inadyn homepage
  to http://www.inatech.eu/inadyn/<br>

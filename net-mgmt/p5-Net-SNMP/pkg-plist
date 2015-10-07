@@ -15,4 +15,4 @@ bin/snmpkey
 %%SITE_PERL%%/Net/SNMP/Transport/IPv6/TCP.pm
 %%SITE_PERL%%/Net/SNMP/Transport/IPv6/UDP.pm
 %%PERL5_MAN3%%/Net::SNMP.3.gz
-man/man1/snmpkey.1.gz
+%%PERL5_MAN1%%/snmpkey.1.gz

@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	corebird
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	net-im
 
 MAINTAINER=	cpm@fbsd.es
 COMMENT=	GTK3 Twitter client written in Vala
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
 LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
@@ -18,17 +17,18 @@ LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
 		librest-0.7.so:${PORTSDIR}/devel/librest \
 		libgee-0.8.so:${PORTSDIR}/devel/libgee
 
+USE_GITHUB=	yes
 GH_ACCOUNT=	baedert
 
-USE_GITHUB=	yes
 USES=		autoreconf gettext gmake libtool pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 intltool libxml2 pango
 USE_SQLITE=	yes
 INSTALLS_ICONS=	yes
 
-OPTIONS_DEFINE=	GSTREAMER
+OPTIONS_DEFINE=		GSTREAMER
 OPTIONS_DEFAULT=	GSTREAMER
+
 GSTREAMER_DESC=	Gstreamer support
 
 GLIB_SCHEMAS=	org.baedert.corebird.gschema.xml

@@ -3,6 +3,7 @@
 
 PORTNAME=	dvipdfmx
 PORTVERSION=	20150315
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2015/
 PKGNAMEPREFIX=	tex-
@@ -18,11 +19,10 @@ COMMENT=	DVI Previewer(kpathsearch) for X
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libpaper.so:${PORTSDIR}/print/libpaper \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+		libpaper.so:${PORTSDIR}/print/libpaper
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/adobe-cmaps/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps
 
-USES=		gmake pkgconfig tar:xz
+USES=		pkgconfig tar:xz
 USE_TEX=	kpathsea web2c texmf dvipsk luatex texhash
 TEXHASHDIRS=	${TEXMFDISTDIR} ${TEXMFDIR}
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
@@ -51,10 +51,7 @@ EXTRACT_FILES_TEXMF= \
 	texmf-dist/fonts/map/dvipdfm/
 WRKSRC=	${WRKDIR}/${DISTNAME}/texk/dvipdfm-x
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --with-system-freetype2 \
-		--with-freetype2-includes=${LOCALBASE}/include/freetype2 \
-		--with-freetype2-libdir=${LOCALBASE}/lib \
-		--with-system-kpathsea \
+CONFIGURE_ARGS= --with-system-kpathsea \
 		--with-kpathsea-includes=${LOCALBASE}/include \
 		--with-kpathsea-libdir=${LOCALBASE}/lib \
 		--with-system-libpaper \

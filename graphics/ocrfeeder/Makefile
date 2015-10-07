@@ -3,6 +3,7 @@
 
 PORTNAME=	ocrfeeder
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
@@ -26,7 +27,7 @@ NO_ARCH=	yes
 
 USES=		desktop-file-utils gettext ghostscript gmake pkgconfig \
 		python tar:xz
-USE_GNOME=	gnomedocutils gtk30 librsvg2 pygobject3
+USE_GNOME=	gnomedocutils gtk30 intltool librsvg2 pygobject3
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules
 

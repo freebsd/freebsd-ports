@@ -12,4 +12,3 @@ Features:
 - Tested on all Ruby environments via travis-ci.
 
 WWW: https://github.com/guard/listen
-RG:  https://rubygems.org/gems/listen

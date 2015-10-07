@@ -1,10 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/glade/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	glade
 PORTVERSION=	3.18.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -15,11 +14,14 @@ COMMENT=	User interface builder for GTK+ 3
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
 CONFLICTS=	glade3-3.*
+PORTSCOUT=	limitw:1,even
 
 USES=		desktop-file-utils gettext gmake libtool \
 		pathfix pkgconfig tar:xz
-USE_GNOME=	gtk30 gnomeprefix gnomedocutils intlhack \
-		introspection:build
+USE_GNOME=	gtk30 gnomedocutils intlhack
+#		introspection:build
+# temp disable, introspection generation crashes with GNOME 3.15
+CONFIGURE_ARGS=	--disable-introspection
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

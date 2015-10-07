@@ -18,7 +18,6 @@ BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4 \
 
 CONFLICTS=		krb4-[0-9]* krb5-1.[0-7].* heimdal-[0-9]* srp-[0-9]*
 
-LATEST_LINK=		${PORTNAME}-1
 KERBEROSV_URL=		http://web.mit.edu/kerberos/
 USE_OPENSSL=		yes
 USES=			gmake perl5 gssapi:mit
@@ -34,14 +33,13 @@ PATCH_DIST_STRIP=	-p1
 OPTIONS_DEFINE=	KRB5_RENAME_FTP KRB5_RENAME_TELNET KRB5_RENAME_RLOGIN KRB5_RENAME_RSH KRB5_RENAME_RCP
 OPTIONS_DEFAULT=	KRB5_PORT
 OPTIONS_SINGLE=		KRB5_VERSION
-OPTIONS_SINGLE_KRB5_VERSION=	KRB5_PORT KRB5_111_PORT KRB5_112_PORT
+OPTIONS_SINGLE_KRB5_VERSION=	KRB5_PORT KRB5_112_PORT
 KRB5_RENAME_FTP_DESC=		Rename ftp to kftp
 KRB5_RENAME_TELNET_DESC=	Rename telnet to ktelnet
 KRB5_RENAME_RLOGIN_DESC=	Rename rlogin to krlogin
 KRB5_RENAME_RSH_DESC=		Rename rsh to krsh
 KRB5_RENAME_RCP_DESC=		Rename rcp to krcp
 KRB5_PORT_DESC=			Depend on security/krb5
-KRB5_111_PORT_DESC=		Depend on security/krb5-111
 KRB5_112_PORT_DESC=		Depend on security/krb5-112
 
 .include <bsd.port.pre.mk>
@@ -49,9 +47,6 @@ KRB5_112_PORT_DESC=		Depend on security/krb5-112
 .if ${PORT_OPTIONS:MKRB5_PORT}
 LIB_DEPENDS=		libkrb5support.so:${PORTSDIR}/security/krb5
 RUN_DEPENDS=		kinit:${PORTSDIR}/security/krb5
-.elif ${PORT_OPTIONS:MKRB5_111_PORT}
-LIB_DEPENDS=		libkrb5support.so:${PORTSDIR}/security/krb5-111
-RUN_DEPENDS=		kinit:${PORTSDIR}/security/krb5-111
 .elif ${PORT_OPTIONS:MKRB5_112_PORT}
 LIB_DEPENDS=		libkrb5support.so:${PORTSDIR}/security/krb5-112
 RUN_DEPENDS=		kinit:${PORTSDIR}/security/krb5-112

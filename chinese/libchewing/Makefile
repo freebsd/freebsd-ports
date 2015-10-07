@@ -16,8 +16,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
 LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
-BROKEN_powerpc=	does not install on powerpc: signal 6
-
 USES=		cmake gmake libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes

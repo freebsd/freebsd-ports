@@ -1,6 +1,6 @@
 From the tcpcat README:
 
-Tcpcat is a simple program that is like `cat' but it works over tcp streams
+Tcpcat is a simple program that is like `cat' but it works over TCP streams
 to allow you to cat from one host to another.
 
 The host common way to use this program whould be something like this:

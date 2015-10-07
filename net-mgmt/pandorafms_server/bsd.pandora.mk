@@ -13,6 +13,7 @@ PANDORA_INSTALLER=	${PORTNAME}_installer
 PANDORA_INSTALLER_ARGS=	--install
 
 PORTVERSION=	${PANDORA_VERSION:C/SP/./}
+PORTREVISION=	1
 
 MASTER_SITES?=	SF/pandora/Pandora%20FMS%20${PANDORA_VERSION:C/(SP[0-9]*)/\/\1/}Final/Tarball
 .if ${PORTNAME} == "pandora_agent"

@@ -1,4 +1,4 @@
 bin/pod2readme
 %%PERL5_MAN3%%/Pod::Readme.3.gz
 %%SITE_PERL%%/Pod/Readme.pm
-man/man1/pod2readme.1.gz
+%%PERL5_MAN1%%/pod2readme.1.gz

@@ -1,4 +1,4 @@
-man/man1/netCDFPerl.1.gz
+%%PERL5_MAN1%%/netCDFPerl.1.gz
 %%SITE_ARCH%%/NetCDF.pm
 %%SITE_ARCH%%/auto/NetCDF/NetCDF.so
 %%SITE_ARCH%%/auto/NetCDF/autosplit.ix

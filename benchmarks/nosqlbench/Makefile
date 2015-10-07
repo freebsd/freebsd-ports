@@ -9,17 +9,18 @@ MASTER_SITES=	LOCAL/vg
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Micro-benchmarking NoSQL storage
 
-LIB_DEPENDS=	libtarantool.so:${PORTSDIR}/databases/tarantool
+LICENSE=	BSD2CLAUSE
 
-BROKEN=		does not build after tarantool update
+LIB_DEPENDS=	libleveldb.so:${PORTSDIR}/databases/leveldb
 
-DATE=		20120802
-USES=		tar:bzip2 cmake
-CMAKE_ARGS=	-DLIBTNT_INCLUDE=${LOCALBASE}/include \
-		-DLIBTNT_LIB=${LOCALBASE}/lib
+DATE=		20150822
+USES=		cmake tar:bzip2
 
-pre-configure:
-	${REINPLACE_CMD} 's#DESTINATION doc#DESTINATION ${DOCSDIR}#g' \
-		${WRKSRC}/CMakeLists.txt
+PLIST_FILES=	bin/nb \
+		etc/nosqlbench.conf.sample
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/sources/nosqlbench.conf \
+		${STAGEDIR}${PREFIX}/etc/nosqlbench.conf.sample
 
 .include <bsd.port.mk>

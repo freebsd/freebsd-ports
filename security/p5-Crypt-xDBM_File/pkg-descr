@@ -1,4 +1,4 @@
-Crypt::xDBM_File encrypts/decrypts the data in a gdbm,ndbm,sdbm (and 
+Crypt::xDBM_File encrypts/decrypts the data in a gdbm, ndbm, sdbm (and 
 maybe even berkeleyDB, but I didn't test that) file. It gets tied to a 
 hash and you just access the hash like normal. The crypt function can 
 be any of the CPAN modules that use encrypt, decrypt, keysize, blocksize 

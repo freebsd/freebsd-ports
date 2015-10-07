@@ -1,10 +1,10 @@
---- config.h.in.orig	2008-12-06 16:05:23.000000000 -0500
-+++ config.h.in	2008-12-06 16:05:27.000000000 -0500
+--- config.h.in.orig	2015-08-13 20:06:02.824731000 +0200
++++ config.h.in	2015-08-13 20:07:06.011319000 +0200
 @@ -115,6 +115,9 @@
  /* defined if you have linux/isdn.h */
  #undef HAVE_ISDN_H
  
-+/* Define if you have the kinfo_getfile function */
++/* defined if you have kinfo_getfile in -lutil */
 +#undef HAVE_KINFO_GETFILE
 +
  /* Define to 1 if you have the `lchown' function. */

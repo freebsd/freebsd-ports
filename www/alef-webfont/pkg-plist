@@ -15,9 +15,3 @@
 %%WWWDIR_REL%%/ttf/fonts.scale
 %%WWWDIR_REL%%/woff/Alef-Bold.woff
 %%WWWDIR_REL%%/woff/Alef-Regular.woff
-@dirrmtry %%WWWDIR_REL%%/eot
-@dirrmtry %%WWWDIR_REL%%/specimen_files
-@dirrmtry %%WWWDIR_REL%%/svg
-@dirrmtry %%WWWDIR_REL%%/ttf
-@dirrmtry %%WWWDIR_REL%%/woff
-@dirrmtry %%WWWDIR_REL%%

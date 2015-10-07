@@ -3,6 +3,7 @@
 
 PORTNAME=	xfce4-fsguard-plugin
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4

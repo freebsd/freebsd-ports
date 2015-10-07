@@ -3,7 +3,7 @@
 
 PORTNAME=	openscad
 PORTVERSION=	2015.03
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad
 MASTER_SITES=	http://files.openscad.org/
 DISTNAME=	openscad-${PORTVERSION}.src
@@ -12,6 +12,7 @@ MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Programmer's solid 3D CAD modeller
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		${LOCALBASE}/libdata/pkgconfig/eigen3.pc:${PORTSDIR}/math/eigen3 \
@@ -23,7 +24,8 @@ LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 		libharfbuzz.so:${PORTSDIR}/print/harfbuzz \
 		libopencsg.so:${PORTSDIR}/graphics/opencsg
 
-USES=		compiler:c++11-lang gettext-tools bison desktop-file-utils pkgconfig qmake
+USES=		bison compiler:c++11-lang desktop-file-utils gettext-tools pkgconfig qmake shebangfix
+SHEBANG_FILES=	libraries/MCAD/get_submodules.py
 USE_GL=		glu glew
 USE_QT4=	corelib gui opengl moc_build uic_build rcc_build
 PLIST_SUB=	PORTVERSION=${PORTVERSION}

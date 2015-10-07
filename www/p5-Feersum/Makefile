@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Feersum
-PORTVERSION=	1.401
+PORTVERSION=	1.403
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:AUDREYT
@@ -28,7 +28,7 @@ TEST_DEPENDS=	p5-AnyEvent>=5.26.1:${PORTSDIR}/devel/p5-AnyEvent \
 USES=		perl5
 USE_PERL5=	configure
 
-pre-install:
-	@${STRIP_CMD} ${WRKSRC}/blib/arch/auto/Feersum/Feersum.so
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Feersum/Feersum.so
 
 .include <bsd.port.mk>

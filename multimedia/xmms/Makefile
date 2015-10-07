@@ -3,7 +3,7 @@
 
 PORTNAME=	xmms
 PORTVERSION=	1.2.11
-PORTREVISION=	26
+PORTREVISION=	27
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	http://www.xmms.org/files/1.2.x/ \
 		http://legacy.xmms2.org/ \

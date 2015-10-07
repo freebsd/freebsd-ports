@@ -15,6 +15,11 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/prerequisites.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/tips.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/trademarks.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/leapseconds-cautions.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/leapseconds-conclusion.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/leapseconds-posix.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/leapseconds-testing.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/howto.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/ix01.html
@@ -134,6 +139,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/troubleshoot.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/x.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/doc-build-makefiles.html
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/doc-build-toolset.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/doc-build.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/docbook-markup.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/editor-config.html
@@ -146,6 +152,12 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/make-includes.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/overview-quick-start.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/overview.html
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/po-translations-building.html
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/po-translations-creating.html
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/po-translations-quick-start.html
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/po-translations-tips.html
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/po-translations-translating.html
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/po-translations.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/preface-acknowledgements.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/preface-conventions.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/preface-notes.html
@@ -192,7 +204,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/GEOM-striping.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/GEOM.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/SMTP-Auth.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/SMTP-UUCP.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/SMTP-dialup.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/acpi-overview.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/adding-swap-space.html
@@ -202,11 +213,9 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/audit-administration.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/audit-config.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/audit-inline-glossary.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/audit-install.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/audit.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/backup-basics.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/backup-strategies.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/backups-floppybackups.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/backups-tapebackups.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/basics-daemons.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/basics-devices.html
@@ -395,6 +404,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-inetd.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-ipv6.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-isdn.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-ldap.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-nfs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-nis.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-ntp.html
@@ -414,6 +424,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/pgpkeys-core.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/pgpkeys-developers.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/pgpkeys.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/pkgng-intro.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ports-broken.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ports-finding-applications.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ports-nextsteps.html
@@ -433,7 +444,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/printing-using.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/printing.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/quotas.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/raid.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/scanners.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/securing-freebsd.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security-accounting.html
@@ -478,15 +488,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-localization.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-sysinstall.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/video-playback.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-access-bottlenecks.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-config.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-data-integrity.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-examples.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-intro.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-object-naming.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-objects.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-root.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-vinum.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization-guest.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization-host.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization.html

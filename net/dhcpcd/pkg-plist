@@ -1,7 +1,6 @@
 @sample etc/dhcpcd.conf.sample
 libexec/dhcpcd-hooks/01-test
 libexec/dhcpcd-hooks/02-dump
-libexec/dhcpcd-hooks/10-mtu
 libexec/dhcpcd-hooks/10-wpa_supplicant
 libexec/dhcpcd-hooks/15-timezone
 libexec/dhcpcd-hooks/20-resolv.conf

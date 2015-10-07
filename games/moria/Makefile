@@ -12,6 +12,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Dungeon exploration game
 
+USES=		alias
 WRKSRC=		${WRKDIR}/umoria
 ALL_TARGET=	moria
 MAKE_ENV+=	DOCSDIR="${DOCSDIR}" MKDIR="${MKDIR}" TOUCH="${TOUCH}" \

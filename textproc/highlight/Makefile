@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	highlight
-PORTVERSION=	3.22
+PORTVERSION=	3.23
 PORTEPOCH=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/

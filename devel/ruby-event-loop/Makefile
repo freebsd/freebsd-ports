@@ -10,6 +10,12 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Event loop for Ruby
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN_RUBY22=	yes
+
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RAKE=	yes
 
@@ -22,10 +28,4 @@ do-build:
 do-install:
 	@cd ${WRKSRC} && ${RUBY} setup.rb install --prefix=${STAGEDIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} >= 2.2
-BROKEN=		Does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

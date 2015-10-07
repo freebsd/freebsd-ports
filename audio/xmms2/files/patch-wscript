@@ -1,6 +1,6 @@
---- wscript.orig	2011-10-20 21:26:08.000000000 +0200
-+++ wscript	2013-05-24 16:57:29.409207485 +0200
-@@ -131,7 +131,8 @@
+--- wscript.orig	2011-10-20 19:26:08 UTC
++++ wscript
+@@ -131,7 +131,8 @@ def build(bld):
              VERSION = bld.env.VERSION
              )
  
@@ -10,7 +10,7 @@
  
      bld.add_post_fun(shutdown)
  
-@@ -295,9 +296,6 @@
+@@ -295,9 +296,6 @@ def configure(conf):
          conf.msg("uncommited changed", changed and "yes" or "no")
          conf.env.VERSION = "%s (git commit: %s%s)" % (BASEVERSION, nam, dirty)
  
@@ -20,7 +20,7 @@
      if conf.options.with_profiling:
          conf.env.with_profiling = True
          conf.env.append_unique('CFLAGS', ['--coverage'])
-@@ -330,7 +328,7 @@
+@@ -330,7 +328,7 @@ def configure(conf):
          conf.env.PKGCONFIGDIR = conf.options.pkgconfigdir
          Logs.pprint('Normal', conf.env.PKGCONFIGDIR) #XXX What is it ?
      else:
@@ -29,7 +29,7 @@
  
      if conf.options.config_prefix:
          for d in conf.options.config_prefix:
-@@ -339,6 +337,8 @@
+@@ -339,6 +337,8 @@ def configure(conf):
              conf.env.prepend_value('LIBPATH', os.path.join(d, 'lib'))
              conf.env.prepend_value('CPPPATH', os.path.join(d, 'include'))
  

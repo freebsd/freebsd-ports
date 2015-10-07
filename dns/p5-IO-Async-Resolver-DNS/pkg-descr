@@ -1,0 +1,9 @@
+IO::Async::Resolver::DNS extends the IO::Async::Resolver class with extra
+methods and resolver functions to perform DNS-specific resolver lookups. It does
+not directly provide any methods or functions of its own.
+
+These functions are provided for performing DNS-specific lookups, to obtain MX
+or SRV records, for example. For regular name resolution, the usual getaddrinfo
+and getnameinfo methods on the standard IO::Async::Resolver should be used.
+
+WWW: http://search.cpan.org/dist/IO-Async-Resolver-DNS/

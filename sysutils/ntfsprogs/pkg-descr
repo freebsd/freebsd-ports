@@ -8,5 +8,4 @@ ntfsmount: fast, reliable, read/write, userspace.
 ntfsprogs: various tools for managing ntfs, namely mkntfs, ntfsresize,
            ntfsclone, ntfsfix, ntfsundelete, ntfswipe and ntfsdecrypt.
 
-
 WWW: https://sourceforge.net/projects/linux-ntfs/

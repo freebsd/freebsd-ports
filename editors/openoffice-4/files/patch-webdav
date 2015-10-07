@@ -1,39 +1,5 @@
---- ucb/source/ucp/webdav/SerfUri.hxx_	2014-02-04 14:39:02.000000000 +0900
-+++ ucb/source/ucp/webdav/SerfUri.hxx	2014-02-04 14:39:18.000000000 +0900
-@@ -23,7 +23,7 @@
- #ifndef INCLUDED_SERFURI_HXX
- #define INCLUDED_SERFURI_HXX
- 
--#include <apr-util/apr_uri.h>
-+#include <apr_uri.h>
- #include <rtl/ustring.hxx>
- #include "DAVException.hxx"
- 
---- ucb/source/ucp/webdav/SerfSession.cxx_	2014-02-04 14:40:19.000000000 +0900
-+++ ucb/source/ucp/webdav/SerfSession.cxx	2014-02-04 14:40:26.000000000 +0900
-@@ -30,7 +30,7 @@
- #include "ucbhelper/simplecertificatevalidationrequest.hxx"
- 
- #include "AprEnv.hxx"
--#include <apr/apr_strings.h>
-+#include <apr_strings.h>
- 
- #include "DAVAuthListener.hxx"
- #include "SerfTypes.hxx"
-
---- ucb/source/ucp/webdav/SerfTypes.hxx	2014-01-24 03:33:21.000000000 +0900
-+++ ucb/source/ucp/webdav/SerfTypes.hxx	2014-02-04 14:38:44.000000000 +0900
-@@ -24,7 +24,7 @@
- #ifndef INCLUDED_SERFTYPES_HXX
- #define INCLUDED_SERFTYPES_HXX
- 
--#include <serf/serf.h>
-+#include <serf.h>
- 
- typedef serf_connection_t SerfConnection;
- 
---- ucb/source/ucp/webdav/SerfCallbacks.hxx.orig	2014-02-25 00:24:42.000000000 -0800
-+++ ucb/source/ucp/webdav/SerfCallbacks.hxx	2014-07-28 01:11:38.000000000 -0700
+--- ucb/source/ucp/webdav/SerfCallbacks.hxx.orig	2014-02-25 08:24:42 UTC
++++ ucb/source/ucp/webdav/SerfCallbacks.hxx
 @@ -23,7 +23,7 @@
  #ifndef INCLUDED_CALLBACKS_HXX
  #define INCLUDED_CALLBACKS_HXX
@@ -43,8 +9,8 @@
  
  extern "C" apr_status_t Serf_ConnectSetup( apr_socket_t *skt,
                                             serf_bucket_t **read_bkt,
---- ucb/source/ucp/webdav/SerfCopyReqProcImpl.cxx.orig	2014-02-25 00:24:43.000000000 -0800
-+++ ucb/source/ucp/webdav/SerfCopyReqProcImpl.cxx	2014-07-28 01:11:43.000000000 -0700
+--- ucb/source/ucp/webdav/SerfCopyReqProcImpl.cxx.orig	2014-02-25 08:24:43 UTC
++++ ucb/source/ucp/webdav/SerfCopyReqProcImpl.cxx
 @@ -24,7 +24,7 @@
  
  #include "SerfCopyReqProcImpl.hxx"
@@ -54,8 +20,8 @@
  
  namespace http_dav_ucp
  {
---- ucb/source/ucp/webdav/SerfDeleteReqProcImpl.cxx.orig	2014-02-25 00:24:42.000000000 -0800
-+++ ucb/source/ucp/webdav/SerfDeleteReqProcImpl.cxx	2014-07-28 01:11:47.000000000 -0700
+--- ucb/source/ucp/webdav/SerfDeleteReqProcImpl.cxx.orig	2014-02-25 08:24:42 UTC
++++ ucb/source/ucp/webdav/SerfDeleteReqProcImpl.cxx
 @@ -24,7 +24,7 @@
  
  #include "SerfDeleteReqProcImpl.hxx"
@@ -65,8 +31,8 @@
  
  namespace http_dav_ucp
  {
---- ucb/source/ucp/webdav/SerfMkColReqProcImpl.cxx.orig	2014-02-25 00:24:43.000000000 -0800
-+++ ucb/source/ucp/webdav/SerfMkColReqProcImpl.cxx	2014-07-28 01:11:51.000000000 -0700
+--- ucb/source/ucp/webdav/SerfMkColReqProcImpl.cxx.orig	2014-02-25 08:24:43 UTC
++++ ucb/source/ucp/webdav/SerfMkColReqProcImpl.cxx
 @@ -24,7 +24,7 @@
  
  #include "SerfMkColReqProcImpl.hxx"
@@ -76,8 +42,8 @@
  
  namespace http_dav_ucp
  {
---- ucb/source/ucp/webdav/SerfMoveReqProcImpl.cxx.orig	2014-02-25 00:24:43.000000000 -0800
-+++ ucb/source/ucp/webdav/SerfMoveReqProcImpl.cxx	2014-07-28 01:11:57.000000000 -0700
+--- ucb/source/ucp/webdav/SerfMoveReqProcImpl.cxx.orig	2014-02-25 08:24:43 UTC
++++ ucb/source/ucp/webdav/SerfMoveReqProcImpl.cxx
 @@ -24,7 +24,7 @@
  
  #include "SerfMoveReqProcImpl.hxx"
@@ -87,8 +53,8 @@
  
  namespace http_dav_ucp
  {
---- ucb/source/ucp/webdav/SerfPostReqProcImpl.cxx.orig	2014-02-25 00:24:43.000000000 -0800
-+++ ucb/source/ucp/webdav/SerfPostReqProcImpl.cxx	2014-07-28 01:12:00.000000000 -0700
+--- ucb/source/ucp/webdav/SerfPostReqProcImpl.cxx.orig	2014-02-25 08:24:43 UTC
++++ ucb/source/ucp/webdav/SerfPostReqProcImpl.cxx
 @@ -24,7 +24,7 @@
  
  #include "SerfPostReqProcImpl.hxx"
@@ -98,8 +64,8 @@
  
  using namespace com::sun::star;
  
---- ucb/source/ucp/webdav/SerfPutReqProcImpl.cxx.orig	2014-02-25 00:24:43.000000000 -0800
-+++ ucb/source/ucp/webdav/SerfPutReqProcImpl.cxx	2014-07-28 01:12:05.000000000 -0700
+--- ucb/source/ucp/webdav/SerfPutReqProcImpl.cxx.orig	2014-02-25 08:24:43 UTC
++++ ucb/source/ucp/webdav/SerfPutReqProcImpl.cxx
 @@ -26,7 +26,7 @@
  
  #include "SerfPutReqProcImpl.hxx"
@@ -109,8 +75,8 @@
  
  namespace http_dav_ucp
  {
---- ucb/source/ucp/webdav/SerfRequestProcessor.hxx.orig	2014-02-25 00:24:43.000000000 -0800
-+++ ucb/source/ucp/webdav/SerfRequestProcessor.hxx	2014-07-28 01:12:10.000000000 -0700
+--- ucb/source/ucp/webdav/SerfRequestProcessor.hxx.orig	2014-02-25 08:24:43 UTC
++++ ucb/source/ucp/webdav/SerfRequestProcessor.hxx
 @@ -26,7 +26,7 @@
  #include <apr_errno.h>
  #include <apr_pools.h>
@@ -120,8 +86,8 @@
  
  #include "DAVTypes.hxx"
  #include "DAVResource.hxx"
---- ucb/source/ucp/webdav/SerfRequestProcessorImpl.hxx.orig	2014-02-25 00:24:42.000000000 -0800
-+++ ucb/source/ucp/webdav/SerfRequestProcessorImpl.hxx	2014-07-28 01:12:14.000000000 -0700
+--- ucb/source/ucp/webdav/SerfRequestProcessorImpl.hxx.orig	2014-02-25 08:24:42 UTC
++++ ucb/source/ucp/webdav/SerfRequestProcessorImpl.hxx
 @@ -22,7 +22,7 @@
  #ifndef INCLUDED_SERFREQUESTPROCESSORIMPL_HXX
  #define INCLUDED_SERFREQUESTPROCESSORIMPL_HXX
@@ -131,3 +97,36 @@
  
  #include <sal/types.h>
  #include "DAVRequestEnvironment.hxx"
+--- ucb/source/ucp/webdav/SerfSession.cxx.orig	2014-02-25 08:24:43 UTC
++++ ucb/source/ucp/webdav/SerfSession.cxx
+@@ -30,7 +30,7 @@
+ #include "ucbhelper/simplecertificatevalidationrequest.hxx"
+ 
+ #include "AprEnv.hxx"
+-#include <apr/apr_strings.h>
++#include <apr_strings.h>
+ 
+ #include "DAVAuthListener.hxx"
+ #include "SerfTypes.hxx"
+--- ucb/source/ucp/webdav/SerfTypes.hxx.orig	2014-02-25 08:24:43 UTC
++++ ucb/source/ucp/webdav/SerfTypes.hxx
+@@ -24,7 +24,7 @@
+ #ifndef INCLUDED_SERFTYPES_HXX
+ #define INCLUDED_SERFTYPES_HXX
+ 
+-#include <serf/serf.h>
++#include <serf.h>
+ 
+ typedef serf_connection_t SerfConnection;
+ 
+--- ucb/source/ucp/webdav/SerfUri.hxx.orig	2014-02-25 08:24:43 UTC
++++ ucb/source/ucp/webdav/SerfUri.hxx
+@@ -23,7 +23,7 @@
+ #ifndef INCLUDED_SERFURI_HXX
+ #define INCLUDED_SERFURI_HXX
+ 
+-#include <apr-util/apr_uri.h>
++#include <apr_uri.h>
+ #include <rtl/ustring.hxx>
+ #include "DAVException.hxx"
+ 

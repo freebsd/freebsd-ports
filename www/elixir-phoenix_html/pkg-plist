@@ -20,4 +20,5 @@ lib/elixir/lib/phoenix_html/lib/phoenix_html/form_data.ex
 lib/elixir/lib/phoenix_html/lib/phoenix_html/link.ex
 lib/elixir/lib/phoenix_html/lib/phoenix_html/safe.ex
 lib/elixir/lib/phoenix_html/lib/phoenix_html/tag.ex
+lib/elixir/lib/phoenix_html/priv/static/phoenix_html.js
 %%PORTDOCS%%%%DOCSDIR%%/README.md

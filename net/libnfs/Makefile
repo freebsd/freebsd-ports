@@ -5,7 +5,7 @@ PORTNAME=	libnfs
 PORTVERSION=	1.3.0
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://cloud.github.com/downloads/sahlberg/${PORTNAME}/
+MASTER_SITES=	GHC
 
 MAINTAINER=	manuel.creach@icloud.com
 COMMENT=	Client library for accessing NFS shares over a network
@@ -17,6 +17,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 GNU_CONFIGURE=	yes
 USES=		autoreconf gmake libtool pkgconfig
 USE_LDCONFIG=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	sahlberg
 
 post-patch:
 	${REINPLACE_CMD} 's|$$(libdir)/\(pkgconfig\)|$$(prefix)/libdata/\1|' \

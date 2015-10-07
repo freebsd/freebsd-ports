@@ -1,0 +1,7 @@
+Translates a CSS3 selector into an equivalent XPath expression.
+This allows us to use CSS selectors when working with the XML package
+as it can only evaluate XPath expressions. Also provided are
+convenience functions useful for using CSS selectors on XML nodes.
+This package is a port of the Python package "cssselect".
+
+WWW: https://cran.r-project.org/web/packages/selectr/

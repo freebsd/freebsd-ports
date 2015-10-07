@@ -3,7 +3,7 @@
 
 PORTNAME=	lilypond
 PORTVERSION=	2.19.11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v${PORTVERSION:R}/
 PKGNAMESUFFIX=	-devel

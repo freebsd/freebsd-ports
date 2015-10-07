@@ -16,10 +16,6 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libmxml.so:${PORTSDIR}/textproc/mxml
 
-BROKEN_ia64=	invokes i386 asm
-BROKEN_powerpc=	invokes i386 asm
-BROKEN_sparc64=	invokes i386 asm
-
 USES=		tar:bzip2 cmake pkgconfig
 
 OPTIONS_DEFINE=		JACK GUI PORTAUDIO LASH LO DOCS EXAMPLES

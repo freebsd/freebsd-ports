@@ -7,7 +7,7 @@ bin/tstatd
 %%PERL5_MAN3%%/Tail::Stat::Plugin::icecast.3.gz
 %%PERL5_MAN3%%/Tail::Stat::Plugin::nginx.3.gz
 %%PERL5_MAN3%%/Tail::Stat::Plugin::spamd.3.gz
-man/man1/tstatd.1.gz
+%%PERL5_MAN1%%/tstatd.1.gz
 %%SITE_PERL%%/Tail/Stat.pm
 %%SITE_PERL%%/Tail/Stat/Plugin.pm
 %%SITE_PERL%%/Tail/Stat/Plugin/apache.pm

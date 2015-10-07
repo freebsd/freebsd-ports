@@ -2,14 +2,17 @@
 # $FreeBSD$
 
 PORTNAME?=	subversion
-PORTVERSION=	1.8.13
-PORTREVISION?=	2
+PORTVERSION=	1.8.14
+PORTREVISION?=	0
 CATEGORIES+=	devel
 MASTER_SITES=	APACHE/subversion
 DIST_SUBDIR=	subversion18
 
 GNU_CONFIGURE=	yes
-USES+=		tar:bzip2 pkgconfig libtool cpe
+USES+=		cpe libtool pkgconfig shebangfix tar:bzip2
+SHEBANG_FILES=	tools/server-side/svnpubsub/rc.d/svnpubsub.solaris \
+		tools/server-side/svnpubsub/rc.d/svnwcsub.solaris
+bash_OLD_CMD=	/usr/bin/bash
 
 LICENSE=	APACHE20
 
@@ -28,7 +31,6 @@ CONFIGURE_ARGS+=	--without-swig \
 .if defined(SVN_BUILD_ADDONS)
 CONFLICTS_BUILD+=	${PORTNAME}-1.[^8].[0-9]*
 LIB_DEPENDS+=		libsvn_client-1.so:${PORTSDIR}/devel/subversion
-OPTIONSFILE=		${PORT_DBDIR}/subversion/options
 OPTIONS_NAME=		devel_subversion
 .endif
 

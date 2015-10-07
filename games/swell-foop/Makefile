@@ -1,9 +1,8 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/games/swell-foop/Makefile 19989 2014-10-18 09:53:56Z gusi $
 
 PORTNAME=	swell-foop
-PORTVERSION=	3.14.0
+PORTVERSION=	3.16.2
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -14,6 +13,8 @@ COMMENT=	Gnome swell-foop
 BUILD_DEPENDS=	vala:${PORTSDIR}/lang/vala \
 		itstool:${PORTSDIR}/textproc/itstool
 LIB_DEPENDS=	libclutter-gtk-1.0.so:${PORTSDIR}/graphics/clutter-gtk3
+
+PORTSCOUT=	limitw:1,even
 
 USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_GNOME=	gtk30 intlhack libxml2:build

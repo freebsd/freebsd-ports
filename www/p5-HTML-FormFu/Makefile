@@ -42,6 +42,7 @@ BUILD_DEPENDS+=	p5-File-ShareDir-Install>=0.03:${PORTSDIR}/devel/p5-File-ShareDi
 TEST_DEPENDS=	p5-Test-Aggregate>=0.371:${PORTSDIR}/devel/p5-Test-Aggregate \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

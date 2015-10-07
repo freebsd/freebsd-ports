@@ -21,6 +21,7 @@ GH_TAGNAME=	9878a30
 
 USES=		python:2,run
 NO_BUILD=	yes
+NO_ARCH=	yes
 PLIST_FILES=	libexec/git-core/git-bzr
 PORTDOCS=	*
 

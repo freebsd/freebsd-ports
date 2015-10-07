@@ -18,6 +18,7 @@ BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Version>=1.002003:${PORTSDIR}/devel/p5-Test-Version
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5 tar:tgz
 

@@ -21,6 +21,7 @@ OPTIONS_DEFAULT=EXPAT
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 LDFLAGS+=	-L${LOCALBASE}/lib
+TEST_TARGET=	check
 USE_LDCONFIG=	yes
 USES=		libtool pathfix tar:bzip2
 
@@ -40,8 +41,5 @@ TEST_CONFIGURE_ENV=	CUNIT_CFLAGS=-I${LOCALBASE}/include CUNIT_LIBS="-L${LOCALBAS
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	cd ${WRKSRC}/doc/examples/ && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}/
-
-regression-test test: build
-	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 
 .include <bsd.port.mk>

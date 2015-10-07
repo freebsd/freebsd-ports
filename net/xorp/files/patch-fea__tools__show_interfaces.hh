@@ -1,6 +1,6 @@
---- ./fea/tools/show_interfaces.hh.orig	2010-07-19 21:10:33.000000000 +0000
-+++ ./fea/tools/show_interfaces.hh	2014-02-26 21:17:13.000000000 +0000
-@@ -79,6 +79,8 @@
+--- fea/tools/show_interfaces.hh.orig	2012-01-11 17:56:10 UTC
++++ fea/tools/show_interfaces.hh
+@@ -79,6 +79,8 @@ public:
       */
      void print_interfaces(const string& print_iface_name) const;
  
@@ -9,7 +9,7 @@
  protected:
      //
      // IfMgrHintObserver methods
-@@ -132,7 +134,7 @@
+@@ -132,7 +134,7 @@ private:
       */
      int ifmgr_shutdown();
  

@@ -6,7 +6,7 @@ DISTVERSION=	1.3
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	SF/${PORTNAME}
 
-MAINTAINER=	conrads@cox.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Speedy substitute for "make readmes"
 
 USES=		tar:bzip2

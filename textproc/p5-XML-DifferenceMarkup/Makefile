@@ -21,7 +21,7 @@ USES=		perl5
 USE_PERL5=	configure
 
 post-patch:
-	@${REINPLACE_CMD} '/^\$$CC/s/g++/${CXX}/; s|/usr/local|${LOCALBASE}|g' \
+	@${REINPLACE_CMD} '/^\$$CC/s|g++|${CXX}|; s|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/Makefile.PL
 
 # Don't pass any argument to Makefile.PL, it messes up lib detection.

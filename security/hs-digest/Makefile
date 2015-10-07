@@ -2,7 +2,7 @@
 
 PORTNAME=	digest
 PORTVERSION=	0.0.1.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org

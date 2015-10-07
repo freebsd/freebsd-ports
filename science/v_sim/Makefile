@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		fortran gmake libtool pkgconfig tar:bzip2
-USE_GNOME=	gtk20 cairo
+USE_GNOME=	gtk20 intltool cairo
 USE_GL=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc --disable-python-module

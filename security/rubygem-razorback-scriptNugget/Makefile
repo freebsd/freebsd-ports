@@ -3,6 +3,7 @@
 
 PORTNAME=	razorback-scriptNugget
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	security rubygems
 MASTER_SITES=	SF/razorbacktm/Bindings
 DISTNAME=	scriptNugget-ruby-${PORTVERSION}
@@ -16,5 +17,7 @@ NO_ARCH=	yes
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
 RUBYGEM_AUTOPLIST=	yes
+USES=		shebangfix
+SHEBANG_FILES=	lib/razorback.rb
 
 .include <bsd.port.mk>

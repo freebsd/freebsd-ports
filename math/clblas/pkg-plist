@@ -1,0 +1,13 @@
+bin/clBLAS-tune
+include/clAmdBlas.h
+include/clAmdBlas.version.h
+include/clBLAS-complex.h
+include/clBLAS.h
+include/clBLAS.version.h
+lib/cmake/clBLAS/clBLASConfig.cmake
+lib/cmake/clBLAS/clBLASConfigVersion.cmake
+lib/cmake/clBLAS/clBLASTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/clBLAS/clBLASTargets.cmake
+lib/libclBLAS.so
+lib/libclBLAS.so.2
+lib/libclBLAS.so.2.6.0

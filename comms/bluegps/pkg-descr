@@ -1,4 +1,4 @@
-BlueGPS is a simple (freebsd native) command line tool to download
+BlueGPS is a simple (FreeBSD native) command line tool to download
 datalogs from the Royaltek RBT-3000 bluetooth GPS receiver over a
 bluetooth link.
 

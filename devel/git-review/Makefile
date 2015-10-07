@@ -2,7 +2,7 @@
 
 PORTNAME=	git-review
 PORTVERSION=	1.24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 
@@ -18,16 +18,18 @@ RUN_DEPENDS=	git:${PORTSDIR}/devel/git \
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
 PLIST_FILES=	man/man1/git-review.1.gz
 PORTDOCS=	README.rst HACKING.rst AUTHORS
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/git-review.1 ${STAGEDIR}${MANPREFIX}/man/man1
-.if ${PORT_OPTIONS:MDOCS}
-	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}/
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-.endif
+
 .include <bsd.port.mk>

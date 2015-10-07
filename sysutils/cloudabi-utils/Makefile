@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cloudabi-utils
-PORTVERSION=	0.2
+PORTVERSION=	0.5
 CATEGORIES=	sysutils
 MASTER_SITES=	https://nuxi.nl/distfiles/cloudabi-utils/
 
@@ -11,7 +11,6 @@ COMMENT=	Utilities for running CloudABI programs
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	cloudabi-toolchain>=0:${PORTSDIR}/devel/cloudabi-toolchain
 LIB_DEPENDS=	libyaml.so:${PORTSDIR}/textproc/libyaml
 
 ONLY_FOR_ARCHS=	amd64
@@ -23,15 +22,26 @@ PLIST_FILES=	bin/cloudabi-run \
 		libexec/cloudabi-reexec \
 		man/man1/cloudabi-run.1.gz
 
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
 do-build:
 	@cd ${WRKSRC} && \
-		PREFIX=${LOCALBASE} \
-		CLOUDABI_CC=${LOCALBASE}/bin/x86_64-unknown-cloudabi-cc \
+		${SETENV} ${MAKE_ENV} \
+		PREBUILT_ARCH=x86_64 \
+		PREFIX=${PREFIX} \
 		${SH} build
 
 do-install:
 	@cd ${WRKSRC} && \
-		PREFIX=${STAGEDIR}${PREFIX} \
+		DESTDIR=${STAGEDIR} \
+		PREFIX=${PREFIX} \
 		${SH} install
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1000100
+IGNORE=		CloudABI will never support this version of FreeBSD
+.endif
+
+.include <bsd.port.post.mk>

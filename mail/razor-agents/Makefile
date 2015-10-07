@@ -31,6 +31,6 @@ PORTSCOUT=	skipv:2.85
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${PERL} -pi -e 's|/etc/razor|${PREFIX}/etc|g'
-	@${PERL} -pi -e 's,share/man,man,g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e '/MAN5/s,man/man5,${SITE_MAN3_REL:S/3/5/},g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>

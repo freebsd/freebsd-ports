@@ -6,10 +6,12 @@ include/libpinyin-%%VER%%/pinyin.h
 include/libpinyin-%%VER%%/pinyin_custom2.h
 lib/libpinyin.a
 lib/libpinyin.so
-lib/libpinyin.so.5
-lib/libpinyin.so.5.0.0
+lib/libpinyin.so.6
+lib/libpinyin.so.6.0.0
 libdata/pkgconfig/libpinyin.pc
 man/man1/libpinyin.1.gz
+%%DATADIR%%/data/addon_phrase_index.bin
+%%DATADIR%%/data/addon_pinyin_index.bin
 %%DATADIR%%/data/art.bin
 %%DATADIR%%/data/bigram.db
 %%DATADIR%%/data/culture.bin
@@ -21,9 +23,11 @@ man/man1/libpinyin.1.gz
 %%DATADIR%%/data/life.bin
 %%DATADIR%%/data/merged.bin
 %%DATADIR%%/data/nature.bin
+%%DATADIR%%/data/people.bin
 %%DATADIR%%/data/phrase_index.bin
 %%DATADIR%%/data/pinyin_index.bin
-%%DATADIR%%/data/scitech.bin
+%%DATADIR%%/data/science.bin
 %%DATADIR%%/data/society.bin
 %%DATADIR%%/data/sport.bin
 %%DATADIR%%/data/table.conf
+%%DATADIR%%/data/technology.bin

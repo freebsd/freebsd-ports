@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	sshguard
-PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTVERSION=	1.6.1
+PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	SF/sshguard/sshguard/${PORTVERSION}
 
@@ -12,7 +12,7 @@ COMMENT?=	Protect hosts from brute force attacks against ssh and other services
 
 LICENSE=	BSD2CLAUSE
 
-CONFLICTS?=	sshguard-ipfilter-1.* sshguard-ipfw-1.* sshguard-pf-1.*
+CONFLICTS?=	sshguard-ipfilter-1.* sshguard-ipfw-1.* sshguard-pf-1.* sshguard-null-1.*
 
 USES=		autoreconf tar:xz
 

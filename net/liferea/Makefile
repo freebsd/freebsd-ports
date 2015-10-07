@@ -20,7 +20,8 @@ RUN_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-sc
 
 USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
 		python:2 tar:bzip2
-USE_GNOME=	dconf:run gtk30 introspection:build libxslt:build libxml2
+USE_GNOME=	dconf:run gtk30 intltool introspection:build \
+		libxslt:build libxml2
 USE_SQLITE=	3
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

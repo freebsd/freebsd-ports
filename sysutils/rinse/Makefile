@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rinse
-PORTVERSION=	3.0.9
+PORTVERSION=	3.1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Install RPM-based system into a directory
 
-LICENSE=	ARTPERL10
+LICENSE=	ART10
 
 RUN_DEPENDS=	p5-Term-Size>0:${PORTSDIR}/devel/p5-Term-Size \
 		p5-libwww>0:${PORTSDIR}/www/p5-libwww
@@ -48,6 +48,8 @@ post-patch:
 		${WRKSRC}/bin/${PORTNAME} \
 		${WRKSRC}/misc/${PORTNAME}
 # mount flags and /dev are different, drop duplicates and add missing
+	${REINPLACE_CMD} -i '.mount.bak' -e '/mount/s/proc/lin&fs/' \
+		${WRKSRC}/bin/${PORTNAME}
 	${REINPLACE_CMD} -e 's,-o bind $$i,-t lin$${i#/}fs none,' \
 		${WRKSRC}/scripts.common/15-mount-proc.sh
 	${REINPLACE_CMD} -Ee 's/sed -i/& ""/' \

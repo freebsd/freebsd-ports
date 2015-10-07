@@ -7,6 +7,7 @@ operator:*:5:amanda
 mail:*:6:postfix,clamav
 ftp:*:14:
 smmsp:*:25:
+video:*:44:
 bind:*:53:
 rdfdb:*:55:
 spamd:*:58:
@@ -16,7 +17,7 @@ proxy:*:62:
 authpf:*:63:
 uucp:*:66:
 xten:*:67:
-dialer:*:68:
+dialer:*:68:aprsd
 network:*:69:
 pgsql:*:70:
 ircd:*:72:
@@ -94,6 +95,8 @@ trircd:*:154:
 xorp:*:155:
 monetdb:*:156:
 barman:*:157:
+pootle:*:158:
+nocat:*:159:
 sfs:*:171:
 agk:*:172:
 polipo:*:173:
@@ -205,6 +208,7 @@ distcc:*:561:
 polkit:*:562:
 pulse:*:563:
 pulse-access:*:564:
+polkitd:*:565:
 assp:*:587:
 avahi-autoipd:*:588:
 _xsi:*:600:
@@ -216,6 +220,7 @@ monkeysphere:*:641:
 aox:*:666:
 riak:*:667:
 bnetd:*:700:
+fastnetmon:*:701:
 bopm:*:717:
 openxpki:*:777:
 zetacoin:*:780:
@@ -233,8 +238,10 @@ tcpcryptd:*:841:
 munin:*:842:
 dahdi:*:843:asterisk
 subsonic:*:844:
+sogod:*:846:
 fossy:*:901:www
 scanlogd:*:902:
+_ocserv:*:903:
 influxd:*:907:
 riemann:*:908:
 proxy65:*:909:
@@ -274,6 +281,7 @@ teamspeak:*:942:
 dnetfold:*:943:
 bbs:*:944:
 dbxml:*:945:
+mediatomb:*:946:
 gnokii:*:947:
 dnrd:*:948:
 _lldpd:*:949:
@@ -318,6 +326,7 @@ kannel:*:993:
 rcynic:*:994:
 rpkirtr:*:995:
 tarantool:*:996:
+bareos:*:997:
 ebnetd:*:999:
 nogroup:*:65533:
 nobody:*:65534:

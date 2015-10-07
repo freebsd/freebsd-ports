@@ -19,6 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:${PORTSDIR}/databases/py-bsddb \
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 USE_RC_SUBR=	pyspamd
 
@@ -67,10 +68,13 @@ post-patch:
 		'/unknown_cache/s|pop3proxy-unknown-cache|${CACHEDIR}/pop3proxy-unknown-cache|' \
 		${WRKSRC}/spambayes/Options.py
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${CACHEDIR}/pop3proxy-spam-cache
+	@${MKDIR} ${STAGEDIR}${CACHEDIR}/pop3proxy-ham-cache
+	@${MKDIR} ${STAGEDIR}${CACHEDIR}/pop3proxy-unknown-cache
+	@${MKDIR} ${STAGEDIR}${DBDIR}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
 	@if [ -f ${WRKSRC}/${file} ]; then \
@@ -79,12 +83,7 @@ post-install:
 .endfor
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/contrib
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/utilities
-	@${INSTALL_DATA} ${WRKSRC}/contrib/* ${STAGEDIR}${DOCSDIR}/contrib
-	@${INSTALL_DATA} ${WRKSRC}/utilities/* ${STAGEDIR}${DOCSDIR}/utilities
-.endif
-	@${MKDIR} ${STAGEDIR}${CACHEDIR}/pop3proxy-spam-cache
-	@${MKDIR} ${STAGEDIR}${CACHEDIR}/pop3proxy-ham-cache
-	@${MKDIR} ${STAGEDIR}${CACHEDIR}/pop3proxy-unknown-cache
-	@${MKDIR} ${STAGEDIR}${DBDIR}
+	${INSTALL_DATA} ${WRKSRC}/contrib/* ${STAGEDIR}${DOCSDIR}/contrib
+	${INSTALL_DATA} ${WRKSRC}/utilities/* ${STAGEDIR}${DOCSDIR}/utilities
 
 .include <bsd.port.mk>

@@ -1,4 +1,3 @@
-bin/cme-old
 %%SITE_PERL%%/Config/Model.pm
 %%SITE_PERL%%/Config/Model/Annotation.pm
 %%SITE_PERL%%/Config/Model/AnyId.pm
@@ -109,4 +108,3 @@ bin/cme-old
 %%PERL5_MAN3%%/Config::Model::models::Multistrap.3.gz
 %%PERL5_MAN3%%/Config::Model::models::Multistrap::Section.3.gz
 %%PERL5_MAN3%%/Config::Model::models::PopCon.3.gz
-man/man1/cme-old.1.gz

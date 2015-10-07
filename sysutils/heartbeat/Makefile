@@ -3,7 +3,7 @@
 
 PORTNAME=	heartbeat
 PORTVERSION=	2.1.4
-PORTREVISION=	24
+PORTREVISION=	26
 CATEGORIES=	sysutils
 #MASTER_SITES=	http://hg.linux-ha.org/lha-2.1/archive/STABLE-2.1.4.tar.bz2
 MASTER_SITES=	LOCAL/kuriyama/heartbeat
@@ -23,9 +23,13 @@ LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
 		libxml2.so:${PORTSDIR}/textproc/libxml2
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
-USES=		autoreconf cpe gettext gmake libtool pkgconfig python tar:bzip2 \
+USES=		autoreconf cpe gettext gmake libtool perl5 pkgconfig python tar:bzip2 \
 		shebangfix
-SHEBANG_FILES=	ldirectord/ldirectord.in
+SHEBANG_FILES=	ldirectord/ldirectord.in \
+		lib/plugins/stonith/external/ibmrsa-telnet \
+		lib/plugins/stonith/external/vmware \
+		lib/plugins/stonith/external/xen0-ha-dom0-stonith-helper \
+		lib/plugins/stonith/external/xen0-ha.in
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
@@ -125,6 +129,8 @@ post-extract:
 	@${CP} -f ${FILESDIR}/heartbeat.in ${WRKSRC}/heartbeat/init.d/
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/resources/OCF/IPaddr
 .if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's|^\(docdir.*doc/\).*|\1${PORTNAME}|' \
 		${WRKSRC}/configure.in \

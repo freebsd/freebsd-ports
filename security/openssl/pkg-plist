@@ -98,7 +98,6 @@ lib/libssl.a
 libdata/pkgconfig/libcrypto.pc
 libdata/pkgconfig/libssl.pc
 libdata/pkgconfig/openssl.pc
-%%SHARED%%@dirrm lib/engines
 man/man1/CA.pl.1.gz
 man/man1/asn1parse.1.gz
 man/man1/c_rehash.1.gz
@@ -1650,9 +1649,5 @@ man/man7/des_modes.7.gz
 %%OPENSSLDIR%%/misc/tsget
 %%OPENSSLDIR%%/openssl.cnf.sample
 %%PORTDOCS%%%%DOCSDIR%%/openssl.txt
-@dirrm include/openssl
-@dirrmtry %%OPENSSLDIR%%/certs
-@dirrm %%OPENSSLDIR%%/misc
-@dirrmtry %%OPENSSLDIR%%/private
-@dirrm %%OPENSSLDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dir %%OPENSSLDIR%%/private
+@dir %%OPENSSLDIR%%/certs

@@ -3,6 +3,7 @@
 
 PORTNAME=	trafficserver
 PORTVERSION=	5.3.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	APACHE/${PORTNAME}
 
@@ -47,7 +48,7 @@ CONFIGURE_ARGS=	--with-libxml2=${LOCALBASE} \
 		--with-user=${USERS} \
 		--with-group=${GROUPS}
 
-OPTIONS_DEFINE=	DOCS INTERIM WCCP
+OPTIONS_DEFINE=	DOCS INTERIM WCCP SPDY
 OPTIONS_RADIO=	MEMMAN
 OPTIONS_RADIO_MEMMAN=	ALLOCATORS FREELISTS RECLAIM
 OPTIONS_DEFAULT=	FREELISTS
@@ -57,9 +58,12 @@ INTERIM_DESC=	Enable interim cache (SSD)
 ALLOCATORS_DESC=	Manage memory with allocators
 FREELISTS_DESC=	Manage memory with freelists
 RECLAIM_DESC=	Reclaim unused memory in freelists
+SPDY_DESC=	Enable SPDY
 
 WCCP_CONFIGURE_ENABLE=	wccp
 INTERIM_CONFIGURE_ENABLE=	interim-cache
+SPDY_CONFIGURE_ENABLE=	spdy
+SPDY_LIB_DEPENDS=	libspdylay.so:${PORTSDIR}/www/spdylay
 
 .include <bsd.port.options.mk>
 

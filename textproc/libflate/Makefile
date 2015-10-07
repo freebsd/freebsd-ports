@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libflate
-PORTVERSION=	2.0
-PORTREVISION=	1
+PORTVERSION=	2.0.1
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://flate.dead-inside.org/
 

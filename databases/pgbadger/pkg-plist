@@ -1,2 +1,2 @@
 bin/pgbadger
-man/man1/pgbadger.1.gz
+%%PERL5_MAN1%%/pgbadger.1p.gz

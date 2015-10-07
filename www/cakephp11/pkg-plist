@@ -163,3 +163,22 @@
 %%WWWDIR%%/cake/scripts/templates/skel/webroot/js/vendors.php
 %%WWWDIR%%/cake/scripts/templates/views/home.thtml
 %%WWWDIR%%/index.php
+@dir %%WWWDIR%%/app/webroot/files
+@dir %%WWWDIR%%/cake/scripts/templates/skel/controllers/components
+@dir %%WWWDIR%%/cake/scripts/templates/skel/models/behaviors
+@dir %%WWWDIR%%/cake/scripts/templates/skel/plugins
+@dir %%WWWDIR%%/cake/scripts/templates/skel/tmp/cache/models
+@dir %%WWWDIR%%/cake/scripts/templates/skel/tmp/cache/persistent
+@dir %%WWWDIR%%/cake/scripts/templates/skel/tmp/cache/views
+@dir %%WWWDIR%%/cake/scripts/templates/skel/tmp/logs
+@dir %%WWWDIR%%/cake/scripts/templates/skel/tmp/sessions
+@dir %%WWWDIR%%/cake/scripts/templates/skel/tmp/tests
+@dir %%WWWDIR%%/cake/scripts/templates/skel/vendors
+@dir %%WWWDIR%%/cake/scripts/templates/skel/views/elements
+@dir %%WWWDIR%%/cake/scripts/templates/skel/views/errors
+@dir %%WWWDIR%%/cake/scripts/templates/skel/views/helpers
+@dir %%WWWDIR%%/cake/scripts/templates/skel/views/pages
+@dir %%WWWDIR%%/cake/scripts/templates/skel/webroot/files
+@dir %%WWWDIR%%/vendors
+@owner
+@group

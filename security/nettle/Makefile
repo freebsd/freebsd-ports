@@ -39,15 +39,13 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 CONFIGURE_ENV+=	CCPIC=-fPIC
 .endif
 
-post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${INSTALL_DATA} ${PORTEXAMPLES} \
 		${STAGEDIR}${EXAMPLESDIR}
-.endif
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.post.mk>

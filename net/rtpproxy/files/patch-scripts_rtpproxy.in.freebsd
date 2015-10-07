@@ -1,0 +1,14 @@
+--- scripts/rtpproxy.in.freebsd.orig	2015-03-09 17:40:27 UTC
++++ scripts/rtpproxy.in.freebsd
+@@ -22,7 +22,10 @@ load_rc_config ${name}
+ 
+ rtpproxy_enable=${rtpproxy_enable:-"NO"}
+ rtpproxy_laddr=${rtpproxy_laddr:-"0.0.0.0"}
++rtpproxy_usr=${rtpproxy_usr:-"rtpproxy"}
++rtpproxy_grp=${rtpproxy_grp:-"rtpproxy"}
+ 
+-command_args="-l ${rtpproxy_laddr} -p /var/run/rtpproxy.pid"
++command_args="-l ${rtpproxy_laddr} -p /var/run/rtpproxy.pid \
++  -u ${rtpproxy_usr}:${rtpproxy_grp}"
+ 
+ run_rc_command "${1}"

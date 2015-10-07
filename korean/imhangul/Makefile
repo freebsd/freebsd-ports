@@ -3,7 +3,7 @@
 
 PORTNAME=	imhangul
 PORTVERSION=	${GTKVER}.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	korean
 MASTER_SITES=	GOOGLE_CODE
 
@@ -15,30 +15,19 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libhangul.so:${PORTSDIR}/korean/libhangul
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+PLIST_SUB=	GTKVER=${GTKVER}.0
+USE_GNOME=	gtk${GTKVER}0
 USES=		gmake libtool pkgconfig tar:bzip2
 
 OPTIONS_DEFINE=	GTK3 NLS
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
+GTK3_VARS=	GTKVER=3
+GTK3_VARS_OFF=	GTKVER=2
 
-.if ${PORT_OPTIONS:MGTK3}
-USE_GNOME=	gtk30
-GTKVER=	3
-PLIST_SUB=	GTK2="@comment " GTK3=""
-.else
-USE_GNOME=	gtk20
-GTKVER=	2
-PLIST_SUB=	GTK2="" GTK3="@comment "
-.endif
-PLIST_SUB+=	GTKVER="${GTKVER}.0"
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_CPPFLAGS=	-I${LOCALBASE}/include
+NLS_LDFLAGS=	-L${LOCALBASE}/lib
+NLS_USES=	gettext
 
 .include <bsd.port.mk>

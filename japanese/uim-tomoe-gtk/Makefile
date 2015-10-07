@@ -15,7 +15,7 @@ LIB_DEPENDS=	libtomoe.so:${PORTSDIR}/japanese/tomoe \
 		libuim.so:${PORTSDIR}/textproc/uim
 
 USES=		gettext gmake libtool pkgconfig
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 intltool
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/uim-tomoe-gtk \

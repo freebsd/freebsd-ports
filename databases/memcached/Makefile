@@ -3,6 +3,7 @@
 
 PORTNAME=	memcached
 PORTVERSION=	1.4.24
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.memcached.org/files/ \
 		GOOGLE_CODE \
@@ -45,6 +46,8 @@ SASL_CONFIGURE_ENABLE=	sasl
 SASL_CFLAGS=		-I${LOCALBASE}/include
 SASL_CPPFLAGS+=		${CFLAGS}
 SASL_LDFLAGS=		-L${LOCALBASE}/lib
+
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 

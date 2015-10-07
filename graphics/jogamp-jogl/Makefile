@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	jogamp-jogl
-PORTVERSION=	2.1.5
-PORTREVISION=	2
+PORTVERSION=	2.2.4
 CATEGORIES=	graphics devel java
-MASTER_SITES=	http://jogamp.org/deployment/jogamp-current/archive/Sources/
+MASTER_SITES=	http://jogamp.org/deployment/jogamp-current/archive/Sources/ \
+		http://jogamp.org/deployment/v${PORTVERSION}/archive/Sources/
 DISTFILES=	jogl-v${PORTVERSION}.tar.7z \
 		gluegen-v${PORTVERSION}.tar.7z
 
@@ -42,6 +42,8 @@ post-extract:
 post-patch:
 	${REINPLACE_CMD} -e 's|%%JAVALIBDIR%%|${JAVALIBDIR}|g' \
 		${BUILD_WRKSRC}/build-common.xml
+	${REINPLACE_CMD} -e '/name="all"/s|,test.compile||g' \
+		${BUILD_WRKSRC}/build.xml
 
 pre-build:
 	@(cd ${WRKDIR}/gluegen/make; \

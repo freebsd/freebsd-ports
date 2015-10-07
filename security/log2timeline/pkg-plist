@@ -186,6 +186,6 @@ bin/timescanner
 %%PERL5_MAN3%%/Log2t::output::tab.3.gz
 %%PERL5_MAN3%%/Parse::Evtx2.3.gz
 %%PERL5_MAN3%%/Parse::Evtx2::Chunk.3.gz
-man/man1/l2t_process.1.gz
-man/man1/log2timeline.1.gz
-man/man1/timescanner.1.gz
+%%PERL5_MAN1%%/l2t_process.1.gz
+%%PERL5_MAN1%%/log2timeline.1.gz
+%%PERL5_MAN1%%/timescanner.1.gz

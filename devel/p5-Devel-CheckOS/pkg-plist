@@ -1,5 +1,5 @@
 bin/use-devel-assertos
-man/man1/use-devel-assertos.1.gz
+%%PERL5_MAN1%%/use-devel-assertos.1.gz
 %%PERL5_MAN3%%/Devel::AssertOS.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::AIX.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::Amiga.3.gz

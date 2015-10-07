@@ -8,5 +8,5 @@ bin/pp2latex
 %%PERL5_MAN3%%/PerlPoint::Converters.3.gz
 %%PERL5_MAN3%%/PerlPoint::Tags::HTML.3.gz
 %%PERL5_MAN3%%/PerlPoint::Tags::LaTeX.3.gz
-man/man1/pp2html.1.gz
-man/man1/pp2latex.1.gz
+%%PERL5_MAN1%%/pp2html.1.gz
+%%PERL5_MAN1%%/pp2latex.1.gz

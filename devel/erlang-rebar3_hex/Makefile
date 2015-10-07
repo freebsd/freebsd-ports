@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rebar3_hex
-PORTVERSION=	0.1.0
+PORTVERSION=	1.7.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
@@ -15,10 +15,7 @@ USES=		erlang:rebar
 USE_GITHUB=	yes
 GH_ACCOUNT=	hexpm
 
-ERL_BUILD_DEPS=	devel/erlang-erlware_commons \
-		devel/erlang-jsx \
-		devel/erlang-providers \
-		devel/erlang-ssl_verify_hostname
+ERL_BUILD_DEPS=	devel/erlang-jsx
 ERL_RUN_DEPS:=	${ERL_BUILD_DEPS}
 
 .include <bsd.port.mk>

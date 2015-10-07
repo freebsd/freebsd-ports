@@ -54,12 +54,16 @@ share/icons/hicolor/scalable/status/knemo-monochrome-transmit.svgz
 share/kde4/services/kcm_knemo.desktop
 share/locale/ar/LC_MESSAGES/kcm_knemo.mo
 share/locale/ar/LC_MESSAGES/knemo.mo
+share/locale/ast/LC_MESSAGES/kcm_knemo.mo
+share/locale/ast/LC_MESSAGES/knemo.mo
 share/locale/bg/LC_MESSAGES/kcm_knemo.mo
 share/locale/bg/LC_MESSAGES/knemo.mo
 share/locale/br/LC_MESSAGES/kcm_knemo.mo
 share/locale/br/LC_MESSAGES/knemo.mo
 share/locale/bs/LC_MESSAGES/kcm_knemo.mo
 share/locale/bs/LC_MESSAGES/knemo.mo
+share/locale/ca/LC_MESSAGES/kcm_knemo.mo
+share/locale/ca/LC_MESSAGES/knemo.mo
 share/locale/cs/LC_MESSAGES/kcm_knemo.mo
 share/locale/cs/LC_MESSAGES/knemo.mo
 share/locale/cy/LC_MESSAGES/kcm_knemo.mo
@@ -90,6 +94,8 @@ share/locale/hr/LC_MESSAGES/kcm_knemo.mo
 share/locale/hr/LC_MESSAGES/knemo.mo
 share/locale/hu/LC_MESSAGES/kcm_knemo.mo
 share/locale/hu/LC_MESSAGES/knemo.mo
+share/locale/ia/LC_MESSAGES/kcm_knemo.mo
+share/locale/ia/LC_MESSAGES/knemo.mo
 share/locale/is/LC_MESSAGES/kcm_knemo.mo
 share/locale/is/LC_MESSAGES/knemo.mo
 share/locale/it/LC_MESSAGES/kcm_knemo.mo
@@ -102,6 +108,8 @@ share/locale/km/LC_MESSAGES/kcm_knemo.mo
 share/locale/km/LC_MESSAGES/knemo.mo
 share/locale/lt/LC_MESSAGES/kcm_knemo.mo
 share/locale/lt/LC_MESSAGES/knemo.mo
+share/locale/mr/LC_MESSAGES/kcm_knemo.mo
+share/locale/mr/LC_MESSAGES/knemo.mo
 share/locale/ms/LC_MESSAGES/kcm_knemo.mo
 share/locale/nb/LC_MESSAGES/kcm_knemo.mo
 share/locale/nb/LC_MESSAGES/knemo.mo

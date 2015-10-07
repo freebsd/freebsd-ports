@@ -10,16 +10,13 @@ MASTER_SITES=	LOCAL/fenner
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console based hardware monitor for FreeBSD
 
-WRKSRC=		${WRKDIR}/consolehm/consolehm
+ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS_REASON=	uses x86-only assembly from machine/cpufunc.h
 
 USES=		uidfix
 GNU_CONFIGURE=	yes
+WRKSRC=		${WRKDIR}/consolehm/consolehm
+
 PLIST_FILES=	bin/chm man/man8/chm.8.gz
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

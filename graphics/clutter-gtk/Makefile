@@ -12,6 +12,8 @@ COMMENT=	GTK+ Integration library for Clutter
 
 LIB_DEPENDS=	libclutter-glx-1.0.so:${PORTSDIR}/graphics/clutter
 
+PORTSCOUT=	ignore:1
+
 USE_GL=		gl
 USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes

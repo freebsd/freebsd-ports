@@ -3,7 +3,7 @@
 
 PORTNAME=	codeblocks
 PORTVERSION=	13.12
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/Sources/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}-1
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
 USES=		compiler desktop-file-utils fam:gamin libtool pathfix \
 		pkgconfig shared-mime-info
 USE_WX=		2.8
-WANT_UNICODE=	yes
+WX_UNICODE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG} --with-contrib-plugins=all \
 		--disable-pch

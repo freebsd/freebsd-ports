@@ -11,12 +11,11 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Flipping squares will never be the same
 
 LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libGLEW.so:${PORTSDIR}/graphics/glew
+		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
 USES=		desktop-file-utils pkgconfig
 USE_SDL=	sdl mixer image
-USE_GL=		gl glu
+USE_GL=		gl glew glu
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

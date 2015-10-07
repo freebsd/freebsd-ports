@@ -26,6 +26,7 @@ TEST_DEPENDS=	p5-IO-All>=0.51:${PORTSDIR}/devel/p5-IO-All \
 		p5-Test-Output>=1.03:${PORTSDIR}/devel/p5-Test-Output \
 		p5-Test-Spec>=0.47:${PORTSDIR}/devel/p5-Test-Spec
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

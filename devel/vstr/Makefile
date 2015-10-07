@@ -5,15 +5,16 @@ PORTNAME=	vstr
 PORTVERSION=	1.0.15
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
-		http://sce-tindy.tecnik93.com/FreeBSD/others_ports/${PORTNAME}/ \
-		http://www.and.org/vstr/1.0.15/ \
-		http://www.and.org/vstr/latest/
+MASTER_SITES=	http://www.and.org/vstr/${PORTVERSION}/ \
+		http://www.and.org/vstr/latest/ \
+		http://ionut.tetcu.info/FreeBSd/ports/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose string library for C
 
-USES=		gmake pathfix pkgconfig tar:bzip2 libtool
+LICENSE=	LGPL21
+
+USES=		gmake libtool pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
 USE_LDCONFIG=	yes

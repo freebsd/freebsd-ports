@@ -1,6 +1,6 @@
---- WINGs/wapplication.c.orig	2013-05-03 02:55:29.000000000 +0900
-+++ WINGs/wapplication.c	2013-05-03 02:56:04.000000000 +0900
-@@ -159,7 +159,7 @@
+--- WINGs/wapplication.c.orig	2015-08-11 18:41:14 UTC
++++ WINGs/wapplication.c
+@@ -187,7 +187,7 @@ char *WMPathForResourceOfType(const char
  	if (path)
  		goto out;
  

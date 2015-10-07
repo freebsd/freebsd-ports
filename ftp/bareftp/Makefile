@@ -22,7 +22,7 @@ INSTALL_TARGET=	install-strip
 
 INSTALLS_ICONS=	yes
 USES=		cpe gettext gmake libtool pkgconfig
-USE_GNOME=	gtksharp20 gnomesharp20
+USE_GNOME=	gtksharp20 gnomesharp20 intltool
 
 USE_LDCONFIG=	yes
 

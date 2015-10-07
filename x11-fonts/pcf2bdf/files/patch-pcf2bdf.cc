@@ -1,6 +1,6 @@
---- pcf2bdf.cc.orig	Mon Oct 21 01:35:29 2002
-+++ pcf2bdf.cc	Mon Jan 20 23:11:46 2003
-@@ -577,7 +577,7 @@
+--- pcf2bdf.cc.orig	2015-05-18 02:55:57 UTC
++++ pcf2bdf.cc
+@@ -580,7 +580,7 @@ int main(int argc, char *argv[])
    }
    if (ifilename)
    {
@@ -9,17 +9,8 @@
      if (!ifp)
        return error_exit("failed to open input pcf file");
    }
-@@ -595,7 +595,7 @@
-     fclose(ifp);
-     char buf[1024];
-     sprintf(buf, "gzip -dc %s", ifilename); // TODO
--    ifp = popen(buf, "rb");
-+    ifp = popen(buf, "r");
-     _setmode(fileno(ifp), O_BINARY);
-     read_bytes = 0;
-     if (!ifp)
-@@ -604,7 +604,7 @@
-   
+@@ -607,7 +607,7 @@ int main(int argc, char *argv[])
+ 
    if (ofilename)
    {
 -    ofp = fopen(ofilename, "wb");

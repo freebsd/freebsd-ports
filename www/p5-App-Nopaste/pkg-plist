@@ -25,4 +25,4 @@ bin/nopaste
 %%PERL5_MAN3%%/App::Nopaste::Service::Snitch.3.gz
 %%PERL5_MAN3%%/App::Nopaste::Service::Ubuntu.3.gz
 %%PERL5_MAN3%%/App::Nopaste::Service::ssh.3.gz
-man/man1/nopaste.1.gz
+%%PERL5_MAN1%%/nopaste.1.gz

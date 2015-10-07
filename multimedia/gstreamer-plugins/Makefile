@@ -6,7 +6,7 @@ PORTNAME=	gstreamer
 PORTVERSION?=	${BASE_PORTVERSION}
 # When chasing a shared library for a plug-in bump the PORTREVISION in the 
 # plug-in port instead, like ${category}/gstreamer-plugin-${PLUGIN}.
-PORTREVISION?=	5
+PORTREVISION?=	6
 PORTEPOCH=	3
 CATEGORIES?=	multimedia audio
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-plugins-base/:base \
@@ -23,6 +23,8 @@ BUILD_DEPENDS+=	v4l_compat>=1.0.20110720:${PORTSDIR}/multimedia/v4l_compat \
 		orc>=0.4.14:${PORTSDIR}/devel/orc
 LIB_DEPENDS+=	libgstreamer-0.10.so:${PORTSDIR}/multimedia/gstreamer \
 		liborc-0.4.so:${PORTSDIR}/devel/orc
+
+PORTSCOUT=	limit:0\.10\..*
 
 CFLAGS:=	${CFLAGS} -O2 -Wno-format
 

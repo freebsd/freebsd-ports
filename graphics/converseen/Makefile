@@ -3,6 +3,7 @@
 
 PORTNAME=	converseen
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Converseen/Converseen%200.9/
 
@@ -10,11 +11,12 @@ MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Easy to use graphics conversion utility
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libMagick++-6.so:${PORTSDIR}/graphics/ImageMagick
 
-USES=		cmake gettext iconv tar:bzip2
-USE_QT4=	corelib gui linguist_build moc_build qmake_build \
+USES=		cmake tar:bzip2
+USE_QT4=	corelib network gui linguisttools_build moc_build qmake_build \
 		rcc_build uic_build
 
 post-patch:

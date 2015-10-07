@@ -1,4 +1,4 @@
 bin/fix_latin
-man/man1/fix_latin.1.gz
+%%PERL5_MAN1%%/fix_latin.1.gz
 %%SITE_PERL%%/Encoding/FixLatin.pm
 %%PERL5_MAN3%%/Encoding::FixLatin.3.gz

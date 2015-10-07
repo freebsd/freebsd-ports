@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	anjuta
-PORTVERSION=	3.14.1
+PORTVERSION=	3.16.0
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -23,8 +24,10 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc
 		gmake:${PORTSDIR}/devel/gmake \
 		yelp>=3.0.0:${PORTSDIR}/x11/yelp
 
+PORTSCOUT=	limitw:1,even
+
 USES=		bison desktop-file-utils gettext gmake libtool pathfix \
-		perl5 pkgconfig python shared-mime-info shebangfix tar:xz
+		perl5 pkgconfig:both python shared-mime-info shebangfix tar:xz
 SHEBANG_FILES=	plugins/project-wizard/templates/js_minimal/src/main.js \
 		plugins/tools/scripts/find-fixmes.pl \
 		plugins/tools/scripts/translation-status.pl \
@@ -71,45 +74,33 @@ GLIB_SCHEMAS=	org.gnome.anjuta.cvs.gschema.xml \
 		org.gnome.anjuta.terminal.gschema.xml \
 		org.gnome.anjuta.tools.gschema.xml
 
-OPTIONS_DEFINE=	SVN DEVHELP VALA
-OPTIONS_DEFAULT=SVN DEVHELP VALA
+OPTIONS_SUB=	yes
+OPTIONS_DEFINE=	SVN DEVHELP VALA GLADE TERMINAL
+OPTIONS_DEFAULT=SVN DEVHELP VALA GLADE TERMINAL
 SVN_DESC=	Subversion plugin
 DEVHELP_DESC=	Devhelp plugin
 VALA_DESC=	Vala support
+GLADE_DESC=	Build glade plugin
+TERMINAL_DESC=	Build build-in terminal
 
-.include <bsd.port.options.mk>
+GLADE_LIB_DEPENDS=	libgladeui-2.so:${PORTSDIR}/devel/glade
+GLADE_CONFIGURE_ENABLE=	plugin-glade
 
-.if ${PORT_OPTIONS:MSVN}
-BUILD_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
-LIB_DEPENDS+=	libapr-1.so:${PORTSDIR}/devel/apr1
-LIB_DEPENDS+=	libneon.so:${PORTSDIR}/www/neon
-RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
-PLIST_SUB+=	SVN=""
-.else
-CONFIGURE_ARGS+=--disable-plugin-subversion
-PLIST_SUB+=	SVN="@comment "
-.endif
+TERMINAL_USE=	GNOME=vte3
+TERMINAL_CONFIGURE_ENABLE=	plugin-terminal
 
-.if ${PORT_OPTIONS:MDEVHELP}
-LIB_DEPENDS+=	libdevhelp-3.so:${PORTSDIR}/devel/devhelp
-PLIST_SUB+=	DEVHELP=""
-.else
-CONFIGURE_ARGS+=--disable-plugin-devhelp
-# XXX Even if we disable the devhelp plugin it gets build and installed.
-# See if versions beyond 2.26.1.0 still do this.
-#PLIST_SUB+=	DEVHELP="@comment "
-PLIST_SUB+=	DEVHELP=""
-.endif
+SVN_BUILD_DEPENDS=	svn:${PORTSDIR}/devel/subversion
+SVN_LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1 \
+			libneon.so:${PORTSDIR}/www/neon
+SVN_RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion
+SVN_CONFIGURE_ENABLE=	plugin-subversion
 
-.if ${PORT_OPTIONS:MVALA}
-CONFIGURE_ARGS+=--enable-vala
-BUILD_DEPENDS+=	vala>=0.14.0:${PORTSDIR}/lang/vala
-RUN_DEPENDS+=	vala>=0.14.0:${PORTSDIR}/lang/vala
-PLIST_SUB+=	VALA=""
-.else
-CONFIGURE_ARGS+=--disable-vala
-PLIST_SUB+=	VALA="@comment "
-.endif
+DEVHELP_LIB_DEPENDS=	libdevhelp-3.so:${PORTSDIR}/devel/devhelp
+DEVHELP_CONFIGURE_ENBABLE=	plugin-devhelp
+
+VALA_BUILD_DEPENDS=	vala>=0.14.0:${PORTSDIR}/lang/vala
+VALA_RUN_DEPENDS=	vala>=0.14.0:${PORTSDIR}/lang/vala
+VALA_CONFIGURE_ENABLE=	vala
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"make|"gmake|g' \

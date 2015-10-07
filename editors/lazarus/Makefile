@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	lazarus
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.2
 DISTVERSIONSUFFIX=	-0
-PORTREVISION?=	0
+PORTREVISION?=	2
 CATEGORIES=	editors devel
 MASTER_SITES=	SF/${PORTNAME}/Lazarus%20Zip%20_%20GZip/Lazarus%20${PORTVERSION:S/.0//} \
 		LOCAL/acm/freepascal
@@ -20,8 +20,9 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 USES=		gmake
 USE_GNOME=	#
-USE_FPC?=	fcl-base fcl-db fcl-fpcunit fcl-image fcl-process fcl-registry \
-		fcl-res fcl-xml iconvenc numlib pasjpeg x11
+USE_FPC?=	cairo dblib fcl-base fcl-db fcl-fpcunit fcl-image fcl-json fcl-process \
+		fcl-registry fcl-res fcl-xml gtk2 ibase iconvenc mysql numlib odbc oracle \
+		pasjpeg postgres sqlite x11
 OPT?=		"-Sgic "
 
 MAKE_ENV=	OPT=${OPT}
@@ -32,10 +33,9 @@ DATADIR?=	${PREFIX}/share/${PORTNAME}-${PORTVERSION}
 .if !defined(PKGNAMESUFFIX)
 OPTIONS_DEFINE=		GDB
 OPTIONS_SINGLE=		LCL
-OPTIONS_SINGLE_LCL=	GTK1 GTK2 QT4
+OPTIONS_SINGLE_LCL=	GTK2 QT4
 
 GDB_DESC=		Install a newest version  of gdb
-GTK1_DESC=		Use gtk12 interface
 GTK2_DESC=		Use gtk20 interface
 QT4_DESC=		Use qt4 interface
 
@@ -61,7 +61,8 @@ RUN_DEPENDS+=	fpcres:${PORTSDIR}/lang/fpc-utils \
 		${LCL_UNITS_DIR}/alllclunits.ppu:${PORTSDIR}/editors/lazarus-lcl-units \
 		${LCL_UNITS_DIR}/nogui/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-nogui
 
-USES+=	gettext iconv
+USES+=		gettext iconv
+USE_FPC+=	chm
 
 MAN1S=		lazarus-ide.1 lazbuild.1 startlazarus.1
 SUB_FILES=	pkg-message
@@ -72,19 +73,10 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/gdb:${PORTSDIR}/devel/gdb
 .endif
 
 .if ${PORT_OPTIONS:MGTK2}
-USE_FPC+=	gtk2
 USE_GNOME=	gtk20 gdkpixbuf
 LCL_PLATFORM=	gtk2
 BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk2
 RUN_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk2
-.endif
-
-.if ${PORT_OPTIONS:MGTK1}
-USE_FPC+=	gtk1
-USE_GNOME=	gtk12 gdkpixbuf
-LCL_PLATFORM=	gtk
-BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk
-RUN_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk
 .endif
 
 .if ${PORT_OPTIONS:MQT4}

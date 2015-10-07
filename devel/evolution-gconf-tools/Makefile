@@ -16,9 +16,13 @@ RUN_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
 GNU_CONFIGURE=	yes
 USES=		python
 USE_GNOME=	gnomeprefix
+NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|${SH}|' \
 		${WRKSRC}/lib/*
+
+post-install:
+	@${RMDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/evolution-gconf-tools
 
 .include <bsd.port.mk>

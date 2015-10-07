@@ -2,9 +2,9 @@ SMBNetFS is a filesystem that allow you to use samba/microsoft network
 in the same manner as the network neighborhood in Microsoft Windows.
 
 Featuries:
-    * you can use Samba/Microsoft network as a regular unix filesystem
+    * you can use Samba/Microsoft network as a regular Unix filesystem
     * workgroup/computer/share entries are dynamically created
-    * windows domain supported
+    * Windows domain supported
     * kerberos support (New)
     * user defined workgroup/link/hosts are supported
     * national character supported

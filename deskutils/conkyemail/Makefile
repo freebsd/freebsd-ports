@@ -16,6 +16,7 @@ RUN_DEPENDS=	conky:${PORTSDIR}/sysutils/conky
 USES=		python
 USE_PYTHON=	distutils
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 WRKSRC=		${WRKDIR}/src
 

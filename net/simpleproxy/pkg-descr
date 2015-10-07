@@ -1,4 +1,4 @@
-Simpleproxy program acts as simple tcp proxy. It listens for local
+Simpleproxy program acts as simple TCP proxy. It listens for local
 socket, and any connection to this port will be forwarded to another
 socket at remote host.
 

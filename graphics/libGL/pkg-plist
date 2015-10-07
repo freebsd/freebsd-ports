@@ -1,20 +1,13 @@
-@comment etc/drirc
-@comment include/GL/internal/dri_interface.h
 include/GL/gl.h
 include/GL/gl_mangle.h
-%%NEW%%include/GL/glcorearb.h
+include/GL/glcorearb.h
 include/GL/glext.h
 include/GL/glx.h
 include/GL/glx_mangle.h
 include/GL/glxext.h
-include/GL/osmesa.h
+@comment include/GL/osmesa.h
 include/GL/wglext.h
-include/GL/wmesa.h
 lib/.mesa/libGL.so
 lib/.mesa/libGL.so.1
 lib/.mesa/libGL.so.1.2.0
-@comment lib/libglapi.so
-@comment lib/libglapi.so.0
-@comment lib/libglapi.so.0.0.0
-@comment libdata/pkgconfig/dri.pc
 libdata/pkgconfig/gl.pc

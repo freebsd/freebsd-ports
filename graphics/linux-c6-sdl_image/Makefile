@@ -3,7 +3,7 @@
 
 PORTNAME=	sdl_image
 PORTVERSION=	1.2.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics linux
 MASTER_SITES=	EPEL
 DISTNAME=	SDL_image-${PORTVERSION}-${RPMVERSION}
@@ -26,8 +26,6 @@ USE_LDCONFIG=	yes
 DOCSDIR=	${PREFIX}/usr/share/doc/${LINUX_NAME}-${PORTVERSION}
 PORTDOCS=	CHANGES COPYING README
 
-PLIST_FILES=	usr/bin/showimage usr/lib/libSDL_image-1.2.so.0 \
-		usr/lib/libSDL_image-1.2.so.0.8.4
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>

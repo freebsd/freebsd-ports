@@ -31,10 +31,6 @@ MAKE_ENV+=	CCACHE_CPP2=1
 
 INFO=		gauche-refe gauche-refj
 
-BROKEN_ia64=	Does not build with ${ARCH}
-BROKEN_powerpc=	Does not build with ${ARCH}
-BROKEN_sparc=	Does not build with ${ARCH}
-
 OPTIONS_DEFINE=		GDBM THREADS SLIB
 OPTIONS_RADIO=		MULTIBYTE
 OPTIONS_RADIO_MULTIBYTE=	EUCJP SJIS UTF8

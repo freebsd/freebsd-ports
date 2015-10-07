@@ -3,7 +3,7 @@
 
 PORTNAME=	curl
 PORTVERSION=	7.19.7
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	ftp linux
 DISTFILES=	curl-${PORTVERSION}-${RPMVERSION}.${LINUX_RPM_ARCH}.rpm \
 		libcurl-${PORTVERSION}-${RPMVERSION}.${LINUX_RPM_ARCH}.rpm
@@ -23,8 +23,6 @@ RPMVERSION=	40.el6_6.4
 BRANDELF_FILES=	usr/bin/curl
 USE_LDCONFIG=	yes
 
-PLIST_FILES=	usr/bin/curl usr/lib/libcurl.so.4 usr/lib/libcurl.so.4.1.1 \
-		usr/share/man/man1/curl.1.gz
 DOCSDIR=	usr/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	BUGS COPYING FEATURES README TODO CHANGES FAQ MANUAL RESOURCES TheArtOfHttpScripting
 DESCR=	${.CURDIR}/../${PORTNAME}/pkg-descr

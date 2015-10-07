@@ -3,7 +3,7 @@
 
 PORTNAME=	mgetty
 PORTVERSION=	1.1.35
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	comms
 MASTER_SITES=	ftp://mgetty.greenie.net/pub/mgetty/source/1.1/
 DISTNAME=	${PORTNAME}${PORTVERSION}-Feb22
@@ -14,7 +14,10 @@ COMMENT=	Handle external logins, send and receive faxes
 LICENSE=	GPLv2
 
 USE_CSTD=	gnu89
-USES=		makeinfo perl5
+USES=		makeinfo perl5 shebangfix
+SHEBANG_FILES=	samples/fax \
+		samples/new_fax.all/new_fax \
+		samples/new_fax.mime1
 
 SUB_FILES=	pkg-message mgettycfg
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -28,15 +31,9 @@ OPTIONS_DEFINE=	FIDO
 
 FIDO_DESC=	Enable FIDO EMSI support
 
-.include <bsd.port.options.mk>
-
 CFLAGS+=	-DAUTO_PPP
 
-.if ${PORT_OPTIONS:MFIDO}
-CFLAGS+=	-DFIDO
-.endif
-
-.include <bsd.port.pre.mk>
+FIDO_CFLAGS=	-DFIDO
 
 pre-install:
 	@(cd ${WRKSRC}/doc; ${MAKE} manpages)
@@ -56,4 +53,4 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/mgettycfg ${STAGEDIR}${PREFIX}/bin
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mgetty+sendfax/faxq-helper
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

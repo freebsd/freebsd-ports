@@ -24,6 +24,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

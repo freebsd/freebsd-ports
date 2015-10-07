@@ -3,7 +3,7 @@
 
 PORTNAME=	massxpert
 PORTVERSION=	3.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science
 MASTER_SITES=	http://download.tuxfamily.org/massxpert/source/
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_GCC=	any
-USES=		cmake gettext iconv tar:bzip2
+USES=		cmake gettext tar:bzip2
 USE_XORG=	ice sm x11 xau xcb xdmcp xext xrender
 USE_GNOME=	glib20
 USE_QT4=	corelib gui xml rcc_build qmake_build uic_build moc_build \

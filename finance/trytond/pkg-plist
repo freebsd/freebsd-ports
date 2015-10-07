@@ -1,3 +1,0 @@
-@unexec if cmp -s %D/etc/trytond.conf.sample %D/etc/trytond.conf; then rm -f %D/etc/trytond.conf; fi
-etc/trytond.conf.sample
-@exec if [ ! -f %D/etc/trytond.conf ] ; then cp -p %D/%F %B/trytond.conf; fi

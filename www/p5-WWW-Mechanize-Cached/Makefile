@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	WWW-Mechanize-Cached
-PORTVERSION=	1.48
+PORTVERSION=	1.50
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,6 +22,7 @@ RUN_DEPENDS=	\
 	p5-Moo>=1.004005:${PORTSDIR}/devel/p5-Moo \
 	p5-MooX-Types-MooseLike>0:${PORTSDIR}/devel/p5-MooX-Types-MooseLike \
 	p5-WWW-Mechanize>0:${PORTSDIR}/www/p5-WWW-Mechanize \
+	p5-LWP-ConsoleLogger>0:${PORTSDIR}/www/p5-LWP-ConsoleLogger \
 	p5-Storable>=2.21:${PORTSDIR}/devel/p5-Storable
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Warn>0:${PORTSDIR}/devel/p5-Test-Warn

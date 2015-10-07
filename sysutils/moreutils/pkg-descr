@@ -1,5 +1,5 @@
-This is a collection of the unix tools that nobody thought to write long ago,
-when unix was young.
+This is a collection of the Unix tools that nobody thought to write long ago,
+when Unix was young.
 
 Currently it consists of these tools:
 - chronic: runs a command quietly unless it fails

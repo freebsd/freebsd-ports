@@ -1,6 +1,6 @@
---- configure.orig	2014-05-08 17:21:32.000000000 +0400
-+++ configure	2014-05-08 17:23:08.000000000 +0400
-@@ -12988,13 +12988,11 @@
+--- configure.orig	2015-07-05 20:43:09 UTC
++++ configure
+@@ -13459,13 +13459,11 @@ else
    cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  #include <libintl.h>

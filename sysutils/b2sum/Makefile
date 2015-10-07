@@ -2,7 +2,6 @@
 
 PORTNAME=	b2sum
 PORTVERSION=	0.0.d${B2VERSION}
-PORTREVISION=	1
 CATEGORIES=	sysutils security
 MASTER_SITES=	http://blake2.net/
 DISTNAME=	blake2_code_${B2VERSION}${EXTRACT_SUFFX}
@@ -13,9 +12,7 @@ COMMENT=	Fast secure hashing
 LICENSE=	CC0-1.0
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
-BROKEN_FreeBSD_9_amd64=	does not build
-
-B2VERSION=	20150529
+B2VERSION=	20150531
 
 USES=		zip
 USE_CSTD=	c99
@@ -41,7 +38,7 @@ CFLAGS+=	-march=native
 .endif
 
 .if (${PORT_OPTIONS:MSSE} && (${ARCH} == "i386" || ${ARCH} == "amd64"))
-CFLAGS+=	-I../sse
+CFLAGS+=	-I../sse -flax-vector-conversions
 .else
 CFLAGS+=	-I../ref
 EXTRA_PATCHES=	${PATCHDIR}/use_ref.patch

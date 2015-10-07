@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	greenlet
-PORTVERSION=	0.4.7
+PORTVERSION=	0.4.9
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,14 +12,13 @@ COMMENT=	Light-weight microthreads for Python
 
 LICENSE=	MIT
 
+DO_MAKE_TEST=	${PYTHON_CMD}
 ONLY_FOR_ARCHS=	amd64 i386
-USE_PYTHON=	autoplist distutils
-USES=		python zip
+TEST_TARGET=	run-tests.py
+USE_PYTHON=	autoplist concurrent distutils
+USES=		python
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/greenlet.so
-
-regression-test test: build
-	cd ${WRKSRC}/ && ${PYTHON_CMD} run-tests.py
 
 .include <bsd.port.mk>

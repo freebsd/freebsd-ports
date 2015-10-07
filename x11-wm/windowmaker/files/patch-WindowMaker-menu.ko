@@ -1,5 +1,5 @@
---- WindowMaker/menu.ko.orig	2013-05-03 03:12:25.000000000 +0900
-+++ WindowMaker/menu.ko	2013-05-03 03:12:17.000000000 +0900
+--- WindowMaker/menu.ko.orig	2015-08-11 18:41:14 UTC
++++ WindowMaker/menu.ko
 @@ -163,7 +163,7 @@
  		"세션 지움" CLEAR_SESSION
  	"창 관 리" END

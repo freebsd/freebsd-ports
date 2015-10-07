@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mediathek
-PORTVERSION=	9
+PORTVERSION=	10
 CATEGORIES=	german java
 MASTER_SITES=	SF/zdfmediathk/Mediathek/Mediathek%20${PORTVERSION}
 DISTNAME=	MediathekView_${PORTVERSION}
@@ -55,13 +55,13 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@${MKDIR} ${STAGEDIR}${DATADIR}/lib
 .for i in ${INSTALLFILES}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DATADIR}/
 .endfor
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${INSTALLDOCS}
-		@${INSTALL_DATA} ${WRKSRC}/Anleitung/${i} ${STAGEDIR}${DOCSDIR}/
+		${INSTALL_DATA} ${WRKSRC}/Anleitung/${i} ${STAGEDIR}${DOCSDIR}/
 .endfor
-	@(cd ${WRKSRC}/lib/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/lib/)
-	@${INSTALL_SCRIPT} ${WRKDIR}/mediathek ${STAGEDIR}${PREFIX}/bin
+	(cd ${WRKSRC}/lib/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/lib/)
+	${INSTALL_SCRIPT} ${WRKDIR}/mediathek ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

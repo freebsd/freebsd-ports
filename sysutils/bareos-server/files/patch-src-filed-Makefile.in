@@ -1,0 +1,11 @@
+--- src/filed/Makefile.in	2015-08-08 14:17:28.058350000 -0500
++++ src/filed/Makefile.in	2015-08-08 14:17:49.001877000 -0500
+@@ -84,7 +84,7 @@
+ 		  ../lib/libbareos$(DEFAULT_ARCHIVE_TYPE)
+ 	@echo "Linking $@ ..."
+ 	$(LIBTOOL_LINK) $(CXX) $(WLDFLAGS) $(LDFLAGS) -static -L../lib -L../findlib -o $@ $(SVROBJS) \
+-	   $(FDLIBS) -lbareosfind -lbareoscfg -lbareos -lm $(LIBS) \
++	   -lbareosfind -lbareoscfg -lbareos -lm $(FDLIBS) $(LIBS) \
+ 	   $(DLIB) $(WRAPLIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS) $(GNUTLS_LIBS)
+ 	strip $@
+ 

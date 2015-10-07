@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	qgis
-PORTVERSION=	2.10.0
-PORTREVISION=	1
+PORTVERSION=	2.10.1
+PORTREVISION=	2
 CATEGORIES=	graphics geography
 
 MAINTAINER=	rhurlin@gwdg.de
@@ -24,7 +24,7 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME:tu}
-GH_TAGNAME=	5cd8d08
+GH_TAGNAME=	e5928c7
 
 USES=		cpe bison cmake fortran gmake python
 USE_SQLITE=	yes
@@ -57,11 +57,9 @@ CXXFLAGS+=	-I${LOCALBASE}/include/flex
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
 BROKEN=		GRASS plugin not supported on FreeBSD 8.x and 9.x
 .endif
-BUILD_DEPENDS+=	grass64:${PORTSDIR}/databases/grass \
-		${LOCALBASE}/lib/gdalplugins/gdal_GRASS.so:${PORTSDIR}/graphics/gdal-grass
-RUN_DEPENDS+=	grass64:${PORTSDIR}/databases/grass \
-		${LOCALBASE}/lib/gdalplugins/gdal_GRASS.so:${PORTSDIR}/graphics/gdal-grass
-CMAKE_ARGS+=	-DWITH_GRASS:BOOL=TRUE -DGRASS_PREFIX=${LOCALBASE}/grass-6.4.4
+BUILD_DEPENDS+=	grass64:${PORTSDIR}/databases/grass
+RUN_DEPENDS+=	grass64:${PORTSDIR}/databases/grass
+CMAKE_ARGS+=	-DWITH_GRASS:BOOL=TRUE -DGRASS_PREFIX=${LOCALBASE}/grass-6.4.5
 FORCE_MAKE_JOBS=	NO
 PLIST_SUB+=	GRASS=""
 .else

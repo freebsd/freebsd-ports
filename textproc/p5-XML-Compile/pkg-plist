@@ -49,5 +49,5 @@ bin/xml2yaml
 %%PERL5_MAN3%%/XML::Compile::Translate::Template.3.gz
 %%PERL5_MAN3%%/XML::Compile::Translate::Writer.3.gz
 %%PERL5_MAN3%%/XML::Compile::Util.3.gz
-man/man1/schema2example.1.gz
-man/man1/xml2yaml.1.gz
+%%PERL5_MAN1%%/schema2example.1.gz
+%%PERL5_MAN1%%/xml2yaml.1.gz

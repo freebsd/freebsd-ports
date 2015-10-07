@@ -3,7 +3,7 @@
 
 PORTNAME=	queso
 PORTVERSION=	980922
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net security
 MASTER_SITES=	PACKETSTORM/UNIX/scanners
 
@@ -25,6 +25,8 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/queso ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/queso.conf.sample ${STAGEDIR}${PREFIX}/etc
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Documentation.txt ${STAGEDIR}${DOCSDIR}
 

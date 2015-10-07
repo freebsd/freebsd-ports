@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	automount
-PORTVERSION=	1.5.3
+PORTVERSION=	1.5.7
 CATEGORIES=	sysutils
 MASTER_SITES=	https://raw.github.com/vermaden/automount/master/ \
 		LOCAL/madpilot/${PORTNAME}/

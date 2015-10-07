@@ -1,6 +1,6 @@
---- src/Application.cpp.orig	2015-01-30 19:48:06.000000000 +0100
-+++ src/Application.cpp	2015-02-01 15:40:02.790619098 +0100
-@@ -30,8 +30,15 @@
+--- src/Application.cpp.orig	2015-04-27 09:31:47 UTC
++++ src/Application.cpp
+@@ -30,8 +30,15 @@ Application::Application(int& argc, char
  
      // First of all try to load the application translation file.
      m_translatorApp = new QTranslator(this);
@@ -16,7 +16,7 @@
  
      if (ok == true) {
          PreferencesDialog::setSettingsValue("General", "language", name);
-@@ -47,7 +54,9 @@
+@@ -47,7 +54,9 @@ Application::Application(int& argc, char
          ok = m_translatorQt->load("qt_" + name,
                                    QLibraryInfo::location(QLibraryInfo::TranslationsPath));
          if (ok == false)

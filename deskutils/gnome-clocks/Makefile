@@ -1,9 +1,8 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/gnome-clocks/Makefile 19980 2014-10-17 06:01:57Z gusi $
 
 PORTNAME=	gnome-clocks
-PORTVERSION=	3.14.1
+PORTVERSION=	3.16.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -18,13 +17,17 @@ LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 		libgweather-3.so:${PORTSDIR}/net/libgweather
 RUN_DEPENDS=	geoclue>=0:${PORTSDIR}/net/geoclue
 
+PORTSCOUT=	limitw:1,even
+
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomedesktop3 gnomeprefix gtk30 intlhack
+USE_GNOME=	gnomedesktop3 gsound gtk30 intlhack
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
+
+GLIB_SCHEMAS=	org.gnome.clocks.gschema.xml
 
 post-patch:
 # for base gcc on 9.x

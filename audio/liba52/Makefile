@@ -28,21 +28,17 @@ DJBFFT_CFLAGS=		-I${LOCALBASE}/include
 DJBFFT_LDFLAGS=		-L${LOCALBASE}/lib
 DJBFFT_CONFIGURE_ON=	--enable-djbfft
 
-.include <bsd.port.options.mk>
-
+CFLAGS_aarch64=	-fPIC
 CFLAGS_amd64=	-fPIC
 CFLAGS_powerpc=	-fPIC
 
 HEADER_FILES=	liba52/a52_internal.h
 
-post-patch:
-.if ! ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
+post-patch-OPTIMIZED_CFLAGS-off:
 	@${REINPLACE_CMD} -E -e 's!-O3!${CFLAGS}!' -e 's!-mcpu=[^"]+"!"!' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-.endif
-.if ${PORT_OPTIONS:MDJBFFT}
+post-patch-DJBFFT-on:
 	@${REINPLACE_CMD} -E -e 's|(fftc4.h)|djbfft/\1|' ${WRKSRC}/liba52/imdct.c
-.endif
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

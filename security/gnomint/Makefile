@@ -19,7 +19,7 @@ LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 
 GNU_CONFIGURE=	yes
 USES=		gettext-tools gmake perl5 pkgconfig readline
-USE_GNOME=	gconf2 gdkpixbuf2 glib20 gtk20
+USE_GNOME=	gconf2 gdkpixbuf2 glib20 gtk20 intltool
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib

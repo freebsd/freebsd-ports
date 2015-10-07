@@ -15,6 +15,7 @@ BUILD_DEPENDS=	ImageMagick>=0:${PORTSDIR}/graphics/ImageMagick \
 		p5-Image-PBMlib>=1.05:${PORTSDIR}/graphics/p5-Image-PBMlib
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

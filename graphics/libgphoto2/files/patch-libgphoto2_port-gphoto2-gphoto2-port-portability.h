@@ -1,6 +1,6 @@
---- libgphoto2_port/gphoto2/gphoto2-port-portability.h.orig	2011-04-05 08:38:24.000000000 +0200
-+++ libgphoto2_port/gphoto2/gphoto2-port-portability.h	2013-10-26 11:13:54.000000000 +0200
-@@ -152,20 +152,6 @@
+--- libgphoto2_port/gphoto2/gphoto2-port-portability.h.orig	2014-06-27 05:26:01 UTC
++++ libgphoto2_port/gphoto2/gphoto2-port-portability.h
+@@ -174,20 +174,6 @@ typedef struct {
  
  /* yummy. :) */
  

@@ -3,6 +3,7 @@
 
 PORTNAME=	stella
 PORTVERSION=	2.1.2.004
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,6 +11,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Define realistic testplans and run them against your webapps
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-benelux>=0.6.1:${PORTSDIR}/devel/rubygem-benelux \
 		rubygem-drydock>=0.6.9:${PORTSDIR}/devel/rubygem-drydock \
@@ -22,9 +24,13 @@ RUN_DEPENDS=	rubygem-benelux>=0.6.1:${PORTSDIR}/devel/rubygem-benelux \
 		rubygem-whois>=1.6.6:${PORTSDIR}/net/rubygem-whois \
 		rubygem-yajl-ruby>=0.7.9:${PORTSDIR}/devel/rubygem-yajl-ruby
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+USES=		shebangfix
+SHEBANG_FILES=	bin/stella \
+		support/sample_webapp/app.rb
 
 PLIST_FILES=	bin/stella
 

@@ -8,8 +8,8 @@ bin/scan-perl-prereqs
 %%SITE_PERL%%/Perl/PrereqScanner/Scanner/Perl5.pm
 %%SITE_PERL%%/Perl/PrereqScanner/Scanner/Superclass.pm
 %%SITE_PERL%%/Perl/PrereqScanner/Scanner/TestMore.pm
-man/man1/scan-perl-prereqs.1.gz
-man/man1/scan_prereqs.1.gz
+%%PERL5_MAN1%%/scan-perl-prereqs.1.gz
+%%PERL5_MAN1%%/scan_prereqs.1.gz
 %%PERL5_MAN3%%/Perl::PrereqScanner.3.gz
 %%PERL5_MAN3%%/Perl::PrereqScanner::Scanner.3.gz
 %%PERL5_MAN3%%/Perl::PrereqScanner::Scanner::Aliased.3.gz

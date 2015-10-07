@@ -1,6 +1,6 @@
---- ./src/dmhelpmanager.pas.orig	2013-06-30 19:27:17.154825000 +0200
-+++ ./src/dmhelpmanager.pas	2013-06-30 19:28:32.591981000 +0200
-@@ -69,11 +69,11 @@
+--- src/dmhelpmanager.pas.orig	2015-08-17 15:35:25 UTC
++++ src/dmhelpmanager.pas
+@@ -69,11 +69,11 @@ begin
    else
      begin
        gHelpLang:= ExtractDelimited(2, gPOFileName, ['.']);

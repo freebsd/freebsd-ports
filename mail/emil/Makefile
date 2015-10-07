@@ -20,10 +20,6 @@ CONFIGURE_ENV=	YACC=byacc
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if empty(PORT_OPTIONS:MDOCS)
-MAKE_ENV=	NOPORTDOCS=yes
-.endif
+DOCS_MAKE_ENV_OFF=	NOPORTDOCS=yes
 
 .include <bsd.port.mk>

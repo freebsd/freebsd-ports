@@ -134,6 +134,7 @@ lib/anjuta/anjuta-devhelp.plugin
 lib/anjuta/anjuta-document-manager.plugin
 lib/anjuta/anjuta-file-wizard.plugin
 lib/anjuta/anjuta-gdb.plugin
+%%GLADE%%lib/anjuta/anjuta-glade.plugin
 lib/anjuta/anjuta-indentation-c-style.plugin
 lib/anjuta/anjuta-indentation-python-style.plugin
 lib/anjuta/anjuta-jhbuild.plugin
@@ -172,6 +173,7 @@ lib/anjuta/libanjuta-document-manager.so
 lib/anjuta/libanjuta-file-wizard.so
 lib/anjuta/libanjuta-gdb.so
 lib/anjuta/libanjuta-git.so
+%%GLADE%%lib/anjuta/libanjuta-glade.so
 lib/anjuta/libanjuta-indentation-c-style.so
 lib/anjuta/libanjuta-indentation-python-style.so
 lib/anjuta/libanjuta-jhbuild.so
@@ -232,6 +234,7 @@ man/man1/anjuta.1.gz
 %%DATADIR%%/glade/anjuta-file-wizard.ui
 %%DATADIR%%/glade/anjuta-gdb.ui
 %%DATADIR%%/glade/anjuta-git.ui
+%%GLADE%%%%DATADIR%%/glade/anjuta-glade.ui
 %%DATADIR%%/glade/anjuta-indentation-c-style.ui
 %%DATADIR%%/glade/anjuta-indentation-python-style.ui
 %%DATADIR%%/glade/anjuta-language-cpp-java.ui
@@ -449,6 +452,7 @@ man/man1/anjuta.1.gz
 %%DATADIR%%/ui/anjuta-devhelp.ui
 %%DATADIR%%/ui/anjuta-document-manager.xml
 %%DATADIR%%/ui/anjuta-git.xml
+%%GLADE%%%%DATADIR%%/ui/anjuta-glade.xml
 %%DATADIR%%/ui/anjuta-indentation-c-style.xml
 %%DATADIR%%/ui/anjuta-indentation-python-style.xml
 %%DATADIR%%/ui/anjuta-language-javascript.xml
@@ -2029,6 +2033,7 @@ share/locale/ast/LC_MESSAGES/anjuta.mo
 share/locale/az/LC_MESSAGES/anjuta.mo
 share/locale/be@latin/LC_MESSAGES/anjuta.mo
 share/locale/bg/LC_MESSAGES/anjuta.mo
+share/locale/bs/LC_MESSAGES/anjuta.mo
 share/locale/ca/LC_MESSAGES/anjuta.mo
 share/locale/ca@valencia/LC_MESSAGES/anjuta.mo
 share/locale/cs/LC_MESSAGES/anjuta.mo
@@ -2173,6 +2178,14 @@ share/pixmaps/anjuta/anjuta-git-tasks-16.png
 share/pixmaps/anjuta/anjuta-git-tasks-24.png
 share/pixmaps/anjuta/anjuta-git-tasks-48.png
 share/pixmaps/anjuta/anjuta-git-tasks.svg
+%%GLADE%%share/pixmaps/anjuta/anjuta-glade-palette-16.png
+%%GLADE%%share/pixmaps/anjuta/anjuta-glade-palette-24.png
+%%GLADE%%share/pixmaps/anjuta/anjuta-glade-palette.svg
+%%GLADE%%share/pixmaps/anjuta/anjuta-glade-plugin-48.png
+%%GLADE%%share/pixmaps/anjuta/anjuta-glade-plugin.svg
+%%GLADE%%share/pixmaps/anjuta/anjuta-glade-widgets-16.png
+%%GLADE%%share/pixmaps/anjuta/anjuta-glade-widgets-24.png
+%%GLADE%%share/pixmaps/anjuta/anjuta-glade-widgets.svg
 share/pixmaps/anjuta/anjuta-go-history-next-16.png
 share/pixmaps/anjuta/anjuta-go-history-next-24.png
 share/pixmaps/anjuta/anjuta-go-history-prev-16.png

@@ -1,20 +1,20 @@
---- skia/ext/SkMemory_new_handler.cpp.orig	2015-04-20 19:38:21.000000000 +0200
-+++ skia/ext/SkMemory_new_handler.cpp	2015-04-20 19:38:39.000000000 +0200
-@@ -53,7 +53,7 @@
- static void* sk_malloc_nothrow(size_t size) {
+--- skia/ext/SkMemory_new_handler.cpp.orig	2015-08-22 15:01:57.000000000 -0400
++++ skia/ext/SkMemory_new_handler.cpp	2015-09-03 11:11:25.462063000 -0400
+@@ -62,7 +62,7 @@
      // TODO(b.kelemen): we should always use UncheckedMalloc but currently it
      // doesn't work as intended everywhere.
+     void* result;
 -#if  defined(OS_IOS)
 +#if  defined(OS_IOS) || defined(OS_FREEBSD)
-     return malloc(size);
+     result = malloc(size);
  #else
-     void* result;
-@@ -77,7 +77,7 @@
- void* sk_calloc(size_t size) {
+     // It's the responsibility of the caller to check the return value.
+@@ -89,7 +89,7 @@
      // TODO(b.kelemen): we should always use UncheckedCalloc but currently it
      // doesn't work as intended everywhere.
+     void* result;
 -#if  defined(OS_IOS)
 +#if  defined(OS_IOS) || defined(OS_FREEBSD)
-     return calloc(1, size);
+     result = calloc(1, size);
  #else
-     void* result;
+     // It's the responsibility of the caller to check the return value.

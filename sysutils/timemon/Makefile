@@ -3,7 +3,7 @@
 
 PORTNAME=	timemon
 PORTVERSION=	4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils gnustep
 MASTER_SITES=	SAVANNAH/gap
 DISTNAME=	TimeMon-${PORTVERSION}
@@ -20,6 +20,6 @@ post-patch:
 	${RM} ${WRKSRC}/shared_obj/*.*
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/TimeMon.app/TimeMon
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/System/Applications/TimeMon.app/TimeMon
 
 .include <bsd.port.mk>

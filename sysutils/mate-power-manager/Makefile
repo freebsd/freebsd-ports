@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-power-manager
-PORTVERSION=	1.8.1
+PORTVERSION=	1.10.2
 CATEGORIES=	sysutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -10,14 +10,16 @@ DIST_SUBDIR=	mate
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Power management system for the MATE Desktop
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
+BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool \
+		gnome-keyring>=3.0.0:${PORTSDIR}/security/gnome-keyring
 LIB_DEPENDS=	libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra \
 		libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique \
 		libupower-glib.so:${PORTSDIR}/sysutils/upower \
 		libnotify.so:${PORTSDIR}/devel/libnotify
-RUN_DEPENDS=	pkexec:${PORTSDIR}/sysutils/polkit
+RUN_DEPENDS=	pkexec:${PORTSDIR}/sysutils/polkit \
+		gnome-keyring>=3.0.0:${PORTSDIR}/security/gnome-keyring
 
 PORTSCOUT=	limitw:1,even
 
@@ -30,9 +32,8 @@ INSTALLS_ICONS=	yes
 CONFIGURE_ENV=	LIBS="-lexecinfo"
 CONFIGURE_ARGS=	--with-doc-dir=${PREFIX}/share/doc \
 		--disable-docbook-docs \
-		--with-gtk=2.0
-# needs gnome-keyring 3.0.0+
-CONFIGURE_ARGS+=--without-keyring
+		--with-gtk=2.0 \
+		--with-keyring
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

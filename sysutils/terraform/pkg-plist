@@ -1,6 +1,7 @@
 bin/terraform
 bin/terraform-provider-atlas
 bin/terraform-provider-aws
+bin/terraform-provider-azure
 bin/terraform-provider-cloudflare
 bin/terraform-provider-cloudstack
 bin/terraform-provider-consul

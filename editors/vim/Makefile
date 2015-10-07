@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	vim
+PORTVERSION=	7.4.884
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7-4-778
 CATEGORIES?=	editors
 
 MAINTAINER?=	sunpoet@FreeBSD.org
@@ -66,18 +66,23 @@ PLIST_SUB+=	NON_LITE=""
 .endif
 
 ATHENA_MAKE_ARGS=	CONF_OPT_GUI=--enable-gui=athena
+ATHENA_PLIST_SUB=	GUI=""
 ATHENA_USE=		XORG=xaw
 CONSOLE_MAKE_ARGS=	CONF_OPT_GUI="--enable-gui=no --without-x"
+CONSOLE_PLIST_SUB=	GUI="@comment "
 CSCOPE_MAKE_ARGS=	CONF_OPT_CSCOPE=--enable-cscope
 CSCOPE_RUN_DEPENDS=	${LOCALBASE}/bin/cscope:${PORTSDIR}/devel/cscope
 EXUBERANT_CTAGS_RUN_DEPENDS=	${LOCALBASE}/bin/exctags:${PORTSDIR}/devel/ctags
 GNOME_MAKE_ARGS=	CONF_OPT_GUI=--enable-gui=gnome2 X_LIBS="$(X_LIBS) -lX11 -lXpm -lXt"
+GNOME_PLIST_SUB=	GUI=""
 GNOME_USE=		GNOME=libgnomeui XORG=glproto,xpm,xt
 GTK2_MAKE_ARGS=		CONF_OPT_GUI=--enable-gui=gtk2 X_LIBS="$(X_LIBS) -lX11 -lXpm -lXt"
+GTK2_PLIST_SUB=		GUI=""
 GTK2_USE=		GNOME=gtk20 XORG=xpm,xt
 LUA_MAKE_ARGS=		CONF_OPT_LUA=--enable-luainterp=dynamic CONF_OPT_LUA_PREFIX=--with-lua-prefix=${LOCALBASE}
 LUA_USES=		lua
 MOTIF_MAKE_ARGS=	CONF_OPT_GUI='--enable-gui=motif --with-motif-lib="${MOTIFLIB}"' MOTIFHOME=${LOCALBASE}
+MOTIF_PLIST_SUB=	GUI=""
 MOTIF_USES=		motif
 NLS_MAKE_ARGS=		CONF_OPT_NLS=--enable-nls
 NLS_MAKE_ARGS_OFF=	CONF_OPT_NLS=--disable-nls
@@ -90,25 +95,8 @@ RUBY_USE=		RUBY=yes
 TCL_MAKE_ARGS=		CONF_OPT_TCL="--enable-tclinterp --with-tclsh=tclsh${TCL_VER}"
 TCL_USES=		tcl:85+
 X11_MAKE_ARGS=		CONF_OPT_GUI="--enable-gui=no --with-x" X_LIBS="$(X_LIBS) -lX11 -lXt"
+X11_PLIST_SUB=		GUI="@comment "
 X11_USE=		XORG=x11,xt
-
-.include <bsd.port.options.mk>
-
-.if !${PORT_OPTIONS:MATHENA} && !${PORT_OPTIONS:MCONSOLE} && !${PORT_OPTIONS:MGNOME} && !${PORT_OPTIONS:MGTK2} && !${PORT_OPTIONS:MMOTIF} && !${PORT_OPTIONS:MX11}
-IGNORE=		this port has new UI option (CONSOLE) for users who do not need GUI support. Please run "make config" to modify your setting
-.endif
-
-.if ${PORT_OPTIONS:MCONSOLE} || ${PORT_OPTIONS:MX11}
-PLIST_SUB+=	GUI="@comment "
-.else
-PLIST_SUB+=	GUI=""
-.endif
-
-.if ${PORT_OPTIONS:MEXUBERANT_CTAGS}
-CTAGS_CMD=	exctags -R .
-.else
-CTAGS_CMD=	${FIND} . -type f \\| ${XARGS} ctags
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -123,9 +111,14 @@ MAKE_ARGS+=	CONF_OPT_PYTHON="--enable-python3interp --disable-pythoninterp"
 post-patch:
 	@${REINPLACE_CMD} -e '/^install_normal: / s|install-icons|# &|; /cd $$(DEST_BIN); ln -s/d' ${WRKSRC}/src/Makefile
 	@${REINPLACE_CMD} -e 's|-liconv|${ICONV_LIB}|g' ${WRKSRC}/src/auto/configure
-	@${FIND} ${WRKSRC}/runtime/ -name menu\*.vim -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's,ctags -R \.,${CTAGS_CMD},g'
 	@${ECHO_CMD} '#define SYS_VIMRC_FILE "'${ETCDIR}'/vimrc"' >> ${WRKSRC}/src/feature.h
 	@${ECHO_CMD} '#define SYS_GVIMRC_FILE "'${ETCDIR}'/gvimrc"' >> ${WRKSRC}/src/feature.h
+
+post-patch-EXUBERANT_CTAGS-off:
+	@${FIND} ${WRKSRC}/runtime/ -name 'menu*.vim' -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's|ctags -R \.|${FIND} . -type f \\\| ${XARGS} ctags|g'
+
+post-patch-EXUBERANT_CTAGS-on:
+	@${FIND} ${WRKSRC}/runtime/ -name 'menu*.vim' -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's|ctags -R \.|exctags -R .|g'
 
 pre-configure:
 	@${CP} ${WRKSRC}/src/config.mk.dist ${WRKSRC}/src/auto/config.mk
@@ -134,9 +127,9 @@ pre-configure:
 		-e 's|\$$gtk_config_prefix/bin/gtk-config|\$${GTK_CONFIG}|g' \
 		-e 's|\$$gtk_config_exec_prefix/bin/gtk-config|\$${GTK_CONFIG}|g' \
 		-e 's|set dummy lua;|set dummy ${LUA_CMD};|g' ${WRKSRC}/src/auto/configure
-.if ${PORT_OPTIONS:MXTERM_SAVE}
+
+pre-configure-XTERM_SAVE-on:
 	@${REINPLACE_CMD} -e '/FEAT_XTERM_SAVE/ s|.*|#define FEAT_XTERM_SAVE|' ${WRKSRC}/src/feature.h
-.endif
 
 post-configure:
 	@(cd ${WRKSRC}/src/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} scratch config)

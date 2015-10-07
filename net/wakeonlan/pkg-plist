@@ -1,3 +1,3 @@
 bin/wakeonlan
-man/man1/wakeonlan.1.gz
+%%PERL5_MAN1%%/wakeonlan.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lab001.wol

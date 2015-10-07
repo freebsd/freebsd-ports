@@ -3,7 +3,7 @@
 
 PORTNAME=	bacula
 DISTVERSION=	7.0.5
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 PKGNAMEPREFIX?=	#
@@ -12,7 +12,9 @@ PKGNAMESUFFIX?=	-server
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT?=	Network backup solution (server)
 
-USES+=		libtool
+USES+=		libtool shebangfix
+SHEBANG_FILES=	scripts/dvd-handler.in
+python_OLD_CMD=	@PYTHON@
 USE_OPENSSL=	yes
 
 CONFLICTS?=	bacula5-server-*

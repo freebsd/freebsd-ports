@@ -1,0 +1,78 @@
+diff -Nabdur bind-9.6.0-P1.orig/bin/named/config.c bind-9.6.0-P1/bin/named/config.c
+--- bin/named/config.c	2009-05-22 12:24:49.000000000 +0400
++++ bin/named/config.c	2009-05-22 12:31:35.000000000 +0400
+@@ -129,6 +129,8 @@
+ 	min-roots 2;\n\
+ 	lame-ttl 600;\n\
+ 	max-ncache-ttl 10800; /* 3 hours */\n\
++       override-cache-ttl 0; /* do not override */\n\
++       min-cache-ttl 0; /* no minimal, zero is allowed */\n\
+ 	max-cache-ttl 604800; /* 1 week */\n\
+ 	transfer-format many-answers;\n\
+ 	max-cache-size 0;\n\
+diff -Nabdur bind-9.6.0-P1.orig/bin/named/server.c bind-9.6.0-P1/bin/named/server.c
+--- bin/named/server.c	2009-05-22 12:24:49.000000000 +0400
++++ bin/named/server.c	2009-05-22 12:32:18.000000000 +0400
+@@ -1727,6 +1727,16 @@
+ 		CHECK(mustbesecure(obj, view->resolver));
+ 
+ 	obj = NULL;
++	result = ns_config_get(maps, "override-cache-ttl", &obj);
++	INSIST(result == ISC_R_SUCCESS);
++	view->overridecachettl = cfg_obj_asuint32(obj);
++
++	obj = NULL;
++	result = ns_config_get(maps, "min-cache-ttl", &obj);
++	INSIST(result == ISC_R_SUCCESS);
++	view->mincachettl = cfg_obj_asuint32(obj);
++
++	obj = NULL;
+ 	result = ns_config_get(maps, "max-cache-ttl", &obj);
+ 	INSIST(result == ISC_R_SUCCESS);
+ 	view->maxcachettl = cfg_obj_asuint32(obj);
+diff -Nabdur bind-9.6.0-P1.orig/lib/dns/include/dns/view.h bind-9.6.0-P1/lib/dns/include/dns/view.h
+--- lib/dns/include/dns/view.h	2009-05-22 12:24:49.000000000 +0400
++++ lib/dns/include/dns/view.h	2009-05-22 12:29:03.000000000 +0400
+@@ -131,6 +131,8 @@
+ 	isc_boolean_t			provideixfr;
+ 	isc_boolean_t			requestnsid;
+ 	dns_ttl_t			maxcachettl;
++	dns_ttl_t			mincachettl;
++	dns_ttl_t			overridecachettl;
+ 	dns_ttl_t			maxncachettl;
+ 	in_port_t			dstport;
+ 	dns_aclenv_t			aclenv;
+diff -Nabdur bind-9.6.0-P1.orig/lib/dns/resolver.c bind-9.6.0-P1/lib/dns/resolver.c
+--- lib/dns/resolver.c	2009-05-22 12:24:49.000000000 +0400
++++ lib/dns/resolver.c	2009-05-22 12:30:41.000000000 +0400
+@@ -4054,6 +4054,18 @@
+ 		}
+ 
+ 		/*
++		 * Enforce the configure cache TTL override.
++		 */
++                if (res->view->overridecachettl)
++                        rdataset->ttl = res->view->overridecachettl;
++
++		/*
++		 * Enforce the configure minimum cache TTL.
++		 */
++                if (rdataset->ttl < res->view->mincachettl)
++                        rdataset->ttl = res->view->mincachettl;
++
++		/*
+ 		 * Enforce the configure maximum cache TTL.
+ 		 */
+ 		if (rdataset->ttl > res->view->maxcachettl)
+diff -Nabdur bind-9.6.0-P1.orig/lib/isccfg/namedconf.c bind-9.6.0-P1/lib/isccfg/namedconf.c
+--- lib/isccfg/namedconf.c	2009-05-22 12:24:49.000000000 +0400
++++ lib/isccfg/namedconf.c	2009-05-22 12:31:21.000000000 +0400
+@@ -821,6 +821,8 @@
+ 	{ "lame-ttl", &cfg_type_uint32, 0 },
+ 	{ "max-acache-size", &cfg_type_sizenodefault, 0 },
+ 	{ "max-cache-size", &cfg_type_sizenodefault, 0 },
++	{ "override-cache-ttl", &cfg_type_uint32, 0 },
++	{ "min-cache-ttl", &cfg_type_uint32, 0 },
+ 	{ "max-cache-ttl", &cfg_type_uint32, 0 },
+ 	{ "max-clients-per-query", &cfg_type_uint32, 0 },
+ 	{ "max-ncache-ttl", &cfg_type_uint32, 0 },

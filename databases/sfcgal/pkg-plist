@@ -33,6 +33,7 @@ include/SFCGAL/algorithm/connection.h
 include/SFCGAL/algorithm/convexHull.h
 include/SFCGAL/algorithm/covers.h
 include/SFCGAL/algorithm/difference.h
+include/SFCGAL/algorithm/differencePrimitives.h
 include/SFCGAL/algorithm/distance.h
 include/SFCGAL/algorithm/distance3d.h
 include/SFCGAL/algorithm/extrude.h
@@ -50,10 +51,10 @@ include/SFCGAL/algorithm/plane.h
 include/SFCGAL/algorithm/straightSkeleton.h
 include/SFCGAL/algorithm/tesselate.h
 include/SFCGAL/algorithm/translate.h
+include/SFCGAL/algorithm/union.h
 include/SFCGAL/algorithm/volume.h
 include/SFCGAL/capi/sfcgal_c.h
 include/SFCGAL/config.h
-include/SFCGAL/config.h.cmake
 include/SFCGAL/detail/ComplexComparator.h
 include/SFCGAL/detail/EnvelopeVisitor.h
 include/SFCGAL/detail/GeometrySet.h
@@ -103,7 +104,6 @@ include/SFCGAL/numeric.h
 include/SFCGAL/triangulate/triangulate2DZ.h
 include/SFCGAL/triangulate/triangulatePolygon.h
 include/SFCGAL/version.h
-include/SFCGAL/version.h.cmake
 lib/libSFCGAL.so
 lib/libSFCGAL.so.1
-lib/libSFCGAL.so.1.0.5
+lib/libSFCGAL.so.1.1.0

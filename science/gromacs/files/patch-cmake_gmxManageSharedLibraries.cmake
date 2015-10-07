@@ -1,4 +1,4 @@
---- cmake/gmxManageSharedLibraries.cmake.orig	2014-06-17 15:14:18.000000000 +0000
+--- cmake/gmxManageSharedLibraries.cmake.orig	2015-07-27 14:11:45 UTC
 +++ cmake/gmxManageSharedLibraries.cmake
 @@ -39,7 +39,7 @@
  ########################################################################

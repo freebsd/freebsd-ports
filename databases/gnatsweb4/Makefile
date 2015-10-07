@@ -3,7 +3,7 @@
 
 PORTNAME=	gnatsweb
 PORTVERSION=	4.00
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	databases devel www
 MASTER_SITES=	GNU
 
@@ -42,9 +42,13 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/gnatsweb.pl ${STAGEDIR}${CGI_DIR}
 	${LN} -s  ${ETCDIR}/gnatsweb-site.pl ${STAGEDIR}${CGI_DIR}
 	${INSTALL_DATA} ${WRKSRC}/gnatsweb.html ${STAGEDIR}${CGI_DIR}
+
+do-install-DOCS-on:
 .for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
+
+do-install-EXAMPLES-on:
 .for example in ${PORTEXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/${example} ${STAGEDIR}${EXAMPLESDIR}
 .endfor

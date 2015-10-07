@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bcpp
-PORTVERSION=	20131209
+PORTVERSION=	20150811
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/bcpp/
 
@@ -19,14 +19,12 @@ USES=		tar:tgz
 
 CFLAGS+=	-DBCPP_CONFIG_DIR=\\\"${PREFIX}/etc/${PORTNAME}\\\"
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/code/bcpp.cpp
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/code/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/code/${PORTNAME}.cfg \
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.cfg.sample
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/txtdocs/hirachy.txt ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/txtdocs/manual.txt ${STAGEDIR}${DOCSDIR}

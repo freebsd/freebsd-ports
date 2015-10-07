@@ -3,15 +3,22 @@
 
 PORTNAME=	daemontools-encore
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://untroubled.org/daemontools-encore/
 
 MAINTAINER=	uffe@uffe.org
 COMMENT=	Daemontools-encore is a collection of tools for managing UNIX services
 
+LICENSE=	MIT
+
 USES=		gmake
 
+CONFLICTS=	daemontools-[0-9]* freedt-[0-9]* serialmail-[0-9]*
+
 ALL_TARGET=	default
+
+USE_RC_SUBR=	svscan
 
 MANFILES=	\
 	envdir.8 \

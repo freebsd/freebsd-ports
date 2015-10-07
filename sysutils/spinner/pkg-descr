@@ -10,7 +10,7 @@ inactivity. Many firewalls, and some ISPs drop connections when they are
 perceived as idle. By having spinner running the server is constantly 
 sending a tiny amount of data over the link, preserving the connection. 
 Thus (for search engines) Spinner is an anti-dle, timeout preventing, 
-background daemon process for unix variants including linux.
+background daemon process for Unix variants including Linux.
 
 WWW: http://www.laffeycomputer.com/spinner.html
 

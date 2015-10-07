@@ -16,13 +16,11 @@ CONFLICTS_INSTALL=	openbabel-*
 USES=		tar:Z
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
-PLIST_FILES+=	bin/babel libexec/babel
+PLIST_FILES=	bin/babel libexec/babel
 PORTDATA=	element.lis new.lis quanta.lis types.lis
 PORTDOCS=	README.1ST
 
 OPTIONS_DEFINE=	DOCS
-
-BROKEN_powerpc=	Does not compile on powerpc
 
 post-build:
 	${SED} -e 's%@PREFIX@%${PREFIX}%g' \

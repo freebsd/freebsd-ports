@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	pcbsd-utils
-PORTVERSION=	1432134849
+PORTVERSION=	1438359314
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
-		ftp://ftp.pcbsd.org/pub/software/
 
 MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	PC-BSD Command-Line Utilities
@@ -16,10 +14,15 @@ RUN_DEPENDS=	sipcalc:${PORTSDIR}/net-mgmt/sipcalc \
 		eject:${PORTSDIR}/sysutils/eject \
 		unzip:${PORTSDIR}/archivers/unzip
 
-WRKSRC=		${WRKDIR}/pcbsd-utils
+WRKSRC_SUBDIR=	src-sh/pcbsd-utils
 USE_QT5=	core network buildtools qmake
 USES=		pkgconfig tar:xz
 MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	pcbsd
+GH_PROJECT=	pcbsd
+GH_TAGNAME=	2c5a0c
 
 .include <bsd.port.pre.mk>
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	nspr
 PORTVERSION=	4.10.8
+PORTREVISION=	1
 CATEGORIES=	devel linux
 MASTER_SITES=	CENTOS_LINUX_UPDATES
 
@@ -18,7 +19,6 @@ USE_LINUX=	c6
 USE_LINUX_RPM=	yes
 USE_LDCONFIG=	yes
 
-PLIST_FILES=	lib/libnspr4.so lib/libplc4.so lib/libplds4.so
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>

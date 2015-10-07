@@ -22,16 +22,19 @@ TEX_MAINTAINER=	hrs@FreeBSD.org
 #  web2c:	WEB2C toolchain and TeX engines
 #  kpathsea:	kpathsea library
 #  ptexenc:	character code conversion library for pTeX
+#  basic:	basic TeX engines including tex and pdftex
 #  tlmgr:	tlmgr dependency (Perl modules)
 #  texlua:	texlua52 library
 #  texluajit:	texluajit library
+#  synctex:	synctex library
+#  xpdfopen:	pdfopen/pdfclose utility
 #
 #  dvipsk:	dvipsk
 #  dvipdfmx:	DVIPDFMx
 #  xdvik:	XDvi
 #  gbklatex:	gbklatex
 #
-#  formats:	TeX, LaTeX, PDFTeX, AMSTeX, ConTeXT, CSLaTeX, EplainTeX,
+#  formats:	TeX, LaTeX, AMSTeX, ConTeXT, CSLaTeX, EplainTeX,
 #		CSplainTeX, METAFONT, MLTeX, PDFTeX, TeXsis
 #  tex:		TeX
 #  latex:	LaTeX
@@ -78,7 +81,7 @@ IGNORE=		"texlive" must not be defined in USE_TEX
 _USE_TEX_TEXMF_DEP=	${LOCALBASE}/${TEXMFDISTDIR}/README
 _USE_TEX_TEXMF_PORT=	print/${_USE_TEX_TEXMF_PKGNAME}
 _USE_TEX_TEXMF_PKGNAME=	texlive-texmf
-_USE_TEX_BASE_DEP=	tlmgr
+_USE_TEX_BASE_DEP=	texconfig
 _USE_TEX_BASE_PORT=	print/${_USE_TEX_BASE_PKGNAME}
 _USE_TEX_BASE_PKGNAME=	texlive-base
 _USE_TEX_GBKLATEX_DEP=	gbklatex
@@ -102,6 +105,9 @@ _USE_TEX_XDVIK_PKGNAME=	tex-xdvik
 _USE_TEX_DVIPDFMX_DEP=	dvipdfmx
 _USE_TEX_DVIPDFMX_PORT=	print/${_USE_TEX_DVIPDFMX_PKGNAME}
 _USE_TEX_DVIPDFMX_PKGNAME=tex-dvipdfmx
+_USE_TEX_BASIC_DEP=	tex
+_USE_TEX_BASIC_PORT=	print/${_USE_TEX_BASIC_PKGNAME}
+_USE_TEX_BASIC_PKGNAME=	tex-basic-engines
 .for _L in TEX LATEX PDFTEX
 _USE_TEX_${_L}_DEP=	${_USE_TEX_FORMATS_DEP}
 _USE_TEX_${_L}_PORT=	${_USE_TEX_FORMATS_PORT}
@@ -134,6 +140,12 @@ _USE_TEX_TEXLUAJIT_PKGNAME=tex-libtexluajit
 _USE_TEX_FORMATS_DEP=	${LOCALBASE}/${TEXMFVARDIR}/web2c/tex/tex.fmt
 _USE_TEX_FORMATS_PORT=	print/${_USE_TEX_FORMATS_PKGNAME}
 _USE_TEX_FORMATS_PKGNAME=tex-formats
+_USE_TEX_SYNCTEX_DEP=	libsynctex.so
+_USE_TEX_SYNCTEX_PORT=	devel/${_USE_TEX_SYNCTEX_PKGNAME}
+_USE_TEX_SYNCTEX_PKGNAME=tex-synctex
+_USE_TEX_XPDFOPEN_DEP=	pdfopen
+_USE_TEX_XPDFOPEN_PORT=	print/${_USE_TEX_XPDFOPEN_PKGNAME}
+_USE_TEX_XPDFOPEN_PKGNAME=	xpdfopen
 _USE_TEX_ALEPH_DEP=	aleph
 _USE_TEX_ALEPH_PORT=	print/${_USE_TEX_ALEPH_PKGNAME}
 _USE_TEX_ALEPH_PKGNAME=	tex-aleph
@@ -144,11 +156,11 @@ _USE_TEX_XETEX_DEP=	xetex
 _USE_TEX_XETEX_PORT=	print/${_USE_TEX_XETEX_PKGNAME}
 _USE_TEX_XETEX_PKGNAME=	tex-xetex
 
-_USE_TEX_FULLLIST=	texmf>=20150523 base>=20150521 \
+_USE_TEX_FULLLIST=	texmf>=20150523_3 base>=20150521_5 \
 		web2c tlmgr:run \
-		formats aleph xetex jadetex luatex xmltex ptex \
-		dvipsk dvipdfmx xdvik \
-		kpathsea:lib ptexenc:lib texlua:lib texluajit:lib
+		basic formats aleph xetex jadetex luatex xmltex ptex \
+		dvipsk dvipdfmx xdvik xpdfopen:run \
+		kpathsea:lib ptexenc:lib texlua:lib texluajit:lib synctex:lib
 
 .if !empty(USE_TEX:tu:MFULL)
 USE_TEX:=	${USE_TEX:tu:NFULL} ${_USE_TEX_FULLLIST:tu}
@@ -157,7 +169,17 @@ USE_TEX:=	${USE_TEX:tu:NFULL} ${_USE_TEX_FULLLIST:tu}
 .for _UU in ${USE_TEX:tu}
 _U:=	${_UU}	# ugly but necessary in for loop
 _VOP:=
-. if !empty(_U:tu:MKPATHSEA) || !empty(_U:tu:MPTEXENC)
+. if !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MTEXMF) && empty(_U:M*[<>=]*)
+_U:=	${_U}>=20150523_3
+. endif
+. if !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MBASE) && empty(_U:M*[<>=]*)
+_U:=	${_U}>=20150521_5
+. endif
+. if !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MKPATHSEA) || \
+     !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MPTEXENC) || \
+     !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MTEXLUA) || \
+     !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MTEXLUAJIT) || \
+     !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MSYNCTEX)
 _U:=	${_U}:lib
 . endif
 . if !empty(_U:M*[<>=]*)
@@ -166,8 +188,9 @@ _VOP:=	${_U:C/^[^<>=]*//:C/\:.*$//}
 . if empty(_U:M*\:*)
 _C:=	BUILD RUN
 . else
-_C:=	${_U:C/.*://}
+_C:=	${_U:C/.*://:S/,/ /g:C/[<>=][^\:]*//g}
 . endif
+#. warning DEBUG: ${_U}: _VOP=${_VOP}, _C=${_C}
 . for _CC in ${_C:tu}
 _V:=${_UU:C/[<>=][^\:]*//:C/\:.*$//}
 .  if defined(_USE_TEX_${_V}_PORT)

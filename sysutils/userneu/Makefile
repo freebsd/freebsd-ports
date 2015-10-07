@@ -16,11 +16,12 @@ COMMENT=	Account management and creation tool
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-Crypt-PasswdMD5>=0:${PORTSDIR}/security/p5-Crypt-PasswdMD5 \
-	    p5-Crypt-RandPasswd>=0:${PORTSDIR}/security/p5-Crypt-RandPasswd
+		p5-Crypt-RandPasswd>=0:${PORTSDIR}/security/p5-Crypt-RandPasswd
 
 USES=		perl5 shebangfix
 USE_PERL5=	run
 NO_BUILD=	yes
+NO_ARCH=	yes
 SHEBANG_FILES=	userquick.pl smbrepair.pl userneu.pl
 
 CONFLICTS=	userneu-devel-[0-9]*
@@ -31,16 +32,14 @@ DOCS=		BUGS CHANGES CREDITS REQUIREMENTS TODO \
 EXAMPLES=	list-sample
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
 	cd ${WRKSRC}/doc && ${INSTALL_MAN} userneu.8 userquick.8 ${STAGEDIR}${MANPREFIX}/man/man8
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${SCRIPTS} ${STAGEDIR}${PREFIX}/sbin
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

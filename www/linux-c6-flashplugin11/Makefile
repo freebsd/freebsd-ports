@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flashplugin
-PORTVERSION=	11.2r202.491
+PORTVERSION=	11.2r202.521
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/pdc/${PORTVERSION:S/r/./}/:plugin \
 		LOCAL/nox:suplib
@@ -17,6 +17,9 @@ ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX?=	c6
 USE_LINUX_APPS?=	curl cyrus-sasl2 gdkpixbuf2 gtk2 nspr nss # libssh2 openldap
 WANT_GNOME=	yes
+
+DISTINFO_FILE?=	${MASTERDIR}/distinfo.${LINUX_RPM_ARCH}
+PLIST?=		${MASTERDIR}/pkg-plist.${LINUX_RPM_ARCH}
 
 RESTRICTED=	Redistribution not allowed
 RESTRICTED_FILES=	${DISTFILES:Nlinux-f10-flashsupport*:C/:[^:]+$//}

@@ -18,7 +18,7 @@ OPTIONS_DEFAULT=	DND CACHE
 DND_DESC=	Enable Drag and drop support in browse mode
 CACHE_DESC=	Support the OpenLDAP experimental client cache
 
-USE_GNOME=	libglade2 gnomedocutils
+USE_GNOME=	intltool libglade2 gnomedocutils
 USE_OPENSSL=	yes
 USE_OPENLDAP=	yes
 USES=		gettext gmake pkgconfig shared-mime-info desktop-file-utils

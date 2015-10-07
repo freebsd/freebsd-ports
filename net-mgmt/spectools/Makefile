@@ -9,60 +9,49 @@ MASTER_SITES=	http://www.kismetwireless.net/code/ \
 		LOCAL/brix
 DISTNAME=	spectools-2011-08-R1
 
-MAINTAINER=	brix@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for the Wi-Spy spectrum analyzers from MetaGeek LLC
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/GPL
 
+USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		gmake pkgconfig
+ALL_TARGET=	spectool_net spectool_raw
 
 PORTDOCS=	README
 
 OPTIONS_DEFINE=	GTK2 NCURSES DOCS
 OPTIONS_DEFAULT=	GTK2 NCURSES
+OPTIONS_SUB=	yes
 
-ALL_TARGET=	spectool_net spectool_raw
+GTK2_ALL_TARGET=	spectool_gtk
+GTK2_USE=		GNOME=gtk20
+NCURSES_ALL_TARGET=	spectool_curses
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGTK2}
-ALL_TARGET+=	spectool_gtk
-USE_GNOME=	gtk20
-PLIST_SUB+=	GTK=""
-.else
-PLIST_SUB+=	GTK="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MNCURSES}
-ALL_TARGET+=	spectool_curses
-PLIST_SUB+=	NCURSES=""
-.else
-PLIST_SUB+=	NCURSES="@comment "
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not build: duplicate definition of malloc
-.endif
+post-patch:
+# Provide the prototype for malloc(3)
+	@${REINPLACE_CMD} -e '/<pthread\.h>/ \
+		{ x; s/.*/#include <stdlib.h>/; G; }' \
+			${WRKSRC}/ubertooth_hw_u1.c \
+			${WRKSRC}/wispy_hw_24x.c \
+			${WRKSRC}/wispy_hw_dbx.c \
+			${WRKSRC}/wispy_hw_gen1.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/spectool_net ${STAGEDIR}/${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/spectool_raw ${STAGEDIR}/${PREFIX}/bin
-.if ${PORT_OPTIONS:MGTK2}
-	${INSTALL_PROGRAM} ${WRKSRC}/spectool_gtk ${STAGEDIR}/${PREFIX}/bin
-.endif
-.if ${PORT_OPTIONS:MNCURSES}
-	${INSTALL_PROGRAM} ${WRKSRC}/spectool_curses ${STAGEDIR}/${PREFIX}/bin
-.endif
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+do-install-GTK2-on:
+	${INSTALL_PROGRAM} ${WRKSRC}/spectool_gtk ${STAGEDIR}/${PREFIX}/bin
+
+do-install-NCURSES-on:
+	${INSTALL_PROGRAM} ${WRKSRC}/spectool_curses ${STAGEDIR}/${PREFIX}/bin
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}/${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/@} ${STAGEDIR}/${DOCSDIR}
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

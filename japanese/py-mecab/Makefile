@@ -3,7 +3,7 @@
 
 PORTNAME=	mecab
 PORTVERSION=	0.996
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese python textproc
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-python-${PORTVERSION}
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libmecab.so:${PORTSDIR}/japanese/mecab
 
 USES=		python
 USE_PYTHON=	distutils
-PYDISTUTILS_EGGINFO=	${PORTNAME}_python-${PKGVERSION}-${PYTHON_VERSION:S/thon//}.egg-info
+PYDISTUTILS_EGGINFO=	${PORTNAME}_python-${PORTVERSION}.post2-py${PYTHON_VER}.egg-info
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|cmd1("mecab-config --version")|"${PKGVERSION}"|' \

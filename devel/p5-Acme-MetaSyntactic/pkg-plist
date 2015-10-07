@@ -22,5 +22,5 @@ bin/metafy
 %%PERL5_MAN3%%/Acme::MetaSyntactic::foo.3.gz
 %%PERL5_MAN3%%/Test::MetaSyntactic.3.gz
 %%PERL5_MAN3%%/eta.3.gz
-man/man1/meta.1.gz
-man/man1/metafy.1.gz
+%%PERL5_MAN1%%/meta.1.gz
+%%PERL5_MAN1%%/metafy.1.gz

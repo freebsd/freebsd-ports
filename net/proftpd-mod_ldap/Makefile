@@ -13,7 +13,6 @@ LICENSE=	GPLv2
 
 DESCR=		${.CURDIR}/pkg-descr
 
-LATEST_LINK=	${PKGNAMEPREFIX}-${PORTNAME}
 MASTERDIR=	${.CURDIR}/../../ftp/proftpd
 
 USE_OPENLDAP=	yes

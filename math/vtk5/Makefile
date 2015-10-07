@@ -7,7 +7,6 @@ PORTREVISION=	5
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/${PORTVERSION:R}/
 PKGNAMESUFFIX=	5
-UNIQUENAME=	${PKGBASE}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Visualization Toolkit
@@ -25,7 +24,7 @@ CONFLICTS=	vtk-4*
 
 SUB_FILES=	vtk.3
 
-USES=		cmake:outsource jpeg
+USES=		alias cmake:outsource jpeg
 USE_XORG=	xt
 USE_LDCONFIG=	${PREFIX}/lib/vtk-${PORTVERSION:R}
 CXXFLAGS+=	-DUSE_INTERP_ERRORLINE

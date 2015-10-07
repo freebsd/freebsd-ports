@@ -2,7 +2,7 @@
 
 PORTNAME=	mplus-ipa
 PORTVERSION=	1.0.20060520.p1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	LOCAL/hrs
 PKGNAMEPREFIX=	ja-font-
@@ -13,7 +13,8 @@ COMMENT=	Mixed Japanese font with IPA, M-plus outline, and Bitstream Vera
 
 CONFLICTS=	ja-ipa-ttfonts-[0-9]*
 
-USES=	fonts tar:bzip2
+USES=		fonts:fc tar:bzip2
+FONTNAME=	TTF
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install
@@ -22,7 +23,6 @@ DATADIR=	${PREFIX}/share/font-${PORTNAME}
 PORTDOCS=	Bitstream-COPYRIGHT.txt Mplus-LICENSE_E.txt \
 		Mplus-LICENSE_J.txt README.txt
 
-FONTNAME=	TTF
 OPTIONS_DEFINE=	DOCS
 
 do-install:
@@ -41,6 +41,8 @@ do-install:
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/20-unhint-${PORTNAME}.conf
 	${LN} -s -f ../conf.avail/62-fonts-${PORTNAME}.conf \
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/62-fonts-${PORTNAME}.conf
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 

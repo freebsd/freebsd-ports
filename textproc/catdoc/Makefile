@@ -25,18 +25,13 @@ OPTIONS_SUB=	yes
 
 WORDVIEW_DESC=	Build Tcl/Tk document viewer
 
+WORDVIEW_USES=	tk
+WORDVIEW_CONFIGURE_ON=	--with-wish=${WISH}
+WORDVIEW_CONFIGURE_OFF=	--disable-wordview
+
 .if !defined(LANG) || ${LANG} != ru_RU.KOI8-R
 # Remove the below line to get Cyrillic code page support instead
 CFLAGS+=	-DLATIN1=1
-.endif
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MWORDVIEW}
-USES+=			tk
-CONFIGURE_ARGS+=	--with-wish=${WISH}
-.else
-CONFIGURE_ARGS+=	--disable-wordview
 .endif
 
 post-patch:

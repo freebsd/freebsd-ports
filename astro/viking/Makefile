@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	viking
-PORTVERSION=	1.5.1
-PORTREVISION=	3
+PORTVERSION=	1.6
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -12,22 +11,22 @@ COMMENT=	Program to manage GPS data (tracks, waypoints, etc.)
 
 LICENSE=	GPLv2
 
-BROKEN=		Fails to build
-
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
-LIB_DEPENDS=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libgexiv2.so:${PORTSDIR}/graphics/gexiv2 \
+		libmapnik.so:${PORTSDIR}/graphics/mapnik \
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libpng.so:${PORTSDIR}/graphics/png \
+		libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs
 RUN_DEPENDS=	gpsbabel:${PORTSDIR}/astro/gpsbabel
 
 USES=		gmake iconv desktop-file-utils perl5 pkgconfig tar:bzip2
 USE_XORG=	pixman x11 xau xcb xcomposite xcursor xdamage xdmcp xext \
 		xfixes xi xinerama xrandr xrender
-USE_GNOME=	cairo gnomedocutils gtk20
+USE_GNOME=	cairo gnomedocutils gtk20 intlhack
 USE_PERL5=	run
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
@@ -39,7 +38,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
 OPTIONS_DEFINE=		DOCS GEOCACHES NLS GEOTAG GPSD
-OPTIONS_DEFAULT=	GEOTAG GPSD MERKAATOR
+OPTIONS_DEFAULT=	GEOTAG GPSD JOSM
 
 OPTIONS_MULTI=		OpenStreetMap-Editor
 OPTIONS_MULTI_OpenStreetMap-Editor=	JOSM MERKAATOR
@@ -53,6 +52,7 @@ MERKAATOR_DESC=	Edit OpenStreetMap via Merkaartor
 OPTIONS_SUB=	yes
 
 GEOCACHES_CONFIGURE_ENABLE=	geocaches
+GEOCACHES_SUB_FILES=	pkg-message
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
@@ -65,12 +65,6 @@ GPSD_CONFIGURE_ENABLE=	realtime-gps-tracking
 
 JOSM_RUN_DEPENDS=	josm:${PORTSDIR}/astro/josm
 MERKAATOR_RUN_DEPENDS=	merkaartor:${PORTSDIR}/astro/merkaartor
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGEOCACHES}
-SUB_FILES+=	pkg-message
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^AM_CFLAGS/s| -g | |' ${WRKSRC}/src/Makefile.in

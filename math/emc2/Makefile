@@ -35,15 +35,14 @@ OPTIONS_DEFINE=	DOCS
 
 DOCS_DISTFILES=	RTemc2_fr.pdf RTemc2_gb.pdf
 
-.include <bsd.port.options.mk>
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/emc2 ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/prf_f3d ${STAGEDIR}${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@(cd ${DISTDIR} && ${INSTALL_MAN} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
-.endif
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${DISTDIR} && ${INSTALL_MAN} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

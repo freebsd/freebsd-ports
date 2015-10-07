@@ -12,7 +12,7 @@ LICENSE=	APACHE20
 
 USES=		erlang:rebar
 USE_GITHUB=     yes
-GH_ACCOUNT=     basho
+GH_ACCOUNT=     webmachine
 
 ERL_BUILD_DEPS=	www/erlang-mochiweb-basho
 ERL_RUN_DEPS:=	${ERL_BUILD_DEPS}

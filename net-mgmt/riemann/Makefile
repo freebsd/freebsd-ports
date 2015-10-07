@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	riemann
-PORTVERSION=	0.2.9
+PORTVERSION=	0.2.10
 CATEGORIES=	net-mgmt java
-MASTER_SITES=	http://aphyr.com/${PORTNAME}/
+MASTER_SITES=	https://wintermute.skunkwerks.at/${PORTNAME}/releases/${PORTVERSION}/ \
+		http://aphyr.com/${PORTNAME}/
 
 MAINTAINER=	dch@skunkwerks.at
 COMMENT=	Monitors distributed systems

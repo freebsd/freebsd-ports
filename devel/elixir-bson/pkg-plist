@@ -29,6 +29,7 @@ lib/elixir/lib/bson/ebin/Elixir.Inspect.Bson.Decoder.Error.beam
 lib/elixir/lib/bson/ebin/Elixir.Inspect.Bson.Encoder.Error.beam
 lib/elixir/lib/bson/ebin/Elixir.Inspect.Bson.ObjectId.beam
 lib/elixir/lib/bson/ebin/Elixir.Inspect.Bson.UTC.beam
+lib/elixir/lib/bson/ebin/Elixir.String.Chars.Bson.ObjectId.beam
 lib/elixir/lib/bson/ebin/bson.app
 lib/elixir/lib/bson/lib/bson.ex
 lib/elixir/lib/bson/lib/bson_decoder.ex

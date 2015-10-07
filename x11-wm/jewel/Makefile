@@ -10,7 +10,8 @@ MASTER_SITES=	http://mjr.towers.org.uk/comp/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window manager based on aewm++
 
-OPTIONS_DEFINE=	DOCS
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ALL_TARGET=	all
 DOCS=		Changelog Changelog.DLR Changelog.jewel INSTALL LICENSE README
@@ -18,10 +19,10 @@ PORTDOCS=	*
 USES+=		gmake
 USE_XORG=	x11 xext xpm
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
+	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
 	    ${REINPLACE_CMD} -i '' -e 's|g++|${CXX}|g; s|gcc|${CC}|g'
 
 do-install:
@@ -31,11 +32,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/goodies/setrootimage/setrootimage ${STAGEDIR}${PREFIX}/bin/jewel-setrootimage
 	${INSTALL_PROGRAM} ${WRKSRC}/goodies/xsession/xsession ${STAGEDIR}${PREFIX}/bin/jewel-xsession
 	${INSTALL_MAN} ${WRKSRC}/jewel.1x ${STAGEDIR}${PREFIX}/man/man1
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for ii in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${ii} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

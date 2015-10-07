@@ -1,5 +1,5 @@
---- src/plugins/avcodec/avcodec.c.orig	2011-10-20 21:26:08.000000000 +0200
-+++ src/plugins/avcodec/avcodec.c	2014-02-27 18:55:51.060717698 +0100
+--- src/plugins/avcodec/avcodec.c.orig	2011-10-20 19:26:08 UTC
++++ src/plugins/avcodec/avcodec.c
 @@ -1,7 +1,7 @@
  /** @file avcodec.c
   *  Decoder plugin for ffmpeg avcodec formats
@@ -30,7 +30,7 @@
  
  #include "avcodec_compat.h"
  
-@@ -36,6 +37,8 @@
+@@ -36,6 +37,8 @@ typedef struct {
  	guint buffer_size;
  	gboolean no_demuxer;
  
@@ -39,7 +39,7 @@
  	guint channels;
  	guint samplerate;
  	xmms_sample_format_t sampleformat;
-@@ -53,10 +56,14 @@
+@@ -53,10 +56,14 @@ typedef struct {
  static gboolean xmms_avcodec_plugin_setup (xmms_xform_plugin_t *xform_plugin);
  static gboolean xmms_avcodec_init (xmms_xform_t *xform);
  static void xmms_avcodec_destroy (xmms_xform_t *xform);
@@ -54,7 +54,7 @@
  
  /*
   * Plugin header
-@@ -85,13 +92,23 @@
+@@ -85,13 +92,23 @@ xmms_avcodec_plugin_setup (xmms_xform_pl
  	xmms_magic_add ("A/52 (AC-3) header", "audio/x-ffmpeg-ac3",
  	                "0 beshort 0x0b77", NULL);
  	xmms_magic_add ("DTS header", "audio/x-ffmpeg-dca",
@@ -79,7 +79,7 @@
  	return TRUE;
  }
  
-@@ -107,6 +124,7 @@
+@@ -107,6 +124,7 @@ xmms_avcodec_destroy (xmms_xform_t *xfor
  
  	avcodec_close (data->codecctx);
  	av_free (data->codecctx);
@@ -87,7 +87,7 @@
  
  	g_string_free (data->outbuf, TRUE);
  	g_free (data->buffer);
-@@ -132,9 +150,10 @@
+@@ -132,9 +150,10 @@ xmms_avcodec_init (xmms_xform_t *xform)
  	data->buffer_size = AVCODEC_BUFFER_SIZE;
  	data->codecctx = NULL;
  
@@ -99,7 +99,7 @@
  	avcodec_register_all ();
  
  	mimetype = xmms_xform_indata_get_str (xform,
-@@ -161,12 +180,12 @@
+@@ -161,12 +180,12 @@ xmms_avcodec_init (xmms_xform_t *xform)
  		data->channels = ret;
  	}
  
@@ -114,7 +114,7 @@
  	xmms_xform_auxdata_get_int (xform,
  	                            "samplebits",
  	                            &data->samplebits);
-@@ -188,7 +207,8 @@
+@@ -188,7 +207,8 @@ xmms_avcodec_init (xmms_xform_t *xform)
  		    !strcmp (data->codec_id, "adpcm_swf") ||
  		    !strcmp (data->codec_id, "pcm_s16le") ||
  		    !strcmp (data->codec_id, "ac3") ||
@@ -124,7 +124,7 @@
  			/* number 1024 taken from libavformat raw.c RAW_PACKET_SIZE */
  			data->extradata = g_malloc0 (1024);
  			data->extradata_size = 1024;
-@@ -196,22 +216,22 @@
+@@ -196,22 +216,22 @@ xmms_avcodec_init (xmms_xform_t *xform)
  		} else {
  			/* A demuxer plugin forgot to give decoder config? */
  			xmms_log_error ("Decoder config data not found!");
@@ -151,7 +151,7 @@
  		XMMS_DBG ("Opening decoder '%s' failed", codec->name);
  		goto err;
  	} else {
-@@ -220,7 +240,7 @@
+@@ -220,7 +240,7 @@ xmms_avcodec_init (xmms_xform_t *xform)
  
  		/* some codecs need to have something read before they set
  		 * the samplerate and channels correctly, unfortunately... */
@@ -160,7 +160,7 @@
  			g_string_insert_len (data->outbuf, 0, buf, ret);
  		} else {
  			XMMS_DBG ("First read failed, codec is not working...");
-@@ -231,19 +251,27 @@
+@@ -231,19 +251,27 @@ xmms_avcodec_init (xmms_xform_t *xform)
  
  	data->samplerate = data->codecctx->sample_rate;
  	data->channels = data->codecctx->channels;
@@ -190,7 +190,7 @@
  
  	return TRUE;
  
-@@ -251,6 +279,9 @@
+@@ -251,6 +279,9 @@ err:
  	if (data->codecctx) {
  		av_free (data->codecctx);
  	}
@@ -200,7 +200,7 @@
  	g_string_free (data->outbuf, TRUE);
  	g_free (data->extradata);
  	g_free (data);
-@@ -263,102 +294,24 @@
+@@ -263,102 +294,24 @@ xmms_avcodec_read (xmms_xform_t *xform, 
                     xmms_error_t *error)
  {
  	xmms_avcodec_data_t *data;
@@ -233,8 +233,7 @@
 -				XMMS_DBG ("EOF");
 -				return 0;
 -			}
-+			gint bytes_read;
- 
+-
 -			read_total = bytes_read;
 -
 -			/* If we have a demuxer plugin, make sure we read the whole packet */
@@ -269,10 +268,8 @@
 -
 -			/* Update the buffer length */
 -			data->buffer_length += read_total;
-+			bytes_read = xmms_avcodec_internal_read_some (xform, data, error);
-+			if (bytes_read <= 0) { return bytes_read; }
- 		}
- 
+-		}
+-
 -		packet.data = data->buffer;
 -		packet.size = data->buffer_length;
 -
@@ -299,11 +296,14 @@
 -		}
 -
 -		data->buffer_length -= bytes_read;
--
++			gint bytes_read;
+ 
 -		if (outbufsize > 0) {
 -			g_string_append_len (data->outbuf, outbuf, outbufsize);
--		}
--
++			bytes_read = xmms_avcodec_internal_read_some (xform, data, error);
++			if (bytes_read <= 0) { return bytes_read; }
+ 		}
+ 
 -		size = MIN (data->outbuf->len, len);
 +		res = xmms_avcodec_internal_decode_some (data);
 +		if (res < 0) { return res; }
@@ -311,7 +311,7 @@
  	}
  
  	memcpy (buf, data->outbuf->str, size);
-@@ -371,8 +324,6 @@
+@@ -371,8 +324,6 @@ static gint64
  xmms_avcodec_seek (xmms_xform_t *xform, gint64 samples, xmms_xform_seek_mode_t whence, xmms_error_t *err)
  {
  	xmms_avcodec_data_t *data;
@@ -320,7 +320,7 @@
  	gint64 ret = -1;
  
  	g_return_val_if_fail (xform, -1);
-@@ -390,23 +341,11 @@
+@@ -390,23 +341,11 @@ xmms_avcodec_seek (xmms_xform_t *xform, 
  
  	/* The buggy ape decoder doesn't flush buffers, so we need to finish decoding
  	 * the frame before seeking to avoid segfaults... this hack sucks */
@@ -346,7 +346,7 @@
  	}
  
  	ret = xmms_xform_seek (xform, samples, whence, err);
-@@ -420,3 +359,178 @@
+@@ -420,3 +359,178 @@ xmms_avcodec_seek (xmms_xform_t *xform, 
  
  	return ret;
  }

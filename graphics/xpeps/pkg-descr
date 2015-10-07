@@ -1,0 +1,10 @@
+Peps will preprocess encapsulated Postscript files for conversion by
+Ghostscript into bitmaps.  It provides variable levels of resolution and
+anti-aliasing.  You can use it as a stand-alone Postscript-to-bitmap
+conversion program, or use it on-line to create bitmaps on the fly and send
+them out to a web browser, even compressing them if the browser supports
+gzip compression.
+
+Xpeps is peps with X11 support.
+
+WWW: http://peps.redprince.net/peps/

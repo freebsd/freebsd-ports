@@ -58,4 +58,4 @@ bin/xspp
 %%PERL5_MAN3%%/ExtUtils::XSpp::Parser.3.gz
 %%PERL5_MAN3%%/ExtUtils::XSpp::Plugin.3.gz
 %%PERL5_MAN3%%/ExtUtils::XSpp::Typemap.3.gz
-man/man1/xspp.1.gz
+%%PERL5_MAN1%%/xspp.1.gz

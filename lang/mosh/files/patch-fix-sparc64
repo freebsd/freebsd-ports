@@ -1,0 +1,84 @@
+--- extlibs/gc-cvs/gc_misc.c.orig	2011-06-04 00:48:10 UTC
++++ extlibs/gc-cvs/gc_misc.c
+@@ -1619,7 +1619,7 @@ STATIC void GC_do_blocking_inner(ptr_t d
+     struct blocking_data * d = (struct blocking_data *) data;
+     GC_ASSERT(GC_is_initialized);
+     GC_ASSERT(GC_blocked_sp == NULL);
+-#   ifdef SPARC
++#   if defined(SPARC) && !defined(__FreeBSD__)
+         GC_blocked_sp = GC_save_regs_in_stack();
+ #   else
+         GC_blocked_sp = (ptr_t) &d; /* save approx. sp */
+--- extlibs/gc-cvs/include/gc_config_macros.h.orig	2011-06-04 00:48:10 UTC
++++ extlibs/gc-cvs/include/gc_config_macros.h
+@@ -84,7 +84,7 @@
+ # if defined(__mips) && !defined(__linux__)
+ #   define GC_IRIX_THREADS
+ # endif
+-# if defined(__sparc) && !defined(__linux__) \
++# if defined(__sparc) && !defined(__linux__) && !defined(__FreeBSD__) \
+      || defined(sun) && (defined(i386) || defined(__i386__) \
+                          || defined(__amd64__))
+ #   define GC_SOLARIS_THREADS
+--- extlibs/gc-cvs/include/private/gcconfig.h.orig	2011-06-04 00:48:10 UTC
++++ extlibs/gc-cvs/include/private/gcconfig.h
+@@ -2568,7 +2568,7 @@
+ # endif
+ #endif /* !GC_WORD_C */
+ 
+-#if defined(SPARC)
++#if defined(SPARC) && !defined(__FreeBSD__)
+ # define ASM_CLEAR_CODE /* Stack clearing is crucial, and we    */
+                         /* include assembly code to do it well. */
+ #endif
+--- extlibs/gc-cvs/mach_dep.c.orig	2011-06-04 00:48:10 UTC
++++ extlibs/gc-cvs/mach_dep.c
+@@ -228,7 +228,7 @@ GC_INNER void GC_with_callee_saves_pushe
+ #       endif
+ #     endif
+       context = &ctxt;
+-#     if defined(SPARC) || defined(IA64)
++#     if (defined(SPARC) && !defined(__FreeBSD__)) || defined(IA64)
+         /* On a register window machine, we need to save register       */
+         /* contents on the stack for this to work.  This may already be */
+         /* subsumed by the getcontext() call.                           */
+--- extlibs/gc-cvs/pthread_stop_world.c.orig	2011-06-04 00:48:10 UTC
++++ extlibs/gc-cvs/pthread_stop_world.c
+@@ -226,7 +226,7 @@ STATIC void GC_suspend_handler_inner(ptr
+       RESTORE_CANCEL(cancel_state);
+       return;
+   }
+-# ifdef SPARC
++# if defined(SPARC) && !defined(__FreeBSD__)
+       me -> stop_info.stack_ptr = GC_save_regs_in_stack();
+ # else
+       me -> stop_info.stack_ptr = (ptr_t)(&me);
+@@ -322,7 +322,7 @@ GC_INNER void GC_push_all_stacks(void)
+         ++nthreads;
+         if (THREAD_EQUAL(p -> id, self)) {
+             GC_ASSERT(!p->thread_blocked);
+-#           ifdef SPARC
++#           if defined(SPARC) && !defined(__FreeBSD__)
+                 lo = (ptr_t)GC_save_regs_in_stack();
+ #           else
+                 lo = GC_approx_sp();
+--- extlibs/gc-cvs/pthread_support.c.orig	2011-06-04 00:48:10 UTC
++++ extlibs/gc-cvs/pthread_support.c
+@@ -1058,7 +1058,7 @@ GC_INNER void GC_do_blocking_inner(ptr_t
+ {
+     struct blocking_data * d = (struct blocking_data *) data;
+     GC_thread me;
+-#   if defined(SPARC) || defined(IA64)
++#   if (defined(SPARC) && !defined(__FreeBSD__)) || defined(IA64)
+         ptr_t stack_ptr = GC_save_regs_in_stack();
+ #   endif
+ #   if defined(GC_DARWIN_THREADS) && !defined(DARWIN_DONT_PARSE_STACK)
+@@ -1069,7 +1069,7 @@ GC_INNER void GC_do_blocking_inner(ptr_t
+     LOCK();
+     me = GC_lookup_thread(pthread_self());
+     GC_ASSERT(!(me -> thread_blocked));
+-#   ifdef SPARC
++#   if defined(SPARC) && !defined(__FreeBSD__)
+         me -> stop_info.stack_ptr = stack_ptr;
+ #   else
+         me -> stop_info.stack_ptr = GC_approx_sp();

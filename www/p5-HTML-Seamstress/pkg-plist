@@ -41,5 +41,5 @@ bin/spkg.pl
 %%SITE_PERL%%/HTML/sbase.pl
 %%SITE_PERL%%/HTML/spkg.pl
 %%SITE_PERL%%/XML/Seamstress.pm
-man/man1/sbase.pl.1.gz
-man/man1/spkg.pl.1.gz
+%%PERL5_MAN1%%/sbase.pl.1.gz
+%%PERL5_MAN1%%/spkg.pl.1.gz

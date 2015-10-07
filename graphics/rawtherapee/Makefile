@@ -3,7 +3,7 @@
 
 PORTNAME=	rawtherapee
 PORTVERSION=	4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://rawtherapee.com/shared/source/
 
@@ -29,7 +29,7 @@ USE_LDCONFIG=	yes
 CFLAGS+=	-I${LOCALBASE}/include -fPIC
 CXXFLAGS+=	-I${LOCALBASE}/include -fPIC
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
-CMAKE_ENV=	CFLAGS="${CFLAGS}" \
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}" \
 		LDFLAGS="${LDFLAGS:C|-Wl,-rpath=${_GCC_RUNTIME}||:C|-L${_GCC_RUNTIME}||}"
 CMAKE_ARGS+=	-DDOCDIR="${DOCSDIR}" \
 		-DCREDITSDIR="${DOCSDIR}" \

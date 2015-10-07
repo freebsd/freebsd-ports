@@ -9,7 +9,7 @@ MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	GTK-based scientific calculator
 
 USES=		gettext gmake pkgconfig tar:bzip2
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 intltool
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib

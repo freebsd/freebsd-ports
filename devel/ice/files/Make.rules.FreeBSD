@@ -4,7 +4,8 @@ BASELIBS		= -lIceUtil -pthread -L$(LOCALBASE)/lib %%ICONV_LIB%%
 LIBS			= -lIce $(BASELIBS) 
 
 CRYPT_OS_LIBS		= -lcrypt
-ICEUTIL_OS_LIBS		= -pthread -lcrypto
+ICEUTIL_OS_LIBS		= -pthread $(OPENSSL_RPATH_LINK) -L%%OPENSSLLIB%% -lcrypto
+ICEUTIL_FLAGS		+= $(OPENSSL_FLAGS)
 
 PLATFORM_HAS_READLINE   := yes
 
@@ -20,3 +21,4 @@ INSTALL			= %%INSTALL_DATA%%
 INSTALL_PROGRAM		= %%INSTALL_PROGRAM%%
 MCPP_HOME		= $(LOCALBASE)
 override DESTDIR	=
+rpathlink		= -Wl,-rpath,$(1)

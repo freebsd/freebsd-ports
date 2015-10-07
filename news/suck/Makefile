@@ -3,7 +3,7 @@
 
 PORTNAME=	suck
 PORTVERSION=	4.3.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	news
 #MASTER_SITES=	http://www.sucknews.org/
 MASTER_SITES=	http://home.comcast.net/~bobyetman/ \
@@ -15,11 +15,11 @@ COMMENT=	Receives/sends news to/from localhost via NNTP
 
 CONFLICTS?=	suckblow-1.*
 
-USES=		gmake
+USES=		gmake shebangfix
+SHEBANG_FILES=	sample/post_filter.pl
 GNU_CONFIGURE=	yes
 MAKE_ENV=	CHKHISTORY=chkhistory_db.o
 
-MAN1=		suck.1 rpost.1 testhost.1 lmove.1
 EX_SCRIPTS=	get.news.generic get.news.inn perl_kill.pl perl_xover.pl \
 		post_filter.pl put.news put.news.pl put.news.sm put.news.sm.pl
 EX_DATA=	suckkillfile.sample sucknewsrc.sample suckothermsgs.sample
@@ -48,6 +48,7 @@ CONFLICTS+=	suck-4.*
 .endif
 
 .if ${PORT_OPTIONS:MINN}
+BROKEN=		fails to link
 CFLAGS+=	-DNO_CONFIGDATA -I${LOCALBASE}/include/inn
 MAKE_ENV+=	DB_TYPE="-DUSE_INN23 -DDO_TAGGED_HASH"
 MAKE_ENV+=	DB_LIB="-linn -lstorage"

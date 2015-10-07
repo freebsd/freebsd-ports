@@ -4,4 +4,4 @@ bin/poepp
 %%SITE_PERL%%/POE/Devel/Profiler/Parser.pm
 %%SITE_PERL%%/POE/Devel/Profiler/Visualizer/BasicGraphViz.pm
 %%SITE_PERL%%/POE/Devel/Profiler/Visualizer/BasicSummary.pm
-man/man1/poepp.1.gz
+%%PERL5_MAN1%%/poepp.1.gz

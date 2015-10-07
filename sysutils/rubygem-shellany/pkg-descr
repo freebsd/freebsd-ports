@@ -8,4 +8,3 @@ Features:
 - Prevents running the same command multiple times.
 
 WWW: https://github.com/guard/shellany
-RG:  https://rubygems.org/gems/shellany

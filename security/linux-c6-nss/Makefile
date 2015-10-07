@@ -23,9 +23,9 @@ USE_LINUX_APPS=	nspr sqlite3
 USE_LINUX_RPM=	yes
 USE_LDCONFIG=	yes
 
-SRC_DISTFILES=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}${SRC_SUFX} \
-		nss-util-3.19.1-1.el6_6.src.rpm \
-		nss-softokn-3.14.3-22.el6_6.src.rpm
+SRC_DISTFILES=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}:SOURCE \
+		nss-util-3.19.1-1.el6_6.src.rpm:SOURCE \
+		nss-softokn-3.14.3-22.el6_6.src.rpm:SOURCE
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 

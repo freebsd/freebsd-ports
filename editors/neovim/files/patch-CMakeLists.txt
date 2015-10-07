@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2015-07-06 08:07:23 UTC
++++ CMakeLists.txt
+@@ -277,6 +277,9 @@ file(GLOB MANPAGES
+   RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}
+   man/nvim.1)
+ 
++unset(CMAKE_INSTALL_MANDIR)
++set(CMAKE_INSTALL_MANDIR ${CMAKE_INSTALL_PREFIX}/man)
++
+ install_helper(
+   FILES ${MANPAGES}
+   DESTINATION ${CMAKE_INSTALL_MANDIR}/man1)

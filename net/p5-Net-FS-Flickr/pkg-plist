@@ -4,4 +4,4 @@ bin/flickrfs
 %%SITE_PERL%%/Net/FS/Flickr/DefaultImage.pm
 %%PERL5_MAN3%%/Net::FS::Flickr.3.gz
 %%PERL5_MAN3%%/Net::FS::Flickr::Access.3.gz
-man/man1/flickrfs.1.gz
+%%PERL5_MAN1%%/flickrfs.1.gz

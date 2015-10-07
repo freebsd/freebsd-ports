@@ -3,6 +3,7 @@
 
 PORTNAME=	tzfile
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.a-k-r.org/ruby-tzfile/
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
@@ -17,17 +18,16 @@ USE_RUBY=	yes
 NO_BUILD=	yes
 
 RUBY_RD_FILES=	tzfile.rb
+RUBY_RD_HTML=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-
-DOCS=		${RUBY_RD_HTML_FILES}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}/
 	${INSTALL_DATA} ${WRKSRC}/tzfile.rb ${STAGEDIR}${RUBY_SITELIBDIR}/
-	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
-.endfor
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/
+	cd ${WRKSRC} && ${INSTALL_DATA} ${RUBY_RD_HTML_FILES} ${STAGEDIR}${RUBY_MODDOCDIR}/
 
 .include <bsd.port.mk>

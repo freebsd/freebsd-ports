@@ -11,7 +11,6 @@ COMMENT=	PEAR classes to detect and protect from attempts to flood a site
 BUILD_DEPENDS=	${PEARDIR}/HTTP.php:${PORTSDIR}/www/pear-HTTP
 RUN_DEPENDS=	${PEARDIR}/HTTP.php:${PORTSDIR}/www/pear-HTTP
 
-LATEST_LINK=	pear-HTTP_FloodControl
 DOCS=		README LICENSE
 OPTIONS_DEFINE=	PEAR_DB PEAR_MDB PEAR_MDB2
 PEAR_DB_DESC=	PEAR::DB support

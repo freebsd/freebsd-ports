@@ -1,6 +1,21 @@
---- Makefile.in.orig	2015-04-16 19:53:45 UTC
-+++ Makefile.in
-@@ -3557,7 +3557,7 @@ libsynctex_la_SOURCES = \
+--- Makefile.in.orig	2015-04-17 04:53:45.000000000 +0900
++++ Makefile.in	2015-07-26 07:55:27.835477000 +0900
+@@ -2086,11 +2086,11 @@
+ EXTRA_LIBRARIES = libmf.a libmputil.a libmplib.a libkanji.a \
+ 	libukanji.a libpdftex.a libluasocket.a libluajitsocket.a \
+ 	libluamisc.a libluajitmisc.a libunilib.a libff.a libjitff.a \
+-	libluatex.a libluajittex.a libxetex.a libsynctex.a libmd5.a
+-EXTRA_LTLIBRARIES = libsynctex.la
++	libluatex.a libluajittex.a libxetex.a libmd5.a
++EXTRA_LTLIBRARIES =
+ lib_LIBRARIES = $(am__append_98)
+ lib_LTLIBRARIES = $(am__append_97)
+-dist_man_MANS = synctexdir/man1/synctex.1 synctexdir/man5/synctex.5
++dist_man_MANS =
+ nodist_man_MANS = 
+ EXTRA_DIST = PROJECTS cftests cpascal.h help.h w2c/config.h \
+ 	triptrap-sh tangle.web tangle.ch tangleboot.pin cwebdir \
+@@ -3557,7 +3557,7 @@
  
  nodist_libsynctex_a_SOURCES = $(libsynctex_la_SOURCES)
  syncincludedir = ${includedir}/synctex

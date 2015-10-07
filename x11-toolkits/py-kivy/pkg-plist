@@ -121,7 +121,6 @@
 %%DOCS%%%%DOCSDIR%%/_modules/kivy/base.html
 %%DOCS%%%%DOCSDIR%%/_modules/kivy/cache.html
 %%DOCS%%%%DOCSDIR%%/_modules/kivy/clock.html
-%%DOCS%%%%DOCSDIR%%/_modules/kivy/compat.html
 %%DOCS%%%%DOCSDIR%%/_modules/kivy/config.html
 %%DOCS%%%%DOCSDIR%%/_modules/kivy/context.html
 %%DOCS%%%%DOCSDIR%%/_modules/kivy/core/audio.html
@@ -136,14 +135,10 @@
 %%DOCS%%%%DOCSDIR%%/_modules/kivy/effects/kinetic.html
 %%DOCS%%%%DOCSDIR%%/_modules/kivy/effects/opacityscroll.html
 %%DOCS%%%%DOCSDIR%%/_modules/kivy/effects/scroll.html
-%%DOCS%%%%DOCSDIR%%/_modules/kivy/event.html
 %%DOCS%%%%DOCSDIR%%/_modules/kivy/ext.html
 %%DOCS%%%%DOCSDIR%%/_modules/kivy/factory.html
-%%DOCS%%%%DOCSDIR%%/_modules/kivy/garden.html
 %%DOCS%%%%DOCSDIR%%/_modules/kivy/geometry.html
 %%DOCS%%%%DOCSDIR%%/_modules/kivy/gesture.html
-%%DOCS%%%%DOCSDIR%%/_modules/kivy/graphics.html
-%%DOCS%%%%DOCSDIR%%/_modules/kivy/input.html
 %%DOCS%%%%DOCSDIR%%/_modules/kivy/input/factory.html
 %%DOCS%%%%DOCSDIR%%/_modules/kivy/input/motionevent.html
 %%DOCS%%%%DOCSDIR%%/_modules/kivy/input/postproc/dejitter.html
@@ -221,6 +216,7 @@
 %%DOCS%%%%DOCSDIR%%/_modules/kivy/utils.html
 %%DOCS%%%%DOCSDIR%%/_modules/kivy/vector.html
 %%DOCS%%%%DOCSDIR%%/_modules/kivy/weakmethod.html
+%%DOCS%%%%DOCSDIR%%/_modules/logging.html
 %%DOCS%%%%DOCSDIR%%/_sources/api-index.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.adapters.adapter.txt
 %%DOCS%%%%DOCSDIR%%/_sources/api-kivy.adapters.args_converters.txt
@@ -426,11 +422,11 @@
 %%DOCS%%%%DOCSDIR%%/_sources/tutorials/pong.txt
 %%DOCS%%%%DOCSDIR%%/_sources/user-guide.txt
 %%DOCS%%%%DOCSDIR%%/_static/ajax-loader.gif
+%%DOCS%%%%DOCSDIR%%/_static/alabaster.css
 %%DOCS%%%%DOCSDIR%%/_static/basic.css
 %%DOCS%%%%DOCSDIR%%/_static/comment-bright.png
 %%DOCS%%%%DOCSDIR%%/_static/comment-close.png
 %%DOCS%%%%DOCSDIR%%/_static/comment.png
-%%DOCS%%%%DOCSDIR%%/_static/default.css
 %%DOCS%%%%DOCSDIR%%/_static/disclosure_down.png
 %%DOCS%%%%DOCSDIR%%/_static/disclosure_up.png
 %%DOCS%%%%DOCSDIR%%/_static/doctools.js
@@ -444,6 +440,7 @@
 %%DOCS%%%%DOCSDIR%%/_static/element-structure-16.png
 %%DOCS%%%%DOCSDIR%%/_static/file.png
 %%DOCS%%%%DOCSDIR%%/_static/fresh.css
+%%DOCS%%%%DOCSDIR%%/_static/jquery-1.11.1.js
 %%DOCS%%%%DOCSDIR%%/_static/jquery-ui.min.js
 %%DOCS%%%%DOCSDIR%%/_static/jquery.cookie.js
 %%DOCS%%%%DOCSDIR%%/_static/jquery.js
@@ -453,7 +450,7 @@
 %%DOCS%%%%DOCSDIR%%/_static/plus.png
 %%DOCS%%%%DOCSDIR%%/_static/pygments.css
 %%DOCS%%%%DOCSDIR%%/_static/searchtools.js
-%%DOCS%%%%DOCSDIR%%/_static/sidebar.js
+%%DOCS%%%%DOCSDIR%%/_static/underscore-1.3.1.js
 %%DOCS%%%%DOCSDIR%%/_static/underscore.js
 %%DOCS%%%%DOCSDIR%%/_static/up-pressed.png
 %%DOCS%%%%DOCSDIR%%/_static/up.png

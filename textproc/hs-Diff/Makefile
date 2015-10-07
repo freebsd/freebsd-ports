@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	Diff
-PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTVERSION=	0.3.2
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	O(ND) diff algorithm in haskell
+COMMENT=	O(ND) diff algorithm in Haskell
 
 LICENSE=	BSD3CLAUSE
 

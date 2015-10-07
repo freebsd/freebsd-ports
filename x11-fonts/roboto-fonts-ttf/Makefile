@@ -13,9 +13,11 @@ MAINTAINER=	winston@ml1.net
 COMMENT=	The Roboto typeface family
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/Roboto/LICENSE.txt
 
 USES=		fonts zip:infozip
 WRKSRC=		${WRKDIR}/Roboto_v${PORTVERSION}
+NO_ARCH=	yes
 
 SUB_FILES=	pkg-message
 

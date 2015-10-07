@@ -157,4 +157,4 @@ bin/smolder_smoke_signal
 %%PERL5_MAN3%%/Math::GSL::VectorComplex.3.gz
 %%PERL5_MAN3%%/Math::GSL::Wavelet.3.gz
 %%PERL5_MAN3%%/Math::GSL::Wavelet2D.3.gz
-man/man1/smolder_smoke_signal.1.gz
+%%PERL5_MAN1%%/smolder_smoke_signal.1.gz

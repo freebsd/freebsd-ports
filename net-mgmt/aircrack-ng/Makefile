@@ -3,6 +3,7 @@
 
 PORTNAME=	aircrack-ng
 DISTVERSION=	1.2-rc1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://download.aircrack-ng.org/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
@@ -13,13 +14,12 @@ COMMENT=	802.11 WEP and WPA-PSK keys cracking program
 LICENSE=	GPLv2 BSD3CLAUSE APACHE20
 LICENSE_COMB=	dual
 
-USES=		cpe gmake dos2unix
+USES=		cpe dos2unix gmake
 CPE_VERSION=	${DISTVERSION:C/-.*//}
 CPE_UPDATE=	${DISTVERSION:C/^[^-]*$//:C/.*-//}
 DOS2UNIX_FILES=	src/osdep/byteorder.h
 MAKE_ARGS=	unstable=true libnl=false prefix=${PREFIX}
 USE_OPENSSL=	yes
-SUB_FILES=	pkg-message
 
 BIN_FILES=	airdecloak-ng buddy-ng aircrack-ng airdecap-ng ivstools \
 		makeivs-ng packetforge-ng wpaclean kstats
@@ -29,14 +29,10 @@ SBIN_FILES=	airtun-ng besside-ng airbase-ng easside-ng airodump-ng \
 OPTIONS_DEFINE=	SQLITE
 OPTIONS_SUB=	yes
 SQLITE_DESC=	Use SQLite for storing pre-computed key tables
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSQLITE}
-USE_SQLITE=	yes
-MAKE_ARGS+=	SQLITE=true
-BIN_FILES+=	airolib-ng
-.endif
+SQLITE_USE=	SQLITE=yes
+SQLITE_MAKE_ARGS=	SQLITE=true
+SQLITE_CFLAGS=	-I${LOCALBASE}/include
+SQLITE_VARS=	BIN_FILES+=airolib-ng
 
 post-patch:
 	@${REINPLACE_CMD} \

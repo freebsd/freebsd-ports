@@ -14,15 +14,13 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License.txt
 
 IA32_BINARY_PORT=	yes
-USES=	tar:bzip2
+USES=		tar:bzip2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 DATADIR=	${PREFIX}/lib/${PORTNAME}
 
 WRAPPERS=	dylan-compiler make-dylan-app dswank parser-compiler
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 do-build:
 .for f in ${WRAPPERS}
@@ -39,9 +37,9 @@ do-install:
 .for f in ${WRAPPERS}
 	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

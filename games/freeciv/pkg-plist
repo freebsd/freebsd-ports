@@ -52,10 +52,10 @@ share/applications/freeciv-server.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README.SDLClient
 %%PORTDOCS%%%%DOCSDIR%%/README.agents
 %%PORTDOCS%%%%DOCSDIR%%/README.attributes
-%%PORTDOCS%%%%DOCSDIR%%/README.cma
 %%PORTDOCS%%%%DOCSDIR%%/README.delta
 %%PORTDOCS%%%%DOCSDIR%%/README.effects
 %%PORTDOCS%%%%DOCSDIR%%/README.fcdb
+%%PORTDOCS%%%%DOCSDIR%%/README.governor
 %%PORTDOCS%%%%DOCSDIR%%/README.graphics
 %%PORTDOCS%%%%DOCSDIR%%/README.nations
 %%PORTDOCS%%%%DOCSDIR%%/README.packaging

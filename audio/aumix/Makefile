@@ -15,7 +15,6 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		tar:bzip2
-WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include" \
 		--enable-own-labels \

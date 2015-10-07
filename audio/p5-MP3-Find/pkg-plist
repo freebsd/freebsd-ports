@@ -9,5 +9,5 @@ bin/mp3find
 %%PERL5_MAN3%%/MP3::Find::Base.3.gz
 %%PERL5_MAN3%%/MP3::Find::DB.3.gz
 %%PERL5_MAN3%%/MP3::Find::Filesystem.3.gz
-man/man1/mp3db.1.gz
-man/man1/mp3find.1.gz
+%%PERL5_MAN1%%/mp3db.1.gz
+%%PERL5_MAN1%%/mp3find.1.gz

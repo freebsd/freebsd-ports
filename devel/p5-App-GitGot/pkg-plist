@@ -56,5 +56,5 @@ bin/got-complete
 %%PERL5_MAN3%%/App::GitGot::Repo::Git.3.gz
 %%PERL5_MAN3%%/App::GitGot::Repositories.3.gz
 %%PERL5_MAN3%%/App::GitGot::Types.3.gz
-man/man1/got-complete.1.gz
-man/man1/got.1.gz
+%%PERL5_MAN1%%/got-complete.1.gz
+%%PERL5_MAN1%%/got.1.gz

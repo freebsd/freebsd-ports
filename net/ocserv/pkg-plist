@@ -1,0 +1,8 @@
+bin/occtl
+bin/ocpasswd
+man/man8/occtl.8.gz
+man/man8/ocpasswd.8.gz
+man/man8/ocserv.8.gz
+@sample etc/ocserv/conf.sample
+sbin/ocserv
+@dir /var/run/ocserv

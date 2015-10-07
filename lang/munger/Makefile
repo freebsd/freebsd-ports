@@ -2,12 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	munger
-PORTVERSION=	5.7
+PORTVERSION=	5.7.1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.mammothcheese.ca/
 
 MAINTAINER=	jimmy@mammothcheese.ca
 COMMENT=	Static lisp interpreter with text processing abilities
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libtre.so:${PORTSDIR}/textproc/libtre
 

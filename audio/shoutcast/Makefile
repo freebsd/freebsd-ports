@@ -27,6 +27,7 @@ NO_BUILD=	yes
 
 OPTIONS_DEFAULT=	SERVERSETUP EXAMPLES
 OPTIONS_DEFINE=	SERVERSETUP DOCS EXAMPLES
+OPTIONS_SUB=	yes
 SETUPSERVER_DESC=	SHOUTcast Server Setup Tools
 EXAMPLE_DESC=	SHOUTcast Server Example Configuration Files
 
@@ -60,12 +61,6 @@ RUN_DEPENDS+=	${LOCALBASE}/lib32/compat/libstdc++.so.6:${PORTSDIR}/misc/compat9x
 .endif
 .endif
 
-.if ${PORT_OPTIONS:MSERVERSETUP}
-PLIST_SUB+=	SERVERSETUP=""
-.else
-PLIST_SUB+=	SERVERSETUP="@comment "
-.endif
-
 post-patch:
 .for _file in basic public relay simple
 	@${REINPLACE_CMD} -e '/sc_serv2 directory/d' \
@@ -80,7 +75,8 @@ do-install:
 	${MKDIR} ${STAGEDIR}${SHOUTCASTDIR}
 	${MKDIR} ${STAGEDIR}${SHOUTCASTDIR}/logs
 	${MKDIR} ${STAGEDIR}${SHOUTCASTDIR}/control
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/DNAS_Server_Changelog.html ${STAGEDIR}${DOCSDIR}/DNAS_Server_Changelog.html
 	${INSTALL_DATA} ${WRKSRC}/Readme_DNAS_Server.html ${STAGEDIR}${DOCSDIR}/Readme_DNAS_Server.html
@@ -127,20 +123,18 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/res/Console_Windows.png ${STAGEDIR}${DOCSDIR}/docs/res/Console_Windows.png
 	${INSTALL_DATA} ${WRKSRC}/docs/res/View_Source_Connection_Details.png ${STAGEDIR}${DOCSDIR}/docs/res/View_Source_Connection_Details.png
 
-.endif
-.if ${PORT_OPTIONS:MSERVERSETUP}
+do-install-SERVERSETUP-on:
 	${MKDIR} ${STAGEDIR}${WWWDIR}/setup
 	${INSTALL_DATA} ${WRKSRC}/setup.sh ${STAGEDIR}${WWWDIR}/setup.sh
 	${INSTALL_DATA} ${WRKSRC}/setup/setup.js ${STAGEDIR}${WWWDIR}/setup/setup.js
 	${INSTALL_DATA} ${WRKSRC}/setup/setup.html ${STAGEDIR}${WWWDIR}/setup/setup.html
 	${INSTALL_DATA} ${WRKSRC}/setup/setup.txt ${STAGEDIR}${WWWDIR}/setup/setup.txt
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+
+do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/sc_serv_basic.conf ${STAGEDIR}${EXAMPLESDIR}/sc_serv_basic.conf
 	${INSTALL_DATA} ${WRKSRC}/examples/sc_serv_public.conf ${STAGEDIR}${EXAMPLESDIR}/sc_serv_public.conf
 	${INSTALL_DATA} ${WRKSRC}/examples/sc_serv_relay.conf ${STAGEDIR}${EXAMPLESDIR}/sc_serv_relay.conf
 	${INSTALL_DATA} ${WRKSRC}/examples/sc_serv_simple.conf ${STAGEDIR}${EXAMPLESDIR}/sc_serv_simple.conf
-.endif
 
 .include <bsd.port.mk>

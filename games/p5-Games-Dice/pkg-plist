@@ -1,4 +1,4 @@
 bin/roll
 %%SITE_PERL%%/Games/Dice.pm
-man/man1/roll.1.gz
+%%PERL5_MAN1%%/roll.1.gz
 %%PERL5_MAN3%%/Games::Dice.3.gz

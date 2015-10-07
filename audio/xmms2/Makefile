@@ -4,7 +4,7 @@
 PORTNAME?=	xmms2
 PORTVERSION=	0.8
 DISTVERSIONSUFFIX=DrO_o
-PORTREVISION?=	15
+PORTREVISION?=	17
 CATEGORIES?=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20${DISTVERSIONSUFFIX}
 
@@ -52,6 +52,113 @@ VISUAL_DESC=	Visualization plugins support
 VOCODER_DESC=	Phase Vocoder effect plugin
 XML_DESC=	Support XML based playlists (XSPF, RSS)
 
+OPTIONS_SUB=	yes
+
+AIRPLAY_USE=		OPENSSL=yes
+AIRPLAY_CONFIGURE_OFF=	--without-plugins="airplay"
+
+AO_LIB_DEPENDS=		libao.so:${PORTSDIR}/audio/libao
+AO_CONFIGURE_OFF=	--without-plugins="ao"
+
+APE_LIB_DEPENDS=	libmac.so:${PORTSDIR}/audio/mac
+APE_CONFIGURE_OFF=	--without-plugins="mac"
+
+AVCODEC_LIB_DEPENDS=	libavutil.so:${PORTSDIR}/multimedia/ffmpeg
+AVCODEC_CONFIGURE_OFF=	--without-plugins="avcodec"
+
+CDDA_LIB_DEPENDS=	libcdio.so:${PORTSDIR}/sysutils/libcdio \
+			libcdio_cdda.so:${PORTSDIR}/sysutils/libcdio-paranoia \
+			libdiscid.so:${PORTSDIR}/audio/libdiscid
+CDDA_CONFIGURE_OFF=	--without-plugins="cdda"
+
+CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_CONFIGURE_OFF=	--without-plugins="curl" --without-plugins="icymetaint"
+
+FAAD_LIB_DEPENDS=	libfaad.so:${PORTSDIR}/audio/faad
+FAAD_CONFIGURE_OFF=	--without-plugins="faad" --without-plugins="mp4"
+
+FAM_USES=		fam:gamin
+FAM_CONFIGURE_OFF=	--without-optionals="medialib-updater"
+
+FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
+
+GME_LIB_DEPENDS=	libgme.so:${PORTSDIR}/audio/libgme
+GME_CONFIGURE_OFF=	--without-plugins="gme"
+
+GVFS_USE=		GNOME=gvfs
+GVFS_CONFIGURE_OFF=	--without-plugins="gvfs"
+
+ICES_LIB_DEPENDS=	libshout.so:${PORTSDIR}/audio/libshout
+ICES_CONFIGURE_OFF=	--without-plugins="ices"
+
+JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_CONFIGURE_OFF=	--without-plugins="jack"
+
+MAD_LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad
+MAD_CONFIGURE_OFF=	--without-plugins="mad"
+
+MDNS_CONFIGURE_OFF=	--without-optionals="mdns"
+
+MDNS_APPLE_CONFIGURE_ON=	--with-mdns-backend="dns_sd"
+MDNS_APPLE_LIB_DEPENDS=		libdns_sd.so:${PORTSDIR}/net/mDNSResponder
+
+MDNS_AVAHI_CONFIGURE_ON=	--with-mdns-backend="avahi"
+MDNS_AVAHI_LIB_DEPENDS=		libavahi-core.so:${PORTSDIR}/net/avahi-app
+
+MMS_LIB_DEPENDS=	libmms.so:${PORTSDIR}/net/libmms
+MMS_CONFIGURE_OFF=	--without-plugins="mms"
+
+MODPLUG_LIB_DEPENDS=	libmodplug.so:${PORTSDIR}/audio/libmodplug
+MODPLUG_CONFIGURE_OFF=	--without-plugins="modplug"
+
+MPG123_LIB_DEPENDS=	libmpg123.so:${PORTSDIR}/audio/mpg123
+MPG123_CONFIGURE_OFF=	--without-plugins="mpg123"
+
+MUSEPACK_LIB_DEPENDS=	libmpcdec.so:${PORTSDIR}/audio/musepack
+MUSEPACK_CONFIGURE_OFF=	--without-plugins="musepack"
+
+OFA_LIB_DEPENDS=	libofa.so:${PORTSDIR}/audio/libofa
+OFA_CONFIGURE_OFF=	--without-plugins="ofa"
+
+PULSEAUDIO_LIB_DEPENDS=		libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_CONFIGURE_OFF=	--without-plugins="pulse"
+
+SAMBA_LIB_DEPENDS=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
+SAMBA_CONFIGURE_OFF=	--without-plugins="samba"
+
+SID_LIB_DEPENDS=	libsidplay2.so:${PORTSDIR}/audio/libsidplay2
+SID_CONFIGURE_OFF=	--without-plugins="sid"
+
+SNDFILE_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
+SNDFILE_CONFIGURE_OFF=	--without-plugins="sndfile"
+
+SPEEX_LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex
+SPEEX_CONFIGURE_OFF=	--without-plugins="speex"
+
+TREMOR_LIB_DEPENDS=	libvorbisidec.so:${PORTSDIR}/audio/libtremor
+TREMOR_CONFIGURE_OFF=	--without-plugins="tremor"
+
+VISUAL_USE=		SDL=yes
+VISUAL_LIB_DEPENDS=	libvisual-0.4.so:${PORTSDIR}/graphics/libvisual04
+VISUAL_CONFIGURE_OFF=	--without-optionals="vistest"
+VISUAL_CONFIGURE_ON=	--with-vis-reference-clients
+
+VOCODER_LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float \
+			libsamplerate.so:${PORTSDIR}/audio/libsamplerate
+VOCODER_CONFIGURE_OFF=	--without-plugins="vocoder"
+
+VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+VORBIS_CONFIGURE_OFF=	--without-plugins="vorbis"
+
+WAVPACK_LIB_DEPENDS=	libwavpack.so:${PORTSDIR}/audio/wavpack
+WAVPACK_CONFIGURE_OFF=	--without-plugins="wavpack"
+
+XML_USE=		GNOME=libxml2
+XML_CONFIGURE_OFF=	--without-plugins="xml" --without-plugins="rss" \
+			--without-plugins="xspf"
+
+ET_CONFIGURE_OFF=	--without-optionals="et"
+
 .endif # !XMMS_SLAVE
 
 .include <bsd.port.options.mk>
@@ -83,229 +190,6 @@ CONFIGURE_ARGS+=	--without-optionals="python" \
 
 .if !defined(XMMS2_SLAVE)
 
-.if ${PORT_OPTIONS:MAIRPLAY}
-USE_OPENSSL=	yes
-PLIST_SUB+=	AIRPLAY=""
-.else
-CONFIGURE_ARGS+=	--without-plugins="airplay"
-PLIST_SUB+=	AIRPLAY="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MAO}
-LIB_DEPENDS+=	libao.so:${PORTSDIR}/audio/libao
-PLIST_SUB+=	AO=""
-.else
-CONFIGURE_ARGS+=	--without-plugins="ao"
-PLIST_SUB+=	AO="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MAPE}
-LIB_DEPENDS+=	libmac.so:${PORTSDIR}/audio/mac
-PLIST_SUB+=	MAC=""
-.else
-CONFIGURE_ARGS+=	--without-plugins="mac"
-PLIST_SUB+=	MAC="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MAVCODEC}
-LIB_DEPENDS+=	libavutil.so:${PORTSDIR}/multimedia/ffmpeg
-PLIST_SUB+=	AVCODEC=""
-.else
-CONFIGURE_ARGS+=	--without-plugins="avcodec"
-PLIST_SUB+=	AVCODEC="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MCDDA}
-LIB_DEPENDS+=	libcdio.so:${PORTSDIR}/sysutils/libcdio \
-		libcdio_cdda.so:${PORTSDIR}/sysutils/libcdio-paranoia \
-		libdiscid.so:${PORTSDIR}/audio/libdiscid
-PLIST_SUB+=	CDDA=""
-.else
-CONFIGURE_ARGS+=	--without-plugins="cdda"
-PLIST_SUB+=	CDDA="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MCURL}
-LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
-PLIST_SUB+=	CURL=""
-.else
-CONFIGURE_ARGS+=	--without-plugins="curl" --without-plugins="icymetaint"
-PLIST_SUB+=	CURL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MFAAD}
-LIB_DEPENDS+=	libfaad.so:${PORTSDIR}/audio/faad
-PLIST_SUB+=	FAAD=""
-.else
-CONFIGURE_ARGS+=	--without-plugins="faad" --without-plugins="mp4"
-PLIST_SUB+=	FAAD="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MFAM}
-USES+=		fam:gamin
-PLIST_SUB+=	FAM=""
-.else
-CONFIGURE_ARGS+=	--without-optionals="medialib-updater"
-PLIST_SUB+=	FAM="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MFLAC}
-LIB_DEPENDS+=	libFLAC.so:${PORTSDIR}/audio/flac
-PLIST_SUB+=	FLAC=""
-.else
-CONFIGURE_ARGS+=	--without-plugins="flac"
-PLIST_SUB+=	FLAC="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MGME}
-LIB_DEPENDS+=	libgme.so:${PORTSDIR}/audio/libgme
-PLIST_SUB+=	GME=""
-.else
-CONFIGURE_ARGS+=	--without-plugins="gme"
-PLIST_SUB+=	GME="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MGVFS}
-USE_GNOME+=	gvfs
-PLIST_SUB+=	GVFS=""
-.else
-CONFIGURE_ARGS+=	--without-plugins="gvfs"
-PLIST_SUB+=	GVFS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MICES}
-LIB_DEPENDS+=	libshout.so:${PORTSDIR}/audio/libshout
-PLIST_SUB+=	ICES=""
-.else
-CONFIGURE_ARGS+=	--without-plugins="ices"
-PLIST_SUB+=	ICES="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack
-PLIST_SUB+=	JACK=""
-.else
-CONFIGURE_ARGS+=	--without-plugins="jack"
-PLIST_SUB+=	JACK="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MMAD}
-LIB_DEPENDS+=	libmad.so:${PORTSDIR}/audio/libmad
-PLIST_SUB+=	MAD=""
-.else
-CONFIGURE_ARGS+=	--without-plugins="mad"
-PLIST_SUB+=	MAD="@comment "
-.endif
-
-.if empty(PORT_OPTIONS:MMDNS)
-CONFIGURE_ARGS+=	--without-optionals="mdns"
-.endif
-
-.if ${PORT_OPTIONS:MMDNS_APPLE}
-CONFIGURE_ARGS+=	--with-mdns-backend="dns_sd"
-LIB_DEPENDS+=	libdns_sd.so:${PORTSDIR}/net/mDNSResponder
-PLIST_SUB+=	MDNS_APPLE=""
-.else
-PLIST_SUB+=	MDNS_APPLE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MMDNS_AVAHI}
-CONFIGURE_ARGS+=	--with-mdns-backend="avahi"
-LIB_DEPENDS+=	libavahi-core.so:${PORTSDIR}/net/avahi-app
-PLIST_SUB+=	MDNS_AVAHI=""
-MAN1+=		xmms2-mdns-avahi.1
-.else
-PLIST_SUB+=	MDNS_AVAHI="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MMMS}
-LIB_DEPENDS+=	libmms.so:${PORTSDIR}/net/libmms
-PLIST_SUB+=	MMS=""
-.else
-CONFIGURE_ARGS+=	--without-plugins="mms"
-PLIST_SUB+=	MMS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MMODPLUG}
-LIB_DEPENDS+=	libmodplug.so:${PORTSDIR}/audio/libmodplug
-PLIST_SUB+=	MODPLUG=""
-.else
-CONFIGURE_ARGS+=	--without-plugins="modplug"
-PLIST_SUB+=	MODPLUG="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MMPG123}
-LIB_DEPENDS+=	libmpg123.so:${PORTSDIR}/audio/mpg123
-PLIST_SUB+=	MPG123=""
-.else
-CONFIGURE_ARGS+=	--without-plugins="mpg123"
-PLIST_SUB+=	MPG123="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MMUSEPACK}
-LIB_DEPENDS+=	libmpcdec.so:${PORTSDIR}/audio/musepack
-PLIST_SUB+=	MUSEPACK=""
-.else
-CONFIGURE_ARGS+=	--without-plugins="musepack"
-PLIST_SUB+=	MUSEPACK="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MOFA}
-LIB_DEPENDS+=	libofa.so:${PORTSDIR}/audio/libofa
-PLIST_SUB+=	OFA=""
-.else
-CONFIGURE_ARGS+=	--without-plugins="ofa"
-PLIST_SUB+=	OFA="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
-PLIST_SUB+=	PULSE=""
-.else
-CONFIGURE_ARGS+=	--without-plugins="pulse"
-PLIST_SUB+=	PULSE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSAMBA}
-LIB_DEPENDS+=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
-PLIST_SUB+=	SAMBA=""
-.else
-CONFIGURE_ARGS+=	--without-plugins="samba"
-PLIST_SUB+=	SAMBA="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSID}
-LIB_DEPENDS+=	libsidplay2.so:${PORTSDIR}/audio/libsidplay2
-PLIST_SUB+=	SID=""
-.else
-CONFIGURE_ARGS+=	--without-plugins="sid"
-PLIST_SUB+=	SID="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSNDFILE}
-LIB_DEPENDS+=	libsndfile.so:${PORTSDIR}/audio/libsndfile
-PLIST_SUB+=	SNDFILE=""
-.else
-CONFIGURE_ARGS+=	--without-plugins="sndfile"
-PLIST_SUB+=	SNDFILE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSPEEX}
-LIB_DEPENDS+=	libspeex.so:${PORTSDIR}/audio/speex
-PLIST_SUB+=	SPEEX=""
-.else
-CONFIGURE_ARGS+=	--without-plugins="speex"
-PLIST_SUB+=	SPEEX="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MTREMOR}
-LIB_DEPENDS+=	libvorbisidec.so:${PORTSDIR}/audio/libtremor
-PLIST_SUB+=	TREMOR=""
-.else
-CONFIGURE_ARGS+=	--without-plugins="tremor"
-PLIST_SUB+=	TREMOR="@comment "
-.endif
-
 # xmms2-ripper
 .if ${PORT_OPTIONS:MVISUAL} && ${PORT_OPTIONS:MVORBIS}
 LIB_DEPENDS+=	libvorbisenc.so:${PORTSDIR}/audio/libvorbis
@@ -313,63 +197,13 @@ LIB_DEPENDS+=	libvorbisenc.so:${PORTSDIR}/audio/libvorbis
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-clients-vistest-wscript
 .endif
 
-# XXX: shm support requires semtimedop(2)
-.if ${PORT_OPTIONS:MVISUAL}
-USE_SDL=	yes
-LIB_DEPENDS+=	libvisual-0.4.so:${PORTSDIR}/graphics/libvisual04
-.else
-CONFIGURE_ARGS+=	--without-optionals="vistest"
-.endif
-
-.if ${PORT_OPTIONS:MVISUAL} && ${CONFIGURE_ARGS:M--with-vis-reference-clients}
-PLIST_SUB+=	VISUAL=""
-.else
-PLIST_SUB+=	VISUAL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MVOCODER}
-LIB_DEPENDS+=	libfftw3f.so:${PORTSDIR}/math/fftw3-float \
-		libsamplerate.so:${PORTSDIR}/audio/libsamplerate
-PLIST_SUB+=	VOCODER=""
-.else
-CONFIGURE_ARGS+=	--without-plugins="vocoder"
-PLIST_SUB+=	VOCODER="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
-PLIST_SUB+=	VORBIS=""
-.else
-CONFIGURE_ARGS+=	--without-plugins="vorbis"
-PLIST_SUB+=	VORBIS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MWAVPACK}
-LIB_DEPENDS+=	libwavpack.so:${PORTSDIR}/audio/wavpack
-PLIST_SUB+=	WAVPACK=""
-.else
-CONFIGURE_ARGS+=	--without-plugins="wavpack"
-PLIST_SUB+=	WAVPACK="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MXML}
-USE_GNOME+=	libxml2
-PLIST_SUB+=	XML=""
-.else
-CONFIGURE_ARGS+=	--without-plugins="xml" --without-plugins="rss" \
-		--without-plugins="xspf"
-PLIST_SUB+=	XML="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MET}
-PLIST_SUB+=	ET=""
-MAN1+=		xmms2-et.1
-.else
-CONFIGURE_ARGS+=	--without-optionals="et"
-PLIST_SUB+=	ET="@comment "
-.endif
-
 .endif # !XMMS2_SLAVE
+
+.include <bsd.port.pre.mk>
+
+# Force to nothing to avoid bsd.openssl.mk adding definitions
+# to it when AIRPLAY option is active, waf does not understand it anyway.
+MAKE_ARGS=
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%WRKSRC%%|${WRKSRC}|" ${WRKSRC}/wscript
@@ -381,6 +215,9 @@ post-patch:
 post-install:
 .if !defined(XMMS2_SLAVE)
 	${MKDIR} ${STAGEDIR}${DATADIR}/scripts/startup.d
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/*
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libxmmsclient*
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

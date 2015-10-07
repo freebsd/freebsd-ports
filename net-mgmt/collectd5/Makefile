@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	collectd
-PORTVERSION=	5.4.2
+PORTVERSION=	5.5.0
 PORTREVISION=	3
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://collectd.org/files/
+MASTER_SITES=	https://collectd.org/files/ \
+		http://collectd.org/files/
 PKGNAMESUFFIX=	5
 
 MAINTAINER=	ports@bsdserwis.com
@@ -21,29 +22,36 @@ LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
 USES=		autoreconf gmake libtool pkgconfig shebangfix tar:bzip2
 GNU_CONFIGURE=	yes
 
-OPTIONS_DEFINE=		CGI DEBUG GCRYPT VIRT
+OPTIONS_DEFINE=		CGI DEBUG GCRYPT LOGSTASH VIRT
 OPTIONS_GROUP=		INPUT OUTPUT
-OPTIONS_GROUP_OUTPUT=	RRDTOOL NOTIFYEMAIL NOTIFYDESKTOP RIEMANN
-OPTIONS_GROUP_INPUT=	CURL DBI JSON MEMCACHEC MODBUS MONGODB MYSQL \
-			NUTUPS PERL PGSQL PING PYTHON RABBITMQ REDIS \
-			ROUTEROS SIGROK SNMP STATGRAB TOKYOTYRANT VARNISH \
-			XML XMMS
+OPTIONS_GROUP_OUTPUT=	KAFKA NOTIFYDESKTOP NOTIFYEMAIL RIEMANN RRDTOOL
+OPTIONS_GROUP_INPUT=	CURL DBI IPMI JSON MEMCACHEC MODBUS MONGODB MYSQL \
+			NUTUPS OLSRD ONEWIRE OPENLDAP PERL PGSQL PINBA PING \
+			PYTHON RABBITMQ REDIS ROUTEROS SIGROK SNMP STATGRAB \
+			STATSD TOKYOTYRANT VARNISH XML XMMS ZOOKEEPER
 
 CGI_DESC=		Install collection.cgi (requires rrdtool)
 CURL_DESC=		Enable curl-based plugins (apache, nginx, etc)
-DEBUG_DESC=		Enable debugging
 DBI_DESC=		Enable dbi plugin
+DEBUG_DESC=		Enable debugging
 GCRYPT_DESC=		Build with libgcrypt
+IPMI_DESC=		Enable OpenIPMI plugin
 JSON_DESC=		Enable JSON plugins
+KAFKA_DESC=		Enable write_kafka plugin
+LOGSTASH_DESC=		Enable log_logstash plugin (requires json)
 MEMCACHEC_DESC=		Enable memcachec plugin
 MODBUS_DESC=		Enable modbus plugin
 MONGODB_DESC=		Enable MongoDB-based plugins
 MYSQL_DESC=		Enable mysql-based plugins
-NOTIFYEMAIL_DESC=	Enable notifications via email
 NOTIFYDESKTOP_DESC=	Enable desktop notifications
+NOTIFYEMAIL_DESC=	Enable notifications via email
 NUTUPS_DESC=		Enable nut (ups) plugin
+OLSRD_DESC=		Enable olsrd plugin
+ONEWIRE_DESC=		Eanble onewire plugin (via owfs)
+OPENLDAP_DESC=		Enable OpenLDAP plugin
 PERL_DESC=		Enable libperl plugin and binding
 PGSQL_DESC=		Enable postgresql-based plugins
+PINBA_DESC=		Enable pinba plugin (via protobuf-c)
 PING_DESC=		Enable ping plugin
 PYTHON_DESC=		Enable python-based plugins
 RABBITMQ_DESC=		Enable rabbitmq-based plugins
@@ -53,12 +61,14 @@ ROUTEROS_DESC=		Enable routeros plugin
 RRDTOOL_DESC=		Enable rrdtool plugin (also rrdcached plugin)
 SIGROK_DESC=		Enable sigrok plugin
 SNMP_DESC=		Enable SNMP plugin
-STATGRAB_DESC=		Enable statgrab-based plugins (disk, interface, etc)
+STATGRAB_DESC=		Enable statgrab-based plugins (interface, etc)
+STATSD_DESC=		Enable statsd plugin
 TOKYOTYRANT_DESC=	Enable tokyotyrant plugin
-VARNISH_DESC=		Enable varnish 3.x cache statistics
+VARNISH_DESC=		Enable varnish 4.x cache statistics
 VIRT_DESC=		Enable libvirt plugin (requires XML)
 XML_DESC=		Enable XML plugins
 XMMS_DESC=		Enable xmms plugin
+ZOOKEEPER_DESC=		Enable zookeeper plugin
 
 USE_RC_SUBR=	collectd collectdmon
 
@@ -81,17 +91,21 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--without-libganglia \
 		--without-libiptc \
 		--without-libjvm \
+		--without-liblvm2app \
 		--without-libkstat \
+		--without-libldap \
+		--without-libmnl \
 		--without-libmodbus \
 		--without-libnetlink \
 		--without-libnetapp \
-		--without-libopenipmi \
 		--without-libowcapi \
 		--without-libperfstat \
 		--without-libsensors \
+		--without-libvarnish \
 		--without-lvm \
 		--without-mic \
-		--without-oracle
+		--without-oracle \
+		--disable-turbostat
 
 # NOTE: Plugins without external dependencies
 CONFIGURE_ARGS+=	\
@@ -101,9 +115,11 @@ CONFIGURE_ARGS+=	\
 		--enable-cpu \
 		--enable-csv \
 		--enable-df \
+		--enable-disk \
 		--enable-dns \
 		--enable-email \
 		--enable-exec \
+		--enable-fhcount \
 		--enable-filecount \
 		--enable-load \
 		--enable-logfile \
@@ -126,6 +142,7 @@ CONFIGURE_ARGS+=	\
 		--enable-syslog \
 		--enable-table \
 		--enable-tail \
+		--enable-tail_csv \
 		--enable-target_notification \
 		--enable-target_replace \
 		--enable-target_scale \
@@ -139,7 +156,8 @@ CONFIGURE_ARGS+=	\
 		--enable-uptime \
 		--enable-uuid \
 		--enable-write_graphite \
-		--enable-zfs_arc
+		--enable-write_log \
+		--enable-zfs_arc \
 
 .if ${PORT_OPTIONS:MCGI}
 RUN_DEPENDS+=	p5-URI>=0:${PORTSDIR}/net/p5-URI \
@@ -217,11 +235,39 @@ LIBS+=		-lgcrypt
 CONFIGURE_ARGS+=--without-libgcrypt
 .endif
 
+.if ${PORT_OPTIONS:MIPMI}
+LIB_DEPENDS+=	libOpenIPMI.so:${PORTSDIR}/sysutils/openipmi
+CONFIGURE_ARGS+=--enable-ipmi
+PLIST_SUB+=	IPMI=""
+.else
+CONFIGURE_ARGS+=--disable-ipmi
+PLIST_SUB+=	IPMI="@comment "
+.endif
+
 .if ${PORT_OPTIONS:MJSON}
 LIB_DEPENDS+=	libyajl.so:${PORTSDIR}/devel/yajl
 CONFIGURE_ARGS+=--with-libyajl=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--without-libyajl
+.endif
+
+.if ${PORT_OPTIONS:MKAFKA}
+LIB_DEPENDS+=	librdkafka.so:${PORTSDIR}/net/librdkafka
+CONFIGURE_ARGS+=--enable-write_kafka
+PLIST_SUB+=	KAFKA=""
+.else
+CONFIGURE_ARGS+=--disable-write_kafka
+PLIST_SUB+=	KAFKA="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MLOGSTASH}
+CONFIGURE_ARGS+=--enable-log_logstash
+PLIST_SUB+=	LOGSTASH=""
+.if empty(PORT_OPTIONS:MJSON)
+IGNORE=		LOGSTASH requires JSON. Either select JSON or deselect LOGSTASH
+.endif
+.else
+PLIST_SUB+=	LOGSTASH="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMEMCACHEC}
@@ -235,7 +281,7 @@ PLIST_SUB+=	MEMCACHEC="@comment "
 
 .if ${PORT_OPTIONS:MMODBUS}
 LIB_DEPENDS+=	libmodbus.so:${PORTSDIR}/comms/libmodbus
-CONFIGURE_ARGS+=--enable-modbus
+CONFIGURE_ARGS+=--with-libmodbus=${LOCALBASE} --enable-modbus
 PLIST_SUB+=	MODBUS=""
 .else
 PLIST_SUB+=	MODBUS="@comment "
@@ -290,6 +336,32 @@ CONFIGURE_ARGS+=--without-libupsclient --disable-nut
 PLIST_SUB+=	NUTUPS="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MOLSRD}
+CONFIGURE_ARGS+=--enable-olsrd
+PLIST_SUB+=	OLSRD=""
+.else
+CONFIGURE_ARGS+=--enable-olsrd
+PLIST_SUB+=	OLSRD="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MONEWIRE}
+LIB_DEPENDS+=	libow.so:${PORTSDIR}/comms/owfs
+CONFIGURE_ARGS+=--with-libowcapi=${LOCALBASE} --enable-onewire
+PLIST_SUB+=	ONEWIRE=""
+.else
+CONFIGURE_ARGS+=--disable-onewire
+PLIST_SUB+=	ONEWIRE="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MOPENLDAP}
+USE_OPENLDAP=	yes
+CONFIGURE_ARGS+=--with-libldap=${LOCALBASE} --enable-openldap
+PLIST_SUB+=	OPENLDAP=""
+.else
+CONFIGURE_ARGS+=--disable-openldap
+PLIST_SUB+=	OPENLDAP="@comment "
+.endif
+
 .if ${PORT_OPTIONS:MPERL}
 USES+=		perl5
 CONFIGURE_ARGS+=--with-perl=${PERL} --with-perl-bindings --enable-perl
@@ -306,6 +378,15 @@ PLIST_SUB+=	PGSQL=""
 .else
 CONFIGURE_ARGS+=--without-postgresql --disable-postgresql --without-libpq
 PLIST_SUB+=	PGSQL="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MPINBA}
+LIB_DEPENDS+=	libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c
+CONFIGURE_ARGS+=--enable-pinba
+PLIST_SUB+=	PINBA=""
+.else
+CONFIGURE_ARGS+=--disable-pinba
+PLIST_SUB+=	PINBA="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPING}
@@ -338,8 +419,8 @@ PLIST_SUB+=	RABBITMQ="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MREDIS}
-LIB_DEPENDS+=	libcredis.so:${PORTSDIR}/databases/credis
-CONFIGURE_ARGS+=--with-libcredis=${LOCALBASE} \
+LIB_DEPENDS+=	libhiredis.so:${PORTSDIR}/databases/hiredis
+CONFIGURE_ARGS+=--with-libhiredis=${LOCALBASE} \
 		--enable-redis \
 		--enable-write_redis
 PLIST_SUB+=	REDIS=""
@@ -382,11 +463,9 @@ PLIST_SUB+=	RRDTOOL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSTATGRAB}
-USES+=		pkgconfig
 LIB_DEPENDS+=	libstatgrab.so:${PORTSDIR}/devel/libstatgrab
 LIBS+=		`pkg-config --libs libstatgrab`
 CONFIGURE_ARGS+=--with-libstatgrab=${LOCALBASE} \
-		--enable-disk \
 		--enable-interface
 PLIST_SUB+=	STATGRAB=""
 .else
@@ -408,6 +487,7 @@ PLIST_SUB+=	USERS="@comment "
 USE_GNOME+=	glib20
 LIB_DEPENDS+=	libsigrok.so:${PORTSDIR}/devel/libsigrok
 CONFIGURE_ARGS+=--with-libsigrok --enable-sigrok
+CFLAGS+=	`pkg-config --cflags glib-2.0`
 PLIST_SUB+=	SIGROK=""
 .else
 CONFIGURE_ARGS+=--disable-sigrok
@@ -423,6 +503,14 @@ CONFIGURE_ARGS+=--without-libnetsnmp
 PLIST_SUB+=	SNMP="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MSTATSD}
+CONFIGURE_ARGS+=--enable-statsd
+PLIST_SUB+=	STATSD=""
+.else
+CONFIGURE_ARGS+=--disable-statsd
+PLIST_SUB+=	STATSD="@comment "
+.endif
+
 .if ${PORT_OPTIONS:MTOKYOTYRANT}
 LIB_DEPENDS+=	libtokyotyrant.so:${PORTSDIR}/databases/tokyotyrant
 CONFIGURE_ARGS+=--with-libtokyotyrant=${LOCALBASE} --enable-tokyotyrant
@@ -433,7 +521,7 @@ PLIST_SUB+=	TOKYOTYRANT="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MVARNISH}
-LIB_DEPENDS+=	libvarnishapi.so:${PORTSDIR}/www/varnish
+LIB_DEPENDS+=	libvarnishapi.so:${PORTSDIR}/www/varnish4
 CONFIGURE_ARGS+=--with-libvarnish=${LOCALBASE} --enable-varnish
 PLIST_SUB+=	VARNISH=""
 .else
@@ -446,10 +534,10 @@ PLIST_SUB+=	VARNISH="@comment "
 IGNORE=		VIRT requires XML. Either select XML or deselect VIRT.
 .endif
 LIB_DEPENDS+=	libvirt.so:${PORTSDIR}/devel/libvirt
-CONFIGURE_ARGS+=--enable-libvirt
+CONFIGURE_ARGS+=--enable-virt
 PLIST_SUB+=	VIRT=""
 .else
-CONFIGURE_ARGS+=--without-libvirt --disable-libvirt
+CONFIGURE_ARGS+=--without-virt --disable-virt
 PLIST_SUB+=	VIRT="@comment "
 .endif
 
@@ -468,6 +556,15 @@ CONFIGURE_ARGS+=--without-libxmms --disable-xmms
 PLIST_SUB+=	XMMS="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MZOOKEEPER}
+LIB_DEPENDS+=	libzookeeper_mt.so:${PORTSDIR}/devel/libzookeeper
+CONFIGURE_ARGS+=--with-libzookeeper=${LOCALBASE} --enable-zookeeper
+PLIST_SUB+=	ZOOKEEPER=""
+.else
+CONFIGURE_ARGS+=--without-libzookeeper --disable-zookeeper
+PLIST_SUB+=	ZOOKEEPER="@comment "
+.endif
+
 INSTALL_TARGET=install-strip
 SHEBANG_FILES=	contrib/collection.cgi
 
@@ -479,7 +576,8 @@ post-patch:
 		-e 's;@prefix@/var/;/var/;' \
 		-e 's;/var/lib/;/var/db/;' \
 		-e 's;@localstatedir@/lib/;/var/db/;' \
-		${WRKSRC}/src/collectd.conf.in
+		${WRKSRC}/src/collectd.conf.in \
+		${WRKSRC}/src/collectd.conf.5
 	@${REINPLACE_CMD} \
 		-e 's;/etc/collection\.conf;${WWWDIR}/collection.conf;' \
 		${WRKSRC}/contrib/collection.cgi

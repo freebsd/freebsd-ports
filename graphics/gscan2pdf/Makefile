@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gscan2pdf
-PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTVERSION=	1.3.4
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -38,11 +37,12 @@ RUN_DEPENDS:=	p5-Archive-Tar>0:${PORTSDIR}/archivers/p5-Archive-Tar \
 		p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-Gtk2-Ex-PodViewer>0.17:${PORTSDIR}/x11-toolkits/p5-Gtk2-Ex-PodViewer \
 		p5-Filesys-Df>0.92:${PORTSDIR}/sysutils/p5-Filesys-Df \
+		p5-Data-UUID>=1.220:${PORTSDIR}/devel/p5-Data-UUID \
 		${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 
-USES=		gettext gmake perl5
+USES=		gettext gmake perl5 tar:xz
 USE_GNOME=	gtk20 librsvg2
 USE_PERL5=	configure
 
@@ -64,5 +64,7 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|$$sharedir/man|$$prefixdir/man| ; \
 		 s|1p|1|' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e \
+		's|/usr/share|${PREFIX}/share|g' ${WRKSRC}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

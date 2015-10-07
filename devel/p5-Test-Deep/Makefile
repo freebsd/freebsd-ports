@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-Deep
-PORTVERSION=	0.117
-PORTREVISION=	1
+PORTVERSION=	0.119
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,9 +12,6 @@ COMMENT=	Test data structures for differences deeply
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
-
-BUILD_DEPENDS=	p5-Test-NoWarnings>=0.02:${PORTSDIR}/devel/p5-Test-NoWarnings
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 REINPLACE_ARGS=	-i ''

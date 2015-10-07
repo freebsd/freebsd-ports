@@ -1,6 +1,7 @@
 bin/mate-terminal
 bin/mate-terminal.wrapper
 man/man1/mate-terminal.1.gz
+share/appdata/mate-terminal.appdata.xml
 share/applications/mate-terminal.desktop
 share/help/C/mate-terminal/figures/mate-terminal-default.png
 share/help/C/mate-terminal/figures/mate-terminal-tabbed.png
@@ -95,6 +96,7 @@ share/locale/en@shaw/LC_MESSAGES/mate-terminal.mo
 share/locale/en_AU/LC_MESSAGES/mate-terminal.mo
 share/locale/en_CA/LC_MESSAGES/mate-terminal.mo
 share/locale/en_GB/LC_MESSAGES/mate-terminal.mo
+share/locale/en_US/LC_MESSAGES/mate-terminal.mo
 share/locale/eo/LC_MESSAGES/mate-terminal.mo
 share/locale/es/LC_MESSAGES/mate-terminal.mo
 share/locale/et/LC_MESSAGES/mate-terminal.mo

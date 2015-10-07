@@ -1,0 +1,13 @@
+clBLAS
+
+a software library containing BLAS functions written in OpenCL 
+
+The primary goal of clBLAS is to make it easier for developers to utilize the
+inherent performance and power efficiency benefits of heterogeneous computing.
+clBLAS interfaces do not hide nor wrap OpenCL interfaces, but rather leaves
+OpenCL state management to the control of the user to allow for maximum
+performance and flexibility. The clBLAS library does generate and enqueue
+optimized OpenCL kernels, relieving the user from the task of writing,
+optimizing and maintaining kernel code themselves.
+
+WWW: https://github.com/clMathLibraries/clBLAS

@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 Fix for a build failure, taken from
 
 http://article.gmane.org/gmane.mail.opensmtpd.general/2291

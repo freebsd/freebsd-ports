@@ -1,4 +1,4 @@
 bin/dbicdeploy
-man/man1/dbicdeploy.1.gz
+%%PERL5_MAN1%%/dbicdeploy.1.gz
 %%SITE_PERL%%/DBICx/Deploy.pm
 %%PERL5_MAN3%%/DBICx::Deploy.3.gz

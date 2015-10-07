@@ -2,6 +2,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	2.2.5
+PORTREVISION=	1
 CATEGORIES=	multimedia rubygems
 MASTER_SITES=	RG
 
@@ -18,5 +19,9 @@ RUN_DEPENDS=	rubygem-glib2>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-glib2 \
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e '1s|/usr/bin/evn|/usr/bin/env|' \
+		${WRKSRC}/sample/gst-inspect.rb
 
 .include <bsd.port.mk>

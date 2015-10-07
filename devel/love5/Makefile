@@ -34,8 +34,6 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|ILvoid|void|' ${WRKSRC}/src/opengl/Image.cpp \
 		${WRKSRC}/src/opengl/love_opengl.cpp
@@ -43,12 +41,10 @@ post-patch:
 		-e "s/lua5.1/lua-${LUA_VER}/g" \
 		${WRKSRC}/configure
 
-.if ${PORT_OPTIONS:MDOCS}
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in changes.txt readme.txt
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

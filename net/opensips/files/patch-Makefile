@@ -1,0 +1,50 @@
+--- Makefile.orig	2015-04-22 08:20:03 UTC
++++ Makefile
+@@ -39,7 +39,7 @@ auto_gen=lex.yy.c cfg.tab.c   #lexx, yac
+ # whether or not to install opensips.cfg or just opensips.cfg.default
+ # (opensips.cfg will never be overwritten by make install, this is usefull
+ #  when creating packages)
+-skip_cfg_install?=
++skip_cfg_install=yes
+ 
+ #extra modules to exclude
+ skip_modules?=
+@@ -540,38 +540,21 @@ install-cfg: $(cfg-prefix)/$(cfg-dir)
+ 		rm -fr $(cfg-prefix)/$(cfg-dir)$(NAME).cfg.sample0
+ 		chmod 600 $(cfg-prefix)/$(cfg-dir)$(NAME).cfg.sample
+ 		chmod 700 $(cfg-prefix)/$(cfg-dir)
+-		if [ -z "${skip_cfg_install}" -a \
+-				! -f $(cfg-prefix)/$(cfg-dir)$(NAME).cfg ]; then \
+-			mv -f $(cfg-prefix)/$(cfg-dir)$(NAME).cfg.sample \
+-				$(cfg-prefix)/$(cfg-dir)$(NAME).cfg; \
+-		fi
+ 		# radius dictionary
+ 		if [ "$(RADIUSDEPON)" = "yes" ]; then \
+ 			$(INSTALL_TOUCH) \
+ 				$(cfg-prefix)/$(cfg-dir)/dictionary.opensips.sample ; \
+ 			$(INSTALL_CFG) etc/dictionary.opensips \
+ 				$(cfg-prefix)/$(cfg-dir)/dictionary.opensips.sample ; \
+-			if [ ! -f $(cfg-prefix)/$(cfg-dir)/dictionary.opensips ]; then \
+-				mv -f $(cfg-prefix)/$(cfg-dir)/dictionary.opensips.sample \
+-					$(cfg-prefix)/$(cfg-dir)/dictionary.opensips; \
+-			fi; \
+ 		fi
+ 		# opensipsctl config
+ 		$(INSTALL_TOUCH)   $(cfg-prefix)/$(cfg-dir)/opensipsctlrc.sample
+ 		$(INSTALL_CFG) scripts/opensipsctlrc \
+ 			$(cfg-prefix)/$(cfg-dir)/opensipsctlrc.sample
+-		if [ ! -f $(cfg-prefix)/$(cfg-dir)/opensipsctlrc ]; then \
+-			mv -f $(cfg-prefix)/$(cfg-dir)/opensipsctlrc.sample \
+-				$(cfg-prefix)/$(cfg-dir)/opensipsctlrc; \
+-		fi
+ 		# osipsconsole config
+ 		$(INSTALL_TOUCH)   $(cfg-prefix)/$(cfg-dir)/osipsconsolerc.sample
+ 		$(INSTALL_CFG) scripts/osipsconsolerc \
+ 			$(cfg-prefix)/$(cfg-dir)/osipsconsolerc.sample
+-		if [ ! -f $(cfg-prefix)/$(cfg-dir)/osipsconsolerc ]; then \
+-			mv -f $(cfg-prefix)/$(cfg-dir)/osipsconsolerc.sample \
+-				$(cfg-prefix)/$(cfg-dir)/osipsconsolerc; \
+-		fi
+ 		#$(INSTALL_CFG) etc/$(NAME).cfg $(cfg-prefix)/$(cfg-dir)
+ 		mkdir -p $(cfg-prefix)/$(cfg-dir)/tls ; \
+ 		mkdir -p $(cfg-prefix)/$(cfg-dir)/tls/rootCA ; \

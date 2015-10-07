@@ -8,7 +8,7 @@ PORTEPOCH=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://www.nasm.us/pub/nasm/releasebuilds/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	serio.jeffrey@riseup.net
 COMMENT=	General-purpose multi-platform x86 and amd64 assembler
 
 LICENSE=	BSD2CLAUSE
@@ -28,13 +28,9 @@ RDOFF_INSTALL_TARGET=	install_rdf
 DOCS_DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-xdoc${EXTRACT_SUFX}
 PORTDOCS=	*
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
 	${INSTALL_DATA} ${WRKSRC}/doc/nasmdoc.txt ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

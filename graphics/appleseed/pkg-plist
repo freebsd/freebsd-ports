@@ -1,0 +1,52 @@
+share/cmake/Modules/FindAppleseed.cmake
+@cwd %%APPHOME%%
+bin/animatecamera
+bin/appleseed.cli
+bin/appleseed.studio
+bin/convertmany.py
+bin/convertmeshfile
+bin/dumpmetadata
+bin/makefluffy
+bin/rendermanager.py
+bin/rendermany.py
+bin/rendernode.py
+bin/updatemany.py
+bin/updateprojectfile
+docs/osl/osl-languagespec.pdf
+docs/seexpr/Se_voronoi_1.png
+docs/seexpr/Se_voronoi_2.png
+docs/seexpr/Se_voronoi_3.png
+docs/seexpr/Se_voronoi_4.png
+docs/seexpr/Se_voronoi_5.png
+docs/seexpr/userdoc.html
+lib/libappleseed.shared.so
+lib/libappleseed.so
+samples/cpp/basic/CMakeLists.txt
+samples/cpp/basic/basic.cpp
+samples/cpp/basic/data/scene.obj
+samples/cpp/basic/output/preserve.txt
+samples/cpp/basic/reference output/scene.obj
+samples/cpp/basic/reference output/test.appleseed
+samples/cpp/basic/reference output/test.png
+samples/cpp/heightfield/CMakeLists.txt
+samples/cpp/heightfield/data/cube.obj
+samples/cpp/heightfield/data/heightfield.png
+samples/cpp/heightfield/data/smoothcube.obj
+samples/cpp/heightfield/heightfield.cpp
+samples/cpp/heightfield/output/preserve.txt
+samples/python/basic/basic.py
+samples/python/basic/data/scene.obj
+samples/python/basic/output/preserve.txt
+schemas/project.xsd
+schemas/settings.xsd
+seexpr/clouds/blue_clouds.se
+seexpr/geometric/checkers.se
+seexpr/geometric/dots.se
+seexpr/gradients/horizontal.se
+seexpr/gradients/vertical.se
+seexpr/noise/fbm.se
+seexpr/noise/noise.se
+seexpr/noise/turbulence.se
+settings/appleseed.cli.xml
+settings/appleseed.studio.xml
+stylesheets/default.qss

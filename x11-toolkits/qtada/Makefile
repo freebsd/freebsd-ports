@@ -28,5 +28,7 @@ post-install:
 	${MV} ${STAGEDIR}${PREFIX}/examples ${STAGEDIR}${PREFIX}/share/
 	@(cd ${STAGEDIR}${PREFIX} ; \
 		${FIND} * \( -type f -or -type l \) | ${SORT} >> ${TMPPLIST})
+	@(cd ${STAGEDIR}${PREFIX} ; \
+		${FIND} * -type d -empty | ${SORT} -r | sed -e 's|^|@dir |' >> ${TMPPLIST})
 
 .include <bsd.port.mk>

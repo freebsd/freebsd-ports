@@ -5,7 +5,7 @@ perl, whatever). The code is compiled and run on the fly when needed.
 
 Using the package_inline tool Inline now allows you to package up your
 inlined object code for distribution to systems without a compiler
-(read: windows)!
+(read: Windows)!
 
 FEATURES/PROBLEMS:
    * Quick and easy inlining of your C or C++ code embedded in your ruby

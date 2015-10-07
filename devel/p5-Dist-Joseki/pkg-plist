@@ -17,6 +17,7 @@ bin/distfind
 %%SITE_PERL%%/Dist/Joseki/DistType/ModuleBuild.pm
 %%SITE_PERL%%/Dist/Joseki/Find.pm
 %%SITE_PERL%%/Dist/Joseki/Version.pm
+%%PERL5_MAN1%%/distfind.1.gz
 %%PERL5_MAN3%%/Dist::Joseki.3.gz
 %%PERL5_MAN3%%/Dist::Joseki::Base.3.gz
 %%PERL5_MAN3%%/Dist::Joseki::Cmd.3.gz
@@ -34,4 +35,3 @@ bin/distfind
 %%PERL5_MAN3%%/Dist::Joseki::DistType::ModuleBuild.3.gz
 %%PERL5_MAN3%%/Dist::Joseki::Find.3.gz
 %%PERL5_MAN3%%/Dist::Joseki::Version.3.gz
-man/man1/distfind.1.gz

@@ -5,7 +5,7 @@ PORTNAME=	tomahawk
 PORTVERSION=	0.8.4
 CATEGORIES=	audio
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	port@FreeBSD.org
 COMMENT=	Multi-source, social, and smart music player
 
 LICENSE=	GPLv3
@@ -44,7 +44,7 @@ OPTIONS_SUB=	yes
 PLIST_SUB+=	DESKTOPDIR=${DESKTOPDIR:S,^${PREFIX}/,,} \
 		PORTVERSION=${PORTVERSION}
 
-USES=		cmake desktop-file-utils pkgconfig
+USES=		cmake compiler:c++11-lib desktop-file-utils pkgconfig
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 USE_QT4=	dbus designer gui linguist_build moc_build \

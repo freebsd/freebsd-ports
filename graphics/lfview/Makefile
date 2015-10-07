@@ -28,9 +28,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lfview ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_LIB} ${WRKSRC}/plugins/liblfv_leaf.so.1 ${STAGEDIR}${PREFIX}/lib
 	${LN} -sf liblfv_leaf.so.1 ${STAGEDIR}${PREFIX}/lib/liblfv_leaf.so
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

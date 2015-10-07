@@ -5,4 +5,3 @@ favorite XML library. In order to best support multiple XML parsers and
 libraries, multi_xml is a general-purpose swappable XML backend library.
 
 WWW: https://github.com/sferik/multi_xml
-RG:  https://rubygems.org/gems/multi_xml

@@ -23,8 +23,6 @@ PORTDOCS=	README.md
 OPTIONS_DEFINE=	DOCS
 DOCS_DESC=	Install etcdctl README file
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$VER|${DISTVERSION}|' ${WRKSRC}/scripts/release-version
 	@${REINPLACE_CMD} -e '/VER=/d' ${WRKSRC}/scripts/release-version
@@ -33,10 +31,10 @@ do-build:
 	(cd ${WRKSRC}; ${SH} build)
 
 do-install:
-.if ${PORT_OPTIONS:MDOCS}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>

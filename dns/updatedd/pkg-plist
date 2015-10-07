@@ -1,8 +1,6 @@
 bin/updatedd
 bin/updatedd-wrapper
-@unexec if cmp -s %D/etc/updatedd-wrapper.conf.sample %D/etc/updatedd-wrapper.conf; then rm -f %D/etc/updatedd-wrapper.conf; fi
-etc/updatedd-wrapper.conf.sample
-@exec if [ ! -f %D/etc/updatedd-wrapper.conf ] ; then cp -p %D/%F %B/updatedd-wrapper.conf; fi
+@sample etc/updatedd-wrapper.conf.sample
 lib/updatedd/libchangeip.a
 lib/updatedd/libchangeip.so
 lib/updatedd/libchangeip.so.0

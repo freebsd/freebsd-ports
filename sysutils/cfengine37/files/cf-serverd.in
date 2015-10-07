@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: cf-serverd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf[.local] to enable cf-serverd(8)
+#
+# cf_serverd_enable (bool):        Set to "NO" by default.
+#                               Set it to "YES" to enable cf-serverd.
+# cf_serverd_flags (str):          Custom additional arguments to be passed
+#                               to cf-serverd (default empty).
+#
+
+. /etc/rc.subr
+
+name="cf_serverd"
+rcvar=cf_serverd_enable
+
+command="%%PREFIX%%/sbin/cf-serverd"
+
+load_rc_config $name
+
+: ${cf_serverd_enable="NO"}
+
+run_rc_command "$1"

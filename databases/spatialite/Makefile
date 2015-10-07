@@ -38,6 +38,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl| |' ${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|-ldl| |' ${WRKSRC}/configure
 
-BROKEN_powerpc=		Does not compile on powerpc: invokes i386 assembler
-
 .include <bsd.port.mk>

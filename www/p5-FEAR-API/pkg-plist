@@ -28,4 +28,4 @@ bin/fearperl
 %%SITE_PERL%%/FEAR/API/SourceFilter.pm
 %%SITE_PERL%%/FEAR/API/Translate.pm
 %%SITE_PERL%%/FEAR/API/Translate/Backend.pm
-man/man1/fear.1.gz
+%%PERL5_MAN1%%/fear.1.gz

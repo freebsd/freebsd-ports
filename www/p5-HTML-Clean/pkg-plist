@@ -2,4 +2,4 @@ bin/htmlclean
 %%PERL5_MAN3%%/HTML::Clean.3.gz
 %%SITE_PERL%%/HTML/Clean.pm
 %%SITE_PERL%%/auto/HTML/Clean/autosplit.ix
-man/man1/htmlclean.1.gz
+%%PERL5_MAN1%%/htmlclean.1.gz

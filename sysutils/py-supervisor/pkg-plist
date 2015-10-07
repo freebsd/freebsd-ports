@@ -1,6 +1,4 @@
-@unexec if cmp -s %D/etc/supervisord.conf.sample %D/etc/supervisord.conf; then rm -f %D/etc/supervisord.conf; fi
-etc/supervisord.conf.sample
-@exec if [ ! -f %D/etc/supervisord.conf ]; then cp %D/etc/supervisord.conf.sample %D/etc/supervisord.conf; fi
+@sample etc/supervisord.conf.sample
 @exec mkdir -p %%PIDDIR%%
 @unexec echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
 @unexec echo "If you are permanently removing py-supervisor, you should also:" | /usr/bin/fmt

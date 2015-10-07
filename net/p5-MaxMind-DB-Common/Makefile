@@ -22,6 +22,7 @@ BUILD_DEPENDS=	p5-Data-Dumper-Concise>=0:${PORTSDIR}/devel/p5-Data-Dumper-Concis
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

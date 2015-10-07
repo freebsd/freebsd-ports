@@ -936,5 +936,5 @@ bin/dm_zdump
 %%SITE_PERL%%/Date/Manip/TZdata.pod
 %%SITE_PERL%%/Date/Manip/Zones.pm
 %%SITE_PERL%%/Date/Manip/Zones.pod
-man/man1/dm_date.1.gz
-man/man1/dm_zdump.1.gz
+%%PERL5_MAN1%%/dm_date.1.gz
+%%PERL5_MAN1%%/dm_zdump.1.gz

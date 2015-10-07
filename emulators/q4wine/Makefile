@@ -3,7 +3,7 @@
 
 PORTNAME=	q4wine
 DISTVERSION=	1.1-r2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION:S/.r/-r/}/
 
@@ -11,6 +11,7 @@ MAINTAINER=	koalative@gmail.com
 COMMENT=	QT4 front-end for WINE
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	icotool:${PORTSDIR}/graphics/icoutils
 RUN_DEPENDS=	sudo:${PORTSDIR}/security/sudo \
@@ -20,11 +21,10 @@ RUN_DEPENDS=	sudo:${PORTSDIR}/security/sudo \
 
 USES=		cmake desktop-file-utils
 CMAKE_ARGS+=	-DMANPAGE_ENTRY_PATH=${MANPREFIX}/man
-USE_GCC=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_QT4=	qmake_build rcc_build moc_build uic_build \
-		linguist_build corelib gui sql network
+		linguisttools_build corelib gui sql sql-sqlite3_run network
 ONLY_FOR_ARCHS=	i386 amd64
 
 PORTDOCS=	AUTHORS ChangeLog README TODO
@@ -34,20 +34,14 @@ OPTIONS_DEFAULT=	DBUS
 
 OPTIONS_SUB=	yes
 
-NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=		gettext
-
 DBUS_CMAKE_ON=		-DWITH_DBUS:BOOL=ON
 DBUS_CMAKE_OFF=		-DWITH_DBUS:BOOL=OFF
+DBUS_USE=		QT4=dbus
 
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "i386"
 RUN_DEPENDS+=	wine:${PORTSDIR}/emulators/wine-devel
-.endif
-
-.if ${PORT_OPTIONS:MDBUS}
-USE_QT4+=	dbus
 .endif
 
 post-patch:

@@ -63,7 +63,7 @@ cyrus/bin/squatter
 cyrus/bin/timsieved
 cyrus/bin/tls_prune
 cyrus/bin/unexpunge
-%%MANCONF%%etc/man.d/cyrus-imapd.conf
+etc/man.d/cyrus-imapd.conf
 include/cyrus/acl.h
 include/cyrus/arrayu64.h
 include/cyrus/assert.h
@@ -137,18 +137,3 @@ lib/libcyrus_sieve.so.0.0.0
 libdata/pkgconfig/libcyrus.pc
 libdata/pkgconfig/libcyrus_min.pc
 libdata/pkgconfig/libcyrus_sieve.pc
-man/man1/cyradm.1.gz
-man/man1/imtest.1.gz
-man/man1/installsieve.1.gz
-man/man1/lmtptest.1.gz
-man/man1/mupdatetest.1.gz
-man/man1/nntptest.1.gz
-man/man1/pop3test.1.gz
-man/man1/sieveshell.1.gz
-man/man1/sivtest.1.gz
-man/man1/smtptest.1.gz
-man/man3/imclient.3.gz
-man/man5/cyrus.conf.5.gz
-man/man5/imapd.conf.5.gz
-man/man5/krb.equiv.5.gz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/imapd.conf

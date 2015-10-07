@@ -3,7 +3,7 @@
 
 PORTNAME=	png
 PORTVERSION=	1.2.49
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics linux
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
@@ -19,11 +19,6 @@ USE_LINUX=	c6
 USE_LINUX_RPM=	yes
 USE_LDCONFIG=	yes
 
-PLIST_FILES=	usr/lib/libpng.so.3 \
-		usr/lib/libpng.so.3.49.0 \
-		usr/lib/libpng12.so.0 \
-		usr/lib/libpng12.so.0.49.0 \
-		usr/share/man/man5/png.5.gz
 DOCSDIR=	${PREFIX}/usr/share/doc/libpng-${PORTVERSION}
 PORTDOCS=	CHANGES LICENSE README TODO example.c libpng-1.2.49.txt CMakeLists.txt
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr

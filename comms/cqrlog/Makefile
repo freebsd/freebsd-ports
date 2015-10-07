@@ -3,7 +3,7 @@
 
 PORTNAME=	cqrlog
 PORTVERSION=	1.9.0
-PORTREVISION=	1
+PORTREVISION=	5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	comms hamradio
 
@@ -15,14 +15,19 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	lazbuild:${PORTSDIR}/editors/lazarus
 LIB_DEPENDS=	libhamlib.so:${PORTSDIR}/comms/hamlib
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GITHUB=	yes
 GH_ACCOUNT=	ok2cqr
 
+USES=		shebangfix
+SHEBANG_FILES=	tools/cqrlog-apparmor-fix \
+		voice_keyer/voice_keyer.sh
+
+USE_FPC=	cairo fcl-base fcl-db fcl-image fcl-json fcl-net fcl-process \
+		fcl-registry fcl-xml hash mysql numlib pasjpeg paszlib x11
 WANT_GNOME=	yes
 ALL_TARGET=	${PORTNAME}
 
-LAZARUS_VER=	1.4.0
+LAZARUS_VER=	1.4.2
 LAZARUS_DIR=	${LOCALBASE}/share/lazarus-${LAZARUS_VER}
 
 OPTIONS_SINGLE=		LCL

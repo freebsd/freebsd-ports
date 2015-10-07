@@ -45,7 +45,7 @@ do-install:
 		${STAGEDIR}${EXAMPLESDIR} "! -name Makefile.in")
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} demos \
 		${STAGEDIR}${EXAMPLESDIR} "! -name Makefile.in")
-	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR} "! -empty")
 	${INSTALL_DATA} ${WRKSRC}/doc/ps/*.ps ${STAGEDIR}${DOCSDIR}/ps
 
 post-install: install-manlinks

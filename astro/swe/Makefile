@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	swe
-PORTVERSION=	2.01.00
-PORTREVISION=	1
+PORTVERSION=	2.02.01
 CATEGORIES=	astro devel
 MASTER_SITES=	ftp://ftp.astro.com/pub/swisseph/
 DISTNAME=	${PORTNAME}_unix_src_${PORTVERSION}

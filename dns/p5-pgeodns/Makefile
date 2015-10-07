@@ -4,7 +4,7 @@ PORTNAME=	pgeodns
 PORTVERSION=	1.41
 PORTREVISION=	2
 CATEGORIES=	dns perl5
-MASTER_SITES=	http://cloud.github.com/downloads/abh/pgeodns/
+MASTER_SITES=	GHC
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -18,5 +18,7 @@ TEST_DEPENDS=	p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
 
 USES=		perl5
 USE_PERL5=	configure
+USE_GITHUB=	yes
+GH_ACCOUNT=	abh
 
 .include <bsd.port.mk>

@@ -12,4 +12,4 @@ bin/dave
 %%PERL5_MAN3%%/HTTP::DAV::Lock.3.gz
 %%PERL5_MAN3%%/HTTP::DAV::Resource.3.gz
 %%PERL5_MAN3%%/HTTP::DAV::Response.3.gz
-man/man1/dave.1.gz
+%%PERL5_MAN1%%/dave.1.gz

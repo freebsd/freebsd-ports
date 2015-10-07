@@ -6,8 +6,10 @@ PORTVERSION=	0.3.9.1
 CATEGORIES=	net
 MASTER_SITES=	http://fivebits.net/files/dbeacon/
 
-MAINTAINER=	tony@lava.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Distributed multicast beacon server
+
+LICENSE=	GPLv2 # or later
 
 USES=		gmake
 

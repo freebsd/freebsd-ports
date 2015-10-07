@@ -1,6 +1,6 @@
---- ./fea/xrl_mfea_node.hh.orig	2011-03-16 21:27:49.000000000 +0000
-+++ ./fea/xrl_mfea_node.hh	2014-02-26 21:17:13.000000000 +0000
-@@ -504,6 +504,8 @@
+--- fea/xrl_mfea_node.hh.orig	2012-01-11 17:56:10 UTC
++++ fea/xrl_mfea_node.hh
+@@ -504,6 +504,8 @@ protected:
  	// Input values,
  	const bool&	enable);
  
@@ -9,7 +9,7 @@
  private:
      /**
       * Called when Finder connection is established.
-@@ -570,7 +572,7 @@
+@@ -570,7 +572,7 @@ private:
      
      int family() const { return (MfeaNode::family()); }
  

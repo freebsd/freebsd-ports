@@ -358,4 +358,4 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/XMPStruct.pl
 %%SITE_PERL%%/Image/ExifTool/ZIP.pm
 %%SITE_PERL%%/Image/ExifTool/iWork.pm
-man/man1/exiftool.1.gz
+%%PERL5_MAN1%%/exiftool.1.gz

@@ -3,7 +3,7 @@
 
 PORTNAME=	webstone
 PORTVERSION=	2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www benchmarks
 MASTER_SITES=	http://www.mindcraft.com/webstone/
 DISTNAME=	ws25_src
@@ -14,7 +14,8 @@ COMMENT=	World wide web server benchmarking
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		shebangfix tar:tgz
+USES=		perl5 shebangfix tar:tgz
+USE_PERL5=	run
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/WebStone${PORTVERSION}
 CONFIGURE_WRKSRC=	${WRKSRC}/src

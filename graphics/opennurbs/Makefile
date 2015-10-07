@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	opennurbs
-PORTVERSION=	20121024
+PORTVERSION=	20130711
 PORTREVISION=	3
 CATEGORIES=	graphics
-MASTER_SITES=	http://files.na.mcneel.com/opennurbs/5.0/2012-10-24/
+MASTER_SITES=	http://files.na.mcneel.com/opennurbs/5.0/2013-07-11/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	fernando.apesteguia@gmail.com

@@ -15,8 +15,6 @@ LICENSE=	PSFL
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>0:${PORTSDIR}/devel/py-pytest-runner
 
-LATEST_LINK=	py-${PORTNAME}
-
 USES=		python zip
 USE_PYTHON=	distutils autoplist
 

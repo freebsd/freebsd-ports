@@ -1,6 +1,6 @@
---- ./rtrmgr/lex.opcmd.cc.orig	2010-07-19 21:10:33.000000000 +0000
-+++ ./rtrmgr/lex.opcmd.cc	2014-02-26 21:17:13.000000000 +0000
-@@ -518,6 +518,7 @@
+--- rtrmgr/lex.opcmd.cc.orig	2012-01-11 17:56:10 UTC
++++ rtrmgr/lex.opcmd.cc
+@@ -518,6 +518,7 @@ static void yy_flex_strncpy YY_PROTO(( c
  static int yy_flex_strlen YY_PROTO(( yyconst char * ));
  #endif
  
@@ -8,7 +8,7 @@
  #ifndef YY_NO_INPUT
  #ifdef __cplusplus
  static int yyinput YY_PROTO(( void ));
-@@ -1322,6 +1323,7 @@
+@@ -1322,6 +1323,7 @@ register char *yy_bp;
  #endif	/* ifndef YY_NO_UNPUT */
  
  
@@ -16,7 +16,7 @@
  #ifdef __cplusplus
  static int yyinput()
  #else
-@@ -1393,7 +1395,7 @@
+@@ -1393,7 +1395,7 @@ static int input()
  
  	return c;
  	}

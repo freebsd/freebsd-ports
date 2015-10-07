@@ -1,0 +1,17 @@
+--- utests/CMakeLists.txt.orig	2015-02-02 21:01:26.000000000 +0100
++++ utests/CMakeLists.txt	2015-02-02 22:19:04.185677000 +0100
+@@ -230,12 +230,12 @@
+ if(GEN_PCI_ID)
+   ADD_CUSTOM_COMMAND(
+   OUTPUT ${kernel_bin}.bin
+-  COMMAND ${GBE_BIN_GENERATER} ${kernel_bin}.cl -o${kernel_bin}.bin -t${GEN_PCI_ID}
++  COMMAND ${GBE_BIN_GENERATER} -o${kernel_bin}.bin -t${GEN_PCI_ID} ${kernel_bin}.cl
+   DEPENDS ${GBE_BIN_FILE} ${kernel_bin}.cl)
+ else(GEN_PCI_ID)
+   ADD_CUSTOM_COMMAND(
+   OUTPUT ${kernel_bin}.bin
+-  COMMAND ${GBE_BIN_GENERATER} ${kernel_bin}.cl -o${kernel_bin}.bin
++  COMMAND ${GBE_BIN_GENERATER} -o${kernel_bin}.bin ${kernel_bin}.cl
+   DEPENDS ${GBE_BIN_FILE} ${kernel_bin}.cl)
+ endif(GEN_PCI_ID)
+ 

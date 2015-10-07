@@ -17,7 +17,6 @@
 #				  MOZILLA_ADDONS/addons/${XPI_NUM}
 #				  or
 #				  MOZILLA_ADDONS/extensions/${XPI_DISTNAME}
-# LATEST_LINK	- Default: ${PKGBASE:S/_//g}
 # XPI_LIBDIR	- Name of the directory to install extensions in.
 #				  Default: ${PREFIX}/lib/xpi
 # XPI_XPIDIR	- Name of the directory to install extension's files in.
@@ -70,7 +69,6 @@ PKGNAMEPREFIX?=	xpi-
 EXTRACT_SUFX?=	.xpi
 DISTNAME?=		${XPI_DISTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 DIST_SUBDIR?=	xpi
-LATEST_LINK?=	${PKGBASE:S/_//g}
 
 NO_BUILD=	yes
 USES+=		zip:infozip

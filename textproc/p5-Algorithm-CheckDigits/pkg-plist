@@ -1,5 +1,5 @@
 bin/checkdigits.pl
-man/man1/checkdigits.pl.1.gz
+%%PERL5_MAN1%%/checkdigits.pl.1.gz
 %%PERL5_MAN3%%/Algorithm::CheckDigits.3.gz
 %%PERL5_MAN3%%/Algorithm::CheckDigits::M07_001.3.gz
 %%PERL5_MAN3%%/Algorithm::CheckDigits::M09_001.3.gz

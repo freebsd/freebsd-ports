@@ -29,18 +29,14 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-ALL_TARGET+=		htdoc
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/mysql/html/* ${STAGEDIR}${DOCSDIR}
-.endif
+DOCS_ALL_TARGET=	htdoc
 
 post-patch:
 	${REINPLACE_CMD} 's,OCAMLFIND_INSTFLAGS=,OCAMLFIND_INSTFLAGS=-ldconf ignore ,' \
 		${WRKSRC}/Makefile.in
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/mysql/html/* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

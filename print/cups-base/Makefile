@@ -20,8 +20,6 @@ LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
 
 CONFLICTS=	LPRng-[0-9]*
 
-UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
-
 USES+=		cpe gmake iconv pkgconfig tar:bzip2
 CPE_VENDOR=	apple
 DESTDIRNAME=	DSTROOT
@@ -53,7 +51,6 @@ CUPSSYSGRP=	wheel
 GROUPS=	cups
 USERS=		cups
 
-# UNIQUENAME must be set before bsd.port.pre.mk so OPTIONSFILE can be included
 OPTIONS_SUB=		yes
 .if defined(CUPS_CLIENT)
 PORTREVISION=	2

@@ -28,7 +28,7 @@ INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_GNOME=	pygnome2 gnomeprefix gnomedocutils
+USE_GNOME=	intltool pygnome2 gnomeprefix gnomedocutils
 CONFIGURE_ARGS=	--disable-nautilus-extension
 
 OPTIONS_DEFINE=	EOG

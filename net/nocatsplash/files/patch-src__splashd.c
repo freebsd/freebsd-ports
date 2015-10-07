@@ -1,5 +1,5 @@
---- src/splashd.c.orig	Wed Nov 19 16:29:47 2003
-+++ src/splashd.c	Wed Nov 19 16:30:28 2003
+--- src/splashd.c.orig	2003-02-23 03:09:46 UTC
++++ src/splashd.c
 @@ -1,7 +1,10 @@
 +# include <sys/param.h>
 +# include <sys/types.h>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cython
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 CATEGORIES=	lang python
 MASTER_SITES=	http://www.cython.org/release/ \
 		CHEESESHOP

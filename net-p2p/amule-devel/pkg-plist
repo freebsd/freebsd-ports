@@ -9,8 +9,8 @@
 %%PLASMAMULE%%share/kde4/services/plasma-applet-plasmamule.desktop
 %%PLASMAMULE%%share/kde4/services/plasma-engine-plasmamule.desktop
 %%PLASMAMULE%%share/mime/amule.xml
-%%PLASMAMULE%%@exec [ -f %%LOCALBASE%%/bin/update-mime-database ] && %%LOCALBASE%%/bin/update-mime-database %D/share/mime >/dev/null 2>&1 || true
-%%PLASMAMULE%%@unexec [ -f %%LOCALBASE%%/bin/update-mime-database ] && %%LOCALBASE%%/bin/update-mime-database %D/share/mime >/dev/null 2>&1 || true
+%%PLASMAMULE%%@postexec [ -f %%LOCALBASE%%/bin/update-mime-database ] && %%LOCALBASE%%/bin/update-mime-database %D/share/mime >/dev/null 2>&1 || true
+%%PLASMAMULE%%@postunexec [ -f %%LOCALBASE%%/bin/update-mime-database ] && %%LOCALBASE%%/bin/update-mime-database %D/share/mime >/dev/null 2>&1 || true
 %%PLASMAMULE%%@cwd %%RESETPREFIX%%
 %%ALC%%bin/alc
 %%ALCC%%bin/alcc

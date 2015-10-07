@@ -1,44 +1,30 @@
---- Makefile.orig	2013-01-20 04:42:02.000000000 +0100
-+++ Makefile	2013-10-20 13:58:27.000000000 +0200
-@@ -10,9 +10,9 @@
- # one executable, xephem.
- 
- # These -I and -L flags point to the supporting XEphem libraries
--LIBINC = -I../../libastro -I../../libip -I../../liblilxml -I../../libjpegd -I../../libpng -I../../libz
--LIBLNK = -L../../libastro -L../../libip -L../../liblilxml -L../../libjpegd -L../../libpng -L../../libz
--LIBLIB = -lastro -lip -llilxml -ljpegd -lpng -lz
-+LIBINC = -I../../libastro -I../../libip -I../../liblilxml -I%%LOCALBASE%%/include
-+LIBLNK = -L../../libastro -L../../libip -L../../liblilxml -L%%LOCALBASE%%/lib
-+LIBLIB = -lastro -lip -llilxml -ljpeg -lpng -lz
- 
- # MOTIFI is the directory containing the Xm directory of include files.
- # MOTIFL is the directory containing the libXm.a library.
-@@ -24,19 +24,19 @@
+--- Makefile.orig	2015-09-14 09:37:09.737810488 -0500
++++ Makefile	2015-09-14 09:45:54.470774555 -0500
+@@ -23,18 +23,18 @@
  MOTIFL = $(MOTIF)
  endif
  ifndef MOTIFI
--MOTIFI = /usr/X11R6/include
+-MOTIFI = /usr/include
 +MOTIFI = %%LOCALBASE%%/include
  endif
  ifndef MOTIFL
--MOTIFL = /usr/X11R6/lib
-+MOTIFL = %%LOCALBASE%%/lib
+-MOTIFL = /usr/lib
++MOTIFL = %%/LOCALBASE%%/lib
  endif
  
  # for linux and Apple OS X
- # some systems now use just /usr/X11 (not /usr/X11R6)
  CC = gcc
  CLDFLAGS = -g
--CFLAGS = $(LIBINC) $(CLDFLAGS) -O2 -Wall -I$(MOTIFI) -I/usr/X11R6/include
--LDFLAGS = $(LIBLNK) $(CLDFLAGS) -L$(MOTIFL) -L/usr/X11R6/lib
+-CFLAGS = $(LIBINC) $(CLDFLAGS) -O2 -Wall -I$(MOTIFI) -I/opt/X11/include
+-LDFLAGS = $(LIBLNK) $(CLDFLAGS) -L$(MOTIFL) -L/opt/X11/lib
 -XLIBS = -lXm -lXp -lXt -lXext -lXmu -lX11
 +CFLAGS = $(LIBINC) $(CLDFLAGS) -Wall -I$(MOTIFI) -I%%LOCALBASE%%/include
 +LDFLAGS = $(LIBLNK) $(CLDFLAGS) -L$(MOTIFL) -L%%LOCALBASE%%/lib
 +XLIBS = -lXm -lXp -lXt -lXext -lXmu -lX11 -lXft
  LIBS = $(XLIBS) $(LIBLIB) -lm
  
- # for ppc Apple OS X to make universal (i386 and ppc binary), requires
-@@ -181,18 +181,15 @@
+ # static linking on Apple using X11 libs from ports
+@@ -189,18 +189,18 @@
  all: libs xephem xephem.1
  
  xephem: $(INCS) $(OBJS)
@@ -57,7 +43,10 @@
 -	cd ../../libz; make
 +	cd ../../libastro; $(MAKE)
 +	cd ../../libip; $(MAKE)
++	cd ../../libjpegd; $(MAKE)
 +	cd ../../liblilxml; $(MAKE)
++	cd ../../libpng; $(MAKE)
++	cd ../../libz; $(MAKE)
  
  clean:
  	rm -fr *.o ../../lib*/*.[ao]

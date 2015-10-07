@@ -44,7 +44,7 @@
 %%PERL5_MAN3%%/Vimana::Record.3.gz
 %%PERL5_MAN3%%/Vimana::Recursive.3.gz
 %%PERL5_MAN3%%/Vimana::Util.3.gz
-man/man1/vim_record.1.gz
-man/man1/vimana.1.gz
+%%PERL5_MAN1%%/vim_record.1.gz
+%%PERL5_MAN1%%/vimana.1.gz
 bin/vimana
 bin/vim_record

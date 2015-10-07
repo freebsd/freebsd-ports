@@ -3,7 +3,7 @@
 
 PORTNAME=	webstone
 PORTVERSION=	2.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www benchmarks
 MASTER_SITES=	http://crypto.stanford.edu/~nagendra/projects/WebStone/download/
 PKGNAMESUFFIX=	-ssl
@@ -15,8 +15,10 @@ COMMENT=	World wide web server benchmarking with SSL support
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		shebangfix tar:tgz
+USES=		perl5 shebangfix tar:tgz
+USE_PERL5=	run
 SHEBANG_FILES=	bin/*.wpl bin/*.pl
+perl_OLD_CMD=	/bin/perl5
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/WebStone${PORTVERSION}
 CONFIGURE_WRKSRC=	${WRKSRC}/src
@@ -27,6 +29,9 @@ MAKE_JOBS_UNSAFE=	yes
 
 CPPFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
+
+post-patch:
+	@${REINPLACE_CMD} -i '' -e 's|/bin/perl|${perl_CMD}|' ${WRKSRC}/bin/WebStone-common.pl
 
 pre-configure:
 	@${RM} -f ${WRKSRC}/src/config.cache

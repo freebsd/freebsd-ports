@@ -1,0 +1,20 @@
+--- Makefile.am.orig	2015-07-23 16:45:11 UTC
++++ Makefile.am
+@@ -121,7 +121,7 @@ cppcheck:
+ # These steps are necessary during installation
+ install-exec-hook:
+ 	mkdir -p $(DESTDIR)${localstatedir}/log/
+-	mkdir -p $(DESTDIR)${localstatedir}/run/${PACKAGE_NAME}
++	mkdir -p $(DESTDIR)${localstatedir}/run/
+ 
+ ### include tool to generate documentation from log message specifications
+ ### in the distributed tarball:
+@@ -439,7 +439,7 @@ EXTRA_DIST += ext/asio/asio/deadline_tim
+ EXTRA_DIST += ext/asio/asio/stream_socket_service.hpp
+ EXTRA_DIST += ext/coroutine/coroutine.h
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = dns++.pc
+ 
+ CLEANFILES = $(abs_top_builddir)/logger_lockfile

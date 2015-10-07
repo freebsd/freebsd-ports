@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stunnel
-PORTVERSION=	5.20
+PORTVERSION=	5.23
 CATEGORIES=	security
 MASTER_SITES=	https://www.stunnel.org/downloads/%SUBDIR%/ \
 		http://mirrors.zerg.biz/stunnel/%SUBDIR%/ \
@@ -25,7 +25,7 @@ COMMENT=	SSL encryption wrapper for standard network daemons
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-USES=		cpe shebangfix libtool perl5
+USES=		cpe libtool perl5 shebangfix
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes

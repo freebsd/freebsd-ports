@@ -1,6 +1,6 @@
---- pcm.c.orig	2011-06-30 18:51:13.000000000 -0400
-+++ pcm.c	2011-06-30 18:51:47.000000000 -0400
-@@ -60,7 +60,7 @@
+--- pcm.c.orig	2008-01-07 15:26:50 UTC
++++ pcm.c
+@@ -60,7 +60,7 @@ int mStoSamples(int hVox, int time) {
    float samples;
    float fsr;
    

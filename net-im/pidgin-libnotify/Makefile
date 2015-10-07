@@ -20,7 +20,7 @@ LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
 GNU_CONFIGURE=	yes
 USES=		gmake libtool pkgconfig
 USE_LDCONFIG=	yes
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 intltool
 
 CONFIGURE_ARGS=	--disable-static
 CPPFLAGS+=	-I${LOCALBASE}/include

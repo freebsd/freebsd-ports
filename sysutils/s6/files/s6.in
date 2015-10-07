@@ -28,7 +28,7 @@ s6_svc=${s6_path}/.s6-svscan
 command="%%PREFIX%%/bin/s6-svscanboot"
 start_cmd=s6_start
 stop_cmd="%%PREFIX%%/bin/s6-svscanctl -t ${s6_path}"
-stop_postcmd="%%PREFIX%%/bin/s6-svc -k ${s6_log}/"
+stop_postcmd="%%PREFIX%%/bin/s6-svc -h ${s6_log}/"
 
 s6_start()
 {

@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	cmake
-PORTVERSION=	3.2.3
-PORTREVISION?=	2
+PORTVERSION=	3.3.1
+PORTREVISION?=	0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.cmake.org/files/v3.2/
+MASTER_SITES=	http://www.cmake.org/files/v3.3/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT?=	Cross-platform Makefile generator

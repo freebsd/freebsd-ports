@@ -3,6 +3,7 @@
 
 PORTNAME=	runit
 PORTVERSION=	2.1.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://smarden.org/${PORTNAME}/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
@@ -25,6 +26,10 @@ DOCS=		package/CHANGES package/README \
 CONFIG=		etc/freebsd/1 etc/2 etc/freebsd/3 etc/freebsd/ctrlaltdel \
 	 	etc/freebsd/getty-ttyv4/run etc/freebsd/getty-ttyv4/finish
 
+post-patch:
+	${REINPLACE_CMD} -i '' 's!/service/!${SERVICE_DIR}!' \
+		${WRKSRC}/man/* ${WRKSRC}/src/sv.c
+
 do-configure:
 	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/src/conf-cc
 	${ECHO_CMD} "${CC}" > ${WRKSRC}/src/conf-ld
@@ -40,15 +45,15 @@ do-build:
 .endfor
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/command/* ${STAGEDIR}${PREFIX}/sbin
-	@${INSTALL_MAN} ${WRKSRC}/man/* ${STAGEDIR}${PREFIX}/man/man8/
+	${INSTALL_PROGRAM} ${WRKSRC}/command/* ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/man/* ${STAGEDIR}${PREFIX}/man/man8/
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/getty-ttyv4
-	@${INSTALL_SCRIPT} ${WRKDIR}/etc/[123c]* ${STAGEDIR}${ETCDIR}
-	@${INSTALL_SCRIPT} ${WRKDIR}/etc/getty-ttyv4/* \
+	${INSTALL_SCRIPT} ${WRKDIR}/etc/[123c]* ${STAGEDIR}${ETCDIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/etc/getty-ttyv4/* \
 		${STAGEDIR}${ETCDIR}/getty-ttyv4
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.   for doc in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
-.   endfor
+.for doc in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>

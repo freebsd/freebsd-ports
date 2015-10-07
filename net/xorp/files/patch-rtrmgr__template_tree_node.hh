@@ -1,6 +1,6 @@
---- ./rtrmgr/template_tree_node.hh.orig	2011-03-16 21:16:14.000000000 +0000
-+++ ./rtrmgr/template_tree_node.hh	2014-02-26 21:17:13.000000000 +0000
-@@ -189,13 +189,15 @@
+--- rtrmgr/template_tree_node.hh.orig	2012-01-11 17:56:10 UTC
++++ rtrmgr/template_tree_node.hh
+@@ -189,13 +189,15 @@ protected:
      TemplateTreeNode*	_parent;
      list<TemplateTreeNode*> _children;
  

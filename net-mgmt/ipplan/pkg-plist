@@ -353,7 +353,7 @@
 %%WWWDIR%%/contrib/bind9_zone.xsl
 %%WWWDIR%%/contrib/bind9_zone.dtd
 %%WWWDIR%%/contrib/bind9_revzone.xsl
-%%WWWDIR%%/config.php.sample
+@sample %%WWWDIR%%/config.php.sample
 %%WWWDIR%%/class.xptlib.php
 %%WWWDIR%%/class.templib.php
 %%WWWDIR%%/class.smtp.php
@@ -557,7 +557,6 @@
 %%WWWDIR%%/INSTALL
 %%WWWDIR%%/CONTRIBUTORS
 %%WWWDIR%%/CHANGELOG
-@unexec cmp -s %D/%%WWWDIR%%/config.php.sample %D/%%WWWDIR%%/config.php && rm -f %D/%%WWWDIR%%/config.php || true
 @dir /var/spool/ipplan/dhcpexport
 @dir /var/spool/ipplan/exportdns
 @dir /var/spool/ipplan/uploads

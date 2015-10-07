@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	distel
-PORTVERSION=	4.0.7
+PORTVERSION=	4.1.0
 CATEGORIES=	devel elisp
 
 MAINTAINER=	olgeni@FreeBSD.org

@@ -2,17 +2,13 @@ bin/gnome-power-statistics
 %%MAN%%man/man1/gnome-power-statistics.1.gz
 share/appdata/gnome-power-statistics.appdata.xml
 share/applications/gnome-power-statistics.desktop
-share/icons/HighContrast/16x16/apps/gnome-power-statistics.png
-share/icons/HighContrast/22x22/apps/gnome-power-statistics.png
-share/icons/HighContrast/24x24/apps/gnome-power-statistics.png
-share/icons/HighContrast/256x256/apps/gnome-power-statistics.png
-share/icons/HighContrast/48x48/apps/gnome-power-statistics.png
 share/icons/hicolor/16x16/apps/gnome-power-statistics.png
 share/icons/hicolor/22x22/apps/gnome-power-statistics.png
 share/icons/hicolor/24x24/apps/gnome-power-statistics.png
 share/icons/hicolor/32x32/apps/gnome-power-statistics.png
 share/icons/hicolor/48x48/apps/gnome-power-statistics.png
 share/icons/hicolor/scalable/apps/gnome-power-statistics.svg
+share/icons/hicolor/symbolic/apps/gnome-power-statistics-symbolic.svg
 share/locale/af/LC_MESSAGES/gnome-power-manager.mo
 share/locale/ar/LC_MESSAGES/gnome-power-manager.mo
 share/locale/as/LC_MESSAGES/gnome-power-manager.mo
@@ -22,6 +18,7 @@ share/locale/be@latin/LC_MESSAGES/gnome-power-manager.mo
 share/locale/bg/LC_MESSAGES/gnome-power-manager.mo
 share/locale/bn/LC_MESSAGES/gnome-power-manager.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-power-manager.mo
+share/locale/bs/LC_MESSAGES/gnome-power-manager.mo
 share/locale/ca/LC_MESSAGES/gnome-power-manager.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-power-manager.mo
 share/locale/cs/LC_MESSAGES/gnome-power-manager.mo

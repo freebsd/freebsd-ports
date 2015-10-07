@@ -3,6 +3,7 @@
 
 PORTNAME=	lg
 PORTVERSION=	1.9.s20140622
+PORTREVISION=	1
 MASTER_SITES=	LOCAL/mat/lg GH
 CATEGORIES=	net-mgmt perl5
 
@@ -18,10 +19,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Cougar
 GH_TAGNAME=	0d53e4b
 
-USES=	perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	lg.cgi makeaslist.pl makedb.pl
 USE_PERL5=	run
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}

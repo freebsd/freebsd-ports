@@ -3,6 +3,7 @@
 
 PORTNAME=	LaTeXML
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	converters perl5
 MASTER_SITES=	http://dlmf.nist.gov/LaTeXML/releases/
 PKGNAMEPREFIX=	p5-
@@ -33,21 +34,17 @@ USE_PERL5=	configure
 USE_TEX=	kpathsea
 NO_BUILD=	yes
 
-DOCS=		Changes INSTALL MANIFEST README manual.pdf
-PORTDOCS=	*
+PORTDOCS=		Changes INSTALL MANIFEST README manual.pdf
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 post-install:
 	${FIND} ${STAGEDIR}/${PREFIX} -name .packlist | \
 		${XARGS} ${REINPLACE_CMD} -e 's|^${STAGEDIR}||'
 	${RM} ${STAGEDIR}${PREFIX}/share/texmf-local/tex/latex/latexml/.packlist.bak
 
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
-.endif
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- ./contrib/olsr/face.hh.orig	2010-07-19 21:10:33.000000000 +0000
-+++ ./contrib/olsr/face.hh	2014-02-26 21:17:13.000000000 +0000
-@@ -291,8 +291,10 @@
+--- contrib/olsr/face.hh.orig	2012-01-11 17:56:10 UTC
++++ contrib/olsr/face.hh
+@@ -291,8 +291,10 @@ class Face {
       */
      void originate_hello();
  

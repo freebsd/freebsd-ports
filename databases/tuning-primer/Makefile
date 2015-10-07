@@ -6,16 +6,17 @@ PORTVERSION=	1.6.r1
 CATEGORIES=	databases
 MASTER_SITES=	http://launchpad.net/mysql-${PORTNAME}/trunk/1.6-r1/+download/
 DISTNAME=	${PORTNAME}.sh
-EXTRACT_SUFX=
-EXTRACT_ONLY=
+EXTRACT_SUFX=	# empty
 DIST_SUBDIR=	${PORTNAME}/${DISTVERSION}
+EXTRACT_ONLY=	# empty
 
-MAINTAINER=	joehorn@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MySQL performance tuning primer script
 
 LICENSE=	GPLv2
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 USE_MYSQL=	yes
 
 PLIST_FILES=	bin/${PORTNAME}

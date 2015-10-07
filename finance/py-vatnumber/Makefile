@@ -3,6 +3,7 @@
 
 PORTNAME=	vatnumber
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	finance python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,8 +13,9 @@ COMMENT=	Python module to validate VAT numbers
 
 LICENSE=	GPLv3
 
-# Python3 ready
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}stdnum>=1.1:${PORTSDIR}/devel/py-stdnum
+
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

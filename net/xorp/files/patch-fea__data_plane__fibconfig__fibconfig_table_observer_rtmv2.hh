@@ -1,6 +1,6 @@
---- ./fea/data_plane/fibconfig/fibconfig_table_observer_rtmv2.hh.orig	2011-03-16 21:16:02.000000000 +0000
-+++ ./fea/data_plane/fibconfig/fibconfig_table_observer_rtmv2.hh	2014-02-26 21:17:13.000000000 +0000
-@@ -73,15 +73,15 @@
+--- fea/data_plane/fibconfig/fibconfig_table_observer_rtmv2.hh.orig	2012-01-11 17:56:10 UTC
++++ fea/data_plane/fibconfig/fibconfig_table_observer_rtmv2.hh
+@@ -73,15 +73,15 @@ public:
  private:
      class RtmV2Observer : public WinRtmPipeObserver {
      public:

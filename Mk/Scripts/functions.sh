@@ -82,17 +82,22 @@ parse_plist() {
 		@sample\ *)
 			set -- $line
 			shift
-			# Ignore the actual file if it is in stagedir
-			case "$@" in
-			/*)
-			echo "@comment ${@%.sample}"
-			echo "${comment}$@"
-			;;
-			*)
-			echo "@comment ${cwd}/${@%.sample}"
-			echo "${comment}${cwd}/$@"
-			;;
+			sample_file=$1
+			target_file=${1%.sample}
+			if [ $# -eq 2 ]; then
+				target_file=$2
+			fi
+			case "${sample_file}" in
+			/*) ;;
+			*) sample_file=${cwd}/${sample_file} ;;
 			esac
+			case "${target_file}" in
+			/*) ;;
+			*) target_file=${cwd}/${target_file} ;;
+			esac
+			# Ignore the actual file if it is in stagedir
+			echo "@comment ${target_file}"
+			echo "${comment}${sample_file}"
 		;;
 		# Handle [dir] Keywords
 		@fc\ *|@fcfontsdir\ *|@fontsdir\ *)

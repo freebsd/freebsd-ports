@@ -34,7 +34,7 @@ USE_GL=		gl
 USE_GNOME=	gtk20
 USE_SDL=	mixer sdl
 
-USES=	dos2unix gmake pkgconfig:build
+USES=		alias dos2unix gmake pkgconfig:build
 DOS2UNIX_REGEX=	.*(\.(c|h)|Makefile)(\.deps)?
 
 NO_CDROM=	Must be distributed only through the Internet and free of charge

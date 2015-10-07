@@ -18,6 +18,7 @@ RUN_DEPENDS=	rubygem-github-markdown>=0.5.3:${PORTSDIR}/textproc/rubygem-github-
 		rubygem-sanitize>=2.0.3:${PORTSDIR}/textproc/rubygem-sanitize \
 		rubygem-stringex>=1.5.1:${PORTSDIR}/devel/rubygem-stringex
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

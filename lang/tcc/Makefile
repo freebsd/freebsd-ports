@@ -2,7 +2,7 @@
 
 PORTNAME=	tcc
 PORTVERSION=	0.9.26
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	SAVANNAH/tinycc
 
@@ -11,7 +11,7 @@ COMMENT=	Tiny C Compiler
 
 LICENSE=	LGPL21
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	amd64 i386
 
 CONFLICTS=	TenDRA-[0-9]*
 
@@ -28,7 +28,21 @@ PORTDOCS=	COPYING	Changelog README TODO VERSION
 
 .include <bsd.port.options.mk>
 
+.if ${ARCH} == "amd64"
+CONFIGURE_ARGS+=	--cpu=x86-64 --extra-cflags="-DTCC_TARGET_X86_64 -DONE_SOURCE"
+MAKE_ARGS+=	ARCH=x86-64
+CPUTYPE=	x86_64
+FILES=	bcheck.o alloca86_64.o libtcc1.o
+
+PLIST_SUB+=	AMD64=""
+.else
+PLIST_SUB+=	AMD64="@comment "
+.endif
+
 .if ${ARCH} == "i386"
+CPUTYPE=	i386
+FILES=	bcheck.o alloca86.o alloca86-bt.o
+
 PLIST_SUB+=	I386=""
 .else
 PLIST_SUB+=	I386="@comment "
@@ -42,7 +56,9 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/tcc
 	${INSTALL_MAN} ${WRKSRC}/tcc.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	${RM} -r ${STAGEDIR}${PREFIX}/share/man
-	${INSTALL_DATA} ${WRKSRC}/lib/i386/bcheck.o ${STAGEDIR}${PREFIX}/lib/tcc
+.for f in ${FILES}
+	${INSTALL_DATA} ${WRKSRC}/lib/${CPUTYPE}/*.o ${STAGEDIR}${PREFIX}/lib/tcc
+.endfor
 
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

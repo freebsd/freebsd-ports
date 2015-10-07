@@ -39,8 +39,8 @@ bin/fusioninventory-injector
 %%PERL5_MAN3%%/FusionInventory::Agent::XML::Query::Inventory.3.gz
 %%PERL5_MAN3%%/FusionInventory::Agent::XML::Query::Prolog.3.gz
 %%PERL5_MAN3%%/FusionInventory::Agent::XML::Response.3.gz
-man/man1/fusioninventory-agent.1.gz
-man/man1/fusioninventory-injector.1.gz
+%%PERL5_MAN1%%/fusioninventory-agent.1.gz
+%%PERL5_MAN1%%/fusioninventory-injector.1.gz
 share/fusioninventory/lib/FusionInventory/Agent.pm
 share/fusioninventory/lib/FusionInventory/Agent/Config.pm
 share/fusioninventory/lib/FusionInventory/Agent/HTTP/Client.pm

@@ -1,6 +1,6 @@
---- ./channels/h323/Makefile.in.orig	2010-06-03 16:48:09.000000000 +0200
-+++ ./channels/h323/Makefile.in	2010-11-06 14:54:36.000000000 +0100
-@@ -13,7 +13,7 @@
+--- channels/h323/Makefile.in.orig	2015-07-24 22:06:05 UTC
++++ channels/h323/Makefile.in
+@@ -13,7 +13,7 @@ STDCCFLAGS	= -DNDEBUG
  STDCCFLAGS	+= -I../../include -include ../../include/asterisk/autoconfig.h
  STDCCFLAGS	+= -fPIC
  #OPTCCFLAGS	+=

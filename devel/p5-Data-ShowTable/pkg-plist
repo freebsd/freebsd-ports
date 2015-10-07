@@ -1,4 +1,4 @@
 bin/showtable
 %%SITE_PERL%%/Data/ShowTable.pm
 %%PERL5_MAN3%%/Data::ShowTable.3.gz
-man/man1/showtable.1.gz
+%%PERL5_MAN1%%/showtable.1.gz

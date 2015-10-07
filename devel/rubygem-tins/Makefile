@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tins
-PORTVERSION=	1.5.4
+PORTVERSION=	1.6.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

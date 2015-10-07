@@ -26,6 +26,7 @@ NAGIOS4_RUN_DEPENDS=	${LOCALBASE}/bin/nagios:${PORTSDIR}/net-mgmt/nagios4
 USES=		perl5 shebangfix
 USE_PERL5=	run
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 DOCS=		AUTHORS CHANGELOG INSTALL README TODO
 NAGIOSWWWDIR?=	www/nagios

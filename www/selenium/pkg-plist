@@ -238,30 +238,4 @@ www/selenium/doc/release-notes.html
 www/selenium/doc/seleniumReference.html
 www/selenium/doc/testrunner.html
 www/selenium/doc/usage.html
-@dirrm www/selenium/doc/images
-@dirrm www/selenium/doc
-@dirrm www/selenium/tests/tableparser
-@dirrm www/selenium/tests/html
-@dirrm www/selenium/tests/events
-@dirrm www/selenium/tests/browserbot
-@dirrm www/selenium/tests
-@dirrm www/selenium/jsunit/tests/data
-@dirrm www/selenium/jsunit/tests
-@dirrm www/selenium/jsunit/licenses
-@dirrm www/selenium/jsunit/java/src
-@dirrm www/selenium/jsunit/java/lib
-@dirrm www/selenium/jsunit/java/bin
-@dirrm www/selenium/jsunit/java
-@dirrm www/selenium/jsunit/intellij
-@dirrm www/selenium/jsunit/images
-@dirrm www/selenium/jsunit/css
-@dirrm www/selenium/jsunit/app/css
-@dirrm www/selenium/jsunit/app
-@dirrm www/selenium/jsunit
-@dirrm www/selenium/jsmock
-@dirrm www/selenium/html-xpath
-@dirrm www/selenium/dom-styles
-@dirrm www/selenium/dom-images
-@dirrm www/selenium/devtests/meta
-@dirrm www/selenium/devtests
-@dirrm www/selenium
+@dir www/selenium/jsunit/java/src

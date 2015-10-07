@@ -22,8 +22,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:${P
 RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:${PORTSDIR}/devel/qtscriptgenerator \
 		${KDE4_PREFIX}/lib/kde4/kio_upnp_ms.so:${PORTSDIR}/net/kio-upnp-ms
 
-LATEST_LINK=	${PORTNAME}-kde4
-
 USE_KDE4=	kdelibs kdeprefix libkcddb libkcompactdisc \
 		nepomuk-core runtime automoc4 strigi
 USE_MYSQL=	embedded

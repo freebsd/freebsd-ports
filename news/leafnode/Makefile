@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	leafnode
-DISTVERSION=	1.11.10
-PORTREVISION=	1
+DISTVERSION=	1.11.11
 CATEGORIES=	news ipv6
 MASTER_SITES=	SF \
 		http://www.dt.e-technik.uni-dortmund.de/~ma/${PORTNAME}/
@@ -35,7 +34,7 @@ PLIST_SUB=	SPOOLDIR=${LEAFNODE_SPOOLDIR} REALPREFIX=${PREFIX}
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/leafnode \
 		--with-spooldir=${LEAFNODE_SPOOLDIR} --with-ipv6 \
 		--exec-prefix=${PREFIX}
-SUB_FILES=	pkg-message pkg-install
+SUB_FILES=	pkg-message pkg-install pkg-deinstall
 SUB_LIST=	SPOOLDIR=${LEAFNODE_SPOOLDIR}
 
 MAN1=		leafnode-version.1 newsq.1

@@ -15,6 +15,7 @@ OPTIONS_DEFAULT=LINKS
 OPTIONS_SUB=	yes
 LINKS_DESC=	Install links of configuration files in conf.d
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 USES=		fonts tar:bzip2
 

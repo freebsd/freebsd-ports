@@ -10,6 +10,7 @@ MAINTAINER=	hhyou@cs.nctu.edu.tw
 COMMENT=	Vim interface to Gmail
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/MIT-LICENSE.txt
 
 RUN_DEPENDS=	rubygem-highline>=1.6.1:${PORTSDIR}/devel/rubygem-highline \
 		rubygem-mail>=2.2.12:${PORTSDIR}/mail/rubygem-mail \
@@ -19,7 +20,6 @@ RUN_DEPENDS=	rubygem-highline>=1.6.1:${PORTSDIR}/devel/rubygem-highline \
 		${LOCALBASE}/bin/vim:${PORTSDIR}/editors/vim-lite
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

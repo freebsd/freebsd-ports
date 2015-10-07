@@ -13,8 +13,6 @@ OPTIONS_DEFINE=	DOCS
 
 SUB_FILES=	findmtu
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|' ${WRKSRC}/Makefile.rawsocket
 
@@ -24,10 +22,10 @@ do-configure:
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/findmtu ${STAGEDIR}${PREFIX}/bin/findmtu
 	${INSTALL_PROGRAM} ${WRKSRC}/findmtu ${STAGEDIR}${PREFIX}/bin/findmtu.real
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.freebsd ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

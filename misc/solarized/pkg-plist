@@ -1,0 +1,120 @@
+%%DATADIR%%/CHANGELOG.mkd
+%%DATADIR%%/DEVELOPERS.mkd
+%%DATADIR%%/LICENSE
+%%DATADIR%%/README.md
+%%DATADIR%%/adobe-swatches-solarized/README.md
+%%DATADIR%%/adobe-swatches-solarized/solarized.act
+%%DATADIR%%/adobe-swatches-solarized/solarized.ase
+%%DATADIR%%/apple-colorpalette-solarized/README.md
+%%DATADIR%%/apple-colorpalette-solarized/Solarized.clr
+%%DATADIR%%/apple-colorpalette-solarized/alternate palettes/.README.md.un~
+%%DATADIR%%/apple-colorpalette-solarized/alternate palettes/README.md
+%%DATADIR%%/apple-colorpalette-solarized/alternate palettes/Solarized tagged.clr
+%%DATADIR%%/apple-colorpalette-solarized/alternate palettes/Solarized untagged.clr
+%%DATADIR%%/apple-colorpalette-solarized/launch-colorpicker.app/Contents/Info.plist
+%%DATADIR%%/apple-colorpalette-solarized/launch-colorpicker.app/Contents/MacOS/applet
+%%DATADIR%%/apple-colorpalette-solarized/launch-colorpicker.app/Contents/PkgInfo
+%%DATADIR%%/apple-colorpalette-solarized/launch-colorpicker.app/Contents/Resources/Scripts/main.scpt
+%%DATADIR%%/apple-colorpalette-solarized/launch-colorpicker.app/Contents/Resources/applet.icns
+%%DATADIR%%/apple-colorpalette-solarized/launch-colorpicker.app/Contents/Resources/applet.rsrc
+%%DATADIR%%/apple-colorpalette-solarized/launch-colorpicker.app/Contents/Resources/description.rtfd/TXT.rtf
+%%DATADIR%%/emacs-colors-solarized/LICENSE
+%%DATADIR%%/emacs-colors-solarized/README.md
+%%DATADIR%%/emacs-colors-solarized/color-theme-solarized.el
+%%DATADIR%%/gimp-palette-solarized/README.md
+%%DATADIR%%/gimp-palette-solarized/solarized.gpl
+%%DATADIR%%/intellij-colors-solarized/README.md
+%%DATADIR%%/intellij-colors-solarized/Solarized Dark.xml
+%%DATADIR%%/intellij-colors-solarized/Solarized Light.xml
+%%DATADIR%%/intellij-colors-solarized/buildjar.sh
+%%DATADIR%%/intellij-colors-solarized/settings.jar
+%%DATADIR%%/iterm2-colors-solarized/README.md
+%%DATADIR%%/iterm2-colors-solarized/Solarized Dark.itermcolors
+%%DATADIR%%/iterm2-colors-solarized/Solarized Light.itermcolors
+%%DATADIR%%/mutt-colors-solarized/README.md
+%%DATADIR%%/mutt-colors-solarized/mutt-colors-solarized-dark-16.muttrc
+%%DATADIR%%/mutt-colors-solarized/mutt-colors-solarized-dark-256.muttrc
+%%DATADIR%%/mutt-colors-solarized/mutt-colors-solarized-light-16.muttrc
+%%DATADIR%%/mutt-colors-solarized/mutt-colors-solarized-light-256.muttrc
+%%DATADIR%%/mutt-colors-solarized/mutt-colors-solarized-template.muttrc
+%%DATADIR%%/mutt-colors-solarized/mutt-compile-colors.sh
+%%DATADIR%%/netbeans-colors-solarized/README.md
+%%DATADIR%%/netbeans-colors-solarized/config/.nbattrs
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/FontsColors/Netbeans_Solarized_Dark/.nbattrs
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/FontsColors/Netbeans_Solarized_Dark/org-netbeans-modules-editor-settings-CustomFontsColors-highlights.xml
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/FontsColors/Netbeans_Solarized_Dark/org-netbeans-modules-editor-settings-CustomFontsColors-tokenColorings.xml
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/application/xml-dtd/FontsColors/Netbeans_Solarized_Dark/.nbattrs
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/application/xml-dtd/FontsColors/Netbeans_Solarized_Dark/org-netbeans-modules-editor-settings-CustomFontsColors-tokenColorings.xml
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/text/html/FontsColors/Netbeans_Solarized_Dark/.nbattrs
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/text/html/FontsColors/Netbeans_Solarized_Dark/org-netbeans-modules-editor-settings-CustomFontsColors-tokenColorings.xml
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/text/javascript/FontsColors/Netbeans_Solarized_Dark/.nbattrs
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/text/javascript/FontsColors/Netbeans_Solarized_Dark/org-netbeans-modules-editor-settings-CustomFontsColors-tokenColorings.xml
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/text/plain/FontsColors/Netbeans_Solarized_Dark/.nbattrs
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/text/plain/FontsColors/Netbeans_Solarized_Dark/org-netbeans-modules-editor-settings-CustomFontsColors-tokenColorings.xml
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/text/x-css/FontsColors/Netbeans_Solarized_Dark/.nbattrs
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/text/x-css/FontsColors/Netbeans_Solarized_Dark/org-netbeans-modules-editor-settings-CustomFontsColors-tokenColorings.xml
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/text/x-diff/FontsColors/Netbeans_Solarized_Dark/.nbattrs
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/text/x-diff/FontsColors/Netbeans_Solarized_Dark/org-netbeans-modules-editor-settings-CustomFontsColors-tokenColorings.xml
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/text/x-ini/FontsColors/Netbeans_Solarized_Dark/.nbattrs
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/text/x-ini/FontsColors/Netbeans_Solarized_Dark/org-netbeans-modules-editor-settings-CustomFontsColors-tokenColorings.xml
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/text/x-javascript-comment/FontsColors/Netbeans_Solarized_Dark/.nbattrs
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/text/x-javascript-comment/FontsColors/Netbeans_Solarized_Dark/org-netbeans-modules-editor-settings-CustomFontsColors-tokenColorings.xml
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/text/x-javascript-string/FontsColors/Netbeans_Solarized_Dark/.nbattrs
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/text/x-javascript-string/FontsColors/Netbeans_Solarized_Dark/org-netbeans-modules-editor-settings-CustomFontsColors-tokenColorings.xml
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/text/x-json/FontsColors/Netbeans_Solarized_Dark/.nbattrs
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/text/x-json/FontsColors/Netbeans_Solarized_Dark/org-netbeans-modules-editor-settings-CustomFontsColors-tokenColorings.xml
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/text/x-php5/FontsColors/Netbeans_Solarized_Dark/.nbattrs
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/text/x-php5/FontsColors/Netbeans_Solarized_Dark/org-netbeans-modules-editor-settings-CustomFontsColors-tokenColorings.xml
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/text/x-properties/FontsColors/Netbeans_Solarized_Dark/.nbattrs
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/text/x-properties/FontsColors/Netbeans_Solarized_Dark/org-netbeans-modules-editor-settings-CustomFontsColors-tokenColorings.xml
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/text/x-sql/FontsColors/Netbeans_Solarized_Dark/.nbattrs
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/text/x-sql/FontsColors/Netbeans_Solarized_Dark/org-netbeans-modules-editor-settings-CustomFontsColors-tokenColorings.xml
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/text/x-yaml/FontsColors/Netbeans_Solarized_Dark/.nbattrs
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/text/x-yaml/FontsColors/Netbeans_Solarized_Dark/org-netbeans-modules-editor-settings-CustomFontsColors-tokenColorings.xml
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/text/xhtml/FontsColors/Netbeans_Solarized_Dark/.nbattrs
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/text/xhtml/FontsColors/Netbeans_Solarized_Dark/org-netbeans-modules-editor-settings-CustomFontsColors-tokenColorings.xml
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/text/xml-external-parsed-entity/FontsColors/Netbeans_Solarized_Dark/.nbattrs
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/text/xml-external-parsed-entity/FontsColors/Netbeans_Solarized_Dark/org-netbeans-modules-editor-settings-CustomFontsColors-tokenColorings.xml
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/text/xml/FontsColors/Netbeans_Solarized_Dark/.nbattrs
+%%DATADIR%%/netbeans-colors-solarized/config/Editors/text/xml/FontsColors/Netbeans_Solarized_Dark/org-netbeans-modules-editor-settings-CustomFontsColors-tokenColorings.xml
+%%DATADIR%%/osx-terminal.app-colors-solarized/README.md
+%%DATADIR%%/osx-terminal.app-colors-solarized/Solarized Dark ansi.terminal
+%%DATADIR%%/osx-terminal.app-colors-solarized/Solarized Light ansi.terminal
+%%DATADIR%%/osx-terminal.app-colors-solarized/xterm-256color/.README.md.un~
+%%DATADIR%%/osx-terminal.app-colors-solarized/xterm-256color/README.md
+%%DATADIR%%/osx-terminal.app-colors-solarized/xterm-256color/Solarized Dark xterm-256color.terminal
+%%DATADIR%%/osx-terminal.app-colors-solarized/xterm-256color/Solarized Light xterm-256color.terminal
+%%DATADIR%%/putty-colors-solarized/README.mkd
+%%DATADIR%%/putty-colors-solarized/dark.png
+%%DATADIR%%/putty-colors-solarized/light.png
+%%DATADIR%%/putty-colors-solarized/solarized_dark.reg
+%%DATADIR%%/putty-colors-solarized/solarized_dark_puttytray.txt
+%%DATADIR%%/putty-colors-solarized/solarized_light.reg
+%%DATADIR%%/putty-colors-solarized/solarized_light_puttytray.txt
+%%DATADIR%%/seestyle-colors-solarized/README.md
+%%DATADIR%%/seestyle-colors-solarized/Solarized.seestyle
+%%DATADIR%%/textmate-colors-solarized/README.mkd
+%%DATADIR%%/textmate-colors-solarized/Solarized (dark).tmTheme
+%%DATADIR%%/textmate-colors-solarized/Solarized (light).tmTheme
+%%DATADIR%%/textwrangler-bbedit-colors-solarized/README.mkd
+%%DATADIR%%/textwrangler-bbedit-colors-solarized/Solarized Dark.bbcolors
+%%DATADIR%%/textwrangler-bbedit-colors-solarized/Solarized Light.bbcolors
+%%DATADIR%%/textwrangler-bbedit-colors-solarized/bbcolors
+%%DATADIR%%/vim-colors-solarized/README.mkd
+%%DATADIR%%/vim-colors-solarized/autoload/togglebg.vim
+%%DATADIR%%/vim-colors-solarized/colors/solarized.vim
+%%DATADIR%%/vim-colors-solarized/doc/tags
+%%DATADIR%%/vim-colors-solarized/doc/togglebg.txt
+%%DATADIR%%/visualstudio-colors-solarized/vs2005/solarized-dark.vssettings
+%%DATADIR%%/visualstudio-colors-solarized/vs2005/solarized-light.vssettings
+%%DATADIR%%/visualstudio-colors-solarized/vs2008/solarized-dark.vssettings
+%%DATADIR%%/visualstudio-colors-solarized/vs2008/solarized-light.vssettings
+%%DATADIR%%/visualstudio-colors-solarized/vs2010/solarized-dark.vssettings
+%%DATADIR%%/visualstudio-colors-solarized/vs2010/solarized-light.vssettings
+%%DATADIR%%/xresources-colors-solarized/Xresources
+@dir %%DATADIR%%/css-web
+@dir %%DATADIR%%/editors-ides
+@dir %%DATADIR%%/misc-apps
+@dir %%DATADIR%%/palettes
+@dir %%DATADIR%%/project-resources
+@dir %%DATADIR%%/terminal-emulators

@@ -12,27 +12,22 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Lightweight mail manipulating library for Ruby
 
+LICENSE=	BSD3CLAUSE
+
+BROKEN_RUBY22=	yes
+
+OPTIONS_DEFINE=	DOCS
+
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
 
-DOCS=		NEWS NOTES README THANKS TODO doc
+DOCS=		NEWS NOTES README THANKS TODO
 
-OPTIONS_DEFINE=	DOCS
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/doc/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${RUBY_MODDOCDIR}/
+	cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} . ${STAGEDIR}${RUBY_MODDOCDIR}/doc/
 
-post-extract:
-	${FIND} ${WRKSRC} -name '*~' -delete
-
-post-install:
-	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
-.for f in ${DOCS}
-	${CP} -R ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
-.endfor
-
-.include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} >= 2.2
-BROKEN=         Does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

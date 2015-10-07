@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	haproxy
-DISTVERSION=	1.6-dev2
+DISTVERSION=	1.6-dev7
 CATEGORIES=	net www
 MASTER_SITES=	http://haproxy.1wt.eu/download/1.6/src/devel/
 PKGNAMESUFFIX=	-devel
@@ -18,8 +18,8 @@ USES=		cpe gmake
 CONFLICTS=	haproxy-[1234567890]\*
 USE_RC_SUBR=	haproxy
 
-DEVICEATLAS_VERSION=	0.9
-DEVICEATLAS_DISTFILE= deviceatlas_c_${DEVICEATLAS_VERSION}
+DEVICEATLAS_VERSION=	2.1
+DEVICEATLAS_DISTFILE=	deviceatlas-enterprise-c-${DEVICEATLAS_VERSION}
 DEVICEATLAS_REGISTRATION_URL= https://deviceatlas.com/deviceatlas-haproxy-module
 
 OPTIONS_DEFINE=		DOCS EXAMPLES LUA OPENSSL DEVICEATLAS
@@ -68,8 +68,12 @@ USES+=		lua:53
 MAKE_ARGS+=	USE_LUA=1 LUA_INC=${LUA_INCDIR} LUA_LIB=${LUA_LIBDIR} LUA_LIB_NAME=lua-${LUA_VER}
 .endif
 
+post-build:
+	cd ${WRKSRC}/contrib/halog && ${MAKE_CMD} ${MAKE_ENV}
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/haproxy ${STAGEDIR}${PREFIX}/sbin/
+	${INSTALL_PROGRAM} ${WRKSRC}/contrib/halog/halog ${STAGEDIR}${PREFIX}/sbin/
 	${INSTALL_MAN} ${WRKSRC}/doc/haproxy.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})

@@ -2,7 +2,7 @@
 
 PORTNAME=	cartotheque
 PORTVERSION=	0.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	deskutils gnustep
 MASTER_SITES=	LOCAL/dinoex
 DISTNAME=	Cartotheque-${PORTVERSION}
@@ -20,6 +20,6 @@ post-patch:
 		${WRKSRC}/GNUmakefile
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/Cartotheque.app/Cartotheque
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/System/Applications/Cartotheque.app/Cartotheque
 
 .include <bsd.port.mk>

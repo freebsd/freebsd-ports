@@ -1,9 +1,9 @@
 # Created by: Vanilla I. Shu <vanilla@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/glib20/Makefile 20052 2014-11-10 10:21:14Z gusi $
 
 PORTNAME=	glib
-PORTVERSION=	2.42.2
+PORTVERSION=	2.44.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -33,14 +33,15 @@ CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc \
 		--enable-static=yes \
 		--with-pcre=system \
 		--disable-fam
-CONFIGURE_ENV=	ac_cv_header_sys_inotify_h=
+CONFIGURE_ENV=	ac_cv_header_sys_inotify_h= \
+		ac_cv_header_sys_event_h=
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 SHEBANG_FILES=	*/*.pl
 
-LIBVERSION=	0.4200.2
+LIBVERSION=	0.4400.1
 PLIST_SUB+=	LIBVERSION=${LIBVERSION}
 
 glib_MAN=	gtester.1 gtester-report.1 glib-gettextize.1

@@ -70,6 +70,7 @@ BUILD_DEPENDS+=	libtoolize:${PORTSDIR}/devel/libtool
 _INCLUDE_USES_AUTORECONF_POST_MK=	yes
 
 .if ! ${autoreconf_ARGS:Mbuild}
+_USES_configure+=	470:do-autoreconf
 do-autoreconf:
 .for f in AUTHORS ChangeLog INSTALL NEWS README
 # Don't modify time stamps if the files already exist

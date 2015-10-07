@@ -16,11 +16,12 @@ BUILD_DEPENDS=	p5-Digest-CRC>=0:${PORTSDIR}/security/p5-Digest-CRC \
 		p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
 PLIST_FILES=	bin/2ping \
-		man/man1/2ping.1.gz
+		%%PERL5_MAN1%%/2ping.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|2ping.1p|2ping.1|' ${WRKSRC}/Makefile.PL

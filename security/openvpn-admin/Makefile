@@ -18,7 +18,7 @@ RUN_DEPENDS=	openvpn:${PORTSDIR}/security/openvpn
 WRKSRC=		${WRKDIR}/${DISTNAME:S/b//}
 
 USES=		gettext gmake pkgconfig
-USE_GNOME=	gtksharp20
+USE_GNOME=	gtksharp20 intltool
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib

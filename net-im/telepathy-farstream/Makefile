@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/net-im/telepathy-farstream/Makefile 19955 2014-10-15 10:15:00Z gusi $
 
 PORTNAME=	telepathy-farstream
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 

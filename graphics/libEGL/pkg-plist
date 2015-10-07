@@ -1,6 +1,6 @@
 include/EGL/egl.h
 include/EGL/eglext.h
-%%NEW%%include/EGL/eglextchromium.h
+include/EGL/eglextchromium.h
 include/EGL/eglmesaext.h
 include/EGL/eglplatform.h
 include/KHR/khrplatform.h

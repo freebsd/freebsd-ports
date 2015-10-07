@@ -1,5 +1,5 @@
---- src/osdep/byteorder.h.orig	2013-03-04 18:32:55.000000000 +0100
-+++ src/osdep/byteorder.h	2013-09-29 13:48:25.382520852 +0200
+--- src/osdep/byteorder.h.orig	2015-09-07 17:11:56 UTC
++++ src/osdep/byteorder.h
 @@ -181,7 +181,7 @@
  	 * Solaris
  	 * -------

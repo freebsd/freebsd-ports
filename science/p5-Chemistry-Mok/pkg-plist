@@ -1,4 +1,4 @@
 bin/mok
 %%SITE_PERL%%/Chemistry/Mok.pm
 %%PERL5_MAN3%%/Chemistry::Mok.3.gz
-man/man1/mok.1.gz
+%%PERL5_MAN1%%/mok.1.gz

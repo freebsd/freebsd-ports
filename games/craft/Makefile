@@ -4,6 +4,8 @@
 PORTNAME=	craft
 PORTVERSION=	1.0
 PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSIONSUFFIX=	fbsd
 CATEGORIES=	games
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -14,7 +16,6 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 USE_GITHUB=	yes
 GH_ACCOUNT=	daniloegea
 GH_PROJECT=	Craft
-GH_TAGNAME=	v1.0fbsd
 
 OPTIONS_DEFINE=		SERVER
 SERVER_DESC=		Install the craft server

@@ -10,7 +10,9 @@ share/icons/hicolor/32x32/apps/easytag.png
 share/icons/hicolor/48x48/apps/easytag.png
 share/icons/hicolor/64x64/apps/easytag.png
 share/icons/hicolor/scalable/apps/easytag.svg
+share/icons/hicolor/symbolic/apps/easytag-symbolic.svg
 %%NLS%%share/locale/bg/LC_MESSAGES/easytag.mo
+%%NLS%%share/locale/bs/LC_MESSAGES/easytag.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/easytag.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/easytag.mo
 %%NLS%%share/locale/da/LC_MESSAGES/easytag.mo
@@ -29,6 +31,7 @@ share/icons/hicolor/scalable/apps/easytag.svg
 %%NLS%%share/locale/nb/LC_MESSAGES/easytag.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/easytag.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/easytag.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/easytag.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/easytag.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/easytag.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/easytag.mo

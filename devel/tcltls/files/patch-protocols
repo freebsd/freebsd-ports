@@ -1,14 +1,5 @@
 --- tls.c	2014-12-08 14:10:28.000000000 -0500
 +++ tls.c	2015-03-25 19:37:53.000000000 -0400
-@@ -64,6 +64,6 @@
- 			Tcl_Interp *interp, int objc, Tcl_Obj *CONST objv[]));
- 
--static SSL_CTX *CTX_Init _ANSI_ARGS_((State *statePtr, int proto, char *key,
--			char *cert, char *CAdir, char *CAfile, char *ciphers));
-+static SSL_CTX *CTX_Init _ANSI_ARGS_((State *statePtr, int proto, const char *key,
-+			const char *cert, const char *CAdir, const char *CAfile, const char *ciphers));
- 
- static int	TlsLibInit _ANSI_ARGS_ (()) ;
 @@ -538,5 +538,5 @@
      case TLS_SSL2:
  #if defined(NO_SSL2)
@@ -78,21 +69,6 @@
 +    ;
      int proto = 0;
      int verify = 0, require = 0, request = 1;
-@@ -1029,9 +1029,9 @@
-     State *statePtr;
-     int proto;
--    char *key;
--    char *cert;
--    char *CAdir;
--    char *CAfile;
--    char *ciphers;
-+    const char *key;
-+    const char *cert;
-+    const char *CAdir;
-+    const char *CAfile;
-+    const char *ciphers;
- {
-     Tcl_Interp *interp = statePtr->interp;
 @@ -1050,5 +1050,5 @@
  #if defined(NO_SSL2)
      if (ENABLED(proto, TLS_PROTO_SSL2)) {

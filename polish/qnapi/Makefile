@@ -2,37 +2,32 @@
 # $FreeBSD$
 
 PORTNAME=	qnapi
-DISTVERSION=	0.1.6-rc2
-PORTREVISION=	1
+PORTVERSION=	0.1.9
 CATEGORIES=	polish multimedia
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}/
 
 MAINTAINER=	pawel@FreeBSD.org
-COMMENT=	Qt4 based subtitle downloader
+COMMENT=	Qt5 based subtitle downloader
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
+BUILD_DEPENDS=	libmaia>0:${PORTSDIR}/net/libmaia
 RUN_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
 
-USES=		qmake
-USE_QT4=	corelib gui network xml moc_build uic_build rcc_build
-USE_KDE4=	# dummy
-PLIST_SUB=	KDE4=${KDE4_PREFIX:S|${LOCALBASE}/||}
-QMAKE_ARGS=	KDE4_PREFIX=${KDE4_PREFIX}
-INSTALLS_ICONS=	yes
+USE_GITHUB=	yes
 
-PORTDOCS=	ChangeLog README.pl COPYRIGHT
+USES=		compiler:c++11-lib qmake
+USE_QT5=	buildtools_build gui network widgets xml
 
-OPTIONS_DEFINE=	DOCS
+CXXFLAGS+=	-I${LOCALBASE}/include/maia
+QMAKE_ARGS=	LIBS=-lmaia
 
 post-patch:
-	@${REINPLACE_CMD} 's|/usr/share/icons/||g' \
-		${WRKSRC}/doc/qnapi.desktop \
-		${WRKSRC}/doc/qnapi-download.desktop \
-		${WRKSRC}/doc/qnapi-download.schemas
+	@${REINPLACE_CMD} 's|/usr|${PREFIX}|; s|share/man|man|; /doc \\/d' \
+		${WRKSRC}/qnapi.pro
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|g} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} qnapi-download.desktop \
+		qnapi-scan.desktop ${STAGEDIR}${DESKTOPDIR})
 
 .include <bsd.port.mk>

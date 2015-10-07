@@ -1,0 +1,7 @@
+Raven is a Python client for Sentry (http://getsentry.com/).
+
+It provides full out-of-the-box support for many of the popular
+frameworks, including Django, Flask, and Pylons. Raven also includes
+drop-in support for any WSGI-compatible web application.
+
+WWW: https://pypi.python.org/pypi/raven

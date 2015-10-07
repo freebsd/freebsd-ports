@@ -1,6 +1,6 @@
---- ./target-ethos/Makefile.orig	2014-01-13 00:26:29.000000000 -0500
-+++ ./target-ethos/Makefile	2014-03-16 21:57:02.000000000 -0400
-@@ -27,9 +27,9 @@
+--- target-ethos/Makefile.orig	2014-01-13 05:26:29 UTC
++++ target-ethos/Makefile
+@@ -27,9 +27,9 @@ else ifeq ($(platform),linux)
    ruby += audio.alsa audio.openal audio.oss audio.pulseaudio audio.pulseaudiosimple audio.ao
    ruby += input.udev input.sdl input.x
  else ifeq ($(platform),bsd)

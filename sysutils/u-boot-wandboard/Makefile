@@ -11,7 +11,9 @@ COMMENT=	Cross-build U-Boot loader for Wandboard (solo, dual, and quad)
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=  arm-none-eabi-gcc:${PORTSDIR}/devel/arm-none-eabi-gcc
+BUILD_DEPENDS=	${CROSS_GCC}:${PORTSDIR}/devel/arm-none-eabi-gcc492
+
+CROSS_GCC=	arm-none-eabi-gcc-4.9.2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	TechNexion
@@ -27,6 +29,7 @@ PLIST_FILES=	${U_BOOT_DIR}/u-boot.imx \
 		${U_BOOT_DIR}/README
 
 MAKE_ARGS+=	ARCH=arm \
+		CC=${CROSS_GCC} \
 		CROSS_COMPILE=arm-none-eabi- \
 		HOSTCC=cc
 

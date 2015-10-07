@@ -49,6 +49,10 @@ share/help/C/gnome-color-manager/color-import-linux.page
 share/help/C/gnome-color-manager/color-import-osx.page
 share/help/C/gnome-color-manager/color-import-windows.page
 share/help/C/gnome-color-manager/legal.xml
+share/help/ca/gnome-color-manager/color-import-linux.page
+share/help/ca/gnome-color-manager/color-import-osx.page
+share/help/ca/gnome-color-manager/color-import-windows.page
+share/help/ca/gnome-color-manager/legal.xml
 share/help/cs/gnome-color-manager/color-import-linux.page
 share/help/cs/gnome-color-manager/color-import-osx.page
 share/help/cs/gnome-color-manager/color-import-windows.page
@@ -121,6 +125,7 @@ share/locale/as/LC_MESSAGES/gnome-color-manager.mo
 share/locale/ar/LC_MESSAGES/gnome-color-manager.mo
 share/locale/bg/LC_MESSAGES/gnome-color-manager.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-color-manager.mo
+share/locale/bs/LC_MESSAGES/gnome-color-manager.mo
 share/locale/ca/LC_MESSAGES/gnome-color-manager.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-color-manager.mo
 share/locale/cs/LC_MESSAGES/gnome-color-manager.mo
@@ -142,6 +147,7 @@ share/locale/he/LC_MESSAGES/gnome-color-manager.mo
 share/locale/hi/LC_MESSAGES/gnome-color-manager.mo
 share/locale/hu/LC_MESSAGES/gnome-color-manager.mo
 share/locale/id/LC_MESSAGES/gnome-color-manager.mo
+share/locale/is/LC_MESSAGES/gnome-color-manager.mo
 share/locale/it/LC_MESSAGES/gnome-color-manager.mo
 share/locale/ja/LC_MESSAGES/gnome-color-manager.mo
 share/locale/kk/LC_MESSAGES/gnome-color-manager.mo

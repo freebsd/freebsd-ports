@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	recoll
-PORTVERSION=	1.21.0
+PORTVERSION=	1.21.1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lesbonscomptes.com/${PORTNAME}/
 
@@ -10,6 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Personal full text search package, based on Xapian
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	xapian-core>=0:${PORTSDIR}/databases/xapian-core
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
@@ -21,7 +22,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		unrtf:${PORTSDIR}/textproc/unrtf
 
 USES=		bison gmake iconv shebangfix
-SHEBANG_FILES=	filters/rclimg desktop/hotrecoll.py
+SHEBANG_FILES=	filters/rclimg filters/rclpdf desktop/hotrecoll.py
+USE_GNOME=	libxslt:run
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-pic
 
@@ -41,11 +43,11 @@ CHM_DESC=		CHM via CHMLIB
 CHM_RUN_DEPENDS=	pychm:${PORTSDIR}/textproc/pychm
 DJVU_RUN_DEPENDS=	djvutxt:${PORTSDIR}/graphics/djvulibre
 IMAGE_DESC=		Store personal tags or textual descriptions in images
-IMAGE_RUN_DEPENDS=	exiftool:${PORTSDIR}/graphics/p5-Image-ExifTool-devel
+IMAGE_RUN_DEPENDS=	exiftool:${PORTSDIR}/graphics/p5-Image-ExifTool
 KONQUEROR_DESC=		Konqueror webarchive format with Python
 KONQUEROR_RUN_DEPENDS=	kwebkitpart:${PORTSDIR}/www/kwebkitpart
-LATEX_RUN_DEPENDS=	detex:${PORTSDIR}/print/detex \
-			dvips:${PORTSDIR}/print/tex-dvipsk
+LATEX_USE=		tex=dvipsk:run
+#LATEX_RUN_DEPENDS=	detex:${PORTSDIR}/print/detex
 PDF_RUN_DEPENDS=	xpdf:${PORTSDIR}/graphics/xpdf
 PS_RUN_DEPENDS=		pstotext:${PORTSDIR}/print/pstotext
 PYTHON_USES=		python

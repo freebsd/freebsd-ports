@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	JuicyPixels
-PORTVERSION=	3.1.6.1
-PORTREVISION=	1
+PORTVERSION=	3.2.6
 CATEGORIES=	graphics haskell
 
 MAINTAINER=	haskell@FreeBSD.org

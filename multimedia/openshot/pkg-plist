@@ -2095,7 +2095,3 @@ share/omf/openshot/openshot-pt_BR.omf
 share/omf/openshot/openshot-sk.omf
 share/omf/openshot/openshot-zh_TW.omf
 share/pixmaps/openshot.svg
-@comment setup.py already runs update-mime-database during install
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@comment setup.py also runs update-desktop-database during install
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

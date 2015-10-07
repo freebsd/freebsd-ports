@@ -1,6 +1,6 @@
---- chessx.pro_orig	2014-03-21 10:53:31.321941038 +0100
-+++ chessx.pro	2014-03-21 10:54:00.294938611 +0100
-@@ -323,6 +323,15 @@
+--- chessx.pro.orig	2015-05-05 13:46:26 UTC
++++ chessx.pro
+@@ -393,6 +393,15 @@ macx {
   QMAKE_INFO_PLIST = mac_osx/Info.plist
  }
  

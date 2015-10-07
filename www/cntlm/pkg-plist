@@ -1,5 +1,3 @@
 bin/cntlm
-@unexec if cmp -s %D/etc/cntlm.conf.sample %D/etc/cntlm.conf; then rm -f %D/etc/cntlm.conf; fi
-etc/cntlm.conf.sample
-@exec if [ ! -f %D/etc/cntlm.conf ]; then cp -p %D/%F %B/cntlm.conf; fi
+@sample etc/cntlm.conf.sample
 man/man1/cntlm.1.gz

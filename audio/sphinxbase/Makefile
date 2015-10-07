@@ -28,21 +28,12 @@ OPTIONS_DEFAULT=	THREADS
 SNDFILE_DESC=	libsndfile support
 THREADS_DESC=	Build with thread safety support
 
-.include <bsd.port.options.mk>
+SNDFILE_USES=		pkgconfig
+SNDFILE_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
+SNDFILE_CONFIGURE_ENV_OFF=	HAVE_PKGCONFIG=no
 
-.if ${PORT_OPTIONS:MSNDFILE}
-USES+=		pkgconfig
-LIB_DEPENDS+=	libsndfile.so:${PORTSDIR}/audio/libsndfile
-.else
-CONFIGURE_ENV+=	HAVE_PKGCONFIG=no
-.endif
-
-.if ${PORT_OPTIONS:MTHREADS}
-LDFLAGS+=		-lpthread
-CONFIGURE_ARGS+=	--enable-threads
-.else
-CONFIGURE_ARGS+=	--disable-threads
-.endif
+THREADS_LDFLAGS=		-lpthread
+THREADS_CONFIGURE_ENABLE=	threads
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsphinx*.so

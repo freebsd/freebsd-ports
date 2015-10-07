@@ -3,6 +3,7 @@
 
 PORTNAME=	openssl
 PORTVERSION=	1.0.2d
+PORTREVISION=	1
 CATEGORIES=	devel security
 MASTER_SITES=	http://www.openssl.org/source/ \
 		ftp://ftp.openssl.org/source/ \
@@ -18,7 +19,8 @@ BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend \
 		${LOCALBASE}/mingw32/include/stdlib.h:${PORTSDIR}/devel/${PKGNAMEPREFIX}bin-msvcrt \
 		${LOCALBASE}/mingw32/lib/libz.a:${PORTSDIR}/devel/mingw32-zlib
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	apps/tsget
 USE_PERL5=	build
 MAKE_JOBS_UNSAFE=	yes
 CONFIGURE_PREFIX=	${PREFIX}/mingw32

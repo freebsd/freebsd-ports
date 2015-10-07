@@ -6,4 +6,4 @@ bin/podhtmleasy.sh
 %%SITE_PERL%%/Pod/HtmlEasy/Data.pm
 %%SITE_PERL%%/Pod/HtmlEasy/Parser.pm
 %%SITE_PERL%%/Pod/HtmlEasy.pm
-man/man1/pod2indexed_html.pl.1.gz
+%%PERL5_MAN1%%/pod2indexed_html.pl.1.gz

@@ -3,7 +3,7 @@
 
 PORTNAME=	springlobby
 PORTVERSION=	0.180
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games net
 MASTER_SITES=	http://www.springlobby.info/tarballs/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -18,11 +18,10 @@ RUN_DEPENDS=	spring:${PORTSDIR}/games/spring
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
-USES=		cmake pkgconfig compiler:c++11-lib tar:bzip2
+USES=		cmake compiler:c++11-lib pkgconfig tar:bzip2
 CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE="${WX_CONFIG}" \
 		-DENABLE_DEBUG_REPORT=FALSE
 USE_WX=		2.8+
-WX_UNICODE=	yes
 
 PORTDOCS=	*
 
@@ -45,11 +44,5 @@ SOUND_USES=		openal:al
 NOTIFY_CMAKE_ON=	-DOPTION_NOTIFY=ON
 NOTIFY_CMAKE_OFF=	-DOPTION_NOTIFY=OFF
 NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 901000
-IGNORE=		does not build (no strtoll(3) support)
-.endif
 
 .include <bsd.port.mk>

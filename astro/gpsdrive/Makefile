@@ -36,13 +36,10 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_USES_OFF=	gettext-tools
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} 's/test "$$CC" = "gcc"/false/' ${WRKSRC}/configure
-.if empty(PORT_OPTIONS:MNLS)
+post-patch-NLS-off:
 	@${REINPLACE_CMD} 's|SUBDIRS = src po man|SUBDIRS = src man|' \
 		${WRKSRC}/Makefile.in
-.endif
 
 .include <bsd.port.mk>

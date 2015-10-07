@@ -1,0 +1,10 @@
+--- Makefile.in.orig	2015-06-23 10:18:34 UTC
++++ Makefile.in
+@@ -835,6 +835,7 @@ uninstall-am: uninstall-dist_binSCRIPTS 
+ 
+ 
+ install-exec-local :
++	-chmod u+w $(DESTDIR)/$(bindir)/mmaker
+ 	echo "#!/usr/bin/env $(PYTHON_BIN)" > $(DESTDIR)/$(bindir)/mmaker
+ 	echo "import sys; sys.path = ['$(pkgdatadir)'] + sys.path" >> $(DESTDIR)/$(bindir)/mmaker
+ 	echo "import MenuMaker.CLI" >> $(DESTDIR)/$(bindir)/mmaker

@@ -3,6 +3,7 @@
 
 PORTNAME=	libaccounts-glib
 PORTVERSION=	1.18
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://drive.google.com/uc?export=download&id=0B8fX9XOwH_g4U1NzNmg0cWoxNGM&dummy= \
 		LOCAL/rakuco

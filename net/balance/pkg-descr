@@ -1,4 +1,4 @@
-Balance is a simple but powerful generic tcp proxy with round robin load
+Balance is a simple but powerful generic TCP proxy with round robin load
 balancing and failover mechanisms. Its behaviour can be controlled at runtime
 using a simple command line syntax.
 

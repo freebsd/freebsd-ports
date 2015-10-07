@@ -29,7 +29,6 @@ PLIST_FILES=	${SCRIPT_FILES:C/^.*/bin\/&/g} ${PYLIB_FILES:C/^.*/bin\/&/g}
 SHEBANG_LANG=	python
 SHEBANG_FILES=	${SCRIPT_FILES:C/^.*/&\.py/g} \
 		../../Lib/tabnanny.py ../../Lib/timeit.py
-python_CMD=	${PYTHON_CMD}
 
 UNIQUE_SUFFIX=		-${PYTHON_VER}
 UNIQUE_SUFFIX_FILES=	${SCRIPT_FILES:C/^.*/bin\/&/g} \

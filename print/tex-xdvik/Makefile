@@ -16,7 +16,7 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libpaper.so:${PORTSDIR}/print/libpaper
 RUN_DEPENDS=	tex-dvipsk>=5.995:${PORTSDIR}/print/tex-dvipsk
 
-USES=		iconv gmake motif
+USES=		iconv motif
 USE_TEX=	web2c kpathsea texmf texhash
 TEXHASHDIRS=	${TEXMFDISTDIR}
 USE_XORG=	ice sm x11 xmu xpm xt xi

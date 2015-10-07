@@ -20,7 +20,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		gettext gmake libtool pathfix tar:bzip2
 USE_GL=		glu
-USE_GNOME=	gconf2 libxslt
+USE_GNOME=	gconf2 libxslt intltool
 USE_XORG=	glproto ice sm x11 xcomposite xdamage xext xfixes xinerama \
 		xrandr xrender
 USE_LDCONFIG=	yes

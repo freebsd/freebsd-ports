@@ -1,6 +1,6 @@
---- plugins/sudoers/audit.c.orig	2014-09-24 01:40:15.000000000 +0900
-+++ plugins/sudoers/audit.c	2014-10-10 07:24:43.000000000 +0900
-@@ -42,6 +42,7 @@
+--- plugins/sudoers/audit.c.orig	2015-07-15 18:44:07 UTC
++++ plugins/sudoers/audit.c
+@@ -24,6 +24,7 @@
  
  #ifdef HAVE_BSM_AUDIT
  # include "bsm_audit.h"

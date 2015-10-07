@@ -1,6 +1,6 @@
---- check.m4.orig	2008-12-29 21:48:46.000000000 +0800
-+++ check.m4	2009-01-07 09:02:41.452952376 +0800
-@@ -21,8 +21,20 @@
+--- check.m4.orig	2015-08-02 19:31:25 UTC
++++ check.m4
+@@ -21,8 +21,20 @@ AC_DEFUN([AM_PATH_CHECK],
        CHECK_CFLAGS="-I$with_check/include"
        CHECK_LIBS="-L$with_check/lib -lcheck"
      else

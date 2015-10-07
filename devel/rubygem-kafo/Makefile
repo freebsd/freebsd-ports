@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	kafo
-PORTVERSION=	0.6.11
-CATEGORIES=	devel ruby
+PORTVERSION=	0.6.12
+CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	mmoll@FreeBSD.org

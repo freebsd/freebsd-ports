@@ -3,7 +3,7 @@
 
 PORTNAME=	libp11
 PORTVERSION=	0.2.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security devel
 MASTER_SITES=	SF/opensc/${PORTNAME}
 
@@ -28,11 +28,7 @@ CONFIGURE_ENV=	LTLIB_CFLAGS="-I${LOCALBASE}/include" \
 
 PORTDOCS=	*
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-CONFIGURE_ARGS+=--enable-doc
-.endif
+DOCS_CONFIGURE_ON=	--enable-doc
 
 post-patch:
 	@${REINPLACE_CMD} 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
@@ -40,7 +36,7 @@ post-patch:
 	@${REINPLACE_CMD} 's|install-data-am: install-apidocDATA install-dist_docDATA|install-data-am: install-dist_docDATA|' \
 		${WRKSRC}/doc/Makefile.in
 
-post-install:
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA}	${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 

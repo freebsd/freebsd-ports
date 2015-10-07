@@ -11,10 +11,12 @@ man/man8/virtlockd.8.gz
 @sample %%ETCDIR%%/libvirt.conf.sample
 @sample %%ETCDIR%%/libvirtd.conf.sample
 %%QEMU%%@sample %%ETCDIR%%/qemu.conf.sample
+%%XEN%%@sample %%ETCDIR%%/libxl.conf.sample
 %%ETCDIR%%/virtlockd.conf
 %%ETCDIR%%/qemu/networks/default.xml
 %%ETCDIR%%/qemu/networks/autostart/default.xml
 %%QEMU%%%%ETCDIR%%/qemu-lockd.conf
+%%XEN%%%%ETCDIR%%/libxl-lockd.conf
 etc/logrotate.d/libvirtd
 etc/logrotate.d/libvirtd.lxc
 etc/logrotate.d/libvirtd.qemu
@@ -36,6 +38,9 @@ include/libvirt/libvirt-storage.h
 include/libvirt/libvirt-stream.h
 include/libvirt/virterror.h
 lib/libvirt/lock-driver/lockd.so
+lib/libvirt-admin.so
+lib/libvirt-admin.so.0
+lib/libvirt-admin.so.%%SHLIB_VER%%
 lib/libvirt-lxc.so
 lib/libvirt-lxc.so.0
 lib/libvirt-lxc.so.%%SHLIB_VER%%
@@ -61,6 +66,8 @@ share/augeas/lenses/virtlockd.aug
 share/augeas/lenses/tests/test_libvirtd.aug
 share/augeas/lenses/tests/test_virtlockd.aug
 %%QEMU%%share/augeas/lenses/tests/test_libvirtd_qemu.aug
+%%XEN%%share/augeas/lenses/libvirtd_libxl.aug
+%%XEN%%share/augeas/lenses/tests/test_libvirtd_libxl.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/32favicon.png
 %%DOCSDIR%%%%PORTVERSION%%/html/404.html
 %%DOCSDIR%%%%PORTVERSION%%/html/acl.html
@@ -91,7 +98,6 @@ share/augeas/lenses/tests/test_virtlockd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/drvhyperv.html
 %%DOCSDIR%%%%PORTVERSION%%/html/drvlxc.html
 %%DOCSDIR%%%%PORTVERSION%%/html/drvopenvz.html
-%%DOCSDIR%%%%PORTVERSION%%/html/drvparallels.html
 %%DOCSDIR%%%%PORTVERSION%%/html/drvphyp.html
 %%DOCSDIR%%%%PORTVERSION%%/html/drvqemu.html
 %%DOCSDIR%%%%PORTVERSION%%/html/drvremote.html
@@ -99,6 +105,7 @@ share/augeas/lenses/tests/test_virtlockd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/drvuml.html
 %%DOCSDIR%%%%PORTVERSION%%/html/drvvbox.html
 %%DOCSDIR%%%%PORTVERSION%%/html/drvvmware.html
+%%DOCSDIR%%%%PORTVERSION%%/html/drvvirtuozzo.html
 %%DOCSDIR%%%%PORTVERSION%%/html/drvxen.html
 %%DOCSDIR%%%%PORTVERSION%%/html/errors.html
 %%DOCSDIR%%%%PORTVERSION%%/html/et.png
@@ -284,11 +291,15 @@ lib/libvirt/connection-driver/libvirt_driver_network.so
 lib/libvirt/connection-driver/libvirt_driver_secret.so
 lib/libvirt/connection-driver/libvirt_driver_storage.so
 lib/libvirt/connection-driver/libvirt_driver_vbox.so
+%%XEN%%lib/libvirt/connection-driver/libvirt_driver_libxl.so
 %%QEMU%%@dir /var/run/libvirt/qemu
 %%QEMU%%@dir /var/lib/libvirt/qemu/channel/target
 %%QEMU%%@dir /var/lib/libvirt/qemu/channel
 %%QEMU%%@dir /var/lib/libvirt/qemu
 %%QEMU%%@dir /var/cache/libvirt/qemu
+%%XEN%%@dir /var/lib/libvirt/libxl
+%%XEN%%@dir /var/log/libvirt/libxl
+%%XEN%%@dir /var/run/libvirt/libxl
 @dir /var/cache/libvirt
 @dir /var/lib/libvirt/boot
 @dir /var/lib/libvirt/dnsmasq

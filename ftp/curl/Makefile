@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	curl
-PORTVERSION=	7.43.0
-PORTREVISION=	2
+PORTVERSION=	7.44.0
 CATEGORIES=	ftp www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		LOCAL/sunpoet
@@ -19,18 +18,28 @@ OPTIONS_SINGLE=	GSSAPI
 OPTIONS_RADIO_RESOLV=	CARES THREADED_RESOLVER
 OPTIONS_RADIO_SSL=	GNUTLS NSS OPENSSL POLARSSL WOLFSSL
 OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_NONE
-OPTIONS_DEFAULT=	CA_BUNDLE COOKIES GSSAPI_BASE IPV6 OPENSSL PROXY RESOLV THREADED_RESOLVER TLS_SRP
+OPTIONS_DEFAULT=	CA_BUNDLE COOKIES IPV6 OPENSSL PROXY RESOLV THREADED_RESOLVER TLS_SRP
 CA_BUNDLE_DESC=		Install CA bundle for OpenSSL
+CA_BUNDLE_IMPLIES=	OPENSSL
 COOKIES_DESC=		Cookies support
 CURL_DEBUG_DESC=	cURL debug memory tracking
 GSSAPI_BASE_DESC=	GSSAPI support via base system (Kerberos required)
 GSSAPI_HEIMDAL_DESC=	GSSAPI support via security/heimdal
 GSSAPI_MIT_DESC=	GSSAPI support via security/krb5
 GSSAPI_NONE_DESC=	Disable GSSAPI support
+LDAPS_IMPLIES=		LDAP
 LIBSSH2_DESC=		SCP/SFTP support via libssh2
+LIBSSH2_IMPLIES=	OPENSSL
 RESOLV_DESC=		DNS resolving options
 THREADED_RESOLVER_DESC=	Threaded DNS resolver
 TLS_SRP_DESC=		TLS-SRP (Secure Remote Password) support
+
+LOCALBASE?=	/usr/local
+.if defined(WITH_OPENSSL_PORT) || (!defined(WITH_OPENSSL_BASE) && exists(${LOCALBASE}/lib/libcrypto.so))
+OPTIONS_DEFAULT+=	GSSAPI_NONE
+.else
+OPTIONS_DEFAULT+=	GSSAPI_BASE
+.endif
 
 CONFIGURE_ARGS+=--disable-werror \
 		--enable-imap --enable-pop3 --enable-rtsp --enable-smtp \
@@ -39,6 +48,9 @@ CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE} \
 		ac_cv_func_SSLv2_client_method=no
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+NO_PERL5_TEST=	yes
+TEST_ENV=	${MAKE_ENV} LC_ALL=C
+TEST_TARGET=	test
 USE_PERL5=	build
 USES=		libtool pathfix perl5 tar:lzma
 
@@ -142,24 +154,12 @@ WOLFSSL_LIB_DEPENDS=	libwolfssl.so:${PORTSDIR}/security/wolfssl
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MCA_BUNDLE} && !${PORT_OPTIONS:MOPENSSL}
-IGNORE=		only supports CA bundle with OpenSSL
-.endif
-
 .if !${PORT_OPTIONS:MGNUTLS} && !${PORT_OPTIONS:MOPENSSL} && ${PORT_OPTIONS:MTLS_SRP}
 IGNORE=		only supports TLS-SRP with either OpenSSL or GnuTLS
 .endif
 
-.if !${PORT_OPTIONS:MLDAP} && ${PORT_OPTIONS:MLDAPS}
-IGNORE=		only supports LDAPS with LDAP
-.endif
-
 .if ${PORT_OPTIONS:MLDAPS} && !${PORT_OPTIONS:MGNUTLS} && !${PORT_OPTIONS:MNSS} && !${PORT_OPTIONS:MOPENSSL} && !${PORT_OPTIONS:MPOLARSSL} && !${PORT_OPTIONS:MWOLFSSL}
 IGNORE=		only supports LDAPS with SSL
-.endif
-
-.if ${PORT_OPTIONS:MLIBSSH2} && !${PORT_OPTIONS:MOPENSSL}
-IGNORE=		only supports LIBSSH2 with OpenSSL
 .endif
 
 .if ${PORT_OPTIONS:MGSSAPI_BASE} && ${PORT_OPTIONS:MOPENSSL} && (defined(WITH_OPENSSL_PORT) || (!defined(WITH_OPENSSL_BASE) && exists(${LOCALBASE}/lib/libcrypto.so)))
@@ -181,25 +181,26 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|include <gssapi.h>|include <gssapi/gssapi.h>|' ${WRKSRC}/lib/curl_gssapi.h ${WRKSRC}/lib/urldata.h
 	@${REINPLACE_CMD} -e 's|gss_nt_service_name|GSS_C_NT_HOSTBASED_SERVICE|' ${WRKSRC}/lib/curl_sasl_gssapi.c
 
-post-install:
 .if !defined(BUILDING_HIPHOP)
+post-install:
 	${LN} -s libcurl.so.4 ${STAGEDIR}${PREFIX}/lib/libcurl.so.7
 	${INSTALL_DATA} ${WRKSRC}/docs/libcurl/libcurl.m4 ${STAGEDIR}${PREFIX}/share/aclocal/
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/ ${STAGEDIR}${DOCSDIR}/libcurl/
 	cd ${WRKSRC}/docs/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}/
-	cd ${WRKSRC}/docs/libcurl/ && ${INSTALL_DATA} ABI *.html *.pdf *.m4 ${STAGEDIR}${DOCSDIR}/libcurl/
+	cd ${WRKSRC}/docs/libcurl/ && ${INSTALL_DATA} ABI *.html *.m4 *.pdf ${STAGEDIR}${DOCSDIR}/libcurl/
+
+post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	cd ${WRKSRC}/docs/examples/ && ${INSTALL_DATA} README Makefile.example makefile* *.c *.cpp ${STAGEDIR}${EXAMPLESDIR}/
 .endif
 
-regression-test test: build
-.if !${PORT_OPTIONS:MPROXY}
+pre-test-PROXY-off:
 	@${ECHO_MSG} "******************************************"
 	@${ECHO_MSG} "* You have disabled curl proxy support.  *"
 	@${ECHO_MSG} "* Some tests SHALL FAIL!                 *"
 	@${ECHO_MSG} "* This is being addressed.               *"
 	@${ECHO_MSG} "******************************************"
-.endif
-	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} LC_ALL=C ${MAKE_CMD} test
 
 .include <bsd.port.mk>

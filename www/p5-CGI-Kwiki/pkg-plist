@@ -64,4 +64,4 @@ bin/kwiki-install
 %%PERL5_MAN3%%/CGI::Kwiki::Slides.3.gz
 %%PERL5_MAN3%%/CGI::Kwiki::Style.3.gz
 %%PERL5_MAN3%%/CGI::Kwiki::Template.3.gz
-man/man1/kwiki-install.1.gz
+%%PERL5_MAN1%%/kwiki-install.1.gz

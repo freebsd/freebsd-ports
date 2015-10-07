@@ -48,8 +48,6 @@ MAKE_ENV+=	SAGE_PORT=yes \
 		SAGE_FAT_BINARY=yes \
 		PERL=${PERL}
 
-LATEST_LINK=	sage-math	# Conflicts with graphics/sage.
-
 # The following is needed for the lapack subpackage.
 MAKE_ARGS+=	ARCH="${AR}"
 

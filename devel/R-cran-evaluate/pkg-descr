@@ -1,0 +1,4 @@
+Parsing and evaluation tools that make it easy to recreate the
+command line behaviour of R.
+
+WWW: https://cran.r-project.org/web/packages/evaluate/

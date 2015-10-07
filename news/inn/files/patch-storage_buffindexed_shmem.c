@@ -26,8 +26,8 @@ Note that the documentation for linux semget differs, and seems to allow but ign
 
 Patch attached with submission follows:
 
---- storage/buffindexed/shmem.c.orig	2012-08-27 23:39:42.000000000 -0700
-+++ storage/buffindexed/shmem.c	2012-08-27 23:37:50.000000000 -0700
+--- storage/buffindexed/shmem.c.orig	2015-09-12 15:25:22.000000000 +0200
++++ storage/buffindexed/shmem.c	2015-09-21 21:15:18.448425000 +0200
 @@ -26,7 +26,9 @@
  static int smcGetSemaphore(const char *name)
  {
@@ -39,7 +39,7 @@ Patch attached with submission follows:
  
      if (id < 0) {
          syswarn("semget failed to get semaphore for %s", name);
-@@ -37,15 +39,17 @@
+@@ -37,15 +39,17 @@ static int smcGetSemaphore(const char *n
  static int smcCreateSemaphore(const char *name)
  {
      key_t kt = ftok( (char *)name, 0 );
@@ -60,7 +60,7 @@ Patch attached with submission follows:
                  return id;
              }
              /* try to remove it */
-@@ -65,7 +69,7 @@
+@@ -65,7 +69,7 @@ static int smcCreateSemaphore(const char
              }
  #endif
              /* and retry creating it */
@@ -69,5 +69,3 @@ Patch attached with submission follows:
          }
      }
      if (id < 0)
-
-

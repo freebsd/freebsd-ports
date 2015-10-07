@@ -18,6 +18,7 @@ BUILD_DEPENDS=	p5-IO-Socket-SSL>=0.98:${PORTSDIR}/security/p5-IO-Socket-SSL \
 		p5-Net-HTTP>=0:${PORTSDIR}/net/p5-Net-HTTP
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

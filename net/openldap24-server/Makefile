@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		openldap
-DISTVERSION=		2.4.41
+DISTVERSION=		2.4.42
 PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
 MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
@@ -29,8 +29,6 @@ CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.[0-3].* \
 .endif
 .else
 PKGNAMESUFFIX?=		-server
-# Do not use ${PKGNAMESUFFIX} here has it can change later
-OPTIONSFILE?=		${PORT_DBDIR}/${PORTNAME}24-server/options
 .endif
 EXTRACT_SUFX=		.tgz
 
@@ -58,10 +56,10 @@ WANT_OPENLDAP_VER?=	24
 BROKEN=			incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
 
-PORTREVISION_CLIENT=	0
-PORTREVISION_SERVER=	0
+PORTREVISION_CLIENT=	2
+PORTREVISION_SERVER=	2
 OPENLDAP_SHLIB_MAJOR=	2
-OPENLDAP_SHLIB_MINOR=	10.4
+OPENLDAP_SHLIB_MINOR=	10.5
 OPENLDAP_MAJOR=		${DISTVERSION:R}
 
 OPTIONS_DEFINE=		DEBUG FETCH GSSAPI
@@ -191,6 +189,15 @@ CONFIGURE_ARGS=		--with-threads=posix \
 # XXX FreeBSD does not implement O_DSYNC and fdatasync at this time.
 CFLAGS+=		-DMDB_DSYNC=O_SYNC -Dfdatasync=fsync
 
+.if ${PORT_OPTIONS:MDEBUG}
+CONFIGURE_ARGS+=	--enable-debug=yes
+.else
+CONFIGURE_ARGS+=	--disable-debug
+CFLAGS+=		-DNDEBUG
+.endif
+
+MAKE_ENV+=		STRIP=${STRIP}
+
 .if !${PORT_OPTIONS:MFETCH}
 CONFIGURE_ARGS+=	--without-fetch
 .endif
@@ -275,12 +282,6 @@ CONFIGURE_ARGS+=	--enable-constraint=${OVERLAY_ENABLE}
 .if ${PORT_OPTIONS:MDDS}
 CONFIGURE_ARGS+=	--enable-dds=${OVERLAY_ENABLE}
 .endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-debug=yes
-.endif
-
-MAKE_ENV+=		STRIP=${STRIP}
 
 .if ${PORT_OPTIONS:MDEREF}
 CONFIGURE_ARGS+=	--enable-deref=${OVERLAY_ENABLE}

@@ -231,3 +231,6 @@ lib/treeline/undo.pyc
 %%PORTDOCS%%%%DOCSDIR%%/sample_intern_links.trl
 %%PORTDOCS%%%%DOCSDIR%%/sample_other_fields.trl
 %%PORTDOCS%%%%DOCSDIR%%/sample_table_booklist.trl
+@comment %%DOCSDIR%%/INSTALL
+@comment %%DOCSDIR%%/LICENSE
+@dir lib/treeline/plugins

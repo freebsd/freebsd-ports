@@ -17,6 +17,8 @@
 %%T%%/bin/tomcat-native.tar.gz
 %%T%%/bin/tool-wrapper.sh
 %%T%%/bin/version.sh
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 @sample %%T%%/conf/catalina.policy.sample
 @sample %%T%%/conf/catalina.properties.sample
 @sample %%T%%/conf/context.xml.sample
@@ -25,13 +27,16 @@
 @sample %%T%%/conf/tomcat-users.xml.sample
 @sample %%T%%/conf/tomcat-users.xsd.sample
 @sample %%T%%/conf/web.xml.sample
+@dir %%T%%/conf
+@owner
+@group
 %%T%%/lib/annotations-api.jar
 %%T%%/lib/catalina-ant.jar
 %%T%%/lib/catalina-ha.jar
 %%T%%/lib/catalina-storeconfig.jar
 %%T%%/lib/catalina-tribes.jar
 %%T%%/lib/catalina.jar
-%%T%%/lib/ecj-4.4.jar
+%%T%%/lib/ecj-4.4.2.jar
 %%T%%/lib/el-api.jar
 %%T%%/lib/jasper-el.jar
 %%T%%/lib/jasper.jar
@@ -45,12 +50,14 @@
 %%T%%/lib/tomcat-i18n-ja.jar
 %%T%%/lib/tomcat-jdbc.jar
 %%T%%/lib/tomcat-jni.jar
-%%T%%/lib/tomcat-spdy.jar
 %%T%%/lib/tomcat-util-scan.jar
 %%T%%/lib/tomcat-util.jar
 %%T%%/lib/tomcat-websocket.jar
 %%T%%/lib/websocket-api.jar
 %%T%%/temp/safeToDelete.tmp
+@dir %%T%%/temp
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%T%%/webapps/ROOT/RELEASE-NOTES.txt
 %%T%%/webapps/ROOT/WEB-INF/web.xml
 %%T%%/webapps/ROOT/asf-logo-wide.gif
@@ -95,8 +102,8 @@
 %%T%%/webapps/docs/architecture/index.html
 %%T%%/webapps/docs/architecture/overview.html
 %%T%%/webapps/docs/architecture/requestProcess.html
-%%T%%/webapps/docs/architecture/requestProcess/requestProcess.pdf
-%%T%%/webapps/docs/architecture/requestProcess/roseModel.mdl
+%%T%%/webapps/docs/architecture/requestProcess/authentication-process.png
+%%T%%/webapps/docs/architecture/requestProcess/request-process.png
 %%T%%/webapps/docs/architecture/startup.html
 %%T%%/webapps/docs/architecture/startup/serverStartup.pdf
 %%T%%/webapps/docs/architecture/startup/serverStartup.txt
@@ -395,8 +402,8 @@
 %%T%%/webapps/examples/WEB-INF/jsp/debug-taglib.tld
 %%T%%/webapps/examples/WEB-INF/jsp/example-taglib.tld
 %%T%%/webapps/examples/WEB-INF/jsp2/jsp2-example-taglib.tld
-%%T%%/webapps/examples/WEB-INF/lib/jstl.jar
-%%T%%/webapps/examples/WEB-INF/lib/standard.jar
+%%T%%/webapps/examples/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar
+%%T%%/webapps/examples/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar
 %%T%%/webapps/examples/WEB-INF/tags/displayProducts.tag
 %%T%%/webapps/examples/WEB-INF/tags/helloWorld.tag
 %%T%%/webapps/examples/WEB-INF/tags/panel.tag
@@ -632,8 +639,10 @@
 %%T%%/webapps/manager/index.jsp
 %%T%%/webapps/manager/status.xsd
 %%T%%/webapps/manager/xform.xsl
-@dir %%T%%/endorsed
-@dir %%T%%/logs
+@dir %%T%%/webapps
 @dir %%T%%/work
-@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%T%%/conf %D/%%T%%/logs %D/%%T%%/temp %D/%%T%%/webapps %D/%%T%%/work
+@dir %%T%%/logs
+@owner
+@group
+@dir %%T%%/endorsed
 @unexec [ ! -d %D/%%T%% ] || echo If permanently deleting this package, %D/%%T%% must be removed manually

@@ -24,7 +24,6 @@ USES=			shebangfix python:2.7
 USE_PYTHON=		distutils autoplist
 
 SHEBANG_LANG=		python python2
-python_CMD=		${PYTHON_CMD}
 python2_OLD_CMD=	/usr/bin/env python
 python2_CMD=		${PYTHON_CMD}
 SHEBANG_FILES=		cvs2svn cvs2git cvs2bzr *.py \

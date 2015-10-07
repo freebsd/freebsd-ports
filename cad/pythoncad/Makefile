@@ -8,7 +8,7 @@ CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/R${PORTVERSION}%20PyGtk/Source
 DISTNAME=	PythonCAD-DS1-R${PORTVERSION}
 
-MAINTAINER=	fbsd-ports@xbsd.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source CAD package built designed around Python
 
 LICENSE=	GPLv2
@@ -20,6 +20,7 @@ USES=			python
 USE_PYTHON=		distutils
 PYDISTUTILS_PKGNAME=	PythonCAD
 PYDISTUTILS_PKGVERSION=	DS1-R${PORTVERSION}
+NO_ARCH=		yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \

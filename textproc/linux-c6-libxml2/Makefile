@@ -3,7 +3,7 @@
 
 PORTNAME=	libxml2
 PORTVERSION=	2.7.6
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	textproc linux
 MASTER_SITES=	CENTOS_LINUX_UPDATES
 
@@ -21,11 +21,6 @@ USE_LDCONFIG=	yes
 
 DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	AUTHORS ChangeLog.gz Copyright NEWS README TODO
-
-PLIST_FILES=	usr/bin/xmlcatalog usr/bin/xmllint \
-		usr/lib/libxml2.so.2 usr/lib/libxml2.so.${PORTVERSION} \
-		usr/share/man/man1/xmlcatalog.1.gz \
-		usr/share/man/man1/xmllint.1.gz usr/share/man/man3/libxml.3.gz
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 

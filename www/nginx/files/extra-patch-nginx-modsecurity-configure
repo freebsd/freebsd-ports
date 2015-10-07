@@ -1,20 +1,25 @@
---- ../modsecurity-2.9.0/configure.orig	2014-04-15 16:44:15.000000000 +0400
-+++ ../modsecurity-2.9.0/configure	2014-08-10 21:24:00.000000000 +0400
-@@ -14664,7 +14664,7 @@
+--- ../modsecurity-2.9.0/configure.orig	2015-02-12 22:08:46.000000000 +0300
++++ ../modsecurity-2.9.0/configure	2015-08-10 02:53:29.046156000 +0300
+@@ -14949,7 +14949,7 @@
+ LUA_LDADD=""
+ LUA_LDFLAGS=""
+ LUA_CONFIG=${PKG_CONFIG}
+-LUA_PKGNAMES="lua5.1 lua-5.1 lua_5.1 lua-51 lua_51 lua51 lua5 lua"
++LUA_PKGNAMES="luajit"
+ LUA_SONAMES="so la sl dll dylib a"
+ 
+ 
+@@ -14965,7 +14965,7 @@
    no) :
      test_paths= ;; #(
    yes) :
 -    test_paths="/usr/local/liblua /usr/local/lua /usr/local /opt/liblua /opt/lua /opt /usr" ;; #(
-+    test_paths="%%PREFIX%%/liblua %%PREFIX%%/lua %%PREFIX%% /opt/liblua /opt/lua /opt /usr" ;; #(
++    test_paths="%%PREFIX%%/include/luajit-2.0" ;; #(
    *) :
      test_paths="${with_lua}" ;;
  esac
-@@ -14715,10 +14715,10 @@
-     LUA_CFLAGS="`${LUA_CONFIG} ${LUA_PKGNAME} --cflags`"
-     if test "$verbose_output" -eq 1; then { $as_echo "$as_me:${as_lineno-$LINENO}: lua CFLAGS: $LUA_CFLAGS" >&5
- $as_echo "$as_me: lua CFLAGS: $LUA_CFLAGS" >&6;}; fi
--    LUA_LDADD="`${LUA_CONFIG} ${LUA_PKGNAME} --libs-only-l`"
-+    LUA_LDADD="`${LUA_CONFIG} ${LUA_PKGNAME} --libs-only-l | sed 's/lua/lua-5.1/'`"
+@@ -15019,7 +15019,7 @@
+     LUA_LDADD="`${LUA_CONFIG} ${LUA_PKGNAME} --libs-only-l`"
      if test "$verbose_output" -eq 1; then { $as_echo "$as_me:${as_lineno-$LINENO}: lua LDADD: $LUA_LDADD" >&5
  $as_echo "$as_me: lua LDADD: $LUA_LDADD" >&6;}; fi
 -    LUA_LDFLAGS="`${LUA_CONFIG} ${LUA_PKGNAME} --libs-only-L --libs-only-other`"

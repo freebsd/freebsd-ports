@@ -1,6 +1,6 @@
---- pim_proto.c.orig	2014-01-26 12:48:37.048478574 +0100
-+++ pim_proto.c	2014-01-26 12:51:08.180470630 +0100
-@@ -669,7 +669,7 @@
+--- pim_proto.c.orig	1999-11-30 17:58:53 UTC
++++ pim_proto.c
+@@ -669,7 +669,7 @@ receive_pim_join_prune(src, dst, pim_mes
  			    "\tPRUNE src %s, group %s - scheduling delayed join",
  			    inet_fmt(source, s1), inet_fmt(group, s2));
  		    

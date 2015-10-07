@@ -23,13 +23,12 @@ OPTIONS_DEFINE=	DOCS
 
 USES=		zip
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 GIMP_SCRIPTS_DIR?=	share/gimp/scripts
 
 # installation dir
 PLIST_SUB=	GIMP_SCRIPTS_DIR=${GIMP_SCRIPTS_DIR}
-
-.include <bsd.port.options.mk>
 
 # installed docs
 PORTDOCS=	*
@@ -37,10 +36,10 @@ PORTDOCS=	*
 do-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \*.scm \
 		${STAGEDIR}${PREFIX}/${GIMP_SCRIPTS_DIR})
+
 # install docs
-.if ${PORT_OPTIONS:MDOCS}
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/z_README ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

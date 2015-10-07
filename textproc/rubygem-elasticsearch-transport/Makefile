@@ -5,7 +5,7 @@
 # and textproc/rubygem-elasticsearch-api
 
 PORTNAME=	elasticsearch-transport
-PORTVERSION=	1.0.12
+PORTVERSION=	1.0.13
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

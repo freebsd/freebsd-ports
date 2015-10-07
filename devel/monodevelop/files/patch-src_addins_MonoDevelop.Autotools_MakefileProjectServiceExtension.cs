@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- src/addins/MonoDevelop.Autotools/MakefileProjectServiceExtension.cs.orig
 +++ src/addins/MonoDevelop.Autotools/MakefileProjectServiceExtension.cs
 @@ -168,7 +168,7 @@

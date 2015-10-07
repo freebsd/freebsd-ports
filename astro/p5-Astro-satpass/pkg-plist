@@ -19,4 +19,4 @@ bin/satpass
 %%PERL5_MAN3%%/Astro::Coord::ECI::TLE::Iridium.3.gz
 %%PERL5_MAN3%%/Astro::Coord::ECI::TLE::Set.3.gz
 %%PERL5_MAN3%%/Astro::Coord::ECI::Utils.3.gz
-man/man1/satpass.1.gz
+%%PERL5_MAN1%%/satpass.1.gz

@@ -1,4 +1,4 @@
 bin/pod2xml
 %%PERL5_MAN3%%/Pod::XML.3.gz
 %%SITE_PERL%%/Pod/XML.pm
-man/man1/pod2xml.1.gz
+%%PERL5_MAN1%%/pod2xml.1.gz

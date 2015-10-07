@@ -1,5 +1,5 @@
---- ./src/core/include/hydrogen/LashClient.h.orig	2014-06-19 06:38:04.000000000 +0930
-+++ ./src/core/include/hydrogen/LashClient.h	2014-08-13 02:18:54.984463002 +0930
+--- src/core/include/hydrogen/LashClient.h.orig	2015-08-31 19:04:48 UTC
++++ src/core/include/hydrogen/LashClient.h
 @@ -27,7 +27,7 @@
  #ifndef LASH_CLIENT
  #define LASH_CLIENT

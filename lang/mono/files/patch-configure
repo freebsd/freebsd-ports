@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- configure.orig
 +++ configure
 @@ -25136,7 +25136,7 @@

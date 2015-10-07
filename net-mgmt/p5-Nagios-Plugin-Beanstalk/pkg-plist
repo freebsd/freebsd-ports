@@ -1,4 +1,3 @@
 libexec/nagios/check_beanstalkd
 %%SITE_PERL%%/Nagios/Plugin/Beanstalk.pm
 %%PERL5_MAN3%%/Nagios::Plugin::Beanstalk.3.gz
-@dirrmtry libexec/nagios

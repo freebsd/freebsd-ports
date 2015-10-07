@@ -7,6 +7,7 @@
 %%QT_INCDIR%%/Qt/qglpixelbuffer.h
 %%QT_INCDIR%%/Qt/qglscreen_qws.h
 %%QT_INCDIR%%/Qt/qglshaderprogram.h
+%%QT_INCDIR%%/QtOpenGL/QGL
 %%QT_INCDIR%%/QtOpenGL/QGLBuffer
 %%QT_INCDIR%%/QtOpenGL/QGLColormap
 %%QT_INCDIR%%/QtOpenGL/QGLContext

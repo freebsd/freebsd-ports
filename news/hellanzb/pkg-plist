@@ -1,7 +1,5 @@
 bin/hellanzb.py
-@unexec if cmp -s %D/etc/hellanzb.conf.sample %D/etc/hellanzb.conf; then rm -f %D/etc/hellanzb.conf; fi
-etc/hellanzb.conf.sample
-@exec if [ ! -f %D/etc/hellanzb.conf ] ; then cp -p %D/%F %B/hellanzb.conf; fi
+@sample etc/hellanzb.conf.sample
 %%PYTHON_SITELIBDIR%%/Hellanzb/Core.py
 %%PYTHON_SITELIBDIR%%/Hellanzb/Core.pyc
 %%PYTHON_SITELIBDIR%%/Hellanzb/Core.pyo
@@ -92,8 +90,3 @@ etc/hellanzb.conf.sample
 %%PYTHON_SITELIBDIR%%/Hellanzb/external/elementtree/SimpleXMLWriter.py
 %%PYTHON_SITELIBDIR%%/Hellanzb/external/elementtree/SimpleXMLWriter.pyc
 %%PYTHON_SITELIBDIR%%/Hellanzb/external/elementtree/SimpleXMLWriter.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/Hellanzb/HellaXMLRPC
-@dirrm %%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher
-@dirrm %%PYTHON_SITELIBDIR%%/Hellanzb/external/elementtree
-@dirrm %%PYTHON_SITELIBDIR%%/Hellanzb/external
-@dirrm %%PYTHON_SITELIBDIR%%/Hellanzb

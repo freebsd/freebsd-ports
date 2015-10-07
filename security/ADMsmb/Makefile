@@ -7,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	PACKETSTORM/groups/ADM
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mauro@eldritch.com.ar
 COMMENT=	Security scanner for Samba
 
 USES=		gmake

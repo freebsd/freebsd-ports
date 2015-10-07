@@ -1,3 +1,19 @@
+--- ../luxrays/include/luxrays/core/geometry/frame.h.orig
++++ ../luxrays/include/luxrays/core/geometry/frame.h
+@@ -46,11 +46,11 @@ public:
+ 		SetFromZ(z);
+ 	}
+ 
+-	Frame(const Normal &z) {
++	Frame(const luxrays::Normal &z) {
+ 		SetFromZ(Vector(z));
+ 	}
+ 
+-	void SetFromZ(const Normal &z) {
++	void SetFromZ(const luxrays::Normal &z) {
+ 		SetFromZ(Vector(z)); 
+ 	}
+ 
 --- textures/bilerp.h.orig
 +++ textures/bilerp.h
 @@ -39,7 +39,7 @@ public:

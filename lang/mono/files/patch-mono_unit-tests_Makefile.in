@@ -1,12 +1,9 @@
-
-$FreeBSD$
-
 See comments on:
 https://github.com/mono/mono/commit/056cc3be24f933bc3638be4909ad1b7f1cd6e6d4
-	(What's wrong with the test)
+	(What is wrong with the test)
 
 https://github.com/mono/mono/commit/120d194d10ad351dd95450749cc4a62331331d8a
-	(Only one program cause trouble)
+	(Only one program causes trouble)
 --- mono/unit-tests/Makefile.in.orig
 +++ mono/unit-tests/Makefile.in
 @@ -81,12 +81,10 @@

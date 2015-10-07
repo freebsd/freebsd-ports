@@ -1,6 +1,6 @@
---- setup.py.orig	2014-09-06 22:26:12 UTC
+--- setup.py.orig	2015-08-10 18:15:04 UTC
 +++ setup.py
-@@ -209,14 +209,6 @@ class my_build(build):
+@@ -208,12 +208,6 @@ class my_build(build):
          build.run(self)
  
  
@@ -10,17 +10,17 @@
 -    """
 -    def run(self):
 -        pass
--
--
+ 
+ 
  class my_install(install):
-     """
-     Error if we weren't 'configure'd with the correct install prefix
-@@ -601,11 +593,9 @@ setup(
+@@ -589,13 +583,11 @@ setup(
              "virt-convert",
              "virt-xml",
          ]),
 -        ("share/glib-2.0/schemas",
 -         ["data/org.virt-manager.virt-manager.gschema.xml"]),
+         ("share/GConf/gsettings",
+          ["data/org.virt-manager.virt-manager.convert"]),
          ("share/virt-manager/ui", glob.glob("ui/*.ui")),
  
 -        ("share/man/man1", [
@@ -28,7 +28,7 @@
              "man/virt-manager.1",
              "man/virt-install.1",
              "man/virt-clone.1",
-@@ -627,7 +617,6 @@ setup(
+@@ -617,7 +609,6 @@ setup(
  
          'sdist': my_sdist,
          'install': my_install,

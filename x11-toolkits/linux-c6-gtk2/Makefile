@@ -26,9 +26,9 @@ USE_LDCONFIG=	yes
 DESCR=		${.CURDIR}/../${PORTNAME}0/pkg-descr
 
 .if defined(PACKAGE_BUILDING)
-SRC_DISTFILES=	gtk2-2.24.23-6.el6.src.rpm \
-		pixman-0.32.4-4.el6.src.rpm \
-		jasper-1.900.1-15.el6_1.1.src.rpm
+SRC_DISTFILES=	gtk2-${PORTVERSION}-${RPMVERSION}.src.rpm:SOURCE \
+		pixman-0.32.4-4.el6.src.rpm:SOURCE \
+		jasper-1.900.1-15.el6_1.1.src.rpm:SOURCE
 .endif
 
 .include <bsd.port.mk>

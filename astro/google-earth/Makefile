@@ -28,17 +28,11 @@ USES=		perl5 shared-mime-info desktop-file-utils
 USE_PERL5=	patch build
 
 #SUB_FILES=	bin/googleearth
-.include <bsd.port.pre.mk>
-.include <bsd.port.options.mk>
 
 UNMAKESELF=	${LOCALBASE}/bin/unmakeself
 
-.if ${PORT_OPTIONS:MNVIDIA}
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
-.else
-USE_LINUX_APPS+=	dri libpciaccess
-LIBGL_ALWAYS_SOFTWARE=LIBGL_ALWAYS_SOFTWARE=yes
-.endif
+NVIDIA_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+NVIDIA_USE_OFF=	LINUX_APPS=dri,libpciaccess
 
 # Fixed by the first post-patch target line?  Also, linprocfs needs to be mounted.
 #.if ${OSVERSION} >= 900000 && ${ARCH} == "amd64"
@@ -54,14 +48,17 @@ do-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e '/OS.*=/s|linux|FreeBSD|' ${WRKSRC}/drivers.ini
-	@${REINPLACE_CMD} -e 's|^# Set the home.*|GOOGLEEARTH_DATA_PATH=${DATADIR}|; \
-		s|%%LIBGL_ALWAYS_SOFTWARE%%|${LIBGL_ALWAYS_SOFTWARE}|' ${WRKSRC}/bin/googleearth
+	@${REINPLACE_CMD} -e 's|^# Set the home.*|GOOGLEEARTH_DATA_PATH=${DATADIR}|' ${WRKSRC}/bin/googleearth
 	@${REINPLACE_CMD} -i "" -e "s|^# Let's boogie.*|rm -f ${LINUXBASE}\$${HOME}/.googleearth/instance-running-lock|" ${WRKSRC}/bin/googleearth
 	@${REINPLACE_CMD} -i "" -e 's/^TMPPATH.*/exit 0/' ${WRKSRC}/postinstall.sh
 	@${REINPLACE_CMD} -i "" -e 's|\"\$$SETUP_INSTALLPATH/|\"${WRKSRC}/|' ${WRKSRC}/postinstall.sh
 	@${REINPLACE_CMD} -i "" -e 's|\$$SETUP_INSTALLPATH/googleearth |${PREFIX}/bin/googleearth |' ${WRKSRC}/postinstall.sh
 	${RM} ${WRKSRC}/libcurl.so.4
 	${PERL} -i -pe 's|/lib/ld-lsb.so.3\0\0\0|/lib/ld-linux.so.2\0|' ${WRKSRC}/googleearth-bin
+post-patch-NVIDIA-on:
+	@${REINPLACE_CMD} 's|%%LIBGL_ALWAYS_SOFTWARE%%||' ${WRKSRC}/bin/googleearth
+post-patch-NVIDIA-off:
+	@${REINPLACE_CMD} 's|%%LIBGL_ALWAYS_SOFTWARE%%|LIBGL_ALWAYS_SOFTWARE=yes|' ${WRKSRC}/bin/googleearth
 
 do-build:
 	@${SETENV} SETUP_INSTALLPATH=${DATADIR} ${WRKSRC}/postinstall.sh
@@ -83,4 +80,4 @@ do-install:
 	${LN} -sf ${DATADIR}/bin/googleearth \
 		${STAGEDIR}${PREFIX}/bin/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

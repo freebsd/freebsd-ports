@@ -48,7 +48,6 @@ share/pc-sysinstall/backend-query/xkeyboard-layouts.sh
 share/pc-sysinstall/backend-query/enable-net.sh
 share/pc-sysinstall/backend-query/detect-country.sh
 share/pc-sysinstall/backend-query/detect-laptop.sh
-share/pc-sysinstall/backend-query/list-packages.sh
 share/pc-sysinstall/backend-query/disk-info.sh
 share/pc-sysinstall/backend-query/list-mirrors.sh
 share/pc-sysinstall/backend-query/update-part-list.sh
@@ -56,7 +55,6 @@ share/pc-sysinstall/backend-query/disk-part.sh
 share/pc-sysinstall/backend-query/query-langs.sh
 share/pc-sysinstall/backend-query/test-live.sh
 share/pc-sysinstall/backend-query/list-rsync-backups.sh
-share/pc-sysinstall/backend-query/get-packages.sh
 share/pc-sysinstall/backend-query/test-netup.sh
 share/pc-sysinstall/backend-query/send-logs.sh
 share/pc-sysinstall/backend-query/set-mirror.sh
@@ -108,7 +106,6 @@ share/pcbsd/conf/update-mirror
 share/pcbsd/conf/prune-port-files
 share/pcbsd/conf/desktop-excludes
 share/pcbsd/conf/server-excludes
-share/pcbsd/conf/linux-compat-version
 share/pcbsd/conf/loader.conf.pcbsd
 share/pcbsd/conf/loader.conf.trueos
 share/pcbsd/conf/ntpd.conf
@@ -222,5 +219,6 @@ etc/rc.d/pc-ldap
 etc/rc.d/pc-nssldap
 etc/rc.d/pc-directory
 etc/sudoers.d/pcbsd
+etc/fonts/local.conf
 man/man1/pc-systemflag.1.gz
 man/man8/pc-sysinstall.8.gz

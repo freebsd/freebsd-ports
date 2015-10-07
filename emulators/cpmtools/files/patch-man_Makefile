@@ -1,0 +1,14 @@
+--- man/Makefile.orig	1994-05-28 10:56:44 UTC
++++ man/Makefile
+@@ -3,9 +3,9 @@ all:;
+ #MANEXT=n
+ MANEXT=1
+ #MANDIR=/usr/man/man${MANEXT}
+-MANDIR=/usr/local/man/man${MANEXT}
++MANDIR=${PREFIX}/man/man${MANEXT}
+ 
+ install:
+-	cp cpm.1 ${DESTDIR}/${MANDIR}/cpm.${MANEXT}
++	${BSD_INSTALL_MAN} cpm.1 ${DESTDIR}${MANDIR}/cpm.${MANEXT}
+ 
+ clean:;

@@ -11,5 +11,5 @@ bin/ettext2html
 %%SITE_PERL%%/Text/EtText/HTML2EtText.pm
 %%SITE_PERL%%/Text/EtText/LinkGlossary.pm
 %%SITE_PERL%%/Text/EtText/Lists.pm
-man/man1/ethtml2text.1.gz
-man/man1/ettext2html.1.gz
+%%PERL5_MAN1%%/ethtml2text.1.gz
+%%PERL5_MAN1%%/ettext2html.1.gz

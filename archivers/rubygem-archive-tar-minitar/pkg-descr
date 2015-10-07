@@ -7,4 +7,4 @@ The library can only handle files and directories at this point.
 The command line utility, minitar, can only create archives, extract from
 archives, and list archive contents.
 
-WWW: http://rubygems.org/gems/archive-tar-minitar/
+WWW: https://github.com/halostatue/minitar

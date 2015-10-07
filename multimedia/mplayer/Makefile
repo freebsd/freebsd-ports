@@ -4,20 +4,30 @@
 PORTNAME=	mplayer
 PORTVERSION=	${MPLAYER_PORT_VERSION}
 PORTREVISION=	3
+CATEGORIES=	multimedia audio
 
+MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	High performance media player supporting many formats
 
-.include "${.CURDIR}/Makefile.shared"
+.include "${.CURDIR}/../../multimedia/mplayer/Makefile.common"
 
 OPTIONS_DEFINE=	AALIB AMR_NB AMR_WB BLURAY CACA CDIO DEBUG DV \
 		ENCA FONTCONFIG FRIBIDI GIF GNUTLS GSM GUI IPV6 JACK \
-		LADSPA LIBMNG LIRC LZO NAS OCFLAGS  OPENAL OPENGL \
-		OPENJPEG OPUS PULSEAUDIO REAL RTC RTCPU RTMP \
+		LADSPA LIBMNG LIRC LZO NAS OCFLAGS OPENAL OPENGL \
+		OPENJPEG OPUS PULSEAUDIO REAL RTC RTMP \
 		SCHROEDINGER SDL SKINS SMB SVGALIB V4L VDPAU VPX \
-		WIN32 X11 X11DGA X11VM XINERAMA XVIDEO XVMC
+		X11 X11DGA X11VM XINERAMA XVIDEO XVMC
 
-OPTIONS_DEFAULT=FONTCONFIG FRIBIDI GNUTLS IPV6 OCFLAGS OPENGL RTCPU \
-		SKINS WIN32 X11 X11DGA X11VM XINERAMA XVIDEO
+OPTIONS_DEFAULT=FONTCONFIG FRIBIDI GNUTLS IPV6 OCFLAGS OPENGL \
+		SKINS X11 X11DGA X11VM XINERAMA XVIDEO
+
+OPTIONS_DEFINE_i386=	RTCPU
+OPTIONS_DEFINE_amd64=	RTCPU
+OPTIONS_DEFINE_powerpc=	RTCPU
+
+OPTIONS_DEFAULT_i386=	RTCPU VDPAU
+OPTIONS_DEFAULT_amd64=	RTCPU VDPAU
+OPTIONS_DEFAULT_powerpc=RTCPU
 
 BLURAY_DESC?=	BluRay support
 ENCA_DESC?=	Charset conversion via enca
@@ -25,9 +35,8 @@ LZO_DESC?=	External liblzo support
 OCFLAGS_DESC?=	Use optimized compiler flags
 REAL_DESC?=	Enable realplayer plugin
 RTC_DESC?=	Add support for kernel real time clock
-RTCPU_DESC?=	Use runtime CPU detection on supported archs
+RTCPU_DESC?=	Use runtime CPU detection
 SKINS_DESC?=	Install skins for GUI
-WIN32_DESC?=	Install win32 binary codecs
 X11DGA_DESC?=	X11 DGA video driver support
 X11VM_DESC?=	X11 VidMode support
 
@@ -38,7 +47,7 @@ CONFLICTS=	mplayer2-2.*
 CONFFILES=	example.conf input.conf menu.conf dvb-menu.conf
 USES+=		iconv pkgconfig
 
-.include "${.CURDIR}/Makefile.optvars"
+.include "${.CURDIR}/../../multimedia/mplayer/Makefile.optvars"
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=	--disable-arts \
@@ -55,7 +64,7 @@ CONFIGURE_ARGS+=	--disable-arts \
 			--disable-musepack \
 			--disable-theora
 
-.include "${.CURDIR}/Makefile.options"
+.include "${.CURDIR}/../../multimedia/mplayer/Makefile.options"
 
 .if ${PORT_OPTIONS:MGUI} && ${PORT_OPTIONS:MX11}
 PLIST_SUB+=	GMPLAYER=""
@@ -122,12 +131,10 @@ pre-everything::
 	@${ECHO_MSG} "http://www.mplayerhq.hu/"
 .endif
 
+pre-patch:
+	${MV} ${WRKDIR}/ffmpeg-${FFMPEG_VERSION} ${WRKSRC}/ffmpeg
+
 post-patch:
-.if ${OSVERSION} >= 900010
-	@${REINPLACE_CMD} -e \
-		'/CFLAGS.*-D_LARGEFILE64_SOURCE/ s/-D_LARGEFILE64_SOURCE/-D_FILE_OFFSET_BITS=64/' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-.endif
 	@${REINPLACE_CMD} \
 		-e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|; \
 		s|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|' \
@@ -149,11 +156,9 @@ post-patch:
 		's|/usr/\\:local/\\:etc/\\:mplayer|${DATADIR:S/\//\/\\\:/g}|g ; \
 		 s|/dev/\\:(dvd[[:alnum:]]*[[:>:]])|${DEFAULT_DVD_DEVICE:S/dev\//dev\/\\\:/}|g ; \
 		 s|/dev/\\:(cdrom[[:alnum:]]*[[:>:]])|${DEFAULT_CDROM_DEVICE:S/dev\//dev\/\\\:/}|g'
-.if ${PORT_OPTIONS:MRTC}
-	@${REINPLACE_CMD} -e \
-		's|irqp = 1024|irqp = ${DEFAULT_KERN_HZ}|' \
-		${WRKSRC}/mplayer.c
-.endif
+
+post-patch-RTC-on:
+	@${REINPLACE_CMD} -e 's|irqp = 1024|irqp = ${DEFAULT_KERN_HZ}|' ${WRKSRC}/mplayer.c
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

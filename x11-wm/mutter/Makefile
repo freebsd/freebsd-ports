@@ -1,9 +1,8 @@
 # Created by: Pawel Worach <pawel.worach@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-wm/mutter/Makefile 20040 2014-11-03 17:21:59Z kwm $
 
 PORTNAME=	mutter
-PORTVERSION=	3.14.4
+PORTVERSION=	3.16.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -24,8 +23,7 @@ RUN_DEPENDS=	zenity>=3.0.0:${PORTSDIR}/x11/zenity \
 PORTSCOUT=	limitw:1,even
 
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
-USE_GNOME=	gnomedesktop3 gnomeprefix gtk30 intlhack \
-		introspection:build
+USE_GNOME=	gnomedesktop3 gtk30 intlhack introspection:build
 USE_XORG=	x11 xext xrandr xcomposite xcursor xinerama ice sm xfixes \
 		xrender xdamage
 GNU_CONFIGURE=	yes
@@ -40,6 +38,11 @@ GLIB_SCHEMAS=	org.gnome.mutter.gschema.xml \
 PLIST_SUB=	VERSION=${PORTVERSION:R}
 
 .include <bsd.port.options.mk>
+
+.if ${OSVERSION} < 1000000 && ${OPSYS} == FreeBSD
+EXTRA_PATCHES=	${FILESDIR}/extra-src_core_keybindings-private.h \
+		${FILESDIR}/extra-src_ui_frames.h
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wcast-align||g' \

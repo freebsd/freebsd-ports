@@ -1,14 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	kodi
-DISTVERSION=	14.2
-PORTREVISION=	2
-CATEGORIES=	multimedia
-MASTER_SITES=	https://codeload.github.com/xbmc/xbmc/tar.gz/${DISTVERSION}-Helix?dummy=/ \
+DISTVERSION=	15.1
+PORTREVISION=	1
+CATEGORIES=	multimedia java
+MASTER_SITES=	https://codeload.github.com/xbmc/xbmc/tar.gz/${KODI_COMMIT}?dummy=/ \
 		GH:ffmpeg
-DISTFILES=	${DISTVERSION}-Helix${EXTRACT_SUFX} \
+DISTFILES=	${DISTVERSION}-Isengard${EXTRACT_SUFX} \
 		${GH_PROJECT}-${GH_TAGNAME}.tar.gz:ffmpeg
-EXTRACT_ONLY=	${DISTVERSION}-Helix${EXTRACT_SUFX}
+EXTRACT_ONLY=	${DISTVERSION}-Isengard${EXTRACT_SUFX}
 
 MAINTAINER=	mickael.maillot@gmail.com
 COMMENT=	Award winning media center application
@@ -31,7 +31,6 @@ LIB_DEPENDS=	libass.so:${PORTSDIR}/multimedia/libass \
 		libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libdrm.so:${PORTSDIR}/graphics/libdrm \
 		libenca.so:${PORTSDIR}/converters/enca \
-		libGLEW.so:${PORTSDIR}/graphics/glew \
 		libFLAC.so:${PORTSDIR}/audio/flac \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
@@ -59,21 +58,28 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 USE_GITHUB=	yes
 GH_ACCOUNT=	xbmc
 GH_PROJECT=	ffmpeg
-GH_TAGNAME=	2.4.6-Helix
+GH_TAGNAME=	2.6.4-Isengard
+KODI_COMMIT=	f4dda26
 
-USES=		autoreconf:build gettext gmake iconv:wchar_t jpeg libtool \
-		pkgconfig python:2
+USES=		autoreconf:build compiler:c++11-lib gettext gmake iconv jpeg \
+		libtool pkgconfig python:2
 GNU_CONFIGURE=	yes
-USE_XORG=	xt xmu xtst xrandr
-USE_GL=		glu
+USE_XORG=	xmu xrandr xt xtst
+USE_GL=		glu glew
 USE_SDL=	image sdl2
 USE_JAVA=	yes
+USE_LDCONFIG=	yes
 JAVA_BUILD=	jre
 NOPRECIOUSMAKEVARS=	yes
 INSTALLS_ICONS=	yes
-ONLY_FOR_ARCHS=	i386 amd64
 
-WRKSRC=		${WRKDIR}/xbmc-${DISTVERSION}-Helix
+ONLY_FOR_ARCHS=	i386 amd64
+KODI_ARCH_i386=	x86
+KODI_ARCH_amd64=x86_64
+
+WRKSRC=		${WRKDIR}/xbmc-${KODI_COMMIT}
+
+PLIST_SUB=	ARCH=${KODI_ARCH_${ARCH}}
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	AIRPLAY AIRTUNES AVAHI CEC DOCS \
@@ -85,7 +91,7 @@ CEC_DESC=	CEC adapter support
 NONFREE_DESC=	Enable non-free components (rar, ccx, ffmpeg)
 SFTP_DESC=	SSH SFTP support via libssh
 
-OPTIONS_DEFAULT=	AIRPLAY AIRTUNES AVAHI CEC LIBBLURAY LIRC MYSQL \
+OPTIONS_DEFAULT=	AIRPLAY AIRTUNES AVAHI LIBBLURAY LIRC MYSQL \
 			NFS RTMP SFTP SMB VAAPI VDPAU WEBSERVER
 
 AIRPLAY_LIB_DEPENDS=	libplist.so:${PORTSDIR}/devel/libplist
@@ -97,7 +103,8 @@ AIRTUNES_CONFIGURE_ENABLE=	airtunes
 AVAHI_LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
 AVAHI_CONFIGURE_ENABLE=	avahi
 
-CEC_BUILD_DEPENDS=	libcec>=2.2.0:${PORTSDIR}/multimedia/libcec
+CEC_BROKEN=		libcec >= 3.0.0 has not been ported yet
+CEC_BUILD_DEPENDS=	libcec>=3.0.0:${PORTSDIR}/multimedia/libcec
 CEC_LIB_DEPENDS=	libcec.so:${PORTSDIR}/multimedia/libcec
 CEC_CONFIGURE_ENABLE=	libcec
 
@@ -113,6 +120,8 @@ NFS_LIB_DEPENDS=	libnfs.so:${PORTSDIR}/net/libnfs
 NFS_CONFIGURE_ENABLE=	nfs
 
 NONFREE_CONFIGURE_ENABLE=	non-free
+NONFREE_VARS=		NO_CDROM="Restricted binary distribution" \
+			NO_PACKAGE="Restricted binary distribution"
 
 RTMP_LIB_DEPENDS=	librtmp.so:${PORTSDIR}/multimedia/librtmp
 RTMP_CONFIGURE_ENABLE=	rtmp
@@ -136,41 +145,16 @@ SFTP_CONFIGURE_ENABLE=	ssh
 
 CONFIGURE_ARGS+=	--disable-debug --disable-alsa --disable-pulse
 
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == i386
-PLIST_SUB+=	ARCH="x86"
-.else
-PLIST_SUB+=	ARCH="x86_64"
-.endif
-
-.if ${OSVERSION} < 900033
-BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
-CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
-MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
-.endif
-
-.if ${PORT_OPTIONS:MNONFREE}
-NO_CDROM=	Restricted binary distribution
-NO_PACKAGE=	${NO_CDROM}
-.endif
-
 post-extract:
 	${MKDIR} ${WRKSRC}/tools/depends/target/ffmpeg/${GH_PROJECT}-${GH_TAGNAME}
 	${TAR} --strip-components=1 -xf ${DISTDIR}/${GH_PROJECT}-${GH_TAGNAME}.tar.gz \
 		 -C ${WRKSRC}/tools/depends/target/ffmpeg/${GH_PROJECT}-${GH_TAGNAME}
 
 post-patch:
-	${REINPLACE_CMD} 's;"event\.h";"sidplay/event.h";' \
-		${WRKSRC}/lib/libsidplay2/libsidplay/src/event.cpp \
-		${WRKSRC}/lib/libsidplay2/libsidplay/src/mos6510/mos6510.h \
-		${WRKSRC}/lib/libsidplay2/libsidplay/src/mos6526/mos6526.h \
-		${WRKSRC}/lib/libsidplay2/libsidplay/src/mos656x/mos656x.h
 	${REINPLACE_CMD} 's;make;gmake;' \
 		${WRKSRC}/bootstrap \
 		${WRKSRC}/codegenerator.mk \
-		${WRKSRC}/xbmc/Makefile.in \
-		${WRKSRC}/tools/TexturePacker/Makefile.in
+		${WRKSRC}/xbmc/Makefile.in
 	${REINPLACE_CMD} 's;which swig;&2.0;' ${WRKSRC}/codegenerator.mk
 
 pre-configure:

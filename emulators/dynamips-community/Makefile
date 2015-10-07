@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	dynamips
-PORTVERSION=	0.2.12
+PORTVERSION=	0.2.15
+DISTVERSIONPREFIX=	v
 CATEGORIES=	emulators
-MASTER_SITES=	SF/gns-3/Dynamips/${PORTVERSION}
 PKGNAMESUFFIX=	-community
-DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	pavelivolkov@gmail.com
 COMMENT=	Cisco 1700/2600/3600/3700/7200 Simulator
@@ -18,15 +17,14 @@ LIB_DEPENDS=	libelf.so:${PORTSDIR}/devel/libelf \
 
 CONFLICTS=	dynamips-[0-9]* dynamips-devel-[0-9]*
 
-USES=		gmake zip
+USES=		cmake
+USE_GITHUB=	yes
+
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=	DOCS UNSTABLE
-UNSTABLE_DESC=	development code (x64 Mac)
+GH_ACCOUNT=	GNS3
+GH_PROJECT=	dynamips
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-LDFLAGS+=	-luuid
 MAKE_ENV=	DYNAMIPS_CODE=${DYNAMIPS_CODE} \
 		DYNAMIPS_ARCH=${DYNAMIPS_ARCH}
 
@@ -38,27 +36,19 @@ PLIST_FILES=	bin/${PORTNAME} bin/nvram_export \
 
 PORTDOCS=	*
 
-.if ${PORT_OPTIONS:MUNSTABLE}
-DYNAMIPS_CODE=	unstable
-.else
 DYNAMIPS_CODE=	stable
-.endif
-
-.if ${ARCH} == powerpc && ${DYNAMIPS_CODE} == unstable
-DYNAMIPS_ARCH=	ppc32
-.endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
 DYNAMIPS_ARCH=	nojit
 .endif
 
-#BROKEN_ia64=	does not compile: invokes i386 assembler
-#BROKEN_sparc64=	${BROKEN_ia64}
-#BROKEN_powerpc=	${BROKEN_ia64}
+BROKEN_ia64=	does not compile: invokes i386 assembler
+BROKEN_sparc64=	${BROKEN_ia64}
+BROKEN_powerpc=	${BROKEN_ia64}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}.${DYNAMIPS_CODE} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/nvram_export.${DYNAMIPS_CODE} ${STAGEDIR}${PREFIX}/bin/nvram_export
+	${INSTALL_PROGRAM} ${WRKSRC}/${DYNAMIPS_CODE}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${DYNAMIPS_CODE}/nvram_export ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/man/nvram_export.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/man/hypervisor_mode.7 ${STAGEDIR}${MANPREFIX}/man/man7

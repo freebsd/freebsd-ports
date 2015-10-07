@@ -29,21 +29,17 @@ CAIRO_DESC=	PNG support via cairo library
 CAIRO_LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
 CAIRO_USES=	pkgconfig
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPYTHON}
-USES+=		python
-CMAKE_ARGS+=	-DPYTHON_BINDINGS=on
-.endif
+PYTHON_USES=	python
+PYTHON_CMAKE_ON=	-DPYTHON_BINDINGS=on
 
 post-patch:
-.if !${PORT_OPTIONS:MCAIRO}
-	${REINPLACE_CMD} -e '/find_package(Cairo)/d' \
-		${WRKSRC}/CMakeLists.txt
-.endif
 	${REINPLACE_CMD} -e '/pkgconfig/s,$${LIB_INSTALL_DIR},libdata,' \
 		${WRKSRC}/CMakeLists.txt
 	${REINPLACE_CMD} -e 's,share/man,man,' \
 		${WRKSRC}/doc/CMakeLists.txt
+
+post-patch-CAIRO-off:
+	${REINPLACE_CMD} -e '/find_package(Cairo)/d' \
+		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-%%PERL5_MAN3%%/Math::GMP.3.gz
 %%SITE_ARCH%%/Math/GMP.pm
 %%SITE_ARCH%%/auto/Math/GMP/GMP.so
 %%SITE_ARCH%%/auto/Math/GMP/autosplit.ix
+%%PERL5_MAN3%%/Math::GMP.3.gz

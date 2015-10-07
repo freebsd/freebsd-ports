@@ -1,6 +1,6 @@
---- modules/db_berkeley/Makefile.orig	2014-08-06 15:29:51 UTC
+--- modules/db_berkeley/Makefile.orig	2015-07-20 13:16:25 UTC
 +++ modules/db_berkeley/Makefile
-@@ -25,7 +25,7 @@
+@@ -24,7 +24,7 @@ ifeq ($(INSTALL_FLAVOUR),kamailio)
  # extra install for kamailio
  
  install-berkeley-scripts: $(bin_prefix)/$(bin_dir)

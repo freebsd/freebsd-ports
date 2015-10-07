@@ -1,5 +1,5 @@
---- WindowMaker/menu.es.orig	2013-05-03 03:12:26.000000000 +0900
-+++ WindowMaker/menu.es	2013-05-03 03:12:17.000000000 +0900
+--- WindowMaker/menu.es.orig	2015-08-11 18:41:14 UTC
++++ WindowMaker/menu.es
 @@ -90,7 +90,7 @@
  		"OffiX Files" EXEC files
  		"LyX" EXEC lyx

@@ -3,7 +3,7 @@
 
 PORTNAME=	panoglview
 PORTVERSION=	0.2.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	SF/hugin/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -26,7 +26,5 @@ WX_COMPS=	wx
 WX_CONF_ARGS=	relative
 
 PLIST_FILES=	bin/panoglview
-
-BROKEN_powerpc=		Does not configure on powerpc
 
 .include <bsd.port.mk>

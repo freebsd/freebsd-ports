@@ -1,9 +1,21 @@
---- CMakeLists.txt.orig	2014-07-08 17:32:11.000000000 -0400
-+++ CMakeLists.txt	2014-07-29 18:41:58.000000000 -0400
-@@ -139,6 +139,14 @@
+--- CMakeLists.txt.orig	2015-07-25 20:27:13 UTC
++++ CMakeLists.txt
+@@ -29,6 +29,11 @@ cmake_minimum_required(VERSION 2.6)
+ project(gnuradio CXX C)
+ enable_testing()
+ 
++cmake_policy(SET CMP0026 OLD)
++cmake_policy(SET CMP0043 OLD)
++cmake_policy(SET CMP0045 OLD)
++cmake_policy(SET CMP0046 OLD)
++
+ #make sure our local CMake Modules path comes first
+ list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_SOURCE_DIR}/cmake/Modules)
+ 
+@@ -144,6 +149,14 @@ string(REPLACE "\n" " \\n" COMPILER_INFO
  ########################################################################
  include(GrPlatform) #define LIB_SUFFIX
- set(GR_RUNTIME_DIR      bin)
+ set(GR_RUNTIME_DIR     bin CACHE PATH "Path to install all binaries")
 +########################################################################
 +# FreeBSD libdata vs. lib
 +#
@@ -12,10 +24,10 @@
 +else()
 +set(GR_PKGCONFIG_DIR      lib${LIB_SUFFIX})
 +endif()
- set(GR_LIBRARY_DIR      lib${LIB_SUFFIX})
- set(GR_INCLUDE_DIR      include)
- set(GR_DATA_DIR         share)
-@@ -199,6 +207,42 @@
+ set(GR_LIBRARY_DIR     lib${LIB_SUFFIX} CACHE PATH "Path to install libraries")
+ set(GR_INCLUDE_DIR     include CACHE PATH "Path to install header files")
+ set(GR_DATA_DIR        share CACHE PATH "Base location for data")
+@@ -229,6 +242,42 @@ add_custom_target(uninstall
  include(GrBoost)
  
  ########################################################################
@@ -58,7 +70,7 @@
  # Enable python component
  ########################################################################
  find_package(PythonLibs 2)
-@@ -283,11 +327,13 @@
+@@ -354,11 +403,13 @@ GR_LOGGING()
  ########################################################################
  # Distribute the README file
  ########################################################################

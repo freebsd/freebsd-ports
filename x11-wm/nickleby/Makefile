@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nickleby
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.mammothcheese.ca/
 

@@ -23,6 +23,7 @@ BUILD_DEPENDS=	p5-AnyEvent-CacheDNS>=0.08:${PORTSDIR}/dns/p5-AnyEvent-CacheDNS \
 		p5-libwww>=5.835:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USE_PERL5=	modbuild
 USES=		perl5
 

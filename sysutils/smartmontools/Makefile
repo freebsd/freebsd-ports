@@ -3,6 +3,7 @@
 
 PORTNAME=	smartmontools
 PORTVERSION=	6.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -15,7 +16,8 @@ CONFLICTS=	smartmontools-devel-[0-9]*
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		alias gmake
+USES=		alias gmake shebangfix
+SHEBANG_FILES=	examplescripts/Example5
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--enable-sample \

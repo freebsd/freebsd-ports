@@ -47,6 +47,7 @@ TEST_DEPENDS=	p5-Test-Pod>=1.45:${PORTSDIR}/devel/p5-Test-Pod \
 
 OPTIONS_DEFINE=	EXAMPLES
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5 shebangfix tar:tgz
 

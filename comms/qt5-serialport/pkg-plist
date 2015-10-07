@@ -29,6 +29,7 @@
 %%QT_LIBDIR%%/libQt5SerialPort.so.5
 %%QT_LIBDIR%%/libQt5SerialPort.so.%%SHORTVER%%
 %%QT_LIBDIR%%/libQt5SerialPort.so.%%FULLVER%%
+%%DEBUG%%%%QT_LIBDIR%%/libQt5SerialPort.so.%%FULLVER%%.debug
 %%QT_MKSPECDIR%%/modules/qt_lib_serialport.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_serialport_private.pri
-%%QT_LIBDIR%%data/pkgconfig/Qt5SerialPort.pc
+libdata/pkgconfig/Qt5SerialPort.pc

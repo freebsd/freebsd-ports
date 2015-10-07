@@ -26,6 +26,7 @@ JAVA_VENDOR=	openjdk bsdjava
 JAVA_RUN=	yes
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 USE_RC_SUBR=	unifi
 

@@ -5,6 +5,7 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/args_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/examples/dummy-client/dummy-client.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/examples/dummy-server/dummy-server.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proxy_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/pt.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/pt_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/socks.go

@@ -18,7 +18,7 @@ OPTIONS_DEFINE=	NOTIFY
 OPTIONS_DEFAULT=	NOTIFY
 
 USES=		gettext gmake libtool pathfix tar:bzip2
-USE_GNOME=	gnomeprefix gtk20 gconf2 libgnomeui
+USE_GNOME=	gnomeprefix gtk20 gconf2 intltool libgnomeui
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

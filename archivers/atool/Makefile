@@ -14,5 +14,6 @@ LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 USES=		gmake perl5
 USE_PERL5=	build run
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

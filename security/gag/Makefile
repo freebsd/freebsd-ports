@@ -11,8 +11,6 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Stacheldraht (DOS attack) agent detector
 
-LATEST_LINK=	gag-sickenscan
-
 ALL_TARGET=	gag
 
 PORTDOCS=	README

@@ -1,6 +1,4 @@
-diff --git a/mkzynfw.c b/mkzynfw.c
-index 36c176f..22d8bd3 100644
---- mkzynfw.c
+--- mkzynfw.c.orig	2011-12-22 14:21:03 UTC
 +++ mkzynfw.c
 @@ -23,11 +23,12 @@
  #include <stdarg.h>

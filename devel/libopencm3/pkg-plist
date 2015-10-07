@@ -354,7 +354,6 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/tools.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/tsc.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/usart.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/usb.h
-gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/usb_desc.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/wwdg.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/usb/audio.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/usb/cdc.h

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	0.9.9
+PORTVERSION=	1.0.4
 CATEGORIES=	mail
 MASTER_SITES=	http://rspamd.com/downloads/
 
@@ -52,7 +52,7 @@ USE_SQLITE=	yes
 .endif
 
 .if ${PORT_OPTIONS:MREDIRECTOR}
- USES+=		perl5
+ USE_PERL5+=	run
  CMAKE_ARGS+=	-DENABLE_REDIRECTOR=ON
  PLIST_SUB+=	REDIRECTOR=""
  USE_RC_SUBR+=	rspamd_redirector
@@ -77,5 +77,9 @@ post-stage:
 		${STAGEDIR}/var/log/rspamd \
 		${STAGEDIR}/var/db/rspamd \
 		${STAGEDIR}/var/run/rspamd
+		# Linux specific
+		${RM} ${STAGEDIR}/${ETCDIR}/rspamd.systemd.conf
+		# No need, since rspamd.conf.sample is a same
+		${RM} ${STAGEDIR}/${ETCDIR}/rspamd.sysvinit.conf
 
 .include <bsd.port.mk>

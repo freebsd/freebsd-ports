@@ -3,7 +3,7 @@
 
 PORTNAME=	Math-Prime-XS
 PORTVERSION=	0.26
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,5 +22,8 @@ TEST_DEPENDS=	p5-Test-Pod>=1.14:${PORTSDIR}/devel/p5-Test-Pod \
 
 USE_PERL5=	configure
 USES=		perl5
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/Prime/XS/XS.so
 
 .include <bsd.port.mk>

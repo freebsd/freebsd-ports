@@ -14,10 +14,19 @@ MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}u${JDK_MIN
 		https://java.net/downloads/jax-ws/JDK7/:jaf \
 		http://icedtea.classpath.org/download/drops/:jaf \
 		APACHE/ant/binaries/:ant
+PATCH_SITES=	LOCAL/glewis/openjdk7
 DISTFILES=	${JDK_SRC_DISTFILE}${EXTRACT_SUFX} \
 		${ANT_DISTFILE}${EXTRACT_SUFX}:ant
 EXTRACT_ONLY=	${JDK_SRC_DISTFILE}${EXTRACT_SUFX} \
 		${ANT_DISTFILE}${EXTRACT_SUFX}
+PATCHFILES=	patch-7u45-b30.xz \
+		patch-7u51-b30.xz \
+		patch-7u55-b31.xz \
+		patch-7u60-b30.xz \
+		patch-7u65-b31.xz \
+		patch-7u71-b14.xz \
+		patch-7u76-b31.xz \
+		patch-7u80-b32.xz
 
 MAINTAINER?=	glewis@FreeBSD.org
 COMMENT?=	Java Development Kit 7
@@ -57,8 +66,6 @@ JDK_SRC_DISTFILE=	${PORTNAME}-${JDK_MAJOR_VERSION}u${JDK_MINOR_VERSION}-fcs-src-
 # Use our own version of ant to avoid circular dependencies
 ANT_VERSION=		1.9.4
 ANT_DISTFILE=		apache-ant-${ANT_VERSION}-bin
-
-LATEST_LINK?=		openjdk7
 
 LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \

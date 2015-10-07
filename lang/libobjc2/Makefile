@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	libobjc2
-PORTVERSION=	1.7
-PORTREVISION=	2
+PORTVERSION=	1.8.1
 CATEGORIES=	lang devel gnustep
 USE_GITHUB=	yes
 GH_ACCOUNT=	gnustep
 GH_PROJECT=	libobjc2
-GH_TAGNAME=	857edd9
+GH_TAGNAME=	5a21dd1
 
 MAINTAINER=	theraven@FreeBSD.org
 COMMENT=	Replacement Objective-C runtime supporting modern Objective-C features
@@ -17,6 +16,7 @@ SSP_UNSAFE=	yes
 
 USES=		cmake objc:compiler
 BROKEN_powerpc=		Does not compile on powerpc: Unsupported relocation type 10
+BROKEN_sparc64=		Does not compile on sparc64: Cannot configure clang properly
 
 .include <bsd.port.options.mk>
 
@@ -46,6 +46,5 @@ post-install:
 post-install:
 	${LN} -sf libobjc.so.${SHLIB_MAJOR}.${SHLIB_MINOR} ${STAGEDIR}${PREFIX}/lib/libobjc.so.${SHLIB_MAJOR}
 .endif
-
 
 .include <bsd.port.mk>

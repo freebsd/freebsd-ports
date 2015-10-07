@@ -1,4 +1,14 @@
 bin/qelectrotech
+man/cs/man1/qelectrotech.1.gz
+man/el/man1/qelectrotech.1.gz
+man/es/man1/qelectrotech.1.gz
+man/fr.ISO8859-1/man1/qelectrotech.1.gz
+man/fr.UTF-8/man1/qelectrotech.1.gz
+man/fr/man1/qelectrotech.1.gz
+man/it/man1/qelectrotech.1.gz
+man/man1/qelectrotech.1.gz
+man/pl/man1/qelectrotech.1.gz
+man/pt_PT/man1/qelectrotech.1.gz
 share/applications/qelectrotech.desktop
 %%DOCSDIR%%/CREDIT
 %%DOCSDIR%%/ChangeLog

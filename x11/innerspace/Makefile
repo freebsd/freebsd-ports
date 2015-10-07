@@ -2,7 +2,7 @@
 
 PORTNAME=	innerspace
 PORTVERSION=	0.2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11 gnustep
 MASTER_SITES=	SAVANNAH/gap
 DISTNAME=	InnerSpace-${PORTVERSION}
@@ -21,9 +21,9 @@ post-patch:
 
 post-install:
 	${STRIP_CMD} \
-		${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/InnerSpace.app/Resources/NickSpace.InnerSpace/NickSpace \
-		${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/InnerSpace.app/Resources/Black.InnerSpace/Black \
-		${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/InnerSpace.app/Resources/Boxes.InnerSpace/Boxes \
-		${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/InnerSpace.app/InnerSpace
+		${STAGEDIR}${PREFIX}/GNUstep/System/Applications/InnerSpace.app/Resources/NickSpace.InnerSpace/NickSpace \
+		${STAGEDIR}${PREFIX}/GNUstep/System/Applications/InnerSpace.app/Resources/Black.InnerSpace/Black \
+		${STAGEDIR}${PREFIX}/GNUstep/System/Applications/InnerSpace.app/Resources/Boxes.InnerSpace/Boxes \
+		${STAGEDIR}${PREFIX}/GNUstep/System/Applications/InnerSpace.app/InnerSpace
 
 .include <bsd.port.mk>

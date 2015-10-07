@@ -18,10 +18,4 @@ post-patch:
 		${WRKSRC}/libstreams/CMakeLists.txt
 
 .include <${.CURDIR}/../strigi/Makefile.common>
-.include <bsd.port.pre.mk>
-
-.if empty(ICONV_LIB)
-CMAKE_ARGS+=	-DICONV_LIBRARIES:STRING="/usr/lib/libc.so"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

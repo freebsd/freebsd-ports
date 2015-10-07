@@ -22,13 +22,9 @@ DEBUG_DESC=	Additional debugging information and output
 ZLIB_CONFIGURE_WITH=	compression
 DEBUG_CONFIGURE_ENABLE=	debug
 
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MDOCS}
-post-patch:
+post-patch-DOCS-off:
 	@${REINPLACE_CMD} 's|SUBDIRS = src test doc|SUBDIRS = src test|' \
 		${WRKSRC}/Makefile.in
-.endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so

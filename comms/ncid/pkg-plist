@@ -39,6 +39,7 @@ man/man1/ncid-yac.1.gz
 man/man1/ncid.1.gz
 man/man1/ncid2ncid.1.gz
 man/man1/ncidutil.1.gz
+man/man1/obi2ncid.1.gz
 man/man1/rn2ncid.1.gz
 man/man1/wc2ncid.1.gz
 man/man1/wct.1.gz
@@ -49,6 +50,7 @@ man/man5/ncidd.alias.5.gz
 man/man5/ncidd.blacklist.5.gz
 man/man5/ncidd.conf.5.gz
 man/man5/ncidd.whitelist.5.gz
+man/man5/obi2ncid.conf.5.gz
 man/man5/rn2ncid.conf.5.gz
 man/man5/sip2ncid.conf.5.gz
 man/man5/wc2ncid.conf.5.gz

@@ -43,7 +43,6 @@ include/dnscore/empty-input-stream.h
 include/dnscore/fdtools.h
 include/dnscore/file_input_stream.h
 include/dnscore/file_output_stream.h
-include/dnscore/filter_input_stream.h
 include/dnscore/fingerprint.h
 include/dnscore/format.h
 include/dnscore/host_address.h
@@ -164,7 +163,6 @@ include/dnsdb/zdb-zone-reader-filter.h
 include/dnsdb/zdb.h
 include/dnsdb/zdb_cache.h
 include/dnsdb/zdb_config.h
-include/dnsdb/zdb_dnsname.h
 include/dnsdb/zdb_error.h
 include/dnsdb/zdb_icmtl.h
 include/dnsdb/zdb_listener.h
@@ -186,7 +184,6 @@ include/dnslg/config-resolver.h
 include/dnslg/dns.h
 include/dnslg/dnslg-config-features.h
 include/dnslg/resolv-conf.h
-include/dnslg/resolv.h
 include/dnszone/dnszone-config-features.h
 include/dnszone/dnszone-config.h
 include/dnszone/dnszone.h

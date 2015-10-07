@@ -1,7 +1,5 @@
 bin/wizd
-@unexec if cmp -s %D/etc/wizd.conf %D/etc/wizd.conf.sample; then rm -f %D/etc/wizd.conf; fi
-etc/wizd.conf.sample
-@exec if [ ! -f %B/wizd.conf ]; then cp -p %B/%f %B/wizd.conf; fi
+@sample etc/wizd.conf.sample
 %%DATADIR%%/skins/simplicity/back-delete.jpg
 %%DATADIR%%/skins/simplicity/back-portal.jpg
 %%DATADIR%%/skins/simplicity/back.jpg

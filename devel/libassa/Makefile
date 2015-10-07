@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	libassa
-DISTVERSION=	3.4.2-2
-PORTREVISION=	1
+DISTVERSION=	3.5.1
 CATEGORIES=	devel
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION:C/-.*$//}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION:C/\.[0-9]*$//}
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	C++ networking library and application framework
 
 GNU_CONFIGURE=	yes
 USES=		libtool pathfix pkgconfig
+USE_AUTOTOOLS=	autoconf
 USE_LDCONFIG=	yes
 PLIST_SUB=	ASSA_VERSION=${PORTVERSION:R:R}
 

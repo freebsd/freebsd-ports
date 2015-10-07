@@ -37,18 +37,17 @@
    OPTSDEFAULTDECRYPTKEY,
  #endif
  #ifdef HAVE_PGP
---- contrib/smime.rc.orig	Sat Oct 25 17:57:35 2003
-+++ contrib/smime.rc	Sat Oct 25 17:57:35 2003
-@@ -6,8 +6,11 @@
- # will be the default method unless the following option is set
- set smime_is_default
+--- contrib/smime.rc.orig	2015-09-10 09:16:17.000000000 +0200
++++ contrib/smime.rc	2015-09-10 09:18:18.000000000 +0200
+@@ -8,7 +8,10 @@
  
--# Uncoment this if you don't want to set labels for certificates you add.
-+# Uncomment this if you don't want to set labels for certificates you add.
+ # Uncomment this if you don't want to set labels for certificates you add.
  # unset smime_ask_cert_label
-+
+-
++ 
 +# Uncomment this if you don't want to check for sender's email address
 +# set smime_dont_check_sender = yes
- 
++  
  # Passphrase expiration
  set smime_timeout=300
+ 

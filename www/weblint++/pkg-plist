@@ -1,2 +1,2 @@
 bin/weblint++
-man/man1/weblint++.1.gz
+%%PERL5_MAN1%%/weblint++.1.gz

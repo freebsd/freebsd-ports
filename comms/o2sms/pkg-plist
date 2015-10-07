@@ -20,8 +20,8 @@ bin/vodasms
 %%PERL5_MAN3%%/WWW::SMS::IE::o2sms.3.gz
 %%PERL5_MAN3%%/WWW::SMS::IE::threesms.3.gz
 %%PERL5_MAN3%%/WWW::SMS::IE::vodasms.3.gz
-man/man1/aftsms.1.gz
-man/man1/meteorsms.1.gz
-man/man1/o2sms.1.gz
-man/man1/threesms.1.gz
-man/man1/vodasms.1.gz
+%%PERL5_MAN1%%/aftsms.1.gz
+%%PERL5_MAN1%%/meteorsms.1.gz
+%%PERL5_MAN1%%/o2sms.1.gz
+%%PERL5_MAN1%%/threesms.1.gz
+%%PERL5_MAN1%%/vodasms.1.gz

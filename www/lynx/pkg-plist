@@ -2,16 +2,11 @@ bin/lynx
 @sample etc/lynx.cfg.sample
 @sample etc/lynx.lss.sample
 man/man1/lynx.1.gz
-%%PORTDOCS%%@exec mkdir -p %D/share/lynx_help
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/COPYHEADER
 %%PORTDOCS%%%%DOCSDIR%%/COPYHEADER.asc
-%%PORTDOCS%%@exec ln -sf %D/%F %D/share/lynx_help
-%%PORTDOCS%%@unexec rm -f %D/share/lynx_help/COPYHEADER.asc
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.asc
-%%PORTDOCS%%@exec ln -sf %D/%F %D/share/lynx_help
-%%PORTDOCS%%@unexec rm -f %D/share/lynx_help/COPYING.asc
 %%PORTDOCS%%%%DOCSDIR%%/PROBLEMS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/docs/CHANGES2.3.gz
@@ -97,7 +92,9 @@ man/man1/lynx.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/test/image.jpg
 %%PORTDOCS%%%%DOCSDIR%%/test/nobody
 %%PORTDOCS%%share/lynx_help/COPYHEADER
+%%PORTDOCS%%share/lynx_help/COPYHEADER.asc
 %%PORTDOCS%%share/lynx_help/COPYING
+%%PORTDOCS%%share/lynx_help/COPYING.asc
 %%PORTDOCS%%share/lynx_help/Lynx_users_guide.html.gz
 %%PORTDOCS%%share/lynx_help/about_lynx.html.gz
 %%PORTDOCS%%share/lynx_help/keystrokes/alt_edit_help.html.gz

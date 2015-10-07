@@ -47,4 +47,4 @@ bin/blogspam
 %%PERL5_MAN3%%/Blog::Spam::Plugin::surbl.3.gz
 %%PERL5_MAN3%%/Blog::Spam::Plugin::wordcount.3.gz
 %%PERL5_MAN3%%/Blog::Spam::Server.3.gz
-man/man1/blogspam.1.gz
+%%PERL5_MAN1%%/blogspam.1.gz

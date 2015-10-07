@@ -1,26 +1,19 @@
---- ./CMakeLists.txt.orig	2014-05-25 19:42:24.000000000 +0000
-+++ ./CMakeLists.txt	2014-07-27 10:49:39.000000000 +0000
-@@ -61,12 +61,18 @@
-      --thread
-      --target-glib=2.32)
- 
--if (CMAKE_SYSTEM_NAME MATCHES "Linux")
-+if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-     set (VALAC_OPTIONS ${VALAC_OPTIONS} --define=LINUX)
-+elseif (${CMAKE_SYSTEM_NAME} MATCHES "DragonFly")
-+    set (VALAC_OPTIONS ${VALAC_OPTIONS} --define=DragonFly)
-+elseif (${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
-+    set (VALAC_OPTIONS ${VALAC_OPTIONS} --define=FreeBSD)
-+elseif (${CMAKE_SYSTEM_NAME} MATCHES "NetBSD")
-+    set (VALAC_OPTIONS ${VALAC_OPTIONS} --define=NetBSD)
-+elseif (${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
-+    set (VALAC_OPTIONS ${VALAC_OPTIONS} --define=OpenBSD)
+--- CMakeLists.txt.orig	2015-08-30 10:13:06 UTC
++++ CMakeLists.txt
+@@ -66,7 +66,7 @@ if (${CMAKE_SYSTEM_NAME} MATCHES "Linux"
+ elseif (${CMAKE_SYSTEM_NAME} MATCHES "DragonFly")
+     set (VALAC_OPTIONS ${VALAC_OPTIONS} --define=DRAGON_FLY)
+ elseif (${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
+-    set (VALAC_OPTIONS ${VALAC_OPTIONS} --define=FFREE_BSD)
++    set (VALAC_OPTIONS ${VALAC_OPTIONS} --define=FREE_BSD)
+ elseif (${CMAKE_SYSTEM_NAME} MATCHES "NetBSD")
+     set (VALAC_OPTIONS ${VALAC_OPTIONS} --define=NET_BSD)
+ elseif (${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
+@@ -74,7 +74,5 @@ elseif (${CMAKE_SYSTEM_NAME} MATCHES "Op
  endif ()
  
  add_subdirectory (lib)
 -add_subdirectory (demo)
 -add_subdirectory (doc)
  add_subdirectory (po)
--add_subdirectory (icons)
-\ No newline at end of file
-+add_subdirectory (icons)
+ add_subdirectory (icons)

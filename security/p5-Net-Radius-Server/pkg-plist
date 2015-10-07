@@ -32,9 +32,9 @@ bin/rad-client
 %%SITE_PERL%%/Net/Radius/Server/Set/Proxy.pm
 %%SITE_PERL%%/Net/Radius/Server/Set/Replace.pm
 %%SITE_PERL%%/Net/Radius/Server/Set/Simple.pm
-man/man1/nrsd.1.gz
-man/man1/nrsdbtoyaml.1.gz
-man/man1/pam-client.1.gz
-man/man1/rad-bulk-make.1.gz
-man/man1/rad-bulk.1.gz
-man/man1/rad-client.1.gz
+%%PERL5_MAN1%%/nrsd.1.gz
+%%PERL5_MAN1%%/nrsdbtoyaml.1.gz
+%%PERL5_MAN1%%/pam-client.1.gz
+%%PERL5_MAN1%%/rad-bulk-make.1.gz
+%%PERL5_MAN1%%/rad-bulk.1.gz
+%%PERL5_MAN1%%/rad-client.1.gz

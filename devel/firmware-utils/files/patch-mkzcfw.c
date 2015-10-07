@@ -1,6 +1,4 @@
-diff --git a/mkzcfw.c b/mkzcfw.c
-index 7674e70..c60fc6f 100644
---- mkzcfw.c
+--- mkzcfw.c.orig	2011-12-22 14:21:03 UTC
 +++ mkzcfw.c
 @@ -18,6 +18,7 @@
  #include <errno.h>

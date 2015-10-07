@@ -4,7 +4,7 @@
 PORTNAME=	altermime
 PORTVERSION=	0.3.11.a1
 CATEGORIES=	mail textproc
-MASTER_SITES=	http://T32.tecnik93.com/FreeBSD/ports/altermime/sources/
+MASTER_SITES=	http://ionut.tetcu.info/FreeBSD/ports/distfiles/
 
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Small C program which is used to alter your mime-encoded mailpacks

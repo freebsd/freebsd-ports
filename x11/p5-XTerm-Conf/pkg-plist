@@ -1,4 +1,4 @@
 bin/xterm-conf
 %%PERL5_MAN3%%/XTerm::Conf.3.gz
 %%SITE_PERL%%/XTerm/Conf.pm
-man/man1/xterm-conf.1.gz
+%%PERL5_MAN1%%/xterm-conf.1.gz

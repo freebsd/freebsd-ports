@@ -3,4 +3,4 @@ bin/podtohtml
 %%SITE_PERL%%/Pod/Links.pm
 %%PERL5_MAN3%%/Pod::HTML_Elements.3.gz
 %%PERL5_MAN3%%/Pod::Links.3.gz
-man/man1/podtohtml.1.gz
+%%PERL5_MAN1%%/podtohtml.1.gz

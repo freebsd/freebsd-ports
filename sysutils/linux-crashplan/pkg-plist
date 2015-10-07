@@ -38,6 +38,7 @@ share/crashplan/lang/txt_th.properties
 share/crashplan/lang/txt_tr.properties
 share/crashplan/lang/txt_zh.properties
 share/crashplan/lang/txt_zh_TW.properties
+share/crashplan/lib/bcprov-jdk15on.jar
 share/crashplan/lib/c42_protolib.jar
 share/crashplan/lib/com.backup42.desktop.jar
 share/crashplan/lib/com.jniwrapper.jniwrap.jar
@@ -45,6 +46,7 @@ share/crashplan/lib/com.jniwrapper.macpack.jar
 share/crashplan/lib/com.jniwrapper.winpack.jar
 share/crashplan/lib/commons-collections-3.2.1-mini.jar
 share/crashplan/lib/commons-jxpath-1.1.jar
+share/crashplan/lib/guava-18.0.jar
 share/crashplan/lib/jna-3.2.5.jar
 share/crashplan/lib/json-20070829.jar
 share/crashplan/lib/json-lib-2.4.jar
@@ -88,13 +90,5 @@ share/crashplan/upgrade/startDesktopSolaris.sh
 share/crashplan/upgrade/startFirst.sh
 share/crashplan/upgrade/startLinux.sh
 share/crashplan/upgrade/startSolaris.sh
-@dirrmtry share/crashplan/upgrade/UpgradeUI
-@dirrmtry share/crashplan/upgrade
-@dirrmtry share/crashplan/skin
-@dirrmtry share/crashplan/log
-@dirrmtry share/crashplan/lib
-@dirrmtry share/crashplan/lang
-@dirrmtry share/crashplan/doc
-@dirrmtry share/crashplan/conf
-@dirrmtry share/crashplan/bin
-@dirrmtry share/crashplan
+@dir share/crashplan/log
+@dir share/crashplan/upgrade/UpgradeUI

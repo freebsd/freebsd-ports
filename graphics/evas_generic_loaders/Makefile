@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	evas_generic_loaders
-PORTVERSION=	1.13.2
+PORTVERSION=	1.15.0
 CATEGORIES=	graphics enlightenment
 
 MAINTAINER=	enlightenment@FreeBSD.org

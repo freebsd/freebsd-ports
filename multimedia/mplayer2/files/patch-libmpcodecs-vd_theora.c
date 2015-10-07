@@ -1,6 +1,6 @@
---- libmpcodecs/vd_theora.c.orig	2015-03-25 00:52:12.768575000 +0100
-+++ libmpcodecs/vd_theora.c	2015-03-25 01:17:34.162174000 +0100
-@@ -39,22 +39,23 @@
+--- libmpcodecs/vd_theora.c.orig	2013-07-09 16:33:13 UTC
++++ libmpcodecs/vd_theora.c
+@@ -39,22 +39,23 @@ static const vd_info_t info = {
  
  LIBVD_EXTERN(theora)
  
@@ -32,7 +32,7 @@
      }
      return 0;
  }
-@@ -64,7 +65,7 @@
+@@ -64,7 +65,7 @@ static int control(sh_video_t *sh,int cm
      theora_struct_t *context = sh->context;
      switch(cmd) {
      case VDCTRL_QUERY_FORMAT:
@@ -41,7 +41,7 @@
  	    return CONTROL_TRUE;
  	return CONTROL_FALSE;
      }
-@@ -88,8 +89,10 @@
+@@ -88,8 +89,10 @@ static int init(sh_video_t *sh){
      if (!context)
          goto err_out;
  
@@ -54,7 +54,7 @@
  
      /* Read all header packets, pass them to theora_decode_header. */
      for (i = 0; i < THEORA_NUM_HEADER_PACKETS; i++)
-@@ -109,7 +112,7 @@
+@@ -109,7 +112,7 @@ static int init(sh_video_t *sh){
              op.b_o_s = 1;
          }
  
@@ -63,7 +63,7 @@
          {
              mp_msg(MSGT_DECVIDEO, MSGL_ERR, "Broken Theora header; errorCode=%i!\n", errorCode);
              goto err_out;
-@@ -117,23 +120,25 @@
+@@ -117,23 +120,25 @@ static int init(sh_video_t *sh){
      }
  
      /* now init codec */
@@ -97,7 +97,7 @@
  
  err_out:
      free(context);
-@@ -150,9 +155,9 @@
+@@ -150,9 +155,9 @@ static void uninit(sh_video_t *sh)
  
     if (context)
     {
@@ -110,7 +110,7 @@
        free (context);
     }
  }
-@@ -165,7 +170,7 @@
+@@ -165,7 +170,7 @@ static mp_image_t* decode(sh_video_t *sh
     theora_struct_t *context = sh->context;
     int errorCode = 0;
     ogg_packet op;
@@ -119,7 +119,7 @@
     mp_image_t* mpi;
  
     // no delayed frames
-@@ -177,31 +182,31 @@
+@@ -177,31 +182,31 @@ static mp_image_t* decode(sh_video_t *sh
     op.packet = data;
     op.granulepos = -1;
  

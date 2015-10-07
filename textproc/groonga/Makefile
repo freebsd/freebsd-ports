@@ -30,10 +30,6 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-BROKEN_ia64=	does not compile on ia64
-BROKEN_powerpc=	does not compile on powerpc
-BROKEN_sparc64=	does not compile on sparc64
-
 OPTIONS_DEFINE=		MECAB SUGGEST
 OPTIONS_DEFAULT=	MECAB SUGGEST
 OPTIONS_SUB=		yes

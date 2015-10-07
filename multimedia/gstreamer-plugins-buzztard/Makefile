@@ -3,6 +3,7 @@
 
 PORTNAME=	buzztard
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20gstreamer%20extensions/
 PKGNAMEPREFIX=	gstreamer-plugins-

@@ -27,22 +27,12 @@ CONFIG_FILES=	xmp.conf modules.conf
 
 OPTIONS_DEFINE=	ALSA PULSEAUDIO
 
-.include <bsd.port.options.mk>
+ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
+ALSA_CONFIGURE_ENABLE=	alsa
 
-.if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
-RUN_DEPENDS+=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
-CONFIGURE_ARGS+=	--enable-alsa
-.else
-CONFIGURE_ARGS+=	--disable-alsa
-.endif
-
-.if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	libpulse-simple.so:${PORTSDIR}/audio/pulseaudio
-CONFIGURE_ARGS+=	--enable-pulseaudio
-.else
-CONFIGURE_ARGS+=	--disable-pulseaudio
-.endif
+PULSEAUDIO_LIB_DEPENDS=	libpulse-simple.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_CONFIGURE_ENABLE=	pulseaudio
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\ install-conf||' ${WRKSRC}/Makefile.in

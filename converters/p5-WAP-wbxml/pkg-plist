@@ -1,5 +1,5 @@
 bin/wbxmlc
-man/man1/wbxmlc.1.gz
+%%PERL5_MAN1%%/wbxmlc.1.gz
 %%SITE_PERL%%/WAP/wbxml.pm
 %%SITE_PERL%%/WAP/wbxml/WbRules.pm
 %%SITE_PERL%%/WAP/wbxml/activesync.wbrules.pl

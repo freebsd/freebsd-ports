@@ -3,6 +3,7 @@
 
 PORTNAME=	tellico
 PORTVERSION=	2.3.10
+PORTREVISION=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	http://tellico-project.org/files/
 
@@ -16,8 +17,6 @@ LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib \
 		libyaz.so:${PORTSDIR}/net/yaz \
 		libexempi.so:${PORTSDIR}/textproc/exempi \
 		libqjson.so:${PORTSDIR}/devel/qjson
-
-LATEST_LINK=	${PORTNAME}-kde4
 
 USE_KDE4=	kdelibs kdeprefix libksane pimlibs \
 		automoc4 qimageblitz libkcddb libkcompactdisc

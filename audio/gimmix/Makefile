@@ -16,6 +16,7 @@ LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd \
 LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
 USE_GNOME=	gtk20 intltool libglade2
 
@@ -24,18 +25,10 @@ USES=		tar:bzip2 desktop-file-utils gmake pkgconfig
 
 CONFIGURE_ENV=	DATADIRNAME=share
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lintl
-CONFIGURE_ARGS+=	--enable-nls
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_CPPFLAGS=	-I${LOCALBASE}/include
+NLS_LDFLAGS=	-L${LOCALBASE}/lib -lintl
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=		gettext
 
 post-patch:
 	@${LN} -sf ${LOCALBASE}/share/intltool/Makefile.in.in ${WRKSRC}/po/Makefile.in.in

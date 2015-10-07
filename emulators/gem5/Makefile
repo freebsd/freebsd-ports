@@ -4,7 +4,6 @@
 PORTNAME=	gem5
 PORTVERSION=	0.0.${DATE}
 CATEGORIES=	emulators
-MASTER_SITES=	GH
 
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	gem5 Simulator System

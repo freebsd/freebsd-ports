@@ -1,6 +1,6 @@
---- ./conf.d/Makefile.in.orig	2009-09-19 17:55:58.000000000 +0400
-+++ ./conf.d/Makefile.in	2013-02-14 19:58:02.000000000 +0400
-@@ -20,14 +20,14 @@
+--- conf.d/Makefile.in.orig	2009-09-19 13:55:58 UTC
++++ conf.d/Makefile.in
+@@ -20,14 +20,14 @@ install:
  	lst="`ls -1 @srcdir@/*.conf @srcdir@/*.sample @srcdir@/*.default 2>/dev/null | sed 's/\.sample//g; s/\.default//g; s/[^ ]*\*\.[^ ]*//g' | sort | uniq`" ; \
  	for s in $$lst; do \
  	    d="$(DESTDIR)$(confdir)/`echo $$s | sed 's,.*/,,'`" ; \

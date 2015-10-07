@@ -1,5 +1,5 @@
---- xrobots.man.orig	Sat Nov 18 09:37:40 1989
-+++ xrobots.man	Sat Dec  8 22:47:26 2001
+--- xrobots.man.orig	1989-11-17 22:37:40 UTC
++++ xrobots.man
 @@ -3,7 +3,7 @@
  .SH NAME
  xrobots \- fight off villainous robots (X Windows)
@@ -9,7 +9,7 @@
  .SH DESCRIPTION
  .LP
  As in robots(6), xrobots puts you into a world of evil robots (but in
-@@ -110,7 +110,7 @@
+@@ -110,7 +110,7 @@ game play a little more like BSD robots.
  xrobots.scorefile
  .RS
  Set this to the path of your personal score file.  The file will be
@@ -18,7 +18,7 @@
  .RE
  .LP
  xrobots.showmovement
-@@ -214,7 +214,7 @@
+@@ -214,7 +214,7 @@ the USER environment variable.
  .LP
  .SH FILES
  .LP

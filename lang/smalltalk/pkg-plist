@@ -49,6 +49,7 @@ lib/smalltalk/sdl.so
 lib/smalltalk/zlib-%%VERSION%%.so
 lib/smalltalk/zlib.a
 lib/smalltalk/zlib.so
+libdata/pkgconfig/gnu-smalltalk.pc
 libexec/smalltalk/gnutls-wrapper
 libexec/smalltalk/vfs/deb
 libexec/smalltalk/vfs/lslR
@@ -75,3 +76,4 @@ share/aclocal/gst.m4
 share/aclocal/gst-package.m4
 share/emacs/site-lisp/gst-mode.el
 share/emacs/site-lisp/smalltalk-mode.el
+@dir %%DATADIR%%/gtk

@@ -36,8 +36,6 @@ NO_MTREE=	yes
 PORTDOCS=	ALIASES
 DOCSDIR=	doc/${PORTNAME}
 
-.include <bsd.port.pre.mk>
-
 pre-patch:
 	@${PATCH} -d ${WRKFF} -s <${PATCHDIR}/extra-patch-newaliases
 
@@ -47,40 +45,40 @@ post-patch:
 	@${REINPLACE_CMD} -e '/cat/d; s|doc/fastforward|${DOCSDIR}|g' \
 		${WRKFF}/hier.c \
 		${WRKDF}/hier.c
-.if !${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -E 's|^(.*${DOCSDIR})|// \1|g' \
-		${WRKFF}/hier.c
-.endif
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKFF}/conf-cc
 	@${ECHO_CMD} "${CC} ${STRIP} ${LDFLAGS}" > ${WRKFF}/conf-ld
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKDF}/conf-cc
 	@${ECHO_CMD} "${CC} ${STRIP} ${LDFLAGS}" > ${WRKDF}/conf-ld
 
+post-patch-DOCS-off:
+	@${REINPLACE_CMD} -E 's|^(.*${DOCSDIR})|// \1|g' \
+		${WRKFF}/hier.c
+
 do-build:
-	@${MAKE} -C ${WRKDIR}/dot-forward-${DF_VER} ${ALL_TARGET}
-	@${MAKE} -C ${WRKDIR}/fastforward-${FF_VER} ${ALL_TARGET}
+	${MAKE_CMD} -C ${WRKDIR}/dot-forward-${DF_VER} ${ALL_TARGET}
+	${MAKE_CMD} -C ${WRKDIR}/fastforward-${FF_VER} ${ALL_TARGET}
 
 # Do a dance to stage and keep out of resulting binaries (see r346769
 # and r349241)
 post-build:
 	@${ECHO_MSG} "===> Rebuilding DJB installer to respect STAGEDIR"
-	@${MV} -f ${WRKFF}/conf-qmail ${WRKFF}/conf-qmail.sav
-	@${ECHO_CMD} "${STAGEDIR}${QMAIL_PREFIX}" > ${WRKFF}/conf-qmail
-	@cd ${WRKFF} ; ${RM} -f install instcheck install.o instcheck.o hier.o auto_qmail.o auto_qmail.c
-	@cd ${WRKFF} ; ${DO_MAKE_BUILD} install instcheck
-	@${TOUCH} ${WRKFF}/newaliases ${WRKFF}/fastforward ${WRKFF}/newinclude
-	@${MV} -f ${WRKFF}/conf-qmail.sav ${WRKFF}/conf-qmail
+	${MV} -f ${WRKFF}/conf-qmail ${WRKFF}/conf-qmail.sav
+	${ECHO_CMD} "${STAGEDIR}${QMAIL_PREFIX}" > ${WRKFF}/conf-qmail
+	cd ${WRKFF} ; ${RM} -f install instcheck install.o instcheck.o hier.o auto_qmail.o auto_qmail.c
+	cd ${WRKFF} ; ${DO_MAKE_BUILD} install instcheck
+	${TOUCH} ${WRKFF}/newaliases ${WRKFF}/fastforward ${WRKFF}/newinclude
+	${MV} -f ${WRKFF}/conf-qmail.sav ${WRKFF}/conf-qmail
 
-	@${MV} -f ${WRKDF}/conf-qmail ${WRKDF}/conf-qmail.sav
-	@${ECHO_CMD} "${STAGEDIR}${QMAIL_PREFIX}" > ${WRKDF}/conf-qmail
-	@cd ${WRKDF} ; ${RM} -f install instcheck install.o instcheck.o hier.o auto_qmail.o auto_qmail.c
-	@cd ${WRKDF} ; ${DO_MAKE_BUILD} install instcheck
-	@${TOUCH} ${WRKDF}/dot-forward
-	@${MV} -f ${WRKDF}/conf-qmail.sav ${WRKDF}/conf-qmail
+	${MV} -f ${WRKDF}/conf-qmail ${WRKDF}/conf-qmail.sav
+	${ECHO_CMD} "${STAGEDIR}${QMAIL_PREFIX}" > ${WRKDF}/conf-qmail
+	cd ${WRKDF} ; ${RM} -f install instcheck install.o instcheck.o hier.o auto_qmail.o auto_qmail.c
+	cd ${WRKDF} ; ${DO_MAKE_BUILD} install instcheck
+	${TOUCH} ${WRKDF}/dot-forward
+	${MV} -f ${WRKDF}/conf-qmail.sav ${WRKDF}/conf-qmail
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${QMAIL_PREFIX}/${DOCSDIR}
-	@${MAKE} -C ${WRKDIR}/dot-forward-${DF_VER} ${INSTALL_TARGET}
-	@${MAKE} -C ${WRKDIR}/fastforward-${FF_VER} ${INSTALL_TARGET}
+	${MAKE_CMD} -C ${WRKDIR}/dot-forward-${DF_VER} ${INSTALL_TARGET}
+	${MAKE_CMD} -C ${WRKDIR}/fastforward-${FF_VER} ${INSTALL_TARGET}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

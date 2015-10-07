@@ -13,7 +13,7 @@ COMMENT=	Easy to use musicpd client written in Qt4
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:bzip2 qmake
+USES=		qmake tar:bzip2
 USE_QT4=	moc_build rcc_build uic_build \
 		corelib gui network xml xmlpatterns
 INSTALLS_ICONS=	yes
@@ -23,34 +23,25 @@ OPTIONS_DEFINE=	DBUS NLS DEBUG
 DATADIR=	${PREFIX}/share/QMPDClient
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-.include  <bsd.port.options.mk>
+OPTIONS_SUB=	NLS
 
-.if ! ${PORT_OPTIONS:MNLS}
-PLIST_SUB+=	NLS="@comment "
-.else
-USE_QT4+=	linguist_build
-PLIST_SUB+=	NLS=""
-.endif
+NLS_USE=	QT4=linguisttools_build
 
-.if ${PORT_OPTIONS:MDBUS}
-USE_QT4+=	dbus
-QMAKE_ARGS+=	"CONFIG+=qdbus"
-.endif
+DBUS_QMAKE_ON=	CONFIG+=qdbus
+DBUS_USE=	QT4=dbus
 
-.if ${PORT_OPTIONS:MDEBUG}
-QMAKE_ARGS+=	"CONFIG+=debug"
-.endif
+DEBUG_QMAKE_ON=	CONFIG+=debug
 
 post-patch:
-.if ! ${PORT_OPTIONS:MNLS}
-	@${REINPLACE_CMD} -e '/INSTALLS += translations/d' \
-		${WRKSRC}/${PORTNAME}.pro
-.endif
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
 		-e 's|lupdate|lupdate-qt4|' \
 		-e 's|lrelease|lrelease-qt4|' \
 		${WRKSRC}/${PORTNAME}.pro
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' \
 		${WRKSRC}/src/notifications_dbus.cpp
+
+post-patch-NLS-off:
+	@${REINPLACE_CMD} -e '/INSTALLS += translations/d' \
+		${WRKSRC}/${PORTNAME}.pro
 
 .include <bsd.port.mk>

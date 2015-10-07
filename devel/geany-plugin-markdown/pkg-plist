@@ -1,0 +1,13 @@
+lib/geany/markdown.so
+%%PORTDOCS%%%%DOCSDIR%%/markdown/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/markdown/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/markdown/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/markdown/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/markdown/README
+%%PORTDOCS%%%%DOCSDIR%%/markdown/html/help.html
+%%PORTDOCS%%%%DOCSDIR%%/markdown/html/plugin.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/html/plugin_mgr.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/html/plugin_prefs.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/html/plugin_small.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/html/set_filetype.png
+%%PORTDOCS%%%%DOCSDIR%%/markdown/html/settings.png

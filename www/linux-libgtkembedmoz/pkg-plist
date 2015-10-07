@@ -254,13 +254,3 @@
 %%MOZLIBDIR%%/res/unixcharset.properties
 %%MOZLIBDIR%%/res/viewer.properties
 %%MOZLIBDIR%%/res/viewsource.css
-@dirrm %%MOZLIBDIR%%/res/dtd
-@dirrm %%MOZLIBDIR%%/res/rdf
-@dirrm %%MOZLIBDIR%%/res/html
-@dirrm %%MOZLIBDIR%%/res/fonts
-@dirrm %%MOZLIBDIR%%/res/entityTables
-@dirrm %%MOZLIBDIR%%/res/builtin
-@dirrm %%MOZLIBDIR%%/res
-@dirrm %%MOZLIBDIR%%/components/myspell
-@dirrm %%MOZLIBDIR%%/components
-@dirrm %%MOZLIBDIR%%

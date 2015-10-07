@@ -17,6 +17,9 @@ COMMENT=	Ruby extension library to use Thomas Boutell's gd library
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libgd.so:${PORTSDIR}/graphics/gd
 
+BROKEN_RUBY21=	yes
+BROKEN_RUBY22=	yes
+
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
@@ -87,10 +90,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} >= 2.1
-BROKEN=		Does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

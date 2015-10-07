@@ -28,9 +28,6 @@ MAKE_JOBS_UNSAFE=	yes
 CFLAGS+=	-I${LOCALBASE}/include -D_LSEEK_DECLARED -fPIC
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-BROKEN_powerpc=	Does not build on ${ARCH}
-BROKEN_sparc64=	Does not build on ${ARCH}
-
 OPTIONS_DEFINE=	DOCS
 
 ZXID_BINS=	smime zxcall zxcot zxdecode zxencdectest zxidhlo \

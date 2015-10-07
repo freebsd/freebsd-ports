@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nsd
-PORTVERSION=	4.1.3
+PORTVERSION=	4.1.5
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
@@ -51,7 +51,7 @@ PORTDOCS=	CREDITS ChangeLog LICENSE NSD-DATABASE NSD-DIFFFILE \
 		differences.tex
 
 OPTIONS_DEFINE=		ROOT_SERVER LARGEFILE IPV6 BIND8_STATS CHECKING \
-		MINRESPSIZE NSEC3 MMAP MAXIPS DOCS RRL ZONE_STATS MUNIN_PLUGIN
+		MINRESPSIZE NSEC3 MMAP DOCS RRL ZONE_STATS MUNIN_PLUGIN
 OPTIONS_DEFAULT=	LARGEFILE IPV6 NSEC3 MINRESPSIZE RRL
 OPTIONS_SUB=	yes
 
@@ -62,7 +62,6 @@ CHECKING_DESC=		Internal run-time checks
 NSEC3_DESC=		NSEC3 support
 MINRESPSIZE_DESC=	Minimial response sizing
 MMAP_DESC=		Use mmap instead of malloc (experimental)
-MAXIPS_DESC=		Raise max-ips from 8 to ${NSDMAX_IPS}
 RRL_DESC=		Response Rate Limiting
 ZONE_STATS_DESC=	Separate statistics for each zone
 MUNIN_PLUGIN_DESC=	Install Munin plugin (requires BIND8_STATS)
@@ -77,7 +76,6 @@ CHECKING_CONFIGURE_ENABLE=	checking
 NSEC3_CONFIGURE_ENABLE=		nsec3
 MINRESPSIZE_CONFIGURE_ENABLE=	minimal-responses
 MMAP_CONFIGURE_ENABLE=		mmap
-MAXIPS_CONFIGURE_ON=		--with-max-ips=${NSDMAX_IPS}
 RRL_CONFIGURE_ENABLE=		ratelimit
 ZONE_STATS_CONFIGURE_ENABLE=	zone-stats
 

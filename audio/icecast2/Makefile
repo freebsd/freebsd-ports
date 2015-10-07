@@ -32,7 +32,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV=	OGG_PREFIX=${LOCALBASE}
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME}
-USES=		gmake
+USES=		cpe gmake
 WRKSRC=		${WRKDIR}/icecast-${PORTVERSION}
 
 DATADIR=	${PREFIX}/share/icecast
@@ -42,6 +42,9 @@ PLIST_FILES=	bin/icecast \
 PORTDATA=	*
 PORTDOCS=	*
 SUB_FILES=	pkg-message
+
+CPE_VENDOR=	xiph
+CPE_PRODUCT=	icecast
 
 post-install:
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/favicon.ico ${STAGEDIR}${DATADIR}/web/

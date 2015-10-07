@@ -3,7 +3,7 @@
 
 PORTNAME=	emovix
 PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/movix/eMoviX/0.9
 
@@ -15,6 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 USES=		gmake perl5 shebangfix
-SHEBANG_FILES=	scripts/mkmovixiso scripts/movix-conf.in
+SHEBANG_FILES=	mplayer-fonts/centralEU-cp1250/runme \
+		mplayer-fonts/centralEU-iso-8859-2/runme \
+		scripts/mkmovixiso scripts/movix-conf.in
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

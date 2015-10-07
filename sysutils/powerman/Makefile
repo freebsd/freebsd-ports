@@ -3,7 +3,7 @@
 
 PORTNAME=	powerman
 PORTVERSION=	2.3.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	https://github.com/chaos/powerman/releases/download/${PORTVERSION}/
 

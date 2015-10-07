@@ -1,5 +1,5 @@
---- inc/Module/Install/PRIVATE/Net/SSLeay.pm.orig	2009-08-24 12:42:03.000000000 +0000
-+++ inc/Module/Install/PRIVATE/Net/SSLeay.pm	2009-08-24 12:42:58.000000000 +0000
+--- inc/Module/Install/PRIVATE/Net/SSLeay.pm.orig	2009-08-24 12:42:03 UTC
++++ inc/Module/Install/PRIVATE/Net/SSLeay.pm
 @@ -45,7 +45,7 @@
  
      $self->makemaker_args( CCCDLFLAGS => $opts->{cccdlflags} );

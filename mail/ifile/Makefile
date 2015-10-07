@@ -9,6 +9,8 @@ MASTER_SITES=	http://people.csail.mit.edu/jrennie/ifile/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application of machine learning to e-mail filtering
 
+LICENSE=	GPLv2
+
 USES=		gmake
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89

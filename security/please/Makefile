@@ -2,25 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	please
-PORTVERSION=	2.1
+PORTVERSION=	2.4
 CATEGORIES=	security
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Execute a command as root
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	rst2man:${PORTSDIR}/textproc/py-docutils
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	MagikBSD
 
-INSTALL_TARGET=	install install-pam
-PLIST_FILES=	"@(,,6555) bin/please" etc/pam.d/please.sample man/man1/please.1.gz
+PLIST_FILES=	"@(,,6555) bin/please" "@sample etc/pam.d/please.sample" \
+		man/man1/please.1.gz
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,-o 0 -g 0,,g ; s,-m 6555,-m 0555,g" \
-		-e "s,\(\$${PAMDIR}/\$${BIN}\),\\1.sample," \
-		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s,-m 6555,-m 0555,g" ${WRKSRC}/Makefile
+
+post-install:
+	${CP} ${WRKSRC}/pam.d/please.FreeBSD \
+		${STAGEDIR}${PREFIX}/etc/pam.d/please.sample
 
 .include <bsd.port.mk>

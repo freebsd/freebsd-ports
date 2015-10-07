@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	html5lib
-PORTVERSION=	0.999999
+PORTVERSION=	0.9999999
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		http://magemana.nl/ports/dist/:test
@@ -27,7 +27,7 @@ USE_PYTHON=	autoplist distutils
 
 .if !empty(PORT_OPTIONS:MTEST)
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:master \
-		${DISTNAME}-testdata${EXTRACT_SUFX}:test
+		${PORTNAME}-0.999-testdata${EXTRACT_SUFX}:test
 BUILD_DEPENDS+=	${TEST_DEPENDS}
 .endif
 

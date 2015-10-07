@@ -18,6 +18,6 @@ GH_ACCOUNT=	jodrell
 GH_TAGNAME=	c6961117a5
 USE_PERL5=	configure run
 
-PLIST_FILES=	bin/rdapper man/man1/rdapper.1.gz
+PLIST_FILES=	bin/rdapper ${SITE_MAN1}/rdapper.1.gz
 
 .include <bsd.port.mk>

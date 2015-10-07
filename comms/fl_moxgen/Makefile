@@ -22,14 +22,9 @@ OPTIONS_DEFINE=	PDF
 OPTIONS_DEFAULT=	PDF
 PDF_DESC=	Enable PDF Writing (requires libharu)
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPDF}
- LIB_DEPENDS+=	libhpdf.so:${PORTSDIR}/print/libharu
- ALL_TARGET=	fl_moxgen
-.else
- ALL_TARGET=	fl_moxgen_no_pdf
-.endif
+PDF_LIB_DEPENDS=	libhpdf.so:${PORTSDIR}/print/libharu
+PDF_ALL_TARGET=	fl_moxgen
+PDF_ALL_TARGET_OFF=	fl_moxgen_no_pdf
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \

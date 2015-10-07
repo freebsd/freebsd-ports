@@ -42,4 +42,4 @@ bin/net-server
 %%SITE_PERL%%/Net/Server/Proto/UNIXDGRAM.pm
 %%SITE_PERL%%/Net/Server/SIG.pm
 %%SITE_PERL%%/Net/Server/Single.pm
-man/man1/net-server.1.gz
+%%PERL5_MAN1%%/net-server.1.gz

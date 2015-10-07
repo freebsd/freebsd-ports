@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-base
-PORTVERSION=	1.8.1
+PORTVERSION=	1.10.0
 CATEGORIES=	x11 mate
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSerif.ttf:${PORTSDIR}/x11-fon
 		mate-themes>=1.8.0:${PORTSDIR}/x11-themes/mate-themes \
 		mate-icon-theme-faenza>=1.8.0:${PORTSDIR}/x11-themes/mate-icon-theme-faenza
 
-USE_MATE=	caja:run controlcenter:run dialogs:run icontheme:run \
+USE_MATE=	caja:run controlcenter:run icontheme:run \
 		marco:run notificationdaemon:run panel:run \
 		polkit:run
 

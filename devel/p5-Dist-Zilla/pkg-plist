@@ -1,5 +1,5 @@
 bin/dzil
-man/man1/dzil.1.gz
+%%PERL5_MAN1%%/dzil.1.gz
 %%SITE_PERL%%/Dist/Zilla.pm
 %%SITE_PERL%%/Dist/Zilla/App.pm
 %%SITE_PERL%%/Dist/Zilla/App/Command.pm

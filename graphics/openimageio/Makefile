@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openimageio
-PORTVERSION=	1.5.16
+PORTVERSION=	1.5.18
 DISTVERSIONPREFIX=	Release-
 PORTREVISION?=	0
 CATEGORIES?=	graphics multimedia
@@ -66,7 +66,7 @@ PLIST_SUB+=		LIBVERS=${PORTVERSION}
 LIB_DEPENDS+=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
 		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libhdf5.so:${PORTSDIR}/science/hdf5 \
-		libopencv_legacy.so:${PORTSDIR}/graphics/opencv \
+		libopencv_highgui.so:${PORTSDIR}/graphics/opencv \
 		libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15 \
 		libwebp.so:${PORTSDIR}/graphics/webp
 USE_LDCONFIG=	yes
@@ -86,7 +86,6 @@ CMAKE_ARGS+=	-DUSE_PYTHON:BOOL=ON -DUSE_PYTHON3:BOOL=OFF \
 USE_GL=		glew
 USE_QT4=	corelib gui opengl qmake_build moc_build rcc_build uic_build
 CMAKE_ARGS+=	-DUSE_QT:BOOL=ON -DUSE_OPENGL:BOOL=ON
-CMAKE_ENV+=	QTDIR=${QT_PREFIX} QT_INCLUDES=${QT_INCDIR}
 .else
 CMAKE_ARGS+=	-DUSE_OPENGL:BOOL=OFF -DUSE_QT:BOOL=OFF
 .endif

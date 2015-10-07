@@ -3,4 +3,4 @@ bin/scandeps.pl
 %%SITE_PERL%%/Module/ScanDeps/Cache.pm
 %%SITE_PERL%%/Module/ScanDeps/DataFeed.pm
 %%PERL5_MAN3%%/Module::ScanDeps.3.gz
-man/man1/scandeps.pl.1.gz
+%%PERL5_MAN1%%/scandeps.pl.1.gz

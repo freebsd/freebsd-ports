@@ -1,5 +1,5 @@
---- chrome/renderer/pepper/pepper_flash_font_file_host.cc.orig	2015-04-19 00:16:05.000000000 +0200
-+++ chrome/renderer/pepper/pepper_flash_font_file_host.cc	2015-04-19 00:17:03.000000000 +0200
+--- chrome/renderer/pepper/pepper_flash_font_file_host.cc.orig	2015-08-22 15:01:53.000000000 -0400
++++ chrome/renderer/pepper/pepper_flash_font_file_host.cc	2015-09-03 10:01:52.619879000 -0400
 @@ -13,7 +13,7 @@
  #include "ppapi/proxy/ppapi_messages.h"
  #include "ppapi/proxy/serialized_structs.h"
@@ -16,7 +16,7 @@
 -#if defined(OS_LINUX) || defined(OS_OPENBSD)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    fd_.reset(content::MatchFontWithFallback(
-       description.face.c_str(),
+       description.face,
        description.weight >= PP_BROWSERFONT_TRUSTED_WEIGHT_BOLD,
        description.italic,
        charset,

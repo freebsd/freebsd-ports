@@ -1,8 +1,8 @@
-%%PERL5_MAN3%%/bigint.3.gz
-%%PERL5_MAN3%%/bignum.3.gz
-%%PERL5_MAN3%%/bigrat.3.gz
 %%SITE_PERL%%/Math/BigFloat/Trace.pm
 %%SITE_PERL%%/Math/BigInt/Trace.pm
 %%SITE_PERL%%/bigint.pm
 %%SITE_PERL%%/bignum.pm
 %%SITE_PERL%%/bigrat.pm
+%%PERL5_MAN3%%/bigint.3.gz
+%%PERL5_MAN3%%/bignum.3.gz
+%%PERL5_MAN3%%/bigrat.3.gz

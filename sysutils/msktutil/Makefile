@@ -20,10 +20,4 @@ CONFIGURE_ARGS+=--with-sasldir=${LOCALBASE}
 
 PLIST_FILES=	man/man1/msktutil.1.gz sbin/msktutil
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 900035
-LDFLAGS+=	-lgssapi_krb5
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

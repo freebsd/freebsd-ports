@@ -11,7 +11,7 @@ MASTER_SITES=	GNU \
 MAINTAINER=	avg@icyb.net.ua
 COMMENT=	GTK2 substitute for xmessage
 
-USE_GNOME=	gtk20 gnomeprefix
+USE_GNOME=	gtk20 gnomeprefix intltool
 USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

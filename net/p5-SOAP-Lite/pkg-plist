@@ -51,5 +51,5 @@ bin/stubmaker.pl
 %%PERL5_MAN3%%/SOAP::Transport::POP3.3.gz
 %%PERL5_MAN3%%/SOAP::Transport::TCP.3.gz
 %%PERL5_MAN3%%/SOAP::Utils.3.gz
-man/man1/SOAPsh.pl.1.gz
-man/man1/stubmaker.pl.1.gz
+%%PERL5_MAN1%%/SOAPsh.pl.1.gz
+%%PERL5_MAN1%%/stubmaker.pl.1.gz

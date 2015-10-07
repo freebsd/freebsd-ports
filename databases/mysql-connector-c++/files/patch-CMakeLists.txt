@@ -1,8 +1,8 @@
---- CMakeLists.txt.orig	2014-07-24 20:53:44.000000000 +0200
-+++ CMakeLists.txt	2014-07-29 12:53:28.000000000 +0200
-@@ -261,14 +261,6 @@
-   SET(CPACK_GENERATOR "TGZ")
- ENDIF(WIN32)
+--- CMakeLists.txt.orig	2015-06-04 12:58:30 UTC
++++ CMakeLists.txt
+@@ -305,14 +305,6 @@ IF(RPM_LAYOUT)
+   SET(DOC_DESTINATION "share/doc/${CPACK_PACKAGE_NAME}-${MYSQLCPPCONN_VERSION}")
+ ENDIF()
  
 -INSTALL(FILES
 -	${CPACK_RESOURCE_FILE_README}
@@ -10,8 +10,8 @@
 -	${CPACK_RESOURCE_FILE_LICENSE}
 -	"${CMAKE_SOURCE_DIR}/Licenses_for_Third-Party_Components.txt"
 -	"${CMAKE_SOURCE_DIR}/ANNOUNCEMENT"
--	DESTINATION "." OPTIONAL)
+-	DESTINATION ${DOC_DESTINATION} OPTIONAL)
 -
- SET(COMMON_IGNORE_FILES "/CMakeFiles/" "/Testing/" "/.bzr/" "_CPack_Packages/"
-     "~" ".swp" ".log" ".gz" ".directory$" "CMakeCache.txt" "Makefile"
- 	"install_manifest.txt")
+ SET(COMMON_IGNORE_FILES
+         "/CMakeFiles/"
+         "/Testing/"

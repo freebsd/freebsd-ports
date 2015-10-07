@@ -3,8 +3,8 @@ bin/ibus-setup
 bin/ibus
 etc/xdg/autostart/ibus.desktop
 %%DCONF%%etc/dconf/db/ibus.d/00-upstream-settings
-%%DCONF%%@unexec rm -f %D/etc/dconf/db/ibus
-%%DCONF%%@exec dconf update
+%%DCONF%%@postunexec rm -f %D/etc/dconf/db/ibus
+%%DCONF%%@postexec dconf update
 %%DCONF%%etc/dconf/profile/ibus
 include/ibus-1.0/ibus.h
 include/ibus-1.0/ibusattribute.h
@@ -51,7 +51,7 @@ include/ibus-1.0/ibusenginesimple.h
 %%GTK3%%lib/gtk-3.0/3.0.0/immodules/im-ibus.so
 lib/libibus-1.0.so
 lib/libibus-1.0.so.5
-lib/libibus-1.0.so.5.0.509
+lib/libibus-1.0.so.5.0.511
 %%PYTHON_LIB%%%%PYTHON_SITELIBDIR%%/ibus/__init__.py
 %%PYTHON_LIB%%%%PYTHON_SITELIBDIR%%/ibus/__init__.pyc
 %%PYTHON_LIB%%%%PYTHON_SITELIBDIR%%/ibus/__init__.pyo
@@ -175,6 +175,7 @@ share/applications/ibus-setup.desktop
 %%PORTDOCS%%%%DOCSDIR%%/IBusConfigService.html
 %%PORTDOCS%%%%DOCSDIR%%/IBusEngine.html
 %%PORTDOCS%%%%DOCSDIR%%/IBusEngineDesc.html
+%%PORTDOCS%%%%DOCSDIR%%/IBusEngineSimple.html
 %%PORTDOCS%%%%DOCSDIR%%/IBusFactory.html
 %%PORTDOCS%%%%DOCSDIR%%/IBusHotkeyProfile.html
 %%PORTDOCS%%%%DOCSDIR%%/IBusInputContext.html
@@ -204,7 +205,6 @@ share/applications/ibus-setup.desktop
 %%PORTDOCS%%%%DOCSDIR%%/ibus-ibustypes.html
 %%PORTDOCS%%%%DOCSDIR%%/ibus-ibusversion.html
 %%PORTDOCS%%%%DOCSDIR%%/ibus-ibusxml.html
-%%PORTDOCS%%%%DOCSDIR%%/ibus-IBusEngineSimple.html
 %%PORTDOCS%%%%DOCSDIR%%/ibus-ibuskeys.html
 %%PORTDOCS%%%%DOCSDIR%%/ibus-ibuskeysyms-compat.html
 %%PORTDOCS%%%%DOCSDIR%%/ibus-ibusutil.html
@@ -323,7 +323,7 @@ share/bash-completion/completions/ibus.bash
 %%PYTHON_LIB%%@dir %%PYTHON_SITELIBDIR%%/ibus
 @dir include/ibus-1.0
 %%DCONF%%@dir etc/dconf/db/ibus.d
-%%GTK3%%@exec %%LOCALBASE%%/bin/gtk-query-immodules-3.0 --update-cache
-%%GTK2%%@exec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache
-%%GTK3%%@unexec %%LOCALBASE%%/bin/gtk-query-immodules-3.0 --update-cache
-%%GTK2%%@unexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache
+%%GTK3%%@postexec %%LOCALBASE%%/bin/gtk-query-immodules-3.0 --update-cache
+%%GTK2%%@postexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache
+%%GTK3%%@postunexec %%LOCALBASE%%/bin/gtk-query-immodules-3.0 --update-cache
+%%GTK2%%@postunexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache

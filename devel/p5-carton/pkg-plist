@@ -1,4 +1,4 @@
-man/man1/carton.1.gz
+%%PERL5_MAN1%%/carton.1.gz
 %%PERL5_MAN3%%/Carton.3.gz
 %%PERL5_MAN3%%/Carton::Doc::Bundle.3.gz
 %%PERL5_MAN3%%/Carton::Doc::Check.3.gz

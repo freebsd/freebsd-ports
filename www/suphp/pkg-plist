@@ -10,5 +10,3 @@ etc/suphp.conf-example
 %%PORTDOCS%%%%DOCSDIR%%/apache/CONFIG
 %%PORTDOCS%%%%DOCSDIR%%/apache/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/apache/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/apache
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

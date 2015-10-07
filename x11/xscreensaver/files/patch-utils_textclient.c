@@ -1,5 +1,5 @@
---- utils/textclient.c.orig	2013-09-02 12:43:01.271738814 +0200
-+++ utils/textclient.c	2013-09-02 12:43:25.014748042 +0200
+--- utils/textclient.c.orig	2014-11-05 00:08:06 UTC
++++ utils/textclient.c
 @@ -50,6 +50,9 @@
  # ifdef HAVE_UTIL_H
  #  include <util.h>
@@ -9,4 +9,4 @@
 +# endif
  #endif /* HAVE_FORKPTY */
  
- /*#define DEBUG*/
+ #undef DEBUG

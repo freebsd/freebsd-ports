@@ -24,13 +24,12 @@ RUN_DEPENDS=	p5-Convert-ASN1>=0:${PORTSDIR}/converters/p5-Convert-ASN1 \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}
 USES=		perl5
-NO_BUILD=	YES
+NO_BUILD=	yes
+NO_ARCH=	yes
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${RM} ${WRKSRC}/extras/targetnames/BER.pm \
@@ -49,11 +48,11 @@ do-install:
 		${STAGEDIR}${PREFIX}/www/routers2/rrdicons
 	${INSTALL_SCRIPT} ${WRKSRC}/routers2.cgi.pl \
 		${STAGEDIR}${PREFIX}/www/routers2/routers2.cgi
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}; \
 		${INSTALL_DATA} CHANGES README doc/* ${STAGEDIR}${DOCSDIR}
-.endif
 
 #post-install:
 #.if !defined(BATCH)

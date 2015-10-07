@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-PORTVERSION=	1.7.47
+PORTVERSION=	1.7.51
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	LOCAL/dbn/repos/wine/${DIST_SUBDIR}/${PORTVERSION}
@@ -28,7 +28,7 @@ CONFLICTS_INSTALL?=     wine-[0-9]* wine-staging-[0-9]* wine-devel-[0-9]* \
 
 EXTRACT_AFTER_ARGS=	-C / --exclude +COMPACT_MANIFEST --exclude +MANIFEST \
 				--exclude +MTREE_DIRS --exclude share/licenses/'*' \
-				--exclude libdata/ldconfig32/${UNIQUENAME} \
+				--exclude libdata/ldconfig32/${PKGNAMEPREFIX}${PORTNAME} \
 				-s '|/usr/local|${STAGEDIR}${PREFIX}|gs'
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -42,13 +42,13 @@ USE_LDCONFIG32=	${PREFIX}/lib32 ${PREFIX}/lib32/wine
 USES=		tar:xz
 BUNDLE_LIBS=	yes
 
-GECKO_RUN_DEPENDS=	${DATADIR}/gecko/wine_gecko-2.36-x86.msi:${PORTSDIR}/emulators/wine-gecko-devel
+GECKO_RUN_DEPENDS=	${DATADIR}/gecko/wine_gecko-2.40-x86.msi:${PORTSDIR}/emulators/wine-gecko-devel
 MONO_RUN_DEPENDS=	${DATADIR}/mono/wine-mono-4.5.6.msi:${PORTSDIR}/emulators/wine-mono-devel
 
 # Included for OPSYS and OSVERSION
 .include <bsd.port.pre.mk>
 
-.for osrel in 8 9 10 11
+.for osrel in 9 10 11
 .if ${OSREL:C/\..*//} == ${osrel}
 PLIST_SUB+=	OSREL${osrel}=""
 .if ${PKGNAMESUFFIX} == -devel
@@ -65,8 +65,8 @@ PLIST_SUB+=	OSREL${osrel}-STAGING="@comment "
 .endif
 .endfor
 
-.if ${OPSYS} != FreeBSD || (!(${OSVERSION} < 900000) && !(${OSVERSION} >= 903000 && ${OSVERSION} < 1000000) && !(${OSVERSION} >= 1001000 && ${OSVERSION} < 1100000) && !(${OSVERSION} >= 1100070 && ${OSVERSION} < 1200000))
-IGNORE=		binaries compiled for FreeBSD 8.4+, 9.3+, 10.1+ and -current only
+.if ${OPSYS} != FreeBSD || (!(${OSVERSION} < 1000000) && !(${OSVERSION} >= 1001000 && ${OSVERSION} < 1100000) && !(${OSVERSION} >= 1100077 && ${OSVERSION} < 1200000))
+IGNORE=		binaries compiled for FreeBSD 9.3+, 10.1+ and -current only
 DISTFILES=
 .endif
 
@@ -79,11 +79,11 @@ do-install:
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${EXTRACT_ONLY} ${EXTRACT_AFTER_ARGS}
 
 ${PLIST}: fetch
-	${TAR} -tf ${_DISTDIR}/${EXTRACT_ONLY} ${EXTRACT_AFTER_ARGS} | ${GREP} -v '/$$' | ${SED} 's|/usr/local/||g' | sort > ${PLIST}
+	${TAR} -tf ${_DISTDIR}/${EXTRACT_ONLY} ${EXTRACT_AFTER_ARGS} | ${GREP} -v '/$$\|ldconfig32' | ${SED} 's|/usr/local/||g' | sort > ${PLIST}
 
 port-update:
 	${RM} -f ${SLAVEDIR}/distinfo ${SLAVEDIR}/distinfo~ ${SLAVEDIR}/pkg-plist.*
-.for osrel in 8 9 10 11
+.for osrel in 9 10 11
 .for suffix in -devel -staging
 	${MAKE} fetch OSREL=${osrel} OSVERSION=${osrel}99999 UNAME_r=${osrel} PKGNAMESUFFIX=${suffix}
 	${MAKE} makesum OSREL=${osrel} OSVERSION=${osrel}99999 UNAME_r=${osrel} PKGNAMESUFFIX=${suffix}

@@ -11,6 +11,11 @@ DISTNAME=	AdamLantos-redmine_http_auth-${GITREV}
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	HTTP authentication plugin for Redmine
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
+
+NO_ARCH=	yes
+
 GITREV=		df98baf
 REDMINE_PLUGIN_NAME=	redmine_http_auth
 

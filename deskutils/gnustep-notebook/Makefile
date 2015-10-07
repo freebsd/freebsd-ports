@@ -2,7 +2,7 @@
 
 PORTNAME=	notebook
 PORTVERSION=	0.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	deskutils gnustep
 MASTER_SITES=	http://notebook.cowgar.com/NoteBook/releases/ \
 		http://io.debian.net/~tar/debian/notebook/
@@ -18,6 +18,6 @@ USES=		gnustep
 USE_GNUSTEP=	back build
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/NoteBook.app/NoteBook
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/System/Applications/NoteBook.app/NoteBook
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
---- tool/mkconfig.rb.orig	2014-07-07 10:07:01.000000000 +0800
-+++ tool/mkconfig.rb	2014-12-28 03:22:15.377490192 +0800
+--- tool/mkconfig.rb.orig	2014-07-07 02:07:01 UTC
++++ tool/mkconfig.rb
 @@ -167,8 +167,9 @@
    val.replace(newval) unless newval == val
    val

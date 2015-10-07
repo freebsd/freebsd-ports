@@ -7,12 +7,10 @@ bin/ssh-add
 bin/ssh-agent
 bin/ssh-keygen
 bin/ssh-keyscan
-@exec if [ -f %D/etc/ssh_config -a ! -f %D/etc/ssh/ssh_config ]; then ln %D/etc/ssh_config %D/etc/ssh/ssh_config ; fi
-@exec if [ -f %D/etc/sshd_config -a ! -f %D/etc/ssh/sshd_config ]; then ln %D/etc/sshd_config %D/etc/ssh/sshd_config ; fi
-etc/ssh/moduli
-@sample etc/ssh/ssh_config.sample
-@sample etc/ssh/sshd_config.sample
-%%X509%%@dir etc/ssh/ca
+%%ETCDIR%%/moduli
+@sample %%ETCDIR%%/ssh_config.sample
+@sample %%ETCDIR%%/sshd_config.sample
+%%X509%%@dir %%ETCDIR%%/ca
 @exec if [ -f %D/%%ETCDIR%%/ssh_host_ecdsa_key ] && grep -q DSA %D/%%ETCDIR%%/ssh_host_ecdsa_key; then echo; echo "\!/ Warning \!/"; echo; echo "Your %D/%%ETCDIR%%/ssh_host_ecdsa_key is not a valid ECDSA key. It is incorrectly"; echo "a DSA key due to a bug fixed in 2012 in the security/openssh-portable port."; echo; echo "Regenerate a proper one with: rm -f %D/%%ETCDIR%%/ssh_host_ecdsa_key*; service openssh restart"; echo; echo "Clients should not see any key change warning since the ECDSA was not valid and was not actually"; echo "used by the server."; echo; echo "\!/ Warning \!/"; fi
 sbin/sshd
 libexec/sftp-server

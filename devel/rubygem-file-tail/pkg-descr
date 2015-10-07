@@ -1,5 +1,5 @@
 This is a small ruby library that allows Ruby to 'tail' a file,
-including following a file, that still is growing like the unix
+including following a file, that still is growing like the Unix
 command 'tail -f' can.
 
 This Library is similar to Perl's File::Tail. It can be used to

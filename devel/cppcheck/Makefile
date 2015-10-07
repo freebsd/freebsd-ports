@@ -2,22 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	cppcheck
-PORTVERSION=	1.63
-PORTREVISION=	1
+PORTVERSION=	1.69
 CATEGORIES=	devel
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	SF
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Static analysis of C/C++ code
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libtinyxml2.so:${PORTSDIR}/textproc/tinyxml2
 
-USES=		gmake tar:bzip2
+USES=		compiler:c++11-lib execinfo gmake tar:bzip2
 
 ALL_TARGET=	cppcheck
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
 MAKE_ENV+=	TINYXML=-ltinyxml2
 
 OPTIONS_DEFINE=		MATCHCOMPILER RULES MANPAGES
@@ -57,7 +57,7 @@ MAKE_ENV+=	HAVE_RULES=yes
 
 post-patch:
 	@${REINPLACE_CMD} \
-	-e 's|-Iexternals -Iexternals/tinyxml|-I${LOCALBASE}/include|' \
+	-e 's|-Iexternals/tinyxml|-I${LOCALBASE}/include|' \
 		${WRKSRC}/Makefile
 .if ${PORT_OPTIONS:MMANPAGES}
 	@${REINPLACE_CMD} -e '\|DB2MAN=|d' \

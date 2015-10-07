@@ -28,15 +28,13 @@ GH_PROJECT=	platform_system_core platform_system_extras:extras \
 
 CONFLICTS_INSTALL?=	${PORTNAME}-devel-*
 
-USES+=		uidfix
+USES+=		localbase uidfix
 BUILD_WRKSRC=	${WRKSRC}/fastboot
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 MAKEFILE=	${FILESDIR}/Makefile
 MAKE_ENV=	FILESDIR="${FILESDIR}" BINDIR="${PREFIX}/bin" \
 		MANDIR="${PREFIX}/man/man" \
 		LIBPCRE="${LOCALBASE}/lib/libpcre.a"
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_FILES=	bin/fastboot \
 		%%BASH%%etc/bash_completion.d/fastboot \
 		man/man1/fastboot.1.gz
@@ -46,11 +44,7 @@ SUB_FILES=	pkg-message
 OPTIONS_DEFINE=	BASH DOCS
 OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MBASH}
-LICENSE+=	MIT # debian/copyright
-.endif
+BASH_VARS=	LICENSE+=MIT # debian/copyright
 
 post-extract:
 	@${CP} ${_DISTDIR}/${DISTFILES:M*\:manpage:C/:.*//} \

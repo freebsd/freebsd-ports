@@ -40,11 +40,3 @@
 %%WWWDIR%%/skins/larry/tabstyles.css
 %%WWWDIR%%/skins/larry/templates/sauserprefs.html
 %%WWWDIR%%/skins/larry/templates/settingsedit.html
-@dirrm %%WWWDIR%%/skins/larry/templates
-@dirrm %%WWWDIR%%/skins/larry
-@dirrm %%WWWDIR%%/skins/classic/templates
-@dirrm %%WWWDIR%%/skins/classic
-@dirrm %%WWWDIR%%/skins
-@dirrm %%WWWDIR%%/localization
-@dirrm %%WWWDIR%%/include
-@dirrmtry %%WWWDIR%%

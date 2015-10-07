@@ -11,6 +11,7 @@ COMMENT=	Selenium is web application test tool!
 
 HAS_CONFIGURE=	yes
 MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
+NO_ARCH=	yes
 
 SUB_FILES=	pkg-message
 

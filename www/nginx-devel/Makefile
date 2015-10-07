@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.9.3
+PORTVERSION=	1.9.5
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	LOCAL/osa
@@ -51,7 +51,7 @@ OPTIONS_DEFINE=	\
 	MAIL_POP3 \
 	MAIL_SMTP \
 	MAIL_SSL \
-	SPDY \
+	HTTPV2 \
 	STREAM \
 	STREAM_SSL \
 	THREADS \
@@ -78,6 +78,7 @@ OPTIONS_DEFINE=	\
 	HTTP_REDIS \
 	HTTP_RESPONSE \
 	HTTP_SUBS_FILTER \
+	HTTP_TARANTOOL \
 	HTTP_UPLOAD \
 	HTTP_UPLOAD_PROGRESS \
 	HTTP_UPSTREAM_FAIR \
@@ -103,6 +104,7 @@ OPTIONS_DEFINE=	\
 	RTMP \
 	SET_MISC \
 	SFLOW \
+	SHIBBOLETH \
 	SLOWFS_CACHE \
 	SMALL_LIGHT \
 	SRCACHE \
@@ -144,7 +146,7 @@ MAIL_IMAP_DESC=			Enable IMAP4 proxy module
 MAIL_POP3_DESC=			Enable POP3 proxy module
 MAIL_SMTP_DESC=			Enable SMTP proxy module
 MAIL_SSL_DESC=			Enable mail_ssl module
-SPDY_DESC=			Enable SPDY protocol support (SSL req.)
+HTTPV2_DESC=			Enable HTTP/2 protocol support (SSL req.)
 STREAM_DESC=			Enable stream module
 STREAM_SSL_DESC=		Enable stream_ssl module (SSL req.)
 THREADS_DESC=			Enable threads support
@@ -172,6 +174,7 @@ HTTP_PUSH_STREAM_DESC=		3rd party push stream module
 HTTP_REDIS_DESC=		3rd party http_redis module
 HTTP_RESPONSE_DESC=		3rd party http_response module
 HTTP_SUBS_FILTER_DESC=		3rd party subs filter module
+HTTP_TARANTOOL_DESC=		3rd party tarantool upstream module
 HTTP_UPLOAD_DESC=		3rd party upload module
 HTTP_UPLOAD_PROGRESS_DESC=	3rd party uploadprogress module
 HTTP_UPSTREAM_FAIR_DESC=	3rd party upstream fair module
@@ -197,6 +200,7 @@ REDIS2_DESC=			3rd party redis2 module
 RTMP_DESC=			3rd party rtmp module
 SET_MISC_DESC=			3rd party set_misc module
 SFLOW_DESC=			3rd party sflow module
+SHIBBOLETH_DESC=		3rd party shibboleth module
 SLOWFS_CACHE_DESC=		3rd party slowfs_cache module
 SMALL_LIGHT_DESC=		3rd party small_light module
 SRCACHE_DESC=			3rd party srcache module
@@ -364,12 +368,12 @@ JAVA_VERSION=	1.8
 JAVA_VENDOR=	openjdk
 JAVA_BUILD=	yes
 JAVA_RUN=	yes
-NGINX_CLOJURE_VERSION=	0.4.0
+NGINX_CLOJURE_VERSION=	0.4.2
 GH_ACCOUNT+=	nginx-clojure:clojure
 GH_PROJECT+=	nginx-clojure:clojure
 GH_TAGNAME+=	v${NGINX_CLOJURE_VERSION}:clojure
+CONFIGURE_ENV+=	"JNI_INCS=-I${LOCALBASE}/openjdk8/include -I${LOCALBASE}/openjdk8/include/freebsd"
 CONFIGURE_ARGS+=--add-module=${WRKSRC_clojure}/src/c
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-nginx-clojure-src-c-config
 .endif
 
 .if ${PORT_OPTIONS:MECHO}
@@ -528,6 +532,17 @@ GH_TAGNAME+=	${NGINX_HTTP_SUBS_FILTER_VERSION}:subs_filter
 CONFIGURE_ARGS+=--add-module=${WRKSRC_subs_filter}
 .endif
 
+.if ${PORT_OPTIONS:MHTTP_TARANTOOL}
+LIB_DEPENDS+=	libmsgpuck.so:${PORTSDIR}/devel/msgpuck \
+		libyajl.so:${PORTSDIR}/devel/yajl
+GH_ACCOUNT+=	tarantool:nginx_tarantool
+GH_PROJECT+=	nginx_upstream_module:nginx_tarantool
+GH_TAGNAME+=	966f2f5:nginx_tarantool
+CFLAGS+=	-I${LOCALBASE}/include/msgpuck
+CONFIGURE_ARGS+=--add-module=${WRKSRC_nginx_tarantool}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_tarantool-config
+.endif
+
 .if ${PORT_OPTIONS:MHTTP_SECURE_LINK}
 CONFIGURE_ARGS+=--with-http_secure_link_module
 .endif
@@ -639,12 +654,11 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_let}
 LIB_DEPENDS+=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
 CONFIGURE_ENV+=	"LUAJIT_INC=${LOCALBASE}/include/luajit-2.0"
 CONFIGURE_ENV+=	"LUAJIT_LIB=${LOCALBASE}/lib"
-NGINX_LUA_VERSION=	0.9.15
+NGINX_LUA_VERSION=	0.9.16
 GH_ACCOUNT+=	openresty:lua
 GH_PROJECT+=	lua-nginx-module:lua
 GH_TAGNAME+=	v${NGINX_LUA_VERSION}:lua
 CONFIGURE_ARGS+=--add-module=${WRKSRC_lua}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_lua_socket_udp.c
 .endif
 
 .if ${PORT_OPTIONS:MMEMC}
@@ -657,9 +671,10 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_memc}
 
 .if ${PORT_OPTIONS:MMODSECURITY}
 NGINX_MODSECURITY_VERSION=	2.9.0
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libapr-1.so:${PORTSDIR}/devel/apr1 \
+LIB_DEPENDS+=	libapr-1.so:${PORTSDIR}/devel/apr1 \
 		libcurl.so:${PORTSDIR}/ftp/curl \
+		libluajit-5.1.so:${PORTSDIR}/lang/luajit \
+		libpcre.so:${PORTSDIR}/devel/pcre \
 		libyajl.so:${PORTSDIR}/devel/yajl
 USE_APACHE=	22+
 USE_GNOME+=	libxml2
@@ -686,10 +701,10 @@ CONFIGURE_ARGS+=--without-http_rewrite_module \
 .endif
 
 .if ${PORT_OPTIONS:MPASSENGER}
-PASSENGER_VERSION=	5.0.14
+PASSENGER_VERSION=	5.0.20
 MASTER_SITES+=	http://s3.amazonaws.com/phusion-passenger/releases/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/src/nginx_module
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-passenger-build-nginx.rb
 .if empty(PORT_OPTIONS:MDEBUG)
 CONFIGURE_ENV+=	OPTIMIZE="yes"
@@ -759,6 +774,14 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_sflow_config.c \
 		${PATCHDIR}/extra-patch-ngx_http_sflow_module.c
 .endif
 
+.if ${PORT_OPTIONS:MSHIBBOLETH}
+GIT_SHIBBOLETH_VERSION=	20150121
+GH_ACCOUNT+=	nginx-shib:shib
+GH_PROJECT+=	nginx-http-shibboleth:shib
+GH_TAGNAME+=	v${GIT_SHIBBOLETH_VERSION}:shib
+CONFIGURE_ARGS+=--add-module=${WRKSRC_shib}
+.endif
+
 .if ${PORT_OPTIONS:MSLOWFS_CACHE}
 NGINX_SLOWFS_CACHE_VERSION=	1.10
 MASTER_SITES+=	http://labs.frickle.com/files/:slowfs_cache
@@ -817,10 +840,11 @@ GH_TAGNAME+=	v${NGINX_XSS_VERSION}:xss
 CONFIGURE_ARGS+=--add-module=${WRKSRC_xss}
 .endif
 
-.if ${PORT_OPTIONS:MSPDY}
+.if ${PORT_OPTIONS:MHTTPV2}
 NGINX_OPENSSL=	yes
 USE_HTTP_SSL=	yes
-CONFIGURE_ARGS+=--with-http_spdy_module
+CONFIGURE_ARGS+=--with-http_v2_module
+USE_OPENSSL_PORT=	yes
 .endif
 
 .if ${PORT_OPTIONS:MSTREAM}
@@ -902,11 +926,6 @@ GROUPS?=${WWWGRP}
 
 .if defined(NGINX_OPENSSL)
 USE_OPENSSL=	yes
-.if ${PORT_OPTIONS:MSPDY}
-.if ${OSVERSION} < 1000028
-WITH_OPENSSL_PORT=	yes
-.endif
-.endif
 .endif
 
 pre-everything::
@@ -947,7 +966,7 @@ post-patch:
 .endif
 .if ${PORT_OPTIONS:MCLOJURE}
 	@${REINPLACE_CMD} \
-		's!%%JAVA_HOME%%!${JAVA_HOME}!g' \
+		'45,47d' \
 		${WRKSRC_clojure}/src/c/config
 .endif
 .if ${PORT_OPTIONS:MDRIZZLE}
@@ -1003,6 +1022,11 @@ post-patch:
 	@${REINPLACE_CMD} \
 		's!%%PREFIX%%!${LOCALBASE}!g' \
 		${WRKDIR}/modsecurity-${NGINX_MODSECURITY_VERSION}/configure
+.endif
+.if ${PORT_OPTIONS:MHTTP_TARANTOOL}
+	@${REINPLACE_CMD} \
+		's!%%PREFIX%%!${LOCALBASE}!g' \
+		${WRKSRC_nginx_tarantool}/config
 .endif
 
 pre-configure:

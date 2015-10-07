@@ -90,7 +90,7 @@ LIBS+=		-L${LOCALBASE}/lib
 LIB_DEPENDS+=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libnotify.so:${PORTSDIR}/devel/libnotify
 USES+=		gettext
-USE_GNOME+=	gtk30
+USE_GNOME+=	gtk30 intltool
 PLIST_FILES+=	bin/HandBrake
 
 DESKTOP_ENTRIES="HandBrake" \

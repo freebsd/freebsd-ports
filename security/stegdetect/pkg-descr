@@ -4,7 +4,7 @@ steganographic methods to embed hidden information in JPEG images.
 Currently, the detectable schemes are:
 
     * jsteg
-    * jphide (unix and windows)
+    * jphide (Unix and Windows)
     * invisible secrets
     * outguess 01.3b
     * F5

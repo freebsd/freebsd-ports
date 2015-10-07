@@ -3,6 +3,7 @@
 
 PORTNAME=	MaxMind-DB-Writer
 PORTVERSION=	0.100004
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MAXMIND
@@ -39,5 +40,8 @@ TEST_DEPENDS=	p5-Data-Printer>=0:${PORTSDIR}/devel/p5-Data-Printer \
 
 USE_PERL5=	modbuild
 USES=		perl5
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/MaxMind/DB/Writer/Tree/Tree.so
 
 .include <bsd.port.mk>

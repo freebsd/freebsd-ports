@@ -17,8 +17,6 @@ OPTIONS_DEFINE=	PSUTIL
 PSUTIL_DESC=	Use psutil for better performance
 PSUTIL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>1.0.0:${PORTSDIR}/sysutils/py-psutil
 
-OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
-
 USES=		python
 USE_PYTHON=	distutils autoplist
 

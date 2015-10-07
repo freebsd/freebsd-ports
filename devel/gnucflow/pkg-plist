@@ -1,0 +1,9 @@
+bin/cflow
+%%NLS%%share/locale/da/LC_MESSAGES/cflow.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/cflow.mo
+%%NLS%%share/locale/ga/LC_MESSAGES/cflow.mo
+%%NLS%%share/locale/id/LC_MESSAGES/cflow.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/cflow.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/cflow.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/cflow.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/cflow.mo

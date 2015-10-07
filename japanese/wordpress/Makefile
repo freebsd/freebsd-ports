@@ -2,18 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-PORTVERSION=	4.2.2
+PORTVERSION=	4.3.1
 DISTVERSIONSUFFIX=	-ja
 CATEGORIES=	japanese www
 MASTER_SITES=	http://ja.wordpress.org/
 
-MAINTAINER=	joehorn@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	State-of-the-art semantic personal publishing platform
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
 
 CONFLICTS_INSTALL=	wordpress-[0-9].* de-wordpress-[0-9].* ru-wordpress-[0-9].*
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 USES=		cpe
 USE_PHP=	curl gd mysql pcre tokenizer xml zip zlib
@@ -49,6 +50,8 @@ do-install:
 	${INSTALL} -d -m 755 ${STAGEDIR}${WWWDIR}/
 	${CP} -R ${WRKSRC}/ ${STAGEDIR}${WWWDIR}/
 	${FIND} ${STAGEDIR}${WWWDIR}/ -type d -exec ${CHMOD} g+w '{}' \;
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 

@@ -27,6 +27,6 @@ bin/ebug_server
 %%SITE_PERL%%/Devel/ebug/Plugin/Pad.pm
 %%SITE_PERL%%/Devel/ebug/Plugin/Run.pm
 %%SITE_PERL%%/Devel/ebug/Plugin/StackTrace.pm
-man/man1/ebug.1.gz
-man/man1/ebug_client.1.gz
-man/man1/ebug_server.1.gz
+%%PERL5_MAN1%%/ebug.1.gz
+%%PERL5_MAN1%%/ebug_client.1.gz
+%%PERL5_MAN1%%/ebug_server.1.gz

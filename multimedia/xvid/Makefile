@@ -3,13 +3,17 @@
 
 PORTNAME=	xvid
 PORTVERSION=	1.3.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.xvid.org/downloads/
 DISTNAME=	${PORTNAME}core-${PORTVERSION}
 
-MAINTAINER=	fluffy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Opensource MPEG-4 codec, based on OpenDivx
+
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKDIR}/xvidcore/LICENSE
 
 USES=		gmake
 GNU_CONFIGURE=	yes
@@ -41,6 +45,7 @@ CFLAGS=		# let xvid's build system decide about those
 .endif
 
 post-install:
-	@ ${LN} -sf ${PREFIX}/lib/libxvidcore.so.4 ${STAGEDIR}${PREFIX}/lib/libxvidcore.so
+	@${LN} -sf libxvidcore.so.4 ${STAGEDIR}${PREFIX}/lib/libxvidcore.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libxvidcore.so
 
 .include <bsd.port.post.mk>

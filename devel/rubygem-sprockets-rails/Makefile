@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sprockets-rails
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Sprockets Rails integration
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-actionpack4>=4.0:${PORTSDIR}/www/rubygem-actionpack4 \
+RUN_DEPENDS?=	rubygem-actionpack4>=4.0:${PORTSDIR}/www/rubygem-actionpack4 \
 		rubygem-activesupport4>=4.0:${PORTSDIR}/devel/rubygem-activesupport4 \
 		rubygem-sprockets3>=3.0.3:${PORTSDIR}/devel/rubygem-sprockets3
 

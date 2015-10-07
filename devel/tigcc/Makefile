@@ -16,13 +16,11 @@ MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	C compiler for the TI89, 92, and 92+ calculators
 
 USE_GCC=	any
-USES=		bison tar:bzip2 gmake
+USES=		bison gmake tar:bzip2
 NO_WRKSUBDIR=	yes
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-
-.include <bsd.port.options.mk>
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
@@ -89,38 +87,38 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/tigcc/bin
 
 	@${ECHO} Installing GNU AS
-	@${INSTALL_PROGRAM} ${WRKSRC}/gnu/binutils_build/gas/as-new ${STAGEDIR}${PREFIX}/tigcc/bin/as
+	${INSTALL_PROGRAM} ${WRKSRC}/gnu/binutils_build/gas/as-new ${STAGEDIR}${PREFIX}/tigcc/bin/as
 
 	@${ECHO} Installing the GNU C Compiler
-	@${INSTALL_PROGRAM} ${WRKSRC}/gnu/gcc_build/gcc/cc1 ${STAGEDIR}${PREFIX}/tigcc/bin/cc1
-	@${INSTALL_PROGRAM} ${WRKSRC}/gnu/gcc_build/gcc/xgcc ${STAGEDIR}${PREFIX}/tigcc/bin/gcc
+	${INSTALL_PROGRAM} ${WRKSRC}/gnu/gcc_build/gcc/cc1 ${STAGEDIR}${PREFIX}/tigcc/bin/cc1
+	${INSTALL_PROGRAM} ${WRKSRC}/gnu/gcc_build/gcc/xgcc ${STAGEDIR}${PREFIX}/tigcc/bin/gcc
 
 	@${ECHO} Installing A68K
-	@${INSTALL_PROGRAM} ${WRKSRC}/tigcc/sources/a68k/A68k ${STAGEDIR}${PREFIX}/tigcc/bin/a68k
+	${INSTALL_PROGRAM} ${WRKSRC}/tigcc/sources/a68k/A68k ${STAGEDIR}${PREFIX}/tigcc/bin/a68k
 
 	@${ECHO} Installing LD-TIGCC
-	@${INSTALL_PROGRAM} ${WRKSRC}/tigcc/sources/ld-tigcc/ld-tigcc ${STAGEDIR}${PREFIX}/tigcc/bin/ld-tigcc
-	@${INSTALL_PROGRAM} ${WRKSRC}/tigcc/sources/ld-tigcc/ar-tigcc ${STAGEDIR}${PREFIX}/tigcc/bin/ar-tigcc
+	${INSTALL_PROGRAM} ${WRKSRC}/tigcc/sources/ld-tigcc/ld-tigcc ${STAGEDIR}${PREFIX}/tigcc/bin/ld-tigcc
+	${INSTALL_PROGRAM} ${WRKSRC}/tigcc/sources/ld-tigcc/ar-tigcc ${STAGEDIR}${PREFIX}/tigcc/bin/ar-tigcc
 
 	@${ECHO} Installing PATCHER
-	@${INSTALL_PROGRAM} ${WRKSRC}/tigcc/sources/patcher/src/patcher ${STAGEDIR}${PREFIX}/tigcc/bin/patcher
+	${INSTALL_PROGRAM} ${WRKSRC}/tigcc/sources/patcher/src/patcher ${STAGEDIR}${PREFIX}/tigcc/bin/patcher
 
 	@${ECHO} Installing the ExePack support from the TIGCC Tools Suite
-	@${INSTALL_PROGRAM} ${WRKSRC}/tigcc/sources/ttpack/ttpack ${STAGEDIR}${PREFIX}/tigcc/bin/ttpack
-	@${INSTALL_PROGRAM} ${WRKSRC}/tigcc/sources/ttpack/ttbin2oth ${STAGEDIR}${PREFIX}/tigcc/bin/ttbin2oth
+	${INSTALL_PROGRAM} ${WRKSRC}/tigcc/sources/ttpack/ttpack ${STAGEDIR}${PREFIX}/tigcc/bin/ttpack
+	${INSTALL_PROGRAM} ${WRKSRC}/tigcc/sources/ttpack/ttbin2oth ${STAGEDIR}${PREFIX}/tigcc/bin/ttbin2oth
 
 	@${ECHO} Installing TIGCC
-	@${INSTALL_PROGRAM} ${WRKSRC}/tigcc/sources/tigcc/src/tigcc ${STAGEDIR}${PREFIX}/tigcc/bin/tigcc
+	${INSTALL_PROGRAM} ${WRKSRC}/tigcc/sources/tigcc/src/tigcc ${STAGEDIR}${PREFIX}/tigcc/bin/tigcc
 
 	@${ECHO} Installing TPRBUILDER
-	@${INSTALL_PROGRAM} ${WRKSRC}/tigcc/sources/tprbuilder/src/tprbuilder ${STAGEDIR}${PREFIX}/tigcc/bin/tprbuilder
+	${INSTALL_PROGRAM} ${WRKSRC}/tigcc/sources/tprbuilder/src/tprbuilder ${STAGEDIR}${PREFIX}/tigcc/bin/tprbuilder
 
 	@${ECHO} Installing TIGCCLIB
 	@${CP} -R ${WRKSRC}/tigcc/tigcclib/include ${STAGEDIR}${PREFIX}/tigcc/
 	@${LN} -s ./os.h ${STAGEDIR}${PREFIX}/tigcc/include/asm/OS.h
 	@${CP} -R ${WRKSRC}/tigcc/tigcclib/lib ${STAGEDIR}${PREFIX}/tigcc/
 
-.if ${PORT_OPTIONS:MDOCS}
+do-install-DOCS-on:
 	@${ECHO} Installing the TIGCC documentation
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC}/tigcc; ${CP} AUTHORS BUGS CHANGELOG COPYING DIRECTORIES HOWTO INSTALL README README.linux README.osX ${STAGEDIR}${DOCSDIR}/
@@ -135,10 +133,9 @@ do-install:
 	@${CP} -R ${WRKSRC}/tigcc/tigcclib/doc/html ${STAGEDIR}${DOCSDIR}/
 	@${LN} -s ./html ${STAGEDIR}${DOCSDIR}/tigcclib
 	@${CP} ${WRKSRC}/tigcc/tigcclib/doc/converter/tigccdoc ${STAGEDIR}${PREFIX}/tigcc/bin/
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${CP} ${WRKSRC}/tigcc/tigcclib/examples/* ${STAGEDIR}${EXAMPLESDIR}/
-.endif
 
 .include <bsd.port.mk>

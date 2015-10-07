@@ -3,7 +3,7 @@
 
 PORTNAME=	hercules
 PORTVERSION=	0.1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc
 MASTER_SITES=	SF/${PORTNAME}/development%20branch/${PORTVERSION}
 PKGNAMEPREFIX=	diary-
@@ -11,6 +11,8 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Personal workout diary program for bodybuilders
+
+BROKEN=		Does not fetch
 
 LICENSE=	GPLv2
 

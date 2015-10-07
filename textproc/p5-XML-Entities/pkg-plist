@@ -5,4 +5,4 @@ bin/download-entities.pl
 %%PERL5_MAN3%%/XML::Entities.3pm.gz
 %%PERL5_MAN3%%/XML::Entities::Data.3pm.gz
 %%PERL5_MAN3%%/download-entities.pl.3pm.gz
-man/man1/download-entities.pl.1.gz
+%%PERL5_MAN1%%/download-entities.pl.1.gz

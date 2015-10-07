@@ -1,6 +1,6 @@
---- x86_cpuid_info.c.orig	2013-08-06 20:12:26.000000000 +0400
-+++ x86_cpuid_info.c	2013-11-14 16:49:25.000000000 +0400
-@@ -1252,11 +1252,14 @@
+--- x86_cpuid_info.c.orig	2015-03-02 20:30:42 UTC
++++ x86_cpuid_info.c
+@@ -1274,11 +1274,14 @@ cpuid2 ( unsigned int* eax, unsigned int
                      unsigned int* ecx, unsigned int* edx, 
                      unsigned int index, unsigned int ecx_in )
  {
@@ -18,5 +18,5 @@
 +		: "m" (*ebx), "0" (index), "1" (ecx_in), "2" (42)
 +		: "esi", "memory" );
  }
- 
+ #endif
  

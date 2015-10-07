@@ -17,6 +17,6 @@ bin/picasa-list
 %%PERL5_MAN3%%/Net::Google::PicasaWeb::Media.3.gz
 %%PERL5_MAN3%%/Net::Google::PicasaWeb::MediaEntry.3.gz
 %%PERL5_MAN3%%/Net::Google::PicasaWeb::MediaFeed.3.gz
-man/man1/picasa.1.gz
-man/man1/picasa-get.1.gz
-man/man1/picasa-list.1.gz
+%%PERL5_MAN1%%/picasa.1.gz
+%%PERL5_MAN1%%/picasa-get.1.gz
+%%PERL5_MAN1%%/picasa-list.1.gz

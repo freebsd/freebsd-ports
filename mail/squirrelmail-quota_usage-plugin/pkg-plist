@@ -14,8 +14,4 @@
 %%SQUIRRELDIR%%/plugins/quota_usage/setup.php
 %%SQUIRRELDIR%%/plugins/quota_usage/screenshot.jpg
 %%SQUIRRELDIR%%/plugins/quota_usage/version
-@dirrm %%SQUIRRELDIR%%/plugins/quota_usage/locale/it_IT/LC_MESSAGES
-@dirrm %%SQUIRRELDIR%%/plugins/quota_usage/locale/it_IT
-@dirrm %%SQUIRRELDIR%%/plugins/quota_usage/locale
-@dirrm %%SQUIRRELDIR%%/plugins/quota_usage/
 @exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin quota_usage; fi

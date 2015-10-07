@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	backup
-PORTVERSION=	4.1.10
+PORTVERSION=	4.2.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -10,6 +10,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perform backup operations on remote and local environment
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-CFPropertyList>=2.3.1:${PORTSDIR}/devel/rubygem-CFPropertyList \
 		rubygem-addressable>=2.3.5:${PORTSDIR}/www/rubygem-addressable \
@@ -28,7 +29,7 @@ RUN_DEPENDS=	rubygem-CFPropertyList>=2.3.1:${PORTSDIR}/devel/rubygem-CFPropertyL
 		rubygem-fog>=1.28.0:${PORTSDIR}/devel/rubygem-fog \
 		rubygem-fog-atmos>=0.1.0:${PORTSDIR}/net/rubygem-fog-atmos \
 		rubygem-fog-aws>=0.1.1:${PORTSDIR}/net/rubygem-fog-aws \
-		rubygem-fog-brightbox>=0.7.1:${PORTSDIR}/devel/rubygem-fog-brightbox \
+		rubygem-fog-brightbox>=0.7.1:${PORTSDIR}/net/rubygem-fog-brightbox \
 		rubygem-fog-core>=1.29.0:${PORTSDIR}/devel/rubygem-fog-core \
 		rubygem-fog-ecloud>=0.0.2:${PORTSDIR}/net/rubygem-fog-ecloud \
 		rubygem-fog-json>=1.0.0:${PORTSDIR}/devel/rubygem-fog-json \

@@ -851,3 +851,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/NuvolaIcons.licence.txt
 %%PORTDOCS%%%%DOCSDIR%%/jsCalendar.licence.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
+@dir %%DATADIR%%/themes/CleanFS/mime/video
+@dir %%DATADIR%%/themes/CleanFS/mime/image
+@dir %%DATADIR%%/themes/CleanFS/mime/audio
+@dir %%DATADIR%%/themes/Bluey/mime/video
+@dir %%DATADIR%%/themes/Bluey/mime/image
+@dir %%DATADIR%%/themes/Bluey/mime/audio
+@dir(%%WWWOWN%%,%%WWWGRP%%,750) /var/db/flyspray/attachments
+@dir /var/db/flyspray

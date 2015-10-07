@@ -3,7 +3,7 @@
 
 PORTNAME=	scantailor
 PORTVERSION=	0.9.11.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
 		libpng.so:${PORTSDIR}/graphics/png
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
-USES=		cmake gettext iconv jpeg
+USES=		cmake gettext jpeg
 USE_GCC=	yes
 USE_QT4=	gui xml qmake_build uic_build moc_build rcc_build \
 		linguist_build

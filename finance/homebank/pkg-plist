@@ -219,6 +219,7 @@ share/applications/homebank.desktop
 %%DATADIR%%/icons/hicolor/48x48/status/prf-import.png
 %%DATADIR%%/icons/hicolor/48x48/status/prf-interface.png
 %%DATADIR%%/icons/hicolor/48x48/status/prf-report.png
+%%DATADIR%%/icons/hicolor/scalable/actions/toggle-sign-symbolic.svg
 %%DATADIR%%/images/splash.png
 share/icons/hicolor/16x16/apps/homebank.png
 share/icons/hicolor/22x22/apps/homebank.png

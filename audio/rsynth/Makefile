@@ -24,4 +24,7 @@ post-configure:
 	@${REINPLACE_CMD} -E 's,(BIN|LIB)_DIR\),DESTDIR\)$$\(&,g' \
 		${WRKSRC}/Makefile
 
+post-install:
+	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/dict
+
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- sal/inc/rtl/string.hxx	2014-01-24 03:32:49.000000000 +0900
-+++ sal/inc/rtl/string.hxx	2014-02-04 14:57:30.000000000 +0900
-@@ -234,8 +234,9 @@
+--- sal/inc/rtl/string.hxx.orig	2014-06-19 07:47:24 UTC
++++ sal/inc/rtl/string.hxx
+@@ -234,8 +234,9 @@ private:
        @return a pointer to a (not necessarily null-terminated) byte string
        representing the characters of this string object.
      */

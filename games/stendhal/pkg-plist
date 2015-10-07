@@ -8,6 +8,7 @@ share/stendhal/doc/LICENSE-images.txt
 share/stendhal/doc/Licenses/BSD.txt
 share/stendhal/doc/Licenses/CC0-1.0.txt
 share/stendhal/doc/Licenses/CC-BY-3.0.txt
+share/stendhal/doc/Licenses/GPL-3.0.txt
 share/stendhal/doc/Licenses/MIT.txt
 share/stendhal/lib/EasyMockLicense.html
 share/stendhal/lib/license-apache-2.0.txt
@@ -21,7 +22,6 @@ share/stendhal/lib/marauroa.jar
 share/stendhal/lib/LICENSES.txt
 share/stendhal/lib/NOTICE.txt
 @dir share/stendhal/log
-
 %%CLIENT%%bin/stendhal
 %%CLIENT%%man/man1/stendhal.1.gz
 %%CLIENT%%share/pixmaps/stendhal.png
@@ -33,7 +33,6 @@ share/stendhal/lib/NOTICE.txt
 %%CLIENT%%share/stendhal/lib/stendhal-music-data.jar
 %%CLIENT%%share/stendhal/lib/stendhal-sound-data.jar
 %%CLIENT%%share/stendhal/lib/stendhal.jar
-
 %%SERVER%%bin/stendhal-server
 %%SERVER%%man/man1/stendhal-server.1.gz
 %%SERVER%%share/stendhal/data/conf/admins.txt
@@ -59,6 +58,7 @@ share/stendhal/lib/NOTICE.txt
 %%SERVER%%share/stendhal/data/script/games/stendhal/server/script/BlordroughRaid.class
 %%SERVER%%share/stendhal/data/script/games/stendhal/server/script/BugInspect$1.class
 %%SERVER%%share/stendhal/data/script/games/stendhal/server/script/BugInspect.class
+%%SERVER%%share/stendhal/data/script/games/stendhal/server/script/ChangeMap.class
 %%SERVER%%share/stendhal/data/script/games/stendhal/server/script/ChaosRaid.class
 %%SERVER%%share/stendhal/data/script/games/stendhal/server/script/ContMoveAndStrengthenOnlinePlayers$ContMoveAndStrengthenPlayersTurnListener.class
 %%SERVER%%share/stendhal/data/script/games/stendhal/server/script/ContMoveAndStrengthenOnlinePlayers.class
@@ -146,6 +146,7 @@ share/stendhal/lib/NOTICE.txt
 %%SERVER%%share/stendhal/data/script/games/stendhal/server/script/PlayerPositionMonitoring$PlayerPositionListener$1.class
 %%SERVER%%share/stendhal/data/script/games/stendhal/server/script/PlayerPositionMonitoring$PlayerPositionListener.class
 %%SERVER%%share/stendhal/data/script/games/stendhal/server/script/PlayerPositionMonitoring.class
+%%SERVER%%share/stendhal/data/script/games/stendhal/server/script/RemoveClient.class
 %%SERVER%%share/stendhal/data/script/games/stendhal/server/script/ResetSlot.class
 %%SERVER%%share/stendhal/data/script/games/stendhal/server/script/ResetTutorial.class
 %%SERVER%%share/stendhal/data/script/games/stendhal/server/script/Santa.class
@@ -156,6 +157,7 @@ share/stendhal/lib/NOTICE.txt
 %%SERVER%%share/stendhal/data/script/games/stendhal/server/script/ServerShutdown$1.class
 %%SERVER%%share/stendhal/data/script/games/stendhal/server/script/ServerShutdown.class
 %%SERVER%%share/stendhal/data/script/games/stendhal/server/script/SetNPCPath.class
+%%SERVER%%share/stendhal/data/script/games/stendhal/server/script/SetNPCPathReversible.class
 %%SERVER%%share/stendhal/data/script/games/stendhal/server/script/SetWelcomeText.class
 %%SERVER%%share/stendhal/data/script/games/stendhal/server/script/SokobanReload.class
 %%SERVER%%share/stendhal/data/script/games/stendhal/server/script/SokobanWatcher.class

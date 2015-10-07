@@ -12,7 +12,6 @@
     SUBDIR += bitmessage
     SUBDIR += bnbt
     SUBDIR += btpd
-    SUBDIR += btqueue
     SUBDIR += btsync
     SUBDIR += cpuminer
     SUBDIR += createtorrent
@@ -37,6 +36,7 @@
     SUBDIR += gnunet-gtk
     SUBDIR += gtk-gnutella
     SUBDIR += gtorrentviewer
+    SUBDIR += hs-torrent
     SUBDIR += jigdo
     SUBDIR += ktorrent
     SUBDIR += libbt
@@ -49,6 +49,7 @@
     SUBDIR += linuxdcpp
     SUBDIR += litecoin
     SUBDIR += litecoin-daemon
+    SUBDIR += litecoin-utils
     SUBDIR += lopster
     SUBDIR += microdc2
     SUBDIR += minder
@@ -67,7 +68,6 @@
     SUBDIR += p5-Net-DirectConnect
     SUBDIR += p5-WWW-BitTorrent
     SUBDIR += phex
-    SUBDIR += py-kenosis
     SUBDIR += py-py2play
     SUBDIR += py-transmissionrpc
     SUBDIR += py-vertex

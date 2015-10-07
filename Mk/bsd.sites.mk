@@ -232,23 +232,23 @@ MASTER_SITE_EXIM+= \
 
 .if !defined(IGNORE_MASTER_SITE_CENTOS_LINUX)
 MASTER_SITE_CENTOS_LINUX+= \
-	http://mirror.centos.org/centos/6/os/i386/Packages/ \
-	http://vault.centos.org/6.6/os/Source/SPackages/ \
 	http://mirror.centos.org/%SUBDIR%/ \
-	http://vault.centos.org/%SUBDIR%/
-
+	http://vault.centos.org/%SUBDIR%/ \
+	http://mirror.centos.org/centos/${LINUX_DIST_VER}/os/${LINUX_REPO_ARCH}/Packages/ \
+	http://vault.centos.org/${LINUX_DIST_VER}/os/${LINUX_REPO_ARCH}/Packages/ \
+	http://vault.centos.org/${LINUX_DIST_VER}/os/Source/SPackages/:SOURCE
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_CENTOS_LINUX)
 MASTER_SITE_CENTOS_LINUX_UPDATES+= \
-	http://mirror.centos.org/centos/6/updates/i386/Packages/ \
-	http://vault.centos.org/${LINUX_DIST_VER}/updates/Source/SPackages/
+	http://mirror.centos.org/centos/${LINUX_DIST_VER}/updates/${LINUX_REPO_ARCH}/Packages/ \
+	http://vault.centos.org/${LINUX_DIST_VER}/updates/Source/SPackages/:SOURCE
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_EPEL)
 MASTER_SITE_EPEL+= \
-	http://dl.fedoraproject.org/pub/epel/6/i386/ \
-	http://dl.fedoraproject.org/pub/epel/6/SRPMS/
+	http://dl.fedoraproject.org/pub/epel/6/${LINUX_REPO_ARCH}/ \
+	http://dl.fedoraproject.org/pub/epel/6/SRPMS/:DEFAULT,SOURCE
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_FEDORA_LINUX)
@@ -526,7 +526,7 @@ IGNORE?=	Using master as GH_TAGNAME is invalid. \
 # We are cheating and using backend URLS for Github here. See ports/194898
 # comment #15 for explanation as to why and how to deal with it if it breaks.
 MASTER_SITE_GITHUB+=		https://codeload.github.com/%SUBDIR%
-MASTER_SITE_GITHUB_CLOUD+=	http://cloud.github.com/downloads/%SUBDIR%
+MASTER_SITE_GITHUB_CLOUD+=	https://cloud.github.com/downloads/%SUBDIR%
 
 .  if !defined(MASTER_SITES) || !${MASTER_SITES:MGH} && !${MASTER_SITES:MGHC} && !${USE_GITHUB:Mnodefault}
 MASTER_SITES+=	GH
@@ -697,21 +697,26 @@ MASTER_SITE_GNU+= \
 
 .if !defined(IGNORE_MASTER_SITE_GNUPG)
 MASTER_SITE_GNUPG+= \
-	http://mirror.tje.me.uk/pub/mirrors/ftp.gnupg.org/%SUBDIR%/ \
-	http://dotsrc.org/%SUBDIR%/ \
-	ftp://ftp.freenet.de/pub/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
-	ftp://ftp.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
-	ftp://mirror.cict.fr/gnupg/%SUBDIR%/ \
-	http://artfiles.org/gnupg.org/%SUBDIR%/ \
-	ftp://ftp.franken.de/pub/crypt/mirror/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
-	ftp://ftp.crysys.hu/pub/gnupg/%SUBDIR%/ \
-	ftp://ftp.hi.is/pub/mirrors/gnupg/%SUBDIR%/ \
-	http://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
-	ftp://ftp.sunet.se/pub/security/gnupg/%SUBDIR%/ \
-	ftp://mirror.switch.ch/mirror/gnupg/%SUBDIR%/ \
 	http://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
-	http://www.ring.gr.jp/pub/net/gnupg/%SUBDIR%/ \
-	ftp://ftp.gnupg.org/gcrypt/%SUBDIR%/
+	http://mirror.tje.me.uk/pub/mirrors/ftp.gnupg.org/%SUBDIR%/ \
+	ftp://ftp.surfnet.nl/pub/security/gnupg/%SUBDIR%/ \
+	http://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
+	ftp://ftp.franken.de/pub/crypt/mirror/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
+	ftp://ftp.gnupg.org/gcrypt/%SUBDIR%/ \
+	ftp://ftp.bit.nl/mirror/gnupg/%SUBDIR%/ \
+	ftp://mirror.switch.ch/mirror/gnupg/%SUBDIR%/ \
+	http://artfiles.org/gnupg.org/%SUBDIR%/ \
+	ftp://ftp.freenet.de/pub/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
+	ftp://ftp.crysys.hu/pub/gnupg/%SUBDIR%/ \
+	http://gd.tuwien.ac.at/privacy/gnupg/%SUBDIR%/ \
+	ftp://mirror.cict.fr/gnupg/%SUBDIR%/ \
+	http://mirrors.dotsrc.org/%SUBDIR%/ \
+	ftp://ftp.iasi.roedu.net/pub/mirrors/ftp.gnupg.org/%SUBDIR%/ \
+	ftp://ftp.sunet.se/pub/security/gnupg/%SUBDIR%/ \
+	ftp://ftp.hi.is/pub/mirrors/gnupg/%SUBDIR%/ \
+	ftp://ftp.jyu.fi/pub/crypt/gcrypt/%SUBDIR%/ \
+	http://dist.gnupg.pt/%SUBDIR%/ \
+	http://gnupg.org.favoritelinks.net/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_GNUSTEP)
@@ -1022,6 +1027,7 @@ MASTER_SITE_PERL_CPAN?=
 
 MASTER_SITE_PERL_CPAN_BY+= \
 	http://cpan.metacpan.org/%CPANSORT%/%SUBDIR%/ \
+	http://cpan.metacpan.org/modules/by-module/%SUBDIRPLUS%/ \
 	http://www.cpan.org/%CPANSORT%/%SUBDIR%/ \
 	ftp://ftp.cpan.org/pub/CPAN/%CPANSORT%/%SUBDIR%/ \
 	http://www.cpan.dk/%CPANSORT%/%SUBDIR%/ \
@@ -1033,17 +1039,16 @@ MASTER_SITE_PERL_CPAN_BY+= \
 	http://backpan.perl.org/%CPANSORT%/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/languages/perl/CPAN/%CPANSORT%/%SUBDIR%/ \
 	http://ftp.twaren.net/Unix/Lang/CPAN/%CPANSORT%/%SUBDIR%/ \
-	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%SUBDIR%/ \
-	http://www.cpan.dk/modules/by-module/%SUBDIR%/
+	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%SUBDIRPLUS%/
 
 _PERL_CPAN_FLAG=${MASTER_SITE_SUBDIR:C/(CPAN):.*$/\1/}
 _PERL_CPAN_ID=	${MASTER_SITE_SUBDIR:C/^CPAN:(.)(.)(.*)$/\1\/\1\2\/\1\2\3/}
 
 .if !empty(_PERL_CPAN_ID) && ${_PERL_CPAN_FLAG:tl} == "cpan"
     _PERL_CPAN_SORT=authors/id/${_PERL_CPAN_ID}
-    MASTER_SITE_PERL_CPAN=${MASTER_SITE_PERL_CPAN_BY:S/%CPANSORT%/${_PERL_CPAN_SORT}/:S/%SUBDIR%\///}
+    MASTER_SITE_PERL_CPAN=${MASTER_SITE_PERL_CPAN_BY:S/%CPANSORT%/${_PERL_CPAN_SORT}/:S/%SUBDIR%\///:S/%SUBDIRPLUS%\//${PORTNAME:C/-.*//}\//}
 .else
-    MASTER_SITE_PERL_CPAN=${MASTER_SITE_PERL_CPAN_BY:S/%CPANSORT%/${_PERL_CPAN_SORT}/}
+    MASTER_SITE_PERL_CPAN=${MASTER_SITE_PERL_CPAN_BY:S/%CPANSORT%/${_PERL_CPAN_SORT}/:S/%SUBDIRPLUS%\///}
 .endif
 
 .endif

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-control-center
-PORTVERSION=	1.8.3
+PORTVERSION=	1.10.1
 CATEGORIES=	sysutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -28,7 +28,8 @@ USE_GNOME=	dconf glib20 gtk20 intlhack libxml2 librsvg2 \
 		pango
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-appindicator=no
+CONFIGURE_ARGS=	--enable-appindicator=no \
+		--with-gtk=2.0
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- src/wings_text.erl.orig
 +++ src/wings_text.erl
 @@ -65,7 +65,7 @@

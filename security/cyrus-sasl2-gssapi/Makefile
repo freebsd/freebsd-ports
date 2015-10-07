@@ -2,7 +2,7 @@
 
 PORTNAME=	gssapi
 PORTVERSION=	2.1.26
-PORTREVISION=	3
+PORTREVISION=	7
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-sasl/ \
 		http://cyrusimap.org/releases/

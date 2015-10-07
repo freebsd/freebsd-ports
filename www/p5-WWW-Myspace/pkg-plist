@@ -11,6 +11,6 @@ bin/message_group
 %%SITE_PERL%%/WWW/Myspace/FriendChanges.pm
 %%SITE_PERL%%/WWW/Myspace/Message.pm
 %%SITE_PERL%%/WWW/Myspace/MyBase.pm
-man/man1/approve_friends.1.gz
-man/man1/comment_myspace.1.gz
-man/man1/message_group.1.gz
+%%PERL5_MAN1%%/approve_friends.1.gz
+%%PERL5_MAN1%%/comment_myspace.1.gz
+%%PERL5_MAN1%%/message_group.1.gz

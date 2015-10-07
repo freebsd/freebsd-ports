@@ -3,7 +3,7 @@
 
 PORTNAME=	smalltalk
 PORTVERSION=	3.2.5
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	lang
 MASTER_SITES=	GNU
 
@@ -60,15 +60,18 @@ post-patch:
 		${WRKSRC}/libgst/prims.inl
 	@${REINPLACE_CMD} -e '/^ac_include/s/\\$$/#include <wctype.h> \\/' \
 		${WRKSRC}/snprintfv/configure
+	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|$$(prefix)/libdata/pkgconfig|' \
+		${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.in
 
 post-build:
 	@${SED} -e 's|@bindir@|${PREFIX}/bin|g' \
 		${WRKSRC}/gst-mode.el.in > ${WRKSRC}/gst-mode.el
 
 post-install:
+	@${LN} -sf gst-load.1 ${STAGEDIR}${MANPREFIX}/man/man1/gst-reload.1
 	@${MKDIR} ${STAGEDIR}${DATADIR}/gtk
-	@${INSTALL_DATA} ${WRKSRC}/*.el ${STAGEDIR}${PREFIX}/share/emacs/site-lisp
-	@ls -1 ${STAGEDIR}${PREFIX}/bin/gst* |grep -v config|xargs ${STRIP_CMD}
+	${INSTALL_DATA} ${WRKSRC}/*.el ${STAGEDIR}${PREFIX}/share/emacs/site-lisp
+	@${LS} -1 ${STAGEDIR}${PREFIX}/bin/gst* |grep -v config|xargs ${STRIP_CMD}
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/smalltalk/*.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgst.so
 

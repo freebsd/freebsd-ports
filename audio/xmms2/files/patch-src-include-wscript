@@ -1,6 +1,6 @@
---- src/include/wscript.orig	2011-10-20 21:26:08.000000000 +0200
-+++ src/include/wscript	2013-05-24 17:17:24.643159743 +0200
-@@ -2,12 +2,13 @@
+--- src/include/wscript.orig	2011-10-20 19:26:08 UTC
++++ src/include/wscript
+@@ -2,12 +2,13 @@ import os
  
  def build(bld):
      # FIXME: This is a test that should work.

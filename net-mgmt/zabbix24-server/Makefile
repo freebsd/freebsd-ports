@@ -1,8 +1,8 @@
-# Created by: Pakhom Golynga <pakhom706@gmail.com>
+# Created by: Pakhom Golynga <pakhom@pakhom.spb.ru>
 # $FreeBSD$
 
 PORTNAME=	zabbix24
-PORTVERSION=	2.4.5
+PORTVERSION=	2.4.6
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
@@ -67,7 +67,6 @@ SUB_FILES=	pkg-message
 
 CONFIGURE_ARGS+=	--with-net-snmp
 
-OPTIONSFILE=		${PORT_DBDIR}/${PORTNAME}${PKGNAMESUFFIX}/options
 OPTIONS_DEFINE=		IPV6 FPING JABBER CURL LDAP IPMI SSH NMAP JAVAGW \
 			LIBXML2
 OPTIONS_DEFAULT=	IPV6 FPING JABBER CURL UNIXODBC MYSQL SSH

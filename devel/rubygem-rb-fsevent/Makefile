@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rb-fsevent
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

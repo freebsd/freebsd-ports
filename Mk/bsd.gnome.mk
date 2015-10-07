@@ -3,16 +3,8 @@
 #
 # $FreeBSD$
 #	$NetBSD: $
-#     $MCom: ports/trunk/Mk/bsd.gnome.mk 20033 2014-11-02 23:07:27Z kwm $
 #
 # Please view me with 4 column tabs!
-
-#######################################################
-#
-# *** WARNING: Disable MARCUSCOM before merge in FreeBSD!
-#     Please also remove this section before merging into FreeBSD.
-#
-#MARCUSCOM_CVS=yes
 
 # ======================= USERS =================================
 #
@@ -83,15 +75,15 @@ _USE_GNOME_ALL+= atk atspi cairo gal2 \
 		gnomespeech gnomevfs2 gtk-update-icon-cache gtk20 gtkhtml3 gtksharp10 \
 		gtksharp20 gtksourceview gtksourceview2 gvfs libartlgpl2 libbonobo \
 		libbonoboui libgda4 libglade2 libgnome \
-		libgnomecanvas libgnomedb libgnomekbd libgnomeprint libgnomeprintui \
+		libgnomecanvas libgnomekbd libgnomeprint libgnomeprintui \
 		libgnomeui libgsf libgtkhtml libidl librsvg2 libwnck \
-		libxml2 libxslt linc \
+		libxml2 libxslt \
 		orbit2 pango pangox-compat pygnome2 pygobject pygtk2 \
 		pygtksourceview vte
 
 # GNOME 3 components
 _USE_GNOME_ALL+=dconf evolutiondataserver3 gnomecontrolcenter3 gnomedesktop3 \
-		gnomemenus3 gtk30 gtkhtml4 gtksourceview3 libgda5 \
+		gnomemenus3 gsound gtk30 gtkhtml4 gtksourceview3 libgda5 \
 		libgda5-ui libwnck3 metacity nautilus3 py3gobject3 \
 		pygobject3 vte3
 
@@ -140,6 +132,12 @@ gconfmm26_USE_GNOME_IMPL=	glibmm gconf2
 glibmm_DETECT=		${LOCALBASE}/libdata/pkgconfig/glibmm-2.4.pc
 glibmm_LIB_DEPENDS=	libglibmm-2.4.so:${PORTSDIR}/devel/glibmm
 glibmm_USE_GNOME_IMPL=	libsigc++20 glib20
+
+gsound_DETECT=		${LOCALBASE}/libdata/pkgconfig/gsound.pc
+gsound_BUILD_DEPENDS=	gsound-play:${PORTSDIR}/audio/gsound
+gsound_LIB_DEPENDS=	libgsound.so:${PORTSDIR}/audio/gsound
+gsound_RUN_DEPENDS=	gsound-play:${PORTSDIR}/audio/gsound
+gsound_USE_GNOME_IMPL=	glib20
 
 gtkmm20_DETECT=		${LOCALBASE}/libdata/pkgconfig/gtkmm-2.0.pc
 gtkmm20_LIB_DEPENDS=	libgtkmm-2.0.so:${PORTSDIR}/x11-toolkits/gtkmm20
@@ -241,17 +239,13 @@ gtk-update-icon-cache_USE_GNOME_IMPL=	atk pango gdkpixbuf2
 
 gtk20_LIB_DEPENDS=	libgtk-x11-2.0.so:${PORTSDIR}/x11-toolkits/gtk20
 gtk20_DETECT=		${LOCALBASE}/libdata/pkgconfig/gtk+-x11-2.0.pc
-gtk20_USE_GNOME_IMPL=	intltool atk pango
+gtk20_USE_GNOME_IMPL=	atk pango
 GTK2_VERSION=		2.10.0
 
 gtk30_LIB_DEPENDS=	libgtk-3.so:${PORTSDIR}/x11-toolkits/gtk30
 gtk30_DETECT=		${LOCALBASE}/libdata/pkgconfig/gtk+-3.0.pc
-gtk30_USE_GNOME_IMPL=	intltool atk pango
+gtk30_USE_GNOME_IMPL=	atk pango
 GTK3_VERSION=		3.0.0
-
-linc_LIB_DEPENDS=	liblinc.so:${PORTSDIR}/net/linc
-linc_DETECT=		${LOCALBASE}/libdata/pkgconfig/linc.pc
-linc_USE_GNOME_IMPL=	glib20
 
 libidl_LIB_DEPENDS=	libIDL-2.so:${PORTSDIR}/devel/libIDL
 libidl_DETECT=		${LOCALBASE}/libdata/pkgconfig/libIDL-2.0.pc
@@ -352,16 +346,14 @@ vte3_USE_GNOME_IMPL=	gtk30
 
 librsvg2_LIB_DEPENDS=	librsvg-2.so:${PORTSDIR}/graphics/librsvg2
 librsvg2_DETECT=	${LOCALBASE}/libdata/pkgconfig/librsvg-2.0.pc
-librsvg2_USE_GNOME_IMPL=libgsf gtk20
+librsvg2_USE_GNOME_IMPL=libgsf gdkpixbuf2 pango
 
 nautilus3_LIB_DEPENDS=	libnautilus-extension.so:${PORTSDIR}/x11-fm/nautilus
 nautilus3_DETECT=	${LOCALBASE}/share/gir-1.0/Nautilus-3.0.gir
 nautilus3_USE_GNOME_IMPL=gnomedesktop3 gvfs libxml2
-nautilus3_GNOME_DESKTOP_VERSION=3
 
 metacity_LIB_DEPENDS=	libmetacity-private.so:${PORTSDIR}/x11-wm/metacity
 metacity_DETECT=	${LOCALBASE}/libdata/pkgconfig/libmetacity-private.pc
-metacity_GNOME_DESKTOP_VERSION=3
 
 gal2_LIB_DEPENDS=	libgal-2.4.so:${PORTSDIR}/x11-toolkits/gal2
 gal2_DETECT=		${LOCALBASE}/libdata/pkgconfig/gal-2.4.pc
@@ -371,7 +363,6 @@ gnomecontrolcenter3_DETECT=	${LOCALBASE}/libdata/pkgconfig/gnome-keybindings.pc
 gnomecontrolcenter3_BUILD_DEPENDS=	${gnomecontrolcenter3_DETECT}:${PORTSDIR}/sysutils/gnome-control-center
 gnomecontrolcenter3_RUN_DEPENDS=	${gnomecontrolcenter3_DETECT}:${PORTSDIR}/sysutils/gnome-control-center
 gnomecontrolcenter3_USE_GNOME_IMPL=	gnomedesktop3
-gnomecontrolcenter3_GNOME_DESKTOP_VERSION=3
 
 libgda4_LIB_DEPENDS=	libgda-4.0.so:${PORTSDIR}/databases/libgda4
 libgda4_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgda-4.0.pc
@@ -384,10 +375,6 @@ libgda5_USE_GNOME_IMPL=	glib20 libxslt
 libgda5-ui_LIB_DEPENDS=	libgda-ui-5.0.so:${PORTSDIR}/databases/libgda5-ui
 libgda5-ui_DETECT=	${LOCALBASE}/libdata/pkgconfig/libgda-ui-5.0.pc
 libgda5-ui_USE_GNOME_IMPL=glib20 libxslt libgda5
-
-libgnomedb_LIB_DEPENDS=	libgnomedb-3.0.so:${PORTSDIR}/databases/libgnomedb
-libgnomedb_DETECT=	${LOCALBASE}/libdata/pkgconfig/libgnomedb.pc
-libgnomedb_USE_GNOME_IMPL=libgnomeui libgda3
 
 gtksourceview_LIB_DEPENDS=	libgtksourceview-1.0.so:${PORTSDIR}/x11-toolkits/gtksourceview
 gtksourceview_DETECT=	${LOCALBASE}/libdata/pkgconfig/gtksourceview-1.0.pc
@@ -457,13 +444,11 @@ gnomespeech_USE_GNOME_IMPL=libbonobo
 evolutiondataserver3_LIB_DEPENDS=	libedataserver-1.2.so:${PORTSDIR}/databases/evolution-data-server
 evolutiondataserver3_DETECT=		${LOCALBASE}/libdata/pkgconfig/libedataserverui-3.0.pc
 evolutiondataserver3_USE_GNOME_IMPL=	libxml2 gtk30
-evolutiondataserver3_GNOME_DESKTOP_VERSION=3
 
 gnomemenus3_BUILD_DEPENDS=	gnome-menus>=3.2.0:${PORTSDIR}/x11/gnome-menus
 gnomemenus3_RUN_DEPENDS=	gnome-menus>=3.2.0:${PORTSDIR}/x11/gnome-menus
 gnomemenus3_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgnome-menu-3.0.pc
 gnomemenus3_USE_GNOME_IMPL=	glib20
-gnomemenus3_GNOME_DESKTOP_VERSION=3
 
 gnomedocutils_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-doc-utils.pc
 gnomedocutils_BUILD_DEPENDS=	${gnomedocutils_DETECT}:${PORTSDIR}/textproc/gnome-doc-utils
@@ -498,10 +483,6 @@ gvfs_DETECT=		${LOCALBASE}/lib/gvfs/libgvfscommon.so
 gvfs_BUILD_DEPENDS=	gvfs>=0:${PORTSDIR}/devel/gvfs
 gvfs_RUN_DEPENDS=	gvfs>=0:${PORTSDIR}/devel/gvfs
 gvfs_USE_GNOME_IMPL=	glib20
-
-.if defined(MARCUSCOM_CVS)
-.sinclude "${PORTSDIR}/Mk/bsd.gnome-experimental.mk"
-.endif
 
 .if defined(INSTALLS_ICONS)
 USE_GNOME+=	gtk-update-icon-cache
@@ -544,32 +525,14 @@ USE_GNOME+=	gtk-update-icon-cache
 # ... Do some other things ...
 # .endif
 
-# If the user has not defined GNOME_DESKTOP_VERSION, let's try to prevent
-# users from shooting themselves in the foot.  We will try to make an
-# intelligent choice on the user's behalf.
-.if exists(${gnomepanel3_DETECT})
-GNOME_DESKTOP_VERSION?=	3
-.elif exists(${gnomepanel_DETECT})
-GNOME_DESKTOP_VERSION?=	2
-.endif
-
 # We also check each component to see if it has a desktop requirement.  If
 # it does, and its requirement disagrees with the user's chosen desktop,
 # do not add the component to the HAVE_GNOME list.
 
 _USE_GNOME_SAVED:=${USE_GNOME}
-_USE_GNOME_DESKTOP=yes
 HAVE_GNOME?=
 .if (defined(WANT_GNOME) && !defined(WITHOUT_GNOME))
 . for component in ${_USE_GNOME_ALL}
-.      if defined(GNOME_DESKTOP_VERSION) && \
-	defined(${component}_GNOME_DESKTOP_VERSION)
-.         if ${GNOME_DESKTOP_VERSION}==${${component}_GNOME_DESKTOP_VERSION}
-HAVE_GNOME+=	${component}
-.         else
-_USE_GNOME_DESKTOP=no
-.         endif
-.      else
 .         if exists(${${component}_DETECT})
 HAVE_GNOME+=	${component}
 .         elif defined(WITH_GNOME)
@@ -578,7 +541,6 @@ HAVE_GNOME+=	${component}
 HAVE_GNOME+=	${component}
 .            endif
 .         endif
-.       endif
 . endfor
 .elif defined(WITHOUT_GNOME)
 .  if ${WITHOUT_GNOME}!="yes" && ${WITHOUT_GNOME}!="1"
@@ -616,14 +578,6 @@ ${component}_USE_GNOME_IMPL+=${${subcomponent}_USE_GNOME_IMPL}
 # and if the user's chosen desktop is not of the same version, mark the
 # port as IGNORE.
 . for component in ${USE_GNOME:C/^([^:]+).*/\1/}
-.      if defined(GNOME_DESKTOP_VERSION) && \
-	defined(${component}_GNOME_DESKTOP_VERSION)
-.         if ${GNOME_DESKTOP_VERSION}!=${${component}_GNOME_DESKTOP_VERSION}
-IGNORE=	cannot install: ${PORTNAME} wants to use the GNOME
-IGNORE+=${${component}_GNOME_DESKTOP_VERSION} desktop, but you wish to use
-IGNORE+=the GNOME ${GNOME_DESKTOP_VERSION} desktop
-.         endif
-.      endif
 .  if ${_USE_GNOME_ALL:M${component}}==""
 IGNORE=	cannot install: Unknown component ${component}
 .  endif
@@ -638,6 +592,14 @@ PLIST_SUB+=			GTK2_VERSION="${GTK2_VERSION}" \
 # Set USE_CSTD for all ports that depend on glib12
 .if defined(_USE_GNOME) && !empty(_USE_GNOME:Mglib12)
 USE_CSTD=	gnu89
+.endif
+
+.if defined(_USE_GNOME) && empty(_USE_GNOME:Mglib20:u) && defined(GLIB_SCHEMAS)
+IGNORE=		GLIB_SCHEMAS is set, but needs USE_GNOME=glib20 to work
+.endif
+
+.if defined(_USE_GNOME) && empty(_USE_GNOME:Mgconf2:u) && defined(GCONF_SCHEMAS)
+IGNORE=		GCONF_SCHEMAS is set, but needs USE_GNOME=gconf2 to work
 .endif
 
 # Then traverse through all components, check which of them
@@ -705,13 +667,6 @@ USE_GNOME?=
 PLIST_SUB+=	GNOME:="@comment " NOGNOME:=""
 .  else
 PLIST_SUB+=	GNOME:="" NOGNOME:="@comment "
-.    if defined(GNOME_DESKTOP_VERSION)
-.      if ${_USE_GNOME_DESKTOP}=="yes"
-PLIST_SUB+=	GNOMEDESKTOP:="" NOGNOMEDESKTOP:="@comment "
-.      else
-PLIST_SUB+=	GNOMEDESKTOP:="@comment " NOGNOMEDESKTOP:=""
-.      endif
-.    endif
 .  endif
 .endif
 
@@ -721,11 +676,6 @@ RUN_DEPENDS+=	${GNOME_SUBR}:${PORTSDIR}/sysutils/gnome_subr
 SUB_LIST+=		GNOME_SUBR=${GNOME_SUBR}
 .endif
 
-.if ${MAINTAINER}=="gnome@FreeBSD.org"
-CONFIGURE_FAIL_MESSAGE= "Please run the gnomelogalyzer, available from \"http://www.freebsd.org/gnome/gnomelogalyzer.sh\", which will diagnose the problem and suggest a solution. If - and only if - the gnomelogalyzer cannot solve the problem, report the build failure to the FreeBSD GNOME team at ${MAINTAINER}, and attach (a) \"${CONFIGURE_WRKSRC}/${CONFIGURE_LOG}\", (b) the output of the failed make command, and (c) the gnomelogalyzer output. Also, it might be a good idea to provide an overview of all packages installed on your system (i.e. an \`ls ${PKG_DBDIR}\`). Put your attachment up on any website, copy-and-paste into http://freebsd-gnome.pastebin.com, or use send-pr(1) with the attachment. Try to avoid sending any attachments to the mailing list (${MAINTAINER}), because attachments sent to FreeBSD mailing lists are usually discarded by the mailing list software."
-.endif
-
-
 .if defined(GCONF_SCHEMAS) || defined(INSTALLS_OMF) || defined(INSTALLS_ICONS) \
 	|| defined(GLIB_SCHEMAS)
 post-install: gnome-post-install
@@ -733,10 +683,10 @@ post-install: gnome-post-install
 gnome-post-install:
 .  if defined(GCONF_SCHEMAS)
 	@for i in ${GCONF_SCHEMAS}; do \
-		${ECHO_CMD} "@unexec env GCONF_CONFIG_SOURCE=xml:${GCONF_CONFIG_OPTIONS}:%D/${GCONF_CONFIG_DIRECTORY} HOME=${WRKDIR} gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/$${i} > /dev/null || /usr/bin/true" \
+		${ECHO_CMD} "@postunexec env GCONF_CONFIG_SOURCE=xml:${GCONF_CONFIG_OPTIONS}:%D/${GCONF_CONFIG_DIRECTORY} HOME=${WRKDIR} gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/$${i} > /dev/null || /usr/bin/true" \
 			>> ${TMPPLIST}; \
 		${ECHO_CMD} "etc/gconf/schemas/$${i}" >> ${TMPPLIST}; \
-		${ECHO_CMD} "@exec env GCONF_CONFIG_SOURCE=xml:${GCONF_CONFIG_OPTIONS}:%D/${GCONF_CONFIG_DIRECTORY} HOME=${WRKDIR} gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/$${i} > /dev/null || /usr/bin/true" \
+		${ECHO_CMD} "@postexec env GCONF_CONFIG_SOURCE=xml:${GCONF_CONFIG_OPTIONS}:%D/${GCONF_CONFIG_DIRECTORY} HOME=${WRKDIR} gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/$${i} > /dev/null || /usr/bin/true" \
 			>> ${TMPPLIST}; \
 	done
 .  endif
@@ -747,17 +697,14 @@ gnome-post-install:
 	@for i in ${GLIB_SCHEMAS}; do \
 		${ECHO_CMD} "share/glib-2.0/schemas/$${i}" >> ${TMPPLIST}; \
 	done
-	@${ECHO_CMD} "@exec glib-compile-schemas %D/share/glib-2.0/schemas > /dev/null || /usr/bin/true" \
-			>> ${TMPPLIST}; \
-	${ECHO_CMD} "@unexec glib-compile-schemas %D/share/glib-2.0/schemas > /dev/null || /usr/bin/true" \
-			>> ${TMPPLIST};
+	@${ECHO_CMD} "@glib-schemas" >> ${TMPPLIST};
 .endif
 
 .  if defined(INSTALLS_OMF)
 	@for i in `${GREP} "\.omf$$" ${TMPPLIST}`; do \
-		${ECHO_CMD} "@exec scrollkeeper-install -q %D/$${i} 2>/dev/null || /usr/bin/true" \
+		${ECHO_CMD} "@postexec scrollkeeper-install -q %D/$${i} 2>/dev/null || /usr/bin/true" \
 			>> ${TMPPLIST}; \
-		${ECHO_CMD} "@unexec scrollkeeper-uninstall -q %D/$${i} 2>/dev/null || /usr/bin/true" \
+		${ECHO_CMD} "@postunexec scrollkeeper-uninstall -q %D/$${i} 2>/dev/null || /usr/bin/true" \
 			>> ${TMPPLIST}; \
 	done
 .  endif
@@ -767,9 +714,9 @@ gnome-post-install:
 	@for i in `${GREP} "^share/icons/.*/" ${TMPPLIST} | ${CUT} -d / -f 1-3 | ${SORT} -u`; do \
 		${ECHO_CMD} "@rmtry $${i}/icon-theme.cache" \
 			>> ${TMPPLIST}.icons1; \
-		${ECHO_CMD} "@exec ${LOCALBASE}/bin/gtk-update-icon-cache -q -f %D/$${i} 2>/dev/null || /usr/bin/true" \
+		${ECHO_CMD} "@postexec ${LOCALBASE}/bin/gtk-update-icon-cache -q -f %D/$${i} 2>/dev/null || /usr/bin/true" \
 			>> ${TMPPLIST}; \
-		${ECHO_CMD} "@unexec ${LOCALBASE}/bin/gtk-update-icon-cache -q -f %D/$${i} 2>/dev/null || /usr/bin/true" \
+		${ECHO_CMD} "@postunexec ${LOCALBASE}/bin/gtk-update-icon-cache -q -f %D/$${i} 2>/dev/null || /usr/bin/true" \
 			>> ${TMPPLIST}; \
 	done
 	@if test -f ${TMPPLIST}.icons1; then \

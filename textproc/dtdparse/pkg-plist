@@ -3,11 +3,11 @@ bin/dtddiff2html
 bin/dtdflatten
 bin/dtdformat
 bin/dtdparse
-man/man1/dtddiff2html.1.gz
-man/man1/dtdformat.1.gz
-man/man1/dtddiff.1.gz
-man/man1/dtdparse.1.gz
-man/man1/dtdflatten.1.gz
+%%PERL5_MAN1%%/dtddiff2html.1.gz
+%%PERL5_MAN1%%/dtdformat.1.gz
+%%PERL5_MAN1%%/dtddiff.1.gz
+%%PERL5_MAN1%%/dtdparse.1.gz
+%%PERL5_MAN1%%/dtdflatten.1.gz
 %%PERL5_MAN3%%/SGML::DTDParse::DTD.3.gz
 %%PERL5_MAN3%%/SGML::DTDParse.3.gz
 %%PERL5_MAN3%%/SGML::DTDParse::Util.3.gz

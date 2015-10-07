@@ -27,7 +27,7 @@
 _INCLUDE_USES_NCURSES_MK=	yes
 
 .if empty(ncurses_ARGS)
-.  if !exists(${DESTDIR}/${LOCALBASE}/lib/libncurses.so) && exists(${DESTDIR}/usr/include/ncurses.h)
+.  if !exists(${DESTDIR}/${LOCALBASE}/lib/libncurses.so) && exists(${DESTDIR}/usr/lib/libncurses.so)
 ncurses_ARGS=	base
 .  else
 ncurses_ARGS=	port
@@ -39,7 +39,8 @@ NCURSESBASE=	/usr
 NCURSESINC=	${NCURSESBASE}/include
 
 .  if exists(${LOCALBASE}/lib/libncurses.so)
-check-depends::
+_USES_sanity+=	400:check-depends-ncurses
+check-depends-ncurses:
 	@${ECHO_CMD} "Dependency error: this port wants the ncurses library from the FreeBSD"
 	@${ECHO_CMD} "base system. You can't build against it, while a newer"
 	@${ECHO_CMD} "version is installed by a port."

@@ -36,6 +36,8 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|wish |${WISH:T} |' ${WRKSRC}/*.tcl
+	@${REINPLACE_CMD} -e 's/FreeBSD-\*/FreeBSD-*|DragonFly-*/g' \
+		${WRKSRC}/configure
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${TOGL_INSTDIR}

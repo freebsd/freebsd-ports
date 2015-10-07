@@ -7,8 +7,11 @@ enabled. Linux mode can be enabled permanently with the linux_enable
 variable of rc.conf(5).
 
 ----------------------
-You should enable Linux mode with the linux_enable variable of rc.conf(5) 
-and use compat.linux.osrelease=2.6.18 in sysctl.conf(5).
+You should enable Linux mode with the linux_enable variable of rc.conf(5).
+Depending on the version of FreeBSD you are using you may have to increase
+the emulated linux version via compat.linux.osrelease=2.6.18 in
+sysctl.conf(5). Check via "sysctl compat.linux.osrelease" that it shows a
+lower version number before setting it.
 ----------------------
 
 If you want to use shared memory in Linux applications, you need to set up

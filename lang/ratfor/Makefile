@@ -10,7 +10,9 @@ MASTER_SITES=	LOCAL/obrien \
 DISTFILES=	ratfor.shar.2 local.ratfor77.shar
 
 MAINTAINER=	bofh@FreeBSD.org
-COMMENT=	Ratfor -- the Rational FORTRAN compiler
+COMMENT=	Rational FORTRAN compiler
+
+BROKEN_powerpc=	./ratfor -o test.f test.r keeps creating huge output file
 
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${CAT}
@@ -22,17 +24,11 @@ USES=		fortran
 PLIST_FILES=	bin/ratfor bin/ratfor77 man/man1/ratfor.1.gz
 
 post-patch:
-	@cd ${WRKSRC} ; ${PATCH} --quiet < testw.patch
+	@${PATCH} -d ${WRKSRC} --quiet < ${WRKSRC}/testw.patch
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ratfor77 ${STAGEDIR}${PREFIX}/bin
 	${LN} -sf ${PREFIX}/bin/ratfor77 ${STAGEDIR}${PREFIX}/bin/ratfor
 	${INSTALL_MAN} ${WRKSRC}/ratfor.1 ${STAGEDIR}${PREFIX}/man/man1
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not compile on powerpc
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

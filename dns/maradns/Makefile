@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	maradns
-PORTVERSION=	2.0.11
+PORTVERSION=	2.0.12
 CATEGORIES=	dns
 MASTER_SITES=	http://maradns.samiam.org/download/2.0/${PORTVERSION}/\
 		SF/${PORTNAME}/MaraDNS/${PORTVERSION}/
@@ -13,7 +13,7 @@ COMMENT=	DNS server with focus on security and simplicity
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEADWOOD_VER=	3.2.07
+DEADWOOD_VER=	3.2.08
 
 REINPLACE_ARGS=	-i ""
 MAKE_ENV=	FLAGS="${CFLAGS}"
@@ -34,7 +34,7 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/cc/${CC}/' ${WRKSRC}/build/Makefile.freebsd
+	@${REINPLACE_CMD} -e 's|cc|${CC}|' ${WRKSRC}/build/Makefile.freebsd
 	@${FIND} ${WRKSRC} -type f ! -name "*.orig" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|/etc/maradns|${ETCDIR}|g; s|/etc/mararc|${ETCDIR}|g' -e\
 		's|/etc/deadwood|${ETCDIR}|g' -e\

@@ -8,16 +8,16 @@ MASTER_SITES=	https://launchpad.net/procenv/trunk/${PORTVERSION}/+download/ \
 		http://people.canonical.com/~jhunt/debian/procenv/${PORTVERSION}/ \
 		DEBIAN
 
-MAINTAINER=	james.hunt@ubuntu.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to show process environment
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	xmlwf:${PORTSDIR}/textproc/expat2
 
+USES=		autoreconf gmake perl5
 GNU_CONFIGURE=	yes
-USES=		gmake perl5
-USE_AUTOTOOLS=	aclocal automake
 USE_PERL5=	build
 
 PLIST_FILES=	bin/procenv \
@@ -32,8 +32,5 @@ regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 
 test: regression-test
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/procenv
 
 .include <bsd.port.mk>

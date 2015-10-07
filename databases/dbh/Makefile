@@ -14,17 +14,15 @@ LICENSE=	GPLv3
 
 CONFLICTS=	dbh-[0-4]*
 
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
 USES=		libtool pkgconfig
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-pkglibdata
 USE_LDCONFIG=	yes
+
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	GTKDOC
 GTKDOC_DESC=	Enable GTK html documentation
-
-.for a in ia64 powerpc sparc64
-BROKEN_${a}=	Does not compile on ia64, powerpc, or sparc64
-.endfor
 
 .include <bsd.port.options.mk>
 
@@ -37,11 +35,12 @@ PLIST_SUB=	GTKDOC="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|^pkgconfigdir.*|pkgconfigdir = $${PREFIX}/libdata/pkgconfig|' ${WRKSRC}/Makefile.in
+# Fix the build on big-endian architectures.
+	@${REINPLACE_CMD} -e '/fractalidad/d' ${WRKSRC}/src/dbh_static.i
 # Needed to remove gtk-doc installation.
 .if empty(PORT_OPTIONS:MGTKDOC)
-	@${REINPLACE_CMD} -e 's|^\(SUBDIRS = src man\).*|\1|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|^\(SUBDIRS = src man\).*|\1|' \
+		${WRKSRC}/Makefile.in
 .endif
 
 .include <bsd.port.mk>

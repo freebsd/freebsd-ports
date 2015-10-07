@@ -7,4 +7,4 @@ ttf2bdf: Produce bitmapped fonts from TrueType files for your X11
          applications.
 ttfbanner: make posters using a TrueType font
 
-WWW: http://freetype.sourceforge.net/
+WWW: http://www.freetype.org/

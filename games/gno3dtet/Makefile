@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME version of the classic 3D-ified T*tris
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf pathfix gmake pkgconfig tar:tgz
 GNU_CONFIGURE=	yes

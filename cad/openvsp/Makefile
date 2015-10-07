@@ -4,7 +4,7 @@
 PORTNAME=	openvsp
 PORTVERSION=	2.3.0
 DISTVERSIONPREFIX=	${GH_PROJECT}_
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	cad
 
 MAINTAINER=	fernando.apesteguia@gmail.com
@@ -29,7 +29,7 @@ GH_PROJECT=	OpenVSP
 GH_ACCOUNT=	${GH_PROJECT}
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
-USES=		cmake:outsource dos2unix iconv jpeg
+USES=		cmake:outsource dos2unix jpeg
 USE_XORG=	ice sm x11 xau xcb xdamage xdmcp xext xfixes xft \
 		xinerama xrender xxf86vm
 USE_GL=		glu

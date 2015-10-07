@@ -12,6 +12,9 @@ DIST_SUBDIR=	python
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Asynchronous socket-based server framework for Python
 
+DEPRECATED=	Abandoned upstream, last release was in 2005
+EXPIRATION_DATE=	2015-10-28
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USES=		python

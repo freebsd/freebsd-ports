@@ -131,5 +131,5 @@ bin/ttree
 %%SITE_ARCH%%/Template/VMethods.pm
 %%SITE_ARCH%%/Template/View.pm
 %%SITE_ARCH%%/auto/Template/Stash/XS/XS.so
-man/man1/tpage.1.gz
-man/man1/ttree.1.gz
+%%PERL5_MAN1%%/tpage.1.gz
+%%PERL5_MAN1%%/ttree.1.gz

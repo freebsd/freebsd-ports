@@ -11,7 +11,6 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/acl.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/adhoc.beam
 %%REDIS%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/basho_bench_driver_eredis.beam
 %%REDIS%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/basho_bench_driver_erldis.beam
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/bitmap.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/cache_tab.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/cache_tab_sup.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/cache_tab_app.beam
@@ -21,8 +20,6 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/cyrsasl_digest.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/cyrsasl_plain.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/cyrsasl_scram.beam
 %%NO_LAGER%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/dynamic_compile.beam
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ehyperloglog.app
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ehyperloglog.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%.app
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_admin.beam
@@ -417,6 +414,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/zh.msg
 %%SQLITE%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/sqlite3_drv.so
 sbin/%%PORTNAME%%ctl
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/guide.html
 @dir /var/spool/ejabberd
 @dir /var/run/ejabberdctl
 @dir /var/log/ejabberd

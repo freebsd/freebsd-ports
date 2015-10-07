@@ -19,7 +19,8 @@ CONFLICTS=	weechat-devel-[0-9]*
 
 USE_LDCONFIG=	yes
 USES=			cmake iconv ncurses
-CMAKE_ARGS+=	-DENABLE_GUILE=no
+CMAKE_ARGS+=	-DENABLE_GUILE=no \
+		-DICONV_INCLUDE_PATH=${ICONV_INCLUDE_PATH}
 CFLAGS+=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl \

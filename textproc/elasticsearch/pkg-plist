@@ -8,7 +8,7 @@ lib/elasticsearch/apache-log4j-extras-1.2.17.jar
 lib/elasticsearch/asm-4.1.jar
 lib/elasticsearch/asm-commons-4.1.jar
 lib/elasticsearch/elasticsearch-%%PORTVERSION%%.jar
-lib/elasticsearch/groovy-all-2.4.0.jar
+lib/elasticsearch/groovy-all-2.4.4.jar
 lib/elasticsearch/jna-4.1.0.jar
 lib/elasticsearch/jts-1.13.jar
 lib/elasticsearch/log4j-1.2.17.jar

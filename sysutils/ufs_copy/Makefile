@@ -3,7 +3,7 @@
 
 PORTNAME=	ufs_copy
 PORTVERSION=	20060921
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.freebsd.org/~simokawa/ufs/
 DISTNAME=	ufs-${PORTVERSION}

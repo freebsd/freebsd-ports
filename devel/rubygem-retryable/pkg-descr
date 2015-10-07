@@ -9,4 +9,3 @@ Should the number of retries be reached without success, the last exception will
 be raised.
 
 WWW: https://github.com/nfedyashev/retryable
-RG:  https://rubygems.org/gems/retryable

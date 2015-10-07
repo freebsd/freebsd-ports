@@ -3,7 +3,7 @@
 
 PORTNAME=	libtheora
 PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -18,9 +18,6 @@ USE_LINUX_RPM=	yes
 RPMVERSION=	2.el6
 USE_LDCONFIG=	yes
 
-PLIST_FILES=	usr/lib/libtheora.so.0 usr/lib/libtheora.so.0.3.9 \
-		usr/lib/libtheoradec.so.1 usr/lib/libtheoradec.so.1.1.3 \
-		usr/lib/libtheoraenc.so.1 usr/lib/libtheoraenc.so.1.1.2
 DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	COPYING README
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr

@@ -19,6 +19,7 @@
     SUBDIR += awka
     SUBDIR += bas2tap
     SUBDIR += basic256
+    SUBDIR += beignet
     SUBDIR += bf2c
     SUBDIR += bigloo
     SUBDIR += bsh
@@ -33,15 +34,16 @@
     SUBDIR += chicken
     SUBDIR += cint
     SUBDIR += cjs
-    SUBDIR += clang-cheri
     SUBDIR += clang-devel
     SUBDIR += clang33
     SUBDIR += clang34
     SUBDIR += clang35
     SUBDIR += clang36
+    SUBDIR += clang37
     SUBDIR += clojure
     SUBDIR += clojure-mode.el
     SUBDIR += cloudabi-clang
+    SUBDIR += clover
     SUBDIR += cmucl
     SUBDIR += cmucl-extra
     SUBDIR += cocor
@@ -61,6 +63,7 @@
     SUBDIR += emacs-lisp-intro
     SUBDIR += erlang
     SUBDIR += erlang-java
+    SUBDIR += erlang-riak
     SUBDIR += erlang-runtime15
     SUBDIR += erlang-runtime16
     SUBDIR += erlang-runtime17
@@ -106,6 +109,7 @@
     SUBDIR += gnu-cobol
     SUBDIR += gnustep-base
     SUBDIR += go
+    SUBDIR += go14
     SUBDIR += gprolog
     SUBDIR += groovy
     SUBDIR += gscheme
@@ -115,7 +119,6 @@
     SUBDIR += hla
     SUBDIR += hope
     SUBDIR += hs-brainfuck
-    SUBDIR += hs-epic
     SUBDIR += hs-unlambda
     SUBDIR += huc
     SUBDIR += hugs
@@ -136,6 +139,7 @@
     SUBDIR += kturtle
     SUBDIR += lafontaine
     SUBDIR += lci
+    SUBDIR += lfe
     SUBDIR += libhx
     SUBDIR += libjit
     SUBDIR += libobjc2
@@ -264,9 +268,11 @@
     SUBDIR += python32
     SUBDIR += python33
     SUBDIR += python34
+    SUBDIR += python35
     SUBDIR += qore
     SUBDIR += qscheme
     SUBDIR += qt5-qml
+    SUBDIR += quack
     SUBDIR += racket
     SUBDIR += racket-minimal
     SUBDIR += ratfor

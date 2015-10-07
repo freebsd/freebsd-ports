@@ -6,7 +6,7 @@
 # in any of it's log files.  This version was tested under the load and
 # no problems encountered so far.  Thanks.
 PORTNAME=	hadoop
-PORTVERSION=	2.6.0
+PORTVERSION=	2.7.1
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/${PORTNAME}/common/stable \
 		LOCAL/demon/:maven \
@@ -35,9 +35,9 @@ CONFLICTS_INSTALL=	hadoop-1*
 USES=		cpe shebangfix
 CPE_VENDOR=	apache
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
+JAVA_VERSION=	1.7
 USE_LDCONFIG=	yes
-SHEBANG_FILES=	hadoop-hdfs-project/hadoop-hdfs-httpfs/src/main/sbin/httpfs.sh hadoop-hdfs-project/hadoop-hdfs-httpfs/src/main/libexec/httpfs-config.sh hadoop-common-project/hadoop-kms/src/main/sbin/kms.sh hadoop-common-project/hadoop-kms/src/main/libexec/kms-config.sh
+SHEBANG_FILES=	hadoop-hdfs-project/hadoop-hdfs-httpfs/src/main/sbin/httpfs.sh hadoop-hdfs-project/hadoop-hdfs-httpfs/src/main/libexec/httpfs-config.sh hadoop-hdfs-project/hadoop-hdfs-httpfs/src/main/conf/httpfs-env.sh hadoop-common-project/hadoop-kms/src/main/sbin/kms.sh hadoop-common-project/hadoop-kms/src/main/libexec/kms-config.sh hadoop-common-project/hadoop-kms/src/main/conf/kms-env.sh hadoop-tools/hadoop-sls/src/main/bin/rumen2sls.sh hadoop-tools/hadoop-sls/src/main/bin/slsrun.sh
 MAKE_ENV+=	HADOOP_PROTOC_PATH=${LOCALBASE}/protobuf25/bin/protoc
 
 OPTIONS_DEFINE=		EXAMPLES
@@ -72,14 +72,14 @@ SUB_LIST=	HDFS_USER="${HDFS_USER}" \
 		HADOOP_RUNDIR="${HADOOP_RUNDIR}"
 
 post-patch:
-	${REINPLACE_CMD} -e "s#/bin/bash#${LOCALBASE}/bin/bash#" ${WRKSRC}/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/DefaultContainerExecutor.java ${WRKSRC}/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-core/src/main/java/org/apache/hadoop/mapreduce/MRJobConfig.java ${WRKSRC}/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/launcher/ContainerLaunch.java ${WRKSRC}/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/util/Shell.java
+	${REINPLACE_CMD} -e "s#/bin/bash#${LOCALBASE}/bin/bash#" ${WRKSRC}/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/DefaultContainerExecutor.java ${WRKSRC}/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-core/src/main/java/org/apache/hadoop/mapreduce/MRJobConfig.java ${WRKSRC}/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/launcher/ContainerLaunch.java ${WRKSRC}/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/util/Shell.java ${WRKSRC}/hadoop-common-project/hadoop-common/src/main/bin/hadoop-daemon.sh
 
 do-build:
 	${MKDIR} ${WRKSRC}/hadoop-hdfs-project/hadoop-hdfs-httpfs/downloads
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/apache-tomcat-${TOMCAT_VERSION}.tar.gz ${WRKSRC}/hadoop-hdfs-project/hadoop-hdfs-httpfs/downloads/
 	${MKDIR} ${WRKSRC}/hadoop-common-project/hadoop-kms/downloads
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/apache-tomcat-${TOMCAT_VERSION}.tar.gz ${WRKSRC}/hadoop-common-project/hadoop-kms/downloads/
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/share/java/maven3/bin/mvn -Dmaven.repo.local=${WRKDIR}/m2 --offline clean package -Pdist,native -DskipTests -Drequire.snappy -Dsnappy.prefix=${LOCALBASE}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/share/java/maven3/bin/mvn -Dmaven.repo.local=${WRKDIR}/m2 --offline  package -Pdist,native -DskipTests -Drequire.snappy -Dsnappy.prefix=${LOCALBASE} -Drequire.openssl
 
 post-build:
 	${RM} ${HADOOP_DIST}/etc/hadoop/*.cmd

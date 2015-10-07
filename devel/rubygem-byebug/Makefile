@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	byebug
-PORTVERSION=	5.0.0
+PORTVERSION=	6.0.2
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
@@ -10,8 +10,6 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby 2 debugger
 
 LICENSE=	BSD2CLAUSE
-
-RUN_DEPENDS=	rubygem-columnize>=0.9.0:${PORTSDIR}/devel/rubygem-columnize
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

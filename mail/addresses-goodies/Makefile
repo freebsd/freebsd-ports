@@ -2,7 +2,7 @@
 
 PORTNAME=	addresses
 PORTVERSION=	0.4.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail gnustep
 MASTER_SITES=	SAVANNAH/gap
 PKGNAMESUFFIX=	-goodies${PKGNAMESUFFIX2}
@@ -20,7 +20,6 @@ LIB_DEPENDS=	libInspector.so:${PORTSDIR}/deskutils/gworkspace \
 		libAddresses.so:${PORTSDIR}/mail/addresses
 USE_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 
-UNIQUENAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 WRKSRC=		${WRKDIR}/Addresses-${PORTVERSION}/Goodies
 
 post-patch:

@@ -1,14 +1,12 @@
 #!/bin/sh
 # $FreeBSD$
 
-FONTSDIR=%%FONTSDIR%%
-
 catfontsdir ()
 {
     while read _IN
     do
       case "${_IN}" in
-      *-kochi-*|[0-9]*|"") ;;
+      kochi-*|*-kochi-*|[0-9]*|"") ;;
       *-aliastt-*|[0-9]*|"") ;;
       *)       echo ${_IN} ;;
       esac
@@ -77,7 +75,7 @@ nfonts ()
 
 case "$2" in
 POST-INSTALL)
-	cd ${FONTSDIR}
+	cd %%FONTSDIR%%
 	touch fonts.dir
 	(catfontsdir < fonts.dir; addentries) > fonts.dir.tmp
 	nfonts < fonts.dir.tmp > fonts.dir
@@ -85,7 +83,7 @@ POST-INSTALL)
 	rm -f fonts.dir.tmp
 	;;
 DEINSTALL)
-	cd ${FONTSDIR}
+	cd %%FONTSDIR%%
 	catfontsdir < fonts.dir > fonts.dir.tmp
 	nfonts < fonts.dir.tmp > fonts.dir
 	cat fonts.dir.tmp >> fonts.dir

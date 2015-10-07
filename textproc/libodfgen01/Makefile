@@ -12,14 +12,13 @@ COMMENT=	Library for generating documents in Open Document Format (ODF)
 LICENSE=	LGPL21 MPL
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libetonyek-0.1.so:${PORTSDIR}/graphics/libetonyek01 \
-		librevenge-0.0.so:${PORTSDIR}/textproc/librevenge
+LIB_DEPENDS=	librevenge-0.0.so:${PORTSDIR}/textproc/librevenge
 
 CONFIGURE_ARGS=	--disable-werror --without-docs
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 GNU_CONFIGURE=	yes
-USES=		compiler:features gperf libtool pathfix pkgconfig tar:xz
+USES=		compiler:features libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 

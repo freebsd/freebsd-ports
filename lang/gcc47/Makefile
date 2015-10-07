@@ -27,7 +27,6 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
 
 CONFLICTS=	gcc-4.7.*
 CPE_VENDOR=	gnu
-UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 
 # DISTVERSION relates to downloads, GCC_VERSION and SUFFIX to names
 # of executables and directories once installed.

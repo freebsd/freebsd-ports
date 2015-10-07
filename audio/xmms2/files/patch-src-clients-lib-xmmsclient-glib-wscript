@@ -1,5 +1,5 @@
---- src/clients/lib/xmmsclient-glib/wscript.orig	2013-05-24 16:43:51.815281865 +0200
-+++ src/clients/lib/xmmsclient-glib/wscript	2013-05-24 17:00:04.966198019 +0200
+--- src/clients/lib/xmmsclient-glib/wscript.orig	2011-10-20 19:26:08 UTC
++++ src/clients/lib/xmmsclient-glib/wscript
 @@ -1,19 +1,21 @@
  from waftools import tool
  

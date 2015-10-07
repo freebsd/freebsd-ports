@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hipchat
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	net-im rubygems
 MASTER_SITES=	RG
 
@@ -10,6 +10,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby library to interact with HipChat
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-httparty>=0:${PORTSDIR}/www/rubygem-httparty \
 		rubygem-mimemagic>=0:${PORTSDIR}/misc/rubygem-mimemagic

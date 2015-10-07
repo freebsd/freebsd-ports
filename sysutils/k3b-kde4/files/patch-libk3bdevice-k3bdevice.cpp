@@ -1,6 +1,6 @@
---- libk3bdevice/k3bdevice.cpp.orig	2010-06-06 15:32:49.000000000 +0200
-+++ libk3bdevice/k3bdevice.cpp	2010-07-30 06:44:02.000000000 +0200
-@@ -309,6 +309,12 @@
+--- libk3bdevice/k3bdevice.cpp.orig	2014-11-04 18:37:31 UTC
++++ libk3bdevice/k3bdevice.cpp
+@@ -322,6 +322,12 @@ QString K3b::Device::Device::blockDevice
  }
  
  
@@ -13,7 +13,7 @@
  int K3b::Device::Device::maxWriteSpeed() const
  {
      return d->maxWriteSpeed;
-@@ -363,6 +369,14 @@
+@@ -376,6 +382,14 @@ bool K3b::Device::Device::init( bool bCh
      if( !open() )
          return false;
  

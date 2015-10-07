@@ -26,6 +26,7 @@ PLIST_FILES=	lib/libmsocket.so \
 		include/msocket.h \
 		include/msocketutils.h
 
+CFLAGS_aarch64+=-fPIC -DPIC
 CFLAGS_amd64+=	-fPIC -DPIC
 CFLAGS_iad64+=	-fPIC -DPIC
 

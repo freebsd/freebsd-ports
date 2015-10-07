@@ -1,4 +1,4 @@
-Tcplist makes a list of tcp connections to and from the local machine,
+Tcplist makes a list of TCP connections to and from the local machine,
 displaying the user name associated with the local end, and making use of 
 Ident services if available to determine the "user" at the other end.
 

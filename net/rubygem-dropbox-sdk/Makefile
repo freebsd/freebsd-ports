@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dropbox-sdk
-PORTVERSION=	1.6.4
+PORTVERSION=	1.6.5
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 

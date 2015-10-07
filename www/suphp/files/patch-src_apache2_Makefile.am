@@ -1,0 +1,9 @@
+--- src/apache2/Makefile.am.orig	2006-10-18 20:42:07 UTC
++++ src/apache2/Makefile.am
+@@ -13,5 +13,5 @@ mod_suphp_la_SOURCES = mod_suphp.c
+ mod_suphp_la_LDFLAGS = -module -rpath '@APXS_LIBEXECDIR@'
+ 
+ install-data-local:
+-	${INSTALL_SCRIPT} -d ${DESTDIR}'@APXS_LIBEXECDIR@'
++	mkdir ${DESTDIR}'@APXS_LIBEXECDIR@'
+ 	${INSTALL_SCRIPT} -m 0755 .libs/mod_suphp.so ${DESTDIR}'@APXS_LIBEXECDIR@'/mod_suphp.so

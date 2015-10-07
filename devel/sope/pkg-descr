@@ -1,0 +1,8 @@
+SOPE is an extensive set of frameworks which form a complete Web
+application server environment. Besides the Apple WebObjects
+compatible appserver extended with Zope concepts, it contains a large
+set of reusable classes: XML processing (SAX, DOM, XML-RPC),
+MIME/IMAP4 processing, LDAP connectivity, RDBMS connectivity, and
+iCalendar parsing.
+
+WWW: http://sogo.nu/

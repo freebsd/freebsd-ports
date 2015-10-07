@@ -6,7 +6,7 @@ Ipaudit provides that ability.
 Ipaudit listens to a network device in promiscuous mode, and records of every
 'connection', each conversation between two ip addresses. A unique connection
 is determined by the ip addresses of the two machines, the protocol used
-between them and the port numbers (if they are communicating via udp or tcp).
+between them and the port numbers (if they are communicating via UDP or TCP).
 
 It uses a hash table to keep track of the number of bytes and packets in both
 directions. When ipaudit receives a signal SIGTERM (kill) or SIGINT (kill -2,

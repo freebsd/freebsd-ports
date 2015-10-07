@@ -98,10 +98,12 @@ include/cego/CegoProcPred.h
 include/cego/CegoProcQueryStmt.h
 include/cego/CegoProcReturnStmt.h
 include/cego/CegoProcStmt.h
+include/cego/CegoProcThrowStmt.h
 include/cego/CegoProcVar.h
 include/cego/CegoProcWhileStmt.h
 include/cego/CegoProcedure.h
 include/cego/CegoQuery.h
+include/cego/CegoQueryCache.h
 include/cego/CegoQueryException.h
 include/cego/CegoQueryHelper.h
 include/cego/CegoRecoveryManager.h
@@ -109,8 +111,8 @@ include/cego/CegoReturnVar.h
 include/cego/CegoSelect.h
 include/cego/CegoSerial.h
 include/cego/CegoSystemObject.h
+include/cego/CegoTableCache.h
 include/cego/CegoTableCursor.h
-include/cego/CegoTableDesc.h
 include/cego/CegoTableManager.h
 include/cego/CegoTableObject.h
 include/cego/CegoTerm.h

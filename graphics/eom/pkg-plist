@@ -1,5 +1,6 @@
 bin/eom
 include/eom-2.20/eom/eom-application.h
+include/eom-2.20/eom/eom-clipboard-handler.h
 include/eom-2.20/eom/eom-debug.h
 include/eom-2.20/eom/eom-dialog.h
 include/eom-2.20/eom/eom-enums.h
@@ -31,6 +32,7 @@ lib/eom/plugins/statusbar-date.eom-plugin
 libdata/pkgconfig/eom.pc
 man/man1/eom.1.gz
 share/MateConf/gsettings/eom.convert
+share/appdata/eom.appdata.xml
 share/applications/eom.desktop
 %%PORTDOCS%%%%DOCSDIR%%/EomDialog.html
 %%PORTDOCS%%%%DOCSDIR%%/EomExifDetails.html
@@ -45,6 +47,7 @@ share/applications/eom.desktop
 %%PORTDOCS%%%%DOCSDIR%%/EomScrollView.html
 %%PORTDOCS%%%%DOCSDIR%%/EomSidebar.html
 %%PORTDOCS%%%%DOCSDIR%%/EomStatusbar.html
+%%PORTDOCS%%%%DOCSDIR%%/api-index.html
 %%PORTDOCS%%%%DOCSDIR%%/ch01.html
 %%PORTDOCS%%%%DOCSDIR%%/ch02.html
 %%PORTDOCS%%%%DOCSDIR%%/ch03.html
@@ -53,6 +56,7 @@ share/applications/eom.desktop
 %%PORTDOCS%%%%DOCSDIR%%/ch06.html
 %%PORTDOCS%%%%DOCSDIR%%/ch07.html
 %%PORTDOCS%%%%DOCSDIR%%/eom-eom-application.html
+%%PORTDOCS%%%%DOCSDIR%%/eom-eom-clipboard-handler.html
 %%PORTDOCS%%%%DOCSDIR%%/eom-eom-config-keys.html
 %%PORTDOCS%%%%DOCSDIR%%/eom-eom-debug.html
 %%PORTDOCS%%%%DOCSDIR%%/eom-eom-error-message-area.html
@@ -84,8 +88,10 @@ share/applications/eom.desktop
 %%PORTDOCS%%%%DOCSDIR%%/index.sgml
 %%PORTDOCS%%%%DOCSDIR%%/left-insensitive.png
 %%PORTDOCS%%%%DOCSDIR%%/left.png
+%%PORTDOCS%%%%DOCSDIR%%/pt01.html
 %%PORTDOCS%%%%DOCSDIR%%/right-insensitive.png
 %%PORTDOCS%%%%DOCSDIR%%/right.png
+%%PORTDOCS%%%%DOCSDIR%%/rn01.html
 %%PORTDOCS%%%%DOCSDIR%%/style.css
 %%PORTDOCS%%%%DOCSDIR%%/up-insensitive.png
 %%PORTDOCS%%%%DOCSDIR%%/up.png

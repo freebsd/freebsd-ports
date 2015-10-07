@@ -98,7 +98,6 @@ USES+=		python
 QT_NONSTANDARD=	yes  # Do not add unknown arguments to CONFIGURE_ARGS.
 
 PATCHDIR=	${.CURDIR}/../../devel/py-qt4-core/files
-OPTIONSFILE?=	${PORT_DBDIR}/py-qt4-${PORTNAME}/options
 SIPDIR=		${PREFIX}/share/py-sip
 QSCIDIR=	${PREFIX}/share/qt4/qsci
 CONFIGURE_ARGS+=-b ${PREFIX}/bin \

@@ -2,6 +2,7 @@
 
 PORTNAME=	fsm
 PORTVERSION=	0.01
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	python-${PORTNAME}
@@ -17,6 +18,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}graphviz>=1.0:${PORTSDIR}/graphics/py-graphv
 
 USES=		python
 USE_PYTHON=	distutils
-PYDISTUTILS_EGGINFO=	python_${PORTNAME}-${PORTVERSION}-py${PYTHON_VER}.egg-info
+PYDISTUTILS_EGGINFO=	python_${PORTNAME}-${PORTVERSION:C/\.0/./}-py${PYTHON_VER}.egg-info
 
 .include <bsd.port.mk>

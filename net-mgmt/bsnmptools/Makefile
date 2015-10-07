@@ -13,11 +13,9 @@ COMMENT=	Snmp client tools
 
 LICENSE=	BSD2CLAUSE
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 900028
 IGNORE=		client tools (including SNMPv3 support) are part of the base system
-.endif
+DEPRECATED=	client tools (including SNMPv3 support) are part of the base system
+EXPIRATION_DATE=	2015-10-14
 
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/bsnmptools/usr.sbin/bsnmpd/tools
@@ -32,4 +30,4 @@ BIN_FILES=	bsnmpget bsnmpset bsnmpwalk
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${DESTDIR}/usr/bin|$${STAGEDIR}$${BINDIR}|g' ${WRKSRC}/bsnmptools/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

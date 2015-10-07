@@ -17,7 +17,7 @@ COMMENT=	Engine for executing data flows in parallel on Hadoop
 
 LICENSE=	APACHE20
 
-BROKEN=		tries to fetch distfiles during build phase
+BROKEN=		tries to make outbound http connection during build phase breaking tinderbox.  Software itself does not have known issues, remove this BROKEN line and build your own package
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \

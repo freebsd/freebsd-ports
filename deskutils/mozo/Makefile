@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mozo
-PORTVERSION=	1.8.0
+PORTVERSION=	1.10.1
 CATEGORIES=	deskutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -14,7 +14,7 @@ PORTSCOUT=	limitw:1,even
 
 USES=		gettext gmake pathfix pkgconfig python:2 tar:xz
 USE_MATE=	menus
-USE_GNOME=	intlhack pygobject pygtk2
+USE_GNOME=	intltool pygobject pygtk2
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

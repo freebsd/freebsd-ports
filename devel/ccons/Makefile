@@ -3,7 +3,7 @@
 
 PORTNAME=	ccons
 PORTVERSION=	r251
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=	clang++33:${PORTSDIR}/lang/clang33
 LIB_DEPENDS=	libncurses.so:${PORTSDIR}/devel/ncurses
 
 ONLY_FOR_ARCHS=	i386 amd64
-USES=		cmake
+USES=		cmake libedit
 CMAKE_ARGS+=	-DLLVM_CONFIG_EXECUTABLE=${LOCALBASE}/bin/llvm-config33
 CXXFLAGS+=	-fno-rtti
 
@@ -27,16 +27,12 @@ SUB_FILES=	ccons.sh
 PLIST_FILES=	bin/ccons man/man1/ccons.1.gz \
 		bin/ccons-bin
 
-WRKSRC=	${WRKDIR}/ccons
+WRKSRC=		${WRKDIR}/ccons
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 1000054
 CXXFLAGS+=	-stdlib=libc++
-.endif
-
-.if ${OSVERSION} < 900044
-BROKEN=	ccons does not work on FreeBSD < 9.0-RELEASE
 .endif
 
 do-install:

@@ -4,6 +4,7 @@
     COMMENT = Character code converters
 
     SUBDIR += R-cran-RJSONIO
+    SUBDIR += R-cran-jsonlite
     SUBDIR += R-cran-rjson
     SUBDIR += aish
     SUBDIR += ascii2binary
@@ -22,6 +23,7 @@
     SUBDIR += drg2sbg
     SUBDIR += dumpasn1
     SUBDIR += enca
+    SUBDIR += erlang-base64url
     SUBDIR += fconv
     SUBDIR += fix-mime-charset
     SUBDIR += fondu
@@ -30,8 +32,10 @@
     SUBDIR += gbase
     SUBDIR += gbsdconv
     SUBDIR += hs-aeson
+    SUBDIR += hs-aeson-pretty
     SUBDIR += hs-dataenc
     SUBDIR += hs-json
+    SUBDIR += hs-sandi
     SUBDIR += htx
     SUBDIR += i18ntools
     SUBDIR += ical2html
@@ -50,17 +54,21 @@
     SUBDIR += mpack
     SUBDIR += nomyso
     SUBDIR += o3read
+    SUBDIR += ocaml-base64
+    SUBDIR += ocaml-jsonm
     SUBDIR += osm2mp
     SUBDIR += osm2pgsql
     SUBDIR += p5-Boulder
     SUBDIR += p5-Convert-ASCII-Armour
     SUBDIR += p5-Convert-ASN1
     SUBDIR += p5-Convert-BER
+    SUBDIR += p5-Convert-Base32
     SUBDIR += p5-Convert-Bencode
     SUBDIR += p5-Convert-Bencode_XS
     SUBDIR += p5-Convert-BinHex
     SUBDIR += p5-Convert-Binary-C
     SUBDIR += p5-Convert-IBM390
+    SUBDIR += p5-Convert-Moji
     SUBDIR += p5-Convert-Morse
     SUBDIR += p5-Convert-NLS_DATE_FORMAT
     SUBDIR += p5-Convert-PEM

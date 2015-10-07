@@ -20,13 +20,6 @@ CONFIGURE_ARGS=	--enable-demos
 INSTALL_TARGET=	install-strip
 WRKSRC=		${WRKDIR}/zlib-${PORTVERSION}/contrib/minizip
 
-.include <bsd.port.options.mk>
-
-# work around missing typedef in 8.X's libz configuration
-.if ${OSVERSION} < 900000
-CPPFLAGS+=	-Dz_crc_t=uint32_t
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} 's/#ifdef unix || __APPLE__/#ifdef unix/' ${WRKSRC}/mini???.c
 

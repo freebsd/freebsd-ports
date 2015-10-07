@@ -1,0 +1,11 @@
+The /usr/bin/perl symlink has been removed starting with Perl 5.20.
+For shebangs, you should either use:
+
+#!/usr/local/bin/perl
+
+or
+
+#!/usr/bin/env perl
+
+The first one will only work if you have a /usr/local/bin/perl,
+the second will work as long as perl is in PATH.

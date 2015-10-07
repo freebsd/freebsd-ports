@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DefHash
-PORTVERSION=	1.0.10
+PORTVERSION=	1.0.11
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PERLANCAR
@@ -14,6 +14,7 @@ COMMENT=	Define things according to a specification, using hashes
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

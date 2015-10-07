@@ -15,5 +15,5 @@ bin/bdf2gdfont.pl
 %%PERL5_MAN3%%/GD::Polygon.3.gz
 %%PERL5_MAN3%%/GD::Polyline.3.gz
 %%PERL5_MAN3%%/GD::Simple.3.gz
-@comment man/man1/bdf2gdfont.PLS.1.gz
-man/man1/bdf2gdfont.pl.1.gz
+@comment %%PERL5_MAN1%%/bdf2gdfont.PLS.1.gz
+%%PERL5_MAN1%%/bdf2gdfont.pl.1.gz

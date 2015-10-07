@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bootstrap-sass
-PORTVERSION=	3.3.5
+PORTVERSION=	3.3.5.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Twitter's Bootstrap
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-autoprefixer-rails>=5.0.0.1:${PORTSDIR}/textproc/rubygem-autoprefixer-rails \
-		rubygem-sass>=3.2.19:${PORTSDIR}/textproc/rubygem-sass
+		rubygem-sass>=3.3.0:${PORTSDIR}/textproc/rubygem-sass
 
 NO_ARCH=	yes
 USE_RUBY=	yes

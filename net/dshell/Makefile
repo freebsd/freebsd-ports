@@ -21,6 +21,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GITHUB=	yes
 USES=		python
+NO_ARCH=	yes
 
 GH_ACCOUNT=	USArmyResearchLab
 GH_PROJECT=	Dshell
@@ -29,8 +30,6 @@ GH_TAGNAME=	46e691c
 OPTIONS_DEFINE=	DOCS
 
 MAKE_ENV+=	PYTHON_CMD=${PYTHON_CMD}
-
-.include <bsd.port.options.mk>
 
 post-patch:
 .for f in bin/generate-dshellrc.py doc/generate-doc.sh
@@ -63,11 +62,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/.dshellrc ${STAGEDIR}/${PREFIX}/etc/dshell
 	(cd ${WRKSRC}/lib; ${COPYTREE_SHARE} . ${STAGEDIR}/${PYTHON_SITELIBDIR}/dshell)
 	(cd ${WRKSRC}/decoders; ${COPYTREE_SHARE} . ${STAGEDIR}/${PYTHON_SITELIBDIR}/dshell/decoders)
-.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}/${DATADIR}/GeoIP
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}/${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}/${DOCSDIR}
 	(cd ${WRKSRC}/doc; ${COPYTREE_SHARE} . ${STAGEDIR}/${DOCSDIR} "-name *\.html")
-.endif
-	${MKDIR} ${STAGEDIR}/${DATADIR}/GeoIP
 
 .include <bsd.port.mk>

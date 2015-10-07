@@ -1,4 +1,4 @@
 bin/fdu
 %%SITE_PERL%%/Filesys/DiskUsage.pm
 %%PERL5_MAN3%%/Filesys::DiskUsage.3.gz
-man/man1/fdu.1.gz
+%%PERL5_MAN1%%/fdu.1.gz

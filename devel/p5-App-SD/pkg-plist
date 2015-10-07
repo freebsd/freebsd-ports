@@ -113,4 +113,4 @@ bin/sd
 %%SITE_PERL%%/auto/share/dist/App-SD/web/static/css/main.css
 %%SITE_PERL%%/auto/share/dist/App-SD/web/static/images/gradient.png
 %%SITE_PERL%%/auto/share/dist/App-SD/web/static/images/sd.png
-man/man1/sd.1.gz
+%%PERL5_MAN1%%/sd.1.gz

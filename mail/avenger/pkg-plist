@@ -10,12 +10,8 @@ bin/match
 bin/sendmac
 bin/smtpdcheck
 bin/synos
-@unexec if cmp -s %D/etc/avenger/asmtpd.conf.sample %D/etc/avenger/asmtpd.conf; then rm -f %D/etc/avenger/asmtpd.conf; fi
-%%ETCDIR%%/asmtpd.conf.sample
-@exec if [ ! -f %D/etc/avenger/asmtpd.conf ] ; then cp -p %D/%F %B/asmtpd.conf; fi
-@unexec if cmp -s %D/etc/avenger/unknown.sample %D/etc/avenger/unknown; then rm -f %D/etc/avenger/unknown; fi
-%%ETCDIR%%/unknown.sample
-@exec if [ ! -f %D/etc/avenger/unknown ] ; then cp -p %D/%F %B/unknown; fi
+@sample %%ETCDIR%%/asmtpd.conf.sample
+@sample %%ETCDIR%%/unknown.sample
 libexec/avenger
 libexec/avenger.local
 man/man1/aliascheck.1.gz

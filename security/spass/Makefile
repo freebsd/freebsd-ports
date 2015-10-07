@@ -14,6 +14,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/format.hpp:${PORTSDIR}/devel/boost-lib
 LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib \
 		libboost_program_options.so:${PORTSDIR}/devel/boost-libs
 
+BROKEN_sparc64=	cannot link with boost
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	guyru
 GH_TAGNAME=	cb0de64

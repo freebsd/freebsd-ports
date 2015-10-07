@@ -2,7 +2,7 @@
 
 PORTNAME=	icli
 DISTVERSION=	0.47
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	http://finalrewind.org/projects/icli/
 
@@ -16,7 +16,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Term-Size>=0:${PORTSDIR}/devel/p5-Term-Size \
-		icinga:${PORTSDIR}/net-mgmt/icinga
+		icinga:${PORTSDIR}/net-mgmt/icinga-core
 
 ICINGADIR?=	/var/spool/icinga
 

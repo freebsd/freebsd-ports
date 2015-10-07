@@ -9,12 +9,16 @@ MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/2.5r3
 #DISTNAME=	${PORTNAME:tl}-${PORTVERSION:S/.p/-pre/:S/.b/-beta/}
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
 
-MAINTAINER=	conrads@cox.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pure Java napster client; also, supports OpenNap & giFT (FastTrack)
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 JAVAVM=		${LOCALBASE}/bin/java
 

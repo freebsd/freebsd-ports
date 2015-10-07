@@ -3,6 +3,7 @@
 
 PORTNAME=	ugene
 DISTVERSION=	1.17.0
+PORTREVISION=	1
 CATEGORIES=	biology science
 MASTER_SITES=	http://ugene.unipro.ru/downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} QueryDesigner_UserManual.pdf \
@@ -17,10 +18,10 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-USES=		execinfo qmake
+USES=		desktop-file-utils execinfo qmake
 USE_GL=		glu
 USE_QT4=	corelib gui network script webkit xml \
-		linguist_build moc_build qmake_build qtestlib_build \
+		linguisttools_build moc_build qmake_build qtestlib_build \
 		rcc_build scripttools_build uic_build \
 		imageformats_run
 USE_XORG=	xtst

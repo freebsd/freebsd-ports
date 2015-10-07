@@ -22,12 +22,13 @@
  INSTALL_BIN = vqregister.cgi
  INSTALL_UID = vpopmail
  INSTALL_GID = vchkpw
-@@ -54,8 +54,6 @@ install: $(BIN)
+@@ -54,9 +54,6 @@ install: $(BIN)
  	cp html/* $(INSTALL_DIR)/html
  	cp vqregister.email $(INSTALL_DIR)
  	cp vqregister.conf $(INSTALL_DIR)
 -	chown -R $(INSTALL_UID) $(INSTALL_DIR)
 -	chgrp -R $(INSTALL_GID) $(INSTALL_DIR)
- 	chmod u+s $(INSTALL_DIR)/$(INSTALL_BIN)
+-	chmod u+s $(INSTALL_DIR)/$(INSTALL_BIN)
  
  clean:
+ 	@echo -n "Cleaning up..."

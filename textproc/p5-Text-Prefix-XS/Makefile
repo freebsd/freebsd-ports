@@ -3,7 +3,7 @@
 
 PORTNAME=	Text-Prefix-XS
 PORTVERSION=	0.15
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,8 +18,12 @@ BUILD_DEPENDS=	p5-Digest-SHA1>=1:${PORTSDIR}/security/p5-Digest-SHA1
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0.108:${PORTSDIR}/devel/p5-Test-Deep
 
-SHEBANG_FILES=	trie.pl
 USE_PERL5=	configure
 USES=		perl5 shebangfix
+
+SHEBANG_FILES=	trie.pl
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Text/Prefix/XS/XS.so
 
 .include <bsd.port.mk>

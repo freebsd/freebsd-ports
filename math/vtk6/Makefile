@@ -23,8 +23,6 @@ LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
 # TODO
 # * VTK Groups
 
-UNIQUENAME=	${PKGBASE}
-
 CONFLICTS=	vtk-4*
 USE_LDCONFIG=	${PREFIX}/lib/vtk-${VTK_SHORT_VER}
 USE_XORG=	xt

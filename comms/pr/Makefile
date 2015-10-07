@@ -23,8 +23,6 @@ RCDFILES=	pr.sh.sample
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
 	(cd ${WRKSRC}/sbin && \
 		${INSTALL_SCRIPT} ${PROGRAMS} ${STAGEDIR}${PREFIX}/sbin)
@@ -32,9 +30,8 @@ do-install:
 		${INSTALL_DATA} ${RCDFILES} ${STAGEDIR}${PREFIX}/etc/rc.d)
 	(cd ${WRKSRC}/etc && \
 		${INSTALL_DATA} ${ETCFLS} ${STAGEDIR}${PREFIX}/etc)
-.if ${PORT_OPTIONS:MDOCS}
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/share/doc/pr/PR.html ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

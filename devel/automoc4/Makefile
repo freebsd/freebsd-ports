@@ -3,7 +3,7 @@
 
 PORTNAME=	automoc4
 PORTVERSION=	0.9.88
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/
 DIST_SUBDIR=	KDE
@@ -12,7 +12,6 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Automatic moc for Qt 4 packages
 
 USE_QT4=	corelib moc qmake_build rcc_build uic_build
-USES=		cmake iconv tar:bzip2
-MAKE_JOBS_UNSAFE=	yes
+USES=		cmake tar:bzip2
 
 .include <bsd.port.mk>

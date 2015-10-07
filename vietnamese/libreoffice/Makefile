@@ -1,9 +1,9 @@
 # $FreeBSD$
 
+CATEGORIES=	vietnamese
 LO_I18N=	vi
 LO_HAS_HELPPACK=	yes
-CATEGORIES=	vietnamese editors
 
-.include "${.CURDIR}/../../editors/libreoffice/Makefile.common"
+.include "${.CURDIR}/../../editors/libreoffice/Makefile.i18n"
 
 .include <bsd.port.mk>

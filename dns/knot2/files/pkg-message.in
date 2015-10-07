@@ -4,6 +4,7 @@
 
     cp %%ETCDIR%%/knot.conf.sample %%ETCDIR%%/knot.conf
     $EDITOR %%ETCDIR%%/knot.conf
+
     sysrc knot_enable=YES
     sysrc knot_config=%%ETCDIR%%/knot.conf
     service knot start
@@ -13,5 +14,14 @@
     echo knot_enable=\"YES\" >> /etc/rc.conf
     echo knot_config=\"%%PREFIX%%/etc/knot/knot.conf\" >> /etc/rc.conf
     %%PREFIX%%/etc/rc.d/knot start
+
+######################################################################
+
+  When upgrading from a previous version of Knot,
+  the configuration syntax changed changed severely.
+
+  Please consult the documentation:
+   - man knot.conf
+   - https://www.knot-dns.cz/docs/2.0/html/configuration.html
 
 ######################################################################

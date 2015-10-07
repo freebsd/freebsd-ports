@@ -1,6 +1,6 @@
---- gluegen/make/build.xml.orig	2014-03-10 13:56:04.000000000 +0000
-+++ gluegen/make/build.xml	2014-05-08 18:55:36.726179257 +0000
-@@ -439,7 +439,7 @@
+--- gluegen/make/build.xml.orig	2014-10-10 13:20:51 UTC
++++ gluegen/make/build.xml
+@@ -408,7 +408,7 @@
        <property name="c.compiler.src.files.common" value="src/native/common/*.c" />
        <property name="c.compiler.src.files.os" value="src/native/${c.src.dir.os}/*.c" />
  
@@ -9,44 +9,44 @@
        <condition property="output.lib.name.os" value="lib${output.lib.name}.so"><isset property="isUnix"/></condition>
        <condition property="output.lib.name.os" value="${output.lib.name}.dll"><isset property="isWindows"/></condition>
        <condition property="output.lib.name.os" value="lib${output.lib.name}.jnilib"><isset property="isOSX"/></condition>
-@@ -633,14 +633,14 @@
+@@ -604,14 +604,14 @@
          <srcfiles dir= "${src.java}"  includes="**"/>
-         <srcfiles dir= "${c.grammar}" includes="**/*.g"/>
-         <srcfiles dir= "${j.grammar}" includes="**/*.g"/>
+         <srcfiles dir= "${c.grammar}" includes="*.g"/>
+         <srcfiles dir= "${j.grammar}" includes="*.g"/>
 -        <mapper type="merge" to="${build}/gluegen.jar"/>
 +        <mapper type="merge" to="${build}/gluegen2.jar"/>
        </uptodate>
        <uptodate property="gluegen.build.skip.java2">
          <srcfiles dir= "."            includes="*.xml"/>
          <srcfiles dir= "${src.java}"  includes="**"/>
-         <srcfiles dir= "${c.grammar}" includes="**/*.g"/>
-         <srcfiles dir= "${j.grammar}" includes="**/*.g"/>
+         <srcfiles dir= "${c.grammar}" includes="*.g"/>
+         <srcfiles dir= "${j.grammar}" includes="*.g"/>
 -        <mapper type="merge" to="${build}/gluegen-rt.jar"/>
 +        <mapper type="merge" to="${build}/gluegen2-rt.jar"/>
        </uptodate>
        <condition property="gluegen.build.skip.java" value="true">
          <or>
-@@ -752,7 +752,7 @@
+@@ -753,7 +753,7 @@
      </copy>
  
      <!-- Build gluegen.jar. -->
--    <jar destfile="${build}/gluegen.jar" manifest="${build}/Manifest.temp">
-+    <jar destfile="${build}/gluegen2.jar" manifest="${build}/Manifest.temp">
+-    <jar destfile="${build}/gluegen.jar" manifest="${build}/Manifest.temp" filesonly="true">
++    <jar destfile="${build}/gluegen2.jar" manifest="${build}/Manifest.temp" filesonly="true">
        <service type="javax.annotation.processing.Processor">
          <provider classname="com.jogamp.gluegen.structgen.CStructAnnotationProcessor"/>
        </service>
-@@ -792,7 +792,7 @@
+@@ -806,7 +806,7 @@
      </copy>
  
      <!-- Build gluegen-rt.jar. -->
--    <jar destfile="${build}/gluegen-rt.jar" manifest="${build}/Manifest-rt.temp">
-+    <jar destfile="${build}/gluegen2-rt.jar" manifest="${build}/Manifest-rt.temp">
+-    <jar destfile="${build}/gluegen-rt.jar" manifest="${build}/Manifest-rt.temp" filesonly="true">
++    <jar destfile="${build}/gluegen2-rt.jar" manifest="${build}/Manifest-rt.temp" filesonly="true">
        <fileset dir="${classes}">
          <include name="com/jogamp/gluegen/runtime/*.class" />
          <include name="com/jogamp/common/**" />
---- gluegen/src/java/com/jogamp/common/os/Platform.java.orig	2014-03-10 13:56:04.000000000 +0000
-+++ gluegen/src/java/com/jogamp/common/os/Platform.java	2014-05-08 18:47:51.760174681 +0000
-@@ -146,7 +146,7 @@
+--- gluegen/src/java/com/jogamp/common/os/Platform.java.orig	2014-10-10 13:20:51 UTC
++++ gluegen/src/java/com/jogamp/common/os/Platform.java
+@@ -146,7 +146,7 @@ public class Platform extends PlatformPr
      private static final String useTempJarCachePropName = "jogamp.gluegen.UseTempJarCache";
  
      /** fixed basename of JAR file and native library */
@@ -55,9 +55,9 @@
  
      //
      // static initialization order:
---- gluegen/src/junit/com/jogamp/common/util/TestTempJarCache.java.orig	2014-03-10 13:56:04.000000000 +0000
-+++ gluegen/src/junit/com/jogamp/common/util/TestTempJarCache.java	2014-05-08 18:47:51.758178183 +0000
-@@ -197,8 +197,8 @@
+--- gluegen/src/junit/com/jogamp/common/util/TestTempJarCache.java.orig	2014-10-10 13:20:51 UTC
++++ gluegen/src/junit/com/jogamp/common/util/TestTempJarCache.java
+@@ -197,8 +197,8 @@ public class TestTempJarCache extends Ju
      @Test
      public void testTempJarCache02AddNativeLibs() throws IOException, IllegalArgumentException, URISyntaxException {
          if(AndroidVersion.isAvailable) { System.err.println("n/a on Android"); return; }
@@ -68,12 +68,3 @@
          final ClassLoader cl = getClass().getClassLoader();
  
          URI jarUriRoot = JarUtil.getJarSubURI(TempJarCache.class.getName(), cl);
-@@ -217,7 +217,7 @@
-     @Test
-     public void testTempJarCache03AddNativeJarLibs() throws IOException {
-         if(AndroidVersion.isAvailable) { System.err.println("n/a on Android"); return; }
--        final String libBaseName = "gluegen-rt";
-+        final String libBaseName = "gluegen2-rt";
- 
-         JNILibLoaderBase.addNativeJarLibs(TempJarCache.class, libBaseName);
-         Assert.assertTrue(JNILibLoaderBase.isLoaded(libBaseName));

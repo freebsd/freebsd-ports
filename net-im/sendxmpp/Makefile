@@ -22,7 +22,7 @@ USE_PERL5=	configure
 NO_ARCH=	yes
 
 PORTEXAMPLES=	send-url.xml sendxmpp-raw-messages
-PLIST_FILES=	bin/sendxmpp man/man1/sendxmpp.1.gz
+PLIST_FILES=	bin/sendxmpp ${SITE_MAN1}/sendxmpp.1.gz
 
 OPTIONS_DEFINE=	EXAMPLES
 

@@ -22,7 +22,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION:R}
 SHEBANG_FILES=	${WRKSRC}/tools/splitconfig
-python_CMD=	${PYTHON_CMD}
 
 CONFIGURE_ARGS=	--enable-shared \
 		--disable-dependency-tracking

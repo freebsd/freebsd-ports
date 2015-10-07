@@ -118,6 +118,6 @@ bin/bbsmail
 %%PERL5_MAN3%%/OurNet::BBS.3.gz
 %%PERL5_MAN3%%/OurNet::BBS::Roadmap.3.gz
 %%PERL5_MAN3%%/OurNet::BBS::Tutorial.3.gz
-man/man1/bbsboard.1.gz
-man/man1/bbscomd.1.gz
-man/man1/bbsmail.1.gz
+%%PERL5_MAN1%%/bbsboard.1.gz
+%%PERL5_MAN1%%/bbscomd.1.gz
+%%PERL5_MAN1%%/bbsmail.1.gz

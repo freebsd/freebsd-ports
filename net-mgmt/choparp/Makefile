@@ -4,7 +4,6 @@
 PORTNAME=	choparp
 PORTVERSION=	20150613
 CATEGORIES=	net-mgmt
-MASTER_SITES=	GH
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Simple proxy arp daemon

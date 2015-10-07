@@ -16,6 +16,7 @@ lib/elixir/lib/poison/ebin/Elixir.Poison.Encoder.Range.beam
 lib/elixir/lib/poison/ebin/Elixir.Poison.Encoder.Stream.beam
 lib/elixir/lib/poison/ebin/Elixir.Poison.Encoder.beam
 lib/elixir/lib/poison/ebin/Elixir.Poison.Parser.beam
+lib/elixir/lib/poison/ebin/Elixir.Poison.Pretty.beam
 lib/elixir/lib/poison/ebin/Elixir.Poison.SyntaxError.beam
 lib/elixir/lib/poison/ebin/Elixir.Poison.beam
 lib/elixir/lib/poison/ebin/poison.app

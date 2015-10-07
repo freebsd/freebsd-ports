@@ -1,2 +1,2 @@
 bin/cpan-upload
-man/man1/cpan-upload.1.gz
+%%PERL5_MAN1%%/cpan-upload.1.gz

@@ -18,6 +18,8 @@
 %%SYSCOLORDIR%%/target/fogra/FOGRA30L.ti3
 %%SYSCOLORDIR%%/target/fogra/FOGRA39L.ti3
 %%SYSCOLORDIR%%/target/fogra/FOGRA40L.ti3
+@dir %%SYSCOLORDIR%%/settings
+@dir %%SYSCOLORDIR%%/icc/PhotoGamut
 share/icons/application-vnd.iccprofile.png
 share/icons/text-vnd.cgats.png
 share/mime/packages/x-color-cgats.xml

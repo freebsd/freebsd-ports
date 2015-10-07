@@ -224,7 +224,6 @@ libexec/pkgconfig/libdpkg.pc
 %%NLS%%man/fr/man1/dpkg-architecture.1.gz
 %%NLS%%man/fr/man1/dpkg-buildflags.1.gz
 %%NLS%%man/fr/man1/dpkg-buildpackage.1.gz
-%%NLS%%man/fr/man1/dpkg-checkbuilddeps.1.gz
 %%NLS%%man/fr/man1/dpkg-deb.1.gz
 %%NLS%%man/fr/man1/dpkg-distaddfile.1.gz
 %%NLS%%man/fr/man1/dpkg-divert.1.gz
@@ -242,7 +241,6 @@ libexec/pkgconfig/libdpkg.pc
 %%NLS%%man/fr/man1/dpkg-statoverride.1.gz
 %%NLS%%man/fr/man1/dpkg-trigger.1.gz
 %%NLS%%man/fr/man1/dpkg-vendor.1.gz
-%%NLS%%man/fr/man1/dpkg.1.gz
 %%NLS%%man/fr/man1/dselect.1.gz
 %%NLS%%man/fr/man1/update-alternatives.1.gz
 %%NLS%%man/fr/man5/deb-extra-override.5.gz
@@ -264,7 +262,6 @@ libexec/pkgconfig/libdpkg.pc
 %%NLS%%man/hu/man5/dselect.cfg.5.gz
 %%NLS%%man/it/man1/dpkg-architecture.1.gz
 %%NLS%%man/it/man1/dpkg-buildpackage.1.gz
-%%NLS%%man/it/man1/dpkg-checkbuilddeps.1.gz
 %%NLS%%man/it/man1/dpkg-deb.1.gz
 %%NLS%%man/it/man1/dpkg-distaddfile.1.gz
 %%NLS%%man/it/man1/dpkg-gencontrol.1.gz
@@ -276,7 +273,6 @@ libexec/pkgconfig/libdpkg.pc
 %%NLS%%man/it/man1/dpkg-split.1.gz
 %%NLS%%man/it/man1/dpkg-statoverride.1.gz
 %%NLS%%man/it/man1/dpkg-vendor.1.gz
-%%NLS%%man/it/man1/dpkg.1.gz
 %%NLS%%man/it/man1/dselect.1.gz
 %%NLS%%man/it/man1/update-alternatives.1.gz
 %%NLS%%man/it/man5/deb-extra-override.5.gz
@@ -343,6 +339,7 @@ man/man1/dpkg.1.gz
 man/man1/dselect.1.gz
 man/man1/update-alternatives.1.gz
 man/man3/Dpkg.3.gz
+man/man3/Dpkg::Arch.3.gz
 man/man3/Dpkg::BuildEnv.3.gz
 man/man3/Dpkg::BuildFlags.3.gz
 man/man3/Dpkg::BuildOptions.3.gz
@@ -422,7 +419,6 @@ man/man8/start-stop-daemon.8.gz
 %%NLS%%man/sv/man1/dpkg-architecture.1.gz
 %%NLS%%man/sv/man1/dpkg-buildflags.1.gz
 %%NLS%%man/sv/man1/dpkg-buildpackage.1.gz
-%%NLS%%man/sv/man1/dpkg-checkbuilddeps.1.gz
 %%NLS%%man/sv/man1/dpkg-deb.1.gz
 %%NLS%%man/sv/man1/dpkg-distaddfile.1.gz
 %%NLS%%man/sv/man1/dpkg-divert.1.gz
@@ -440,7 +436,6 @@ man/man8/start-stop-daemon.8.gz
 %%NLS%%man/sv/man1/dpkg-statoverride.1.gz
 %%NLS%%man/sv/man1/dpkg-trigger.1.gz
 %%NLS%%man/sv/man1/dpkg-vendor.1.gz
-%%NLS%%man/sv/man1/dpkg.1.gz
 %%NLS%%man/sv/man1/dselect.1.gz
 %%NLS%%man/sv/man1/update-alternatives.1.gz
 %%NLS%%man/sv/man5/deb-extra-override.5.gz

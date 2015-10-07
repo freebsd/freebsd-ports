@@ -462,16 +462,16 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/search/device.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/search/node.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/search/port.tt
-man/man1/nd-import-topology.1.gz
-man/man1/netdisco-daemon-fg.1.gz
-man/man1/netdisco-daemon.1.gz
-man/man1/netdisco-db-deploy.1.gz
-man/man1/netdisco-deploy.1.gz
-man/man1/netdisco-do.1.gz
-man/man1/netdisco-rancid-export.1.gz
-man/man1/netdisco-sshcollector.1.gz
-man/man1/netdisco-web-fg.1.gz
-man/man1/netdisco-web.1.gz
+%%PERL5_MAN1%%/nd-import-topology.1.gz
+%%PERL5_MAN1%%/netdisco-daemon-fg.1.gz
+%%PERL5_MAN1%%/netdisco-daemon.1.gz
+%%PERL5_MAN1%%/netdisco-db-deploy.1.gz
+%%PERL5_MAN1%%/netdisco-deploy.1.gz
+%%PERL5_MAN1%%/netdisco-do.1.gz
+%%PERL5_MAN1%%/netdisco-rancid-export.1.gz
+%%PERL5_MAN1%%/netdisco-sshcollector.1.gz
+%%PERL5_MAN1%%/netdisco-web-fg.1.gz
+%%PERL5_MAN1%%/netdisco-web.1.gz
 @dir %%SITE_PERL%%/App/Netdisco/AnyEvent
 @dir %%SITE_PERL%%/App/Netdisco/Core
 @dir %%SITE_PERL%%/App/Netdisco/DB/Result/Virtual

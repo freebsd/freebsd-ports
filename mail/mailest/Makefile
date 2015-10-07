@@ -2,6 +2,7 @@
 
 PORTNAME=	mailest
 PORTVERSION=	0.9.20
+DISTVERSIONPREFIX=	${PORTNAME}-
 PORTREVISION=	1
 CATEGORIES=	mail
 
@@ -19,11 +20,10 @@ LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2 \
 		libestraier.so:${PORTSDIR}/textproc/hyperestraier
 RUN_DEPENDS=	mewl:${PORTSDIR}/mail/mew
 
-USES=		iconv
+USES=		iconv fakeroot
 USE_EMACS=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	yasuoka
-GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 MAKE_ENV=	USE_BSDMAKE=true WITH_INSTALL_AS_USER=true
 
 LICENSE_BSD2CLAUSE_SRC=	bytebuf.c replace/sys/tree.h

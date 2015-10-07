@@ -1,5 +1,5 @@
 bin/gearmand
-man/man1/gearmand.1.gz
+%%PERL5_MAN1%%/gearmand.1.gz
 %%SITE_PERL%%/Gearman/Server/Job.pm
 %%SITE_PERL%%/Gearman/Server/Client.pm
 %%SITE_PERL%%/Gearman/Server/Listener.pm

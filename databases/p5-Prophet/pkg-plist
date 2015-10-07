@@ -198,4 +198,4 @@ bin/prophet
 %%PERL5_MAN3%%/Prophet::Web::FunctionResult.3.gz
 %%PERL5_MAN3%%/Prophet::Web::Menu.3.gz
 %%PERL5_MAN3%%/Prophet::Web::Result.3.gz
-man/man1/prophet.1.gz
+%%PERL5_MAN1%%/prophet.1.gz

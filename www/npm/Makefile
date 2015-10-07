@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	npm
-PORTVERSION=	2.12.1
+PORTVERSION=	2.14.4
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -12,28 +12,30 @@ COMMENT=	Node package manager
 LICENSE=	MIT
 
 OPTIONS_SINGLE=	BACKEND
-OPTIONS_SINGLE_BACKEND=	IOJS NODE NODE_DEVEL NODE010
+OPTIONS_SINGLE_BACKEND=	NODE NODE_DEVEL
 OPTIONS_DEFAULT=NODE
-IOJS_DESC=	Use www/iojs as backend
 NODE_DESC=	Use www/node as backend
 NODE_DEVEL_DESC=Use www/node-devel as backend
-NODE010_DESC=	Use www/node010 as backend
 
 MAKE_ARGS=	npm_config_prefix=${STAGEDIR}${PREFIX}
+MANPREFIX=	${PREFIX}/lib/node_modules/npm
 NO_ARCH=	yes
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ''
-USES=		cpe python:2 tar:xz
-
-MANPREFIX=	${PREFIX}/lib/node_modules/npm
+USES=		cpe python:2 shebangfix tar:xz
 
 CPE_VENDOR=	npmjs
 CPE_PRODUCT=	node_packaged_modules
 
-IOJS_RUN_DEPENDS=	iojs>=1.0.0:${PORTSDIR}/www/iojs
+SHEBANG_FILES=	lib/utils/completion.sh \
+		node_modules/request/node_modules/node-uuid/benchmark/bench.sh \
+		scripts/clean-old.sh \
+		scripts/release.sh \
+		scripts/relocate.sh \
+		test/update-test.sh
+
 NODE_DEVEL_RUN_DEPENDS=	node-devel>=0.8.0:${PORTSDIR}/www/node-devel
 NODE_RUN_DEPENDS=	node>=0.8.0:${PORTSDIR}/www/node
-NODE010_RUN_DEPENDS=	node010>=0.8.0:${PORTSDIR}/www/node010
 
 .include <bsd.port.pre.mk>
 

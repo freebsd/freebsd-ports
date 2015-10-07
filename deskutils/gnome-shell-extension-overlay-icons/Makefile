@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-shell-extension-overlay-icons
-PORTVERSION=	0.0.0.20141126
+PORTVERSION=	0.0.0.20150422
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome3
 
@@ -22,8 +22,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 GLIB_SCHEMAS=	org.gnome.shell.extensions.windowoverlay-icons.gschema.xml
 
 GH_ACCOUNT=	sustmi
-GH_TAGNAME=	c2a340f
 GH_PROJECT=	gnome-shell-extensions-sustmi
+GH_TAGNAME=	9072ba8
 
 PKGMESSAGE=	../gnome-shell-extra-extensions/pkg-message.slaves
 
@@ -32,10 +32,10 @@ NO_BUILD=	yes
 do-install:
 		@${MKDIR} ${STAGEDIR}${PREFIX}/share/glib-2.0/schemas/
 		@${MKDIR} ${STAGEDIR}${PREFIX}/share/gnome-shell/extensions/
-		@(cd ${WRKSRC} && ${CP} windowoverlay-icons/schemas/org.gnome.shell.extensions.windowoverlay-icons.gschema.xml \
-			${STAGEDIR}${PREFIX}/share/glib-2.0/schemas/)
+		cd ${WRKSRC} && ${INSTALL_DATA} ${WRKSRC}/windowoverlay-icons/schemas/org.gnome.shell.extensions.windowoverlay-icons.gschema.xml \
+			${STAGEDIR}${PREFIX}/share/glib-2.0/schemas/
 		@${RM} -fr ${WRKSRC}/windowoverlay-icons/schemas/
-		@(cd ${WRKSRC} && ${CP} -pPR windowoverlay-icons \
-			${STAGEDIR}${PREFIX}/share/gnome-shell/extensions/windowoverlay-icons@sustmidown.centrum.cz)
+		cd ${WRKSRC}/windowoverlay-icons && ${COPYTREE_SHARE} . \
+			${STAGEDIR}${PREFIX}/share/gnome-shell/extensions/windowoverlay-icons@sustmidown.centrum.cz
 
 .include <bsd.port.mk>

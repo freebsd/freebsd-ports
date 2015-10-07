@@ -18,7 +18,7 @@ RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
 USES=		desktop-file-utils gmake libtool pathfix pkgconfig \
 		readline shared-mime-info tar:xz
-USE_GNOME=	gnomedocutils gnomeprefix gtksourceview2 gnomevfs2 vte
+USE_GNOME=	gnomedocutils gnomeprefix gtksourceview2 gnomevfs2 vte intltool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-extra-gcc-optimization \
 		--disable-update-mimedb \

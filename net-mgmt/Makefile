@@ -57,6 +57,7 @@
     SUBDIR += etherape
     SUBDIR += ettercap
     SUBDIR += ezradius
+    SUBDIR += fastnetmon
     SUBDIR += fetchconfig
     SUBDIR += flow-extract
     SUBDIR += flow-tools
@@ -72,7 +73,10 @@
     SUBDIR += hastmon
     SUBDIR += hawk
     SUBDIR += icinga
+    SUBDIR += icinga-classicweb
+    SUBDIR += icinga-core
     SUBDIR += icinga2
+    SUBDIR += icingaweb2
     SUBDIR += icli
     SUBDIR += icmpmonitor
     SUBDIR += icmpquery
@@ -217,6 +221,7 @@
     SUBDIR += p5-Net-IPv6Addr
     SUBDIR += p5-Net-NSCA-Client
     SUBDIR += p5-Net-Netmask
+    SUBDIR += p5-Net-OpenVPN-Manage
     SUBDIR += p5-Net-SNMP
     SUBDIR += p5-Net-SNMP-Util
     SUBDIR += p5-Net-SNMPTrapd

@@ -47,7 +47,7 @@ bin/vsplitmodule
 %%SITE_ARCH%%/Verilog/Verilog-Perl.pod
 %%SITE_ARCH%%/auto/Verilog/Parser/Parser.so
 %%SITE_ARCH%%/auto/Verilog/Preproc/Preproc.so
-man/man1/vhier.1.gz
-man/man1/vpassert.1.gz
-man/man1/vppreproc.1.gz
-man/man1/vrename.1.gz
+%%PERL5_MAN1%%/vhier.1.gz
+%%PERL5_MAN1%%/vpassert.1.gz
+%%PERL5_MAN1%%/vppreproc.1.gz
+%%PERL5_MAN1%%/vrename.1.gz

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libpst
-PORTVERSION=	0.6.64
+PORTVERSION=	0.6.65
 CATEGORIES=	mail converters
 MASTER_SITES=	http://www.five-ten-sg.com/libpst/packages/ \
 		http://fossies.org/unix/privat/ \

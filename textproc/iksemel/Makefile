@@ -7,8 +7,11 @@ PORTREVISION=	6
 CATEGORIES=	textproc
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	rhaamo@gruik.at
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML parser library mainly designed for Jabber applications
+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 
@@ -20,7 +23,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
-INFO=	iksemel
+INFO=		iksemel
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@setfilename iksemel|@setfilename iksemel.info|' \

@@ -16,6 +16,7 @@ include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-chann
 include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-chardev-source-pty.h
 include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-chardev-source-spiceport.h
 include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-chardev-source-spicevmc.h
+include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-chardev-source-unix.h
 include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-chardev-source.h
 include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-chardev.h
 include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-clock.h
@@ -93,6 +94,7 @@ include/libvirt-gobject-%%VERSION%%/libvirt-gobject/libvirt-gobject-enums.h
 include/libvirt-gobject-%%VERSION%%/libvirt-gobject/libvirt-gobject-interface.h
 include/libvirt-gobject-%%VERSION%%/libvirt-gobject/libvirt-gobject-main.h
 include/libvirt-gobject-%%VERSION%%/libvirt-gobject/libvirt-gobject-manager.h
+include/libvirt-gobject-%%VERSION%%/libvirt-gobject/libvirt-gobject-network-dhcp-lease.h
 include/libvirt-gobject-%%VERSION%%/libvirt-gobject/libvirt-gobject-network-filter.h
 include/libvirt-gobject-%%VERSION%%/libvirt-gobject/libvirt-gobject-network.h
 include/libvirt-gobject-%%VERSION%%/libvirt-gobject/libvirt-gobject-node-device.h

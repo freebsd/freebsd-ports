@@ -12,7 +12,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome Photo Printer is intended for printing photos in an easy way
 
-USE_GNOME=	gnomeprefix libgnomeui libglade2 libgnomeprintui gnomevfs2
+USE_GNOME=	gnomeprefix intltool libgnomeui libglade2 \
+		libgnomeprintui gnomevfs2
 USES=		gettext gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

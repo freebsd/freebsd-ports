@@ -91,7 +91,7 @@ do-configure:
 .for o in SHARED STATIC #PROFILE
 .if ${PORT_OPTIONS:M${o}}
 	@${PRINTF} "\n\nConfiguring ${o}:\n\n\n"
-	@cd ${WRKSRC_${o}}; ${SETENV} ${CMAKE_ENV} ${CMAKE_BIN} \
+	@cd ${WRKSRC_${o}}; ${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} \
 	${CMAKE_ARGS:C|${CFLAGS}|& ${${o}_FLAGS}|g} ${CMAKE_ARGS_${o}} \
 	-DGKLIB_PATH="${WRKSRC_${o}}/GKlib" ${CMAKE_SOURCE_PATH}
 .endif

@@ -14,6 +14,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
 
 USES=		python
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 SUB_FILES=	outerspace
 SUB_LIST=	PROGRAM_DIR="${PREFIX}/lib/${PORTNAME}"

@@ -28,7 +28,6 @@ QT_NONSTANDARD=	yes  # Do not add unknown arguments to CONFIGURE_ARGS.
 OPTIONS_DEFINE=		DEBUG
 DEBUG_CONFIGURE_ON=	--debug --trace
 
-OPTIONSFILE?=	${PORT_DBDIR}/py-qt4-${PORTNAME}/options
 SIPDIR=		${PREFIX}/share/py-sip
 QSCIDIR=	${PREFIX}/share/qt4/qsci
 CONFIGURE_ARGS=	--pyqt PyQt4 -d ${PYTHONPREFIX_SITELIBDIR}/PyQt4 -v ${SIPDIR} \

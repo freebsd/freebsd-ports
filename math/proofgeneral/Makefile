@@ -20,8 +20,9 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicol
 
 USE_EMACS=	yes
 INSTALLS_ICONS=	yes
-USES=	gmake perl5 shebangfix tar:tgz
+USES=		gmake perl5 shebangfix tar:tgz
 SHEBANG_FILES=	lego/legotags coq/coqtags isar/isartags
+NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -51,8 +52,8 @@ BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
 .endif
 
 PORTDOCS=	AUTHORS BUGS CHANGES COMPATIBILITY COPYING INSTALL \
-		PG-adapting ProofGeneral README REGISTER acl2 hol98 isar lclam lego \
-		pgshell phox plastic twelf
+		PG-adapting ProofGeneral README REGISTER acl2 hol98 isar lego \
+		pgshell phox twelf
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' \
@@ -73,5 +74,8 @@ pre-build:
 #.if defined(BYTE_COMPILE)
 	@${RM} ${WRKSRC}/.byte-compile || ${TRUE}
 #.endif
+
+post-install:
+	@${FIND} ${STAGEDIR}${DOCSDIR} -type d -empty -delete
 
 .include <bsd.port.post.mk>

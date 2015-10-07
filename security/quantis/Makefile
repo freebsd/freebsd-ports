@@ -91,10 +91,10 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/../*.txt ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/../User_Manual.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../*.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../User_Manual.pdf ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@(cd ${WRKSRC}/../Samples; ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+	@(cd ${WRKSRC}/../Samples; ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR} "-not -empty")
 .if ${PORT_OPTIONS:MUSB}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/devd
 	${INSTALL_DATA} ${FILESDIR}/quantis.conf ${STAGEDIR}${EXAMPLESDIR}/devd

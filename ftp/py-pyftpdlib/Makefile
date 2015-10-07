@@ -21,9 +21,6 @@ OPTIONS_DEFAULT=	SENDFILE OPENSSL
 SENDFILE_DESC=		Enable sendfile(2) support
 OPENSSL_DESC=		Enable FTP over SSL/TLS (RFC4217)
 
-# Workaround ports infrastructure bug
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
-
 SENDFILE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pysendfile>0:${PORTSDIR}/net/py-pysendfile
 OPENSSL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>0:${PORTSDIR}/security/py-openssl
 

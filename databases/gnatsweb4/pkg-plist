@@ -1,6 +1,4 @@
-@unexec if cmp -s %D/%%ETCDIR%%/gnatsweb-site.pl.sample %D/%%ETCDIR%%/gnatsweb-site.pl.sample; then rm -f %D/%%ETCDIR%%/gnatsweb-site.pl; fi
-%%ETCDIR%%/gnatsweb-site.pl.sample
-@exec [ -f %B/gnatsweb-site.pl ] || cp %B/%f %B/gnatsweb-site.pl
+@sample %%ETCDIR%%/gnatsweb-site.pl.sample
 %%CGI_DIR%%/gnatsweb.pl
 %%CGI_DIR%%/gnatsweb-site.pl
 %%CGI_DIR%%/gnatsweb.html

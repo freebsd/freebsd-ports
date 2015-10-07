@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	High-level audio API
 
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/doc/license.txt
+
 GNU_CONFIGURE=	yes
 USES=		autoreconf gmake libtool
 WANT_WX=	yes

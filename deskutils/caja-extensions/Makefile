@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	caja-extensions
-PORTVERSION=	1.8.0
-PORTREVISION=	2
+PORTVERSION=	1.10.0
 CATEGORIES=	deskutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Caja extension which allows you to open a terminal
+COMMENT=	Set of extensions for Caja
 
 LIB_DEPENDS=	libgupnp-1.0.so:${PORTSDIR}/net/gupnp
 

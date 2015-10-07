@@ -1,4 +1,4 @@
---- plugins-root/check_dhcp.c.orig	2014-06-26 16:17:12 UTC
+--- plugins-root/check_dhcp.c.orig	2015-07-30 21:40:06 UTC
 +++ plugins-root/check_dhcp.c
 @@ -326,7 +326,8 @@ int get_hardware_address(int sock,char *
  #elif defined(__bsd__)
@@ -10,7 +10,7 @@
          char                    *buf;
          unsigned char           *ptr;
          struct if_msghdr        *ifm;
-@@ -1185,7 +1186,7 @@ int call_getopt(int argc, char **argv){
+@@ -1194,7 +1195,7 @@ int call_getopt(int argc, char **argv){
  		        }
  	        }
  

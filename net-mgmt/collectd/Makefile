@@ -12,6 +12,9 @@ COMMENT=	Systems & network statistics collection daemon
 
 LICENSE=	GPLv2
 
+DEPRECATED=		Please move to collectd5 - collect4 is not developed/patched
+EXPIRATION_DATE=	2015-10-31
+
 LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
 
 GNU_CONFIGURE=	yes

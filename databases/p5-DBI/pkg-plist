@@ -113,6 +113,6 @@ bin/dbiproxy
 %%PERL5_MAN3%%/DBI::Util::CacheMemory.3.gz
 %%PERL5_MAN3%%/DBI::W32ODBC.3.gz
 %%PERL5_MAN3%%/Win32::DBIODBC.3.gz
-man/man1/dbilogstrip.1.gz
-man/man1/dbiprof.1.gz
-man/man1/dbiproxy.1.gz
+%%PERL5_MAN1%%/dbilogstrip.1.gz
+%%PERL5_MAN1%%/dbiprof.1.gz
+%%PERL5_MAN1%%/dbiproxy.1.gz

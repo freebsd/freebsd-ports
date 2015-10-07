@@ -4,6 +4,7 @@
 PORTNAME=	net-ssh
 PORTVERSION=	2.9.2
 PORTEPOCH=	2
+PORTREVISION=	1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -14,12 +15,16 @@ LICENSE=	MIT
 
 OPTIONS_DEFINE=	PROMPT_PASSPHRASES
 OPTIONS_DEFAULT=PROMPT_PASSPHRASES
-OPTIONSFILE?=	${PORT_DBDIR}/rubygem-${PORTNAME}/options
 PROMPT_PASSPHRASES_DESC=	Prompt for passphrases on keys
 
+PORTSCOUT=	skipv:2.10.0
+
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+USES=		shebangfix
+SHEBANG_FILES=	support/ssh_tunnel_bug.rb
 
 PROMPT_PASSPHRASES_RUN_DEPENDS=	rubygem-ruby-termios>=0:${PORTSDIR}/comms/rubygem-ruby-termios
 

@@ -42,6 +42,7 @@ include/osg/CameraView
 include/osg/Capability
 include/osg/ClampColor
 include/osg/ClearNode
+include/osg/ClipControl
 include/osg/ClipNode
 include/osg/ClipPlane
 include/osg/ClusterCullingCallback
@@ -426,6 +427,7 @@ include/osgPresentation/Timeout
 %%QT4%%include/osgQt/QGraphicsViewAdapter
 %%QT4%%include/osgQt/QWebViewImage
 %%QT4%%include/osgQt/QWidgetImage
+%%QT4%%include/osgQt/Version
 include/osgShadow/ConvexPolyhedron
 include/osgShadow/DebugShadowMap
 include/osgShadow/Export

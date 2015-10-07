@@ -32,15 +32,10 @@ PLIST_FILES=	bin/adb \
 		%%BASH%%etc/bash_completion.d/adb
 PORTDOCS=	*.txt *.TXT
 
-OPTIONS_DEFINE=	BASH DOCS
+OPTIONS_DEFINE+=BASH DOCS
 OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MBASH}
-LICENSE+=	MIT # debian/copyright
-LICENSE_COMB=	multi
-.endif
+BASH_VARS=	LICENSE+=MIT LICENSE_COMB=multi # debian/copyright
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PLIST_FILES:M%%BASH%%*:C/%%.*%%//:H}

@@ -1,4 +1,4 @@
 bin/scrobbler-helper
 %%SITE_PERL%%/Audio/Scrobbler.pm
 %%PERL5_MAN3%%/Audio::Scrobbler.3.gz
-man/man1/scrobbler-helper.1.gz
+%%PERL5_MAN1%%/scrobbler-helper.1.gz

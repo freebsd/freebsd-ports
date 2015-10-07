@@ -1,11 +1,11 @@
---- mix.exs.orig	2015-07-02 22:52:47 UTC
+--- mix.exs.orig	2015-09-24 19:41:49 UTC
 +++ mix.exs
-@@ -17,8 +17,6 @@ defmodule Tzdata.Mixfile do
- 
-   defp deps do
-     [
--      {:earmark, "~> 0.1", only: :dev},
--      {:ex_doc, "~> 0.7", only: :dev},
-     ]
+@@ -8,7 +8,7 @@ defmodule Tzdata.Mixfile do
+      elixir: "~> 1.0 or ~> 1.1",
+      package: package,
+      description: description,
+-     deps: deps]
++     deps: []]
    end
  
+   def application do

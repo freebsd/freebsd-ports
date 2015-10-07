@@ -37,4 +37,4 @@ bin/aiprolog
 %%PERL5_MAN3%%/AI::Prolog::TermList::Clause.3.gz
 %%PERL5_MAN3%%/AI::Prolog::TermList::Primitive.3.gz
 %%PERL5_MAN3%%/AI::Prolog::TermList::Step.3.gz
-man/man1/aiprolog.1.gz
+%%PERL5_MAN1%%/aiprolog.1.gz

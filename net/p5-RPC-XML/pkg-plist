@@ -27,4 +27,4 @@ bin/make_method
 %%PERL5_MAN3%%/RPC::XML::ParserFactory.3.gz
 %%PERL5_MAN3%%/RPC::XML::Procedure.3.gz
 %%PERL5_MAN3%%/RPC::XML::Server.3.gz
-man/man1/make_method.1.gz
+%%PERL5_MAN1%%/make_method.1.gz

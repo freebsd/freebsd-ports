@@ -3,4 +3,4 @@ bin/marclint
 %%PERL5_MAN3%%/MARC::Lint::CodeData.3.gz
 %%SITE_PERL%%/MARC/Lint.pm
 %%SITE_PERL%%/MARC/Lint/CodeData.pm
-man/man1/marclint.1.gz
+%%PERL5_MAN1%%/marclint.1.gz

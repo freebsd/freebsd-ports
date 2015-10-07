@@ -14,7 +14,6 @@ LIB_DEPENDS=	libqscintilla2.so:${PORTSDIR}/devel/qscintilla2
 
 USES=		cmake
 USE_SQLITE=	yes
-CMAKE_ENV+=	QMAKESPEC=${QMAKESPEC}
 USE_QT4=	qmake_build gui moc_build rcc_build uic_build xml sql
 
 GNU_CONFIGURE=	yes

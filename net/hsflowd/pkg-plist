@@ -1,5 +1,3 @@
-@unexec if cmp -s %D/%%ETCDIR%%/hsflowd.conf %D/%%ETCDIR%%/hsflowd.conf.sample; then rm -f %D/%%ETCDIR%%/hsflowd.conf; fi
-%%ETCDIR%%/hsflowd.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/hsflowd.conf ]; then cp -p %D/%F %B/hsflowd.conf; fi
+@sample %%ETCDIR%%/hsflowd.conf.sample
 sbin/hsflowd
 @unexec if [ -d %%ETCDIR%% ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf %%ETCDIR%%`` to remove any configuration files."; fi

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pinentry
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	GNOME 3 version of the GnuPG password dialog
 

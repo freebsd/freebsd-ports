@@ -6,4 +6,3 @@ lib/compat/libipx.so.5
 lib/compat/libopie.so.7
 lib/compat/libreadline.so.8
 lib/compat/libsbuf.so.6
-@dirrmtry lib/compat

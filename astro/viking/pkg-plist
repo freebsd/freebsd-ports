@@ -1,5 +1,7 @@
 bin/viking
 share/applications/viking.desktop
+share/gnome/help/viking/C/attribution.xml
+share/gnome/help/viking/C/commandline.xml
 share/gnome/help/viking/C/figures/DEM_file_info_dialog.png
 share/gnome/help/viking/C/figures/LayersTracksList.png
 share/gnome/help/viking/C/figures/LayersTracksStatistics.png
@@ -12,6 +14,7 @@ share/gnome/help/viking/C/figures/Viking-OSM-CycleMap-ManyTracks.jpg
 share/gnome/help/viking/C/figures/WaypointsList.png
 share/gnome/help/viking/C/figures/addtr_18.png
 share/gnome/help/viking/C/figures/addwp_18.png
+share/gnome/help/viking/C/figures/customize_toolbar_dialog.png
 share/gnome/help/viking/C/figures/demdl_18.png
 share/gnome/help/viking/C/figures/edtr_18.png
 share/gnome/help/viking/C/figures/edwp_18.png
@@ -30,7 +33,10 @@ share/gnome/help/viking/C/figures/trw_statusbar.png
 share/gnome/help/viking/C/figures/vik_new_route_18.png
 share/gnome/help/viking/C/figures/zoom_18.png
 share/gnome/help/viking/C/figures/zoom_status_popup.png
+share/gnome/help/viking/C/georef_layer.xml
 share/gnome/help/viking/C/legal.xml
+share/gnome/help/viking/C/mapnik_rendering_layer.xml
+share/gnome/help/viking/C/recommends.xml
 share/gnome/help/viking/C/viking.xml
 share/icons/hicolor/48x48/apps/viking.png
 %%NLS%%share/locale/ast/LC_MESSAGES/viking.mo
@@ -49,6 +55,7 @@ share/icons/hicolor/48x48/apps/viking.png
 %%NLS%%share/locale/it/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/jv/LC_MESSAGES/viking.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/viking.mo
@@ -67,3 +74,4 @@ share/pixmaps/viking.png
 %%DATADIR%%/external_tools.xml
 %%DATADIR%%/goto_tools.xml
 %%DATADIR%%/maps.xml
+%%DATADIR%%/latlontz.txt

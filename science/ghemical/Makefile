@@ -22,7 +22,7 @@ LIB_DEPENDS=	libmopac7.so:${PORTSDIR}/biology/mopac \
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USES=		fortran gettext gmake pathfix pkgconfig
-USE_GNOME=	gtk20 libglade2
+USE_GNOME=	gtk20 libglade2 intltool
 USE_GL=		glu
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gtk --enable-threads --enable-openbabel

@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}notify>=0:${PORTSDIR}/devel/py-notify \
 		${PYTHON_PKGNAMEPREFIX}vte>=0:${PORTSDIR}/x11-toolkits/py-vte
 
 USES=		python
-USE=		GNOME=pygtk2
+USE_GNOME=	pygtk2 intltool
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	Terminator
 

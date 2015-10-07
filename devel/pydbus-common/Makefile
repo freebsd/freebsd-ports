@@ -1,10 +1,9 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/pydbus-common/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	dbus
-PORTVERSION=	1.1.1
-PORTREVISION?=	4
+PORTVERSION=	1.2.0
+PORTREVISION?=	1
 CATEGORIES=	devel gnome python
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus-python/
 PKGNAMEPREFIX?=	py

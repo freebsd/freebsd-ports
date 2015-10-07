@@ -4,7 +4,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.10.36
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/
 
@@ -13,6 +13,8 @@ COMMENT=	Development framework for creating media applications
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+PORTSCOUT=	limit:0\.10\..*
 
 CFLAGS:=	${CFLAGS} -O2 -Wno-format
 USES=		bison gmake libtool:keepla pathfix pkgconfig tar:bzip2

@@ -1,5 +1,5 @@
---- ./contrib/olsr/policy_varrw.cc.orig	2010-07-19 21:10:33.000000000 +0000
-+++ ./contrib/olsr/policy_varrw.cc	2014-02-26 21:17:13.000000000 +0000
+--- contrib/olsr/policy_varrw.cc.orig	2012-01-11 17:56:10 UTC
++++ contrib/olsr/policy_varrw.cc
 @@ -39,7 +39,7 @@
  #include "policy_varrw.hh"
  

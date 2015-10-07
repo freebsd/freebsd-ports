@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	efl
-PORTVERSION=	1.13.0
+PORTVERSION=	1.15.0
 CATEGORIES=	devel python enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/bindings/python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libefl.so:${PORTSDIR}/devel/efl \
 		libelementary.so:${PORTSDIR}/x11-toolkits/elementary
 
 DIST_SUBDIR=	enlightenment
-USES=		pkgconfig python tar:bz2
+USES=		pkgconfig python tar:xz
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.pre.mk>

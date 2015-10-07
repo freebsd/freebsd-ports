@@ -3,7 +3,7 @@
 
 PORTNAME=	luadbi
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -15,7 +15,11 @@ LICENSE=	MIT
 
 NO_WRKSUBDIR=	yes
 
-USES=		lua:51 gmake
+USES=		gmake lua:51 shebangfix
+SHEBANG_FILES=	DBI.lua
+SHEBANG_LANG=	lua
+lua_OLD_CMD=	/usr/bin/lua
+lua_CMD=	${LOCALBASE}/bin/${LUA_CMD}
 
 CFLAGS+=	-fpic -I${LOCALBASE}/include -I${LUA_INCDIR} -I. \
 		-I${LOCALBASE}/include/postgresql/server
@@ -28,40 +32,32 @@ OPTIONS_DEFAULT=	MYSQL
 
 PLIST_FILES=	%%LUA_MODSHAREDIR%%/DBI.lua
 
-.include <bsd.port.options.mk>
+MYSQL_USE=		MYSQL=yes
+MYSQL_LDFLAGS=		-L ${LOCALBASE}/lib/mysql
+MYSQL_CFLAGS=		-I ${LOCALBASE}/include/mysql
+MYSQL_ALL_TARGET=	mysql
+MYSQL_PLIST_FILES=	%%LUA_MODLIBDIR%%/dbdmysql.so
 
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
-LDFLAGS+=	-L ${LOCALBASE}/lib/mysql
-CFLAGS+=	-I ${LOCALBASE}/include/mysql
-ALL_TARGET+=	mysql
-PLIST_FILES+=	%%LUA_MODLIBDIR%%/dbdmysql.so
-.endif
+SQLITE3_USE=		SQLITE=3
+SQLITE3_ALL_TARGET=	sqlite3
+SQLITE3_PLIST_FILES=	%%LUA_MODLIBDIR%%/dbdsqlite3.so
 
-.if ${PORT_OPTIONS:MSQLITE3}
-USE_SQLITE=	3
-ALL_TARGET+=	sqlite3
-PLIST_FILES+=	%%LUA_MODLIBDIR%%/dbdsqlite3.so
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USES+=		pgsql
-ALL_TARGET+=	psql
-PLIST_FILES+=	%%LUA_MODLIBDIR%%/dbdpostgresql.so
-.endif
+PGSQL_USES=		pgsql
+PGSQL_ALL_TARGET=	psql
+PGSQL_PLIST_FILES=	%%LUA_MODLIBDIR%%/dbdpostgresql.so
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${LUA_MODLIBDIR}
 	@${MKDIR} ${STAGEDIR}${LUA_MODSHAREDIR}
 	${CP} ${WRKSRC}/DBI.lua ${STAGEDIR}${LUA_MODSHAREDIR}
-.if ${PORT_OPTIONS:MMYSQL}
+
+do-install-MYSQL-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/dbdmysql.so ${STAGEDIR}${LUA_MODLIBDIR}
-.endif
-.if ${PORT_OPTIONS:MSQLITE3}
+
+do-install-SQLITE3-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/dbdsqlite3.so ${STAGEDIR}${LUA_MODLIBDIR}
-.endif
-.if ${PORT_OPTIONS:MPGSQL}
+
+do-install-PGSQL-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/dbdpostgresql.so ${STAGEDIR}${LUA_MODLIBDIR}
-.endif
 
 .include <bsd.port.mk>

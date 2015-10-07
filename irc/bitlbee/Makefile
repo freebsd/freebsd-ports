@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	bitlbee
-PORTVERSION=	3.4
+PORTVERSION=	3.4.1
+PORTREVISION=	4
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/ \
 		LOCAL/brix
@@ -19,7 +20,7 @@ PORTDOCS=	AUTHORS CHANGES CREDITS FAQ README
 PORTEXAMPLES=	bitlbee.conf motd.txt
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig python:build
 USE_RC_SUBR=	bitlbee
 USE_GNOME=	glib20
 OPTIONS_SUB=	yes
@@ -43,9 +44,10 @@ YAHOO_DESC=		Yahoo! Messenger support
 GLIB_DESC=		Use glib as event handler
 LIBEVENT_DESC=		Use libevent as event handler
 
-OPTIONS_DEFAULT=	GLIB GNUTLS JABBER OSCAR TWITTER YAHOO
+OPTIONS_DEFAULT=	GLIB GNUTLS JABBER OSCAR OTR TWITTER YAHOO
 
-CONFIGURE_ARGS=	--config=/var/db/bitlbee --strip=0
+CONFIGURE_ARGS=		--config=/var/db/bitlbee \
+			--pcdir=${PREFIX}/libdata/pkgconfig
 
 DEBUG_CONFIGURE_ON=	--debug=1
 GNUTLS_CONFIGURE_ON=	--ssl=gnutls
@@ -75,6 +77,8 @@ GROUPS=		bitlbee
 .include <bsd.port.options.mk>
 
 post-patch:
+	@${REINPLACE_CMD} -e '/^install:/ s/$$/ install-dev/' \
+		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s|^\(EFLAGS=.*\)|\1 ${LDFLAGS}|" \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s:/etc/bitlbee/motd.txt:${ETCDIR}/motd.txt:" \
@@ -84,7 +88,6 @@ post-patch:
 		${WRKSRC}/doc/bitlbee.8
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/bitlbee
 .if ${PORT_OPTIONS:MSKYPE}
 	${MV} ${STAGEDIR}${PREFIX}/etc/skyped/skyped.conf \
 		${STAGEDIR}${PREFIX}/etc/skyped/skyped.conf.sample

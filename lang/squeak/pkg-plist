@@ -28,7 +28,7 @@ lib/squeak/%%SQUEAK_LIB_DIR%%/so.vm-sound-custom
 lib/squeak/%%SQUEAK_LIB_DIR%%/so.vm-sound-null
 lib/squeak/%%SQUEAK_LIB_DIR%%/so.vm-sound-pulse
 lib/squeak/%%SQUEAK_LIB_DIR%%/squeakvm
-lib/squeak/%%SQUEAK_LIB_DIR%%/SqueakV41.sources
-lib/squeak/Squeak4.3.changes
-lib/squeak/Squeak4.3.image
+lib/squeak/SqueakV46.sources
+lib/squeak/Squeak%%IMAGE_FULL_VERSION%%.changes
+lib/squeak/Squeak%%IMAGE_FULL_VERSION%%.image
 man/man1/squeak.1.gz

@@ -3,11 +3,11 @@ bin/check_jmx4perl
 bin/j4psh
 bin/jmx4perl
 bin/jolokia
-man/man1/cacti_jmx4perl.1.gz
-man/man1/check_jmx4perl.1.gz
-man/man1/j4psh.1.gz
-man/man1/jmx4perl.1.gz
-man/man1/jolokia.1.gz
+%%PERL5_MAN1%%/cacti_jmx4perl.1.gz
+%%PERL5_MAN1%%/check_jmx4perl.1.gz
+%%PERL5_MAN1%%/j4psh.1.gz
+%%PERL5_MAN1%%/jmx4perl.1.gz
+%%PERL5_MAN1%%/jolokia.1.gz
 %%PERL5_MAN3%%/JMX::Jmx4Perl.3.gz
 %%PERL5_MAN3%%/JMX::Jmx4Perl::Agent.3.gz
 %%PERL5_MAN3%%/JMX::Jmx4Perl::Agent::Jolokia::ArtifactHandler.3.gz

@@ -1,6 +1,6 @@
---- ./lgc-pg/misc.c.orig	2011-08-08 04:03:56.000000000 -0400
-+++ ./lgc-pg/misc.c	2014-08-10 23:06:31.000000000 -0400
-@@ -405,7 +405,10 @@
+--- lgc-pg/misc.c.orig	2015-03-15 14:09:24 UTC
++++ lgc-pg/misc.c
+@@ -428,7 +428,10 @@ const char *get_gamedir(void)
      return ".";
  #else
      static char gamedir[MAXPATHLEN];

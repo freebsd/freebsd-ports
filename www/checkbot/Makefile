@@ -25,6 +25,6 @@ USES=		cpe perl5
 CPE_VENDOR=	degraaff
 USE_PERL5=	configure
 
-PLIST_FILES=	bin/checkbot man/man1/checkbot.1.gz
+PLIST_FILES=	bin/checkbot ${SITE_MAN1}/checkbot.1.gz
 
 .include <bsd.port.mk>

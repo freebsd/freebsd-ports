@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	jpeg-turbo
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 PORTREVISION?=	0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lib${PORTNAME}/${PORTVERSION}
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	bytestore@yandex.ru
+MAINTAINER=	portmgr@FreeBSD.org
 COMMENT?=	SIMD-accelerated JPEG codec which replaces libjpeg
 
 USES=		cpe libtool
@@ -38,15 +38,13 @@ BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 .endif
 
 .if ${SLAVE_PORT} == yes
+# libturbojpeg.a has to be built with PIC for virtualgl
 CONFIGURE_ARGS+=--with-pic
 PLIST_SUB+=	JPEG="@comment " LIBTURBOJPEG=""
 .else
-CONFIGURE_ARGS+=--program-suffix=-turbo --without-turbojpeg
+CONFIGURE_ARGS+=--without-turbojpeg
+CONFLICTS_INSTALL=	jpeg-[0-9]*
 PLIST_SUB+=	JPEG="" LIBTURBOJPEG="@comment "
-
-post-install:
-	@${ECHO_CMD} "libjpeg.so.8 libjpeg.so.8.0.2" \
-		> ${STAGEDIR}${PREFIX}/etc/libmap.d/${PORTNAME}.conf
 .endif
 
 .include <bsd.port.mk>

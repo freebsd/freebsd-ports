@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	obspy
-PORTVERSION=	0.10.1
-PORTREVISION=	1
+PORTVERSION=	0.10.2
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +24,7 @@ USES=			fortran python shebangfix zip
 SHEBANG_FILES=		obspy/taup/tests/data/TauP_test_data/gendata.sh
 USE_LDCONFIG=		yes
 LDFLAGS+=		-shared
-USE_PYTHON=		distutils autoplist
+USE_PYTHON=		autoplist distutils
 
 LDFLAGS+=	-shared
 

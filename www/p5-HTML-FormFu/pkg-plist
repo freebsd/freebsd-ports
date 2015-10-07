@@ -315,5 +315,5 @@ bin/html_formfu_dumpconf.pl
 %%PERL5_MAN3%%/HTML::FormFu::UploadParam.3.gz
 %%PERL5_MAN3%%/HTML::FormFu::Validator.3.gz
 %%PERL5_MAN3%%/HTML::FormFu::Validator::Callback.3.gz
-man/man1/html_formfu_deploy.pl.1.gz
-man/man1/html_formfu_dumpconf.pl.1.gz
+%%PERL5_MAN1%%/html_formfu_deploy.pl.1.gz
+%%PERL5_MAN1%%/html_formfu_dumpconf.pl.1.gz

@@ -1,2 +1,2 @@
 bin/mysql-genocide
-man/man1/mysql-genocide.1.gz
+%%PERL5_MAN1%%/mysql-genocide.1.gz

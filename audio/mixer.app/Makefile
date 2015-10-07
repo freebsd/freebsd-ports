@@ -8,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mbeis@xs4all.nl
 COMMENT=	Another mixer intended for the windowmaker dockapp
 
 PLIST_FILES=	bin/Mixer.app

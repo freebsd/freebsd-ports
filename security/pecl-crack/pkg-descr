@@ -1,5 +1,5 @@
 This package provides an interface to the cracklib (libcrack) libraries that
-come standard on most unix-like distributions. This allows you to check
+come standard on most Unix-like distributions. This allows you to check
 passwords against dictionaries of words to ensure some minimal level of
 password security.
 

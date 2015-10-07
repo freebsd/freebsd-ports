@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-PORTVERSION=	4.2.2
+PORTVERSION=	4.3.1
 DISTVERSIONSUFFIX=	-zh_CN
 CATEGORIES=	chinese www
-MASTER_SITES=	http://cn.wordpress.org/ \
-		http://mirror.joehorn.idv.tw/wordpress/
+MASTER_SITES=	http://cn.wordpress.org/
 PKGNAMESUFFIX=	-zh_CN
 
-MAINTAINER=	joehorn@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	State-of-the-art semantic personal publishing platform
 
 LICENSE=	GPLv2
@@ -17,6 +16,7 @@ LICENSE=	GPLv2
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_PHP=	curl gd mysql pcre tokenizer xml zip
+NO_ARCH=	yes
 NO_BUILD=	yes
 WANT_PHP_WEB=	yes
 

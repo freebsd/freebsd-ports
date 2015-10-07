@@ -1,6 +1,6 @@
---- ./bin/tests/system/dlzexternal/Makefile.in.orig	2014-04-08 00:02:19.000000000 +0200
-+++ ./bin/tests/system/dlzexternal/Makefile.in	2014-04-10 15:49:49.000000000 +0200
-@@ -43,7 +43,7 @@
+--- bin/tests/system/dlzexternal/Makefile.in.orig	2015-09-09 02:23:40 UTC
++++ bin/tests/system/dlzexternal/Makefile.in
+@@ -43,7 +43,7 @@ OBJS =          ${DLOPENOBJS}
  @BIND9_MAKE_RULES@
  
  CFLAGS =	@CFLAGS@ @SO_CFLAGS@

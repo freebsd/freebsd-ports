@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xpra
-PORTVERSION=	0.15.2
-PORTREVISION=	1
+PORTVERSION=	0.15.6
 CATEGORIES=	x11
 MASTER_SITES=	http://xpra.org/src/
 
@@ -14,7 +13,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	cython:${PORTSDIR}/lang/cython \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/lz4.so:${PORTSDIR}/archivers/py-lz4 \
+RUN_DEPENDS=	py${PYTHON_SUFFIX}-lz4>=0.7.0_1:${PORTSDIR}/archivers/py-lz4 \
 		pulseaudio:${PORTSDIR}/audio/pulseaudio \
 		${PYTHON_SITELIBDIR}/rencode/__init__.py:${PORTSDIR}/converters/py-rencode \
 		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus \
@@ -27,6 +26,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/lz4.so:${PORTSDIR}/archivers/py-lz4 \
 		ssh-askpass:${PORTSDIR}/security/openssh-askpass \
 		setxkbmap:${PORTSDIR}/x11/setxkbmap \
 		xauth:${PORTSDIR}/x11/xauth \
+		xkbcomp:${PORTSDIR}/x11/xkbcomp \
+		${LOCALBASE}/share/X11/xkb/rules/base:${PORTSDIR}/x11/xkeyboard-config \
 		Xvfb:${PORTSDIR}/x11-servers/xorg-vfbserver \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2 \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/gtkgl/__init__.py:${PORTSDIR}/x11-toolkits/py-gtkglext

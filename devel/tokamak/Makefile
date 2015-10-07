@@ -10,6 +10,10 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	High performance real-time physics library
 
+LICENSE=	BSD3CLAUSE ZLIB
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/license.txt # not actually used by ports framework
+
 USES=		gmake zip:infozip dos2unix
 DOS2UNIX_FILES=	build/gnu/tokamak.make
 

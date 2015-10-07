@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	texinfo
-PORTVERSION=	6.0.20150626
+PORTVERSION=	6.0.20150919
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/johans/texinfo/${PORTVERSION:E}/ \
 		GNU

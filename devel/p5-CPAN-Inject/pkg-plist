@@ -1,4 +1,4 @@
 bin/cpaninject
 %%SITE_PERL%%/CPAN/Inject.pm
 %%PERL5_MAN3%%/CPAN::Inject.3.gz
-man/man1/cpaninject.1.gz
+%%PERL5_MAN1%%/cpaninject.1.gz

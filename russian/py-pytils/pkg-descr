@@ -1,0 +1,5 @@
+Simple tools for processing strings in Russian (choose proper form for plurals,
+in-words representation of numerals, dates in Russian without locales,
+transliteration, etc).
+
+WWW: https://github.com/j2a/pytils/

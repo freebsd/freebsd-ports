@@ -29,4 +29,4 @@ bin/asp-perl
 %%SITE_PERL%%/Apache/ASP/StateManager.pm
 %%SITE_PERL%%/Bundle/Apache/ASP.pm
 %%SITE_PERL%%/Bundle/Apache/ASP/Extra.pm
-man/man1/asp-perl.1.gz
+%%PERL5_MAN1%%/asp-perl.1.gz

@@ -3,13 +3,14 @@
 
 PORTNAME=	autocd
 PORTVERSION=	3.02.12b
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio sysutils
 MASTER_SITES=	ftp://kot.spb.ru/pub/src/projects/autocd/
 
 MAINTAINER=	KOT@MATPOCKuH.Ru
 COMMENT=	Compact disc control utility
 
+USES=		libedit
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	README.rus.html
@@ -28,6 +29,8 @@ do-install:
 	@(cd ${WRKSRC} && ${INSTALL_MAN} acdplay.1 cdctl.1 \
 		${STAGEDIR}${PREFIX}/man/man1/)
 	${INSTALL_MAN} ${WRKSRC}/autocd.8 ${STAGEDIR}${PREFIX}/man/man8/
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 

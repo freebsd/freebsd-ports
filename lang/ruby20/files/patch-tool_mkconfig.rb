@@ -1,5 +1,5 @@
---- tool/mkconfig.rb.orig	2013-05-27 03:20:03.501815638 +0000
-+++ tool/mkconfig.rb	2013-05-27 03:20:31.093814303 +0000
+--- tool/mkconfig.rb.orig	2013-05-27 03:20:04 UTC
++++ tool/mkconfig.rb
 @@ -173,7 +173,8 @@
  end
  vars["prefix"] = ""

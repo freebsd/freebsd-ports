@@ -177,6 +177,7 @@ bin/sync_to_snapshot.pl
 %%SITE_PERL%%/VM/EC2/Volume/Status/Details.pm
 %%SITE_PERL%%/VM/EC2/Volume/Status/Event.pm
 %%SITE_PERL%%/VM/EC2/Volume/StatusItem.pm
+%%PERL5_MAN1%%/migrate-ebs-image.pl.1.gz
 %%PERL5_MAN3%%/VM::EC2.3.gz
 %%PERL5_MAN3%%/VM::EC2::ASG.3.gz
 %%PERL5_MAN3%%/VM::EC2::AccountAttributes.3.gz
@@ -353,4 +354,3 @@ bin/sync_to_snapshot.pl
 %%PERL5_MAN3%%/VM::EC2::Volume::Status::Details.3.gz
 %%PERL5_MAN3%%/VM::EC2::Volume::Status::Event.3.gz
 %%PERL5_MAN3%%/VM::EC2::Volume::StatusItem.3.gz
-man/man1/migrate-ebs-image.pl.1.gz

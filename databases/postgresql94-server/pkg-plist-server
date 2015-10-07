@@ -40,7 +40,6 @@ lib/postgresql/utf8_and_uhc.so
 lib/postgresql/utf8_and_win.so
 lib/libpgcommon.a
 %%PORTDOCS%%%%DOCSDIR%%/README-server
-%%PORTDOCS%%@dir %%DOCSDIR%%
 %%DATADIR%%/conversion_create.sql
 %%DATADIR%%/information_schema.sql
 %%DATADIR%%/pg_hba.conf.sample
@@ -54,80 +53,80 @@ lib/libpgcommon.a
 %%DATADIR%%/extension/plpgsql--1.0.sql
 %%DATADIR%%/extension/plpgsql--unpackaged--1.0.sql
 %%DATADIR%%/extension/plpgsql.control
-%%GETTEXT%%share/locale/cs/LC_MESSAGES/initdb-9.4.mo
-%%GETTEXT%%share/locale/cs/LC_MESSAGES/pg_controldata-9.4.mo
-%%GETTEXT%%share/locale/cs/LC_MESSAGES/pg_ctl-9.4.mo
-%%GETTEXT%%share/locale/cs/LC_MESSAGES/pg_resetxlog-9.4.mo
-%%GETTEXT%%share/locale/cs/LC_MESSAGES/plpgsql-9.4.mo
-%%GETTEXT%%share/locale/de/LC_MESSAGES/initdb-9.4.mo
-%%GETTEXT%%share/locale/de/LC_MESSAGES/pg_basebackup-9.4.mo
-%%GETTEXT%%share/locale/de/LC_MESSAGES/pg_controldata-9.4.mo
-%%GETTEXT%%share/locale/de/LC_MESSAGES/pg_ctl-9.4.mo
-%%GETTEXT%%share/locale/de/LC_MESSAGES/pg_resetxlog-9.4.mo
-%%GETTEXT%%share/locale/de/LC_MESSAGES/plpgsql-9.4.mo
-%%GETTEXT%%share/locale/de/LC_MESSAGES/postgres-9.4.mo
-%%GETTEXT%%share/locale/es/LC_MESSAGES/initdb-9.4.mo
-%%GETTEXT%%share/locale/es/LC_MESSAGES/pg_basebackup-9.4.mo
-%%GETTEXT%%share/locale/es/LC_MESSAGES/pg_controldata-9.4.mo
-%%GETTEXT%%share/locale/es/LC_MESSAGES/pg_ctl-9.4.mo
-%%GETTEXT%%share/locale/es/LC_MESSAGES/pg_resetxlog-9.4.mo
-%%GETTEXT%%share/locale/es/LC_MESSAGES/plpgsql-9.4.mo
-%%GETTEXT%%share/locale/es/LC_MESSAGES/postgres-9.4.mo
-%%GETTEXT%%share/locale/fr/LC_MESSAGES/initdb-9.4.mo
-%%GETTEXT%%share/locale/fr/LC_MESSAGES/pg_basebackup-9.4.mo
-%%GETTEXT%%share/locale/fr/LC_MESSAGES/pg_controldata-9.4.mo
-%%GETTEXT%%share/locale/fr/LC_MESSAGES/pg_ctl-9.4.mo
-%%GETTEXT%%share/locale/fr/LC_MESSAGES/pg_resetxlog-9.4.mo
-%%GETTEXT%%share/locale/fr/LC_MESSAGES/plpgsql-9.4.mo
-%%GETTEXT%%share/locale/fr/LC_MESSAGES/postgres-9.4.mo
-%%GETTEXT%%share/locale/id/LC_MESSAGES/postgres-9.4.mo
-%%GETTEXT%%share/locale/it/LC_MESSAGES/initdb-9.4.mo
-%%GETTEXT%%share/locale/it/LC_MESSAGES/pg_basebackup-9.4.mo
-%%GETTEXT%%share/locale/it/LC_MESSAGES/pg_controldata-9.4.mo
-%%GETTEXT%%share/locale/it/LC_MESSAGES/pg_ctl-9.4.mo
-%%GETTEXT%%share/locale/it/LC_MESSAGES/pg_resetxlog-9.4.mo
-%%GETTEXT%%share/locale/it/LC_MESSAGES/plpgsql-9.4.mo
-%%GETTEXT%%share/locale/it/LC_MESSAGES/postgres-9.4.mo
-%%GETTEXT%%share/locale/ja/LC_MESSAGES/initdb-9.4.mo
-%%GETTEXT%%share/locale/ja/LC_MESSAGES/pg_controldata-9.4.mo
-%%GETTEXT%%share/locale/ja/LC_MESSAGES/pg_ctl-9.4.mo
-%%GETTEXT%%share/locale/ja/LC_MESSAGES/pg_resetxlog-9.4.mo
-%%GETTEXT%%share/locale/ja/LC_MESSAGES/plpgsql-9.4.mo
-%%GETTEXT%%share/locale/ja/LC_MESSAGES/postgres-9.4.mo
-%%GETTEXT%%share/locale/pl/LC_MESSAGES/initdb-9.4.mo
-%%GETTEXT%%share/locale/pl/LC_MESSAGES/pg_basebackup-9.4.mo
-%%GETTEXT%%share/locale/pl/LC_MESSAGES/pg_controldata-9.4.mo
-%%GETTEXT%%share/locale/pl/LC_MESSAGES/pg_ctl-9.4.mo
-%%GETTEXT%%share/locale/pl/LC_MESSAGES/pg_resetxlog-9.4.mo
-%%GETTEXT%%share/locale/pl/LC_MESSAGES/plpgsql-9.4.mo
-%%GETTEXT%%share/locale/pl/LC_MESSAGES/postgres-9.4.mo
-%%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/initdb-9.4.mo
-%%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/pg_basebackup-9.4.mo
-%%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/pg_controldata-9.4.mo
-%%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/pg_ctl-9.4.mo
-%%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/pg_resetxlog-9.4.mo
-%%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/plpgsql-9.4.mo
-%%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/postgres-9.4.mo
-%%GETTEXT%%share/locale/ro/LC_MESSAGES/plpgsql-9.4.mo
-%%GETTEXT%%share/locale/ru/LC_MESSAGES/initdb-9.4.mo
-%%GETTEXT%%share/locale/ru/LC_MESSAGES/pg_basebackup-9.4.mo
-%%GETTEXT%%share/locale/ru/LC_MESSAGES/pg_controldata-9.4.mo
-%%GETTEXT%%share/locale/ru/LC_MESSAGES/pg_ctl-9.4.mo
-%%GETTEXT%%share/locale/ru/LC_MESSAGES/pg_resetxlog-9.4.mo
-%%GETTEXT%%share/locale/ru/LC_MESSAGES/plpgsql-9.4.mo
-%%GETTEXT%%share/locale/ru/LC_MESSAGES/postgres-9.4.mo
-%%GETTEXT%%share/locale/sv/LC_MESSAGES/initdb-9.4.mo
-%%GETTEXT%%share/locale/sv/LC_MESSAGES/pg_controldata-9.4.mo
-%%GETTEXT%%share/locale/sv/LC_MESSAGES/pg_ctl-9.4.mo
-%%GETTEXT%%share/locale/sv/LC_MESSAGES/pg_resetxlog-9.4.mo
-%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/initdb-9.4.mo
-%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_basebackup-9.4.mo
-%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_controldata-9.4.mo
-%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_ctl-9.4.mo
-%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_resetxlog-9.4.mo
-%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/plpgsql-9.4.mo
-%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/postgres-9.4.mo
-%%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/plpgsql-9.4.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/initdb-9.4.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/pg_controldata-9.4.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/pg_ctl-9.4.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/pg_resetxlog-9.4.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/plpgsql-9.4.mo
+%%NLS%%share/locale/de/LC_MESSAGES/initdb-9.4.mo
+%%NLS%%share/locale/de/LC_MESSAGES/pg_basebackup-9.4.mo
+%%NLS%%share/locale/de/LC_MESSAGES/pg_controldata-9.4.mo
+%%NLS%%share/locale/de/LC_MESSAGES/pg_ctl-9.4.mo
+%%NLS%%share/locale/de/LC_MESSAGES/pg_resetxlog-9.4.mo
+%%NLS%%share/locale/de/LC_MESSAGES/plpgsql-9.4.mo
+%%NLS%%share/locale/de/LC_MESSAGES/postgres-9.4.mo
+%%NLS%%share/locale/es/LC_MESSAGES/initdb-9.4.mo
+%%NLS%%share/locale/es/LC_MESSAGES/pg_basebackup-9.4.mo
+%%NLS%%share/locale/es/LC_MESSAGES/pg_controldata-9.4.mo
+%%NLS%%share/locale/es/LC_MESSAGES/pg_ctl-9.4.mo
+%%NLS%%share/locale/es/LC_MESSAGES/pg_resetxlog-9.4.mo
+%%NLS%%share/locale/es/LC_MESSAGES/plpgsql-9.4.mo
+%%NLS%%share/locale/es/LC_MESSAGES/postgres-9.4.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/initdb-9.4.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/pg_basebackup-9.4.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/pg_controldata-9.4.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/pg_ctl-9.4.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/pg_resetxlog-9.4.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/plpgsql-9.4.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/postgres-9.4.mo
+%%NLS%%share/locale/id/LC_MESSAGES/postgres-9.4.mo
+%%NLS%%share/locale/it/LC_MESSAGES/initdb-9.4.mo
+%%NLS%%share/locale/it/LC_MESSAGES/pg_basebackup-9.4.mo
+%%NLS%%share/locale/it/LC_MESSAGES/pg_controldata-9.4.mo
+%%NLS%%share/locale/it/LC_MESSAGES/pg_ctl-9.4.mo
+%%NLS%%share/locale/it/LC_MESSAGES/pg_resetxlog-9.4.mo
+%%NLS%%share/locale/it/LC_MESSAGES/plpgsql-9.4.mo
+%%NLS%%share/locale/it/LC_MESSAGES/postgres-9.4.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/initdb-9.4.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/pg_controldata-9.4.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/pg_ctl-9.4.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/pg_resetxlog-9.4.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/plpgsql-9.4.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/postgres-9.4.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/initdb-9.4.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/pg_basebackup-9.4.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/pg_controldata-9.4.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/pg_ctl-9.4.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/pg_resetxlog-9.4.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/plpgsql-9.4.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/postgres-9.4.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/initdb-9.4.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/pg_basebackup-9.4.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/pg_controldata-9.4.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/pg_ctl-9.4.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/pg_resetxlog-9.4.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/plpgsql-9.4.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/postgres-9.4.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/plpgsql-9.4.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/initdb-9.4.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/pg_basebackup-9.4.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/pg_controldata-9.4.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/pg_ctl-9.4.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/pg_resetxlog-9.4.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/plpgsql-9.4.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/postgres-9.4.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/initdb-9.4.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/pg_controldata-9.4.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/pg_ctl-9.4.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/pg_resetxlog-9.4.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/initdb-9.4.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_basebackup-9.4.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_controldata-9.4.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_ctl-9.4.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_resetxlog-9.4.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/plpgsql-9.4.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/postgres-9.4.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/plpgsql-9.4.mo
 %%DATADIR%%/postgres.shdescription
 %%DATADIR%%/snowball_create.sql
 %%TZDATA%%%%DATADIR%%/timezone/Africa/Abidjan
@@ -727,27 +726,6 @@ lib/libpgcommon.a
 %%DATADIR%%/timezonesets/India
 %%DATADIR%%/timezonesets/Indian.txt
 %%DATADIR%%/timezonesets/Pacific.txt
-%%TZDATA%%@dir %%DATADIR%%/timezone/Africa
-%%TZDATA%%@dir %%DATADIR%%/timezone/America/Argentina
-%%TZDATA%%@dir %%DATADIR%%/timezone/America/Indiana
-%%TZDATA%%@dir %%DATADIR%%/timezone/America/Kentucky
-%%TZDATA%%@dir %%DATADIR%%/timezone/America/North_Dakota
-%%TZDATA%%@dir %%DATADIR%%/timezone/America
-%%TZDATA%%@dir %%DATADIR%%/timezone/Antarctica
-%%TZDATA%%@dir %%DATADIR%%/timezone/Arctic
-%%TZDATA%%@dir %%DATADIR%%/timezone/Asia
-%%TZDATA%%@dir %%DATADIR%%/timezone/Atlantic
-%%TZDATA%%@dir %%DATADIR%%/timezone/Australia
-%%TZDATA%%@dir %%DATADIR%%/timezone/Brazil
-%%TZDATA%%@dir %%DATADIR%%/timezone/Canada
-%%TZDATA%%@dir %%DATADIR%%/timezone/Chile
-%%TZDATA%%@dir %%DATADIR%%/timezone/Etc
-%%TZDATA%%@dir %%DATADIR%%/timezone/Europe
-%%TZDATA%%@dir %%DATADIR%%/timezone/Indian
-%%TZDATA%%@dir %%DATADIR%%/timezone/Mexico
-%%TZDATA%%@dir %%DATADIR%%/timezone/Pacific
-%%TZDATA%%@dir %%DATADIR%%/timezone/US
-%%TZDATA%%@dir %%DATADIR%%/timezone
 %%DATADIR%%/tsearch_data/danish.stop
 %%DATADIR%%/tsearch_data/dutch.stop
 %%DATADIR%%/tsearch_data/english.stop
@@ -767,13 +745,4 @@ lib/libpgcommon.a
 %%DATADIR%%/tsearch_data/ispell_sample.dict
 %%DATADIR%%/tsearch_data/synonym_sample.syn
 %%DATADIR%%/tsearch_data/thesaurus_sample.ths
-@dir %%DATADIR%%/extension
-@dir %%DATADIR%%/timezonesets
-@exec /bin/mkdir -p %%PREFIX%%/%%PG_USER%% || /usr/bin/true
-@exec /usr/sbin/chown %%PG_USER%%:%%PG_GROUP%% %%PREFIX%%/%%PG_USER%% || /usr/bin/true
-@dir %%DATADIR%%/tsearch_data
-@dir %%DATADIR%%
-@dir etc/periodic/daily
-@dir etc/periodic
-@dir lib/postgresql
-@dir %%PG_USER%%
+@dir(%%PG_USER%%,%%PG_GROUP%%,) %%PG_USER%%

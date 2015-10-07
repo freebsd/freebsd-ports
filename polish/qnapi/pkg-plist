@@ -1,8 +1,8 @@
 bin/qnapi
-%%KDE4%%/share/kde4/services/ServiceMenus/qnapi-download.desktop
 man/man1/qnapi.1.gz
+share/applications/qnapi-download.desktop
+share/applications/qnapi-scan.desktop
 share/applications/qnapi.desktop
-share/apps/konqueror/servicemenus/qnapi-download.desktop
 share/icons/qnapi-128.png
 share/icons/qnapi-48.png
 share/icons/qnapi-512.png

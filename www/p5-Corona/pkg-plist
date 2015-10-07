@@ -1,5 +1,5 @@
 bin/corona
-man/man1/corona.1.gz
+%%PERL5_MAN1%%/corona.1.gz
 %%PERL5_MAN3%%/Corona.3.gz
 %%PERL5_MAN3%%/Plack::Handler::Corona.3.gz
 %%SITE_PERL%%/Corona.pm

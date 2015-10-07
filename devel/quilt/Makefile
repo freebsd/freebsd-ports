@@ -22,6 +22,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		formail:${PORTSDIR}/mail/procmail
 
 USES=		desthack gmake perl5
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	RPMBUILD DOCS NLS
 OPTIONS_SUB=	yes
@@ -41,16 +42,14 @@ RPMBUILD_CONFIGURE_OFF=	--without-rpmbuild
 NLS_USES=		gettext
 NLS_CONFIGURE_OFF=	--disable-nls
 
+DOCS_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-Makefile.in
+
 .include <bsd.port.options.mk>
 
 .if !exists(${LOCALBASE}/sbin/sendmail)
 PLIST_SUB+=	SENDMAIL=""
 .else
 PLIST_SUB+=	SENDMAIL="@comment "
-.endif
-
-.if ! ${PORT_OPTIONS:MDOCS}
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-Makefile.in
 .endif
 
 post-extract:

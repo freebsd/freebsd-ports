@@ -124,9 +124,3 @@ lib/postgresql/uuid-ossp.so
 %%DATADIR%%/contrib/uninstall_unaccent.sql
 %%DATADIR%%/tsearch_data/unaccent.rules
 %%DATADIR%%/tsearch_data/xsyn_sample.rules
-@dir %%DATADIR%%/tsearch_data
-@dir %%DATADIR%%/contrib
-@dir %%DATADIR%%
-@dir %%DOCSDIR%%/contrib
-@dir %%DOCSDIR%%
-@dir lib/postgresql

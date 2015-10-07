@@ -1,10 +1,8 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/libsoup/Makefile 20035 2014-11-03 08:16:10Z kwm $
 
 PORTNAME=	libsoup
-PORTVERSION=	2.48.1
-PORTREVISION=	1
+PORTVERSION=	2.50.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -17,12 +15,13 @@ LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 RUN_DEPENDS=	glib-networking>=2.29.18:${PORTSDIR}/net/glib-networking
 
 USES=		tar:xz
+PORTSCOUT=	limitw:1,even
 
 .if !defined(REFERENCE_PORT)
 
 USES+=		gettext gmake libtool pathfix pkgconfig \
 		python:3:build tar:xz
-USE_GNOME=	glib20 intltool introspection:build \
+USE_GNOME=	glib20 intlhack introspection:build \
 		libxml2 referencehack
 USE_SQLITE=	3
 USE_LDCONFIG=	yes
@@ -37,8 +36,7 @@ PLIST_SUB=	VERSION="2.4" LIBVERSION=${LIBVERSION}
 
 .if defined(SOUP_SLAVE)
 USE_SQLITE=	yes
-LIB_DEPENDS+=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
-		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
+LIB_DEPENDS+=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 CONFIGURE_ARGS+=--with-gnome
 .else
 CONFIGURE_ARGS+=--without-gnome

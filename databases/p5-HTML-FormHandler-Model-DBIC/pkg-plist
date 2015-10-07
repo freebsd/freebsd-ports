@@ -9,4 +9,4 @@ bin/form_generator.pl
 %%PERL5_MAN3%%/HTML::FormHandler::Model::DBIC::TypeMap.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::TraitFor::DBICFields.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::TraitFor::Model::DBIC.3.gz
-man/man1/form_generator.pl.1.gz
+%%PERL5_MAN1%%/form_generator.pl.1.gz

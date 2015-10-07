@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	43.0.2357.132
+PORTVERSION=    45.0.2454.101
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # default, but needed to get distinfo correct if TEST is on
@@ -55,13 +55,14 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/a
 		xdg-open:${PORTSDIR}/devel/xdg-utils
 
 ONLY_FOR_ARCHS=	i386 amd64
-USES=		bison compiler:c++11-lib cpe desktop-file-utils jpeg pkgconfig \
-		perl5 shebangfix ninja tar:xz python:2,build execinfo
+USES=		bison compiler:c++11-lib cpe desktop-file-utils execinfo jpeg \
+		ninja perl5 pkgconfig python:2,build shebangfix tar:xz
 CPE_VENDOR=	google
 CPE_PRODUCT=	chrome
 USE_PERL5=	build
 USE_XORG=	scrnsaverproto x11 xproto xscrnsaver xtst
 USE_GNOME=	atk glib20 gtk20 dconf libxslt
+MAKE_ARGS=	-C out/${BUILDTYPE}
 SHEBANG_FILES=	chrome/tools/build/linux/chrome-wrapper
 ALL_TARGET=	chrome
 INSTALLS_ICONS=	yes
@@ -73,6 +74,7 @@ GYP_DEFINES+=	\
 		linux_breakpad=0 \
 		linux_use_heapchecker=0 \
 		linux_strip_binary=1 \
+		use_aura=1 \
 		test_isolation_mode=noop \
 		disable_nacl=1 \
 		enable_extensions=1 \
@@ -127,17 +129,17 @@ GYP_DEFINES+=	google_api_key=AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8 \
 SUB_FILES=	chromium-browser.desktop chrome
 SUB_LIST+=	COMMENT="${COMMENT}"
 
-OPTIONS_DEFINE=	CODECS GCONF PULSEAUDIO TEST KERBEROS DEBUG
+OPTIONS_DEFINE=	CODECS GCONF PULSEAUDIO TEST KERBEROS DEBUG DRIVER
 CODECS_DESC=	Compile and enable patented codecs like H.264
+DRIVER_DESC=	Install chromedriver
 
 OPTIONS_DEFAULT=	CODECS GCONF KERBEROS
+OPTIONS_SUB=	yes
 
 GCONF_USE=	GNOME=gconf2
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
-
+DRIVER_MAKE_ARGS=chromedriver
 TEST_DISTFILES=	${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}
-
-BROKEN_FreeBSD_8=	Does not compile, missing locale
 
 .include <bsd.port.options.mk>
 
@@ -193,7 +195,6 @@ CONFIGURE_ENV+=	CC="${CC}" \
 		GYP_DEFINES="${GYP_DEFINES}"
 MAKE_ENV+=	BUILDTYPE=${BUILDTYPE} \
 		GPERF="${LOCALBASE}/bin/gperf"
-MAKE_ARGS=	-C out/${BUILDTYPE}
 
 .include <bsd.port.pre.mk>
 
@@ -324,9 +325,10 @@ pre-configure:
 		'third_party/tcmalloc' \
 		'third_party/tlslite' \
 		'third_party/trace-viewer' \
-		'third_party/trace-viewer/third_party' \
-		'third_party/trace-viewer/third_party/tvcm/third_party' \
-		'third_party/undoview' \
+		'third_party/trace-viewer/tracing' \
+		'third_party/trace-viewer/tracing/third_party' \
+		'third_party/trace-viewer/tracing/third_party/tvcm/third_party' \
+		'third_party/trace-viewer/tracing/third_party/tvcm/tvcm' \
 		'third_party/usrsctp' \
 		'third_party/web-animations-js' \
 		'third_party/webdriver' \
@@ -371,8 +373,6 @@ do-install:
 .endfor
 	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/chrome \
 		${STAGEDIR}${DATADIR}
-	${INSTALL_LIB} ${WRKSRC}/out/${BUILDTYPE}/libffmpegsumo.so \
-		${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/out/${BUILDTYPE} && \
 		${COPYTREE_SHARE} "locales resources" ${STAGEDIR}${DATADIR}
 	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
@@ -380,6 +380,10 @@ do-install:
 		${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/chrome ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/mksnapshot \
-		${STAGEDIR}${DATADIR}/mksnapshot
+		${STAGEDIR}${DATADIR}
+.if ${PORT_OPTIONS:MDRIVER}
+	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/chromedriver \
+		${STAGEDIR}${PREFIX}/bin
+.endif
 
 .include <bsd.port.post.mk>

@@ -49,4 +49,4 @@ bin/www-mobilecarrierjp-dump_all.pl
 %%PERL5_MAN3%%/WWW::MobileCarrierJP::Softbank::PictogramInfo.3.gz
 %%PERL5_MAN3%%/WWW::MobileCarrierJP::Softbank::Service.3.gz
 %%PERL5_MAN3%%/WWW::MobileCarrierJP::ThirdForce::UserAgent.3.gz
-man/man1/www-mobilecarrierjp-dump_all.pl.1.gz
+%%PERL5_MAN1%%/www-mobilecarrierjp-dump_all.pl.1.gz

@@ -1,6 +1,6 @@
---- ./policy/backend/iv_exec.cc.orig	2011-03-16 21:27:54.000000000 +0000
-+++ ./policy/backend/iv_exec.cc	2014-02-26 21:17:13.000000000 +0000
-@@ -275,7 +275,11 @@
+--- policy/backend/iv_exec.cc.orig	2012-01-11 17:56:10 UTC
++++ policy/backend/iv_exec.cc
+@@ -275,7 +275,11 @@ void 
  IvExec::visit(Store& s)
  {
      if (_stackptr < _stack)

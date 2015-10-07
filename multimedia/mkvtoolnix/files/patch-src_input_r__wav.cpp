@@ -1,6 +1,6 @@
---- src/input/r_wav.cpp.orig	2015-06-08 14:20:26 UTC
+--- src/input/r_wav.cpp.orig	2015-07-18 11:39:41 UTC
 +++ src/input/r_wav.cpp
-@@ -29,6 +29,10 @@
+@@ -32,6 +32,10 @@
  #include "output/p_dts.h"
  #include "output/p_pcm.h"
  

@@ -2,13 +2,38 @@
 
 PORTNAME=	ifmail
 PORTVERSION=	2.15
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	news comms
 MASTER_SITES=	SUNSITE/system/fido
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	FidoNet(tm) support package for UN*X platform
 
+USES=		shebangfix
+SHEBANG_FILES=	misc/contrib/a2dbm \
+		misc/contrib/abbs2nf/abbs2nf.pl \
+		misc/contrib/areafix-0.5.07/areafix.pl \
+		misc/contrib/areafix-0.5.07-jv10/areafix.pl \
+		misc/contrib/areafix-0.6.02/areafix \
+		misc/contrib/edalias \
+		misc/contrib/edalias.cgi \
+		misc/contrib/ifinfo \
+		misc/contrib/ifinfo.pl \
+		misc/contrib/ifman \
+		misc/contrib/ifreq \
+		misc/contrib/ldbm \
+		misc/contrib/lmsgid \
+		misc/contrib/sumlog \
+		misc/contrib/tic/checker.pl \
+		misc/contrib/tic/lister.pl \
+		misc/contrib/tic/makeconfig.pl \
+		misc/contrib/tic/poster.pl \
+		misc/contrib/tic/process_tics.pl \
+		misc/contrib/tic/purge_history.pl \
+		misc/contrib/u-tic/make_machdep.pl \
+		misc/contrib/u-tic/u-attach.pl \
+		misc/contrib/u-tic/u-fix.pl \
+		misc/contrib/u-tic/u-tic.pl
 USERS=		ifmail
 CFLAGS+=	-DHAS_STDARG_H -Wall
 GID!=		id -g

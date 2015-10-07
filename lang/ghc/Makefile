@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ghc
-PORTVERSION=	7.8.3
-PORTREVISION=	1
+PORTVERSION=	7.10.2
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		LOCAL/pgj/:boot
@@ -12,30 +11,30 @@ DISTFILES=	ghc-${PORTVERSION}-src${EXTRACT_SUFX}:source
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Compiler for the functional language Haskell
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 ONLY_FOR_ARCHS=	i386 amd64
 
 MAKE_JOBS_NUMBER_LIMIT=		4
 
 GHC_VERSION=		${PORTVERSION}
-HSCOLOUR_VERSION=	1.20.3
+HSCOLOUR_VERSION=	1.23
+LLVM_VERSION=		35
 
 DATADIR=	${PREFIX}/share/ghc-${GHC_VERSION}
 EXAMPLESDIR=	${PREFIX}/share/examples/ghc-${GHC_VERSION}
 
-CONFLICTS=	ghc-6.* ghc-7.0.* ghc-7.2.* ghc-7.4.* ghc-7.6.* ghc-7.7.*
+CONFLICTS=	ghc-7.4.* ghc-7.6.* ghc-7.8.*
 
 LIB_DEPENDS+=	libgmp.so:${PORTSDIR}/math/gmp
 
-USE_AUTOTOOLS=		autoconf autoheader
 USE_PERL5=		build
-USES=			gmake iconv:translit perl5 ncurses tar:bzip2
-USE_BINUTILS=		yes
-USE_GCC=		yes
+USES=			autoreconf gmake iconv:translit ncurses perl5 tar:xz
 
-LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/LICENSE
-
-MAKE_ENV=	LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+MAKE_ENV+=	LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+# This is needed on FreeBSD 9.x due to the bootstrap tarball.
+TAR=		env LC_ALL=en_US.UTF-8 /usr/bin/tar
 
 # The configure process accepts,filters and canonicalises
 # the CONFIGURE_TARGET variable. You can read the files
@@ -44,11 +43,17 @@ MAKE_ENV=	LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 # You can view below.
 GNU_CONFIGURE=	yes
 
-OPTIONS_DEFINE=		PROFILE DYNAMIC LLVM DOCS
-OPTIONS_DEFAULT=	PROFILE DYNAMIC DOCS
+OPTIONS_DEFINE=			PROFILE DYNAMIC LLVM DOCS
+OPTIONS_SINGLE=			C_Compiler
+OPTIONS_SINGLE_C_Compiler=	GCC PCLANG BCLANG
+
+OPTIONS_DEFAULT=	PROFILE DYNAMIC DOCS GCC
 
 BOOT_DESC=		Use installed GHC for bootstrapping
 BOOTH_DESC=		Use installed HsColour for bootstrapping
+GCC_DESC=		Build with GCC (from ports)
+PCLANG_DESC=		Build with Clang from ports
+BCLANG_DESC=		Build with Clang from base
 PROFILE_DESC=		Add support for performance profiling
 DYNAMIC_DESC=		Add support for dynamic linking
 LLVM_DESC=		Add support for generating code via LLVM
@@ -73,31 +78,38 @@ LIB_DEPENDS+=	libffi.so.6:${PORTSDIR}/devel/libffi
 
 .if empty(PORT_OPTIONS:MBOOT)
 
-BOOT_GHC_VERSION=	7.6.3
-
-.if ${ARCH} == "i386"
-
-.if ${OSVERSION} >= 1000043
-DISTFILES+=	ghc-${BOOT_GHC_VERSION}-i386-freebsd10-boot${EXTRACT_SUFX}:boot
-.elif ${OSVERSION} >= 900000
-DISTFILES+=	ghc-${BOOT_GHC_VERSION}-i386-freebsd9-boot${EXTRACT_SUFX}:boot
-.else
-DISTFILES+=	ghc-${BOOT_GHC_VERSION}-i386-freebsd8-boot${EXTRACT_SUFX}:boot
-.endif
-
-.elif ${ARCH} == "amd64"
-
-.if ${OSVERSION} >= 1000043
-DISTFILES+=	ghc-${BOOT_GHC_VERSION}-amd64-freebsd10-boot${EXTRACT_SUFX}:boot
-.elif ${OSVERSION} >= 900000
-DISTFILES+=	ghc-${BOOT_GHC_VERSION}-amd64-freebsd9-boot${EXTRACT_SUFX}:boot
-.else
-DISTFILES+=	ghc-${BOOT_GHC_VERSION}-amd64-freebsd8-boot${EXTRACT_SUFX}:boot
-.endif
-
-.endif
+BOOT_GHC_VERSION=	7.10.2
+DISTFILES+=		ghc-${BOOT_GHC_VERSION}-boot-${ARCH}-freebsd${EXTRACT_SUFX}:boot
+LIB_DEPENDS+=		libutil.so.9:${PORTSDIR}/misc/compat9x
 
 .endif # MBOOT
+
+.if ${PORT_OPTIONS:MPCLANG}
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang${LLVM_VERSION}:${PORTSDIR}/lang/clang${LLVM_VERSION}
+RUN_DEPENDS+=	${LOCALBASE}/bin/clang${LLVM_VERSION}:${PORTSDIR}/lang/clang${LLVM_VERSION}
+CC=		${LOCALBASE}/bin/clang${LLVM_VERSION}
+CXX=		${LOCALBASE}/bin/clang++${LLVM_VERSION}
+CPP=		${LOCALBASE}/bin/clang-cpp${LLVM_VERSION}
+LDFLAGS+=	-B${LOCALBASE}/bin
+CFLAGS+=	-Qunused-arguments
+CONFIGURE_ARGS+=	--with-clang=${CC} --with-gcc=${CC}
+USE_BINUTILS=		yes
+.if empty(PORT_OPTIONS:MBOOT)
+CONFIGURE_ARGS_BOOT+=	--with-clang=${CC} --with-gcc=${CC}
+.endif
+.elif ${PORT_OPTIONS:MBCLANG}
+CC=		/usr/bin/clang
+CXX=		/usr/bin/clang++
+CPP=		/usr/bin/clang-cpp
+CFLAGS+=	-Qunused-arguments
+CONFIGURE_ARGS+=	--with-clang=${CC} --with-gcc=${CC}
+.else # GCC
+USE_GCC=	yes
+CONFIGURE_ARGS+=	--with-gcc=${CC}
+.if empty(PORT_OPTIONS:MBOOT)
+CONFIGURE_ARGS_BOOT+=	--with-gcc=${CC}
+.endif
+.endif
 
 DOCSDIR=	${PREFIX}/share/doc/${DISTNAME}
 GHC_LIBDIR=	${STAGEDIR}${PREFIX}/lib/ghc-${GHC_VERSION}
@@ -107,8 +119,7 @@ PLIST_SUB+=	GHC_VERSION=${GHC_VERSION} GHC_LIBDIR=${GHC_LIBDIR_REL}
 
 HACKAGE_SITE?=		http://hackage.haskell.org/package/
 
-CONFIGURE_ARGS=		--with-gcc=${CC} \
-			--with-ld=${LD} \
+CONFIGURE_ARGS+=	--with-ld=${LD} \
 			--with-gmp-includes=${LOCALBASE}/include \
 			--with-gmp-libraries=${LOCALBASE}/lib
 
@@ -122,11 +133,11 @@ CONFIGURE_ARGS+=	--with-system-libffi \
 .endif
 
 .if ${PORT_OPTIONS:MLLVM}
-BUILD_DEPENDS+=		${LOCALBASE}/bin/opt34:${PORTSDIR}/devel/llvm34
-RUN_DEPENDS+=		${LOCALBASE}/bin/opt34:${PORTSDIR}/devel/llvm34
+BUILD_DEPENDS+=		${LOCALBASE}/bin/opt${LLVM_VERSION}:${PORTSDIR}/devel/llvm${LLVM_VERSION}
+RUN_DEPENDS+=		${LOCALBASE}/bin/opt${LLVM_VERSION}:${PORTSDIR}/devel/llvm${LLVM_VERSION}
 
-CONFIGURE_ARGS+=	--with-opt=${LOCALBASE}/bin/opt34 \
-			--with-llc=${LOCALBASE}/bin/llc34
+CONFIGURE_ARGS+=	--with-opt=${LOCALBASE}/bin/opt${LLVM_VERSION} \
+			--with-llc=${LOCALBASE}/bin/llc${LLVM_VERSION}
 .endif
 
 .if empty(PORT_OPTIONS:MBOOT)
@@ -138,7 +149,7 @@ BOOT_HSC2HS=	${BOOT_DIR}/bin/hsc2hs
 
 SLAVE_CMD=	${SETENV} PATH=${BOOT_DIR}/bin:${PATH}
 
-CONFIGURE_ARGS_BOOT=	--prefix=${BOOT_DIR} --with-gcc=${CC} --with-ld=${LD}
+CONFIGURE_ARGS_BOOT+=	--prefix=${BOOT_DIR} --with-ld=${LD}
 CONFIGURE_ARGS+=	--with-ghc=${BOOT_GHC}
 
 .else # MBOOT
@@ -156,7 +167,6 @@ CFLAGS+=	-I${LOCALBASE}/include
 # override TMPDIR because /tmp often doesn't have enough space
 # to build some of the larger libraries.
 TMPDIR=		${WRKSRC}/tmp
-MAKE_ENV+=	TMPDIR=${TMPDIR}
 
 # Defining with documentation:
 # An in place installation and registration of hscolour will be
@@ -181,7 +191,6 @@ SLAVES_PREFIX=		${WRKDIR}/slaves_prefix
 SLAVES_WRKDIRPREFIX=	${WRKDIR}/slaves_wrkdirprefix
 
 MAKE_ENV+=	PATH=${SLAVES_PREFIX}/bin:${PATH}
-MAKE_ENV+=	LC_ALL=en_US.UTF-8
 CONFIGURE_ENV+=	PATH=${SLAVES_PREFIX}/bin:${PATH}
 
 .endif # MBOOTH
@@ -217,6 +226,9 @@ post-extract:
 	@${ECHO} >> ${WRKSRC}/mk/build.mk "BSD_PATH_TO_HSC2HS = ${BOOT_HSC2HS}"
 .endif
 	@${ECHO} >> ${WRKSRC}/mk/build.mk "SRC_HC_OPTS += -I${NCURSESINC} -L${NCURSESLIB} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
+.if ${PORT_OPTIONS:MPCLANG}
+	@${ECHO} >> ${WRKSRC}/mk/build.mk "SRC_HC_OPTS += -optl=-B${LOCALBASE}/bin"
+.endif
 	@${ECHO} >> ${WRKSRC}/mk/build.mk "SRC_CC_OPTS += ${CFLAGS}"
 	@${ECHO} >> ${WRKSRC}/mk/build.mk "EXTRA_HSC2HS_OPTS += -I${LOCALBASE}/include --lflag=-L${LOCALBASE}/lib"
 	@${ECHO} >> ${WRKSRC}/mk/build.mk "EXTRA_LD_OPTS += -L${LOCALBASE}/lib"
@@ -224,6 +236,12 @@ post-extract:
 	@${ECHO} >> ${WRKSRC}/mk/build.mk "EXTRA_CABAL_CONFIGURE_FLAGS += --extra-lib-dirs=${LOCALBASE}/lib"
 	@${ECHO} >> ${WRKSRC}/mk/build.mk "libraries/terminfo_CONFIGURE_OPTS += --configure-option=--with-curses-includes=${NCURSESINC} --configure-option=--with-curses-libraries=${NCURSESLIB}"
 	@${ECHO} >> ${WRKSRC}/mk/build.mk "V = 0"
+.if ${PORT_OPTIONS:MBCLANG} || ${PORT_OPTIONS:MPCLANG}
+	@${REINPLACE_CMD} -e 's|@SettingsCCompilerFlags@|& -Qunused-arguments|' ${WRKSRC}/settings.in
+.if empty(PORT_OPTIONS:MBOOT)
+	@${REINPLACE_CMD} -e 's|@SettingsCCompilerFlags@|& -Qunused-arguments|' ${BOOT_DIR}/settings.in
+.endif
+.endif
 
 post-install-script:
 	@${FIND} -ds ${GHC_LIBDIR} -type f -print | ${SED} -E -e \
@@ -249,7 +267,6 @@ post-install-script:
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|; \
 		s|%%AR%%|${AR}|; \
-		s|%%RANLIB%%|${RANLIB}|; \
 		s|%%LD%%|${LD}|' \
 		${WRKSRC}/libraries/Cabal/Cabal/Distribution/Simple/Program/Builtin.hs
 
@@ -260,9 +277,6 @@ pre-configure:
 	@(cd ${BOOT_DIR} && PACKAGES='' ${MAKE_CMD} install)
 .endif
 
-# Defining with documentation:
-# Defining "SLAVE" in devel/hs-haddock and print/hs-hscolour flips the building process
-# functionally to this port.
 .if ${PORT_OPTIONS:MDOCS} && empty(PORT_OPTIONS:MBOOTH)
 	@${ECHO_MSG} -e "\a"
 	@${ECHO_MSG} "======================================================================"
@@ -290,7 +304,7 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${LN} -sf haddock-ghc-${GHC_VERSION} ${STAGEDIR}${PREFIX}/bin/haddock
 .endif
-	@(for f in ${STAGEDIR}${PREFIX}/bin/hp2ps ${GHC_LIBDIR}/unlit ${GHC_LIBDIR}/mkGmpDerivedConstants \
+	@(for f in ${STAGEDIR}${PREFIX}/bin/hp2ps ${GHC_LIBDIR}/unlit \
 	    $$(${FIND} ${GHC_LIBDIR}/bin -type f; ${FIND} ${GHC_LIBDIR} -name '*.so'); do \
 	    ${STRIP_CMD} $$f; done)
 

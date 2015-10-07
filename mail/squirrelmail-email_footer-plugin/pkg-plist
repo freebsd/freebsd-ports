@@ -16,8 +16,4 @@
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/make_release.sh
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/setup.php
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/version
-@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/locale
-@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/docs
-@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/
-@dirrmtry %%SQUIRRELDIR%%/plugins
 @exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin %%SQUIRREL_PLUGIN_NAME%%; fi

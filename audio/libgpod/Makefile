@@ -16,7 +16,7 @@ LIB_DEPENDS=	libplist.so:${PORTSDIR}/devel/libplist \
 		libtag.so:${PORTSDIR}/audio/taglib \
 		libsgutils2.so:${PORTSDIR}/sysutils/sg3_utils
 
-USE_GNOME=	gdkpixbuf2 gtk20
+USE_GNOME=	gdkpixbuf2 gtk20 intltool
 USE_SQLITE=	3
 USES=		tar:bzip2 gettext gmake libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes

@@ -1,5 +1,5 @@
---- main/asterisk.exports.in.orig	2013-08-22 10:19:02.000000000 +0200
-+++ main/asterisk.exports.in	2013-10-27 13:37:29.053477896 +0100
+--- main/asterisk.exports.in.orig	2013-08-22 08:19:02 UTC
++++ main/asterisk.exports.in
 @@ -63,6 +63,8 @@
  
  		*/

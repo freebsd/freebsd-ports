@@ -3,49 +3,43 @@ bin/joe
 bin/jpico
 bin/jstar
 bin/rjoe
-bin/stringify
-bin/termidx
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/hacking.md
 %%PORTDOCS%%%%DOCSDIR%%/NEWS.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%ETCDIR%%/ftyperc
 %%ETCDIR%%/jicerc.ru
-@unexec if cmp -s %D/%%ETCDIR%%/jmacsrc.dist %D/%%ETCDIR%%/jmacsrc; then rm -f %D/%%ETCDIR%%/jmacsrc; fi
-%%ETCDIR%%/jmacsrc.dist
-@exec if [ ! -f %D/%%ETCDIR%%/jmacsrc ]; then cp %D/%%ETCDIR%%/%f %D/%%ETCDIR%%/jmacsrc; fi
-@unexec if cmp -s %D/%%ETCDIR%%/joerc.dist %D/%%ETCDIR%%/joerc; then rm -f %D/%%ETCDIR%%/joerc; fi
-%%ETCDIR%%/joerc.dist
-@exec if [ ! -f %D/%%ETCDIR%%/joerc ]; then cp %D/%%ETCDIR%%/%f %D/%%ETCDIR%%/joerc; fi
-@unexec if cmp -s %D/%%ETCDIR%%/jpicorc.dist %D/%%ETCDIR%%/jpicorc; then rm -f %D/%%ETCDIR%%/jpicorc; fi
-%%ETCDIR%%/jpicorc.dist
-@exec if [ ! -f %D/%%ETCDIR%%/jpicorc ]; then cp %D/%%ETCDIR%%/%f %D/%%ETCDIR%%/jpicorc; fi
-@unexec if cmp -s %D/%%ETCDIR%%/jstarrc.dist %D/%%ETCDIR%%/jstarrc; then rm -f %D/%%ETCDIR%%/jstarrc; fi
-%%ETCDIR%%/jstarrc.dist
-@exec if [ ! -f %D/%%ETCDIR%%/jstarrc ]; then cp %D/%%ETCDIR%%/%f %D/%%ETCDIR%%/jstarrc; fi
-@unexec if cmp -s %D/%%ETCDIR%%/rjoerc.dist %D/%%ETCDIR%%/rjoerc; then rm -f %D/%%ETCDIR%%/rjoerc; fi
-%%ETCDIR%%/rjoerc.dist
-@exec if [ ! -f %D/%%ETCDIR%%/rjoerc ]; then cp %D/%%ETCDIR%%/%f %D/%%ETCDIR%%/rjoerc; fi
+@sample %%ETCDIR%%/jmacsrc.sample
+@sample %%ETCDIR%%/joerc.sample
+@sample %%ETCDIR%%/jpicorc.sample
+@sample %%ETCDIR%%/jstarrc.sample
+@sample %%ETCDIR%%/rjoerc.sample
 %%ETCDIR%%/shell.csh
 %%ETCDIR%%/shell.sh
+%%ETCDIR%%/joerc.zh_TW
 %%DATADIR%%/charmaps/klingon
 %%DATADIR%%/lang/de.po
 %%DATADIR%%/lang/fr.po
 %%DATADIR%%/lang/ru.po
 %%DATADIR%%/lang/uk.po
+%%DATADIR%%/lang/zh.po
 %%DATADIR%%/syntax/4gl.jsf
 %%DATADIR%%/syntax/ada.jsf
 %%DATADIR%%/syntax/ant.jsf
 %%DATADIR%%/syntax/asm.jsf
+%%DATADIR%%/syntax/avr.jsf
 %%DATADIR%%/syntax/awk.jsf
 %%DATADIR%%/syntax/batch.jsf
 %%DATADIR%%/syntax/c.jsf
+%%DATADIR%%/syntax/clojure.jsf
 %%DATADIR%%/syntax/cobol.jsf
+%%DATADIR%%/syntax/coffee.jsf
 %%DATADIR%%/syntax/comment_todo.jsf
 %%DATADIR%%/syntax/conf.jsf
 %%DATADIR%%/syntax/csh.jsf
 %%DATADIR%%/syntax/csharp.jsf
 %%DATADIR%%/syntax/css.jsf
+%%DATADIR%%/syntax/d.jsf
 %%DATADIR%%/syntax/debian.jsf
 %%DATADIR%%/syntax/diff.jsf
 %%DATADIR%%/syntax/elixir.jsf
@@ -55,6 +49,7 @@ bin/termidx
 %%DATADIR%%/syntax/fortran.jsf
 %%DATADIR%%/syntax/git-commit.jsf
 %%DATADIR%%/syntax/go.jsf
+%%DATADIR%%/syntax/groovy.jsf
 %%DATADIR%%/syntax/haml.jsf
 %%DATADIR%%/syntax/haskell.jsf
 %%DATADIR%%/syntax/html.jsf
@@ -84,8 +79,11 @@ bin/termidx
 %%DATADIR%%/syntax/ps.jsf
 %%DATADIR%%/syntax/puppet.jsf
 %%DATADIR%%/syntax/python.jsf
+%%DATADIR%%/syntax/r.jsf
 %%DATADIR%%/syntax/rexx.jsf
 %%DATADIR%%/syntax/ruby.jsf
+%%DATADIR%%/syntax/rust.jsf
+%%DATADIR%%/syntax/scala.jsf
 %%DATADIR%%/syntax/sed.jsf
 %%DATADIR%%/syntax/sh.jsf
 %%DATADIR%%/syntax/sieve.jsf
@@ -93,6 +91,7 @@ bin/termidx
 %%DATADIR%%/syntax/sml.jsf
 %%DATADIR%%/syntax/spec.jsf
 %%DATADIR%%/syntax/sql.jsf
+%%DATADIR%%/syntax/swift.jsf
 %%DATADIR%%/syntax/tcl.jsf
 %%DATADIR%%/syntax/tex.jsf
 %%DATADIR%%/syntax/troff.jsf

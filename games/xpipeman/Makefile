@@ -3,16 +3,13 @@
 
 PORTNAME=	xpipeman
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SUNSITE/games/strategy
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Connect the pipes to stop the leaks
-
-# LP64 issues
-ONLY_FOR_ARCHS=	i386 amd64
 
 USES=		imake tar:Z
 USE_XORG=	x11 xaw xext xmu xt sm ice

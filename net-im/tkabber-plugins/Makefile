@@ -13,7 +13,7 @@ COMMENT=	External Plugins for Tkabber
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	tkabber==1.1.2_1:${PORTSDIR}/net-im/tkabber
+RUN_DEPENDS=	tkabber:${PORTSDIR}/net-im/tkabber
 
 USES=		tar:xz
 

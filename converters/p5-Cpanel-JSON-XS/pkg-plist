@@ -4,4 +4,4 @@ bin/cpanel_json_xs
 %%SITE_ARCH%%/auto/Cpanel/JSON/XS/XS.so
 %%PERL5_MAN3%%/Cpanel::JSON::XS.3.gz
 %%PERL5_MAN3%%/Cpanel::JSON::XS::Boolean.3.gz
-man/man1/cpanel_json_xs.1.gz
+%%PERL5_MAN1%%/cpanel_json_xs.1.gz

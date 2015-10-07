@@ -14,5 +14,3 @@
 %%SQUIRRELDIR%%/plugins/squirrel_logger/setup.php
 %%SQUIRRELDIR%%/plugins/squirrel_logger/show_stats.php
 %%SQUIRRELDIR%%/plugins/squirrel_logger/version
-@dirrmtry %%SQUIRRELDIR%%/plugins/squirrel_logger/contrib
-@dirrmtry %%SQUIRRELDIR%%/plugins/squirrel_logger

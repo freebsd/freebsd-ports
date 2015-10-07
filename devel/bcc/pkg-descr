@@ -2,7 +2,7 @@ This is Bruce Evans' C compiler and binutils package.
 
 
 Either the compiler as the assembler are able to generate 16-bit code.
-Hence it's possible to compile BIOS and DOS code under unix.
+Hence it's possible to compile BIOS and DOS code under Unix.
 
 The C compiler does understand K&R1 syntax, with a few restrictions
 regarding bit fields.  See the file work/bcc/bcc-cc1/bcc.bugs for

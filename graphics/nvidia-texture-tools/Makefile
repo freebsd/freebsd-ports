@@ -15,6 +15,10 @@ LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
 
+BROKEN_ia64=	does not build
+BROKEN_powerpc=	does not build
+BROKEN_sparc64=	does not build
+
 USES=		alias cmake jpeg
 CMAKE_ARGS=	-DNVTT_SHARED=TRUE
 
@@ -28,35 +32,20 @@ PORTDOCS=	NVIDIA_Texture_Tools_README.txt ChangeLog
 ONLY_FOR_ARCHS=	i386 amd64 powerpc powerpc64 # see src/nvcore/nvcore.h
 
 OPTIONS_DEFINE=	COMPRESSUI DOCS
+OPTIONS_SUB=	yes
 
 COMPRESSUI_DESC=Build compressor UI (requires Qt4)
+COMPRESSUI_USE=	QT4=qmake_build,moc_build,uic_build,rcc_build,corelib,gui,opengl
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCOMPRESSUI}
-# *_build stuff is not really needed, but cmake's Qt finder won't work otherwise
-USE_QT4=	qmake_build moc_build uic_build rcc_build corelib gui opengl
-PLIST_SUB+=	COMPRESSUI=""
-.else
-PLIST_SUB+=	COMPRESSUI="@comment "
-.endif
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		does not build
-.endif
-
-post-patch:
-.if ${PORT_OPTIONS:MCOMPRESSUI}
+post-patch-COMPRESSUI-on:
 	@${REINPLACE_CMD} -e '/FIND_PACKAGE.*Qt4/ s|)$$| REQUIRED&|' \
 		${WRKSRC}/src/CMakeLists.txt
-.else
+
+post-patch-COMPRESSUI-off:
 	@${REINPLACE_CMD} -e '/FIND_PACKAGE.*Qt4/ d' \
 		${WRKSRC}/src/CMakeLists.txt
-.endif
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}

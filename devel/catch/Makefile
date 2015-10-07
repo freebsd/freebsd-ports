@@ -2,19 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	catch
-PORTVERSION=	1.0.53
+DISTVERSION=	v1.2.1-develop.14
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Header-only test framework for C++
 
 LICENSE=	BSL
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	gahr
+GH_ACCOUNT=	philsquared
 GH_PROJECT=	Catch
 
 NO_BUILD=	yes
+TEST_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
 
 PLIST_FILES=	include/catch.hpp
 
@@ -22,7 +23,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/single_include/catch.hpp \
 	    ${STAGEDIR}${PREFIX}/include
 
-regression-test:
-	cd ${WRKSRC}/projects/CMake && cmake . && make && ./SelfTest
+do-test:
+	cd ${WRKSRC}/projects/CMake && \
+	    ${LOCALBASE}/bin/cmake . && ${MAKE_CMD} && ./SelfTest
 
 .include <bsd.port.mk>

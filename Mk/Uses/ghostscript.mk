@@ -4,7 +4,7 @@
 #
 # Feature:	ghostscript
 # Usage:	USES=ghostscript or USES=ghostscript:args
-# Valid ARGS:	<version>, build, run, nox11, agpl
+# Valid ARGS:	<version>, build, run, x11
 #
 # version 	The chooseable versions are 7, 8 and 9. If no version is
 #		specified version 9 is selected.
@@ -13,8 +13,7 @@
 #		USES=ghostscript:run	# Use the set default Ghostscript as a run dependancy
 #		USES=ghostscript:8,build # Use ghostscript 8 as a build dependancy.
 #
-# nox11		Indicate that the Ghostscript nox11 port is required.
-# agpl		Indicate that the Ghostscript apgl port is required.
+# x11		Indicate that X11 support is required.
 # build		Indicates that Ghostscript is needed at build time and adds
 #		it as BUILD_DEPENDS.
 # run		Indicates that Ghostscript is needed at run time and adds
@@ -29,19 +28,19 @@
 _INCLUDE_USES_GHOSTSCRIPT_MK=	yes
 
 # allowed versions
-_GS_VERSION=	7 8 9
+_GS_VERSION=	7 8 9 agpl
 
 _GS_ARGS=		${ghostscript_ARGS}
 
-.if ${_GS_ARGS:N[789]:Nnox11:Nagpl:Nbuild:Nrun}
-IGNORE=		Unknown ghostscript argument ${_GS_ARGS}
+.if ${_GS_ARGS:N[789]:Nagpl:Nx11:Nbuild:Nrun}
+IGNORE?=	Unknown ghostscript argument ${_GS_ARGS}
 .endif
 
 # Determine version number of Ghostscript to use
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 
-.if ${_GS_VERSION:M${GHOSTSCRIPT_DEFAULT}} == ""
-IGNORE=		Invalid GHOSTSCRIPT_DEFAULT value: ${GHOSTSCRIPT_DEFAULT}, please select one of ${_GS_VERSION}
+.if ${GHOSTSCRIPT_DEFAULT:N[789]:Nagpl}
+IGNORE?=	Invalid GHOSTSCRIPT_DEFAULT value: ${GHOSTSCRIPT_DEFAULT}, please select one of ${_GS_VERSION}
 .endif
 
 # Make sure that no dependency or some other environment variable
@@ -62,37 +61,51 @@ _GS_BUILD_DEP=	yes
 _GS_RUN_DEP=	yes
 .endif
 
-_GS_SELECTED=	${GHOSTSCRIPT_DEFAULT}
-.if ${_GS_ARGS:M9}
-_GS_SELECTED:=		9
-.elif ${_GS_ARGS:M8}
-_GS_SELECTED:=		8
-.elif ${_GS_ARGS:M7}
-_GS_SELECTED:=		7
-.endif
-
 .undef _GS_AGPL_SUFFIX
-.if ${_GS_ARGS:Magpl}
-. if ${_GS_SELECTED} == "9"
-_GS_AGPL_SUFFIX=	-agpl
-. else
-IGNORE=		Ghostscript-agpl is only available in version 9
-. endif
+.undef _GS_SELECTED
+.for V in ${_GS_ARGS} ${GHOSTSCRIPT_DEFAULT}
+_V=${V}
+.if ${_V:M9}
+_GS_SELECTED?=		9
+.elif ${_V:Magpl}
+_GS_AGPL_SUFFIX?=	-agpl
+.if defined(_GS_SELECTED) && ${_GS_SELECTED:N9}
+IGNORE?=	Ghostscript-agpl is only available in version 9
+.else
+_GS_SELECTED?=		9
+.endif
+.elif ${_V:M8}
+_GS_SELECTED?=		8
+.elif ${_V:M7}
+_GS_SELECTED?=		7
+.endif
+.endfor
+.if !defined(_GS_SELECTED)
+IGNORE?=	Invalid ghostscript argument or GHOSTSCRIPT_DEFAULT
 .endif
 
-.undef _GS_NOX11_SUFFIX
-.if ${_GS_ARGS:Mnox11} || defined(WITHOUT_X11)
-_GS_NOX11_SUFFIX=	-nox11
+# Resolve minor version number for X11.so library.
+.if !empty(_GS_SELECTED:M9) && defined(_GS_AGPL_SUFFIX)
+_GS_VERSION_MINOR=	9.16_2
+.elif !empty(_GS_SELECTED:M9)
+_GS_VERSION_MINOR=	9.06_11
+.elif !empty(_GS_SELECTED:M8)
+_GS_VERSION_MINOR=	8.71_19
+.elif !empty(_GS_SELECTED:M7)
+_GS_VERSION_MINOR=	7.07_32
 .endif
 
 # dependencies
-_GS_PORT=	ghostscript${_GS_SELECTED}${_GS_AGPL_SUFFIX}${_GS_NOX11_SUFFIX}
+_GS_PORT=	ghostscript${_GS_SELECTED}${_GS_AGPL_SUFFIX}-base
+_GS_X11_PORT=	ghostscript${_GS_SELECTED}${_GS_AGPL_SUFFIX}-x11
 
-.if defined(_GS_BUILD_DEP)
-BUILD_DEPENDS+=	${_GS_PORT}>=0:${PORTSDIR}/print/${_GS_PORT}
+.for type in BUILD RUN
+.if defined(_GS_${type}_DEP)
+${type}_DEPENDS+=	${_GS_PORT}>=${_GS_VERSION_MINOR}:${PORTSDIR}/print/${_GS_PORT}
+.if ${_GS_ARGS:Mx11}
+${type}_DEPENDS+=	${_GS_X11_PORT}>=${_GS_VERSION_MINOR}:${PORTSDIR}/print/${_GS_X11_PORT}
 .endif
-.if defined(_GS_RUN_DEP)
-RUN_DEPENDS+=	${_GS_PORT}>=0:${PORTSDIR}/print/${_GS_PORT}
 .endif
+.endfor
 
 .endif # _INCLUDE_USES_GHOSTSCRIPT_MK

@@ -49,6 +49,7 @@ lib/hevea/html/natbib.hva
 lib/hevea/html/png.hva
 lib/hevea/html/report.hva
 lib/hevea/html/seminar.hva
+lib/hevea/html/svg.hva
 lib/hevea/html/sword.hva
 lib/hevea/html/symb-eng.hva
 lib/hevea/html/symb-ent.hva

@@ -41,8 +41,8 @@ OPTIONS_DEFINE=	IPV6
 SIGCHASE_CONFIGURE_ARGS+=	STD_CDEFINES="-DDIG_SIGCHASE=1"
 IPV6_CONFIGURE_ON=	--enable-ipv6
 
-PLIST_FILES=		bin/${UNIQUENAME} \
-			man/man1/${UNIQUENAME}.1.gz
+PLIST_FILES=		bin/${PKGBASE} \
+			man/man1/${PKGBASE}.1.gz
 
 .include <bsd.port.pre.mk>
 
@@ -76,11 +76,11 @@ post-patch:
 		-e 's|^.*check confgen ||' \
 	${WRKSRC}/bin/Makefile.in
 	@${REINPLACE_CMD} \
-		-e 's|${PORTNAME}|${UNIQUENAME}|g' \
+		-e 's|${PORTNAME}|${PKGBASE}|g' \
 	${WRKSRC}/bin/nsupdate/${PORTNAME}.1
 
 do-install:
-	${INSTALL_MAN} ${WRKSRC}/bin/nsupdate/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1/${UNIQUENAME}.1
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/nsupdate/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${UNIQUENAME}
+	${INSTALL_MAN} ${WRKSRC}/bin/nsupdate/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1/${PKGBASE}.1
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/nsupdate/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PKGBASE}
 
 .include <bsd.port.post.mk>

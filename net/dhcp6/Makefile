@@ -22,15 +22,13 @@ PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} \
 	    dhcp6c.conf.sample dhcp6s.conf.sample \
 	    ${STAGEDIR}${PREFIX}/etc
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

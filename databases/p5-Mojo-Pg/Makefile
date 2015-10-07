@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Mojo-Pg
-PORTVERSION=	2.07
+PORTVERSION=	2.11
 CATEGORIES=	databases www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SRI
@@ -13,7 +13,7 @@ COMMENT=	PostgreSQL integration for p5-Mojolicious
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg \
+BUILD_DEPENDS=	p5-DBD-Pg>=3.5.1:${PORTSDIR}/databases/p5-DBD-Pg \
 		p5-Mojolicious>=6.0:${PORTSDIR}/www/p5-Mojolicious
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
@@ -25,7 +25,7 @@ USE_PERL5=	configure
 
 PORTEXAMPLES=	*
 
-post-install:
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 

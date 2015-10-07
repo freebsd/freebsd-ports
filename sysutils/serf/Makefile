@@ -11,7 +11,7 @@ COMMENT=	Service discovery and configuration made easy
 
 LICENSE=	MPL
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
+BUILD_DEPENDS=	go14>=1.4:${PORTSDIR}/lang/go14
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp:DEFAULT,go_msgpack,go_syslog,go_net,logutils,mdns,memberlist \
@@ -76,7 +76,9 @@ post-patch:
 		${WRKSRC}/src/code.google.com/p/go.net
 
 do-build:
-	@cd ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${PORTNAME}; ${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -o bin/${PORTNAME}
+	@cd ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${PORTNAME}; \
+		${SETENV} PATH=${PATH}:${LOCALBASE}/go14/bin ${BUILD_ENV} GOPATH=${WRKSRC} \
+		go build -o bin/${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${PORTNAME}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}

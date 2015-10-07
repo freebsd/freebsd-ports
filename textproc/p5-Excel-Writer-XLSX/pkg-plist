@@ -61,4 +61,4 @@ bin/extract_vba
 %%PERL5_MAN3%%/Excel::Writer::XLSX::Utility.3.gz
 %%PERL5_MAN3%%/Excel::Writer::XLSX::Workbook.3.gz
 %%PERL5_MAN3%%/Excel::Writer::XLSX::Worksheet.3.gz
-man/man1/extract_vba.1.gz
+%%PERL5_MAN1%%/extract_vba.1.gz

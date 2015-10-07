@@ -3,6 +3,7 @@
 
 PORTNAME=	gnustep-make
 PORTVERSION=	2.6.7
+PORTREVISION=	1
 CATEGORIES=	devel gnustep
 MASTER_SITES=	GNUSTEP/core
 
@@ -11,8 +12,9 @@ COMMENT=	GNUstep makefile package
 
 LICENSE=	GPLv3
 
-USES=		gnustep objc
+USES=		gnustep objc shebangfix
 GNU_CONFIGURE=	yes
+SHEBANG_FILES=	bake_debian_files.sh
 
 MAKE_FLAGS=	OPTFLAG="${CFLAGS}"
 CONFIGURE_ENV+=	INSTALL_PROGRAM="${INSTALL} -c" INSTALL_DATA="${INSTALL} -c"

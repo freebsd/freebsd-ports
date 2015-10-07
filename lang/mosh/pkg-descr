@@ -1,3 +1,5 @@
-Mosh is A Fast R6RS Scheme interpreter.
+Mosh is a free and fast interpreter for Scheme as specified in the R6RS.
+R6RS is the latest revision of the Scheme standard; the current release
+of Mosh supports all the features of R6RS.
 
-WWW:   http://code.google.com/p/mosh-scheme/
+WWW: http://mosh.monaos.org/

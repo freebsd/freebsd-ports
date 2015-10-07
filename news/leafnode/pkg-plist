@@ -27,16 +27,15 @@ sbin/texpire
 sbin/checkgroups
 sbin/applyfilter
 sbin/setup-daemontools.sh
-@dirrmtry %%ETCDIR%%
+@dir %%ETCDIR%%
 @comment only remove these when empty:
 @comment we don't want to kill the news spool across updates
-@unexec rm -f %%SPOOLDIR%%/leaf.node/lock.file 2>/dev/null || :
-@unexec rmdir %%SPOOLDIR%%/failed.postings 2>/dev/null || :
-@unexec rmdir %%SPOOLDIR%%/leaf.node 2>/dev/null || :
-@unexec rmdir %%SPOOLDIR%%/message.id/* 2>/dev/null || :
-@unexec rmdir %%SPOOLDIR%%/message.id 2>/dev/null || :
-@unexec rmdir %%SPOOLDIR%%/interesting.groups 2>/dev/null || :
-@unexec rmdir %%SPOOLDIR%%/out.going 2>/dev/null || :
-@unexec rmdir %%SPOOLDIR%%/temp.files 2>/dev/null || :
-@unexec rmdir %%SPOOLDIR%% 2>/dev/null || :
+@unexec rm -f %%SPOOLDIR%%/leaf.node/lock.file
+@dir %%SPOOLDIR%%/failed.postings
+@dir %%SPOOLDIR%%/interesting.groups
+@dir %%SPOOLDIR%%/leaf.node
+@dir %%SPOOLDIR%%/message.id
+@dir %%SPOOLDIR%%/out.going
+@dir %%SPOOLDIR%%/temp.files
+@dir %%SPOOLDIR%%
 @unexec if test -d "%%SPOOLDIR%%" || test -d "%D/etc/leafnode" ; then echo ; echo "==============================================================================" ; echo "If you want to remove leafnode for good, delete spool and configuration:" ; echo "type: rm -rf %D/etc/leafnode %%SPOOLDIR%%" ; echo "==============================================================================" ; fi

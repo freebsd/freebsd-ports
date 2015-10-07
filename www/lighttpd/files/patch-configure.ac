@@ -1,6 +1,6 @@
---- configure.ac.orig	2012-11-19 11:05:29.000000000 +0100
-+++ configure.ac	2012-11-21 14:22:53.723233779 +0100
-@@ -16,6 +16,7 @@
+--- configure.ac.orig	2015-07-26 10:36:36 UTC
++++ configure.ac
+@@ -46,6 +46,7 @@ AC_DEFUN([TRY_CFLAGS],
  dnl Checks for programs.
  AC_PROG_CC
  AM_PROG_CC_C_O
@@ -8,7 +8,7 @@
  AC_PROG_LD
  AC_PROG_INSTALL
  AC_PROG_AWK
-@@ -30,11 +31,6 @@
+@@ -60,11 +61,6 @@ m4_ifdef([AC_USE_SYSTEM_EXTENSIONS], [AC
  dnl AM_PROG_AR requires automake 1.11 (and uses AC_COMPILE_IFELSE which wants AC_USE_SYSTEM_EXTENSIONS)
  m4_ifdef([AM_PROG_AR], [AM_PROG_AR])
  

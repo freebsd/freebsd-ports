@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-Daemonize
-PORTVERSION=	0.19
+PORTVERSION=	0.20
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,6 +22,7 @@ BUILD_DEPENDS+=	p5-Devel-CheckOS>=1.63:${PORTSDIR}/devel/p5-Devel-CheckOS
 
 DEPRECATED=	Deprecated by upstream, use devel/p5-Daemon-Control instead
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	modbuildtiny
 

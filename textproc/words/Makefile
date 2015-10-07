@@ -24,8 +24,6 @@ GNATMAKE=	${SETENV} ${MAKE_ENV} gnatmake
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-build:
 	@cd ${WRKSRC} && \
 	${GNATMAKE} -O3 words ${GNATLINK_ARGS} && \
@@ -50,9 +48,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ADDONS.LAT ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/UNIQUES.LAT ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/words.sh ${STAGEDIR}${PREFIX}/bin/words
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/wordsdoc.htm ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mu
-PORTVERSION=	0.9.11
+PORTVERSION=	0.9.12
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 
@@ -43,9 +43,9 @@ MU4E_INFO=		mu4e
 post-install:
 	(cd ${FILESDIR} && ${INSTALL_SCRIPT} mu-ask \
 		${STAGEDIR}${PREFIX}/bin)
-
 .if ${PORT_OPTIONS:MGUILE}
 	(${FIND} ${STAGEDIR}${PREFIX}/lib -name "*.so.*" -type f | \
 		${XARGS} ${STRIP_CMD})
 .endif
+
 .include <bsd.port.mk>

@@ -1,0 +1,13 @@
+Net::Async::HTTP implements an asynchronous HTTP user agent. It sends requests
+to servers, returning Future instances to yield responses when they are
+received. The object supports multiple concurrent connections to servers, and
+allows multiple requests in the pipeline to any one connection. Normally, only
+one such object will be needed per program to support any number of requests.
+
+As well as using futures the module also supports a callback-based interface.
+
+Net::Async::HTTP optionally supports SSL connections, if IO::Async::SSL is
+installed. If so, SSL can be requested either by passing a URI with the https
+scheme, or by passing a true value as the SSL parameter.
+
+WWW: http://search.cpan.org/dist/Net-Async-HTTP/

@@ -12,8 +12,10 @@ LICENSE=	LGPL20 MPL GPLv2
 LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
-BUILD_DEPENDS=	${LOCALBASE}/lib/libcppunit.so:${PORTSDIR}/devel/cppunit \
+BUILD_DEPENDS=	cppunit-config:${PORTSDIR}/devel/cppunit \
 		${LOCALBASE}/lib/libboost_regex.a:${PORTSDIR}/devel/boost-libs
+
+BROKEN_sparc64=	cannot link with boost
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

@@ -1,5 +1,5 @@
---- tools/Makefile.in.orig	2015-07-07 14:35:35.993832221 +0800
-+++ tools/Makefile.in	2015-07-07 14:35:49.432831048 +0800
+--- tools/Makefile.in.orig	2015-06-30 04:11:56 UTC
++++ tools/Makefile.in
 @@ -614,7 +614,7 @@ valuesh = @valuesh@
  waith = @waith@
  zlibh = @zlibh@

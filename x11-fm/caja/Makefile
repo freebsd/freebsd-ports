@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	caja
-PORTVERSION=	1.8.2
+PORTVERSION=	1.10.3
 CATEGORIES=	x11-fm mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -22,7 +22,7 @@ USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
 		shared-mime-info tar:xz
 USE_MATE=	desktop icontheme:run
 USE_XORG=	ice x11 xrender
-USE_GNOME=	glib20 gtk20 intlhack introspection:build \
+USE_GNOME=	glib20 gtk20 intltool introspection:build \
 		libxml2 pango
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -40,5 +40,6 @@ GLIB_SCHEMAS=	org.mate.caja.gschema.xml \
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/caja/extensions-2.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcaja-extension.so.1.4.0
 
 .include <bsd.port.mk>

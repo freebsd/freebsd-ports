@@ -51,18 +51,18 @@ index b483cd1..f1dd1f0 100644
      # basic stuff for everything
      'include_internal_video_render': 0,
      'clang_use_chrome_plugins': 0,
-diff --git media/webrtc/signaling/test/Makefile.in media/webrtc/signaling/test/Makefile.in
+diff --git media/webrtc/signaling/test/moz.build media/webrtc/signaling/test/moz.build
 index b483cd1..f1dd1f0 100644
---- mozilla/media/webrtc/signaling/test/Makefile.in
-+++ mozilla/media/webrtc/signaling/test/Makefile.in
-@@ -7,6 +7,7 @@ LIBS = \
-   $(NSPR_LIBS) \
-   $(NSS_LIBS) \
-   $(REALTIME_LIBS) \
-+  $(MOZ_LIBV4L2_LIBS) \
-   $(DEPTH)/xpcom/glue/$(LIB_PREFIX)xpcomglue_s.$(LIB_SUFFIX) \
-   $(DEPTH)/media/mtransport/standalone/$(LIB_PREFIX)mtransport_s.$(LIB_SUFFIX) \
-   $(DEPTH)/media/webrtc/signalingtest/signaling_ecc/$(LIB_PREFIX)ecc.$(LIB_SUFFIX) \
+--- mozilla/media/webrtc/signaling/test/moz.build
++++ mozilla/media/webrtc/signaling/test/moz.build
+@@ -122,6 +122,7 @@ if CONFIG['JS_SHARED_LIBRARY']:
+         'js',
+     ]
+ 
++OS_LIBS += CONFIG['MOZ_LIBV4L2_LIBS']
+ OS_LIBS += CONFIG['MOZ_WEBRTC_X11_LIBS']
+ OS_LIBS += CONFIG['REALTIME_LIBS']
+ 
 diff --git media/webrtc/trunk/webrtc/modules/video_capture/linux/device_info_linux.cc media/webrtc/trunk/webrtc/modules/video_capture/linux/device_info_linux.cc
 index 239a292..bab496c 100644
 --- mozilla/media/webrtc/trunk/webrtc/modules/video_capture/linux/device_info_linux.cc
@@ -145,35 +145,35 @@ index d46b5aa..e452223 100644
    'targets': [
      {
        'target_name': 'video_capture_module',
-@@ -49,6 +52,16 @@
-         }, {  # include_internal_video_capture == 1
-           'conditions': [
-             ['include_v4l2_video_capture==1', {
-+              'conditions': [
-+                ['use_libv4l2==1', {
-+                  'defines': [
-+                    'HAVE_LIBV4L2',
-+                  ],
-+                  'libraries': [
-+                    '-lv4l2',
-+                  ],
-+                }],
+@@ -69,6 +72,19 @@
+             'linux/video_capture_linux.cc',
+             'linux/video_capture_linux.h',
+           ],
++          'conditions': [
++            ['use_libv4l2==1', {
++              'defines': [
++                'HAVE_LIBV4L2',
 +              ],
-               'include_dirs': [
-                 'linux',
-               ],
-diff --git toolkit/library/Makefile.in toolkit/library/Makefile.in
++              'cflags_mozilla': [
++                '$(MOZ_LIBV4L2_CFLAGS)',
++              ],
++              'libraries': [
++                '-lv4l2',
++              ],
++            }],
++          ],
+         }],  # linux
+         ['OS=="mac"', {
+           'sources': [
+diff --git toolkit/library/moz.build toolkit/library/moz.build
 index 9c16ffa..1db3794 100644
---- mozilla/toolkit/library/libxul.mk
-+++ mozilla/toolkit/library/libxul.mk
-@@ -182,6 +182,10 @@ endif
+--- mozilla/toolkit/library/moz.build
++++ mozilla/toolkit/library/moz.build
+@@ -163,6 +163,7 @@ if CONFIG['OS_ARCH'] == 'Linux' and CONF
+     ]
  
- EXTRA_DSO_LDOPTS += $(call EXPAND_LIBNAME_PATH,gkmedias,$(DIST)/lib)
+ OS_LIBS += CONFIG['MOZ_CAIRO_OSLIBS']
++OS_LIBS += CONFIG['MOZ_LIBV4L2_LIBS']
+ OS_LIBS += CONFIG['MOZ_WEBRTC_X11_LIBS']
+ OS_LIBS += CONFIG['MOZ_APP_EXTRA_LIBS']
  
-+ifdef MOZ_LIBV4L2_LIBS
-+EXTRA_DSO_LDOPTS += $(MOZ_LIBV4L2_LIBS)
-+endif
-+
- ifdef MOZ_WEBRTC
- ifeq (WINNT,$(OS_TARGET))
- EXTRA_DSO_LDOPTS += \

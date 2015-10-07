@@ -3,7 +3,7 @@
 
 PORTNAME=	pathological
 PORTVERSION=	1.1.3
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -11,13 +11,16 @@ MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Enriched clone of the game "Logical"
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYGAME}
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		python
+USES=		python shebangfix
+SHEBANG_FILES=	pathological.py
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 DOC_FILES=	favicon.ico index.html
 

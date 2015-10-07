@@ -6,7 +6,7 @@ PORTVERSION=	2.1.2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/ipa-system
 
-MAINTAINER=	simon@comsys.ntu-kpi.kiev.ua
+MAINTAINER=	sysutils/ipa
 COMMENT=	Pluggable accounting system
 
 LICENSE=	BSD2CLAUSE

@@ -19,7 +19,6 @@ USES=		python shebangfix
 USE_PYTHON=	distutils autoplist
 SHEBANG_FILES=	samples/*.py
 python_OLD_CMD=	.*
-python_CMD=	${PYTHON_CMD}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

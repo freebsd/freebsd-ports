@@ -11,11 +11,6 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sound toolkit for scripting languages
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/unix
-
-OPTIONS_DEFINE=	VORBIS DOCS
-OPTIONS_SUB=	yes
-
 USES=		tk
 USE_LDCONFIG=	${PREFIX}/lib/snack${PORTVERSION:R}
 GNU_CONFIGURE=	yes
@@ -23,17 +18,18 @@ CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
 		--with-tk=${TK_LIBDIR}
 MAKE_ENV=	prefix=${PREFIX} exec_prefix=${PREFIX}
 
+WRKSRC=		${WRKDIR}/${DISTNAME}/unix
+
 PLIST_SUB=	SNACK_VER=${PORTVERSION:R}
 PORTDOCS=	*
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	VORBIS DOCS
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
-CONFIGURE_ARGS+=--with-ogg-include=${LOCALBASE}/include \
-		--with-ogg-lib=${LOCALBASE}/lib
-ALL_TARGET=	all libsnackogg.so
-.endif
+VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+VORBIS_CONFIGURE_ON=	--with-ogg-include=${LOCALBASE}/include \
+			--with-ogg-lib=${LOCALBASE}/lib
+VORBIS_ALL_TARGET=	all libsnackogg.so
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/snack${PORTVERSION:R}/*.so

@@ -131,8 +131,6 @@ MAKE_ARGS+=	buildCsound5GUI=0 buildCSEditor=0 buildWinsound=0 useFLTK=0
 CSOUND_DOCS=	Csound${PORTVERSION:R}_manual_html.zip
 .endif
 
-.include <bsd.port.pre.mk>
-
 .if ${ARCH} == amd64 || ${ARCH} == sparc64 || ${ARCH} == ia64
 MAKE_ARGS+=	Word64=1
 .endif
@@ -147,8 +145,6 @@ CXXLIB=		c++
 .else
 CXXLIB=		# empty
 .endif
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${SED} -e "s|%%LOCALBASE%%|${LOCALBASE}|g; \
@@ -190,4 +186,4 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/* ${STAGEDIR}${PREFIX}/lib/*.so* \
 		${STAGEDIR}${PREFIX}/lib/csound/plugins64/*.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

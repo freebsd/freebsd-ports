@@ -1,4 +1,4 @@
 bin/perl-reversion
-man/man1/perl-reversion.1.gz
+%%PERL5_MAN1%%/perl-reversion.1.gz
 %%PERL5_MAN3%%/Perl::Version.3.gz
 %%SITE_PERL%%/Perl/Version.pm

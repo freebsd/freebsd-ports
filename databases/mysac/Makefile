@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	mysac
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	1.1.2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.arpalert.org/src/ \
 		http://xz.cx/downloads/mysac/
 
 MAINTAINER=	jake@xz.cx
-COMMENT=	MySAC: MySQL Simple Asynchronous Client
+COMMENT=	MySQL Simple Asynchronous Client
+
+LICENSE=	LGPL3
 
 USE_LDCONFIG=	yes
 USE_MYSQL=	yes
@@ -26,16 +27,9 @@ pre-build:
 	${TOUCH} ${WRKSRC}/make.deps
 
 do-install:
-	${INSTALL_LIB} ${WRKSRC}/libmysac.so \
-		${STAGEDIR}${PREFIX}/lib/libmysac.so
+	${INSTALL_LIB} ${WRKSRC}/libmysac.so ${STAGEDIR}${PREFIX}/lib
 	${LN} -sf libmysac.so ${STAGEDIR}${PREFIX}/lib/libmysac.so.0
-	${INSTALL_DATA} ${WRKSRC}/libmysac-static.a ${STAGEDIR}${PREFIX}/lib/libmysac-static.a
-	${INSTALL_DATA} ${WRKSRC}/mysac.h ${STAGEDIR}${PREFIX}/include/mysac.h
+	${INSTALL_DATA} ${WRKSRC}/libmysac-static.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/mysac.h ${STAGEDIR}${PREFIX}/include
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

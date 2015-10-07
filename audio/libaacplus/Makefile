@@ -3,7 +3,7 @@
 
 PORTNAME=	libaacplus
 PORTVERSION=	2.0.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	http://tipok.org.ua/downloads/media/aacplus/libaacplus/ \
 		ftp://ftp.3gpp.org/Specs/archive/26_series/26.410/:site2 \
@@ -42,15 +42,10 @@ SRC26410=	26410-800.zip
 
 FFTW3_DESC=	Use FFTW3 library for performance
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MFFTW3}
-LIB_DEPENDS+=	libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libfftw3f.so:${PORTSDIR}/math/fftw3-float
-CONFIGURE_ARGS+=--with-fftw3=yes --with-fftw3-prefix=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--with-fftw3=no
-.endif
+FFTW3_LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
+			libfftw3f.so:${PORTSDIR}/math/fftw3-float
+FFTW3_CONFIGURE_ON=	--with-fftw3=yes --with-fftw3-prefix=${LOCALBASE}
+FFTW3_CONFIGURE_OFF=	--with-fftw3=no
 
 pre-configure:
 	@${CP} ${DISTDIR}/26410-800.zip ${WRKSRC}/src

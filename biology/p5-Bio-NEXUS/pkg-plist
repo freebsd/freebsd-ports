@@ -57,6 +57,6 @@ bin/nextool.pl
 %%PERL5_MAN3%%/Bio::NEXUS::Util::Exceptions.3.gz
 %%PERL5_MAN3%%/Bio::NEXUS::Util::Logger.3.gz
 %%PERL5_MAN3%%/Bio::NEXUS::WeightSet.3.gz
-man/man1/nex2text_tree.pl.1.gz
-man/man1/nexplot.pl.1.gz
-man/man1/nextool.pl.1.gz
+%%PERL5_MAN1%%/nex2text_tree.pl.1.gz
+%%PERL5_MAN1%%/nexplot.pl.1.gz
+%%PERL5_MAN1%%/nextool.pl.1.gz

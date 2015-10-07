@@ -195,7 +195,6 @@
     SUBDIR += mate-applets
     SUBDIR += mate-base
     SUBDIR += mate-desktop
-    SUBDIR += mate-dialogs
     SUBDIR += mate-menus
     SUBDIR += mate-panel
     SUBDIR += mate-screensaver
@@ -407,7 +406,6 @@
     SUBDIR += xloadimage
     SUBDIR += xlockmore
     SUBDIR += xlogo
-    SUBDIR += xlogout
     SUBDIR += xlsatoms
     SUBDIR += xlsclients
     SUBDIR += xlupe

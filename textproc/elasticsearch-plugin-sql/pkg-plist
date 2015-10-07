@@ -30,7 +30,6 @@ lib/elasticsearch/plugins/sql/_site/vendor/bootstrap/fonts/glyphicons-halflings-
 lib/elasticsearch/plugins/sql/_site/vendor/bootstrap/js/bootstrap.js
 lib/elasticsearch/plugins/sql/_site/vendor/bootstrap/js/bootstrap.min.js
 lib/elasticsearch/plugins/sql/_site/vendor/bootstrap/js/npm.js
-lib/elasticsearch/plugins/sql/_site/vendor/codemirror/.travis.yml
 lib/elasticsearch/plugins/sql/_site/vendor/codemirror/AUTHORS
 lib/elasticsearch/plugins/sql/_site/vendor/codemirror/CONTRIBUTING.md
 lib/elasticsearch/plugins/sql/_site/vendor/codemirror/LICENSE
@@ -407,6 +406,8 @@ lib/elasticsearch/plugins/sql/_site/vendor/codemirror/theme/twilight.css
 lib/elasticsearch/plugins/sql/_site/vendor/codemirror/theme/vibrant-ink.css
 lib/elasticsearch/plugins/sql/_site/vendor/codemirror/theme/xq-dark.css
 lib/elasticsearch/plugins/sql/_site/vendor/codemirror/theme/xq-light.css
+lib/elasticsearch/plugins/sql/_site/vendor/download/download.js
+lib/elasticsearch/plugins/sql/_site/vendor/download/download.min.js
 lib/elasticsearch/plugins/sql/_site/vendor/jasmine-2.1.3/boot.js
 lib/elasticsearch/plugins/sql/_site/vendor/jasmine-2.1.3/console.js
 lib/elasticsearch/plugins/sql/_site/vendor/jasmine-2.1.3/jasmine-html.js
@@ -415,4 +416,6 @@ lib/elasticsearch/plugins/sql/_site/vendor/jasmine-2.1.3/jasmine.js
 lib/elasticsearch/plugins/sql/_site/vendor/jasmine-2.1.3/jasmine_favicon.png
 lib/elasticsearch/plugins/sql/_site/vendor/jasmine-jquery/jasmine-jquery.js
 lib/elasticsearch/plugins/sql/_site/vendor/jquery/jquery-2.1.1.min.js
-lib/elasticsearch/plugins/sql/elasticsearch-sql-1.3.4.jar
+lib/elasticsearch/plugins/sql/druid.jar
+lib/elasticsearch/plugins/sql/guava.jar
+lib/elasticsearch/plugins/sql/elasticsearch-sql-%%VERSION%%.jar

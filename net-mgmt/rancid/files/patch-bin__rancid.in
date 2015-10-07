@@ -1,5 +1,13 @@
---- bin/rancid.in.orig	2015-06-09 15:46:07.000000000 +0100
-+++ bin/rancid.in	2015-06-09 15:57:24.000000000 +0100
+--- bin/rancid.in.orig	2015-07-03 17:22:07.000000000 +0100
++++ bin/rancid.in	2015-07-06 07:10:54.000000000 +0100
+@@ -45,6 +45,7 @@
+ # usage: rancid [-dV] [-l] [-f filename | hostname]
+ #
+ use Getopt::Std;
++use Socket qw(AF_INET AF_INET6 inet_pton);
+ getopts('dflV');
+ if ($opt_V) {
+     print "rancid 2.3.8\n";
 @@ -162,13 +162,38 @@
      @sorted_lines;
  }

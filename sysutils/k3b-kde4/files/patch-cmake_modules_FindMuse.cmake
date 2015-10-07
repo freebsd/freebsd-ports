@@ -1,6 +1,6 @@
---- cmake/modules/FindMuse.cmake.orig	2011-01-15 20:47:29.000000000 +0000
+--- cmake/modules/FindMuse.cmake.orig	2014-11-04 18:37:31 UTC
 +++ cmake/modules/FindMuse.cmake
-@@ -15,13 +15,10 @@ if( MUSE_INCLUDE_DIR AND MUSE_LIBRARIES
+@@ -15,13 +15,10 @@ if( MUSE_INCLUDE_DIR AND MUSE_LIBRARIES 
  endif( MUSE_INCLUDE_DIR AND MUSE_LIBRARIES )
  
  include(CheckIncludeFiles)

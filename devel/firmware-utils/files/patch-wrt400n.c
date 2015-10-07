@@ -1,6 +1,4 @@
-diff --git a/wrt400n.c b/wrt400n.c
-index a9a4908..f3c53db 100644
---- wrt400n.c
+--- wrt400n.c.orig	2011-12-22 14:21:03 UTC
 +++ wrt400n.c
 @@ -11,6 +11,7 @@
  #include <stdio.h>
@@ -9,3 +7,4 @@ index a9a4908..f3c53db 100644
 +#include <unistd.h>
  #include <sys/types.h>
  #include <sys/stat.h>
+ 

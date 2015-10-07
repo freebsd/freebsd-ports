@@ -1,6 +1,6 @@
---- modules/tls/Makefile.orig	2014-08-06 15:29:51 UTC
+--- modules/tls/Makefile.orig	2015-07-20 13:16:26 UTC
 +++ modules/tls/Makefile
-@@ -9,6 +9,8 @@
+@@ -8,6 +8,8 @@ include ../../Makefile.defs
  auto_gen=
  NAME=tls.so
  

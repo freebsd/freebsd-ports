@@ -3,7 +3,7 @@
 
 PORTNAME=	ladvd
 PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	GOOGLE_CODE \
 		http://blinkenlights.nl/software/ladvd/
@@ -32,12 +32,8 @@ PLIST_FILES=	man/man8/ladvd.8.gz \
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-post-patch:
-.if ! ${PORT_OPTIONS:MDOCS}
+post-patch-DOCS-off:
 	@@${REINPLACE_CMD} 's|install-data-am: install-dist_docDATA|install-data-am:|' \
 		${WRKSRC}/doc/Makefile.in
-.endif
 
 .include <bsd.port.mk>

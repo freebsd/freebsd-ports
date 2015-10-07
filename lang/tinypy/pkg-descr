@@ -6,7 +6,7 @@ it includes a whole heap of features:
  * fully bootstrapped
  * luaesque virtual machine with garbage collection written in C
    it's "stackless" sans any "stackless" features
- * cross-platform :) it runs under windows / linux / macosx
+ * cross-platform :) it runs under Windows / Linux / OS X
  * a fairly decent subset of python
     o classes and single inheritance
     o functions with variable or keyword arguments

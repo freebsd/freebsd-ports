@@ -10,8 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Searches for files with equal content
 
 USES=		zip
-MAKE_FLAGS=
-MAKEFILE=
+MAKE_FLAGS=	# empty
+MAKEFILE=	# empty
 LDFLAGS+=	-lroken -lcrypt
 ALL_TARGET=	dupmerge
 PLIST_FILES=	bin/dupmerge
@@ -19,13 +19,11 @@ PORTDOCS=	readme.txt
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dupmerge ${STAGEDIR}${PREFIX}/bin/
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.mk>

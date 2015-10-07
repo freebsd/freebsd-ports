@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	goptlib
-PORTVERSION=	0.2
+PORTVERSION=	0.5
 CATEGORIES=	security
 MASTER_SITES=	http://c-s.li/ports/
 

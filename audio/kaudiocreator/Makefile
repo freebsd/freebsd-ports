@@ -31,11 +31,7 @@ OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 NLS_USES=	gettext
 
-.include <bsd.port.options.mk>
-
-.if empty(PORT_OPTIONS:MNLS)
-post-patch:
+post-patch-NLS-off:
 	${REINPLACE_CMD} 's,add_subdirectory(po),,' ${WRKSRC}/CMakeLists.txt
-.endif
 
 .include <bsd.port.mk>

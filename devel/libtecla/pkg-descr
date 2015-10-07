@@ -1,5 +1,5 @@
 The tecla library provides UNIX and LINUX programs with interactive
-command line editing facilities, similar to those of the unix tcsh
+command line editing facilities, similar to those of the Unix tcsh
 shell. In addition to simple command-line editing, it supports recall
 of previously entered command lines, TAB completion of file names or
 other tokens, and in-line wild-card expansion of file names. The

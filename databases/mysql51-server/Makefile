@@ -3,7 +3,7 @@
 
 PORTNAME?=	mysql
 PORTVERSION=	5.1.73
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	databases
 MASTER_SITES=	MYSQL/MySQL-5.1
 PKGNAMESUFFIX?=	51-server
@@ -14,7 +14,8 @@ COMMENT?=	Multithreaded SQL database (server)
 SLAVEDIRS=	databases/mysql51-client databases/mysql51-scripts
 GNU_CONFIGURE=	yes
 
-USES+=		libtool makeinfo
+USES+=		libtool makeinfo shebangfix
+SHEBANG_FILES=	scripts/*.sh
 CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
 		--without-debug \
 		--without-readline \

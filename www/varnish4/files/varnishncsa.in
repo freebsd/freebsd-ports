@@ -4,7 +4,7 @@
 #
 
 # PROVIDE: varnishncsa
-# REQUIRE: DAEMON
+# REQUIRE: DAEMON varnishd
 # KEYWORD: shutdown
 
 #
@@ -21,7 +21,7 @@
 #	default: "/var/log/varnishncsa.log"
 #
 # varnishncsa_flags - command line arguments.
-#	default: "-D -P ${varnishncsa_pidfile} -a -c -w ${varnishncsa_file}${varnishncsa_logformat:+ -P \"$varnishncsa_logformat\""
+#	default: "-D -P ${varnishncsa_pidfile} -a -w ${varnishncsa_file}${varnishncsa_logformat:+ -P \"$varnishncsa_logformat\""
 #
 # varnishncsa_logformat - log file format.
 #       default: "" (uses varnishncsa's default format)
@@ -45,9 +45,34 @@ load_rc_config ${name}
 : ${varnishncsa_enable:=NO}
 : ${varnishncsa_pidfile=/var/run/${name}.pid}
 : ${varnishncsa_file=/var/log/${name}.log}
-: ${varnishncsa_flags="-P ${varnishncsa_pidfile} -D -a -c -w ${varnishncsa_file}${varnishncsa_logformat:+ -F \"$varnishncsa_logformat\"}"}
+: ${varnishncsa_flags="-P ${varnishncsa_pidfile} -D -a -w ${varnishncsa_file}${varnishncsa_logformat:+ -F \"$varnishncsa_logformat\"}"}
 
 command="%%PREFIX%%/bin/${name}"
 pidfile=${varnishncsa_pidfile}
+start_precmd=precmd
+
+precmd()
+{
+	waitcount=0
+	vsm=%%PREFIX%%/varnish/$(hostname)/_.vsm
+	
+        # wait no longer than 5s for  _.vsm file to arrive from varnishd
+	while :
+	do
+		if [ -f ${vsm} ] ; then
+			break
+		else
+			case "${waitcount}" in
+				5)	echo "${name}: Failed to start. Missing ${vsm} ?"
+					break
+					;;
+				*)	echo "${name}: waiting for ${vsm}"
+					waitcount=$((waitcount+1))
+					sleep 1
+					;;
+			esac
+		fi
+	done
+}
 
 run_rc_command "$1"

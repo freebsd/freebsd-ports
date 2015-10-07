@@ -18,15 +18,10 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=	DOCS
 
-.include <bsd.port.options.mk>
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKDIR}/${DISTNAME}; \
-	${INSTALL_DATA} *.html hello.sample* ${STAGEDIR}${DOCSDIR})
-.endif
+		${INSTALL_DATA} *.html hello.sample* ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

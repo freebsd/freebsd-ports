@@ -5,12 +5,17 @@ PORTNAME=	istatd
 PORTVERSION=	0.5.8
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://cloud.github.com/downloads/tiwilliam/${PORTNAME}/
+MASTER_SITES= GHC
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Daemon for iStat iPhone application
 
+LICENSE=    BSD3CLAUSE
+
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
+
+USE_GITHUB= yes
+GH_ACCOUNT= tiwilliam
 
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME}
@@ -18,7 +23,7 @@ USE_RC_SUBR=	${PORTNAME}
 PLIST_FILES=	bin/istatd etc/istat.conf-dist man/man1/istatd.1.gz \
 		man/man5/istat.conf.5.gz
 
-SUB_FILES+=	pkg-message
+SUB_FILES=	pkg-message
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/istatd ${STAGEDIR}${PREFIX}/bin

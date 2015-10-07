@@ -29,6 +29,7 @@
     SUBDIR += gale
     SUBDIR += gloox
     SUBDIR += hotot
+    SUBDIR += hs-haskell-xmpp
     SUBDIR += icb
     SUBDIR += icmpchat
     SUBDIR += icqlib
@@ -114,6 +115,7 @@
     SUBDIR += pidgin-rhythmbox
     SUBDIR += pidgin-sipe
     SUBDIR += pidgin-skype
+    SUBDIR += pidgin-skypeweb
     SUBDIR += pidgin-twitter
     SUBDIR += plasma-applet-ktp
     SUBDIR += poezio

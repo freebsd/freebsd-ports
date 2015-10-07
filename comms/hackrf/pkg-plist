@@ -1,0 +1,13 @@
+bin/hackrf_cpldjtag
+bin/hackrf_info
+bin/hackrf_max2837
+bin/hackrf_rffc5071
+bin/hackrf_si5351c
+bin/hackrf_spiflash
+bin/hackrf_transfer
+include/libhackrf/hackrf.h
+lib/libhackrf.a
+lib/libhackrf.so
+lib/libhackrf.so.0
+lib/libhackrf.so.0.3.0
+libdata/pkgconfig/libhackrf.pc

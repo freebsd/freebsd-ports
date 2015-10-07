@@ -1,14 +1,15 @@
---- ../luxrender-luxrays-7459cd8a9583/cmake/PlatformSpecific.cmake.orig
-+++ ../luxrender-luxrays-7459cd8a9583/cmake/PlatformSpecific.cmake
-@@ -106,18 +106,17 @@ ENDIF(MSVC)
+--- ../luxrays/cmake/PlatformSpecific.cmake.orig
++++ ../luxrays/cmake/PlatformSpecific.cmake
+@@ -138,18 +138,17 @@ ENDIF(MSVC)
  
  
  
 -IF(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
 +#IF(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
    # Update if necessary
-   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wno-long-long -pedantic")
+-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wno-long-long -pedantic")
 -  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -msse -msse2 -msse3 -mssse3")
++  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wno-long-long")
 +  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -msse")
    IF(NOT CYGWIN)
  	  SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")

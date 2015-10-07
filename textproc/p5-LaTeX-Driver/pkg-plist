@@ -5,6 +5,6 @@ bin/latex2ps
 %%SITE_PERL%%/LaTeX/Driver/FilterProgram.pm
 %%PERL5_MAN3%%/LaTeX::Driver.3.gz
 %%PERL5_MAN3%%/LaTeX::Driver::FilterProgram.3.gz
-man/man1/latex2dvi.1.gz
-man/man1/latex2pdf.1.gz
-man/man1/latex2ps.1.gz
+%%PERL5_MAN1%%/latex2dvi.1.gz
+%%PERL5_MAN1%%/latex2pdf.1.gz
+%%PERL5_MAN1%%/latex2ps.1.gz

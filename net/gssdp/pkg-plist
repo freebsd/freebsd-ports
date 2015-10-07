@@ -29,3 +29,5 @@ share/gtk-doc/html/gssdp/right.png
 share/gtk-doc/html/gssdp/style.css
 share/gtk-doc/html/gssdp/up-insensitive.png
 share/gtk-doc/html/gssdp/up.png
+%%VALA%%share/vala/vapi/gssdp-1.0.deps
+%%VALA%%share/vala/vapi/gssdp-1.0.vapi

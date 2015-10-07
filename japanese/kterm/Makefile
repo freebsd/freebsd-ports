@@ -39,24 +39,24 @@ CFLAGS+=	-Wno-return-type
 PORTDOCS=	README.kt README.wallpaper.ja dot.termcap
 
 OPTIONS_DEFINE=	TEKTRONIXEMU VGAFONT
-OPTIONS_DEFAULT=	DEFAULT
+OPTIONS_DEFAULT=DEFAULT
 OPTIONS_SINGLE=	SCROLLBAR
 OPTIONS_SINGLE_SCROLLBAR=	DEFAULT XAW3DLIB NEXTAWLIB
 OPTIONS_SUB=	yes
 
 XAW3DLIB_DESC=	with Xaw3d scrollbar
-LIB_DEPENDS_XAW3DLIB=	libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
-EXTRA_PATCHES_XAW3DLIB=	${PATCHDIR}/extra-patch-Xaw3d
+XAW3DLIB_LIB_DEPENDS=	libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
+XAW3DLIB_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-Xaw3d
 
 NEXTAWLIB_DESC=	with neXtaw scrollbar
-LIB_DEPENDS_NEXTAWLIB=	libneXtaw.so:${PORTSDIR}/x11-toolkits/neXtaw
-EXTRA_PATCHES_NEXTAWLIB=${PATCHDIR}/extra-patch-neXtaw
+NEXTAWLIB_LIB_DEPENDS=	libneXtaw.so:${PORTSDIR}/x11-toolkits/neXtaw
+NEXTAWLIB_EXTRA_PATCHES=${PATCHDIR}/extra-patch-neXtaw
 
 TEKTRONIXEMU_DESC=	Tektronix emulation
-EXTRA_PATCHES_TEKTRONIXEMU=${PATCHDIR}/extra-patch-Tektronix
+TEKTRONIXEMU_EXTRA_PATCHES=${PATCHDIR}/extra-patch-Tektronix
 
 VGAFONT_DESC=	install VGA font
-BUILD_DEPENDS_VGAFONT= \
+VGAFONT_BUILD_DEPENDS= \
     ${LOCALBASE}/bin/mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
     ${LOCALBASE}/bin/mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
     ${LOCALBASE}/bin/bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf

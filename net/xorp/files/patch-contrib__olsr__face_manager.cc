@@ -1,6 +1,6 @@
---- ./contrib/olsr/face_manager.cc.orig	2011-07-25 17:55:36.000000000 +0000
-+++ ./contrib/olsr/face_manager.cc	2014-02-26 21:17:13.000000000 +0000
-@@ -239,8 +239,11 @@
+--- contrib/olsr/face_manager.cc.orig	2012-01-11 17:56:10 UTC
++++ contrib/olsr/face_manager.cc
+@@ -239,8 +239,11 @@ FaceManager::receive(const string& inter
  
  	// Walk the list of message handler functions in reverse,
  	// looking for one which is willing to consume this message.

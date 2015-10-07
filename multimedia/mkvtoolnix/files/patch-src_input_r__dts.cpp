@@ -1,6 +1,6 @@
---- src/input/r_dts.cpp.orig	2015-06-08 14:20:03 UTC
+--- src/input/r_dts.cpp.orig	2015-07-18 11:39:41 UTC
 +++ src/input/r_dts.cpp
-@@ -23,6 +23,10 @@
+@@ -27,6 +27,10 @@
  #include "merge/input_x.h"
  #include "output/p_dts.h"
  

@@ -24,13 +24,8 @@ PORTEXAMPLES=	*
 PLIST_FILES=	bin/gnucap bin/gnucap-modelgen \
 		man/man1/gnucap-ibis.1.gz man/man1/gnucap.1.gz
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MREADLINE}
-USES+=		readline
-.else
-CONFIGURE_ARGS+=--with-readline=no
-.endif
+READLINE_USES=		readline
+READLINE_CONFIGURE_OFF=	--with-readline=no
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -43,20 +38,18 @@ post-patch:
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${STAGEDIR}${MANPREFIX}/man/man1
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/acs-tutorial ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/history ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/relnotes.* ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/whatisit ${STAGEDIR}${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/README ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/runall ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.c ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.ckt ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.doc ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>

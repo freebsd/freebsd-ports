@@ -1,12 +1,13 @@
 # $FreeBSD$
 
-DISTVERSION=	m-preview-190
-DISTVERSIONSUFFIX=	-g683790a
-PORTREVISION=	1
+# Hint: git describe --abbrev=12 --match android-m-preview
+DISTVERSION=	m-preview-1212
+DISTVERSIONSUFFIX=	-g94c617ccbba4
+PORTREVISION=	0
 PKGNAMESUFFIX=	-devel
 
-GH_TAGNAME=	m-preview-100-gdece0f9:extras \
-		m-preview-6-g6d0b91b:libselinux
+GH_TAGNAME=	${DISTVERSIONFULL:C/-[0-9].*//}-195-g7434d1f:extras \
+		${DISTVERSIONFULL:C/-[0-9].*//}-19-g249094f:libselinux
 
 CONFLICTS_INSTALL=	${PORTNAME}-[0-9]*
 
@@ -16,6 +17,6 @@ FILESDIR=	${.CURDIR}/files
 EXTRA_PATCHES+=	${.CURDIR}/files/patch-*
 
 USES=		compiler:c++11-lib
-CFLAGS+=	-DFASTBOOT_REVISION='\"${DISTVERSIONFULL}\"'
+CPPFLAGS+=	-DFASTBOOT_REVISION='\"${DISTVERSIONSUFFIX:S/-g//}-android\"'
 
 .include "${MASTERDIR}/Makefile"

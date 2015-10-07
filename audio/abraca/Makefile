@@ -16,7 +16,7 @@ RUN_DEPENDS=	gnome-themes-standard>=3.0.0:${PORTSDIR}/x11-themes/gnome-themes-st
 		gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme
 
 USES=		pkgconfig waf tar:bzip2
-USE_GNOME=	gtk30
+USE_GNOME=	gtk30 intltool
 
 MAKE_ARGS=	MANDIR=${MANPREFIX}/man
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
@@ -28,13 +28,9 @@ OPTIONS_DEFAULT=	NLS
 OPTIONS_SUB=	yes
 NLS_USES=	gettext
 
-.include <bsd.port.options.mk>
-
-post-patch:
-.if ! ${PORT_OPTIONS:MNLS}
+post-patch-NLS-off:
 	@${REINPLACE_CMD} -e '/\.load(/s/ intltool//' \
 		-e '/recurse/s/ po//' ${WRKSRC}/wscript
-.endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}

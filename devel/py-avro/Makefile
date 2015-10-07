@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	avro
-PORTVERSION=	1.7.4
-PORTREVISION=	1
+PORTVERSION=	1.7.7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.sai.msu.su/apache/${PORTNAME}/${PORTNAME}-${PORTVERSION}/ \
 		APACHE/${PORTNAME}/stable

@@ -1,5 +1,5 @@
 bin/finger
-%%WITHOUT_X11%%bin/pfinger
+%%X11%%bin/pfinger
 man/man1/finger.1.gz
 man/man1/pfinger.1.gz
 man/man5/fingerconf.5.gz

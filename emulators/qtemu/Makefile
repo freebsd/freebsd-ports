@@ -21,21 +21,17 @@ OPTIONS_SUB=	yes
 
 NLS_USE=	QT4=linguisttools_build
 
-.include <bsd.port.options.mk>
-
-post-configure:
-.if ${PORT_OPTIONS:MNLS}
+post-configure-NLS-on:
 	(cd ${WRKSRC} && ${LRELEASE} qtemu.pro)
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qtemu ${STAGEDIR}${PREFIX}/bin/qtemu
-.if ${PORT_OPTIONS:MNLS}
+
+do-install-NLS-on:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/translations
 	${INSTALL_DATA} ${WRKSRC}/translations/qtemu*.qm ${STAGEDIR}${DATADIR}/translations
-.endif
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	(cd ${WRKSRC}/help && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-.endif
 
 .include <bsd.port.mk>

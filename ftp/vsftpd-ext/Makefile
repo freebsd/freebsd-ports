@@ -8,19 +8,16 @@ CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://vsftpd.devnet.ru/files/${UPSTREAMVERSION}/ext.${EXTVERSION}/
 PKGNAMESUFFIX?=	${SSL_SUFFIX}${PKGNAMESUFFIX2}
 DISTNAME=	vsFTPd-${UPSTREAMVERSION}-ext${EXTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	xjflyttp@gmail.com
 COMMENT=	FTP daemon that aims to be "very secure". Extended build
-
-BROKEN_FreeBSD_9_i386=	does not link
 
 LICENSE=	GPLv2
 
 UPSTREAMVERSION=3.0.2
 EXTVERSION=	1
 
-USES=		alias gmake
+USES=		alias gmake tar:tgz
 WRKSRC=		${WRKDIR}/vsFTPd-${UPSTREAMVERSION}-ext.${EXTVERSION}
 ALL_TARGET=	vsftpd
 
@@ -41,11 +38,12 @@ CONFLICTS=	vsftpd-3* vsftpd${SSL_SUFFIX}${PKGNAMESUFFIX2}-3*
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 902001
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+.if exists(/usr/bin/clang)
+CC=		clang
+.else
 BUILD_DEPENDS+=	clang33:${PORTSDIR}/lang/clang33
 CC=		clang33
-.if ${ARCH} == i386
-BROKEN=		does not build on 9.x i386
 .endif
 .endif
 
@@ -115,7 +113,6 @@ do-install:
 .for i in EXAMPLE SECURITY
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/${i}
 	${CP} -p -R -L ${WRKSRC}/${i}/./ ${STAGEDIR}${DOCSDIR}/${i}/
-	${CHMOD} -R -L a+rX,go-w ${STAGEDIR}${DOCSDIR}/${i}/
 .endfor
 .endif
 

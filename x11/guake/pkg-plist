@@ -18,8 +18,6 @@ bin/guake-prefs
 %%PYTHON_SITELIBDIR%%/guake/gconfhandler.py
 %%PYTHON_SITELIBDIR%%/guake/gconfhandler.pyc
 %%PYTHON_SITELIBDIR%%/guake/gconfhandler.pyo
-%%PYTHON_SITELIBDIR%%/guake/globalhotkeys.a
-%%PYTHON_SITELIBDIR%%/guake/globalhotkeys.so
 %%PYTHON_SITELIBDIR%%/guake/globals.py
 %%PYTHON_SITELIBDIR%%/guake/globals.pyc
 %%PYTHON_SITELIBDIR%%/guake/globals.pyo

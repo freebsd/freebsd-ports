@@ -20,17 +20,15 @@ OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 NLS_USE=	QT4=linguisttools_build
 
-.include <bsd.port.options.mk>
-
 pre-everything::
 	@${CAT} ${PKGMESSAGE}
 
-pre-configure:
-.if !${PORT_OPTIONS:MNLS}
-	${REINPLACE_CMD} -e '/include(locale\/locale.pri)/d' ${WRKSRC}/minitube.pro
-.endif
+post-patch:
 # Remove BOM
 	${REINPLACE_CMD} -e '1 s|^.*/|/|g' \
 		 ${WRKSRC}/src/aggregatevideosource.cpp
+
+post-patch-NLS-off:
+	${REINPLACE_CMD} -e '/include(locale\/locale.pri)/d' ${WRKSRC}/minitube.pro
 
 .include <bsd.port.mk>

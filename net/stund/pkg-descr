@@ -2,7 +2,7 @@ The STUN (Simple Traversal of UDP through NATs (Network Address Translation))
 server is an implementation of the STUN protocol that enables STUN
 functionality in SIP-based systems. The STUN server tar ball also include a
 client API to enable STUN functionality in SIP endpoints. In addition there
-is a command line UNIX client and a graphical windows client that check what
+is a command line UNIX client and a graphical Windows client that check what
 type of NAT the user is using.
 
 STUN is an application-layer protocol that can determine the public IP and

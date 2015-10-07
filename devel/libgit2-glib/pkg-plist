@@ -15,6 +15,8 @@ include/libgit2-glib-1.0/libgit2-glib/ggit-cred-plaintext.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-cred-ssh-interactive.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-cred-ssh-key-from-agent.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-cred.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-diff-binary.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-diff-binary-file.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-diff-delta.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-diff-file.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-diff-find-options.h
@@ -26,6 +28,7 @@ include/libgit2-glib-1.0/libgit2-glib/ggit-diff-similarity-metric.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-diff.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-enum-types.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-error.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-fetch-options.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-index-entry-resolve-undo.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-index-entry.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-index.h
@@ -108,7 +111,6 @@ libdata/pkgconfig/libgit2-glib-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%-1.0/api-index-full.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/home.png
 %%PORTDOCS%%%%DOCSDIR%%-1.0/index.html
-%%PORTDOCS%%%%DOCSDIR%%-1.0/index.sgml
 %%PORTDOCS%%%%DOCSDIR%%-1.0/left-insensitive.png
 %%PORTDOCS%%%%DOCSDIR%%-1.0/left.png
 %%PORTDOCS%%%%DOCSDIR%%-1.0/libgit2-glib-1.0-Ggit-Main.html

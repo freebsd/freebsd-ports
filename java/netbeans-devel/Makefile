@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	netbeans
-DISTVERSION=	8.0beta
+DISTVERSION=	8.1beta
 CATEGORIES=	java devel
-MASTER_SITES=	http://dlc.sun.com.edgesuite.net/netbeans/8.0/beta/zip/
+MASTER_SITES=	http://download.netbeans.org/netbeans/8.1/beta/zip/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	netbeans-${DISTVERSION}-201401141042
+DISTNAME=	netbeans-${DISTVERSION}-201508041349
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Full-featured integrated environment for Java
@@ -24,7 +24,7 @@ PREFIXDIR=	${PREFIX}/netbeans-${PORTVERSION}
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
-IGNORE=		No development version available right now. Please use java/netbeans instead.
+#IGNORE=		No development version available right now. Please use java/netbeans instead.
 
 post-patch:
 	@${REINPLACE_CMD} -e '57s|#||;57s|/path/to/jdk|${JAVA_HOME}|' \

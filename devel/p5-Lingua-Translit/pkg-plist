@@ -1,6 +1,6 @@
 bin/translit
 %%PERL5_MAN3%%/Lingua::Translit.3.gz
 %%PERL5_MAN3%%/Lingua::Translit::Tables.3.gz
-man/man1/translit.1.gz
+%%PERL5_MAN1%%/translit.1.gz
 %%SITE_PERL%%/Lingua/Translit/Tables.pm
 %%SITE_PERL%%/Lingua/Translit.pm

@@ -1,0 +1,8 @@
+--- vhdlparser/CMakeLists.txt.orig	2015-05-31 19:01:12 UTC
++++ vhdlparser/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-include_directories(${CMAKE_SOURCE_DIR}/src ${CMAKE_SOURCE_DIR}/qtools)
++include_directories(BEFORE ${CMAKE_SOURCE_DIR}/src ${CMAKE_SOURCE_DIR}/qtools)
+ add_library(vhdlparser
+ CharStream.cc
+ ParseException.cc

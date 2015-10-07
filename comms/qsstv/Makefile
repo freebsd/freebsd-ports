@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qsstv
-PORTVERSION=	8.2.11
-PORTREVISION=	1
+PORTVERSION=	8.2.12
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://users.telenet.be/on4qz/qsstv/downloads/ \
 		LOCAL/shurd
@@ -22,7 +21,6 @@ BUILD_DEPENDS=	v4l_compat>=0:${PORTSDIR}/multimedia/v4l_compat
 
 USES=		qmake
 USE_QT4=	gui network xml moc_build rcc_build uic_build
-
-.include <bsd.port.options.mk>
+PLIST_FILES=	bin/qsstv
 
 .include <bsd.port.mk>

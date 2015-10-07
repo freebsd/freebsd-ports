@@ -3,7 +3,7 @@
 
 PORTNAME=	hydrogen
 PORTVERSION=	0.9.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	FreeBSD@ShaneWare.Biz
@@ -20,12 +20,11 @@ GH_ACCOUNT=	hydrogen-music
 
 USE_QT4=	corelib gui qmake_build linguist_build moc_build network \
 		qt3support rcc_build sql uic_build xml
-USES=		cmake:outsource desktop-file-utils pkgconfig
+USES=		cmake:outsource desktop-file-utils libarchive pkgconfig
 CMAKE_ARGS+=	-DTHREADS_HAVE_PTHREAD_ARG:BOOL=ON -DWANT_DEBUG:BOOL=OFF \
 		-DLIBSNDFILE_INCLUDE_DIR:STRING=${LOCALBASE}/include \
 		-DWANT_OSS:BOOL=ON
 USE_LDCONFIG=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=		ALSA JACK LADSPA LASH PORTAUDIO PULSEAUDIO RDF
 OPTIONS_DEFAULT=	JACK LADSPA RDF

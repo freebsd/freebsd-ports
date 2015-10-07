@@ -3,7 +3,7 @@
 
 PORTNAME=	checkdns
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://www.enderunix.org/checkdns/ \
 		http://www.trunix.org/projeler/checkdns/
@@ -13,11 +13,9 @@ COMMENT=	Domain name server analysis and reporting tool
 
 SUB_FILES=	pkg-message
 
-PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL README THANKS TODO
+PORTDOCS=	AUTHORS ChangeLog README THANKS TODO
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/main.c \
@@ -30,11 +28,11 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/lang
 	${INSTALL_DATA} ${WRKSRC}/checkdns.css ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/lang/* ${STAGEDIR}${DATADIR}/lang
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_MAN} ${WRKSRC}/$f ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

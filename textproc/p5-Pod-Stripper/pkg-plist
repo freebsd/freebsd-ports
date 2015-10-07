@@ -1,4 +1,4 @@
 bin/podstrip
 %%PERL5_MAN3%%/Pod::Stripper.3.gz
 %%SITE_PERL%%/Pod/Stripper.pm
-man/man1/podstrip.1.gz
+%%PERL5_MAN1%%/podstrip.1.gz

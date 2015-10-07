@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Net/Async/HTTP.pm
+%%SITE_PERL%%/Net/Async/HTTP/Connection.pm
+%%SITE_PERL%%/Net/Async/HTTP/StallTimer.pm
+%%PERL5_MAN3%%/Net::Async::HTTP.3.gz
+%%PERL5_MAN3%%/Net::Async::HTTP::Connection.3.gz

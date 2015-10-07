@@ -13,9 +13,9 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/ptr_container/ptr_map.hpp:${PORTSDIR}/devel/boost-libs \
 		${LOCALBASE}/include/glm/glm.hpp:${PORTSDIR}/math/glm
-LIB_DEPENDS=	libGLEW.so:${PORTSDIR}/graphics/glew
 
 USES=		compiler:c++0x libtool pathfix pkgconfig tar:bzip2
+USE_GL=		glew
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-werror

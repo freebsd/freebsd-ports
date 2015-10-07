@@ -25,6 +25,7 @@ include/gpsim/cmd_gpsim.h
 include/gpsim/cmd_manager.h
 include/gpsim/cod.h
 include/gpsim/comparator.h
+include/gpsim/ctmu.h
 include/gpsim/eeprom.h
 include/gpsim/errors.h
 include/gpsim/exports.h
@@ -116,6 +117,10 @@ lib/libgpsim_graphicLCD.a
 lib/libgpsim_graphicLCD.so
 lib/libgpsim_graphicLCD.so.0
 lib/libgpsim_graphicLCD.so.0.0.0
+lib/libgpsim_i2c2par.a
+lib/libgpsim_i2c2par.so
+lib/libgpsim_i2c2par.so.0
+lib/libgpsim_i2c2par.so.0.0.0
 lib/libgpsim_lcd.a
 lib/libgpsim_lcd.so
 lib/libgpsim_lcd.so.0

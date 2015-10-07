@@ -1,22 +1,13 @@
-Moose is wonderful.  Use Moose instead of Mouse!
+Moose is a postmodern object system for Perl5. Moose is wonderful.
 
-Unfortunately, Moose has a compile-time penalty. Though significant progress has
-been made over the years, the compile time penalty is a non-starter for some
-applications.
+Unfortunately, Moose has a compile-time penalty. Though significant progress
+has been made over the years, the compile time penalty is a non-starter for
+some very specific applications. If you are writing a command-line application
+or CGI script where startup time is essential, you may not be able to use Moose
+(we recommend that you instead use persistent Perl executing environments like
+FastCGI for the latter, if possible).
 
-Mouse aims to alleviate this by providing a subset of Moose's functionality,
-faster.
+Mouse is a Moose compatible object system, which aims to alleviate this penalty
+by providing a subset of Moose's functionality.
 
-Compatibility with Moose has been the utmost concern. Fewer than 1% of the
-tests fail when run against Moose instead of Mouse. Mouse code coverage is also
-over 97%. Even the error messages are taken from Moose. The Mouse code just
-runs the test suite 3x-4x faster.
-
-The idea is that, if you need the extra power, you should be able to run
-s/Mouse/Moose/g on your codebase and have nothing break. To that end,
-we have written Any::Moose which will act as Mouse unless Moose is loaded,
-in which case it will act as Moose.
- 
-Mouse also has the blessings of Moose's author, stevan.
-
-WWW: http://search.cpan.org/dist/Mouse/
+WWW: https://metacpan.org/pod/Mouse

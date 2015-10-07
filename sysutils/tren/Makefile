@@ -12,14 +12,12 @@ COMMENT=	Powerful File And Directory Batch Renaming Tool
 USES=		python
 PLIST_FILES=	bin/tren.py man/man1/tren.1.gz
 PORTDOCS=	WHATSNEW.txt tren-license.txt tren.html tren.pdf tren.ps tren.rst
+NO_ARCH=	yes
+
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.mk>

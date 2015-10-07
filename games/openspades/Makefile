@@ -16,31 +16,26 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick # for building icons
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libGLEW.so:${PORTSDIR}/graphics/glew
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+
+BROKEN_FreeBSD_9=	does not build on FreeBSD 9.x
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yvt
 
-USES=		compiler:c++11-lib cmake desktop-file-utils
+USES=		cmake compiler:c++11-lib desktop-file-utils
 CMAKE_ARGS=	-DOPENSPADES_RESOURCES=OFF \
 		-DOPENSPADES_INSTALL_MAN="man/man6" \
 		-DOPENSPADES_INSTALL_BINARY="bin" \
 		-DOPENSPADES_INSTALL_RESOURCES="${DATADIR_REL}"
 USE_SDL=	sdl2 image2
-USE_GL=		gl
+USE_GL=		gl glew
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	*
 PORTDATA=	*
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-BROKEN=		doesn't build on pre-10.x
-.endif
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/Resources/DevPak
@@ -49,4 +44,4 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|Xext|${LOCALBASE}/lib/lib&.so|' ${WRKSRC}/Sources/CMakeLists.txt
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

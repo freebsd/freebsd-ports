@@ -12,11 +12,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free program to do streaming video via the web
 
 LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
 
-USES=		jpeg libtool
-USE_AUTOTOOLS=	autoconf
+USES=		autoreconf jpeg libtool
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
@@ -37,9 +37,7 @@ V4L_BUILD_DEPENDS=	v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat
 V4L_CONFIGURE_OFF=	ac_cv_header_linux_videodev_h=no
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		'/^camserv_DEP/s|=.*|=|' ${WRKSRC}/camserv/Makefile.in
-.for i in common/Makefile.in relay/Makefile.in
+.for i in common/Makefile.am relay/Makefile.am
 	@${REINPLACE_CMD} -e \
 		'/^CFLAGS/s|-g||' ${WRKSRC}/${i}
 .endfor

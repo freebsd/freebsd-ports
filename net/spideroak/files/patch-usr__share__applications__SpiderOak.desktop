@@ -1,8 +1,0 @@
---- ./usr/share/applications/SpiderOak.desktop.orig	2014-01-12 18:47:14.000000000 +0100
-+++ ./usr/share/applications/SpiderOak.desktop	2014-01-12 18:49:53.000000000 +0100
-@@ -8,4 +8,4 @@
- Icon=SpiderOak
- Exec=SpiderOak
- Terminal=false
--Categories=Network;Archiving;Utility;
-+Categories=Archiving;Utility;

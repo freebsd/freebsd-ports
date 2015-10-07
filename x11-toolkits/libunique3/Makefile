@@ -15,7 +15,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 USE_XORG=	ice x11
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
-USE_GNOME=	gtk30 gnomeprefix
+USE_GNOME=	gtk30 gnomeprefix introspection:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-maintainer-flags --enable-gtk-doc-html=no
 CPPFLAGS+=	-I${LOCALBASE}/include

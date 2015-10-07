@@ -17,6 +17,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	roundcube>=0.5:${PORTSDIR}/mail/roundcube
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 WWWDIR=		${LOCALBASE}/www/roundcube
 PLUGDIR=	${WWWDIR}/plugins/login_info

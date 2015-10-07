@@ -297,4 +297,4 @@ bin/dbicadmin
 %%PERL5_MAN3%%/DBIx::Class::UTF8Columns.3.gz
 %%PERL5_MAN3%%/SQL::Translator::Parser::DBIx::Class.3.gz
 %%PERL5_MAN3%%/SQL::Translator::Producer::DBIx::Class::File.3.gz
-man/man1/dbicadmin.1.gz
+%%PERL5_MAN1%%/dbicadmin.1.gz

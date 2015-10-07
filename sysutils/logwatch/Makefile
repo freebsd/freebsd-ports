@@ -20,10 +20,9 @@ USE_PERL5=	run
 SHEBANG_FILES=	scripts/logwatch.pl
 PORTDOCS=	HOWTO-Customize-LogWatch README
 NO_BUILD=	yes
+NO_ARCH=	yes
 MAKE_ENV+=	SITE_PERL_REL=${SITE_PERL_REL}
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 pre-configure:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
@@ -44,11 +43,9 @@ post-patch:
 	-e "s,/var/cache/logwatch,${LOCALBASE}/var/${PORTNAME}," \
 	${WRKSRC}/conf/logwatch.conf
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/HOWTO-Customize-LogWatch ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-.endif
+	${INSTALL_DATA} ${WRKSRC}/HOWTO-Customize-LogWatch ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

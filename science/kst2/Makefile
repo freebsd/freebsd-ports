@@ -38,32 +38,27 @@ MATLAB_LIB_DEPENDS=	libmatio.so:${PORTSDIR}/math/matio
 
 NETCDF_DESC=	Support for data in NetCDF format (broken)
 NETCDF_LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf
+NETCDF_IGNORE=	does not support NetCDF 4
 
 TOOLKIT_DESC=	Qt toolkit
 QT4_USE=	${_USE_QT4:S/^/QT4=/}
 QT5_USE=	${_USE_QT5:S/^/QT5=/}
 QT5_CMAKE_ON=	-Dkst_qt5=on
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	${REINPLACE_CMD} -e '/^Exec=kst2/s,\(kst2\).*,\1 %f,' \
 		${WRKSRC}/src/kst/kst2.desktop
 
-pre-configure:
-.if !${PORT_OPTIONS:MFITS}
+post-patch-FITS-off:
 	${REINPLACE_CMD} -e '/find_package(CFITSIO)/d' \
 		${CMAKE_SOURCE_PATH}/CMakeLists.txt
-.endif
-.if !${PORT_OPTIONS:MMATLAB}
+
+post-patch-MATLAB-off:
 	${REINPLACE_CMD} -e '/find_package(Matio)/d' \
 		${CMAKE_SOURCE_PATH}/CMakeLists.txt
-.endif
-.if !${PORT_OPTIONS:MNETCDF}
+
+post-patch-NETCDF-off:
 	${REINPLACE_CMD} -e '/find_package(Netcdf)/d' \
 		${CMAKE_SOURCE_PATH}/CMakeLists.txt
-.else
-IGNORE=		does not support NetCDF 4
-.endif
 
 .include <bsd.port.mk>

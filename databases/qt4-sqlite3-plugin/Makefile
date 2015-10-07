@@ -3,7 +3,6 @@
 
 PORTNAME=	qt4-${DB}-plugin
 DISTVERSION=	${QT4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	kde@FreeBSD.org

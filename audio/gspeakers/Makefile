@@ -24,13 +24,8 @@ CFLAGS+=	-O0
 OPTIONS_DEFINE=	SPICE
 SPICE_DESC=	Use spice instead of gnucap
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSPICE}
-RUN_DEPENDS+=	spice3:${PORTSDIR}/cad/spice
-.else
-RUN_DEPENDS+=	gnucap:${PORTSDIR}/cad/gnucap
-.endif
+SPICE_RUN_DEPENDS=	spice3:${PORTSDIR}/cad/spice
+SPICE_RUN_DEPENDS_OFF=	gnucap:${PORTSDIR}/cad/gnucap
 
 post-extract:
 	@${FIND} ${WRKSRC} -type l -delete

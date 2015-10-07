@@ -1,6 +1,6 @@
 Crafty is a rapidly developing chess engine with more and more features
 being added regularly.  It can play, analyze, and even annotate games
-for you.  Crafty can utilize tablebases; these are available for freebsd
+for you.  Crafty can utilize tablebases; these are available for FreeBSD
 in the related ports.
 
 The files bitmaps.tgz and sound.tgz are available in your doc directory,

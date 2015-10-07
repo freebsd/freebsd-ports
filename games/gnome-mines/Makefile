@@ -1,9 +1,8 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/games/gnome-mines/Makefile 19989 2014-10-18 09:53:56Z gusi $
 
 PORTNAME=	gnome-mines
-PORTVERSION=	3.14.2
+PORTVERSION=	3.16.1
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -13,6 +12,8 @@ COMMENT=	Gnome minesweeper
 
 BUILD_DEPENDS=	vala:${PORTSDIR}/lang/vala \
 		itstool:${PORTSDIR}/textproc/itstool
+
+PORTSCOUT=	limitw:1,even
 
 USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_GNOME=	gtk30 intlhack librsvg2 libxml2:build

@@ -35,6 +35,7 @@ bin/fail2ban-server
 %%ETCDIR%%/action.d/iptables-xt_recent-echo.conf
 %%ETCDIR%%/action.d/iptables.conf
 %%ETCDIR%%/action.d/mail-buffered.conf
+%%ETCDIR%%/action.d/mail-whois-common.conf
 %%ETCDIR%%/action.d/mail-whois-lines.conf
 %%ETCDIR%%/action.d/mail-whois.conf
 %%ETCDIR%%/action.d/mail.conf
@@ -54,6 +55,7 @@ bin/fail2ban-server
 %%ETCDIR%%/action.d/sendmail-whois.conf
 %%ETCDIR%%/action.d/sendmail.conf
 %%ETCDIR%%/action.d/shorewall.conf
+%%ETCDIR%%/action.d/shorewall-ipset-proto6.conf
 %%ETCDIR%%/action.d/smtp.py
 %%ETCDIR%%/action.d/symbiosis-blacklist-allports.conf
 %%ETCDIR%%/action.d/ufw.conf
@@ -68,6 +70,7 @@ bin/fail2ban-server
 %%ETCDIR%%/filter.d/apache-nohome.conf
 %%ETCDIR%%/filter.d/apache-noscript.conf
 %%ETCDIR%%/filter.d/apache-overflows.conf
+%%ETCDIR%%/filter.d/apache-pass.conf
 %%ETCDIR%%/filter.d/apache-shellshock.conf
 %%ETCDIR%%/filter.d/assp.conf
 %%ETCDIR%%/filter.d/asterisk.conf
@@ -89,6 +92,7 @@ bin/fail2ban-server
 %%ETCDIR%%/filter.d/exim-spam.conf
 %%ETCDIR%%/filter.d/exim.conf
 %%ETCDIR%%/filter.d/freeswitch.conf
+%%ETCDIR%%/filter.d/froxlor-auth.conf
 %%ETCDIR%%/filter.d/groupoffice.conf
 %%ETCDIR%%/filter.d/gssftpd.conf
 %%ETCDIR%%/filter.d/guacamole.conf

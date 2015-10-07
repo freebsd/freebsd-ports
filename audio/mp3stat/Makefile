@@ -32,14 +32,9 @@ PLIST_FILES=	bin/mp3stat \
 		lib/mp3stat/ui_gtk2.so \
 		lib/mp3stat/ui_console.so
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
-PLIST_FILES+=	lib/mp3stat/input_vorb.so
-.else
-MAKE_ARGS+=	VORBIS=""
-.endif
+VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+VORBIS_PLIST_FILES=	lib/mp3stat/input_vorb.so
+VORBIS_MAKE_ARGS_OFF=	VORBIS=""
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile*" | ${XARGS} ${REINPLACE_CMD} -e \
@@ -59,11 +54,10 @@ do-install:
 		${STAGEDIR}${PREFIX}/lib/mp3stat)
 	(cd ${WRKSRC}/input/mp3 && ${INSTALL_LIB} input_mp3.so \
 		${STAGEDIR}${PREFIX}/lib/mp3stat)
-.if ${PORT_OPTIONS:MVORBIS}
-	(cd ${WRKSRC}/input/vorbis && ${INSTALL_LIB} input_vorb.so \
-		${STAGEDIR}${PREFIX}/lib/mp3stat)
-.endif
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} README ${STAGEDIR}${DOCSDIR})
+do-install-VORBIS-on:
+	(cd ${WRKSRC}/input/vorbis && ${INSTALL_LIB} input_vorb.so \
+		${STAGEDIR}${PREFIX}/lib/mp3stat)
 
 .include <bsd.port.mk>

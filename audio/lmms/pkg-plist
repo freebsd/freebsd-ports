@@ -1,4 +1,4 @@
-%%QT_BINDIR%%/lmms
+@(,,4755) %%QT_BINDIR%%/lmms
 include/lmms/AudioAlsa.h
 include/lmms/AudioDevice.h
 include/lmms/AudioDummy.h

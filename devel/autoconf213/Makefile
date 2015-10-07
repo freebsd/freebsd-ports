@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	213
 # note: before committing to this port, contact portmgr to arrange for an
 # experimental ports run.  Untested commits may be backed out at portmgr's
 # discretion.
-MAINTAINER=	autotools@FreeBSD.org
+MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Automatically configure source code on many Un*x platforms (legacy 2.13)
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4

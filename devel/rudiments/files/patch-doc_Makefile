@@ -1,25 +1,24 @@
---- doc/Makefile.orig	2015-05-07 19:18:13 UTC
+--- doc/Makefile.orig	2015-09-02 20:19:17 UTC
 +++ doc/Makefile
-@@ -3,46 +3,46 @@ top_builddir = ..
- include ../config.mk
+@@ -5,46 +5,46 @@ include ../config.mk
+ all:
  
  install:
 -	$(MKINSTALLDIRS) $(docdir)
 -	$(MKINSTALLDIRS) $(docdir)/css
 -	$(MKINSTALLDIRS) $(docdir)/classes/html
+-	$(MKINSTALLDIRS) $(docdir)/features
 -	$(MKINSTALLDIRS) $(docdir)/programming
 -	$(CP) installing.html $(docdir)
 -	$(CP) index.html $(docdir)
--	$(CP) introduction.html $(docdir)
--	$(CP) invisible.gif $(docdir)
 -	$(CP) css/styles.css $(docdir)/css
 -	$(CP) classes/html/*.html $(docdir)/classes/html
 -	$(CP) classes/html/*.png $(docdir)/classes/html
 -	$(CP) classes/html/*.css $(docdir)/classes/html
 -	$(CP) classes/html/*.js $(docdir)/classes/html
--	$(CP) programming/guide.html $(docdir)/programming
+-	$(CP) features/*.html $(docdir)/features
+-	$(CP) programming/*.html $(docdir)/programming
 -	$(CHMOD) 644 $(docdir)/*.html
--	$(CHMOD) 644 $(docdir)/*.gif
 -	$(CHMOD) 644 $(docdir)/css/*
 -	$(CHMOD) 644 $(docdir)/classes/html/a*.html
 -	$(CHMOD) 644 $(docdir)/classes/html/b*.html
@@ -43,23 +42,23 @@
 -	$(CHMOD) 644 $(docdir)/classes/html/*.png
 -	$(CHMOD) 644 $(docdir)/classes/html/*.css
 -	$(CHMOD) 644 $(docdir)/classes/html/*.js
+-	$(CHMOD) 644 $(docdir)/features/*.html
 -	$(CHMOD) 644 $(docdir)/programming/*.html
 +	$(MKINSTALLDIRS) $(DESTDIR)$(docdir)
 +	$(MKINSTALLDIRS) $(DESTDIR)$(docdir)/css
 +	$(MKINSTALLDIRS) $(DESTDIR)$(docdir)/classes/html
++	$(MKINSTALLDIRS) $(DESTDIR)$(docdir)/features
 +	$(MKINSTALLDIRS) $(DESTDIR)$(docdir)/programming
 +	$(CP) installing.html $(DESTDIR)$(docdir)
 +	$(CP) index.html $(DESTDIR)$(docdir)
-+	$(CP) introduction.html $(DESTDIR)$(docdir)
-+	$(CP) invisible.gif $(DESTDIR)$(docdir)
 +	$(CP) css/styles.css $(DESTDIR)$(docdir)/css
 +	$(CP) classes/html/*.html $(DESTDIR)$(docdir)/classes/html
 +	$(CP) classes/html/*.png $(DESTDIR)$(docdir)/classes/html
 +	$(CP) classes/html/*.css $(DESTDIR)$(docdir)/classes/html
 +	$(CP) classes/html/*.js $(DESTDIR)$(docdir)/classes/html
-+	$(CP) programming/guide.html $(DESTDIR)$(docdir)/programming
++	$(CP) features/*.html $(DESTDIR)$(docdir)/features
++	$(CP) programming/*.html $(DESTDIR)$(docdir)/programming
 +	$(CHMOD) 644 $(DESTDIR)$(docdir)/*.html
-+	$(CHMOD) 644 $(DESTDIR)$(docdir)/*.gif
 +	$(CHMOD) 644 $(DESTDIR)$(docdir)/css/*
 +	$(CHMOD) 644 $(DESTDIR)$(docdir)/classes/html/a*.html
 +	$(CHMOD) 644 $(DESTDIR)$(docdir)/classes/html/b*.html
@@ -83,6 +82,7 @@
 +	$(CHMOD) 644 $(DESTDIR)$(docdir)/classes/html/*.png
 +	$(CHMOD) 644 $(DESTDIR)$(docdir)/classes/html/*.css
 +	$(CHMOD) 644 $(DESTDIR)$(docdir)/classes/html/*.js
++	$(CHMOD) 644 $(DESTDIR)$(docdir)/features/*.html
 +	$(CHMOD) 644 $(DESTDIR)$(docdir)/programming/*.html
  
  uninstall:

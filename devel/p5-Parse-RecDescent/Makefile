@@ -21,13 +21,10 @@ OPTIONS_DEFINE=	DOCS
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
-.include <bsd.port.options.mk>
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/tutorial
 	${INSTALL_DATA} ${WRKSRC}/tutorial/* ${STAGEDIR}${DOCSDIR}/tutorial
-.endif
 
 .include <bsd.port.mk>

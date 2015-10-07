@@ -29,7 +29,6 @@ USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	${WRKSRC}/src/templates/beamer/wscript \
 		${WRKSRC}/src/templates/pdflatex/wscript
-python_CMD=	${PYTHON_CMD}
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 

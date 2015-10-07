@@ -13,7 +13,7 @@ lib/librtlsdr.so.0
 lib/librtlsdr.so.0.0.5
 libdata/pkgconfig/librtlsdr.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/annotated.html
-%%PORTDOCS%%%%DOCSDIR%%/html/annotated.js
+%%PORTDOCS%%%%DOCSDIR%%/html/annotated_dup.js
 %%PORTDOCS%%%%DOCSDIR%%/html/arrowdown.png
 %%PORTDOCS%%%%DOCSDIR%%/html/arrowright.png
 %%PORTDOCS%%%%DOCSDIR%%/html/bc_s.png

@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- src/UnixNativeTransport.cs.orig
 +++ src/UnixNativeTransport.cs
 @@ -93,10 +93,15 @@

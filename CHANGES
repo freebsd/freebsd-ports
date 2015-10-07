@@ -10,6 +10,92 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20150928:
+AUTHOR: amdmi3@FreeBSD.org
+
+  Implemented complete support for test target.
+
+  You can now `make test' on any port to run test sequence, no-op by default.
+  If a port defines TEST_TARGET, it'll run sub-make with specified target,
+  usually `check' or `test', useful if upstream supports that. The port may
+  instead define custom do-test target, as well as usual satellite targets:
+
+    {pre,do,post}-test, {pre,do,post}-test-OPT, {pre,do,post}-test-OPT-off
+
+  `make test' builds and stages port first, so test may use both WRKDIR and
+  STAGEDIR, and both BUILD and RUN depends are available for test target.
+  Additionally, TEST_DEPENDS is now properly supported and may be used to
+  define additional depends specifically for testing.
+
+  Framework may define default tests for specific cases. For instance,
+  perl5.mk and cran.mk provide default test target on their own.
+
+20150926:
+AUTHOR: bapt@FreeBSD.org
+
+  @sample now accept arguments, so it can now be used the following way:
+
+  @sample afile.sample
+  or
+  @sample path/to/example etc/target
+
+20150926:
+AUTHOR: bapt@FreeBSD.org
+
+  New keywords are supported in pkg since 1.5.x:
+  @preexec <command>: execute the <command> during pre-install scripts
+  @postexec <command>: execute the <command> during post-install scripts
+  @preunexec <command>: execute the <command> during pre-deinstall scripts
+  @postunexec <command>: execute the <command> during post-deinstall scripts
+
+  @exec does not specify when if should be executed and is now considered as
+  deprecated.
+
+20150914:
+AUTHOR: mat@FreeBSD.org
+
+  Introducing the %%PERL5_MAN1%% PLIST_SUB entry, as Perl now installs man1
+  pages in the same prefix as man3 pages.
+
+20150828:
+AUTHOR: mat@FreeBSD.org
+
+  <opt>_VARS and <opt>_VARS_OFF have been introduced to allow for a generic way
+  to set/append to variables.
+
+  OPT1_VARS=  foo=bar baz+=bam
+
+  will set FOO to bar and append bam to BAZ if OPT1 is enabled.  <opt>_VARS_OFF
+  works the same way, if the option is disabled.
+
+20150818:
+AUTHOR: kde@FreeBSD.org
+
+  The CMAKE_ENV option has been deprecated. It no longer has any effect, and
+  the CONFIGURE_ENV variable should be used instead.
+
+20150818:
+AUTHOR: mat@FreeBSD.org
+
+  <opt>_IMPLIES and <opt>_PREVENTS have been introduced to register dependency,
+  or conflicts between options.
+
+    OPTIONS_DEFINE= FOO BAR BAZ
+
+    FOO_IMPLIES=	BAR
+    BAZ_PREVENTS= BAR
+
+  If the FOO option is selected, the BAR option will be enabled as well.  If
+  the BAZ and BAR options are both enabled, an error will be given.
+
+20150817:
+AUTHOR: mat@FreeBSD.org
+
+  UNIQUENAME and LATEST_LINK have been removed. LATEST_LINK was only used by
+  ports-mgmt/pkg{,-devel} and PKGBASE can be used in its stead.  UNIQUENAME was
+  used by USE_LDCONFIG where it was not unique enough, and as old compat shims
+  with options.
+
 20150716:
 AUTHOR:	kwm@FreeBSD.org
 

@@ -1,6 +1,6 @@
---- Makefile.PL.orig	Sat Dec  3 21:28:47 2005
-+++ Makefile.PL	Sat Dec  3 21:35:59 2005
-@@ -11,8 +11,8 @@
+--- Makefile.PL.orig	2015-09-19 14:35:20.790089000 +0300
++++ Makefile.PL	2015-09-19 14:41:53.575311000 +0300
+@@ -11,8 +11,8 @@ my $libs = '';
  
  unless (conftest("char *x = gettext(\"foo\");", "gettext", 0)) {
  	# try with -lintl
@@ -11,7 +11,7 @@
  		unlink("conftest.c");
  		unlink("conftest");
  		die "gettext function not found. Please install libintl";
-@@ -33,7 +33,8 @@
+@@ -33,7 +33,8 @@ unlink("conftest");
  
  WriteMakefile(
      NAME => "Locale::gettext",
@@ -19,5 +19,5 @@
 +    LIBS => ($libs eq '') ? [] : ["-L$ENV{LOCALBASE}/lib -lintl"],
 +    INC => "-I$ENV{LOCALBASE}/include",
      VERSION_FROM => 'gettext.pm', 
- );
- 
+     META_MERGE => {
+         resources => {

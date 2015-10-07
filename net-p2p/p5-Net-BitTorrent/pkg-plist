@@ -25,4 +25,4 @@ bin/net-bittorrent.pl
 %%PERL5_MAN3%%/Net::BitTorrent::Torrent::Tracker::UDP.3.gz
 %%PERL5_MAN3%%/Net::BitTorrent::Util.3.gz
 %%PERL5_MAN3%%/Net::BitTorrent::Version.3.gz
-man/man1/net-bittorrent.pl.1.gz
+%%PERL5_MAN1%%/net-bittorrent.pl.1.gz

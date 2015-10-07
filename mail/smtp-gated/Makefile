@@ -12,20 +12,21 @@ COMMENT=	Proxy for SMTP sessions with virus and spam scan
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=	NAT CHUNKING ECONNRESET PCRE
-OPTIONS_DEFAULT=	NAT PCRE
-NAT_DESC=	NAT transparent proxy code
-CHUNKING_DESC=	Enable support for SMTP CHUNKING extension
-ECONNRESET_DESC=	Be quiet about Connection reset by peer message
-
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	sbin/smtp-gated \
-				man/man5/smtp-gated.conf.5.gz \
-				man/man8/smtp-gated.8.gz
+		man/man5/smtp-gated.conf.5.gz \
+		man/man8/smtp-gated.8.gz
+
+OPTIONS_DEFINE=	NAT CHUNKING ECONNRESET PCRE
+OPTIONS_DEFAULT=	NAT PCRE
+
+NAT_DESC=	NAT transparent proxy code
+CHUNKING_DESC=	SMTP CHUNKING extension support
+ECONNRESET_DESC=	Be quiet about "Connection reset by peer" message
 
 NAT_CONFIGURE_ENABLE=	nat
 CHUNKING_CONFIGURE_ENABLE=	chunking
@@ -33,10 +34,4 @@ ECONNRESET_CONFIGURE_ENABLE=	silent-econnreset
 PCRE_CONFIGURE_OFF=	--disable-pcre
 PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not compile on powerpc: cannot determine endianness
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -11,9 +11,6 @@ MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Getting and setting Xv attributes
 
-OPTIONS_DEFINE=	GTK1
-GTK1_DESC=	GTK1 support (Default is GTK2)
-
 USE_XORG=	x11 xv
 WANT_GNOME=	yes
 USES=		pkgconfig
@@ -23,15 +20,12 @@ PLIST_FILES=	bin/${PORTNAME} bin/g${PORTNAME} \
 
 CFLAGS+=	-DVERSION=\"${PORTVERSION}\"
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGTK1}
-USE_GNOME+=	gtk12
-GTK_PC=		gtk+
-.else
-USE_GNOME+=	gtk20
-GTK_PC=		gtk+-2.0
-.endif
+OPTIONS_DEFINE=	GTK1
+GTK1_DESC=	GTK1 support (Default is GTK2)
+GTK1_USE=	GNOME=gtk12
+GTK1_VARS=	GTK_PC=gtk+
+GTK1_USE_OFF=	GNOME=gtk20
+GTK1_VARS_OFF=	GTK_PC=gtk+-2.0
 
 post-extract:
 	@${RM} -f ${WRKSRC}/getopt.h

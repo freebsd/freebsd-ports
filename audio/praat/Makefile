@@ -3,6 +3,7 @@
 
 PORTNAME=	praat
 PORTVERSION=	5.4.08
+PORTREVISION=	1
 CATEGORIES=	audio science
 MASTER_SITES=	http://www.fon.hum.uva.nl/praat/
 DISTNAME=	praat5408_sources
@@ -13,7 +14,7 @@ COMMENT=	Phonetics by Computer
 LICENSE=	GPLv2
 
 DOS2UNIX_REGEX=	.*Makefile
-USES=		dos2unix iconv motif pkgconfig
+USES=		dos2unix iconv pkgconfig
 USE_GNOME=	gtk20
 WRKSRC=		${WRKDIR}/sources_5408
 MAKEFILE=	makefile

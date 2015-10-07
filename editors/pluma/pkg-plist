@@ -135,6 +135,7 @@ libdata/pkgconfig/pluma.pc
 libexec/pluma/pluma-bugreport.sh
 man/man1/pluma.1.gz
 share/MateConf/gsettings/pluma.convert
+share/appdata/pluma.appdata.xml
 share/applications/pluma.desktop
 %%PORTDOCS%%%%DOCSDIR%%/PlumaMessage.html
 %%PORTDOCS%%%%DOCSDIR%%/PlumaMessageBus.html

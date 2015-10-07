@@ -35,8 +35,6 @@ OPTIONS_DEFAULT=FREETYPE
 FREETYPE_CONFIGURE_ENABLE=	freetype
 FREETYPE_LIB_DEPENDS=		libfreetype.so:${PORTSDIR}/print/freetype2
 
-BROKEN_powerpc=		Does not compile on powerpc
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-lpthread|-pthread|' ${WRKSRC}/configure

@@ -1,2 +1,2 @@
 bin/innotop
-man/man1/innotop.1.gz
+%%PERL5_MAN1%%/innotop.1.gz

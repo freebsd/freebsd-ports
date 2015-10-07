@@ -50,7 +50,7 @@ _USE_MATE_ALL=	autogen intlhack intltool
 # the *.pc file instead.
 _USE_MATE_ALL+=	caja common controlcenter desktop dialogs docutils icontheme \
 		libmatekbd libmateweather \
-		marco menus mucharmap notificationdaemon panel polkit pluma \
+		marco menus notificationdaemon panel polkit pluma \
 		settingsdaemon
 
 SCROLLKEEPER_DIR=	/var/db/rarian
@@ -59,11 +59,6 @@ caja_DETECT=		${LOCALBASE}/libdata/pkgconfig/libcaja-extension.pc
 caja_BUILD_DEPENDS=	${caja_DETECT}:${PORTSDIR}/x11-fm/caja
 caja_LIB_DEPENDS=	libcaja-extension.so:${PORTSDIR}/x11-fm/caja
 caja_RUN_DEPENDS=	${caja_DETECT}:${PORTSDIR}/x11-fm/caja
-
-mucharmap_DETECT=		${LOCALBASE}/libdata/pkgconfig/mucharmap-2.pc
-mucharmap_BUILD_DEPENDS=${mucharmap_DETECT}:${PORTSDIR}/deskutils/mate-character-map
-mucharmap_LIB_DEPENDS=	libmucharmap.so:${PORTSDIR}/deskutils/mate-character-map
-mucharmap_RUN_DEPENDS=	${mucharmap_DETECT}:${PORTSDIR}/deskutils/mate-character-map
 
 common_DETECT=		${LOCALBASE}/bin/mate-autogen
 common_BUILD_DEPENDS=	${common_DETECT}:${PORTSDIR}/devel/mate-common

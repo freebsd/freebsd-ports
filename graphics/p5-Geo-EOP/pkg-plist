@@ -1,5 +1,3 @@
-%%PERL5_MAN3%%/Geo::EOP.3.gz
-%%PERL5_MAN3%%/Geo::EOP::Util.3.gz
 %%SITE_PERL%%/Geo/EOP.pm
 %%SITE_PERL%%/Geo/EOP.pod
 %%SITE_PERL%%/Geo/EOP/Util.pm
@@ -25,3 +23,5 @@
 %%SITE_PERL%%/Geo/EOP/xsd/hma1.0/hma.xsd
 %%SITE_PERL%%/Geo/EOP/xsd/hma1.0/ohr.xsd
 %%SITE_PERL%%/Geo/EOP/xsd/hma1.0/sar.xsd
+%%PERL5_MAN3%%/Geo::EOP.3.gz
+%%PERL5_MAN3%%/Geo::EOP::Util.3.gz

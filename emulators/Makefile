@@ -111,7 +111,7 @@
     SUBDIR += pearpc
     SUBDIR += pipelight
     SUBDIR += ppsspp
-    SUBDIR += ppsspp-devel
+    SUBDIR += py-gns3-converter
     SUBDIR += q4wine
     SUBDIR += qemu
     SUBDIR += qemu-devel

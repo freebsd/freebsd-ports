@@ -28,7 +28,7 @@ CONFLICTS_INSTALL?=	wine-[0-9]* wine-staging-[0-9]* wine-devel-[0-9]* \
 
 EXTRACT_AFTER_ARGS=	-C / --exclude +COMPACT_MANIFEST --exclude +MANIFEST \
 				--exclude +MTREE_DIRS --exclude share/licenses/'*' \
-				--exclude libdata/ldconfig32/${UNIQUENAME} \
+				--exclude libdata/ldconfig32/${PKGNAMEPREFIX}-${PORTNAME} \
 				-s '|/usr/local|${STAGEDIR}${PREFIX}|gs'
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 amd64

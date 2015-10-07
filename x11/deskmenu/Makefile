@@ -11,6 +11,7 @@ MASTER_SITES=	http://matt.peterson.org/FreeBSD/ports/ \
 MAINTAINER=	matt@peterson.org
 COMMENT=	X11 application launcher
 
+BROKEN=		Does not fetch
 PLIST_FILES=	bin/deskmenu
 USES=		gmake
 USE_GNOME=	gtk12

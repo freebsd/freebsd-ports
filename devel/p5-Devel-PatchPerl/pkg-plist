@@ -5,4 +5,4 @@ bin/patchperl
 %%PERL5_MAN3%%/Devel::PatchPerl.3.gz
 %%PERL5_MAN3%%/Devel::PatchPerl::Hints.3.gz
 %%PERL5_MAN3%%/Devel::PatchPerl::Plugin.3.gz
-man/man1/patchperl.1.gz
+%%PERL5_MAN1%%/patchperl.1.gz

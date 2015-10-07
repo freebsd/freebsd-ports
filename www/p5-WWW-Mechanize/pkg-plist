@@ -11,4 +11,4 @@ bin/mech-dump
 %%PERL5_MAN3%%/WWW::Mechanize::FAQ.3.gz
 %%PERL5_MAN3%%/WWW::Mechanize::Image.3.gz
 %%PERL5_MAN3%%/WWW::Mechanize::Link.3.gz
-man/man1/mech-dump.1.gz
+%%PERL5_MAN1%%/mech-dump.1.gz

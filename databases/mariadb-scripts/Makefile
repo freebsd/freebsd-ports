@@ -7,7 +7,6 @@ COMMENT=	Scripts for mariadb - drop-in replacement for MySQL
 
 LICENSE=	GPLv2
 
-UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 USES=		perl5
 
 MASTERDIR=	${.CURDIR}/../mariadb-server

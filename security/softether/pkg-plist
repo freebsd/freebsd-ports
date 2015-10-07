@@ -1,0 +1,7 @@
+libexec/softether/hamcore.se2
+libexec/softether/vpnbridge
+libexec/softether/vpnclient
+libexec/softether/vpncmd
+libexec/softether/vpnserver
+sbin/vpncmd
+@dir libexec/softether

@@ -3,7 +3,7 @@
 
 PORTNAME=	expat
 PORTVERSION=	2.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
@@ -14,6 +14,8 @@ GNU_CONFIGURE=	yes
 ALL_TARGET=	default
 USES=		libtool pathfix
 USE_LDCONFIG=	yes
+
+EXTRA_PATCHES=	${FILESDIR}/CVE-2015-1283.patch:-p1
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^DESTDIR =/d' ${WRKSRC}/Makefile.in

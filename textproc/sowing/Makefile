@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sowing
-PORTVERSION=	1.1.17
+PORTVERSION=	1.1.18
 CATEGORIES=	textproc
 MASTER_SITES=	http://ftp.mcs.anl.gov/pub/sowing/
 
@@ -28,8 +28,7 @@ post-patch:
 
 .if defined(MAINTAINER_MODE)
 regression-test: install
-	@(cd ${BUILD_WRKSRC};	\
-	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} testing)
+	@(cd ${BUILD_WRKSRC} && ${DO_MAKE_BUILD} testing)
 .endif
 
 .include <bsd.port.mk>

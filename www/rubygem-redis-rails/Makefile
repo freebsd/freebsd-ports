@@ -9,6 +9,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Redis for Ruby on Rails
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-redis-actionpack>=4:${PORTSDIR}/databases/rubygem-redis-actionpack \
 		rubygem-redis-activesupport>=4:${PORTSDIR}/devel/rubygem-redis-activesupport \

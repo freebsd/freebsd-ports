@@ -3,7 +3,7 @@
 
 PORTNAME=	suricata
 PORTVERSION=	2.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.openinfosecfoundation.org/download/ \
 		http://mirrors.rit.edu/zi/
@@ -105,6 +105,7 @@ CONFIGURE_ARGS+=--enable-gccprotect \
 		--with-libnet-libraries=${LOCALBASE}/lib/libnet11 \
 		--with-libhtp-includes=${LOCALBASE}/include/ \
 		--with-libhtp-libraries=${LOCALBASE}/lib \
+	        --disable-gccmarch-native \
 		--localstatedir=/var/
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
@@ -115,10 +116,6 @@ RULES_FILES=	decoder-events.rules dns-events.rules files.rules http-events.rules
 LOGS_DIR?=	/var/log/${PORTNAME}
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64
-.endif
 
 pre-patch:
 	${CP} ${FILESDIR}/ax_check_compile_flag.m4 ${WRKSRC}/m4

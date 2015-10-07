@@ -47,7 +47,7 @@ Database_Include_MAINTAINER=	ports@FreeBSD.org
 #			  build this port with (overrides WITH_BDB_VER).
 # WITH_BDB_VER
 #			- User defined global variable to set Berkeley DB version.
-# <UNIQUENAME>_WITH_BDB_VER
+# <BDB_UNIQUENAME>_WITH_BDB_VER
 #			- User defined port specific variable to set Berkeley DB
 #			  version.
 # WITH_BDB_HIGHEST
@@ -191,6 +191,8 @@ IGNORE=		cannot install: unknown MySQL version: ${MYSQL_VER}
 # TODO: avoid malformed conditional with invalid USE_BDB/WITH_BDB_VER
 # check if + works properly from test builds 01h12m23s
 
+BDB_UNIQUENAME?=	${PKGNAMEPREFIX}${PORTNAME}
+
 _USE_BDB_save:=${USE_BDB}
 _WITH_BDB_VER_save:=${WITH_BDB_VER}
 
@@ -211,9 +213,9 @@ db5_FIND=	${LOCALBASE}/include/db5/db.h
 db6_FIND=	${LOCALBASE}/include/db6/db.h
 
 # Override the global WITH_BDB_VER with the
-# port specific <UNIQUENAME>_WITH_BDB_VER
-.if defined(${UNIQUENAME:tu:S,-,_,}_WITH_BDB_VER)
-WITH_BDB_VER=	${${UNIQUENAME:tu:S,-,_,}_WITH_BDB_VER}
+# port specific <BDB_UNIQUENAME>_WITH_BDB_VER
+.if defined(${BDB_UNIQUENAME:tu:S,-,_,}_WITH_BDB_VER)
+WITH_BDB_VER=	${${BDB_UNIQUENAME:tu:S,-,_,}_WITH_BDB_VER}
 .endif
 
 # Override USE_BDB with global WITH_BDB_VER
@@ -340,7 +342,7 @@ BDB_VER=	${_BDB_VER}
 
 debug-bdb:
 	@${ECHO_CMD} "--INPUTS----------------------------------------------------"
-	@${ECHO_CMD} "${UNIQUENAME:tu:S,-,_,}_WITH_BDB_VER: ${${UNIQUENAME:tu:S,-,_,}_WITH_BDB_VER}"
+	@${ECHO_CMD} "${BDB_UNIQUENAME:tu:S,-,_,}_WITH_BDB_VER: ${${BDB_UNIQUENAME:tu:S,-,_,}_WITH_BDB_VER}"
 	@${ECHO_CMD} "WITH_BDB_VER: ${_WITH_BDB_VER_save}"
 	@${ECHO_CMD} "WANT_BDB_VER: ${WANT_BDB_VER}"
 	@${ECHO_CMD} "BDB_BUILD_DEPENDS: ${BDB_BUILD_DEPENDS}"
@@ -374,7 +376,7 @@ BAD_VAR+=	${var},
 .  endif
 . endfor
 . if defined(BAD_VAR)
-_IGNORE_MSG=	Obsolete variable(s) ${BAD_VAR} use WITH_BDB_VER or ${UNIQUENAME:tu:S,-,_,}_WITH_BDB_VER to select Berkeley DB version
+_IGNORE_MSG=	Obsolete variable(s) ${BAD_VAR} use WITH_BDB_VER or ${BDB_UNIQUENAME:tu:S,-,_,}_WITH_BDB_VER to select Berkeley DB version
 .  if defined(IGNORE)
 IGNORE+= ${_IGNORE_MSG}
 .  else

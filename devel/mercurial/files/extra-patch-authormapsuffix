@@ -1,16 +1,16 @@
---- ./hgext/convert/__init__.py.orig	2014-08-01 23:22:55.000000000 +0000
-+++ ./hgext/convert/__init__.py	2014-08-17 09:14:36.000000000 +0000
-@@ -27,6 +27,7 @@
+--- hgext/convert/__init__.py.orig	2015-07-18 22:33:53 UTC
++++ hgext/convert/__init__.py
+@@ -31,6 +31,7 @@ testedwith = 'internal'
      ('d', 'dest-type', '', _('destination repository type'), _('TYPE')),
-     ('r', 'rev', '', _('import up to source revision REV'), _('REV')),
+     ('r', 'rev', [], _('import up to source revision REV'), _('REV')),
      ('A', 'authormap', '', _('remap usernames using this file'), _('FILE')),
 +    ('', 'authormapsuffix', '', _('append this suffix to remapped author names'), _('SUFFIX')),
      ('', 'filemap', '', _('remap file names using contents of file'),
       _('FILE')),
-     ('', 'splicemap', '', _('splice synthesized history into place'),
---- ./hgext/convert/convcmd.py.orig	2014-08-01 23:22:55.000000000 +0000
-+++ ./hgext/convert/convcmd.py	2014-08-02 06:58:26.000000000 +0000
-@@ -103,12 +103,15 @@
+     ('', 'full', None,
+--- hgext/convert/convcmd.py.orig	2015-07-18 22:33:53 UTC
++++ hgext/convert/convcmd.py
+@@ -136,12 +136,16 @@ class converter(object):
          self.commitcache = {}
          self.authors = {}
          self.authorfile = None
@@ -23,10 +23,11 @@
  
 +        if opts.get('authormapsuffix'):
 +            self.authormapsuffix = opts.get('authormapsuffix')
++
          # Read first the dst author map if any
          authorfile = self.dest.authorfile()
          if authorfile and os.path.exists(authorfile):
-@@ -360,7 +363,7 @@
+@@ -395,7 +399,7 @@ class converter(object):
                  continue
  
              srcauthor = srcauthor.strip()
@@ -35,12 +36,12 @@
              if self.authors.get(srcauthor) in (None, dstauthor):
                  msg = _('mapping author %s to %s\n')
                  self.ui.debug(msg % (srcauthor, dstauthor))
-@@ -374,7 +377,7 @@
+@@ -409,7 +413,7 @@ class converter(object):
  
      def cachecommit(self, rev):
          commit = self.source.getcommit(rev)
 -        commit.author = self.authors.get(commit.author, commit.author)
 +        commit.author = self.authors.get(commit.author, commit.author + self.authormapsuffix)
-         # If commit.branch is None, this commit is coming from the source
-         # repository's default branch and destined for the default branch in the
-         # destination repository. For such commits, passing a literal "None"
+         commit.branch = mapbranch(commit.branch, self.branchmap)
+         self.commitcache[rev] = commit
+         return commit

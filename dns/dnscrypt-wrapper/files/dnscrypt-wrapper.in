@@ -1,0 +1,109 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: dnscrypt_wrapper
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable dnscrypt-wrapper:
+#
+# dnscrypt_wrapper_enable (bool):	Set to "NO" by default.
+#					Set it to "YES" to enable dnscrypt_wrapper.
+# dnscrypt_wrapper_uid (str):		Set to "%%USERS%%" by default.
+#					User to switch to after starting.
+# dnscrypt_wrapper_pidfile (str):	Set to "/var/run/dnscrypt-wrapper.pid" by default.
+#					Path of the pid file.
+# dnscrypt_wrapper_logfile (str):	Set to "/var/log/dnscrypt-wrapper.log" by default.
+#					Path of the log file.
+# dnscrypt_wrapper_resolver (str):	Set to "127.0.0.1:53" by default.
+#					<address:port> to reach the upstream DNS resolver at.
+# dnscrypt_wrapper_listen (str):	Set to "0.0.0.0:54" by default.
+#					<address:port> to listen on.
+# dnscrypt_wrapper_crypt_secretkey_file (str):	Set to "%%ETCDNSCRYPTWRAPPER%%/crypt_secret.key" by default.
+#					Path of the secret crypt key.
+# dnscrypt_wrapper_provider_cert_file (str):	Set to "%%ETCDNSCRYPTWRAPPER%%/dnscrypt.cert" by default.
+#					Path of the pre-signed certificate.
+# dnscrypt_wrapper_provider_name (str):	Set to "2.dnscrypt-cert.`/bin/hostname`" by default.
+#					Provider name.
+
+. /etc/rc.subr
+
+name=dnscrypt_wrapper
+rcvar=dnscrypt_wrapper_enable
+
+# read configuration and set defaults
+load_rc_config ${name}
+: ${dnscrypt_wrapper_enable:=NO}
+: ${dnscrypt_wrapper_uid=%%USERS%%}
+: ${dnscrypt_wrapper_pidfile=/var/run/dnscrypt-wrapper.pid}
+: ${dnscrypt_wrapper_logfile=/var/log/dnscrypt-wrapper.log}
+: ${dnscrypt_wrapper_resolver=127.0.0.1:53}
+: ${dnscrypt_wrapper_listen=0.0.0.0:54}
+: ${dnscrypt_wrapper_crypt_secretkey_file=%%ETCDNSCRYPTWRAPPER%%/crypt_secret.key}
+: ${dnscrypt_wrapper_provider_cert_file=%%ETCDNSCRYPTWRAPPER%%/dnscrypt.cert}
+: ${dnscrypt_wrapper_provider_name=2.dnscrypt-cert.`/bin/hostname`}
+
+command=%%PREFIX%%/sbin/dnscrypt-wrapper
+extra_commands="checks check_name keygen"
+start_precmd="${name}_checks"
+command_args="-a ${dnscrypt_wrapper_listen} -r ${dnscrypt_wrapper_resolver} -u ${dnscrypt_wrapper_uid} -d -p ${dnscrypt_wrapper_pidfile} -l ${dnscrypt_wrapper_logfile} --crypt-secretkey-file=${dnscrypt_wrapper_crypt_secretkey_file} --provider-cert-file=${dnscrypt_wrapper_provider_cert_file} --provider-name=${dnscrypt_wrapper_provider_name} -V"
+procname=%%PREFIX%%/sbin/dnscrypt-wrapper
+pidfile=${dnscrypt_wrapper_pidfile}
+
+dnscrypt_wrapper_check_name()
+{
+	if [ -z "${dnscrypt_wrapper_provider_name}" ]; then
+		err 1 '${dnscrypt_wrapper_provider_name} must be set in /etc/rc.conf'
+	fi
+}
+
+dnscrypt_wrapper_keygen()
+{
+	if [ -f %%ETCDNSCRYPTWRAPPER%%/crypt_secret.key -a \
+	    -f %%ETCDNSCRYPTWRAPPER%%/dnscrypt.cert ]; then
+		return 0
+	fi
+
+	cd %%ETCDNSCRYPTWRAPPER%%/
+	umask 077
+
+	# Can't do anything if dnscrypt-wrapper is not installed
+	[ -x %%PREFIX%%/sbin/dnscrypt-wrapper ] ||
+		err 1 "%%PREFIX%%/sbin/dnscrypt-wrapper does not exist."
+
+	if [ -f %%ETCDNSCRYPTWRAPPER%%/public.key -a \
+	    -f %%ETCDNSCRYPTWRAPPER%%/secret.key ]; then
+		echo "You already have a provider keypair in:"
+		echo "  %%ETCDNSCRYPTWRAPPER%%/public.key and %%ETCDNSCRYPTWRAPPER%%/secret.key"
+		echo "Skipping provider keypair generation."
+	else
+		%%PREFIX%%/sbin/dnscrypt-wrapper --gen-provider-keypair
+	fi
+
+	if [ -f %%ETCDNSCRYPTWRAPPER%%/crypt_public.key -a \
+	    -f %%ETCDNSCRYPTWRAPPER%%/crypt_secret.key ]; then
+		echo "You already have a crypt keypair in:"
+		echo "  %%ETCDNSCRYPTWRAPPER%%/crypt_public.key and %%ETCDNSCRYPTWRAPPER%%/crypt_secret.key"
+		echo "Skipping crypt keypair generation."
+	else
+		%%PREFIX%%/sbin/dnscrypt-wrapper --gen-crypt-keypair
+	fi
+
+	if [ -f %%ETCDNSCRYPTWRAPPER%%/dnscrypt.cert ]; then
+		echo "You already have a pre-signed certificate in:"
+		echo "  %%ETCDNSCRYPTWRAPPER%%/dnscrypt.cert"
+		echo "Skipping pre-signed certificate generation."
+	else
+		%%PREFIX%%/sbin/dnscrypt-wrapper --crypt-secretkey-file %%ETCDNSCRYPTWRAPPER%%/crypt_secret.key --provider-publickey-file=%%ETCDNSCRYPTWRAPPER%%/public.key --provider-secretkey-file=%%ETCDNSCRYPTWRAPPER%%/secret.key --gen-cert-file
+	fi
+}
+
+dnscrypt_wrapper_checks()
+{
+	dnscrypt_wrapper_check_name
+	dnscrypt_wrapper_keygen
+}
+
+run_rc_command "$1"

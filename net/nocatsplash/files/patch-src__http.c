@@ -1,5 +1,5 @@
---- src/http.c.orig	Wed Nov 19 16:26:07 2003
-+++ src/http.c	Wed Nov 19 16:29:22 2003
+--- src/http.c.orig	2003-01-16 19:52:17 UTC
++++ src/http.c
 @@ -1,8 +1,10 @@
 -# include <glib.h>
 -# include <fcntl.h>
@@ -24,7 +24,7 @@
  GIOChannel *http_bind_socket( const char *ip, int port, int queue ) { 
      struct sockaddr_in addr;
      int fd, r, n = 1;
-@@ -354,7 +353,7 @@
+@@ -354,7 +353,7 @@ ssize_t http_sendfile ( http_request *h,
  	return -1;
      }
  

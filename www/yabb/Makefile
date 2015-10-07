@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	yabb
-PORTVERSION=	2.5.2
-PORTREVISION=	1
+PORTVERSION=	2.6.11
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/YaBB%202/${PORTVERSION}
+MASTER_SITES=	http://www.yabbforum.com/downloads/release/
 DISTNAME=	YaBB_${PORTVERSION}
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -32,11 +31,14 @@ WCGI=		${WRKSRC}/cgi-bin/yabb2
 SUB_FILES=	pkg-message
 SUB_LIST=	DIR=${DIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
-ISOFILES=	Admin/ManageTemplates.pl Admin/ModuleChecker.pl Languages/English/Admin.lng \
-		Languages/English/Email.lng Languages/English/Main.lng \
-		Setup.pl Sources/Palette.pl Sources/Post.pl Sources/Profile.pl \
-		Templates/blue_1/AdminCentre.template Templates/default/AdminCentre.template \
-		Templates/yabb21/AdminCentre.template Templates/yabb25/AdminCentre.template
+ISOFILES=	Admin/NewSettings.pm \
+		Admin/Settings_Main.pm \
+		Convert.pl Languages/English/Admin.lng \
+		Setup.pl Sources/InstantMessage.pm \
+		Sources/Post.pm Sources/Profile.pm \
+		Sources/Subs.pm
+PERLFILES=	AdminIndex.pl BoardConvert.pl Convert.pl \
+		Convert2x.pl Setup.pl Sources/SpellChecker.pl YaBB.pl
 
 .include <bsd.port.pre.mk>
 
@@ -49,11 +51,9 @@ post-extract:
 	@${CHMOD} -R u+w ${WDIR}/Attachments ${WDIR}/Templates
 
 do-patch:
-	@${SED} -i.tmp -e 's/Upload:://' ${WCGI}/Sources/Subs.pl && \
-	${RM} -f ${WCGI}/Sources/Subs.pl.tmp
-.for _I in ${ISOFILES}
-	@${SED} -i.tmp -e 's/[iI][sS][oO]-8859-1/UTF-8/' ${WCGI}/${_I} && \
-	${RM} -f ${WCGI}/${_I}.tmp
+.for _I in ${PERLFILES}
+	@${SED} -i.tmp -e 's|/usr/bin/perl|/usr/local/bin/perl|' ${WCGI}/${_I} && \
+	${RM} -f ${_I}.tmp
 .endfor
 
 do-install:

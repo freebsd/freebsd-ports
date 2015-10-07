@@ -11,6 +11,7 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Set of extensions to virtualenv
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=0.5.19:${PORTSDIR}/devel/py-pbr
 RUN_DEPENDS=	${PKGNAMEPREFIX}stevedore>=0.3:${PORTSDIR}/devel/py-stevedore \

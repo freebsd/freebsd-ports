@@ -1,23 +1,21 @@
-%%JPEG%%etc/libmap.d/jpeg-turbo.conf
-%%JPEG%%bin/cjpeg-turbo
-%%JPEG%%bin/djpeg-turbo
-%%JPEG%%bin/jpegtran-turbo
-%%JPEG%%bin/rdjpgcom-turbo
-%%JPEG%%bin/wrjpgcom-turbo
-@comment %%JPEG%%include/jconfig.h
-@comment %%JPEG%%include/jerror.h
-@comment %%JPEG%%include/jmorecfg.h
-@comment %%JPEG%%include/jpeglib.h
-@comment %%JPEG%%lib/libjpeg.a
-@comment %%JPEG%%lib/libjpeg.so
-@comment %%JPEG%%lib/libjpeg.so.8
+%%JPEG%%bin/cjpeg
+%%JPEG%%bin/djpeg
+%%JPEG%%bin/jpegtran
+%%JPEG%%bin/rdjpgcom
+%%JPEG%%bin/wrjpgcom
+%%JPEG%%include/jconfig.h
+%%JPEG%%include/jerror.h
+%%JPEG%%include/jmorecfg.h
+%%JPEG%%include/jpeglib.h
+%%JPEG%%lib/libjpeg.a
+%%JPEG%%lib/libjpeg.so
+%%JPEG%%lib/libjpeg.so.8
 %%JPEG%%lib/libjpeg.so.8.0.2
-%%JPEG%%man/man1/cjpeg-turbo.1.gz
-%%JPEG%%man/man1/djpeg-turbo.1.gz
-%%JPEG%%man/man1/jpegtran-turbo.1.gz
-%%JPEG%%man/man1/rdjpgcom-turbo.1.gz
-%%JPEG%%man/man1/wrjpgcom-turbo.1.gz
-@comment bin/tjbench-turbo
+%%JPEG%%man/man1/cjpeg.1.gz
+%%JPEG%%man/man1/djpeg.1.gz
+%%JPEG%%man/man1/jpegtran.1.gz
+%%JPEG%%man/man1/rdjpgcom.1.gz
+%%JPEG%%man/man1/wrjpgcom.1.gz
 %%LIBTURBOJPEG%%bin/tjbench
 %%LIBTURBOJPEG%%include/turbojpeg.h
 %%LIBTURBOJPEG%%lib/libturbojpeg.a

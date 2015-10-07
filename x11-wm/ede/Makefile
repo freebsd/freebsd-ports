@@ -26,8 +26,7 @@ LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 USES=		fam gettext iconv:translit pathfix pkgconfig python:2 \
 		shared-mime-info shebangfix
 SHEBANG_FILES=	doc/asciidoc/asciidoc.py
-python_OLD_CMD=	${SETENV} python
-python_CMD=	${PYTHON_CMD}
+python_OLD_CMD=	/usr/bin/env python
 USE_XORG=	xcomposite xft xinerama xkbfile xpm xrandr
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes

@@ -58,8 +58,6 @@ GIF_CONFIGURE_ENABLE=	gif
 GIF_LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib
 GIF_CPPFLAGS=		-I${LOCALBASE}/include
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	${REINPLACE_CMD} -e 's|-lungif|-lgif|' \
 		-e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
@@ -82,7 +80,8 @@ post-install:
 		${STAGEDIR}${PREFIX}/man/man1/
 	${INSTALL} ${WRKSRC}/contrib/xmindpath/xmindpath \
 		${STAGEDIR}${PREFIX}/bin/
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && \
 		${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}/
@@ -101,6 +100,5 @@ post-install:
 	cd ${WRKSRC}/contrib && \
 		${INSTALL_SCRIPT} ${SAMPLE_SCRIPTS} \
 		${STAGEDIR}${DOCSDIR}/scripts/
-.endif
 
 .include <bsd.port.mk>

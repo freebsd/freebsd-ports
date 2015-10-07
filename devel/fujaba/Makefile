@@ -15,6 +15,7 @@ USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
+NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/Fujaba\ Tool\ Suite\ ${PORTVERSION}
 
 DATADIRS=	DTDs Templates libs plugins stylesheets
@@ -29,18 +30,16 @@ SUB_LIST=	LOCALBASE="${LOCALBASE}" DATADIR="${DATADIR}"
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/bin
 	${INSTALL_SCRIPT} ${WRKDIR}/fujaba.sh ${STAGEDIR}${DATADIR}/bin
 	${LN} -s ${DATADIR}/bin/fujaba.sh ${STAGEDIR}${PREFIX}/bin/fujaba
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${DATADIRS}" ${STAGEDIR}${DATADIR})
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${DATAFILES} ${STAGEDIR}${DATADIR})
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-.if ${PORT_OPTIONS:MDOCS}
 	${LN} -s ${DOCSDIR} ${STAGEDIR}${DATADIR}/doc
-.endif
 
 .include <bsd.port.mk>

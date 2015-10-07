@@ -1,6 +1,6 @@
---- ./main/lock.c.orig	2010-11-06 15:00:15.000000000 +0100
-+++ ./main/lock.c	2010-11-06 15:00:23.000000000 +0100
-@@ -679,10 +679,6 @@
+--- main/lock.c.orig	2013-09-09 19:56:02 UTC
++++ main/lock.c
+@@ -691,10 +691,6 @@ int __ast_rwlock_init(int tracking, cons
  
  	pthread_rwlockattr_init(&attr);
  

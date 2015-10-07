@@ -2,6 +2,7 @@
 
 PORTNAME=	poppler
 PORTVERSION=	2.2.5
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits rubygems
 MASTER_SITES=	RG
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-Declare
-PORTVERSION=	0.42
+PORTVERSION=	0.43
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,17 +13,18 @@ COMMENT=	Declarative syntax for Moose
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Moose>=0.90:${PORTSDIR}/devel/p5-Moose \
+BUILD_DEPENDS=	p5-Devel-Declare>=0.005011:${PORTSDIR}/devel/p5-Devel-Declare \
+		p5-Module-Runtime>=0:${PORTSDIR}/devel/p5-Module-Runtime \
+		p5-Moose>=0.90:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Method-Signatures>=0.36:${PORTSDIR}/devel/p5-MooseX-Method-Signatures \
 		p5-MooseX-Role-Parameterized>=0.12:${PORTSDIR}/devel/p5-MooseX-Role-Parameterized \
 		p5-MooseX-Types>=0.20:${PORTSDIR}/devel/p5-MooseX-Types \
-		p5-Devel-Declare>=0.005011:${PORTSDIR}/devel/p5-Devel-Declare \
-		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-Module-Runtime>=0:${PORTSDIR}/devel/p5-Module-Runtime \
 		p5-Parse-Method-Signatures>=0:${PORTSDIR}/devel/p5-Parse-Method-Signatures \
+		p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter \
+		p5-Sub-Install>=0:${PORTSDIR}/devel/p5-Sub-Install \
 		p5-aliased>=0:${PORTSDIR}/devel/p5-aliased \
-		p5-namespace-clean>=0.11:${PORTSDIR}/devel/p5-namespace-clean \
-		p5-namespace-autoclean>=0.09:${PORTSDIR}/devel/p5-namespace-autoclean
+		p5-namespace-autoclean>=0.16:${PORTSDIR}/devel/p5-namespace-autoclean \
+		p5-namespace-clean>=0.19:${PORTSDIR}/devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 

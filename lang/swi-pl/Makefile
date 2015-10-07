@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	swi-pl
-PORTVERSION=	6.6.6
+PORTVERSION=	7.2.3
 CATEGORIES=	lang
 MASTER_SITES=	http://www.swi-prolog.org/download/stable/src/
-DISTNAME=	pl-${PORTVERSION}
+DISTNAME=	swipl-${PORTVERSION}
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Edinburgh-style Prolog compiler
@@ -20,7 +20,7 @@ SWIPLDIR=	${PORTNAME:C/-//}-${PORTVERSION}
 
 NOPRECIOUSMAKEVARS=	yes
 USE_XORG=	xft xpm xt
-USES=		gmake jpeg pathfix pkgconfig shebangfix
+USES=		gmake jpeg libarchive pathfix pkgconfig shebangfix
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ARCH=${ARCH}-${OPSYS:tl}
@@ -60,6 +60,8 @@ post-configure:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's!^mandir=@mandir@!mandir=${MANPREFIX}/man!' \
+		-e '/-o $$@ $$(PLOBJ)/s/$$/ $$(LIBS)/' \
+		-e '/ $$(SHAREDV) $$(SONAME)/d' \
 		${WRKSRC}/src/Makefile.in \
 		${WRKSRC}/packages/xpce/src/Makefile.in
 	@${REINPLACE_CMD} -e '/EXAMPLEEXE/s/INSTALL_PROGRAM/INSTALL_SCRIPT/' \

@@ -4,8 +4,8 @@ lib/libp11.so
 lib/libp11.so.2
 lib/libp11.so.2.2.0
 libdata/pkgconfig/libp11.pc
-%%EXAMPLESDIR%%/Makefile
-%%EXAMPLESDIR%%/README
-%%EXAMPLESDIR%%/auth.c
-%%EXAMPLESDIR%%/decrypt.c
-%%EXAMPLESDIR%%/getrandom.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/decrypt.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/getrandom.c

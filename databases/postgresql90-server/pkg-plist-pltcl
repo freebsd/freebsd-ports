@@ -1,9 +1,6 @@
 %%DOCSDIR%%/README-pltcl
 lib/postgresql/pltcl.so
-@dir lib/postgresql
 bin/pltcl_loadmod
 bin/pltcl_delmod
 bin/pltcl_listmod
 %%DATADIR%%/unknown.pltcl
-@dir %%DATADIR%%
-@dir %%DOCSDIR%%

@@ -1,0 +1,11 @@
+#################################
+
+First start the zerotier service:
+
+service zerotier start
+
+To connect to a zerotier network:
+
+zerotier-cli join <network>
+
+#################################

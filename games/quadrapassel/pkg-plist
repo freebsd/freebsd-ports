@@ -530,17 +530,12 @@ share/help/zh_CN/quadrapassel/playgame.page
 share/help/zh_CN/quadrapassel/preferences.page
 share/help/zh_CN/quadrapassel/score.page
 share/help/zh_CN/quadrapassel/translate.page
-share/icons/HighContrast/16x16/apps/quadrapassel.png
-share/icons/HighContrast/22x22/apps/quadrapassel.png
-share/icons/HighContrast/24x24/apps/quadrapassel.png
-share/icons/HighContrast/256x256/apps/quadrapassel.png
-share/icons/HighContrast/32x32/apps/quadrapassel.png
-share/icons/HighContrast/48x48/apps/quadrapassel.png
 share/icons/hicolor/16x16/apps/quadrapassel.png
 share/icons/hicolor/22x22/apps/quadrapassel.png
 share/icons/hicolor/24x24/apps/quadrapassel.png
 share/icons/hicolor/32x32/apps/quadrapassel.png
 share/icons/hicolor/48x48/apps/quadrapassel.png
+share/icons/hicolor/symbolic/apps/quadrapassel-symbolic.svg
 share/icons/hicolor/scalable/apps/quadrapassel.svg
 share/locale/af/LC_MESSAGES/quadrapassel.mo
 share/locale/am/LC_MESSAGES/quadrapassel.mo
@@ -553,6 +548,7 @@ share/locale/bg/LC_MESSAGES/quadrapassel.mo
 share/locale/bn/LC_MESSAGES/quadrapassel.mo
 share/locale/bn_IN/LC_MESSAGES/quadrapassel.mo
 share/locale/br/LC_MESSAGES/quadrapassel.mo
+share/locale/bs/LC_MESSAGES/quadrapassel.mo
 share/locale/ca/LC_MESSAGES/quadrapassel.mo
 share/locale/ca@valencia/LC_MESSAGES/quadrapassel.mo
 share/locale/cs/LC_MESSAGES/quadrapassel.mo

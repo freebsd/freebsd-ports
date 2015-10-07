@@ -2,55 +2,54 @@
 # $FreeBSD$
 
 PORTNAME=	gogglesmm
-PORTVERSION=	0.14.2
+PORTVERSION=	1.0.7
 CATEGORIES=	audio
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Music collection manager and player
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib \
-		libdbus-1.so:${PORTSDIR}/devel/dbus \
-		libGLEW.so:${PORTSDIR}/graphics/glew \
 		libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libFOX-1.7.so:${PORTSDIR}/x11-toolkits/fox17
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	${PORTNAME}
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		compiler:c++0x desktop-file-utils gmake pkgconfig
+USES=		compiler:c++11-lang desktop-file-utils gmake pkgconfig
+USE_GL=		glew
 USE_SQLITE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	LINK="${CXX}" \
 		OPT_CFLAGS="${CXXFLAGS}" \
 		OPT_LDFLAGS="${LDFLAGS}" \
 		RESWRAP="${LOCALBASE}/bin/fox-1.7/reswrap"
-CONFIGURE_ARGS=	--prefix=${PREFIX} --fox-prefix=${LOCALBASE} \
-		--without-rsound --without-mpcdec
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--libdir=${PREFIX}/lib \
+		--fox-prefix=${LOCALBASE} \
+		--without-rsound
 INSTALLS_ICONS=	yes
-
-USE_LDCONFIG=	${PREFIX}/lib/gogglesmm
-
-PORTDOCS=	AUTHORS ChangeLog README
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
-OPTIONS_DEFINE=		ALSA CDIO DOCS FAAD FFMPEG FLAC GCRYPT JACK \
-			MAD MMS NLS OPUS PULSEAUDIO SAMPLERATE SMB TREMOR \
-			VORBIS WAVPACK
-OPTIONS_DEFAULT=	CDIO FAAD FLAC MAD OPUS SAMPLERATE SMB \
+OPTIONS_DEFINE=		ALSA CDIO DBUS DOCS FAAD FFMPEG FLAC GCRYPT JACK \
+			MAD MMS NLS OPUS PULSEAUDIO SAMPLERATE SMB WAVPACK
+OPTIONS_RADIO=		VORBISDEC
+OPTIONS_RADIO_VORBISDEC=	TREMOR VORBIS
+OPTIONS_DEFAULT=	CDIO DBUS FAAD FLAC MAD OPUS SAMPLERATE SMB \
 			VORBIS WAVPACK
 OPTIONS_SUB=		yes
+
+VORBISDEC_DESC=		Vorbis decoder library
 
 ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
 ALSA_CONFIGURE_OFF=	--without-alsa
 CDIO_LIB_DEPENDS=	libcdio.so:${PORTSDIR}/sysutils/libcdio
 CDIO_CONFIGURE_OFF=	--without-cdda
-#DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
-#DBUS_CONFIGURE_OFF=	--without-dbus
+DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
+DBUS_CONFIGURE_OFF=	--without-dbus
 FAAD_LIB_DEPENDS=	libfaad.so:${PORTSDIR}/audio/faad
 FAAD_CONFIGURE_ON=	--faad-prefix=${LOCALBASE}
 FAAD_CONFIGURE_OFF=	--without-faad
@@ -72,7 +71,6 @@ MMS_CONFIGURE_OFF=	--without-mms
 NLS_USES=		gettext
 NLS_LIBS=		-lintl
 NLS_CONFIGURE_OFF=	--without-nls
-OPUS_DESC=		Opus decoding with libopus
 OPUS_LIB_DEPENDS=	libopus.so:${PORTSDIR}/audio/opus
 OPUSE_CONFIGURE_OFF=	--without-opus
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
@@ -85,7 +83,7 @@ SMB_CONFIGURE_OFF=	--without-smb
 TREMOR_LIB_DEPENDS=	libvorbisidec.so:${PORTSDIR}/audio/libtremor
 TREMOR_CONFIGURE_ON=	--with-tremor
 VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
-VORBIS_CONFIGURE_OFF=	--without-off --without-vorbis
+VORBIS_CONFIGURE_OFF=	--without-vorbis
 WAVPACK_LIB_DEPENDS=	libwavpack.so:${PORTSDIR}/audio/wavpack
 WAVPACK_CONFIGURE_OFF=	--without-wavpack
 
@@ -109,11 +107,12 @@ pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
-.endfor
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gogglesmm
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gogglesmm/libgap_*.so
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS ChangeLog README \
+		${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

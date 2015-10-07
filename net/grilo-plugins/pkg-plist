@@ -11,6 +11,7 @@ lib/grilo-0.2/grl-lastfm-albumart.xml
 %%TRACKER%%lib/grilo-0.2/grl-local-metadata.xml
 lib/grilo-0.2/grl-magnatune.xml
 lib/grilo-0.2/grl-metadata-store.xml
+lib/grilo-0.2/grl-opensubtitles.xml
 lib/grilo-0.2/grl-optical-media.xml
 lib/grilo-0.2/grl-pocket.xml
 lib/grilo-0.2/grl-podcasts.xml
@@ -33,6 +34,7 @@ lib/grilo-0.2/libgrllastfm-albumart.so
 %%TRACKER%%lib/grilo-0.2/libgrllocalmetadata.so
 lib/grilo-0.2/libgrlmagnatune.so
 lib/grilo-0.2/libgrlmetadatastore.so
+lib/grilo-0.2/libgrlopensubtitles.so
 lib/grilo-0.2/libgrloptical-media.so
 lib/grilo-0.2/libgrlpocket.so
 lib/grilo-0.2/libgrlpodcasts.so
@@ -75,6 +77,8 @@ share/locale/sk/LC_MESSAGES/grilo-plugins.mo
 share/locale/sl/LC_MESSAGES/grilo-plugins.mo
 share/locale/sr/LC_MESSAGES/grilo-plugins.mo
 share/locale/sr@latin/LC_MESSAGES/grilo-plugins.mo
+share/locale/sv/LC_MESSAGES/grilo-plugins.mo
+share/locale/tr/LC_MESSAGES/grilo-plugins.mo
 share/locale/uk/LC_MESSAGES/grilo-plugins.mo
 share/locale/zh_CN/LC_MESSAGES/grilo-plugins.mo
 share/locale/zh_HK/LC_MESSAGES/grilo-plugins.mo

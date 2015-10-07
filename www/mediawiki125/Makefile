@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.25.1
+PORTVERSION=	1.25.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://releases.wikimedia.org/mediawiki/${PORTVERSION:R}/
 PKGNAMESUFFIX=	125
@@ -18,6 +19,7 @@ USES=		shebangfix
 SHEBANG_FILES=	maintenance/dev/*.sh \
 		maintenance/hiphop/run-server \
 		vendor/leafo/lessphp/lessify \
+		vendor/ruflin/elastica/test/bin/*.sh \
 		maintenance/postgres/*.pl \
 		maintenance/storage/make-blobs \
 		includes/limit.sh
@@ -34,54 +36,33 @@ PLIST=		${WRKDIR}/plist
 SUB_FILES=	pkg-message
 SUB_LIST=	MEDIAWIKIDIR=${PREFIX}/${MEDIAWIKIDIR}
 
-OPTIONS_DEFINE=	MYSQL PGSQL SQLITE LDAP MEMCACHED APC EACCEL XCACHE IMAGICK
-OPTIONS_DEFAULT=MYSQL
+OPTIONS_DEFINE=		LDAP MEMCACHED IMAGICK SOCKETS
+OPTIONS_SINGLE=		DB
+OPTIONS_SINGLE_DB=	MYSQL PGSQL SQLITE
+OPTIONS_RADIO=		ACCEL
+OPTIONS_RADIO_ACCEL=	APC XCACHE
+OPTIONS_DEFAULT=	MYSQL SOCKETS
 
 MEMCACHED_DESC=	Use memcached
 APC_DESC=	Use pecl-APC (Mediawiki recommended)
-EACCEL_DESC=	Use eAccelerator (instead of pecl-APC)
 XCACHE_DESC=	Use xCache (instead of pecl-APC)
 IMAGICK_DESC=	Use ImageMagick
+SOCKETS_DESC=	Use sockets
 
-.include <bsd.port.options.mk>
+MYSQL_USE=	mysql=client php=mysql
+PGSQL_USE=	php=pgsql
+SQLITE_USE=	php=sqlite3
+LDAP_USE=	php=ldap
+SOCKETS_USE=	php=sockets
 
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	client
-USE_PHP+=	mysql
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PHP+=	pgsql
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE}
-USE_PHP+=	sqlite3
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-USE_PHP+=	ldap
-.endif
-
-.if ${PORT_OPTIONS:MMEMCACHED}
-RUN_DEPENDS=	memcached:${PORTSDIR}/databases/memcached
-.endif
-
-.if ${PORT_OPTIONS:MIMAGICK}
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:${PORTSDIR}/graphics/pecl-imagick
-.endif
-
-.if ${PORT_OPTIONS:MAPC}
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/apc.so:${PORTSDIR}/www/pecl-APC
-.elif ${PORT_OPTIONS:MEACCEL}
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/eaccelerator.so:${PORTSDIR}/www/eaccelerator
-.elif ${PORT_OPTIONS:MXCACHE}
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xcache.so:${PORTSDIR}/www/xcache
-.endif
+MEMCACHED_RUN_DEPENDS=	memcached:${PORTSDIR}/databases/memcached
+IMAGICK_RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:${PORTSDIR}/graphics/pecl-imagick
+APC_RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/apc.so:${PORTSDIR}/www/pecl-APC
+XCACHE_RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xcache.so:${PORTSDIR}/www/xcache
 
 pre-install:
 	@${FIND} -s -d ${WRKSRC} -not -type d | ${SED} "s?${WRKSRC}?${MEDIAWIKIDIR}?g" >>${PLIST}
-	@${ECHO} "@dir %%WWWDIR%%/vendor/zordius/lightncandy/specs/handlebars" >> ${PLIST}
-	@${ECHO} "@dir %%WWWDIR%%/vendor/zordius/lightncandy/specs/mustache" >> ${PLIST}
+	@${ECHO} "@dir %%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/Fixtures" >> ${PLIST}
 	@${ECHO} @dir ${MEDIAWIKIDIR} >> ${PLIST}
 
 do-install:

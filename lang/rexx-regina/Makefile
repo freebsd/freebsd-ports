@@ -26,13 +26,11 @@ EXAMPLESDIR=	${PREFIX}/share/examples/Regina-REXX
 
 CONFLICTS=	rexx-imc-[0-0]* oorexx-[0-9]*
 
-BROKEN_powerpc=	Does not link on powerpc
-
 OPTIONS_DEFINE=	EXAMPLES
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == i386
+.if ${ARCH} == i386 || ${ARCH} == powerpc
 CONFIGURE_ARGS+=	--enable-32bit
 .endif
 

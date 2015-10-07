@@ -3,6 +3,7 @@
 
 PORTNAME=	charm
 PORTVERSION=	1.9.2
+PORTREVISION=	1
 CATEGORIES=	deskutils net
 MASTER_SITES=	SF/lj${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -10,23 +11,24 @@ MAINTAINER=	seawolf@marinewolf.net
 COMMENT=	Menu-driven python-based livejournal client
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python:2
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-post-patch:
-	${REINPLACE_CMD} -e 's,share/doc/charm,${DOCSDIR},' ${WRKSRC}/setup.py
-	${REINPLACE_CMD} -e 's,1.9.1,1.9.2,' ${WRKSRC}/setup.py
-
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/CHANGES.charm ${STAGEDIR}${DOCSDIR}/CHANGES
 	${INSTALL_DATA} ${WRKSRC}/README.charm ${STAGEDIR}${DOCSDIR}/README
+	${INSTALL_DATA} ${WRKSRC}/charm.html ${STAGEDIR}${DOCSDIR}/
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/sample.charmrc ${STAGEDIR}${EXAMPLESDIR}
 

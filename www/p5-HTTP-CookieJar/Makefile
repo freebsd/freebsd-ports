@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTTP-CookieJar
-PORTVERSION=	0.006
-PORTREVISION=	1
+PORTVERSION=	0.007
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,9 +18,9 @@ TEST_DEPENDS=	p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
 		p5-Mozilla-PublicSuffix>=0:${PORTSDIR}/dns/p5-Mozilla-PublicSuffix \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
-		p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple \
-		p5-Time-Mock>=0:${PORTSDIR}/devel/p5-Time-Mock
+		p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

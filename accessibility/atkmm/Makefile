@@ -1,6 +1,5 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/accessibility/atkmm/Makefile 19865 2014-09-14 12:34:28Z kwm $
 
 PORTNAME=	atkmm
 PORTVERSION=	2.22.7
@@ -9,6 +8,8 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ wrapper for ATK API library
+
+PORTSCOUT=	limitw:1,even
 
 USES=		gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	atk glibmm

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	serpent
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,8 @@ COMMENT=	Simple serialization library based on ast.literal_eval
 
 LICENSE=	MIT
 
-USES=		python
+NO_ARCH=	yes
+USES=		dos2unix python
 USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>

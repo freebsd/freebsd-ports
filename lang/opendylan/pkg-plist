@@ -5328,3 +5328,5 @@ bin/parser-compiler
 %%DATADIR%%/sources/win32/win32-version/win32-version.lid
 %%DATADIR%%/sources/win32/win32-version/winver.dylan
 %%PORTDOCS%%%%DOCSDIR%%/README
+@dir %%DATADIR%%/sources/qa/testworks/documentation/sphinx-extensions
+@dir %%DATADIR%%/sources/app/dlp

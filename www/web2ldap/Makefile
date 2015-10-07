@@ -3,7 +3,7 @@
 
 PORTNAME=	web2ldap
 PORTVERSION=	1.2.19
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.web2ldap.de/download/ \
 		http://www.sfr-fresh.com/unix/www/ \
@@ -23,12 +23,15 @@ OPTIONS_DEFINE=	DOCS
 USES=		cpe python:2 shebangfix
 SHEBANG_FILES=	sbin/*.py fcgi/*.py
 SUB_FILES=	pkg-message
+NO_ARCH=	yes
 
 PORTDOCS=	*
 PORTDATA=	*
 PLIST_DIRS=	%%DATADIR%%/var/log %%DATADIR%%/var/run
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|/opt/fcgi/bin/cgi-fcgi|${LOCALBASE}/bin/cgi-fcgi|g' \
+		${WRKSRC}/cgi-bin/web2ldap.cgi
 	@${REINPLACE_CMD} -e 's|/etc|${LOCALBASE}/etc|g' \
 			  -e 's|nobody|web2ldap|g' \
 		${WRKSRC}/etc/web2ldap/web2ldapcnf/standalone.py

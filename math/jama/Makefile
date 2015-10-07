@@ -7,7 +7,8 @@ CATEGORIES=	math devel
 MASTER_SITES=	http://math.nist.gov/tnt/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 DIST_SUBDIR=	tnt
-EXTRACT_ONLY=
+EXTRACT_ONLY=	# empty
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Java-like Matrix C++ Templates
@@ -20,17 +21,15 @@ NO_BUILD=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-DISTFILES=${DISTNAME}${EXTRACT_SUFX} jama102doc.zip
-.endif
+DOCS_DISTFILES=	jama102doc.zip
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/tnt
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} \
 		-d ${STAGEDIR}${PREFIX}/include/tnt
 	${MKDIR} ${WRKDIR}/doc ${STAGEDIR}${DOCSDIR}
+
+do-install-DOCS-on:
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DIST_SUBDIR}/jama102doc.zip \
 		-d ${WRKDIR}/doc
 	(cd ${WRKDIR}/doc/doxygen && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})

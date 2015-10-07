@@ -3,7 +3,7 @@
 
 PORTNAME=	libskk
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	https://bitbucket.org/libskk/libskk/downloads/
 

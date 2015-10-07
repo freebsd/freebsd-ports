@@ -1,5 +1,5 @@
---- src/plugins/file/wscript.orig	2011-10-20 21:26:08.000000000 +0200
-+++ src/plugins/file/wscript	2012-05-04 23:01:58.940585349 +0200
+--- src/plugins/file/wscript.orig	2011-10-20 19:26:08 UTC
++++ src/plugins/file/wscript
 @@ -1,7 +1,7 @@
  from waftools.plugin import plugin
  
@@ -9,7 +9,7 @@
          obj.source.append('browse/fstatat.c')
      else:
          obj.source.append('browse/gdir.c')
-@@ -9,7 +9,6 @@
+@@ -9,7 +9,6 @@ def plugin_build(bld, obj):
  def plugin_configure(conf):
      conf.check_cc(function_name='fstatat', header_name=['fcntl.h','sys/stat.h'],
              defines=['_ATFILE_SOURCE=1'])

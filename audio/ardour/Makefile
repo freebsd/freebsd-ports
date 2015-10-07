@@ -3,6 +3,7 @@
 
 PORTNAME=	ardour
 PORTVERSION=	2.8.16
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://freebsd.nsu.ru/distfiles/
 
@@ -14,14 +15,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	liblo.so:${PORTSDIR}/audio/liblo \
 		liblrdf.so:${PORTSDIR}/textproc/liblrdf \
+		libjack.so:${PORTSDIR}/audio/jack \
 		libaubio.so:${PORTSDIR}/audio/aubio \
 		libfftw3.so:${PORTSDIR}/math/fftw3 \
+		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
 		libboost_date_time.so:${PORTSDIR}/devel/boost-libs \
 		libgnomecanvasmm-2.6.so:${PORTSDIR}/graphics/libgnomecanvasmm26
 
 USES=		cpe gettext scons pkgconfig tar:bzip2
 MAKE_ARGS+=	SYSLIBS=yes PREFIX=${PREFIX} NLS=yes
-CFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include -DHAVE_AUBIO4
 USE_GNOME=	libxslt
 USE_LDCONFIG=	${PREFIX}/lib/ardour2 ${PREFIX}/lib/ardour2/surfaces
 

@@ -1,4 +1,4 @@
 bin/fpdns
-man/man1/fpdns.1.gz
+%%PERL5_MAN1%%/fpdns.1.gz
 %%SITE_PERL%%/Net/DNS/Fingerprint.pm
 %%SITE_PERL%%/Net/DNS/REPLACE

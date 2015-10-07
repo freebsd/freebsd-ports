@@ -17,6 +17,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Astro-PAL>=0.99:${PORTSDIR}/astro/p5-Astro-PAL
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USE_PERL5=	modbuild
 USES=		perl5
 

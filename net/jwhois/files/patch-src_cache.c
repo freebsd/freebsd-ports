@@ -1,6 +1,6 @@
---- src/cache.c.dist	Sun Dec 19 06:46:53 1999
-+++ src/cache.c	Sat Jul 15 22:52:06 2000
-@@ -119,7 +119,7 @@
+--- src/cache.c.orig	2007-06-26 06:58:30 UTC
++++ src/cache.c
+@@ -122,7 +122,7 @@ cache_init(void)
    jconfig_set();
    j = jconfig_getone("jwhois", "cachefile");
    if (!j)

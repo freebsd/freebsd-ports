@@ -16,4 +16,4 @@ bin/ack
 %%SITE_PERL%%/App/Ack/Resource.pm
 %%SITE_PERL%%/App/Ack/Resource/Basic.pm
 %%SITE_PERL%%/App/Ack/Resources.pm
-man/man1/ack.1.gz
+%%PERL5_MAN1%%/ack.1.gz

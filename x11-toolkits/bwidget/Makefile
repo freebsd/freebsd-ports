@@ -18,9 +18,8 @@ OPTIONS_DEFINE=	DOCS
 
 USES=		tk:run zip
 NO_BUILD=	yes
+NO_ARCH=	yes
 PORTDOCS=	*
-
-.include <bsd.port.options.mk>
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/bwidget/images
@@ -29,12 +28,12 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.tcl ${STAGEDIR}${PREFIX}/lib/bwidget
 	cd ${WRKSRC}/images && ${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/lib/bwidget/images
 	cd ${WRKSRC}/lang && ${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/lib/bwidget/lang
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/BWman
 	${INSTALL_DATA} ${WRKSRC}/BWman/*.html ${STAGEDIR}${DOCSDIR}/BWman
-. for FILE in CHANGES.txt ChangeLog README.txt
+.for FILE in CHANGES.txt ChangeLog README.txt
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}/${FILE}
-. endfor
-.endif
+.endfor
 
 .include <bsd.port.mk>

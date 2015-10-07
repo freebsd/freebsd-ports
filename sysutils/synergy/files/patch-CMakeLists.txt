@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2015-05-26 15:56:21 UTC
-+++ CMakeLists.txt
-@@ -74,10 +74,6 @@ endif()
+--- CMakeLists.txt.orig	2015-05-26 23:56:21.000000000 +0800
++++ CMakeLists.txt	2015-08-03 14:02:26.524577000 +0800
+@@ -74,10 +74,6 @@
  # Depending on the platform, pass in the required defines.
  if (UNIX)
  

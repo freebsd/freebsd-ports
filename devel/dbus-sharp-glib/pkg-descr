@@ -1,4 +1,4 @@
 This is a fork of ndesk-dbus-glib, which provides GLib main loop integration
 for Managed D-Bus.
 
-WWW:	http://mono.github.com/dbus-sharp/
+WWW: http://mono.github.com/dbus-sharp/

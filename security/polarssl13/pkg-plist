@@ -2,11 +2,13 @@ bin/mbedtls_aescrypt2
 bin/mbedtls_benchmark
 bin/mbedtls_cert_app
 bin/mbedtls_cert_req
+bin/mbedtls_cert_write
 bin/mbedtls_crl_app
 bin/mbedtls_crypt_and_hash
 bin/mbedtls_dh_client
 bin/mbedtls_dh_genprime
 bin/mbedtls_dh_server
+bin/mbedtls_ecdsa
 bin/mbedtls_gen_entropy
 bin/mbedtls_gen_key
 bin/mbedtls_gen_random_ctr_drbg
@@ -23,6 +25,7 @@ bin/mbedtls_pk_decrypt
 bin/mbedtls_pk_encrypt
 bin/mbedtls_pk_sign
 bin/mbedtls_pk_verify
+bin/mbedtls_req_app
 bin/mbedtls_rsa_decrypt
 bin/mbedtls_rsa_encrypt
 bin/mbedtls_rsa_genkey
@@ -46,11 +49,13 @@ bin/polarssl_aescrypt2
 bin/polarssl_benchmark
 bin/polarssl_cert_app
 bin/polarssl_cert_req
+bin/polarssl_cert_write
 bin/polarssl_crl_app
 bin/polarssl_crypt_and_hash
 bin/polarssl_dh_client
 bin/polarssl_dh_genprime
 bin/polarssl_dh_server
+bin/polarssl_ecdsa
 bin/polarssl_gen_entropy
 bin/polarssl_gen_key
 bin/polarssl_gen_random_ctr_drbg
@@ -67,6 +72,7 @@ bin/polarssl_pk_decrypt
 bin/polarssl_pk_encrypt
 bin/polarssl_pk_sign
 bin/polarssl_pk_verify
+bin/polarssl_req_app
 bin/polarssl_rsa_decrypt
 bin/polarssl_rsa_encrypt
 bin/polarssl_rsa_genkey

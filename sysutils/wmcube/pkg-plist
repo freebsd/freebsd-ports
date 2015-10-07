@@ -1,4 +1,4 @@
-@(,kmem,) bin/wmcube
+@(,kmem,2755) bin/wmcube
 %%DATADIR%%/2planes-solid.wmc
 %%DATADIR%%/4d.wmc
 %%DATADIR%%/8star-small.wmc

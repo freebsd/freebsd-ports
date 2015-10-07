@@ -17,6 +17,7 @@ BUILD_DEPENDS=	p5-Moo>=1.003001:${PORTSDIR}/devel/p5-Moo \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5 tar:tgz
 

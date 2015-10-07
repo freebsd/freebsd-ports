@@ -2,7 +2,7 @@
 
 PORTNAME=	postgis
 PORTVERSION=	2.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases geography
 MASTER_SITES=	http://download.osgeo.org/postgis/source/
 PKGNAMESUFFIX=	20
@@ -47,6 +47,7 @@ SHEBANG_FILES=	astyle.sh \
 		extras/tiger_geocoder/tiger_2010/legacy_import/tiger2008/import_tiger_shps.sh \
 		extras/tiger_geocoder/tiger_2010/upgrade_geocoder.sh \
 		raster/test/regress/testgdalraster \
+		utils/postgis_restore.pl.in \
 		utils/uninstall_script
 
 LOADERGUI_CONFIGURE_WITH=	gui
@@ -58,16 +59,10 @@ RASTER_CONFIGURE_ON=	--with-gdalconfig=${LOCALBASE}/bin/gdal-config --with-raste
 RASTER_LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal
 TOPOLOGY_CONFIGURE_WITH=topology
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MRASTER} && ${OSVERSION} < 900033
-BROKEN=		Raster support is broken on FreeBSD 8.x
-.endif
-
 post-install:
 	${MKDIR} ${STAGEDIR}/${DATADIR}/utils/ ${STAGEDIR}/${DATADIR}/tiger_2010/
 	cd ${WRKSRC}/utils/ && ${COPYTREE_SHARE} . ${STAGEDIR}/${DATADIR}/utils/
 	cd ${WRKSRC}/extras/tiger_geocoder/tiger_2010/ && ${COPYTREE_SHARE} . ${STAGEDIR}/${DATADIR}/tiger_2010/
 	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/* ${STAGEDIR}/${PREFIX}/lib/*.so ${STAGEDIR}/${PREFIX}/lib/postgresql/*.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

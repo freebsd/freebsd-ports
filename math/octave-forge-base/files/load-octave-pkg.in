@@ -240,3 +240,8 @@ foreach my $p (@ordered_list_to_install) {
   print "load-octave-pkg: octave is installing $p.\n";
   system "octave -H -q --no-site-file --eval \"pkg('install','$tardir/$p')\" > /dev/null\n";
 }
+
+# Remove directories that may have been left behind by the octave packaging
+# process.
+
+rmdir "$prefix/lib/octave/packages";

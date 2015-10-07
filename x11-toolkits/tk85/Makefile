@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	--enable-shared \
 
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR} TK_LIB_FILE=libtk${SHORT_TK_VER}.so.1 \
 		ac_cv_path_tclsh="${LOCALBASE}/bin/tclsh${TK_VER}"
-MAN_SUFFIX=	${LATEST_LINK}
+MAN_SUFFIX=	${PKGBASE}
 
 INSTALL_TARGET=	install
 
@@ -73,7 +73,7 @@ PLIST_SUB+=	MAN=""
 PLIST_SUB+=	MAN="@comment "
 .endif
 
-TKBASE?=	${PORTSDIR}/${PKGCATEGORY}/${LATEST_LINK}
+TKBASE?=	${PORTSDIR}/${PKGCATEGORY}/${PKGBASE}
 
 post-patch:
 	${REINPLACE_CMD} -e \

@@ -1,4 +1,5 @@
 bin/function_grep.pl
+%%STAGING%%bin/msidb
 bin/msiexec
 bin/notepad
 bin/regedit
@@ -202,6 +203,8 @@ include/wine/windows/d3drmobj.h
 include/wine/windows/d3drmwin.h
 include/wine/windows/d3dtypes.h
 include/wine/windows/d3dvec.inl
+%%STAGING%%include/wine/windows/d3dx10core.h
+%%STAGING%%include/wine/windows/d3dx10core.idl
 include/wine/windows/d3dx9.h
 include/wine/windows/d3dx9anim.h
 include/wine/windows/d3dx9core.h
@@ -213,6 +216,7 @@ include/wine/windows/d3dx9shader.h
 include/wine/windows/d3dx9shape.h
 include/wine/windows/d3dx9tex.h
 include/wine/windows/d3dx9xof.h
+include/wine/windows/davclnt.h
 include/wine/windows/dbccmd.idl
 include/wine/windows/dbcses.idl
 include/wine/windows/dbdsad.idl
@@ -326,6 +330,7 @@ include/wine/windows/gameux.idl
 include/wine/windows/gdiplus.h
 include/wine/windows/gdipluscolor.h
 include/wine/windows/gdipluscolormatrix.h
+%%STAGING%%include/wine/windows/gdipluseffects.h
 include/wine/windows/gdiplusenums.h
 include/wine/windows/gdiplusflat.h
 include/wine/windows/gdiplusgpstubs.h
@@ -364,6 +369,8 @@ include/wine/windows/iextag.h
 include/wine/windows/iextag.idl
 include/wine/windows/ifdef.h
 include/wine/windows/ifmib.h
+include/wine/windows/iimgctx.h
+include/wine/windows/iimgctx.idl
 include/wine/windows/imagehlp.h
 include/wine/windows/imm.h
 include/wine/windows/imnact.h
@@ -379,6 +386,8 @@ include/wine/windows/inputscope.h
 include/wine/windows/inputscope.idl
 include/wine/windows/inseng.h
 include/wine/windows/inseng.idl
+include/wine/windows/inspectable.h
+include/wine/windows/inspectable.idl
 include/wine/windows/intshcut.h
 include/wine/windows/ipexport.h
 include/wine/windows/iphlpapi.h
@@ -428,6 +437,8 @@ include/wine/windows/metahost.h
 include/wine/windows/metahost.idl
 include/wine/windows/mfapi.h
 include/wine/windows/mferror.h
+include/wine/windows/mfobjects.h
+include/wine/windows/mfobjects.idl
 include/wine/windows/midles.h
 include/wine/windows/mimeinfo.h
 include/wine/windows/mimeinfo.idl
@@ -496,6 +507,7 @@ include/wine/windows/netcon.h
 include/wine/windows/netcon.idl
 include/wine/windows/netfw.h
 include/wine/windows/netfw.idl
+include/wine/windows/netioapi.h
 include/wine/windows/netlistmgr.h
 include/wine/windows/netlistmgr.idl
 include/wine/windows/nldef.h
@@ -655,6 +667,7 @@ include/wine/windows/tapi.h
 include/wine/windows/taskschd.h
 include/wine/windows/taskschd.idl
 include/wine/windows/tchar.h
+include/wine/windows/tcpestats.h
 include/wine/windows/tcpmib.h
 include/wine/windows/textserv.h
 include/wine/windows/textstor.h
@@ -709,6 +722,8 @@ include/wine/windows/wbemdisp.h
 include/wine/windows/wbemdisp.idl
 include/wine/windows/wbemprov.h
 include/wine/windows/wbemprov.idl
+include/wine/windows/wct.h
+include/wine/windows/webservices.h
 include/wine/windows/werapi.h
 include/wine/windows/wfext.h
 include/wine/windows/wia.h
@@ -726,6 +741,8 @@ include/wine/windows/wincred.h
 include/wine/windows/wincrypt.h
 include/wine/windows/windef.h
 include/wine/windows/windns.h
+include/wine/windows/windows.foundation.h
+include/wine/windows/windows.foundation.idl
 include/wine/windows/windows.h
 include/wine/windows/windowsx.h
 include/wine/windows/winerror.h
@@ -787,8 +804,13 @@ include/wine/windows/wtypes.h
 include/wine/windows/wtypes.idl
 include/wine/windows/wuapi.h
 include/wine/windows/wuapi.idl
+include/wine/windows/x3daudio.h
+include/wine/windows/xapo.h
+include/wine/windows/xapo.idl
 include/wine/windows/xaudio2.h
 include/wine/windows/xaudio2.idl
+include/wine/windows/xaudio2fx.h
+include/wine/windows/xaudio2fx.idl
 include/wine/windows/xcmc.h
 include/wine/windows/xinput.h
 include/wine/windows/xmldom.h
@@ -891,6 +913,21 @@ lib/wine/api-ms-win-core-winrt-error-l1-1-1.dll.so
 lib/wine/api-ms-win-core-winrt-l1-1-0.dll.so
 lib/wine/api-ms-win-core-winrt-string-l1-1-0.dll.so
 lib/wine/api-ms-win-core-xstate-l2-1-0.dll.so
+%%STAGING%%lib/wine/api-ms-win-crt-conio-l1-1-0.dll.so
+%%STAGING%%lib/wine/api-ms-win-crt-convert-l1-1-0.dll.so
+%%STAGING%%lib/wine/api-ms-win-crt-environment-l1-1-0.dll.so
+%%STAGING%%lib/wine/api-ms-win-crt-filesystem-l1-1-0.dll.so
+%%STAGING%%lib/wine/api-ms-win-crt-heap-l1-1-0.dll.so
+%%STAGING%%lib/wine/api-ms-win-crt-locale-l1-1-0.dll.so
+%%STAGING%%lib/wine/api-ms-win-crt-math-l1-1-0.dll.so
+%%STAGING%%lib/wine/api-ms-win-crt-multibyte-l1-1-0.dll.so
+%%STAGING%%lib/wine/api-ms-win-crt-private-l1-1-0.dll.so
+%%STAGING%%lib/wine/api-ms-win-crt-process-l1-1-0.dll.so
+%%STAGING%%lib/wine/api-ms-win-crt-runtime-l1-1-0.dll.so
+%%STAGING%%lib/wine/api-ms-win-crt-stdio-l1-1-0.dll.so
+%%STAGING%%lib/wine/api-ms-win-crt-string-l1-1-0.dll.so
+%%STAGING%%lib/wine/api-ms-win-crt-time-l1-1-0.dll.so
+%%STAGING%%lib/wine/api-ms-win-crt-utility-l1-1-0.dll.so
 lib/wine/api-ms-win-downlevel-advapi32-l1-1-0.dll.so
 lib/wine/api-ms-win-downlevel-advapi32-l2-1-0.dll.so
 lib/wine/api-ms-win-downlevel-normaliz-l1-1-0.dll.so
@@ -1060,6 +1097,7 @@ lib/wine/dxdiagn.dll.so
 lib/wine/dxgi.dll.so
 lib/wine/dxva2.dll.so
 lib/wine/eject.exe.so
+lib/wine/esent.dll.so
 lib/wine/evr.dll.so
 lib/wine/expand.exe.so
 lib/wine/explorer.exe.so
@@ -1133,6 +1171,21 @@ lib/wine/fakedlls/api-ms-win-core-winrt-error-l1-1-1.dll
 lib/wine/fakedlls/api-ms-win-core-winrt-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-winrt-string-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-xstate-l2-1-0.dll
+%%STAGING%%lib/wine/fakedlls/api-ms-win-crt-conio-l1-1-0.dll
+%%STAGING%%lib/wine/fakedlls/api-ms-win-crt-convert-l1-1-0.dll
+%%STAGING%%lib/wine/fakedlls/api-ms-win-crt-environment-l1-1-0.dll
+%%STAGING%%lib/wine/fakedlls/api-ms-win-crt-filesystem-l1-1-0.dll
+%%STAGING%%lib/wine/fakedlls/api-ms-win-crt-heap-l1-1-0.dll
+%%STAGING%%lib/wine/fakedlls/api-ms-win-crt-locale-l1-1-0.dll
+%%STAGING%%lib/wine/fakedlls/api-ms-win-crt-math-l1-1-0.dll
+%%STAGING%%lib/wine/fakedlls/api-ms-win-crt-multibyte-l1-1-0.dll
+%%STAGING%%lib/wine/fakedlls/api-ms-win-crt-private-l1-1-0.dll
+%%STAGING%%lib/wine/fakedlls/api-ms-win-crt-process-l1-1-0.dll
+%%STAGING%%lib/wine/fakedlls/api-ms-win-crt-runtime-l1-1-0.dll
+%%STAGING%%lib/wine/fakedlls/api-ms-win-crt-stdio-l1-1-0.dll
+%%STAGING%%lib/wine/fakedlls/api-ms-win-crt-string-l1-1-0.dll
+%%STAGING%%lib/wine/fakedlls/api-ms-win-crt-time-l1-1-0.dll
+%%STAGING%%lib/wine/fakedlls/api-ms-win-crt-utility-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-downlevel-advapi32-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-downlevel-advapi32-l2-1-0.dll
 lib/wine/fakedlls/api-ms-win-downlevel-normaliz-l1-1-0.dll
@@ -1302,6 +1355,7 @@ lib/wine/fakedlls/dxdiagn.dll
 lib/wine/fakedlls/dxgi.dll
 lib/wine/fakedlls/dxva2.dll
 lib/wine/fakedlls/eject.exe
+lib/wine/fakedlls/esent.dll
 lib/wine/fakedlls/evr.dll
 lib/wine/fakedlls/expand.exe
 lib/wine/fakedlls/explorer.exe
@@ -1401,6 +1455,7 @@ lib/wine/fakedlls/mscoree.dll
 lib/wine/fakedlls/msctf.dll
 lib/wine/fakedlls/msctfp.dll
 lib/wine/fakedlls/msdaps.dll
+lib/wine/fakedlls/msdelta.dll
 lib/wine/fakedlls/msdmo.dll
 lib/wine/fakedlls/msftedit.dll
 lib/wine/fakedlls/msg711.acm
@@ -1409,6 +1464,7 @@ lib/wine/fakedlls/mshta.exe
 lib/wine/fakedlls/mshtml.dll
 lib/wine/fakedlls/mshtml.tlb
 lib/wine/fakedlls/msi.dll
+%%STAGING%%lib/wine/fakedlls/msidb.exe
 lib/wine/fakedlls/msident.dll
 lib/wine/fakedlls/msiexec.exe
 lib/wine/fakedlls/msimg32.dll
@@ -1603,6 +1659,7 @@ lib/wine/fakedlls/traffic.dll
 %%WINE32%%lib/wine/fakedlls/twain.dll16
 lib/wine/fakedlls/twain_32.dll
 %%WINE32%%lib/wine/fakedlls/typelib.dll16
+%%STAGING%%lib/wine/fakedlls/ucrtbase.dll
 lib/wine/fakedlls/unicows.dll
 lib/wine/fakedlls/uninstaller.exe
 lib/wine/fakedlls/unlodctr.exe
@@ -1618,7 +1675,9 @@ lib/wine/fakedlls/uxtheme.dll
 lib/wine/fakedlls/vbscript.dll
 lib/wine/fakedlls/vcomp.dll
 lib/wine/fakedlls/vcomp100.dll
+lib/wine/fakedlls/vcomp110.dll
 lib/wine/fakedlls/vcomp90.dll
+%%STAGING%%lib/wine/fakedlls/vcruntime140.dll
 %%WINE32%%lib/wine/fakedlls/vdhcp.vxd
 lib/wine/fakedlls/vdmdbg.dll
 %%WINE32%%lib/wine/fakedlls/ver.dll16
@@ -1715,7 +1774,7 @@ lib/wine/fakedlls/xapofx1_1.dll
 lib/wine/fakedlls/xapofx1_3.dll
 lib/wine/fakedlls/xapofx1_4.dll
 lib/wine/fakedlls/xapofx1_5.dll
-lib/wine/fakedlls/xaudio2_7.dll
+lib/wine/fakedlls/xaudio2_8.dll
 lib/wine/fakedlls/xcopy.exe
 lib/wine/fakedlls/xinput1_1.dll
 lib/wine/fakedlls/xinput1_2.dll
@@ -1810,6 +1869,7 @@ lib/wine/libd2d1.def
 lib/wine/libd3d10.def
 lib/wine/libd3d10_1.def
 lib/wine/libd3d10core.def
+lib/wine/libd3d11.def
 lib/wine/libd3d8.def
 lib/wine/libd3d9.def
 lib/wine/libd3dcompiler.def
@@ -1935,7 +1995,7 @@ lib/wine/libuserenv.def
 lib/wine/libusp10.def
 lib/wine/libuuid.a
 lib/wine/libuxtheme.def
-%%STAGING%%lib/wine/libvcomp.def
+%%STAGING%%lib/wine/libvcruntime140.def
 lib/wine/libvdmdbg.def
 lib/wine/libversion.def
 lib/wine/libwebservices.def
@@ -2002,6 +2062,7 @@ lib/wine/mscoree.dll.so
 lib/wine/msctf.dll.so
 lib/wine/msctfp.dll.so
 lib/wine/msdaps.dll.so
+lib/wine/msdelta.dll.so
 lib/wine/msdmo.dll.so
 lib/wine/msftedit.dll.so
 lib/wine/msg711.acm.so
@@ -2010,6 +2071,7 @@ lib/wine/mshta.exe.so
 lib/wine/mshtml.dll.so
 lib/wine/mshtml.tlb.so
 lib/wine/msi.dll.so
+%%STAGING%%lib/wine/msidb.exe.so
 lib/wine/msident.dll.so
 lib/wine/msiexec.exe.so
 lib/wine/msimg32.dll.so
@@ -2204,6 +2266,7 @@ lib/wine/traffic.dll.so
 %%WINE32%%lib/wine/twain.dll16.so
 lib/wine/twain_32.dll.so
 %%WINE32%%lib/wine/typelib.dll16.so
+%%STAGING%%lib/wine/ucrtbase.dll.so
 lib/wine/unicows.dll.so
 lib/wine/uninstaller.exe.so
 lib/wine/unlodctr.exe.so
@@ -2219,7 +2282,9 @@ lib/wine/uxtheme.dll.so
 lib/wine/vbscript.dll.so
 lib/wine/vcomp.dll.so
 lib/wine/vcomp100.dll.so
+lib/wine/vcomp110.dll.so
 lib/wine/vcomp90.dll.so
+%%STAGING%%lib/wine/vcruntime140.dll.so
 %%WINE32%%lib/wine/vdhcp.vxd.so
 lib/wine/vdmdbg.dll.so
 %%WINE32%%lib/wine/ver.dll16.so
@@ -2316,7 +2381,7 @@ lib/wine/xapofx1_1.dll.so
 lib/wine/xapofx1_3.dll.so
 lib/wine/xapofx1_4.dll.so
 lib/wine/xapofx1_5.dll.so
-lib/wine/xaudio2_7.dll.so
+lib/wine/xaudio2_8.dll.so
 lib/wine/xcopy.exe.so
 lib/wine/xinput1_1.dll.so
 lib/wine/xinput1_2.dll.so
@@ -2365,6 +2430,7 @@ share/applications/wine.desktop
 %%STAGING%%%%X11%%%%DATADIR%%/fonts/arial.ttf
 %%STAGING%%%%X11%%%%DATADIR%%/fonts/cour.ttf
 %%STAGING%%%%X11%%%%DATADIR%%/fonts/msyh.ttf
+%%STAGING%%%%X11%%%%DATADIR%%/fonts/times.ttf
 %%X11%%%%DATADIR%%/fonts/coue1255.fon
 %%X11%%%%DATADIR%%/fonts/coue1256.fon
 %%X11%%%%DATADIR%%/fonts/coue1257.fon

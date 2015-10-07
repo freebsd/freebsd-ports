@@ -20,6 +20,7 @@ CONFIGURE_ARGS=	--enable-netaccessor-socket \
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 MAKE_ENV=	XERCESCROOT=${WRKSRC}
+TEST_TARGET=	check
 USE_LDCONFIG=	yes
 USES=		cpe gmake libtool pathfix
 
@@ -30,8 +31,5 @@ CPE_VENDOR=	apache
 
 post-install:
 	${LN} -s libxerces-c-${PORTVERSION:R}.so ${STAGEDIR}${PREFIX}/lib/libxerces-c.so.${PORTVERSION:R:R}
-
-regression-test test: build
-	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 
 .include <bsd.port.mk>

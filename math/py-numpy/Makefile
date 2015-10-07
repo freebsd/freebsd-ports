@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	numpy
-PORTVERSION=	1.9.2
+PORTVERSION=	1.10.0
 PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://docs.scipy.org/doc/${PORTNAME}/:doc \
-		SF/${PORTNAME}/NumPy/${PORTVERSION}:source
+		CHEESESHOP:source
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	numpy-${PORTVERSION:S/r/rc/}${EXTRACT_SUFX}:source \
 		numpy-ref-${DOCVERSION}.pdf:doc \
@@ -18,6 +18,8 @@ COMMENT=	The New Numeric Extension to Python
 
 LICENSE=	BSD3CLAUSE
 
+PYDISTUTILS_BUILDARGS=		--fcompiler=gnu95
+PYDISTUTILS_CONFIGUREARGS=	--fcompiler=gnu95
 USES=		fortran python
 USE_PYTHON=	concurrent distutils py3kplist
 LDFLAGS+=	-shared
@@ -29,66 +31,68 @@ OPTIONS_SINGLE_BLASLIB=	ATLAS NETLIB OPENBLAS
 SUITESPARSE_DESC=	Use AMD and UMFPACK in SuiteSparse
 TESTS_DESC=		Install test suite requirements
 
-PYDISTUTILS_CONFIGUREARGS+=	--fcompiler=gnu95
-PYDISTUTILS_BUILDARGS+=		--fcompiler=gnu95
-
+PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
 PORTDOCS=	*
 WRKSRC=		${WRKDIR}/${DISTNAME:S/r/rc/}
 DOCVERSION=	1.9.1
+
+GCCLIBDIR_CMDS=	${FC} -print-file-name=libgfortran.so | ${SED} -e s/libgfortran.so//
 
 ATLAS_USES=	blaslapack:atlas
 NETLIB_USES=	blaslapack:netlib
 OPENBLAS_USES=	blaslapack:openblas
 SUITESPARSE_LIB_DEPENDS=libumfpack.so:${PORTSDIR}/math/suitesparse
-TESTS_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/nose/__init__.py:${PORTSDIR}/devel/py-nose
+TESTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:${PORTSDIR}/devel/py-nose
 
 .include <bsd.port.pre.mk>
 
-PLIST_SUB+=	PYTHON_VER=${PYTHON_VER}
 .if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
 PLIST_FILES+=	man/man1/f2py.1.gz
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e "s+%%FC%%+${FC}+" ${WRKSRC}/numpy/distutils/fcompiler/gnu.py
+	${REINPLACE_CMD} -e "s|%%FC%%|${FC}|" ${WRKSRC}/numpy/distutils/fcompiler/gnu.py
 	${CP} ${FILESDIR}/site.cfg ${WRKSRC}/site.cfg
 
-GCCLIBDIR_CMDS=	${FC} -print-file-name=libgfortran.so|${SED} -e s/libgfortran.so//
-
 pre-configure:
-.if ${PORT_OPTIONS:MOPENBLAS}
-	@${REINPLACE_CMD} -e "s+%%BLASNAME%%+openblas+" \
-		-e "s+%%LIBRARIES%%+libraries+" \
-		-e "s+%%LAPACKLIBS%%+%%BLASLIBS%%+" \
-		-e "s+%%BLASLIBS%%+openblasp, gfortran+" \
-			${WRKSRC}/site.cfg
-.elif ${PORT_OPTIONS:MATLAS}
-	@${REINPLACE_CMD} -e "s+%%BLASNAME%%+atlas+" \
-		-e "s+%%LIBRARIES%%+atlas_libs+" \
-		-e "s+%%BLASLIBS%%+%%ATLASLIBS%%+" \
-		-e "s+%%LAPACKLIBS%%+alapack+" \
-		-e "s+%%ATLASLIBS%%+ptf77blas, ptcblas+" \
-			${WRKSRC}/site.cfg
-.else
-	@${REINPLACE_CMD} -e "s+%%BLASNAME%%+atlas+" \
-		-e "s+%%LIBRARIES%%+atlas_libs+" \
-		-e "s+%%BLASLIBS%%+blas+" \
-		-e "s+%%LAPACKLIBS%%+lapack+" \
-			${WRKSRC}/site.cfg
-.endif
-.if !${PORT_OPTIONS:MSUITESPARSE}
-	@${REINPLACE_CMD} -e "s+:%%LOCALBASE%%/include/suitesparse++" ${WRKSRC}/site.cfg
-.endif
-	@${REINPLACE_CMD} -e "s+%%GCCLIBDIR%%+$$(${GCCLIBDIR_CMDS})+" \
-	    -e "s+%%LOCALBASE%%+${LOCALBASE}+g" \
+	@${REINPLACE_CMD} -e "s|%%GCCLIBDIR%%|$$(${GCCLIBDIR_CMDS})|" \
+	    -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
 		${WRKSRC}/site.cfg
-	@${REINPLACE_CMD} -e "s+%%GCCLIBDIR%%+$$(${GCCLIBDIR_CMDS})+" ${WRKSRC}/numpy/distutils/system_info.py
+	@${REINPLACE_CMD} -e "s|%%GCCLIBDIR%%|$$(${GCCLIBDIR_CMDS})|" ${WRKSRC}/numpy/distutils/system_info.py
+
+pre-configure-ATLAS-on:
+	@${REINPLACE_CMD} -e "s|%%BLASNAME%%|atlas|" \
+		-e "s|%%LIBRARIES%%|atlas_libs|" \
+		-e "s|%%BLASLIBS%%|%%ATLASLIBS%%|" \
+		-e "s|%%LAPACKLIBS%%|alapack|" \
+		-e "s|%%ATLASLIBS%%|ptf77blas, ptcblas|" \
+			${WRKSRC}/site.cfg
+
+pre-configure-NETLIB-on:
+	@${REINPLACE_CMD} -e "s|%%BLASNAME%%|atlas|" \
+		-e "s|%%LIBRARIES%%|atlas_libs|" \
+		-e "s|%%BLASLIBS%%|blas|" \
+		-e "s|%%LAPACKLIBS%%|lapack|" \
+			${WRKSRC}/site.cfg
+
+pre-configure-OPENBLAS-on:
+	@${REINPLACE_CMD} -e "s|%%BLASNAME%%|openblas|" \
+		-e "s|%%LIBRARIES%%|libraries|" \
+		-e "s|%%LAPACKLIBS%%|%%BLASLIBS%%|" \
+		-e "s|%%BLASLIBS%%|openblasp, gfortran|" \
+			${WRKSRC}/site.cfg
+
+pre-configure-SUITESPARSE-off:
+	@${REINPLACE_CMD} -e "s|:%%LOCALBASE%%/include/suitesparse||" ${WRKSRC}/site.cfg
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/f2py/f2py.1 ${STAGEDIR}${MANPREFIX}/man/man1/f2py-${PYTHON_VER}.1
 .if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
 	${LN} -sf ${MANPREFIX}/man/man1/f2py-${PYTHON_VER}.1 ${STAGEDIR}${MANPREFIX}/man/man1/f2py.1
 .endif
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' | ${XARGS} ${STRIP_CMD}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/numpy-ref-${DOCVERSION}.pdf ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/numpy-user-${DOCVERSION}.pdf ${STAGEDIR}${DOCSDIR}

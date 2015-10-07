@@ -9,12 +9,14 @@
  	*p += sizeof(len);
  	if (len > G_MAXINT || len > endp - *p)
  		return -1;
-@@ -197,7 +197,7 @@ static gint procmsg_read_cache_data_str_
+@@ -197,7 +197,9 @@ static gint procmsg_read_cache_data_str_
  		g_mapped_file_free(mapfile);			\
  		return NULL;					\
  	} else {						\
 -		n = *(const guint32 *)p;			\
-+		memcpy(&n, p, sizeof(n));			\
++		guint32 v;					\
++		memcpy(&v, p, sizeof(v));			\
++		n = v;						\
  		p += sizeof(guint32);				\
  	}							\
  }

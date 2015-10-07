@@ -36,7 +36,7 @@ COMMENT=	Image processing tools (unstable version)
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DATE=		20150715
+DATE=		20150902
 WRKSRC=		${WRKDIR}/${PORTNAME}-7.0.0-0
 
 LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
@@ -225,7 +225,11 @@ PLIST_SUB+=		TIFF="@comment "
 
 .if ${PORT_OPTIONS:MGSLIB}
 CONFIGURE_ARGS+=	--with-gslib
-USE_GHOSTSCRIPT=	yes
+. if ${PORT_OPTIONS:MX11}
+USES+=		ghostscript:x11
+. else
+USES+=		ghostscript
+. endif
 .else
 CONFIGURE_ARGS+=	--without-gslib
 .endif
@@ -358,7 +362,11 @@ PLIST_SUB+=		PANGO="@comment "
 
 # PDF (Adobe Portable Document Format) support
 .if ${PORT_OPTIONS:MPDF}
-USE_GHOSTSCRIPT=	yes
+. if ${PORT_OPTIONS:MX11}
+USES+=		ghostscript:x11
+. else
+USES+=		ghostscript
+. endif
 .endif
 
 .if ! ${PORT_OPTIONS:MX11}
@@ -381,10 +389,14 @@ INSTALL_TARGET=	install-strip
 .endif
 
 .if ${PORT_OPTIONS:MTESTS}
-USE_GHOSTSCRIPT_BUILD=yes
+. if ${PORT_OPTIONS:MX11}
+USES+=		ghostscript:x11,build
+. else
+USES+=		ghostscript:build
+. endif
 .endif
 
-.if ${USER} == kwm
+.if defined(USER) && ${USER} == kwm
 upload:
 	scp ${DISTDIR}/${DISTNAME}.tar.xz \
 		kwm@freefall.freebsd.org:public_distfiles/

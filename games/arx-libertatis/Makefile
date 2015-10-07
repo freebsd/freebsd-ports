@@ -14,13 +14,12 @@ COMMENT=	Cross-platform port of Arx Fatalis
 LICENSE=	GPLv3 # or later
 LICENSE_FILE=	${WRKSRC}/ARX_PUBLIC_LICENSE.txt
 
-LIB_DEPENDS=	libGLEW.so:${PORTSDIR}/graphics/glew \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/foreach.hpp:${PORTSDIR}/devel/boost-libs
 
 USES=		cmake openal tar:xz
 USE_SDL=	sdl
-USE_GL=		gl
+USE_GL=		gl glew
 CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR="man" -DDATA_DIR=arx -DSTRICT_USE=ON
 
 SUB_FILES=	pkg-message
@@ -28,18 +27,15 @@ SUB_FILES=	pkg-message
 PORTDOCS=	AUTHORS CHANGELOG README.md
 
 OPTIONS_DEFINE=	CRASHREPORTER DOCS
+OPTIONS_SUB=	yes
+
 CRASHREPORTER_DESC=	Build crash reporter (requires Qt4)
+CRASHREPORTER_USE=	QT4=corelib,gui,network \
+			QT4=rcc_build,moc_build,uic_build,qmake_build
+CRASHREPORTER_CMAKE_ON=	-DBUILD_CRASHREPORTER=ON -DUSE_QT5=OFF
+CRASHREPORTER_CMAKE_OFF=-DBUILD_CRASHREPORTER=OFF
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCRASHREPORTER}
-USE_QT4=	corelib gui network rcc_build moc_build uic_build qmake_build
-CMAKE_ARGS+=	-DBUILD_CRASHREPORTER=ON -DUSE_QT5=OFF
-PLIST_SUB+=	CRASHREPORTER=""
-.else
-CMAKE_ARGS+=	-DBUILD_CRASHREPORTER=OFF
-PLIST_SUB+=	CRASHREPORTER="@comment "
-.endif
 
 post-patch:
 .if ${OPSYS} == FreeBSD && ((${OSVERSION} >= 1000705 && ${OSVERSION} < 1001503) || (${OSVERSION} >= 1100000 && ${OSVERSION} < 1100046))

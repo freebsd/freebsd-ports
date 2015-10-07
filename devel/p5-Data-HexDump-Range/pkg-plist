@@ -9,4 +9,4 @@ bin/hdr
 %%PERL5_MAN3%%/Data::HexDump::Range::Gather.3.gz
 %%PERL5_MAN3%%/Data::HexDump::Range::Object.3.gz
 %%PERL5_MAN3%%/Data::HexDump::Range::Split.3.gz
-man/man1/hdr.1.gz
+%%PERL5_MAN1%%/hdr.1.gz

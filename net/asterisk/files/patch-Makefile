@@ -1,6 +1,6 @@
---- Makefile.orig	2012-06-13 16:27:57.000000000 +0200
-+++ Makefile	2012-08-02 00:02:38.030569971 +0200
-@@ -121,7 +121,7 @@
+--- Makefile.orig	2014-10-31 16:37:55 UTC
++++ Makefile
+@@ -121,7 +121,7 @@ ASTTOPDIR:=$(subst $(space),\$(space),$(
  OVERWRITE=y
  
  # Include debug and macro symbols in the executables (-g) and profiling info (-pg)
@@ -9,7 +9,7 @@
  
  # Asterisk.conf is located in ASTETCDIR or by using the -C flag
  # when starting Asterisk
-@@ -188,7 +188,7 @@
+@@ -187,7 +187,7 @@ endif
  
  ifeq ($(OSARCH),FreeBSD)
    # -V is understood by BSD Make, not by GNU make.
@@ -18,7 +18,7 @@
    _ASTCFLAGS+=$(shell if test $(BSDVERSION) -lt 500016 ; then echo "-D_THREAD_SAFE"; fi)
  endif
  
-@@ -415,8 +415,13 @@
+@@ -418,8 +418,13 @@ datafiles: _all doc/core-en_US.xml
  		$(INSTALL) -m 644 $$x "$(DESTDIR)$(ASTDATADIR)/static-http" ; \
  	done
  	$(INSTALL) -m 644 doc/core-en_US.xml "$(DESTDIR)$(ASTDATADIR)/static-http";
@@ -33,7 +33,7 @@
  	done
  	$(MAKE) -C sounds install
  
-@@ -475,7 +480,7 @@
+@@ -478,7 +483,7 @@ INSTALLDIRS="$(ASTLIBDIR)" "$(MODULES_DI
  	"$(ASTDATADIR)/documentation/thirdparty" "$(ASTDATADIR)/firmware" \
  	"$(ASTDATADIR)/firmware/iax" "$(ASTDATADIR)/images" "$(ASTDATADIR)/keys" \
  	"$(ASTDATADIR)/phoneprov" "$(ASTDATADIR)/static-http" "$(ASTDATADIR)/sounds" \
@@ -42,7 +42,7 @@
  
  installdirs:
  	@for i in $(INSTALLDIRS); do \
-@@ -542,7 +547,7 @@
+@@ -545,7 +550,7 @@ ifneq ($(filter ~%,$(DESTDIR)),)
  	@exit 1
  endif
  
@@ -51,7 +51,7 @@
  	@if [ -x /usr/sbin/asterisk-post-install ]; then \
  		/usr/sbin/asterisk-post-install "$(DESTDIR)" . ; \
  	fi
-@@ -584,29 +589,18 @@
+@@ -587,29 +592,18 @@ adsi:
  		else \
  			echo "Installing $$x" ; \
  		fi ; \
@@ -87,7 +87,7 @@
  		echo "Updating asterisk.conf" ; \
  		sed -e 's|^astetcdir.*$$|astetcdir => $(ASTETCDIR)|' \
  			-e 's|^astmoddir.*$$|astmoddir => $(MODULES_DIR)|' \
-@@ -620,6 +614,7 @@
+@@ -623,6 +617,7 @@ samples: adsi
  			-e 's|^astlogdir.*$$|astlogdir => $(ASTLOGDIR)|' \
  			"$(DESTDIR)$(ASTCONFPATH)" > "$(DESTDIR)$(ASTCONFPATH).tmp" ; \
  		$(INSTALL) -m 644 "$(DESTDIR)$(ASTCONFPATH).tmp" "$(DESTDIR)$(ASTCONFPATH)" ; \

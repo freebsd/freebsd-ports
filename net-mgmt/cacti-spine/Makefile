@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spine
-PORTVERSION=	0.8.8c
+PORTVERSION=	0.8.8f
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.cacti.net/downloads/${PORTNAME}/
 DISTNAME=	cacti-${PORTNAME}-${PORTVERSION}
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS+=--with-mysql=${LOCALBASE} --with-snmp=${LOCALBASE}
 CPPFLAGS+=	`net-snmp-config --cflags`
-LIBS+=		`net-snmp-config --libs`
+LDFLAGS+=		`net-snmp-config --libs`
 USES=		libtool
 USE_MYSQL=	YES
 USE_OPENSSL=	YES

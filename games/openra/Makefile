@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	openra
-PORTVERSION=	20150614
+PORTVERSION=	20150919
 DISTVERSIONPREFIX=	release-
-PORTREVISION=	2
 CATEGORIES=	games
 # XXX Convert to USES=nuget or package dependencies instead
 MASTER_SITES=	https://nuget.org/api/v2/package/StyleCopPlus.MSBuild/4.7.49.5?dummy=/:StyleCopPlus \
@@ -17,7 +16,7 @@ MASTER_SITES=	https://nuget.org/api/v2/package/StyleCopPlus.MSBuild/4.7.49.5?dum
 		https://nuget.org/api/v2/package/NUnit/2.6.4?dummy=/:NUnit \
 		https://nuget.org/api/v2/package/Mono.Nat/1.2.21?dummy=/:Mono_Nat \
 		https://nuget.org/api/v2/package/FuzzyLogicLibrary/1.2.0?dummy=/:FuzzyLogicLibrary \
-		https://github.com/${GH_ACCOUNT}/SDL2-CS/releases/download/20140407/:SDL2_CS \
+		https://github.com/${GH_ACCOUNT}/SDL2-CS/releases/download/20150709/:SDL2_CS \
 		https://github.com/${GH_ACCOUNT}/Eluant/releases/download/20140425/:Eluant \
 		https://geolite.maxmind.com/download/geoip/database/:GeoLite2
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -49,11 +48,14 @@ USE_GITHUB=	yes
 GH_PROJECT=	OpenRA
 
 NO_ARCH=	yes
-USES=		gmake lua:51,run mono openal:soft
+USES=		desktop-file-utils gmake lua:51,run mono openal:soft \
+		shared-mime-info shebangfix
+SHEBANG_FILES=	launch-dedicated.sh
 USE_SDL=	sdl2
-MAKE_ENV=	prefix="${PREFIX}"
+MAKE_ENV=	prefix="${PREFIX}" mandir="${PREFIX}/man"
 MAKE_ARGS=	VERSION="${GH_TAGNAME}"
-INSTALL_TARGET=	install-all install-linux-shortcuts
+INSTALL_TARGET=	install-all install-man-page \
+		install-linux-mime install-linux-shortcuts
 DATADIR=	${PREFIX}/lib/${PORTNAME}
 PORTDATA=	*
 PORTDOCS=	*.html
@@ -81,10 +83,8 @@ post-extract:
 	done
 
 post-patch:
-	${REINPLACE_CMD} -e 's/Linux/${OPSYS}/' \
-		-e '/CP_R/s,hicolor/,hicolor,' \
+	${REINPLACE_CMD} \
 		-e '\,thirdparty/.*\.sh,d' \
-		-e 's/crashdialog/gamemonitor/' \
 		-e '/echo/!s/	@/	/' \
 		-e '/^mods:/s/$$/ version/' \
 		-e '/^docs:/s/$$/ all/' \
@@ -96,9 +96,6 @@ post-patch:
 	${SED} 's/@LIBLUA51@/liblua-${LUA_VER}.so/' \
 		${WRKSRC}/thirdparty/Eluant.dll.config.in \
 		>${WRKSRC}/Eluant.dll.config
-# DragonFly lacks BSD suffix
-	${REINPLACE_CMD} -e 's/"BSD"/"${OPSYS}"/' \
-		${WRKSRC}/OpenRA.Game/Platform.cs
 
 post-build-DOCS-on:
 	@${ECHO_MSG} Generating HTML documentation...

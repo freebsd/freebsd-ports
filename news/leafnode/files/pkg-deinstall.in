@@ -1,0 +1,25 @@
+#! /bin/sh
+set -eu
+case "$2" in
+    DEINSTALL)
+	;;
+
+    POST-DEINSTALL)
+	for d in \
+		failed.postings \
+		interesting.groups \
+		leaf.node \
+		message.id/* \
+		message.id \
+		out.going \
+		temp.files \
+		""; do
+		rmdir "%%SPOOLDIR%%/$d" 2>/dev/null || :
+	done
+	;;
+
+    *)
+	echo >&2 "Unknown argument in $0 $@"
+	exit 1
+	;;
+esac

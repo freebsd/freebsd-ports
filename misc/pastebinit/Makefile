@@ -17,7 +17,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}configobj>=4.3.2:${PORTSDIR}/devel/py-config
 USES=		python:run shebangfix tar:bzip2
 SHEBANG_FILES=	pastebinit
 python_OLD_CMD=	/usr/bin/python3
-python_CMD=	${PYTHON_CMD}
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/pastebinit

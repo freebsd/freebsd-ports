@@ -58,9 +58,6 @@ FUZZYHASH_LIB_DEPENDS=	libfuzzy.so:${PORTSDIR}/security/ssdeep
 
 ETCDIR=		${PREFIX}/etc/modsecurity
 
-# ap2x- prefix OPTIONSFILE fix
-OPTIONSFILE=	${PORT_DBDIR}/www_mod_security/options
-
 REINPLACE_ARGS=	-i ""
 AP_EXTRAS+=	-DWITH_LIBXML2
 CONFIGURE_ARGS+=--with-apxs=${APXS} --with-pcre=${LOCALBASE} --with-yajl=${LOCALBASE} --with-curl=${LOCALBASE}

@@ -17,6 +17,7 @@
     SUBDIR += fish
     SUBDIR += flash
     SUBDIR += heirloom-sh
+    SUBDIR += hs-shelly
     SUBDIR += ibsh
     SUBDIR += jailkit
     SUBDIR += ksh93

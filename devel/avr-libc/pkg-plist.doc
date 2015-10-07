@@ -19,12 +19,3 @@ share/doc/avr-libc/examples/stdiodemo/uart.c
 share/doc/avr-libc/examples/stdiodemo/uart.h
 share/doc/avr-libc/examples/twitest/Makefile
 share/doc/avr-libc/examples/twitest/twitest.c
-@dirrm share/doc/avr-libc/examples/twitest
-@dirrm share/doc/avr-libc/examples/stdiodemo
-@dirrm share/doc/avr-libc/examples/largedemo
-@dirrm share/doc/avr-libc/examples/demo
-@dirrm share/doc/avr-libc/examples/asmdemo
-@dirrm share/doc/avr-libc/examples
-@dirrm share/doc/avr-libc/man/man3
-@dirrm share/doc/avr-libc/man
-@dirrm share/doc/avr-libc/avr-libc-user-manual

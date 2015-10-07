@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	gcc-arm-embedded
-PORTVERSION=	4.9.20150306
+PORTVERSION=	4.9.20150609
 PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	http://launchpad.net/gcc-arm-embedded/4.9/4.9-2015-q1-update/+download/
+MASTER_SITES=	http://launchpad.net/gcc-arm-embedded/4.9/4.9-2015-q2-update/+download/
 DISTNAME=	${ORIGINAL_PACKAGE_NAME}-src
 
 MAINTAINER=	lev@FreeBSD.org
@@ -21,7 +21,7 @@ PDF_DESC=	Install PDF documentation (requires TeX, it is huge)
 PYGDB_DESC=	Build and install pyhon-enabled gdb in addition to standard one
 
 
-PURE_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-gcc-isl-0.13-compatibility
+PURE_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-gcc-isl-0.15-compatibility
 PURE_LIB_DEPENDS_OFF=	\
 			libexpat.so:${PORTSDIR}/textproc/expat2 \
 			libgmp.so:${PORTSDIR}/math/gmp \
@@ -45,7 +45,7 @@ PATCH_WRKSRC=		${WRKDIR}/${ORIGINAL_PACKAGE_NAME}
 BUILD_WRKSRC=	${WRKDIR}
 
 GCC_VERSION=		4.9.3
-FULL_VERSION=		4_9-2015q1-20150306
+FULL_VERSION=		4_9-2015q2-20150609
 TARGET=			arm-none-eabi
 ORIGINAL_PACKAGE_NAME=	gcc-${TARGET}-${FULL_VERSION}
 

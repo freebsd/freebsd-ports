@@ -2,4 +2,4 @@ bin/ipv4calc
 %%PERL5_MAN3%%/Net::IPv4Addr.3.gz
 %%SITE_PERL%%/Net/IPv4Addr.pm
 %%SITE_PERL%%/auto/Net/IPv4Addr/autosplit.ix
-man/man1/ipv4calc.1.gz
+%%PERL5_MAN1%%/ipv4calc.1.gz

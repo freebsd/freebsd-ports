@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 CONFLICTS=	linux-f10-alsa-plugins-oss-[0-9]*
 
 .if defined(PACKAGE_BUILDING)
-SRC_DISTFILES=	alsa-plugins-1.0.21-3.el6.src.rpm
+SRC_DISTFILES=	alsa-plugins-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}:SOURCE
 .endif
 
 ONLY_FOR_ARCHS=	i386 amd64

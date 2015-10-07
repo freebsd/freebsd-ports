@@ -14,7 +14,7 @@ and allows backspacing from the currently line onto previous lines. It
 also provides features that a more experienced user can use. You can call
 up normal editor, or use some of gate's simple-minded editing
 commands. You can read in files, or save your text to a file. You can
-filter your text through something like the unix "fmt" command. It
+filter your text through something like the Unix "fmt" command. It
 provides a nice spell-checking interface too. 
 
 WWW: http://www.unixpapa.com/gate.html

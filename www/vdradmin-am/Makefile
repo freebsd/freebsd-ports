@@ -32,6 +32,7 @@ USES=		shebangfix tar:bzip2
 SHEBANG_FILES=	vdradmind vdradmind.pl
 WRKSRC=		${WRKDIR}/${PORTNAME:S/_/-/}-${DISTVERSION}
 NO_BUILD=	yes
+NO_ARCH=	yes
 USE_RC_SUBR=	vdradmind
 
 VIDEODIR=	/video

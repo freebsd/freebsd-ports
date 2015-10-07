@@ -12,7 +12,7 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	C++ library containing the UDT API implementation
 
 PATCH_WRKSRC=	${WRKDIR}/udt${PORTVERSION:R}
-WRKSRC=	${PATCH_WRKSRC}/src
+WRKSRC=		${PATCH_WRKSRC}/src
 MAKEFILE=	${FILESDIR}/BSDmakefile
 EXTRACT_AFTER_ARGS=	--exclude '*md5*'	\
 		--exclude udt${PORTVERSION:R}/win
@@ -22,6 +22,8 @@ USES=		uidfix
 
 OPTIONS_DEFINE=	DOCS
 
+DOCS_VARS_OFF=	EXTRACT_AFTER_ARGS+="--exclude udt${PORTVERSION:R}/doc"
+
 post-build:
 	# Building sample applications:
 .for a in ${UDT_APPS}
@@ -29,17 +31,13 @@ post-build:
 	    -I${WRKSRC} -L${WRKSRC} -ludt -pthread
 .endfor
 
-.include <bsd.port.options.mk>
-
 post-install:
 	# Installing sample applications:
 	${INSTALL_PROGRAM} ${UDT_APPS:S|^|${WRKSRC:H}/app/udt-|} ${STAGEDIR}${PREFIX}/bin/
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	# Installing documentation tree into ${DOCSDIR}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC:H}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
-.else
-EXTRACT_AFTER_ARGS+=	--exclude udt${PORTVERSION:R}/doc
-.endif
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rocksdb
-PORTVERSION=	3.11.2
+PORTVERSION=	3.13.1
 DISTVERSIONPREFIX=	rocksdb-
 CATEGORIES=	databases
 
@@ -10,6 +10,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Persistent key-value store for fast storage environments
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libgflags.so:${PORTSDIR}/devel/gflags \
 		libsnappy.so:${PORTSDIR}/archivers/snappy
@@ -26,6 +27,7 @@ GH_ACCOUNT=	facebook
 USE_GITHUB=	yes
 
 BROKEN_DragonFly=	does not build on DragonFly BSD using GCC with -Werror
+BROKEN_sparc64=	cannot build: uses unknown compiler flags
 
 PROGRAMS=	db_bench db_repl_stress db_sanity_test db_stress ldb sst_dump table_reader_bench
 
@@ -42,6 +44,7 @@ CXXFLAGS+=	-Wno-inconsistent-missing-override
 post-patch:
 	@${REINPLACE_CMD} -e '/^all: / s| $$(TESTS)||' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's| -fno-builtin-memcmp||; s| -ltcmalloc||' ${WRKSRC}/build_tools/build_detect_platform
+	@${REINPLACE_CMD} -e 's|#include "gtest/gtest.h"|#include "gtest.h"|' ${WRKSRC}/third-party/gtest-1.7.0/fused-src/gtest/gtest-all.cc
 .if defined(WITHOUT_PROFILE)
 	@${REINPLACE_CMD} -e '/pg = / s| -pg||' ${WRKSRC}/Makefile
 .endif

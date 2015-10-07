@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	daq
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
 CATEGORIES=	net
-MASTER_SITES=	SF/snort/snort \
-		https://snort.org/downloads/snort/ \
+MASTER_SITES=	https://snort.org/downloads/snort/ \
 		http://mirrors.rit.edu/zi/
 
 MAINTAINER=	zi@FreeBSD.org
@@ -28,16 +27,7 @@ MAKE_JOBS_UNSAFE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
-
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.* ${STAGEDIR}${PREFIX}/lib/daq/*.so
 
-.if ${OSVERSION} < 901000
-CONFIGURE_ARGS+=--disable-netmap-module
-PLIST_SUB+=	NETMAP="@comment "
-.else
-PLIST_SUB+=	NETMAP=""
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

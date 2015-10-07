@@ -3,4 +3,4 @@ bin/pkwalify
 %%PERL5_MAN3%%/Schema::Kwalify.3.gz
 %%SITE_PERL%%/Kwalify.pm
 %%SITE_PERL%%/Schema/Kwalify.pm
-man/man1/pkwalify.1.gz
+%%PERL5_MAN1%%/pkwalify.1.gz

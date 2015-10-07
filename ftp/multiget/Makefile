@@ -3,7 +3,7 @@
 
 PORTNAME=	multiget
 PORTVERSION=	1.1.3
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	ftp www
 MASTER_SITES=	SF/${PORTNAME}/OldFiles
 
@@ -12,7 +12,7 @@ COMMENT=	HTTP/FTP downloader with a nice GUI
 
 WRKSRC_SUBDIR=	src
 
-USES=		dos2unix
+USES=		alias dos2unix
 USE_WX=		2.8
 WX_UNICODE=	yes
 MAKEFILE=	makefile

@@ -1,5 +1,3 @@
 bin/xprobe2
-@unexec if cmp -s %D/%%ETCDIR%%/xprobe2.conf %D/%%ETCDIR%%/xprobe2.conf.sample; then rm -f %D/%%ETCDIR%%/xprobe2.conf; fi
-%%ETCDIR%%/xprobe2.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/xprobe2.conf ]; then cp -p %D/%F %B/xprobe2.conf; fi
+@sample %%ETCDIR%%/xprobe2.conf.sample
 man/man1/xprobe2.1.gz

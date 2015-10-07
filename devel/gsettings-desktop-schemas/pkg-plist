@@ -6,6 +6,7 @@ share/GConf/gsettings/wm-schemas.convert
 share/gir-1.0/GDesktopEnums-3.0.gir
 share/locale/as/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/bg/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/bs/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/ca/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/ca@valencia/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/cs/LC_MESSAGES/gsettings-desktop-schemas.mo
@@ -26,6 +27,7 @@ share/locale/hu/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/id/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/it/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/ja/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/kk/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/lt/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/lv/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/ml/LC_MESSAGES/gsettings-desktop-schemas.mo

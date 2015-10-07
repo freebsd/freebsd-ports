@@ -14,7 +14,8 @@ NO_ARCH=	yes
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=yes
+RUBYGEM_AUTOPLIST=	yes
+
 PLIST_FILES=	bin/ri_cal
 
 .include <bsd.port.mk>

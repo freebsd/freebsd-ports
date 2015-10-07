@@ -1,0 +1,26 @@
+@comment file listing
+usr/lib64/.libcrypto.so.0.9.8e.hmac
+usr/lib64/.libcrypto.so.6.hmac
+usr/lib64/.libssl.so.0.9.8e.hmac
+usr/lib64/.libssl.so.6.hmac
+usr/lib64/libcrypto.so.0.9.8e
+usr/lib64/libcrypto.so.6
+usr/lib64/libssl.so.0.9.8e
+usr/lib64/libssl.so.6
+usr/lib64/libssl.so.7
+usr/lib64/openssl098e/engines/lib4758cca.so
+usr/lib64/openssl098e/engines/libaep.so
+usr/lib64/openssl098e/engines/libatalla.so
+usr/lib64/openssl098e/engines/libchil.so
+usr/lib64/openssl098e/engines/libcswift.so
+usr/lib64/openssl098e/engines/libgmp.so
+usr/lib64/openssl098e/engines/libnuron.so
+usr/lib64/openssl098e/engines/libsureware.so
+usr/lib64/openssl098e/engines/libubsec.so
+usr/share/doc/openssl098e-0.9.8e/CHANGES
+usr/share/doc/openssl098e-0.9.8e/FAQ
+usr/share/doc/openssl098e-0.9.8e/INSTALL
+usr/share/doc/openssl098e-0.9.8e/LICENSE
+usr/share/doc/openssl098e-0.9.8e/NEWS
+usr/share/doc/openssl098e-0.9.8e/README
+usr/share/doc/openssl098e-0.9.8e/README.FIPS

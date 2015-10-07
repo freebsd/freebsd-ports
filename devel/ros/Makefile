@@ -13,6 +13,9 @@ COMMENT=	Robot Operating System - core utilities
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Unsupported upstream, see http://wiki.ros.org/Distributions
+EXPIRATION_DATE=2015-11-01
+
 STACKNAME=	${PORTNAME:S/ros-//}
 
 CFLAGS+=	-I${LOCALBASE}/include

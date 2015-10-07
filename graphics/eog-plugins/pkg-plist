@@ -3,6 +3,8 @@ lib/eog/plugins/exif-display.plugin
 %%PYTHON%%lib/eog/plugins/export-to-folder.py
 %%PYTHON%%lib/eog/plugins/__pycache__/export-to-folder.cpython-%%PYVER%%.pyc
 %%PYTHON%%lib/eog/plugins/__pycache__/export-to-folder.cpython-%%PYVER%%.pyo
+%%PYTHON%%lib/eog/plugins/__pycache__/maximize-windows.cpython-%%PYVER%%.pyc
+%%PYTHON%%lib/eog/plugins/__pycache__/maximize-windows.cpython-%%PYVER%%.pyo
 lib/eog/plugins/fit-to-width.plugin
 %%PYTHON%%lib/eog/plugins/fullscreenbg.plugin
 %%PYTHON%%lib/eog/plugins/fullscreenbg.py
@@ -18,6 +20,8 @@ lib/eog/plugins/libpostasa.so
 lib/eog/plugins/libsend-by-mail.so
 lib/eog/plugins/light-theme.plugin
 %%CHAMPLAIN%%lib/eog/plugins/map.plugin
+%%PYTHON%%lib/eog/plugins/maximize-windows.plugin
+%%PYTHON%%lib/eog/plugins/maximize-windows.py
 lib/eog/plugins/postasa.plugin
 %%PYTHON%%lib/eog/plugins/pythonconsole.plugin
 %%PYTHON%%lib/eog/plugins/pythonconsole/__init__.py
@@ -41,6 +45,7 @@ share/appdata/eog-fit-to-width.metainfo.xml
 share/appdata/eog-hide-titlebar.metainfo.xml
 share/appdata/eog-light-theme.metainfo.xml
 %%PYTHON%%share/appdata/eog-map.metainfo.xml
+%%PYTHON%%share/appdata/eog-maximize-windows.metainfo.xml
 share/appdata/eog-postasa.metainfo.xml
 %%PYTHON%%share/appdata/eog-pythonconsole.metainfo.xml
 share/appdata/eog-send-by-mail.metainfo.xml

@@ -1,9 +1,9 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
-#  $MCom: ports/trunk/graphics/cogl/Makefile 20024 2014-10-27 12:59:06Z gusi $
 
 PORTNAME=	cogl
 PORTVERSION=	1.20.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 

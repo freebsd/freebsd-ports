@@ -2,29 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	pcapy
-PORTVERSION=	0.10.8
-PORTREVISION=	1
+PORTVERSION=	0.10.9
 CATEGORIES=	net python
-MASTER_SITES=	http://corelabs.coresecurity.com/index.php?module=Wiki&action=attachment&type=tool&page=Pcapy&file=
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Python extension module to capture packets on the network
+COMMENT=	Python pcap extension
 
-LICENSE=	AL11
-LICENSE_NAME=	Apache License version 1.1
+LICENSE=	APACHE11
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-FETCH_BEFORE_ARGS=-o ${DISTFILES}
-USES=		dos2unix python
-USE_PYTHON=	distutils
+USES=		python:2
+USE_PYTHON=	autoplist distutils
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pcapy.so
 PORTDOCS=	README pcapy.html
-
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pcapy.so

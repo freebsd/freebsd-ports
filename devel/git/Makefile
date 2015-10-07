@@ -2,21 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	git
-PORTVERSION=	2.4.6
+DISTVERSION=	2.6.1
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${PORTNAME}-manpages-${PORTVERSION}${EXTRACT_SUFX}
+		${PORTNAME}-manpages-${DISTVERSION}${EXTRACT_SUFX}
 # We manually extract the htmldocs.
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
-		${PORTNAME}-manpages-${PORTVERSION}${EXTRACT_SUFX}
+		${PORTNAME}-manpages-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT?=	Distributed source code management tool
 
 LICENSE=	GPLv2
 
-CONFLICTS_INSTALL?=	git-subversion-[0-9]* git-lite-[0-9]*
+CONFLICTS_INSTALL?=	git-gui-[0-9]* git-subversion-[0-9]* git-lite-[0-9]*
 
 USERS=		git_daemon
 GROUPS=		git_daemon
@@ -31,6 +31,7 @@ MAKE_ENV+=	V=1
 USE_OPENSSL=	yes
 USE_RC_SUBR=	git_daemon
 SHEBANG_FILES=	*.perl */*.perl */*/*.perl */*.pl */*/*.pl */*/*/*.pl \
+		t/*/*/pre t/*/*/post t/Git-SVN/Utils/*.t \
 		contrib/hooks/update-paranoid \
 		contrib/credential/netrc/git-credential-netrc \
 		contrib/diff-highlight/diff-highlight \
@@ -71,7 +72,7 @@ CURL_RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 CURL_LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 CURL_MAKE_ARGS_OFF=	NO_CURL=1 NO_EXPAT=1
 
-HTMLDOCS_DISTFILES=	${PORTNAME}-htmldocs-${PORTVERSION}${EXTRACT_SUFX}
+HTMLDOCS_DISTFILES=	${PORTNAME}-htmldocs-${DISTVERSION}${EXTRACT_SUFX}
 
 GUI_USES=		tk
 GUI_MAKE_ARGS=		TCL_PATH=${TCLSH} TCLTK_PATH=${WISH}
@@ -130,7 +131,7 @@ post-extract:
 .if ${PORT_OPTIONS:MHTMLDOCS}
 	@${MKDIR} ${WRKDIR}/htmldocs
 	@cd ${WRKDIR}/htmldocs && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-		${DISTDIR}/${PORTNAME}-htmldocs-${PORTVERSION}${EXTRACT_SUFX} \
+		${DISTDIR}/${PORTNAME}-htmldocs-${DISTVERSION}${EXTRACT_SUFX} \
 		${EXTRACT_AFTER_ARGS}
 .endif
 
@@ -155,6 +156,7 @@ post-patch:
 .endif
 .if empty(PORT_OPTIONS:MGITWEB)
 	@${REINPLACE_CMD} -e '/$$(MAKE) -C gitweb install/d' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s,/usr/bin/perl,${PERL}," ${WRKSRC}/t/gitweb-lib.sh
 .endif
 .if empty(PORT_OPTIONS:MP4)
 	@${REINPLACE_CMD} -e '/^SCRIPT_PYTHON += git-p4.py$$/d' ${WRKSRC}/Makefile

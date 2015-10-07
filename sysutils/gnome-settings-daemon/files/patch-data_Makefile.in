@@ -1,17 +1,6 @@
---- data/Makefile.in.orig	2014-10-16 07:58:46.261475320 +0200
-+++ data/Makefile.in	2014-10-16 08:00:53.638467450 +0200
-@@ -91,10 +91,8 @@
- 	$(srcdir)/org.gnome.settings-daemon.plugins.media-keys.gschema.xml.in.in \
- 	$(srcdir)/org.gnome.settings-daemon.peripherals.gschema.xml.in.in \
- 	$(srcdir)/org.gnome.settings-daemon.plugins.housekeeping.gschema.xml.in.in \
--	$(srcdir)/org.gnome.settings-daemon.plugins.orientation.gschema.xml.in.in \
- 	$(srcdir)/org.gnome.settings-daemon.plugins.sharing.gschema.xml.in.in \
- 	$(srcdir)/org.gnome.settings-daemon.plugins.xrandr.gschema.xml.in.in \
--	$(srcdir)/org.gnome.settings-daemon.peripherals.wacom.gschema.xml.in.in \
- 	$(srcdir)/org.gnome.settings-daemon.plugins.print-notifications.gschema.xml.in.in
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- am__aclocal_m4_deps = $(top_srcdir)/acinclude.m4 \
-@@ -114,10 +112,8 @@
+--- data/Makefile.in.orig	2015-03-24 18:08:17.310107000 +0100
++++ data/Makefile.in	2015-03-24 18:08:17.365424000 +0100
+@@ -108,10 +108,8 @@
  	org.gnome.settings-daemon.plugins.media-keys.gschema.xml.in \
  	org.gnome.settings-daemon.peripherals.gschema.xml.in \
  	org.gnome.settings-daemon.plugins.housekeeping.gschema.xml.in \
@@ -22,7 +11,7 @@
  	org.gnome.settings-daemon.plugins.print-notifications.gschema.xml.in
  CONFIG_CLEAN_VPATH_FILES =
  AM_V_P = $(am__v_P_@AM_V@)
-@@ -414,9 +410,7 @@
+@@ -423,9 +421,7 @@
  	org.gnome.settings-daemon.plugins.xsettings.gschema.xml		\
  	org.gnome.settings-daemon.plugins.housekeeping.gschema.xml	\
  	org.gnome.settings-daemon.plugins.print-notifications.gschema.xml	\
@@ -33,7 +22,7 @@
  
  convertdir = $(datadir)/GConf/gsettings
  convert_DATA = gnome-settings-daemon.convert
-@@ -500,14 +494,10 @@
+@@ -508,14 +504,10 @@
  	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
  org.gnome.settings-daemon.plugins.housekeeping.gschema.xml.in: $(top_builddir)/config.status $(srcdir)/org.gnome.settings-daemon.plugins.housekeeping.gschema.xml.in.in
  	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@

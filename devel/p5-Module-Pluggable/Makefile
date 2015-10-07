@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Module-Pluggable
-PORTVERSION=	5.1
-PORTREVISION=	1
+PORTVERSION=	5.2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,6 +13,6 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 USES=		perl5
-USE_PERL5=	modbuild
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

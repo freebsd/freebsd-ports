@@ -9,9 +9,6 @@ PORTNAME=	gnome-icons
 PORTVERSION=	20060914
 PORTREVISION=	4
 CATEGORIES=	x11-themes gnome
-MASTER_SITES=	# empty
-DISTFILES=	# empty
-EXTRACT_ONLY=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meta-port for Gnome iconsets
@@ -30,8 +27,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/AquaFusion/index.theme:${PORTSDIR}/x11-the
 		${LOCALBASE}/share/icons/ximian-south/index.theme:${PORTSDIR}/x11-themes/gnome-icons-ximian-south \
 		${LOCALBASE}/share/icons/Lila/index.theme:${PORTSDIR}/x11-themes/gnome-icons-lila
 
-NO_BUILD=	yes
-
-do-install:	# empty
+USES=		metaport
 
 .include <bsd.port.mk>

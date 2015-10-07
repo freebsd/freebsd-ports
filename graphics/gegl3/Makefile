@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	gegl
-PORTVERSION=	0.3.0.a1
+PORTVERSION=	0.3.0
 CATEGORIES=	graphics
-#MASTER_SITES=	GIMP
-MASTER_SITES=	LOCAL/kwm
+MASTER_SITES=	GIMP
 PKGNAMESUFFIX=	3
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.a1//}
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Graph based image processing framework (0.3.0 snapshot)
+COMMENT=	Graph based image processing framework
 
 LIB_DEPENDS=	libbabl-0.1.so:${PORTSDIR}/x11/babl \
 		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
@@ -40,7 +39,6 @@ OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	CAIRO ENSCRIPT EXIV2 FFMPEG PIXBUF GRAPHVIZ JASPER JPEG \
 		LUA OPENEXR OPENRAW SIMD PANGO PNG LIBRSVG2 SDL SPIRO V4L \
 		EXAMPLES LCMS2 WEBP
-#		DOCS EXAMPLES
 OPTIONS_DEFAULT=CAIRO ENSCRIPT EXIV2 PIXBUF GRAPHVIZ JASPER JPEG LCMS2 LUA \
 		OPENEXR OPENRAW PANGO PNG LIBRSVG2 SDL SPIRO V4L WEBP
 
@@ -122,57 +120,27 @@ CONFIGURE_ARGS+=--without-pangocairo
 PLIST_SUB+=	PANGOCAIRO="@comment "
 .endif
 
-#.if ${PORT_OPTIONS:MDOCS}
-#BUILD_DEPENDS+=	a2x:${PORTSDIR}/textproc/asciidoc \
-#		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
-#		vimdot:${PORTSDIR}/graphics/graphviz
-#USE_RUBY=	yes
-#RUBY_NO_RUN_DEPENDS=yes
-#.else
-#CONFIGURE_ARGS+=--disable-docs
-#.endif
-
 post-patch:
 	${REINPLACE_CMD} "s/lua >/lua-${LUA_VER} >/g" ${WRKSRC}/configure
-.if ! ${PORT_OPTIONS:MDOCS}
+.if ! ${PORT_OPTIONS:MEXAMPLES}
 	${REINPLACE_CMD} -e 's|tools examples|tools|g' \
 		${WRKSRC}/Makefile.in
 .endif
 	${REINPLACE_CMD} -e 's|\(lua\)\(5\.1\)|\1-\2|g ; s|x86_64|amd64|g' \
 		${WRKSRC}/configure
 
-#.if ${PORT_OPTIONS:MDOCS}
-#pre-configure:
-#.if !exists(${LOCALBASE}/bin/vimdot)
-#	@${ECHO_CMD} "${PKGNAME}: Needs graphics/graphviz with PANGOCAIRO support enabled."
-#	@${FALSE}
-#.endif
-#.endif
-
-#post-build:
-#.if ${PORT_OPTIONS:MDOCS}
-#	cd ${WRKSRC}/docs && ${MAKE_CMD} index.html
-#.endif
-
 post-install:
-#.if ${PORT_OPTIONS:MDOCS}
-#	${MKDIR} ${STAGEDIR}${DOCSDIR}/gallery
-#	(cd ${WRKSRC}/docs && \
-#	    ${COPYTREE_SHARE} \*.html ${STAGEDIR}${DOCSDIR} && \
-#	    ${INSTALL_DATA} ChangeLog gegl.css gegl.devhelp devhelp.css ${STAGEDIR}${DOCSDIR} && \
-#	    ${INSTALL_DATA} gallery/OpenRaster* ${STAGEDIR}${DOCSDIR}/gallery && \
-#	    ${INSTALL_DATA} gallery/clones* ${STAGEDIR}${DOCSDIR}/gallery && \
-#	    ${INSTALL_DATA} gallery/index.html ${STAGEDIR}${DOCSDIR}/gallery )
-#.endif
 .if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/data
 	${INSTALL_DATA} ${WRKSRC}/examples/data/surfer.png ${STAGEDIR}${EXAMPLESDIR}/data
 .for ex in ${EXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/examples/${ex}.c ${STAGEDIR}${EXAMPLESDIR}
 .endfor
+# temporary hacks to allow parallel install
+	@${MV} ${STAGEDIR}${PREFIX}/share/examples/gegl \
+		${STAGEDIR}${PREFIX}/share/examples/gegl3
 .endif
 # temporary hacks to allow parallel install
 	@${MV} ${STAGEDIR}${PREFIX}/bin/gegl ${STAGEDIR}${PREFIX}/bin/gegl3
-	@${MV} ${STAGEDIR}${PREFIX}/share/examples/gegl \
-		${STAGEDIR}${PREFIX}/share/examples/gegl3
+
 .include <bsd.port.mk>

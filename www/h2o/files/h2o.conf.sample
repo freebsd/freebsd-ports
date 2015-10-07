@@ -1,5 +1,9 @@
 # vi: ft=yaml
 # to find out the configuration commands, run: h2o --help
+user: www
+pid-file: /var/run/h2o.pid
+access-log: /var/log/h2o/h2o-access.log
+error-log: /var/log/h2o/h2o-error.log
 listen: 80
 listen:
     port: 443
@@ -8,7 +12,6 @@ listen:
         # generate your own certificates
         certificate-file: /usr/local/etc/h2o/server.crt
         key-file: /usr/local/etc/h2o/server.key
-access-log: /var/log/h2o/h2o.log
 file.dirlisting: on
 # per-host configuration
 hosts:

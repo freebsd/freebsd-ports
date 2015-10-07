@@ -315,6 +315,7 @@ man/man8/charon-cmd.8.gz
 %%TESTVECTOR%%@sample %%ETCDIR%%.d/charon/test-vectors.conf.sample
 %%PKI%%bin/pki
 %%PKI%%man/man1/pki---acert.1.gz
+%%PKI%%man/man1/pki---dn.1.gz
 %%PKI%%man/man1/pki---gen.1.gz
 %%PKI%%man/man1/pki---issue.1.gz
 %%PKI%%man/man1/pki---keyid.1.gz

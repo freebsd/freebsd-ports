@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-MockModule
-PORTVERSION=	0.05
-PORTREVISION=	2
+PORTVERSION=	0.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,7 +10,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Override subroutines in a module for unit testing
 
+LICENSE=	GPLv3
+
+BUILD_DEPENDS=	p5-SUPER>=0:${PORTSDIR}/devel/p5-SUPER
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 
 .include <bsd.port.mk>

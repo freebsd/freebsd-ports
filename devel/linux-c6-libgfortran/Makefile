@@ -2,6 +2,7 @@
 
 PORTNAME=	libgfortran
 PORTVERSION=	4.4.7
+PORTREVISION=	1
 CATEGORIES=	devel linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -12,8 +13,6 @@ USE_LINUX_RPM=	yes
 
 RPMVERSION=	11.el6
 USE_LDCONFIG=	yes
-SRC_DISTFILES=	gcc-${DISTVERSION}${SRC_SUFX}
-
-PLIST_FILES=	usr/lib/libgfortran.so.3.0.0 usr/lib/libgfortran.so.3
+SRC_DISTFILES=	gcc-${DISTVERSION}${SRC_SUFX}:SOURCE
 
 .include <bsd.port.mk>

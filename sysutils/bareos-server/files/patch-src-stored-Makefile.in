@@ -1,0 +1,10 @@
+--- src/stored/Makefile.in	2015-07-25 16:28:12.065608000 -0500
++++ src/stored/Makefile.in	2015-07-25 16:28:34.672920000 -0500
+@@ -243,7 +243,6 @@
+ 	$(LIBTOOL_INSTALL) $(INSTALL_PROGRAM) bscan $(DESTDIR)$(sbindir)/bscan
+ 	$(LIBTOOL_INSTALL) $(INSTALL_PROGRAM) btape $(DESTDIR)$(sbindir)/btape
+ 	@srcconf=bareos-sd.conf; \
+-	$(MKDIR) ${DESTDIR}${confdir}/bareos-sd.d/; \
+ 	if  test -f ${DESTDIR}${confdir}/$$srcconf; then \
+ 	   destconf=$$srcconf.new; \
+ 	   echo "  ==> Found existing $$srcconf, installing new conf file as $$destconf"; \

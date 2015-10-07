@@ -1,15 +1,14 @@
 bin/gdm-screenshot
 bin/gdmflexiserver
 etc/dbus-1/system.d/gdm.conf
-etc/gdm/Xsession
-etc/gdm/custom.conf
-etc/gdm/custom.conf.default
-etc/gdm/locale.conf
-etc/gdm/Init/Default
-etc/gdm/PostLogin/Default.sample
-etc/gdm/PostSession/Default
-etc/gdm/PreSession/Default
-etc/gdm/home/.pulse/client.conf
+%%ETCDIR%%/Init/Default
+@sample %%ETCDIR%%/PostLogin/Default.sample
+@sample %%ETCDIR%%/PostSession/Default.sample
+@sample %%ETCDIR%%/PreSession/Default.sample
+%%ETCDIR%%/Xsession
+@sample %%ETCDIR%%/custom.conf.sample
+%%ETCDIR%%/home/.pulse/client.conf
+%%ETCDIR%%/locale.conf
 etc/pam.d/gdm-autologin
 etc/pam.d/gdm-launch-environment
 etc/pam.d/gdm-password
@@ -17,31 +16,34 @@ include/gdm/gdm-client-glue.h
 include/gdm/gdm-client.h
 include/gdm/gdm-sessions.h
 include/gdm/gdm-user-switching.h
+lib/girepository-1.0/Gdm-1.0.typelib
 lib/libgdm.so
 lib/libgdm.so.1
 lib/libgdm.so.1.0.0
-lib/girepository-1.0/Gdm-1.0.typelib
 libdata/pkgconfig/gdm.pc
 libexec/gdm-host-chooser
 libexec/gdm-session-worker
 libexec/gdm-simple-chooser
+libexec/gdm-wayland-session
+libexec/gdm-x-session
 sbin/gdm
 share/dconf/profile/gdm
-share/gir-1.0/Gdm-1.0.gir
 %%DATADIR%%/gdb-cmd
 %%DATADIR%%/gdm.schemas
-%%DATADIR%%/greeter/autostart/caribou-autostart.desktop
 %%DATADIR%%/greeter-dconf-defaults
+%%DATADIR%%/greeter/applications/gnome-shell-wayland.desktop
 %%DATADIR%%/greeter/applications/gnome-shell.desktop
 %%DATADIR%%/greeter/applications/mime-dummy-handler.desktop
 %%DATADIR%%/greeter/applications/mimeapps.list
 %%DATADIR%%/greeter/autostart/orca-autostart.desktop
 %%DATADIR%%/locale.alias
-share/gnome-session/sessions/gdm-shell.session
+share/gir-1.0/Gdm-1.0.gir
 share/help/C/gdm/index.docbook
 share/help/C/gdm/legal.xml
 share/help/ca/gdm/index.docbook
 share/help/ca/gdm/legal.xml
+share/help/cs/gdm/index.docbook
+share/help/cs/gdm/legal.xml
 share/help/de/gdm/index.docbook
 share/help/de/gdm/legal.xml
 share/help/el/gdm/index.docbook

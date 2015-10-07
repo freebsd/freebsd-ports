@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	go
-PORTVERSION=	1.4.2
+PORTVERSION=	1.5.1
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://golang.org/dl/
@@ -13,10 +13,11 @@ COMMENT=	Go programming language
 
 LICENSE=	BSD3CLAUSE
 
+BUILD_DEPENDS=	go14>=1.4:${PORTSDIR}/lang/go14
+
 USES=		shebangfix
 SHEBANG_LANG=	sh
 SHEBANG_FILES=	${WRKSRC}/src/*.bash \
-		${WRKSRC}/doc/progs/run \
 		${WRKSRC}/doc/articles/wiki/*.bash \
 		${WRKSRC}/test/bench/shootout/timing.sh
 
@@ -24,24 +25,25 @@ sh_OLD_CMD=	${SETENV} bash
 sh_CMD=		${SH}
 
 WRKSRC=		${WRKDIR}/go
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64 armv6
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
 GOARCH=386
-GOOBJ=8
-PLIST_SUB+=	I386_ONLY=""
-PLIST_SUB+=	AMD64_ONLY="@comment "
-.else
+.elif ${ARCH} == "amd64"
 GOARCH=amd64
-GOOBJ=6
-PLIST_SUB+=	I386_ONLY="@comment "
-PLIST_SUB+=	AMD64_ONLY=""
+.elif ${ARCH} == "armv6"
+GOARCH=arm
+.else
+IGNORE=		unknown arch ${ARCH}
 .endif
 
-PLIST_SUB+=	ARCH=${GOARCH} \
-		GOOBJ=${GOOBJ}
+PLIST_SUB+=	opsys_ARCH=${OPSYS:tl}_${GOARCH}
+
+.if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1100000)
+EXTRA_PATCHES+=	${FILESDIR}/struct-if_data-patch
+.endif
 
 post-patch:
 	@cd ${WRKSRC} && ${FIND} . -name '*.orig' -delete
@@ -50,6 +52,7 @@ do-build:
 	cd ${WRKSRC}/src && \
 		CC=${CC} \
 		GOROOT=${WRKSRC} GOROOT_FINAL=${PREFIX}/go \
+		GOROOT_BOOTSTRAP=${LOCALBASE}/go14 \
 		GOBIN= GOARCH=${GOARCH} GOOS=${OPSYS:tl} \
 		${SH} make.bash
 

@@ -60,6 +60,8 @@
     SUBDIR += gkrellm-reminder2
     SUBDIR += glabels
     SUBDIR += gnome-blog
+    SUBDIR += gnome-calendar
+    SUBDIR += gnome-characters
     SUBDIR += gnome-clocks
     SUBDIR += gnome-contacts
     SUBDIR += gnome-dictionary
@@ -76,6 +78,7 @@
     SUBDIR += gnome-shell-extension-calculator
     SUBDIR += gnome-shell-extension-coverflow
     SUBDIR += gnome-shell-extension-dashtodock
+    SUBDIR += gnome-shell-extension-filesmenu
     SUBDIR += gnome-shell-extension-hidetopbar
     SUBDIR += gnome-shell-extension-lockkeys
     SUBDIR += gnome-shell-extension-mediaplayer
@@ -131,6 +134,7 @@
     SUBDIR += kdeplasma-addons
     SUBDIR += kruler
     SUBDIR += ksshaskpass
+    SUBDIR += ladon
     SUBDIR += launchy
     SUBDIR += libgcal
     SUBDIR += libopensync-plugin-file
@@ -155,6 +159,8 @@
     SUBDIR += multisync-syncml
     SUBDIR += myitcrm
     SUBDIR += nagaina
+    SUBDIR += nautilus-actions
+    SUBDIR += nautilus-sendto
     SUBDIR += nemo-extensions
     SUBDIR += note
     SUBDIR += notecase
@@ -190,8 +196,8 @@
     SUBDIR += plasma-applet-yawp
     SUBDIR += plopfolio
     SUBDIR += preferences
-    SUBDIR += py-khal
     SUBDIR += py-bugwarrior
+    SUBDIR += py-khal
     SUBDIR += py-pycarddav
     SUBDIR += py-pystash
     SUBDIR += py-send2trash
@@ -228,6 +234,7 @@
     SUBDIR += superkaramba
     SUBDIR += superswitcher
     SUBDIR += surrealtodo
+    SUBDIR += syncthing-gtk
     SUBDIR += systempreferences
     SUBDIR += tagutils
     SUBDIR += taskcoach

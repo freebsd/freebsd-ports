@@ -1,4 +1,4 @@
 bin/pod2docbook
 %%PERL5_MAN3%%/Pod::DocBook.3.gz
 %%SITE_PERL%%/Pod/DocBook.pm
-man/man1/pod2docbook.1.gz
+%%PERL5_MAN1%%/pod2docbook.1.gz

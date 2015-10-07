@@ -16,7 +16,7 @@ LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
 		libcanberra.so:${PORTSDIR}/audio/libcanberra
 
 USE_XORG=	x11
-USE_GNOME=	glib20 gtk20 gconf2 libxml2 gnomedocutils
+USE_GNOME=	glib20 gtk20 gconf2 intltool libxml2 gnomedocutils
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 USES=		gettext gmake pkgconfig tar:bzip2

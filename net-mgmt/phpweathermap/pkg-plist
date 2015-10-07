@@ -9,8 +9,6 @@ bin/phpweathermap
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/random-bits/suite-1.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/random-bits/suite-2.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/random-bits/suite-2.png
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/random-bits
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%DATADIR%%/HTML_ImageMap.class.php
 %%DATADIR%%/WeatherMap.functions.php
 %%DATADIR%%/WeatherMapLink.class.php
@@ -37,6 +35,8 @@ bin/phpweathermap
 %%DATADIR%%/lib/poller-common.php
 %%DATADIR%%/lib/post/WeatherMapPostProcessorTest.php
 %%DATADIR%%/lib/pre/WeatherMapPreProcessorTest.php
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%DATADIR%%/www/docs/example/Gradient_BK_800.png
 %%DATADIR%%/www/docs/example/Vera.ttf
 %%DATADIR%%/www/docs/example/VeraBI.ttf
@@ -166,16 +166,13 @@ bin/phpweathermap
 %%DATADIR%%/www/images/wrench_orange.png
 %%DATADIR%%/www/images/yellow-ball-64.png
 %%DATADIR%%/www/overlib.js
-@dirrm %%DATADIR%%/www/images
-@dirrm %%DATADIR%%/www/editor-resources
-@dirrm %%DATADIR%%/www/docs/pages
-@dirrm %%DATADIR%%/www/docs/images
-@dirrm %%DATADIR%%/www/docs/example
-@dirrm %%DATADIR%%/www/docs
-@dirrm %%DATADIR%%/www/configs
-@dirrm %%DATADIR%%/www
-@dirrm %%DATADIR%%/lib/pre
-@dirrm %%DATADIR%%/lib/post
-@dirrm %%DATADIR%%/lib/datasources
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%
+@dir %%DATADIR%%/www/images
+@dir %%DATADIR%%/www/editor-resources
+@dir %%DATADIR%%/www/docs/pages
+@dir %%DATADIR%%/www/docs/images
+@dir %%DATADIR%%/www/docs/example
+@dir %%DATADIR%%/www/docs
+@dir %%DATADIR%%/www/configs
+@dir %%DATADIR%%/www
+@owner
+@group

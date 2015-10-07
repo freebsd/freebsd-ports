@@ -20,5 +20,5 @@ bin/WebSearch
 %%PERL5_MAN3%%/WWW::Search::Simple.3.gz
 %%PERL5_MAN3%%/WWW::Search::Test.3.gz
 %%PERL5_MAN3%%/WWW::SearchResult.3.gz
-man/man1/AutoSearch.1.gz
-man/man1/WebSearch.1.gz
+%%PERL5_MAN1%%/AutoSearch.1.gz
+%%PERL5_MAN1%%/WebSearch.1.gz

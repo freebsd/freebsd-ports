@@ -1,6 +1,4 @@
-diff --git a/trx.c b/trx.c
-index 8e95d98..765f83c 100644
---- trx.c
+--- trx.c.orig	2011-12-22 14:21:03 UTC
 +++ trx.c
 @@ -51,6 +51,8 @@
  #include <errno.h>

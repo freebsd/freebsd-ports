@@ -1,4 +1,4 @@
---- single_inst/qtlocalpeer.cpp.orig	2011-08-27 08:25:14.000000000 +0000
+--- single_inst/qtlocalpeer.cpp.orig	2011-08-27 08:25:14 UTC
 +++ single_inst/qtlocalpeer.cpp
 @@ -58,9 +58,7 @@ static PProcessIdToSessionId pProcessIdT
  #if defined(Q_OS_UNIX)

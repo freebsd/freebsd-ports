@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	adminer
-PORTVERSION=	4.1.0
-PORTREVISION=	1
+PORTVERSION=	4.2.1
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME}/Adminer/Adminer%20${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-${PORTVERSION}.php ${PORTNAME}-${PORTVERSION}-en.php \
 		${PORTNAME}-${PORTVERSION}-mysql.php ${PORTNAME}-${PORTVERSION}-mysql-en.php
-EXTRACT_ONLY= ${DISTNAME}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	udvzsolt@gmail.com
 COMMENT=	Full-featured database management tool written in PHP
@@ -22,19 +21,19 @@ USE_PHP=	mysql session
 SUB_FILES=	pkg-message
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
-OPTIONS_SINGLE=	VERSION
-OPTIONS_SINGLE_VERSION= LITE FULL
+OPTIONS_SINGLE=		VERSION
+OPTIONS_SINGLE_VERSION=	LITE FULL
 
-OPTIONS_GROUP= LT
-OPTIONS_GROUP_LT= ONLY_MYSQL NLS
+OPTIONS_GROUP=		LT
+OPTIONS_GROUP_LT=	ONLY_MYSQL NLS
 
-LITE_DESC=	Lite version (only a simple index.php)
-FULL_DESC=	Full version (adminer and editor)
+LITE_DESC=		Lite version (only a simple index.php)
+FULL_DESC=		Full version (adminer and editor)
 ONLY_MYSQL_DESC=	Only MySQL support - ONLY IN LITE VERSION
-NLS_DESC=	Native Language Support - ONLY IN LITE VERSION
+NLS_DESC=		Native Language Support - ONLY IN LITE VERSION
 
-OPTIONS_DEFAULT=FULL
-OPTIONS_SUB=yes
+OPTIONS_DEFAULT=	FULL
+OPTIONS_SUB=		yes
 
 .include <bsd.port.options.mk>
 

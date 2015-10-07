@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
 USES=		gmake pkgconfig
-USE_GNOME=	gconf2 libwnck
+USE_GNOME=	gconf2 intltool libwnck
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

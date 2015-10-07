@@ -6,6 +6,8 @@ bin/avr-gcc-4.10.0
 bin/avr-gcc-ar
 bin/avr-gcc-nm
 bin/avr-gcc-ranlib
+bin/avr-gcov
+bin/avr-gcov-tool
 lib/gcc/avr/4.10.0/avr25/libgcc.a
 lib/gcc/avr/4.10.0/avr25/libgcov.a
 lib/gcc/avr/4.10.0/avr25/tiny-stack/libgcc.a
@@ -148,6 +150,7 @@ lib/gcc/avr/4.10.0/plugin/include/hash-table.h
 lib/gcc/avr/4.10.0/plugin/include/hashtab.h
 lib/gcc/avr/4.10.0/plugin/include/highlev-plugin-common.h
 lib/gcc/avr/4.10.0/plugin/include/hwint.h
+lib/gcc/avr/4.10.0/plugin/include/inchash.h
 lib/gcc/avr/4.10.0/plugin/include/incpath.h
 lib/gcc/avr/4.10.0/plugin/include/input.h
 lib/gcc/avr/4.10.0/plugin/include/insn-codes.h

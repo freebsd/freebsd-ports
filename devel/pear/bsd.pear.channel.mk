@@ -18,8 +18,7 @@ PEAR_CHANNEL_ALIAS?=	${PORTNAME}
 PEAR_CHANNEL_REG?=	${FILESDIR}/${PEAR_CHANNEL_HOST}.reg
 
 PLIST_FILES=	${LPEARDIR}/.channels/.alias/${PEAR_CHANNEL_ALIAS}.txt \
-		${LPEARDIR}/.channels/${PEAR_CHANNEL_HOST}.reg \
-		"@exec ${MKDIR} %D/${LPEARDIR}/.registry/.channel.${PEAR_CHANNEL_HOST}"
+		${LPEARDIR}/.channels/${PEAR_CHANNEL_HOST}.reg
 PLIST_DIRS=	${LPEARDIR}/.registry/.channel.${PEAR_CHANNEL_HOST}
 
 .if !defined(PEAR_CHANNEL_HOST)

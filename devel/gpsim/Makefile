@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	gpsim
-PORTVERSION=	0.28.1
+PORTVERSION=	0.29.0
 CATEGORIES=	devel
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}.0
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software simulator for Microchip PIC microcontrollers
@@ -32,12 +32,7 @@ OPTIONS_SUB=		yes
 GTK2_LIB_DEPENDS=	libgtkextra-x11-2.0.so:${PORTSDIR}/x11-toolkits/gtkextra2
 GTK2_USE=		gnome=gtk20
 GTK2_CONFIGURE_ENABLE=	gui
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGTK2}
-DESKTOP_ENTRIES="GPSim" "" "" "gpsim" "Development;GTK;" ""
-.endif
+GTK2_DESKTOP_ENTRIES=	"GPSim" "" "" "gpsim" "Development;GTK;" ""
 
 post-patch:
 .for i in gpsim/Makefile.in modules/Makefile.in

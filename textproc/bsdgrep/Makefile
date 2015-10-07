@@ -3,7 +3,7 @@
 
 PORTNAME=	grep
 PORTVERSION=	20111002
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	LOCAL/gabor
 PKGNAMEPREFIX=	bsd-
@@ -20,26 +20,18 @@ MAKE_ENV+=	BINDIR="${PREFIX}/bin" \
 
 OPTIONS_DEFINE=	GNU_COMPAT NLS
 OPTIONS_DEFAULT=	GNU_COMPAT
+OPTIONS_SUB=		yes
 GNU_COMPAT_DESC=	Use GNU regex library (recommended)
 
 CONFLICTS=	gnugrep-*
 
-.include <bsd.port.options.mk>
+NLS_MAKE_ENV_OFF=	WITHOUT_NLS=yes
+GNU_COMPAT_MAKE_ENV_OFF=	WITHOUT_GNU_COMPAT=yes
 
-.if ${PORT_OPTIONS:MNLS}
-PLIST_SUB+=	NLS=""
-.else
-MAKE_ENV+=	WITHOUT_NLS=yes
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-.if !${PORT_OPTIONS:MGNU_COMPAT}
-MAKE_ENV+=	WITHOUT_GNU_COMPAT=yes
-.endif
-
-pre-install:
-.if ${PORT_OPTIONS:MNLS}
+pre-install-NLS-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/nls/gl_ES.ISO8859-1
-.endif
+
+post-install:
+	${LN} -sf ${PREFIX}/bin/grep ${STAGEDIR}${PREFIX}/bin/bsdgrep
 
 .include <bsd.port.mk>

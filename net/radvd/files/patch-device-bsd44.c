@@ -1,6 +1,6 @@
---- ./device-bsd44.c.orig	2011-02-26 17:00:23.000000000 +0100
-+++ ./device-bsd44.c	2011-07-08 13:13:44.000000000 +0200
-@@ -189,6 +189,24 @@
+--- device-bsd44.c.orig	2014-07-21 07:21:42 UTC
++++ device-bsd44.c
+@@ -171,6 +171,24 @@ int setup_linklocal_addr(struct Interfac
  
  int setup_allrouters_membership(struct Interface *iface)
  {
@@ -22,6 +22,6 @@
 +		return (-1);
 +	}
 +
- 	return (0);
+ 	return 0;
  }
  

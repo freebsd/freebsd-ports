@@ -29,7 +29,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bruteblockd ${STAGEDIR}${PREFIX}/sbin/
 	${MKDIR} ${STAGEDIR}${CONFDIR}
 .for file in ssh proftpd
-	${INSTALL_DATA} ${WRKSRC}/etc/${file}.conf ${STAGEDIR}${CONFDIR}/${file}.conf.dist
+	${INSTALL_DATA} ${WRKSRC}/etc/${file}.conf ${STAGEDIR}${CONFDIR}/${file}.conf.sample
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/doc/bruteblock.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -18,9 +18,9 @@ USES=		gnustep
 
 USE_GNUSTEP=	back build
 
-DATADIR=	${GNUSTEP_LOCAL_ROOT}/Applications/PRICE.app
+DATADIR=	${GNUSTEP_SYSTEM_ROOT}/Applications/PRICE.app
 PORTDATA=	*
-PLIST_FILES=	${GNUSTEP_LOCAL_TOOLS}/PRICE \
+PLIST_FILES=	${GNUSTEP_SYSTEM_TOOLS}/PRICE \
 		share/applications/PRICE.desktop
 
 post-build:

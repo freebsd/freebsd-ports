@@ -28,9 +28,6 @@ OPTIONS_DEFAULT=	MPG123
 
 MMPG123_RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
-.include <bsd.port.options.mk>
-.include <bsd.port.pre.mk>
-
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 IGNORE=		may not be automatically fetched due to licensing\
 		restrictions. You must manually fetch ${DISTFILES} from\
@@ -44,10 +41,8 @@ do-build:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/baudline ${STAGEDIR}${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
+do-install-DOCS-on:
 	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
-.endif
-	@[ -f /compat/linux/proc/stat ] || ${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

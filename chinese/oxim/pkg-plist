@@ -22,5 +22,5 @@ man/man1/oxim.1.gz
 share/locale/zh_CN/LC_MESSAGES/oxim.mo
 share/locale/zh_HK/LC_MESSAGES/oxim.mo
 share/locale/zh_TW/LC_MESSAGES/oxim.mo
-%%GTK2%%@exec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache
-%%GTK2%%@unexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache
+%%GTK2%%@postexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache
+%%GTK2%%@postunexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache

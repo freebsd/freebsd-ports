@@ -16,8 +16,9 @@ USES=		gettext gmake libtool pkgconfig tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk30 intltool libxml2
-CPPFLAGS+=	-I${LOCALBASE}/include 
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.anjuta.plugins.scintilla.gschema.xml \
 		org.gnome.anjuta.plugins.scratchbox.gschema.xml

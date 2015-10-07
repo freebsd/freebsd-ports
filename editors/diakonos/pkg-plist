@@ -1,10 +1,6 @@
 bin/diakonos
-@unexec if cmp -s %D/etc/diakonos.conf.dist %D/etc/diakonos.conf; then rm -f %D/etc/diakonos.conf; fi
-etc/diakonos.conf.dist
-@exec if [ ! -f %B/diakonos.conf ]; then cp -p %D/%F %B/diakonos.conf; fi
-@unexec if cmp -s %D/etc/diakonos-256-colour.conf.dist %D/etc/diakonos-256-colour.conf; then rm -f %D/etc/diakonos-256-colour.conf; fi
-etc/diakonos-256-colour.conf.dist
-@exec if [ ! -f %B/diakonos-256-colour.conf ]; then cp -p %D/%F %B/diakonos-256-colour.conf; fi
+@sample etc/diakonos.conf.sample
+@sample etc/diakonos-256-colour.conf.sample
 %%RUBY_SITELIBDIR%%/diakonos.rb
 %%RUBY_SITELIBDIR%%/diakonos/about.rb
 %%RUBY_SITELIBDIR%%/diakonos/bookmark.rb

@@ -8,16 +8,16 @@ share/dbus-1/services/org.gnome.Photos.service
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/NEWS
 %%DOCSDIR%%/README
-share/glib-2.0/schemas/org.gnome.photos.gschema.xml
 share/gnome-shell/search-providers/org.gnome.Photos.search-provider.ini
 share/help/C/gnome-photos/favorites-set.page
 share/help/C/gnome-photos/favorites.page
 share/help/C/gnome-photos/index.page
 share/help/C/gnome-photos/legal.xml
+share/help/C/gnome-photos/media/logo1.png
 share/help/C/gnome-photos/view-album.page
 share/help/C/gnome-photos/view-favorites.page
+share/help/C/gnome-photos/view-photos.page
 share/help/C/gnome-photos/view.page
-share/help/C/gnome-photos/media/logo1.png
 share/help/cs/gnome-photos/favorites-set.page
 share/help/cs/gnome-photos/favorites.page
 share/help/cs/gnome-photos/index.page
@@ -25,6 +25,7 @@ share/help/cs/gnome-photos/legal.xml
 share/help/cs/gnome-photos/media/logo1.png
 share/help/cs/gnome-photos/view-album.page
 share/help/cs/gnome-photos/view-favorites.page
+share/help/cs/gnome-photos/view-photos.page
 share/help/cs/gnome-photos/view.page
 share/help/de/gnome-photos/favorites-set.page
 share/help/de/gnome-photos/favorites.page
@@ -33,6 +34,7 @@ share/help/de/gnome-photos/legal.xml
 share/help/de/gnome-photos/media/logo1.png
 share/help/de/gnome-photos/view-album.page
 share/help/de/gnome-photos/view-favorites.page
+share/help/de/gnome-photos/view-photos.page
 share/help/de/gnome-photos/view.page
 share/help/el/gnome-photos/favorites-set.page
 share/help/el/gnome-photos/favorites.page
@@ -41,6 +43,7 @@ share/help/el/gnome-photos/legal.xml
 share/help/el/gnome-photos/media/logo1.png
 share/help/el/gnome-photos/view-album.page
 share/help/el/gnome-photos/view-favorites.page
+share/help/el/gnome-photos/view-photos.page
 share/help/el/gnome-photos/view.page
 share/help/es/gnome-photos/favorites-set.page
 share/help/es/gnome-photos/favorites.page
@@ -49,6 +52,7 @@ share/help/es/gnome-photos/legal.xml
 share/help/es/gnome-photos/media/logo1.png
 share/help/es/gnome-photos/view-album.page
 share/help/es/gnome-photos/view-favorites.page
+share/help/es/gnome-photos/view-photos.page
 share/help/es/gnome-photos/view.page
 share/help/fr/gnome-photos/favorites-set.page
 share/help/fr/gnome-photos/favorites.page
@@ -57,6 +61,7 @@ share/help/fr/gnome-photos/legal.xml
 share/help/fr/gnome-photos/media/logo1.png
 share/help/fr/gnome-photos/view-album.page
 share/help/fr/gnome-photos/view-favorites.page
+share/help/fr/gnome-photos/view-photos.page
 share/help/fr/gnome-photos/view.page
 share/help/gl/gnome-photos/favorites-set.page
 share/help/gl/gnome-photos/favorites.page
@@ -65,6 +70,7 @@ share/help/gl/gnome-photos/legal.xml
 share/help/gl/gnome-photos/media/logo1.png
 share/help/gl/gnome-photos/view-album.page
 share/help/gl/gnome-photos/view-favorites.page
+share/help/gl/gnome-photos/view-photos.page
 share/help/gl/gnome-photos/view.page
 share/help/hu/gnome-photos/favorites-set.page
 share/help/hu/gnome-photos/favorites.page
@@ -73,6 +79,7 @@ share/help/hu/gnome-photos/legal.xml
 share/help/hu/gnome-photos/media/logo1.png
 share/help/hu/gnome-photos/view-album.page
 share/help/hu/gnome-photos/view-favorites.page
+share/help/hu/gnome-photos/view-photos.page
 share/help/hu/gnome-photos/view.page
 share/help/ko/gnome-photos/favorites-set.page
 share/help/ko/gnome-photos/favorites.page
@@ -81,6 +88,7 @@ share/help/ko/gnome-photos/legal.xml
 share/help/ko/gnome-photos/media/logo1.png
 share/help/ko/gnome-photos/view-album.page
 share/help/ko/gnome-photos/view-favorites.page
+share/help/ko/gnome-photos/view-photos.page
 share/help/ko/gnome-photos/view.page
 share/help/pt_BR/gnome-photos/favorites-set.page
 share/help/pt_BR/gnome-photos/favorites.page
@@ -89,6 +97,7 @@ share/help/pt_BR/gnome-photos/legal.xml
 share/help/pt_BR/gnome-photos/media/logo1.png
 share/help/pt_BR/gnome-photos/view-album.page
 share/help/pt_BR/gnome-photos/view-favorites.page
+share/help/pt_BR/gnome-photos/view-photos.page
 share/help/pt_BR/gnome-photos/view.page
 share/help/ro/gnome-photos/favorites-set.page
 share/help/ro/gnome-photos/favorites.page
@@ -97,22 +106,19 @@ share/help/ro/gnome-photos/legal.xml
 share/help/ro/gnome-photos/media/logo1.png
 share/help/ro/gnome-photos/view-album.page
 share/help/ro/gnome-photos/view-favorites.page
+share/help/ro/gnome-photos/view-photos.page
 share/help/ro/gnome-photos/view.page
-share/icons/HighContrast/16x16/apps/gnome-photos.png
-share/icons/HighContrast/22x22/apps/gnome-photos.png
-share/icons/HighContrast/24x24/apps/gnome-photos.png
-share/icons/HighContrast/256x256/apps/gnome-photos.png
-share/icons/HighContrast/32x32/apps/gnome-photos.png
-share/icons/HighContrast/48x48/apps/gnome-photos.png
 share/icons/hicolor/16x16/apps/gnome-photos.png
 share/icons/hicolor/22x22/apps/gnome-photos.png
 share/icons/hicolor/24x24/apps/gnome-photos.png
 share/icons/hicolor/256x256/apps/gnome-photos.png
 share/icons/hicolor/32x32/apps/gnome-photos.png
 share/icons/hicolor/48x48/apps/gnome-photos.png
+share/icons/hicolor/scalable/apps/gnome-photos-symbolic.svg
 share/locale/ar/LC_MESSAGES/gnome-photos.mo
 share/locale/as/LC_MESSAGES/gnome-photos.mo
 share/locale/bg/LC_MESSAGES/gnome-photos.mo
+share/locale/bs/LC_MESSAGES/gnome-photos.mo
 share/locale/ca/LC_MESSAGES/gnome-photos.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-photos.mo
 share/locale/cs/LC_MESSAGES/gnome-photos.mo
@@ -134,6 +140,7 @@ share/locale/gl/LC_MESSAGES/gnome-photos.mo
 share/locale/he/LC_MESSAGES/gnome-photos.mo
 share/locale/hu/LC_MESSAGES/gnome-photos.mo
 share/locale/id/LC_MESSAGES/gnome-photos.mo
+share/locale/is/LC_MESSAGES/gnome-photos.mo
 share/locale/it/LC_MESSAGES/gnome-photos.mo
 share/locale/ja/LC_MESSAGES/gnome-photos.mo
 share/locale/kk/LC_MESSAGES/gnome-photos.mo

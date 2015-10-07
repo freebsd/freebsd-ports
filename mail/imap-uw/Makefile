@@ -81,8 +81,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/imapd/imapd ${STAGEDIR}${PREFIX}/libexec/
 	${INSTALL_PROGRAM} ${WRKSRC}/ipopd/ipop2d ${STAGEDIR}${PREFIX}/libexec/
 	${INSTALL_PROGRAM} ${WRKSRC}/ipopd/ipop3d ${STAGEDIR}${PREFIX}/libexec/
-	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g mail -m 2711 \
-		${WRKSRC}/mlock/mlock ${STAGEDIR}${PREFIX}/libexec
+	${INSTALL_PROGRAM} ${WRKSRC}/mlock/mlock ${STAGEDIR}${PREFIX}/libexec/
 	${INSTALL_PROGRAM} ${WRKSRC}/mtest/mtest ${STAGEDIR}${PREFIX}/bin/mboxtest
 	${INSTALL_MAN} \
 		${WRKSRC}/src/imapd/imapd.8 ${STAGEDIR}${PREFIX}/man/man8/imapd.8

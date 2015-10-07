@@ -1,6 +1,6 @@
---- ./rtrmgr/lex.boot.cc.orig	2010-07-19 21:10:33.000000000 +0000
-+++ ./rtrmgr/lex.boot.cc	2014-02-26 21:17:13.000000000 +0000
-@@ -9552,6 +9552,7 @@
+--- rtrmgr/lex.boot.cc.orig	2012-01-11 17:56:10 UTC
++++ rtrmgr/lex.boot.cc
+@@ -9552,6 +9552,7 @@ static void yy_flex_strncpy YY_PROTO(( c
  static int yy_flex_strlen YY_PROTO(( yyconst char * ));
  #endif
  
@@ -8,7 +8,7 @@
  #ifndef YY_NO_INPUT
  #ifdef __cplusplus
  static int yyinput YY_PROTO(( void ));
-@@ -10483,6 +10484,7 @@
+@@ -10483,6 +10484,7 @@ register char *yy_bp;
  #endif	/* ifndef YY_NO_UNPUT */
  
  
@@ -16,7 +16,7 @@
  #ifdef __cplusplus
  static int yyinput()
  #else
-@@ -10554,7 +10556,7 @@
+@@ -10554,7 +10556,7 @@ static int input()
  
  	return c;
  	}

@@ -3,7 +3,7 @@
 
 PORTNAME=	boinc-astropulse
 PORTVERSION=	6.01
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	astro
 MASTER_SITES=	LOCAL/rene
 DISTNAME=	astropulse-svn-1702 # modified archive, see leftout in top directory
@@ -28,7 +28,7 @@ LIBS+=		-L${LOCALBASE}/lib
 
 # these must match settings in ${PORTSDIR}/net/boinc-client/Makefile
 BOINC_CLIENT_USER?=	boinc
-BOINC_CLIENT_GROUP?=	nobody
+BOINC_CLIENT_GROUP?=	boinc
 BOINC_CLIENT_HOME?=	/var/db/boinc
 
 OPTIONS_DEFINE=	X11
@@ -42,11 +42,7 @@ X11_USE=		GL=gl,glu,glut \
 			XORG=ice,sm,x11,xau,xcb,xext,xi,xdamage,xdmcp,xfixes,xmu,xt,xxf86vm
 X11_CONFIGURE_ENABLE=	graphics
 
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MX11}
-BUILD_DEPENDS+=	${LOCALBASE}/include/boinc/std_fixes.h:${PORTSDIR}/net/boinc-client
-.endif
+X11_BUILD_DEPENDS_OFF=	${LOCALBASE}/include/boinc/std_fixes.h:${PORTSDIR}/net/boinc-client
 
 SETI_WORK!=	cd ${.CURDIR}/../boinc-setiathome-v7 && ${MAKE} -V WRKSRC
 CONFIGURE_ENV+=	BOINCDIR="${NONEXISTENT}" \
@@ -76,9 +72,8 @@ do-install:
 	${INSTALL} -d ${STAGEDIR}${BOINC_CLIENT_HOME}/projects/${SETI_SITE}
 	${INSTALL_PROGRAM} ${WRKSRC}/${AP_BINARY} \
 	    ${STAGEDIR}${BOINC_CLIENT_HOME}/projects/${SETI_SITE}/
-.if ${PORT_OPTIONS:MX11}
+do-install-X11-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/ap_graphics \
 	    ${STAGEDIR}${BOINC_CLIENT_HOME}/projects/${SETI_SITE}/
-.endif
 
 .include <bsd.port.mk>

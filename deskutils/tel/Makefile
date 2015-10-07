@@ -17,7 +17,6 @@ NO_ARCH=	yes
 USES=		gettext python shebangfix tar:bzip2
 SHEBANG_FILES=	src/tel.py
 python_OLD_CMD=	/usr/bin/env python
-python_CMD=	${PYTHON_CMD}
 USE_PYTHON=	distutils
 
 post-patch:

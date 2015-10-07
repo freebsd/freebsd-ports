@@ -22,13 +22,11 @@ OPTIONS_DEFINE=	TRIMESH
 OPTIONS_DEFAULT=TRIMESH
 TRIMESH_DESC=	Trimesh support (sync with OPCODE opt of devel/ode)
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/setup.py
-.if ! ${PORT_OPTIONS:MTRIMESH}
+
+post-patch-TRIMESH-off:
 	@${REINPLACE_CMD} -e '/TRIMESH_ENABLE/ s|True|False|' ${WRKSRC}/setup.py
-.endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ode.so

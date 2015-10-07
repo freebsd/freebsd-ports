@@ -4,7 +4,7 @@
 PORTNAME=	caudium14
 PORTVERSION=	${DISTVERSION}.${PIKEVERSION}
 DISTVERSION=	1.4.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://caudium.googlecode.com/files/
 DISTNAME=	Caudium-${DISTVERSION}
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	pike78:${PORTSDIR}/lang/pike78
 LIB_DEPENDS=	libsablot.so:${PORTSDIR}/textproc/sablotron
 RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
 
-USES=		tar:bzip2 gmake
+USES=		gmake tar:bzip2
 
 # Pike version included from lang/pike78
 SUB_LIST+=	PIKEVERSION=${PIKEVERSION}
@@ -33,6 +33,10 @@ DOCSDIR=	${PREFIX}/share/doc/caudium
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
+	@${REINPLACE_CMD} -i '' -e '1s:@PIKE@:${LOCALBASE}/bin/pike:' \
+		${WRKSRC}/server/start-caudium.in
+	@${REINPLACE_CMD} -i '' -e '1s:bin/pike:${LOCALBASE}/bin/pike:' \
+		${WRKSRC}/server/protocols/tetris.pike
 	@${SED} -e 's:@CAUDIUM_SERVERDIR@:${PREFIX}/caudium/server:' \
 		-e 's:^#############$$:${ECHO} "$${caudium_enable}" | ${EGREP} -iq "^yes|^true" || exit:' \
 		-e 's:/tmp/caudium_pid:/var/run/caudium.pid:' \
@@ -48,14 +52,15 @@ post-install:
 .include <bsd.port.pre.mk>
 
 post-configure:
-.if ${ARCH} != i386
-. for m in Mhash PCRE PiXSL UltraLog _Caudium
+.for m in Mhash PCRE PiXSL UltraLog _Caudium
 	@${REINPLACE_CMD} -e 's/^LD=.*/LD= ld -shared/' \
-		-e '/^CFLAGS=/s/$$/ -fPIC/' \
 		-e 's/^LIBGCC=.*/LIBGCC=/' \
 		${WRKSRC}/src/cmods/$m/Makefile
-. endfor
-.endif
+. if ${ARCH} != i386
+	@${REINPLACE_CMD} -e '/^CFLAGS=/s/$$/ -fPIC/' \
+		${WRKSRC}/src/cmods/$m/Makefile
+. endif
+.endfor
 
 .include "../../lang/pike78/Makefile.common"
 .include <bsd.port.post.mk>

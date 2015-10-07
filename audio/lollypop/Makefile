@@ -28,8 +28,6 @@ INSTALLS_ICONS=	yes
 
 SHEBANG_FILES=	src/*.py
 SHEBANG_LANG=	python
-python_OLD_CMD=	/usr/bin/python
-python_CMD=	${PYTHON_CMD}
 
 GLIB_SCHEMAS=	org.gnome.Lollypop.gschema.xml
 

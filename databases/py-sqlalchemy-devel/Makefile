@@ -32,9 +32,6 @@ OPTIONS_DEFAULT=	SQLITE
 SYBASE_DESC=	Sybase backend
 TESTS_DESC=	Include nose for unit tests
 
-# bypass infrastructure bug
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
-
 MSSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mssql>0:${PORTSDIR}/databases/py-mssql
 PGSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.0.8:${PORTSDIR}/databases/py-psycopg2
 SQLITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3

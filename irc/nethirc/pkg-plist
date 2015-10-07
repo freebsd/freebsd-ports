@@ -19,4 +19,4 @@ bin/nethirc.pl
 %%SITE_PERL%%/NetHirc/Util.pm
 %%SITE_PERL%%/NetHirc.pm
 %%PERL5_MAN3%%/NetHirc.3.gz
-man/man1/nethirc.pl.1.gz
+%%PERL5_MAN1%%/nethirc.pl.1.gz

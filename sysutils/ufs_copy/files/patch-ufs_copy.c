@@ -1,5 +1,5 @@
 --- ufs_copy.c.orig	2006-09-21 15:28:09.000000000 +0900
-+++ ufs_copy.c	2007-12-27 23:28:55.000000000 +0900
++++ ufs_copy.c	2015-08-17 11:45:07.797947000 +0900
 @@ -111,9 +111,11 @@
  main(int argc, char *argv[])
  {
@@ -58,3 +58,13 @@
  			fprintf(stderr, "done\n");
  		else
  			fprintf(stderr, "failed\n");
+@@ -262,6 +289,9 @@
+ 		}
+ 	}
+ 	bcopy(&src, &dst, sizeof(dst));
++#if __FreeBSD_version >= 900011
++	dst.d_sbcsum = NULL;
++#endif
+ 	dst.d_name = dst_path;
+ 	dst.d_fd = open(dst_path, O_CREAT | O_WRONLY,  S_IRUSR |  S_IWUSR );
+ 	if (dst.d_fd < 0) {

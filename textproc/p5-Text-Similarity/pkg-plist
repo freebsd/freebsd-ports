@@ -5,4 +5,4 @@ bin/text_similarity.pl
 %%SITE_PERL%%/Text/OverlapFinder.pm
 %%SITE_PERL%%/Text/Similarity.pm
 %%SITE_PERL%%/Text/Similarity/Overlaps.pm
-man/man1/text_similarity.pl.1.gz
+%%PERL5_MAN1%%/text_similarity.pl.1.gz

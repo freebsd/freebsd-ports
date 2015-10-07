@@ -6,5 +6,5 @@ bin/ujguess
 %%SITE_ARCH%%/auto/Unicode/Japanese/Japanese.so
 %%PERL5_MAN3%%/Unicode::Japanese.3.gz
 %%PERL5_MAN3%%/Unicode::Japanese::JA.3.gz
-man/man1/ujconv.1.gz
-man/man1/ujguess.1.gz
+%%PERL5_MAN1%%/ujconv.1.gz
+%%PERL5_MAN1%%/ujguess.1.gz

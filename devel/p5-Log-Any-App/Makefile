@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Log-Any-App
-PORTVERSION=	0.48
+PORTVERSION=	0.49
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	p5-File-HomeDir>=0:${PORTSDIR}/devel/p5-File-HomeDir \
 		p5-IO-Socket-UNIX-Util>=0:${PORTSDIR}/net/p5-IO-Socket-UNIX-Util \
 		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
 		p5-Log-Any-Adapter-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Any-Adapter-Log4perl \
+		p5-Log-Any-IfLOG>=0:${PORTSDIR}/devel/p5-Log-Any-IfLOG \
 		p5-Log-Dispatch>=0:${PORTSDIR}/devel/p5-Log-Dispatch \
 		p5-Log-Dispatch-ArrayWithLimits>=0:${PORTSDIR}/devel/p5-Log-Dispatch-ArrayWithLimits \
 		p5-Log-Dispatch-Dir>=0.08:${PORTSDIR}/devel/p5-Log-Dispatch-Dir \

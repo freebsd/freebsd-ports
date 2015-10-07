@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	skalibs
-PORTVERSION=	2.3.1.1
+PORTVERSION=	2.3.6.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
 
@@ -18,6 +18,7 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--with-default-path=${PREFIX}/bin:/usr/bin:/bin
 
 DOCS=		AUTHORS COPYING INSTALL README doc/*.html
+OPTIONS_DEFINE=	DOCS
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libskarnet.so.${PORTVERSION}

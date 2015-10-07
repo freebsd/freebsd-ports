@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	twister-core
-PORTVERSION=	0.9.29
+PORTVERSION=	0.9.30
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-p2p
 
@@ -60,9 +59,9 @@ pre-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/twisterd ${STAGEDIR}${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

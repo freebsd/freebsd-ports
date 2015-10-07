@@ -9,6 +9,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Faster and improved version of dd
 
 BROKEN=		No public distfiles
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-10-31
 
 USES=		gmake
 MAKE_ENV=	MAKEPROG="${MAKE_CMD}" CCOM="${CC}" COPTX="${CFLAGS}"

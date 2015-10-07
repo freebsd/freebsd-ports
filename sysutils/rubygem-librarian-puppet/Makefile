@@ -2,6 +2,7 @@
 
 PORTNAME=	librarian-puppet
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PKGNAMEPREFIX}librarianp>=0.6.3:${PORTSDIR}/devel/rubygem-librarianp \
-		${PKGNAMEPREFIX}puppet_forge>=1.0:${PORTSDIR}/sysutils/rubygem-puppet_forge \
+		${PKGNAMEPREFIX}puppet_forge1>=1.0:${PORTSDIR}/sysutils/rubygem-puppet_forge1 \
 		${PKGNAMEPREFIX}rsync>0:${PORTSDIR}/net/rubygem-rsync
 
 NO_ARCH=	yes

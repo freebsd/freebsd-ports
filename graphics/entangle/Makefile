@@ -25,7 +25,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS:Nitstool*} \
 
 USES=		gettext-tools gmake libtool pkgconfig python:3
 GNU_CONFIGURE=	yes
-USE_GNOME=	gtk30 introspection:build
+USE_GNOME=	gtk30 intltool introspection:build
 GLIB_SCHEMAS=	org.entangle-photo.manager.gschema.xml
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes

@@ -3,7 +3,7 @@
 
 PORTNAME=	tinderbox
 DISTVERSION=	4.0.0.b2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://tinderbox.marcuscom.com/ \
@@ -37,6 +37,8 @@ NGINX_DESC=		Nginx server
 OPTIONS_DEFAULT=	MYSQL APACHE CHECK_ROOT EMAILS LSOF \
 			LOG_COMPRESS PARALLEL
 
+USES=		shebangfix
+SHEBANG_FILES=	lib/makemake
 NO_BUILD=	yes
 WANT_PERL=	yes
 SUB_FILES=	pkg-message

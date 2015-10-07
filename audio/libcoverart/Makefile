@@ -4,7 +4,7 @@ PORTNAME=	libcoverart
 PORTVERSION=	1.0.0
 PORTREVISION=	4
 CATEGORIES=	audio
-MASTER_SITES=	https://cloud.github.com/downloads/metabrainz/${PORTNAME}/
+MASTER_SITES=	GHC
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Library for accessing the MusicBrainz cover art archive
@@ -16,6 +16,8 @@ LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson \
 
 USES=		cmake
 USE_LDCONFIG=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	metabrainz
 
 # {PROJECT_VERSION} is not a variable nor a typo, just part of the directory name
 WRKSRC=		${WRKDIR}/${PORTNAME}-{PROJECT_VERSION}

@@ -4,13 +4,11 @@
 PORTNAME=	mlan3
 PORTVERSION=	1.00
 CATEGORIES=	comms
-MASTER_SITES=	ftp://ftp.dalsemi.com/pub/auto_id/public/
+MASTER_SITES=	http://files.maximintegrated.com/sia_bu/public/
 DISTNAME=	owpd300b
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Version 3.00 beta API for Dallas Semiconductors 1-wire lan devices
-
-BROKEN=		Unfetchable
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.txt

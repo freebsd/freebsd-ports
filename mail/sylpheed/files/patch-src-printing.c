@@ -1,6 +1,6 @@
---- src/printing.c.orig	Wed Dec 27 15:50:14 2006
-+++ src/printing.c	Wed Dec 27 16:28:28 2006
-@@ -149,8 +149,6 @@
+--- src/printing.c.orig	2014-06-10 04:06:36 UTC
++++ src/printing.c
+@@ -151,8 +151,6 @@ static gint layout_set_headers(PangoLayo
  
  	desc = pango_font_description_from_string(prefs_common_get()->textfont);
  	size = pango_font_description_get_size(desc);
@@ -9,9 +9,9 @@
  	pango_font_description_set_size(desc, size);
  	pango_layout_set_font_description(layout, desc);
  	pango_font_description_free(desc);
-@@ -406,10 +404,6 @@
+@@ -417,10 +415,6 @@ static void draw_page(GtkPrintOperation 
  	}
- 	g_print("count = %d\n", count);
+ 	debug_print("count = %d\n", count);
  
 -	desc = gtkut_get_default_font_desc();
 -	pango_font_description_set_size(desc, font_size);

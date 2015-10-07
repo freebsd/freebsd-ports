@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kpcli
-PORTVERSION=	2.8
+PORTVERSION=	3.0
 CATEGORIES=	security
 MASTER_SITES=	SF/kpcli/
 EXTRACT_SUFX=	.pl
@@ -27,6 +27,11 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5 shebangfix
 SHEBANG_FILES=	kpcli
 PLIST_FILES=	bin/kpcli man/man1/${PORTNAME}.1.gz
+
+OPTIONS_DEFINE=		PWSAFE3
+PWSAFE3_DESC=		Password Safe V3 file importing
+PWSAFE3_BUILD_DEPENDS+=	p5-Crypt-PWSafe3>=1.21:${PORTSDIR}/security/p5-Crypt-PWSafe3
+PWSAFE3_RUN_DEPENDS+=	p5-Crypt-PWSafe3>=1.21:${PORTSDIR}/security/p5-Crypt-PWSafe3
 
 do-extract:
 	@${MKDIR} ${WRKSRC}

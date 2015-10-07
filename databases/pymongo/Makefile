@@ -16,10 +16,4 @@ LICENSE=	APACHE20
 USES=		python
 USE_PYTHON=	distutils autoplist
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not install on ia64, powerpc, or sparc64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

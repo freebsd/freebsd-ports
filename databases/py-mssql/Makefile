@@ -12,6 +12,10 @@ DISTNAME=	pymssql-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python database interface for simple MS-SQL access
 
+BROKEN=		Broken with current FreeTDS. Please use databases/py-pymssql instead
+DEPRECATED=	Broken with current FreeTDS. Please use databases/py-pymssql instead
+EXPIRATION_DATE=2015-10-28
+
 LICENSE=	LGPL21 # or later
 LICENSE_FILE=	${WRKSRC}/lgpl.txt
 

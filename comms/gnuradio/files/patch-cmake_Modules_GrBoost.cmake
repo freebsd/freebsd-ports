@@ -1,6 +1,6 @@
---- cmake/Modules/GrBoost.cmake.orig	2014-03-06 20:24:23.000000000 -0500
-+++ cmake/Modules/GrBoost.cmake	2014-03-06 20:25:07.000000000 -0500
-@@ -53,6 +53,8 @@
+--- cmake/Modules/GrBoost.cmake.orig	2015-05-12 09:39:44 UTC
++++ cmake/Modules/GrBoost.cmake
+@@ -53,6 +53,8 @@ if(MSVC)
  endif(MSVC)
  
  find_package(Boost "1.35" COMPONENTS ${BOOST_REQUIRED_COMPONENTS})

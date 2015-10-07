@@ -1,5 +1,5 @@
---- src/osdep/radiotap/radiotap.c.orig	2014-04-01 19:20:56.379623336 +0200
-+++ src/osdep/radiotap/radiotap.c	2014-04-01 19:22:54.880614337 +0200
+--- src/osdep/radiotap/radiotap.c.orig	2014-03-31 01:39:15 UTC
++++ src/osdep/radiotap/radiotap.c
 @@ -19,6 +19,16 @@
  	#include "../byteorder.h"
  #endif

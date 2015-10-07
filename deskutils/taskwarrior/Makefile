@@ -3,6 +3,7 @@
 
 PORTNAME=	taskwarrior
 PORTVERSION=	2.4.4
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://taskwarrior.org/download/
 DISTNAME=	task-${PORTVERSION}
@@ -33,7 +34,8 @@ USES=		cmake:outsource shebangfix
 SHEBANG_FILES=	scripts/*/*.pl \
 		scripts/*/*.rb \
 		scripts/*/*.py \
-		doc/rc/refresh
+		doc/rc/refresh \
+		scripts/bash/context
 CMAKE_ARGS+=	-DTASK_DOCDIR:STRING=${DATADIR:S/${PREFIX}\///} \
    		-DTASK_MAN1DIR:STRING=man/man1 \
 		-DTASK_MAN5DIR:STRING=man/man5

@@ -18,19 +18,15 @@ PLIST_FILES=	bin/uplog
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	${REINPLACE_CMD} -e \
 	's|#include <malloc.h>||g' \
 		${WRKSRC}/${PORTNAME}.c
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in README
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

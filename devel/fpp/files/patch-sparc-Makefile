@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- sparc/Makefile.orig	Tue Mar 18 21:23:25 1997
 +++ sparc/Makefile	Mon Oct 21 14:10:57 2002
 @@ -1,8 +1,8 @@

@@ -22,16 +22,3 @@
  
  if ( UNIX )
      execute_process(COMMAND pwd OUTPUT_VARIABLE BUILD_DIRECTORY OUTPUT_STRIP_TRAILING_WHITESPACE)
-@@ -329,9 +329,9 @@
-   set( CLANG_BINARY "${CL_SRC_ROOT}/sdk/clang/lib/libclang.dylib")
- 
- elseif (UNIX)
--  set( CLANG_INCLUDE "${CL_SRC_ROOT}/sdk/clang/Linux/${ARCH_NAME}/include" )
--  set( CLANG_LIBRARY "-L${CL_SRC_ROOT}/sdk/clang/Linux/${ARCH_NAME}/lib -lclang" )
--  set( CLANG_BINARY "${CL_SRC_ROOT}/sdk/clang/Linux/${ARCH_NAME}/lib/libclang.so")
-+  set( CLANG_INCLUDE "%%LOCALBASE%%/llvm34/include" )
-+  set( CLANG_LIBRARY "-L%%LOCALBASE%%/llvm34/lib/ -lclang" )
-+  set( CLANG_BINARY "%%LOCALBASE%%/llvm34/lib/libclang.so")
- endif()
- 
- message( "-- clang link line ${CLANG_LIBRARY} ")

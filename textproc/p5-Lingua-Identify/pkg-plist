@@ -56,5 +56,5 @@ bin/make-lingua-identify-language
 %%SITE_PERL%%/Lingua/Identify/SV.pm
 %%SITE_PERL%%/Lingua/Identify/TR.pm
 %%SITE_PERL%%/Lingua/Identify/UK.pm
-man/man1/langident.1.gz
-man/man1/make-lingua-identify-language.1.gz
+%%PERL5_MAN1%%/langident.1.gz
+%%PERL5_MAN1%%/make-lingua-identify-language.1.gz

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ChipmunkPhysics
-PORTVERSION=	7.0.0
-PORTREVISION=	1
+PORTVERSION=	7.0.1
 CATEGORIES=	devel
 MASTER_SITES=	http://chipmunk-physics.net/release/Chipmunk-7.x/ \
 		http://files.slembcke.net/chipmunk/release/Chipmunk-7.x/ \
@@ -30,22 +29,16 @@ DEMOS_USE=		GL=glew
 DEMOS_LIB_DEPENDS=	libglfw.so:${PORTSDIR}/graphics/glfw2
 DEMOS_CMAKE_OFF=	-DBUILD_DEMOS=OFF
 
-.include <bsd.port.options.mk>
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "README.textile VERSION.txt" ${STAGEDIR}${DOCSDIR})
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-.endif
 
-.if ${PORT_OPTIONS:MEXAMPLES}
+post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/demo && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR} "-name *\.c -or -name *\.h")
-.endif
 
-.if ${PORT_OPTIONS:MDEMOS}
+post-install-DEMOS-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/demo/chipmunk_demos ${STAGEDIR}${PREFIX}/bin
-.endif
 
 .include <bsd.port.mk>

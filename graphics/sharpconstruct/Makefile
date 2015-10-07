@@ -18,7 +18,7 @@ USE_GL=		yes
 GNU_CONFIGURE=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
-ONLY_FOR_ARCHS_REASON=	uses SSE
+ONLY_FOR_ARCHS_REASON=	uses SSE instructions
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz

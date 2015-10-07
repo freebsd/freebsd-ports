@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	amq-protocol
-PORTVERSION=	1.9.2
+PORTVERSION=	2.0.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 

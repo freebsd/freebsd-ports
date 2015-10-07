@@ -10,6 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	System monitor that renders text on desktop
 
+DEPRECATED=	no new releases for years, consider using sysutils/conky
+EXPIRATION_DATE=	2015-11-08
+
 GNU_CONFIGURE=	yes
 USE_XORG=	x11
 CPPFLAGS+=	-I${LOCALBASE}/include

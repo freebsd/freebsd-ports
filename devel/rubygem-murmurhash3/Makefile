@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	murmurhash3
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

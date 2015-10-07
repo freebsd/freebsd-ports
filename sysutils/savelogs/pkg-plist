@@ -1,8 +1,6 @@
 bin/savelogs
 etc/savelogs.conf.sample
-man/man1/rotation.1.gz
-man/man1/savelogs.1.gz
+%%PERL5_MAN1%%/rotation.1.gz
+%%PERL5_MAN1%%/savelogs.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/savelogs.conf.lint
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

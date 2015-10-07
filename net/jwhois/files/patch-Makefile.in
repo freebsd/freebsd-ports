@@ -1,6 +1,6 @@
---- Makefile.in.dist	2007-07-01 17:58:12.000000000 +0900
-+++ Makefile.in	2008-05-26 13:42:47.000000000 +0900
-@@ -224,7 +224,7 @@
+--- Makefile.in.orig	2007-07-01 08:58:12 UTC
++++ Makefile.in
+@@ -224,7 +224,7 @@ sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  EXTRA_DIST = config.rpath  m4/ChangeLog config.rpath include/*.h example/jwhois.conf m4/*.m4 jwhois.spec.in jwhois.spec

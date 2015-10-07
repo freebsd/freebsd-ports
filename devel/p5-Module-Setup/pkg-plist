@@ -51,4 +51,4 @@ bin/module-setup
 %%PERL5_MAN3%%/Module::Setup::Plugin::VC::Git.3.gz
 %%PERL5_MAN3%%/Module::Setup::Test::Flavor.3.gz
 %%PERL5_MAN3%%/Module::Setup::Test::Utils.3.gz
-man/man1/module-setup.1.gz
+%%PERL5_MAN1%%/module-setup.1.gz

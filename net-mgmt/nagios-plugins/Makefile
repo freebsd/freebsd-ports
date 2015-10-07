@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	nagios-plugins
-PORTVERSION=	2.0.3
-PORTREVISION=	9
+PORTVERSION=	2.1.1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://www.nagios-plugins.org/download/ \
@@ -161,6 +161,8 @@ post-patch:
 .endfor
 	@${REINPLACE_CMD} -e 's|chown root|${TRUE}|g' ${WRKSRC}/plugins-root/Makefile.in
 	# add a fake PATH so that it gets set to a correct value during build.
-	@${REINPLACE_CMD} -e "s|$$ENV{'PATH'}=''|$$ENV{'PATH'}='foo'|" ${WRKSRC}/plugins-scripts/*.pl
+	@${REINPLACE_CMD} -e "s|$$ENV{'PATH'}=''|$$ENV{'PATH'}='foo'|; \
+		s|/usr/bin/|${LOCALBASE}/bin/|g" \
+		${WRKSRC}/plugins-scripts/*.pl
 
 .include <bsd.port.mk>

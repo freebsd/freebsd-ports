@@ -255,6 +255,8 @@
 %%CACTIDIR%%/include/js/jquery.js
 %%CACTIDIR%%/include/js/jquery.zoom.css
 %%CACTIDIR%%/include/js/jquery.zoom.js
+%%CACTIDIR%%/include/js/jquery-ui.css
+%%CACTIDIR%%/include/js/jquery-ui.js
 %%CACTIDIR%%/include/js/jstree.js
 %%CACTIDIR%%/include/js/themes/default-dark/32px.png
 %%CACTIDIR%%/include/js/themes/default-dark/40px.png
@@ -344,6 +346,8 @@
 %%CACTIDIR%%/install/0_8_8a_to_0_8_8b.php
 %%CACTIDIR%%/install/0_8_8b_to_0_8_8c.php
 %%CACTIDIR%%/install/0_8_8c_to_0_8_8d.php
+%%CACTIDIR%%/install/0_8_8d_to_0_8_8e.php
+%%CACTIDIR%%/install/0_8_8e_to_0_8_8f.php
 %%CACTIDIR%%/install/0_8_to_0_8_1.php
 %%CACTIDIR%%/install/index.php
 %%CACTIDIR%%/install/install_finish.gif

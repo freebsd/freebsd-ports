@@ -15,12 +15,12 @@ BUILD_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:${PORTSDIR}/math/glm
 LIB_DEPENDS=	libSDL_image.so:${PORTSDIR}/graphics/sdl_image \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libpcre.so:${PORTSDIR}/devel/pcre \
-		libGLEW.so:${PORTSDIR}/graphics/glew \
 		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:${PORTSDIR}/math/glm
 
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig compiler:c++0x
+USE_GL=		glew
 
 CONFIGURE_ARGS+=--with-boost-system=boost_system \
 		--with-boost-filesystem=boost_filesystem

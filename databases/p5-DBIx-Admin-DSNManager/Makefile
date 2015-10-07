@@ -21,6 +21,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Version>=1.002003:${PORTSDIR}/devel/p5-Test-Version \
 		p5-Try-Tiny>=0.06:${PORTSDIR}/lang/p5-Try-Tiny
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5 tar:tgz
 

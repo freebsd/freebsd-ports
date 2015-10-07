@@ -3,7 +3,7 @@
 
 PORTNAME=	shellinabox
 PORTVERSION=	2.14
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	GOOGLE_CODE
 
@@ -32,8 +32,6 @@ SUB_FILES=	pkg-deinstall
 SUB_LIST=	USERS=${USERS} GROUPS=${GROUPS}
 
 NOLOGIN_CONFIGURE_ON=	--disable-login
-
-BROKEN_powerpc=	Does not load on powerpc
 
 .include <bsd.port.options.mk>
 

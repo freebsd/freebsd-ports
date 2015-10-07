@@ -1,12 +1,12 @@
 # Created by: kris@FreeBSD.org
 # $FreeBSD$
 
-PORTNAME=		pks
-PORTVERSION=		0.9.6.20040312
-PORTREVISION=		1
-CATEGORIES=		security www
-MASTER_SITES=		http://pks.sourceforge.net/ LOCAL/mandree
-DISTFILES=		pks-current.tgz
+PORTNAME=	pks
+PORTVERSION=	0.9.6.20040312
+PORTREVISION=	1
+CATEGORIES=	security www
+MASTER_SITES=	http://pks.sourceforge.net/ LOCAL/mandree
+DISTFILES=	pks-current.tgz
 
 MAINTAINER=	tphilipp@potion-studios.com
 COMMENT=	PGP Public Key Server
@@ -37,8 +37,6 @@ PLIST_SUB+=	RESETPREFIX=${PREFIX}
 
 USE_RC_SUBR=	pksd
 
-.include <bsd.port.options.mk>
-
 post-extract:
 	@${CP} -a ${FILESDIR}/EMAIL ${WRKSRC}
 
@@ -50,9 +48,8 @@ post-install:
 	${INSTALL_DATA}  ${WRKSRC}/pksd.conf ${STAGEDIR}${PREFIX}/etc/pksd.conf.sample
 	#${CHOWN} pksd:pksd /var/pks
 
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.mk>

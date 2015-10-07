@@ -24,8 +24,8 @@ bin/pp2sdf
 %%SITE_PERL%%/PerlPoint/Tags/Basic.pm
 %%SITE_PERL%%/PerlPoint/Tags/SDF.pm
 %%SITE_PERL%%/PerlPoint/Template.pm
-man/man1/perlpoint.1.gz
-man/man1/pp2sdf.1.gz
+%%PERL5_MAN1%%/perlpoint.1.gz
+%%PERL5_MAN1%%/pp2sdf.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/.pp2sdf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perlpods.pp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perlpoint

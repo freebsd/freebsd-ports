@@ -12,4 +12,4 @@ bin/pod2projdocs
 %%SITE_PERL%%/Pod/ProjectDocs/Parser/JavaScriptPod.pm
 %%SITE_PERL%%/Pod/ProjectDocs/Parser/PerlPod.pm
 %%SITE_PERL%%/Pod/ProjectDocs/Template.pm
-man/man1/pod2projdocs.1.gz
+%%PERL5_MAN1%%/pod2projdocs.1.gz

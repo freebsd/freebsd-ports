@@ -8,12 +8,16 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	brix@FreeBSD.org
-COMMENT=	Perl module for string aspects of scalars
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	String aspects of scalars
 
-LICENSE_COMB=	dual
 LICENSE=	ART10 GPLv1
-USES=		perl5
+LICENSE_COMB=	dual
+
 USE_PERL5=	modbuild
+USES=		perl5
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Scalar/String/String.so
 
 .include <bsd.port.mk>

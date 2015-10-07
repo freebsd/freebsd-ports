@@ -22,6 +22,7 @@ sbin/searchd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/java/mk.cmd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/java/mkdoc.cmd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/java/test.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/lgpl-3.0.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/libsphinxclient/COPYING
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/libsphinxclient/Makefile.am
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/libsphinxclient/Makefile.in

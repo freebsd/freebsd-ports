@@ -153,10 +153,10 @@ CC=	clang
 CXX=	clang++
 CHOSEN_COMPILER_TYPE=	clang
 .else
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang35:${PORTSDIR}/lang/clang35
-CPP=	${LOCALBASE}/bin/clang-cpp35
-CC=	${LOCALBASE}/bin/clang35
-CXX=	${LOCALBASE}/bin/clang++35
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang36:${PORTSDIR}/lang/clang36
+CPP=	${LOCALBASE}/bin/clang-cpp36
+CC=	${LOCALBASE}/bin/clang36
+CXX=	${LOCALBASE}/bin/clang++36
 CHOSEN_COMPILER_TYPE=	clang
 .if ${OSVERSION} < 900033
 USE_BINUTILS=	yes

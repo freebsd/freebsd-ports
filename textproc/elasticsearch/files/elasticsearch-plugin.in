@@ -5,7 +5,8 @@
 
 name=elasticsearch
 rcvar=elasticsearch_enable
-load_rc_config $name
+
+load_rc_config ${name}
 
 : ${elasticsearch_config:="%%PREFIX%%/etc/elasticsearch/elasticsearch.yml"}
 

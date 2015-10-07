@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.366 2015/07/06 14:48:28 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.371 2015/08/09 22:21:09 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 16;
-my $micro = 5;
+my $micro = 6;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -933,8 +933,10 @@ sub checkpatch {
 			if ($_ !~ /UTC\s*$/) {
 				&perror("WARN", $file, -1, "patch was not generated using ".
 					"``make makepatch''.  It is recommended to use ".
-					"``make makepatch'' to ensure proper patch format.");
+					"``make makepatch'' when you need to [re-]generate a ".
+					"patch to ensure proper patch format.");
 			}
+			last;
 		}
 	}
 
@@ -982,6 +984,9 @@ sub check_depends_syntax {
 			}
 			if ($k =~ /^\$\{(\w+)\}$/) {
 				$k = get_makevar($1);
+			}
+			if ($k eq '') {
+				next;
 			}
 			my @l = split(':', $k);
 
@@ -1644,16 +1649,23 @@ sub checkmakefile {
 	}
 
 	#
-	# whole file: Check if USES is sorted
+	# whole file: Check if USES stuff is sorted
 	#
-	print "OK: checking to see if USES is sorted.\n" if ($verbose);
-	while ($whole =~ /\nUSES.?=\s*(.+)\n/g) {
-		my $lineno = &linenumber($`);
-		my $srex = $1;
-		my @suses = sort(split / /, $srex);
-		if (join(" ", @suses) ne $srex) {
-			&perror("WARN", $file, $lineno, "the options to USES are not ".
-				"sorted.  Please consider sorting them.");
+	my @uses_to_sort = qw(
+		USES
+		USE_PYTHON
+		USE_XORG
+	);
+	print "OK: checking to see if USES_* stuff is sorted.\n" if ($verbose);
+	foreach my $sorted_use (@uses_to_sort) {
+		while ($whole =~ /\n$sorted_use.?=\s*(.+)\n/g) {
+			my $lineno = &linenumber($`);
+			my $srex = $1;
+			my @suses = sort(split / /, $srex);
+			if (join(" ", @suses) ne $srex) {
+				&perror("WARN", $file, $lineno, "the options to $sorted_use ".
+					"are not sorted.  Please consider sorting them.");
+			}
 		}
 	}
 

@@ -32,6 +32,8 @@
 # You may combine multiple WANT_PHP_* knobs.
 # Don't specify any WANT_PHP_* knob if your port will work with every PHP SAPI.
 #
+# If you are building PHP-based ports in poudriere(8) with ZTS enabled,
+# add WITH_MPM=event to /etc/make.conf to prevent build failures.
 
 .if !defined(_PHPMKINCLUDED)
 

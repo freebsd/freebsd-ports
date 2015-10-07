@@ -1,7 +1,7 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 PKGNAMESUFFIX=	-qt4
 
@@ -19,5 +19,8 @@ PLIST=		${.CURDIR}/pkg-plist
 AVAHI_SLAVE=	qt4
 USE_QT4=	corelib moc_build
 AVAHI_PKGCONFIG=	avahi-qt4.pc
+
+post-install:
+	@${RMDIR} ${STAGEDIR}${PREFIX}/etc/avahi
 
 .include "${MASTERDIR}/Makefile"

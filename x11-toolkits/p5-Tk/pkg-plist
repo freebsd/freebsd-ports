@@ -743,7 +743,7 @@ bin/widget
 %%SITE_ARCH%%/auto/Tk/lsearch.al
 %%SITE_ARCH%%/auto/Tk/tabFocus.al
 %%SITE_ARCH%%/auto/Tk/updateWidgets.al
-man/man1/ptked.1.gz
-man/man1/ptksh.1.gz
-man/man1/tkjpeg.1.gz
-man/man1/widget.1.gz
+%%PERL5_MAN1%%/ptked.1.gz
+%%PERL5_MAN1%%/ptksh.1.gz
+%%PERL5_MAN1%%/tkjpeg.1.gz
+%%PERL5_MAN1%%/widget.1.gz

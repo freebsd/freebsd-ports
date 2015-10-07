@@ -104,6 +104,7 @@
 %%T%%/lib/desktop/mime/packages/x-java-jnlp-file.xml
 %%T%%/lib/ext/cldrdata.jar
 %%T%%/lib/ext/dnsns.jar
+%%T%%/lib/ext/jaccess.jar
 %%T%%/lib/ext/jfxrt.jar
 %%T%%/lib/ext/localedata.jar
 %%T%%/lib/ext/meta-index

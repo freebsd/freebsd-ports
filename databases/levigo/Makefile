@@ -35,7 +35,7 @@ USE_GCC=	yes
 .endif
 
 CONFIGURE_ENV+=	CC=${CC} \
-		CXX=${CXX} \
+		CXX=${CXX}
 GO_ENV+=	${CONFIGURE_ENV}
 
 .include "${PORTSDIR}/lang/go/files/bsd.go.mk"

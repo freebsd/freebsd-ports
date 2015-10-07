@@ -1,0 +1,8 @@
+The Claws Mail ManageSieve plugin provides an interface for managing
+Sieve filters. Sieve filters are used for filtering mail on mail servers,
+usually with an IMAP account.
+
+This plugin handles managing Sieve filters, editing them, and checking
+their syntax.
+
+WWW: http://www.claws-mail.org/plugin.php?plugin=managesieve

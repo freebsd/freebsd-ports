@@ -1,6 +1,6 @@
---- ./rib/vifmanager.hh.orig	2010-07-19 21:10:33.000000000 +0000
-+++ ./rib/vifmanager.hh	2014-02-26 21:17:13.000000000 +0000
-@@ -110,6 +110,9 @@
+--- rib/vifmanager.hh.orig	2012-01-11 17:56:10 UTC
++++ rib/vifmanager.hh
+@@ -110,6 +110,9 @@ public:
       */
      int		final_stop();
  
@@ -10,7 +10,7 @@
  protected:
      //
      // IfMgrHintObserver methods
-@@ -163,8 +166,8 @@
+@@ -163,8 +166,8 @@ private:
       */
      int ifmgr_shutdown();
  

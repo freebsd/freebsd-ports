@@ -18,14 +18,12 @@ LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib \
 		libguile.so:${PORTSDIR}/lang/guile
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
-OPTIONS_DEFINE=		DEBUG
-OPTIONS_DEFINE_i386=	SSE
-
-USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig shared-mime-info shebangfix tar:bzip2
+USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
+		shared-mime-info shebangfix tar:bzip2
 SHEBANG_FILES=	autotools/intltool-merge
 # Fails to build with GCC 4.9, cf. PR 196849.
 USE_GCC=	4.8
-USE_GNOME=	libgnomecanvas
+USE_GNOME=	intltool libgnomecanvas
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules \
 		--enable-osspcm=/dev/dsp \
@@ -38,22 +36,16 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
+OPTIONS_SUB=	yes
+
+OPTIONS_DEFINE=		DEBUG
+OPTIONS_DEFINE_i386=	SSE
+OPTIONS_DEFINE_amd64=	SSE
+OPTIONS_DEFAULT_i386=	${MACHINE_CPU:Msse:tu}
+OPTIONS_DEFAULT_amd64=	SSE
 
 DEBUG_CONFIGURE_ENABLE=	debug
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not compile on powerpc: array bound is not an integer constant
-.endif
-
-.if ${PORT_OPTIONS:MSSE} || ${ARCH} == "amd64"
-PLIST_SUB+=	SSE=""
-SSE_FLAGS=	-mmmx -msse
-.else
-PLIST_SUB+=	SSE="@comment "
-SSE_FLAGS=	# none
-.endif
+SSE_VARS=	SSE_FLAGS="-mmmx -msse"
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -73,4 +65,4 @@ post-patch:
 		's|-DG_DISABLE_DEPRECATED||' ${WRKSRC}/bse/Makefile.am \
 		${WRKSRC}/bse/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

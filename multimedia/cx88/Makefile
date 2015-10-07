@@ -3,7 +3,7 @@
 
 PORTNAME=	cx88
 PORTVERSION=	1.4.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://corona.homeunix.net/ports/cx88/
 
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libezxml.a:${PORTSDIR}/textproc/ezxml \
 
 MAKE_ARGS+=	LIBTUNER_LIB=${LOCALBASE}/lib/libtuner LIBTUNER_HEADER=${LOCALBASE}/include/libtuner KMODDIR=${KMODDIR} PREFIX=${STAGEDIR}${PREFIX}
 MAKE_JOBS_UNSAFE=	yes
-USES=			kmod pkgconfig uidfix
+USES=			kmod libedit pkgconfig uidfix
 USE_RC_SUBR=		cx88d
 
 OPTIONS_DEFINE=	DEBUG LINUX_COMPAT HAL

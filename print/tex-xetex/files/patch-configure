@@ -1,5 +1,5 @@
---- configure.orig	2015-04-12 11:22:39 UTC
-+++ configure
+--- configure.orig	2015-04-12 11:22:39.000000000 +0000
++++ configure	2015-07-25 21:47:24.532843000 +0000
 @@ -1033,6 +1033,8 @@ with_system_poppler
  with_system_xpdf
  with_system_zziplib
@@ -9,16 +9,68 @@
  with_system_icu
  with_system_graphite2
  with_system_harfbuzz
-@@ -24071,17 +24073,33 @@ fi
+@@ -23712,26 +23714,6 @@ $as_echo "#define z_const /**/" >>confde
+  ;;
+ esac
  
- ## _KPSE_LIB_FLAGS: Setup teckit (-lTECkit) flags
+-## _KPSE_LIB_FLAGS: Setup lua52 (-ltexlua52) flags
+-  LUA52_INCLUDES="-I$kpse_BLD/libs/lua52/include"
+-  LUA52_LIBS="$kpse_BLD/libs/lua52/libtexlua52.la"
+-  LUA52_DEPEND='${top_builddir}/../../libs/lua52/libtexlua52.la'
+-  LUA52_RULE='# Rebuild libtexlua52
+-$(LUA52_DEPEND): ${top_builddir}/../../libs/lua52/include/lua.h
+-	cd ${top_builddir}/../../libs/lua52 && $(MAKE) $(AM_MAKEFLAGS) rebuild
+-${top_builddir}/../../libs/lua52/include/lua.h:
+-	cd ${top_builddir}/../../libs/lua52 && $(MAKE) $(AM_MAKEFLAGS) rebuild'
+-
+-## _KPSE_LIB_FLAGS: Setup luajit (-ltexluajit) flags
+-  LUAJIT_INCLUDES="-I$kpse_BLD/libs/luajit/include"
+-  LUAJIT_LIBS="$kpse_BLD/libs/luajit/libtexluajit.la"
+-  LUAJIT_DEPEND='${top_builddir}/../../libs/luajit/libtexluajit.la'
+-  LUAJIT_RULE='# Rebuild libtexluajit
+-$(LUAJIT_DEPEND): ${top_builddir}/../../libs/luajit/include/luajit.h
+-	cd ${top_builddir}/../../libs/luajit && $(MAKE) $(AM_MAKEFLAGS) rebuild
+-${top_builddir}/../../libs/luajit/include/luajit.h:
+-	cd ${top_builddir}/../../libs/luajit && $(MAKE) $(AM_MAKEFLAGS) rebuild'
+-
+ ## _KPSE_LIB_FLAGS: Setup libpng (-lpng) flags
  
--# Check whether --with-system-teckit was given.
+ # Check whether --with-system-libpng was given.
+@@ -24045,43 +24027,35 @@ ${top_builddir}/../../libs/xpdf/xpdf/Str
+ fi
+ test "x$kpse_cv_have_win32" = xno || XPDF_LIBS="$XPDF_LIBS -lgdi32"
+ 
+-## _KPSE_LIB_FLAGS: Setup zziplib (-lzzip) flags
++## _KPSE_LIB_FLAGS: Setup teckit (-lTECkit) flags
+ 
+-# Check whether --with-system-zziplib was given.
+-if test "${with_system_zziplib+set}" = set; then :
+-  withval=$with_system_zziplib;
+-fi
+-if test "x$with_system_zziplib" = xyes; then
+-  if $PKG_CONFIG zziplib --atleast-version=0.12; then
+-  ZZIPLIB_INCLUDES=`$PKG_CONFIG zziplib --cflags`
+-  ZZIPLIB_LIBS=`$PKG_CONFIG zziplib --libs`
+-elif test "x$need_zziplib:$with_system_zziplib" = xyes:yes; then
+-  as_fn_error $? "did not find zziplib 0.12 or better" "$LINENO" 5
+-fi
+-else
+-  ZZIPLIB_INCLUDES="-I$kpse_BLD/libs/zziplib/include"
+-  ZZIPLIB_LIBS="$kpse_BLD/libs/zziplib/libzzip.a"
+-  ZZIPLIB_DEPEND='${top_builddir}/../../libs/zziplib/libzzip.a'
+-  ZZIPLIB_RULE='# Rebuild libzzip
+-$(ZZIPLIB_DEPEND): ${top_builddir}/../../libs/zziplib/include/zzip/zzip.h
+-	cd ${top_builddir}/../../libs/zziplib && $(MAKE) $(AM_MAKEFLAGS) rebuild
+-${top_builddir}/../../libs/zziplib/include/zzip/zzip.h:
+-	cd ${top_builddir}/../../libs/zziplib && $(MAKE) $(AM_MAKEFLAGS) rebuild'
 +# Check whether --with-teckit-includes was given.
 +if test "${with_teckit_includes+set}" = set; then :
 +  withval=$with_teckit_includes;
-+fi
-+
+ fi
+ 
+-## _KPSE_LIB_FLAGS: Setup teckit (-lTECkit) flags
+-
+-# Check whether --with-system-teckit was given.
 +# Check whether --with-teckit-libdir was given.
 +if test "${with_teckit_libdir+set}" = set; then :
 +  withval=$with_teckit_libdir;

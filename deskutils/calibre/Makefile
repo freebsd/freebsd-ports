@@ -3,7 +3,7 @@
 
 PORTNAME=	calibre
 PORTVERSION=	1.48.0
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	deskutils python
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
@@ -56,6 +56,7 @@ SHEBANG_FILES=	src/calibre/ebooks/metadata/odt.py \
 		src/calibre/utils/*.py \
 		src/odf/*.py
 USE_QT4=	dbus qmake_build moc_build
+USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-src
 CFLAGS+=	-I${LOCALBASE}/include
@@ -69,7 +70,8 @@ MAKE_ENV+=	FC_INC_DIR="${LOCALBASE}/include/fontconfig" \
 		WITH_USB=yes \
 		CALIBRE_CONFIG_DIRECTORY=${WRKDIR}/calibre-config \
 		XDG_DATA_DIRS=${STAGEDIR}${PREFIX}/share \
-		XDG_CONFIG_HOME=${WRKDIR}/xdg-config
+		XDG_CONFIG_HOME=${WRKDIR}/xdg-config \
+		XDG_UTILS_INSTALL_MODE=system
 
 .include <bsd.port.pre.mk>
 

@@ -1,4 +1,4 @@
-# Created by: Pakhom Golynga <pakhom706@gmail.com>
+# Created by: Pakhom Golynga <pakhom@pakhom.spb.ru>
 # $FreeBSD$
 
 PORTNAME=	zabbix22
@@ -9,7 +9,6 @@ MASTERDIR=	${.CURDIR}/../zabbix22-server
 
 PLIST=		${PKGDIR}/pkg-plist.agent
 
-OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}${PKGNAMESUFFIX}/options
 OPTIONS_DEFINE=	IPV6
 OPTIONS_DEFAULT=	IPV6
 

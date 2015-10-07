@@ -10,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Object-relational mapping layer for Rails MVC Framework
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-activemodel>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-activemodel \
 		rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport \
@@ -17,7 +18,6 @@ RUN_DEPENDS=	rubygem-activemodel>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-a
 		rubygem-tzinfo03>=0.3.29:${PORTSDIR}/devel/rubygem-tzinfo03
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
@@ -26,7 +26,6 @@ OPTIONS_DEFINE=	MYSQL PGSQL SQLITE3
 MYSQL_DESC=	Use native MySQL bindings
 PGSQL_DESC=	Use native PostgreSQL bindings
 SQLITE3_DESC=	Use native SQLite3 bindings
-OPTIONSFILE=	${PORT_DBDIR}/rubygem-${PORTNAME}/options
 
 GEM_ENV+=	LANG=en_US.UTF-8
 

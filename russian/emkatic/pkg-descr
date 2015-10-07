@@ -1,6 +1,7 @@
 eMKatic is a cross-platform emulator of Elektronika RPN programmable
 calculator series (MK-152, MK-152M, MK-1152, MK-161).
 
-Only Cyrillic user interface is supported.
+Cyrillic user interface is enabled by default.  English available with
+localization (-i command line switch or via the context menu).
 
 WWW: http://sourceforge.net/projects/emkatic/

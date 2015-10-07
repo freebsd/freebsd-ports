@@ -12,6 +12,8 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Displays a mini-command line on the xfce4-panel
 
 BROKEN=		No public distfiles
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-10-31
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake libtool pkgconfig xfce tar:bzip2

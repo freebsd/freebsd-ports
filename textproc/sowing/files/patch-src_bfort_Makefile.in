@@ -1,6 +1,6 @@
---- ./src/bfort/Makefile.in.orig	2009-12-28 17:03:12.000000000 +0100
-+++ ./src/bfort/Makefile.in	2009-12-30 14:34:18.000000000 +0100
-@@ -4,15 +4,15 @@
+--- src/bfort/Makefile.in.orig	2014-11-30 15:59:58 UTC
++++ src/bfort/Makefile.in
+@@ -4,15 +4,15 @@ SHELL       = /bin/sh
  include ../../Makerules
  top_srcdir=@top_srcdir@
  srcdir=@srcdir@

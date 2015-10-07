@@ -12,9 +12,9 @@ bin/uriexec
 %%SITE_PERL%%/IPC/Locker/Server.pm
 %%SITE_PERL%%/IPC/PidStat.pm
 %%SITE_PERL%%/IPC/PidStat/PidServer.pm
-man/man1/lockerd.1.gz
-man/man1/lockersh.1.gz
-man/man1/pidstat.1.gz
-man/man1/pidstatd.1.gz
-man/man1/pidwatch.1.gz
-man/man1/uriexec.1.gz
+%%PERL5_MAN1%%/lockerd.1.gz
+%%PERL5_MAN1%%/lockersh.1.gz
+%%PERL5_MAN1%%/pidstat.1.gz
+%%PERL5_MAN1%%/pidstatd.1.gz
+%%PERL5_MAN1%%/pidwatch.1.gz
+%%PERL5_MAN1%%/uriexec.1.gz

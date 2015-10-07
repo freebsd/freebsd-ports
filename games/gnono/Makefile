@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Uno card game
 
-USE_GNOME=	gtk20 libgnomeui
+USE_GNOME=	gtk20 libgnomeui intltool
 USES=		gettext gmake pkgconfig tar:bzip2
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes

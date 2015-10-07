@@ -1,6 +1,6 @@
---- Makefile.in.orig	2008-02-06 18:40:19.000000000 +0100
-+++ Makefile.in	2008-04-06 14:31:07.000000000 +0200
-@@ -7,6 +7,7 @@
+--- Makefile.in.orig	2015-07-06 18:37:03 UTC
++++ Makefile.in
+@@ -8,6 +8,7 @@ datadir     = @datadir@
  man1dir     = @mandir@/man1
  INSTALL     = @INSTALL@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
@@ -8,7 +8,7 @@
  INSTALL_DATA    = @INSTALL_DATA@
  SHELL = @SHELL@
  top_srcdir=@top_srcdir@
-@@ -63,13 +64,13 @@
+@@ -64,13 +65,13 @@ install:
  	    @MKDIR@ $(man1dir) ; fi
  	@if [ ! -d $(man1dir) ] ; then \
  	    echo "Please create $(man1dir)" ; exit 1 ; fi
@@ -25,11 +25,3 @@
  	fi
  	$(INSTALL_PROGRAM) src/bfort/bfort $(bindir)/bfort
  	$(INSTALL_PROGRAM) src/mapnames/mapnames $(bindir)/mapnames
-@@ -91,6 +92,7 @@
- 	    $(INSTALL_DATA)    ${top_srcdir}/share/refman.sty $(datadir)/refman.sty ;\
- 	    $(INSTALL_DATA)    ${top_srcdir}/share/doctext/html.def $(datadir)/doctext/html.def ;\
- 	    $(INSTALL_DATA)    ${top_srcdir}/share/doctext/htmltabl.def $(datadir)/doctext/htmltabl.def ;\
-+	    $(INSTALL_DATA)    ${top_srcdir}/share/doctext/htmlcolor.def $(datadir)/doctext/htmlcolor.def ;\
- 	    $(INSTALL_DATA)    ${top_srcdir}/share/doctext/htmlargtbl.def $(datadir)/doctext/htmlargtbl.def ;\
- 	    $(INSTALL_DATA)    ${top_srcdir}/share/doctext/latex.def $(datadir)/doctext/latex.def ;\
- 	    $(INSTALL_DATA)    ${top_srcdir}/share/doctext/latexargtbl.def $(datadir)/doctext/latexargtbl.def ;\

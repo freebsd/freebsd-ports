@@ -6,6 +6,7 @@
 %%FULL%%%%WWWDIR%%/adminer/database.inc.php
 %%FULL%%%%WWWDIR%%/adminer/db.inc.php
 %%FULL%%%%WWWDIR%%/adminer/download.inc.php
+%%FULL%%%%WWWDIR%%/adminer/drivers/firebird.inc.php
 %%FULL%%%%WWWDIR%%/adminer/drivers/elastic.inc.php
 %%FULL%%%%WWWDIR%%/adminer/drivers/mongo.inc.php
 %%FULL%%%%WWWDIR%%/adminer/drivers/mssql.inc.php
@@ -34,11 +35,13 @@
 %%FULL%%%%WWWDIR%%/adminer/include/version.inc.php
 %%FULL%%%%WWWDIR%%/adminer/include/xxtea.inc.php
 %%FULL%%%%WWWDIR%%/adminer/indexes.inc.php
+%%FULL%%%%WWWDIR%%/composer.json
 %%WWWDIR%%/adminer/index.php
 %%FULL%%%%WWWDIR%%/adminer/lang/ar.inc.php
 %%FULL%%%%WWWDIR%%/adminer/lang/bn.inc.php
 %%FULL%%%%WWWDIR%%/adminer/lang/ca.inc.php
 %%FULL%%%%WWWDIR%%/adminer/lang/cs.inc.php
+%%FULL%%%%WWWDIR%%/adminer/lang/da.inc.php
 %%FULL%%%%WWWDIR%%/adminer/lang/de.inc.php
 %%FULL%%%%WWWDIR%%/adminer/lang/en.inc.php
 %%FULL%%%%WWWDIR%%/adminer/lang/es.inc.php
@@ -145,6 +148,7 @@
 %%FULL%%%%WWWDIR%%/plugins/dump-bz2.php
 %%FULL%%%%WWWDIR%%/plugins/dump-date.php
 %%FULL%%%%WWWDIR%%/plugins/dump-json.php
+%%FULL%%%%WWWDIR%%/plugins/dump-php.php
 %%FULL%%%%WWWDIR%%/plugins/dump-xml.php
 %%FULL%%%%WWWDIR%%/plugins/dump-zip.php
 %%FULL%%%%WWWDIR%%/plugins/edit-calendar.php

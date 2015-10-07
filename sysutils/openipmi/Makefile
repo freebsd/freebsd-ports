@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	openipmi
-PORTVERSION=	2.0.19
-PORTREVISION=	4
+PORTVERSION=	2.0.21
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/OpenIPMI%202.0%20Library
 DISTNAME=	OpenIPMI-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Complex IPMI management software
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
 
@@ -18,7 +19,7 @@ INSTALL_TARGET=	install-strip
 USES=		execinfo gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I../include -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	SSL SNMP PERL PYTHON TCL TKINTER GDBM
@@ -123,5 +124,14 @@ PLIST_SUB+=		GLIB20="@comment "
 post-patch:
 	@${REINPLACE_CMD} '/libOpenIPMIutils_la_LIBADD =/s/$$/ -lexecinfo/' \
 		${WRKSRC}/utils/Makefile.in
+	@${REINPLACE_CMD} 's|malloc.h|stdlib.h|' \
+		${WRKSRC}/lanserv/sdrcomp/sdrcomp.c \
+		${WRKSRC}/lanserv/extcmd.c \
+		${WRKSRC}/lanserv/bmc_app.c \
+		${WRKSRC}/lanserv/bmc_storage.c \
+		${WRKSRC}/lanserv/bmc_picmg.c \
+		${WRKSRC}/lanserv/bmc_sensor.c
+	@${REINPLACE_CMD} 's|-ldl||' \
+		${WRKSRC}/lanserv/Makefile.in
 
 .include <bsd.port.mk>

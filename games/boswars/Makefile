@@ -3,7 +3,7 @@
 
 PORTNAME=	boswars
 PORTVERSION=	2.6.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	http://www.boswars.org/dist/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -12,12 +12,14 @@ MAINTAINER=	martin@arp242.net
 COMMENT=	Futuristic real-time strategy game
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libtheora.so:${PORTSDIR}/multimedia/libtheora \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
-USES=		lua:51 scons
+USES=		lua:51 scons shebangfix
+SHEBANG_FILES=	languages/updatepo.sh
 USE_SDL=	sdl
 USE_GL=		yes
 MAKE_ARGS+=	opengl=1

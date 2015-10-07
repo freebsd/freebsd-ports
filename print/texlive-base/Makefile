@@ -2,8 +2,9 @@
 
 PORTNAME=	texlive
 PORTVERSION=	20150521
+PORTREVISION=	6
 CATEGORIES=	print
-MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2015/
+MASTER_SITES=	TEX_CTAN/systems/texlive/Source/
 PKGNAMESUFFIX=	-base
 DISTNAME=	${PORTNAME}-${DISTVERSION}-source
 DIST_SUBDIR=	TeX
@@ -15,10 +16,10 @@ RUN_DEPENDS=	psbook:${PORTSDIR}/print/psutils
 LIB_DEPENDS=	libicuio.so:${PORTSDIR}/devel/icu \
 		libt1.so:${PORTSDIR}/devel/t1lib \
 		libTECkit.so:${PORTSDIR}/textproc/teckit \
-		libgraphite.so:${PORTSDIR}/graphics/silgraphite \
 		libgd.so:${PORTSDIR}/graphics/gd \
+		libgraphite2.so:${PORTSDIR}/graphics/graphite2 \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libttf.so:${PORTSDIR}/print/freetype \
+		libharfbuzz.so:${PORTSDIR}/print/harfbuzz \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libzzip.so:${PORTSDIR}/devel/zziplib \
 		libpoppler.so:${PORTSDIR}/graphics/poppler \
@@ -27,36 +28,19 @@ LIB_DEPENDS=	libicuio.so:${PORTSDIR}/devel/icu \
 CONFLICTS_INSTALL=	texlive-texmf-201[234]*
 
 USE_TEX=	web2c kpathsea ptexenc tlmgr texhash-bootstrap
-USES=		ghostscript gmake pkgconfig perl5 shebangfix tar:xz
+USES=		ghostscript pkgconfig perl5 shebangfix tar:xz
 USE_PERL5=	run
-USE_LDCONFIG=	yes
 # during build phase gnu configure is run a lot
 MAKE_ENV+=	CONFIG_SITE=${CONFIG_SITE}
-USE_XORG=	x11 xmu xaw pixman
 EXCLUDE_FILES=	${DISTNAME}/texk/web2c \
 		${DISTNAME}/texk/kpathsea \
 		${DISTNAME}/texk/ptexenc \
 		${DISTNAME}/texk/xdvik \
 		${DISTNAME}/texk/dvipdfm-x \
 		${DISTNAME}/texk/dvipsk \
-		${DISTNAME}/libs/freetype2 \
-		${DISTNAME}/libs/gd \
-		${DISTNAME}/libs/gmp \
-		${DISTNAME}/libs/graphite2 \
-		${DISTNAME}/libs/icu \
-		${DISTNAME}/libs/lua52 \
-		${DISTNAME}/libs/luajit \
-		${DISTNAME}/libs/libpaper \
-		${DISTNAME}/libs/libpng \
-		${DISTNAME}/libs/mpfr \
-		${DISTNAME}/libs/pixman \
-		${DISTNAME}/libs/poppler \
-		${DISTNAME}/libs/teckit \
-		${DISTNAME}/libs/xpdf \
-		${DISTNAME}/libs/zlib \
-		${DISTNAME}/libs/zziplib \
+		${DISTNAME}/libs \
 		${DISTNAME}/utils/t1utils \
-		${DISTNAME}/libs/potrace
+		${DISTNAME}/utils/xpdfopen
 EXTRACT_AFTER_ARGS=	${EXCLUDE_FILES:S,^,--exclude ,}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --disable-native-texlive-build \
@@ -67,17 +51,16 @@ CONFIGURE_ARGS= --disable-native-texlive-build \
 		--disable-dvipdfmx \
 		--disable-dvipdfm-x \
 		--disable-xdvipdfmx \
+		--disable-xpdfopen \
 		--enable-build-in-source-tree \
 		--datarootdir=${LOCALBASE}/share \
-		--with-system-freetype \
-		--with-freetype-includes=${LOCALBASE}/include/freetype1/freetype \
-		--with-freetype-libdir=${LOCALBASE}/lib \
 		--with-system-freetype2 \
 		--with-freetype2-includes=${LOCALBASE}/include/freetype2 \
 		--with-freetype2-libdir=${LOCALBASE}/lib \
-		--with-system-cairo \
 		--with-system-gd \
-		--with-system-graphite \
+		--with-system-cairo \
+		--with-system-harfbuzz \
+		--with-system-graphite2 \
 		--with-system-pixman \
 		--with-system-poppler \
 		--with-system-t1lib \
@@ -125,6 +108,11 @@ SHEBANG_FILES=	texk/texlive/linked_scripts/accfonts/mkt1font \
 	texk/texlive/linked_scripts/yplan/yplan
 
 INFO=	dvipng tlbuild
+
+OPTIONS_DEFINE=	X11
+OPTIONS_DEFAULT=X11
+
+X11_USE=	TEX=xpdfopen:run
 
 post-patch:
 	cd ${WRKSRC}/texk/texlive && \

@@ -654,10 +654,10 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Workflow::Handler.3.gz
 %%PERL5_MAN3%%/OpenXPKI::XML::Cache.3.gz
 %%PERL5_MAN3%%/OpenXPKI::i18n.3.gz
-man/man1/openxpkiadm.1.gz
-man/man1/openxpkicli.1.gz
-man/man1/openxpkicmd.1.gz
-man/man1/openxpkictl.1.gz
+%%PERL5_MAN1%%/openxpkiadm.1.gz
+%%PERL5_MAN1%%/openxpkicli.1.gz
+%%PERL5_MAN1%%/openxpkicmd.1.gz
+%%PERL5_MAN1%%/openxpkictl.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/apache/_htaccess
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/apache/openxpki-scep.conf

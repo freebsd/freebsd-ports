@@ -547,11 +547,11 @@ bin/latexmlpost
 %%PERL5_MAN3%%/LaTeXML::Util::Pack.3.gz
 %%PERL5_MAN3%%/LaTeXML::Util::Pathname.3.gz
 %%PERL5_MAN3%%/LaTeXML::Util::WWW.3.gz
-man/man1/latexml.1.gz
-man/man1/latexmlc.1.gz
-man/man1/latexmlfind.1.gz
-man/man1/latexmlmath.1.gz
-man/man1/latexmlpost.1.gz
+%%PERL5_MAN1%%/latexml.1.gz
+%%PERL5_MAN1%%/latexmlc.1.gz
+%%PERL5_MAN1%%/latexmlfind.1.gz
+%%PERL5_MAN1%%/latexmlmath.1.gz
+%%PERL5_MAN1%%/latexmlpost.1.gz
 %%TEXMFLOCALDIR%%/tex/latex/latexml/.packlist
 %%TEXMFLOCALDIR%%/tex/latex/latexml/latexml.sty
 %%TEXMFLOCALDIR%%/tex/latex/latexml/lxRDFa.sty

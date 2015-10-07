@@ -1,4 +1,4 @@
 bin/geoip-lookup
 %%PERL5_MAN3%%/Geo::IP::PurePerl.3.gz
 %%SITE_PERL%%/Geo/IP/PurePerl.pm
-man/man1/geoip-lookup.1.gz
+%%PERL5_MAN1%%/geoip-lookup.1.gz

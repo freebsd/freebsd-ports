@@ -41,4 +41,4 @@ bin/html2ps
 %%SITE_PERL%%/DocSet/Source/Text.pm
 %%SITE_PERL%%/DocSet/Template/Plugin/NavigateCache.pm
 %%SITE_PERL%%/DocSet/Util.pm
-man/man1/docset_build.1.gz
+%%PERL5_MAN1%%/docset_build.1.gz

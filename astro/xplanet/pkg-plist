@@ -1,10 +1,9 @@
 bin/xplanet
 man/man1/xplanet.1.gz
-@unexec if cmp -s %D/share/xplanet/config/default %D/share/xplanet/config/default.sample; then rm -f %D/share/xplanet/config/default;fi
 %%DATADIR%%/arcs/README
 %%DATADIR%%/arcs/constellations
 %%DATADIR%%/config/README
-%%DATADIR%%/config/default.sample
+@sample %%DATADIR%%/config/default.sample
 %%DATADIR%%/config/earth_markers
 %%DATADIR%%/config/moon_orbit
 %%DATADIR%%/config/overlay_clouds

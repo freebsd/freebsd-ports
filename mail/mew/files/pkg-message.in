@@ -10,6 +10,6 @@ You may want to add following lines to your ~/.emacs and/or ~/.mew.el.
     (setq mew-prog-pgpkey      "fetch")
     (setq mew-prog-pgpkey-arg  '("-q" "-o" "-"))
 
-Please consult sample files %%DOCSDIR%%/mew.dot.{emacs,mew}.
+Please consult sample files %%DOCSDIR%%/dot.{emacs,mew}.
 See also %%DOCSDIR%%/00diff for the changes from previous versions.
 *************************************************************************

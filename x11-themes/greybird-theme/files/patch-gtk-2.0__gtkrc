@@ -1,11 +1,11 @@
---- ./gtk-2.0/gtkrc.orig	2014-08-03 14:23:01.000000000 +0000
-+++ ./gtk-2.0/gtkrc	2014-08-09 18:54:53.000000000 +0000
-@@ -594,7 +594,7 @@
+--- gtk-2.0/gtkrc.orig	2015-07-16 15:01:13 UTC
++++ gtk-2.0/gtkrc
+@@ -594,7 +594,7 @@ style "xfwm-tabwin"
  {
  	Xfwm4TabwinWidget::border-width = 1
-         Xfwm4TabwinWidget::border-alpha = 0.9
+ 	Xfwm4TabwinWidget::border-alpha = 0.9
 -	Xfwm4TabwinWidget::icon-size = 64
 +	#Xfwm4TabwinWidget::icon-size = 64
  	Xfwm4TabwinWidget::listview-icon-size = 16
-         Xfwm4TabwinWidget::alpha = 0.8
-         Xfwm4TabwinWidget::border-radius = 10
+ 	Xfwm4TabwinWidget::preview-size = 512
+ 	Xfwm4TabwinWidget::alpha = 0.8

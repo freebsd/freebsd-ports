@@ -1,4 +1,4 @@
---- plugins/imfile/imfile.c.orig	2015-05-19 08:53:40 UTC
+--- plugins/imfile/imfile.c.orig	2015-06-30 12:26:24 UTC
 +++ plugins/imfile/imfile.c
 @@ -1869,12 +1869,14 @@ CODESTARTmodExit
  	objRelease(errmsg, CORE_COMPONENT);

@@ -1,5 +1,4 @@
 libexec/vino-server
-share/GConf/gsettings/org.gnome.Vino.convert
 share/applications/vino-server.desktop
 share/dbus-1/services/org.freedesktop.Telepathy.Client.Vino.service
 share/locale/an/LC_MESSAGES/vino.mo

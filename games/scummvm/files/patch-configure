@@ -1,0 +1,21 @@
+--- configure.orig	2014-07-11 21:10:26 UTC
++++ configure
+@@ -2300,7 +2300,7 @@ case $_host_os in
+ 		LDFLAGS="$LDFLAGS -L$DEVKITPRO/libnds/lib"
+ 		LIBS="$LIBS -lnds9"
+ 		;;
+-	freebsd*)
++	dragonfly*|freebsd*)
+ 		LDFLAGS="$LDFLAGS -L/usr/local/lib"
+ 		CXXFLAGS="$CXXFLAGS -I/usr/local/include"
+ 		;;
+@@ -3106,6 +3106,9 @@ case $_host_os in
+ 	android | beos* | bsd* | darwin* | freebsd* | gnu* | gph-linux | haiku* | hpux* | iphone | irix*| k*bsd*-gnu* | linux* | maemo | mint* | netbsd* | openbsd* | solaris* | sunos* | uclinux* | webos)
+ 		_posix=yes
+ 		;;
++	dragonfly*)
++		_posix=yes
++		;;
+ 	os2-emx*)
+ 		_posix=yes	# FIXME: Really???
+ 		;;

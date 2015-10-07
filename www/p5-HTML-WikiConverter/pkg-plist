@@ -7,4 +7,4 @@ bin/html2wiki
 %%SITE_PERL%%/HTML/WikiConverter/Dialects.pod
 %%SITE_PERL%%/HTML/WikiConverter/Normalizer.pm
 %%SITE_PERL%%/HTML/WikiConverter/WebApp.pm
-man/man1/html2wiki.1.gz
+%%PERL5_MAN1%%/html2wiki.1.gz

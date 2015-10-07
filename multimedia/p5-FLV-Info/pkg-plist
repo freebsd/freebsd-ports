@@ -37,8 +37,8 @@ bin/swf2flv
 %%SITE_PERL%%/FLV/ToSWF.pm
 %%SITE_PERL%%/FLV/Util.pm
 %%SITE_PERL%%/FLV/VideoTag.pm
-man/man1/flv2flv.1.gz
-man/man1/flv2mp3.1.gz
-man/man1/flv2swf.1.gz
-man/man1/flvinfo.1.gz
-man/man1/swf2flv.1.gz
+%%PERL5_MAN1%%/flv2flv.1.gz
+%%PERL5_MAN1%%/flv2mp3.1.gz
+%%PERL5_MAN1%%/flv2swf.1.gz
+%%PERL5_MAN1%%/flvinfo.1.gz
+%%PERL5_MAN1%%/swf2flv.1.gz

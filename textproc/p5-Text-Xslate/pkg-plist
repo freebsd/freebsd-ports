@@ -52,4 +52,4 @@ bin/xslate
 %%SITE_ARCH%%/Text/Xslate/Type/Raw.pm
 %%SITE_ARCH%%/Text/Xslate/Util.pm
 %%SITE_ARCH%%/auto/Text/Xslate/Xslate.so
-man/man1/xslate.1.gz
+%%PERL5_MAN1%%/xslate.1.gz

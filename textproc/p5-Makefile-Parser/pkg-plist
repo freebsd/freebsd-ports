@@ -15,6 +15,6 @@ bin/plmake
 %%SITE_PERL%%/Makefile/AST/Variable.pm
 %%SITE_PERL%%/Makefile/Parser.pm
 %%SITE_PERL%%/Makefile/Parser/GmakeDB.pm
-man/man1/makesimple.1.gz
-man/man1/pgmake-db.1.gz
-man/man1/plmake.1.gz
+%%PERL5_MAN1%%/makesimple.1.gz
+%%PERL5_MAN1%%/pgmake-db.1.gz
+%%PERL5_MAN1%%/plmake.1.gz

@@ -1,5 +1,5 @@
---- configure.orig	Fri Nov 15 17:59:05 2002
-+++ configure	Fri Nov 15 17:59:20 2002
+--- configure.orig	1999-08-06 23:07:54 UTC
++++ configure
 @@ -1204,8 +1204,8 @@ fi
  
  echo "checking Tcl/Tk installation" 1>&6
@@ -11,7 +11,7 @@
  
  #### Find tclsh
  # Check whether --with-tclsh or --without-tclsh was given.
-@@ -1327,6 +1327,8 @@
+@@ -1327,6 +1327,8 @@ echo "$ac_t""$tkconfig/tkConfig.sh" 1>&6
  #### Load the Tcl/Tk configuration files 
  . $tclconfig/tclConfig.sh
  . $tkconfig/tkConfig.sh
@@ -20,3 +20,13 @@
  
  if test -z "$TCL_EXEC_PREFIX"; then TCL_EXEC_PREFIX="$TCL_PREFIX"; fi
  if test -z "$TK_EXEC_PREFIX"; then TK_EXEC_PREFIX="$TK_PREFIX"; fi
+@@ -1517,8 +1519,7 @@ cat > conftest.$ac_ext <<EOF
+     good_tk_version
+ #endif
+ EOF
+-if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
+-  egrep "good_tk_version" >/dev/null 2>&1; then
++if true; then
+   rm -rf conftest*
+   is_good_tk_version=yes
+ else

@@ -9,6 +9,7 @@ OPTIONS_DEFINE=	LANG_ACH \
 		LANG_AS \
 		LANG_AM \
 		LANG_AST \
+		LANG_AZ \
 		LANG_EU \
 		LANG_BN \
 		LANG_BB \
@@ -19,7 +20,6 @@ OPTIONS_DEFINE=	LANG_ACH \
 		LANG_CA \
 		LANG_CN \
 		LANG_CS \
-		LANG_CSB \
 		LANG_DA \
 		LANG_NL \
 		LANG_GB \
@@ -28,6 +28,7 @@ OPTIONS_DEFINE=	LANG_ACH \
 		LANG_ET \
 		LANG_GL \
 		LANG_DE \
+		LANG_DSB \
 		LANG_EL \
 		LANG_GU \
 		LANG_FF \
@@ -49,7 +50,6 @@ OPTIONS_DEFINE=	LANG_ACH \
 		LANG_KK \
 		LANG_KM \
 		LANG_KO \
-		LANG_KU \
 		LANG_LV \
 		LANG_LT \
 		LANG_LIJ \
@@ -99,7 +99,9 @@ OPTIONS_DEFAULT=LANG_AR LANG_BN LANG_BR LANG_CN LANG_ET LANG_DE LANG_FR \
 LANG_ACH_DESC?=	Acholi language support
 LANG_AN_DESC?=	Aragonese language support
 LANG_AS_DESC?=	Assamese language support
+LANG_AZ_DESC?=	Azerbaijani language support
 LANG_CSB_DESC?=	Kashubian language support
+LANG_DSB_DESC?=	Lower Sorbian language support
 LANG_FF_DESC?=	Fulah language support
 LANG_HSB_DESC?=	Upper Sorbian language support
 LANG_KM_DESC?=	Khmer language support

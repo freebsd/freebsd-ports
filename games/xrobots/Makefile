@@ -3,7 +3,7 @@
 
 PORTNAME=	xrobots
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-ss-10.20
@@ -18,7 +18,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 post-install:
 	${CP} ${FILESDIR}/xrobotscores ${STAGEDIR}${PREFIX}/lib/X11
 
-post-patch:
+pre-build:
 	${REINPLACE_CMD} -e 's|__PREFIX__|${PREFIX}|g' \
 		${WRKSRC}/xrobots.man ${WRKSRC}/Imakefile
 

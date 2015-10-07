@@ -1,0 +1,5 @@
+Quack enhances Emacs support for Scheme programming.  Quack is layered
+atop the standard packages `cmuscheme.el', by Olin Shivers, and
+`scheme.el', by Bill Rozas and Dave Love.
+
+WWW: http://www.neilvandyke.org/quack/

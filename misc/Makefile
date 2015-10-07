@@ -3,6 +3,7 @@
 
     COMMENT = Miscellaneous utilities
 
+    SUBDIR += R-cran-mime
     SUBDIR += achievo
     SUBDIR += aclgen
     SUBDIR += amanda-client
@@ -108,6 +109,7 @@
     SUBDIR += freebsd-doc-hu
     SUBDIR += freebsd-doc-it
     SUBDIR += freebsd-doc-ja
+    SUBDIR += freebsd-doc-ko
     SUBDIR += freebsd-doc-mn
     SUBDIR += freebsd-doc-nl
     SUBDIR += freebsd-doc-pl
@@ -301,6 +303,7 @@
     SUBDIR += p5-Business-ISBN
     SUBDIR += p5-Business-ISBN-Data
     SUBDIR += p5-Business-ISIN
+    SUBDIR += p5-Business-ISMN
     SUBDIR += p5-Business-ISSN
     SUBDIR += p5-Business-UPS
     SUBDIR += p5-Chatbot-Eliza
@@ -412,6 +415,7 @@
     SUBDIR += sloccount
     SUBDIR += sls
     SUBDIR += smssend
+    SUBDIR += solarized
     SUBDIR += spamcalc
     SUBDIR += sshbuddy
     SUBDIR += sssnips

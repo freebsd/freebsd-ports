@@ -26,6 +26,6 @@ USES=		perl5
 USE_PERL5=	configure
 
 PLIST_FILES=	bin/clive \
-		man/man1/clive.1.gz
+		${SITE_MAN1}/clive.1.gz
 
 .include <bsd.port.mk>

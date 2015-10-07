@@ -3,7 +3,7 @@
 
 PORTNAME=	lynx
 PORTVERSION=	2.8.8.2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/ \
@@ -65,5 +65,7 @@ post-install:
 # Fix some stage symlinks
 	${LN} -sf ${DOCSDIR}/COPYHEADER ${STAGEDIR}${L_HELP}
 	${LN} -sf ${DOCSDIR}/COPYING ${STAGEDIR}${L_HELP}
+	${LN} -sf ${DOCSDIR}/COPYHEADER.asc ${STAGEDIR}${L_HELP}
+	${LN} -sf ${DOCSDIR}/COPYING.asc ${STAGEDIR}${L_HELP}
 
 .include <bsd.port.mk>

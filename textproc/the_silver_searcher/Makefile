@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	the_silver_searcher
-PORTVERSION=	0.30.0
+PORTVERSION=	0.31.0
 CATEGORIES=	textproc
 
 MAINTAINER=	olgeni@FreeBSD.org

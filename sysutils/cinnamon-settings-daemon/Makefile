@@ -26,7 +26,7 @@ LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 RUN_DEPENDS=	cinnamon-session:${PORTSDIR}/x11/cinnamon-session \
 		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-USES=		autoreconf:build gettext gmake libtool pathfix \
+USES=		autoreconf gettext gmake libtool pathfix \
 		pkgconfig tar:xz
 USE_GNOME=	gnomeprefix intlhack libgnomekbd \
 		libxslt:build
@@ -73,8 +73,5 @@ post-patch:
 		${WRKSRC}/data/org.cinnamon.settings-daemon.plugins.xrandr.gschema.xml.in.in
 	@${REINPLACE_CMD} -e '/wacom/d' \
 		${WRKSRC}/data/Makefile.am
-
-pre-configure:
-	cd ${WRKSRC} && NOCONFIGURE=yes ${SH} ./autogen.sh
 
 .include <bsd.port.mk>

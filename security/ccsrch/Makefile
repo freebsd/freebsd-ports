@@ -18,17 +18,13 @@ USES=		tar:tgz
 PORTDOCS=	README
 PLIST_FILES=	bin/${PORTNAME}
 
-.include <bsd.port.options.mk>
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}; \
 	for f in ${PORTDOCS}; do \
 		${INSTALL_DATA} ${WRKSRC}/$$f ${STAGEDIR}${DOCSDIR}; \
 	done
-.endif
 
 .include <bsd.port.mk>

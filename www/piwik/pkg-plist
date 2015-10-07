@@ -431,6 +431,7 @@
 %%WWWDIR%%/core/Updates/2.13.1.php
 %%WWWDIR%%/core/Updates/2.14.0-b1.php
 %%WWWDIR%%/core/Updates/2.14.0-b2.php
+%%WWWDIR%%/core/Updates/2.14.2.php
 %%WWWDIR%%/core/Updates/2.2.0-b15.php
 %%WWWDIR%%/core/Updates/2.2.3-b6.php
 %%WWWDIR%%/core/Updates/2.3.0-rc2.php
@@ -1427,6 +1428,7 @@
 %%WWWDIR%%/misc/gpl-3.0.txt
 %%WWWDIR%%/misc/internal-docs/content-tracking.md
 %%WWWDIR%%/misc/log-analytics/.gitignore
+%%WWWDIR%%/misc/log-analytics/CONTRIBUTING.md
 %%WWWDIR%%/misc/log-analytics/README.md
 %%WWWDIR%%/misc/log-analytics/import_logs.py
 %%WWWDIR%%/misc/others/ExamplePiwikTracker.php
@@ -1711,6 +1713,7 @@
 %%WWWDIR%%/plugins/Contents/lang/et.json
 %%WWWDIR%%/plugins/Contents/lang/fi.json
 %%WWWDIR%%/plugins/Contents/lang/fr.json
+%%WWWDIR%%/plugins/Contents/lang/gl.json
 %%WWWDIR%%/plugins/Contents/lang/hi.json
 %%WWWDIR%%/plugins/Contents/lang/it.json
 %%WWWDIR%%/plugins/Contents/lang/ja.json
@@ -3791,7 +3794,9 @@
 %%WWWDIR%%/plugins/MobileAppMeasurable/lang/fr.json
 %%WWWDIR%%/plugins/MobileAppMeasurable/lang/hi.json
 %%WWWDIR%%/plugins/MobileAppMeasurable/lang/it.json
+%%WWWDIR%%/plugins/MobileAppMeasurable/lang/nl.json
 %%WWWDIR%%/plugins/MobileAppMeasurable/lang/sk.json
+%%WWWDIR%%/plugins/MobileAppMeasurable/lang/sv.json
 %%WWWDIR%%/plugins/MobileAppMeasurable/plugin.json
 %%WWWDIR%%/plugins/MobileMessaging/API.php
 %%WWWDIR%%/plugins/MobileMessaging/APIException.php
@@ -3831,6 +3836,7 @@
 %%WWWDIR%%/plugins/MobileMessaging/lang/pt-br.json
 %%WWWDIR%%/plugins/MobileMessaging/lang/ro.json
 %%WWWDIR%%/plugins/MobileMessaging/lang/ru.json
+%%WWWDIR%%/plugins/MobileMessaging/lang/sk.json
 %%WWWDIR%%/plugins/MobileMessaging/lang/sl.json
 %%WWWDIR%%/plugins/MobileMessaging/lang/sr.json
 %%WWWDIR%%/plugins/MobileMessaging/lang/sv.json
@@ -4109,7 +4115,6 @@
 %%WWWDIR%%/plugins/Overlay/client/loading.gif
 %%WWWDIR%%/plugins/Overlay/client/translations.js
 %%WWWDIR%%/plugins/Overlay/client/urlnormalizer.js
-%%WWWDIR%%/plugins/Overlay/images/info.png
 %%WWWDIR%%/plugins/Overlay/images/overlay_icon.png
 %%WWWDIR%%/plugins/Overlay/images/overlay_icon_hover.png
 %%WWWDIR%%/plugins/Overlay/javascripts/Overlay_Helper.js
@@ -6049,6 +6054,7 @@
 %%WWWDIR%%/plugins/VisitsSummary/templates/index.twig
 %%WWWDIR%%/plugins/WebsiteMeasurable/Type.php
 %%WWWDIR%%/plugins/WebsiteMeasurable/WebsiteMeasurable.php
+%%WWWDIR%%/plugins/WebsiteMeasurable/lang/ar.json
 %%WWWDIR%%/plugins/WebsiteMeasurable/lang/de.json
 %%WWWDIR%%/plugins/WebsiteMeasurable/lang/el.json
 %%WWWDIR%%/plugins/WebsiteMeasurable/lang/en.json
@@ -6056,6 +6062,8 @@
 %%WWWDIR%%/plugins/WebsiteMeasurable/lang/fr.json
 %%WWWDIR%%/plugins/WebsiteMeasurable/lang/hi.json
 %%WWWDIR%%/plugins/WebsiteMeasurable/lang/it.json
+%%WWWDIR%%/plugins/WebsiteMeasurable/lang/nb.json
+%%WWWDIR%%/plugins/WebsiteMeasurable/lang/nl.json
 %%WWWDIR%%/plugins/WebsiteMeasurable/lang/sk.json
 %%WWWDIR%%/plugins/WebsiteMeasurable/lang/zh-tw.json
 %%WWWDIR%%/plugins/WebsiteMeasurable/plugin.json
@@ -6253,9 +6261,11 @@
 %%WWWDIR%%/vendor/monolog/monolog/LICENSE
 %%WWWDIR%%/vendor/monolog/monolog/README.mdown
 %%WWWDIR%%/vendor/monolog/monolog/composer.json
-%%WWWDIR%%/vendor/monolog/monolog/doc/extending.md
+%%WWWDIR%%/vendor/monolog/monolog/doc/01-usage.md
+%%WWWDIR%%/vendor/monolog/monolog/doc/02-handlers-formatters-processors.md
+%%WWWDIR%%/vendor/monolog/monolog/doc/03-utilities.md
+%%WWWDIR%%/vendor/monolog/monolog/doc/04-extending.md
 %%WWWDIR%%/vendor/monolog/monolog/doc/sockets.md
-%%WWWDIR%%/vendor/monolog/monolog/doc/usage.md
 %%WWWDIR%%/vendor/monolog/monolog/phpunit.xml.dist
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/ErrorHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Formatter/ChromePHPFormatter.php
@@ -6281,6 +6291,7 @@
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/ChromePHPHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/CouchDBHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/CubeHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/Curl/Util.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/DoctrineCouchDBHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/DynamoDbHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/ElasticSearchHandler.php
@@ -6306,6 +6317,7 @@
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/NativeMailerHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/NewRelicHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/NullHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/PHPConsoleHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/PsrHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/PushoverHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/RavenHandler.php

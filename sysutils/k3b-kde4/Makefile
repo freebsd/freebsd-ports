@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	k3b
-PORTVERSION=	2.0.2
-PORTREVISION=	23
+PORTVERSION=	2.0.3
 CATEGORIES=	sysutils multimedia kde
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	KDE/stable/${PORTNAME}
+DISTFILES=	${DISTNAME}a${EXTRACT_SUFX}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE CD/DVD writing suite
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libcdda_paranoia.so:${PORTSDIR}/audio/cdparanoia \
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
 BUILD_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
 
-USES=		cmake gettext pkgconfig shared-mime-info tar:bzip2
+USES=		cmake gettext pkgconfig shared-mime-info tar:xz
 CMAKE_ARGS=	-DK3B_BUILD_K3BSETUP:BOOL=OFF \
 		-DK3B_ENABLE_MUSICBRAINZ:BOOL=OFF
 USE_KDE4=	automoc4 kdeprefix kdelibs libkcddb

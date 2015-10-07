@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtk-update-icon-cache
-PORTVERSION=	2.24.27
+PORTVERSION=	2.24.28
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME/sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DISTNAME=	gtk+-${PORTVERSION}
@@ -16,6 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS+=	update-mime-database:${PORTSDIR}/misc/shared-mime-info \
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
+
+PORTSCOUT=	ignore:1
 
 USES=		gettext gmake libtool pathfix perl5 pkgconfig tar:xz
 USE_PERL5=	build

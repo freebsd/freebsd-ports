@@ -27,6 +27,6 @@ bin/seq2svg.pl
 %%SITE_PERL%%/UML/genericseq.pl
 %%SITE_PERL%%/UML/seq2rast.pl
 %%SITE_PERL%%/UML/seq2svg.pl
-man/man1/genericseq.pl.1.gz
-man/man1/seq2rast.pl.1.gz
-man/man1/seq2svg.pl.1.gz
+%%PERL5_MAN1%%/genericseq.pl.1.gz
+%%PERL5_MAN1%%/seq2rast.pl.1.gz
+%%PERL5_MAN1%%/seq2svg.pl.1.gz

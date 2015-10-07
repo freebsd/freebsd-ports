@@ -24,6 +24,7 @@ case $2 in
 			rmdir ${WWWDIR}/$dir/ 2>/dev/null || true
 		done
 		rmdir ${WWWDIR}/ 2>/dev/null || true
+		rmdir %%PREFIX%%/www 2>/dev/null || true
 		;;
 	POST-DEINSTALL)
 		;;

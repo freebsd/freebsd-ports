@@ -984,6 +984,9 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/string.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/strings.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_default_fcntl.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_intsup.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_stdint.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_timespec.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_timeval.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_types.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/cdefs.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/config.h
@@ -1009,6 +1012,8 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/syslimits.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/time.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/timeb.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/times.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/timespec.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/tree.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/types.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/unistd.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/utime.h

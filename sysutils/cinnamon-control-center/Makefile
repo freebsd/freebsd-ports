@@ -3,8 +3,12 @@
 
 PORTNAME=	cinnamon-control-center
 PORTVERSION=	2.4.2
+PORTREVISION=	2
 CATEGORIES=	sysutils gnome
+MASTER_SITES=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/9363a4a1e121344ae98f22b55fb28623cf0f6038/panels/datetime/data/:tzpng
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	gnome3
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Control center for Cinnamon
@@ -34,7 +38,7 @@ RUN_DEPENDS=	py*-dbus>=0:${PORTSDIR}/devel/py-dbus \
 		ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss \
 		py*-lxml>=0:${PORTSDIR}/devel/py-lxml
 
-USES=		autoreconf:build gettext gmake libtool pathfix \
+USES=		autoreconf gettext gmake libtool pathfix \
 		python:2 pkgconfig
 USE_GNOME=	evolutiondataserver3 gconf2 gnomeprefix \
 		gtk30 intlhack libgnomekbd
@@ -56,13 +60,20 @@ OPTIONS_DEFAULT=CUPS
 CUPS_CONFIGURE_ENABLE=	cups
 CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
 
+MISSING_PNG=timezone_8.5.png timezone_8.5_dim.png
+.for i in ${MISSING_PNG}
+DISTFILES+=${i}:tzpng
+.endfor
+
+post-extract:
+.for i in ${MISSING_PNG}
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${i} ${WRKSRC}/panels/datetime/data/.
+.endfor
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|find|find ${WRKSRC}/files|g' \
 		${WRKSRC}/files/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/share/|${PREFIX}/share/|g' \
 		${WRKSRC}/panels/common/cc-common-language.c
-
-pre-configure:
-	cd ${WRKSRC} && NOCONFIGURE=yes ${SH} ./autogen.sh
 
 .include <bsd.port.mk>

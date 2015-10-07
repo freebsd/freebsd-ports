@@ -33,8 +33,6 @@ DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 
 INSTALL_TARGET=	install-strip
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's| @openssl@||' \
 		${WRKSRC}/opusfile.pc.in  ${WRKSRC}/opusurl.pc.in
@@ -43,13 +41,11 @@ post-patch:
 		${WRKSRC}/Makefile.am
 	@${CP} ${FILESDIR}/ftime.c ${WRKSRC}/src/
 
-post-install:
-.if ${PORT_OPTIONS:MDOXYGEN}
+post-install-DOXYGEN-on:
 	@${RM} -f ${WRKDIR}/PLIST.doc ; \
 	${FIND} ${STAGEDIR}${DOCSDIR}/html -type f | \
 		${SED} 's|${STAGEDIR}${PREFIX}/||' \
 		>> ${WRKDIR}/PLIST.doc ; \
 	(cd ${WRKDIR} ; ${SED} -i -e '/PLIST.doc/ r PLIST.doc' ${TMPPLIST})
-.endif
 
 .include <bsd.port.mk>

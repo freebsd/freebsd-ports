@@ -33,14 +33,12 @@ PORTDOCS=	*
 
 SHEBANG_FILES=	src/webhttrack
 
+ICONS_VARS=	INSTALLS_ICONS=yes
+
 .include <bsd.port.pre.mk>
 
 .if empty(ICONV_LIB)
 CONFIGURE_ARGS+=ac_cv_lib_iconv_iconv=no
-.endif
-
-.if ${PORT_OPTIONS:MICONS}
-INSTALLS_ICONS=	yes
 .endif
 
 post-patch:

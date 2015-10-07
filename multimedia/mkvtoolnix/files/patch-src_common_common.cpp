@@ -1,6 +1,6 @@
---- src/common/common.cpp.orig	2015-06-08 16:28:17.092399114 +0200
-+++ src/common/common.cpp	2015-06-08 16:28:32.292398239 +0200
-@@ -30,6 +30,10 @@
+--- src/common/common.cpp.orig	2015-07-18 11:39:41 UTC
++++ src/common/common.cpp
+@@ -33,6 +33,10 @@
  #include "common/strings/editing.h"
  #include "common/translation.h"
  

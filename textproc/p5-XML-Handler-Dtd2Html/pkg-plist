@@ -40,4 +40,4 @@ bin/dtd2html.pl
 %%SITE_PERL%%/XML/Handler/Dtd2Html/prev.png
 %%SITE_PERL%%/XML/Handler/Dtd2Html/simple.css
 %%SITE_PERL%%/XML/Handler/Dtd2Html/up.png
-man/man1/dtd2html.pl.1.gz
+%%PERL5_MAN1%%/dtd2html.pl.1.gz

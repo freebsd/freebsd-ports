@@ -18,7 +18,7 @@ LIB_DEPENDS=	libglademm-2.4.so:${PORTSDIR}/devel/libglademm24 \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		desktop-file-utils gettext gmake libtool pkgconfig
-USE_GNOME=	gtkmm24
+USE_GNOME=	gtkmm24 intltool
 USE_GSTREAMER=	good mm
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

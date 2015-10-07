@@ -1,4 +1,2 @@
-@unexec if cmp -s %D/etc/mailmgr.conf %D/etc/mailmgr.conf.default; then rm -f %D/etc/mailmgr.conf; fi
-etc/mailmgr.conf.default
-@exec if [ ! -f %D/etc/mailmgr.conf ] ; then cp -p %D/%F %B/mailmgr.conf; fi
 bin/mailmgr
+@sample etc/mailmgr.conf.sample

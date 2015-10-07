@@ -1,6 +1,6 @@
---- argp/argp.h.orig	Tue Jun 10 23:09:27 2003
-+++ argp/argp.h	Mon Jul  7 04:31:41 2003
-@@ -352,7 +352,7 @@
+--- argp/argp.h.orig	2006-05-22 16:49:22 UTC
++++ argp/argp.h
+@@ -352,7 +352,7 @@ struct argp_state
  #define ARGP_NO_EXIT	0x20
  
  /* Use the gnu getopt `long-only' rules for parsing arguments.  */

@@ -1,4 +1,4 @@
---- src/global.c.orig	2010-02-12 10:19:23 UTC
+--- src/global.c.orig	2015-09-12 10:57:30 UTC
 +++ src/global.c
 @@ -187,6 +187,9 @@ bool to_stdout_option = false;
  /* The name this program was run with.  */

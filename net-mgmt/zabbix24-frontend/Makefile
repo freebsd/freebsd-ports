@@ -1,4 +1,4 @@
-# Created by: Pakhom Golynga <pakhom706@gmail.com>
+# Created by: Pakhom Golynga <pakhom@pakhom.spb.ru>
 # $FreeBSD$
 
 PORTNAME=	zabbix24
@@ -15,7 +15,6 @@ USE_PHP=	bcmath ctype gd pcre snmp sockets mbstring session dom xml \
 		xmlreader xmlwriter simplexml gettext ldap
 WANT_PHP_WEB=	yes
 
-OPTIONSFILE=		${PORT_DBDIR}/${PORTNAME}${PKGNAMESUFFIX}/options
 OPTIONS_DEFINE=		MYSQL MYSQLI PGSQL SQLITE ORACLE
 OPTIONS_DEFAULT=	MYSQL MYSQLI
 MYSQLI_DESC=		MySQLI backend

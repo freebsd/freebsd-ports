@@ -3,6 +3,7 @@
 
 PORTNAME=	google-perftools
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://googledrive.com/host/0B6NtGsLhIcf7MWxMMF9JdTN3UVk/
 DISTNAME=	gperftools-${PORTVERSION}

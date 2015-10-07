@@ -1,0 +1,14 @@
+Weblib provides tools to solve typical tasks in web scraping:
+
+ * processing HTML
+ * handling text encodings
+ * controling repeating and parallel tasks
+ * parsing RSS/ATOM feeds
+ * preparing data for HTTP requests
+ * working with DOM tree
+ * working with text and numeral data
+ * list of common user agents
+ * cross-platform file locking
+ * operations with files and directories
+
+WWW: https://pypi.python.org/pypi/weblib

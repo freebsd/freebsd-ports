@@ -125,3 +125,4 @@ man/man5/recoll.conf.5.gz
 %%DATADIR%%/translations/recoll_xx.qm
 %%DATADIR%%/translations/recoll_zh.qm
 %%DATADIR%%/translations/recoll_zh_CN.qm
+%%NO_QT4%%@dir share/icons/hicolor/48x48/apps

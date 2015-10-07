@@ -26,3 +26,5 @@ share/hplip/scan/plugins/bb_soap.so
 share/hplip/scan/plugins/bb_soapht-%%LINARCH%%.so
 share/hplip/scan/plugins/bb_soapht.so
 /var/lib/hp/hplip.state
+@dir /var/lib/hp
+@dir /var/lib

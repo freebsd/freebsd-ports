@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-whiskermenu-plugin
-PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTVERSION=	1.5.1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
@@ -16,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=	pkgconfig cmake gettext xfce tar:bzip2
+USES=	cmake gettext pkgconfig tar:bzip2 xfce
 USE_GNOME=	gtk20
 USE_XFCE=	panel
 INSTALLS_ICONS=	yes

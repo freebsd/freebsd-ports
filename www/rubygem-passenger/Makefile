@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	passenger
-PORTVERSION=	5.0.14
+PORTVERSION=	5.0.20
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
@@ -36,9 +36,7 @@ USE_APACHE=	22+
 
 LIB_DEPENDS+=	libuv.so:${PORTSDIR}/devel/libuv \
 		libcurl.so:${PORTSDIR}/ftp/curl
-BUILD_DEPENDS+=	rubygem-fastthread>=1.0.1:${PORTSDIR}/devel/rubygem-fastthread \
-		rubygem-rack16>=0:${PORTSDIR}/www/rubygem-rack16 \
-		rubygem-daemon_controller>=1.2.0:${PORTSDIR}/devel/rubygem-daemon_controller
+BUILD_DEPENDS+= rubygem-rack16>=0:${PORTSDIR}/www/rubygem-rack16
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 SUB_LIST+=	GEM_LIB_DIR=${GEM_LIB_DIR} RUBY=${RUBY}
@@ -73,7 +71,7 @@ pre-patch:
 		s!#{PlatformInfo.debugging_cflags}!${CFLAGS}!g; \
 		s!-O2!!g; \
 		s! -feliminate-unused-debug-symbols -feliminate-unused-debug-types!!g; \
-		215s!true!false!' \
+		229s!true!false!' \
 		${WRKSRC}/build/basics.rb
 .if ${PORT_OPTIONS:NDEBUG}
 	@${REINPLACE_CMD} \

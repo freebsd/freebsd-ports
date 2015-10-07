@@ -359,10 +359,10 @@ bin/tmlink
 %%PERL5_MAN3%%/pod::Prima::internals.3.gz
 %%PERL5_MAN3%%/pod::Prima::tutorial.3.gz
 %%PERL5_MAN3%%/pod::gencls.3.gz
-man/man1/VB.1.gz
-man/man1/cfgmaint.1.gz
-man/man1/fmview.1.gz
-man/man1/gencls.1.gz
-man/man1/p-class.1.gz
-man/man1/podview.1.gz
-man/man1/tmlink.1.gz
+%%PERL5_MAN1%%/VB.1.gz
+%%PERL5_MAN1%%/cfgmaint.1.gz
+%%PERL5_MAN1%%/fmview.1.gz
+%%PERL5_MAN1%%/gencls.1.gz
+%%PERL5_MAN1%%/p-class.1.gz
+%%PERL5_MAN1%%/podview.1.gz
+%%PERL5_MAN1%%/tmlink.1.gz

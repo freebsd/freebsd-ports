@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	yate
-DISTVERSION=	5.4.0p1
-PORTREVISION=	3
+DISTVERSION=	5.5.0p1
 CATEGORIES=	net
 MASTER_SITES=	http://yate.null.ro/tarballs/yate5/
-DISTNAME=	${PORTNAME}-5.4.0-1
+DISTNAME=	${PORTNAME}-5.5.0-1
 
 MAINTAINER=	koue@chaosophia.net
 COMMENT=	Yet Another Telephony Engine
@@ -20,7 +19,13 @@ LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib \
 ONLY_FOR_ARCHS=	i386 amd64 sparc64 armv6
 
 USE_AUTOTOOLS=	autoconf
-USES=		bison gmake
+USES=		bison gmake shebangfix
+SHEBANG_FILES=	share/scripts/banbrutes.php \
+		share/scripts/leavemail.php \
+		share/scripts/queue_in.php \
+		share/scripts/queue_out.php \
+		share/scripts/route.php \
+		share/scripts/voicemail.php
 USE_LDCONFIG=	yes
 WANT_GNOME=	yes
 
@@ -138,7 +143,7 @@ post-extract:
 post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/yate
 	@cd ${STAGEDIR}${PREFIX}/lib; \
-		for FILE in *.5.4.0; do \
+		for FILE in *.5.5.0; do \
 			${STRIP_CMD} $${FILE}; \
 		done
 	@cd ${STAGEDIR}${PREFIX}/lib/yate; \

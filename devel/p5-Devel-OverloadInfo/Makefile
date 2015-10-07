@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Devel-OverloadInfo
-PORTVERSION=	0.002
+PORTVERSION=	0.004
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,9 @@ BUILD_DEPENDS=	p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat \
 		p5-Package-Stash>=0.14:${PORTSDIR}/devel/p5-Package-Stash \
 		p5-Sub-Identify>=0:${PORTSDIR}/devel/p5-Sub-Identify
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

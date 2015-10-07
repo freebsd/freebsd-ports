@@ -1,5 +1,4 @@
 lib/pam_krb5/pam_krb5_cchelper
-@dirrm lib/pam_krb5
 lib/pam_krb5.so
 man/man5/pam_krb5.5.gz
 man/man8/pam_krb5.8.gz
@@ -39,13 +38,3 @@ man/man8/pam_krb5_cchelper.8.gz
 %%NLS%%share/locale/uk/LC_MESSAGES/pam_krb5.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pam_krb5.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/pam_krb5.mo
-%%NLS%%@dirrmtry share/locale/as/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/bn_IN/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/mr/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/as
-%%NLS%%@dirrmtry share/locale/bn_IN
-%%NLS%%@dirrmtry share/locale/mr
-%%NLS%%@dirrmtry share/locale/sr@latin
-%%NLS%%@dirrmtry share/locale/te

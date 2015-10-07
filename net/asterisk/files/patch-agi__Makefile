@@ -1,6 +1,6 @@
---- ./agi/Makefile.orig	2010-07-23 15:26:41.000000000 +0200
-+++ ./agi/Makefile	2010-11-06 14:54:36.000000000 +0100
-@@ -16,7 +16,9 @@
+--- agi/Makefile.orig	2011-08-17 19:21:36 UTC
++++ agi/Makefile
+@@ -16,7 +16,9 @@ ASTTOPDIR?=..
  
  .PHONY: clean all uninstall
  

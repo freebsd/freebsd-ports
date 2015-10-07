@@ -1,6 +1,6 @@
             __                _       __
  _ __   ___| /_ ___  ___ _ __(_)_ __ | /_  (portable/multi-platform) lightwei-
-| '_ \./ _ \ __/ __)/ __| '__| | '_ \| __) ght tcp socket scripting.  intende-
+| '_ \./ _ \ __/ __)/ __| '__| | '_ \| __) ght TCP socket scripting.  Intende-
 | | | |  ._/ |_(__ \ (__| |  | | |_) ) |_  d for (non-)experienced persons to
 |_| |_|\___|\__|___/\___|_|  |_| .__/ \__) be able to use to automate situati-
 [TCP socket scripting program] |_| [1.6.0] ons, built on a word-to-word rules-

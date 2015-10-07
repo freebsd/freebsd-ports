@@ -10,9 +10,9 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Context framework extracted from Shoulda
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

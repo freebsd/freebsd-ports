@@ -21,6 +21,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		tar:bz2
 NO_BUILD=	yes
+NO_ARCH=	yes
 USE_PHP=	session pcre
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 SUB_FILES=	pkg-message
@@ -29,8 +30,6 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/
 PORTDOCS=	AUTHORS COPYING README TIMEZONES
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
@@ -42,9 +41,9 @@ do-install:
 .for f in caldav.php config.inc.php.sample day.php default_config.php error.php index.php month.php preferences.php print.php search.php week.php year.php
 	@${CP} -v ${WRKSRC}/${f} ${STAGEDIR}${WWWDIR}
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

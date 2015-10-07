@@ -1,9 +1,8 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/yelp/Makefile 19967 2014-10-16 06:45:29Z gusi $
 
 PORTNAME=	yelp
-PORTVERSION=	3.14.1
+PORTVERSION=	3.16.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -19,19 +18,25 @@ BUILD_DEPENDS=	yelp-xsl>=0:${PORTSDIR}/textproc/yelp-xsl \
 LIB_DEPENDS=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3
 RUN_DEPENDS=	yelp-xsl>=0:${PORTSDIR}/textproc/yelp-xsl
 
+PORTSCOUT=	limitw:1,even
+
 USES=		desktop-file-utils gettext gmake libtool pathfix \
 		pkgconfig tar:xz
 USE_XORG=	x11 ice
-USE_GNOME=	gnomeprefix gtk30 intlhack libxml2 libxslt
+USE_GNOME=	gtk30 intlhack libxml2 libxslt
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -fstack-protector
+LDFLAGS+=	-L${LOCALBASE}/lib
 GLIB_SCHEMAS=	org.gnome.yelp.gschema.xml
 INSTALL_TARGET=	install-strip
 
+.include <bsd.port.options.mk>
+
+.if !exists(/usr/libdata/pkgconfig/liblzma.pc)
 CONFIGURE_ENV+=	YELP_LZMA_CFLAGS="-I/usr/include" \
 		YELP_LZMA_LIBS="-L/usr/lib -llzma"
+.endif
 
 .include <bsd.port.mk>

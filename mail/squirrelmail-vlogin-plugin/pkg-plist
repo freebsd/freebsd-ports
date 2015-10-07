@@ -28,9 +28,4 @@
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README
-@dirrmtry %%SQUIRRELDIR%%/plugins/vlogin/data/service_levels
-@dirrmtry %%SQUIRRELDIR%%/plugins/vlogin/data/domains
-@dirrmtry %%SQUIRRELDIR%%/plugins/vlogin/data
-@dirrmtry %%SQUIRRELDIR%%/plugins/vlogin
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin %%SQUIRREL_PLUGIN_NAME%%; fi

@@ -1,10 +1,8 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/www/epiphany/Makefile 19822 2014-08-20 08:57:46Z gusi $
 
 PORTNAME=	epiphany
-PORTVERSION=	3.12.1
-PORTREVISION=	2
+PORTVERSION=	3.16.3
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -15,7 +13,7 @@ COMMENT=	Extremely lightweight and simple web browser for GNOME 3
 BUILD_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
 		itstool:${PORTSDIR}/textproc/itstool \
 		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
-LIB_DEPENDS=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3 \
+LIB_DEPENDS=	libwebkit2gtk-4.0.so:${PORTSDIR}/www/webkit2-gtk3 \
 		libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome \
 		libgcr-3.so:${PORTSDIR}/security/gcr \
 		libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
@@ -28,16 +26,18 @@ RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
 		gnome-icon-theme-symbolic>=0:${PORTSDIR}/x11-themes/gnome-icon-theme-symbolic \
 		gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme
 
+PORTSCOUT=	limitw:1,even
+
 USES=		cpe desktop-file-utils gettext gmake libtool pathfix \
 		pkgconfig python:3 tar:xz
 CPE_VENDOR=	gnome
-USE_GNOME=	gnomedesktop3 gnomeprefix intlhack libwnck3 libxml2 libxslt
+USE_GNOME=	gnomedesktop3 intlhack libwnck3 libxml2 libxslt
 USE_XORG=	ice x11 sm
 INSTALLS_ICONS=	yes
 USE_SQLITE=	3
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--enable-introspection \
+CONFIGURE_ARGS+=\
 		--with-distributor-name="FreeBSD GNOME Project"
 #		--with-ca-file=${LOCALBASE}/share/certs/ca-root-nss.crt
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -50,6 +50,8 @@ GLIB_SCHEMAS=	org.gnome.Epiphany.enums.xml \
 PLIST_SUB+=	EPHY_VERSION=${PORTVERSION:R}
 
 CONFIGURE_ARGS+=	--enable-compile-warnings=no
+# for webkit2-gtk3
+USES+=		compiler:c++11-lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|execinfo.h|#|g ; s|-ldl"$$|"|g' \

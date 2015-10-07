@@ -2,5 +2,5 @@ bin/compile_encoding
 bin/make_encmap
 %%PERL5_MAN3%%/XML::Encoding.3.gz
 %%SITE_PERL%%/XML/Encoding.pm
-man/man1/compile_encoding.1.gz
-man/man1/make_encmap.1.gz
+%%PERL5_MAN1%%/compile_encoding.1.gz
+%%PERL5_MAN1%%/make_encmap.1.gz

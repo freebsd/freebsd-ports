@@ -1,29 +1,23 @@
 # $FreeBSD$
 
 PORTNAME=	duktape
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	http://duktape.org/
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Embeddable Javascript engine
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=	tar:xz
+USES=		libedit tar:xz
 
-LIB_DEPENDS=	libedit.so.0:${PORTSDIR}/devel/libedit
 MAKEFILE=	Makefile.cmdline
-ALL_TARGET=	#
+ALL_TARGET=	duk
 
 PLIST_FILES=	bin/duk
-
-# for libedit
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-MAKE_ARGS=	CC="${CC}"
 
 post-patch:
 	@${REINPLACE_CMD} -e "/history\.h/d ; s,readline/,editline/,g " \

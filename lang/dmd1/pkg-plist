@@ -1,7 +1,6 @@
-@unexec if cmp -s %D/%%EXAMPLESDIR%%/dmd1.conf %D/etc/dmd1.conf; then rm -f %D/etc/dmd1.conf; fi
-%%EXAMPLESDIR%%/dmd1.conf
-@exec if [ ! -f %D/etc/dmd1.conf ]; then cp -p %D/%%EXAMPLESDIR%%/dmd1.conf %D/etc/dmd1.conf; fi
+@sample etc/dmd1.conf.sample
 bin/dmd1
+%%EXAMPLESDIR%%/dmd1.conf
 %%EXAMPLESDIR%%/dmd1.conf.tango
 %%EXAMPLESDIR%%/samples/d/all.sh
 %%EXAMPLESDIR%%/samples/d/chello.d

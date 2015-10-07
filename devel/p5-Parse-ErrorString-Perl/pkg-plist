@@ -1,5 +1,5 @@
 bin/check_perldiag
-man/man1/check_perldiag.1.gz
+%%PERL5_MAN1%%/check_perldiag.1.gz
 %%SITE_PERL%%/Parse/ErrorString/Perl/ErrorItem.pm
 %%SITE_PERL%%/Parse/ErrorString/Perl/StackItem.pm
 %%SITE_PERL%%/Parse/ErrorString/Perl.pm

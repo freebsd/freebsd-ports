@@ -1,4 +1,6 @@
 %%SITE_PERL%%/Mango.pm
+%%SITE_PERL%%/Mango/Auth.pm
+%%SITE_PERL%%/Mango/Auth/SCRAM.pm
 %%SITE_PERL%%/Mango/BSON.pm
 %%SITE_PERL%%/Mango/BSON/Binary.pm
 %%SITE_PERL%%/Mango/BSON/Code.pm
@@ -16,6 +18,8 @@
 %%SITE_PERL%%/Mango/GridFS/Writer.pm
 %%SITE_PERL%%/Mango/Protocol.pm
 %%PERL5_MAN3%%/Mango.3.gz
+%%PERL5_MAN3%%/Mango::Auth.3.gz
+%%PERL5_MAN3%%/Mango::Auth::SCRAM.3.gz
 %%PERL5_MAN3%%/Mango::BSON.3.gz
 %%PERL5_MAN3%%/Mango::BSON::Binary.3.gz
 %%PERL5_MAN3%%/Mango::BSON::Code.3.gz

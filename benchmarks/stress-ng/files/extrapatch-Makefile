@@ -1,0 +1,11 @@
+--- Makefile.orig	2015-09-25 10:15:45 UTC
++++ Makefile
+@@ -165,7 +165,7 @@ OBJS = $(SRC:.c=.o)
+ 	@$(CC) $(CFLAGS) -c -o $@ $<
+ 
+ stress-ng: $(OBJS)
+-	$(CC) $(CPPFLAGS) $(CFLAGS) $(OBJS) -lm -pthread -lrt -lcrypt -o $@ $(LDFLAGS)
++	$(CC) $(CPPFLAGS) $(CFLAGS) $(OBJS) -lm -pthread -lrt -lcrypt -lstdc++ -o $@ $(LDFLAGS)
+ 
+ stress-cpu.o: stress-cpu.c
+ 	@echo $(CC) $(CFLAGS) -c -o $@ $<

@@ -1,12 +1,12 @@
---- examples/Makefile.orig	2015-04-15 07:50:13 UTC
+--- examples/Makefile.orig	2015-06-18 16:40:35 UTC
 +++ examples/Makefile
 @@ -85,8 +85,8 @@ CIMG_EXTRA_FILES = use_tiff_stream use_j
  # Set correct variables and paths
  #---------------------------------
- CIMG_VERSION = 1.6.2
+ CIMG_VERSION = _cimg_version
 -X11PATH      = /usr/X11R6
 -CC           = g++
-+#X11PATH      = $(X11PATH)
++X11PATH      = $(LOCALBASE)
 +CC           = $(CXX)
  EXEPFX       =
  CCVER       = $(CC)
@@ -112,16 +112,16 @@
  # Flags to compile on Sun Solaris
  CIMG_SOLARIS_LIBS = -R$(X11PATH)/lib -lrt -lnsl -lsocket
  
-@@ -335,7 +338,8 @@ $(CIMG_X11_CFLAGS) \
- $(CIMG_XSHM_CFLAGS)" \
+@@ -309,7 +312,8 @@ $(CIMG_XSHM_CFLAGS)" \
  "CONF_LIBS = \
  $(CIMG_X11_LIBS) \
+ $(CIMG_TIFF_LIBS) \
 -$(CIMG_XSHM_LIBS)" \
 +$(CIMG_XSHM_LIBS) \
 +$(PTHREAD_LIBS)" \
- all
+ all $(CIMG_EXTRA_FILES)
  
- olinux:
+ # Linux/BSD/Mac OSX targets, with X11 display.
 @@ -378,8 +382,10 @@ $(CIMG_ZLIB_CFLAGS) \
  $(CIMG_CURL_CFLAGS) \
  $(CIMG_OPENCV_CFLAGS) \
@@ -133,11 +133,11 @@
  $(CIMG_X11_LIBS) \
  $(CIMG_XSHM_LIBS) \
  $(CIMG_XRANDR_LIBS) \
-@@ -389,6 +395,7 @@ $(CIMG_PNG_LIBS) \
- $(CIMG_JPEG_LIBS) \
- $(CIMG_ZLIB_LIBS) \
+@@ -391,6 +397,7 @@ $(CIMG_ZLIB_LIBS) \
  $(CIMG_CURL_LIBS) \
-+$(CIMG_LAPACK_LIBS) \
  $(CIMG_OPENCV_LIBS) \
  $(CIMG_MAGICK_LIBS) \
++$(CIMG_LAPACK_LIBS) \
  $(CIMG_FFTW3_LIBS)" \
+ "STRIP_EXE=true" \
+ all $(CIMG_EXTRA_FILES)

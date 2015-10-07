@@ -146,7 +146,6 @@ FALLBACK_ELF_MIB=	kern.fallback_elf_brand
 .endif
 
 .if (${ARCH} == "amd64")
-LATEST_LINK:=		${PKGBASE:C/linux/linux32/}
 ARCH=			i386
 .endif
 

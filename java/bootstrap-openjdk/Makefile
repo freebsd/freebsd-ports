@@ -16,18 +16,19 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	java-zoneinfo>0:${PORTSDIR}/java/java-zoneinfo
 BUNDLE_LIBS=	yes
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	amd64 i386 armv6
 
 DISTINFO_FILE=	${.CURDIR}/distinfo.${ARCH}
 DISTVERSION_amd64=	r351880
 DISTVERSION_i386=	r351880
+DISTVERSION_armv6=	r378760
 
 JDK_NAME=	openjdk
 JDK_PORT=	openjdk6
 JDK_ROOT=	bootstrap-${JDK_NAME}
 
 NO_BUILD=	yes
-PLIST_SUB=	ARCH=${ARCH} JDK_NAME=${JDK_NAME} JDK_ROOT=${JDK_ROOT}
+PLIST_SUB=	ARCH=${ARCH:S/armv6/arm/} JDK_NAME=${JDK_NAME} JDK_ROOT=${JDK_ROOT}
 USES=		tar:xz
 WRKSRC=		${WRKDIR}/${JDK_ROOT}
 
@@ -41,6 +42,10 @@ PLIST_SUB+=	LIBSTDCXX="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "armv6"
+JDK_PORT=	openjdk7
+.endif
 
 .if ${ARCH} == "i386"
 PLIST_SUB+=	CLIENTVM=""

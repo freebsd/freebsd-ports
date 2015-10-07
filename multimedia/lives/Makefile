@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	lives
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/ 
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Video editing system
@@ -44,10 +45,11 @@ WRKSRC=		${WRKDIR}/${DISTNAME:tl}
 USES=		ghostscript:run libtool pathfix perl5 pkgconfig python \
 		shebangfix tar:bzip2
 SHEBANG_FILES=	build-lives-rfx-plugin build-lives-rfx-plugin-multi \
-		smogrify tools/autolives.pl
+		smogrify tools/autolives.pl lives-plugins/plugins/encoders/*_encoder \
+		lives-plugins/plugins/playback/audiostream/audiostreamer.pl
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
-USE_GNOME=	gtk30
+USE_GNOME=	gtk30 intltool
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--disable-ldvgrab
@@ -71,17 +73,14 @@ DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 DOXYGEN_CONFIGURE_OFF=	--disable-doxygen
 FREI0R_BUILD_DEPENDS=	frei0r>0:${PORTSDIR}/graphics/frei0r
 FREI0R_RUN_DEPENDS=	frei0r>0:${PORTSDIR}/graphics/frei0r
+FREI0R_CONFIGURE_ENV_OFF=	ac_cv_header_frei0r_h=no
 MATROSKA_RUN_DEPENDS=	mkvmerge:${PORTSDIR}/multimedia/mkvtoolnix
 NLS_USES=		gettext
 NLS_CONFIGURE_OFF=	--disable-nls
 
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MFREI0R}
-CONFIGURE_ENV+=	ac_cv_header_frei0r_h=no
-.endif
-
 post-patch:
+	@${REINPLACE_CMD} -e 's|${perl_OLD_CMD}|${perl_CMD}|' \
+		${WRKSRC}/build-lives-rfx-plugin
 	@${REINPLACE_CMD} -e 's| install-docDATA||g; s|-$$(VERSION)||g' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|: install-data-local |: |g; s|-ldl||' \
@@ -89,24 +88,21 @@ post-patch:
 		${WRKSRC}/lives-plugins/weed-plugins/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/local/lib/|${LOCALBASE}/lib/|g' \
 		${WRKSRC}/lives-plugins/weed-plugins/frei0r.c
-	@${REINPLACE_CMD} 's|/bin/touch|/usr/bin/touch|g' \
-		${WRKSRC}/src/callbacks.c \
-		${WRKSRC}/src/saveplay.c \
-		${WRKSRC}/src/utils.c
 	@${REINPLACE_CMD} '/cp -rf/ s|data/|data|g; /cp -rf/ s|icons/|icons|g' \
 		${WRKSRC}/lives-plugins/weed-plugins/cairo/Makefile.in \
 		${WRKSRC}/lives-plugins/weed-plugins/Makefile.in
 	@${REINPLACE_CMD} '/selectRandom/d' \
 		${WRKSRC}/lives-plugins/weed-plugins/projectM.cpp
 
+pre-build-NLS-on:
+	@cd ${WRKSRC}/po && ${DO_MAKE_BUILD} update-po
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOC_FILES:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-	(cd ${STAGEDIR}${PREFIX}/bin && ${RM} lives && ${LN} -s lives-exe lives)
 
-.if ${PORT_OPTIONS:MDOXYGEN}
+post-install-DOXYGEN-on:
 	@(cd ${STAGEDIR}${PREFIX} && ${FIND} ${DOCSDIR:S|${PREFIX}/||}/html \
 		! -type d >> ${TMPPLIST})
-.endif
 
 .include <bsd.port.mk>

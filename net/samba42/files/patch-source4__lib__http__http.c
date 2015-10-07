@@ -1,5 +1,5 @@
---- source4/lib/http/http.c.orig	2015-05-23 00:27:12.430849126 +0000
-+++ source4/lib/http/http.c	2015-05-28 02:27:41.829717329 +0000
+--- source4/lib/http/http.c.orig	2015-07-14 10:41:44.000000000 +0000
++++ source4/lib/http/http.c	2015-08-09 23:25:46.480162006 +0000
 @@ -112,7 +112,19 @@
  		return HTTP_ALL_DATA_READ;
  	}
@@ -15,7 +15,7 @@
 +		n = sscanf(line, "%[^:]: %[^\r\n]\r\n", key, value);
 +	}
 +#else
- 	n = sscanf(line, "%a[^:]: %a[^\r\n]\r\n", &key, &value);
+ 	n = sscanf(line, "%m[^:]: %m[^\r\n]\r\n", &key, &value);
 +#endif
  	if (n != 2) {
  		DEBUG(0, ("%s: Error parsing header '%s'\n", __func__, line));
@@ -29,7 +29,7 @@
  	char	*msg = NULL;
  	char	major;
  	char	minor;
-@@ -158,19 +170,32 @@
+@@ -158,12 +170,22 @@
  		return false;
  	}
  
@@ -46,17 +46,17 @@
 +			protocol, &major, &minor, &code, msg);
 +	}
 +#else
- 	n = sscanf(line, "%a[^/]/%c.%c %d %a[^\r\n]\r\n",
+ 	n = sscanf(line, "%m[^/]/%c.%c %d %m[^\r\n]\r\n",
  		   &protocol, &major, &minor, &code, &msg);
 -
 -	DEBUG(11, ("%s: Header parsed(%i): protocol->%s, major->%c, minor->%c, "
 -		   "code->%d, message->%s\n", __func__, n, protocol, major, minor,
 -		   code, msg));
--
 +#endif
+ 
  	if (n != 5) {
  		DEBUG(0, ("%s: Error parsing header\n",	__func__));
- 		status = false;
+@@ -171,6 +193,10 @@
  		goto error;
  	}
  

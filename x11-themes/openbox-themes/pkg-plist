@@ -466,12 +466,6 @@ share/themes/day/openbox-3/desk.xbm
 share/themes/day/openbox-3/iconify.xbm
 share/themes/day/openbox-3/max.xbm
 share/themes/day/openbox-3/themerc
-share/themes/debian/changelog
-share/themes/debian/compat
-share/themes/debian/control
-share/themes/debian/copyright
-share/themes/debian/dirs
-share/themes/debian/rules
 share/themes/ebox/openbox-3/bullet.xbm
 share/themes/ebox/openbox-3/close.xbm
 share/themes/ebox/openbox-3/desk.xbm

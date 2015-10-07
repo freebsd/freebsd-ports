@@ -12,7 +12,7 @@ COMMENT=	GNOME 2 frontend for rdesktop and vncviewer
 
 RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop
 
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 intltool
 USES=		gettext gmake libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gnome

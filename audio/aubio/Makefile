@@ -2,32 +2,51 @@
 # $FreeBSD$
 
 PORTNAME=	aubio
-PORTVERSION=	0.3.2
-PORTREVISION=	13
+PORTVERSION=	0.4.2
 CATEGORIES=	audio
 MASTER_SITES=	http://aubio.org/pub/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for audio labelling
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
-LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
-		libsndfile.so:${PORTSDIR}/audio/libsndfile \
-		libjack.so:${PORTSDIR}/audio/jack \
-		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
-		liblash.so:${PORTSDIR}/audio/lash
+BUILD_DEPENDS=	txt2man:${PORTSDIR}/textproc/txt2man
 
-GNU_CONFIGURE=	yes
-# --disable-complex: does not compile due to missing carg(3) et al.
-CONFIGURE_ARGS=	--disable-complex
-USES=		gmake pathfix pkgconfig libtool
+USES=		pkgconfig tar:bzip2 waf
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 USE_LDCONFIG=	yes
-INSTALL_TARGET=	install-strip
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-lm
+OPTIONS_DEFINE=		COMPLEX DOXYGEN FFMPEG FFTW JACK SAMPLERATE SNDFILE
+OPTIONS_DEFAULT=	JACK SAMPLERATE SNDFILE FFTW
+OPTIONS_SUB=		yes
+
+COMPLEX_DESC=		Compile with C99 complex.h
+COMPLEX_CONFIGURE_ENABLE=	complex
+DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOXYGEN_CONFIGURE_OFF=	--disable-doxygen
+FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+FFMPEG_CONFIGURE_ENABLE=	avcodec
+JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_CONFIGURE_ENABLE=	jack
+SAMPLERATE_LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
+SAMPLERATE_CONFIGURE_ENABLE=	samplerate
+FFTW_DESC=		Use single precision FFTW3 instead of built-in OOURA
+FFTW_CONFIGURE_ENABLE=	fftw3f
+FFTW_BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
+FFTW_LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float
+SNDFILE_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
+SNDFILE_CONFIGURE_ENABLE=	sndfile
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/pkgconfig/s|$${LIBDIR}|&data|' ${WRKSRC}/waflib/TaskGen.py
+
+post-install:
+.for b in mfcc notes onset pitch quiet track
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/aubio${b}
+.endfor
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaubio.so
 
 .include <bsd.port.mk>

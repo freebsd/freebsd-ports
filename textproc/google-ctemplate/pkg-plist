@@ -16,12 +16,12 @@ include/ctemplate/template_pathops.h
 include/ctemplate/template_string.h
 lib/libctemplate.a
 lib/libctemplate.so
-lib/libctemplate.so.2
-lib/libctemplate.so.2.0.1
+lib/libctemplate.so.3
+lib/libctemplate.so.3.0.0
 lib/libctemplate_nothreads.a
 lib/libctemplate_nothreads.so
-lib/libctemplate_nothreads.so.2
-lib/libctemplate_nothreads.so.2.0.1
+lib/libctemplate_nothreads.so.3
+lib/libctemplate_nothreads.so.3.0.0
 libdata/pkgconfig/libctemplate.pc
 libdata/pkgconfig/libctemplate_nothreads.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS

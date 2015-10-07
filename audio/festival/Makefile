@@ -75,18 +75,12 @@ post-patch::
 	${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g'	\
 		${WRKSRC}/*/config/systems/default.mak
 
-.include <bsd.port.options.mk>
-
 .for m in nas esd
-.	if ${PORT_OPTIONS:M${m:tu}}
-LIB_DEPENDS+=	lib${m:nas=audio}.so:${PORTSDIR}/audio/${m:esd=esound}
-post-patch::
+${m:tu}_LIB_DEPENDS=	lib${m:nas=audio}.so:${PORTSDIR}/audio/${m:esd=esound}
+post-patch-${m:tu}-on:
 	${REINPLACE_CMD} -e 's,# INCLUDE_MODULES += ${m:tu}_AUDIO,INCLUDE_MODULES += ${m:tu}_AUDIO,' \
 		${WRKDIR}/*/config/config.in
-CONFIGURE_ARGS+=--enable-$m
-.	else
-CONFIGURE_ARGS+=--disable-$m
-.	endif
+${m:tu}_CONFIGURE_ENABLE=${m}
 .endfor
 
 do-configure:

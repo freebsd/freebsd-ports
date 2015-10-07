@@ -12,10 +12,11 @@ COMMENT=	The Droid typeface family
 
 LICENSE=	APACHE20
 
-FONTNAME=	Droid
+NO_ARCH=	yes
 NO_BUILD=	yes
 USES=		fonts tar:xz
 
+FONTNAME=	Droid
 SUB_FILES=	pkg-message
 
 do-install:

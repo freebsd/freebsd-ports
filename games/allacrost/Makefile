@@ -11,18 +11,20 @@ DISTNAME=	${PORTNAME}_demo_source_${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Single player 2D role-playing game
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libogg.so:${PORTSDIR}/audio/libogg \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
-LICENSE=	GPLv2
-
 GNU_CONFIGURE=	yes
-USES=		gettext gmake iconv jpeg openal:al lua:51
+USES=		gettext gmake iconv jpeg lua:51 openal:al
 USE_SDL=	sdl ttf net
 USE_GL=		yes
 USE_GCC=	any # problems in luabind
+QT_NONSTANDARD=	yes # used when EDITOR enabled
 
 CONFIGURE_ARGS=	--datadir=${DATADIR}
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LUA_INCDIR}
@@ -34,19 +36,13 @@ PORTDOCS=	*
 PORTDATA=	*
 
 OPTIONS_DEFINE=	EDITOR DOCS
-EDITOR_DESC=	Enable editor
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
+EDITOR_DESC=		Enable editor
 
-.if ${PORT_OPTIONS:MEDITOR}
-QT_NONSTANDARD=	yes
-USE_QT4+=	corelib gui opengl moc_build qt3support
-CONFIGURE_ARGS+=--enable-editor=yes
-PLIST_SUB=	EDITOR=""
-.else
-CONFIGURE_ARGS+=--enable-editor=no
-PLIST_SUB=	EDITOR="@comment "
-.endif
+EDITOR_USE=		QT4=corelib,gui,moc_build,opengl,qt3support
+EDITOR_CONFIGURE_ON=	--enable-editor=yes
+EDITOR_CONFIGURE_OFF=	--enable-editor=no
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-I/usr/include/|-I${LOCALBASE}/include/|g' \
@@ -59,14 +55,14 @@ post-patch:
 		/qt4_libdirs/ s|".*"|"${QT_LIBDIR}"|; /test/ s|==|=| ; \
 		s/-llua /-llua-${LUA_VER} /g;' \
 		${WRKSRC}/configure
-.if ${PORT_OPTIONS:MEDITOR}
+
+post-patch-EDITOR-on:
 	@${REINPLACE_CMD} -e '/^INCLUDES = / s|=|= -I${QT_INCDIR}/QtGui \
 		-I${QT_INCDIR}/QtOpenGL -I${QT_INCDIR}/Qt3Support \
 		-I${QT_INCDIR}/QtCore -I${QT_INCDIR}|' \
 		${WRKSRC}/Makefile.in
-.endif
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/MANUAL ${STAGEDIR}${DOCSDIR}/
 

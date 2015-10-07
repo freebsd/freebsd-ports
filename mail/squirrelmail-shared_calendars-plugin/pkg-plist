@@ -65,11 +65,4 @@
 %%SQUIRRELDIR%%/plugins/shared_calendars/url_validator.php
 %%SQUIRRELDIR%%/plugins/shared_calendars/version
 %%SQUIRRELDIR%%/plugins/shared_calendars/year.php
-@dirrm %%SQUIRRELDIR%%/plugins/shared_calendars/classes
-@dirrmtry %%SQUIRRELDIR%%/plugins/shared_calendars/data
-@dirrm %%SQUIRRELDIR%%/plugins/shared_calendars/doc
-@dirrm %%SQUIRRELDIR%%/plugins/shared_calendars/images
-@dirrm %%SQUIRRELDIR%%/plugins/shared_calendars/interface
-@dirrm %%SQUIRRELDIR%%/plugins/shared_calendars/scripts
-@dirrmtry %%SQUIRRELDIR%%/plugins/shared_calendars
 @exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin %%SQUIRREL_PLUGIN_NAME%%; fi

@@ -1,9 +1,8 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/net-im/empathy/Makefile 20021 2014-10-24 17:45:27Z gusi $
 
 PORTNAME=	empathy
-PORTVERSION=	3.12.8
+PORTVERSION=	3.12.10
 CATEGORIES=	net-im gnome
 MASTER_SITES=	GNOME
 
@@ -38,7 +37,7 @@ RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
     		mc-tool:${PORTSDIR}/net-im/telepathy-mission-control
 
 USES=		gettext gmake libtool pathfix pkgconfig python tar:xz
-USE_GNOME=	evolutiondataserver3 gnomeprefix intlhack
+USE_GNOME=	evolutiondataserver3 intlhack
 USE_GSTREAMER1=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
@@ -76,6 +75,8 @@ MAP_CONFIGURE_ENABLE=	map
 CHEESE_BUILD_DEPENDS=	cheese>=0:${PORTSDIR}/multimedia/cheese
 CHEESE_RUN_DEPENDS=	cheese>=0:${PORTSDIR}/multimedia/cheese
 CHEESE_CONFIGURE_WITH=	cheese
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|clutter-gst-1.0|clutter-gst-2.0|g ;\

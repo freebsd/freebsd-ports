@@ -29,9 +29,4 @@
 %%SQUIRRELDIR%%/plugins/multilogin/make_release.sh
 %%SQUIRRELDIR%%/plugins/multilogin/multilogin.pot
 %%SQUIRRELDIR%%/plugins/multilogin/version
-@dirrm %%SQUIRRELDIR%%/plugins/multilogin/templates/default_smarty
-@dirrm %%SQUIRRELDIR%%/plugins/multilogin/templates/default
-@dirrm %%SQUIRRELDIR%%/plugins/multilogin/templates
-@dirrm %%SQUIRRELDIR%%/plugins/multilogin/patches
-@dirrmtry %%SQUIRRELDIR%%/plugins/multilogin/
 @exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin %%SQUIRREL_PLUGIN_NAME%%; fi

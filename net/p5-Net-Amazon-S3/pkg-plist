@@ -51,4 +51,4 @@ bin/s3cl
 %%PERL5_MAN3%%/Net::Amazon::S3::Request::PutPart.3.gz
 %%PERL5_MAN3%%/Net::Amazon::S3::Request::SetBucketAccessControl.3.gz
 %%PERL5_MAN3%%/Net::Amazon::S3::Request::SetObjectAccessControl.3.gz
-man/man1/s3cl.1.gz
+%%PERL5_MAN1%%/s3cl.1.gz

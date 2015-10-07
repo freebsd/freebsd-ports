@@ -1,7 +1,7 @@
 SASH (Stand-Alone SHell)
 
 It is a nice combination of bare-bones shell and a dozen 
-or so most useful unix commands.
+or so most useful Unix commands.
 
 Shell includes: echo pwd cd mkdir mknod rmdir sync rm chmod
                 chown chgrp touch mv ln cp cmp more exit

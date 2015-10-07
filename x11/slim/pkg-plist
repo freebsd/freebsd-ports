@@ -6,6 +6,4 @@ lib/libslim.so.%%VERSION%%
 %%DATADIR%%/themes/default/slim.theme
 man/man1/slim.1.gz
 @sample etc/slim.conf.sample
-%%PAM%%@unexec if cmp -s %D/etc/pam.d/slim.default %D/etc/pam.d/slim; then rm -f %D/etc/pam.d/slim; fi
-%%PAM%%etc/pam.d/slim.default
-%%PAM%%@exec if [ ! -f %D/etc/pam.d/slim ]; then cp -p %D/%F %B/slim; fi
+%%PAM%%@sample etc/pam.d/slim.sample

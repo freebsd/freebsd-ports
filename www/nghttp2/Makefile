@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nghttp2
-PORTVERSION=	1.0.5
+PORTVERSION=	1.3.4
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/tatsuhiro-t/${PORTNAME}/releases/download/v${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -11,6 +11,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	HTTP/2.0 C Library
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	libev>=4.15:${PORTSDIR}/devel/libev \
 		libevent2>=2.0.8:${PORTSDIR}/devel/libevent2 \

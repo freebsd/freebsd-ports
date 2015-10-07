@@ -43,12 +43,14 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -E 's|(SCIM_LIBEXECDIR=).*|\1${PREFIX}/lib/scim-1.0| ; \
-   			s|(SCIM_MODULEDIR=).*|\1${PREFIX}/lib/scim-1.0/1.4.0| ; \
-			s|(SCIM_ICONDIR=).*|\1${PREFIX}/share/scim/icons| ; \
-			s|(SCIM_DATADIR=).*|\1${PREFIX}/share/scim|' \
+	@${REINPLACE_CMD} \
+		-e '/^SCIM_LIBEXECDIR=/s|=.*|=${PREFIX}/lib/scim-1.0|' \
+		-e '/^SCIM_MODULEDIR=/s|=.*|=${PREFIX}/lib/scim-1.0/1.4.0|' \
+		-e '/^SCIM_ICONDIR=/s|=.*|=${PREFIX}/share/scim/icons|' \
+		-e '/^SCIM_DATADIR=/s|=.*|=${PREFIX}/share/scim|' \
+		-e '/^LIBTOOL_EXPORT_OPTIONS=/s/=.*/=/' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -E 's|^_NAME|NAME|g' ${WRKSRC}/data/*.pad.in
+	@${REINPLACE_CMD} 's|^_NAME|NAME|' ${WRKSRC}/data/*.pad.in
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

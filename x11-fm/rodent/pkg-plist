@@ -9,7 +9,6 @@ bin/rodent-getpass
 bin/rodent-iconmgr
 bin/rodent-plug
 bin/rodent-root
-lib/locale/af/LC_MESSAGES/fgr.mo
 lib/locale/af/LC_MESSAGES/rodent-diff.mo
 lib/locale/af/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/af/LC_MESSAGES/rodent-fgr.mo
@@ -40,7 +39,6 @@ lib/locale/an/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/an/LC_MESSAGES/rodent-pkg.mo
 lib/locale/an/LC_MESSAGES/rodent-ps.mo
 lib/locale/an/LC_MESSAGES/rodent-samba.mo
-lib/locale/ar/LC_MESSAGES/fgr.mo
 lib/locale/ar/LC_MESSAGES/rodent-diff.mo
 lib/locale/ar/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/ar/LC_MESSAGES/rodent-fgr.mo
@@ -51,7 +49,6 @@ lib/locale/ar/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/ar/LC_MESSAGES/rodent-pkg.mo
 lib/locale/ar/LC_MESSAGES/rodent-ps.mo
 lib/locale/ar/LC_MESSAGES/rodent-samba.mo
-lib/locale/as/LC_MESSAGES/fgr.mo
 lib/locale/as/LC_MESSAGES/rodent-diff.mo
 lib/locale/as/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/as/LC_MESSAGES/rodent-fgr.mo
@@ -62,7 +59,6 @@ lib/locale/as/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/as/LC_MESSAGES/rodent-pkg.mo
 lib/locale/as/LC_MESSAGES/rodent-ps.mo
 lib/locale/as/LC_MESSAGES/rodent-samba.mo
-lib/locale/ast/LC_MESSAGES/fgr.mo
 lib/locale/ast/LC_MESSAGES/rodent-diff.mo
 lib/locale/ast/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/ast/LC_MESSAGES/rodent-fgr.mo
@@ -73,7 +69,6 @@ lib/locale/ast/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/ast/LC_MESSAGES/rodent-pkg.mo
 lib/locale/ast/LC_MESSAGES/rodent-ps.mo
 lib/locale/ast/LC_MESSAGES/rodent-samba.mo
-lib/locale/az/LC_MESSAGES/fgr.mo
 lib/locale/az/LC_MESSAGES/rodent-diff.mo
 lib/locale/az/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/az/LC_MESSAGES/rodent-fgr.mo
@@ -84,7 +79,6 @@ lib/locale/az/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/az/LC_MESSAGES/rodent-pkg.mo
 lib/locale/az/LC_MESSAGES/rodent-ps.mo
 lib/locale/az/LC_MESSAGES/rodent-samba.mo
-lib/locale/be/LC_MESSAGES/fgr.mo
 lib/locale/be/LC_MESSAGES/rodent-diff.mo
 lib/locale/be/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/be/LC_MESSAGES/rodent-fgr.mo
@@ -105,7 +99,6 @@ lib/locale/be@latin/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/be@latin/LC_MESSAGES/rodent-pkg.mo
 lib/locale/be@latin/LC_MESSAGES/rodent-ps.mo
 lib/locale/be@latin/LC_MESSAGES/rodent-samba.mo
-lib/locale/bg/LC_MESSAGES/fgr.mo
 lib/locale/bg/LC_MESSAGES/rodent-diff.mo
 lib/locale/bg/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/bg/LC_MESSAGES/rodent-fgr.mo
@@ -116,7 +109,6 @@ lib/locale/bg/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/bg/LC_MESSAGES/rodent-pkg.mo
 lib/locale/bg/LC_MESSAGES/rodent-ps.mo
 lib/locale/bg/LC_MESSAGES/rodent-samba.mo
-lib/locale/bn/LC_MESSAGES/fgr.mo
 lib/locale/bn/LC_MESSAGES/rodent-diff.mo
 lib/locale/bn/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/bn/LC_MESSAGES/rodent-fgr.mo
@@ -147,7 +139,6 @@ lib/locale/bo/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/bo/LC_MESSAGES/rodent-pkg.mo
 lib/locale/bo/LC_MESSAGES/rodent-ps.mo
 lib/locale/bo/LC_MESSAGES/rodent-samba.mo
-lib/locale/br/LC_MESSAGES/fgr.mo
 lib/locale/br/LC_MESSAGES/rodent-diff.mo
 lib/locale/br/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/br/LC_MESSAGES/rodent-fgr.mo
@@ -158,7 +149,6 @@ lib/locale/br/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/br/LC_MESSAGES/rodent-pkg.mo
 lib/locale/br/LC_MESSAGES/rodent-ps.mo
 lib/locale/br/LC_MESSAGES/rodent-samba.mo
-lib/locale/bs/LC_MESSAGES/fgr.mo
 lib/locale/bs/LC_MESSAGES/rodent-diff.mo
 lib/locale/bs/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/bs/LC_MESSAGES/rodent-fgr.mo
@@ -169,7 +159,6 @@ lib/locale/bs/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/bs/LC_MESSAGES/rodent-pkg.mo
 lib/locale/bs/LC_MESSAGES/rodent-ps.mo
 lib/locale/bs/LC_MESSAGES/rodent-samba.mo
-lib/locale/ca/LC_MESSAGES/fgr.mo
 lib/locale/ca/LC_MESSAGES/rodent-diff.mo
 lib/locale/ca/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/ca/LC_MESSAGES/rodent-fgr.mo
@@ -190,7 +179,6 @@ lib/locale/ca@valencia/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/ca@valencia/LC_MESSAGES/rodent-pkg.mo
 lib/locale/ca@valencia/LC_MESSAGES/rodent-ps.mo
 lib/locale/ca@valencia/LC_MESSAGES/rodent-samba.mo
-lib/locale/crh/LC_MESSAGES/fgr.mo
 lib/locale/crh/LC_MESSAGES/rodent-diff.mo
 lib/locale/crh/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/crh/LC_MESSAGES/rodent-fgr.mo
@@ -201,7 +189,6 @@ lib/locale/crh/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/crh/LC_MESSAGES/rodent-pkg.mo
 lib/locale/crh/LC_MESSAGES/rodent-ps.mo
 lib/locale/crh/LC_MESSAGES/rodent-samba.mo
-lib/locale/cs/LC_MESSAGES/fgr.mo
 lib/locale/cs/LC_MESSAGES/rodent-diff.mo
 lib/locale/cs/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/cs/LC_MESSAGES/rodent-fgr.mo
@@ -212,7 +199,6 @@ lib/locale/cs/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/cs/LC_MESSAGES/rodent-pkg.mo
 lib/locale/cs/LC_MESSAGES/rodent-ps.mo
 lib/locale/cs/LC_MESSAGES/rodent-samba.mo
-lib/locale/csb/LC_MESSAGES/fgr.mo
 lib/locale/csb/LC_MESSAGES/rodent-diff.mo
 lib/locale/csb/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/csb/LC_MESSAGES/rodent-fgr.mo
@@ -223,7 +209,6 @@ lib/locale/csb/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/csb/LC_MESSAGES/rodent-pkg.mo
 lib/locale/csb/LC_MESSAGES/rodent-ps.mo
 lib/locale/csb/LC_MESSAGES/rodent-samba.mo
-lib/locale/cy/LC_MESSAGES/fgr.mo
 lib/locale/cy/LC_MESSAGES/rodent-diff.mo
 lib/locale/cy/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/cy/LC_MESSAGES/rodent-fgr.mo
@@ -234,7 +219,6 @@ lib/locale/cy/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/cy/LC_MESSAGES/rodent-pkg.mo
 lib/locale/cy/LC_MESSAGES/rodent-ps.mo
 lib/locale/cy/LC_MESSAGES/rodent-samba.mo
-lib/locale/da/LC_MESSAGES/fgr.mo
 lib/locale/da/LC_MESSAGES/rodent-diff.mo
 lib/locale/da/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/da/LC_MESSAGES/rodent-fgr.mo
@@ -245,7 +229,6 @@ lib/locale/da/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/da/LC_MESSAGES/rodent-pkg.mo
 lib/locale/da/LC_MESSAGES/rodent-ps.mo
 lib/locale/da/LC_MESSAGES/rodent-samba.mo
-lib/locale/de/LC_MESSAGES/fgr.mo
 lib/locale/de/LC_MESSAGES/rodent-diff.mo
 lib/locale/de/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/de/LC_MESSAGES/rodent-fgr.mo
@@ -256,7 +239,6 @@ lib/locale/de/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/de/LC_MESSAGES/rodent-pkg.mo
 lib/locale/de/LC_MESSAGES/rodent-ps.mo
 lib/locale/de/LC_MESSAGES/rodent-samba.mo
-lib/locale/dz/LC_MESSAGES/fgr.mo
 lib/locale/dz/LC_MESSAGES/rodent-diff.mo
 lib/locale/dz/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/dz/LC_MESSAGES/rodent-fgr.mo
@@ -267,7 +249,6 @@ lib/locale/dz/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/dz/LC_MESSAGES/rodent-pkg.mo
 lib/locale/dz/LC_MESSAGES/rodent-ps.mo
 lib/locale/dz/LC_MESSAGES/rodent-samba.mo
-lib/locale/el/LC_MESSAGES/fgr.mo
 lib/locale/el/LC_MESSAGES/rodent-diff.mo
 lib/locale/el/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/el/LC_MESSAGES/rodent-fgr.mo
@@ -288,7 +269,6 @@ lib/locale/en_AU/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/en_AU/LC_MESSAGES/rodent-pkg.mo
 lib/locale/en_AU/LC_MESSAGES/rodent-ps.mo
 lib/locale/en_AU/LC_MESSAGES/rodent-samba.mo
-lib/locale/en_CA/LC_MESSAGES/fgr.mo
 lib/locale/en_CA/LC_MESSAGES/rodent-diff.mo
 lib/locale/en_CA/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/en_CA/LC_MESSAGES/rodent-fgr.mo
@@ -299,7 +279,6 @@ lib/locale/en_CA/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/en_CA/LC_MESSAGES/rodent-pkg.mo
 lib/locale/en_CA/LC_MESSAGES/rodent-ps.mo
 lib/locale/en_CA/LC_MESSAGES/rodent-samba.mo
-lib/locale/en_GB/LC_MESSAGES/fgr.mo
 lib/locale/en_GB/LC_MESSAGES/rodent-diff.mo
 lib/locale/en_GB/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/en_GB/LC_MESSAGES/rodent-fgr.mo
@@ -320,7 +299,6 @@ lib/locale/en_US/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/en_US/LC_MESSAGES/rodent-pkg.mo
 lib/locale/en_US/LC_MESSAGES/rodent-ps.mo
 lib/locale/en_US/LC_MESSAGES/rodent-samba.mo
-lib/locale/eo/LC_MESSAGES/fgr.mo
 lib/locale/eo/LC_MESSAGES/rodent-diff.mo
 lib/locale/eo/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/eo/LC_MESSAGES/rodent-fgr.mo
@@ -331,7 +309,6 @@ lib/locale/eo/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/eo/LC_MESSAGES/rodent-pkg.mo
 lib/locale/eo/LC_MESSAGES/rodent-ps.mo
 lib/locale/eo/LC_MESSAGES/rodent-samba.mo
-lib/locale/es/LC_MESSAGES/fgr.mo
 lib/locale/es/LC_MESSAGES/rodent-diff.mo
 lib/locale/es/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/es/LC_MESSAGES/rodent-fgr.mo
@@ -342,7 +319,6 @@ lib/locale/es/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/es/LC_MESSAGES/rodent-pkg.mo
 lib/locale/es/LC_MESSAGES/rodent-ps.mo
 lib/locale/es/LC_MESSAGES/rodent-samba.mo
-lib/locale/et/LC_MESSAGES/fgr.mo
 lib/locale/et/LC_MESSAGES/rodent-diff.mo
 lib/locale/et/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/et/LC_MESSAGES/rodent-fgr.mo
@@ -353,7 +329,6 @@ lib/locale/et/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/et/LC_MESSAGES/rodent-pkg.mo
 lib/locale/et/LC_MESSAGES/rodent-ps.mo
 lib/locale/et/LC_MESSAGES/rodent-samba.mo
-lib/locale/eu/LC_MESSAGES/fgr.mo
 lib/locale/eu/LC_MESSAGES/rodent-diff.mo
 lib/locale/eu/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/eu/LC_MESSAGES/rodent-fgr.mo
@@ -364,7 +339,6 @@ lib/locale/eu/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/eu/LC_MESSAGES/rodent-pkg.mo
 lib/locale/eu/LC_MESSAGES/rodent-ps.mo
 lib/locale/eu/LC_MESSAGES/rodent-samba.mo
-lib/locale/fa/LC_MESSAGES/fgr.mo
 lib/locale/fa/LC_MESSAGES/rodent-diff.mo
 lib/locale/fa/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/fa/LC_MESSAGES/rodent-fgr.mo
@@ -375,7 +349,6 @@ lib/locale/fa/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/fa/LC_MESSAGES/rodent-pkg.mo
 lib/locale/fa/LC_MESSAGES/rodent-ps.mo
 lib/locale/fa/LC_MESSAGES/rodent-samba.mo
-lib/locale/fi/LC_MESSAGES/fgr.mo
 lib/locale/fi/LC_MESSAGES/rodent-diff.mo
 lib/locale/fi/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/fi/LC_MESSAGES/rodent-fgr.mo
@@ -386,7 +359,6 @@ lib/locale/fi/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/fi/LC_MESSAGES/rodent-pkg.mo
 lib/locale/fi/LC_MESSAGES/rodent-ps.mo
 lib/locale/fi/LC_MESSAGES/rodent-samba.mo
-lib/locale/fr/LC_MESSAGES/fgr.mo
 lib/locale/fr/LC_MESSAGES/rodent-diff.mo
 lib/locale/fr/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/fr/LC_MESSAGES/rodent-fgr.mo
@@ -407,7 +379,6 @@ lib/locale/fur/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/fur/LC_MESSAGES/rodent-pkg.mo
 lib/locale/fur/LC_MESSAGES/rodent-ps.mo
 lib/locale/fur/LC_MESSAGES/rodent-samba.mo
-lib/locale/fy/LC_MESSAGES/fgr.mo
 lib/locale/fy/LC_MESSAGES/rodent-diff.mo
 lib/locale/fy/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/fy/LC_MESSAGES/rodent-fgr.mo
@@ -418,7 +389,6 @@ lib/locale/fy/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/fy/LC_MESSAGES/rodent-pkg.mo
 lib/locale/fy/LC_MESSAGES/rodent-ps.mo
 lib/locale/fy/LC_MESSAGES/rodent-samba.mo
-lib/locale/ga/LC_MESSAGES/fgr.mo
 lib/locale/ga/LC_MESSAGES/rodent-diff.mo
 lib/locale/ga/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/ga/LC_MESSAGES/rodent-fgr.mo
@@ -429,7 +399,6 @@ lib/locale/ga/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/ga/LC_MESSAGES/rodent-pkg.mo
 lib/locale/ga/LC_MESSAGES/rodent-ps.mo
 lib/locale/ga/LC_MESSAGES/rodent-samba.mo
-lib/locale/gl/LC_MESSAGES/fgr.mo
 lib/locale/gl/LC_MESSAGES/rodent-diff.mo
 lib/locale/gl/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/gl/LC_MESSAGES/rodent-fgr.mo
@@ -440,7 +409,6 @@ lib/locale/gl/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/gl/LC_MESSAGES/rodent-pkg.mo
 lib/locale/gl/LC_MESSAGES/rodent-ps.mo
 lib/locale/gl/LC_MESSAGES/rodent-samba.mo
-lib/locale/gu/LC_MESSAGES/fgr.mo
 lib/locale/gu/LC_MESSAGES/rodent-diff.mo
 lib/locale/gu/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/gu/LC_MESSAGES/rodent-fgr.mo
@@ -461,7 +429,6 @@ lib/locale/gv/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/gv/LC_MESSAGES/rodent-pkg.mo
 lib/locale/gv/LC_MESSAGES/rodent-ps.mo
 lib/locale/gv/LC_MESSAGES/rodent-samba.mo
-lib/locale/he/LC_MESSAGES/fgr.mo
 lib/locale/he/LC_MESSAGES/rodent-diff.mo
 lib/locale/he/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/he/LC_MESSAGES/rodent-fgr.mo
@@ -472,7 +439,6 @@ lib/locale/he/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/he/LC_MESSAGES/rodent-pkg.mo
 lib/locale/he/LC_MESSAGES/rodent-ps.mo
 lib/locale/he/LC_MESSAGES/rodent-samba.mo
-lib/locale/hi/LC_MESSAGES/fgr.mo
 lib/locale/hi/LC_MESSAGES/rodent-diff.mo
 lib/locale/hi/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/hi/LC_MESSAGES/rodent-fgr.mo
@@ -483,7 +449,6 @@ lib/locale/hi/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/hi/LC_MESSAGES/rodent-pkg.mo
 lib/locale/hi/LC_MESSAGES/rodent-ps.mo
 lib/locale/hi/LC_MESSAGES/rodent-samba.mo
-lib/locale/hne/LC_MESSAGES/fgr.mo
 lib/locale/hne/LC_MESSAGES/rodent-diff.mo
 lib/locale/hne/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/hne/LC_MESSAGES/rodent-fgr.mo
@@ -494,7 +459,6 @@ lib/locale/hne/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/hne/LC_MESSAGES/rodent-pkg.mo
 lib/locale/hne/LC_MESSAGES/rodent-ps.mo
 lib/locale/hne/LC_MESSAGES/rodent-samba.mo
-lib/locale/hr/LC_MESSAGES/fgr.mo
 lib/locale/hr/LC_MESSAGES/rodent-diff.mo
 lib/locale/hr/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/hr/LC_MESSAGES/rodent-fgr.mo
@@ -505,7 +469,6 @@ lib/locale/hr/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/hr/LC_MESSAGES/rodent-pkg.mo
 lib/locale/hr/LC_MESSAGES/rodent-ps.mo
 lib/locale/hr/LC_MESSAGES/rodent-samba.mo
-lib/locale/hsb/LC_MESSAGES/fgr.mo
 lib/locale/hsb/LC_MESSAGES/rodent-diff.mo
 lib/locale/hsb/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/hsb/LC_MESSAGES/rodent-fgr.mo
@@ -516,7 +479,6 @@ lib/locale/hsb/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/hsb/LC_MESSAGES/rodent-pkg.mo
 lib/locale/hsb/LC_MESSAGES/rodent-ps.mo
 lib/locale/hsb/LC_MESSAGES/rodent-samba.mo
-lib/locale/hu/LC_MESSAGES/fgr.mo
 lib/locale/hu/LC_MESSAGES/rodent-diff.mo
 lib/locale/hu/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/hu/LC_MESSAGES/rodent-fgr.mo
@@ -527,7 +489,6 @@ lib/locale/hu/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/hu/LC_MESSAGES/rodent-pkg.mo
 lib/locale/hu/LC_MESSAGES/rodent-ps.mo
 lib/locale/hu/LC_MESSAGES/rodent-samba.mo
-lib/locale/hy/LC_MESSAGES/fgr.mo
 lib/locale/hy/LC_MESSAGES/rodent-diff.mo
 lib/locale/hy/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/hy/LC_MESSAGES/rodent-fgr.mo
@@ -538,7 +499,6 @@ lib/locale/hy/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/hy/LC_MESSAGES/rodent-pkg.mo
 lib/locale/hy/LC_MESSAGES/rodent-ps.mo
 lib/locale/hy/LC_MESSAGES/rodent-samba.mo
-lib/locale/ia/LC_MESSAGES/fgr.mo
 lib/locale/ia/LC_MESSAGES/rodent-diff.mo
 lib/locale/ia/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/ia/LC_MESSAGES/rodent-fgr.mo
@@ -549,7 +509,6 @@ lib/locale/ia/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/ia/LC_MESSAGES/rodent-pkg.mo
 lib/locale/ia/LC_MESSAGES/rodent-ps.mo
 lib/locale/ia/LC_MESSAGES/rodent-samba.mo
-lib/locale/id/LC_MESSAGES/fgr.mo
 lib/locale/id/LC_MESSAGES/rodent-diff.mo
 lib/locale/id/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/id/LC_MESSAGES/rodent-fgr.mo
@@ -580,7 +539,6 @@ lib/locale/io/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/io/LC_MESSAGES/rodent-pkg.mo
 lib/locale/io/LC_MESSAGES/rodent-ps.mo
 lib/locale/io/LC_MESSAGES/rodent-samba.mo
-lib/locale/is/LC_MESSAGES/fgr.mo
 lib/locale/is/LC_MESSAGES/rodent-diff.mo
 lib/locale/is/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/is/LC_MESSAGES/rodent-fgr.mo
@@ -591,7 +549,6 @@ lib/locale/is/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/is/LC_MESSAGES/rodent-pkg.mo
 lib/locale/is/LC_MESSAGES/rodent-ps.mo
 lib/locale/is/LC_MESSAGES/rodent-samba.mo
-lib/locale/it/LC_MESSAGES/fgr.mo
 lib/locale/it/LC_MESSAGES/rodent-diff.mo
 lib/locale/it/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/it/LC_MESSAGES/rodent-fgr.mo
@@ -602,7 +559,6 @@ lib/locale/it/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/it/LC_MESSAGES/rodent-pkg.mo
 lib/locale/it/LC_MESSAGES/rodent-ps.mo
 lib/locale/it/LC_MESSAGES/rodent-samba.mo
-lib/locale/ja/LC_MESSAGES/fgr.mo
 lib/locale/ja/LC_MESSAGES/rodent-diff.mo
 lib/locale/ja/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/ja/LC_MESSAGES/rodent-fgr.mo
@@ -613,7 +569,6 @@ lib/locale/ja/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/ja/LC_MESSAGES/rodent-pkg.mo
 lib/locale/ja/LC_MESSAGES/rodent-ps.mo
 lib/locale/ja/LC_MESSAGES/rodent-samba.mo
-lib/locale/ka/LC_MESSAGES/fgr.mo
 lib/locale/ka/LC_MESSAGES/rodent-diff.mo
 lib/locale/ka/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/ka/LC_MESSAGES/rodent-fgr.mo
@@ -644,7 +599,6 @@ lib/locale/kk/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/kk/LC_MESSAGES/rodent-pkg.mo
 lib/locale/kk/LC_MESSAGES/rodent-ps.mo
 lib/locale/kk/LC_MESSAGES/rodent-samba.mo
-lib/locale/km/LC_MESSAGES/fgr.mo
 lib/locale/km/LC_MESSAGES/rodent-diff.mo
 lib/locale/km/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/km/LC_MESSAGES/rodent-fgr.mo
@@ -655,7 +609,6 @@ lib/locale/km/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/km/LC_MESSAGES/rodent-pkg.mo
 lib/locale/km/LC_MESSAGES/rodent-ps.mo
 lib/locale/km/LC_MESSAGES/rodent-samba.mo
-lib/locale/kn/LC_MESSAGES/fgr.mo
 lib/locale/kn/LC_MESSAGES/rodent-diff.mo
 lib/locale/kn/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/kn/LC_MESSAGES/rodent-fgr.mo
@@ -666,7 +619,6 @@ lib/locale/kn/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/kn/LC_MESSAGES/rodent-pkg.mo
 lib/locale/kn/LC_MESSAGES/rodent-ps.mo
 lib/locale/kn/LC_MESSAGES/rodent-samba.mo
-lib/locale/ko/LC_MESSAGES/fgr.mo
 lib/locale/ko/LC_MESSAGES/rodent-diff.mo
 lib/locale/ko/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/ko/LC_MESSAGES/rodent-fgr.mo
@@ -687,7 +639,6 @@ lib/locale/ks/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/ks/LC_MESSAGES/rodent-pkg.mo
 lib/locale/ks/LC_MESSAGES/rodent-ps.mo
 lib/locale/ks/LC_MESSAGES/rodent-samba.mo
-lib/locale/ku/LC_MESSAGES/fgr.mo
 lib/locale/ku/LC_MESSAGES/rodent-diff.mo
 lib/locale/ku/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/ku/LC_MESSAGES/rodent-fgr.mo
@@ -738,7 +689,6 @@ lib/locale/li/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/li/LC_MESSAGES/rodent-pkg.mo
 lib/locale/li/LC_MESSAGES/rodent-ps.mo
 lib/locale/li/LC_MESSAGES/rodent-samba.mo
-lib/locale/lt/LC_MESSAGES/fgr.mo
 lib/locale/lt/LC_MESSAGES/rodent-diff.mo
 lib/locale/lt/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/lt/LC_MESSAGES/rodent-fgr.mo
@@ -749,7 +699,6 @@ lib/locale/lt/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/lt/LC_MESSAGES/rodent-pkg.mo
 lib/locale/lt/LC_MESSAGES/rodent-ps.mo
 lib/locale/lt/LC_MESSAGES/rodent-samba.mo
-lib/locale/lv/LC_MESSAGES/fgr.mo
 lib/locale/lv/LC_MESSAGES/rodent-diff.mo
 lib/locale/lv/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/lv/LC_MESSAGES/rodent-fgr.mo
@@ -760,7 +709,6 @@ lib/locale/lv/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/lv/LC_MESSAGES/rodent-pkg.mo
 lib/locale/lv/LC_MESSAGES/rodent-ps.mo
 lib/locale/lv/LC_MESSAGES/rodent-samba.mo
-lib/locale/mai/LC_MESSAGES/fgr.mo
 lib/locale/mai/LC_MESSAGES/rodent-diff.mo
 lib/locale/mai/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/mai/LC_MESSAGES/rodent-fgr.mo
@@ -791,7 +739,6 @@ lib/locale/mi/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/mi/LC_MESSAGES/rodent-pkg.mo
 lib/locale/mi/LC_MESSAGES/rodent-ps.mo
 lib/locale/mi/LC_MESSAGES/rodent-samba.mo
-lib/locale/mk/LC_MESSAGES/fgr.mo
 lib/locale/mk/LC_MESSAGES/rodent-diff.mo
 lib/locale/mk/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/mk/LC_MESSAGES/rodent-fgr.mo
@@ -802,7 +749,6 @@ lib/locale/mk/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/mk/LC_MESSAGES/rodent-pkg.mo
 lib/locale/mk/LC_MESSAGES/rodent-ps.mo
 lib/locale/mk/LC_MESSAGES/rodent-samba.mo
-lib/locale/ml/LC_MESSAGES/fgr.mo
 lib/locale/ml/LC_MESSAGES/rodent-diff.mo
 lib/locale/ml/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/ml/LC_MESSAGES/rodent-fgr.mo
@@ -823,7 +769,6 @@ lib/locale/mn/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/mn/LC_MESSAGES/rodent-pkg.mo
 lib/locale/mn/LC_MESSAGES/rodent-ps.mo
 lib/locale/mn/LC_MESSAGES/rodent-samba.mo
-lib/locale/mr/LC_MESSAGES/fgr.mo
 lib/locale/mr/LC_MESSAGES/rodent-diff.mo
 lib/locale/mr/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/mr/LC_MESSAGES/rodent-fgr.mo
@@ -834,7 +779,6 @@ lib/locale/mr/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/mr/LC_MESSAGES/rodent-pkg.mo
 lib/locale/mr/LC_MESSAGES/rodent-ps.mo
 lib/locale/mr/LC_MESSAGES/rodent-samba.mo
-lib/locale/ms/LC_MESSAGES/fgr.mo
 lib/locale/ms/LC_MESSAGES/rodent-diff.mo
 lib/locale/ms/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/ms/LC_MESSAGES/rodent-fgr.mo
@@ -855,7 +799,6 @@ lib/locale/my/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/my/LC_MESSAGES/rodent-pkg.mo
 lib/locale/my/LC_MESSAGES/rodent-ps.mo
 lib/locale/my/LC_MESSAGES/rodent-samba.mo
-lib/locale/nb/LC_MESSAGES/fgr.mo
 lib/locale/nb/LC_MESSAGES/rodent-diff.mo
 lib/locale/nb/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/nb/LC_MESSAGES/rodent-fgr.mo
@@ -866,7 +809,6 @@ lib/locale/nb/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/nb/LC_MESSAGES/rodent-pkg.mo
 lib/locale/nb/LC_MESSAGES/rodent-ps.mo
 lib/locale/nb/LC_MESSAGES/rodent-samba.mo
-lib/locale/nds/LC_MESSAGES/fgr.mo
 lib/locale/nds/LC_MESSAGES/rodent-diff.mo
 lib/locale/nds/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/nds/LC_MESSAGES/rodent-fgr.mo
@@ -877,7 +819,6 @@ lib/locale/nds/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/nds/LC_MESSAGES/rodent-pkg.mo
 lib/locale/nds/LC_MESSAGES/rodent-ps.mo
 lib/locale/nds/LC_MESSAGES/rodent-samba.mo
-lib/locale/ne/LC_MESSAGES/fgr.mo
 lib/locale/ne/LC_MESSAGES/rodent-diff.mo
 lib/locale/ne/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/ne/LC_MESSAGES/rodent-fgr.mo
@@ -888,7 +829,6 @@ lib/locale/ne/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/ne/LC_MESSAGES/rodent-pkg.mo
 lib/locale/ne/LC_MESSAGES/rodent-ps.mo
 lib/locale/ne/LC_MESSAGES/rodent-samba.mo
-lib/locale/nl/LC_MESSAGES/fgr.mo
 lib/locale/nl/LC_MESSAGES/rodent-diff.mo
 lib/locale/nl/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/nl/LC_MESSAGES/rodent-fgr.mo
@@ -899,7 +839,6 @@ lib/locale/nl/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/nl/LC_MESSAGES/rodent-pkg.mo
 lib/locale/nl/LC_MESSAGES/rodent-ps.mo
 lib/locale/nl/LC_MESSAGES/rodent-samba.mo
-lib/locale/nn/LC_MESSAGES/fgr.mo
 lib/locale/nn/LC_MESSAGES/rodent-diff.mo
 lib/locale/nn/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/nn/LC_MESSAGES/rodent-fgr.mo
@@ -930,7 +869,6 @@ lib/locale/nso/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/nso/LC_MESSAGES/rodent-pkg.mo
 lib/locale/nso/LC_MESSAGES/rodent-ps.mo
 lib/locale/nso/LC_MESSAGES/rodent-samba.mo
-lib/locale/oc/LC_MESSAGES/fgr.mo
 lib/locale/oc/LC_MESSAGES/rodent-diff.mo
 lib/locale/oc/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/oc/LC_MESSAGES/rodent-fgr.mo
@@ -941,7 +879,6 @@ lib/locale/oc/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/oc/LC_MESSAGES/rodent-pkg.mo
 lib/locale/oc/LC_MESSAGES/rodent-ps.mo
 lib/locale/oc/LC_MESSAGES/rodent-samba.mo
-lib/locale/or/LC_MESSAGES/fgr.mo
 lib/locale/or/LC_MESSAGES/rodent-diff.mo
 lib/locale/or/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/or/LC_MESSAGES/rodent-fgr.mo
@@ -952,7 +889,6 @@ lib/locale/or/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/or/LC_MESSAGES/rodent-pkg.mo
 lib/locale/or/LC_MESSAGES/rodent-ps.mo
 lib/locale/or/LC_MESSAGES/rodent-samba.mo
-lib/locale/pa/LC_MESSAGES/fgr.mo
 lib/locale/pa/LC_MESSAGES/rodent-diff.mo
 lib/locale/pa/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/pa/LC_MESSAGES/rodent-fgr.mo
@@ -963,7 +899,6 @@ lib/locale/pa/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/pa/LC_MESSAGES/rodent-pkg.mo
 lib/locale/pa/LC_MESSAGES/rodent-ps.mo
 lib/locale/pa/LC_MESSAGES/rodent-samba.mo
-lib/locale/pl/LC_MESSAGES/fgr.mo
 lib/locale/pl/LC_MESSAGES/rodent-diff.mo
 lib/locale/pl/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/pl/LC_MESSAGES/rodent-fgr.mo
@@ -974,7 +909,6 @@ lib/locale/pl/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/pl/LC_MESSAGES/rodent-pkg.mo
 lib/locale/pl/LC_MESSAGES/rodent-ps.mo
 lib/locale/pl/LC_MESSAGES/rodent-samba.mo
-lib/locale/ps/LC_MESSAGES/fgr.mo
 lib/locale/ps/LC_MESSAGES/rodent-diff.mo
 lib/locale/ps/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/ps/LC_MESSAGES/rodent-fgr.mo
@@ -985,7 +919,6 @@ lib/locale/ps/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/ps/LC_MESSAGES/rodent-pkg.mo
 lib/locale/ps/LC_MESSAGES/rodent-ps.mo
 lib/locale/ps/LC_MESSAGES/rodent-samba.mo
-lib/locale/pt/LC_MESSAGES/fgr.mo
 lib/locale/pt/LC_MESSAGES/rodent-diff.mo
 lib/locale/pt/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/pt/LC_MESSAGES/rodent-fgr.mo
@@ -996,7 +929,6 @@ lib/locale/pt/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/pt/LC_MESSAGES/rodent-pkg.mo
 lib/locale/pt/LC_MESSAGES/rodent-ps.mo
 lib/locale/pt/LC_MESSAGES/rodent-samba.mo
-lib/locale/pt_BR/LC_MESSAGES/fgr.mo
 lib/locale/pt_BR/LC_MESSAGES/rodent-diff.mo
 lib/locale/pt_BR/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/pt_BR/LC_MESSAGES/rodent-fgr.mo
@@ -1017,7 +949,6 @@ lib/locale/pt_PT/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/pt_PT/LC_MESSAGES/rodent-pkg.mo
 lib/locale/pt_PT/LC_MESSAGES/rodent-ps.mo
 lib/locale/pt_PT/LC_MESSAGES/rodent-samba.mo
-lib/locale/ro/LC_MESSAGES/fgr.mo
 lib/locale/ro/LC_MESSAGES/rodent-diff.mo
 lib/locale/ro/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/ro/LC_MESSAGES/rodent-fgr.mo
@@ -1028,7 +959,6 @@ lib/locale/ro/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/ro/LC_MESSAGES/rodent-pkg.mo
 lib/locale/ro/LC_MESSAGES/rodent-ps.mo
 lib/locale/ro/LC_MESSAGES/rodent-samba.mo
-lib/locale/ru/LC_MESSAGES/fgr.mo
 lib/locale/ru/LC_MESSAGES/rodent-diff.mo
 lib/locale/ru/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/ru/LC_MESSAGES/rodent-fgr.mo
@@ -1059,7 +989,6 @@ lib/locale/se/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/se/LC_MESSAGES/rodent-pkg.mo
 lib/locale/se/LC_MESSAGES/rodent-ps.mo
 lib/locale/se/LC_MESSAGES/rodent-samba.mo
-lib/locale/si/LC_MESSAGES/fgr.mo
 lib/locale/si/LC_MESSAGES/rodent-diff.mo
 lib/locale/si/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/si/LC_MESSAGES/rodent-fgr.mo
@@ -1070,7 +999,6 @@ lib/locale/si/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/si/LC_MESSAGES/rodent-pkg.mo
 lib/locale/si/LC_MESSAGES/rodent-ps.mo
 lib/locale/si/LC_MESSAGES/rodent-samba.mo
-lib/locale/sk/LC_MESSAGES/fgr.mo
 lib/locale/sk/LC_MESSAGES/rodent-diff.mo
 lib/locale/sk/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/sk/LC_MESSAGES/rodent-fgr.mo
@@ -1081,7 +1009,6 @@ lib/locale/sk/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/sk/LC_MESSAGES/rodent-pkg.mo
 lib/locale/sk/LC_MESSAGES/rodent-ps.mo
 lib/locale/sk/LC_MESSAGES/rodent-samba.mo
-lib/locale/sl/LC_MESSAGES/fgr.mo
 lib/locale/sl/LC_MESSAGES/rodent-diff.mo
 lib/locale/sl/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/sl/LC_MESSAGES/rodent-fgr.mo
@@ -1092,7 +1019,6 @@ lib/locale/sl/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/sl/LC_MESSAGES/rodent-pkg.mo
 lib/locale/sl/LC_MESSAGES/rodent-ps.mo
 lib/locale/sl/LC_MESSAGES/rodent-samba.mo
-lib/locale/sq/LC_MESSAGES/fgr.mo
 lib/locale/sq/LC_MESSAGES/rodent-diff.mo
 lib/locale/sq/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/sq/LC_MESSAGES/rodent-fgr.mo
@@ -1103,7 +1029,6 @@ lib/locale/sq/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/sq/LC_MESSAGES/rodent-pkg.mo
 lib/locale/sq/LC_MESSAGES/rodent-ps.mo
 lib/locale/sq/LC_MESSAGES/rodent-samba.mo
-lib/locale/sr/LC_MESSAGES/fgr.mo
 lib/locale/sr/LC_MESSAGES/rodent-diff.mo
 lib/locale/sr/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/sr/LC_MESSAGES/rodent-fgr.mo
@@ -1154,7 +1079,6 @@ lib/locale/sr@latin/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/sr@latin/LC_MESSAGES/rodent-pkg.mo
 lib/locale/sr@latin/LC_MESSAGES/rodent-ps.mo
 lib/locale/sr@latin/LC_MESSAGES/rodent-samba.mo
-lib/locale/sv/LC_MESSAGES/fgr.mo
 lib/locale/sv/LC_MESSAGES/rodent-diff.mo
 lib/locale/sv/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/sv/LC_MESSAGES/rodent-fgr.mo
@@ -1165,7 +1089,6 @@ lib/locale/sv/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/sv/LC_MESSAGES/rodent-pkg.mo
 lib/locale/sv/LC_MESSAGES/rodent-ps.mo
 lib/locale/sv/LC_MESSAGES/rodent-samba.mo
-lib/locale/ta/LC_MESSAGES/fgr.mo
 lib/locale/ta/LC_MESSAGES/rodent-diff.mo
 lib/locale/ta/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/ta/LC_MESSAGES/rodent-fgr.mo
@@ -1176,7 +1099,6 @@ lib/locale/ta/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/ta/LC_MESSAGES/rodent-pkg.mo
 lib/locale/ta/LC_MESSAGES/rodent-ps.mo
 lib/locale/ta/LC_MESSAGES/rodent-samba.mo
-lib/locale/te/LC_MESSAGES/fgr.mo
 lib/locale/te/LC_MESSAGES/rodent-diff.mo
 lib/locale/te/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/te/LC_MESSAGES/rodent-fgr.mo
@@ -1187,7 +1109,6 @@ lib/locale/te/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/te/LC_MESSAGES/rodent-pkg.mo
 lib/locale/te/LC_MESSAGES/rodent-ps.mo
 lib/locale/te/LC_MESSAGES/rodent-samba.mo
-lib/locale/tg/LC_MESSAGES/fgr.mo
 lib/locale/tg/LC_MESSAGES/rodent-diff.mo
 lib/locale/tg/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/tg/LC_MESSAGES/rodent-fgr.mo
@@ -1198,7 +1119,6 @@ lib/locale/tg/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/tg/LC_MESSAGES/rodent-pkg.mo
 lib/locale/tg/LC_MESSAGES/rodent-ps.mo
 lib/locale/tg/LC_MESSAGES/rodent-samba.mo
-lib/locale/th/LC_MESSAGES/fgr.mo
 lib/locale/th/LC_MESSAGES/rodent-diff.mo
 lib/locale/th/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/th/LC_MESSAGES/rodent-fgr.mo
@@ -1219,7 +1139,6 @@ lib/locale/tk/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/tk/LC_MESSAGES/rodent-pkg.mo
 lib/locale/tk/LC_MESSAGES/rodent-ps.mo
 lib/locale/tk/LC_MESSAGES/rodent-samba.mo
-lib/locale/tr/LC_MESSAGES/fgr.mo
 lib/locale/tr/LC_MESSAGES/rodent-diff.mo
 lib/locale/tr/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/tr/LC_MESSAGES/rodent-fgr.mo
@@ -1240,7 +1159,6 @@ lib/locale/tt/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/tt/LC_MESSAGES/rodent-pkg.mo
 lib/locale/tt/LC_MESSAGES/rodent-ps.mo
 lib/locale/tt/LC_MESSAGES/rodent-samba.mo
-lib/locale/ug/LC_MESSAGES/fgr.mo
 lib/locale/ug/LC_MESSAGES/rodent-diff.mo
 lib/locale/ug/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/ug/LC_MESSAGES/rodent-fgr.mo
@@ -1251,7 +1169,6 @@ lib/locale/ug/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/ug/LC_MESSAGES/rodent-pkg.mo
 lib/locale/ug/LC_MESSAGES/rodent-ps.mo
 lib/locale/ug/LC_MESSAGES/rodent-samba.mo
-lib/locale/uk/LC_MESSAGES/fgr.mo
 lib/locale/uk/LC_MESSAGES/rodent-diff.mo
 lib/locale/uk/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/uk/LC_MESSAGES/rodent-fgr.mo
@@ -1272,7 +1189,6 @@ lib/locale/ur/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/ur/LC_MESSAGES/rodent-pkg.mo
 lib/locale/ur/LC_MESSAGES/rodent-ps.mo
 lib/locale/ur/LC_MESSAGES/rodent-samba.mo
-lib/locale/uz/LC_MESSAGES/fgr.mo
 lib/locale/uz/LC_MESSAGES/rodent-diff.mo
 lib/locale/uz/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/uz/LC_MESSAGES/rodent-fgr.mo
@@ -1293,7 +1209,6 @@ lib/locale/uz@cyrillic/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/uz@cyrillic/LC_MESSAGES/rodent-pkg.mo
 lib/locale/uz@cyrillic/LC_MESSAGES/rodent-ps.mo
 lib/locale/uz@cyrillic/LC_MESSAGES/rodent-samba.mo
-lib/locale/vi/LC_MESSAGES/fgr.mo
 lib/locale/vi/LC_MESSAGES/rodent-diff.mo
 lib/locale/vi/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/vi/LC_MESSAGES/rodent-fgr.mo
@@ -1304,7 +1219,6 @@ lib/locale/vi/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/vi/LC_MESSAGES/rodent-pkg.mo
 lib/locale/vi/LC_MESSAGES/rodent-ps.mo
 lib/locale/vi/LC_MESSAGES/rodent-samba.mo
-lib/locale/wa/LC_MESSAGES/fgr.mo
 lib/locale/wa/LC_MESSAGES/rodent-diff.mo
 lib/locale/wa/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/wa/LC_MESSAGES/rodent-fgr.mo
@@ -1315,7 +1229,6 @@ lib/locale/wa/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/wa/LC_MESSAGES/rodent-pkg.mo
 lib/locale/wa/LC_MESSAGES/rodent-ps.mo
 lib/locale/wa/LC_MESSAGES/rodent-samba.mo
-lib/locale/xh/LC_MESSAGES/fgr.mo
 lib/locale/xh/LC_MESSAGES/rodent-diff.mo
 lib/locale/xh/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/xh/LC_MESSAGES/rodent-fgr.mo
@@ -1346,7 +1259,6 @@ lib/locale/yo/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/yo/LC_MESSAGES/rodent-pkg.mo
 lib/locale/yo/LC_MESSAGES/rodent-ps.mo
 lib/locale/yo/LC_MESSAGES/rodent-samba.mo
-lib/locale/zh/LC_MESSAGES/fgr.mo
 lib/locale/zh/LC_MESSAGES/rodent-diff.mo
 lib/locale/zh/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/zh/LC_MESSAGES/rodent-fgr.mo
@@ -1357,7 +1269,6 @@ lib/locale/zh/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/zh/LC_MESSAGES/rodent-pkg.mo
 lib/locale/zh/LC_MESSAGES/rodent-ps.mo
 lib/locale/zh/LC_MESSAGES/rodent-samba.mo
-lib/locale/zh_CN/LC_MESSAGES/fgr.mo
 lib/locale/zh_CN/LC_MESSAGES/rodent-diff.mo
 lib/locale/zh_CN/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/zh_CN/LC_MESSAGES/rodent-fgr.mo
@@ -1368,7 +1279,6 @@ lib/locale/zh_CN/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/zh_CN/LC_MESSAGES/rodent-pkg.mo
 lib/locale/zh_CN/LC_MESSAGES/rodent-ps.mo
 lib/locale/zh_CN/LC_MESSAGES/rodent-samba.mo
-lib/locale/zh_HK/LC_MESSAGES/fgr.mo
 lib/locale/zh_HK/LC_MESSAGES/rodent-diff.mo
 lib/locale/zh_HK/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/zh_HK/LC_MESSAGES/rodent-fgr.mo
@@ -1379,7 +1289,6 @@ lib/locale/zh_HK/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/zh_HK/LC_MESSAGES/rodent-pkg.mo
 lib/locale/zh_HK/LC_MESSAGES/rodent-ps.mo
 lib/locale/zh_HK/LC_MESSAGES/rodent-samba.mo
-lib/locale/zh_TW.Big5/LC_MESSAGES/fgr.mo
 lib/locale/zh_TW.Big5/LC_MESSAGES/rodent-diff.mo
 lib/locale/zh_TW.Big5/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/zh_TW.Big5/LC_MESSAGES/rodent-fgr.mo
@@ -1390,7 +1299,6 @@ lib/locale/zh_TW.Big5/LC_MESSAGES/rodent-iconmgr.mo
 lib/locale/zh_TW.Big5/LC_MESSAGES/rodent-pkg.mo
 lib/locale/zh_TW.Big5/LC_MESSAGES/rodent-ps.mo
 lib/locale/zh_TW.Big5/LC_MESSAGES/rodent-samba.mo
-lib/locale/zh_TW/LC_MESSAGES/fgr.mo
 lib/locale/zh_TW/LC_MESSAGES/rodent-diff.mo
 lib/locale/zh_TW/LC_MESSAGES/rodent-dotdesktop.mo
 lib/locale/zh_TW/LC_MESSAGES/rodent-fgr.mo
@@ -1420,7 +1328,6 @@ lib/rfm/plugins/libfstab.so
 lib/rfm/plugins/libftp.so
 lib/rfm/plugins/libfuse.so
 lib/rfm/plugins/libnfs.so
-lib/rfm/plugins/libobex.so
 lib/rfm/plugins/libpkg.so
 lib/rfm/plugins/libps.so
 lib/rfm/plugins/libsftp.so
@@ -1429,6 +1336,7 @@ lib/rfm/plugins/libsmb.so
 lib/rfm/plugins/libworkgroup.so
 lib/rfm/plugins/xml/pkg_apt-get.xml
 lib/rfm/plugins/xml/pkg_emerge.xml
+lib/rfm/plugins/xml/pkg_pacman.xml
 lib/rfm/plugins/xml/pkg_pkg.xml
 lib/rfm/plugins/xml/pkg_yum.xml
 lib/rfm/plugins/xml/pkg_zypper.xml
@@ -1506,6 +1414,98 @@ share/icons/rfm/48x48/apps/rodent.png
 share/icons/rfm/animated/rodent-160.gif
 share/icons/rfm/animated/rodent-96.gif
 share/icons/rfm/animated/rodent_animate_logo.gif
+share/locale/af/LC_MESSAGES/fgr.mo
+share/locale/ar/LC_MESSAGES/fgr.mo
+share/locale/as/LC_MESSAGES/fgr.mo
+share/locale/ast/LC_MESSAGES/fgr.mo
+share/locale/az/LC_MESSAGES/fgr.mo
+share/locale/be/LC_MESSAGES/fgr.mo
+share/locale/bg/LC_MESSAGES/fgr.mo
+share/locale/bn/LC_MESSAGES/fgr.mo
+share/locale/br/LC_MESSAGES/fgr.mo
+share/locale/bs/LC_MESSAGES/fgr.mo
+share/locale/ca/LC_MESSAGES/fgr.mo
+share/locale/crh/LC_MESSAGES/fgr.mo
+share/locale/cs/LC_MESSAGES/fgr.mo
+share/locale/csb/LC_MESSAGES/fgr.mo
+share/locale/cy/LC_MESSAGES/fgr.mo
+share/locale/da/LC_MESSAGES/fgr.mo
+share/locale/de/LC_MESSAGES/fgr.mo
+share/locale/dz/LC_MESSAGES/fgr.mo
+share/locale/el/LC_MESSAGES/fgr.mo
+share/locale/en_CA/LC_MESSAGES/fgr.mo
+share/locale/en_GB/LC_MESSAGES/fgr.mo
+share/locale/eo/LC_MESSAGES/fgr.mo
+share/locale/es/LC_MESSAGES/fgr.mo
+share/locale/et/LC_MESSAGES/fgr.mo
+share/locale/eu/LC_MESSAGES/fgr.mo
+share/locale/fa/LC_MESSAGES/fgr.mo
+share/locale/fi/LC_MESSAGES/fgr.mo
+share/locale/fr/LC_MESSAGES/fgr.mo
+share/locale/fy/LC_MESSAGES/fgr.mo
+share/locale/ga/LC_MESSAGES/fgr.mo
+share/locale/gl/LC_MESSAGES/fgr.mo
+share/locale/gu/LC_MESSAGES/fgr.mo
+share/locale/he/LC_MESSAGES/fgr.mo
+share/locale/hi/LC_MESSAGES/fgr.mo
+share/locale/hne/LC_MESSAGES/fgr.mo
+share/locale/hr/LC_MESSAGES/fgr.mo
+share/locale/hsb/LC_MESSAGES/fgr.mo
+share/locale/hu/LC_MESSAGES/fgr.mo
+share/locale/hy/LC_MESSAGES/fgr.mo
+share/locale/ia/LC_MESSAGES/fgr.mo
+share/locale/id/LC_MESSAGES/fgr.mo
+share/locale/is/LC_MESSAGES/fgr.mo
+share/locale/it/LC_MESSAGES/fgr.mo
+share/locale/ja/LC_MESSAGES/fgr.mo
+share/locale/ka/LC_MESSAGES/fgr.mo
+share/locale/km/LC_MESSAGES/fgr.mo
+share/locale/kn/LC_MESSAGES/fgr.mo
+share/locale/ko/LC_MESSAGES/fgr.mo
+share/locale/ku/LC_MESSAGES/fgr.mo
+share/locale/lt/LC_MESSAGES/fgr.mo
+share/locale/lv/LC_MESSAGES/fgr.mo
+share/locale/mai/LC_MESSAGES/fgr.mo
+share/locale/mk/LC_MESSAGES/fgr.mo
+share/locale/ml/LC_MESSAGES/fgr.mo
+share/locale/mr/LC_MESSAGES/fgr.mo
+share/locale/ms/LC_MESSAGES/fgr.mo
+share/locale/nb/LC_MESSAGES/fgr.mo
+share/locale/nds/LC_MESSAGES/fgr.mo
+share/locale/ne/LC_MESSAGES/fgr.mo
+share/locale/nl/LC_MESSAGES/fgr.mo
+share/locale/nn/LC_MESSAGES/fgr.mo
+share/locale/oc/LC_MESSAGES/fgr.mo
+share/locale/or/LC_MESSAGES/fgr.mo
+share/locale/pa/LC_MESSAGES/fgr.mo
+share/locale/pl/LC_MESSAGES/fgr.mo
+share/locale/ps/LC_MESSAGES/fgr.mo
+share/locale/pt/LC_MESSAGES/fgr.mo
+share/locale/pt_BR/LC_MESSAGES/fgr.mo
+share/locale/ro/LC_MESSAGES/fgr.mo
+share/locale/ru/LC_MESSAGES/fgr.mo
+share/locale/si/LC_MESSAGES/fgr.mo
+share/locale/sk/LC_MESSAGES/fgr.mo
+share/locale/sl/LC_MESSAGES/fgr.mo
+share/locale/sq/LC_MESSAGES/fgr.mo
+share/locale/sr/LC_MESSAGES/fgr.mo
+share/locale/sv/LC_MESSAGES/fgr.mo
+share/locale/ta/LC_MESSAGES/fgr.mo
+share/locale/te/LC_MESSAGES/fgr.mo
+share/locale/tg/LC_MESSAGES/fgr.mo
+share/locale/th/LC_MESSAGES/fgr.mo
+share/locale/tr/LC_MESSAGES/fgr.mo
+share/locale/ug/LC_MESSAGES/fgr.mo
+share/locale/uk/LC_MESSAGES/fgr.mo
+share/locale/uz/LC_MESSAGES/fgr.mo
+share/locale/vi/LC_MESSAGES/fgr.mo
+share/locale/wa/LC_MESSAGES/fgr.mo
+share/locale/xh/LC_MESSAGES/fgr.mo
+share/locale/zh/LC_MESSAGES/fgr.mo
+share/locale/zh_CN/LC_MESSAGES/fgr.mo
+share/locale/zh_HK/LC_MESSAGES/fgr.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/fgr.mo
+share/locale/zh_TW/LC_MESSAGES/fgr.mo
 share/pixmaps/rodent-cifs.svg
 share/pixmaps/rodent-diff.svg
 share/pixmaps/rodent-dotdesktop.svg

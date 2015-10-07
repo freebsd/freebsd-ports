@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libprotobuf.so:${PORTSDIR}/devel/protobuf \
 		liblzo2.so:${PORTSDIR}/archivers/lzo2
 
-USES=		cmake
+USES=		alias cmake
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

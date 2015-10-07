@@ -1,2 +1,2 @@
 bin/chklinks
-man/man1/chklinks.1.gz
+%%PERL5_MAN1%%/chklinks.1.gz

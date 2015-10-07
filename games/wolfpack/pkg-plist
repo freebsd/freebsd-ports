@@ -297,14 +297,12 @@ man/man6/pconfig.6.gz
 %%DATADIR%%/info.nr/zdone
 @mode 640
 etc/wolfpack/schedule
-@unexec if cmp -s %B/econfig.orig %B/econfig; then rm -f %B/econfig; fi
-etc/wolfpack/econfig.orig
-@exec if [ ! -f %B/econfig ] ; then cp -p %D/%F %B/econfig; fi
+@sample etc/wolfpack/econfig.sample
 @mode 755
-@dirrm %%DATADIR%%/builtin
-@dirrm %%DATADIR%%/info.nr
-@dirrm %%DATADIR%%
-@dirrm lib/wolfpack
+@dir %%DATADIR%%/builtin
+@dir %%DATADIR%%/info.nr
+@dir %%DATADIR%%
+@dir lib/wolfpack
 @mode 750
-@dirrmtry etc/wolfpack
-@dirrmtry /var/wolfpack
+@dir etc/wolfpack
+@dir /var/wolfpack

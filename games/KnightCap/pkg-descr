@@ -7,7 +7,7 @@ are:
    more like an "over the board" game.
 
  - KnightCap was developed to run on a parallel distributed memory
-   machine, although it also runs on normal unix boxes.
+   machine, although it also runs on normal Unix boxes.
 
  - KnightCap does not have an opening book---instead it keeps a file
    (brain.dat) of losing moves and inserts them in the hash table at the

@@ -3,7 +3,7 @@
 
 PORTNAME=	postfixadmin
 PORTVERSION=	2.3.7
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -13,7 +13,13 @@ COMMENT=	PHP web-based management tool for Postfix virtual domains and users
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPL-LICENSE.TXT
 
-USES=		cpe
+RUN_DEPENDS=	p5-Email-Valid>=0.12:${PORTSDIR}/mail/p5-Email-Valid \
+		p5-Log-Dispatch>=1.79:${PORTSDIR}/devel/p5-Log-Dispatch \
+		p5-Log-Log4perl>=0.26:${PORTSDIR}/devel/p5-Log-Log4perl \
+		p5-Mail-Sender>=0.7.04:${PORTSDIR}/mail/p5-Mail-Sender \
+		p5-MIME-EncWords>=0.040:${PORTSDIR}/mail/p5-MIME-EncWords
+
+USES=		cpe perl5 shebangfix
 CPE_VENDOR=	postfix_admin_project
 CPE_PRODUCT=	postfix_admin
 
@@ -30,6 +36,8 @@ MYSQLI_DESC=	MySQL 4.1+ back-end (use mysqli PHP extension)
 OPTIONS_DEFAULT=	MYSQL
 
 OPTIONS_DEFINE=	DOCS
+
+USE_PERL5=	run
 
 .include <bsd.port.options.mk>
 

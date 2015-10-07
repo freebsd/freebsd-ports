@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Encode
-PORTVERSION=	2.75
+PORTVERSION=	2.78
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DANKOGAI
@@ -30,5 +30,8 @@ post-patch:
 .if ${PERL_LEVEL} >= 502200
 	@${REINPLACE_CMD} -e 's|bin/encguess||' ${WRKSRC}/Makefile.PL
 .endif
+
+post-install:
+	${FIND} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Encode/ -name '*.so' | ${XARGS} -J % ${STRIP_CMD} %
 
 .include <bsd.port.post.mk>

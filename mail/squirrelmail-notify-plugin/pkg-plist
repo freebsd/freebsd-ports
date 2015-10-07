@@ -6,5 +6,4 @@
 %%SQUIRRELDIR%%/plugins/notify/index.php
 %%SQUIRRELDIR%%/plugins/notify/notify.php
 %%SQUIRRELDIR%%/plugins/notify/setup.php
-@dirrm %%SQUIRRELDIR%%/plugins/notify/
 @exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin notify; fi

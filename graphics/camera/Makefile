@@ -3,7 +3,7 @@
 
 PORTNAME=	camera
 PORTVERSION=	0.8
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://download.gna.org/gsimageapps/
 DISTNAME=	Camera-${PORTVERSION}
@@ -26,6 +26,6 @@ post-patch:
 		${WRKSRC}/GNUmakefile
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/Camera.app/Camera
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/System/Applications/Camera.app/Camera
 
 .include <bsd.port.mk>

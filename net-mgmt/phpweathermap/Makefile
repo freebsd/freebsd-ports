@@ -3,7 +3,7 @@
 
 PORTNAME=	phpweathermap
 PORTVERSION=	0.97a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://www.network-weathermap.com/files/
 DISTNAME=	php-weathermap-${PORTVERSION}
@@ -12,11 +12,13 @@ MAINTAINER=	hhyou@cs.nctu.edu.tw
 COMMENT=	Network visualisation tool with web editor
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/Console/Getopt.php:${PORTSDIR}/devel/pear \
 		rrdtool:${PORTSDIR}/databases/rrdtool
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 USES=		zip
 USE_PHP=	gd
 
@@ -34,9 +36,10 @@ WRKSRC=		${WRKDIR}/weathermap
 
 SUB_FILES=	pkg-message
 
+PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.options.mk>
 post-patch:
 	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' ${WRKSRC}/editor.php
 	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' \
@@ -53,18 +56,14 @@ do-install:
 	done
 	@${CP} -R ${WRKSRC}/lib ${STAGEDIR}/${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "${WM_WWW_DIRS}" ${STAGEDIR}/${DATADIR}/www)
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}/${DATADIR}/www
 
-.if ${PORT_OPTIONS:MEXAMPLES}
+do-install-EXAMPLES-on:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "random-bits" ${STAGEDIR}/${EXAMPLESDIR})
-	@${FIND} ${STAGEDIR}/${EXAMPLESDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
-	@${FIND} ${STAGEDIR}/${EXAMPLESDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
-.endif
+	${FIND} ${STAGEDIR}/${EXAMPLESDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
+	${FIND} ${STAGEDIR}/${EXAMPLESDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}/${DOCSDIR}
-.endif
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}/${DOCSDIR}
 
 .include <bsd.port.mk>

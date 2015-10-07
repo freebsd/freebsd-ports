@@ -1,0 +1,8 @@
+This command will open the default mailer after having attached the files mentioned
+on the command-line. If a directory is passed instead of files, it will have been
+zipped up before being attached.
+
+The application is intented to integrate with nautilus and is
+written for the GNOME graphical desktop.
+
+WWW: https://github.com/GNOME/nautilus-sendto

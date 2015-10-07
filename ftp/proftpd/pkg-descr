@@ -1,5 +1,5 @@
-ProFTPD is a highly configurable ftp daemon for unix
-and unix-like operating systems. ProFTPD is designed
+ProFTPD is a highly configurable ftp daemon for Unix
+and Unix-like operating systems. ProFTPD is designed
 to be somewhat of a "drop-in" replacement for wu-ftpd
 with a configuration format like Apache.
 

@@ -5,19 +5,22 @@ PORTNAME=	rsyncbackup
 PORTVERSION=	1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
+PROJECTHOST=	rsync-backup
 DISTNAME=	rsyncbackup
 
-MAINTAINER=	ports@danielbond.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rsync frontend written in Perl
+
+LICENSE=	GPLv2 # or later
 
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 
-PROJECTHOST=	rsync-backup
 CONFIGSRC=	${WRKSRC}/config
 CONFIGFILES=	backupset.conf config.conf destinations.conf sources.conf
 
 USES=		perl5 zip
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 SUB_FILES=	pkg-message
 

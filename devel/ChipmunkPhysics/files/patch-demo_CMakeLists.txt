@@ -1,6 +1,6 @@
---- demo/CMakeLists.txt.orig	2015-02-20 13:46:16 UTC
+--- demo/CMakeLists.txt.orig	2015-08-29 18:52:41 UTC
 +++ demo/CMakeLists.txt
-@@ -27,6 +27,10 @@ if(NOT MSVC)
+@@ -40,6 +40,10 @@ if(NOT MSVC)
    list(APPEND chipmunk_demos_libraries m)
  endif(NOT MSVC)
  

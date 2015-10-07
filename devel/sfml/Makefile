@@ -12,13 +12,12 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simple and Fast Multimedia Library
 
 LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libGLEW.so:${PORTSDIR}/graphics/glew
+		libfreetype.so:${PORTSDIR}/print/freetype2
 
 USES=		cmake dos2unix jpeg openal:al zip:infozip
 DOS2UNIX_FILES=	CMakeLists.txt
 USE_XORG=	x11 xrandr
-USE_GL=		gl
+USE_GL=		gl glew
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/SFML-${PORTVERSION}

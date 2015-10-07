@@ -3,12 +3,15 @@
 
 PORTNAME=	libroadnav
 PORTVERSION=	0.19
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	astro geography
 MASTER_SITES=	SF/roadnav/LibRoadnav/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Helper library for Roadnav (3D GPS mapping program)
+
+DEPRECATED=	No releases for 8+ years, no supporting newer wxWidget
+EXPIRATION_DATE=	2015-12-13
 
 OPTIONS_DEFINE=	DOCS
 

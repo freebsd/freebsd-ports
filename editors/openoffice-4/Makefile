@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION}
-PORTREVISION=	9
+PORTREVISION=	16
 CATEGORIES=	editors java
 MASTER_SITES=	APACHE/openoffice/${PORTVERSION}/source \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \
@@ -14,15 +14,37 @@ PKGNAMEPREFIX=		${LANG_PKGNAME}-
 .if defined(LANG_SUFFIX)
 PKGNAMESUFFIX=		-${LANG_SUFFIX}
 .endif
-DISTFILES=	${OOOSRC} unowinreg.dll:unoreg ${EXTSRC}:extsrc
-EXTRACT_ONLY=	${OOOSRC}
+DISTFILES=	${AOOSRC} unowinreg.dll:unoreg ${EXTSRC}:extsrc
+DIST_SUBDIR=	openoffice
+EXTRACT_ONLY=	${AOOSRC}
 
 MAINTAINER=	office@FreeBSD.org
 #de facto maintainer is truckman@FreeBSD.org
 #Frequent Patch submitters should optionally sign Apache iCLA
 COMMENT=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
 
-LICENSE=	APACHE20
+LICENSE=		APACHE20 ADOBE BSD3CLAUSE BSD4CLAUSE BSL ICU MIT MPL \
+			PSFL TWAIN W3C
+LICENSE_COMB=		multi
+LICENSE_NAME_ADOBE=	Adobe Systems Incorporated license
+LICENSE_NAME_ICU=	ICU License
+LICENSE_NAME_TWAIN=	TWAIN Working Group license
+LICENSE_NAME_W3C=	W3C license
+LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE_ALv2
+LICENSE_FILE_ADOBE=	${WRKSRC}/LICENSE_ADOBE
+LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/LICENSE_BSD3CLAUSE
+LICENSE_FILE_BSD4CLAUSE=	${WRKSRC}/LICENSE_BSD4CLAUSE
+LICENSE_FILE_BSL=	${WRKSRC}/LICENSE_BSL
+LICENSE_FILE_ICU=	${WRKSRC}/LICENSE_ICU
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE_MIT
+LICENSE_FILE_MPL=	${WRKSRC}/LICENSE_MPL
+LICENSE_FILE_PSFL=	${WRKSRC}/LICENSE_PSFL
+LICENSE_FILE_TWAIN=	${WRKSRC}/LICENSE_TWAIN
+LICENSE_FILE_W3C=	${WRKSRC}/LICENSE_W3C
+LICENSE_PERMS_ADOBE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS_ICU=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS_TWAIN=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS_W3C=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=								\
 		p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip	\
@@ -31,11 +53,13 @@ BUILD_DEPENDS=								\
 		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip	\
 		zip:${PORTSDIR}/archivers/zip				\
 		ant:${PORTSDIR}/devel/apache-ant			\
+		${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs \
 		dmake:${PORTSDIR}/devel/dmake				\
 		epm:${PORTSDIR}/devel/epm				\
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf		\
 		imake:${PORTSDIR}/devel/imake				\
 		gpatch:${PORTSDIR}/devel/patch				\
+		${LOCALBASE}/include/sane/sane.h:${PORTSDIR}/graphics/sane-backends \
 		${LOCALBASE}/bin/vigra-config:${PORTSDIR}/graphics/vigra \
 		${JAVALIBDIR}/commons-httpclient.jar:${PORTSDIR}/java/jakarta-commons-httpclient \
 		${JAVALIBDIR}/commons-lang.jar:${PORTSDIR}/java/jakarta-commons-lang \
@@ -46,10 +70,12 @@ BUILD_DEPENDS=								\
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 LIB_DEPENDS=								\
 		libapr-1.so:${PORTSDIR}/devel/apr1			\
+		libnspr4.so:${PORTSDIR}/devel/nspr			\
 		libcurl.so:${PORTSDIR}/ftp/curl				\
 		libcairo.so:${PORTSDIR}/graphics/cairo			\
 		libpng.so:${PORTSDIR}/graphics/png			\
 		libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib	\
+		libgraphite.so:${PORTSDIR}/graphics/silgraphite		\
 		libCoinMP.so:${PORTSDIR}/math/coinmp			\
 		libfreetype.so:${PORTSDIR}/print/freetype2		\
 		libnss3.so:${PORTSDIR}/security/nss			\
@@ -59,12 +85,14 @@ LIB_DEPENDS=								\
 		libtextcat.so:${PORTSDIR}/textproc/libtextcat		\
 		libmythes-1.2.so:${PORTSDIR}/textproc/mythes		\
 		librdf.so:${PORTSDIR}/textproc/redland			\
-		libserf-1.so:${PORTSDIR}/www/serf
-#		libgraphite.so:${PORTSDIR}/graphics/silgraphite
+		libserf-1.so:${PORTSDIR}/www/serf			\
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=								\
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 		${JAVALIBDIR}/commons-httpclient.jar:${PORTSDIR}/java/jakarta-commons-httpclient \
 		${JAVALIBDIR}/bsh.jar:${PORTSDIR}/lang/bsh \
+		${LOCALBASE}/share/fonts/Caladea/Caladea-Bold.ttf:${PORTSDIR}/x11-fonts/crosextrafonts-caladea-ttf \
+		${LOCALBASE}/share/fonts/Carlito/Carlito-Bold.ttf:${PORTSDIR}/x11-fonts/crosextrafonts-carlito-ttf \
 		${LOCALBASE}/share/fonts/ChromeOS/Arimo-Bold.ttf:${PORTSDIR}/x11-fonts/croscorefonts-fonts-ttf
 
 AOOVERSION1=	4
@@ -73,20 +101,19 @@ AOOVERSION3=	1
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
 AOOTAG=		AOO411m6\(Build:9775\)
 SVNREVISION=	1617669
-EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20140918.tar.gz
+EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 
 AOOVERSION=	${AOOVERSION1}.${AOOVERSION2}.${AOOVERSION3}
 AOOXXX=		${AOOVERSION1}${AOOVERSION2}${AOOVERSION3}
 AOOSUFFIX=	${PORTVERSION}
-OOOSRC=		apache-openoffice-${AOOVERSION}-r${SVNREVISION}-src${EXTRACT_SUFX}
+AOOSRC=		apache-openoffice-${AOOVERSION}-r${SVNREVISION}-src${EXTRACT_SUFX}
 
-OOODIR=			openoffice${AOOVERSION1}
 AOOUDIR=		.openoffice.org\/${AOOVERSION1}
 INSTALLATION_BASEDIR?=	openoffice-${AOOSUFFIX}
+PRINSTALLATION_BASEDIR=	${PREFIX}/${INSTALLATION_BASEDIR}
+OOPATH=			${PRINSTALLATION_BASEDIR}/openoffice${AOOVERSION1}
+XDGDIR=			${OOPATH}/share/xdg
 EXECBASE?=		openoffice-${AOOSUFFIX}
-DIST_SUBDIR=		openoffice
-
-NO_LATEST_LINK=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -97,10 +124,12 @@ JAVA_BUILD=	jdk
 JAVA_VENDOR=	openjdk
 JAVA_VERSION=	1.6+
 USE_PERL5=	build
-USE_XORG=	x11 ice xaw xau xext xrender xrandr \
-		xi xt xcursor xdamage xcomposite xfixes
+USE_XORG=	ice x11 xau xaw xcomposite xcursor xdamage xext xfixes xi \
+		xrandr xrender xt
 USES=		autoreconf:autoconf bison compiler cpe desktop-file-utils \
-		gmake jpeg perl5 pkgconfig python tar:bzip2
+		gettext-runtime gmake iconv jpeg perl5 pkgconfig python \
+		tar:bzip2
+INSTALLS_ICONS=	yes
 WITHOUT_CPU_CFLAGS=	true
 CPE_PRODUCT=	${PORTNAME:S|apache-||}
 CPE_VENDOR=	apache
@@ -132,54 +161,44 @@ MMEDIA_USE=			GSTREAMER=yes
 .include <${FILESDIR}/Makefile.localized>
 
 .if ${COMPILER_TYPE} == clang
-. if ${COMPILER_VERSION} < 35 && ${ARCH} == amd64
-BUILD_DEPENDS+=		clang35:${PORTSDIR}/lang/clang35
-CPP=			clang-cpp35
-CC=			clang35
-CXX=			clang++35
-. endif
 CPPFLAGS+=		-I${LOCALBASE}/include
 .else
 USE_GCC=		yes
-SUBST=			"s/-fexceptions/& -fno-enforce-eh-specs/;s/-DHAVE_STL_INCLUDE_PATH//"
 .endif
 
 .if ${ARCH} == amd64
 FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set.sh
-.else
-FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
-.endif
-
-LOCALIZED_LANG?=	en-US
-
-PACKAGE_PREFIX=		Apache_OpenOffice
-
-.if ${ARCH} == amd64
 PACKAGE_MIDDLE=		${PORTVERSION}_${OPSYS}_x86-64
 .else
+FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 PACKAGE_MIDDLE=		${PORTVERSION}_${OPSYS}_x86
 .endif
+PACKAGE_PREFIX=		Apache_OpenOffice
+
+LOCALIZED_LANG?=	en-US
 
 .if ${PORT_OPTIONS:MCCACHE} || defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
 CCACHE_PREFIX=	ccache
-OOOCC=		${CCACHE_PREFIX} ${CC}
-OOOCXX=		${CCACHE_PREFIX} ${CXX}
+AOOCC=		${CCACHE_PREFIX} ${CC}
+AOOCXX=		${CCACHE_PREFIX} ${CXX}
 .else
-OOOCC=		${CC}
-OOOCXX=		${CXX}
+AOOCC=		${CC}
+AOOCXX=		${CXX}
 .endif
 
-CONFIGURE_ENV+=	CC="${OOOCC}" CXX="${OOOCXX}"		\
+CONFIGURE_ENV+=	CC="${AOOCC}" CXX="${AOOCXX}"		\
 		PATH=${WRKSRC}/solenv/bin:$$PATH
 
 GNU_CONFIGURE=	yes
 WRKSUBDIR=	${WRKDIR}/aoo-${AOOVERSION}
 WRKSRC?=	${WRKSUBDIR}/main
 SUB_FILES=	pkg-message
-SUB_LIST=	EXECBASE=${EXECBASE} AOOTAG=${AOOTAG} AOOUDIR=${AOOUDIR}
+SUB_LIST=	EXECBASE=${EXECBASE} AOOTAG=${AOOTAG} AOOUDIR=${AOOUDIR} \
+		PRINSTALLATION_BASEDIR=${PRINSTALLATION_BASEDIR}
 
 CONFIGURE_ARGS+=							\
+			--with-unix-wrapper=${EXECBASE}			\
 			--with-system-apache-commons=yes		\
 			--with-commons-codec-jar=${JAVALIBDIR}/commons-codec.jar \
 			--with-commons-lang-jar=${JAVALIBDIR}/commons-lang.jar \
@@ -189,6 +208,7 @@ CONFIGURE_ARGS+=							\
 			--with-system-apr-util				\
 			--with-system-beanshell				\
 			--with-beanshell-jar=${JAVALIBDIR}/bsh.jar	\
+			--with-system-boost				\
 			--enable-category-b				\
 			--with-system-cairo --enable-cairo		\
 			--with-system-coinmp				\
@@ -201,6 +221,7 @@ CONFIGURE_ARGS+=							\
 			--without-fonts					\
 			--with-gnu-patch=${LOCALBASE}/bin/gpatch	\
 			--with-gperf=${LOCALBASE}/bin/gperf		\
+			--with-system-graphite				\
 			--enable-gtk					\
 			--with-system-hunspell				\
 			--with-external-dict-dir=${LOCALBASE}/share/hunspell \
@@ -225,6 +246,7 @@ CONFIGURE_ARGS+=							\
 			--with-system-poppler				\
 			--with-system-python				\
 			--with-system-redland				\
+			--with-system-sane				\
 			--with-system-serf				\
 			--with-system-stdlibs				\
 			--enable-symbols=small				\
@@ -233,15 +255,13 @@ CONFIGURE_ARGS+=							\
 			--enable-verbose				\
 			--with-system-vigra				\
 			--enable-wiki-publisher				\
+			--with-system-xrender				\
 			--with-system-zlib
-# system-graphite causes breakage when compiled with clang and linked
-# with libc++ because aoo is compiled with gcc and linked with libstdc++.
-#			--with-system-graphite
 
-#OOOEXTENSIONS+=		minimizer/presentation-minimizer.oxt
-#OOOEXTENSIONS+=		presenter/presenter-screen.oxt
-#OOOEXTENSIONS+=		pdfimport/pdfimport.oxt
-OOOEXTENSIONS+=		swext/wiki-publisher.oxt
+#AOOEXTENSIONS+=		minimizer/presentation-minimizer.oxt
+#AOOEXTENSIONS+=		presenter/presenter-screen.oxt
+#AOOEXTENSIONS+=		pdfimport/pdfimport.oxt
+AOOEXTENSIONS+=		swext/wiki-publisher.oxt
 
 ICONS=	${WRKSRC}/sysui/desktop/icons
 
@@ -268,30 +288,67 @@ pre-everything::
 post-extract:
 	${TAR} -C ${WRKSUBDIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EXTSRC}
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/unowinreg.dll ${WRKSRC}/external/unowinreg/
+	${CP} ${FILESDIR}/freebsd-aoo-intro.png ${WRKSRC}/default_images/introabout/intro.png
+	${CP} ${FILESDIR}/freebsd-aoo-about.png ${WRKSRC}/default_images/introabout/about.png
 	${RM} -rf ${WRKSRC}/l10n
+	${LN} -sf ${UNZIP_CMD} ${WRKSRC}/solenv/bin/unzip
+	${SED}  -e '\|^For main/vcl/unx/generic/fontmanager/parseAFM|,/^__/p' \
+		-e '\|^For PostScript(R) AFM|,/^__/p'			\
+		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_ADOBE}
+	${SED}  -e '\|^For main/unixODBC|,/^__/p'			\
+		-e '\|^For main/connectivity|,/^__/p'			\
+		-e '\|^For main/libtextcat/data|,/^__/p'		\
+		-e '\|^For integration of HSQLDB|,/^__/p'		\
+		-e '\|^For C preprocessor|,/^__/p'			\
+		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_BSD3CLAUSE}
+	${SED}  -e '\|^For ICC |,/^__/p'				\
+		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_BSD4CLAUSE}
+	${SED}  -e '\|^For integration of the C++ Boost |,/^__/p'	\
+		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_BSL}
+	${SED}  -e '\|^For main/i18npool/source/breakiterator|,/^__/p'	\
+		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_ICU}
+	${SED}  -e '\|^For Multi-Dimensional Data|,/^__/p'	\
+		-e '\|^For XSLT MathML Library|,/^__/p'			\
+		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_MIT}
+	${SED}  -e '\|^For XMLSec Library|,/^__/p'	\
+		-e d  ${WRKSRC}/LICENSE_category_b >> ${LICENSE_FILE_MIT}
+	${SED}  -e '\|^For Graphite|,$$d'	\
+		      ${WRKSRC}/LICENSE_category_b > ${LICENSE_FILE_MPL}
+	${SED}  -e '\|^For main/filter/source/config/tools/merge/pyAltFCFGMerge|,/^__/p'	\
+		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_PSFL}
+	${SED}  -e '\|^For main/twain|,/^__/p'	\
+		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_TWAIN}
+	${SED}  -e '\|^For main/MathMLDTD|,/^__/p'	\
+		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_W3C}
 
 post-patch:
-.if defined (USE_GCC)
-	${REINPLACE_CMD} -e ${SUBST} ${WRKSRC}/solenv/gbuild/platform/freebsd.mk
-	${REINPLACE_CMD} -e ${SUBST} ${WRKSRC}/solenv/inc/unxfbsd.mk
-.endif
-.if ${ARCH} == i386
-	# g++49 -Os sometimes leaves inline class methods undefined
-	# autodoc core dumps when built with with -Os clang 3.6 on i386
-	if [ ${CXX} = g++49 -o \
-	     ${COMPILER_TYPE} = clang -a ${COMPILER_VERSION} = 36 ]; then \
-		${REINPLACE_CMD} -e "s/ := -Os/ := -O0/" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk; \
-		${REINPLACE_CMD} -e "s/=-Os /=-O0 /" ${WRKSRC}/solenv/inc/unxfbsdi.mk; \
+	${REINPLACE_CMD} -e "/^ICONVERSION/s/=.*/= '-${AOOSUFFIX}'/" \
+		${WRKSRC}/sysui/desktop/productversion.mk
+.if ${COMPILER_TYPE} == gcc
+	# g++49 -Os sometimes leaves inline class methods undefined,
+	# affects fmgridif.cxx and ColumnControl.cxx
+	# See: <https://gcc.gnu.org/bugzilla/show_bug.cgi?id=65009>
+	if [ ${CXX} = g++49  ]; then \
+		${REINPLACE_CMD} -e "s/ := -Os/ := -Os -fno-devirtualize -fno-devirtualize-speculatively/" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk; \
+		${REINPLACE_CMD} -e "s/=-Os /=-Os -fno-devirtualize -fno-devirtualize-speculatively /" ${WRKSRC}/solenv/inc/unxfbsdi.mk; \
 	fi
+.elif ${ARCH} == i386 && ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 36
+	# autodoc and uno (bridgetest) core dump when built with with -Os
+	# on i386, affects file.cxx and bridgetest.cxx (at least).
+	# Using -O2 optimiztion works, and -Os is essentially -O2 with out
+	# loop unrolling.
+	# Changing optimization in just unxfbsdi.mk is sufficient to get
+	# a successful build, but change it in both places to avoid the
+	# possibility of obscure runtime problems, which is likely
+	# since this seems to be a generic bug in code generation for
+	# exception handling.
+	# See: <https://llvm.org/bugs/show_bug.cgi?id=24792>
+	${REINPLACE_CMD} -e "s/=-Os /=-O2 -fno-unroll-loops /" ${WRKSRC}/solenv/inc/unxfbsdi.mk
+	${REINPLACE_CMD} -e "s/ := -Os/ := -O2 -fno-unroll-loops/" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk
 .endif
-
-pre-configure:
-	${LN} -sf ${UNZIP_CMD} ${WRKSRC}/solenv/bin/unzip
 
 do-build:
-	cd ${WRKSUBDIR} ; ${PRINTF} "[repositories]\n" > source_config
-	cd ${WRKSUBDIR} ; ${PRINTF} "main=active\n" >> source_config
-	cd ${WRKSUBDIR} ; ${PRINTF} "extras=active\n" >> source_config
+	${PRINTF} "[repositories]\nmain=active\nextras=active\n" > ${WRKSUBDIR}/source_config
 	cd ${WRKSRC} ; ./bootstrap
 	#
 	# numproc controls the number of parallel makes.
@@ -308,103 +365,89 @@ do-build:
 	#  * dmproc >= numproc
 	#  * dmproc <= 2*numproc if MAKE_JOBS_NUMBER <= 3
 	#
-	cd ${WRKSRC} ; . ${FREEBSD_ENV_SET} ; cd instsetoo_native/util ;  \
-	 export LANG=C LC_ALL=C FBSD_LDFLAGS="${LDFLAGS}" ;		  \
-	 if [ ${MAKE_JOBS_NUMBER} -le 3 ] ; then			  \
-	  numproc=1 ; dmproc=${MAKE_JOBS_NUMBER} ;			  \
+	if [ ${MAKE_JOBS_NUMBER} -le 3 ] ; then				  \
+	 numproc=1 ; dmproc=${MAKE_JOBS_NUMBER} ;			  \
+	else								  \
+	 a=1 ;								  \
+	 while [ $$(( 2 * $${a} * $${a} )) -lt ${MAKE_JOBS_NUMBER} ]; do  \
+	  a=$$(( $${a} + 1 )) ;						  \
+	 done ;								  \
+	 b=$$(( $${a} + 1 )) ;						  \
+	 ad=$$(( ( ${MAKE_JOBS_NUMBER} + $${a} - 1 ) / $${a} )) ;	  \
+	 ap=$$(( $${a} * $${ad} )) ;					  \
+	 bd=$$(( ( ${MAKE_JOBS_NUMBER} + $${b} - 1 ) / $${b} )) ;	  \
+	 bp=$$(( $${b} * $${bd} )) ;					  \
+	 if [ $${ap} -le $${bp} ]; then					  \
+	  numproc=$${a} ; dmproc=$${ad} ;				  \
 	 else								  \
-	  a=1 ;								  \
-	  while [ $$(( 2 * $${a} * $${a} )) -lt ${MAKE_JOBS_NUMBER} ]; do \
-	   a=$$(( $${a} + 1 )) ;					  \
-	  done ;							  \
-	  b=$$(( $${a} + 1 )) ;						  \
-	  ad=$$(( ( ${MAKE_JOBS_NUMBER} + $${a} - 1 ) / $${a} )) ;	  \
-	  ap=$$(( $${a} * $${ad} )) ;					  \
-	  bd=$$(( ( ${MAKE_JOBS_NUMBER} + $${b} - 1 ) / $${b} )) ;	  \
-	  bp=$$(( $${b} * $${bd} )) ;					  \
-	  if [ $${ap} -le $${bp} ]; then				  \
-	   numproc=$${a} ; dmproc=$${ad} ;				  \
-	  else								  \
-	   numproc=$${b} ; dmproc=$${bd} ;				  \
-	  fi ;								  \
+	  numproc=$${b} ; dmproc=$${bd} ;				  \
 	 fi ;								  \
-	 build.pl --all -P$${numproc} -- -P$${dmproc}
+	fi ;								  \
+	cd ${WRKSRC}/instsetoo_native ;					  \
+	. ../${FREEBSD_ENV_SET} ; 					  \
+	LANG=C LC_ALL=C build.pl --all -P$${numproc} -- -P$${dmproc}
 
 do-install:
-	cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/Apache_OpenOffice/archive/install/${LOCALIZED_LANG}/ ; ${LS} *.tar.?z > ${WRKDIR}/INSTALLFILES
-	${RM} -Rf ${WRKDIR}/tmp
-	${MKDIR} ${WRKDIR}/tmp
-	@for i in `${CAT} ${WRKDIR}/INSTALLFILES`; do \
-		${ECHO_CMD} "extracting $$i" ; \
-		cd ${WRKDIR}/tmp ; ${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/Apache_OpenOffice/archive/install/${LOCALIZED_LANG}/$$i ; \
-	done
-	${MKDIR} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}
-	cd ${WRKDIR}/tmp/*/ ; ${TAR} cf - -C . . | ${TAR} xf - -C ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}
-	${REINPLACE_CMD} -e 's/^UserInstallation.*$$/USERINSTALLATION/' ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/program/bootstraprc
-	${REINPLACE_CMD} -e 's/USERINSTALLATION/UserInstallation=$$SYSUSERCONFIG\/${AOOUDIR}/' ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/program/bootstraprc
-	${MKDIR} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
-	cd ${WRKSRC}/solver/${AOOXXX}/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
-	${FIND} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/program -type f \( -name '*.so*' -or -name '*.bin' \) -print0 | ${XARGS} -0 -n1 ${STRIP_CMD}
-	for prog in crashrep pagein uri-encode javaldx regmerge regview; do \
-		${STRIP_CMD} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/program/$${prog}; \
-	done
-	${FIND} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR} -type d -exec ${CHMOD} 755 {} \;
-	@${ECHO_MSG} "===>  Add wrapper scripts";
-	${CP} ${FILESDIR}/openoffice-wrapper ${WRKDIR}/
-	${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
-			-e 's#%%SVNREVISION%%#${SVNREVISION}#g' \
-			-e 's#%%OOODIR%%#${OOODIR}#g' \
-			-e 's#%%INSTALLATION_BASEDIR%%#${INSTALLATION_BASEDIR}#g' \
+	@${MKDIR} ${STAGEDIR}${PRINSTALLATION_BASEDIR}/extensions \
+		${STAGEDIR}${OOPATH}/uno_packages/cache/uno_packages \
+		${STAGEDIR}${DESKTOPDIR}
+	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/Apache_OpenOffice/archive/install/${LOCALIZED_LANG}/ ; \
+		for i in *.tar.?z ; do \
+			${ECHO_CMD} "extracting $$i" ; \
+			${TAR} -s '|./[^/]*/||' -xz -f $$i - \
+				-C ${STAGEDIR}${PRINSTALLATION_BASEDIR} ; \
+		done
+	@${ECHO_CMD} "installing extensions" ; \
+	cd ${WRKSRC}/solver/${AOOXXX}/unxfbsd?.pro/bin/ ; \
+		${INSTALL_DATA} ${AOOEXTENSIONS} \
+			${STAGEDIR}${PRINSTALLATION_BASEDIR}/extensions/
+	@cd ${STAGEDIR}${OOPATH}/program ; \
+		${ECHO_CMD} "stripping executables and shared libraries" ; \
+		${STRIP_CMD} crashrep pagein uri-encode javaldx regmerge \
+			regview *.so* *.bin
+	${FIND} ${STAGEDIR}${PRINSTALLATION_BASEDIR} -type d -exec ${CHMOD} 755 {} \;
+	${REINPLACE_CMD} \
+		-e '/^UserInstallation/s/=.*/=$$SYSUSERCONFIG\/${AOOUDIR}/' \
+		${STAGEDIR}${OOPATH}/program/bootstraprc
+	@${RM} ${STAGEDIR}${OOPATH}/program/bootstraprc.bak
+	@${ECHO_CMD} "adding wrapper scripts";
+	@${CP} ${FILESDIR}/openoffice-wrapper ${WRKDIR}/
+	@${REINPLACE_CMD} -e 's#%%OOPATH%%#${OOPATH}#g' \
+			-e 's#%%EXECBASE%%#${EXECBASE}#g' \
 			${WRKDIR}/openoffice-wrapper
 	${INSTALL_SCRIPT} ${WRKDIR}/openoffice-wrapper \
 		${STAGEDIR}${PREFIX}/bin/${EXECBASE}
-	${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-sbase
-	${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-scalc
-	${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-sdraw
-	${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-setofficelang
-	${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-simpress
-	${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-smath
-	${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-spadmin
-	${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-swriter
-	cd ${STAGEDIR}${PREFIX} ; ${FIND} -s bin \( -type f -or -type l \) -name "${EXECBASE}*" >> ${TMPPLIST}
-	cd ${STAGEDIR}${PREFIX} ; ${FIND} -s ${INSTALLATION_BASEDIR} \( -type f -or -type l \) >> ${TMPPLIST}
-	cd ${STAGEDIR}${PREFIX} ; ${FIND} ${INSTALLATION_BASEDIR} -type d -empty | ${SORT} -r | \
-		${XARGS} -n 1 ${ECHO_CMD} @dir >> ${TMPPLIST}
-	for app in base calc draw impress math writer; do \
-		${REINPLACE_CMD} -e "s/^Exec.*/Exec=${EXECBASE} -$${app} %U/" \
-			-e "s/^Icon.*/Icon=${EXECBASE}-$${app}.png/" \
-		${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg/$${app}.desktop ; \
+	@cd ${STAGEDIR}${PREFIX}/bin; for i in printeradmin sbase scalc sdraw \
+		simpress smath spadmin swriter ; do \
+			${LN} -f ${EXECBASE} ${EXECBASE}-$${i} ; \
 	done
-	${REINPLACE_CMD} -e "s/^Exec.*/Exec=${EXECBASE}-spadmin %U/" \
-		-e "s/^Icon.*/Icon=${EXECBASE}-printeradmin.png/" \
-		${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg/printeradmin.desktop
-	${REINPLACE_CMD} -e "s/^Exec.*/Exec=${EXECBASE} -quickstart -nologo -nodefault/" \
-		${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg/startcenter.desktop
-	${RM} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg/*.desktop.bak
-	${RM} -f ${STAGEDIR}${DESKTOPDIR}/${EXECBASE}
-	${MKDIR} ${STAGEDIR}${DESKTOPDIR}
-	${LN} -sf ${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg \
-			${STAGEDIR}${DESKTOPDIR}/${EXECBASE}
-	${ECHO_CMD} "share/applications/${EXECBASE}" >> ${TMPPLIST}
-	for dir in `ls ${ICONS}/hicolor | ${GREP} -v CVS`; do \
-		for app in base calc draw impress math printeradmin writer; do \
-			if [ -r ${ICONS}/hicolor/$${dir}/apps/$${app}.png ]; then \
-				${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/$${dir}/apps/ ; \
-				${INSTALL_DATA} ${ICONS}/hicolor/$${dir}/apps/$${app}.png \
-				    ${STAGEDIR}${PREFIX}/share/icons/hicolor/$${dir}/apps/${EXECBASE}-$${app}.png ; \
-				${ECHO_CMD} "share/icons/hicolor/$${dir}/apps/${EXECBASE}-$${app}.png" >> ${TMPPLIST} ; \
+	${LN} -sf ${XDGDIR} ${STAGEDIR}${DESKTOPDIR}/${EXECBASE}
+	@${ECHO_CMD} "installing application icons"
+	@cd ${ICONS} ; for dir in hicolor/*/apps ; do \
+		${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/$${dir} ; \
+		for app in base calc draw impress math printeradmin startcenter writer; do \
+			icon_src=$${dir}/$${app}.png; \
+			icon_dst=share/icons/$${dir}/${EXECBASE}-$${app}.png; \
+			if [ -r $${icon_src} ]; then \
+				${INSTALL_DATA} $${icon_src} \
+				    ${STAGEDIR}${PREFIX}/$${icon_dst} ; \
 			fi \
 		done ; \
-		for iconfile in `cd ${ICONS}/hicolor/$${dir}/mimetypes; ls *.png`; do \
-			${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/$${dir}/mimetypes/ ; \
-			${INSTALL_DATA} ${ICONS}/hicolor/$${dir}/mimetypes/$${iconfile} \
-			    ${STAGEDIR}${PREFIX}/share/icons/hicolor/$${dir}/mimetypes/ ; \
-			${ECHO_CMD} "share/icons/hicolor/$${dir}/mimetypes/$${iconfile}" >> ${TMPPLIST} ; \
-		done ; \
 	done
-	${ECHO_CMD} "@unexec ${RM} %D/share/icons/hicolor/icon-theme.cache 2>/dev/null || ${TRUE}" >> ${TMPPLIST}
-	${ECHO_CMD} "@exec ${PREFIX}/bin/gtk-update-icon-cache -q -f %D/share/icons/hicolor 2>/dev/null || ${TRUE}" >> ${TMPPLIST}
-	${ECHO_CMD} "@unexec ${PREFIX}/bin/gtk-update-icon-cache -q -f %D/share/icons/hicolor 2>/dev/null || ${TRUE}" >> ${TMPPLIST}
+	@${ECHO_CMD} "installing mimetype icons"
+	@cd ${ICONS} ; for dir in hicolor/*/mimetypes ; do \
+		dstdir=${STAGEDIR}${PREFIX}/share/icons/$${dir} ; \
+		${MKDIR} $${dstdir} ; \
+		${INSTALL_DATA} $${dir}/*.png $${dstdir}/ ; \
+	done
+	@${ECHO_CMD} "generating plist";
+	@cd ${STAGEDIR}${PREFIX} ; (\
+		${ECHO_CMD} "share/applications/${EXECBASE}" ; \
+		${FIND} -s bin -name "${EXECBASE}*" ; \
+		${FIND} -s ${INSTALLATION_BASEDIR} share/icons \! -type d ; \
+		${FIND} ${INSTALLATION_BASEDIR} -type d -empty | ${SORT} -r | \
+			${SED} -e 's/^/@dir /' ; \
+	) >> ${TMPPLIST}
 
 .include <${FILESDIR}/Makefile.others>
 

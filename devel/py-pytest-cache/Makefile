@@ -1,4 +1,4 @@
-# Created by: loader <loader@FreeBSD.org>
+# Created by: Fukang Chen <loader@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	pytest-cache
@@ -26,6 +26,6 @@ USES=		python
 USE_PYTHON=	autoplist distutils
 
 regression-test: build
-	@cd ${WRKSRC} && py.test
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>

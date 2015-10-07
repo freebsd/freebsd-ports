@@ -10,7 +10,7 @@ bin/shorten
 %%PERL5_MAN3%%/WWW::Shorten::UserAgent.3.gz
 %%PERL5_MAN3%%/WWW::Shorten::_dead.3.gz
 %%PERL5_MAN3%%/WWW::Shorten::generic.3.gz
-man/man1/shorten.1.gz
+%%PERL5_MAN1%%/shorten.1.gz
 %%SITE_PERL%%/WWW/Shorten.pm
 %%SITE_PERL%%/WWW/Shorten/LinkToolbot.pm
 %%SITE_PERL%%/WWW/Shorten/Linkz.pm

@@ -110,3 +110,5 @@ psp/include/ar.h
 psp/include/alloca.h
 psp/include/_syslist.h
 psp/include/_ansi.h
+@dir psp/include/rpc
+@dir psp/include/bits

@@ -1,6 +1,6 @@
---- configure.ac.orig	2014-11-10 12:02:43.000000000 +0100
-+++ configure.ac	2014-11-20 23:35:26.000000000 +0100
-@@ -407,14 +407,15 @@
+--- configure.ac.orig	2015-06-12 05:40:48.754367679 -0700
++++ configure.ac	2015-06-12 05:45:05.521352761 -0700
+@@ -414,12 +414,12 @@
  execinfo.h \
  mcheck.h \
  sys/epoll.h \
@@ -13,6 +13,11 @@
 +netinet/tcp.h \
  ])
  
+ EFL_CHECK_PATH_MAX
+@@ -3995,6 +3995,7 @@
+ ### Checks for linker characteristics
+ 
+ ### Checks for library functions
 +ac_cv_header_sys_inotify_h="no"
  have_inotify="${ac_cv_header_sys_inotify_h}"
  AM_CONDITIONAL([HAVE_INOTIFY], [test "x${have_inotify}" = "xyes"])

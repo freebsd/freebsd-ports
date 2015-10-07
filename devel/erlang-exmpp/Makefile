@@ -37,13 +37,7 @@ USES=		autoreconf cpe libtool pkgconfig
 CPE_VENDOR=	process-one
 USE_OPENSSL=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-CONFIGURE_ARGS+=	--enable-documentation
-.else
-CONFIGURE_ARGS+=	--disable-documentation
-.endif
+DOCS_CONFIGURE_ENABLE=	documentation
 
 MAKE_JOBS_UNSAFE=	yes
 

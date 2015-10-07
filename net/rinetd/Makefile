@@ -34,7 +34,7 @@ post-patch:
 		${WRKSRC}/rinetd.[8c]
 	@${REINPLACE_CMD} -E "s,/usr(/sbin/rinetd),${PREFIX}\1," \
 		${WRKSRC}/rinetd.8
-	@${REINPLACE_CMD} -e "s/cc /${CC} /g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s,cc ,${CC} ,g" ${WRKSRC}/Makefile
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

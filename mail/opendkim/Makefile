@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=		opendkim
-PORTVERSION=		2.9.2
-PORTREVISION=		6
+PORTVERSION=		2.10.3
+PORTREVISION=		1
 CATEGORIES=		mail security
 MASTER_SITES=		SF/${PORTNAME} \
-			SF/${PORTNAME}/Previous%20Releases
+			SF/${PORTNAME}/Previous%20Releases \
+			ftp://ftpmirror.uk/freebsd-ports/${PORTNAME}/
 
-MAINTAINER=		umq@ueo.co.jp
+MAINTAINER=		freebsd-ports@dan.me.uk
 COMMENT=		DKIM library and milter implementation
 
 LICENSE=		BSD3CLAUSE SENDMAIL
@@ -21,7 +22,7 @@ LICENSE_PERMS_SENDMAIL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 GNU_CONFIGURE=	yes
 NO_OPTIONS_SORT=yes
-USES=		pkgconfig perl5 shebangfix libtool
+USES=		libtool perl5 pkgconfig shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	opendkim/opendkim-genkey* reputation/opendkim-* stats/opendkim-* \
 		reprrd/opendkim-reprrdimport*
@@ -120,19 +121,19 @@ CONFIGURE_ARGS+=	--with-milter=${MILTERBASE}
 .if ${PORT_OPTIONS:MLUA_ONLY_SIGNING} || \
     ${PORT_OPTIONS:MRBL}
 .if !${PORT_OPTIONS:MLUA}
-IGNORE= Options LUA_ONLY_SIGNING and RBL require LUA as well
+IGNORE= options LUA_ONLY_SIGNING and RBL require LUA as well
 .endif
 .endif
 
 .if ${PORT_OPTIONS:MREPUTATION}
 .if !${PORT_OPTIONS:MCURL} || !${PORT_OPTIONS:MJANSSON}
-IGNORE= Option REPUTATION requires CURL and JANSSON as well
+IGNORE= option REPUTATION requires CURL and JANSSON as well
 .endif
 .endif
 
 .if ${PORT_OPTIONS:MSTATSEXT}
 .if !${PORT_OPTIONS:MSTATS} || !${PORT_OPTIONS:MLUA}
-IGNORE= Option STATSEXT requires STATS and LUA as well
+IGNORE= option STATSEXT requires STATS and LUA as well
 .endif
 .endif
 
@@ -149,6 +150,10 @@ CONFIGURE_ARGS+=	--with-db-incdir=${BDB_INCLUDE_DIR} \
 			--with-db-lib=${BDB_LIB_NAME}
 USE_BDB=		40+
 . endif
+.endif
+
+.if ${PORT_OPTIONS:MCODECOVERAGE}
+LDFLAGS+=		-lpthread
 .endif
 
 pre-configure:

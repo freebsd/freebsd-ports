@@ -1,5 +1,5 @@
---- ./Makefile.am.orig	2012-06-05 08:24:12.000000000 -0400
-+++ ./Makefile.am	2012-06-05 08:26:55.000000000 -0400
+--- Makefile.am.orig	2015-08-06 23:49:54 UTC
++++ Makefile.am
 @@ -1,9 +1,9 @@
  
  SUBDIRS = src include
@@ -13,8 +13,8 @@
  
  PACKAGE		= @PACKAGE@
  VERSION		= @VERSION@
-@@ -20,8 +20,8 @@
- RPMRELEASE=$(PACKAGE_RELEASE)
+@@ -22,8 +22,8 @@ RPMRELEASE=$(PACKAGE_RELEASE)
+ ACLOCAL_AMFLAGS = -I m4
  
  install-data-local:: $(PACKAGE).pc
 -	$(mkinstalldirs) $(DESTDIR)$(libdir)/pkgconfig
