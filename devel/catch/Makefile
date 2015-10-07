@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	catch
-DISTVERSION=	v1.2.1-develop.14
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.2.1-develop.14
 CATEGORIES=	devel
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -10,12 +11,13 @@ COMMENT=	Header-only test framework for C++
 
 LICENSE=	BSL
 
+TEST_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	philsquared
 GH_PROJECT=	Catch
 
 NO_BUILD=	yes
-TEST_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
 
 PLIST_FILES=	include/catch.hpp
 
