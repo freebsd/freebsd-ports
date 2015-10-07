@@ -17,7 +17,7 @@ diff --git config/system-headers config/system-headers
 index 18e8703..bdc5f82 100644
 --- config/system-headers
 +++ config/system-headers
-@@ -1357,3 +1357,11 @@ unicode/utypes.h
+@@ -1350,3 +1350,11 @@ unicode/utypes.h
  #endif
  libutil.h
  unwind.h
