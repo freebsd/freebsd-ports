@@ -24,7 +24,7 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 900014 || ${ARCH} == powerpc
+.if ${ARCH} == powerpc
 USE_GCC=	yes
 .else
 CC=		clang
@@ -39,15 +39,8 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e '/DEFINES +=/s,^macx:,,' \
 		${WRKSRC}/qmltermwidget/qmltermwidget.pro
-.if ${OSVERSION} < 900007
-	@${REINPLACE_CMD} -e 's,HAVE_UTMPX,HAVE_UTMP,' \
-		${WRKSRC}/qmltermwidget/qmltermwidget.pro
-	@${REINPLACE_CMD} -e 's,ut_user,ut_name,g' \
-		${WRKSRC}/qmltermwidget/lib/kpty.cpp
-.else
 	@${REINPLACE_CMD} -e '/define HAVE_LOGIN/d' \
 		${WRKSRC}/qmltermwidget/lib/kpty.cpp
-.endif
 	@${REINPLACE_CMD} -e 's,/usr,${LOCALBASE},' \
 		${WRKSRC}/app/app.pro ${WRKSRC}/cool-retro-term.pro
 	@${REINPLACE_CMD} -e 's,\.\./icons,/icons,' \
