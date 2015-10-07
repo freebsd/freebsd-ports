@@ -24,7 +24,7 @@ USES=		pkgconfig python shebangfix uniquefiles:dirs
 USE_PYTHON=	autoplist distutils
 CFLAGS+=	-I${LOCALBASE}/include
 
-OPTIONS_DEFINE=	EXAMPLES GTKBACKEND GTKAGGBACKEND TKAGGBACKEND WXAGGBACKEND
+OPTIONS_DEFINE=		EXAMPLES GTKBACKEND GTKAGGBACKEND TKAGGBACKEND WXAGGBACKEND
 OPTIONS_DEFAULT=	GTKBACKEND GTKAGGBACKEND TKAGGBACKEND
 OPTIONS_SUB=		yes
 GTKBACKEND_DESC=	GTK backend support
@@ -43,9 +43,8 @@ TKAGGBACKEND_VARS=	TKAGG_BACKEND=True
 TKAGGBACKEND_VARS_OFF=	TKAGG_BACKEND=False
 WXAGGBACKEND_DESC=	WXAgg backend support
 WXAGGBACKEND_USE=	WX=2.8+
-WXAGGBACKEND_VARS=	WX_COMPS=python:lib,WX_UNICODE=yes
 WXAGGBACKEND_CONFIGURE_ENV=	WX_CONFIG="${WX_CONFIG}"
-WXAGGBACKEND_VARS=	WXAGG_BACKEND=True
+WXAGGBACKEND_VARS=	WXAGG_BACKEND=True WX_COMPS=python:lib WX_UNICODE=yes
 WXAGGBACKEND_VARS_OFF=	WXAGG_BACKEND=False
 
 PORTEXAMPLES=	*
@@ -58,7 +57,7 @@ WXAGGBACKEND_BUILD_DEPENDS=	Xvfb:${PORTSDIR}/x11-servers/xorg-vfbserver
 .endif
 
 post-extract:
-	${CHMOD} -R ga+r ${WRKDIR}
+	${FIND} ${WRKSRC} -name \*.py | ${XARGS} ${CHMOD} -x
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
@@ -76,19 +75,25 @@ post-patch:
 		${WRKSRC}/setup.cfg
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/_image.so
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/backends/_backend_agg.so
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/backends/_gtkagg.so
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/backends/_tkagg.so
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/backends/_backend_gdk.so
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/_qhull.so
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/ttconv.so
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/_delaunay.so
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/_png.so
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/_tri.so
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/_path.so
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/_cntr.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/_delaunay.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/_image.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/_path.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/_png.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/_qhull.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/_tri.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/backends/_backend_agg.so
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/ft2font.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/ttconv.so
+
+post-install-GTKAGGBACKEND-on:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/backends/_gtkagg.so
+
+post-install-TKAGGBACKEND-on:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/backends/_tkagg.so
+
+post-install-GTKBACKEND-on:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/backends/_backend_gdk.so
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
