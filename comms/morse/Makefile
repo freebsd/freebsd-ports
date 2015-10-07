@@ -11,6 +11,7 @@ MAINTAINER=	shurd@FreeBSD.org
 COMMENT=	Morse Code Trainer
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 PLIST_FILES=	bin/morsec bin/QSO man/man1/QSO.1.gz man/man1/morsec.1.gz
 
@@ -22,22 +23,16 @@ OSS_DESC=	Beep using OSS (/dev/dsp)
 X11_DESC=	Beep using X server
 PULSEAUDIO_DESC=	Beep using Pulse Audio
 
-.include <bsd.port.options.mk>
+OSS_MAKE_ARGS=	DEVICE=OSS
 
-.if ${PORT_OPTIONS:MOSS}
-MAKE_FLAGS+=	DEVICE=OSS
+X11_MAKE_ARGS=	DEVICE=X11
+X11_USE=	XORG=x11
+X11_CFLAGS=	-I${LOCALBASE}/include
+X11_LDFLAGS=	-L${LOCALBASE}/lib
 
-.elif ${PORT_OPTIONS:MX11}
-MAKE_FLAGS+=	DEVICE=X11
-USE_XORG=	x11
-CFLAGS+=	-I${PREFIX}/include
-LDFLAGS+=	-L${PREFIX}/lib
-
-.elif ${PORT_OPTIONS:MPULSEAUDIO}
-MAKE_FLAGS+=	DEVICE=PA
-LIB_DEPENDS+=	libpulse-simple.so:${PORTSDIR}/audio/pulseaudio
-USES+=		pkgconfig
-.endif
+PULSEAUDIO_MAKE_ARGS=	DEVICE=PA
+PULSEAUDIO_LIB_DEPENDS=	libpulse-simple.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_USES=	pkgconfig
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/morse ${STAGEDIR}${PREFIX}/bin/morsec
