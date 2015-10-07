@@ -21,6 +21,7 @@ CONFIGURE_ARGS=	--disable-gcc-pipe \
 CPPFLAGS+=	-isystem /usr/include -isystem ${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
+TEST_TARGET=	check
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README libsndfile.css \
 		new_file_type.HOWTO libsndfile.jpg *.html
@@ -30,27 +31,15 @@ OPTIONS_DEFAULT=	EXTERNAL
 CPU_CLIP_DESC=	Allow machine-dependent clipping
 EXTERNAL_DESC=	Enable FLAC and Ogg Vorbis support
 
-.include <bsd.port.options.mk>
+CPU_CLIP_VARS=	MANUAL_PACKAGE_BUILD="WITH_CPU_CLIP may customize the package for the build machine"
+CPU_CLIP_CONFIGURE_OFF=	--disable-cpu-clip
 
-.if ${PORT_OPTIONS:MCPU_CLIP}
-MANUAL_PACKAGE_BUILD=	WITH_CPU_CLIP may customize the package for the build machine
-.else
-CONFIGURE_ARGS+=	--disable-cpu-clip
-.endif
-
-.if ${PORT_OPTIONS:MEXTERNAL}
-LIB_DEPENDS+=	libFLAC.so:${PORTSDIR}/audio/flac \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis
-.else
-CONFIGURE_ARGS+=--disable-external-libs
-.endif
+EXTERNAL_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
+			libvorbis.so:${PORTSDIR}/audio/libvorbis
+EXTERNAL_CONFIGURE_OFF=	--disable-external-libs
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/ doc / /g' ${WRKSRC}/Makefile.in
-
-check regression-test test: build
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} \
-	check
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
