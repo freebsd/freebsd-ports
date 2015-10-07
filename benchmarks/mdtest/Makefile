@@ -6,13 +6,13 @@ PORTVERSION=	1.9.3
 PORTREVISION=	7
 CATEGORIES=	benchmarks
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20latest/${PORTNAME}-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Filesystem metadata benchmark utility
 
 LICENSE=	GPLv2
 
+USES=		tar:tgz
 NO_WRKSUBDIR=	yes
 
 CFLAGS+=	-DDarwin
@@ -23,17 +23,13 @@ PORTEXAMPLES=	*
 OPTIONS_DEFINE=	OPENMPI EXAMPLES
 OPENMPI_DESC=	Use Open MPI instead of MPICH2
 
-.include <bsd.port.options.mk>
+OPENMPI_BUILD_DEPENDS=		${LOCALBASE}/mpi/openmpi/bin/mpicc:${PORTSDIR}/net/openmpi
+OPENMPI_RUN_DEPENDS=		${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
+OPENMPI_VARS=			MPICC=${LOCALBASE}/mpi/openmpi/bin/mpicc
 
-.if ${PORT_OPTIONS:MOPENMPI}
-BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpicc:${PORTSDIR}/net/openmpi
-RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
-MPICC=		${LOCALBASE}/mpi/openmpi/bin/mpicc
-.else
-BUILD_DEPENDS+=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2
-RUN_DEPENDS+=	${LOCALBASE}/bin/mpirun:${PORTSDIR}/net/mpich2
-MPICC=		${LOCALBASE}/bin/mpicc
-.endif
+OPENMPI_BUILD_DEPENDS_OFF=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2
+OPENMPI_RUN_DEPENDS_OFF=	${LOCALBASE}/bin/mpirun:${PORTSDIR}/net/mpich2
+OPENMPI_VARS_OFF=		MPICC=${LOCALBASE}/bin/mpicc
 
 do-build:
 	(cd ${WRKSRC} && ${MPICC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c -lm)
