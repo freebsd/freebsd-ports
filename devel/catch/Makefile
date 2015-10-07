@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	catch
-DISTVERSION=	1.2.1-develop.14
+DISTVERSION=	v1.2.1-develop.14
 CATEGORIES=	devel
 
 MAINTAINER=	gahr@FreeBSD.org
