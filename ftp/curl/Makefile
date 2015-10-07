@@ -48,7 +48,6 @@ CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE} \
 		ac_cv_func_SSLv2_client_method=no
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-NO_PERL5_TEST=	yes
 TEST_ENV=	${MAKE_ENV} LC_ALL=C
 TEST_TARGET=	test
 USE_PERL5=	build
