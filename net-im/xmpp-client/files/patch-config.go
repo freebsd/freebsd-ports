@@ -1,9 +1,9 @@
---- config.go.orig	2015-03-07 22:36:57.219206000 +0100
-+++ config.go	2015-03-07 22:39:28.246637000 +0100
+--- config.go.orig	2015-07-15 22:34:06.825572000 +0200
++++ config.go	2015-07-15 22:36:21.406502000 +0200
 @@ -12,9 +12,9 @@
  	"strings"
  
- 	"github.com/agl/xmpp"
+ 	"github.com/agl/xmpp-client/xmpp"
 -	"golang.org/x/crypto/otr"
 -	"golang.org/x/crypto/ssh/terminal"
 -	"golang.org/x/net/proxy"
