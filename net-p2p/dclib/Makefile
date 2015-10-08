@@ -1,4 +1,4 @@
-# Created by: Sverrir Valgeirsson <e96sv@yahoo.se> and 
+# Created by: Sverrir Valgeirsson <e96sv@yahoo.se> and
 # $FreeBSD$
 
 PORTNAME=	dclib

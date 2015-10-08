@@ -25,7 +25,7 @@ post-patch:
 		< ${FILESDIR}/KDE.directory > ${WRKSRC}/KDE.directory
 
 post-install:
-	@${MKDIR} -p ${STAGEDIR}${PREFIX}/etc/xdg/menus/ 
+	@${MKDIR} -p ${STAGEDIR}${PREFIX}/etc/xdg/menus/
 	@${INSTALL_DATA} ${WRKSRC}/layout/gnome-applications.menu \
 		${STAGEDIR}${PREFIX}/etc/xdg/menus/gnome-applications.menu
 	@${INSTALL_DATA} ${WRKSRC}/KDE.directory \

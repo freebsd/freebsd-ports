@@ -41,7 +41,7 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in AUTHORS ChangeLog NEWS README 
+.for i in AUTHORS ChangeLog NEWS README
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} \
 		${STAGEDIR}${DOCSDIR})
 .endfor

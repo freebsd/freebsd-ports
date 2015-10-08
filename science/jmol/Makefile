@@ -36,7 +36,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	(cd ${WRKSRC}/build && ${INSTALL_DATA} Jmol.jar JmolData.jar \
 		JmolLib.jar ${STAGEDIR}${JAVAJARDIR})
-	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}) 
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
 .undef MAKE_ARGS

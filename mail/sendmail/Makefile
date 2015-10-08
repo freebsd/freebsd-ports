@@ -193,7 +193,7 @@ do-configure:
 	'APPENDDEF(`confENVDEF'\'', `-DLA_TYPE=LA_ZERO'\'')' \
 		>> ${WCONF}/site.config.m4
 .endif
-.if ${PORT_OPTIONS:MMILTER} && ${PORT_OPTIONS:MMILTER_POOL} 
+.if ${PORT_OPTIONS:MMILTER} && ${PORT_OPTIONS:MMILTER_POOL}
 	${ECHO_CMD} \
 	 'APPENDDEF(`conf_libmilter_ENVDEF'\'', `-DSM_CONF_POLL=1'\'')' \
 		>> ${WCONF}/site.config.m4

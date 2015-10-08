@@ -62,7 +62,7 @@ post-install:
 		${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 .else
 	${INSTALL_MAN} ${WRKSRC}/doc/gri-manpage.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1/gri.1 
+		${STAGEDIR}${MANPREFIX}/man/man1/gri.1
 	${INSTALL_MAN} ${WRKSRC}/doc/gri_merge.1-skel \
 		${STAGEDIR}${MANPREFIX}/man/man1/gri_merge.1
 	${INSTALL_MAN} ${WRKSRC}/doc/gri_unpage.1-skel \
