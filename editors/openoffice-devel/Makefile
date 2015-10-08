@@ -4,9 +4,9 @@
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${SVNREVISION}
 PORTREVISION=	1
-PORTEPOCH=	3
+PORTEPOCH=	4
 CATEGORIES=	editors java
-MASTER_SITES=	http://ci.apache.org/projects/openoffice/milestones/${AOOVERSION}-${AOORC}-r${SVNREVISION}/source/ \
+MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-r1705606/source/ \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \
 		LOCAL/truckman/openoffice:snap,extsrc
 .if defined(LANG_PKGNAME)
@@ -98,12 +98,12 @@ RUN_DEPENDS=								\
 		${LOCALBASE}/share/fonts/ChromeOS/Arimo-Bold.ttf:${PORTSDIR}/x11-fonts/croscorefonts-fonts-ttf
 
 AOOVERSION1=	4
-AOOVERSION2=	2
-AOOVERSION3=	0
+AOOVERSION2=	1
+AOOVERSION3=	2
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
-AOOTAG=		AOO420m1\(Build:9800\)
-SVNREVISION=	1704217
-#AOORC=rc3
+AOOTAG=		AOO412m1\(Build:9780\)
+SVNREVISION=	1705575
+AOORC=rc1
 EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 
 AOOVERSION=	${AOOVERSION1}.${AOOVERSION2}.${AOOVERSION3}
@@ -261,7 +261,6 @@ CONFIGURE_ARGS+=							\
 			--with-system-sane				\
 			--with-system-serf				\
 			--with-system-stdlibs				\
-			--enable-symbols=small				\
 			--without-stlport				\
 			--with-vendor="FreeBSD ports system"		\
 			--enable-verbose				\
@@ -413,10 +412,6 @@ do-install:
 	cd ${WRKSRC}/solver/${AOOXXX}/unxfbsd?.pro/bin/ ; \
 		${INSTALL_DATA} ${AOOEXTENSIONS} \
 			${STAGEDIR}${PRINSTALLATION_BASEDIR}/extensions/
-	@cd ${STAGEDIR}${OOPATH}/program ; \
-		${ECHO_CMD} "stripping executables and shared libraries" ; \
-		${STRIP_CMD} crashrep pagein uri-encode javaldx regmerge \
-			regview *.so* *.bin
 	${FIND} ${STAGEDIR}${PRINSTALLATION_BASEDIR} -type d -exec ${CHMOD} 755 {} \;
 	${REINPLACE_CMD} \
 		-e '/^UserInstallation/s/=.*/=$$SYSUSERCONFIG\/${AOOUDIR}/' \
