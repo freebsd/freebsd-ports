@@ -1,6 +1,6 @@
---- builds/posix/make.defaults	2010-09-08 03:41:23.000000000 -0500
-+++ builds/posix/make.defaults	2010-12-18 20:25:29.000000000 -0500
-@@ -127,7 +127,7 @@
+--- builds/posix/make.defaults.orig	2015-03-27 13:46:38 UTC
++++ builds/posix/make.defaults
+@@ -126,7 +126,7 @@ RM_R=		rm -rf
  CHMOD=			chmod
  CHMOD_6=		chmod 666
  CHMOD_7=		chmod 777
@@ -9,16 +9,23 @@
  MV=			mv -f
  TOUCH=			touch
  CP=			cp
-@@ -153,7 +153,7 @@
- STATICEXE_LINK:= @CXX@ $(GLOB_OPTIONS)
+@@ -152,7 +152,7 @@ EXE_LINK:= @CXX@ $(GLOB_OPTIONS) $(CXXFL
+ STATICEXE_LINK:= @CXX@ $(GLOB_OPTIONS) $(CXXFLAGS)
  
  LINK_LIBS = @LIBS@
 -ICU_LIBS = -licuuc -licudata -licui18n
-+ICU_LIBS = `icu-config --ldflags-libsonly` `icu-config --ldflags-searchpath`
++ICU_LIBS = $(shell icu-config --ldflags)
  STATICLINK_LIBS = @LIBS@
  SO_LINK_LIBS = @LIBS@
  
-@@ -230,10 +230,6 @@
+@@ -223,16 +223,12 @@ LIBFBSTATIC_A = $(LIB)/libfbstatic.a
+ 
+ ifeq ($(EDITLINE_FLG),Y)
+   ifeq ($(STD_EDITLINE), true)
+-	LIBEDITLINE := -l$(READLINE)
++	LIBEDITLINE := $(shell pkgconf libedit --libs)
+   else
+ 	LIBEDITLINE := $(LIB)/libedit.a
    endif
  endif
  

@@ -1,0 +1,11 @@
+--- builds/posix/make.rules.orig	2015-03-27 13:46:38 UTC
++++ builds/posix/make.rules
+@@ -37,6 +37,8 @@ WFLAGS:=$(CPPFLAGS) -I$(SRC_ROOT)/includ
+ 
+ ifeq ($(STD_ICU),false)
+   WFLAGS:= $(WFLAGS) -I$(ROOT)/extern/icu/source/common -I$(ROOT)/extern/icu/source/i18n
++else
++  WFLAGS:= $(WFLAGS) $(shell icu-config --cppflags)
+ endif
+ 
+ ifeq ($(IsProdTypeBuild),Y)
