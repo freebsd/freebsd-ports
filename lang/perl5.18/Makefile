@@ -19,6 +19,9 @@ LICENSE_FILE_GPLv1=	${WRKSRC}/Copying
 DEPRECATED=	Unsupported, please upgrade to a more recent version of Perl
 EXPIRATION_DATE=2016-12-31
 
+TEST_TARGET=	test_harness
+TEST_ENV=	${MAKE_ENV} TEST_JOBS=${MAKE_JOBS_NUMBER}
+
 OPTIONS_DEFINE=	DEBUG GDBM PERL_64BITINT PTHREAD \
 		MULTIPLICITY SITECUSTOMIZE USE_PERL
 # it seems perl malloc has problems with threaded perl on FreeBSD
@@ -245,10 +248,5 @@ post-install:
 			${CHMOD} 444 $$f; \
 		done
 	${INSTALL_DATA} ${WRKDIR}/perl-man.conf ${STAGEDIR}${PREFIX}/etc/man.d/perl${PERL_VER}.conf
-
-test: build
-	(cd ${WRKSRC}; TEST_JOBS=${MAKE_JOBS_NUMBER} make test_harness)
-
-regression-test: test
 
 .include <bsd.port.mk>
