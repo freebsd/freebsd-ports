@@ -16,7 +16,7 @@ RUN_DEPENDS=	rubygem-backports>=2.0:${PORTSDIR}/devel/rubygem-backports \
 		rubygem-rack-protection>=0:${PORTSDIR}/www/rubygem-rack-protection \
 		rubygem-rack-test>=0:${PORTSDIR}/www/rubygem-rack-test \
 		rubygem-sinatra>=1.4:${PORTSDIR}/www/rubygem-sinatra \
-		rubygem-tilt>=2.0:${PORTSDIR}/devel/rubygem-tilt1
+		rubygem-tilt>=2.0:${PORTSDIR}/devel/rubygem-tilt
 
 NO_ARCH=	yes
 
