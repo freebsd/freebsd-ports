@@ -3,6 +3,7 @@
 PORTNAME=	icingaweb2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt www
 
 MAINTAINER=	lme@FreeBSD.org
@@ -41,11 +42,8 @@ do-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/bash_completion.d/
 	${INSTALL_DATA} ${WRKSRC}/etc/bash_completion.d/icingacli \
 		${STAGEDIR}${EXAMPLESDIR}/bash_completion.d
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC}/etc && \
-		${COPYTREE_SHARE} schema ${STAGEDIR}${DATADIR})
 	(cd ${WRKSRC} && ${RM} -r .mailmap changelog.py icingaweb2.spec \
-		bin/license_writer.py etc packages test)
+		bin/license_writer.py packages test)
 	${MKDIR} ${STAGEDIR}${WWWDIR}
 	(cd ${WRKSRC} && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})

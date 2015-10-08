@@ -1,10 +1,10 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/apache/icingaweb2.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bash_completion.d/icingacli
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nginx/icingaweb2.conf
-%%DATADIR%%/schema/mysql-upgrades/2.0.0beta3-2.0.0rc1.sql
-%%DATADIR%%/schema/mysql.schema.sql
-%%DATADIR%%/schema/pgsql-upgrades/2.0.0beta3-2.0.0rc1.sql
-%%DATADIR%%/schema/pgsql.schema.sql
+%%ETCDIR%%/schema/mysql-upgrades/2.0.0beta3-2.0.0rc1.sql
+%%ETCDIR%%/schema/mysql.schema.sql
+%%ETCDIR%%/schema/pgsql-upgrades/2.0.0beta3-2.0.0rc1.sql
+%%ETCDIR%%/schema/pgsql.schema.sql
 %%WWWDIR%%/AUTHORS
 %%WWWDIR%%/COPYING
 %%WWWDIR%%/ChangeLog
