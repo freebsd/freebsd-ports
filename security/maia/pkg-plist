@@ -40,6 +40,8 @@ sbin/maiad
 %%DATADIR%%/scripts/send-quarantine-reminders.pl
 %%DATADIR%%/scripts/stats-snapshot.pl
 @mode
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/admin/configtest.php
 %%WWWDIR%%/admin/dblib.php
 %%WWWDIR%%/admin/internal-init.php
@@ -59,11 +61,7 @@ sbin/maiad
 %%WWWDIR%%/chart_rules.php
 %%WWWDIR%%/chart_stats.php
 %%WWWDIR%%/chart_virus.php
-@mode 640
-@group %%WWWGRP%%
-%%WWWDIR%%/config.php.dist
-@group
-@mode
+@(%%WWWOWN%%,%%WWWGRP%%,640) %%WWWDIR%%/config.php.dist
 %%WWWDIR%%/confirm.php
 %%WWWDIR%%/constants.php
 %%WWWDIR%%/core.php
@@ -909,7 +907,53 @@ sbin/maiad
 %%WWWDIR%%/ximpersonate.php
 %%WWWDIR%%/xlogin.php
 %%WWWDIR%%/xsettings.php
-@dir %%WWWDIR%%/themes/desert_sand/compiled
-@dir %%WWWDIR%%/themes/dgm/compiled
-@dir %%WWWDIR%%/themes/ocean_surf/compiled
 @dir %%WWWDIR%%/web
+@dir %%WWWDIR%%/themes/ocean_surf/templates/settings
+@dir %%WWWDIR%%/themes/ocean_surf/templates
+@dir %%WWWDIR%%/themes/ocean_surf/javascript
+@dir %%WWWDIR%%/themes/ocean_surf/images
+@dir %%WWWDIR%%/themes/ocean_surf/css/images
+@dir %%WWWDIR%%/themes/ocean_surf/css
+@dir %%WWWDIR%%/themes/ocean_surf/compiled
+@dir %%WWWDIR%%/themes/ocean_surf/code
+@dir %%WWWDIR%%/themes/ocean_surf
+@dir %%WWWDIR%%/themes/dgm/templates
+@dir %%WWWDIR%%/themes/dgm/images
+@dir %%WWWDIR%%/themes/dgm/css
+@dir %%WWWDIR%%/themes/dgm/compiled
+@dir %%WWWDIR%%/themes/dgm/code
+@dir %%WWWDIR%%/themes/dgm
+@dir %%WWWDIR%%/themes/desert_sand/templates/welcome
+@dir %%WWWDIR%%/themes/desert_sand/templates/settings
+@dir %%WWWDIR%%/themes/desert_sand/templates
+@dir %%WWWDIR%%/themes/desert_sand/javascript
+@dir %%WWWDIR%%/themes/desert_sand/images
+@dir %%WWWDIR%%/themes/desert_sand/css/images
+@dir %%WWWDIR%%/themes/desert_sand/css
+@dir %%WWWDIR%%/themes/desert_sand/compiled
+@dir %%WWWDIR%%/themes/desert_sand/code
+@dir %%WWWDIR%%/themes/desert_sand
+@dir %%WWWDIR%%/themes
+@dir %%WWWDIR%%/overlib/mini
+@dir %%WWWDIR%%/overlib
+@dir %%WWWDIR%%/maia_db
+@dir %%WWWDIR%%/locale/sv
+@dir %%WWWDIR%%/locale/ru
+@dir %%WWWDIR%%/locale/pt
+@dir %%WWWDIR%%/locale/no
+@dir %%WWWDIR%%/locale/nl
+@dir %%WWWDIR%%/locale/it
+@dir %%WWWDIR%%/locale/hu
+@dir %%WWWDIR%%/locale/fr
+@dir %%WWWDIR%%/locale/en
+@dir %%WWWDIR%%/locale/de
+@dir %%WWWDIR%%/locale/da
+@dir %%WWWDIR%%/locale/cs
+@dir %%WWWDIR%%/libs/jquery/images
+@dir %%WWWDIR%%/libs/jquery
+@dir %%WWWDIR%%/libs
+@dir %%WWWDIR%%/images
+@dir %%WWWDIR%%/admin
+@dir %%WWWDIR%%
+@owner
+@group
