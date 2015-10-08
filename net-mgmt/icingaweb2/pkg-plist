@@ -1,10 +1,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/apache/icingaweb2.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bash_completion.d/icingacli
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nginx/icingaweb2.conf
-%%ETCDIR%%/schema/mysql-upgrades/2.0.0beta3-2.0.0rc1.sql
-%%ETCDIR%%/schema/mysql.schema.sql
-%%ETCDIR%%/schema/pgsql-upgrades/2.0.0beta3-2.0.0rc1.sql
-%%ETCDIR%%/schema/pgsql.schema.sql
 %%WWWDIR%%/AUTHORS
 %%WWWDIR%%/COPYING
 %%WWWDIR%%/ChangeLog
@@ -171,6 +167,11 @@
 %%WWWDIR%%/doc/resources.md
 %%WWWDIR%%/doc/security.md
 %%WWWDIR%%/doc/vagrant.md
+%%WWWDIR%%/etc/bash_completion.d/icingacli
+%%WWWDIR%%/etc/schema/mysql-upgrades/2.0.0beta3-2.0.0rc1.sql
+%%WWWDIR%%/etc/schema/mysql.schema.sql
+%%WWWDIR%%/etc/schema/pgsql-upgrades/2.0.0beta3-2.0.0rc1.sql
+%%WWWDIR%%/etc/schema/pgsql.schema.sql
 %%WWWDIR%%/library/Icinga/Application/ApplicationBootstrap.php
 %%WWWDIR%%/library/Icinga/Application/Benchmark.php
 %%WWWDIR%%/library/Icinga/Application/ClassLoader.php
