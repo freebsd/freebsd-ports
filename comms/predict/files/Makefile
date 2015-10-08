@@ -20,7 +20,7 @@ LIBS = ${LDFLAGS} -pthread -lm -lncurses
 predict:	predict.c predict.h
 		${CC} ${CFLAGS} -o predict predict.c ${LIBS}
 
-vocalizer/vocalizer:	vocalizer/vocalizer.c vocalizer/vocalizer.h	
+vocalizer/vocalizer:	vocalizer/vocalizer.c vocalizer/vocalizer.h
 		${CC} ${CFLAGS} -o vocalizer/vocalizer vocalizer/vocalizer.c ${LIBS}
 
 clean:

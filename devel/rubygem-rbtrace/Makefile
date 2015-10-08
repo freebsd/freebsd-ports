@@ -22,5 +22,5 @@ RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/rbtrace \
 		%%GEM_LIB_DIR%%/ext/src/msgpack-0.5.7/src/.libs/libmsgpack.la \
 		%%GEM_LIB_DIR%%/ext/src/msgpack-0.5.7/src/.libs/libmsgpackc.la
-	
+
 .include <bsd.port.mk>

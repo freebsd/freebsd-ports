@@ -57,7 +57,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/include/lua-ada
 .if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/example1/bin \
-		${STAGEDIR}${EXAMPLESDIR}/example2/bin	
+		${STAGEDIR}${EXAMPLESDIR}/example2/bin
 	${INSTALL_DATA} ${EXDIRPREFIX}1/example1.lua \
 		${EXDIRPREFIX}1/src/main.adb \
 		${STAGEDIR}${EXAMPLESDIR}/example1

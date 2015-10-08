@@ -86,8 +86,8 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "armv6"	 
+.if ${ARCH} == "armv6"
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-config.h.cmake
 .endif
- 	 
+
 .include <bsd.port.post.mk>

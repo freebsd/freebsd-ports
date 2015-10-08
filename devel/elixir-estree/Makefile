@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	JavaScript AST to JavaScript code generator in Elixir 
+COMMENT=	JavaScript AST to JavaScript code generator in Elixir
 
 LICENSE=	MIT
 
