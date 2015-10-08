@@ -285,6 +285,7 @@
     SUBDIR += freebsd-snapshot
     SUBDIR += freecolor
     SUBDIR += freedt
+    SUBDIR += freenas-datastore
     SUBDIR += freenas-dispatcher
     SUBDIR += freeipmi
     SUBDIR += freesbie

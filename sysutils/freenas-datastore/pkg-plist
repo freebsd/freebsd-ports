@@ -1,0 +1,27 @@
+lib/datastore/drivers/postgres/control
+lib/datastore/drivers/postgres/postgres.py
+lib/datastore/drivers/postgres/init.sql
+lib/datastore/drivers/mongodb/control
+lib/datastore/drivers/mongodb/mongodb.py
+lib/datastore/drivers/mongodb/mongod.conf
+lib/datastore/drivers/mongodb/mongodb.json
+share/datastore/factory.json
+share/datastore/test/sample/factory.json
+share/datastore/test/sample/middleware.conf
+share/datastore/test/sample/migrations/users/0001-firstname.py
+share/datastore/test/sample/migrations/users/0002-lastname.py
+share/datastore/test/sample/migrations/users/0003-dependent.py
+%%PYTHON_SITELIBDIR%%/datastore/__init__.py
+%%PYTHON_SITELIBDIR%%/datastore/__init__.pyc
+%%PYTHON_SITELIBDIR%%/datastore/config.py
+%%PYTHON_SITELIBDIR%%/datastore/config.pyc
+%%PYTHON_SITELIBDIR%%/datastore-10.0-py2.7.egg-info
+etc/rc.d/datastore
+sbin/dsutil
+sbin/dsdump
+sbin/dsrestore
+sbin/dspasswd
+sbin/dsmigrate
+sbin/dsinit
+@dir /data/freenas.db
+@dir /data
