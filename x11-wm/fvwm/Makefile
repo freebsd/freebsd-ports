@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-1/
 PKGNAMESUFFIX=	1${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	The fvwm window manager
+COMMENT=	Fvwm window manager
 
 USES=		imake
 USE_XORG=	xbitmaps xpm xext x11 xmu
