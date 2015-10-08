@@ -36,6 +36,6 @@ OPTIONS_DEFINE=	NOTIFY
 OPTIONS_DEFAULT=NOTIFY
 
 NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
-NOTIFY_CONFIGURE_ENABLE=libnotify 
+NOTIFY_CONFIGURE_ENABLE=libnotify
 
 .include <bsd.port.mk>

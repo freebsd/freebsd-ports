@@ -550,7 +550,7 @@ CONFIGURE_ARGS+=--with-http_stub_status_module
 CONFIGURE_ARGS+=--with-http_sub_module
 .endif
 
-.if ${PORT_OPTIONS:MHTTP_UPLOAD} 	 
+.if ${PORT_OPTIONS:MHTTP_UPLOAD}
 GIT_UPLOAD_VERSION= aba1e3f34c
 GH_ACCOUNT+=	vkholodkov:upload
 GH_PROJECT+=	nginx-upload-module:upload

@@ -6,7 +6,7 @@ PORTVERSION=	1.1.0
 PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	http://cdn04.foxitsoftware.com/pub/foxit/reader/desktop/linux/1.x/${PORTVERSION:R}/enu/:reader
-			
+
 DISTFILES=	FoxitReader-${PORTVERSION}.tar.bz2:reader
 EXTRACT_ONLY=	FoxitReader-${PORTVERSION}.tar.bz2
 

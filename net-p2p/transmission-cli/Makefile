@@ -40,7 +40,7 @@ GEN_LIB_DEPENDS=libcurl.so:${PORTSDIR}/ftp/curl \
 		libevent.so:${PORTSDIR}/devel/libevent2
 GEN_RUN_DEPENDS=${LOCALBASE}/share/transmission/web/index.html:${PORTSDIR}/www/transmission-web
 
-# This is master port of transmission-*, so don't override USES definition 
+# This is master port of transmission-*, so don't override USES definition
 USES+=		gmake iconv libtool localbase pkgconfig
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes

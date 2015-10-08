@@ -75,7 +75,7 @@ DOLDAP = yes
 endif
 #
 # clock_gettime() settings
-LIBRTDEF = 
+LIBRTDEF =
 
 ifdef WITH_NETSNMP
 # Net-SNMP settings

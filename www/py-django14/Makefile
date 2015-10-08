@@ -5,7 +5,7 @@ PORTNAME=	django
 PORTVERSION=	1.4.22
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
-		https://www.djangoproject.com/m/releases/${PORTVERSION:R}/		
+		https://www.djangoproject.com/m/releases/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	14
 DISTNAME=	Django-${PORTVERSION}

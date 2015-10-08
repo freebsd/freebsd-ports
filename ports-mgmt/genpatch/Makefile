@@ -31,7 +31,7 @@ PORTWORK=	/usr/obj/dports
 .  else
 PORTWORK=	/usr/ports
 .  endif
-.else 
+.else
 .  if defined(WRKDIRPREFIX) && !empty(WRKDIRPREFIX)
 PORTWORK=	${WRKDIRPREFIX}
 .  else
