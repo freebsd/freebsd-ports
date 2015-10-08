@@ -23,7 +23,7 @@ USE_QT4=	moc_build rcc_build uic_build \
 		corelib gui opengl qt3support svg xml
 
 post-patch:
-.for i in getaword.cpp optionsdialog.cpp textroom.cpp 
+.for i in getaword.cpp optionsdialog.cpp textroom.cpp
 	@${REINPLACE_CMD} -e \
 		's|/usr/share|${PREFIX}/share|' ${WRKSRC}/application/src/${i}
 .endfor

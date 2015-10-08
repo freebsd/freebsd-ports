@@ -16,7 +16,7 @@ SRCS=	K12-1.bdf K12-2.bdf \
 TARGETS=${SRCS:S/.bdf/.pcf.gz/} \
 	${SRCS:S/.bdf/b.pcf.gz/} \
 	${SRCS:S/.bdf/i.pcf.gz/} \
-	${SRCS:S/.bdf/bi.pcf.gz/} 
+	${SRCS:S/.bdf/bi.pcf.gz/}
 
 all: ${TARGETS}
 

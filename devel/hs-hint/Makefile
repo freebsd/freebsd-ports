@@ -14,7 +14,7 @@ USE_CABAL=	exceptions extensible-exceptions ghc-mtl>=1.2.1 ghc-paths \
 		mtl random utf8-string
 
 INSTALL_PORTEXAMPLES=	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
-	
+
 INSTALL_PORTDATA=	${INSTALL_DATA} \
 			    ${WRKSRC}/AUTHORS \
 			    ${WRKSRC}/README \

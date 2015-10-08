@@ -47,7 +47,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/include/pygobject-3.0/pygobject.h
 	${INSTALL_DATA} ${WRKSRC}/pygobject-3.0.pc \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/pygobject-3.0.pc
-.else 
+.else
 PORTSCOUT=	ignore:1
 
 USE_GNOME+=	glib20 introspection

@@ -13,7 +13,7 @@ LICENSE=	MIT
 
 USE_LDCONFIG=	yes
 MAKE_ARGS=	CC="${CC}"
-ALL_TARGET=	
+ALL_TARGET=
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	include/dictionary.h include/iniparser.h lib/libiniparser.a \

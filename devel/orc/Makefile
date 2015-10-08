@@ -44,7 +44,7 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-E -e '/LIBS/s/-lrt(\ )*//; /LIBRT/s/-lrt//' \
 		-e 's|pkgconfigdir=.*|pkgconfigdir=\"\\$$(prefix)/libdata/pkgconfig\"|g' \
-		${WRKSRC}/configure 
+		${WRKSRC}/configure
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
