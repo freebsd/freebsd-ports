@@ -9,6 +9,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby API for interfacing with Campfire
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-eventmachine>=1.0:${PORTSDIR}/devel/rubygem-eventmachine \
 		rubygem-faraday>=0.9.0:${PORTSDIR}/www/rubygem-faraday\
