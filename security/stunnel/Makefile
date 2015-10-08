@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stunnel
-PORTVERSION=	5.23
+PORTVERSION=	5.24
 CATEGORIES=	security
 MASTER_SITES=	https://www.stunnel.org/downloads/%SUBDIR%/ \
 		http://mirrors.zerg.biz/stunnel/%SUBDIR%/ \
@@ -36,19 +36,19 @@ CONFIGURE_ARGS=	--localstatedir=/var/tmp --enable-static --disable-systemd \
 		--with-ssl="${OPENSSLBASE}"
 SHEBANG_FILES=	src/stunnel3.in
 
-OPTIONS_DEFINE=			IPV6 LIBWRAP FIPS DOCS EXAMPLES
+OPTIONS_DEFINE=			DOCS EXAMPLES FIPS IPV6 LIBWRAP
 OPTIONS_SINGLE=			THREAD
 OPTIONS_SINGLE_THREAD=		FORK PTHREAD UCONTEXT
 OPTIONS_DEFAULT=		PTHREAD
 
+FIPS_CONFIGURE_ENABLE=		fips
 IPV6_CONFIGURE_ENABLE=		ipv6
 LIBWRAP_CONFIGURE_ENABLE=	libwrap
-FIPS_CONFIGURE_ENABLE=		fips
 
+FIPS_DESC=			Enable OpenSSL FIPS mode
 FORK_DESC=			Use the fork(3) threading model
 PTHREAD_DESC=			Use the pthread(3) threading model
 UCONTEXT_DESC=			Use the ucontext(3) threading model
-FIPS_DESC=			Enable OpenSSL FIPS mode
 
 STUNNEL_USER?=	stunnel
 STUNNEL_GROUP?=	stunnel
@@ -70,6 +70,14 @@ CONFIGURE_ARGS+=--with-threads=fork
 .else
 CONFIGURE_ARGS+=--with-threads=pthread
 LDFLAGS+=	-lpthread
+.endif
+
+.if ${PORT_OPTIONS:MFIPS} && "${OPENSSL_PORT}" == "security/libressl"
+IGNORE=		LibreSSL does not support FIPS standard
+.endif
+
+.if "${OPENSSL_PORT}" == "security/libressl"
+NO_PACKAGE=	The stunnel license restricts distribution when linked to non-OpenSSL non-base SSL-libraries
 .endif
 
 post-patch:
