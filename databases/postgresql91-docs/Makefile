@@ -2,7 +2,6 @@
 # $FreeBSD$
 
 PORTNAME=	postgresql
-PORTREVISION=	0
 PKGNAMESUFFIX?=	${DISTV:S/.//}-docs
 DISTV=	${DISTVERSION:R}
 
