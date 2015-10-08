@@ -58,6 +58,61 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a0182578-6e00-11e5-a90c-0026551a22dc">
+    <topic>PostgreSQL -- minor security problems.</topic>
+    <affects>
+      <package>
+	<name>postgresql90-server</name>
+	<range><ge>9.0.0</ge><lt>9.0.22</lt></range>
+      </package>
+      <package>
+	<name>postgresql91-server</name>
+	<range><ge>9.1.0</ge><lt>9.1.18</lt></range>
+      </package>
+      <package>
+	<name>postgresql92-server</name>
+	<range><ge>9.2.0</ge><lt>9.2.13</lt></range>
+      </package>
+      <package>
+	<name>postgresql93-server</name>
+	<range><ge>9.3.0</ge><lt>9.3.9</lt></range>
+      </package>
+      <package>
+	<name>postgresql94-server</name>
+	<range><ge>9.4.0</ge><lt>9.4.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PostgreSQL project reports:</p>
+	<blockquote cite="http://www.postgresql.org/about/news/1615/">
+	  <p>
+		Two security issues have been fixed in this release which affect
+		users of specific PostgreSQL features.
+	  </p>
+	  <ul>
+	    <li>CVE-2015-5289 json or jsonb input values constructed from
+		arbitrary user input can crash the PostgreSQL server and cause a denial of
+		service.
+	    </li>
+	    <li>CVE-2015-5288: The crypt() function included with the optional pgCrypto
+		extension could be exploited to read a few additional bytes of memory.
+		No working exploit for this issue has been developed.
+	    </li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5289</cvename>
+      <cvename>CVE-2015-5288</cvename>
+    </references>
+    <dates>
+      <discovery>2015-10-08</discovery>
+      <entry>2015-10-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d3324fdb-6bf0-11e5-bc5e-00505699053e">
     <topic>ZendFramework1 -- SQL injection vulnerability</topic>
     <affects>
