@@ -10,9 +10,9 @@ PKGNAMESUFFIX=	${SOCKS_SUFFIX}${PKGNAMESUFFIX2}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Popular ICQ-compatible plugin-based program
 
-LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs
-
 LICENSE=	GPLv2
+
+LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs
 
 USES=		cmake iconv
 WRKSRC=		${WRKDIR}/${DISTNAME}
