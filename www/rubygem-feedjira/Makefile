@@ -10,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Feed fetching and parsing library
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-faraday>=0.9:${PORTSDIR}/www/rubygem-faraday \
 		rubygem-faraday_middleware>=0.9:${PORTSDIR}/www/rubygem-faraday_middleware \
