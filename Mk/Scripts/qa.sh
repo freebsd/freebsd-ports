@@ -293,7 +293,28 @@ prefixvar() {
 	fi
 }
 
-checks="shebang symlinks paths stripped desktopfileutils sharedmimeinfo suidfiles libtool libperl prefixvar baselibs"
+terminfo() {
+	local f found
+
+	for f in ${STAGEDIR}${PREFIX}/share/misc/*.terminfo; do
+		[ "${f}" = "${STAGEDIR}${PREFIX}/share/misc/*.terminfo" ] && break #no matches
+		found=1
+		break
+	done
+	for f in ${STAGEDIR}${PREFIX}/share/misc/terminfo.db*; do
+		[ "${f}" = "${STAGEDIR}${PREFIX}/share/misc/terminfo.db*" ] && break #no matches
+		found=1
+		break
+	done
+	if [ -z "${USESTERMINFO}" -a -n "${found}" ]; then
+		warn "you need USES=terminfo"
+	elif [ -n "${USESTERMINFO}" -a -z "${found}" ]; then
+		warn "you may not need USES=terminfo"
+	fi
+	return 0
+}
+
+checks="shebang symlinks paths stripped desktopfileutils sharedmimeinfo suidfiles libtool libperl prefixvar baselibs terminfo"
 
 ret=0
 cd ${STAGEDIR}
