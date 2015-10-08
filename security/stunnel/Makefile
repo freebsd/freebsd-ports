@@ -72,11 +72,11 @@ CONFIGURE_ARGS+=--with-threads=pthread
 LDFLAGS+=	-lpthread
 .endif
 
-.if ${PORT_OPTIONS:MFIPS} && "${OPENSSL_PORT}" == "security/libressl"
+.if ${PORT_OPTIONS:MFIPS} && defined(OPENSSL_PORT) && ${OPENSSL_PORT} == security/libressl
 IGNORE=		LibreSSL does not support FIPS standard
 .endif
 
-.if "${OPENSSL_PORT}" == "security/libressl"
+.if defined(OPENSSL_PORT) && ${OPENSSL_PORT} == security/libressl
 NO_PACKAGE=	The stunnel license restricts distribution when linked to non-OpenSSL non-base SSL-libraries
 .endif
 
