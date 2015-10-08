@@ -103,7 +103,7 @@ include/ming/util/vasprintf.h
 lib/libming.a
 lib/libming.so
 lib/libming.so.1
-lib/libming.so.1.4.4
+lib/libming.so.1.4.6
 libdata/pkgconfig/libming.pc
 %%PORTDOCS%%%%DOCSDIR%%/HISTORY
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
