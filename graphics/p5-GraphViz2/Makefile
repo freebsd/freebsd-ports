@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	GraphViz2
-PORTVERSION=	2.34
-PORTREVISION=	2
+PORTVERSION=	2.36
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RSAVAGE
@@ -42,7 +41,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz \
 		p5-XML-Bare>=0:${PORTSDIR}/textproc/p5-XML-Bare \
 		p5-XML-Tiny>=2.06:${PORTSDIR}/textproc/p5-XML-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Pod>=1.45:${PORTSDIR}/devel/p5-Test-Pod \
+TEST_DEPENDS=	p5-Test-Pod>=1.48:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Version>=0:${PORTSDIR}/devel/p5-Test-Version
 
 OPTIONS_DEFINE=	EXAMPLES
@@ -55,7 +54,7 @@ PORTEXAMPLES=	*
 
 SHEBANG_FILES=	scripts/generate.png.sh scripts/generate.svg.sh scripts/pod2html.sh
 
-post-install:
+post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/scripts/* ${STAGEDIR}${EXAMPLESDIR}/
 
@@ -64,6 +63,10 @@ post-install:
 .if ${PERL_LEVEL} < 501800
 BUILD_DEPENDS+=	p5-PathTools>=3.4000:${PORTSDIR}/devel/p5-PathTools
 RUN_DEPENDS+=	p5-PathTools>=3.4000:${PORTSDIR}/devel/p5-PathTools
+.endif
+
+.if ${PERL_LEVEL} < 502200
+TEST_DEPENDS+=	p5-Test-Simple>=1.001014:${PORTSDIR}/devel/p5-Test-Simple
 .endif
 
 .include <bsd.port.post.mk>
