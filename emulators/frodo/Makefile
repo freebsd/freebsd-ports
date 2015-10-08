@@ -52,12 +52,10 @@ do-install:
 	${TAR} -C ${INSTALL_WRKSRC}/64prgs -cf - . | \
 		${TAR} -C ${STAGEDIR}${PREFIX}/libexec/frodo/64prgs -xf -
 
-.if ${PORT_OPTIONS:MDOCS}
-post-install:
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/CHANGES ${STAGEDIR}${DOCSDIR}/
 	${TAR} -C ${INSTALL_WRKSRC}/Docs -cf - . | \
 		${TAR} -C ${STAGEDIR}${DOCSDIR} -xf -
-.endif
 
 .include <bsd.port.mk>
