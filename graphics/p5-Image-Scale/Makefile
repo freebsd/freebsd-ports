@@ -13,7 +13,7 @@ COMMENT=	Perl module for fast, high-quality fixed-point image resizing
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png 
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 TEST_DEPENDS=	p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
 
 USES=		jpeg perl5

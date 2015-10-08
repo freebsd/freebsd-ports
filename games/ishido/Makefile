@@ -17,5 +17,5 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/ishido.6 ${STAGEDIR}${PREFIX}/man/man6
 	${INSTALL} ${COPY} ${STRIP} ${WRKSRC}/ishido ${STAGEDIR}${PREFIX}/bin
 	${INSTALL} ${COPY} ${WRKSRC}/ishido_scores ${STAGEDIR}${PREFIX}/share/misc/ishido_scores
-		
+
 .include <bsd.port.mk>

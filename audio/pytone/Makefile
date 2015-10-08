@@ -17,7 +17,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}mutagen>0:${PORTSDIR}/audio/py-mutagen
-		
+
 
 USES=		ncurses python:2
 USE_PYTHON=	autoplist distutils

@@ -18,7 +18,7 @@ RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 USES=		zip
 NO_WRKSUBDIR=	yes
 NO_PACKAGE=	Package is way too big
-LEGAL_PACKAGE=	
+LEGAL_PACKAGE=
 CONFLICTS=	crafty-open-large-* crafty-open-medium-* crafty-open-default-*
 
 do-build:

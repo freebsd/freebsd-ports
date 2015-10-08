@@ -162,7 +162,7 @@ post-patch:
 .if defined(CLIENT_ONLY)
 CONFLICTS_INSTALL=	mysql5[02-9]-client-* \
 			mariadb*-client-* \
-			percona*-client-* 
+			percona*-client-*
 
 MAN1=		mysql_config.1 mysql_upgrade.1 mysql.1 mysqladmin.1 \
 		mysqlbinlog.1 mysqlbug.1 mysqlcheck.1 \

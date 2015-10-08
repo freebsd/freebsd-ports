@@ -89,7 +89,7 @@ CONFIGURE_ARGS+=--enable-fpm \
 
 .if defined(OPTIONS_FILE_SET) && ${OPTIONS_FILE_SET:MAPACHE}
 IGNORE=		doesn't install the Apache module anymore:\
-		update your OPTIONS and build www/mod_php55 port instead 
+		update your OPTIONS and build www/mod_php55 port instead
 .endif
 
 .if defined(PKGNAMEPREFIX)

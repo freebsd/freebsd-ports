@@ -4,8 +4,8 @@
 #
 # Renamed dlmalloc
 #
-#  A version of malloc/free/realloc written by Doug Lea and released to the 
-#  public domain. 
+#  A version of malloc/free/realloc written by Doug Lea and released to the
+#  public domain.
 #
 #  preliminary VERSION 2.8.4
 #
@@ -49,8 +49,8 @@ $(LIBMALLOC): $(OBJS)
 	-$(RANLIB) $(LIBMALLOC)
 
 $(LIBSMALLOC): $(SOBJS)
-	rm -f $(LIBSMALLOC) 
-	ld -Bshareable -soname $(LIBSMALLOC) -o $(LIBSMALLOC) $(SOBJS) 
+	rm -f $(LIBSMALLOC)
+	ld -Bshareable -soname $(LIBSMALLOC) -o $(LIBSMALLOC) $(SOBJS)
 
 clean:
 	-rm -f *.o \#* *~ *.core a.out gmon.out mon.out onefile.c *.sL prof.out

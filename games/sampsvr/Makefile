@@ -40,7 +40,7 @@ do-install:
 	${FIND} ${i} -type f -exec \
 		${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/{}" \;
 	${LN} -sf ${DATADIR}/${i} ${STAGEDIR}${SAMPDIR}/${i}
-.endfor	
+.endfor
 	${INSTALL_DATA} ${WRKSRC}/server.cfg \
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.cfg.sample
 	${LN} -sf ${PREFIX}/etc/${PORTNAME}.cfg ${STAGEDIR}${SAMPDIR}/server.cfg

@@ -7,7 +7,7 @@ COMMENT=	Garbage collection and memory leak detection for C and C++ with malloc 
 
 LICENSE=	MIT
 
-MASTERDIR=	${.CURDIR}/../boehm-gc                                                                                                                                                        
+MASTERDIR=	${.CURDIR}/../boehm-gc
 DESCR=		${.CURDIR}/pkg-descr
 
 GC_VARIANT=	redirect
