@@ -6,7 +6,6 @@ CATEGORIES=	irc
 MASTER_SITES=	SF/${PORTNAME}-lamm/${PORTNAME}1.4-lamm/${PORTNAME}1.4.b03-lamm.b02
 PKGNAMESUFFIX=	-lamm${PKGNAMESUFFIX2}
 DISTNAME=	iroffer1.4.b03-lamm.b02
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	IRC "bot" that makes sharing files via DCC extremely easy
@@ -15,12 +14,11 @@ LICENSE=	GPLv2
 
 CONFLICTS=	iroffer-1.* iroffer-dinoex-3.*
 
+USES=		tar:tgz
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	${REINPLACE_CMD} -e 's|cctype="gcc"|cctype="${CC}"|' \
@@ -29,16 +27,16 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/convertxdccfile ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/iroffer ${STAGEDIR}${PREFIX}/bin/
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/WHATSNEW ${STAGEDIR}${DOCSDIR}/
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+
+do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/dynip.sh ${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/iroffer.cron ${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/sample.config ${STAGEDIR}${EXAMPLESDIR}/
-.endif
 
 .include <bsd.port.mk>
