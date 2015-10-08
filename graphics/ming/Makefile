@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	ming
-PORTVERSION=	0.4.5
-PORTREVISION?=	6
+PORTVERSION=	0.4.7
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}/Releases/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Flash 4/5 movie output library with many languages support
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE_GPL2
+LICENSE_FILE_LGPL21=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libgif.so:${PORTSDIR}/graphics/giflib \
@@ -27,33 +27,37 @@ OPTIONS_DEFINE=	DOCS
 
 CONFIGURE_ARGS+=--includedir=${PREFIX}/include/ming
 CPPFLAGS+=	-I. -I.. -I${LOCALBASE}/include
-LDFLAGS+=	-L. -L.. -L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+LDFLAGS+=	-L. -L.. -L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
+PATHFIX_MAKEFILEIN=	Makefile.am
 USE_LDCONFIG=	yes
-USES+=		bison gmake libtool pathfix shebangfix
+USES+=		autoreconf bison gmake libtool pathfix shebangfix
 
 DOCS=		HISTORY NEWS README TODO
 DOCS_UTIL=	README TIPS TODO swftoperl.html
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	lib${PORTNAME}
+GH_PROJECT=	lib${PORTNAME}
+GH_TAGNAME=	${PORTNAME}-${PORTVERSION:S|.|_|g}
 
 SHEBANG_FILES=	util/cws2fws
 
 SLAVEDIRS=	graphics/p5-ming graphics/py-ming
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|ungif|gif|g' ${WRKSRC}/configure ${WRKSRC}/docs/man/Makefile \
-		${WRKSRC}/perl_ext/Makefile.PL ${WRKSRC}/py_ext/setup.py.in
-	@${REINPLACE_CMD} -e '/PrintGifError();/d' ${WRKSRC}/src/blocks/gifdbl.c \
-		${WRKSRC}/util/gif2dbl.c ${WRKSRC}/util/gif2mask.c
-	@${REINPLACE_CMD} -e 's|#if GIFLIB_GIFERRORSTRING|#if 0|' ${WRKSRC}/src/libming.h
+#	@${REINPLACE_CMD} -e 's|ungif|gif|g' ${WRKSRC}/configure.in ${WRKSRC}/docs/man/Makefile.am ${WRKSRC}/perl_ext/Makefile.PL ${WRKSRC}/py_ext/setup.py.in
+#	@${REINPLACE_CMD} -e '/PrintGifError();/d' ${WRKSRC}/src/blocks/gifdbl.c ${WRKSRC}/util/gif2dbl.c ${WRKSRC}/util/gif2mask.c
+#	@${REINPLACE_CMD} -e 's|#if GIFLIB_GIFERRORSTRING|#if 0|' ${WRKSRC}/src/libming.h
 # patch for graphics/p5-ming
 	@${REINPLACE_CMD} -e '/ming_is_compiled()/ s|^|#|; /LIBS/d' ${WRKSRC}/perl_ext/Makefile.PL
 	@${REINPLACE_CMD} -e 's|\.3pm|.3|g' ${WRKSRC}/perl_ext/Makefile.PL ${WRKSRC}/perl_ext/mkdoc
 	@${REINPLACE_CMD} -e 's|GvCV(\(.*\)) = \(.*\);|GvCV_set(\1, \2);|' ${WRKSRC}/perl_ext/Exports.c
 	@${REINPLACE_CMD} -e '1 s|/usr/bin/perl|${PERL}|' ${WRKSRC}/perl_ext/examples/*.cgi
 # patch for graphics/py-ming
-	@${REINPLACE_CMD} -e 's| --root ".*"||' ${WRKSRC}/py_ext/Makefile.in
+	@${REINPLACE_CMD} -e 's| --root ".*"||' ${WRKSRC}/py_ext/Makefile.am
 	@${REINPLACE_CMD} -e 's|/usr/local/|${LOCALBASE}/|g' ${WRKSRC}/py_ext/setup.py.in
 	@${LN} -sf ${LOCALBASE}/include/ming ${WRKSRC}/src
 
