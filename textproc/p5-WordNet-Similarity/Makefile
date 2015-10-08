@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	WordNet-Similarity
-PORTVERSION=	2.05
-PORTREVISION=	1
+PORTVERSION=	2.07
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,13 +10,17 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Modules/CLI to determine semantic relatedness using the WordNet
 
-BUILD_DEPENDS=	p5-WordNet-QueryData>=0:${PORTSDIR}/textproc/p5-WordNet-QueryData \
-		p5-Text-Similarity>=0:${PORTSDIR}/textproc/p5-Text-Similarity \
-		p5-Digest-SHA1>=2.10:${PORTSDIR}/security/p5-Digest-SHA1
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
+		p5-Text-Similarity>=0.10:${PORTSDIR}/textproc/p5-Text-Similarity \
+		p5-WordNet-QueryData>=1.49:${PORTSDIR}/textproc/p5-WordNet-QueryData
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WNHOME?=	${LOCALBASE}/share/WordNet
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS=	WNHOME=${WNHOME}
