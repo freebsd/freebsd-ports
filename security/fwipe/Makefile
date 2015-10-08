@@ -15,7 +15,7 @@ ALL_TARGET=	it
 INSTALL_TARGET=	setup
 
 PLIST_FILES=	bin/fwipe bin/fwipe0 bin/echo0 man/man1/fwipe.1.gz \
-		man/man1/fwipe0.1.gz man/man1/echo0.1.gz 
+		man/man1/fwipe0.1.gz man/man1/echo0.1.gz
 
 post-extract:
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc

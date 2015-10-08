@@ -13,7 +13,7 @@ SRCS=   args.c blok.c builtin.c cmd.c ctype.c error.c expand.c \
 #CFLAGS+=	-DRENO
 #CFLAGS+=	-DULTRIX
 
-CWARNFLAGS?=	-ansi -Wbad-function-cast 
+CWARNFLAGS?=	-ansi -Wbad-function-cast
 WARNS?=	6
 NO_WERROR=1
 WFORMAT=0

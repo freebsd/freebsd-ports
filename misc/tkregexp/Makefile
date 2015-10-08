@@ -7,7 +7,7 @@ CATEGORIES=	misc tk
 MASTER_SITES=	http://laurent.riesterer.free.fr/regexp/
 DISTNAME=	visual_regexp-${PORTVERSION}
 EXTRACT_SUFX=	.tcl
-EXTRACT_ONLY=	
+EXTRACT_ONLY=
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Interactive regexp design tool
