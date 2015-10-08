@@ -15,6 +15,13 @@ LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 USES=		bison gmake
 
+.include <bsd.port.options.mk>
+
+.if ${OSVERSION} < 1000033
+BUILD_DEPENDS+=	flex>=0:${PORTSDIR}/textproc/flex
+CONFIGURE_ENV+=	ac_cv_prog_LEX="${LOCALBASE}/bin/flex"
+.endif
+
 CONFIGURE_ARGS=	--disable-suffix
 
 .include <bsd.port.mk>
