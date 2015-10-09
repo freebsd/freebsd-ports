@@ -4596,6 +4596,7 @@
     SUBDIR += rubygem-annoy
     SUBDIR += rubygem-ansi
     SUBDIR += rubygem-apipie-bindings
+    SUBDIR += rubygem-apipie-params
     SUBDIR += rubygem-app_config
     SUBDIR += rubygem-arrayfields
     SUBDIR += rubygem-ascii85
