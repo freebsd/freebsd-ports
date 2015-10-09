@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-Role-WithOverloading
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ETHER
@@ -18,8 +18,10 @@ BUILD_DEPENDS=	p5-Moose>=1.15:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Types>=0:${PORTSDIR}/devel/p5-MooseX-Types \
 		p5-aliased>=0:${PORTSDIR}/devel/p5-aliased \
 		p5-namespace-autoclean>=0.16:${PORTSDIR}/devel/p5-namespace-autoclean \
-		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean
+		p5-namespace-clean>=0.19:${PORTSDIR}/devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+DEPRECATED=	deprecated by upstream (obsolete with modern Moose)
 
 USES=		perl5
 USE_PERL5=	configure
