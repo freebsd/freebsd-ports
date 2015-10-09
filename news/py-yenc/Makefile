@@ -5,7 +5,7 @@ PORTNAME=	yenc
 PORTVERSION=	0.3
 CATEGORIES=	news python
 MASTER_SITES=	http://sabnzbd.sourceforge.net/
-		
+
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jlaffaye@FreeBSD.org

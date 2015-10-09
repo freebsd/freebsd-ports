@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	aqualung
-DISTVERSION=	1.0-rc1
+PORTVERSION=	1.0
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Music player with rich features
 
 LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
 		libmp3lame.so:${PORTSDIR}/audio/lame \
@@ -28,10 +29,10 @@ LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
 		libcdio_paranoia.so:${PORTSDIR}/sysutils/libcdio-paranoia \
 		liblrdf.so:${PORTSDIR}/textproc/liblrdf
 
-USES=		gettext lua:51 pkgconfig
+USES=		gettext lua pkgconfig
 USE_GNOME=	gtk20 libxml2 libxslt
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-alsa=no --with-ifp=no
+CONFIGURE_ARGS=	--with-ifp=no
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -39,8 +40,11 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 DESKTOP_ENTRIES="Aqualung" "" "${DATADIR}/general.png" "aqualung" \
 		"Audio;AudioVideo;GTK;" ""
 
-OPTIONS_DEFINE=		DOCS JACK PULSEAUDIO
+OPTIONS_DEFINE=		ALSA DOCS JACK PULSEAUDIO
 
+ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_CONFIGURE_ON=	--with-alsa=yes
+ALSA_CONFIGURE_OFF=	--with-alsa=no
 JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
 JACK_CONFIGURE_ON=	--with-jack=yes
 JACK_CONFIGURE_OFF=	--with-jack=no

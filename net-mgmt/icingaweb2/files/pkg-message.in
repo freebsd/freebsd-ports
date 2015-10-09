@@ -1,0 +1,13 @@
+Sample configuration files for Apache and NGinx have been installed in:
+%%EXAMPLESDIR%%
+
+Be sure to enable PHP and rewrite support in your browser.
+
+Now create a configuration token:
+cd %%WWWDIR%% && ./bin/icingacli setup token create --config=%%ETCDIR%%
+
+Enter this token on Icinga Web 2's setup interface at
+http://localhost/icingaweb2/setup
+
+If you like to create the database schemas manually, you can find the
+SQL files at %%WWWDIR%%/etc/schema

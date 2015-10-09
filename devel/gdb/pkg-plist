@@ -1,6 +1,8 @@
 %%GDB_LINK%%bin/gdb
+%%GDB_LINK%%%%KGDB%%bin/kgdb
 bin/gdb%%VER%%
 %%TUI%%bin/gdbtui%%VER%%
+%%KGDB%%bin/kgdb%%VER%%
 man/man1/gdb%%VER%%.1.gz
 %%PYTHON%%%%DATADIR%%%%VER%%/python/gdb/__init__.py
 %%PYTHON%%%%DATADIR%%%%VER%%/python/gdb/FrameDecorator.py

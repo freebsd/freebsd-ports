@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-Method-Signatures
-PORTVERSION=	0.48
+PORTVERSION=	0.49
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,12 +27,13 @@ BUILD_DEPENDS=	p5-B-Hooks-EndOfScope>=0.10:${PORTSDIR}/devel/p5-B-Hooks-EndOfSco
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
 		p5-aliased>=0:${PORTSDIR}/devel/p5-aliased \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean \
-		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean
+		p5-namespace-clean>=0.19:${PORTSDIR}/devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Eval-Closure>=0:${PORTSDIR}/devel/p5-Eval-Closure \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	modbuildtiny
 

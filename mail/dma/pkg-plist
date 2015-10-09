@@ -3,4 +3,4 @@
 @sample(root,mail,0644) etc/dma/dma.conf.sample
 @sample(root,mail,0640) etc/dma/auth.conf.sample
 man/man8/dma.8.gz
-@dir(root,mail,770) /var/spool/dma
+%%VARDIR%%@dir(root,mail,770) /var/spool/dma

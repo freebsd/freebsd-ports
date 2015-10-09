@@ -58,6 +58,358 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a0182578-6e00-11e5-a90c-0026551a22dc">
+    <topic>PostgreSQL -- minor security problems.</topic>
+    <affects>
+      <package>
+	<name>postgresql90-server</name>
+	<range><ge>9.0.0</ge><lt>9.0.22</lt></range>
+      </package>
+      <package>
+	<name>postgresql91-server</name>
+	<range><ge>9.1.0</ge><lt>9.1.18</lt></range>
+      </package>
+      <package>
+	<name>postgresql92-server</name>
+	<range><ge>9.2.0</ge><lt>9.2.13</lt></range>
+      </package>
+      <package>
+	<name>postgresql93-server</name>
+	<range><ge>9.3.0</ge><lt>9.3.9</lt></range>
+      </package>
+      <package>
+	<name>postgresql94-server</name>
+	<range><ge>9.4.0</ge><lt>9.4.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PostgreSQL project reports:</p>
+	<blockquote cite="http://www.postgresql.org/about/news/1615/">
+	  <p>
+		Two security issues have been fixed in this release which affect
+		users of specific PostgreSQL features.
+	  </p>
+	  <ul>
+	    <li>CVE-2015-5289 json or jsonb input values constructed from
+		arbitrary user input can crash the PostgreSQL server and cause a denial of
+		service.
+	    </li>
+	    <li>CVE-2015-5288: The crypt() function included with the optional pgCrypto
+		extension could be exploited to read a few additional bytes of memory.
+		No working exploit for this issue has been developed.
+	    </li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5289</cvename>
+      <cvename>CVE-2015-5288</cvename>
+    </references>
+    <dates>
+      <discovery>2015-10-08</discovery>
+      <entry>2015-10-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d3324fdb-6bf0-11e5-bc5e-00505699053e">
+    <topic>ZendFramework1 -- SQL injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>ZendFramework1</name>
+	<range><lt>1.12.16</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Zend Framework developers report:</p>
+	<blockquote cite="http://framework.zend.com/security/advisory/ZF2015-08">
+	  <p>The PDO adapters of Zend Framework 1 do not filter null bytes values
+	    in SQL statements. A PDO adapter can treat null bytes in a query as a
+	    string terminator, allowing an attacker to add arbitrary SQL
+	    following a null byte, and thus create a SQL injection.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openwall.com/lists/oss-security/2015/09/30/6</url>
+      <url>http://framework.zend.com/security/advisory/ZF2015-08</url>
+    </references>
+    <dates>
+      <discovery>2015-09-15</discovery>
+      <entry>2015-10-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="42852f72-6bd3-11e5-9909-002590263bf5">
+    <topic>OpenSMTPD -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>opensmtpd</name>
+	<range><lt>5.7.3,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenSMTPD developers report:</p>
+	<blockquote cite="https://www.opensmtpd.org/announces/release-5.7.3.txt">
+	  <p>fix an mda buffer truncation bug which allows a user to create
+	    forward files that pass session checks but fail delivery later down
+	    the chain, within the user mda</p>
+	  <p>fix remote buffer overflow in unprivileged pony process</p>
+	  <p>reworked offline enqueue to better protect against hardlink
+	    attacks</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openwall.com/lists/oss-security/2015/10/04/2</url>
+      <url>https://www.opensmtpd.org/announces/release-5.7.3.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-10-04</discovery>
+      <entry>2015-10-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5d280761-6bcf-11e5-9909-002590263bf5">
+    <topic>mbedTLS/PolarSSL -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>polarssl</name>
+	<range><ge>1.2.0</ge><lt>1.2.16</lt></range>
+      </package>
+      <package>
+	<name>polarssl13</name>
+	<range><ge>1.3.0</ge><lt>1.3.13</lt></range>
+      </package>
+      <package>
+	<name>mbedtls</name>
+	<range><lt>2.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ARM Limited reports:</p>
+	<blockquote cite="https://tls.mbed.org/tech-updates/releases/mbedtls-2.1.1-and-1.3.13-and-polarssl-1.2.16-released">
+	  <p>Florian Weimar from Red Hat published on Lenstra's RSA-CRT attach
+	    for PKCS#1 v1.5 signatures. These releases include countermeasures
+	    against that attack.</p>
+	  <p>Fabian Foerg of Gotham Digital Science found a possible client-side
+	    NULL pointer dereference, using the AFL Fuzzer. This dereference can
+	    only occur when misusing the API, although a fix has still been
+	    implemented.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://tls.mbed.org/tech-updates/releases/mbedtls-2.1.1-and-1.3.13-and-polarssl-1.2.16-released</url>
+    </references>
+    <dates>
+      <discovery>2015-09-18</discovery>
+      <entry>2015-10-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="953aaa57-6bce-11e5-9909-002590263bf5">
+    <topic>mbedTLS/PolarSSL -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>polarssl</name>
+	<range><ge>1.2.0</ge><lt>1.2.15</lt></range>
+      </package>
+      <package>
+	<name>polarssl13</name>
+	<range><ge>1.3.0</ge><lt>1.3.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ARM Limited reports:</p>
+	<blockquote cite="https://tls.mbed.org/tech-updates/releases/polarssl-1.2.15-and-mbedtls-1.3.12-released">
+	  <p>In order to strengthen the minimum requirements for connections and
+	    to protect against the Logjam attack, the minimum size of
+	    Diffie-Hellman parameters accepted by the client has been increased
+	    to 1024 bits.</p>
+	  <p>In addition the default size for the Diffie-Hellman parameters on
+	    the server are increased to 2048 bits. This can be changed with
+	    ssl_set_dh_params() in case this is necessary.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://tls.mbed.org/tech-updates/releases/polarssl-1.2.15-and-mbedtls-1.3.12-released</url>
+    </references>
+    <dates>
+      <discovery>2015-08-11</discovery>
+      <entry>2015-10-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9272a5b0-6b40-11e5-bd7f-bcaec565249c">
+    <topic>gdk-pixbuf2 -- head overflow and DoS</topic>
+    <affects>
+      <package>
+	<name>gdk-pixbuf2</name>
+	<range><lt>2.32.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/10/02/9">
+	  <p>We found a heap overflow and a DoS in the gdk-pixbuf
+	    implementation triggered by the scaling of tga file.</p>
+	</blockquote>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/10/02/10">
+	  <p>We found a heap overflow in the gdk-pixbuf implementation
+	    triggered by the scaling of gif file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7673</cvename>
+      <cvename>CVE-2015-7674</cvename>
+      <url>https://mail.gnome.org/archives/ftp-release-list/2015-September/msg00201.html</url>
+      <url>https://mail.gnome.org/archives/ftp-release-list/2015-September/msg00287.html</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/10/02/9</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/10/02/10</url>
+    </references>
+    <dates>
+      <discovery>2015-10-02</discovery>
+      <entry>2015-10-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6b3374d4-6b0b-11e5-9909-002590263bf5">
+    <topic>plone -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>plone</name>
+	<range><lt>4.3.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Plone.org reports:</p>
+	<blockquote cite="https://plone.org/products/plone/security/advisories/20150910-announcement">
+	  <p>Versions Affected: All current Plone versions.</p>
+	  <p>Versions Not Affected: None.</p>
+	  <p>Nature of vulnerability: Allows creation of members by anonymous
+	    users on sites that have self-registration enabled, allowing bypass
+	    of CAPTCHA and similar protections against scripted attacks.</p>
+	  <p>The patch can be added to buildouts as Products.PloneHotfix20150910
+	    (available from PyPI) or downloaded from Plone.org.</p>
+	  <p>Immediate Measures You Should Take: Disable self-registration until
+	    you have applied the patch.</p>
+	</blockquote>
+	<blockquote cite="https://plone.org/security/20150910/non-persistent-xss-in-plone">
+	  <p>Plone's URL checking infrastructure includes a method for checking
+	    if URLs valid and located in the Plone site. By passing HTML into
+	    this specially crafted url, XSS can be achieved.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/203255</freebsdpr>
+      <url>https://plone.org/products/plone-hotfix/releases/20150910</url>
+      <url>https://plone.org/products/plone/security/advisories/20150910-announcement</url>
+      <url>https://plone.org/security/20150910/non-persistent-xss-in-plone</url>
+      <url>https://github.com/plone/Products.CMFPlone/commit/3da710a2cd68587f0bf34f2e7ea1167d6eeee087</url>
+    </references>
+    <dates>
+      <discovery>2015-09-10</discovery>
+      <entry>2015-10-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c1da8b75-6aef-11e5-9909-002590263bf5">
+    <topic>php -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>php5-phar</name>
+	<range><le>5.4.45</le></range>
+      </package>
+      <package>
+	<name>php55-phar</name>
+	<range><lt>5.5.30</lt></range>
+      </package>
+      <package>
+	<name>php56-phar</name>
+	<range><lt>5.6.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PHP reports:</p>
+	<blockquote cite="http://php.net/ChangeLog-5.php#5.5.30">
+	  <p>Phar:</p>
+	  <ul>
+	    <li>Fixed bug #69720 (Null pointer dereference in
+	      phar_get_fp_offset()).</li>
+	    <li>Fixed bug #70433 (Uninitialized pointer in phar_make_dirstream
+	      when zip entry filename is "/").</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/203541</freebsdpr>
+      <url>http://php.net/ChangeLog-5.php#5.5.30</url>
+      <url>http://php.net/ChangeLog-5.php#5.6.14</url>
+    </references>
+    <dates>
+      <discovery>2015-10-01</discovery>
+      <entry>2015-10-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ee7bdf7f-11bb-4eea-b054-c692ab848c20">
+    <topic>OpenSMTPD -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>opensmtpd</name>
+	<range><lt>5.7.2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenSMTPD developers report:</p>
+	<blockquote cite="https://www.opensmtpd.org/announces/release-5.7.2.txt">
+	  <p>an oversight in the portable version of fgetln() that allows
+	    attackers to read and write out-of-bounds memory</p>
+	  <p>multiple denial-of-service vulnerabilities that allow local users
+	    to kill or hang OpenSMTPD</p>
+	  <p>a stack-based buffer overflow that allows local users to crash
+	    OpenSMTPD, or execute arbitrary code as the non-chrooted _smtpd
+	    user</p>
+	  <p>a hardlink attack (or race-conditioned symlink attack) that allows
+	    local users to unset the chflags() of arbitrary files</p>
+	  <p>a hardlink attack that allows local users to read the first line of
+	    arbitrary files (for example, root's hash from /etc/master.passwd)
+	    </p>
+	  <p>a denial-of-service vulnerability that allows remote attackers to
+	    fill OpenSMTPD's queue or mailbox hard-disk partition</p>
+	  <p>an out-of-bounds memory read that allows remote attackers to crash
+	    OpenSMTPD, or leak information and defeat the ASLR protection</p>
+	  <p>a use-after-free vulnerability that allows remote attackers to
+	    crash OpenSMTPD, or execute arbitrary code as the non-chrooted
+	    _smtpd user</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.opensmtpd.org/announces/release-5.7.2.txt</url>
+      <cvename>CVE-2015-7687</cvename>
+    </references>
+    <dates>
+      <discovery>2015-10-02</discovery>
+      <entry>2015-10-04</entry>
+      <modified>2015-10-06</modified>
+    </dates>
+  </vuln>
+
   <vuln vid="be3069c9-67e7-11e5-9909-002590263bf5">
     <topic>james -- multiple vulnerabilities</topic>
     <affects>
@@ -82,12 +434,14 @@ Notes:
     <references>
       <freebsdpr>ports/203461</freebsdpr>
       <certvu>988628</certvu>
+      <cvename>CVE-2015-7611</cvename>
       <url>http://james.apache.org/download.cgi#Apache_James_Server</url>
       <url>https://blogs.apache.org/james/entry/apache_james_server_2_3</url>
     </references>
     <dates>
       <discovery>2015-09-30</discovery>
       <entry>2015-10-01</entry>
+      <modified>2015-10-04</modified>
     </dates>
   </vuln>
 

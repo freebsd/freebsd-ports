@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	perl
-PORTREVISION=	2
+PORTREVISION=	0
 # XXX Remove second line, uncomment first
 #DISTVERSION=	${PERL_VERSION}
 DISTVERSION=	${GH_TAGNAME:C/^v//:C/-g[0-9a-f]*$//}
@@ -22,11 +22,14 @@ LICENSE_COMB=	dual
 LICENSE_FILE_ART10=	${WRKSRC}/Artistic
 LICENSE_FILE_GPLv1=	${WRKSRC}/Copying
 
+TEST_TARGET=	test_harness
+TEST_ENV=	${MAKE_ENV} TEST_JOBS=${MAKE_JOBS_NUMBER}
+
 # XXX Remove github things.
 USE_GITHUB=	yes
 GH_ACCOUNT=	Perl
 GH_PROJECT=	perl5
-GH_TAGNAME=	v5.23.3-12-g96f902f
+GH_TAGNAME=	v5.23.3-69-g0648b1f
 
 OPTIONS_DEFINE=	DEBUG GDBM PERL_64BITINT PTHREAD \
 		MULTIPLICITY SITECUSTOMIZE
@@ -270,7 +273,7 @@ post-install:
 	${MKDIR} ${STAGEDIR}${SITE_ARCH}/machine
 	${MKDIR} ${STAGEDIR}${SITE_ARCH}/sys
 	# h2ph needs perl, but perl is not installed, it's only
-	# staged, so, use the one in WRKDIR 
+	# staged, so, use the one in WRKDIR
 	(cd /usr/include && ${SETENV} LD_LIBRARY_PATH=${WRKSRC} \
 		${WRKSRC}/perl -I ${WRKSRC}/lib ${STAGEDIR}${PREFIX}/bin/h2ph${BINSUFFIX} \
 		-d ${STAGEDIR}${SITE_ARCH} *.h machine/*.h sys/*.h >/dev/null)
@@ -282,10 +285,5 @@ post-install:
 			${CHMOD} 444 $$f; \
 		done
 	${INSTALL_DATA} ${WRKDIR}/perl-man.conf ${STAGEDIR}${PREFIX}/etc/man.d/perl${PERL_VER}.conf
-
-test: build
-	(cd ${WRKSRC}; TEST_JOBS=${MAKE_JOBS_NUMBER} make test_harness)
-
-regression-test: test
 
 .include <bsd.port.mk>

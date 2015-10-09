@@ -4,7 +4,7 @@
 PORTNAME=	dlmalloc
 PORTVERSION=	2.8.6
 CATEGORIES=	devel
-MASTER_SITES=	ftp://gee.cs.oswego.edu/pub/misc/ 
+MASTER_SITES=	ftp://gee.cs.oswego.edu/pub/misc/
 DISTFILES=	malloc-${PORTVERSION}.c malloc-${PORTVERSION}.h
 
 MAINTAINER=	roberto@FreeBSD.org

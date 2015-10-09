@@ -1,5 +1,5 @@
---- WindowMaker/menu.orig	2013-05-03 03:12:25.000000000 +0900
-+++ WindowMaker/menu	2013-05-03 03:12:17.000000000 +0900
+--- WindowMaker/menu.orig	2015-08-11 18:41:14 UTC
++++ WindowMaker/menu
 @@ -208,7 +208,7 @@
  		"Background" END
  		"Save Theme" SHEXEC getstyle -t $HOME/GNUstep/Library/WindowMaker/Themes/"%a(Theme name,Enter file name:)"

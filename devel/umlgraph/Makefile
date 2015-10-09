@@ -2,22 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	umlgraph
-PORTVERSION=	5.6
-PORTREVISION=	1
+PORTVERSION=	5.7.2
 CATEGORIES=	devel java
-MASTER_SITES=	http://www.umlgraph.org/
-DISTNAME=	UMLGraph-${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	https://github.com/dspinellis/UMLGraph/archive/
+DISTNAME=	R${PORTVERSION:S/./_/g}
 
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Automated drawing of UML diagrams
 
 LICENSE=	BSD3CLAUSE
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
+WRKSRC=		${WRKDIR}/UMLGraph-${DISTNAME}
 USE_ANT=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.8
 
 BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz \
 		pic2plot:${PORTSDIR}/graphics/plotutils
@@ -25,20 +23,14 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PLIST_FILES=	bin/umlgraph %%JAVAJARDIR%%/UmlGraph.jar
 
-.include <bsd.port.pre.mk>
-
-.if ${JAVA_PORT_VERSION:M1.8.*}
-EXTRA_PATCHES=  ${PATCHDIR}/extra-patch-src_org_umlgraph_doclet_WrappedClassDoc.java
-.endif
-
 post-configure:
 	${REINPLACE_CMD} -e 's|%%JAVA_HOME%%|${JAVA_HOME}|; \
 		s|%%JAVAJARDIR%%|${JAVAJARDIR}|' \
-		${WRKSRC}/bin/umlgraph
+		${WRKSRC}/umlgraph
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
 	${INSTALL_DATA} ${WRKSRC}/lib/UmlGraph.jar ${STAGEDIR}${JAVAJARDIR}/
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/umlgraph ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/umlgraph ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

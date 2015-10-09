@@ -2,6 +2,7 @@
 
 PORTNAME=	jose
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	security
 PKGNAMEPREFIX=	erlang-
 
@@ -15,6 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	potatosalad
 GH_PROJECT=	erlang-jose
 ERL_APP_NAME=	erlang-jose
+DOCSDIR=	${PREFIX}/share/doc/${ERL_APP_NAME}
 
 ERL_BUILD_DEPS=	converters/erlang-base64url
 ERL_RUN_DEPS:=	${ERL_BUILD_DEPS}

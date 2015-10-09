@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20151006:
+  AFFECTS: users of www/firefox, www/seamonkey
+  AUTHOR: gecko@FreeBSD.org
+
+  Firefox since 41.0 and SeaMonkey since 2.38 require databases/sqlite3
+  port built with DBSTAT option enabled (default). Re-run "make config"
+  if the port(s) fail to build as described in ports/200853.
+
 20150921:
   AFFECTS: users of mail/rspamd
   AUTHOR: vsevolod@FreeBSD.org

@@ -48,6 +48,7 @@ OPTIONS_DEFAULT=WCHAR LUIT 256COLOR
 LUIT_BUILD_DEPENDS=		luit:${PORTSDIR}/x11/luit
 LUIT_CONFIGURE_ENABLE=		luit
 WCHAR_CONFIGURE_ENABLE=		wide-chars
+WCHAR_VARS=			PKGMESSAGE="${PKGDIR}/pkg-message.wchar"
 DECTERM_CONFIGURE_ENABLE=	dec-locator
 PCRE_CONFIGURE_WITH=		pcre
 PCRE_LIB_DEPENDS=		libpcre.so:${PORTSDIR}/devel/pcre
@@ -68,10 +69,6 @@ NEXTAW_LIB_DEPENDS=		libneXtaw.so:${PORTSDIR}/x11-toolkits/neXtaw
 USE_XORG+=	xaw
 .endif
 
-.if ${OSVERSION} < 900004
-LIB_DEPENDS+=	libutempter.so:${PORTSDIR}/sysutils/libutempter
-.endif
-
 post-extract:
 	@${CP} ${WRKDIR}/bsd-xterm-icons-1/*.png \
 		${WRKDIR}/bsd-xterm-icons-1/*.xpm \
@@ -83,9 +80,5 @@ post-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/xterm.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/
-
-.if ${PORT_OPTIONS:MWCHAR}
-	@${CAT} ${PKGMESSAGE}
-.endif
 
 .include <bsd.port.mk>

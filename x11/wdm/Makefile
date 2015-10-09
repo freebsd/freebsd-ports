@@ -42,7 +42,7 @@ CONFIGURE_ARGS=	--with-logdir=/var/log \
 		--with-wmlist=wmaker:afterstep:blackbox:ctwm:enlightenment:fvwm:fvwm2:fvwm95:olvwm:qvwm:tvtwm
 
 CPPFLAGS+=	-I${LOCALBASE}/include -DCSRG_BASED -DHAS_SETUSERCONTEXT
-LIBS+=		-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib -lintl
 
 DEF_SERVER?=	${LOCALBASE}/bin/X
 XRDB_PATH?=	${LOCALBASE}/bin/xrdb

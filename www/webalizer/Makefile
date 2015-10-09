@@ -46,12 +46,12 @@ LARGE_URL_DESC=Enable URLs longer 512 bytes
 DISTFILES+=	webalizer-flags.tgz:main
 .endif
 .if ${PORT_OPTIONS:MGEODB} || make(makesum) || defined(FETCH_ALL)
-DISTFILES+=	webalizer-geodb-20141101.tgz:geodb
+DISTFILES+=	webalizer-geodb-20150901.tgz:geodb
 .endif
 
 # slave ports override with languages specific gd
 .if !defined(LIB_DEPENDS)
-LIB_DEPENDS=	libgd.so:${PORTSDIR}/${GD_PORT}
+LIB_DEPENDS+=	libgd.so:${PORTSDIR}/${GD_PORT}
 .endif
 
 .if ${PORT_OPTIONS:MGEOIP}
@@ -76,7 +76,7 @@ CONFIGURE_ARGS+=	--enable-geoip \
 CONFLICTS+=	${PKGNAMEPREFIX}webalizer-geoip-2*
 .endif
 
-.if ${PORT_OPTIONS:MGEODB} || ${PORT_OPTIONS:MGEOIP} 
+.if ${PORT_OPTIONS:MGEODB} || ${PORT_OPTIONS:MGEOIP}
 PLIST_SUB+=	WITH_GEOIP=""
 .else
 PLIST_SUB+=	WITH_GEOIP="@comment "
@@ -100,7 +100,7 @@ CONFIGURE_ARGS+=	--enable-dns \
 
 LDFLAGS+=	-L${PREFIX}/lib
 CFLAGS+=	-Wall
-MAN1=		${PKGNAMEPREFIX}webalizer.1 ${PKGNAMEPREFIX}wcmgr.1
+LMAN1=		${PKGNAMEPREFIX}webalizer.1 ${PKGNAMEPREFIX}wcmgr.1
 DOC1=		CHANGES Copyright INSTALL \
 		README README.FIRST DNS.README country-codes.txt
 EXAMPLES1=	msfree.png sample.conf webalizer.png
@@ -178,10 +178,10 @@ do-install:
 		${STAGEDIR}${PREFIX}/etc/${PKGNAMEPREFIX}webalizer.conf-dist ;
 
 post-install:
-.for i in ${MAN1}
+.for i in ${LMAN1}
 	${INSTALL_MAN} ${WRKSRC}/${i:S/^${PKGNAMEPREFIX}//} ${STAGEDIR}${PREFIX}/man/man1/${i}
 .endfor
-.if ${PORT_OPTIONS:MGEODB} || ${PORT_OPTIONS:MGEOIP} 
+.if ${PORT_OPTIONS:MGEODB} || ${PORT_OPTIONS:MGEOIP}
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/geolizer
 	${INSTALL_DATA} ${WRKDIR}/flags/* ${STAGEDIR}${PREFIX}/share/geolizer/
 .endif

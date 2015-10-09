@@ -109,7 +109,7 @@ do-install:
 			${INSTALL_PROGRAM} peazip ${STAGEDIR}${DATADIR}
 	@cd ${WRKSRC}/FreeDesktop_integration && \
 		${INSTALL_DATA} peazip.desktop ${STAGEDIR}${DESKTOPDIR} && \
-		${INSTALL_DATA} peazip.png ${STAGEDIR}${PREFIX}/share/pixmaps/		
+		${INSTALL_DATA} peazip.png ${STAGEDIR}${PREFIX}/share/pixmaps/
 	${INSTALL_SCRIPT} ${WRKDIR}/pea ${WRKDIR}/pealauncher ${WRKDIR}/peazip ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.post.mk>

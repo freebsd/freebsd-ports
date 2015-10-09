@@ -11,6 +11,7 @@ DISTNAME=	hpack79src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-System Archiver with open keys PGP-based security
 
+USES=		alias
 USE_CSTD=	gnu89
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile

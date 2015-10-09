@@ -3,7 +3,7 @@
 
 PORTNAME=	qmailadmin
 PORTVERSION=	1.2.15
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	2
 CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION} \
@@ -104,7 +104,8 @@ LIBS+=		-L${LOCALBASE}/lib -lcrack
 
 VPOPMAIL_DIR?=	${LOCALBASE}/vpopmail
 
-GNU_CONFIGURE=	YES
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
 # Notes and comments:
 #

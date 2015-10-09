@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	math
 
 MAINTAINER=	dieterich@ogolem.org
-COMMENT=	Software library containing FFT functions written in OpenCL 
+COMMENT=	Software library containing FFT functions written in OpenCL
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -27,7 +27,7 @@ USE_GNOME=	gnomedesktop3 gnomeprefix intlhack introspection:build \
 		libxml2 pygobject3
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
-GNU_CONFIGURE=	yes	
+GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

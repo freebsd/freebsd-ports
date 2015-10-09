@@ -1539,6 +1539,9 @@ QA_ENV+=		USESLIBTOOL=yes
 .if !empty(USES:Mshared-mime-info)
 QA_ENV+=		USESSHAREDMIMEINFO=yes
 .endif
+.if !empty(USES:Mterminfo)
+QA_ENV+=		USESTERMINFO=yes
+.endif
 
 CO_ENV+=		STAGEDIR=${STAGEDIR} \
 				PREFIX=${PREFIX} \
@@ -3623,33 +3626,38 @@ install-mtree:
 
 .if !target(install-ldconfig-file)
 install-ldconfig-file:
-.if defined(USE_LDCONFIG) || defined(USE_LDCONFIG32)
-.if defined(USE_LDCONFIG)
-.if defined(USE_LINUX_PREFIX)
-.else
-.if ${USE_LDCONFIG} != "${LOCALBASE}/lib" && !defined(INSTALL_AS_USER)
+.  if defined(USE_LDCONFIG) || defined(USE_LDCONFIG32)
+.    if defined(USE_LDCONFIG)
+.      if !defined(USE_LINUX_PREFIX)
+.        if ${USE_LDCONFIG} != "${LOCALBASE}/lib" && !defined(INSTALL_AS_USER)
 	@${ECHO_MSG} "===>   Installing ldconfig configuration file"
-.if defined(NO_MTREE) || ${PREFIX} != ${LOCALBASE}
+.          if defined(NO_MTREE) || ${PREFIX} != ${LOCALBASE}
 	@${MKDIR} ${STAGEDIR}${LOCALBASE}/${LDCONFIG_DIR}
-.endif
+.          endif
 	@${ECHO_CMD} ${USE_LDCONFIG} | ${TR} ' ' '\n' \
 		> ${STAGEDIR}${LOCALBASE}/${LDCONFIG_DIR}/${PKGBASE}
 	@${ECHO_CMD} ${LOCALBASE}/${LDCONFIG_DIR}/${PKGBASE} >> ${TMPPLIST}
-.endif
-.endif
-.endif
-.if defined(USE_LDCONFIG32)
-.if !defined(INSTALL_AS_USER)
+.          if ${PREFIX} != ${LOCALBASE}
+	@${ECHO_CMD} "@dir ${LOCALBASE}/${LDCONFIG_DIR}" >> ${TMPPLIST}
+.          endif
+.        endif
+.      endif
+.    endif
+.    if defined(USE_LDCONFIG32)
+.      if !defined(INSTALL_AS_USER)
 	@${ECHO_MSG} "===>   Installing 32-bit ldconfig configuration file"
-.if defined(NO_MTREE) || ${PREFIX} != ${LOCALBASE}
+.        if defined(NO_MTREE) || ${PREFIX} != ${LOCALBASE}
 	@${MKDIR} ${STAGEDIR}${LOCALBASE}/${LDCONFIG32_DIR}
-.endif
+.        endif
 	@${ECHO_CMD} ${USE_LDCONFIG32} | ${TR} ' ' '\n' \
 		> ${STAGEDIR}${LOCALBASE}/${LDCONFIG32_DIR}/${PKGBASE}
 	@${ECHO_CMD} ${LOCALBASE}/${LDCONFIG32_DIR}/${PKGBASE} >> ${TMPPLIST}
-.endif
-.endif
-.endif
+.        if ${PREFIX} != ${LOCALBASE}
+	@${ECHO_CMD} "@dir ${LOCALBASE}/${LDCONFIG32_DIR}" >> ${TMPPLIST}
+.        endif
+.      endif
+.    endif
+.  endif
 .endif
 
 .if !target(create-users-groups)

@@ -1,5 +1,5 @@
---- util/wmiv.c.orig	2014-09-05 04:35:03.000000000 +0900
-+++ util/wmiv.c	2014-09-05 04:35:45.000000000 +0900
+--- util/wmiv.c.orig	2015-08-11 18:41:14 UTC
++++ util/wmiv.c
 @@ -28,7 +28,9 @@
  #include <X11/Xlib.h>
  #include "wraster.h"

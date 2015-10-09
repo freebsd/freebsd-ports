@@ -1,4 +1,4 @@
-# Created by: Edson Brandi <ebrandi.home@uol.com.br> 
+# Created by: Edson Brandi <ebrandi.home@uol.com.br>
 # $FreeBSD$
 
 PORTNAME=	livecd

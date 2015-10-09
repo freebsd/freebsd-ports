@@ -83,6 +83,7 @@
     SUBDIR += clucene
     SUBDIR += clucene-qt4
     SUBDIR += clucene-qt5
+    SUBDIR += cmark
     SUBDIR += coccigrep
     SUBDIR += code2html
     SUBDIR += codespell
@@ -223,6 +224,7 @@
     SUBDIR += groff
     SUBDIR += groonga
     SUBDIR += gsed
+    SUBDIR += gspell
     SUBDIR += gtk-doc
     SUBDIR += gtkspell
     SUBDIR += gtkspell-reference

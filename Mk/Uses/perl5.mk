@@ -308,7 +308,7 @@ fix-perl-things:
 	@${RM} -f ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/perllocal.pod* || :
 	@${RMDIR} -p ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH} 2>/dev/null || :
 
-.if !target(do-test)
+.if !target(do-test) && (!empty(USE_PERL5:Mmodbuild*) || !empty(USE_PERL5:Mconfigure))
 TEST_TARGET?=	test
 TEST_WRKSRC?=	${BUILD_WRKSRC}
 do-test:
@@ -317,5 +317,5 @@ do-test:
 .elif ${USE_PERL5:Mconfigure}
 	cd ${TEST_WRKSRC}/ && ${SETENV} ${TEST_ENV} ${MAKE_CMD} ${TEST_ARGS} ${TEST_TARGET}
 .endif # USE_PERL5:Mmodbuild*
-.endif # regression-test
+.endif # do-test
 .endif # defined(_POSTMKINCLUDED)

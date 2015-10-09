@@ -25,7 +25,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-avifile
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
-USES=		perl5 gmake
+USES=		alias gmake perl5
 USE_PERL5=	build
 
 post-patch:

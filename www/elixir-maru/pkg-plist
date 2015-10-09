@@ -5,6 +5,9 @@ lib/elixir/lib/maru/ebin/Elixir.Maru.Builder.Namespaces.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Builder.Params.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Builder.Routers.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Builder.beam
+lib/elixir/lib/maru/ebin/Elixir.Maru.Coercer.Base64.beam
+lib/elixir/lib/maru/ebin/Elixir.Maru.Coercer.Json.beam
+lib/elixir/lib/maru/ebin/Elixir.Maru.Coercer.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Config.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Exceptions.InvalidFormatter.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Exceptions.MethodNotAllow.beam
@@ -22,6 +25,7 @@ lib/elixir/lib/maru/ebin/Elixir.Maru.ParamType.CharList.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.ParamType.File.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.ParamType.Float.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.ParamType.Integer.beam
+lib/elixir/lib/maru/ebin/Elixir.Maru.ParamType.Json.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.ParamType.List.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.ParamType.Map.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.ParamType.String.beam
@@ -61,6 +65,7 @@ lib/elixir/lib/maru/lib/maru/builder/methods.ex
 lib/elixir/lib/maru/lib/maru/builder/namespaces.ex
 lib/elixir/lib/maru/lib/maru/builder/params.ex
 lib/elixir/lib/maru/lib/maru/builder/routers.ex
+lib/elixir/lib/maru/lib/maru/coercer.ex
 lib/elixir/lib/maru/lib/maru/config.ex
 lib/elixir/lib/maru/lib/maru/exceptions.ex
 lib/elixir/lib/maru/lib/maru/helper.ex

@@ -234,6 +234,7 @@
     SUBDIR += superkaramba
     SUBDIR += superswitcher
     SUBDIR += surrealtodo
+    SUBDIR += syncthing-gtk
     SUBDIR += systempreferences
     SUBDIR += tagutils
     SUBDIR += taskcoach

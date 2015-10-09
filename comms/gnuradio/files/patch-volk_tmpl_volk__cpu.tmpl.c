@@ -1,10 +1,13 @@
---- volk/tmpl/volk_cpu.tmpl.c.orig	2015-05-12 09:39:44 UTC
+--- volk/tmpl/volk_cpu.tmpl.c.orig	2015-07-09 02:00:33 UTC
 +++ volk/tmpl/volk_cpu.tmpl.c
-@@ -36,7 +36,31 @@ struct VOLK_CPU volk_cpu;
-     #if defined(HAVE_CPUID_H)
-         #include <cpuid.h>
-     #else
--        #include "gcc_x86_cpuid.h"
+@@ -34,7 +34,35 @@ struct VOLK_CPU volk_cpu;
+ 
+ //implement get cpuid for gcc compilers using a system or local copy of cpuid.h
+ #if defined(__GNUC__)
+-    #include <cpuid.h>
++    #if defined(HAVE_CPUID_H)
++        #include <cpuid.h>
++    #else
 +	#ifdef __FreeBSD__
 +#if __i386__
 +#define __cpuid(__level, __eax, __ebx, __ecx, __edx) \
@@ -30,6 +33,7 @@
 +	#else
 +	        #include "gcc_x86_cpuid.h"
 +	#endif
-     #endif
++    #endif
      #define cpuid_x86(op, r) __get_cpuid(op, (unsigned int *)r+0, (unsigned int *)r+1, (unsigned int *)r+2, (unsigned int *)r+3)
  
+     /* Return Intel AVX extended CPU capabilities register.

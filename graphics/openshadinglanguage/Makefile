@@ -18,13 +18,12 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libOpenImageIO.so:${PORTSDIR}/graphics/openimageio
 RUN_DEPENDS=	llvm-config34:${PORTSDIR}/devel/llvm34
 
-BROKEN_FreeBSD_9=	does not build
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	imageworks
 GH_PROJECT=	OpenShadingLanguage
 
-CMAKE_ARGS=	-DLLVM_CONFIG:STRING="${LOCALBASE}/bin/llvm-config34"
+CMAKE_ARGS=	-DLLVM_CONFIG:STRING="${LOCALBASE}/bin/llvm-config34" \
+		-DENABLERTTI:BOOL=ON
 USE_LDCONFIG=	yes
 USES=		bison cmake:outsource
 

@@ -20,7 +20,7 @@ OPTIONS_DEFINE=	PCRE EXAMPLES
 
 .if ${PORT_OPTIONS:MPCRE}
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
-MAKE_ENV+=	PCRE=1 
+MAKE_ENV+=	PCRE=1
 CFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lpcre
 .endif

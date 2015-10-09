@@ -18,6 +18,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 INSTALL_TARGET=	install destdir=${STAGEDIR} prefix=${PREFIX}
 MAKE_ARGS=	MCS=mcs MONO='mono --runtime=v4.0' TARGET=mono-4.0
 MAKE_JOBS_UNSAFE=	yes
+TEST_TARGET=	run-test
 USES=		gmake mono pkgconfig
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -30,8 +31,5 @@ post-patch:
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/
-
-regression-test test: build
-	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} run-test
 
 .include <bsd.port.mk>

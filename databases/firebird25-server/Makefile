@@ -3,6 +3,7 @@
 
 PORTNAME=	firebird
 PORTVERSION=	2.5.4
+PORTREVISION=	1
 CATEGORIES?=	databases
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:S/.0//}-Release/
 PKGNAMESUFFIX?=	${PORTVERSION:R:S/.//}-server
@@ -12,6 +13,15 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Firebird-2 relational database (server)
 
+LICENSE=	IDPL IPL
+LICENSE_COMB=	multi
+LICENSE_NAME_IDPL=	Initial Developer's Public License
+LICENSE_NAME_IPL=	InterBase Public License
+LICENSE_FILE_IDPL=	${WRKSRC}/builds/install/misc/IDPLicense.txt
+LICENSE_FILE_IPL=	${WRKSRC}/builds/install/misc/IPLicense.txt
+LICENSE_PERMS_IDPL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS_IPL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 CONFLICTS?=	${PORTNAME}20-client-* \
 		${PORTNAME}21-client-* \
 		${PORTNAME}20-server-* \
@@ -19,7 +29,7 @@ CONFLICTS?=	${PORTNAME}20-client-* \
 
 LIB_DEPENDS=	libicuuc.so:${PORTSDIR}/devel/icu
 
-USES=		bison tar:bzip2 gmake
+USES=		gmake pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
@@ -37,10 +47,10 @@ CONFIGURE_ARGS=	--with-system-editline \
 		--with-fbsbin=${PREFIX}/sbin \
 		--with-fbsecure-db=${LOCALSTATEDIR} \
 		--with-fbudf=${LIBEXECDIR}/UDF
-CONFIGURE_ENV+=	PTHREAD_LIBS="-lpthread"
-
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV+=	PTHREAD_LIBS="-lpthread" \
+		ac_cv_header_atomic_ops_h="no" \
+		ac_cv_lib_atomic_ops_main="no" \
+		ac_cv_lib_edit_readline="yes"
 
 LOCALSTATEDIR=	/var/db/firebird
 CONFDIR=	etc/firebird
@@ -69,6 +79,7 @@ IGNORE=		your system does not support sysvipc
 
 .if !defined(CLIENT_ONLY)
 # Server part stuff
+BUILD_DEPENDS=	${LOCALBASE}/lib/libedit.so:${PORTSDIR}/devel/libedit
 LIB_DEPENDS+=	libfbembed.so:${PORTSDIR}/databases/firebird25-client
 
 CONFIGURE_ARGS+=--enable-superserver
@@ -87,10 +98,10 @@ UDF_SQL=	src/extlib/ib_udf2.sql src/extlib/fbudf/fbudf.sql
 PKGINSTALL?=	${PKGDIR}/pkg-install-server
 .else
 # Client part stuff
+LIB_DEPENDS+=	libedit.so.0:${PORTSDIR}/devel/libedit
+
 ALL_TARGET=	firebird_basic libfbembed libfbclient embed_isql embed_gpre \
 		embed_gdef embed_qli extlib
-
-USES+=		libedit
 
 USE_LDCONFIG=	yes
 CLIENT_BIN=	gpre isql-fb qli
@@ -106,9 +117,6 @@ FB_DOCS_DIRS=	sql.extensions license upgrade
 
 MAKE_ENV+=	FIREBIRD_TMP="${WRKDIR}" FIREBIRD_LOCK="${WRKDIR}"
 MAKE_ARGS+=	PREFIX="${STAGEDIR}${PREFIX}"
-
-post-extract:
-	@${RM} -rf ${WRKSRC}/extern/icu
 
 post-patch:
 	${FIND} ${WRKSRC} -name "*.sh" -exec ${CHMOD} +x {} \+

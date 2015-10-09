@@ -670,6 +670,7 @@
     SUBDIR += gmake-lite
     SUBDIR += gnatcoll
     SUBDIR += gnatpython
+    SUBDIR += gnome-builder
     SUBDIR += gnome-common
     SUBDIR += gnome-js-common
     SUBDIR += gnome-vfs
@@ -4598,6 +4599,8 @@
     SUBDIR += rubygem-arrayfields
     SUBDIR += rubygem-ascii85
     SUBDIR += rubygem-aspectr
+    SUBDIR += rubygem-ast
+    SUBDIR += rubygem-astrolabe
     SUBDIR += rubygem-atomic
     SUBDIR += rubygem-atoulme-antwrap
     SUBDIR += rubygem-attic
@@ -4841,6 +4844,7 @@
     SUBDIR += rubygem-orm_adapter
     SUBDIR += rubygem-paint
     SUBDIR += rubygem-paperclip
+    SUBDIR += rubygem-parser
     SUBDIR += rubygem-piston
     SUBDIR += rubygem-pkg-config
     SUBDIR += rubygem-platform
@@ -4850,6 +4854,7 @@
     SUBDIR += rubygem-posix-spawn
     SUBDIR += rubygem-power_assert
     SUBDIR += rubygem-powerbar
+    SUBDIR += rubygem-powerpack
     SUBDIR += rubygem-progressbar
     SUBDIR += rubygem-protected_attributes
     SUBDIR += rubygem-prototype-rails
@@ -4897,11 +4902,13 @@
     SUBDIR += rubygem-rspec-mocks
     SUBDIR += rubygem-rspec-support
     SUBDIR += rubygem-rubigen
+    SUBDIR += rubygem-rubocop
     SUBDIR += rubygem-ruby-atmos-pure
     SUBDIR += rubygem-ruby-bugzilla
     SUBDIR += rubygem-ruby-filemagic
     SUBDIR += rubygem-ruby-ole
     SUBDIR += rubygem-ruby-prof
+    SUBDIR += rubygem-ruby-progressbar
     SUBDIR += rubygem-ruby-sdl-ffi
     SUBDIR += rubygem-ruby2ruby
     SUBDIR += rubygem-ruby_parser

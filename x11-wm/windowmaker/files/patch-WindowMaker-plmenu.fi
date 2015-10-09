@@ -1,5 +1,5 @@
---- WindowMaker/plmenu.fi.orig	2013-05-03 03:12:25.000000000 +0900
-+++ WindowMaker/plmenu.fi	2013-05-03 03:12:17.000000000 +0900
+--- WindowMaker/plmenu.fi.orig	2015-08-11 18:41:14 UTC
++++ WindowMaker/plmenu.fi
 @@ -94,7 +94,7 @@
  		(
  		"Acrobat",
