@@ -968,6 +968,7 @@
     SUBDIR += sdump
     SUBDIR += seam-carving-gui
     SUBDIR += seejpeg
+    SUBDIR += seexpr
     SUBDIR += seom
     SUBDIR += separate
     SUBDIR += seq2gif
