@@ -3,7 +3,7 @@
 # Hint: git describe --abbrev=12 --match android-m-preview
 DISTVERSION=	m-preview-1280
 DISTVERSIONSUFFIX=	-g659f5ade04a5
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	-devel
 
 CONFLICTS_INSTALL=	${PORTNAME}-[0-9]*
