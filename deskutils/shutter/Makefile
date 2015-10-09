@@ -3,7 +3,7 @@
 
 PORTNAME=	shutter
 PORTVERSION=	0.93.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 MASTER_SITES=	http://shutter-project.org/wp-content/uploads/releases/tars/
 

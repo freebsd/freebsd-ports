@@ -3,6 +3,7 @@
 
 PORTNAME=	sit
 PORTVERSION=	3.67
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/sitracker/stable/${PORTVERSION}/
 DISTNAME=	sit_${PORTVERSION}p1
@@ -25,19 +26,9 @@ OPTIONS_DEFAULT=	IMAP MBSTRING
 IMAP_DESC=	Email Support
 MBSTRING_DESC=	Inbound email feature
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MIMAP}
-USE_PHP+=	imap
-.endif
-
-.if ${PORT_OPTIONS:MMBSTRING}
-USE_PHP+=	mbstring
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-USE_PHP+=	ldap
-.endif
+IMAP_USE=	PHP=imap
+MBSTRING_USE=	PHP=mbstring
+LDAP_USE=	PHP=ldap
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}

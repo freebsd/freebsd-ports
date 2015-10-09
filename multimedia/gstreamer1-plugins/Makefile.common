@@ -1,5 +1,4 @@
 # $FreeBSD$
-#    $MCom: kwm/multimedia/gstreamer1-plugins/Makefile.common 11415 2013-04-26 22:58:21Z kwm $
 
 BASE_GST_ALL_PLUGINS= \
 		alsa \
@@ -15,7 +14,10 @@ BASE_GST_ALL_PLUGINS= \
 
 BAD_GST_ALL_PLUGINS+= \
 		assrender \
+		bs2b \
+		chromaprint \
 		curl \
+		dtls \
 		dts \
 		faac \
 		faad \
@@ -24,53 +26,54 @@ BAD_GST_ALL_PLUGINS+= \
 		gsm \
 		hls \
 		kate \
+		libde265 \
 		libmms \
 		librfb \
 		modplug \
 		mpeg2enc \
+		mpg123 \
 		mplex \
 		neon \
 		ofa \
 		openal \
 		opencv \
-		openjpeg \
 		opengl \
+		openh264 \
+		openjpeg \
 		opus \
 		resindvd \
 		rtmp \
+		rsvg \
 		schro \
 		soundtouch \
 		spandsp \
 		webp \
+		x265 \
 		zbar \
 
 # plugins not yet ported to the 1.0 API, or not portable
 BAD_GST_ALL_PLUGINS+= \
+		acm \
 		apexsink \
-		chromaprint \
-		decklink \
-		directfb \
-		ladspa \
+		cdxaparse \
+		dc1394 \
+		dccp \
+		faceoverlay \
+		hdvparse \
 		linsys \
 		lv2 \
-		mimic \
-		mpg123 \
 		musepack \
-		mythtv \
+		mve \
 		nas \
-		opensles \
-		pvr \
-		rsvg \
+		nuvdemux \
+		patchdetect \
+		sdi \
 		sdl \
-		sndfile \
 		sndio \
-		spc \
 		teletextdec \
 		timidity \
-		vdpau \
-		voaacenc \
-		voamrwbenc \
-		wayland \
+		tta \
+		wininet \
 		xvid
 
 # --with-egl-window-system=none --disable-opengl --disable-gles2 --disable-egl --disable-glx \
@@ -83,7 +86,6 @@ BAD_GST_NON_PLUGINS= \
 		--enable-bz2 \
 		--enable-dvb \
 		--enable-shm \
-		--enable-quicktime \
 		--disable-wgl \
 		--disable-gsettings \
 		--disable-acm \
@@ -93,10 +95,8 @@ BAD_GST_NON_PLUGINS= \
 		--disable-dc1394 \
 		--disable-dccp \
 		--disable-direct3d \
-		--disable-directdraw \
 		--disable-directsound \
 		--disable-fbdev \
-		--disable-osx_video \
 		--disable-uvch264 \
 		--disable-vcd \
 		--disable-wildmidi \
@@ -119,8 +119,8 @@ GOOD_GST_ALL_PLUGINS+= \
 		taglib \
 		vpx \
 		wavpack \
-		x
-#	xxx	pulse \
+		x \
+		pulse
 
 GOOD_GST_NON_PLUGINS=	\
 		--disable-dv1394 \
@@ -216,6 +216,9 @@ gst_amrwb_PLIST_FILES=	${GST_LIB_DIR}/libgstamrwbdec.so
 # assrender
 gst_assrender_LIB_DEPENDS=	libass.so:${PORTSDIR}/multimedia/libass
 
+# bs2b
+gst_bs2b_LIB_DEPENDS=	libbs2b.so:${PORTSDIR}/audio/libbs2b
+
 # cairo
 gst_cairo_USE_GNOME=	cairo
 
@@ -225,8 +228,14 @@ gst_cdparanoia_LIB_DEPENDS=	libcdda_interface.so:${PORTSDIR}/audio/cdparanoia
 # cdio
 gst_cdio_LIB_DEPENDS=	libcdio.so:${PORTSDIR}/sysutils/libcdio
 
+# chromaprint
+gst_chromaprint_LIB_DEPENDS=	libchromaprint.so:${PORTSDIR}/audio/chromaprint
+
 # curl
 gst_curl_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+
+# dtls
+gst_dtls_USES=		compiler:c11
 
 # dts
 gst_dts_LIB_DEPENDS=	libdca.so:${PORTSDIR}/multimedia/libdca
@@ -258,6 +267,8 @@ gst_gdk_pixbuf_PLIST_FILES=	${GST_LIB_DIR}/libgstgdkpixbuf.so
 
 # gl
 gst_gl_USE_GL=	gl glu glesv2 egl
+#xxxx do we need it?
+#gst_gl_USE_GNOME=	introspection:build
 gst_gl_CONFIGURE_ARGS=	--enable-gl --enable-glx \
 			--enable-egl --enable-gles2
 gst_gl_PLIST_FILES=		#
@@ -288,6 +299,9 @@ gst_lame_LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame
 gst_libcaca_LIB_DEPENDS=	libcaca.so:${PORTSDIR}/graphics/libcaca
 gst_libcaca_PLIST_FILES=	${GST_LIB_DIR}/libgstcacasink.so
 
+# libde265
+gst_libde265_LIB_DEPENDS=	libde265.so:${PORTSDIR}/multimedia/libde265
+
 # libmms
 gst_libmms_LIB_DEPENDS=	libmms.so:${PORTSDIR}/net/libmms
 gst_libmms_PLIST_FILES=	${GST_LIB_DIR}/libgstmms.so
@@ -311,6 +325,9 @@ gst_mpeg2enc_LIB_DEPENDS=	libmjpegutils.so:${PORTSDIR}/multimedia/mjpegtools
 # mpeg2dec
 gst_mpeg2dec_LIB_DEPENDS=	libmpeg2.so:${PORTSDIR}/multimedia/libmpeg2
 
+# mpg123
+gst_mpg123_LIB_DEPENDS=	libmpg123.so:${PORTSDIR}/audio/mpg123
+
 # neon
 gst_neon_LIB_DEPENDS+=  libneon.so:${PORTSDIR}/www/neon
 gst_neon_PLIST_FILES=	${GST_LIB_DIR}/libgstneonhttpsrc.so
@@ -327,6 +344,9 @@ gst_opencv_PLIST_FILES=	${GST_LIB_DIR}/libgstopencv.so \
 # openjpeg
 gst_openjpeg_LIB_DEPENDS=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15
 
+# openh264
+gst_openh264_LIB_DEPENDS=	libopenh264.so:${PORTSDIR}/multimedia/openh264
+
 # opus
 gst_opus_LIB_DEPENDS=	libopus.so:${PORTSDIR}/audio/opus
 
@@ -342,6 +362,9 @@ gst_resindvd_RUN_DEPENDS=	libdvdnav>=4.1.2:${PORTSDIR}/multimedia/libdvdnav
 
 # rtmp xxx
 gst_rtmp_LIB_DEPENDS=	librtmp.so.0:${PORTSDIR}/multimedia/librtmp
+
+# rsvg
+gst_rsvg_USE_GNOME=	librsvg2
 
 # shout2
 gst_shout2_LIB_DEPENDS=	libshout.so:${PORTSDIR}/audio/libshout
@@ -417,6 +440,9 @@ gst_x_PLIST_FILES=	${GST_LIB_DIR}/libgstximagesrc.so
 gst_x264_LIB_DEPENDS=	libx264.so:${PORTSDIR}/multimedia/libx264
 gst_x264_PLIST_FILES=	${GST_LIB_DIR}/libgstx264.so \
 			share/gstreamer-${VERSION}/presets/GstX264Enc.prs
+
+# x265
+gst_x265_LIB_DEPENDS=	libx265.so:${PORTSDIR}/multimedia/x265
 
 # xvid
 gst_xvid_LIB_DEPENDS=	libxvidcore.so:${PORTSDIR}/multimedia/xvid

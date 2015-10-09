@@ -1,4 +1,4 @@
-%%PERL5_MAN3%%/Math::Interpolate.3.gz
-%%PERL5_MAN3%%/Math::IntervalSearch.3.gz
 %%SITE_PERL%%/Math/Interpolate.pm
 %%SITE_PERL%%/Math/IntervalSearch.pm
+%%PERL5_MAN3%%/Math::Interpolate.3.gz
+%%PERL5_MAN3%%/Math::IntervalSearch.3.gz

@@ -3,6 +3,7 @@ include/gstreamer-%%VERSION%%/gst/basecamerabinsrc/gstcamerabin-enum.h
 include/gstreamer-%%VERSION%%/gst/basecamerabinsrc/gstcamerabinpreview.h
 include/gstreamer-%%VERSION%%/gst/codecparsers/gsth264parser.h
 include/gstreamer-%%VERSION%%/gst/codecparsers/gsth265parser.h
+include/gstreamer-%%VERSION%%/gst/codecparsers/gstjpegparser.h
 include/gstreamer-%%VERSION%%/gst/codecparsers/gstmpeg4parser.h
 include/gstreamer-%%VERSION%%/gst/codecparsers/gstmpegvideometa.h
 include/gstreamer-%%VERSION%%/gst/codecparsers/gstmpegvideoparser.h
@@ -68,6 +69,8 @@ lib/gstreamer-%%VERSION%%/libgstpcapparse.so
 lib/gstreamer-%%VERSION%%/libgstpnm.so
 lib/gstreamer-%%VERSION%%/libgstrawparse.so
 lib/gstreamer-%%VERSION%%/libgstremovesilence.so
+lib/gstreamer-%%VERSION%%/libgstrtpbad.so
+lib/gstreamer-%%VERSION%%/libgstrtponvif.so
 lib/gstreamer-%%VERSION%%/libgstsdpelem.so
 lib/gstreamer-%%VERSION%%/libgstsegmentclip.so
 lib/gstreamer-%%VERSION%%/libgstshm.so
@@ -82,6 +85,9 @@ lib/gstreamer-%%VERSION%%/libgstvideosignal.so
 lib/gstreamer-%%VERSION%%/libgstvmnc.so
 lib/gstreamer-%%VERSION%%/libgsty4mdec.so
 lib/gstreamer-%%VERSION%%/libgstyadif.so
+lib/libgstadaptivedemux-%%VERSION%%.so
+lib/libgstadaptivedemux-%%VERSION%%.so.0
+lib/libgstadaptivedemux-%%VERSION%%.so.%%SOVERSION%%
 lib/libgstbadbase-%%VERSION%%.so
 lib/libgstbadbase-%%VERSION%%.so.0
 lib/libgstbadbase-%%VERSION%%.so.%%SOVERSION%%
@@ -112,6 +118,7 @@ libdata/pkgconfig/gstreamer-mpegts-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-plugins-bad-%%VERSION%%.pc
 share/gir-1.0/GstInsertBin-%%VERSION%%.gir
 share/gir-1.0/GstMpegts-%%VERSION%%.gir
+%%DATADIR%%-%%VERSION%%/presets/GstFreeverb.prs
 share/locale/af/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/bg/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo

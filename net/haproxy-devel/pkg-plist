@@ -48,6 +48,7 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/internals/http-cookies.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/http-docs.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/http-parsing.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/list.fig
 %%PORTDOCS%%%%DOCSDIR%%/internals/lua_socket.fig
 %%PORTDOCS%%%%DOCSDIR%%/internals/lua_socket.pdf
 %%PORTDOCS%%%%DOCSDIR%%/internals/naming.txt
@@ -88,6 +89,7 @@ sbin/haproxy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/linux-2.4.21-40.EL-custom.diff
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/option-http_proxy.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rc.highsock
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/seamless_reload.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ssl.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stats_haproxy.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tarpit.cfg

@@ -35,7 +35,6 @@ BROKEN=		Does not install on sparc64: fails to link lib/compat/libpthread.so.1
 
 .if ${ARCH} == amd64
 PLIST_SUB+=	AMD64=""
-PLIST_SUB+=	LDCONFIG_LIB32="${LDCONFIG} -32"
 USE_LDCONFIG32=	${TARGET32_DIR}
 .else
 PLIST_SUB+=	AMD64="@comment "

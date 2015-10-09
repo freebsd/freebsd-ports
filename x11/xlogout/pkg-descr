@@ -1,3 +1,0 @@
-The xlogout program displays a small button that simply waits until
-being pressed before exiting. This can be useful when run as the
-initial client from xdm or xinit.

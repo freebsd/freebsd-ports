@@ -1,6 +1,6 @@
 # Created by: Will Andrews <andrews@technologist.com>
 # $FreeBSD$
- 
+
 PORTNAME=	scrollz
 PORTVERSION=	2.2.3
 PORTREVISION=	1

@@ -15,9 +15,7 @@
 %%WEBSVNDIR%%/include/configclass.php
 %%WEBSVNDIR%%/include/diff_inc.php
 %%WEBSVNDIR%%/include/diff_util.php
-@unexec cmp -s %D/%%WEBSVNDIR%%/include/distconfig.php %D/%%WWWDIR%%/include/config.php && rm -f %D/%%WWWDIR%%/include/config.php || true
-%%WEBSVNDIR%%/include/distconfig.php
-@exec [ -f %D/%%WEBSVNDIR%%/include/config.php ] || cp -p %D/%F %B/config.php
+@sample %%WEBSVNDIR%%/include/distconfig.php %%WWWDIR%%/include/config.php
 %%WEBSVNDIR%%/include/header
 %%WEBSVNDIR%%/include/setup.php
 %%WEBSVNDIR%%/include/svnlook.php

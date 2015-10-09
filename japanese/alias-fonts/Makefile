@@ -3,7 +3,7 @@
 
 PORTNAME=	alias-fonts
 PORTVERSION=	1.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -11,12 +11,12 @@ DISTFILES=	# empty
 MAINTAINER=	CQG00620@nifty.ne.jp
 COMMENT=	Meta-port which setups Japanese fonts
 
-RUN_DEPENDS=	ja-elisa8x8>0:${PORTSDIR}/japanese/elisa8x8 \
-		ja-naga10>0:${PORTSDIR}/japanese/k10 \
+RUN_DEPENDS=	ja-font-elisa8>0:${PORTSDIR}/japanese/font-elisa8 \
+		ja-font-naga10>0:${PORTSDIR}/japanese/font-naga10 \
 		ja-font-shinonome>0:${PORTSDIR}/japanese/font-shinonome \
-		ja-kanji18>0:${PORTSDIR}/japanese/kanji18 \
-		ja-k20fonts>0:${PORTSDIR}/japanese/kappa20 \
-		ja-kanji26>0:${PORTSDIR}/japanese/kanji26 \
+		ja-font-kanji18>0:${PORTSDIR}/japanese/font-kanji18 \
+		ja-font-kappa20>0:${PORTSDIR}/japanese/font-kappa20 \
+		ja-font-kanji26>0:${PORTSDIR}/japanese/font-kanji26 \
 		ja-font-jisx0213>0:${PORTSDIR}/japanese/font-jisx0213
 
 NO_BUILD=	yes

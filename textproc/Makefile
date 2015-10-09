@@ -83,6 +83,7 @@
     SUBDIR += clucene
     SUBDIR += clucene-qt4
     SUBDIR += clucene-qt5
+    SUBDIR += cmark
     SUBDIR += coccigrep
     SUBDIR += code2html
     SUBDIR += codespell
@@ -223,6 +224,7 @@
     SUBDIR += groff
     SUBDIR += groonga
     SUBDIR += gsed
+    SUBDIR += gspell
     SUBDIR += gtk-doc
     SUBDIR += gtkspell
     SUBDIR += gtkspell-reference
@@ -1182,6 +1184,7 @@
     SUBDIR += po4a
     SUBDIR += pocketreader
     SUBDIR += pod2mdoc
+    SUBDIR += pootle
     SUBDIR += popup
     SUBDIR += popup-stacks
     SUBDIR += ppower4
@@ -1259,8 +1262,8 @@
     SUBDIR += py-sparqlwrapper
     SUBDIR += py-sphinx
     SUBDIR += py-sphinx-intl
-    SUBDIR += py-sphinx_rtd_theme
     SUBDIR += py-sphinx_numfig
+    SUBDIR += py-sphinx_rtd_theme
     SUBDIR += py-sphinx_wikipedia
     SUBDIR += py-sphinxcontrib-adadomain
     SUBDIR += py-sphinxcontrib-bitbucket

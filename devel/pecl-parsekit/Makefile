@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	dereckson@gmail.com
-COMMENT=	Extension for opcodes runtime analysis 
+COMMENT=	Extension for opcodes runtime analysis
 
 LICENSE=	PHP301
 

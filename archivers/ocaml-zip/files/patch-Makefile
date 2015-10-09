@@ -1,6 +1,6 @@
---- Makefile.orig	2009-01-13 14:56:33.000000000 +0100
-+++ Makefile	2009-01-13 14:56:52.000000000 +0100
-@@ -56,7 +56,7 @@
+--- Makefile.orig	2015-10-01 02:48:15 UTC
++++ Makefile
+@@ -56,7 +56,7 @@ clean:
  
  install:
  	mkdir -p $(INSTALLDIR)

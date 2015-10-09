@@ -21,6 +21,7 @@ OPTIONS_DEFINE=	DOCS
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 LIBS+=		-lm
+TEST_TARGET=	check
 USE_LDCONFIG=	yes
 USES=		libtool
 
@@ -29,8 +30,5 @@ PORTDOCS=	Release_notes_2_0.pdf
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${DISTDIR}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
-
-regression-test test: build
-	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 
 .include <bsd.port.mk>

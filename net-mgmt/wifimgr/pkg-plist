@@ -1,7 +1,5 @@
 bin/wifimgr
-@mode 4511
-libexec/wifimgrsu
-@mode
+@(,,4511) libexec/wifimgrsu
 man/man8/wifimgr.8.gz
 %%DATADIR%%/icons/eye.png
 %%DATADIR%%/icons/freebsd-surf.png

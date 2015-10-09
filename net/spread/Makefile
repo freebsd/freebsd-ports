@@ -32,11 +32,11 @@ PKGMESSAGE=	${WRKSRC}/license.txt
 PORTDOCS=	Readme.txt LICENSE
 HEADERFILES=	sp_func.h sp_func.h sp_events.h
 
-.include <bsd.port.pre.mk>
-
 # bsd.port.mk doesn't allow us to use GNU_CONFIGURE and PERL_CONFIGURE together.
 PERL_CONFIGURE_ARGS=	CC="${CC}" CCFLAGS="${CFLAGS}" PREFIX="${PREFIX}" \
 			INSTALLPRIVLIB="${PREFIX}/lib" INSTALLARCHLIB="${PREFIX}/lib"
+
+TARGET_ORDER_OVERRIDE=	710:fix-perl-things
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
@@ -55,16 +55,8 @@ post-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/sample.spread.conf \
 		${STAGEDIR}${PREFIX}/etc/spread.conf.sample
-.if !exists(${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf)
-	${INSTALL_DATA} ${WRKSRC}/sample.spread.conf \
-		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf
-.endif
 	${INSTALL_DATA} ${WRKSRC}/sample.spread.access_ip \
 		${STAGEDIR}${PREFIX}/etc/spread.access_ip.sample
-.if !exists(${STAGEDIR}${PREFIX}/etc/spread.access_ip)
-	${INSTALL_DATA} ${WRKSRC}/sample.spread.access_ip \
-		${STAGEDIR}${PREFIX}/etc/spread.access_ip
-.endif
 	(cd ${WRKSRC}/perl/Spread && ${MAKE} PREFIX=${STAGEDIR}${PREFIX} install)
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/perl/Spread/test.pl ${STAGEDIR}${EXAMPLESDIR}
@@ -76,4 +68,4 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtspread.so.1
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Spread/Spread.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

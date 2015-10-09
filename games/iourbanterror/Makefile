@@ -14,6 +14,7 @@ COMMENT=	Quake 3 engine modified for Urban Terror (based on ioquake3)
 RUN_DEPENDS=	urbanterror-data>0:${PORTSDIR}/games/urbanterror-data
 
 MASTERDIR=	${.CURDIR}/../ioquake3
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 IOQ3?=		CLIENT
 
@@ -35,9 +36,9 @@ MAKE_ARGS+=	BUILD_MISSIONPACK=0 \
 
 post-patch:
 	@(cd ${WRKSRC} && \
-          for pfile in ${.CURDIR}/../${PORTNAME}/files/patch-*; do \
+	for pfile in ${.CURDIR}/../${PORTNAME}/files/patch-*; do \
 		${PATCH} < $${pfile}; \
-	  done) 
+	done)
 	@${REINPLACE_CMD} \
 		-e 's/ioquake3/${Q3CLIENT}/g' \
 		-e 's/ioq3ded/${Q3SERVER}/g' \

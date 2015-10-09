@@ -10,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Multi-service chat bot with extendable behavior
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	redis>=0:${PORTSDIR}/databases/redis \
 		rubygem-bundler>=1.3:${PORTSDIR}/sysutils/rubygem-bundler \

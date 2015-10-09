@@ -1,4 +1,5 @@
 libexec/dk-filter
+man/man8/dk-filter.8.gz
 sbin/gentxt-dk
 %%PORTDOCS%%%%DOCSDIR%%/FEATURES
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
@@ -8,4 +9,3 @@ sbin/gentxt-dk
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
 %%PORTDOCS%%%%DOCSDIR%%/autorespond.csh
 %%PORTDOCS%%%%DOCSDIR%%/rfc4870.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

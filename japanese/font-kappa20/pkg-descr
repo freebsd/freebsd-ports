@@ -1,0 +1,20 @@
+Japanese 20 dot fonts(`Kappa20dot').
+
+You can use:
+	k20[mb]		mincho/gothic	(JIS X 0208)
+			('m' for medium mincho, 'b' for bold mincho)
+	10x20[mb]	ascii		(ISO-8859-1(Latin 1))
+	10x20rk[mb]	kana		(JIS X 0201)
+	10x20L[239][mb]	ISO 8859-[239]	(Latin [239])
+	ipa-10x20[mb]	Mule IPA fonts
+	vk20[mb]	k20[mb] modified for vertical writings
+
+	Italic(slanted) fonts are available with 'i' postfix.
+
+An example usage:
+  % kterm -fn a20m -fb a20b -fr r10m -frb a20b -fk k20m -fkb k20b -lsp 3
+or in your Xresources file:
+  KTerm*VT100*fontList:		-kappa-fixed-medium-r-normal--20-*
+  KTerm*VT100*boldFontList:	-kappa-fixed-bold-r-normal--20-*
+
+WWW: http://kappa.allnet.ne.jp/20dot.fonts/

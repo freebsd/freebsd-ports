@@ -24,7 +24,6 @@ include/gnucash/Split.h
 include/gnucash/TransLog.h
 include/gnucash/Transaction.h
 include/gnucash/account-quickfill.h
-include/gnucash/assistant-utils.h
 include/gnucash/assistant-xml-encoding.h
 include/gnucash/basiccell.h
 include/gnucash/business-helpers.h
@@ -1177,6 +1176,7 @@ share/icons/hicolor/96x96/apps/gnucash-icon.png
 share/icons/hicolor/scalable/apps/gnucash-icon.svg
 share/locale/ar/LC_MESSAGES/gnucash.mo
 share/locale/as/LC_MESSAGES/gnucash.mo
+share/locale/az/LC_MESSAGES/gnucash.mo
 share/locale/bg/LC_MESSAGES/gnucash.mo
 share/locale/brx/LC_MESSAGES/gnucash.mo
 share/locale/ca/LC_MESSAGES/gnucash.mo

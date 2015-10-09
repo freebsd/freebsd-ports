@@ -1,6 +1,6 @@
---- Makefile.orig	2012-09-19 10:51:22.000000000 +0900
-+++ Makefile	2012-10-13 20:24:14.000000000 +0900
-@@ -112,11 +112,11 @@
+--- Makefile.orig	2015-08-31 19:26:16 UTC
++++ Makefile
+@@ -112,11 +112,11 @@ install: NVIDIA_XCONFIG_install MANPAGE_
  
  NVIDIA_XCONFIG_install: $(NVIDIA_XCONFIG)
  	$(MKDIR) $(BINDIR)

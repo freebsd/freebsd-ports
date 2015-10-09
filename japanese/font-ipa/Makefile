@@ -2,7 +2,7 @@
 
 PORTNAME=	ipa
 PORTVERSION=	00303
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://info.openlab.ipa.go.jp/ipafont/fontdata/
 PKGNAMEPREFIX=	ja-font-
@@ -15,6 +15,7 @@ CONFLICTS=	ja-ipa-ttfonts-[0-9]*
 
 USES=		fonts:fc zip
 FONTNAME=	OTF
+NO_ARCH=	yes
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install

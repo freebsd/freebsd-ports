@@ -17,6 +17,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-App-Options>=0:${PORTSDIR}/devel/p5-App-Options
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

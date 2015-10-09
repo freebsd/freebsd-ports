@@ -22,23 +22,20 @@ lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-icns.so
 lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-ico.so
 %%JASPER%%lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-jasper.so
 %%JPEG%%lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-jpeg.so
-lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-pcx.so
 %%PNG%%lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-png.so
 lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-pnm.so
 lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-qtif.so
-lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-ras.so
 lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-tga.so
 %%TIFF%%lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-tiff.so
-lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-wbmp.so
 lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-xbm.so
 lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-xpm.so
 lib/girepository-1.0/GdkPixbuf-2.0.typelib
 lib/libgdk_pixbuf-2.0.so
 lib/libgdk_pixbuf-2.0.so.0
-lib/libgdk_pixbuf-2.0.so.0.3100.7
+lib/libgdk_pixbuf-2.0.so.0.3200.1
 lib/libgdk_pixbuf_xlib-2.0.so
 lib/libgdk_pixbuf_xlib-2.0.so.0
-lib/libgdk_pixbuf_xlib-2.0.so.0.3100.7
+lib/libgdk_pixbuf_xlib-2.0.so.0.3200.1
 libdata/pkgconfig/gdk-pixbuf-2.0.pc
 libdata/pkgconfig/gdk-pixbuf-xlib-2.0.pc
 man/man1/gdk-pixbuf-csource.1.gz
@@ -149,5 +146,5 @@ share/gir-1.0/GdkPixbuf-2.0.gir
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/gdk-pixbuf.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gdk-pixbuf.mo
-@exec %D/bin/gdk-pixbuf-query-loaders > /dev/null 2>&1 && %D/bin/gdk-pixbuf-query-loaders > %D/lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders.cache 2>/dev/null || /usr/bin/true
-@unexec rm %D/lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders.cache 2>&1 >/dev/null || true
+@postexec %D/bin/gdk-pixbuf-query-loaders > /dev/null 2>&1 && %D/bin/gdk-pixbuf-query-loaders > %D/lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders.cache 2>/dev/null || /usr/bin/true
+@postunexec rm %D/lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders.cache 2>&1 >/dev/null || true

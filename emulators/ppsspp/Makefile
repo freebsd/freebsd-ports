@@ -2,43 +2,48 @@
 
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v
-DISTVERSION?=	1.0.1
-PORTREVISION?=	5
+DISTVERSION?=	1.1.0
+PORTREVISION?=	0
 CATEGORIES=	emulators
-
-.ifndef PKGNAMESUFFIX
-PATCH_SITES=	https://projects.archlinux.org/svntogit/community.git/plain/trunk/
-PATCHFILES=	${PORTNAME}-ffmpeg.patch?id=f2b9251:-p1
-.endif
+# XXX Get from Debian once #697821 lands
+MASTER_SITES=	https://bazaar.launchpad.net/~sergio-br2/${PORTNAME}/debian-sdl/download/1/${PORTNAME}.1-20140802045408-dd26dik367ztj5xg-8/:manpage
+DISTFILES=	${PORTNAME}.1:manpage
+EXTRACT_ONLY=	${DISTFILES:N*\:manpage:C/:.*//}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	PSP emulator in C++ with dynarec JIT for x86, ARM, MIPS
 
 LICENSE=	GPLv2 # or any later version
 
-LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS=	libzip.so:${PORTSDIR}/archivers/libzip \
+		libsnappy.so:${PORTSDIR}/archivers/snappy \
+		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hrydgard:DEFAULT,lang Kingcom:ext_armips
 GH_PROJECT=	${PORTNAME}-lang:lang armips:ext_armips
-GH_TAGNAME?=	52c757e:lang 52ce9c1:native a0b878f:ext_armips
-
-.ifndef PKGNAMESUFFIX
-GH_ACCOUNT+=	hrydgard:native
-GH_PROJECT+=	native:native
-.endif
+GH_TAGNAME?=	38e1efe:lang a0b878f:ext_armips
 
 CONFLICTS_INSTALL?=	${PORTNAME}-devel-[0-9]*
 
-USES=		compiler:c++11-lib pkgconfig
-USE_GL=		glu
+USES=		compiler:c++11-lib localbase pkgconfig
+EXCLUDE=	glew snappy libzip zlib
+EXTRACT_AFTER_ARGS=${EXCLUDE:S,^,--exclude ,}
+USE_GL=		glew glu
 USE_SDL=	sdl2 # joystick
 CMAKE_ARGS=	-DUSE_SYSTEM_FFMPEG=on
 QMAKE_SOURCE_PATH=	${WRKSRC}/Qt/PPSSPPQt.pro
 QMAKE_ARGS=	CONFIG+="system_ffmpeg" LREL_TOOL="${LRELEASE}"
 NINJA_VERBOSE=	yes
 NO_INSTALL=	yes # ports/202949
+
+DESKTOP_ENTRIES="PPSSPP" \
+		"" \
+		"${PORTNAME}" \
+		"${PORTNAME} %f" \
+		"Game;Emulator;" \
+		""
 
 OPTIONS_DEFAULT=QT5
 OPTIONS_SINGLE=	GUI
@@ -51,7 +56,6 @@ QT5_USE=	QT5=qmake_build,buildtools_build,linguisttools_build,gui,opengl,widgets
 SDL_USES=	cmake:outsource ninja
 SDL_BUILD_DEPENDS=	png>=1.6:${PORTSDIR}/graphics/png
 SDL_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
-SDL_LDFLAGS=	-L${LOCALBASE}/lib # ffmpeg
 SDL_VARS=	PORTDATA+="assets ${PORTNAME}"
 
 post-extract:
@@ -64,7 +68,9 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/share,${PREFIX}/share,' \
 		${WRKSRC}/UI/NativeApp.cpp
-	@${REINPLACE_CMD} -e '/find_package(Git)/d' \
+	@${REINPLACE_CMD} -e 's,/usr,${LOCALBASE},' \
+		${WRKSRC}/Qt/*.pr*
+	@${REINPLACE_CMD} \
 		-e 's/"unknown"/"${GH_TAGNAME}"/' \
 		-e 's/^\(VERSION =\).*/\1 ${GH_TAGNAME}/' \
 		${WRKSRC}/git-version.cmake \
@@ -85,9 +91,7 @@ do-install-SDL-off:
 		${STAGEDIR}${PREFIX}/bin
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/debian/${PORTNAME}.desktop \
-		${STAGEDIR}${DESKTOPDIR}
-	${INSTALL_MAN} ${WRKSRC}/debian/${PORTNAME}.1 \
+	${INSTALL_MAN} ${_DISTDIR}/${PORTNAME}.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1
 	(cd ${WRKSRC}/assets/unix-icons && ${COPYTREE_SHARE} \
 		"hicolor" ${STAGEDIR}${PREFIX}/share/icons)

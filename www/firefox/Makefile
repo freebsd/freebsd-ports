@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	40.0.3
+DISTVERSION=	41.0
 DISTVERSIONSUFFIX=.source
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
@@ -39,7 +39,7 @@ MOZILLA_NAME=	Firefox
 USE_QT5=	# empty
 QT_NONSTANDARD=	yes
 USE_GL=		gl
-USES=		dos2unix tar:bzip2
+USES=		dos2unix tar:xz
 DOS2UNIX_FILES=	media/webrtc/trunk/webrtc/system_wrappers/source/spreadsortlib/spreadsort.hpp
 
 FIREFOX_ICON=		${MOZILLA}.png

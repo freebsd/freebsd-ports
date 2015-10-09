@@ -1,7 +1,9 @@
+lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.Compression.beam
 lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.ConnectionError.beam
 lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.NetworkClient.beam
 lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.Protocol.ConsumerMetadata.Response.beam
 lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.Protocol.ConsumerMetadata.beam
+lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.Protocol.Fetch.Message.beam
 lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.Protocol.Fetch.Request.beam
 lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.Protocol.Fetch.Response.beam
 lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.Protocol.Fetch.beam
@@ -20,17 +22,18 @@ lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.Protocol.OffsetCommit.beam
 lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.Protocol.OffsetFetch.Request.beam
 lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.Protocol.OffsetFetch.Response.beam
 lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.Protocol.OffsetFetch.beam
+lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.Protocol.Produce.Message.beam
 lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.Protocol.Produce.Request.beam
 lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.Protocol.Produce.Response.beam
 lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.Protocol.Produce.beam
 lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.Protocol.beam
 lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.Server.beam
 lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.Supervisor.beam
-lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.Util.beam
 lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.beam
 lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaExHandler.beam
 lib/elixir/lib/kafka_ex/ebin/kafka_ex.app
 lib/elixir/lib/kafka_ex/lib/kafka_ex.ex
+lib/elixir/lib/kafka_ex/lib/kafka_ex/compression.ex
 lib/elixir/lib/kafka_ex/lib/kafka_ex/errors/errors.ex
 lib/elixir/lib/kafka_ex/lib/kafka_ex/handler.ex
 lib/elixir/lib/kafka_ex/lib/kafka_ex/network_client.ex
@@ -44,5 +47,4 @@ lib/elixir/lib/kafka_ex/lib/kafka_ex/protocol/offset_fetch.ex
 lib/elixir/lib/kafka_ex/lib/kafka_ex/protocol/produce.ex
 lib/elixir/lib/kafka_ex/lib/kafka_ex/server.ex
 lib/elixir/lib/kafka_ex/lib/kafka_ex/supervisor.ex
-lib/elixir/lib/kafka_ex/lib/kafka_ex/util.ex
 %%PORTDOCS%%%%DOCSDIR%%/README.md

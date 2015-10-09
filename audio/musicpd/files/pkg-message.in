@@ -21,6 +21,11 @@ be stored in the /var/mpd/music directory.
 
 NOTE: The musicpd server is pretty useless without a client.
       You might want to install one of the following ports too:
-      musicpc, ncmpc, glurp, gmpc, kmp, or phpmp.
+
+      Command line: musicpc, ncmpc (Curses)
+      GNOME / GTK: glurp, gmpc
+      KDE / Qt: quimup, qmpdlient
+      Web: phpmp
+
 
 ****************************************************************

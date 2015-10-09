@@ -10,6 +10,47 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20150928:
+AUTHOR: amdmi3@FreeBSD.org
+
+  Implemented complete support for test target.
+
+  You can now `make test' on any port to run test sequence, no-op by default.
+  If a port defines TEST_TARGET, it'll run sub-make with specified target,
+  usually `check' or `test', useful if upstream supports that. The port may
+  instead define custom do-test target, as well as usual satellite targets:
+
+    {pre,do,post}-test, {pre,do,post}-test-OPT, {pre,do,post}-test-OPT-off
+
+  `make test' builds and stages port first, so test may use both WRKDIR and
+  STAGEDIR, and both BUILD and RUN depends are available for test target.
+  Additionally, TEST_DEPENDS is now properly supported and may be used to
+  define additional depends specifically for testing.
+
+  Framework may define default tests for specific cases. For instance,
+  perl5.mk and cran.mk provide default test target on their own.
+
+20150926:
+AUTHOR: bapt@FreeBSD.org
+
+  @sample now accept arguments, so it can now be used the following way:
+
+  @sample afile.sample
+  or
+  @sample path/to/example etc/target
+
+20150926:
+AUTHOR: bapt@FreeBSD.org
+
+  New keywords are supported in pkg since 1.5.x:
+  @preexec <command>: execute the <command> during pre-install scripts
+  @postexec <command>: execute the <command> during post-install scripts
+  @preunexec <command>: execute the <command> during pre-deinstall scripts
+  @postunexec <command>: execute the <command> during post-deinstall scripts
+
+  @exec does not specify when if should be executed and is now considered as
+  deprecated.
+
 20150914:
 AUTHOR: mat@FreeBSD.org
 

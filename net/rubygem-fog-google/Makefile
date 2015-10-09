@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-google
-PORTVERSION=	0.0.7
+PORTVERSION=	0.1.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -10,6 +10,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Module for the 'fog' gem to support Google Cloud
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-fog-core>=0:${PORTSDIR}/devel/rubygem-fog-core \
 		rubygem-fog-json>=0:${PORTSDIR}/devel/rubygem-fog-json \

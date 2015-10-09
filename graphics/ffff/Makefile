@@ -11,6 +11,8 @@ DISTNAME=	FFFF${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast Mandelbrot fractal generator
 
+BROKEN=		fails to link
+
 USE_XORG=	x11 xmu xext
 USE_GL=		gl glut
 USES=		dos2unix zip

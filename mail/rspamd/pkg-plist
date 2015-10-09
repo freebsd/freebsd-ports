@@ -1,5 +1,7 @@
 bin/rspamd-%%RSPAMDVERSION%%
 bin/rspamd
+bin/rspamadm-%%RSPAMDVERSION%%
+bin/rspamadm
 bin/rspamc-%%RSPAMDVERSION%%
 bin/rspamc
 %%REDIRECTOR%%bin/rspamd-redirector
@@ -61,13 +63,18 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/rules/rspamd.classifiers.lua
 %%DATADIR%%/rules/rspamd.lua
 %%DATADIR%%/www/README.md
+%%DATADIR%%/www/css/datatables.min.css
+%%DATADIR%%/www/css/glyphicons-halflings-regular.woff
+%%DATADIR%%/www/css/glyphicons-halflings-regular.woff2
 %%DATADIR%%/www/css/rspamd.css
+%%DATADIR%%/www/favicon.ico
 %%DATADIR%%/www/img/asc.png
 %%DATADIR%%/www/img/desc.png
 %%DATADIR%%/www/img/spinner.gif
 %%DATADIR%%/www/img/spinner.png
 %%DATADIR%%/www/index.html
-%%DATADIR%%/www/js/jquery.paginatetable.js
+%%DATADIR%%/www/js/d3pie.min.js
+%%DATADIR%%/www/js/datatables.min.js
 %%DATADIR%%/www/js/rspamd.js
 %%DATADIR%%/www/plugins.txt
 %%DATADIR%%/www/react-index.html
@@ -76,7 +83,10 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/www/src/components/app.jsx
 %%DATADIR%%/www/src/components/dashboard.jsx
 %%DATADIR%%/www/src/components/login.jsx
+%%DATADIR%%/www/src/components/piechart.jsx
+%%DATADIR%%/www/src/components/rrdgraph.jsx
 %%DATADIR%%/www/src/package.json
+man/man1/rspamadm.1.gz
 man/man1/rspamc.1.gz
 man/man8/rspamd.8.gz
 @dir %%EXAMPLESDIR%%

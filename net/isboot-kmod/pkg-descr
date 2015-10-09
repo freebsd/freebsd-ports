@@ -1,0 +1,9 @@
+This installs Daisuke Aoyama's isboot kernel module, which allows
+booting FreeBSD directly from an iSCSI root disk. If your BIOS
+supports iSCSI you may configure your target settings in the BIOS
+and boot directly. If not, you may PXE boot using software that
+contains iSCSI support such as iPXE. The module reads the iSCSI
+Boot Firmware Table (IBFT) to configure the network and re-attach
+the volume once the kernel begins execution.
+
+WWW: http://shell.peach.ne.jp/aoyama/archives/2115 (Japanese)

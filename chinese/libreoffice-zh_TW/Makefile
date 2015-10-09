@@ -1,9 +1,9 @@
 # $FreeBSD$
 
+CATEGORIES=	chinese
 LO_I18N=	zh_TW
 LO_HAS_HELPPACK=	yes
-CATEGORIES=	chinese editors
 
-.include "${.CURDIR}/../../editors/libreoffice/Makefile.common"
+.include "${.CURDIR}/../../editors/libreoffice/Makefile.i18n"
 
 .include <bsd.port.mk>

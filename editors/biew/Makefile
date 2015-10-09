@@ -13,6 +13,9 @@ COMMENT=	Binary file viewer and editor
 
 LICENSE=	GPLv2
 
+ONLY_FOR_ARCHS=	amd64 i386 ia64
+ONLY_FOR_ARCHS_REASON=	no targets defined in Makefile
+
 USES=		dos2unix gmake iconv tar:bzip2
 DOS2UNIX_FILES=	${PORTDOCS:S,^,doc/,}
 HAS_CONFIGURE=	yes

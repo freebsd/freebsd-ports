@@ -1,5 +1,5 @@
---- Makefile.dist	2006-08-13 03:50:15.000000000 -0500
-+++ Makefile	2014-05-19 20:04:56.636909101 -0500
+--- Makefile.orig	2015-09-18 17:22:35 UTC
++++ Makefile
 @@ -6,8 +6,8 @@
  # they should be set.  All of them are conditional on options set in this
  # file, so it should be relatively easy to determine which branch is correct
@@ -11,7 +11,7 @@
  
  # First things first we need to set up some various options since OS's aren't
  # as nice about things are they could be.
-@@ -33,7 +33,7 @@
+@@ -33,7 +33,7 @@ MODDIR = ../modules
  # Uncomment this if you are on a BSD system AND you want dynamic modules
  # SunOS (4 and 5 both) also needs this setting.
  #
@@ -20,7 +20,7 @@
  
  # Uncomment this if you are compiling on OpenBSD with modules (BSDMOD = 1)
  #OBSDMOD = 1
-@@ -120,7 +120,6 @@
+@@ -120,7 +120,6 @@ GNU_STRFTIME=-DGNU_STRFTIME
  ifdef BSDIMOD
  CC=shlicc
  else
@@ -28,7 +28,7 @@
  endif
  
  # Warning-level flags.  Under SunOS (4 and 5), this NEEDS TO BE BLANK.
-@@ -129,9 +128,7 @@
+@@ -129,9 +128,7 @@ endif
  #
  # It appears that IRIX is also rather stupid, and may require this
  # to be removed.
@@ -39,3 +39,19 @@
  
  # Now set up the initial command line.  SUNOS_5 makes this a bit wierd.
  ifndef SUNOS_5
+@@ -301,7 +298,6 @@ targets: make_modules ecartis
+ ecartis: ${OBJS}
+ 	${CC} ${EXTRA_LFLAGS} ${LFLAGS} -o ecartis ${OBJS} ${EXTRA_LIBS} ${LIBS}
+ 	cp ecartis build/ecartis
+-	chmod ug+s build/ecartis
+ 
+ make_modules:
+ 	@for dir in ${MODULES}; \
+@@ -321,7 +317,6 @@ make_modules:
+ 
+ install: targets
+ 	cp build/ecartis ${BINDIR}
+-	chmod ug+s ${BINDIR}/ecartis
+ ifdef DYNMOD
+ 	@for dir in ${MODULES}; do \
+ 		cp build/$${dir}.lpm ${MODDIR}/$${dir}.lpm; \

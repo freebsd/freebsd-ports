@@ -2,7 +2,7 @@
 
 PORTNAME=	ipaex
 PORTVERSION=	00201
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://info.openlab.ipa.go.jp/ipafont/fontdata/7bf84182a04a9632268dbcb03f100d05/
 PKGNAMEPREFIX=	ja-font-
@@ -13,6 +13,7 @@ COMMENT=	IPAex Japanese fonts
 
 USES=		fonts:fc zip
 FONTNAME=	OTF
+NO_ARCH=	yes
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install

@@ -3,7 +3,7 @@
 
 PORTNAME=	boinc-astropulse
 PORTVERSION=	6.01
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	astro
 MASTER_SITES=	LOCAL/rene
 DISTNAME=	astropulse-svn-1702 # modified archive, see leftout in top directory
@@ -28,7 +28,7 @@ LIBS+=		-L${LOCALBASE}/lib
 
 # these must match settings in ${PORTSDIR}/net/boinc-client/Makefile
 BOINC_CLIENT_USER?=	boinc
-BOINC_CLIENT_GROUP?=	nobody
+BOINC_CLIENT_GROUP?=	boinc
 BOINC_CLIENT_HOME?=	/var/db/boinc
 
 OPTIONS_DEFINE=	X11

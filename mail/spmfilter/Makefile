@@ -34,13 +34,12 @@ DB4_DESC=	DB4 backend
 # Default requirement for spmfilter rc script
 _REQUIRE=	LOGIN
 
-SUB_FILES=	pkg-install pkg-deinstall
+SUB_FILES=	pkg-deinstall
 
-SUB_LIST+=	SMFUSER=${SMFUSER} \
+PLIST_SUB=	LIB_VERSION=${PORTVERSION} \
+		SMFUSER=${SMFUSER} \
 		SMFGROUP=${SMFGROUP} \
-		SMFDIR=${SMFDIR} \
-
-PLIST_SUB=	LIB_VERSION=${PORTVERSION}
+		SMFDIR=${SMFDIR}
 
 .include <bsd.port.options.mk>
 
@@ -92,6 +91,7 @@ post-patch:
 		${WRKSRC}/src/CMakeLists.txt
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf.sample ${STAGEDIR}${PREFIX}/etc/
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf.sample ${STAGEDIR}${PREFIX}/etc/
+	@${MKDIR} ${STAGEDIR}${SMFDIR}
 
 .include <bsd.port.mk>

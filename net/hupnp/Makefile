@@ -8,8 +8,11 @@ CATEGORIES=	net devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 DISTNAME=	herqq-${PORTVERSION}
 
-MAINTAINER=	fluffy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for building UPnP devices and control points
+
+LICENSE=	LGPL3 # or later
+LICENSE_FILE=	${WRKSRC}/hupnp/LICENSE_LGPLv3.txt
 
 USES=		gmake qmake zip
 USE_QT4=	corelib network xml dbus gui \

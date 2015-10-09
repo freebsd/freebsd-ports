@@ -5,7 +5,7 @@ PORTNAME=	tcl-manual
 PORTVERSION=	20131001
 CATEGORIES=	lang
 MASTER_SITES=	SF/tcl/Tcl/
-DISTFILES=	
+DISTFILES=
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Documentation for TCL (Tool Command Language)

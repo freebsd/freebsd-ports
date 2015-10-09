@@ -47,7 +47,7 @@ fonts_ARGS=	fcfontsdir
 .endif
 
 .if !empty(fonts_ARGS:Nfc:Nfontsdir:Nfcfontsdir:Nnone)
-IGNORE=	USES=fonts - invalid ARGS (${fonts_ARGS)
+IGNORE=	USES=fonts - invalid ARGS (${fonts_ARGS})
 .endif
 
 .if !empty(fonts_ARGS:Mfc) || !empty(fonts_ARGS:Mfcfontsdir)

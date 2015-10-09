@@ -35,7 +35,7 @@ CONFIGURE_ARGS+=	--enable-javahl \
 			--without-gnome-keyring \
 			--without-kwallet \
 			--with-apxs=no
-			
+
 MAKE_JOBS_UNSAFE=	yes
 
 ALL_TARGET=	javahl

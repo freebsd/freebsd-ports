@@ -185,6 +185,7 @@
     SUBDIR += lsw
     SUBDIR += luit
     SUBDIR += lumina
+    SUBDIR += lumina-devel
     SUBDIR += lumina-i18n
     SUBDIR += lupe
     SUBDIR += lxde-meta
@@ -407,7 +408,6 @@
     SUBDIR += xloadimage
     SUBDIR += xlockmore
     SUBDIR += xlogo
-    SUBDIR += xlogout
     SUBDIR += xlsatoms
     SUBDIR += xlsclients
     SUBDIR += xlupe

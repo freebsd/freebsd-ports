@@ -33,6 +33,13 @@ bin/dsync
 %%ETCDIR%%/README
 include/dovecot/abspath.h
 include/dovecot/access-lookup.h
+include/dovecot/acl-api-private.h
+include/dovecot/acl-api.h
+include/dovecot/acl-cache.h
+include/dovecot/acl-global-file.h
+include/dovecot/acl-lookup-dict.h
+include/dovecot/acl-plugin.h
+include/dovecot/acl-storage.h
 include/dovecot/anvil-client.h
 include/dovecot/aqueue.h
 include/dovecot/array-decl.h
@@ -51,6 +58,7 @@ include/dovecot/auth-master.h
 include/dovecot/auth-penalty.h
 include/dovecot/auth-postfix-connection.h
 include/dovecot/auth-request-handler.h
+include/dovecot/auth-request-var-expand.h
 include/dovecot/auth-request.h
 include/dovecot/auth-server-connection.h
 include/dovecot/auth-settings.h
@@ -124,6 +132,7 @@ include/dovecot/fdatasync-path.h
 include/dovecot/fdpass.h
 include/dovecot/file-cache.h
 include/dovecot/file-copy.h
+include/dovecot/file-create-locked.h
 include/dovecot/file-dotlock.h
 include/dovecot/file-lock.h
 include/dovecot/file-set-size.h
@@ -133,9 +142,17 @@ include/dovecot/fs-sis-common.h
 include/dovecot/fsync-mode.h
 include/dovecot/fts-api-private.h
 include/dovecot/fts-api.h
+include/dovecot/fts-common.h
 include/dovecot/fts-expunge-log.h
+include/dovecot/fts-filter-private.h
+include/dovecot/fts-filter.h
+include/dovecot/fts-icu.h
 include/dovecot/fts-indexer.h
+include/dovecot/fts-language.h
 include/dovecot/fts-parser.h
+include/dovecot/fts-tokenizer-generic-private.h
+include/dovecot/fts-tokenizer-private.h
+include/dovecot/fts-tokenizer.h
 include/dovecot/fts-user.h
 include/dovecot/guid.h
 include/dovecot/hash-decl.h
@@ -179,6 +196,7 @@ include/dovecot/imap-fetch.h
 include/dovecot/imap-id.h
 include/dovecot/imap-keepalive.h
 include/dovecot/imap-list.h
+include/dovecot/imap-master-client.h
 include/dovecot/imap-match.h
 include/dovecot/imap-metadata.h
 include/dovecot/imap-msgpart-url.h
@@ -191,6 +209,7 @@ include/dovecot/imap-search-args.h
 include/dovecot/imap-search.h
 include/dovecot/imap-seqset.h
 include/dovecot/imap-settings.h
+include/dovecot/imap-state.h
 include/dovecot/imap-status.h
 include/dovecot/imap-sync.h
 include/dovecot/imap-url.h
@@ -214,6 +233,7 @@ include/dovecot/imapc-sync.h
 include/dovecot/imem.h
 include/dovecot/index-attachment.h
 include/dovecot/index-mail.h
+include/dovecot/index-mailbox-size.h
 include/dovecot/index-rebuild.h
 include/dovecot/index-search-private.h
 include/dovecot/index-search-result.h
@@ -235,6 +255,7 @@ include/dovecot/iostream-rawlog.h
 include/dovecot/iostream-ssl-private.h
 include/dovecot/iostream-ssl.h
 include/dovecot/iostream-temp.h
+include/dovecot/iostream.h
 include/dovecot/ipc-client.h
 include/dovecot/ipc-server.h
 include/dovecot/ipwd.h
@@ -248,8 +269,10 @@ include/dovecot/istream-chain.h
 include/dovecot/istream-concat.h
 include/dovecot/istream-crlf.h
 include/dovecot/istream-dot.h
+include/dovecot/istream-failure-at.h
 include/dovecot/istream-file-private.h
 include/dovecot/istream-fs-file.h
+include/dovecot/istream-fs-stats.h
 include/dovecot/istream-hash.h
 include/dovecot/istream-header-filter.h
 include/dovecot/istream-jsonstr.h
@@ -313,6 +336,7 @@ include/dovecot/mail-transaction-log.h
 include/dovecot/mail-types.h
 include/dovecot/mail-user-hash.h
 include/dovecot/mail-user.h
+include/dovecot/mailbox-attribute-internal.h
 include/dovecot/mailbox-attribute-private.h
 include/dovecot/mailbox-attribute.h
 include/dovecot/mailbox-guid-cache.h
@@ -329,9 +353,11 @@ include/dovecot/mailbox-list-private.h
 include/dovecot/mailbox-list-subscriptions.h
 include/dovecot/mailbox-list.h
 include/dovecot/mailbox-log.h
+include/dovecot/mailbox-recent-flags.h
 include/dovecot/mailbox-search-result-private.h
 include/dovecot/mailbox-tree.h
 include/dovecot/mailbox-uidvalidity.h
+include/dovecot/mailbox-watch.h
 include/dovecot/maildir-filename-flags.h
 include/dovecot/maildir-filename.h
 include/dovecot/maildir-keywords.h
@@ -398,6 +424,7 @@ include/dovecot/notify-plugin.h
 include/dovecot/numpack.h
 include/dovecot/ostream-cmp.h
 include/dovecot/ostream-dot.h
+include/dovecot/ostream-failure-at.h
 include/dovecot/ostream-hash.h
 include/dovecot/ostream-metawrap.h
 include/dovecot/ostream-private.h
@@ -422,6 +449,26 @@ include/dovecot/primes.h
 include/dovecot/printf-format-fix.h
 include/dovecot/priorityq.h
 include/dovecot/process-title.h
+include/dovecot/push-notification-drivers.h
+include/dovecot/push-notification-event-flagsclear.h
+include/dovecot/push-notification-event-flagsset.h
+include/dovecot/push-notification-event-mailboxcreate.h
+include/dovecot/push-notification-event-mailboxdelete.h
+include/dovecot/push-notification-event-mailboxrename.h
+include/dovecot/push-notification-event-mailboxsubscribe.h
+include/dovecot/push-notification-event-mailboxunsubscribe.h
+include/dovecot/push-notification-event-message-common.h
+include/dovecot/push-notification-event-messageappend.h
+include/dovecot/push-notification-event-messageexpunge.h
+include/dovecot/push-notification-event-messagenew.h
+include/dovecot/push-notification-event-messageread.h
+include/dovecot/push-notification-event-messagetrash.h
+include/dovecot/push-notification-events-rfc5423.h
+include/dovecot/push-notification-events.h
+include/dovecot/push-notification-plugin.h
+include/dovecot/push-notification-triggers.h
+include/dovecot/push-notification-txn-mbox.h
+include/dovecot/push-notification-txn-msg.h
 include/dovecot/qp-decoder.h
 include/dovecot/quota-fs.h
 include/dovecot/quota-plugin.h
@@ -453,6 +500,7 @@ include/dovecot/sha1.h
 include/dovecot/sha2.h
 include/dovecot/shared-storage.h
 include/dovecot/smtp-client.h
+include/dovecot/sort.h
 include/dovecot/sql-api-private.h
 include/dovecot/sql-api.h
 include/dovecot/sql-db-cache.h
@@ -470,6 +518,7 @@ include/dovecot/subscription-file.h
 include/dovecot/syslog-util.h
 include/dovecot/test-common.h
 include/dovecot/time-util.h
+include/dovecot/timing.h
 include/dovecot/unichar.h
 include/dovecot/unix-socket-create.h
 include/dovecot/unlink-directory.h
@@ -529,6 +578,8 @@ lib/dovecot/lib20_mail_log_plugin.a
 lib/dovecot/lib20_mail_log_plugin.so
 lib/dovecot/lib20_mailbox_alias_plugin.a
 lib/dovecot/lib20_mailbox_alias_plugin.so
+lib/dovecot/lib20_push_notification_plugin.a
+lib/dovecot/lib20_push_notification_plugin.so
 lib/dovecot/lib20_quota_clone_plugin.a
 lib/dovecot/lib20_quota_clone_plugin.so
 lib/dovecot/lib20_replication_plugin.a
@@ -591,6 +642,7 @@ libexec/dovecot/doveadm-server
 libexec/dovecot/dovecot-lda
 libexec/dovecot/gdbhelper
 libexec/dovecot/imap
+libexec/dovecot/imap-hibernate
 libexec/dovecot/imap-login
 libexec/dovecot/imap-urlauth
 libexec/dovecot/imap-urlauth-login
@@ -669,4 +721,4 @@ share/aclocal/dovecot.m4
 %%SOLR%%lib/dovecot/lib21_fts_solr_plugin.so
 %%SSL%%lib/dovecot/libssl_iostream_openssl.a
 %%SSL%%lib/dovecot/libssl_iostream_openssl.so
-@unexec echo "If you are removing dovecot2 permanently, you should 'rm -rf /var/db/dovecot' to clear out any remaining data."
+@postunexec echo "If you are removing dovecot2 permanently, you should 'rm -rf /var/db/dovecot' to clear out any remaining data."

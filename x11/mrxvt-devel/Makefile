@@ -43,11 +43,7 @@ FRILLS_DESC=		Internal borders and smart resizing
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS+=	--enable-utempter
-.if ${OSVERSION} >= 900004
 CONFIGURE_ARGS+=	--disable-lastlog
-.else
-LIB_DEPENDS+=		libutempter.so:${PORTSDIR}/sysutils/libutempter
-.endif
 
 .if ${PORT_OPTIONS:MJAPANESE}
 CONFIGURE_ARGS+=	--enable-xim --enable-cjk --with-encoding=eucj

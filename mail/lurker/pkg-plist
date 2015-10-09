@@ -68,19 +68,19 @@ www/lurker/ui/pt.xml
 www/lurker/ui/search.xsl
 www/lurker/ui/splash.xsl
 www/lurker/ui/thread.xsl
-@dirrm www/lurker/zap
-@dirrm www/lurker/ui
-@dirrm www/lurker/thread
-@dirrm www/lurker/splash
-@dirrm www/lurker/search
-@dirrm www/lurker/mindex
-@dirrm www/lurker/message
-@dirrm www/lurker/mbox
-@dirrm www/lurker/list
-@dirrm www/lurker/imgs
-@dirrm www/lurker/attach
-@dirrm www/lurker
-@owner root
-@group wheel
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm etc/lurker
+@dir www/lurker/zap
+@dir www/lurker/ui
+@dir www/lurker/thread
+@dir www/lurker/splash
+@dir www/lurker/search
+@dir www/lurker/mindex
+@dir www/lurker/message
+@dir www/lurker/mbox
+@dir www/lurker/list
+@dir www/lurker/imgs
+@dir www/lurker/attach
+@dir www/lurker
+@owner
+@group
+@dir /var/lib/lurker
+@dir /var/lib

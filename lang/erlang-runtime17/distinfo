@@ -22,3 +22,5 @@ SHA256 (erlang/patch-otp-17.5.6.2) = 47fc4468fdc75249f30a4ba120ed39db03dfb5ebc5c
 SIZE (erlang/patch-otp-17.5.6.2) = 14293
 SHA256 (erlang/patch-otp-17.5.6.3) = 75e91ad34a910353452cc1cf26ffb6936e9df3f0d1144793eb83ac7ab3074486
 SIZE (erlang/patch-otp-17.5.6.3) = 63652
+SHA256 (erlang/patch-otp-17.5.6.4) = 9156ea7d173b8fef62ee1eb2483b943cfdbeca80b74177f51aa131a688db8ed5
+SIZE (erlang/patch-otp-17.5.6.4) = 11945

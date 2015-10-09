@@ -14,11 +14,10 @@ BUILD_DEPENDS=	${LINUXBASE}/usr/bin/gcc:${PORTSDIR}/devel/linux-c6-devtools
 
 USES=		tar:bzip2
 ONLY_FOR_ARCHS=	i386 amd64
+USE_LDCONFIG=	yes
 USE_LINUX_PREFIX=	yes
 PLIST_FILES=		usr/lib/libusb.so	\
-			usr/lib/libusb-0.1.so.4 \
-			"@exec ${LDCONFIG_CMD}" \
-			"@unexec ${LDCONFIG_CMD}"
+			usr/lib/libusb-0.1.so.4
 CC=		${LINUXBASE}/usr/bin/gcc
 CFLAGS+=	-I${WRKDIR}/sys
 MAKE_ARGS+=	LIBUSB_GLOBAL_INCLUDE_FILE=libusb_global_linux.h

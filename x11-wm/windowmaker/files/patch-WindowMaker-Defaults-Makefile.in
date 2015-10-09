@@ -1,13 +1,13 @@
---- WindowMaker/Defaults/Makefile.in.orig	2013-01-10 06:43:07.000000000 +0900
-+++ WindowMaker/Defaults/Makefile.in	2013-05-03 03:47:45.000000000 +0900
-@@ -458,7 +458,9 @@
+--- WindowMaker/Defaults/Makefile.in.orig	2015-10-06 04:12:10 UTC
++++ WindowMaker/Defaults/Makefile.in
+@@ -542,7 +542,9 @@ WMWindowAttributes: $(srcdir)/WMWindowAt
+ 	chmod 644 WMWindowAttributes
  
  WindowMaker: $(srcdir)/WindowMaker.in
- 	-rm -f WindowMaker
--	sed -e "s:#pkgdatadir#:$(pkgdatadir):" $(srcdir)/WindowMaker.in \
-+	sed -e "s:#pkgdatadir#:$(pkgdatadir):" \
-+	    -e "s:#prefix#:$(prefix):" \
+-	$(AM_V_GEN)sed -e "s:#pkgdatadir#:$(pkgdatadir):" $(srcdir)/WindowMaker.in \
++	$(AM_V_GEN)sed -e "s:#pkgdatadir#:$(pkgdatadir):" \
++		-e "s:#prefix#:$(prefix):" \
 +		$(srcdir)/WindowMaker.in \
- 		> WindowMaker
+ 		> WindowMaker ; \
  	chmod 644 WindowMaker
  

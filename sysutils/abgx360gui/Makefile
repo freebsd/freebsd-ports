@@ -6,9 +6,10 @@ PORTVERSION=	1.0.2
 PORTREVISION=	7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
-		http://update.cooltrainer.org/abgx360/ \
-		http://abgx360.x-scene.com/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} abgx360-256.png
+		http://update.cooltrainer.org/abgx360/:png \
+		http://abgx360.xecuter.com/dl/ \
+		http://dl.dropbox.com/u/59058148/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} abgx360-256.png:png
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	root@cooltrainer.org

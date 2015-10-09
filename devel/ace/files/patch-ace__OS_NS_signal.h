@@ -1,6 +1,6 @@
---- ace/OS_NS_signal.h.orig	2011-03-04 23:59:09.000000000 +0900
-+++ ace/OS_NS_signal.h	2011-11-27 07:50:01.000000000 +0900
-@@ -33,10 +33,10 @@
+--- ace/OS_NS_signal.h.orig	2015-09-17 06:55:18 UTC
++++ ace/OS_NS_signal.h
+@@ -31,10 +31,10 @@
  #endif
  #define ACE_EXPORT_MACRO ACE_Export
  

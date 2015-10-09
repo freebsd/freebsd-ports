@@ -12,6 +12,9 @@ COMMENT=	IDE/GUI for the R-project
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Depends on deprecated math/R-cran-car
+EXPIRATION_DATE=	2015-10-31
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/R:${PORTSDIR}/math/R
 RUN_DEPENDS=	${LOCALBASE}/bin/R:${PORTSDIR}/math/R \
 		${KDE4_PREFIX}/lib/kde4/katepart.so:${PORTSDIR}/editors/kate

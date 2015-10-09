@@ -2,7 +2,7 @@
 
 PORTNAME=	phprecipebook
 PORTVERSION=	3.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION:C/\..*//}
 
@@ -41,7 +41,6 @@ post-extract:
 do-install:
 	${MV} ${WRKSRC}/custom_inc.php ${WRKSRC}/custom_inc.php.sample
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 
 post-install:
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' >> ${TMPPLIST}

@@ -1,9 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	axa
-PORTVERSION=	1.2.0
-DISTVERSIONPREFIX=	tags/v
+PORTVERSION=	1.2.1
 CATEGORIES=	net dns
+MASTER_SITES=	FARSIGHT/${PORTNAME}/${PORTVERSION} LOCAL/truckman/farsight
+DISTNAME=	${PORTNAME}_${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	truckman@FreeBSD.org
 COMMENT=	AXA library and tools
@@ -18,11 +19,11 @@ LIB_DEPENDS=	libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c \
 		libwdns.so:${PORTSDIR}/dns/wdns
 RUN_DEPENDS=	sie-nmsg>0:${PORTSDIR}/net/sie-nmsg
 
+WRKSRC=		${WRKDIR}/axa-tools
+
 GNU_CONFIGURE=	yes
 USES=		autoreconf gmake libedit libtool pathfix pkgconfig
 CONFIGURE_SHELL=	${LOCALBASE}/bin/bash
-USE_GITHUB=	yes
-GH_ACCOUNT=	farsightsec
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 WITH_OPENSSL_PORT=	yes

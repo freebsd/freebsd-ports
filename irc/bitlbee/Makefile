@@ -2,7 +2,7 @@
 
 PORTNAME=	bitlbee
 PORTVERSION=	3.4.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/ \
 		LOCAL/brix
@@ -44,7 +44,7 @@ YAHOO_DESC=		Yahoo! Messenger support
 GLIB_DESC=		Use glib as event handler
 LIBEVENT_DESC=		Use libevent as event handler
 
-OPTIONS_DEFAULT=	GLIB GNUTLS JABBER OSCAR TWITTER YAHOO
+OPTIONS_DEFAULT=	GLIB GNUTLS JABBER OSCAR OTR TWITTER YAHOO
 
 CONFIGURE_ARGS=		--config=/var/db/bitlbee \
 			--pcdir=${PREFIX}/libdata/pkgconfig

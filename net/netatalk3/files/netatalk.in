@@ -23,4 +23,19 @@ load_rc_config ${name}
 
 command=%%PREFIX%%/sbin/${name}
 
+extra_commands="reload"
+reload_cmd="netatalk_reload"
+
+netatalk_reload()
+{
+        local status
+
+        if ! status=`run_rc_command status 2>&1`; then
+                echo $status
+                return 1
+        fi
+        echo 'Reloading netatalk.'
+        kill -HUP $rc_pid
+}
+
 run_rc_command "$1"

@@ -22,6 +22,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 LDFLAGS+=	-L${LOCALBASE}/lib
+TEST_TARGET=	check
 USE_LDCONFIG=	yes
 USES=		libtool pathfix
 
@@ -38,8 +39,5 @@ post-install:
 	cd ${WRKSRC}/utils/ && ${INSTALL_MAN} linkicc/linkicc.1 psicc/psicc.1 transicc/transicc.1 ${STAGEDIR}${PREFIX}/man/man1/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${STAGEDIR}${DOCSDIR}/
-
-regression-test test: build
-	cd ${WRKSRC}/testbed/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 
 .include <bsd.port.mk>

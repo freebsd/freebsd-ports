@@ -12,6 +12,23 @@ include/node/node_internals.h
 include/node/node_object_wrap.h
 include/node/node_version.h
 include/node/openssl/aes.h
+include/node/openssl/archs/BSD-x86/opensslconf.h
+include/node/openssl/archs/BSD-x86_64/opensslconf.h
+include/node/openssl/archs/VC-WIN32/opensslconf.h
+include/node/openssl/archs/VC-WIN64A/opensslconf.h
+include/node/openssl/archs/aix-gcc/opensslconf.h
+include/node/openssl/archs/aix64-gcc/opensslconf.h
+include/node/openssl/archs/darwin-i386-cc/opensslconf.h
+include/node/openssl/archs/darwin64-x86_64-cc/opensslconf.h
+include/node/openssl/archs/linux-aarch64/opensslconf.h
+include/node/openssl/archs/linux-armv4/opensslconf.h
+include/node/openssl/archs/linux-elf/opensslconf.h
+include/node/openssl/archs/linux-ppc/opensslconf.h
+include/node/openssl/archs/linux-ppc64/opensslconf.h
+include/node/openssl/archs/linux-x32/opensslconf.h
+include/node/openssl/archs/linux-x86_64/opensslconf.h
+include/node/openssl/archs/solaris-x86-gcc/opensslconf.h
+include/node/openssl/archs/solaris64-x86_64-gcc/opensslconf.h
 include/node/openssl/asn1.h
 include/node/openssl/asn1_mac.h
 include/node/openssl/asn1t.h
@@ -87,7 +104,6 @@ include/node/openssl/x509.h
 include/node/openssl/x509_vfy.h
 include/node/openssl/x509v3.h
 include/node/pthread-fixes.h
-include/node/smalloc.h
 include/node/stdint-msvc2008.h
 include/node/tree.h
 include/node/uv-aix.h
@@ -106,8 +122,9 @@ include/node/v8-platform.h
 include/node/v8-profiler.h
 include/node/v8-testing.h
 include/node/v8-util.h
+include/node/v8-version.h
 include/node/v8.h
 include/node/v8config.h
-include/node/v8stdint.h
 @(,,444) man/man1/node.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/gdbinit
 share/systemtap/tapset/node.stp

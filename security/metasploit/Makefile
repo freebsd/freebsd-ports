@@ -3,7 +3,7 @@
 
 PORTNAME=	metasploit
 PORTVERSION=	4.11.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -39,7 +39,19 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	rapid7
 GH_PROJECT=	metasploit-framework
 
-USES=		ncurses:port
+USES=		ncurses:port shebangfix
+SHEBANG_FILES=	data/cpuinfo/build.sh \
+		data/john/run.*/*.rb \
+		data/john/run.*/*.pl \
+		data/templates/src/pe/dll/build.sh \
+		external/ruby-kissfft/tests/test_kissfft.rb \
+		external/source/exploits/*/*.sh \
+		external/source/metsvc/test.rb \
+		external/source/msfJavaToolkit/*.sh \
+		external/source/msfJavaToolkit/*.rb \
+		external/source/pxesploit/regeditor/compile.sh \
+		external/source/shellcode/windows/build.sh \
+		lib/net/ssh/test.rb
 USE_RUBY=	yes
 
 OPTIONS_DEFINE=	DB
@@ -50,8 +62,6 @@ DB_RUN_DEPENDS=	rubygem-activerecord>=3.0.0:${PORTSDIR}/databases/rubygem-active
 		rubygem-metasploit-credential>=0.14.5:${PORTSDIR}/security/rubygem-metasploit-credential \
 		rubygem-metasploit_data_models>=0.24.0,2:${PORTSDIR}/security/rubygem-metasploit_data_models \
 		rubygem-pg>=0.11:${PORTSDIR}/databases/rubygem-pg
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	${REINPLACE_CMD} 's,git ls-files,find . ! -type d | sed "s|^./||", ; \
@@ -66,9 +76,9 @@ do-build:
 	${CHMOD} 666 ${WRKSRC}/Gemfile.lock ${WRKSRC}/log/production.log
 	${REINPLACE_CMD} '/^group :coverage/,/^end/d ; /^group :development/,/^end/d ; /^group :test/,/^end/d' \
 		${WRKSRC}/Gemfile
-.if ! ${PORT_OPTIONS:MDB}
+
+do-build-DB-off:
 	${REINPLACE_CMD} '/^group :db do/,/^end/d' ${WRKSRC}/Gemfile
-.endif
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

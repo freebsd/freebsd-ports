@@ -238,6 +238,9 @@
 %%PORTDOCS%%lib/erlang/lib/wx-%%APP_VERSION%%/doc/src/part.xml
 %%PORTDOCS%%lib/erlang/lib/wx-%%APP_VERSION%%/doc/src/part_notes.xml
 %%PORTDOCS%%lib/erlang/lib/wx-%%APP_VERSION%%/doc/src/ref_man.xml.src
+%%PORTDOCS%%lib/erlang/lib/wx-%%APP_VERSION%%/info
+lib/erlang/lib/wx-%%APP_VERSION%%/doc/html/wxAuiSimpleTabArt.html
+lib/erlang/lib/wx-%%APP_VERSION%%/doc/html/wxMouseCaptureLostEvent.html
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/gl.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/glu.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wx.app
@@ -253,6 +256,7 @@ lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxAuiManagerEvent.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxAuiNotebook.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxAuiNotebookEvent.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxAuiPaneInfo.beam
+lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxAuiSimpleTabArt.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxAuiTabArt.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxBitmap.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxBitmapButton.beam
@@ -375,6 +379,7 @@ lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxMessageDialog.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxMiniFrame.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxMirrorDC.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxMouseCaptureChangedEvent.beam
+lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxMouseCaptureLostEvent.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxMouseEvent.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxMoveEvent.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxMultiChoiceDialog.beam
@@ -471,7 +476,6 @@ lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxe_util.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/include/gl.hrl
 lib/erlang/lib/wx-%%APP_VERSION%%/include/glu.hrl
 lib/erlang/lib/wx-%%APP_VERSION%%/include/wx.hrl
-%%PORTDOCS%%lib/erlang/lib/wx-%%APP_VERSION%%/info
 lib/erlang/lib/wx-%%APP_VERSION%%/priv/%%CONFIGURE_TARGET%%/erl_gl.so
 lib/erlang/lib/wx-%%APP_VERSION%%/priv/%%CONFIGURE_TARGET%%/wxe_driver.so
 lib/erlang/lib/wx-%%APP_VERSION%%/priv/erlang-logo128.png
@@ -490,6 +494,7 @@ lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxAuiManagerEvent.erl
 lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxAuiNotebook.erl
 lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxAuiNotebookEvent.erl
 lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxAuiPaneInfo.erl
+lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxAuiSimpleTabArt.erl
 lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxAuiTabArt.erl
 lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxBitmap.erl
 lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxBitmapButton.erl
@@ -612,6 +617,7 @@ lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxMessageDialog.erl
 lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxMiniFrame.erl
 lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxMirrorDC.erl
 lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxMouseCaptureChangedEvent.erl
+lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxMouseCaptureLostEvent.erl
 lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxMouseEvent.erl
 lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxMoveEvent.erl
 lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxMultiChoiceDialog.erl

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmtp
-PORTVERSION=	1.1.9
-PORTREVISION=	1
+PORTVERSION=	1.1.10
 CATEGORIES=	multimedia audio
 MASTER_SITES=	SF
 
@@ -21,11 +20,8 @@ MTPZ_DESC=	Enable functionality to connect to MTPZ devices
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-doxygen
 INSTALL_TARGET=	install-strip
-USES=		iconv libtool pathfix pkgconfig
+USES=		iconv libtool localbase pathfix pkgconfig
 USE_LDCONFIG=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if !exists(/usr/libdata/pkgconfig/libusb-1.0.pc)
 CONFIGURE_ENV+=	LIBUSB_CFLAGS=" " LIBUSB_LIBS="-lusb"

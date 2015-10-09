@@ -1,9 +1,9 @@
---- ui.go.orig	2015-03-07 22:40:10.096733000 +0100
-+++ ui.go	2015-03-07 22:41:07.136470000 +0100
-@@ -22,10 +22,10 @@
+--- ui.go.orig	2015-07-15 22:37:17.187612000 +0200
++++ ui.go	2015-07-15 22:37:59.261081000 +0200
+@@ -23,10 +23,10 @@
  	"time"
  
- 	"github.com/agl/xmpp"
+ 	"github.com/agl/xmpp-client/xmpp"
 -	"golang.org/x/crypto/otr"
 -	"golang.org/x/crypto/ssh/terminal"
 -	"golang.org/x/net/html"

@@ -18,14 +18,17 @@ sbin/ods-signerd
 %%DATADIR%%/conf.rng
 %%SQLITE%%%%DATADIR%%/database_create.sqlite3
 %%MYSQL%%%%DATADIR%%/database_create.mysql
+%%DATADIR%%/convert_database.pl
 %%DATADIR%%/enforcerstate.rnc
 %%DATADIR%%/enforcerstate.rng
 %%DATADIR%%/kasp.rnc
 %%DATADIR%%/kasp.rng
 %%DATADIR%%/kasp2html.xsl
+%%SQLITE%%%%DATADIR%%/migrate_1_4_8.sqlite3
 %%SQLITE%%%%DATADIR%%/migrate_adapters_1.sqlite3
 %%SQLITE%%%%DATADIR%%/migrate_keyshare_sqlite3.pl
 %%SQLITE%%%%DATADIR%%/migrate_to_ng_sqlite.pl
+%%MYSQL%%%%DATADIR%%/migrate_1_4_8.mysql
 %%MYSQL%%%%DATADIR%%/migrate_adapters_1.mysql
 %%MYSQL%%%%DATADIR%%/migrate_keyshare_mysql.pl
 %%MYSQL%%%%DATADIR%%/migrate_zone_delete.mysql

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	osmo
-PORTVERSION=	0.2.12
-PORTREVISION=	1
+PORTVERSION=	0.2.14
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}-pim/${PORTNAME}-pim/${PORTNAME}-${PORTVERSION}
 
@@ -28,8 +27,8 @@ INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-POFILES=	bg ca cs da de el en_GB es fi fr gl gl_ES hu it ja lt nl \
-		pl pt pt_BR ro ru sv te tr uk ur ur_PK zh_CN
+POFILES=	bg ca cs da de el en_GB es fi fr gl gl_ES he hu it ja lt \
+		nl pl pt pt_BR ro ru sr sv te tr uk ur ur_PK zh_CN
 
 post-build:
 .for p in ${POFILES}

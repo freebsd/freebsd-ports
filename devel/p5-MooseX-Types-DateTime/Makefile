@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-Types-DateTime
-PORTVERSION=	0.11
+PORTVERSION=	0.13
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ETHER
@@ -23,6 +23,7 @@ BUILD_DEPENDS=	p5-DateTime>=0.43.02:${PORTSDIR}/devel/p5-DateTime \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
+NO_ARCH=	yes
 USE_PERL5=	modbuildtiny
 USES=		perl5
 

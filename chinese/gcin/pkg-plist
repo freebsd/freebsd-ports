@@ -169,5 +169,5 @@ share/icons/gcin/vocabulary.png
 share/icons/gcin/wm2.png
 share/icons/gcin/wubi.png
 share/icons/hicolor/64x64/apps/gcin.png
-@exec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache
-@unexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache
+@postexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache
+@postunexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache

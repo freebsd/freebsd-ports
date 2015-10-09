@@ -18,6 +18,7 @@ BUILD_DEPENDS=	p5-HTTP-Message>=6:${PORTSDIR}/www/p5-HTTP-Message \
 		p5-libwww>=6:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

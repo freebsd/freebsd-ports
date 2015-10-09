@@ -19,7 +19,7 @@ USES=		python
 USE_PYTHON=	autoplist distutils
 
 regression-test: build
-	${TOUCH} ${WRKSRC}/tests/__init__.py	
+	${TOUCH} ${WRKSRC}/tests/__init__.py
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>

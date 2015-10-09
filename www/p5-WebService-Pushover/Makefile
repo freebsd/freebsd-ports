@@ -29,6 +29,7 @@ TEST_DEPENDS=	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Fake-HTTPD>=0:${PORTSDIR}/devel/p5-Test-Fake-HTTPD
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

@@ -27,6 +27,7 @@
 %%WWWDIR%%/application/hooks/index.html
 %%WWWDIR%%/application/index.html
 %%WWWDIR%%/application/language/english/index.html
+%%WWWDIR%%/application/language/index.html
 %%WWWDIR%%/application/libraries/index.html
 %%WWWDIR%%/application/logs/index.html
 %%WWWDIR%%/application/models/index.html
@@ -153,6 +154,8 @@
 %%WWWDIR%%/system/libraries/Cache/drivers/Cache_dummy.php
 %%WWWDIR%%/system/libraries/Cache/drivers/Cache_file.php
 %%WWWDIR%%/system/libraries/Cache/drivers/Cache_memcached.php
+%%WWWDIR%%/system/libraries/Cache/drivers/index.html
+%%WWWDIR%%/system/libraries/Cache/index.html
 %%WWWDIR%%/system/libraries/Calendar.php
 %%WWWDIR%%/system/libraries/Cart.php
 %%WWWDIR%%/system/libraries/Driver.php
@@ -180,4 +183,5 @@
 %%WWWDIR%%/system/libraries/Zip.php
 %%WWWDIR%%/system/libraries/index.html
 %%WWWDIR%%/system/libraries/javascript/Jquery.php
+%%WWWDIR%%/system/libraries/javascript/index.html
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/application/cache

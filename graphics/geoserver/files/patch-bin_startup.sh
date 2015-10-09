@@ -1,7 +1,7 @@
---- bin/startup.sh.orig	2008-03-11 17:52:11.000000000 +0100
-+++ bin/startup.sh	2008-03-11 17:52:51.000000000 +0100
+--- bin/startup.sh.orig	2015-09-30 16:13:46 UTC
++++ bin/startup.sh
 @@ -5,20 +5,6 @@
- # $Id: startup.sh 7290 2007-07-23 18:57:27Z jdeolive $
+ # $Id$
  # -----------------------------------------------------------------------------
  
 -# Make sure prerequisite environment variables are set
@@ -21,9 +21,9 @@
  if [ -z $GEOSERVER_HOME ]; then
    #If GEOSERVER_HOME not set then guess a few locations before giving
    # up and demanding user set it.
-@@ -66,4 +52,4 @@
+@@ -71,4 +57,4 @@ cd "$GEOSERVER_HOME"
  echo "GEOSERVER DATA DIR is $GEOSERVER_DATA_DIR"
  #added headless to true by default, if this messes anyone up let the list
  #know and we can change it back, but it seems like it won't hurt -ch
--exec "$_RUNJAVA" -DGEOSERVER_DATA_DIR=$GEOSERVER_DATA_DIR -Djava.awt.headless=true -DSTOP.PORT=8079 -DSTOP.KEY=geoserver -jar start.jar 
+-exec "$_RUNJAVA" $JAVA_OPTS -DGEOSERVER_DATA_DIR="$GEOSERVER_DATA_DIR" -Djava.awt.headless=true -DSTOP.PORT=8079 -DSTOP.KEY=geoserver -jar start.jar 
 +exec %%JAVA%% -DGEOSERVER_DATA_DIR=$GEOSERVER_DATA_DIR -Djava.awt.headless=true -DSTOP.PORT=8079 -DSTOP.KEY=geoserver -jar start.jar

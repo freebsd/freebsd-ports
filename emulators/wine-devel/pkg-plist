@@ -1,4 +1,5 @@
 bin/function_grep.pl
+%%STAGING%%bin/msidb
 bin/msiexec
 bin/notepad
 bin/regedit
@@ -803,8 +804,13 @@ include/wine/windows/wtypes.h
 include/wine/windows/wtypes.idl
 include/wine/windows/wuapi.h
 include/wine/windows/wuapi.idl
+include/wine/windows/x3daudio.h
+include/wine/windows/xapo.h
+include/wine/windows/xapo.idl
 include/wine/windows/xaudio2.h
 include/wine/windows/xaudio2.idl
+include/wine/windows/xaudio2fx.h
+include/wine/windows/xaudio2fx.idl
 include/wine/windows/xcmc.h
 include/wine/windows/xinput.h
 include/wine/windows/xmldom.h
@@ -1091,6 +1097,7 @@ lib/wine/dxdiagn.dll.so
 lib/wine/dxgi.dll.so
 lib/wine/dxva2.dll.so
 lib/wine/eject.exe.so
+lib/wine/esent.dll.so
 lib/wine/evr.dll.so
 lib/wine/expand.exe.so
 lib/wine/explorer.exe.so
@@ -1348,6 +1355,7 @@ lib/wine/fakedlls/dxdiagn.dll
 lib/wine/fakedlls/dxgi.dll
 lib/wine/fakedlls/dxva2.dll
 lib/wine/fakedlls/eject.exe
+lib/wine/fakedlls/esent.dll
 lib/wine/fakedlls/evr.dll
 lib/wine/fakedlls/expand.exe
 lib/wine/fakedlls/explorer.exe
@@ -1447,6 +1455,7 @@ lib/wine/fakedlls/mscoree.dll
 lib/wine/fakedlls/msctf.dll
 lib/wine/fakedlls/msctfp.dll
 lib/wine/fakedlls/msdaps.dll
+lib/wine/fakedlls/msdelta.dll
 lib/wine/fakedlls/msdmo.dll
 lib/wine/fakedlls/msftedit.dll
 lib/wine/fakedlls/msg711.acm
@@ -1455,6 +1464,7 @@ lib/wine/fakedlls/mshta.exe
 lib/wine/fakedlls/mshtml.dll
 lib/wine/fakedlls/mshtml.tlb
 lib/wine/fakedlls/msi.dll
+%%STAGING%%lib/wine/fakedlls/msidb.exe
 lib/wine/fakedlls/msident.dll
 lib/wine/fakedlls/msiexec.exe
 lib/wine/fakedlls/msimg32.dll
@@ -2052,6 +2062,7 @@ lib/wine/mscoree.dll.so
 lib/wine/msctf.dll.so
 lib/wine/msctfp.dll.so
 lib/wine/msdaps.dll.so
+lib/wine/msdelta.dll.so
 lib/wine/msdmo.dll.so
 lib/wine/msftedit.dll.so
 lib/wine/msg711.acm.so
@@ -2060,6 +2071,7 @@ lib/wine/mshta.exe.so
 lib/wine/mshtml.dll.so
 lib/wine/mshtml.tlb.so
 lib/wine/msi.dll.so
+%%STAGING%%lib/wine/msidb.exe.so
 lib/wine/msident.dll.so
 lib/wine/msiexec.exe.so
 lib/wine/msimg32.dll.so

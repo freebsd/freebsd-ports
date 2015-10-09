@@ -37,17 +37,12 @@ BACKTRACE_DESC=	Use backtrace() to generate nice bug reports
 
 BACKTRACE_LIB_DEPENDS=		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 BACKTRACE_CONFIGURE_ENABLE=	backtrace
+BACKTRACE_VARS=	STRIP= # empty
 OPENGL_USE=			GL=gl
 OPENGL_CONFIGURE_ENABLE=	opengl
 VORBIS_LIB_DEPENDS=		libvorbis.so:${PORTSDIR}/audio/libvorbis \
 				libogg.so:${PORTSDIR}/audio/libogg
 VORBIS_CONFIGURE_ENABLE=	vorbis
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MBACKTRACE}
-STRIP=		#
-.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/win32/w32icon2_64x64.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png

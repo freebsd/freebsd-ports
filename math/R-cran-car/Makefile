@@ -12,6 +12,8 @@ COMMENT=	Companion to Applied Regression for R
 LICENSE=	GPLv2
 
 BROKEN=		Missing dependency
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-10-31
 
 USES=	cran:auto-plist
 

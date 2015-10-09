@@ -41,14 +41,14 @@ WRKSRC?=	${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 R_COMMAND=	${LOCALBASE}/bin/R
 
-.if !target(regression-test)
+.if !target(do-test)
 R_POSTCMD_CHECK_OPTIONS?=	--timings
 
 .if !exists(${LOCALBASE}/bin/pdflatex)
 R_POSTCMD_CHECK_OPTIONS+=	--no-manual --no-rebuild-vignettes
 .endif
 
-regression-test: build
+do-test:
 	@cd ${WRKDIR} ; ${SETENV} ${MAKE_ENV} _R_CHECK_FORCE_SUGGESTS_=FALSE \
 	${R_COMMAND} ${R_PRECMD_CHECK_OPTIONS} CMD check \
 	${R_POSTCMD_CHECK_OPTIONS} ${PORTNAME}

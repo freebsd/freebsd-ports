@@ -19,6 +19,7 @@ BUILD_DEPENDS=	p5-CDB_File>=0.96:${PORTSDIR}/databases/p5-CDB_File \
 		p5-Geo-Coordinates-Converter>=0.09:${PORTSDIR}/science/p5-Geo-Coordinates-Converter
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

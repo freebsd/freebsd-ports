@@ -18,22 +18,12 @@ OPTIONS_DEFINE=	SASL
 OPTIONS_DEFAULT=SASL
 SASL_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 SASL_CONFIGURE_ON=	--with-sasl=${LOCALBASE}
+SASL_VARS=	PKGNAMESUFFIX+=-sasl
 
 USE_RC_SUBR=	argus
 
-.include <bsd.port.options.mk>
-
 USES=		bison perl5
 GNU_CONFIGURE=	yes
-
-.if ${PORT_OPTIONS:MSASL}
-PKGNAMESUFFIX+=	-sasl
-.endif
-
-.if ${OSVERSION} < 900000
-BUILD_DEPENDS+=	${LOCALBASE}/include/pcap.h:${PORTSDIR}/net/libpcap
-CONFIGURE_ARGS+=	--with-libpcap=${LOCALBASE}
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#/usr/lib/sasl2#${LOCALBASE}/lib/sasl2#' ${WRKSRC}/argus/ArgusOutput.c

@@ -20,11 +20,4 @@ Font Path setting:
 whether the following directories are listed:
 
     %%PREFIX%%/share/fonts/alias-fonts/	(This port)
-    %%PREFIX%%/share/fonts/elisa8x8/	(8 dot fonts)
-    %%PREFIX%%/share/fonts/naga10/	(10 dot fonts)
-    %%PREFIX%%/share/fonts/shinonome/	(12, 14 and 16 dots)
-    %%PREFIX%%/share/fonts/kanji/	(18 and 24 dot fonts)
-    %%PREFIX%%/share/fonts/k20fonts/	(20 dot fonts)
-    %%PREFIX%%/share/fonts/jisx0213/	(12, 14, 16 and 24 dots
-                                         JISX0213 fonts)
 ********************************************************************

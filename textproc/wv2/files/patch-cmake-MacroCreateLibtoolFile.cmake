@@ -1,6 +1,6 @@
---- ./cmake/MacroCreateLibtoolFile.cmake.orig	2009-08-27 08:46:40.000000000 +1100
-+++ ./cmake/MacroCreateLibtoolFile.cmake	2009-09-18 00:46:35.000000000 +1100
-@@ -16,17 +16,18 @@
+--- cmake/MacroCreateLibtoolFile.cmake.orig	2009-10-31 18:22:43 UTC
++++ cmake/MacroCreateLibtoolFile.cmake
+@@ -16,17 +16,18 @@ MACRO(CREATE_LIBTOOL_FILE _target _insta
    GET_TARGET_PROPERTY_WITH_DEFAULT(_target_age ${_target} LT_VERSION_AGE 0)
    GET_TARGET_PROPERTY_WITH_DEFAULT(_target_revision ${_target} LT_VERSION_REVISION 0)
    GET_TARGET_PROPERTY_WITH_DEFAULT(_target_installed ${_target} LT_INSTALLED yes)
@@ -24,7 +24,7 @@
    FILE(APPEND ${_laname} "# Names of this library.\n")
    FILE(APPEND ${_laname} "library_names='${_soname}.${_target_current}.${_target_age}.${_target_revision} ${_soname}.${_target_current} ${_soname}'\n\n")
    FILE(APPEND ${_laname} "# The name of the static archive.\n")
-@@ -35,7 +36,7 @@
+@@ -35,7 +36,7 @@ MACRO(CREATE_LIBTOOL_FILE _target _insta
    FILE(APPEND ${_laname} "dependency_libs='${_target_dependency_libs}'\n\n")
    FILE(APPEND ${_laname} "# Names of additional weak libraries provided by this library\n")
    FILE(APPEND ${_laname} "weak_library_names=''\n\n")

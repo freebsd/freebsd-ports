@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smtube
-PORTVERSION=	15.8.0
+PORTVERSION=	15.9.0
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/smtube/SMTube/${PORTVERSION}/
 
@@ -15,20 +15,18 @@ USES=		gmake tar:bzip2
 ALL_TARGET=	#empty
 USE_QT4=	linguisttools_build moc_build qmake_build \
 		rcc_build script uic_build webkit
-MAKE_ENV=	DATA_PATH=${DATADIR} DOC_PATH=${DOCSDIR} \
-		LRELEASE=${LRELEASE} QMAKE=${QMAKE}
+MAKE_ARGS=	DATA_PATH=${DATADIR} DOC_PATH=${DOCSDIR} \
+		LRELEASE=${LRELEASE} MAKE=${MAKE_CMD}
 
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -E \
-		-e '/^(DATA_PATH|DOC_PATH|LRELEASE|PREFIX|QMAKE)/ s|=|?=|' \
-		-e 's| make| ${MAKE_CMD}|' \
+	@${REINPLACE_CMD} '/^QMAKE/ s|qmake|${QMAKE} ${QMAKE_ARGS:S,\$(,\$\$(,g}|' \
 		${WRKSRC}/Makefile
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}	
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

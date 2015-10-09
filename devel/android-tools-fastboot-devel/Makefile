@@ -1,5 +1,6 @@
 # $FreeBSD$
 
+# Hint: git describe --abbrev=12 --match android-m-preview
 DISTVERSION=	m-preview-1212
 DISTVERSIONSUFFIX=	-g94c617ccbba4
 PORTREVISION=	0
@@ -16,6 +17,6 @@ FILESDIR=	${.CURDIR}/files
 EXTRA_PATCHES+=	${.CURDIR}/files/patch-*
 
 USES=		compiler:c++11-lib
-CFLAGS+=	-DFASTBOOT_REVISION='\"${DISTVERSIONSUFFIX:S/-g//}-android\"'
+CPPFLAGS+=	-DFASTBOOT_REVISION='\"${DISTVERSIONSUFFIX:S/-g//}-android\"'
 
 .include "${MASTERDIR}/Makefile"

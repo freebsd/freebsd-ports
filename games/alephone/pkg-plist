@@ -50,8 +50,3 @@ man/man6/alephone.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/Lua_HUD.html
 %%PORTDOCS%%%%DOCSDIR%%/MML.html
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/Themes/Default
-@dirrm %%DATADIR%%/Themes
-@dirrm %%DATADIR%%/MML
-@dirrmtry %%DATADIR%%

@@ -21,6 +21,8 @@ DESTDIRNAME=	destdir
 
 .include <bsd.port.pre.mk>
 
+BROKEN_sparc64=	fails to link
+
 .if ${OSVERSION} >= 1000054
 LD_CXX_LIB=	-lc++
 .endif

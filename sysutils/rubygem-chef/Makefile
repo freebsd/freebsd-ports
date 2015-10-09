@@ -11,6 +11,7 @@ MAINTAINER=	renchap@cocoa-x.com
 COMMENT=	Systems integration framework. Client part
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-chef-zero>=2.1.0:${PORTSDIR}/sysutils/rubygem-chef-zero \
 		rubygem-diff-lcs>=0.0.0:${PORTSDIR}/textproc/rubygem-diff-lcs \

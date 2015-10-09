@@ -24,6 +24,7 @@ BUILD_DEPENDS=	p5-DateTime>=0.43:${PORTSDIR}/devel/p5-DateTime \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0.27:${PORTSDIR}/devel/p5-Test-Exception
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

@@ -51,10 +51,9 @@ include/aubio/utils/hist.h
 include/aubio/utils/parameter.h
 include/aubio/utils/scale.h
 include/aubio/vecutils.h
-lib/libaubio.a
 lib/libaubio.so
 lib/libaubio.so.4
-lib/libaubio.so.4.1.1
+lib/libaubio.so.4.2.2
 libdata/pkgconfig/aubio.pc
 man/man1/aubiocut.1.gz
 man/man1/aubiomfcc.1.gz

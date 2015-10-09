@@ -11,23 +11,23 @@ COMMENT=	Adobe Flex SDK
 
 CONFLICTS=	ja-flex-sdk-2.* flex-sdk2-2.* flex-sdk3-3.*
 USES=		zip
-USE_JAVA=	YES
+USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 WRKSRC=		${WRKDIR}
 SUB_FILES=	${SCRIPTS:C/\$/.sh/g}
 NO_BUILD=	YES
+NO_ARCH=	yes
 PLIST_SUB=	PORTNAME=${PORTNAME}
 SUB_LIST=	PORTNAME=${PORTNAME}
 SCRIPTS=	aasdoc acompc amxmlc asdoc compc copylocale digest \
 		fcsh fdb mxmlc optimizer
-
-.include <bsd.port.pre.mk>
 
 post-extract:
 	${RM} ${WRKSRC}/bin/*.bat ${WRKSRC}/bin/*.exe
 	${FIND} ${WRKSRC} -print0 -type f | ${XARGS} -0 ${CHMOD} og+r
 	${FIND} ${WRKSRC} -print0 -type f -perm +0111 | ${XARGS} -0 ${CHMOD} og+rx
 	${FIND} ${WRKSRC} -print0 -type d | ${XARGS} -0 ${CHMOD} og+rx
+	${FIND} ${WRKSRC} -name "._*" -delete
 
 do-install:
 .for i in ${SCRIPTS}
@@ -47,4 +47,4 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${CP} -r ${WRKSRC}/*.htm ${STAGEDIR}${DOCSDIR}/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

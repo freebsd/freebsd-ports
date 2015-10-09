@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	ecj
-PORTVERSION=	3.8.2
+PORTVERSION=	4.4.2
 CATEGORIES=	java devel
-MASTER_SITES=	http://www.eclipse.org/downloads/download.php?file=/eclipse/downloads/drops/R-${PORTVERSION}-${DROPDATE}/
+MASTER_SITES=	http://download.eclipse.org/eclipse/downloads/drops4/R-${PORTVERSION}-${DROPDATE}/
 PKGNAMEPREFIX=	eclipse-
 DISTNAME=	ecjsrc-${PORTVERSION}
 EXTRACT_SUFX=	.jar
@@ -25,7 +25,7 @@ SUB_FILES=	ecj.sh
 SUB_LIST=	PORTVERSION=${PORTVERSION}
 NO_WRKSUBDIR=	yes
 
-DROPDATE=	201301310800
+DROPDATE=	201502041700
 PLIST_FILES=	bin/${PORTNAME}.sh \
 		%%JAVAJARDIR%%/${PORTNAME}-${PORTVERSION}.jar
 

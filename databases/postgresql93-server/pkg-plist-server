@@ -239,6 +239,7 @@ lib/libpgcommon.a
 %%TZDATA%%%%DATADIR%%/timezone/America/Eirunepe
 %%TZDATA%%%%DATADIR%%/timezone/America/El_Salvador
 %%TZDATA%%%%DATADIR%%/timezone/America/Ensenada
+%%TZDATA%%%%DATADIR%%/timezone/America/Fort_Nelson
 %%TZDATA%%%%DATADIR%%/timezone/America/Fort_Wayne
 %%TZDATA%%%%DATADIR%%/timezone/America/Fortaleza
 %%TZDATA%%%%DATADIR%%/timezone/America/Glace_Bay

@@ -40,14 +40,14 @@ TEST_DEPENDS=	p5-Test-Class>=0.37:${PORTSDIR}/devel/p5-Test-Class \
 		p5-Test-Fatal>=0.010:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Requires>=0.06:${PORTSDIR}/devel/p5-Test-Requires \
 		p5-Test-TCP>=1.17:${PORTSDIR}/devel/p5-Test-TCP
-		
+
 USES=		perl5
 USE_PERL5=	modbuild
 
 post-patch:
 	@cd ${WRKSRC} && ${RM} -f bin/send_nsca
 	@cd ${WRKSRC} && ${RM} -f t/send_nsca.t
-	
+
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./Build test
 

@@ -10,6 +10,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Helps creating valid Guard plugins and testing them
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 NO_ARCH=	yes
 USE_RUBY=	yes

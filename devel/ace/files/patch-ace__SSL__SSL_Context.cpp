@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 --- ace/SSL/SSL_Context.cpp.orig	2014-12-29 11:41:20.110460000 +0100
 +++ ace/SSL/SSL_Context.cpp	2015-10-04 11:44:07.708381005 +0200
 @@ -168,7 +168,7 @@ ACE_SSL_Context::ssl_library_init (void)
@@ -66,6 +67,11 @@
        // Note: The STACK_OF(X509_NAME) pointer is a copy of the pointer in
        // the CTX; any changes to it by way of these function calls will
 @@ -556,7 +561,7 @@ ACE_SSL_Context::random_seed (const char
+=======
+--- ace/SSL/SSL_Context.cpp.orig	2015-09-17 06:55:18 UTC
++++ ace/SSL/SSL_Context.cpp
+@@ -683,7 +683,7 @@ ACE_SSL_Context::random_seed (const char
+>>>>>>> refs/remotes/pcbsd/master
  int
  ACE_SSL_Context::egd_file (const char * socket_file)
  {

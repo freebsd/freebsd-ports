@@ -40,5 +40,5 @@ share/locale/de/LC_MESSAGES/im-ja.mo
 share/locale/es/LC_MESSAGES/im-ja.mo
 share/locale/hu/LC_MESSAGES/im-ja.mo
 share/locale/ja/LC_MESSAGES/im-ja.mo
-@exec if [ -f %D/bin/gtk-query-immodules-2.0 ]; then %D/bin/gtk-query-immodules-2.0 --update-cache; fi
-@unexec if [ -f %D/bin/gtk-query-immodules-2.0 ]; then %D/bin/gtk-query-immodules-2.0 --update-cache; fi
+@postexec if [ -f %D/bin/gtk-query-immodules-2.0 ]; then %D/bin/gtk-query-immodules-2.0 --update-cache; fi
+@postunexec if [ -f %D/bin/gtk-query-immodules-2.0 ]; then %D/bin/gtk-query-immodules-2.0 --update-cache; fi

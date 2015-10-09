@@ -50,7 +50,6 @@ bin/domination-SwingGUI
 %%DATADIR%%/help/maingame.gif
 %%DATADIR%%/help/mainmenu.gif
 %%DATADIR%%/help/newgame.gif
-%%DATADIR%%/help/pspbrwse.jbf
 %%DATADIR%%/help/rules.htm
 %%DATADIR%%/help/server.gif
 %%DATADIR%%/help/server2.gif

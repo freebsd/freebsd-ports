@@ -38,27 +38,27 @@ man/man1/gsettings-schema-convert.1.gz
 share/aclocal/gconf-2.m4
 share/dbus-1/system-services/org.gnome.GConf.Defaults.service
 share/dbus-1/services/org.gnome.GConf.service
-share/doc/gconf/ch01.html
-share/doc/gconf/gconf-gconf-backend.html
-share/doc/gconf/gconf-gconf-changeset.html
-share/doc/gconf/gconf-gconf-client.html
-share/doc/gconf/gconf-gconf-engine.html
-share/doc/gconf/gconf-gconf-error.html
-share/doc/gconf/gconf-gconf-internals.html
-share/doc/gconf/gconf-gconf-listeners.html
-share/doc/gconf/gconf-gconf-locale.html
-share/doc/gconf/gconf-gconf-schema.html
-share/doc/gconf/gconf-gconf-sources.html
-share/doc/gconf/gconf-gconf-value.html
-share/doc/gconf/gconf-gconf.html
-share/doc/gconf/gconf.devhelp2
-share/doc/gconf/home.png
-share/doc/gconf/index.html
-share/doc/gconf/index.sgml
-share/doc/gconf/left.png
-share/doc/gconf/right.png
-share/doc/gconf/style.css
-share/doc/gconf/up.png
+%%PORTDOCS%%%%DOCSDIR%%/ch01.html
+%%PORTDOCS%%%%DOCSDIR%%/gconf-gconf-backend.html
+%%PORTDOCS%%%%DOCSDIR%%/gconf-gconf-changeset.html
+%%PORTDOCS%%%%DOCSDIR%%/gconf-gconf-client.html
+%%PORTDOCS%%%%DOCSDIR%%/gconf-gconf-engine.html
+%%PORTDOCS%%%%DOCSDIR%%/gconf-gconf-error.html
+%%PORTDOCS%%%%DOCSDIR%%/gconf-gconf-internals.html
+%%PORTDOCS%%%%DOCSDIR%%/gconf-gconf-listeners.html
+%%PORTDOCS%%%%DOCSDIR%%/gconf-gconf-locale.html
+%%PORTDOCS%%%%DOCSDIR%%/gconf-gconf-schema.html
+%%PORTDOCS%%%%DOCSDIR%%/gconf-gconf-sources.html
+%%PORTDOCS%%%%DOCSDIR%%/gconf-gconf-value.html
+%%PORTDOCS%%%%DOCSDIR%%/gconf-gconf.html
+%%PORTDOCS%%%%DOCSDIR%%/gconf.devhelp2
+%%PORTDOCS%%%%DOCSDIR%%/home.png
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/index.sgml
+%%PORTDOCS%%%%DOCSDIR%%/left.png
+%%PORTDOCS%%%%DOCSDIR%%/right.png
+%%PORTDOCS%%%%DOCSDIR%%/style.css
+%%PORTDOCS%%%%DOCSDIR%%/up.png
 share/gir-1.0/GConf-2.0.gir
 share/locale/am/LC_MESSAGES/GConf2.mo
 share/locale/ar/LC_MESSAGES/GConf2.mo
@@ -151,5 +151,5 @@ share/sgml/gconf/gconf-1.0.dtd
 @dir etc/gconf/gconf.xml.defaults
 @dir etc/gconf/gconf.xml.mandatory
 @dir etc/gconf/gconf.xml.system
-@exec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true
-@unexec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true
+@postexec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true
+@postunexec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true

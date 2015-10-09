@@ -3,7 +3,7 @@
 
 PORTNAME=	wdm
 PORTVERSION=	1.28
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://voins.program.ru/wdm/:wdm \
 		http://wolfram.schneider.org/bsd/gif/bsd/:pic_large \
@@ -42,7 +42,7 @@ CONFIGURE_ARGS=	--with-logdir=/var/log \
 		--with-wmlist=wmaker:afterstep:blackbox:ctwm:enlightenment:fvwm:fvwm2:fvwm95:olvwm:qvwm:tvtwm
 
 CPPFLAGS+=	-I${LOCALBASE}/include -DCSRG_BASED -DHAS_SETUSERCONTEXT
-LIBS+=		-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib -lintl
 
 DEF_SERVER?=	${LOCALBASE}/bin/X
 XRDB_PATH?=	${LOCALBASE}/bin/xrdb

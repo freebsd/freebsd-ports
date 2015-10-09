@@ -5,4 +5,4 @@ compared to the fastest mode of zlib, Snappy is an order of magnitude faster
 for most inputs, but the resulting compressed files are anywhere from 20% to
 100% bigger.
 
-WWW: http://code.google.com/p/snappy/
+WWW: http://google.github.io/snappy/

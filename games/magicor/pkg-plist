@@ -1,11 +1,7 @@
 bin/magicor
-@unexec if cmp -s %D/etc/magicor/magicor.conf.dist %D/etc/magicor/magicor.conf; then rm -f %D/etc/magicor/magicor.conf; fi
-etc/magicor/magicor.conf.dist
-@exec if [ ! -f %B/magicor.conf ]; then cp -p %D/%F %B/magicor.conf; fi
+@sample etc/magicor/magicor.conf.sample
 %%EDITOR%%bin/magicor-editor
-%%EDITOR%%@unexec if cmp -s %D/etc/magicor/magicor-editor.conf.dist %D/etc/magicor/magicor-editor.conf; then rm -f %D/etc/magicor/magicor-editor.conf; fi
-%%EDITOR%%etc/magicor/magicor-editor.conf.dist
-%%EDITOR%%@exec if [ ! -f %B/magicor-editor.conf ]; then cp -p %D/%F %B/magicor-editor.conf; fi
+%%EDITOR%%@sample etc/magicor/magicor-editor.conf.sample
 %%PYTHON_SITELIBDIR%%/magicor/__init__.py
 %%PYTHON_SITELIBDIR%%/magicor/editor/__init__.py
 %%PYTHON_SITELIBDIR%%/magicor/editor/brushes.py

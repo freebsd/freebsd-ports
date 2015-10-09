@@ -32,18 +32,16 @@ DBUS_USE=	QT4=dbus
 
 DEBUG_QMAKE_ON=	CONFIG+=debug
 
-.include  <bsd.port.options.mk>
-
 post-patch:
-.if ! ${PORT_OPTIONS:MNLS}
-	@${REINPLACE_CMD} -e '/INSTALLS += translations/d' \
-		${WRKSRC}/${PORTNAME}.pro
-.endif
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
 		-e 's|lupdate|lupdate-qt4|' \
 		-e 's|lrelease|lrelease-qt4|' \
 		${WRKSRC}/${PORTNAME}.pro
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' \
 		${WRKSRC}/src/notifications_dbus.cpp
+
+post-patch-NLS-off:
+	@${REINPLACE_CMD} -e '/INSTALLS += translations/d' \
+		${WRKSRC}/${PORTNAME}.pro
 
 .include <bsd.port.mk>

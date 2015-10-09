@@ -635,7 +635,7 @@ qt-post-install:
 	@${MKDIR} ${STAGEDIR}${QT_INCDIR}/QtCore/modules
 	@${ECHO_CMD} -n \
 		> ${STAGEDIR}${QT_INCDIR}/QtCore/modules/qconfig-${QT_MODNAME}.h
-.  for def in ${QT_DEFINES:N-*:O:u}
+.  for def in ${QT_DEFINES:N-*:O:u:C/=.*$//}
 	@${ECHO_CMD} "#if !defined(QT_${def}) && !defined(QT_NO_${def})" \
 		>> ${STAGEDIR}${QT_INCDIR}/QtCore/modules/qconfig-${QT_MODNAME}.h
 	${ECHO_CMD} "# define QT_${def}" \

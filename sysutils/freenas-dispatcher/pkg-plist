@@ -95,6 +95,15 @@ lib/dispatcher/plugins/SMARTPlugin.py
 lib/dispatcher/plugins/ShareCIFSPlugin.py
 lib/dispatcher/plugins/ReplicationPlugin.py
 lib/dispatcher/plugins/SNMPPlugin.py
+lib/dispatcher/plugins/HAProxyPlugin.py
+lib/dispatcher/plugins/LLDPPlugin.py
+lib/dispatcher/plugins/RIAKCSPlugin.py
+lib/dispatcher/plugins/RIAKPlugin.py
+lib/dispatcher/plugins/SWIFTPlugin.py
+lib/dispatcher/plugins/StanchionPlugin.py
+lib/dispatcher/plugins/TFTPPlugin.py
+lib/dispatcher/plugins/UPSPlugin.py
+lib/dispatcher/plugins/WebDAVPlugin.py
 libexec/dispatcher/notify-pam
 etc/rc.d/dispatcher
 sbin/dispatcherd

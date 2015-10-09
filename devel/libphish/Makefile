@@ -14,6 +14,8 @@ COMMENT=	Cross-platform library to interact with the Open Phishing Database
 BUILD_DEPENDS=	xmlwf:${PORTSDIR}/textproc/expat2
 
 BROKEN=		No public distfiles
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-10-31
 
 USES=		tar:bzip2 libtool
 GNU_CONFIGURE=	yes

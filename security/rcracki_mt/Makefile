@@ -14,6 +14,9 @@ LICENSE=	GPLv2
 
 EXTRACT_DEPENDS=7z:${PORTSDIR}/archivers/p7zip
 
+NOT_FOR_ARCHS=	arm sparc64
+NOT_FOR_ARCHS_REASON=	cannot detect endianness
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
 USES=		gmake

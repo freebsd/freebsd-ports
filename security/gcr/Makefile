@@ -29,10 +29,4 @@ INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.crypto.pgp.gschema.xml
 
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 900000
-EXTRA_PATCHES=	${FILESDIR}/extra-gck_gck.h
-.endif
-
 .include <bsd.port.mk>

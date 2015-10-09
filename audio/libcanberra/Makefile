@@ -19,7 +19,7 @@ LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
 		libltdl.so:${PORTSDIR}/devel/libltdl
 
 USES=		gmake libtool pathfix pkgconfig tar:xz
-USE_GNOME=	gnomeprefix gtk20 
+USE_GNOME=	gnomeprefix gtk20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-lynx --disable-tdb --disable-alsa

@@ -11,7 +11,7 @@ MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Python client for Slack.com
 
 LICENSE=	MIT
-	
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}websocket-client>0:${PORTSDIR}/www/py-websocket-client
 
 USES=		python:-2.7

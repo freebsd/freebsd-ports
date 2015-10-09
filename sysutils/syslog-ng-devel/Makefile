@@ -49,7 +49,7 @@ INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 		--enable-dynamic-linking --enable-manpages \
 		--datadir=${PREFIX}/share/syslog-ng/
-		
+
 
 BROKEN_sparc64=	Does not compile on sparc64: gcc core dump
 

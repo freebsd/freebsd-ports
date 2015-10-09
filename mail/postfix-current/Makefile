@@ -372,10 +372,10 @@ post-stage:
 	${MV} ${STAGEDIR}${ETCDIR}/main.cf ${STAGEDIR}${ETCDIR}/main.cf.sample
 	${MV} ${STAGEDIR}${ETCDIR}/master.cf ${STAGEDIR}${ETCDIR}/master.cf.sample
 
-# == chop dynamicmaps.cf entries into dedicated .cf files 
+# == chop dynamicmaps.cf entries into dedicated .cf files
 # for future sub-packages support
 .for f in ${DYN_EXT}
-# adjust dynamicmaps.cf 
+# adjust dynamicmaps.cf
 	${GREP} -e "^#" -e "^${f}" ${STAGEDIR}${META_DIRECTORY}/dynamicmaps.cf \
 		> ${STAGEDIR}${META_DIRECTORY}/dynamicmaps.cf.d/${f}.cf && \
 		${SED} -i '' -e '/${f}/d' ${STAGEDIR}${META_DIRECTORY}/dynamicmaps.cf
@@ -386,7 +386,7 @@ post-stage:
 		\n$$shlib_directory/postfix-${f}.so:f:root:-:755\
 		\n$$meta_directory/postfix-files.d/${f}-files:f:root:-:644\
 		\n$$meta_directory/dynamicmaps.cf.d/${f}.cf:f:root:-:644\n' \
-		> ${STAGEDIR}${META_DIRECTORY}/postfix-files.d/${f}-files 
+		> ${STAGEDIR}${META_DIRECTORY}/postfix-files.d/${f}-files
 .endfor
 
 # Fix compressed man pages and strip executables

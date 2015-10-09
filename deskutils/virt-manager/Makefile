@@ -7,7 +7,7 @@ CATEGORIES=	deskutils net-mgmt
 MASTER_SITES=	http://virt-manager.org/download/sources/${PORTNAME}/ \
 		LOCAL/jgh/deskutils/${PORTNAME}/
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Toolkit to interact with virtualization capabilities
 
 LICENSE=	LGPL3

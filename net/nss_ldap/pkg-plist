@@ -1,5 +1,3 @@
 lib/nss_ldap.so.1
-@unexec if cmp -s %D/etc/nss_ldap.conf %D/etc/nss_ldap.conf.sample; then rm -f %D/etc/nss_ldap.conf; fi
-etc/nss_ldap.conf.sample
-@exec if [ ! -f %D/etc/nss_ldap.conf ]; then cp %B/%f %D/etc/nss_ldap.conf; fi
+@sample etc/nss_ldap.conf.sample
 man/man5/nss_ldap.5.gz

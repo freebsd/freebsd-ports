@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	IO-Compress
-PORTVERSION=	2.068
+PORTVERSION=	2.069
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,8 +13,8 @@ COMMENT=	Perl5 compression modules (bzip2, deflate, gzip, zlib, zip)
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Compress-Raw-Bzip2>=2.068:${PORTSDIR}/archivers/p5-Compress-Raw-Bzip2 \
-		p5-Compress-Raw-Zlib>=2.068:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib
+BUILD_DEPENDS=	p5-Compress-Raw-Bzip2>=${PORTVERSION}:${PORTSDIR}/archivers/p5-Compress-Raw-Bzip2 \
+		p5-Compress-Raw-Zlib>=${PORTVERSION}:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod
 

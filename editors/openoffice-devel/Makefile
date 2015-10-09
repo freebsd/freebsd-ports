@@ -3,10 +3,10 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${SVNREVISION}
-PORTREVISION=	2
-PORTEPOCH=	3
+PORTREVISION=	1
+PORTEPOCH=	4
 CATEGORIES=	editors java
-MASTER_SITES=	http://ci.apache.org/projects/openoffice/milestones/${AOOVERSION}-${AOORC}-r${SVNREVISION}/source/ \
+MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-r1705606/source/ \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \
 		LOCAL/truckman/openoffice:snap,extsrc
 .if defined(LANG_PKGNAME)
@@ -93,15 +93,17 @@ RUN_DEPENDS=								\
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 		${JAVALIBDIR}/commons-httpclient.jar:${PORTSDIR}/java/jakarta-commons-httpclient \
 		${JAVALIBDIR}/bsh.jar:${PORTSDIR}/lang/bsh \
+		${LOCALBASE}/share/fonts/Caladea/Caladea-Bold.ttf:${PORTSDIR}/x11-fonts/crosextrafonts-caladea-ttf \
+		${LOCALBASE}/share/fonts/Carlito/Carlito-Bold.ttf:${PORTSDIR}/x11-fonts/crosextrafonts-carlito-ttf \
 		${LOCALBASE}/share/fonts/ChromeOS/Arimo-Bold.ttf:${PORTSDIR}/x11-fonts/croscorefonts-fonts-ttf
 
 AOOVERSION1=	4
-AOOVERSION2=	2
-AOOVERSION3=	0
+AOOVERSION2=	1
+AOOVERSION3=	2
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
-AOOTAG=		AOO420m1\(Build:9800\)
-SVNREVISION=	1697984
-#AOORC=rc3
+AOOTAG=		AOO412m1\(Build:9780\)
+SVNREVISION=	1705575
+AOORC=rc1
 EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 
 AOOVERSION=	${AOOVERSION1}.${AOOVERSION2}.${AOOVERSION3}
@@ -204,7 +206,8 @@ GNU_CONFIGURE=	yes
 WRKSUBDIR=	${WRKDIR}/aoo-${AOOVERSION}
 WRKSRC?=	${WRKSUBDIR}/main
 SUB_FILES=	pkg-message
-SUB_LIST=	EXECBASE=${EXECBASE} AOOTAG=${AOOTAG} AOOUDIR=${AOOUDIR}
+SUB_LIST=	EXECBASE=${EXECBASE} AOOTAG=${AOOTAG} AOOUDIR=${AOOUDIR} \
+		PRINSTALLATION_BASEDIR=${PRINSTALLATION_BASEDIR}
 
 CONFIGURE_ARGS+=							\
 			--with-unix-wrapper=${EXECBASE}			\
@@ -258,7 +261,6 @@ CONFIGURE_ARGS+=							\
 			--with-system-sane				\
 			--with-system-serf				\
 			--with-system-stdlibs				\
-			--enable-symbols=small				\
 			--without-stlport				\
 			--with-vendor="FreeBSD ports system"		\
 			--enable-verbose				\
@@ -397,7 +399,8 @@ do-build:
 	LANG=C LC_ALL=C build.pl --all -P$${numproc} -- -P$${dmproc}
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PRINSTALLATION_BASEDIR}/extensions/ \
+	@${MKDIR} ${STAGEDIR}${PRINSTALLATION_BASEDIR}/extensions \
+		${STAGEDIR}${OOPATH}/uno_packages/cache/uno_packages \
 		${STAGEDIR}${DESKTOPDIR}
 	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/Apache_OpenOffice/archive/install/${LOCALIZED_LANG}/ ; \
 		for i in *.tar.?z ; do \
@@ -409,12 +412,7 @@ do-install:
 	cd ${WRKSRC}/solver/${AOOXXX}/unxfbsd?.pro/bin/ ; \
 		${INSTALL_DATA} ${AOOEXTENSIONS} \
 			${STAGEDIR}${PRINSTALLATION_BASEDIR}/extensions/
-	@cd ${STAGEDIR}${OOPATH}/program ; \
-		${ECHO_CMD} "stripping executables and shared libraries" ; \
-		${STRIP_CMD} crashrep pagein uri-encode javaldx regmerge \
-			regview *.so* *.bin ; \
-		${ECHO_CMD} "fixing permissions" ; \
-		${FIND} . -type d -exec ${CHMOD} 755 {} \;
+	${FIND} ${STAGEDIR}${PRINSTALLATION_BASEDIR} -type d -exec ${CHMOD} 755 {} \;
 	${REINPLACE_CMD} \
 		-e '/^UserInstallation/s/=.*/=$$SYSUSERCONFIG\/${AOOUDIR}/' \
 		${STAGEDIR}${OOPATH}/program/bootstraprc
@@ -426,8 +424,8 @@ do-install:
 			${WRKDIR}/openoffice-wrapper
 	${INSTALL_SCRIPT} ${WRKDIR}/openoffice-wrapper \
 		${STAGEDIR}${PREFIX}/bin/${EXECBASE}
-	@cd ${STAGEDIR}${PREFIX}/bin; for i in sbase scalc sdraw \
-		setofficelang simpress smath spadmin swriter ; do \
+	@cd ${STAGEDIR}${PREFIX}/bin; for i in printeradmin sbase scalc sdraw \
+		simpress smath spadmin swriter ; do \
 			${LN} -f ${EXECBASE} ${EXECBASE}-$${i} ; \
 	done
 	${LN} -sf ${XDGDIR} ${STAGEDIR}${DESKTOPDIR}/${EXECBASE}

@@ -1,5 +1,5 @@
 bin/mutt
-bin/mutt_dotlock
+@(,mail,2755) bin/mutt_dotlock
 bin/pgpewrap
 bin/pgpring
 @sample etc/Muttrc.sample

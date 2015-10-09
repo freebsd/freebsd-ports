@@ -14,7 +14,8 @@ COMMENT=	Perl routines for data sets interpolation and interval search
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-USES=		perl5
+NO_ARCH=	yes
 USE_PERL5=	configure
+USES=		perl5
 
 .include <bsd.port.mk>

@@ -1,0 +1,517 @@
+#
+# $Id$
+#
+# OpenSIPS residential configuration script
+#     by OpenSIPS Solutions <team@opensips-solutions.com>
+#
+# This script was generated via "make menuconfig", from
+#   the "Residential" scenario.
+# You can enable / disable more features / functionalities by
+#   re-generating the scenario with different options.#
+#
+# Please refer to the Core CookBook at:
+#      http://www.opensips.org/Resources/DocsCookbooks
+# for a explanation of possible statements, functions and parameters.
+#
+
+
+####### Global Parameters #########
+
+debug=3
+log_stderror=no
+log_facility=LOG_LOCAL0
+
+fork=yes
+children=4
+
+/* uncomment the following lines to enable debugging */
+#debug=6
+#fork=no
+#log_stderror=yes
+
+/* uncomment the next line to enable the auto temporary blacklisting of 
+   not available destinations (default disabled) */
+disable_dns_blacklist=yes
+
+/* uncomment the next line to enable IPv6 lookup after IPv4 dns 
+   lookup failures (default disabled) */
+#dns_try_ipv6=yes
+
+/* comment the next line to enable the auto discovery of local aliases
+   based on revers DNS on IPs */
+auto_aliases=no
+
+
+listen=udp:127.0.0.1:5060   # CUSTOMIZE ME
+
+#listen=tcp:127.0.0.1:5060   # CUSTOMIZE ME 
+#listen=tls:127.0.0.1:5061   # CUSTOMIZE ME 
+
+#advertised_address=111.222.333.444   # CUSTOMIZE ME
+
+#alias=111.222.333.444   # CUSTOMIZE ME
+#alias=example.org   # CUSTOMIZE ME
+
+db_default_url="postgres://opensips:opensipsrw@localhost/opensips") # CUSTOMIZE ME
+
+####### Modules Section ########
+
+#set module path
+mpath="/usr/local/lib/opensips/modules/"
+
+#### SIGNALING module
+loadmodule "signaling.so"
+
+#### StateLess module
+loadmodule "sl.so"
+
+#### Transaction Module
+loadmodule "tm.so"
+modparam("tm", "fr_timeout", 5)
+modparam("tm", "fr_inv_timeout", 30)
+modparam("tm", "restart_fr_on_each_reply", 0)
+modparam("tm", "onreply_avp_mode", 1)
+
+#### Record Route Module
+loadmodule "rr.so"
+/* do not append from tag to the RR (no need for this script) */
+modparam("rr", "append_fromtag", 0)
+
+#### MAX ForWarD module
+loadmodule "maxfwd.so"
+
+#### SIP MSG OPerationS module
+loadmodule "sipmsgops.so"
+
+#### FIFO Management Interface
+loadmodule "mi_fifo.so"
+modparam("mi_fifo", "fifo_name", "/tmp/opensips_fifo")
+modparam("mi_fifo", "fifo_mode", 0666)
+
+
+#### URI module
+loadmodule "uri.so"
+modparam("uri", "use_uri_table", 0)
+
+
+
+#### PGSQL module
+loadmodule "db_postgres.so"
+
+#### MYSQL module
+#loadmodule "db_mysql.so"
+
+
+#### HTTPD module
+#loadmodule "httpd.so"
+#modparam("httpd", "port", 8888)
+
+#### USeR LOCation module
+loadmodule "usrloc.so"
+modparam("usrloc", "nat_bflag", "NAT")
+modparam("usrloc", "db_mode",   2)
+modparam("usrloc", "db_url", "postgres://opensips:opensipsrw@localhost/opensips") # CUSTOMIZE ME
+modparam("usrloc", "hash_size", 11)
+
+
+#### REGISTRAR module
+loadmodule "registrar.so"
+modparam("registrar", "tcp_persistent_flag", "TCP_PERSISTENT")
+modparam("registrar", "received_avp", "$avp(received_nh)")
+modparam("registrar", "max_contacts", 10)
+
+#### ACCounting module
+loadmodule "acc.so"
+/* what special events should be accounted ? */
+modparam("acc", "early_media", 0)
+modparam("acc", "report_cancels", 0)
+/* by default we do not adjust the direct of the sequential requests.
+   if you enable this parameter, be sure the enable "append_fromtag"
+   in "rr" module */
+modparam("acc", "detect_direction", 0)
+modparam("acc", "failed_transaction_flag", "ACC_FAILED")
+/* account triggers (flags) */
+modparam("acc", "db_flag", "ACC_DO")
+modparam("acc", "db_missed_flag", "ACC_MISSED")
+modparam("acc", "db_url", "postgres://opensips:opensipsrw@localhost/opensips") # CUSTOMIZE ME
+
+
+#### AUTHentication modules
+loadmodule "auth.so"
+loadmodule "auth_db.so"
+modparam("auth_db", "calculate_ha1", yes)
+modparam("auth_db", "password_column", "password")
+modparam("auth_db", "db_url", "postgres://opensips:opensipsrw@localhost/opensips") # CUSTOMIZE ME
+modparam("auth_db", "load_credentials", "")
+
+
+#### ALIAS module
+loadmodule "alias_db.so"
+modparam("alias_db", "db_url", "postgres://opensips:opensipsrw@localhost/opensips") # CUSTOMIZE ME
+
+
+#### DOMAIN module
+loadmodule "domain.so"
+modparam("domain", "db_url", "postgres://opensips:opensipsrw@localhost/opensips") # CUSTOMIZE ME
+modparam("domain", "db_mode", 1)   # Use caching
+modparam("auth_db|usrloc|uri", "use_domain", 1)
+
+
+#### PRESENCE modules
+loadmodule "xcap.so"
+loadmodule "presence.so"
+loadmodule "presence_xml.so"
+modparam("xcap|presence", "db_url", "postgres://opensips:opensipsrw@localhost/opensips") # CUSTOMIZE ME
+modparam("presence_xml", "force_active", 1)
+modparam("presence", "server_address", "sip:127.0.0.1:5060") # CUSTOMIZE ME
+modparam("presence", "subs_htable_size", 11)
+modparam("presence", "pres_htable_size", 11)
+#modparam("presence", "max_expires_subscribe", 600)
+#modparam("presence", "max_expires_publish", 600)
+
+
+#### DIALOG module
+loadmodule "dialog.so"
+modparam("dialog", "dlg_match_mode", 1)
+modparam("dialog", "default_timeout", 21600)  # 6 hours timeout
+modparam("dialog", "db_mode", 2)
+modparam("dialog", "db_url", "postgres://opensips:opensipsrw@localhost/opensips") # CUSTOMIZE ME
+
+
+####  NAT modules
+loadmodule "nathelper.so"
+modparam("nathelper", "natping_interval", 10)
+modparam("nathelper", "ping_nated_only", 1)
+modparam("nathelper", "received_avp", "$avp(received_nh)")
+
+loadmodule "rtpproxy.so"
+modparam("rtpproxy", "rtpproxy_sock", "udp:localhost:22222") # CUSTOMIZE ME
+
+
+####  DIALPLAN module
+loadmodule "dialplan.so"
+modparam("dialplan", "db_url", "postgres://opensips:opensipsrw@localhost/opensips") # CUSTOMIZE ME
+
+
+
+
+####  MI_HTTP module
+#loadmodule "mi_http.so"
+
+
+loadmodule "proto_udp.so"
+
+#loadmodule "proto_tcp.so" 
+#loadmodule "proto_tls.so"
+#modparam("proto_tls","verify_cert", "1")
+#modparam("proto_tls","require_cert", "0")
+#modparam("proto_tls","tls_method", "TLSv1")
+#modparam("proto_tls","certificate", "/usr/local/etc/opensips/tls/user/user-cert.pem")
+#modparam("proto_tls","private_key", "/usr/local/etc/opensips/tls/user/user-privkey.pem")
+#modparam("proto_tls","ca_list", "/usr/local/etc/opensips/tls/user/user-calist.pem")
+
+ 
+
+####### Routing Logic ########
+
+# main request routing logic
+
+route{
+	force_rport();
+	if (nat_uac_test("23")) {
+		if (is_method("REGISTER")) {
+			fix_nated_register();
+			setbflag(NAT);
+		} else {
+			fix_nated_contact();
+			setflag(NAT);
+		}
+	}
+ 	
+
+	if (!mf_process_maxfwd_header("10")) {
+		sl_send_reply("483","Too Many Hops");
+		exit;
+	}
+
+	if (has_totag()) {
+		# sequential request withing a dialog should
+		# take the path determined by record-routing
+		if (loose_route()) {
+			
+			# validate the sequential request against dialog
+			if ( $DLG_status!=NULL && !validate_dialog() ) {
+				xlog("In-Dialog $rm from $si (callid=$ci) is not valid according to dialog\n");
+				## exit;
+			}
+			
+			if (is_method("BYE")) {
+				setflag(ACC_DO); # do accounting ...
+				setflag(ACC_FAILED); # ... even if the transaction fails
+			} else if (is_method("INVITE")) {
+				# even if in most of the cases is useless, do RR for
+				# re-INVITEs alos, as some buggy clients do change route set
+				# during the dialog.
+				record_route();
+			}
+
+			if (check_route_param("nat=yes")) 
+				setflag(NAT);
+
+			# route it out to whatever destination was set by loose_route()
+			# in $du (destination URI).
+			route(relay);
+		} else {
+			if (is_method("SUBSCRIBE") && $rd == "127.0.0.1:5060") { # CUSTOMIZE ME
+				# in-dialog subscribe requests
+				route(handle_presence);
+				exit;
+			}
+			if ( is_method("ACK") ) {
+				if ( t_check_trans() ) {
+					# non loose-route, but stateful ACK; must be an ACK after 
+					# a 487 or e.g. 404 from upstream server
+					t_relay();
+					exit;
+				} else {
+					# ACK without matching transaction ->
+					# ignore and discard
+					exit;
+				}
+			}
+			sl_send_reply("404","Not here");
+		}
+		exit;
+	}
+
+	# CANCEL processing
+	if (is_method("CANCEL"))
+	{
+		if (t_check_trans())
+			t_relay();
+		exit;
+	}
+
+	t_check_trans();
+
+	if ( !(is_method("REGISTER")  ) ) {
+		
+		if (is_from_local())
+		{
+			
+			# authenticate if from local subscriber
+			# authenticate all initial non-REGISTER request that pretend to be
+			# generated by local subscriber (domain from FROM URI is local)
+			if (!proxy_authorize("", "subscriber")) {
+				proxy_challenge("", "0");
+				exit;
+			}
+			if (!db_check_from()) {
+				sl_send_reply("403","Forbidden auth ID");
+				exit;
+			}
+		
+			consume_credentials();
+			# caller authenticated
+			
+		} else {
+			# if caller is not local, then called number must be local
+			
+			if (!is_uri_host_local()) {
+				send_reply("403","Rely forbidden");
+				exit;
+			}
+		}
+
+	}
+
+	# preloaded route checking
+	if (loose_route()) {
+		xlog("L_ERR",
+		"Attempt to route with preloaded Route's [$fu/$tu/$ru/$ci]");
+		if (!is_method("ACK"))
+			sl_send_reply("403","Preload Route denied");
+		exit;
+	}
+
+	# record routing
+	if (!is_method("REGISTER|MESSAGE"))
+		record_route();
+
+	# account only INVITEs
+	if (is_method("INVITE")) {
+		
+		# create dialog with timeout
+		if ( !create_dialog("B") ) {
+			send_reply("500","Internal Server Error");
+			exit;
+		}
+		
+		setflag(ACC_DO); # do accounting
+	}
+
+	
+	if (!is_uri_host_local()) {
+		append_hf("P-hint: outbound\r\n"); 
+		
+		# if you have some interdomain connections via TLS
+		## CUSTOMIZE IF NEEDED
+		##if ($rd=="tls_domain1.net"
+		## || $rd=="tls_domain2.net"
+		##) {
+		##	force_send_socket(tls:127.0.0.1:5061); # CUSTOMIZE
+		##}
+		
+		route(relay);
+	}
+
+	# requests for my domain
+	
+	if( is_method("PUBLISH|SUBSCRIBE"))
+			route(handle_presence);
+
+	if (is_method("REGISTER"))
+	{
+		
+		# authenticate the REGISTER requests
+		if (!www_authorize("", "subscriber"))
+		{
+			www_challenge("", "0");
+			exit;
+		}
+		
+		if (!db_check_to()) 
+		{
+			sl_send_reply("403","Forbidden auth ID");
+			exit;
+		}
+
+		if ( proto==TCP || proto==TLS || 0 ) setflag(TCP_PERSISTENT);
+
+		if (!save("location"))
+			sl_reply_error();
+
+		exit;
+	}
+
+	if ($rU==NULL) {
+		# request with no Username in RURI
+		sl_send_reply("484","Address Incomplete");
+		exit;
+	}
+
+	
+	# apply DB based aliases
+	alias_db_lookup("dbaliases");
+
+	
+	# apply transformations from dialplan table
+	dp_translate("0","$rU/$rU");
+
+	 
+
+	# do lookup with method filtering
+	if (!lookup("location","m")) {
+		if (!db_does_uri_exist()) {
+			send_reply("420","Bad Extension");
+			exit;
+		}
+		
+		t_newtran();
+		t_reply("404", "Not Found");
+		exit;
+	} 
+
+	if (isbflagset(NAT)) setflag(NAT);
+
+	# when routing via usrloc, log the missed calls also
+	setflag(ACC_MISSED);
+	route(relay);
+}
+
+
+route[relay] {
+	# for INVITEs enable some additional helper routes
+	if (is_method("INVITE")) {
+		
+		if (isflagset(NAT)) {
+			rtpproxy_offer("ro");
+		}
+
+		t_on_branch("per_branch_ops");
+		t_on_reply("handle_nat");
+		t_on_failure("missed_call");
+	}
+
+	if (isflagset(NAT)) {
+		add_rr_param(";nat=yes");
+		}
+
+	if (!t_relay()) {
+		send_reply("500","Internal Error");
+	};
+	exit;
+}
+
+
+# Presence route
+route[handle_presence]
+{
+	if (!t_newtran())
+	{
+		sl_reply_error();
+		exit;
+	}
+
+	if(is_method("PUBLISH"))
+	{
+		handle_publish();
+	}
+	else
+	if( is_method("SUBSCRIBE"))
+	{
+		handle_subscribe();
+	}
+
+	exit;
+}
+
+
+branch_route[per_branch_ops] {
+	xlog("new branch at $ru\n");
+}
+
+
+onreply_route[handle_nat] {
+	if (nat_uac_test("1"))
+		fix_nated_contact();
+	if ( isflagset(NAT) )
+		rtpproxy_answer("ro");
+	xlog("incoming reply\n");
+}
+
+
+failure_route[missed_call] {
+	if (t_was_cancelled()) {
+		exit;
+	}
+
+	# uncomment the following lines if you want to block client 
+	# redirect based on 3xx replies.
+	##if (t_check_status("3[0-9][0-9]")) {
+	##t_reply("404","Not found");
+	##	exit;
+	##}
+
+	
+}
+
+
+
+local_route {
+	if (is_method("BYE") && $DLG_dir=="UPSTREAM") {
+		
+		acc_db_request("200 Dialog Timeout", "acc");
+		
+	}
+}

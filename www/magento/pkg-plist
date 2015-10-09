@@ -1,7 +1,5 @@
 @comment .htaccess when used can contain a lot of customizations
-@unexec if cmp -s %D/%%MAGENTODIR%%/.htaccess %D/%%MAGENTODIR%%/.htaccess.sample; then rm -f %D/%%MAGENTODIR%%/.htaccess; fi
-%%MAGENTODIR%%/.htaccess.sample
-@exec if [ ! -f %D/%%MAGENTODIR%%/.htaccess ]; then cp -p %D/%F %B/.htaccess; fi
+@sample %%MAGENTODIR%%/.htaccess.sample
 %%MAGENTODIR%%/LICENSE.html
 %%MAGENTODIR%%/LICENSE.txt
 %%MAGENTODIR%%/LICENSE_AFL.txt

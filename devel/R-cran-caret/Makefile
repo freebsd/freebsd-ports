@@ -12,6 +12,9 @@ COMMENT=	Classification and Regression Training
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Depends on deprecated math/R-cran-car
+EXPIRATION_DATE=	2015-10-31
+
 RUN_DEPENDS=	R-cran-ggplot2>0:${PORTSDIR}/graphics/R-cran-ggplot2 \
 		R-cran-car>0:${PORTSDIR}/math/R-cran-car \
 		R-cran-reshape2>0:${PORTSDIR}/devel/R-cran-reshape2 \

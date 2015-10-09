@@ -19,6 +19,7 @@ BUILD_DEPENDS=	p5-Dancer>=0:${PORTSDIR}/www/p5-Dancer \
 		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

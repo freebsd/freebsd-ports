@@ -77,7 +77,6 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		gutenprint-foomatic>=0:${PORTSDIR}/print/gutenprint-foomatic \
 		system-config-printer:${PORTSDIR}/print/system-config-printer \
 		numlockx:${PORTSDIR}/x11/numlockx \
-		mupdf:${PORTSDIR}/graphics/mupdf \
 		pciutils>=0:${PORTSDIR}/sysutils/pciutils \
 		gpg:${PORTSDIR}/security/gnupg \
 		foo2zjs>=0:${PORTSDIR}/print/foo2zjs \

@@ -15,7 +15,7 @@ COMMENT=	Small footprint, fast Wiki engine written in C++
 
 LICENSE=	GPLv2 # (or later)
 
-USES=		perl5
+USES=		alias perl5
 USE_PERL5=	build patch
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \

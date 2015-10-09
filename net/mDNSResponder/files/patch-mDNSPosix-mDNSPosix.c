@@ -1,4 +1,4 @@
---- mDNSPosix/mDNSPosix.c.orig	2015-03-02 19:24:41 UTC
+--- mDNSPosix/mDNSPosix.c.orig	2015-03-13 00:15:32 UTC
 +++ mDNSPosix/mDNSPosix.c
 @@ -516,6 +516,7 @@ mDNSexport int ParseDNSServers(mDNS *m, 
              numOfServers++;
@@ -38,3 +38,12 @@
          if (err == 0)
          {
              err = setsockopt(*sktPtr, IPPROTO_IPV6, IPV6_2292_HOPLIMIT, &kOn, sizeof(kOn));
+@@ -1600,7 +1613,7 @@ mDNSexport mDNSs32 mDNSPlatformGetServic
+     return -1;
+ }
+ 
+-mDNSexport void mDNSPlatformSetDelegatePID(UDPSocket *src, const mDNSAddr *dst, DNSQuestion *q)
++mDNSexport void mDNSPlatformSetuDNSSocktOpt(UDPSocket *src, const mDNSAddr *dst, DNSQuestion *q)
+ {
+     (void) src;
+     (void) dst;

@@ -42,7 +42,7 @@ MAMENAME=	mame
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|/usr/bin/env python|${PYTHON_CMD}|' \
 		${WRKSRC}/scripts/loemu \
-		${WRKSRC}/scripts/loemu-builder	
+		${WRKSRC}/scripts/loemu-builder
 	@${REINPLACE_CMD} -i '' -e 's|sdlmame|${MAMENAME}|' \
 		${WRKSRC}/config/sdlmame.conf
 

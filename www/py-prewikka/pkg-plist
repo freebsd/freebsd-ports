@@ -1,7 +1,5 @@
 bin/prewikka-httpd
-@unexec if cmp -s %D/etc/prewikka/prewikka.conf-dist %D/etc/prewikka/prewikka.conf; then rm -f %D/etc/prewikka/prewikka.conf; fi
-etc/prewikka/prewikka.conf-dist
-@exec if [ ! -f %D/etc/prewikka/prewikka.conf ] ; then cp -p %D/%F %B/prewikka.conf; fi
+@sample etc/prewikka/prewikka.conf-dist etc/prewikka/prewikka.conf
 %%PYTHON_SITELIBDIR%%/prewikka/Auth.py
 %%PYTHON_SITELIBDIR%%/prewikka/Auth.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/Auth.pyo

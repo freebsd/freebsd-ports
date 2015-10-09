@@ -1,6 +1,7 @@
 bin/mtbl_dump
 bin/mtbl_info
 bin/mtbl_merge
+bin/mtbl_verify
 include/mtbl.h
 lib/libmtbl.a
 lib/libmtbl.so
@@ -15,6 +16,7 @@ man/man3/mtbl_fileset.3.gz
 man/man3/mtbl_fixed.3.gz
 man/man3/mtbl_iter.3.gz
 man/man3/mtbl_merger.3.gz
+man/man3/mtbl_metadata.3.gz
 man/man3/mtbl_reader.3.gz
 man/man3/mtbl_sorter.3.gz
 man/man3/mtbl_source.3.gz

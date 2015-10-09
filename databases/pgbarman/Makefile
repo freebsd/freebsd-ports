@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	barman
-DISTVERSION=	1.4.1
+DISTVERSION=	1.5.0
 CATEGORIES=	databases
 MASTER_SITES=	SF/${PKGNAMEPREFIX}${PORTNAME}/${DISTVERSION}
 PKGNAMEPREFIX=	pg
@@ -17,12 +17,15 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync						\
 		${PYTHON_PKGNAMEPREFIX}psycopg2>0:${PORTSDIR}/databases/py-psycopg2	\
 		${PYTHON_PKGNAMEPREFIX}dateutil>=2.1:${PORTSDIR}/devel/py-dateutil	\
-		${PYTHON_PKGNAMEPREFIX}argh>0:${PORTSDIR}/devel/py-argh
+		${PYTHON_PKGNAMEPREFIX}argh>=0.21.2:${PORTSDIR}/devel/py-argh \
+		${PYTHON_PKGNAMEPREFIX}argcomplete>0:${PORTSDIR}/devel/py-argcomplete
+
+NO_ARCH=	yes
 
 USERS=		barman
 GROUPS=		barman
 
-USES=		python pgsql
+USES=		pgsql python
 WANT_PGSQL=	client
 USE_PYTHON=	autoplist distutils
 

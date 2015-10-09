@@ -29,13 +29,13 @@ rcvar=influxd_enable
 : ${influxd_group:="%%INFLUXD_GROUP%%"}
 : ${influxd_flags:=""}
 : ${influxd_conf:="%%PREFIX%%/etc/${name}.conf"}
-: ${influxd_options:="${influxdb_flags} -config=${influxd_conf}"}
+: ${influxd_options:="${influxdb_flags} -config=${influxd_conf} 2> %%INFLUXD_LOGDIR%%/influxdb.log"}
 
 # daemon
 influxd_pidfile="%%INFLUXD_PIDDIR%%${name}.pid"
 procname="%%PREFIX%%/bin/${name}"
 command=/usr/sbin/daemon
-command_args=" -f -c -p ${influxd_pidfile} ${procname} ${influxd_options}"
+command_args=" -c -p ${influxd_pidfile} ${procname} ${influxd_options}"
 start_precmd="influxd_precmd"
 
 influxd_precmd()

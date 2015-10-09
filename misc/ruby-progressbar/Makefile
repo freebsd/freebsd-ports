@@ -3,6 +3,7 @@
 
 PORTNAME=	progressbar
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	misc ruby
 MASTER_SITES=	http://0xcc.net/ruby-progressbar/ \
 		LOCAL/tota/progressbar
@@ -12,6 +13,10 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Text progress bar library for Ruby
 
+DEPRECATED=	Abandoned upstream, superseded by devel/rubygem-ruby-progressbar
+EXPIRATION_DATE=	2015-10-22
+
+CONFLICTS_INSTALL=	rubygem-ruby-progressbar-*
 USE_RUBY=	yes
 NO_BUILD=	yes
 

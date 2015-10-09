@@ -17,6 +17,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-HTTP-Server-Simple>=0.42:${PORTSDIR}/www/p5-HTTP-Server-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

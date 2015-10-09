@@ -22,6 +22,7 @@ BUILD_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-Object-Event>=0:${PORTSDIR}/devel/p5-Object-Event
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

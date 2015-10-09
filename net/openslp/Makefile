@@ -11,7 +11,7 @@ COMMENT=	Open-source implementation of the Service Location Protocol
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool
+USES=		alias libtool
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/openslp \

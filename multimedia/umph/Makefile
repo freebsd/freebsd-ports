@@ -18,9 +18,11 @@ BUILD_DEPENDS=	p5-Getopt-ArgvFile>=1.11:${PORTSDIR}/devel/p5-Getopt-ArgvFile \
 		p5-XML-DOM>=1.44:${PORTSDIR}/textproc/p5-XML-DOM
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
-PLIST_FILES=	bin/umph ${SITE_MAN1}/umph.1.gz
+PLIST_FILES=	bin/umph \
+		%%PERL5_MAN1%%/umph.1.gz
 
 .include <bsd.port.mk>

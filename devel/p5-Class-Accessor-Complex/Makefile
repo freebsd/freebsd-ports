@@ -20,6 +20,7 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
