@@ -3,6 +3,7 @@
 
 PORTNAME=	scipy
 PORTVERSION=	0.16.0
+PORTREVISION=	1
 CATEGORIES=	science python
 MASTER_SITES=	http://docs.scipy.org/doc/${DISTNAME}/:doc \
 		SF:source
@@ -32,6 +33,9 @@ PORTDOCS=	scipy-ref-${PORTVERSION}.pdf
 
 post-extract:
 	@${CP} ${DISTDIR}/scipy-ref-${PORTVERSION}.pdf ${WRKDIR}
+
+post-install:
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/scipy/ -name '*.so' | ${XARGS} ${STRIP_CMD}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
