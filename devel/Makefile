@@ -4664,6 +4664,7 @@
     SUBDIR += rubygem-columnize
     SUBDIR += rubygem-commander
     SUBDIR += rubygem-concurrent-ruby
+    SUBDIR += rubygem-concurrent-ruby-edge
     SUBDIR += rubygem-configatron
     SUBDIR += rubygem-configuration
     SUBDIR += rubygem-cool.io
