@@ -3,7 +3,7 @@
 PORTNAME=	android-tools-adb
 DISTVERSIONPREFIX=	android-
 DISTVERSION?=	5.1.1_r4
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://anonscm.debian.org/cgit/android-tools/android-tools.git/plain/debian/:bashcomp
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -22,6 +22,7 @@ GH_PROJECT=	platform_system_core
 CONFLICTS_INSTALL?=	${PORTNAME}-devel-*
 
 USES+=		uidfix
+USE_OPENSSL=	yes
 .ifndef BUILD_WRKSRC
 WRKSRC_SUBDIR=	adb
 .endif
