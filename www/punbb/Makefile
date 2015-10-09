@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	punbb
-PORTVERSION=	1.2.23
+PORTVERSION=	1.4.3
 CATEGORIES=	www
 MASTER_SITES=	http://punbb.informer.com/download/ \
 		http://punbb.informer.com/download/plugins/:plugins \
