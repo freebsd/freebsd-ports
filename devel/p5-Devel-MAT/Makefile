@@ -35,10 +35,10 @@ RUN_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
 .endif
 
 .if ${PERL_LEVEL} >= 502200
-BROKEN=		Fails to build with Perl >= 5.22
+BROKEN=		fails to build with Perl 5.22 or above, see https://rt.cpan.org/Public/Bug/Display.html?id=100458 for further information
 .endif
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Devel/MAT/Dumper/Dumper.so ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Devel/MAT/MAT.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Devel/MAT/Dumper/Dumper.so ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Devel/MAT/MAT.so
 
 .include <bsd.port.post.mk>
