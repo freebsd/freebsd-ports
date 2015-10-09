@@ -53,6 +53,25 @@ OPENLDAP_CONFIGURE_ON=	--with-ldap=${LOCALBASE}
 HTTPFORM_DESC=		Enable HTTP form authentication
 HTTPFORM_CONFIGURE_ENABLE=httpform
 
+OPTIONS_RADIO=		KERBEROS
+OPTIONS_RADIO_KERBEROS=	HEIMDAL MIT
+.if exists(/usr/lib/libkrb5.a)
+OPTIONS_RADIO_KERBEROS+=BASE
+OPTIONS_DEFAULT+=	BASE
+.endif
+BASE_DESC=		Use Heimdal in base
+BASE_USES=		gssapi:base
+BASE_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
+			--with-gss_impl=heimdal
+HEIMDAL_DESC=		Use Heimdal from ports
+HEIMDAL_USES=		gssapi:heimdal,flags
+HEIMDAL_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
+			--with-gss_impl=heimdal
+MIT_DESC=		Use MIT Kerberos V5
+MIT_USES=		gssapi:mit
+MIT_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
+			--with-gss_impl=mit
+
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MBDB}
@@ -65,15 +84,8 @@ WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
 .endif
 .endif
 
-.if !defined(WITHOUT_GSSAPI) && defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.so)
-CONFIGURE_ARGS+=--enable-gssapi=${KRB5_HOME} --with-gss_impl=mit
-LDFLAGS+=	-Wl,-rpath,${KRB5_HOME}/lib
-.elif !defined(WITHOUT_GSSAPI) && defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME}/lib/libgssapi.a)
-CONFIGURE_ARGS+=--enable-gssapi=${HEIMDAL_HOME} --with-gss_impl=heimdal
-.elif !defined(WITHOUT_GSSAPI) && exists(/usr/lib/libkrb5.a)
-CONFIGURE_ARGS+=--enable-gssapi=/usr
-CFLAGS+=	-nostdinc -I/usr/include
-.else
+.if !${PORT_OPTIONS:MBASE} && !${PORT_OPTIONS:MHEIMDAL} && \
+    !${PORT_OPTIONS:MMIT}
 CONFIGURE_ARGS+=--disable-gssapi
 .endif
 
