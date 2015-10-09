@@ -6,14 +6,15 @@
 
 set -e
 validate_env dp_PKGNAME dp_MAKE dp_PORTSDIR
-set -u
 
 arg=$1
-shift
-if [ "${arg}" != "full" -a "${arg}" != "limited" ]; then
-	echo "the first argument can only be 'full' or 'limited'" >&2
+if [ -z "${arg}" ] || [ "${arg}" != "full" -a "${arg}" != "limited" ]; then
+	echo "The first argument can only be 'full' or 'limited'" >&2
 	exit 1
 fi
+shift
+
+set -u
 
 check_dep() {
 	for _dep ; do
