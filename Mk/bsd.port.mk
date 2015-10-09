@@ -4369,7 +4369,7 @@ ALL-DEPENDS-LIST= \
 			dp_MAKE="${MAKE}" \
 			dp_PKGNAME="${PKGNAME}" \
 			dp_SCRIPTSDIR="${SCRIPTSDIR}" \
-			${SH} ${SCRIPTSDIR}/all-depends-list.sh
+			${SH} ${SCRIPTSDIR}/depends-list.sh -r
 
 CLEAN-DEPENDS-LIST= \
 	${SETENV} dp_ALLDEPENDS="${_UNIFIED_DEPENDS}" \
