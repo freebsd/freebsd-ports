@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	liquibase
-PORTVERSION=	3.3.2
+PORTVERSION=	3.4.1
 DISTVERSIONSUFFIX=	-bin
 CATEGORIES=	databases java
-MASTER_SITES=	SF/${PORTNAME}/Liquibase%20Core
+MASTER_SITES=	http://github.com/liquibase/liquibase/releases/download/liquibase-parent-${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Database Change Management
