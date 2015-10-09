@@ -1,9 +1,10 @@
-From 7978429727a9da328444749951005b595de41098 Mon Sep 17 00:00:00 2001
-From: =?utf8?q?Roger=20Pau=20Monn=C3=A9?= <roger.pau@citrix.com>
-Date: Mon, 9 Mar 2015 14:01:40 +0100
-Subject: [PATCH] iommu: fix usage of shared EPT/IOMMU page tables on PVH guests
+From 43f76b1443c8fc3b54dbb9fb466becbb9d584d6d Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Roger=20Pau=20Monn=C3=A9?= <roger.pau@citrix.com>
+Date: Fri, 9 Oct 2015 12:57:33 +0200
+Subject: [PATCH 7/8] iommu: fix usage of shared EPT/IOMMU page tables on PVH
+ guests
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf8
+Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
 
 iommu_share_p2m_table should not prevent PVH guests from using a shared page
@@ -15,16 +16,16 @@ Also fix another incorrect usage of is_hvm_domain usage in
 arch_iommu_populate_page_table. This has not given problems so far because
 all the pages in PVH guests are of type PGT_writable_page.
 
-Signed-off-by: Roger Pau MonnÃ© <roger.pau@citrix.com>
+Signed-off-by: Roger Pau Monné <roger.pau@citrix.com>
 Reviewed-by: Jan Beulich <jbeulich@suse.com>
 Tested-by: David Vrabel <david.vrabel@citrix.com>
 Reviewed-by: Tim Deegan <tim@xen.org>
 Acked-by: Kevin Tian <kevin.tian@intel.com>
 ---
- xen/drivers/passthrough/amd/iommu_map.c |    2 --
- xen/drivers/passthrough/iommu.c         |    3 ++-
- xen/drivers/passthrough/vtd/iommu.c     |    2 --
- xen/drivers/passthrough/x86/iommu.c     |    2 +-
+ xen/drivers/passthrough/amd/iommu_map.c | 2 --
+ xen/drivers/passthrough/iommu.c         | 3 ++-
+ xen/drivers/passthrough/vtd/iommu.c     | 2 --
+ xen/drivers/passthrough/x86/iommu.c     | 2 +-
  4 files changed, 3 insertions(+), 6 deletions(-)
 
 diff --git a/xen/drivers/passthrough/amd/iommu_map.c b/xen/drivers/passthrough/amd/iommu_map.c
@@ -55,10 +56,10 @@ index cc12735..7fcbbb1 100644
  }
  
 diff --git a/xen/drivers/passthrough/vtd/iommu.c b/xen/drivers/passthrough/vtd/iommu.c
-index 1063677..48676c5 100644
+index 5a946d4..a5a111c 100644
 --- a/xen/drivers/passthrough/vtd/iommu.c
 +++ b/xen/drivers/passthrough/vtd/iommu.c
-@@ -1789,8 +1789,6 @@ static void iommu_set_pgd(struct domain *d)
+@@ -1802,8 +1802,6 @@ static void iommu_set_pgd(struct domain *d)
      struct hvm_iommu *hd  = domain_hvm_iommu(d);
      mfn_t pgd_mfn;
  
@@ -68,7 +69,7 @@ index 1063677..48676c5 100644
          return;
  
 diff --git a/xen/drivers/passthrough/x86/iommu.c b/xen/drivers/passthrough/x86/iommu.c
-index 52d8948..9eb8d33 100644
+index ce0ca5a..3d2c12a 100644
 --- a/xen/drivers/passthrough/x86/iommu.c
 +++ b/xen/drivers/passthrough/x86/iommu.c
 @@ -56,7 +56,7 @@ int arch_iommu_populate_page_table(struct domain *d)
@@ -81,5 +82,5 @@ index 52d8948..9eb8d33 100644
          {
              BUG_ON(SHARED_M2P(mfn_to_gmfn(d, page_to_mfn(page))));
 -- 
-1.7.2.5
+1.9.5 (Apple Git-50.3)
 
