@@ -4663,6 +4663,7 @@
     SUBDIR += rubygem-colorize
     SUBDIR += rubygem-columnize
     SUBDIR += rubygem-commander
+    SUBDIR += rubygem-concurrent-ruby
     SUBDIR += rubygem-configatron
     SUBDIR += rubygem-configuration
     SUBDIR += rubygem-cool.io
