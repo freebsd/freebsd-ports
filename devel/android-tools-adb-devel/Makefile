@@ -20,14 +20,16 @@ MAKE_ENV=	FILESDIR="${FILESDIR}"
 CPPFLAGS+=	-DADB_REVISION='\"${DISTVERSIONSUFFIX:S/-g//}-android\"'
 ALL_TARGET=	all
 
-OPTIONS_DEFINE=	TEST
+OPTIONS_DEFINE=	TEST TEST_PYTHON
 
-TEST_GH_PROJECT=platform_development:development
-TEST_GH_TAGNAME=${DISTVERSIONFULL:C/-[0-9].*//}-66-ge4cded6:development
-TEST_BUILD_DEPENDS=googletest>=1.6.0:${PORTSDIR}/devel/googletest \
-		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
-TEST_USES=	python:2.7,build
-TEST_ALL_TARGET=adb_test
+TEST_BUILD_DEPENDS=	googletest>=1.6.0:${PORTSDIR}/devel/googletest
+TEST_ALL_TARGET=	adb_test
+
+TEST_PYTHON_DESC=	${TEST_DESC:S/tests/python &/}
+TEST_PYTHON_GH_PROJECT=	platform_development:development
+TEST_PYTHON_GH_TAGNAME=	${DISTVERSIONFULL:C/-[0-9].*//}-66-ge4cded6:development
+TEST_PYTHON_BUILD_DEPENDS=${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
+TEST_PYTHON_USES=	python:2.7,build
 
 post-patch:	slave-post-patch
 slave-post-patch:
@@ -45,6 +47,8 @@ slave-post-patch:
 
 pre-install-TEST-on:
 	${BUILD_WRKSRC}/adb_test
+
+pre-install-TEST_PYTHON-on:
 # XXX python tests may leave behind running adb server
 # test_adb.py remains in core repository for some reason
 	${SETENV} PATH=${BUILD_WRKSRC}:${PATH} \
