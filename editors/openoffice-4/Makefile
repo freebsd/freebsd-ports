@@ -249,7 +249,6 @@ CONFIGURE_ARGS+=							\
 			--with-system-sane				\
 			--with-system-serf				\
 			--with-system-stdlibs				\
-			--enable-symbols=small				\
 			--without-stlport				\
 			--with-vendor="FreeBSD ports system"		\
 			--enable-verbose				\
@@ -401,10 +400,6 @@ do-install:
 	cd ${WRKSRC}/solver/${AOOXXX}/unxfbsd?.pro/bin/ ; \
 		${INSTALL_DATA} ${AOOEXTENSIONS} \
 			${STAGEDIR}${PRINSTALLATION_BASEDIR}/extensions/
-	@cd ${STAGEDIR}${OOPATH}/program ; \
-		${ECHO_CMD} "stripping executables and shared libraries" ; \
-		${STRIP_CMD} crashrep pagein uri-encode javaldx regmerge \
-			regview *.so* *.bin
 	${FIND} ${STAGEDIR}${PRINSTALLATION_BASEDIR} -type d -exec ${CHMOD} 755 {} \;
 	${REINPLACE_CMD} \
 		-e '/^UserInstallation/s/=.*/=$$SYSUSERCONFIG\/${AOOUDIR}/' \
