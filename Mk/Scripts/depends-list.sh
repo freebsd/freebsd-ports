@@ -18,6 +18,7 @@ while getopts "r" FLAG; do
 			;;
 	esac
 done
+shift $((OPTIND-1))
 
 validate_env dp_ALLDEPENDS dp_PORTSDIR dp_PKGNAME
 [ ${recursive} -eq 1 ] && validate_env dp_MAKE
