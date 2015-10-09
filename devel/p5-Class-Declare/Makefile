@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Class-Declare
-PORTVERSION=	0.17
-PORTREVISION=	1
+PORTVERSION=	0.19
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,9 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	simarg@gmail.com
 COMMENT=	Perl module for declare classes
 
-BUILD_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Exception>=0.15:${PORTSDIR}/devel/p5-Test-Exception
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
