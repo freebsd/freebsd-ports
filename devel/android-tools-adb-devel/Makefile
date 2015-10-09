@@ -10,7 +10,6 @@ CONFLICTS_INSTALL=	${PORTNAME}-[0-9]*
 
 MASTERDIR=	${.CURDIR}/../android-tools-adb
 DISTINFO_FILE=	${.CURDIR}/distinfo
-MAKEFILE=	${.CURDIR}/files/Makefile
 FILESDIR=	${.CURDIR}/files
 PATCHDIR=	${.CURDIR}/files
 
