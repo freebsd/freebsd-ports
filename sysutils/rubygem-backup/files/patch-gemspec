@@ -1,6 +1,6 @@
---- backup.gemspec.orig	2015-07-13 16:50:18 UTC
+--- backup.gemspec.orig	2015-10-09 08:09:21 UTC
 +++ backup.gemspec
-@@ -24,68 +24,67 @@ Gem::Specification.new do |s|
+@@ -23,68 +23,67 @@ Gem::Specification.new do |s|
      s.specification_version = 4
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
