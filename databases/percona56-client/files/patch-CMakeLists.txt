@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2014-10-06 18:06:02.000000000 +0200
-+++ CMakeLists.txt	2014-10-18 16:20:43.311977761 +0200
-@@ -468,40 +468,17 @@
+--- CMakeLists.txt	2015-09-14 17:49:16.000000000 +0200
++++ CMakeLists.txt.new	2015-09-16 09:04:18.149047561 +0200
+@@ -471,41 +471,17 @@
  
  ADD_SUBDIRECTORY(extra)
  ADD_SUBDIRECTORY(client)
@@ -37,12 +37,13 @@
 -  ADD_SUBDIRECTORY(packaging/rpm-oel)
 -  ADD_SUBDIRECTORY(packaging/rpm-fedora)
 -  ADD_SUBDIRECTORY(packaging/rpm-sles)
+-  ADD_SUBDIRECTORY(packaging/rpm-docker)
 -ENDIF()
 -
  INCLUDE(cmake/abi_check.cmake)
  INCLUDE(cmake/tags.cmake)
  
-@@ -568,18 +546,17 @@
+@@ -542,18 +518,17 @@
    SET(CPACK_GENERATOR "TGZ")
  ENDIF() 
  ADD_SUBDIRECTORY(packaging/WiX)
@@ -62,7 +63,7 @@
  IF(NOT INSTALL_LAYOUT MATCHES "RPM")
    INSTALL(FILES COPYING LICENSE.mysql 
    DESTINATION ${INSTALL_DOCREADMEDIR} 
-@@ -605,5 +582,6 @@
+@@ -579,6 +554,7 @@
      PATTERN "sp-imp-spec.txt" EXCLUDE
    )
  ENDIF()
