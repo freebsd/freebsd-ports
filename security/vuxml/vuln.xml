@@ -58,6 +58,41 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="00dadbf0-6f61-11e5-a2a1-002590263bf5">
+    <topic>p5-UI-Dialog -- shell command execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>p5-UI-Dialog</name>
+	<range><lt>1.09_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matthijs Kooijman reports:</p>
+	<blockquote cite="https://rt.cpan.org/Public/Bug/Display.html?id=107364">
+	  <p>It seems that the whiptail, cdialog and kdialog backends apply
+	    some improper escaping in their shell commands, causing special
+	    characters present in menu item titles to be interpreted by the
+	    shell. This includes the backtick evaluation operator, so this
+	    constitutues a security issue, allowing execution of arbitrary
+	    commands if an attacker has control over the text displayed in
+	    a menu.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-7315</cvename>
+      <freebsdpr>ports/203667</freebsdpr>
+      <url>https://rt.cpan.org/Public/Bug/Display.html?id=107364</url>
+      <url>https://bugs.debian.org/496448</url>
+      <url>https://github.com/kckrinke/UI-Dialog/commit/6adc44cc636c615d76297d86835e1a997681eb61</url>
+    </references>
+    <dates>
+      <discovery>2008-08-24</discovery>
+      <entry>2015-10-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="290351c9-6f5c-11e5-a2a1-002590263bf5">
     <topic>devel/ipython -- multiple vulnerabilities</topic>
     <affects>
