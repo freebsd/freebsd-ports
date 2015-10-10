@@ -29,28 +29,22 @@ USES=		compiler:c++11-lib gmake jpeg
 CFLAGS+=	-fPIC -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.options.mk>
-
-do-configure:
-.if ! ${PORT_OPTIONS:MSDL}
-	${REINPLACE_CMD} -e 's/^USE_BPGVIEW=y$$/#USE_BPGVIEW=/' ${WRKSRC}/Makefile
-.endif
-.if ! ${PORT_OPTIONS:MJCTVC}
+do-configure-JCTVC-off:
 	${REINPLACE_CMD} -e 's/^USE_JCTVC=y$$/#USE_JCTVC=/' ${WRKSRC}/Makefile
-.endif
-.if ${PORT_OPTIONS:MX265}
+
+do-configure-SDL-off:
+	${REINPLACE_CMD} -e 's/^USE_BPGVIEW=y$$/#USE_BPGVIEW=/' ${WRKSRC}/Makefile
+
+do-configure-X265-on:
 	${REINPLACE_CMD} -e 's/^#USE_JCTVC_HIGH_BIT_DEPTH=y$$/USE_JCTVC_HIGH_BIT_DEPTH=y/' ${WRKSRC}/Makefile
-.endif
-.if ${PORT_OPTIONS:MX265}
 	${REINPLACE_CMD} -e 's/^#USE_X265=y$$/USE_X265=y/' ${WRKSRC}/Makefile
-.endif
 
 post-install:
-.if ${PORT_OPTIONS:MSDL}
-	${INSTALL_PROGRAM} ${WRKSRC}/bpgview ${STAGEDIR}${PREFIX}/bin
-.endif
 	${INSTALL_DATA} ${WRKSRC}/libbpg.h ${STAGEDIR}${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/libbpg.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/libbpg.so ${STAGEDIR}${PREFIX}/lib
+
+post-install-SDL-on:
+	${INSTALL_PROGRAM} ${WRKSRC}/bpgview ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
