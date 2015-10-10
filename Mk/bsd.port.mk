@@ -5293,7 +5293,7 @@ config-conditional:
 .endif
 .endif # config-conditional
 
-.if !target(showconfig) && (make(showconfig) || (!empty(.MAKEFLAGS:M-V) && !empty(.MAKEFLAGS:M*_DESC)))
+.if !target(showconfig)
 .include "${PORTSDIR}/Mk/bsd.options.desc.mk"
 MULTI_EOL=	: you have to choose at least one of them
 SINGLE_EOL=	: you have to select exactly one of them
