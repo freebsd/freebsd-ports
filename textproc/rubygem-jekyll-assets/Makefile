@@ -10,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Create javascript/CSS assets for Jekyll sites
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-fastimage>=1.6:${PORTSDIR}/graphics/rubygem-fastimage \
 		rubygem-jekyll>=2:${PORTSDIR}/www/rubygem-jekyll \
@@ -20,7 +21,6 @@ RUN_DEPENDS=	rubygem-fastimage>=1.6:${PORTSDIR}/graphics/rubygem-fastimage \
 		rubygem-sprockets-sass>=0:${PORTSDIR}/devel/rubygem-sprockets-sass
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
