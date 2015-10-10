@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	asterisk
-PORTVERSION=	13.5.0
-PORTREVISION=	1
+PORTVERSION=	13.6.0
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/%SUBDIR%/:main,g729
 MASTER_SITE_SUBDIR=	asterisk/:main \
@@ -40,7 +39,8 @@ CONFIGURE_ARGS+=	--datarootdir=${DATADIR} \
 CPE_VENDOR=	digium
 
 SHEBANG_FILES=	agi/agi-test.agi \
-		agi/jukebox.agi
+		agi/jukebox.agi \
+		contrib/scripts/astversion
 
 MAKE_ENV=	PTHREAD_LIBS="-lpthread" \
 		MKDIR="${MKDIR}" \
@@ -56,7 +56,7 @@ CONFLICTS=		ossp-uuid-[0-9]*
 CONFLICTS_BUILD=	linuxthreads-*
 CONFLICTS_INSTALL=	asterisk*-1.8* asterisk*-11*
 
-OPTIONS_DEFINE=			BACKTRACE CURL EXCHANGE FREETDS LDAP LUA \
+OPTIONS_DEFINE=			ASTVERSION BACKTRACE CURL EXCHANGE FREETDS LDAP LUA \
 				MP3PLAYER OOH323 PJSIP PORTAUDIO RADIUS SNMP \
 				SPANDSP SRTP SYSINFO XMPP
 OPTIONS_DEFAULT=		CURL FREETDS GCC GSM LUA MP3PLAYER NEWT ODBC PGSQL PJSIP \
@@ -96,6 +96,7 @@ ASTERISK_MOH_G729_SOUNDS=	asterisk-moh-opsound-g729-2.03.tar.gz
 G729_DISTFILES=			${ASTERISK_CORE_G729_SOUNDS}:g729 \
 				${ASTERISK_MOH_G729_SOUNDS}:g729
 
+ASTVERSION_DESC?= Install astversion (requires bash)
 BACKTRACE_DESC?= Stack backtrace support via (lib)execinfo
 BASE_DESC=	Use base compiler (experimental)
 DAHDI_DESC?=	DAHDI support
@@ -110,6 +111,8 @@ SYSINFO_DESC?=	Use devel/libsysinfo to get system information
 XMPP_DESC?=	XMPP/GTALK support
 
 OPTIONS_SUB=		yes
+
+ASTVERSION_RUN_DEPENDS=		bash:${PORTSDIR}/shells/bash
 
 BACKTRACE_CONFIGURE_WITH=	execinfo
 BACKTRACE_LIB_DEPENDS=		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
@@ -273,6 +276,9 @@ post-configure:
 
 post-install:
 	@${RM} ${STAGEDIR}${ETCDIR}/*.conf ${STAGEDIR}${ETCDIR}/extensions.ael ${STAGEDIR}${ETCDIR}/extensions.lua
+.if ! ${PORT_OPTIONS:MASTVERSION}
+	@${RM} ${STAGEDIR}${PREFIX}/sbin/astversion
+.endif
 	${FIND} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/modules -type f -name '*.so' | ${SED} "s,^${STAGEDIR}${PREFIX}/,," >> ${TMPPLIST}
 	${FIND} ${STAGEDIR}${DATADIR}/sounds -type f | ${SED} "s,^${STAGEDIR}${DATADIR},${DATADIR}," >> ${TMPPLIST}
 	${FIND} ${STAGEDIR}${DATADIR}/moh -type f | ${SED} "s,^${STAGEDIR}${DATADIR},${DATADIR}," >> ${TMPPLIST}
