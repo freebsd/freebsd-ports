@@ -1,4 +1,3 @@
-lib/elixir/lib/timex_interval/ebin/Elixir.Access.TimexInterval.DateTimeInterval.beam
 lib/elixir/lib/timex_interval/ebin/Elixir.Enumerable.TimexInterval.DateTimeInterval.beam
 lib/elixir/lib/timex_interval/ebin/Elixir.TimexInterval.DateTimeInterval.beam
 lib/elixir/lib/timex_interval/ebin/Elixir.TimexInterval.beam
