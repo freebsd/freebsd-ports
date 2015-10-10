@@ -1,96 +1,20 @@
---- mscore/CMakeLists.txt.orig	2012-03-13 22:37:09.000000000 +0900
-+++ mscore/CMakeLists.txt	2012-06-09 20:56:18.000000000 +0900
-@@ -32,7 +32,7 @@
- set(HAS_AUDIOFILE TRUE)                   # requires libsndfile
- set(OSC           TRUE)                   # osc remote control
+--- mscore/CMakeLists.txt.orig	2015-07-16 10:58:43 UTC
++++ mscore/CMakeLists.txt
+@@ -474,7 +474,6 @@ else (MINGW)
+       ${ALSA_LIB}
+       ${QT_LIBRARIES}
+       z
+-      dl
+       pthread
+       )
+     if (USE_PORTAUDIO)
+@@ -509,9 +508,6 @@
  
--set(BUILD_SCRIPTGEN TRUE)                 #Generate Qt script bindings. (collides with qtscriptgenerator project on several distrib)
-+set(BUILD_SCRIPTGEN FALSE)                 #Generate Qt script bindings. (collides with qtscriptgenerator project on several distrib)
- set(STATIC_SCRIPT_BINDINGS FALSE)
- set(USE_SSE FALSE)
- 
-@@ -151,6 +151,8 @@
- ## alsa >= 1.0.0
- ##
- 
-+SET(BUILD_ALSA AUTO CACHE STRING "Build with support for ALSA. [ON/OFF/AUTO]")
-+IF(BUILD_ALSA)
- if (APPLE OR MINGW)
- 	message("Disabling ALSA support due to OS X or MINGW build.")
-       set (USE_ALSA 0)
-@@ -165,6 +167,11 @@
-             set (HAS_MIDI 1)
-       endif (NOT ALSA_INCDIR)
- endif (APPLE OR MINGW)
-+ELSE(BUILD_ALSA)
-+	MESSAGE(STATUS "alsa support disabled")
-+      set (USE_ALSA 0)
-+      set (HAS_MIDI 1)
-+ENDIF(BUILD_ALSA)
- 
- 
- ##
-@@ -219,6 +226,8 @@
- ## portaudio
- ##
- 
-+SET(BUILD_PORTAUDIO AUTO CACHE STRING "Build with support for portaudio. [ON/OFF/AUTO]")
-+IF(BUILD_PORTAUDIO)
- if (MINGW)
-       set ( USE_PORTAUDIO 1 )
-       set ( USE_PORTMIDI  1 )
-@@ -237,6 +246,9 @@
-       set (USE_PORTMIDI 0)
-    endif (APPLE)
- endif (MINGW)
-+ELSE(BUILD_PORTAUDIO)
-+	MESSAGE(STATUS "portaudio support disabled")
-+ENDIF(BUILD_PORTAUDIO)
- 
- ##
- ## produce config.h file
-@@ -257,8 +269,8 @@
-    WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
-    )
- 
--set(CMAKE_CXX_FLAGS_DEBUG   "-g")
--set(CMAKE_CXX_FLAGS_RELEASE "-O2 -DNDEBUG")
-+#set(CMAKE_CXX_FLAGS_DEBUG   "-g")
-+#set(CMAKE_CXX_FLAGS_RELEASE "-O2 -DNDEBUG")
- 
- if (CMAKE_BUILD_TYPE STREQUAL "DEBUG")
-       if (MINGW)
-@@ -294,7 +306,9 @@
- 
- 
- ADD_CUSTOM_TARGET(mops1 DEPENDS ${PROJECT_BINARY_DIR}/all.h)
--ADD_CUSTOM_TARGET(mops2 DEPENDS ${PCH})
-+if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-+ADD_CUSTOM_TARGET(mops2 DEPENDS ${PCH})
-+endif (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
- 
- 
- if (NOT MINGW AND NOT APPLE)
-@@ -321,9 +335,10 @@
-    ${PROJECT_SOURCE_DIR}/mscore
-    ${PROJECT_BINARY_DIR}
-    ${PROJECT_BINARY_DIR}/mscore
-+   ${PORTAUDIO_INCDIR}
-    ${ALSA_INCDIR}
-    ${JACK_INCDIR}
--   ${PORTAUDIO_INCDIR}
-+   %%LOCALBASE%%/include
- )
- 
- ##
-@@ -427,8 +442,8 @@
- 
- add_custom_target(lrelease
-    COMMAND ${PROJECT_SOURCE_DIR}/gen-qt-projectfile ${PROJECT_SOURCE_DIR} > mscore.pro
--   COMMAND lrelease ${PROJECT_SOURCE_DIR}/share/locale/*.ts
--   COMMAND lrelease ${PROJECT_SOURCE_DIR}/share/plugins/musescore.com/translations/*.ts
-+   COMMAND lrelease-qt4 ${PROJECT_SOURCE_DIR}/share/locale/*.ts
-+   COMMAND lrelease-qt4 ${PROJECT_SOURCE_DIR}/share/plugins/musescore.com/translations/*.ts
-    WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
-    )
+    # gold does not use indirect shared libraries for symbol resolution, Linux only
+    if (NOT APPLE)
+-      if(USE_JACK)
+-         target_link_libraries(mscore dl)
+-      endif(USE_JACK)
+       target_link_libraries(mscore rt)
+    endif (NOT APPLE)
  
