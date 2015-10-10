@@ -1,6 +1,6 @@
---- configure.orig	2013-12-31 20:58:17.000000000 +0100
-+++ configure	2014-04-26 15:53:04.000000000 +0200
-@@ -12919,7 +12919,6 @@
+--- configure.orig	2015-02-28 20:53:46 UTC
++++ configure
+@@ -13277,7 +13277,6 @@ fi
      # FreeBSD 3 and greater uses gcc -shared to do shared libraries.
      freebsd* | dragonfly*)
        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
@@ -8,7 +8,7 @@
        hardcode_direct=yes
        hardcode_shlibpath_var=no
        ;;
-@@ -23889,60 +23888,6 @@
+@@ -24497,60 +24496,6 @@ else
      X_CFLAGS="$X_CFLAGS -I$x_includes"
    fi
  
@@ -69,7 +69,7 @@
  
    # Check for system-dependent libraries X programs must link with.
    # Do this before checking for the system-independent R6 libraries
-@@ -24637,15 +24582,16 @@
+@@ -25245,15 +25190,16 @@ fi
      # Cygwin doesn't deliver -lXt as a DLL, which prevents a DLL build.
      # Adobe DPS (as delivered on Solaris) doesn't require -lXt.
      # GraphicsMagick itself doesn't use -lXt.
@@ -88,7 +88,7 @@
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -27095,7 +27041,7 @@
+@@ -27703,7 +27649,7 @@ fi
  #
  
  # Subdirectory under lib to place GraphicsMagick lib files
@@ -97,7 +97,7 @@
  
  cat >>confdefs.h <<_ACEOF
  #define MagickLibSubdir "$MagickLibSubdir"
-@@ -27199,7 +27145,7 @@
+@@ -27807,7 +27753,7 @@ _ACEOF
  
  #
  # Path to GraphicsMagick share files
