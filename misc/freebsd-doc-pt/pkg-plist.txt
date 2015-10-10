@@ -3,8 +3,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/article.txt
-%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/diff.txt
-%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/init.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/hubs/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/article.txt
