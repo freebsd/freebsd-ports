@@ -63,11 +63,11 @@ post-patch:
 			s/ (LOG|PLOG|UNIMPLEMENTED)/ DISABLED_\1/' \
 		${WRKSRC}/base/logging_test.cpp; \
 	fi
-.if defined(PACKAGE_BUILDING)
-# XXX /dev/full isn't mounted by poudriere/tinderbox
-	@${REINPLACE_CMD} -e '/^TEST/s/[^ ]*ENOSPC/DISABLED_&/' \
-		${WRKSRC}/adb/adb_io_test.cpp
-.endif
+# XXX Hidden by poudriere/tinderbox, see lindev(4) for FreeBSD < 11.0
+	@if [ ! -e /dev/full ]; then \
+		${REINPLACE_CMD} -e '/^TEST/s/[^ ]*ENOSPC/DISABLED_&/' \
+			${WRKSRC}/adb/adb_io_test.cpp; \
+	fi
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PLIST_FILES:M%%BASH%%*:C/%%.*%%//:H}
