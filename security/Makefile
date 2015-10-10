@@ -960,6 +960,7 @@
     SUBDIR += rubygem-ruby-saml
     SUBDIR += rubygem-scrypt
     SUBDIR += rubygem-six
+    SUBDIR += rubygem-sshkey
     SUBDIR += rubygem-sshkit
     SUBDIR += rubygem-twitter_oauth
     SUBDIR += safesh
