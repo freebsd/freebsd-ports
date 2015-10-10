@@ -1,6 +1,6 @@
---- Makefile.in.orig	2008-05-18 17:22:51.000000000 -0400
-+++ Makefile.in	2008-06-06 18:41:23.620488084 -0400
-@@ -1775,7 +1775,7 @@
+--- Makefile.in.orig	2015-02-28 20:53:46 UTC
++++ Makefile.in
+@@ -2221,7 +2221,7 @@ MagickFilterModulesPath = @MagickFilterM
  MagickLibConfigPath = @MagickLibConfigPath@
  MagickLibPath = @MagickLibPath@
  MagickShareConfigPath = @MagickShareConfigPath@
@@ -9,7 +9,7 @@
  MogrifyDelegate = @MogrifyDelegate@
  NM = @NM@
  NMEDIT = @NMEDIT@
-@@ -4382,7 +4382,7 @@
+@@ -4381,7 +4381,7 @@ PERLMAGICK_MAINTAINER_TARGETS = $(top_sr
  @WITH_PERL_DYNAMIC_FALSE@@WITH_PERL_STATIC_TRUE@@WITH_PERL_TRUE@PERLSTATICNAME = PerlMagick
  
  # Pkgconfig directory
