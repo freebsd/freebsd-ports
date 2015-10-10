@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTML-Scrubber
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,6 +20,7 @@ TEST_DEPENDS=	p5-Test-CPAN-Meta>=0:${PORTSDIR}/devel/p5-Test-CPAN-Meta \
 		p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle \
 		p5-Test-NoTabs>=0:${PORTSDIR}/devel/p5-Test-NoTabs
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	modbuild
 
