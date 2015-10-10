@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	timex-interval
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	elixir-
 
@@ -9,8 +9,6 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Date/time interval library for Elixir
 
 LICENSE=	APACHE20
-
-IGNORE=		does not build with Elixir 1.1
 
 USES=		elixir
 USE_GITHUB=	yes
