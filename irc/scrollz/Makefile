@@ -31,6 +31,12 @@ GNUTLS_CONFIGURE_ON=	--with-ssl
 OPENSSL_USE=		OPENSSL=yes
 OPENSSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
 
+.include <bsd.port.pre.mk>
+
+.if !empty(ICONV_LIB)
+CONFIGURE_ENV+=ac_cv_func_iconv_open=yes
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/-liconv/${ICONV_LIB}/' ${WRKSRC}/configure
 
@@ -46,4 +52,4 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${i}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
