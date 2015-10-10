@@ -1,6 +1,6 @@
---- src/libtomcrypt/src/headers/tomcrypt_macros.h.orig	2012-08-06 07:23:37.000000000 +0200
-+++ src/libtomcrypt/src/headers/tomcrypt_macros.h	2015-03-02 21:40:07.785177000 +0100
-@@ -262,21 +262,19 @@
+--- src/libtomcrypt/src/headers/tomcrypt_macros.h.orig	2015-06-20 16:57:25 UTC
++++ src/libtomcrypt/src/headers/tomcrypt_macros.h
+@@ -262,21 +262,19 @@ static inline __attribute__((always_inli
  
  #ifndef LTC_NO_ROLC
  
@@ -11,7 +11,13 @@
 -      :"0" (word),"I" (i));
 -   return word;
 -}
--
++#define ROLc(word, i) ({     \
++   unsigned _word = word;    \
++   asm ("roll %2,%0"         \
++      :"=r" (_word)          \
++      :"0" (_word),"I" (i)); \
++   _word; })
+ 
 -static inline __attribute__((always_inline)) unsigned RORc(unsigned word, const int i)
 -{
 -   asm ("rorl %2,%0"
@@ -19,13 +25,6 @@
 -      :"0" (word),"I" (i));
 -   return word;
 -}
-+#define ROLc(word, i) ({     \
-+   unsigned _word = word;    \
-+   asm ("roll %2,%0"         \
-+      :"=r" (_word)          \
-+      :"0" (_word),"I" (i)); \
-+   _word; })
-+
 +#define RORc(word, i) ({     \
 +   unsigned _word = word;    \
 +   asm ("rorl %2,%0"         \
@@ -35,7 +34,7 @@
  
  #else
  
-@@ -305,21 +303,19 @@
+@@ -305,21 +303,19 @@ static inline __attribute__((always_inli
  
  #ifndef LTC_NO_ROLC
  
@@ -46,7 +45,13 @@
 -      :"0" (word),"I" (i));
 -   return word;
 -}
--
++#define ROLc(word, i) ({     \
++   unsigned _word = word;    \
++   asm ("rotlwi %0,%0,%2"    \
++      :"=r" (_word)          \
++      :"0" (_word),"I" (i)); \
++   _word; })
+ 
 -static inline __attribute__((always_inline)) unsigned RORc(unsigned word, const int i)
 -{
 -   asm ("rotrwi %0,%0,%2"
@@ -54,13 +59,6 @@
 -      :"0" (word),"I" (i));
 -   return word;
 -}
-+#define ROLc(word, i) ({     \
-+   unsigned _word = word;    \
-+   asm ("rotlwi %0,%0,%2"    \
-+      :"=r" (_word)          \
-+      :"0" (_word),"I" (i)); \
-+   _word; })
-+
 +#define RORc(word, i) ({     \
 +   unsigned _word = word;    \
 +   asm ("rotrwi %0,%0,%2"    \
@@ -70,7 +68,7 @@
  
  #else
  
-@@ -361,21 +357,19 @@
+@@ -361,21 +357,19 @@ static inline __attribute__((always_inli
  
  #ifndef LTC_NO_ROLC
  
@@ -81,7 +79,13 @@
 -      :"0" (word),"J" (i));
 -   return word;
 -}
--
++#define ROL64c(word, i) ({     \
++   unsigned long _word = word; \
++   asm ("rolq %2,%0"           \
++      :"=r" (_word)            \
++      :"0" (_word),"J" (i));   \
++   _word; })
+ 
 -static inline __attribute__((always_inline)) unsigned long ROR64c(unsigned long word, const int i)
 -{
 -   asm("rorq %2,%0"
@@ -89,13 +93,6 @@
 -      :"0" (word),"J" (i));
 -   return word;
 -}
-+#define ROL64c(word, i) ({     \
-+   unsigned long _word = word; \
-+   asm ("rolq %2,%0"           \
-+      :"=r" (_word)            \
-+      :"0" (_word),"J" (i));   \
-+   _word; })
-+
 +#define ROR64c(word, i) ({     \
 +   unsigned long _word = word; \
 +   asm ("rorq %2,%0"           \
