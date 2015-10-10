@@ -1,2 +1,4 @@
-SHA256 (mmex_0.9.9.0_src.tar.bz2) = 9973c7010f8989ab9582576549ea3a7516a65f32e9f21d1c50b680886512a2ac
-SIZE (mmex_0.9.9.0_src.tar.bz2) = 9667919
+SHA256 (mmex_1.0.0.0_src.tar.bz2) = c28761bf9bef5f75cb25b887e89439f8e107957688004697b28e914f5d5ccb69
+SIZE (mmex_1.0.0.0_src.tar.bz2) = 11077632
+SHA256 (bakefile-0.2.9.tar.gz) = 9f3c65411ad3932027e3c3e765337d89be2f9cf5ee9a204da80e92a8c2d76ca5
+SIZE (bakefile-0.2.9.tar.gz) = 775528
