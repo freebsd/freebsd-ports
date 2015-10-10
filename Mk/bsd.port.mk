@@ -4439,6 +4439,10 @@ fetch-recursive-list:
 #	-mi
 FETCH_LIST?=	for i in $$deps; do \
 		prog=$${i%%:*}; dir=$${i\#*:}; \
+		case $$dir in \
+		/*) ;; \
+		*) dir=${PORTSDIR}/$$dir ;; \
+		esac; \
 		case $$dir in	\
 		*:*) if [ $$prog != $${prog\#/} -o ! -e $$prog ]; then	\
 				dir=$${dir%%:*};	\
