@@ -2,6 +2,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	11.20.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/%SUBDIR%/:main,g729
 MASTER_SITE_SUBDIR=	asterisk/:main \
@@ -221,6 +222,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/musiconhold.conf.sample
+	@${REINPLACE_CMD} -e 's/-liconv/${ICONV_LIB}/' ${WRKSRC}/configure
 .if ${PORT_OPTIONS:MSYSINFO}
 	@${REINPLACE_CMD} -e 's/%%LIBSYSINFO%%/-lsysinfo/' ${WRKSRC}/main/Makefile
 .else

@@ -3,6 +3,7 @@
 
 PORTNAME=	owncloudclient
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://download.owncloud.com/desktop/stable/
 
@@ -14,7 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libinotify.so:${PORTSDIR}/devel/libinotify \
 		libqt5keychain.so:${PORTSDIR}/security/qtkeychain-qt5
 
-USES=		cmake:outsource compiler:c++11-lib gmake pkgconfig tar:xz
+USES=		cmake:outsource compiler:c++11-lib gmake iconv pkgconfig tar:xz
 USE_QT5=	buildtools_build concurrent core dbus gui linguist_build network \
 		qmake_build webkit xml
 USE_OPENSSL=	yes
