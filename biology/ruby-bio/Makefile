@@ -28,7 +28,7 @@ USE_RUBY_SETUP=	yes
 SHEBANG_FILES=	sample/biofetch.rb
 ruby_OLD_CMD=	/usr/proj/bioruby/bin/ruby
 
-XML_PARSER_RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/xmlparser.so:${PORTSDIR}/textproc/ruby-xmlparser
+XMLPARSER_RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/xmlparser.so:${PORTSDIR}/textproc/ruby-xmlparser
 BDB4_RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
 MYSQL_RUN_DEPENDS=	rubygem-dbd-mysql>=0:${PORTSDIR}/databases/rubygem-dbd-mysql
 PGSQL_RUN_DEPENDS=	rubygem-dbd-pg>=0:${PORTSDIR}/databases/rubygem-dbd-pg
