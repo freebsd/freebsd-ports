@@ -3,7 +3,9 @@
 # this file holds common targets
 
 post-patch:
+#	Sed on 9.x and dragonfly don't support \< or \>
 	@${REINPLACE_CMD} -e 's|-ffast-math|${FAST_MATH}|' -e 's|x86_64|amd64|' \
+		-e "/\>\/\// s|/-|/ -|; s|\\\>||" \
 		-e 's|python2 python|python2disabled pythondisabled|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' \
