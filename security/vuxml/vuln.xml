@@ -58,6 +58,53 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="290351c9-6f5c-11e5-a2a1-002590263bf5">
+    <topic>devel/ipython -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ipython</name>
+	<range><lt>3.2.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matthias Bussonnier reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/09/02/3">
+	  <p>Summary: Local folder name was used in HTML templates without
+	    escaping, allowing XSS in said pages by carefully crafting folder
+	    name and URL to access it.</p>
+	  <p>URI with issues:</p>
+	  <ul>
+	    <li>GET /tree/**</li>
+	  </ul>
+	</blockquote>
+	<p>Benjamin RK reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/09/16/3">
+	  <p>Vulnerability: A maliciously forged file opened for editing can
+	    execute javascript, specifically by being redirected to /files/ due
+	    to a failure to treat the file as plain text.</p>
+	  <p>URI with issues:</p>
+	  <ul>
+	    <li>GET /edit/**</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/203668</freebsdpr>
+      <cvename>CVE-2015-6938</cvename>
+      <cvename>CVE-2015-7337</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/09/02/3</url>
+      <url>https://github.com/ipython/ipython/commit/3ab41641cf6fce3860c73d5cf4645aa12e1e5892</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/09/16/3</url>
+      <url>https://github.com/ipython/ipython/commit/0a8096adf165e2465550bd5893d7e352544e5967</url>
+    </references>
+    <dates>
+      <discovery>2015-09-01</discovery>
+      <entry>2015-10-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a0182578-6e00-11e5-a90c-0026551a22dc">
     <topic>PostgreSQL -- minor security problems.</topic>
     <affects>
