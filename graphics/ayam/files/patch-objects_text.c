@@ -1,7 +1,7 @@
---- objects/text.c.orig	2007-12-17 18:46:17.000000000 +0100
-+++ objects/text.c	2007-12-17 18:46:39.000000000 +0100
-@@ -164,7 +164,7 @@
-  int ay_status = AY_OK;
+--- objects/text.c.orig	2015-06-23 18:03:50 UTC
++++ objects/text.c
+@@ -274,7 +274,7 @@ ay_text_setpropcb(Tcl_Interp *interp, in
+  /*int ay_status = AY_OK;*/
   char fname[] = "setProp";
   char *n1 = "TextAttrData";
 - char *result;
