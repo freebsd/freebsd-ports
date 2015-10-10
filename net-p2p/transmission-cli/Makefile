@@ -73,6 +73,12 @@ EXTRA_PATCHES=	${PATCHDIR}/disable-web
 DOCS=		AUTHORS NEWS README
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
+.include <bsd.port.pre.mk>
+
+.if !empty(ICONV_LIB)
+CONFIGURE_ARGS+=ac_cv_func_iconv_open=yes
+.endif
+
 general-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|noinst_PROGRAMS = |noinst_PROGRAMS = #|g'
@@ -109,4 +115,4 @@ general-install:
 
 post-install: general-install
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

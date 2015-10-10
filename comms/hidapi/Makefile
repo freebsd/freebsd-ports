@@ -15,10 +15,16 @@ LICENSE_COMB=	dual
 USE_GITHUB=	yes
 GH_ACCOUNT=	signal11
 
-USES=		autoreconf iconv:wchar_t libtool
+USES=		autoreconf gettext-tools iconv:wchar_t libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 PORTDOCS=	*
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
+
+pre-configure:
+	@${CP} ${LOCALBASE}/share/gettext/config.rpath ${WRKSRC}
 
 .include <bsd.port.mk>

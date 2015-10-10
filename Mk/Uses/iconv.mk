@@ -44,7 +44,7 @@ ICONV_LIB_PATH=		/usr/lib/libc.so
 .if ${OPSYS} == DragonFly || (${OPSYS} == FreeBSD && (${OSVERSION} < 1001514 \
  || (${OSVERSION} >= 1100000 && ${OSVERSION} < 1100069))) \
  || exists(${LOCALBASE}/include/iconv.h)
-BUILD_DEPENDS+=	libiconv>=1.14_8:${PORTSDIR}/converters/libiconv
+BUILD_DEPENDS+=	libiconv>=1.14_9:${PORTSDIR}/converters/libiconv
 CPPFLAGS+=	-DLIBICONV_PLUG
 CFLAGS+=	-DLIBICONV_PLUG
 CXXFLAGS+=	-DLIBICONV_PLUG

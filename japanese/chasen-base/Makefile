@@ -3,7 +3,7 @@
 
 PORTNAME=	chasen
 PORTVERSION=	2.4.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese textproc
 MASTER_SITES=	SOURCEFORGE_JP/chasen-legacy/56305
 PKGNAMESUFFIX=	-base
@@ -20,6 +20,11 @@ USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${REINPLACE_CMD} \
+		-e 's/iconv ()/libiconv ()/' \
+		-e 's/-liconv/${ICONV_LIB}/' ${WRKSRC}/configure
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/chasen/dic
