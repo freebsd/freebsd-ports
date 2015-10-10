@@ -9,7 +9,7 @@ MAINTAINER=	mmoll@FreeBSD.org
 COMMENT=	SCSS linter
 
 LICENSE=	MIT
-LICENSE-FILE=	${WRKSRC}/MIT-LICENSE
+LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-rainbow>=2.0:${PORTSDIR}/devel/rubygem-rainbow \
 		rubygem-sass>=3.4.15:${PORTSDIR}/textproc/rubygem-sass
