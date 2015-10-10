@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bosh_cli
-PORTVERSION=	1.2941.0
-PORTREVISION=	2
+PORTVERSION=	1.3098.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -24,6 +23,7 @@ RUN_DEPENDS=	rubygem-blobstore_client>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-
 		rubygem-net-ssh>=2.2.1:${PORTSDIR}/security/rubygem-net-ssh \
 		rubygem-net-ssh-gateway>=1.2.0:${PORTSDIR}/security/rubygem-net-ssh-gateway \
 		rubygem-progressbar>=0.9.0:${PORTSDIR}/devel/rubygem-progressbar \
+		rubygem-sshkey>=1.7.0:${PORTSDIR}/security/rubygem-sshkey \
 		rubygem-terminal-table>=1.4.3:${PORTSDIR}/textproc/rubygem-terminal-table
 
 NO_ARCH=	yes
