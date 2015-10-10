@@ -3,7 +3,7 @@
 
 PORTNAME=	gmagick
 PORTVERSION=	1.1.7RC2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
