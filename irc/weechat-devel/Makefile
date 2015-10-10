@@ -15,7 +15,7 @@ COMMENT=	Lightweight and user friendly ncurses based IRC client
 
 LICENSE=	GPLv3
 
-DEPRECATED=	far behind stable ird/weechat (use it instead)
+DEPRECATED=	far behind stable irc/weechat (use it instead)
 EXPIRATION_DATE=	2015-10-31
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
