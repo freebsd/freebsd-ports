@@ -1,11 +1,18 @@
---- configure.ac.orig
+--- configure.ac.orig	2013-10-06 22:43:37 UTC
 +++ configure.ac
-@@ -94,6 +94,8 @@
- 	LIBS="${LIBS}"
+@@ -89,11 +89,11 @@ case $host in
+ 	os="freebsd"
+ 	threads="pthreads"
+ 
+-	CFLAGS="$CFLAGS -I/usr/local/include"
+-	LDFLAGS="$LDFLAGS -L/usr/local/lib"
+-	LIBS="${LIBS}"
  	AC_CHECK_LIB([usb], [libusb_init], [LIBS_LIBUSB_PRIVATE="${LIBS_LIBUSB_PRIVATE} -lusb"], [hidapi_lib_error libusb])
- 	AC_CHECK_LIB([iconv], [iconv_open], [LIBS_LIBUSB_PRIVATE="${LIBS_LIBUSB_PRIVATE} -liconv"], [hidapi_lib_error libiconv])
+-	AC_CHECK_LIB([iconv], [iconv_open], [LIBS_LIBUSB_PRIVATE="${LIBS_LIBUSB_PRIVATE} -liconv"], [hidapi_lib_error libiconv])
 +	AC_CHECK_DECLS([libusb_get_string_descriptor], [], [], [[#include <libusb.h>]])
 +	AC_CHECK_DECLS([libusb_handle_events_completed], [], [], [[#include <libusb.h>]])
++	AM_ICONV
++	LIBS_LIBUSB_PRIVATE="${LIBS_LIBUSB_PRIVATE} ${LTLIBICONV}"
  	echo libs_priv: $LIBS_LIBUSB_PRIVATE
  	;;
  *-mingw*)

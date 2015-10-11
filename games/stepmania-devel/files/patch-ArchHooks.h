@@ -1,4 +1,4 @@
---- src/arch/ArchHooks/ArchHooks.h.orig
+--- src/arch/ArchHooks/ArchHooks.h.orig	2015-06-20 16:57:25 UTC
 +++ src/arch/ArchHooks/ArchHooks.h
 @@ -1,6 +1,8 @@
  #ifndef ARCH_HOOKS_H

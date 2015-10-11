@@ -13,4 +13,3 @@ man/man1/bvnc.1.gz
 share/applications/bssh.desktop
 share/applications/bvnc.desktop
 %%DATADIR%%/interfaces/avahi-discover.ui
-@comment @dir etc/avahi

@@ -1,0 +1,252 @@
+From 6adc44cc636c615d76297d86835e1a997681eb61 Mon Sep 17 00:00:00 2001
+From: "Kevin C. Krinke" <kevin@krinke.ca>
+Date: Fri, 9 Oct 2015 03:53:52 -0400
+Subject: [PATCH] feature "trust-input" - Addresses CVE-2008-7315
+
+If trust-input == 1:
+  allow backticks and $() constructs
+else (default):
+  replace backticks with single-quotes and remove the $ from $()
+---
+ lib/UI/Dialog.pm                    |  2 ++
+ lib/UI/Dialog/Backend.pm            | 35 +++++++++++++++++++++--------------
+ lib/UI/Dialog/Backend/ASCII.pm      |  2 ++
+ lib/UI/Dialog/Backend/CDialog.pm    |  2 ++
+ lib/UI/Dialog/Backend/GDialog.pm    |  2 ++
+ lib/UI/Dialog/Backend/KDialog.pm    |  3 +++
+ lib/UI/Dialog/Backend/NotifySend.pm |  2 ++
+ lib/UI/Dialog/Backend/Whiptail.pm   |  3 +++
+ lib/UI/Dialog/Backend/XDialog.pm    |  2 ++
+ lib/UI/Dialog/Backend/XOSD.pm       |  3 +++
+ lib/UI/Dialog/Backend/Zenity.pm     |  2 ++
+ lib/UI/Dialog/Console.pm            |  2 ++
+ lib/UI/Dialog/GNOME.pm              |  2 ++
+ lib/UI/Dialog/Gauged.pm             |  2 ++
+ lib/UI/Dialog/KDE.pm                |  2 ++
+ lib/UI/Dialog/Screen/Menu.pm        |  1 +
+ 16 files changed, 53 insertions(+), 14 deletions(-)
+
+diff --git lib/UI/Dialog.pm lib/UI/Dialog.pm
+index 2e98844..021bc47 100644
+--- lib/UI/Dialog.pm
++++ lib/UI/Dialog.pm
+@@ -68,6 +68,8 @@ sub new {
+     $self->_debug("ENV->UI_DIALOG: ".($ENV{'UI_DIALOG'}||'NULL'),2);
+     unshift(@{$cfg->{'order'}},$ENV{'UI_DIALOG'}) if $ENV{'UI_DIALOG'};
+ 
++    $cfg->{'trust-input'} = ($cfg->{'trust-input'}==1) ? 1 : 0;
++
+     my @opts = ();
+     foreach my $opt (keys(%$cfg)) { push(@opts,$opt,$cfg->{$opt}); }
+ 
+diff --git lib/UI/Dialog/Backend.pm lib/UI/Dialog/Backend.pm
+index 1416c23..27c3859 100644
+--- lib/UI/Dialog/Backend.pm
++++ lib/UI/Dialog/Backend.pm
+@@ -499,9 +499,10 @@ sub _merge_attrs {
+ 					$list->[$i] = $self->_esc_text($list->[$i]);
+ 				}
+ 			}
+-		} else {
+-			$args->{'list'} = $self->_esc_text($args->{'list'});
+-		}
++    } else {
++      # This isn't an array, how did we get here? Programmer error?
++      $args->{'list'} = $self->_esc_text($list);
++    }
+     }
+     $args->{'clear'} = $args->{'clearbefore'} || $args->{'clearafter'} || $args->{'autoclear'} || 0;
+     $args->{'beep'} = $args->{'beepbefore'} || $args->{'beepafter'} || $args->{'autobeep'} || 0;
+@@ -535,17 +536,23 @@ sub _esc_text {
+     my $self = $_[0];
+     my $text = $_[1];
+     unless (ref($text)) {
+-		$text =~ s!\"!\\"!gm;
+-		$text =~ s!\`!\\`!gm;
+-		$text =~ s!\(!\(!gm;
+-		$text =~ s!\)!\)!gm;
+-		$text =~ s!\[!\[!gm;
+-		$text =~ s!\]!\]!gm;
+-		$text =~ s!\{!\{!gm;
+-		$text =~ s!\}!\}!gm;
+-		$text =~ s!\$!\\\$!gm;
+-		$text =~ s!\>!\>!gm;
+-		$text =~ s!\<!\<!gm;
++      if ($self->{'_opts'}->{'trust-input'} != 0) {
++        $text =~ s!`!\`!gm;
++        $text =~ s!\$!\$!gm;
++      } else {
++        # untrusted input, replace ` with ' and drop the $ from $()
++        $text =~ s!`!\'!gm;
++        $text =~ s!\$\(!\(!gm;
++      }
++      $text =~ s!"!\"!gm;
++      $text =~ s!\(!\(!gm;
++      $text =~ s!\)!\)!gm;
++      $text =~ s!\[!\[!gm;
++      $text =~ s!\]!\]!gm;
++      $text =~ s!\{!\{!gm;
++      $text =~ s!\}!\}!gm;
++      $text =~ s!>!\>!gm;
++      $text =~ s!<!\<!gm;
+     }
+     return($text);
+ }
+diff --git lib/UI/Dialog/Backend/ASCII.pm lib/UI/Dialog/Backend/ASCII.pm
+index 1c4f102..c780ade 100644
+--- lib/UI/Dialog/Backend/ASCII.pm
++++ lib/UI/Dialog/Backend/ASCII.pm
+@@ -78,6 +78,8 @@ sub new {
+ 									$self->_find_bin('more')  );
+     $self->{'_opts'}->{'stty'} = $cfg->{'stty'} || $self->_find_bin('stty');
+ 
++    $self->{'_opts'}->{'trust-input'} = ($cfg->{'trust-input'}==1) ? 1 : 0;
++
+     $self->{'_state'} = {'rv'=>0};
+ 
+     return($self);
+diff --git lib/UI/Dialog/Backend/CDialog.pm lib/UI/Dialog/Backend/CDialog.pm
+index 531bf96..dac98f6 100644
+--- lib/UI/Dialog/Backend/CDialog.pm
++++ lib/UI/Dialog/Backend/CDialog.pm
+@@ -100,6 +100,8 @@ sub new {
+     $self->{'_opts'}->{'yes-label'} = $cfg->{'yes-label'} || undef();
+     $self->{'_opts'}->{'no-label'} = $cfg->{'no-label'} || undef();
+ 
++    $self->{'_opts'}->{'trust-input'} = ($cfg->{'trust-input'}==1) ? 1 : 0;
++
+     $self->_determine_dialog_variant();
+     return($self);
+ }
+diff --git lib/UI/Dialog/Backend/GDialog.pm lib/UI/Dialog/Backend/GDialog.pm
+index 87ca5c7..2022d61 100644
+--- lib/UI/Dialog/Backend/GDialog.pm
++++ lib/UI/Dialog/Backend/GDialog.pm
+@@ -71,6 +71,8 @@ sub new {
+ 		croak("the gdialog binary could not be found at: ".$self->{'_opts'}->{'bin'});
+     }
+ 
++    $self->{'_opts'}->{'trust-input'} = ($cfg->{'trust-input'}==1) ? 1 : 0;
++
+     return($self);
+ }
+ 
+diff --git lib/UI/Dialog/Backend/KDialog.pm lib/UI/Dialog/Backend/KDialog.pm
+index a13a66c..fc94b7b 100644
+--- lib/UI/Dialog/Backend/KDialog.pm
++++ lib/UI/Dialog/Backend/KDialog.pm
+@@ -71,6 +71,9 @@ sub new {
+     unless (-x $self->{'_opts'}->{'bin'}) {
+ 		croak("the kdialog binary could not be found at: ".$self->{'_opts'}->{'bin'});
+     }
++
++    $self->{'_opts'}->{'trust-input'} = ($cfg->{'trust-input'}==1) ? 1 : 0;
++
+     return($self);
+ }
+ 
+diff --git lib/UI/Dialog/Backend/Whiptail.pm lib/UI/Dialog/Backend/Whiptail.pm
+index 840f549..3f3ac56 100644
+--- lib/UI/Dialog/Backend/Whiptail.pm
++++ lib/UI/Dialog/Backend/Whiptail.pm
+@@ -72,6 +72,9 @@ sub new {
+     unless (-x $self->{'_opts'}->{'bin'}) {
+ 		croak("the whiptail binary could not be found at: ".$self->{'_opts'}->{'bin'});
+     }
++
++    $self->{'_opts'}->{'trust-input'} = ($cfg->{'trust-input'}==1) ? 1 : 0;
++
+     return($self);
+ }
+ 
+diff --git lib/UI/Dialog/Backend/XDialog.pm lib/UI/Dialog/Backend/XDialog.pm
+index ff83ad6..87d4192 100644
+--- lib/UI/Dialog/Backend/XDialog.pm
++++ lib/UI/Dialog/Backend/XDialog.pm
+@@ -164,6 +164,8 @@ sub new {
+     $self->{'_opts'}->{'timeout'} = $cfg->{'timeout'} || 0;
+     $self->{'_opts'}->{'wait'} = $cfg->{'wait'} || 0;
+ 
++    $self->{'_opts'}->{'trust-input'} = ($cfg->{'trust-input'}==1) ? 1 : 0;
++
+     return($self);
+ }
+ 
+diff --git lib/UI/Dialog/Backend/XOSD.pm lib/UI/Dialog/Backend/XOSD.pm
+index e03a2cf..fb78573 100644
+--- lib/UI/Dialog/Backend/XOSD.pm
++++ lib/UI/Dialog/Backend/XOSD.pm
+@@ -75,6 +75,9 @@ sub new {
+     unless (-x $self->{'_opts'}->{'bin'}) {
+ 		croak("the osd_cat binary could not be found at: ".$self->{'_opts'}->{'bin'});
+     }
++
++    $self->{'_opts'}->{'trust-input'} = ($cfg->{'trust-input'}==1) ? 1 : 0;
++
+     return($self);
+ }
+ 
+diff --git lib/UI/Dialog/Backend/Zenity.pm lib/UI/Dialog/Backend/Zenity.pm
+index 8f1a43c..f495a67 100644
+--- lib/UI/Dialog/Backend/Zenity.pm
++++ lib/UI/Dialog/Backend/Zenity.pm
+@@ -74,6 +74,8 @@ sub new {
+ 		croak("the zenity binary could not be found at: ".$self->{'_opts'}->{'bin'});
+     }
+ 
++    $self->{'_opts'}->{'trust-input'} = ($cfg->{'trust-input'}==1) ? 1 : 0;
++
+     my $command = $self->{'_opts'}->{'bin'}." --version";
+     my $version = `$command 2>&1`;
+     chomp( $version );
+diff --git lib/UI/Dialog/Console.pm lib/UI/Dialog/Console.pm
+index 97d01f7..86b3681 100644
+--- lib/UI/Dialog/Console.pm
++++ lib/UI/Dialog/Console.pm
+@@ -57,6 +57,8 @@ sub new {
+     $self->_debug("ENV->UI_DIALOG: ".($ENV{'UI_DIALOG'}||'NULL'),2);
+     unshift(@{$cfg->{'order'}},$ENV{'UI_DIALOG'}) if $ENV{'UI_DIALOG'};
+ 
++    $cfg->{'trust-input'} = ($cfg->{'trust-input'}==1) ? 1 : 0;
++
+     my @opts = ();
+     foreach my $opt (keys(%$cfg)) { push(@opts,$opt,$cfg->{$opt}); }
+ 
+diff --git lib/UI/Dialog/GNOME.pm lib/UI/Dialog/GNOME.pm
+index 36471ea..12e4e15 100644
+--- lib/UI/Dialog/GNOME.pm
++++ lib/UI/Dialog/GNOME.pm
+@@ -57,6 +57,8 @@ sub new {
+     $self->_debug("ENV->UI_DIALOG: ".($ENV{'UI_DIALOG'}||'NULL'),2);
+     unshift(@{$cfg->{'order'}},$ENV{'UI_DIALOG'}) if $ENV{'UI_DIALOG'};
+ 
++    $cfg->{'trust-input'} = ($cfg->{'trust-input'}==1) ? 1 : 0;
++
+     my @opts = ();
+     foreach my $opt (keys(%$cfg)) { push(@opts,$opt,$cfg->{$opt}); }
+ 
+diff --git lib/UI/Dialog/Gauged.pm lib/UI/Dialog/Gauged.pm
+index 138d6f8..3c77cdd 100644
+--- lib/UI/Dialog/Gauged.pm
++++ lib/UI/Dialog/Gauged.pm
+@@ -68,6 +68,8 @@ sub new {
+     $self->_debug("ENV->UI_DIALOG: ".($ENV{'UI_DIALOG'}||'NULL'),2);
+     unshift(@{$cfg->{'order'}},$ENV{'UI_DIALOG'}) if $ENV{'UI_DIALOG'};
+ 
++    $cfg->{'trust-input'} = ($cfg->{'trust-input'}==1) ? 1 : 0;
++
+     my @opts = ();
+     foreach my $opt (keys(%$cfg)) { push(@opts,$opt,$cfg->{$opt}); }
+ 
+diff --git lib/UI/Dialog/Screen/Menu.pm lib/UI/Dialog/Screen/Menu.pm
+index 17b2d90..39a30dc 100644
+--- lib/UI/Dialog/Screen/Menu.pm
++++ lib/UI/Dialog/Screen/Menu.pm
+@@ -33,6 +33,7 @@ sub new {
+           PATH => (defined $args{PATH}) ? $args{PATH} : undef,
+           beepbefore => (defined $args{beepbefore}) ? $args{beepbefore} : undef,
+           beepafter => (defined $args{beepafter}) ? $args{beepafter} : undef,
++          'trust-input' = ($args{'trust-input'}==1) ? 1 : 0;
+          );
+     }
+     unless (exists $args{menu}) {

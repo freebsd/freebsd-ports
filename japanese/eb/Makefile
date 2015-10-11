@@ -3,7 +3,7 @@
 
 PORTNAME=	eb
 PORTVERSION=	4.4.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/ \
 		ftp://ftp.sra.co.jp/pub/misc/eb/old/eb-${PORTVERSION:C/^([0-9]+)\.([0-9]+).*/\1.\2/}/
@@ -66,7 +66,9 @@ PORTDOCS=	eb-01.html eb-02.html eb-03.html eb-04.html eb-05.html eb-06.html \
 USES=		autoreconf iconv libtool perl5 tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--with-pkgdocdir=${DOCSDIR}
+CONFIGURE_ARGS=	--with-pkgdocdir=${DOCSDIR} \
+		--with-iconv-includes=${ICONV_PREFIX}/include \
+		--with-iconv-libraries=${ICONV_PREFIX}/lib
 CONFIGURE_ENV=	ac_cv_path_PERL=${PERL}
 
 OPTIONS_DEFINE=	DOCS NLS
@@ -76,11 +78,8 @@ APPENDIXDIR=	${DATADIR}/appendix
 
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
-NLS_CONFIGURE_ON=	\
-		--with-gettext-includes=${LOCALBASE}/include \
-		--with-gettext-libraries=${LOCALBASE}/lib \
-		--with-iconv-includes=${ICONV_PREFIX}/include \
-		--with-iconv-libraries=${ICONV_PREFIX}/lib
+NLS_CONFIGURE_ON=	--with-gettext-includes=${LOCALBASE}/include \
+			--with-gettext-libraries=${LOCALBASE}/lib
 NLS_CONFIGURE_OFF=	--disable-nls
 
 post-extract:

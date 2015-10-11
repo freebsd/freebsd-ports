@@ -3,7 +3,6 @@
 
     COMMENT = Ports for managing, installing, and developing FreeBSD ports and packages
 
-    SUBDIR += bpm
     SUBDIR += chucky
     SUBDIR += dialog4ports
     SUBDIR += dialog4ports-static

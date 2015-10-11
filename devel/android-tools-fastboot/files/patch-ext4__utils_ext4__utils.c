@@ -18,6 +18,15 @@
  #endif
  
  #include "ext4.h"
+@@ -53,6 +61,8 @@ struct sparse_file *ext4_sparse_file;
+ jmp_buf setjmp_env;
+ 
+ /* Definition from RFC-4122 */
++/* XXX <sys/uuid.h> defines slightly different |struct uuid| */
++#define uuid ext4_uuid
+ struct uuid {
+     u32 time_low;
+     u16 time_mid;
 @@ -383,10 +391,24 @@ static u64 get_block_device_size(int fd)
  	u64 size = 0;
  	int ret;

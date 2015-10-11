@@ -11,6 +11,9 @@ PKGNAMESUFFIX=	51
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The MySQL Workbench
 
+DEPRECATED=	EOL upstream, use databases/mysql-workbench52 instead
+EXPIRATION_DATE=	2015-11-10
+
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
 		libzip.so:${PORTSDIR}/archivers/libzip \

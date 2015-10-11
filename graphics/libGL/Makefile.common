@@ -18,7 +18,7 @@
 MESAVERSION=	${MESABASEVERSION}${MESASUBVERSION:C/^(.)/.\1/}
 MESADISTVERSION=${MESABASEVERSION}${MESASUBVERSION:C/^(.)/-\1/}
 
-MESABASEVERSION=	10.6.8
+MESABASEVERSION=	10.6.9
 # if there is a subversion, don't include the '-' between 7.11-rc2.
 MESASUBVERSION=
 
@@ -81,7 +81,9 @@ CONFIGURE_ARGS+=	--enable-egl --with-egl-platforms=x11,drm
 CONFIGURE_ARGS+=	--enable-gles2
 
 # Clover (OpenCL).
-.if ${OPSYS} == DragonFly || (${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000)
+.if ${OPSYS} == DragonFly || \
+	(${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000 && \
+	 (${ARCH} == i386 || ${ARCH} == amd64))
 BUILD_DEPENDS+=	libclc>=0.0.r222830:${PORTSDIR}/devel/libclc
 
 # We need the clang port too even if it is not used to compile because
@@ -103,14 +105,33 @@ BUILD_DEPENDS+= llvm${MESA_LLVM_VER}>=0:${PORTSDIR}/devel/llvm${MESA_LLVM_VER}
 .if ${COMPONENT:Mdri} != "" || ${COMPONENT:Mclover} != "" || ${COMPONENT:Megl} != ""
 RUN_DEPENDS+=   llvm${MESA_LLVM_VER}>=0:${PORTSDIR}/devel/llvm${MESA_LLVM_VER}
 .endif
+
 CONFIGURE_ENV+= LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${MESA_LLVM_VER}
 
 CONFIGURE_ARGS+=--enable-gallium-llvm \
                 --enable-xvmc \
                 --with-gallium-drivers=r300,r600,radeonsi,svga,swrast
 
+.if ${PORT_OPTIONS:MTEXTURE}
+CONFIGURE_ARGS+=--enable-texture-float
+.endif
+
 .if !(${ARCH} == amd64 || ${ARCH} == i386)
 CONFIGURE_ARGS+=--disable-gallium-intel
+.endif
+
+# this is disabled because our kernel driver is too old
+# merge this and the one below when support does land.
+.if 0 #${PORT_OPTIONS:MVDPAU}
+.if ${PORT_OPTIONS:MGALLIUM} == ""
+IGNORE= VDPAU option requires GALLIUM support to be enabled
+.endif
+CONFIGURE_ARGS+=--enable-vdpau
+LIB_DEPENDS+=   libvdpau.so:${PORTSDIR}/multimedia/libvdpau
+PLIST_SUB+=     VDPAU=""
+.else
+CONFIGURE_ARGS+=--disable-vdpau
+PLIST_SUB+=     VDPAU="@comment "
 .endif
 
 # what to do with this one? Currently disabled in dri.
@@ -119,3 +140,30 @@ CONFIGURE_ARGS+=--disable-vdpau
 .else
 CONFIGURE_ARGS+=--enable-vdpau
 .endif
+
+ALL_DRI_DRIVERS=I915 I965 R200 RADEON SWRAST
+
+.if ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == ia64
+DRI_DRIVERS=	${ALL_DRI_DRIVERS}
+.endif
+
+.if ${ARCH} == powerpc || ${ARCH} == powerpc64
+DRI_DRIVERS=	RADEON SWRAST
+.endif
+.if ${ARCH} == sparc64 || ${ARCH} == armv6
+DRI_DRIVERS=	SWRAST
+.endif
+
+# empty for unsupported arches
+DRI_DRIVERS+=
+
+.for _d in ${ALL_DRI_DRIVERS}
+. if ${DRI_DRIVERS:M${_d}}
+PLIST_SUB+=	${_d}_DRIVER=""
+. else
+PLIST_SUB+=	${_d}_DRIVER="@comment "
+. endif
+.endfor
+
+CONFIGURE_ARGS+=--with-dri-drivers="${DRI_DRIVERS:tl}"
+
