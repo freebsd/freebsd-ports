@@ -3,10 +3,10 @@
 
 PORTNAME=	wbxml
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	textproc pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	flo@FreeBSD.org
@@ -14,9 +14,14 @@ COMMENT=	PECL extension that provides WBXML conversion capabilities
 
 LIB_DEPENDS=	libwbxml2.so:${PORTSDIR}/textproc/wbxml2
 
+USES=tar:tgz
+
 CONFIGURE_ARGS=	--with-wbxml=${LOCALBASE} \
 		--with-libexpat-dir=${LOCALBASE}
 USE_PHP=	yes
 USE_PHPEXT=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/config.m4
 
 .include <bsd.port.mk>
