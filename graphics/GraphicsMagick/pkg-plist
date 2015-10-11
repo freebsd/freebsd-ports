@@ -91,16 +91,16 @@ lib/GraphicsMagick/config/type-windows.mgk
 lib/GraphicsMagick/config/type.mgk
 lib/libGraphicsMagick++.a
 lib/libGraphicsMagick++.so
-lib/libGraphicsMagick++.so.11
-lib/libGraphicsMagick++.so.11.0.0
+lib/libGraphicsMagick++.so.12
+lib/libGraphicsMagick++.so.12.0.0
 lib/libGraphicsMagick.a
 lib/libGraphicsMagick.so
 lib/libGraphicsMagick.so.3
-lib/libGraphicsMagick.so.3.13.0
+lib/libGraphicsMagick.so.3.14.0
 lib/libGraphicsMagickWand.a
 lib/libGraphicsMagickWand.so
 lib/libGraphicsMagickWand.so.2
-lib/libGraphicsMagickWand.so.2.7.1
+lib/libGraphicsMagickWand.so.2.7.2
 libdata/pkgconfig/GraphicsMagick++.pc
 libdata/pkgconfig/GraphicsMagick.pc
 libdata/pkgconfig/GraphicsMagickWand.pc
@@ -285,5 +285,5 @@ man/man5/quantize.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/www/wand/magick_wand.html
 %%PORTDOCS%%%%DOCSDIR%%/www/wand/pixel_wand.html
 %%PORTDOCS%%%%DOCSDIR%%/www/wand/wand.html
-@dir lib/GraphicsMagick/modules-Q%%Q%%/filters
 @dir lib/GraphicsMagick/modules-Q%%Q%%/coders
+@dir lib/GraphicsMagick/modules-Q%%Q%%/filters
