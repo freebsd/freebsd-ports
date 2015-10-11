@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	dropbear
-PORTVERSION=	2015.67
+PORTVERSION=	2015.68
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://matt.ucc.asn.au/dropbear/releases/
 
-MAINTAINER=	ak@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SSH 2 server, designed to be usable in small memory environments
 
 GNU_CONFIGURE=	yes
