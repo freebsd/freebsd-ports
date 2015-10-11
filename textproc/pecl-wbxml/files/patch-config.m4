@@ -1,6 +1,15 @@
---- config.m4.orig	2009-03-11 17:57:16.000000000 +0100
-+++ config.m4	2009-03-11 17:57:27.000000000 +0100
-@@ -74,21 +74,6 @@
+--- config.m4.orig	2009-02-22 11:30:57 UTC
++++ config.m4
+@@ -43,7 +43,7 @@ if test "$PHP_WBXML" != "no"; then
+   ],-L$WBXML_LIBDIR)
+ 
+   PHP_ADD_LIBRARY_WITH_PATH(wbxml2, $WBXML_LIBDIR, WBXML_SHARED_LIBADD)
+-  PHP_ADD_INCLUDE($WBXML_DIR/include)
++  PHP_ADD_INCLUDE(/usr/local/include/libwbxml-1.0)
+ 
+   for i in $PHP_LIBEXPAT_DIR /usr/local /usr; do
+     for j in $PHP_LIBDIR lib64 lib; do
+@@ -74,21 +74,6 @@ if test "$PHP_WBXML" != "no"; then
      CFLAGS="$CFLAGS -Wall"
    fi
  
