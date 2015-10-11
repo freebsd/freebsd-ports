@@ -5,7 +5,7 @@
  
    PHP_ADD_LIBRARY_WITH_PATH(wbxml2, $WBXML_LIBDIR, WBXML_SHARED_LIBADD)
 -  PHP_ADD_INCLUDE($WBXML_DIR/include)
-+  PHP_ADD_INCLUDE(/usr/local/include/libwbxml-1.0)
++  PHP_ADD_INCLUDE(%%LOCALBASE%%/include/libwbxml-1.0)
  
    for i in $PHP_LIBEXPAT_DIR /usr/local /usr; do
      for j in $PHP_LIBDIR lib64 lib; do
