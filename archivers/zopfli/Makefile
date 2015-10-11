@@ -6,7 +6,7 @@ DISTVERSION=	1.0.0-31
 DISTVERSIONSUFFIX=	-g6ff3ba2
 CATEGORIES=	archivers
 
-MAINTAINER=	freebsd@nagilum.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Zopfli Compression Algorithm
 
 LICENSE=	APACHE20

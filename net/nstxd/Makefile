@@ -13,7 +13,7 @@ PATCH_SITES=	http://www.nagilum.org/nstx/  \
 PATCH_DIST_STRIP=	-p1
 PATCHFILES=	nstx_1.1-beta6-4.diff.gz
 
-MAINTAINER=	freebsd@nagilum.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DNS tunnel server
 
 USE_RC_SUBR+=	nstxd
