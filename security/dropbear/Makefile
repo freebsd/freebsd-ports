@@ -6,7 +6,7 @@ PORTVERSION=	2015.68
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://matt.ucc.asn.au/dropbear/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pkubaj@riseup.net
 COMMENT=	SSH 2 server, designed to be usable in small memory environments
 
 GNU_CONFIGURE=	yes
