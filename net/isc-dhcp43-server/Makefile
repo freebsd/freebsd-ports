@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dhcp
-DISTVERSION=	4.3.2
+DISTVERSION=	4.3.3
 PORTREVISION=	${DHCP_PORTREVISION}
 CATEGORIES=	net
 MASTER_SITES=	ISC/${PORTNAME}/${DISTVERSION}
@@ -18,7 +18,7 @@ LICENSE=	ISCL
 USES=		gmake
 
 #PATCHLEVEL=	P1
-PORTREVISION_SERVER=	1
+PORTREVISION_SERVER=	0
 PORTREVISION_CLIENT=	0
 PORTREVISION_RELAY=	0
 
@@ -94,12 +94,12 @@ SUB_LIST+=	PARANOIA="no"
 .endif
 
 .if ${PORT_OPTIONS:MLDAP}
-CONFIGURE_ARGS+=--with-ldap
+CONFIGURE_ARGS+=--with-ldap --with-ldapcrypto
 USE_OPENLDAP=	yes
 LDAP_SCRIPT=	${WRKSRC}/contrib/ldap/dhcpd-conf-to-ldap
 LDAP_SCHEMA=	${WRKSRC}/contrib/ldap/dhcp.schema
 LDAP_README=	${WRKSRC}/contrib/ldap/README.ldap
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 LIBS+=		-L${LOCALBASE}/lib
 PORTDOCS+=	README.ldap
 PLIST_SUB+=	SCHEMA_DIR="${SCHEMA_DIR:S,^${PREFIX}/,,}" LDAP=""
@@ -142,7 +142,7 @@ do-install:
 	${SETENV} DESTDIR=${STAGEDIR} ${MAKE} -C ${WRKSRC}/${SUBSYS} install
 .if ${SUBSYS} == server
 	${SETENV} DESTDIR=${STAGEDIR} ${MAKE} -C ${WRKSRC}/dhcpctl install
-	${SETENV} DESTDIR=${STAGEDIR} ${MAKE} -C ${WRKSRC}/dst install
+#${SETENV} DESTDIR=${STAGEDIR} ${MAKE} -C ${WRKSRC}/dst install
 	${SETENV} DESTDIR=${STAGEDIR} ${MAKE} -C ${WRKSRC}/omapip install
 	${SETENV} DESTDIR=${STAGEDIR} ${MAKE} -C ${WRKSRC}/includes install
 	${SETENV} DESTDIR=${STAGEDIR} ${MAKE} -C ${WRKSRC}/common install
