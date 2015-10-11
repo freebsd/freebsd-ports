@@ -1,0 +1,10 @@
+Embree is a collection of high-performance ray tracing kernels developed
+at Intel.  The target users of Embree are graphics application engineers
+that want to improve the performance of their application by leveraging
+the optimized ray tracing kernels of Embree.
+
+These kernels are optimized for photo-realistic rendering on the latest
+Intel processors with support for SSE, AVX, AVX2, AVX512, and the 16-wide
+Intel Xeon Phi coprocessor vector instructions.
+
+WWW: https://embree.github.io/
