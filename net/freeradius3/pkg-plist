@@ -1,6 +1,7 @@
 @unexec different=0 ; for i in `find %D/%%EXAMPLESDIR%%/raddb/certs/ -type f -print | sed -e 's:^%D/%%EXAMPLESDIR%%/raddb/certs/::g'`; do if ! cmp -hsz %D/%%EXAMPLESDIR%%/raddb/certs/${i} %D/etc/raddb/certs/${i}; then different=1; break; fi; done; if [ ${different} -eq 0 ] && diff -rq --exclude=certs %D/%%EXAMPLESDIR%%/raddb %D/etc/raddb >/dev/null 2>&1; then rm -rf %D/etc/raddb; fi
 @unexec if [ -d %D/etc/raddb ]; then echo "You should remove %D/etc/raddb if you don't need it any more."; fi
 bin/dhcpclient
+bin/map_unit
 bin/rad_counter
 bin/radattr
 bin/radclient
@@ -418,6 +419,10 @@ sbin/radmin
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc6911.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc6929.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc6930.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc7055.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc7268.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc7542.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc7599.txt
 %%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/edir/freeradius-clients.ldif
 %%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/iplanet/freeradius.ldif
 %%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/iplanet/freeradius.schema
@@ -707,6 +712,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.bay
 %%DATADIR%%/dictionary.bintec
 %%DATADIR%%/dictionary.bluecoat
+%%DATADIR%%/dictionary.boingo
 %%DATADIR%%/dictionary.bristol
 %%DATADIR%%/dictionary.broadsoft
 %%DATADIR%%/dictionary.brocade
@@ -877,21 +883,6 @@ sbin/radmin
 %%DATADIR%%/dictionary.zeus
 %%DATADIR%%/dictionary.zte
 %%DATADIR%%/dictionary.zyxel
-@dirrm include/freeradius
-@dirrm %%LIBDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/concepts
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/configuration
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/deployment
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/developer
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/modules
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/rfc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/schemas/ldap/edir
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/schemas/ldap/iplanet
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/schemas/ldap/openldap
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/schemas/ldap
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/schemas
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/vendor
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec if ! [ -d %D/etc/raddb -o -L %D/etc/raddb ]; then cp -RP %D/%%EXAMPLESDIR%%/raddb %D/etc/raddb; echo '===> Bootstrapping default certificates, please wait...'; %D/etc/raddb/certs/bootstrap >/dev/null 2>&1; fi
 @exec chmod -R g-w,o-rwx %D/etc/raddb
 @exec if [ ! -d /var/log/radacct ]; then mkdir -p /var/log/radacct; chmod -R go= /var/log/radacct; fi
