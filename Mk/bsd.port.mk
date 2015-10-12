@@ -5051,11 +5051,12 @@ ${_t}:
 
 .if !defined(NOPRECIOUSMAKEVARS)
 # These won't change, so we can pass them through the environment
-.MAKEFLAGS: \
-	ARCH=${ARCH:Q} \
-	OPSYS=${OPSYS:Q} \
-	OSREL=${OSREL:Q} \
-	OSVERSION=${OSVERSION:Q}
+_EXPORTED_VARS=	ARCH OPSYS OPREL OSVERSION
+.for var in ${_EXPORTED_VARS}
+.if empty(.MAKEFLAGS:M${var}=*)
+.MAKEFLAGS:	${var}=${${var}:Q}
+.endif
+.endfor
 .endif
 
 .if !target(pre-check-config)
