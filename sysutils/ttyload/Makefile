@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.daveltd.com/src/util/ttyload/
 
-MAINTAINER=	serio.jeffrey@riseup.net
+MAINTAINER=	serio.jeffrey@gmail.com
 COMMENT=	Give a color-coded graph of load averages over time
 
 LICENSE=	ISCL
