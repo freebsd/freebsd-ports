@@ -1172,7 +1172,9 @@ ARCH!=	${UNAME} -p
 OPSYS!=	${UNAME} -s
 .endif
 
-UNAMER!=${UNAME} -r
+.if !defined(UNAMER)
+UNAMER!=	${UNAME} -r
+.endif
 
 # Get the operating system revision
 OSREL?=	${UNAMER:C/-.*//}
@@ -5051,7 +5053,7 @@ ${_t}:
 
 .if !defined(NOPRECIOUSMAKEVARS)
 # These won't change, so we can pass them through the environment
-_EXPORTED_VARS=	ARCH OPSYS OPREL OSVERSION
+_EXPORTED_VARS=	ARCH OPSYS OPREL OSVERSION UNAMER
 .for var in ${_EXPORTED_VARS}
 .if empty(.MAKEFLAGS:M${var}=*)
 .MAKEFLAGS:	${var}=${${var}:Q}
