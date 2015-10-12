@@ -685,10 +685,11 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-nginx-modsecurity-configure
 .endif
 
 .if ${PORT_OPTIONS:MNAXSI}
-NGINX_NAXSI_VERSION=	0.50
-MASTER_SITES+=	http://naxsi.googlecode.com/files/:naxsi
-DISTFILES+=	naxsi-core-${NGINX_NAXSI_VERSION}.tgz:naxsi
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/naxsi-core-${NGINX_NAXSI_VERSION}/naxsi_src
+NGINX_NAXSI_VERSION=	0.54
+GH_ACCOUNT+=	nbs-system:naxsi
+GH_PROJECT+=	naxsi:naxsi
+GH_TAGNAME+=	${NGINX_NAXSI_VERSION}:naxsi
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/naxsi-${NGINX_NAXSI_VERSION}/naxsi_src
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_REWRITE} || defined(USE_HTTP_REWRITE)
@@ -1070,7 +1071,7 @@ do-install:
 
 .if ${PORT_OPTIONS:MNAXSI}
 	${INSTALL_DATA} \
-	${WRKDIR}/naxsi-core-${NGINX_NAXSI_VERSION}/naxsi_config/naxsi_core.rules \
+	${WRKDIR}/naxsi-${NGINX_NAXSI_VERSION}/naxsi_config/naxsi_core.rules \
 	${STAGEDIR}${ETCDIR}
 .endif
 
