@@ -1675,6 +1675,7 @@ HAVE_COMPAT_IA32_KERN!= if ${SYSCTL} -n compat.ia32.maxvmem >/dev/null 2>&1; the
 .endif
 .endif
 .endif
+_EXPORTED_VARS+=	HAVE_COMPAT_IA32_KERN
 
 .if defined(IA32_BINARY_PORT) && ${ARCH} != "i386"
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
@@ -5061,7 +5062,8 @@ ${_t}:
 .if !defined(NOPRECIOUSMAKEVARS)
 # These won't change, so we can pass them through the environment
 .for var in ${_EXPORTED_VARS}
-.if empty(.MAKEFLAGS:M${var}=*)
+.if empty(.MAKEFLAGS:M${var}=*) && !empty(${var})
+.warning exporting ${var}
 .MAKEFLAGS:	${var}=${${var}:Q}
 .endif
 .endfor
