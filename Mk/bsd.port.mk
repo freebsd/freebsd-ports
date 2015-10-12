@@ -5063,7 +5063,6 @@ ${_t}:
 # These won't change, so we can pass them through the environment
 .for var in ${_EXPORTED_VARS}
 .if empty(.MAKEFLAGS:M${var}=*) && !empty(${var})
-.warning exporting ${var}
 .MAKEFLAGS:	${var}=${${var}:Q}
 .endif
 .endfor
