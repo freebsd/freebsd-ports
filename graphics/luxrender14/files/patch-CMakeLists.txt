@@ -1,0 +1,19 @@
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -210,7 +210,6 @@ IF(NOT APPLE AND NOT WIN32)
+ 	STRING(REGEX MATCH "(x86_64-*)|(X86_64-*)|(AMD64-*)|(amd64-*)" _mach_x86_64 ${MACHINE})
+ 	IF (_mach_x86_64)
+ 		SET(ARCH_X86_64 1)
+-		SET(LIB_SUFFIX 64)
+ 		#jromang - Hack to avoid boost bug on x64  Ubuntu 8.10 and Fedora 10 (http://www.luxrender.net/mantis/view.php?id=433)
+ 		ADD_DEFINITIONS(-DBOOST_NO_INTRINSIC_INT64_T)
+ 	ENDIF (_mach_x86_64)
+@@ -402,7 +401,7 @@ ELSEIF(MSVC)
+ ELSE(APPLE)
+ 	# Dade - default compiler options
+ 	# Removed "-O3" from definitions in order to have CMake Release/Debug options to work
+-	ADD_DEFINITIONS(-msse2 -mfpmath=sse -ftree-vectorize -funroll-loops -Wall -fPIC -DHAVE_PTHREAD_H)
++	ADD_DEFINITIONS(-msse -Wall -fPIC -DHAVE_PTHREAD_H)
+ 	set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -fvisibility=hidden -fvisibility-inlines-hidden")
+ 	set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -fvisibility=hidden -fvisibility-inlines-hidden")
+ 	# The QBVH accelerator needs to be compiled with much reduced optimizations

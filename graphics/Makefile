@@ -572,6 +572,7 @@
     SUBDIR += luminance
     SUBDIR += luminance-qt5
     SUBDIR += luxrender
+    SUBDIR += luxrender14
     SUBDIR += mahotas
     SUBDIR += maim
     SUBDIR += makehuman
