@@ -1166,18 +1166,22 @@ MAINTAINER?=	ports@FreeBSD.org
 .if !defined(ARCH)
 ARCH!=	${UNAME} -p
 .endif
+_EXPORTED_VARS+=	ARCH
 
 # Get the operating system type
 .if !defined(OPSYS)
 OPSYS!=	${UNAME} -s
 .endif
+_EXPORTED_VARS+=	OPSYS
 
 .if !defined(UNAMER)
 UNAMER!=	${UNAME} -r
 .endif
+_EXPORTED_VARS+=	UNAMER
 
 # Get the operating system revision
 OSREL?=	${UNAMER:C/-.*//}
+_EXPORTED_VARS+=	OSREL
 
 # Get __FreeBSD_version
 .if !defined(OSVERSION)
@@ -1189,6 +1193,7 @@ OSVERSION!=	${AWK} '/^\#define[[:blank:]]__FreeBSD_version/ {print $$3}' < ${SRC
 .error Unable to determine OS version.  Either define OSVERSION, install /usr/include/sys/param.h or define SRC_BASE.
 .endif
 .endif
+_EXPORTED_VARS+=	OSVERSION
 
 # Convert OSVERSION to major release number
 _OSVERSION_MAJOR=	${OSVERSION:C/([0-9]?[0-9])([0-9][0-9])[0-9]{3}/\1/}
@@ -1215,6 +1220,7 @@ IGNORE=		pkg(8) must be version ${MINIMAL_PKG_VERSION} or greater, but you have 
 .endif
 _PKG_CHECKED=	1
 .endif
+_EXPORTED_VARS+=	_PKG_CHECKED
 
 MASTERDIR?=	${.CURDIR}
 
@@ -5054,7 +5060,6 @@ ${_t}:
 
 .if !defined(NOPRECIOUSMAKEVARS)
 # These won't change, so we can pass them through the environment
-_EXPORTED_VARS=	ARCH OPSYS OSREL OSVERSION UNAMER _PKG_CHECKED
 .for var in ${_EXPORTED_VARS}
 .if empty(.MAKEFLAGS:M${var}=*)
 .MAKEFLAGS:	${var}=${${var}:Q}
