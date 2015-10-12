@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2015-01-27 07:13:25 UTC
++++ Makefile.in
+@@ -93,7 +93,7 @@
+ 	$(INSTALL) -m 0755 libjlog.$(DOTSO) $(DESTDIR)$(libdir)/libjlog.$(DOTSO)
+ 	$(INSTALL) -m 0644 jlog.h $(DESTDIR)$(includedir)/jlog.h
+ 	$(INSTALL) -m 0644 jlog_config.h $(DESTDIR)$(includedir)/jlog_config.h
+-	cd perl ; make install DESTDIR=$(DESTDIR) INSTALLDIRS=vendor
++	cd perl ; make install DESTDIR=$(DESTDIR) INSTALLDIRS=site
+ 
+ clean:
+ 	rm -f *.o *.lo *.$(DOTSO) *.a jthreadtest
