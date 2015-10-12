@@ -438,12 +438,15 @@ Notes:
     </description>
     <references>
       <freebsdpr>ports/203541</freebsdpr>
+      <cvename>CVE-2015-7803</cvename>
+      <cvename>CVE-2015-7804</cvename>
       <url>http://php.net/ChangeLog-5.php#5.5.30</url>
       <url>http://php.net/ChangeLog-5.php#5.6.14</url>
     </references>
     <dates>
       <discovery>2015-10-01</discovery>
       <entry>2015-10-04</entry>
+      <modified>2015-10-12</modified>
     </dates>
   </vuln>
 
