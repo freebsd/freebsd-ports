@@ -1,0 +1,10 @@
+--- jogl/make/build.xml.orig	2015-10-01 22:40:34.563042000 +0000
++++ jogl/make/build.xml	2015-10-01 22:40:53.793693000 +0000
+@@ -1058,6 +1058,7 @@
+                  sourcepath="${src.java};${src.generated.java}"        
+                  destdir="${javadoc}" windowtitle="${javadoc.windowtitle}"
+                  overview="${javadoc.overview}" 
++                 additionalparam="-Xdoclint:none"
+                  source="1.4"
+                  linkoffline="${javadoc.link} 142-packages"
+ 		 bottom="${javadoc.bottom}" >
