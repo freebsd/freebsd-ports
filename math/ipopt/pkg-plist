@@ -53,13 +53,13 @@ include/coin/ThirdParty/rename.h
 include/coin/ThirdParty/struct.h
 lib/libcoinmetis.so
 lib/libcoinmetis.so.1
-lib/libcoinmetis.so.1.2.11
+lib/libcoinmetis.so.1.3.4
 lib/libcoinmumps.so
 lib/libcoinmumps.so.1
-lib/libcoinmumps.so.1.4.14
+lib/libcoinmumps.so.1.5.4
 lib/libipopt.so
 lib/libipopt.so.1
-lib/libipopt.so.1.9.10
+lib/libipopt.so.1.10.4
 libdata/pkgconfig/coinmetis.pc
 libdata/pkgconfig/coinmumps.pc
 libdata/pkgconfig/ipopt.pc
