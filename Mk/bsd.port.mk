@@ -5054,7 +5054,7 @@ ${_t}:
 
 .if !defined(NOPRECIOUSMAKEVARS)
 # These won't change, so we can pass them through the environment
-_EXPORTED_VARS=	ARCH OPSYS OPREL OSVERSION UNAMER _PKG_CHECKED
+_EXPORTED_VARS=	ARCH OPSYS OSREL OSVERSION UNAMER _PKG_CHECKED
 .for var in ${_EXPORTED_VARS}
 .if empty(.MAKEFLAGS:M${var}=*)
 .MAKEFLAGS:	${var}=${${var}:Q}
