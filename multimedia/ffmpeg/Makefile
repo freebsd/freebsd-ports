@@ -3,6 +3,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	2.8
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -93,7 +94,7 @@ DEBUG_CONFIGURE_OFF=	--disable-debug
 
 # docs
 DOCS_BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html
-DOCS_VARS=		DOC_DOCFILES+="*.html"
+DOCS_CONFIGURE_ENABLE=	htmlpages
 
 # faac
 FAAC_LIB_DEPENDS=	libfaac.so:${PORTSDIR}/audio/faac
@@ -107,7 +108,7 @@ FDK_AAC_IMPLIES=	NONFREE
 
 # ffserver
 FFSERVER_CONFIGURE_ENABLE=	ffserver
-FFSERVER_VARS=		FFPROGS+=ffserver USE_RC_SUBR+=ffserver
+FFSERVER_VARS=		USE_RC_SUBR+=ffserver
 
 # fontconfig
 FONTCONFIG_LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
@@ -204,7 +205,6 @@ SCHROEDINGER_CONFIGURE_ENABLE=	libschroedinger
 # sdl
 SDL_USE=		SDL=sdl
 SDL_CONFIGURE_ENABLE=	ffplay
-SDL_VARS=		FFPROGS+=ffplay
 SDL_CONFIGURE_OFF=	--disable-outdev=sdl
 
 # smbclient
@@ -277,8 +277,8 @@ LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LGPLv3
 NONFREE_CONFIGURE_ENABLE=nonfree
 NONFREE_VARS=		RESTRICTED="linking to libfaac or libaacplus restricts redistribution"
 
-FFPROGS=	ffmpeg ffprobe
-INSTALL_TARGET=	install-progs install-data install-libs install-headers
+INSTALL_TARGET=	install-progs install-doc install-data \
+		install-libs install-headers
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 
@@ -350,8 +350,6 @@ post-configure-THEORA-off:
 		${WRKSRC}/config.mak
 
 post-install:
-	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \
-		"${FFPROGS:S/$/*.1/}" ${STAGEDIR}${MAN1PREFIX}/man/man1)
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
 		"${DOC_FILES}" ${STAGEDIR}${DOCSDIR})
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \
