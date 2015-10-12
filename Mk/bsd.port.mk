@@ -1174,13 +1174,13 @@ OPSYS!=	${UNAME} -s
 .endif
 _EXPORTED_VARS+=	OPSYS
 
-.if !defined(UNAMER)
-UNAMER!=	${UNAME} -r
+.if !defined(_OSRELEASE)
+_OSRELEASE!=	${UNAME} -r
 .endif
-_EXPORTED_VARS+=	UNAMER
+_EXPORTED_VARS+=	_OSRELEASE
 
 # Get the operating system revision
-OSREL?=	${UNAMER:C/-.*//}
+OSREL?=	${_OSRELEASE:C/-.*//}
 _EXPORTED_VARS+=	OSREL
 
 # Get __FreeBSD_version
@@ -1200,8 +1200,8 @@ _OSVERSION_MAJOR=	${OSVERSION:C/([0-9]?[0-9])([0-9][0-9])[0-9]{3}/\1/}
 # Sanity checks for chroot/jail building.
 # Skip if OSVERSION specified on cmdline for testing. Only works for bmake.
 .if !defined(.MAKEOVERRIDES) || !${.MAKEOVERRIDES:MOSVERSION}
-.if ${_OSVERSION_MAJOR} != ${UNAMER:R}
-.error UNAME_r (${UNAMER}) and OSVERSION (${OSVERSION}) do not agree on major version number.
+.if ${_OSVERSION_MAJOR} != ${_OSRELEASE:R}
+.error UNAME_r (${_OSRELEASE}) and OSVERSION (${OSVERSION}) do not agree on major version number.
 .elif ${_OSVERSION_MAJOR} != ${OSREL:R}
 .error OSREL (${OSREL}) and OSVERSION (${OSVERSION}) do not agree on major version number.
 .endif
