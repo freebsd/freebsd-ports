@@ -4,7 +4,7 @@
 PORTNAME=	gspell
 PORTVERSION=	0.1.0
 CATEGORIES=	textproc
-MASTER_SITES=	https://people.gnome.org/~swilmet/gspell/
+MASTER_SITES=	GNOME
 
 MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	Spell checking for GTK+
