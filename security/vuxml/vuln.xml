@@ -215,12 +215,14 @@ Notes:
       </body>
     </description>
     <references>
+      <cvename>CVE-2015-7695</cvename>
       <url>http://www.openwall.com/lists/oss-security/2015/09/30/6</url>
       <url>http://framework.zend.com/security/advisory/ZF2015-08</url>
     </references>
     <dates>
       <discovery>2015-09-15</discovery>
       <entry>2015-10-06</entry>
+      <modified>2015-10-12</modified>
     </dates>
   </vuln>
 
