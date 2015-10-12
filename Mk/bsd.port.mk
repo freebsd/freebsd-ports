@@ -5052,10 +5052,10 @@ ${_t}:
 .if !defined(NOPRECIOUSMAKEVARS)
 # These won't change, so we can pass them through the environment
 .MAKEFLAGS: \
-	ARCH="${ARCH:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
-	OPSYS="${OPSYS:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
-	OSREL="${OSREL:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
-	OSVERSION="${OSVERSION:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}"
+	ARCH=${ARCH:Q} \
+	OPSYS=${OPSYS:Q} \
+	OSREL=${OSREL:Q} \
+	OSVERSION=${OSVERSION:Q}
 .endif
 
 .if !target(pre-check-config)
