@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	usermin
-PORTVERSION=	1.670
-PORTREVISION=	1
+PORTVERSION=	1.680
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/uupdates/:up \
 		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf \
