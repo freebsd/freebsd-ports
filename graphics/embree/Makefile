@@ -4,6 +4,7 @@
 PORTNAME=	embree
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.7.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -44,5 +45,9 @@ post-patch:
 	@${REINPLACE_CMD} -e '/_COMPILER/s,^,#,' \
 		${WRKSRC}/common/cmake/clang.cmake \
 		${WRKSRC}/common/cmake/gcc.cmake
+
+post-install:
+	${LN} -sf libembree.so.${DISTVERSION} \
+		${STAGEDIR}${PREFIX}/lib/libembree.so
 
 .include <bsd.port.mk>

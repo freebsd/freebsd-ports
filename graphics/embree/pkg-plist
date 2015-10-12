@@ -40,6 +40,7 @@ include/embree2/rtcore_scene.h
 include/embree2/rtcore_scene.isph
 lib/cmake/embree-%%VERSION%%/embree-config-version.cmake
 lib/cmake/embree-%%VERSION%%/embree-config.cmake
+lib/libembree.so
 lib/libembree.so.2
 lib/libembree.so.%%VERSION%%
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
