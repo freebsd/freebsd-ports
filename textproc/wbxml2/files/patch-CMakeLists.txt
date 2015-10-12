@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2009-05-12 20:43:10.000000000 +0900
-+++ CMakeLists.txt	2009-08-12 05:53:35.000000000 +0900
-@@ -36,7 +36,7 @@
+--- CMakeLists.txt.orig	2012-07-20 12:29:52 UTC
++++ CMakeLists.txt
+@@ -44,7 +44,7 @@ SET( CMAKE_MODULE_PATH "${CMAKE_SOURCE_D
  
  SET( LIB_SUFFIX "" CACHE STRING "The library directory suffix. 32bit empty string, 64 for 64bit." )
  SET( LIB_INSTALL_DIR  "${CMAKE_INSTALL_PREFIX}/lib${LIB_SUFFIX}" CACHE INTERNAL "libary location" )
@@ -9,7 +9,7 @@
  SET( BIN_INSTALL_DIR  "${CMAKE_INSTALL_PREFIX}/bin" CACHE INTERNAL "binary location" )
  SET( SHARE_INSTALL_DIR  "${CMAKE_INSTALL_PREFIX}/share" CACHE INTERNAL "data location" )
  SET( INCLUDE_INSTALL_DIR  "${CMAKE_INSTALL_PREFIX}/include" CACHE INTERNAL "headers location" )
-@@ -176,7 +176,7 @@
+@@ -191,7 +191,7 @@ MARK_AS_ADVANCED( CLEAR BUILD_DOCUMENTAT
  #	ADD_CUSTOM_TARGET( DoxygenDoc )
  #	ADD_DEPENDENCIES( DoxygenDoc DoxygenDocLibrary DoxygenDocTools )
  #ENDIF ( BUILD_DOCUMENTATION )

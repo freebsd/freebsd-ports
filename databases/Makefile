@@ -122,6 +122,7 @@
     SUBDIR += jdbc-oracle8i
     SUBDIR += jdbc-oracle9i
     SUBDIR += jdbm2
+    SUBDIR += jlog
     SUBDIR += jrobin
     SUBDIR += jrrd
     SUBDIR += kbibtex

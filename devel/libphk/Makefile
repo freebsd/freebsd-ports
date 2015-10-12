@@ -11,9 +11,11 @@ DISTNAME=	Libphk.${PORTVERSION:C/0.3.//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHK's utilities functions
 
-USES=	uidfix tar:tgz
+USES=		uidfix tar:tgz
 
 WRKSRC=		${WRKDIR}/Libphk
+
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	@${SED} -i -e 's!/usr/local!$${PREFIX}!g' ${WRKSRC}/Makefile

@@ -141,6 +141,7 @@
     SUBDIR += easypaint
     SUBDIR += edje_viewer
     SUBDIR += electrix
+    SUBDIR += embree
     SUBDIR += enblend
     SUBDIR += entangle
     SUBDIR += eog
@@ -571,6 +572,7 @@
     SUBDIR += luminance
     SUBDIR += luminance-qt5
     SUBDIR += luxrender
+    SUBDIR += luxrender14
     SUBDIR += mahotas
     SUBDIR += maim
     SUBDIR += makehuman

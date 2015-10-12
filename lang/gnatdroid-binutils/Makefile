@@ -1,11 +1,11 @@
 # Created by: John Marino <marino@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=		binutils
-PORTVERSION=		2.25
-CATEGORIES=		lang
-MASTER_SITES=		SOURCEWARE/binutils/releases
-PKGNAMEPREFIX=		gnatdroid-
+PORTNAME=	binutils
+PORTVERSION=	2.25.1
+CATEGORIES=	lang
+MASTER_SITES=	SOURCEWARE/binutils/releases
+PKGNAMEPREFIX=	gnatdroid-
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Infrastructure for C/Ada Android cross-compiler

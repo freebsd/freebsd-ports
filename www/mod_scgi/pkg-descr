@@ -6,4 +6,4 @@ The SCGI protocol is a replacement for the Common Gateway Interface
 HTTP servers.  It is similar to FastCGI but is designed to be easier to
 implement.
 
-WWW:	http://www.mems-exchange.org/software/scgi/
+WWW: http://python.ca/scgi/
