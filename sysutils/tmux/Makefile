@@ -5,7 +5,8 @@ PORTNAME=	tmux
 PORTVERSION=	2.0
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:S/a$//}
+MASTER_SITES=	https://github.com/tmux/tmux/releases/download/${PORTVERSION}/ \
+		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:S/a$//}
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Terminal Multiplexer
