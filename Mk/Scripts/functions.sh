@@ -25,7 +25,7 @@ parse_plist() {
 	cwd=${PREFIX}
 	cwd_save=
 	commented_cwd=
-	while read line; do
+	while read -r line; do
 		# Handle deactivated OPTIONS. Treat "@comment file" as being in
 		# the plist so it does not show up as an orphan. PLIST_SUB uses
 		# a @comment to deactive files. XXX: It would be better to
