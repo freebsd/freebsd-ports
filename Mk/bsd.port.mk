@@ -1205,7 +1205,7 @@ _OSVERSION_MAJOR=	${OSVERSION:C/([0-9]?[0-9])([0-9][0-9])[0-9]{3}/\1/}
 # Only define tools here (for transition period with between pkg tools)
 .include "${PORTSDIR}/Mk/bsd.commands.mk"
 
-.if exists(${PKG_BIN})
+.if !defined(_PKG_CHECKED) && exists(${PKG_BIN})
 .if !defined(_PKG_VERSION)
 _PKG_VERSION!=	${PKG_BIN} -v
 .endif
@@ -1213,6 +1213,7 @@ _PKG_STATUS!=	${PKG_BIN} version -t ${_PKG_VERSION:C/-.*//g} ${MINIMAL_PKG_VERSI
 .if ${_PKG_STATUS} == "<"
 IGNORE=		pkg(8) must be version ${MINIMAL_PKG_VERSION} or greater, but you have ${_PKG_VERSION}. You must upgrade the ${PKG_ORIGIN} port first
 .endif
+_PKG_CHECKED=	1
 .endif
 
 MASTERDIR?=	${.CURDIR}
@@ -5053,7 +5054,7 @@ ${_t}:
 
 .if !defined(NOPRECIOUSMAKEVARS)
 # These won't change, so we can pass them through the environment
-_EXPORTED_VARS=	ARCH OPSYS OPREL OSVERSION UNAMER
+_EXPORTED_VARS=	ARCH OPSYS OPREL OSVERSION UNAMER _PKG_CHECKED
 .for var in ${_EXPORTED_VARS}
 .if empty(.MAKEFLAGS:M${var}=*)
 .MAKEFLAGS:	${var}=${${var}:Q}
