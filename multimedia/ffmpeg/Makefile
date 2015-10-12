@@ -21,7 +21,6 @@ CONFIGURE_LOG=	config.err
 USES=		compiler cpe gmake perl5 pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 USE_PERL5=	build
-WANT_SDL=	yes
 
 OPTIONS_DEFINE=	AACPLUS ALSA AMR_NB AMR_WB ASS CDIO CELT DEBUG DOCS FAAC \
 		FDK_AAC FFSERVER FONTCONFIG FREETYPE FREI0R GSM ICONV \
@@ -92,6 +91,10 @@ CELT_CONFIGURE_ENABLE=	libcelt
 DEBUG_CONFIGURE_ON=	--disable-stripping
 DEBUG_CONFIGURE_OFF=	--disable-debug
 
+# docs
+DOCS_BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html
+DOCS_VARS=		DOC_DOCFILES+="*.html"
+
 # faac
 FAAC_LIB_DEPENDS=	libfaac.so:${PORTSDIR}/audio/faac
 FAAC_CONFIGURE_ENABLE=	libfaac
@@ -104,7 +107,7 @@ FDK_AAC_IMPLIES=	NONFREE
 
 # ffserver
 FFSERVER_CONFIGURE_ENABLE=	ffserver
-FFSERVER_VARS=		USE_RC_SUBR+=ffserver
+FFSERVER_VARS=		FFPROGS+=ffserver USE_RC_SUBR+=ffserver
 
 # fontconfig
 FONTCONFIG_LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
@@ -198,6 +201,12 @@ RTMP_CONFIGURE_ENABLE=	librtmp
 SCHROEDINGER_LIB_DEPENDS=	libschroedinger-1.0.so:${PORTSDIR}/multimedia/schroedinger
 SCHROEDINGER_CONFIGURE_ENABLE=	libschroedinger
 
+# sdl
+SDL_USE=		SDL=sdl
+SDL_CONFIGURE_ENABLE=	ffplay
+SDL_VARS=		FFPROGS+=ffplay
+SDL_CONFIGURE_OFF=	--disable-outdev=sdl
+
 # smbclient
 SMB_LIB_DEPENDS=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
 SMB_CONFIGURE_ENABLE=	libsmbclient
@@ -273,19 +282,6 @@ INSTALL_TARGET=	install-progs install-data install-libs install-headers
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == "FreeBSD" && ${OSVERSION} < 1000000
-CONFIGURE_ARGS+=	--enable-memalign-hack
-.endif
-
-.if ${ARCH} == "armv6"
-CONFIGURE_ARGS+=	--disable-fast-unaligned
-.if ${CHOSEN_COMPILER_TYPE} == "clang"
-CONFIGURE_ENV+=	ASFLAGS=-no-integrated-as
-.endif
-.endif
-
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
@@ -309,35 +305,20 @@ CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 		--extra-ldflags="-L${LOCALBASE}/lib ${FFMPEG_LDFLAGS}" \
 		--extra-libs="-lpthread"
 
+CONFIGURE_ENV_armv6_clang=	ASFLAGS=-no-integrated-as
+CONFIGURE_ARGS_armv6=		--disable-fast-unaligned
+CONFIGURE_ARGS_FreeBSD_9=	--enable-memalign-hack
+
 DOC_FILES=	Changelog CREDITS INSTALL.md LICENSE.md MAINTAINERS \
 		README.md RELEASE_NOTES
 # under doc subdirectory
 DOC_DOCFILES=	APIchanges *.txt
 PORTDOCS=	*
 
-.if ${PORT_OPTIONS:MDOCS}
-DOC_DOCFILES+=	*.html
-BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
-.endif
-
-# ffserver
-.if ${PORT_OPTIONS:MFFSERVER}
-FFPROGS+=	ffserver
-.if ${PORT_OPTIONS:MDOCS}
-DOC_DOCFILES+=	ffserver.html
-.endif
-.endif
-
-# sdl
-.if ${PORT_OPTIONS:MSDL}
-USE_SDL+=	sdl
-FFPROGS+=	ffplay
-.if ${PORT_OPTIONS:MDOCS}
-DOC_DOCFILES+=	ffplay.html
-.endif
-.else
-CONFIGURE_ARGS+=	--disable-ffplay --disable-outdev=sdl
-.endif
+# Custom helpers. FOO_${ARCH} style from bsd.port.mk
+CONFIGURE_ENV+=	${CONFIGURE_ENV_${ARCH}_${CHOSEN_COMPILER_TYPE}}
+CONFIGURE_ARGS+=${CONFIGURE_ARGS_${OPSYS}_${OSREL:R}}
+CONFIGURE_ARGS+=${CONFIGURE_ARGS_${ARCH}}
 
 post-patch:
 # {C,LD}FLAGS safeness
@@ -369,20 +350,15 @@ post-configure-THEORA-off:
 		${WRKSRC}/config.mak
 
 post-install:
-.for PROG in ${FFPROGS}
-	@${MKDIR} ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/${PROG}*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
-.endfor
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for FILE in ${DOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
-.endfor
-.for FILE in ${DOC_DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/doc/${FILE} ${STAGEDIR}${DOCSDIR}
-.endfor
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \
+		"${FFPROGS:S/$/*.1/}" ${STAGEDIR}${MAN1PREFIX}/man/man1)
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
+		"${DOC_FILES}" ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \
+		"${DOC_DOCFILES}" ${STAGEDIR}${DOCSDIR})
 
 post-install-FFSERVER-on:
 	${INSTALL_DATA} ${WRKSRC}/doc/ffserver.conf \
 		${STAGEDIR}${PREFIX}/etc/ffserver.conf.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
