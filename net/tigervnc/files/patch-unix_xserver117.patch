@@ -1,6 +1,6 @@
---- unix/xserver114.patch.orig	2013-05-08 11:23:13 UTC
-+++ unix/xserver114.patch
-@@ -66,7 +66,7 @@ diff -up xserver/mi/miinitext.c.vnc xser
+--- unix/xserver117.patch.orig	2015-10-13 17:11:25.207390000 +0200
++++ unix/xserver117.patch	2015-10-13 17:11:42.276049000 +0200
+@@ -66,7 +66,7 @@ diff -up xorg-server-1.17.1/mi/miinitext
   #include "globals.h"
   
  +#ifdef TIGERVNC
