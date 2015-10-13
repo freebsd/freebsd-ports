@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	apache24
-PORTVERSION=	2.4.16
-PORTREVISION=	1
+PORTVERSION=	2.4.17
 CATEGORIES=	www ipv6
 MASTER_SITES=	APACHE_HTTPD
 DISTNAME=	httpd-${PORTVERSION}
@@ -30,6 +29,10 @@ CPE_PRODUCT=	http_server
 PORTDOCS=	*
 SUB_FILES=	pkg-install pkg-deinstall
 
+# XXX: before running makepatch please run the command
+# `$SED -e 's/PATCH_PATH_SEPARATOR=/PATCH_PATH_SEPARATOR?=/' Mk/bsd.port.mk
+PATCH_PATH_SEPARATOR=	__
+
 # Fallback MPM after switching from static to modular MPM
 SUB_LIST+=	MPMF="000_mpm_prefork_fallback.conf"
 
@@ -56,6 +59,7 @@ IPV4_MAPPED_CONFIGURE_ENABLE=	v4-mapped
 
 LDAP_CONFIGURE_ON=		--enable-ldap=shared
 
+HTTP2_LIB_DEPENDS=		libnghttp2.so:${PORTSDIR}/www/nghttp2
 LUAJIT_LIB_DEPENDS=		libluajit-5.1.so:${PORTSDIR}/lang/luajit
 LUA_CONFIGURE_WITH=		lua
 LUA_USES=			lua
@@ -101,7 +105,8 @@ CONFIGURE_ARGS+=--prefix=${PREFIX_RELDEST} \
 		--with-apr=${APR_CONFIG} \
 		--with-apr-util=${APU_CONFIG}
 
-CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
+CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}" \
+		CONFIG_SHELL="${SH}"
 
 MAKE_ENV+=	EXPR_COMPAT=yes \
 		INSTALL_MAN="${INSTALL_MAN}" \
@@ -122,11 +127,6 @@ USE_GNOME=	libxml2
 
 .include <bsd.port.pre.mk>
 .include "${APACHEDIR}/Makefile.modules"
-
-pre-configure::
-	@${ECHO_MSG}	""
-	@${ECHO_MSG}	"  You can check your modules configuration by using make show-modules"
-	@${ECHO_MSG}	""
 
 post-extract:
 # remove possible leftover .svn directories in the sources
@@ -150,6 +150,13 @@ post-patch:
 		${WRKSRC}/configure.in
 	${RM} -f ${WRKSRC}/docs/docroot/*.bak
 	${INSTALL_DATA} ${WRKSRC}/NOTICE ${WRKSRC}/docs/manual
+
+pre-configure::
+	@${ECHO_MSG}	""
+	@${ECHO_MSG}	"  You can check your modules configuration by using make show-modules"
+	@${ECHO_MSG}	""
+# silence autotools
+	-${MV} -v ${WRKSRC}/configure.in ${WRKSRC}/configure.ac
 
 post-configure:
 	@FTPUSERS=`${EGREP} -v '^#' /etc/ftpusers| ${TR} -s "\n" " "` ;\
