@@ -4,6 +4,7 @@
 PORTNAME=	tigervnc
 PORTVERSION=	1.5.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	net x11-servers
 
 MAINTAINER=	meta+ports@vmeta.jp
@@ -113,7 +114,7 @@ CONFIGURE_ARGS+=	\
 
 .include <bsd.port.pre.mk>
 
-TIGERVNC_XORG_PATCH_VER=	114
+TIGERVNC_XORG_PATCH_VER=	117
 
 # import from x11-server/xorg-server/Makefile
 .ifdef WITH_OPENSSL_BASE
