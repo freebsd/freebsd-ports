@@ -55,6 +55,7 @@
     SUBDIR += elixir-calecto
     SUBDIR += elixir-ecto
     SUBDIR += elixir-ecto_migrate
+    SUBDIR += elixir-exredis
     SUBDIR += elixir-geo
     SUBDIR += elixir-mariaex
     SUBDIR += elixir-mongo
