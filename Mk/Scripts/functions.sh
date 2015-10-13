@@ -159,7 +159,7 @@ validate_env() {
 	fi
 }
 
-export_index_env() {
+export_ports_env() {
 	local export_vars make_cmd make_env var results value
 
 	validate_env MAKE PORTSDIR
@@ -192,7 +192,7 @@ export_index_env() {
 	"
 
 	for var in ${export_vars}; do
-		make_cmd="${make_cmd}${make_cmd:+ }-V ${var}=\${${var}}"
+		make_cmd="${make_cmd}${make_cmd:+ }-V ${var}=\${${var}:Q}"
 	done
 
 	# Bring in all the vars, but not empty ones.
@@ -205,7 +205,7 @@ export_index_env() {
 
 		if [ -n "${value}" ]; then
 			export ${var}
-			echo "export ${var}=${value}"
+			echo "export ${var}=\"${value}\""
 		fi
 	done
 }
