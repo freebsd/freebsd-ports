@@ -14,10 +14,10 @@ COMMENT?=	X.Org X server and related programs
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libdrm.so:graphics/libdrm \
-		libepoxy.so:graphics/libepoxy
-RUN_DEPENDS=	xkeyboard-config>=2.5:x11/xkeyboard-config \
-		xkbcomp:x11/xkbcomp
+LIB_DEPENDS=	libdrm.so:${PORTSDIR}/graphics/libdrm \
+		libepoxy.so:${PORTSDIR}/graphics/libepoxy
+RUN_DEPENDS=	xkeyboard-config>=2.5:${PORTSDIR}/x11/xkeyboard-config \
+		xkbcomp:${PORTSDIR}/x11/xkbcomp
 
 XORG_CAT=	xserver
 SLAVE_PORT?=	no
@@ -72,7 +72,7 @@ CONFIGURE_ENV=	SHA1_LIB="-L/usr/lib -lcrypto" SHA1_CFLAGS="-I/usr/include"
 .endif
 
 .if ${PORT_OPTIONS:MHAL}
-LIB_DEPENDS+=	libhal.so:sysutils/hal
+LIB_DEPENDS+=	libhal.so:${PORTSDIR}/sysutils/hal
 CONFIGURE_ARGS+=	--enable-config-hal=yes
 .else
 CONFIGURE_ARGS+=	--enable-config-hal=no
