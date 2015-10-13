@@ -50,7 +50,6 @@ SRCS+=	init.c
 SRCS+=	label.c
 SRCS+=	label_android_property.c
 SRCS+=	label_file.c
-CPPFLAGS.init.c+=	-DDARWIN # statfs
 
 # required by fastboot and ext4_utils
 .PATH:	${.CURDIR}/../libsparse
