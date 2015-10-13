@@ -91,6 +91,10 @@ Notes:
 	       FFMpeg. Credit to Aki Helin of OUSPG and anonymous.</li>
 	     <li>[512678] Low CVE-2015-6762: CORS bypass via CSS fonts. Credit
 	       to Muneaki Nishimura (nishimunea).</li>
+	     <li> [542517] CVE-2015-6763: Various fixes from internal audits,
+	       fuzzing and other initiatives.</li>
+	     <li>Multiple vulnerabilities in V8 fixed at the tip of the 4.6
+	       branch (currently 4.6.85.23).</li>
 	  </ul>
 	</blockquote>
       </body>
@@ -104,6 +108,7 @@ Notes:
       <cvename>CVE-2015-6760</cvename>
       <cvename>CVE-2015-6761</cvename>
       <cvename>CVE-2015-6762</cvename>
+      <cvename>CVE-2015-6763</cvename>
       <url>http://googlechromereleases.blogspot.nl/2015/10/stable-channel-update.html</url>
     </references>
     <dates>
