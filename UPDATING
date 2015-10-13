@@ -5,6 +5,25 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20151013:
+  AFFECTS: users of security/sshguard-ipfw
+  AUTHOR: feld@FreeBSD.org
+
+  The sshguard update to 1.6.2 introduces a rewritten IPFW backend. The
+  previous approach was to insert individual block rules with a
+  predefined  numbered range. This does not scale well and is not
+  flexible so the design was scrapped. The new approach utilizes IPFW
+  tables. The sshguard IPFW backend now inserts offenders into hardcoded
+  table 22.
+
+  To continue blocking the attackers effectively you will need to add a
+  block rule like the following:
+
+  ipfw add deny all from 'table(22)' to any
+  
+  The release announcement can be found here:
+    http://sourceforge.net/p/sshguard/mailman/message/34534861/
+
 20151011:
   AFFECTS: users of emulators/qemu-sbruno, emulators/qemu-user-static
   AUTHOR: sbruno@FreeBSD.org
