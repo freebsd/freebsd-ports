@@ -1,5 +1,6 @@
 bin/vmmouse_detect
 libexec/hal/scripts/hal-probe-vmmouse
+@comment lib/udev/rules.d/69-xorg-vmmouse.rules
 lib/xorg/modules/input/vmmouse_drv.so
 man/man1/vmmouse_detect.1.gz
 man/man4/vmmouse.4x.gz

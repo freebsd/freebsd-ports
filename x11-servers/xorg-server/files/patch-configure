@@ -1,0 +1,11 @@
+--- configure.orig	2015-03-05 13:53:47.431303000 +0100
++++ configure	2015-03-05 13:54:06.598309000 +0100
+@@ -25560,7 +25560,7 @@
+ case "x$XTRANS_SEND_FDS" in
+ xauto)
+ 	case "$host_os" in
+-	linux*|solaris*)
++	linux*|solaris*|freebsd*|dragonfly*)
+ 		XTRANS_SEND_FDS=yes
+ 		;;
+ 	*)

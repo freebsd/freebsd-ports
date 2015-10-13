@@ -377,7 +377,7 @@
 +}
 +
 +static CARD32
-+reconnect_handler(OsTimerPtr timer, CARD32 time, pointer arg)
++reconnect_handler(OsTimerPtr timer, CARD32 time, void *arg)
 +{
 +	int newsock;
 +
