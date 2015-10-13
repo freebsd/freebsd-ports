@@ -4,7 +4,6 @@ bin/pltek
 %%WXGTK%%bin/wxPLViewer
 include/plplot/disptab.h
 include/plplot/drivers.h
-include/plplot/gcw.h
 include/plplot/pdf.h
 include/plplot/plConfig.h
 include/plplot/plDevs.h
@@ -13,7 +12,6 @@ include/plplot/pldll.h
 include/plplot/plevent.h
 include/plplot/plplot.h
 include/plplot/plplotP.h
-include/plplot/plplotcanvas.h
 include/plplot/plstream.h
 include/plplot/plstrm.h
 %%TCLTK%%include/plplot/pltcl.h
@@ -44,7 +42,7 @@ lib/libcsironn.so.0.0.1
 %%FORTRAN%%lib/libplf95demolib.a
 lib/libplplot.so
 lib/libplplot.so.13
-lib/libplplot.so.13.0.1
+lib/libplplot.so.13.1.2
 lib/libplplotcxx.so
 lib/libplplotcxx.so.12
 lib/libplplotcxx.so.12.0.0
@@ -72,6 +70,13 @@ lib/libqsastime.so.0.0.1
 %%TCLTK%%lib/libtclmatrix.so
 %%TCLTK%%lib/libtclmatrix.so.10
 %%TCLTK%%lib/libtclmatrix.so.10.2.0
+lib/pkgconfig/plplot-c++.pc
+%%FORTRAN%%lib/pkgconfig/plplot-f95.pc
+%%QT4%%lib/pkgconfig/plplot-qt.pc
+%%TCLTK%%lib/pkgconfig/plplot-tcl.pc
+%%TCLTK%%lib/pkgconfig/plplot-tcl_Main.pc
+%%WXGTK%%lib/pkgconfig/plplot-wxwidgets.pc
+lib/pkgconfig/plplot.pc
 %%LUA%%%%LUA_MODLIBDIR%%/plplot/plplotluac.so
 lib/plplot/drivers/cairo.driver_info
 lib/plplot/drivers/cairo.so
@@ -107,13 +112,6 @@ lib/plplot/drivers/xfig.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/plplot.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/plplot_widgetmodule.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/plplotc.py
-libdata/pkgconfig/plplot-c++.pc
-%%FORTRAN%%libdata/pkgconfig/plplot-f95.pc
-%%QT4%%libdata/pkgconfig/plplot-qt.pc
-%%TCLTK%%libdata/pkgconfig/plplot-tcl.pc
-%%TCLTK%%libdata/pkgconfig/plplot-tcl_Main.pc
-%%WXGTK%%libdata/pkgconfig/plplot-wxwidgets.pc
-libdata/pkgconfig/plplot.pc
 %%TCLTK%%man/man1/plserver.1.gz
 %%TCLTK%%man/man1/pltcl.1.gz
 man/man1/pltek.1.gz
