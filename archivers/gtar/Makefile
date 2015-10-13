@@ -27,6 +27,10 @@ CONFIGURE_ENV=	DEFAULT_ARCHIVE=/dev/sa0 \
 # supply result to skip a test that will abort configure if run as root
 CONFIGURE_ENV+=	gl_cv_func_mknod_works=yes
 
+# Tests 161 163 are known to fail because path resolution of ".."
+# in a removed directory fails.
+#TEST_TARGET=	check
+
 OPTIONS_DEFINE=	NLS STATIC
 OPTIONS_SUB=	yes
 
@@ -38,11 +42,5 @@ STATIC_CONFIGURE_ENV=	SHLIBEXT=""
 
 STATIC_VARS=	STATIC_ARGS=build
 STATIC_VARS_OFF=	STATIC_ARGS=lib
-
-# Tests 161 163 are known to fail because path resolution of ".."
-# in a removed directory fails.
-
-regression-test: build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 
 .include <bsd.port.mk>
