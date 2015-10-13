@@ -51,7 +51,6 @@ SRCS+=	label.c
 SRCS+=	label_android_property.c
 SRCS+=	label_file.c
 SRCS+=	label_support.c
-CPPFLAGS.init.c+=	-DDARWIN # statfs
 CPPFLAGS.label_file.c+=	-D_WITH_GETLINE
 
 # required by fastboot and ext4_utils
