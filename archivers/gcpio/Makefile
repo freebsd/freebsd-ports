@@ -19,6 +19,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g \
 		--disable-silent-rules \
 		--with-rmt=/etc/rmt
+TEST_TARGET=	check
 
 INFO=		cpio
 
@@ -27,8 +28,5 @@ OPTIONS_SUB=	yes
 
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
-
-regression-test: build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 
 .include <bsd.port.mk>
