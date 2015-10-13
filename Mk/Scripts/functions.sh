@@ -25,7 +25,7 @@ parse_plist() {
 	cwd=${PREFIX}
 	cwd_save=
 	commented_cwd=
-	while read line; do
+	while read -r line; do
 		# Handle deactivated OPTIONS. Treat "@comment file" as being in
 		# the plist so it does not show up as an orphan. PLIST_SUB uses
 		# a @comment to deactive files. XXX: It would be better to
@@ -157,4 +157,55 @@ validate_env() {
 		| fmt >&2
 		exit 1
 	fi
+}
+
+export_ports_env() {
+	local export_vars make_cmd make_env var results value
+
+	validate_env MAKE PORTSDIR
+
+	make_env="\
+		PACKAGE_BUILDING=1 \
+		GNU_CONFIGURE=1 \
+		USE_JAVA=1 \
+		USE_LINUX=1 \
+	"
+
+	make_cmd="${make_env}"
+
+	export_vars="\
+		ARCH \
+		CONFIGURE_MAX_CMD_LEN \
+		HAVE_COMPAT_IA32_KERN \
+		LINUX_OSRELEASE \
+		OPSYS \
+		OSREL \
+		OSVERSION \
+		UID \
+		_JAVA_OS_LIST_REGEXP \
+		_JAVA_PORTS_INSTALLED \
+		_JAVA_VENDOR_LIST_REGEXP \
+		_JAVA_VERSION_LIST_REGEXP \
+		_OSRELEASE \
+		_PKG_CHECKED \
+		_SMP_CPUS \
+	"
+
+	for var in ${export_vars}; do
+		make_cmd="${make_cmd}${make_cmd:+ }-V ${var}=\${${var}:Q}"
+	done
+
+	# Bring in all the vars, but not empty ones.
+	eval $(${MAKE} -f ${PORTSDIR}/Mk/bsd.port.mk ${make_cmd} | grep -v '=$')
+	for var in ${export_vars}; do
+		# Export and display non-empty ones.  This is not redundant
+		# with above since we're looping on all vars here; do not
+		# export a var we didn't eval in.
+		value="$(eval echo \$${var})"
+
+		if [ -n "${value}" ]; then
+			export ${var}
+			echo "export ${var}=\"${value}\""
+		fi
+	done
 }

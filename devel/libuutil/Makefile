@@ -13,7 +13,11 @@ LICENSE=	CDDL
 GH_ACCOUNT=	jrmarino
 USE_GITHUB=	yes
 
+BROKEN=		produces broken library (undefined reference to `avl_*')
+
+USES=		uidfix
 MAKE_ARGS=	LIBDIR=${PREFIX}/lib
+USE_LDCONFIG=	yes
 
 PLIST_FILES=	include/libuutil.h lib/libuutil.a lib/libuutil.so \
 		lib/libuutil.so.1

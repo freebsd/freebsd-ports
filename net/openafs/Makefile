@@ -77,6 +77,10 @@ FUSE_CONFIGURE_OFF=	--disable-fuse-client
 CFLAGS+=	-mstackrealign
 .endif
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1002000 && ${OSVERSION} < 1100000
+BROKEN=		does not build, no support for FreeBSD 10.2 yet
+.endif
+
 KERNCONF?=	GENERIC
 KERNCONFDIR?=	${SRC_BASE}/sys/${ARCH}/conf
 

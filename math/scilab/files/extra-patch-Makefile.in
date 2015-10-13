@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2015-10-02 17:25:36.689224000 +0000
++++ Makefile.in	2015-10-02 17:25:47.634538000 +0000
+@@ -2110,7 +2110,7 @@
+ # This is not done in the module itself because its needs also the "types"
+ # module
+ javadoc:
+-	$(JAVADOC) -noindex -nohelp -nonavbar -notree \
++	$(JAVADOC) -Xdoclint:none -noindex -nohelp -nonavbar -notree \
+ 	-d $(top_builddir)/modules/javasci/javadoc \
+ 	-sourcepath $(top_srcdir)/modules/javasci/src/java:$(top_srcdir)/modules/types/src/java::$(top_srcdir)/modules/localization/src/java \
+ 	org.scilab.modules.javasci org.scilab.modules.types
