@@ -3,7 +3,7 @@
 
 PORTNAME=	snmp
 PORTVERSION=	5.7.3
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	SF/net-${PORTNAME}/net-${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	net-
@@ -37,7 +37,7 @@ GNU_CONFIGURE=	yes
 USE_RC_SUBR=	snmpd snmptrapd
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
-USES=		cpe perl5 libtool
+USES=		cpe libtool perl5
 CPE_VENDOR=	net-snmp
 USE_PERL5=	build run
 USE_CSTD=	c99
