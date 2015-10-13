@@ -1,4 +1,4 @@
---- src/ocserv-args.def.orig	2015-08-31 19:19:45 UTC
+--- src/ocserv-args.def.orig	2015-10-13 09:47:33 UTC
 +++ src/ocserv-args.def
 @@ -68,7 +68,7 @@ doc-section = {
    ds-format = 'texi';
@@ -13,12 +13,12 @@
  #  This enabled PAM authentication of the user. The gid-min option is used 
  # by auto-select-group option, in order to select the minimum valid group ID.
  #
--# plain[passwd=/etc/ocserv/ocpasswd]
-+# plain[passwd=/usr/local/etc/ocserv/ocpasswd]
+-# plain[passwd=/etc/ocserv/ocpasswd,otp=/etc/ocserv/users.otp]
++# plain[passwd=/usr/local/etc/ocserv/ocpasswd,otp=/usr/local/etc/ocserv/users.otp]
  #  The plain option requires specifying a password file which contains
  # entries of the following format.
  # "username:groupname1,groupname2:encoded-password"
-@@ -119,7 +119,7 @@ An example configuration file follows.
+@@ -121,7 +121,7 @@ An example configuration file follows.
  #auth = "certificate"
  #auth = "pam"
  #auth = "pam[gid-min=1000]"
@@ -27,7 +27,7 @@
  #auth = "radius[config=/etc/radiusclient/radiusclient.conf,groupconfig=true]"
  
  # Specify alternative authentication methods that are sufficient
-@@ -429,7 +429,7 @@ rekey-method = ssl
+@@ -437,7 +437,7 @@ rekey-method = ssl
  use-occtl = true
  
  # PID file. It can be overriden in the command line.
@@ -36,7 +36,7 @@
  
  # Set the protocol-defined priority (SO_PRIORITY) for packets to
  # be sent. That is a number from 0 to 6 with 0 being the lowest
-@@ -553,13 +553,13 @@ no-route = 192.168.5.0/255.255.255.0
+@@ -564,13 +564,13 @@ no-route = 192.168.5.0/255.255.255.0
  # Also explicit addresses, are only allowed when they are odd. In that
  # case the next even address will be used as the remote address (in PtP).
  
