@@ -14,9 +14,9 @@ COMMENT?=	X.Org X server and related programs
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libdrm.so:${PORTSDIR}/graphics/libdrm \
+LIB_DEPENDS+=	libdrm.so:${PORTSDIR}/graphics/libdrm \
 		libepoxy.so:${PORTSDIR}/graphics/libepoxy
-RUN_DEPENDS=	xkeyboard-config>=2.5:${PORTSDIR}/x11/xkeyboard-config \
+RUN_DEPENDS+=	xkeyboard-config>=2.5:${PORTSDIR}/x11/xkeyboard-config \
 		xkbcomp:${PORTSDIR}/x11/xkbcomp
 
 XORG_CAT=	xserver
