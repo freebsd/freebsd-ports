@@ -58,6 +58,60 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8301c04d-71df-11e5-9fcb-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<!--pcbsd-->
+	<name>chromium-npapi</name>
+	<name>chromium-pulse</name>
+	<range><lt>46.0.2490.71</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/2015/10/stable-channel-update.html">
+	  <p>24 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[519558] High CVE-2015-6755: Cross-origin bypass in Blink.
+	      Credit to Mariusz Mlynski.</li>
+	    <li>[507316] High CVE-2015-6756: Use-after-free in PDFium. Credit
+	      to anonymous.</li>
+	    <li>[529520] High CVE-2015-6757: Use-after-free in ServiceWorker.
+	       Credit to Collin Payne.</li>
+	     <li>[522131] High CVE-2015-6758: Bad-cast in PDFium. Credit to Atte
+	       Kettunen of OUSPG.</li>
+	     <li>[514076] Medium CVE-2015-6759: Information leakage in
+	       LocalStorage. Credit to Muneaki Nishimura (nishimunea).</li>
+	     <li>[519642] Medium CVE-2015-6760: Improper error handling in
+	       libANGLE. Credit to lastland.net.</li>
+	     <li>[447860,532967] Medium CVE-2015-6761: Memory corruption in
+	       FFMpeg. Credit to Aki Helin of OUSPG and anonymous.</li>
+	     <li>[512678] Low CVE-2015-6762: CORS bypass via CSS fonts. Credit
+	       to Muneaki Nishimura (nishimunea).</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-6755</cvename>
+      <cvename>CVE-2015-6756</cvename>
+      <cvename>CVE-2015-6757</cvename>
+      <cvename>CVE-2015-6758</cvename>
+      <cvename>CVE-2015-6759</cvename>
+      <cvename>CVE-2015-6760</cvename>
+      <cvename>CVE-2015-6761</cvename>
+      <cvename>CVE-2015-6762</cvename>
+      <url>http://googlechromereleases.blogspot.nl/2015/10/stable-channel-update.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-13</discovery>
+      <entry>2015-10-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="00dadbf0-6f61-11e5-a2a1-002590263bf5">
     <topic>p5-UI-Dialog -- shell command execution vulnerability</topic>
     <affects>
