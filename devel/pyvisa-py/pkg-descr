@@ -1,0 +1,5 @@
+PyVISA-py is a backend for PyVISA.  It implements most of the methods
+for Message Based communication (Serial/USB/GPIB/Ethernet) using
+Python and some cross platform libraries.
+
+WWW: https://pypi.python.org/pypi/PyVISA-py
