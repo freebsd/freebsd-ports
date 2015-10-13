@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	haproxy
-DISTVERSION=	1.6-dev7
+PORTVERSION=	1.6.0
 CATEGORIES=	net www
-MASTER_SITES=	http://haproxy.1wt.eu/download/1.6/src/devel/
-PKGNAMESUFFIX=	-devel
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
+MASTER_SITES=	http://haproxy.1wt.eu/download/1.6/src/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	The Reliable, High Performance TCP/HTTP Load Balancer
