@@ -2,6 +2,9 @@
 
 PROG_CXX=fastboot
 BINDIR?=/usr/bin
+FILESDIR?=${DOCDIR}/${PROG}
+
+FILES=	*.[Tt][Xx][Tt]
 
 SRCS+=	bootimg_utils.cpp
 SRCS+=	engine.cpp
@@ -10,7 +13,7 @@ SRCS+=	fs.cpp
 SRCS+=	protocol.cpp
 SRCS+=	util.cpp
 
-.PATH:	${FILESDIR}
+.PATH: ${EXTRADIR}
 SRCS+=	usb_freebsd.cpp
 SRCS+=	util_freebsd.cpp
 
@@ -68,6 +71,9 @@ SRCS+=	FileMap.cpp
 .PATH:	${.CURDIR}/../libziparchive
 SRCS+=	zip_archive.cc
 
+REVISION?=	$$(${GIT} rev-parse --short=12 HEAD 2>/dev/null || echo unknown)
+
+CPPFLAGS+=	-DFASTBOOT_REVISION="\"${REVISION}-android\""
 CPPFLAGS+=	-Doff64_t=off_t
 CPPFLAGS+=	-Dftruncate64=ftruncate
 CPPFLAGS+=	-Dlseek64=lseek
@@ -82,6 +88,8 @@ CPPFLAGS+=	-I${.CURDIR}/../f2fs_utils
 CPPFLAGS+=	-I${.CURDIR}/../libselinux/include
 CPPFLAGS+=	-I${.CURDIR}/../libsparse/include
 CPPFLAGS+=	${CPPFLAGS.${.IMPSRC:T}}
+CPPFLAGS+=	$$(${PKG_CONFIG} libpcre --cflags 2>/dev/null)
+CPPFLAGS+=	$$(${PKG_CONFIG} libusb-1.0 --cflags 2>/dev/null)
 CXXFLAGS+=	-D__STDC_LIMIT_MACROS # DragonFly
 CXXFLAGS+=	-std=gnu++11
 
@@ -90,7 +98,15 @@ CFLAGS+=	${CPPFLAGS}
 CXXFLAGS+=	${CPPFLAGS}
 .endif
 
-LDADD+=	-lpcre -lusb -lz
+LDADD+=	$$(${PKG_CONFIG} libpcre --libs 2>/dev/null || echo -lpcre)
+LDADD+=	$$(${PKG_CONFIG} libusb-1.0 --libs 2>/dev/null || echo -lusb)
+LDADD+=	-lz
 DPADD+=	${LIBPCRE} ${LIBUSB} ${LIBZ}
+
+GIT?=		git
+PKG_CONFIG?=	pkg-config
+
+beforeinstall:
+	${INSTALL} -d ${DESTDIR}${FILESDIR}
 
 .include <bsd.prog.mk>

@@ -23,9 +23,11 @@ GH_TAGNAME=	${DISTVERSIONFULL:C/-[0-9].*//}-357-g55f87a0:bionic \
 USES=		compiler:c++11-lib uidfix
 BUILD_WRKSRC=	${WRKSRC}/simpleperf
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
+TEST_WRKSRC=	${BUILD_WRKSRC}
 MAKEFILE=	${FILESDIR}/Makefile
 MAKE_ENV=	BINDIR="${PREFIX}/bin" LLVM_CONFIG="llvm-config${LLVM_VER}"
 ALL_TARGET=	all
+TEST_TARGET=	test
 LDFLAGS+=	-Wl,--as-needed # avoid overlinking (llvm deps)
 PLIST_FILES=	bin/simpleperf
 
@@ -33,8 +35,8 @@ LLVM_VER?=	36 # XXX Move to DEFAULT_VERSIONS
 
 OPTIONS_DEFINE=	TEST
 
-TEST_BUILD_DEPENDS=googletest>=1.6.0:${PORTSDIR}/devel/googletest
-TEST_ALL_TARGET=simpleperf_unit_test
+TEST_BUILD_DEPENDS=	googletest>=1.6.0:${PORTSDIR}/devel/googletest
+TEST_ALL_TARGET=	simpleperf_test
 
 post-extract:
 # Adjust paths relative to extras
@@ -49,7 +51,6 @@ post-patch:
 		${WRKSRC}/base/logging_test.cpp; \
 	fi
 
-pre-install-TEST-on:
-	${BUILD_WRKSRC}/simpleperf_unit_test
+pre-install-TEST-on: do-test
 
 .include <bsd.port.mk>
