@@ -1,6 +1,6 @@
---- config/config-backends.h.orig	2014-04-12 15:29:14 UTC
-+++ config/config-backends.h
-@@ -75,3 +75,8 @@ void config_hal_fini(void);
+--- config/config-backends.h.orig	2014-12-09 22:02:34.000000000 +0100
++++ config/config-backends.h	2014-12-21 23:08:34.268311262 +0100
+@@ -44,3 +44,8 @@
  int config_wscons_init(void);
  void config_wscons_fini(void);
  #endif

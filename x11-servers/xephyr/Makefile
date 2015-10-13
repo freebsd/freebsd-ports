@@ -12,7 +12,7 @@ USE_XORG=	x11 xf86driproto glproto randrproto renderproto fixesproto \
 		resourceproto fontsproto videoproto \
 		compositeproto trapproto recordproto \
 		xineramaproto xinerama evieproto xkbfile xfont \
-		xau xdmcp xext fontenc xv pixman
+		xau xdmcp xext fontenc xv pixman presentproto
 
 CONFIGURE_ARGS=	--enable-kdrive --enable-xephyr	--disable-dmx --disable-xvfb \
 		--without-xmlto --disable-docs --disable-devel-docs \
