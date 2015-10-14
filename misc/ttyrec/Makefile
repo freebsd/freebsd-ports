@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://0xcc.net/ttyrec/
 
-MAINTAINER=	lippe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tty recorder
 
 MANPAGE=	ttyplay.1 ttyrec.1

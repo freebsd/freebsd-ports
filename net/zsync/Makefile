@@ -6,7 +6,7 @@ PORTVERSION=	0.6.2
 CATEGORIES=	net
 MASTER_SITES=	http://zsync.moria.org.uk/download/
 
-MAINTAINER=	lippe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File transfer program
 
 USES=	tar:bzip2
