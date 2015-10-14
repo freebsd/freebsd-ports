@@ -93,6 +93,7 @@
     SUBDIR += gnats4
     SUBDIR += gnatsweb4
     SUBDIR += godis
+    SUBDIR += gomdb
     SUBDIR += gosqlite3
     SUBDIR += gqlplus
     SUBDIR += grass
