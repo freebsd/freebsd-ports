@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 PKGNAMEPREFIX=	gimp-
 PKGNAMESUFFIX=	-plugin
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GIMP plug-ins to both quickly and easily beautify photo
 
 LICENSE=	GPLv3
