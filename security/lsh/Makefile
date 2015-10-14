@@ -10,6 +10,9 @@ MASTER_SITES=	GNU
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Secure (encrypted) remote shell compatible with ssh 2
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	liboop.so:${PORTSDIR}/devel/liboop \
 		libgmp.so:${PORTSDIR}/math/gmp \
 		libnettle.so:${PORTSDIR}/security/nettle
@@ -37,12 +40,4 @@ test:
 	(cd ${WRKSRC}/src/testsuite && ${SETENV} ${MAKE_ENV} \
 	${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 900000
-PLIST_SUB+=	KRB=""
-.else
-PLIST_SUB+=	KRB="@comment "
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
