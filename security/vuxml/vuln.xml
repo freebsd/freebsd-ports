@@ -58,6 +58,34 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="705b759c-7293-11e5-a371-14dae9d210b8">
+    <topic>pear-twig -- remote code execution</topic>
+    <affects>
+      <package>
+	<name>pear-twig-twig</name>
+	<range><lt>1.20.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Fabien Potencier reports:</p>
+	<blockquote cite="http://symfony.com/blog/security-release-twig-1-20-0">
+	  <p>End users can craft valid Twig code that allows them to
+	    execute arbitrary code (RCEs) via the _self variable, which is always
+	    available, even in sandboxed templates.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://symfony.com/blog/security-release-twig-1-20-0</url>
+      <cvename>CVE-2015-7809</cvename>
+    </references>
+    <dates>
+      <discovery>2015-08-12</discovery>
+      <entry>2015-10-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="06fefd2f-728f-11e5-a371-14dae9d210b8">
     <topic>miniupnpc -- buffer overflow</topic>
     <affects>
