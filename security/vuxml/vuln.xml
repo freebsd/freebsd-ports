@@ -58,6 +58,45 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ea1d2530-72ce-11e5-a2a1-002590263bf5">
+    <topic>magento -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>magento</name>
+	<range><lt>1.9.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Magento, Inc. reports:</p>
+	<blockquote cite="https://www.magentocommerce.com/download">
+	  <p>SUPEE-6482 - This patch addresses two issues related to APIs and
+	    two cross-site scripting risks.</p>
+	  <p>SUPEE-6285 - This patch provides protection against several types
+	    of security-related issues, including information leaks, request
+	    forgeries, and cross-site scripting.</p>
+	  <p>SUPEE-5994 - This patch addresses multiple security
+	    vulnerabilities in Magento Community Edition software, including
+	    issues that can put customer information at risk.</p>
+	  <p>SUPEE-5344 - Addresses a potential remote code execution
+	    exploit.</p>
+	  <p>SUPEE-1533 - Addresses two potential remote code execution
+	    exploits.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/201709</freebsdpr>
+      <url>https://www.magentocommerce.com/download</url>
+      <url>http://merch.docs.magento.com/ce/user_guide/Magento_Community_Edition_User_Guide.html#magento/release-notes-ce-1.9.2.html</url>
+      <url>http://merch.docs.magento.com/ce/user_guide/Magento_Community_Edition_User_Guide.html#magento/release-notes-ce-1.9.2.1.html</url>
+    </references>
+    <dates>
+      <discovery>2014-10-03</discovery>
+      <entry>2015-10-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="705b759c-7293-11e5-a371-14dae9d210b8">
     <topic>pear-twig -- remote code execution</topic>
     <affects>
@@ -33079,6 +33118,10 @@ executed in your Internet Explorer while displaying the email.</p>
 	<name>ZendFramework</name>
 	<range><lt>1.11.13</lt></range>
       </package>
+      <package>
+	<name>magento</name>
+	<range><lt>1.7.0.2</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -33108,10 +33151,12 @@ executed in your Internet Explorer while displaying the email.</p>
       <url>http://framework.zend.com/security/advisory/ZF2012-02</url>
       <url>http://www.openwall.com/lists/oss-security/2012/06/26/2</url>
       <url>https://secunia.com/advisories/49665/</url>
+      <url>http://www.magentocommerce.com/download/release_notes</url>
     </references>
     <dates>
       <discovery>2012-06-26</discovery>
       <entry>2012-10-16</entry>
+      <modified>2015-10-14</modified>
     </dates>
   </vuln>
 
