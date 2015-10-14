@@ -3,7 +3,7 @@
 
 PORTNAME=	dk-milter
 PORTVERSION=	1.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/DomainKeys%20Milter/${PORTVERSION}
 
@@ -101,9 +101,9 @@ pre-configure:
 		${SITE} > ${WCONF}/site.config.m4
 
 post-install:
-.if !defined(WITH_DEBUG)
-	-${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/dk-filter
-.endif
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/libexec/dk-filter
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/dk-filter
+	${CHMOD} u-w ${STAGEDIR}${PREFIX}/libexec/dk-filter
 	${INSTALL_SCRIPT} ${WRKSRC}/dk-filter/gentxt.csh \
 		${STAGEDIR}${PREFIX}/sbin/gentxt-dk
 .for i in dk-filter.8
@@ -111,11 +111,11 @@ post-install:
 		${STAGEDIR}${PREFIX}/man/cat8/${i}.gz
 	${INSTALL_MAN} ${WRKSRC}/*/${i} ${STAGEDIR}${PREFIX}/man/man8/
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${DOCSFILES}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
 .endfor
-.endif
 
 .include <bsd.port.post.mk>
