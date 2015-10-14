@@ -20,12 +20,13 @@ modules.
 
 ######################################################################
 
-Since version 2.1.0 it is not necessary any more, to use a leading
-"lib" for module library names on Unix-like systems. Now you will have
-to alter back your scripts by removing "lib" from the name (like it is
-on MS Windows).
+From SAGA GIS 2.2.0 on, there is some example and test data installed.
 
-e.g.:
-  saga_cmd ta_morphometry    instead of    saga_cmd libta_morphometry
+Predefined ToolChains are located at
+  %%DATADIR%%/scripting/toolchains/
+
+Python scripts with examples, helpers and test data reside at
+  %%DATADIR%%/scripting/python/
 
 ######################################################################
+
