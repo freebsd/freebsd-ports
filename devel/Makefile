@@ -1463,6 +1463,7 @@
     SUBDIR += mm
     SUBDIR += mm-common
     SUBDIR += mongo-c-driver
+    SUBDIR += mongo-cxx-driver
     SUBDIR += mono-addins
     SUBDIR += monodevelop
     SUBDIR += monodevelop-database

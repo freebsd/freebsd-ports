@@ -1,0 +1,33 @@
+--- SConstruct.orig	2015-08-18 15:46:59 UTC
++++ SConstruct
+@@ -354,6 +354,30 @@ env_vars.Add('SHLINKFLAGS',
+     help='Sets flags for the linker when building shared libraries',
+     converter=variable_shlex_converter)
+ 
++env_vars.Add('CXX',
++    help='Sets path to the C++ compiler',
++    converter=variable_shlex_converter)
++
++env_vars.Add('CC',
++    help='Sets path to the C compiler',
++    converter=variable_shlex_converter)
++
++env_vars.Add('PREFIX',
++    help='Sets PREFIX path',
++    converter=variable_shlex_converter)
++
++env_vars.Add('PKGCONFIGDIR',
++    help='Sets PKGCONFIGDIR path',
++    converter=variable_shlex_converter)
++
++env_vars.Add('destdir',
++    help='Sets destdir path',
++    converter=variable_shlex_converter)
++
++env_vars.Add('DESTDIR',
++    help='Sets DESTDIR path',
++    converter=variable_shlex_converter)
++
+ # don't run configure if user calls --help
+ if GetOption('help'):
+     Return()
