@@ -33,7 +33,7 @@ man/man5/secsh.5.gz
 man/man8/lshd.8.gz
 man/man8/sftp-server.8.gz
 sbin/lsh-execuv
-%%KRB%%sbin/lsh-krb-checkpw
+sbin/lsh-krb-checkpw
 sbin/lsh-pam-checkpw
 sbin/lshd
 sbin/sftp-server
