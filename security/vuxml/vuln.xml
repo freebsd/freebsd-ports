@@ -58,6 +58,35 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="06fefd2f-728f-11e5-a371-14dae9d210b8">
+    <topic>miniupnpc -- buffer overflow</topic>
+    <affects>
+      <package>
+	<name>miniupnpc</name>
+	<range><lt>1.9.20151008</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Talos reports:</p>
+	<blockquote cite="http://talosintel.com/reports/TALOS-2015-0035/">
+	  <p>An exploitable buffer overflow vulnerability exists in the
+	    XML parser functionality of the MiniUPnP library. A specially crafted
+	    XML response can lead to a buffer overflow on the stack resulting in
+	    remote code execution. An attacker can set up a server on the local
+	    network to trigger this vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://talosintel.com/reports/TALOS-2015-0035/</url>
+    </references>
+    <dates>
+      <discovery>2015-09-15</discovery>
+      <entry>2015-10-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a63f2c06-726b-11e5-a12b-bcaec565249c">
     <topic>flash -- multiple vulnerabilities</topic>
     <affects>
