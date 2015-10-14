@@ -1,0 +1,11 @@
+--- t/porting/customized.dat.orig	2015-10-12 04:46:53 UTC
++++ t/porting/customized.dat
+@@ -6,7 +6,7 @@ ExtUtils::MakeMaker cpan/ExtUtils-MakeMa
+ ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_VMS.pm 0c78ba02d6249dfcca12ac9886a7c7cfb60e77fe
+ ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/t/prereq.t 53bda2c549fd13a6b6c13a070ca6bc79883081c0
+ ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/t/vstrings.t 90035a2bdbf45f15b9c3196d072d7cba7e662871
+-Pod::Perldoc cpan/Pod-Perldoc/lib/Pod/Perldoc.pm dcd53fba13060dbb71b1b5861fbc5c0881c8625a
++Pod::Perldoc cpan/Pod-Perldoc/lib/Pod/Perldoc.pm 42acfd829eb9ebb981335822c52695bd208ac463
+ Pod::Simple cpan/Pod-Simple/lib/Pod/Simple/BlackBox.pm 4108633c4f40f7f63c5a0245df2b07a4a2f22fec
+ Pod::Simple cpan/Pod-Simple/lib/Pod/Simple/Search.pm 7a48823f9faec6d6bbef08060e679e46ccf60bc8
+ Pod::Simple cpan/Pod-Simple/t/search10.t 776e41bf3494da010f306e0f6cadd416d84671a0
