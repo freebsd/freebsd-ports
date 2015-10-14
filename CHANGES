@@ -10,6 +10,20 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20151014:
+AUTHOR: bapt@FreeBSD.org
+
+  Adding ${PORTSDIR} in dependency lines is no longer necessary meaning
+
+  RUN_DEPENDS=	foo:${PORTSDIR}/bar/foo
+
+  can now be written
+
+  RUN_DEPENDS=	foo:bar/foo
+
+  if the path after ':' is not absolute the framework will automatically
+  prepend ${PORTSDIR}/
+
 20150928:
 AUTHOR: amdmi3@FreeBSD.org
 

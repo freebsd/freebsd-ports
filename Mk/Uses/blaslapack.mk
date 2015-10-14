@@ -24,23 +24,23 @@ blaslapack_ARGS=	${_DEFAULT_BLASLAPACK}
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if ${blaslapack_ARGS} == atlas
-LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:math/atlas
 _BLASLIB=	ptf77blas
 LAPACKLIB=	-lalapack -lptcblas
 _ATLASLIB=	atlas
 ATLASLIB=	-l${_ATLASLIB}
 .elif ${blaslapack_ARGS} == gotoblas
-LIB_DEPENDS+=	libgoto2.so:${PORTSDIR}/math/gotoblas
-LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	libgoto2.so:math/gotoblas
+LIB_DEPENDS+=	liblapack.so:math/lapack
 _BLASLIB=	goto2p
 LAPACKLIB=	-lgoto2p
 .elif ${blaslapack_ARGS} == netlib
-LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	libblas.so:math/blas
+LIB_DEPENDS+=	liblapack.so:math/lapack
 _BLASLIB=	blas
 LAPACKLIB=	-llapack
 .elif ${blaslapack_ARGS} == openblas
-LIB_DEPENDS+=	libopenblas.so:${PORTSDIR}/math/openblas
+LIB_DEPENDS+=	libopenblas.so:math/openblas
 _BLASLIB=	openblasp
 LAPACKLIB=	-lopenblasp
 .else

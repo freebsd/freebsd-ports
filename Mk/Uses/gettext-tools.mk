@@ -16,10 +16,10 @@ gettext-tools_ARGS=	build
 .endif
 
 .if ${gettext-tools_ARGS:Mbuild}
-BUILD_DEPENDS+=	msgfmt:${PORTSDIR}/devel/gettext-tools
+BUILD_DEPENDS+=	msgfmt:devel/gettext-tools
 .endif
 .if ${gettext-tools_ARGS:Mrun}
-RUN_DEPENDS+=	msgfmt:${PORTSDIR}/devel/gettext-tools
+RUN_DEPENDS+=	msgfmt:devel/gettext-tools
 .endif
 
 .endif

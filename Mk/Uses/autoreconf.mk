@@ -54,14 +54,14 @@
 _INCLUDE_USES_AUTORECONF_MK=	yes
 _USES_POST+=	autoreconf
 
-BUILD_DEPENDS+=	autoconf-2.69:${PORTSDIR}/devel/autoconf \
-		autoheader-2.69:${PORTSDIR}/devel/autoconf \
-		autoreconf-2.69:${PORTSDIR}/devel/autoconf \
-		aclocal-1.15:${PORTSDIR}/devel/automake \
-		automake-1.15:${PORTSDIR}/devel/automake
+BUILD_DEPENDS+=	autoconf-2.69:devel/autoconf \
+		autoheader-2.69:devel/autoconf \
+		autoreconf-2.69:devel/autoconf \
+		aclocal-1.15:devel/automake \
+		automake-1.15:devel/automake
 
 .if defined(libtool_ARGS) && empty(libtool_ARGS:Mbuild)
-BUILD_DEPENDS+=	libtoolize:${PORTSDIR}/devel/libtool
+BUILD_DEPENDS+=	libtoolize:devel/libtool
 .endif
 
 .endif

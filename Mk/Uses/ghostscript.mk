@@ -101,9 +101,9 @@ _GS_X11_PORT=	ghostscript${_GS_SELECTED}${_GS_AGPL_SUFFIX}-x11
 
 .for type in BUILD RUN
 .if defined(_GS_${type}_DEP)
-${type}_DEPENDS+=	${_GS_PORT}>=${_GS_VERSION_MINOR}:${PORTSDIR}/print/${_GS_PORT}
+${type}_DEPENDS+=	${_GS_PORT}>=${_GS_VERSION_MINOR}:print/${_GS_PORT}
 .if ${_GS_ARGS:Mx11}
-${type}_DEPENDS+=	${_GS_X11_PORT}>=${_GS_VERSION_MINOR}:${PORTSDIR}/print/${_GS_X11_PORT}
+${type}_DEPENDS+=	${_GS_X11_PORT}>=${_GS_VERSION_MINOR}:print/${_GS_X11_PORT}
 .endif
 .endif
 .endfor
