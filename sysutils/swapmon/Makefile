@@ -13,6 +13,7 @@ COMMENT=	Add/remove swapspace as needed
 LICENSE=	BSD2CLAUSE
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 USE_RC_SUBR=	${PORTNAME}
 
@@ -27,13 +28,5 @@ do-install:
 		${STAGEDIR}${PREFIX}/sbin/${PORTNAME}
 	${INSTALL_MAN} ${FILESDIR}/${PORTNAME}.1 \
 		${STAGEDIR}${MANPREFIX}/man/man1
-
-post-install:
-	@${ECHO_MSG}	""
-	@${ECHO_MSG}	"To have swapmon run automatically after each boot"
-	@${ECHO_MSG}	"execute the following command as root:"
-	@${ECHO_MSG}	""
-	@${ECHO_MSG}	"  echo '${PORTNAME}_enable=\"YES\"' >>/etc/rc.conf"
-	@${ECHO_MSG}	""
 
 .include <bsd.port.mk>
