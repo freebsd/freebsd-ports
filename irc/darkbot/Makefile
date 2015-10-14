@@ -17,7 +17,7 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	README
 PLIST_FILES=	bin/darkbot %%ETCDIR%%/logs/.pkgcreate man/man1/darkbot.1.gz
-PLIST_DIRSTRY=	%%ETCDIR%%/logs/ %%ETCDIR%%/dat/ %%ETCDIR%%
+NO_CDROM=	no commercial distribution
 
 OPTIONS_DEFINE=	DOCS
 
