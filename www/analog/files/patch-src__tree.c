@@ -1,6 +1,6 @@
---- src/tree.c.orig	2004-12-19 08:51:31.000000000 -0500
-+++ src/tree.c	2011-08-01 12:49:29.176805068 -0400
-@@ -769,11 +769,13 @@
+--- src/tree.c.orig	2004-12-19 13:51:31 UTC
++++ src/tree.c
+@@ -769,11 +769,13 @@ void Bnextname(char **name, char **namee
      if (((*name = strstr(whole, "Mosaic")) != NULL && (len = 6)) ||
  	((*name = strstr(whole, "mosaic")) != NULL && (len = 6)) ||
  	((*name = strstr(whole, "Konqueror")) != NULL && (len = 9)) ||
@@ -14,7 +14,7 @@
  	((*name = strstr(whole, "Camino")) != NULL && (len = 6)) ||
  	((*name = strstr(whole, "Safari")) != NULL && (len = 6)) ||
  	((*name = strstr(whole, "WebTV")) != NULL && (len = 5)) ||
-@@ -871,7 +873,17 @@
+@@ -871,7 +873,17 @@ void Pnextname(char **name, char **namee
  	  else
  	    *name = "Windows:Unknown Windows";
  	}
@@ -33,7 +33,7 @@
  	  *name = "Windows:Unknown Windows";
  	else
  	  *name = "Windows:Windows NT";
-@@ -904,8 +916,16 @@
+@@ -904,8 +916,16 @@ void Pnextname(char **name, char **namee
  	*name = "Macintosh";
      else if (strstr(whole, "Linux") != NULL || strstr(whole, "linux") != NULL)
        *name = "Unix:Linux";

@@ -1,5 +1,5 @@
---- src/Makefile.orig	Sun Dec 19 05:51:30 2004
-+++ src/Makefile	Sun Jan  9 12:50:26 2005
+--- src/Makefile.orig	2004-12-19 13:51:30 UTC
++++ src/Makefile
 @@ -2,16 +2,23 @@
  # Please read docs/Readme.html, or http://www.analog.cx/
  # This is a general Unix-like Makefile: Makefiles for other OS's can be found
@@ -26,7 +26,7 @@
  #                 ... -DNOOPEN -DNOFOLLOW -DNOALARM -DNOGRAPHICS -DNOGMTIME ...
  #                 ... -DEBCDIC -DUSE_PLAIN_SETJMP ...
  #                 ... -DHAVE_GD -DHAVE_ZLIB -DHAVE_BZLIB -DHAVE_PCRE ...
-@@ -31,6 +38,12 @@
+@@ -31,6 +38,12 @@ DEFS =          # any combination of -DN
  OS = UNIX         # Operating system: UNIX, DOS, WIN32, MAC, OS2, OSX, VMS
  #                   RISCOS, BEOS, NEXTSTEP, MPEIX, BS2000, AS400, OS390
  LIBS = -lm  # extra libraries needed; most platforms (but not OS X or BeOS)
