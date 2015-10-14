@@ -1,6 +1,6 @@
---- img/Makefile.orig	2011-11-07 07:09:32.000000000 +0100
-+++ img/Makefile	2011-11-23 11:15:40.000000000 +0100
-@@ -13,7 +13,7 @@
+--- img/Makefile.orig	2012-05-12 09:37:14 UTC
++++ img/Makefile
+@@ -13,7 +13,7 @@ include $(TOPDIR)/Rules.mak
  sinclude .depend
  
  install: xca-32x32.xpm
