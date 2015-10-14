@@ -54,6 +54,9 @@ ZTS_DESC=	Force Zend Thread Safety (ZTS) build
 
 CONFLICTS=	php53-5* php55-5* php56-5*
 
+DEPRECATED=	PHP 5.4 is End of Life http://php.net/supported-versions.php
+EXPIRATION_DATE=2016-01-15
+
 DESTDIRNAME=	INSTALL_ROOT
 
 .include <bsd.port.pre.mk>
