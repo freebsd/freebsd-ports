@@ -1537,10 +1537,12 @@ Notes:
     </description>
     <references>
       <url>http://seclists.org/oss-sec/2015/q3/556</url>
+      <cvename>CVE-2015-7801</cvename>
     </references>
     <dates>
       <discovery>2015-09-16</discovery>
       <entry>2015-09-17</entry>
+      <modified>2015-10-14</modified>
     </dates>
   </vuln>
 
