@@ -1,6 +1,6 @@
---- doc/Makefile.orig	2012-05-12 11:37:14.000000000 +0200
-+++ doc/Makefile	2012-05-14 11:19:34.000000000 +0200
-@@ -5,7 +5,7 @@
+--- doc/Makefile.orig	2012-05-12 09:37:14 UTC
++++ doc/Makefile
+@@ -5,7 +5,7 @@ endif
  
  DELFILES=xca*.html xca.1.gz
  
@@ -9,7 +9,7 @@
  include $(TOPDIR)/Rules.mak
  
  mandir=man
-@@ -15,10 +15,7 @@
+@@ -15,10 +15,7 @@ xca.1.gz: xca.1
  
  xca.html: xca.sgml
  	rm -f xca*.html
@@ -21,7 +21,7 @@
  
  install: xca.1.gz xca.html
  	install -m 755 -d $(destdir)$(docdir) \
-@@ -26,8 +23,4 @@
+@@ -26,8 +23,4 @@ install: xca.1.gz xca.html
  	install -m 644 xca*.html $(destdir)$(docdir)
  	install xca.1.gz $(destdir)$(prefix)/$(mandir)/man1
  
