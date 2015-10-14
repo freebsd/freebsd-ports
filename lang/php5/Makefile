@@ -16,6 +16,10 @@ LICENSE=	PHP301
 USES=		tar:bzip2 cpe
 CPE_PRODUCT=	php
 NO_OPTIONS_SORT=yes
+
+DEPRECATED=	PHP 5.4 is End of Life http://php.net/supported-versions.php
+EXPIRATION_DATE=2016-01-15
+
 .if !defined(PKGNAMESUFFIX)
 USE_AUTOTOOLS=	autoconf
 
@@ -53,9 +57,6 @@ LINKTHR_DESC=	Link thread lib (for threaded extensions)
 ZTS_DESC=	Force Zend Thread Safety (ZTS) build
 
 CONFLICTS=	php53-5* php55-5* php56-5*
-
-DEPRECATED=	PHP 5.4 is End of Life http://php.net/supported-versions.php
-EXPIRATION_DATE=2016-01-15
 
 DESTDIRNAME=	INSTALL_ROOT
 
