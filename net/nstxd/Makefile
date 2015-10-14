@@ -16,7 +16,10 @@ PATCHFILES=	nstx_1.1-beta6-4.diff.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DNS tunnel server
 
-USE_RC_SUBR+=	nstxd
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USE_RC_SUBR=	nstxd
 
 WRKSRC=		${WRKDIR}/nstx-1.1-beta6
 SUB_FILES=	pkg-message
@@ -28,7 +31,9 @@ OPTIONS_DEFINE=	DOCS
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nstxd ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/nstxd.8 ${STAGEDIR}${PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/nstxd.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
 
