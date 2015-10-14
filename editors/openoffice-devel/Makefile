@@ -6,7 +6,7 @@ PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${SVNREVISION}
 PORTREVISION=	1
 PORTEPOCH=	4
 CATEGORIES=	editors java
-MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-r1705606/source/ \
+MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-r${SVNREVISION}/source/ \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \
 		LOCAL/truckman/openoffice:snap,extsrc
 .if defined(LANG_PKGNAME)
@@ -101,9 +101,9 @@ AOOVERSION1=	4
 AOOVERSION2=	1
 AOOVERSION3=	2
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
-AOOTAG=		AOO412m1\(Build:9780\)
-SVNREVISION=	1705575
-AOORC=rc1
+AOOTAG=		AOO412m2\(Build:9781\)
+SVNREVISION=	1707648
+AOORC=rc2
 EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 
 AOOVERSION=	${AOOVERSION1}.${AOOVERSION2}.${AOOVERSION3}
