@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	http://hackmysql.com/scripts/
 
-MAINTAINER=	lippe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mysqlsla analyzes general, slow, and raw MySQL statement logs
 
 LICENSE=	GPLv2 GPLv3
