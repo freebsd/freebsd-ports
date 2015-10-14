@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	-plugin
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GIMP plug-ins to both quickly and easily beautify photo
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3 # or later
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig \
 		${LOCALBASE}/libdata/pkgconfig/freetype2.pc:${PORTSDIR}/print/freetype2 \
