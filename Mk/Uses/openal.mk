@@ -17,9 +17,9 @@ _INCLUDE_USES_OPENAL_MK=	yes
 
 _valid_ARGS=	al si soft alut
 
-_si_DEPENDS=	libopenal.so.0:${PORTSDIR}/audio/openal
-_soft_DEPENDS=	libopenal.so.1:${PORTSDIR}/audio/openal-soft
-_alut_DEPENDS=	libalut.so.0:${PORTSDIR}/audio/freealut
+_si_DEPENDS=	libopenal.so.0:audio/openal
+_soft_DEPENDS=	libopenal.so.1:audio/openal-soft
+_alut_DEPENDS=	libalut.so.0:audio/freealut
 
 _OPENAL_LIBS=	si soft
 _DEFAULT_OPENAL=	soft

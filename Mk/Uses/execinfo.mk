@@ -19,7 +19,7 @@
 _INCLUDE_USES_EXECINFO_MK=	yes
 
 .if !exists(/usr/lib/libexecinfo.so)
-LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS+=	libexecinfo.so:devel/libexecinfo
 EXECINFO_CPPFLAGS=	-I${LOCALBASE}/include
 EXECINFO_LDFLAGS=	-L${LOCALBASE}/lib
 .endif

@@ -200,13 +200,13 @@ CONFIGURE_ARGS+=--destdir ${STAGEDIR}
 DESTDIRNAME=	--destdir
 .if ${_USE_PERL5:Mmodbuild}
 .if ${PORTNAME} != Module-Build
-BUILD_DEPENDS+=	p5-Module-Build>=0.4206:${PORTSDIR}/devel/p5-Module-Build
+BUILD_DEPENDS+=	p5-Module-Build>=0.4206:devel/p5-Module-Build
 .endif
 CONFIGURE_ARGS+=--create_packlist 1
 .endif
 .if ${_USE_PERL5:Mmodbuildtiny}
 .if ${PORTNAME} != Module-Build-Tiny
-BUILD_DEPENDS+=	p5-Module-Build-Tiny>=0.039:${PORTSDIR}/devel/p5-Module-Build-Tiny
+BUILD_DEPENDS+=	p5-Module-Build-Tiny>=0.039:devel/p5-Module-Build-Tiny
 .endif
 CONFIGURE_ARGS+=--create_packlist 1
 .endif
@@ -226,19 +226,19 @@ CONFIGURE_ENV+=	PERL_MM_USE_DEFAULT="YES"
 .endif # configure
 
 .if ${_USE_PERL5:Mextract}
-EXTRACT_DEPENDS+=	${PERL5_DEPEND}:${PORTSDIR}/lang/${PERL_PORT}
+EXTRACT_DEPENDS+=	${PERL5_DEPEND}:lang/${PERL_PORT}
 .endif
 
 .if ${_USE_PERL5:Mpatch}
-PATCH_DEPENDS+=		${PERL5_DEPEND}:${PORTSDIR}/lang/${PERL_PORT}
+PATCH_DEPENDS+=		${PERL5_DEPEND}:lang/${PERL_PORT}
 .endif
 
 .if ${_USE_PERL5:Mbuild}
-BUILD_DEPENDS+=		${PERL5_DEPEND}:${PORTSDIR}/lang/${PERL_PORT}
+BUILD_DEPENDS+=		${PERL5_DEPEND}:lang/${PERL_PORT}
 .endif
 
 .if ${_USE_PERL5:Mrun}
-RUN_DEPENDS+=		${PERL5_DEPEND}:${PORTSDIR}/lang/${PERL_PORT}
+RUN_DEPENDS+=		${PERL5_DEPEND}:lang/${PERL_PORT}
 .endif
 
 .if ${_USE_PERL5:Mconfigure}
