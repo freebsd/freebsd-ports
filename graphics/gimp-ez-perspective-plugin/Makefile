@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	gimp-
 PKGNAMESUFFIX=	-plugin
 DISTNAME=	${PORTNAME}.py
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GIMP plugin to sharpen by increasing contrast in high frequency space
 
 LICENSE=	EZPERSPECTIVE
