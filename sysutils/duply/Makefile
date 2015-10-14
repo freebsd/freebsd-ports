@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	duply
-PORTVERSION=	1.9.1
+PORTVERSION=	1.10.1
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/ftplicity/${PORTNAME}%20%28simple%20duplicity%29/1.9.x/
+MASTER_SITES=	SF/ftplicity/${PORTNAME}%20%28simple%20duplicity%29/${PORTVERSION:R}.x/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
@@ -21,7 +21,7 @@ USES=		python
 
 NO_BUILD=	yes
 
-PORTDOCS=	INSTALL.txt gpl-2.0.txt
+PORTDOCS=	INSTALL.txt
 PLIST_FILES=	bin/duply ${PERIODICDIR}/${PERIODICFILE}
 PERIODICFILE?=	300.duply
 PERIODICDIR?=	${PREFIX}/etc/periodic/backup
