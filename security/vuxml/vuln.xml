@@ -108,10 +108,12 @@ Notes:
     </description>
     <references>
       <url>http://talosintel.com/reports/TALOS-2015-0035/</url>
+      <url>https://github.com/miniupnp/miniupnp/commit/79cca974a4c2ab1199786732a67ff6d898051b78</url>
     </references>
     <dates>
       <discovery>2015-09-15</discovery>
       <entry>2015-10-14</entry>
+      <modified>2015-10-14</modified>
     </dates>
   </vuln>
 
