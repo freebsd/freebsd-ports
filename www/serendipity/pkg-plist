@@ -1,6 +1,5 @@
-@owner %%WWWOWN%%
-@group %%WWWGRP%%
 %%WWWDIR%%/README.markdown
+%%WWWDIR%%/archives/.empty
 %%WWWDIR%%/bundled-libs/.current_version
 %%WWWDIR%%/bundled-libs/Cache/BUNDLE_NOTICE
 %%WWWDIR%%/bundled-libs/Cache/Lite.php
@@ -9,6 +8,18 @@
 %%WWWDIR%%/bundled-libs/HTTP/BUNDLE_NOTICE
 %%WWWDIR%%/bundled-libs/HTTP/Request.php
 %%WWWDIR%%/bundled-libs/HTTP/Request/Listener.php
+%%WWWDIR%%/bundled-libs/HTTP/Request2.php
+%%WWWDIR%%/bundled-libs/HTTP/Request2/Adapter.php
+%%WWWDIR%%/bundled-libs/HTTP/Request2/Adapter/Curl.php
+%%WWWDIR%%/bundled-libs/HTTP/Request2/Adapter/Mock.php
+%%WWWDIR%%/bundled-libs/HTTP/Request2/Adapter/Socket.php
+%%WWWDIR%%/bundled-libs/HTTP/Request2/CookieJar.php
+%%WWWDIR%%/bundled-libs/HTTP/Request2/Exception.php
+%%WWWDIR%%/bundled-libs/HTTP/Request2/MultipartBody.php
+%%WWWDIR%%/bundled-libs/HTTP/Request2/Observer/Log.php
+%%WWWDIR%%/bundled-libs/HTTP/Request2/Response.php
+%%WWWDIR%%/bundled-libs/HTTP/Request2/SOCKS5.php
+%%WWWDIR%%/bundled-libs/HTTP/Request2/SocketWrapper.php
 %%WWWDIR%%/bundled-libs/Net/BUNDLE_NOTICE
 %%WWWDIR%%/bundled-libs/Net/CheckIP.php
 %%WWWDIR%%/bundled-libs/Net/DNSBL.php
@@ -16,15 +27,22 @@
 %%WWWDIR%%/bundled-libs/Net/DNSBL/SURBL.php
 %%WWWDIR%%/bundled-libs/Net/Socket.php
 %%WWWDIR%%/bundled-libs/Net/URL.php
+%%WWWDIR%%/bundled-libs/Net/URL2.php
 %%WWWDIR%%/bundled-libs/Onyx/RSS.php
 %%WWWDIR%%/bundled-libs/PEAR.php
-%%WWWDIR%%/bundled-libs/Smarty/3.1.16_RELEASE_NOTES.txt
+%%WWWDIR%%/bundled-libs/PEAR/Exception.php
+%%WWWDIR%%/bundled-libs/PEAR5.php
+%%WWWDIR%%/bundled-libs/Smarty/COMPOSER_RELEASE_NOTES.txt
 %%WWWDIR%%/bundled-libs/Smarty/COPYING.lib
+%%WWWDIR%%/bundled-libs/Smarty/INHERITANCE_RELEASE_NOTES.txt
+%%WWWDIR%%/bundled-libs/Smarty/NEW_FEATURES.txt
 %%WWWDIR%%/bundled-libs/Smarty/README
+%%WWWDIR%%/bundled-libs/Smarty/README.md
 %%WWWDIR%%/bundled-libs/Smarty/SMARTY_2_BC_NOTES.txt
 %%WWWDIR%%/bundled-libs/Smarty/SMARTY_3.0_BC_NOTES.txt
 %%WWWDIR%%/bundled-libs/Smarty/SMARTY_3.1_NOTES.txt
 %%WWWDIR%%/bundled-libs/Smarty/change_log.txt
+%%WWWDIR%%/bundled-libs/Smarty/libs/Autoloader.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/Smarty.class.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/SmartyBC.class.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/debug.tpl
@@ -78,7 +96,7 @@
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_cacheresource.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_cacheresource_custom.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_cacheresource_keyvaluestore.php
-%%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_config_source.php
+%%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_data.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_cacheresource_file.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_compile_append.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_compile_assign.php
@@ -105,6 +123,7 @@
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_compile_private_modifier.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_compile_private_object_block_function.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_compile_private_object_function.php
+%%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_compile_private_php.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_compile_private_print_expression.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_compile_private_registered_block.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_compile_private_registered_function.php
@@ -114,17 +133,25 @@
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_compile_setfilter.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_compile_while.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_compilebase.php
-%%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_config.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_config_file_compiler.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_configfilelexer.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_configfileparser.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_data.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_debug.php
+%%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_extension_codeframe.php
+%%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_extension_config.php
+%%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_extension_defaulttemplatehandler.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_filter_handler.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_function_call_handler.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_get_include_path.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_nocache_insert.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_parsetree.php
+%%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_parsetree_code.php
+%%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_parsetree_dq.php
+%%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_parsetree_dqcontent.php
+%%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_parsetree_tag.php
+%%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_parsetree_template.php
+%%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_parsetree_text.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_resource_eval.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_resource_extends.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_resource_file.php
@@ -138,6 +165,7 @@
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_templatecompilerbase.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_templatelexer.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_templateparser.php
+%%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_testinstall.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_utility.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_internal_write_file.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_resource.php
@@ -145,6 +173,14 @@
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_resource_recompiled.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_resource_uncompiled.php
 %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_security.php
+%%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_template_cached.php
+%%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_template_compiled.php
+%%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_template_config.php
+%%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_template_source.php
+%%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_undefined_variable.php
+%%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smarty_variable.php
+%%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smartycompilerexception.php
+%%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins/smartyexception.php
 %%WWWDIR%%/bundled-libs/Text/BUNDLE_NOTICE
 %%WWWDIR%%/bundled-libs/Text/Wiki.php
 %%WWWDIR%%/bundled-libs/Text/Wiki/Parse.php
@@ -332,6 +368,12 @@
 %%WWWDIR%%/bundled-libs/XML/RPC.php
 %%WWWDIR%%/bundled-libs/XML/RPC/Dump.php
 %%WWWDIR%%/bundled-libs/XML/RPC/Server.php
+%%WWWDIR%%/bundled-libs/autoload.php
+%%WWWDIR%%/bundled-libs/composer/ClassLoader.php
+%%WWWDIR%%/bundled-libs/composer/autoload_classmap.php
+%%WWWDIR%%/bundled-libs/composer/autoload_namespaces.php
+%%WWWDIR%%/bundled-libs/composer/autoload_real.php
+%%WWWDIR%%/bundled-libs/composer/installed.json
 %%WWWDIR%%/bundled-libs/create_release.sh
 %%WWWDIR%%/bundled-libs/docs/HomePage.wiki.txt
 %%WWWDIR%%/bundled-libs/docs/SamplePage.wiki.txt
@@ -342,13 +384,208 @@
 %%WWWDIR%%/bundled-libs/docs/WordsSmashedTogether.wiki.txt
 %%WWWDIR%%/bundled-libs/docs/free links.wiki.txt
 %%WWWDIR%%/bundled-libs/docs/stylesheet.css
+%%WWWDIR%%/bundled-libs/katzgrau/klogger/.gitignore
+%%WWWDIR%%/bundled-libs/katzgrau/klogger/README.markdown
+%%WWWDIR%%/bundled-libs/katzgrau/klogger/composer.json
+%%WWWDIR%%/bundled-libs/katzgrau/klogger/phpunit.xml
+%%WWWDIR%%/bundled-libs/katzgrau/klogger/src/Logger.php
+%%WWWDIR%%/bundled-libs/katzgrau/klogger/tests/LoggerTest.php
+%%WWWDIR%%/bundled-libs/katzgrau/klogger/tests/logs/.gitkeep
+%%WWWDIR%%/bundled-libs/psr/log/.gitignore
+%%WWWDIR%%/bundled-libs/psr/log/LICENSE
+%%WWWDIR%%/bundled-libs/psr/log/Psr/Log/AbstractLogger.php
+%%WWWDIR%%/bundled-libs/psr/log/Psr/Log/InvalidArgumentException.php
+%%WWWDIR%%/bundled-libs/psr/log/Psr/Log/LogLevel.php
+%%WWWDIR%%/bundled-libs/psr/log/Psr/Log/LoggerAwareInterface.php
+%%WWWDIR%%/bundled-libs/psr/log/Psr/Log/LoggerAwareTrait.php
+%%WWWDIR%%/bundled-libs/psr/log/Psr/Log/LoggerInterface.php
+%%WWWDIR%%/bundled-libs/psr/log/Psr/Log/LoggerTrait.php
+%%WWWDIR%%/bundled-libs/psr/log/Psr/Log/NullLogger.php
+%%WWWDIR%%/bundled-libs/psr/log/Psr/Log/Test/LoggerInterfaceTest.php
+%%WWWDIR%%/bundled-libs/psr/log/README.md
+%%WWWDIR%%/bundled-libs/psr/log/composer.json
 %%WWWDIR%%/bundled-libs/serendipity_generateFTPChecksums.php
 %%WWWDIR%%/bundled-libs/simplepie/LICENSE.txt
 %%WWWDIR%%/bundled-libs/simplepie/README.markdown
 %%WWWDIR%%/bundled-libs/simplepie/simplepie.inc
 %%WWWDIR%%/bundled-libs/tests/README
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Adapter.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/AdapterAbstractServiceFactory.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/AdapterAwareInterface.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/AdapterAwareTrait.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/AdapterInterface.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/AdapterServiceFactory.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/ConnectionInterface.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/DriverInterface.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/Feature/AbstractFeature.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/Feature/DriverFeatureInterface.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/IbmDb2/Connection.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/IbmDb2/IbmDb2.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/IbmDb2/Result.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/IbmDb2/Statement.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/Mysqli/Connection.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/Mysqli/Mysqli.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/Mysqli/Result.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/Mysqli/Statement.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/Oci8/Connection.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/Oci8/Oci8.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/Oci8/Result.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/Oci8/Statement.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/Pdo/Connection.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/Pdo/Feature/OracleRowCounter.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/Pdo/Feature/SqliteRowCounter.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/Pdo/Pdo.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/Pdo/Result.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/Pdo/Statement.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/Pgsql/Connection.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/Pgsql/Pgsql.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/Pgsql/Result.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/Pgsql/Statement.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/ResultInterface.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/Sqlsrv/Connection.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/Sqlsrv/Exception/ErrorException.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/Sqlsrv/Exception/ExceptionInterface.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/Sqlsrv/Result.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/Sqlsrv/Sqlsrv.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/Sqlsrv/Statement.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Driver/StatementInterface.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Exception/ErrorException.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Exception/ExceptionInterface.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Exception/InvalidArgumentException.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Exception/InvalidConnectionParametersException.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Exception/InvalidQueryException.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Exception/RuntimeException.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Exception/UnexpectedValueException.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/ParameterContainer.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Platform/IbmDb2.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Platform/Mysql.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Platform/Oracle.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Platform/PlatformInterface.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Platform/Postgresql.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Platform/Sql92.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Platform/SqlServer.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Platform/Sqlite.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Profiler/Profiler.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Profiler/ProfilerAwareInterface.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/Profiler/ProfilerInterface.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/StatementContainer.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Adapter/StatementContainerInterface.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Exception/ErrorException.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Exception/ExceptionInterface.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Exception/InvalidArgumentException.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Exception/RuntimeException.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Exception/UnexpectedValueException.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Metadata/Metadata.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Metadata/MetadataInterface.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Metadata/Object/AbstractTableObject.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Metadata/Object/ColumnObject.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Metadata/Object/ConstraintObject.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Metadata/Object/TableObject.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Metadata/Object/TriggerObject.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Metadata/Object/ViewObject.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Metadata/Source/AbstractSource.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Metadata/Source/MysqlMetadata.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Metadata/Source/PostgresqlMetadata.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Metadata/Source/SqlServerMetadata.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Metadata/Source/SqliteMetadata.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/README.md
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/ResultSet/AbstractResultSet.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/ResultSet/Exception/ExceptionInterface.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/ResultSet/Exception/InvalidArgumentException.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/ResultSet/Exception/RuntimeException.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/ResultSet/HydratingResultSet.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/ResultSet/ResultSet.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/ResultSet/ResultSetInterface.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/RowGateway/AbstractRowGateway.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/RowGateway/Exception/ExceptionInterface.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/RowGateway/Exception/InvalidArgumentException.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/RowGateway/Exception/RuntimeException.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/RowGateway/Feature/AbstractFeature.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/RowGateway/Feature/FeatureSet.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/RowGateway/RowGateway.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/RowGateway/RowGatewayInterface.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/AbstractSql.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Ddl/AlterTable.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Ddl/Column/BigInteger.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Ddl/Column/Blob.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Ddl/Column/Boolean.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Ddl/Column/Char.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Ddl/Column/Column.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Ddl/Column/ColumnInterface.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Ddl/Column/Date.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Ddl/Column/Decimal.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Ddl/Column/Float.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Ddl/Column/Integer.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Ddl/Column/Text.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Ddl/Column/Time.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Ddl/Column/Varchar.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Ddl/Constraint/AbstractConstraint.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Ddl/Constraint/Check.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Ddl/Constraint/ConstraintInterface.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Ddl/Constraint/ForeignKey.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Ddl/Constraint/PrimaryKey.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Ddl/Constraint/UniqueKey.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Ddl/CreateTable.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Ddl/DropTable.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Ddl/SqlInterface.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Delete.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Exception/ExceptionInterface.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Exception/InvalidArgumentException.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Exception/RuntimeException.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Expression.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/ExpressionInterface.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Having.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Insert.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Literal.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Platform/AbstractPlatform.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Platform/Mysql/Ddl/CreateTableDecorator.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Platform/Mysql/Mysql.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Platform/Mysql/SelectDecorator.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Platform/Oracle/Oracle.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Platform/Oracle/SelectDecorator.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Platform/Platform.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Platform/PlatformDecoratorInterface.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Platform/SqlServer/SelectDecorator.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Platform/SqlServer/SqlServer.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Predicate/Between.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Predicate/Expression.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Predicate/In.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Predicate/IsNotNull.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Predicate/IsNull.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Predicate/Like.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Predicate/Literal.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Predicate/NotIn.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Predicate/Operator.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Predicate/Predicate.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Predicate/PredicateInterface.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Predicate/PredicateSet.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/PreparableSqlInterface.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Select.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Sql.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/SqlInterface.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/TableIdentifier.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Update.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/Sql/Where.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/TableGateway/AbstractTableGateway.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/TableGateway/Exception/ExceptionInterface.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/TableGateway/Exception/InvalidArgumentException.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/TableGateway/Exception/RuntimeException.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/TableGateway/Feature/AbstractFeature.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/TableGateway/Feature/EventFeature.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/TableGateway/Feature/EventFeature/TableGatewayEvent.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/TableGateway/Feature/FeatureSet.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/TableGateway/Feature/GlobalAdapterFeature.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/TableGateway/Feature/MasterSlaveFeature.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/TableGateway/Feature/MetadataFeature.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/TableGateway/Feature/RowGatewayFeature.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/TableGateway/Feature/SequenceFeature.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/TableGateway/TableGateway.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/TableGateway/TableGatewayInterface.php
+%%WWWDIR%%/bundled-libs/zendframework/zend-db/Zend/Db/composer.json
 %%WWWDIR%%/checksums.inc.php
 %%WWWDIR%%/comment.php
+%%WWWDIR%%/composer.json
+%%WWWDIR%%/composer.phar
 %%WWWDIR%%/deployment/archives/.ignore
 %%WWWDIR%%/deployment/comment.php
 %%WWWDIR%%/deployment/exit.php
@@ -358,963 +595,480 @@
 %%WWWDIR%%/deployment/serendipity_admin.php
 %%WWWDIR%%/deployment/serendipity_admin_image_selector.php
 %%WWWDIR%%/deployment/serendipity_config.inc.php
-%%WWWDIR%%/deployment/serendipity_define.js.php
-%%WWWDIR%%/deployment/serendipity_editor.js
 %%WWWDIR%%/deployment/serendipity_xmlrpc.php
 %%WWWDIR%%/deployment/templates_c/.ignore
 %%WWWDIR%%/deployment/uploads/.ignore
 %%WWWDIR%%/deployment/wfwcomment.php
-%%WWWDIR%%/docs/CHANGED_FILES
 %%WWWDIR%%/docs/INSTALL
-%%WWWDIR%%/docs/INSTALL_EMBEDED
-%%WWWDIR%%/docs/INSTALL_SHARED
 %%WWWDIR%%/docs/LICENSE
 %%WWWDIR%%/docs/NEWS
 %%WWWDIR%%/docs/NEWS_OLD
 %%WWWDIR%%/docs/README
 %%WWWDIR%%/docs/RELEASE
-%%WWWDIR%%/docs/UPGRADE
-%%WWWDIR%%/docs/upgrade.sh
 %%WWWDIR%%/exit.php
-%%WWWDIR%%/htmlarea/Xinha.css
-%%WWWDIR%%/htmlarea/XinhaCore.js
-%%WWWDIR%%/htmlarea/XinhaLoader.js
-%%WWWDIR%%/htmlarea/XinhaLoader_readme.txt
-%%WWWDIR%%/htmlarea/contrib/php-xinha.php
-%%WWWDIR%%/htmlarea/examples/2-areas.html
-%%WWWDIR%%/htmlarea/examples/ExtendedDemo.html
-%%WWWDIR%%/htmlarea/examples/Newbie.html
-%%WWWDIR%%/htmlarea/examples/XinhaConfig.js
-%%WWWDIR%%/htmlarea/examples/context-menu.html
-%%WWWDIR%%/htmlarea/examples/core.html
-%%WWWDIR%%/htmlarea/examples/css.html
-%%WWWDIR%%/htmlarea/examples/custom.css
-%%WWWDIR%%/htmlarea/examples/files/Extended.html
-%%WWWDIR%%/htmlarea/examples/files/custom.css
-%%WWWDIR%%/htmlarea/examples/files/dynamic.css
-%%WWWDIR%%/htmlarea/examples/files/ext_example-body.html
-%%WWWDIR%%/htmlarea/examples/files/ext_example-menu.php
-%%WWWDIR%%/htmlarea/examples/files/full_example.css
-%%WWWDIR%%/htmlarea/examples/files/stylist.css
-%%WWWDIR%%/htmlarea/examples/full-page.html
-%%WWWDIR%%/htmlarea/examples/fully-loaded.html
-%%WWWDIR%%/htmlarea/examples/index.html
-%%WWWDIR%%/htmlarea/examples/simple_example.html
-%%WWWDIR%%/htmlarea/examples/spell-checker.html
-%%WWWDIR%%/htmlarea/examples/table-operations.html
-%%WWWDIR%%/htmlarea/examples/testbed.html
-%%WWWDIR%%/htmlarea/htmlarea.css
-%%WWWDIR%%/htmlarea/htmlarea.js
-%%WWWDIR%%/htmlarea/images/de/bold.gif
-%%WWWDIR%%/htmlarea/images/de/italic.gif
-%%WWWDIR%%/htmlarea/images/de/underline.gif
-%%WWWDIR%%/htmlarea/images/ed_about.gif
-%%WWWDIR%%/htmlarea/images/ed_align.gif
-%%WWWDIR%%/htmlarea/images/ed_align_center.gif
-%%WWWDIR%%/htmlarea/images/ed_align_justify.gif
-%%WWWDIR%%/htmlarea/images/ed_align_left.gif
-%%WWWDIR%%/htmlarea/images/ed_align_right.gif
-%%WWWDIR%%/htmlarea/images/ed_blank.gif
-%%WWWDIR%%/htmlarea/images/ed_buttons_main.gif
-%%WWWDIR%%/htmlarea/images/ed_charmap.gif
-%%WWWDIR%%/htmlarea/images/ed_clearfonts.gif
-%%WWWDIR%%/htmlarea/images/ed_color_bg.gif
-%%WWWDIR%%/htmlarea/images/ed_color_fg.gif
-%%WWWDIR%%/htmlarea/images/ed_copy.gif
-%%WWWDIR%%/htmlarea/images/ed_custom.gif
-%%WWWDIR%%/htmlarea/images/ed_cut.gif
-%%WWWDIR%%/htmlarea/images/ed_delete.gif
-%%WWWDIR%%/htmlarea/images/ed_format_bold.gif
-%%WWWDIR%%/htmlarea/images/ed_format_italic.gif
-%%WWWDIR%%/htmlarea/images/ed_format_strike.gif
-%%WWWDIR%%/htmlarea/images/ed_format_sub.gif
-%%WWWDIR%%/htmlarea/images/ed_format_sup.gif
-%%WWWDIR%%/htmlarea/images/ed_format_underline.gif
-%%WWWDIR%%/htmlarea/images/ed_help.gif
-%%WWWDIR%%/htmlarea/images/ed_hr.gif
-%%WWWDIR%%/htmlarea/images/ed_html.gif
-%%WWWDIR%%/htmlarea/images/ed_image.gif
-%%WWWDIR%%/htmlarea/images/ed_indent_less.gif
-%%WWWDIR%%/htmlarea/images/ed_indent_more.gif
-%%WWWDIR%%/htmlarea/images/ed_killword.gif
-%%WWWDIR%%/htmlarea/images/ed_left_to_right.gif
-%%WWWDIR%%/htmlarea/images/ed_link.gif
-%%WWWDIR%%/htmlarea/images/ed_list_bullet.gif
-%%WWWDIR%%/htmlarea/images/ed_list_num.gif
-%%WWWDIR%%/htmlarea/images/ed_overwrite.gif
-%%WWWDIR%%/htmlarea/images/ed_paste.gif
-%%WWWDIR%%/htmlarea/images/ed_print.gif
-%%WWWDIR%%/htmlarea/images/ed_redo.gif
-%%WWWDIR%%/htmlarea/images/ed_right_to_left.gif
-%%WWWDIR%%/htmlarea/images/ed_rmformat.gif
-%%WWWDIR%%/htmlarea/images/ed_s9yimage.gif
-%%WWWDIR%%/htmlarea/images/ed_save.gif
-%%WWWDIR%%/htmlarea/images/ed_save.png
-%%WWWDIR%%/htmlarea/images/ed_saveas.gif
-%%WWWDIR%%/htmlarea/images/ed_selectall.gif
-%%WWWDIR%%/htmlarea/images/ed_show_border.gif
-%%WWWDIR%%/htmlarea/images/ed_splitblock.gif
-%%WWWDIR%%/htmlarea/images/ed_splitcel.gif
-%%WWWDIR%%/htmlarea/images/ed_undo.gif
-%%WWWDIR%%/htmlarea/images/ed_word_cleaner.gif
-%%WWWDIR%%/htmlarea/images/fr/bold.gif
-%%WWWDIR%%/htmlarea/images/fr/strikethrough.gif
-%%WWWDIR%%/htmlarea/images/fr/underline.gif
-%%WWWDIR%%/htmlarea/images/fullscreen_maximize.gif
-%%WWWDIR%%/htmlarea/images/fullscreen_minimize.gif
-%%WWWDIR%%/htmlarea/images/insert_table.gif
-%%WWWDIR%%/htmlarea/images/insertfilelink.gif
-%%WWWDIR%%/htmlarea/images/insertmacro.png
-%%WWWDIR%%/htmlarea/images/tidy.gif
-%%WWWDIR%%/htmlarea/images/toggle_borders.gif
-%%WWWDIR%%/htmlarea/images/xinha_logo.gif
-%%WWWDIR%%/htmlarea/index.html
-%%WWWDIR%%/htmlarea/lang/b5.js
-%%WWWDIR%%/htmlarea/lang/ch.js
-%%WWWDIR%%/htmlarea/lang/cs-iso.js
-%%WWWDIR%%/htmlarea/lang/cs-win.js
-%%WWWDIR%%/htmlarea/lang/cz.js
-%%WWWDIR%%/htmlarea/lang/da.js
-%%WWWDIR%%/htmlarea/lang/de.js
-%%WWWDIR%%/htmlarea/lang/ee.js
-%%WWWDIR%%/htmlarea/lang/el.js
-%%WWWDIR%%/htmlarea/lang/en.js
-%%WWWDIR%%/htmlarea/lang/es.js
-%%WWWDIR%%/htmlarea/lang/eu.js
-%%WWWDIR%%/htmlarea/lang/fa.js
-%%WWWDIR%%/htmlarea/lang/fi.js
-%%WWWDIR%%/htmlarea/lang/fr.js
-%%WWWDIR%%/htmlarea/lang/gb.js
-%%WWWDIR%%/htmlarea/lang/he.js
-%%WWWDIR%%/htmlarea/lang/hu.js
-%%WWWDIR%%/htmlarea/lang/it.js
-%%WWWDIR%%/htmlarea/lang/ja-euc.js
-%%WWWDIR%%/htmlarea/lang/ja-jis.js
-%%WWWDIR%%/htmlarea/lang/ja-sjis.js
-%%WWWDIR%%/htmlarea/lang/ja-utf8.js
-%%WWWDIR%%/htmlarea/lang/ja.js
-%%WWWDIR%%/htmlarea/lang/lt.js
-%%WWWDIR%%/htmlarea/lang/lv.js
-%%WWWDIR%%/htmlarea/lang/nb.js
-%%WWWDIR%%/htmlarea/lang/nl.js
-%%WWWDIR%%/htmlarea/lang/no.js
-%%WWWDIR%%/htmlarea/lang/pl.js
-%%WWWDIR%%/htmlarea/lang/pt_br.js
-%%WWWDIR%%/htmlarea/lang/pt_pt.js
-%%WWWDIR%%/htmlarea/lang/ro.js
-%%WWWDIR%%/htmlarea/lang/ru.js
-%%WWWDIR%%/htmlarea/lang/se.js
-%%WWWDIR%%/htmlarea/lang/sh.js
-%%WWWDIR%%/htmlarea/lang/si.js
-%%WWWDIR%%/htmlarea/lang/sr.js
-%%WWWDIR%%/htmlarea/lang/sv.js
-%%WWWDIR%%/htmlarea/lang/th.js
-%%WWWDIR%%/htmlarea/lang/vn.js
-%%WWWDIR%%/htmlarea/license.txt
-%%WWWDIR%%/htmlarea/modules/ColorPicker/ColorPicker.js
-%%WWWDIR%%/htmlarea/modules/ColorPicker/lang/pt_br.js
-%%WWWDIR%%/htmlarea/modules/CreateLink/lang/pt_br.js
-%%WWWDIR%%/htmlarea/modules/CreateLink/link.html
-%%WWWDIR%%/htmlarea/modules/CreateLink/link.js
-%%WWWDIR%%/htmlarea/modules/Dialogs/dialog.js
-%%WWWDIR%%/htmlarea/modules/Dialogs/inline-dialog.js
-%%WWWDIR%%/htmlarea/modules/Dialogs/panel-dialog.js
-%%WWWDIR%%/htmlarea/modules/Dialogs/popupwin.js
-%%WWWDIR%%/htmlarea/modules/FullScreen/full-screen.js
-%%WWWDIR%%/htmlarea/modules/FullScreen/lang/de.js
-%%WWWDIR%%/htmlarea/modules/FullScreen/lang/fr.js
-%%WWWDIR%%/htmlarea/modules/FullScreen/lang/ja.js
-%%WWWDIR%%/htmlarea/modules/FullScreen/lang/nb.js
-%%WWWDIR%%/htmlarea/modules/FullScreen/lang/pl.js
-%%WWWDIR%%/htmlarea/modules/FullScreen/lang/pt_br.js
-%%WWWDIR%%/htmlarea/modules/FullScreen/lang/ru.js
-%%WWWDIR%%/htmlarea/modules/FullScreen/lang/sv.js
-%%WWWDIR%%/htmlarea/modules/Gecko/Gecko.js
-%%WWWDIR%%/htmlarea/modules/Gecko/paraHandlerBest.js
-%%WWWDIR%%/htmlarea/modules/GetHtml/DOMwalk.js
-%%WWWDIR%%/htmlarea/modules/GetHtml/TransformInnerHTML.js
-%%WWWDIR%%/htmlarea/modules/GetHtml/lang/pt_br.js
-%%WWWDIR%%/htmlarea/modules/InsertImage/insert_image.html
-%%WWWDIR%%/htmlarea/modules/InsertImage/insert_image.js
-%%WWWDIR%%/htmlarea/modules/InsertTable/insert_table.html
-%%WWWDIR%%/htmlarea/modules/InsertTable/insert_table.js
-%%WWWDIR%%/htmlarea/modules/InternetExplorer/InternetExplorer.js
-%%WWWDIR%%/htmlarea/modules/Opera/Opera.js
-%%WWWDIR%%/htmlarea/modules/WebKit/WebKit.js
-%%WWWDIR%%/htmlarea/my_custom.js
-%%WWWDIR%%/htmlarea/plugins/Abbreviation/abbr/de.js
-%%WWWDIR%%/htmlarea/plugins/Abbreviation/abbr/en.js
-%%WWWDIR%%/htmlarea/plugins/Abbreviation/abbreviation.css
-%%WWWDIR%%/htmlarea/plugins/Abbreviation/abbreviation.js
-%%WWWDIR%%/htmlarea/plugins/Abbreviation/img/ed_abbreviation.gif
-%%WWWDIR%%/htmlarea/plugins/Abbreviation/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/Abbreviation/lang/fr.js
-%%WWWDIR%%/htmlarea/plugins/Abbreviation/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/Abbreviation/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/Abbreviation/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/Abbreviation/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/Abbreviation/popups/abbreviation.html
-%%WWWDIR%%/htmlarea/plugins/BackgroundImage/background-image.js
-%%WWWDIR%%/htmlarea/plugins/BackgroundImage/backgrounds/blufur.jpg
-%%WWWDIR%%/htmlarea/plugins/BackgroundImage/backgrounds/palecnvs.jpg
-%%WWWDIR%%/htmlarea/plugins/BackgroundImage/backgrounds/ppplcnvs.jpg
-%%WWWDIR%%/htmlarea/plugins/BackgroundImage/backgrounds/thumbnails/blufur.jpg
-%%WWWDIR%%/htmlarea/plugins/BackgroundImage/backgrounds/thumbnails/palecnvs.jpg
-%%WWWDIR%%/htmlarea/plugins/BackgroundImage/backgrounds/thumbnails/ppplcnvs.jpg
-%%WWWDIR%%/htmlarea/plugins/BackgroundImage/backgrounds/thumbnails/ylwsand.jpg
-%%WWWDIR%%/htmlarea/plugins/BackgroundImage/backgrounds/ylwsand.jpg
-%%WWWDIR%%/htmlarea/plugins/BackgroundImage/img/ed_bgimage.gif
-%%WWWDIR%%/htmlarea/plugins/BackgroundImage/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/BackgroundImage/lang/fr.js
-%%WWWDIR%%/htmlarea/plugins/BackgroundImage/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/BackgroundImage/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/BackgroundImage/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/BackgroundImage/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/BackgroundImage/popups/bgimage.html
-%%WWWDIR%%/htmlarea/plugins/CSS/css.js
-%%WWWDIR%%/htmlarea/plugins/CSS/lang/en.js
-%%WWWDIR%%/htmlarea/plugins/CharCounter/char-counter.js
-%%WWWDIR%%/htmlarea/plugins/CharCounter/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/CharCounter/lang/fr.js
-%%WWWDIR%%/htmlarea/plugins/CharCounter/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/CharCounter/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/CharCounter/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/CharCounter/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/CharacterMap/CharacterMap.css
-%%WWWDIR%%/htmlarea/plugins/CharacterMap/character-map.js
-%%WWWDIR%%/htmlarea/plugins/CharacterMap/img/ed_charmap.gif
-%%WWWDIR%%/htmlarea/plugins/CharacterMap/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/CharacterMap/lang/fr.js
-%%WWWDIR%%/htmlarea/plugins/CharacterMap/lang/it.js
-%%WWWDIR%%/htmlarea/plugins/CharacterMap/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/CharacterMap/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/CharacterMap/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/CharacterMap/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/CharacterMap/lang/ru.js
-%%WWWDIR%%/htmlarea/plugins/CharacterMap/lang/sv.js
-%%WWWDIR%%/htmlarea/plugins/CharacterMap/popups/select_character.html
-%%WWWDIR%%/htmlarea/plugins/ClientsideSpellcheck/clientside-spellcheck.js
-%%WWWDIR%%/htmlarea/plugins/ClientsideSpellcheck/img/clientside-spellcheck.gif
-%%WWWDIR%%/htmlarea/plugins/ClientsideSpellcheck/img/he-spell-check.gif
-%%WWWDIR%%/htmlarea/plugins/ClientsideSpellcheck/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/ClientsideSpellcheck/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/ClientsideSpellcheck/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/ClientsideSpellcheck/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/ClientsideSpellcheck/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/ContextMenu/context-menu.js
-%%WWWDIR%%/htmlarea/plugins/ContextMenu/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/ContextMenu/lang/el.js
-%%WWWDIR%%/htmlarea/plugins/ContextMenu/lang/en.js
-%%WWWDIR%%/htmlarea/plugins/ContextMenu/lang/fr.js
-%%WWWDIR%%/htmlarea/plugins/ContextMenu/lang/he.js
-%%WWWDIR%%/htmlarea/plugins/ContextMenu/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/ContextMenu/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/ContextMenu/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/ContextMenu/lang/pl.js
-%%WWWDIR%%/htmlarea/plugins/ContextMenu/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/ContextMenu/lang/sv.js
-%%WWWDIR%%/htmlarea/plugins/ContextMenu/menu.css
-%%WWWDIR%%/htmlarea/plugins/DefinitionList/definition-list.css
-%%WWWDIR%%/htmlarea/plugins/DefinitionList/definition-list.js
-%%WWWDIR%%/htmlarea/plugins/DefinitionList/img/ed_dd.gif
-%%WWWDIR%%/htmlarea/plugins/DefinitionList/img/ed_dl.gif
-%%WWWDIR%%/htmlarea/plugins/DefinitionList/img/ed_dt.gif
-%%WWWDIR%%/htmlarea/plugins/DefinitionList/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/DefinitionList/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/DefinitionList/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/DoubleClick/double-click.js
-%%WWWDIR%%/htmlarea/plugins/DynamicCSS/dynamiccss.js
-%%WWWDIR%%/htmlarea/plugins/DynamicCSS/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/DynamicCSS/lang/fr.js
-%%WWWDIR%%/htmlarea/plugins/DynamicCSS/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/DynamicCSS/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/DynamicCSS/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/DynamicCSS/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/EditTag/edit-tag.js
-%%WWWDIR%%/htmlarea/plugins/EditTag/img/ed_edit_tag.gif
-%%WWWDIR%%/htmlarea/plugins/EditTag/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/EditTag/lang/fr.js
-%%WWWDIR%%/htmlarea/plugins/EditTag/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/EditTag/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/EditTag/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/EditTag/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/EditTag/popups/edit_tag.html
-%%WWWDIR%%/htmlarea/plugins/Equation/ASCIIMathML.js
-%%WWWDIR%%/htmlarea/plugins/Equation/equation.js
-%%WWWDIR%%/htmlarea/plugins/Equation/example.html
-%%WWWDIR%%/htmlarea/plugins/Equation/img/abs_value.gif
-%%WWWDIR%%/htmlarea/plugins/Equation/img/diag_fraction.gif
-%%WWWDIR%%/htmlarea/plugins/Equation/img/divide.gif
-%%WWWDIR%%/htmlarea/plugins/Equation/img/dsp_greater_equal.gif
-%%WWWDIR%%/htmlarea/plugins/Equation/img/dsp_less_equal.gif
-%%WWWDIR%%/htmlarea/plugins/Equation/img/dsp_notequal.gif
-%%WWWDIR%%/htmlarea/plugins/Equation/img/equation.gif
-%%WWWDIR%%/htmlarea/plugins/Equation/img/equation.old.gif
-%%WWWDIR%%/htmlarea/plugins/Equation/img/greater_equal_than.gif
-%%WWWDIR%%/htmlarea/plugins/Equation/img/hor_fraction.gif
-%%WWWDIR%%/htmlarea/plugins/Equation/img/less_equal_than.gif
-%%WWWDIR%%/htmlarea/plugins/Equation/img/mul.gif
-%%WWWDIR%%/htmlarea/plugins/Equation/img/notequal.gif
-%%WWWDIR%%/htmlarea/plugins/Equation/img/parenthesis.gif
-%%WWWDIR%%/htmlarea/plugins/Equation/img/root.gif
-%%WWWDIR%%/htmlarea/plugins/Equation/img/square_root.gif
-%%WWWDIR%%/htmlarea/plugins/Equation/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/Equation/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/Equation/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/Equation/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/Equation/popups/dialog.html
-%%WWWDIR%%/htmlarea/plugins/Equation/readme.txt
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/Classes/ExtendedFileManager.php
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/Readme.txt
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/assets/EditorContent.js
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/assets/ImageEditor.css
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/assets/dialog.js
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/assets/dragTableCols.js
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/assets/editor.css
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/assets/editor.js
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/assets/editorFrame.css
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/assets/editorFrame.js
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/assets/hover.htc
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/assets/imagelist.css
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/assets/images.js
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/assets/manager.css
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/assets/manager.js
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/assets/popup.js
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/assets/slider.js
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/assets/wz_jsgraphics.js
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/backend.php
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/config.inc.php
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/demo_images/.htaccess
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/demo_images/bikerpeep.jpg
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/demo_images/linux/linux.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/demo_images/wesnoth078.jpg
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/editor.php
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/editorFrame.php
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/extended-file-manager.js
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/def.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/def_small.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/doc.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/doc_small.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/fla.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/fla_small.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/folder.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/folder_small.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/gif_small.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/gz.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/gz_small.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/html.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/html_small.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/jpg_small.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/js.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/js_small.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/mov.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/mov_small.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/pdf.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/pdf_small.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/php.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/php_small.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/png_small.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/ppt.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/ppt_small.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/rar.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/rar_small.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/txt.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/txt_small.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/xls.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/xls_small.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/zip.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons/zip_small.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/images.php
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/1x1_transparent.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/2x2.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/2x2_w.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/btnFolderNew.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/btnFolderNew1.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/btnFolderUp.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/btnFolderUp1.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/btn_cancel.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/btn_ok.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/crop.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/default.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/div.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/dots.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/ed_linkfile.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/ed_linkfile1.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/edit_active.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/edit_copy.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/edit_cut.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/edit_paste.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/edit_pencil.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/edit_rename.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/edit_trash.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/folder.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/hand.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/islocked2.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/locked.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/measure.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/noimages.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/rotate.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/save.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/scale.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/spacer.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/t_black.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/t_white.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/unlocked.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/unlocked2.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img/unlocked_empty.gif
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/lang/es.js
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/lang/fr.js
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/lang/pl.js
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/manager.php
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/prompt.html
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/resizer.php
-%%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/thumbs.php
-%%WWWDIR%%/htmlarea/plugins/Filter/filter.js
-%%WWWDIR%%/htmlarea/plugins/Filter/filters/paragraph.js
-%%WWWDIR%%/htmlarea/plugins/Filter/filters/word.js
-%%WWWDIR%%/htmlarea/plugins/Filter/img/ed_filter.gif
-%%WWWDIR%%/htmlarea/plugins/Filter/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/Filter/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/Filter/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/FindReplace/find-replace.js
-%%WWWDIR%%/htmlarea/plugins/FindReplace/fr_engine.js
-%%WWWDIR%%/htmlarea/plugins/FindReplace/img/ed_find.gif
-%%WWWDIR%%/htmlarea/plugins/FindReplace/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/FindReplace/lang/fr.js
-%%WWWDIR%%/htmlarea/plugins/FindReplace/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/FindReplace/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/FindReplace/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/FindReplace/lang/pl.js
-%%WWWDIR%%/htmlarea/plugins/FindReplace/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/FindReplace/lang/ru.js
-%%WWWDIR%%/htmlarea/plugins/FindReplace/lang/sv.js
-%%WWWDIR%%/htmlarea/plugins/FindReplace/popups/find_replace.html
-%%WWWDIR%%/htmlarea/plugins/FormOperations/README
-%%WWWDIR%%/htmlarea/plugins/FormOperations/default_form.html
-%%WWWDIR%%/htmlarea/plugins/FormOperations/form-operations.js
-%%WWWDIR%%/htmlarea/plugins/FormOperations/formmail.php
-%%WWWDIR%%/htmlarea/plugins/FormOperations/iframe.css
-%%WWWDIR%%/htmlarea/plugins/FormOperations/img/buttons.gif
-%%WWWDIR%%/htmlarea/plugins/FormOperations/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/FormOperations/lang/fr.js
-%%WWWDIR%%/htmlarea/plugins/FormOperations/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/FormOperations/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/FormOperations/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/FormOperations/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/FormOperations/panel.html
-%%WWWDIR%%/htmlarea/plugins/Forms/forms.css
-%%WWWDIR%%/htmlarea/plugins/Forms/forms.js
-%%WWWDIR%%/htmlarea/plugins/Forms/img/ed_button.gif
-%%WWWDIR%%/htmlarea/plugins/Forms/img/ed_checkbox.gif
-%%WWWDIR%%/htmlarea/plugins/Forms/img/ed_fieldset.gif
-%%WWWDIR%%/htmlarea/plugins/Forms/img/ed_file.gif
-%%WWWDIR%%/htmlarea/plugins/Forms/img/ed_form.gif
-%%WWWDIR%%/htmlarea/plugins/Forms/img/ed_hidden.gif
-%%WWWDIR%%/htmlarea/plugins/Forms/img/ed_image.gif
-%%WWWDIR%%/htmlarea/plugins/Forms/img/ed_label.gif
-%%WWWDIR%%/htmlarea/plugins/Forms/img/ed_password.gif
-%%WWWDIR%%/htmlarea/plugins/Forms/img/ed_radio.gif
-%%WWWDIR%%/htmlarea/plugins/Forms/img/ed_reset.gif
-%%WWWDIR%%/htmlarea/plugins/Forms/img/ed_select.gif
-%%WWWDIR%%/htmlarea/plugins/Forms/img/ed_submit.gif
-%%WWWDIR%%/htmlarea/plugins/Forms/img/ed_text.gif
-%%WWWDIR%%/htmlarea/plugins/Forms/img/ed_textarea.gif
-%%WWWDIR%%/htmlarea/plugins/Forms/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/Forms/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/Forms/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/Forms/popups/fieldset.html
-%%WWWDIR%%/htmlarea/plugins/Forms/popups/form.html
-%%WWWDIR%%/htmlarea/plugins/Forms/popups/input.html
-%%WWWDIR%%/htmlarea/plugins/Forms/popups/label.html
-%%WWWDIR%%/htmlarea/plugins/Forms/popups/select.html
-%%WWWDIR%%/htmlarea/plugins/Forms/popups/textarea.html
-%%WWWDIR%%/htmlarea/plugins/FullPage/full-page.js
-%%WWWDIR%%/htmlarea/plugins/FullPage/img/docprop.gif
-%%WWWDIR%%/htmlarea/plugins/FullPage/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/FullPage/lang/en.js
-%%WWWDIR%%/htmlarea/plugins/FullPage/lang/fr.js
-%%WWWDIR%%/htmlarea/plugins/FullPage/lang/he.js
-%%WWWDIR%%/htmlarea/plugins/FullPage/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/FullPage/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/FullPage/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/FullPage/lang/pl.js
-%%WWWDIR%%/htmlarea/plugins/FullPage/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/FullPage/lang/pt_pt.js
-%%WWWDIR%%/htmlarea/plugins/FullPage/lang/ro.js
-%%WWWDIR%%/htmlarea/plugins/FullPage/popups/docprop.html
-%%WWWDIR%%/htmlarea/plugins/FullPage/test.html
-%%WWWDIR%%/htmlarea/plugins/GenericPlugin/generic-plugin.js
-%%WWWDIR%%/htmlarea/plugins/GetHtml/get-html.js
-%%WWWDIR%%/htmlarea/plugins/HorizontalRule/horizontal-rule.js
-%%WWWDIR%%/htmlarea/plugins/HorizontalRule/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/HorizontalRule/lang/fr.js
-%%WWWDIR%%/htmlarea/plugins/HorizontalRule/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/HorizontalRule/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/HorizontalRule/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/HorizontalRule/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/HorizontalRule/popups/edit_horizontal_rule.html
-%%WWWDIR%%/htmlarea/plugins/HtmlEntities/Entities.js
-%%WWWDIR%%/htmlarea/plugins/HtmlEntities/html-entities.js
-%%WWWDIR%%/htmlarea/plugins/HtmlEntities/iso-8859-1.js
-%%WWWDIR%%/htmlarea/plugins/HtmlTidy/README
-%%WWWDIR%%/htmlarea/plugins/HtmlTidy/html-tidy-config.cfg
-%%WWWDIR%%/htmlarea/plugins/HtmlTidy/html-tidy-logic.php
-%%WWWDIR%%/htmlarea/plugins/HtmlTidy/html-tidy.js
-%%WWWDIR%%/htmlarea/plugins/HtmlTidy/img/html-tidy.gif
-%%WWWDIR%%/htmlarea/plugins/HtmlTidy/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/HtmlTidy/lang/fr.js
-%%WWWDIR%%/htmlarea/plugins/HtmlTidy/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/HtmlTidy/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/HtmlTidy/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/HtmlTidy/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/ImageManager/Classes/Files.php
-%%WWWDIR%%/htmlarea/plugins/ImageManager/Classes/GD.php
-%%WWWDIR%%/htmlarea/plugins/ImageManager/Classes/IM.php
-%%WWWDIR%%/htmlarea/plugins/ImageManager/Classes/ImageEditor.php
-%%WWWDIR%%/htmlarea/plugins/ImageManager/Classes/ImageManager.php
-%%WWWDIR%%/htmlarea/plugins/ImageManager/Classes/NetPBM.php
-%%WWWDIR%%/htmlarea/plugins/ImageManager/Classes/Thumbnail.php
-%%WWWDIR%%/htmlarea/plugins/ImageManager/Classes/Transform.php
-%%WWWDIR%%/htmlarea/plugins/ImageManager/README.txt
-%%WWWDIR%%/htmlarea/plugins/ImageManager/assets/EditorContent.js
-%%WWWDIR%%/htmlarea/plugins/ImageManager/assets/ImageEditor.css
-%%WWWDIR%%/htmlarea/plugins/ImageManager/assets/dialog.js
-%%WWWDIR%%/htmlarea/plugins/ImageManager/assets/editor.css
-%%WWWDIR%%/htmlarea/plugins/ImageManager/assets/editor.js
-%%WWWDIR%%/htmlarea/plugins/ImageManager/assets/editorFrame.css
-%%WWWDIR%%/htmlarea/plugins/ImageManager/assets/editorFrame.js
-%%WWWDIR%%/htmlarea/plugins/ImageManager/assets/hover.htc
-%%WWWDIR%%/htmlarea/plugins/ImageManager/assets/imagelist.css
-%%WWWDIR%%/htmlarea/plugins/ImageManager/assets/images.js
-%%WWWDIR%%/htmlarea/plugins/ImageManager/assets/manager.css
-%%WWWDIR%%/htmlarea/plugins/ImageManager/assets/manager.js
-%%WWWDIR%%/htmlarea/plugins/ImageManager/assets/popup.js
-%%WWWDIR%%/htmlarea/plugins/ImageManager/assets/slider.js
-%%WWWDIR%%/htmlarea/plugins/ImageManager/assets/wz_jsgraphics.js
-%%WWWDIR%%/htmlarea/plugins/ImageManager/backend.php
-%%WWWDIR%%/htmlarea/plugins/ImageManager/config.inc.php
-%%WWWDIR%%/htmlarea/plugins/ImageManager/ddt.php
-%%WWWDIR%%/htmlarea/plugins/ImageManager/demo_images/.htaccess
-%%WWWDIR%%/htmlarea/plugins/ImageManager/demo_images/bikerpeep.jpg
-%%WWWDIR%%/htmlarea/plugins/ImageManager/demo_images/linux/linux.gif
-%%WWWDIR%%/htmlarea/plugins/ImageManager/demo_images/wesnoth078.jpg
-%%WWWDIR%%/htmlarea/plugins/ImageManager/editor.php
-%%WWWDIR%%/htmlarea/plugins/ImageManager/editorFrame.php
-%%WWWDIR%%/htmlarea/plugins/ImageManager/image-manager.js
-%%WWWDIR%%/htmlarea/plugins/ImageManager/image-picker.js
-%%WWWDIR%%/htmlarea/plugins/ImageManager/images.php
-%%WWWDIR%%/htmlarea/plugins/ImageManager/img/2x2.gif
-%%WWWDIR%%/htmlarea/plugins/ImageManager/img/2x2_w.gif
-%%WWWDIR%%/htmlarea/plugins/ImageManager/img/btnFolderNew.gif
-%%WWWDIR%%/htmlarea/plugins/ImageManager/img/btnFolderUp.gif
-%%WWWDIR%%/htmlarea/plugins/ImageManager/img/btn_cancel.gif
-%%WWWDIR%%/htmlarea/plugins/ImageManager/img/btn_ok.gif
-%%WWWDIR%%/htmlarea/plugins/ImageManager/img/crop.gif
-%%WWWDIR%%/htmlarea/plugins/ImageManager/img/default.gif
-%%WWWDIR%%/htmlarea/plugins/ImageManager/img/div.gif
-%%WWWDIR%%/htmlarea/plugins/ImageManager/img/dots.gif
-%%WWWDIR%%/htmlarea/plugins/ImageManager/img/edit_active.gif
-%%WWWDIR%%/htmlarea/plugins/ImageManager/img/edit_pencil.gif
-%%WWWDIR%%/htmlarea/plugins/ImageManager/img/edit_trash.gif
-%%WWWDIR%%/htmlarea/plugins/ImageManager/img/folder.gif
-%%WWWDIR%%/htmlarea/plugins/ImageManager/img/hand.gif
-%%WWWDIR%%/htmlarea/plugins/ImageManager/img/islocked2.gif
-%%WWWDIR%%/htmlarea/plugins/ImageManager/img/locked.gif
-%%WWWDIR%%/htmlarea/plugins/ImageManager/img/measure.gif
-%%WWWDIR%%/htmlarea/plugins/ImageManager/img/noimages.gif
-%%WWWDIR%%/htmlarea/plugins/ImageManager/img/rotate.gif
-%%WWWDIR%%/htmlarea/plugins/ImageManager/img/save.gif
-%%WWWDIR%%/htmlarea/plugins/ImageManager/img/scale.gif
-%%WWWDIR%%/htmlarea/plugins/ImageManager/img/spacer.gif
-%%WWWDIR%%/htmlarea/plugins/ImageManager/img/t_black.gif
-%%WWWDIR%%/htmlarea/plugins/ImageManager/img/t_white.gif
-%%WWWDIR%%/htmlarea/plugins/ImageManager/img/unlocked.gif
-%%WWWDIR%%/htmlarea/plugins/ImageManager/img/unlocked2.gif
-%%WWWDIR%%/htmlarea/plugins/ImageManager/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/ImageManager/lang/es.js
-%%WWWDIR%%/htmlarea/plugins/ImageManager/lang/fr.js
-%%WWWDIR%%/htmlarea/plugins/ImageManager/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/ImageManager/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/ImageManager/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/ImageManager/lang/pl.js
-%%WWWDIR%%/htmlarea/plugins/ImageManager/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/ImageManager/lang/ru.js
-%%WWWDIR%%/htmlarea/plugins/ImageManager/lang/sv.js
-%%WWWDIR%%/htmlarea/plugins/ImageManager/manager.php
-%%WWWDIR%%/htmlarea/plugins/ImageManager/newFolder.html
-%%WWWDIR%%/htmlarea/plugins/ImageManager/resizer.php
-%%WWWDIR%%/htmlarea/plugins/ImageManager/thumbs.php
-%%WWWDIR%%/htmlarea/plugins/InsertAnchor/img/insert-anchor.gif
-%%WWWDIR%%/htmlarea/plugins/InsertAnchor/img/placeholder.gif
-%%WWWDIR%%/htmlarea/plugins/InsertAnchor/insert-anchor.css
-%%WWWDIR%%/htmlarea/plugins/InsertAnchor/insert-anchor.js
-%%WWWDIR%%/htmlarea/plugins/InsertAnchor/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/InsertAnchor/lang/fr.js
-%%WWWDIR%%/htmlarea/plugins/InsertAnchor/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/InsertAnchor/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/InsertAnchor/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/InsertAnchor/lang/pl.js
-%%WWWDIR%%/htmlarea/plugins/InsertAnchor/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/InsertAnchor/popups/insert_anchor.html
-%%WWWDIR%%/htmlarea/plugins/InsertMarquee/img/ed_marquee.gif
-%%WWWDIR%%/htmlarea/plugins/InsertMarquee/insert-marquee.js
-%%WWWDIR%%/htmlarea/plugins/InsertMarquee/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/InsertMarquee/lang/fr.js
-%%WWWDIR%%/htmlarea/plugins/InsertMarquee/lang/it.js
-%%WWWDIR%%/htmlarea/plugins/InsertMarquee/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/InsertMarquee/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/InsertMarquee/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/InsertMarquee/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/InsertMarquee/popups/insert_marquee.html
-%%WWWDIR%%/htmlarea/plugins/InsertPagebreak/img/pagebreak.gif
-%%WWWDIR%%/htmlarea/plugins/InsertPagebreak/insert-pagebreak.js
-%%WWWDIR%%/htmlarea/plugins/InsertPagebreak/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/InsertPagebreak/lang/fr.js
-%%WWWDIR%%/htmlarea/plugins/InsertPagebreak/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/InsertPagebreak/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/InsertPagebreak/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/InsertPagebreak/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/InsertPicture/InsertPicture.php
-%%WWWDIR%%/htmlarea/plugins/InsertPicture/demo_pictures/bikerpeep.jpg
-%%WWWDIR%%/htmlarea/plugins/InsertPicture/demo_pictures/wesnoth078.jpg
-%%WWWDIR%%/htmlarea/plugins/InsertPicture/img/btn_open.gif
-%%WWWDIR%%/htmlarea/plugins/InsertPicture/img/nopic.gif
-%%WWWDIR%%/htmlarea/plugins/InsertPicture/insert-picture.js
-%%WWWDIR%%/htmlarea/plugins/InsertPicture/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/InsertPicture/lang/fr.js
-%%WWWDIR%%/htmlarea/plugins/InsertPicture/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/InsertPicture/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/InsertPicture/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/InsertPicture/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/InsertPicture/lang/sv.js
-%%WWWDIR%%/htmlarea/plugins/InsertPicture/viewpicture.html
-%%WWWDIR%%/htmlarea/plugins/InsertSmiley/README.txt
-%%WWWDIR%%/htmlarea/plugins/InsertSmiley/img/ed_smiley.gif
-%%WWWDIR%%/htmlarea/plugins/InsertSmiley/insert-smiley.js
-%%WWWDIR%%/htmlarea/plugins/InsertSmiley/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/InsertSmiley/lang/fr.js
-%%WWWDIR%%/htmlarea/plugins/InsertSmiley/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/InsertSmiley/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/InsertSmiley/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/InsertSmiley/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/InsertSmiley/popups/insertsmiley.html
-%%WWWDIR%%/htmlarea/plugins/InsertSmiley/smileys.txt
-%%WWWDIR%%/htmlarea/plugins/InsertSnippet/InsertSnippet.css
-%%WWWDIR%%/htmlarea/plugins/InsertSnippet/demosnippets.js
-%%WWWDIR%%/htmlarea/plugins/InsertSnippet/img/ed_snippet.gif
-%%WWWDIR%%/htmlarea/plugins/InsertSnippet/insert-snippet.js
-%%WWWDIR%%/htmlarea/plugins/InsertSnippet/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/InsertSnippet/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/InsertSnippet/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/InsertSnippet/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/InsertSnippet/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/InsertSnippet/popups/insertsnippet.html
-%%WWWDIR%%/htmlarea/plugins/InsertSnippet/readme.html
-%%WWWDIR%%/htmlarea/plugins/InsertSnippet/snippets.html
-%%WWWDIR%%/htmlarea/plugins/InsertSnippet/snippets.php
-%%WWWDIR%%/htmlarea/plugins/InsertWords/insert-words.js
-%%WWWDIR%%/htmlarea/plugins/LangMarks/lang-marks.css
-%%WWWDIR%%/htmlarea/plugins/LangMarks/lang-marks.js
-%%WWWDIR%%/htmlarea/plugins/LangMarks/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/LangMarks/lang/fr.js
-%%WWWDIR%%/htmlarea/plugins/LangMarks/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/LangMarks/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/LangMarks/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/LangMarks/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/Linker/dTree/api.html
-%%WWWDIR%%/htmlarea/plugins/Linker/dTree/dtree.css
-%%WWWDIR%%/htmlarea/plugins/Linker/dTree/dtree.js
-%%WWWDIR%%/htmlarea/plugins/Linker/dTree/example01.html
-%%WWWDIR%%/htmlarea/plugins/Linker/dTree/img/base.gif
-%%WWWDIR%%/htmlarea/plugins/Linker/dTree/img/cd.gif
-%%WWWDIR%%/htmlarea/plugins/Linker/dTree/img/copy.gif
-%%WWWDIR%%/htmlarea/plugins/Linker/dTree/img/empty.gif
-%%WWWDIR%%/htmlarea/plugins/Linker/dTree/img/folder.gif
-%%WWWDIR%%/htmlarea/plugins/Linker/dTree/img/folderopen.gif
-%%WWWDIR%%/htmlarea/plugins/Linker/dTree/img/globe.gif
-%%WWWDIR%%/htmlarea/plugins/Linker/dTree/img/imgfolder.gif
-%%WWWDIR%%/htmlarea/plugins/Linker/dTree/img/join.gif
-%%WWWDIR%%/htmlarea/plugins/Linker/dTree/img/joinbottom.gif
-%%WWWDIR%%/htmlarea/plugins/Linker/dTree/img/line.gif
-%%WWWDIR%%/htmlarea/plugins/Linker/dTree/img/minus.gif
-%%WWWDIR%%/htmlarea/plugins/Linker/dTree/img/minusbottom.gif
-%%WWWDIR%%/htmlarea/plugins/Linker/dTree/img/move.gif
-%%WWWDIR%%/htmlarea/plugins/Linker/dTree/img/musicfolder.gif
-%%WWWDIR%%/htmlarea/plugins/Linker/dTree/img/nolines_minus.gif
-%%WWWDIR%%/htmlarea/plugins/Linker/dTree/img/nolines_plus.gif
-%%WWWDIR%%/htmlarea/plugins/Linker/dTree/img/offline.gif
-%%WWWDIR%%/htmlarea/plugins/Linker/dTree/img/offline.png
-%%WWWDIR%%/htmlarea/plugins/Linker/dTree/img/page.gif
-%%WWWDIR%%/htmlarea/plugins/Linker/dTree/img/plus.gif
-%%WWWDIR%%/htmlarea/plugins/Linker/dTree/img/plusbottom.gif
-%%WWWDIR%%/htmlarea/plugins/Linker/dTree/img/question.gif
-%%WWWDIR%%/htmlarea/plugins/Linker/dTree/img/trash.gif
-%%WWWDIR%%/htmlarea/plugins/Linker/dialog.html
-%%WWWDIR%%/htmlarea/plugins/Linker/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/Linker/lang/fr.js
-%%WWWDIR%%/htmlarea/plugins/Linker/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/Linker/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/Linker/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/Linker/lang/pl.js
-%%WWWDIR%%/htmlarea/plugins/Linker/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/Linker/linker.js
-%%WWWDIR%%/htmlarea/plugins/Linker/scan.php
-%%WWWDIR%%/htmlarea/plugins/ListType/ListType.css
-%%WWWDIR%%/htmlarea/plugins/ListType/img/circle.png
-%%WWWDIR%%/htmlarea/plugins/ListType/img/decimal.png
-%%WWWDIR%%/htmlarea/plugins/ListType/img/disc.png
-%%WWWDIR%%/htmlarea/plugins/ListType/img/lower-alpha.png
-%%WWWDIR%%/htmlarea/plugins/ListType/img/lower-roman.png
-%%WWWDIR%%/htmlarea/plugins/ListType/img/none.png
-%%WWWDIR%%/htmlarea/plugins/ListType/img/square.png
-%%WWWDIR%%/htmlarea/plugins/ListType/img/upper-alpha.png
-%%WWWDIR%%/htmlarea/plugins/ListType/img/upper-roman.png
-%%WWWDIR%%/htmlarea/plugins/ListType/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/ListType/lang/fr.js
-%%WWWDIR%%/htmlarea/plugins/ListType/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/ListType/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/ListType/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/ListType/lang/pl.js
-%%WWWDIR%%/htmlarea/plugins/ListType/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/ListType/lang/ru.js
-%%WWWDIR%%/htmlarea/plugins/ListType/lang/sv.js
-%%WWWDIR%%/htmlarea/plugins/ListType/list-type.js
-%%WWWDIR%%/htmlarea/plugins/NoteServer/img/note.gif
-%%WWWDIR%%/htmlarea/plugins/NoteServer/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/NoteServer/lang/fr.js
-%%WWWDIR%%/htmlarea/plugins/NoteServer/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/NoteServer/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/NoteServer/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/NoteServer/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/NoteServer/note-server.js
-%%WWWDIR%%/htmlarea/plugins/NoteServer/popups/codenote.html
-%%WWWDIR%%/htmlarea/plugins/PasteText/img/ed_paste_text.gif
-%%WWWDIR%%/htmlarea/plugins/PasteText/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/PasteText/lang/fr.js
-%%WWWDIR%%/htmlarea/plugins/PasteText/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/PasteText/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/PasteText/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/PasteText/lang/pl.js
-%%WWWDIR%%/htmlarea/plugins/PasteText/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/PasteText/lang/ru.js
-%%WWWDIR%%/htmlarea/plugins/PasteText/paste-text.js
-%%WWWDIR%%/htmlarea/plugins/PasteText/popups/paste_text.html
-%%WWWDIR%%/htmlarea/plugins/PreserveScripts/js.png
-%%WWWDIR%%/htmlarea/plugins/PreserveScripts/php.png
-%%WWWDIR%%/htmlarea/plugins/PreserveScripts/php.svg
-%%WWWDIR%%/htmlarea/plugins/PreserveScripts/preserve-scripts.js
-%%WWWDIR%%/htmlarea/plugins/QuickTag/img/ed_quicktag.gif
-%%WWWDIR%%/htmlarea/plugins/QuickTag/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/QuickTag/lang/fr.js
-%%WWWDIR%%/htmlarea/plugins/QuickTag/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/QuickTag/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/QuickTag/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/QuickTag/lang/pl.js
-%%WWWDIR%%/htmlarea/plugins/QuickTag/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/QuickTag/popups/quicktag.html
-%%WWWDIR%%/htmlarea/plugins/QuickTag/quick-tag.js
-%%WWWDIR%%/htmlarea/plugins/QuickTag/tag-lib.js
-%%WWWDIR%%/htmlarea/plugins/SaveSubmit/README.txt
-%%WWWDIR%%/htmlarea/plugins/SaveSubmit/img/ed_save_green.gif
-%%WWWDIR%%/htmlarea/plugins/SaveSubmit/img/ed_save_red.gif
-%%WWWDIR%%/htmlarea/plugins/SaveSubmit/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/SaveSubmit/lang/fr.js
-%%WWWDIR%%/htmlarea/plugins/SaveSubmit/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/SaveSubmit/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/SaveSubmit/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/SaveSubmit/lang/ru.js
-%%WWWDIR%%/htmlarea/plugins/SaveSubmit/save-submit.js
-%%WWWDIR%%/htmlarea/plugins/SetId/img/placeholder.gif
-%%WWWDIR%%/htmlarea/plugins/SetId/img/set-id.gif
-%%WWWDIR%%/htmlarea/plugins/SetId/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/SetId/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/SetId/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/SetId/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/SetId/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/SetId/popups/set_id.html
-%%WWWDIR%%/htmlarea/plugins/SetId/set-id.css
-%%WWWDIR%%/htmlarea/plugins/SetId/set-id.js
-%%WWWDIR%%/htmlarea/plugins/SmartReplace/dialog.html
-%%WWWDIR%%/htmlarea/plugins/SmartReplace/img/smartquotes.gif
-%%WWWDIR%%/htmlarea/plugins/SmartReplace/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/SmartReplace/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/SmartReplace/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/SmartReplace/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/SmartReplace/readme.txt
-%%WWWDIR%%/htmlarea/plugins/SmartReplace/smart-replace.js
-%%WWWDIR%%/htmlarea/plugins/SpellChecker/README
-%%WWWDIR%%/htmlarea/plugins/SpellChecker/aspell_setup.php
-%%WWWDIR%%/htmlarea/plugins/SpellChecker/img/he-spell-check.gif
-%%WWWDIR%%/htmlarea/plugins/SpellChecker/img/spell-check.gif
-%%WWWDIR%%/htmlarea/plugins/SpellChecker/lang/cz.js
-%%WWWDIR%%/htmlarea/plugins/SpellChecker/lang/da.js
-%%WWWDIR%%/htmlarea/plugins/SpellChecker/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/SpellChecker/lang/fr.js
-%%WWWDIR%%/htmlarea/plugins/SpellChecker/lang/he.js
-%%WWWDIR%%/htmlarea/plugins/SpellChecker/lang/hu.js
-%%WWWDIR%%/htmlarea/plugins/SpellChecker/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/SpellChecker/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/SpellChecker/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/SpellChecker/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/SpellChecker/lang/ro.js
-%%WWWDIR%%/htmlarea/plugins/SpellChecker/readme-tech.html
-%%WWWDIR%%/htmlarea/plugins/SpellChecker/spell-check-logic.cgi
-%%WWWDIR%%/htmlarea/plugins/SpellChecker/spell-check-logic.php
-%%WWWDIR%%/htmlarea/plugins/SpellChecker/spell-check-savedicts.php
-%%WWWDIR%%/htmlarea/plugins/SpellChecker/spell-check-style.css
-%%WWWDIR%%/htmlarea/plugins/SpellChecker/spell-check-ui.html
-%%WWWDIR%%/htmlarea/plugins/SpellChecker/spell-check-ui.js
-%%WWWDIR%%/htmlarea/plugins/SpellChecker/spell-checker.js
-%%WWWDIR%%/htmlarea/plugins/Stylist/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/Stylist/lang/fr.js
-%%WWWDIR%%/htmlarea/plugins/Stylist/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/Stylist/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/Stylist/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/Stylist/lang/pl.js
-%%WWWDIR%%/htmlarea/plugins/Stylist/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/Stylist/lang/ru.js
-%%WWWDIR%%/htmlarea/plugins/Stylist/stylist.js
-%%WWWDIR%%/htmlarea/plugins/SuperClean/dialog.html
-%%WWWDIR%%/htmlarea/plugins/SuperClean/filters/paragraph.js
-%%WWWDIR%%/htmlarea/plugins/SuperClean/filters/word.js
-%%WWWDIR%%/htmlarea/plugins/SuperClean/img/ed_superclean.gif
-%%WWWDIR%%/htmlarea/plugins/SuperClean/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/SuperClean/lang/fr.js
-%%WWWDIR%%/htmlarea/plugins/SuperClean/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/SuperClean/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/SuperClean/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/SuperClean/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/SuperClean/super-clean.js
-%%WWWDIR%%/htmlarea/plugins/SuperClean/tidy.php
-%%WWWDIR%%/htmlarea/plugins/TableOperations/img/cell-delete.gif
-%%WWWDIR%%/htmlarea/plugins/TableOperations/img/cell-insert-after.gif
-%%WWWDIR%%/htmlarea/plugins/TableOperations/img/cell-insert-before.gif
-%%WWWDIR%%/htmlarea/plugins/TableOperations/img/cell-merge.gif
-%%WWWDIR%%/htmlarea/plugins/TableOperations/img/cell-prop.gif
-%%WWWDIR%%/htmlarea/plugins/TableOperations/img/cell-split.gif
-%%WWWDIR%%/htmlarea/plugins/TableOperations/img/col-delete.gif
-%%WWWDIR%%/htmlarea/plugins/TableOperations/img/col-insert-after.gif
-%%WWWDIR%%/htmlarea/plugins/TableOperations/img/col-insert-before.gif
-%%WWWDIR%%/htmlarea/plugins/TableOperations/img/col-split.gif
-%%WWWDIR%%/htmlarea/plugins/TableOperations/img/row-delete.gif
-%%WWWDIR%%/htmlarea/plugins/TableOperations/img/row-insert-above.gif
-%%WWWDIR%%/htmlarea/plugins/TableOperations/img/row-insert-under.gif
-%%WWWDIR%%/htmlarea/plugins/TableOperations/img/row-prop.gif
-%%WWWDIR%%/htmlarea/plugins/TableOperations/img/row-split.gif
-%%WWWDIR%%/htmlarea/plugins/TableOperations/img/table-prop.gif
-%%WWWDIR%%/htmlarea/plugins/TableOperations/lang/cz.js
-%%WWWDIR%%/htmlarea/plugins/TableOperations/lang/da.js
-%%WWWDIR%%/htmlarea/plugins/TableOperations/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/TableOperations/lang/el.js
-%%WWWDIR%%/htmlarea/plugins/TableOperations/lang/en.js
-%%WWWDIR%%/htmlarea/plugins/TableOperations/lang/fi.js
-%%WWWDIR%%/htmlarea/plugins/TableOperations/lang/fr.js
-%%WWWDIR%%/htmlarea/plugins/TableOperations/lang/he.js
-%%WWWDIR%%/htmlarea/plugins/TableOperations/lang/hu.js
-%%WWWDIR%%/htmlarea/plugins/TableOperations/lang/it.js
-%%WWWDIR%%/htmlarea/plugins/TableOperations/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/TableOperations/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/TableOperations/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/TableOperations/lang/no.js
-%%WWWDIR%%/htmlarea/plugins/TableOperations/lang/pl.js
-%%WWWDIR%%/htmlarea/plugins/TableOperations/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/TableOperations/lang/pt_pt.js
-%%WWWDIR%%/htmlarea/plugins/TableOperations/lang/ro.js
-%%WWWDIR%%/htmlarea/plugins/TableOperations/lang/ru.js
-%%WWWDIR%%/htmlarea/plugins/TableOperations/lang/sv.js
-%%WWWDIR%%/htmlarea/plugins/TableOperations/popups/merge_cells.html
-%%WWWDIR%%/htmlarea/plugins/TableOperations/table-operations.js
-%%WWWDIR%%/htmlarea/plugins/Template/img/ed_template.gif
-%%WWWDIR%%/htmlarea/plugins/Template/img/layout_01.gif
-%%WWWDIR%%/htmlarea/plugins/Template/img/layout_02.gif
-%%WWWDIR%%/htmlarea/plugins/Template/img/layout_03.gif
-%%WWWDIR%%/htmlarea/plugins/Template/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/Template/lang/fr.js
-%%WWWDIR%%/htmlarea/plugins/Template/lang/it.js
-%%WWWDIR%%/htmlarea/plugins/Template/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/Template/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/Template/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/Template/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/Template/popups/template.html
-%%WWWDIR%%/htmlarea/plugins/Template/template.css
-%%WWWDIR%%/htmlarea/plugins/Template/template.js
-%%WWWDIR%%/htmlarea/plugins/UnFormat/img/unformat.gif
-%%WWWDIR%%/htmlarea/plugins/UnFormat/lang/de.js
-%%WWWDIR%%/htmlarea/plugins/UnFormat/lang/fr.js
-%%WWWDIR%%/htmlarea/plugins/UnFormat/lang/ja.js
-%%WWWDIR%%/htmlarea/plugins/UnFormat/lang/nb.js
-%%WWWDIR%%/htmlarea/plugins/UnFormat/lang/nl.js
-%%WWWDIR%%/htmlarea/plugins/UnFormat/lang/pt_br.js
-%%WWWDIR%%/htmlarea/plugins/UnFormat/popups/unformat.html
-%%WWWDIR%%/htmlarea/plugins/UnFormat/un-format.js
-%%WWWDIR%%/htmlarea/popupdiv.js
-%%WWWDIR%%/htmlarea/popups/about.html
-%%WWWDIR%%/htmlarea/popups/blank.html
-%%WWWDIR%%/htmlarea/popups/custom2.html
-%%WWWDIR%%/htmlarea/popups/editor_help.html
-%%WWWDIR%%/htmlarea/popups/fullscreen.html
-%%WWWDIR%%/htmlarea/popups/insert_image.html
-%%WWWDIR%%/htmlarea/popups/insert_table.html
-%%WWWDIR%%/htmlarea/popups/link.html
-%%WWWDIR%%/htmlarea/popups/old-fullscreen.html
-%%WWWDIR%%/htmlarea/popups/old_insert_image.html
-%%WWWDIR%%/htmlarea/popups/popup.css
-%%WWWDIR%%/htmlarea/popups/popup.js
-%%WWWDIR%%/htmlarea/popups/select_color.html
-%%WWWDIR%%/htmlarea/popupwin.js
-%%WWWDIR%%/htmlarea/reference.html
-%%WWWDIR%%/htmlarea/release-notes.txt
-%%WWWDIR%%/htmlarea/skins/blue-look/button-background.png
-%%WWWDIR%%/htmlarea/skins/blue-look/separator.gif
-%%WWWDIR%%/htmlarea/skins/blue-look/skin.css
-%%WWWDIR%%/htmlarea/skins/blue-metallic/button-background.png
-%%WWWDIR%%/htmlarea/skins/blue-metallic/separator.gif
-%%WWWDIR%%/htmlarea/skins/blue-metallic/skin.css
-%%WWWDIR%%/htmlarea/skins/green-look/button-background.gif
-%%WWWDIR%%/htmlarea/skins/green-look/separator.gif
-%%WWWDIR%%/htmlarea/skins/green-look/skin.css
-%%WWWDIR%%/htmlarea/skins/inditreuse/README
-%%WWWDIR%%/htmlarea/skins/inditreuse/back.png
-%%WWWDIR%%/htmlarea/skins/inditreuse/button-background.png
-%%WWWDIR%%/htmlarea/skins/inditreuse/hover.png
-%%WWWDIR%%/htmlarea/skins/inditreuse/selected.png
-%%WWWDIR%%/htmlarea/skins/inditreuse/separator.png
-%%WWWDIR%%/htmlarea/skins/inditreuse/skin.css
-%%WWWDIR%%/htmlarea/skins/silva/dialog.jpg
-%%WWWDIR%%/htmlarea/skins/silva/html.gif
-%%WWWDIR%%/htmlarea/skins/silva/skin.css
-%%WWWDIR%%/htmlarea/skins/silva/statusbar.png
-%%WWWDIR%%/htmlarea/skins/silva/toolbar.png
-%%WWWDIR%%/htmlarea/skins/titan/README
-%%WWWDIR%%/htmlarea/skins/titan/back.png
-%%WWWDIR%%/htmlarea/skins/titan/button-background.png
-%%WWWDIR%%/htmlarea/skins/titan/hover.png
-%%WWWDIR%%/htmlarea/skins/titan/selected.png
-%%WWWDIR%%/htmlarea/skins/titan/separator.png
-%%WWWDIR%%/htmlarea/skins/titan/skin.css
-%%WWWDIR%%/htmlarea/skins/xp-blue/back.png
-%%WWWDIR%%/htmlarea/skins/xp-blue/button-background.png
-%%WWWDIR%%/htmlarea/skins/xp-blue/hover.png
-%%WWWDIR%%/htmlarea/skins/xp-blue/selected.png
-%%WWWDIR%%/htmlarea/skins/xp-blue/separator.png
-%%WWWDIR%%/htmlarea/skins/xp-blue/skin.css
-%%WWWDIR%%/htmlarea/skins/xp-green/back.png
-%%WWWDIR%%/htmlarea/skins/xp-green/button-background.png
-%%WWWDIR%%/htmlarea/skins/xp-green/hover.png
-%%WWWDIR%%/htmlarea/skins/xp-green/selected.png
-%%WWWDIR%%/htmlarea/skins/xp-green/separator.png
-%%WWWDIR%%/htmlarea/skins/xp-green/skin.css
+%%WWWDIR%%/htmlarea/autoload.php
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/CHANGES.md
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/LICENSE.md
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/README.md
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/adapters/jquery.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/bower.json
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/build-config.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/ckeditor.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/composer.json
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/config.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/contents.css
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/af.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/ar.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/bg.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/bn.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/bs.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/ca.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/cs.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/cy.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/da.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/de.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/el.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/en-au.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/en-ca.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/en-gb.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/en.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/eo.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/es.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/et.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/eu.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/fa.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/fi.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/fo.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/fr-ca.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/fr.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/gl.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/gu.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/he.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/hi.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/hr.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/hu.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/id.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/is.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/it.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/ja.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/ka.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/km.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/ko.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/ku.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/lt.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/lv.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/mk.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/mn.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/ms.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/nb.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/nl.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/no.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/pl.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/pt-br.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/pt.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/ro.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/ru.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/si.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/sk.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/sl.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/sq.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/sr-latn.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/sr.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/sv.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/th.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/tr.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/tt.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/ug.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/uk.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/vi.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/zh-cn.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/lang/zh.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/a11yhelp.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/_translationstatus.txt
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/af.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/ar.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/bg.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/ca.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/cs.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/cy.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/da.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/de.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/el.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/en-gb.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/en.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/eo.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/es.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/et.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/fa.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/fi.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/fr-ca.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/fr.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/gl.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/gu.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/he.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/hi.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/hr.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/hu.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/id.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/it.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/ja.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/km.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/ko.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/ku.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/lt.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/lv.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/mk.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/mn.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/nb.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/nl.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/no.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/pl.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/pt-br.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/pt.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/ro.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/ru.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/si.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/sk.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/sl.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/sq.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/sr-latn.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/sr.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/sv.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/th.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/tr.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/tt.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/ug.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/uk.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/vi.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/zh-cn.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/a11yhelp/dialogs/lang/zh.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/about/dialogs/about.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/about/dialogs/hidpi/logo_ckeditor.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/about/dialogs/logo_ckeditor.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/cheatsheet/dialogs/CheatSheetIcon.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/cheatsheet/dialogs/cheatsheet.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/cheatsheet/dialogs/hidpi/CheatSheetIcon.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/cheatsheet/dialogs/sheet.html
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/cheatsheet/icons/CheatSheetIcon.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/cheatsheet/icons/hidpi/CheatSheetIcon.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/cheatsheet/plugin.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/clipboard/dialogs/paste.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/colordialog/dialogs/colordialog.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/dialog/dialogDefinition.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/div/dialogs/div.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/af.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/ar.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/bg.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/bn.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/bs.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/ca.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/cs.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/cy.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/da.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/de.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/el.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/en-au.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/en-ca.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/en-gb.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/en.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/eo.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/es.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/et.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/eu.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/fa.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/fi.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/fo.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/fr-ca.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/fr.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/gl.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/gu.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/he.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/hi.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/hr.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/hu.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/id.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/is.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/it.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/ja.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/ka.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/km.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/ko.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/ku.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/lt.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/lv.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/mk.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/mn.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/ms.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/nb.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/nl.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/no.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/pl.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/pt-br.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/pt.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/ro.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/ru.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/si.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/sk.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/sl.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/sq.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/sr-latn.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/sr.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/sv.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/th.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/tr.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/tt.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/ug.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/uk.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/vi.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/zh-cn.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/lang/zh.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/fakeobjects/plugin.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/find/dialogs/find.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/flash/dialogs/flash.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/flash/images/placeholder.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/forms/dialogs/button.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/forms/dialogs/checkbox.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/forms/dialogs/form.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/forms/dialogs/hiddenfield.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/forms/dialogs/radio.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/forms/dialogs/select.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/forms/dialogs/textarea.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/forms/dialogs/textfield.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/forms/images/hiddenfield.gif
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/icons.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/icons_hidpi.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/iframe/dialogs/iframe.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/iframe/images/placeholder.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/image/dialogs/image.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/image/images/noimage.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/lineutils/plugin.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/link/dialogs/anchor.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/link/dialogs/link.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/link/images/anchor.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/link/images/hidpi/anchor.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/liststyle/dialogs/liststyle.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/magicline/images/hidpi/icon-rtl.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/magicline/images/hidpi/icon.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/magicline/images/icon-rtl.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/magicline/images/icon.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/mediaembed/icons/hidpi/mediaembed.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/mediaembed/icons/mediaembed.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/mediaembed/plugin.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/pagebreak/images/pagebreak.gif
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/pastefromword/filter/default.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/preview/preview.html
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/procurator/images/procurator.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/procurator/plugin.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/scayt/LICENSE.md
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/scayt/README.md
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/scayt/dialogs/options.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/scayt/dialogs/toolbar.css
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/showblocks/images/block_address.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/showblocks/images/block_blockquote.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/showblocks/images/block_div.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/showblocks/images/block_h1.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/showblocks/images/block_h2.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/showblocks/images/block_h3.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/showblocks/images/block_h4.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/showblocks/images/block_h5.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/showblocks/images/block_h6.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/showblocks/images/block_p.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/showblocks/images/block_pre.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/dialogs/smiley.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/angel_smile.gif
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/angel_smile.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/angry_smile.gif
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/angry_smile.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/broken_heart.gif
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/broken_heart.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/confused_smile.gif
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/confused_smile.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/cry_smile.gif
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/cry_smile.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/devil_smile.gif
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/devil_smile.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/embaressed_smile.gif
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/embarrassed_smile.gif
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/embarrassed_smile.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/envelope.gif
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/envelope.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/heart.gif
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/heart.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/kiss.gif
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/kiss.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/lightbulb.gif
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/lightbulb.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/omg_smile.gif
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/omg_smile.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/regular_smile.gif
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/regular_smile.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/sad_smile.gif
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/sad_smile.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/shades_smile.gif
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/shades_smile.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/teeth_smile.gif
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/teeth_smile.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/thumbs_down.gif
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/thumbs_down.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/thumbs_up.gif
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/thumbs_up.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/tongue_smile.gif
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/tongue_smile.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/tounge_smile.gif
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/whatchutalkingabout_smile.gif
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/whatchutalkingabout_smile.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/wink_smile.gif
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/smiley/images/wink_smile.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/_translationstatus.txt
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/af.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/ar.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/bg.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/ca.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/cs.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/cy.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/da.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/de.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/el.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/en-gb.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/en.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/eo.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/es.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/et.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/fa.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/fi.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/fr-ca.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/fr.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/gl.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/he.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/hr.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/hu.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/id.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/it.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/ja.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/km.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/ku.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/lt.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/lv.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/nb.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/nl.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/no.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/pl.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/pt-br.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/pt.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/ru.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/si.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/sk.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/sl.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/sq.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/sv.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/th.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/tr.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/tt.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/ug.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/uk.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/vi.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/zh-cn.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/lang/zh.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/specialchar/dialogs/specialchar.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/table/dialogs/table.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/tabletools/dialogs/tableCell.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/templates/dialogs/templates.css
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/templates/dialogs/templates.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/templates/templates/default.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/templates/templates/images/template1.gif
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/templates/templates/images/template2.gif
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/templates/templates/images/template3.gif
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/images/handle.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/af.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/ar.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/ca.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/cs.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/cy.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/da.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/de.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/el.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/en-gb.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/en.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/eo.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/es.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/fa.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/fi.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/fr.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/gl.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/he.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/hr.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/hu.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/it.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/ja.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/km.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/ko.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/ku.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/nb.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/nl.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/no.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/pl.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/pt-br.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/pt.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/ru.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/sk.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/sl.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/sq.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/sv.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/tr.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/tt.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/uk.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/vi.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/zh-cn.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/lang/zh.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/widget/plugin.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/wsc/LICENSE.md
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/wsc/README.md
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/wsc/dialogs/ciframe.html
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/wsc/dialogs/tmpFrameset.html
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/wsc/dialogs/wsc.css
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/wsc/dialogs/wsc.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/plugins/wsc/dialogs/wsc_ie.js
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/skins/moono/dialog.css
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/skins/moono/dialog_ie.css
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/skins/moono/dialog_ie7.css
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/skins/moono/dialog_ie8.css
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/skins/moono/dialog_iequirks.css
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/skins/moono/editor.css
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/skins/moono/editor_gecko.css
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/skins/moono/editor_ie.css
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/skins/moono/editor_ie7.css
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/skins/moono/editor_ie8.css
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/skins/moono/editor_iequirks.css
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/skins/moono/icons.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/skins/moono/icons_hidpi.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/skins/moono/images/arrow.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/skins/moono/images/close.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/skins/moono/images/hidpi/close.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/skins/moono/images/hidpi/lock-open.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/skins/moono/images/hidpi/lock.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/skins/moono/images/hidpi/refresh.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/skins/moono/images/lock-open.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/skins/moono/images/lock.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/skins/moono/images/refresh.png
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/skins/moono/readme.md
+%%WWWDIR%%/htmlarea/ckeditor/ckeditor/styles.js
+%%WWWDIR%%/htmlarea/ckeditor_s9y_config.js
+%%WWWDIR%%/htmlarea/ckeditor_s9y_plugin.js
+%%WWWDIR%%/htmlarea/composer.json
+%%WWWDIR%%/htmlarea/composer.lock
+%%WWWDIR%%/htmlarea/composer/ClassLoader.php
+%%WWWDIR%%/htmlarea/composer/autoload_classmap.php
+%%WWWDIR%%/htmlarea/composer/autoload_namespaces.php
+%%WWWDIR%%/htmlarea/composer/autoload_real.php
+%%WWWDIR%%/htmlarea/composer/installed.json
+%%WWWDIR%%/htmlarea/s9y_cketoolbar.css
+%%WWWDIR%%/htmlarea/wysiwyg-style.css
+%%WWWDIR%%/include/README_SMARTY_CACHING_PURPOSES.txt
 %%WWWDIR%%/include/admin/category.inc.php
 %%WWWDIR%%/include/admin/comments.inc.php
 %%WWWDIR%%/include/admin/configuration.inc.php
 %%WWWDIR%%/include/admin/entries.inc.php
 %%WWWDIR%%/include/admin/entries_overview.inc.php
-%%WWWDIR%%/include/admin/export.inc.php
 %%WWWDIR%%/include/admin/groups.inc.php
 %%WWWDIR%%/include/admin/images.inc.php
 %%WWWDIR%%/include/admin/import.inc.php
@@ -1341,6 +1095,7 @@
 %%WWWDIR%%/include/admin/importers/wordpress-pg.inc.php
 %%WWWDIR%%/include/admin/importers/wordpress.inc.php
 %%WWWDIR%%/include/admin/installer.inc.php
+%%WWWDIR%%/include/admin/maintenance.inc.php
 %%WWWDIR%%/include/admin/overview.inc.php
 %%WWWDIR%%/include/admin/personal.inc.php
 %%WWWDIR%%/include/admin/plugins.inc.php
@@ -1349,6 +1104,7 @@
 %%WWWDIR%%/include/admin/users.inc.php
 %%WWWDIR%%/include/compat.inc.php
 %%WWWDIR%%/include/db/db.inc.php
+%%WWWDIR%%/include/db/generic.inc.php
 %%WWWDIR%%/include/db/mysql.inc.php
 %%WWWDIR%%/include/db/mysqli.inc.php
 %%WWWDIR%%/include/db/pdo-postgres.inc.php
@@ -1356,6 +1112,7 @@
 %%WWWDIR%%/include/db/postgres.inc.php
 %%WWWDIR%%/include/db/sqlite.inc.php
 %%WWWDIR%%/include/db/sqlite3.inc.php
+%%WWWDIR%%/include/db/sqlite3oo.inc.php
 %%WWWDIR%%/include/db/sqlrelay.inc.php
 %%WWWDIR%%/include/functions.inc.php
 %%WWWDIR%%/include/functions_calendars.inc.php
@@ -1364,7 +1121,6 @@
 %%WWWDIR%%/include/functions_entries.inc.php
 %%WWWDIR%%/include/functions_entries_admin.inc.php
 %%WWWDIR%%/include/functions_images.inc.php
-%%WWWDIR%%/include/functions_images_crop.inc.php
 %%WWWDIR%%/include/functions_installer.inc.php
 %%WWWDIR%%/include/functions_permalinks.inc.php
 %%WWWDIR%%/include/functions_plugins_admin.inc.php
@@ -1376,7 +1132,6 @@
 %%WWWDIR%%/include/lang.inc.php
 %%WWWDIR%%/include/plugin_api.inc.php
 %%WWWDIR%%/include/plugin_api_extension.inc.php
-%%WWWDIR%%/include/plugin_internal.inc.php
 %%WWWDIR%%/include/serendipity_smarty_class.inc.php
 %%WWWDIR%%/include/template_api.inc.php
 %%WWWDIR%%/include/tpl/config_local.inc.php
@@ -1490,34 +1245,6 @@
 %%WWWDIR%%/plugins/serendipity_event_bbcode/lang_tn.inc.php
 %%WWWDIR%%/plugins/serendipity_event_bbcode/lang_zh.inc.php
 %%WWWDIR%%/plugins/serendipity_event_bbcode/serendipity_event_bbcode.php
-%%WWWDIR%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_bg.inc.php
-%%WWWDIR%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_cn.inc.php
-%%WWWDIR%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_cs.inc.php
-%%WWWDIR%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_cz.inc.php
-%%WWWDIR%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_de.inc.php
-%%WWWDIR%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_es.inc.php
-%%WWWDIR%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_fr.inc.php
-%%WWWDIR%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_ja.inc.php
-%%WWWDIR%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_ko.inc.php
-%%WWWDIR%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_pt_PT.inc.php
-%%WWWDIR%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_sk.inc.php
-%%WWWDIR%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_tn.inc.php
-%%WWWDIR%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_zh.inc.php
-%%WWWDIR%%/plugins/serendipity_event_contentrewrite/lang_bg.inc.php
-%%WWWDIR%%/plugins/serendipity_event_contentrewrite/lang_cn.inc.php
-%%WWWDIR%%/plugins/serendipity_event_contentrewrite/lang_cs.inc.php
-%%WWWDIR%%/plugins/serendipity_event_contentrewrite/lang_cz.inc.php
-%%WWWDIR%%/plugins/serendipity_event_contentrewrite/lang_de.inc.php
-%%WWWDIR%%/plugins/serendipity_event_contentrewrite/lang_en.inc.php
-%%WWWDIR%%/plugins/serendipity_event_contentrewrite/lang_es.inc.php
-%%WWWDIR%%/plugins/serendipity_event_contentrewrite/lang_fr.inc.php
-%%WWWDIR%%/plugins/serendipity_event_contentrewrite/lang_ja.inc.php
-%%WWWDIR%%/plugins/serendipity_event_contentrewrite/lang_ko.inc.php
-%%WWWDIR%%/plugins/serendipity_event_contentrewrite/lang_pt_PT.inc.php
-%%WWWDIR%%/plugins/serendipity_event_contentrewrite/lang_sk.inc.php
-%%WWWDIR%%/plugins/serendipity_event_contentrewrite/lang_tn.inc.php
-%%WWWDIR%%/plugins/serendipity_event_contentrewrite/lang_zh.inc.php
-%%WWWDIR%%/plugins/serendipity_event_contentrewrite/serendipity_event_contentrewrite.php
 %%WWWDIR%%/plugins/serendipity_event_creativecommons/ChangeLog
 %%WWWDIR%%/plugins/serendipity_event_creativecommons/UTF-8/documentation_cs.html
 %%WWWDIR%%/plugins/serendipity_event_creativecommons/UTF-8/documentation_cz.html
@@ -1551,6 +1278,7 @@
 %%WWWDIR%%/plugins/serendipity_event_creativecommons/lang_tn.inc.php
 %%WWWDIR%%/plugins/serendipity_event_creativecommons/lang_zh.inc.php
 %%WWWDIR%%/plugins/serendipity_event_creativecommons/serendipity_event_creativecommons.php
+%%WWWDIR%%/plugins/serendipity_event_emoticate/ChangeLog
 %%WWWDIR%%/plugins/serendipity_event_emoticate/UTF-8/lang_bg.inc.php
 %%WWWDIR%%/plugins/serendipity_event_emoticate/UTF-8/lang_cn.inc.php
 %%WWWDIR%%/plugins/serendipity_event_emoticate/UTF-8/lang_cs.inc.php
@@ -1569,6 +1297,7 @@
 %%WWWDIR%%/plugins/serendipity_event_emoticate/UTF-8/lang_sk.inc.php
 %%WWWDIR%%/plugins/serendipity_event_emoticate/UTF-8/lang_tn.inc.php
 %%WWWDIR%%/plugins/serendipity_event_emoticate/UTF-8/lang_zh.inc.php
+%%WWWDIR%%/plugins/serendipity_event_emoticate/emoticons.inc.php.txt
 %%WWWDIR%%/plugins/serendipity_event_emoticate/lang_bg.inc.php
 %%WWWDIR%%/plugins/serendipity_event_emoticate/lang_cn.inc.php
 %%WWWDIR%%/plugins/serendipity_event_emoticate/lang_cs.inc.php
@@ -1621,93 +1350,168 @@
 %%WWWDIR%%/plugins/serendipity_event_entryproperties/lang_tr.inc.php
 %%WWWDIR%%/plugins/serendipity_event_entryproperties/lang_zh.inc.php
 %%WWWDIR%%/plugins/serendipity_event_entryproperties/serendipity_event_entryproperties.php
-%%WWWDIR%%/plugins/serendipity_event_karma/ChangeLog
-%%WWWDIR%%/plugins/serendipity_event_karma/UTF-8/documentation_cs.html
-%%WWWDIR%%/plugins/serendipity_event_karma/UTF-8/documentation_cz.html
-%%WWWDIR%%/plugins/serendipity_event_karma/UTF-8/lang_bg.inc.php
-%%WWWDIR%%/plugins/serendipity_event_karma/UTF-8/lang_cn.inc.php
-%%WWWDIR%%/plugins/serendipity_event_karma/UTF-8/lang_cs.inc.php
-%%WWWDIR%%/plugins/serendipity_event_karma/UTF-8/lang_cz.inc.php
-%%WWWDIR%%/plugins/serendipity_event_karma/UTF-8/lang_de.inc.php
-%%WWWDIR%%/plugins/serendipity_event_karma/UTF-8/lang_es.inc.php
-%%WWWDIR%%/plugins/serendipity_event_karma/UTF-8/lang_fr.inc.php
-%%WWWDIR%%/plugins/serendipity_event_karma/UTF-8/lang_ja.inc.php
-%%WWWDIR%%/plugins/serendipity_event_karma/UTF-8/lang_ko.inc.php
-%%WWWDIR%%/plugins/serendipity_event_karma/UTF-8/lang_pl.inc.php
-%%WWWDIR%%/plugins/serendipity_event_karma/UTF-8/lang_pt_PT.inc.php
-%%WWWDIR%%/plugins/serendipity_event_karma/UTF-8/lang_ru.inc.php
-%%WWWDIR%%/plugins/serendipity_event_karma/UTF-8/lang_sk.inc.php
-%%WWWDIR%%/plugins/serendipity_event_karma/UTF-8/lang_tn.inc.php
-%%WWWDIR%%/plugins/serendipity_event_karma/UTF-8/lang_zh.inc.php
-%%WWWDIR%%/plugins/serendipity_event_karma/documentation_cs.html
-%%WWWDIR%%/plugins/serendipity_event_karma/documentation_cz.html
-%%WWWDIR%%/plugins/serendipity_event_karma/img/ajax-loader.gif
-%%WWWDIR%%/plugins/serendipity_event_karma/img/diamonds-yellow-green-lg.png
-%%WWWDIR%%/plugins/serendipity_event_karma/img/diamonds-yellow-green-md.png
-%%WWWDIR%%/plugins/serendipity_event_karma/img/diamonds-yellow-green-sm.png
-%%WWWDIR%%/plugins/serendipity_event_karma/img/stars-def-green-yellow-lg.png
-%%WWWDIR%%/plugins/serendipity_event_karma/img/stars-def-green-yellow-md.png
-%%WWWDIR%%/plugins/serendipity_event_karma/img/stars-def-green-yellow-sm.png
-%%WWWDIR%%/plugins/serendipity_event_karma/img/stars-def-red-yellow-lg.png
-%%WWWDIR%%/plugins/serendipity_event_karma/img/stars-def-red-yellow-md.png
-%%WWWDIR%%/plugins/serendipity_event_karma/img/stars-def-red-yellow-sm.png
-%%WWWDIR%%/plugins/serendipity_event_karma/img/stars-def-yellow-green-lg.png
-%%WWWDIR%%/plugins/serendipity_event_karma/img/stars-def-yellow-green-md.png
-%%WWWDIR%%/plugins/serendipity_event_karma/img/stars-def-yellow-green-sm.png
-%%WWWDIR%%/plugins/serendipity_event_karma/img/stars-def-yellow-red-lg.png
-%%WWWDIR%%/plugins/serendipity_event_karma/img/stars-def-yellow-red-md.png
-%%WWWDIR%%/plugins/serendipity_event_karma/img/stars-def-yellow-red-sm.png
-%%WWWDIR%%/plugins/serendipity_event_karma/lang_bg.inc.php
-%%WWWDIR%%/plugins/serendipity_event_karma/lang_cn.inc.php
-%%WWWDIR%%/plugins/serendipity_event_karma/lang_cs.inc.php
-%%WWWDIR%%/plugins/serendipity_event_karma/lang_cz.inc.php
-%%WWWDIR%%/plugins/serendipity_event_karma/lang_de.inc.php
-%%WWWDIR%%/plugins/serendipity_event_karma/lang_en.inc.php
-%%WWWDIR%%/plugins/serendipity_event_karma/lang_es.inc.php
-%%WWWDIR%%/plugins/serendipity_event_karma/lang_fa.inc.php
-%%WWWDIR%%/plugins/serendipity_event_karma/lang_fr.inc.php
-%%WWWDIR%%/plugins/serendipity_event_karma/lang_ja.inc.php
-%%WWWDIR%%/plugins/serendipity_event_karma/lang_ko.inc.php
-%%WWWDIR%%/plugins/serendipity_event_karma/lang_pl.inc.php
-%%WWWDIR%%/plugins/serendipity_event_karma/lang_pt_PT.inc.php
-%%WWWDIR%%/plugins/serendipity_event_karma/lang_ru.inc.php
-%%WWWDIR%%/plugins/serendipity_event_karma/lang_sk.inc.php
-%%WWWDIR%%/plugins/serendipity_event_karma/lang_tn.inc.php
-%%WWWDIR%%/plugins/serendipity_event_karma/lang_zh.inc.php
-%%WWWDIR%%/plugins/serendipity_event_karma/serendipity_event_karma.php
-%%WWWDIR%%/plugins/serendipity_event_livesearch/UTF-8/lang_bg.inc.php
-%%WWWDIR%%/plugins/serendipity_event_livesearch/UTF-8/lang_cn.inc.php
-%%WWWDIR%%/plugins/serendipity_event_livesearch/UTF-8/lang_cs.inc.php
-%%WWWDIR%%/plugins/serendipity_event_livesearch/UTF-8/lang_cz.inc.php
-%%WWWDIR%%/plugins/serendipity_event_livesearch/UTF-8/lang_de.inc.php
-%%WWWDIR%%/plugins/serendipity_event_livesearch/UTF-8/lang_es.inc.php
-%%WWWDIR%%/plugins/serendipity_event_livesearch/UTF-8/lang_fr.inc.php
-%%WWWDIR%%/plugins/serendipity_event_livesearch/UTF-8/lang_ja.inc.php
-%%WWWDIR%%/plugins/serendipity_event_livesearch/UTF-8/lang_ko.inc.php
-%%WWWDIR%%/plugins/serendipity_event_livesearch/UTF-8/lang_nl.inc.php
-%%WWWDIR%%/plugins/serendipity_event_livesearch/UTF-8/lang_pl.inc.php
-%%WWWDIR%%/plugins/serendipity_event_livesearch/UTF-8/lang_pt_PT.inc.php
-%%WWWDIR%%/plugins/serendipity_event_livesearch/UTF-8/lang_sk.inc.php
-%%WWWDIR%%/plugins/serendipity_event_livesearch/UTF-8/lang_tn.inc.php
-%%WWWDIR%%/plugins/serendipity_event_livesearch/UTF-8/lang_zh.inc.php
-%%WWWDIR%%/plugins/serendipity_event_livesearch/lang_bg.inc.php
-%%WWWDIR%%/plugins/serendipity_event_livesearch/lang_cn.inc.php
-%%WWWDIR%%/plugins/serendipity_event_livesearch/lang_cs.inc.php
-%%WWWDIR%%/plugins/serendipity_event_livesearch/lang_cz.inc.php
-%%WWWDIR%%/plugins/serendipity_event_livesearch/lang_de.inc.php
-%%WWWDIR%%/plugins/serendipity_event_livesearch/lang_en.inc.php
-%%WWWDIR%%/plugins/serendipity_event_livesearch/lang_es.inc.php
-%%WWWDIR%%/plugins/serendipity_event_livesearch/lang_fr.inc.php
-%%WWWDIR%%/plugins/serendipity_event_livesearch/lang_ja.inc.php
-%%WWWDIR%%/plugins/serendipity_event_livesearch/lang_ko.inc.php
-%%WWWDIR%%/plugins/serendipity_event_livesearch/lang_nl.inc.php
-%%WWWDIR%%/plugins/serendipity_event_livesearch/lang_pl.inc.php
-%%WWWDIR%%/plugins/serendipity_event_livesearch/lang_pt_PT.inc.php
-%%WWWDIR%%/plugins/serendipity_event_livesearch/lang_sk.inc.php
-%%WWWDIR%%/plugins/serendipity_event_livesearch/lang_tn.inc.php
-%%WWWDIR%%/plugins/serendipity_event_livesearch/lang_zh.inc.php
-%%WWWDIR%%/plugins/serendipity_event_livesearch/serendipity_event_livesearch.js
-%%WWWDIR%%/plugins/serendipity_event_livesearch/serendipity_event_livesearch.php
+%%WWWDIR%%/plugins/serendipity_event_gravatar/ChangeLog
+%%WWWDIR%%/plugins/serendipity_event_gravatar/UTF-8/documentation_cs.html
+%%WWWDIR%%/plugins/serendipity_event_gravatar/UTF-8/documentation_cz.html
+%%WWWDIR%%/plugins/serendipity_event_gravatar/UTF-8/lang_cs.inc.php
+%%WWWDIR%%/plugins/serendipity_event_gravatar/UTF-8/lang_cz.inc.php
+%%WWWDIR%%/plugins/serendipity_event_gravatar/UTF-8/lang_de.inc.php
+%%WWWDIR%%/plugins/serendipity_event_gravatar/UTF-8/lang_pl.inc.php
+%%WWWDIR%%/plugins/serendipity_event_gravatar/documentation/documentation.css
+%%WWWDIR%%/plugins/serendipity_event_gravatar/documentation/identicons.jpg
+%%WWWDIR%%/plugins/serendipity_event_gravatar/documentation/monsterid.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/documentation/wavatars.jpg
+%%WWWDIR%%/plugins/serendipity_event_gravatar/documentation_cs.html
+%%WWWDIR%%/plugins/serendipity_event_gravatar/documentation_cz.html
+%%WWWDIR%%/plugins/serendipity_event_gravatar/documentation_de.html
+%%WWWDIR%%/plugins/serendipity_event_gravatar/documentation_en.html
+%%WWWDIR%%/plugins/serendipity_event_gravatar/lang_cs.inc.php
+%%WWWDIR%%/plugins/serendipity_event_gravatar/lang_cz.inc.php
+%%WWWDIR%%/plugins/serendipity_event_gravatar/lang_de.inc.php
+%%WWWDIR%%/plugins/serendipity_event_gravatar/lang_en.inc.php
+%%WWWDIR%%/plugins/serendipity_event_gravatar/lang_pl.inc.php
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/README
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/monsterid.php
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/arms_1.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/arms_2.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/arms_3.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/arms_4.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/arms_5.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/body_1.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/body_10.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/body_11.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/body_12.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/body_13.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/body_14.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/body_15.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/body_2.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/body_3.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/body_4.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/body_5.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/body_6.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/body_7.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/body_8.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/body_9.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/eyes_1.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/eyes_10.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/eyes_11.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/eyes_12.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/eyes_13.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/eyes_14.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/eyes_15.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/eyes_2.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/eyes_3.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/eyes_4.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/eyes_5.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/eyes_6.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/eyes_7.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/eyes_8.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/eyes_9.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/hair_1.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/hair_2.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/hair_3.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/hair_4.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/hair_5.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/image.info
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/legs_1.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/legs_2.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/legs_3.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/legs_4.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/legs_5.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/monsterparts.xcf
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/mouth_1.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/mouth_10.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/mouth_2.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/mouth_3.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/mouth_4.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/mouth_5.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/mouth_6.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/mouth_7.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/mouth_8.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/monsterid/parts/mouth_9.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/serendipity_event_gravatar.php
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/brow1.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/brow2.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/brow3.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/brow4.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/brow5.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/brow6.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/brow7.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/brow8.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/eyes1.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/eyes10.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/eyes11.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/eyes12.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/eyes13.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/eyes2.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/eyes3.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/eyes4.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/eyes5.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/eyes6.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/eyes7.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/eyes8.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/eyes9.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/fade1.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/fade2.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/fade3.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/fade4.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/mask1.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/mask10.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/mask11.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/mask2.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/mask3.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/mask4.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/mask5.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/mask6.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/mask7.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/mask8.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/mask9.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/mouth1.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/mouth10.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/mouth11.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/mouth12.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/mouth13.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/mouth14.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/mouth15.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/mouth16.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/mouth17.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/mouth18.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/mouth19.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/mouth2.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/mouth3.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/mouth4.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/mouth5.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/mouth6.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/mouth7.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/mouth8.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/mouth9.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/pupils1.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/pupils10.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/pupils11.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/pupils2.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/pupils3.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/pupils4.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/pupils5.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/pupils6.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/pupils7.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/pupils8.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/pupils9.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/shine1.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/shine10.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/shine11.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/shine2.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/shine3.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/shine4.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/shine5.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/shine6.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/shine7.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/shine8.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/parts/shine9.png
+%%WWWDIR%%/plugins/serendipity_event_gravatar/wavatars/wavatars.php
+%%WWWDIR%%/plugins/serendipity_event_gravatar/ycon/ChangeLog
+%%WWWDIR%%/plugins/serendipity_event_gravatar/ycon/UTF-8/lang_pl.inc.php
+%%WWWDIR%%/plugins/serendipity_event_gravatar/ycon/ycon.image.php
+%%WWWDIR%%/plugins/serendipity_event_gravatar/ycon/ycon.php
 %%WWWDIR%%/plugins/serendipity_event_mailer/UTF-8/lang_bg.inc.php
 %%WWWDIR%%/plugins/serendipity_event_mailer/UTF-8/lang_cn.inc.php
 %%WWWDIR%%/plugins/serendipity_event_mailer/UTF-8/lang_cs.inc.php
@@ -1806,39 +1610,6 @@
 %%WWWDIR%%/plugins/serendipity_event_s9ymarkup/lang_tn.inc.php
 %%WWWDIR%%/plugins/serendipity_event_s9ymarkup/lang_zh.inc.php
 %%WWWDIR%%/plugins/serendipity_event_s9ymarkup/serendipity_event_s9ymarkup.php
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/ChangeLog
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/UTF-8/documentation_cs.html
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/UTF-8/documentation_cz.html
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/UTF-8/lang_bg.inc.php
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/UTF-8/lang_cn.inc.php
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/UTF-8/lang_cs.inc.php
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/UTF-8/lang_cz.inc.php
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/UTF-8/lang_de.inc.php
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/UTF-8/lang_es.inc.php
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/UTF-8/lang_fr.inc.php
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/UTF-8/lang_ja.inc.php
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/UTF-8/lang_ko.inc.php
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/UTF-8/lang_pl.inc.php
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/UTF-8/lang_sk.inc.php
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/UTF-8/lang_tn.inc.php
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/UTF-8/lang_zh.inc.php
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/documentation_cs.html
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/documentation_cz.html
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/lang_bg.inc.php
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/lang_cn.inc.php
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/lang_cs.inc.php
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/lang_cz.inc.php
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/lang_de.inc.php
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/lang_en.inc.php
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/lang_es.inc.php
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/lang_fr.inc.php
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/lang_ja.inc.php
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/lang_ko.inc.php
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/lang_pl.inc.php
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/lang_sk.inc.php
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/lang_tn.inc.php
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/lang_zh.inc.php
-%%WWWDIR%%/plugins/serendipity_event_searchhighlight/serendipity_event_searchhighlight.php
 %%WWWDIR%%/plugins/serendipity_event_spamblock/36daysago.ttf
 %%WWWDIR%%/plugins/serendipity_event_spamblock/36daysago.txt
 %%WWWDIR%%/plugins/serendipity_event_spamblock/UTF-8/lang_cn.inc.php
@@ -1935,49 +1706,6 @@
 %%WWWDIR%%/plugins/serendipity_event_spartacus/lang_tn.inc.php
 %%WWWDIR%%/plugins/serendipity_event_spartacus/lang_zh.inc.php
 %%WWWDIR%%/plugins/serendipity_event_spartacus/serendipity_event_spartacus.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/ChangeLog
-%%WWWDIR%%/plugins/serendipity_event_statistics/UTF-8/documentation_cs.html
-%%WWWDIR%%/plugins/serendipity_event_statistics/UTF-8/documentation_cz.html
-%%WWWDIR%%/plugins/serendipity_event_statistics/UTF-8/lang_bg.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/UTF-8/lang_cn.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/UTF-8/lang_cs.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/UTF-8/lang_cz.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/UTF-8/lang_de.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/UTF-8/lang_es.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/UTF-8/lang_fr.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/UTF-8/lang_hu.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/UTF-8/lang_ja.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/UTF-8/lang_ko.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/UTF-8/lang_nl.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/UTF-8/lang_pl.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/UTF-8/lang_pt_PT.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/UTF-8/lang_sk.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/UTF-8/lang_tn.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/UTF-8/lang_zh.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/documentation_cs.html
-%%WWWDIR%%/plugins/serendipity_event_statistics/documentation_cz.html
-%%WWWDIR%%/plugins/serendipity_event_statistics/green.png
-%%WWWDIR%%/plugins/serendipity_event_statistics/lang_bg.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/lang_cn.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/lang_cs.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/lang_cz.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/lang_de.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/lang_en.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/lang_es.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/lang_fr.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/lang_hu.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/lang_ja.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/lang_ko.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/lang_nl.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/lang_pl.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/lang_pt_PT.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/lang_sk.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/lang_tn.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/lang_zh.inc.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/red.png
-%%WWWDIR%%/plugins/serendipity_event_statistics/serendipity_event_statistics.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/serendipity_plugin_statistics.php
-%%WWWDIR%%/plugins/serendipity_event_statistics/yellow.png
 %%WWWDIR%%/plugins/serendipity_event_templatechooser/UTF-8/lang_bg.inc.php
 %%WWWDIR%%/plugins/serendipity_event_templatechooser/UTF-8/lang_cn.inc.php
 %%WWWDIR%%/plugins/serendipity_event_templatechooser/UTF-8/lang_cs.inc.php
@@ -2021,6 +1749,7 @@
 %%WWWDIR%%/plugins/serendipity_event_textile/UTF-8/lang_pt_PT.inc.php
 %%WWWDIR%%/plugins/serendipity_event_textile/UTF-8/lang_tn.inc.php
 %%WWWDIR%%/plugins/serendipity_event_textile/UTF-8/lang_zh.inc.php
+%%WWWDIR%%/plugins/serendipity_event_textile/classTextile.php
 %%WWWDIR%%/plugins/serendipity_event_textile/lang_bg.inc.php
 %%WWWDIR%%/plugins/serendipity_event_textile/lang_cn.inc.php
 %%WWWDIR%%/plugins/serendipity_event_textile/lang_cs.inc.php
@@ -2050,95 +1779,8 @@
 %%WWWDIR%%/plugins/serendipity_event_textile/lib3/src/Netcarver/Textile/Parser.php
 %%WWWDIR%%/plugins/serendipity_event_textile/lib3/src/Netcarver/Textile/Tag.php
 %%WWWDIR%%/plugins/serendipity_event_textile/serendipity_event_textile.php
+%%WWWDIR%%/plugins/serendipity_event_textile/textile.php
 %%WWWDIR%%/plugins/serendipity_event_textile/textile_namespace.inc.php
-%%WWWDIR%%/plugins/serendipity_event_textwiki/UTF-8/lang_bg.inc.php
-%%WWWDIR%%/plugins/serendipity_event_textwiki/UTF-8/lang_cn.inc.php
-%%WWWDIR%%/plugins/serendipity_event_textwiki/UTF-8/lang_cs.inc.php
-%%WWWDIR%%/plugins/serendipity_event_textwiki/UTF-8/lang_cz.inc.php
-%%WWWDIR%%/plugins/serendipity_event_textwiki/UTF-8/lang_de.inc.php
-%%WWWDIR%%/plugins/serendipity_event_textwiki/UTF-8/lang_es.inc.php
-%%WWWDIR%%/plugins/serendipity_event_textwiki/UTF-8/lang_fr.inc.php
-%%WWWDIR%%/plugins/serendipity_event_textwiki/UTF-8/lang_ja.inc.php
-%%WWWDIR%%/plugins/serendipity_event_textwiki/UTF-8/lang_ko.inc.php
-%%WWWDIR%%/plugins/serendipity_event_textwiki/UTF-8/lang_pl.inc.php
-%%WWWDIR%%/plugins/serendipity_event_textwiki/UTF-8/lang_pt_PT.inc.php
-%%WWWDIR%%/plugins/serendipity_event_textwiki/UTF-8/lang_tn.inc.php
-%%WWWDIR%%/plugins/serendipity_event_textwiki/UTF-8/lang_zh.inc.php
-%%WWWDIR%%/plugins/serendipity_event_textwiki/lang_bg.inc.php
-%%WWWDIR%%/plugins/serendipity_event_textwiki/lang_cn.inc.php
-%%WWWDIR%%/plugins/serendipity_event_textwiki/lang_cs.inc.php
-%%WWWDIR%%/plugins/serendipity_event_textwiki/lang_cz.inc.php
-%%WWWDIR%%/plugins/serendipity_event_textwiki/lang_de.inc.php
-%%WWWDIR%%/plugins/serendipity_event_textwiki/lang_en.inc.php
-%%WWWDIR%%/plugins/serendipity_event_textwiki/lang_es.inc.php
-%%WWWDIR%%/plugins/serendipity_event_textwiki/lang_fr.inc.php
-%%WWWDIR%%/plugins/serendipity_event_textwiki/lang_ja.inc.php
-%%WWWDIR%%/plugins/serendipity_event_textwiki/lang_ko.inc.php
-%%WWWDIR%%/plugins/serendipity_event_textwiki/lang_pl.inc.php
-%%WWWDIR%%/plugins/serendipity_event_textwiki/lang_pt_PT.inc.php
-%%WWWDIR%%/plugins/serendipity_event_textwiki/lang_tn.inc.php
-%%WWWDIR%%/plugins/serendipity_event_textwiki/lang_zh.inc.php
-%%WWWDIR%%/plugins/serendipity_event_textwiki/serendipity_event_textwiki.php
-%%WWWDIR%%/plugins/serendipity_event_trackexits/UTF-8/lang_cn.inc.php
-%%WWWDIR%%/plugins/serendipity_event_trackexits/UTF-8/lang_cs.inc.php
-%%WWWDIR%%/plugins/serendipity_event_trackexits/UTF-8/lang_cz.inc.php
-%%WWWDIR%%/plugins/serendipity_event_trackexits/UTF-8/lang_de.inc.php
-%%WWWDIR%%/plugins/serendipity_event_trackexits/UTF-8/lang_es.inc.php
-%%WWWDIR%%/plugins/serendipity_event_trackexits/UTF-8/lang_fr.inc.php
-%%WWWDIR%%/plugins/serendipity_event_trackexits/UTF-8/lang_ja.inc.php
-%%WWWDIR%%/plugins/serendipity_event_trackexits/UTF-8/lang_ko.inc.php
-%%WWWDIR%%/plugins/serendipity_event_trackexits/UTF-8/lang_pl.inc.php
-%%WWWDIR%%/plugins/serendipity_event_trackexits/UTF-8/lang_pt_PT.inc.php
-%%WWWDIR%%/plugins/serendipity_event_trackexits/UTF-8/lang_sk.inc.php
-%%WWWDIR%%/plugins/serendipity_event_trackexits/UTF-8/lang_tn.inc.php
-%%WWWDIR%%/plugins/serendipity_event_trackexits/UTF-8/lang_zh.inc.php
-%%WWWDIR%%/plugins/serendipity_event_trackexits/lang_cn.inc.php
-%%WWWDIR%%/plugins/serendipity_event_trackexits/lang_cs.inc.php
-%%WWWDIR%%/plugins/serendipity_event_trackexits/lang_cz.inc.php
-%%WWWDIR%%/plugins/serendipity_event_trackexits/lang_de.inc.php
-%%WWWDIR%%/plugins/serendipity_event_trackexits/lang_en.inc.php
-%%WWWDIR%%/plugins/serendipity_event_trackexits/lang_es.inc.php
-%%WWWDIR%%/plugins/serendipity_event_trackexits/lang_fr.inc.php
-%%WWWDIR%%/plugins/serendipity_event_trackexits/lang_ja.inc.php
-%%WWWDIR%%/plugins/serendipity_event_trackexits/lang_ko.inc.php
-%%WWWDIR%%/plugins/serendipity_event_trackexits/lang_pl.inc.php
-%%WWWDIR%%/plugins/serendipity_event_trackexits/lang_pt_PT.inc.php
-%%WWWDIR%%/plugins/serendipity_event_trackexits/lang_sk.inc.php
-%%WWWDIR%%/plugins/serendipity_event_trackexits/lang_tn.inc.php
-%%WWWDIR%%/plugins/serendipity_event_trackexits/lang_zh.inc.php
-%%WWWDIR%%/plugins/serendipity_event_trackexits/serendipity_event_trackexits.php
-%%WWWDIR%%/plugins/serendipity_event_weblogping/UTF-8/lang_bg.inc.php
-%%WWWDIR%%/plugins/serendipity_event_weblogping/UTF-8/lang_cn.inc.php
-%%WWWDIR%%/plugins/serendipity_event_weblogping/UTF-8/lang_cs.inc.php
-%%WWWDIR%%/plugins/serendipity_event_weblogping/UTF-8/lang_cz.inc.php
-%%WWWDIR%%/plugins/serendipity_event_weblogping/UTF-8/lang_de.inc.php
-%%WWWDIR%%/plugins/serendipity_event_weblogping/UTF-8/lang_es.inc.php
-%%WWWDIR%%/plugins/serendipity_event_weblogping/UTF-8/lang_fr.inc.php
-%%WWWDIR%%/plugins/serendipity_event_weblogping/UTF-8/lang_ja.inc.php
-%%WWWDIR%%/plugins/serendipity_event_weblogping/UTF-8/lang_ko.inc.php
-%%WWWDIR%%/plugins/serendipity_event_weblogping/UTF-8/lang_pl.inc.php
-%%WWWDIR%%/plugins/serendipity_event_weblogping/UTF-8/lang_pt_PT.inc.php
-%%WWWDIR%%/plugins/serendipity_event_weblogping/UTF-8/lang_tn.inc.php
-%%WWWDIR%%/plugins/serendipity_event_weblogping/UTF-8/lang_zh.inc.php
-%%WWWDIR%%/plugins/serendipity_event_weblogping/lang_bg.inc.php
-%%WWWDIR%%/plugins/serendipity_event_weblogping/lang_cn.inc.php
-%%WWWDIR%%/plugins/serendipity_event_weblogping/lang_cs.inc.php
-%%WWWDIR%%/plugins/serendipity_event_weblogping/lang_cz.inc.php
-%%WWWDIR%%/plugins/serendipity_event_weblogping/lang_de.inc.php
-%%WWWDIR%%/plugins/serendipity_event_weblogping/lang_en.inc.php
-%%WWWDIR%%/plugins/serendipity_event_weblogping/lang_es.inc.php
-%%WWWDIR%%/plugins/serendipity_event_weblogping/lang_fr.inc.php
-%%WWWDIR%%/plugins/serendipity_event_weblogping/lang_ja.inc.php
-%%WWWDIR%%/plugins/serendipity_event_weblogping/lang_ko.inc.php
-%%WWWDIR%%/plugins/serendipity_event_weblogping/lang_pl.inc.php
-%%WWWDIR%%/plugins/serendipity_event_weblogping/lang_pt_PT.inc.php
-%%WWWDIR%%/plugins/serendipity_event_weblogping/lang_tn.inc.php
-%%WWWDIR%%/plugins/serendipity_event_weblogping/lang_zh.inc.php
-%%WWWDIR%%/plugins/serendipity_event_weblogping/serendipity_event_weblogping.php
-%%WWWDIR%%/plugins/serendipity_event_weblogping/servicesdb_de.inc.php
-%%WWWDIR%%/plugins/serendipity_event_weblogping/servicesdb_en.inc.php
-%%WWWDIR%%/plugins/serendipity_event_weblogping/servicesdb_ja.inc.php
-%%WWWDIR%%/plugins/serendipity_event_weblogping/servicesdb_tn.inc.php
 %%WWWDIR%%/plugins/serendipity_event_xhtmlcleanup/UTF-8/lang_bg.inc.php
 %%WWWDIR%%/plugins/serendipity_event_xhtmlcleanup/UTF-8/lang_cn.inc.php
 %%WWWDIR%%/plugins/serendipity_event_xhtmlcleanup/UTF-8/lang_cs.inc.php
@@ -2166,6 +1808,10 @@
 %%WWWDIR%%/plugins/serendipity_event_xhtmlcleanup/lang_tn.inc.php
 %%WWWDIR%%/plugins/serendipity_event_xhtmlcleanup/lang_zh.inc.php
 %%WWWDIR%%/plugins/serendipity_event_xhtmlcleanup/serendipity_event_xhtmlcleanup.php
+%%WWWDIR%%/plugins/serendipity_plugin_archives/serendipity_plugin_archives.php
+%%WWWDIR%%/plugins/serendipity_plugin_authors/serendipity_plugin_authors.php
+%%WWWDIR%%/plugins/serendipity_plugin_calendar/serendipity_plugin_calendar.php
+%%WWWDIR%%/plugins/serendipity_plugin_categories/serendipity_plugin_categories.php
 %%WWWDIR%%/plugins/serendipity_plugin_comments/UTF-8/lang_bg.inc.php
 %%WWWDIR%%/plugins/serendipity_plugin_comments/UTF-8/lang_cn.inc.php
 %%WWWDIR%%/plugins/serendipity_plugin_comments/UTF-8/lang_cs.inc.php
@@ -2320,6 +1966,9 @@
 %%WWWDIR%%/plugins/serendipity_plugin_history/lang_tn.inc.php
 %%WWWDIR%%/plugins/serendipity_plugin_history/lang_zh.inc.php
 %%WWWDIR%%/plugins/serendipity_plugin_history/serendipity_plugin_history.php
+%%WWWDIR%%/plugins/serendipity_plugin_html_nugget/serendipity_plugin_html_nugget.php
+%%WWWDIR%%/plugins/serendipity_plugin_plug/serendipity_plugin_plug.php
+%%WWWDIR%%/plugins/serendipity_plugin_quicksearch/serendipity_plugin_quicksearch.php
 %%WWWDIR%%/plugins/serendipity_plugin_recententries/UTF-8/lang_bg.inc.php
 %%WWWDIR%%/plugins/serendipity_plugin_recententries/UTF-8/lang_cn.inc.php
 %%WWWDIR%%/plugins/serendipity_plugin_recententries/UTF-8/lang_cs.inc.php
@@ -2383,32 +2032,8 @@
 %%WWWDIR%%/plugins/serendipity_plugin_remoterss/plugin_remoterss.tpl
 %%WWWDIR%%/plugins/serendipity_plugin_remoterss/plugin_remoterss_nasaiotd.tpl
 %%WWWDIR%%/plugins/serendipity_plugin_remoterss/serendipity_plugin_remoterss.php
-%%WWWDIR%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_cn.inc.php
-%%WWWDIR%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_cs.inc.php
-%%WWWDIR%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_cz.inc.php
-%%WWWDIR%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_de.inc.php
-%%WWWDIR%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_es.inc.php
-%%WWWDIR%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_fr.inc.php
-%%WWWDIR%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_ja.inc.php
-%%WWWDIR%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_ko.inc.php
-%%WWWDIR%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_pl.inc.php
-%%WWWDIR%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_pt_PT.inc.php
-%%WWWDIR%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_tn.inc.php
-%%WWWDIR%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_zh.inc.php
-%%WWWDIR%%/plugins/serendipity_plugin_shoutbox/lang_cn.inc.php
-%%WWWDIR%%/plugins/serendipity_plugin_shoutbox/lang_cs.inc.php
-%%WWWDIR%%/plugins/serendipity_plugin_shoutbox/lang_cz.inc.php
-%%WWWDIR%%/plugins/serendipity_plugin_shoutbox/lang_de.inc.php
-%%WWWDIR%%/plugins/serendipity_plugin_shoutbox/lang_en.inc.php
-%%WWWDIR%%/plugins/serendipity_plugin_shoutbox/lang_es.inc.php
-%%WWWDIR%%/plugins/serendipity_plugin_shoutbox/lang_fr.inc.php
-%%WWWDIR%%/plugins/serendipity_plugin_shoutbox/lang_ja.inc.php
-%%WWWDIR%%/plugins/serendipity_plugin_shoutbox/lang_ko.inc.php
-%%WWWDIR%%/plugins/serendipity_plugin_shoutbox/lang_pl.inc.php
-%%WWWDIR%%/plugins/serendipity_plugin_shoutbox/lang_pt_PT.inc.php
-%%WWWDIR%%/plugins/serendipity_plugin_shoutbox/lang_tn.inc.php
-%%WWWDIR%%/plugins/serendipity_plugin_shoutbox/lang_zh.inc.php
-%%WWWDIR%%/plugins/serendipity_plugin_shoutbox/serendipity_plugin_shoutbox.php
+%%WWWDIR%%/plugins/serendipity_plugin_superuser/serendipity_plugin_superuser.php
+%%WWWDIR%%/plugins/serendipity_plugin_syndication/serendipity_plugin_syndication.php
 %%WWWDIR%%/plugins/serendipity_plugin_templatedropdown/UTF-8/lang_bg.inc.php
 %%WWWDIR%%/plugins/serendipity_plugin_templatedropdown/UTF-8/lang_cn.inc.php
 %%WWWDIR%%/plugins/serendipity_plugin_templatedropdown/UTF-8/lang_cs.inc.php
@@ -2442,8 +2067,6 @@
 %%WWWDIR%%/serendipity_admin.php
 %%WWWDIR%%/serendipity_admin_image_selector.php
 %%WWWDIR%%/serendipity_config.inc.php
-%%WWWDIR%%/serendipity_define.js.php
-%%WWWDIR%%/serendipity_editor.js
 %%WWWDIR%%/serendipity_xmlrpc.php
 %%WWWDIR%%/sql/db.sql
 %%WWWDIR%%/sql/db_update_0.2_0.3_mysql.sql
@@ -2528,6 +2151,100 @@
 %%WWWDIR%%/templates/2k11/UTF-8/lang_cz.inc.php
 %%WWWDIR%%/templates/2k11/UTF-8/lang_de.inc.php
 %%WWWDIR%%/templates/2k11/UTF-8/lang_en.inc.php
+%%WWWDIR%%/templates/2k11/admin/category.inc.tpl
+%%WWWDIR%%/templates/2k11/admin/comments.inc.tpl
+%%WWWDIR%%/templates/2k11/admin/config_template.tpl
+%%WWWDIR%%/templates/2k11/admin/configuration.inc.tpl
+%%WWWDIR%%/templates/2k11/admin/entries.inc.tpl
+%%WWWDIR%%/templates/2k11/admin/entries.tpl
+%%WWWDIR%%/templates/2k11/admin/entries_overview.inc.tpl
+%%WWWDIR%%/templates/2k11/admin/font/fontello.eot
+%%WWWDIR%%/templates/2k11/admin/font/fontello.svg
+%%WWWDIR%%/templates/2k11/admin/font/fontello.ttf
+%%WWWDIR%%/templates/2k11/admin/font/fontello.woff
+%%WWWDIR%%/templates/2k11/admin/groups.inc.tpl
+%%WWWDIR%%/templates/2k11/admin/guess_input.tpl
+%%WWWDIR%%/templates/2k11/admin/images.inc.tpl
+%%WWWDIR%%/templates/2k11/admin/img/accept.png
+%%WWWDIR%%/templates/2k11/admin/img/admin_msg_error.png
+%%WWWDIR%%/templates/2k11/admin/img/admin_msg_note.png
+%%WWWDIR%%/templates/2k11/admin/img/admin_msg_success.png
+%%WWWDIR%%/templates/2k11/admin/img/background.jpg
+%%WWWDIR%%/templates/2k11/admin/img/banner_background.png
+%%WWWDIR%%/templates/2k11/admin/img/big_delete.png
+%%WWWDIR%%/templates/2k11/admin/img/big_rename.png
+%%WWWDIR%%/templates/2k11/admin/img/big_resize.png
+%%WWWDIR%%/templates/2k11/admin/img/big_rotate_ccw.png
+%%WWWDIR%%/templates/2k11/admin/img/big_rotate_cw.png
+%%WWWDIR%%/templates/2k11/admin/img/big_zoom.png
+%%WWWDIR%%/templates/2k11/admin/img/button_background.png
+%%WWWDIR%%/templates/2k11/admin/img/clock.png
+%%WWWDIR%%/templates/2k11/admin/img/clock_future.png
+%%WWWDIR%%/templates/2k11/admin/img/configure.png
+%%WWWDIR%%/templates/2k11/admin/img/delete.png
+%%WWWDIR%%/templates/2k11/admin/img/downarrow.png
+%%WWWDIR%%/templates/2k11/admin/img/edit.png
+%%WWWDIR%%/templates/2k11/admin/img/folder.png
+%%WWWDIR%%/templates/2k11/admin/img/grablet.gif
+%%WWWDIR%%/templates/2k11/admin/img/grablet_over.gif
+%%WWWDIR%%/templates/2k11/admin/img/imgedit_area.gif
+%%WWWDIR%%/templates/2k11/admin/img/imgedit_orientation.gif
+%%WWWDIR%%/templates/2k11/admin/img/imgedit_slider.gif
+%%WWWDIR%%/templates/2k11/admin/img/imgedit_varea.gif
+%%WWWDIR%%/templates/2k11/admin/img/infobar_background.png
+%%WWWDIR%%/templates/2k11/admin/img/install.png
+%%WWWDIR%%/templates/2k11/admin/img/install_now.png
+%%WWWDIR%%/templates/2k11/admin/img/install_now_spartacus.png
+%%WWWDIR%%/templates/2k11/admin/img/install_template.png
+%%WWWDIR%%/templates/2k11/admin/img/menu_background.png
+%%WWWDIR%%/templates/2k11/admin/img/menuheader_background.png
+%%WWWDIR%%/templates/2k11/admin/img/menuitem.png
+%%WWWDIR%%/templates/2k11/admin/img/mime_unknown.png
+%%WWWDIR%%/templates/2k11/admin/img/next.png
+%%WWWDIR%%/templates/2k11/admin/img/previous.png
+%%WWWDIR%%/templates/2k11/admin/img/rotate.png
+%%WWWDIR%%/templates/2k11/admin/img/thumbnail.png
+%%WWWDIR%%/templates/2k11/admin/img/unconfigure.png
+%%WWWDIR%%/templates/2k11/admin/img/uparrow.png
+%%WWWDIR%%/templates/2k11/admin/img/upgrade_now.png
+%%WWWDIR%%/templates/2k11/admin/img/user_admin.png
+%%WWWDIR%%/templates/2k11/admin/img/user_chief.png
+%%WWWDIR%%/templates/2k11/admin/img/user_editor.png
+%%WWWDIR%%/templates/2k11/admin/img/zoom.png
+%%WWWDIR%%/templates/2k11/admin/import.inc.tpl
+%%WWWDIR%%/templates/2k11/admin/index.tpl
+%%WWWDIR%%/templates/2k11/admin/installer.inc.tpl
+%%WWWDIR%%/templates/2k11/admin/js/accessifyhtml5.js
+%%WWWDIR%%/templates/2k11/admin/js/canvas-toBlob.js
+%%WWWDIR%%/templates/2k11/admin/js/gruntipity.php
+%%WWWDIR%%/templates/2k11/admin/js/jquery.autoscroll.js
+%%WWWDIR%%/templates/2k11/admin/js/jquery.cookie.js
+%%WWWDIR%%/templates/2k11/admin/js/jquery.details.js
+%%WWWDIR%%/templates/2k11/admin/js/jquery.magnific-popup.js
+%%WWWDIR%%/templates/2k11/admin/js/jquery.sortable.js
+%%WWWDIR%%/templates/2k11/admin/js/jquery.syncheight.js
+%%WWWDIR%%/templates/2k11/admin/js/jquery.tabs.js
+%%WWWDIR%%/templates/2k11/admin/js/modernizr-2.8.3.min.js
+%%WWWDIR%%/templates/2k11/admin/js/plugins.js
+%%WWWDIR%%/templates/2k11/admin/maintenance.inc.tpl
+%%WWWDIR%%/templates/2k11/admin/media_choose.tpl
+%%WWWDIR%%/templates/2k11/admin/media_items.tpl
+%%WWWDIR%%/templates/2k11/admin/media_pane.tpl
+%%WWWDIR%%/templates/2k11/admin/media_properties.tpl
+%%WWWDIR%%/templates/2k11/admin/media_upload.tpl
+%%WWWDIR%%/templates/2k11/admin/oldie.css
+%%WWWDIR%%/templates/2k11/admin/overview.inc.tpl
+%%WWWDIR%%/templates/2k11/admin/personal.inc.tpl
+%%WWWDIR%%/templates/2k11/admin/plugin_config.tpl
+%%WWWDIR%%/templates/2k11/admin/plugin_config_item.tpl
+%%WWWDIR%%/templates/2k11/admin/plugins.inc.tpl
+%%WWWDIR%%/templates/2k11/admin/serendipity_editor.js.tpl
+%%WWWDIR%%/templates/2k11/admin/show_plugins.fnc.tpl
+%%WWWDIR%%/templates/2k11/admin/style.css
+%%WWWDIR%%/templates/2k11/admin/templates.inc.tpl
+%%WWWDIR%%/templates/2k11/admin/upgrader.inc.tpl
+%%WWWDIR%%/templates/2k11/admin/users.inc.tpl
+%%WWWDIR%%/templates/2k11/admin/wysiwyg_init.tpl
 %%WWWDIR%%/templates/2k11/commentform.tpl
 %%WWWDIR%%/templates/2k11/comments.tpl
 %%WWWDIR%%/templates/2k11/comments_by_author.tpl
@@ -2538,6 +2255,7 @@
 %%WWWDIR%%/templates/2k11/entries_summary.tpl
 %%WWWDIR%%/templates/2k11/img/gradient-dblue.png
 %%WWWDIR%%/templates/2k11/img/gradient-lblue.png
+%%WWWDIR%%/templates/2k11/img/subtome.png
 %%WWWDIR%%/templates/2k11/img/xml.gif
 %%WWWDIR%%/templates/2k11/index.tpl
 %%WWWDIR%%/templates/2k11/info.txt
@@ -2547,6 +2265,7 @@
 %%WWWDIR%%/templates/2k11/lang_cz.inc.php
 %%WWWDIR%%/templates/2k11/lang_de.inc.php
 %%WWWDIR%%/templates/2k11/lang_en.inc.php
+%%WWWDIR%%/templates/2k11/media_showitem.tpl
 %%WWWDIR%%/templates/2k11/plugin_calendar.tpl
 %%WWWDIR%%/templates/2k11/plugin_categories.tpl
 %%WWWDIR%%/templates/2k11/plugin_commentsearch_searchresults.tpl
@@ -2557,12 +2276,12 @@
 %%WWWDIR%%/templates/2k11/plugin_staticpage_searchresults.tpl
 %%WWWDIR%%/templates/2k11/plugin_staticpage_sidebar.tpl
 %%WWWDIR%%/templates/2k11/preview.png
+%%WWWDIR%%/templates/2k11/preview_backend_fullsize.jpg
 %%WWWDIR%%/templates/2k11/preview_fullsize.jpg
 %%WWWDIR%%/templates/2k11/preview_iframe.tpl
 %%WWWDIR%%/templates/2k11/sidebar.tpl
 %%WWWDIR%%/templates/2k11/style.css
 %%WWWDIR%%/templates/2k11/trackbacks.tpl
-%%WWWDIR%%/templates/HOWTO
 %%WWWDIR%%/templates/blue/htmlarea.css
 %%WWWDIR%%/templates/blue/info.txt
 %%WWWDIR%%/templates/blue/preview.png
@@ -2734,33 +2453,6 @@
 %%WWWDIR%%/templates/contest/preview.png
 %%WWWDIR%%/templates/contest/preview_fullsize.jpg
 %%WWWDIR%%/templates/contest/style.css
-%%WWWDIR%%/templates/default-php/IMPORTANT-TODO
-%%WWWDIR%%/templates/default-php/UTF-8/documentation_cs.html
-%%WWWDIR%%/templates/default-php/UTF-8/documentation_cz.html
-%%WWWDIR%%/templates/default-php/commentform.tpl
-%%WWWDIR%%/templates/default-php/commentpopup.tpl
-%%WWWDIR%%/templates/default-php/comments.tpl
-%%WWWDIR%%/templates/default-php/content.tpl
-%%WWWDIR%%/templates/default-php/documentation_cs.html
-%%WWWDIR%%/templates/default-php/documentation_cz.html
-%%WWWDIR%%/templates/default-php/entries.tpl
-%%WWWDIR%%/templates/default-php/entries_archives.tpl
-%%WWWDIR%%/templates/default-php/entries_summary.tpl
-%%WWWDIR%%/templates/default-php/feed_0.91.tpl
-%%WWWDIR%%/templates/default-php/feed_1.0.tpl
-%%WWWDIR%%/templates/default-php/feed_2.0.tpl
-%%WWWDIR%%/templates/default-php/feed_atom0.3.tpl
-%%WWWDIR%%/templates/default-php/feed_atom1.0.tpl
-%%WWWDIR%%/templates/default-php/feed_opml1.0.tpl
-%%WWWDIR%%/templates/default-php/index.tpl
-%%WWWDIR%%/templates/default-php/info.txt
-%%WWWDIR%%/templates/default-php/plugin_calendar.tpl
-%%WWWDIR%%/templates/default-php/plugin_categories.tpl
-%%WWWDIR%%/templates/default-php/preview.png
-%%WWWDIR%%/templates/default-php/preview_iframe.tpl
-%%WWWDIR%%/templates/default-php/sidebar.tpl
-%%WWWDIR%%/templates/default-php/template.inc.php
-%%WWWDIR%%/templates/default-php/trackbacks.tpl
 %%WWWDIR%%/templates/default-rtl/admin/img/background.jpg
 %%WWWDIR%%/templates/default-rtl/admin/img/banner_background.png
 %%WWWDIR%%/templates/default-rtl/admin/img/button_background.png
@@ -2779,15 +2471,14 @@
 %%WWWDIR%%/templates/default-rtl/preview.png
 %%WWWDIR%%/templates/default-rtl/preview_fullsize.jpg
 %%WWWDIR%%/templates/default-rtl/style.css
-%%WWWDIR%%/templates/default-xml/index.tpl
-%%WWWDIR%%/templates/default-xml/info.txt
-%%WWWDIR%%/templates/default-xml/preview.png
-%%WWWDIR%%/templates/default-xml/template.inc.php
 %%WWWDIR%%/templates/default/YahooUI/treeview/YAHOO.js
 %%WWWDIR%%/templates/default/YahooUI/treeview/license.txt
 %%WWWDIR%%/templates/default/YahooUI/treeview/treeview.js
-%%WWWDIR%%/templates/default/admin/category_selector.js
+%%WWWDIR%%/templates/default/admin/README.txt
+%%WWWDIR%%/templates/default/admin/admin_scripts.js
 %%WWWDIR%%/templates/default/admin/entries.tpl
+%%WWWDIR%%/templates/default/admin/header_spawn.js
+%%WWWDIR%%/templates/default/admin/image_selector.js
 %%WWWDIR%%/templates/default/admin/img/accept.png
 %%WWWDIR%%/templates/default/admin/img/admin_msg_error.png
 %%WWWDIR%%/templates/default/admin/img/admin_msg_note.png
@@ -2842,9 +2533,9 @@
 %%WWWDIR%%/templates/default/admin/media_items.tpl
 %%WWWDIR%%/templates/default/admin/media_pane.tpl
 %%WWWDIR%%/templates/default/admin/media_properties.tpl
-%%WWWDIR%%/templates/default/admin/media_showitem.tpl
 %%WWWDIR%%/templates/default/admin/media_upload.tpl
 %%WWWDIR%%/templates/default/admin/pluginmanager.css
+%%WWWDIR%%/templates/default/admin/serendipity_editor.js
 %%WWWDIR%%/templates/default/admin/style.css
 %%WWWDIR%%/templates/default/atom.css
 %%WWWDIR%%/templates/default/commentform.tpl
@@ -2896,6 +2587,7 @@
 %%WWWDIR%%/templates/default/imgedit.js
 %%WWWDIR%%/templates/default/index.tpl
 %%WWWDIR%%/templates/default/info.txt
+%%WWWDIR%%/templates/default/media_showitem.tpl
 %%WWWDIR%%/templates/default/plugin_calendar.tpl
 %%WWWDIR%%/templates/default/plugin_categories.tpl
 %%WWWDIR%%/templates/default/preview.png
@@ -2952,70 +2644,43 @@
 %%WWWDIR%%/templates/kubrick/sidebar.tpl
 %%WWWDIR%%/templates/kubrick/style.css
 %%WWWDIR%%/templates/kubrick/trackbacks.tpl
-%%WWWDIR%%/templates/moz-modern/htmlarea.css
-%%WWWDIR%%/templates/moz-modern/img/back.png
-%%WWWDIR%%/templates/moz-modern/img/background.png
-%%WWWDIR%%/templates/moz-modern/img/background2.png
-%%WWWDIR%%/templates/moz-modern/img/forward.png
-%%WWWDIR%%/templates/moz-modern/index.tpl
-%%WWWDIR%%/templates/moz-modern/info.txt
-%%WWWDIR%%/templates/moz-modern/preview.png
-%%WWWDIR%%/templates/moz-modern/preview_fullsize.jpg
-%%WWWDIR%%/templates/moz-modern/style.css
-%%WWWDIR%%/templates/mt-clean/info.txt
-%%WWWDIR%%/templates/mt-clean/preview.png
-%%WWWDIR%%/templates/mt-clean/preview_fullsize.jpg
-%%WWWDIR%%/templates/mt-clean/style.css
-%%WWWDIR%%/templates/mt-georgiablue/info.txt
-%%WWWDIR%%/templates/mt-georgiablue/preview.png
-%%WWWDIR%%/templates/mt-georgiablue/preview_fullsize.jpg
-%%WWWDIR%%/templates/mt-georgiablue/style.css
-%%WWWDIR%%/templates/mt-gettysburg/info.txt
-%%WWWDIR%%/templates/mt-gettysburg/preview.png
-%%WWWDIR%%/templates/mt-gettysburg/preview_fullsize.jpg
-%%WWWDIR%%/templates/mt-gettysburg/style.css
-%%WWWDIR%%/templates/mt-plainjane/info.txt
-%%WWWDIR%%/templates/mt-plainjane/preview.png
-%%WWWDIR%%/templates/mt-plainjane/preview_fullsize.jpg
-%%WWWDIR%%/templates/mt-plainjane/style.css
-%%WWWDIR%%/templates/mt-rusty/info.txt
-%%WWWDIR%%/templates/mt-rusty/preview.png
-%%WWWDIR%%/templates/mt-rusty/preview_fullsize.jpg
-%%WWWDIR%%/templates/mt-rusty/style.css
-%%WWWDIR%%/templates/mt-trendy/htmlarea.css
-%%WWWDIR%%/templates/mt-trendy/img/back.png
-%%WWWDIR%%/templates/mt-trendy/img/forward.png
-%%WWWDIR%%/templates/mt-trendy/info.txt
-%%WWWDIR%%/templates/mt-trendy/preview.png
-%%WWWDIR%%/templates/mt-trendy/preview_fullsize.jpg
-%%WWWDIR%%/templates/mt-trendy/style.css
-%%WWWDIR%%/templates/mt3-chalkboard/info.txt
-%%WWWDIR%%/templates/mt3-chalkboard/preview.png
-%%WWWDIR%%/templates/mt3-chalkboard/preview_fullsize.jpg
-%%WWWDIR%%/templates/mt3-chalkboard/style.css
-%%WWWDIR%%/templates/mt3-gettysburg/info.txt
-%%WWWDIR%%/templates/mt3-gettysburg/preview.png
-%%WWWDIR%%/templates/mt3-gettysburg/preview_fullsize.jpg
-%%WWWDIR%%/templates/mt3-gettysburg/style.css
-%%WWWDIR%%/templates/mt3-independence/info.txt
-%%WWWDIR%%/templates/mt3-independence/preview.png
-%%WWWDIR%%/templates/mt3-independence/preview_fullsize.jpg
-%%WWWDIR%%/templates/mt3-independence/style.css
-%%WWWDIR%%/templates/mt3-squash/info.txt
-%%WWWDIR%%/templates/mt3-squash/preview.png
-%%WWWDIR%%/templates/mt3-squash/preview_fullsize.jpg
-%%WWWDIR%%/templates/mt3-squash/style.css
-%%WWWDIR%%/templates/newspaper/htmlarea.css
-%%WWWDIR%%/templates/newspaper/img/shadowb.png
-%%WWWDIR%%/templates/newspaper/img/shadowbl.png
-%%WWWDIR%%/templates/newspaper/img/shadowbr.png
-%%WWWDIR%%/templates/newspaper/img/shadowr.png
-%%WWWDIR%%/templates/newspaper/img/shadowt.png
-%%WWWDIR%%/templates/newspaper/info.txt
-%%WWWDIR%%/templates/newspaper/layout.php
-%%WWWDIR%%/templates/newspaper/preview.png
-%%WWWDIR%%/templates/newspaper/preview_fullsize.jpg
-%%WWWDIR%%/templates/newspaper/style.css
+%%WWWDIR%%/templates/next/UTF-8/lang_de.inc.php
+%%WWWDIR%%/templates/next/UTF-8/lang_en.inc.php
+%%WWWDIR%%/templates/next/commentform.tpl
+%%WWWDIR%%/templates/next/comments.tpl
+%%WWWDIR%%/templates/next/comments_by_author.tpl
+%%WWWDIR%%/templates/next/config.inc.php
+%%WWWDIR%%/templates/next/content.tpl
+%%WWWDIR%%/templates/next/entries.tpl
+%%WWWDIR%%/templates/next/entries_archives.tpl
+%%WWWDIR%%/templates/next/entries_summary.tpl
+%%WWWDIR%%/templates/next/font/fontello.eot
+%%WWWDIR%%/templates/next/font/fontello.svg
+%%WWWDIR%%/templates/next/font/fontello.ttf
+%%WWWDIR%%/templates/next/font/fontello.woff
+%%WWWDIR%%/templates/next/img/xml.gif
+%%WWWDIR%%/templates/next/index.tpl
+%%WWWDIR%%/templates/next/info.txt
+%%WWWDIR%%/templates/next/lang_de.inc.php
+%%WWWDIR%%/templates/next/lang_en.inc.php
+%%WWWDIR%%/templates/next/oldie.css
+%%WWWDIR%%/templates/next/plugin_calendar.tpl
+%%WWWDIR%%/templates/next/plugin_categories.tpl
+%%WWWDIR%%/templates/next/plugin_commentsearch_searchresults.tpl
+%%WWWDIR%%/templates/next/plugin_contactform.tpl
+%%WWWDIR%%/templates/next/plugin_findmore.tpl
+%%WWWDIR%%/templates/next/plugin_staticblock.tpl
+%%WWWDIR%%/templates/next/plugin_staticpage.tpl
+%%WWWDIR%%/templates/next/plugin_staticpage_searchresults.tpl
+%%WWWDIR%%/templates/next/plugin_staticpage_sidebar.tpl
+%%WWWDIR%%/templates/next/preview.png
+%%WWWDIR%%/templates/next/preview_fullsize.jpg
+%%WWWDIR%%/templates/next/preview_iframe.tpl
+%%WWWDIR%%/templates/next/scripts/master.js
+%%WWWDIR%%/templates/next/scripts/modernizr/modernizr.js
+%%WWWDIR%%/templates/next/sidebar.tpl
+%%WWWDIR%%/templates/next/style.css
+%%WWWDIR%%/templates/next/trackbacks.tpl
 %%WWWDIR%%/templates/wp/atom.css
 %%WWWDIR%%/templates/wp/commentform.tpl
 %%WWWDIR%%/templates/wp/comments.tpl
@@ -3026,372 +2691,14 @@
 %%WWWDIR%%/templates/wp/index.tpl
 %%WWWDIR%%/templates/wp/info.txt
 %%WWWDIR%%/templates/wp/plugin_calendar.tpl
+%%WWWDIR%%/templates/wp/preview.png
 %%WWWDIR%%/templates/wp/sidebar.tpl
 %%WWWDIR%%/templates/wp/trackbacks.tpl
 %%WWWDIR%%/templates/wp/wp-layout.css
 %%WWWDIR%%/templates_c/.empty
 %%WWWDIR%%/uploads/.empty
 %%WWWDIR%%/wfwcomment.php
-@dir %%WWWDIR%%/bundled-libs/Cache/Lite
-@dir %%WWWDIR%%/bundled-libs/Cache
-@dir %%WWWDIR%%/bundled-libs/HTTP/Request
-@dir %%WWWDIR%%/bundled-libs/HTTP
-@dir %%WWWDIR%%/bundled-libs/Net/DNSBL
-@dir %%WWWDIR%%/bundled-libs/Net
-@dir %%WWWDIR%%/bundled-libs/Onyx
-@dir %%WWWDIR%%/bundled-libs/Smarty/libs/plugins
-@dir %%WWWDIR%%/bundled-libs/Smarty/libs/sysplugins
-@dir %%WWWDIR%%/bundled-libs/Smarty/libs
-@dir %%WWWDIR%%/bundled-libs/Smarty
-@dir %%WWWDIR%%/bundled-libs/Text/Wiki/Parse/Default
-@dir %%WWWDIR%%/bundled-libs/Text/Wiki/Parse
-@dir %%WWWDIR%%/bundled-libs/Text/Wiki/Render/Latex
-@dir %%WWWDIR%%/bundled-libs/Text/Wiki/Render/Plain
-@dir %%WWWDIR%%/bundled-libs/Text/Wiki/Render/Xhtml
-@dir %%WWWDIR%%/bundled-libs/Text/Wiki/Render
-@dir %%WWWDIR%%/bundled-libs/Text/Wiki/Rule
-@dir %%WWWDIR%%/bundled-libs/Text/Wiki
-@dir %%WWWDIR%%/bundled-libs/Text
-@dir %%WWWDIR%%/bundled-libs/XML/RPC
-@dir %%WWWDIR%%/bundled-libs/XML
-@dir %%WWWDIR%%/bundled-libs/docs
-@dir %%WWWDIR%%/bundled-libs/simplepie
-@dir %%WWWDIR%%/bundled-libs/tests
-@dir %%WWWDIR%%/bundled-libs
-@dir %%WWWDIR%%/deployment/archives
-@dir %%WWWDIR%%/deployment/templates_c
-@dir %%WWWDIR%%/deployment/uploads
-@dir %%WWWDIR%%/deployment
-@dir %%WWWDIR%%/docs
-@dir %%WWWDIR%%/htmlarea/contrib
-@dir %%WWWDIR%%/htmlarea/examples/files
-@dir %%WWWDIR%%/htmlarea/examples
-@dir %%WWWDIR%%/htmlarea/images/de
-@dir %%WWWDIR%%/htmlarea/images/fr
-@dir %%WWWDIR%%/htmlarea/images
-@dir %%WWWDIR%%/htmlarea/lang
-@dir %%WWWDIR%%/htmlarea/modules/ColorPicker/lang
-@dir %%WWWDIR%%/htmlarea/modules/ColorPicker
-@dir %%WWWDIR%%/htmlarea/modules/CreateLink/lang
-@dir %%WWWDIR%%/htmlarea/modules/CreateLink
-@dir %%WWWDIR%%/htmlarea/modules/Dialogs
-@dir %%WWWDIR%%/htmlarea/modules/FullScreen/lang
-@dir %%WWWDIR%%/htmlarea/modules/FullScreen
-@dir %%WWWDIR%%/htmlarea/modules/Gecko
-@dir %%WWWDIR%%/htmlarea/modules/GetHtml/lang
-@dir %%WWWDIR%%/htmlarea/modules/GetHtml
-@dir %%WWWDIR%%/htmlarea/modules/InsertImage
-@dir %%WWWDIR%%/htmlarea/modules/InsertTable
-@dir %%WWWDIR%%/htmlarea/modules/InternetExplorer
-@dir %%WWWDIR%%/htmlarea/modules/Opera
-@dir %%WWWDIR%%/htmlarea/modules/WebKit
-@dir %%WWWDIR%%/htmlarea/modules
-@dir %%WWWDIR%%/htmlarea/plugins/Abbreviation/abbr
-@dir %%WWWDIR%%/htmlarea/plugins/Abbreviation/img
-@dir %%WWWDIR%%/htmlarea/plugins/Abbreviation/lang
-@dir %%WWWDIR%%/htmlarea/plugins/Abbreviation/popups
-@dir %%WWWDIR%%/htmlarea/plugins/Abbreviation
-@dir %%WWWDIR%%/htmlarea/plugins/BackgroundImage/backgrounds/thumbnails
-@dir %%WWWDIR%%/htmlarea/plugins/BackgroundImage/backgrounds
-@dir %%WWWDIR%%/htmlarea/plugins/BackgroundImage/img
-@dir %%WWWDIR%%/htmlarea/plugins/BackgroundImage/lang
-@dir %%WWWDIR%%/htmlarea/plugins/BackgroundImage/popups
-@dir %%WWWDIR%%/htmlarea/plugins/BackgroundImage
-@dir %%WWWDIR%%/htmlarea/plugins/CSS/lang
-@dir %%WWWDIR%%/htmlarea/plugins/CSS
-@dir %%WWWDIR%%/htmlarea/plugins/CharCounter/lang
-@dir %%WWWDIR%%/htmlarea/plugins/CharCounter
-@dir %%WWWDIR%%/htmlarea/plugins/CharacterMap/img
-@dir %%WWWDIR%%/htmlarea/plugins/CharacterMap/lang
-@dir %%WWWDIR%%/htmlarea/plugins/CharacterMap/popups
-@dir %%WWWDIR%%/htmlarea/plugins/CharacterMap
-@dir %%WWWDIR%%/htmlarea/plugins/ClientsideSpellcheck/img
-@dir %%WWWDIR%%/htmlarea/plugins/ClientsideSpellcheck/lang
-@dir %%WWWDIR%%/htmlarea/plugins/ClientsideSpellcheck
-@dir %%WWWDIR%%/htmlarea/plugins/ContextMenu/lang
-@dir %%WWWDIR%%/htmlarea/plugins/ContextMenu
-@dir %%WWWDIR%%/htmlarea/plugins/DefinitionList/img
-@dir %%WWWDIR%%/htmlarea/plugins/DefinitionList/lang
-@dir %%WWWDIR%%/htmlarea/plugins/DefinitionList
-@dir %%WWWDIR%%/htmlarea/plugins/DoubleClick
-@dir %%WWWDIR%%/htmlarea/plugins/DynamicCSS/lang
-@dir %%WWWDIR%%/htmlarea/plugins/DynamicCSS
-@dir %%WWWDIR%%/htmlarea/plugins/EditTag/img
-@dir %%WWWDIR%%/htmlarea/plugins/EditTag/lang
-@dir %%WWWDIR%%/htmlarea/plugins/EditTag/popups
-@dir %%WWWDIR%%/htmlarea/plugins/EditTag
-@dir %%WWWDIR%%/htmlarea/plugins/Equation/img
-@dir %%WWWDIR%%/htmlarea/plugins/Equation/lang
-@dir %%WWWDIR%%/htmlarea/plugins/Equation/popups
-@dir %%WWWDIR%%/htmlarea/plugins/Equation
-@dir %%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/Classes
-@dir %%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/assets
-@dir %%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/demo_images/linux
-@dir %%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/demo_images
-@dir %%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/icons
-@dir %%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/img
-@dir %%WWWDIR%%/htmlarea/plugins/ExtendedFileManager/lang
-@dir %%WWWDIR%%/htmlarea/plugins/ExtendedFileManager
-@dir %%WWWDIR%%/htmlarea/plugins/Filter/filters
-@dir %%WWWDIR%%/htmlarea/plugins/Filter/img
-@dir %%WWWDIR%%/htmlarea/plugins/Filter/lang
-@dir %%WWWDIR%%/htmlarea/plugins/Filter
-@dir %%WWWDIR%%/htmlarea/plugins/FindReplace/img
-@dir %%WWWDIR%%/htmlarea/plugins/FindReplace/lang
-@dir %%WWWDIR%%/htmlarea/plugins/FindReplace/popups
-@dir %%WWWDIR%%/htmlarea/plugins/FindReplace
-@dir %%WWWDIR%%/htmlarea/plugins/FormOperations/img
-@dir %%WWWDIR%%/htmlarea/plugins/FormOperations/lang
-@dir %%WWWDIR%%/htmlarea/plugins/FormOperations
-@dir %%WWWDIR%%/htmlarea/plugins/Forms/img
-@dir %%WWWDIR%%/htmlarea/plugins/Forms/lang
-@dir %%WWWDIR%%/htmlarea/plugins/Forms/popups
-@dir %%WWWDIR%%/htmlarea/plugins/Forms
-@dir %%WWWDIR%%/htmlarea/plugins/FullPage/img
-@dir %%WWWDIR%%/htmlarea/plugins/FullPage/lang
-@dir %%WWWDIR%%/htmlarea/plugins/FullPage/popups
-@dir %%WWWDIR%%/htmlarea/plugins/FullPage
-@dir %%WWWDIR%%/htmlarea/plugins/GenericPlugin
-@dir %%WWWDIR%%/htmlarea/plugins/GetHtml
-@dir %%WWWDIR%%/htmlarea/plugins/HorizontalRule/lang
-@dir %%WWWDIR%%/htmlarea/plugins/HorizontalRule/popups
-@dir %%WWWDIR%%/htmlarea/plugins/HorizontalRule
-@dir %%WWWDIR%%/htmlarea/plugins/HtmlEntities
-@dir %%WWWDIR%%/htmlarea/plugins/HtmlTidy/img
-@dir %%WWWDIR%%/htmlarea/plugins/HtmlTidy/lang
-@dir %%WWWDIR%%/htmlarea/plugins/HtmlTidy
-@dir %%WWWDIR%%/htmlarea/plugins/ImageManager/Classes
-@dir %%WWWDIR%%/htmlarea/plugins/ImageManager/assets
-@dir %%WWWDIR%%/htmlarea/plugins/ImageManager/demo_images/linux
-@dir %%WWWDIR%%/htmlarea/plugins/ImageManager/demo_images
-@dir %%WWWDIR%%/htmlarea/plugins/ImageManager/img
-@dir %%WWWDIR%%/htmlarea/plugins/ImageManager/lang
-@dir %%WWWDIR%%/htmlarea/plugins/ImageManager
-@dir %%WWWDIR%%/htmlarea/plugins/InsertAnchor/img
-@dir %%WWWDIR%%/htmlarea/plugins/InsertAnchor/lang
-@dir %%WWWDIR%%/htmlarea/plugins/InsertAnchor/popups
-@dir %%WWWDIR%%/htmlarea/plugins/InsertAnchor
-@dir %%WWWDIR%%/htmlarea/plugins/InsertMarquee/img
-@dir %%WWWDIR%%/htmlarea/plugins/InsertMarquee/lang
-@dir %%WWWDIR%%/htmlarea/plugins/InsertMarquee/popups
-@dir %%WWWDIR%%/htmlarea/plugins/InsertMarquee
-@dir %%WWWDIR%%/htmlarea/plugins/InsertPagebreak/img
-@dir %%WWWDIR%%/htmlarea/plugins/InsertPagebreak/lang
-@dir %%WWWDIR%%/htmlarea/plugins/InsertPagebreak
-@dir %%WWWDIR%%/htmlarea/plugins/InsertPicture/demo_pictures
-@dir %%WWWDIR%%/htmlarea/plugins/InsertPicture/img
-@dir %%WWWDIR%%/htmlarea/plugins/InsertPicture/lang
-@dir %%WWWDIR%%/htmlarea/plugins/InsertPicture
-@dir %%WWWDIR%%/htmlarea/plugins/InsertSmiley/img
-@dir %%WWWDIR%%/htmlarea/plugins/InsertSmiley/lang
-@dir %%WWWDIR%%/htmlarea/plugins/InsertSmiley/popups
-@dir %%WWWDIR%%/htmlarea/plugins/InsertSmiley
-@dir %%WWWDIR%%/htmlarea/plugins/InsertSnippet/img
-@dir %%WWWDIR%%/htmlarea/plugins/InsertSnippet/lang
-@dir %%WWWDIR%%/htmlarea/plugins/InsertSnippet/popups
-@dir %%WWWDIR%%/htmlarea/plugins/InsertSnippet
-@dir %%WWWDIR%%/htmlarea/plugins/InsertWords
-@dir %%WWWDIR%%/htmlarea/plugins/LangMarks/lang
-@dir %%WWWDIR%%/htmlarea/plugins/LangMarks
-@dir %%WWWDIR%%/htmlarea/plugins/Linker/dTree/img
-@dir %%WWWDIR%%/htmlarea/plugins/Linker/dTree
-@dir %%WWWDIR%%/htmlarea/plugins/Linker/lang
-@dir %%WWWDIR%%/htmlarea/plugins/Linker
-@dir %%WWWDIR%%/htmlarea/plugins/ListType/img
-@dir %%WWWDIR%%/htmlarea/plugins/ListType/lang
-@dir %%WWWDIR%%/htmlarea/plugins/ListType
-@dir %%WWWDIR%%/htmlarea/plugins/NoteServer/img
-@dir %%WWWDIR%%/htmlarea/plugins/NoteServer/lang
-@dir %%WWWDIR%%/htmlarea/plugins/NoteServer/popups
-@dir %%WWWDIR%%/htmlarea/plugins/NoteServer
-@dir %%WWWDIR%%/htmlarea/plugins/PasteText/img
-@dir %%WWWDIR%%/htmlarea/plugins/PasteText/lang
-@dir %%WWWDIR%%/htmlarea/plugins/PasteText/popups
-@dir %%WWWDIR%%/htmlarea/plugins/PasteText
-@dir %%WWWDIR%%/htmlarea/plugins/PreserveScripts
-@dir %%WWWDIR%%/htmlarea/plugins/QuickTag/img
-@dir %%WWWDIR%%/htmlarea/plugins/QuickTag/lang
-@dir %%WWWDIR%%/htmlarea/plugins/QuickTag/popups
-@dir %%WWWDIR%%/htmlarea/plugins/QuickTag
-@dir %%WWWDIR%%/htmlarea/plugins/SaveSubmit/img
-@dir %%WWWDIR%%/htmlarea/plugins/SaveSubmit/lang
-@dir %%WWWDIR%%/htmlarea/plugins/SaveSubmit
-@dir %%WWWDIR%%/htmlarea/plugins/SetId/img
-@dir %%WWWDIR%%/htmlarea/plugins/SetId/lang
-@dir %%WWWDIR%%/htmlarea/plugins/SetId/popups
-@dir %%WWWDIR%%/htmlarea/plugins/SetId
-@dir %%WWWDIR%%/htmlarea/plugins/SmartReplace/img
-@dir %%WWWDIR%%/htmlarea/plugins/SmartReplace/lang
-@dir %%WWWDIR%%/htmlarea/plugins/SmartReplace
-@dir %%WWWDIR%%/htmlarea/plugins/SpellChecker/img
-@dir %%WWWDIR%%/htmlarea/plugins/SpellChecker/lang
-@dir %%WWWDIR%%/htmlarea/plugins/SpellChecker
-@dir %%WWWDIR%%/htmlarea/plugins/Stylist/lang
-@dir %%WWWDIR%%/htmlarea/plugins/Stylist
-@dir %%WWWDIR%%/htmlarea/plugins/SuperClean/filters
-@dir %%WWWDIR%%/htmlarea/plugins/SuperClean/img
-@dir %%WWWDIR%%/htmlarea/plugins/SuperClean/lang
-@dir %%WWWDIR%%/htmlarea/plugins/SuperClean
-@dir %%WWWDIR%%/htmlarea/plugins/TableOperations/img
-@dir %%WWWDIR%%/htmlarea/plugins/TableOperations/lang
-@dir %%WWWDIR%%/htmlarea/plugins/TableOperations/popups
-@dir %%WWWDIR%%/htmlarea/plugins/TableOperations
-@dir %%WWWDIR%%/htmlarea/plugins/Template/img
-@dir %%WWWDIR%%/htmlarea/plugins/Template/lang
-@dir %%WWWDIR%%/htmlarea/plugins/Template/popups
-@dir %%WWWDIR%%/htmlarea/plugins/Template
-@dir %%WWWDIR%%/htmlarea/plugins/UnFormat/img
-@dir %%WWWDIR%%/htmlarea/plugins/UnFormat/lang
-@dir %%WWWDIR%%/htmlarea/plugins/UnFormat/popups
-@dir %%WWWDIR%%/htmlarea/plugins/UnFormat
-@dir %%WWWDIR%%/htmlarea/plugins
-@dir %%WWWDIR%%/htmlarea/popups
-@dir %%WWWDIR%%/htmlarea/skins/blue-look
-@dir %%WWWDIR%%/htmlarea/skins/blue-metallic
-@dir %%WWWDIR%%/htmlarea/skins/green-look
-@dir %%WWWDIR%%/htmlarea/skins/inditreuse
-@dir %%WWWDIR%%/htmlarea/skins/silva
-@dir %%WWWDIR%%/htmlarea/skins/titan
-@dir %%WWWDIR%%/htmlarea/skins/xp-blue
-@dir %%WWWDIR%%/htmlarea/skins/xp-green
-@dir %%WWWDIR%%/htmlarea/skins
-@dir %%WWWDIR%%/htmlarea
-@dir %%WWWDIR%%/include/admin/importers
-@dir %%WWWDIR%%/include/admin
-@dir %%WWWDIR%%/include/db
-@dir %%WWWDIR%%/include/tpl
-@dir %%WWWDIR%%/include
-@dir %%WWWDIR%%/lang/UTF-8
-@dir %%WWWDIR%%/lang
-@dir %%WWWDIR%%/plugins/serendipity_event_bbcode/UTF-8
-@dir %%WWWDIR%%/plugins/serendipity_event_bbcode
-@dir %%WWWDIR%%/plugins/serendipity_event_contentrewrite/UTF-8
-@dir %%WWWDIR%%/plugins/serendipity_event_contentrewrite
-@dir %%WWWDIR%%/plugins/serendipity_event_creativecommons/UTF-8
-@dir %%WWWDIR%%/plugins/serendipity_event_creativecommons
-@dir %%WWWDIR%%/plugins/serendipity_event_emoticate/UTF-8
-@dir %%WWWDIR%%/plugins/serendipity_event_emoticate
-@dir %%WWWDIR%%/plugins/serendipity_event_entryproperties/UTF-8
-@dir %%WWWDIR%%/plugins/serendipity_event_entryproperties
-@dir %%WWWDIR%%/plugins/serendipity_event_karma/UTF-8
-@dir %%WWWDIR%%/plugins/serendipity_event_karma/img
-@dir %%WWWDIR%%/plugins/serendipity_event_karma
-@dir %%WWWDIR%%/plugins/serendipity_event_livesearch/UTF-8
-@dir %%WWWDIR%%/plugins/serendipity_event_livesearch
-@dir %%WWWDIR%%/plugins/serendipity_event_mailer/UTF-8
-@dir %%WWWDIR%%/plugins/serendipity_event_mailer
-@dir %%WWWDIR%%/plugins/serendipity_event_nl2br/UTF-8
-@dir %%WWWDIR%%/plugins/serendipity_event_nl2br
-@dir %%WWWDIR%%/plugins/serendipity_event_s9ymarkup/UTF-8
-@dir %%WWWDIR%%/plugins/serendipity_event_s9ymarkup
-@dir %%WWWDIR%%/plugins/serendipity_event_searchhighlight/UTF-8
-@dir %%WWWDIR%%/plugins/serendipity_event_searchhighlight
-@dir %%WWWDIR%%/plugins/serendipity_event_spamblock/UTF-8
-@dir %%WWWDIR%%/plugins/serendipity_event_spamblock
-@dir %%WWWDIR%%/plugins/serendipity_event_spartacus/UTF-8
-@dir %%WWWDIR%%/plugins/serendipity_event_spartacus
-@dir %%WWWDIR%%/plugins/serendipity_event_statistics/UTF-8
-@dir %%WWWDIR%%/plugins/serendipity_event_statistics
-@dir %%WWWDIR%%/plugins/serendipity_event_templatechooser/UTF-8
-@dir %%WWWDIR%%/plugins/serendipity_event_templatechooser
-@dir %%WWWDIR%%/plugins/serendipity_event_textile/UTF-8
-@dir %%WWWDIR%%/plugins/serendipity_event_textile/lib1
-@dir %%WWWDIR%%/plugins/serendipity_event_textile/lib2
-@dir %%WWWDIR%%/plugins/serendipity_event_textile/lib3/src/Netcarver/Textile
-@dir %%WWWDIR%%/plugins/serendipity_event_textile/lib3/src/Netcarver
-@dir %%WWWDIR%%/plugins/serendipity_event_textile/lib3/src
-@dir %%WWWDIR%%/plugins/serendipity_event_textile/lib3
-@dir %%WWWDIR%%/plugins/serendipity_event_textile
-@dir %%WWWDIR%%/plugins/serendipity_event_textwiki/UTF-8
-@dir %%WWWDIR%%/plugins/serendipity_event_textwiki
-@dir %%WWWDIR%%/plugins/serendipity_event_trackexits/UTF-8
-@dir %%WWWDIR%%/plugins/serendipity_event_trackexits
-@dir %%WWWDIR%%/plugins/serendipity_event_weblogping/UTF-8
-@dir %%WWWDIR%%/plugins/serendipity_event_weblogping
-@dir %%WWWDIR%%/plugins/serendipity_event_xhtmlcleanup/UTF-8
-@dir %%WWWDIR%%/plugins/serendipity_event_xhtmlcleanup
-@dir %%WWWDIR%%/plugins/serendipity_plugin_comments/UTF-8
-@dir %%WWWDIR%%/plugins/serendipity_plugin_comments
-@dir %%WWWDIR%%/plugins/serendipity_plugin_creativecommons/UTF-8
-@dir %%WWWDIR%%/plugins/serendipity_plugin_creativecommons
-@dir %%WWWDIR%%/plugins/serendipity_plugin_entrylinks/UTF-8
-@dir %%WWWDIR%%/plugins/serendipity_plugin_entrylinks
-@dir %%WWWDIR%%/plugins/serendipity_plugin_eventwrapper/UTF-8
-@dir %%WWWDIR%%/plugins/serendipity_plugin_eventwrapper
-@dir %%WWWDIR%%/plugins/serendipity_plugin_history/UTF-8
-@dir %%WWWDIR%%/plugins/serendipity_plugin_history
-@dir %%WWWDIR%%/plugins/serendipity_plugin_recententries/UTF-8
-@dir %%WWWDIR%%/plugins/serendipity_plugin_recententries
-@dir %%WWWDIR%%/plugins/serendipity_plugin_remoterss/UTF-8
-@dir %%WWWDIR%%/plugins/serendipity_plugin_remoterss
-@dir %%WWWDIR%%/plugins/serendipity_plugin_shoutbox/UTF-8
-@dir %%WWWDIR%%/plugins/serendipity_plugin_shoutbox
-@dir %%WWWDIR%%/plugins/serendipity_plugin_templatedropdown/UTF-8
-@dir %%WWWDIR%%/plugins/serendipity_plugin_templatedropdown
-@dir %%WWWDIR%%/plugins
-@dir %%WWWDIR%%/sql
-@dir %%WWWDIR%%/templates/2k11/UTF-8
-@dir %%WWWDIR%%/templates/2k11/img
-@dir %%WWWDIR%%/templates/2k11/js
-@dir %%WWWDIR%%/templates/2k11
-@dir %%WWWDIR%%/templates/blue
-@dir %%WWWDIR%%/templates/bulletproof/UTF-8
-@dir %%WWWDIR%%/templates/bulletproof/admin/img
-@dir %%WWWDIR%%/templates/bulletproof/admin
-@dir %%WWWDIR%%/templates/bulletproof/img
-@dir %%WWWDIR%%/templates/bulletproof/js
-@dir %%WWWDIR%%/templates/bulletproof
-@dir %%WWWDIR%%/templates/carl_contest/admin/img
-@dir %%WWWDIR%%/templates/carl_contest/admin
-@dir %%WWWDIR%%/templates/carl_contest/img
-@dir %%WWWDIR%%/templates/carl_contest
-@dir %%WWWDIR%%/templates/competition/admin/img
-@dir %%WWWDIR%%/templates/competition/admin
-@dir %%WWWDIR%%/templates/competition/img
-@dir %%WWWDIR%%/templates/competition
-@dir %%WWWDIR%%/templates/contest/admin/img
-@dir %%WWWDIR%%/templates/contest/admin
-@dir %%WWWDIR%%/templates/contest/img
-@dir %%WWWDIR%%/templates/contest
-@dir %%WWWDIR%%/templates/default/YahooUI/treeview
-@dir %%WWWDIR%%/templates/default/YahooUI
-@dir %%WWWDIR%%/templates/default/admin/img
-@dir %%WWWDIR%%/templates/default/admin
-@dir %%WWWDIR%%/templates/default/img/emoticons
-@dir %%WWWDIR%%/templates/default/img
-@dir %%WWWDIR%%/templates/default/treeview
-@dir %%WWWDIR%%/templates/default
-@dir %%WWWDIR%%/templates/default-php/UTF-8
-@dir %%WWWDIR%%/templates/default-php
-@dir %%WWWDIR%%/templates/default-rtl/admin/img
-@dir %%WWWDIR%%/templates/default-rtl/admin
-@dir %%WWWDIR%%/templates/default-rtl/img
-@dir %%WWWDIR%%/templates/default-rtl
-@dir %%WWWDIR%%/templates/default-xml
-@dir %%WWWDIR%%/templates/idea/img
-@dir %%WWWDIR%%/templates/idea
-@dir %%WWWDIR%%/templates/kubrick/UTF-8
-@dir %%WWWDIR%%/templates/kubrick/images
-@dir %%WWWDIR%%/templates/kubrick
-@dir %%WWWDIR%%/templates/moz-modern/img
-@dir %%WWWDIR%%/templates/moz-modern
-@dir %%WWWDIR%%/templates/mt-clean
-@dir %%WWWDIR%%/templates/mt-georgiablue
-@dir %%WWWDIR%%/templates/mt-gettysburg
-@dir %%WWWDIR%%/templates/mt-plainjane
-@dir %%WWWDIR%%/templates/mt-rusty
-@dir %%WWWDIR%%/templates/mt-trendy/img
-@dir %%WWWDIR%%/templates/mt-trendy
-@dir %%WWWDIR%%/templates/mt3-chalkboard
-@dir %%WWWDIR%%/templates/mt3-gettysburg
-@dir %%WWWDIR%%/templates/mt3-independence
-@dir %%WWWDIR%%/templates/mt3-squash
-@dir %%WWWDIR%%/templates/newspaper/img
-@dir %%WWWDIR%%/templates/newspaper
-@dir %%WWWDIR%%/templates/wp
-@dir %%WWWDIR%%/templates
-@dir %%WWWDIR%%/templates_c
-@dir %%WWWDIR%%/uploads
-@dir %%WWWDIR%%
-@owner root
-@group wheel
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/templates_c
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/archives
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/uploads
