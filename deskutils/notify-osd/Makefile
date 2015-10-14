@@ -12,6 +12,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	On-screen-display notification agent using libnotify
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libnotify.so:${PORTSDIR}/devel/libnotify
@@ -26,13 +27,7 @@ USE_XORG=	pixman x11
 
 LIBS+=		-L${LOCALBASE}/lib -lpixman-1 -lX11
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} '/SUBDIRS =/s/tests//' ${WRKSRC}/Makefile.in
-.if ${OSVERSION} < 900033
-	@${REINPLACE_CMD} 's/-Bsymbolic-functions/-Bsymbolic/' \
-		${WRKSRC}/src/Makefile.in
-.endif
 
 .include <bsd.port.mk>
