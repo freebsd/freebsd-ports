@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nx
-DISTVERSION=	2.0b5
+DISTVERSION=	2.0.0
 CATEGORIES=	lang
 MASTER_SITES=	SF/next-scripting/${DISTVERSION}/
 DISTNAME=	nsf${DISTVERSION}
@@ -16,23 +16,19 @@ OPTIONS_DEFINE=	DOCS
 
 CONFLICTS=	xotcl-1.*
 
-USES+=		tcl:85+
+USES+=		gmake tcl:85+
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--exec-prefix=${PREFIX} \
 		--with-tcl=${TCL_LIBDIR} \
 		--with-tclinclude=${TCL_INCLUDEDIR}
+TEST_TARGET=	test
 PLIST_SUB+=	PKGNAME=${DISTNAME}
 PORTDOCS=	*
-
-post-patch:
-	${CP} ${FILESDIR}/genStubs.tcl ${WRKSRC}
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}
-
-regression-test: build
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${DISTNAME}/lib${DISTNAME}.so
 
 .include <bsd.port.mk>
