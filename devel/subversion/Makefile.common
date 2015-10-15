@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME?=	subversion
-PORTVERSION=	1.8.14
+PORTVERSION=	1.9.2
 PORTREVISION?=	0
 CATEGORIES+=	devel
 MASTER_SITES=	APACHE/subversion
-DIST_SUBDIR=	subversion18
+DIST_SUBDIR=	subversion19
 
 GNU_CONFIGURE=	yes
 USES+=		cpe libtool pkgconfig shebangfix tar:bzip2
@@ -18,7 +18,7 @@ LICENSE=	APACHE20
 
 CPE_VENDOR=	apache
 
-CONFLICTS_INSTALL+=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-1.[^8].[0-9]*
+CONFLICTS_INSTALL+=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-1.[^9].[0-9]*
 
 LIB_DEPENDS+=		libapr-1.so:${PORTSDIR}/devel/apr1 \
 			libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
@@ -29,7 +29,7 @@ CONFIGURE_ARGS+=	--without-swig \
 			--with-expat=${LOCALBASE}/include:${LOCALBASE}/lib:expat
 
 .if defined(SVN_BUILD_ADDONS)
-CONFLICTS_BUILD+=	${PORTNAME}-1.[^8].[0-9]*
+CONFLICTS_BUILD+=	${PORTNAME}-1.[^9].[0-9]*
 LIB_DEPENDS+=		libsvn_client-1.so:${PORTSDIR}/devel/subversion
 OPTIONS_NAME=		devel_subversion
 .endif
@@ -73,10 +73,6 @@ OPTIONS_FILE_SET?=""
 
 .if ( ${PORT_OPTIONS:MFREEBSD_TEMPLATE} || !${OPTIONS_FILE_UNSET:MFREEBSD_TEMPLATE} ) && defined(ORGANIZATION)
 CFLAGS+=	-DHAS_ORGANIZATION_NAME
-.endif
-
-.if !${PORT_OPTIONS:MMAINTAINER_DEBUG} && !${OPTIONS_FILE_SET:MMAINTAINER_DEBUG}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile.in
 .endif
 
 .include <bsd.port.pre.mk>
