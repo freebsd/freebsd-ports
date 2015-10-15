@@ -70,10 +70,7 @@ VDPAU_LIB_DEPENDS=	libvdpau.so:${PORTSDIR}/multimedia/libvdpau
 VDPAU_CONFIGURE_ENABLE=	vdpau
 
 OPENGL_CONFIGURE_ENABLE=	opengl-video
-
-.if ${PORT_OPTIONS:MOPENGL}
-USE_QT4+=	opengl
-.endif
+OPENGL_USE=	QT4=opengl
 
 post-patch:
 		@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
