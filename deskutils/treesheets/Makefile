@@ -22,7 +22,6 @@ MAKE_ENV=	PACKAGE_VERSION=${PACKAGE_VERSION:Q}
 
 USES=		compiler:c++11-lib
 USE_WX=		3.0+
-WX_UNICODE=	yes
 
 PORTDATA=	images
 PORTDOCS=	docs *.html
@@ -48,10 +47,14 @@ post-patch: .SILENT
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	(cd ${WRKSRC}/TS && ${COPYTREE_SHARE} "${PORTDATA}" ${STAGEDIR}${DATADIR})
-	(cd ${WRKSRC}/TS && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
-	(cd ${WRKSRC}/TS/examples && ${COPYTREE_SHARE} "${PORTEXAMPLES}" \
-		${STAGEDIR}${EXAMPLESDIR})
 	${INSTALL_DATA} ${WRKSRC}/TS/images/icon32.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
+
+do-install-DOCS-on:
+	(cd ${WRKSRC}/TS && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
+
+do-install-EXAMPLES-on:
+	(cd ${WRKSRC}/TS/examples && ${COPYTREE_SHARE} "${PORTEXAMPLES}" \
+		${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
