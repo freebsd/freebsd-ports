@@ -16,6 +16,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ipfs
 GH_PROJECT=	go-ipfs
 
+ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	Does not build on i386 due to a dependency
+
 MAKE_ENV+=	GOPATH=${WRKSRC}
 
 PLIST_FILES=	bin/${PORTNAME}
