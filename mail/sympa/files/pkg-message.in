@@ -1,33 +1,13 @@
-If this is your first installation of sympa, please load
-this file with your %%DB_TYPE%% database client:
-    %%PREFIX%%/libexec/sympa/create_db.%%DB_TYPE%%
+If you upgrade from <6.2, read
+https://www.sympa.org/faq/upgrade-to-v6.2
 
-Before configuring sympa, you need to copy the samples:
-    cp /usr/local/etc/sympa.conf.sample /usr/local/etc/sympa.conf
-    cp /usr/local/etc/wwsympa.conf.sample /usr/local/etc/wwsympa.conf
+Else upgrade with:
+  run sympa.pl --upgrade
 
-To configure sympa interactively, please run:
-    perl %%PREFIX%%/libexec/sympa/sympa_wizard.pl
+If this is your first installation of sympa, run
+  create database with this schema:
+    %%LOCALBASE%%/libexec/sympa/create_db.%%DB_TYPE%%
+  run sympa_wizard.pl
+  for wwsympa server, see samples configs in %%EXAMPLESDIR%%
 
-You may also manually edit the two configuration files:
-    %%PREFIX%%/etc/sympa.conf
-    %%PREFIX%%/etc/wwsympa.conf
 
-To set up the wwsympa server, add something like this to
-your Apache configuration file:
-
-    DocumentRoot "%%DATADIR%%"
-    AddDefaultCharset UTF-8
-    DirectoryIndex wws
-    Options +Indexes
-%%FCGI%%    LoadModule fastcgi_module libexec/apache2/mod_fastcgi.so
-%%FCGI%%    <Location /wws>
-%%FCGI%%        SetHandler fastcgi-script
-%%FCGI%%    </Location>
-    <Directory %%DATADIR%%>
-        Allow from all
-    </Directory>
-    <Directory %%PREFIX%%/libexec/sympa>
-        Allow from all
-    </Directory>
-    ScriptAlias /wws %%PREFIX%%/libexec/sympa/wwsympa-wrapper
