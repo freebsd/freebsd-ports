@@ -1,8 +1,5 @@
 	ATTENTION:
 
-%%MANPATH%%You should also add %%PREFIX%%/man to your MANPATH (see manpath(1)
-%%MANPATH%%or login.conf(5)).
-%%MANPATH%%
 Do not forget to read http://iain.cx/unix/qmail/mysql.php. After all,
 this is NOT our old stock qmail.
 

@@ -48,8 +48,8 @@ INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 		--enable-dynamic-linking --enable-manpages \
+		--disable-linux-caps \
 		--datadir=${PREFIX}/share/syslog-ng/
-
 
 BROKEN_sparc64=	Does not compile on sparc64: gcc core dump
 
@@ -149,16 +149,6 @@ PLIST_FILES+= 		lib/syslog-ng/libmod-python.so
 CONFIGURE_ARGS+=        --disable-python
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 900000
-BROKEN=		Does not build under 8.X.
-.endif
-
-.if ${OSVERSION} >= 900034
-CONFIGURE_ARGS+=        --disable-linux-caps
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's:libnet-config:libnet11-config:g' \
 		${WRKSRC}/configure
@@ -182,4 +172,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/ivykis/src/include/iv*.h \
 		${STAGEDIR}${PREFIX}/include/syslog-ng/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

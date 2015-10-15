@@ -239,10 +239,8 @@ post-patch:
 .for filename in ${SCRIPT_FILES}
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/local/${filename}
 .endfor
-.if ${OSVERSION} >= 900007
 	@${REINPLACE_CMD} -e 's!utmp_p->ut_name!utmp_p->ut_user!' \
 	    ${WRKSRC}/agent/mibgroup/host/hr_system.c
-.endif
 	@${REINPLACE_CMD} -E -e 's|return pci_lookup_name|disabled broken|g' \
 		${WRKSRC}/configure
 

@@ -81,12 +81,6 @@ PLIST_SUB+=	UFORADIANT="@comment "
 FAVORITE_COMPILER=	gcc
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 900000
-BROKEN=	Fails to build on 8.x
-.endif
-
 post-extract:
 	@${MKDIR} ${WRKSRC}/base/maps ${WRKSRC}/base/models
 	${REINPLACE_CMD} \
@@ -144,4 +138,4 @@ do-install:
 			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${PREFIX}/${DATADIR}/base/i18n/{}" \;
 	${LN} -s ${PREFIX}/${DATADIR}/base ${STAGEDIR}${UFO_DIR}/base
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

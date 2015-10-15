@@ -26,7 +26,7 @@ REINPLACE_ARGS=	-i ''
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} >= 900033 && exists(/usr/bin/clang)
+.if exists(/usr/bin/clang)
 CC=		clang
 CXX=		clang++
 GYP_DEFINES+=	clang=1

@@ -6,10 +6,6 @@
  TARGET	 = $(PRODUCT)
 -OBJECTS	 = main.o gnu-strndup.o gnu-getline.o util.o exif.o iptc.o jfif.o adobe.o tiff.o
 +OBJECTS	 = main.o util.o exif.o iptc.o jfif.o adobe.o tiff.o
-+NEEDEXT  = $(shell expr $(OSVERSION) \< 800067)
-+ifeq ($(NEEDEXT),1)
-+OBJECTS += gnu-strndup.o gnu-getline.o
-+endif
  DOC_DEFS = doc/Makefile.defs
  
  

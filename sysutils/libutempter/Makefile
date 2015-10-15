@@ -13,10 +13,6 @@ COMMENT=	Interface to record user sessions to utmp and wtmp files
 USES=		gmake tar:bzip2
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
+IGNORE_FreeBSD=		is now contained in the base system
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 900004
-IGNORE=		is now contained in the base system
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

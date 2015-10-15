@@ -44,7 +44,7 @@ USES+=		execinfo
 LDFLAGS+=	-lexecinfo
 .endif
 
-.if ${OPSYS} == "FreeBSD" && ${OSVERSION} < 1000000 && ${OSVERSION} > 900000
+.if ${OPSYS} == "FreeBSD" && ${OSVERSION} < 1000000
 USE_GCC=	yes
 .endif
 

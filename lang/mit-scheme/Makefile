@@ -24,10 +24,6 @@ MHASH_DESC=	mhash library support
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 900000 && ${ARCH} == "amd64"
-USE_GCC=	yes
-.endif
-
 # TODO implement db4 support
 CONFIGURE_ARGS+=--without-db-4
 

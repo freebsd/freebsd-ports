@@ -32,12 +32,6 @@ USE_LDCONFIG=	yes
 
 PORTSCOUT=	skipv:1.09a,1.09b,1.09c,1.09d
 
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} > 900006
-EXTRA_PATCHES=	${PATCHDIR}/utmpx-src-modules-om_classic.c
-.endif
-
 post-patch:
 	@${FIND} ${WRKSRC}/src/modules -name "*.c" | \
 	    ${XARGS} ${REINPLACE_CMD} -e "s|typedef int socklen_t;||g"

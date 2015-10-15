@@ -9,10 +9,4 @@ A text-based browser, such as one of following
 
 is recommended to use the `help' command inside the
 interpreter. Check pure(1) for details.
-%%NOCLANG%%
-%%NOCLANG%%To enable the inline C/C++ code compilation,
-%%NOCLANG%%
-%%NOCLANG%%	clang:	lang/clang%%LLVM_VERSION%%
-%%NOCLANG%%
-%%NOCLANG%%is required.
 ====

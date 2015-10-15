@@ -22,16 +22,12 @@ SUB_FILES+=	${PERIODICSCRIPT}
 RESTRICTED=	May not be redistributed in binary form
 NO_CDROM=	May not be redistributed in binary form
 
+DIST_OSVER=	9
+
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} != FreeBSD
 IGNORE=		installs incompatible binaries for FreeBSD
-.endif
-
-.if ${OSVERSION} >= 900000
-DIST_OSVER=	9
-.else
-DIST_OSVER=	8
 .endif
 
 .if ${ARCH} == amd64
