@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20151015:
+  AFFECTS: users of devel/subversion, its bindings and www/mod_dav_svn
+  AUTHOR: lev@FreeBSD.org
+  
+  The subversion upgdate to 1.9 branch introduces new "old" subversion
+  port devel/subversion18.
+  
+  If you don't want to update your subversion installation, run
+  
+  	pkg set -o devel/subversion:devel/subversion18
+  	
+  and add
+  
+        WITH_SUBVERSION_VER=18
+        
+  to your /etc/make.conf
+
 20151013:
   AFFECTS: users of security/sshguard-ipfw
   AUTHOR: feld@FreeBSD.org
