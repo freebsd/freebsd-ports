@@ -18,6 +18,7 @@ GH_ACCOUNT=	philsquared
 GH_PROJECT=	Catch
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 PLIST_FILES=	include/catch.hpp
 
