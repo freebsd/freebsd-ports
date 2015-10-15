@@ -1,0 +1,25 @@
+--- configure.orig	2014-04-30 20:29:25.000000000 +0400
++++ configure	2014-05-18 15:22:03.000000000 +0400
+@@ -19419,11 +19419,11 @@
+                 SVN_KWALLET_INCLUDES="$DBUS_CPPFLAGS $qt_include_dirs -I$kde_dir/include"
+                 qt_libs_other_options="`$PKG_CONFIG --libs-only-other QtCore QtDBus QtGui`"
+                 SVN_KWALLET_LIBS="$DBUS_LIBS -lQtCore -lQtDBus -lQtGui -lkdecore -lkdeui $qt_libs_other_options"
+-                CXXFLAGS="$CXXFLAGS $SVN_KWALLET_INCLUDES"
++                CXXFLAGS="$SVN_KWALLET_INCLUDES $CXXFLAGS"
+                 LIBS="$LIBS $SVN_KWALLET_LIBS"
+                 qt_lib_dirs="`$PKG_CONFIG --libs-only-L QtCore QtDBus QtGui`"
+                 kde_lib_suffix="`$KDE4_CONFIG --libsuffix`"
+-                LDFLAGS="$old_LDFLAGS `
++                LDFLAGS="`
+   input_flags="$qt_lib_dirs -L$kde_dir/lib$kde_lib_suffix"
+   output_flags=""
+   filtered_dirs="/lib /lib64 /usr/lib /usr/lib64"
+@@ -19442,7 +19442,7 @@
+   if test -n "$output_flags"; then
+     printf "%s" "${output_flags# }"
+   fi
+-`"
++` $old_LDFLAGS"
+                 ac_ext=cpp
+ ac_cpp='$CXXCPP $CPPFLAGS'
+ ac_compile='$CXX -c $CXXFLAGS $CPPFLAGS conftest.$ac_ext >&5'

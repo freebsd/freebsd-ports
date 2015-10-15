@@ -1,0 +1,116 @@
+# Created by: rooneg@electricjellyfish.net
+# $FreeBSD$
+
+PORTNAME?=	subversion
+PORTVERSION=	1.8.14
+PORTREVISION?=	0
+CATEGORIES+=	devel
+MASTER_SITES=	APACHE/subversion
+DIST_SUBDIR=	subversion18
+
+GNU_CONFIGURE=	yes
+USES+=		cpe libtool pkgconfig shebangfix tar:bzip2
+SHEBANG_FILES=	tools/server-side/svnpubsub/rc.d/svnpubsub.solaris \
+		tools/server-side/svnpubsub/rc.d/svnwcsub.solaris
+bash_OLD_CMD=	/usr/bin/bash
+
+LICENSE=	APACHE20
+
+CPE_VENDOR=	apache
+
+CONFLICTS_INSTALL+=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-1.[^8].[0-9]*
+
+LIB_DEPENDS+=		libapr-1.so:${PORTSDIR}/devel/apr1 \
+			libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
+			libexpat.so:${PORTSDIR}/textproc/expat2
+
+CONFIGURE_ARGS+=	--without-swig \
+			--with-sqlite=${LOCALBASE} \
+			--with-expat=${LOCALBASE}/include:${LOCALBASE}/lib:expat
+
+.if defined(SVN_BUILD_ADDONS)
+CONFLICTS_BUILD+=	${PORTNAME}-1.[^8].[0-9]*
+LIB_DEPENDS+=		libsvn_client-1.so:${PORTSDIR}/devel/subversion
+OPTIONS_NAME=		devel_subversion
+.endif
+
+# ===============================================================
+OPTIONS_SUB=			yes
+
+BDB_CONFIGURE_OFF=		--without-berkeley-db
+BDB_USE=			BDB=42+
+
+MAINTAINER_DEBUG_CFLAGS=	-g
+MAINTAINER_DEBUG_CONFIGURE_ON=	--enable-maintainer-mode --enable-debug
+
+NLS_CONFIGURE_OFF=		--disable-nls
+NLS_USES=			gettext
+
+SASL_CONFIGURE_OFF=		--without-sasl
+SASL_CONFIGURE_ON=		--with-sasl=${LOCALBASE}
+SASL_LIB_DEPENDS=		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+
+SERF_CONFIGURE_OFF=		--without-serf
+SERF_CONFIGURE_ON=		--with-serf
+SERF_LIB_DEPENDS=		libserf-1.so:${PORTSDIR}/www/serf
+
+STATIC_CONFIGURE_ON=		--enable-all-static PKG_CONFIG="${LOCALBASE}/bin/pkg-config --static"
+
+# ===============================================================
+.include <bsd.port.options.mk>
+
+APR_CONFIG=	${LOCALBASE}/bin/apr-1-config
+APU_CONFIG=	${LOCALBASE}/bin/apu-1-config
+
+CONFIGURE_ARGS+=--with-apr=${APR_CONFIG} --with-apr-util=${APU_CONFIG}
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+CFLAGS+=	-fpic -DPIC
+.endif
+
+OPTIONS_FILE_UNSET?=""
+OPTIONS_FILE_SET?=""
+
+.if ( ${PORT_OPTIONS:MFREEBSD_TEMPLATE} || !${OPTIONS_FILE_UNSET:MFREEBSD_TEMPLATE} ) && defined(ORGANIZATION)
+CFLAGS+=	-DHAS_ORGANIZATION_NAME
+.endif
+
+.if !${PORT_OPTIONS:MMAINTAINER_DEBUG} && !${OPTIONS_FILE_SET:MMAINTAINER_DEBUG}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile.in
+.endif
+
+.include <bsd.port.pre.mk>
+
+pre-everything::
+.if defined(SVN_BUILD_ADDONS)
+.if ${PORT_OPTIONS:MSTATIC} || ${OPTIONS_FILE_SET:MSTATIC}
+	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${ECHO_MSG} "!!! addons (bindings, mod_dav_svn, etc). and static build are not compatible !!!"
+	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${FALSE}
+.endif
+.endif
+
+pre-patch:
+.if defined(SVN_BUILD_ADDONS)
+	@${CP} ${FILESDIR}/build-outputs.mk.addons ${WRKSRC}/build-outputs.mk
+.endif
+
+post-patch:
+.if ${PREFIX} != "/usr"
+	@${REINPLACE_CMD} "s#/etc/subversion#${ETCDIR}#g" ${WRKSRC}/subversion/libsvn_subr/config_file.c
+	@${REINPLACE_CMD} "s#/etc/subversion#${ETCDIR}#g" ${WRKSRC}/subversion/libsvn_subr/config_impl.h
+.endif
+	@${REINPLACE_CMD} "s#^swig_pydir =.*#swig_pydir = ${PYTHON_SITELIBDIR}/libsvn#" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} "s#^swig_pydir_extra =.*#swig_pydir_extra = ${PYTHON_SITELIBDIR}/svn#" ${WRKSRC}/Makefile.in
+.if ( ${PORT_OPTIONS:MFREEBSD_TEMPLATE} || !${OPTIONS_FILE_UNSET:MFREEBSD_TEMPLATE} ) && defined(ORGANIZATION)
+	@${ECHO_CMD} "#define ORGANIZATION_NAME \"${ORGANIZATION}\"" > ${WRKSRC}/subversion/freebsd-organization.h
+.endif
+# shebangfix
+	@${GREP} -Rl -e '#!/bin/b' -e '#!/bin/env' -e '#!/usr/bin/p' ${WRKSRC}/tools/ \
+		| ${XARGS} ${REINPLACE_CMD} -e '1s|#\!/bin/b|#\!/usr/local/bin/b|' \
+		-e '1s|#\!/bin/env|#\!/usr/bin/env|' \
+		-e '1s|#\!/usr/bin/p|#\!/usr/local/bin/p|'
+# remove all .bak files to clean the stage
+	@${FIND} ${WRKSRC} -name '*.bak' -delete
+
