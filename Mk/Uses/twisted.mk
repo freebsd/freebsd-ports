@@ -26,25 +26,25 @@ _INCLUDE_USES_TWISTED_MK=	yes
 
 # If neither build nor run are specified add both.
 .if ${twisted_ARGS:Mbuild} || empty(twisted_ARGS:Mrun)
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/__init__.py:devel/py-twistedCore
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twistedCore
 .endif
 .if ${twisted_ARGS:Mrun} || empty(twisted_ARGS:Mbuild)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/__init__.py:devel/py-twistedCore
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twistedCore
 .endif
 
 _TWISTED_COMPONENTS=	conch flow lore mail names news pair runner web web2 words
 
-conch_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/conch/__init__.py:security/py-twistedConch
-flow_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/flow/__init__.py:devel/py-twistedFlow
-lore_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/lore/__init__.py:textproc/py-twistedLore
-mail_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/mail/__init__.py:mail/py-twistedMail
-names_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/names/__init__.py:dns/py-twistedNames
-news_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/news/__init__.py:news/py-twistedNews
-pair_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/pair/__init__.py:net/py-twistedPair
-runner_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/runner/__init__.py:devel/py-twistedRunner
-web2_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/web2/__init__.py:www/py-twistedWeb2
-web_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/web/__init__.py:www/py-twistedWeb
-words_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/words/__init__.py:net-im/py-twistedWords
+conch_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/conch/__init__.py:${PORTSDIR}/security/py-twistedConch
+flow_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/flow/__init__.py:${PORTSDIR}/devel/py-twistedFlow
+lore_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/lore/__init__.py:${PORTSDIR}/textproc/py-twistedLore
+mail_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/mail/__init__.py:${PORTSDIR}/mail/py-twistedMail
+names_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/names/__init__.py:${PORTSDIR}/dns/py-twistedNames
+news_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/news/__init__.py:${PORTSDIR}/news/py-twistedNews
+pair_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/pair/__init__.py:${PORTSDIR}/net/py-twistedPair
+runner_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/runner/__init__.py:${PORTSDIR}/devel/py-twistedRunner
+web2_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/web2/__init__.py:${PORTSDIR}/www/py-twistedWeb2
+web_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/web/__init__.py:${PORTSDIR}/www/py-twistedWeb
+words_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/words/__init__.py:${PORTSDIR}/net-im/py-twistedWords
 
 .for component in ${twisted_ARGS:Nbuild:Nrun}
 .  if ${_TWISTED_COMPONENTS:M${component}}==""

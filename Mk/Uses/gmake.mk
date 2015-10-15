@@ -22,7 +22,7 @@ IGNORE=	Incorrect 'USES+= gmake:${gmake_ARGS}' gmake has only one valid argument
 _GMAKE_EXT=	-lite
 .endif
 
-BUILD_DEPENDS+=		gmake${_GMAKE_EXT}:devel/gmake${_GMAKE_EXT}
+BUILD_DEPENDS+=		gmake${_GMAKE_EXT}:${PORTSDIR}/devel/gmake${_GMAKE_EXT}
 CONFIGURE_ENV+=		MAKE=gmake${_GMAKE_EXT}
 MAKE_CMD=		gmake${_GMAKE_EXT}
 

@@ -75,8 +75,8 @@
 .if !defined(_INCLUDE_USES_GSSAPI_MK)
 _INCLUDE_USES_GSSAPI_MK=	yes
 
-_HEIMDAL_DEPENDS=${GSSAPILIBDIR}/libgssapi.so:security/heimdal
-_MITKRB5_DEPENDS=${GSSAPILIBDIR}/libkrb5support.so:security/krb5
+_HEIMDAL_DEPENDS=${GSSAPILIBDIR}/libgssapi.so:${PORTSDIR}/security/heimdal
+_MITKRB5_DEPENDS=${GSSAPILIBDIR}/libkrb5support.so:${PORTSDIR}/security/krb5
 _HEADERS=	sys/types.h sys/stat.h stdint.h
 
 .undef _FIXUP_KRB5CONFIG

@@ -542,8 +542,8 @@ xmlpatterns-tool_PATH=	${QT_BINDIR}/xmlpatterns
 
 _USE_QT_ALL+=	${_USE_QT${_QT_VERSION:R:R}_ONLY}
 .for comp in ${_USE_QT_ALL}
-${comp}_BUILD_DEPENDS?=	${${comp}_PATH}:${${comp}_PORT}
-${comp}_RUN_DEPENDS?=	${${comp}_PATH}:${${comp}_PORT}
+${comp}_BUILD_DEPENDS?=	${${comp}_PATH}:${PORTSDIR}/${${comp}_PORT}
+${comp}_RUN_DEPENDS?=	${${comp}_PATH}:${PORTSDIR}/${${comp}_PORT}
 ${comp}_build_BUILD_DEPENDS?=	${${comp}_BUILD_DEPENDS}
 ${comp}_run_RUN_DEPENDS?=	${${comp}_RUN_DEPENDS}
 _USE_QT_ALL_SUFFIXED+=	${comp} ${comp}_build ${comp}_run

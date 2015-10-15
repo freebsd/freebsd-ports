@@ -172,19 +172,19 @@ _TCLTK_LIB_DEPENDS=
 # Construct the correct dependency lines (wrapper)
 .if ${tcl_ARGS:Mwrapper}
 .  if ${_TCLTK_PORT} == "tcl"
-_TCLTK_WRAPPER_PORT=	tclsh:lang/tcl-wrapper
+_TCLTK_WRAPPER_PORT=	tclsh:${PORTSDIR}/lang/tcl-wrapper
 .  elif ${_TCLTK_PORT} == "tk"
-_TCLTK_WRAPPER_PORT=	wish:x11-toolkits/tk-wrapper
+_TCLTK_WRAPPER_PORT=	wish:${PORTSDIR}/x11-toolkits/tk-wrapper
 .  endif
 .endif
 
 # Construct the correct dependency lines (Tcl/Tk)
 .  if ${_TCLTK_PORT} == "tcl"
-_TCLTK_EXE_LINE=	tclsh${TCL_VER}:lang/tcl${_TCLTK_WANTED_VERSION}
-_TCLTK_LIB_LINE=	libtcl${TCL_SHLIB_VER}.so:lang/tcl${_TCLTK_WANTED_VERSION}
+_TCLTK_EXE_LINE=	tclsh${TCL_VER}:${PORTSDIR}/lang/tcl${_TCLTK_WANTED_VERSION}
+_TCLTK_LIB_LINE=	libtcl${TCL_SHLIB_VER}.so:${PORTSDIR}/lang/tcl${_TCLTK_WANTED_VERSION}
 .  elif ${_TCLTK_PORT} == "tk"
-_TCLTK_EXE_LINE=	wish${TK_VER}:x11-toolkits/tk${_TCLTK_WANTED_VERSION}
-_TCLTK_LIB_LINE=	libtk${TK_SHLIB_VER}.so:x11-toolkits/tk${_TCLTK_WANTED_VERSION}
+_TCLTK_EXE_LINE=	wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${_TCLTK_WANTED_VERSION}
+_TCLTK_LIB_LINE=	libtk${TK_SHLIB_VER}.so:${PORTSDIR}/x11-toolkits/tk${_TCLTK_WANTED_VERSION}
 .endif
 
 .if ${tcl_ARGS:Mbuild}

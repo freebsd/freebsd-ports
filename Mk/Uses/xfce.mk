@@ -27,33 +27,33 @@ xfce_ARGS?=	# empty
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=	-L${LOCALBASE}/lib
 
-garcon_LIB_DEPENDS=	libgarcon-1.so:sysutils/garcon
+garcon_LIB_DEPENDS=	libgarcon-1.so:${PORTSDIR}/sysutils/garcon
 garcon_USE_XFCE_REQ=	libmenu
 
-libexo_LIB_DEPENDS=	libexo-1.so:x11/libexo
+libexo_LIB_DEPENDS=	libexo-1.so:${PORTSDIR}/x11/libexo
 libexo_USE_XFCE_REQ=	libmenu
 
-libgui_LIB_DEPENDS=	libxfcegui4.so:x11-toolkits/libxfce4gui
+libgui_LIB_DEPENDS=	libxfcegui4.so:${PORTSDIR}/x11-toolkits/libxfce4gui
 libgui_USE_XFCE_REQ=	libutil
 
-libmenu_LIB_DEPENDS=	libxfce4ui-1.so:x11/libxfce4menu
+libmenu_LIB_DEPENDS=	libxfce4ui-1.so:${PORTSDIR}/x11/libxfce4menu
 libmenu_DETECT=	${LOCALBASE}/lib/libxfce4ui-1.so
 libmenu_GTK3_DETECT=	${LOCALBASE}/lib/libxfce4ui-2.so
 libmenu_USE_XFCE_REQ=	xfconf
 
-libutil_LIB_DEPENDS=	libxfce4util.so:x11/libxfce4util
+libutil_LIB_DEPENDS=	libxfce4util.so:${PORTSDIR}/x11/libxfce4util
 
-panel_LIB_DEPENDS=	libxfce4panel-1.0.so:x11-wm/xfce4-panel
-panel_RUN_DEPENDS=	xfce4-panel:x11-wm/xfce4-panel
+panel_LIB_DEPENDS=	libxfce4panel-1.0.so:${PORTSDIR}/x11-wm/xfce4-panel
+panel_RUN_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
 panel_DETECT=	${LOCALBASE}/lib/libxfce4panel-1.0.so
 panel_GTK3_DETECT=	${LOCALBASE}/lib/libxfce4panel-2.0.so
 panel_USE_XFCE_REQ=	garcon libexo xfconf
 
-thunar_LIB_DEPENDS=	libthunarx-2.so:x11-fm/thunar
-thunar_RUN_DEPENDS=	Thunar:x11-fm/thunar
+thunar_LIB_DEPENDS=	libthunarx-2.so:${PORTSDIR}/x11-fm/thunar
+thunar_RUN_DEPENDS=	Thunar:${PORTSDIR}/x11-fm/thunar
 thunar_USE_XFCE_REQ=	xfconf libmenu
 
-xfconf_LIB_DEPENDS=	libxfconf-0.so:x11/xfce4-conf
+xfconf_LIB_DEPENDS=	libxfconf-0.so:${PORTSDIR}/x11/xfce4-conf
 xfconf_USE_XFCE_REQ=	libutil
 
 .if defined(USE_XFCE)

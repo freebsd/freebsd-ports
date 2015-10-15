@@ -23,8 +23,8 @@ MASTER_SITES?=	http://pear.php.net/get/ \
 EXTRACT_SUFX?=	.tgz
 DIST_SUBDIR?=	PEAR
 
-BUILD_DEPENDS+=	pear:devel/pear
-RUN_DEPENDS+=	pear:devel/pear
+BUILD_DEPENDS+=	pear:${PORTSDIR}/devel/pear
+RUN_DEPENDS+=	pear:${PORTSDIR}/devel/pear
 
 .if !defined(USE_PHPIZE)
 NO_BUILD=	yes

@@ -16,7 +16,7 @@ IGNORE=	Incorrect 'USES+= fmake:${fmake_ARGS}' fmake takes no arguments
 
 .if defined(.PARSEDIR)
 FMAKE=			${LOCALBASE}/bin/fmake
-BUILD_DEPENDS+=		${FMAKE}:devel/fmake
+BUILD_DEPENDS+=		${FMAKE}:${PORTSDIR}/devel/fmake
 CONFIGURE_ENV+=		MAKE=${FMAKE}
 MAKE_CMD=		${FMAKE}
 .endif
