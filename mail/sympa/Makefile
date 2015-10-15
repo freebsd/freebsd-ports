@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sympa
-PORTVERSION=	6.2.8
+PORTVERSION=	6.2.9
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sympa.org/distribution/ \
 		http://www.sympa.org/distribution/old/

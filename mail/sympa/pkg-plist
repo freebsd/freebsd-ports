@@ -145,6 +145,7 @@ man/man3/Sympa::DatabaseDriver::SQLite.3Sympa.gz
 man/man3/Sympa::DatabaseDriver::Sybase.3Sympa.gz
 man/man3/Sympa::DatabaseManager.3Sympa.gz
 man/man3/Sympa::HTMLSanitizer.3Sympa.gz
+man/man3/Sympa::Internals.3Sympa.gz
 man/man3/Sympa::Language.3Sympa.gz
 man/man3/Sympa::ListDef.3Sympa.gz
 man/man3/Sympa::LockedFile.3Sympa.gz
@@ -297,9 +298,9 @@ man/man8/wwsympa.8.gz
 %%DATADIR%%/defaults/mail_tt2/command_report.tt2
 %%DATADIR%%/defaults/mail_tt2/d_install_shared.tt2
 %%DATADIR%%/defaults/mail_tt2/d_reject_shared.tt2
+%%DATADIR%%/defaults/mail_tt2/delivery_status_notification.tt2
 %%DATADIR%%/defaults/mail_tt2/digest.tt2
 %%DATADIR%%/defaults/mail_tt2/digestplain.tt2
-%%DATADIR%%/defaults/mail_tt2/dsn.tt2
 %%DATADIR%%/defaults/mail_tt2/expire_deletion.tt2
 %%DATADIR%%/defaults/mail_tt2/expire_warning1.tt2
 %%DATADIR%%/defaults/mail_tt2/expire_warning2.tt2
