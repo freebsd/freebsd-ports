@@ -7,6 +7,7 @@ PORTREVISION?=	0
 CATEGORIES+=	devel
 MASTER_SITES=	APACHE/subversion
 DIST_SUBDIR=	subversion18
+PKGNAMESUFFIX=	18
 
 GNU_CONFIGURE=	yes
 USES+=		cpe libtool pkgconfig shebangfix tar:bzip2
