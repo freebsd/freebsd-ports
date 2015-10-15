@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	${JDK_NAME}
-PORTVERSION=	${DISTVERSION_${ARCH}}
+PORTVERSION=	${DISTVERSION_${JDK_ARCH}}
 PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	LOCAL/jkim
 PKGNAMEPREFIX=	bootstrap-
-DISTNAME=	${JDK_PORT}-${ARCH}-${PORTVERSION}
+DISTNAME=	${JDK_PORT}-${JDK_ARCH}-${PORTVERSION}
 
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Oracle's Java 6 virtual machine release under the GPL v2
@@ -16,19 +16,19 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	java-zoneinfo>0:${PORTSDIR}/java/java-zoneinfo
 BUNDLE_LIBS=	yes
 
-ONLY_FOR_ARCHS=	amd64 i386 armv6
+ONLY_FOR_ARCHS=	amd64 armv6 armv6hf i386
 
-DISTINFO_FILE=	${.CURDIR}/distinfo.${ARCH}
+DISTINFO_FILE=	${.CURDIR}/distinfo.${JDK_ARCH}
 DISTVERSION_amd64=	r351880
+DISTVERSION_arm=	r378760
 DISTVERSION_i386=	r351880
-DISTVERSION_armv6=	r378760
 
+JDK_ARCH=	${ARCH:C/armv6.*/arm/}
 JDK_NAME=	openjdk
-JDK_PORT=	openjdk6
 JDK_ROOT=	bootstrap-${JDK_NAME}
 
 NO_BUILD=	yes
-PLIST_SUB=	ARCH=${ARCH:S/armv6/arm/} JDK_NAME=${JDK_NAME} JDK_ROOT=${JDK_ROOT}
+PLIST_SUB=	JDK_ARCH=${JDK_ARCH} JDK_NAME=${JDK_NAME} JDK_ROOT=${JDK_ROOT}
 USES=		tar:xz
 WRKSRC=		${WRKDIR}/${JDK_ROOT}
 
@@ -43,8 +43,10 @@ PLIST_SUB+=	LIBSTDCXX="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "armv6"
+.if ${ARCH:Marmv6*}
 JDK_PORT=	openjdk7
+.else
+JDK_PORT=	openjdk6
 .endif
 
 .if ${ARCH} == "i386"
