@@ -49,10 +49,4 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/notmuch
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnotmuch.so.4.2.0
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 900044
-IGNORE=	requires zlib at least 1.2.5
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

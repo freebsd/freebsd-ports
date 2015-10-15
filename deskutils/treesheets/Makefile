@@ -37,12 +37,6 @@ DESKTOP_ENTRIES="TreeSheets" "${COMMENT}" \
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900014
-CXXFLAGS+=	-D__LONG_LONG_SUPPORTED
-.endif
-
 post-patch: .SILENT
 	${REINPLACE_CMD} -e 's|sys->frame->GetPath(L"|(L"${DOCSDIR}/|' \
 		${BUILD_WRKSRC}/document.h
@@ -60,4 +54,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/TS/images/icon32.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

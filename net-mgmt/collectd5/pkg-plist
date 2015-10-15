@@ -90,7 +90,7 @@ lib/collectd/threshold.so
 %%TOKYOTYRANT%%lib/collectd/tokyotyrant.so
 lib/collectd/unixsock.so
 lib/collectd/uptime.so
-%%USERS%%lib/collectd/users.so
+lib/collectd/users.so
 lib/collectd/uuid.so
 %%VARNISH%%lib/collectd/varnish.so
 %%VIRT%%lib/collectd/virt.so

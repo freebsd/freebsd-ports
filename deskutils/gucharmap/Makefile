@@ -26,10 +26,4 @@ INSTALL_TARGET=	install-strip
 GLIB_SCHEMAS=	org.gnome.Charmap.enums.xml \
 		org.gnome.Charmap.gschema.xml
 
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 900000
-CONFIGURE_ARGS+=	--disable-Bsymbolic
-.endif
-
 .include <bsd.port.mk>

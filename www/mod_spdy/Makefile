@@ -50,7 +50,7 @@ GCC_DESC=	Build mod_spdy with GCC 4.6+
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 900033 || ${PORT_OPTIONS:MGCC}
+.if ${PORT_OPTIONS:MGCC}
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
@@ -60,15 +60,8 @@ MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 USE_GCC?=	yes
 GYP_DEFINES+=	gcc_version=${CXX:S/g++//}
 .else
-.if ${OSVERSION} < 902000
-BROKEN=		Depends on deleted lang/llvm32
-#BUILD_DEPENDS+=	${LOCALBASE}/bin/clang32:${PORTSDIR}/lang/clang32
-CC=		${LOCALBASE}/bin/clang32
-CXX=		${LOCALBASE}/bin/clang++32
-.else
 CC=		clang
 CXX=		clang++
-.endif
 GYP_DEFINES+=	clang=1
 .endif
 
@@ -96,10 +89,6 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" \
 MAKE_ENV+=	BUILDTYPE=${BUILDTYPE}
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == i386 && ${OSVERSION} < 901000
-BROKEN=	does not link due to libtool not respecting CC
-.endif
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/temp/progress

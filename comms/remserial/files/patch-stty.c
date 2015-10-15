@@ -27,12 +27,6 @@
 +#define VT0	0000000
 +#define VT1	0040000
 +#define VTDLY	0040000
-+#if OSVERSION < 800000
-+/* for older FreeBSD versions */
-+#define TAB0	0000000
-+#define TAB3	0014000
-+#define TABDLY	0014000
-+#endif
 +#endif
 +
  extern int errno;

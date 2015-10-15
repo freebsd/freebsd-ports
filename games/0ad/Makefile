@@ -46,10 +46,6 @@ PORTDATA=	*
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 900044
-BROKEN=	Fails to build on FreeBSD 8.x
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 			-e 's|%%CC%%|${CC}|' \

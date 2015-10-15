@@ -64,10 +64,6 @@ PICKLE_DESC=	Pickle support
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 900506
-IGNORE=	need __WORDSIZE found in FreeBSD 9
-.endif
-
 .if ${PORT_OPTIONS:MBOOSTPOOL}
 MAKE_ARGS+=	boost_pool=1
 .endif
