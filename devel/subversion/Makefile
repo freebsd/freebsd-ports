@@ -1,13 +1,13 @@
 # Created by: rooneg@electricjellyfish.net
 # $FreeBSD$
 
-PORTREVISION=	2
+PORTREVISION=	0
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Version control system
 
-CONFLICTS_INSTALL=	subversion-1.[^8].[0-9]* \
-			subversion1[^8]-1.[^8].[0-9]*
+CONFLICTS_INSTALL=	subversion-1.[^9].[0-9]* \
+			subversion1[^9]-1.[^9].[0-9]*
 
 USE_RC_SUBR=	svnserve
 
@@ -19,7 +19,6 @@ OPTIONS_DEFINE=	\
 		FREEBSD_TEMPLATE\
 		MAINTAINER_DEBUG\
 		NLS		\
-		P4_STYLE_MARKERS\
 		SASL		\
 		SERF		\
 		STATIC		\
@@ -27,13 +26,11 @@ OPTIONS_DEFINE=	\
 		TEST		\
 		TOOLS
 
-OPTIONS_DEFAULT=P4_STYLE_MARKERS \
-		FREEBSD_TEMPLATE \
+OPTIONS_DEFAULT=FREEBSD_TEMPLATE \
 		SERF TOOLS
 
 FREEBSD_TEMPLATE_DESC=	FreeBSD Project log template
 MAINTAINER_DEBUG_DESC=	Build debug version
-P4_STYLE_MARKERS_DESC=	Perforce-style conflict markers
 SERF_DESC=		WebDAV/Delta-V (HTTP/HTTPS) repo access module
 STATIC_DESC=		Build static version (no shared libs)
 SVNSERVE_WRAPPER_DESC=	Enable svnserve wrapper (umask setter)
@@ -41,7 +38,6 @@ TEST_DESC=		Run subversion test suite
 TOOLS_DESC=		Install several tools
 
 # Patches required for use with the FreeBSD Project repository only
-P4_STYLE_MARKERS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-3way-conflict-markers
 FREEBSD_TEMPLATE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-fbsd-template
 SVNSERVE_WRAPPER_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-svnserve-wrapper
 
@@ -126,7 +122,7 @@ pre-configure:
 	if [ "$${BDB_VERSION}" != "4" -a "$${BDB_VERSION}" != "5" -a "$${BDB_VERSION}" != "6" ] ; then \
 		${ECHO_MSG} "" ; \
 		${ECHO_MSG} 'You should build `'"devel/apr1' with Berkeley DB (4, 5 or 6) support to use subversion with it." ; \
-		${ECHO_MSG} 'Please rebuild `'"devel/apr1' with option "'`'"${OPT_NAME}' and try again." ; \
+		${ECHO_MSG} 'Please rebuild `'"devel/apr1' with option "'`'"BDB' and try again." ; \
 		${ECHO_MSG} "" ; \
 		${ECHO_MSG} "Or you can disable Berkeley DB support. Only 'fs' repository backend will be available." ; \
 		${ECHO_MSG} "" ; \
@@ -226,7 +222,7 @@ _mkrepos:	.USE
 
 svn-build-outputs-hack:
 	(cd ${WRKSRC} && ${PATCH} ${PATCH_DIST_ARGS} -p0 < ${PATCHDIR}/extra-patch-build.conf)
-	(cd ${WRKSRC} && python2 gen-make.py --release --installed-libs libsvn_client,libsvn_delta,libsvn_diff,libsvn_fs,libsvn_ra,libsvn_repos,libsvn_subr,libsvn_wc)
+	(cd ${WRKSRC} && python2 gen-make.py --release --installed-libs libsvn_client,libsvn_delta,libsvn_diff,libsvn_fs,libsvn_fs_x,libsvn_ra,libsvn_repos,libsvn_subr,libsvn_wc)
 	${MV} ${WRKSRC}/build-outputs.mk ${FILESDIR}/build-outputs.mk.addons
 
 .include <bsd.port.post.mk>

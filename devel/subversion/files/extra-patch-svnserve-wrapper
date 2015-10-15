@@ -1,11 +1,11 @@
---- build-outputs.mk.orig	2011-09-07 23:20:51.000000000 +0400
-+++ build-outputs.mk	2011-09-07 23:21:37.000000000 +0400
-@@ -887,7 +887,7 @@
- 	cd subversion/svndumpfilter ; $(INSTALL_BIN) svndumpfilter$(EXEEXT) $(DESTDIR)$(bindir)/svndumpfilter$(EXEEXT)
- 	cd subversion/svnlook ; $(INSTALL_BIN) svnlook$(EXEEXT) $(DESTDIR)$(bindir)/svnlook$(EXEEXT)
+--- build-outputs.mk.orig	2015-10-15 01:24:35.493881000 +0300
++++ build-outputs.mk	2015-10-15 01:24:47.968766000 +0300
+@@ -1115,7 +1115,7 @@
+ 	
  	cd subversion/svnrdump ; $(INSTALL_BIN) svnrdump$(EXEEXT) $(DESTDIR)$(bindir)/svnrdump$(EXEEXT)
+ 	
 -	cd subversion/svnserve ; $(INSTALL_BIN) svnserve$(EXEEXT) $(DESTDIR)$(bindir)/svnserve$(EXEEXT)
 +	cd subversion/svnserve ; $(INSTALL_BIN) svnserve$(EXEEXT) $(DESTDIR)$(bindir)/svnserve.bin$(EXEEXT)
+ 	
  	cd subversion/svnsync ; $(INSTALL_BIN) svnsync$(EXEEXT) $(DESTDIR)$(bindir)/svnsync$(EXEEXT)
- 	cd subversion/svnversion ; $(INSTALL_BIN) svnversion$(EXEEXT) $(DESTDIR)$(bindir)/svnversion$(EXEEXT)
- 
+ 	
