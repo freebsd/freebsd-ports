@@ -165,9 +165,12 @@ PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
 		ARCH_LIB=${_ARCH_LIB}
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} # XXX Remove
 
+_PERL5_DEFAULT_FILE=	/tmp/PERL5_DEFAULT
+
 # bsd.default-versions.mk needs to know LOCALBASE for Perl, so
 # bsd.port.options.mk is needed before including it.
 .include <bsd.port.options.mk>
+.sinclude "${_PERL5_DEFAULT_FILE}"
 .include "${.CURDIR}/../../Mk/bsd.default-versions.mk"
 
 # if this port is default due PERL5_DEFAULT
@@ -238,9 +241,21 @@ pre-everything::
 .endif
 
 # Put a symlink to the future libperl.so.x.yy so that -lperl works.
+# Also, save PERL5_DEFAULT in case someone is not using the default Perl
+# version whilst not having set DEFAULT_VERSIONS=perl5=blah.  While upgrading,
+# portmaster/portupgrade will remove the installed Perl version, and it will
+# remove any way to guess what the default Perl version is needed.
 post-extract:
 	${LN} -s libperl.so.${PORTVERSION} ${WRKSRC}/libperl.so
 	${LN} -s libperl.so.${PORTVERSION} ${WRKSRC}/libperl.so.${PERL_VER}
+.if !defined(PACKAGE_BUILDING)
+	@${ECHO_CMD} "PERL5_DEFAULT=${PERL5_DEFAULT}" > ${_PERL5_DEFAULT_FILE}
+.endif
+
+.if !defined(PACKAGE_BUILDING)
+post-clean:
+	@${RM} ${_PERL5_DEFAULT_FILE}
+.endif
 
 .if !defined(MAKING_PATCHES)
 # make clean patch makepatch MAKING_PATCHES=

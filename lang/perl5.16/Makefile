@@ -98,7 +98,10 @@ PKGINSTALL=	${WRKDIR}/use.perl
 PKGDEINSTALL=	${WRKDIR}/use.perl
 INSTALL_TARGET=	install-strip
 
+_PERL5_DEFAULT_FILE=	/tmp/PERL5_DEFAULT
+
 .include <bsd.port.pre.mk>
+.sinclude "${_PERL5_DEFAULT_FILE}"
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 
 # if this port is default due PERL5_DEFAULT
@@ -233,9 +236,21 @@ LINK_USRBIN=	no
 SUB_LIST+=	LINK_USRBIN=${LINK_USRBIN}
 
 # Put a symlink to the future libperl.so.x.yy so that -lperl works.
+# Also, save PERL5_DEFAULT in case someone is not using the default Perl
+# version whilst not having set DEFAULT_VERSIONS=perl5=blah.  While upgrading,
+# portmaster/portupgrade will remove the installed Perl version, and it will
+# remove any way to guess what the default Perl version is needed.
 post-extract:
 	${LN} -s libperl.so.${PERL_VERSION} ${WRKSRC}/libperl.so
 	${LN} -s libperl.so.${PERL_VERSION} ${WRKSRC}/libperl.so.${PERL_VER}
+.if !defined(PACKAGE_BUILDING)
+	@${ECHO_CMD} "PERL5_DEFAULT=${PERL5_DEFAULT}" > ${_PERL5_DEFAULT_FILE}
+.endif
+
+.if !defined(PACKAGE_BUILDING)
+post-clean:
+	@${RM} ${_PERL5_DEFAULT_FILE}
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
