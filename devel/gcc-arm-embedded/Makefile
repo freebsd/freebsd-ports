@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	gcc-arm-embedded
-PORTVERSION=	4.9.20150609
+PORTVERSION=	4.9.20150921
 PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	http://launchpad.net/gcc-arm-embedded/4.9/4.9-2015-q2-update/+download/
+MASTER_SITES=	http://launchpad.net/gcc-arm-embedded/4.9/4.9-2015-q3-update/+download/
 DISTNAME=	${ORIGINAL_PACKAGE_NAME}-src
 
 MAINTAINER=	lev@FreeBSD.org
@@ -45,7 +45,7 @@ PATCH_WRKSRC=		${WRKDIR}/${ORIGINAL_PACKAGE_NAME}
 BUILD_WRKSRC=	${WRKDIR}
 
 GCC_VERSION=		4.9.3
-FULL_VERSION=		4_9-2015q2-20150609
+FULL_VERSION=		4_9-2015q3-20150921
 TARGET=			arm-none-eabi
 ORIGINAL_PACKAGE_NAME=	gcc-${TARGET}-${FULL_VERSION}
 
