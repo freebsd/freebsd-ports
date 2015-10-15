@@ -1,7 +1,6 @@
-ttyrec is a tty recorder. Recorded data can be played back with the
-included ttyplay command. ttyrec is just a derivative of script
-command for recording timing information with microsecond accuracy
-as well. It can record emacs -nw, vi, lynx, or any programs running
-on tty. 
+ttyrec is a tty recorder. Recorded data can be played back with the included
+ttyplay command. ttyrec is just a derivative of script command for recording
+timing information with microsecond accuracy as well. It can record emacs -nw,
+vi, lynx, or any programs running on tty.
 
 WWW: http://0xcc.net/ttyrec/index.html.en
