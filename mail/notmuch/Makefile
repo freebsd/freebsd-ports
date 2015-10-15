@@ -30,13 +30,8 @@ BASH_CONFIGURE_OFF=	--without-bash-completion
 EMACS_CONFIGURE_OFF=	--without-emacs
 EMACS_CONFIGURE_ON=	--emacslispdir=${PREFIX}/${EMACS_SITE_LISPDIR} \
 			--emacsetcdir=${PREFIX}/${EMACS_SITE_LISPDIR}
+EMACS_USE=		EMACS=yes
 ZSH_CONFIGURE_OFF=	--without-zsh-completion
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MEMACS}
-USE_EMACS=	yes
-.endif
 
 HAS_CONFIGURE=	yes
 USES=		gmake pkgconfig python:build
