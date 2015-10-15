@@ -337,10 +337,6 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-libc++.i386:-p0
 EXTRA_PATCHES+=	${FILESDIR}/extra-configure.ac
 .endif
 
-.if ${OSVERSION} < 900506
-CONFIGURE_ARGS+=	--with-linker-hash-style=sysv
-.endif
-
 .if ${OSVERSION} < 1000033
 BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 CONFIGURE_ENV+=	FLEX=${LOCALBASE}/bin/flex

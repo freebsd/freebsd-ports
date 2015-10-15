@@ -68,10 +68,8 @@ ELASTIC_LOGDIR=	/var/log/elasticsearch
 .if ${OPSYS} == FreeBSD
 .  if ${OSVERSION} >= 1000000
 PLATFORM_VER=	1
-.  elif ${OSVERSION} >= 900000
-PLATFORM_VER=	9
 .  else
-PLATFORM_VER=	8
+PLATFORM_VER=	9
 .  endif
 .else
 BROKEN=		${OPSYS} platform is not supported

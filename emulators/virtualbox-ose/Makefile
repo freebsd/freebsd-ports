@@ -195,11 +195,6 @@ KMK_FLAGS=	-j${MAKE_JOBS_NUMBER}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 900000
-EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src-VBox-Devices-PC-vbox.dsl \
-		${PATCHDIR}/extrapatch-src-VBox-Main-src-server-generic-NetIf-generic.cpp
-.endif
-
 .if ${COMPILER_TYPE} == clang
 PATCH_DEPENDS+=	${LOCALBASE}/share/kBuild/tools/GXX3.kmk:${PORTSDIR}/devel/kBuild
 EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-Config.kmk \

@@ -50,13 +50,8 @@ ONLY_FOR_ARCHS=	i386 amd64
 # stable/N/sys/i386/include, r196045 (N=8) and r225736 (N=9).
 EXTRA_DEFS+=	-DINCLUDE_FREEBSD_I386_SIGNAL=\\\"freebsd-8-i386-signal.h\\\"
 EXTRA_DEFS+=	-DINCLUDE_FREEBSD_I386_IEEEFP=\\\"freebsd-8-i386-ieeefp.h\\\"
-.if (${OSVERSION} < 900000)
-EXTRA_DEFS+=	-DINCLUDE_FREEBSD_I386__TYPES=\\\"freebsd-8-i386-_types.h\\\"
-EXTRA_DEFS+=	-DINCLUDE_FREEBSD_I386_ENDIAN=\\\"freebsd-8-i386-endian.h\\\"
-.else
 EXTRA_DEFS+=	-DINCLUDE_FREEBSD_I386__TYPES=\\\"freebsd-9-i386-_types.h\\\"
 EXTRA_DEFS+=	-DINCLUDE_FREEBSD_I386_ENDIAN=\\\"freebsd-9-i386-endian.h\\\"
-.endif
 .else
 ONLY_FOR_ARCHS=	i386
 .endif

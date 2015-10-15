@@ -36,12 +36,6 @@ NLS_USES=	gettext
 
 USE_RC_SUBR=	ntopng
 
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 900000
-BROKEN=	Does not build on 8.X due to *ENDIAN implementations
-.endif
-
 post-extract:
 	@${FIND} ${WRKSRC} -name "*~" -delete
 	@${RMDIR} ${WRKSRC}/httpdocs/ssl

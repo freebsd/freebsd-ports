@@ -21,10 +21,6 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900000
-BROKEN=		does not build on 8.x
-.endif
-
 .if ! ${PORT_OPTIONS:MDOCS}
 DISTFILES+=	blacs_install.ps f77blacsqref.ps lawn94.ps \
 		cblacsqref.ps  mpi_prop.ps mpiblacs_issues.ps

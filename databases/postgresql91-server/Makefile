@@ -167,9 +167,6 @@ PATCH_DIST_STRIP=-p1
 .  if ${PORT_OPTIONS:MDTRACE}
 CONFIGURE_ARGS+=--enable-dtrace
 LDFLAGS+=-lelf
-.    if ${OSVERSION} < 900021
-IGNORE=	need userland DTrace support found in FreeBSD 9.0
-.    endif
 .  endif
 
 .if ${PORT_OPTIONS:MGSSAPI}
