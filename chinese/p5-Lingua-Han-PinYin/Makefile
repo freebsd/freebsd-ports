@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Lingua-Han-PinYin
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 CATEGORIES=	chinese perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Lingua-Han-Utils>=0.10:${PORTSDIR}/chinese/p5-Lingua-Han-Utils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
