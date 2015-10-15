@@ -40,24 +40,18 @@ OPTIONS_DEFAULT_i386=	LUAJIT
 OPTIONS_DEFAULT_amd64=	LUAJIT
 
 LUAJIT_DESC=	Use luajit
+LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
+LUAJIT_CONFIGURE_ON=	--with-lua=luajit
+LUAJIT_USES_OFF=	lua
+LUAJIT_CONFIGURE_OFF=	--with-lua=lua \
+			--with-luaversion="${LUA_VER}"
+LUAJIT_CONFIGURE_ENV_OFF=LUA_EXECUTABLE="${LUA_CMD}"
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLUAJIT}
-CONFIGURE_ARGS=	--with-lua=luajit
-LIB_DEPENDS+=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
-.else
-USES+=		lua
-CONFIGURE_ARGS=	--with-lua=lua \
-		--with-luaversion="${LUA_VER}"
-CONFIGURE_ENV=	LUA_EXECUTABLE="${LUA_CMD}"
-
-post-patch:
+post-patch-LUAJIT-off:
 	@${REINPLACE_CMD} -e 's|$${with_lua}$${with_luaversion}|$${with_lua}-$${with_luaversion}|g' \
 		${WRKSRC}/configure
-.endif
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in changes.txt readme.md
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
