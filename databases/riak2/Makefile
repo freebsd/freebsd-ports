@@ -25,6 +25,9 @@ USES=		gmake readline
 USE_RC_SUBR=	riak
 USE_GCC=	yes
 
+ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	Does not build on i386
+
 USERS=		riak
 GROUPS=		riak
 
