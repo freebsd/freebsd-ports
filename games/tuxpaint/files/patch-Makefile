@@ -1,6 +1,6 @@
---- Makefile.orig	2013-03-18 11:17:31.189596000 +0000
-+++ Makefile	2010-10-19 01:08:15.000000000 +0900
-@@ -143,9 +143,9 @@
+--- Makefile.orig	2014-08-19 07:28:33 UTC
++++ Makefile
+@@ -143,9 +143,9 @@ MAGIC_PREFIX:=$(DESTDIR)$(LIBDIR)/lib/tu
  
  # Docs and man page:
  DOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint
@@ -13,7 +13,7 @@
  
  # BASH tab-completion file:
  COMPLETIONDIR:=$(DESTDIR)/etc/bash_completion.d
-@@ -610,8 +607,8 @@
+@@ -610,8 +610,8 @@ install-default-config:
  	@echo
  	@echo "...Installing default config file..."
  	@install -d $(CONFDIR)
@@ -24,7 +24,7 @@
  
  # Install BASH completion file:
  .PHONY: install-bash-completion
-@@ -1152,10 +1143,10 @@
+@@ -1152,10 +1152,10 @@ tp-magic-config:	src/tp-magic-config.sh.
  	@echo "...Generating 'Magic' tool API configuration script..."
  	@sed -e s/__VERSION__/$(VER_VERSION)/ \
  		-e s/__APIVERSION__/$(MAGIC_API_VERSION)/ \
@@ -39,7 +39,7 @@
  		src/tp-magic-config.sh.in \
  		> tp-magic-config
  
-@@ -1178,7 +1169,7 @@
+@@ -1178,7 +1178,7 @@ linux_PLUGIN_LIBS:=
  PLUGIN_LIBS:=$($(OS)_PLUGIN_LIBS)
  
  #MAGIC_CFLAGS:=-g3 -O2 -fvisibility=hidden -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(MAGIC_SDL_CPPFLAGS) -Isrc/
