@@ -15,8 +15,8 @@
 .if !defined(_INCLUDE_USES_FAM_MK)
 _INCLUDE_USES_FAM_MK=	yes
 
-_fam_DEPENDS=	libfam.so.0:devel/fam
-_gamin_DEPENDS=	libfam.so.0:devel/gamin
+_fam_DEPENDS=	libfam.so.0:${PORTSDIR}/devel/fam
+_gamin_DEPENDS=	libfam.so.0:${PORTSDIR}/devel/gamin
 
 _FAM_SYSTEMS=	fam gamin
 _DEFAULT_FAM=	gamin

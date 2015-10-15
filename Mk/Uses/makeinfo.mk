@@ -16,7 +16,7 @@ IGNORE=	USES=makeinfo - expects no arguments
 .endif
 
 .if !exists(/usr/bin/makeinfo)
-BUILD_DEPENDS+=	makeinfo:print/texinfo
+BUILD_DEPENDS+=	makeinfo:${PORTSDIR}/print/texinfo
 .endif
 
 .endif

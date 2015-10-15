@@ -15,8 +15,8 @@ _INCLUDE_USES_DESKTOP_FILE_UTILS_MK=	yes
 IGNORE=	USES=desktop-file-utils does not require args
 .endif
 
-BUILD_DEPENDS+=	update-desktop-database:devel/desktop-file-utils
-RUN_DEPENDS+=	update-desktop-database:devel/desktop-file-utils
+BUILD_DEPENDS+=	update-desktop-database:${PORTSDIR}/devel/desktop-file-utils
+RUN_DEPENDS+=	update-desktop-database:${PORTSDIR}/devel/desktop-file-utils
 PLIST_FILES+=	"@desktop-file-utils"
 
 .endif

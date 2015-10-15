@@ -58,11 +58,11 @@ MIX_EXTRA_APPS?=
 MIX_EXTRA_DIRS?=
 MIX_EXTRA_FILES?=
 
-BUILD_DEPENDS+=	elixir:lang/elixir
-RUN_DEPENDS+=	elixir:lang/elixir
+BUILD_DEPENDS+=	elixir:${PORTSDIR}/lang/elixir
+RUN_DEPENDS+=	elixir:${PORTSDIR}/lang/elixir
 
 .for depend in ${MIX_BUILD_DEPS}
-BUILD_DEPENDS+=	${depend:T}>=0:${depend}
+BUILD_DEPENDS+=	${depend:T}>=0:${PORTSDIR}/${depend}
 .endfor
 
 .for depend in ${MIX_RUN_DEPS}

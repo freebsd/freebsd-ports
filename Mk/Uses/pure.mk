@@ -23,11 +23,11 @@ IGNORE= Incorrect 'USES+= pure:${pure_ARGS}' usage: argument [${arg}] is not rec
 .    endif
 .endfor
 
-LIB_DEPENDS+=	libpure.so:lang/pure
+LIB_DEPENDS+=	libpure.so:${PORTSDIR}/lang/pure
 .include "${USESDIR}/gmake.mk"
 
 .if ${pure_ARGS:Mffi}
-RUN_DEPENDS+=	${LOCALBASE}/lib/pure/ffi.pure:devel/pure-ffi
+RUN_DEPENDS+=	${LOCALBASE}/lib/pure/ffi.pure:${PORTSDIR}/devel/pure-ffi
 .endif
 
 MAKE_ARGS+=	prefix=${PREFIX} mandir=${PREFIX}/man \
