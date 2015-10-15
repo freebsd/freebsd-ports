@@ -14,7 +14,7 @@ you update your ports collection, before attempting any port upgrades.
   
   If you don't want to update your subversion installation, run
   
-  	pkg set -o devel/subversion:devel/subversion18
+  	pkg set -n subversion:subversion18
   	
   and add
   
