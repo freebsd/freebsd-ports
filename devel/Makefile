@@ -5104,6 +5104,7 @@
     SUBDIR += subversion-book
     SUBDIR += subversion-static
     SUBDIR += subversion17
+    SUBDIR += subversion18
     SUBDIR += subversive
     SUBDIR += svk
     SUBDIR += svn2git
