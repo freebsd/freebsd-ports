@@ -12,7 +12,8 @@ COMMENT=	Unix Web Authenticator
 
 LICENSE=	BSD3CLAUSE
 
-PLIST_FILES=	bin/pwauth bin/checkfaillog
+PLIST_FILES=	"@(,,4555) bin/pwauth" \
+		bin/checkfaillog
 
 ALL_TARGET=	pwauth checkfaillog
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LIB="-lcrypt -lpam"
@@ -25,8 +26,7 @@ post-patch:
 		s/%%MINUID%%/${MINUID}/" ${WRKSRC}/config.h
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/pwauth ${STAGEDIR}${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/checkfaillog ${STAGEDIR}${PREFIX}/bin
-	@${CHMOD} u=rxs ${STAGEDIR}${PREFIX}/bin/pwauth
+	${INSTALL_PROGRAM} ${WRKSRC}/pwauth ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/checkfaillog ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
