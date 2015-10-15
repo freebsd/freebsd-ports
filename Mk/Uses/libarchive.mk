@@ -12,5 +12,5 @@
 _INCLUDE_USES_LIBARCHIVE_MK=	yes
 .include "${USESDIR}/localbase.mk"
 
-LIB_DEPENDS+=	libarchive.so.13:archivers/libarchive
+LIB_DEPENDS+=	libarchive.so.13:${PORTSDIR}/archivers/libarchive
 .endif

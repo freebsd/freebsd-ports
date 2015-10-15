@@ -16,11 +16,11 @@ display_ARGS=	install
 .endif
 
 .if !defined(DISPLAY)
-BUILD_DEPENDS+=	Xvfb:x11-servers/xorg-vfbserver \
-	${LOCALBASE}/share/fonts/misc/8x13O.pcf.gz:x11-fonts/xorg-fonts-miscbitmaps \
-	${LOCALBASE}/share/fonts/misc/fonts.alias:x11-fonts/font-alias \
-	${LOCALBASE}/share/X11/xkb/rules/base:x11/xkeyboard-config \
-	xkbcomp:x11/xkbcomp
+BUILD_DEPENDS+=	Xvfb:${PORTSDIR}/x11-servers/xorg-vfbserver \
+	${LOCALBASE}/share/fonts/misc/8x13O.pcf.gz:${PORTSDIR}/x11-fonts/xorg-fonts-miscbitmaps \
+	${LOCALBASE}/share/fonts/misc/fonts.alias:${PORTSDIR}/x11-fonts/font-alias \
+	${LOCALBASE}/share/X11/xkb/rules/base:${PORTSDIR}/x11/xkeyboard-config \
+	xkbcomp:${PORTSDIR}/x11/xkbcomp
 
 XVFBPORT!=	port=0; while test -S /tmp/.X11-unix/X$${port} ; do port=$$(( port + 1 )) ; done ; ${ECHO_CMD} $$port
 XVFBPIDFILE=	/tmp/.xvfb-${XVFBPORT}.pid

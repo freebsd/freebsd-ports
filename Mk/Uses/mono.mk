@@ -19,8 +19,8 @@ IGNORE=	USES=mono takes no arguments
 MONO_SHARED_DIR=	${WRKDIR}
 CONFIGURE_ENV+=		MONO_SHARED_DIR="${MONO_SHARED_DIR}"
 MAKE_ENV+=		MONO_SHARED_DIR="${MONO_SHARED_DIR}" TZ=UTC
-BUILD_DEPENDS+=		mono:lang/mono
-RUN_DEPENDS+=		mono:lang/mono
+BUILD_DEPENDS+=		mono:${PORTSDIR}/lang/mono
+RUN_DEPENDS+=		mono:${PORTSDIR}/lang/mono
 
 # Set the location that webaps served by XSP should use.
 XSP_DOCROOT=		${PREFIX}/www/xsp

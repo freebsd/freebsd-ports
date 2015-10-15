@@ -46,7 +46,7 @@ CC=	/usr/bin/clang
 CPP=	/usr/bin/clang-cpp
 CXX=	/usr/bin/clang++
 .else
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang34:lang/clang34
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang34:${PORTSDIR}/lang/clang34
 CPP=	${LOCALBASE}/bin/clang-cpp34
 CC=	${LOCALBASE}/bin/clang34
 CXX=	${LOCALBASE}/bin/clang++34
@@ -58,7 +58,7 @@ LDFLAGS+=	-B${LOCALBASE}/bin
 .endif
 
 .if ! ${objc_ARGS:Mcompiler}
-LIB_DEPENDS+=	libobjc.so.4.6:lang/libobjc2
+LIB_DEPENDS+=	libobjc.so.4.6:${PORTSDIR}/lang/libobjc2
 OBJCFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .endif

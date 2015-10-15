@@ -195,11 +195,11 @@ _C:=	${_U:C/.*://:S/,/ /g:C/[<>=][^\:]*//g}
 _V:=${_UU:C/[<>=][^\:]*//:C/\:.*$//}
 .  if defined(_USE_TEX_${_V}_PORT)
 .   if !empty(_VOP)
-.    for _T in ${_USE_TEX_${_V}_PKGNAME}${_VOP}:${_USE_TEX_${_V}_PORT}
+.    for _T in ${_USE_TEX_${_V}_PKGNAME}${_VOP}:${PORTSDIR}/${_USE_TEX_${_V}_PORT}
 TEX_${_CC}_DEPENDS+=	${_T}
 .    endfor
 .   else
-.    for _T in ${_USE_TEX_${_V}_DEP}:${_USE_TEX_${_V}_PORT}
+.    for _T in ${_USE_TEX_${_V}_DEP}:${PORTSDIR}/${_USE_TEX_${_V}_PORT}
 TEX_${_CC}_DEPENDS+=	${_T}
 .    endfor
 .   endif

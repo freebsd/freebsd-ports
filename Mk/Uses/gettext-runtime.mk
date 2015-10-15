@@ -16,13 +16,13 @@ gettext-runtime_ARGS=	lib
 .endif
 
 .if ${gettext-runtime_ARGS:Mlib}
-LIB_DEPENDS+=	libintl.so:devel/gettext-runtime
+LIB_DEPENDS+=	libintl.so:${PORTSDIR}/devel/gettext-runtime
 .endif
 .if ${gettext-runtime_ARGS:Mbuild}
-BUILD_DEPENDS+=	gettext:devel/gettext-runtime
+BUILD_DEPENDS+=	gettext:${PORTSDIR}/devel/gettext-runtime
 .endif
 .if ${gettext-runtime_ARGS:Mrun}
-RUN_DEPENDS+=	gettext:devel/gettext-runtime
+RUN_DEPENDS+=	gettext:${PORTSDIR}/devel/gettext-runtime
 .endif
 
 .endif

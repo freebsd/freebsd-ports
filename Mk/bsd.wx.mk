@@ -475,13 +475,13 @@ _WX_DEP_TYPE=		${comp:C/.+_([[:alpha:]]+)$/\1/}
 .	for comp_part in ${_WX_COMP}
 .		if ${_WX_DEP_TYPE} == "lib"
 .			if defined(_WX_LIB_${_WX_COMP}_${_WX_VER})
-LIB_DEPENDS+=		lib${_WX_LIB_${comp_part}_${_WX_VER}}.so:${_WX_PORT_${comp_part}_${_WX_VER}}
+LIB_DEPENDS+=		lib${_WX_LIB_${comp_part}_${_WX_VER}}.so:${PORTSDIR}/${_WX_PORT_${comp_part}_${_WX_VER}}
 .			else
-BUILD_DEPENDS+=		${_WX_FILE_${comp_part}_${_WX_VER}}:${_WX_PORT_${comp_part}_${_WX_VER}}
-RUN_DEPENDS+=		${_WX_FILE_${comp_part}_${_WX_VER}}:${_WX_PORT_${comp_part}_${_WX_VER}}
+BUILD_DEPENDS+=		${_WX_FILE_${comp_part}_${_WX_VER}}:${PORTSDIR}/${_WX_PORT_${comp_part}_${_WX_VER}}
+RUN_DEPENDS+=		${_WX_FILE_${comp_part}_${_WX_VER}}:${PORTSDIR}/${_WX_PORT_${comp_part}_${_WX_VER}}
 .			endif
 .		else
-${_WX_DEP_TYPE:tu}_DEPENDS+=	${_WX_FILE_${comp_part}_${_WX_VER}}:${_WX_PORT_${comp_part}_${_WX_VER}}
+${_WX_DEP_TYPE:tu}_DEPENDS+=	${_WX_FILE_${comp_part}_${_WX_VER}}:${PORTSDIR}/${_WX_PORT_${comp_part}_${_WX_VER}}
 .		endif
 .	endfor
 .endfor

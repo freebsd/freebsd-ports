@@ -53,9 +53,9 @@ IGNORE=	Invalid QMAIL_SLAVEPORT value. Only one can be set, valid values are: ${
 .  endif
 
 .  if defined(QMAIL_SLAVEPORT)
-_QMAIL_DEPENDS=	${QMAIL_PREFIX}/bin/qmail-send:mail/qmail-${QMAIL_SLAVEPORT:tl}
+_QMAIL_DEPENDS=	${QMAIL_PREFIX}/bin/qmail-send:${PORTSDIR}/mail/qmail-${QMAIL_SLAVEPORT:tl}
 .  else
-_QMAIL_DEPENDS=	${QMAIL_PREFIX}/bin/qmail-send:mail/qmail
+_QMAIL_DEPENDS=	${QMAIL_PREFIX}/bin/qmail-send:${PORTSDIR}/mail/qmail
 .  endif
 
 .endif

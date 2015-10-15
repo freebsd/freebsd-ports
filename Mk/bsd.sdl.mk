@@ -46,7 +46,7 @@ _USE_SDL_ALL+=	gfx2 image2 mixer2 net2 sdl2 ttf2
 #
 # Variables used to determine what is needed:
 # _SUBDIR_xxx	subdirectory below ${PORTSDIR} (required)
-# _PORTDIR_xxx	subdirectory below ${_SUBDIR_xxx}
+# _PORTDIR_xxx	subdirectory below ${PORTSDIR}/${_SUBDIR_xxx}
 # _LIB_xxx		name of the shared lib
 # _REQUIRES_xxx	also needs these SDL libraries
 #
@@ -192,20 +192,20 @@ __USE_SDL+= ${component}
 # Finally make the list of libs required
 #
 .for component in ${__USE_SDL}
-LIB_DEPENDS+=	${_LIB_${component}}:${_SUBDIR_${component}}/${_PORTDIR_${component}}
+LIB_DEPENDS+=	${_LIB_${component}}:${PORTSDIR}/${_SUBDIR_${component}}/${_PORTDIR_${component}}
 .endfor
 
 #
 # "Normal" dependencies and variables
 #
 .if ${__USE_SDL:Msdl} != ""
-BUILD_DEPENDS+=	${SDL_CONFIG}:${_SUBDIR_sdl}/${_PORTDIR_sdl}
+BUILD_DEPENDS+=	${SDL_CONFIG}:${PORTSDIR}/${_SUBDIR_sdl}/${_PORTDIR_sdl}
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl-config
 CONFIGURE_ENV+=	SDL_CONFIG=${SDL_CONFIG}
 MAKE_ENV+=		SDL_CONFIG=${SDL_CONFIG}
 .endif
 .if ${__USE_SDL:Msdl2} != ""
-BUILD_DEPENDS+=	${SDL2_CONFIG}:${_SUBDIR_sdl2}/${_PORTDIR_sdl2}
+BUILD_DEPENDS+=	${SDL2_CONFIG}:${PORTSDIR}/${_SUBDIR_sdl2}/${_PORTDIR_sdl2}
 SDL2_CONFIG?=	${LOCALBASE}/bin/sdl2-config
 CONFIGURE_ENV+=	SDL2_CONFIG=${SDL2_CONFIG}
 MAKE_ENV+=		SDL2_CONFIG=${SDL2_CONFIG}

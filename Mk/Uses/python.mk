@@ -220,7 +220,7 @@ _INCLUDE_USES_PYTHON_MK=	yes
 _PYTHON_VERSIONS=		2.7 3.4 3.5 3.3 3.2	# preferred first
 _PYTHON_PORTBRANCH=		2.7		# ${_PYTHON_VERSIONS:[1]}
 _PYTHON_BASECMD=		${LOCALBASE}/bin/python
-_PYTHON_RELPORTDIR=		lang/python
+_PYTHON_RELPORTDIR=		${PORTSDIR}/lang/python
 
 # Make each individual feature available as _PYTHON_FEATURE_<FEATURENAME>
 .for var in ${USE_PYTHON}
@@ -382,7 +382,7 @@ PYTHON_MAJOR_VER=	${PYTHON_VER:R}
 PYTHON_REL=		# empty
 PYTHON_ABIVER=		# empty
 PYTHON_PORTSDIR=	${_PYTHON_RELPORTDIR}${PYTHON_SUFFIX}
-PYTHON_PORTVERSION!=	${MAKE} -V PORTVERSION -C ${PORTSDIR}/${PYTHON_PORTSDIR}
+PYTHON_PORTVERSION!=	${MAKE} -V PORTVERSION -C ${PYTHON_PORTSDIR}
 # Create a 4 integer version string, prefixing 0 to the last token if
 # it's a single character. Only use the the first 3 tokens of
 # PORTVERSION to support pre-release versions (rc3, alpha4, etc) of
@@ -448,8 +448,8 @@ UNIQUE_FIND_SUFFIX_FILES=	\
 _CURRENTPORT:=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 .if defined(_PYTHON_FEATURE_DISTUTILS) && \
 	${_CURRENTPORT:S/${PYTHON_SUFFIX}$//} != ${PYTHON_PKGNAMEPREFIX}setuptools
-BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:devel/py-setuptools${PYTHON_SUFFIX}
-RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:devel/py-setuptools${PYTHON_SUFFIX}
+BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:${PORTSDIR}/devel/py-setuptools${PYTHON_SUFFIX}
+RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:${PORTSDIR}/devel/py-setuptools${PYTHON_SUFFIX}
 .endif
 
 # distutils support
@@ -535,9 +535,9 @@ CONFIGURE_ENV+=	PYTHON="${PYTHON_CMD}"
 CMAKE_ARGS+=	-DPython_ADDITIONAL_VERSIONS=${PYTHON_VER}
 
 # Python 3rd-party modules
-PYGAME=		${PYTHON_PKGNAMEPREFIX}game>0:devel/py-game
-PYNUMERIC=	${PYTHON_SITELIBDIR}/Numeric/Numeric.py:math/py-numeric
-PYNUMPY=	${PYTHON_SITELIBDIR}/numpy/core/numeric.py:math/py-numpy
+PYGAME=		${PYTHON_PKGNAMEPREFIX}game>0:${PORTSDIR}/devel/py-game
+PYNUMERIC=	${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
+PYNUMPY=	${PYTHON_SITELIBDIR}/numpy/core/numeric.py:${PORTSDIR}/math/py-numpy
 
 # dependencies
 .if defined(_PYTHON_BUILD_DEP)
