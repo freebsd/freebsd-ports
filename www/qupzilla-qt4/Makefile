@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qupzilla
-PORTVERSION=	1.8.6
+PORTVERSION=	1.8.7
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/QupZilla/${PORTNAME}/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX=	-qt4
@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell
 
-CONFLICTS=	${PORTNAME}-qt5*
+CONFLICTS_INSTALL=	${PORTNAME}-qt5*
 
 USES=		desktop-file-utils execinfo pkgconfig qmake tar:xz
 USE_QT4=	corelib gui network script sql webkit xml \
