@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	phplist
-PORTVERSION=	3.2.0
+PORTVERSION=	3.2.1
 CATEGORIES=	mail www
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	Full-featured open-source newsletter manager
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3
+LICENSE_FILe=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
 
