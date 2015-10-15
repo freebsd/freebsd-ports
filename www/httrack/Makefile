@@ -20,10 +20,8 @@ OPTIONS_DEFINE=	DOCS ICONS
 OPTIONS_SUB=	yes
 
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} --with-zlib=/usr
-CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	${PREFIX}/lib/httrack
 USE_OPENSSL=	yes
 USES=		alias execinfo gmake iconv libtool shebangfix
