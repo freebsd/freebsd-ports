@@ -1,7 +1,5 @@
-libdombey implements an SCGI application server which is incapable of
-generating responses on its own.  The programmer writes an initialization
-function and a function to generate responses, then compiles and links his
-or her code against the library to create a complete multi-process SCGI
-application server.
+Libdombey provides multi-process and multi-threaded TCP or UNIX-domain SCGI
+application servers.  The libraries handle network and concurrency tasks.
+You write code to service connections.
 
-WWW: http://www.mammothcheese.ca/libdombey.html
+WWW: http://mammothcheese.ca/
