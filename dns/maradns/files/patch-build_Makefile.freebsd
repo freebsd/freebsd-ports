@@ -1,0 +1,12 @@
+--- build/Makefile.freebsd.orig	2012-02-12 06:04:11 UTC
++++ build/Makefile.freebsd
+@@ -47,7 +47,8 @@ all: 
+ 	cd ../qual ; make $(M) ; cd ../server ; \
+ 	make $(M) $(Q) COMPILED=\"$(COMPILED)\" $(V) ; \
+ 	cd ../tools ; make $(M) ; \
+-	cd ../deadwood-*/src/ ; make FLAGS="-O2"; \
++	cd misc ; make $(M) ; \
++	cd ../../deadwood-*/src/ ; make FLAGS="-O2"; \
+ 	cd ../../tcp ; make $(M) $(V) ; cat ../00README.FIRST
+ 
+ debug: 
