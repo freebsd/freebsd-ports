@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	beadm
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.2.6
+PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	GH \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
@@ -15,7 +15,6 @@ LICENSE=	BSD2CLAUSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	vermaden
-GH_TAGNAME=	748d2f2
 
 NO_BUILD=	YES
 
