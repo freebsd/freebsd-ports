@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libunistring
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.6
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -11,7 +11,7 @@ COMMENT=	Unicode string library
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
 
-USES=		alias charsetfix gmake iconv libtool
+USES=		alias charsetfix gmake iconv libtool tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
