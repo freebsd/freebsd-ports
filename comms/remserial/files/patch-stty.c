@@ -1,6 +1,6 @@
---- ./stty.c.orig	2011-01-05 10:31:12.000000000 +0100
-+++ ./stty.c	2011-01-05 10:33:33.000000000 +0100
-@@ -29,6 +29,37 @@
+--- stty.c.orig	2015-10-16 20:44:42 UTC
++++ stty.c
+@@ -29,6 +29,31 @@
  #define RFLG	4
  #define BFLG	5
  
@@ -32,7 +32,7 @@
  extern int errno;
  
  static struct sttyset {
-@@ -91,7 +122,7 @@
+@@ -91,7 +116,7 @@ static struct sttyset {
  	{ "inlcr",	IFLG,	INLCR,		INLCR	},
  	{ "igncr",	IFLG,	IGNCR,		IGNCR	},
  	{ "icrnl",	IFLG,	ICRNL,		ICRNL	},
