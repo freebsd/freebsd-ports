@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	jwm
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.2
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://joewing.net/programs/jwm/releases/
+MASTER_SITES=	http://joewing.net/projects/jwm/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Joe's Window Manager
@@ -42,30 +42,20 @@ XEXT_USE=		XORG=xext
 XEXT_CONFIGURE_ENABLE=	shape
 XFT_USE=		XORG=xft
 XFT_CONFIGURE_ENABLE=	xft
+XFT_IMPLIES=		XRENDER
 XINERAMA_USE=		XORG=xinerama
 XINERAMA_CONFIGURE_ENABLE=xinerama
+XINERAMA_IMPLIES=	XEXT
 XMU_DESC=		X11 Miscellaneous Utilities support
 XMU_USE=		XORG=xmu
 XMU_CONFIGURE_ENABLE=	xmu
+XMU_IMPLIES=		XEXT
 XPM_USE=		XORG=xpm
 XPM_CONFIGURE_ENABLE=	xpm
+XPM_IMPLIES=		XEXT
 XRENDER_DESC=		X11 Render Extension support
 XRENDER_USE=		XORG=xrender
 XRENDER_CONFIGURE_ENABLE=xrender
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MXFT} && empty(PORT_OPTIONS:MXRENDER)
-IGNORE=		the XFT support requires XRENDER
-.endif
-
-.if ${PORT_OPTIONS:MXMU} && empty(PORT_OPTIONS:MXEXT)
-IGNORE=		the XMU support requires XEXT
-.endif
-
-.if ${PORT_OPTIONS:MXPM} && empty(PORT_OPTIONS:MXEXT)
-IGNORE=		the XPM support requires XEXT
-.endif
 
 .include <bsd.port.pre.mk>
 
