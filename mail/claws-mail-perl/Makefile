@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	perl
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	Perl filtering plugin for Claws Mail
 
