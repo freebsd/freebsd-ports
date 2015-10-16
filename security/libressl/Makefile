@@ -3,6 +3,7 @@
 
 PORTNAME=	libressl
 PORTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	OPENBSD/LibreSSL
 
@@ -28,10 +29,6 @@ USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.pre.mk>
-
-#.if ${ARCH} == "amd64"
-#CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
-#.endif
 
 regression-test: build
 	cd ${WRKSRC} && ${MAKE} check
