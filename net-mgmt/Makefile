@@ -22,7 +22,6 @@
     SUBDIR += bsnmp-jails
     SUBDIR += bsnmp-regex
     SUBDIR += bsnmp-ucd
-    SUBDIR += bsnmptools
     SUBDIR += bwm-ng
     SUBDIR += cacti
     SUBDIR += cacti-spine
