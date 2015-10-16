@@ -889,8 +889,6 @@
 %%PYTHON_SITELIBDIR%%/salt/modules/system.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/system_profiler.py
 %%PYTHON_SITELIBDIR%%/salt/modules/system_profiler.pyc
-%%PYTHON_SITELIBDIR%%/salt/modules/system_rest_sample.py
-%%PYTHON_SITELIBDIR%%/salt/modules/system_rest_sample.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/systemd.py
 %%PYTHON_SITELIBDIR%%/salt/modules/systemd.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/temp.py
