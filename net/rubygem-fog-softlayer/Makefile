@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-softlayer
-PORTVERSION=	0.4.7
+PORTVERSION=	1.0.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -10,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Provider to use the SoftLayer Cloud in applications
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-fog-core>=0:${PORTSDIR}/devel/rubygem-fog-core \
 		rubygem-fog-json>=0:${PORTSDIR}/devel/rubygem-fog-json
