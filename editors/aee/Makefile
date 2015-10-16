@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	aee
-PORTVERSION=	2.2.15b
+PORTVERSION=	2.2.21
 PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://www.users.uswest.net/~hmahon/sources/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Easy editor with both curses and X11 interfaces
 
 LICENSE=	ART10
