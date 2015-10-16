@@ -313,11 +313,11 @@ share/icons/hicolor/64x64/apps/claws-mail.png
 %%NLS%%share/locale/fr/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/he/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/claws-mail.mo
-%%NLS%%share/locale/id_ID/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/it/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/claws-mail.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/claws-mail.mo
