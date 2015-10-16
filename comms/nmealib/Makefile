@@ -11,12 +11,14 @@ COMMENT=	Library for working with the NMEA protocol
 
 LICENSE=	LGPL21
 
-WRKSRC=	${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=	gmake zip
+USES=		gmake zip
 
 INCLUDES=	config.h context.h generate.h generator.h gmath.h info.h nmea.h \
 		parse.h parser.h sentence.h time.h tok.h units.h
+
+MAKE_JOBS_UNSAFE=	yes
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/libnmea.a ${STAGEDIR}${PREFIX}/lib
