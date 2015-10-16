@@ -7893,3 +7893,4 @@ www/moodle27||2015-10-11|Has expired: Please upgrade to moodle28 or moodle29
 graphics/epeg|devel/efl|2015-10-11|Has expired: Merged into devel/efl
 x11-drivers/xf86-video-ati-ums||2015-10-13|Not supported by xorg-server 1.17
 x11/nvidia-driver-173||2015-10-13|Does not support xorg-server 1.15 and higher
+net-mgmt/bsnmptools||2015-10-16|Has expired: client tools (including SNMPv3 support) are part of the base system
