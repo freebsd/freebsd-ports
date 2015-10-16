@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fwknop
-PORTVERSION=	2.5.1
-PORTREVISION=	3
+PORTVERSION=	2.6.7
 CATEGORIES=	security
 MASTER_SITES=	http://www.cipherdyne.org/fwknop/download/
 
@@ -12,22 +11,23 @@ COMMENT=	SPA implementation for Linux and FreeBSD
 
 LICENSE=	GPLv2
 
+CPE_VENDOR=	cipherdyne
+
 OPTIONS_DEFINE=		GPGME
 OPTIONS_DEFAULT=	GPGME
+
 GPGME_DESC=	Build support for gpgme
-INFO=		libfko
+
 USES=		cpe libtool
-CPE_VENDOR=	cipherdyne
-GNU_CONFIGURE=	yes
-USE_RC_SUBR=	fwknopd
 USE_LDCONFIG=	yes
+USE_RC_SUBR=	fwknopd
 
-.include <bsd.port.options.mk>
+GNU_CONFIGURE=	yes
 
-.if ${PORT_OPTIONS:MGPGME}
-LIB_DEPENDS+=	libgpgme.so:${PORTSDIR}/security/gpgme
-.else
-CONFIGURE_ARGS+=--without-gpgme
-.endif
+INSTALL_TARGET=	install-strip
+INFO=		libfko
+
+GPGME_LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
+GPGME_CONFIGURE_WITH=	gpgme
 
 .include <bsd.port.mk>
