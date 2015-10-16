@@ -14,6 +14,7 @@ COMMENT=	PHP-based user-friendly, open source shopping cart
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
+
 USES=		dos2unix shebangfix zip
 SHEBANG_FILES=	editors/htmlarea/examples/2-areas.cgi \
 		editors/htmlarea/examples/test.cgi \
@@ -23,6 +24,7 @@ WANT_PHP_WEB=	yes
 DOS2UNIX_REGEX=	.*\.php
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	WWWDIR="${WWWDIR}" PORTNAME="${PORTNAME}"
 PLIST_SUB+=	WWWDIR=${WWWDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP} PORTNAME=${PORTNAME}
