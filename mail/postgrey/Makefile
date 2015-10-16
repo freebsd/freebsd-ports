@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postgrey
-PORTVERSION=	1.35
+PORTVERSION=	1.36
 CATEGORIES=	mail
 MASTER_SITES=	http://postgrey.schweikert.ch/pub/ \
 		http://postgrey.schweikert.ch/pub/old/
@@ -12,11 +12,12 @@ COMMENT=	Greylisting policy server for Postfix
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server \
+RUN_DEPENDS=	p5-BerkeleyDB>=0:${PORTSDIR}/databases/p5-BerkeleyDB \
 		p5-IO-Multiplex>=0:${PORTSDIR}/devel/p5-IO-Multiplex \
 		p5-Parse-Syslog>=0:${PORTSDIR}/textproc/p5-Parse-Syslog \
-		p5-BerkeleyDB>=0:${PORTSDIR}/databases/p5-BerkeleyDB \
-		p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
+		p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
+		p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server \
+		p5-NetAddr-IP>=0:${PORTSDIR}/net-mgmt/p5-NetAddr-IP
 
 USE_PERL5=	run
 USE_RC_SUBR=	${PORTNAME}
@@ -46,7 +47,7 @@ ETCFILES=	whitelist_clients whitelist_recipients
 
 USE_RC_SUBR=	postgrey
 
-USES=		shebangfix perl5
+USES=		perl5 shebangfix
 SHEBANG_FILES=	postgrey policy-test contrib/postgreyreport
 
 OPTIONS_DEFINE=	DOCS
@@ -67,8 +68,8 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/policy-test ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/postgreyreport \
 		${STAGEDIR}${PREFIX}/sbin
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/postfix ${STAGEDIR}/${PG_DBDIR} \
-		${STAGEDIR}/${PG_RUNDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/postfix ${STAGEDIR}${PG_DBDIR} \
+		${STAGEDIR}${PG_RUNDIR}
 .for i in ${ETCFILES}
 	${INSTALL_DATA} ${WRKSRC}/postgrey_${i} \
 		${STAGEDIR}${PREFIX}/etc/postfix/postgrey_${i}.sample
