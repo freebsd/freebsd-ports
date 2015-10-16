@@ -1,8 +1,9 @@
-FXiTe is an advanced cross-platform text editor built with the Fox GUI toolkit
-and the FXScintilla text widget. It features built-in syntax highlighting for
-40+ languages, an embedded Lua scripting engine, macro recording and playback,
-multi-line regular expression search and replace, rudimentary ctags and calltip
-support, a flexible interface to external tools, and a built-in "message window"
-to capture the output of external commands such as compiler error messages, etc.
+FXiTe is an advanced cross-platform text editor built with the Fox GUI
+toolkit and the FXScintilla text widget. It features built-in syntax
+highlighting for 40+ languages, an embedded Lua scripting engine, macro
+recording and playback, multi-line regular expression search and
+replace, rudimentary ctags and calltip support, a flexible interface to
+external tools, and a built-in "message window" to capture the output of
+external commands such as compiler error messages, etc.
 
-WWW: http://code.google.com/p/fxite/
+WWW: https://github.com/yetanothergeek/fxite/
