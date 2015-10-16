@@ -71,19 +71,20 @@ Notes:
 	<p>Qualys reports:</p>
 	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/10/16/1">
 	  <p>During the code review of OpenSMTPD a memory leak and buffer overflow
-            (an off-by-one, usually stack-based) were discovered in LibreSSL's
-            OBJ_obj2txt() function. This function is called automatically during
-            a TLS handshake (both client-side, unless an anonymous mode is used,
-            and server-side, if client authentication is requested).</p>
+	    (an off-by-one, usually stack-based) were discovered in LibreSSL's
+	    OBJ_obj2txt() function. This function is called automatically during
+	    a TLS handshake (both client-side, unless an anonymous mode is used,
+	    and server-side, if client authentication is requested).</p>
+	</blockquote>
       </body>
     </description>
     <references>
-      <url>http://marc.info/?l=openbsd-announce&m=144495690528446</url>
+      <url>http://marc.info/?l=openbsd-announce&amp;m=144495690528446</url>
       <cvename>CVE-2015-5333</cvename>
       <cvename>CVE-2015-5334</cvename>
     </references>
     <dates>
-      <discovery>2015-10-15/discovery>
+      <discovery>2015-10-15</discovery>
       <entry>2015-10-16</entry>
     </dates>
   </vuln>
