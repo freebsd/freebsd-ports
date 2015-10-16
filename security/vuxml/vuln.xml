@@ -58,6 +58,41 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="79c68ef7-c8ae-4ade-91b4-4b8221b7c72a">
+    <topic>firefox -- Cross-origin restriction bypass using Fetch</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>41.0.2,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>41.0.2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Firefox Developers report:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/advisories/mfsa2015-115/">
+	  <p>Security researcher Abdulrahman Alqabandi reported that the fetch()
+	    API did not correctly implement the Cross-Origin Resource Sharing
+	    (CORS) specification, allowing a malicious page to access private
+	    data from other origins. Mozilla developer Ben Kelly independently reported the
+	    same issue.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.mozilla.org/en-US/security/advisories/mfsa2015-115/</url>
+      <cvename>CVE-2015-7184</cvename>
+    </references>
+    <dates>
+      <discovery>2015-10-15</discovery>
+      <entry>2015-10-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="84147b46-e876-486d-b746-339ee45a8bb9">
     <topic>flash -- remote code execution</topic>
     <affects>
