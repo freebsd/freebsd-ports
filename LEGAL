@@ -96,7 +96,6 @@ fp-freebsd-ws-*		security/f-prot		Free for personal users on personal workstatio
 fuse-emulator-roms*	emulators/fuse-roms	No explicit permission to redistribute
 Opus-22.rom		emulators/fuse-roms	No explicit permission to redistribute
 freefonts-*		x11-fonts/freefonts	License prohibits redistribution; see individual .license files
-freqship/*		sysutils/freqsdwn	License agreement is required to download
 fretsonfire/FretsOnFire-*-linux* games/fretsonfire-data	Only Unreal Voodoo site is allowed to distribute the music
 fvcom/sourcecode1.tar.gz	science/fvcom	Requires (free) registration
 fvcom/sourcecode1.tar.gz	science/fvcom-mpi	Requires (free) registration
