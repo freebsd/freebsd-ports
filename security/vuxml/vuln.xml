@@ -58,6 +58,36 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e75a96df-73ca-11e5-9b45-b499baebfeaf">
+    <topic>LibreSSL -- Memory leak and buffer overflow</topic>
+    <affects>
+      <package>
+	<name>libressl</name>
+	<range><lt>2.2.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Qualys reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/10/16/1">
+	  <p>During the code review of OpenSMTPD a memory leak and buffer overflow
+            (an off-by-one, usually stack-based) were discovered in LibreSSL's
+            OBJ_obj2txt() function. This function is called automatically during
+            a TLS handshake (both client-side, unless an anonymous mode is used,
+            and server-side, if client authentication is requested).</p>
+      </body>
+    </description>
+    <references>
+      <url>http://marc.info/?l=openbsd-announce&m=144495690528446</url>
+      <cvename>CVE-2015-5333</cvename>
+      <cvename>CVE-2015-5334</cvename>
+    </references>
+    <dates>
+      <discovery>2015-10-15/discovery>
+      <entry>2015-10-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="07a1a76c-734b-11e5-ae81-14dae9d210b8">
     <topic>mbedTLS/PolarSSL -- DoS and possible remote code execution</topic>
     <affects>
