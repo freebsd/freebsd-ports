@@ -1,6 +1,6 @@
---- mpdm/config.sh.orig	2009-11-05 17:18:27.000000000 +0900
-+++ mpdm/config.sh	2011-03-19 08:40:21.000000000 +0900
-@@ -309,13 +309,15 @@
+--- mpdm/config.sh.orig	2015-05-05 07:29:54 UTC
++++ mpdm/config.sh
+@@ -370,13 +370,15 @@ else
  		echo "#define CONFOPT_GETTEXT 1" >> config.h
  	else
  		# try now with -lintl
@@ -18,7 +18,7 @@
  			echo "$TMP_LDFLAGS" >> config.ldflags
  		else
  			echo "No"
-@@ -342,13 +344,15 @@
+@@ -403,13 +405,15 @@ else
  		echo "#define CONFOPT_ICONV 1" >> config.h
  	else
  		# try now with -liconv
