@@ -1,0 +1,4 @@
+sas3ircu allows basic management of LSI SAS-3 controllers.
+See the mpr(4) man page for a more thorough list of controllers.
+
+WWW: http://www.avagotech.com/
