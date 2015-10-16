@@ -77,10 +77,6 @@ FUSE_CONFIGURE_OFF=	--disable-fuse-client
 CFLAGS+=	-mstackrealign
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1002000 && ${OSVERSION} < 1100000
-BROKEN=		does not build, no support for FreeBSD 10.2 yet
-.endif
-
 KERNCONF?=	GENERIC
 KERNCONFDIR?=	${SRC_BASE}/sys/${ARCH}/conf
 
@@ -99,9 +95,11 @@ post-extract:
 	cd ${KERNCONFDIR} && \
 	    /usr/sbin/config -d ${WRKDIR}/conf ${_KERNCONF} >/dev/null
 # Unbreak on FreeBSD 10.2 (until official support arrives)
+.for a in i386 amd64
 	@${SED} -e 's,101,102, ; /FBSD102_ENV/ { h; s/102/101/; G; }' \
-		${WRKSRC}/src/config/param.i386_fbsd_101.h \
-		> ${WRKSRC}/src/config/param.i386_fbsd_102.h
+		${WRKSRC}/src/config/param.${a}_fbsd_101.h \
+		> ${WRKSRC}/src/config/param.${a}_fbsd_102.h
+.endfor
 	@${REINPLACE_CMD} -e '/fbsd_101/ { h; s/101/102/; s/31/32/; x; G; }' \
 		${WRKSRC}/src/config/afs_sysnames.h
 
