@@ -58,6 +58,38 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="84147b46-e876-486d-b746-339ee45a8bb9">
+    <topic>flash -- remote code execution</topic>
+    <affects>
+      <package>
+	<name>linux-c6-flashplugin</name>
+	<name>linux-f10-flashplugin</name>
+	<name>linux-c6_64-flashplugin</name>
+	<range><lt>11.2r202.540</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="https://helpx.adobe.com/security/products/flash-player/apsb15-27.html">
+	  <p>These updates resolve type confusion vulnerabilities that
+	    could lead to code execution (CVE-2015-7645, CVE-2015-7647,
+	    CVE-2015-7648).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7645</cvename>
+      <cvename>CVE-2015-7647</cvename>
+      <cvename>CVE-2015-7648</cvename>
+      <url>https://helpx.adobe.com/security/products/flash-player/apsb15-27.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-16</discovery>
+      <entry>2015-10-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e75a96df-73ca-11e5-9b45-b499baebfeaf">
     <topic>LibreSSL -- Memory leak and buffer overflow</topic>
     <affects>
