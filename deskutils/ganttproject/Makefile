@@ -27,9 +27,9 @@ DESKTOP_ENTRIES="GanttProject" "" "ganttproject" "ganttproject" "" ""
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
-	@${CHMOD} ${BINMODE} ${STAGEDIR}${DATADIR}/ganttproject
-	@${LN} -sf ${DATADIR}/ganttproject ${STAGEDIR}${PREFIX}/bin
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
+	${CHMOD} ${BINMODE} ${STAGEDIR}${DATADIR}/ganttproject
+	${LN} -sf ${DATADIR}/ganttproject ${STAGEDIR}${PREFIX}/bin
 .for i in 16 24 32 48 64
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${i}x${i}/apps
 	${LN} -sf ${DATADIR}/plugins/net.sourceforge.ganttproject/data/resources/logos/icon${i}.png \
