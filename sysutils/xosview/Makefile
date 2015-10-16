@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.pogo.org.uk/~mark/xosview/releases/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical performance meter
 
+ONLY_FOR_ARCHS=	amd64 i386 ia64
+ONLY_FOR_ARCHS_REASON=	used i386-specific hardware resources
+
 USE_XORG=	xpm
 USES=		gmake
 MAKE_ENV+=	PLATFORM=bsd MANDIR=${LOCALBASE}/man

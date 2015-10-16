@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_GITHUB=	yes
 GH_ACCOUNT=	zlandau
 
-USES=		ncurses readline tar:bzip2 
+USES=		ncurses readline tar:bzip2
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

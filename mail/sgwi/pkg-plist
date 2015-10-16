@@ -1,16 +1,9 @@
-@unexec if cmp -s %D/www/sgwi/.htaccess %D/www/sgwi/.htaccess.sample; then rm -f %D/www/sgwi/.htaccess; fi
-www/sgwi/.htaccess.sample
-@exec [ -f %B/.htaccess ] || cp %B/%f %B/.htaccess
-@unexec if cmp -s %D/www/sgwi/.htpasswd %D/www/sgwi/.htpasswd.sample; then rm -f %D/www/sgwi/.htpasswd; fi
-www/sgwi/.htpasswd.sample
-@exec [ -f %B/.htpasswd ] || cp %B/%f %B/.htpasswd
+@sample www/sgwi/.htaccess.sample
+@sample www/sgwi/.htpasswd.sample
 www/sgwi/awl.php
 www/sgwi/connect.php
 www/sgwi/includes/awl.inc.php
-@exec [ -f %D/www/sgwi/config.inc.php ] && mv -f %D/www/sgwi/config.inc.php %D/www/sgwi/includes/config.inc.php
-@unexec if cmp -s %D/www/sgwi/includes/config.inc.php %D/www/sgwi/includes/config.inc.php.sample; then rm -f %D/www/sgwi/includes/config.inc.php; fi
-www/sgwi/includes/config.inc.php.sample
-@exec [ -f %B/config.inc.php ] || cp %B/%f %B/config.inc.php
+@sample www/sgwi/includes/config.inc.php.sample
 www/sgwi/includes/connect.inc.php
 www/sgwi/includes/copyright.inc.php
 www/sgwi/includes/functions.inc.php

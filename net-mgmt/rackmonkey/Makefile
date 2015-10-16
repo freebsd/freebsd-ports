@@ -93,6 +93,5 @@ do-install:
 		${WRKDIR}/build_conf/rackmonkey.conf
 	cd ${WRKSRC} && ${COPYTREE_SHARE} sql ${STAGEDIR}${WWWDIR}/
 	cd ${WRKSRC} && ${COPYTREE_SHARE} doc ${STAGEDIR}${WWWDIR}/
-	${CHOWN} -R 80:80 ${STAGEDIR}${WWWDIR}
 
 .include <bsd.port.mk>

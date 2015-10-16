@@ -1,4 +1,3 @@
-@comment file listing
 usr/lib/gtk-2.0/immodules/im-scim.so
-@exec chroot %D /usr/bin/gtk-query-immodules-2.0-32 > %D/etc/gtk-2.0/i386-redhat-linux-gnu/gtk.immodules
-@unexec chroot %D /usr/bin/gtk-query-immodules-2.0-32 > %D/etc/gtk-2.0/i386-redhat-linux-gnu/gtk.immodules
+@postexec chroot %D /usr/bin/gtk-query-immodules-2.0-32 > %D/etc/gtk-2.0/i386-redhat-linux-gnu/gtk.immodules
+@postunexec chroot %D /usr/bin/gtk-query-immodules-2.0-32 > %D/etc/gtk-2.0/i386-redhat-linux-gnu/gtk.immodules

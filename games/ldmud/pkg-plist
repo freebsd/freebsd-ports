@@ -1365,43 +1365,5 @@ man/man1/ldmud.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/other/mcp2.html
 %%PORTDOCS%%%%DOCSDIR%%/other/msp.htm
 %%PORTDOCS%%%%DOCSDIR%%/other/mxp.htm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/master
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/efun
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/efun.de
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/driver
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/concepts
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/applied
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/obsolete
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/other
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/LPC
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/man
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/hook
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%DEMOLIB%%@dirrm %%DATADIR%%/uni-crasher
-%%DEMOLIB%%@dirrm %%DATADIR%%/sys
-%%LPMUD%%@dirrm %%DATADIR%%/sys
-%%LPMUD%%@dirrm %%DATADIR%%/secure
-%%LPMUD%%@dirrm %%DATADIR%%/room/sub
-%%LPMUD%%@dirrm %%DATADIR%%/room/south
-%%LPMUD%%@dirrm %%DATADIR%%/room/mine
-%%LPMUD%%@dirrm %%DATADIR%%/room/maze1
-%%LPMUD%%@dirrm %%DATADIR%%/room/death
-%%LPMUD%%@dirrm %%DATADIR%%/room
-%%LPMUD%%@dirrm %%DATADIR%%/players/lars
-%%LPMUD%%@dirrm %%DATADIR%%/players
-%%LPMUD%%@dirrm %%DATADIR%%/obj/Go
-%%LPMUD%%@dirrm %%DATADIR%%/obj
-%%LPMUD%%@dirrm %%DATADIR%%/log
-%%LPMUD%%@dirrm %%DATADIR%%/doc/w
-%%LPMUD%%@dirrm %%DATADIR%%/doc/sefun
-%%LPMUD%%@dirrm %%DATADIR%%/doc/lfun
-%%LPMUD%%@dirrm %%DATADIR%%/doc/helpdir
-%%LPMUD%%@dirrm %%DATADIR%%/doc/examples
-%%LPMUD%%@dirrm %%DATADIR%%/doc/build
-%%LPMUD%%@dirrm %%DATADIR%%/doc
-%%LPMUD%%@dirrm %%DATADIR%%/banish
-@dirrm %%DATADIR%%
-@owner mud
-@group mud
-@dirrmtry /var/run/ldmud
-@dirrmtry /var/log/ldmud
+@dir(mud,mud) /var/run/ldmud
+@dir(mud,mud) /var/log/ldmud

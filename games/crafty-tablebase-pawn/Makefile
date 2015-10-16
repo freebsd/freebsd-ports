@@ -31,7 +31,7 @@ krpkn.nbw.emd krpkp.nbb.emd krpkp.nbw.emd krpkq.nbb.emd krpkq.nbw.emd	\
 krpkr.nbb.emd krpkr.nbw.emd krppk.nbb.emd krppk.nbw.emd krrkp.nbb.emd	\
 krrkp.nbw.emd krrpk.nbb.emd krrpk.nbw.emd
 DIST_SUBDIR=	crafty
-EXTRACT_ONLY=
+EXTRACT_ONLY=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	These are the pawn tablebases (3,4,5 man) for crafty
@@ -39,7 +39,8 @@ COMMENT=	These are the pawn tablebases (3,4,5 man) for crafty
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 
 NO_BUILD=	yes
-NO_PACKAGE=	Way too big
+NO_ARCH=	yes
+MANUAL_PACKAGE_BUILD=	too big
 
 .if !defined(WITH_TBDIR)
 WITH_TBDIR=	${PREFIX}/lib/crafty/TB
@@ -49,6 +50,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${WITH_TBDIR}
 	@list='${DISTFILES}'; for i in $$list; do \
 		${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/$$i ${STAGEDIR}${WITH_TBDIR}/$$i; \
-		done
+	done
 
 .include <bsd.port.mk>

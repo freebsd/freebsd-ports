@@ -20,4 +20,6 @@ OPTIONS_DEFINE=		IPV6
 
 IPV6_CONFIGURE_ENABLE=	--disable-ipv6
 
+BROKEN_sparc64=	fails to build
+
 .include <bsd.port.mk>

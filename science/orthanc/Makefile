@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	orthanc
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.4
 CATEGORIES=	science graphics net www
 MASTER_SITES=	http://orthanc-server.com/downloads/get.php?path=/orthanc/:main \
 		http://www.montefiore.ulg.ac.be/~jodogne/Orthanc/ThirdPartyDownloads/:mongoose
@@ -38,7 +38,7 @@ CMAKE_ARGS=	-DDCMTK_LIBRARIES="dcmdsig;charls;dcmjpls" \
 		-DUSE_SYSTEM_MONGOOSE=OFF \
 		-DUNIT_TESTS_WITH_HTTP_CONNEXIONS=OFF
 
-USES=		cmake:outsource python:build lua:51 dos2unix
+USES=		cmake:outsource dos2unix lua:51 python:build
 DOS2UNIX_FILES=	CMakeLists.txt
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
@@ -46,6 +46,7 @@ USE_RC_SUBR=	orthanc
 WRKSRC=		${WRKDIR}/Orthanc-${PORTVERSION}
 USERS=		orthanc
 GROUPS=		orthanc
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 # This is mongoose sources, downloaded from Orthanc author homepage.  Orthanc
 # requires mongoose webserver, but after version 3.8, mongoose developers has
@@ -81,7 +82,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 1001000
-IGNORE=	supported only on 10.1 by upstream, not all unit tests are passed
+IGNORE=	supported only on 10.x by upstream, not all unit tests are passed
 .endif
 
 .if ${OSVERSION} > 1100000

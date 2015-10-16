@@ -1,6 +1,6 @@
---- src/examples/ft_recv.cpp.orig
+--- src/examples/ft_recv.cpp.orig	2015-08-11 14:37:51 UTC
 +++ src/examples/ft_recv.cpp
-@@ -11,7 +11,7 @@
+@@ -23,7 +23,7 @@
  using namespace gloox;
  
  #include <unistd.h>

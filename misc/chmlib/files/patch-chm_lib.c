@@ -1,6 +1,6 @@
---- src/chm_lib.c.orig	Tue Apr  8 10:33:30 2003
-+++ src/chm_lib.c	Tue Apr  8 10:40:56 2003
-@@ -156,6 +156,17 @@
+--- src/chm_lib.c.orig	2009-05-23 14:43:31 UTC
++++ src/chm_lib.c
+@@ -149,6 +149,17 @@ typedef unsigned __int32        UInt32;
  typedef __int64                 Int64;
  typedef unsigned __int64        UInt64;
  

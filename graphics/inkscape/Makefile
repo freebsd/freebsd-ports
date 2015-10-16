@@ -3,7 +3,7 @@
 
 PORTNAME=	inkscape
 PORTVERSION=	0.91
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics gnome
 MASTER_SITES=	https://inkscape.global.ssl.fastly.net/media/resources/file/ \
 		LOCAL/kwm
@@ -23,7 +23,7 @@ LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 
 USE_GNOME=	gtkmm24 intlhack libxslt
 USES=		compiler:c++0x cpe desktop-file-utils gettext gmake iconv \
-		libtool pathfix perl5 pkgconfig shebangfix tar:bzip2
+		libtool pathfix perl5 pkgconfig python:run shebangfix tar:bzip2
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

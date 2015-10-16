@@ -81,7 +81,7 @@ ocaml-findlib:
 	# The consequence is that pkg-plist must be manually supported
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${OCAML_LDLIBS}	
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${OCAML_LDLIBS}
 	(cd ${WRKSRC} && ${OMAKE} ${OMARGS} install)
 
 .include <bsd.port.mk>

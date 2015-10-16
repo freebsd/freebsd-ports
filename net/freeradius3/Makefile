@@ -115,6 +115,7 @@ CONFIGURE_ARGS+=--without-edir
 
 .if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	YES
+LIB_DEPENDS+=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=--with-rlm_ldap
 PLIST_SUB+=	LDAP=""
 _REQUIRE+=	slapd

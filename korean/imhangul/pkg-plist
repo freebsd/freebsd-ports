@@ -1,5 +1,5 @@
 lib/gtk-%%GTKVER%%/immodules/im-hangul.so
 %%NO_GTK3%%%%NLS%%share/locale/ko/LC_MESSAGES/im-hangul.mo
 %%GTK3%%%%NLS%%share/locale/ko/LC_MESSAGES/im-hangul-%%GTKVER%%.mo
-@exec %D/bin/gtk-query-immodules-%%GTKVER%% --update-cache
-@unexec %D/bin/gtk-query-immodules-%%GTKVER%% --update-cache
+@postexec %D/bin/gtk-query-immodules-%%GTKVER%% --update-cache
+@postunexec %D/bin/gtk-query-immodules-%%GTKVER%% --update-cache

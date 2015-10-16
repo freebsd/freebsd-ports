@@ -1,4 +1,4 @@
---- src/soundcard/sound.cxx.orig	2015-05-11 09:19:59 UTC
+--- src/soundcard/sound.cxx.orig	2015-08-12 20:42:32 UTC
 +++ src/soundcard/sound.cxx
 @@ -689,7 +689,7 @@ size_t SoundOSS::Read(float *buffer, siz
  

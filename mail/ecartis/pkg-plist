@@ -1,6 +1,6 @@
 @owner %%EC_USER%%
 @group %%EC_GROUP%%
-ecartis/ecartis
+@(%%EC_USER%%,%%EC_GROUP%%,6755) ecartis/ecartis
 ecartis/banned
 ecartis/documentation/Makefile
 ecartis/documentation/ecartis.sty
@@ -65,12 +65,14 @@ ecartis/ecartis.spec
 ecartis/ecartis.hlp
 ecartis/ecartis.cfg.dist
 ecartis/ecartis.aliases.dist
-@dirrm ecartis/lists/test/text
-@dirrm ecartis/lists/test
-@dirrmtry ecartis/lists
-@dirrm ecartis/templates
-@dirrm ecartis/scripts
-@dirrmtry ecartis/queue
-@dirrm ecartis/modules
-@dirrm ecartis/documentation
-@dirrmtry ecartis
+@dir ecartis/lists/test/text
+@dir ecartis/lists/test
+@dir ecartis/lists
+@dir ecartis/templates
+@dir ecartis/scripts
+@dir ecartis/queue
+@dir ecartis/modules
+@dir ecartis/documentation
+@dir ecartis
+@owner
+@group

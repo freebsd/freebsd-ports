@@ -2,21 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	git
-PORTVERSION=	2.5.3
+DISTVERSION=	2.6.1
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${PORTNAME}-manpages-${PORTVERSION}${EXTRACT_SUFX}
+		${PORTNAME}-manpages-${DISTVERSION}${EXTRACT_SUFX}
 # We manually extract the htmldocs.
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
-		${PORTNAME}-manpages-${PORTVERSION}${EXTRACT_SUFX}
+		${PORTNAME}-manpages-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT?=	Distributed source code management tool
 
 LICENSE=	GPLv2
 
-CONFLICTS_INSTALL?=	git-subversion-[0-9]* git-lite-[0-9]*
+CONFLICTS_INSTALL?=	git-gui-[0-9]* git-subversion-[0-9]* git-lite-[0-9]*
 
 USERS=		git_daemon
 GROUPS=		git_daemon
@@ -72,7 +72,7 @@ CURL_RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 CURL_LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 CURL_MAKE_ARGS_OFF=	NO_CURL=1 NO_EXPAT=1
 
-HTMLDOCS_DISTFILES=	${PORTNAME}-htmldocs-${PORTVERSION}${EXTRACT_SUFX}
+HTMLDOCS_DISTFILES=	${PORTNAME}-htmldocs-${DISTVERSION}${EXTRACT_SUFX}
 
 GUI_USES=		tk
 GUI_MAKE_ARGS=		TCL_PATH=${TCLSH} TCLTK_PATH=${WISH}
@@ -131,7 +131,7 @@ post-extract:
 .if ${PORT_OPTIONS:MHTMLDOCS}
 	@${MKDIR} ${WRKDIR}/htmldocs
 	@cd ${WRKDIR}/htmldocs && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-		${DISTDIR}/${PORTNAME}-htmldocs-${PORTVERSION}${EXTRACT_SUFX} \
+		${DISTDIR}/${PORTNAME}-htmldocs-${DISTVERSION}${EXTRACT_SUFX} \
 		${EXTRACT_AFTER_ARGS}
 .endif
 

@@ -6,7 +6,7 @@ PORTVERSION=	11.a
 PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	http://www2.cs.tum.edu/projects/cup/ \
-		http://mirrors.mcdermottroe.com/www2.cs.tum.edu/projects/cup/ 
+		http://mirrors.mcdermottroe.com/www2.cs.tum.edu/projects/cup/
 PKGNAMEPREFIX=	java-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-v${PORTVERSION:S|.||}-20050516-sources
 

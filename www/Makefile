@@ -350,7 +350,6 @@
     SUBDIR += imgsizer
     SUBDIR += impresscms
     SUBDIR += interchange
-    SUBDIR += iojs
     SUBDIR += itop
     SUBDIR += iwebcal
     SUBDIR += jawstats
@@ -565,6 +564,7 @@
     SUBDIR += node
     SUBDIR += node-devel
     SUBDIR += node010
+    SUBDIR += node012
     SUBDIR += nostromo
     SUBDIR += npapi-vlc
     SUBDIR += npapi-xine
@@ -2033,6 +2033,7 @@
     SUBDIR += smarty3
     SUBDIR += smb_auth
     SUBDIR += snarf
+    SUBDIR += sogo
     SUBDIR += spawn-fcgi
     SUBDIR += spdylay
     SUBDIR += speedtest-mini

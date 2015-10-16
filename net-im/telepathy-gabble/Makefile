@@ -1,10 +1,9 @@
 # Created by:  Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/net-im/telepathy-gabble/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	telepathy-gabble
 PORTVERSION=	0.18.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -25,7 +24,7 @@ RUN_DEPENDS=	ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss \
 PORTSCOUT=	limitw:1,even
 
 USES=		alias gmake libtool pathfix pkgconfig python:build
-USE_GNOME=	glib20 libxslt:build
+USE_GNOME=	glib20 gtksourceview3 libxslt:build
 USE_SQLITE=	3
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes

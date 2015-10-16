@@ -51,12 +51,15 @@ rcvar=squid_enable
 # Make sure that we invoke squid with "-f ${squid_conf}"; define this
 # variable early so reload_cmd and stop_precmd pick it up:
 
-extra_commands=reload
+extra_commands="reload configtest"
 reload_cmd=squid_reload
 start_precmd=squid_prestart
 start_postcmd=squid_getpid
 stop_precmd=squid_prestop
 stop_postcmd=squid_poststop
+configtest_cmd=squid_configtest
+reload_precmd=squid_configtest
+restart_precmd=squid_configtest
 
 # squid(8) will not start if ${squid_conf} is not present so try
 # to catch that beforehand via ${required_files} rather than make
@@ -105,12 +108,26 @@ squid_prestart()
 	else
 		return 0
 	fi
+
+	squid_configtest
 }
 
 squid_reload()
 {
 
 	$command $required_args $squid_flags -k reconfigure
+}
+
+squid_configtest()
+{
+
+	echo "Performing sanity check on ${name} configuration."
+	if $command $required_args $squid_flags -k check; then
+		echo "Configuration for ${name} passes."
+		return 0
+	else
+		return $?
+	fi
 }
 
 squid_getpid()

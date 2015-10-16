@@ -1,10 +1,10 @@
---- scripts/rabbitmq-server.orig	2015-05-22 10:15:37 UTC
+--- scripts/rabbitmq-server.orig	2015-09-24 20:00:50 UTC
 +++ scripts/rabbitmq-server
-@@ -100,6 +100,7 @@ fi
- set -f
+@@ -101,6 +101,7 @@ set -f
  
- RABBITMQ_CONFIG_FILE=$RABBITMQ_CONFIG_FILE \
-+HOME=/var/db/rabbitmq \
- exec ${ERL_DIR}erl \
-     -pa ${RABBITMQ_EBIN_ROOT} \
-     ${RABBITMQ_START_RABBIT} \
+ start_rabbitmq_server() {
+     RABBITMQ_CONFIG_FILE=$RABBITMQ_CONFIG_FILE \
++    HOME=/var/db/rabbitmq \
+     exec ${ERL_DIR}erl \
+         -pa ${RABBITMQ_EBIN_ROOT} \
+         ${RABBITMQ_START_RABBIT} \

@@ -1,7 +1,8 @@
 # $FreeBSD$
 
-DISTVERSION=	m-preview-1212
-DISTVERSIONSUFFIX=	-g94c617ccbba4
+# Hint: git describe --abbrev=12 --match android-m-preview
+DISTVERSION=	m-preview-1280
+DISTVERSIONSUFFIX=	-g659f5ade04a5
 PORTREVISION=	0
 PKGNAMESUFFIX=	-devel
 
@@ -17,21 +18,41 @@ USES=		compiler:c++11-lib
 BUILD_WRKSRC=	${WRKSRC}/adb
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 MAKE_ENV=	FILESDIR="${FILESDIR}"
-CFLAGS+=	-DADB_REVISION='\"${DISTVERSIONSUFFIX:S/-g//}-android\"'
+CPPFLAGS+=	-DADB_REVISION='\"${DISTVERSIONSUFFIX:S/-g//}-android\"'
 ALL_TARGET=	all
 
 OPTIONS_DEFINE=	TEST
 
+TEST_GH_PROJECT=platform_development:development
+TEST_GH_TAGNAME=${DISTVERSIONFULL:C/-[0-9].*//}-66-ge4cded6:development
 TEST_BUILD_DEPENDS=googletest>=1.6.0:${PORTSDIR}/devel/googletest \
 		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
 TEST_USES=	python:2.7,build
 TEST_ALL_TARGET=adb_test
 
+post-patch:	slave-post-patch
+slave-post-patch:
+# XXX C++ exception with description "regex_error" thrown in the test body.
+	@if [ ${OPSYS} = FreeBSD -a ${OSREL:R} -lt 10 ]; then \
+		${REINPLACE_CMD} -Ee '/^TEST/\
+			s/ (LOG|PLOG|UNIMPLEMENTED)/ DISABLED_\1/' \
+		${WRKSRC}/base/logging_test.cpp; \
+	fi
+.if defined(PACKAGE_BUILDING)
+# XXX /dev/full isn't mounted by poudriere/tinderbox
+	@${REINPLACE_CMD} -e '/^TEST/s/[^ ]*ENOSPC/DISABLED_&/' \
+		${WRKSRC}/adb/adb_io_test.cpp
+.endif
+
 pre-install-TEST-on:
 	${BUILD_WRKSRC}/adb_test
-	PATH=${BUILD_WRKSRC}:${PATH} PYTHONPATH=${WRKSRC} \
+# XXX python tests may leave behind running adb server
+# test_adb.py remains in core repository for some reason
+	${SETENV} PATH=${BUILD_WRKSRC}:${PATH} \
+		PYTHONPATH=${WRKSRC_development}/python-packages \
 		${PYTHON_CMD} ${BUILD_WRKSRC}/test_adb.py
-	PATH=${BUILD_WRKSRC}:${PATH} PYTHONPATH=${WRKSRC} \
-		${PYTHON_CMD} ${BUILD_WRKSRC}/test_device.py
+	${SETENV} PATH=${BUILD_WRKSRC}:${PATH} \
+		PYTHONPATH=${WRKSRC_development}/python-packages \
+		${PYTHON_CMD} ${WRKSRC_development}/python-packages/adb/test_device.py
 
 .include "${MASTERDIR}/Makefile"

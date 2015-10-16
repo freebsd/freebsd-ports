@@ -11,6 +11,9 @@ COMMENT=	Internet Low Bit Rate codec (RFC3951)
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+NOT_FOR_ARCHS=	sparc64
+NOT_FOR_ARCHS_REASON=	not yet ported to this architecture
+
 CONFLICTS=	ilbc-r[0-9]*
 
 USE_GITHUB=	yes

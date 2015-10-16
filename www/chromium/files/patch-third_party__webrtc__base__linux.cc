@@ -1,5 +1,5 @@
---- third_party/webrtc/base/linux.cc.orig	2014-10-10 09:16:13 UTC
-+++ third_party/webrtc/base/linux.cc
+--- third_party/webrtc/base/linux.cc.orig	2015-09-26 19:26:54.911449000 +0200
++++ third_party/webrtc/base/linux.cc	2015-09-26 19:29:09.372270000 +0200
 @@ -8,7 +8,7 @@
   *  be found in the AUTHORS file in the root of the source tree.
   */
@@ -9,7 +9,7 @@
  #include "webrtc/base/linux.h"
  
  #include <ctype.h>
-@@ -345,4 +345,4 @@
+@@ -288,4 +288,4 @@
  
  }  // namespace rtc
  

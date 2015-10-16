@@ -2,7 +2,7 @@
 
 PORTNAME=	migmix
 PORTVERSION=	1.0.20130617
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	SFJP/mix-mplus-ipa/59021
 PKGNAMEPREFIX=	ja-font-
@@ -16,6 +16,7 @@ COMMENT=	Mixed Japanese font with IPA Gothic and M-plus outline
 
 USES=		fonts:fc zip
 FONTNAME=	TTF
+NO_ARCH=	yes
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install

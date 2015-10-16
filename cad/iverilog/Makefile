@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	iverilog
-PORTVERSION=	0.9.7
+PORTVERSION=	10.0
 CATEGORIES=	cad
-MASTER_SITES=	ftp://icarus.com/pub/eda/verilog/v${PORTVERSION:C,\.[0-9]$,,}/ \
-		ftp://ftp.geda.seul.org/pub/geda/dist/
+MASTER_SITES=	ftp://icarus.com/pub/eda/verilog/v${PORTVERSION:C,\.[0-9]$,,}/
 DISTNAME=	verilog-${PORTVERSION}
 
 MAINTAINER=	zeising@FreeBSD.org
@@ -15,6 +14,13 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 USES=		bison gmake
+
+.include <bsd.port.options.mk>
+
+.if ${OSVERSION} < 1000033
+BUILD_DEPENDS+=	flex>=0:${PORTSDIR}/textproc/flex
+CONFIGURE_ENV+=	ac_cv_prog_LEX="${LOCALBASE}/bin/flex"
+.endif
 
 CONFIGURE_ARGS=	--disable-suffix
 

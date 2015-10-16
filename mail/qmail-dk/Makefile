@@ -22,7 +22,7 @@ USES=		qmail
 PREFIX?=	${QMAIL_PREFIX}
 
 WRKSRC=		${WRKDIR}/qmail-1.03
-PLIST_FILES=	bin/qmail-dk \
+PLIST_FILES=	"@(qmailq,,4711) bin/qmail-dk" \
 		man/man8/qmail-dk.8.gz
 ALL_TARGET=	qmail-dk qmail-dk.8
 CFLAGS+=	-I${LOCALBASE}/include
@@ -57,7 +57,7 @@ post-patch:
 		${WRKSRC}/conf-groups
 
 do-install:
-	${INSTALL} -o qmailq -m 4711 ${WRKSRC}/qmail-dk ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/qmail-dk ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/qmail-dk.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	ladvd
 PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	GOOGLE_CODE \
 		http://blinkenlights.nl/software/ladvd/

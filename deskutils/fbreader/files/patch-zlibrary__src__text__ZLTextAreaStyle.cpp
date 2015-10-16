@@ -1,5 +1,5 @@
---- ./zlibrary/text/src/area/ZLTextAreaStyle.cpp.orig	2010-04-02 00:14:24.000000000 +1100
-+++ ./zlibrary/text/src/area/ZLTextAreaStyle.cpp	2013-09-12 00:26:19.181817507 +1100
+--- zlibrary/text/src/area/ZLTextAreaStyle.cpp.orig	2014-01-11 12:45:25 UTC
++++ zlibrary/text/src/area/ZLTextAreaStyle.cpp
 @@ -18,6 +18,7 @@
   */
  

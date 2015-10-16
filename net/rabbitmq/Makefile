@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rabbitmq
-PORTVERSION=	3.5.4
+PORTVERSION=	3.5.6
 CATEGORIES=	net
 MASTER_SITES=	http://www.rabbitmq.com/releases/rabbitmq-server/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
@@ -28,6 +28,7 @@ USES=		cpe gmake python:build shebangfix
 USE_RC_SUBR=	rabbitmq
 SHEBANG_FILES=	calculate-relative plugins-src/rabbitmq-amqp1.0/codegen.py
 python_OLD_CMD=	.*python
+NO_ARCH=	yes
 
 USERS=		rabbitmq
 GROUPS=		rabbitmq

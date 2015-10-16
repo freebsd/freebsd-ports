@@ -3,7 +3,7 @@
 
 PORTNAME=	alephone
 PORTVERSION=	20120514
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	SF/marathon/Aleph%20One/2012-05-14
 DISTNAME=	AlephOne-${PORTVERSION}
@@ -28,49 +28,27 @@ ZZIP_DESC=	Enable zziplib support
 
 OPTIONS_DEFAULT=	MAD OGG SPEEX SMPEG TTF ZZIP
 
-.include <bsd.port.options.mk>
+MAD_LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad
+MAD_CONFIGURE_ENABLE=	mad
 
-.if ${PORT_OPTIONS:MMAD}
-LIB_DEPEND+=	libmad.so:${PORTSDIR}/audio/libmad
-.else
-CONFIGURE_ARGS+=--disable-mad
-.endif
+OGG_LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
+OGG_CONFIGURE_ENABLE=	vorbis
 
-.if ${PORT_OPTIONS:MOGG}
-LIB_DEPEND+=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
-.else
-CONFIGURE_ARGS+=--disable-vorbis
-.endif
+SPEEX_LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex
+SPEEX_CONFIGURE_ENABLE=	speex
 
-.if ${PORT_OPTIONS:MSPEEX}
-LIB_DEPENDS+=	libspeex.so:${PORTSDIR}/audio/speex
-.else
-CONFIGURE_ARGS+=--disable-speex
-.endif
+SMPEG_LIB_DEPENDS=	libsmpeg.so:${PORTSDIR}/multimedia/smpeg
+SMPEG_CONFIGURE_ENABLE=	smpeg
 
-.if ${PORT_OPTIONS:MSMPEG}
-LIB_DEPENDS+=	libsmpeg.so:${PORTSDIR}/multimedia/smpeg
-.else
-CONFIGURE_ARGS+=--disable-smpeg
-.endif
+TTF_USE=	SDL=ttf
+TTF_CONFIGURE_ENABLE=	ttf
 
-.if ${PORT_OPTIONS:MTTF}
-USE_SDL+=	ttf
-.else
-CONFIGURE_ARGS+=--disable-ttf
-.endif
+ZZIP_LIB_DEPENDS=	libzzip.so:${PORTSDIR}/devel/zziplib
+ZZIP_CONFIGURE_ENABLE=	zzip
 
-.if ${PORT_OPTIONS:MZZIP}
-LIB_DEPENDS+=	libzzip.so:${PORTSDIR}/devel/zziplib
-.else
-CONFIGURE_ARGS+=--disable-zzip
-.endif
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} README ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/docs && ${INSTALL_DATA} *.html ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

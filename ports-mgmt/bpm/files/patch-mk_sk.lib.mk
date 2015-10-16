@@ -1,6 +1,6 @@
---- ./mk/sk.lib.mk.orig	2004-06-08 02:31:49.000000000 +0200
-+++ ./mk/sk.lib.mk	2014-08-22 02:02:31.000000000 +0200
-@@ -83,16 +83,16 @@
+--- mk/sk.lib.mk.orig	2004-06-08 00:31:49 UTC
++++ mk/sk.lib.mk
+@@ -83,16 +83,16 @@ ${LIB}.so${SO_SUFFIX}: ${SOBJS}
  install:
  .ifndef INTERNAL_LIB
  .ifndef NO_STATIC

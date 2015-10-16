@@ -222,4 +222,3 @@ lib32/compat/pam_self.so.4
 lib32/compat/pam_ssh.so.4
 lib32/compat/pam_tacplus.so.4
 lib32/compat/pam_unix.so.4
-@exec %%LDCONFIG_LIB32%% -m %D/lib32/compat

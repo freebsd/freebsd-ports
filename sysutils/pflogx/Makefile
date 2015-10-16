@@ -24,6 +24,8 @@ MAKE_ARGS+=	-DWITH_EXPAT \
 		EXPAT_LIBDIR=${LOCALBASE}/lib
 .endif
 
+BROKEN_sparc64=	cannot compile: error in C++ code
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/pflogx ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

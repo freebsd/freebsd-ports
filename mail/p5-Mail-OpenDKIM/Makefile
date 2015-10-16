@@ -3,6 +3,7 @@
 
 PORTNAME=	Mail-OpenDKIM
 PORTVERSION=	4203
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -32,5 +33,8 @@ PLIST_FILES=	%%SITE_ARCH%%/Mail/OpenDKIM.pm \
 		%%PERL5_MAN3%%/Mail::OpenDKIM::PrivateKey.3.gz \
 		%%PERL5_MAN3%%/Mail::OpenDKIM::Signature.3.gz \
 		%%PERL5_MAN3%%/Mail::OpenDKIM::Signer.3.gz
+
+post-install:
+	${STRIP_CMD}	${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Mail/OpenDKIM/OpenDKIM.so
 
 .include <bsd.port.mk>

@@ -33,6 +33,7 @@ CONFIGURE_ARGS=	--installprefix=${PREFIX} \
 		--force-relink \
 		--nogzip-man-pages \
 		-m=${CHEZ_MACHTYPE}
+MAKE_JOBS_UNSAFE=	yes
 
 ALL_TARGET=	build
 
@@ -74,7 +75,10 @@ post-configure:
 		${WRKSRC}/Mf-${CHEZ_MACHTYPE}
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/petite
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/scheme-script
+.for bin in petite scheme-script
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/bin/${bin}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${bin}
+	${CHMOD} u-w ${STAGEDIR}${PREFIX}/bin/${bin}
+.endfor
 
 .include <bsd.port.post.mk>

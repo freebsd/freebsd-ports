@@ -1,9 +1,9 @@
 # $FreeBSD$
 
+CATEGORIES=	hungarian
 LO_I18N=	hu
 LO_HAS_HELPPACK=	yes
-CATEGORIES=	hungarian editors
 
-.include "${.CURDIR}/../../editors/libreoffice/Makefile.common"
+.include "${.CURDIR}/../../editors/libreoffice/Makefile.i18n"
 
 .include <bsd.port.mk>

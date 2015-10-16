@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	math
 
 MAINTAINER=	dieterich@ogolem.org
-COMMENT=	Software library containing BLAS functions written in OpenCL
+COMMENT=	Library for uniform random number generation in OpenCL
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE

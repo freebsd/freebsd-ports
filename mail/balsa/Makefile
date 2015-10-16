@@ -20,7 +20,7 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3
 RUN_DEPENDS=	gnome-keyring:${PORTSDIR}/security/gnome-keyring
 
-# Depends on gtkhtml4 (which is being abandonend). When our webkitgtk3 
+# Depends on gtkhtml4 (which is being abandonend). When our webkitgtk3
 # in ports gets updated to > 1.10.x, balsa should depend on it.
 USES=		desktop-file-utils gettext gmake iconv pathfix \
 		perl5 pkgconfig tar:bzip2

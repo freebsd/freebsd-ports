@@ -38,11 +38,11 @@ CONFLICTS?=	gnome3-lite-[0-9]*
 USES=		metaport
 
 .if ${.CURDIR:T}!="gnome3-lite"
-OPTIONS_DEFINE+=MAPI
+OPTIONS_DEFINE+=MAPI DOCS
 MAPI_DESC=	Depend on evolution-mapi (pulls in samba4)
 
 DOCS_RUN_DEPENDS=	gnome-user-docs>=0:${PORTSDIR}/misc/gnome-user-docs
-MAPS_RUN_DEPENDS=	evolution-mapi>=3.0.0:${PORTSDIR}/mail/evolution-mapi
+MAPI_RUN_DEPENDS=	evolution-mapi>=3.0.0:${PORTSDIR}/mail/evolution-mapi
 .endif
 
 .include <bsd.port.options.mk>

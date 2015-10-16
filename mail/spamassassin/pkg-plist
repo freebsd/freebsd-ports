@@ -7,7 +7,7 @@ bin/sa-update
 bin/spamassassin
 bin/spamc
 bin/spamd
-@unexec rm -rf %D/%%ETCDIR%%/sa-update-keys 2>&1 >/dev/null || true
+@preunexec rm -rf %D/%%ETCDIR%%/sa-update-keys 2>&1 >/dev/null || true
 @sample %%ETCDIR%%/local.cf.sample
 @sample %%ETCDIR%%/init.pre.sample
 @sample %%ETCDIR%%/v310.pre.sample
@@ -211,15 +211,15 @@ lib/libspamc.so.0
 %%DATADIR%%/sa-update-pubkey.txt
 %%DATADIR%%/user_prefs.template
 @comment ##################################################################
-@unexec rm -rf /var/lib/spamassassin/2* 2>&1 >/dev/null || true
+@postunexec rm -rf /var/lib/spamassassin/2* 2>&1 >/dev/null || true
 @dir /var/lib/spamassassin
 @dir /var/lib
 @dir /var/db/spamassassin
 @dir(%%USER%%,%%GROUP%%,) /var/run/spamd
 @comment ##################################################################
-@unexec [ -d /var/db/spamassassin ] && echo "If you are no longer using SpamAssassin, remove /var/db/spamassassin"
-@unexec pw usershow "%%USER%%" 2>/dev/null 1>&2 && echo "To delete %%USER%% permanently, 'rmuser %%USER%%'"
-@unexec pw usershow "%%USER%%" 2>/dev/null 1>&2 && [ -d /var/spool/spamd ] && echo "    Note that this will remove /var/spool/spamd"
+@postunexec [ -d /var/db/spamassassin ] && echo "If you are no longer using SpamAssassin, remove /var/db/spamassassin"
+@postunexec pw usershow "%%USER%%" 2>/dev/null 1>&2 && echo "To delete %%USER%% permanently, 'rmuser %%USER%%'"
+@postunexec pw usershow "%%USER%%" 2>/dev/null 1>&2 && [ -d /var/spool/spamd ] && echo "    Note that this will remove /var/spool/spamd"
 @comment ##################################################################
-@exec if [ "%%UPDATE_ON_INSTALL%%" = "yes" ]; then echo "====> Downloading SpamAssassin rulesets"; %%PREFIX%%/bin/spamassassin -x -L --lint; %%PREFIX%%/bin/sa-update || true; fi
-@exec if [ "%%UPDATE_ON_INSTALL%%" = "yes" ]; then echo "====> Compiling SpamAssassin rulesets"; %%PREFIX%%/bin/spamassassin -x -L --lint; %%PREFIX%%/bin/sa-compile || true; fi
+@postexec if [ "%%UPDATE_ON_INSTALL%%" = "yes" ]; then echo "====> Downloading SpamAssassin rulesets"; %%PREFIX%%/bin/spamassassin -x -L --lint; %%PREFIX%%/bin/sa-update || true; fi
+@postexec if [ "%%UPDATE_ON_INSTALL%%" = "yes" ]; then echo "====> Compiling SpamAssassin rulesets"; %%PREFIX%%/bin/spamassassin -x -L --lint; %%PREFIX%%/bin/sa-compile || true; fi

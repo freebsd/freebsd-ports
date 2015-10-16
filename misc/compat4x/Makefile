@@ -3,7 +3,7 @@
 
 PORTNAME=	compat4x
 PORTVERSION=	${COMPAT4X_PORTVERSION}
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	misc
 MASTER_SITES=	${COMPAT4X_MASTER_SITES}
 PKGNAMESUFFIX=	-${COMPAT4X_ARCH}
@@ -20,7 +20,6 @@ WRKSRC=		${WRKDIR}/usr/lib/compat
 NO_BUILD=	yes
 TARGET_DIR=	${PREFIX}/lib/compat
 TARGET32_DIR=	${PREFIX}/lib32/compat
-LDCONFIG_LIB32=	${LDCONFIG} -32
 
 .include <bsd.port.pre.mk>
 
@@ -50,7 +49,6 @@ PLIST_SUB+=		I386_ONLY="@comment "
 
 .if ${ARCH} == amd64
 PLIST_SUB+=		AMD64_ONLY="" AMD64NA="@comment "
-PLIST_SUB+=		LDCONFIG_LIB32="${LDCONFIG} -32"
 USE_LDCONFIG32=		${TARGET32_DIR}
 .else
 USE_LDCONFIG=		${TARGET_DIR}
@@ -66,8 +64,6 @@ PLIST_SUB+=		FORBIDDEN:=""
 PLIST_SUB+=		FORBIDDEN:="@comment "
 .endif
 
-FREEBSD4_LIBS=		libc_r.so.4 libperl.so.3
-
 .if defined(COMPAT4X_OSRELDATE) && !empty(COMPAT4X_OSRELDATE)
 COMPAT4X_PORTVERSION=	${COMPAT4X_OSVERSION}.${COMPAT4X_OSRELDATE}
 COMPAT4X_MASTER_SITES=	ftp://current.FreeBSD.org/pub/FreeBSD/snapshots/${COMPAT4X_ARCH}/${COMPAT4X_OSVERSION}-${COMPAT4X_OSBRANCH}-${COMPAT4X_OSRELDATE}-JPSNAP/${PORTNAME}/
@@ -79,9 +75,6 @@ COMPAT4X_MASTER_SITES=	LOCAL/kris/${COMPAT4X_ARCH}
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@(cd ${DISTDIR}/${DIST_SUBDIR} && ${CAT} ${DISTFILES} | ${TAR} -xzf - -C ${WRKDIR} )
-.for lib in ${FREEBSD4_LIBS}
-	@${MV} ${WRKSRC}/${lib} ${WRKSRC}/${lib}.compat4x
-.endfor
 .if !defined(FORCE_VULNERABLE_OPENSSL)
 .for lib in ${OPENSSL_LIBS}
 	@${RM} -f ${WRKSRC}/${lib}
@@ -91,9 +84,6 @@ do-extract:
 do-install:
 	@${MKDIR} ${STAGEDIR}${TARGET_DIR}
 	${INSTALL_DATA} ${WRKSRC}/* ${STAGEDIR}${TARGET_DIR}/
-.for lib in ${FREEBSD4_LIBS}
-	${LN} -sf ${lib}.compat4x ${STAGEDIR}${TARGET_DIR}/${lib}
-.endfor
 
 pre-clean:
 	@[ -w ${WRKDIR}/var ] && chflags -R noschg ${WRKDIR}/var || ${TRUE}

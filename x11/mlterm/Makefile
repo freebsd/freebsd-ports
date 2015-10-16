@@ -24,6 +24,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	CAIRO DOCS FRIBIDI IBUS M17NLIB REGIS SCIM SIXEL UIM
+OPTIONS_SUB=	yes
 CAIRO_DESC=	Use Cairo for type engine (experimental)
 FRIBIDI_DESC=	Use Fribidi for BiDi rendering
 IBUS_DESC=	IBUS support (experimental)
@@ -33,93 +34,44 @@ SCIM_DESC=	SCIM support (experimental)
 SIXEL_DESC=	Sixel graphics support
 UIM_DESC=	uim support (experimental)
 
+FRIBIDI_CONFIGURE_ENABLE=	fribidi
+FRIBIDI_LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi
+
+UIM_CONFIGURE_ENABLE=	uim
+UIM_LIB_DEPENDS=	libuim.so:${PORTSDIR}/textproc/uim
+
+M17NLIB_CONFIGURE_ENABLE=	m17nlib
+M17NLIB_LIB_DEPENDS=	libm17n.so:${PORTSDIR}/devel/m17n-lib
+
+SCIM_CONFIGURE_ENABLE=	scim
+SCIM_LIB_DEPENDS=	libscim-1.0.so:${PORTSDIR}/textproc/scim
+
+IBUS_CONFIGURE_ENABLE=	ibus
+IBUS_LIB_DEPENDS=	libibus-1.0.so:${PORTSDIR}/textproc/ibus
+
+CAIRO_LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
+CAIRO_CONFIGURE_ON=	--with-type-engines="xcore,xft,cairo"
+CAIRO_CONFIGURE_OFF=	--with-type-engines="xcore,xft"
+
+SIXEL_CONFIGURE_ENABLE=	sixel
+
+REGIS_LIB_DEPENDS=	libSDL.so:${PORTSDIR}/devel/sdl12 \
+			libSDL_ttf.so:${PORTSDIR}/graphics/sdl_ttf \
+			libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MFRIBIDI}
-CONFIGURE_ARGS+=	--enable-fribidi
-LIB_DEPENDS+=	libfribidi.so:${PORTSDIR}/converters/fribidi
-PLIST_SUB+=	FRIBIDI=""
-.else
-CONFIGURE_ARGS+=	--disable-fribidi
-PLIST_SUB+=	FRIBIDI="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MUIM}
-CONFIGURE_ARGS+=	--enable-uim
-LIB_DEPENDS+=	libuim.so:${PORTSDIR}/textproc/uim
-PLIST_SUB+=	UIM=""
-.else
-CONFIGURE_ARGS+=	--disable-uim
-PLIST_SUB+=	UIM="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MM17NLIB}
-CONFIGURE_ARGS+=	--enable-m17nlib
-LIB_DEPENDS+=	libm17n.so:${PORTSDIR}/devel/m17n-lib
-PLIST_SUB+=	M17NLIB=""
-.else
-CONFIGURE_ARGS+=	--disable-m17nlib
-PLIST_SUB+=	M17NLIB="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSCIM}
-CONFIGURE_ARGS+=	--enable-scim
-LIB_DEPENDS+=	libscim-1.0.so:${PORTSDIR}/textproc/scim
-PLIST_SUB+=	SCIM=""
-.else
-CONFIGURE_ARGS+=	--disable-scim
-PLIST_SUB+=	SCIM="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MIBUS}
-CONFIGURE_ARGS+=	--enable-ibus
-LIB_DEPENDS+=	libibus-1.0.so:${PORTSDIR}/textproc/ibus
-PLIST_SUB+=	IBUS=""
-.else
-CONFIGURE_ARGS+=	--disable-ibus
-PLIST_SUB+=	IBUS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MCAIRO}
-CONFIGURE_ARGS+=	--with-type-engines="xcore,xft,cairo"
-LIB_DEPENDS+=	libcairo.so:${PORTSDIR}/graphics/cairo
-PLIST_SUB+=	CAIRO=""
-.else
-CONFIGURE_ARGS+=	--with-type-engines="xcore,xft"
-PLIST_SUB+=	CAIRO="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSIXEL}
-CONFIGURE_ARGS+=	--enable-sixel
-PLIST_SUB+=	SIXEL=""
-.else
-CONFIGURE_ARGS+=	--disable-sixel
-PLIST_SUB+=	SIXEL="@comment "
-.endif
-
 .if ${PORT_OPTIONS:MREGIS}
-LIB_DEPENDS+=	libSDL.so:${PORTSDIR}/devel/sdl12 \
-		libSDL_ttf.so:${PORTSDIR}/graphics/sdl_ttf \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 EXTERNAL_TOOLS+=,registobmp
-PLIST_SUB+=	REGIS=""
-.else
-PLIST_SUB+=	REGIS="@comment "
 .endif
 
 CONFIGURE_ARGS+=--with-tools="${EXTERNAL_TOOLS}"
 
-.if ${OSVERSION} < 900004
-LIB_DEPENDS+=	libutempter.so:${PORTSDIR}/sysutils/libutempter
-.endif
-
 post-configure:
 	@${REINPLACE_CMD} -e "s,@CGI_BIN@,${PREFIX}/libexec/w3mmlconfig," \
 		${WRKSRC}/tool/w3mmlconfig/mlconfig.cgi
-.if ${OSVERSION} >= 900004
 	@${REINPLACE_CMD} -e 's|kik_utmp_bsd|kik_utmp_utmper|' \
 		${WRKSRC}/kiklib/src/Makefile
-.endif
 
 post-install:
 	(cd ${WRKSRC}/tool/w3mmlconfig && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \

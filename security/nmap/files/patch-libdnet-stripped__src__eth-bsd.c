@@ -1,6 +1,6 @@
---- ./libdnet-stripped/src/eth-bsd.c.orig	2009-11-09 05:49:32.000000000 +0100
-+++ ./libdnet-stripped/src/eth-bsd.c	2010-09-03 21:04:29.000000000 +0200
-@@ -45,7 +45,7 @@
+--- libdnet-stripped/src/eth-bsd.c.orig	2009-11-09 04:49:32 UTC
++++ libdnet-stripped/src/eth-bsd.c
+@@ -45,7 +45,7 @@ eth_open(const char *device)
  	int i;
  
  	if ((e = calloc(1, sizeof(*e))) != NULL) {

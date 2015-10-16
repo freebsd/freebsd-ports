@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yaws
-PORTVERSION=	2.0
+PORTVERSION=	2.0.2
 CATEGORIES=	www devel
 MASTER_SITES=	http://yaws.hyber.org/download/
 
@@ -49,6 +49,8 @@ post-install:
 .else
 	${RM} -r ${STAGEDIR}${PREFIX}/www
 .endif
+	${MV} ${STAGEDIR}${PREFIX}/etc/yaws/dhparams.pem \
+		${STAGEDIR}${PREFIX}/etc/yaws/dhparams.pem.sample
 	${MV} ${STAGEDIR}${PREFIX}/etc/yaws/yaws-cert.pem \
 		${STAGEDIR}${PREFIX}/etc/yaws/yaws-cert.pem.sample
 	${MV} ${STAGEDIR}${PREFIX}/etc/yaws/yaws-key.pem \

@@ -27,12 +27,6 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 PORTSCOUT=	skipv:0.7.2
 
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} >= 901000
-EXTRA_PATCHES=	${FILESDIR}/extrapatch-VBA__Util.cpp
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|\([[:space:]]*\).*configure.*|\1@true|' \

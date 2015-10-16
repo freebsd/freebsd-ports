@@ -447,9 +447,9 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  
  echo ""
  
---- work.clean/openssh-6.8p1/kex.c.orig	2015-08-11 01:57:29.000000000 -0700
-+++ work.clean/openssh-6.8p1/kex.c	2015-08-17 17:02:06.770901000 -0700
-@@ -652,6 +652,13 @@ kex_choose_conf(struct ssh *ssh)
+--- work.clean/openssh/kex.c.orig	2015-09-20 21:33:42.000000000 -0700
++++ work.clean/openssh/kex.c	2015-09-24 14:59:44.155826000 -0700
+@@ -668,6 +668,13 @@ kex_choose_conf(struct ssh *ssh)
  	int nenc, nmac, ncomp;
  	u_int mode, ctos, need, dh_need, authlen;
  	int r, first_kex_follows;
@@ -461,9 +461,9 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +	debug ("AUTH STATE IS %d", auth_flag);
 +#endif
  
- 	if ((r = kex_buf2prop(kex->my, NULL, &my)) != 0 ||
- 	    (r = kex_buf2prop(kex->peer, &first_kex_follows, &peer)) != 0)
-@@ -709,6 +716,17 @@ kex_choose_conf(struct ssh *ssh)
+ 	debug2("local %s KEXINIT proposal", kex->server ? "server" : "client");
+ 	if ((r = kex_buf2prop(kex->my, NULL, &my)) != 0)
+@@ -740,6 +747,17 @@ kex_choose_conf(struct ssh *ssh)
  			peer[ncomp] = NULL;
  			goto out;
  		}
@@ -478,7 +478,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +			}
 +		}
 +#endif
- 		debug("kex: %s %s %s %s",
+ 		debug("kex: %s cipher: %s MAC: %s compression: %s",
  		    ctos ? "client->server" : "server->client",
  		    newkeys->enc.name,
 --- work.clean/openssh-6.8p1/myproposal.h	2015-03-17 00:49:20.000000000 -0500

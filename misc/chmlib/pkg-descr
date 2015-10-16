@@ -4,4 +4,4 @@ now, it is a very simple library, but sufficient for dealing with all of the
 into this particular file format, even a small library is able to gain
 reasonably good performance indexing into ITSS archives.
 
-WWW: http://morte.jedrea.com/~jedwin/projects/chmlib/
+WWW: http://www.jedrea.com/chmlib/

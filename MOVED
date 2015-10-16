@@ -6889,7 +6889,6 @@ textproc/ats-contrib-parcomb||2014-09-01|Not staged
 textproc/coco||2014-09-01|Not staged
 textproc/lemmatizer2||2014-09-01|Not staged
 textproc/openvanilla-modules||2014-09-01|Not staged
-textproc/pootle||2014-09-01|Not staged
 textproc/publican||2014-09-01|Not staged
 textproc/ruby-html-fillinform||2014-09-01|Not staged
 textproc/ruby-html-template||2014-09-01|Not staged
@@ -7824,21 +7823,21 @@ games/galaxymage||2015-08-16|Has expired: Runtime broken and abandoned upstream
 devel/rubygem-fog-brightbox|net/rubygem-fog-brightbox|2015-08-19|Move to a better place
 www/ompload||2015-08-20|Has expired: omploader.org is down for many years
 devel/ocaml-equeue|www/ocaml-net|2015-08-20|Has expired: Superseded by www/ocaml-net
-devel/hs-MaybeT||2015-08-20|Removed: Deprecated.
-devel/hs-geniplate||2015-08-20|Removed: Upstream support is discontinued.
-devel/hs-glade||2015-08-20|Removed: Upstream support is discontinued.
-devel/hs-haskell-platform||2015-08-20|Removed: It is not tracked any more.
-devel/hs-ranges||2015-08-20|Removed: Deprecated.
-devel/hs-testpack||2015-08-20|Removed: Upstream is unmaintained.
-graphics/hs-soegtk||2015-08-20|Removed: Upstream support is discontinued.
-lang/hs-epic||2015-08-20|Removed: It is not needed any more.
-math/hs-nats||2015-08-20|Removed: It has been merged into the base library of GHC.
-multimedia/hs-gstreamer||2015-08-20|Removed: Upstream support is discontinued.
-www/hs-scgi||2015-08-20|Removed: Deprecated.
-www/hs-yesod-platform||2015-08-20|Removed: Upstream support is discontinued.
-www/hs-yesod-routes||2015-08-20|Removed: Upstream support is discontinued.
-x11-toolkits/hs-gtkglext||2015-08-20|Removed: Upstream support is discontinued.
-textproc/prosper||2015-08-22|Removed: maintainted in print/texlive-texmf.
+devel/hs-MaybeT||2015-08-20|Removed: Deprecated
+devel/hs-geniplate||2015-08-20|Removed: Upstream support is discontinued
+devel/hs-glade||2015-08-20|Removed: Upstream support is discontinued
+devel/hs-haskell-platform||2015-08-20|Removed: It is not tracked any more
+devel/hs-ranges||2015-08-20|Removed: Deprecated
+devel/hs-testpack||2015-08-20|Removed: Upstream is unmaintained
+graphics/hs-soegtk||2015-08-20|Removed: Upstream support is discontinued
+lang/hs-epic||2015-08-20|Removed: It is not needed any more
+math/hs-nats||2015-08-20|Removed: It has been merged into the base library of GHC
+multimedia/hs-gstreamer||2015-08-20|Removed: Upstream support is discontinued
+www/hs-scgi||2015-08-20|Removed: Deprecated
+www/hs-yesod-platform||2015-08-20|Removed: Upstream support is discontinued
+www/hs-yesod-routes||2015-08-20|Removed: Upstream support is discontinued
+x11-toolkits/hs-gtkglext||2015-08-20|Removed: Upstream support is discontinued
+textproc/prosper||2015-08-22|Removed: maintainted in print/texlive-texmf
 print/ghostscript7|print/ghostscript7-base|2015-08-22|Split into print/ghostscript7-base and print/ghostscript7-x11
 print/ghostscript7-nox11|print/ghostscript7-base|2015-08-22|Integrated into print/ghostscript7-base
 print/ghostscript8|print/ghostscript8-base|2015-08-22|Split into print/ghostscript8-base and print/ghostscript8-x11
@@ -7857,7 +7856,7 @@ games/linux-hdb-demo||2015-09-01|Has expired: Broken for more than 6 months
 devel/rubygem-igraph||2015-09-01|Has expired: Broken for more than 6 months
 games/linux-candycruncher-demo||2015-09-01|Has expired: Broken for more than 6 months
 games/linux-gorky17-demo||2015-09-01|Has expired: Broken for more than 6 months
-sysutils/syslog-ng33||2015-09-01|Has expired: No longer supported by Balabit cince November 2014.
+sysutils/syslog-ng33||2015-09-01|Has expired: No longer supported by Balabit cince November 2014
 textproc/ruby-xmlconfigfile|textproc/ruby-xml-configfile|2015-09-03|Rename to match our ruby naming
 net/mcast-tools|net/pim6-tools|2015-09-07|Rename
 www/p5-Dancer-Session-Memcached|databases/p5-Dancer-Session-Memcached|2015-09-09|Duplicate port
@@ -7875,3 +7874,19 @@ x11-toolkits/wxgtk28-unicode|x11-toolkits/wxgtk28|2015-09-16|Make wxGTK now only
 x11-toolkits/wxgtk28-unicode-contrib|x11-toolkits/wxgtk28-contrib|2015-09-16|Make wxGTK now only unicode
 x11-toolkits/py-wxPython28-unicode|x11-toolkits/py-wxPython28|2015-09-16|Make wxGTK now only unicode
 japanese/font-mplus|japanese/font-mplus-outline|2015-09-21|Renamed
+www/iojs|www/node|2015-09-23|io.js has been merged back to Node.js
+japanese/k10|japanese/font-naga10|2015-09-25|Renamed
+japanese/k12|japanese/font-kaname12|2015-09-25|Renamed
+japanese/elisa8x8|japanese/font-elisa8|2015-09-25|Renamed
+japanese/kanji18|japanese/font-kanji18|2015-09-25|Renamed
+japanese/kanji26|japanese/font-kanji26|2015-09-25|Renamed
+japanese/kappa20|japanese/font-kappa20|2015-09-25|Renamed
+japanese/mikachan-ttfonts|japanese/font-mikachan|2015-09-25|Renamed
+japanese/monafonts-ttf|japanese/font-mona-ttf|2015-09-25|Renamed
+japanese/monafonts|japanese/font-mona|2015-09-25|Renamed
+chinese/joe|editors/joe|2015-09-26|Regular joe's editor now support chinese
+net/linc||2015-09-27|Has expired: Last release in 2003, not used by anything anymore
+net/linc-reference||2015-09-27|Has expired: Last release in 2003, not used by anything anymore
+x11/xlogout||2015-09-27|Has expired: Useless cruft from 1989
+net/rubygem-amq-client||2015-10-01|Has expired: Deprecated by Upstream. It is part of net/rubygem-amqp codebase now
+emulators/ppsspp-devel|emulators/ppsspp|2015-10-06|Out of date: use emulators/ppsspp for now

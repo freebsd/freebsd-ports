@@ -43,7 +43,6 @@ EMACS_LISPS=	mgp-mode.el
 EMACS_LISPS_MGP=COPYING README mgp.el mgp.sty sample.tex
 SAMPLE_SCRIPTS=	eqn2eps.sh tex2eps.sh mgp2html.pl mgp2latex.pl
 
-
 OPTIONS_DEFINE=	FREETYPE XFT GIF DOCS
 OPTIONS_DEFAULT=FREETYPE XFT GIF
 NO_OPTIONS_SORT=yes

@@ -977,5 +977,4 @@ share/misc/tabset/std
 share/misc/tabset/stdcrt
 share/misc/tabset/vt100
 share/misc/tabset/vt300
-share/misc/terminfo.db
-@exec find %D/share/misc -name "*.terminfo" -exec %D/bin/tic {} \;
+share/misc/terminfo.db.default

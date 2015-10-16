@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	x2goclient
-PORTVERSION=	4.0.4.0
+PORTVERSION=	4.0.5.0
 CATEGORIES=	net
 MASTER_SITES=	http://code.x2go.org/releases/source/x2goclient/
 
@@ -10,6 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt client for the X2Go system
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 # Avoid clash with libssh from base
 BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh
@@ -38,11 +39,11 @@ post-patch:
 		${REINPLACE_CMD} -e \
 		's|Q_OS_LINUX|Q_OS_UNIX| ; \
 		 /<linux\/fs.h>/s|^|//| ; \
-		 /#define USELDAP/s|^|//|'
+		 /#define USELDAP/s|^|//| ; \
+		 s|/usr/local/bin|${LOCALBASE}/bin|'
 
 pre-build:
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
-		${MAKEFILE} compiler_TSQM_make_all)
+	@(cd ${WRKSRC} && ${DO_MAKE_BUILD} compiler_TSQM_make_all)
 
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} x2goclient \

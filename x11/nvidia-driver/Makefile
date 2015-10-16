@@ -11,7 +11,7 @@
 # or `x11/nvidia-driver-340').
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	346.47
+DISTVERSION?=	346.96
 # Always try to set PORTREVISION as it can be overridden by the slave ports
 PORTREVISION?=	0
 CATEGORIES=	x11
@@ -284,6 +284,8 @@ post-install: .SILENT
 .endif
 .if ${NVVERSION} < 180.029
 	${REINPLACE_CMD} -e '/vdpau/d' ${TMPPLIST}
+.elif ${NVVERSION} >= 304.128 && ${NVVERSION} < 310.019
+	${REINPLACE_CMD} -E '/libvdpau(_trace)?\.so/d' ${TMPPLIST}
 .endif
 .if ${NVVERSION} < 185.01829
 	${REINPLACE_CMD} -e '/libcuda/d' ${TMPPLIST}

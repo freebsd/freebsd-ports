@@ -15,6 +15,7 @@ LIB_DEPENDS=	liboop.so:${PORTSDIR}/devel/liboop \
 		libnettle.so:${PORTSDIR}/security/nettle
 
 BROKEN_FreeBSD_9=	does not build
+BROKEN_sparc64=	fails to compile: unexpected identifier
 
 USE_CSTD=	c89
 GNU_CONFIGURE=	yes

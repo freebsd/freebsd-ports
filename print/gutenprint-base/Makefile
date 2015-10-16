@@ -4,6 +4,7 @@
 
 PORTNAME?=	gutenprint
 PORTVERSION=	5.2.10
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	SF/gimp-print/gutenprint-5.2/${PORTVERSION}
 PKGNAMESUFFIX?=	-base
@@ -15,33 +16,39 @@ LICENSE=	GPLv2
 
 CONFLICTS=	gimp-print-[0-9]*
 
+.if !defined(GUT_SLAVE)
+OPTIONS_DEFINE=	GTK2
+OPTIONS_DEFAULT=GTK2
+OPTIONS_SUB=	yes
+.endif
+
+GTK2_CONFIGURE_ENABLE=	libgutenprintui2
+GTK2_LIB_DEPENDS=	libgtk-x11-2.0.so:${PORTSDIR}/x11-toolkits/gtk20
+
+.include <bsd.port.options.mk>
+
 USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
-USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=--with-gimp=no --with-gimp2=no
+CONFIGURE_ARGS+=--without-gimp --without-gimp2
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${PREFIX}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -L${PREFIX}/lib
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.pre.mk>
 
 .if ${SLAVE_PORT}=="yes"
-LIB_DEPENDS+=	libgutenprintui2.so:${PORTSDIR}/print/gutenprint-base
+LIB_DEPENDS+=	libgutenprint.so:${PORTSDIR}/print/gutenprint-base
 PKG_CONFIG?=	${LOCALBASE}/bin/pkg-config
 GUTENPRINTUI2_LIBS=`${PKG_CONFIG} --libs gutenprintui2`
-.else
-MAN1+=		escputil.1
 .endif
 
 .if defined(GUT_SLAVE) && ${GUT_SLAVE}=="gimp"
-LIB_DEPENDS+=	libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app \
-		libgutenprint.so:${PORTSDIR}/print/gutenprint-base
-CONFIGURE_ARGS=--with-gimp2=yes # Override CONFIGURE_ARGS
+LIB_DEPENDS+=	libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app
+CONFIGURE_ARGS+=--with-gimp2=yes # Override CONFIGURE_ARGS
 BUILD_WRKSRC=	${WRKSRC}/src/gimp2
 INSTALL_WRKSRC=	${WRKSRC}/src/gimp2
-.else
-CONFIGURE_ARGS+=--without-gimp2
 .endif
 
 .if defined(GUT_SLAVE) && ${GUT_SLAVE}=="cups"
@@ -97,16 +104,19 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|= $$(pkglibdir)|= ${PREFIX}/libexec/cups|' \
 		${WRKSRC}/src/cups/Makefile.in
 
+pre-configure:
+.if defined(GUT_SLAVE) && (${GUT_SLAVE}=="gimp")
+	@test -f ${LOCALBASE}/lib/libgutenprintui2.so || (printf "\nprint/gutenprint-base must be rebuilt with GTK2 support\n\n" && exit 1)
+.endif
+
 pre-build:
 .if defined(GUT_SLAVE) && (${GUT_SLAVE}=="foomatic" || ${GUT_SLAVE}=="cups")
 	@(cd ${WRKSRC}/src/xml && ${MAKE})
 .endif
 
 pre-install:
-	@${MKDIR} ${STAGEDIR}${LOCALBASE}/lib/gutenprint/5.2/modules
-.if defined(GUT_SLAVE) && ${GUT_SLAVE}=="cups"
-	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${LOCALBASE}/bin/perl|' \
-		${WRKSRC}/src/cups/cups-genppdupdate
+.if !defined(GUT_SLAVE)
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gutenprint/5.2/modules
 .endif
 
 post-install:

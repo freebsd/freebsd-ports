@@ -47,15 +47,11 @@ SMPEG_CONFIGURE_ENABLE=		music-mp3
 VORBIS_LIB_DEPENDS=		libvorbis.so:${PORTSDIR}/audio/libvorbis
 VORBIS_CONFIGURE_ENABLE=	music-ogg
 
-.include <bsd.port.options.mk>
+TIMIDITYPLUS_RUN_DEPENDS=	${LOCALBASE}/share/timidity/timidity.cfg-eawpats:${PORTSDIR}/audio/eawpats
+TIMIDITYPLUS_VARS=		CONFIG_FILE=${LOCALBASE}/share/timidity/timidity.cfg-eawpats
 
-.if ${PORT_OPTIONS:MTIMIDITYPLUS}
-RUN_DEPENDS+=	${LOCALBASE}/share/timidity/timidity.cfg-eawpats:${PORTSDIR}/audio/eawpats
-CONFIG_FILE=	${LOCALBASE}/share/timidity/timidity.cfg-eawpats
-.else
-RUN_DEPENDS+=	${LOCALBASE}/lib/timidity/timidity.cfg:${PORTSDIR}/audio/timidity
-CONFIG_FILE=	${LOCALBASE}/lib/timidity/timidity.cfg
-.endif
+TIMIDITYPLUS_RUN_DEPENDS_OFF=	${LOCALBASE}/lib/timidity/timidity.cfg:${PORTSDIR}/audio/timidity
+TIMIDITYPLUS_VARS_OFF=		CONFIG_FILE=${LOCALBASE}/lib/timidity/timidity.cfg
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\($$(prefix)/libdata/pkgconfig\)|$$(DESTDIR)\1|' \

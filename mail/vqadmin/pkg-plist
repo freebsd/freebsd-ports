@@ -1,5 +1,7 @@
 bin/vqadmin
-%%CGIBINDIR%%/vqadmin/.htaccess
+@owner vpopmail
+@group vchkpw
+@(nobody,,644) %%CGIBINDIR%%/vqadmin/.htaccess
 %%CGIBINDIR%%/vqadmin/html/add_alias_domain.html
 %%CGIBINDIR%%/vqadmin/html/add_domain.html
 %%CGIBINDIR%%/vqadmin/html/add_domain_body.html
@@ -37,5 +39,10 @@ bin/vqadmin
 %%CGIBINDIR%%/vqadmin/html/view_domain.html
 %%CGIBINDIR%%/vqadmin/html/view_user.html
 %%CGIBINDIR%%/vqadmin/vqadmin.acl
-%%CGIBINDIR%%/vqadmin/vqadmin.cgi
+@(root,wheel,6755) %%CGIBINDIR%%/vqadmin/vqadmin.cgi
 %%WEBDATADIR%%/images/vqadmin/vqadmin.css
+@dir(,,755) %%WEBDATADIR%%/images/vqadmin
+@dir(,,755) %%CGIBINDIR%%/vqadmin/html
+@dir(,,755) %%CGIBINDIR%%/vqadmin
+@owner
+@group

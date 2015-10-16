@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gandi.cli
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml \
-		${PYTHON_PKGNAMEPREFIX}click>=3.0:${PORTSDIR}/devel/py-click \
+		${PYTHON_PKGNAMEPREFIX}click>=3.1:${PORTSDIR}/devel/py-click \
 		${PYTHON_PKGNAMEPREFIX}requests>0:${PORTSDIR}/www/py-requests \
 		${PYTHON_PKGNAMEPREFIX}ipy>0:${PORTSDIR}/net-mgmt/py-ipy
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose \
@@ -28,6 +28,8 @@ TESTS_BUILD_DEPENDS=	${RUN_DEPENDS} \
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 

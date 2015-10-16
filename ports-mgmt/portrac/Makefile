@@ -12,6 +12,7 @@ COMMENT=	Simple GUI tool for tracking port updates
 LICENSE=	BSD2CLAUSE
 
 BROKEN_FreeBSD_9=	does not build (lacking c++11 support)
+BROKEN_sparc64=	fails to compile: error in C++ code
 
 PLIST_FILES=	bin/portrac \
 		share/portrac/portrac.png \

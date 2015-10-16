@@ -1,4 +1,4 @@
---- ETL/_stringf.h.orig
+--- ETL/_stringf.h.orig	2015-03-28 15:08:17 UTC
 +++ ETL/_stringf.h
 @@ -57,7 +57,7 @@
  

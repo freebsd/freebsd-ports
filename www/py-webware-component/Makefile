@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}webware-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Webware servlet component extension
 
+DEPRECATED=	Depends on deprecated www/py-webware
+EXPIRATION_DATE=	2015-10-31
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}webware>0:${PORTSDIR}/www/py-webware
 
 USES=		python:2

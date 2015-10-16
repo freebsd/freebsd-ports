@@ -26,13 +26,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${WEBSVNDIR}
 	(cd ${WRKSRC} \
 	    && ${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/${WEBSVNDIR})
-	${CHOWN} -R www:www ${STAGEDIR}${PREFIX}/${WEBSVNDIR}
 	${FIND} ${STAGEDIR}${PREFIX}/${WEBSVNDIR} -type f -exec ${CHMOD} 644 '{}' +
-
-post-install:
-	@[ -f ${STAGEDIR}${PREFIX}/${WEBSVNDIR}/include/config.php ] \
-	    || ${INSTALL_DATA} \
-	    ${STAGEDIR}${PREFIX}/${WEBSVNDIR}/include/distconfig.php \
-	    ${STAGEDIR}${PREFIX}/${WEBSVNDIR}/include/config.php
 
 .include <bsd.port.mk>

@@ -26,7 +26,6 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/core/__init__.py
 %%PYTHON_SITELIBDIR%%/numpy/core/__init__.pyc
 %%PYTHON_SITELIBDIR%%/numpy/core/__init__.pyo
-%%PYTHON_SITELIBDIR%%/numpy/core/_dotblas.so
 %%PYTHON_SITELIBDIR%%/numpy/core/_dummy.so
 %%PYTHON_SITELIBDIR%%/numpy/core/_internal.py
 %%PYTHON_SITELIBDIR%%/numpy/core/_internal.pyc
@@ -105,7 +104,6 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/core/records.py
 %%PYTHON_SITELIBDIR%%/numpy/core/records.pyc
 %%PYTHON_SITELIBDIR%%/numpy/core/records.pyo
-%%PYTHON_SITELIBDIR%%/numpy/core/scalarmath.so
 %%PYTHON_SITELIBDIR%%/numpy/core/setup.py
 %%PYTHON_SITELIBDIR%%/numpy/core/setup.pyc
 %%PYTHON_SITELIBDIR%%/numpy/core/setup.pyo
@@ -122,7 +120,6 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/core/tests/test_abc.py
 %%PYTHON_SITELIBDIR%%/numpy/core/tests/test_api.py
 %%PYTHON_SITELIBDIR%%/numpy/core/tests/test_arrayprint.py
-%%PYTHON_SITELIBDIR%%/numpy/core/tests/test_blasdot.py
 %%PYTHON_SITELIBDIR%%/numpy/core/tests/test_datetime.py
 %%PYTHON_SITELIBDIR%%/numpy/core/tests/test_defchararray.py
 %%PYTHON_SITELIBDIR%%/numpy/core/tests/test_deprecations.py
@@ -318,6 +315,12 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/distutils/misc_util.py
 %%PYTHON_SITELIBDIR%%/numpy/distutils/misc_util.pyc
 %%PYTHON_SITELIBDIR%%/numpy/distutils/misc_util.pyo
+%%PYTHON_SITELIBDIR%%/numpy/distutils/msvc9compiler.py
+%%PYTHON_SITELIBDIR%%/numpy/distutils/msvc9compiler.pyc
+%%PYTHON_SITELIBDIR%%/numpy/distutils/msvc9compiler.pyo
+%%PYTHON_SITELIBDIR%%/numpy/distutils/msvccompiler.py
+%%PYTHON_SITELIBDIR%%/numpy/distutils/msvccompiler.pyc
+%%PYTHON_SITELIBDIR%%/numpy/distutils/msvccompiler.pyo
 %%PYTHON_SITELIBDIR%%/numpy/distutils/npy_pkg_config.py
 %%PYTHON_SITELIBDIR%%/numpy/distutils/npy_pkg_config.pyc
 %%PYTHON_SITELIBDIR%%/numpy/distutils/npy_pkg_config.pyo
@@ -366,6 +369,7 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/distutils/tests/test_fcompiler_intel.py
 %%PYTHON_SITELIBDIR%%/numpy/distutils/tests/test_misc_util.py
 %%PYTHON_SITELIBDIR%%/numpy/distutils/tests/test_npy_pkg_config.py
+%%PYTHON_SITELIBDIR%%/numpy/distutils/tests/test_system_info.py
 %%PYTHON_SITELIBDIR%%/numpy/distutils/unixccompiler.py
 %%PYTHON_SITELIBDIR%%/numpy/distutils/unixccompiler.pyc
 %%PYTHON_SITELIBDIR%%/numpy/distutils/unixccompiler.pyo
@@ -429,6 +433,9 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/f2py/__init__.py
 %%PYTHON_SITELIBDIR%%/numpy/f2py/__init__.pyc
 %%PYTHON_SITELIBDIR%%/numpy/f2py/__init__.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/__main__.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/__main__.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/__main__.pyo
 %%PYTHON_SITELIBDIR%%/numpy/f2py/__version__.py
 %%PYTHON_SITELIBDIR%%/numpy/f2py/__version__.pyc
 %%PYTHON_SITELIBDIR%%/numpy/f2py/__version__.pyo
@@ -525,7 +532,6 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/lib/__init__.py
 %%PYTHON_SITELIBDIR%%/numpy/lib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/numpy/lib/__init__.pyo
-%%PYTHON_SITELIBDIR%%/numpy/lib/_compiled_base.so
 %%PYTHON_SITELIBDIR%%/numpy/lib/_datasource.py
 %%PYTHON_SITELIBDIR%%/numpy/lib/_datasource.pyc
 %%PYTHON_SITELIBDIR%%/numpy/lib/_datasource.pyo
@@ -583,6 +589,10 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/lib/stride_tricks.py
 %%PYTHON_SITELIBDIR%%/numpy/lib/stride_tricks.pyc
 %%PYTHON_SITELIBDIR%%/numpy/lib/stride_tricks.pyo
+%%PYTHON_SITELIBDIR%%/numpy/lib/tests/data/py2-objarr.npy
+%%PYTHON_SITELIBDIR%%/numpy/lib/tests/data/py2-objarr.npz
+%%PYTHON_SITELIBDIR%%/numpy/lib/tests/data/py3-objarr.npy
+%%PYTHON_SITELIBDIR%%/numpy/lib/tests/data/py3-objarr.npz
 %%PYTHON_SITELIBDIR%%/numpy/lib/tests/data/python3.npy
 %%PYTHON_SITELIBDIR%%/numpy/lib/tests/data/win64python2.npy
 %%PYTHON_SITELIBDIR%%/numpy/lib/tests/test__datasource.py
@@ -597,6 +607,7 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/lib/tests/test_index_tricks.py
 %%PYTHON_SITELIBDIR%%/numpy/lib/tests/test_io.py
 %%PYTHON_SITELIBDIR%%/numpy/lib/tests/test_nanfunctions.py
+%%PYTHON_SITELIBDIR%%/numpy/lib/tests/test_packbits.py
 %%PYTHON_SITELIBDIR%%/numpy/lib/tests/test_polynomial.py
 %%PYTHON_SITELIBDIR%%/numpy/lib/tests/test_recfunctions.py
 %%PYTHON_SITELIBDIR%%/numpy/lib/tests/test_regression.py
@@ -712,9 +723,6 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/polynomial/polynomial.py
 %%PYTHON_SITELIBDIR%%/numpy/polynomial/polynomial.pyc
 %%PYTHON_SITELIBDIR%%/numpy/polynomial/polynomial.pyo
-%%PYTHON_SITELIBDIR%%/numpy/polynomial/polytemplate.py
-%%PYTHON_SITELIBDIR%%/numpy/polynomial/polytemplate.pyc
-%%PYTHON_SITELIBDIR%%/numpy/polynomial/polytemplate.pyo
 %%PYTHON_SITELIBDIR%%/numpy/polynomial/polyutils.py
 %%PYTHON_SITELIBDIR%%/numpy/polynomial/polyutils.pyc
 %%PYTHON_SITELIBDIR%%/numpy/polynomial/polyutils.pyo
@@ -772,6 +780,7 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/testing/utils.pyo
 %%PYTHON_SITELIBDIR%%/numpy/tests/test_ctypeslib.py
 %%PYTHON_SITELIBDIR%%/numpy/tests/test_matlib.py
+%%PYTHON_SITELIBDIR%%/numpy/tests/test_scripts.py
 %%PYTHON_SITELIBDIR%%/numpy/version.py
 %%PYTHON_SITELIBDIR%%/numpy/version.pyc
 %%PYTHON_SITELIBDIR%%/numpy/version.pyo

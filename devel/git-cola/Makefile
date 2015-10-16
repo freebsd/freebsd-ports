@@ -16,6 +16,6 @@ USE_GITHUB=	yes
 USES=		desktop-file-utils gettext gmake python
 INSTALLS_ICONS=	YES
 
-MAKE_FLAGS=	"prefix=${PREFIX}"
+MAKE_ARGS=	prefix=${PREFIX} PYTHON=${PYTHON_CMD}
 
 .include <bsd.port.mk>

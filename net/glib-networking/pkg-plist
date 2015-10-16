@@ -70,5 +70,5 @@ share/locale/vi/LC_MESSAGES/glib-networking.mo
 share/locale/zh_CN/LC_MESSAGES/glib-networking.mo
 share/locale/zh_HK/LC_MESSAGES/glib-networking.mo
 share/locale/zh_TW/LC_MESSAGES/glib-networking.mo
-@exec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true
-@unexec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true
+@postexec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true
+@postunexec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true

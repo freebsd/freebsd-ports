@@ -30,5 +30,5 @@ post-stage:
 
 add-plist-post:
 	@${REINPLACE_CMD} -e "/readwrite\/__init__.py/d" ${TMPPLIST}
-	
+
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	ncurses
 DISTVERSION=	${RELEASE}-20150214
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/${PORTNAME}/current/
 DIST_SUBDIR=	${PORTNAME}
@@ -16,6 +16,8 @@ CONFLICTS=	ncurses-devel-*
 LICENSE=	MIT
 
 RELEASE=	5.9
+
+BROKEN_sparc64=	cannot build: coredump: illegal instruction
 
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=../configure
@@ -39,7 +41,7 @@ TRACE_DESC=	Add trace() function to all models of ncurses
 CONFIGURE_ENV=	gnat_exists="no"
 
 USE_LDCONFIG=	yes
-USES=		shebangfix tar:tgz
+USES=		shebangfix tar:tgz terminfo
 SHEBANG_FILES=	test/tracemunch
 
 WIDEC_WRKSRC=	${WRKSRC}/build.widec
@@ -122,16 +124,20 @@ post-install:
 . endfor
 .endfor
 
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-. for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
-. endfor
-.if ${OPSYS} != FreeBSD || ${OSVERSION} > 900000
 	${RM} -f ${STAGEDIR}${PREFIX}/lib/libncurses.so \
 		${STAGEDIR}${PREFIX}/lib/libncursesw.so
 	${ECHO} "INPUT(libncurses.so.${RELEASE:R} AS_NEEDED(-ltinfo))" > ${STAGEDIR}${PREFIX}/lib/libncurses.so
 	${ECHO} "INPUT(libncursesw.so.${RELEASE:R} AS_NEEDED(-ltinfow))" > ${STAGEDIR}${PREFIX}/lib/libncursesw.so
-.endif
+
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.5.9
+
+	${MV} ${STAGEDIR}${PREFIX}/share/misc/terminfo.db \
+		${STAGEDIR}${PREFIX}/share/misc/terminfo.db.default
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
+.endfor
 
 .include <bsd.port.mk>

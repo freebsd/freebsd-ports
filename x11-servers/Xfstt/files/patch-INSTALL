@@ -1,6 +1,6 @@
---- INSTALL.orig	Tue Jul 29 12:50:35 2003
-+++ INSTALL	Tue Jul 29 18:52:26 2003
-@@ -43,7 +43,7 @@
+--- INSTALL.orig	2012-03-02 15:33:23 UTC
++++ INSTALL
+@@ -41,7 +41,7 @@ Distributed tar Sources
     (use gmake instead of the standard make on FreeBSD)
  
  3) Copy some truetype (.ttf) files or create symlinks to truetype directories

@@ -45,16 +45,16 @@ OPTIONS_DEFINE=	DOCS
 CONFIGURE_ARGS+=	--with-apr=${LOCALBASE}
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/apache
-.for f in ${MYPORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}/${f}
-.endfor
-.endif
 .if !defined(WITH_DEBUG)
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/suphp
 .endif
-	@${INSTALL_DATA} ${WRKSRC}/doc/suphp.conf-example \
+	${INSTALL_DATA} ${WRKSRC}/doc/suphp.conf-example \
 	    ${STAGEDIR}${PREFIX}/etc/suphp.conf-example
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/apache
+.for f in ${MYPORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}/${f}
+.endfor
 
 .include <bsd.port.mk>

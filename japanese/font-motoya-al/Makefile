@@ -2,7 +2,7 @@
 
 PORTNAME=	motoya-al
 PORTVERSION=	0.0.20100921
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	LOCAL/hrs
 PKGNAMEPREFIX=	ja-font-
@@ -13,6 +13,7 @@ COMMENT=	Free Japanese fonts by MOTOYA
 
 USES=		fonts:fc tar:bzip2
 FONTNAME=	TTF
+NO_ARCH=	yes
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install

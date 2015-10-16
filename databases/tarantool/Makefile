@@ -51,6 +51,9 @@ DEBUG_DESC=	Enable debug
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-src_trivia_config.h.cmake
 .endif
 
+NOT_FOR_ARCHS=	sparc64
+NOT_FOR_ARCHS_REASON=	not yet ported to this architecture
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

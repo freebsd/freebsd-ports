@@ -70,7 +70,8 @@ MAKE_ENV+=	FC_INC_DIR="${LOCALBASE}/include/fontconfig" \
 		WITH_USB=yes \
 		CALIBRE_CONFIG_DIRECTORY=${WRKDIR}/calibre-config \
 		XDG_DATA_DIRS=${STAGEDIR}${PREFIX}/share \
-		XDG_CONFIG_HOME=${WRKDIR}/xdg-config
+		XDG_CONFIG_HOME=${WRKDIR}/xdg-config \
+		XDG_UTILS_INSTALL_MODE=system
 
 .include <bsd.port.pre.mk>
 

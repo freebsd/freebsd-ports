@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Catalyst-View-Email
-PORTVERSION=	0.35
+PORTVERSION=	0.36
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,6 +24,7 @@ TEST_DEPENDS=	p5-Catalyst-View-Mason>=0.18:${PORTSDIR}/www/p5-Catalyst-View-Maso
 		p5-Catalyst-View-TT>=0.31:${PORTSDIR}/www/p5-Catalyst-View-TT \
 		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

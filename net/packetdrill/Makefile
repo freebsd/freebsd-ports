@@ -17,9 +17,6 @@ PORTDOCS=	README
 PORTEXAMPLES=	tests
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-OPTIONS_DEFAULT=DOCS EXAMPLES
-
-.include <bsd.port.options.mk>
 
 do-configure:
 	${PRINTF} "%s\n" "#include <stdio.h>" "int main(void) {" \
@@ -43,14 +40,14 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/contrib && ${INSTALL_DATA} ${PORTDATA} \
 	    ${STAGEDIR}${DATADIR}
-.if ${PORT_OPTIONS:MEXAMPLES}
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} ${PORTEXAMPLES} \
 	    ${STAGEDIR}${EXAMPLESDIR}
-.endif
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

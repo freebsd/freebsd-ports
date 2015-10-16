@@ -16,7 +16,6 @@ OPTIONS_DEFINE=	EXAMPLES
 
 USE_LDCONFIG=	yes
 USES+=		cmake:outsource
-CMAKE_ARGS+=	-DDEVPAK:BOOL=ON
 
 USE_GITHUB=	yes
 
@@ -24,13 +23,8 @@ SOVERSION=	2
 PLIST_SUB+=	SOVERSION=${SOVERSION}
 PORTEXAMPLES=	*
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MEXAMPLES}
-CMAKE_ARGS+=	-DLIBHPDF_EXAMPLES:BOOL=ON  \
-    		-DEXAMPLESDIR:STRING=share/examples/${PORTNAME}
-.endif
-
+EXAMPLES_CMAKE_ON=	-DLIBHPDF_EXAMPLES:BOOL=ON  \
+			-DEXAMPLESDIR:STRING=share/examples/${PORTNAME}
 post-install:
 	${LN} -s libhpdf.so ${STAGEDIR}${PREFIX}/lib/libhpdf.so.${SOVERSION}
 

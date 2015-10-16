@@ -1,9 +1,9 @@
 # $FreeBSD$
 
+CATEGORIES=	korean
 LO_I18N=	ko
 LO_HAS_HELPPACK=	yes
-CATEGORIES=	korean editors
 
-.include "${.CURDIR}/../../editors/libreoffice/Makefile.common"
+.include "${.CURDIR}/../../editors/libreoffice/Makefile.i18n"
 
 .include <bsd.port.mk>

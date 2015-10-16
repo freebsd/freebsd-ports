@@ -251,3 +251,4 @@ sbin/munin-sched
 %%DATADIR%%/plugins/zimbra_
 @dir(%%USER%%,%%GROUP%%,) %%DBDIRNODE%%/plugin-state
 @dir %%ETCDIR%%/plugins
+@comment @dir %%DBDIRNODE%%

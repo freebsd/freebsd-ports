@@ -44,6 +44,9 @@ bin/variety
 %%PYTHON_SITELIBDIR%%/variety/AvgColor.py
 %%PYTHON_SITELIBDIR%%/variety/AvgColor.pyc
 %%PYTHON_SITELIBDIR%%/variety/AvgColor.pyo
+%%PYTHON_SITELIBDIR%%/variety/BingDownloader.py
+%%PYTHON_SITELIBDIR%%/variety/BingDownloader.pyc
+%%PYTHON_SITELIBDIR%%/variety/BingDownloader.pyo
 %%PYTHON_SITELIBDIR%%/variety/CalibrateDominantColors.py
 %%PYTHON_SITELIBDIR%%/variety/CalibrateDominantColors.pyc
 %%PYTHON_SITELIBDIR%%/variety/CalibrateDominantColors.pyo
@@ -125,6 +128,9 @@ bin/variety
 %%PYTHON_SITELIBDIR%%/variety/ThumbsWindow.py
 %%PYTHON_SITELIBDIR%%/variety/ThumbsWindow.pyc
 %%PYTHON_SITELIBDIR%%/variety/ThumbsWindow.pyo
+%%PYTHON_SITELIBDIR%%/variety/UnsplashDownloader.py
+%%PYTHON_SITELIBDIR%%/variety/UnsplashDownloader.pyc
+%%PYTHON_SITELIBDIR%%/variety/UnsplashDownloader.pyo
 %%PYTHON_SITELIBDIR%%/variety/Util.py
 %%PYTHON_SITELIBDIR%%/variety/Util.pyc
 %%PYTHON_SITELIBDIR%%/variety/Util.pyo
@@ -187,6 +193,9 @@ share/help/C/variety/figures/icon.png
 share/help/C/variety/index.page
 share/help/C/variety/preferences.page
 share/help/C/variety/topic1.page
+share/icons/hicolor/22x22/apps/variety-indicator-dark.png
+share/icons/hicolor/22x22/apps/variety-indicator.png
+share/icons/hicolor/scalable/apps/variety.svg
 share/locale/bg/LC_MESSAGES/variety.mo
 share/locale/de/LC_MESSAGES/variety.mo
 share/locale/es/LC_MESSAGES/variety.mo

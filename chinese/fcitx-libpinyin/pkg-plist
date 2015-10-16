@@ -8,6 +8,8 @@ share/fcitx/imicon/shuangpin-libpinyin.png
 share/fcitx/inputmethod/pinyin-libpinyin.conf
 share/fcitx/inputmethod/shuangpin-libpinyin.conf
 share/fcitx/inputmethod/zhuyin-libpinyin.conf
+share/fcitx/libpinyin/zhuyin_data/addon_phrase_index.bin
+share/fcitx/libpinyin/zhuyin_data/addon_pinyin_index.bin
 share/fcitx/libpinyin/zhuyin_data/art.bin
 share/fcitx/libpinyin/zhuyin_data/bigram.db
 share/fcitx/libpinyin/zhuyin_data/culture.bin

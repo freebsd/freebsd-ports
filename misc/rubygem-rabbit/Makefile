@@ -24,6 +24,7 @@ RUN_DEPENDS=	rubygem-coderay>=1.0.0:${PORTSDIR}/textproc/rubygem-coderay \
 		rubygem-rsvg2>0:${PORTSDIR}/graphics/rubygem-rsvg2 \
 		rubygem-rttool>0:${PORTSDIR}/textproc/rubygem-rttool
 
+NO_ARCH=	yes
 USES=		gettext
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
@@ -34,16 +35,10 @@ PLIST_FILES=	bin/rabbit bin/rabbirc bin/rabbit-command bin/rabbit-slide \
 OPTIONS_DEFINE=	MIMETEX
 MIMETEX_DESC=	Run with mimetex
 
-.include <bsd.port.options.mk>
+MIMETEX_RUN_DEPENDS=	${LOCALBASE}/www/mimetex/cgi-bin/mimetex.cgi:${PORTSDIR}/www/mimetex
 
-.if ${PORT_OPTIONS:MMIMETEX}
-RUN_DEPENDS+=	${LOCALBASE}/www/mimetex/cgi-bin/mimetex.cgi:${PORTSDIR}/www/mimetex
-.endif
-
-.if ${PORT_OPTIONS:MMIMETEX}
-post-patch:
+post-patch-MIMETEX-on:
 	${REINPLACE_CMD} -e 's|"mimetex.cgi"|"${PREFIX}/www/mimetex/cgi-bin/mimetex.cgi"|' \
 		${WRKSRC}/lib/rabbit/parser/ext/tex.rb
-.endif
 
 .include <bsd.port.mk>

@@ -26,6 +26,7 @@ TEST_DEPENDS=	p5-Form-Sensible>=0:${PORTSDIR}/devel/p5-Form-Sensible \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

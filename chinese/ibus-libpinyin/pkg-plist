@@ -5,6 +5,7 @@
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/ibus-libpinyin.mo
 libexec/ibus-engine-libpinyin
 libexec/ibus-setup-libpinyin
+share/appdata/libpinyin.appdata.xml
 share/applications/ibus-setup-libbopomofo.desktop
 share/applications/ibus-setup-libpinyin.desktop
 %%ENGLISH%%%%DATADIR%%/db/english.db

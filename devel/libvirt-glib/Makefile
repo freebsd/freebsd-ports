@@ -6,7 +6,7 @@ PORTVERSION=	0.2.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://libvirt.org/libvirt/glib/
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Glib bindings for Libvirt virtualization API
 
 LICENSE=	GPLv2

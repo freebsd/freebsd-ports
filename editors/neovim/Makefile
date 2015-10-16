@@ -3,6 +3,7 @@
 
 PORTNAME=	neovim
 PORTVERSION=	0.0.0.201507060407
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	GH
 
@@ -11,13 +12,13 @@ COMMENT=	Next generation Vim
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	luajit:${PORTSDIR}/lang/luajit \
-		${LUA_MODSHAREDIR}/MessagePack.lua:${PORTSDIR}/devel/lua-MessagePack \
+BUILD_DEPENDS=	${LUA_MODSHAREDIR}/MessagePack.lua:${PORTSDIR}/devel/lua-MessagePack \
 		${LUA_MODLIBDIR}/bit.so:${PORTSDIR}/devel/lua-bitop \
 		${LUA_MODLIBDIR}/lpeg.so:${PORTSDIR}/devel/lua-lpeg
 LIB_DEPENDS=	libunibilium.so:${PORTSDIR}/devel/unibilium \
 		libvterm.so:${PORTSDIR}/devel/libvterm \
 		libtermkey.so:${PORTSDIR}/devel/libtermkey \
+		libluajit-5.1.so:${PORTSDIR}/lang/luajit \
 		libuv.so:${PORTSDIR}/devel/libuv \
 		libmsgpack.so:${PORTSDIR}/devel/msgpack
 

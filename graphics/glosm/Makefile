@@ -18,15 +18,13 @@ USE_GL=		gl
 USE_SDL=	sdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	AMDmi3
+TEST_TARGET=	test
 
 PORTDOCS=	README ChangeLog
 
 OPTIONS_DEFINE=	DOCS
 
-regression-test:
-	cd ${BUILD_WRKSRC} && ctest
-
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/

@@ -1,5 +1,3 @@
 sbin/queso
-@unexec if cmp -s %D/etc/etc/queso.conf %D/etc/etc/queso.conf.sample; then rm -f %D/etc/queso.conf.sample; fi
-etc/queso.conf.sample
-@exec [ -f %B/queso.conf.sample ] || cp %B/%f %B/queso.conf.sample
+@sample etc/queso.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/Documentation.txt

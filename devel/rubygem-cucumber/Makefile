@@ -9,6 +9,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Behaviour Driven Development with elegance and joy
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-builder32>=2.1.2:${PORTSDIR}/devel/rubygem-builder32 \
 		rubygem-cucumber-core>=1.3.0:${PORTSDIR}/devel/rubygem-cucumber-core \

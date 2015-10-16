@@ -9,6 +9,7 @@ lib/elixir/lib/phoenix/ebin/Elixir.Mix.Tasks.Phoenix.Gen.Secret.beam
 lib/elixir/lib/phoenix/ebin/Elixir.Mix.Tasks.Phoenix.New.beam
 lib/elixir/lib/phoenix/ebin/Elixir.Mix.Tasks.Phoenix.Routes.beam
 lib/elixir/lib/phoenix/ebin/Elixir.Mix.Tasks.Phoenix.Server.beam
+lib/elixir/lib/phoenix/ebin/Elixir.Phoenix.ActionClauseError.beam
 lib/elixir/lib/phoenix/ebin/Elixir.Phoenix.Channel.Server.beam
 lib/elixir/lib/phoenix/ebin/Elixir.Phoenix.Channel.beam
 lib/elixir/lib/phoenix/ebin/Elixir.Phoenix.ChannelTest.NoopSerializer.beam
@@ -70,6 +71,7 @@ lib/elixir/lib/phoenix/ebin/Elixir.Phoenix.Transports.LongPollSerializer.beam
 lib/elixir/lib/phoenix/ebin/Elixir.Phoenix.Transports.Serializer.beam
 lib/elixir/lib/phoenix/ebin/Elixir.Phoenix.Transports.WebSocket.beam
 lib/elixir/lib/phoenix/ebin/Elixir.Phoenix.Transports.WebSocketSerializer.beam
+lib/elixir/lib/phoenix/ebin/Elixir.Phoenix.Utils.beam
 lib/elixir/lib/phoenix/ebin/Elixir.Phoenix.View.beam
 lib/elixir/lib/phoenix/ebin/Elixir.Phoenix.beam
 lib/elixir/lib/phoenix/ebin/phoenix.app
@@ -172,6 +174,7 @@ lib/elixir/lib/phoenix/lib/phoenix/transports/long_poll_server.ex
 lib/elixir/lib/phoenix/lib/phoenix/transports/serializer.ex
 lib/elixir/lib/phoenix/lib/phoenix/transports/websocket.ex
 lib/elixir/lib/phoenix/lib/phoenix/transports/websocket_serializer.ex
+lib/elixir/lib/phoenix/lib/phoenix/utils.ex
 lib/elixir/lib/phoenix/lib/phoenix/view.ex
 lib/elixir/lib/phoenix/priv/static/favicon.ico
 lib/elixir/lib/phoenix/priv/static/phoenix.js

@@ -1,6 +1,6 @@
---- Makefile.in.orig	2014-08-26 10:40:38.000000000 +0300
-+++ Makefile.in	2014-08-26 10:41:58.000000000 +0300
-@@ -227,8 +227,8 @@ install-noconf: all
+--- Makefile.in.orig	2015-05-08 09:34:48 UTC
++++ Makefile.in
+@@ -230,8 +230,8 @@ install-noconf: all
  	for i in $(MAN8) ; do \
  	    install -m 0644 @srcdir@/docs/man/$$i "$(DESTDIR)$(mandir)/man8/" ; \
  	done
@@ -11,7 +11,7 @@
  	@mkdir -p "$(DESTDIR)$(incdir)/" && \
  	for i in $(INCS) ; do \
  	    install -m 0644 @srcdir@/$$i "$(DESTDIR)$(incdir)/" ; \
-@@ -261,7 +261,7 @@ uninstall uninstall-root:
+@@ -270,7 +270,7 @@ uninstall uninstall-root:
  	@-for i in $(PROGS) yate-config ; do \
  	    rm "$(DESTDIR)$(bindir)/$$i" ; \
  	done

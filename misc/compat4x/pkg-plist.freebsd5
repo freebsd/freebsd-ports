@@ -1,7 +1,5 @@
 %%LIBDIR%%/compat/libc.so.4
-@unexec if [ -e %B/libc_r.so.4.compat3x ]; then ln -sf libc_r.so.4.compat3x %B/libc_r.so.4; else rm %B/libc_r.so.4; fi
-%%LIBDIR%%/compat/libc_r.so.4.compat4x
-@exec ln -sf %f %B/libc_r.so.4
+%%LIBDIR%%/compat/libc_r.so.4
 %%FORBIDDEN:%%%%LIBDIR%%/compat/libcrypto.so.1
 %%FORBIDDEN:%%%%LIBDIR%%/compat/libcrypto.so.2
 %%LIBDIR%%/compat/libdevstat.so.2
@@ -14,9 +12,7 @@
 %%LIBDIR%%/compat/libopie.so.2
 %%LIBDIR%%/compat/libpam.so.1
 %%LIBDIR%%/compat/libpcap.so.2
-@unexec if [ -e %B/libperl.so.3.compat3x ]; then ln -sf libperl.so.3.compat3x %B/libperl.so.3; else rm %B/libperl.so.3; fi
-%%LIBDIR%%/compat/libperl.so.3.compat4x
-@exec ln -sf %f %B/libperl.so.3
+%%LIBDIR%%/compat/libperl.so.3
 %%LIBDIR%%/compat/libposix1e.so.2
 %%LIBDIR%%/compat/libreadline.so.4
 %%LIBDIR%%/compat/libskey.so.2
@@ -37,5 +33,4 @@
 %%LIBDIR%%/compat/pam_ssh.so
 %%LIBDIR%%/compat/pam_tacplus.so
 %%LIBDIR%%/compat/pam_unix.so
-%%AMD64_ONLY%%@exec %%LDCONFIG_LIB32%% -m %D/%%LIBDIR%%/compat
 @comment Hardcode lib32 since we should not remove lib.

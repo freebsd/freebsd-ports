@@ -1,8 +1,11 @@
---- makefile.in.orig	2014-05-25 16:09:53.000000000 +0200
-+++ makefile.in	2014-05-27 21:30:53.000000000 +0200
-@@ -1215,13 +1215,13 @@ mcron.c : scm/mcron/main.scm scm/mcron/c
+--- makefile.in.orig	2014-05-25 14:09:53 UTC
++++ makefile.in
+@@ -1213,15 +1213,15 @@ mcron.c : scm/mcron/main.scm scm/mcron/c
+ 	@rm -f mcron.escaped.scm > /dev/null 2>&1
+ 
  install-exec-hook:
- 	@if [ "x@NO_VIXIE_CLOBBER@" != "xyes"   -a   "`id -u`" -eq "0" ]; then \
+-	@if [ "x@NO_VIXIE_CLOBBER@" != "xyes"   -a   "`id -u`" -eq "0" ]; then \
++	@if [ "x@NO_VIXIE_CLOBBER@" != "xyes" ]; then \
         rm -f $(fpp)cron$(EXEEXT) > /dev/null 2>&1; \
 -       $(INSTALL) --mode='u=rwx' mcron$(EXEEXT) $(fpp)cron$(EXEEXT); \
 +       $(INSTALL) -m='u=rwx' mcron$(EXEEXT) $(fpp)cron$(EXEEXT); \

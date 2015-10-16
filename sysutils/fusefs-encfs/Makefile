@@ -14,6 +14,8 @@ COMMENT=	Encrypted pass-through FUSE filesystem
 LIB_DEPENDS=	librlog.so:${PORTSDIR}/devel/rlog \
 		libboost_serialization.so:${PORTSDIR}/devel/boost-libs
 
+BROKEN_sparc64=	cannot link with boost
+
 WRKSRC=		${WRKDIR}/encfs-${PORTVERSION}
 
 GNU_CONFIGURE=	yes

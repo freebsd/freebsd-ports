@@ -3,11 +3,12 @@
 
 PORTNAME=	mod_mpm_itk
 PORTVERSION=	2.4.7
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://mpm-itk.sesse.net/ \
 		http://lukasz.wasikowski.net/files/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
-DISTNAME=	mpm-itk-2.4.7-02
+DISTNAME=	mpm-itk-2.4.7-03
 
 MAINTAINER=	lukasz@wasikowski.net
 COMMENT=	This MPM allows you to run each vhost under a separate uid and gid

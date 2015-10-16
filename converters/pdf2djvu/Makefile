@@ -20,12 +20,6 @@ USES=		compiler:c++11-lang gmake pkgconfig tar:xz
 
 PLIST_FILES=	bin/pdf2djvu man/man1/pdf2djvu.1.gz
 
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 900014
-FAVORITE_COMPILER=      gcc
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN}  ${WRKSRC}/doc/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gloox
-PORTVERSION=	1.0.13
+PORTVERSION=	1.0.14
 CATEGORIES=	net-im
 MASTER_SITES=	http://camaya.net/download/
 
@@ -10,6 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jabber/XMPP client library
 
 LICENSE=	GPLv3
+#LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn \
 		libgnutls.so:${PORTSDIR}/security/gnutls
@@ -24,9 +25,15 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTSCOUT=	skipv:1.0.x
 
+OPTIONS_DEFINE=		MDNSRESPONDER
+
+MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:${PORTSDIR}/net/mDNSResponder
+MDNSRESPONDER_CONFIGURE_ENABLE=	mdns
+
 post-patch:
 	@${REINPLACE_CMD} -e \
-		 's| -ansi||' ${WRKSRC}/configure
+		's| -ansi|| ; \
+		 s|\(enable_mdns=\)yes|\1$$enableval|' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's| -pedantic|| ; \
 		 s| -pipe||'

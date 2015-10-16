@@ -1,0 +1,10 @@
+--- hamlib.pc.in.orig	2015-10-02 13:17:24 UTC
++++ hamlib.pc.in
+@@ -7,7 +7,6 @@ Name: @PACKAGE_NAME@
+ Description: Library to control radio and rotator equipment.
+ URL: @PACKAGE_URL@
+ Version: @PACKAGE_VERSION@
+-Requires.private: @LIBUSB@
+ Cflags: -I${includedir} @PTHREAD_CFLAGS@
+ Libs: -L${libdir} -lhamlib
+ Libs.private: @MATH_LIBS@ @DL_LIBS@ @NET_LIBS@ @PTHREAD_LIBS@

@@ -2,21 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	syncthing-discosrv
-PORTVERSION=	0.0.0.2015062601
-PORTREVISION=	3
+PORTVERSION=	0.0.0.2015092201
 CATEGORIES=	net
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Discovery server for syncthing
 
-BUILD_DEPENDS=	go14>=1.4:${PORTSDIR}/lang/go14
+BUILD_DEPENDS=	go>=1.5:${PORTSDIR}/lang/go
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	syncthing golang:gc
-GH_PROJECT=	discosrv syncthing:st groupcache:gc
-GH_TAGNAME=	4c705ff v${SYNCTHING_VER}:st 604ed57:gc
-
-SYNCTHING_VER=	0.11.18
+GH_ACCOUNT=	syncthing
+GH_PROJECT=	discosrv
+GH_TAGNAME=	2062f77
 
 PLIST_FILES=	bin/syncthing-discosrv
 
@@ -26,16 +23,8 @@ GROUPS=		syncthing
 
 STRIP=		# stripping can break go binaries
 
-post-patch:
-	@${MV} ${WRKSRC_st}/Godeps/_workspace/src/ ${WRKSRC}
-	@${MKDIR} ${WRKSRC}/src/github.com/golang
-	@${MV} ${WRKSRC_st} ${WRKSRC}/src/github.com/syncthing/syncthing
-	@${MV} ${WRKSRC_gc} \
-		${WRKSRC}/src/github.com/golang/groupcache
-
 do-build:
-	@cd ${WRKSRC} ; ${SETENV} PATH=${PATH}:${LOCALBASE}/go14/bin \
-	GOPATH=${WRKSRC} go build
+	@cd ${WRKSRC} ; ${SETENV} GOPATH=${WRKSRC}/Godeps/_workspace:${WRKSRC} go build
 	@${MV} ${WRKSRC}/discosrv-${GH_TAGNAME} ${WRKSRC}/syncthing-discosrv
 
 do-install:

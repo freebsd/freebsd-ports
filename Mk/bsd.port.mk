@@ -294,8 +294,17 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  if a particular version is desired.
 # LIB_DEPENDS	- A list of "lib:dir[:target]" tuples of other ports this
 #				  package depends on.  "lib" is the name of a shared library.
-#				  make will use "ldconfig -r" to search for the library.
-#				  lib can contain extended regular expressions.
+# TEST_DEPENDS	- A list of "path:dir[:target]" tuples of other ports this
+#				  package depends on in the "test" stage.  "path" is the
+#				  name of a file if it starts with a slash (/), an
+#				  executable otherwise.  make will test for the existence
+#				  (if it is a full pathname) or search for it in your
+#				  $PATH (if it is an executable) and go into "dir" to do
+#				  a "make all install" if it's not found.  If the third
+#				  field ("target") exists, it will be used instead of
+#				  ${DEPENDS_TARGET}.  The first field also supports a
+#				  package name with a version range, in the form package>=1.2
+#				  if a particular version is desired.
 # DEPENDS_TARGET
 #				- The default target to execute when a port is calling a
 #				  dependency.
@@ -650,6 +659,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # run-depends-list
 #				- Show all directories which are run-dependencies
 #				  for this port.
+# test-depends-list
+#				- Show all directories which are test-dependencies
+#				  for this port.
 #
 # extract		- Unpacks ${DISTFILES} into ${WRKDIR}.
 # patch			- Apply any provided patches to the source.
@@ -661,6 +673,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  flag.
 # deinstall		- Remove the installation.
 # deinstall-all	- Remove all installations with the same PKGORIGIN.
+# test			- Run tests for the port.
 # package		- Create a package from an _installed_ port.
 # package-recursive
 #				- Create a package for a port and _all_ of its dependencies.
@@ -717,6 +730,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 # NO_BUILD		- Use a dummy (do-nothing) build target.
 # NO_INSTALL	- Use a dummy (do-nothing) install target.
+# NO_TEST		- Use a dummy (do-nothing) test target.
 #
 # Here are some variables used in various stages.
 #
@@ -844,6 +858,18 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # NO_CCACHE
 #				- Disable CCACHE support for example for certain ports if
 #				  CCACHE is enabled.  User settable.
+#
+# For test:
+#
+# TEST_TARGET	- Target for sub-make in test stage. If not defined,
+#				  no default test target is provided.
+#				  Default: (none)
+# TEST_WRKSRC	- Directory to do test in (default: ${WRKSRC}).
+# TEST_ENV		- Additional environment vars passed to sub-make in test
+#				  stage
+#				  Default: ${MAKE_ENV}
+# TEST_ARGS		- Any extra arguments to sub-make in test stage
+#				  Default: ${MAKE_ARGS}
 #
 # For install:
 #
@@ -1047,7 +1073,7 @@ SCRIPTSDIR?=	${PORTSDIR}/Mk/Scripts
 LIB_DIRS?=		/lib /usr/lib ${LOCALBASE}/lib
 STAGEDIR?=	${WRKDIR}/stage
 NOTPHONY?=
-MINIMAL_PKG_VERSION=	1.3.8
+MINIMAL_PKG_VERSION=	1.6.0
 
 # make sure bmake treats -V as expected
 .MAKE.EXPAND_VARIABLES= yes
@@ -1425,7 +1451,7 @@ UID!=	${ID} -u
 DESTDIRNAME?=	DESTDIR
 
 # setup empty variables for USES targets
-.for target in sanity fetch extract patch configure build install package stage
+.for target in sanity fetch extract patch configure build install test package stage
 _USES_${target}?=
 .endfor
 
@@ -1480,6 +1506,9 @@ PKG_NOTES+=	no_provide_shlib
 PKG_NOTE_no_provide_shlib=	yes
 .endif
 
+TEST_ARGS?=		${MAKE_ARGS}
+TEST_ENV?=		${MAKE_ENV}
+
 PKG_ENV+=		PORTSDIR=${PORTSDIR}
 CONFIGURE_ENV+=	XDG_DATA_HOME=${WRKDIR} \
 				XDG_CONFIG_HOME=${WRKDIR} \
@@ -1509,6 +1538,9 @@ QA_ENV+=		USESLIBTOOL=yes
 .endif
 .if !empty(USES:Mshared-mime-info)
 QA_ENV+=		USESSHAREDMIMEINFO=yes
+.endif
+.if !empty(USES:Mterminfo)
+QA_ENV+=		USESTERMINFO=yes
 .endif
 
 CO_ENV+=		STAGEDIR=${STAGEDIR} \
@@ -1549,6 +1581,7 @@ PATCH_WRKSRC?=	${WRKSRC}
 CONFIGURE_WRKSRC?=	${WRKSRC}
 BUILD_WRKSRC?=	${WRKSRC}
 INSTALL_WRKSRC?=${WRKSRC}
+TEST_WRKSRC?=	${WRKSRC}
 
 PLIST_SUB+=	OSREL=${OSREL} PREFIX=%D LOCALBASE=${LOCALBASE} \
 			RESETPREFIX=${PREFIX}
@@ -1935,6 +1968,7 @@ REINPLACE_CMD?=	${SED} ${REINPLACE_ARGS}
 EXTRACT_COOKIE?=	${WRKDIR}/.extract_done.${PORTNAME}.${PREFIX:S/\//_/g}
 CONFIGURE_COOKIE?=	${WRKDIR}/.configure_done.${PORTNAME}.${PREFIX:S/\//_/g}
 INSTALL_COOKIE?=	${WRKDIR}/.install_done.${PORTNAME}.${PREFIX:S/\//_/g}
+TEST_COOKIE?=		${WRKDIR}/.test_done.${PORTNAME}.${PREFIX:S/\//_/g}
 BUILD_COOKIE?=		${WRKDIR}/.build_done.${PORTNAME}.${PREFIX:S/\//_/g}
 PATCH_COOKIE?=		${WRKDIR}/.patch_done.${PORTNAME}.${PREFIX:S/\//_/g}
 PACKAGE_COOKIE?=	${WRKDIR}/.package_done.${PORTNAME}.${PREFIX:S/\//_/g}
@@ -2795,7 +2829,7 @@ IGNORECMD=	${ECHO_MSG} "===>  ${PKGNAME} "${IGNORE:Q}.;exit 1
 .endif
 
 _TARGETS=	check-sanity fetch checksum extract patch configure all build \
-			install reinstall package stage restage
+			install reinstall test package stage restage
 
 .for target in ${_TARGETS}
 .if !target(${target})
@@ -2919,6 +2953,12 @@ checksum: fetch
 .if defined(NO_BUILD) && !target(build)
 build: configure
 	@${TOUCH} ${TOUCH_FLAGS} ${BUILD_COOKIE}
+.endif
+
+# Disable test
+.if defined(NO_TEST) && !target(test)
+test: stage
+	@${TOUCH} ${TOUCH_FLAGS} ${TEST_COOKIE}
 .endif
 
 # Disable package
@@ -3456,6 +3496,23 @@ do-install:
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${FAKEROOT} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 .endif
 
+# Test
+
+.if !target(do-test) && defined(TEST_TARGET)
+DO_MAKE_TEST?=	${SETENV} ${TEST_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${TEST_ARGS:C,^${DESTDIRNAME}=.*,,g}
+do-test:
+	@(cd ${TEST_WRKSRC}; if ! ${DO_MAKE_TEST} ${TEST_TARGET}; then \
+		if [ -n "${TEST_FAIL_MESSAGE}" ] ; then \
+			${ECHO_MSG} "===> Tests failed unexpectedly."; \
+			(${ECHO_CMD} "${TEST_FAIL_MESSAGE}") | ${FMT} 75 79 ; \
+			fi; \
+		${FALSE}; \
+		fi)
+.elif !target(do-test)
+do-test:
+	@${DO_NADA}
+.endif
+
 # Package
 
 .if !target(do-package)
@@ -3569,33 +3626,38 @@ install-mtree:
 
 .if !target(install-ldconfig-file)
 install-ldconfig-file:
-.if defined(USE_LDCONFIG) || defined(USE_LDCONFIG32)
-.if defined(USE_LDCONFIG)
-.if defined(USE_LINUX_PREFIX)
-.else
-.if ${USE_LDCONFIG} != "${LOCALBASE}/lib" && !defined(INSTALL_AS_USER)
+.  if defined(USE_LDCONFIG) || defined(USE_LDCONFIG32)
+.    if defined(USE_LDCONFIG)
+.      if !defined(USE_LINUX_PREFIX)
+.        if ${USE_LDCONFIG} != "${LOCALBASE}/lib" && !defined(INSTALL_AS_USER)
 	@${ECHO_MSG} "===>   Installing ldconfig configuration file"
-.if defined(NO_MTREE) || ${PREFIX} != ${LOCALBASE}
+.          if defined(NO_MTREE) || ${PREFIX} != ${LOCALBASE}
 	@${MKDIR} ${STAGEDIR}${LOCALBASE}/${LDCONFIG_DIR}
-.endif
+.          endif
 	@${ECHO_CMD} ${USE_LDCONFIG} | ${TR} ' ' '\n' \
 		> ${STAGEDIR}${LOCALBASE}/${LDCONFIG_DIR}/${PKGBASE}
 	@${ECHO_CMD} ${LOCALBASE}/${LDCONFIG_DIR}/${PKGBASE} >> ${TMPPLIST}
-.endif
-.endif
-.endif
-.if defined(USE_LDCONFIG32)
-.if !defined(INSTALL_AS_USER)
+.          if ${PREFIX} != ${LOCALBASE}
+	@${ECHO_CMD} "@dir ${LOCALBASE}/${LDCONFIG_DIR}" >> ${TMPPLIST}
+.          endif
+.        endif
+.      endif
+.    endif
+.    if defined(USE_LDCONFIG32)
+.      if !defined(INSTALL_AS_USER)
 	@${ECHO_MSG} "===>   Installing 32-bit ldconfig configuration file"
-.if defined(NO_MTREE) || ${PREFIX} != ${LOCALBASE}
+.        if defined(NO_MTREE) || ${PREFIX} != ${LOCALBASE}
 	@${MKDIR} ${STAGEDIR}${LOCALBASE}/${LDCONFIG32_DIR}
-.endif
+.        endif
 	@${ECHO_CMD} ${USE_LDCONFIG32} | ${TR} ' ' '\n' \
 		> ${STAGEDIR}${LOCALBASE}/${LDCONFIG32_DIR}/${PKGBASE}
 	@${ECHO_CMD} ${LOCALBASE}/${LDCONFIG32_DIR}/${PKGBASE} >> ${TMPPLIST}
-.endif
-.endif
-.endif
+.        if ${PREFIX} != ${LOCALBASE}
+	@${ECHO_CMD} "@dir ${LOCALBASE}/${LDCONFIG32_DIR}" >> ${TMPPLIST}
+.        endif
+.      endif
+.    endif
+.  endif
 .endif
 
 .if !target(create-users-groups)
@@ -3742,6 +3804,8 @@ stage-message:
 	@${ECHO_MSG} "===>  Staging for ${PKGNAME}"
 install-message:
 	@${ECHO_MSG} "===>  Installing for ${PKGNAME}"
+test-message:
+	@${ECHO_MSG} "===>  Testing for ${PKGNAME}"
 package-message:
 	@${ECHO_MSG} "===>  Building package for ${PKGNAME}"
 
@@ -4262,7 +4326,7 @@ package-noinstall: package
 .if !target(depends)
 depends: pkg-depends extract-depends patch-depends lib-depends fetch-depends build-depends run-depends
 
-.for deptype in PKG EXTRACT PATCH FETCH BUILD LIB RUN
+.for deptype in PKG EXTRACT PATCH FETCH BUILD LIB RUN TEST
 ${deptype:tl}-depends:
 .if defined(${deptype}_DEPENDS) && !defined(NO_DEPENDS)
 	@${SETENV} \
@@ -4293,7 +4357,7 @@ ${deptype:tl}-depends:
 
 # Dependency lists: both build and runtime, recursive.  Print out directory names.
 
-_UNIFIED_DEPENDS=${PKG_DEPENDS} ${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} ${RUN_DEPENDS}
+_UNIFIED_DEPENDS=${PKG_DEPENDS} ${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} ${RUN_DEPENDS} ${TEST_DEPENDS}
 _DEPEND_SPECIALS=	${_UNIFIED_DEPENDS:M*\:*\:*:C,^[^:]*:([^:]*):.*$,\1,}
 
 all-depends-list:
@@ -4459,6 +4523,18 @@ RUN-DEPENDS-LIST= \
 			${ECHO_MSG} "${PKGNAME}: \"$$pdir\" non-existent -- dependency list incomplete" >&2; \
 		fi; \
 	done | ${SORT} -u
+
+test-depends-list:
+.if defined(TEST_DEPENDS)
+	@${TEST-DEPENDS-LIST}
+.endif
+
+TEST-DEPENDS-LIST= \
+	${SETENV} dp_ALLDEPENDS="${TEST_DEPENDS}" \
+			dp_PORTSDIR="${PORTSDIR}" \
+			dp_PKGNAME="${PKGNAME}" \
+			dp_SCRIPTSDIR="${SCRIPTSDIR}" \
+			${SH} ${SCRIPTSDIR}/depends-list.sh
 
 # Package (recursive runtime) dependency list.  Print out both directory names
 # and package names.
@@ -4768,26 +4844,26 @@ generate-plist: ${WRKDIR}
 
 .if defined(USE_LINUX_PREFIX)
 .if defined(USE_LDCONFIG)
-	@${ECHO_CMD} "@exec ${LDCONFIG_CMD}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ${LDCONFIG_CMD}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@postexec ${LDCONFIG_CMD}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@postunexec ${LDCONFIG_CMD}" >> ${TMPPLIST}
 .endif
 .else
 .if defined(USE_LDCONFIG)
 .if !defined(INSTALL_AS_USER)
-	@${ECHO_CMD} "@exec ${LDCONFIG} -m ${USE_LDCONFIG}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ${LDCONFIG} -R" >> ${TMPPLIST}
+	@${ECHO_CMD} "@postexec ${LDCONFIG} -m ${USE_LDCONFIG}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@postunexec ${LDCONFIG} -R" >> ${TMPPLIST}
 .else
-	@${ECHO_CMD} "@exec ${LDCONFIG} -m ${USE_LDCONFIG} || ${TRUE}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ${LDCONFIG} -R || ${TRUE}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@postexec ${LDCONFIG} -m ${USE_LDCONFIG} || ${TRUE}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@postunexec ${LDCONFIG} -R || ${TRUE}" >> ${TMPPLIST}
 .endif
 .endif
 .if defined(USE_LDCONFIG32)
 .if !defined(INSTALL_AS_USER)
-	@${ECHO_CMD} "@exec ${LDCONFIG} -32 -m ${USE_LDCONFIG32}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ${LDCONFIG} -32 -R" >> ${TMPPLIST}
+	@${ECHO_CMD} "@postexec ${LDCONFIG} -32 -m ${USE_LDCONFIG32}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@postunexec ${LDCONFIG} -32 -R" >> ${TMPPLIST}
 .else
-	@${ECHO_CMD} "@exec ${LDCONFIG} -32 -m ${USE_LDCONFIG32} || ${TRUE}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ${LDCONFIG} -32 -R || ${TRUE}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@postexec ${LDCONFIG} -32 -m ${USE_LDCONFIG32} || ${TRUE}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@postunexec ${LDCONFIG} -32 -R || ${TRUE}" >> ${TMPPLIST}
 .endif
 .endif
 .endif
@@ -5558,7 +5634,7 @@ show-dev-errors:
 # Please note that the order of the following targets is important, and
 # should not be modified.
 
-_TARGETS_STAGES=	SANITY PKG FETCH EXTRACT PATCH CONFIGURE BUILD INSTALL PACKAGE STAGE
+_TARGETS_STAGES=	SANITY PKG FETCH EXTRACT PATCH CONFIGURE BUILD INSTALL TEST PACKAGE STAGE
 
 # Define the SEQ of actions to take when each target is ran, and which targets
 # it depends on before running its SEQ.
@@ -5622,6 +5698,10 @@ _STAGE_SEQ=		050:stage-message 100:stage-dir 150:run-depends \
 .if defined(DEVELOPER)
 _STAGE_SEQ+=	995:stage-qa
 .endif
+_TEST_DEP=		stage
+_TEST_SEQ=		100:test-message 150:test-depends 300:pre-test 500:do-test \
+				800:post-test \
+				${_OPTIONS_test} ${_USES_test}
 _INSTALL_DEP=	stage
 _INSTALL_SEQ=	100:install-message 150:run-depends 151:lib-depends \
 				200:check-already-installed
@@ -5672,7 +5752,7 @@ _${_t}_REAL_SUSEQ+=	${s}
 # See above *_SEQ and *_DEP. The _DEP will run before this defined target is
 # ran. The _SEQ will run as this target once _DEP is satisfied.
 
-.for target in extract patch configure build stage install package
+.for target in extract patch configure build stage install test package
 
 # Check if config dialog needs to show and execute it if needed. If is it not
 # needed (_OPTIONS_OK), then just depend on the cookie which is defined later

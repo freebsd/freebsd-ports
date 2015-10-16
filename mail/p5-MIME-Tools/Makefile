@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MIME-Tools
-PORTVERSION=	5.506
+PORTVERSION=	5.507
 PORTEPOCH=	2
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
@@ -21,6 +21,7 @@ BUILD_DEPENDS=	p5-Convert-BinHex>=0:${PORTSDIR}/converters/p5-Convert-BinHex \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

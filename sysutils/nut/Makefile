@@ -3,7 +3,7 @@
 
 PORTNAME=	nut
 PORTVERSION=	2.7.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
@@ -150,6 +150,7 @@ PLIST_SUB+=	NUT_FREEIPMI="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MIPMIPSU}
+LIB_DEPENDS+=	libfreeipmi.so:${PORTSDIR}/sysutils/freeipmi
 CONFIGURE_ARGS+=	--with-ipmi
 PLIST_SUB+=	NUT_IPMIPSU=""
 .else

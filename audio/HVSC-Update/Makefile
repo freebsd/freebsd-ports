@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	HVSC-Update
-PORTVERSION=	2.8.6
+PORTVERSION=	2.8.7
 CATEGORIES=	audio emulators
 MASTER_SITES=	http://www.hvsc.c64.org/download/files/tools/
-DISTNAME=	${PORTNAME:S/-/_/}_Tool_${PORTVERSION:S/.//g}_source
+DISTNAME=	${PORTNAME:S/-/_/}_Tool_source_${PORTVERSION:S/.//g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Update program for the HVSC C= 64 SID tune collection

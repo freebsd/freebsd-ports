@@ -1,8 +1,0 @@
-X11 12,14,16-dot kanji proportional fonts that have same metric and order as
-Japanese Windows font. This is named after ASCII art 'mona' used in
-'2 channel', notorious huge Web BBS.
-
-  Bitmap font is installed the following directory tree:
-        ${LOCALBASE}/share/fonts/monafonts/
-
-WWW: http://monafont.sourceforge.net/

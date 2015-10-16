@@ -21,11 +21,7 @@ OPTIONS_DEFINE=SOUND
 OPTIONS_DEFAULT=SOUND
 OPTIONS_SUB=yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSOUND}
-MAKE_ENV+=	WITHOUT_AUDIO=True
-.endif
+SOUND_MAKE_ENV=	WITHOUT_AUDIO=True
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/lib/X11/xboing/.xboing.scr
