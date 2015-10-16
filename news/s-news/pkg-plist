@@ -1,11 +1,11 @@
-bin/inews
-etc/s-news/access.sample
-etc/s-news/active.sample
-etc/s-news/expire.sample
-etc/s-news/newsfeeds.sample
-etc/s-news/newsgroups.sample
-etc/s-news/overview.fmt.sample
-etc/s-news/put.news
+@(news,news,4755) bin/inews
+@(news,news,644) etc/s-news/access.sample
+@(news,news,644) etc/s-news/active.sample
+@(news,news,644) etc/s-news/expire.sample
+@(news,news,644) etc/s-news/newsfeeds.sample
+@(news,news,644) etc/s-news/newsgroups.sample
+@(news,news,644) etc/s-news/overview.fmt.sample
+@(,news,555) etc/s-news/put.news
 man/man1/inews.1.gz
 man/man8/expire.8.gz
 man/man8/listactive.8.gz
@@ -28,6 +28,5 @@ sbin/qnews
 sbin/rmfeed
 sbin/rmgroup
 sbin/rnews
-@dirrm etc/s-news
-@exec install -d -o news -g news -m 755 /var/spool/s-news
-@unexec rmdir /var/spool/s-news 2>/dev/null || true
+@dir(news,news,755) etc/s-news
+@dir(news,news,755) /var/spool/s-news

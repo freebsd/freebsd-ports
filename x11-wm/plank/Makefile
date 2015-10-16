@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	plank
-PORTVERSION=	0.10.0
+PORTVERSION=	0.10.1
 CATEGORIES=	x11-wm
-MASTER_SITES=	https://launchpadlibrarian.net/216557335/ \
+MASTER_SITES=	https://launchpadlibrarian.net/220768016/ \
 	https://launchpad.net/${PORTNAME}/1.0/${PORTVERSION}/+download/
 
 MAINTAINER=	olivierd@FreeBSD.org

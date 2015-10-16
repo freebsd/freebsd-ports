@@ -6,7 +6,22 @@ set -e
 
 . ${dp_SCRIPTSDIR}/functions.sh
 
+recursive=0
+while getopts "r" FLAG; do
+	case "${FLAG}" in
+		r)
+			recursive=1
+			;;
+		*)
+			echo "Unknown flag" >&2
+			exit 1
+			;;
+	esac
+done
+shift $((OPTIND-1))
+
 validate_env dp_ALLDEPENDS dp_PORTSDIR dp_PKGNAME
+[ ${recursive} -eq 1 ] && validate_env dp_MAKE
 
 set -u
 
@@ -31,6 +46,9 @@ check_dep() {
 			continue
 		fi
 		echo ${d}
+		if [ ${recursive} -eq 1 ]; then
+			check_dep $(${dp_MAKE} -C ${d} -V_UNIFIED_DEPENDS)
+		fi
 	done
 }
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	synfigstudio
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	SF/synfig/releases/${PORTVERSION}/source
 
@@ -11,7 +11,7 @@ COMMENT=	Vector-based 2D animation software package
 
 LICENSE=	GPLv2 # (or later)
 
-BUILD_DEPENDS=	etl>=0.04.18:${PORTSDIR}/devel/etl
+BUILD_DEPENDS=	etl>=0.04.19_1:${PORTSDIR}/devel/etl
 LIB_DEPENDS=	libsynfig.so:${PORTSDIR}/devel/synfig
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 

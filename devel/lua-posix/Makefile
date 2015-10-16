@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	posix
-PORTVERSION=	31
+PORTVERSION=	33.3.1
 DISTVERSIONPREFIX=	release-v
-PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
@@ -13,33 +12,36 @@ COMMENT=	POSIX layer for Lua
 
 LICENSE=	MIT
 
-USES=		lua perl5
+USES=		lua libtool perl5
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LUA_INCLUDE=-I${LUA_INCDIR} \
-		LUA=${LOCALBASE}/bin/lua${LUA_VER_STR}
+CONFIGURE_ENV=	LUA_INCLUDE="-I${LUA_INCDIR}" \
+		LUA="${LOCALBASE}/bin/lua${LUA_VER_STR}"
+CONFIGURE_ARGS=	--disable-silent-rules
+MAKE_ARGS=	POSIX_EXTRA_CFLAGS="" POSIX_EXTRA_LDFLAGS=""
+INSTALL_TARGET=	install-strip
+PORTDOCS=	*
 
 USE_GITHUB=	yes
 GH_PROJECT=	luaposix
 GH_ACCOUNT=	luaposix
 
-MAKE_ARGS=	POSIX_EXTRA_CFLAGS="" POSIX_EXTRA_LDFLAGS=""
+DOCSDIR=	${PREFIX}/share/doc/luaposix
 
-PLIST_FILES=	%%LUA_MODSHAREDIR%%/curses.lua \
-		%%LUA_MODLIBDIR%%/curses_c.so \
-		%%LUA_MODSHAREDIR%%/posix.lua \
-		%%LUA_MODLIBDIR%%/posix_c.so
+PLIST_FILES=	%%LUA_MODLIBDIR%%/posix.so \
+		%%LUA_MODSHAREDIR%%/curses.lua \
+		%%LUA_MODSHAREDIR%%/posix/_argcheck.lua \
+		%%LUA_MODSHAREDIR%%/posix/compat.lua \
+		%%LUA_MODSHAREDIR%%/posix/deprecated.lua \
+		%%LUA_MODSHAREDIR%%/posix/init.lua \
+		%%LUA_MODSHAREDIR%%/posix/sys.lua \
+		%%LUA_MODSHAREDIR%%/posix/util.lua
 
-PORTDOCS=	*
+OPTIONS_DEFINE=	DOCS
 
-do-install:
-	@${MKDIR} ${STAGEDIR}${LUA_MODLIBDIR}
-	${INSTALL_LIB} ${WRKSRC}/ext/posix/.libs/posix_c.so ${STAGEDIR}${LUA_MODLIBDIR}/
-	${INSTALL_LIB} ${WRKSRC}/ext/curses/.libs/curses_c.so ${STAGEDIR}${LUA_MODLIBDIR}/
-	@${MKDIR} ${STAGEDIR}${LUA_MODSHAREDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/lib/curses.lua ${STAGEDIR}${LUA_MODSHAREDIR}/
-	${INSTALL_SCRIPT} ${WRKSRC}/lib/posix.lua ${STAGEDIR}${LUA_MODSHAREDIR}/
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/doc ; ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|\(\*\|\)\(openbsd\*)\)|\1freebsd*\|dragonfly*\|\2| ; \
+		 s|"GNU strip"|"strip"|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

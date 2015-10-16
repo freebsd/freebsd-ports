@@ -1,19 +1,24 @@
 # $FreeBSD$
 
-PROG=	fastboot
+PROG_CXX=fastboot
 BINDIR?=/usr/bin
 
-SRCS+=	bootimg.c
+SRCS+=	bootimg_utils.cpp
 SRCS+=	engine.c
-SRCS+=	fastboot.c
+SRCS+=	fastboot.cpp
 SRCS+=	fs.c
 SRCS+=	protocol.c
 SRCS+=	util.c
 
 .PATH:	${FILESDIR}
-SRCS+=	usb_freebsd.c
-SRCS+=	util_freebsd.c
+SRCS+=	usb_freebsd.cpp
+SRCS+=	util_freebsd.cpp
 
+# required by libziparchive
+.PATH: ${.CURDIR}/../base
+SRCS+=	file.cpp
+
+# required by fastboot
 .PATH: ${.CURDIR}/../ext4_utils
 SRCS+=	allocate.c
 SRCS+=	contents.c
@@ -25,9 +30,15 @@ SRCS+=	extent.c
 SRCS+=	indirect.c
 SRCS+=	make_ext4fs.c
 SRCS+=	sha1.c
-SRCS+=	uuid.c
 SRCS+=	wipe.c
 
+# required by base and libutils
+.PATH:	${.CURDIR}/../liblog
+SRCS+=	fake_log_device.c
+SRCS+=	logd_write.c
+CPPFLAGS.logd_write.c+=	-DFAKE_LOG_DEVICE=1
+
+# required by ext4_utils
 .PATH:	${.CURDIR}/../libselinux/src
 SRCS+=	callbacks.c
 SRCS+=	check_context.c
@@ -38,6 +49,7 @@ SRCS+=	label_android_property.c
 SRCS+=	label_file.c
 CPPFLAGS.init.c+=	-DDARWIN # statfs
 
+# required by fastboot and ext4_utils
 .PATH:	${.CURDIR}/../libsparse
 SRCS+=	backed_block.c
 SRCS+=	output_file.c
@@ -46,27 +58,34 @@ SRCS+=	sparse_crc32.c
 SRCS+=	sparse_err.c
 SRCS+=	sparse_read.c
 
-.PATH:	${.CURDIR}/../libzipfile
-SRCS+=	centraldir.c
-SRCS+=	zipfile.c
-CPPFLAGS.centraldir.c+=	-Ulseek64 # utils/Compat.h
+# required by libziparchive
+.PATH: ${.CURDIR}/../libutils
+SRCS+=	FileMap.cpp
 
-CPPFLAGS+=	-D_FILE_OFFSET_BITS=64 # utils/Compat.h
+# required by fastboot
+.PATH:	${.CURDIR}/../libziparchive
+SRCS+=	zip_archive.cc
+
 CPPFLAGS+=	-Doff64_t=off_t
 CPPFLAGS+=	-Dftruncate64=ftruncate
 CPPFLAGS+=	-Dlseek64=lseek
 CPPFLAGS+=	-Dmmap64=mmap
+CPPFLAGS+=	-Dpread64=pread
 CPPFLAGS+=	-I${.CURDIR}
 CPPFLAGS+=	-I${.CURDIR}/../include
 CPPFLAGS+=	-I${.CURDIR}/../mkbootimg
+CPPFLAGS+=	-I${.CURDIR}/../base/include
 CPPFLAGS+=	-I${.CURDIR}/../ext4_utils
 CPPFLAGS+=	-I${.CURDIR}/../f2fs_utils
 CPPFLAGS+=	-I${.CURDIR}/../libselinux/include
 CPPFLAGS+=	-I${.CURDIR}/../libsparse/include
 CPPFLAGS+=	${CPPFLAGS.${.IMPSRC:T}}
+CXXFLAGS+=	-D__STDC_LIMIT_MACROS # DragonFly
+CXXFLAGS+=	-std=gnu++11
 
 .ifndef COMPILE.c
 CFLAGS+=	${CPPFLAGS}
+CXXFLAGS+=	${CPPFLAGS}
 .endif
 
 LDADD+=	-lpcre -lusb -lz

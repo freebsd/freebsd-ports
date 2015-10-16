@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Plack/Middleware/ExtDirect.pm
+%%SITE_PERL%%/Plack/Middleware/ExtDirect.pod
+%%PERL5_MAN3%%/Plack::Middleware::ExtDirect.3.gz

@@ -61,8 +61,9 @@ pre-configure:
 .endif
 
 .if ${PORT_OPTIONS:MSMTP_AFTER_POP3} && !defined(WITHOUT_POPAUTH_M4)
-	@${ECHO_CMD} "@cwd ${CFDIR}" >>${PLIST}
-	@${ECHO_CMD} "hack/popauth.m4" >>${PLIST}
+	@${ECHO_CMD} "${CFDIR}/hack/popauth.m4" >>${PLIST}
+	@${ECHO_CMD} "@dir ${CFDIR}/hack" >>${PLIST}
+	@${ECHO_CMD} "@dir ${CFDIR}" >>${PLIST}
 .endif
 .if ${PORT_OPTIONS:MSTANDALONE_POP3}
 	@${REINPLACE_CMD} -e 's|^\(#define POP_STANDALONE\).*|\1 1|' \

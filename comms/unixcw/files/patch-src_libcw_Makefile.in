@@ -1,7 +1,7 @@
---- src/libcw/Makefile.in.orig	2015-06-10 20:55:54 UTC
+--- src/libcw/Makefile.in.orig	2015-10-06 17:17:18 UTC
 +++ src/libcw/Makefile.in
-@@ -690,7 +690,7 @@ libcw_test_simple_gen_LDADD = -lm -lpthr
- libcw_test_simple_gen_CFLAGS = -rdynamic
+@@ -676,7 +676,7 @@ libcw_test_internal_LDADD = -lm -lpthrea
+ libcw_test_internal_CFLAGS = -rdynamic
  
  # target: libcw.pc
 -pkgconfigdir = $(libdir)/pkgconfig

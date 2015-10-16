@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	advancemenu
-PORTVERSION=	2.7
-PORTREVISION=	2
+PORTVERSION=	2.8
 CATEGORIES=	emulators
-MASTER_SITES=	SF/advancemame/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	https://github.com/amadvance/advancemame/releases/download/${DISTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Frontend for AdvanceMAME, MAME, MESS, RAINE
@@ -32,6 +31,7 @@ OPTIONS_DEFAULT=	FREETYPE
 OPTIONS_DEFAULT_i386=	ASM
 
 ASM_BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+ASM_USE=		gcc=any
 ASM_CONFIGURE_ENABLE=	asm
 FREETYPE_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 FREETYPE_CONFIGURE_ENABLE=	freetype
@@ -50,10 +50,8 @@ do-install:
 	(cd ${WRKSRC}/doc && ${INSTALL_MAN} advmenu.1 \
 		${STAGEDIR}${MANPREFIX}/man/man1)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in HISTORY README RELEASE
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} \
+	(cd ${WRKSRC} && ${INSTALL_DATA} HISTORY README RELEASE \
 		${STAGEDIR}${DOCSDIR})
-.endfor
 	(cd ${WRKSRC}/doc && ${INSTALL_DATA} advmenu.[ht]* \
 		${STAGEDIR}${DOCSDIR})
 

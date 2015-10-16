@@ -1,15 +1,15 @@
---- Makefile.shared.orig	2010-12-23 21:04:42.000000000 +0100
-+++ Makefile.shared	2011-01-05 10:49:15.000000000 +0100
-@@ -4,7 +4,7 @@
- # Makefile for Ayam (shared version)
+--- Makefile.shared.orig	2015-06-23 18:03:50 UTC
++++ Makefile.shared
+@@ -7,7 +7,7 @@
+ # You can also use "wish ayamConf.tcl" to create a Makefile.
  
  # Choose an installation prefix.
 -PREFIX = /usr/local/ayam
 +#PREFIX = /usr/local/ayam
  #PREFIX = /opt/ayam
- # if you use one of the following, be sure to change LIBDIR
- # and DOCDIR to a more suitable (Ayam specific) path
-@@ -31,14 +31,14 @@
+ #PREFIX = /home/user/ayam
+ 
+@@ -25,14 +25,14 @@ SCNDIR = $(PREFIX)/scn
  
  INSTALL = ./ninstall
  #INSTALL = install
@@ -23,11 +23,11 @@
  
  # the C++ compiler (just in use for the AyCSG and onio plugin)
 -#CXX = CC
-+CXX = ${CC}
++CXX ?= c++
  #CXX = g++
  
  # the linker
-@@ -82,7 +82,10 @@
+@@ -77,7 +77,10 @@ LD = $(CXX)
  # the default configuration is to build with Affine as RIB writer without
  # any shader parsing library (i.e. you will have to build and load a
  # plugin for shader parsing)
@@ -35,20 +35,11 @@
 +#CFLAGS = -O -DAYUSEAFFINE
 +
 +# make amd64 happy with fPIC
-+CFLAGS += -O -fPIC -DAYUSESLXARGS -DAYUSEAQSISRIB -DAYENABLEWAIT
++CFLAGS += -fPIC -DAYUSESLXARGS -DAYUSEAQSISRIB -DAYENABLEWAIT
  
  # simple configuration using BMRT
  #CFLAGS = -O -DAYUSESLCARGS -DAYUSEBMRTRIBOUT
-@@ -96,7 +99,7 @@
- # MacOSX with Aqua:
- #CFLAGS = -O -DAYWITHAQUA -DAYUSEAFFINE -DAYENABLEFEXIT -DUSE_NON_CONST
- # MacOSX with Aqua (universal binary, support for older MacOSX):
--CFLAGS = -O -DAYWITHAQUA -DAYUSEAFFINE -DAYENABLEFEXIT -DUSE_NON_CONST -arch ppc -arch i386 -isysroot /Developer/SDKs/MacOSX10.4u.sdk -mmacosx-version-min=10.2
-+#CFLAGS = -O -DAYWITHAQUA -DAYUSEAFFINE -DAYENABLEFEXIT -DUSE_NON_CONST -arch ppc -arch i386 -isysroot /Developer/SDKs/MacOSX10.4u.sdk -mmacosx-version-min=10.2
- # MacOSX with X11:
- #CFLAGS = -O -DAYUSEAFFINE -DAYENABLEFEXIT
- 
-@@ -121,9 +124,9 @@
+@@ -114,9 +117,9 @@ LDSWDYNAMIC = -dynamic
  # extra ld flags needed to compile Ayam
  # (gcc needs -rdynamic to allow shared objects access to global symbols)
  # IRIX:
@@ -56,11 +47,11 @@
 +#EXLDFLAGS =
  # Linux:
 -#EXLDFLAGS = -rdynamic
-+EXLDFLAGS = -rdynamic
++EXLDFLAGS = -Wl,-export-dynamic
  # MacOSX (X11):
  #EXLDFLAGS = -flat_namespace -undefined suppress
  # MacOSX (Aqua):
-@@ -140,7 +143,7 @@
+@@ -133,7 +136,7 @@ TOGLOBJECT = togl/togl.o
  
  # OpenGL
  # OpenGL includes
@@ -69,7 +60,7 @@
  # MacOSX (Aqua):
  #GLINC =
  # link options for linking with OpenGL libraries
-@@ -150,24 +153,26 @@
+@@ -143,24 +146,26 @@ GLLIBS = -lGLU -lGL
  
  # TIFF
  # TIFF includes
@@ -80,47 +71,51 @@
  
  # Tcl/Tk
  # Tcl directory
--TCLDIR = ../../tcl8.2.2
-+#TCLDIR = ../../tcl9.2.2
+-TCLDIR = ../../tcl8.4.19
++#TCLDIR = ../../tcl8.4.19
  #TCLDIR = ../../tcl8.0
  
  # Tcl includes
 -TCLINC = -I$(TCLDIR)/generic
 +#TCLINC = -I$(TCLDIR)/generic
-+TCLINC = -I%%TCL_INCLUDEDIR%%
++TCLINC = -I${TCL_INCLUDEDIR}/generic -I${TCL_INCLUDEDIR}
  # MacOSX (Aqua):
  #TCLINC =
  
  # Tcl library
  # link options for linking with Tcl library
--TCLLIB = -L$(TCLDIR)/unix -ltcl8.2
-+#TCLLIB = -L$(TCLDIR)/unix -ltcl9.2
+-TCLLIB = -L$(TCLDIR)/unix -ltcl8.4
++#TCLLIB = -L$(TCLDIR)/unix -ltcl8.4
  #TCLLIB = -L$(TCLDIR)/unix -ltcl8.0
-+TCLLIB = -L%%TCL_LIBDIR%% -ltcl%%TCL_SHLIB_VER%%
++TCLLIB = -L${LOCALBASE}/lib -ltcl${TCL_SHLIB_VER}
  # if you have an installed Tcl/Tk, you probably just want:
  #TCLLIB = -ltcl
  # MacOSX (Aqua):
-@@ -175,7 +180,7 @@
+@@ -168,18 +173,20 @@ TCLLIB = -L$(TCLDIR)/unix -ltcl8.4
  
  # Tk sources directory
  # Note: You really need the Tk _sources_ in order to compile Ayam!
--TKDIR = ../../tk8.2.2
-+TKDIR = %%TK_INCLUDEDIR%%
+-TKDIR = ../../tk8.4.19
++#TKDIR = ../../tk8.4.19
  #TKDIR = ../../tk8.0
  
  # Tk includes
-@@ -185,8 +190,9 @@
+-TKINC = -I$(TKDIR)/generic -I$(TKDIR)/unix
++#TKINC = -I$(TKDIR)/generic -I$(TKDIR)/unix
++TKINC = -I${TK_INCLUDEDIR}/generic -I${TK_INCLUDEDIR}
+ # MacOSX (Aqua):
+ #TKINC = -I$(TKDIR)/generic -I$(TKDIR)/macosx -I$(TKDIR)/xlib
  
  # Tk library
  # link options for linking with Tk library
--TKLIB = -L$(TKDIR)/unix -ltk8.2
-+#TKLIB = -L$(TKDIR)/unix -ltk8.2
+-TKLIB = -L$(TKDIR)/unix -ltk8.4
++#TKLIB = -L$(TKDIR)/unix -ltk8.4
  #TKLIB = -L$(TKDIR)/unix -ltk8.0
-+TKLIB = -L%%TK_LIBDIR%% -ltk%%TK_SHLIB_VER%%
++TKLIB = -L${LOCALBASE}/lib -ltk${TK_SHLIB_VER}
  # if you have an installed Tcl/Tk, you probably just want:
  #TKLIB = -ltk
  # MacOSX (Aqua):
-@@ -194,11 +200,11 @@
+@@ -187,11 +194,11 @@ TKLIB = -L$(TKDIR)/unix -ltk8.4
  
  # X11
  # X11 includes
@@ -134,7 +129,7 @@
  #X11LIBS = -L/usr/X11R6/lib -lXmu -lXext -lX11
  # MacOSX (Aqua):
  #X11LIBS =
-@@ -209,23 +215,25 @@
+@@ -202,23 +209,25 @@ X11LIBS = -L/usr/X11R6/lib -lXmu -lXext 
  AFFINEINC = -Iaffine/include
  # if you use Affine as BMRT libribout replacement
  # (also add -DAYUSEAFFINE to CFLAGS!):
@@ -155,7 +150,7 @@
 +#AQSISOBJS =
  # if you use Aqsis libslxargs (add -DAYUSESLXARGS to CFLAGS!):
  #AQSISOBJS = $(AQSISLIBDIR)/rcdummy.o $(AQSISLIBDIR)/libshadervm.so $(AQSISLIBDIR)/libshaderexecenv.so $(AQSISLIBDIR)/libslxargs.so $(AQSISLIBDIR)/libaqsistypes.so -L /usr/local/lib -llog4cpp
-+AQSISOBJS = $(AQSISDIR)/lib/libaqsis_core.so $(AQSISLIBDIR)/libaqsis_shadervm.so $(AQSISLIBDIR)/libaqsis_slxargs.so -L${AQSISLIBDIR} -lstdc++
++AQSISOBJS = $(AQSISDIR)/lib/libaqsis_core.so $(AQSISLIBDIR)/libaqsis_shadervm.so $(AQSISLIBDIR)/libaqsis_slxargs.so -L${AQSISLIBDIR}
 +
  
  # if you do not use Aqsis libri2rib as BMRT libribout replacement:
@@ -163,11 +158,11 @@
 +#AQSISRI2RIB =
  # if you use Aqsis libri2rib (add -DAYUSEAQSISRIB to CFLAGS above!):
 -#AQSISRI2RIB = $(AQSISLIBDIR)/libri2rib.so -L /usr/local/lib -llog4cpp
-+AQSISRI2RIB = $(AQSISLIBDIR)/libaqsis_ri2rib.so -L${AQSISLIBDIR} -lstdc++ -lpthread
++AQSISRI2RIB = $(AQSISLIBDIR)/libaqsis_ri2rib.so -L${AQSISLIBDIR} -pthread
  
  
  # BMRT
-@@ -253,9 +261,9 @@
+@@ -246,9 +255,9 @@ SLCARGSLIB =
  # IRIX, Solaris, (MacOSX<10.4: get libdl from Fink!):
  #DL = -ldl
  # Linux:
@@ -179,7 +174,7 @@
  
  
  # linker flags to produce shared modules:
-@@ -274,8 +282,9 @@
+@@ -267,8 +276,9 @@ AFFINEDIR = ../../affine0008
  RRIBLIBS = -L$(AFFINEDIR)/lib -lribrdr -lribhash -lribnop -lm
  
  # Ayslx Plugin (Aqsis)
@@ -191,15 +186,42 @@
  
  # Ayslc Plugin (BMRT)
  AYSLCINCDIR = $(BMRTDIR)/include
-@@ -520,9 +529,9 @@
+@@ -536,9 +546,9 @@ RRIBOBJS = plugins/rrib.o
  .cpp.o:
- 	$(CXX) -c $(CFLAGS) $*.cpp -o $@ $(AYINC) $(OPENCSGINC) -Iplugins
+ 	$(CXX) -c $(CFLAGS) $*.cpp -o $@ $(OPENCSGINC) $(AYINC) -Iplugins
  
 -all: ayamsh
 +all: ayamsh plugins
  
--plugins: csphere.so mfio.so metaobj.so mopsi.so
-+plugins: csphere.so mfio.so metaobj.so mopsi.so ayslx.so
+-plugins: csphere.so sfcurve.so mfio.so metaobj.so mopsi.so
++plugins: ayslx.so csphere.so sfcurve.so mfio.so metaobj.so mopsi.so
  
  ayamsh: $(AYAMOBJS) $(TOGLOBJECT) $(AFFINEOBJS)
  	$(LD) $(AYAMOBJS) $(TOGLOBJECT) $(EXLDFLAGS) -o ayamsh $(TKLIB) $(TCLLIB) $(GLLIBS) $(X11LIBS) $(RIBOUTLIB) $(AQSISRI2RIB) $(SLCARGSLIB) $(AFFINEOBJS) $(AQSISOBJS) $(TIFFLIB) -lm $(DL)
+@@ -591,7 +601,7 @@ idr.so: $(IDROBJS)
+ 	$(CC) $(SHLFLAGS) $(IDROBJS) -o plugins/idr.so $(TIFFLIB)
+ 
+ mf3d:
+-	cd MF3D; make -f Makefile.mf3d
++	cd MF3D; $(MAKE) -f Makefile.mf3d
+ 
+ mfio.so: plugins/mfio.o mf3d
+ 	$(CC) $(SHLFLAGS) $(MF3DOBJS) plugins/mfio.o -o plugins/mfio.so
+@@ -657,7 +667,7 @@ sdnpatch.so:
+ 	$(CXX) $(SHLFLAGS) plugins/sdnpatch.o -o plugins/sdnpatch.so $(SDNPATCHLIB)
+ 
+ libsub:
+-	cd plugins/subdivide/src;make -f $(SUBDIVMK)
++	cd plugins/subdivide/src;$(MAKE) -f $(SUBDIVMK)
+ 
+ subdiv.so: libsub
+ 	$(CXX) -c $(CFLAGS) plugins/subdiv.cpp -o plugins/subdiv.o $(AYINC) $(SUBDIVINC)
+@@ -695,7 +705,7 @@ mostlyclean:
+ 
+ clean: mostlyclean
+ 	-rm -f $(AFFINEOBJS)
+-	-cd MF3D; make -f Makefile.mf3d clean
++	-cd MF3D; $(MAKE) -f Makefile.mf3d clean
+ 
+ DOCFILES = ../Setup.txt ../Changes.txt ../License.txt ../doc/refcard.tcl\
+ ../doc/refcard.pdf ../doc/ayam.pdf

@@ -4,7 +4,7 @@
 PORTNAME=	fbreader
 PORTVERSION=	0.99.6
 DISTVERSIONSUFFIX=	-freebsdport
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 
 MAINTAINER=	ports@FreeBSD.org
@@ -53,8 +53,7 @@ QT4_LDFLAGS=	-L${QT_LIBDIR}
 QT4_MAKE_ENV=	UI_TYPE=qt4
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^CFLAGS/s,-pipe.*$$,${CFLAGS} -DLIBICONV_PLUG,' \
-		-e '/^CC/d;/^LD/d;/QTINCLUDE/s,-I.*$$,-I${QT_INCDIR},' \
+	@${REINPLACE_CMD} -e '/^CC/d;/^LD/d;/QTINCLUDE/s,-I.*$$,-I${QT_INCDIR},' \
 		${WRKSRC}/makefiles/arch/desktop.mk
 	@${REINPLACE_CMD} -e 's,-O3,,;s,-ldl,${ICONV_LIB},' \
 		${WRKSRC}/makefiles/config.mk ${WRKSRC}/zlibrary/core/Makefile
@@ -63,5 +62,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,/usr,${PREFIX},' ${WRKSRC}/fbreader/desktop/Makefile
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} \
 		-e 's,make ,gmake ,'
+
+pre-configure:
+# This cannot be done in post-patch because build dependencies are installed
+# after patching and they can pull in libiconv which can affect CFLAGS in
+# Mk/Uses/iconv.mk.
+	@${REINPLACE_CMD} 's|^CFLAGS =.*$$|CFLAGS = ${CFLAGS}|' \
+		${WRKSRC}/makefiles/arch/desktop.mk
 
 .include <bsd.port.mk>

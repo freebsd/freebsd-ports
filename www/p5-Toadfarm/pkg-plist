@@ -3,6 +3,7 @@ bin/toadfarm
 %%SITE_PERL%%/Toadfarm/Command/reload.pm
 %%SITE_PERL%%/Toadfarm/Command/start.pm
 %%SITE_PERL%%/Toadfarm/Command/stop.pm
+%%SITE_PERL%%/Toadfarm/Command/tail.pm
 %%SITE_PERL%%/Toadfarm/Manual/BehindReverseProxy.pod
 %%SITE_PERL%%/Toadfarm/Manual/Config.pod
 %%SITE_PERL%%/Toadfarm/Manual/DSL.pod
@@ -15,6 +16,7 @@ bin/toadfarm
 %%PERL5_MAN3%%/Toadfarm::Command::reload.3.gz
 %%PERL5_MAN3%%/Toadfarm::Command::start.3.gz
 %%PERL5_MAN3%%/Toadfarm::Command::stop.3.gz
+%%PERL5_MAN3%%/Toadfarm::Command::tail.3.gz
 %%PERL5_MAN3%%/Toadfarm::Manual::BehindReverseProxy.3.gz
 %%PERL5_MAN3%%/Toadfarm::Manual::Config.3.gz
 %%PERL5_MAN3%%/Toadfarm::Manual::DSL.3.gz

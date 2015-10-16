@@ -1,6 +1,6 @@
---- ./client/dhclient.conf.example.orig	2013-01-25 20:26:40.000000000 -0500
-+++ ./client/dhclient.conf.example	2013-01-25 20:26:53.000000000 -0500
-@@ -11,7 +11,7 @@
+--- client/dhclient.conf.example.orig	2015-09-11 20:11:21 UTC
++++ client/dhclient.conf.example
+@@ -11,7 +11,7 @@ retry 60;
  reboot 10;
  select-timeout 5;
  initial-interval 2;

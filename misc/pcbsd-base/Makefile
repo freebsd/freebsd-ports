@@ -21,7 +21,7 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		warden:${PORTSDIR}/sysutils/warden \
 		iocage:${PORTSDIR}/sysutils/iocage-devel \
 		pbi:${PORTSDIR}/sysutils/pbi-manager \
-		appcafe-setpass:${PORTSDIR}/sysutils/pcbsd-appweb \
+		${LOCALBASE}/share/appcafe/dispatcher:${PORTSDIR}/sysutils/pcbsd-appweb \
 		git:${PORTSDIR}/devel/git \
 		beadm:${PORTSDIR}/sysutils/beadm \
 		samba41>=0:${PORTSDIR}/net/samba41 \

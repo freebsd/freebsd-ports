@@ -1,6 +1,6 @@
---- contrib/meta/metaobj.c.orig	2007-12-17 19:32:36.000000000 +0100
-+++ contrib/meta/metaobj.c	2007-12-17 19:33:01.000000000 +0100
-@@ -851,7 +851,7 @@
+--- contrib/meta/metaobj.c.orig	2015-06-23 18:03:50 UTC
++++ contrib/meta/metaobj.c
+@@ -859,7 +859,7 @@ metaobj_notifycb (ay_object *o)
   meta_world *w;
   meta_blob *b;
   ay_object *down;

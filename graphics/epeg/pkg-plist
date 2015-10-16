@@ -1,7 +1,0 @@
-bin/epeg
-include/Epeg.h
-lib/libepeg.a
-lib/libepeg.so
-lib/libepeg.so.0
-lib/libepeg.so.0.9.1
-libdata/pkgconfig/epeg.pc
