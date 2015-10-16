@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Tangram
-PORTVERSION=	2.10
-PORTREVISION=	2
+PORTVERSION=	2.12
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,13 +10,16 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Orthogonal Object Persistence in Relational Databases
 
-BUILD_DEPENDS=	p5-Set-Object>=0:${PORTSDIR}/devel/p5-Set-Object \
-		p5-Time-Piece>=0:${PORTSDIR}/devel/p5-Time-Piece \
-		p5-Class-Date>=0:${PORTSDIR}/devel/p5-Class-Date \
-		p5-Data-Lazy>=0:${PORTSDIR}/devel/p5-Data-Lazy \
-		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+BUILD_DEPENDS=	p5-Class-Date>=0:${PORTSDIR}/devel/p5-Class-Date \
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		p5-Data-Lazy>=0.6:${PORTSDIR}/devel/p5-Data-Lazy \
+		p5-Set-Object>=1.1:${PORTSDIR}/devel/p5-Set-Object
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

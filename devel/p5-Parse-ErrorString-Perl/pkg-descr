@@ -1,4 +1,4 @@
 Parse::ErrorString::Perl is a module for parsing Perl interpreter
 error messages.
 
-WWW: http://search.cpan.org/dist/Parse-ErrorString-Perl/
+WWW: https://github.com/PadreIDE/Parse-ErrorString-Perl

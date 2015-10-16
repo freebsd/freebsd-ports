@@ -1,70 +1,14 @@
---- hw/xfree86/os-support/bsd/ppc_video.c.orig	2014-07-22 07:52:58.000000000 -0700
-+++ hw/xfree86/os-support/bsd/ppc_video.c	2014-07-22 08:00:21.000000000 -0700
-@@ -44,6 +44,8 @@
- #define DEV_MEM "/dev/xf86"
- #endif
- 
-+static int kmem = -1;
-+
- static pointer ppcMapVidMem(int, unsigned long, unsigned long, int flags);
- static void ppcUnmapVidMem(int, pointer, unsigned long);
- 
-@@ -68,6 +70,17 @@
-     int fd = xf86Info.consoleFd;
-     pointer base;
- 
-+#ifdef __FreeBSD__
-+    if (kmem == -1) {
-+        kmem = open(DEV_MEM, 2);
-+        if (kmem == -1) {
-+            FatalError("mapVidMem: open %s", DEV_MEM);
-+        }
-+    }
-+
-+    fd = kmem;
-+#endif
-+
- #ifdef DEBUG
-     xf86MsgVerb(X_INFO, 3, "mapVidMem %lx, %lx, fd = %d", Base, Size, fd);
- #endif
-@@ -93,7 +106,6 @@
-              int Len)
- {
-     int rv;
--    static int kmem = -1;
- 
-     if (kmem == -1) {
-         kmem = open(DEV_MEM, 2);
-@@ -118,6 +130,8 @@
-     int fd = xf86Info.consoleFd;
- 
-     xf86MsgVerb(X_WARNING, 3, "xf86EnableIO %d\n", fd);
-+
-+#ifndef __FreeBSD__
-     if (ioBase == MAP_FAILED) {
-         ioBase = mmap(NULL, 0x10000, PROT_READ | PROT_WRITE, MAP_SHARED, fd,
-                       0xf2000000);
-@@ -127,6 +141,12 @@
-             return FALSE;
-         }
-     }
-+#endif
-+   /*
-+    * Note that outl() etc. check for ioBase == MAP_FAILED, so leaving it that
-+    * way (e.g. on FreeBSD) is non-fatal.
-+    */
-+
-     return TRUE;
- }
- 
-@@ -134,8 +154,10 @@
- xf86DisableIO()
+--- hw/xfree86/os-support/bsd/ppc_video.c.orig	2015-06-05 17:19:40.000000000 +0200
++++ hw/xfree86/os-support/bsd/ppc_video.c	2015-10-12 15:23:47.470110000 +0200
+@@ -79,7 +79,11 @@ xf86DisableIO()
  {
  
-+#ifndef __FreeBSD__
      if (ioBase != MAP_FAILED) {
++#if defined(__FreeBSD__)
++        munmap(__DEVOLATILE(unsigned char *, ioBase), 0x10000);
++#else
          munmap(__UNVOLATILE(ioBase), 0x10000);
++#endif
          ioBase = MAP_FAILED;
      }
-+#endif
  }

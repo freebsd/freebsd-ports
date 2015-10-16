@@ -37,8 +37,8 @@ PORTEXAMPLES=	omega.conf
 
 SHEBANG_FILES=	dbi2omega htdig2omega mbox2omega
 
+ICONV_CONFIGURE_ON=	ac_cv_search_iconv=${ICONV_LIB}
 ICONV_CONFIGURE_WITH=	iconv
-ICONV_LDFLAGS=		${ICONV_LIB}
 ICONV_USES=		iconv
 
 post-patch:

@@ -2,9 +2,9 @@ SHA256 (bash_completion.d/fastboot?id=2b8cfec) = 12ef37bff8230e5e164e4ef5b9c1be1
 SIZE (bash_completion.d/fastboot?id=2b8cfec) = 3051
 SHA256 (fastboot.1?id=706e754) = 2af01b064440952a82f1602691a0fecc030302722a71444946fb70d9c423d283
 SIZE (fastboot.1?id=706e754) = 5906
-SHA256 (android-platform_system_core-android-5.1.1_r4_GH0.tar.gz) = 076421a742ef98158d5ea290b8aed007f2115521f1e39832d8be3560e990ea13
-SIZE (android-platform_system_core-android-5.1.1_r4_GH0.tar.gz) = 1210714
-SHA256 (jbeich-platform_system_extras-android-5.1.1_r4_GH0.tar.gz) = 43230a03c166b4000336a3bf13a73b91b69b672a9522efcd6d346cdc7e52e154
-SIZE (jbeich-platform_system_extras-android-5.1.1_r4_GH0.tar.gz) = 282780
-SHA256 (jbeich-platform_external_libselinux-android-5.1.1_r4_GH0.tar.gz) = 81bda8ddee4830c62415f308eaea85736b0c2c02324801fe67a712ce192360df
-SIZE (jbeich-platform_external_libselinux-android-5.1.1_r4_GH0.tar.gz) = 49185
+SHA256 (android-platform_system_core-android-6.0.0_r1_GH0.tar.gz) = 3027e73c8f23d8348c76bc558987ecd10c07ed7c89b60a2a76be9e0ef7c84dd5
+SIZE (android-platform_system_core-android-6.0.0_r1_GH0.tar.gz) = 1186291
+SHA256 (jbeich-platform_system_extras-android-6.0.0_r1_GH0.tar.gz) = 84877e2e17a57a2832b6992073691124ad817b013132594313f3e74f8c32aa39
+SIZE (jbeich-platform_system_extras-android-6.0.0_r1_GH0.tar.gz) = 650275
+SHA256 (jbeich-platform_external_libselinux-android-6.0.0_r1_GH0.tar.gz) = ed9ad172dd78591d4f0400c092d8151154a75cc244b6c53ccbb3ae0b165322e4
+SIZE (jbeich-platform_external_libselinux-android-6.0.0_r1_GH0.tar.gz) = 50961

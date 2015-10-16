@@ -67,6 +67,12 @@ IGNORE=		the XMU support requires XEXT
 IGNORE=		the XPM support requires XEXT
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if !empty(ICONV_LIB)
+CONFIGURE_ARGS+=ac_cv_lib_iconv_iconv=yes
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/example.jwmrc
@@ -77,4 +83,4 @@ post-patch:
 		'/EXE/s|install|@INSTALL_PROGRAM@| ; \
 		 /strip/s|^|#|' ${WRKSRC}/src/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

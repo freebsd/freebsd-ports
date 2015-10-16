@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ayam
-PORTVERSION=	1.20
-PORTREVISION=	3
+PORTVERSION=	1.22
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Ayam/${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION}.src
@@ -18,87 +17,95 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libaqsis_util.so:${PORTSDIR}/graphics/aqsis \
 		libtiff.so:${PORTSDIR}/graphics/tiff
-BUILD_DEPENDS=	aqsl:${PORTSDIR}/graphics/aqsis
+RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+
+WRKSRC=		${WRKDIR}/${PORTNAME}/src
+
+USES=		gmake tk
+USE_XORG=	x11 xext xmu
+USE_GL=		glu
+MAKE_ENV=	TCL_INCLUDEDIR="${TCL_INCLUDEDIR}" \
+		TCL_SHLIB_VER="${TCL_SHLIB_VER}" \
+		TK_INCLUDEDIR="${TK_INCLUDEDIR}" \
+		TK_SHLIB_VER="${TK_SHLIB_VER}"
+MAKEFILE=	Makefile.shared
+USE_LDCONFIG=	${PREFIX}/lib/ayam
+MAKE_JOBS_UNSAFE=	yes
+
+DESKTOP_ENTRIES="Ayam" "" "" "ayam" "" ""
 
 OPTIONS_DEFINE=	DOCS
 
-USE_XORG=	xmu xext x11
-USE_GL=		yes
-USE_LDCONFIG=	${PREFIX}/lib/ayam
-USES=		gmake tk:84
-WRKSRC=		${WRKDIR}/${PORTNAME}/src
-MAKEFILE=	Makefile.shared
-MAKE_JOBS_UNSAFE=	yes
-
-AYAM_PLUGINS=	csphere mfio
-PLUGINS_DIR=	${PREFIX}/lib/${PORTNAME}
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/tcl/ayam.tcl
-	@${REINPLACE_CMD} -e 's|^MF3DCFLAGS =|MF3DCFLAGS = -fPIC|g' \
+	@${REINPLACE_CMD} -e \
+		'/^MF3DCFLAGS/s|=.*|= -fPIC|' \
 		${WRKSRC}/MF3D/Makefile.mf3d
 	@${REINPLACE_CMD} -e \
-	   's|%%TCL_INCLUDEDIR%%|${TCL_INCLUDEDIR}|g; s|make|$$(MAKE)|g; \
-	    s|%%TCL_LIBDIR%%|${LOCALBASE}/lib|g; s|%%TCL_SHLIB_VER%%|${TCL_SHLIB_VER}|g; \
-	    s|%%TK_INCLUDEDIR%%|${TK_INCLUDEDIR}|g; \
-	    s|%%TK_LIBDIR%%|${LOCALBASE}/lib|g; s|%%TK_SHLIB_VER%%|${TK_SHLIB_VER}|g' \
-	    ${WRKSRC}/Makefile.shared
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/../scn/shaders/Makefile
+		's|interp->errorLine;|Tcl_GetErrorLine(interp);|' \
+		${WRKSRC}/objects/script.c
+	@${REINPLACE_CMD} -e \
+		's|".*\(ayam-splash.gif\)"|"${DATADIR}/\1"|' \
+		${WRKSRC}/tcl/ayam.tcl
+	@${REINPLACE_CMD} -e \
+		's| firefox | xdg-open |' \
+		${WRKSRC}/tcl/browser.tcl
+	@${REINPLACE_CMD} -e \
+		'/^AQSL/s|=.*|= ${LOCALBASE}/bin/aqsl|' \
+		${WRKSRC}/../scn/shaders/Makefile
 
 post-build:
 	cd ${WRKSRC}/../scn/shaders && ${MAKE_CMD} slx
+	@${ECHO_CMD} -n > ${WRKSRC}/../bin/ayam
+	@${ECHO_CMD} "#!${SH}" >> ${WRKSRC}/../bin/ayam
+	@${ECHO_CMD} "${PREFIX}/bin/ayamsh ${PREFIX}/lib/ayam/tcl/ayam.tcl \$$@" \
+		>> ${WRKSRC}/../bin/ayam
 
 do-install:
 # binary and wrapper
-	${INSTALL_PROGRAM} ${WRKSRC}/ayamsh ${STAGEDIR}${PREFIX}/bin
-	@(${ECHO_CMD} "#!${SH}"; \
-	  ${ECHO_CMD} "${PREFIX}/bin/ayamsh ${PLUGINS_DIR}/tcl/ayam.tcl \$$@" \
-	) > ${STAGEDIR}${PREFIX}/bin/ayam
-	@${CHMOD} ugo+x ${STAGEDIR}${PREFIX}/bin/ayam
-
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ayamsh ${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC}/../bin && ${INSTALL_SCRIPT} ayam ${STAGEDIR}${PREFIX}/bin)
 # shaders
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/ayam/shaders
-	${INSTALL_DATA} ${WRKSRC}/../scn/shaders/*.slx ${STAGEDIR}${PREFIX}/lib/ayam/shaders
-
+	(cd ${WRKSRC}/../scn/shaders && ${INSTALL_DATA} *.slx \
+		${STAGEDIR}${PREFIX}/lib/ayam/shaders)
 # plugins
-	@${MKDIR} ${STAGEDIR}${PLUGINS_DIR}
-.for i in ${AYAM_PLUGINS}
-	${INSTALL_DATA} ${WRKSRC}/plugins/${i}.tcl ${STAGEDIR}${PLUGINS_DIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/plugins/${i}.so ${STAGEDIR}${PLUGINS_DIR}
-.endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/plugins/ayslx.so ${STAGEDIR}${PLUGINS_DIR}
-	${INSTALL_DATA} ${WRKSRC}/plugins/loadayslx.tcl ${STAGEDIR}${PLUGINS_DIR}
-
-	${INSTALL_DATA} ${WRKSRC}/contrib/meta/*.tcl ${STAGEDIR}${PLUGINS_DIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/contrib/meta/metaobj.so ${STAGEDIR}${PLUGINS_DIR}
-
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/ayam
+	(cd ${WRKSRC}/plugins && ${INSTALL_LIB}  \
+		ayslx.so csphere.so mfio.so \
+		${STAGEDIR}${PREFIX}/lib/ayam)
+	(cd ${WRKSRC}/plugins && ${INSTALL_DATA} \
+		csphere.tcl loadayslx.tcl mfio.tcl \
+		${STAGEDIR}${PREFIX}/lib/ayam)
+	(cd ${WRKSRC}/contrib/meta && ${INSTALL_LIB} *.so \
+		${STAGEDIR}${PREFIX}/lib/ayam)
+	(cd ${WRKSRC}/contrib/meta && ${INSTALL_DATA} *.tcl \
+		${STAGEDIR}${PREFIX}/lib/ayam)
 # tcl libs
-	@${MKDIR} ${STAGEDIR}${PLUGINS_DIR}/tcl
-	${INSTALL_DATA} ${WRKSRC}/tcl/*.tcl ${STAGEDIR}${PLUGINS_DIR}/tcl
-	@${MKDIR} ${STAGEDIR}${PLUGINS_DIR}/tcl/BWidget-1.2.1
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/ayam/tcl \
+		${STAGEDIR}${PREFIX}/lib/ayam/tcl/BWidget-1.2.1 \
+		${STAGEDIR}${PREFIX}/lib/ayam/tcl/BWidget-1.2.1/images \
+		${STAGEDIR}${PREFIX}/lib/ayam/tcl/BWidget-1.2.1/lang
+	${INSTALL_DATA} ${WRKSRC}/tcl/*.tcl \
+		${STAGEDIR}${PREFIX}/lib/ayam/tcl
 	${INSTALL_DATA} ${WRKSRC}/tcl/BWidget-1.2.1/*.tcl \
-		${STAGEDIR}${PLUGINS_DIR}/tcl/BWidget-1.2.1
-	@${MKDIR} ${STAGEDIR}${PLUGINS_DIR}/tcl/BWidget-1.2.1/images
+		${STAGEDIR}${PREFIX}/lib/ayam/tcl/BWidget-1.2.1
 	${INSTALL_DATA} ${WRKSRC}/tcl/BWidget-1.2.1/images/* \
-		${STAGEDIR}${PLUGINS_DIR}/tcl/BWidget-1.2.1/images
-	@${MKDIR} ${STAGEDIR}${PLUGINS_DIR}/tcl/BWidget-1.2.1/lang
+		${STAGEDIR}${PREFIX}/lib/ayam/tcl/BWidget-1.2.1/images
 	${INSTALL_DATA} ${WRKSRC}/tcl/BWidget-1.2.1/lang/* \
-		${STAGEDIR}${PLUGINS_DIR}/tcl/BWidget-1.2.1/lang
-
+		${STAGEDIR}${PREFIX}/lib/ayam/tcl/BWidget-1.2.1/lang
 # data
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/lib/ayam-splash.gif ${STAGEDIR}${DATADIR}
-
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/lib/ayam-splash.gif \
+		${STAGEDIR}${DATADIR}
 # docs
-do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR} \
+		${STAGEDIR}${DOCSDIR}/html \
+		${STAGEDIR}${DOCSDIR}/html/pics
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/Setup.txt ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/doc/ayam.pdf ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/doc/refcard.pdf ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/doc/refcard.tcl ${STAGEDIR}${DOCSDIR}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/doc/html/*.html ${STAGEDIR}${DOCSDIR}/html
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html/pics
+	(cd ${WRKDIR}/${PORTNAME}/doc && ${INSTALL_DATA} \
+		ayam.pdf refcard.pdf refcard.tcl ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/doc/html/*.html \
+		${STAGEDIR}${DOCSDIR}/html
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/doc/html/pics/* \
 		${STAGEDIR}${DOCSDIR}/html/pics
 

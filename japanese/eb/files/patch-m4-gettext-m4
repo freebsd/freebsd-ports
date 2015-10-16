@@ -1,9 +1,10 @@
---- m4/gettext.m4.orig	2010-01-03 21:26:04.000000000 +0900
-+++ m4/gettext.m4	2014-04-03 10:20:12.000000000 +0900
-@@ -87,13 +87,19 @@
+--- m4/gettext.m4.orig	2010-01-03 12:26:04 UTC
++++ m4/gettext.m4
+@@ -86,14 +86,17 @@ AC_DEFUN([eb_GNU_GETTEXT], [dnl
+   save_CPPFLAGS=$CPPFLAGS
    save_LIBS=$LIBS
    CPPFLAGS="$save_CPPFLAGS $iconv_includes"
-   LIBS="$save_LIBS $iconv_libraries"
+-  LIBS="$save_LIBS $iconv_libraries"
 -  AC_CHECK_LIB(iconv, iconv_open,
 -    [ICONVLIBS="$iconv_libraries -liconv"; LIBS="$LIBS -liconv"])
 -  AC_CHECK_FUNCS(iconv_open locale_charset)
@@ -11,23 +12,21 @@
 -  if test $ac_cv_func_iconv_open != no; then
 -    ICONVINCS="$iconv_includes"
 -  fi
-+  initial_LIBS="$LIBS"
-+  AC_SEARCH_LIBS([iconv_open],
-+    [iconv],
-+    [AS_IF([test "$LIBS" = "$initial_LIBS"],
-+      [AC_CHECK_HEADERS([iconv.h])
-+        AC_CHECK_FUNCS([iconv_open])
-+        ICONVLIBS="$iconv_libraries"
-+	ICONVINCS="$iconv_includes"],
-+      [AC_CHECK_LIB([charset], [locale_charset])
-+        AC_CHECK_HEADERS([iconv.h libcharset.h])
-+        AC_CHECK_FUNCS([iconv_open locale_charset])
-+	ICONVLIBS="$iconv_libraries -lcharset -liconv"
-+	ICONVINCS="$iconv_includes"])])
++  AC_CHECK_HEADER([iconv.h],
++    [AC_DEFINE([HAVE_ICONV_H],[1],[Have iconv.h])
++     for l in '' -liconv; do
++      LIBS="$save_LIBS $iconv_libraries $l"
++      AC_LINK_IFELSE(
++        AC_LANG_PROGRAM([#include <iconv.h>],[iconv_open("","")]),
++        [AC_DEFINE([HAVE_ICONV_OPEN],[1],[Have iconv_open(3)])
++         ICONVINCS="$iconv_includes"
++         ICONVLIBS="$iconv_libraries $l"
++         break],[])
++     done],[])
    CPPFLAGS=$save_CPPFLAGS
    LIBS=$save_LIBS
    AC_SUBST(ICONVINCS)
-@@ -113,10 +119,10 @@
+@@ -113,10 +116,10 @@ AC_DEFUN([eb_GNU_GETTEXT], [dnl
      save_LIBS=$LIBS
  
      dnl *
@@ -41,7 +40,7 @@
      AC_LINK_IFELSE([
  #include <stdio.h>
  #ifdef ENABLE_NLS
-@@ -143,8 +149,8 @@
+@@ -143,8 +146,8 @@ main()
      try_nls=yes, try_nls=no)
  
      if test "$try_nls" = yes; then
@@ -52,7 +51,7 @@
      fi
  
      dnl *
-@@ -222,11 +228,11 @@
+@@ -222,11 +225,11 @@ main()
      fi
  
      dnl *
@@ -67,7 +66,7 @@
        AC_LINK_IFELSE([
  #include <stdio.h>
  #ifdef ENABLE_NLS
-@@ -253,8 +259,8 @@
+@@ -253,8 +256,8 @@ main()
        try_nls=yes, try_nls=no)
  
        if test "$try_nls" = yes; then

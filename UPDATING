@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20151011:
+  AFFECTS: users of emulators/qemu-sbruno, emulators/qemu-user-static
+  AUTHOR: sbruno@FreeBSD.org
+
+  The Jemalloc update at svn r286871 introduced some TLS enhancements
+  for MIPS targets that require a bit of workaround.  Users who want 
+  to build MIPS packages should update their host systems past r286871
+  prior to upgrading their qemu-user-static/qemu-sbruno ports.
+  
+  Discussion about this can be found here:
+    https://lists.freebsd.org/pipermail/freebsd-mips/2015-October/004018.html
+
 20151006:
   AFFECTS: users of www/firefox, www/seamonkey
   AUTHOR: gecko@FreeBSD.org

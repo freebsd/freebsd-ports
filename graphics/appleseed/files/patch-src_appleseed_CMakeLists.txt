@@ -1,0 +1,18 @@
+--- src/appleseed/CMakeLists.txt.orig	2015-06-13 09:38:53 UTC
++++ src/appleseed/CMakeLists.txt
+@@ -1082,10 +1082,14 @@ set (renderer_kernel_rendering_sources
+     renderer/kernel/rendering/timedrenderercontroller.cpp
+     renderer/kernel/rendering/timedrenderercontroller.h
+ )
+-if (WITH_OSL)
++if (WITH_OSL OR WITH_DISNEY_MATERIAL)
+     list (APPEND renderer_kernel_rendering_sources
+         renderer/kernel/rendering/oiioerrorhandler.cpp
+         renderer/kernel/rendering/oiioerrorhandler.h
++    )
++endif ()
++if (WITH_OSL)
++    list (APPEND renderer_kernel_rendering_sources
+         renderer/kernel/rendering/rendererservices.cpp
+         renderer/kernel/rendering/rendererservices.h
+     )

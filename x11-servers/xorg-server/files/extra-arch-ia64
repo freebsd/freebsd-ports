@@ -32,22 +32,6 @@
   if test "x$PPC_VIDEO" = xyes; then
    PPC_VIDEO_TRUE=
    PPC_VIDEO_FALSE='#'
---- hw/xfree86/common/compiler.h.orig	2011-06-11 18:55:47.000000000 +0200
-+++ hw/xfree86/common/compiler.h	2011-07-21 20:34:44.000000000 +0200
-@@ -397,12 +397,10 @@
- #include <machine/pio.h>
- #endif /* __NetBSD__ */
- 
--#   elif defined(linux) && defined(__ia64__) 
-+#   elif (defined(linux) || defined(__FreeBSD__)) && defined(__ia64__) 
-  
- #    include <inttypes.h>
- 
--#    include <sys/io.h>
--
- #    undef outb
- #    undef outw
- #    undef outl
 --- hw/xfree86/os-support/bsd/Makefile.in.dist	2009-06-18 17:45:13.000000000 -0700
 +++ hw/xfree86/os-support/bsd/Makefile.in	2009-06-18 17:45:19.000000000 -0700
 @@ -63,6 +63,7 @@

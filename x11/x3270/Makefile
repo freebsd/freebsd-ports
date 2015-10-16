@@ -23,7 +23,7 @@ USE_XORG=	ice sm x11 xaw xext xmu xt
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fontdir=${FONTSDIR} \
 		--disable-dbcs \
-		ac_cv_search_libiconv=no
+		ac_cv_search_libiconv=${ICONV_LIB}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 .if defined(WITHOUT_OPENSSL)

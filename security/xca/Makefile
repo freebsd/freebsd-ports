@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	SF
 
-MAINTAINER=	freebsd@nagilum.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical certification authority
 
 LICENSE=	BSD3CLAUSE

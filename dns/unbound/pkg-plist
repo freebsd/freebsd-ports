@@ -1,6 +1,6 @@
 etc/unbound/unbound.conf.sample
 include/unbound.h
-lib/libunbound.so.2.3.7
+lib/libunbound.so.2.3.8
 lib/libunbound.so.2
 lib/libunbound.so
 lib/libunbound.a

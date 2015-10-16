@@ -39,10 +39,11 @@ ICONS_VARS=	INSTALLS_ICONS=yes
 
 .if empty(ICONV_LIB)
 CONFIGURE_ARGS+=ac_cv_lib_iconv_iconv=no
+.else
+CONFIGURE_ARGS+=ac_cv_lib_iconv_iconv=yes
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/DEFAULT_CFLAGS=/ s|-O -g3 ||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/ install-data-hook/d' ${WRKSRC}/html/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|' ${WRKSRC}/html/server/div/WebHTTrack*
 

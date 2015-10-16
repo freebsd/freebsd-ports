@@ -10,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Access to Bugzilla through WebService APIs in Ruby
 
 LICENSE=	LGPL3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	rubygem-gruff>=0:${PORTSDIR}/graphics/rubygem-gruff \
     		rubygem-highline>=0:${PORTSDIR}/devel/rubygem-highline

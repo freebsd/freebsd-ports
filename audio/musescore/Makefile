@@ -2,59 +2,62 @@
 # $FreeBSD$
 
 PORTNAME=	musescore
-PORTVERSION=	1.3
-PORTREVISION=	5
+PORTVERSION=	2.0.2
 CATEGORIES=	audio
-MASTER_SITES=	SF/mscore/mscore/MuseScore-${PORTVERSION}/
-DISTNAME=	mscore-${PORTVERSION}
+MASTER_SITES=	http://ftp.osuosl.org/pub/musescore/releases/MuseScore-${PORTVERSION}/
+DISTNAME=	MuseScore-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free music composition & notation software
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/mscore/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE.GPL
 
-BUILD_DEPENDS=	qtscriptgenerator>0:${PORTSDIR}/devel/qtscriptgenerator
-LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
-RUN_DEPENDS=	qtscriptgenerator>0:${PORTSDIR}/devel/qtscriptgenerator
+LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame \
+		libsndfile.so:${PORTSDIR}/audio/libsndfile \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
-USES=		desktop-file-utils tar:bzip2 cmake:outsource
-USE_QT4=	corelib designer gui network script scripttools svg webkit xml \
-		linguisttools_build moc_build qmake_build rcc_build uic_build
-CMAKE_SOURCE_PATH=	${WRKSRC}/mscore
-CMAKE_ARGS=	-DBUILD_ALSA:BOOL=OFF
-ALL_TARGET=	lrelease all
-MAKE_JOBS_UNSAFE=	yes
+USES=		cmake:outsource compiler:c++11-lib desktop-file-utils \
+		pkgconfig shared-mime-info zip
+USE_QT5=	concurrent declarative designer help network scripttools svg \
+		webkit xml xmlpatterns \
+		buildtools_build linguisttools_build qmake_build uitools_build
+ALL_TARGET=	lrelease manpages all
 
-DATADIR=	${PREFIX}/share/mscore-${PORTVERSION}
+DATADIR=	${PREFIX}/share/mscore-${PORTVERSION:R}
 
-PORTDOCS=	ChangeLog NEWS README README.scripts
+OPTIONS_DEFINE=		ALSA JACK PORTAUDIO PULSEAUDIO
+OPTIONS_DEFAULT=	PORTAUDIO
 
-OPTIONS_DEFINE=	DOCS JACK PORTAUDIO
-OPTIONS_DEFAULT=PORTAUDIO
-
-OPTIONS_SUB=	yes
-
+ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_CMAKE_ON=		-DBUILD_ALSA:BOOL=ON
+ALSA_CMAKE_OFF=		-DBUILD_ALSA:BOOL=OFF
 JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
 JACK_CMAKE_ON=		-DBUILD_JACK:BOOL=ON
 JACK_CMAKE_OFF=		-DBUILD_JACK:BOOL=OFF
-
 PORTAUDIO_LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio
 PORTAUDIO_CMAKE_ON=	-DBUILD_PORTAUDIO:BOOL=ON
 PORTAUDIO_CMAKE_OFF=	-DBUILD_PORTAUDIO:BOOL=OFF
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_CMAKE_ON=	-DBUILD_PULSEAUDIO:BOOL=ON
+PULSEAUDIO_CMAKE_OFF=	-DBUILD_PULSEAUDIO:BOOL=OFF
+
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == clang
+CXXFLAGS+=	-Wno-inconsistent-missing-override
+.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "CMakeLists.txt" -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e \
-		's|%%LOCALBASE%%|${LOCALBASE}|g ; \
-		 s|-g -Wall|-Wall|g'
-# add newline
-.for file in mscore.cpp updatechecker.h webpage.cpp
-	@${ECHO_CMD} >> ${WRKSRC}/mscore/mscore/${file}
-.endfor
+		'/RELEASE/s|-O2 || ; \
+		 /COMPILE_FLAGS/s|-g || ; \
+		 /COMPILE_FLAGS/s|$${PCH_INCLUDE} |-include $${PROJECT_BINARY_DIR}/all.h |'
+	@${REINPLACE_CMD} -e \
+		's|<errno.h>|<cerrno>| ; \
+		 s|<limits.h>|<climits>| ; \
+		 s|<math.h>|<cmath>| ; \
+		 s|<stdio.h>|<cstdio>|' ${WRKSRC}/all.h
 
-post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/mscore/|} ${STAGEDIR}${DOCSDIR}
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
