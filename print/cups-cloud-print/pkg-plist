@@ -1,56 +1,55 @@
 libexec/cups/backend/gcp
 libexec/cups/driver/cupscloudprint
-share/cloudprint-cups/.coveragerc
-share/cloudprint-cups/COPYING
-share/cloudprint-cups/README.md
-share/cloudprint-cups/auth.py
-share/cloudprint-cups/backend.py
-share/cloudprint-cups/ccputils.py
-share/cloudprint-cups/cloudprintrequestor.py
-share/cloudprint-cups/deleteaccount.py
-share/cloudprint-cups/dynamicppd.py
-share/cloudprint-cups/listcloudprinters.py
-share/cloudprint-cups/oauth2client/__init__.py
-share/cloudprint-cups/oauth2client/appengine.py
-share/cloudprint-cups/oauth2client/client.py
-share/cloudprint-cups/oauth2client/clientsecrets.py
-share/cloudprint-cups/oauth2client/crypt.py
-share/cloudprint-cups/oauth2client/django_orm.py
-share/cloudprint-cups/oauth2client/file.py
-share/cloudprint-cups/oauth2client/gce.py
-share/cloudprint-cups/oauth2client/keyring_storage.py
-share/cloudprint-cups/oauth2client/locked_file.py
-share/cloudprint-cups/oauth2client/multistore_file.py
-share/cloudprint-cups/oauth2client/service_account.py
-share/cloudprint-cups/oauth2client/tools.py
-share/cloudprint-cups/oauth2client/util.py
-share/cloudprint-cups/oauth2client/xsrfutil.py
-share/cloudprint-cups/printer.py
-share/cloudprint-cups/printermanager.py
-share/cloudprint-cups/refreshtokens.py
-share/cloudprint-cups/reportissues.py
-share/cloudprint-cups/selinux/Makefile
-share/cloudprint-cups/selinux/cupscloudprint.fc
-share/cloudprint-cups/selinux/cupscloudprint.if
-share/cloudprint-cups/selinux/cupscloudprint.pp
-share/cloudprint-cups/selinux/cupscloudprint.te
-share/cloudprint-cups/setupcloudprint.py
-share/cloudprint-cups/testing/full-test.sh
-share/cloudprint-cups/testing/listdrivefiles.py
-share/cloudprint-cups/testing/mockrequestor.py
-share/cloudprint-cups/testing/remove-test.sh
-share/cloudprint-cups/testing/test_auth.py
-share/cloudprint-cups/testing/test_ccputils.py
-share/cloudprint-cups/testing/test_cloudprintrequestor.py
-share/cloudprint-cups/testing/test_printer.py
-share/cloudprint-cups/testing/test_printermanager.py
-share/cloudprint-cups/testing/testfiles/NotPdf.txt
-share/cloudprint-cups/testing/testfiles/Test Page Corrupt.pdf
-share/cloudprint-cups/testing/testfiles/Test Page reader.ps
-share/cloudprint-cups/testing/testfiles/Test Page.pdf
-share/cloudprint-cups/testing/testfiles/Test Page.png
-share/cloudprint-cups/testing/testfiles/Test Page.ps
-share/cloudprint-cups/testing/testfiles/capabilitylist
-share/cloudprint-cups/testing/testfiles/testppd.ppd
-share/cloudprint-cups/upgrade.py
+%%DATADIR%%/.coveragerc
+%%DATADIR%%/auth.py
+%%DATADIR%%/backend.py
+%%DATADIR%%/ccputils.py
+%%DATADIR%%/cloudprintrequestor.py
+%%DATADIR%%/deleteaccount.py
+%%DATADIR%%/dynamicppd.py
+%%DATADIR%%/listcloudprinters.py
+%%DATADIR%%/oauth2client/__init__.py
+%%DATADIR%%/oauth2client/appengine.py
+%%DATADIR%%/oauth2client/client.py
+%%DATADIR%%/oauth2client/clientsecrets.py
+%%DATADIR%%/oauth2client/crypt.py
+%%DATADIR%%/oauth2client/django_orm.py
+%%DATADIR%%/oauth2client/file.py
+%%DATADIR%%/oauth2client/gce.py
+%%DATADIR%%/oauth2client/keyring_storage.py
+%%DATADIR%%/oauth2client/locked_file.py
+%%DATADIR%%/oauth2client/multistore_file.py
+%%DATADIR%%/oauth2client/service_account.py
+%%DATADIR%%/oauth2client/tools.py
+%%DATADIR%%/oauth2client/util.py
+%%DATADIR%%/oauth2client/xsrfutil.py
+%%DATADIR%%/printer.py
+%%DATADIR%%/printermanager.py
+%%DATADIR%%/refreshtokens.py
+%%DATADIR%%/reportissues.py
+%%DATADIR%%/selinux/Makefile
+%%DATADIR%%/selinux/cupscloudprint.fc
+%%DATADIR%%/selinux/cupscloudprint.if
+%%DATADIR%%/selinux/cupscloudprint.pp
+%%DATADIR%%/selinux/cupscloudprint.te
+%%DATADIR%%/setupcloudprint.py
+%%DATADIR%%/testing/full-test.sh
+%%DATADIR%%/testing/listdrivefiles.py
+%%DATADIR%%/testing/mockrequestor.py
+%%DATADIR%%/testing/remove-test.sh
+%%DATADIR%%/testing/test_auth.py
+%%DATADIR%%/testing/test_ccputils.py
+%%DATADIR%%/testing/test_cloudprintrequestor.py
+%%DATADIR%%/testing/test_printer.py
+%%DATADIR%%/testing/test_printermanager.py
+%%DATADIR%%/testing/testfiles/NotPdf.txt
+%%DATADIR%%/testing/testfiles/Test Page Corrupt.pdf
+%%DATADIR%%/testing/testfiles/Test Page reader.ps
+%%DATADIR%%/testing/testfiles/Test Page.pdf
+%%DATADIR%%/testing/testfiles/Test Page.png
+%%DATADIR%%/testing/testfiles/Test Page.ps
+%%DATADIR%%/testing/testfiles/capabilitylist
+%%DATADIR%%/testing/testfiles/testppd.ppd
+%%DATADIR%%/upgrade.py
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 @dir share/cups/model
