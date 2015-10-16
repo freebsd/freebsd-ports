@@ -42,6 +42,8 @@ OPTIONS_DEFINE=	DEBUG
 
 DEBUG_MAKE_ENV=	LIBTYPE=debug
 
+LDFLAGS+=	-Wl,--add-needed
+
 post-patch:
 	@${REINPLACE_CMD} 's|/usr\(/include/freetype2\)|${LOCALBASE}\1|' \
 		${WRKSRC}/libFL/ang/GNUmakefile
