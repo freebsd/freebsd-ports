@@ -170,6 +170,10 @@ MMEDIA_USE=			GSTREAMER=yes
 
 .include <bsd.port.pre.mk>
 
+.if ${JAVA_PORT_VERSION:M1.8.*}
+BROKEN=		Does not build with JDK 1.8
+.endif
+
 .include <${FILESDIR}/Makefile.localized>
 
 .if ${COMPILER_TYPE} == clang
