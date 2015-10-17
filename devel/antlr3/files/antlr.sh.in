@@ -1,0 +1,5 @@
+#! /bin/sh
+#
+# $FreeBSD$
+
+JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -classpath "%%JAVAJARDIR%%/%%INSTALL_JAR%%" org.antlr.Tool "$@"
