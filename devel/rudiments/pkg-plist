@@ -156,6 +156,8 @@ include/rudiments/private/unixsocketserver.h
 include/rudiments/private/unixsocketserverincludes.h
 include/rudiments/private/unixsocketutil.h
 include/rudiments/private/unixsocketutilincludes.h
+include/rudiments/private/url.h
+include/rudiments/private/urlincludes.h
 include/rudiments/private/userentry.h
 include/rudiments/private/userentryincludes.h
 include/rudiments/private/winsock.h
@@ -188,6 +190,7 @@ include/rudiments/threadmutex.h
 include/rudiments/unixsocketclient.h
 include/rudiments/unixsocketserver.h
 include/rudiments/unixsocketutil.h
+include/rudiments/url.h
 include/rudiments/userentry.h
 include/rudiments/xmldom.h
 include/rudiments/xmldomnode.h
