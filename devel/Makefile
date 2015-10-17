@@ -70,6 +70,7 @@
     SUBDIR += anjuta
     SUBDIR += anjuta-extras
     SUBDIR += antlr
+    SUBDIR += antlr3
     SUBDIR += antlrworks
     SUBDIR += apache-ant
     SUBDIR += api-sanity-autotest
