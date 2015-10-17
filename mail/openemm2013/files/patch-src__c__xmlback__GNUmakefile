@@ -1,0 +1,35 @@
+--- src/c/xmlback/GNUmakefile.orig	2013-09-11 08:30:37 UTC
++++ src/c/xmlback/GNUmakefile
+@@ -20,10 +20,10 @@
+ # Contributor(s): AGNITAS AG. 
+ ##################################################################################
+  
+-CC	= gcc
+-CFLAGS	= -I. -I../lib -I$(HOME)/include $(shell xml2-config --cflags) -I/usr/include/slang
+-LDFLAGS	= -L$(HOME)/lib
+-LIBS	= grammar/libgrammar.a -lslang -L../lib -lagn $(shell xml2-config --libs) -ldl
++CC	?= clang
++CFLAGS	+= -I. -I../lib -I/usr/local/include $(shell xml2-config --cflags) -I/usr/local/lib/slang
++#LDFLAGS	= -L$(HOME)/lib
++LIBS	= grammar/libgrammar.a -lslang -L../lib -lagn $(shell xml2-config --libs) -lcurses
+ SRCS	= append.c \
+ 	  block.c \
+ 	  blockmail.c \
+@@ -63,7 +63,7 @@ all::
+ 	@$(MAKE) -C ../lib $@
+ 
+ all clean::
+-	make -C grammar $@
++	@${MAKE} -C grammar $@
+ 
+ all::	xmlback
+ 
+@@ -71,7 +71,7 @@ xmlback:	$(OBJS) grammar/libgrammar.a
+ 	$(CC) $(LDFLAGS) $(OBJS) -o $@ $(LIBS)
+ 
+ grammar/libgrammar.a:
+-	make -C grammar
++	@${MAKE} -C grammar
+ 
+ clean::
+ 	rm -f xmlback *.o *~
