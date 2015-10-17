@@ -463,6 +463,7 @@
     SUBDIR += opal
     SUBDIR += openafs
     SUBDIR += openbgpd
+    SUBDIR += openbsc
     SUBDIR += opendpi
     SUBDIR += openggsn
     SUBDIR += openh323
