@@ -897,6 +897,7 @@
     SUBDIR += sol
     SUBDIR += solarconquest
     SUBDIR += solarus
+    SUBDIR += solarus-quest-editor
     SUBDIR += solarwolf
     SUBDIR += sopwith
     SUBDIR += spacejunk
