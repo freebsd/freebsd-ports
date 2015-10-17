@@ -1021,6 +1021,7 @@
     SUBDIR += isl
     SUBDIR += it-eric6
     SUBDIR += itext
+    SUBDIR += ivykis
     SUBDIR += jakarta-commons-configuration
     SUBDIR += jakarta-commons-daemon
     SUBDIR += jakarta-commons-io
