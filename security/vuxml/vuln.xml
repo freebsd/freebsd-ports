@@ -58,6 +58,45 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3934cc60-f0fa-4eca-be09-c8bd7ae42871">
+    <topic>Salt -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py27-salt</name>
+	<range><lt>2015.8.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Salt release notes:</p>
+	<blockquote cite="https://docs.saltstack.com/en/latest/topics/releases/2015.8.1.html">
+	  <p>CVE-2015-6918 - Git modules leaking HTTPS auth credentials to debug log</p>
+	  <p>Updated the Git state and execution modules to no longer display HTTPS basic
+	    authentication credentials in loglevel debug output on the Salt master. These
+	    credentials are now replaced with REDACTED in the debug output. Thanks to
+	    Andreas Stieger for bringing this to our attention.</p>
+	  <p>CVE-2015-6941 - win_useradd module and salt-cloud display passwords in debug
+	    log</p>
+	  <p>Updated the win_useradd module return data to no longer include the password
+	    of the newly created user. The password is now replaced with the string
+	    XXX-REDACTED-XXX. Updated the Salt Cloud debug output to no longer display
+	    win_password and sudo_password authentication credentials. Also updated the
+	    Linode driver to no longer display authentication credentials in debug logs.
+	    These credentials are now replaced with REDACTED in the debug output.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://docs.saltstack.com/en/latest/topics/releases/2015.8.1.html</url>
+      <cvename>CVE-2015-6918</cvename>
+      <cvename>CVE-2015-6941</cvename>
+    </references>
+    <dates>
+      <discovery>2015-10-16</discovery>
+      <entry>2015-10-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="79c68ef7-c8ae-4ade-91b4-4b8221b7c72a">
     <topic>firefox -- Cross-origin restriction bypass using Fetch</topic>
     <affects>
