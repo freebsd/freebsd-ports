@@ -1102,6 +1102,7 @@
     SUBDIR += ykclient
     SUBDIR += ykpers
     SUBDIR += yubikey-personalization
+    SUBDIR += yubikey-personalization-gui
     SUBDIR += zebedee
     SUBDIR += zenmap
     SUBDIR += zxid
