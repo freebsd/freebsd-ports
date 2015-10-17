@@ -1,105 +1,79 @@
---- lib/Mail/SpamAssassin/HTML.pm.orig	2014-02-07 17:36:28.000000000 +0900
-+++ lib/Mail/SpamAssassin/HTML.pm	2014-03-04 11:18:44.000000000 +0900
-@@ -86,7 +86,7 @@
- $ok_attributes{div}{$_} = 1 for qw( style );
- 
- sub new {
--  my ($class) = @_;
-+  my ($class, $opts) = @_;
-   my $self = $class->SUPER::new(
- 		api_version => 3,
- 		handlers => [
-@@ -99,6 +99,7 @@
- 			declaration => ["html_declaration", "self,text"],
- 		],
- 		marked_sections => 1);
-+  $self->{normalize} = $opts->{'normalize'} || 0;
- 
-   $self;
- }
-@@ -681,7 +682,14 @@
-     }
+--- lib/Mail/SpamAssassin/HTML.pm	2015-04-29 04:56:49.000000000 +0900
++++ lib/Mail/SpamAssassin/HTML.pm	2015-08-30 00:46:40.902000000 +0900
+@@ -695,7 +695,8 @@
    }
    else {
--    $text =~ s/[ \t\n\r\f\x0b\xa0]+/ /g;
-+    if ($self->{normalize}) {
-+      $text =~ s/\xc2\xa0/ /g;           # no-break space
-+      $text =~ s/\xe3\x80\x80/ /g;       # ideographicspace
-+      $text =~ s/[ \t\n\r\f\x0b]+/ /g;
-+    }
-+    else {
-+      $text =~ s/[ \t\n\r\f\x0b\xa0]+/ /g;
-+    }
+     # NBSP:  UTF-8: C2 A0, ISO-8859-*: A0
+-    $text =~ s/[ \t\n\r\f\x0b]+|\xc2\xa0/ /gs;
++    # Ideographic Space: UTF-8: E3 80 80
++    $text =~ s/[ \t\n\r\f\x0b]+|(?:\xc2\xa0)+|(?:\xe3\x80\x80)+/ /gs;
      # trim leading whitespace if previous element was whitespace 
      # and current element is not invisible
      if (@{ $self->{text} } && !$display{invisible} &&
---- lib/Mail/SpamAssassin/Message/Node.pm.orig	2014-02-07 17:36:23.000000000 +0900
-+++ lib/Mail/SpamAssassin/Message/Node.pm	2014-03-04 11:22:38.000000000 +0900
-@@ -42,6 +42,7 @@
+@@ -742,7 +743,8 @@
+   my $invisible_for_bayes = 0;
+ 
+   # NBSP:  UTF-8: C2 A0, ISO-8859-*: A0
+-  if ($text !~ /^(?:[ \t\n\r\f\x0b]|\xc2\xa0)*\z/s) {
++  # Ideographic Space: UTF-8: E3 80 80
++  if ($text !~ /^(?:[ \t\n\r\f\x0b]|\xc2\xa0|\xe3\x80\x80)*\z/s) {
+     $invisible_for_bayes = $self->html_font_invisible($text);
+   }
+ 
+--- lib/Mail/SpamAssassin/Message/Node.pm	2015-04-29 04:56:48.000000000 +0900
++++ lib/Mail/SpamAssassin/Message/Node.pm	2015-08-30 00:25:32.534000000 +0900
+@@ -44,6 +44,7 @@
  use Mail::SpamAssassin::Constants qw(:sa);
  use Mail::SpamAssassin::HTML;
  use Mail::SpamAssassin::Logger;
 +use Mail::SpamAssassin::Util::Charset;
  
- =item new()
+ our($enc_utf8, $enc_w1252, $have_encode_detector);
+ BEGIN {
+@@ -407,6 +408,10 @@
  
-@@ -385,27 +386,10 @@
+   return $_[1]  unless $self->{normalize} && $enc_utf8;
  
- sub _normalize {
-   my ($self, $data, $charset) = @_;
--  return $data unless $self->{normalize};
-+  return wantarray ? ($data, $charset) : $data unless $self->{normalize};
++  # FIXME: to be merged.
++  my ($decoded_data, $charset_detected) = normalize_charset($_[1], $charset_declared, $return_decoded);
++  return wantarray ? ($decoded_data, $charset_detected) : $decoded_data;
++
+   warn "message: _normalize() was given characters, expected bytes: $_[1]\n"
+     if utf8::is_utf8($_[1]);
  
--  my $detected = Encode::Detect::Detector::detect($data);
--
--  my $converter;
--
--  if ($charset && $charset !~ /^us-ascii$/i &&
--      ($detected || 'none') !~ /^(?:UTF|EUC|ISO-2022|Shift_JIS|Big5|GB)/i) {
--      dbg("message: Using labeled charset $charset");
--      $converter = Encode::find_encoding($charset);
--  }
--
--  $converter = Encode::find_encoding($detected) unless $converter || !defined($detected);
--
--  return $data unless $converter;
--
--  dbg("message: Converting...");
--
--  my $rv = $converter->decode($data, 0);
--  utf8::downgrade($rv, 1);
--  return $rv
-+  my ($decoded_data, $detected_charset) = normalize_charset($data, $charset);
-+  return wantarray ? ($decoded_data, $detected_charset) : $decoded_data;
- }
+@@ -603,6 +608,7 @@
  
- =item rendered()
-@@ -428,8 +412,12 @@
-     # text/x-aol is ignored here, but looks like text/html ...
-     return(undef,undef) unless ( $self->{'type'} =~ /^text\/(?:plain|html)$/i );
- 
--    my $text = $self->_normalize($self->decode(), $self->{charset});
-+    my ($text, $charset) = $self->_normalize($self->decode(), $self->{charset});
-     my $raw = length($text);
-+    if ($self->{normalize}) {
-+      $self->{charset} = $charset;
-+      $self->{language} = get_language($text, $charset);
-+    }
+     my $text = $self->decode;  # QP and Base64 decoding, bytes
+     my $text_len = length($text);  # num of bytes in original charset encoding
++    my $charset;
  
      # render text/html always, or any other text|text/plain part as text/html
      # based on a heuristic which simulates a certain common mail client
-@@ -439,7 +427,7 @@
-     {
-       $self->{rendered_type} = 'text/html';
- 
--      my $html = Mail::SpamAssassin::HTML->new();	# object
-+      my $html = Mail::SpamAssassin::HTML->new({normalize=>$self->{normalize}});       # object
-       $html->parse($text);				# parse+render text
-       $self->{rendered} = $html->get_rendered_text();
-       $self->{visible_rendered} = $html->get_rendered_text(invisible => 0);
---- lib/Mail/SpamAssassin/Message.pm.orig	2014-02-07 17:36:28.000000000 +0900
-+++ lib/Mail/SpamAssassin/Message.pm	2014-03-04 11:27:31.000000000 +0900
-@@ -604,6 +604,8 @@
+@@ -622,7 +628,9 @@
+         # subroutine _normalize() to return Unicode text.  See Bug 7133
+         #
+         $character_semantics = 1;  # $text will be in characters
+-        $text = $self->_normalize($text, $self->{charset}, 1); # bytes to chars
++        ($text, $charset) = $self->_normalize($text, $self->{charset}, 1); # bytes to chars
++        $self->{charset} = $charset;
++        $self->{language} = get_language($text, $charset);
+       } elsif (!defined $self->{charset} ||
+                $self->{charset} =~ /^(?:US-ASCII|UTF-8)\z/i) {
+         # With some luck input can be interpreted as UTF-8, do not warn.
+@@ -657,7 +665,9 @@
+     else {  # plain text
+       if ($self->{normalize} && $enc_utf8) {
+         # request transcoded result as UTF-8 octets!
+-        $text = $self->_normalize($text, $self->{charset}, 0);
++        ($text, $charset) = $self->_normalize($text, $self->{charset}, 0);
++        $self->{charset} = $charset;
++        $self->{language} = get_language($text, $charset);
+       }
+       $self->{rendered_type} = $self->{type};
+       $self->{rendered} = $self->{'visible_rendered'} = $text;
+--- lib/Mail/SpamAssassin/Message.pm	2015-04-29 04:56:49.000000000 +0900
++++ lib/Mail/SpamAssassin/Message.pm	2015-08-30 00:52:32.210000000 +0900
+@@ -627,6 +627,8 @@
    delete $self->{'pristine_headers'};
    delete $self->{'line_ending'};
    delete $self->{'missing_head_body_separator'};
@@ -108,7 +82,7 @@
  
    my @toclean = ( $self );
  
-@@ -630,6 +632,8 @@
+@@ -653,6 +655,8 @@
      delete $part->{'invisible_rendered'};
      delete $part->{'type'};
      delete $part->{'rendered_type'};
@@ -117,58 +91,21 @@
  
      # if there are children nodes, add them to the queue of nodes to clean up
      if (exists $part->{'body_parts'}) {
-@@ -1085,7 +1089,14 @@
- 
+@@ -1143,6 +1147,9 @@
    # whitespace handling (warning: small changes have large effects!)
    $text =~ s/\n+\s*\n+/\f/gs;		# double newlines => form feed
--  $text =~ tr/ \t\n\r\x0b\xa0/ /s;	# whitespace => space
+ # $text =~ tr/ \t\n\r\x0b\xa0/ /s;	# whitespace (incl. VT, NBSP) => space
 +  if ($self->{normalize}) {
-+    $text =~ s/\xc2\xa0/ /g;		# no-break space => space
-+    $text =~ s/\xe3\x80\x80/ /g;	# ideographicspace => space
-+    $text =~ tr/ \t\n\r\x0b/ /s;	# whitespace => space
++    $text =~ s/\xc2\xa0|\xe3\x80\x80/ /g; # whitespace (NBSP, ideographic space) => space
 +  }
-+  else {
-+    $text =~ tr/ \t\n\r\x0b\xa0/ /s;	# whitespace => space
-+  }
-   $text =~ tr/\f/\n/;			# form feeds => newline
-   
-   # warn "message: $text";
-@@ -1142,7 +1153,14 @@
- 
-   # whitespace handling (warning: small changes have large effects!)
-   $text =~ s/\n+\s*\n+/\f/gs;		# double newlines => form feed
--  $text =~ tr/ \t\n\r\x0b\xa0/ /s;	# whitespace => space
-+  if ($self->{normalize}) {
-+    $text =~ s/\xc2\xa0/ /g;		# no-break space => space
-+    $text =~ s/\xe3\x80\x80/ /g;	# ideographicspace => space
-+    $text =~ tr/ \t\n\r\x0b/ /s;	# whitespace => space
-+  }
-+  else {
-+    $text =~ tr/ \t\n\r\x0b\xa0/ /s;	# whitespace => space
-+  }
+   $text =~ tr/ \t\n\r\x0b/ /s;		# whitespace (incl. VT) => space
    $text =~ tr/\f/\n/;			# form feeds => newline
  
-   my @textary = split_into_array_of_short_lines ($text);
-@@ -1193,7 +1211,14 @@
- 
-   # whitespace handling (warning: small changes have large effects!)
-   $text =~ s/\n+\s*\n+/\f/gs;		# double newlines => form feed
--  $text =~ tr/ \t\n\r\x0b\xa0/ /s;	# whitespace => space
-+  if ($self->{normalize}) {
-+    $text =~ s/\xc2\xa0/ /g;		# no-break space => space
-+    $text =~ s/\xe3\x80\x80/ /g;	# ideographicspace => space
-+    $text =~ tr/ \t\n\r\x0b/ /s;	# whitespace => space
-+  }
-+  else {
-+    $text =~ tr/ \t\n\r\x0b\xa0/ /s;	# whitespace => space
-+  }
-   $text =~ tr/\f/\n/;			# form feeds => newline
- 
-   my @textary = split_into_array_of_short_lines ($text);
-@@ -1269,6 +1294,28 @@
+@@ -1235,6 +1242,27 @@
+ }
  
  # ---------------------------------------------------------------------------
- 
++
 +sub get_language {
 +  my ($self) = @_;
 +
@@ -189,39 +126,28 @@
 +}
 +
 +# ---------------------------------------------------------------------------
-+
-+
+ 
  1;
  
- =back
---- lib/Mail/SpamAssassin/PerMsgStatus.pm.orig	2014-02-07 17:36:28.000000000 +0900
-+++ lib/Mail/SpamAssassin/PerMsgStatus.pm	2014-03-04 11:30:25.000000000 +0900
-@@ -53,6 +53,7 @@
- use warnings;
- use re 'taint';
+--- lib/Mail/SpamAssassin/PerMsgStatus.pm	2015-04-29 04:56:49.000000000 +0900
++++ lib/Mail/SpamAssassin/PerMsgStatus.pm	2015-08-30 00:55:35.583000000 +0900
+@@ -55,6 +55,7 @@
  
-+use Encode;
  use Errno qw(ENOENT);
  use Time::HiRes qw(time);
++use Encode;
  
-@@ -996,19 +997,41 @@
- 
-   # the report charset
-   my $report_charset = "; charset=iso-8859-1";
--  if ($self->{conf}->{report_charset}) {
--    $report_charset = "; charset=" . $self->{conf}->{report_charset};
--  }
- 
+ use Mail::SpamAssassin::Constants qw(:sa);
+ use Mail::SpamAssassin::AsyncLoop;
+@@ -1053,12 +1054,32 @@
    # the SpamAssassin report
    my $report = $self->get_report();
-+  if ($self->{conf}->{report_charset}) {
-+    $report_charset = "; charset=" . $self->{conf}->{report_charset};
-+  }
  
-   # If there are any wide characters, need to MIME-encode in UTF-8
-   # TODO: If $report_charset is something other than iso-8859-1/us-ascii, then
-   # we could try converting to that charset if possible
+-  # If there are any wide characters, need to MIME-encode in UTF-8
+-  # TODO: If $report_charset is something other than iso-8859-1/us-ascii, then
+-  # we could try converting to that charset if possible
 -  unless ($] < 5.008 || utf8::downgrade($report, 1)) {
++  # decode to utf-8.
 +  my $is_utf8 = 0;
 +  if ($self->{conf}->{normalize_charset}) {
 +    $report = Encode::decode_utf8($report);
@@ -236,8 +162,8 @@
 +      };
 +    }
 +  }
++  # encode to report_charset. encode to utf-8 if charset conversion fail.
 +  if ($is_utf8) {
-+    $is_utf8 = 1;
 +    eval {
 +      my $scratch = $report;
 +      $report = Encode::encode($self->{conf}->{report_charset},$scratch,Encode::FB_CROAK);
@@ -251,14 +177,22 @@
    }
  
    # get original headers, "pristine" if we can do it
---- lib/Mail/SpamAssassin/Plugin/Bayes.pm.orig	2014-02-07 17:36:27.000000000 +0900
-+++ lib/Mail/SpamAssassin/Plugin/Bayes.pm	2014-03-04 11:34:46.000000000 +0900
-@@ -223,6 +223,15 @@
+--- lib/Mail/SpamAssassin/Plugin/Bayes.pm	2015-04-29 04:56:47.000000000 +0900
++++ lib/Mail/SpamAssassin/Plugin/Bayes.pm	2015-08-30 00:25:43.443000000 +0900
+@@ -70,6 +70,7 @@
+   $MARK_PRESENCE_ONLY_HDRS
+   %HEADER_NAME_COMPRESSION
+   $OPPORTUNISTIC_LOCK_VALID
++  $SKIP_UTF8_SHORT_TOKENS_RE
+ };
+ 
+ # Which headers should we scan for tokens?  Don't use all of them, as it's easy
+@@ -226,6 +227,15 @@
  # will require a longer token than English ones.)
  use constant MAX_TOKEN_LENGTH => 15;
  
 +# Skip if a token is too short.
-+our $SKIP_UTF8_SHORT_TOKENS_RE = qr{(?:
++$SKIP_UTF8_SHORT_TOKENS_RE = qr{(?:
 +    [\x00-\x7F]                # 1 byte
 +  | [\xC0-\xDF][\x80-\xBF]     # 2 bytes
 +  | [\xE0-\xEF][\x80-\xBF]{2}  # 3 bytes
@@ -269,12 +203,12 @@
  ###########################################################################
  
  sub new {
-@@ -1039,9 +1048,28 @@
-   $msgdata->{bayes_token_body} = $msg->{msg}->get_visible_rendered_body_text_array();
-   $msgdata->{bayes_token_inviz} = $msg->{msg}->get_invisible_rendered_body_text_array();
-   @{$msgdata->{bayes_token_uris}} = $msg->get_uri_list();
+@@ -1048,9 +1058,28 @@
+     $pms->{msg}->get_mimepart_digests() if $t_src->{mimepart};
+   @{$msgdata->{bayes_token_uris}} =
+     $pms->get_uri_list() if $t_src->{uri};
 +  if ($self->{conf}->{normalize_charset}) {
-+    my $tokenizer = $self->get_tokenizer($msg);
++    my $tokenizer = $self->get_tokenizer($pms);
 +    if (ref($tokenizer)) {
 +      $msgdata->{bayes_token_body} = $tokenizer->tokenize($msgdata->{bayes_token_body});
 +      $msgdata->{bayes_token_inviz} = $tokenizer->tokenize($msgdata->{bayes_token_inviz});
@@ -298,41 +232,30 @@
  ###########################################################################
  
  # The calling functions expect a uniq'ed array of tokens ...
-@@ -1095,7 +1123,7 @@
-   # include quotes, .'s and -'s for URIs, and [$,]'s for Nigerian-scam strings,
-   # and ISO-8859-15 alphas.  Do not split on @'s; better results keeping it.
-   # Some useful tokens: "$31,000,000" "www.clock-speed.net" "f*ck" "Hits!"
--  tr/-A-Za-z0-9,\@\*\!_'"\$.\241-\377 / /cs;
-+  tr/-A-Za-z0-9,\@\*\!_'"\$.\200-\377 / /cs;
- 
-   # DO split on "..." or "--" or "---"; common formatting error resulting in
-   # hapaxes.  Keep the separator itself as a token, though, as long ones can
-@@ -1124,6 +1152,11 @@
-     #
-     next if ( defined $magic_re && $token =~ /$magic_re/ );
+@@ -1192,6 +1221,11 @@
+     next if $len < 3 ||
+ 	($token =~ /^(?:a(?:ble|l(?:ready|l)|n[dy]|re)|b(?:ecause|oth)|c(?:an|ome)|e(?:ach|mail|ven)|f(?:ew|irst|or|rom)|give|h(?:a(?:ve|s)|ttp)|i(?:n(?:formation|to)|t\'s)|just|know|l(?:ike|o(?:ng|ok))|m(?:a(?:de|il(?:(?:ing|to))?|ke|ny)|o(?:re|st)|uch)|n(?:eed|o[tw]|umber)|o(?:ff|n(?:ly|e)|ut|wn)|p(?:eople|lace)|right|s(?:ame|ee|uch)|t(?:h(?:at|is|rough|e)|ime)|using|w(?:eb|h(?:ere|y)|ith(?:out)?|or(?:ld|k))|y(?:ears?|ou(?:(?:\'re|r))?))$/i);
  
 +    # Skip short UTF-8 tokens.
 +    if ($self->{conf}->{normalize_charset}) {
 +      next if ($token =~ /^$SKIP_UTF8_SHORT_TOKENS_RE$/o);
 +    }
 +
-     # *do* keep 3-byte tokens; there's some solid signs in there
-     my $len = length($token);
+     # are we in the body?  If so, apply some body-specific breakouts
+     if ($region == 1 || $region == 2) {
+       if (CHEW_BODY_MAILADDRS && $token =~ /\S\@\S/i) {
+@@ -1222,14 +1256,16 @@
+ 	}
+       }
  
-@@ -1152,14 +1185,16 @@
-     # the domain ".net" appeared in the To header.
-     #
-     if ($len > MAX_TOKEN_LENGTH && $token !~ /\*/) {
 -      if (TOKENIZE_LONG_8BIT_SEQS_AS_TUPLES && $token =~ /[\xa0-\xff]{2}/) {
 -	# Matt sez: "Could be asian? Autrijus suggested doing character ngrams,
 -	# but I'm doing tuples to keep the dbs small(er)."  Sounds like a plan
 -	# to me! (jm)
 -	while ($token =~ s/^(..?)//) {
 -	  push (@rettokens, "8:$1");
--	}
--	next;
 +      unless ($self->{conf}->{normalize_charset}) {
-+        if (TOKENIZE_LONG_8BIT_SEQS_AS_TUPLES && $token =~ /[\xa0-\xff]{2}/) {
++	if (TOKENIZE_LONG_8BIT_SEQS_AS_TUPLES && $token =~ /[\xa0-\xff]{2}/) {
 +	  # Matt sez: "Could be asian? Autrijus suggested doing character ngrams,
 +	  # but I'm doing tuples to keep the dbs small(er)."  Sounds like a plan
 +	  # to me! (jm)
@@ -340,13 +263,13 @@
 +	    push (@rettokens, "8:$1");
 +	  }
 +	  next;
-+        }
+ 	}
+-	next;
        }
  
        if (($region == 0 && HDRS_TOKENIZE_LONG_TOKENS_AS_SKIPS)
-diff -uNr /dev/null lib/Mail/SpamAssassin/Plugin/Tokenizer/MeCab.pm
---- /dev/null	1970-01-01 09:00:00.000000000 +0900
-+++ lib/Mail/SpamAssassin/Plugin/Tokenizer/MeCab.pm	2011-07-14 22:29:19.000000000 +0900
+--- lib/Mail/SpamAssassin/Plugin/Tokenizer/MeCab.pm	1970-01-01 09:00:00.000000000 +0900
++++ lib/Mail/SpamAssassin/Plugin/Tokenizer/MeCab.pm	2015-08-30 00:25:32.537000000 +0900
 @@ -0,0 +1,84 @@
 +# <@LICENSE>
 +# Copyright 2004 Apache Software Foundation
@@ -432,9 +355,8 @@ diff -uNr /dev/null lib/Mail/SpamAssassin/Plugin/Tokenizer/MeCab.pm
 +
 +1;
 +
-diff -uNr /dev/null lib/Mail/SpamAssassin/Plugin/Tokenizer/SimpleJA.pm
---- /dev/null	1970-01-01 09:00:00.000000000 +0900
-+++ lib/Mail/SpamAssassin/Plugin/Tokenizer/SimpleJA.pm	2011-07-14 22:29:19.000000000 +0900
+--- lib/Mail/SpamAssassin/Plugin/Tokenizer/SimpleJA.pm	1970-01-01 09:00:00.000000000 +0900
++++ lib/Mail/SpamAssassin/Plugin/Tokenizer/SimpleJA.pm	2015-08-30 00:25:32.538000000 +0900
 @@ -0,0 +1,111 @@
 +# <@LICENSE>
 +# Copyright 2004 Apache Software Foundation
@@ -547,9 +469,8 @@ diff -uNr /dev/null lib/Mail/SpamAssassin/Plugin/Tokenizer/SimpleJA.pm
 +
 +1;
 +
-diff -uNr /dev/null lib/Mail/SpamAssassin/Plugin/Tokenizer.pm
---- /dev/null	1970-01-01 09:00:00.000000000 +0900
-+++ lib/Mail/SpamAssassin/Plugin/Tokenizer.pm	2011-07-14 22:35:46.000000000 +0900
+--- lib/Mail/SpamAssassin/Plugin/Tokenizer.pm	1970-01-01 09:00:00.000000000 +0900
++++ lib/Mail/SpamAssassin/Plugin/Tokenizer.pm	2015-08-30 00:25:32.538000000 +0900
 @@ -0,0 +1,115 @@
 +# <@LICENSE>
 +# Copyright 2004 Apache Software Foundation
@@ -666,10 +587,9 @@ diff -uNr /dev/null lib/Mail/SpamAssassin/Plugin/Tokenizer.pm
 +
 +1;
 +
-diff -uNr /dev/null lib/Mail/SpamAssassin/Util/Charset.pm
---- /dev/null	1970-01-01 09:00:00.000000000 +0900
-+++ lib/Mail/SpamAssassin/Util/Charset.pm	2011-07-14 22:29:19.000000000 +0900
-@@ -0,0 +1,471 @@
+--- lib/Mail/SpamAssassin/Util/Charset.pm	1970-01-01 09:00:00.000000000 +0900
++++ lib/Mail/SpamAssassin/Util/Charset.pm	2015-08-30 00:25:32.539000000 +0900
+@@ -0,0 +1,473 @@
 +# <@LICENSE>
 +# Copyright 2006 Apache Software Foundation
 +#
@@ -959,6 +879,7 @@ diff -uNr /dev/null lib/Mail/SpamAssassin/Util/Charset.pm
 +  Encode::Alias::define_alias( qr/^Shift_JIS$/i => ' "cp932"' );
 +  if (HAS_ENCODE_EUCJPMS) {
 +    Encode::Alias::define_alias( qr/^iso-2022-jp$/i => ' "cp50221"' );
++    Encode::Alias::define_alias( qr/^euc-jp$/i => ' "cp51932"' );
 +  }
 +}
 +
@@ -998,6 +919,7 @@ diff -uNr /dev/null lib/Mail/SpamAssassin/Util/Charset.pm
 +sub normalize_charset {
 +  my $str = shift;
 +  my $charset = shift;
++  my $return_decoded = shift;
 +
 +  return wantarray ? ($str, 'ascii')  : $str unless ($str);
 +
@@ -1017,10 +939,10 @@ diff -uNr /dev/null lib/Mail/SpamAssassin/Util/Charset.pm
 +    return ($str, undef);
 +  }
 +  $decoded =~ s/^\x{feff}//g;
-+  $decoded = Encode::encode_utf8($decoded);
++  $decoded = Encode::encode_utf8($decoded) if $return_decoded;
 +
 +  # unfold hiragana, katakana and han
-+  if ($detected =~ /^(?:UTF|EUC|BIG5|GB|SHIFTJIS|ISO-2022|CP969$|CP932$|CP949|CP50221$)/i) {
++  if ($detected =~ /^(?:UTF|EUC|BIG5|GB|SHIFTJIS|ISO-2022|CP969$|CP932$|CP949$|CP50220|CP50221$)/i) {
 +    $decoded =~ s/($KANA_HAN_RE)\012($KANA_HAN_RE)/$1$2/og;
 +  }
 +  return wantarray ? ($decoded, $detected) : $decoded;
@@ -1042,7 +964,7 @@ diff -uNr /dev/null lib/Mail/SpamAssassin/Util/Charset.pm
 +  return (undef, undef) if ($encoding =~ /^UTF-32$/i and $str !~ /^(?:\xFF\xFE\x00\x00|\x00\x00\xFE\xFF)/);
 +  return (undef, undef) if ($encoding =~ /^UTF-16$/i and $str !~ /^(?:\xFF\xFE|\xFE\xFF)/);
 +
-+  #$encoding = _get_alias($encoding);
++  $encoding = _get_alias($encoding);
 +  my $encoder = Encode::find_encoding($encoding);
 +  if (ref($encoder)) {
 +    $decoded = $encoder->decode($str,Encode::FB_QUIET);
