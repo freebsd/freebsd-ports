@@ -41,7 +41,11 @@ WRKSRC=		${WRKDIR}/x10.dist
 
 OPTIONS_DEFINE=	EXAMPLES
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
+
+.if ${JAVA_PORT_VERSION:M1.8.*}
+BROKEN=		Does not build with JDK 1.8
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's/value="make"/value="gmake"/g' \
@@ -72,4 +76,4 @@ do-install:
 	${CP} -R ${WRKSRC}/samples/* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
