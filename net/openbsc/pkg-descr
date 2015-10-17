@@ -1,0 +1,5 @@
+OpenBSC is a minimalistic implementation of the GSM Network, with
+particular emphasis on the functionality typically provided by the BSC,
+MSC, HLR, VLR and SMSC.
+
+WWW: http://openbsc.osmocom.org/trac/
