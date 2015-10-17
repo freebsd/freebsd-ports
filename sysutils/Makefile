@@ -27,6 +27,7 @@
     SUBDIR += aird
     SUBDIR += am-utils
     SUBDIR += amrstat
+    SUBDIR += amtc
     SUBDIR += anacron
     SUBDIR += and
     SUBDIR += ansible
