@@ -13,15 +13,14 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PECL wrapper around the gpgme library
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
 
-CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--with-gnupg=${LOCALBASE}/include/gpgme
-LDFLAGS+=	-L${LOCALBASE}/lib
 USE_PHP=	yes
 USE_PHPEXT=	yes
-USES=		tar:tgz
+USES=		localbase tar:tgz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$GNUPG_DIR/lib|${LOCALBASE}/lib|; s| -ldl||g' ${WRKSRC}/config.m4
