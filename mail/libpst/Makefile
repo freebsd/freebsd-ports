@@ -12,6 +12,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tool for converting Outlook .pst files to mbox and other formats
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgsf-1.so:${PORTSDIR}/devel/libgsf
 
@@ -20,10 +21,8 @@ OPTIONS_SUB=	yes
 PST2DII_DESC=	Allow Summation Document Image Information output
 
 CONFIGURE_ARGS=	--disable-python --enable-libpst-shared
-CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 USE_LDCONFIG=	yes
 USES=		gmake iconv libtool pathfix pkgconfig
 
