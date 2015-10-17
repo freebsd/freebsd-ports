@@ -9,6 +9,7 @@
 %%SITE_PERL%%/Net/OpenSSH/ConnectionCache.pm
 %%SITE_PERL%%/Net/OpenSSH/Constants.pm
 %%SITE_PERL%%/Net/OpenSSH/ModuleLoader.pm
+%%SITE_PERL%%/Net/OpenSSH/ObjectRemote.pm
 %%SITE_PERL%%/Net/OpenSSH/OSTracer.pm
 %%SITE_PERL%%/Net/OpenSSH/SSH.pm
 %%SITE_PERL%%/Net/OpenSSH/ShellQuoter.pm
