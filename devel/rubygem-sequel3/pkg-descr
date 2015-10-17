@@ -11,4 +11,4 @@ Sequel is a database toolkit for Ruby.
     * Sequel currently has adapters for ADO, DB2, DBI, Informix, JDBC,
 	MySQL, ODBC, OpenBase, Oracle, PostgreSQL and SQLite3.
 
-WWW: http://rubygems.org/gems/sequel3/
+WWW: http://sequel.jeremyevans.net/
