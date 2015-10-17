@@ -1,7 +1,7 @@
 # Created by: TAOKA Fumiyoshi
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese mail perl5
 PKGNAMEPREFIX=	ja-
 
@@ -24,8 +24,6 @@ PLIST=		${WRKDIR}/pkg-plist
 TOKENIZER_PRE=	tokenizer.pre
 
 PLIST_SUB+=	TOKENIZER_PRE=${TOKENIZER_PRE}
-
-BROKEN=		Requires update for 3.4.1
 
 pre-install:
 	@${CAT} ${EXTRA_PATCHES:S/.patch/.plist/} > ${PLIST}
