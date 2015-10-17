@@ -1101,6 +1101,7 @@
     SUBDIR += yersinia
     SUBDIR += ykclient
     SUBDIR += ykpers
+    SUBDIR += yubikey-personalization
     SUBDIR += zebedee
     SUBDIR += zenmap
     SUBDIR += zxid

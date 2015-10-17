@@ -1,0 +1,17 @@
+bin/ykchalresp
+bin/ykinfo
+bin/ykpersonalize
+include/ykpers-1/ykcore.h
+include/ykpers-1/ykdef.h
+include/ykpers-1/ykpbkdf2.h
+include/ykpers-1/ykpers-version.h
+include/ykpers-1/ykpers.h
+include/ykpers-1/ykstatus.h
+lib/libykpers-1.a
+lib/libykpers-1.so
+lib/libykpers-1.so.1
+lib/libykpers-1.so.1.17.2
+libdata/pkgconfig/ykpers-1.pc
+man/man1/ykchalresp.1.gz
+man/man1/ykinfo.1.gz
+man/man1/ykpersonalize.1.gz
