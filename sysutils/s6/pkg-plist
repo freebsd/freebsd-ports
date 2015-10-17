@@ -68,8 +68,8 @@ include/s6/s6lock.h
 lib/libs6.so
 lib/libs6.so.2
 lib/libs6.so.2.2
-lib/libs6.so.2.2.0
-lib/libs6.so.2.2.0.1
+lib/libs6.so.2.2.2
+lib/libs6.so.2.2.2.0
 lib/s6/libs6.a
 libexec/s6lockd-helper
 sbin/s6-applyuidgid
