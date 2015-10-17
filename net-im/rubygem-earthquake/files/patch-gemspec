@@ -1,0 +1,11 @@
+--- earthquake.gemspec.orig	2015-10-16 20:05:15 UTC
++++ earthquake.gemspec
+@@ -31,7 +31,7 @@ Gem::Specification.new do |s|
+       s.add_runtime_dependency(%q<launchy>, [">= 0"])
+       s.add_runtime_dependency(%q<oauth>, [">= 0"])
+       s.add_runtime_dependency(%q<jugyo-twitter_oauth>, ["= 0.5.0.pre5"])
+-      s.add_runtime_dependency(%q<slop>, ["~> 3.4.0"])
++      s.add_runtime_dependency(%q<slop>, [">= 3.4.0"])
+       s.add_development_dependency(%q<rspec>, ["~> 2.0"])
+       s.add_development_dependency(%q<bundler>, [">= 0"])
+     else
