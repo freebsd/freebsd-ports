@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2015-09-22 13:43:19 UTC
++++ Makefile.am
+@@ -63,7 +63,7 @@ libykpers_1_la_LDFLAGS = -no-undefined \
+ 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ EXTRA_libykpers_1_la_DEPENDENCIES = libykpers-1.map
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(libdir)/../libdata/pkgconfig
+ pkgconfig_DATA = ykpers-1.pc
+ 
+ if HAVE_LD_VERSION_SCRIPT
