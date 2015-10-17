@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Team-based, networked, 2D shooter set in zero-gravity
 
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}" \
 		--mandir="${PREFIX}/man" \
@@ -24,28 +27,21 @@ OPTIONS_MULTI_COMPONENTS=CLIENT SERVER METASERVER SERVERSCANNER
 OPTIONS_DEFAULT=CLIENT SERVER
 OPTIONS_SUB=	yes
 
-CLIENT_DESC=	Build client
-SERVER_DESC=	Build server
-METASERVER_DESC=Build metaserver
-SERVERSCANNER_DESC=Build server scanner
+CLIENT_DESC=		Build client
+SERVER_DESC=		Build server
+METASERVER_DESC=	Build metaserver
+SERVERSCANNER_DESC=	Build server scanner
 
-CLIENT_CONFIGURE_OFF=		--disable-client
+CLIENT_CONFIGURE_OFF=	--disable-client
+CLIENT_USE=		SDL=sdl,image,ttf,mixer GL=gl
+CLIENT_DESKTOP_ENTRIES= "Leges Motus" \
+			"" \
+			"${DATADIR}/sprites/blue_head32.png" \
+			"legesmotus" \
+			"Game;ActionGame;" \
+			""
 SERVER_CONFIGURE_OFF=		--disable-server
 METASERVER_CONFIGURE_ON=	--enable-metaserver
 SERVERSCANNER_CONFIGURE_ON=	--enable-serverscanner
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCLIENT}
-USE_SDL=	sdl image ttf mixer
-USE_GL=		gl
-
-DESKTOP_ENTRIES="Leges Motus" \
-		"A team-based, networked, 2D shooter set in zero-gravity" \
-		"${DATADIR}/sprites/blue_head32.png" \
-		"legesmotus" \
-		"Game;ActionGame;" \
-		""
-.endif
 
 .include <bsd.port.mk>
