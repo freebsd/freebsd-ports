@@ -46,8 +46,8 @@ DHCP_PORTREVISION=	${PORTREVISION_RELAY}
 .else
 CONFLICTS=	isc-dhcp3?-server-[0-9]* isc-dhcp4[12]-server-[0-9]*
 DHCP_PORTREVISION=	${PORTREVISION_SERVER}
-MAKE_JOBS_UNSAFE=	yes
 .endif
+MAKE_JOBS_UNSAFE=	yes
 
 .if ${SUBSYS} == server
 USERS=		dhcpd
