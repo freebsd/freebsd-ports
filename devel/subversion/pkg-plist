@@ -156,7 +156,7 @@ share/pkgconfig/libsvn_fs_util.pc
 share/pkgconfig/libsvn_fs_x.pc
 share/pkgconfig/libsvn_ra.pc
 share/pkgconfig/libsvn_ra_local.pc
-share/pkgconfig/libsvn_ra_serf.pc
+%%SERF%%share/pkgconfig/libsvn_ra_serf.pc
 share/pkgconfig/libsvn_ra_svn.pc
 share/pkgconfig/libsvn_repos.pc
 share/pkgconfig/libsvn_subr.pc
@@ -189,10 +189,10 @@ share/pkgconfig/libsvn_wc.pc
 %%DATADIR%%/buildbot/slaves/svn-x64-centos/svncheck.sh
 %%DATADIR%%/buildbot/slaves/svn-x64-centos/svnclean.sh
 %%DATADIR%%/buildbot/slaves/svn-x64-centos/svnlog.sh
-%%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared-daily-ra_serf/svnbuild.sh
-%%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared-daily-ra_serf/svncheck.sh
-%%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared-daily-ra_serf/svnclean.sh
-%%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared-daily-ra_serf/svnlog.sh
+%%SERF%%%%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared-daily-ra_serf/svnbuild.sh
+%%SERF%%%%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared-daily-ra_serf/svncheck.sh
+%%SERF%%%%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared-daily-ra_serf/svnclean.sh
+%%SERF%%%%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared-daily-ra_serf/svnlog.sh
 %%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared/svnbuild.sh
 %%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared/svncheck.sh
 %%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared/svnclean.sh
