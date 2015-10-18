@@ -17,7 +17,7 @@ GNU_CONFIGURE=	yes
 USES=		desktop-file-utils execinfo gettext gmake iconv libtool \
 		pkgconfig shebangfix tar:bzip2
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--disable-alsa --disable-nullout --disable-gtk3 --disable-static
+CONFIGURE_ARGS=	--disable-alsa --disable-nullout --disable-static
 CPPFLAGS+=	-I../dumb/dumb-kode54/include -I../../plugins/libmp4ff \
 		-I../../plugins/gme/game-music-emu-0.6pre \
 		-I${LOCALBASE}/include
@@ -32,13 +32,13 @@ OPTIONS_DEFINE=	MAD PULSEAUDIO GUI VFS LASTFM ART SUPEREQ SID FFAP VTX \
 		MUSEPACK WILDMIDI TTA DCA AAC MMS SHN AO SHELLEXEC NLS M3U \
 		PSF ADPLUG DSP MONO2STEREO CONVERTER VFS_ZIP ALAC PLTBROWSER \
 		WMA
-OPTIONS_DEFAULT=	MAD GUI VFS LASTFM ART SUPEREQ SID FFAP VTX HOSTKEYS \
+OPTIONS_DEFAULT=	MAD GTK2 VFS LASTFM ART SUPEREQ SID FFAP VTX HOSTKEYS \
 		OGG FLAC SNDFILE WAVPACK CDDA GME DUMB NOTIFY MUSEPACK \
 		WILDMIDI TTA DCA AAC MMS SHN AO SHELLEXEC M3U PSF ADPLUG DSP \
 		MONO2STEREO CONVERTER VFS_ZIP HOTKEYS ALAC PLTBROWSER WMA
 
 PULSEAUDIO_DESC=	PulseAudio output plugin (unsupported)
-GUI_DESC=		Standard GTK+2 user interface plugin
+GUI_DESC=		Standard GUI plugin
 VFS_DESC=		HTTP streaming VFS plugin
 LASTFM_DESC=		Last.fm/Libre.fm scrobbler plugin
 ART_DESC=		Cover artwork loader plugin
@@ -63,7 +63,10 @@ CONVERTER_DESC=		Plugin for converting files from/to any formats
 VFS_ZIP_DESC=		Play files directly from ZIP archives
 PLTBROWSER_DESC=	Playlist browser GUI plugin
 
-OPTIONS_SUB=	yes
+OPTIONS_SUB=		yes
+OPTIONS_RADIO+=		GUI
+OPTIONS_RADIO_GUI=	GTK2 GTK3
+GUI_IMPLIES=		CONVERTER
 
 MAD_LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad
 MAD_CONFIGURE_OFF=	--disable-mad
@@ -71,9 +74,19 @@ MAD_CONFIGURE_OFF=	--disable-mad
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
 
-GUI_USE=	gnome=gtk20,glib20
-GUI_CONFIGURE_OFF=	--disable-gtkui --disable-gtk3
-GUI_IMPLIES=		CONVERTER
+GTK2_USE=		gnome=gtk20,glib20
+GTK2_CONFIGURE_OFF=	--disable-gtk2
+GTK2_CONFIGURE_ON=	--enable-gtk2
+GTK2_VARS=		GTK_VER=2
+
+GTK3_USE=		gnome=gtk30
+GTK3_CONFIGURE_OFF=	--disable-gtk3
+GTK3_CONFIGURE_ON=	--enable-gtk3
+GTK3_VARS=		GTK_VER=3
+
+PLIST_SUB+=		GTK_VER=${GTK_VER}
+
+GUI_CONFIGURE_OFF=	--disable-gtk2 --disable-gtk3
 
 VFS_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 VFS_CONFIGURE_OFF=	--disable-vfs-curl
