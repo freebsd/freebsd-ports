@@ -135,3 +135,15 @@
                              const char* suffix, const char* mode);
  
  struct AsDOT {
+--- v8/src/log-utils.h.orig	2015-10-13 21:04:45.000000000 +0200
++++ v8/src/log-utils.h	2015-10-17 10:17:35.535561000 +0200
+@@ -5,6 +5,9 @@
+ #ifndef V8_LOG_UTILS_H_
+ #define V8_LOG_UTILS_H_
+ 
++#include <cstdarg>
++#include <cstdio>
++
+ #include "src/allocation.h"
+ #include "src/base/platform/mutex.h"
+ #include "src/flags.h"
