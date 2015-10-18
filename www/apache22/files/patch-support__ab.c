@@ -1,5 +1,3 @@
-Backport ab from apache 2.4.x (r1663405)
-=============================================================
 --- support/ab.c.orig	2014-03-12 11:53:12 UTC
 +++ support/ab.c
 @@ -156,25 +156,8 @@
@@ -1283,7 +1281,7 @@ Backport ab from apache 2.4.x (r1663405)
                  break;
              case 'h':
                  usage(argv[0]);
-@@ -2221,26 +2296,33 @@ int main(int argc, const char * const ar
+@@ -2221,26 +2296,35 @@ int main(int argc, const char * const ar
              case 'V':
                  copyright();
                  return 0;
@@ -1309,8 +1307,10 @@ Backport ab from apache 2.4.x (r1663405)
                      meth = SSLv2_client_method();
  #endif
 -                } else if (strncasecmp(optarg, "SSL3", 4) == 0) {
++#ifndef OPENSSL_NO_SSL3
 +                } else if (strncasecmp(opt_arg, "SSL3", 4) == 0) {
                      meth = SSLv3_client_method();
++#endif
  #ifdef HAVE_TLSV1_X
 -                } else if (strncasecmp(optarg, "TLS1.1", 6) == 0) {
 +                } else if (strncasecmp(opt_arg, "TLS1.1", 6) == 0) {
@@ -1324,7 +1324,7 @@ Backport ab from apache 2.4.x (r1663405)
                      meth = TLSv1_client_method();
                  }
                  break;
-@@ -2253,6 +2335,10 @@ int main(int argc, const char * const ar
+@@ -2253,6 +2337,10 @@ int main(int argc, const char * const ar
          usage(argv[0]);
      }
  
@@ -1335,7 +1335,7 @@ Backport ab from apache 2.4.x (r1663405)
      if (parse_url(apr_pstrdup(cntxt, opt->argv[opt->ind++]))) {
          fprintf(stderr, "%s: invalid URL\n", argv[0]);
          usage(argv[0]);
-@@ -2296,6 +2382,10 @@ int main(int argc, const char * const ar
+@@ -2296,6 +2384,10 @@ int main(int argc, const char * const ar
          exit(1);
      }
      SSL_CTX_set_options(ssl_ctx, SSL_OP_ALL);
