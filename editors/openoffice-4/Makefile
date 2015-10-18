@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION}
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	editors java
 MASTER_SITES=	APACHE/openoffice/${PORTVERSION}/source \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \
@@ -157,10 +157,6 @@ MMEDIA_CONFIGURE_ENABLE=	gstreamer
 MMEDIA_USE=			GSTREAMER=yes
 
 .include <bsd.port.pre.mk>
-
-.if ${JAVA_PORT_VERSION:M1.8.*}
-BROKEN=		Does not build with JDK 1.8
-.endif
 
 .include <${FILESDIR}/Makefile.localized>
 
