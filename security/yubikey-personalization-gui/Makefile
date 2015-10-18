@@ -9,7 +9,7 @@ COMMENT=	Graphical YubiKey personalization tool
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libykpers-1.so:${PORTSDIR}/security/yubikey-personalization
+LIB_DEPENDS=	libykpers-1.so:${PORTSDIR}/security/ykpers
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Yubico
