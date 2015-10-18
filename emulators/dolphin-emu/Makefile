@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dolphin-emu
-PORTVERSION=	4.0.2
-PORTREVISION=	4
+DISTVERSION=	5.0-rc
 CATEGORIES=	emulators
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -12,33 +11,44 @@ COMMENT=	Gamecube and Wii Emulator
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
+# Notes on dependencies:
+# - keep enet from externals as Dolphin's version diverges
+# - xxhash and SOIL are not (yet) in ports
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		liblzo2.so:${PORTSDIR}/archivers/lzo2 \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libSoundTouch.so:${PORTSDIR}/audio/soundtouch \
-		libpolarssl.so.5:${PORTSDIR}/security/polarssl
+		libmbedtls.so.9:${PORTSDIR}/security/polarssl13 \
+		libsfml-system.so:${PORTSDIR}/devel/sfml
 
 USE_GITHUB=	yes
 GH_PROJECT=	dolphin
 
-USE_SDL=	sdl
-USE_XORG=	ice xext x11 xrandr xi
+USE_SDL=	sdl2
+USE_XORG=	ice x11 xext xi xrandr
 USE_WX=		3.0+
-WX_UNICODE=	yes
 USE_GL=		gl glew glu
 
-USES=		dos2unix cmake iconv openal pkgconfig tar:tgz compiler:c++11-lib
+USES=		cmake compiler:c++11-lib dos2unix iconv openal pkgconfig tar:tgz
 DOS2UNIX_REGEX=	.*\.(h|c|cpp)
 
-NOT_FOR_ARCHS=	armv6
-
 # Disable ALSA (emulated) and ao (buggy)
-CMAKE_ARGS+=	-DOPENMP:BOOL=OFF \
+CMAKE_ARGS+=	-DTRY_X11:BOOL=ON \
+		-DDISABLE_WX:BOOL=OFF \
+		-DENABLE_QT:BOOL=OFF \
+		-DENABLE_PCH:BOOL=OFF \
+		-DENABLE_SDL:BOOL=ON \
 		-DDISABLE_ALSA:BOOL=ON \
 		-DDISABLE_AO:BOOL=ON \
 		-DDISABLE_BLUEZ:BOOL=ON \
-		-DUSE_X11:BOOL=ON \
+		-DDISABLE_OPENAL:BOOL=OFF \
+		-DCMAKE_REQUIRED_INCLUDES:PATH="${LOCALBASE}/include" \
+		-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
 		-DCMAKE_INSTALL_RPATH_USE_LINK_PATH:BOOL=ON
+
+# XXX Bypass git check (and set a dummy -unused- revision)
+CMAKE_ARGS+=	-DDOLPHIN_WC_BRANCH:STRING="stable" \
+		-DDOLPHIN_WC_REVISION:STRING="1"
 
 OPTIONS_DEFINE=	PULSEAUDIO PORTAUDIO DEBUG FRAMEDUMPS UPNP NLS
 OPTIONS_DEFAULT=	PORTAUDIO FRAMEDUMPS UPNP NLS
@@ -69,15 +79,20 @@ NLS_CMAKE_OFF=	-DDISABLE_NLS:BOOL=ON
 
 .include <bsd.port.pre.mk>
 
-# XXX Temporary workaround for ports/184540
-.if ${PORT_OPTIONS:MDEBUG}
-INSTALL_TARGET=	install
+# JIT-enabled binaries are amd64 only
+.if ${ARCH} != "amd64"
+CMAKE_ARGS+=	-DENABLE_GENERIC:BOOL=ON
 .endif
 
-.if !empty(ICONV_LIB)
-CMAKE_ARGS+=	-DICONV_LINK:BOOL=ON
-.else
-CMAKE_ARGS+=	-DICONV_LINK:BOOL=OFF
+# When building with Gcc, needs Gcc 4.9+
+.if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} < 49
+USE_GCC=	4.9+
+# Enable std::stoul()
+CXXFLAGS+=	-D_GLIBCXX_USE_C99
+# Enable log2f(), exp2f() and roundf()
+CXXFLAGS+=	-D_GLIBCXX_USE_C99_MATH_TR1
+# Turn on extra long double versions of math functions, needed for cmath
+CXXFLAGS+=	-D__ISO_C_VISIBLE=1999 -D_DECLARE_C99_LDBL_MATH
 .endif
 
 .include <bsd.port.post.mk>

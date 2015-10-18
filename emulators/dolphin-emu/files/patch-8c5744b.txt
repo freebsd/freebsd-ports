@@ -1,20 +1,11 @@
 commit 8c5744bca705a0895bd51c966a30171ee2bab43a
 Author: Marisa Kirisame <marisa@sayachan.org>
-Date:   Tue, 29 Sep 2015 23:10:31 +0200
+Date:   Tue Sep 29 23:10:31 2015 +0200
 
-    miniupnpc API version 14 changed the upnpDiscover functions,
-    adding an argument for TTL (should default to 2) this enables support for
-    that should the build system have that specific version installed, the
-    miniupnpc bundled in the project is unchanged
----
- CMakeLists.txt                     |  5 ++++-
- CMakeTests/FindMiniupnpc.cmake     | 39 +++++++++++++++++++++++++++++++++-----
- Source/Core/Core/NetPlayServer.cpp |  4 ++++
- 3 files changed, 42 insertions(+), 6 deletions(-)
+    miniupnpc API version 14 changed the upnpDiscover functions, adding an argument for TTL (should default to 2)
+    this enables support for that should the build system have that specific version installed, the miniupnpc bundled in the project is unchanged
 
-diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 291efee..7ac0679 100644
---- CMakeLists.txt
+--- CMakeLists.txt.orig
 +++ CMakeLists.txt
 @@ -690,9 +690,12 @@ if(USE_UPNP)
  	if(NOT APPLE AND NOT ANDROID)
@@ -30,9 +21,7 @@ index 291efee..7ac0679 100644
  	else()
  		message("Using static miniupnpc from Externals")
  		add_subdirectory(Externals/miniupnpc)
-diff --git a/CMakeTests/FindMiniupnpc.cmake b/CMakeTests/FindMiniupnpc.cmake
-index bb1048c..5301d40 100644
---- CMakeTests/FindMiniupnpc.cmake
+--- CMakeTests/FindMiniupnpc.cmake.orig
 +++ CMakeTests/FindMiniupnpc.cmake
 @@ -58,6 +58,30 @@ if (MINIUPNP_FOUND)
  	#include <stdio.h>
@@ -119,18 +108,16 @@ index bb1048c..5301d40 100644
  else ()
  	message (STATUS "Could not find miniupnp")
  endif ()
-diff --git a/Source/Core/Core/NetPlayServer.cpp b/Source/Core/Core/NetPlayServer.cpp
-index 7ed283a..27b46c9 100644
---- Source/Core/Core/Src/NetPlayServer.cpp
-+++ Source/Core/Core/Src/NetPlayServer.cpp
-@@ -552,7 +552,11 @@ bool NetPlayServer::initUPnP()
+--- Source/Core/Core/NetPlayServer.cpp.orig
++++ Source/Core/Core/NetPlayServer.cpp
+@@ -904,7 +904,11 @@ bool NetPlayServer::initUPnP()
  	memset(&m_upnp_data, 0, sizeof(IGDdatas));
  
  	// Find all UPnP devices
 +#ifdef UPNPDISCOVER_HAS_TTL
-+	devlist = upnpDiscover(2000, NULL, NULL, 0, 0, 2, &upnperror);
++	UPNPDev *devlist = upnpDiscover(2000, nullptr, nullptr, 0, 0, 2, &upnperror);
 +#else
- 	devlist = upnpDiscover(2000, NULL, NULL, 0, 0, &upnperror);
+ 	UPNPDev *devlist = upnpDiscover(2000, nullptr, nullptr, 0, 0, &upnperror);
 +#endif
  	if (!devlist)
  	{
