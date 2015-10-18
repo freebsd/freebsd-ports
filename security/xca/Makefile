@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xca
-PORTVERSION=	0.9.3
-PORTREVISION=	3
+PORTVERSION=	1.3.2
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -15,41 +14,35 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
 
+USES=		desktop-file-utils gmake localbase pkgconfig shared-mime-info
 USE_OPENSSL=	yes
-USE_QT4=	gui moc_build uic_build qmake_build rcc_build linguist_build
-USES=		desktop-file-utils gmake shared-mime-info
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-openssl=${OPENSSLDIR} \
+		--with-qt=${QT_PREFIX}
+MAKE_ARGS=	DOCTOOL="${TRUE}"
 DESTDIRNAME=	destdir
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=		DOCS
+OPTIONS_SINGLE=		TOOLKIT
+OPTIONS_SINGLE_TOOLKIT=	QT4 QT5
+OPTIONS_DEFAULT=	QT4
 
-BROKEN_sparc64=	fails to link
-
-.if ${OSVERSION} >= 1000054
-LD_CXX_LIB=	-lc++
-.endif
+QT4_USE=		qt4=gui,linguist_build,moc_build,qmake_build \
+			qt4=rcc_build,uic_build
+QT5_USE=		qt5=widgets,buildtools_build,linguist_build
+TOOLKIT_DESC=		Qt toolkit
 
 post-patch:
-	@echo "CPPFLAGS=-I. -I.. -I${WRKSRC}/ui -I${QT_INCDIR} -I${QT_INCDIR}/Qt -I${LOCALBASE}/include" > ${WRKSRC}/Local.mak
-	@echo "CFLAGS= ${CFLAGS} -Wall -ggdb" >> ${WRKSRC}/Local.mak
-	@echo "LDFLAGS= ${LDFLAGS}" >> ${WRKSRC}/Local.mak
-	@echo "LIBS= ${LIBS} -L${QT_LIBDIR} -L${LOCALBASE}/lib -lQtCore -lQtGui -lpthread -lcrypto -lltdl ${LD_CXX_LIB}" >> ${WRKSRC}/Local.mak
-	@echo "MOC=${MOC}" >> ${WRKSRC}/Local.mak
-	@echo "UIC=${QT_PREFIX}/bin/uic-qt4" >> ${WRKSRC}/Local.mak
-	@echo "RCC=${LOCALBASE}/bin/rcc"  >> ${WRKSRC}/Local.mak
-	@echo "LRELEASE=${LOCALBASE}/bin/lrelease-qt4" >> ${WRKSRC}/Local.mak
-	@echo "CC=${CC}" >> ${WRKSRC}/Local.mak
-	@echo "LD=${LD}" >> ${WRKSRC}/Local.mak
-	@echo "STRIP=${STRIP_CMD}" >> ${WRKSRC}/Local.mak
-	@echo "prefix=${PREFIX}" >> ${WRKSRC}/Local.mak
-	@echo "etc=${PREFIX}/etc/xca" >> ${WRKSRC}/Local.mak
-	@echo "basedir=" >> ${WRKSRC}/Local.mak
-	@echo "docdir=${DOCSDIR}" >> ${WRKSRC}/Local.mak
-	@echo "#define PREFIX \"${PREFIX}\"" > ${WRKSRC}/local.h
-	@echo "#define ETC \"${PREFIX}/etc/xca\"" >> ${WRKSRC}/local.h
-	@echo "#define VER \"${PORTVERSION}\"" >> ${WRKSRC}/local.h
-	@echo "#define DOCDIR \"${DOCSDIR}\"" >> ${WRKSRC}/local.h
-	@${REINPLACE_CMD} -e "/rR/{G;s/$$/TOPDIR_/;}" -e "s:\(TOPDIR\)_:\1=${WRKSRC}:" ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e "/VPATH/{G;s/$$/TOPDIR_/;}" -e "s:\(TOPDIR\)_:\1=${WRKSRC}:" ${WRKSRC}/misc/Makefile
-	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/lib/import.cpp
+	@${REINPLACE_CMD} -e \
+		'/^CFLAGS/s|-O2||' ${WRKSRC}/Local.mak.in
+	@${REINPLACE_CMD} -e \
+		'/install/s|-D|-c|' ${WRKSRC}/img/Makefile
 
-.include <bsd.port.post.mk>
+post-patch-QT5-off:
+	@${REINPLACE_CMD} -e \
+		's|Qt5|Qt0|g' ${WRKSRC}/configure
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xca*
+
+.include <bsd.port.mk>
