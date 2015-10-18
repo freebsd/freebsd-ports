@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lumina
-PORTVERSION=	20151013
+PORTVERSION=	20151016
 CATEGORIES=	x11
 PKGNAMESUFFIX=	-devel
 
@@ -44,7 +44,7 @@ USE_QT5=	core gui network quick svg linguist multimedia imageformats \
 USES=		desktop-file-utils qmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	pcbsd
-GH_TAGNAME=	afa8a2468f73805646eb4b3bcf143e7e2ea3140d
+GH_TAGNAME=	af742de80c460e981037858b69829b503bbdedbe
 
 QMAKE_ARGS=	CONFIG+="configure NO_I18N"
 
