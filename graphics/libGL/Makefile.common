@@ -109,15 +109,10 @@ RUN_DEPENDS+=   llvm${MESA_LLVM_VER}>=0:${PORTSDIR}/devel/llvm${MESA_LLVM_VER}
 CONFIGURE_ENV+= LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${MESA_LLVM_VER}
 
 CONFIGURE_ARGS+=--enable-gallium-llvm \
-                --enable-xvmc \
-                --with-gallium-drivers=r300,r600,radeonsi,svga,swrast
+                --enable-xvmc
 
 .if ${PORT_OPTIONS:MTEXTURE}
 CONFIGURE_ARGS+=--enable-texture-float
-.endif
-
-.if !(${ARCH} == amd64 || ${ARCH} == i386)
-CONFIGURE_ARGS+=--disable-gallium-intel
 .endif
 
 # this is disabled because our kernel driver is too old
@@ -141,21 +136,30 @@ CONFIGURE_ARGS+=--disable-vdpau
 CONFIGURE_ARGS+=--enable-vdpau
 .endif
 
+# VAAPI support?
+CONFIGURE_ARGS+=--disable-va
+
 ALL_DRI_DRIVERS=I915 I965 R200 RADEON SWRAST
+ALL_GALLIUM_DRIVERS=R300 R600 RADEONSI SVGA SWRAST
 
 .if ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == ia64
 DRI_DRIVERS=	${ALL_DRI_DRIVERS}
+GALLIUM_DRIVERS=	${ALL_GALLIUM_DRIVERS}
 .endif
 
 .if ${ARCH} == powerpc || ${ARCH} == powerpc64
 DRI_DRIVERS=	RADEON SWRAST
+GALLIUM_DRIVERS=	RADEON SWRAST
 .endif
+
 .if ${ARCH} == sparc64 || ${ARCH} == armv6
 DRI_DRIVERS=	SWRAST
+GALLIUM_DRIVERS=	SWRAST
 .endif
 
 # empty for unsupported arches
 DRI_DRIVERS+=
+GALLIUM_DRIVERS+=
 
 .for _d in ${ALL_DRI_DRIVERS}
 . if ${DRI_DRIVERS:M${_d}}
@@ -166,4 +170,14 @@ PLIST_SUB+=	${_d}_DRIVER="@comment "
 .endfor
 
 CONFIGURE_ARGS+=--with-dri-drivers="${DRI_DRIVERS:tl}"
+
+.for _gd in ${ALL_GALLIUM_DRIVERS}
+. if ${GALLIUM_DRIVERS:M${_gd}}
+PLIST_SUB+=	${_gd}_GDRIVER=""
+. else
+PLIST_SUB+=	${_gd}_GDRIVER="@comment "
+. endif
+.endfor
+
+CONFIGURE_ARGS+=--with-gallium-drivers="${GALLIUM_DRIVERS:tl}"
 
