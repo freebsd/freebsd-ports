@@ -1,5 +1,5 @@
---- media/video/capture/video_capture_device_factory.cc.orig	2015-06-19 21:33:03 UTC
-+++ media/video/capture/video_capture_device_factory.cc
+--- media/capture/video/video_capture_device_factory.cc.orig	2015-10-14 18:11:45.655658000 +0200
++++ media/capture/video/video_capture_device_factory.cc	2015-10-14 18:13:09.785092000 +0200
 @@ -14,6 +14,10 @@
  // static
  scoped_ptr<VideoCaptureDeviceFactory> VideoCaptureDeviceFactory::CreateFactory(
