@@ -6,7 +6,7 @@
     */
 -  psProperties->psslCTX = SSL_CTX_new(SSLv3_client_method());
 +  psProperties->psslCTX = SSL_CTX_new(SSLv23_client_method());
-+  SSL_CTX_set_options(psProperties->psslCTX, SSL_OP_NO_SSL2 );
++  SSL_CTX_set_options(psProperties->psslCTX, SSL_OP_NO_SSLv2 );
    if (psProperties->psslCTX == NULL)
    {
      ERR_error_string(ERR_get_error(), acLocalError);
