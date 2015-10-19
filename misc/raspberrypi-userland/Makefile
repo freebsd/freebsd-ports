@@ -28,7 +28,7 @@ CMAKE_ARGS+=	-DVMCS_INSTALL_PREFIX=${PREFIX} \
 OPTIONS_DEFINE=	EXAMPLES
 OPTIONS_DEFAULT=	EXAMPLES
 EXAMPLES_DESC=	Install test applications source code (hello_pi)
-EXAMPLES_LIB_DEPENDS=	libfreetype.so:print/freetype2
+EXAMPLES_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/opt/vc|${PREFIX}|g" \
