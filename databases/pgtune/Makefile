@@ -12,17 +12,11 @@ MAINTAINER=	gjb@FreeBSD.org
 COMMENT=	Postgresql.conf tuning tips based on hardware and load type
 
 USES=		python shebangfix
+SHEBANG_FILES=	${PORTNAME}
 NO_BUILD=	yes
 
-SHEBANG_FILES=	${PORTNAME}
-python_OLD_CMD=	${PREFIX}/bin/python
-
-pre-install:
-	@${REINPLACE_CMD} -e 's|${python_OLD_CMD}|${PYTHON_CMD}|' \
-		${WRKSRC}/${PORTNAME}
-
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/pgtune  ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/pgtune ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/pgtune/settings
 	${INSTALL_DATA} ${WRKSRC}/pg_settings* \
 		${STAGEDIR}${PREFIX}/share/pgtune/settings

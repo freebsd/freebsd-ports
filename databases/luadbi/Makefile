@@ -17,9 +17,6 @@ NO_WRKSUBDIR=	yes
 
 USES=		gmake lua:51 shebangfix
 SHEBANG_FILES=	DBI.lua
-SHEBANG_LANG=	lua
-lua_OLD_CMD=	/usr/bin/lua
-lua_CMD=	${LOCALBASE}/bin/${LUA_CMD}
 
 CFLAGS+=	-fpic -I${LOCALBASE}/include -I${LUA_INCDIR} -I. \
 		-I${LOCALBASE}/include/postgresql/server

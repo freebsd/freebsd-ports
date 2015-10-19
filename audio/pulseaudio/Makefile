@@ -42,7 +42,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 SHEBANG_FILES=	shell-completion/bash/pulseaudio
-SHEBANG_LANG=	bash
 bash_CMD=	${SETENV} bash
 SUB_FILES=	pkg-message
 

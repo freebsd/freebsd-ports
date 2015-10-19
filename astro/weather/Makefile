@@ -25,7 +25,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 PORTDATA=	airports places stations zctas zones
 
 SHEBANG_FILES=	${PORTNAME}
-python_OLD_CMD=	/usr/bin/env python
 
 .include <bsd.port.pre.mk>
 
