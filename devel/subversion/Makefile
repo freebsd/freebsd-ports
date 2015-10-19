@@ -1,7 +1,7 @@
 # Created by: rooneg@electricjellyfish.net
 # $FreeBSD$
 
-PORTREVISION=	0
+PORTREVISION=	1
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Version control system
@@ -165,9 +165,9 @@ post-install:	${MKREPOS_TARGET}
 	(cd ${WRKSRC}/tools.examples && ${TAR} --exclude '*.in' -cf - * | ${TAR} -C ${STAGEDIR}${DATADIR} -xof - )
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-.if ${PORT_OPTIONS:MSVNSERVE_WRAPPER}
+
+post-install-SVNSERVE_WRAPPER-on:
 	@${INSTALL_SCRIPT} ${FILESDIR}/svnserve.wrapper ${STAGEDIR}${PREFIX}/bin/svnserve.sample
-.endif
 
 # ===============================================================================
 repository:	_mkrepos
