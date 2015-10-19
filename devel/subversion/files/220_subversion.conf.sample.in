@@ -39,6 +39,15 @@
 ##	KeepAlive on
 ##	MaxKeepAliveRequests 1000
 ##
+##	# http://subversion.apache.org/docs/release-notes/1.7.html#server-performance-tuning
+##	# Calculate your own values!
+##	# For mod_dav_svn, a 1GB cache configuration with maximum data coverage looks like this 
+##	<IfModule dav_svn_module>
+##	    SVNInMemoryCacheSize 1048576
+##	    SVNCacheFullTexts on
+##	    SVNCacheTextDeltas on
+##	</IfModule>
+##
 ## Multiple Repos with Digest auth:
 ## - AuthName is an arbitrary name that you choose for the authentication
 ##   domain. Most browsers display this name in the dialog box when prompting
@@ -46,9 +55,14 @@
 ## - AuthType specifies the type of authentication to use.
 ## - AuthUserFile specifies the location of the password file to use.
 ##
-##<IfModule dav_module>
+##<IfModule dav_svn_module>
 ##<Location /svn/>
-##	# Enable Subversion
+##	<ifModule mime_module>
+##		RemoveEncoding  .gz .tgz .Z
+##		RemoveType      .gz .tgz .Z
+##	</ifModule>
+##
+####	# Enable Subversion
 ##	DAV svn
 ##
 ##	# Directory containing all repository for this path
