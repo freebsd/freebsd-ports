@@ -19,17 +19,8 @@ VirtualGL/bin/vglserver_config
 %%DOCSDIR%%/ChangeLog.txt
 %%DOCSDIR%%/LGPL.txt
 %%DOCSDIR%%/LICENSE-FLTK.txt
-%%DOCSDIR%%/LICENSE-PuTTY.txt
-%%DOCSDIR%%/LICENSE-xauth.txt
 %%DOCSDIR%%/LICENSE.txt
-%%DOCSDIR%%/chromium-displaywall.png
-%%DOCSDIR%%/chromium-sortfirst.png
-%%DOCSDIR%%/chromium-sortlast.png
 %%DOCSDIR%%/configdialog.gif
-%%DOCSDIR%%/exceed1.png
-%%DOCSDIR%%/exceed2.png
-%%DOCSDIR%%/exceed3.png
-%%DOCSDIR%%/exceed6.png
 %%DOCSDIR%%/index.html
 %%DOCSDIR%%/somerights20.png
 %%DOCSDIR%%/sshtunnel.png
