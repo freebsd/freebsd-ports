@@ -6,13 +6,13 @@ PORTVERSION=	2.5
 CATEGORIES=	astro devel
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
+EXTRACT_AFTER_ARGS=	--exclude .git
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolkit for developing GPS applications
 
 LICENSE=	LGPL3
 
-BROKEN=		Distfile size mismatch
 USES=		cmake python:run
 USE_GCC=	yes
 USE_LDCONFIG=	yes
