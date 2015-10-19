@@ -23,6 +23,7 @@ TEST_DEPENDS=	p5-File-Slurp-Tiny>=0:${PORTSDIR}/devel/p5-File-Slurp-Tiny \
 		p5-Test-Exception>=0.31:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-Warnings>=0.014:${PORTSDIR}/devel/p5-Test-Warnings
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
