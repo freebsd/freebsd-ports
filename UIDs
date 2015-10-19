@@ -181,6 +181,8 @@ ldap:*:389:389::0:0:OpenLDAP Server:/nonexistent:/usr/sbin/nologin
 tiarra:*:398:398::0:0:Tiarra IRC Proxy:/nonexistent:/usr/sbin/nologin
 uhub:*:411:411::0:0:uHub ADC Daemon:/nonexistent:/usr/sbin/nologin
 drweb:*:426:426::0:0:Dr.Web Mail Scanner:/nonexistent:/usr/sbin/nologin
+varnish:*:429:429::0:0:Varnish Cache User:/nonexistent:/usr/sbin/nologin
+varnishlog:*:430:429::0:0:Varnish Log User:/nonexistent:/usr/sbin/nologin
 quasselcore:*:442:442::0:0:Quassel IRC User:/nonexistent:/usr/sbin/nologin
 callweaver:*:444:444::0:0:Callweaver account:/var/lib/callweaver:/usr/sbin/nologin
 ecartis:*:450:450::0:0:Ecartis Listserver:/usr/local/ecartis:/usr/sbin/nologin
