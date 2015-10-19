@@ -40,6 +40,7 @@ OPTIONS_DEFAULT=	IPV6 OPENSSL
 BZIP2_DESC=	bzip2 support (mod_compress)
 GDBM_DESC=	gdbm storage (mod_trigger_b4_dl)
 LDAP_DESC=	LDAP authentication
+LIBEV_DESC=	Fast events support via libev (disables kqueue)
 LUA_DESC=	lua support (mod_cml, mod_magnet)
 MEMCACHE_DESC=	memcached storage (mod_trigger_b4_dl)
 MYSQL_DESC=	MySQL support (mod_mysql_vhost)
