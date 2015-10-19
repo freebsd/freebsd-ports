@@ -23,16 +23,19 @@ FPC_DEFAULT?=		2.6.4
 GCC_DEFAULT?=		4.8
 LUA_DEFAULT?=		5.2
 MYSQL_DEFAULT?=		5.6
-.if defined(PACKAGE_BUILDING) || !exists(${LOCALBASE}/bin/perl)
+.if !defined(_PORTS_ENV_CHECK) && \
+    (defined(PACKAGE_BUILDING) || !exists(${LOCALBASE}/bin/perl))
 PERL5_DEFAULT?=		5.20
 .elif !defined(PERL5_DEFAULT)
 # There's no need to replace development versions, like "5.23" with "devel"
 # because 1) nobody is supposed to use it outside of poudriere, and 2) it must
 # be set manually in /etc/make.conf in the first place, and we're never getting
 # in here.
+.if !defined(_PERL5_FROM_BIN)
 _PERL5_FROM_BIN!=	perl -e 'printf "%vd\n", $$^V;'
+.endif
+_EXPORTED_VARS+=	_PERL5_FROM_BIN
 PERL5_DEFAULT:=		${_PERL5_FROM_BIN:R}
-.undef _PERL5_FROM_BIN
 .endif
 PGSQL_DEFAULT?=		9.3
 PHP_DEFAULT?=		5.6
