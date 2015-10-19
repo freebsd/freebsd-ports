@@ -1098,6 +1098,9 @@ fbsd_find_lwp_name(long lwpid, struct private_thread_info *info)
   int pid = inferior_ptid.pid;
   size_t len = 0;
 
+  if (!target_has_execution)
+    return;
+
   name[0] = CTL_KERN;
   name[1] = KERN_PROC;
   name[2] = KERN_PROC_PID | KERN_PROC_INC_THREAD;
