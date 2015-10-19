@@ -4550,6 +4550,7 @@ test-depends-list:
 TEST-DEPENDS-LIST= \
 	${SETENV} dp_ALLDEPENDS="${TEST_DEPENDS}" \
 			dp_PORTSDIR="${PORTSDIR}" \
+			dp_MAKE="${MAKE}" \
 			dp_PKGNAME="${PKGNAME}" \
 			dp_SCRIPTSDIR="${SCRIPTSDIR}" \
 			${SH} ${SCRIPTSDIR}/depends-list.sh
