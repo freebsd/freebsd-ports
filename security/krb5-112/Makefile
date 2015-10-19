@@ -28,7 +28,7 @@ USE_LDCONFIG=		yes
 USE_CSTD=		gnu99
 GNU_CONFIGURE=		yes
 USES=			cpe gettext gmake perl5 libtool:build \
-			gssapi:boostrap,mit
+			gssapi:bootstrap,mit pkgconfig:both
 CONFIGURE_ARGS?=	--enable-shared --without-system-verto \
 			--disable-rpath --localstatedir="${PREFIX}/var"
 CONFIGURE_ENV=		INSTALL="${INSTALL}" INSTALL_LIB="${INSTALL_LIB}" YACC="${YACC}"
@@ -38,8 +38,10 @@ CPE_VENDOR=		mit
 CPE_VERSION=		5-${PORTVERSION}
 CPE_PRODUCT=		kerberos
 
-OPTIONS_DEFINE=		KRB5_PDF KRB5_HTML DNS_FOR_REALM LDAP READLINE
+OPTIONS_DEFINE=		KRB5_PDF KRB5_HTML DNS_FOR_REALM LDAP
 OPTIONS_DEFAULT=	KRB5_PDF KRB5_HTML
+OPTIONS_RADIO=		CMD_LINE_EDITING
+OPTIONS_RADIO_CMD_LINE_EDITING=	READLINE LIBEDIT
 KRB5_PDF_DESC=		Install krb5 PDF documentation
 KRB5_HTML_DESC=		Install krb5 HTML documentation
 DNS_FOR_REALM_DESC=	Enable DNS lookups for Kerberos realm names
@@ -54,7 +56,7 @@ LDFLAGS+=		-L${LOCALBASE}/lib -L${OPENSSLLIB}
 USE_OPENSSL=		yes
 USE_RC_SUBR=		kpropd
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # Fix up -Wl,-rpath in LDFLAGS
 .if !empty(KRB5_HOME)
@@ -86,8 +88,17 @@ PLIST_SUB+=		LDAP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MREADLINE}
-USES+=			readline:port
+USES+=			readline
 CONFIGURE_ARGS+=	--with-readline
+.else
+CONFIGURE_ARGS+=	--without-readline
+.endif
+
+.if ${PORT_OPTIONS:MLIBEDIT}
+USES+=			libedit
+CONFIGURE_ARGS+=	--with-libedit
+.else
+CONFIGURE_ARGS+=	--without-libedit
 .endif
 
 .if defined(PROGRAM_TRANSFORM_NAME) && ${PROGRAM_TRANSFORM_NAME} != ""
@@ -150,4 +161,4 @@ post-install:
 	@${ECHO} "for more information.                                 "
 	@${ECHO} "------------------------------------------------------"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
