@@ -1,0 +1,538 @@
+------------------------------------------------------------------------
+r249467 | zturner | 2015-10-06 21:11:28 +0000 (Tue, 06 Oct 2015) | 1 line
+
+Update swig generation scripts to support Python 3.
+------------------------------------------------------------------------
+Index: scripts/finishSwigWrapperClasses.py
+===================================================================
+--- tools/lldb/scripts/finishSwigWrapperClasses.py	(revision 249466)
++++ tools/lldb/scripts/finishSwigWrapperClasses.py	(revision 249467)
+@@ -97,7 +97,7 @@
+ 
+     if vMsg.__len__() != 0:
+         strMsg = "%s: %s (%d)" % (strExitMsgSuccess, vMsg, vnResult);
+-        print strMsg;
++        print(strMsg);
+ 
+     sys.exit( vnResult );
+ 
+@@ -110,7 +110,7 @@
+ # Throws:   None.
+ #--
+ def program_exit_on_failure( vnResult, vMsg ):
+-    print "%s%s (%d)" % (strExitMsgError, vMsg, vnResult);
++    print("%s%s (%d)" % (strExitMsgError, vMsg, vnResult));
+     sys.exit( vnResult );
+ 
+ #++---------------------------------------------------------------------------
+@@ -141,7 +141,7 @@
+         if val.__len__() != 0:
+             strEqs = " =";
+             strQ = "\"";
+-        print "%s%s%s %s%s%s\n" % (strParameter, arg, strEqs, strQ, val, strQ);
++        print("%s%s%s %s%s%s\n" % (strParameter, arg, strEqs, strQ, val, strQ));
+ 
+ #++---------------------------------------------------------------------------
+ # Details:  Validate the arguments passed to the program. This function exits
+@@ -210,8 +210,8 @@
+         return (-9, strStatusMsg);
+ 
+     if gbDbgFlag:
+-        print strScriptLangFound % vStrScriptLang;
+-        print strExecuteMsg % vStrScriptLang;
++        print(strScriptLangFound % vStrScriptLang);
++        print(strExecuteMsg % vStrScriptLang);
+ 
+     # Change where Python looks for our modules
+     strDir = os.path.normcase( strScriptFileDir );
+@@ -267,16 +267,18 @@
+         listDirs.remove('.svn')
+ 
+     if gbDbgFlag:
+-        print strScriptLangsFound,
++        sys.stdout.write(strScriptLangsFound)
+         for dir in listDirs:
+-            print dir,
+-        print "\n";
++            sys.stdout.write(dir)
++        print("\n")
+ 
+     # Iterate script directory find any script language directories
+     for scriptLang in listDirs:
+-        dbg.dump_text( "Executing language script for \'%s\'" % scriptLang );
+-        nResult, strStatusMsg = run_post_process( scriptLang, strFinishFileName,
+-                                                  vDictArgs );
++        # __pycache__ is a magic directory in Python 3 that holds .pyc files
++        if scriptLang != "__pycache__":
++            dbg.dump_text( "Executing language script for \'%s\'" % scriptLang );
++            nResult, strStatusMsg = run_post_process( scriptLang, strFinishFileName,
++                                                      vDictArgs );
+         if nResult < 0:
+             break;
+ 
+Index: scripts/Python/buildSwigPython.py
+===================================================================
+--- tools/lldb/scripts/Python/buildSwigPython.py	(revision 249466)
++++ tools/lldb/scripts/Python/buildSwigPython.py	(revision 249467)
+@@ -123,7 +123,7 @@
+ 						"/include/lldb/API/SBValue.h",
+ 						"/include/lldb/API/SBValueList.h",
+ 						"/include/lldb/API/SBWatchpoint.h" ];
+-	bDebug = vDictArgs.has_key( "-d" );
++	bDebug = "-d" in vDictArgs;
+ 	strRt = vDictArgs[ "--srcRoot" ];
+ 	strRt = os.path.normcase( strRt );
+ 	
+@@ -133,8 +133,8 @@
+ 		strHeaderFiles += " %s%s" % (strRt, strHdr);
+ 	
+ 	if bDebug:
+-		print strMsgHdrFiles;
+- 		print strHeaderFiles;
++		print(strMsgHdrFiles);
++		print(strHeaderFiles);
+ 		
+ 	vDictArgs[ "--headerFiles" ] = strHeaderFiles;
+ 	
+@@ -201,7 +201,7 @@
+ 						"/scripts/interface/SBValue.i",
+ 						"/scripts/interface/SBValueList.i",
+ 						"/scripts/interface/SBWatchpoint.i" ];	
+-	bDebug = vDictArgs.has_key( "-d" );
++	bDebug = "-d" in vDictArgs;
+ 	strRt = vDictArgs[ "--srcRoot" ];
+ 	strRt = os.path.normcase( strRt );
+ 	
+@@ -211,8 +211,8 @@
+ 		strInterfaceFiles += " %s%s" % (strRt, strIFace);
+ 	
+ 	if bDebug:
+-		print strMsgIFaceFiles;
+-		print strInterfaceFiles;
++		print(strMsgIFaceFiles);
++		print(strInterfaceFiles);
+ 	
+ 	vDictArgs[ "--ifaceFiles" ] = strInterfaceFiles;
+ 		
+@@ -251,12 +251,12 @@
+ #--
+ def check_file_exists( vDictArgs, vstrFileNamePath ):
+ 	bExists = False;
+-	bDebug = vDictArgs.has_key( "-d" );
++	bDebug = "-d" in vDictArgs;
+ 	
+ 	if os.path.exists( vstrFileNamePath ):
+ 		bExists = True;
+ 	elif bDebug:
+-		print strMsgFileNotExist % vstrFileNamePath;
++		print(strMsgFileNotExist % vstrFileNamePath);
+ 	
+ 	return bExists;
+ 
+@@ -271,7 +271,7 @@
+ #--
+ def check_newer_file( vDictArgs, vstrSwigOpFileNamePath, vstrFileNamePath ):
+ 	bNeedUpdate = False;
+-	bDebug = vDictArgs.has_key( "-d" );
++	bDebug = "-d" in vDictArgs;
+ 	
+ 	strMsg = "";
+ 	nResult = which_file_is_newer( vstrFileNamePath, vstrSwigOpFileNamePath );
+@@ -284,7 +284,7 @@
+ 		bNeedUpdate = True;
+ 	
+ 	if bNeedUpdate and bDebug:
+-		print strMsg;
++		print(strMsg);
+ 	
+ 	return bNeedUpdate;
+ 
+@@ -328,7 +328,7 @@
+ 	# on the system other stuff may need to be put here as well.
+ 	from distutils.sysconfig import get_python_lib;
+ 	strPythonInstallDir = "";
+-	bHaveArgPrefix = vDictArgs.has_key( "--prefix" );
++	bHaveArgPrefix = "--prefix" in vDictArgs;
+ 	if bHaveArgPrefix: 
+ 		strPythonInstallDir = vDictArgs[ "--prefix" ];
+ 	if strPythonInstallDir.__len__() != 0:
+@@ -354,9 +354,9 @@
+ 	bOk = True;
+ 	strWkDir = "";
+ 	strErrMsg = "";
+-	bDbg = vDictArgs.has_key( "-d" );
++	bDbg = "-d" in vDictArgs;
+ 	
+-	bMakeFileCalled = vDictArgs.has_key( "-m" );
++	bMakeFileCalled = "-m" in vDictArgs;
+ 	if bMakeFileCalled:
+ 		dbg.dump_text( "Built by LLVM" );
+ 		return get_framework_python_dir_windows( vDictArgs );
+@@ -368,7 +368,7 @@
+ 		strWkDir += "/LLDB.framework";
+ 		if os.path.exists( strWkDir ):
+ 			if bDbg:
+-				print strMsgFoundLldbFrameWkDir % strWkDir;
++				print(strMsgFoundLldbFrameWkDir % strWkDir);
+ 			strWkDir += "/Resources/Python/lldb";
+ 			strWkDir = os.path.normcase( strWkDir );
+ 		else:
+@@ -420,7 +420,7 @@
+ 	strErrMsg = "";
+ 	
+ 	strConfigBldDir = "";
+-	bHaveConfigBldDir = vDictArgs.has_key( "--cfgBldDir" );
++	bHaveConfigBldDir = "--cfgBldDir" in vDictArgs;
+ 	if bHaveConfigBldDir:
+ 		strConfigBldDir = vDictArgs[ "--cfgBldDir" ];
+ 	if (bHaveConfigBldDir == False) or (strConfigBldDir.__len__() == 0):
+@@ -463,8 +463,8 @@
+ 	dbg = utilsDebug.CDebugFnVerbose( "Python script do_swig_rebuild()" );
+ 	bOk = True;
+ 	strMsg = "";
+-	bDbg = vDictArgs.has_key( "-d" );
+-	bGenDependencies = vDictArgs.has_key( "-M" );
++	bDbg = "-d" in vDictArgs;
++	bGenDependencies = "-M" in vDictArgs;
+ 	strSwigExePath = vDictArgs[ "--swigExePath" ];
+ 	strSwigExeName = vDictArgs[ "--swigExeName" ];
+ 	strSrcRoot = vDictArgs[ "--srcRoot" ];
+@@ -502,7 +502,7 @@
+ 	strCmd += "-o \"%s\" " % strOp;
+ 	strCmd += "\"%s\" " % strIp;
+ 	if bDbg:
+-		print strMsgSwigExecute % strCmd;
++		print(strMsgSwigExecute % strCmd);
+ 
+ 	# Execute SWIG
+ 	process = subprocess.Popen( strCmd, stdout=subprocess.PIPE, 
+@@ -547,7 +547,7 @@
+ 	dbg = utilsDebug.CDebugFnVerbose( "Python script run_python_script()" );
+ 	bOk = True;
+ 	strMsg = "";
+-	bDbg = vDictArgs.has_key( "-d" );
++	bDbg = "-d" in vDictArgs;
+ 	
+ 	strPy = "%s %s" % (sys.executable, vstrArgs);
+ 	process = subprocess.Popen( strPy, shell=True );
+@@ -583,7 +583,7 @@
+ 	dbg = utilsDebug.CDebugFnVerbose( "Python script do_modify_python_lldb()" );
+ 	bOk = True;
+ 	strMsg = "";
+-	bDbg = vDictArgs.has_key( "-d" );
++	bDbg = "-d" in vDictArgs;
+ 	strCwd = vDictArgs[ "--srcRoot" ]; # /llvm/tools/lldb
+ 	strCwd += "/scripts/Python";
+ 	strPyScript = "modify-python-lldb.py";
+@@ -654,15 +654,15 @@
+ 	strMsg = "";
+ 	strErrMsgProgFail = "";
+ 	
+-	if not( vDictArgs.has_key( "--swigExePath" ) and vDictArgs.has_key( "--swigExeName" ) ):
++	if not("--swigExePath" in vDictArgs) and ("--swigExeName" in vDictArgs):
+ 		strErrMsgProgFail += strErrMsgSwigParamsMissing;
+ 		return (-100, strErrMsgProgFail );	
+ 	
+-	bDebug = vDictArgs.has_key( "-d" );
++	bDebug = "-d" in vDictArgs;
+ 	
+ 	strSwigDepFile = "";
+ 	strSwigDepOptions = "";
+-	bGenDependencies = vDictArgs.has_key( "-M" );
++	bGenDependencies = "-M" in vDictArgs;
+ 	if bGenDependencies:
+ 		strSwigDepFile = vDictArgs[ "--targetDir" ] + "/LLDBWrapPython.cpp.d";
+ 		strSwigDepOptions = "-MMD -MF \"%s.tmp\"" % strSwigDepFile;
+@@ -669,7 +669,7 @@
+ 		strSwigDepFile = os.path.normcase( strSwigDepFile );
+ 		strSwigDepOptions = os.path.normcase( strSwigDepOptions );
+ 		
+-	bMakeFileCalled = vDictArgs.has_key( "-m" );			
++	bMakeFileCalled = "-m" in vDictArgs;
+ 	strSwigOutputFile = ""
+ 	if bMakeFileCalled:
+ 		strSwigOutputFile = vDictArgs[ "--targetDir" ] + "/LLDBWrapPython.cpp";
+@@ -760,7 +760,7 @@
+ 	if bOk and (bNeedUpdate == False):
+ 		strInitPiPath = strFrameworkPythonDir + "/__init__.py";
+ 		strInitPiPath = os.path.normcase( strInitPiPath );
+-		print strInitPiPath
++		print(strInitPiPath)
+ 		bNeedUpdate = not check_file_exists( vDictArgs, strInitPiPath );
+ 		dbg.dump_object( "check_file_exists( vDictArgs, strInitPiPath ), bNeedUpdate =", bNeedUpdate);
+ 		
+@@ -769,12 +769,12 @@
+ 			strMsg = strMsgNotNeedUpdate;
+ 			return (0, strMsg );
+ 		else:
+-			print strMsgSwigNeedRebuild;
++			print(strMsgSwigNeedRebuild);
+ 			bOk, strMsg, nExitResult = do_swig_rebuild( vDictArgs, strSwigDepFile, 
+ 														strCfgBldDir, 
+ 														strSwigOutputFile,
+ 														strSwigInputFile );
+-			bGenDependencies = vDictArgs.has_key( "-M" );
++			bGenDependencies = "-M" in vDictArgs;
+ 			if bGenDependencies == True:
+ 				return (nExitResult, strMsg);
+ 				   	
+@@ -794,5 +794,5 @@
+ # This script can be called by another Python script by calling the main() 
+ # function directly
+ if __name__ == "__main__":
+-	print "Script cannot be called directly, called by buildSwigWrapperClasses.py";
++	print("Script cannot be called directly, called by buildSwigWrapperClasses.py");
+ 	
+Index: scripts/Python/modify-python-lldb.py
+===================================================================
+--- tools/lldb/scripts/Python/modify-python-lldb.py	(revision 249466)
++++ tools/lldb/scripts/Python/modify-python-lldb.py	(revision 249467)
+@@ -21,7 +21,11 @@
+ # subsystem.
+ #
+ 
+-import sys, re, StringIO
++import sys, re
++if sys.version_info.major >= 3:
++    import io as StringIO
++else:
++    import StringIO
+ 
+ if len (sys.argv) != 2:
+     output_name = "./lldb.py"
+@@ -269,7 +273,7 @@
+     def add_line(self, a_line):
+         """Add a line to the content, if there is a previous line, commit it."""
+         if self.prev_line != None:
+-            print >> self, self.prev_line
++            self.write(self.prev_line + "\n")
+         self.prev_line = a_line
+     def del_line(self):
+         """Forget about the previous line, do not commit it."""
+@@ -281,7 +285,7 @@
+     def finish(self):
+         """Call this when you're finished with populating content."""
+         if self.prev_line != None:
+-            print >> self, self.prev_line
++            self.write(self.prev_line + "\n")
+         self.prev_line = None
+ 
+ # The new content will have the iteration protocol defined for our lldb objects.
+Index: scripts/utilsOsType.py
+===================================================================
+--- tools/lldb/scripts/utilsOsType.py	(revision 249466)
++++ tools/lldb/scripts/utilsOsType.py	(revision 249467)
+@@ -26,14 +26,24 @@
+ # Authors:  Illya Rudkin 28/11/2013.
+ # Changes:  None.
+ #--
+-class EnumOsType( object ):
+-    values = [  "Unknown",
+-                "Darwin",
+-                "FreeBSD",
+-                "Linux", 
+-                "NetBSD",
+-                "Windows" ]
+-    class __metaclass__( type ):
++if sys.version_info.major >= 3:
++    from enum import Enum
++    class EnumOsType(Enum):
++        Unknown = 0
++        Darwin = 1
++        FreeBSD = 2
++        Linux = 3
++        NetBSD = 4
++        Windows = 5
++else:
++    class EnumOsType( object ):
++        values = [  "Unknown",
++                    "Darwin",
++                    "FreeBSD",
++                    "Linux", 
++                    "NetBSD",
++                    "Windows" ]
++        class __metaclass__( type ):
+ #++---------------------------------------------------------------------------
+ # Details:  Fn acts as an enumeration.
+ # Args:     vName - (R) Enumeration to match.
+@@ -40,8 +50,8 @@
+ # Returns:  Int - Matching enumeration/index.
+ # Throws:   None.
+ #--
+-        def __getattr__( self, vName ):
+-            return self.values.index( vName );
++            def __getattr__( self, vName ):
++                return self.values.index( vName );
+ 
+ #++---------------------------------------------------------------------------
+ # Details:  Reverse fast lookup of the values list.
+@@ -49,8 +59,8 @@
+ # Returns:  Str - text description matching enumeration.
+ # Throws:   None.
+ #--
+-        def name_of( self, vI ):
+-            return EnumOsType.values[ vI ];
++            def name_of( self, vI ):
++                return EnumOsType.values[ vI ];
+ 
+ #-----------------------------------------------------------------------------
+ #-----------------------------------------------------------------------------
+Index: scripts/utilsDebug.py
+===================================================================
+--- tools/lldb/scripts/utilsDebug.py	(revision 249466)
++++ tools/lldb/scripts/utilsDebug.py	(revision 249467)
+@@ -55,9 +55,9 @@
+ 	def dump_object( self, vstrText, vObject ):
+ 		if CDebugFnVerbose.bVerboseOn == False:
+ 			return;
+-		print "%d%s> Dp: %s" % (CDebugFnVerbose.__nLevel, self.__get_dots(), 
+-								vstrText),;
+-		print vObject;
++		sys.stdout.write("%d%s> Dp: %s" % (CDebugFnVerbose.__nLevel, self.__get_dots(), 
++								vstrText));
++		print(vObject);
+ 	
+ 	#++------------------------------------------------------------------------
+ 	# Details:	Print out some progress text given by the client.
+@@ -69,8 +69,8 @@
+ 	def dump_text( self, vstrText ):
+ 		if CDebugFnVerbose.bVerboseOn == False:
+ 			return;
+-		print "%d%s> Dp: %s" % (CDebugFnVerbose.__nLevel, self.__get_dots(),
+-								vstrText);
++		print("%d%s> Dp: %s" % (CDebugFnVerbose.__nLevel, self.__get_dots(),
++								vstrText));
+ 				
+ 	# Private methods:
+ 	def __init__( self, vstrFnName ):
+@@ -100,8 +100,8 @@
+ 	#--
+ 	def __indent_back( self ):
+ 		if CDebugFnVerbose.bVerboseOn:
+-			print "%d%s< fn: %s" % (CDebugFnVerbose.__nLevel, self.__get_dots(),
+-									self.__strFnName);
++			print("%d%s< fn: %s" % (CDebugFnVerbose.__nLevel, self.__get_dots(),
++									self.__strFnName));
+ 		CDebugFnVerbose.__nLevel -= 1;
+ 
+ 	#++------------------------------------------------------------------------
+@@ -116,8 +116,8 @@
+ 		CDebugFnVerbose.__nLevel += 1;
+ 		self.__strFnName = vstrFnName;
+ 		if CDebugFnVerbose.bVerboseOn:
+-			print "%d%s> fn: %s" % ( CDebugFnVerbose.__nLevel, self.__get_dots(), 
+-									 self.__strFnName);
++			print("%d%s> fn: %s" % ( CDebugFnVerbose.__nLevel, self.__get_dots(), 
++									 self.__strFnName));
+ 
+ 	# Private statics attributes:
+ 	__nLevel = 0;	# Indentation level counter
+Index: scripts/utilsArgsParse.py
+===================================================================
+--- tools/lldb/scripts/utilsArgsParse.py	(revision 249466)
++++ tools/lldb/scripts/utilsArgsParse.py	(revision 249467)
+@@ -87,7 +87,7 @@
+ 	
+ 	# Count the number of mandatory args required (if any one found)
+ 	countMandatory = 0;
+-	for opt, man in vDictArgReq.iteritems():
++	for opt, man in vDictArgReq.items():
+ 		if man == "m":
+ 		  countMandatory = countMandatory + 1;
+ 	
+Index: scripts/buildSwigWrapperClasses.py
+===================================================================
+--- tools/lldb/scripts/buildSwigWrapperClasses.py	(revision 249466)
++++ tools/lldb/scripts/buildSwigWrapperClasses.py	(revision 249467)
+@@ -126,7 +126,7 @@
+ 
+     if vMsg.__len__() != 0:
+         strMsg = "%s: %s (%d)" % (strExitMsgSuccess, vMsg, vnResult);
+-        print strMsg;
++        print(strMsg);
+ 
+     sys.exit( vnResult );
+ 
+@@ -139,7 +139,7 @@
+ # Throws:   None.
+ #--
+ def program_exit_on_failure( vnResult, vMsg ):
+-    print "%s%s (%d)" % (strExitMsgError, vMsg, vnResult);
++    print("%s%s (%d)" % (strExitMsgError, vMsg, vnResult));
+     sys.exit( vnResult );
+ 
+ #++---------------------------------------------------------------------------
+@@ -170,7 +170,7 @@
+         if val.__len__() != 0:
+             strEqs = " =";
+             strQ = "\"";
+-        print "%s%s%s %s%s%s\n" % (strParameter, arg, strEqs, strQ, val, strQ);
++        print("%s%s%s %s%s%s\n" % (strParameter, arg, strEqs, strQ, val, strQ));
+ 
+ #++---------------------------------------------------------------------------
+ # Details:  Locate the lldb.swig file. No checking for path correctness is
+@@ -193,7 +193,7 @@
+     bOk = os.path.isfile( strFullPath );
+     if bOk:
+         if gbDbgFlag:
+-            print strSwigFileFound;
++            print(strSwigFileFound);
+     else:
+         strStatusMsg = strSwigFileFoundNotFound % strFullPath;
+ 
+@@ -227,8 +227,8 @@
+         return (-9, strStatusMsg);
+ 
+     if gbDbgFlag:
+-        print strSwigScriptLangFound % vStrScriptLang;
+-        print strSwigExecuteMsg % vStrScriptLang;
++        print(strSwigScriptLangFound % vStrScriptLang);
++        print(strSwigExecuteMsg % vStrScriptLang);
+ 
+     # Change where Python looks for our modules
+     strDir = os.path.normcase( strScriptFileDir );
+@@ -287,16 +287,18 @@
+         listDirs.remove('.svn')
+ 
+     if gbDbgFlag:
+-        print strSwigScriptLangsFound,
++        sys.stdout.write(strSwigScriptLangsFound)
+         for dir in listDirs:
+-            print dir,
+-        print "\n";
++            sys.stdout.write(dir)
++        print("\n");
+ 
+     # Iterate script directory find any script language directories
+     for scriptLang in listDirs:
+-        dbg.dump_text( "Executing language script for \'%s\'" % scriptLang );
+-        nResult, strStatusMsg = run_swig( scriptLang, strSwigBuildFileName,
+-                                          vDictArgs );
++        # __pycache__ is a magic directory in Python 3 that holds .pyc files
++        if scriptLang != "__pycache__":
++            dbg.dump_text( "Executing language script for \'%s\'" % scriptLang );
++            nResult, strStatusMsg = run_swig( scriptLang, strSwigBuildFileName,
++                                              vDictArgs );
+         if nResult < 0:
+             break;
+ 
+@@ -503,7 +505,7 @@
+         program_exit( -4, strMsgErrorOsTypeUnknown );
+ 
+     global gbDbgFlag;
+-    gbDbgFlag = dictArgs.has_key( "-d" );
++    gbDbgFlag = "-d" in dictArgs;
+     if gbDbgFlag:
+         print_out_input_parameters( dictArgs );
+ 
+@@ -513,8 +515,8 @@
+     # called by this program
+     global gbMakeFileFlag;
+     global gbSwigGenDepFileFlag;
+-    gbMakeFileFlag = dictArgs.has_key( "-m" );
+-    gbSwigGenDepFileFlag = dictArgs.has_key( "-M" );
++    gbMakeFileFlag = "-m" in dictArgs;
++    gbSwigGenDepFileFlag = "-M" in dictArgs;
+ 
+     bOk, strMsg = check_lldb_swig_file_exists( dictArgs[ "--srcRoot" ], eOSType );
+     if bOk == False:
