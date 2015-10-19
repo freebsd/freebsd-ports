@@ -1,5 +1,14 @@
---- Makefile.rules.gnu.in.orig	2014-01-22 17:53:46.492137556 +0800
-+++ Makefile.rules.gnu.in	2014-01-22 17:58:12.855113204 +0800
+--- Makefile.rules.gnu.in.orig	2006-03-01 18:59:55 UTC
++++ Makefile.rules.gnu.in
+@@ -15,7 +15,7 @@ ifdef LIBS
+   LINK_LIBS=$(strip $(foreach lib,$(LIBS),-l$(lib)))
+ endif
+ 
+-ifndef LIBDIR
++ifneq ($(origin LIBDIR), file)
+   LIBDIR=.
+ endif
+ ifdef LIB
 @@ -179,17 +179,17 @@ menuconfig:
  
  install-bin: @INSTALL_PLUGINS@
