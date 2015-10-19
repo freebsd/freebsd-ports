@@ -6,7 +6,7 @@ PORTVERSION=	9.14
 CATEGORIES=	www
 MASTER_SITES=	https://www.hiawatha-webserver.org/files/
 
-MAINTAINER=	chris@bsdjunk.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced and secure webserver for Unix
 
 LICENSE=	GPLv2
