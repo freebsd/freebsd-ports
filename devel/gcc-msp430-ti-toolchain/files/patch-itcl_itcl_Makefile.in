@@ -1,0 +1,11 @@
+--- itcl/itcl/Makefile.in.orig	2012-10-18 00:51:07 UTC
++++ itcl/itcl/Makefile.in
+@@ -73,8 +73,6 @@ datadir		= @datadir@
+ mandir		= @mandir@
+ includedir	= @includedir@
+ 
+-DESTDIR		=
+-
+ PKG_DIR		= $(PACKAGE_NAME)$(PACKAGE_VERSION)
+ pkgdatadir	= $(datadir)/$(PKG_DIR)
+ pkglibdir	= $(libdir)/$(PKG_DIR)
