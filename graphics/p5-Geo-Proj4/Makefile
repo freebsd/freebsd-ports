@@ -8,7 +8,7 @@ CATEGORIES=	graphics devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lippe@FreeBSD.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Perl cartographic projections wrapper for Proj library
 
 LIB_DEPENDS=	libproj.so:${PORTSDIR}/graphics/proj

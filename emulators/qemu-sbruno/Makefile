@@ -237,25 +237,14 @@ MAKE_ARGS+=	ARCH=ppc64
 CONFIGURE_ARGS+= --sparc_cpu=v9
 .endif
 
-.if ${OSVERSION} < 900033
-BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
-CONFIGURE_ENV+=	LD=${LOCALBASE}/bin/ld
-CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
-MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
-.endif
-
 CONFIGURE_ARGS+= --python=${PYTHON_CMD}
 
 # -lprocstat actually only _needs_ -lelf after r249666 or r250870 (MFC)
 # but it shouldn't matter much
 post-patch:
 	@${MV} ${WRKDIR}/dtc ${WRKSRC}
-.if ${OSVERSION} < 900000
-	@${REINPLACE_CMD} -e '/LIBS/s|-lprocstat||' ${WRKSRC}/configure
-.else
 	@${REINPLACE_CMD} -e '/LIBS/s|-lprocstat|-lprocstat -lelf|' \
 		${WRKSRC}/configure
-.endif
 	@${REINPLACE_CMD} -e '/libs_qga=/s|glib_libs|glib_libs -lintl|' ${WRKSRC}/configure
 #.if ${PORT_OPTIONS:MPCAP}
 #	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/pcap-patch

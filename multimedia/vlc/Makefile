@@ -316,11 +316,10 @@ ZVBI_CONFIGURE_ENABLE=	zvbi
 PORTDATA=	*
 PORTDOCS=	*
 
-.include <bsd.port.options.mk>
+WITH_CDROM_DEVICE?=/dev/cd0
+WITH_DVD_DEVICE?=/dev/cd0
 
-.if ${PORT_OPTIONS:MPULSEAUDIO} && ${OSVERSION} <= 900044
-IGNORE=		Pulseaudio is unsupported with rtld prior to FreeBSD-9.x
-.endif
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
 INSTALLS_ICONS=	yes
@@ -347,16 +346,6 @@ IGNORE=	SKINS option requires QT4 or QT5 option
 .endif
 .else
 CONFIGURE_ARGS+=--disable-skins2 --disable-libtar
-.endif
-
-# Define these to override
-# FreeBSD 9.x uses CAM devices
-.if (${OSVERSION} > 900037)
-WITH_CDROM_DEVICE?=/dev/cd0
-WITH_DVD_DEVICE?=/dev/cd0
-.else
-WITH_CDROM_DEVICE?=/dev/acd0
-WITH_DVD_DEVICE?=/dev/acd0
 .endif
 
 post-patch:

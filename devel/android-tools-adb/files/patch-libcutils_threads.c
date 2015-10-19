@@ -1,6 +1,6 @@
 --- libcutils/threads.c.orig	2015-06-17 22:20:38 UTC
 +++ libcutils/threads.c
-@@ -29,6 +29,14 @@
+@@ -29,6 +29,16 @@
  #include <unistd.h>
  #elif defined(_WIN32)
  #include <windows.h>
@@ -12,6 +12,8 @@
 +#include <pthread_np.h>
 +#elif defined(__NetBSD__)
 +#include <lwp.h>
++#else
++#include <stdint.h>
  #endif
  
  // No definition needed for Android because we'll just pick up bionic's copy.

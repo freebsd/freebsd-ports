@@ -1,0 +1,17 @@
+PyOpenCL gives you easy, Pythonic access to the OpenCL parallel computation
+API.  What makes PyOpenCL special?
+
+- Object cleanup tied to lifetime of objects. This idiom, often called RAII
+  in C++, makes it much easier to write correct, leak- and crash-free code.
+- Completeness.  PyOpenCL puts the full power of OpenCL's API at your
+  disposal, if you wish.  Every obscure get_info() query and all CL calls
+  are accessible.
+- Automatic Error Checking.  All errors are automatically translated into
+  Python exceptions.
+- Speed. PyOpenCL's base layer is written in C++, so all the niceties above
+  are virtually free.
+- Helpful Documentation.
+- Liberal license.  PyOpenCL is open-source under the MIT license and free
+  for commercial, academic, and private use.
+
+WWW: http://mathema.tician.de/software/pyopencl

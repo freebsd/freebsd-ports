@@ -25,7 +25,6 @@ LDFLAGS+=	-lpthread
 BINMODE=	0755
 
 SHEBANG_FILES=	scripts/*.py
-python_OLD_CMD=	/usr/bin/env python
 
 OPTIONS_DEFINE=	7Z PYTHON RAR DOCS
 OPTIONS_SINGLE=	TLSLIB

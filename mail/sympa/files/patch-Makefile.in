@@ -1,49 +1,65 @@
-Avoid chown before install, to avoid using root.
-
-createddirs is read in Makefile and processed there
-
---- Makefile.in.orig	2014-02-05 15:08:23.000000000 +0100
-+++ Makefile.in	2014-03-14 10:42:06.143965800 +0100
-@@ -639,12 +639,7 @@
- 		$(spooldir)/moderation $(spooldir)/expire $(spooldir)/auth \
- 		$(spooldir)/outgoing $(spooldir)/tmp $(spooldir)/task \
- 		$(bouncedir) $(arcdir) $(piddir) $(staticdir) $(sysconfdir); do \
--		if [ ! -d $(DESTDIR)$$dir ] ; then \
--			echo "Creating $(DESTDIR)$$dir"; \
--			install -d -m 755 $(DESTDIR)$$dir; \
--		fi; \
+--- Makefile.in.orig	2015-10-02 21:18:14 UTC
++++ Makefile.in
+@@ -712,8 +712,8 @@ installdir:
+ 			echo "Creating $(DESTDIR)$$dir"; \
+ 			$(INSTALL) -d -m 755 $(DESTDIR)$$dir; \
+ 		fi; \
 -		chown $(USER) $(DESTDIR)$$dir || /bin/true; \
 -		chgrp $(GROUP) $(DESTDIR)$$dir || /bin/true; \
-+		echo "$${dir}" >> createddirs; \
++		chown $(USER) $(DESTDIR)$$dir || /usr/bin/true; \
++		chgrp $(GROUP) $(DESTDIR)$$dir || /usr/bin/true; \
  	done
  
- installconfig: installdir
-@@ -676,27 +671,12 @@
- 		echo "# automatically created file" >> data_structure.version; \
- 		echo "# you should not modify it" >> data_structure.version; \
- 		echo $(VERSION) >> data_structure.version; \
+ sympa_wizard.pl.inst: $(top_srcdir)/src/sbin/sympa_wizard.pl.in Makefile
+@@ -725,27 +725,27 @@ sympa_wizard.pl.inst: $(top_srcdir)/src/
+ installconfig: installdir sympa_wizard.pl.inst
+ 	@echo "Installing basic configuration ..."
+ 	export PERL5LIB=$(DESTDIR)$(modulesdir); \
+-	if [ ! -f  $(DESTDIR)$(confdir)/sympa.conf ]; then \
++	if [ ! -f  $(DESTDIR)$(confdir)/sympa.conf.sample ]; then \
+ 		echo "This looks like your first Sympa installation. The following wizard will assist you to create your first Sympa configuration.";\
+ 		if [ ! -d $(DESTDIR)$(confdir) ]; then \
+ 			$(INSTALL) -d -m 755 $(DESTDIR)$(confdir); \
+ 		fi; \
+-		chown $(USER) $(DESTDIR)$(confdir) || /bin/true; \
+-		chgrp $(GROUP) $(DESTDIR)$(confdir) || /bin/true; \
++		chown $(USER) $(DESTDIR)$(confdir) || /usr/bin/true; \
++		chgrp $(GROUP) $(DESTDIR)$(confdir) || /usr/bin/true; \
+ 		$(PERL) sympa_wizard.pl.inst \
+ 			--create sympa.conf \
+-			--target $(DESTDIR)$(confdir)/sympa.conf \
+-			|| /bin/true; \
+-		chown $(USER) $(DESTDIR)$(confdir)/sympa.conf || /bin/true; \
+-		chgrp $(GROUP) $(DESTDIR)$(confdir)/sympa.conf || /bin/true; \
++			--target $(DESTDIR)$(confdir)/sympa.conf.sample \
++			|| /usr/bin/true; \
++		chown $(USER) $(DESTDIR)$(confdir)/sympa.conf.sample || /usr/bin/true; \
++		chgrp $(GROUP) $(DESTDIR)$(confdir)/sympa.conf.sample || /usr/bin/true; \
+ 	fi; \
+-	if [ ! -f $(DESTDIR)$(sysconfdir)/data_structure.version ]; then \
++	if [ ! -f $(DESTDIR)$(sysconfdir)/data_structure.version.sample ]; then \
+ 		cd $(DESTDIR)$(sysconfdir); \
+-		echo "# automatically created file" >> data_structure.version; \
+-		echo "# you should not modify it" >> data_structure.version; \
+-		echo $(VERSION) >> data_structure.version; \
 -		chown $(USER) data_structure.version || /bin/true; \
 -		chgrp $(GROUP) data_structure.version || /bin/true; \
++		echo "# automatically created file" >> data_structure.version.sample; \
++		echo "# you should not modify it" >> data_structure.version.sample; \
++		echo $(VERSION) >> data_structure.version.sample; \
++		chown $(USER) data_structure.version.sample || /usr/bin/true; \
++		chgrp $(GROUP) data_structure.version.sample || /usr/bin/true; \
  	fi
- 	@for dir in create_list_templates families \
- 		global_task_models list_task_models scenari search_filters \
- 		mail_tt2 web_tt2; do \
--		if [ ! -d $(DESTDIR)$(sysconfdir)/$$dir ] ; then \
--			echo "Creating $(DESTDIR)$(sysconfdir)/$$dir"; \
--			install -d -m 755 $(DESTDIR)$(sysconfdir)/$$dir; \
--		fi; \
+ 	@for dir in create_list_templates custom_actions custom_conditions \
+ 		data_sources families global_task_models list_task_models \
+@@ -754,8 +754,8 @@ installconfig: installdir sympa_wizard.p
+ 			echo "Creating $(DESTDIR)$(sysconfdir)/$$dir"; \
+ 			$(INSTALL) -d -m 755 $(DESTDIR)$(sysconfdir)/$$dir; \
+ 		fi; \
 -		chown $(USER) $(DESTDIR)$(sysconfdir)/$$dir || /bin/true; \
 -		chgrp $(GROUP) $(DESTDIR)$(sysconfdir)/$$dir || /bin/true; \
-+		echo "$(DESTDIR)$(sysconfdir)/$${dir}" >> createddirs; \
++		chown $(USER) $(DESTDIR)$(sysconfdir)/$$dir || /usr/bin/true; \
++		chgrp $(GROUP) $(DESTDIR)$(sysconfdir)/$$dir || /usr/bin/true; \
  	done
--	@if [ ! -e $(DESTDIR)$(sysconfdir)/README ]; then \
--		echo "Creating $(DESTDIR)$(sysconfdir)/README"; \
--		$(SED) \
--			-e 's|--sysconfdir--|$(sysconfdir)|' \
--			-e 's|--defaultdir--|$(defaultdir)|' \
--			etc_README > $(DESTDIR)$(sysconfdir)/README; \
--		chmod 444 $(DESTDIR)$(sysconfdir)/README; \
--	fi
- 
- nextstep: 
- 	@echo ""
+ 	@if [ ! -e $(DESTDIR)$(sysconfdir)/README ]; then \
+ 		echo "Creating $(DESTDIR)$(sysconfdir)/README"; \

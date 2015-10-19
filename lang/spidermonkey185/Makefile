@@ -65,8 +65,8 @@ UTF8_CFLAGS=			-DJS_C_STRINGS_ARE_UTF8
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .endif
 
-.if ${ARCH} == "sparc64" && ${OSVERSION} > 900000
-BROKEN=			Does not build on sparc64-9: fails to link
+.if ${ARCH} == "sparc64"
+BROKEN=			Does not build on sparc64: fails to link
 .endif
 
 .if ${ARCH} == "amd64"

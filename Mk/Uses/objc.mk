@@ -50,10 +50,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/clang34:${PORTSDIR}/lang/clang34
 CPP=	${LOCALBASE}/bin/clang-cpp34
 CC=	${LOCALBASE}/bin/clang34
 CXX=	${LOCALBASE}/bin/clang++34
-.if ${OSVERSION} < 900033
-USE_BINUTILS=	yes
-LDFLAGS+=	-B${LOCALBASE}/bin
-.endif
 .endif
 .endif
 

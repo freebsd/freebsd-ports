@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	gimp-
 PKGNAMESUFFIX=	-script
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gimp scripts by elsamuko
 
 LICENSE=	GPLv3

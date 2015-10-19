@@ -49,10 +49,6 @@ TCL_CONFIGURE_ENABLE=	tcl
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900014
-CXXFLAGS+=	-D__LONG_LONG_SUPPORTED
-.endif
-
 .if ${PORT_OPTIONS:MOPENSSL}
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}

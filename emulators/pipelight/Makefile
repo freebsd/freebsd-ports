@@ -40,7 +40,6 @@ CONFIGURE_ARGS+=--verbose --wine-path=${LOCALBASE}/bin/wine --win32-prebuilt \
 USE_XORG=	x11
 USES=		compiler:gcc-c++11-lib gmake shebangfix
 MAKE_JOBS_UNSAFE=yes
-bash_OLD_CMD=	/usr/bin/env bash
 SHEBANG_FILES=	configure \
 		share/install-dependency
 

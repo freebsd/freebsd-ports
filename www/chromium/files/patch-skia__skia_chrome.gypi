@@ -1,9 +1,9 @@
---- skia/skia_chrome.gypi.orig	2015-01-21 20:28:18 UTC
-+++ skia/skia_chrome.gypi
-@@ -87,6 +87,11 @@
-     'ext/vector_platform_device_skia.h',
-   ],
-   'conditions': [
+--- skia/skia_chrome.gypi.orig	2015-10-14 18:24:42.938769000 +0200
++++ skia/skia_chrome.gypi	2015-10-14 18:22:24.515306000 +0200
+@@ -60,6 +60,11 @@
+         'ext/platform_canvas.cc',
+       ],
+     }],
 +    [ 'use_cairo == 1', {
 +      'dependencies': [
 +        '../build/linux/system.gyp:pangocairo',

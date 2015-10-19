@@ -764,7 +764,9 @@ fbsd_thread_wait (struct target_ops *ops,
   td_thrinfo_t ti;
 
   ret = beneath->to_wait (beneath, ptid, ourstatus, options);
-  if (GET_PID(ret) >= 0 && ourstatus->kind == TARGET_WAITKIND_STOPPED)
+  if (GET_PID(ret) >= 0 &&
+    ( ourstatus->kind == TARGET_WAITKIND_STOPPED ||
+      ourstatus->kind == TARGET_WAITKIND_FORKED ) )
     {
       lwp = get_current_lwp (GET_PID(ret));
       ret = thread_from_lwp (BUILD_LWP(lwp, GET_PID(ret)),

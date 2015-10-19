@@ -104,10 +104,6 @@ PLIST_SUB+=     XEN="@comment "
 .endif
 
 post-patch:
-.if ${OSVERSION} < 900000
-	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||' \
-		${WRKSRC}/configure
-.endif
 	@${MV} ${WRKSRC}/daemon/libvirtd.conf ${WRKSRC}/daemon/libvirtd.conf.sample
 	@${REINPLACE_CMD} -e 's|libvirtd\.conf|libvirtd.conf.sample|' \
 		${WRKSRC}/daemon/Makefile.in

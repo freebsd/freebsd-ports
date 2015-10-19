@@ -28,6 +28,7 @@ share/pixmaps/qupzilla.png
 %%DATADIR%%/locale/bg_BG.qm
 %%DATADIR%%/locale/ca_ES.qm
 %%DATADIR%%/locale/cs_CZ.qm
+%%DATADIR%%/locale/da_DK.qm
 %%DATADIR%%/locale/de_DE.qm
 %%DATADIR%%/locale/el_GR.qm
 %%DATADIR%%/locale/es_ES.qm
@@ -46,6 +47,7 @@ share/pixmaps/qupzilla.png
 %%DATADIR%%/locale/ja_JP.qm
 %%DATADIR%%/locale/ka_GE.qm
 %%DATADIR%%/locale/lg.qm
+%%DATADIR%%/locale/lt.qm
 %%DATADIR%%/locale/lv_LV.qm
 %%DATADIR%%/locale/nl_NL.qm
 %%DATADIR%%/locale/nqo.qm

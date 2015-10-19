@@ -41,7 +41,6 @@ USE_PYTHON=	autoplist distutils
 SUB_FILES=	pkg-message
 SUB_LIST+=	USER=${USERS}
 
-python_OLD_CMD=	/usr/bin/env python
 
 SHEBANG_FILES=	bin/calendarserver_* \
 		bin/icalendar_split \

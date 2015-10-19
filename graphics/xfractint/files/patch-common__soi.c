@@ -9,12 +9,3 @@
  #include <malloc.h>
  #endif
  #include "port.h"
-@@ -25,7 +25,7 @@
- #define FABS(x)  fabsl(x)
- /* the following needs to be changed back to frexpl once the portability
-    issue has been addressed JCO */
--#ifndef XFRACT
-+#ifndef __FreeBSD__
- #define FREXP(x,y) frexpl(x,y)
- #else
- #define FREXP(x,y) frexp(x,y)

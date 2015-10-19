@@ -20,7 +20,6 @@ RUN_DEPENDS=	avbin>=0:${PORTSDIR}/multimedia/avbin
 
 USES=		python shebangfix zip
 SHEBANG_FILES=	run_game.py
-python_OLD_CMD=	/usr/bin/env python
 USE_GNOME=	pygtk2 librsvg2
 
 PORTDOCS=	README.txt

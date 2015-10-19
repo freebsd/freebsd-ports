@@ -11,26 +11,25 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google WebP image format conversion tool
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
-PORTSCOUT=	limit:^[0-9\.]*$$
-
 OPTIONS_DEFINE=	X11
 OPTIONS_SUB=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-LDFLAGS+=	-L${LOCALBASE}/lib
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 CONFIGURE_ARGS=	--enable-libwebpdecoder \
 		--enable-libwebpdemux  \
 		--enable-libwebpmux \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-USES=		compiler:c11 jpeg libtool
+USES=		compiler:c11 jpeg libtool localbase
 
 X11_CONFIGURE_OFF=	build_vwebp=no
 X11_CONFIGURE_ON=	build_vwebp=yes

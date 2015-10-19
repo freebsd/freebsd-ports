@@ -23,7 +23,7 @@ lib/deadbeef/oss.so
 %%MMS%%lib/deadbeef/mms.so
 %%SHN%%lib/deadbeef/ddb_shn.so
 %%SHELLEXEC%%lib/deadbeef/shellexec.so
-%%SHELLEXEC%%lib/deadbeef/shellexecui_gtk2.so
+%%SHELLEXEC%%lib/deadbeef/shellexecui_gtk%%GTK_VER%%.so
 %%LASTFM%%lib/deadbeef/lastfm.so
 %%ART%%lib/deadbeef/artwork.so
 %%SID%%lib/deadbeef/sid.so
@@ -44,13 +44,13 @@ share/applications/deadbeef.desktop
 %%DOCSDIR%%/translators.txt
 %%DOCSDIR%%/help.ru.txt
 %%DOCSDIR%%/help.pt_BR.txt
-%%GUI%%lib/deadbeef/ddb_gui_GTK2.so
+%%GUI%%lib/deadbeef/ddb_gui_GTK%%GTK_VER%%.so
 %%DSP%%lib/deadbeef/dsp_libsrc.so
 %%MONO2STEREO%%lib/deadbeef/ddb_mono2stereo.so
 %%M3U%%lib/deadbeef/m3u.so
 %%PSF%%lib/deadbeef/ddb_ao.so
 %%CONVERTER%%lib/deadbeef/converter.so
-%%CONVERTER%%lib/deadbeef/converter_gtk2.so
+%%CONVERTER%%lib/deadbeef/converter_gtk%%GTK_VER%%.so
 %%CONVERTER%%lib/deadbeef/convpresets/AAC_(Nero_FAAC).txt
 %%CONVERTER%%lib/deadbeef/convpresets/ALAC.txt
 %%CONVERTER%%lib/deadbeef/convpresets/FLAC_(compression_level_5).txt
@@ -65,7 +65,7 @@ share/applications/deadbeef.desktop
 %%CONVERTER%%lib/deadbeef/convpresets/WavPack.txt
 %%VFS_ZIP%%lib/deadbeef/vfs_zip.so
 %%ALAC%%lib/deadbeef/alac.so
-%%PLTBROWSER%%lib/deadbeef/pltbrowser_gtk2.so
+%%PLTBROWSER%%lib/deadbeef/pltbrowser_gtk%%GTK_VER%%.so
 %%WMA%%lib/deadbeef/wma.so
 %%NLS%%share/locale/be/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/deadbeef.mo

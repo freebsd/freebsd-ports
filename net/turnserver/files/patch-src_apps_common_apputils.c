@@ -1,5 +1,5 @@
---- src/apps/common/apputils.c.orig	2015-06-28 09:26:54.000000000 +0200
-+++ src/apps/common/apputils.c	2015-10-02 15:56:56.044250196 +0200
+--- src/apps/common/apputils.c.orig	2015-09-30 07:05:14 UTC
++++ src/apps/common/apputils.c
 @@ -1037,13 +1037,15 @@ static const char* turn_get_method(const
  		if(!method)
  			return mdefault;

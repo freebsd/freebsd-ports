@@ -8,7 +8,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lippe@FreeBSD.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Enable "magic dot" notation in CGI::Application-derived applications
 
 BUILD_DEPENDS=	p5-CGI-Application>=4.0:${PORTSDIR}/www/p5-CGI-Application \

@@ -24,7 +24,7 @@ include/SDL2pp/Wav.hh
 include/SDL2pp/Window.hh
 include/SDL2pp/external/libcpp_optional.hh
 lib/libSDL2pp.so
-lib/libSDL2pp.so.5
-lib/libSDL2pp.so.5.0.0
+lib/libSDL2pp.so.6
+lib/libSDL2pp.so.6.0.0
 libdata/pkgconfig/sdl2pp.pc
 share/cmake/Modules/FindSDL2PP.cmake

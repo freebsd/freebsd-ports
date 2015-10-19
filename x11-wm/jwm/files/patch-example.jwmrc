@@ -1,6 +1,6 @@
---- example.jwmrc.orig
+--- example.jwmrc.orig	2015-09-13 18:02:54 UTC
 +++ example.jwmrc
-@@ -4,7 +4,8 @@
+@@ -3,7 +3,8 @@
  
      <!-- The root menu. -->
      <RootMenu onroot="12">
@@ -10,7 +10,7 @@
          <Menu icon="folder.png" label="Applications">
              <Program icon="music.png" label="Audacious">audacious</Program>
              <Program icon="calculator.png" label="Calculator">xcalc</Program>
-@@ -120,7 +121,10 @@
+@@ -111,7 +112,10 @@
           for icons in multiple paths.
        -->
      <IconPath>

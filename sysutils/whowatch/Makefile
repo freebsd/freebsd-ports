@@ -11,19 +11,15 @@ MASTER_SITES=	http://wizard.ae.krakow.pl/~mike/download/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays information in real time about users currently logged on
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/whowatch man/man1/${PORTNAME}.1.gz
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 900006
-EXTRA_PATCHES=	${PATCHDIR}/utmpx-whowatch.h \
-		${PATCHDIR}/utmpx-whowatch.c
-.endif
 
 pre-patch:
 	@${FIND} ${WRKSRC} -name 'proc????.c' | ${XARGS} ${REINPLACE_CMD} -E \
 		-e 's/kp_.?proc\.._/ki_/ ; s/pcred\.p_//'
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

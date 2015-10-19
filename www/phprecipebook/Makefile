@@ -14,26 +14,20 @@ LICENSE_FILE=	${WRKSRC}/docs/LICENSE.TXT
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
+NO_ARCH=	yes
 USES=		tar:tgz
 USE_PHP=	xml
 WANT_PHP_WEB=	yes
 SUB_FILES=	pkg-message
+PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 OPTIONS_SINGLE=	BACKEND
 OPTIONS_SINGLE_BACKEND=	MYSQL PGSQL
 OPTIONS_DEFAULT=	MYSQL
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_PHP+=	mysql
-USE_MYSQL=	yes
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PHP+=	pgsql
-USES+=		pgsql
-.endif
+MYSQL_USE=	PHP=mysql MYSQL=yes
+PGSQL_USE=	PHP=pgsql
+PGSQL_USES=	pgsql
 
 post-extract:
 	@${CHMOD} -R u+w ${WRKSRC}
@@ -41,8 +35,5 @@ post-extract:
 do-install:
 	${MV} ${WRKSRC}/custom_inc.php ${WRKSRC}/custom_inc.php.sample
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
-
-post-install:
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' >> ${TMPPLIST}
 
 .include <bsd.port.mk>

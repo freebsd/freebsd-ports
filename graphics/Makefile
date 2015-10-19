@@ -834,6 +834,7 @@
     SUBDIR += py-gimp
     SUBDIR += py-glewpy
     SUBDIR += py-goocanvas
+    SUBDIR += py-gphoto2
     SUBDIR += py-graph
     SUBDIR += py-graph-core
     SUBDIR += py-graph-dot

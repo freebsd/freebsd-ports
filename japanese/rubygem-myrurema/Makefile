@@ -12,7 +12,6 @@ COMMENT=	Tool which helps searching/browsing/writing the Japanese Ruby docs
 RUN_DEPENDS=	rubygem-launchy>=2.3:${PORTSDIR}/devel/rubygem-launchy
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

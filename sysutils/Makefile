@@ -27,6 +27,7 @@
     SUBDIR += aird
     SUBDIR += am-utils
     SUBDIR += amrstat
+    SUBDIR += amtc
     SUBDIR += anacron
     SUBDIR += and
     SUBDIR += ansible
@@ -917,6 +918,7 @@
     SUBDIR += samefile
     SUBDIR += samesame
     SUBDIR += sas2ircu
+    SUBDIR += sas3ircu
     SUBDIR += savelogs
     SUBDIR += sb16config
     SUBDIR += sbsigntool

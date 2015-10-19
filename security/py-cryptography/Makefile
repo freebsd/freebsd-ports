@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cryptography
-PORTVERSION=	0.8.2
+PORTVERSION=	1.0.2
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -32,6 +32,9 @@ LDFLAGS+=	-L${OPENSSLLIB}
 .if ${PYTHON_REL} < 3400
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}enum34>0:${PORTSDIR}/devel/py-enum34
 .endif
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/cryptography/hazmat/bindings/*.so
 
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test

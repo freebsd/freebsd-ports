@@ -15,7 +15,6 @@ BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
 SUB_FILES=	pkg-message
 USES=		python:build shebangfix
 USE_LDCONFIG=	yes
-python_OLD_CMD=	/usr/bin/env python
 SHEBANG_FILES=	make_flash_header.py
 
 do-build:

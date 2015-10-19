@@ -16,9 +16,8 @@ RUN_DEPENDS=	wbar:${PORTSDIR}/x11/wbar
 
 USE_GNOME=	pygobject pygtk2 gtk20
 USES=		gettext desktop-file-utils python shebangfix
-SHEBANG_LANG=	python
 SHEBANG_FILES=	${WRKSRC}/wbarconf
-python_OLD_CMD=	/usr/bin/env python2
+python_OLD_CMD=	"/usr/bin/env python2"
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PORTDOCS=	README COPYING

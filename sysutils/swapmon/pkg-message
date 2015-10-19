@@ -1,0 +1,4 @@
+To have swapmon run automatically after each boot,
+add the following line to /etc/rc.conf:
+
+  swapmon_enable="YES"

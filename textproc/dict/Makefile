@@ -11,15 +11,14 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Dictionary Server Protocol (RFC2229) client
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libmaa.so:${PORTSDIR}/devel/libmaa
 
 ALL_TARGET=	dict
-CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install.dict
-LIBS+=		-L${LOCALBASE}/lib
-USES=		bison gmake libtool:build
+USES=		bison gmake libtool:build localbase
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^        mkdir|	mkdir|' ${WRKSRC}/Makefile.in

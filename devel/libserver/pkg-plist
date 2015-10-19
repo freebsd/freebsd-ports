@@ -1,6 +1,10 @@
 include/server.h
+include/serverevents.h
 lib/libserver.so
 lib/libserver.so.%%PORTVERSION%%
 lib/libserverthreads.so
 lib/libserverthreads.so.%%PORTVERSION%%
+lib/libserverevents.so
+lib/libserverevents.so.%%PORTVERSION%%
 man/man8/libserver.8.gz
+man/man8/libserverevents.8.gz

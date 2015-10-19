@@ -58,6 +58,439 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7f645ee5-7681-11e5-8519-005056ac623e">
+    <topic>Git -- Execute arbitrary code</topic>
+    <affects>
+      <package>
+	<name>git</name>
+	<range><lt>2.6.1</lt></range>
+      </package>
+      <package>
+	<name>git-gui</name>
+	<range><lt>2.6.1</lt></range>
+      </package>
+      <package>
+	<name>git-lite</name>
+	<range><lt>2.6.1</lt></range>
+      </package>
+      <package>
+	<name>git-subversion</name>
+	<range><lt>2.6.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Git release notes:</p>
+	<blockquote cite="https://raw.githubusercontent.com/git/git/master/Documentation/RelNotes/2.6.1.txt">
+	  <p>Some protocols (like git-remote-ext) can execute arbitrary code
+	    found in the URL.  The URLs that submodules use may come from
+	    arbitrary sources (e.g., .gitmodules files in a remote
+	    repository), and can hurt those who blindly enable recursive
+	    fetch.  Restrict the allowed protocols to well known and safe
+	    ones.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://raw.githubusercontent.com/git/git/master/Documentation/RelNotes/2.6.1.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-09-23</discovery>
+      <entry>2015-10-19</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3934cc60-f0fa-4eca-be09-c8bd7ae42871">
+    <topic>Salt -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py27-salt</name>
+	<range><lt>2015.8.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Salt release notes:</p>
+	<blockquote cite="https://docs.saltstack.com/en/latest/topics/releases/2015.8.1.html">
+	  <p>CVE-2015-6918 - Git modules leaking HTTPS auth credentials to debug log</p>
+	  <p>Updated the Git state and execution modules to no longer display HTTPS basic
+	    authentication credentials in loglevel debug output on the Salt master. These
+	    credentials are now replaced with REDACTED in the debug output. Thanks to
+	    Andreas Stieger for bringing this to our attention.</p>
+	  <p>CVE-2015-6941 - win_useradd module and salt-cloud display passwords in debug
+	    log</p>
+	  <p>Updated the win_useradd module return data to no longer include the password
+	    of the newly created user. The password is now replaced with the string
+	    XXX-REDACTED-XXX. Updated the Salt Cloud debug output to no longer display
+	    win_password and sudo_password authentication credentials. Also updated the
+	    Linode driver to no longer display authentication credentials in debug logs.
+	    These credentials are now replaced with REDACTED in the debug output.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://docs.saltstack.com/en/latest/topics/releases/2015.8.1.html</url>
+      <cvename>CVE-2015-6918</cvename>
+      <cvename>CVE-2015-6941</cvename>
+    </references>
+    <dates>
+      <discovery>2015-10-16</discovery>
+      <entry>2015-10-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="79c68ef7-c8ae-4ade-91b4-4b8221b7c72a">
+    <topic>firefox -- Cross-origin restriction bypass using Fetch</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>41.0.2,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>41.0.2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Firefox Developers report:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/advisories/mfsa2015-115/">
+	  <p>Security researcher Abdulrahman Alqabandi reported that the fetch()
+	    API did not correctly implement the Cross-Origin Resource Sharing
+	    (CORS) specification, allowing a malicious page to access private
+	    data from other origins. Mozilla developer Ben Kelly independently reported the
+	    same issue.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.mozilla.org/en-US/security/advisories/mfsa2015-115/</url>
+      <cvename>CVE-2015-7184</cvename>
+    </references>
+    <dates>
+      <discovery>2015-10-15</discovery>
+      <entry>2015-10-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="84147b46-e876-486d-b746-339ee45a8bb9">
+    <topic>flash -- remote code execution</topic>
+    <affects>
+      <package>
+	<name>linux-c6-flashplugin</name>
+	<name>linux-f10-flashplugin</name>
+	<name>linux-c6_64-flashplugin</name>
+	<range><lt>11.2r202.540</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="https://helpx.adobe.com/security/products/flash-player/apsb15-27.html">
+	  <p>These updates resolve type confusion vulnerabilities that
+	    could lead to code execution (CVE-2015-7645, CVE-2015-7647,
+	    CVE-2015-7648).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7645</cvename>
+      <cvename>CVE-2015-7647</cvename>
+      <cvename>CVE-2015-7648</cvename>
+      <url>https://helpx.adobe.com/security/products/flash-player/apsb15-27.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-16</discovery>
+      <entry>2015-10-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e75a96df-73ca-11e5-9b45-b499baebfeaf">
+    <topic>LibreSSL -- Memory leak and buffer overflow</topic>
+    <affects>
+      <package>
+	<name>libressl</name>
+	<range><lt>2.2.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Qualys reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/10/16/1">
+	  <p>During the code review of OpenSMTPD a memory leak and buffer overflow
+	    (an off-by-one, usually stack-based) were discovered in LibreSSL's
+	    OBJ_obj2txt() function. This function is called automatically during
+	    a TLS handshake (both client-side, unless an anonymous mode is used,
+	    and server-side, if client authentication is requested).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://marc.info/?l=openbsd-announce&amp;m=144495690528446</url>
+      <cvename>CVE-2015-5333</cvename>
+      <cvename>CVE-2015-5334</cvename>
+    </references>
+    <dates>
+      <discovery>2015-10-15</discovery>
+      <entry>2015-10-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="07a1a76c-734b-11e5-ae81-14dae9d210b8">
+    <topic>mbedTLS/PolarSSL -- DoS and possible remote code execution</topic>
+    <affects>
+      <package>
+	<name>polarssl</name>
+	<range><ge>1.2.0</ge><lt>1.2.17</lt></range>
+      </package>
+      <package>
+	<name>polarssl13</name>
+	<range><ge>1.3.0</ge><lt>1.3.14</lt></range>
+      </package>
+      <package>
+	<name>mbedtls</name>
+	<range><lt>2.1.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ARM Limited reports:</p>
+	<blockquote cite="https://tls.mbed.org/tech-updates/security-advisories/mbedtls-security-advisory-2015-01">
+	  <p>When the client creates its ClientHello message, due to
+	    insufficient bounds checking it can overflow the heap-based buffer
+	    containing the message while writing some extensions. Two extensions in
+	    particular could be used by a remote attacker to trigger the overflow:
+	    the session ticket extension and the server name indication (SNI)
+	    extension.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://tls.mbed.org/tech-updates/security-advisories/mbedtls-security-advisory-2015-01</url>
+      <cvename>CVE-2015-5291</cvename>
+    </references>
+    <dates>
+      <discovery>2015-10-05</discovery>
+      <entry>2015-10-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ea1d2530-72ce-11e5-a2a1-002590263bf5">
+    <topic>magento -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>magento</name>
+	<range><lt>1.9.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Magento, Inc. reports:</p>
+	<blockquote cite="https://www.magentocommerce.com/download">
+	  <p>SUPEE-6482 - This patch addresses two issues related to APIs and
+	    two cross-site scripting risks.</p>
+	  <p>SUPEE-6285 - This patch provides protection against several types
+	    of security-related issues, including information leaks, request
+	    forgeries, and cross-site scripting.</p>
+	  <p>SUPEE-5994 - This patch addresses multiple security
+	    vulnerabilities in Magento Community Edition software, including
+	    issues that can put customer information at risk.</p>
+	  <p>SUPEE-5344 - Addresses a potential remote code execution
+	    exploit.</p>
+	  <p>SUPEE-1533 - Addresses two potential remote code execution
+	    exploits.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/201709</freebsdpr>
+      <url>https://www.magentocommerce.com/download</url>
+      <url>http://merch.docs.magento.com/ce/user_guide/Magento_Community_Edition_User_Guide.html#magento/release-notes-ce-1.9.2.html</url>
+      <url>http://merch.docs.magento.com/ce/user_guide/Magento_Community_Edition_User_Guide.html#magento/release-notes-ce-1.9.2.1.html</url>
+    </references>
+    <dates>
+      <discovery>2014-10-03</discovery>
+      <entry>2015-10-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="705b759c-7293-11e5-a371-14dae9d210b8">
+    <topic>pear-twig -- remote code execution</topic>
+    <affects>
+      <package>
+	<name>pear-twig-twig</name>
+	<range><lt>1.20.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Fabien Potencier reports:</p>
+	<blockquote cite="http://symfony.com/blog/security-release-twig-1-20-0">
+	  <p>End users can craft valid Twig code that allows them to
+	    execute arbitrary code (RCEs) via the _self variable, which is always
+	    available, even in sandboxed templates.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://symfony.com/blog/security-release-twig-1-20-0</url>
+      <cvename>CVE-2015-7809</cvename>
+    </references>
+    <dates>
+      <discovery>2015-08-12</discovery>
+      <entry>2015-10-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="06fefd2f-728f-11e5-a371-14dae9d210b8">
+    <topic>miniupnpc -- buffer overflow</topic>
+    <affects>
+      <package>
+	<name>miniupnpc</name>
+	<range><ge>1.9.1</ge><lt>1.9.20150917</lt></range>
+	<range><lt>1.9_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Talos reports:</p>
+	<blockquote cite="http://talosintel.com/reports/TALOS-2015-0035/">
+	  <p>An exploitable buffer overflow vulnerability exists in the
+	    XML parser functionality of the MiniUPnP library. A specially crafted
+	    XML response can lead to a buffer overflow on the stack resulting in
+	    remote code execution. An attacker can set up a server on the local
+	    network to trigger this vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-6031</cvename>
+      <url>http://talosintel.com/reports/TALOS-2015-0035/</url>
+      <url>https://github.com/miniupnp/miniupnp/commit/79cca974a4c2ab1199786732a67ff6d898051b78</url>
+    </references>
+    <dates>
+      <discovery>2015-09-15</discovery>
+      <entry>2015-10-14</entry>
+      <modified>2015-10-14</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="a63f2c06-726b-11e5-a12b-bcaec565249c">
+    <topic>flash -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-c6-flashplugin</name>
+	<name>linux-f10-flashplugin</name>
+	<name>linux-c6_64-flashplugin</name>
+	<range><lt>11.2r202.535</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="https://helpx.adobe.com/security/products/flash-player/apsb15-25.html">
+	  <p>These updates resolve a vulnerability that could be exploited
+	    to bypass the same-origin-policy and lead to information
+	    disclosure (CVE-2015-7628).</p>
+
+	  <p>These updates include a defense-in-depth feature in the Flash
+	    broker API (CVE-2015-5569).</p>
+
+	  <p>These updates resolve use-after-free vulnerabilities that
+	    could lead to code execution (CVE-2015-7629, CVE-2015-7631,
+	    CVE-2015-7643, CVE-2015-7644).</p>
+
+	  <p>These updates resolve a buffer overflow vulnerability that
+	    could lead to code execution (CVE-2015-7632).</p>
+
+	  <p>These updates resolve memory corruption vulnerabilities that
+	    could lead to code execution (CVE-2015-7625, CVE-2015-7626,
+	    CVE-2015-7627, CVE-2015-7630, CVE-2015-7633, CVE-2015-7634).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5569</cvename>
+      <cvename>CVE-2015-7625</cvename>
+      <cvename>CVE-2015-7626</cvename>
+      <cvename>CVE-2015-7627</cvename>
+      <cvename>CVE-2015-7628</cvename>
+      <cvename>CVE-2015-7629</cvename>
+      <cvename>CVE-2015-7630</cvename>
+      <cvename>CVE-2015-7631</cvename>
+      <cvename>CVE-2015-7632</cvename>
+      <cvename>CVE-2015-7633</cvename>
+      <cvename>CVE-2015-7634</cvename>
+      <cvename>CVE-2015-7643</cvename>
+      <cvename>CVE-2015-7644</cvename>
+      <url>https://helpx.adobe.com/security/products/flash-player/apsb15-25.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-13</discovery>
+      <entry>2015-10-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8301c04d-71df-11e5-9fcb-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<!--pcbsd-->
+	<name>chromium-npapi</name>
+	<name>chromium-pulse</name>
+	<range><lt>46.0.2490.71</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/2015/10/stable-channel-update.html">
+	  <p>24 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[519558] High CVE-2015-6755: Cross-origin bypass in Blink.
+	      Credit to Mariusz Mlynski.</li>
+	    <li>[507316] High CVE-2015-6756: Use-after-free in PDFium. Credit
+	      to anonymous.</li>
+	    <li>[529520] High CVE-2015-6757: Use-after-free in ServiceWorker.
+	       Credit to Collin Payne.</li>
+	     <li>[522131] High CVE-2015-6758: Bad-cast in PDFium. Credit to Atte
+	       Kettunen of OUSPG.</li>
+	     <li>[514076] Medium CVE-2015-6759: Information leakage in
+	       LocalStorage. Credit to Muneaki Nishimura (nishimunea).</li>
+	     <li>[519642] Medium CVE-2015-6760: Improper error handling in
+	       libANGLE. Credit to lastland.net.</li>
+	     <li>[447860,532967] Medium CVE-2015-6761: Memory corruption in
+	       FFMpeg. Credit to Aki Helin of OUSPG and anonymous.</li>
+	     <li>[512678] Low CVE-2015-6762: CORS bypass via CSS fonts. Credit
+	       to Muneaki Nishimura (nishimunea).</li>
+	     <li> [542517] CVE-2015-6763: Various fixes from internal audits,
+	       fuzzing and other initiatives.</li>
+	     <li>Multiple vulnerabilities in V8 fixed at the tip of the 4.6
+	       branch (currently 4.6.85.23).</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-6755</cvename>
+      <cvename>CVE-2015-6756</cvename>
+      <cvename>CVE-2015-6757</cvename>
+      <cvename>CVE-2015-6758</cvename>
+      <cvename>CVE-2015-6759</cvename>
+      <cvename>CVE-2015-6760</cvename>
+      <cvename>CVE-2015-6761</cvename>
+      <cvename>CVE-2015-6762</cvename>
+      <cvename>CVE-2015-6763</cvename>
+      <url>http://googlechromereleases.blogspot.nl/2015/10/stable-channel-update.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-13</discovery>
+      <entry>2015-10-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="00dadbf0-6f61-11e5-a2a1-002590263bf5">
     <topic>p5-UI-Dialog -- shell command execution vulnerability</topic>
     <affects>
@@ -1393,10 +1826,12 @@ Notes:
     </description>
     <references>
       <url>http://seclists.org/oss-sec/2015/q3/556</url>
+      <cvename>CVE-2015-7801</cvename>
     </references>
     <dates>
       <discovery>2015-09-16</discovery>
       <entry>2015-09-17</entry>
+      <modified>2015-10-14</modified>
     </dates>
   </vuln>
 
@@ -32901,6 +33336,10 @@ executed in your Internet Explorer while displaying the email.</p>
 	<name>ZendFramework</name>
 	<range><lt>1.11.13</lt></range>
       </package>
+      <package>
+	<name>magento</name>
+	<range><lt>1.7.0.2</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -32930,10 +33369,12 @@ executed in your Internet Explorer while displaying the email.</p>
       <url>http://framework.zend.com/security/advisory/ZF2012-02</url>
       <url>http://www.openwall.com/lists/oss-security/2012/06/26/2</url>
       <url>https://secunia.com/advisories/49665/</url>
+      <url>http://www.magentocommerce.com/download/release_notes</url>
     </references>
     <dates>
       <discovery>2012-06-26</discovery>
       <entry>2012-10-16</entry>
+      <modified>2015-10-14</modified>
     </dates>
   </vuln>
 

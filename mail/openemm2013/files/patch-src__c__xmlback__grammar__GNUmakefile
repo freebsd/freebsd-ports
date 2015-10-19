@@ -1,0 +1,13 @@
+--- src/c/xmlback/grammar/GNUmakefile.orig	2013-09-11 08:30:37 UTC
++++ src/c/xmlback/grammar/GNUmakefile
+@@ -20,8 +20,8 @@
+ # Contributor(s): AGNITAS AG. 
+ ##################################################################################
+  
+-CC	= gcc
+-CFLAGS	= -I.. -I../../lib $(shell xml2-config --cflags)
++CC	?= gcc
++CFLAGS	+= -I.. -I../../lib $(shell xml2-config --cflags)
+ LDFLAGS	=
+ SRCS	= transform.c parse.c
+ OBJS	= $(SRCS:%.c=%.o)

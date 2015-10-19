@@ -54,7 +54,18 @@ include/GeographicLib/Utility.hpp
 lib/libGeographic.a
 lib/libGeographic.so
 lib/libGeographic.so.14
-lib/libGeographic.so.14.2.0
+lib/libGeographic.so.14.2.1
+lib/node_modules/geographiclib/LICENSE.txt
+lib/node_modules/geographiclib/README.md
+lib/node_modules/geographiclib/geographiclib.js
+lib/node_modules/geographiclib/geographiclib.min.js
+lib/node_modules/geographiclib/package.json
+lib/node_modules/geographiclib/src/DMS.js
+lib/node_modules/geographiclib/src/Geodesic.js
+lib/node_modules/geographiclib/src/GeodesicLine.js
+lib/node_modules/geographiclib/src/Math.js
+lib/node_modules/geographiclib/src/PolygonArea.js
+lib/node_modules/geographiclib/test/geodesictest.js
 %%PYTHON_SITELIBDIR%%/geographiclib/__init__.py
 %%PYTHON_SITELIBDIR%%/geographiclib/accumulator.py
 %%PYTHON_SITELIBDIR%%/geographiclib/constants.py
@@ -168,6 +179,7 @@ share/matlab/geographiclib/geodarea.m
 share/matlab/geographiclib/geoddistance.m
 share/matlab/geographiclib/geoddoc.m
 share/matlab/geographiclib/geodreckon.m
+share/matlab/geographiclib/geographiclib_test.m
 share/matlab/geographiclib/geoid_height.m
 share/matlab/geographiclib/geoid_load.m
 share/matlab/geographiclib/gereckon.m

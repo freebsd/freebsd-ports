@@ -11,10 +11,11 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Automatically generating simple manual pages from program output
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	NLS
 
-CFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 # keep gmake:lite has a dependency to avoid circular dependency
 USES=		gmake:lite perl5
@@ -27,7 +28,6 @@ LANGS=		de el eo fi fr hr it pl pt_BR ru sr sv uk vi
 LANGS_MTREE=	ja	# languages that already exist in BSD.local.dist
 
 NLS_BUILD_DEPENDS=	p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext
-NLS_CFLAGS=		-lintl
 NLS_CONFIGURE_ENABLE=	nls
 # Add note of build failure caused by Perl infrastructure change in 20130612
 NLS_VARS=		CONFIGURE_FAIL_MESSAGE="Please read UPDATING entry 20130612 \(http://svnweb.freebsd.org/ports/head/UPDATING\?r1=320405\&r2=320679\) and PR/184276 \(http://www.freebsd.org/cgi/query-pr.cgi\?pr=ports/184276\) to fix your Perl installation if you got the error message \"configure: error: perl module Locale::gettext required\"."

@@ -24,7 +24,6 @@ CONFIGURE_ARGS=	--taglib-inc-dir="${LOCALBASE}/include/taglib" \
 		--boost-inc-dir="${PYTHON_INCLUDEDIR},${LOCALBASE}/include" \
 		--boost-lib-dir="${PYTHON_LIBDIR},${LOCALBASE}/lib" \
 		--boost-python-libname="boost_python"
-python_OLD_CMD=	/usr/bin/env python
 SHEBANG_FILES=	configure.py
 USE_PYTHON=	distutils autoplist
 

@@ -60,6 +60,6 @@ include/torrent/utils/signal_bitfield.h
 include/torrent/utils/thread_base.h
 include/torrent/utils/thread_interrupt.h
 lib/libtorrent.so
-lib/libtorrent.so.18
-lib/libtorrent.so.18.0.0
+lib/libtorrent.so.19
+lib/libtorrent.so.19.0.0
 libdata/pkgconfig/libtorrent.pc

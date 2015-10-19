@@ -21,22 +21,13 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 PORTDATA=	*
 
-USES=		dos2unix python
-
-USES+=		shebangfix
-SHEBANG_FILES=	*.py dynagen pemu-start.sh
-SHEBANG_LANG=	python_env python_bol python_cnf
-python_env_OLD_CMD=/usr/bin/env[[:space:]]*python
-python_env_CMD=	${PYTHON_CMD}
-python_bol_OLD_CMD=the an incredible combination
-python_bol_CMD=|;9s|^python|${PYTHON_CMD}
-python_cnf_OLD_CMD=the an incredible combination
-python_cnf_CMD=|;s|^CONFIGSPECPATH.*|CONFIGSPECPATH = ['${PREFIX}/share/dynagen']
+USES=		dos2unix python shebangfix
+SHEBANG_FILES=	*.py dynagen
 
 USE_PYTHON=	distutils autoplist
 ALL_TARGET=	# empty
+NO_ARCH=	yes
 
-.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
 post-extract:

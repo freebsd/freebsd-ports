@@ -12,12 +12,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multithread and multi-platform download manager
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_WX=		2.8+
 WX_CONF_ARGS=	relative
-WX_UNICODE=	yes
 USES=		autoreconf gettext libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	WXRC="${WXRC_CMD}"
