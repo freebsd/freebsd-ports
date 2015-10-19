@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aircrack-ng
-DISTVERSION=	1.2-rc1
-PORTREVISION=	1
+DISTVERSION=	1.2-rc2
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://download.aircrack-ng.org/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
@@ -18,28 +17,26 @@ USES=		cpe dos2unix gmake
 CPE_VERSION=	${DISTVERSION:C/-.*//}
 CPE_UPDATE=	${DISTVERSION:C/^[^-]*$//:C/.*-//}
 DOS2UNIX_FILES=	src/osdep/byteorder.h
-MAKE_ARGS=	unstable=true libnl=false prefix=${PREFIX}
+MAKE_ARGS=	experimental=true libnl=false prefix=${PREFIX}
+INSTALL_TARGET=	strip install
 USE_OPENSSL=	yes
 
-BIN_FILES=	airdecloak-ng buddy-ng aircrack-ng airdecap-ng ivstools \
-		makeivs-ng packetforge-ng wpaclean kstats
-SBIN_FILES=	airtun-ng besside-ng airbase-ng easside-ng airodump-ng \
-		aireplay-ng wesside-ng airserv-ng tkiptun-ng
-
-OPTIONS_DEFINE=	SQLITE
+OPTIONS_DEFINE=	PCRE SQLITE
+OPTIONS_DEFAULT=PCRE SQLITE
 OPTIONS_SUB=	yes
+
+PCRE_DESC=	Use Perl Compatible Regular Expressions for wesside
+PCRE_MAKE_ARGS=	pcre=true
+PCRE_LIB_DEPENDS=   libpcre.so:${PORTSDIR}/devel/pcre
+PCRE_USES=	pkgconfig
+
 SQLITE_DESC=	Use SQLite for storing pre-computed key tables
 SQLITE_USE=	SQLITE=yes
-SQLITE_MAKE_ARGS=	SQLITE=true
-SQLITE_CFLAGS=	-I${LOCALBASE}/include
-SQLITE_VARS=	BIN_FILES+=airolib-ng
+SQLITE_MAKE_ARGS=	sqlite=true
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e 's|-I/usr/local|-I${LOCALBASE}|' \
 		-e 's|share/\(man/man[1-9]\)|\1|' \
-		-e 's|^CC[[:blank:]]*|&?|' \
-		-e 's|^AR[[:blank:]]*|&?|' \
 			${WRKSRC}/common.mak
 # Do not install scripts (Linux-specific) and their manpages
 	@${REINPLACE_CMD} \
@@ -48,9 +45,5 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-E 's/air(driver|mon)-ng\.1 //' \
 			${WRKSRC}/manpages/Makefile
-
-post-install:
-	@${STRIP_CMD} ${BIN_FILES:S,^,${STAGEDIR}${PREFIX}/bin/,} \
-		${SBIN_FILES:S,^,${STAGEDIR}${PREFIX}/sbin/,}
 
 .include <bsd.port.mk>
