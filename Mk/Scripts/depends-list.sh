@@ -23,6 +23,8 @@ shift $((OPTIND-1))
 validate_env dp_ALLDEPENDS dp_PORTSDIR dp_PKGNAME
 [ ${recursive} -eq 1 ] && validate_env dp_MAKE
 
+MAKE="${dp_MAKE}" PORTSDIR="${dp_PORTSDIR}" export_ports_env >/dev/null
+
 set -u
 
 check_dep() {
