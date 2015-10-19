@@ -11,6 +11,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Last.fm fingerprint library
 
 LICENSE=	LGPL3
+LICENSE_FILE=	${WRKSRC}/debian/copyright
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libfftw3.so:${PORTSDIR}/math/fftw3 \
@@ -19,15 +20,8 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 		libtag.so:${PORTSDIR}/audio/taglib
 
-CPPFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
-USES=		cmake tar:xz
-
-post-patch:
-	@${REINPLACE_CMD} \
-		-e 's|\(ADD_DEFINITIONS\)(.*)|\1(${CFLAGS} ${CPPFLAGS})|' \
-		-e 's|\(LINK_DIRECTORIES\)(\(.*\))|\1(\2 ${LOCALBASE}/lib)|' \
-			${WRKSRC}/CMakeLists.txt
+USES=		cmake localbase tar:xz
 
 .include <bsd.port.mk>
