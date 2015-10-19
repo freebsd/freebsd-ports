@@ -27,7 +27,7 @@ LICENSE=	EPL
 
 USES=	tar:bzip2
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.6 1.7
 USE_ANT=	yes
 USE_GCC=	yes
 
@@ -42,10 +42,6 @@ WRKSRC=		${WRKDIR}/x10.dist
 OPTIONS_DEFINE=	EXAMPLES
 
 .include <bsd.port.pre.mk>
-
-.if ${JAVA_PORT_VERSION:M1.8.*}
-BROKEN=		Does not build with JDK 1.8
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's/value="make"/value="gmake"/g' \
