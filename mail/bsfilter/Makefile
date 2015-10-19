@@ -18,7 +18,6 @@ NO_BUILD=	yes
 USE_RUBY=	yes
 USES=		shebangfix tar:tgz
 SHEBANG_FILES=	bsfilter/bsfilter
-ruby_OLD_CMD=	/usr/bin/env ruby
 
 OPTIONS_DEFINE=	EXAMPLES MECAB
 

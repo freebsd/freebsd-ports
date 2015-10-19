@@ -60,7 +60,7 @@ CMAKE_ARGS+=	-DFLEX_EXECUTABLE=${LOCALBASE}/bin/flex
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/PERL_PATH/ s|${perl_OLD_CMD}|${perl_CMD}|' \
+	@${REINPLACE_CMD} -e '/PERL_PATH/ s|/usr/bin/perl|${perl_CMD}|' \
 		${WRKSRC}/src/config.xml
 
 .include <bsd.port.post.mk>

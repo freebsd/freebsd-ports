@@ -19,7 +19,6 @@ USE_SUBMAKE=	yes
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	netams
 USES=		shebangfix
-SHEBANG_LANG=	perl
 SHEBANG_FILES=	cgi-bin/*.cgi cgi-bin/*.pl \
 		cgi-bin/admin/*.cgi addon/*.pl
 

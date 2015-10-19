@@ -18,7 +18,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 
 USES=		python:2 shebangfix
 SHEBANG_FILES=	GinGin/data/config.py.example
-python_OLD_CMD=	env python
+python_OLD_CMD=	"env python"
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
