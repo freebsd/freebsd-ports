@@ -160,9 +160,11 @@ validate_env() {
 }
 
 export_ports_env() {
-	local export_vars make_cmd make_env var results value
+	local export_vars make_cmd make_env var results value uses
 
 	validate_env MAKE PORTSDIR
+
+	uses="perl5 python"
 
 	make_env="\
 		_PORTS_ENV_CHECK=1 \
@@ -170,7 +172,6 @@ export_ports_env() {
 		GNU_CONFIGURE=1 \
 		USE_JAVA=1 \
 		USE_LINUX=1 \
-		USES=perl5 \
 	"
 
 	make_cmd="${make_env}"
@@ -183,6 +184,8 @@ export_ports_env() {
 		OPSYS \
 		OSREL \
 		OSVERSION \
+		PYTHON_PORTVERSION \
+		PYTHONBASE \
 		UID \
 		_JAVA_OS_LIST_REGEXP \
 		_JAVA_PORTS_INSTALLED \
@@ -191,6 +194,7 @@ export_ports_env() {
 		_OSRELEASE \
 		_PERL5_FROM_BIN \
 		_PKG_CHECKED \
+		_PYTHON_DEFAULT_VERSION \
 		_SMP_CPUS \
 	"
 
@@ -199,7 +203,8 @@ export_ports_env() {
 	done
 
 	# Bring in all the vars, but not empty ones.
-	eval $(${MAKE} -f ${PORTSDIR}/Mk/bsd.port.mk ${make_cmd} | grep -v '=$')
+	eval $(${MAKE} -f ${PORTSDIR}/Mk/bsd.port.mk ${make_cmd} \
+	    USES="${uses}" | grep -v '=$')
 	for var in ${export_vars}; do
 		# Export and display non-empty ones.  This is not redundant
 		# with above since we're looping on all vars here; do not
