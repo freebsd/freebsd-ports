@@ -1,6 +1,7 @@
 lib/elasticsearch/plugins/sql/_site/controllers.js
 lib/elasticsearch/plugins/sql/_site/editor.js
 lib/elasticsearch/plugins/sql/_site/index.html
+lib/elasticsearch/plugins/sql/_site/mapping_parser.js
 lib/elasticsearch/plugins/sql/_site/query.js
 lib/elasticsearch/plugins/sql/_site/style.css
 lib/elasticsearch/plugins/sql/_site/tests/SpecRunner.html
@@ -417,5 +418,5 @@ lib/elasticsearch/plugins/sql/_site/vendor/jasmine-2.1.3/jasmine_favicon.png
 lib/elasticsearch/plugins/sql/_site/vendor/jasmine-jquery/jasmine-jquery.js
 lib/elasticsearch/plugins/sql/_site/vendor/jquery/jquery-2.1.1.min.js
 lib/elasticsearch/plugins/sql/druid.jar
-lib/elasticsearch/plugins/sql/guava.jar
 lib/elasticsearch/plugins/sql/elasticsearch-sql-%%VERSION%%.jar
+lib/elasticsearch/plugins/sql/guava.jar
