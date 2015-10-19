@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.7.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
 DISTNAME=	${PORTNAME}-${DISTVERSION}.src
@@ -30,9 +30,9 @@ SUB_LIST=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
 CMAKE_INSTALL_PREFIX=	${LLVM_PREFIX}
 CMAKE_ARGS=	-DBUILD_SHARED_LIBS=ON
 
-OPTIONS_DEFINE=	CLANG COMPILER_RT DOCS GOLD LIT LLD LLDB
+OPTIONS_DEFINE=	CLANG COMPILER_RT DOCS EXTRAS GOLD LIT LLD LLDB
 OPTIONS_DEFINE_amd64=	OPENMP
-OPTIONS_DEFAULT=	CLANG GOLD LIT LLD LLDB
+OPTIONS_DEFAULT=	CLANG EXTRAS GOLD LIT LLD LLDB
 OPTIONS_DEFAULT_amd64=	COMPILER_RT OPENMP
 OPTIONS_DEFAULT_i386=	COMPILER_RT
 OPTIONS_SUB=	yes
@@ -49,17 +49,27 @@ CLANG_CMAKE_ON=		-DCLANG_DEFAULT_OPENMP_RUNTIME=libomp
 CLANG_PORTDOCS=		clang
 COMPILER_RT_DESC=	Build compiler-rt (sanitizers)
 COMPILER_RT_DISTFILES=	compiler-rt-${DISTVERSION}.src${EXTRACT_SUFX}
+COMPILER_RT_EXTRA_PATCHES= \
+	${PATCHDIR}/compiler-rt-patch-svn-249051
 DOCS_PORTDOCS=		llvm
 DOCS_CMAKE_ON=		-DLLVM_ENABLE_SPHINX=ON \
 			-DSPHINX_WARNINGS_AS_ERRORS=OFF \
 			-DLLVM_BUILD_DOCS=ON
 DOCS_PLIST_FILES=	${MAN1SRCS:S|^|man/man1/|:S|.1$|${LLVM_SUFFIX}.1.gz|}
+EXTRAS_DESC=		Extra clang tools
+EXTRAS_IMPLIES=		CLANG
+EXTRAS_DISTFILES= clang-tools-extra-${DISTVERSION}.src${EXTRACT_SUFX}
+EXTRAS_EXTRA_PATCHES= \
+	${PATCHDIR}/extras-patch-cmake_include_hack.diff
 LIT_DESC=		Install lit and FileCheck test tools
 LLD_DESC=		Install lld, the LLVM linker
 LLD_DISTFILES=		lld-${DISTVERSION}.src${EXTRACT_SUFX}
 LLDB_DESC=		Install lldb, the LLVM debugger (ignored on 9.x)
 LLDB_BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 LLDB_DISTFILES=		lldb-${DISTVERSION}.src${EXTRACT_SUFX}
+LLDB_EXTRA_PATCHES= \
+	${PATCHDIR}/lldb-patch-svn-247116 \
+	${PATCHDIR}/lldb-patch-svn-249467
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
 OPENMP_DISTFILES=	openmp-${DISTVERSION}.src${EXTRACT_SUFX}
 GOLD_DESC=		Build the LLVM Gold plugin for LTO
@@ -67,7 +77,7 @@ GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
 GOLD_BUILD_DEPENDS=	ld.gold:${PORTSDIR}/devel/binutils
 
 # Emulate USE_GITHUB's ${WRKSRC_tag} to reduce diffs to ../llvm-devel
-.for option in CLANG COMPILER_RT LLD LLDB OPENMP
+.for option in CLANG COMPILER_RT EXTRAS LLD LLDB OPENMP
 WRKSRC_${option:tl}=		${WRKDIR}/${${option}_DISTFILES:S/${EXTRACT_SUFX}//}
 .endfor
 
@@ -75,7 +85,6 @@ OPTIONS_SUB=	yes
 
 DOCS_BUILD_DEPENDS=		sphinx-build:${PORTSDIR}/textproc/py-sphinx
 
-LLVM_RELEASE=	${PORTVERSION:C/\.r[0-9]*//}
 PLIST_SUB+=	LLVM_RELEASE=${LLVM_RELEASE}
 
 COMMANDS=	bugpoint \
@@ -112,6 +121,23 @@ STRIP_LIBS=	BugpointPasses.so \
 		${LIBNAME}.0 \
 		libLTO.so
 
+EXTRAS_COMMANDS+= \
+		clang-apply-replacements \
+		clang-modernize \
+		clang-rename \
+		clang-tidy
+EXTRAS_LIBS=	libclangApplyReplacements \
+		libclangQuery \
+		libclangRename \
+		libclangTidy \
+		libclangTidyGoogleModule \
+		libclangTidyLLVMModule \
+		libclangTidyMiscModule \
+		libclangTidyReadabilityModule \
+		libclangTidyUtils \
+		libmodernizeCore
+EXTRAS_PATTERN=	${EXTRAS_COMMANDS:tW:C/  */|/g}${EXTRAS_LIBS:tW:C/  */|/g}
+
 .include <bsd.port.options.mk>
 
 # keep in sync with /usr/src/lib/clang/clang.build.mk
@@ -124,6 +150,10 @@ COMMANDS+=	clang \
 		clang-cpp \
 		clang-format
 MAN1SRCS+=	clang.1
+.endif
+
+.if ${PORT_OPTIONS:MEXTRAS}
+COMMANDS+=	${EXTRAS_COMMANDS}
 .endif
 
 .if ${PORT_OPTIONS:MCOMPILER_RT}
@@ -208,6 +238,11 @@ NOT_FOR_ARCH=	ia64
 
 .include <bsd.port.pre.mk>
 
+.if ${PYTHON_REL} < 3400
+LLDB_BUILD_DEPENDS+= \
+	${PYTHON_PKGNAMEPREFIX}enum34>0:${PORTSDIR}/devel/py-enum34
+.endif
+
 .if ${OPSYS} == "FreeBSD" && ${COMPILER_TYPE} != clang
 # Evil hack around gcc48 not providing a usable c++11 environment on 9.x
 PLIST_SUB:=	${PLIST_SUB:NLLDB=*} LLDB="@comment "
@@ -215,6 +250,9 @@ PLIST_SUB:=	${PLIST_SUB:NLLDB=*} LLDB="@comment "
 
 post-extract-CLANG-on:
 	${MV} ${WRKSRC_clang} ${PATCH_WRKSRC}/tools/clang
+
+post-extract-EXTRAS-on:
+	${MV} ${WRKSRC_extras} ${PATCH_WRKSRC}/tools/clang-tools-extra
 
 post-extract-COMPILER_RT-on:
 	${MV} ${WRKSRC_compiler_rt} ${PATCH_WRKSRC}/tools/compiler-rt
@@ -302,16 +340,25 @@ build-plist:
 	${ECHO_CMD} %%LIT%%bin/${command}${LLVM_SUFFIX} >> ${PLIST}.tmp
 	${ECHO_CMD} %%LIT%%${LLVM_PREFIX:S|${PREFIX}/||}/bin/${command} >> ${PLIST}.tmp
 .endfor
+
 	${FIND} ${STAGEDIR}${LLVM_PREFIX} -type f -o -type l | \
 	    ${GREP} -v 'lit$$' | ${GREP} -v 'FileCheck$$' | \
 	    ${GREP} -v man/man1 | ${SED} -e 's|${STAGEDIR}${PREFIX}/||' \
-	    -e 's|${PORTVERSION}|%%PORTVERSION%%|' \
+	    -e 's|${LLVM_RELEASE}|%%LLVM_RELEASE%%|' \
 	    -e 's|release.cmake|%%CMAKE_BUILD_TYPE%%.cmake|' | \
 	    ${SORT} >> ${PLIST}.tmp
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/lit${LLVM_SUFFIX} -type f | \
 	    ${SED} -e 's|${STAGEDIR}${PYTHON_SITELIBDIR}|%%LIT%%%%PYTHON_SITELIBDIR%%|' | \
 	    ${SORT} >> ${PLIST}.tmp
-	awk '{if ($$0 ~ /clang/ && $$0 !~ /(omp.h|libclang_rt|sanitizer|blacklist.txt)/) {printf "%%%%CLANG%%%%"} if ($$0 ~ /(sanitizer|blacklist.txt)/) {printf "%%%%COMPILER_RT%%%%"} if ($$0 ~ /lld/ && $$0 !~ /lldb/) {printf "%%%%LLD%%%%"} if ($$0 ~ /(argdumper|lldb)/) {printf "%%%%LLDB%%%%"} if ($$0 ~ /lib.*omp/) {printf "%%%%OPENMP%%%%"} if ($$0 ~ /LLVMgold/) {printf "%%%%GOLD%%%%"} if ($$0 !~ /libclang_rt/) {print}}' ${PLIST}.tmp >> ${PLIST}
+	awk '{ \
+	    if ($$0 ~ /clang/ && $$0 !~ /(omp.h|libclang_rt|sanitizer|blacklist.txt|${EXTRAS_PATTERN})/) {printf "%%%%CLANG%%%%"} \
+	    if ($$0 ~ /(sanitizer|blacklist.txt)/) {printf "%%%%COMPILER_RT%%%%"} \
+	    if ($$0 ~ /(${EXTRAS_PATTERN})/) {printf "%%%%EXTRAS%%%%"} \
+	    if ($$0 ~ /lld/ && $$0 !~ /lldb/) {printf "%%%%LLD%%%%"} \
+	    if ($$0 ~ /(argdumper|lldb)/) {printf "%%%%LLDB%%%%"} \
+	    if ($$0 ~ /lib.*omp/) {printf "%%%%OPENMP%%%%"} \
+	    if ($$0 ~ /LLVMgold/) {printf "%%%%GOLD%%%%"} \
+		if ($$0 !~ /libclang_rt/) {print}}' ${PLIST}.tmp >> ${PLIST}
 	${RM} -f ${PLIST}.tmp
 
 check-commands:
@@ -329,6 +376,28 @@ svn-patch-clang:
 	svn log -c ${PATCH_REV} ${_LLVM_BASE} >> ${_PATCH_FILE}
 	svn diff -c ${PATCH_REV} ${_LLVM_BASE} | \
 	    sed -E -e 's;^(---|\+\+\+) ;\1 tools/clang/;' >> ${_PATCH_FILE}
+.endif
+.if make(svn-patch-compiler-rt)
+.if !defined(PATCH_REV)
+.error svn-patch-compiler-rt requires that PATCH_REV be set
+.endif
+_PATCH_FILE=${FILESDIR}/compiler-rt-patch-svn-${PATCH_REV}
+_LLVM_BASE=http://llvm.org/svn/llvm-project/compiler-rt/trunk
+svn-patch-compiler-rt:
+	svn log -c ${PATCH_REV} ${_LLVM_BASE} >> ${_PATCH_FILE}
+	svn diff -c ${PATCH_REV} ${_LLVM_BASE} | \
+	    sed -E -e 's;^(---|\+\+\+) ;\1 tools/compiler-rt/;' >> ${_PATCH_FILE}
+.endif
+.if make(svn-patch-lldb)
+.if !defined(PATCH_REV)
+.error svn-patch-lldb requires that PATCH_REV be set
+.endif
+_PATCH_FILE=${FILESDIR}/lldb-patch-svn-${PATCH_REV}
+_LLVM_BASE=http://llvm.org/svn/llvm-project/lldb/trunk
+svn-patch-lldb:
+	svn log -c ${PATCH_REV} ${_LLVM_BASE} >> ${_PATCH_FILE}
+	svn diff -c ${PATCH_REV} ${_LLVM_BASE} | \
+	    sed -E -e 's;^(---|\+\+\+) ;\1 tools/lldb/;' >> ${_PATCH_FILE}
 .endif
 
 .include <bsd.port.post.mk>
