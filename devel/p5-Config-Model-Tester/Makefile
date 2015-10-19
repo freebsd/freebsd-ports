@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Config-Model-Tester
-PORTVERSION=	2.051
+PORTVERSION=	2.052
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,6 +25,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS_INSTALL=	p5-Config-Model-2.0[0-3][0-9] p5-Config-Model-2.040
 
+NO_ARCH=	yes
 USE_PERL5=	modbuild
 USES=		perl5
 
