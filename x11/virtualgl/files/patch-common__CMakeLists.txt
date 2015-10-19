@@ -1,11 +1,11 @@
---- ./common/CMakeLists.txt.orig	2011-12-23 19:15:16.000000000 +0000
-+++ ./common/CMakeLists.txt	2014-08-10 17:43:04.000000000 +0100
+--- common/CMakeLists.txt.orig	2014-02-11 02:55:11 UTC
++++ common/CMakeLists.txt
 @@ -4,6 +4,8 @@
  
  include_directories(${CMAKE_CURRENT_SOURCE_DIR})
  
-+ADD_DEFINITIONS(-fPIC) 
++ADD_DEFINITIONS(-fPIC)
 +
- add_library(rrframe STATIC rrframe.cpp)
- target_link_libraries(rrframe rrutil ${TJPEG_LIBRARY})
+ add_library(vglcommon STATIC Frame.cpp Profiler.cpp)
+ target_link_libraries(vglcommon vglutil ${TJPEG_LIBRARY})
  
