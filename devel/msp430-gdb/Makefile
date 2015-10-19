@@ -16,6 +16,9 @@ COMMENT=	FSF GDB for TI's msp430 MCUs cross-development
 
 LICENSE=	GPLv3
 
+DEPRECATED=		Obsolete. Please, use devel/gcc-msp430-ti-toolchain
+EXPIRATION_DATE=	2016-01-08
+
 GDBVERSION=	7.2
 LTSVERSION=	20110716
 PATCHVERSION=	20110103

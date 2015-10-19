@@ -1,0 +1,33 @@
+Watchdog Timers and Init Code
+
+A change has been made to the start-up code: the code to
+disable the watchdog timer has been removed.  The code was
+in the start-up sequence because it was found that for some
+large applications the watchdog timer would trigger whilst
+the start-up was happening - ie before main() was reached.
+
+The problem with the disabling code was that the address of
+the watchdog timer was hard-coded in the instruction
+sequence, which meant that it did not work on MCUs that
+used a different address.  Rather than try to provide some
+complicated, MCU specific, mechanism for disabling the timer
+during start-up it was decided to simply remove the code
+instead.  For most applications this should suffice.  If
+however an application does need to disable the watchdog
+timer during start-up, it can add this function to its code
+base:
+
+#include <msp430.h>
+
+static void __attribute__((naked, section(".crt_0042"), used))
+disable_watchdog (void)
+{
+  WDTCTL = WDTPW | WDTHOLD;
+}
+
+Note - this method can be used to insert *any* commands
+into the start-up sequence, not just watchdog timer
+disabling code.  Also if the number in .crt_0042 is
+reduced, the code will execute earlier in the start-up
+sequence.  If it is increased it will execute later in
+the start-up sequence.
