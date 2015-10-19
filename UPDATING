@@ -5,6 +5,26 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20151019:
+  AFFECTS: users of www/varnish4
+  AUTHOR: feld@FreeBSD.org
+
+  Varnish has been updated to 4.1.0. As part of the update an effort has
+  been made to increase the security of the varnish daemons by utilizing
+  separate UIDs. Users who upgrade will likely run into a permissions
+  issue as a result. The simplest solution is to delete files varnish
+  will recreate with the correct permissions and to adjust permissions
+  of existing log files.
+
+  The following changes will allow you to start varnishd, varnishlog,
+  and varnishncsa successfully:
+
+  # rm -r /usr/local/varnish/$(hostname)
+  # rm /var/run/varnishlog.pid
+  # rm /var/run/varnishncsa.pid
+  # chown varnishlog /var/log/varnish.log
+  # chown varnishlog /var/log/varnishncsa.log
+
 20151015:
   AFFECTS: users of devel/subversion, its bindings and www/mod_dav_svn
   AUTHOR: lev@FreeBSD.org
