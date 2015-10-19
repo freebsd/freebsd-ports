@@ -389,6 +389,7 @@
     SUBDIR += qt4-qtdemo
     SUBDIR += qt5ct
     SUBDIR += quotes
+    SUBDIR += raspberrypi-userland
     SUBDIR += ree
     SUBDIR += rfc
     SUBDIR += ringtonetools
