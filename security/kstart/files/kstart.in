@@ -32,8 +32,13 @@ load_rc_config $name
 [ -z "$kstart_keytab" ]		&& kstart_keytab="/etc/krb5.keytab"
 [ -z "$kstart_flags" ]		&& kstart_flags="-LUFK 120"
 [ -z "$kstart_instances" ]	&& kstart_instances="system"
+[ -z "$kstart_sys_instances" ]	&& kstart_sys_instances=""
 [ -z "$kstart_system_keytab" ]	&& kstart_system_keytab="$kstart_keytab"
 [ -z "$kstart_system_flags" ]	&& kstart_system_flags="$kstart_flags"
+
+if [ -n "$kstart_sys_instances" ]; then
+	kstart_instances="$kstart_sys_instances $kstart_instances"
+fi
 
 if [ -n "$kstart_instances" ]; then
   _1=$1
