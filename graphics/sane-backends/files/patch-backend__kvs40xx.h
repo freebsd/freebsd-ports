@@ -1,5 +1,5 @@
---- backend/kvs40xx.h.orig	2012-08-20 05:27:18.000000000 +0900
-+++ backend/kvs40xx.h	2012-08-29 17:01:58.000000000 +0900
+--- backend/kvs40xx.h.orig	2013-08-25 21:22:58 UTC
++++ backend/kvs40xx.h
 @@ -10,6 +10,7 @@
  
  #include "../include/sane/config.h"
@@ -8,7 +8,7 @@
  
  #undef  BACKEND_NAME
  #define BACKEND_NAME kvs40xx
-@@ -208,7 +209,7 @@
+@@ -208,7 +209,7 @@ SANE_Status kvs40xx_read_image_data (str
  SANE_Status kvs40xx_document_exist (struct scanner *s);
  SANE_Status get_buffer_status (struct scanner *s, unsigned *data_avalible);
  SANE_Status kvs40xx_scan (struct scanner *s);
