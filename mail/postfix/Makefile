@@ -33,7 +33,6 @@ CONFLICTS_INSTALL?=	courier-0.* opensmtpd-[0-9]* \
 USERS=		postfix
 GROUPS=		mail maildrop postfix
 USES=		perl5 shebangfix cpe
-SHEBANG_LANG=	perl
 SHEBANG_FILES=	auxiliary/qshape/qshape.pl
 
 USE_RC_SUBR=	postfix

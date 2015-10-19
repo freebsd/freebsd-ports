@@ -273,11 +273,11 @@ do-install:
 	${TOUCH} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/source/.keep_me
 
 post-install:
-	@${REINPLACE_CMD} -i '' -e '1s|${bash_OLD_CMD}|${bash_CMD}|' \
+	@${REINPLACE_CMD} -i '' -e '1s|/bin/bash|${bash_CMD}|' \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/scripts/logicpuzzle/createlpsudoku \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/scripts/logicpuzzle/lpsmag \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/scripts/shipunov/biokey2html.sh
-	@${REINPLACE_CMD} -i '' -e '1s|${perl_OLD_CMD}|${perl_CMD}|' \
+	@${REINPLACE_CMD} -i '' -e '1s|/usr/bin/perl|${perl_CMD}|' \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/scripts/mycv/mycv_split_contents.pl
 
 .include <bsd.port.mk>

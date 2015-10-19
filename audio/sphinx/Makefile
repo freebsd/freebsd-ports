@@ -16,7 +16,7 @@ USE_LDCONFIG=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USES=		gmake libtool shebangfix
 SHEBANG_FILES=	scripts/sphinx2-demo.in
-perl_OLD_CMD=	@PERL@ -w
+perl_OLD_CMD=	"@PERL@ -w"
 
 # contains i386 sound code
 ONLY_FOR_ARCHS=	i386

@@ -26,7 +26,6 @@ USES=		python shebangfix tar:xz
 WRKSRC=		${WRKDIR}/${DISTNAME}/swig/python
 
 SHEBANG_FILES=	scripts/*.py
-python_OLD_CMD=	/usr/bin/env python
 
 NUMPY_BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.0.0:${PORTSDIR}/math/py-numpy
 NUMPY_RUN_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.0.0:${PORTSDIR}/math/py-numpy

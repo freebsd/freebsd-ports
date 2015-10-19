@@ -16,8 +16,6 @@ USES=		python:2 shebangfix
 USE_PYTHON=	distutils
 
 SHEBANG_FILES=	tnote
-python_OLD_CMD=	${SETENV} python
-python_CMD=	${SETENV} python2
 
 PLIST_FILES=	bin/tnote man/man1/tnote.1.gz
 PORTDOCS=	*
