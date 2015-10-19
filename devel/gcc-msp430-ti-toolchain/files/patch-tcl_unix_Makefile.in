@@ -1,0 +1,11 @@
+--- tcl/unix/Makefile.in.orig	2012-04-18 00:36:36 UTC
++++ tcl/unix/Makefile.in
+@@ -38,7 +38,7 @@ mandir			= @mandir@
+ # to be different than those used for actually reference files at
+ # run-time.  INSTALL_ROOT is prepended to $prefix and $exec_prefix
+ # when installing files.
+-INSTALL_ROOT		=
++INSTALL_ROOT		= $(DESTDIR)
+ 
+ # Path for the platform independent Tcl scripting libraries:
+ # REDHAT LOCAL
