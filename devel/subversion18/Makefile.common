@@ -31,8 +31,8 @@ CONFIGURE_ARGS+=	--without-swig \
 
 .if defined(SVN_BUILD_ADDONS)
 CONFLICTS_BUILD+=	${PORTNAME}-1.[^8].[0-9]*
-LIB_DEPENDS+=		libsvn_client-1.so:${PORTSDIR}/devel/subversion
-OPTIONS_NAME=		devel_subversion
+LIB_DEPENDS+=		libsvn_client-1.so:${PORTSDIR}/devel/subversion18
+OPTIONS_NAME=		devel_subversion18
 .endif
 
 # ===============================================================
