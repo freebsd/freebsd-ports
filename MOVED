@@ -7687,7 +7687,6 @@ devel/rubygem-mash|devel/rubygem-hashie|2015-06-30|Has expired: Deprecated by up
 net/rubygem-bunny060|net/rubygem-bunny|2015-06-30|Has expired: Use net/rubygem-bunny instead
 security/rubygem-hmac|security/rubygem-ruby-hmac|2015-06-30|Has expired: Duplicate of security/rubygem-ruby-hmac
 www/ruby-amazon|www/ruby-aws|2015-06-30|Has expired: Rendered obsolete by upstream since Amazon shut down access to AWS API v3 (2008-03-31). Use www/ruby-aws instead
-net/ntp-rc||2015-06-30|Has gone GA
 net/ptpd2-devel|net/ptpd2|2015-07-02|Development version no longer necessary
 devel/erlang-cowlib|www/erlang-cowlib|2015-07-03|Move to www where it belongs
 net/py-google||2015-07-03|Google no longer supports the SOAP API for search
