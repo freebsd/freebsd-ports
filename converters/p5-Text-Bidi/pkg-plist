@@ -7,11 +7,10 @@ bin/fribidi.pl
 %%SITE_ARCH%%/Text/Bidi/Paragraph.pm
 %%SITE_ARCH%%/Text/Bidi/private.pm
 %%SITE_ARCH%%/auto/Text/Bidi/private/private.so
+%%PERL5_MAN1%%/fribidi.pl.1.gz
 %%PERL5_MAN3%%/Text::Bidi.3.gz
 %%PERL5_MAN3%%/Text::Bidi::Array.3.gz
 %%PERL5_MAN3%%/Text::Bidi::Array::Byte.3.gz
 %%PERL5_MAN3%%/Text::Bidi::Array::Long.3.gz
 %%PERL5_MAN3%%/Text::Bidi::Constants.3.gz
 %%PERL5_MAN3%%/Text::Bidi::Paragraph.3.gz
-%%PERL5_MAN3%%/Text::Bidi::private.3.gz
-%%PERL5_MAN1%%/fribidi.pl.1.gz
