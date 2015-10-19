@@ -22,6 +22,7 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.90:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-RPC-XML>=0:${PORTSDIR}/net/p5-RPC-XML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
