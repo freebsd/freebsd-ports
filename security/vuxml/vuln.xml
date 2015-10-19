@@ -58,6 +58,48 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7f645ee5-7681-11e5-8519-005056ac623e">
+    <topic>Git -- Execute arbitrary code</topic>
+    <affects>
+      <package>
+	<name>git</name>
+	<range><lt>2.6.1</lt></range>
+      </package>
+      <package>
+	<name>git-gui</name>
+	<range><lt>2.6.1</lt></range>
+      </package>
+      <package>
+	<name>git-lite</name>
+	<range><lt>2.6.1</lt></range>
+      </package>
+      <package>
+	<name>git-subversion</name>
+	<range><lt>2.6.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Git release notes:</p>
+	<blockquote cite="https://raw.githubusercontent.com/git/git/master/Documentation/RelNotes/2.6.1.txt">
+	  <p>Some protocols (like git-remote-ext) can execute arbitrary code
+	    found in the URL.  The URLs that submodules use may come from
+	    arbitrary sources (e.g., .gitmodules files in a remote
+	    repository), and can hurt those who blindly enable recursive
+	    fetch.  Restrict the allowed protocols to well known and safe
+	    ones.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://raw.githubusercontent.com/git/git/master/Documentation/RelNotes/2.6.1.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-09-23</discovery>
+      <entry>2015-10-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3934cc60-f0fa-4eca-be09-c8bd7ae42871">
     <topic>Salt -- multiple vulnerabilities</topic>
     <affects>
