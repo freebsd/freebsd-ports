@@ -7,6 +7,8 @@ bin/varnishtest
 bin/varnishtop
 include/varnish/cache/cache.h
 include/varnish/cache/cache_backend.h
+include/varnish/cache/cache_director.h
+include/varnish/cache/cache_filter.h
 include/varnish/common/common.h
 include/varnish/common/params.h
 include/varnish/miniobj.h
@@ -21,7 +23,11 @@ include/varnish/tbl/feature_bits.h
 include/varnish/tbl/http_headers.h
 include/varnish/tbl/http_response.h
 include/varnish/tbl/locks.h
+include/varnish/tbl/obj_attr.h
+include/varnish/tbl/params.h
 include/varnish/tbl/req_body.h
+include/varnish/tbl/req_flags.h
+include/varnish/tbl/sess_attr.h
 include/varnish/tbl/sess_close.h
 include/varnish/tbl/steps.h
 include/varnish/tbl/symbol_kind.h
@@ -43,6 +49,7 @@ include/varnish/vapi/vsl.h
 include/varnish/vapi/vsl_int.h
 include/varnish/vapi/vsm.h
 include/varnish/vapi/vsm_int.h
+include/varnish/waiter/waiter.h
 include/varnish/vas.h
 include/varnish/vav.h
 include/varnish/vbm.h
@@ -51,6 +58,8 @@ include/varnish/vcli.h
 include/varnish/vcs.h
 include/varnish/vdef.h
 include/varnish/vmod_abi.h
+include/varnish/vtcp.h
+include/varnish/vtim.h
 include/varnish/vqueue.h
 include/varnish/vre.h
 include/varnish/vrt.h
@@ -60,7 +69,7 @@ include/varnish/vsb.h
 include/varnish/vsha256.h
 lib/libvarnishapi.so
 lib/libvarnishapi.so.1
-lib/libvarnishapi.so.1.0.0
+lib/libvarnishapi.so.1.0.4
 lib/varnish/libvarnish.so
 lib/varnish/libvarnishcompat.so
 lib/varnish/libvcc.so
