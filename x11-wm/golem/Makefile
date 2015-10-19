@@ -38,14 +38,7 @@ post-patch:
 			${WRKSRC}/complib/asm-generic/cl_atomic_asm.h \
 			${WRKSRC}/complib/asm-ppc/cl_atomic_asm.h
 
-# avoid using standard MAKE_ENV
-do-build:
-	@cd ${BUILD_WRKSRC}; \
-		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}
-
-do-install:
-	@cd ${INSTALL_WRKSRC}; \
-		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/golem
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/golem/plugins/*.so
 

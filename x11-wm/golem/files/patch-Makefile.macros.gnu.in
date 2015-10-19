@@ -1,0 +1,20 @@
+--- Makefile.macros.gnu.in.orig	2006-03-01 18:59:55 UTC
++++ Makefile.macros.gnu.in
+@@ -56,17 +56,13 @@ ifdef PROG
+   BUILDDIR=../build-bin
+   BUILDPROG=$(BUILDDIR)/$(PROG)
+ 
+-  ifndef CFLAGS
+     CFLAGS+=-I$(GOLEM_HOME) -I$(GOLEM_HOME)/complib -I. @CFLAGS@ @X_CFLAGS@
+     CFLAGS+=@DEFS@ -DLIBDIR=\"$(libdir)\" -DDATADIR=\"$(datadir)\"
+-  endif
+-  ifndef LDFLAGS
+     LDFLAGS=	@LDFLAGS@ @X_LIBS@ @EXPORT_FLAG@
+     LDFLAGS+=	@LIBS@ -lX11 -lXpm -lXext
+     ifdef LIBS 
+       LDFLAGS+= -L$(BUILDA) -L$(BUILDLIB) 
+     endif
+-  endif
+ 
+ endif
+ 
