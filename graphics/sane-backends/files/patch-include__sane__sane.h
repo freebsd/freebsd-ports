@@ -1,6 +1,6 @@
---- include/sane/sane.h.orig	2009-04-24 04:59:23.000000000 +0900
-+++ include/sane/sane.h	2009-05-13 15:15:50.000000000 +0900
-@@ -115,6 +115,7 @@
+--- include/sane/sane.h.orig	2014-04-09 01:46:04 UTC
++++ include/sane/sane.h
+@@ -115,6 +115,7 @@ SANE_Device;
  #define SANE_CAP_AUTOMATIC		(1 << 4)
  #define SANE_CAP_INACTIVE		(1 << 5)
  #define SANE_CAP_ADVANCED		(1 << 6)
