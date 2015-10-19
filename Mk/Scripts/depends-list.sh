@@ -21,9 +21,12 @@ done
 shift $((OPTIND-1))
 
 validate_env dp_ALLDEPENDS dp_PORTSDIR dp_PKGNAME
-[ ${recursive} -eq 1 ] && validate_env dp_MAKE
-
-MAKE="${dp_MAKE}" PORTSDIR="${dp_PORTSDIR}" export_ports_env >/dev/null
+if [ ${recursive} -eq 1 ]; then
+	validate_env dp_MAKE
+	# Cache command executions to avoid looking them up again in every
+	# sub-make.
+	MAKE="${dp_MAKE}" PORTSDIR="${dp_PORTSDIR}" export_ports_env >/dev/null
+fi
 
 set -u
 
