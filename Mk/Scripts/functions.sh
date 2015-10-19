@@ -165,10 +165,12 @@ export_ports_env() {
 	validate_env MAKE PORTSDIR
 
 	make_env="\
+		_PORTS_ENV_CHECK=1 \
 		PACKAGE_BUILDING=1 \
 		GNU_CONFIGURE=1 \
 		USE_JAVA=1 \
 		USE_LINUX=1 \
+		USES=perl5 \
 	"
 
 	make_cmd="${make_env}"
@@ -187,6 +189,7 @@ export_ports_env() {
 		_JAVA_VENDOR_LIST_REGEXP \
 		_JAVA_VERSION_LIST_REGEXP \
 		_OSRELEASE \
+		_PERL5_FROM_BIN \
 		_PKG_CHECKED \
 		_SMP_CPUS \
 	"
