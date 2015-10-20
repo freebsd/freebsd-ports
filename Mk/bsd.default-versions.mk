@@ -23,8 +23,8 @@ FPC_DEFAULT?=		2.6.4
 GCC_DEFAULT?=		4.8
 LUA_DEFAULT?=		5.2
 MYSQL_DEFAULT?=		5.6
-.if !defined(_PORTS_ENV_CHECK) && \
-    (defined(PACKAGE_BUILDING) || !exists(${LOCALBASE}/bin/perl))
+.if !exists(${LOCALBASE}/bin/perl) || (!defined(_PORTS_ENV_CHECK) && \
+    defined(PACKAGE_BUILDING))
 PERL5_DEFAULT?=		5.20
 .elif !defined(PERL5_DEFAULT)
 # There's no need to replace development versions, like "5.23" with "devel"
