@@ -1,11 +1,11 @@
---- Makefile.in.orig	2015-05-12 14:38:01 UTC
+--- Makefile.in.orig	2015-10-20 07:35:55 UTC
 +++ Makefile.in
-@@ -269,7 +269,7 @@ target_alias = @target_alias@
+@@ -274,7 +274,7 @@ target_alias = @target_alias@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
--AM_CFLAGS = @THREADSAFE_FLAGS@ @DYNAMIC_EXTENSION_FLAGS@ -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_RTREE
-+AM_CFLAGS = @THREADSAFE_FLAGS@ @DYNAMIC_EXTENSION_FLAGS@
+-AM_CFLAGS = @THREADSAFE_FLAGS@ @DYNAMIC_EXTENSION_FLAGS@ @FTS5_FLAGS@ @JSON1_FLAGS@ -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_RTREE
++AM_CFLAGS = @THREADSAFE_FLAGS@ @DYNAMIC_EXTENSION_FLAGS@ @FTS5_FLAGS@ @JSON1_FLAGS@
  lib_LTLIBRARIES = libsqlite3.la
  libsqlite3_la_SOURCES = sqlite3.c
  libsqlite3_la_LDFLAGS = -no-undefined -version-info 8:6:8

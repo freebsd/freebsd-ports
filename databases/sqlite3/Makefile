@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.8.11.1
-PORTREVISION=	1
+PORTVERSION=	3.9.1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.sqlite.org/2015/ http://www2.sqlite.org/2015/ http://www3.sqlite.org/2015/
-DISTNAME=	sqlite-autoconf-${PORTVERSION:S|8.|8|:S|.|0|g}
+DISTNAME=	sqlite-autoconf-${PORTVERSION:C/\.([[:digit:]])[[:>:]]/0\1/g:S/.//g}00
 
 MAINTAINER=	pavelivolkov@gmail.com
 COMMENT=	SQL database engine in a C library
@@ -16,7 +15,7 @@ LICENSE_NAME=	Public Domain
 LICENSE_TEXT=	Description of the license can be obtained from the following URL: http://www.sqlite.org/copyright.html
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-CONFLICTS=	sqlite34-[0-9]* sqlcipher-[0-9]*
+CONFLICTS=	sqlcipher-[0-9]*
 
 USES=		libtool ncurses pathfix
 USE_LDCONFIG=	yes
@@ -29,12 +28,11 @@ MAKE_JOBS_UNSAFE=	yes
 # Compilation Options For SQLite http://www.sqlite.org/compile.html
 OPTIONS_DEFINE=	FTS4 UPD_DEL_LIMIT URI URI_AUTHORITY SOUNDEX METADATA \
 		DIRECT_READ MEMMAN SECURE_DELETE UNLOCK_NOTIFY THREADS \
-		EXTENSION READLINE ARMOR STMT DBSTAT
+		EXTENSION READLINE ARMOR STMT DBSTAT FTS5 JSON1 RBU
 OPTIONS_SINGLE=	RAMT
 OPTIONS_RADIO=	STAT
 OPTIONS_GROUP=	UNICODE RTREEG
 
-FTS4_DESC=		Enable FTS3/4 (Full Text Search) module
 UPD_DEL_LIMIT_DESC=	ORDER BY and LIMIT on UPDATE and DELETE
 URI_DESC=		Enable use the URI filename
 URI_AUTHORITY_DESC=	Allow convert URL into a UNC
@@ -48,6 +46,18 @@ EXTENSION_DESC=		Allow loadable extensions
 
 # http://www.sqlite.org/compile.html#enable_api_armor
 ARMOR_DESC=		Detect misuse of the API
+
+# http://www.sqlite.org/fts3.html
+FTS4_DESC=		Enable FTS3/4 (Full Text Search) module
+
+# http://www.sqlite.org/fts5.html
+FTS5_DESC=		Enable version 5 full-text search engine
+
+# http://www.sqlite.org/json1.html
+JSON1_DESC=		Enable the JSON1 extension
+
+# http://www.sqlite.org/rbu.html
+RBU_DESC=		Enable the Resumable Bulk Update
 
 # http://www.sqlite.org/c3ref/stmt_scanstatus.html
 STMT_DESC=		Prepared Statement Scan Status
@@ -142,6 +152,12 @@ UNICODE61_CPPFLAGS_OFF=	-DSQLITE_DISABLE_FTS3_UNICODE=1
 
 READLINE_CONFIGURE_ENABLE=	readline
 READLINE_USES=	readline
+
+FTS5_CONFIGURE_ENABLE=	fts5
+
+JSON1_CONFIGURE_ENABLE=	json1
+
+RBU_CPPFLAGS=	-DSQLITE_ENABLE_RBU=1
 
 .include <bsd.port.options.mk>
 
