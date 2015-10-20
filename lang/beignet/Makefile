@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	beignet
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	lang
 MASTER_SITES=	https://01.org/sites/default/files/
 DISTVERSIONSUFFIX=	-source
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	OpenCL library for Intel GPUs
 
 BUILD_DEPENDS=	clang${LLVMVER}:${PORTSDIR}/lang/clang${LLVMVER} \
