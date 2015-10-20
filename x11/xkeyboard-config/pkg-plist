@@ -45,6 +45,7 @@ share/X11/xkb/geometry/sgi_vndr/indigo
 share/X11/xkb/geometry/sgi_vndr/indy
 share/X11/xkb/geometry/sony
 share/X11/xkb/geometry/sun
+share/X11/xkb/geometry/teck
 share/X11/xkb/geometry/thinkpad
 share/X11/xkb/geometry/typematrix
 share/X11/xkb/geometry/winbook
