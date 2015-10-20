@@ -3,7 +3,7 @@
 
 PORTNAME=	zathura-pdf-mupdf
 PORTVERSION=	0.2.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://pwmt.org/projects/zathura-pdf-mupdf/download/
 
@@ -18,6 +18,8 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 BUILD_DEPENDS=	zathura:${PORTSDIR}/graphics/zathura \
 		mupdf>=1.7,1:${PORTSDIR}/graphics/mupdf
 RUN_DEPENDS=	zathura:${PORTSDIR}/graphics/zathura
+LIB_DEPENDS=	libjbig2dec.so:${PORTSDIR}/graphics/jbig2dec \
+		libopenjp2.so:${PORTSDIR}/graphics/openjpeg
 
 PLIST_FILES=	lib/zathura/pdf.so share/applications/zathura-pdf-mupdf.desktop
 
