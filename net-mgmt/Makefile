@@ -29,6 +29,7 @@
     SUBDIR += cdpd
     SUBDIR += cdpr
     SUBDIR += centreon-clib
+    SUBDIR += check_ipmi_sensor
     SUBDIR += check_logfiles
     SUBDIR += check_multi
     SUBDIR += check_mysql_health
