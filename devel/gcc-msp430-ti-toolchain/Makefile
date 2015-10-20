@@ -2,7 +2,7 @@
 
 PORTNAME=	gcc-msp430-ti-toolchain
 PORTVERSION=	${GCC_VERSION}.${TI_VERSION}.${RELEASE_DATE}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://software-dl.ti.com/msp430/msp430_public_sw/mcu/msp430/MSPGCC/${TI_VERSION:S/./_/g}/exports/ \
 		http://www.ti.com/lit/ml/slau591a/:docs
@@ -19,7 +19,8 @@ COMMENT=	Complete gcc-based toolcahin for TI MSP430 uC
 LICENSE=	GPLv2 LGPL20 LGPL21 GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	expect:${PORTSDIR}/lang/expect
+BUILD_DEPENDS=	expect:${PORTSDIR}/lang/expect \
+		flex:${PORTSDIR}/textproc/flex
 
 OPTIONS_DEFINE=	INSIGHT PURE
 OPTIONS_DEFAULT=
@@ -40,7 +41,7 @@ PURE_LIB_DEPENDS_OFF=	libgmp.so:${PORTSDIR}/math/gmp \
 PURE_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-libgui_configure \
 			${PATCHDIR}/extra-patch-gdb_configure
 
-USES=		bison compiler cpe flex gmake libtool makeinfo tar:bzip2
+USES=		bison compiler cpe gmake libtool makeinfo tar:bzip2
 USE_CSTD=	gnu89
 
 GNU_CONFIGURE=		yes
