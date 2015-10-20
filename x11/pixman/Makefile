@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pixman
-PORTVERSION=	0.32.6
-PORTREVISION=	1
+PORTVERSION=	0.32.8
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -10,6 +9,8 @@ COMMENT=	Low-level pixel manipulation library
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+PORTSCOUT=	limitw:1,even
 
 USES=		cpe perl5
 USE_PERL5=	build
