@@ -1,0 +1,22 @@
+--- SConstruct.orig	2009-02-13 20:15:37 UTC
++++ SConstruct
+@@ -1,4 +1,5 @@
+-import sys
++import os,sys
++import SCons.Util
+ 
+ platform=sys.platform
+ 
+@@ -15,8 +16,10 @@ else:
+     env=Environment(
+ 	CPPDEFINES=[("UNIX_ENV",1),("_FILE_OFFSET_BITS",64)],
+ 	LIBS=["dng_1_2","XMPFiles-4.4.2","XMPCore-4.4.2","XMPcommon-4.4.2","expat","lcms","pthread"],
+-   	LINKFLAGS="",
+-   	CCFLAGS="-O2 -I-",
++   	CXX=SCons.Util.CLVar(os.environ['CXX']),
++   	LINKFLAGS=SCons.Util.CLVar(os.environ['LDFLAGS']),
++   	CCFLAGS=SCons.Util.CLVar(os.environ['CPPFLAGS']),
++   	CXXFLAGS=SCons.Util.CLVar(os.environ['CXXFLAGS']),
+    	LCMS_INCLUDE=None)
+ 
+ SConscript("SConstruct.XMP", exports="env")
