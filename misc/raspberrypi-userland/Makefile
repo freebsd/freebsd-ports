@@ -10,7 +10,7 @@ COMMENT=	Various libraries for the Raspberry Pi
 
 LICENSE=	BSD3CLAUSE
 
-ONLY_FOR_ARCH=	armv6
+ONLY_FOR_ARCHS=	armv6
 
 CONFLICTS_INSTALL=	libglesv2 libEGL
 
