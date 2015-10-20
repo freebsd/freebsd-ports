@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	slurm
-PORTVERSION=	14.11.8
+PORTVERSION=	14.11.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.schedmd.com/download/latest/ \
 		http://www.schedmd.com/download/archive/ \
@@ -13,6 +13,7 @@ MAINTAINER=	jrm@ftfl.ca
 COMMENT=	Simple Linux Utility for Resource Management
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libsysinfo.so:${PORTSDIR}/devel/libsysinfo \
 		libhwloc.so:${PORTSDIR}/devel/hwloc \
