@@ -207,6 +207,7 @@
     SUBDIR += gnormalize
     SUBDIR += gnuitar
     SUBDIR += gnupod
+    SUBDIR += gnuspeechsa
     SUBDIR += gnustep-cdplayer
     SUBDIR += gogglesmm
     SUBDIR += goobox
