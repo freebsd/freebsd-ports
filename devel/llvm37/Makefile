@@ -67,9 +67,6 @@ LLD_DISTFILES=		lld-${DISTVERSION}.src${EXTRACT_SUFX}
 LLDB_DESC=		Install lldb, the LLVM debugger (ignored on 9.x)
 LLDB_BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 LLDB_DISTFILES=		lldb-${DISTVERSION}.src${EXTRACT_SUFX}
-LLDB_EXTRA_PATCHES= \
-	${PATCHDIR}/lldb-patch-svn-247116 \
-	${PATCHDIR}/lldb-patch-svn-249467
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
 OPENMP_DISTFILES=	openmp-${DISTVERSION}.src${EXTRACT_SUFX}
 GOLD_DESC=		Build the LLVM Gold plugin for LTO
@@ -246,6 +243,12 @@ LLDB_BUILD_DEPENDS+= \
 .if ${OPSYS} == "FreeBSD" && ${COMPILER_TYPE} != clang
 # Evil hack around gcc48 not providing a usable c++11 environment on 9.x
 PLIST_SUB:=	${PLIST_SUB:NLLDB=*} LLDB="@comment "
+.else
+.if ${PORT_OPTIONS:MLLD}
+EXTRA_PATCHES+= \
+	${PATCHDIR}/lldb-patch-svn-247116 \
+	${PATCHDIR}/lldb-patch-svn-249467
+.endif
 .endif
 
 post-extract-CLANG-on:
