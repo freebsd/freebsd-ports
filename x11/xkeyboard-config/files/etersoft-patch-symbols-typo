@@ -10,17 +10,17 @@ Description (in Russian) and the picture of keyboard layout:
 
 	http://kb.etersoft.ru/Типографская_раскладка_Etersoft
 
---- symbols/typo.orig
-+++ symbols/typo
+--- symbols/typo.orig	2015-04-05 00:48:56.000000000 +0200
++++ symbols/typo	2015-10-17 14:23:59.906594000 +0200
 @@ -29,7 +29,10 @@
-     key <AD03> { [NoSymbol, NoSymbol, EuroSign] }; // "e"
-     key <AD04> { [NoSymbol, NoSymbol, registered] }; // "r"
-     key <AD05> { [NoSymbol, NoSymbol, trademark] }; // "t"
--    key <AD06> { [NoSymbol, NoSymbol, yen] }; // "y"
-+    key <AD06> { [NoSymbol, NoSymbol, U0463, U0462] };
-+    key <AD07> { [NoSymbol, NoSymbol, U0475, U0474] };
-+    key <AD08> { [NoSymbol, NoSymbol, U0456, U0406] };
-+    key <AD09> { [NoSymbol, NoSymbol, U0473, U0472] };
-     key <AD10> { [NoSymbol, NoSymbol, acute, doubleacute] }; // "p"
-     key <AD11> { [NoSymbol, NoSymbol, bracketleft, braceleft] }; // [
-     key <AD12> { [NoSymbol, NoSymbol, bracketright, braceright] }; // ]
+     key <AD03> { [ NoSymbol,   NoSymbol,              EuroSign,              NoSymbol ] }; // "e"
+     key <AD04> { [ NoSymbol,   NoSymbol,            registered,              NoSymbol ] }; // "r"
+     key <AD05> { [ NoSymbol,   NoSymbol,             trademark,              NoSymbol ] }; // "t"
+-    key <AD06> { [ NoSymbol,   NoSymbol,                   yen,              NoSymbol ] }; // "y"
++    key <AD06> { [ NoSymbol,   NoSymbol,                 U0463,                 U0462 ] };
++    key <AD07> { [ NoSymbol,   NoSymbol,                 U0475,                 U0474 ] };
++    key <AD08> { [ NoSymbol,   NoSymbol,                 U0456,                 U0406 ] };
++    key <AD09> { [ NoSymbol,   NoSymbol,                 U0473,                 U0472 ] };
+     key <AD10> { [ NoSymbol,   NoSymbol,                 acute,           doubleacute ] }; // "p"
+     key <AD11> { [ NoSymbol,   NoSymbol,           bracketleft,             braceleft ] }; // "["
+     key <AD12> { [ NoSymbol,   NoSymbol,          bracketright,            braceright ] }; // "]"
