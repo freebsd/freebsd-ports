@@ -4,7 +4,7 @@
 PORTNAME=	sane-backends
 PORTVERSION=	1.0.25
 CATEGORIES=	graphics
-MASTER_SITES=	https://alioth.debian.org/frs/download.php/4146/ \
+MASTER_SITES=	https://alioth.debian.org/frs/download.php/file/4146/ \
 		http://fossies.org/linux/misc/
 
 MAINTAINER=	ports@FreeBSD.org
