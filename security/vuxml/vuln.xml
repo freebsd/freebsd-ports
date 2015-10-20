@@ -58,6 +58,33 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="95602550-76cf-11e5-a2a1-002590263bf5">
+    <topic>codeigniter -- multiple XSS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>codeigniter</name>
+	<range><lt>2.2.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The CodeIgniter changelog reports:</p>
+	<blockquote cite="https://codeigniter.com/userguide2/changelog.html">
+	  <p>Fixed a number of XSS attack vectors in Security Library method
+	    xss_clean (thanks to Frans Rosén from Detectify.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/203403</freebsdpr>
+      <url>https://codeigniter.com/userguide2/changelog.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-08</discovery>
+      <entry>2015-10-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7f645ee5-7681-11e5-8519-005056ac623e">
     <topic>Git -- Execute arbitrary code</topic>
     <affects>
