@@ -2,6 +2,7 @@
 
 PORTNAME=	pkg
 DISTVERSION=	1.6.1
+PORTREVISION=	1
 _PKG_VERSION=	${DISTVERSION}
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	\
@@ -71,6 +72,7 @@ PKG_DEPENDS=
 PKG_BIN=	${WRKSRC}/src/pkg-static
 
 post-install:
+	${LN} -sf ${PREFIX}/sbin/pkg ${STAGEDIR}${PREFIX}/sbin/bapt-get
 	@${MV} ${STAGEDIR}${PREFIX}/lib/libpkg_static.a \
 		${STAGEDIR}${PREFIX}/lib/libpkg.a
 
