@@ -3,6 +3,7 @@
 
 PORTNAME=	aircrack-ng
 DISTVERSION=	1.2-rc2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://download.aircrack-ng.org/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
@@ -18,7 +19,8 @@ CPE_VERSION=	${DISTVERSION:C/-.*//}
 CPE_UPDATE=	${DISTVERSION:C/^[^-]*$//:C/.*-//}
 DOS2UNIX_FILES=	src/osdep/byteorder.h
 MAKE_ARGS=	experimental=true libnl=false prefix=${PREFIX}
-INSTALL_TARGET=	strip install
+# Don't call 'strip' target with WITH_DEBUG set
+INSTALL_TARGET=	${STRIP:S/-s/strip/} install
 USE_OPENSSL=	yes
 
 OPTIONS_DEFINE=	PCRE SQLITE
