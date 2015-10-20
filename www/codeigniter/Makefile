@@ -2,16 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	codeigniter
-PORTVERSION=	2.2.4
+PORTVERSION=	2.2.5
 CATEGORIES=	www
-MASTER_SITES=	http://downloads.codeigniter.com/reactor/ \
-		http://www.codeigniter.org.tw/download_files/
-DISTNAME=	CodeIgniter_${PORTVERSION}
 
 MAINTAINER=	appleboy.tw@gmail.com
 COMMENT=	Framework for developing PHP web applications
 
-USES=		zip
+USES=		tar:tgz
+USE_GITHUB=	yes
+GH_ACCOUNT=	bcit-ci
 
 CONFLICTS=	codeigniter-1.[0-9]*
 
