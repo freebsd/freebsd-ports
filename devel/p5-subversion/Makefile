@@ -23,6 +23,8 @@ USE_PERL5=	build run
 SVN_BUILD_BINDINGS=	yes
 SVN_BUILD_ADDONS=	yes
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include "${MASTERDIR}/Makefile.common"
 
 CATEGORIES+=	perl5
