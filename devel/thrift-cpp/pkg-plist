@@ -1,14 +1,17 @@
+@comment bin/thrift
 include/thrift/TApplicationException.h
 include/thrift/TDispatchProcessor.h
 include/thrift/TLogging.h
+include/thrift/TOutput.h
 include/thrift/TProcessor.h
-include/thrift/TReflectionLocal.h
+include/thrift/TToString.h
 include/thrift/Thrift.h
 include/thrift/async/TAsyncBufferProcessor.h
 include/thrift/async/TAsyncChannel.h
 include/thrift/async/TAsyncDispatchProcessor.h
 include/thrift/async/TAsyncProcessor.h
 include/thrift/async/TAsyncProtocolProcessor.h
+include/thrift/async/TConcurrentClientSyncInfo.h
 include/thrift/async/TEvhttpClientChannel.h
 include/thrift/async/TEvhttpServer.h
 include/thrift/concurrency/BoostThreadFactory.h
@@ -37,7 +40,6 @@ include/thrift/protocol/TBinaryProtocol.tcc
 include/thrift/protocol/TCompactProtocol.h
 include/thrift/protocol/TCompactProtocol.tcc
 include/thrift/protocol/TDebugProtocol.h
-include/thrift/protocol/TDenseProtocol.h
 include/thrift/protocol/TJSONProtocol.h
 include/thrift/protocol/TMultiplexedProtocol.h
 include/thrift/protocol/TProtocol.h
@@ -47,8 +49,10 @@ include/thrift/protocol/TProtocolTap.h
 include/thrift/protocol/TVirtualProtocol.h
 include/thrift/qt/TQIODeviceTransport.h
 include/thrift/qt/TQTcpServer.h
+include/thrift/server/TConnectedClient.h
 include/thrift/server/TNonblockingServer.h
 include/thrift/server/TServer.h
+include/thrift/server/TServerFramework.h
 include/thrift/server/TSimpleServer.h
 include/thrift/server/TThreadPoolServer.h
 include/thrift/server/TThreadedServer.h
@@ -75,7 +79,7 @@ include/thrift/transport/TTransportException.h
 include/thrift/transport/TTransportUtils.h
 include/thrift/transport/TVirtualTransport.h
 include/thrift/transport/TZlibTransport.h
-lib/libthrift-0.9.1.so
+lib/libthrift-0.9.3.so
 lib/libthrift.a
 lib/libthrift.so
 lib/libthrift.so.0
@@ -87,7 +91,7 @@ lib/libthriftnb.so.0
 %%QT4%%lib/libthriftqt.a
 %%QT4%%lib/libthriftqt.so
 %%QT4%%lib/libthriftqt.so.0
-lib/libthriftz-0.9.1.so
+lib/libthriftz-0.9.3.so
 lib/libthriftz.a
 lib/libthriftz.so
 lib/libthriftz.so.0

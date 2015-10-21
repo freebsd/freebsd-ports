@@ -43,7 +43,8 @@ CONFIGURE_ARGS+=	\
 		--without-php \
 		--without-php_extension \
 		--without-python \
-		--without-ruby
+		--without-ruby \
+                --without-go
 
 PLIST_FILES=	bin/thrift
 

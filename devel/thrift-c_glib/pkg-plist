@@ -1,5 +1,6 @@
 @comment bin/thrift
 include/thrift/c_glib/config.h
+include/thrift/c_glib/processor/thrift_dispatch_processor.h
 include/thrift/c_glib/processor/thrift_processor.h
 include/thrift/c_glib/protocol/thrift_binary_protocol.h
 include/thrift/c_glib/protocol/thrift_binary_protocol_factory.h
@@ -11,7 +12,9 @@ include/thrift/c_glib/thrift.h
 include/thrift/c_glib/thrift_application_exception.h
 include/thrift/c_glib/thrift_struct.h
 include/thrift/c_glib/transport/thrift_buffered_transport.h
+include/thrift/c_glib/transport/thrift_buffered_transport_factory.h
 include/thrift/c_glib/transport/thrift_framed_transport.h
+include/thrift/c_glib/transport/thrift_framed_transport_factory.h
 include/thrift/c_glib/transport/thrift_memory_buffer.h
 include/thrift/c_glib/transport/thrift_server_socket.h
 include/thrift/c_glib/transport/thrift_server_transport.h
