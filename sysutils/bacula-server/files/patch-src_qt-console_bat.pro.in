@@ -1,6 +1,6 @@
---- src/qt-console/bat.pro.in.orig	2012-09-13 10:51:19.000000000 +0200
-+++ src/qt-console/bat.pro.in	2014-07-02 18:02:18.587979885 +0200
-@@ -19,7 +19,7 @@
+--- src/qt-console/bat.pro.in.orig	2015-08-13 13:52:24 UTC
++++ src/qt-console/bat.pro.in
+@@ -19,7 +19,7 @@ TEMPLATE     = app
  TARGET       = bat
  DEPENDPATH  += .
  INCLUDEPATH += .. . ./console ./restore ./select
