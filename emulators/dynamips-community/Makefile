@@ -15,6 +15,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libelf.so:${PORTSDIR}/devel/libelf \
 		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
 
+CFLAGS+=	-I${PREFIX}/include/libelf
+
 CONFLICTS=	dynamips-[0-9]* dynamips-devel-[0-9]*
 
 USES=		cmake
