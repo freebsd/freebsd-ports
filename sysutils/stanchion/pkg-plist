@@ -1,4 +1,5 @@
 sbin/stanchion
+sbin/stanchion-admin
 @sample %%STANCHION_CONFDIR%%/stanchion.conf
 @sample %%STANCHION_CONFDIR%%/advanced.config
 @sample %%STANCHION_CONFDIR%%/key.pem
