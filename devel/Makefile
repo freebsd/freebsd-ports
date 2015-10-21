@@ -3692,6 +3692,7 @@
     SUBDIR += pecl-uri_template
     SUBDIR += pecl-uuid
     SUBDIR += pecl-vld
+    SUBDIR += pecl-weakref
     SUBDIR += pecl-xhprof
     SUBDIR += pecl-yac
     SUBDIR += pecl-zookeeper
@@ -4802,7 +4803,6 @@
     SUBDIR += rubygem-librarianp
     SUBDIR += rubygem-libyajl2
     SUBDIR += rubygem-listen
-    SUBDIR += rubygem-listen2
     SUBDIR += rubygem-little-plugger
     SUBDIR += rubygem-locale
     SUBDIR += rubygem-lockfile

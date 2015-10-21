@@ -230,6 +230,7 @@
     SUBDIR += ember
     SUBDIR += endgame-singularity
     SUBDIR += endgame-singularity-music
+    SUBDIR += endless-sky
     SUBDIR += enigma
     SUBDIR += ensemblist
     SUBDIR += entombed

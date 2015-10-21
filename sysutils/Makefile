@@ -1081,6 +1081,7 @@
     SUBDIR += vimpager
     SUBDIR += virtualmin
     SUBDIR += vlogger
+    SUBDIR += vm-bhyve
     SUBDIR += vmdktool
     SUBDIR += vmtouch
     SUBDIR += vobcopy

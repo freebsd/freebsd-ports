@@ -10,6 +10,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Command line utility to read and manipulate EXIF data
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
 		libpopt.so:${PORTSDIR}/devel/popt
@@ -17,10 +18,9 @@ LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-CONFIGURE_ENV=	POPT_CFLAGS=-I${LOCALBASE}/include POPT_LIBS="-L${LOCALBASE}/lib -lpopt"
 CPE_VENDOR=	curtis_galloway
 GNU_CONFIGURE=	yes
-USES=		cpe gmake pkgconfig
+USES=		cpe gmake localbase pkgconfig
 
 NLS_CONFIGURE_ON=	--enable-nls ${ICONV_CONFIGURE_ARG}
 NLS_CONFIGURE_OFF=	--disable-nls --without-libiconv-prefix

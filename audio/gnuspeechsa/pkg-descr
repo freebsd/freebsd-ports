@@ -1,0 +1,8 @@
+gnuspeech makes it easy to produce high quality computer speech
+output, design new language databases, and create controlled speech
+stimuli for psychophysical experiments.
+
+gnuspeechsa is a cross-platform module of gnuspeech that allows
+command line, or application-based speech output
+
+WWW: https://www.gnu.org/software/gnuspeech/

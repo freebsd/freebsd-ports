@@ -15,6 +15,7 @@ LICENSE=	ART20
 
 TEST_DEPENDS=	p5-Test-Bits>=0:${PORTSDIR}/devel/p5-Test-Bits
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

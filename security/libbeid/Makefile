@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libbeid
-PORTVERSION=	4.1.2
+PORTVERSION=	4.1.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -27,7 +27,7 @@ DOS2UNIX_FILES=	cardcomm/pkcs11/src/common/datafile.cpp \
 		cardcomm/pkcs11/src/log.h
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-static
+CONFIGURE_ARGS=	--disable-static --with-gtkvers=2
 INSTALL_TARGET=	install-strip
 
 post-patch:

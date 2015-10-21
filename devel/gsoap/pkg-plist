@@ -38,8 +38,10 @@ libdata/pkgconfig/gsoapssl.pc
 %%DATADIR%%/WS/discovery.xsd
 %%DATADIR%%/WS/ds.xsd
 %%DATADIR%%/WS/enumeration.xsd
+%%DATADIR%%/WS/oasis-sstc-saml-schema-assertion-1.1.xsd
 %%DATADIR%%/WS/reference-1.1.xsd
 %%DATADIR%%/WS/typemap.dat
+%%DATADIR%%/WS/saml-schema-assertion-2.0.xsd
 %%DATADIR%%/WS/ws-bpel_abstract_common_base.xsd
 %%DATADIR%%/WS/ws-bpel_executable.xsd
 %%DATADIR%%/WS/ws-bpel_plnktype.xsd
@@ -76,6 +78,8 @@ libdata/pkgconfig/gsoapssl.pc
 %%DATADIR%%/import/ds2.h
 %%DATADIR%%/import/plnk.h
 %%DATADIR%%/import/ref.h
+%%DATADIR%%/import/saml1.h
+%%DATADIR%%/import/saml2.h
 %%DATADIR%%/import/ser.h
 %%DATADIR%%/import/soap12.h
 %%DATADIR%%/import/stdstring.h

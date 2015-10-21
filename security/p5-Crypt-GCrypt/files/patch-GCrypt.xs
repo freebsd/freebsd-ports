@@ -1,5 +1,5 @@
---- GCrypt.xs.orig	2011-05-27 22:04:03.000000000 +0200
-+++ GCrypt.xs	2014-07-27 16:14:05.000000000 +0200
+--- GCrypt.xs.orig	2011-05-27 20:04:03 UTC
++++ GCrypt.xs
 @@ -56,9 +56,13 @@
      int type;
      int action;
