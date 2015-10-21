@@ -3,6 +3,7 @@
 
 PORTNAME=	bacula
 DISTVERSION=	7.2.0
+PORTREVISION?=	1
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 PKGNAMEPREFIX?=	#
@@ -11,7 +12,7 @@ PKGNAMESUFFIX?=	-server
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT?=	Network backup solution (server)
 
-USES+=		libtool shebangfix
+USES+=		libtool readline shebangfix
 SHEBANG_FILES=	scripts/dvd-handler.in
 python_OLD_CMD=	@PYTHON@
 USE_OPENSSL=	yes
@@ -41,7 +42,7 @@ PYTHON_USES=		python
 PYTHON_CONFIGURE_ON=	--with-python=yes
 
 .if !defined(WITH_CLIENT_ONLY)
-LIB_DEPENDS+=	libbac.so:${PORTSDIR}/sysutils/bacula-client
+LIB_DEPENDS+=	libbac-${DISTVERSION}.so:${PORTSDIR}/sysutils/bacula-client
 USE_RC_SUBR?=	bacula-dir bacula-sd
 .endif
 
@@ -56,7 +57,6 @@ CONFIGURE_ARGS+=--with-tcp-wrappers=/usr/lib \
 		--sysconfdir=${ETCDIR} \
 		--with-working-dir=${BACULA_DIR} \
 		--with-scriptdir=${PREFIX}/share/${PORTNAME} \
-		--with-readline=yes \
 		--disable-conio \
 		--enable-batch-insert \
 		--with-plugindir=${PREFIX}/lib \
@@ -133,6 +133,15 @@ SUB_LIST+=		REQ_MYSQL="" REQ_PGSQL=postgresql
 PLIST_SUB+=		DBTYPE=${DBTYPE}
 .endif
 
+.include <bsd.port.pre.mk>
+.if ${readline_ARGS} == "port"
+readline_CONFIGURE=	${LOCALBASE}
+.else
+readline_CONFIGURE=	yes
+.endif
+
+CONFIGURE_ARGS+=	--with-readline=${readline_CONFIGURE}
+
 .if defined(WITH_CLIENT_ONLY)
 MP8+=	bacula.8 bacula-fd.8 bconsole.8
 .else
@@ -166,13 +175,7 @@ post-patch:
 .else
 	# In server port don't install filed
 	@${REINPLACE_CMD} -e '/^fd_subdirs = /s|src/filed||' -e 's|src/console||' \
-		-e 's|src/lib||' -e 's|src/findlib||' -e 's|@FD_PLUGIN_DIR@||' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} \
-		-e 's|../lib/[^[:space:]]*||g' \
-		-e 's|../findlib/[^[:space:]]*||g' \
-		${WRKSRC}/src/dird/Makefile.in \
-		${WRKSRC}/src/stored/Makefile.in \
-		${WRKSRC}/src/tools/Makefile.in
+	 	${WRKSRC}/Makefile.in
 .endif
 
 .if !target(post-install)
@@ -182,6 +185,15 @@ post-install:
 .else
 	${INSTALL_SCRIPT} ${FILESDIR}/chio-bacula ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_DATA} ${FILESDIR}/bacula-barcodes ${STAGEDIR}${ETCDIR}/bacula-barcodes.sample
+        #the following are installed by the -CLIENT port, and I (ler@lerctr.org)
+	#don't know how to remove them from being built for the -SERVER port.
+	${RM} ${STAGEDIR}${LOCALBASE}/lib/bpipe-fd.so
+	${RM} ${STAGEDIR}${LOCALBASE}/lib/libbac-${PORTVERSION}.so
+	${RM} ${STAGEDIR}${LOCALBASE}/lib/libbac.so
+	${RM} ${STAGEDIR}${LOCALBASE}/lib/libbaccfg-${PORTVERSION}.so
+	${RM} ${STAGEDIR}${LOCALBASE}/lib/libbaccfg.so
+	${RM} ${STAGEDIR}${LOCALBASE}/lib/libbacfind-${PORTVERSION}.so
+	${RM} ${STAGEDIR}${LOCALBASE}/lib/libbacfind.so
 .endif
 	for na in ${CONFFILES}; do \
 		${MV} ${STAGEDIR}${ETCDIR}/bacula-$$na.conf ${STAGEDIR}${ETCDIR}/bacula-$$na.conf.sample; \
@@ -191,4 +203,4 @@ post-install:
 .include "${MASTERDIR}/Makefile.common"
 .endif # -client and -server are defined
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

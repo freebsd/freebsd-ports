@@ -1,0 +1,28 @@
+--- src/dird/Makefile.in.orig	2015-08-13 13:52:24 UTC
++++ src/dird/Makefile.in
+@@ -65,14 +65,14 @@ bacula-dir: Makefile $(SVROBJS) ../lib/l
+ 	    ../cats/libbacsql$(DEFAULT_ARCHIVE_TYPE) \
+ 	    ../cats/libbaccats$(DEFAULT_ARCHIVE_TYPE) ../findlib/libbacfind$(DEFAULT_ARCHIVE_TYPE)
+ 	@echo "Linking $@ ..."
+-	$(LIBTOOL_LINK) $(CXX) $(WLDFLAGS) $(LDFLAGS) -L../lib -L../cats -L../findlib -o $@ $(SVROBJS) \
++	$(LIBTOOL_LINK) $(CXX) $(WLDFLAGS) -L../lib -L../cats -L../findlib $(LDFLAGS) -o $@ $(SVROBJS) \
+ 	      -lbacfind -lbacsql -lbaccats -lbaccfg -lbac -lm $(DLIB) $(DB_LIBS) $(LIBS) \
+ 	      $(WRAPLIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS) $(CAP_LIBS)
+ 
+ static-bacula-dir:  Makefile $(SVROBJS) ../lib/libbac$(DEFAULT_ARCHIVE_TYPE) ../lib/libbaccfg$(DEFAULT_ARCHIVE_TYPE) \
+ 		   ../cats/libbacsql$(DEFAULT_ARCHIVE_TYPE) \
+ 		   ../cats/libbaccats$(DEFAULT_ARCHIVE_TYPE) ../findlib/libbacfind$(DEFAULT_ARCHIVE_TYPE)
+-	$(LIBTOOL_LINK) $(CXX) $(WLDFLAGS) $(LDFLAGS) -static -L../lib -L../cats -L../findlib -o $@ $(SVROBJS) \
++	$(LIBTOOL_LINK) $(CXX) $(WLDFLAGS) -static -L../lib -L../cats -L../findlib $(LDFLAGS) -o $@ $(SVROBJS) \
+ 	      -lbacfind -lbacsql -lbaccats -lbaccfg -lbac -lm $(DLIB) $(DB_LIBS) $(LIBS) \
+ 	      $(WRAPLIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS) $(CAP_LIBS)
+ 	strip $@
+@@ -137,7 +137,7 @@ uninstall:
+ depend:
+ 	@$(MV) Makefile Makefile.bak
+ 	@$(SED) "/^# DO NOT DELETE:/,$$ d" Makefile.bak > Makefile
+-	@$(ECHO) "# DO NOT DELETE: nice dependency list follows" >> Makefile
++	@echo "# DO NOT DELETE: nice dependency list follows" >> Makefile
+ 	@$(CXX) -S -M $(CPPFLAGS) $(XINC) -I$(srcdir) -I$(basedir) *.c >> Makefile
+ 	@if test -f Makefile ; then \
+ 	    $(RMF) Makefile.bak; \
