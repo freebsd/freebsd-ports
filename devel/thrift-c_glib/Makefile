@@ -40,7 +40,8 @@ CONFIGURE_ARGS+=        \
 		--without-php \
 		--without-php_extension \
 		--without-python \
-		--without-ruby
+		--without-ruby \
+		--without-go
 
 post-patch:
 	@${REINPLACE_CMD} 's,^pkgconfigdir = .*,pkgconfigdir=$${prefix}/libdata/pkgconfig,' ${WRKSRC}/lib/c_glib/Makefile.am
