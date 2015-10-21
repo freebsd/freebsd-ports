@@ -1,13 +1,12 @@
 # Created by: Eric Camachat <eric@camachat.org>
 # $FreeBSD$
 
-PORTNAME=	KeePassX
-DISTVERSION=	2.0
-PORTREVISION=	3
+PORTNAME=	keepassx
+DISTVERSION=	2.0-beta2
+PORTEPOCH=	1
 CATEGORIES=	security
-MASTER_SITES=	https://www.keepassx.org/dev/attachments/download/69/
-PKGNAMESUFFIX=	-alpha
-DISTNAME=	${PORTNAME:tl}-${DISTVERSION}${PKGNAMESUFFIX}6
+MASTER_SITES=	https://www.keepassx.org/dev/attachments/download/115/
+PKGNAMESUFFIX=	2
 
 MAINTAINER=	eric@camachat.org
 COMMENT=	Cross Platform Password Manager
@@ -16,15 +15,12 @@ LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
 CONFLICTS_INSTALL=	keepassx-0.*
 
-DATADIR=	${PREFIX}/share/${PORTNAME:tl}
-WRKSRC=		${WRKDIR}/${DISTNAME:tl}
-
-USES=		cmake
+USES=		cmake desktop-file-utils shared-mime-info
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-USE_QT4=	corelib gui xml qtestlib dbus uic_build moc_build \
-		qmake_build rcc_build
-USE_XORG=	xt inputproto xtst xrender xrandr xfixes xcursor \
-		xext x11 sm ice xi
+USE_QT4=	corelib gui xml qtestlib uic_build moc_build \
+		qmake_build rcc_build linguisttools
+USE_XORG=	ice inputproto sm x11 xcursor xext xfixes xi xrandr xrender \
+		xt xtst
 
 .include <bsd.port.mk>
