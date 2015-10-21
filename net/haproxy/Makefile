@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.haproxy.org/download/1.6/src/
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	demon@FreeBSD.org
-COMMENT=	The Reliable, High Performance TCP/HTTP Load Balancer
+COMMENT=	Reliable, High Performance TCP/HTTP Load Balancer
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
