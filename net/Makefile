@@ -448,6 +448,7 @@
     SUBDIR += ntopng
     SUBDIR += ntp
     SUBDIR += ntp-devel
+    SUBDIR += ntp-rc
     SUBDIR += ntraceroute
     SUBDIR += nusoap
     SUBDIR += nxproxy
@@ -463,6 +464,7 @@
     SUBDIR += opal
     SUBDIR += openafs
     SUBDIR += openbgpd
+    SUBDIR += openbsc
     SUBDIR += opendpi
     SUBDIR += openggsn
     SUBDIR += openh323

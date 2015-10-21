@@ -43,7 +43,9 @@ IGNORE=	Incorrect 'USES+=perl5:${perl5_ARGS}' perl5 takes no arguments
 USE_PERL5?=	run build
 
 # remove when 5.20 goes away.
+.if !defined(_PORTS_ENV_CHECK)
 .sinclude "${LOCALBASE}/etc/perl5_version"
+.endif
 .if defined(PERL_VERSION)
 PERL5_DEPEND=	${PERL5}
 THIS_IS_OLD_PERL=	yes

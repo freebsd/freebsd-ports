@@ -21,6 +21,9 @@ COMMENT=	GNU binutils for TI's msp430 MCUs cross-development
 
 LICENSE=	GPLv3
 
+DEPRECATED=		Obsolete. Please, use devel/gcc-msp430-ti-toolchain
+EXPIRATION_DATE=	2016-01-08
+
 BINUTILVERSION=	2.21.1a
 LTSVERSION=	20120406
 PATCHVERSION=	20120406

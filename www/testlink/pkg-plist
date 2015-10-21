@@ -199,6 +199,7 @@
 %%WWWDIR%%/gui/templates/results/resultsNavigator.tpl
 %%WWWDIR%%/gui/templates/results/resultsReqs.tpl
 %%WWWDIR%%/gui/templates/results/resultsTC.tpl
+%%WWWDIR%%/gui/templates/results/resultsTCFlatLauncher.tpl
 %%WWWDIR%%/gui/templates/results/resultsTCLauncher.tpl
 %%WWWDIR%%/gui/templates/results/tcCreatedPerUser.tpl
 %%WWWDIR%%/gui/templates/results/tcCreatedPerUserGUI.tpl
@@ -234,6 +235,7 @@
 %%WWWDIR%%/gui/templates/testcases/relations.inc.tpl
 %%WWWDIR%%/gui/templates/testcases/tcAssign2Tplan.tpl
 %%WWWDIR%%/gui/templates/testcases/tcAssignedToUser.tpl
+%%WWWDIR%%/gui/templates/testcases/tcBulkOp.tpl
 %%WWWDIR%%/gui/templates/testcases/tcCompareVersions.tpl
 %%WWWDIR%%/gui/templates/testcases/tcCreateFromIssueMantisXML.tpl
 %%WWWDIR%%/gui/templates/testcases/tcDelete.tpl
@@ -285,6 +287,7 @@
 %%WWWDIR%%/gui/themes/default/images/arrow_switch.png
 %%WWWDIR%%/gui/themes/default/images/attachment.gif
 %%WWWDIR%%/gui/themes/default/images/bar2.gif
+%%WWWDIR%%/gui/themes/default/images/basket_put.png
 %%WWWDIR%%/gui/themes/default/images/bell.png
 %%WWWDIR%%/gui/themes/default/images/brick.png
 %%WWWDIR%%/gui/themes/default/images/brick_go.png
@@ -339,6 +342,7 @@
 %%WWWDIR%%/gui/themes/default/images/door_open.png
 %%WWWDIR%%/gui/themes/default/images/edit-undo.png
 %%WWWDIR%%/gui/themes/default/images/edit_icon.png
+%%WWWDIR%%/gui/themes/default/images/email.png
 %%WWWDIR%%/gui/themes/default/images/emoticon_smile.png
 %%WWWDIR%%/gui/themes/default/images/emoticon_surprised.png
 %%WWWDIR%%/gui/themes/default/images/emoticon_tongue.png
@@ -358,6 +362,7 @@
 %%WWWDIR%%/gui/themes/default/images/font_delete.png
 %%WWWDIR%%/gui/themes/default/images/ghost16x16.png
 %%WWWDIR%%/gui/themes/default/images/ghost32x32.png
+%%WWWDIR%%/gui/themes/default/images/group.png
 %%WWWDIR%%/gui/themes/default/images/history.png
 %%WWWDIR%%/gui/themes/default/images/history_small.png
 %%WWWDIR%%/gui/themes/default/images/ico_all_l.gif
@@ -509,6 +514,12 @@
 %%WWWDIR%%/install/sql/alter_tables/1.9.13/mysql/DB.1.9.13/stepZ/z_final_step.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.13/postgres/DB.1.9.13/step1/db_schema_update.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.13/postgres/DB.1.9.13/stepZ/z_final_step.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.14/mssql/DB.1.9.14/step1/db_schema_update.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.14/mssql/DB.1.9.14/stepZ/z_final_step.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.14/mysql/DB.1.9.14/step1/db_schema_update.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.14/mysql/DB.1.9.14/stepZ/z_final_step.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.14/postgres/DB.1.9.14/step1/db_schema_update.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.14/postgres/DB.1.9.14/stepZ/z_final_step.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.4/mssql/DB.1.5/step1/db_schema_update.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.4/mssql/DB.1.5/stepZ/z_final_step.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.4/mysql/DB.1.5/step1/db_schema_update.sql
@@ -564,6 +575,8 @@
 %%WWWDIR%%/lib/ajax/gettprojectnodes.php
 %%WWWDIR%%/lib/api/rest/v1/index.php
 %%WWWDIR%%/lib/api/rest/v1/tlRestApi.class.php
+%%WWWDIR%%/lib/api/rest/v2/index.php
+%%WWWDIR%%/lib/api/rest/v2/tlRestApi.class.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/APIErrors.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/api.const.inc.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/java/comp.bat
@@ -589,6 +602,7 @@
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientCreateNTestCases.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientCreatePlatform.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientCreateScenario.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientCreateScenario02.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientCreateTestCase.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientCreateTestCaseSteps.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientCreateTestPlan.php
@@ -596,6 +610,7 @@
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientCreateTestSuite.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientDeleteExecution.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientDeleteTestCaseSteps.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientDeleteTestProject.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientDoesUserExist.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetBuilds.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetExecCountersByBuild.php
@@ -611,6 +626,7 @@
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestCaseAttachments.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestCaseBugs.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestCaseCustomFieldDesignValue.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestCaseCustomFieldExecutionValue.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestCaseIDByName.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestCaseKeywords.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientGetTestCasesForTestPlan.php
@@ -628,7 +644,10 @@
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientRemoveTestCaseKeywords.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientReportTCResult.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientReportTCResultForcingTester.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientReportTCResultForcingTimestamp.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientReportTCResultOVERWRITE.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientReportTCResultOVERWRITEForcingTimestamp.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientReportTCResultWIthExecDuration.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientSample.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientSample2.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientSetTestCaseExecutionType.php
@@ -638,6 +657,7 @@
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientUnassignTestCaseExecutionTask.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientUpdateTestCase.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientUpdateTestCaseCustomFieldDesignValue.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientUpdateTestSuiteCustomFieldDesignValue.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientUploadTestCaseAttachment.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/client_issue6159_t1.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/client_issue6159_t2.php
@@ -654,6 +674,7 @@
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/python/clientSample.py
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/ruby/clientSample.rb
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_extended_server/extended_server.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/snippet01.txt
 %%WWWDIR%%/lib/api/xmlrpc/v1/test/INSTALLING.txt
 %%WWWDIR%%/lib/api/xmlrpc/v1/test/TestlinkXMLRPCServerTest.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/test/TestlinkXMLRPCServerTestData.php
@@ -802,9 +823,13 @@
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/mantis/test.mantissoapInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/mantis/test.testlinkopensource.mantishub.com.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/mantis/test2_int_mantissoap.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine-simple-issue.xml
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/README
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/redmine-issue01.xml
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/redmine-issue02.xml
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/test.add-issue-redmine.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/test.add-note-redmine.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/test.redmine-cfg.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/test.redmine-fman.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/test.redmine-localhost.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/test.redmine-raw-api.01.php
@@ -812,6 +837,12 @@
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/test.redmine.rest.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/test.redminerestInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/test2.redminerestInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/via-curl/create-redmine-issue01.sh
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/via-curl/create-redmine-issue02.sh
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/via-curl/redmine-issue01-response.txt
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/via-curl/redmine-issue01.xml
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/via-curl/redmine-issue02-response.txt
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/redmine/via-curl/redmine-issue02.xml
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/trac/test.tracxmlrpc.php
 %%WWWDIR%%/lib/issuetrackerintegration/code_testing/youtrack/test.youtrackrestInterface.class.php
 %%WWWDIR%%/lib/issuetrackerintegration/fogbugzdbInterface.class.php
@@ -908,6 +939,7 @@
 %%WWWDIR%%/lib/results/resultsNavigator.php
 %%WWWDIR%%/lib/results/resultsReqs.php
 %%WWWDIR%%/lib/results/resultsTC.php
+%%WWWDIR%%/lib/results/resultsTCFlat.php
 %%WWWDIR%%/lib/results/tcCreatedPerUser.php
 %%WWWDIR%%/lib/results/tcCreatedPerUserGUI.php
 %%WWWDIR%%/lib/results/tcCreatedPerUserOnTestProject.php
@@ -923,6 +955,7 @@
 %%WWWDIR%%/lib/testcases/listTestCases.php
 %%WWWDIR%%/lib/testcases/tcAssign2Tplan.php
 %%WWWDIR%%/lib/testcases/tcAssignedToUser.php
+%%WWWDIR%%/lib/testcases/tcBulkOp.php
 %%WWWDIR%%/lib/testcases/tcCompareVersions-tocheck.php
 %%WWWDIR%%/lib/testcases/tcCompareVersions.php
 %%WWWDIR%%/lib/testcases/tcCreateFromIssue.php
@@ -1016,6 +1049,7 @@
 %%WWWDIR%%/login.php
 %%WWWDIR%%/logout.php
 %%WWWDIR%%/lostPassword.php
+%%WWWDIR%%/ltx.php
 %%WWWDIR%%/third_party/DataTables-1.10.4/Contributing.md
 %%WWWDIR%%/third_party/DataTables-1.10.4/Readme.md
 %%WWWDIR%%/third_party/DataTables-1.10.4/bower.json

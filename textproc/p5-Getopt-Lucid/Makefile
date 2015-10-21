@@ -8,7 +8,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lippe@FreeBSD.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Getopt::Lucid - Clear, readable syntax for command line processing
 
 LICENSE=	APACHE20

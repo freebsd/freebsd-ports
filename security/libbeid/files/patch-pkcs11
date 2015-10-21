@@ -1,6 +1,6 @@
---- cardcomm/pkcs11/src/log.h.orig	2015-06-02 08:02:25 UTC
+--- cardcomm/pkcs11/src/log.h.orig	2015-10-21 10:16:26 UTC
 +++ cardcomm/pkcs11/src/log.h
-@@ -60,42 +60,42 @@ typedef struct P11_MAP_TYPE 
+@@ -64,42 +64,42 @@ typedef struct P11_MAP_TYPE 
  
  static P11_MAP_TYPE const P11_CLASS_TYPES[]= 
  {  
@@ -71,7 +71,7 @@
  };
  
  static P11_MAP_TYPE const P11_ATTR_TYPES[]= {  
-@@ -159,7 +159,7 @@ static P11_MAP_TYPE const P11_ATTR_TYPES
+@@ -163,7 +163,7 @@ static P11_MAP_TYPE const P11_ATTR_TYPES
  	{ CKA_RESET_ON_INIT,    "CKA_RESET_ON_INIT",       0            },  
  	{ CKA_HAS_RESET,        "CKA_HAS_RESET",           0            },  
  	{ CKA_VENDOR_DEFINED,   "CKA_VENDOR_DEFINED",      0            },  

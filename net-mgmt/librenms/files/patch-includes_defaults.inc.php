@@ -1,22 +1,25 @@
---- includes/defaults.inc.php.orig	2015-09-06 18:47:34 UTC
+--- includes/defaults.inc.php.orig	2015-10-16 23:09:41 UTC
 +++ includes/defaults.inc.php
 @@ -40,7 +40,7 @@ $config['project_name'] = 'LibreNMS';
  $config['project_id']   = strtolower($config['project_name']);
  
  $config['temp_dir']    = '/tmp';
 -$config['install_dir'] = '/opt/'.$config['project_id'];
-+$config['install_dir'] = '/usr/local/www/' . $config['project_id'];
++$config['install_dir'] = '/usr/local/www/'.$config['project_id'];
  $config['log_dir']     = $config['install_dir'].'/logs';
  
  // MySQL extension to use
-@@ -50,24 +50,24 @@ $config['db']['extension']       = 'mysq
+@@ -50,26 +50,26 @@ $config['db']['extension']       = 'mysq
  $config['own_hostname'] = 'localhost';
  
  // Location of executables
 -$config['rrdtool']                  = '/usr/bin/rrdtool';
--$config['fping']                    = '/usr/bin/fping';
 +$config['rrdtool']                  = '/usr/local/bin/rrdtool';
+ $config['rrdtool_version']          = 1.4; // Doesn't need to contain minor numbers.
+-$config['fping']                    = '/usr/bin/fping';
+-$config['fping6']                   = 'fping6';
 +$config['fping']                    = '/usr/local/sbin/fping';
++$config['fping6']                   = '/usr/local/sbin/fping6';
  $config['fping_options']['retries'] = 3;
  $config['fping_options']['timeout'] = 500;
  $config['fping_options']['count']   = 3;

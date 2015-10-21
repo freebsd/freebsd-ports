@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.3.30
+DISTVERSION=	4.3.32
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -194,11 +194,6 @@ KMK_CONFIG=	VBOX_LIBPATH_X11=${LOCALBASE} VBOX_FREEBSD_SRC=${SRC_BASE}/sys
 KMK_FLAGS=	-j${MAKE_JOBS_NUMBER}
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 900000
-EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src-VBox-Devices-PC-vbox.dsl \
-		${PATCHDIR}/extrapatch-src-VBox-Main-src-server-generic-NetIf-generic.cpp
-.endif
 
 .if ${COMPILER_TYPE} == clang
 PATCH_DEPENDS+=	${LOCALBASE}/share/kBuild/tools/GXX3.kmk:${PORTSDIR}/devel/kBuild

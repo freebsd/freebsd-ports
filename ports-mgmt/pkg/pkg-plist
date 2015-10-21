@@ -50,6 +50,7 @@ man/man8/pkg-upgrade.8.gz
 man/man8/pkg-version.8.gz
 man/man8/pkg-which.8.gz
 man/man8/pkg.8.gz
+sbin/bapt-get
 sbin/pkg
 sbin/pkg-static
 sbin/pkg2ng

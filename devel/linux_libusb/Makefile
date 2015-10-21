@@ -22,6 +22,7 @@ CC=		${LINUXBASE}/usr/bin/gcc
 CFLAGS+=	-I${WRKDIR}/sys
 MAKE_ARGS+=	LIBUSB_GLOBAL_INCLUDE_FILE=libusb_global_linux.h
 MAKE_ARGS+=	PTHREAD_LIBS="-lpthread -lrt"
+MAKE_ARGS+=	WITHOUT_SSP=yes
 # XXX ${LINUXBASE}/usr/bin/ld is a broken link with gentoo atm?
 #MAKE_ENV+=	COMPILER_PATH=/usr/i486-pc-linux-gnu/binutils-bin/2.22
 

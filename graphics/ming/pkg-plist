@@ -95,7 +95,6 @@ include/ming/util/output.h
 include/ming/util/outputdecl.h
 include/ming/util/parser.h
 include/ming/util/parserdecl.h
-include/ming/util/png2dbl.c
 include/ming/util/read.h
 include/ming/util/swfoutput.h
 include/ming/util/swftypes.h
@@ -105,11 +104,3 @@ lib/libming.so
 lib/libming.so.1
 lib/libming.so.1.4.6
 libdata/pkgconfig/libming.pc
-%%PORTDOCS%%%%DOCSDIR%%/HISTORY
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/util/README
-%%PORTDOCS%%%%DOCSDIR%%/util/TIPS
-%%PORTDOCS%%%%DOCSDIR%%/util/TODO
-%%PORTDOCS%%%%DOCSDIR%%/util/swftoperl.html

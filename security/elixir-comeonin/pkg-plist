@@ -1,7 +1,8 @@
 lib/elixir/lib/comeonin/ebin/Elixir.Comeonin.Bcrypt.Base64.beam
 lib/elixir/lib/comeonin/ebin/Elixir.Comeonin.Bcrypt.beam
 lib/elixir/lib/comeonin/ebin/Elixir.Comeonin.Config.beam
-lib/elixir/lib/comeonin/ebin/Elixir.Comeonin.Password.Substitutions.beam
+lib/elixir/lib/comeonin/ebin/Elixir.Comeonin.Password.Common.beam
+lib/elixir/lib/comeonin/ebin/Elixir.Comeonin.Password.Tools.beam
 lib/elixir/lib/comeonin/ebin/Elixir.Comeonin.Password.beam
 lib/elixir/lib/comeonin/ebin/Elixir.Comeonin.Pbkdf2.Base64.beam
 lib/elixir/lib/comeonin/ebin/Elixir.Comeonin.Pbkdf2.beam
@@ -14,7 +15,8 @@ lib/elixir/lib/comeonin/lib/comeonin/bcrypt/base64.ex
 lib/elixir/lib/comeonin/lib/comeonin/config.ex
 lib/elixir/lib/comeonin/lib/comeonin/password.ex
 lib/elixir/lib/comeonin/lib/comeonin/password/10k_6chars.txt
-lib/elixir/lib/comeonin/lib/comeonin/password/substitutions.ex
+lib/elixir/lib/comeonin/lib/comeonin/password/common.ex
+lib/elixir/lib/comeonin/lib/comeonin/password/tools.ex
 lib/elixir/lib/comeonin/lib/comeonin/pbkdf2.ex
 lib/elixir/lib/comeonin/lib/comeonin/pbkdf2/base64.ex
 lib/elixir/lib/comeonin/lib/comeonin/tools.ex

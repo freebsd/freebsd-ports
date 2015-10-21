@@ -79,7 +79,7 @@ NLS_USES=		gettext
 NLS_CONFIGURE_OFF=	--disable-nls
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|${perl_OLD_CMD}|${perl_CMD}|' \
+	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${perl_CMD}|' \
 		${WRKSRC}/build-lives-rfx-plugin
 	@${REINPLACE_CMD} -e 's| install-docDATA||g; s|-$$(VERSION)||g' \
 		${WRKSRC}/Makefile.in

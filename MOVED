@@ -6561,7 +6561,6 @@ devel/libparserutils||2014-09-01|Not staged
 devel/libslave||2014-09-01|Not staged
 devel/linux-kmod-compat||2014-09-01|Not staged
 devel/ml-doc||2014-09-01|Not staged
-devel/mongo-cxx-driver||2014-09-01|Not staged
 devel/nemiver||2014-09-01|Not staged
 devel/ocaml-event||2014-09-01|Not staged
 devel/ocamlweb||2014-09-01|Not staged
@@ -7689,7 +7688,6 @@ devel/rubygem-mash|devel/rubygem-hashie|2015-06-30|Has expired: Deprecated by up
 net/rubygem-bunny060|net/rubygem-bunny|2015-06-30|Has expired: Use net/rubygem-bunny instead
 security/rubygem-hmac|security/rubygem-ruby-hmac|2015-06-30|Has expired: Duplicate of security/rubygem-ruby-hmac
 www/ruby-amazon|www/ruby-aws|2015-06-30|Has expired: Rendered obsolete by upstream since Amazon shut down access to AWS API v3 (2008-03-31). Use www/ruby-aws instead
-net/ntp-rc||2015-06-30|Has gone GA
 net/ptpd2-devel|net/ptpd2|2015-07-02|Development version no longer necessary
 devel/erlang-cowlib|www/erlang-cowlib|2015-07-03|Move to www where it belongs
 net/py-google||2015-07-03|Google no longer supports the SOAP API for search
@@ -7895,3 +7893,6 @@ www/moodle27||2015-10-11|Has expired: Please upgrade to moodle28 or moodle29
 graphics/epeg|devel/efl|2015-10-11|Has expired: Merged into devel/efl
 x11-drivers/xf86-video-ati-ums||2015-10-13|Not supported by xorg-server 1.17
 x11/nvidia-driver-173||2015-10-13|Does not support xorg-server 1.15 and higher
+net-mgmt/bsnmptools||2015-10-16|Has expired: client tools (including SNMPv3 support) are part of the base system
+security/yubikey-personalization|security/ykpers|2015-10-18|Port duplicate with security/ykpers
+devel/rubygem-listen2||2015-10-20|Has expired: not used by other ports anymore

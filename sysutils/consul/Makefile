@@ -150,10 +150,6 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900044 && ${ARCH} == i386
-BROKEN=		Does not build
-.endif
-
 # golang assumes that if clang is in use, it is called "clang" and not "cc". If
 # it's called "cc", go fails.
 .if ${COMPILER_TYPE} == clang

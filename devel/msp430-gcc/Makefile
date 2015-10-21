@@ -23,6 +23,9 @@ COMMENT=	FSF GCC 4.6 for TI's msp430 MCUs cross-development
 
 LICENSE=	GPLv3
 
+DEPRECATED=		Obsolete. Please, use devel/gcc-msp430-ti-toolchain
+EXPIRATION_DATE=	2016-01-08
+
 BUILD_DEPENDS=	${PKGNAMEPREFIX}as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \
 		${PKGNAMEPREFIX}ld:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils
 RUN_DEPENDS=	${PKGNAMEPREFIX}as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \

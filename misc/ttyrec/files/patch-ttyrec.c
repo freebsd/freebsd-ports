@@ -1,5 +1,5 @@
---- ttyrec.c.orig	Tue Jun  4 21:52:00 2002
-+++ ttyrec.c	Tue Jun  4 21:52:12 2002
+--- ttyrec.c.orig	2002-06-04 21:52:00 UTC
++++ ttyrec.c
 @@ -202,11 +202,7 @@
  void
  finish()

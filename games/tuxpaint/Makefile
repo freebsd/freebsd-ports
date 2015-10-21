@@ -45,12 +45,6 @@ PORTDATA=	*
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} <= 901000
-CFLAGS+=	-Dfmemopen_alternative
-.endif
-
 post-extract:
 	@${CHMOD} -R a+rX ${WRKSRC}
 	@${RM} -rf ${WRKSRC}/fonts/locale/vi_docs

@@ -1,0 +1,15 @@
+Don't install Linux specific init script.
+
+--- interface/vmcs_host/linux/vcfiled/CMakeLists.txt.orig	2015-02-13 18:39:19 UTC
++++ interface/vmcs_host/linux/vcfiled/CMakeLists.txt
+@@ -20,8 +20,8 @@ install(TARGETS vcfiled 
+ configure_file (etc/init.d/vcfiled ${PROJECT_BINARY_DIR}/etc/init.d/vcfiled)
+ 
+ # script to start up vcfiled at start of day
+-install(PROGRAMS ${PROJECT_BINARY_DIR}/etc/init.d/vcfiled
+-        DESTINATION /etc/init.d)
++#install(PROGRAMS ${PROJECT_BINARY_DIR}/etc/init.d/vcfiled
++#        DESTINATION /etc/init.d)
+ # install locally to the installation directory too
+ install(PROGRAMS ${PROJECT_BINARY_DIR}/etc/init.d/vcfiled
+         DESTINATION ${VMCS_INSTALL_PREFIX}/share/install)

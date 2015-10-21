@@ -7,7 +7,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	GNU
 EXTRACT_SUFX=	.tar.lz
 
-MAINTAINER=	lippe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCR program implemented as filter
 
 LICENSE=	GPLv3

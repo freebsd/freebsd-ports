@@ -1,9 +1,9 @@
---- ui/resources/ui_resources.grd.orig	2014-10-10 09:15:32 UTC
-+++ ui/resources/ui_resources.grd
-@@ -39,7 +39,7 @@
-         <structure type="chrome_scaled_image" name="IDR_APP_TOP_LEFT" file="app_top_left.png" />
-         <structure type="chrome_scaled_image" name="IDR_APP_TOP_RIGHT" file="app_top_right.png" />
-       </if>
+--- ui/resources/ui_resources.grd.orig	2015-10-14 19:18:12.855975000 +0200
++++ ui/resources/ui_resources.grd	2015-10-14 19:18:28.057725000 +0200
+@@ -15,7 +15,7 @@
+       <!-- KEEP THESE IN ALPHABETICAL ORDER!  DO NOT ADD TO RANDOM PLACES JUST
+            BECAUSE YOUR RESOURCES ARE FUNCTIONALLY RELATED OR FALL UNDER THE
+            SAME CONDITIONALS. -->
 -      <if expr="is_linux and use_aura">
 +      <if expr="(is_linux or is_bsd) and use_aura">
          <structure type="chrome_scaled_image" name="IDR_AURA_CURSOR_BIG_ALIAS" file="common/pointers/alias_big.png" />

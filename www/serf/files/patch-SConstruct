@@ -1,5 +1,5 @@
---- ./SConstruct.orig	2014-02-04 21:11:10.000000000 +0100
-+++ ./SConstruct	2014-02-26 21:55:54.000000000 +0100
+--- SConstruct.orig	2014-02-05 00:11:10.000000000 +0400
++++ SConstruct	2015-10-19 15:07:53.089322358 +0300
 @@ -69,6 +69,9 @@
  
  opts = Variables(files=[SAVED_CONFIG])
@@ -18,6 +18,17 @@
  
  # This version string is used in the dynamic library name, and for Mac OS X also
  # for the current_version and compatibility_version options in the .dylib
+@@ -345,8 +349,8 @@
+   ### there is probably a better way to run/capture output.
+   ### env.ParseConfig() may be handy for getting this stuff into the build
+   if CALLOUT_OKAY:
+-    apr_libs = os.popen(env.subst('$APR --link-libtool --libs')).read().strip()
+-    apu_libs = os.popen(env.subst('$APU --link-libtool --libs')).read().strip()
++    apr_libs = os.popen(env.subst('$APR --libs')).read().strip()
++    apu_libs = os.popen(env.subst('$APU --libs')).read().strip()
+   else:
+     apr_libs = ''
+     apu_libs = ''
 @@ -387,6 +391,8 @@
  
  env.Default(lib_static, lib_shared, pkgconfig)

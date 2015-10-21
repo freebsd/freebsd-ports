@@ -15,7 +15,6 @@ RUN_DEPENDS=	p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
 		p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 
 USES+=		gmake perl5 shebangfix
-perl_OLD_CMD=	/usr/bin/env perl
 SHEBANG_FILES=	postgresql_autodoc.pl
 CONFIGURE_ARGS+=--datadir=${DATADIR}
 

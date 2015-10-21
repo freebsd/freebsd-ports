@@ -139,6 +139,7 @@ libexec/apache24/httpd.exp
 %%MOD_HEADERS%%libexec/apache24/mod_headers.so
 %%MOD_HEARTBEAT%%libexec/apache24/mod_heartbeat.so
 %%MOD_HEARTMONITOR%%libexec/apache24/mod_heartmonitor.so
+%%MOD_HTTP2%%libexec/apache24/mod_http2.so
 %%MOD_IDENT%%libexec/apache24/mod_ident.so
 %%MOD_IMAGEMAP%%libexec/apache24/mod_imagemap.so
 %%MOD_INCLUDE%%libexec/apache24/mod_include.so

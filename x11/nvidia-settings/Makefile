@@ -3,6 +3,7 @@
 
 PORTNAME=	nvidia-settings
 PORTVERSION=	355.11
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	bland@FreeBSD.org
@@ -26,14 +27,14 @@ PLIST_FILES=	bin/nvidia-settings \
 		man/man1/nvidia-settings.1.gz \
 		lib/libnvidia-gtk2.so.${PORTVERSION}
 
-LDFLAGS+=	-Wl,--as-needed
+LDFLAGS+=	-Wl
 MAKE_ENV=	NV_USE_BUNDLED_LIBJANSSON=0 \
 		NV_VERBOSE= \
 		STRIP_CMD=${TRUE} \
 		INSTALL_BIN_ARGS="${INSTALL_PROGRAM:Ninstall}" \
 		INSTALL_DOC_ARGS="${INSTALL_MAN:Ninstall}" \
 		X_CFLAGS=-I${LOCALBASE}/include \
-		X_LDFLAGS=-L${LOCALBASE}/lib
+		X_LDFLAGS="-L${LOCALBASE}/lib -lthr"
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} \

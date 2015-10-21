@@ -33,9 +33,6 @@ USE_PERL5=	run
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-SHEBANG_LANG=	perl
-perl_OLD_CMD=	${SETENV} perl
-perl_CMD=	${PERL}
 SHEBANG_FILES=	${WRKSRC}/policyd-weight
 
 do-install:

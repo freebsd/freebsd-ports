@@ -10,6 +10,9 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Unicode/ISO10646 character map and font viewer
 
+LICENSE=	GPLv3 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
 PORTSCOUT=	limitw:1,even
@@ -25,11 +28,5 @@ INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.Charmap.enums.xml \
 		org.gnome.Charmap.gschema.xml
-
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 900000
-CONFIGURE_ARGS+=	--disable-Bsymbolic
-.endif
 
 .include <bsd.port.mk>

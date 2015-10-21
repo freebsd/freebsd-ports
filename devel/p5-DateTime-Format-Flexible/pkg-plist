@@ -1,10 +1,10 @@
-%%PERL5_MAN3%%/DateTime::Format::Flexible.3.gz
-%%PERL5_MAN3%%/DateTime::Format::Flexible::lang.3.gz
-%%PERL5_MAN3%%/DateTime::Format::Flexible::lang::de.3.gz
-%%PERL5_MAN3%%/DateTime::Format::Flexible::lang::en.3.gz
-%%PERL5_MAN3%%/DateTime::Format::Flexible::lang::es.3.gz
 %%SITE_PERL%%/DateTime/Format/Flexible.pm
 %%SITE_PERL%%/DateTime/Format/Flexible/lang.pm
 %%SITE_PERL%%/DateTime/Format/Flexible/lang/de.pm
 %%SITE_PERL%%/DateTime/Format/Flexible/lang/en.pm
 %%SITE_PERL%%/DateTime/Format/Flexible/lang/es.pm
+%%PERL5_MAN3%%/DateTime::Format::Flexible.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Flexible::lang.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Flexible::lang::de.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Flexible::lang::en.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Flexible::lang::es.3.gz

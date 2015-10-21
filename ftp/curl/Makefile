@@ -119,9 +119,8 @@ IPV6_CONFIGURE_OFF=	--disable-ipv6
 IPV6_CONFIGURE_ON=	--enable-ipv6
 LDAP_CONFIGURE_OFF=	--disable-ldap
 LDAP_CONFIGURE_ON=	--enable-ldap
-LDAP_CPPFLAGS=		-I${LOCALBASE}/include
-LDAP_LDFLAGS=		-L${LOCALBASE}/lib
 LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		localbase
 LDAPS_CONFIGURE_OFF=	--disable-ldaps
 LDAPS_CONFIGURE_ON=	--enable-ldaps
 LIBSSH2_CONFIGURE_OFF=	--without-libssh2

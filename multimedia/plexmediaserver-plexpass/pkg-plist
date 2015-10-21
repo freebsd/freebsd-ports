@@ -505,11 +505,10 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Audio Codec/alac.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Audio Codec/ape.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Audio Codec/cdda.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Audio Codec/dca-ma.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Audio Codec/dolby_digital.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Audio Codec/dolby_pro.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Audio Codec/dolby_truehd.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Audio Codec/dts.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Audio Codec/dtshd_ma.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Audio Codec/eac3.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Audio Codec/flac.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Audio Codec/m4a.png
@@ -640,6 +639,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/bazmark.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/bbc.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/bbc_america.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/bbc_films.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/bbc_four.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/bbc_one.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/bbc_prime.png
@@ -651,10 +651,12 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/bet.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/bigtalk.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/biography_channel.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/black_bear_pictures.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/blackdog.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/blind_ambition_entertainment.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/blue_sky.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/blue_underground.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/blumhouse_productions.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/bnn.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/boomerang.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/bravo.png
@@ -706,6 +708,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/criterion.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/ctv.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/cw.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/cw_seed.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/czolowka.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/damselfly.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/danjaq.png
@@ -851,6 +854,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/jerry_bruckheimer_films.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/jersey_films.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/jim_henson.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/jj_splice.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/kaboom_entertainment.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/kadokawa_pictures.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/kadr.png
@@ -889,6 +893,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/marvel.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/maverick.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/maya_entertainment.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/mbs.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/media8.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/mediapro.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/meridian_films.png
@@ -1008,6 +1013,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/rtl8.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/rtl_ii.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/rysher_entertainment.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/saban.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/salter_street_films.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/sandrew.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/sat1.png
@@ -1031,6 +1037,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/silver_pictures.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/sky.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/sky_1.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/skydance_productions.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/slim_films.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/smc.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/snl_studios.png
@@ -1058,6 +1065,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/svt1.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/svt2.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/syfy.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/syncopy.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/syrena.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/tandem.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/taurus_film.png
@@ -1100,6 +1108,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/united_artists.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/universal.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/univision.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/up_tv.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/upn.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/usa_network.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/vara.png
@@ -1134,6 +1143,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/yahoo_screen.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/yari_film_group.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/youtube.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/ytv.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/zaloom_mayfield.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/zdf.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Media-Flags.bundle/Contents/Resources/Studio/zebra.png
@@ -1914,6 +1924,7 @@
 %%DATADIR%%/Resources/Profiles/iOS-iPod-3,1.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPod-4,1.xml
 %%DATADIR%%/Resources/Profiles/iOS.xml
+%%DATADIR%%/Resources/Profiles/tvOS.xml
 %%DATADIR%%/Resources/Python/bin/python
 %%DATADIR%%/Resources/Python/include/python2.7/pyconfig.h
 %%DATADIR%%/Resources/Python/lib/python2.7/BaseHTTPServer.py

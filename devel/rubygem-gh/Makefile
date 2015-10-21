@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Multi-layer client for the github api v3
+COMMENT=	Multi-layer client for the GitHub API v3
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

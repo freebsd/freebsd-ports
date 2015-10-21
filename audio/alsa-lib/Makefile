@@ -17,6 +17,8 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pkgconfdir="\$${prefix}/libdata/pkgconfig"
 INSTALL_TARGET=	install-strip
+TEST_ENV=	${MAKE_ENV} ALSA_CONFIG_PATH="${FILESDIR}/asound.conf.sample"
+TEST_TARGET=	check
 CPPFLAGS+=	-I${FILESDIR}
 
 OPTIONS_DEFINE=	PYTHON

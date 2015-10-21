@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.nagilum.org/unix/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to copy/move pictures from a directory
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	p5-Image-ExifTool>=0:${PORTSDIR}/graphics/p5-Image-ExifTool \

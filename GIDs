@@ -175,6 +175,7 @@ ldap:*:389:
 tiarra:*:398:
 uhub:*:411:
 drweb:*:426:
+varnish:*:429:
 quasselcore:*:442:
 callweaver:*:444:
 ecartis:*:450:

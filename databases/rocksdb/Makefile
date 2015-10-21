@@ -16,12 +16,10 @@ LIB_DEPENDS=	libgflags.so:${PORTSDIR}/devel/gflags \
 		libsnappy.so:${PORTSDIR}/archivers/snappy
 
 ALL_TARGET=	shared_lib all
-CFLAGS+=	-I${WRKSRC}/include -I${LOCALBASE}/include
 CPPFLAGS+=	-DOS_FREEBSD
-LDFLAGS+=	-L${LOCALBASE}/lib
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
-USES=		compiler:c++11-lib gmake
+USES=		compiler:c++11-lib gmake localbase
 
 GH_ACCOUNT=	facebook
 USE_GITHUB=	yes

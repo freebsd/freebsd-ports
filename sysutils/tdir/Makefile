@@ -12,7 +12,7 @@ COMMENT=	Advanced file directory display utility
 
 USES=		python shebangfix
 SHEBANG_FILES=	tdir
-python_OLD_CMD=	/usr//bin/env python
+python_OLD_CMD=	"/usr//bin/env python"
 
 MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 

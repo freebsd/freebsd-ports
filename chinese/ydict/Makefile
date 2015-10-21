@@ -18,7 +18,6 @@ NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/ydict
 
 SHEBANG_FILES=	${WRKSRC}/ydict
-python_OLD_CMD=	/usr/bin/env python
 python_CMD=	/usr/bin/env python2
 
 do-install:

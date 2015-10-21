@@ -173,15 +173,13 @@ stripped() {
 	[ -n "${STRIP}" ] || return 0
 	# Split file and result into 2 lines and read separately to ensure
 	# files with spaces are kept intact.
-	find ${STAGEDIR} -type f \
-	    -exec /usr/bin/file --exclude ascii -nNF "${LF}" {} + |
+	# Using readelf -h ... /ELF Header:/ will match on all ELF files.
+	find ${STAGEDIR} -type f ! -name '*.a' \
+	    -exec readelf -S {} + 2>/dev/null | awk '\
+	    /File:/ {sub(/File: /, "", $0); file=$0} \
+	    /SYMTAB/ {print file}' |
 	    while read f; do
-		    read output
-		case "${output}" in
-			*ELF\ *\ executable,\ *FreeBSD*,\ not\ stripped*|*ELF\ *\ shared\ object,\ *FreeBSD*,\ not\ stripped*)
-				warn "'${f#${STAGEDIR}${PREFIX}/}' is not stripped consider trying INSTALL_TARGET=install-strip or using \${STRIP_CMD}"
-				;;
-		esac
+		warn "'${f#${STAGEDIR}${PREFIX}/}' is not stripped consider trying INSTALL_TARGET=install-strip or using \${STRIP_CMD}"
 	done
 }
 
