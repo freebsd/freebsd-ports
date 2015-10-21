@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	-devel
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	demon@FreeBSD.org
-COMMENT=	Reliable, High Performance TCP/HTTP Load Balancer
+COMMENT=	Reliable, high performance TCP/HTTP load balancer
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
