@@ -30,11 +30,11 @@ lib/libtiff.a
 lib/libtiff.so
 lib/libtiff.so.4
 lib/libtiff.so.5
-lib/libtiff.so.5.2.2
+lib/libtiff.so.5.2.4
 lib/libtiffxx.a
 lib/libtiffxx.so
 lib/libtiffxx.so.5
-lib/libtiffxx.so.5.2.2
+lib/libtiffxx.so.5.2.4
 libdata/pkgconfig/libtiff-4.pc
 man/man1/bmp2tiff.1.gz
 man/man1/fax2ps.1.gz
@@ -168,6 +168,7 @@ man/man3/libtiff.3tiff.gz
 %%PORTDOCS%%%%DOCSDIR%%/build.html
 %%PORTDOCS%%%%DOCSDIR%%/contrib.html
 %%PORTDOCS%%%%DOCSDIR%%/document.html
+%%PORTDOCS%%%%DOCSDIR%%/images.html
 %%PORTDOCS%%%%DOCSDIR%%/images/back.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/bali.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/cat.gif
@@ -184,7 +185,6 @@ man/man3/libtiff.3tiff.gz
 %%PORTDOCS%%%%DOCSDIR%%/images/smallliz.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/strike.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/warning.gif
-%%PORTDOCS%%%%DOCSDIR%%/images.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/internals.html
 %%PORTDOCS%%%%DOCSDIR%%/intro.html
@@ -304,3 +304,5 @@ man/man3/libtiff.3tiff.gz
 %%PORTDOCS%%%%DOCSDIR%%/v4.0.3.html
 %%PORTDOCS%%%%DOCSDIR%%/v4.0.4.html
 %%PORTDOCS%%%%DOCSDIR%%/v4.0.4beta.html
+%%PORTDOCS%%%%DOCSDIR%%/v4.0.5.html
+%%PORTDOCS%%%%DOCSDIR%%/v4.0.6.html
