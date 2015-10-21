@@ -9,10 +9,12 @@ PKGNAMESUFFIX=	-devel
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	demon@FreeBSD.org
-COMMENT=	The Reliable, High Performance TCP/HTTP Load Balancer
+COMMENT=	Reliable, High Performance TCP/HTTP Load Balancer
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
+
+IGNORE=		no devel version available yet
 
 USES=		cpe gmake
 CONFLICTS=	haproxy-[1234567890]\*
@@ -60,10 +62,6 @@ IGNORE?=	Enable PCRE support to use DeviceAtlas
 
 .if ${PORT_OPTIONS:MOPENSSL}
 USE_OPENSSL=	yes
-.if ${OSVERSION} < 1000015
-WITH_OPENSSL_PORT=	yes
-MAKE_ARGS+=	SSL_LIB=${OPENSSLLIB} SSL_INC=${OPENSSLINC}
-.endif
 MAKE_ARGS+=	USE_OPENSSL=1
 .endif
 
