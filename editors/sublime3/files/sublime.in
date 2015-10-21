@@ -1,6 +1,6 @@
 #!/compat/linux/bin/sh
 if [ -L "/dev/shm" ];then
-	%%DATADIR%%/sublime_text $*
+	%%DATADIR%%/sublime_text "$@"
 else
         echo    "Some Linux applications use shared memory.
 
