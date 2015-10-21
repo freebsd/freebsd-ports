@@ -7895,3 +7895,4 @@ net-mgmt/bsnmptools||2015-10-16|Has expired: client tools (including SNMPv3 supp
 security/yubikey-personalization|security/ykpers|2015-10-18|Port duplicate with security/ykpers
 devel/rubygem-listen2||2015-10-20|Has expired: not used by other ports anymore
 devel/cloudabi-binutils|devel/cloudabi-binutils-x86_64|2015-10-21|CloudABI now supports aarch64 as well
+net/ntp-rc|net/ntp|2015-10-21|ntp-4.2.8p4 has gone GA
