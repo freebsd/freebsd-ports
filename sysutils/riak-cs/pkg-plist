@@ -6,6 +6,7 @@ sbin/riak-cs-gc
 sbin/riak-cs-multibag
 sbin/riak-cs-stanchion
 sbin/riak-cs-storage
+sbin/riak-cs-supercluster
 @sample %%RIAKCS_CONFDIR%%/riak-cs.conf
 @sample %%RIAKCS_CONFDIR%%/advanced.config
 @sample %%RIAKCS_CONFDIR%%/key.pem
