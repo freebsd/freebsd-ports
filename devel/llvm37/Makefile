@@ -244,7 +244,7 @@ LLDB_BUILD_DEPENDS+= \
 # Evil hack around gcc48 not providing a usable c++11 environment on 9.x
 PLIST_SUB:=	${PLIST_SUB:NLLDB=*} LLDB="@comment "
 .else
-.if ${PORT_OPTIONS:MLLD}
+.if ${PORT_OPTIONS:MLLDB}
 EXTRA_PATCHES+= \
 	${PATCHDIR}/lldb-patch-svn-247116 \
 	${PATCHDIR}/lldb-patch-svn-249467
