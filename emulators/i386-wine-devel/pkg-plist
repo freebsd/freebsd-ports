@@ -801,6 +801,7 @@ include/wine/windows/wia_lh.h
 include/wine/windows/wia_lh.idl
 include/wine/windows/wia_xp.h
 include/wine/windows/wia_xp.idl
+include/wine/windows/wiadef.h
 include/wine/windows/winbase.h
 include/wine/windows/wincodec.h
 include/wine/windows/wincodec.idl
@@ -1871,6 +1872,7 @@ lib32/wine/fakedlls/vbscript.dll
 lib32/wine/fakedlls/vcomp.dll
 lib32/wine/fakedlls/vcomp100.dll
 lib32/wine/fakedlls/vcomp110.dll
+lib32/wine/fakedlls/vcomp120.dll
 lib32/wine/fakedlls/vcomp90.dll
 %%OSREL9-STAGING%%lib32/wine/fakedlls/vcruntime140.dll
 %%OSREL10-STAGING%%lib32/wine/fakedlls/vcruntime140.dll
@@ -1961,6 +1963,7 @@ lib32/wine/fakedlls/wtsapi32.dll
 lib32/wine/fakedlls/wuapi.dll
 lib32/wine/fakedlls/wuaueng.dll
 lib32/wine/fakedlls/wusa.exe
+lib32/wine/fakedlls/x3daudio1_0.dll
 lib32/wine/fakedlls/x3daudio1_1.dll
 lib32/wine/fakedlls/x3daudio1_2.dll
 lib32/wine/fakedlls/x3daudio1_3.dll
@@ -1969,9 +1972,17 @@ lib32/wine/fakedlls/x3daudio1_5.dll
 lib32/wine/fakedlls/x3daudio1_6.dll
 lib32/wine/fakedlls/x3daudio1_7.dll
 lib32/wine/fakedlls/xapofx1_1.dll
+lib32/wine/fakedlls/xapofx1_2.dll
 lib32/wine/fakedlls/xapofx1_3.dll
 lib32/wine/fakedlls/xapofx1_4.dll
 lib32/wine/fakedlls/xapofx1_5.dll
+lib32/wine/fakedlls/xaudio2_0.dll
+lib32/wine/fakedlls/xaudio2_1.dll
+lib32/wine/fakedlls/xaudio2_2.dll
+lib32/wine/fakedlls/xaudio2_3.dll
+lib32/wine/fakedlls/xaudio2_4.dll
+lib32/wine/fakedlls/xaudio2_5.dll
+lib32/wine/fakedlls/xaudio2_6.dll
 lib32/wine/fakedlls/xaudio2_8.dll
 lib32/wine/fakedlls/xcopy.exe
 lib32/wine/fakedlls/xinput1_1.dll
@@ -2224,6 +2235,7 @@ lib32/wine/libws2_32.def
 lib32/wine/libwsnmp32.def
 lib32/wine/libwsock32.def
 lib32/wine/libwtsapi32.def
+lib32/wine/libx3daudio1_7.def
 lib32/wine/libxinput.def
 lib32/wine/libxmllite.def
 lib32/wine/loadperf.dll.so
@@ -2496,6 +2508,7 @@ lib32/wine/vbscript.dll.so
 lib32/wine/vcomp.dll.so
 lib32/wine/vcomp100.dll.so
 lib32/wine/vcomp110.dll.so
+lib32/wine/vcomp120.dll.so
 lib32/wine/vcomp90.dll.so
 %%OSREL9-STAGING%%lib32/wine/vcruntime140.dll.so
 %%OSREL10-STAGING%%lib32/wine/vcruntime140.dll.so
@@ -2586,6 +2599,7 @@ lib32/wine/wtsapi32.dll.so
 lib32/wine/wuapi.dll.so
 lib32/wine/wuaueng.dll.so
 lib32/wine/wusa.exe.so
+lib32/wine/x3daudio1_0.dll.so
 lib32/wine/x3daudio1_1.dll.so
 lib32/wine/x3daudio1_2.dll.so
 lib32/wine/x3daudio1_3.dll.so
@@ -2594,9 +2608,17 @@ lib32/wine/x3daudio1_5.dll.so
 lib32/wine/x3daudio1_6.dll.so
 lib32/wine/x3daudio1_7.dll.so
 lib32/wine/xapofx1_1.dll.so
+lib32/wine/xapofx1_2.dll.so
 lib32/wine/xapofx1_3.dll.so
 lib32/wine/xapofx1_4.dll.so
 lib32/wine/xapofx1_5.dll.so
+lib32/wine/xaudio2_0.dll.so
+lib32/wine/xaudio2_1.dll.so
+lib32/wine/xaudio2_2.dll.so
+lib32/wine/xaudio2_3.dll.so
+lib32/wine/xaudio2_4.dll.so
+lib32/wine/xaudio2_5.dll.so
+lib32/wine/xaudio2_6.dll.so
 lib32/wine/xaudio2_8.dll.so
 lib32/wine/xcopy.exe.so
 lib32/wine/xinput1_1.dll.so
