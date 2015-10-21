@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lumina
-PORTVERSION=	20151016
+PORTVERSION=	20151021
 CATEGORIES=	x11
 PKGNAMESUFFIX=	-devel
 
@@ -22,9 +22,10 @@ RUN_DEPENDS=	xorg>=0:${PORTSDIR}/x11/xorg \
 
 CONFLICTS=	lumina-0*
 
-OPTIONS_DEFINE=	MULTIMEDIA
+OPTIONS_DEFINE=	MULTIMEDIA PCBSD
 OPTIONS_DEFAULT=	MULTIMEDIA
 MULTIMEDIA_DESC=	Install multimedia support backend (gstreamer)
+PCBSD_DESC=	Use the PC-BSD system interface settings.
 
 .include <bsd.port.options.mk>
 
@@ -44,8 +45,13 @@ USE_QT5=	core gui network quick svg linguist multimedia imageformats \
 USES=		desktop-file-utils qmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	pcbsd
-GH_TAGNAME=	af742de80c460e981037858b69829b503bbdedbe
+GH_TAGNAME=	dc84c4e6ce2fb97e26a7ea1affb2ec6da017855f
 
+#Setup the qmake configuration options
+.if {PORT_OPTIONS:MPCBSD}
+QMAKE_ARGS=	CONFIG+="configure NO_I18N PCBSD"
+.else
 QMAKE_ARGS=	CONFIG+="configure NO_I18N"
+.endif
 
 .include <bsd.port.mk>
