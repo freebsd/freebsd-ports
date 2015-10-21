@@ -257,7 +257,8 @@
     SUBDIR += clinfo
     SUBDIR += clisp-hyperspec
     SUBDIR += clojure-cider
-    SUBDIR += cloudabi-binutils
+    SUBDIR += cloudabi-binutils-aarch64
+    SUBDIR += cloudabi-binutils-x86_64
     SUBDIR += cloudabi-toolchain
     SUBDIR += cmake
     SUBDIR += cmake-fedora
