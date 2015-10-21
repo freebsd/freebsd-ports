@@ -15,12 +15,11 @@ COMMENT=	Schematic and PCB editing software
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
-BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 RUN_DEPENDS=	xpdf:${PORTSDIR}/graphics/xpdf
 
 CONFLICTS=	kicad-devel*
 
-USES=		cmake dos2unix desktop-file-utils shared-mime-info tar:xz
+USES=		cmake desktop-file-utils dos2unix shared-mime-info tar:xz
 
 # Does not compile with Gcc48
 USE_GCC=	4.7
@@ -28,12 +27,12 @@ USE_GCC=	4.7
 LDFLAGS+=	-L${LOCALBASE}/lib/c++
 CXXFLAGS+=	-nostdinc++ -isystem ${LOCALBASE}/include/c++/v1
 BUILD_DEPENDS+=	${LOCALBASE}/lib/c++/libstdc++.so:${PORTSDIR}/devel/libc++
+DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 
 DOS2UNIX_GLOB=	*.cmake sch_bus_entry.h sch_line.h sch_no_connect.h
-USE_XORG=	x11 ice xext
+USE_XORG=	ice x11 xext
 USE_GL=		yes
 USE_WX=		3.0
-WX_UNICODE=	yes
 USE_GNOME=	atk	# Required by libwx_gtk2_aui-2.8.so
 CXXFLAGS+=	-I${WRKSRC}/include -I${LOCALBASE}/include -DBOOST_HASH_NO_EXTENSIONS
 CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}	\
