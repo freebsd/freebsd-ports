@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20151020:
+  AFFECTS: users of security/keepassx2
+
+  In order of package name changed, please remove old install before
+  upgrade.
+
+  # pkg delete security/keepassx2
+  # portmaster security/keepassx2
+
 20151019:
   AFFECTS: users of www/varnish4
   AUTHOR: feld@FreeBSD.org
