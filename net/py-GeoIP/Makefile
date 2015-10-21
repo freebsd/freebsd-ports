@@ -17,9 +17,8 @@ LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
 
 OPTIONS_DEFINE=	EXAMPLES
 
-CPPFLAGS+=	-I${LOCALBASE}/include
 USE_PYTHON=	autoplist concurrent distutils
-USES=		python shebangfix
+USES=		localbase python shebangfix
 
 PORTEXAMPLES=	*
 

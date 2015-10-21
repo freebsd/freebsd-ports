@@ -114,6 +114,7 @@
     SUBDIR += darktable
     SUBDIR += dataplot
     SUBDIR += dc20pack
+    SUBDIR += dcp2icc
     SUBDIR += dcraw
     SUBDIR += dcraw-m
     SUBDIR += deegree-csw
@@ -834,6 +835,7 @@
     SUBDIR += py-gimp
     SUBDIR += py-glewpy
     SUBDIR += py-goocanvas
+    SUBDIR += py-gphoto2
     SUBDIR += py-graph
     SUBDIR += py-graph-core
     SUBDIR += py-graph-dot

@@ -154,6 +154,7 @@ CONFIGURE_ARGS+=	\
 		--enable-threshold \
 		--enable-unixsock \
 		--enable-uptime \
+		--enable-users \
 		--enable-uuid \
 		--enable-write_graphite \
 		--enable-write_log \
@@ -471,16 +472,6 @@ PLIST_SUB+=	STATGRAB=""
 .else
 CONFIGURE_ARGS+=--without-libstatgrab
 PLIST_SUB+=	STATGRAB="@comment "
-.endif
-
-.if ${OSVERSION} >= 900007
-CONFIGURE_ARGS+=--enable-users
-PLIST_SUB+=	USERS=""
-.elif ${PORT_OPTIONS:MSTATGRAB}
-CONFIGURE_ARGS+=--enable-users
-PLIST_SUB+=	USERS=""
-.else
-PLIST_SUB+=	USERS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSIGROK}

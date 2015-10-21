@@ -76,8 +76,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${PREFIX}/include/openNURBS/
 	${INSTALL_DATA} ${WRKSRC}/zlib/*.h \
 		${STAGEDIR}${PREFIX}/include/openNURBS/zlib
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900000
-	${TOUCH} ${STAGEDIR}${PREFIX}/include/openNURBS/zlib/gzguts.h
-.endif
 
 .include <bsd.port.post.mk>

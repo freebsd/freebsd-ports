@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel java python
 MASTER_SITES=	SF/${PORTNAME}p/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	lippe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java Embedded Python
 
 HAS_CONFIGURE=	yes

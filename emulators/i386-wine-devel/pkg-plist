@@ -1,4 +1,7 @@
 bin/function_grep.pl
+%%OSREL9-STAGING%%bin/msidb
+%%OSREL10-STAGING%%bin/msidb
+%%OSREL11-STAGING%%bin/msidb
 bin/msiexec
 bin/notepad
 bin/regedit
@@ -22,6 +25,9 @@ bin/wineserver
 bin/wmc
 bin/wrc
 bin32/function_grep.pl
+%%OSREL9-STAGING%%bin32/msidb
+%%OSREL10-STAGING%%bin32/msidb
+%%OSREL11-STAGING%%bin32/msidb
 bin32/msiexec
 bin32/notepad
 bin32/regedit
@@ -868,8 +874,13 @@ include/wine/windows/wtypes.h
 include/wine/windows/wtypes.idl
 include/wine/windows/wuapi.h
 include/wine/windows/wuapi.idl
+include/wine/windows/x3daudio.h
+include/wine/windows/xapo.h
+include/wine/windows/xapo.idl
 include/wine/windows/xaudio2.h
 include/wine/windows/xaudio2.idl
+include/wine/windows/xaudio2fx.h
+include/wine/windows/xaudio2fx.idl
 include/wine/windows/xcmc.h
 include/wine/windows/xinput.h
 include/wine/windows/xmldom.h
@@ -882,8 +893,7 @@ include/wine/windows/xmllite.idl
 include/wine/windows/zmouse.h
 lib32/.libGL/dri/i915_dri.so
 lib32/.libGL/dri/i965_dri.so
-%%OSREL10%%lib32/.libGL/dri/kms_swrast_dri.so
-%%OSREL11%%lib32/.libGL/dri/kms_swrast_dri.so
+lib32/.libGL/dri/kms_swrast_dri.so
 lib32/.libGL/dri/r200_dri.so
 lib32/.libGL/dri/r300_dri.so
 lib32/.libGL/dri/r600_dri.so
@@ -893,8 +903,7 @@ lib32/.libGL/dri/swrast_dri.so
 lib32/.libGL/dri/vmwgfx_dri.so
 lib32/.libGL/libGL.so.1
 lib32/libGLU.so.1
-%%OSREL10%%lib32/libLLVM-3.5.so
-%%OSREL11%%lib32/libLLVM-3.5.so
+lib32/libLLVM-3.6.so
 lib32/libX11-xcb.so.1
 lib32/libX11.so.6
 lib32/libXau.so.6
@@ -908,20 +917,18 @@ lib32/libXi.so.6
 lib32/libXrandr.so.2
 lib32/libXrender.so.1
 lib32/libXxf86vm.so.1
-%%OSREL10%%lib32/libdevq.so.0
-%%OSREL11%%lib32/libdevq.so.0
-%%OSREL9%%lib32/libdricore9.1.7.so.1
+lib32/libdevq.so.0
 lib32/libdrm.so.2
 lib32/libdrm_intel.so.1
 lib32/libdrm_radeon.so.1
-%%OSREL10%%lib32/libedit.so.0
-%%OSREL11%%lib32/libedit.so.0
+lib32/libedit.so.0
 lib32/libexpat.so.1
 %%OSREL9-STAGING%%lib32/libffi.so.6
 %%OSREL10-STAGING%%lib32/libffi.so.6
 %%OSREL11-STAGING%%lib32/libffi.so.6
 lib32/libfontconfig.so.1
 lib32/libfreetype.so.6
+%%OSREL9%%lib32/libgcc_s.so.1
 lib32/libglapi.so.0
 %%OSREL9-STAGING%%lib32/libgmp.so.10
 %%OSREL10-STAGING%%lib32/libgmp.so.10
@@ -938,7 +945,6 @@ lib32/libglapi.so.0
 %%OSREL11-STAGING%%lib32/libintl.so.8
 lib32/libjpeg.so.8
 lib32/liblcms2.so.2
-%%OSREL9%%lib32/libllvmradeon9.1.7.so
 %%OSREL9-STAGING%%lib32/libnettle.so.4
 %%OSREL10-STAGING%%lib32/libnettle.so.4
 %%OSREL11-STAGING%%lib32/libnettle.so.4
@@ -948,6 +954,7 @@ lib32/liblcms2.so.2
 lib32/libpciaccess.so.0
 lib32/libpng16.so.16
 lib32/libpthread-stubs.so.0
+%%OSREL9%%lib32/libstdc++.so.6
 %%OSREL9-STAGING%%lib32/libtasn1.so.6
 %%OSREL10-STAGING%%lib32/libtasn1.so.6
 %%OSREL11-STAGING%%lib32/libtasn1.so.6
@@ -1244,6 +1251,7 @@ lib32/wine/dxdiagn.dll.so
 lib32/wine/dxgi.dll.so
 lib32/wine/dxva2.dll.so
 lib32/wine/eject.exe.so
+lib32/wine/esent.dll.so
 lib32/wine/evr.dll.so
 lib32/wine/expand.exe.so
 lib32/wine/explorer.exe.so
@@ -1531,6 +1539,7 @@ lib32/wine/fakedlls/dxdiagn.dll
 lib32/wine/fakedlls/dxgi.dll
 lib32/wine/fakedlls/dxva2.dll
 lib32/wine/fakedlls/eject.exe
+lib32/wine/fakedlls/esent.dll
 lib32/wine/fakedlls/evr.dll
 lib32/wine/fakedlls/expand.exe
 lib32/wine/fakedlls/explorer.exe
@@ -1632,6 +1641,7 @@ lib32/wine/fakedlls/mscoree.dll
 lib32/wine/fakedlls/msctf.dll
 lib32/wine/fakedlls/msctfp.dll
 lib32/wine/fakedlls/msdaps.dll
+lib32/wine/fakedlls/msdelta.dll
 lib32/wine/fakedlls/msdmo.dll
 lib32/wine/fakedlls/msftedit.dll
 lib32/wine/fakedlls/msg711.acm
@@ -1640,6 +1650,9 @@ lib32/wine/fakedlls/mshta.exe
 lib32/wine/fakedlls/mshtml.dll
 lib32/wine/fakedlls/mshtml.tlb
 lib32/wine/fakedlls/msi.dll
+%%OSREL9-STAGING%%lib32/wine/fakedlls/msidb.exe
+%%OSREL10-STAGING%%lib32/wine/fakedlls/msidb.exe
+%%OSREL11-STAGING%%lib32/wine/fakedlls/msidb.exe
 lib32/wine/fakedlls/msident.dll
 lib32/wine/fakedlls/msiexec.exe
 lib32/wine/fakedlls/msimg32.dll
@@ -2253,6 +2266,7 @@ lib32/wine/mscoree.dll.so
 lib32/wine/msctf.dll.so
 lib32/wine/msctfp.dll.so
 lib32/wine/msdaps.dll.so
+lib32/wine/msdelta.dll.so
 lib32/wine/msdmo.dll.so
 lib32/wine/msftedit.dll.so
 lib32/wine/msg711.acm.so
@@ -2261,6 +2275,9 @@ lib32/wine/mshta.exe.so
 lib32/wine/mshtml.dll.so
 lib32/wine/mshtml.tlb.so
 lib32/wine/msi.dll.so
+%%OSREL9-STAGING%%lib32/wine/msidb.exe.so
+%%OSREL10-STAGING%%lib32/wine/msidb.exe.so
+%%OSREL11-STAGING%%lib32/wine/msidb.exe.so
 lib32/wine/msident.dll.so
 lib32/wine/msiexec.exe.so
 lib32/wine/msimg32.dll.so

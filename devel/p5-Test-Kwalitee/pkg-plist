@@ -1,2 +1,4 @@
+bin/kwalitee-metrics
 %%SITE_PERL%%/Test/Kwalitee.pm
+%%PERL5_MAN1%%/kwalitee-metrics.1.gz
 %%PERL5_MAN3%%/Test::Kwalitee.3.gz

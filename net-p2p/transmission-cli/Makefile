@@ -2,7 +2,7 @@
 
 PORTNAME=	transmission
 PORTVERSION=	2.84
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	net-p2p
 #MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
 MASTER_SITES=	http://transmission.cachefly.net/

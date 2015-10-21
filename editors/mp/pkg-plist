@@ -6,8 +6,6 @@ man/man1/mp-5.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
 %%PORTDOCS%%%%DOCSDIR%%/mp_actions.html
 %%PORTDOCS%%%%DOCSDIR%%/mp_actions.txt
-%%PORTDOCS%%%%DOCSDIR%%/mp_api.html
-%%PORTDOCS%%%%DOCSDIR%%/mp_api.txt
 %%PORTDOCS%%%%DOCSDIR%%/mp_configuration.html
 %%PORTDOCS%%%%DOCSDIR%%/mp_configuration.txt
 %%PORTDOCS%%%%DOCSDIR%%/mp_cookbook.html
@@ -62,3 +60,4 @@ man/man1/mp-5.1.gz
 %%DATADIR%%/mp_tui.mpsl
 %%DATADIR%%/mp_vcs.mpsl
 %%DATADIR%%/mp_writing.mpsl
+%%GUI%%share/pixmaps/mp.png

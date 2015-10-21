@@ -285,6 +285,7 @@
     SUBDIR += offlineimap
     SUBDIR += opendkim
     SUBDIR += opendmarc
+    SUBDIR += openemm2013
     SUBDIR += opensmtpd
     SUBDIR += opensmtpd-devel
     SUBDIR += openwebmail

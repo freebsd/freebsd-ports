@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	ostinato
-PORTVERSION=	0.5.1
-PORTREVISION=	2
+PORTVERSION=	0.7.1
 CATEGORIES=	net security
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	https://bintray.com/artifact/download/pstavirs/ostinato/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	Packet crafter/generator and analyzer with friendly GUI
+
+LICENSE=	GPLv3
 
 LIB_DEPENDS=	libprotobuf.so:${PORTSDIR}/devel/protobuf
 

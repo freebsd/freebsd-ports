@@ -1,0 +1,1808 @@
+--- javaunohelper/com/sun/star/comp/helper/Bootstrap.java.orig	2014-02-25 08:30:16 UTC
++++ javaunohelper/com/sun/star/comp/helper/Bootstrap.java
+@@ -97,6 +97,7 @@ public class Bootstrap {
+ 		@param context_entries the hash table contains mappings of entry names (type string) to
+ 		context entries (type class ComponentContextEntry).
+ 		@return a new context.
++		@throws java.lang.Exception
+     */
+ 	static public XComponentContext createInitialComponentContext( Hashtable context_entries )
+         throws Exception
+@@ -148,7 +149,8 @@ public class Bootstrap {
+ 	 * Bootstraps a servicemanager with the jurt base components registered.
+ 	 * <p>
+ 	 * @return     a freshly boostrapped service manager
+-	 * @see        com.sun.star.lang.ServiceManager
++	 * @see        "com.sun.star.lang.ServiceManager"
++	 * @throws      java.lang.Exception
+ 	 */
+ 	static public XMultiServiceFactory createSimpleServiceManager() throws Exception
+     {
+@@ -157,10 +159,12 @@ public class Bootstrap {
+     }
+     
+     
+-    /** Bootstraps the initial component context from a native UNO installation.
+-        
+-        @see cppuhelper/defaultBootstrap_InitialComponentContext()
+-    */
++    /**
++     * Bootstraps the initial component context from a native UNO installation.
++     * <p>
++     * @return
++     * @see defaultBootstrap_InitialComponentContext()
++     */
+     static public final XComponentContext defaultBootstrap_InitialComponentContext()
+         throws Exception
+     {
+@@ -173,7 +177,7 @@ public class Bootstrap {
+         @param bootstrap_parameters
+                bootstrap parameters (maybe null)
+                
+-        @see cppuhelper/defaultBootstrap_InitialComponentContext()
++        @see defaultBootstrap_InitialComponentContext()
+     */
+     static public final XComponentContext defaultBootstrap_InitialComponentContext(
+         String ini_file, Hashtable bootstrap_parameters )
+--- javaunohelper/com/sun/star/comp/helper/ComponentContextEntry.java.orig	2014-02-25 08:30:16 UTC
++++ javaunohelper/com/sun/star/comp/helper/ComponentContextEntry.java
+@@ -29,7 +29,7 @@ package com.sun.star.comp.helper;
+     The first one is commonly used for singleton objects of the component
+     context, that are raised on first-time retrieval of the key.
+     You have to pass a com.sun.star.lang.XSingleComponentFactory
+-    or string (=> service name) object for this.
++    or string (=&gt; service name) object for this.
+     </p>
+ */
+ public class ComponentContextEntry
+--- javaunohelper/com/sun/star/comp/helper/SharedLibraryLoader.java.orig	2014-02-25 08:30:16 UTC
++++ javaunohelper/com/sun/star/comp/helper/SharedLibraryLoader.java
+@@ -34,9 +34,9 @@ import com.sun.star.registry.XRegistryKe
+  * The <code>SharedLibraryLoader</code> class provides the functionality of the <code>com.sun.star.loader.SharedLibrary</code>
+  * service.
+  * <p>
+- * @see         com.sun.star.loader.SharedLibrary
++ * @see         "com.sun.star.loader.SharedLibrary"
+  * @see         com.sun.star.comp.servicemanager.ServiceManager
+- * @see			com.sun.star.lang.ServiceManager
++ * @see	        "com.sun.star.lang.ServiceManager"
+  */
+ public class SharedLibraryLoader {
+ 	/** 
+@@ -70,9 +70,9 @@ public class SharedLibraryLoader {
+ 	 * @return	the factory for the "com.sun.star.comp.stoc.DLLComponentLoader" component.
+ 	 * @param	smgr	the ServiceManager
+ 	 * @param	regKey	the root registry key
+-	 * @see		com.sun.star.loader.SharedLibrary
+-	 * @see		com.sun.star.lang.ServiceManager
+-	 * @see		com.sun.star.registry.RegistryKey
++	 * @see		"com.sun.star.loader.SharedLibrary"
++	 * @see		"com.sun.star.lang.ServiceManager"
++	 * @see		"com.sun.star.registry.RegistryKey"
+ 	 */
+ 	public static XSingleServiceFactory getServiceFactory(
+ 				XMultiServiceFactory smgr, 
+@@ -93,9 +93,9 @@ public class SharedLibraryLoader {
+ 	 * @param	impName	the implementation name of the component
+ 	 * @param	smgr	the ServiceManager
+ 	 * @param	regKey	the root registry key
+-	 * @see		com.sun.star.loader.SharedLibrary
+-	 * @see		com.sun.star.lang.ServiceManager
+-	 * @see		com.sun.star.registry.RegistryKey
++	 * @see		"com.sun.star.loader.SharedLibrary"
++	 * @see		"com.sun.star.lang.ServiceManager"
++	 * @see		"com.sun.star.registry.RegistryKey"
+ 	 */
+ 	public static XSingleServiceFactory getServiceFactory(
+ 				String libName,
+@@ -116,9 +116,9 @@ public class SharedLibraryLoader {
+ 	 * @return	true if the registration was successfull - otherwise false
+ 	 * @param	smgr	the ServiceManager
+ 	 * @param	regKey	the root key under that the component should be registered
+-	 * @see		com.sun.star.loader.SharedLibrary
+-	 * @see		com.sun.star.lang.ServiceManager
+-	 * @see		com.sun.star.registry.RegistryKey
++	 * @see		"com.sun.star.loader.SharedLibrary"
++	 * @see		"com.sun.star.lang.ServiceManager"
++	 * @see		"com.sun.star.registry.RegistryKey"
+ 	 */
+ 	public static boolean writeRegistryServiceInfo(
+ 				com.sun.star.lang.XMultiServiceFactory smgr, 
+@@ -136,9 +136,9 @@ public class SharedLibraryLoader {
+ 	 * @param	libName	name of the shared library
+ 	 * @param	smgr	the ServiceManager
+ 	 * @param	regKey	the root key under that the component should be registered
+-	 * @see		com.sun.star.loader.SharedLibrary
+-	 * @see		com.sun.star.lang.ServiceManager
+-	 * @see		com.sun.star.registry.RegistryKey
++	 * @see		"com.sun.star.loader.SharedLibrary"
++	 * @see		"com.sun.star.lang.ServiceManager"
++	 * @see		"com.sun.star.registry.RegistryKey"
+ 	 */
+ 	public static boolean writeRegistryServiceInfo(
+ 				String libName,
+--- javaunohelper/com/sun/star/lib/uno/helper/Factory.java.orig	2014-02-25 08:30:16 UTC
++++ javaunohelper/com/sun/star/lib/uno/helper/Factory.java
+@@ -34,7 +34,8 @@ import com.sun.star.uno.UnoRuntime;
+ /** Factory helper class supporting com.sun.star.lang.XServiceInfo and
+     com.sun.star.lang.XSingleComponentFactory.
+     
+-    @attention
++    Attention:
++    <br>
+     This factory implementation does not support lang.XSingleServiceFactory.
+ */
+ public class Factory
+--- javaunohelper/com/sun/star/lib/uno/helper/InterfaceContainer.java.orig	2014-02-25 08:30:16 UTC
++++ javaunohelper/com/sun/star/lib/uno/helper/InterfaceContainer.java
+@@ -467,6 +467,8 @@ public class InterfaceContainer implemen
+     /** The iterator keeps a copy of the list. Changes to InterfaceContainer do not
+      *  affect the data of the iterator. Conversly, changes to the iterator are effect
+      *  InterfaceContainer.
++     *
++     * @param index
+      */
+     synchronized public ListIterator listIterator(int index)
+     {
+--- javaunohelper/com/sun/star/lib/uno/helper/PropertySet.java.orig	2014-02-25 08:30:16 UTC
++++ javaunohelper/com/sun/star/lib/uno/helper/PropertySet.java
+@@ -122,7 +122,7 @@ XMultiPropertySet
+      *  initialization of the inheriting class (i.e. within the contructor)
+      *  @param name The property's name (Property.Name).
+      *  @param handle The property's handle (Property.Handle).
+-     *  @param Type The property's type (Property.Type).
++     *  @param type The property's type (Property.Type).
+      *  @param attributes The property's attributes (Property.Attributes).
+      *  @param id Identifies the property's storage.
+      */
+@@ -140,8 +140,7 @@ XMultiPropertySet
+      *  Registration has to occur during
+      *  initialization of the inheriting class (i.e. within the contructor).
+      *  @param name The property's name (Property.Name).
+-     *  @param handle The property's handle (Property.Handle).
+-     *  @param Type The property's type (Property.Type).
++     *  @param type The property's type (Property.Type).
+      *  @param attributes The property's attributes (Property.Attributes).
+      *  @param id Identifies the property's storage.
+      */
+@@ -563,11 +562,11 @@ XMultiPropertySet
+      *  {@link #setFastPropertyValue XFastPropertySet.setFastPropertyValue}
+      *  and {@link #setPropertyValues XMultiPropertySet.setPropertyValues}. 
+      *  If this method fails, that is, it returns false or throws an exception, then no listeners are notified and the 
+-     *  property value, that was intended to be changed, remains untouched.<br /> This method does not have to deal with property attributes, such as
++     *  property value, that was intended to be changed, remains untouched.<br> This method does not have to deal with property attributes, such as
+      *  PropertyAttribute.READONLY or PropertyAttribute.MAYBEVOID. The processing of these attributes occurs
+-     *  in the calling methods.<br />
++     *  in the calling methods.<br>
+      *  Only if this method returns successfully further processing, such 
+-     *  as listener notification and finally the modifiction of the property's value, will occur.<br />
++     *  as listener notification and finally the modifiction of the property's value, will occur.<br>
+      *
+      *  The actual modification of a property's value is done by {@link #setPropertyValueNoBroadcast setPropertyValueNoBroadcast} 
+      *  which is called subsequent to convertPropertyValue. 
+@@ -593,10 +592,10 @@ XMultiPropertySet
+      *  Then, no conversion is necessary, since they can hold all possible values. However, if 
+      *  the member is an Object and <em>setVal</em> is an Any then the object contained in the any is assigned to
+      *  the member. The extra type information which exists as Type object in the Any will get lost. If this is not 
+-     *  intended then use an Any variable rather then an Object.<br />
++     *  intended then use an Any variable rather then an Object.<br>
+      *  If a member is an Object or Any and the argument <em>setVal</em> is an Object, other than String or array, 
+      *  then it is presumed to be an UNO object and queried for XInterface. If successful, the out-param <em>newVal</em>
+-     *  returns the XInterface.<br />
++     *  returns the XInterface.<br>
+      *  If a member is an UNO interface, then <em>setVal</em> is queried for this interface and the result is returned.
+      *  If <em>setVal</em> is null then <em>newVal</em> will be null too after return.
+      *  <p>
+@@ -793,7 +792,7 @@ XMultiPropertySet
+      *  If a property has the READONLY attribute set, and one of the setter methods, such as setPropertyValue, has been
+      *  called, then this method is not going to be called.
+      *  @param property the property for which the new value is set
+-     *  @param value the new value for the property.
++     *  @param newVal the new value for the property.
+      *  @throws com.sun.star.lang.WrappedTargetException An exception, which has to be made known to the caller,
+      *  occured during the setting of the value.
+      */
+--- javaunohelper/com/sun/star/lib/uno/helper/PropertySetMixin.java.orig	2014-02-25 08:30:16 UTC
++++ javaunohelper/com/sun/star/lib/uno/helper/PropertySetMixin.java
+@@ -193,7 +193,7 @@ public final class PropertySetMixin {
+        @param newValue the property value corresponding to the new
+        attribute value.  This is only used as
+        <code>com.sun.star.beans.PropertyChangeEvent.NewValue</code>, which is
+-       rather useless, anyway (see &ldquo;Using the Observer Pattern&rdquo: in
++       rather useless, anyway (see &ldquo;Using the Observer Pattern&rdquo; in
+        <a href="http://tools.openoffice.org/CodingGuidelines.sxw">
+        <cite>OpenOffice.org Coding Guidelines</cite></a>), <em>unless</em> the
+        attribute that is going to be set is constrained.  If the attribute
+--- ridljar/com/sun/star/uno/IEnvironment.java.orig	2014-02-25 08:33:14 UTC
++++ ridljar/com/sun/star/uno/IEnvironment.java
+@@ -63,7 +63,7 @@ public interface IEnvironment {
+      *     given bridge <var>B2</var>.</li>
+      * <li>A proxy object, created as a remote object is mapped into this
+      *     environment via a given bridge.</li>
+-     * </ul></p>
++     * </ul>
+      *
+      * <p>The object actually registered may differ from the specified
+      * <code>object</code> that is passed as an argument.  This enables an
+--- ridljar/com/sun/star/uno/IMethodDescription.java.orig	2014-02-25 08:33:14 UTC
++++ ridljar/com/sun/star/uno/IMethodDescription.java
+@@ -52,7 +52,7 @@ public interface IMethodDescription exte
+ 	boolean isConst();
+ 
+ 	/**
+-	 * Gives any array of <code>ITypeDescription> of
++	 * Gives any array of <code>ITypeDescription</code> of
+ 	 * the [in] parameters.
+ 	 * <p>
+ 	 * @return  the in parameters
+@@ -60,7 +60,7 @@ public interface IMethodDescription exte
+ 	ITypeDescription[] getInSignature();
+ 
+ 	/**
+-	 * Gives any array of <code>ITypeDescription> of
++	 * Gives any array of <code>ITypeDescription</code> of
+ 	 * the [out] parameters.
+ 	 * <p>
+ 	 * @return  the out parameters
+--- ridljar/com/sun/star/uno/ITypeDescription.java.orig	2014-02-25 08:33:14 UTC
++++ ridljar/com/sun/star/uno/ITypeDescription.java
+@@ -103,8 +103,8 @@ public interface ITypeDescription {
+ 	/**
+ 	 * Gets the (UNO) type name.
+      *
+-	 * <p>The following table lists how UNO types map to type names:</p>
+      * <table>
++     *   <caption>The following table lists how UNO types map to type names:</caption>
+      *   <thead>
+      *     <tr><th>UNO type</th><th>type name</th></tr>
+      *   </thead>
+@@ -119,15 +119,15 @@ public interface ITypeDescription {
+      *     </tr>
+      *     <tr><td>LONG</td><td><code>"long"</code></td></tr>
+      *     <tr><td>UNSIGNED LONG</td><td><code>"unsigned long"</code></td></tr>
+-     *     <tr><td>HYPER</td><td></td><code>"hyper"</code></tr>
++     *     <tr><td>HYPER</td><td><code>"hyper"</code></td></tr>
+      *     <tr>
+-     *       <td>UNSIGNED HYPER</td><td></td><code>"unsigned hyper"</code>
++     *       <td>UNSIGNED HYPER</td><td><code>"unsigned hyper"</code></td>
+      *     </tr>
+-     *     <tr><td>FLOAT</td><td></td><code>"float"</code></tr>
+-     *     <tr><td>DOUBLE</td><td></td><code>"double"</code></tr>
+-     *     <tr><td>STRING</td><td></td><code>"string"</code></tr>
+-     *     <tr><td>TYPE</td><td></td><code>"type"</code></tr>
+-     *     <tr><td>ANY</td><td></td><code>"any"</code></tr>
++     *     <tr><td>FLOAT</td><td><code>"float"</code></td></tr>
++     *     <tr><td>DOUBLE</td><td><code>"double"</code></td></tr>
++     *     <tr><td>STRING</td><td><code>"string"</code></td></tr>
++     *     <tr><td>TYPE</td><td><code>"type"</code></td></tr>
++     *     <tr><td>ANY</td><td><code>"any"</code></td></tr>
+      *     <tr>
+      *       <td>sequence type of base type <var>T</var></td>
+      *       <td><code>"[]"</code> followed by type name for <var>T</var></td>
+@@ -148,7 +148,7 @@ public interface ITypeDescription {
+      *       <td>interface type named <var>N</var></td>
+      *       <td><var>N</var> (see below)</td>
+      *     </tr>
+-     *   <tbody>
++     *   </tbody>
+      * </table>
+      * <p>For a UNO type named <var>N</var>, consisting of a sequence of module
+      * names <var>M<sub>1</sub></var>, ..., <var>M<sub>n</sub></var> followed by
+--- ridljar/com/sun/star/uno/Type.java.orig	2014-02-25 08:33:14 UTC
++++ ridljar/com/sun/star/uno/Type.java
+@@ -33,7 +33,7 @@ import java.util.HashMap;
+  * SHORT</code>) do not have a matching Java class.  For another, it can be
+  * necessary to describe a type which is unknown to the Java runtime system
+  * (for example, for delaying the need of a class, so that it is possible to
+- * generate it on the fly.)</p>
++ * generate it on the fly.)
+  *
+  * <p>A <code>Type</code> is uniquely determined by its type class (a
+  * <code>TypeClass</code>) and its type name (a <code>String</code>); these two
+@@ -204,7 +204,7 @@ public class Type {
+      *
+      * <p>In certain cases, one Java class corresponds to two UNO types (e.g.,
+      * the Java class <code>short[].class</code> corresponds to both a sequence
+-     * of <codde>SHORT</code> and a sequence of <code>UNSIGNED SHORT</code> in
++     * of <code>SHORT</code> and a sequence of <code>UNSIGNED SHORT</code> in
+      * UNO).  In such ambiguous cases, the parameter <code>alternative</code>
+      * controls which UNO type is chosen:</p>
+      * <ul>
+--- ridljar/com/sun/star/uno/Union.java.orig	2014-02-25 08:33:14 UTC
++++ ridljar/com/sun/star/uno/Union.java
+@@ -27,7 +27,7 @@ package com.sun.star.uno;
+  * The Union class is the base class for all classes generated 
+  * as java binding for the IDL type union.
+  * <p>
+- * Note: The idl type <code>union<code> is currently not fully
++ * Note: The idl type <code>union</code> is currently not fully
+  * integrated into the UNO framework, so don't use it.
+  * 
+  * @version 	$Revision: 1.5 $ $ $Date: 2008-04-11 11:15:07 $
+--- xmerge/source/aportisdoc/java/org/openoffice/xmerge/converter/xml/sxw/aportisdoc/DocumentMergerImpl.java.orig	2014-02-25 08:29:05 UTC
++++ xmerge/source/aportisdoc/java/org/openoffice/xmerge/converter/xml/sxw/aportisdoc/DocumentMergerImpl.java
+@@ -44,7 +44,7 @@ import org.openoffice.xmerge.util.Debug;
+  *  AportisDoc implementation of <code>DocumentMerger</code>
+  *  for the {@link
+  *  org.openoffice.xmerge.converter.xml.sxw.aportisdoc.PluginFactoryImpl
+- *  PluginFactoryImpl}.</p>
++ *  PluginFactoryImpl}.
+  */
+ public class DocumentMergerImpl implements DocumentMerger {
+ 
+--- xmerge/source/bridge/java/XMergeBridge.java.orig	2014-02-25 08:29:07 UTC
++++ xmerge/source/bridge/java/XMergeBridge.java
+@@ -92,7 +92,6 @@ public class XMergeBridge {
+ 
+     /** This inner class provides the component as a concrete implementation
+      * of the service description. It implements the needed interfaces.
+-     * @implements XTypeProvider
+      */
+     static public class _XMergeBridge implements
+ 										       XImportFilter,
+--- xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/BeginningOfFile.java.orig	2014-02-25 08:29:13 UTC
++++ xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/BeginningOfFile.java
+@@ -44,9 +44,6 @@ public class BeginningOfFile implements 
+     
+    /**
+     *  Constructor that initializes the member values.
+-    *
+-    *  @param  ver	Version Number
+-	*				Substream type (workbook = 0x05, worksheet = 0x10)
+     */
+     public BeginningOfFile(boolean global) {
+ 		setVersion((short) 271);
+@@ -61,6 +58,10 @@ public class BeginningOfFile implements 
+ 		read(is);
+     }
+ 
++    /**
++     *
++     *  @param  version  Version Number
++     */
+     private void setVersion(short version) {
+         this.version = EndianConverter.writeShort(version);
+     }
+@@ -79,6 +80,10 @@ public class BeginningOfFile implements 
+         subStream = EndianConverter.writeShort((short) 0x10);
+     }
+     
++    /**
++     *
++     * @return Substream type (workbook = 0x05, worksheet = 0x10)
++     */
+     int getSubStreamType() {
+         return EndianConverter.readShort(subStream);
+     }
+--- xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/BlankCell.java.orig	2014-02-25 08:29:14 UTC
++++ xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/BlankCell.java
+@@ -49,8 +49,7 @@ public class BlankCell extends CellValue
+  	 * Constructs a <code>BlankCell</code> using specified attributes
+ 	 * 
+ 	 * @param row row number
+-	 * @param col column number 
+-	 * @param cellContents contents of the cell 
++	 * @param column column number 
+ 	 * @param ixfe font index
+  	 */	 
+     public BlankCell(int row, int column, int ixfe) throws IOException {
+@@ -83,7 +82,7 @@ public class BlankCell extends CellValue
+ 	/**
+ 	 * Reads a BlankCell <code>InputStream</code> 
+ 	 *
+-	 * @param	is InputStream containing a BlankCell.
++	 * @param	input InputStream containing a BlankCell.
+ 	 */
+     public int read(InputStream input) throws IOException {
+ 
+--- xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/BoolErrCell.java.orig	2014-02-25 08:29:13 UTC
++++ xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/BoolErrCell.java
+@@ -43,7 +43,7 @@ public class BoolErrCell extends CellVal
+ 	 * Constructs a BoolErrCell from arguments
+  	 *
+ 	 * @param row row number
+-	 * @param col column number 
++	 * @param column column number 
+ 	 * @param ixfe font index
+ 	 * @param bBoolErr Boolean value or error value 
+ 	 * @param fError Boolean error flag 
+@@ -78,7 +78,7 @@ public class BoolErrCell extends CellVal
+     /**
+ 	 * Writes a <code>BoolErrCell</code> to the specified <code>Outputstream</code>
+ 	 *
+-	 * @param os the <code>OutputStream</code> to write to  
++	 * @param output the <code>OutputStream</code> to write to  
+ 	 */    
+     public void write(OutputStream output) throws IOException {
+ 
+@@ -95,7 +95,7 @@ public class BoolErrCell extends CellVal
+ 	/**
+ 	 * Reads a BoolErrCell from the <code>InputStream</code> 
+  	 *
+- 	 * @param	is InputStream containing a BoolErrCell 
++ 	 * @param	input InputStream containing a BoolErrCell 
+  	 */
+     public int read(InputStream input) throws IOException {
+ 
+--- xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/BoundSheet.java.orig	2014-02-25 08:29:14 UTC
++++ xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/BoundSheet.java
+@@ -64,7 +64,7 @@ public class BoundSheet implements BIFFR
+  	 * Sets the worksheet name. The sheetname length must be doubled as the
+ 	 * String is stored in unicode format. 
+  	 *
+- 	 * @param	sheetname	worksheet name 
++ 	 * @param	sheetName	worksheet name 
+  	 */
+     void setSheetName(String sheetName) throws IOException {
+ 		this.cch		= (byte) sheetName.length();
+@@ -95,7 +95,7 @@ public class BoundSheet implements BIFFR
+      /**
+ 	 * Write this particular <code>BIFFRecord</code> to the <code>OutputStream</code>
+ 	 *
+-	 * @param ouput the <code>OutputStream</code>
++	 * @param output the <code>OutputStream</code>
+ 	 */    
+     public void write(OutputStream output) throws IOException {
+ 
+@@ -111,7 +111,7 @@ public class BoundSheet implements BIFFR
+  	 * Reads a BoundSheet from the <code>InputStream</code> The byte array
+ 	 * must be twice the size of the String as it uses unicode.
+  	 *
+- 	 * @param	is InputStream containing the record data 
++ 	 * @param	input InputStream containing the record data 
+  	 */
+     public int read(InputStream input) throws IOException {
+ 	
+--- xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/CellValue.java.orig	2014-02-25 08:29:14 UTC
++++ xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/CellValue.java
+@@ -92,7 +92,7 @@ public abstract class CellValue implemen
+     /**
+ 	 * Writes basic cell value attributes to the specified <code>Outputstream</code>
+ 	 *
+-	 * @param os the <code>OutputStream</code> to write to  
++	 * @param output the <code>OutputStream</code> to write to  
+ 	 */
+     public void write(OutputStream output) throws IOException {
+ 
+@@ -102,9 +102,9 @@ public abstract class CellValue implemen
+     }
+ 
+     /**
+-	 * Writes a<code>LabelCell</code> to the specified <code>Outputstream</code>
++	 * Read a <code>LabelCell</code> from the specified <code>InputStream</code>
+ 	 *
+-	 * @param os the <code>OutputStream</code> to write to  
++	 * @param input the <code>InputStream</code> to read from
+ 	 */
+     public int read(InputStream input) throws IOException {
+ 
+--- xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/ColInfo.java.orig	2014-02-25 08:29:14 UTC
++++ xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/ColInfo.java
+@@ -50,8 +50,8 @@ public class ColInfo implements BIFFReco
+  	 *
+  	 * @param	colFirst	the first column this formatting applies to	
+  	 * @param	colLast		last column this formatting applies to	
+- 	 * @param	coldx		column width 	
+- 	 * @param	grbit		options flags	
++ 	 * @param	colDX		column width 	
++ 	 * @param	ixfe		options flags	
+  	 */
+     public ColInfo(int colFirst, int colLast, int colDX, int ixfe) {
+ 		this.colFirst	= EndianConverter.writeShort((short)colFirst);
+@@ -135,7 +135,7 @@ public class ColInfo implements BIFFReco
+ 	/**
+ 	 * Writes a ColInfo to the specified <code>Outputstream</code>
+ 	 *
+-	 * @param os the <code>OutputStream</code> to write to  
++	 * @param output the <code>OutputStream</code> to write to  
+ 	 */
+     public void write(OutputStream output) throws IOException {
+ 	
+--- xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/DefColWidth.java.orig	2014-02-25 08:29:14 UTC
++++ xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/DefColWidth.java
+@@ -32,7 +32,7 @@ import org.openoffice.xmerge.util.Endian
+ import org.openoffice.xmerge.converter.xml.sxc.pexcel.PocketExcelConstants;
+ 
+ /**
+- * Represents a BIFF record defiuning the defualt column width 
++ * Represents a BIFF record defining the default column width 
+  */
+ public class DefColWidth implements BIFFRecord {
+ 
+@@ -40,18 +40,18 @@ public class DefColWidth implements BIFF
+     private byte[] coldx = new byte[2];
+     private byte[] ixfe  = new byte[2];
+     
+-/**
+- * Constructs a pocket Excel Document from the
+- * <code>InputStream</code> and assigns it the document name passed in
+- *
+- * @param	is InputStream containing a Pocket Excel Data file.
+- */
+     public DefColWidth() {
+     	grbit	= new byte[] {0x00, 0x00};
+ 		coldx	= new byte[] {0x00, 0x09};
+ 		ixfe	= new byte[] {0x00, 0x00};
+ 	}
+ 
++    /**
++     * Constructs a pocket Excel Document from the
++     * <code>InputStream</code> and assigns it the document name passed in
++     *
++     * @param	is InputStream containing a Pocket Excel Data file.
++     */
+     public DefColWidth(InputStream is) throws IOException {
+     	read(is);
+ 	}
+--- xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/DefRowHeight.java.orig	2014-02-25 08:29:13 UTC
++++ xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/DefRowHeight.java
+@@ -39,12 +39,6 @@ public class DefRowHeight implements BIF
+     private byte[] unknown1 = new byte[2];
+     private byte[] unknown2 = new byte[2];
+     
+-	/**
+- 	 * Constructs a pocket Excel Document from the
+- 	 * <code>InputStream</code> and assigns it the document name passed in
+- 	 *
+- 	 * @param	is InputStream containing a Pocket Excel Data file.
+- 	 */
+     public DefRowHeight() {
+     	unknown1 = new byte[] {(byte)0x00, (byte)0x00};
+ 		unknown2 = new byte[] {(byte)0xFF, (byte)0x00};
+--- xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/DefinedName.java.orig	2014-02-25 08:29:14 UTC
++++ xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/DefinedName.java
+@@ -50,11 +50,6 @@ public class DefinedName implements BIFF
+ 	private String definition = new String("");
+ 	private Workbook wb;
+ 
+-	/**
+- 	 * Constructs a Defined Name from the <code>InputStream</code> 
+- 	 *
+- 	 * @param	is InputStream containing the record data 
+- 	 */
+     public DefinedName(NameDefinition nd, Workbook wb) throws IOException {
+ 		
+ 		fh.setWorkbook(wb);
+@@ -95,7 +90,7 @@ public class DefinedName implements BIFF
+  	 * Reads a Defined Name from the <code>InputStream</code> The byte array
+ 	 * must be twice the size of the String as it uses unicode.
+  	 *
+- 	 * @param	is InputStream containing the record data 
++ 	 * @param	input InputStream containing the record data 
+  	 */
+     public int read(InputStream input) throws IOException {
+ 		
+@@ -126,7 +121,7 @@ public class DefinedName implements BIFF
+      /**
+ 	 * Write this particular <code>BIFFRecord</code> to the <code>OutputStream</code>
+ 	 *
+-	 * @param ouput the <code>OutputStream</code>
++	 * @param output the <code>OutputStream</code>
+ 	 */        
+     public void write(OutputStream output) throws IOException {
+ 
+--- xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/ExtendedFormat.java.orig	2014-02-25 08:29:14 UTC
++++ xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/ExtendedFormat.java
+@@ -276,7 +276,7 @@ org.openoffice.xmerge.converter.xml.Offi
+     /**
+ 	 * Compare two ExtendedFormat to see if the font index is the same 
+ 	 *
+-	 * @param the ExtendedFormat to be used in the comaprison
++	 * @param rhs the ExtendedFormat to be used in the comaprison
+ 	 * @return boolean if the two are the same otherwise false
+ 	 */	
+ 	public boolean compareTo(ExtendedFormat rhs) {
+@@ -352,7 +352,7 @@ org.openoffice.xmerge.converter.xml.Offi
+     }
+     
+ 	/**
+- 	 * Writes the ExtendedFormat to the <code>Outputstream<code> 
++ 	 * Writes the ExtendedFormat to the <code>Outputstream</code> 
+  	 *
+  	 * @param	output the <code>Outputstream</code>to write to 
+  	 */
+--- xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/FloatNumber.java.orig	2014-02-25 08:29:14 UTC
++++ xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/FloatNumber.java
+@@ -52,7 +52,7 @@ public class FloatNumber extends CellVal
+  	 * Constructs a <code>FloatNumber</code> using specified attributes 
+ 	 *
+ 	 * @param row row number
+-	 * @param col column number 
++	 * @param column column number 
+ 	 * @param cellContents contents of the cell 
+ 	 * @param ixfe font index
+  	 */
+--- xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/FontDescription.java.orig	2014-02-25 08:29:13 UTC
++++ xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/FontDescription.java
+@@ -56,13 +56,6 @@ public class FontDescription implements 
+     public static final int UNDERLINE	= 0x01;
+     public static final int ITALIC		= 0x02;
+ 
+-	/**
+- 	 * Constructs a FontDescription from the bold italic and undelrine attributes  
+- 	 *
+- 	 * @param	italic		Italic attribute 	
+- 	 * @param	bold		Bold attribute 	
+- 	 * @param	underline	Underline attribute 	
+- 	 */
+     public FontDescription(Format fmt) throws IOException {
+ 
+ 		Debug.log(Debug.TRACE,"Building FontDescriptor based on Format : " + fmt);
+@@ -230,7 +223,7 @@ public class FontDescription implements 
+ 	/**
+  	 * Constructs a Font Description from the <code>InputStream</code> 
+  	 *
+- 	 * @param	is InputStream containing a <code>FontDescription</code> 
++ 	 * @param	input InputStream containing a <code>FontDescription</code> 
+  	 */
+     public int read(InputStream input) throws IOException {
+ 
+--- xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/Formula.java.orig	2014-02-25 08:29:14 UTC
++++ xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/Formula.java
+@@ -51,10 +51,9 @@ public class Formula extends CellValue i
+  	 * Constructs a <code>Formula</code> using specified attributes
+ 	 * 
+ 	 * @param row row number
+-	 * @param col column number 
++	 * @param column column number 
+ 	 * @param cellContents contents of the cell 
+ 	 * @param ixfe font index
+-	 * @param value the value of the cell
+  	 */
+     public Formula(int row, int column, String cellContents, int ixfe, Format fmt, Workbook wb)
+ 	throws Exception {
+@@ -112,7 +111,7 @@ public class Formula extends CellValue i
+  	 * Translates a <code>String</code> written in infix which represents a
+ 	 * formula into a byte[] what can be written to pocket excel file.
+  	 *
+- 	 * @param	formula string
++ 	 * @param inFormula formula string
+  	 */
+     public void setFormula(String inFormula) throws Exception {
+ 
+@@ -171,7 +170,7 @@ public class Formula extends CellValue i
+      /**
+ 	 * Writes the Formula record to the <code>OutputStream</code> 
+ 	 *
+-	 * @param the <code>OutputStream</code> being written to 
++	 * @param output the <code>OutputStream</code> being written to 
+ 	 */   
+     public void write(OutputStream output) throws IOException {
+ 
+--- xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/LabelCell.java.orig	2014-02-25 08:29:14 UTC
++++ xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/LabelCell.java
+@@ -44,7 +44,7 @@ public class LabelCell extends CellValue
+  	 * Constructs a <code>LabelCell</code> using specified attributes
+ 	 * 
+ 	 * @param row row number
+-	 * @param col column number 
++	 * @param column column number 
+ 	 * @param cellContents contents of the cell 
+ 	 * @param ixfe font index
+  	 */
+@@ -69,7 +69,7 @@ public class LabelCell extends CellValue
+     /**
+ 	 * Writes a <code>LabelCell</code> to the specified <code>Outputstream</code>
+ 	 *
+-	 * @param os the <code>OutputStream</code> to write to  
++	 * @param output the <code>OutputStream</code> to write to  
+ 	 */
+     public void write(OutputStream output) throws IOException {
+ 
+@@ -126,7 +126,7 @@ public class LabelCell extends CellValue
+     /**
+ 	 * Sets the <code>String</code> representing the cells contents 
+ 	 *
+-	 * @return the <code>String</code> representing the cells contents
++	 * @param cellContents the <code>String</code> representing the cells contents
+ 	 */
+ 	private void setLabel(String cellContents) throws IOException {
+ 		rgch = cellContents.getBytes("UTF-16LE");
+--- xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/Pane.java.orig	2014-02-25 08:29:14 UTC
++++ xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/Pane.java
+@@ -120,9 +120,11 @@ public class Pane implements BIFFRecord 
+     } 	
+ 	
+     /**
+-	 * Get the hex code for this particular <code>BIFFRecord</code> 
++	 * Set the pane number of the active pane
++         * 0 - bottom right, 1 - top right
++         * 2 - bottom left, 3 - top left
+ 	 *
+-	 * @return the hex code for <code>Pane</code>
++	 * @param paneNumber the pane number of the active pane
+ 	 */
+     public void setPaneNumber(int paneNumber) {
+         pnnAcct = (byte) paneNumber;
+--- xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/Row.java.orig	2014-02-25 08:29:13 UTC
++++ xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/Row.java
+@@ -101,7 +101,7 @@ public class Row implements BIFFRecord {
+ 	/**
+ 	 * Reads a Row from an <code>InputStream</code> 
+ 	 *
+-	 * @param	is InputStream containing a Pane Record 
++	 * @param	input InputStream containing a Pane Record 
+ 	 */
+     public int read(InputStream input) throws IOException {
+ 		
+--- xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/Selection.java.orig	2014-02-25 08:29:13 UTC
++++ xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/Selection.java
+@@ -76,21 +76,11 @@ public class Selection implements BIFFRe
+         return PocketExcelConstants.CURRENT_SELECTION;
+     }
+ 	
+-    /**
+-	 * Get the hex code for this particular <code>BIFFRecord</code> 
+-	 *
+-	 * @return the hex code for <code>Selection</code>
+-	 */
+     public Point getActiveCell() {
+ 		Point p = new Point(colActive, EndianConverter.readShort(rwActive));
+         return p;
+     } 
+ 	
+-    /**
+-	 * Get the hex code for this particular <code>BIFFRecord</code> 
+-	 *
+-	 * @return the hex code for <code>Selection</code>
+-	 */
+     public void setActiveCell(Point p) {
+ 
+ 		colActive = (byte) p.getX();
+@@ -100,7 +90,7 @@ public class Selection implements BIFFRe
+ 	/**
+ 	 * Reads a Selection Record from the <code>InputStream</code> 
+ 	 *
+-	 * @param	is InputStream containing a Pocket Excel Data file.
++	 * @param	input InputStream containing a Pocket Excel Data file.
+ 	 */
+     public int read(InputStream input) throws IOException {
+ 		
+--- xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/StringValue.java.orig	2014-02-25 08:29:13 UTC
++++ xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/StringValue.java
+@@ -43,9 +43,9 @@ public class StringValue implements BIFF
+     private byte[]  rgch;
+ 
+ 	/**
+- 	 * Constructs a StringValue Record from an <code>InputStream</code> 
++ 	 * Constructs a StringValue Record from a <code>String</code> 
+  	 *
+- 	 * @param	is InputStream containing a StringValue Record 
++ 	 * @param str
+  	 */
+     public StringValue(String str) throws IOException {
+     	cch = EndianConverter.writeShort((short) str.length());
+@@ -74,7 +74,7 @@ public class StringValue implements BIFF
+    	/**
+  	 * Reads a StringVlaue Record from an <code>InputStream</code> 
+  	 *
+- 	 * @param	is InputStream containing a StringValue Record 
++ 	 * @param	input InputStream containing a StringValue Record 
+  	 */
+     public int read(InputStream input) throws IOException {
+         
+--- xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/Window1.java.orig	2014-02-25 08:29:14 UTC
++++ xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/Window1.java
+@@ -87,7 +87,7 @@ public class Window1 implements BIFFReco
+    	/**
+  	 * Reads a Window1 Record from an <code>InputStream</code> 
+  	 *
+- 	 * @param	is InputStream containing a Window1 Record 
++ 	 * @param	input InputStream containing a Window1 Record 
+  	 */
+     public int read(InputStream input) throws IOException {
+ 		
+--- xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/Window2.java.orig	2014-02-25 08:29:14 UTC
++++ xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/Window2.java
+@@ -123,7 +123,7 @@ public class Window2 implements BIFFReco
+    	/**
+  	 * Reads a Window2 Record from an <code>InputStream</code> 
+  	 *
+- 	 * @param	is InputStream containing a Window2 Record 
++ 	 * @param	input InputStream containing a Window2 Record 
+  	 */
+     public int read(InputStream input) throws IOException {
+ 		
+--- xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/Workbook.java.orig	2014-02-25 08:29:14 UTC
++++ xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/Workbook.java
+@@ -236,7 +236,7 @@ OfficeConstants {
+ 	/**
+  	 *	Adds a ExtendedFormat record to the workbook 
+ 	 *
+- 	 * @param	f the font recrod to add	
++ 	 * @param	fmt the font record to add	
+  	 */	
+ 	public int addExtendedFormat(Format fmt) throws IOException {
+ 
+@@ -358,7 +358,7 @@ OfficeConstants {
+ 	/**
+      * Adds a <code>Worksheet</code> to the workbook.  
+ 	 *
+-	 * @return name the name of the <code>Worksheet</code> to be added 
++	 * @param name the name of the <code>Worksheet</code> to be added 
+ 	 */	 
+ 	public void addWorksheet(String name) throws IOException {
+ 	
+@@ -372,7 +372,6 @@ OfficeConstants {
+ 	/**
+      * Adds a cell to the current worksheet.  
+ 	 *
+-	 * @return the name of the <code>Worksheet</code> to be added 
+ 	 */
+ 	public void addCell(int row,int col, Format fmt, String cellContents)
+ 	throws IOException {
+@@ -466,12 +465,6 @@ OfficeConstants {
+ 		}
+ 	}
+ 
+-	/**
+- 	 * Will create a number of ColInfo recrods based on the column widths
+-	 * based in.	
+-	 *
+- 	 * @param	an integer list representing the column widths	
+- 	 */
+ 	public void addNameDefinition(NameDefinition nameDefinition) throws IOException {
+ 
+ 		DefinedName dn = new DefinedName(nameDefinition, this);
+--- xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/Worksheet.java.orig	2014-02-25 08:29:13 UTC
++++ xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/Worksheet.java
+@@ -56,25 +56,18 @@ public class Worksheet {
+ 	private BeginningOfFile bof;
+ 	private Eof eof;
+ 	
+-	/**
+- 	 *	Writes the current workbook to the <code>Outputstream</code> 
+- 	 * 
+- 	 * @param	os The destination outputstream	
+- 	 */
+ 	public Worksheet(Workbook wb) {
+ 		this.wb = wb;
+ 	}
+ 	
+ 	/**
+  	 * Default Contructor	
+- 	 * 
+- 	 * @param	os The destination outputstream	
+  	 */
+ 	public Worksheet() {
+ 	}	
+ 
+ 	/**
+- 	 *	Writes the current workbook to the <code>Outputstream</code> 
++ 	 *	Writes the current workbook to the <code>OutputStream</code> 
+  	 * 
+  	 * @param	os The destination outputstream	
+  	 */
+@@ -229,7 +222,7 @@ public class Worksheet {
+  	 * Adds a cell to this worksheet. Current valdid celltypes are
+ 	 * <code>FloatNumber</code>, <code>LabelCell</code> or <code>Formula</code>
+ 	 *
+- 	 * @param	f the font recrod to add	
++ 	 * @param	br
+  	 */
+ 	public void addCell(BIFFRecord br) {
+ 		cells.add(br);
+@@ -239,7 +232,7 @@ public class Worksheet {
+  	 * Adds a number of ColInfo Records to the worksheet base on a list of
+ 	 * clumnwidths passed in
+ 	 *
+- 	 * @param	list of column widths	
++ 	 * @param r	list of column widths	
+  	 */
+ 	public void addRow(Row r) {
+ 		rows.add(r);
+@@ -249,16 +242,12 @@ public class Worksheet {
+  	 * Adds a number of ColInfo Records to the worksheet base on a list of
+ 	 * clumnwidths passed in
+ 	 *
+- 	 * @param	list of column widths	
++ 	 * @param c	list of column widths	
+  	 */
+ 	public void addCol(ColInfo c) {
+ 		colInfo.add(c);
+ 	}
+-	/**
+-	 * Returns an <code>Enumeration</code> to the ColInfo's for this worksheet
+-	 *
+-	 * @return an <code>Enumeration</code> to the ColInfo's 
+-	 */
++
+ 	public void addSettings(SheetSettings s) {
+ 
+ 		sel.setActiveCell(s.getCursor());
+--- xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/formula/FormulaCompiler.java.orig	2014-02-25 08:29:13 UTC
++++ xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/formula/FormulaCompiler.java
+@@ -45,7 +45,7 @@ import org.openoffice.xmerge.util.Debug;
+  *			else if token is close bracket
+  *				pop from stack into result until close bracket or function
+  *			else 
+- *				while stack.top.priority >= token.priority
++ *				while stack.top.priority &gt;= token.priority
+  *					add stack.pop to result
+  *				push token onto stack
+  * </pre>
+--- xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/formula/FormulaHelper.java.orig	2014-02-25 08:29:14 UTC
++++ xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/formula/FormulaHelper.java
+@@ -33,7 +33,7 @@ import org.openoffice.xmerge.converter.x
+ /**
+  * This Helper class provides a simplified interface to conversion between PocketXL formula representation
+  * and Calc formula representation.<p>
+- * The class is used by {@link org.openoffice.xmerge.converter.xml.sxc.pexcel.Records.Formula}
++ * The class is used by {@link org.openoffice.xmerge.converter.xml.sxc.pexcel.records.Formula}
+  */
+ public class FormulaHelper {
+ 
+--- xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/formula/FormulaParser.java.orig	2014-02-25 08:29:13 UTC
++++ xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/formula/FormulaParser.java
+@@ -32,7 +32,7 @@ import org.openoffice.xmerge.util.Debug;
+ /**
+  * This is the Formula Parser based on an article written by Jack Crenshaw. It is a 
+  * top down parser with some basic error handling. It handles
+- * +,-,*,/,>,<,>=,<=,=,<>, unary + and - as well as functions. 
++ * +,-,*,/,&gt;,&lt;,&gt;=,&lt;=,=,&lt;&gt;, unary + and - as well as functions. 
+  * The BNF notation for this parser is
+  * <pre>
+  *	&lt;expression&gt; ::= &lt;unary op&gt; &lt;term&gt; [&lt;addop&gt;|&lt;logop&gt; &lt;term&gt;]
+@@ -110,7 +110,7 @@ public class FormulaParser {
+ 	}
+ 	
+ 	/**
+-	 * Identify <, >, <=, >=, =, <> using the index to find the current character(s)
++	 * Identify &lt;, &gt;, &lt;=, &gt;=, =, &lt;&gt; using the index to find the current character(s)
+ 	 * 
+ 	 * @return A boolean returning the result of the comparison 
+ 	 */
+@@ -131,9 +131,9 @@ public class FormulaParser {
+  	}
+ 
+ 	/**
+-	 * Identify <, >, <=, >=, =, <>
++	 * Identify &lt;, &gt;, &lt;=, &gt;=, =, &lt;&gt;
+ 	 *
+-	 * @param  The <code>String</code> which is to be identified
++	 * @param op The <code>String</code> which is to be identified
+ 	 * @return A boolean returning the result of the comparison 
+ 	 */
+ 	private boolean isLogicalOp(String op) {
+@@ -397,7 +397,7 @@ public class FormulaParser {
+ 	 * Will keep pulling valid logical operators from the formula and return
+ 	 * the resultant <code>String</code>.
+ 	 * 
+-	 * @return a <code>String<code> representing a logical operator
++	 * @return a <code>String</code> representing a logical operator
+ 	 */
+ 	private String getLogicalOperator() throws FormulaParsingException {
+ 		String op = new String();
+@@ -535,7 +535,7 @@ public class FormulaParser {
+ 	
+ 	/**
+ 	 * Pull a logical operator starting at the current index, add a token for
+-	 * that operator to the tokenVector and call <code>term<code> to parse the
++	 * that operator to the tokenVector and call <code>term</code> to parse the
+ 	 * right hand side of the operator
+ 	 */
+ 	private void logicalOp()  throws FormulaParsingException {
+--- xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/formula/PrecedenceTable.java.orig	2014-02-25 08:29:14 UTC
++++ xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/formula/PrecedenceTable.java
+@@ -27,7 +27,7 @@ import java.util.HashMap;
+ 
+ /**
+  * This class defines the precedence applied to each operator when performing a conversion
+- * {@link org.openoffice.xmerge.converter.xml.sxc.pexcel.Records.formula.FormulaCompiler.infix2	from infix to RPN.}.
++ * {@link org.openoffice.xmerge.converter.xml.sxc.pexcel.records.formula.FormulaCompiler#infix2RPN	from infix to RPN.}.
+  */
+ public class PrecedenceTable {
+ 	public static final int DEFAULT_PRECEDENCE  = 0;
+--- xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/formula/SymbolLookup.java.orig	2014-02-25 08:29:13 UTC
++++ xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/formula/SymbolLookup.java
+@@ -44,7 +44,7 @@ public abstract class SymbolLookup {
+ 	/**
+ 	 * Associate a symbol with a  numeric value in the lookup table
+ 	 * @param symbol	The symbol that will act as the key in the lookup table
+-	 * @param value		The value to be associated with a given symbol
++	 * @param id		The value to be associated with a given symbol
+ 	 */
+ 	public void addEntry(String symbol, int id) {
+     	Integer iObj = new Integer(id);
+--- xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/formula/TokenEncoder.java.orig	2014-02-25 08:29:13 UTC
++++ xmerge/source/pexcel/java/org/openoffice/xmerge/converter/xml/sxc/pexcel/records/formula/TokenEncoder.java
+@@ -284,7 +284,7 @@ public class TokenEncoder {
+     /** 
+      * A Cell Reference Encoder (It supports absolute and relative addressing)
+ 	 * 
+-	 * @param t <code>Token</code> to be encoded
++	 * @param cellCoordinates
+ 	 * @return A <code>Vector</code> of pexcel <code>Byte</code>
+ 	 */
+ 	private byte[] encodeCellCoordinates(String cellCoordinates) {
+@@ -367,7 +367,7 @@ public class TokenEncoder {
+     /** 
+      * This function will find the sheetname index for a given String 
+ 	 * 
+-	 * @param t <code>Token</code> to be encoded
++	 * @param s
+ 	 * @return A <code>Vector</code> of pexcel <code>Byte</code>
+ 	 */
+ 	private short findSheetIndex(String s) {
+--- xmerge/source/pocketword/java/org/openoffice/xmerge/converter/xml/sxw/pocketword/DocumentDeserializerImpl.java.orig	2014-02-25 08:29:05 UTC
++++ xmerge/source/pocketword/java/org/openoffice/xmerge/converter/xml/sxw/pocketword/DocumentDeserializerImpl.java
+@@ -69,7 +69,7 @@ public final class DocumentDeserializerI
+     
+     
+     /**
+-     * Initialises a new <code>DocumentDeserializerImpl</code> using the 
++     * <p>Initialises a new <code>DocumentDeserializerImpl</code> using the 
+      * supplied <code>ConvertData</code>.</p>
+      *
+      * <p>The <code>Document</code> objects in the <code>ConvertData</code>
+--- xmerge/source/pocketword/java/org/openoffice/xmerge/converter/xml/sxw/pocketword/DocumentMergerImpl.java.orig	2014-02-25 08:29:05 UTC
++++ xmerge/source/pocketword/java/org/openoffice/xmerge/converter/xml/sxw/pocketword/DocumentMergerImpl.java
+@@ -44,7 +44,7 @@ import org.openoffice.xmerge.util.Debug;
+  *  PocketWord implementation of <code>DocumentMerger</code>
+  *  for the {@link
+  *  org.openoffice.xmerge.converter.xml.sxw.pocketword.PluginFactoryImpl
+- *  PluginFactoryImpl}.</p>
++ *  PluginFactoryImpl}.
+  */
+ public class DocumentMergerImpl implements DocumentMerger {
+ 
+--- xmerge/source/pocketword/java/org/openoffice/xmerge/converter/xml/sxw/pocketword/DocumentSerializerImpl.java.orig	2014-02-25 08:29:04 UTC
++++ xmerge/source/pocketword/java/org/openoffice/xmerge/converter/xml/sxw/pocketword/DocumentSerializerImpl.java
+@@ -48,7 +48,7 @@ import java.io.IOException;
+  * org.openoffice.xmerge.converter.xml.sxw.pocketword.PluginFactoryImpl
+  * PluginFactoryImpl}.</p>
+  *
+- * <p>This converts an OpenOffice.org XML Writer files to a Pocket Word file<.</p>
++ * <p>This converts an OpenOffice.org XML Writer files to a Pocket Word file.</p>
+  *
+  * @author      Mark Murnane
+  * @version 1.1
+@@ -72,7 +72,7 @@ public final class DocumentSerializerImp
+      *    org.openoffice.xmerge.converter.xml.sxw.SxwDocument SxwDocument}
+      *    object.</p>
+      *
+-     *  @param  document  The <code>Document</code> to convert.    
++     *  @param  doc  The <code>Document</code> to convert.    
+      */
+     public DocumentSerializerImpl(Document doc) {
+         sxwDoc = (SxwDocument)doc;
+--- xmerge/source/pocketword/java/org/openoffice/xmerge/converter/xml/sxw/pocketword/PluginFactoryImpl.java.orig	2014-02-25 08:29:04 UTC
++++ xmerge/source/pocketword/java/org/openoffice/xmerge/converter/xml/sxw/pocketword/PluginFactoryImpl.java
+@@ -90,11 +90,11 @@ public final class PluginFactoryImpl ext
+         
+ 
+     /**
+-     *  The <code>DocumentDeserializer</code> is used to convert
++     *  <p>The <code>DocumentDeserializer</code> is used to convert
+      *  from the Pocket Word <code>Document</code> format to
+      *  the OpenOffice.org XML Writer <code>Document</code> format.</p>
+      *
+-     *  The <code>ConvertData</code> object is passed along to the
++     *  <p>The <code>ConvertData</code> object is passed along to the
+      *  created <code>DocumentDeserializer</code> via its constructor.
+      *  The <code>ConvertData</code> is read and converted when the
+      *  the <code>DocumentDeserializer</code> object's
+--- xmerge/source/pocketword/java/org/openoffice/xmerge/converter/xml/sxw/pocketword/PocketWordDocument.java.orig	2014-02-25 08:29:05 UTC
++++ xmerge/source/pocketword/java/org/openoffice/xmerge/converter/xml/sxw/pocketword/PocketWordDocument.java
+@@ -101,7 +101,7 @@ public class PocketWordDocument implemen
+      * <p>This method reads <code>byte</code> data from the InputStream and 
+      *    extracts font and paragraph data from the file.</p>
+      * 
+-     * @param   is      InputStream containing a Pocket Word data file.
++     * @param   docData      InputStream containing a Pocket Word data file.
+      *
+      * @throws  IOException     In case of any I/O errors.
+      */
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/Convert.java.orig	2014-02-25 08:29:05 UTC
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/Convert.java
+@@ -161,7 +161,7 @@ public class Convert implements Cloneabl
+     
+     /** 
+      *  Clones a Convert object so another Convert object can 
+-     *  do the same conversion.  <code>InputStream<code> objects passed
++     *  do the same conversion.  <code>InputStream</code> objects passed
+      *  in via calls to the <code>addInputStream</code> method are not
+      *  copied.
+      *
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/DocumentDeserializer.java.orig	2014-02-25 08:29:05 UTC
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/DocumentDeserializer.java
+@@ -28,13 +28,13 @@ import java.io.IOException;
+ /**
+  *  <p>A <code>DocumentDeserializer</code> represents a converter that
+  *  converts &quot;Device&quot; <code>Document</code> objects into the
+- *  &quot;Office&quot; <code>Document</code> format.</p>
++ *  &quot;Office&quot; <code>Document</code> format.
+  *
+  *  <p>The <code>DocumentDeserializer</code> object is created by
+- *  the </code>PluginFactory</code> {@link
++ *  the <code>PluginFactory</code> {@link
+  *  org.openoffice.xmerge.DocumentDeserializerFactory#createDocumentDeserializer
+  *  createDocumentDeserializer} method.  When it is constructed, a
+- *  <code>ConvertData</code> object is passed in to be used as input.</p> 
++ *  <code>ConvertData</code> object is passed in to be used as input.
+  *
+  *  @author  Herbie Ong
+  *  @see     org.openoffice.xmerge.PluginFactory
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/DocumentDeserializerFactory.java.orig	2014-02-25 08:29:05 UTC
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/DocumentDeserializerFactory.java
+@@ -38,11 +38,11 @@ package org.openoffice.xmerge;
+ public interface DocumentDeserializerFactory {
+ 
+     /**
+-     *  The <code>DocumentDeserializer</code> is used to convert
++     *  <p>The <code>DocumentDeserializer</code> is used to convert
+      *  from the &quot;Device&quot; <code>Document</code> format to
+      *  the &quot;Office&quot; <code>Document</code> format.</p>
+      *
+-     *  The <code>ConvertData</code> object is passed along to the
++     *  <p>The <code>ConvertData</code> object is passed along to the
+      *  created <code>DocumentDeserializer</code> via its constructor.
+      *  The <code>ConvertData</code> is read and converted when the
+      *  the <code>DocumentDeserializer</code> object's
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/converter/dom/DOMDocument.java.orig	2014-02-25 08:29:06 UTC
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/converter/dom/DOMDocument.java
+@@ -153,7 +153,7 @@ public class DOMDocument
+      *  Sets the Content of the <code>Document</code> to the contents of the 
+      *  supplied <code>Node</code> list. 
+      *
+-     *  @return  DOM <code>Document</code> object.
++     *  @param newDom  DOM <code>Document</code> object.
+      */
+     public void setContentDOM( Node newDom) {
+ 	contentDoc=(Document)newDom;
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/converter/palm/PalmDocument.java.orig	2014-02-25 08:29:05 UTC
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/converter/palm/PalmDocument.java
+@@ -116,7 +116,7 @@ public class PalmDocument 
+     /**
+      *  Writes the <code>PalmDocument</code> to an <code>OutputStream</code>.
+      *
+-     *  @param  is  The <code>OutputStream</code> to write the content.
++     *  @param  os  The <code>OutputStream</code> to write the content.
+      *
+      *  @throws  IOException  If any I/O error occurs.
+      */
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/converter/palm/PdbDecoder.java.orig	2014-02-25 08:29:05 UTC
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/converter/palm/PdbDecoder.java
+@@ -31,16 +31,16 @@ import java.io.DataInputStream;
+ /**
+  *  <p>Provides functionality to decode a PDB formatted file into
+  *  a <code>PalmDB</code> object given an <code>InputStream</code>.
+- *  This class is only used by the <code>PalmDB</code> object.</p>
++ *  This class is only used by the <code>PalmDB</code> object.
+  *
+- *  <p>Sample usage:</p>
++ *  <p>Sample usage:
+  *
+  *  <blockquote><pre><code>
+  *     PdbDecoder decoder = new PdbDecoder("sample.pdb");
+  *     PalmDB palmDB = decoder.parse();
+  *  </code></pre></blockquote>
+  *
+- *  <p>This decoder has the following assumptions on the PDB file:</p>
++ *  <p>This decoder has the following assumptions on the PDB file:
+  *
+  *  <p><ol>
+  *  <li>There is only one RecordList section in the PDB.</li>
+@@ -50,9 +50,9 @@ import java.io.DataInputStream;
+  *  <li>The raw <code>Record</code> in the <code>Record</code> section
+  *      are sorted as well in order, i.e. first <code>Record</code>
+  *      comes ahead of second <code>Record</code>, etc.</li>
+- *  </ol></p>
++ *  </ol>
+  *
+- *  <p>Other decoders assume these as well.</p>
++ *  <p>Other decoders assume these as well.
+  *
+  *  @author  Herbie Ong
+  *  @see     PalmDB
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/converter/palm/PdbEncoder.java.orig	2014-02-25 08:29:05 UTC
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/converter/palm/PdbEncoder.java
+@@ -109,7 +109,7 @@ public final class PdbEncoder {
+      *      top of the PDB.</li>
+      *  <li>1 byte of <code>Record</code> attribute.</li>
+      *  <li>3 bytes unique <code>Record</code> ID.</li>
+-     *  </ul></p>
++     *  </ul>
+      *
+      *  <p>There should be a total of <code>header.numRecords</code>
+      *  of <code>Record</code> index info</p>.
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/converter/palm/Record.java.orig	2014-02-25 08:29:05 UTC
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/converter/palm/Record.java
+@@ -134,7 +134,7 @@ public final class Record {
+      *  <code>Record</code> length followed by the data in this
+      *  <code>Record</code> object.
+      *
+-     *  @param  out  The <code>OutputStream</code> to write the object.
++     *  @param  outs  The <code>OutputStream</code> to write the object.
+      *
+      *  @throws  IOException  If any I/O error occurs.
+      */
+@@ -151,7 +151,7 @@ public final class Record {
+      *  Read the necessary data to create a PDB from
+      *  the <code>InputStream</code>.
+      *
+-     *  @param  in  The <code>InputStream</code> to read data from
++     *  @param  ins  The <code>InputStream</code> to read data from
+      *              in order to restore the <code>object</code>.
+      *
+      *  @throws  IOException  If any I/O error occurs.
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/EmbeddedXMLObject.java.orig	2014-02-25 08:29:06 UTC
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/EmbeddedXMLObject.java
+@@ -134,7 +134,7 @@ public class EmbeddedXMLObject extends E
+     /**
+      * Sets the settings data for the embedded object.
+      *
+-     * @param   styles     DOM representation of the object's styles.
++     * @param   settings     DOM representation of the object's styles.
+      */
+     public void setSettingsDOM(Document settings) {
+         settingsDOM = settings;
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/OfficeDocument.java.orig	2014-02-25 08:29:06 UTC
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/OfficeDocument.java
+@@ -1119,7 +1119,7 @@ public abstract class OfficeDocument
+ 
+ 
+     /**
+-     *  <p>Hacked code to filter <!DOCTYPE> tag before
++     *  <p>Hacked code to filter &lt;!DOCTYPE&gt; tag before
+      *  sending stream to parser.</p>
+      *
+      *  <p>This hacked code needs to be changed later on.</p>
+@@ -1128,7 +1128,7 @@ public abstract class OfficeDocument
+      *  to turn off processing of dtds.  Current set of dtds
+      *  have bugs, processing them will throw exceptions.</p>
+      *
+-     *  <p>This is a simple hack that assumes the whole <!DOCTYPE>
++     *  <p>This is a simple hack that assumes the whole &lt;!DOCTYPE&gt;
+      *  tag are all in the same line.  This is sufficient for
+      *  current StarOffice 6.0 generated XML files.  Since this
+      *  hack really needs to go away, I don't want to spend
+@@ -1138,7 +1138,7 @@ public abstract class OfficeDocument
+      *
+      *  @param  is  <code>InputStream</code> to be filtered.
+      *
+-     *  @return  Reader value without the <!DOCTYPE> tag.
++     *  @return  Reader value without the &lt;!DOCTYPE&gt; tag.
+      *
+      *  @throws  IOException  If any I/O error occurs.
+      */
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/ParaStyle.java.orig	2014-02-25 08:29:06 UTC
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/ParaStyle.java
+@@ -123,26 +123,21 @@ class alignment extends conversionAlgori
+ /**
+  *  <p>This class represents a paragraph <code>Style</code>.</p>
+  *
+- *  <p><table border="1" cellpadding="1"><tr><td>
+- *  Attribute        </td><td>Value
+- *  </td></tr><tr><td>
+- *  MARGIN_LEFT      </td><td>mm * 100
+- *  </td></tr><tr><td>
+- *  MARGIN_RIGHT     </td><td>mm * 100
+- *  </td></tr><tr><td>
+- *  MARGIN_TOP       </td><td>mm * 100 (space on top of paragraph)
+- *  </td></tr><tr><td>
+- *  MARGIN_BOTTOM    </td><td>mm * 100
+- *  </td></tr><tr><td>
+- *  TEXT_INDENT      </td><td>mm * 100 (first line indent)
+- *  </td></tr><tr><td>
+- *  LINE_HEIGHT      </td><td>mm * 100, unless or'ed with LH_PCT, in which 
++ *  <p><table border="1" cellpadding="1">
++ *  <caption>Properties</caption>
++ *  <tr><th>Attribute</th><th>Value</th></tr>
++ *  <tr><td>MARGIN_LEFT      </td><td>mm * 100</td></tr>
++ *  <tr><td>MARGIN_RIGHT     </td><td>mm * 100</td></tr>
++ *  <tr><td>MARGIN_TOP       </td><td>mm * 100 (space on top of paragraph)</td></tr>
++ *  <tr><td>MARGIN_BOTTOM    </td><td>mm * 100</td></tr>
++ *  <tr><td>TEXT_INDENT      </td><td>mm * 100 (first line indent)</td></tr>
++ *  <tr><td>LINE_HEIGHT      </td><td>mm * 100, unless or'ed with LH_PCT, in which 
+  *                   case it is a percentage (e.g. 200% for double spacing)
+  *                   Can also be or'ed with LH_ATLEAST.  Value is stored
+  *                   in bits indicated by LH_VALUEMASK.
+- *  </td></tr><tr><td>
+- *  TEXT_ALIGN       </td><td>ALIGN_RIGHT, ALIGN_CENTER, ALIGN_JUST, ALIGN_LEFT
+- *  </td></tr></table></p>
++ *  </td></tr>
++ *  <tr><td>TEXT_ALIGN       </td><td>ALIGN_RIGHT, ALIGN_CENTER, ALIGN_JUST, ALIGN_LEFT</td></tr>
++ *  </table>
+  *
+  *   @author   David Proulx
+  */
+@@ -266,9 +261,9 @@ public class ParaStyle extends Style imp
+      *  Constructor for use when going from client device format to DOM.
+      *
+      *  @param  name     Name of the <code>Style</code>.  Can be null.
+-     *  @param  family   Family of the <code>Style</code> - usually
++     *  @param  familyName   Family of the <code>Style</code> - usually
+      *                   <i>paragraph</i>, <i>text</i>, etc.  Can be null.
+-     *  @param  parent   Name of the parent <code>Style</code>, or null
++     *  @param  parentName   Name of the parent <code>Style</code>, or null
+      *                   if none.
+      *  @param  attribs  Array of attributes to set.
+      *  @param  values   Array of values to set.
+@@ -289,13 +284,13 @@ public class ParaStyle extends Style imp
+      *  format to DOM.
+      *
+      *  @param  name     Name of the <code>Style</code>.  Can be null.
+-     *  @param  family   Family of the <code>Style</code> - usually
++     *  @param  familyName   Family of the <code>Style</code> - usually
+      *                   <i>paragraph</i>, <i>text</i>, etc.  Can be null.
+-     *  @param  parent   Name of the parent <code>Style</code>, or
++     *  @param  parentName   Name of the parent <code>Style</code>, or
+      *                   null if none.
+      *  @param  attribs  Array of attributes indices to set.
+      *  @param  values   Array of values to set.
+-     *  @param  sc       The <code>StyleCatalog</code>, which is used for
++     *  @param  lookup   The <code>StyleCatalog</code>, which is used for
+      *                   looking up ancestor <code>Style</code> objects.
+      */
+     public ParaStyle(String name, String familyName, String parentName,
+@@ -373,7 +368,7 @@ public class ParaStyle extends Style imp
+      *  Set an attribute for this paragraph <code>Style</code>.
+      *
+      *  @param  attr   The attribute index to set.
+-     *  @apram  value  The attribute value to set.
++     *  @param  value  The attribute value to set.
+      */
+     public void setAttribute(int attr, String value) {
+         isSet[attr] = true;
+@@ -496,7 +491,7 @@ public class ParaStyle extends Style imp
+     /**
+      *  Create the <code>Node</code> with the specified elements.
+      *
+-     *  @parentDoc  Parent  <code>Document</code> of the
++     *  @param  parentDoc  <code>Document</code> of the
+      *                      <code>Node</code> to create.
+      *  @param      name    Name of the <code>Node</code>.
+      *
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/StyleCatalog.java.orig	2014-02-25 08:29:06 UTC
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/StyleCatalog.java
+@@ -207,7 +207,7 @@ public class StyleCatalog {
+     
+     
+     /**
+-     *  Given a <code>Style</code> <code>s<code> return all
++     *  Given a <code>Style</code> <code>s</code> return all
+      *  <code>Style</code> objects that match.
+      *
+      *  @param  s  <code>Style</code> to match.
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/TextStyle.java.orig	2014-02-25 08:29:06 UTC
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/TextStyle.java
+@@ -74,7 +74,7 @@ public class TextStyle extends Style imp
+     /**
+      *  Constructor for use when going from DOM to client device format.
+      *
+-     *  @param  Node  The <i>style:style</i> <code>Node</code> containing
++     *  @param  node  The <i>style:style</i> <code>Node</code> containing
+      *                the <code>Style</code>.  (This <code>Node</code> is
+      *                assumed have a <i>family</i> attribute of <i>text</i>).
+      *  @param  sc    The <code>StyleCatalog</code>, which is used for
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/sxc/BookSettings.java.orig	2014-02-25 08:29:06 UTC
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/sxc/BookSettings.java
+@@ -52,8 +52,7 @@ public class BookSettings implements Off
+ 	/**
+ 	 * Default Constructor for a <code>BookSettings</code>
+ 	 *
+-	 * @param dimension if it's a row the height, a column the width 
+-	 * @param repeated 
++	 * @param root
+ 	 */
+ 	public BookSettings(Node root) {
+ 		readNode(root);
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/sxc/CellStyle.java.orig	2014-02-25 08:29:06 UTC
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/sxc/CellStyle.java
+@@ -46,7 +46,7 @@ public class CellStyle extends Style imp
+     /**
+      *  Constructor for use when going from DOM to client device format.
+      *
+-     *  @param  Node  The <i>style:style</i> <code>Node</code> containing
++     *  @param  node  The <i>style:style</i> <code>Node</code> containing
+      *                the <code>Style</code>.  (This <code>Node</code> is
+      *                assumed have a <i>family</i> attribute of <i>text</i>).
+      *  @param  sc    The <code>StyleCatalog</code>, which is used for
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/sxc/ColumnRowInfo.java.orig	2014-02-25 08:29:06 UTC
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/sxc/ColumnRowInfo.java
+@@ -46,8 +46,7 @@ public class ColumnRowInfo {
+ 	/**
+ 	 * Constructor for a <code>ColumnRowInfo</code>
+ 	 *
+-	 * @param dimension if it's a row the height, a column the width 
+-	 * @param repeated 
++	 * @param type whether Row or column record
+ 	 */
+ 	public ColumnRowInfo(int type) {
+ 
+@@ -82,7 +81,7 @@ public class ColumnRowInfo {
+ 	/**
+ 	 * sets the definition 
+ 	 *
+-	 * @param newDefinition sets the definition
++	 * @param fmt sets the definition
+ 	 */
+ 	public void setFormat(Format fmt) {
+ 
+@@ -110,9 +109,9 @@ public class ColumnRowInfo {
+ 	}
+ 	
+ 	/**
+-	 * sets the definition 
++	 * Sets the definition 
+ 	 *
+-	 * @param newDefinition sets the definition
++	 * @param dimension
+ 	 */
+ 	public void setSize(int dimension) {
+ 
+@@ -128,11 +127,6 @@ public class ColumnRowInfo {
+ 		return repeated;
+ 	}
+ 
+-	/**
+-	 * Returns the base Cell address 
+-	 * 
+-	 * @return the base cell address
+-	 */
+ 	public void setRepeated(int repeated) {
+ 
+ 		this.repeated = repeated;
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/sxc/ColumnStyle.java.orig	2014-02-25 08:29:06 UTC
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/sxc/ColumnStyle.java
+@@ -44,7 +44,7 @@ public class ColumnStyle extends Style i
+     /**
+      *  Constructor for use when going from DOM to client device format.
+      *
+-     *  @param  Node  The <i>style:style</i> <code>Node</code> containing
++     *  @param  node  The <i>style:style</i> <code>Node</code> containing
+      *                the <code>Style</code>.  (This <code>Node</code> is
+      *                assumed have a <i>family</i> attribute of <i>text</i>).
+      *  @param  sc    The <code>StyleCatalog</code>, which is used for
+@@ -97,7 +97,7 @@ public class ColumnStyle extends Style i
+      *                   <i>text</i>).  Can be null.
+      *  @param  parent   Name of parent text <code>Style</code>, or null
+      *                   for none.
+-     *  @param  mask     the width of this column 
++     *  @param  colWidth the width of this column 
+      *  @param sc        The <code>StyleCatalog</code>, which is used for
+      *                   looking up ancestor <code>Style</code> objects.
+      */
+@@ -118,7 +118,7 @@ public class ColumnStyle extends Style i
+ 	/**
+ 	 * Sets the width of this column
+ 	 *
+-	 * @return the <code>Format</code> object 
++	 * @param colWidth the column width
+ 	 */
+ 	public void setColWidth(int colWidth) {
+ 
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/sxc/DocumentMergerImpl.java.orig	2014-02-25 08:29:06 UTC
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/sxc/DocumentMergerImpl.java
+@@ -49,7 +49,7 @@ import org.openoffice.xmerge.util.Debug;
+  *  Generic small device implementation of <code>DocumentMerger</code> for
+  *  the {@link
+  *  org.openoffice.xmerge.converter.xml.sxc.SxcPluginFactory
+- *  SxcPluginFactory}.  Used with SXC <code>Document</code> objects.</p>
++ *  SxcPluginFactory}.  Used with SXC <code>Document</code> objects.
+  */
+ public class DocumentMergerImpl implements DocumentMerger {
+ 
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/sxc/Format.java.orig	2014-02-25 08:29:06 UTC
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/sxc/Format.java
+@@ -295,7 +295,7 @@ public class Format implements Cloneable
+      /**
+       *  Set the font used for this cell.
+       * 
+-      *  @param  fontName  The name of the font.
++      *  @param  fontSize
+       */
+      public void setFontSize(int fontSize) {
+          sizeInPoints = fontSize;
+@@ -312,9 +312,9 @@ public class Format implements Cloneable
+      } 
+ 
+       /**
+-      *  Set the alignmen used for this cell.
++      *  Set the alignment used for this cell.
+       * 
+-      *  @param  fontName  The name of the font.
++      *  @param  vertAlign
+       */
+      public void setVertAlign(int vertAlign) {
+          this.vertAlign = vertAlign;
+@@ -331,9 +331,9 @@ public class Format implements Cloneable
+      }  
+ 
+       /**
+-      *  Set the alignmen used for this cell.
++      *  Set the alignment used for this cell.
+       * 
+-      *  @param  fontName  The name of the font.
++      *  @param  align
+       */
+      public void setAlign(int align) {
+          this.align = align;
+@@ -351,7 +351,7 @@ public class Format implements Cloneable
+      /**
+       *  Set the Foreground <code>Color</code> for this cell.
+       * 
+-      *  @param  color  A <code>Color</code> object representing the
++      *  @param  c      A <code>Color</code> object representing the
+       *                 foreground color.
+       */
+      public void setForeground(Color c) {
+@@ -373,7 +373,7 @@ public class Format implements Cloneable
+      /**
+       *  Set the Background <code>Color</code> for this cell
+       * 
+-      *  @param  color  A <code>Color</code> object representing
++      *  @param  c      A <code>Color</code> object representing
+       *                 the background color.
+       */
+      public void setBackground(Color c) {
+@@ -433,7 +433,7 @@ public class Format implements Cloneable
+      *  than this <code>Style</code>, and nothing it specifies
+      *  contradicts this <code>Style</code>.
+      *
+-     *  @param  style  The <code>Style</code> to check.
++     *  @param  rhs  The <code>Style</code> to check.
+      *
+ 	 *  @return  true if <code>style</code> is a subset, false
+      *           otherwise.
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/sxc/NameDefinition.java.orig	2014-02-25 08:29:06 UTC
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/sxc/NameDefinition.java
+@@ -135,7 +135,7 @@ public class NameDefinition implements O
+ 	/**
+ 	 * Writes out a content.xml entry for this NameDefinition object 
+ 	 *
+-	 * @param settings a <code>Document</code> object representing the settings.xml 
++	 * @param doc  a <code>Document</code> object representing the settings.xml 
+ 	 * @param root the root xml node to add to
+ 	 */	
+ 	public void writeNode(org.w3c.dom.Document doc, Node root) {
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/sxc/RowStyle.java.orig	2014-02-25 08:29:06 UTC
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/sxc/RowStyle.java
+@@ -44,7 +44,7 @@ public class RowStyle extends Style impl
+     /**
+      *  Constructor for use when going from DOM to client device format.
+      *
+-     *  @param  Node  The <i>style:style</i> <code>Node</code> containing
++     *  @param  node  The <i>style:style</i> <code>Node</code> containing
+      *                the <code>Style</code>.  (This <code>Node</code> is
+      *                assumed have a <i>family</i> attribute of <i>text</i>).
+      *  @param  sc    The <code>StyleCatalog</code>, which is used for
+@@ -97,7 +97,7 @@ public class RowStyle extends Style impl
+      *                   <i>text</i>).  Can be null.
+      *  @param  parent   Name of parent text <code>Style</code>, or null
+      *                   for none.
+-     *  @param  mask     The height of this row 
++     *  @param  rowHeight The height of this row 
+      *  @param sc        The <code>StyleCatalog</code>, which is used for
+      *                   looking up ancestor <code>Style</code> objects.
+      */
+@@ -118,9 +118,9 @@ public class RowStyle extends Style impl
+ 	/**
+ 	 * Sets the height of this row
+ 	 *
+-	 * @return the <code>Format</code> object 
++	 * @param rowHeight the row height
+ 	 */
+-	public void setRowHeight(int RowHeight) {
++	public void setRowHeight(int rowHeight) {
+ 
+ 		this.rowHeight = rowHeight;
+ 	}	
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/sxc/SheetSettings.java.orig	2014-02-25 08:29:06 UTC
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/sxc/SheetSettings.java
+@@ -79,8 +79,7 @@ public class SheetSettings implements Of
+ 	/**
+ 	 * Constructor for a <code>ColumnRowInfo</code>
+ 	 *
+-	 * @param dimension if it's a row the height, a column the width 
+-	 * @param repeated 
++	 * @param name
+ 	 */
+ 	public SheetSettings(String name) {
+ 		sheetName = name;
+@@ -175,12 +174,10 @@ public class SheetSettings implements Of
+ 
+ 		return posLeft;
+ 	}
++
+ 	/**
+-	 * Sets the top row visible in the lower pane and the leftmost column
+-	 * visibile in the right pane.
++	 * Gets the top row visible in the lower pane.
+ 	 *
+-	 * @param top The top row visible in the lower pane 
+-	 * @param left The leftmost column visibile in the right pane
+ 	 */
+ 	public int getTop() {
+ 
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/sxc/SpreadsheetEncoder.java.orig	2014-02-25 08:29:06 UTC
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/sxc/SpreadsheetEncoder.java
+@@ -104,21 +104,13 @@ public abstract class SpreadsheetEncoder
+      *  @param  columnWidths  An <code>IntArrayList</code> of column
+      *                        widths.
+      */
+-    public abstract void setColumnRows(Vector columnRows) throws IOException;
++    public abstract void setColumnRows(Vector columnWidths) throws IOException;
+ 
+     /**
+-     *  Set the width of the columns in the WorkBook.
+-     *
+-     *  @param  columnWidths  An <code>IntArrayList</code> of column
+-     *                        widths.
+      */
+     public abstract void setNameDefinition(NameDefinition nd) throws IOException;
+ 
+     /**
+-     *  Set the width of the columns in the WorkBook.
+-     *
+-     *  @param  columnWidths  An <code>IntArrayList</code> of column
+-     *                        widths.
+      */
+     public abstract void addSettings(BookSettings s) throws IOException;		
+ }
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/xslt/DocumentMergerImpl.java.orig	2014-02-25 08:29:06 UTC
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/xslt/DocumentMergerImpl.java
+@@ -44,7 +44,7 @@ import org.openoffice.xmerge.util.Debug;
+  *  Xslt implementation of <code>DocumentMerger</code>
+  *  for the {@link
+  *  org.openoffice.xmerge.converter.xml.xslt.PluginFactoryImpl
+- *  PluginFactoryImpl}.</p>
++ *  PluginFactoryImpl}.
+  */
+ public class DocumentMergerImpl implements DocumentMerger {
+ 
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/merger/MergeAlgorithm.java.orig	2014-02-25 08:29:05 UTC
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/merger/MergeAlgorithm.java
+@@ -40,15 +40,12 @@ public interface MergeAlgorithm {
+      *  This method is to merge the difference to an <code>Iterator</code>.
+      *  The original <code>Iterator</code> will be modified after the call.
+      *
+-     *  @param  objSeq       The original sequence which the difference
++     *  @param  orgSeq       The original sequence which the difference
+      *                       will be applied.  It will be modified.
+      *  @param  modSeq       The modified sequence where the difference
+      *                       content will be extracted.
+      *  @param  differences  The <code>Difference</code> array.
+      *
+-     *  @return  An <code>Iterator</code> which is the modified original
+-     *           <code>Iterator</code> Sequence.  Same as the first parameter.
+-     *
+      *  @throws  MergeException  If an error occurs during the merge.
+      */
+     public void applyDifference(Iterator orgSeq, Iterator modSeq,
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/merger/NodeMergeAlgorithm.java.orig	2014-02-25 08:29:05 UTC
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/merger/NodeMergeAlgorithm.java
+@@ -43,6 +43,6 @@ public interface NodeMergeAlgorithm {
+      *  @param  modifyNode    The <code>Node</code> to be merged.  It may
+      *                        be modified.
+      */
+-    public void merge(Node orginialNode, Node modifyNode);
++    public void merge(Node originalNode, Node modifyNode);
+ }
+ 
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/merger/diff/IteratorRowCompare.java.orig	2014-02-25 08:29:05 UTC
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/merger/diff/IteratorRowCompare.java
+@@ -54,7 +54,7 @@ import org.openoffice.xmerge.converter.x
+  *    If there are more objects in the original sequence than the modified
+  *    sequence, then all the extra one in the modified sequence are marked
+  *    as delete.
+- *  </li></ol></p>
++ *  </li></ol>
+  *
+  *  <p>NOTE: The algorithm will have potential side effect to split rows.</p>
+  *
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/merger/diff/TextNodeIterator.java.orig	2014-02-25 08:29:05 UTC
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/merger/diff/TextNodeIterator.java
+@@ -48,7 +48,7 @@ public final class TextNodeIterator exte
+     /**
+      *  Standard constructor.
+      *
+-     *  @param  initial  The initial root <code>Node</code>.
++     *  @param  node  The initial root <code>Node</code>.
+      */
+     public TextNodeIterator(Node node) {
+         super(null, node);
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/merger/merge/SheetUtil.java.orig	2014-02-25 08:29:05 UTC
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/merger/merge/SheetUtil.java
+@@ -45,7 +45,7 @@ public class SheetUtil {
+      *    Remove all of the supported attributes.
+      *  </li><li>
+      *    Remove the first <i>text:p</i> <code>Node</code> for most of the cells.
+-     *  </li></ul></p>
++     *  </li></ul>
+      *
+      *  @param  cc    The <code>ConverterCapabilities</code>.
+      *  @param  node  The <code>Node</code>.
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/util/ColourConverter.java.orig	2014-02-25 08:29:06 UTC
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/util/ColourConverter.java
+@@ -108,7 +108,7 @@ public class ColourConverter {
+ 	 * cases where the 16 colour values are something other than there default
+ 	 * values (e.g. in the case of pocket Excel)
+ 	 * 
+-	 * @param short[] a 16 bit array mapping the 16 colours to there values
++	 * @param lookup a 16 bit array mapping the 16 colours to their values
+ 	 */
+ 	public ColourConverter(short lookup[]) {
+ 
+@@ -151,7 +151,7 @@ public class ColourConverter {
+      * This method maps a Pocket Word colour index value to an RGB value as
+      * used by OpenOffice.
+      *
+-     * @param   index   The index into Pocket Word's colour table.
++     * @param   colour   The index into Pocket Word's colour table.
+      *
+      * @return  A Color object representing the RGB value of the Pocket Word 
+      *          colour.
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/util/Debug.java.orig	2014-02-25 08:29:06 UTC
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/util/Debug.java
+@@ -39,7 +39,7 @@ import java.util.Properties;
+ /**
+  *  This class is used for logging debug messages.
+  *  Currently, there are three types of logging:  {@link #INFO},
+- *  {@link #TRACE} & {@link #ERROR}.  Use the Debug.properties
++ *  {@link #TRACE} &amp; {@link #ERROR}.  Use the Debug.properties
+  *  file to set or unset each type.  Also use Debug.properties
+  *  to set the writer to either <code>System.out</code>,
+  *  <code>System.err</code>, or to a file.
+@@ -265,7 +265,7 @@ public final class Debug {
+      *  <p>This logs the message during runtime if debug.info or debug.trace
+      *  in the properties file is set to true.</p>
+      *
+-     *  @param   int   Log type, one of the Debug constants
++     *  @param   flag  Log type, one of the Debug constants
+      *                 {@link #INFO}, {@link #TRACE}, {@link #ERROR}
+      *                 or a combination of which or'ed together.
+      *  @param   msg   The message.
+@@ -287,7 +287,7 @@ public final class Debug {
+      *  of the exception passed in.  Refer to the other log method
+      *  for description.
+      *
+-     *  @param   int   Log type, one of the Debug constants
++     *  @param   flag  Log type, one of the Debug constants
+      *                 {@link #INFO}, {@link #TRACE}, {@link #ERROR}
+      *                 or a combination of which or'ed together.
+      *  @param   msg   The message.
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/util/registry/ConverterInfoMgr.java.orig	2014-02-25 08:29:06 UTC
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/util/registry/ConverterInfoMgr.java
+@@ -53,7 +53,7 @@ public final class ConverterInfoMgr {
+     *  and must have non-null values for DisplayName, ClassImpl,
+     *  OfficeMime, and DeviceMime.  
+     *
+-    *  @param  ConverterInfo  A <code>ConverterInfo</code> object
++    *  @param   ci  A <code>ConverterInfo</code> object
+     *                         describing a plug-in.
+     *
+     *  @throws  RegistryException  If the <code>ConverterInfo</code>
+@@ -109,16 +109,16 @@ public final class ConverterInfoMgr {
+    
+ 
+    /**
+-    *  Adds a <code>Vector</code> of converter plug-ins to the registry.
+-    *  Each <code>ConverterInfo</code> in the <code>Vector</code> must have 
++    *  Adds an <code>Enumeration</code> of converter plug-ins to the registry.
++    *  Each <code>ConverterInfo</code> in the <code>Enumeration</code> must have 
+     *  a unique DisplayName and must have non-null values for DisplayName,
+     *  ClassImpl, OfficeMime, and DeviceMime.  
+     *
+-    *  @param  ciVectory  A <code>Vector</code> of <code>ConverterInfo</code> 
++    *  @param  jarEnum  An <code>Enumeration</code> of <code>ConverterInfo</code> 
+     *                     objects describing one or more plug-in(s).
+     *
+     *  @throws  RegistryException  If a <code>ConverterInfo</code> in the
+-    *                              <code>Vector</code> is not valid.
++    *                              <code>Enumeration</code> is not valid.
+     */
+     public static void addPlugIn(Enumeration jarEnum) throws RegistryException {
+ 
+@@ -257,8 +257,8 @@ public final class ConverterInfoMgr {
+     *  If there are multiple <code>ConverterInfo</code> objects that
+     *  support this conversion, only the first is returned.
+     *
+-    *  @param  deviceMimeFrom  The device from mime.
+-    *  @param  deviceMimeTo    The device to mime.
++    *  @param  deviceFromMime  The device from mime.
++    *  @param  deviceToMime    The device to mime.
+     *
+     *  @return  An array of two <code>ConverterInfo</code> objects
+     *           that can be chained to perform the specified

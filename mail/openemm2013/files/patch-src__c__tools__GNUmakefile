@@ -1,0 +1,13 @@
+--- src/c/tools/GNUmakefile.orig	2013-09-11 08:30:37 UTC
++++ src/c/tools/GNUmakefile
+@@ -20,8 +20,8 @@
+ # Contributor(s): AGNITAS AG. 
+ ##################################################################################
+  
+-CC	= gcc
+-CFLAGS	= -I../lib 
++CC	?= clang
++CFLAGS	+= -I../lib 
+ LDFLAGS	= -L../lib 
+ LIBS	= -lagn
+ SQCTRL	= qctrl.c qlib.c qmove.c qstat.c

@@ -27,7 +27,7 @@ LICENSE=	EPL
 
 USES=	tar:bzip2
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.6 1.7
 USE_ANT=	yes
 USE_GCC=	yes
 
@@ -41,7 +41,7 @@ WRKSRC=		${WRKDIR}/x10.dist
 
 OPTIONS_DEFINE=	EXAMPLES
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 post-patch:
 	${REINPLACE_CMD} -e 's/value="make"/value="gmake"/g' \
@@ -72,4 +72,4 @@ do-install:
 	${CP} -R ${WRKSRC}/samples/* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,0 +1,36 @@
+------------------------------------------------------------------------
+r247116 | sas | 2015-09-09 01:22:05 +0000 (Wed, 09 Sep 2015) | 11 lines
+
+Teach utilsOsType about NetBSD
+
+Summary: NetBSD is a free, fast, secure, and highly portable Unix-like Open Source operating system.
+
+Reviewers: joerg, sas
+
+Subscribers: sas, emaste, lldb-commits
+
+Differential Revision: http://reviews.llvm.org/D12615
+
+Change by Kamil Rytarowski <n54@gmx.com>
+------------------------------------------------------------------------
+Index: scripts/utilsOsType.py
+===================================================================
+--- tools/lldb/scripts/utilsOsType.py	(revision 247115)
++++ tools/lldb/scripts/utilsOsType.py	(revision 247116)
+@@ -31,6 +31,7 @@
+                 "Darwin",
+                 "FreeBSD",
+                 "Linux", 
++                "NetBSD",
+                 "Windows" ]
+     class __metaclass__( type ):
+ #++---------------------------------------------------------------------------
+@@ -71,6 +72,8 @@
+         eOSType = EnumOsType.FreeBSD
+     elif (strOS.startswith("linux")):
+         eOSType = EnumOsType.Linux
++    elif (strOS.startswith("netbsd")):
++        eOSType = EnumOsType.NetBSD
+     elif strOS == "win32":
+         eOSType = EnumOsType.Windows
+ 

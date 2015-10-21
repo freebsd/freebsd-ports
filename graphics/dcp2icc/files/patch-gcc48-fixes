@@ -1,0 +1,98 @@
+--- XMP-Toolkit-SDK-4.4.2/source/XMPCore/XMPCore_Impl.hpp.orig	2008-10-06 07:18:56 UTC
++++ XMP-Toolkit-SDK-4.4.2/source/XMPCore/XMPCore_Impl.hpp
+@@ -18,6 +18,7 @@
+ #include <vector>
+ #include <string>
+ #include <map>
++#include <cstring>
+ 
+ #include <cassert>
+ 
+@@ -90,8 +91,8 @@ extern WXMP_Result		void_wResult;
+ 
+ #define kHexDigits "0123456789ABCDEF"
+ 
+-#define XMP_LitMatch(s,l)		(std::strcmp((s),(l)) == 0)
+-#define XMP_LitNMatch(s,l,n)	(std::strncmp((s),(l),(n)) == 0)
++#define XMP_LitMatch(s,l)		(strcmp((s),(l)) == 0)
++#define XMP_LitNMatch(s,l,n)	(strncmp((s),(l),(n)) == 0)
+ 	// *** Use the above macros!
+ 
+ #define kTab ((char)0x09)
+@@ -368,7 +369,7 @@ static inline bool
+ IsPathPrefix ( XMP_StringPtr fullPath, XMP_StringPtr prefix )
+ {
+ 	bool isPrefix = false;
+-	XMP_StringLen prefixLen = std::strlen(prefix);
++	XMP_StringLen prefixLen = strlen(prefix);
+ 	if ( XMP_LitNMatch ( prefix, fullPath, prefixLen ) ) {
+ 		char separator = fullPath[prefixLen];
+ 		if ( (separator == 0) || (separator == '/') ||
+--- XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FileHandlers/PostScript_Handler.cpp.orig	2008-10-06 07:18:56 UTC
++++ XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FileHandlers/PostScript_Handler.cpp
+@@ -7,6 +7,8 @@
+ // of the Adobe license agreement accompanying it.
+ // =================================================================================================
+ 
++#include <limits.h>
++
+ #include "XMPScanner.hpp"
+ 
+ #include "Scanner_Handler.hpp"
+--- XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FormatSupport/XMPScanner.cpp.orig	2008-10-06 07:18:58 UTC
++++ XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FormatSupport/XMPScanner.cpp
+@@ -9,6 +9,8 @@
+ // one format in a file with a different format', inventors: Sean Parent, Greg Gilley.
+ // =================================================================================================
+ 
++#include <cstring>
++
+ #if WIN32
+ 	#pragma warning ( disable : 4127 )	// conditional expression is constant
+ 	#pragma warning ( disable : 4510 )	// default constructor could not be generated
+--- XMP-Toolkit-SDK-4.4.2/source/XMPFiles/XMPFiles_Impl.hpp.orig	2008-10-06 07:18:56 UTC
++++ XMP-Toolkit-SDK-4.4.2/source/XMPFiles/XMPFiles_Impl.hpp
+@@ -26,6 +26,7 @@
+ #include <vector>
+ #include <string>
+ #include <map>
++#include <cstring>
+ 
+ #include <cassert>
+ 
+@@ -157,8 +158,8 @@ static inline void MakeUpperCase ( std::
+ 	}
+ }
+ 
+-#define XMP_LitMatch(s,l)		(std::strcmp((s),(l)) == 0)
+-#define XMP_LitNMatch(s,l,n)	(std::strncmp((s),(l),(n)) == 0)
++#define XMP_LitMatch(s,l)		(strcmp((s),(l)) == 0)
++#define XMP_LitNMatch(s,l,n)	(strncmp((s),(l),(n)) == 0)
+ 
+ #define IgnoreParam(p)	voidVoidPtr = (void*)&p
+ 
+@@ -513,7 +514,7 @@ static inline bool CheckBytes ( const vo
+ 
+ static inline bool CheckCString ( const void * left, const void * right )
+ {
+-	return (std::strcmp ( (char*)left, (char*)right ) == 0);
++	return (strcmp ( (char*)left, (char*)right ) == 0);
+ }
+ 
+ // -------------------------------------------------------------------------------------------------
+--- XMP-Toolkit-SDK-4.4.2/source/common/XML_Node.cpp.orig	2008-10-06 07:18:58 UTC
++++ XMP-Toolkit-SDK-4.4.2/source/common/XML_Node.cpp
+@@ -9,10 +9,12 @@
+ #include "XMP_Environment.h"	// ! Must be the first #include!
+ #include "XMLParserAdapter.hpp"
+ 
++#include <cstdio>
++#include <cstring>
+ #include <map>
+ 
+ // ! Can't include XMP..._Impl.hpp - used by both Core and Files.
+-#define XMP_LitNMatch(s,l,n)	(std::strncmp((s),(l),(n)) == 0)
++#define XMP_LitNMatch(s,l,n)	(strncmp((s),(l),(n)) == 0)
+ 
+ #if XMP_WinBuild
+ 	#define snprintf _snprintf

@@ -9,7 +9,7 @@ MASTER_SITES=	http://registry.gimp.org/files/
 PKGNAMEPREFIX=	gimp-
 PKGNAMESUFFIX=	-plugin
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gimp plugin to losslessly decompose images into wavelet scales layers
 
 LICENSE=	GPLv2

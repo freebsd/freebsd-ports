@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.25.2
-PORTREVISION=	2
+PORTVERSION=	1.25.3
 CATEGORIES=	www
 MASTER_SITES=	http://releases.wikimedia.org/mediawiki/${PORTVERSION:R}/
 PKGNAMESUFFIX=	125
@@ -19,7 +18,6 @@ USES=		shebangfix
 SHEBANG_FILES=	maintenance/dev/*.sh \
 		maintenance/hiphop/run-server \
 		vendor/leafo/lessphp/lessify \
-		vendor/ruflin/elastica/test/bin/*.sh \
 		maintenance/postgres/*.pl \
 		maintenance/storage/make-blobs \
 		includes/limit.sh
@@ -63,7 +61,8 @@ XCACHE_RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xcache.so:${PORTSDIR}/ww
 
 pre-install:
 	@${FIND} -s -d ${WRKSRC} -not -type d | ${SED} "s?${WRKSRC}?${MEDIAWIKIDIR}?g" >>${PLIST}
-	@${ECHO} "@dir %%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/Fixtures" >> ${PLIST}
+	@${ECHO} "@dir %%WWWDIR%%/vendor/zordius/lightncandy/specs/mustache" >> ${PLIST}
+	@${ECHO} "@dir %%WWWDIR%%/vendor/zordius/lightncandy/specs/handlebars" >> ${PLIST}
 	@${ECHO} "@mode 0777" >> ${PLIST}
 	@${ECHO} "@dir %%WWWDIR%%/images" >> ${PLIST}
 	@${ECHO} "@mode" >> ${PLIST}

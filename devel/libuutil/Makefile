@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libuutil
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.3
 CATEGORIES=	devel
 
 MAINTAINER=	marino@FreeBSD.org
@@ -12,8 +12,6 @@ LICENSE=	CDDL
 
 GH_ACCOUNT=	jrmarino
 USE_GITHUB=	yes
-
-BROKEN=		produces broken library (undefined reference to `avl_*')
 
 USES=		uidfix
 MAKE_ARGS=	LIBDIR=${PREFIX}/lib

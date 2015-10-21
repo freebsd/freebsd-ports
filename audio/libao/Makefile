@@ -3,7 +3,7 @@
 
 PORTNAME=	libao
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/ao/
 
@@ -15,6 +15,8 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static \
 		--disable-arts
+INSTALL_TARGET=	install-strip
+
 # do not install
 MAKE_ARGS=	ckport_DATA=""
 

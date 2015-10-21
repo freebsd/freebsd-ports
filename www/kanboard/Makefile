@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kanboard
-PORTVERSION=	1.0.18
+PORTVERSION=	1.0.19
 CATEGORIES=	www
 MASTER_SITES=	http://kanboard.net/ \
 		https://bitbucket.org/if0/kanboard-archives/downloads/ \

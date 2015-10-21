@@ -29,7 +29,6 @@ CFLAGS+=	-ffast-math
 WRKSRC=		${WRKDIR}/Edge-${PORTVERSION}-source
 
 PLIST_FILES=	bin/edge %%DMDIR%%/edge.wad
-PLIST_DIRSTRY=	%%DMDIR%%
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
@@ -57,6 +56,8 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DMDIR}
 	${INSTALL_DATA} ${WRKDIR}/Edge-${PORTVERSION}/edge.wad \
 		${STAGEDIR}${DMDIR}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/Edge-${PORTVERSION}/*.txt \
 		${STAGEDIR}${DOCSDIR}

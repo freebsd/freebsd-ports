@@ -37,15 +37,12 @@
 # varnishd_storage - storage method and parameters.
 #	default: "file,/tmp,100M"
 #
-# varnishd_user - unprivileged user for the child process.
-#	default: "www"
-#
-# varnishd_group - unprivileged group for the child process.
-#	default: "www"
+# varnishd_jailuser - unprivileged user for the child process.
+#	default: "varnish"
 #
 # varnishd_flags - complete command line arguments.
-#	default if varnishd_config is unset: "-P ${varnishd_pidfile} -a ${varnishd_listen} -T ${varnishd_admin} -b ${varnishd_backend} -s ${varnishd_storage} -h ${varnishd_hash} -u ${varnishd_user} -g ${varnishd_group}"
-#	default if varnishd_config is set: "-P ${varnishd_pidfile} -a ${varnishd_listen} -T ${varnishd_admin} -f ${varnishd_config} -s ${varnishd_storage} -h ${varnishd_hash} -u ${varnishd_user} -g ${varnishd_group}"
+#	default if varnishd_config is unset: "-j unix,user=${varnishd_jailuser} -P ${varnishd_pidfile} -a ${varnishd_listen} -T ${varnishd_admin} -b ${varnishd_backend} -s ${varnishd_storage} -h ${varnishd_hash} ${varnishd_extra_flags}"
+#	default if varnishd_config is set: "-j unix,user=${varnishd_jailuser} -P ${varnishd_pidfile} -a ${varnishd_listen} -T ${varnishd_admin} -f ${varnishd_config} -s ${varnishd_storage} -h ${varnishd_hash} ${varnishd_extra_flags}"
 #
 # See varnishd(1) for a detailed overview of command-line options.
 #
@@ -64,21 +61,15 @@ load_rc_config ${name}
 : ${varnishd_backend=localhost:8080}
 : ${varnishd_storage=file,/tmp,100M}
 : ${varnishd_hash=classic,16383}
-: ${varnishd_user=www}
-: ${varnishd_group=www}
+: ${varnishd_jailuser=varnish}
 
 command="%%PREFIX%%/sbin/${name}"
 pidfile="${varnishd_pidfile}"
 
 if [ -n "${varnishd_config}" ] ; then
-	: ${varnishd_flags:="-P ${varnishd_pidfile} -a ${varnishd_listen} -T ${varnishd_admin} -f ${varnishd_config} -s ${varnishd_storage} -h ${varnishd_hash} -u ${varnishd_user} -g ${varnishd_group} ${varnishd_extra_flags}"}
+	: ${varnishd_flags:="-j unix,user=${varnishd_jailuser} -P ${varnishd_pidfile} -a ${varnishd_listen} -T ${varnishd_admin} -f ${varnishd_config} -s ${varnishd_storage} -h ${varnishd_hash} ${varnishd_extra_flags}"}
 else
-	: ${varnishd_flags:="-P ${varnishd_pidfile} -a ${varnishd_listen} -T ${varnishd_admin} -b ${varnishd_backend} -s ${varnishd_storage} -h ${varnishd_hash} -u ${varnishd_user} -g ${varnishd_group} ${varnishd_extra_flags}"}
+	: ${varnishd_flags:="-j unix,user=${varnishd_jailuser} -P ${varnishd_pidfile} -a ${varnishd_listen} -T ${varnishd_admin} -b ${varnishd_backend} -s ${varnishd_storage} -h ${varnishd_hash} ${varnishd_extra_flags}"}
 fi
-
-# If we leave these set, rc.subr will su to them before starting
-# varnishd, which is not what we want.
-unset varnishd_user
-unset varnishd_group
 
 run_rc_command "$1"

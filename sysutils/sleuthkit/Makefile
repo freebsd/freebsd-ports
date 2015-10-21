@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sleuthkit
-PORTVERSION=	4.1.3
-PORTREVISION=	2
+PORTVERSION=	4.2.0
 CATEGORIES=	sysutils security
 MASTER_SITES=	SF
 
@@ -25,21 +24,23 @@ RUN_DEPENDS=	p5-DateTime-TimeZone>=0:${PORTSDIR}/devel/p5-DateTime-TimeZone \
 CONFLICTS=	ja-ls-[0-9]* icat-[0-9]*
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	ac_cv_path_PERL="${PERL}"
 USES=		libtool perl5
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 DATADIR=	${PREFIX}/share/tsk
 
-PORTDOCS=	NEWS.txt README.txt
+PORTDOCS=	NEWS.txt README.md
 
-OPTIONS_DEFINE=	DOCS LIBEWF
+OPTIONS_DEFINE=	AFFLIB DOCS LIBEWF
+AFFLIB_DESC=	Build with AFFLIB support
 LIBEWF_DESC=	Build with EWF support
 OPTIONS_DEFAULT=LIBEWF
 
+AFFLIB_LIB_DEPENDS=	libafflib.so:${PORTSDIR}/sysutils/afflib
+AFFLIB_CONFIGURE_WITH=	afflib=${LOCALBASE}
+
 LIBEWF_LIB_DEPENDS=	libewf.so:${PORTSDIR}/devel/libewf
-LIBEWF_CONFIGURE_ON=	--with-libewf=${LOCALBASE}
-LIBEWF_CONFIGURE_OFF=	--without-libewf
+LIBEWF_CONFIGURE_WITH=	libewf=${LOCALBASE}
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

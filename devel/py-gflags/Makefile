@@ -18,7 +18,6 @@ USES=		python:2 shebangfix
 USE_PYTHON=	autoplist distutils
 
 SHEBANG_FILES=	gflags2man.py
-python_OLD_CMD=	/usr/bin/env python
 
 PROJECTHOST=	python-gflags
 

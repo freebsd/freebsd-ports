@@ -18,7 +18,6 @@ LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
 USES=		compiler:c++11-lib gmake libtool pkgconfig python:build shebangfix
 SHEBANG_FILES=	data/db/android/create_db.py
-python_OLD_CMD=	/usr/bin/env python
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 

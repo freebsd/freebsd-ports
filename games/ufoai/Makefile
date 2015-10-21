@@ -83,10 +83,6 @@ FAVORITE_COMPILER=	gcc
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 900000
-BROKEN=	Fails to build on 8.x
-.endif
-
 post-extract:
 	@${MKDIR} ${WRKSRC}/base/maps ${WRKSRC}/base/models
 	${REINPLACE_CMD} \

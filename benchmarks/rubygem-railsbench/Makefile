@@ -3,6 +3,7 @@
 
 PORTNAME=	railsbench
 PORTVERSION=	0.9.8
+PORTREVISION=	1
 CATEGORIES=	benchmarks rubygems
 MASTER_SITES=	RG
 
@@ -10,11 +11,9 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Scripts designed for benchmarking of Rails applications
 
 LICENSE=	GPLv2
-
-RUN_DEPENDS=	rubygem-hoe>=2.4.0:${PORTSDIR}/devel/rubygem-hoe
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

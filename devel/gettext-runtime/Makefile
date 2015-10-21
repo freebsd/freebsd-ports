@@ -31,7 +31,7 @@ CPE_VENDOR=	gnu
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == DragonFly || (${OPSYS} == FreeBSD && ${OSVERSION} < 900506)
+.if ${OPSYS} == DragonFly
 CONFIGURE_ARGS+=--disable-threads
 .endif
 

@@ -15,13 +15,11 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 OPTIONS_DEFINE=	DOCS
 
 CONFIGURE_ENV=	ac_cv_header_CUnit_CUnit_h=no
-CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-LDFLAGS+=	-L${LOCALBASE}/lib
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
-USES=		libtool
+USES=		libtool localbase
 
 INFO=		udunits2 udunits2lib udunits2prog
 PORTDATA=	*

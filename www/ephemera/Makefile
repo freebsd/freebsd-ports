@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ephemera
-PORTVERSION=	5.5
+PORTVERSION=	5.7
 CATEGORIES=	www
 MASTER_SITES=	http://www.mammothcheese.ca/
 

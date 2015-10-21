@@ -70,6 +70,7 @@
     SUBDIR += anjuta
     SUBDIR += anjuta-extras
     SUBDIR += antlr
+    SUBDIR += antlr3
     SUBDIR += antlrworks
     SUBDIR += apache-ant
     SUBDIR += api-sanity-autotest
@@ -562,6 +563,7 @@
     SUBDIR += gazpacho
     SUBDIR += gb
     SUBDIR += gcc-arm-embedded
+    SUBDIR += gcc-msp430-ti-toolchain
     SUBDIR += gccmakedep
     SUBDIR += gconf2
     SUBDIR += gconf2-reference
@@ -1020,6 +1022,7 @@
     SUBDIR += isl
     SUBDIR += it-eric6
     SUBDIR += itext
+    SUBDIR += ivykis
     SUBDIR += jakarta-commons-configuration
     SUBDIR += jakarta-commons-daemon
     SUBDIR += jakarta-commons-io
@@ -1463,6 +1466,7 @@
     SUBDIR += mm
     SUBDIR += mm-common
     SUBDIR += mongo-c-driver
+    SUBDIR += mongo-cxx-driver
     SUBDIR += mono-addins
     SUBDIR += monodevelop
     SUBDIR += monodevelop-database
@@ -3688,6 +3692,7 @@
     SUBDIR += pecl-uri_template
     SUBDIR += pecl-uuid
     SUBDIR += pecl-vld
+    SUBDIR += pecl-weakref
     SUBDIR += pecl-xhprof
     SUBDIR += pecl-yac
     SUBDIR += pecl-zookeeper
@@ -4178,6 +4183,7 @@
     SUBDIR += py-pymarc
     SUBDIR += py-pympler
     SUBDIR += py-pymtbl
+    SUBDIR += py-pyopencl
     SUBDIR += py-pyrfc3339
     SUBDIR += py-pyro
     SUBDIR += py-pyshapelib
@@ -4195,6 +4201,7 @@
     SUBDIR += py-python2-pythondialog
     SUBDIR += py-pythonbrew
     SUBDIR += py-pytimeparse
+    SUBDIR += py-pytools
     SUBDIR += py-pytrie
     SUBDIR += py-pytz
     SUBDIR += py-pyutil
@@ -4455,6 +4462,8 @@
     SUBDIR += pysvn
     SUBDIR += pythk
     SUBDIR += pythontidy
+    SUBDIR += pyvisa
+    SUBDIR += pyvisa-py
     SUBDIR += qbzr
     SUBDIR += qca
     SUBDIR += qca-qt5
@@ -4794,7 +4803,6 @@
     SUBDIR += rubygem-librarianp
     SUBDIR += rubygem-libyajl2
     SUBDIR += rubygem-listen
-    SUBDIR += rubygem-listen2
     SUBDIR += rubygem-little-plugger
     SUBDIR += rubygem-locale
     SUBDIR += rubygem-lockfile
@@ -5099,6 +5107,7 @@
     SUBDIR += subversion-book
     SUBDIR += subversion-static
     SUBDIR += subversion17
+    SUBDIR += subversion18
     SUBDIR += subversive
     SUBDIR += svk
     SUBDIR += svn2git

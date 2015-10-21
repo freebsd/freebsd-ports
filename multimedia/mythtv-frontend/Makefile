@@ -70,19 +70,7 @@ VDPAU_LIB_DEPENDS=	libvdpau.so:${PORTSDIR}/multimedia/libvdpau
 VDPAU_CONFIGURE_ENABLE=	vdpau
 
 OPENGL_CONFIGURE_ENABLE=	opengl-video
-
-.include <bsd.port.pre.mk>
-
-# for too old binutils in base
-.if ${OSVERSION} < 900033
-BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
-CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
-MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
-.endif
-
-.if ${PORT_OPTIONS:MOPENGL}
-USE_QT4+=	opengl
-.endif
+OPENGL_USE=	QT4=opengl
 
 post-patch:
 		@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
@@ -94,4 +82,4 @@ post-patch:
 			${WRKSRC}/programs/scripts/database/mythconverg_restore.pl \
 			${WRKSRC}/programs/mythcommflag/mythcommflag-analyze
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

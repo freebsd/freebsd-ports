@@ -34,7 +34,6 @@ SHEBANG_FILES=	a2x.py \
 		filters/graphviz/graphviz2png.py \
 		filters/latex/latex2png.py \
 		filters/music/music2png.py
-python_OLD_CMD=	/usr/bin/env python
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^INSTALL_PROG/ s|INSTALL_PROGRAM|INSTALL_SCRIPT|; s|\.conf|&.sample|' ${WRKSRC}/Makefile.in

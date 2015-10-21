@@ -27,15 +27,10 @@ OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	install.html README README.freebsd LICENSE
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 900000
 BINVER=		9.0
-.elif ${OPSYS} == FreeBSD
-BINVER=		8.0
-.else
-IGNORE=		requires FreeBSD
-.endif
+IGNORE_DragonFly=	requires FreeBSD
+
+.include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64
 DIST_ARCH=	x86_64

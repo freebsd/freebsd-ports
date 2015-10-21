@@ -1,0 +1,3 @@
+Go wrapper for OpenLDAP Lightning Memory-Mapped Database, LMDB.
+
+WWW: https://github.com/szferi/gomdb

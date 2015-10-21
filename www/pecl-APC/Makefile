@@ -39,7 +39,7 @@ IPC_CONFIGURE_ARGS=	--disable-apc-mmap
 SEMAPHORES_CONFIGURE_ARGS=	--enable-apc-sem
 SPINLOCKS_CONFIGURE_ARGS=	--enable-apc-spinlocks
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 

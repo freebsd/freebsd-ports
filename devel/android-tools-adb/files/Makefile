@@ -3,6 +3,9 @@
 PROG_CXX=adb
 NO_MAN=
 BINDIR?=/usr/bin
+FILESDIR?=${DOCDIR}/${PROG}
+
+FILES= *.[Tt][Xx][Tt]
 
 SRCS+= adb.cpp
 SRCS+= adb_auth.cpp
@@ -26,7 +29,7 @@ TEST_SRCS+= adb_io_test.cpp
 TEST_SRCS+= adb_utils_test.cpp
 TEST_SRCS+= transport_test.cpp
 
-.PATH: ${FILESDIR}
+.PATH: ${EXTRADIR}
 SRCS+= get_my_path_freebsd.cpp
 SRCS+= usb_libusb.cpp
 
@@ -58,6 +61,9 @@ SRCS+= fake_log_device.c
 SRCS+= logd_write.c
 CPPFLAGS.logd_write.c+= -DFAKE_LOG_DEVICE=1
 
+REVISION?= $$(${GIT} rev-parse --short=12 HEAD 2>/dev/null || echo unknown)
+
+CPPFLAGS+= -DADB_REVISION="\"${REVISION}-android\""
 CPPFLAGS+= -DADB_HOST=1
 CPPFLAGS+= -DHAVE_FORKEXEC=1
 CPPFLAGS+= -DHAVE_SYMLINKS
@@ -68,6 +74,8 @@ CPPFLAGS+= -I${.CURDIR}
 CPPFLAGS+= -I${.CURDIR}/../include
 CPPFLAGS+= -I${.CURDIR}/../base/include
 CPPFLAGS+= ${CPPFLAGS.${.IMPSRC:T}}
+CPPFLAGS+= $$(${PKG_CONFIG} libcrypto --cflags 2>/dev/null)
+CPPFLAGS+= $$(${PKG_CONFIG} libusb-1.0 --cflags 2>/dev/null)
 CXXFLAGS+= -std=gnu++11
 
 .ifndef COMPILE.c
@@ -80,13 +88,26 @@ TEST_CPPFLAGS+= $$(${GTEST_CONFIG} --cppflags)
 CPPFLAGS.${f}+= ${TEST_CPPFLAGS}
 .endfor
 
-LDADD+= -lcrypto -lpthread -lusb -lz
+LDADD+= $$(${PKG_CONFIG} libcrypto --libs 2>/dev/null || echo -lcrypto)
+LDADD+= $$(${PKG_CONFIG} libusb-1.0 --libs 2>/dev/null || echo -lusb)
+LDADD+= -lz \-lpthread
 DPADD+= ${LIBCRYPTO} ${LIBPTHREAD} ${LIBUSB} ${LIBZ}
 TEST_LDADD+= $$(${GTEST_CONFIG} --libs --ldflags)
 
-GTEST_CONFIG?= gtest-config
+TEST_OBJS+= ${TEST_SRCS:R:S/$/.o/}
+CLEANFILES+= ${PROG}_test ${TEST_OBJS}
 
-adb_test: ${SRCS:R:S/$/.o/:Nadb_main.o:Ncommandline.o} ${TEST_SRCS:R:S/$/.o/}
-	${CXX} ${CPPFLAGS} ${CXXFLAGS} ${LDFLAGS} -o $@ $> ${LDADD} ${TEST_LDADD}
+GIT?= git
+GTEST_CONFIG?= gtest-config
+PKG_CONFIG?= pkg-config
+
+beforeinstall:
+	${INSTALL} -d ${DESTDIR}${FILESDIR}
 
 .include <bsd.prog.mk>
+
+test: ${PROG}_test
+	@for f in ${.ALLSRC}; do ./$$f; done
+
+${PROG}_test: ${OBJS:Nadb_main.o:Ncommandline.o} ${TEST_OBJS}
+	${CXX} ${CPPFLAGS} ${CXXFLAGS} ${LDFLAGS} -o $@ $> ${LDADD} ${TEST_LDADD}

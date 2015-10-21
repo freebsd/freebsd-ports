@@ -36,25 +36,28 @@ USES=		compiler:c++11-lib uidfix
 USE_OPENSSL=	yes
 BUILD_WRKSRC=	${WRKSRC}/adb
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
+TEST_WRKSRC=	${BUILD_WRKSRC}
 MAKEFILE=	${FILESDIR}/Makefile
-MAKE_ENV=	BINDIR="${PREFIX}/bin" FILESDIR="${FILESDIR}"
+MAKE_ENV=	BINDIR="${PREFIX}/bin" EXTRADIR="${FILESDIR}" \
+		FILESDIR="${DOCSDIR}" REVISION="${GH_REVISION}"
 ALL_TARGET=	all
-CPPFLAGS+=	-DADB_REVISION='\"${GH_REVISION}-android\"'
+TEST_TARGET=	test
 
 PLIST_FILES=	bin/adb \
 		%%BASH%%etc/bash_completion.d/adb
-PORTDOCS=	*.txt *.TXT
+PORTDOCS=	*
 
 OPTIONS_DEFINE+=BASH DOCS TEST
 OPTIONS_SUB=	yes
 
 BASH_VARS=	LICENSE+=MIT LICENSE_COMB=multi # debian/copyright
 
+DOCS_MAKE_ARGS_OFF=	FILES="" FILESDIR=""
+
 TEST_BUILD_DEPENDS=	googletest>=1.6.0:${PORTSDIR}/devel/googletest
 TEST_ALL_TARGET=	adb_test
 
-pre-install-TEST-on:
-	${BUILD_WRKSRC}/adb_test
+pre-install-TEST-on: do-test
 
 post-patch:
 # XXX C++ exception with description "regex_error" thrown in the test body.
@@ -73,8 +76,6 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PLIST_FILES:M%%BASH%%*:C/%%.*%%//:H}
 	${INSTALL_DATA} ${_DISTDIR}/${DISTFILES:M*\:bashcomp:C/:.*//} \
 		${STAGEDIR}${PREFIX}/${PLIST_FILES:M%%BASH%%*:C/%%.*%%//}
-	(cd ${INSTALL_WRKSRC} && ${COPYTREE_SHARE} \
-		"${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
 
 update-revision:
 # https://developer.github.com/v3/repos/commits/#get-a-single-commit

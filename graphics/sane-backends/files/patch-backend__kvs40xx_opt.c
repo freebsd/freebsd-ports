@@ -1,5 +1,5 @@
---- backend/kvs40xx_opt.c.orig	2012-08-10 09:33:29.000000000 +0900
-+++ backend/kvs40xx_opt.c	2012-08-29 16:57:47.000000000 +0900
+--- backend/kvs40xx_opt.c.orig	2013-08-25 21:22:58 UTC
++++ backend/kvs40xx_opt.c
 @@ -8,6 +8,7 @@
  
  #include "../include/sane/config.h"

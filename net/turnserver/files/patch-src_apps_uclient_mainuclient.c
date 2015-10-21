@@ -1,4 +1,4 @@
---- src/apps/uclient/mainuclient.c.orig	2015-09-27 07:40:25 UTC
+--- src/apps/uclient/mainuclient.c.orig	2015-09-30 07:05:14 UTC
 +++ src/apps/uclient/mainuclient.c
 @@ -483,9 +483,11 @@ int main(int argc, char **argv)
  		  root_tls_ctx[root_tls_ctx_num] = SSL_CTX_new(SSLv23_client_method());

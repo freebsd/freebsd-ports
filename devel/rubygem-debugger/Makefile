@@ -17,6 +17,8 @@ RUN_DEPENDS=	rubygem-columnize>=0.3.1:${PORTSDIR}/devel/rubygem-columnize \
 
 BROKEN_RUBY21=	yes
 BROKEN_RUBY22=	yes
+DEPRECATED=	This port is for Ruby 1.9 only. Upstream stopped maintenance.
+EXPIRATION_DATE=2015-10-31
 
 CONFIGURE_ARGS=	--with-ruby-include=${WRKDIR}/ruby
 USE_RUBY=	yes

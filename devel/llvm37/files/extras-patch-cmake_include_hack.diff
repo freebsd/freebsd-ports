@@ -1,0 +1,184 @@
+--- tools/clang-tools-extra/modularize/CMakeLists.txt.orig	2015-02-19 16:47:27.000000000 +0000
++++ tools/clang-tools-extra/modularize/CMakeLists.txt	2015-10-19 21:42:02.663798333 +0000
+@@ -19,3 +19,8 @@
+   clangLex
+   clangTooling
+   )
++
++include_directories(BEFORE
++  ${CMAKE_CURRENT_BINARY_DIR}/../../clang/include
++  ${CMAKE_CURRENT_SOURCE_DIR}/../../clang/include
++  )
+--- tools/clang-tools-extra/clang-modernize/CMakeLists.txt.orig	2013-10-05 12:15:58.000000000 +0000
++++ tools/clang-tools-extra/clang-modernize/CMakeLists.txt	2015-10-19 21:42:02.663798333 +0000
+@@ -1,5 +1,7 @@
+ include_directories(
+   ${CMAKE_CURRENT_SOURCE_DIR}
++  ${CMAKE_CURRENT_BINARY_DIR}/../../clang/include
++  ${CMAKE_CURRENT_SOURCE_DIR}/../../clang/include
+   ${ClangReplaceLocation}
+   )
+ 
+--- tools/clang-tools-extra/clang-rename/tool/CMakeLists.txt.orig	2015-10-19 21:52:45.481753909 +0000
++++ tools/clang-tools-extra/clang-rename/tool/CMakeLists.txt	2015-10-19 21:53:25.389751045 +0000
+@@ -9,3 +9,8 @@
+   )
+ 
+ install(TARGETS clang-rename RUNTIME DESTINATION bin)
++
++include_directories(BEFORE
++  ${CMAKE_CURRENT_BINARY_DIR}/../../../clang/include
++  ${CMAKE_CURRENT_SOURCE_DIR}/../../../clang/include
++  )
+--- tools/clang-tools-extra/clang-rename/CMakeLists.txt.orig	2015-10-19 21:47:39.461774959 +0000
++++ tools/clang-tools-extra/clang-rename/CMakeLists.txt	2015-10-19 21:52:25.054755454 +0000
+@@ -14,3 +14,8 @@
+   )
+ 
+ add_subdirectory(tool)
++
++include_directories(BEFORE
++  ${CMAKE_CURRENT_BINARY_DIR}/../../clang/include
++  ${CMAKE_CURRENT_SOURCE_DIR}/../../clang/include
++  )
+--- tools/clang-tools-extra/clang-query/tool/CMakeLists.txt.orig	2015-06-20 19:28:07.000000000 +0000
++++ tools/clang-tools-extra/clang-query/tool/CMakeLists.txt	2015-10-19 21:42:02.663798333 +0000
+@@ -10,3 +10,8 @@
+   clangQuery
+   clangTooling
+   )
++
++include_directories(BEFORE
++  ${CMAKE_CURRENT_BINARY_DIR}/../../../clang/include
++  ${CMAKE_CURRENT_SOURCE_DIR}/../../../clang/include
++  )
+--- tools/clang-tools-extra/clang-query/CMakeLists.txt.orig	2014-02-26 06:41:29.000000000 +0000
++++ tools/clang-tools-extra/clang-query/CMakeLists.txt	2015-10-19 21:42:02.663798333 +0000
+@@ -16,3 +16,8 @@
+   )
+ 
+ add_subdirectory(tool)
++
++include_directories(BEFORE
++  ${CMAKE_CURRENT_BINARY_DIR}/../../clang/include
++  ${CMAKE_CURRENT_SOURCE_DIR}/../../clang/include
++  )
+--- tools/clang-tools-extra/clang-apply-replacements/CMakeLists.txt.orig	2014-10-30 03:22:32.000000000 +0000
++++ tools/clang-tools-extra/clang-apply-replacements/CMakeLists.txt	2015-10-19 21:42:02.662798142 +0000
+@@ -15,5 +15,7 @@
+ include_directories(
+   ${CMAKE_CURRENT_SOURCE_DIR}
+   include
++  ${CMAKE_CURRENT_SOURCE_DIR}/../../clang/include
++  ${CMAKE_CURRENT_BINARY_DIR}/../../clang/include
+   )
+ add_subdirectory(tool)
+--- tools/clang-tools-extra/tool-template/CMakeLists.txt.orig	2013-12-10 01:41:10.000000000 +0000
++++ tools/clang-tools-extra/tool-template/CMakeLists.txt	2015-10-19 21:42:02.666798250 +0000
+@@ -13,3 +13,8 @@
+   clangFrontend
+   clangTooling
+   )
++
++include_directories(BEFORE
++  ${CMAKE_CURRENT_BINARY_DIR}/../../clang/include
++  ${CMAKE_CURRENT_SOURCE_DIR}/../../clang/include
++  )
+--- tools/clang-tools-extra/pp-trace/CMakeLists.txt.orig	2013-12-10 01:41:10.000000000 +0000
++++ tools/clang-tools-extra/pp-trace/CMakeLists.txt	2015-10-19 21:42:02.662798142 +0000
+@@ -14,3 +14,8 @@
+   clangLex
+   clangTooling
+   )
++
++include_directories(BEFORE
++  ${CMAKE_CURRENT_BINARY_DIR}/../../clang/include
++  ${CMAKE_CURRENT_SOURCE_DIR}/../../clang/include
++  )
+--- tools/clang-tools-extra/clang-tidy/llvm/CMakeLists.txt.orig	2014-10-26 01:41:14.000000000 +0000
++++ tools/clang-tools-extra/clang-tidy/llvm/CMakeLists.txt	2015-10-19 21:42:02.664798102 +0000
+@@ -16,3 +16,8 @@
+   clangTidyUtils
+   clangTooling
+   )
++
++include_directories(BEFORE
++  ${CMAKE_CURRENT_BINARY_DIR}/../../../clang/include
++  ${CMAKE_CURRENT_SOURCE_DIR}/../../../clang/include
++  )
+--- tools/clang-tools-extra/clang-tidy/misc/CMakeLists.txt.orig	2015-06-17 14:19:35.000000000 +0000
++++ tools/clang-tools-extra/clang-tidy/misc/CMakeLists.txt	2015-10-19 21:42:02.664798102 +0000
+@@ -25,3 +25,8 @@
+   clangLex
+   clangTidy
+   )
++
++include_directories(BEFORE
++  ${CMAKE_CURRENT_BINARY_DIR}/../../../clang/include
++  ${CMAKE_CURRENT_SOURCE_DIR}/../../../clang/include
++  )
+--- tools/clang-tools-extra/clang-tidy/tool/CMakeLists.txt.orig	2015-03-13 03:47:43.000000000 +0000
++++ tools/clang-tools-extra/clang-tidy/tool/CMakeLists.txt	2015-10-19 21:42:02.664798102 +0000
+@@ -20,3 +20,7 @@
+ install(TARGETS clang-tidy
+   RUNTIME DESTINATION bin)
+ 
++include_directories(BEFORE
++  ${CMAKE_CURRENT_BINARY_DIR}/../../../clang/include
++  ${CMAKE_CURRENT_SOURCE_DIR}/../../../clang/include
++  )
+--- tools/clang-tools-extra/clang-tidy/utils/CMakeLists.txt.orig	2014-08-13 13:57:57.000000000 +0000
++++ tools/clang-tools-extra/clang-tidy/utils/CMakeLists.txt	2015-10-19 21:42:02.665798184 +0000
+@@ -10,3 +10,8 @@
+   clangLex
+   clangTidy
+   )
++
++include_directories(BEFORE
++  ${CMAKE_CURRENT_BINARY_DIR}/../../../clang/include
++  ${CMAKE_CURRENT_SOURCE_DIR}/../../../clang/include
++  )
+--- tools/clang-tools-extra/clang-tidy/CMakeLists.txt.orig	2014-10-30 00:44:01.000000000 +0000
++++ tools/clang-tools-extra/clang-tidy/CMakeLists.txt	2015-10-19 21:42:02.665798184 +0000
+@@ -30,3 +30,9 @@
+ add_subdirectory(misc)
+ add_subdirectory(readability)
+ add_subdirectory(utils)
++
++include_directories(BEFORE
++  ${CMAKE_CURRENT_BINARY_DIR}/../../clang
++  ${CMAKE_CURRENT_BINARY_DIR}/../../clang/include
++  ${CMAKE_CURRENT_SOURCE_DIR}/../../clang/include
++  )
+--- tools/clang-tools-extra/clang-tidy/google/CMakeLists.txt.orig	2015-03-16 22:31:16.000000000 +0000
++++ tools/clang-tools-extra/clang-tidy/google/CMakeLists.txt	2015-10-19 21:42:02.664798102 +0000
+@@ -22,3 +22,8 @@
+   clangTidy
+   clangTidyReadabilityModule
+   )
++
++include_directories(BEFORE
++  ${CMAKE_CURRENT_BINARY_DIR}/../../../clang/include
++  ${CMAKE_CURRENT_SOURCE_DIR}/../../../clang/include
++  )
+--- tools/clang-tools-extra/clang-tidy/readability/CMakeLists.txt.orig	2015-04-10 19:26:43.000000000 +0000
++++ tools/clang-tools-extra/clang-tidy/readability/CMakeLists.txt	2015-10-19 21:42:02.665798184 +0000
+@@ -21,3 +21,7 @@
+   clangTidy
+   clangTooling
+   )
++include_directories(BEFORE
++  ${CMAKE_CURRENT_BINARY_DIR}/../../../clang/include
++  ${CMAKE_CURRENT_SOURCE_DIR}/../../../clang/include
++  )
+--- tools/clang-tools-extra/clang-tidy/ClangTidy.cpp.orig	2015-03-11 17:25:22.000000000 +0000
++++ tools/clang-tools-extra/clang-tidy/ClangTidy.cpp	2015-10-19 21:42:02.665798184 +0000
+@@ -59,7 +59,7 @@
+ #define GET_CHECKERS
+ #define CHECKER(FULLNAME, CLASS, DESCFILE, HELPTEXT, GROUPINDEX, HIDDEN)       \
+   FULLNAME,
+-#include "../../../lib/StaticAnalyzer/Checkers/Checkers.inc"
++#include "lib/StaticAnalyzer/Checkers/Checkers.inc"
+ #undef CHECKER
+ #undef GET_CHECKERS
+ };
