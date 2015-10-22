@@ -3688,6 +3688,11 @@ create-users-groups:
 	@${RM} -f ${_UG_OUTPUT} || ${TRUE}
 	@${ECHO_MSG} "===> Creating users and/or groups."
 	@${ECHO_CMD} "echo \"===> Creating users and/or groups.\"" >> ${_UG_OUTPUT}
+.if ${OPSYS} != FreeBSD || ${OSVERSION} < 1002000
+	@${ECHO_CMD} "PW=${PW}" >> ${_UG_OUTPUT}
+.else
+	@${ECHO_CMD} -e "if [ -n \"\$${PKG_ROOTDIR}\" -a \"\$${PKG_ROOTDIR}\" != \"/\" ]; then PW=\"${PW} -R \$${PKG_ROOTDIR}\"; else PW=${PW}; fi" >> ${_UG_OUTPUT}
+.endif
 .for _group in ${GROUPS}
 # _bgpd:*:130:
 	@if ! ${GREP} -h ^${_group}: ${GID_FILES} >/dev/null 2>&1; then \
@@ -3696,9 +3701,9 @@ create-users-groups:
 	fi
 	@IFS=":"; ${GREP} -h ^${_group}: ${GID_FILES} | head -n 1 | while read group foo gid members; do \
 		gid=$$(($$gid+${GID_OFFSET})); \
-		${ECHO_CMD} -e "if ! ${PW} groupshow $$group >/dev/null 2>&1; then \n \
+		${ECHO_CMD} -e "if ! \$${PW} groupshow $$group >/dev/null 2>&1; then \n \
 			echo \"Creating group '$$group' with gid '$$gid'.\" \n \
-			${PW} groupadd $$group -g $$gid; else echo \"Using existing group '$$group'.\"\nfi" >> ${_UG_OUTPUT}; \
+			\$${PW} groupadd $$group -g $$gid; else echo \"Using existing group '$$group'.\"\nfi" >> ${_UG_OUTPUT}; \
 	done
 .endfor
 .endif
@@ -3719,9 +3724,9 @@ create-users-groups:
 		gid=$$(($$gid+${GID_OFFSET})); \
 		class="$${class:+-L }$$class"; \
 		homedir=$$(echo $$homedir | sed "s|^/usr/local|${PREFIX}|"); \
-		${ECHO_CMD} -e "if ! ${PW} usershow $$login >/dev/null 2>&1; then \n \
+		${ECHO_CMD} -e "if ! \$${PW} usershow $$login >/dev/null 2>&1; then \n \
 			echo \"Creating user '$$login' with uid '$$uid'.\" \n \
-			${PW} useradd $$login -u $$uid -g $$gid $$class -c \"$$gecos\" -d $$homedir -s $$shell \n \
+			\$${PW} useradd $$login -u $$uid -g $$gid $$class -c \"$$gecos\" -d $$homedir -s $$shell \n \
 			else \necho \"Using existing user '$$login'.\" \nfi" >> ${_UG_OUTPUT}; \
 		case $$homedir in /|/nonexistent|/var/empty) ;; *) ${ECHO_CMD} "${INSTALL} -d -g $$gid -o $$uid $$homedir" >> ${_UG_OUTPUT};; esac; \
 	done
@@ -3734,9 +3739,9 @@ create-users-groups:
 		IFS=","; for _login in $$members; do \
 			for _user in ${USERS}; do \
 				if [ "x$${_user}" = "x$${_login}" ]; then \
-					${ECHO_CMD} -e "if ! ${PW} groupshow ${_group} | ${GREP} -qw $${_login}; then \n \
+					${ECHO_CMD} -e "if ! \$${PW} groupshow ${_group} | ${GREP} -qw $${_login}; then \n \
 						echo \"Adding user '$${_login}' to group '${_group}'.\" \n \
-						${PW} groupmod ${_group} -m $${_login} \nfi" >> ${_UG_OUTPUT}; \
+						\$${PW} groupmod ${_group} -m $${_login} \nfi" >> ${_UG_OUTPUT}; \
 				fi; \
 			done; \
 		done; \
@@ -3745,10 +3750,19 @@ create-users-groups:
 .endif
 .if defined(USERS)
 .for _user in ${USERS}
+.if ${OPSYS} != FreeBSD || ${OSVERSION} < 1002000
 	@if [ ! ${USERS_BLACKLIST:M${_user}} ]; then \
-		${ECHO_CMD} "@unexec if ${PW} usershow ${_user} >/dev/null 2>&1; then \
-		echo \"==> You should manually remove the \\\"${_user}\\\" user. \"; fi" >> ${TMPPLIST}; \
+		${ECHO_CMD} "@unexec PW=${PW}; \
+			if \$${PW} usershow ${_user} >/dev/null 2>&1; then \
+			echo \"==> You should manually remove the \\\"${_user}\\\" user. \"; fi" >> ${TMPPLIST}; \
 	fi
+.else
+	@if [ ! ${USERS_BLACKLIST:M${_user}} ]; then \
+		${ECHO_CMD} "@unexec if [ -n \"\$${PKG_ROOTDIR}\" -a \"\$${PKG_ROOTDIR}\" != \"/\" ]; then PW=\"${PW} -R \$${PKG_ROOTDIR}\"; else PW=${PW}; fi; \
+			if \$${PW} usershow ${_user} >/dev/null 2>&1; then \
+			echo \"==> You should manually remove the \\\"${_user}\\\" user. \"; fi" >> ${TMPPLIST}; \
+	fi
+.endif
 .endfor
 .endif
 .endif
