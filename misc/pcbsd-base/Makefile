@@ -83,8 +83,7 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		linux_dvbwrapper-kmod>=0:${PORTSDIR}/multimedia/linux_dvbwrapper-kmod \
 		xvkbd:${PORTSDIR}/x11/xvkbd \
 		volman>=0:${PORTSDIR}/sysutils/volman \
-		mplayer:${PORTSDIR}/multimedia/mplayer \
-		smplayer>=0:${PORTSDIR}/multimedia/smplayer \
+		vlc>=0:${PORTSDIR}/multimedia/vlc \
 		fribidi>=0:${PORTSDIR}/converters/fribidi \
 		libdvdcss>=0:${PORTSDIR}/multimedia/libdvdcss \
 		pam_ldap>=0:${PORTSDIR}/security/pam_ldap \
@@ -95,8 +94,6 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		xsane:${PORTSDIR}/graphics/xsane \
 		libaacs>=0:${PORTSDIR}/multimedia/libaacs \
 		xbrightness>=0:${PORTSDIR}/x11/xbrightness \
-		gstreamer-plugins-cdaudio>=0:${PORTSDIR}/audio/gstreamer-plugins-cdaudio \
-		gstreamer-plugins-cdparanoia>=0:${PORTSDIR}/audio/gstreamer-plugins-cdparanoia \
 		x11vnc>=0:${PORTSDIR}/net/x11vnc \
 		ataidle>=0:${PORTSDIR}/sysutils/ataidle \
 		tk84>=0:${PORTSDIR}/x11-toolkits/tk84 \
