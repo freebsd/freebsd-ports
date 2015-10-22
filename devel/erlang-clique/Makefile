@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	clique
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.5
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
