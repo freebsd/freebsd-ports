@@ -2,14 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	ioping
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	sysutils
-MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	olevole@olevole.ru
 COMMENT=	Simple disk I/0 latency measuring tool
 
 LICENSE=	GPLv3
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	koct9i
+GH_TAGNAME=	6e41a3c
 
 PLIST_FILES=	bin/ioping man/man1/ioping.1.gz
 
