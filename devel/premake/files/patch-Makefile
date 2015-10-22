@@ -1,6 +1,6 @@
---- Makefile.old	2009-01-11 15:25:47.000000000 -0200
-+++ Makefile	2009-01-11 15:25:56.000000000 -0200
-@@ -13,9 +13,9 @@
+--- Makefile.orig	2015-10-21 13:41:03 UTC
++++ Makefile
+@@ -13,9 +13,9 @@ export CONFIG
  
  all: Premake
  
