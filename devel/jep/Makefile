@@ -3,14 +3,16 @@
 
 PORTNAME=	jep
 PORTVERSION=	2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel java python
 MASTER_SITES=	SF/${PORTNAME}p/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java Embedded Python
 
-HAS_CONFIGURE=	yes
+LICENSE=	ZLIB
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 CONFIGURE_ENV=	JAVA_HOME=${JAVA_HOME}
 MAKE_ENV=	JAVA_HOME=${JAVA_HOME}
 CONFIGURE_ARGS=	--prefix=${PREFIX} --exec-prefix=${PREFIX}
@@ -21,11 +23,12 @@ USE_LDCONFIG=	yes
 USES=		libtool python
 # Necessary, since the configure script does the LIBS and
 # LDFLAGS detection wrong
-LDFLAGS=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAKE_JOBS_UNSAFE=	yes
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/jep.jar ${STAGEDIR}${JAVAJARDIR}/
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libjep.so
 
 .include <bsd.port.mk>
