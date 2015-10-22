@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	filezilla
-PORTVERSION=	3.14.0
+PORTVERSION=	3.14.1
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/FileZilla_Client/${PORTVERSION}
 DISTNAME=	FileZilla_${PORTVERSION}_src
@@ -20,14 +20,13 @@ LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libidn.so:${PORTSDIR}/dns/libidn \
 		libpugixml.so:${PORTSDIR}/textproc/pugixml
 
-BROKEN_FreeBSD_9= requires C++14 complier, 9.x lacks C++11 standard library
+BROKEN_FreeBSD_9=	requires C++14 complier, 9.x lacks C++11 standard library
 
 INSTALLS_ICONS=	yes
 USES=		compiler:c++14-lang gmake pkgconfig tar:bzip2
 USE_SQLITE=	3
 USE_WX=		3.0
 WX_CONF_ARGS=	relative
-WX_UNICODE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
