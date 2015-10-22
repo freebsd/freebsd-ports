@@ -1,18 +1,17 @@
-Mini_httpd is a small HTTP server. Its performance is not great, but 
-for low or medium traffic sites it's quite adequate. It implements 
-all the basic features of an HTTP server, including: 
+mini_httpd is a small HTTP server.  Its performance is not great, but for
+low or medium traffic sites it's quite adequate.  It implements all the
+basic features of an HTTP server, including:
 
- - GET, HEAD, and POST methods.
- - CGI.
- - Basic authentication.
- - Security against ".." filename snooping.
- - The common MIME types.
- - Trailing-slash redirection.
- - index.html, index.htm, index.cgi
- - Directory listings.
- - Multihoming / virtual hosting.
- - Standard logging.
- - Custom error pages.
+  - GET, HEAD, and POST methods
+  - CGI and basic authentication support
+  - Security against ".." filename snooping
+  - The common MIME types
+  - Trailing-slash redirection
+  - index.html, index.htm, index.cgi
+  - Directory listings
+  - Multihoming (virtual hosting)
+  - Standard logging
+  - Custom error pages
 
 It can also be configured to do SSL/HTTPS and IPv6.
 
