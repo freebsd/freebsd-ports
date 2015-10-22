@@ -9,10 +9,13 @@ MASTER_SITES=	http://zsync.moria.org.uk/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File transfer program
 
-USES=	tar:bzip2
+LICENSE=	ART20
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 
-PORTDOCS=	COPYING INSTALL NEWS README
+PORTDOCS=	INSTALL NEWS README
 PLIST_FILES=	bin/zsync bin/zsyncmake \
 		man/man1/zsync.1.gz man/man1/zsyncmake.1.gz
 
@@ -25,6 +28,8 @@ do-install:
 	${INSTALL_PROGRAM} ${BINS:S,^,${WRKSRC}/,} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${MANPAGE:S,^,${WRKSRC}/doc/,} \
 		${STAGEDIR}${MANPREFIX}/man/man1
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
