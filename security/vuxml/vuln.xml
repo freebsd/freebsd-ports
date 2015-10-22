@@ -58,6 +58,80 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c4a18a12-77fc-11e5-a687-206a8a720317">
+    <topic>ntp -- 13 low- and medium-severity vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ntp</name>
+	<range><lt>4.2.8p4</lt></range>
+      </package>
+      <package>
+	<name>ntp-devel</name>
+	<range><lt>4.3.76</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ntp.org reports:</p>
+	<blockquote cite="http://support.ntp.org/bin/view/Main/SecurityNotice#Recent_Vulnerabilities">
+	  <p>NTF's NTP Project has been notified of the following 13 low-
+	     and medium-severity vulnerabilities that are fixed in
+	     ntp-4.2.8p4, released on Wednesday, 21 October 2015:</p>
+	  <ul>
+	    <li>Bug 2941 CVE-2015-7871 NAK to the Future: Symmetric
+		association authentication bypass via crypto-NAK
+		(Cisco ASIG)</li>
+	    <li>Bug 2922 CVE-2015-7855 decodenetnum() will ASSERT botch
+		instead of returning FAIL on some bogus values (IDA)</li>
+	    <li>Bug 2921 CVE-2015-7854 Password Length Memory Corruption
+		Vulnerability. (Cisco TALOS)</li>
+	    <li>Bug 2920 CVE-2015-7853 Invalid length data provided by a
+		custom refclock driver could cause a buffer overflow.
+		(Cisco TALOS)</li>
+	    <li>Bug 2919 CVE-2015-7852 ntpq atoascii() Memory Corruption
+		Vulnerability. (Cisco TALOS)</li>
+	    <li>Bug 2918 CVE-2015-7851 saveconfig Directory Traversal
+		Vulnerability. (OpenVMS) (Cisco TALOS)</li>
+	    <li>Bug 2917 CVE-2015-7850 remote config logfile-keyfile.
+		(Cisco TALOS)</li>
+	    <li>Bug 2916 CVE-2015-7849 trusted key use-after-free.
+		(Cisco TALOS)</li>
+	    <li>Bug 2913 CVE-2015-7848 mode 7 loop counter underrun.
+		(Cisco TALOS)</li>
+	    <li>Bug 2909 CVE-2015-7701 Slow memory leak in CRYPTO_ASSOC.
+		(Tenable)</li>
+	    <li>Bug 2902 : CVE-2015-7703 configuration directives "pidfile"
+		and "driftfile" should only be allowed locally. (RedHat)</li>
+	    <li>Bug 2901 : CVE-2015-7704, CVE-2015-7705 Clients that
+		receive a KoD should validate the origin timestamp field.
+		(Boston University)</li>
+	    <li>Bug 2899 : CVE-2015-7691, CVE-2015-7692, CVE-2015-7702
+		Incomplete autokey data packet length checks. (Tenable)</li>
+	  </ul>
+	  <p>The only generally-exploitable bug in the above list is the
+	     crypto-NAK bug, which has a CVSS2 score of 6.4.</p>
+	  <p>Additionally, three bugs that have already been fixed in
+	     ntp-4.2.8 but were not fixed in ntp-4.2.6 as it was EOL'd
+	     have a security component, but are all below 1.8 CVSS score,
+	     so we're reporting them here:</p>
+	  <ul>
+	    <li>Bug 2382 : Peer precision &lt; -31 gives division by zero</li>
+	    <li>Bug 1774 : Segfaults if cryptostats enabled when built
+		without OpenSSL</li>
+	    <li>Bug 1593 : ntpd abort in free() with logconfig syntax error</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://support.ntp.org/bin/view/Main/SecurityNotice#Recent_Vulnerabilities</url>
+    </references>
+    <dates>
+      <discovery>2015-10-21</discovery>
+      <entry>2015-10-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="95602550-76cf-11e5-a2a1-002590263bf5">
     <topic>codeigniter -- multiple XSS vulnerabilities</topic>
     <affects>
