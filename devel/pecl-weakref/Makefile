@@ -13,6 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PECL Weakref extension
 
 LICENSE=	PHP301
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		tar:tgz
 USE_PHP=	yes
