@@ -51,7 +51,7 @@ X509ALTUSERNAME_PREVENTS_MSG=	OpenVPN ${DISTVERSION} cannot use --x509-username-
 
 POLARSSL_LIB_DEPENDS=		libpolarssl.so:${PORTSDIR}/security/polarssl
 POLARSSL_CONFIGURE_ON=	--with-crypto-library=polarssl
-POLARSSL_USE=		openssl=yes
+POLARSSL_USE_OFF=		openssl=yes
 POLARSSL_CONFIGURE_OFF=	--with-crypto-library=openssl
 
 USE_RC_SUBR=		openvpn
