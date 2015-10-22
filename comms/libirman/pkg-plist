@@ -5,3 +5,4 @@ lib/libirman.a
 lib/libirman.so
 lib/libirman.so.0
 lib/libirman.so.0.0.0
+libdata/pkgconfig/libirman.pc
