@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_SessionHandler
-PORTVERSION=	2.2.4
+PORTVERSION=	2.2.5
 CATEGORIES=	www pear
 
 MAINTAINER=	horde@FreeBSD.org
