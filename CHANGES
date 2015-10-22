@@ -10,6 +10,21 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20151022:
+AUTHOR: amdmi3@FreeBSD.org
+
+  Improved support for USES=shebangfix
+
+  - We now support multiple values for *_OLD_CMD
+  - We replace more variants by default (/bin/${lang}, /usr/bin/${lang},
+    /usr/bin/env ${lang}).
+  - shebangfix now also supports lua if USES=lua is specified
+  - Pattern matching has been improved: we now only match whole worlds,
+    e.g. "/usr/bin/perl5.005" is no longer erroneously replaced with
+    "${perl_CMD}5.005".
+
+  Note that *_OLD_CMD entries which contain spaces must now be quoted.
+
 20150928:
 AUTHOR: amdmi3@FreeBSD.org
 
