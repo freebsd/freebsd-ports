@@ -10,29 +10,28 @@ MASTER_SITES=	http://netmon.grnet.gr/weathermap/dist/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	This tool displays the utilization of the network links
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
 RUN_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
 		mrtg:${PORTSDIR}/net-mgmt/mrtg
 
 USES=		perl5 shebangfix
 NO_BUILD=	yes
+NO_ARCH=	yes
 SHEBANG_FILES=	weathermap
 
-OPTIONS_DEFINE=	WGET DOCS EXAMPLES
-WGET_DESC=	WGET support
-
-PORTDOCS=	README LICENSE INSTALL
+PORTDOCS=	README INSTALL
 
 CONFIGURE_ARGS=	--with-gd-lib=${LOCALBASE}/lib \
 		--with-gd-inc=${LOCALBASE}/include
 
 SUB_FILES=	pkg-message
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MWGET}
-RUN_DEPENDS+=	wget:${PORTSDIR}/ftp/wget
-.endif
+OPTIONS_DEFINE=	WGET DOCS EXAMPLES
+WGET_DESC=	WGET support
+WGET_RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' \
@@ -41,13 +40,15 @@ post-patch:
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/weathermap ${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
-	@${INSTALL_DATA} ${WRKSRC}/example/* ${STAGEDIR}${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/example/weathermap.conf ${STAGEDIR}${ETCDIR}/weathermap.conf.sample
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/example/* ${STAGEDIR}${EXAMPLESDIR}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
