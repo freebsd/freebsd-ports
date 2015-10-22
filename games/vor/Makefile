@@ -11,6 +11,9 @@ MASTER_SITES=	http://qualdan.com/vor/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Dodge the rocks until you die
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		tar:bzip2 gmake
 USE_SDL=	mixer image sdl
 GNU_CONFIGURE=	yes
@@ -30,8 +33,10 @@ DESKTOP_ENTRIES="Variations on Rockdodger" \
 OPTIONS_DEFINE=	DOCS
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
