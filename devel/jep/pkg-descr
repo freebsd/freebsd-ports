@@ -1,4 +1,4 @@
 Jep embeds CPython in Java. It is safe to use in a heavily threaded
 environment, it is quite fast and its stability is a main feature and goal.
 
-WWW:	http://jepp.sourceforge.net
+WWW: http://jepp.sourceforge.net/
