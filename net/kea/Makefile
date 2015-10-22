@@ -42,11 +42,11 @@ DOCS_INSTALL_TARGET_OFF= \
 		install-pkgconfigDATA \
 		install-pkgincludeHEADERS
 MYSQL_USE=	MYSQL=client
-MYSQL_CONFIGURE_ARGS=		--with-dhcp-mysql=${LOCALBASE}/bin
-MYSQL_CONFIGURE_ARGS_OFF=	--without-dhcp-mysql
+MYSQL_CONFIGURE_ON=	--with-dhcp-mysql=${LOCALBASE}/bin/mysql_config
+MYSQL_CONFIGURE_OFF=	--without-dhcp-mysql
 PGSQL_USES=	pgsql
 WANT_PGSQL=	client
-PGSQL_CONFIGURE_ARGS=		--with-dhcp-pgsql=${LOCALBASE}/bin
-PGSQL_CONFIGURE_ARGS_OFF=	--without-dhcp-pgsql
+PGSQL_CONFIGURE_ON=	--with-dhcp-pgsql=${LOCALBASE}/bin/pg_config
+PGSQL_CONFIGURE_OFF=	--without-dhcp-pgsql
 
 .include <bsd.port.mk>
