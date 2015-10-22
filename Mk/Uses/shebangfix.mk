@@ -13,6 +13,11 @@
 #
 #   SHEBANG_FILES=	path1/file path2/*.pl
 #
+# To define custom shebangs to replace, use the following (note that
+# shebangs with spaces should be quoted):
+#
+#   perl_OLD_CMD=	/usr/bin/perl5.005 "/usr/bin/setenv perl5.005"
+#
 # To define a new shebang scheme add the following to the port Makefile:
 #
 #   SHEBANG_LANG=	lua
@@ -36,8 +41,11 @@ SHEBANG_LANG+=	lua
 lua_CMD?=	${LOCALBASE}/bin/${LUA_CMD}
 .endif
 
-tcl_CMD?=      ${TCLSH}
-tk_CMD?=       ${WISH}
+tcl_OLD_CMD+=	/usr/bin/tclsh
+tcl_CMD?=	${TCLSH}
+
+tk_OLD_CMD+=	/usr/bin/wish
+tk_CMD?=	${WISH}
 
 .if ${USES:Mpython*}
 python_CMD?=	${PYTHON_CMD}
