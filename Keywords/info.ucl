@@ -8,12 +8,12 @@ post-install: <<EOD
   /*) file="%@" ;;
    *) file="%D/%@" ;;
   esac
-  indexinfo ${file%/*}
+  indexinfo ${PKG_ROOTDIR}${file%/*}
 EOD
 post-deinstall: <<EOD
   case "%@" in
   /*) file="%@" ;;
    *) file="%D/%@" ;;
   esac
-  indexinfo ${file%/*}
+  indexinfo ${PKG_ROOTDIR}${file%/*}
 EOD
