@@ -1,0 +1,8 @@
+wmx is another window manager for X.  It is based on wm2 and provides
+a similarly unusual style of window decoration; but in place of wm2's
+minimal functionality, it offers many of the features of more
+conventional managers, often in the most simplistic implementations
+imaginable.  wmx is, however, still not configurable except by editing
+the source and recompiling the code.
+
+WWW: http://www.all-day-breakfast.com/wmx/
