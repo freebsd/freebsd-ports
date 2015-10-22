@@ -12,13 +12,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU All Mobile Management Utilities
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog
 
 CONFLICTS=	gammu-devel-[1-9]* gammu-python-[1-9]*
-
-OPTIONS_DEFINE=	BASH
 
 CMAKE_ARGS+=	-DINSTALL_LIBDATA_DIR=${LOCALBASE}/libdata
 
@@ -30,6 +29,13 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	BASH
+
+BASH_BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BASH_RUN_DEPENDS=	${BASH_BUILD_DEPENDS}
+BASH_PLIST_FILES=	etc/bash_completion.d/gammu
+BASH_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-contrib_CMakeLists.txt
+
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's:/etc/bash_completion.d:${PREFIX}/etc/bash_completion.d:' \
 		${WRKSRC}/contrib/CMakeLists.txt
@@ -40,10 +46,5 @@ post-install:
 		-d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;} && \
 	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
 		-d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
-
-BASH_BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-BASH_RUN_DEPENDS=	${BASH_BUILD_DEPENDS}
-BASH_PLIST_FILES=	etc/bash_completion.d/gammu
-BASH_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-contrib_CMakeLists.txt
 
 .include <bsd.port.mk>
