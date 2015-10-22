@@ -1,5 +1,5 @@
---- setup.py.orig	2011-09-15 13:09:48.000000000 +0400
-+++ setup.py	2011-09-16 00:51:39.020550442 +0400
+--- setup.py.orig	2011-09-15 09:09:48 UTC
++++ setup.py
 @@ -346,16 +346,16 @@ data_files.append((os.path.join('share',
      'icon/wammu.ico',
      'icon/wammu.svg',
