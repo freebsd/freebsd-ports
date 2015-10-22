@@ -13,7 +13,7 @@ all: ${F}.pcf.gz
 .endfor
 
 .for F in ${SRCS:R}
-${DESTDIR}%%DATADIR%%/${F}.pcf.gz: ${F}.bdf
+${DESTDIR}%%DATADIR%%/${F}.pcf.gz: ${F}.pcf.gz
 	mkdir -p ${DESTDIR}%%DATADIR%%
 	${BSD_INSTALL_DATA} ${.ALLSRC} ${.TARGET}
 
