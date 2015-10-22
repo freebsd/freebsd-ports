@@ -1,0 +1,29 @@
+--- Makefile.webui.orig	2015-09-25 13:57:59 UTC
++++ Makefile.webui
+@@ -153,22 +153,22 @@ define GO_JS
+ 	$(VV)$(CSS_PY) --in="$^" utf-check
+ 	$(VV)cat $^ > $@.tmp
+ 	$(VV)$(RUN_JS) < $@.tmp > $@.tmp2
+-	@stat --printf="%-35n %7s\n" $@.tmp $@.tmp2
++	@stat -f "%-35N %7b" $@.tmp $@.tmp2
+ 	$(VV)$(GZIPCMD) -c $@.tmp2 > $@.tmp
+ 	@rm $@.tmp2
+ 	@mv $@.tmp $@
+-	@stat --printf="%-35n %7s\n" $@
++	@stat -f "%-35N %7b" $@
+ endef
+ 
+ define GO_CSS
+ 	$(VV)$(CSS_PY) --in="$^" utf-check
+ 	$(VV)$(CSS_PY) --in="$^" > $@.tmp
+ 	$(VV)$(RUN_CSS) < $@.tmp > $@.tmp2
+-	@stat --printf="%-35n %7s\n" $@.tmp $@.tmp2
++	@stat -f "%-35N %7b" $@.tmp $@.tmp2
+ 	$(VV)$(GZIPCMD) -c $@.tmp2 > $@.tmp
+ 	@rm $@.tmp2
+ 	@mv $@.tmp $@
+-	@stat --printf="%-35n %7s\n" $@
++	@stat -f "%-35N %7b" $@
+ endef
+ 
+ all:
