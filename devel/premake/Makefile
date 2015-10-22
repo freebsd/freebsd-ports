@@ -11,17 +11,20 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Build script creation tool
 
-OPTIONS_DEFINE=	DOCS
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 WRKSRC=		${WRKDIR}/Premake-${PORTVERSION}
 
-USES=		gmake dos2unix zip
+USES=		dos2unix gmake zip
 
 PLIST_FILES=	bin/premake
 
-PORTDOCS=	CHANGES.txt LICENSE.txt README.txt
+PORTDOCS=	CHANGES.txt README.txt
 
 MAKE_JOBS_UNSAFE=	yes
+
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
