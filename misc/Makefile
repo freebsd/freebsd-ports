@@ -442,6 +442,7 @@
     SUBDIR += tpp
     SUBDIR += translate
     SUBDIR += ttyrec
+    SUBDIR += tudu
     SUBDIR += tvbrowser
     SUBDIR += typetrainer
     SUBDIR += uk-phone
