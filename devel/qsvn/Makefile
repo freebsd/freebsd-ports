@@ -7,10 +7,14 @@ PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.anrichter.net/projects/qsvn/chrome/site/
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt based GUI frontend for Subversion
 
 LIB_DEPENDS=	libsvn_client-1.so:${PORTSDIR}/devel/subversion
+
+IGNORE=		does not support Subversion 1.9
+DEPRECATED=	Development discontinued since 2009
+EXPIRATION_DATE=	2015-11-23
 
 USE_QT4=	gui sql moc_build uic_build rcc_build qmake_build
 USE_LDCONFIG=	yes
