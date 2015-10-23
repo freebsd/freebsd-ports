@@ -1,5 +1,3 @@
-@owner root
-@group wheel
 @sample etc/vtund.conf.sample
 sbin/vtund
 man/man5/vtund.conf.5.gz
@@ -14,7 +12,6 @@ man/man1/vtun.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.Setup
 %%PORTDOCS%%%%DOCSDIR%%/README.Shaper
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rm -rf "/var/log/vtund"
 @unexec rm -rf "/var/lock/vtund"
 @unexec rmdir "/var/lock/vtund" >/dev/null 2>&1 || :
