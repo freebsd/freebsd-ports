@@ -1,0 +1,6 @@
+#!/bin/sh
+PDNSDB=/var/db/pdnsd
+
+if [ "$2" = "DEINSTALL" ] ; then
+	rm -f ${PDNSDB}/pdnsd.cache
+fi
