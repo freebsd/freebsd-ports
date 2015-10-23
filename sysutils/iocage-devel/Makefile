@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	iocage
-PORTVERSION=	20151021
+PORTVERSION=	20151022
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	kmoore@freebsd.org
+MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	Full featured, no dependency Jail container manager - devel build
 
 LICENSE=	BSD2CLAUSE
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	iocage
-GH_TAGNAME=	4de44ffd6e047128bcf206af269a6ff6e70f56a9
+GH_TAGNAME=	d7b3ff14f4a6c38fefbd9c52f93b86b7425b1a42
 
 NO_BUILD=	yes
 NO_ARCH=	yes
