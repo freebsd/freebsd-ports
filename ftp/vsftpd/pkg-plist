@@ -8,9 +8,7 @@ etc/vsftpd.conf.dist
 @exec if [ ! -f %B/vsftpd.conf ]; then cp %B/vsftpd.conf.dist %B/vsftpd.conf; fi
 @unexec rmdir /var/ftp 2>/dev/null || true
 @exec if [ ! -d /var/ftp ]; then mkdir /var/ftp ; fi
-@exec mkdir -p %D/share/vsftpd/empty
-@dirrm share/vsftpd/empty
-@dirrm share/vsftpd
+@dir %%DATADIR%%/empty
 %%PORTDOCS%%%%DOCSDIR%%/AUDIT
 %%PORTDOCS%%%%DOCSDIR%%/BENCHMARKS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
@@ -45,12 +43,3 @@ etc/vsftpd.conf.dist
 %%PORTDOCS%%%%DOCSDIR%%/SPEED
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/TUNING
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/EXAMPLE/INTERNET_SITE
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/EXAMPLE/INTERNET_SITE_NOINETD
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/EXAMPLE/PER_IP_CONFIG
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/EXAMPLE/VIRTUAL_HOSTS
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/EXAMPLE/VIRTUAL_USERS
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/EXAMPLE/VIRTUAL_USERS_2
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/EXAMPLE
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/SECURITY
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
