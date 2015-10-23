@@ -177,11 +177,28 @@ Notes:
       </body>
     </description>
     <references>
+      <cvename>CVE-2015-7691</cvename>
+      <cvename>CVE-2015-7692</cvename>
+      <cvename>CVE-2015-7701</cvename>
+      <cvename>CVE-2015-7702</cvename>
+      <cvename>CVE-2015-7703</cvename>
+      <cvename>CVE-2015-7704</cvename>
+      <cvename>CVE-2015-7705</cvename>
+      <cvename>CVE-2015-7848</cvename>
+      <cvename>CVE-2015-7849</cvename>
+      <cvename>CVE-2015-7850</cvename>
+      <cvename>CVE-2015-7851</cvename>
+      <cvename>CVE-2015-7852</cvename>
+      <cvename>CVE-2015-7853</cvename>
+      <cvename>CVE-2015-7854</cvename>
+      <cvename>CVE-2015-7855</cvename>
+      <cvename>CVE-2015-7871</cvename>
       <url>http://support.ntp.org/bin/view/Main/SecurityNotice#Recent_Vulnerabilities</url>
     </references>
     <dates>
       <discovery>2015-10-21</discovery>
       <entry>2015-10-21</entry>
+      <modified>2015-10-23</modified>
     </dates>
   </vuln>
 
