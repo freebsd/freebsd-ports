@@ -58,6 +58,38 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="08d11134-79c5-11e5-8987-6805ca0b3d42">
+    <topic>phpMyAdmin -- Content spoofing vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><ge>4.4.0</ge><lt>4.4.15.1</lt></range>
+	<range><ge>4.5.0</ge><lt>4.5.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="https://www.phpmyadmin.net/security/PMASA-2015-5/">
+	  <p>This vulnerability allows an attacker to perform a
+	    content spoofing attack using the phpMyAdmin's redirection
+	    mechanism to external sites.</p>
+	  <p>We consider this vulnerability to be non critical since
+	    the spoofed content is escaped and no HTML injection is
+	    possible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.phpmyadmin.net/security/PMASA-2015-5/</url>
+      <cvename>CVE-2015-7873</cvename>
+    </references>
+    <dates>
+      <discovery>2015-10-23</discovery>
+      <entry>2015-10-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b973a763-7936-11e5-a2a1-002590263bf5">
     <topic>mediawiki -- multiple vulnerabilities</topic>
     <affects>
