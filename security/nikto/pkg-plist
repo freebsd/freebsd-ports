@@ -69,8 +69,3 @@ man/man1/nikto.1.gz
 %%DATADIR%%/templates/xml_host_item.tmpl
 %%DATADIR%%/templates/xml_start.tmpl
 %%DATADIR%%/templates/xml_summary.tmpl
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/databases
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
