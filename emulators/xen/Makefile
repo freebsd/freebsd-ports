@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xen
-PORTVERSION=	4.5.0
+PORTVERSION=	4.5.1
 CATEGORIES=	emulators
 
 MAINTAINER=	bapt@FreeBSD.org
