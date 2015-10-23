@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lumina
-PORTVERSION=	20151022
+PORTVERSION=	20151023
 CATEGORIES=	x11
 PKGNAMESUFFIX=	-devel
 
@@ -30,9 +30,7 @@ PCBSD_DESC=	Use the PC-BSD system interface settings.
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMULTIMEDIA}
-RUN_DEPENDS+=	gstreamer-plugins-core>=0:${PORTSDIR}/multimedia/gstreamer-plugins-core \
-		gstreamer-plugins-ogg>=0:${PORTSDIR}/audio/gstreamer-plugins-ogg \
-		gstreamer-plugins-vorbis>=0:${PORTSDIR}/audio/gstreamer-plugins-vorbis
+RUN_DEPENDS+=	gstreamer-plugins-core>=0:${PORTSDIR}/multimedia/gstreamer-plugins-core
 .endif
 
 MAKE_JOBS_UNSAFE=yes
@@ -45,7 +43,7 @@ USE_QT5=	core gui network quick svg linguist multimedia imageformats \
 USES=		desktop-file-utils qmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	pcbsd
-GH_TAGNAME=	fcf66df0e54609831b6a3b75264feafbe6414753
+GH_TAGNAME=	cf2a7f7b483bfb083a6c067125b8798e9e3088aa
 
 #Setup the qmake configuration options
 .if {PORT_OPTIONS:MPCBSD}
