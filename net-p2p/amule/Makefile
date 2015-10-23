@@ -3,26 +3,25 @@
 
 PORTNAME=	amule
 PORTVERSION=	2.3.1
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/aMule/${PORTVERSION}
 DISTNAME=	aMule-${PORTVERSION}
 
 MAINTAINER=	bar@FreeBSD.org
-COMMENT=	The all-platform eMule p2p client
+COMMENT=	All-platform eMule p2p client
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libcryptopp.a:${PORTSDIR}/security/cryptopp
+LIB_DEPENDS=	libcryptopp.so:${PORTSDIR}/security/cryptopp
 
 CONFLICTS=	amule-devel-[0-9]*
 
-USES=		bison gmake pkgconfig perl5 shebangfix tar:bzip2 \
-		desktop-file-utils
+USES=		bison desktop-file-utils gmake perl5 pkgconfig shebangfix \
+		tar:bzip2
 USE_PERL5=	build
 USE_WX=		2.8
-WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-denoise-level=0
