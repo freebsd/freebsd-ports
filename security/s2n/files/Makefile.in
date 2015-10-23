@@ -1,0 +1,5 @@
+CFLAGS+=	-I%%PREFIX%%/include
+LDFLAGS+=	-L%%PREFIX%%/lib -ls2n -lcrypto
+all:
+	${CC} -o s2nd echo.c s2nd.c ${CFLAGS} ${LDFLAGS}
+	${CC} -o s2nc echo.c s2nc.c ${CFLAGS} ${LDFLAGS}
