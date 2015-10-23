@@ -10,11 +10,13 @@ lib/libbroccoli.so.5.1.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/_broccoli_intern.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/broccoli.py
 %%PYTHON%%@unexec rm -f %D/%%PYTHON_SITELIBDIR%%/broccoli.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/broccoli_intern.py
+%%PYTHON%%@unexec rm -f %D/%%PYTHON_SITELIBDIR%%/broccoli_intern.pyc
 %%RUBY%%%%RUBY_SITELIBDIR%%/Broccoli/connection.rb
 %%RUBY%%%%RUBY_SITELIBDIR%%/Broccoli/event.rb
 %%RUBY%%%%RUBY_SITELIBDIR%%/Broccoli/record.rb
-%%RUBY%%%%RUBY_SITEARCHLIBDIR%%/broccoli_ext.so
 %%RUBY%%%%RUBY_SITELIBDIR%%/broccoli.rb
+%%RUBY%%%%RUBY_SITEARCHLIBDIR%%/broccoli_ext.so
 %%CLEANUP_PREFIX%%@dir share
 %%CLEANUP_PREFIX%%@dir lib
 %%CLEANUP_PREFIX%%@dir include
