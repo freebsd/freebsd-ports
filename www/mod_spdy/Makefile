@@ -27,7 +27,7 @@ BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
 ONLY_FOR_ARCHS=	amd64 i386
 USE_OPENSSL=	yes
 USE_APACHE=	22
-USES=		gmake python:2 tar:xz
+USES=		compiler execinfo gmake python:2 tar:xz
 REINPLACE_ARGS=	-i ""
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_source_${PORTVERSION}/mod_spdy/src
@@ -65,10 +65,6 @@ CXX=		clang++
 GYP_DEFINES+=	clang=1
 .endif
 
-.if ${OSVERSION} < 1000052
-LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
-.endif
-
 .if ${PORT_OPTIONS:MDEBUG}
 MAKE_ENV+=	V=1
 BUILDTYPE=	Debug
@@ -89,6 +85,10 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" \
 MAKE_ENV+=	BUILDTYPE=${BUILDTYPE}
 
 .include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 36
+CXXFLAGS+=	-Wno-unused-local-typedef
+.endif
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/temp/progress
@@ -123,8 +123,8 @@ do-configure:
 		../../depot_tools/gclient.py runhooks
 
 pre-build:
-	cd ${WRKSRC} && CONFIGURE_ENV='${CONFIGURE_ENV}' BUILDROOT=${WRKSRC}/temp \
-		${WRKSRC}/build_modssl_with_npn.sh
+	cd ${WRKSRC} && CONFIGURE_ENV='${CONFIGURE_ENV}' \
+		BUILDROOT=${WRKSRC}/temp ${WRKSRC}/build_modssl_with_npn.sh
 
 do-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/${APACHEMODDIR} \
