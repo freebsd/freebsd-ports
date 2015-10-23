@@ -1,11 +1,8 @@
-# New ports collection makefile for:	pcbsd-base
-# Date created:				01 Feb 2013
-# Whom:					Kris Moore <kmoore@FreeBSD.org>
-#
+# Kris Moore <kmoore@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	pcbsd-base
-PORTVERSION=	1425064224
+PORTVERSION=	20151023
 CATEGORIES=	misc
 MASTER_SITES=
 DISTFILES=
