@@ -26,7 +26,7 @@ stop_cmd="hiveserver2_stop"
 command="%%PREFIX%%/hive/bin/hive"
 
 hiveserver2_start() {
-  su -m %%HIVE_USER%% -c "HADOOP_OPTS=\"-Dhive.log.dir=%%HIVE_LOGDIR%% -Dhive.log.file=metastore.log -Dhive.log.threshold=INFO\" $command --service $name > %%HIVE_LOGDIR%%/$name.out 2>&1 < /dev/null & "' echo $! '"> $pidfile"
+  su -m %%HIVE_USER%% -c "HADOOP_OPTS=\"-Dhive.log.dir=%%HIVE_LOGDIR%% -Dhive.log.file=hiveserver2.log -Dhive.log.threshold=INFO\" $command --service $name > %%HIVE_LOGDIR%%/$name.out 2>&1 < /dev/null & "' echo $! '"> $pidfile"
 }
 
 hiveserver2_stop() {
