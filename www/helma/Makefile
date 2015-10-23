@@ -24,6 +24,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_ANT=	yes
 ALL_TARGET=	clean jar
+NO_ARCH=	yes
 
 DBDIR?=		/var/db/${PORTNAME}
 LOGDIR?=	/var/log/${PORTNAME}
@@ -41,8 +42,6 @@ OPTIONS_SUB=	yes
 OPTIONS_DESC=	Install MySQL Connector for Java
 
 MYSQL_RUN_DEPENDS=	${JAVALIBDIR}/mysql-connector-java.jar:${PORTSDIR}/databases/mysql-connector-java
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|JAVA_HOME=/usr/lib/j2sdk1.5-sun|JAVA_HOME=${JAVA_HOME}|' \
@@ -80,34 +79,29 @@ do-install:
 
 	${MKDIR} ${STAGEDIR}${WWWDIR} && \
 	(cd ${WRKBASE} && ${COPYTREE_SHARE} "apps modules" ${STAGEDIR}${WWWDIR} \
-		"! -name *.html ! -name helma-*.jar ! -name .jsdoc") && \
-	${CHOWN} -R ${HELMA_USER}:${HELMA_GROUP} ${STAGEDIR}${WWWDIR}
+		"! -name *.html ! -name helma-*.jar ! -name .jsdoc")
 
 	${MKDIR} ${STAGEDIR}${DATADIR} && \
 	(cd ${WRKBASE} && ${COPYTREE_SHARE} "lib launcher.jar" ${STAGEDIR}${DATADIR} \
 		"! -name *.html ! -name helma-*.jar ! -name .jsdoc")
 
-	${MKDIR} ${STAGEDIR}${LOGDIR} && \
-	${CHOWN} -R ${HELMA_USER}:${HELMA_GROUP} ${STAGEDIR}${LOGDIR}
+	${MKDIR} ${STAGEDIR}${LOGDIR}
 
-	${MKDIR} ${STAGEDIR}${DBDIR} && \
-	${CHOWN} -R ${HELMA_USER}:${HELMA_GROUP} ${STAGEDIR}${DBDIR}
+	${MKDIR} ${STAGEDIR}${DBDIR}
 
 	${MKDIR} ${STAGEDIR}${ETCDIR}; \
 	for f in apps.properties db.properties server.properties scripts/helma.conf; do \
 		${INSTALL_DATA} ${WRKBASE}/$$f ${STAGEDIR}${ETCDIR}/$${f##*/}.sample; \
 	done
 
-.if ${PORT_OPTIONS:MDOCS}
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR} && \
 	(cd ${WRKBASE} && ${COPYTREE_SHARE} "licenses license.txt README.txt" ${STAGEDIR}${DOCSDIR})
 
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/docs/api/jala && \
 	(cd ${WRKBASE}/modules/jala/docs && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}/docs/api/jala)
-.endif
 
-.if ${PORT_OPTIONS:MMYSQL}
+do-install-MYSQL-on:
 	${LN} -sf ${JAVALIBDIR}/mysql-connector-java.jar ${STAGEDIR}${DATADIR}/lib/ext/mysql-connector-java.jar
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
