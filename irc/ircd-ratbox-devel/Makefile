@@ -3,7 +3,7 @@
 
 PORTNAME=	ircd-ratbox
 PORTVERSION=	3.0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://www.ratbox.org/download/				\
 		http://www.ratbox.org/download/old/
@@ -17,7 +17,6 @@ LICENSE=	GPLv2
 CONFLICTS=	ircd-ratbox-[0-9]* charybdis-[0-9]*
 
 USES=		libtool perl5 tar:bzip2
-#MAN8=		ircd.8
 USE_RC_SUBR=	ircd-ratbox
 USE_SQLITE=	3
 USE_PERL5=	build
@@ -29,7 +28,7 @@ GROUPS=		${USERS}
 LOGDIR?=	/var/log/${PORTNAME}
 RUNDIR?=	/var/run/${PORTNAME}
 DBDIR?=		/var/db/${PORTNAME}
-SUB_FILES=	pkg-message pkg-install
+SUB_FILES=	pkg-message
 PLIST_SUB=	LOGDIR=${LOGDIR} RUNDIR=${RUNDIR} DBDIR=${DBDIR}
 SUB_LIST=	LOGDIR=${LOGDIR} RUNDIR=${RUNDIR} DBDIR=${DBDIR}
 
