@@ -17,6 +17,7 @@ PORTDOCS=	README.md
 CONFLICTS=	cakephp-1?-* cakephp-2[12]-.*
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 USES=		gettext
 USE_PHP=	ctype session
 WANT_PHP_WEB=	yes
@@ -81,7 +82,8 @@ CONF=		cakephp-${PROD}${CGI_EXT}.conf
 SUB_FILES+=	${CONF}
 
 PLIST_SUB+=	CONFDIR=${CONFDIR_REL} ECHO_MSG=${ECHO_MSG} \
-		HTACCESS=${HTACCESS} APDEP=${APDEP}
+		HTACCESS=${HTACCESS} APDEP=${APDEP} \
+		WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 .if ${PORT_OPTIONS:MMYSQL}
 USE_PHP+=	pdo pdo_mysql
@@ -145,26 +147,16 @@ do-install:
 # as noted by:
 # http://book.cakephp.org/view/42/The-Configuration-Class#CakePHP-Core-Configuration-Variables-44
 	@${FIND} ${STAGEDIR}${WWWDIR} -type f -name .htaccess -exec ${RM} {} \;
-	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR:S|^${PREFIX}/|%D/|} -type f -name .htaccess -exec ${RM} {} \;' >> ${TMPPLIST}
 .endif
 
 # Get rid of the empty placeholder files
 	@${FIND} ${STAGEDIR}${WWWDIR} -type f -name empty -size 0 -exec ${RM} {} \;
-	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR:S|^${PREFIX}/|%D/|} -type f -name empty -size 0 -exec ${RM} {} \;' >> ${TMPPLIST}
 
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
-		${WWWDIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
 	@${FIND} ${STAGEDIR}${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
-	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type f -print0 | \
-		${XARGS} -0 ${CHMOD} 644' >> ${TMPPLIST}
 	@${FIND} ${STAGEDIR}${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
-	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type d -print0 | \
-		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
 
 # Fix the permissions of the Cake console script
 	@${CHMOD} 755 ${STAGEDIR}${WWWDIR}/${CAKE_CONSOLE}
-	@${ECHO_CMD} '@exec ${CHMOD} 755 ${WWWDIR}/${CAKE_CONSOLE}' >> ${TMPPLIST}
 
 post-install:
 .if ${PORT_OPTIONS:MAP}
