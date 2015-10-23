@@ -20,6 +20,7 @@ SSLEAY_DESC=	Use NET::SSLeay for ssl scanning
 SSLEAY_RUN_DEPENDS=	p5-Net-SSLeay>0:${PORTSDIR}/security/p5-Net-SSLeay
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 USES=		perl5 shebangfix tar:bzip2
 USE_PERL5=	run
