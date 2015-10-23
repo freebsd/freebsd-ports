@@ -83,7 +83,6 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		linux_dvbwrapper-kmod>=0:${PORTSDIR}/multimedia/linux_dvbwrapper-kmod \
 		xvkbd:${PORTSDIR}/x11/xvkbd \
 		volman>=0:${PORTSDIR}/sysutils/volman \
-		vlc>=0:${PORTSDIR}/multimedia/vlc \
 		fribidi>=0:${PORTSDIR}/converters/fribidi \
 		libdvdcss>=0:${PORTSDIR}/multimedia/libdvdcss \
 		pam_ldap>=0:${PORTSDIR}/security/pam_ldap \
