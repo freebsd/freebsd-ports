@@ -28,3 +28,17 @@
          break;
  
      case 4:
+@@ -1563,8 +1563,13 @@ Ssl::contextMethod(int version)
+         break;
+ 
+     case 3:
++#ifndef OPENSSL_NO_SSL3
+         debugs(83, 5, "Using SSLv3.");
+         method = SSLv3_server_method();
++#else
++        debugs(83, DBG_IMPORTANT, "SSLv3 is not available in this Proxy.");
++        return NULL;
++#endif
+         break;
+ 
+     case 4:
