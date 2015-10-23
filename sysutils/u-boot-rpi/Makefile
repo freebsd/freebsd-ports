@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	u-boot
-PORTVERSION=	2013.01
-PORTREVISION=	2
+PORTVERSION=	2015.10
 CATEGORIES=	sysutils
-MASTER_SITES=	LOCAL/ian/:bootfiles
+MASTER_SITES=	ftp://ftp.denx.de/pub/u-boot/ \
+		LOCAL/ian/:bootfiles
 PKGNAMESUFFIX=	-rpi
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		rpi-boot-files-2014.10_2.tar.bz2:bootfiles
@@ -14,20 +14,12 @@ COMMENT=	Cross-build U-Boot loader for Raspberry Pi
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${CROSS_GCC}:${PORTSDIR}/devel/arm-none-eabi-gcc492 \
-		gsed:${PORTSDIR}/textproc/gsed
-
-CROSS_GCC=	arm-none-eabi-gcc-4.9.2
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	gonzoua
-GH_PROJECT=	u-boot-pi
-GH_TAGNAME=	6709570
+BUILD_DEPENDS=	arm-none-eabi-gcc:${PORTSDIR}/devel/arm-none-eabi-gcc
 
 NO_ARCH=	yes
 
-USES=		gmake
-SSP_UNSAFE=	yes # cross-build static linking dies with -fstack-protector
+USES=		gmake tar:bzip2
+SSP_UNSAFE=	yes # cross-LD does not support -fstack-protector
 
 WRK_BOOTFILES=	${WRKDIR}/rpi-boot-files
 
@@ -43,13 +35,10 @@ PLIST_FILES=	${U_BOOT_DIR}/u-boot.img \
 		${U_BOOT_DIR}/start_cd.elf
 
 MAKE_ARGS+=	ARCH=arm \
-		CROSS_COMPILE=arm-none-eabi- \
-		HOSTCC=cc \
-		CC=${CROSS_GCC} \
-		SED=gsed
+		CROSS_COMPILE=arm-none-eabi-
 
 do-configure:
-	(cd ${WRKSRC}; ${GMAKE} ${MAKE_ARGS} rpi_b_config)
+	(cd ${WRKSRC}; ${GMAKE} rpi_defconfig)
 
 # The output of the u-boot build process is u-boot.bin.  We have to put a
 # standard (for the RPi) image header on the front of it, and the resulting
