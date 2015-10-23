@@ -12,7 +12,7 @@ COMMENT=	Qt based GUI frontend for Subversion
 
 LIB_DEPENDS=	libsvn_client-1.so:${PORTSDIR}/devel/subversion
 
-IGNORE=		does not support Subversion 1.9
+BROKEN=		does not support Subversion 1.9
 DEPRECATED=	Development discontinued since 2009
 EXPIRATION_DATE=	2015-11-23
 
