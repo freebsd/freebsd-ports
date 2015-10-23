@@ -6,7 +6,7 @@
 
 MPLAYER_SNAPSHOT_DATE=	2015-08-22
 MPLAYER_PORT_VERSION=	1.1.r${MPLAYER_SNAPSHOT_DATE:S/-//g}
-FFMPEG_VERSION=	2.8
+FFMPEG_VERSION=	2.8.1
 MASTER_SITES=	LOCAL/riggs/mplayer:local \
 		http://ffmpeg.org/releases/:ffmpeg
 DISTFILES+=	ffmpeg-${FFMPEG_VERSION}.tar.bz2:ffmpeg \
