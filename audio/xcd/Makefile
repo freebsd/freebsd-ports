@@ -14,6 +14,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		tk
 
+BROKEN=		Unfetchable
 WITH_CDROM_PLAYER?=	cd0
 
 MAKE_ENV+=	BINDIR="${PREFIX}/bin" \

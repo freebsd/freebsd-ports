@@ -10,6 +10,7 @@ MASTER_SITES=	http://www-users.cs.umn.edu/~wburdick/ftp/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another mp3 player
 
+BROKEN=		Does not fetch
 USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_prog_gcc=no

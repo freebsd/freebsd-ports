@@ -11,6 +11,7 @@ DISTNAME=	HawkVoiceDI091src
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Portable sound and speech compression library
 
+BROKEN=		Unfetchable
 USES=		gmake dos2unix zip
 MAKEFILE=	makefile.linux
 USE_CSTD=	gnu89
