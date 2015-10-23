@@ -963,6 +963,7 @@
     SUBDIR += rubygem-sshkey
     SUBDIR += rubygem-sshkit
     SUBDIR += rubygem-twitter_oauth
+    SUBDIR += s2n
     SUBDIR += safesh
     SUBDIR += samba-virusfilter
     SUBDIR += sancp
