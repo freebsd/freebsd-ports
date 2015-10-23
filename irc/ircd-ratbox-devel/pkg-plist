@@ -227,6 +227,10 @@ lib/ircd-ratbox/modules/m_quit.so
 lib/ircd-ratbox/modules/m_server.so
 lib/ircd-ratbox/modules/m_squit.so
 etc/ircd-ratbox/genssl.sh
-@sample etc/ircd-ratbox/ircd-efnet.conf.sample
-@sample etc/ircd-ratbox/ircd.conf.sample
-@sample etc/ircd-ratbox/ircd.motd.sample
+@sample(,ircd,640) etc/ircd-ratbox/ircd-efnet.conf.sample
+@sample(,ircd,640) etc/ircd-ratbox/ircd.conf.sample
+@sample(,ircd,640) etc/ircd-ratbox/ircd.motd.sample
+@dir(,ircd,750) etc/ircd-ratbox
+@dir(ircd,ircd,750) %%RUNDIR%%
+@dir(ircd,ircd,750) %%LOGDIR%%
+@dir(ircd,ircd,750) %%DBDIR%%                                                                                                                                                                                                 
