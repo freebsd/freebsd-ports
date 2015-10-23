@@ -1,0 +1,313 @@
+--- XMP-Toolkit-SDK-4.4.2/public/include/XMP_Const.h.orig	2008-10-06 07:18:56 UTC
++++ XMP-Toolkit-SDK-4.4.2/public/include/XMP_Const.h
+@@ -13,7 +13,7 @@
+ 
+    #include <stddef.h>
+ 
+-#if XMP_MacBuild	// ! No stdint.h on Windows and some UNIXes.
++#if XMP_MacBuild || XMP_UNIXBuild	// ! No stdint.h on Windows.
+     #include <stdint.h>
+ #endif
+ 
+@@ -34,7 +34,7 @@ extern "C" {
+ // case only the declarations of the XMP_... types needs to change, not all of the uses. These
+ // types are used where fixed sizes are required in order to have a known ABI for a DLL build.
+ 
+-#if XMP_MacBuild
++#if XMP_MacBuild || XMP_UNIXBuild
+ 
+     typedef int8_t   XMP_Int8;
+     typedef int16_t  XMP_Int16;
+--- XMP-Toolkit-SDK-4.4.2/source/common/XML_Node.cpp.orig	2008-10-06 07:18:58 UTC
++++ XMP-Toolkit-SDK-4.4.2/source/common/XML_Node.cpp
+@@ -214,7 +214,7 @@ static void DumpNodeList ( std::string *
+ 		if ( node->nsPrefixLen != 0 ) {
+ 			*buffer += ", prefixLen=";
+ 			char numBuf [20];
+-			snprintf ( numBuf, sizeof(numBuf), "%d", node->nsPrefixLen );
++			snprintf ( numBuf, sizeof(numBuf), "%zu", node->nsPrefixLen );
+ 			*buffer += numBuf;
+ 		}
+ 		*buffer += "\n";
+--- XMP-Toolkit-SDK-4.4.2/source/XMPCore/XMPIterator.cpp.orig	2008-10-06 07:18:56 UTC
++++ XMP-Toolkit-SDK-4.4.2/source/XMPCore/XMPIterator.cpp
+@@ -156,7 +156,7 @@ AddNodeOffspring ( IterInfo & info, Iter
+ 				currPath += xmpChild->name;
+ 			} else {
+ 				char buffer [32];	// AUDIT: Using sizeof(buffer) below for snprintf length is safe.
+-				snprintf ( buffer, sizeof(buffer), "[%d]", childNum+1 );	// ! XPath indices are one-based.
++				snprintf ( buffer, sizeof(buffer), "[%zu]", childNum+1 );	// ! XPath indices are one-based.
+ 				currPath += buffer;
+ 			}
+ 			iterParent.children.push_back ( IterNode ( xmpChild->options, currPath, leafOffset ) );
+--- XMP-Toolkit-SDK-4.4.2/source/XMPCore/XMPMeta.cpp.orig	2008-10-06 07:18:56 UTC
++++ XMP-Toolkit-SDK-4.4.2/source/XMPCore/XMPMeta.cpp
+@@ -80,13 +80,13 @@ static const char * kTenSpaces = "
+ 
+ #define OutProcString(str)	{ status = (*outProc) ( refCon, (str).c_str(), (str).size() );  if ( status != 0 ) goto EXIT; }
+ 
+-#define OutProcDecInt(num)	{ snprintf ( buffer, sizeof(buffer), "%d", (num) ); /* AUDIT: Using sizeof for snprintf length is safe */	\
++#define OutProcDecInt(num)	{ snprintf ( buffer, sizeof(buffer), "%d", (int)(num) ); /* AUDIT: Using sizeof for snprintf length is safe */	\
+ 							  status = (*outProc) ( refCon, buffer, strlen(buffer) );  if ( status != 0 ) goto EXIT; }
+ 
+-#define OutProcHexInt(num)	{ snprintf ( buffer, sizeof(buffer), "%X", (num) ); /* AUDIT: Using sizeof for snprintf length is safe */	\
++#define OutProcHexInt(num)	{ snprintf ( buffer, sizeof(buffer), "%X", (int)(num) ); /* AUDIT: Using sizeof for snprintf length is safe */	\
+ 							  status = (*outProc) ( refCon, buffer, strlen(buffer) );  if ( status != 0 ) goto EXIT; }
+ 
+-#define OutProcHexByte(num)	{ snprintf ( buffer, sizeof(buffer), "%.2X", (num) ); /* AUDIT: Using sizeof for snprintf length is safe */	\
++#define OutProcHexByte(num)	{ snprintf ( buffer, sizeof(buffer), "%.2X", (int)(num) ); /* AUDIT: Using sizeof for snprintf length is safe */	\
+ 							  status = (*outProc) ( refCon, buffer, strlen(buffer) );  if ( status != 0 ) goto EXIT; }
+ 
+ static const char * kIndent = "   ";
+@@ -741,13 +741,13 @@ XMPMeta::Initialize()
+ 	XMP_Assert ( sizeof(XMP_Uns64) == 8 );
+ 	
+ 	XMP_Assert ( sizeof(XMP_OptionBits) == 4 );	// Check that option masking work on all 32 bits.
+-	XMP_OptionBits flag = ~0UL;
++	XMP_OptionBits flag = -1;
+ 	XMP_Assert ( flag == (XMP_OptionBits)(-1L) );
+ 	XMP_Assert ( (flag ^ kXMP_PropHasLang) == 0xFFFFFFBFUL );
+ 	XMP_Assert ( (flag & ~kXMP_PropHasLang) == 0xFFFFFFBFUL );
+ 	
+ 	XMP_OptionBits opt1 = 0;	// Check the general option bit macros.
+-	XMP_OptionBits opt2 = ~0UL;
++	XMP_OptionBits opt2 = -1;
+ 	XMP_SetOption ( opt1, kXMP_PropValueIsArray );
+ 	XMP_ClearOption ( opt2, kXMP_PropValueIsArray );
+ 	XMP_Assert ( opt1 == ~opt2 );
+--- XMP-Toolkit-SDK-4.4.2/source/XMPCore/XMPUtils.cpp.orig	2008-10-06 07:18:56 UTC
++++ XMP-Toolkit-SDK-4.4.2/source/XMPCore/XMPUtils.cpp
+@@ -15,6 +15,7 @@
+ 
+ #include <map>
+ 
++#include <inttypes.h>
+ #include <time.h>
+ #include <string.h>
+ #include <stdlib.h>
+@@ -1198,9 +1199,9 @@ XMPUtils::ConvertToInt64 ( XMP_StringPtr
+ 	XMP_Int64 result;
+ 	
+ 	if ( ! XMP_LitNMatch ( strValue, "0x", 2 ) ) {
+-		count = sscanf ( strValue, "%lld%c", &result, &nextCh );
++		count = sscanf ( strValue, "%"PRId64"%c", &result, &nextCh );
+ 	} else {
+-		count = sscanf ( strValue, "%llx%c", &result, &nextCh );
++		count = sscanf ( strValue, "%"PRIx64"%c", &result, &nextCh );
+ 	}
+ 
+ 	if ( count != 1 ) XMP_Throw ( "Invalid integer string", kXMPErr_BadParam );
+--- XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FileHandlers/MPEG4_Handler.cpp.orig	2008-10-06 07:18:56 UTC
++++ XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FileHandlers/MPEG4_Handler.cpp
+@@ -7,6 +7,8 @@
+ // of the Adobe license agreement accompanying it.
+ // =================================================================================================
+ 
++#include <inttypes.h>
++
+ #include "MPEG4_Handler.hpp"
+ 
+ #include "UnicodeConversions.hpp"
+@@ -564,7 +566,7 @@ void MPEG4_MetaHandler::ProcessXMP()
+ 			if ( mvhd.timescale != 0 ) {	// Avoid 1/0 for the scale field.
+ 				char buffer [32];	// A 64-bit number is at most 20 digits.
+ 				this->xmpObj.DeleteProperty ( kXMP_NS_DM, "duration" );	// Delete the whole struct.
+-				snprintf ( buffer, sizeof(buffer), "%llu", mvhd.duration );	// AUDIT: The buffer is big enough.
++				snprintf ( buffer, sizeof(buffer), "%"PRIu64, mvhd.duration );	// AUDIT: The buffer is big enough.
+ 				this->xmpObj.SetStructField ( kXMP_NS_DM, "duration", kXMP_NS_DM, "value", &buffer[0] );
+ 				snprintf ( buffer, sizeof(buffer), "1/%u", mvhd.timescale );	// AUDIT: The buffer is big enough.
+ 				this->xmpObj.SetStructField ( kXMP_NS_DM, "duration", kXMP_NS_DM, "scale", &buffer[0] );
+--- XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FormatSupport/ReconcileTIFF.cpp.orig	2008-10-06 07:18:56 UTC
++++ XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FormatSupport/ReconcileTIFF.cpp
+@@ -13,6 +13,7 @@
+ 
+ #include "UnicodeConversions.hpp"
+ 
++#include <inttypes.h>
+ #include <stdio.h>
+ #if XMP_WinBuild
+ 	#define snprintf _snprintf
+@@ -399,7 +400,7 @@ ImportSingleTIFF_Long ( const TIFF_Manag
+ 		if ( ! nativeEndian ) binValue = Flip4 ( binValue );
+ 	
+ 		char strValue[20];
+-		snprintf ( strValue, sizeof(strValue), "%lu", binValue );	// AUDIT: Using sizeof(strValue) is safe.
++		snprintf ( strValue, sizeof(strValue), "%"PRIu32, binValue );	// AUDIT: Using sizeof(strValue) is safe.
+ 	
+ 		xmp->SetProperty ( xmpNS, xmpProp, strValue );
+ 
+@@ -429,7 +430,7 @@ ImportSingleTIFF_Rational ( const TIFF_M
+ 		}
+ 	
+ 		char strValue[40];
+-		snprintf ( strValue, sizeof(strValue), "%lu/%lu", binNum, binDenom );	// AUDIT: Using sizeof(strValue) is safe.
++		snprintf ( strValue, sizeof(strValue), "%"PRIu32"/%"PRIu32, binNum, binDenom );	// AUDIT: Using sizeof(strValue) is safe.
+ 	
+ 		xmp->SetProperty ( xmpNS, xmpProp, strValue );
+ 
+@@ -459,7 +460,7 @@ ImportSingleTIFF_SRational ( const TIFF_
+ 		}
+ 	
+ 		char strValue[40];
+-		snprintf ( strValue, sizeof(strValue), "%ld/%ld", binNum, binDenom );	// AUDIT: Using sizeof(strValue) is safe.
++		snprintf ( strValue, sizeof(strValue), "%"PRId32"/%"PRId32, binNum, binDenom );	// AUDIT: Using sizeof(strValue) is safe.
+ 	
+ 		xmp->SetProperty ( xmpNS, xmpProp, strValue );
+ 
+@@ -520,7 +521,7 @@ ImportSingleTIFF_Byte ( const TIFF_Manag
+ 		XMP_Uns8 binValue = *((XMP_Uns8*)tagInfo.dataPtr);
+ 	
+ 		char strValue[20];
+-		snprintf ( strValue, sizeof(strValue), "%hu", binValue );	// AUDIT: Using sizeof(strValue) is safe.
++		snprintf ( strValue, sizeof(strValue), "%hhu", binValue );	// AUDIT: Using sizeof(strValue) is safe.
+ 	
+ 		xmp->SetProperty ( xmpNS, xmpProp, strValue );
+ 
+@@ -544,7 +545,7 @@ ImportSingleTIFF_SByte ( const TIFF_Mana
+ 		XMP_Int8 binValue = *((XMP_Int8*)tagInfo.dataPtr);
+ 	
+ 		char strValue[20];
+-		snprintf ( strValue, sizeof(strValue), "%hd", binValue );	// AUDIT: Using sizeof(strValue) is safe.
++		snprintf ( strValue, sizeof(strValue), "%hhd", binValue );	// AUDIT: Using sizeof(strValue) is safe.
+ 	
+ 		xmp->SetProperty ( xmpNS, xmpProp, strValue );
+ 
+@@ -594,7 +595,7 @@ ImportSingleTIFF_SLong ( const TIFF_Mana
+ 		if ( ! nativeEndian ) Flip4 ( &binValue );
+ 	
+ 		char strValue[20];
+-		snprintf ( strValue, sizeof(strValue), "%ld", binValue );	// AUDIT: Using sizeof(strValue) is safe.
++		snprintf ( strValue, sizeof(strValue), "%"PRId32, binValue );	// AUDIT: Using sizeof(strValue) is safe.
+ 	
+ 		xmp->SetProperty ( xmpNS, xmpProp, strValue );
+ 
+@@ -765,7 +766,7 @@ ImportArrayTIFF_Long ( const TIFF_Manage
+ 			if ( ! nativeEndian ) binValue = Flip4 ( binValue );
+ 	
+ 			char strValue[20];
+-			snprintf ( strValue, sizeof(strValue), "%lu", binValue );	// AUDIT: Using sizeof(strValue) is safe.
++			snprintf ( strValue, sizeof(strValue), "%"PRIu32, binValue );	// AUDIT: Using sizeof(strValue) is safe.
+ 	
+ 			xmp->AppendArrayItem ( xmpNS, xmpProp, kXMP_PropArrayIsOrdered, strValue );
+ 	
+@@ -800,7 +801,7 @@ ImportArrayTIFF_Rational ( const TIFF_Ma
+ 			}
+ 	
+ 			char strValue[40];
+-			snprintf ( strValue, sizeof(strValue), "%lu/%lu", binNum, binDenom );	// AUDIT: Using sizeof(strValue) is safe.
++			snprintf ( strValue, sizeof(strValue), "%"PRIu32"/%"PRIu32, binNum, binDenom );	// AUDIT: Using sizeof(strValue) is safe.
+ 	
+ 			xmp->AppendArrayItem ( xmpNS, xmpProp, kXMP_PropArrayIsOrdered, strValue );
+ 	
+@@ -835,7 +836,7 @@ ImportArrayTIFF_SRational ( const TIFF_M
+ 			}
+ 	
+ 			char strValue[40];
+-			snprintf ( strValue, sizeof(strValue), "%ld/%ld", binNum, binDenom );	// AUDIT: Using sizeof(strValue) is safe.
++			snprintf ( strValue, sizeof(strValue), "%"PRId32"/%"PRId32, binNum, binDenom );	// AUDIT: Using sizeof(strValue) is safe.
+ 	
+ 			xmp->AppendArrayItem ( xmpNS, xmpProp, kXMP_PropArrayIsOrdered, strValue );
+ 	
+@@ -907,7 +908,7 @@ ImportArrayTIFF_Byte ( const TIFF_Manage
+ 			XMP_Uns8 binValue = *binPtr;
+ 	
+ 			char strValue[20];
+-			snprintf ( strValue, sizeof(strValue), "%hu", binValue );	// AUDIT: Using sizeof(strValue) is safe.
++			snprintf ( strValue, sizeof(strValue), "%hhu", binValue );	// AUDIT: Using sizeof(strValue) is safe.
+ 	
+ 			xmp->AppendArrayItem ( xmpNS, xmpProp, kXMP_PropArrayIsOrdered, strValue );
+ 	
+@@ -937,7 +938,7 @@ ImportArrayTIFF_SByte ( const TIFF_Manag
+ 			XMP_Int8 binValue = *binPtr;
+ 	
+ 			char strValue[20];
+-			snprintf ( strValue, sizeof(strValue), "%hd", binValue );	// AUDIT: Using sizeof(strValue) is safe.
++			snprintf ( strValue, sizeof(strValue), "%hhd", binValue );	// AUDIT: Using sizeof(strValue) is safe.
+ 	
+ 			xmp->AppendArrayItem ( xmpNS, xmpProp, kXMP_PropArrayIsOrdered, strValue );
+ 	
+@@ -999,7 +1000,7 @@ ImportArrayTIFF_SLong ( const TIFF_Manag
+ 			if ( ! nativeEndian ) Flip4 ( &binValue );
+ 	
+ 			char strValue[20];
+-			snprintf ( strValue, sizeof(strValue), "%ld", binValue );	// AUDIT: Using sizeof(strValue) is safe.
++			snprintf ( strValue, sizeof(strValue), "%"PRId32, binValue );	// AUDIT: Using sizeof(strValue) is safe.
+ 	
+ 			xmp->AppendArrayItem ( xmpNS, xmpProp, kXMP_PropArrayIsOrdered, strValue );
+ 	
+@@ -1474,7 +1475,7 @@ ImportTIFF_OECFTable ( const TIFF_Manage
+ 				Flip4 ( &binDenom );
+ 			}
+ 	
+-			snprintf ( buffer, sizeof(buffer), "%ld/%ld", binNum, binDenom );	// AUDIT: Use of sizeof(buffer) is safe.
++			snprintf ( buffer, sizeof(buffer), "%"PRId32"/%"PRId32, binNum, binDenom );	// AUDIT: Use of sizeof(buffer) is safe.
+ 	
+ 			xmp->AppendArrayItem ( xmpNS, arrayPath.c_str(), kXMP_PropArrayIsOrdered, buffer );
+ 	
+@@ -1544,7 +1545,7 @@ ImportTIFF_SFRTable ( const TIFF_Manager
+ 				binDenom = Flip4 ( binDenom );
+ 			}
+ 	
+-			snprintf ( buffer, sizeof(buffer), "%lu/%lu", binNum, binDenom );	// AUDIT: Use of sizeof(buffer) is safe.
++			snprintf ( buffer, sizeof(buffer), "%"PRIu32"/%"PRIu32, binNum, binDenom );	// AUDIT: Use of sizeof(buffer) is safe.
+ 	
+ 			xmp->AppendArrayItem ( xmpNS, arrayPath.c_str(), kXMP_PropArrayIsOrdered, buffer );
+ 	
+@@ -1593,7 +1594,7 @@ ImportTIFF_CFATable ( const TIFF_Manager
+ 		SXMPUtils::ComposeStructFieldPath ( xmpNS, xmpProp, kXMP_NS_EXIF, "Values", &arrayPath );
+ 	
+ 		for ( size_t i = (columns * rows); i > 0; --i, ++bytePtr ) {
+-			snprintf ( buffer, sizeof(buffer), "%hu", *bytePtr );	// AUDIT: Use of sizeof(buffer) is safe.
++			snprintf ( buffer, sizeof(buffer), "%hhu", *bytePtr );	// AUDIT: Use of sizeof(buffer) is safe.
+ 			xmp->AppendArrayItem ( xmpNS, arrayPath.c_str(), kXMP_PropArrayIsOrdered, buffer );
+ 		}
+ 		
+@@ -1720,7 +1721,7 @@ ImportTIFF_GPSCoordinate ( const TIFF_Ma
+ 		
+ 		if ( (degDenom == 1) && (minDenom == 1) && (secDenom == 1) ) {
+ 		
+-			snprintf ( buffer, sizeof(buffer), "%lu,%lu,%lu%c", degNum, minNum, secNum, ref );	// AUDIT: Using sizeof(buffer is safe.
++			snprintf ( buffer, sizeof(buffer), "%"PRIu32",%"PRIu32",%"PRIu32"%c", degNum, minNum, secNum, ref );	// AUDIT: Using sizeof(buffer is safe.
+ 		
+ 		} else {
+ 		
+--- XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FormatSupport/RIFF_Support.cpp.orig	2008-10-06 07:18:56 UTC
++++ XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FormatSupport/RIFF_Support.cpp
+@@ -179,7 +179,7 @@ namespace RIFF_Support {
+ 	
+ 		/* look for top level Premiere padding chunk */
+ 		starttag = 0;
+-		while ( FindChunk ( inOutRiffState, ckidPremierePadding, riffType, 0, &starttag, reinterpret_cast<unsigned long*>(&taglen), &pos ) ) {
++		while ( FindChunk ( inOutRiffState, ckidPremierePadding, riffType, 0, &starttag, reinterpret_cast<UInt32*>(&taglen), &pos ) ) {
+ 	
+ 			pos -= 8;
+ 			taglen += 8;
+@@ -753,11 +753,11 @@ bool CreatorAtom::Import ( SXMPMeta& xmp
+ 			char buffer[256];
+ 			std::string xmpString;
+ 
+-			sprintf ( buffer, "%d", creatorAtom.creator_codeLu );
++			sprintf ( buffer, "%lu", creatorAtom.creator_codeLu );
+ 			xmpString = buffer;
+ 			xmpObj.SetStructField ( kXMP_NS_CreatorAtom, "macAtom", kXMP_NS_CreatorAtom, "applicationCode", xmpString, 0 );
+ 
+-			sprintf ( buffer, "%d", creatorAtom.creator_eventLu );
++			sprintf ( buffer, "%lu", creatorAtom.creator_eventLu );
+ 			xmpString = buffer;
+ 			xmpObj.SetStructField ( kXMP_NS_CreatorAtom, "macAtom", kXMP_NS_CreatorAtom, "invocationAppleEvent", xmpString, 0 );
+ 
+--- XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FormatSupport/RIFF_Support.hpp.orig	2008-10-06 07:18:56 UTC
++++ XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FormatSupport/RIFF_Support.hpp
+@@ -36,10 +36,10 @@ namespace RIFF_Support
+ {
+ 	// Some types, if not already defined
+ 	#ifndef UInt64
+-		typedef unsigned long long UInt64;
++		typedef uint64_t UInt64;
+ 	#endif
+ 	#ifndef UInt32
+-		typedef unsigned long UInt32;
++		typedef uint32_t UInt32;
+ 	#endif
+ 
+ 	/**
