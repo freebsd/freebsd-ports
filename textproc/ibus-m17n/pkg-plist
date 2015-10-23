@@ -5,6 +5,3 @@ share/ibus/component/m17n.xml
 %%DATADIR%%/setup/default.xml
 %%DATADIR%%/setup/ibus-m17n-preferences.ui
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/ibus-m17n.mo
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/setup
-@dirrm %%DATADIR%%
