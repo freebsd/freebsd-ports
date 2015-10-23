@@ -1,6 +1,6 @@
---- api/api.c.orig	2012-11-28 01:28:06 UTC
+--- api/api.c.orig	2015-10-19 23:59:38 UTC
 +++ api/api.c
-@@ -512,45 +512,47 @@ static int API_env_set(va_list ap)
+@@ -495,45 +495,47 @@ static int API_env_set(va_list ap)
   */
  static int API_env_enum(va_list ap)
  {
@@ -56,7 +56,7 @@
 +		if ((s = strchr(buf, '=')) != NULL)
 +		     *s = 0;
 +		search.key = buf;
-+		if ((i = hsearch_r(search, FIND, &match, &env_htab)) == 0) {
++		if ((i = hsearch_r(search, FIND, &match, &env_htab, 0)) == 0) {
 +			i = API_EINVAL;
 +			goto done;
  		}
