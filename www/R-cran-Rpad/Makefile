@@ -11,16 +11,16 @@ MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Workbook-style, web-based interface to R
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cran:auto-plist shebangfix
+perl_OLD_CMD=	c:/apps/perl/bin/perl.exe
 SHEBANG_FILES=	inst/basehtml/editor/htmlarea/examples/*.cgi \
 		inst/basehtml/editor/htmlarea/plugins/SpellChecker/spell-check-logic.cgi \
 		inst/basehtml/server/*.pl \
 		inst/serverversion/Statistics-R_perl_interface/script/*.pl
 
 post-patch:
-	@${REINPLACE_CMD} -i '' -e 's|c:/apps/perl/bin/perl.exe|${perl_CMD}|' \
-		${WRKSRC}/inst/basehtml/server/fileupload.pl
 	@${RMDIR} ${WRKSRC}/inst/basehtml/editor/htmlarea/examples/test
 
 .include <bsd.port.mk>
