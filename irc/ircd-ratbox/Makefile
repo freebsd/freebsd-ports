@@ -3,7 +3,7 @@
 
 PORTNAME=	ircd-ratbox
 PORTVERSION=	3.0.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://www.ratbox.org/download/				\
 		http://www.ratbox.org/download/old/
@@ -17,7 +17,6 @@ CONFLICTS=	ircd-ratbox-devel-[0-9]* charybdis-[0-9]*
 
 USES=		cpe libtool tar:bzip2
 CPE_VENDOR=	ratbox
-#MAN8=		ircd.8
 USE_RC_SUBR=	ircd-ratbox
 USE_SQLITE=	3
 USE_LDCONFIG=	${PREFIX}/lib/ircd-ratbox
@@ -30,7 +29,7 @@ GROUPS=		${USERS}
 LOGDIR?=	/var/log/${PORTNAME}
 RUNDIR?=	/var/run/${PORTNAME}
 DBDIR?=		/var/db/${PORTNAME}
-SUB_FILES=	pkg-message pkg-install
+SUB_FILES=	pkg-message
 PLIST_SUB=	LOGDIR=${LOGDIR} RUNDIR=${RUNDIR} DBDIR=${DBDIR}
 SUB_LIST=	LOGDIR=${LOGDIR} RUNDIR=${RUNDIR} DBDIR=${DBDIR}
 
@@ -226,6 +225,10 @@ pre-install:
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${RUNDIR}
+	${MKDIR} ${STAGEDIR}${DBDIR}
+	${MKDIR} ${STAGEDIR}${LOGDIR}
+
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 	cd ${INSTALL_WRKSRC}/contrib && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}
