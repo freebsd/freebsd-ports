@@ -1,8 +1,8 @@
---- common/cmd_test.c.orig	2012-11-28 01:28:06 UTC
+--- common/cmd_test.c.orig	2015-10-19 23:59:38 UTC
 +++ common/cmd_test.c
-@@ -29,9 +29,14 @@ static int do_test(cmd_tbl_t *cmdtp, int
+@@ -56,9 +56,14 @@ static int do_test(cmd_tbl_t *cmdtp, int
  	char * const *ap;
- 	int left, adv, expr, last_expr, neg, last_cmp;
+ 	int i, op, left, adv, expr, last_expr, last_unop, last_binop;
  
 -	/* args? */
 -	if (argc < 3)
