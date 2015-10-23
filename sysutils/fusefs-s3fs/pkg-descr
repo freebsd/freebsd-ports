@@ -1,5 +1,4 @@
-FUSE-based file system backed by Amazon S3. Mount a bucket as a local
-file system read/write. Store files/folders natively and
-transparently.
+FUSE-based file system backed by Amazon S3.  Mount a bucket as a local
+file system read/write.  Store files/folders natively and transparently.
 
-WWW: http://code.google.com/p/s3fs/
+WWW: https://github.com/s3fs-fuse/s3fs-fuse

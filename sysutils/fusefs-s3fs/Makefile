@@ -2,25 +2,35 @@
 # $FreeBSD$
 
 PORTNAME=	s3fs
-DISTVERSION=	1.74
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.78
 CATEGORIES=	sysutils
-MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FUSE-based file system backed by Amazon S3
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libxml2.so:${PORTSDIR}/textproc/libxml2
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	s3fs-fuse
+
+USES=		autoreconf fuse pkgconfig
 GNU_CONFIGURE=	yes
-PLIST_FILES=	bin/s3fs man/man1/s3fs.1.gz
-USES=		fuse pkgconfig
 USE_OPENSSL=	yes
 
+WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${PORTVERSION}
+
+PLIST_FILES=	bin/s3fs man/man1/s3fs.1.gz
+
 post-patch:
-	${REINPLACE_CMD} -e 's/libcrypto >= 0.9//g' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e '/^DEPS_LIBS =/s/$$/ -lcrypto/' \
-		${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's/libcrypto >= 0.9//' ${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e '/DEPS_LIBS/s/$$/ -lcrypto/' \
+		${WRKSRC}/src/Makefile.am
+	@${REINPLACE_CMD} -e '/pthread_self/s/static/reinterpret/' \
+		${WRKSRC}/src/openssl_auth.cpp
 
 .include <bsd.port.mk>
