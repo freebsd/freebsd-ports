@@ -19,22 +19,6 @@ touch $lf				\
 && chown ircservices:ircservices $lf	\
 && chmod 640 $lf
 
-
-mkdir -p %%DBDIR%%				\
-&& chown ircservices:ircservices %%DBDIR%%	\
-&& chmod 750 %%DBDIR%%
-
-# Secure permissions if we think this is a fresh install
-conffile="%%PREFIX%%/etc/ratbox-services.conf"
-samplefile="%%PREFIX%%/etc/ratbox-services.conf.sample"
-if cmp -s $conffile $samplefile; then
-        echo "Setting permissions for config file."
-        chown ircservices:ircservices $conffile
-        chmod 640 $conffile
-else
-        echo "Modified ratbox-services.conf file found, skipping perms setting."
-fi
-
 cd %%DATADIR%%	\
 && %%PERL%% ./generate-schema.pl
 
