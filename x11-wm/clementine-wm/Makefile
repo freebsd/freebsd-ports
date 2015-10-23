@@ -6,6 +6,7 @@ PORTVERSION=	0.0.7
 PORTREVISION=	7
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/${PORTNAME}/Source/${PORTNAME}-${PORTVERSION}
+PKGNAMESUFFIX=	-wm
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window manager based on aewm with title bars, iconization, and styles
@@ -15,8 +16,6 @@ LICENSE_COMB=	multi
 
 RUN_DEPENDS=	xv:${PORTSDIR}/graphics/xv \
 		rxvt:${PORTSDIR}/x11/rxvt
-
-OPTIONS_DEFINE=	DOCS
 
 USES=		gmake
 USE_XORG=	x11
@@ -32,6 +31,8 @@ PLIST_FILES=	bin/clementine \
 		%%DATADIR%%/look-turq \
 		%%DATADIR%%/look-xemacs \
 		%%DATADIR%%/keys
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -50,6 +51,8 @@ do-install:
 .for i in look-* keys
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DATADIR})
 .endfor
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
