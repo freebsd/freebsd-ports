@@ -58,6 +58,59 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b973a763-7936-11e5-a2a1-002590263bf5">
+    <topic>mediawiki -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mediawiki123</name>
+	<range><lt>1.23.11</lt></range>
+      </package>
+      <package>
+	<name>mediawiki124</name>
+	<range><lt>1.24.4</lt></range>
+      </package>
+      <package>
+	<name>mediawiki125</name>
+	<range><lt>1.25.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MediaWiki reports:</p>
+	<blockquote cite="https://lists.wikimedia.org/pipermail/mediawiki-announce/2015-October/000181.html">
+	  <p>Wikipedia user RobinHood70 reported two issues in the chunked
+	    upload API. The API failed to correctly stop adding new chunks to
+	    the upload when the reported size was exceeded (T91203), allowing
+	    a malicious users to upload add an infinite number of chunks for a
+	    single file upload. Additionally, a malicious user could upload
+	    chunks of 1 byte for very large files, potentially creating a very
+	    large number of files on the server's filesystem (T91205).</p>
+	  <p>Internal review discovered that it is not possible to throttle file
+	    uploads.</p>
+	  <p>Internal review discovered a missing authorization check when
+	    removing suppression from a revision. This allowed users with the
+	    'viewsuppressed' user right but not the appropriate
+	    'suppressrevision' user right to unsuppress revisions.</p>
+	  <p>Richard Stanway from teamliquid.net reported that thumbnails of PNG
+	    files generated with ImageMagick contained the local file path in
+	    the image metadata.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://lists.wikimedia.org/pipermail/mediawiki-announce/2015-October/000181.html</url>
+      <url>https://phabricator.wikimedia.org/T91203</url>
+      <url>https://phabricator.wikimedia.org/T91205</url>
+      <url>https://phabricator.wikimedia.org/T91850</url>
+      <url>https://phabricator.wikimedia.org/T95589</url>
+      <url>https://phabricator.wikimedia.org/T108616</url>
+    </references>
+    <dates>
+      <discovery>2015-10-16</discovery>
+      <entry>2015-10-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c4a18a12-77fc-11e5-a687-206a8a720317">
     <topic>ntp -- 13 low- and medium-severity vulnerabilities</topic>
     <affects>
