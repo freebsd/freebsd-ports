@@ -1,6 +1,6 @@
---- configure.orig	2011-11-11 21:59:26.000000000 +0100
-+++ configure	2011-12-11 17:11:22.000000000 +0100
-@@ -7360,9 +7360,9 @@
+--- configure.orig	2011-11-11 20:59:26 UTC
++++ configure
+@@ -7360,9 +7360,9 @@ $as_echo_n "checking if libpng is usable
  			SAVED_LDFLAGS=$LDFLAGS
  			SAVED_LIBS=$LIBS
  
