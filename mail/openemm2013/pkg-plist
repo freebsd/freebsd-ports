@@ -4917,6 +4917,11 @@
 %%APP_HOME%%/webservices/EmmSoapClient.sh
 %%APP_HOME%%/webservices/WSSESoapClient.php
 %%APP_HOME%%/webservices/WS_use_example.php
+/var/log/%%APP_HOME%%/daily.log
+/var/log/%%APP_HOME%%/openemm_axis.log
+/var/log/%%APP_HOME%%/openemm_core.log
+/var/log/%%APP_HOME%%/userlogs.log
+@dir /var/log/%%APP_HOME%%
 @dir %%DOCSDIR%%/ThirdPartyLicences
 @dir %%DOCSDIR%%
 @dir %%APP_HOME%%/bin/scripts
