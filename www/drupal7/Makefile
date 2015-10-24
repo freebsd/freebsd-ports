@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	drupal7
-PORTVERSION=	7.40
+PORTVERSION=	7.41
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 DISTNAME=	drupal-${PORTVERSION}
@@ -23,6 +23,7 @@ WANT_PHP_WEB=	yes
 OPTIONS_DEFINE=		MYSQL SQLITE3 PGSQL DOCS
 OPTIONS_DEFAULT=	MYSQL
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 DOCS=		CHANGELOG.txt INSTALL.mysql.txt INSTALL.sqlite.txt \
 		LICENSE.txt README.txt COPYRIGHT.txt INSTALL.pgsql.txt \
