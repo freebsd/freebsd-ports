@@ -50,6 +50,10 @@ SUB_FILES=	pkg-message
 OPTIONS_DEFINE=	BASH DOCS
 OPTIONS_SUB=	yes
 
+.if make(makesum) # for optional distfiles
+.MAKEFLAGS:	WITH="${OPTIONS_DEFINE}"
+.endif
+
 BASH_GH_ACCOUNT=	mbrubeck:bashcomp
 BASH_GH_PROJECT=	android-completion:bashcomp
 BASH_GH_TAGNAME=	3b0fabe:bashcomp
