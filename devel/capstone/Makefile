@@ -10,6 +10,7 @@ COMMENT=	Multi-platform, multi-architecture disassembly framework
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		Does not fetch
 USES=		gmake
 USE_LDCONFIG=	yes
 
