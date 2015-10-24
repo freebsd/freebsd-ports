@@ -10,8 +10,6 @@ MASTER_SITES=	http://www.daionet.gr.jp/~masa/archives/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL spinning pocket watch demo and benchmark utility
 
-BROKEN=		fails to link
-
 USE_XORG=	xi xmu xext x11
 USE_GL=		gl glu glut
 MAKEFILE=	makefile
@@ -40,20 +38,14 @@ post-patch:
 		's|g\+\+|$${CXX}| ; \
 		 s|-O2|$${CXXFLAGS}| ; \
 		 s|/usr/X11R6|$${LOCALBASE}|' ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's|glPolygonOffsetEXT|glPolygonOffset|' \
+		${WRKSRC}/GLextensions.cpp
 
 do-install:
-.for i in ${PROGRAMS}
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${i} \
-		${STAGEDIR}${PREFIX}/bin)
-.endfor
-.for i in ${SCRIPTS}
-	(cd ${WRKSRC} && ${INSTALL_SCRIPT} ${i} \
-		${STAGEDIR}${PREFIX}/bin)
-.endfor
+	${INSTALL_PROGRAM} ${PROGRAMS:S,^,${WRKSRC}/,} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${SCRIPTS:S,^,${WRKSRC}/,} ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/glclock
-.for i in ${TEXTURES}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} \
-		${STAGEDIR}${PREFIX}/lib/X11/glclock)
-.endfor
+	${INSTALL_DATA} ${TEXTURES:S,^,${WRKSRC}/,} \
+		${STAGEDIR}${PREFIX}/lib/X11/glclock
 
 .include <bsd.port.mk>
