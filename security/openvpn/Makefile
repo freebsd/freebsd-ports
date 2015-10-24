@@ -49,10 +49,11 @@ X509ALTUSERNAME_CONFIGURE_ENABLE=	x509-alt-username
 X509ALTUSERNAME_PREVENTS=	POLARSSL
 X509ALTUSERNAME_PREVENTS_MSG=	OpenVPN ${DISTVERSION} cannot use --x509-username-field with PolarSSL. Disable X509ALTUSERNAME, or use OpenSSL instead
 
-POLARSSL_LIB_DEPENDS=		libpolarssl.so:${PORTSDIR}/security/polarssl
+OPENSSL_USE=		openssl=yes
+OPENSSL_CONFIGURE_ON=	--with-crypto-library=openssl
+
+POLARSSL_LIB_DEPENDS=	libpolarssl.so:${PORTSDIR}/security/polarssl
 POLARSSL_CONFIGURE_ON=	--with-crypto-library=polarssl
-POLARSSL_USE_OFF=		openssl=yes
-POLARSSL_CONFIGURE_OFF=	--with-crypto-library=openssl
 
 USE_RC_SUBR=		openvpn
 USE_LDCONFIG=		${PREFIX}/lib
