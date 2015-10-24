@@ -1,6 +1,6 @@
---- cppForSwig/cryptopp/Makefile
+--- cppForSwig/cryptopp/Makefile.orig	2015-06-10 21:49:31 UTC
 +++ cppForSwig/cryptopp/Makefile
-@@ -105,6 +105,19 @@
+@@ -117,6 +117,19 @@ LDLIBS += -lnsl -lsocket
  M32OR64 = -m$(shell isainfo -b)
  endif
  
