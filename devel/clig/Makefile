@@ -13,6 +13,7 @@ COMMENT=	Auto-generate an (argc, argv) processor, usage message, and manpage
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING-2.0
 
+BROKEN=		Does not fetch
 USES=		shebangfix tcl tk
 SHEBANG_FILES=	tcl/*.tcl
 tk_OLD_CMD=	/usr/bin/wish8.0
