@@ -1,0 +1,188 @@
+--- openemm_build.xml.orig	2015-10-24 14:59:58 UTC
++++ openemm_build.xml
+@@ -23,8 +23,8 @@
+ 	<property name="catalina.home" location="/opt/openemm/tomcat" />
+ 	<property name="src" location="${oe.home}/src/OpenEMM-${version}-src" />
+ 	<property name="bin" location="${oe.home}/bin/OpenEMM-${version}-bin" />
+-	<property name="webroot" location="${bin}/webapps/openemm" />
+-	<property name="webroot-ws" location="${bin}/webapps/openemm-ws" />
++	<property name="webroot" location="${oe.home}/webapps/openemm" />
++	<property name="webroot-ws" location="${oe.home}/webapps/openemm-ws" />
+ 
+ 
+ 	<!-- HELP -->
+@@ -39,24 +39,11 @@
+ 
+ 	<!-- BUILD -->
+ 	<target name="build" description="Create OpenEMM Binary Tarball from Source Tarball">
+-		<delete dir="${bin}" />
+-		<mkdir dir="${bin}" />
+-		<delete dir="${src}" />
+-		<mkdir dir="${oe.home}/src" />
+-		<!-- untar SRC tarball -->
+-		<exec executable="tar" dir="${oe.home}/src">
+-			<arg line="-xvzf ${oe.home}/OpenEMM-${version}-src.tar.gz" />
+-		</exec>
+-		<!-- untar JAR tarball -->
+-		<mkdir dir="${src}/lib" />
+-		<exec executable="tar" dir="${src}/lib">
+-			<arg line="-xzvf ${oe.home}/OpenEMM-${version}-JARs.tar.gz" />
+-		</exec>
+ 
+ 		<!-- Generate Frontend -->
+ 		<!-- Generate OpenEMM -->
+ 		<mkdir dir="${webroot}/WEB-INF/classes" />
+-		<javac srcdir="${src}/src/java" destdir="${webroot}/WEB-INF/classes" fork="yes" executable="${jdk.compile}/bin/javac" debug="true" deprecation="true" includeantruntime="false">
++		<javac srcdir="${src}/src/java" destdir="${webroot}/WEB-INF/classes" fork="yes" debug="true" deprecation="true" includeantruntime="false">
+ 			<classpath>
+ 				<fileset dir="${src}/lib" />
+ 				<fileset dir="${catalina.home}/lib" includes="*.jar"/>
+@@ -77,7 +64,7 @@
+ 		</copy>
+ 		<!-- Generate OpenEMM WS 2.0 -->
+ 		<mkdir dir="${webroot-ws}/WEB-INF/classes" />
+-		<javac srcdir="${src}/src/java" destdir="${webroot-ws}/WEB-INF/classes" fork="yes" executable="${jdk.compile}/bin/javac" debug="true" deprecation="true" includeantruntime="false">
++		<javac srcdir="${src}/src/java" destdir="${webroot-ws}/WEB-INF/classes" fork="yes" debug="true" deprecation="true" includeantruntime="false">
+ 			<classpath>
+ 				<fileset dir="${src}/lib" />
+ 				<fileset dir="${catalina.home}/lib" includes="*.jar"/>
+@@ -98,58 +85,27 @@
+ 			<fileset dir="${src}/lib" />
+ 		</copy>
+ 		<!-- Generate OpenEMM WS 1.0 -->
+-		<copy todir="${bin}/webservices">
++		<copy todir="${oe.home}/webservices">
+ 			<fileset dir="${src}/webservices" />
+ 		</copy>
+ 
+ 		<!-- Generate Manual -->
+-		<copy todir="${bin}/webapps/manual">
++		<copy todir="${oe.home}/webapps/manual">
+ 			<fileset dir="${src}/manual" />
+ 		</copy>
+ 
+ 		<!-- Generate Backend -->
+-		<exec executable="make" dir="${src}/backend" />
+ 
+-		<copy todir="${bin}/bin">
+-			<fileset dir="${src}/backend/src/script/control" />
+-			<filelist dir="${src}/backend/src/c/bav" files="bav"/>
+-			<filelist dir="${src}/backend/src/c/tools" files="qctrl,smctrl,updater"/>
+-			<filelist dir="${src}/backend/src/c/xmlback" files="xmlback"/>
+-			<fileset dir="${src}/tomcat/bin" />
+-		</copy>
+-		<delete>
+-			<filelist dir="${bin}/bin" files="config.bat,openemm.py,setup.bat,start.bat,update.bat" />
+-		</delete>
+-		<copy todir="${bin}/bin/scripts">
++		<copy todir="${bin}/scripts">
+ 			<fileset dir="${src}/backend/src/script/process" />
+-			<filelist dir="${src}/backend/src/c/bav" files="bavwrap" />
+ 			<filelist dir="${src}/backend/src/script/lib" files="agn.py,aps.py,config.sh" />
+ 		</copy>
+ 		<move todir="${bin}/conf/semu">
+-			<fileset dir="${bin}/bin/scripts/semu" />
++			<fileset dir="${bin}/scripts/semu" />
+ 		</move>
+-		<move todir="${bin}/USR_SHARE" file="${bin}/bin/scripts/upgrade-postproc.sh" />
+-		<exec executable="ln" dir="${bin}/bin/scripts">
+-			<arg line="-s bavwrap filter_or_forward" />
+-		</exec>
+-		<exec executable="ln" dir="${bin}/bin/scripts">
+-			<arg line="-s bavwrap is_no_systemmail" />
+-		</exec>
+-			<exec executable="ln" dir="${bin}/bin/scripts">
+-				<arg line="-s bavwrap scan_and_unsubscribe" />
+-			</exec>
+-		<delete dir="${bin}/bin/scripts/upgrade" />
++		<move todir="${bin}/USR_SHARE" file="${bin}/scripts/upgrade-postproc.sh" />
++		<delete dir="${bin}/scripts/upgrade" />
+ 
+-		<copy todir="${bin}/conf">
+-			<fileset dir="${catalina.home}/conf" />
+-		</copy>
+-		<delete>
+-			<filelist dir="${bin}/conf" files="context.xml,logging.properties,server.xml" />
+-		</delete>
+-		<copy todir="${bin}/conf">
+-			<fileset dir="${src}/tomcat/conf"/>
+-		</copy>
+-		<delete dir="${bin}/conf/Catalina" />
+ 		<copy todir="${bin}/conf/bav">
+ 			<fileset dir="${src}/backend/src/script/data" />
+ 		</copy>
+@@ -157,24 +113,19 @@
+ 			<fileset dir="${src}/backend/src/script/process/upgrade" />
+ 		</copy>
+ 
+-		<mkdir dir="${bin}/var/lock" />
+-		<mkdir dir="${bin}/var/log" />
+-		<mkdir dir="${bin}/var/run" />
+-		<mkdir dir="${bin}/var/spool/bav" />
+-		<mkdir dir="${bin}/var/spool/filter" />
+-		<mkdir dir="${bin}/var/spool/log" />
+-		<mkdir dir="${bin}/var/spool/ADMIN" />
+-		<mkdir dir="${bin}/var/spool/ARCHIVE" />
+-		<mkdir dir="${bin}/var/spool/DELETED" />
+-		<mkdir dir="${bin}/var/spool/META" />
+-		<mkdir dir="${bin}/var/spool/QUEUE" />
+-		<mkdir dir="${bin}/var/spool/RECOVER" />
++		<mkdir dir="${oe.home}/var/lock" />
++		<mkdir dir="${oe.home}/var/log" />
++		<mkdir dir="${oe.home}/var/run" />
++		<mkdir dir="${oe.home}/var/spool/bav" />
++		<mkdir dir="${oe.home}/var/spool/filter" />
++		<mkdir dir="${oe.home}/var/spool/log" />
++		<mkdir dir="${oe.home}/var/spool/ADMIN" />
++		<mkdir dir="${oe.home}/var/spool/ARCHIVE" />
++		<mkdir dir="${oe.home}/var/spool/DELETED" />
++		<mkdir dir="${oe.home}/var/spool/META" />
++		<mkdir dir="${oe.home}/var/spool/QUEUE" />
++		<mkdir dir="${oe.home}/var/spool/RECOVER" />
+ 
+-		<!-- Generate Other -->
+-		<mkdir dir="${bin}/logs/openemm" />
+-		<mkdir dir="${bin}/logs/openemm-ws" />
+-		<mkdir dir="${bin}/plugins" />
+-		<mkdir dir="${bin}/temp" />
+ 
+ 		<copy todir="${bin}/USR_SHARE">
+ 			<fileset dir="${src}/sql" />
+@@ -186,35 +137,7 @@
+ 		<copy todir="${bin}/USR_SHARE/ThirdPartyLicences">
+ 			<fileset dir="${src}/other/ThirdPartyLicences" />
+ 		</copy>
+-		<copy todir="${bin}" file="${bin}/USR_SHARE/README.txt" />
+-		<copy todir="${bin}" file="${bin}/USR_SHARE/UPDATE.txt" />
+-
+-		<!-- Assign Groups+Owners (first) and Permissions (second) -->
+-		<chgrp group="openemm" type="both" verbose="true">
+-			<fileset dir="${bin}" />
+-		</chgrp>
+-		<chown owner="openemm" type="both" verbose="true">
+-			<fileset dir="${bin}" />
+-		</chown>
+-		<chgrp group="root" file="${bin}/bin/qctrl" verbose="true" />
+-		<chgrp group="root" file="${bin}/bin/smctrl" verbose="true" />
+-		<chgrp group="root" file="${bin}/bin/updater" verbose="true" />
+-		<chgrp group="root" file="${bin}/conf/bav/bav.rc" verbose="true" />
+-		<chown owner="root" file="${bin}/bin/qctrl" verbose="true" />
+-		<chown owner="root" file="${bin}/bin/smctrl" verbose="true" />
+-		<chown owner="root" file="${bin}/bin/updater" verbose="true" />
+-		<chown owner="root" file="${bin}/conf/bav/bav.rc" verbose="true" />
+-		<chmod dir="${bin}/bin/" perm="a+x" includes="**/*" verbose="true" />
+-		<chmod dir="${bin}/webservices/" perm="a+x" includes="**/*.sh" verbose="true" />
+-		<chmod file="${bin}/USR_SHARE/upgrade-postproc.sh" perm="a+x" verbose="true" />
+-		<chmod file="${bin}/conf/bav/bav.rc" perm="600" verbose="true" />
+-		<exec executable="chmod" dir="${bin}/bin">
+-			<arg line="6755 qctrl smctrl updater" />
+-		</exec>
+-
+-		<!-- Build Binary Tarball -->
+-		<exec executable="tar" dir="${bin}">
+-			<arg line="-czvf ${oe.home}/OpenEMM-${version}-bin.tar.gz ." />
+-		</exec>
++		<copy todir="${oe.home}" file="${bin}/USR_SHARE/README.txt" />
++		<copy todir="${oe.home}" file="${bin}/USR_SHARE/UPDATE.txt" />
+ 	</target>
+ </project>

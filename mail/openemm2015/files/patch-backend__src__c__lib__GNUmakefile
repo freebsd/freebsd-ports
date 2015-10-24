@@ -1,0 +1,13 @@
+--- backend/src/c/lib/GNUmakefile.orig	2015-02-20 13:02:20 UTC
++++ backend/src/c/lib/GNUmakefile
+@@ -20,8 +20,8 @@
+ # Contributor(s): AGNITAS AG. 
+ ##################################################################################
+  
+-CC	= gcc
+-CFLAGS	= -I.
++CC?= gcc
++CFLAGS+= -I.
+ SRCS	= atob.c \
+ 	  buffer.c \
+ 	  cache.c \
