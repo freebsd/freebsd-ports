@@ -1,0 +1,20 @@
+--- backend/src/c/bav/GNUmakefile.orig	2015-02-20 13:02:20 UTC
++++ backend/src/c/bav/GNUmakefile
+@@ -20,13 +20,13 @@
+ # Contributor(s): AGNITAS AG. 
+ ##################################################################################
+ 
+-CC	= gcc
+-CFLAGS	= -I../lib -I../../../contrib/include -pthread
+-LDFLAGS	= -L../lib -L../../../contrib/lib -pthread
++CC?= gcc
++CFLAGS	= -I../lib -I/usr/local/lib -I/usr/local/include -pthread
++LDFLAGS	= -L../lib -L/usr/local/lib -pthread
+ # required for Ubuntu 9.10 by user request
+ LDFLAGS	:= $(LDFLAGS) -L/usr/lib/libmilter
+ #
+-LIBS	= -lagn -lmilter -lsa
++LIBS	= -lagn -lmilter -lex -lsa
+ SRCBAV	= bav.c cfg.c
+ SRCWRP	= bavwrap.c store.c
+ OBJBAV	= $(SRCBAV:%.c=%.o)
