@@ -1,0 +1,32 @@
+--- configure.in.orig	2015-10-09 07:11:14 UTC
++++ configure.in
+@@ -369,11 +369,11 @@ AC_ARG_WITH(bundled-extension-blobs,
+                           and comply with their distribution requirements by updating the
+                           files LICENSE_aggregated and NOTICE_aggregated accordingly
+ ],,)
+-#AC_ARG_WITH(bundled-prereg-extensions,
+-#[  --with-bundled-prereg-extensions Whitespace seperated list of files in the tarball directory that
+-#                          are to be bundled as pre-registered extensions. Make sure to only bundle
+-#                          extensions which can be installed without requiring a license dialog
+-#],,)
++AC_ARG_WITH(bundled-prereg-extensions,
++[  --with-bundled-prereg-extensions Whitespace seperated list of files in the tarball directory that
++                          are to be bundled as pre-registered extensions. Make sure to only bundle
++                          extensions which can be installed without requiring a license dialog
++],,)
+ AC_ARG_ENABLE(bundled-dictionaries,
+ [  --enable-bundled-dictionaries  Download dictionaries (spelling, hyphenation, thesaurus)
+                            according to main/extensions.lst and bundle them. Make sure to
+@@ -1540,9 +1540,9 @@ else
+ fi
+ AC_SUBST(BUNDLED_EXTENSION_BLOBS)
+ 
+-#dnl ===================================================================
+-#dnl Check extensions that are to be bundled as pre-registerd
+-#dnl ===================================================================
++dnl ===================================================================
++dnl Check extensions that are to be bundled as pre-registerd
++dnl ===================================================================
+ if test -n "$with_bundled_prereg_extensions"; then
+ 	BUNDLED_PREREG_EXTENSIONS="$with_bundled_prereg_extensions"
+ else
