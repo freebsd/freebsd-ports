@@ -9,6 +9,7 @@ MASTER_SITES=	ftp://ftp.feep.net/pub/software/fget/
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Commandline tool for mirroring remote files via FTP
 
+BROKEN=		Does not fetch
 USES=		gmake
 GNU_CONFIGURE=	yes
 
