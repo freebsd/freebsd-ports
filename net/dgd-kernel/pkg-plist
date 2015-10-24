@@ -47,19 +47,6 @@ etc/rc.d/dgd-kernel.sh.sample
 @unexec rm -f %D/%%DATADIR%%/kernel/include/type.h || true
 @unexec rm -f %D/%%DATADIR%%/kernel.log || true
 @unexec rm -f %D/%%DATADIR%%/tmp/dgd-kernel.swap || true
-@dirrm %%DATADIR%%/tmp
-@dirrm %%DATADIR%%/kernel/usr/admin
-@dirrm %%DATADIR%%/kernel/usr/System
-@dirrm %%DATADIR%%/kernel/usr
-@dirrm %%DATADIR%%/kernel/kernel/sys
-@dirrm %%DATADIR%%/kernel/kernel/obj
-@dirrm %%DATADIR%%/kernel/kernel/lib/network
-@dirrm %%DATADIR%%/kernel/kernel/lib/api
-@dirrm %%DATADIR%%/kernel/kernel/lib
-@dirrm %%DATADIR%%/kernel/kernel/data
-@dirrm %%DATADIR%%/kernel/kernel
-@dirrm %%DATADIR%%/kernel/include/kernel
-@dirrm %%DATADIR%%/kernel/include
-@dirrm %%DATADIR%%/kernel
-@dirrm %%DATADIR%%
-@dirrm etc/dgd-kernel
+@dir %%DATADIR%%/tmp
+@dir %%DATADIR%%/kernel/usr/admin
+@dir %%DATADIR%%/kernel/kernel/data
