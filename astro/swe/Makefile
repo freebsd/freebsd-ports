@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	swe
-PORTVERSION=	2.03
+PORTVERSION=	2.04
 CATEGORIES=	astro devel
 MASTER_SITES=	ftp://ftp.astro.com/pub/swisseph/
 DISTNAME=	${PORTNAME}_unix_src_${PORTVERSION}
@@ -12,7 +12,6 @@ COMMENT=	High Precision Ephemeris Developed By Astrodienst
 
 LICENSE=	GPLv2
 
-BROKEN=		Does not fetch
 WRKSRC=		${WRKDIR}/src
 USES=		gmake
 ALL_TARGET=	#
