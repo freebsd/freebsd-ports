@@ -12,6 +12,7 @@ COMMENT=	The ultimate outdoor aficionado's tool
 
 LICENSE=	GPLv3
 
+BROKEN=		Does not fetch
 LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal \
 		libproj.so:${PORTSDIR}/graphics/proj \
 		libgps.so:${PORTSDIR}/astro/gpsd
