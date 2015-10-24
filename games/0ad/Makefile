@@ -2,7 +2,7 @@
 
 PORTNAME=	0ad
 PORTVERSION=	0.0.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/zero-ad/releases
 DISTFILES=	${PORTNAME}-${PORTVERSION}-alpha-unix-build.tar.xz \
@@ -45,6 +45,10 @@ MANUAL_PACKAGE_BUILD=	huge
 PORTDATA=	*
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1000024
+BROKEN=		segfaults during build
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
