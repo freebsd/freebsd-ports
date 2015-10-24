@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	bmake
-PORTVERSION=	20150910
+PORTVERSION=	20151020
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/sjg/ \
 		http://www.gtlib.cc.gatech.edu/pub/NetBSD/misc/sjg/ \
 		ftp://ftp.uk.netbsd.org/pub/NetBSD/misc/sjg/ \
 		ftp://ftp.de.netbsd.org/pub/NetBSD/misc/sjg/
-DISTFILES=	bmake-${PORTVERSION}.tar.gz mk-20150901.tar.gz
+DISTFILES=	bmake-${PORTVERSION}.tar.gz mk-${PORTVERSION}.tar.gz
 
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Portable version of NetBSD 'make' utility
