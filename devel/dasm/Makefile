@@ -11,6 +11,7 @@ COMMENT=	Macro assembler for 8-bit microprocessors including MOS 6502, MC6803
 
 LICENSE=	GPLv2
 
+BROKEN=		Does not fetch
 OPTIONS_DEFINE=	DOCS
 
 USES=	gmake
