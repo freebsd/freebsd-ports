@@ -1,6 +1,6 @@
---- src/ObservableQueue.h~
+--- src/ObservableQueue.h.orig	2011-06-13 08:50:25 UTC
 +++ src/ObservableQueue.h
-@@ -331,7 +331,7 @@ CObservableQueue<ValueType>::~CObservabl
+@@ -331,14 +331,14 @@ CObservableQueue<ValueType>::~CObservabl
  template <typename ValueType>
  void CObservableQueue<ValueType>::ObserverAdded( ObserverType* o )
  {
@@ -9,7 +9,6 @@
  }
  
  
-@@ -338,7 +338,7 @@ void CObservableQueue<ValueType>::Observ
  template <typename ValueType>
  void CObservableQueue<ValueType>::ObserverRemoved( ObserverType* o )
  {
