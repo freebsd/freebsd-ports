@@ -2,24 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	libint
-PORTVERSION=	1.1.4
-PORTREVISION=	2
+DISTVERSIONPREFIX=	release-
+DISTVERSION=	1-1-6
 CATEGORIES=	science
-MASTER_SITES=	http://www.files.chem.vt.edu/chem-dept/valeev/software/libint/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Evaluate the integrals in modern atomic and molecular theory
 
-# USE_GCC=yes is required because libint is used with mpqc which is built
-# by gfortran48 (from lang/gcc) and these two libraries each try to pull in
-# a different version of libgcc_s.so which fails.  Forcing this port to
-# build with lang/gcc as well resolves the conflict that manifests in
-# science/libghemical
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		perl5 gmake libtool
+USE_GITHUB=	yes
+GH_ACCOUNT=	evaleev
+
+# USE_GCC=yes is required because libint is used with mpqc which is built
+# by gfortran48 (from `lang/gcc') and these two libraries each try to pull
+# in a different version of libgcc_s.so which fails.  Forcing this port to
+# build with lang/gcc as well resolves the conflict that manifests in
+# `science/libghemical' port.
+USES=		autoreconf gmake libtool perl5
 USE_GCC=	yes
 USE_LDCONFIG=	yes
-ALL_TARGET=	# empty
+ALL_TARGET=	default
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
