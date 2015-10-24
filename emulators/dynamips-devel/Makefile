@@ -13,6 +13,7 @@ COMMENT=	Cisco 1700/2600/3600/3700/7200 Simulator
 
 LICENSE=	GPLv2
 
+BROKEN=		Does not fetch
 LIB_DEPENDS=	libelf.so.0:${PORTSDIR}/devel/libelf
 
 CONFLICTS=	dynamips-[0-9]* dynamips-community-[0-9]*
