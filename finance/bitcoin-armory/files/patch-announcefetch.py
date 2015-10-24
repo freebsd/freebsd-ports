@@ -1,6 +1,6 @@
---- announcefetch.py
+--- announcefetch.py.orig	2015-06-10 21:49:31 UTC
 +++ announcefetch.py
-@@ -213,6 +213,8 @@ class AnnounceDataFetcher(object):
+@@ -235,6 +235,8 @@ class AnnounceDataFetcher(object):
              argsMap['os'] = 'win'
           elif OS_LINUX:
              argsMap['os'] = 'lin'

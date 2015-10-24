@@ -1,11 +1,11 @@
-
 ================================================================
 BitcoinArmory consumes significant disk space in ~/.armory
 and ~/.bitcoin, so you need to provide sufficient available
-space there, currently >30 gigabytes.
+space there, currently >50 gigabytes.
 
-Please note that BitcoinArmory has an embedded bitcoind, and
-doesn't require the running bitcoind, but can optionally use it.
+Please note that BitcoinArmory requires bitcoind daemon, so you
+need to have either net-p2p/bitcoin-daemon or net-p2p/bitcoin
+installed.
 
 Please keep your *.wallet files located under the ~/.armory
 directory secure. Loss of these files is equivalent to the loss
