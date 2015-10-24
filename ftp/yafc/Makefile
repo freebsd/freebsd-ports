@@ -12,6 +12,7 @@ COMMENT=	Yet another ftp client. Similar to ftp(1)
 
 LICENSE=	GPLv2 # (or later)
 
+BROKEN=		Does not fetch
 OPTIONS_DEFINE=	BASH EXAMPLES NLS SSH READLINE
 OPTIONS_DEFAULT=BASH NLS SSH
 
