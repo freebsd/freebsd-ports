@@ -13,6 +13,7 @@ COMMENT=	Graphic development lightweight API
 
 LICENSE=	LGPL21
 
+BROKEN=		Does not fetch
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 OPTIONS_DEFINE=	FREETYPE X11 SDL UNIQUE TEST DOCS
