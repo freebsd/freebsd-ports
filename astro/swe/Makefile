@@ -12,6 +12,7 @@ COMMENT=	High Precision Ephemeris Developed By Astrodienst
 
 LICENSE=	GPLv2
 
+BROKEN=		Does not fetch
 WRKSRC=		${WRKDIR}/src
 USES=		gmake
 ALL_TARGET=	#
