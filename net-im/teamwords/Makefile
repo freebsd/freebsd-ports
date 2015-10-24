@@ -26,8 +26,6 @@ PLIST_FILES=	bin/teamwords \
 		share/icons/teamwords.png
 SUB_FILES=      teamwords.desktop
 
-.include <bsd.port.options.mk>
-
 do-install:
 	${STRIP_CMD} ${WRKSRC}/teamwords
 	${INSTALL} ${WRKSRC}/teamwords ${STAGEDIR}${PREFIX}/bin
