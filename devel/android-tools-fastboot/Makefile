@@ -3,12 +3,11 @@
 PORTNAME=	android-tools-fastboot
 DISTVERSIONPREFIX=	android-
 DISTVERSION?=	6.0.0_r1
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	devel
-MASTER_SITES=	https://anonscm.debian.org/cgit/android-tools/android-tools.git/plain/debian/:bashcomp,manpage
-DISTFILES=	bash_completion.d/fastboot?id=2b8cfec:bashcomp \
-		fastboot.1?id=706e754:manpage
-EXTRACT_ONLY=	${DISTFILES:N*\:bashcomp:N*\:manpage:C/:.*//}
+MASTER_SITES=	https://anonscm.debian.org/cgit/android-tools/android-tools.git/plain/debian/:manpage
+DISTFILES=	fastboot.1?id=706e754:manpage
+EXTRACT_ONLY=	${DISTFILES:N*\:manpage:C/:.*//}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Android Fastboot protocol CLI tool
@@ -44,7 +43,6 @@ MAKE_ENV=	BINDIR="${PREFIX}/bin" EXTRADIR="${FILESDIR}" \
 		MANDIR="${PREFIX}/man/man" \
 		LIBPCRE="${LOCALBASE}/lib/libpcre.a"
 PLIST_FILES=	bin/fastboot \
-		%%BASH%%etc/bash_completion.d/fastboot \
 		man/man1/fastboot.1.gz
 PORTDOCS=	*
 SUB_FILES=	pkg-message
@@ -52,7 +50,11 @@ SUB_FILES=	pkg-message
 OPTIONS_DEFINE=	BASH DOCS
 OPTIONS_SUB=	yes
 
-BASH_VARS=	LICENSE+=MIT # debian/copyright
+BASH_GH_ACCOUNT=	mbrubeck:bashcomp
+BASH_GH_PROJECT=	android-completion:bashcomp
+BASH_GH_TAGNAME=	3b0fabe:bashcomp
+BASH_PLIST_FILES=	etc/bash_completion.d/adb
+BASH_VARS=		LICENSE+=MIT
 
 DOCS_MAKE_ARGS_OFF=	FILES="" FILESDIR=""
 
@@ -63,10 +65,10 @@ post-extract:
 	@(cd ${WRKSRC_extras} && ${COPYTREE_SHARE} . ${WRKSRC})
 	@${MV} ${WRKSRC_libselinux} ${WRKSRC}/libselinux
 
-post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${PLIST_FILES:M%%BASH%%*:C/%%.*%%//:H}
-	${INSTALL_DATA} ${_DISTDIR}/${DISTFILES:M*\:bashcomp:C/:.*//} \
-		${STAGEDIR}${PREFIX}/${PLIST_FILES:M%%BASH%%*:C/%%.*%%//}
+post-install-BASH-on:
+	${MKDIR} ${STAGEDIR}${PREFIX}/${BASH_PLIST_FILES:H}
+	${INSTALL_DATA} ${WRKSRC_bashcomp}/android \
+		${STAGEDIR}${PREFIX}/${BASH_PLIST_FILES}
 
 update-revision:
 # https://developer.github.com/v3/repos/commits/#get-a-single-commit
