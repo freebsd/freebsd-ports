@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.w1hkj.com/downloads/fldigi/\
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Digital decoder for psk, cw, psk31, olivia
 
+BROKEN=		Does not fetch
+
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconf \
