@@ -4,12 +4,13 @@
 PORTNAME=	garmindev
 PORTVERSION=	0.3.4
 CATEGORIES=	astro
-MASTER_SITES=	SF/qlandkartegt/${PORTNAME}/Garmin%20Device%20Driver%20${PORTVERSION}
+MASTER_SITES=	https://bitbucket.org/kiozen/qlandkarte-gt/downloads/
 
 MAINTAINER=	cmt@burggraben.net
 COMMENT=	Drivers for using Garmin GPS units with QlandkarteGT
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake
 
