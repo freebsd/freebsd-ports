@@ -29,7 +29,8 @@ ONLY_FOR_ARCHS_REASON=	plist contents not known
 .include <bsd.port.pre.mk>
 
 .for arch in ${ONLY_FOR_ARCHS}
-.if (${arch} == ${ARCH} || (${arch} == "i386" && ${ARCH} == "amd64"))
+_arch=${arch}
+.if (${_arch} == ${ARCH} || (${_arch} == "i386" && ${ARCH} == "amd64"))
 ARCH_SUB:=	${ARCH_SUB} ${arch:tu}=
 .else
 ARCH_SUB:=	${ARCH_SUB} ${arch:tu}="@comment "
