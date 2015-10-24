@@ -12,6 +12,7 @@ EXTRACT_ONLY=
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Quick offline checker for CVS modifications
 
+BROKEN=		Does not fetch
 USES=		perl5
 USE_PERL5=	run
 NO_BUILD=	yes
