@@ -58,6 +58,43 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="75f39413-7a00-11e5-a2a1-002590263bf5">
+    <topic>drupal -- open redirect vulnerability</topic>
+    <affects>
+      <package>
+	<name>drupal7</name>
+	<range><lt>7.41</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Drupal development team reports:</p>
+	<blockquote cite="https://www.drupal.org/SA-CORE-2015-004">
+	  <p>The Overlay module in Drupal core displays administrative pages
+	    as a layer over the current page (using JavaScript), rather than
+	    replacing the page in the browser window. The Overlay module does
+	    not sufficiently validate URLs prior to displaying their contents,
+	    leading to an open redirect vulnerability.</p>
+	  <p>This vulnerability is mitigated by the fact that it can only be
+	    used against site users who have the "Access the administrative
+	    overlay" permission, and that the Overlay module must be enabled.
+	    </p>
+	  <p>An incomplete fix for this issue was released as part of
+	    SA-CORE-2015-002.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7943</cvename>
+      <url>https://www.drupal.org/SA-CORE-2015-004</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/10/23/6</url>
+    </references>
+    <dates>
+      <discovery>2015-10-21</discovery>
+      <entry>2015-10-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="08d11134-79c5-11e5-8987-6805ca0b3d42">
     <topic>phpMyAdmin -- Content spoofing vulnerability</topic>
     <affects>
