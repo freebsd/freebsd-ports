@@ -11,6 +11,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ADAMEm is a portable Coleco ADAM and ColecoVision emulator
 
+BROKEN=		Does not fetch
 NO_WRKSUBDIR=	yes
 USE_XORG=	sm x11 xau xext xfixes xi xrandr
 
