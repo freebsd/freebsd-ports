@@ -12,6 +12,7 @@ DISTNAME=	NoteBook-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Place to store notes in an organized manner
 
+BROKEN=		Does not fetch
 LICENSE=	GPLv2
 
 USES=		gnustep
