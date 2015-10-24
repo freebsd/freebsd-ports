@@ -1,5 +1,4 @@
 bin/armory
-lib/armory/ArmoryDB.py
 lib/armory/ArmoryQt.py
 lib/armory/BitTornado/BT1/Choker.py
 lib/armory/BitTornado/BT1/Connecter.py
@@ -53,7 +52,7 @@ lib/armory/BitTornado/torrentlistparse.py
 lib/armory/BitTornado/zurllib.py
 lib/armory/CppBlockUtils.py
 lib/armory/LICENSE.py
-lib/armory/README
+lib/armory/README.md
 lib/armory/SDM.py
 lib/armory/_CppBlockUtils.so
 lib/armory/announcefetch.py
@@ -87,6 +86,9 @@ lib/armory/bitcoinrpc_jsonrpc/json.py
 lib/armory/bitcoinrpc_jsonrpc/proxy.py
 lib/armory/default_bootstrap.torrent
 lib/armory/dynamicImport.py
+lib/armory/extras/BDMbasics_listUTXOs.py
+lib/armory/extras/BDMbasics_traceTxHistory.py
+lib/armory/extras/BDMbasics_watchBalance.py
 lib/armory/extras/LastBlockHash.py
 lib/armory/extras/LatestBlocksFinder.py
 lib/armory/extras/PromoKit.py
@@ -122,6 +124,7 @@ lib/armory/pytest/testArmoryDTiab.py
 lib/armory/pytest/testArmoryEngineUtils.py
 lib/armory/pytest/testDecorators.py
 lib/armory/pytest/testFragmentedBackup.py
+lib/armory/pytest/testJasvet.py
 lib/armory/pytest/testMultisig.py
 lib/armory/pytest/testParseAnnounce.py
 lib/armory/pytest/testPyBtcAddress.py
@@ -130,6 +133,7 @@ lib/armory/pytest/testPyBtcWalletRecovery.py
 lib/armory/pytest/testPyTX.py
 lib/armory/pytest/testSplitSecret.py
 lib/armory/pytest/testUserAddress.py
+lib/armory/pytest/testUtility.py
 lib/armory/qrc_img_resources.py
 lib/armory/qrcodenative.py
 lib/armory/qt4reactor.py
@@ -146,7 +150,6 @@ lib/armory/txjsonrpc/web/__init__.py
 lib/armory/txjsonrpc/web/jsonrpc.py
 lib/armory/ui/MultiSigDialogs.py
 lib/armory/ui/MultiSigModels.py
-lib/armory/ui/TxConstruct.py
 lib/armory/ui/TxFrames.py
 lib/armory/ui/UpgradeDownloader.py
 lib/armory/ui/VerifyOfflinePackage.py
@@ -154,6 +157,7 @@ lib/armory/ui/WalletFrames.py
 lib/armory/ui/Wizards.py
 lib/armory/ui/__init__.py
 lib/armory/ui/toolsDialogs.py
+lib/armory/update_version.py
 lib/armory/urllib3/__init__.py
 lib/armory/urllib3/_collections.py
 lib/armory/urllib3/connection.py
@@ -194,9 +198,6 @@ share/armory/img/armory256x256.ico
 share/armory/img/armory32x32.ico
 share/armory/img/armory48x48.ico
 share/armory/img/armory64x64.ico
-share/armory/img/armory_icon_24x24.png
-share/armory/img/armory_icon_32x32.png
-share/armory/img/armory_icon_64x64.png
 share/armory/img/armory_icon_fullres.icns
 share/armory/img/armory_icon_fullres.png
 share/armory/img/armory_icon_green_24x24.png
@@ -312,3 +313,6 @@ share/armory/img/visible.png
 share/armory/img/visible2.png
 share/armory/img/wallet_16x12.png
 share/armory/img/x-office-address-book.png
+share/icons/hicolor/24x24/apps/armoryicon.png
+share/icons/hicolor/32x32/apps/armoryicon.png
+share/icons/hicolor/64x64/apps/armoryicon.png
