@@ -1,5 +1,3 @@
-SHA256 (bash_completion.d/fastboot?id=2b8cfec) = 12ef37bff8230e5e164e4ef5b9c1be1e5518cf066a04479f61e5ebf3761d4bc4
-SIZE (bash_completion.d/fastboot?id=2b8cfec) = 3051
 SHA256 (fastboot.1?id=706e754) = 2af01b064440952a82f1602691a0fecc030302722a71444946fb70d9c423d283
 SIZE (fastboot.1?id=706e754) = 5906
 SHA256 (android-platform_system_core-android-6.0.0_r1_GH0.tar.gz) = 3027e73c8f23d8348c76bc558987ecd10c07ed7c89b60a2a76be9e0ef7c84dd5
@@ -8,3 +6,5 @@ SHA256 (jbeich-platform_system_extras-android-6.0.0_r1_GH0.tar.gz) = 84877e2e17a
 SIZE (jbeich-platform_system_extras-android-6.0.0_r1_GH0.tar.gz) = 650275
 SHA256 (jbeich-platform_external_libselinux-android-6.0.0_r1_GH0.tar.gz) = ed9ad172dd78591d4f0400c092d8151154a75cc244b6c53ccbb3ae0b165322e4
 SIZE (jbeich-platform_external_libselinux-android-6.0.0_r1_GH0.tar.gz) = 50961
+SHA256 (mbrubeck-android-completion-3b0fabe_GH0.tar.gz) = dc774f101acd9514baf3e7a0ac610068116f2c093b94987ba59203a39a6439dc
+SIZE (mbrubeck-android-completion-3b0fabe_GH0.tar.gz) = 5948

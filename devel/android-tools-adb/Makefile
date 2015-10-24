@@ -3,12 +3,8 @@
 PORTNAME=	android-tools-adb
 DISTVERSIONPREFIX=	android-
 DISTVERSION?=	6.0.0_r1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	devel
-MASTER_SITES=	https://anonscm.debian.org/cgit/android-tools/android-tools.git/plain/debian/:bashcomp
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		bash_completion.d/adb?id=2b8cfec:bashcomp
-EXTRACT_ONLY=	${DISTFILES:N*\:bashcomp:C/:.*//}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Android debug bridge command line tool
@@ -43,14 +39,17 @@ MAKE_ENV=	BINDIR="${PREFIX}/bin" EXTRADIR="${FILESDIR}" \
 ALL_TARGET=	all
 TEST_TARGET=	test
 
-PLIST_FILES=	bin/adb \
-		%%BASH%%etc/bash_completion.d/adb
+PLIST_FILES=	bin/adb
 PORTDOCS=	*
 
 OPTIONS_DEFINE+=BASH DOCS TEST
 OPTIONS_SUB=	yes
 
-BASH_VARS=	LICENSE+=MIT LICENSE_COMB=multi # debian/copyright
+BASH_GH_ACCOUNT=	mbrubeck:bashcomp
+BASH_GH_PROJECT=	android-completion:bashcomp
+BASH_GH_TAGNAME=	3b0fabe:bashcomp
+BASH_PLIST_FILES=	etc/bash_completion.d/adb
+BASH_VARS=		LICENSE+=MIT LICENSE_COMB=multi
 
 DOCS_MAKE_ARGS_OFF=	FILES="" FILESDIR=""
 
@@ -72,10 +71,10 @@ post-patch:
 			${WRKSRC}/adb/adb_io_test.cpp; \
 	fi
 
-post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${PLIST_FILES:M%%BASH%%*:C/%%.*%%//:H}
-	${INSTALL_DATA} ${_DISTDIR}/${DISTFILES:M*\:bashcomp:C/:.*//} \
-		${STAGEDIR}${PREFIX}/${PLIST_FILES:M%%BASH%%*:C/%%.*%%//}
+post-install-BASH-on:
+	${MKDIR} ${STAGEDIR}${PREFIX}/${BASH_PLIST_FILES:H}
+	${INSTALL_DATA} ${WRKSRC_bashcomp}/android \
+		${STAGEDIR}${PREFIX}/${BASH_PLIST_FILES}
 
 update-revision:
 # https://developer.github.com/v3/repos/commits/#get-a-single-commit
