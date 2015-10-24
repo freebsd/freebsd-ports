@@ -27,8 +27,7 @@ PLIST_FILES=	bin/teamwords \
 SUB_FILES=      teamwords.desktop
 
 do-install:
-	${STRIP_CMD} ${WRKSRC}/teamwords
-	${INSTALL} ${WRKSRC}/teamwords ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/teamwords ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKDIR}/${SUB_FILES} ${STAGEDIR}${PREFIX}/share/applications/
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons
 	${INSTALL_DATA} ${WRKSRC}/images/png/Slack.png ${STAGEDIR}${PREFIX}/share/icons/teamwords.png
