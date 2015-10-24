@@ -15,7 +15,7 @@ LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
 CONFLICTS_INSTALL=	keepassx-0.*
 
-USES=		cmake desktop-file-utils shared-mime-info
+USES=		cmake compiler:features desktop-file-utils shared-mime-info
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_QT4=	corelib gui xml qtestlib uic_build moc_build \
@@ -23,4 +23,10 @@ USE_QT4=	corelib gui xml qtestlib uic_build moc_build \
 USE_XORG=	ice inputproto sm x11 xcursor xext xfixes xi xrandr xrender \
 		xt xtst
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if !${COMPILER_FEATURES:Mc++0x}
+CMAKE_ARGS+=	-DWITH_CXX11:BOOL=OFF
+.endif
+
+.include <bsd.port.post.mk>
