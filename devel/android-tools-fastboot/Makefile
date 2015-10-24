@@ -3,7 +3,7 @@
 PORTNAME=	android-tools-fastboot
 DISTVERSIONPREFIX=	android-
 DISTVERSION?=	6.0.0_r1
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	devel
 MASTER_SITES=	https://anonscm.debian.org/cgit/android-tools/android-tools.git/plain/debian/:manpage
 DISTFILES=	fastboot.1?id=706e754:manpage
@@ -57,7 +57,7 @@ OPTIONS_SUB=	yes
 BASH_GH_ACCOUNT=	mbrubeck:bashcomp
 BASH_GH_PROJECT=	android-completion:bashcomp
 BASH_GH_TAGNAME=	3b0fabe:bashcomp
-BASH_PLIST_FILES=	etc/bash_completion.d/adb
+BASH_PLIST_FILES=	etc/bash_completion.d/fastboot
 BASH_VARS=		LICENSE+=MIT
 
 DOCS_MAKE_ARGS_OFF=	FILES="" FILESDIR=""
