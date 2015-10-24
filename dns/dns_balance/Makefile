@@ -10,6 +10,7 @@ DISTNAME=	DNS-Balance-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic load-balancing DNS server
 
+BROKEN=		Does not fetch
 USE_RUBY=	yes
 USE_RC_SUBR=	dns_balance
 
