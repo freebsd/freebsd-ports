@@ -1,4 +1,0 @@
-%%RUBY_SITELIBDIR%%/progressbar.rb
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/progressbar.en.rd
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/progressbar.ja.rd
