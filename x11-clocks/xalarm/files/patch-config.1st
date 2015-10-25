@@ -1,0 +1,49 @@
+--- config.1st.orig	1995-07-12 07:57:09.000000000 -0700
++++ config.1st	2015-10-25 01:06:50.867096289 -0700
+@@ -3,31 +3,6 @@
+ # Just try to find out the full path names for kill, ps, grep & colrm which
+ # are used within fns.c to do process listing.
+ 
+-echo -n '
+-I need to find the path of a few things on your system.  If I guess wrongly,
+-say so at the end, and I will try again.  If I do not know where they reside, I
+-will ask you.  Default answers are in brackets.  If you do not know where they
+-are on your system, first try "which <command>" (or equivalent) in a shell, or
+-ask your local System Guru or Manager.
+-
+-+ If you do not have "kill", "ps", "grep" or "colrm" (or equivalent), do not
+-  panic, xalarm only uses them when it is attempting to list the process ids of
+-  other xalarms.  If you do not have these commands, just hit RETURN.
+-
+-  You can make xalarm, but you will not be able to use the -reset, -kill or
+-  -list options.
+-
+-  I need to know because xalarm should use full path names.
+-
+-+ If you do not have "fortune" or "yow", you cannot have the X equivalent since
+-  they are just front ends to them!  But do not panic, they are not necessary
+-  for xalarm, so if you do not have them just hit RETURN when asked for their
+-  whereabouts.
+-
+-Hit RETURN when ready...'
+-read dummy
+-echo " "
+-
+ if test "$1" = "-quick"; then
+ 	mode=-quick
+ 	shift
+@@ -98,13 +73,4 @@
+ 	chmod +x x$program
+ done
+ 
+-echo -n "
+-Are these OK? [y] "
+-read ans
+-case $ans in
+-	""|"y"*|"Y"*)	touch .config
+-			echo "
+-Thank you.
+-";;
+-	*)		./config.1st $which $*;;
+-esac
++touch .config
