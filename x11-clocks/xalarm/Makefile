@@ -12,7 +12,6 @@ COMMENT=	X based alarm clock
 
 USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
-IS_INTERACTIVE=	yes
 
 pre-install:
 	(cd ${WRKSRC} ; ${CP} XAlarm.ad XAlarm-color.ad)
