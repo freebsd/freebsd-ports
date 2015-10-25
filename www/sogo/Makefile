@@ -3,7 +3,7 @@
 
 PORTNAME=		sogo
 PORTVERSION=		2.3.2
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		www gnustep
 MASTER_SITES=		http://www.sogo.nu/files/downloads/SOGo/Sources/
 DISTNAME=		SOGo-${PORTVERSION}
@@ -13,12 +13,16 @@ COMMENT=		Groupware server with a focus on scalability and open standards
 
 LICENSE=		GPLv2
 
-BUILD_DEPENDS=		${GNUSTEP_LOCAL_LIBRARIES}/libDOM.so:${PORTSDIR}/devel/sope
 LIB_DEPENDS=		libmemcached.so:${PORTSDIR}/databases/libmemcached \
-			libcurl.so:${PORTSDIR}/ftp/curl
-RUN_DEPENDS:=		${BUILD_DEPENDS}
+			libcurl.so:${PORTSDIR}/ftp/curl \
+			libDOM.so:${PORTSDIR}/devel/sope
 
-MAKE_JOBS_UNSAFE=yes
+OPTIONS_DEFINE=		ACTIVESYNC
+OPTIONS_SUB=		yes
+
+ACTIVESYNC_DESC=	Enable support for ActiveSync protocol (Experimental)
+
+ACTIVESYNC_LIB_DEPENDS=	libwbxml2.so:${PORTSDIR}/textproc/wbxml2
 
 USERS=			sogod
 GROUPS=			sogod
@@ -39,6 +43,10 @@ CONFIGURE_ARGS=		--disable-debug --enable-strip
 post-patch:
 	${GREP} -rlF '/etc/sogo' ${WRKSRC} \
 		| ${XARGS} ${REINPLACE_CMD} 's#/etc/sogo#${PREFIX}/etc/sogo#g'
+
+.if ${PORT_OPTIONS:MACTIVESYNC}
+	@${REINPLACE_CMD} -e 's/Tools/Tools ActiveSync/' ${WRKSRC}/GNUmakefile
+.endif
 
 do-configure:
 	cd ${WRKSRC} ; . ${GNUSTEP_MAKEFILES}/GNUstep.sh ; ./configure ${CONFIGURE_ARGS}
