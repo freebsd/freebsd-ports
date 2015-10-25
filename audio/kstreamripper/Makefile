@@ -13,6 +13,8 @@ COMMENT=	Program for recording streams for KDE4
 RUN_DEPENDS=	${LOCALBASE}/bin/streamripper:${PORTSDIR}/audio/streamripper
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 USES=		cmake gettext-tools tar:bzip2
 USE_KDE4=	kdelibs kdeprefix automoc4
 USE_QT4=	qmake_build moc_build rcc_build uic_build

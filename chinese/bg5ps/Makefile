@@ -13,6 +13,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert Chinese-Big5/GB encoded files to Postscript, using TTF fonts
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 LIB_DEPENDS=	libttf.so:${PORTSDIR}/print/freetype
 
 USES=		python

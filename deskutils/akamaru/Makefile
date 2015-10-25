@@ -14,6 +14,8 @@ COMMENT=	Simple, but fun, physics engine prototype
 RUN_DEPENDS=	xcompmgr:${PORTSDIR}/x11-wm/xcompmgr
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 USES=		gmake pkgconfig
 USE_GNOME=	gconf2 gtk20
 GCONF_SCHEMAS=	kiba.schemas

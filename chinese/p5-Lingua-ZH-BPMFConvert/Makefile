@@ -12,6 +12,8 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Rule-based conversion of BPMF (bopomofo) into Hanyu Pinyin
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 USES=		perl5
 USE_PERL5=	configure
 

@@ -18,6 +18,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console CJK Environment
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 LICENSE=	GPLv2
 
 USES=		tar:tgz

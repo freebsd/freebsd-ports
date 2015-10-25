@@ -13,6 +13,8 @@ COMMENT=	Musicpd last.fm client
 LICENSE=	GPLv2
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 LIB_DEPENDS+=	libmpdclient.so:${PORTSDIR}/audio/libmpdclient
 
 USES=		pkgconfig tar:bzip2

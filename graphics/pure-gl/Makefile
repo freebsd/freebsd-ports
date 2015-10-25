@@ -14,6 +14,8 @@ COMMENT=	Pure language interface to OpenGL
 LICENSE=	BSD3CLAUSE
 
 BROKEN=		No public distfiles
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 
 USES=		pure:ffi
 USE_GL=		glut

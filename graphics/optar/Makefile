@@ -14,6 +14,8 @@ COMMENT=	Tool for encoding data on paper
 LICENSE=	GPLv2
 
 BROKEN=		Checksum and size mismatch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick

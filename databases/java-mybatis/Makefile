@@ -13,6 +13,8 @@ MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	SQL Mapping Framework
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}-bundle${EXTRACT_SUFX}
 

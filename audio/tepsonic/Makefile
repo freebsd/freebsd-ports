@@ -14,6 +14,8 @@ COMMENT=	TepSonic is a simple and fast audio player
 LICENSE=	GPLv3
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
 
 USES=		cmake

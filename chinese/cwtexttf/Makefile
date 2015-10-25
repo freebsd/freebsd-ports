@@ -13,6 +13,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Five Chinese Big5 TrueType fonts made by cwTeX
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 USES=		zip
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/texmf/fonts/truetype/cwTeX

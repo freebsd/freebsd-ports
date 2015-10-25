@@ -12,6 +12,8 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	YASnippet is a template system for Emacs
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 USES=		tar:bzip2
 USE_EMACS=	yes
 NO_BUILD=	yes

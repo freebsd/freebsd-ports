@@ -15,6 +15,8 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Mirror program for FTP sites (written in C)
 
 BROKEN=		Checksum mismatch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 
 USES=		uidfix
 MAKE_ARGS=	MANDIR=${MAN1PREFIX}/man/man
