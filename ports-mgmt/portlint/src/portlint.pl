@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.371 2015/08/09 22:21:09 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.375 2015/10/25 17:25:28 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 16;
-my $micro = 6;
+my $micro = 7;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -531,6 +531,8 @@ sub checkplist {
 
 	my $seen_special = 0;
 	my $item_count = 0;
+	my $owner_seen = 0;
+	my $group_seen = 0;
 
 	# Variables that are allowed to be out-of-sync in the XXXDIR check.
 	# E.g., %%PORTDOCS%%%%RUBY_MODDOCDIR%% will be OK because there is
@@ -663,12 +665,45 @@ sub checkplist {
 			} elsif ($_ eq "\@cwd") {
 				; # @cwd by itself means change directory back to the original
 				  # PREFIX.
+			} elsif ($_ =~ /^\@\(/) {
+				if ($_ !~ /^\@\([^,]*,[^,]*,[^\),]*(,[^\)]*)?\)/) {
+					&perror("WARN", $file, $., "Invalid use of \@(...). ".
+						"Arguments should be owner,group,perms[,fflags]");
+				}
 		  	} elsif ($_ =~ /^\@sample\s+(\S*)/) {
 				my $sl = $.;
 				if ($1 !~ /\.sample$/) {
 					&perror("WARN", $file, $sl, "\@sample directive references".
 						" file that does not end in ``.sample''.  Sample".
 						" files must end in ``.sample''.");
+				}
+			} elsif ($_ =~ /^\@owner/) {
+				if ($_ =~ /^\@owner\s+.+/) {
+					if ($owner_seen > 0) {
+						&perror("WARN", $file, $., "Nested setting of \@owner ".
+							"found.  Reset \@owner before setting it again.");
+					}
+				    $owner_seen++;
+				} else {
+					if ($owner_seen == 0) {
+						&perror("WARN", $file, $., "\@owner reset seen before ".
+							"a new owner section was started.");
+					}
+					$owner_seen--;
+				}
+			} elsif ($_ =~ /^\@group/) {
+				if ($_ =~ /^\@group\s+.+/) {
+					if ($group_seen > 0) {
+						&perror("WARN", $file, $., "Nested setting of \@group ".
+							"found.  Reset \@group before setting it again.");
+					}
+					$group_seen++;
+				} else {
+					if ($group_seen == 0) {
+						&perror("WARN", $file, $., "\@group reset seen before ".
+							"a new group section was started.");
+					}
+					$group_seen--;
 				}
 			} elsif ($_ =~ /^\@(dir|dirrm|dirrmtry|rmtry|option|stopdaemon|owner|group|mode|fc|fcfontsdir|fontsdir|info|shell)\b/) {
 				; # no check made
@@ -806,6 +841,16 @@ sub checkplist {
 				"($curdir/$_)\n" if ($verbose);
 			$sharedocused++;
 		}
+	}
+
+	if ($owner_seen > 0) {
+		&perror("WARN", $file, -1, "A \@owner section was started but never ".
+			"reset.  USe \@owner without any arguments to reset the owner");
+	}
+
+	if ($group_seen > 0) {
+		&perror("WARN", $file, -1, "A \@group section was started but never ".
+			"reset.  Use \@group without any arguments to reset the group");
 	}
 
 	if (!$seen_special && $item_count < $numpitems) {
@@ -1656,18 +1701,18 @@ sub checkmakefile {
 		USE_PYTHON
 		USE_XORG
 	);
-	print "OK: checking to see if USES_* stuff is sorted.\n" if ($verbose);
-	foreach my $sorted_use (@uses_to_sort) {
-		while ($whole =~ /\n$sorted_use.?=\s*(.+)\n/g) {
-			my $lineno = &linenumber($`);
-			my $srex = $1;
-			my @suses = sort(split / /, $srex);
-			if (join(" ", @suses) ne $srex) {
-				&perror("WARN", $file, $lineno, "the options to $sorted_use ".
-					"are not sorted.  Please consider sorting them.");
-			}
-		}
-	}
+#	print "OK: checking to see if USES_* stuff is sorted.\n" if ($verbose);
+#	foreach my $sorted_use (@uses_to_sort) {
+#		while ($whole =~ /\n$sorted_use.?=\s*(.+)\n/g) {
+#			my $lineno = &linenumber($`);
+#			my $srex = $1;
+#			my @suses = sort(split / /, $srex);
+#			if (join(" ", @suses) ne $srex) {
+#				&perror("WARN", $file, $lineno, "the options to $sorted_use ".
+#					"are not sorted.  Please consider sorting them.");
+#			}
+#		}
+#	}
 
 	#
 	# whole file: USE_GNOME=pkgconfig
