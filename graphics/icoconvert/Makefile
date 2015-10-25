@@ -12,6 +12,8 @@ MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Small utility to convert Windows icon files into .xpm and .png files
 
 BROKEN=		No public distfiles
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
 

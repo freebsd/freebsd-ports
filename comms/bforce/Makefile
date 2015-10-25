@@ -11,6 +11,8 @@ MAINTAINER=	vk@vk.pp.ru
 COMMENT=	Simple ifcico like Fidonet technology mailer
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 

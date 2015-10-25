@@ -11,6 +11,8 @@ MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	gtk psk31 client
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 USES=		pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes

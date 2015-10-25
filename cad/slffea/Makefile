@@ -15,6 +15,8 @@ COMMENT=	San Le's Free Finite Element Analysis
 CONFLICTS=	swi-pl-[0-9]* TenDRA-[0-9]*
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 LICENSE=	GPLv2
 
 USE_XORG=	xmu xt

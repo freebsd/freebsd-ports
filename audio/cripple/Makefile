@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line CD ripper/encoder wrapper with cddb support
 
 BROKEN=		Fails to fetch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 

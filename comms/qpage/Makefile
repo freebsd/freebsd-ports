@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SNPP client/server for sending messages to an alphanumeric pager
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 USE_RC_SUBR=	qpage
 GNU_CONFIGURE=	yes
 

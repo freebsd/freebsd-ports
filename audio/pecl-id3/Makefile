@@ -14,6 +14,8 @@ COMMENT=	Extension to read and write ID3 tags in MP3 files
 LICENSE=	PHP30
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
