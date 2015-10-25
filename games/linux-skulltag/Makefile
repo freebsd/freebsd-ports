@@ -11,6 +11,9 @@ DISTFILES=	st-v098a_linux-base.tar.bz2 st-v098a_linux-x86.tar.bz2
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Doom/Doom2/Heretic engine
 
+DEPRECATED=	Depends on expiring audio/linux-fmodapi
+EXPIRATION_DATE=	2015-11-26
+
 RUN_DEPENDS=	${LINUXBASE}/lib/libfmodexp-4.24.16.so:${PORTSDIR}/audio/linux-fmodapi
 
 USE_LINUX=	yes
