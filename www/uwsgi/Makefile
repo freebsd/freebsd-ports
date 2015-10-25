@@ -3,6 +3,7 @@
 
 PORTNAME=	uwsgi
 PORTVERSION=	2.0.11.2
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://projects.unbit.it/downloads/
 
@@ -16,6 +17,7 @@ USES=		python
 USE_RC_SUBR=	uwsgi
 
 LDFLAGS+=	"-L${LOCALBASE}/lib"
+MAKE_ARGS+=	UWSGI_EMBED_PLUGINS=cgi
 
 PLIST_FILES=	bin/uwsgi \
 		%%PYTHON_SITELIBDIR%%/uwsgidecorators.py
