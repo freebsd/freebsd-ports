@@ -47,12 +47,11 @@ include/CImg.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/image_registration2d.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/image_surface3d.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/img/CImg_demo.h
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/img/lena.pgm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/img/logo.bmp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/img/milla.bmp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/img/odykill.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/img/parrot.ppm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/img/parrot_mask.pgm
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/img/parrot_original.ppm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/img/sh0r.pgm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/img/sh1r.pgm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/img/tetris.h
@@ -80,4 +79,5 @@ include/CImg.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/use_patchmatch.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/use_skeleton.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/use_tiff_stream.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/use_tinymatwriter.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wavelet_atrous.cpp
