@@ -58,6 +58,265 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0ebc6e78-7ac6-11e5-b35a-002590263bf5">
+    <topic>Joomla! -- Core - SQL Injection/ACL Violation vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>joomla3</name>
+	<range><ge>3.2.0</ge><lt>3.4.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The JSST and the Joomla! Security Center report:</p>
+	<blockquote cite="http://developer.joomla.org/security-centre/628-20151001-core-sql-injection.html">
+	  <h2>[20151001] - Core - SQL Injection</h2>
+	  <p>Inadequate filtering of request data leads to a SQL Injection
+	    vulnerability.</p>
+	</blockquote>
+	<blockquote cite="http://developer.joomla.org/security-centre/629-20151002-core-acl-violations.html">
+	  <h2>[20151002] - Core - ACL Violations</h2>
+	  <p>Inadequate ACL checks in com_contenthistory provide potential read
+	    access to data which should be access restricted.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7297</cvename>
+      <cvename>CVE-2015-7857</cvename>
+      <cvename>CVE-2015-7858</cvename>
+      <cvename>CVE-2015-7859</cvename>
+      <url>http://developer.joomla.org/security-centre/628-20151001-core-sql-injection.html</url>
+      <url>http://developer.joomla.org/security-centre/629-20151002-core-acl-violations.html</url>
+      <url>https://www.joomla.org/announcements/release-news/5634-joomla-3-4-5-released.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-22</discovery>
+      <entry>2015-10-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="03e54e42-7ac6-11e5-b35a-002590263bf5">
+    <topic>Joomla! -- Core - ACL Violation vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>joomla3</name>
+	<range><ge>3.0.0</ge><lt>3.4.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The JSST and the Joomla! Security Center report:</p>
+	<blockquote cite="http://developer.joomla.org/security-centre/630-20151003-core-acl-violations.html">
+	  <h2>[20151003] - Core - ACL Violations</h2>
+	  <p>Inadequate ACL checks in com_content provide potential read access
+	    to data which should be access restricted.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7899</cvename>
+      <url>http://developer.joomla.org/security-centre/630-20151003-core-acl-violations.html</url>
+      <url>https://www.joomla.org/announcements/release-news/5634-joomla-3-4-5-released.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-22</discovery>
+      <entry>2015-10-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f8c37915-7ac5-11e5-b35a-002590263bf5">
+    <topic>Joomla! -- Core - XSS Vulnerability</topic>
+    <affects>
+      <package>
+	<name>joomla3</name>
+	<range><ge>3.4.0</ge><lt>3.4.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The JSST and the Joomla! Security Center report:</p>
+	<blockquote cite="http://developer.joomla.org/security-centre/626-20150908-core-xss-vulnerability.html">
+	  <h2>[20150908] - Core - XSS Vulnerability</h2>
+	  <p>Inadequate escaping leads to XSS vulnerability in login module.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-6939</cvename>
+      <url>http://developer.joomla.org/security-centre/626-20150908-core-xss-vulnerability.html</url>
+      <url>https://www.joomla.org/announcements/release-news/5628-joomla-3-4-4-released.html</url>
+    </references>
+    <dates>
+      <discovery>2015-09-08</discovery>
+      <entry>2015-10-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ec2d1cfd-7ac5-11e5-b35a-002590263bf5">
+    <topic>Joomla! -- Core - CSRF Protection vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>joomla3</name>
+	<range><ge>3.2.0</ge><lt>3.4.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The JSST and the Joomla! Security Center report:</p>
+	<blockquote cite="http://developer.joomla.org/security-centre/618-20150602-core-remote-code-execution.html">
+	  <h2>[20150602] - Core - CSRF Protection</h2>
+	  <p>Lack of CSRF checks potentially enabled uploading malicious code.
+	    </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5397</cvename>
+      <url>http://developer.joomla.org/security-centre/618-20150602-core-remote-code-execution.html</url>
+      <url>https://www.joomla.org/announcements/release-news/5589-joomla-3-4-2-released.html</url>
+    </references>
+    <dates>
+      <discovery>2015-06-30</discovery>
+      <entry>2015-10-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="deaba148-7ac5-11e5-b35a-002590263bf5">
+    <topic>Joomla! -- Core - Open Redirect vulnerability</topic>
+    <affects>
+      <package>
+	<name>joomla3</name>
+	<range><ge>3.0.0</ge><lt>3.4.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The JSST and the Joomla! Security Center report:</p>
+	<blockquote cite="http://developer.joomla.org/security-centre/617-20150601-core-open-redirect.html">
+	  <h2>[20150601] - Core - Open Redirect</h2>
+	  <p>Inadequate checking of the return value allowed to redirect to an
+	    external page.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5608</cvename>
+      <url>http://developer.joomla.org/security-centre/617-20150601-core-open-redirect.html</url>
+      <url>https://www.joomla.org/announcements/release-news/5589-joomla-3-4-2-released.html</url>
+    </references>
+    <dates>
+      <discovery>2015-06-30</discovery>
+      <entry>2015-10-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="cec4d01a-7ac5-11e5-b35a-002590263bf5">
+    <topic>Joomla! -- Core - Remote File Execution/Denial of Service vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>joomla3</name>
+	<range><lt>3.2.6</lt></range>
+	<range><ge>3.3.0</ge><lt>3.3.5</lt></range>
+      </package>
+      <package>
+	<name>joomla2</name>
+	<range><ge>2.5.4</ge><lt>2.5.26</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The JSST and the Joomla! Security Center report:</p>
+	<blockquote cite="http://developer.joomla.org/security-centre/595-20140903-core-remote-file-inclusion.html">
+	  <h2>[20140903] - Core - Remote File Inclusion</h2>
+	  <p>Inadequate checking allowed the potential for remote files to be
+	    executed.</p>
+	</blockquote>
+	<blockquote cite="http://developer.joomla.org/security-centre/596-20140904-core-denial-of-service.html">
+	  <h2>[20140904] - Core - Denial of Service</h2>
+	  <p>Inadequate checking allowed the potential for a denial of service
+	    attack.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-7228</cvename>
+      <cvename>CVE-2014-7229</cvename>
+      <url>http://developer.joomla.org/security-centre/595-20140903-core-remote-file-inclusion.html</url>
+      <url>http://developer.joomla.org/security-centre/596-20140904-core-denial-of-service.html</url>
+      <url>https://www.joomla.org/announcements/release-news/5567-joomla-3-3-5-released.html</url>
+      <url>https://www.joomla.org/announcements/release-news/5566-joomla-2-5-26-released.html</url>
+    </references>
+    <dates>
+      <discovery>2014-09-30</discovery>
+      <entry>2015-10-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="beb3d5fc-7ac5-11e5-b35a-002590263bf5">
+    <topic>Joomla! -- Core - Unauthorised Login vulnerability</topic>
+    <affects>
+      <package>
+	<name>joomla3</name>
+	<range><lt>3.2.5</lt></range>
+	<range><ge>3.3.0</ge><lt>3.3.4</lt></range>
+      </package>
+      <package>
+	<name>joomla2</name>
+	<range><lt>2.5.25</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The JSST and the Joomla! Security Center report:</p>
+	<blockquote cite="http://developer.joomla.org/security-centre/594-20140902-core-unauthorised-logins.html">
+	  <h2>[20140902] - Core - Unauthorised Logins</h2>
+	  <p>Inadequate checking allowed unauthorised logins via LDAP
+	    authentication.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-6632</cvename>
+      <url>http://developer.joomla.org/security-centre/594-20140902-core-unauthorised-logins.html</url>
+      <url>https://www.joomla.org/announcements/release-news/5564-joomla-3-3-4-released.html</url>
+      <url>https://www.joomla.org/announcements/release-news/5563-joomla-2-5-25-released.html</url>
+    </references>
+    <dates>
+      <discovery>2014-09-23</discovery>
+      <entry>2015-10-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="adbb32d9-7ac5-11e5-b35a-002590263bf5">
+    <topic>Joomla! -- Core - XSS Vulnerability</topic>
+    <affects>
+      <package>
+	<name>joomla3</name>
+	<range><ge>3.2.0</ge><lt>3.2.5</lt></range>
+	<range><ge>3.3.0</ge><lt>3.3.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The JSST and the Joomla! Security Center report:</p>
+	<blockquote cite="http://developer.joomla.org/security-centre/593-20140901-core-xss-vulnerability.html">
+	  <h2>[20140901] - Core - XSS Vulnerability</h2>
+	  <p>Inadequate escaping leads to XSS vulnerability in com_media.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-6631</cvename>
+      <url>http://developer.joomla.org/security-centre/593-20140901-core-xss-vulnerability.html</url>
+      <url>https://www.joomla.org/announcements/release-news/5564-joomla-3-3-4-released.html</url>
+    </references>
+    <dates>
+      <discovery>2014-09-23</discovery>
+      <entry>2015-10-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="75f39413-7a00-11e5-a2a1-002590263bf5">
     <topic>drupal -- open redirect vulnerability</topic>
     <affects>
