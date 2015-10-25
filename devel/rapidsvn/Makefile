@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.rapidsvn.org/download/release/${PORTVERSION}/
 MAINTAINER=	robert.ayrapetyan@gmail.com
 COMMENT=	Cross-platform GUI front-end for the Subversion revision system
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/VERSION:${PORTSDIR}/textproc/docbook-xsl
