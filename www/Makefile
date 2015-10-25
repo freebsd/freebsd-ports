@@ -2148,7 +2148,6 @@
     SUBDIR += trytond28_google_maps
     SUBDIR += tt-rss
     SUBDIR += ttf2eot
-    SUBDIR += twig
     SUBDIR += twiki
     SUBDIR += twiki-BehaviourContrib
     SUBDIR += twiki-BlogAddOn
