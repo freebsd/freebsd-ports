@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File transfer utility using the kermit protocol
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 NO_WRKSUBDIR=	yes
 
 ALL_TARGET=	posix

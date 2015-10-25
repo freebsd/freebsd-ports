@@ -16,6 +16,8 @@ COMMENT=	Gimp scripts by elsamuko
 LICENSE=	GPLv3
 
 BROKEN=		No public distfiles
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 
 RUN_DEPENDS=	${LOCALBASE}/bin/gimp:${PORTSDIR}/graphics/gimp-app
 

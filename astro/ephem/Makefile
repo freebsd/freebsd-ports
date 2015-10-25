@@ -12,6 +12,8 @@ MAINTAINER=	slaven@rezic.de
 COMMENT=	Interactive terminal-based astronomical ephemeris program
 
 BROKEN=		No public distfiles
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 NO_WRKSUBDIR=	yes
 ALL_TARGET=
 

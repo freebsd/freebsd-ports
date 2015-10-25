@@ -13,6 +13,8 @@ MAINTAINER=	pavelivolkov@googlemail.com
 COMMENT=	Mobigroup functions library for SQLite
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 
 USE_SQLITE=	yes
 

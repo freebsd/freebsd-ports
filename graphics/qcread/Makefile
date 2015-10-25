@@ -13,6 +13,8 @@ COMMENT=	Supports both color and B&W parallel-port Connectix QuickCam for PC
 LICENSE=	MIT
 
 BROKEN=		No public distfiles
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 
 USE_CSTD=	gnu89
 

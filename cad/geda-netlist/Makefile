@@ -15,6 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The gEDA's netlister
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 LIB_DEPENDS=	libgeda.so:${PORTSDIR}/cad/libgeda
 RUN_DEPENDS=	geda-symbols>0:${PORTSDIR}/cad/geda-symbols
 
