@@ -40,7 +40,7 @@ load_rc_config ${name}
 : ${varnishlog_enable:=NO}
 : ${varnishlog_pidfile=/var/run/${name}.pid}
 : ${varnishlog_file=/var/log/varnish.log}
-: ${varnishlog_flags="-P ${varnishlog_pidfile} -D -a -w ${varnishlog_file}"}
+: ${varnishlog_flags="-P ${varnishlog_pidfile} -D -a -A -w ${varnishlog_file}"}
 : ${varnishlog_user=varnishlog}
 
 command="%%PREFIX%%/bin/${name}"
