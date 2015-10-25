@@ -32,7 +32,7 @@ PORTDOCS=	*
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 1000024
-USE_GCC=	4.8+
+USE_GCC=	yes
 .endif
 
 post-extract:
