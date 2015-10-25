@@ -1,0 +1,92 @@
+--- Imakefile.orig	1995-07-21 07:32:07.000000000 -0700
++++ Imakefile	2015-10-25 01:02:38.165861182 -0700
+@@ -1,29 +1,29 @@
+-/**/# Based on an Imakefile from:
+-/**/# Andreas Stolcke
+-/**/# International Computer Science Institute, Berkeley.
+-/**/# With help from:
+-/**/# George Lindholm, Jonathan I. Kamens, Braham Levy.
+-
+-
+-/**/# o Define FORKRETURNSSHORT/FORKRETURNSLONG/FORKRETURNSPID_T if your
+-/**/#   fork(2) returns short/long/pid_t not int.
+-/**/# o Define USEFLOCK or USELOCKF to use flock(2) or lockf(3) to lock files,
+-/**/#   rather than fcntl(2).
+-/**/# o Define USELSEEK to use lseek(2) to move to the end of the file, rather
+-/**/#   than fseek(3).
+-/**/# o Define USERENAME to use rename(2) to rename file names (otherwise
+-/**/#   un/link(2)).
+-/**/# o Define USEGETHOSTNAME or USEUNAME (or neither if you don't have
+-/**/#   gethostname(2) or uname(2)) to get the name of your system.
+-/**/# o Define USEGETPWUID to use getpwuid(3) and getuid(2) to get the user
+-/**/#   name and home directory on your system.  Note that if you want to use
+-/**/#   this method to get the user's home directory, but another method to get
+-/**/#   the user name, this symbol must still be defined.
+-/**/# o Define USEGETLOGIN to use getlogin(3) to get the user name (note that
+-/**/#   this may not work if xalarm is invoked from a pseudo terminal).
+-/**/# o Define USECUSERID to use cuserid(3) to get the user name.
++# Based on an Imakefile from:
++# Andreas Stolcke
++# International Computer Science Institute, Berkeley.
++# With help from:
++# George Lindholm, Jonathan I. Kamens, Braham Levy.
++
++
++# o Define FORKRETURNSSHORT/FORKRETURNSLONG/FORKRETURNSPID_T if your
++#   fork(2) returns short/long/pid_t not int.
++# o Define USEFLOCK or USELOCKF to use flock(2) or lockf(3) to lock files,
++#   rather than fcntl(2).
++# o Define USELSEEK to use lseek(2) to move to the end of the file, rather
++#   than fseek(3).
++# o Define USERENAME to use rename(2) to rename file names (otherwise
++#   un/link(2)).
++# o Define USEGETHOSTNAME or USEUNAME (or neither if you don't have
++#   gethostname(2) or uname(2)) to get the name of your system.
++# o Define USEGETPWUID to use getpwuid(3) and getuid(2) to get the user
++#   name and home directory on your system.  Note that if you want to use
++#   this method to get the user's home directory, but another method to get
++#   the user name, this symbol must still be defined.
++# o Define USEGETLOGIN to use getlogin(3) to get the user name (note that
++#   this may not work if xalarm is invoked from a pseudo terminal).
++# o Define USECUSERID to use cuserid(3) to get the user name.
+ 
+-DEFINES = $(SIGNAL_DEFINES) -DUSERENAME -DUSEGETHOSTNAME -DUSEGETPWUID
++DEFINES = $(SIGNAL_DEFINES) -DFORKRETURNSPID_T -DUSERENAME -DUSEGETHOSTNAME -DUSEGETPWUID
+ 
+ 
+ OBJS = alarm.o when.o warnings.o times.o dates.o file.o fns.o xalarm.o
+@@ -40,28 +40,25 @@
+ 
+ InstallAppDefaults (XAlarm)
+ InstallAppDefaults (XAlarm-color)
+-InstallMultipleFlags (xmemo xfortune xyow,$(BINDIR),$(INSTBINFLAGS))
++InstallMultipleFlags (xmemo xfortune,$(BINDIR),$(INSTBINFLAGS))
+ InstallManPage (xmemo,$(MANDIR))
+ InstallManPage (xfortune,$(MANDIR))
+-InstallManPage (xyow,$(MANDIR))
+ 
+ includes:: fns.h
+ 
+ fns.h:
+-	@./config.1st -quick $(WHICH) fortune yow
++	@./config.1st -quick $(WHICH) fortune
+ 
+-xmemo.man xyow.man xfortune.man:
+-	echo ".so man"`echo ManSuffix`"/xalarm."`echo ManSuffix` > $@
++xmemo.man xfortune.man:
++	echo ".so xalarm.man" > $@
+ 
+ xfortune::
+ 
+-xyow::
+-
+ clean::
+-	$(RM) xfortune xyow xmemo.man xyow.man xfortune.man fns.h .config
++	$(RM) xfortune xmemo.man xfortune.man fns.h .config
+ 
+ config::
+-	@./config.1st -quick $(WHICH) fortune yow
++	@./config.1st -quick $(WHICH) fortune
+ 	@xrdb -merge XAlarm.ad
+ 	@xrdb -merge XAlarm.ad+
+ 
