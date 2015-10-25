@@ -58,6 +58,40 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="24e4d383-7b3e-11e5-a250-68b599b52a02">
+    <topic>wireshark -- Pcapng file parser crash</topic>
+    <affects>
+      <package>
+	<name>wireshark</name>
+	<name>wireshark-lite</name>
+	<name>wireshark-qt5</name>
+	<name>tshark</name>
+	<name>tshark-lite</name>
+	<range><lt>1.12.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Wireshark development team reports:</p>
+	<blockquote cite="https://www.wireshark.org/docs/relnotes/wireshark-1.12.8.html">
+	  <p>The following vulnerability has been fixed.</p>
+	  <ul>
+	    <li><p>wnpa-sec-2015-30</p>
+	      <p>Pcapng file parser crash. (Bug 11455)</p></li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.wireshark.org/docs/relnotes/wireshark-1.12.8.html</url>
+      <cvename>CVE-2015-7830</cvename>
+    </references>
+    <dates>
+      <discovery>2015-10-14</discovery>
+      <entry>2015-10-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0ebc6e78-7ac6-11e5-b35a-002590263bf5">
     <topic>Joomla! -- Core - SQL Injection/ACL Violation vulnerabilities</topic>
     <affects>
