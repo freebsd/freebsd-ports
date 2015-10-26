@@ -30,6 +30,8 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}" PYTHON_VER="${PYTHON_VER}"
 
 CONFIGURE_ARGS+=	--without-php
 
+DISTINFO_FILE=	${PORTSDIR}/devel/thrift/distinfo
+
 .include <bsd.port.pre.mk>
 
 .if ${COMPILER_TYPE} == clang
