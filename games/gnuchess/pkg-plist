@@ -22,6 +22,7 @@ share/games/plugins/xboard/gnuchess.eng
 %%NLS%%share/locale/de/LC_MESSAGES/gnuchess.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/gnuchess.mo
 %%NLS%%share/locale/es/LC_MESSAGES/gnuchess.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/gnuchess.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/gnuchess.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/gnuchess.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gnuchess.mo
