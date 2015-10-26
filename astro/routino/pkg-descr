@@ -1,0 +1,24 @@
+Routino is an application for finding a route between two points using the
+dataset of topographical information collected by http://www.OpenStreetMap.org.
+
+This router uses a routing algorithm that takes OSM format data as its input and
+calculates either the shortest or quickest route between two points. To optimise
+the routing a custom database format is used. This allows the routing to be
+performed quickly after a modest one-off pre-processing stage.
+A selection is possible for any of the major OSM transport types and for each of
+the main OSM highway types a preference can be provided and a speed limit.
+Restrictions on one-way streets, weight, height, width and length are also
+options. Further preferences about road properties (e.g. paved or not) can also
+be selected.
+
+The processing of the input XML file is based on rules in a configuration file
+that transform the highway tags into tags that are understood by Routino. The
+generation of the output files (HTML and GPX) uses language fragments selected
+from another configuration file which allows multi-lingual output from the same
+database.
+The router takes into account private/public/permissive restrictions on highways
+as well as tagged speed limits and barriers (gates, bollards). The simplest and
+most common turn restriction relations (those composed of a way, node and way)
+are also supported.
+
+WWW: http://www.routino.org/
