@@ -5089,6 +5089,7 @@
     SUBDIR += spice-protocol
     SUBDIR += spin
     SUBDIR += splint
+    SUBDIR += spyder
     SUBDIR += srecord
     SUBDIR += st
     SUBDIR += statcvs
