@@ -4,6 +4,7 @@
 PORTNAME=	eiskaltdcpp
 CATEGORIES=	net-p2p
 PKGNAMESUFFIX=	-data
+PORTREVISION=	4
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shared data for EiskaltDC++ GUIs
@@ -19,6 +20,7 @@ SHEBANG_FILES=	data/examples/commands.ru_RU.UTF-8.php \
 		data/examples/mpris_now_playing.en_US.sh \
 		data/examples/xmms2_audacious2.ru_RU.UTF-8.php \
 		data/update_geoip
+php_OLD_CMD=	/usr/bin/php5
 NO_ARCH=	yes
 NO_BUILD=	yes
 INSTALLS_ICONS=	yes
