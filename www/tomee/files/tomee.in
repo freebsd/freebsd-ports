@@ -1,0 +1,135 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: tomee
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Configuration settings for tomee in /etc/rc.conf:
+#
+# tomee_enable (bool):
+#   Set to "NO" by default.
+#   Set it to "YES" to enable TomEE
+#
+# tomee_catalina_base (str)
+#   Set to "%%TOMEE_HOME%%" by default.
+#   Set the CATALINA_BASE variable for the TomEE process
+#
+# tomee_catalina_tmpdir (str)
+#   Set to "${catalina.base}/temp" by default.
+#   Set the CATALINA_TMPDIR variable for the TomEE process
+#
+# tomee_stdout (str)
+#   Set to "${catalina.base}/logs/catalina.out" by default.
+#   Set the stdout redirection. It may also be '/dev/null', '&1' or '&2'
+#
+# tomee_stderr (str)
+#   Set to "&1" by default.
+#   Set the stderr redirection. It may also be '/dev/null', '&1' or '&2'
+#
+# tomee_pipe_cmd (str):
+#   Set to "" by default.
+#   Set a piped command to process stdout/stderr when passthru
+#
+# tomee_logging_manager (str):
+#   Set to "org.apache.juli.ClassLoaderLogManager" by default.
+#   Set the JUL log manager
+#
+# tomee_logging_config (str):
+#   Set to "${catalina.base}/conf/logging.properties" by default.
+#   Set the JUL config file 
+#
+# tomee_java_home (str):
+#   Set to "%%JAVA_HOME%%" by default.
+#   Specify the Java VM to use.
+#
+# tomee_classpath (str):
+#   Set to "" by default.
+#   Addtional classes to add to the CLASSPATH. If set, must start with ':'
+#
+# tomee_java_opts (str):
+#   Set to "" by default.
+#   Java VM args to use.
+#
+# tomee_wait (int):
+#   Set to "30" by default.
+#   Set the wait time (in seconds) for Tomcat process startup
+#
+# You may symlink this script with other names to run multiple
+# instances of tomee with different configurations.
+#
+
+. /etc/rc.subr
+
+case $0 in
+/etc/rc*)
+	# during boot (shutdown) $0 is /etc/rc (/etc/rc.shutdown),
+	# so get the name of the script from $_file
+	name=$_file
+	;;
+*)
+	name=$0
+	;;
+esac
+
+name=tomee
+rcvar=tomee_enable
+
+load_rc_config "${name}"
+
+eval "${rcvar}=\${${rcvar}:-'NO'}"
+eval "_tomee_java_home=\${${name}_java_home:-'%%JAVA_HOME%%'}"
+eval "_tomee_catalina_user=\${${name}_catalina_user:-'%%TOMEE_USER%%'}"
+eval "_tomee_catalina_home='%%TOMEE_HOME%%'"
+eval "_tomee_catalina_base=\${${name}_catalina_base:-'%%TOMEE_HOME%%'}"
+eval "_tomee_catalina_tmpdir=\${${name}_catalina_tmpdir:-'${_tomee_catalina_base}/temp'}"
+eval "_tomee_stdout=\${${name}_stdout:-'${_tomee_catalina_base}/logs/catalina.out'}"
+eval "_tomee_stderr=\${${name}_stderr:-'&1'}"
+eval "_tomee_pipe_cmd=\${${name}_pipe_cmd:-''}"
+eval "_tomee_logging_manager=\${${name}_logging_manager:-'org.apache.juli.ClassLoaderLogManager'}"
+eval "_tomee_logging_config=\${${name}_logging_config:-'${_tomee_catalina_base}/conf/logging.properties'}"
+eval "_tomee_classpath=\${${name}_classpath:-''}"
+eval "_tomee_java_opts=\${${name}_java_opts:-''}"
+eval "_tomee_wait=\${${name}_wait:-'30'}"
+
+pidfile="/var/run/${name}.pid"
+
+required_files="${_tomee_catalina_base}/conf/server.xml"
+required_dirs="${_tomee_catalina_tmpdir}"
+
+extra_commands="reload"
+
+command="%%LOCALBASE%%/bin/jsvc"
+command_args="-java-home '${_tomee_java_home}' \
+	-server \
+	-user ${_tomee_catalina_user} \
+	-pidfile '${pidfile}' \
+	-wait ${_tomee_wait} \
+	-outfile '${_tomee_stdout}' \
+	-errfile '${_tomee_stderr}' \
+	-classpath '%%TOMEE_HOME%%/bin/bootstrap.jar:%%LOCALBASE%%/share/java/classes/commons-daemon.jar:%%TOMEE_HOME%%/bin/tomcat-juli.jar${_tomee_classpath}' \
+	-Djava.util.logging.manager=${_tomee_logging_manager} \
+	-Djava.util.logging.config.file='${_tomee_logging_config}' \
+	${_tomee_java_opts} \
+	-Djava.endorsed.dirs='%%TOMEE_HOME%%/endorsed' \
+	-Dcatalina.home='${_tomee_catalina_home}' \
+	-Dcatalina.base='${_tomee_catalina_base}' \
+	-Djava.io.tmpdir='${_tomee_catalina_tmpdir}' \
+	org.apache.catalina.startup.Bootstrap \
+	${_tomee_pipe_cmd}"
+
+start_precmd="tomee_prestart"
+
+tomee_prestart()
+{
+	if [ -r "${_tomee_catalina_base}/bin/setenv.sh" ]; then
+		. "${_tomee_catalina_base}/bin/setenv.sh"
+	elif [ -r "%%TOMEE_HOME%%/bin/setenv.sh" ]; then
+		. "%%TOMEE_HOME%%/bin/setenv.sh"
+	fi
+}
+
+run_rc_command "$1"
