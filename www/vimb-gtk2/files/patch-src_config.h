@@ -1,4 +1,4 @@
---- src/config.h.orig	2015-01-17 03:39:50.000000000 +0500
+--- src/config.h.orig	2015-06-13 15:29:55 UTC
 +++ src/config.h
 @@ -27,7 +27,7 @@
  /* highlight search results */
