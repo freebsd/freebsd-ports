@@ -1,4 +1,4 @@
---- src/findlib/Makefile.orig	2014-10-23 10:08:26 UTC
+--- src/findlib/Makefile.orig	2015-10-25 12:46:54 UTC
 +++ src/findlib/Makefile
 @@ -19,6 +19,7 @@ OCAMLDEP = ocamldep
  OCAMLLEX = ocamllex
@@ -8,7 +8,7 @@
  
  
  OBJECTS        = findlib_config.cmo fl_split.cmo fl_metatoken.cmo fl_meta.cmo \
-@@ -97,23 +98,23 @@ clean:
+@@ -112,23 +113,23 @@ clean:
  	  ocamlfind$(EXEC_SUFFIX) ocamlfind_opt$(EXEC_SUFFIX)
  
  install: all
@@ -18,7 +18,7 @@
 +	mkdir -p "$(DESTDIR)$(prefix)$(OCAML_SITELIB)/$(NAME)"
 +	mkdir -p "$(DESTDIR)$(prefix)$(OCAMLFIND_BIN)"
 +	test $(INSTALL_TOPFIND) -eq 0 || cp topfind "$(DESTDIR)$(prefix)$(OCAML_CORE_STDLIB)"
- 	files=`$(TOP)/tools/collect_files $(TOP)/Makefile.config findlib.cmi findlib.mli findlib.cma topfind.cmi topfind.mli fl_package_base.mli fl_package_base.cmi fl_metascanner.mli fl_metascanner.cmi fl_metatoken.cmi findlib_top.cma findlib.cmxa findlib.a findlib.cmxs META` && \
+ 	files=`$(TOP)/tools/collect_files $(TOP)/Makefile.config findlib.cmi findlib.mli findlib.cma topfind.cmi topfind.mli fl_package_base.mli fl_package_base.cmi fl_metascanner.mli fl_metascanner.cmi fl_metatoken.cmi findlib_top.cma findlib.cmxa findlib.a findlib.cmxs findlib_dynload.cma findlib_dynload.cmxa findlib_dynload.a findlib_dynload.cmxs fl_dynload.mli fl_dynload.cmi META` && \
 -	cp $$files "$(prefix)$(OCAML_SITELIB)/$(NAME)"
 +	${BSD_INSTALL_DATA} $$files "$(DESTDIR)$(prefix)$(OCAML_SITELIB)/$(NAME)"
  	f="ocamlfind$(EXEC_SUFFIX)"; { test -f ocamlfind_opt$(EXEC_SUFFIX) && f="ocamlfind_opt$(EXEC_SUFFIX)"; }; \
