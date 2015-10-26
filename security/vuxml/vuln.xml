@@ -744,7 +744,7 @@ Notes:
     <affects>
       <package>
 	<name>libressl</name>
-	<range><lt>2.2.3</lt></range>
+	<range><lt>2.2.4</lt></range>
       </package>
     </affects>
     <description>
@@ -767,6 +767,7 @@ Notes:
     <dates>
       <discovery>2015-10-15</discovery>
       <entry>2015-10-16</entry>
+      <modified>2015-10-26</modified>
     </dates>
   </vuln>
 
