@@ -1,5 +1,5 @@
---- nasl/nasl_init.c.orig	2005-11-01 19:27:57.000000000 +0100
-+++ nasl/nasl_init.c	2015-10-19 14:52:21.388286506 +0200
+--- nasl/nasl_init.c.orig	2005-11-01 18:27:57 UTC
++++ nasl/nasl_init.c
 @@ -256,14 +256,18 @@ static init_func libfuncs[] = {
    "MD4", nasl_md4, 1, { NULL },
  #endif
