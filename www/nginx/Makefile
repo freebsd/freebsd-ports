@@ -363,7 +363,7 @@ JAVA_VERSION=	1.8
 JAVA_VENDOR=	openjdk
 JAVA_BUILD=	yes
 JAVA_RUN=	yes
-NGINX_CLOJURE_VERSION=	0.4.2
+NGINX_CLOJURE_VERSION=	0.4.3
 GH_ACCOUNT+=	nginx-clojure:clojure
 GH_PROJECT+=	nginx-clojure:clojure
 GH_TAGNAME+=	v${NGINX_CLOJURE_VERSION}:clojure
@@ -947,7 +947,7 @@ post-patch:
 .endif
 .if ${PORT_OPTIONS:MCLOJURE}
 	@${REINPLACE_CMD} \
-		'45,47d' \
+		'54,57d' \
 		${WRKSRC_clojure}/src/c/config
 .endif
 .if ${PORT_OPTIONS:MDRIZZLE}
