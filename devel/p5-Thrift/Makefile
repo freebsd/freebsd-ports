@@ -3,7 +3,7 @@
 
 PORTNAME=	Thrift
 PORTVERSION=	${THRIFT_PORTVERSION}	# need to keep this in sync with ../thrift see ../thrift/bsd.thrift.mk
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 PKGNAMEPREFIX=	p5-
@@ -18,6 +18,7 @@ FETCH_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/devel/thrift:extract
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 post-extract:
 	@${LN} -sfh \
