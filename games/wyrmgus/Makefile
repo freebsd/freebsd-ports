@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	wyrmgus
-PORTVERSION=	git20150601
+PORTVERSION=	1.4.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	games devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -17,7 +18,6 @@ LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 USE_GITHUB=     yes
 GH_ACCOUNT=     Andrettin
 GH_PROJECT=     Wyrmgus
-GH_TAGNAME=     80c76abcc6
 
 USE_GL=		gl glu
 USE_SDL=	sdl
@@ -64,8 +64,14 @@ FLUIDSYNTH_LIB_DEPENDS=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth
 FLUIDSYNTH_CMAKE_ON=	-DWITH_FLUIDSYNTH:BOOL=ON
 FLUIDSYNTH_CMAKE_OFF=	-DWITH_FLUIDSYNTH:BOOL=OFF
 
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == gcc
+CXXFLAGS+=	-D_GLIBCXX_USE_C99 # gcc c++11 support is broken on FreeBSD
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${CONFIGURE_WRKSRC}/stratagus ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/src/win32/wyrmsun.ico ${STAGEDIR}${PREFIX}/share/pixmaps/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
