@@ -846,6 +846,7 @@
     SUBDIR += py-pyptlib
     SUBDIR += py-pyscard
     SUBDIR += py-pysha3
+    SUBDIR += py-python-gnupg
     SUBDIR += py-python-registry
     SUBDIR += py-rekall
     SUBDIR += py-rekall-core
