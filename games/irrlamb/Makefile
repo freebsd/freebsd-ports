@@ -2,48 +2,39 @@
 # $FreeBSD$
 
 PORTNAME=	irrlamb
-PORTVERSION=	0.1.0
-PORTREVISION=	5
+PORTVERSION=	0.2.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	games
-MASTER_SITES=	GOOGLE_CODE
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	3D physics-based puzzle game
 
-LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
-BUILD_DEPENDS=	${LOCALBASE}/lib/libIrrlicht.so:${PORTSDIR}/x11-toolkits/irrlicht
-RUN_DEPENDS=	${LOCALBASE}/lib/libIrrlicht.so:${PORTSDIR}/x11-toolkits/irrlicht
+LICENSE=	GPLv3 # or later
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		scons dos2unix lua:51
-DOS2UNIX_FILES=	src/engine/save.h src/objects/orb.cpp src/objects/player.cpp \
-		src/engine/state.h
+LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
+		libIrrlicht.so:${PORTSDIR}/x11-toolkits/irrlicht \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libogg.so:${PORTSDIR}/audio/libogg \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libBulletCollision.so:${PORTSDIR}/devel/bullet
 
-CPPPATH=	${LOCALBASE}/include ${LUA_INCDIR}
-LIBPATH=	${LOCALBASE}/lib ${LUA_LIBDIR}
+USE_GITHUB=	yes
+GH_ACCOUNT=	jazztickets
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+USES=		cmake compiler:c++11-lib lua:53 openal
 
-PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	*
 PORTDATA=	*
 
-DATA_DIRS=	art campaigns collision fonts levels meshes scenes scripts textures
+PLIST_FILES=	bin/irrlamb \
+		share/applications/irrlamb.desktop \
+		share/pixmaps/irrlamb.png
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
-.for dir in ${DATA_DIRS}
-	@${REINPLACE_CMD} -e 's|"\(${dir}/\)|"${DATADIR}/\1|' \
-		${WRKSRC}/src/*.cpp ${WRKSRC}/src/engine/*.cpp \
-		${WRKSRC}/src/objects/*.cpp ${WRKSRC}/meshes/*.irrmesh \
-		${WRKSRC}/scenes/*.irr
-.endfor
-	@${REINPLACE_CMD} -e "s/lua/lua-${LUA_VER}/g" ${WRKSRC}/SConstruct
-	@${FIND} ${WRKSRC} -name "*.bak" -delete
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/irrlamb ${STAGEDIR}${PREFIX}/bin/
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "${DATA_DIRS}" ${STAGEDIR}${DATADIR}/
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} readme.txt changelog.txt ${STAGEDIR}${DOCSDIR}/
+	@${REINPLACE_CMD} -e 's|share/games|share|g' ${WRKSRC}/CMakeLists.txt \
+		${WRKSRC}/deployment/${PORTNAME}
 
 .include <bsd.port.mk>
