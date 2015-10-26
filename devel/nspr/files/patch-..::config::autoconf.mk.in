@@ -1,0 +1,11 @@
+--- ../config/autoconf.mk.in.orig	Wed Oct 17 02:31:02 2001
++++ ../config/autoconf.mk.in	Thu Aug  8 19:22:44 2002
+@@ -17,7 +17,7 @@
+ dist_includedir = @dist_includedir@
+ dist_libdir	= @dist_libdir@
+ 
+-DIST		= $(dist_prefix)
++DIST		?= $(dist_prefix)
+ 
+ RELEASE_OBJDIR_NAME = @RELEASE_OBJDIR_NAME@
+ OBJDIR_NAME	= @OBJDIR_NAME@
