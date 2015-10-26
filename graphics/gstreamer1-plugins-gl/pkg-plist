@@ -1,3 +1,4 @@
+include/gstreamer-%%VERSION%%/gst/gl/egl/gstegl.h
 include/gstreamer-%%VERSION%%/gst/gl/egl/gsteglimagememory.h
 include/gstreamer-%%VERSION%%/gst/gl/egl/gstglcontext_egl.h
 include/gstreamer-%%VERSION%%/gst/gl/egl/gstgldisplay_egl.h
@@ -30,6 +31,7 @@ include/gstreamer-%%VERSION%%/gst/gl/gstglfeature.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglfilter.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglframebuffer.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglmemory.h
+include/gstreamer-%%VERSION%%/gst/gl/gstgloverlaycompositor.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglshader.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglshadervariables.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglsyncmeta.h
