@@ -5216,6 +5216,7 @@
     SUBDIR += vtcl
     SUBDIR += vxlog
     SUBDIR += wand-libconfig
+    SUBDIR += wandio
     SUBDIR += websocketpp
     SUBDIR += websvn
     SUBDIR += wininfo
