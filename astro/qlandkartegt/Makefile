@@ -2,22 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	qlandkartegt
-PORTVERSION=	1.7.6
-PORTREVISION=	6
+PORTVERSION=	1.8.1
 CATEGORIES=	astro
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/QLandkarte%20GT%20${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/QLandkarteGT%20${PORTVERSION}
 
 MAINTAINER=	i@levsha.me
 COMMENT=	The ultimate outdoor aficionado's tool
 
 LICENSE=	GPLv3
 
-BROKEN=		Does not fetch
 LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal \
 		libproj.so:${PORTSDIR}/graphics/proj \
 		libgps.so:${PORTSDIR}/astro/gpsd
 
-USES=		cmake
+USES=		cmake desktop-file-utils
 USE_QT4=	dbus gui opengl network sql xml linguist_build \
 		moc_build uic_build rcc_build qmake_build
 USE_GL=		glu
