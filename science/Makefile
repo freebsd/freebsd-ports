@@ -76,6 +76,7 @@
     SUBDIR += libquantum
     SUBDIR += libsvm
     SUBDIR += libsvm-python
+    SUBDIR += libxc
     SUBDIR += linsmith
     SUBDIR += massxpert
     SUBDIR += mbdyn
