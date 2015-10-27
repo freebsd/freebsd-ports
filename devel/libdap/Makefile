@@ -22,4 +22,10 @@ INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 USES=		bison charsetfix gmake libtool localbase pathfix
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 1100000
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-dds.yy
+.endif
+
+.include <bsd.port.post.mk>
