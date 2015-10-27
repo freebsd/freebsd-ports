@@ -174,7 +174,7 @@ include/ipmidetect.h
 lib/libfreeipmi.a
 lib/libfreeipmi.so
 lib/libfreeipmi.so.16
-lib/libfreeipmi.so.16.0.5
+lib/libfreeipmi.so.16.0.6
 lib/libipmiconsole.a
 lib/libipmiconsole.so
 lib/libipmiconsole.so.2

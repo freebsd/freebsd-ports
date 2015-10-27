@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freeipmi
-PORTVERSION=	1.4.9
+PORTVERSION=	1.4.10
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU/${PORTNAME} \
 		http://ftp.gluster.com/pub/${PORTNAME}/${PORTVERSION}/
@@ -16,6 +16,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libargp.so:${PORTSDIR}/devel/argp-standalone \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
+ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS_REASON=	invokes i386 asm
+
 OPTIONS_DEFINE=	DEBUG DOCS IOPERM
 IOPERM_DESC=	Use i386_set_ioperm
 
@@ -26,8 +29,6 @@ CONFIGURE_ARGS=	--disable-init-scripts \
 		--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig
 CONFIGURE_ENV=	PTHREAD_LIBS=-lpthread ac_cv_path_CPP=${CPP}
 GNU_CONFIGURE=	yes
-ONLY_FOR_ARCHS=	i386 amd64
-ONLY_FOR_ARCHS_REASON=	invokes i386 asm
 USE_LDCONFIG=	yes
 USES=		gmake libtool localbase shebangfix
 
