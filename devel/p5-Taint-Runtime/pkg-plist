@@ -1,4 +1,4 @@
-%%PERL5_MAN3%%/Taint::Runtime.3.gz
 %%SITE_ARCH%%/Taint/Runtime.pm
 %%SITE_ARCH%%/Taint/is_taint_bench.pl
 %%SITE_ARCH%%/auto/Taint/Runtime/Runtime.so
+%%PERL5_MAN3%%/Taint::Runtime.3.gz
