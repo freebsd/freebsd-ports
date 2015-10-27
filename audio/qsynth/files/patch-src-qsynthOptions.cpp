@@ -1,6 +1,6 @@
---- src/qsynthOptions.cpp.orig	2011-03-30 20:53:04.000000000 +0900
-+++ src/qsynthOptions.cpp	2012-09-25 21:29:15.000000000 +0900
-@@ -172,11 +172,11 @@
+--- src/qsynthOptions.cpp.orig	2015-09-07 14:59:23 UTC
++++ src/qsynthOptions.cpp
+@@ -174,11 +174,11 @@ void qsynthOptions::print_usage ( const 
  	out << "  -n, --no-midi-in" + sEot +
  		QObject::tr("Don't create a midi driver to read MIDI input events [default = yes]") + sEol;
  	out << "  -m, --midi-driver=[label]" + sEot +
@@ -14,7 +14,7 @@
  	out << "  -j, --connect-jack-outputs" + sEot +
  		QObject::tr("Attempt to connect the jack outputs to the physical ports") + sEol;
  	out << "  -L, --audio-channels=[num]" + sEot +
-@@ -477,7 +477,7 @@
+@@ -481,7 +481,7 @@ void qsynthOptions::loadSetup ( qsynthSe
  	pSetup->iAudioBufSize    = m_settings.value("/AudioBufSize", 512).toInt();
  	pSetup->iAudioBufCount   = m_settings.value("/AudioBufCount", 8).toInt();
  #else
