@@ -90,6 +90,7 @@
     SUBDIR += pyephem
     SUBDIR += pyweather
     SUBDIR += qlandkartegt
+    SUBDIR += qmapshack
     SUBDIR += readosm
     SUBDIR += rmap
     SUBDIR += roadmap

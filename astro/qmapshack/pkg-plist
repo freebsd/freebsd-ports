@@ -1,0 +1,8 @@
+bin/qmapshack
+man/man1/qmapshack.1.gz
+share/applications/qmapshack.desktop
+share/pixmaps/QMapShack.png
+%%DATADIR%%/translations/qmapshack_cs.qm
+%%DATADIR%%/translations/qmapshack_de.qm
+%%DATADIR%%/translations/qmapshack_es.qm
+%%DATADIR%%/translations/qmapshack_fr.qm
