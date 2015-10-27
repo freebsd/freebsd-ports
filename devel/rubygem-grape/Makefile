@@ -9,6 +9,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Framework for rapid API development with great conventions
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-activesupport4>=0:${PORTSDIR}/devel/rubygem-activesupport4 \
 		rubygem-builder32>=0:${PORTSDIR}/devel/rubygem-builder32 \
