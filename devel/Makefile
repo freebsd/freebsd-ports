@@ -4282,6 +4282,7 @@
     SUBDIR += py-sortedcontainers
     SUBDIR += py-spark
     SUBDIR += py-speaklater
+    SUBDIR += py-spyder
     SUBDIR += py-sqlcc
     SUBDIR += py-statgrab
     SUBDIR += py-stdnum
@@ -5089,7 +5090,6 @@
     SUBDIR += spice-protocol
     SUBDIR += spin
     SUBDIR += splint
-    SUBDIR += spyder
     SUBDIR += srecord
     SUBDIR += st
     SUBDIR += statcvs
