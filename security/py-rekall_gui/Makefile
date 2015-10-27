@@ -3,6 +3,7 @@
 
 PORTNAME=	rekall_gui
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,8 +21,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}codegen>=1.0:${PORTSDIR}/devel/py-codegen \
 		${PYTHON_PKGNAMEPREFIX}ipython>=3.0.0:${PORTSDIR}/devel/ipython \
 		${PYTHON_PKGNAMEPREFIX}rekall-core>=1.4.0:${PORTSDIR}/security/py-rekall-core
 
-USES=		python:2
+USES=		python:2 shebangfix
+SHEBANG_FILES=	manuskript/static/bower_components/bootstrap/test-infra/uncached-npm-install.sh
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 
