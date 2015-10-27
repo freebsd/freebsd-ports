@@ -319,7 +319,7 @@ fi
 : ${ac_cv_search_nanosleep='none required'}
 : ${ac_cv_search_res_query='none required'}
 : ${ac_cv_search_opendir='none required'}
-: ${ac_cv_search_openpty='none required'}
+: ${ac_cv_search_openpty=-lutil}
 : ${ac_cv_search_scan_scaled=no}
 : ${ac_cv_search_updwtmp=no}
 
