@@ -15,7 +15,7 @@ LIB_DEPENDS=	libgle.so:${PORTSDIR}/graphics/gle
 
 CONFLICTS=	xscreensaver-gnome-[0-9]* xscreensaver-gnome-hacks-[0-9]*
 
-USES=		autoreconf gmake jpeg perl5 pkgconfig
+USES=		autoreconf gettext gmake jpeg perl5 pkgconfig
 USE_GL=		yes
 USE_GNOME=	gdkpixbuf2 gtk20 intltool libglade2 libxml2
 USE_PERL5=	run
@@ -37,7 +37,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	PAM SETUID_HACKS FIREF NLS XAOS1 XDALI XEARTH \
 		XFT XMOUN XPLANET XSNOW
-OPTIONS_DEFAULT=${OPTIONS_DEFINE}
 OPTIONS_SUB=	yes
 
 PAM_CONFIGURE_WITH=		pam
@@ -47,7 +46,7 @@ SETUID_HACKS_DESC=		Install sonar hack suid so it can ping
 FIREF_DESC=			Add extra port x11/fireflies
 FIREF_RUN_DEPENDS=		${LOCALBASE}/bin/xscreensaver-hacks/fireflies:${PORTSDIR}/x11/fireflies
 
-NLS_USES=			gettext gettext-runtime
+NLS_USES=			gettext-runtime
 NLS_CONFIGURE_ENABLE=		nls
 
 XAOS1_DESC=			Add extra port graphics/xaos
