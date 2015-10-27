@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgcrypt
-PORTVERSION=	1.6.3
+PORTVERSION=	1.6.4
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
@@ -46,7 +46,7 @@ CFLAGS:=	${CFLAGS:N-O*} -O2
 .endif
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}.so.20.0.3
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}.so
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
