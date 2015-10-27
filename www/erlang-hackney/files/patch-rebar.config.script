@@ -1,0 +1,11 @@
+--- rebar.config.script.orig	2015-10-27 13:33:15 UTC
++++ rebar.config.script
+@@ -1,7 +1,4 @@
+-{ok, VSN} = application:get_key(rebar, vsn),
+-[VSN1 | _] = string:tokens(VSN, "-"),
+-[Maj, Min, Patch] = string:tokens(VSN1, "."),
+-IsRebar3 = (list_to_integer(Maj) >= 3),
++IsRebar3 = true.
+ 
+ 
+ Rebar2Deps = [
