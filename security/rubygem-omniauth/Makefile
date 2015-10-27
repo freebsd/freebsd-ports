@@ -10,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Generalized Rack framework for multiple-provider authentication
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-hashie>=1.2:${PORTSDIR}/devel/rubygem-hashie \
 		rubygem-rack16>=1.0:${PORTSDIR}/www/rubygem-rack16
