@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qupzilla
-PORTVERSION=	1.8.7
+PORTVERSION=	1.8.8
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/QupZilla/${PORTNAME}/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX=	-qt5
