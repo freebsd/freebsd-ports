@@ -1,5 +1,5 @@
-SHA256 (nginx-1.9.5.tar.gz) = 48e2787a6b245277e37cb7c5a31b1549a0bbacf288aa4731baacf9eaacdb481b
-SIZE (nginx-1.9.5.tar.gz) = 884023
+SHA256 (nginx-1.9.6.tar.gz) = ed501fc6d0eff9d3bc1049cc1ba3a3ac8c602de046acb2a4c108392bbfa865ea
+SIZE (nginx-1.9.6.tar.gz) = 884733
 SHA256 (nginx-accesskey-2.0.3.tar.gz) = d9e94321e78a02de16c57f3e048fd31059fd8116ed03d6de7180f435c52502b1
 SIZE (nginx-accesskey-2.0.3.tar.gz) = 2632
 SHA256 (kvspb-nginx-auth-ldap-928856aa95_GH0.tar.gz) = de21b7d9ef0953e96736f6b02d11236c46b138a0bc7889725e8b31f7482e67de
