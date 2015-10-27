@@ -3,6 +3,7 @@ bin/squirrel-sql
 %%DATADIR%%/icons/acorn.png
 %%DATADIR%%/icons/acorn.xpm
 %%DATADIR%%/icons/splash.jpg
+%%DATADIR%%/lib/RText.jar
 %%DATADIR%%/lib/antlr.jar
 %%DATADIR%%/lib/asm-attrs.jar
 %%DATADIR%%/lib/asm.jar
@@ -15,7 +16,7 @@ bin/squirrel-sql
 %%DATADIR%%/lib/common.jar
 %%DATADIR%%/lib/commons-cli.jar
 %%DATADIR%%/lib/commons-codec.jar
-%%DATADIR%%/lib/commons-collections.jar
+%%DATADIR%%/lib/commons-collections-3.2.1.jar
 %%DATADIR%%/lib/commons-discovery.jar
 %%DATADIR%%/lib/commons-httpclient.jar
 %%DATADIR%%/lib/commons-lang.jar
@@ -42,12 +43,10 @@ bin/squirrel-sql
 %%DATADIR%%/lib/poi.jar
 %%DATADIR%%/lib/rstaui.jar
 %%DATADIR%%/lib/rsyntaxtextarea.jar
-%%DATADIR%%/lib/rtext.jar
 %%DATADIR%%/lib/spring-beans.jar
 %%DATADIR%%/lib/spring-context-support.jar
 %%DATADIR%%/lib/spring-context.jar
 %%DATADIR%%/lib/spring-core.jar
-%%DATADIR%%/lib/squirrel-sql.jar
 %%DATADIR%%/lib/stringtemplate.jar
 %%DATADIR%%/lib/swing-worker.jar
 %%DATADIR%%/lib/treetable.jar
@@ -244,7 +243,7 @@ bin/squirrel-sql
 %%DATADIR%%/plugins/laf/kunststoff_Licence.txt
 %%DATADIR%%/plugins/laf/laf-plugin-licence.txt
 %%DATADIR%%/plugins/laf/laf-sources.jar
-%%DATADIR%%/plugins/laf/lafs/JTattoo.jar
+%%DATADIR%%/plugins/laf/lafs/JTattoo-1.6.10.jar
 %%DATADIR%%/plugins/laf/lafs/ilf-gpl.jar
 %%DATADIR%%/plugins/laf/lafs/kunstoff-laf.jar
 %%DATADIR%%/plugins/laf/lafs/looks.jar
