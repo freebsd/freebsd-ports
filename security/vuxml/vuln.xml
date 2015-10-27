@@ -58,6 +58,32 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2a4a112a-7c1b-11e5-bd77-0800275369e2">
+    <topic>lldpd -- Buffer overflow</topic>
+    <affects>
+      <package>
+	<name>lldpd</name>
+	<range><ge>0.5.6</ge><lt>0.7.19</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The lldpd developer Vincent Bernat reports:</p>
+	<blockquote cite="https://github.com/vincentbernat/lldpd/raw/0.7.19/NEWS">
+	  <p>A buffer overflow may allow arbitrary code execution
+	    only if hardening was disabled.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/vincentbernat/lldpd/raw/0.7.19/NEWS</url>
+    </references>
+    <dates>
+      <discovery>2015-10-04</discovery>
+      <entry>2015-10-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="24e4d383-7b3e-11e5-a250-68b599b52a02">
     <topic>wireshark -- Pcapng file parser crash</topic>
     <affects>
