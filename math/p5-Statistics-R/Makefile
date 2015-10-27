@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Statistics-R
-PORTVERSION=	0.33
+PORTVERSION=	0.34
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:FANGLY
@@ -16,9 +16,10 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	R:${PORTSDIR}/math/R
 RUN_DEPENDS=	R:${PORTSDIR}/math/R \
-		p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run \
+		p5-IPC-Run>=0.10:${PORTSDIR}/devel/p5-IPC-Run \
 		p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
