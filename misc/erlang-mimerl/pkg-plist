@@ -1,0 +1,6 @@
+lib/erlang/lib/mimerl-%%VERSION%%/ebin/mimerl.app
+lib/erlang/lib/mimerl-%%VERSION%%/ebin/mimerl.beam
+lib/erlang/lib/mimerl-%%VERSION%%/src/mimerl.app.src
+lib/erlang/lib/mimerl-%%VERSION%%/src/mimerl.erl
+lib/erlang/lib/mimerl-%%VERSION%%/src/mimerl.erl.src
+%%PORTDOCS%%%%DOCSDIR%%/README.md
