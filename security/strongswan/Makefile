@@ -3,6 +3,7 @@
 
 PORTNAME=	strongswan
 PORTVERSION=	5.3.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://download.strongswan.org/ \
 		http://download2.strongswan.org/
@@ -42,7 +43,9 @@ CONFIGURE_ARGS=	--enable-kernel-pfkey \
 OPTIONS_DEFINE=	CURL EAPAKA3GPP2 EAPDYNAMIC EAPRADIUS EAPSIMFILE GCM IKEv1 \
 		IPSECKEY KERNELLIBIPSEC LOADTESTER LDAP MYSQL PKI SCEP SMP \
 		SQLITE TESTVECTOR UNBOUND UNITY XAUTH
-OPTIONS_DEFAULT=	IKEv1
+OPTIONS_DEFAULT=	IKEv1 BUILTIN
+OPTIONS_SINGLE=	PRINTF_HOOKS
+OPTIONS_SINGLE_PRINTF_HOOKS=	BUILTIN VSTR LIBC
 OPTIONS_SUB=	yes
 CURL_DESC=	Enable CURL to fetch CRL/OCSP
 EAPAKA3GPP2_DESC=	Enable EAP AKA with 3gpp2 backend
@@ -61,6 +64,9 @@ SMP_DESC=	Enable XML-based management protocol
 UNBOUND_DESC=	Enable DNSSEC-enabled resolver
 UNITY_DESC=	Enable Cisco Unity extension plugin
 XAUTH_DESC=	Enable XAuth password verification
+BUILTIN_DESC=	Use builtin printf hooks
+LIBC_DESC=	Use libc printf hooks
+VSTR_DESC=	Use devel/vstr printf hooks
 
 # Extra options
 CURL_CONFIGURE_ON=	--enable-curl
@@ -90,6 +96,10 @@ UNBOUND_CONFIGURE_ON=	--enable-unbound
 UNBOUND_LIB_DEPENDS=	libunbound.so:${PORTSDIR}/dns/unbound
 UNITY_CONFIGURE_ON=	--enable-unity
 XAUTH_CONFIGURE_ON=	--enable-xauth-eap --enable-xauth-generic
+BUILTIN_CONFIGURE_ON=	--with-printf-hooks=builtin
+LIBC_CONFIGURE_ON=	--with-printf-hooks=glibc
+VSTR_CONFIGURE_ON=	--with-printf-hooks=vstr
+VSTR_LIB_DEPENDS=	libvstr.so:devel/vstr
 
 .include <bsd.port.options.mk>
 
