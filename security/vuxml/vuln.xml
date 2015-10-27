@@ -58,6 +58,35 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4b9393b8-7c0c-11e5-a010-080027ddead3">
+    <topic>xscreensaver - lock bypass</topic>
+    <affects>
+      <package>
+	<name>xscreensaver</name>
+	<name>xscreensaver-gnome</name>
+	<name>xscreensaver-gnome-hacks</name>
+	<range><lt>5.34</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>RedHat bugzilla reports:</p>
+	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=1274452">
+	  <p>In dual screen configurations, unplugging one screen will cause
+	    xscreensaver to crash, leaving the screen unlocked.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.jwz.org/xscreensaver/changelog.html</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=1274452</url>
+    </references>
+    <dates>
+      <discovery>2015-10-24</discovery>
+      <entry>2015-10-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2a4a112a-7c1b-11e5-bd77-0800275369e2">
     <topic>lldpd -- Buffer overflow</topic>
     <affects>
