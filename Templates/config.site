@@ -23,7 +23,7 @@ if [ -z "${OSVERSION}" ]; then
 fi
 [ -z "${OPSYS}" ] && OPSYS=$(uname -s)
 
-if [ ${OSVERSION} -lt 900000 ]; then
+if [ ${OSVERSION} -ge 900000 ]; then
 	have_utx="yes"
 	have_utmp="no"
 else
