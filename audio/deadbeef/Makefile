@@ -3,7 +3,7 @@
 
 PORTNAME=	deadbeef
 PORTVERSION=	0.6.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -78,11 +78,13 @@ GTK2_USE=		gnome=gtk20,glib20
 GTK2_CONFIGURE_OFF=	--disable-gtk2
 GTK2_CONFIGURE_ON=	--enable-gtk2
 GTK2_VARS=		GTK_VER=2
+GTK2_IMPLIES=		GUI
 
 GTK3_USE=		gnome=gtk30
 GTK3_CONFIGURE_OFF=	--disable-gtk3
 GTK3_CONFIGURE_ON=	--enable-gtk3
 GTK3_VARS=		GTK_VER=3
+GTK3_IMPLIES=		GUI
 
 PLIST_SUB+=		GTK_VER=${GTK_VER}
 
@@ -182,6 +184,12 @@ ALAC_CONFIGURE_OFF=		--disable-alac
 PLTBROWSER_CONFIGURE_OFF=	--disable-pltbrowser
 
 WMA_CONFIGURE_OFF=		--disable-wma
+
+.include <bsd.port.options.mk>
+
+.if !${PORT_OPTIONS:MGTK2} && !${PORT_OPTIONS:MGTK3}
+PORT_OPTIONS:=          ${PORT_OPTIONS:NGUI}
+.endif
 
 post-patch:
 # Do not link to libsupc++ which may be PIC-unsafe (breaks 64-bit arches)
