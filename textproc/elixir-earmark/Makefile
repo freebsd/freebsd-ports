@@ -14,6 +14,5 @@ LICENSE=	APACHE20
 USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	pragdave
-GH_TAGNAME=	07914f5
 
 .include <bsd.port.mk>
