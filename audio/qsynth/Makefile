@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qsynth
-PORTVERSION=	0.3.9
+PORTVERSION=	0.4.0
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -10,15 +10,16 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt fluidsynth front-end application
 
 LICENSE=	GPLv2 # (or later)
+#LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth
 
 USES=		gmake
 QT_NONSTANDARD=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	ac_cv_path_ac_moc=${MOC} \
+CONFIGURE_ENV=	ac_cv_path_ac_cv_qmake=${QMAKE} \
+		ac_cv_path_ac_moc=${MOC} \
 		ac_cv_path_ac_uic=${UIC} \
-		ac_cv_path_ac_qmake=${QMAKE} \
 		ac_cv_path_ac_lupdate=${LUPDATE} \
 		ac_cv_path_ac_lrelease=${LRELEASE}
 CONFIGURE_ARGS=	--localedir=${DATADIR} \
@@ -36,7 +37,7 @@ QT4_USE=		qt4=corelib,gui \
 			qt4=linguisttools_build \
 			qt4=moc_build,qmake_build,rcc_build,uic_build
 QT4_CONFIGURE_ENABLE=	qt4
-QT5_USE=		qt5=core,gui,widgets \
+QT5_USE=		qt5=core,gui,widgets,x11extras \
 			qt5=buildtools_build,linguisttools_build,qmake_build
 QT5_CXXFLAGS=		-fPIC
 QT5_CONFIGURE_ENABLE=	qt5
