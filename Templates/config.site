@@ -330,7 +330,6 @@
 : ${ac_cv_func_iswctype=yes}
 : ${ac_cv_func_link=yes}
 : ${ac_cv_func_localtime=yes}
-: ${ac_cv_func_login_getcapbool=yes}
 : ${ac_cv_func_lstat=yes}
 : ${ac_cv_func_lstat_dereferences_slashed_symlink=yes}
 : ${ac_cv_func_malloc_0_nonnull=yes}
@@ -354,8 +353,6 @@
 : ${ac_cv_func_munmap=yes}
 : ${ac_cv_func_nl_langinfo=yes}
 : ${ac_cv_func_opendir=yes}
-# Breaks heimdal and rancid at least
-# : ${ac_cv_func_openpty=yes}
 : ${ac_cv_func_pam_getenvlist=yes}
 : ${ac_cv_func_pam_putenv=yes}
 : ${ac_cv_func_pathconf=yes}
