@@ -1,6 +1,6 @@
---- idl/GNUmakefile.in.orig	Sun Aug 18 17:38:33 2002
-+++ idl/GNUmakefile.in	Fri Oct 18 17:32:26 2002
-@@ -4,7 +4,7 @@
+--- idl/GNUmakefile.in.orig	2012-12-31 14:57:16 UTC
++++ idl/GNUmakefile.in
+@@ -4,7 +4,7 @@ BASE_OMNI_TREE=@top_srcdir@
  VPATH=@srcdir@
  INSTALL=@INSTALL@
  
@@ -8,4 +8,4 @@
 +INSTALLDIR = $(INSTALLIDLDIR)
  
  FILES = Naming.idl bootstrap.idl corbaidl.idl echo.idl ir.idl orb.idl \
-         poa.idl poa_include.idl
+         poa.idl poa_include.idl boxes.idl pollable.idl \

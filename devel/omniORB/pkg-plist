@@ -8,6 +8,7 @@ bin/omniNames
 bin/omnicpp
 bin/omniidl
 bin/omniidlrun.py
+@sample etc/omniORB.cfg.sample
 include/COS/COS_sysdep.h
 include/COS/CosEventChannelAdmin.hh
 include/COS/CosEventComm.hh
@@ -108,6 +109,7 @@ include/omniORB4/internal/giopWorker.h
 include/omniORB4/internal/inProcessIdentity.h
 include/omniORB4/internal/initRefs.h
 include/omniORB4/internal/initialiser.h
+include/omniORB4/internal/interceptors.h
 include/omniORB4/internal/invoker.h
 include/omniORB4/internal/libcWrapper.h
 include/omniORB4/internal/localIdentity.h
@@ -127,8 +129,11 @@ include/omniORB4/internal/request.h
 include/omniORB4/internal/rmutex.h
 include/omniORB4/internal/shutdownIdentity.h
 include/omniORB4/internal/tcParser.h
+include/omniORB4/internal/tcpSocket.h
 include/omniORB4/internal/transportRules.h
 include/omniORB4/internal/typecode.h
+include/omniORB4/internal/unknownValue.h
+include/omniORB4/internal/valueTrackerImpl.h
 include/omniORB4/ir_defs.hh
 include/omniORB4/ir_operators.hh
 include/omniORB4/ir_poa.hh
@@ -400,7 +405,6 @@ man/man1/omniidl.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/tex/utilities.tex
 %%PORTDOCS%%%%DOCSDIR%%/utilities.html
 %%PORTDOCS%%%%DOCSDIR%%/utilities.pdf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/omniORB.cfg
 %%DATADIR%%/idl/COS/CosCollection.idl
 %%DATADIR%%/idl/COS/CosCompoundLifeCycle.idl
 %%DATADIR%%/idl/COS/CosConcurrencyControl.idl
