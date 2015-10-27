@@ -29,14 +29,15 @@ SHEBANG_FILES=	script/mimedefang-util
 perl_OLD_CMD=	perl
 GNU_CONFIGURE=	yes
 
-MAILUSER?=		mailnull
+MIMEDEFANG_USER?=	mailnull
+MIMEDEFANG_GROUP?=	mailnull
 SPOOLDIR?=		/var/spool/MIMEDefang
 QUARANTINEDIR?=		/var/spool/MD-Quarantine
 
 CONFIGURE_ENV+=		PERL=${PERL}
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc \
 			--with-confsubdir=mimedefang \
-			--with-user=${MAILUSER} \
+			--with-user=${MIMEDEFANG_USER} \
 			--with-spooldir=${SPOOLDIR} \
 			--with-quarantinedir=${QUARANTINEDIR} \
 			--with-ipheader \
@@ -44,7 +45,8 @@ CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc \
 
 SUB_FILES=	pkg-message
 
-PLIST_SUB+=	MAIL_USER="${MAILUSER}" \
+PLIST_SUB+=	USER="${MIMEDEFANG_USER}" \
+		GROUP="${MIMEDEFANG_GROUP}" \
 		MIMEDEFANG_RUNDIR="${SPOOLDIR}" \
 		MIMEDEFANG_QUARANTINEDIR="${QUARANTINEDIR}"
 
@@ -77,10 +79,10 @@ pre-install:
 
 post-install:
 	@${REINPLACE_CMD} -e 's,%%CHMOD%%,${CHMOD},g' ${WRKSRC}/examples/init-script
-	@${INSTALL_SCRIPT} ${WRKSRC}/examples/init-script ${STAGEDIR}${PREFIX}/etc/rc.d/mimedefang
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/init-script ${STAGEDIR}${PREFIX}/etc/rc.d/mimedefang
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README* ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/README* ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .if ${PORT_OPTIONS:MEXAMPLES}

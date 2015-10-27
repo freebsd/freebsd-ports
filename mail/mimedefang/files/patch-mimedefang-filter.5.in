@@ -1,6 +1,6 @@
---- ./mimedefang-filter.5.in.orig	2010-02-24 16:19:43.000000000 +0100
-+++ ./mimedefang-filter.5.in	2010-05-09 16:46:21.000000000 +0200
-@@ -609,7 +609,7 @@
+--- mimedefang-filter.5.in.orig	2014-05-21 13:51:21 UTC
++++ mimedefang-filter.5.in
+@@ -622,7 +622,7 @@ and entity_contains_virus_sophie unless 
  routine.
  
  .TP
