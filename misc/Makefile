@@ -77,6 +77,7 @@
     SUBDIR += e2fsprogs-libuuid
     SUBDIR += elixir-uuid
     SUBDIR += elscreen
+    SUBDIR += erlang-mimerl
     SUBDIR += esniper
     SUBDIR += estic
     SUBDIR += excel-writer
