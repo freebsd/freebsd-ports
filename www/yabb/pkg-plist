@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWOWN%%
 %%YABBDIR%%/AJS.js
 %%YABBDIR%%/AJS_fx.js
 %%YABBDIR%%/Admin/.htaccess
@@ -797,7 +799,6 @@
 %%YABBDIR%%/avatars/winnie.gif
 %%YABBDIR%%/avatars/xena.gif
 %%YABBDIR%%/cache.js
-%%YABBDIR%%/checksum.sha256
 %%YABBDIR%%/googiespell/GPL.txt
 %%YABBDIR%%/googiespell/blank.gif
 %%YABBDIR%%/googiespell/change_lang.gif
@@ -836,7 +837,41 @@
 %%YABBDIR%%/shjs/sh_sql.js
 %%YABBDIR%%/shjs/styles/sh_style.css
 %%YABBDIR%%/ubbc.js
-@dir %%YABBDIR%%/Attachments
-@dir %%YABBDIR%%/ModImages
-@dir %%YABBDIR%%/Templates/Forum/default/Boards
+@dir %%YABBDIR%%/shjs/styles
+@dir %%YABBDIR%%/shjs
+@dir %%YABBDIR%%/greybox
+@dir %%YABBDIR%%/googiespell
 @dir %%YABBDIR%%/avatars/UserAvatars
+@dir %%YABBDIR%%/avatars
+@dir %%YABBDIR%%/Variables
+@dir %%YABBDIR%%/UBBCbuttons
+@dir %%YABBDIR%%/Templates/default
+@dir %%YABBDIR%%/Templates/Forum/default/Boards
+@dir %%YABBDIR%%/Templates/Forum/default
+@dir %%YABBDIR%%/Templates/Forum
+@dir %%YABBDIR%%/Templates/Admin/default
+@dir %%YABBDIR%%/Templates/Admin
+@dir %%YABBDIR%%/Templates
+@dir %%YABBDIR%%/Sources
+@dir %%YABBDIR%%/Smilies
+@dir %%YABBDIR%%/PMAttachments
+@dir %%YABBDIR%%/ModImages
+@dir %%YABBDIR%%/Messages
+@dir %%YABBDIR%%/Members
+@dir %%YABBDIR%%/Languages/English
+@dir %%YABBDIR%%/Languages
+@dir %%YABBDIR%%/Help/English/User
+@dir %%YABBDIR%%/Help/English/Moderator
+@dir %%YABBDIR%%/Help/English/Gmod
+@dir %%YABBDIR%%/Help/English/Admin
+@dir %%YABBDIR%%/Help
+@dir %%YABBDIR%%/EventIcons
+@dir %%YABBDIR%%/Buttons
+@dir %%YABBDIR%%/Bookmarks
+@dir %%YABBDIR%%/Boards
+@dir %%YABBDIR%%/Backups
+@dir %%YABBDIR%%/Attachments
+@dir %%YABBDIR%%/Admin
+@dir %%YABBDIR%%
+@owner
+@group
