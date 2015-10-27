@@ -122,15 +122,4 @@ share/xsd/patterndb-4.xsd
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/xsd
-@dirrmtry share/tools
-@dirrm share/include/scl/system
-@dirrm share/include/scl/syslogconf
-@dirrm share/include/scl/pacct
-@dirrm share/include/scl
-@dirrm share/include
-@dirrm lib/syslog-ng
-@dirrm include/syslog-ng
-@exec mkdir -p %D/etc/patterndb.d
-@dirrmtry etc/patterndb.d
+@dir etc/patterndb.d
