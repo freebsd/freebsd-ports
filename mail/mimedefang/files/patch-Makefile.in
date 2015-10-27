@@ -1,25 +1,25 @@
---- Makefile.in.orig	2012-01-20 19:20:32.000000000 +0400
-+++ Makefile.in	2012-04-16 03:14:35.979944862 +0400
-@@ -156,14 +156,14 @@
+--- Makefile.in.orig	2012-01-20 15:20:32 UTC
++++ Makefile.in
+@@ -156,14 +156,14 @@ install-redhat: install
  
  install: all
  	$(INSTALL) -m 755 -d $(DESTDIR)${CONFDIR}
 -	-if test "$(IP_HEADER)" = "yes" -a ! -f "$(DESTDIR)${CONFDIR}/mimedefang-ip-key" ; then \
 -		$(PERL) ./gen-ip-validator.pl > $(DESTDIR)${CONFDIR}/mimedefang-ip-key ;\
 -		-chmod 600 $(DESTDIR)${CONFDIR}/mimedefang-ip-key > /dev/null 2>&1 ; \
-+	-if test "$(IP_HEADER)" = "yes" -a ! -f "$(DESTDIR)${CONFDIR}/mimedefang-ip-key.example" ; then \
-+		$(PERL) ./gen-ip-validator.pl > $(DESTDIR)${CONFDIR}/mimedefang-ip-key.example ;\
-+		-chmod 600 $(DESTDIR)${CONFDIR}/mimedefang-ip-key.example > /dev/null 2>&1 ; \
++	-if test "$(IP_HEADER)" = "yes" -a ! -f "$(DESTDIR)${CONFDIR}/mimedefang-ip-key.sample" ; then \
++		$(PERL) ./gen-ip-validator.pl > $(DESTDIR)${CONFDIR}/mimedefang-ip-key.sample ;\
++		-chmod 600 $(DESTDIR)${CONFDIR}/mimedefang-ip-key.sample > /dev/null 2>&1 ; \
  	fi
  
  	if test "$(DEFANGUSER)" != "" ; then \
  		if id "$(DEFANGUSER)" > /dev/null 2>&1 ; then \
 -			chown "$(DEFANGUSER)" $(DESTDIR)${CONFDIR}/mimedefang-ip-key > /dev/null 2>&1 || true; \
-+			chown "$(DEFANGUSER)" $(DESTDIR)${CONFDIR}/mimedefang-ip-key.example > /dev/null 2>&1 || true; \
++			chown "$(DEFANGUSER)" $(DESTDIR)${CONFDIR}/mimedefang-ip-key.sample > /dev/null 2>&1 || true; \
  			test ! -d $(DESTDIR)$(SPOOLDIR) && $(INSTALL) -m 750 -o $(DEFANGUSER) -d $(DESTDIR)$(SPOOLDIR) > /dev/null 2>&1 || true; \
  			test ! -d $(DESTDIR)$(QDIR) && $(INSTALL) -m 750 -o $(DEFANGUSER) -d $(DESTDIR)$(QDIR) > /dev/null 2>&1 || true; \
                  fi \
-@@ -185,11 +185,7 @@
+@@ -185,11 +185,7 @@ install: all
  	-test ! -d $(DESTDIR)$(SPOOLDIR) && mkdir -p $(DESTDIR)$(SPOOLDIR) && chmod 750 $(DESTDIR)$(SPOOLDIR) || true
  	-test ! -d $(DESTDIR)$(QDIR) && mkdir -p $(DESTDIR)$(QDIR) && chmod 750 $(DESTDIR)$(QDIR) || true
  
@@ -28,11 +28,11 @@
 -	else \
 -		$(INSTALL) -m 644 examples/suggested-minimum-filter-for-windows-clients $(DESTDIR)${CONFDIR}/mimedefang-filter || exit 1; \
 -	fi
-+	$(INSTALL) -m 644 examples/suggested-minimum-filter-for-windows-clients $(DESTDIR)${CONFDIR}/mimedefang-filter.example || exit 1
++	$(INSTALL) -m 644 examples/suggested-minimum-filter-for-windows-clients $(DESTDIR)${CONFDIR}/mimedefang-filter.sample || exit 1
  
  	$(INSTALL) -m 755 $(INSTALL_STRIP_FLAG) mimedefang-multiplexor   $(DESTDIR)$(prefix)/bin/mimedefang-multiplexor
  	$(INSTALL) -m 755 $(INSTALL_STRIP_FLAG) md-mx-ctrl               $(DESTDIR)$(prefix)/bin/md-mx-ctrl
-@@ -210,11 +206,7 @@
+@@ -210,11 +206,7 @@ install: all
  	$(INSTALL) -m 644 mimedefang-protocol.7    $(DESTDIR)$(MANDIR)/man7/mimedefang-protocol.7
  	$(INSTALL) -m 644 mimedefang-notify.7      $(DESTDIR)$(MANDIR)/man7/mimedefang-notify.7
  	if test "$(HAVE_SPAM_ASSASSIN)" = "yes" ; then \
@@ -41,7 +41,7 @@
 -		else \
 -			$(INSTALL) -m 644 SpamAssassin/spamassassin.cf $(DESTDIR)${CONFDIR}/sa-mimedefang.cf || exit 1; \
 -		fi \
-+		$(INSTALL) -m 644 SpamAssassin/spamassassin.cf $(DESTDIR)${CONFDIR}/sa-mimedefang.cf.example || exit 1; \
++		$(INSTALL) -m 644 SpamAssassin/spamassassin.cf $(DESTDIR)${CONFDIR}/sa-mimedefang.cf.sample || exit 1; \
  	fi
  
  distro: FORCE
