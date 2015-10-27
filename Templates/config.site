@@ -308,13 +308,13 @@ fi
 : ${ac_cv_search_inet_ntop='none required'}
 : ${ac_cv_search_jail_getid=-ljail}
 if [ "${have_utmp}" = "no" ]; then
-: ${ac_cv_search_login=no}
-: ${ac_cv_search_logout=no}
-: ${ac_cv_search_logwtmp=no}
+	: ${ac_cv_search_login=no}
+	: ${ac_cv_search_logout=no}
+	: ${ac_cv_search_logwtmp=no}
 else
-: ${ac_cv_search_login=-lutil}
-: ${ac_cv_search_logout=-lutil}
-: ${ac_cv_search_logwtmp=-lutil}
+	: ${ac_cv_search_login=-lutil}
+	: ${ac_cv_search_logout=-lutil}
+	: ${ac_cv_search_logwtmp=-lutil}
 fi
 : ${ac_cv_search_nanosleep='none required'}
 : ${ac_cv_search_res_query='none required'}
@@ -485,9 +485,6 @@ fi
 : ${ac_cv_func_link=yes}
 : ${ac_cv_func_localtime=yes}
 : ${ac_cv_func_localtime_r=yes}
-: ${ac_cv_func_login=${have_utmp}}
-: ${ac_cv_func_logout=${have_utmp}}
-: ${ac_cv_func_logwtmp=${have_utmp}}
 : ${ac_cv_func_lstat=yes}
 : ${ac_cv_func_lstat_dereferences_slashed_symlink=yes}
 : ${ac_cv_func_malloc_0_nonnull=yes}
