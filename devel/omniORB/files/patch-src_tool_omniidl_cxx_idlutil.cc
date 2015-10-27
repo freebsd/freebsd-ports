@@ -1,6 +1,6 @@
---- src/tool/omniidl/cxx/idlutil.cc.orig	Thu Jul 25 16:49:13 2002
-+++ src/tool/omniidl/cxx/idlutil.cc	Thu Jul 25 16:49:25 2002
-@@ -139,13 +139,13 @@
+--- src/tool/omniidl/cxx/idlutil.cc.orig	2013-07-18 11:28:03 UTC
++++ src/tool/omniidl/cxx/idlutil.cc
+@@ -108,13 +108,13 @@ idl_strtoul(const char* text, int base)
    IdlIntLiteral ull;
    switch (base) {
    case 8:

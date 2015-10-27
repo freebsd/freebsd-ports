@@ -1,6 +1,6 @@
---- configure.orig	2011-06-24 16:37:28.000000000 -0500
+--- configure.orig	2015-09-28 11:16:10 UTC
 +++ configure
-@@ -7444,12 +7444,16 @@
+@@ -7445,12 +7445,16 @@ case "$host" in
    *-*-irix*)     plat_name="IRIX";     plat_def="__irix__";     os_v="6";;
    *-*-aix*)      plat_name="AIX";      plat_def="__aix__";      os_v="4";;
    *-*-darwin*)   plat_name="Darwin";   plat_def="__darwin__";   os_v="1";;
