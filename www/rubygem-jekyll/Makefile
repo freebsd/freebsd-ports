@@ -3,7 +3,7 @@
 
 PORTNAME=	jekyll
 PORTVERSION=	2.5.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -21,7 +21,7 @@ RUN_DEPENDS=	rubygem-classifier-reborn>=2.0:${PORTSDIR}/devel/rubygem-classifier
 		rubygem-jekyll-sass-converter>=1.0:${PORTSDIR}/textproc/rubygem-jekyll-sass-converter \
 		rubygem-jekyll-watch>=1.1:${PORTSDIR}/www/rubygem-jekyll-watch \
 		rubygem-kramdown>=1.3:${PORTSDIR}/textproc/rubygem-kramdown \
-		rubygem-liquid>=2.6.1:${PORTSDIR}/textproc/rubygem-liquid \
+		rubygem-liquid2>=2.6.1:${PORTSDIR}/textproc/rubygem-liquid2 \
 		rubygem-mercenary>=0.3.3:${PORTSDIR}/devel/rubygem-mercenary \
 		rubygem-pygments.rb>=0.6.0:${PORTSDIR}/devel/rubygem-pygments.rb \
 		rubygem-redcarpet>=3.1:${PORTSDIR}/textproc/rubygem-redcarpet \
