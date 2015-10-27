@@ -1,6 +1,6 @@
---- src/nmath/standalone/test.c.orig	2009-06-22 18:12:00.000000000 -0400
-+++ src/nmath/standalone/test.c	2009-06-22 18:12:34.000000000 -0400
-@@ -38,7 +38,7 @@
+--- src/nmath/standalone/test.c.orig	2012-04-15 22:05:35 UTC
++++ src/nmath/standalone/test.c
+@@ -38,7 +38,7 @@ main(int argc, char** argv)
      qnorm(0.7, 0.0, 1.0, 0, 0);
      printf("*** loaded '%s'\n", argv[0]);
      set_seed(123, 456);
