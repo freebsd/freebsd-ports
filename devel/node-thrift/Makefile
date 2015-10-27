@@ -3,7 +3,7 @@
 
 PORTNAME=	thrift
 PORTVERSION=	${THRIFT_PORTVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	# empty
 PKGNAMEPREFIX=	node-
@@ -16,6 +16,7 @@ RUN_DEPENDS=	node:${PORTSDIR}/www/node
 FETCH_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/devel/thrift:extract
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 
