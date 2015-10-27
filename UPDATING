@@ -8,8 +8,8 @@ you update your ports collection, before attempting any port upgrades.
 20151020:
   AFFECTS: users of security/keepassx2
 
-  In order of package name changed, please remove old install before
-  upgrade.
+  Due to a package name change, first remove the existing package
+  and then reinstall it:
 
   # pkg delete security/keepassx2
   # portmaster security/keepassx2
