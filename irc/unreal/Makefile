@@ -3,7 +3,7 @@
 
 PORTNAME=	Unreal
 PORTVERSION=	3.2.10.5
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://www.unrealircd.com/downloads/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -111,8 +111,9 @@ post-patch:
 	@${PATCH} -d ${WRKSRC} < ${WRKSRC}/SQLMod/patch
 .endif
 	@${REINPLACE_CMD} -e "/Your system does not support IPv6/ s|as_fn_error|echo|" ${WRKSRC}/configure
+
 do-install:
-	${INSTALL} -m 0700 ${WRKSRC}/src/ircd ${STAGEDIR}${PREFIX}/libexec/ircd
+	${INSTALL_PROGRAM} ${WRKSRC}/src/ircd ${STAGEDIR}${PREFIX}/libexec/ircd
 	${MKDIR} ${STAGEDIR}${MODULESDIR}
 	${MKDIR} ${STAGEDIR}${CONFIGDIR} || true
 	${MKDIR} ${STAGEDIR}${CONFIGDIR}/aliases || true
