@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	csound
-PORTVERSION=	6.05
+PORTVERSION=	6.06
 CATEGORIES=	audio lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}6/${PORTNAME:S/c/C/}${PORTVERSION}
 PKGNAMESUFFIX=	6
@@ -18,7 +18,8 @@ BUILD_DEPENDS=	boost-libs>0:${PORTSDIR}/devel/boost-libs \
 		swig>2:${PORTSDIR}/devel/swig20 \
 		eigen>0:${PORTSDIR}/math/eigen3 \
 		gmm++>0:${PORTSDIR}/math/gmm++
-LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
+		libsndfile.so:${PORTSDIR}/audio/libsndfile
 
 USES=		bison cmake python:2
 CMAKE_ARGS=	-DBUILD_CSOUNDVST:BOOL=OFF \
@@ -57,6 +58,7 @@ DSSI_LIB_DEPENDS=	libdssialsacompat.so:${PORTSDIR}/audio/libdssialsacompat
 DSSI_RUN_DEPENDS=	dssi>0:${PORTSDIR}/audio/dssi
 DSSI_CMAKE_OFF=		-DBUILD_DSSI_OPCODES:BOOL=OFF
 DSSI_CFLAGS=		-isystem ${LOCALBASE}/include/dssi
+DSSI_PREVENTS=		ALSA
 FLTK_DESC=		Build FLTK plugin and GUI
 FLTK_LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 FLTK_CMAKE_ON=		-DBUILD_WINSOUND:BOOL=ON
@@ -131,10 +133,16 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's| mixer)| csmixer)|' \
 		${WRKSRC}/util/CMakeLists.txt
+.for i in Engine/auxfd.c H/prototyp.h OOps/diskin2.c OOps/dumpf.c \
+	Opcodes/partials.c Top/csound.c
+	@${REINPLACE_CMD} -e \
+		's|\([[:blank:]]fd\)\(close\)|\1__\2|' ${WRKSRC}/${i}
+.endfor
 
 post-install:
 	@${LN} -sf libcsnd6.so.6.0 ${STAGEDIR}${PREFIX}/lib/libcsnd6.so.6
 	@${LN} -sf libcsound64.so.6.0 ${STAGEDIR}${PREFIX}/lib/libcsound64.so.6
+
 post-install-FLTK-on:
 	@${LN} -sf libCsoundAC.so.6.0 ${STAGEDIR}${PREFIX}/lib/libCsoundAC.so.6
 
