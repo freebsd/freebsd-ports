@@ -34,6 +34,12 @@ you update your ports collection, before attempting any port upgrades.
   # chown varnishlog /var/log/varnish.log
   # chown varnishlog /var/log/varnishncsa.log
 
+  Please also note that the syntax for binding to additional IPs has
+  changed in 4.1.0. Multiple listening addresses are now specified by
+  using multiple -a arguments. In rc.conf it would look like this:
+
+  varnishd_listen="x.x.x.x:80 -a y.y.y.y:80"
+
 20151015:
   AFFECTS: users of devel/subversion, its bindings and www/mod_dav_svn
   AUTHOR: lev@FreeBSD.org
