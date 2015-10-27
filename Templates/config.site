@@ -289,7 +289,7 @@ fi
 : ${ac_cv_lib_pam_pam_set_item=yes}
 : ${ac_cv_lib_z_deflate=yes}
 : ${ac_cv_lib_z_gzdopen=yes}
-# XXX: nm -D /lib/libc.so.7|awk '$2 = "R" {print $3}'
+# XXX: nm -D /lib/libc.so.7|awk '$2 == "R" {print $3}'
 : ${ac_cv_libc_defines___progname=yes}
 : ${ac_cv_libc_defines_sys_errlist=yes}
 : ${ac_cv_libc_defines_sys_nerr=yes}
