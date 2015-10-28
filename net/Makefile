@@ -936,7 +936,6 @@
     SUBDIR += py-libdnet
     SUBDIR += py-libnet
     SUBDIR += py-maxminddb
-    SUBDIR += py-medusa
     SUBDIR += py-miniupnpc
     SUBDIR += py-msrplib
     SUBDIR += py-ndg_httpsclient

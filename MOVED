@@ -7898,3 +7898,5 @@ net/ntp-rc|net/ntp|2015-10-21|ntp-4.2.8p4 has gone GA
 x11-wm/clementine|x11-wm/clementine-wm|2015-10-23|add suffix so the port is not mixed up with audio/clementine-player
 www/twig||2015-10-25|Has expired: Upstream vanished, php3 and php4 are long unsupported
 misc/ruby-progressbar|devel/rubygem-ruby-progressbar|2015-10-25|Has expired: Abandoned upstream, superseded by devel/rubygem-ruby-progressbar
+databases/py-mssql|databases/py-pymssql|2015-10-28|Broken with current FreeTDS
+net/py-medusa||2015-10-28|Abandoned upstream, last release was in 2005
