@@ -1,8 +1,0 @@
-Medusa is an architecture for building long-running, high-performance
-network servers in Python.  Medusa is in use now in several
-mission-critical applications, ranging from custom web servers at
-extremely high-traffic sites to distributed data processing systems.
-It is an elegant and efficient solution to a difficult programming
-problem.
-
-WWW: https://pypi.python.org/pypi/medusa/
