@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	nim
-PORTVERSION=	0.10.2
-PORTREVISION=	0
+PORTVERSION=	0.11.2
 CATEGORIES=	lang
 MASTER_SITES=	http://nim-lang.org/download/
 
 MAINTAINER=	ports@nicandneal.net
-COMMENT=	The Nim programming language
+COMMENT=	Nim programming language
 
 LICENSE=	MIT
 
@@ -34,5 +33,8 @@ do-build:
 
 do-install:
 	cd ${WRKSRC} && ${SH} install.sh ${STAGEDIR}${PREFIX}
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/nim
 
 .include <bsd.port.post.mk>
