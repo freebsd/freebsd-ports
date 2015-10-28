@@ -3,7 +3,9 @@
 PORTNAME=	fb-adb
 DISTVERSION=	1.4.4-109
 DISTVERSIONSUFFIX=	-g930ba5f
+PORTREVISION=	1
 CATEGORIES=	devel
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Better shell for Android devices
@@ -12,7 +14,6 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	xxd:${PORTSDIR}/editors/vim-lite \
-		${LOCALBASE}/android/ARMv7/bin/arm-aux-linux-androideabi-gcc:${PORTSDIR}/lang/gnatdroid-armv7 \
 		${BASH_CMD}:${PORTSDIR}/shells/${BASH_CMD:T}
 RUN_DEPENDS=	adb:${PORTSDIR}/devel/android-tools-adb
 
@@ -23,10 +24,9 @@ USES=		autoreconf:outsource gmake ncurses perl5 python:3,build
 USE_PERL5=	build # pod2man
 BASH_CMD?=	bash # can be zsh
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	PATH="${BUILD_DEPENDS:M*android*:C/:.*//:H}:$$PATH" \
-		PYTHON3="${PYTHON_CMD}"
+CONFIGURE_ENV=	PYTHON3="${PYTHON_CMD}"
 # XXX --mandir as SET_LATE_CONFIGURE_ARGS doesn't respect CONFIGURE_CMD
-CONFIGURE_ARGS=	--mandir="${MANPREFIX}/man" --with-android-ndk=system
+CONFIGURE_ARGS=	--mandir="${MANPREFIX}/man"
 INSTALL_TARGET=	install-strip
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
@@ -41,19 +41,53 @@ CONFIGURE_ENV+=	HOST_CFLAGS="${CPPFLAGS} ${CFLAGS:N-[Og]*:N-pipe}" \
 		LDFLAGS="" LIBS=""
 
 OPTIONS_DEFINE=	ASSERT BASH DEBUG
+OPTIONS_DEFINE_amd64=	NDK
+OPTIONS_DEFINE_i386=	NDK
+OPTIONS_DEFAULT_amd64=	NDK
+OPTIONS_DEFAULT_i386=	NDK
+OPTIONS_EXCLUDE_DragonFly=NDK
 
 ASSERT_CONFIGURE_ENABLE=checking
 BASH_DESC=		Install JSON parser used by bash-completion
 BASH_RUN_DEPENDS=	jq:${PORTSDIR}/textproc/jq
 DEBUG_CONFIGURE_ENABLE=	debuggable-stubs
 
+# XXX Convert into USES=android once more things depend on it
+NDK_DESC=		Build target stubs using Android NDK
+NDK_MASTER_SITES=	https://dl.google.com/android/ndk/:ndk
+.if defined(ANDROID_NDK)
+# Prefer NDK from environment
+WRKSRC_ndk=		${ANDROID_NDK}
+.else
+NDK_DISTFILES=		${DISTNAME_ndk}.bin:ndk,p7zip
+DISTNAME_ndk=		android-ndk-r10e-linux-${LINUX_RPM_ARCH:C/i.86/x86/}
+WRKSRC_ndk=		${WRKDIR}/${DISTNAME_ndk:C/(-[^-]+){2}$//}
+.endif
+NDK_BUILD_DEPENDS=	${LINUX_BASE_PORT}
+NDK_USE=		LINUX=yes # build
+NDK_SHELL=		${SETENV} UNAME_s=Linux UNAME_m=${LINUX_RPM_ARCH} ${SH}
+NDK_CONFIGURE_ENV=	ANDROID_NDK="${WRKSRC_ndk}" \
+			ANDROID_NDK_SHELL="${NDK_SHELL}" \
+			NDK_TMPDIR="${WRKDIR}"
+NDK_BUILD_DEPENDS_OFF=	${LOCALBASE}/android/ARMv7/bin/arm-aux-linux-androideabi-gcc:${PORTSDIR}/lang/gnatdroid-armv7
+NDK_CONFIGURE_ENV_OFF=	PATH="${NDK_BUILD_DEPENDS_OFF:C/:.*//:H}:$$PATH"
+NDK_CONFIGURE_OFF=	--with-android-ndk=system
+
+post-extract:
+# XXX gold: fatal error: a.out: Invalid argument
+	@for f in $$(${FIND} ${WRKSRC_ndk} -type l -name '*-ld'); do \
+		(cd $${f%/*} && ${LN} -sf $${f##*/}.bfd $${f##*/}); \
+	done
+
 post-patch:
 # XXX Decouple -Werror from --enable-checking (ASSERT=on)
+	@${REINPLACE_CMD} -e '/CPPFLAGS.*-Werror/d' ${WRKSRC}/configure.ac
+
+post-patch-NDK-off:
 # XXX lang/gnatdroid-x86 doesn't exist yet
-	@${REINPLACE_CMD} -e '/CPPFLAGS.*-Werror/d' \
-		-e 's/stub-x86[^,]*, //g' \
+	@${REINPLACE_CMD} -i '.x86-off.bak' -e 's/stub-x86[^,]*, //g' \
 		${WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e 's/linux-android/aux-&/' \
+	@${REINPLACE_CMD} -i '.aux.bak' -e 's/linux-androideabi/aux-&/' \
 		${WRKSRC}/stub-*/configure
 
 # XXX Similar to USES=qmake:outsource, merge into Mk/Uses/autoreconf.mk
@@ -75,4 +109,41 @@ do-autoreconf:
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 .endif
 
+.include <bsd.port.options.mk>
+
+# XXX Make _EXCLUDE behave like _SLAVE by triggering _OFF helpers
+.for opt in ${OPTIONS_EXCLUDE_${OPSYS}}
+. if ! ${PORT_OPTIONS:M${opt}}
+BUILD_DEPENDS+=		${${opt}_BUILD_DEPENDS_OFF}
+CONFIGURE_ENV+=		${${opt}_CONFIGURE_ENV_OFF}
+CONFIGURE_ARGS+=	${${opt}_CONFIGURE_OFF}
+. endif
+.endfor
+
+# Extract :p7zip files with 7z(1) if libarchive cannot handle x86_64 sfx
+# or is too old to have 7zip reader
+.if defined(OVERRIDE_LINUX_BASE_PORT) || \
+	(${OPSYS} == FreeBSD && ${OSVERSION} < 1000009)
+EXTRACT_ONLY+=	${DISTFILES:N*\:*p7zip*:C/:.*//}
+EXTRACT_DEPENDS+=${P7ZIP_CMD}:${PORTSDIR}/archivers/p7zip
+
+P7ZIP_CMD?=	7z
+P7ZIP_ARGS?=	x -bd -y -o${WRKDIR} >/dev/null
+
+_OPTIONS_extract+=	520:do-p7zip-extract
+do-p7zip-extract:
+	@for f in ${DISTFILES:M*\:*p7zip*:C/:.*//}; do \
+		if ! ${P7ZIP_CMD} ${P7ZIP_ARGS} ${_DISTDIR}/$$f; then \
+			return 1; \
+		fi; \
+	done
+.endif
+
 .include <bsd.port.mk>
+
+# XXX Teach USE_LINUX about build-only deps
+.if defined(.PARSEDIR)
+RUN_DEPENDS:=	${RUN_DEPENDS:N${LINUX_BASE_PORT}}
+.else
+RUN_DEPENDS:=	${RUN_DEPENDS:N*linux_base*}
+.endif
