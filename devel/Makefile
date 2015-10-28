@@ -1489,6 +1489,7 @@
     SUBDIR += mspdebug
     SUBDIR += msrc0
     SUBDIR += mtbl
+    SUBDIR += myrepos
     SUBDIR += nana
     SUBDIR += nant
     SUBDIR += nasm
