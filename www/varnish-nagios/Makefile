@@ -11,6 +11,8 @@ COMMENT=	Nagios plugin to check status of Varnish
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	varnish4>=0:${PORTSDIR}/www/varnish4
 
 GNU_CONFIGURE=	yes
