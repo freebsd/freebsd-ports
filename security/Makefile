@@ -1078,6 +1078,7 @@
     SUBDIR += vinetto
     SUBDIR += vlock
     SUBDIR += vlog
+    SUBDIR += vm-to-tor
     SUBDIR += vnccrack
     SUBDIR += vpnc
     SUBDIR += vuxml
