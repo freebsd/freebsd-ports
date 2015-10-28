@@ -42,7 +42,7 @@ CONFIGURE_ARGS=	--enable-kernel-pfkey \
 
 OPTIONS_DEFINE=	CURL EAPAKA3GPP2 EAPDYNAMIC EAPRADIUS EAPSIMFILE GCM IKEv1 \
 		IPSECKEY KERNELLIBIPSEC LOADTESTER LDAP MYSQL PKI SCEP SMP \
-		SQLITE TESTVECTOR UNBOUND UNITY XAUTH
+		SQLITE TESTVECTOR UNBOUND UNITY VICI XAUTH
 OPTIONS_DEFAULT=	IKEv1 BUILTIN
 OPTIONS_SINGLE=	PRINTF_HOOKS
 OPTIONS_SINGLE_PRINTF_HOOKS=	BUILTIN VSTR LIBC
@@ -60,9 +60,10 @@ LOADTESTER_DESC=	Enable load testing plugin
 TESTVECTOR_DESC=	Enable crypto test vectors
 PKI_DESC=	Enable PKI tools
 SCEP_DESC=	Enable Simple Certificate Enrollment Protocol
-SMP_DESC=	Enable XML-based management protocol
+SMP_DESC=	Enable XML-based management protocol (DEPRECATED)
 UNBOUND_DESC=	Enable DNSSEC-enabled resolver
 UNITY_DESC=	Enable Cisco Unity extension plugin
+VICI_DESC=	Enable VICI management protocol
 XAUTH_DESC=	Enable XAuth password verification
 BUILTIN_DESC=	Use builtin printf hooks
 LIBC_DESC=	Use libc printf hooks
@@ -95,6 +96,7 @@ SCEP_CONFIGURE_OFF=	--disable-scepclient
 UNBOUND_CONFIGURE_ON=	--enable-unbound
 UNBOUND_LIB_DEPENDS=	libunbound.so:${PORTSDIR}/dns/unbound
 UNITY_CONFIGURE_ON=	--enable-unity
+VICI_CONFIGURE_ON=	--enable-vici
 XAUTH_CONFIGURE_ON=	--enable-xauth-eap --enable-xauth-generic
 BUILTIN_CONFIGURE_ON=	--with-printf-hooks=builtin
 LIBC_CONFIGURE_ON=	--with-printf-hooks=glibc
