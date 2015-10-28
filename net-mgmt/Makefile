@@ -95,6 +95,7 @@
     SUBDIR += isic
     SUBDIR += jnettop
     SUBDIR += kismet
+    SUBDIR += klg
     SUBDIR += lanmap
     SUBDIR += lg
     SUBDIR += librenms

@@ -1,0 +1,44 @@
+=======================================================================
+KLG is now installed.
+
+If this is the first installation, you need to configure a few things first.
+
+1. Create the MySQL database, a klg user, and initialise:
+   a) CREATE DATABASE klg;
+   b) CREATE USER 'klg'@'localhost' IDENTIFIED BY 'password';
+      GRANT ALL ON klg.* TO 'klg'@'localhost';
+      FLUSH PRIVILEGES;
+   c) import the schema:
+      mysql -u klg -p klg < %%DATADIR%%/klg_schema.sql
+
+2. Edit %%WWWDIR%%/klg/klg_config.php from the template klg_config.php.sample
+
+   You need to specify the MySQL details from above at the top of the file,
+   and details of your routers further down.  Follow the comments in the file.
+
+   You may wish to specify the timezone by adding a line similar to this:
+
+      date_default_timezone_set('Europe/London');
+
+3. Edit %%WWWDIR%%/klg/klg_template.html from the template file to suit your
+   needs.  Items in this file are substituted upon execution so you can skin
+   your looking glass to your site.
+
+4. Example Apache 2.4 configuration:
+
+   This assumes you have already configured Apache to serve .php documents.
+
+   Alias /klg "%%WWWDIR%%/klg/"
+
+   <Directory "%%WWWDIR%%/klg/">
+      Require all granted
+      AllowOverride None
+      Order Allow,deny
+      Allow from all
+   </Directory>
+
+5. Access your new looking glass:
+
+   http://HOSTNAME/klg/klg.php
+
+=======================================================================
