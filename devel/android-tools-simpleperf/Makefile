@@ -2,8 +2,8 @@
 
 PORTNAME=	android-tools-simpleperf
 DISTVERSIONPREFIX=	android-
-DISTVERSION=	m-preview-219
-DISTVERSIONSUFFIX=	-gaf995fe
+DISTVERSION=	m-preview-752
+DISTVERSIONSUFFIX=	-g4ea2a41
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,8 +17,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	android:bionic,core jbeich
 GH_PROJECT=	platform_bionic:bionic platform_system_core:core \
 		platform_system_extras
-GH_TAGNAME=	${DISTVERSIONFULL:C/-[0-9].*//}-357-g55f87a0:bionic \
-		${DISTVERSIONFULL:C/-[0-9].*//}-1254-gfca4821:core
+GH_TAGNAME=	${DISTVERSIONFULL:C/-[0-9].*//}-2178-g1721be2:bionic \
+		${DISTVERSIONFULL:C/-[0-9].*//}-4458-g2470439:core
 
 USES=		compiler:c++11-lib uidfix
 BUILD_WRKSRC=	${WRKSRC}/simpleperf
