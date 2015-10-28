@@ -499,6 +499,7 @@
     SUBDIR += f77flow
     SUBDIR += fam
     SUBDIR += fastcrc
+    SUBDIR += fb-adb
     SUBDIR += fb303
     SUBDIR += fc++
     SUBDIR += ffcall
