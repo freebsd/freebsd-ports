@@ -410,6 +410,7 @@
     SUBDIR += i2c-tools
     SUBDIR += i7z
     SUBDIR += iat
+    SUBDIR += inotify-tools
     SUBDIR += installwatch
     SUBDIR += intel-pcm
     SUBDIR += iocage
