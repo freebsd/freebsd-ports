@@ -2,18 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	py
-PORTVERSION=	1.4.26
+PORTVERSION=	1.4.30
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT=	Python development support library
+COMMENT=	Library with cross-python path, ini-parsing, io, code, log facilities
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:${PORTSDIR}/devel/py-pytest
+
 USES=		python
 USE_PYTHON=	autoplist distutils
+
+NO_ARCH=	yes
+
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest
 
 .include <bsd.port.mk>
