@@ -4,6 +4,7 @@
 PORTNAME=	libvmod-saintmode
 DISTVERSIONPREFIX=v
 DISTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	varnish-
 
@@ -12,7 +13,7 @@ COMMENT=	Varnish Module (vmod) for detecting failing backends
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	varnish4>=4.0.2:${PORTSDIR}/www/varnish4 \
+BUILD_DEPENDS=	varnish4>=4.1.0:${PORTSDIR}/www/varnish4 \
 		rst2man:${PORTSDIR}/textproc/py-docutils
 
 USES=		autoreconf gmake libtool pkgconfig python:2,build
