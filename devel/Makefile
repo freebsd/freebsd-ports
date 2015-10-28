@@ -1053,6 +1053,7 @@
     SUBDIR += json-c
     SUBDIR += json-glib
     SUBDIR += jsoncpp
+    SUBDIR += jsonnet
     SUBDIR += jtag
     SUBDIR += judy
     SUBDIR += jwasm
