@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cone
-PORTVERSION=	0.90
-PORTREVISION=	4
+PORTVERSION=	0.92
 CATEGORIES=	mail
 # This is for beta versions, leave it in please:
 #MASTER_SITES=	http://www.courier-mta.org/beta/${PORTNAME}/ \
@@ -16,33 +15,29 @@ COMMENT=	Console based mail client with POP3/IMAP/SMAP support
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell \
+				libcourier-unicode.so:${PORTSDIR}/devel/courier-unicode
 BUILD_DEPENDS=	gpgv:${PORTSDIR}/security/gnupg1
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		fam gettext gmake iconv ncurses perl5 shebangfix tar:bzip2
 USE_GNOME=	libxml2
-USE_GCC=	yes
 
 SHEBANG_FILES=	sysconftool
 
 CPPFLAGS+=	-I${LOCALBASE}/include \
-		-D_XOPEN_SOURCE_EXTENDED \
-		-I${WRKDIR} -D_XOPEN_SOURCE_EXTENDED
+		-D_XOPEN_SOURCE_EXTENDED
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	-C --without-db --with-certdb=${PREFIX}/share/cone/rootcerts --exec-prefix=${PREFIX}
-CONFIGURE_ENV=	REHASH="${PERL} ${SCRIPTDIR}/c_rehash"
-
+CONFIGURE_ARGS+=	--with-certdb=${PREFIX}/share/cone/rootcerts --exec-prefix=${PREFIX}
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS
 
-post-extract:
-		@${MKDIR} ${WRKDIR}/ncursesw
-		${LN} -s ${LOCALBASE}/include/ncurses/ncurses.h ${WRKDIR}/ncursesw/curses.h
-
 post-install:
+		${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/leaf
+		${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mailtool
+		${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/cone
 		${INSTALL_SCRIPT} ${WRKSRC}/sysconftool ${STAGEDIR}${PREFIX}/sbin/cone-sysconftool
 		${RM} -f ${STAGEDIR}${PREFIX}/share/cone/rootcerts/.0
 		@${MKDIR} ${STAGEDIR}${DOCSDIR}
