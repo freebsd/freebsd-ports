@@ -220,6 +220,7 @@
     SUBDIR += paredit-mode.el
     SUBDIR += pico-alpine
     SUBDIR += pluma
+    SUBDIR += plume-creator-devel
     SUBDIR += poedit
     SUBDIR += psgml
     SUBDIR += puff
