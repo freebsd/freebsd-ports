@@ -1,0 +1,17 @@
+--- configure.ac.orig	2015-08-06 23:49:02.000000000 +0200
++++ configure.ac	2015-10-11 02:07:35.000000000 +0200
+@@ -123,10 +123,10 @@
+ AS_IF( [test "x$PKGCONFIG" = xpkgconfig_not_found],
+        AC_MSG_ERROR([cannot find pkg-config! Please install it.]))
+ 
+-dnl | check for cairo and librsvg
+-PKG_CHECK_MODULES([CAIRO], [ cairo >= 1.2.0 librsvg-2.0 >= 2.14.0 ])
+-AC_SUBST(CAIRO_CFLAGS)
+-AC_SUBST(CAIRO_LIBS)
++dnl | check for pangocairo and librsvg
++PKG_CHECK_MODULES([PANGOCAIRO], [ pangocairo >= 1.0.0 librsvg-2.0 >= 2.14.0 ])
++AC_SUBST(PANGOCAIRO_CFLAGS)
++AC_SUBST(PANGOCAIRO_LIBS)
+ 
+ dnl | check which front end to use
+ dnl | first check for gtk
