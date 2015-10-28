@@ -13,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-fastimage>=1.6:${PORTSDIR}/graphics/rubygem-fastimage \
-		rubygem-jekyll>=2:${PORTSDIR}/www/rubygem-jekyll \
+		rubygem-jekyll2>=2:${PORTSDIR}/www/rubygem-jekyll2 \
 		rubygem-mini_magick>=4.1:${PORTSDIR}/graphics/rubygem-mini_magick \
 		rubygem-sass>=3.2:${PORTSDIR}/textproc/rubygem-sass \
 		rubygem-sprockets>=2.10:${PORTSDIR}/devel/rubygem-sprockets \
