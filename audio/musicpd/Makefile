@@ -15,7 +15,8 @@ USES=		gmake pkgconfig compiler:c++11-lib tar:xz
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 
-LIB_DEPENDS=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs \
+		libicudata.so:${PORTSDIR}/devel/icu
 
 USE_RC_SUBR=	${PORTNAME}
 CONFIGURE_ARGS+=--disable-alsa --disable-systemd-daemon --disable-roar
