@@ -1250,6 +1250,7 @@
     SUBDIR += tigervnc
     SUBDIR += tightvnc
     SUBDIR += tintin++
+    SUBDIR += tiny-network-utilities
     SUBDIR += tinyfugue
     SUBDIR += tinyldap
     SUBDIR += tn5250
