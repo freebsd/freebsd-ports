@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	CGI-ExtDirect
-PORTVERSION=	3.12
+PORTVERSION=	3.20
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Perl extension for creating Ext.Direct remoting in CGI applications
 
-BUILD_DEPENDS=	p5-RPC-ExtDirect>=2.10:${PORTSDIR}/www/p5-RPC-ExtDirect
+BUILD_DEPENDS=	p5-RPC-ExtDirect>=3.20:${PORTSDIR}/www/p5-RPC-ExtDirect \
+		p5-CGI>4.20:${PORTSDIR}/www/p5-CGI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
