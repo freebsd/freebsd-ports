@@ -14,6 +14,8 @@ COMMENT=	Varnish cache extension
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	varnish4>=0:${PORTSDIR}/www/varnish4
 
 USES=	tar:tgz
