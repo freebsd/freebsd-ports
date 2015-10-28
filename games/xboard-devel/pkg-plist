@@ -1,4 +1,3 @@
-@postunexec /bin/rm %D/share/icons/hicolor/icon-theme.cache 2>/dev/null || /usr/bin/true
 @owner root
 @group wheel
 bin/xboard
@@ -200,36 +199,16 @@ share/mime/packages/xboard.xml
 %%NLS%%share/locale/da/LC_MESSAGES/xboard.mo
 %%NLS%%share/locale/de/LC_MESSAGES/xboard.mo
 %%NLS%%share/locale/es/LC_MESSAGES/xboard.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/xboard.mo
 %%NLS%%share/locale/it/LC_MESSAGES/xboard.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/xboard.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/xboard.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/xboard.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/xboard.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/xboard.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/xboard.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/xboard.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xboard.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/xboard.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xboard.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry %%DATADIR%%/pixmaps/textures
-@dirrmtry %%DATADIR%%/pixmaps
-@dirrmtry %%DATADIR%%/sounds
-@dirrmtry %%DATADIR%%/themes/conf
-@dirrmtry %%DATADIR%%/themes/default
-@dirrmtry %%DATADIR%%/themes/shogi
-@dirrmtry %%DATADIR%%/themes/textures
-@dirrmtry %%DATADIR%%/themes/xiangqi
-@dirrmtry %%DATADIR%%/themes
-@dirrmtry %%DATADIR%%
-@dirrmtry share/games
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrmtry share/mime/packages
-@dirrmtry share/mime
 @sample etc/xboard.conf.sample
-@postexec /usr/local/bin/gtk-update-icon-cache -q -f %D/share/icons/hicolor 2>/dev/null || /usr/bin/true
-@postunexec /usr/local/bin/gtk-update-icon-cache -q -f %D/share/icons/hicolor 2>/dev/null || /usr/bin/true

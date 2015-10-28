@@ -1,30 +1,38 @@
---- Makefile.am.orig	2014-07-02 14:34:53.000000000 +0200
-+++ Makefile.am	2014-08-21 22:40:05.000000000 +0200
+--- Makefile.am.orig	2015-08-06 23:49:02.000000000 +0200
++++ Makefile.am	2015-10-11 02:11:07.000000000 +0200
 @@ -57,7 +57,7 @@
  ###
  
  SUBDIRS = po
 -xboard_LDADD = -ldl -lm @FRONTEND_LIBS@ @X_LIBS@ @LIBINTL@ @CAIRO_LIBS@
-+xboard_LDADD = -lm @FRONTEND_LIBS@ @X_LIBS@ @LIBINTL@ @CAIRO_LIBS@
++xboard_LDADD = -lm @FRONTEND_LIBS@ @X_LIBS@ @LIBINTL@ @PANGOCAIRO_LIBS@
  
  EXTRA_DIST = pixmaps themes png sounds winboard \
  	xboard.texi gpl.texinfo texi2man texinfo.tex xboard.man xboard.desktop xboard-config.desktop \
+@@ -68,7 +68,7 @@
+ DISTCLEANFILES = stamp-h
+ 
+ GITVERSION=$(shell sh -c 'git describe --dirty --always 2>/dev/null')
+-AM_CPPFLAGS=-DINFODIR='"$(infodir)"' @X_CFLAGS@ @CAIRO_CFLAGS@ @FRONTEND_CFLAGS@  -DSYSCONFDIR='"$(sysconfdir)"' \
++AM_CPPFLAGS=-DINFODIR='"$(infodir)"' @X_CFLAGS@ @PANGOCAIRO_CFLAGS@ @FRONTEND_CFLAGS@  -DSYSCONFDIR='"$(sysconfdir)"' \
+ 	    -DLOCALEDIR='"$(localedir)"' -DSVGDIR='"$(svgdir)"' -D__GIT_VERSION='"$(GITVERSION)"' \
+             -DCONFIGURE_OPTIONS='"@CONFIGURE_OPTIONS@"' -DDATADIR='"$(datadir)/games/xboard"' $(headers)
+ 
 @@ -179,7 +179,8 @@
  ### directory and files for themes (and other) configuration files
  
  themesdir = $(datadir)/games/xboard/themes/conf
--dist_themes_DATA = conf/shogi conf/xq conf/chu conf/ics conf/mini conf/mini.fen conf/sho conf/sho.fen
+-dist_themes_DATA = conf/shogi conf/xq conf/ics conf/mini conf/mini.fen conf/sho conf/sho.fen
 +dist_themes_DATA = conf/shogi conf/xq conf/chu conf/ics conf/mini conf/mini.fen conf/sho conf/sho.fen \
-+                   conf/judkins conf/judkins.fen conf/xiangqi
++	    conf/judkins conf/judkins.fen conf/xiangqi
  
  ### directory and files for pixmaps
  
-@@ -196,8 +197,12 @@
+@@ -196,7 +197,12 @@
  soundsdir = $(gamedatadir)/sounds
  dist_sounds_DATA = \
    sounds/cymbal.wav     sounds/pop2.wav   sounds/slap.wav     sounds/ding1.wav      sounds/laser.wav \
 -  sounds/woodthunk.wav  sounds/gong.wav   sounds/penalty.wav  sounds/honkhonk.wav   sounds/phone.wav  sounds/roar.wav
--
 +  sounds/woodthunk.wav  sounds/gong.wav   sounds/penalty.wav  sounds/honkhonk.wav   sounds/phone.wav  sounds/roar.wav \
 +  sounds/README         sounds/alarm.wav  sounds/challenge.wav sounds/channel.wav   sounds/channel1.wav \
 +  sounds/ching.wav      sounds/click.wav  sounds/draw.wav     sounds/drip.wav       sounds/kibitz.wav \
@@ -32,5 +40,5 @@
 +  sounds/shout.wav      sounds/squeak.wav sounds/sshout.wav   sounds/swish.wav      sounds/tell.wav \
 +  sounds/thud.wav       sounds/unfinished.wav sounds/whipcrak.wav sounds/win.wav
  
- ### set correct dir in xboard.conf
+ ### the man page depends on several files, so we add a special rule
  
