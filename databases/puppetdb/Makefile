@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	puppetdb
-PORTVERSION=	2.3.4
+PORTVERSION=	2.3.8
 CATEGORIES=	databases java
 MASTER_SITES=	http://downloads.puppetlabs.com/puppetdb/
 
@@ -11,7 +11,7 @@ COMMENT=	PuppetDB storeconfigs backend
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		puppet>=0:${PORTSDIR}/sysutils/puppet
+		puppet:${PORTSDIR}/sysutils/puppet
 BUILD_DEPENDS=	rubygem-facter>=0:${PORTSDIR}/sysutils/rubygem-facter \
 		rubygem-rake>=0:${PORTSDIR}/devel/rubygem-rake
 
@@ -26,7 +26,6 @@ SHEBANG_FILES=	ext/files/puppetdb \
 		ext/files/puppetdb-legacy \
 		ext/files/puppetdb-ssl-setup
 USE_JAVA=	yes
-USE_RUBY=	yes
 USE_RAKE=	yes
 NO_BUILD=	yes
 JAVA_VERSION=	1.7+
@@ -39,8 +38,6 @@ SUB_FILES=	pkg-message
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 .for file in tasks/install.rake ext/files/config.ini ext/files/puppetdb \
 	ext/files/puppetdb-import ext/files/puppetdb-anonymize \
@@ -52,4 +49,4 @@ post-patch:
 do-install:
 	@cd ${WRKSRC} && ${SETENV} DESTDIR=${STAGEDIR} rake install
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
