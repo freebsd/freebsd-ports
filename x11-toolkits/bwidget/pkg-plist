@@ -10,7 +10,6 @@ lib/bwidget/dropsite.tcl
 lib/bwidget/dynhelp.tcl
 lib/bwidget/entry.tcl
 lib/bwidget/font.tcl
-lib/bwidget/widget-old.tcl
 lib/bwidget/images/bold.gif
 lib/bwidget/images/copy.gif
 lib/bwidget/images/cut.gif
