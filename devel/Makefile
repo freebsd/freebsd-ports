@@ -3668,6 +3668,7 @@
     SUBDIR += pecl-jsmin
     SUBDIR += pecl-jsonc
     SUBDIR += pecl-jsond
+    SUBDIR += pecl-jsonnet
     SUBDIR += pecl-judy
     SUBDIR += pecl-libevent
     SUBDIR += pecl-mcve
