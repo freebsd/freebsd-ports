@@ -607,6 +607,7 @@
     SUBDIR += py-al
     SUBDIR += py-ao
     SUBDIR += py-apetag
+    SUBDIR += py-audiotools
     SUBDIR += py-cddb
     SUBDIR += py-discid
     SUBDIR += py-discogs-client
