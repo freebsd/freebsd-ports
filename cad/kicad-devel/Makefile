@@ -58,7 +58,7 @@ RUN_DEPENDS+=	xpdf:${PORTSDIR}/graphics/xpdf
 BOOST_RELEASE=	1.54.0
 BOOST_VERS=	${BOOST_RELEASE:S|.|_|g}
 BZR_SRC_REV!=	bzr revno lp:kicad
-BZR_DOC_REV!=	bzr revno lp:~kicad-developers/kicad/doc
+#BZR_DOC_REV!=	bzr revno lp:~kicad-developers/kicad/doc
 .else
 .include "Makefile.bzr_rev"
 .endif
@@ -85,18 +85,18 @@ do-fetch:
 	${ECHO} ${WRKSRC}
 	bzr export -r ${BZR_SRC_REV} ${WRKSRC} lp:kicad
 	${FETCH_CMD} --no-verify-peer -o ${WRKDIR}/master.zip https://github.com/KiCad/kicad-library/archive/master.zip
-	bzr export -r ${BZR_DOC_REV} ${WRKDIR}/kicad-doc lp:~kicad-developers/kicad/doc
+#	bzr export -r ${BZR_DOC_REV} ${WRKDIR}/kicad-doc lp:~kicad-developers/kicad/doc
 #	fetch -o ${WRKDIR}/${DISTNAME}/boost_${BOOST_VERS}.tar.bz2 \
 #		http://downloads.sourceforge.net/project/boost/boost/${BOOST_RELEASE}/boost_${BOOST_VERS}.tar.bz2
 	cd ${WRKDIR}; \
 	tar xvf master.zip; \
 	tar cvfy ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.tar.bz2 \
-		${DISTNAME} kicad-library-master kicad-doc
+		${DISTNAME} kicad-library-master
 	echo "BOOST_RELEASE=  ${BOOST_RELEASE}" > ${MASTERDIR}/Makefile.bzr_rev
 	echo "BOOST_VERS=  ${BOOST_VERS}"   >> ${MASTERDIR}/Makefile.bzr_rev
 	echo "BZR_SRC_REV=  ${BZR_SRC_REV}" >> ${MASTERDIR}/Makefile.bzr_rev
 	echo "BZR_LIB_REV=  ${BZR_LIB_REV}" >> ${MASTERDIR}/Makefile.bzr_rev
-	echo "BZR_DOC_REV=  ${BZR_DOC_REV}" >> ${MASTERDIR}/Makefile.bzr_rev
+#	echo "BZR_DOC_REV=  ${BZR_DOC_REV}" >> ${MASTERDIR}/Makefile.bzr_rev
 .endif
 
 tmp:
@@ -126,9 +126,9 @@ post-install:
 .for subdir in library modules template
 	${CP} -Rp ${WRKDIR}/kicad-library-master/${subdir} ${STAGEDIR}${DATADIR}
 .endfor
-.for subdir in internat
-	${CP} -Rp ${WRKDIR}/kicad-doc/${subdir} ${STAGEDIR}${DOCSDIR}
-.endfor
+#.for subdir in internat
+#	${CP} -Rp ${WRKDIR}/kicad-doc/${subdir} ${STAGEDIR}${DOCSDIR}
+#.endfor
 
 PLIST_FILE_LIST=	bin/freeroute.jnlp \
 			bin/cvpcb \
