@@ -1,0 +1,42 @@
+======================================================================
+You installed vm-to-tor: framework that allows to connect virtual
+machines to the tor network.
+
+It requires sysctl variable net.link.tap.user_open=1 set in
+/etc/sysctl.conf.
+
+To start vm-to-tor manually, you can use this command:
+# service vm-to-tor onestart
+This will connect an adapter tap0 to tor. Then you need to change
+settings of one virtual machine to use tap0 interface (in VirtualBox
+you need to set "Bridged Adapter" as a network type and choose tap0
+as an adapter name, in bhyve tap0 will just work).
+
+To enable at system startup, you can add one of these lines:
+. %%PREFIX%%/etc/vm-to-tor.rc.conf.simple
+or
+. %%PREFIX%%/etc/vm-to-tor.rc.conf.complex
+to /etc/rc.conf, and modify %%PREFIX%%/etc/vm-to-tor.rc.conf.*
+according to your needs. Please read there the explanation of
+vm-to-tor features.
+
+Before changing configuration, you need to stop vm-to-tor with
+# service vm-to-tor {one}stop
+After changing configuration, you need to start it again:
+# service vm-to-tor start
+
+To see the status of vm-to-tor:
+# service vm-to-tor status
+
+To connect to the virtual machine tap1 with ssh:
+# ssh 172.16.1.2
+
+To change tor router setting for machine tapN with ctrl protocol:
+# vm-ctrl tapN
+
+By design, you can't connect to the host from the virtual machine for
+security reasons. Machine is isolated from the host environment, and
+is not host-aware. Besides the optional NFS connection, all
+communication initiated by the virtual machine happens only through
+tor.
+======================================================================
