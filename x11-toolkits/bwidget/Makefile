@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bwidget
-PORTVERSION=	1.9.8
+PORTVERSION=	1.9.9
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/tcllib/BWidget/${PORTVERSION}
 
