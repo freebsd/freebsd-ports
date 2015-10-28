@@ -1,0 +1,6 @@
+SHA256 (facebook-fb-adb-1.4.4-109-g930ba5f_GH0.tar.gz) = e93ca8163fa42d3fc10888231bb7cc9fedbff809171f9b6745ca04da7a082b6d
+SIZE (facebook-fb-adb-1.4.4-109-g930ba5f_GH0.tar.gz) = 248393
+SHA256 (android-ndk-r10e-linux-x86.bin) = 92b07d25aaad9b341a7f2b2a62402d508e948bf2dea3ee7b65a6aeb18bca7df5
+SIZE (android-ndk-r10e-linux-x86.bin) = 394281908
+SHA256 (android-ndk-r10e-linux-x86_64.bin) = 102d6723f67ff1384330d12c45854315d6452d6510286f4e5891e00a5a8f1d5a
+SIZE (android-ndk-r10e-linux-x86_64.bin) = 401522849

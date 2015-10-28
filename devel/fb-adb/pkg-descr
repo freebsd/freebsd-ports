@@ -1,0 +1,16 @@
+fb-adb is a tool for interacting with Android systems. It does much of
+what adb does, but with better remote shell support and, hopefully,
+fewer bugs. Differences between adb and fb-adb are that fb-adb:
+
+  * is binary clean (no LF -> CRLF mangling)
+  * transmits and updates window size
+  * distinguishes standard output and standard error
+  * properly muxes streams with independent flow control
+  * allows for ssh-like pty allocation control
+  * propagates program exit status instead of always exiting
+    with status 0
+  * properly escapes program arguments
+  * kills remote program
+  * provides a generic facility to elevate to root without re-escaping
+
+WWW: https://github.com/facebook/fb-adb
