@@ -12,7 +12,7 @@ LLVM_SUFFIX=	-devel
 LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
 LLVM_PORTDIR=	${.CURDIR}/../llvm${LLVM_SUFFIX}
 
-USES=		cmake:outsource ninja
+USES=		cmake:outsource compiler:c++11-lib ninja
 
 BUILD_DEPENDS=	llvm-config${LLVM_SUFFIX}:${PORTSDIR}/devel/llvm${LLVM_SUFFIX}
 
@@ -30,7 +30,7 @@ ONLY_FOR_ARCHS_REASON=	plist contents not known
 
 .for arch in ${ONLY_FOR_ARCHS}
 _arch=${arch}
-.if (${_arch} == ${ARCH} || (${_arch} == "i386" && ${ARCH} == "amd64"))
+.if (${_arch} == ${ARCH} || (${_arch} == "i386" && ${ARCH} == "amd64" && ${COMPILER_TYPE} != "gcc"))
 ARCH_SUB:=	${ARCH_SUB} ${arch:tu}=
 .else
 ARCH_SUB:=	${ARCH_SUB} ${arch:tu}="@comment "
