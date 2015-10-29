@@ -1,6 +1,6 @@
---- uwsgiconfig.py.bak	2013-10-11 07:59:20.000000000 +0400
-+++ uwsgiconfig.py	2013-10-11 15:06:52.000000000 +0400
-@@ -694,15 +694,6 @@
+--- uwsgiconfig.py.orig	2015-10-07 04:34:01 UTC
++++ uwsgiconfig.py
+@@ -784,15 +784,6 @@ class uConf(object):
              self.cflags.append('-DUWSGI_HAS_IFADDRS')
              report['ifaddrs'] = True
  
