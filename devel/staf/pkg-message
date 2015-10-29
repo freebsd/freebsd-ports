@@ -1,0 +1,15 @@
+=====================================================================
+
+STAFProc requires machine's hostname to be resolvable.
+
+If you haven't already, please add the following to /etc/hosts:
+
+	<IPv6 machine address or ::1>		<hostname>
+	<IPv4 machine address or 127.0.0.1>	<hostname>
+
+To verify do the following:
+
+	ping6 $(hostname)
+	ping  $(hostname)
+
+=====================================================================
