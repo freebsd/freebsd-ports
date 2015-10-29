@@ -15,4 +15,4 @@ As a result of this flexible design, QMC2 can be used for multiple
 emulators. Currently we support SDLMAME & SDLMESS on UNIX and Mac, and
 the original variants of MAME & MESS on Windows.
 
-WWW: http://qmc2.arcadehits.net/
+WWW: http://qmc2.batcom-it.net/
