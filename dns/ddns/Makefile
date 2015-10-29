@@ -11,7 +11,6 @@ COMMENT=	Lightweight UDP-based dynamic DNS updater
 
 LICENSE=	ISCL
 
-BROKEN=		Does not fetch
 MAKEFILE=	BSDmakefile
 USES=	tar:bzip2
 
