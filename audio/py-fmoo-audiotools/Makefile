@@ -4,7 +4,7 @@ PORTNAME=	audiotools
 PORTVERSION=	3.0
 CATEGORIES=	audio python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}fmoo-
 
 MAINTAINER=	ryu0@ymail.com
 COMMENT=	Collection of command line audio handling utilities
