@@ -3,6 +3,7 @@
 
 PORTNAME=	lumina
 PORTVERSION=	20151023
+PORTREVISION=	1
 CATEGORIES=	x11
 PKGNAMESUFFIX=	-devel
 
@@ -46,7 +47,7 @@ GH_ACCOUNT=	pcbsd
 GH_TAGNAME=	cf2a7f7b483bfb083a6c067125b8798e9e3088aa
 
 #Setup the qmake configuration options
-.if {PORT_OPTIONS:MPCBSD}
+.if ${PORT_OPTIONS:MPCBSD}
 QMAKE_ARGS=	CONFIG+="configure NO_I18N PCBSD"
 .else
 QMAKE_ARGS=	CONFIG+="configure NO_I18N"
