@@ -3,6 +3,7 @@ bin/dumpsexp
 bin/hmac256
 bin/libgcrypt-config
 include/gcrypt.h
+lib/libgcrypt.a
 lib/libgcrypt.so
 lib/libgcrypt.so.20
 lib/libgcrypt.so.20.0.4
