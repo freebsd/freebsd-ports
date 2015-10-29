@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qgis
-PORTVERSION=	2.10.1
-PORTREVISION=	2
+PORTVERSION=	2.12.0
 CATEGORIES=	graphics geography
 
 MAINTAINER=	rhurlin@gwdg.de
@@ -17,6 +16,7 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libgeos.so:${PORTSDIR}/graphics/geos \
 		libgsl.so:${PORTSDIR}/math/gsl \
 		libproj.so:${PORTSDIR}/graphics/proj \
+		libqca.so:${PORTSDIR}/devel/qca \
 		libqscintilla2.so:${PORTSDIR}/devel/qscintilla2 \
 		libqwt.so:${PORTSDIR}/x11-toolkits/qwt5 \
 		libspatialindex.so:${PORTSDIR}/devel/spatialindex \
@@ -24,7 +24,7 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME:tu}
-GH_TAGNAME=	e5928c7
+GH_TAGNAME=	cd9d645
 
 USES=		cpe bison cmake fortran gmake python
 USE_SQLITE=	yes
@@ -37,6 +37,8 @@ OPTIONS_DEFINE=		POSTGIS PYTHON GRASS SERVER DEBUG
 OPTIONS_DEFAULT=	POSTGIS PYTHON
 NO_OPTIONS_SORT=	yes
 SERVER_DESC=	Enable QGIS server
+
+CMAKE_ARGS+=	-DWITH_ORACLE:BOOL=FALSE
 
 .if !defined(MAINTAINER_MODE)
 CMAKE_ARGS+=	-Wno-dev
@@ -92,6 +94,7 @@ BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}qt4-core>=4.8.5:${PORTSDIR}/devel/py-qt4-
 		${PYTHON_PKGNAMEPREFIX}qt4-gui>=4.8.5:${PORTSDIR}/x11-toolkits/py-qt4-gui \
 		${PYTHON_PKGNAMEPREFIX}qt4-network>=4.8.5:${PORTSDIR}/net/py-qt4-network \
 		${PYTHON_PKGNAMEPREFIX}qt4-qscintilla2>=2.8.3:${PORTSDIR}/devel/py-qt4-qscintilla2 \
+		${PYTHON_PKGNAMEPREFIX}qt4-sql>=4.11.3:${PORTSDIR}/databases/py-qt4-sql \
 		${PYTHON_PKGNAMEPREFIX}qt4-svg>=4.8.5:${PORTSDIR}/graphics/py-qt4-svg \
 		${PYTHON_PKGNAMEPREFIX}qt4-xml>=4.5.4:${PORTSDIR}/textproc/py-qt4-xml \
 		${PYTHON_PKGNAMEPREFIX}sip>=4.14.6:${PORTSDIR}/devel/py-sip \
@@ -104,6 +107,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gdal>=1.11.1:${PORTSDIR}/graphics/py-gdal \
 		${PYTHON_PKGNAMEPREFIX}qt4-gui>=4.8.5:${PORTSDIR}/x11-toolkits/py-qt4-gui \
 		${PYTHON_PKGNAMEPREFIX}qt4-network>=4.8.5:${PORTSDIR}/net/py-qt4-network \
 		${PYTHON_PKGNAMEPREFIX}qt4-qscintilla2>=2.8.3:${PORTSDIR}/devel/py-qt4-qscintilla2 \
+		${PYTHON_PKGNAMEPREFIX}qt4-sql>=4.11.3:${PORTSDIR}/databases/py-qt4-sql \
 		${PYTHON_PKGNAMEPREFIX}qt4-svg>=4.8.5:${PORTSDIR}/graphics/py-qt4-svg \
 		${PYTHON_PKGNAMEPREFIX}qt4-webkit>=4.11.1:${PORTSDIR}/www/py-qt4-webkit \
 		${PYTHON_PKGNAMEPREFIX}qt4-xml>=4.5.4:${PORTSDIR}/textproc/py-qt4-xml \
