@@ -13,13 +13,14 @@ COMMENT=	Code formerly known as django.contrib.comments
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django # >= 1.5
-TEST_DEPENDS:=	${RUN_DEPENDS}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django*>=1.5:${PORTSDIR}/www/py-django
 
 USES=		python
 USE_PYTHON=	autoplist distutils
 
-regression-test: build
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
+NO_ARCH=	yes
+
+do-test:
+	@cd ${WRKSRC} && ${SETENV} TZ=UTC ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>
