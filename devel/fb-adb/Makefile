@@ -54,7 +54,7 @@ DEBUG_CONFIGURE_ENABLE=	debuggable-stubs
 
 # XXX Convert into USES=android once more things depend on it
 NDK_DESC=		Build target stubs using Android NDK
-NDK_MASTER_SITES=	https://dl.google.com/android/ndk/:ndk
+NDK_VARS=		MASTER_SITES+=https://dl.google.com/android/ndk/:ndk
 .if defined(ANDROID_NDK)
 # Prefer NDK from environment
 WRKSRC_ndk=		${ANDROID_NDK}
