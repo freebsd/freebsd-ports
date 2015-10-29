@@ -2,7 +2,6 @@
 # $FreeBSD$
 
 PORTNAME=	netmagis
-PORTREVISION=	1
 PKGNAMESUFFIX=	-metro
 
 COMMENT=	Netmagis metrology module
@@ -19,8 +18,6 @@ SHEBANG_FILES=	metro/bin/metrocreatedb metro/bin/metropoller metro/bin/metropoll
 		metro/ws/gengraph
 
 MASTERDIR=	${.CURDIR}/../netmagis-common
-
-NO_ARCH=	yes
 
 PKGMESSAGE=	${.CURDIR}/pkg-message
 PLIST=		${.CURDIR}/pkg-plist

@@ -15,8 +15,6 @@ WANT_PGSQL+=	server pltcl
 
 MASTERDIR=	${.CURDIR}/../netmagis-common
 
-NO_ARCH=	yes
-
 PKGMESSAGE=	${.CURDIR}/pkg-message
 PLIST=		${.CURDIR}/pkg-plist
 
