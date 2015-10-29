@@ -300,6 +300,7 @@
     SUBDIR += html2fo
     SUBDIR += html2tex
     SUBDIR += html2text
+    SUBDIR += html2xhtml
     SUBDIR += htmlc
     SUBDIR += htmldoc
     SUBDIR += htmlise
