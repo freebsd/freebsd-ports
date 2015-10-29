@@ -6,7 +6,7 @@ bin/redis-sentinel
 bin/redis-server
 %%TRIB%%bin/redis-trib.rb
 @sample etc/redis.conf.sample
-@sample etc/sentinel.conf.sample
+@sample(%%REDIS_USER%%,%%REDIS_GROUP%%,) etc/sentinel.conf.sample
 @dir(%%REDIS_USER%%,%%REDIS_GROUP%%,) %%REDIS_DBDIR%%
 @dir(%%REDIS_USER%%,%%REDIS_GROUP%%,) %%REDIS_LOGDIR%%
 @dir(%%REDIS_USER%%,%%REDIS_GROUP%%,) %%REDIS_RUNDIR%%
