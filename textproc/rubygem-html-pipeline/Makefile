@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	html-pipeline
-PORTVERSION=	1.11.0
+PORTVERSION=	2.2.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-activesupport>=2:${PORTSDIR}/devel/rubygem-activesupport \
 		rubygem-nokogiri>=1.4:${PORTSDIR}/textproc/rubygem-nokogiri
+
+NO_ARCH=	yes
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
