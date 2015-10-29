@@ -3,6 +3,7 @@
 
 PORTNAME=	redis
 DISTVERSION=	3.0.5
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://download.redis.io/releases/
 
@@ -56,7 +57,7 @@ CONFLICTS?=	redis-devel-3.*
 
 USES+=		gmake
 MAKE_ENV=	"V=yo"
-USE_RC_SUBR=	redis
+USE_RC_SUBR=	redis sentinel
 BIN_FILES=	redis-benchmark redis-check-aof redis-check-dump \
 		redis-cli redis-sentinel redis-server
 
