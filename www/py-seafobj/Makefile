@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-pro
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	yan_jingfeng@yahoo.com
+MAINTAINER=	ultima1252@gmail.com
 COMMENT=	Python library for accessing seafile data model
 
 LICENSE=	APACHE20
