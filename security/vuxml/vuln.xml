@@ -2594,12 +2594,14 @@ Notes:
     <references>
       <cvename>CVE-2015-5714</cvename>
       <cvename>CVE-2015-5715</cvename>
+      <cvename>CVE-2015-7989</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/10/28/1</url>
       <url>https://wordpress.org/news/2015/09/wordpress-4-3-1/</url>
     </references>
     <dates>
       <discovery>2015-09-15</discovery>
       <entry>2015-09-15</entry>
-      <modified>2015-09-15</modified>
+      <modified>2015-10-29</modified>
     </dates>
   </vuln>
 
