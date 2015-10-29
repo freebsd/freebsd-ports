@@ -1,6 +1,6 @@
---- src/dvb/dvbsi.h.orig	2011-04-09 15:09:19.000000000 +0200
-+++ src/dvb/dvbsi.h	2011-04-09 15:09:29.000000000 +0200
-@@ -957,7 +957,6 @@
+--- src/dvb/dvbsi.h.orig	2015-08-07 15:43:59 UTC
++++ src/dvb/dvbsi.h
+@@ -957,7 +957,6 @@ public:
  		return DvbPmtSectionEntry(getData() + 12 + descriptorsLength, getLength() - (16 + descriptorsLength));
  	}
  
