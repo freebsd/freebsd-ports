@@ -10,7 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/AWStats/${PORTVERSION}
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	Free real-time logfile analyzer to get advanced web statistics
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/docs/LICENSE.TXT
 
 RUN_DEPENDS=	p5-Net-XWhois>=0:${PORTSDIR}/net/p5-Net-XWhois
 
@@ -82,12 +83,14 @@ do-install:
 	(cd ${WRKSRC}/wwwroot && ${COPYTREE_SHARE} "js css" ${STAGEDIR}${WWWDIR})
 	(cd ${WRKSRC}/wwwroot/icon && ${COPYTREE_SHARE} "browser clock cpu \
 		flags mime os other" ${STAGEDIR}${WWWDIR}/icons)
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} images ${STAGEDIR}${DOCSDIR})
-	${INSTALL_DATA} ${WRKSRC}/docs/*.* ${STAGEDIR}${DOCSDIR}
 
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "* Use ${WWWDIR}/tools/awstats_configure.pl to setup your hosts."
 	@${ECHO_CMD} ""
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} images ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/docs/*.* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
