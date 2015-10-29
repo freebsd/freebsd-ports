@@ -10,6 +10,7 @@ RUN_DEPENDS=	netmagis-config:${PORTSDIR}/net-mgmt/netmagis-common \
 		rancid-run:${PORTSDIR}/net-mgmt/rancid \
 		fping:${PORTSDIR}/net/fping
 
+NO_ARCH=	# no
 USE_RC_SUBR=	topographd toposendd
 SUB_LIST=	TCLSH=${TCLSH}
 
