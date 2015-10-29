@@ -3,6 +3,7 @@
 
 PORTNAME=	libgpg-error
 PORTVERSION=	1.20
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	GNUPG
 
@@ -16,16 +17,17 @@ USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
 MAKE_JOBS_UNSAFE=	yes
 CPP+=			-P
+CONFIGURE_ARGS+=	--enable-static=yes
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext iconv
-CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} \
+CONFIGURE_ARGS+=	${ICONV_CONFIGURE_ARG} \
 		--with-libintl-prefix=${LOCALBASE}
 PLIST_SUB=	NLS=""
 .else
-CONFIGURE_ARGS=	--disable-nls
+CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB=	NLS="@comment "
 .endif
 
