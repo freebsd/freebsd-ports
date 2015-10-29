@@ -126,9 +126,9 @@ bin/morbo
 %%SITE_PERL%%/Mojolicious/resources/public/mojo/prettify/prettify-mojo-light.css
 %%SITE_PERL%%/Mojolicious/resources/public/mojo/prettify/run_prettify.js
 %%SITE_PERL%%/Mojolicious/resources/public/mojo/stripes.png
-%%SITE_PERL%%/Mojolicious/resources/templates/mojo/development.html.ep
+%%SITE_PERL%%/Mojolicious/resources/templates/mojo/debug.html.ep
 %%SITE_PERL%%/Mojolicious/resources/templates/mojo/exception.html.ep
-%%SITE_PERL%%/Mojolicious/resources/templates/mojo/mojobar.html.ep
+%%SITE_PERL%%/Mojolicious/resources/templates/mojo/menubar.html.ep
 %%SITE_PERL%%/Mojolicious/resources/templates/mojo/not_found.html.ep
 %%SITE_PERL%%/Mojolicious/resources/templates/mojo/perldoc.html.ep
 %%SITE_PERL%%/Test/Mojo.pm
