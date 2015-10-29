@@ -1,10 +1,10 @@
 # $FreeBSD$
 
-PORTNAME=	mDNSResponder_nss
-PORTVERSION=	567
+PORTNAME=	mDNSResponder
+PORTVERSION=	576.30.4
 CATEGORIES=	dns net
 MASTER_SITES=	http://opensource.apple.com/tarballs/mDNSResponder/
-DISTNAME=	${PORTNAME:S/_nss//}-${PORTVERSION}
+PKGNAMESUFFIX=	_nss
 
 MAINTAINER=	mazhe@alkumuna.eu
 COMMENT=	Apple mDNS responder - FreeBSD nsswitch module

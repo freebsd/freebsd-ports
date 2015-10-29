@@ -1,6 +1,6 @@
---- ./mDNSPosix/nss_mdns.c.orig	2012-04-15 08:07:19.000000000 +0200
-+++ ./mDNSPosix/nss_mdns.c	2013-11-05 11:00:14.000000000 +0100
-@@ -379,7 +379,18 @@
+--- mDNSPosix/nss_mdns.c.orig	2012-04-15 06:07:19 UTC
++++ mDNSPosix/nss_mdns.c
+@@ -379,7 +379,18 @@ init_config ();
  #define ENTNAME  hostent
  #define DATABASE "hosts"
  
@@ -20,7 +20,7 @@
  // For nss_status
  #include <netdb.h>
  // For hostent
-@@ -1684,7 +1695,7 @@
+@@ -1684,7 +1695,7 @@ is_applicable_addr (
  //----------
  // Types and Constants
  
