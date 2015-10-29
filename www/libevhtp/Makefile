@@ -5,7 +5,7 @@ PORTVERSION=	1.2.9
 PORTREVISION=	3
 CATEGORIES=	www
 
-MAINTAINER=	yan_jingfeng@yahoo.com
+MAINTAINER=	ultima1252@gmail.com
 COMMENT=	Flexible replacement for libevent httpd API
 
 LICENSE=	BSD3CLAUSE
