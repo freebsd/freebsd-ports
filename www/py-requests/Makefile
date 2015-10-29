@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	requests
-PORTVERSION=	2.7.0
+PORTVERSION=	2.8.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,12 @@ USE_PYTHON=	autoplist distutils
 
 CONFLICTS_INSTALL=	py*-requests1-*
 
-regression-test: build
+NO_ARCH=	yes
+
+# FAIL: test_response_iter_lines_reentrant (test_requests.RequestsTestCase)
+# Is marked xfail, but pytest doesn't seem to recognize it.
+
+do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>
