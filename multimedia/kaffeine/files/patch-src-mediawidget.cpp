@@ -1,5 +1,5 @@
---- src/mediawidget.cpp.orig	2010-02-06 19:05:37.000000000 +0100
-+++ src/mediawidget.cpp	2010-02-06 19:06:10.000000000 +0100
+--- src/mediawidget.cpp.orig	2015-08-07 15:43:59 UTC
++++ src/mediawidget.cpp
 @@ -18,6 +18,9 @@
   * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
   */
