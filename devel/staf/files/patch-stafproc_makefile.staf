@@ -1,0 +1,13 @@
+--- stafproc/makefile.staf.orig	2015-10-07 23:19:46 UTC
++++ stafproc/makefile.staf
+@@ -39,8 +39,8 @@ ifdef STAF_USE_SSL
+         else
+             LIB_SSL_PART1 = $(OPENSSL_LIBDIRS)/$(subst Name,$(SSL_LIB1),$(DLL)).
+             OPENSSL_VERSION ?= $(subst $(LIB_SSL_PART1),,$(shell ls $(LIB_SSL_PART1)*))
+-            LIB_SSL_V = $(subst Name,$(SSL_LIB1),$(DLL)).$(OPENSSL_VERSION)
+-            LIB_CRYPTO_V = $(subst Name,$(SSL_LIB2),$(DLL)).$(OPENSSL_VERSION)
++            LIB_SSL_V = $(subst Name,$(SSL_LIB1),$(DLL))
++            LIB_CRYPTO_V = $(subst Name,$(SSL_LIB2),$(DLL))
+         endif
+     endif
+ 

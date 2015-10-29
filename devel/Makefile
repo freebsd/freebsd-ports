@@ -5099,6 +5099,7 @@
     SUBDIR += splint
     SUBDIR += srecord
     SUBDIR += st
+    SUBDIR += staf
     SUBDIR += statcvs
     SUBDIR += statik
     SUBDIR += statsvn

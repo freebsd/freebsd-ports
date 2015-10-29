@@ -1,0 +1,52 @@
+--- build/makefile.gcc.orig	2015-09-28 13:30:12 UTC
++++ build/makefile.gcc
+@@ -13,12 +13,12 @@ CC_CC             := g++
+ CC_C              := g++ -x c
+ 
+ ifeq ($(OS_NAME),macosx)
+-    CC_MK_SHARED_LIB := g++ -dynamiclib
++    CC_MK_SHARED_LIB := $(CC_CC) -dynamiclib
+ else
+-    CC_MK_SHARED_LIB := g++ -shared
++    CC_MK_SHARED_LIB := $(CC_CC) -shared
+ endif
+ 
+-GCC_VERSION := $(word 3,$(shell g++ --version))
++GCC_VERSION := $(word 3,$(shell $(CC_CC) --version))
+ GCC_MAJOR_VERSION := $(word 1,$(subst ., ,$(GCC_VERSION)))
+ 
+ ifeq ($(BUILD_TYPE),retail)
+@@ -36,8 +36,6 @@ else
+     LINK_OBJS_FIRST := 0
+ endif
+ 
+-CC_DEBUG        := -g
+-CC_OPTIMIZE     := -O2
+ CC_FPIC         := -fPIC
+ CC_STL_PTHREADS := -D_PTHREADS
+ CC_SHAREDLIBNAMEFLAGS = -DSTAF_SHARED_LIB_PREFIX=$(OS_SHARED_LIB_PREFIX) \
+@@ -69,7 +67,8 @@ CC_COMMONFLAGS = $(OS_COMMONFLAGS) $(COM
+                  $(CC_STL_PTHREADS) -DSTAF_NATIVE_COMPILER\
+                  $(CC_ARCHFLAGS)
+ 
+-CC_CFLAGS = $(CC_COMMONFLAGS) $(CFLAGS)
++CC_CFLAGS_C = $(CC_COMMONFLAGS) $(CFLAGS)
++CC_CFLAGS = $(CC_COMMONFLAGS) $(CXXFLAGS)
+ 
+ CC_LINKFLAGS     = $(CC_COMMONFLAGS) $(LINKFLAGS)
+ CC_SHARED_LIB_LINKFLAGS = $(CC_COMMONFLAGS) $(LINKFLAGS)
+@@ -85,12 +84,12 @@ endif
+ CC_DEPEND_IT     ?= cd $(@D); $(CC_CC) -MM $(CC_CFLAGS) $(ALL_INCLUDEDIR_LIST) \
+                     $< | sed -e 's@\(.*\)\.o:@$(@D)/\1.o $(@D)/\1.d:@' >$@
+ 
+-CC_DEPEND_IT_C   ?= cd $(@D); $(CC_C) -MM $(CC_CFLAGS) $(ALL_INCLUDEDIR_LIST) \
++CC_DEPEND_IT_C   ?= cd $(@D); $(CC_C) -MM $(CC_CFLAGS_C) $(ALL_INCLUDEDIR_LIST) \
+                     $< | sed -e 's@\(.*\)\.o:@$(@D)/\1.o $(@D)/\1.d:@' >$@
+ 
+ CC_COMPILE_IT    = $(CC_CC) -c -o $@ $(CC_CFLAGS) $(ALL_INCLUDEDIR_LIST) $<
+ 
+-CC_COMPILE_IT_C  = $(CC_C) -c -o $@ $(CC_CFLAGS) $(ALL_INCLUDEDIR_LIST) $<
++CC_COMPILE_IT_C  = $(CC_C) -c -o $@ $(CC_CFLAGS_C) $(ALL_INCLUDEDIR_LIST) $<
+ 
+ CC_LINK_IT       = $(CC_CC) -o $@ $(CC_LINKFLAGS) $(ALL_INCLUDEDIR_LIST)\
+                    $(ALL_LIBDIR_LIST) $(OBJS) $(ALL_LIB_LIST)
