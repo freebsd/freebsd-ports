@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	netmagis
-PORTVERSION?=	2.3.0
+PORTVERSION?=	2.3.2
 CATEGORIES?=	net-mgmt
 MASTER_SITES=	http://netmagis.org/files/
 PKGNAMESUFFIX?=	-common
@@ -17,10 +17,11 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS+=	dtplite:${PORTSDIR}/devel/tcllib
 
+NO_ARCH?=	yes
 USES+=		pgsql:9.1+ tcl:85+
 WANT_PGSQL+=	pgtcl
 
-SLAVEDIRS= net-mgmt/netmagis-common \
+SLAVEDIRS=	net-mgmt/netmagis-common \
 	net-mgmt/netmagis-database \
 	net-mgmt/netmagis-detecteq \
 	net-mgmt/netmagis-metro \
@@ -28,8 +29,6 @@ SLAVEDIRS= net-mgmt/netmagis-common \
 	net-mgmt/netmagis-topo \
 	net-mgmt/netmagis-utils \
 	net-mgmt/netmagis-www
-
-NO_ARCH=	yes
 
 # Variables used in netmagis Makefiles
 MAKE_ARGS+=	DESTDIR=${STAGEDIR}${DESTDIR} PREFIX=${PREFIX}
