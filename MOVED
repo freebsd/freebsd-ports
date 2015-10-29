@@ -7900,3 +7900,4 @@ www/twig||2015-10-25|Has expired: Upstream vanished, php3 and php4 are long unsu
 misc/ruby-progressbar|devel/rubygem-ruby-progressbar|2015-10-25|Has expired: Abandoned upstream, superseded by devel/rubygem-ruby-progressbar
 databases/py-mssql|databases/py-pymssql|2015-10-28|Broken with current FreeTDS
 net/py-medusa||2015-10-28|Abandoned upstream, last release was in 2005
+audio/py-audiotools|audio/py-fmoo-audiotools|2015-10-29|Rename to match PyPI nomenclature
