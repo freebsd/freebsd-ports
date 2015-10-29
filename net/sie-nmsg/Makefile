@@ -18,6 +18,8 @@ LIB_DEPENDS=	libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c \
 GNU_CONFIGURE=	yes
 USES=	gmake libtool pathfix pkgconfig
 
+PORTSCOUT=	${MASTER_SITES:N*FreeBSD*:S/^/site:/}
+
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
