@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	syslog-ng
-PORTVERSION=	3.7.1
+PORTVERSION=	3.7.2
 PKGNAMESUFFIX=	-devel
 CATEGORIES=	sysutils
 DISTVERSION=	$(PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/)
@@ -14,8 +14,6 @@ COMMENT=	Powerful syslogd replacement
 
 LIB_DEPENDS=	libevtlog.so:${PORTSDIR}/sysutils/eventlog \
 		libpcre.so:${PORTSDIR}/devel/pcre
-
-BROKEN_FreeBSD_9=	does not build
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng[0-9][0-9]-[0-9]* \
