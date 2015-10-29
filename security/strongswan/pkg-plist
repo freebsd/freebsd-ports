@@ -338,6 +338,12 @@ man/man8/charon-cmd.8.gz
 %%SMP%%lib/ipsec/plugins/libstrongswan-smp.la
 %%SMP%%lib/ipsec/plugins/libstrongswan-smp.so
 %%SMP%%@sample %%ETCDIR%%.d/charon/smp.conf.sample
+%%SWANCTL%%%%DATADIR%%/templates/config/strongswan.d/swanctl.conf
+%%SWANCTL%%sbin/swanctl
+%%SWANCTL%%man/man5/swanctl.conf.5.gz
+%%SWANCTL%%man/man8/swanctl.8.gz
+%%SWANCTL%%@sample %%ETCDIR%%.d/swanctl.conf.sample
+%%SWANCTL%%@sample etc/swanctl/swanctl.conf.sample
 %%UNBOUND%%lib/ipsec/plugins/libstrongswan-unbound.a
 %%UNBOUND%%lib/ipsec/plugins/libstrongswan-unbound.la
 %%UNBOUND%%lib/ipsec/plugins/libstrongswan-unbound.so
@@ -358,6 +364,7 @@ man/man8/charon-cmd.8.gz
 %%VICI%%lib/ipsec/plugins/libstrongswan-vici.la
 %%VICI%%lib/ipsec/plugins/libstrongswan-vici.so
 %%VICI%%@sample %%ETCDIR%%.d/charon/vici.conf.sample
+%%VICI%%include/libvici.h
 %%XAUTH%%lib/ipsec/plugins/libstrongswan-xauth-eap.a
 %%XAUTH%%lib/ipsec/plugins/libstrongswan-xauth-eap.la
 %%XAUTH%%lib/ipsec/plugins/libstrongswan-xauth-eap.so
@@ -424,3 +431,12 @@ lib/ipsec/libtls.so.0.0.0
 @dir etc/ipsec.d/ocspcerts
 @dir etc/ipsec.d/private
 @dir etc/ipsec.d/reqs
+%%SWANCTL%%@dir etc/swanctl/ecdsa
+%%SWANCTL%%@dir etc/swanctl/pkcs12
+%%SWANCTL%%@dir etc/swanctl/pkcs8
+%%SWANCTL%%@dir etc/swanctl/rsa
+%%SWANCTL%%@dir etc/swanctl/x509
+%%SWANCTL%%@dir etc/swanctl/x509aa
+%%SWANCTL%%@dir etc/swanctl/x509ac
+%%SWANCTL%%@dir etc/swanctl/x509ca
+%%SWANCTL%%@dir etc/swanctl/x509crl
