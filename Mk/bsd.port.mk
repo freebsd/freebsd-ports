@@ -3679,20 +3679,20 @@ install-ldconfig-file:
 _UG_OUTPUT=	${WRKDIR}/users-groups.sh
 PKGPREINSTALL+=	${_UG_OUTPUT}
 create-users-groups:
+	@${RM} -f ${_UG_OUTPUT} || ${TRUE}
+.if ${OPSYS} != FreeBSD || ${OSVERSION} < 1002000
+	@${ECHO_CMD} "PW=${PW}" >> ${_UG_OUTPUT}
+.else
+	@${ECHO_CMD} -e "if [ -n \"\$${PKG_ROOTDIR}\" -a \"\$${PKG_ROOTDIR}\" != \"/\" ]; then PW=\"${PW} -R \$${PKG_ROOTDIR}\"; else PW=${PW}; fi" >> ${_UG_OUTPUT}
+.endif
 .if defined(GROUPS)
 .for _file in ${GID_FILES}
 .if !exists(${_file})
 	@${ECHO_CMD} "** ${_file} doesn't exist. Exiting."; exit 1
 .endif
 .endfor
-	@${RM} -f ${_UG_OUTPUT} || ${TRUE}
 	@${ECHO_MSG} "===> Creating users and/or groups."
 	@${ECHO_CMD} "echo \"===> Creating users and/or groups.\"" >> ${_UG_OUTPUT}
-.if ${OPSYS} != FreeBSD || ${OSVERSION} < 1002000
-	@${ECHO_CMD} "PW=${PW}" >> ${_UG_OUTPUT}
-.else
-	@${ECHO_CMD} -e "if [ -n \"\$${PKG_ROOTDIR}\" -a \"\$${PKG_ROOTDIR}\" != \"/\" ]; then PW=\"${PW} -R \$${PKG_ROOTDIR}\"; else PW=${PW}; fi" >> ${_UG_OUTPUT}
-.endif
 .for _group in ${GROUPS}
 # _bgpd:*:130:
 	@if ! ${GREP} -h ^${_group}: ${GID_FILES} >/dev/null 2>&1; then \
