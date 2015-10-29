@@ -24,7 +24,8 @@ USES=		pkgconfig python shebangfix uniquefiles:dirs
 USE_PYTHON=	autoplist distutils
 CFLAGS+=	-I${LOCALBASE}/include
 
-OPTIONS_DEFINE=		EXAMPLES GTKBACKEND GTKAGGBACKEND TKAGGBACKEND WXAGGBACKEND
+OPTIONS_DEFINE=		EXAMPLES GTKBACKEND GTKAGGBACKEND QT4AGGBACKEND \
+			TKAGGBACKEND WXAGGBACKEND
 OPTIONS_DEFAULT=	GTKBACKEND GTKAGGBACKEND TKAGGBACKEND
 OPTIONS_SUB=		yes
 GTKBACKEND_DESC=	GTK backend support
@@ -35,6 +36,11 @@ GTKAGGBACKEND_DESC=	GTKAgg backend support
 GTKAGGBACKEND_USE=	GNOME=gtk20,pygtk2
 GTKAGGBACKEND_VARS=	GTKAGG_BACKEND=True
 GTKAGGBACKEND_VARS_OFF=	GTKAGG_BACKEND=False
+QT4AGGBACKEND_DESC=	Qt4Agg backend support
+QT4AGGBACKEND_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=4.8.5:${PORTSDIR}/x11-toolkits/py-qt4-gui
+QT4AGGBACKEND_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=4.8.5:${PORTSDIR}/x11-toolkits/py-qt4-gui
+QT4AGGBACKEND_VARS=	QT4AGG_BACKEND=True
+QT4AGGBACKEND_VARS_OFF=	QT4AGG_BACKEND=False
 TKAGGBACKEND_DESC=	TKAgg backend support
 TKAGGBACKEND_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
 TKAGGBACKEND_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
@@ -52,6 +58,7 @@ PORTEXAMPLES=	*
 .if defined(PACKAGE_BUILDING)
 GTKBACKEND_BUILD_DEPENDS=	Xvfb:${PORTSDIR}/x11-servers/xorg-vfbserver
 GTKAGGBACKEND_BUILD_DEPENDS=	Xvfb:${PORTSDIR}/x11-servers/xorg-vfbserver
+QT4AGGBACKEND_BUILD_DEPENDS+=	Xvfb:${PORTSDIR}/x11-servers/xorg-vfbserver
 TKAGGBACKEND_BUILD_DEPENDS+=	Xvfb:${PORTSDIR}/x11-servers/xorg-vfbserver
 WXAGGBACKEND_BUILD_DEPENDS=	Xvfb:${PORTSDIR}/x11-servers/xorg-vfbserver
 .endif
@@ -70,30 +77,14 @@ post-patch:
 		${WRKSRC}/setupext.py
 	${REINPLACE_CMD} -e 's|%%GTK_BACKEND%%|${GTK_BACKEND}|g' \
 			 -e 's|%%GTKAGG_BACKEND%%|${GTKAGG_BACKEND}|g' \
++			 -e 's|%%QT4AGG_BACKEND%%|${QT4AGG_BACKEND}|g' \
 			 -e 's|%%TKAGG_BACKEND%%|${TKAGG_BACKEND}|g' \
 			 -e 's|%%WXAGG_BACKEND%%|${WXAGG_BACKEND}|g' \
 		${WRKSRC}/setup.cfg
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/_cntr.so
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/_delaunay.so
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/_image.so
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/_path.so
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/_png.so
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/_qhull.so
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/_tri.so
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/backends/_backend_agg.so
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/ft2font.so
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/ttconv.so
-
-post-install-GTKAGGBACKEND-on:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/backends/_gtkagg.so
-
-post-install-TKAGGBACKEND-on:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/backends/_tkagg.so
-
-post-install-GTKBACKEND-on:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/backends/_backend_gdk.so
+	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib -name '*.so' \
+		| ${XARGS} ${STRIP_CMD}
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
