@@ -2,6 +2,7 @@
 
 PORTNAME=	libgcrypt
 PORTVERSION=	1.6.4
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
@@ -18,7 +19,7 @@ USES=		cpe libtool makeinfo tar:bzip2
 CPE_VENDOR=	gnupg
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-drng-support
+CONFIGURE_ARGS=	--disable-drng-support --enable-static=yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_TARGET=${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 USE_LDCONFIG=	yes
