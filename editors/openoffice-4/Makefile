@@ -3,7 +3,6 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION}
-PORTREVISION=	18
 CATEGORIES=	editors java
 MASTER_SITES=	APACHE/openoffice/${PORTVERSION}/source \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \
@@ -97,10 +96,10 @@ RUN_DEPENDS=								\
 
 AOOVERSION1=	4
 AOOVERSION2=	1
-AOOVERSION3=	1
+AOOVERSION3=	2
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
-AOOTAG=		AOO411m6\(Build:9775\)
-SVNREVISION=	1617669
+AOOTAG=		AOO412m3\(Build:9782\)
+SVNREVISION=	1709696
 EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 
 AOOVERSION=	${AOOVERSION1}.${AOOVERSION2}.${AOOVERSION3}
@@ -129,17 +128,19 @@ USE_XORG=	ice x11 xau xaw xcomposite xcursor xdamage xext xfixes xi \
 		xrandr xrender xt
 USES=		autoreconf:autoconf bison compiler cpe desktop-file-utils \
 		gettext-runtime gmake iconv jpeg perl5 pkgconfig python \
-		tar:bzip2
+		shared-mime-info tar:bzip2
 INSTALLS_ICONS=	yes
 WITHOUT_CPU_CFLAGS=	true
 CPE_PRODUCT=	${PORTNAME:S|apache-||}
 CPE_VENDOR=	apache
 
-OPTIONS_DEFINE=		CUPS GNOME GNOMEVFS MMEDIA CCACHE
-OPTIONS_DEFAULT=	CUPS GNOME GNOMEVFS MMEDIA
+OPTIONS_DEFINE=		CUPS GNOME GNOMEVFS MMEDIA SDK WIKI_PUBLISHER CCACHE
+OPTIONS_DEFAULT=	CUPS GNOME GNOMEVFS MMEDIA WIKI_PUBLISHER
 GNOME_DESC=		GConf + screensaver presentation control via DBUS
 GNOMEVFS_DESC=		GNOME Virtual File System
 MMEDIA_DESC=		Multimedia backend for impress
+SDK_DESC=		Build and install software development kit
+WIKI_PUBLISHER_DESC=	Build and install Wiki Publisher extension
 CCACHE_DESC=		Mimimize compile time of C/C++ programs
 
 CUPS_CONFIGURE_ENABLE=		cups
@@ -156,6 +157,11 @@ GNOMEVFS_USE=			GNOME=gnomevfs2
 
 MMEDIA_CONFIGURE_ENABLE=	gstreamer
 MMEDIA_USE=			GSTREAMER=yes
+
+SDK_CONFIGURE_ENABLE=		odk
+
+WIKI_PUBLISHER_CONFIGURE_ENABLE=	wiki-publisher
+WIKI_PUBLISHER_VARS=	BUNDLED_EXTENSIONS+=swext/wiki-publisher.oxt
 
 .include <bsd.port.pre.mk>
 
@@ -254,16 +260,14 @@ CONFIGURE_ARGS+=							\
 			--with-vendor="FreeBSD ports system"		\
 			--enable-verbose				\
 			--with-system-vigra				\
-			--enable-wiki-publisher				\
 			--with-system-xrender				\
 			--with-system-zlib
 
-#AOOEXTENSIONS+=		minimizer/presentation-minimizer.oxt
-#AOOEXTENSIONS+=		presenter/presenter-screen.oxt
-#AOOEXTENSIONS+=		pdfimport/pdfimport.oxt
-AOOEXTENSIONS+=		swext/wiki-publisher.oxt
+.if defined (BUNDLED_EXTENSIONS)
+CONFIGURE_ARGS+=	--with-bundled-prereg-extensions="${BUNDLED_EXTENSIONS}"
+.endif
 
-ICONS=	${WRKSRC}/sysui/desktop/icons
+CREATE_TREE=	${WRKSRC}/sysui/desktop/share/create_tree.sh
 
 .include <${FILESDIR}/Makefile.knobs>
 
@@ -326,6 +330,7 @@ post-patch:
 		${WRKSRC}/sysui/desktop/productversion.mk
 	${REINPLACE_CMD} -e "s|%%JAVA_HOME%%|${JAVA_HOME}|" \
 		${WRKSRC}/desktop/scripts/soffice.sh
+	${REINPLACE_CMD} -e '/^mkdir -p/,$$d' ${CREATE_TREE}
 .if ${COMPILER_TYPE} == gcc
 	# g++49 -Os sometimes leaves inline class methods undefined,
 	# affects fmgridif.cxx and ColumnControl.cxx
@@ -390,19 +395,15 @@ do-build:
 	LANG=C LC_ALL=C build.pl --all -P$${numproc} -- -P$${dmproc}
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PRINSTALLATION_BASEDIR}/extensions \
-		${STAGEDIR}${OOPATH}/uno_packages/cache/uno_packages \
-		${STAGEDIR}${DESKTOPDIR}
+	@${MKDIR} ${STAGEDIR}${PRINSTALLATION_BASEDIR} \
+		${STAGEDIR}${DESKTOPDIR} \
+		${STAGEDIR}${PREFIX}/share/mime/packages
 	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/Apache_OpenOffice/archive/install/${LOCALIZED_LANG}/ ; \
 		for i in *.tar.?z ; do \
 			${ECHO_CMD} "extracting $$i" ; \
-			${TAR} -s '|./[^/]*/||' -xz -f $$i - \
+			${TAR} -s '|./[^/]*/||' -xz -f $$i \
 				-C ${STAGEDIR}${PRINSTALLATION_BASEDIR} ; \
 		done
-	@${ECHO_CMD} "installing extensions" ; \
-	cd ${WRKSRC}/solver/${AOOXXX}/unxfbsd?.pro/bin/ ; \
-		${INSTALL_DATA} ${AOOEXTENSIONS} \
-			${STAGEDIR}${PRINSTALLATION_BASEDIR}/extensions/
 	${FIND} ${STAGEDIR}${PRINSTALLATION_BASEDIR} -type d -exec ${CHMOD} 755 {} \;
 	${REINPLACE_CMD} \
 		-e '/^UserInstallation/s/=.*/=$$SYSUSERCONFIG\/${AOOUDIR}/' \
@@ -419,30 +420,33 @@ do-install:
 		simpress smath spadmin swriter ; do \
 			${LN} -f ${EXECBASE} ${EXECBASE}-$${i} ; \
 	done
-	${LN} -sf ${XDGDIR} ${STAGEDIR}${DESKTOPDIR}/${EXECBASE}
-	@${ECHO_CMD} "installing application icons"
-	@cd ${ICONS} ; for dir in hicolor/*/apps ; do \
-		${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/$${dir} ; \
-		for app in base calc draw impress math printeradmin startcenter writer; do \
-			icon_src=$${dir}/$${app}.png; \
-			icon_dst=share/icons/$${dir}/${EXECBASE}-$${app}.png; \
-			if [ -r $${icon_src} ]; then \
-				${INSTALL_DATA} $${icon_src} \
-				    ${STAGEDIR}${PREFIX}/$${icon_dst} ; \
-			fi \
-		done ; \
-	done
-	@${ECHO_CMD} "installing mimetype icons"
-	@cd ${ICONS} ; for dir in hicolor/*/mimetypes ; do \
-		dstdir=${STAGEDIR}${PREFIX}/share/icons/$${dir} ; \
-		${MKDIR} $${dstdir} ; \
-		${INSTALL_DATA} $${dir}/*.png $${dstdir}/ ; \
-	done
+	@${ECHO_CMD} "adding desktop support"
+	@${LN} -sf ${XDGDIR} ${STAGEDIR}${DESKTOPDIR}/${EXECBASE}
+	@cd ${WRKSRC}/sysui/unxfbsd?.pro/misc/openoffice ;	\
+	    DESTDIR=${STAGEDIR}					\
+		GNOMEDIR=${PREFIX}				\
+		ICON_PREFIX=openoffice${AOOVERSION1}		\
+		ICON_SOURCE_DIR=${WRKSRC}/sysui/desktop/icons	\
+		ICON_THEMES="hicolor/??x??"			\
+		KDEMAINDIR=${PREFIX}				\
+		PREFIX=openoffice${AOOVERSION1}			\
+		${SH} ${CREATE_TREE} ;				\
+	    ${INSTALL_DATA} apacheopenoffice.xml		\
+		${STAGEDIR}/${PREFIX}/share/mime/packages
+
+do-install-SDK-on:
+	${TAR} -s '|./[^/]*/||' -xz -C ${STAGEDIR}${PRINSTALLATION_BASEDIR} \
+		-f ${WRKSRC}/instsetoo_native/unxfbsd?.pro/Apache_OpenOffice_SDK/archive/install/${LOCALIZED_LANG}/*.tar.gz
+	@f=${STAGEDIR}${OOPATH}/sdk/bin/unoapploader ; \
+		${CHMOD} 644 $${f} ; ${STRIP_CMD} $${f} ; ${CHMOD} 444 $${f}
+
+post-install:
 	@${ECHO_CMD} "generating plist";
 	@cd ${STAGEDIR}${PREFIX} ; (\
-		${ECHO_CMD} "share/applications/${EXECBASE}" ; \
 		${FIND} -s bin -name "${EXECBASE}*" ; \
-		${FIND} -s ${INSTALLATION_BASEDIR} share/icons \! -type d ; \
+		${FIND} -s ${INSTALLATION_BASEDIR} share/applications \
+			share/application-registry share/icons \
+			share/mime-info share/mime share/mimelnk \! -type d ; \
 		${FIND} ${INSTALLATION_BASEDIR} -type d -empty | ${SORT} -r | \
 			${SED} -e 's/^/@dir /' ; \
 	) >> ${TMPPLIST}
