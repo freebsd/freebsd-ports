@@ -2,6 +2,7 @@
 %%PERL5_MAN3%%/Net::SSH2::Channel.3.gz
 %%PERL5_MAN3%%/Net::SSH2::Dir.3.gz
 %%PERL5_MAN3%%/Net::SSH2::File.3.gz
+%%SITE_ARCH%%/Net/SSH2/KnownHosts.pm
 %%PERL5_MAN3%%/Net::SSH2::Listener.3.gz
 %%PERL5_MAN3%%/Net::SSH2::PublicKey.3.gz
 %%PERL5_MAN3%%/Net::SSH2::SFTP.3.gz
@@ -9,6 +10,7 @@
 %%SITE_ARCH%%/Net/SSH2/Channel.pm
 %%SITE_ARCH%%/Net/SSH2/Dir.pm
 %%SITE_ARCH%%/Net/SSH2/File.pm
+%%PERL5_MAN3%%/Net::SSH2::KnownHosts.3.gz
 %%SITE_ARCH%%/Net/SSH2/Listener.pm
 %%SITE_ARCH%%/Net/SSH2/PublicKey.pm
 %%SITE_ARCH%%/Net/SSH2/SFTP.pm
