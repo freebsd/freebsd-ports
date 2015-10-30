@@ -36,7 +36,7 @@ load_rc_config $name
 start_cmd=qmailsmtpd_start
 start_precmd=qmailsmtpd_precmd
 pidfile=${qmailsmtpd_pidfile}
-procname=${qmailsmtpd_tcprules}
+procname=${qmailsmtpd_tcpserver}
 
 qmailsmtpd_start()
 {

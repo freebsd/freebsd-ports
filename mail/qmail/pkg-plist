@@ -238,4 +238,5 @@ scripts/mkaliasdir
 @cwd %%LOCALBASE%%
 @dir etc/man.d
 etc/man.d/qmail.conf
+%%RCDLINK%%@dir etc/rc.d
 @cwd %%QMAIL_PREFIX%%
