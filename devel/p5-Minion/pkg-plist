@@ -1,6 +1,5 @@
 %%SITE_PERL%%/Minion.pm
 %%SITE_PERL%%/Minion/Backend.pm
-%%SITE_PERL%%/Minion/Backend/File.pm
 %%SITE_PERL%%/Minion/Backend/Pg.pm
 %%SITE_PERL%%/Minion/Command/minion.pm
 %%SITE_PERL%%/Minion/Command/minion/job.pm
@@ -10,7 +9,6 @@
 %%SITE_PERL%%/Mojolicious/Plugin/Minion.pm
 %%PERL5_MAN3%%/Minion.3.gz
 %%PERL5_MAN3%%/Minion::Backend.3.gz
-%%PERL5_MAN3%%/Minion::Backend::File.3.gz
 %%PERL5_MAN3%%/Minion::Backend::Pg.3.gz
 %%PERL5_MAN3%%/Minion::Command::minion.3.gz
 %%PERL5_MAN3%%/Minion::Command::minion::job.3.gz
