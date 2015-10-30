@@ -4,3 +4,4 @@
 %%SITE_PERL%%/PDF/Image/GIF.pm
 %%SITE_PERL%%/PDF/Image/JPEG.pm
 %%PERL5_MAN3%%/PDF::Create.3.gz
+%%PERL5_MAN3%%/PDF::Create::Page.3.gz
