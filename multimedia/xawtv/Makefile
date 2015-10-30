@@ -86,6 +86,10 @@ post-patch:
 		${WRKSRC}/console/Subdir.mk \
 		${WRKSRC}/x11/Subdir.mk
 
+	@${REINPLACE_CMD} -e 's|\(@CFLAGS@.*\)\$$(LIB_FLAGS) |\$$(LIB_FLAGS) \1|g; \
+		s|-Llibng||g' \
+		${WRKSRC}/Makefile.in
+
 .for i in ${FILES_LIBJPEG}
 	@${REINPLACE_CMD} -e "s|-ljpeg|-L${LOCALBASE}/lib -ljpeg|g" ${WRKSRC}/$i
 .endfor
