@@ -1,0 +1,20 @@
+WebAuth is an authentication system for web pages and web applications. The
+first time a user attempts to access a web page protected by WebAuth, they
+will be sent to a central login server (weblogin.stanford.edu at Stanford)
+and prompted to authenticate. Normally, they will be asked for a username
+and password, although other authentication methods are possible. Once the
+user has logged in, the weblogin server will send their encrypted identity
+back to the original web page they were trying to access. Their identity
+will also be stored in a cookie set by the weblogin server and they will
+not need to authenticate again until their credentials expire, even if
+they visit multiple protected web sites.
+
+WebAuth works with any browser that supports cookies, requires no agents
+or other software installed on the client web browser systems, and works
+with an existing Kerberos v5 authentication realm. It can also be used as
+the SSO provider for a Shibboleth IdP and supports SPNEGO authentication
+as well as username/password over TLS/SSL. See the page on WebAuth features
+for more major features and a brief comparison with other web
+authentication systems.
+
+WWW: http://webauth.stanford.edu/
