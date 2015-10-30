@@ -417,6 +417,7 @@
     SUBDIR += iocage-devel
     SUBDIR += iogen
     SUBDIR += iograph
+    SUBDIR += iohyve
     SUBDIR += ioping
     SUBDIR += ipa
     SUBDIR += ipad_charge
