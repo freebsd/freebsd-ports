@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		tenshi
-PORTVERSION=		0.14
-PORTREVISION=		1
+PORTVERSION=		0.15
 CATEGORIES=		sysutils
 MASTER_SITES=		http://dev.inversepath.com/tenshi/
 
