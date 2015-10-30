@@ -3,6 +3,7 @@
 
 PORTNAME=	Minion
 PORTVERSION=	3.01
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SRI
@@ -12,9 +13,9 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Asynchronous job queue for Mojolicious
 
 LICENSE=	ART20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-DBM-Deep>=2.0011:${PORTSDIR}/databases/p5-DBM-Deep \
-		p5-Mojolicious>=6.0:${PORTSDIR}/www/p5-Mojolicious
+BUILD_DEPENDS=	p5-Mojolicious>=6.0:${PORTSDIR}/www/p5-Mojolicious
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
