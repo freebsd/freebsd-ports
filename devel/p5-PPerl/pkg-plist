@@ -1,5 +1,5 @@
 bin/pperl
+%%SITE_ARCH%%/PPerl.pm
+%%SITE_ARCH%%/auto/PPerl/PPerl.so
 %%PERL5_MAN1%%/pperl.1.gz
 %%PERL5_MAN3%%/PPerl.3.gz
-%%SITE_ARCH%%/auto/PPerl/PPerl.so
-%%SITE_ARCH%%/PPerl.pm
