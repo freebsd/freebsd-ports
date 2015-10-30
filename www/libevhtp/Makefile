@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libevhtp
-PORTVERSION=	1.2.9
-PORTREVISION=	3
+PORTVERSION=	1.2.10
 CATEGORIES=	www
 
 MAINTAINER=	ultima1252@gmail.com
@@ -15,10 +14,10 @@ LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ellzey
-GH_TAGNAME=	3886506
+GH_TAGNAME=	ba4c44e
 
 USES=		cmake:outsource
-USE_LDCONFIG=	YES
+USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DCMAKE_INCLUDE_PATH:PATH=include/event2 \
 		-DCMAKE_LIBRARY_PATH:PATH=lib/event2
 CMAKE_BUILD_TYPE=	Release
@@ -46,13 +45,16 @@ OPTIONS_DEFAULT=	EVHTP_BUILD_SHARED
 
 .include <bsd.port.options.mk>
 
-PLIST_FILES=	include/evhtp.h\
+PLIST_FILES=	include/evhtp.h \
 		include/evhtp-config.h \
-		include/evthr.h \
 		include/htparse.h
 
-.if !exists(${LOCALBASE}/include/onigposix.h)
+.if !exists(${LOCALBASE}/include/onigposix.h) && !${PORT_OPTIONS:MEVHTP_DISABLE_REGEX}
 PLIST_FILES+=	include/onigposix.h
+.endif
+
+.if !${PORT_OPTIONS:MEVHTP_DISABLE_EVTHR}
+PLIST_FILES+=	include/evthr.h
 .endif
 
 .if ${PORT_OPTIONS:MEVHTP_BUILD_SHARED}
