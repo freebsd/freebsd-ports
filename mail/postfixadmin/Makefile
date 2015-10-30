@@ -23,11 +23,13 @@ USES=		cpe perl5 shebangfix
 CPE_VENDOR=	postfix_admin_project
 CPE_PRODUCT=	postfix_admin
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 SUB_FILES+=	pkg-message
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
+OPTIONS_DEFINE=	DOCS
 OPTIONS_SINGLE=	DB
 OPTIONS_SINGLE_DB=	MYSQL MYSQLI PGSQL
 MYSQLI_DESC=	MySQL 4.1+ back-end (use mysqli PHP extension)
@@ -57,6 +59,8 @@ do-install:
 .for i in ADDITIONS VIRTUAL_VACATION
 	@cd ${WRKSRC}/${i} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/${i}
 .endfor
+
+do-install-DOCS-on:
 	@cd ${WRKSRC}/DOCUMENTS && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
