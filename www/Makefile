@@ -524,6 +524,7 @@
     SUBDIR += mod_umask
     SUBDIR += mod_vhost_ldap
     SUBDIR += mod_vhs
+    SUBDIR += mod_webauth
     SUBDIR += mod_webkit
     SUBDIR += mod_whatkilledus
     SUBDIR += mod_wsgi4
