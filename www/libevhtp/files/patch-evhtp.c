@@ -1,5 +1,5 @@
---- evhtp.c.orig	2014-03-23 11:50:50.000000000 +0000
-+++ evhtp.c	2014-09-13 12:37:11.000000000 +0000
+--- evhtp.c.orig	2015-02-24 07:55:55 UTC
++++ evhtp.c
 @@ -7,6 +7,7 @@
  #include <strings.h>
  #include <inttypes.h>
@@ -8,7 +8,7 @@
  #include <sys/socket.h>
  #include <netinet/in.h>
  #include <netinet/tcp.h>
-@@ -2740,7 +2741,14 @@
+@@ -3170,7 +3171,14 @@ evhtp_bind_sockaddr(evhtp_t * htp, struc
  
          sock = evconnlistener_get_fd(htp->server);
  
