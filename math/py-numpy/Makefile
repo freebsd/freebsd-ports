@@ -3,9 +3,10 @@
 
 PORTNAME=	numpy
 PORTVERSION=	1.10.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	math python
-MASTER_SITES=	http://docs.scipy.org/doc/${PORTNAME}/:doc \
+MASTER_SITES=	http://docs.scipy.org/doc/${DISTNAME}/:doc \
 		CHEESESHOP:source
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	numpy-${PORTVERSION:S/r/rc/}${EXTRACT_SUFX}:source \
@@ -34,7 +35,7 @@ TESTS_DESC=		Install test suite requirements
 PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
 PORTDOCS=	*
 WRKSRC=		${WRKDIR}/${DISTNAME:S/r/rc/}
-DOCVERSION=	1.9.1
+DOCVERSION=	${PORTVERSION}
 
 GCCLIBDIR_CMDS=	${FC} -print-file-name=libgfortran.so | ${SED} -e s/libgfortran.so//
 
