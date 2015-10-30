@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	desmume
-PORTVERSION=	0.9.10
-PORTREVISION=	3
+PORTVERSION=	0.9.11
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -28,7 +27,5 @@ CONFIGURE_ARGS=	--enable-glade
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -DGTKGLEXT_AVAILABLE \
 		-DHAVE_LIBGDKGLEXT_X11_1_0 -DHAVE_GL_GL_H -DHAVE_GL_GLU_H
 CXXFLAGS+=	${CFLAGS}
-
-BROKEN_ia64=	Does not compile on ia64
 
 .include <bsd.port.mk>
