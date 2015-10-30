@@ -3,7 +3,7 @@
 
 PORTNAME=	dnscrypt-proxy
 PORTVERSION=	1.6.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns
 MASTER_SITES=	http://download.dnscrypt.org/dnscrypt-proxy/ \
 		http://www.dns-lab.com/downloads/dnscrypt-proxy/
