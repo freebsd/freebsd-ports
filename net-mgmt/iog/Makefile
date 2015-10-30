@@ -3,7 +3,7 @@
 
 PORTNAME=	iog
 PORTVERSION=	1.03
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.dynw.com/iog/
 
