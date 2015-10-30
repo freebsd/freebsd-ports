@@ -4,17 +4,13 @@
 PORTNAME=	hlextract
 PORTVERSION=	2.4.4
 CATEGORIES=	archivers games
-MASTER_SITES=	http://nemesis.thewavelength.net/files/files/
+MASTER_SITES=	LOCAL/danilo
 DISTNAME=	hllib${PORTVERSION:S/.//g}
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Utility to extract data from various Half-Life file formats
 
 LICENSE=	GPLv2
-
-BROKEN=		Checksum and size mismatch
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2015-11-26
 
 LIB_DEPENDS=	libhl.so:${PORTSDIR}/games/hllib
 
