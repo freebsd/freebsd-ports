@@ -3,7 +3,7 @@
 
 PORTNAME=	sigar
 PORTVERSION=	1.7.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 PKGNAMEPREFIX=	java-
 
@@ -41,7 +41,7 @@ PLATFORM_VER=	9
 BROKEN=		${OPSYS} platform is not supported
 .endif
 
-LIBNAME=	libsigar-${ARCH:S,i386,x86,}-freebsd-${LATFORM_VER}.so
+LIBNAME=	libsigar-${ARCH:S,i386,x86,}-${OPSYS:tl}-${PLATFORM_VER}.so
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
 		%%JAVAJARDIR%%/${LIBNAME}
