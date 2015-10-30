@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	joomla
-PORTVERSION=	3.2.3
+PORTVERSION=	3.4.5
 CATEGORIES=	www
 PKGNAMESUFFIX=	3
 
@@ -13,14 +13,14 @@ LICENSE=	GPLv2
 
 GH_PROJECT=	${PORTNAME}-cms
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 USES=		shebangfix
-php_OLD_CMD=	C:\\\xampp\\\php\\\.\\\php.exe
-SHEBANG_FILES=	build/indexmaker.php tests/system/phpunit.php \
-		tests/system/webdriver/tests/phpunit.php
+SHEBANG_FILES=	build/indexmaker.php \
+		libraries/vendor/leafo/lessphp/lessify
 
 SUB_FILES=	pkg-message
 
