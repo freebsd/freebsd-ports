@@ -311,20 +311,8 @@ fi
 make_timeout ()
 {
     if [ "x${1}" != "x" ] ; then
-	if [ "x${GRUB_HIDDEN_TIMEOUT_QUIET}" = "xtrue" ] ; then
-	    verbose=
-	else
-	    verbose=" --verbose"
-	fi
 	cat << EOF
-echo "Hold Left-Shift for menu.."
-if sleep$verbose --interruptible ${1} ; then
-  if keystatus --shift; then
-    set timeout=-1
-  else
-    set timeout=0
-  fi
-fi
+set timeout=${1}
 EOF
     else
 	cat << EOF
