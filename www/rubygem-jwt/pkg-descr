@@ -2,4 +2,4 @@ JWT is a Ruby implementation of JSON Web Token draft 06 [1].
 
 [1] http://self-issued.info/docs/draft-jones-json-web-token-06.html
 
-WWW: https://github.com/progrium/ruby-jwt
+WWW: https://github.com/jwt/ruby-jwt
