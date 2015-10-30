@@ -1,0 +1,11 @@
+--- configure.orig	2015-10-21 17:56:45 UTC
++++ configure
+@@ -16214,7 +16214,7 @@ as_arg_v2="3.0"
+ awk "$as_awk_strverscmp" v1="$as_arg_v1" v2="$as_arg_v2" /dev/null
+ case $? in #(
+   1) :
+-    as_fn_error $? "not found" "$LINENO" 5 ;; #(
++      ;; #(
+   0) :
+       ;; #(
+   2) :

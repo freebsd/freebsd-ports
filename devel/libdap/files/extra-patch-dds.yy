@@ -4,10 +4,10 @@
  
  		| grid '{' SCAN_WORD ':'
  		{ 
--		    if (is_keyword(string($3), "array"))
--			part = array; 
-+		    if (is_keyword(string($3), "libdap::Part::array"))
-+			part = libdap::Part::array; 
+-		    if (is_keyword(string($3), "array")) {
+-			    part = array;
++		    if (is_keyword(string($3), "libdap::Part::array")) {
++			    part = libdap::Part::array;
+ 			}
  		    else {
- 			ostringstream msg;
- 			msg << BAD_DECLARATION;
+ 			    ostringstream msg;

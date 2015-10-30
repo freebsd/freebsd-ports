@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libdap
-PORTVERSION=	3.13.3
+PORTVERSION=	3.16.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.opendap.org/pub/source/ \
 		LOCAL/sunpoet
