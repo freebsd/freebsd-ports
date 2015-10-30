@@ -1,2 +1,3 @@
-%%SITE_PERL%%/Unicode/Normalize.pm
+%%SITE_ARCH%%/Unicode/Normalize.pm
+%%SITE_ARCH%%/auto/Unicode/Normalize/Normalize.so
 %%PERL5_MAN3%%/Unicode::Normalize.3.gz
