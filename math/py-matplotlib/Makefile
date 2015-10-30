@@ -77,7 +77,7 @@ post-patch:
 		${WRKSRC}/setupext.py
 	${REINPLACE_CMD} -e 's|%%GTK_BACKEND%%|${GTK_BACKEND}|g' \
 			 -e 's|%%GTKAGG_BACKEND%%|${GTKAGG_BACKEND}|g' \
-+			 -e 's|%%QT4AGG_BACKEND%%|${QT4AGG_BACKEND}|g' \
+			 -e 's|%%QT4AGG_BACKEND%%|${QT4AGG_BACKEND}|g' \
 			 -e 's|%%TKAGG_BACKEND%%|${TKAGG_BACKEND}|g' \
 			 -e 's|%%WXAGG_BACKEND%%|${WXAGG_BACKEND}|g' \
 		${WRKSRC}/setup.cfg
