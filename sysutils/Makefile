@@ -1027,6 +1027,7 @@
     SUBDIR += tss
     SUBDIR += tty-clock
     SUBDIR += ttyload
+    SUBDIR += tuptime
     SUBDIR += tw_cli
     SUBDIR += tzdialog
     SUBDIR += u-boot-bananapi

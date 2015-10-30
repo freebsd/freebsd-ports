@@ -1,0 +1,18 @@
+======================================================================
+
+tuptime requires linprocfs(5) mounted under /compat/linux/proc.
+
+If you have not done it yet, please do the following:
+
+	mkdir -p /usr/compat/linux/proc; ln -sf usr/compat /compat
+	mount -t linprocfs linprocfs /compat/linux/proc
+
+To make it permanent, you need the following lines in /etc/fstab:
+
+	linproc	/compat/linux/proc	linprocfs	rw,late		0	0
+
+tuptime also requires the following be added to /etc/crontab:
+
+	*/5 * * * * root test -x %%PREFIX%%/bin/tuptime && %%PREFIX%%/bin/tuptime -x > /dev/null
+
+======================================================================
