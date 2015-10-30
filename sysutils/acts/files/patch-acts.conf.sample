@@ -1,0 +1,17 @@
+--- acts.conf.sample.orig	2015-10-30 19:25:27 UTC
++++ acts.conf.sample
+@@ -4,12 +4,12 @@
+ # backuptargets
+ # Space-separated list of directories to backup, relative to /. This is a required option.
+ # Default: unset
+-backuptargets="var etc home root"
++backuptargets="var etc home root usr/home"
+ 
+ # tarsnap
+ # What command to call for 'tarsnap'.
+ # Default: tarsnap
+-tarsnap="nice -n19 ionice -c3 tarsnap"
++tarsnap="nice -n19 tarsnap"
+ 
+ # tarsnapbackupoptions
+ # What options to use when backing up.
