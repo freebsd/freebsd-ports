@@ -1,0 +1,51 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+if [ -f /etc/mavenrc ] ; then
+	. /etc/mavenrc
+fi
+
+if [ -f "${HOME}/.mavenrc" ] ; then
+	. "${HOME}/.mavenrc"
+fi
+
+M2_HOME=${M2_HOME:-"%%DATADIR%%"}
+
+# traverses directory structure from process work directory to filesystem root
+# first directory with .mvn subdirectory is considered project base directory
+find_maven_basedir() {
+  local basedir=$(pwd)
+  local wdir=$(pwd)
+  while [ "$wdir" != '/' ] ; do
+    wdir=$(cd "$wdir/.."; pwd)
+    if [ -d "$wdir"/.mvn ] ; then
+      basedir=$wdir
+      break
+    fi
+  done
+  echo "${basedir}"
+}
+
+# concatenates all lines of a file
+concat_lines() {
+  if [ -f "$1" ]; then
+    echo "$(tr -s '\n' ' ' < "$1")"
+  fi
+}
+
+export MAVEN_PROJECTBASEDIR=${MAVEN_BASEDIR:-$(find_maven_basedir)}
+MAVEN_OPTS="$(concat_lines "$MAVEN_PROJECTBASEDIR/.mvn/jvm.config") $MAVEN_OPTS"
+
+# Provide a "standardized" way to retrieve the CLI args that will 
+# work with both Windows and non-Windows executions.
+MAVEN_CMD_LINE_ARGS="$MAVEN_CONFIG $@"
+export MAVEN_CMD_LINE_ARGS
+
+JAVA_VERSION="%%JAVA_VERSION%%" exec "%%LOCALBASE%%/bin/java" \
+  $MAVEN_OPTS \
+  -classpath "${M2_HOME}"/boot/plexus-classworlds-*.jar \
+  "-Dclassworlds.conf=${M2_HOME}/bin/m2.conf" \
+  "-Dmaven.home=${M2_HOME}" "-Dmaven.multiModuleProjectDirectory=${MAVEN_PROJECTBASEDIR}" \
+  ${CLASSWORLDS_LAUNCHER} "$@"
+
