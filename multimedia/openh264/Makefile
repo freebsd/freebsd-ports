@@ -3,7 +3,7 @@
 PORTNAME=	openh264
 PORTVERSION=	1.4.0
 DISTVERSIONPREFIX=v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 
 MAINTAINER=	gecko@FreeBSD.org
@@ -14,10 +14,12 @@ LICENSE=	BSD2CLAUSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	cisco
 
-USES=		cpe gmake
+USES=		compiler cpe gmake
 CPE_VENDOR=	cisco
 USE_LDCONFIG=	yes
+ASFLAGS+=	${ASFLAGS_${CHOSEN_COMPILER_TYPE}}
 MAKE_ARGS=	OS=freebsd ARCH="${ARCH:S/amd64/x86_64/}" \
+		CCASFLAGS='$$(CFLAGS) ${ASFLAGS}' \
 		CFLAGS_OPT="" CFLAGS_DEBUG=""
 ALL_TARGET=	all
 
@@ -44,6 +46,13 @@ TEST_BUILD_DEPENDS=googletest>=1.6.0:${PORTSDIR}/devel/googletest
 TEST_CFLAGS=	-I${LOCALBASE}/include
 TEST_MAKE_ARGS=	HAVE_GTEST=Yes
 TEST_ALL_TARGET=test
+
+.include <bsd.port.options.mk>
+
+.if ! ${PORT_OPTIONS:MDEBUG} && (${ARCH:Maarch*} || ${ARCH:Marm*} )
+USE_BINUTILS=	yes
+ASFLAGS_clang=	-no-integrated-as
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e '/gtest-targets\.mk/d' \
