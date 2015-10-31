@@ -1,0 +1,86 @@
+From 27593ec62bdad8621df910931349d964a6dbaa8c Mon Sep 17 00:00:00 2001
+From: Ian Jackson <ian.jackson@eu.citrix.com>
+Date: Wed, 21 Oct 2015 16:18:30 +0100
+Subject: [PATCH XSA-153 v3] libxl: adjust PoD target by memory fudge, too
+
+PoD guests need to balloon at least as far as required by PoD, or risk
+crashing.  Currently they don't necessarily know what the right value
+is, because our memory accounting is (at the very least) confusing.
+
+Apply the memory limit fudge factor to the in-hypervisor PoD memory
+target, too.  This will increase the size of the guest's PoD cache by
+the fudge factor LIBXL_MAXMEM_CONSTANT (currently 1Mby).  This ensures
+that even with a slightly-off balloon driver, the guest will be
+stable even under memory pressure.
+
+There are two call sites of xc_domain_set_pod_target that need fixing:
+
+The one in libxl_set_memory_target is straightforward.
+
+The one in xc_hvm_build_x86.c:setup_guest is more awkward.  Simply
+setting the PoD target differently does not work because the various
+amounts of memory during domain construction no longer match up.
+Instead, we adjust the guest memory target in xenstore (but only for
+PoD guests).
+
+This introduces a 1Mby discrepancy between the balloon target of a PoD
+guest at boot, and the target set by an apparently-equivalent `xl
+mem-set' (or similar) later.  This approach is low-risk for a security
+fix but we need to fix this up properly in xen.git#staging and
+probably also in stable trees.
+
+This is XSA-153.
+
+Signed-off-by: Ian Jackson <Ian.Jackson@eu.citrix.com>
+---
+ tools/libxl/libxl.c     |    2 +-
+ tools/libxl/libxl_dom.c |    9 ++++++++-
+ 2 files changed, 9 insertions(+), 2 deletions(-)
+
+diff --git a/tools/libxl/libxl.c b/tools/libxl/libxl.c
+index d38d0c7..1366177 100644
+--- a/tools/libxl/libxl.c
++++ b/tools/libxl/libxl.c
+@@ -4815,7 +4815,7 @@ retry_transaction:
+     }
+ 
+     rc = xc_domain_set_pod_target(ctx->xch, domid,
+-            new_target_memkb / 4, NULL, NULL, NULL);
++            (new_target_memkb + LIBXL_MAXMEM_CONSTANT) / 4, NULL, NULL, NULL);
+     if (rc != 0) {
+         LIBXL__LOG_ERRNO(ctx, LIBXL__LOG_ERROR,
+                 "xc_domain_set_pod_target domid=%d, memkb=%d "
+diff --git a/tools/libxl/libxl_dom.c b/tools/libxl/libxl_dom.c
+index b514377..8019f4e 100644
+--- a/tools/libxl/libxl_dom.c
++++ b/tools/libxl/libxl_dom.c
+@@ -486,6 +486,7 @@ int libxl__build_post(libxl__gc *gc, uint32_t domid,
+     xs_transaction_t t;
+     char **ents;
+     int i, rc;
++    int64_t mem_target_fudge;
+ 
+     if (info->num_vnuma_nodes && !info->num_vcpu_soft_affinity) {
+         rc = set_vnuma_affinity(gc, domid, info);
+@@ -518,11 +519,17 @@ int libxl__build_post(libxl__gc *gc, uint32_t domid,
+         }
+     }
+ 
++    mem_target_fudge =
++        (info->type == LIBXL_DOMAIN_TYPE_HVM &&
++         info->max_memkb > info->target_memkb)
++        ? LIBXL_MAXMEM_CONSTANT : 0;
++
+     ents = libxl__calloc(gc, 12 + (info->max_vcpus * 2) + 2, sizeof(char *));
+     ents[0] = "memory/static-max";
+     ents[1] = GCSPRINTF("%"PRId64, info->max_memkb);
+     ents[2] = "memory/target";
+-    ents[3] = GCSPRINTF("%"PRId64, info->target_memkb - info->video_memkb);
++    ents[3] = GCSPRINTF("%"PRId64, info->target_memkb - info->video_memkb
++                        - mem_target_fudge);
+     ents[4] = "memory/videoram";
+     ents[5] = GCSPRINTF("%"PRId64, info->video_memkb);
+     ents[6] = "domid";
+-- 
+1.7.10.4
+

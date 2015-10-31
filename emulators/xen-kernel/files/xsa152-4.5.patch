@@ -1,0 +1,41 @@
+x86: rate-limit logging in do_xen{oprof,pmu}_op()
+
+Some of the sub-ops are acessible to all guests, and hence should be
+rate-limited. In the xenoprof case, just like for XSA-146, include them
+only in debug builds. Since the vPMU code is rather new, allow them to
+be always present, but downgrade them to (rate limited) guest messages.
+
+This is XSA-152.
+
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+
+--- a/xen/common/xenoprof.c
++++ b/xen/common/xenoprof.c
+@@ -676,15 +676,13 @@ ret_t do_xenoprof_op(int op, XEN_GUEST_H
+     
+     if ( (op < 0) || (op > XENOPROF_last_op) )
+     {
+-        printk("xenoprof: invalid operation %d for domain %d\n",
+-               op, current->domain->domain_id);
++        gdprintk(XENLOG_DEBUG, "invalid operation %d\n", op);
+         return -EINVAL;
+     }
+ 
+     if ( !NONPRIV_OP(op) && (current->domain != xenoprof_primary_profiler) )
+     {
+-        printk("xenoprof: dom %d denied privileged operation %d\n",
+-               current->domain->domain_id, op);
++        gdprintk(XENLOG_DEBUG, "denied privileged operation %d\n", op);
+         return -EPERM;
+     }
+ 
+@@ -907,8 +905,7 @@ ret_t do_xenoprof_op(int op, XEN_GUEST_H
+     spin_unlock(&xenoprof_lock);
+ 
+     if ( ret < 0 )
+-        printk("xenoprof: operation %d failed for dom %d (status : %d)\n",
+-               op, current->domain->domain_id, ret);
++        gdprintk(XENLOG_DEBUG, "operation %d failed: %d\n", op, ret);
+ 
+     return ret;
+ }
