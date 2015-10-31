@@ -1,0 +1,28 @@
+xenoprof: free domain's vcpu array
+
+This was overlooked in fb442e2171 ("x86_64: allow more vCPU-s per
+guest").
+
+This is XSA-151.
+
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Reviewed-by: Ian Campbell <ian.campbell@citrix.com>
+
+--- a/xen/common/xenoprof.c
++++ b/xen/common/xenoprof.c
+@@ -239,6 +239,7 @@ static int alloc_xenoprof_struct(
+     d->xenoprof->rawbuf = alloc_xenheap_pages(get_order_from_pages(npages), 0);
+     if ( d->xenoprof->rawbuf == NULL )
+     {
++        xfree(d->xenoprof->vcpu);
+         xfree(d->xenoprof);
+         d->xenoprof = NULL;
+         return -ENOMEM;
+@@ -286,6 +287,7 @@ void free_xenoprof_pages(struct domain *
+         free_xenheap_pages(x->rawbuf, order);
+     }
+ 
++    xfree(x->vcpu);
+     xfree(x);
+     d->xenoprof = NULL;
+ }
