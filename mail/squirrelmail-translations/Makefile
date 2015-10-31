@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	squirrelmail-translations
-PORTVERSION=	20150324
+PORTVERSION=	20151031
 CATEGORIES=	mail www
 MASTER_SITES=	LOCAL/adamw/squirrelmail
 DISTNAME=	squirrelmail-${PORTVERSION}_0200-SVN.locales
