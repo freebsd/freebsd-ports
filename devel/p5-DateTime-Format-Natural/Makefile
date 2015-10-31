@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DateTime-Format-Natural
-PORTVERSION=	1.02
-PORTREVISION=	2
+PORTVERSION=	1.03
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,8 +25,9 @@ TEST_DEPENDS=	p5-Test-MockTime>=0:${PORTSDIR}/devel/p5-Test-MockTime
 
 USES=		perl5
 USE_PERL5=	modbuild
+NO_ARCH=	yes
 
-regression-test: build
-	@cd ${WRKSRC} && ./Build test
+do-test:
+	@cd ${WRKSRC} && ./${PL_BUILD} test
 
 .include <bsd.port.mk>
