@@ -1,15 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	openh264
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 DISTVERSIONPREFIX=v
-PORTREVISION=	5
 CATEGORIES=	multimedia
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Cisco implementation of H.264 codec
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cisco
@@ -18,7 +18,7 @@ USES=		compiler cpe gmake
 CPE_VENDOR=	cisco
 USE_LDCONFIG=	yes
 ASFLAGS+=	${ASFLAGS_${CHOSEN_COMPILER_TYPE}}
-MAKE_ARGS=	OS=freebsd ARCH="${ARCH:S/amd64/x86_64/}" \
+MAKE_ARGS=	OS=bsd ARCH="${ARCH:S/amd64/x86_64/}" \
 		CCASFLAGS='$$(CFLAGS) ${ASFLAGS}' \
 		CFLAGS_OPT="" CFLAGS_DEBUG=""
 ALL_TARGET=	all
@@ -56,16 +56,14 @@ ASFLAGS_clang=	-no-integrated-as
 
 post-patch:
 	${REINPLACE_CMD} -e '/gtest-targets\.mk/d' \
-		-e '/pkgconfig/s/lib/libdata/' \
+		-e '/pkgconfig/s/$$(LIBDIR_NAME)/libdata/' \
 		${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e 's,@prefix@,${PREFIX},' \
-		${WRKSRC}/${PORTNAME}.pc.in
 
 pre-build:
 	${LN} -sf ${LOCALBASE}/lib/libgtest.so ${WRKSRC}/libgtest.a
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so.1
 
 post-install-PLUGINS-on:
 	${MKDIR} ${STAGEDIR}${WEBPLUGIN_DIR}

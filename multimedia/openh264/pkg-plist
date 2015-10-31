@@ -13,5 +13,5 @@ include/wels/codec_ver.h
 %%PLUGINS%%%%WEBPLUGIN_DIR%%/libgmpopenh264.so
 lib/libopenh264.a
 lib/libopenh264.so
-lib/libopenh264.so.0
+lib/libopenh264.so.1
 libdata/pkgconfig/openh264.pc
