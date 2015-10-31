@@ -3,9 +3,10 @@
 
 PORTNAME=	pulledpork
 PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	GOOGLE_CODE \
+		LOCAL/ohauer
 
 MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	Script to update snort-2.8+ rules
@@ -14,7 +15,8 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-Crypt-SSLeay>=0.57:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-LWP-Protocol-https>=6.00:${PORTSDIR}/www/p5-LWP-Protocol-https \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 
 NO_BUILD=	yes
 USES=		perl5 shebangfix
@@ -46,6 +48,8 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/contrib/README.CONTRIB ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/oink-conv.pl ${STAGEDIR}${DATADIR}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/README.CATEGORIES ${STAGEDIR}${DOCSDIR}
