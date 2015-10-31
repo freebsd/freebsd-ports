@@ -3,6 +3,7 @@
 
 PORTNAME=		pam_krb5
 PORTVERSION=		4.7
+PORTREVISION=		1
 CATEGORIES=		security
 MASTER_SITES=		http://archives.eyrie.org/software/kerberos/ \
 			http://archives.eyrie.org/software/ARCHIVE/pam-krb5/
@@ -25,7 +26,7 @@ MIT_DESC=		Link against MIT Kerberos
 HEIMDAL_PORT_DESC=	Link against Heimdal in ports Kerberos
 HEIMDAL_BASE_DESC=	Link against Heimdal in base Kerberos
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHEIMDAL_BASE}
 USES+=			gssapi:base
@@ -56,4 +57,4 @@ MANDIR=			${STAGEDIR}${MANPREFIX}/man
 post-install:
 	cd ${WRKSRC} && ${MAKE_CMD} install-man DESTDIR=${STAGEDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
