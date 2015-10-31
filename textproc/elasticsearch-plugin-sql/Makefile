@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sql
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.5
 CATEGORIES=	textproc
 MASTER_SITES=	http://github.com/NLPchina/elasticsearch-sql/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	elasticsearch-plugin-
@@ -20,6 +20,7 @@ NO_ARCH=	yes
 PLIST_SUB+=	VERSION="${PORTVERSION}"
 
 post-patch:
+	@${FIND} ${WRKSRC} -type d -empty -delete
 	@${RM} ${WRKSRC}/_site/vendor/codemirror/.travis.yml
 
 do-install:
