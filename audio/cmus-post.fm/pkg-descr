@@ -1,6 +1,0 @@
-Post.FM is a Perl script that submits information about your currently
-played track to Last.FM / Audioscrobbler. It's primarily made for CMUS,
-a ncurses based music player, but could be used as a general purpose
-scrobbler with only minor modifications.
-
-WWW: http://nex.scrapping.cc/post-fm/index.html

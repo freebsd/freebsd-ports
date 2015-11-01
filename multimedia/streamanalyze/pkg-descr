@@ -1,7 +1,0 @@
-StreamAnalyze is a little helper for people using StreamDVD to backup movies.
-Giving the video/audio/subpicture tracks you want to save, StreamAnalyze will
-calculate if the backup would fit on a dvd-r and, if not, print a shrink
-factor to reduce the video size.
-
-Before using StreamAnalyze you should call 'lsdvd' or 'tcprobe' to get an
-overview of what is available on the video DVD you want to backup.

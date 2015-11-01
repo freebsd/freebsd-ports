@@ -77,7 +77,6 @@
     SUBDIR += cmp3
     SUBDIR += cmt
     SUBDIR += cmus
-    SUBDIR += cmus-post.fm
     SUBDIR += cpige
     SUBDIR += cplay
     SUBDIR += cpp-xmms2

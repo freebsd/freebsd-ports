@@ -932,7 +932,6 @@
     SUBDIR += screenie
     SUBDIR += scterc
     SUBDIR += sd-agent
-    SUBDIR += sdd
     SUBDIR += sdparm
     SUBDIR += searchmonkey
     SUBDIR += seatools
@@ -1135,7 +1134,6 @@
     SUBDIR += xfce4-diskperf-plugin
     SUBDIR += xfce4-fsguard-plugin
     SUBDIR += xfce4-genmon-plugin
-    SUBDIR += xfce4-minicmd-plugin
     SUBDIR += xfce4-mount-plugin
     SUBDIR += xfce4-netload-plugin
     SUBDIR += xfce4-power-manager
