@@ -27,7 +27,4 @@ USES=		perl5
 USE_PERL5=	modbuild
 NO_ARCH=	yes
 
-do-test:
-	@cd ${WRKSRC} && ./${PL_BUILD} test
-
 .include <bsd.port.mk>
