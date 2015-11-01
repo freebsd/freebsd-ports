@@ -4,15 +4,19 @@
 PORTNAME=	codeigniter
 PORTVERSION=	2.2.6
 CATEGORIES=	www
+PKGNAMESUFFIX=	22
 
 MAINTAINER=	junovitch@FreeBSD.org
 COMMENT=	Framework for developing PHP web applications
+
+DEPRECATED=	Codeigniter 2.2.x reached its End of Life on 31 October 2015. Please update to the current version.
+EXPIRATION_DATE=	2016-01-31
 
 USES=		tar:tgz
 USE_GITHUB=	yes
 GH_ACCOUNT=	bcit-ci
 
-CONFLICTS=	codeigniter-1.[0-9]* codeigniter-3.[0-9]* codeigniter22-2.[0-9]*
+CONFLICTS=	codeigniter-[0-9]*
 
 NO_ARCH=	yes
 NO_BUILD=	yes
