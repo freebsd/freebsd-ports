@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	C++ Library Absolutely Wonderful
 
+LICENSE=	LGPL21 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/bind.hpp:${PORTSDIR}/devel/boost-libs
 
