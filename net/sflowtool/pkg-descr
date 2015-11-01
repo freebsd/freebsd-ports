@@ -1,6 +1,9 @@
+Print binary sFlow feed to ASCII, or forward it to other collectors.
+
 This tool receives sFlow data, and generates either a simple-to-parse
 tagged-ASCII output, or binary output in tcpdump(1) format. It can also
 generate Cisco NetFlow version 5 datagrams and send them to a destination
-UDP host:port.
+UDP host:port, or forward the original sFlow feed to a number of
+additional collectors.
 
-WWW: http://www.inmon.com/technology/sflowTools.php
+WWW: https://github.com/sflow/sflowtool/
