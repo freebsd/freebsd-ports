@@ -58,6 +58,38 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="698403a7-803d-11e5-ab94-002590263bf5">
+    <topic>codeigniter -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>codeigniter</name>
+	<range><lt>2.2.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The CodeIgniter changelog reports:</p>
+	<blockquote cite="https://codeigniter.com/userguide2/changelog.html">
+	  <p>Fixed an XSS attack vector in Security Library method
+	    xss_clean().</p>
+	  <p>Changed Config Library method base_url() to fallback to
+	    ``$_SERVER['SERVER_ADDR']`` in order to avoid Host header
+	    injections.</p>
+	  <p>Changed CAPTCHA Helper to try to use the operating system's PRNG
+	    first.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/203403</freebsdpr>
+      <url>https://codeigniter.com/userguide2/changelog.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-31</discovery>
+      <entry>2015-11-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="017a493f-7db6-11e5-a762-14dae9d210b8">
     <topic>openafs -- information disclosure</topic>
     <affects>
