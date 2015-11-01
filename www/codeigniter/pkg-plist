@@ -1,4 +1,4 @@
-%%NOAPACHE%%%%CONFDIR%%/codeigniter.conf
+%%APACHE%%%%CONFDIR%%/codeigniter.conf
 %%WWWDIR%%/application/cache/.htaccess
 %%WWWDIR%%/application/cache/index.html
 %%WWWDIR%%/application/config/index.html
