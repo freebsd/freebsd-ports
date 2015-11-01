@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gmake libtool pathfix pkgconfig python tar:xz
+USES=		gmake libtool pathfix pkgconfig python:2 tar:xz
 USE_GNOME=	pygobject3
 USE_GSTREAMER1=	yes
 GNU_CONFIGURE=	yes
