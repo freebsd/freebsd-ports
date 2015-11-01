@@ -98,6 +98,7 @@
     SUBDIR += cntlm
     SUBDIR += cocoon
     SUBDIR += codeigniter
+    SUBDIR += codeigniter22
     SUBDIR += coppermine
     SUBDIR += cplanet
     SUBDIR += cppcms
