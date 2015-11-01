@@ -20,6 +20,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/hgext/churn.py
 %%PYTHON_SITELIBDIR%%/hgext/churn.pyc
 %%PYTHON_SITELIBDIR%%/hgext/churn.pyo
+%%PYTHON_SITELIBDIR%%/hgext/clonebundles.py
+%%PYTHON_SITELIBDIR%%/hgext/clonebundles.pyc
+%%PYTHON_SITELIBDIR%%/hgext/clonebundles.pyo
 %%PYTHON_SITELIBDIR%%/hgext/color.py
 %%PYTHON_SITELIBDIR%%/hgext/color.pyc
 %%PYTHON_SITELIBDIR%%/hgext/color.pyo
@@ -257,6 +260,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/demandimport.py
 %%PYTHON_SITELIBDIR%%/mercurial/demandimport.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/demandimport.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/destutil.py
+%%PYTHON_SITELIBDIR%%/mercurial/destutil.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/destutil.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/diffhelpers.so
 %%PYTHON_SITELIBDIR%%/mercurial/dirstate.py
 %%PYTHON_SITELIBDIR%%/mercurial/dirstate.pyc
@@ -513,6 +519,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/store.py
 %%PYTHON_SITELIBDIR%%/mercurial/store.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/store.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/streamclone.py
+%%PYTHON_SITELIBDIR%%/mercurial/streamclone.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/streamclone.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/strutil.py
 %%PYTHON_SITELIBDIR%%/mercurial/strutil.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/strutil.pyo
@@ -685,7 +694,7 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/templates/static/hgicon.png
 %%PYTHON_SITELIBDIR%%/mercurial/templates/static/hglogo.png
 %%PYTHON_SITELIBDIR%%/mercurial/templates/static/mercurial.js
-%%PYTHON_SITELIBDIR%%/mercurial/templates/static/style-coal.css
+%%PYTHON_SITELIBDIR%%/mercurial/templates/static/style-extra-coal.css
 %%PYTHON_SITELIBDIR%%/mercurial/templates/static/style-gitweb.css
 %%PYTHON_SITELIBDIR%%/mercurial/templates/static/style-monoblue.css
 %%PYTHON_SITELIBDIR%%/mercurial/templates/static/style-paper.css
