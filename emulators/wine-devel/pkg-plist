@@ -566,6 +566,7 @@ include/wine/windows/physicalmonitorenumerationapi.h
 include/wine/windows/pktdef.h
 include/wine/windows/poppack.h
 include/wine/windows/powrprof.h
+include/wine/windows/prntvpt.h
 include/wine/windows/profinfo.h
 include/wine/windows/propidl.h
 include/wine/windows/propidl.idl
@@ -808,6 +809,7 @@ include/wine/windows/wuapi.idl
 include/wine/windows/x3daudio.h
 include/wine/windows/xapo.h
 include/wine/windows/xapo.idl
+include/wine/windows/xapofx.h
 include/wine/windows/xaudio2.h
 include/wine/windows/xaudio2.idl
 include/wine/windows/xaudio2fx.h
@@ -1700,6 +1702,7 @@ lib/wine/fakedlls/wer.dll
 lib/wine/fakedlls/wevtapi.dll
 lib/wine/fakedlls/wevtutil.exe
 lib/wine/fakedlls/wiaservc.dll
+lib/wine/fakedlls/wimgapi.dll
 %%WINE32%%lib/wine/fakedlls/win32s16.dll16
 %%WINE32%%lib/wine/fakedlls/win87em.dll16
 %%WINE32%%lib/wine/fakedlls/winaspi.dll16
@@ -2006,7 +2009,6 @@ lib/wine/libuserenv.def
 lib/wine/libusp10.def
 lib/wine/libuuid.a
 lib/wine/libuxtheme.def
-%%STAGING%%lib/wine/libvcruntime140.def
 lib/wine/libvdmdbg.def
 lib/wine/libversion.def
 lib/wine/libwebservices.def
@@ -2031,7 +2033,7 @@ lib/wine/libws2_32.def
 lib/wine/libwsnmp32.def
 lib/wine/libwsock32.def
 lib/wine/libwtsapi32.def
-lib/wine/libx3daudio1_7.def
+lib/wine/libxaudio2_8.def
 lib/wine/libxinput.def
 lib/wine/libxmllite.def
 lib/wine/loadperf.dll.so
@@ -2300,6 +2302,7 @@ lib/wine/vcomp90.dll.so
 %%STAGING%%lib/wine/vcruntime140.dll.so
 %%WINE32%%lib/wine/vdhcp.vxd.so
 lib/wine/vdmdbg.dll.so
+lib/wine/wimgapi.dll.so
 %%WINE32%%lib/wine/ver.dll16.so
 lib/wine/version.dll.so
 lib/wine/view.exe.so
