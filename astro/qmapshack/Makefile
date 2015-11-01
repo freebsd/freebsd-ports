@@ -11,6 +11,8 @@ COMMENT=	Ultimate outdoor aficionado's tool
 
 LICENSE=	GPLv3
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal \
 		libroutino.so:${PORTSDIR}/astro/routino
 
