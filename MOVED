@@ -7898,3 +7898,23 @@ misc/ruby-progressbar|devel/rubygem-ruby-progressbar|2015-10-25|Has expired: Aba
 databases/py-mssql|databases/py-pymssql|2015-10-28|Broken with current FreeTDS
 net/py-medusa||2015-10-28|Abandoned upstream, last release was in 2005
 audio/py-audiotools|audio/py-fmoo-audiotools|2015-10-29|Rename to match PyPI nomenclature
+audio/cmus-post.fm||2015-10-31|Has expired: Broken for more than 6 months
+devel/libphish||2015-10-31|Has expired: Broken for more than 6 months
+devel/rubygem-debugger||2015-10-31|Has expired: This port is for Ruby 1.9 only. Upstream stopped maintenance.
+games/linux-ningpo-demo||2015-10-31|Has expired: Broken for more than 6 months
+graphics/gdal-grass||2015-10-31|Has expired: Superseded by gdal-2.0.0
+graphics/picviz||2015-10-31|Has expired: Broken for more than 6 months
+irc/weechat-devel|irc/weechat|2015-10-31|Has expired: far behind stable irc/weechat (use it instead)
+mail/cucipop||2015-10-31|Has expired: Broken for more than 6 months
+math/rkward-kde4||2015-10-31|Has expired: Depends on deprecated math/R-cran-car
+multimedia/streamanalyze||2015-10-31|Has expired: Broken for more than 6 months
+net-mgmt/collectd|net-mgmt/collectd5|2015-10-31|Has expired: Please move to collectd5 - collect4 is not developed/patched
+sysutils/sdd||2015-10-31|Has expired: Broken for more than 6 months
+sysutils/xfce4-minicmd-plugin||2015-10-31|Has expired: Broken for more than 6 months
+www/linux-libgtkembedmoz||2015-10-31|Has expired: Broken for more than 6 months
+www/py-feedfinder||2015-10-31|Has expired: Broken for more than 6 months
+www/py-openssl-proxy||2015-10-31|Has expired: Broken for more than 6 months
+www/py-webware||2015-10-31|Has expired: Broken for more than 6 months
+www/py-webware-component||2015-10-31|Has expired: Depends on deprecated www/py-webware
+x11-fonts/code2001||2015-10-31|Has expired: Broken for more than 6 months
+x11-wm/e-module-diskio||2015-10-31|Has expired: Broken for more than 7 months

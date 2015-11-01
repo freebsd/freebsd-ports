@@ -1,4 +1,0 @@
-lib/enlightenment/modules/diskio/e-module-diskio.edj
-lib/enlightenment/modules/diskio/module.desktop
-lib/enlightenment/modules/diskio/%%ENLIGHTENMENT_ARCH%%/module.a
-lib/enlightenment/modules/diskio/%%ENLIGHTENMENT_ARCH%%/module.so

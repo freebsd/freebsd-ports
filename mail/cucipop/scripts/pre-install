@@ -1,8 +1,0 @@
-#!/bin/sh
-#if ! id -u vpop > /dev/null 2>&1; then
-#  echo
-#  echo "Fake account \"vpop\" needed for virtual hosts support (as mboxes owner)."
-#  echo "Please add it by hand in case you need them (try \"man vipw\")."
-#  echo
-#fi
-exit 0

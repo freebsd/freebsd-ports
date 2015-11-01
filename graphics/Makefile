@@ -215,7 +215,6 @@
     SUBDIR += gcolor2
     SUBDIR += gd
     SUBDIR += gdal
-    SUBDIR += gdal-grass
     SUBDIR += gdchart
     SUBDIR += gdk-pixbuf
     SUBDIR += gdk-pixbuf2
@@ -773,7 +772,6 @@
     SUBDIR += php56-gd
     SUBDIR += phplot
     SUBDIR += picpuz
-    SUBDIR += picviz
     SUBDIR += piddle
     SUBDIR += pikopixel
     SUBDIR += pinpoint

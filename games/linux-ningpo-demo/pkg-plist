@@ -1,7 +1,0 @@
-bin/linux-ningpo
-%%DATADIR%%/Bin/ningpo_demo
-%%DATADIR%%/Bin/ningpo_demo.dynamic
-%%DATADIR%%/Resources/ningpo.pyz
-@dirrm %%DATADIR%%/Bin
-@dirrm %%DATADIR%%/Resources
-@dirrm %%DATADIR%%

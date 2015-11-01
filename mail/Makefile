@@ -77,7 +77,6 @@
     SUBDIR += courier-pythonfilter
     SUBDIR += couriergraph
     SUBDIR += crm114
-    SUBDIR += cucipop
     SUBDIR += cvsmail
     SUBDIR += cyrus-imapd23
     SUBDIR += cyrus-imapd24
