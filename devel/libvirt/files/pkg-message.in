@@ -1,0 +1,21 @@
+
+To enable libvirtd please add libvirtd_enable="YES" to
+/etc/rc.conf.
+
+NOTE ON CONFIGURATION:
+
+The libvirt port does not come with networking configuration enabled.
+The 'default' network definition is available at:
+
+  %%EXAMPLESDIR%%/networks/default.xml
+
+To enable this network please do the following:
+
+  cp %%EXAMPLESDIR%%/networks/default.xml %%ETCDIR%%/qemu/networks
+
+To configure this network for autostart, execute the following:
+
+  ln -s ../default.xml %%ETCDIR%%/qemu/networks/autostart/default.xml
+
+If you have libvirtd already running you'll need to restart it for changes
+to take effect.
