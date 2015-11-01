@@ -3714,6 +3714,7 @@
     SUBDIR += phabricator
     SUBDIR += php-Psr_Log
     SUBDIR += php-composer
+    SUBDIR += php-jq
     SUBDIR += php-libawl
     SUBDIR += php-memoize
     SUBDIR += php-scalar_objects
