@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20151101:
+  AFFECTS: users of www/codeigniter
+  AUTHOR: junovitch@FreeBSD.org
+
+  CodeIgniter has been updated to the 3.0.x release branch. End users
+  must ensure their web applications are compliant with the guidance
+  in the "Upgrading From a Previous Version" document.
+
+  http://www.codeigniter.com/user_guide/installation/upgrade_300.html
+
+  CodeIgniter 2.2.x has reached EOL as of 31 October 2015 but may be
+  installed in the interim from the www/codeigniter22 port.
+
 20151020:
   AFFECTS: users of security/keepassx2
 

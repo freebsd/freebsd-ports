@@ -2,17 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	codeigniter
-PORTVERSION=	2.2.6
+PORTVERSION=	3.0.3
 CATEGORIES=	www
 
 MAINTAINER=	junovitch@FreeBSD.org
 COMMENT=	Framework for developing PHP web applications
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/license.txt
+
 USES=		tar:tgz
 USE_GITHUB=	yes
 GH_ACCOUNT=	bcit-ci
 
-CONFLICTS=	codeigniter-1.[0-9]* codeigniter-3.[0-9]* codeigniter22-2.[0-9]*
+CONFLICTS=	codeigniter-1.[0-9]* codeigniter22-2.[0-9]*
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -34,6 +37,7 @@ CI_CONF_FILES=	index.php \
 		${CI_CONF_DIR}/doctypes.php \
 		${CI_CONF_DIR}/foreign_chars.php \
 		${CI_CONF_DIR}/hooks.php \
+		${CI_CONF_DIR}/memcached.php \
 		${CI_CONF_DIR}/mimes.php \
 		${CI_CONF_DIR}/migration.php \
 		${CI_CONF_DIR}/profiler.php \
@@ -43,10 +47,10 @@ CI_CONF_FILES=	index.php \
 
 # This is the rest of the CodeIgniter installation that doesn't change
 STD_BITS=	${CI_CONF_DIR}/index.html \
+		application/.htaccess \
 		application/cache \
 		application/controllers \
 		application/core \
-		application/errors \
 		application/helpers \
 		application/hooks \
 		application/index.html \
@@ -56,10 +60,12 @@ STD_BITS=	${CI_CONF_DIR}/index.html \
 		application/models \
 		application/third_party \
 		application/views \
+		${CI_SYS_DIR}/.htaccess \
 		${CI_SYS_DIR}/core \
 		${CI_SYS_DIR}/database \
 		${CI_SYS_DIR}/fonts \
 		${CI_SYS_DIR}/helpers \
+		${CI_SYS_DIR}/index.html \
 		${CI_SYS_DIR}/language \
 		${CI_SYS_DIR}/libraries
 
@@ -105,5 +111,7 @@ post-install-APACHE-on:
 	${CP} ${WRKDIR}/${CONF} ${STAGEDIR}${CONFDIR}/codeigniter.conf;
 post-install-DOCS-on:
 	cd ${WRKSRC}/user_guide && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+	${RM} ${STAGEDIR}${DOCSDIR}/.buildinfo
+	${CP} ${WRKSRC}/readme.rst ${STAGEDIR}${DOCSDIR}/readme.rst
 
 .include <bsd.port.mk>
