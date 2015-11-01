@@ -401,7 +401,6 @@
     SUBDIR += linux-c6-qt47-webkit
     SUBDIR += linux-f10-flashplugin11
     SUBDIR += linux-firefox
-    SUBDIR += linux-libgtkembedmoz
     SUBDIR += linux-opera
     SUBDIR += linux-seamonkey
     SUBDIR += lionwiki
@@ -1580,7 +1579,6 @@
     SUBDIR += py-falcon
     SUBDIR += py-fcgi
     SUBDIR += py-fedex
-    SUBDIR += py-feedfinder
     SUBDIR += py-feedgenerator
     SUBDIR += py-flask
     SUBDIR += py-flask-admin
@@ -1618,7 +1616,6 @@
     SUBDIR += py-meld3
     SUBDIR += py-mt
     SUBDIR += py-nevow
-    SUBDIR += py-openssl-proxy
     SUBDIR += py-pafy
     SUBDIR += py-paste
     SUBDIR += py-pastedeploy
@@ -1766,8 +1763,6 @@
     SUBDIR += py-webob
     SUBDIR += py-websocket-client
     SUBDIR += py-webunit
-    SUBDIR += py-webware
-    SUBDIR += py-webware-component
     SUBDIR += py-werkzeug
     SUBDIR += py-wikipedia
     SUBDIR += py-wikitools

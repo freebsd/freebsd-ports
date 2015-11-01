@@ -32,7 +32,6 @@
     SUBDIR += e-module-alarm
     SUBDIR += e-module-cpu
     SUBDIR += e-module-deskshow
-    SUBDIR += e-module-diskio
     SUBDIR += e-module-everything-places
     SUBDIR += e-module-everything-websearch
     SUBDIR += e-module-forecasts

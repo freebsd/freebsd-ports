@@ -1265,7 +1265,6 @@
     SUBDIR += libpeak
     SUBDIR += libpeas
     SUBDIR += libpff
-    SUBDIR += libphish
     SUBDIR += libphk
     SUBDIR += libphutil
     SUBDIR += libplist
@@ -4702,7 +4701,6 @@
     SUBDIR += rubygem-daemon_controller
     SUBDIR += rubygem-daemons
     SUBDIR += rubygem-debug_inspector
-    SUBDIR += rubygem-debugger
     SUBDIR += rubygem-debugger-linecache
     SUBDIR += rubygem-debugger-xml
     SUBDIR += rubygem-deep_merge
