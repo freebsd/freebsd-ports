@@ -25,6 +25,12 @@ FILES_EXEC=	tiny-dhcp-server tiny-udp-proxy tiny-udp-anti-nat
 FILES_LIB=	net_checksums tiny_utils
 PLIST_FILES=	$(FILES_EXEC:%=bin/%) $(FILES_LIB:%=${PYTHON_SITELIBDIR}/%.py)
 
+.include <bsd.port.pre.mk>
+
+.if defined(PACKAGE_BUILDING) && ${PYTHON_VER} != ${PYTHON_DEFAULT}
+IGNORE=	you have python ${PYTHON_DEFAULT} set as the default, and this needs ${PYTHON_VER}
+.endif
+
 do-install:
 .for file_exec in ${FILES_EXEC}
 	${INSTALL_SCRIPT} ${WRKSRC}/${file_exec}.py \
@@ -36,4 +42,4 @@ do-install:
 		${STAGEDIR}${PYTHON_SITELIBDIR}/${file_lib}.py
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
