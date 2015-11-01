@@ -3,6 +3,7 @@
 
 PORTNAME=	libvirt
 PORTVERSION=	1.2.20
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -86,6 +87,8 @@ PLIST_SUB=	PORTVERSION="-${PORTVERSION}" \
 		SHLIB_VER=${SHLIB_VER}
 PORTDOCS=	*
 
+SUB_FILES=	pkg-message
+
 .include <bsd.port.options.mk>
 
 .if (exists(/usr/sbin/bhyve) && ${OSVERSION} >= 100051)
@@ -107,9 +110,18 @@ post-patch:
 	@${MV} ${WRKSRC}/daemon/libvirtd.conf ${WRKSRC}/daemon/libvirtd.conf.sample
 	@${REINPLACE_CMD} -e 's|libvirtd\.conf|libvirtd.conf.sample|' \
 		${WRKSRC}/daemon/Makefile.in
+	
+	@${REINPLACE_CMD} -e 's|ln -s ../default.xml|true|' \
+			  -e 's|$$(DESTDIR)$$(confdir)/qemu/networks|${STAGEDIR}${EXAMPLESDIR}/networks|' \
+			  ${WRKSRC}/src/Makefile.in
 
 	@${MV} ${WRKSRC}/src/libvirt.conf ${WRKSRC}/src/libvirt.conf.sample
 	@${REINPLACE_CMD} -e 's|conf_DATA = libvirt.conf|conf_DATA = libvirt.conf.sample|' \
+		${WRKSRC}/src/Makefile.in
+
+	@${MV} ${WRKSRC}/src/locking/virtlockd.conf ${WRKSRC}/src/locking/virtlockd.conf.sample
+	@${REINPLACE_CMD} -e 's|virtlockd.conf |virtlockd.conf.sample |' \
+			  -e 's|virtlockd.conf$$|virtlockd.conf.sample|' \
 		${WRKSRC}/src/Makefile.in
 
 	@${MV} ${WRKSRC}/src/qemu/qemu.conf ${WRKSRC}/src/qemu/qemu.conf.sample
@@ -128,6 +140,8 @@ post-patch:
 		${WRKSRC}/src/Makefile.in
 
 post-install:
+	@${RMDIR} ${STAGEDIR}${EXAMPLESDIR}/networks/autostart
+	@${MKDIR} ${STAGEDIR}${ETCDIR}/qemu/networks/autostart
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in AUTHORS ChangeLog INSTALL NEWS README TODO
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
