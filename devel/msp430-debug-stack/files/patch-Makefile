@@ -1,0 +1,47 @@
+--- Makefile.orig	2015-04-22 11:58:28 UTC
++++ Makefile
+@@ -16,6 +16,7 @@ MAKE_PCH += -x c++-header
+ USE_PCH += -include $(PCH_HEADER)
+ 
+ export BOOST_DIR
++export HIDAPI_DIR
+ export BIT32
+ export STATIC
+ export DEBUG
+@@ -73,14 +74,14 @@ ifeq ($(PLATFORM),Linux)
+ 
+ 	HIDOBJ := $(LIBTHIRD)/hid-libusb.o
+ else
+-	CXX:= clang++
++#	CXX:= clang++
+ 
+-	OUTPUT := libmsp430.dylib
++	OUTPUT := libmsp430.so
+ 
+ 	ifdef STATIC
+-	STATIC_LIBS += -framework CoreFoundation -framework IOKit -lhidapi
++	STATIC_LIBS += -lhidapi
+ 	else
+-	LIBS += -framework CoreFoundation -framework IOKit -lhidapi
++	LIBS += -lhidapi
+ 	endif
+ 
+ 	ifdef BOOST_DIR
+@@ -88,9 +89,14 @@ else
+ 	LIBDIRS += -L$(BOOST_DIR)/lib
+ 	endif
+ 
+-	OUTNAME := -install_name
+-	BSTATIC :=
+-	BDYNAMIC :=
++	ifdef HIDAPI_DIR
++	INCLUDES += -I$(HIDAPI_DIR)/include/hidapi
++	LIBDIRS += -L$(HIDAPI_DIR)/lib
++	endif
++
++	OUTNAME := -Wl,-soname,
++	BSTATIC := -Wl,-Bstatic
++	BDYNAMIC := -Wl,-Bdynamic
+ 
+ 	HIDOBJ :=
+ endif
