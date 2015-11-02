@@ -186,8 +186,6 @@ etc/man.d/perl%%PERL_VER%%.conf
 %%PRIV_LIB%%/ExtUtils/MakeMaker/Locale.pm
 %%PRIV_LIB%%/ExtUtils/MakeMaker/Tutorial.pod
 %%PRIV_LIB%%/ExtUtils/MakeMaker/version.pm
-%%PRIV_LIB%%/ExtUtils/MakeMaker/version/regex.pm
-%%PRIV_LIB%%/ExtUtils/MakeMaker/version/vpp.pm
 %%PRIV_LIB%%/ExtUtils/Manifest.pm
 %%PRIV_LIB%%/ExtUtils/Miniperl.pm
 %%PRIV_LIB%%/ExtUtils/Mkbootstrap.pm
@@ -601,7 +599,6 @@ etc/man.d/perl%%PERL_VER%%.conf
 %%PRIV_LIB%%/Unicode/Collate/Locale/zh_zhu.pl
 %%PRIV_LIB%%/Unicode/Collate/allkeys.txt
 %%PRIV_LIB%%/Unicode/Collate/keys.txt
-%%PRIV_LIB%%/Unicode/Normalize.pm
 %%PRIV_LIB%%/Unicode/UCD.pm
 %%PRIV_LIB%%/User/grent.pm
 %%PRIV_LIB%%/User/pwent.pm
@@ -818,6 +815,7 @@ etc/man.d/perl%%PERL_VER%%.conf
 %%ARCH_LIB%%/Time/Seconds.pm
 %%ARCH_LIB%%/Unicode/Collate.pm
 %%ARCH_LIB%%/Unicode/Collate/Locale.pm
+%%ARCH_LIB%%/Unicode/Normalize.pm
 %%ARCH_LIB%%/arybase.pm
 %%ARCH_LIB%%/attributes.pm
 %%ARCH_LIB%%/auto/B/B.so
@@ -826,7 +824,6 @@ etc/man.d/perl%%PERL_VER%%.conf
 %%ARCH_LIB%%/auto/Cwd/Cwd.so
 %%ARCH_LIB%%/auto/DB_File/DB_File.so
 %%ARCH_LIB%%/auto/Data/Dumper/Dumper.so
-%%ARCH_LIB%%/auto/Devel/PPPort/PPPort.so
 %%ARCH_LIB%%/auto/Devel/Peek/Peek.so
 %%ARCH_LIB%%/auto/Digest/MD5/MD5.so
 %%ARCH_LIB%%/auto/Digest/SHA/SHA.so
@@ -868,6 +865,7 @@ etc/man.d/perl%%PERL_VER%%.conf
 %%ARCH_LIB%%/auto/Time/HiRes/HiRes.so
 %%ARCH_LIB%%/auto/Time/Piece/Piece.so
 %%ARCH_LIB%%/auto/Unicode/Collate/Collate.so
+%%ARCH_LIB%%/auto/Unicode/Normalize/Normalize.so
 %%ARCH_LIB%%/auto/arybase/arybase.so
 %%ARCH_LIB%%/auto/attributes/attributes.so
 %%ARCH_LIB%%/auto/mro/mro.so
@@ -2076,7 +2074,6 @@ etc/man.d/perl%%PERL_VER%%.conf
 %%PRIV_LIB%%/version.pod
 %%PRIV_LIB%%/version/Internals.pod
 %%PRIV_LIB%%/version/regex.pm
-%%PRIV_LIB%%/version/vpp.pm
 %%PRIV_LIB%%/vmsish.pm
 %%PRIV_LIB%%/warnings.pm
 %%PRIV_LIB%%/warnings/register.pm
