@@ -1,10 +1,11 @@
 # $FreeBSD$
 
-PORTNAME=	audiotools
+PORTNAME=	fmoo-audiotools
 PORTVERSION=	3.0
 CATEGORIES=	audio python
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}fmoo-
+MASTER_SITES=	SF/audiotools/audiotools
+DISTNAME=	audiotools-${PORTVERSION}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ryu0@ymail.com
 COMMENT=	Collection of command line audio handling utilities
@@ -76,6 +77,6 @@ post-configure:
 .endif
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/*.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/audiotools/*.so
 
 .include <bsd.port.mk>
