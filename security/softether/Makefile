@@ -2,6 +2,7 @@
 
 PORTNAME=	softether
 PORTVERSION=	4.18.9570
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.softether-download.com/files/softether/v4.18-9570-rtm-2015.07.26-tree/Source_Code/
 DISTNAME=	${PORTNAME}-src-v4.18-9570-rtm
@@ -24,6 +25,7 @@ DOS2UNIX_FILES=	AUTHORS.TXT ChangeLog LICENSE README THIRD_PARTY.TXT \
 		src/Cedar/Server.c \
 		src/Mayaqua/Cfg.c \
 		src/Mayaqua/Cfg.h \
+		src/Mayaqua/Network.c \
 		src/Mayaqua/Kernel.c \
 		src/Mayaqua/Table.h \
 		src/Mayaqua/Unix.c
@@ -33,9 +35,10 @@ OPTIONS_DEFINE=	DOCS
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_OPENSSL=	yes
-USES=		dos2unix gmake iconv ncurses readline
+USES=		dos2unix gmake iconv:translit iconv:wchar_t ncurses readline
 USE_RC_SUBR=	softether_bridge softether_client softether_server
 SUB_FILES=	vpncmd
+MAKE_JOBS_UNSAFE=	yes
 
 # a pity the source directory has such a naming scheme, but well
 WRKSRC=		${WRKDIR}/v4.18-9570
@@ -47,11 +50,6 @@ ALL_TARGET=	build
 # requires OpenSSL from ports
 .if ${OSVERSION} < 1000000
 WITH_OPENSSL_PORT=	yes
-MAKE_JOBS_UNSAFE=	yes
-.endif
-
-.if ${OSVERSION} >= 1000000
-BUILD_DEPENDS=		libiconv>=1.14:${PORTSDIR}/converters/libiconv
 .endif
 
 # skip configure at all and copy the corresponding Makefile in place
