@@ -2,19 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	cal3d
-PORTVERSION=	0.11.0
-PORTREVISION=	3
+PORTVERSION=	0.11.1	# see note below
 CATEGORIES=	graphics devel
-MASTER_SITES=	http://download.gna.org/cal3d/sources/
+MASTER_SITES=	LOCAL/acm/cal3d
+DISTNAME=	cal3d-20060720
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Skeletal based 3D character animation library written in C++
 
-CONFLICTS=	cal3d-devel-[0-9]*
+# Cal3D ceased development in July 2006
+# The last version was labelled 0.11R2 (despite version 0.11 being released)
+# The last Cal3D development version was "20060720".
+# This becomes the new "stable" version, and it's given a fake version
+# number of 0.11.1 to indicate it comes after 0.11.0 rather than changing
+# the version scheme completely.
 
 GNU_CONFIGURE=	yes
-USES=		libtool pathfix pkgconfig
+USES=		autoreconf libtool pathfix pkgconfig tar:bzip2
+PATHFIX_MAKEFILEIN=	Makefile.am
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
@@ -23,6 +29,7 @@ post-patch:
 		${WRKSRC}/src/cal3d/buffersource.h \
 		${WRKSRC}/src/cal3d/loader.h \
 		${WRKSRC}/src/cal3d/streamsource.h
-	@${REINPLACE_CMD} '/^SUBDIRS =/s/tests//' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/^all_libraries/d' \
+		${WRKSRC}/src/cal3d/Makefile.am
 
 .include <bsd.port.mk>

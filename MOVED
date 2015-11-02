@@ -7900,7 +7900,7 @@ net/py-medusa||2015-10-28|Abandoned upstream, last release was in 2005
 audio/py-audiotools|audio/py-fmoo-audiotools|2015-10-29|Rename to match PyPI nomenclature
 audio/cmus-post.fm||2015-10-31|Has expired: Broken for more than 6 months
 devel/libphish||2015-10-31|Has expired: Broken for more than 6 months
-devel/rubygem-debugger||2015-10-31|Has expired: This port is for Ruby 1.9 only. Upstream stopped maintenance.
+devel/rubygem-debugger||2015-10-31|Has expired: This port is for Ruby 1.9 only, upstream stopped maintenance
 games/linux-ningpo-demo||2015-10-31|Has expired: Broken for more than 6 months
 graphics/gdal-grass||2015-10-31|Has expired: Superseded by gdal-2.0.0
 graphics/picviz||2015-10-31|Has expired: Broken for more than 6 months
@@ -7924,3 +7924,4 @@ devel/pyvisa|devel/py-pyvisa|2015-11-02|Renamed to comply with Python ports poli
 devel/pyvisa-py|devel/py-pyvisa-py|2015-11-02|Renamed to comply with Python ports policy
 science/pyteomics.biolccc|science/py-pyteomics.biolccc|2015-11-02|Renamed to comply with Python ports policy
 science/pyteomics|science/py-pyteomics|2015-11-02|Renamed to comply with Python ports policy
+graphics/cal3d-devel|graphics/cal3d|2015-11-02|Dvelopment ceased in 2006 so set last devel version as stable
