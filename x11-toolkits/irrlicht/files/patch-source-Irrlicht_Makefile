@@ -1,14 +1,5 @@
 --- source/Irrlicht/Makefile.orig	2014-10-18 07:47:20 UTC
 +++ source/Irrlicht/Makefile
-@@ -2,7 +2,7 @@
- VERSION_MINOR = 8
- VERSION_RELEASE = 1
- # Irrlicht Engine 1.8.1
--# Makefile for Linux
-+# Makefile for Linux/FreeBSD
- #
- # To use, just run:
- #
 @@ -56,23 +56,20 @@
  EXTRAOBJ =
  LINKOBJ = $(IRRMESHOBJ) $(IRROBJ) $(IRRPARTICLEOBJ) $(IRRANIMOBJ) \
