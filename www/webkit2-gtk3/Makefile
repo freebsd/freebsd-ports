@@ -11,7 +11,8 @@ DISTNAME=	${PORTNAME}gtk-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Opensource browser engine using the GTK+ 3 toolkit
 
-BUILD_DEPENDS=	geoclue>=0:${PORTSDIR}/net/geoclue
+BUILD_DEPENDS=	geoclue>=0:${PORTSDIR}/net/geoclue \
+		${LOCALBASE}/libdata/pkgconfig/libnotify.pc:${PORTSDIR}/devel/libnotify
 LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
@@ -21,7 +22,8 @@ LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
 		libicutu.so:${PORTSDIR}/devel/icu \
 		libharfbuzz.so:${PORTSDIR}/print/harfbuzz \
 		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
-RUN_DEPENDS=	geoclue>=0:${PORTSDIR}/net/geoclue
+RUN_DEPENDS=	geoclue>=0:${PORTSDIR}/net/geoclue \
+		${LOCALBASE}/libdata/pkgconfig/libnotify.pc:${PORTSDIR}/devel/libnotify
 
 PORTSCOUT=	limitw:1,even
 
