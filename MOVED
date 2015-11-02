@@ -7920,3 +7920,7 @@ x11-fonts/code2001||2015-10-31|Has expired: Broken for more than 6 months
 x11-wm/e-module-diskio||2015-10-31|Has expired: Broken for more than 7 months
 devel/ros||2015-11-01|Has expired: Unsupported upstream, see http://wiki.ros.org/Distributions
 ports-mgmt/portsopt||2015-11-01|Has expired: Deprecated by optionsng
+devel/pyvisa|devel/py-pyvisa|2015-11-02|Renamed to comply with Python ports policy
+devel/pyvisa-py|devel/py-pyvisa-py|2015-11-02|Renamed to comply with Python ports policy
+science/pyteomics.biolccc|science/py-pyteomics.biolccc|2015-11-02|Renamed to comply with Python ports policy
+science/pyteomics|science/py-pyteomics|2015-11-02|Renamed to comply with Python ports policy
