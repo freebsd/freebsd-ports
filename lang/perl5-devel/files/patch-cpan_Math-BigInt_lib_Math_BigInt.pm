@@ -1,6 +1,6 @@
---- cpan/Math-BigInt/lib/Math/BigInt.pm.orig	2015-09-08 05:21:36 UTC
+--- cpan/Math-BigInt/lib/Math/BigInt.pm.orig	2015-11-02 11:11:17 UTC
 +++ cpan/Math-BigInt/lib/Math/BigInt.pm
-@@ -62,7 +62,7 @@ use overload
+@@ -64,7 +64,7 @@ use overload
  '>>='	=>	sub { $_[0]->brsft($_[1]); },
  
  # not supported by Perl yet
