@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	joomla
-PORTVERSION=	3.2.3
+PORTVERSION=	3.4.5
 CATEGORIES=	www
 PKGNAMESUFFIX=	3
 
@@ -13,14 +13,14 @@ LICENSE=	GPLv2
 
 GH_PROJECT=	${PORTNAME}-cms
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
-php_OLD_CMD=	C:\\\xampp\\\php\\\.\\\php.exe
 
-REINPLACE_ARGS=	-i '' -E -e 's,(${php_OLD_CMD})|(/usr/bin/php),${LOCALBASE}/bin/php,g'
-REINPLACE_FILES=	build/indexmaker.php tests/system/phpunit.php \
-			tests/system/webdriver/tests/phpunit.php
+USES=		shebangfix
+SHEBANG_FILES=	build/indexmaker.php \
+		libraries/vendor/leafo/lessphp/lessify
 
 SUB_FILES=	pkg-message
 
@@ -29,10 +29,7 @@ USE_MYSQL=	yes
 USE_PHP=	gd json mbstring mysql mysqli pcre pdf session simplexml xml zip zlib
 
 WANT_PHP_WEB=	yes
-WWWDIR=	${PREFIX}/www/${PORTNAME}${PORTVERSION:R:R}
-
-pre-patch:
-	@(cd ${WRKSRC} && ${REINPLACE_CMD} ${REINPLACE_FILES})
+WWWDIR=		${PREFIX}/www/${PORTNAME}${PORTVERSION:R:R}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
