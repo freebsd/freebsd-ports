@@ -35,7 +35,7 @@ OPTIONS_DEFINE=	DOCS
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_OPENSSL=	yes
-USES=		dos2unix gmake iconv:translit iconv:wchar_t ncurses readline
+USES=		dos2unix gmake iconv:wchar_t ncurses readline
 USE_RC_SUBR=	softether_bridge softether_client softether_server
 SUB_FILES=	vpncmd
 MAKE_JOBS_UNSAFE=	yes
