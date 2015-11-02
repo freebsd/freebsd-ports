@@ -798,7 +798,10 @@
     SUBDIR += p5-ZConf
     SUBDIR += p5-ZConf-Bookmarks
     SUBDIR += p5-ZeroMQ
+    SUBDIR += p5-ldap2pf
+    SUBDIR += p5-ldap2pw
     SUBDIR += p5-perl-ldap
+    SUBDIR += p5-srv2pf
     SUBDIR += packetdrill
     SUBDIR += packter-agent
     SUBDIR += panoptis
