@@ -7,32 +7,28 @@ PORTREVISION=	5
 CATEGORIES=	arabic print
 MASTER_SITES=	ftp://ftp.informatik.uni-stuttgart.de/pub/${PORTNAME}/
 DISTNAME=	arab${PORTVERSION:S/.//}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	TeX/LaTeX package to generate Arabic writing
 
 LICENSE=	LPPL10
 
+USES=		tar:tgz
 USE_TEX=	base texmf
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-ARABTEXDIRS=	fonts tex
-MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
-
-PLIST_SUB=	MKTEXLSR=${MKTEXLSR}
+PLIST_SUB=	MKTEXLSR=${LOCALBASE}/bin/mktexlsr
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_VARS=	ARABTEXDIRS+=doc
-
 do-install:
-.for dir in ${ARABTEXDIRS}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${TEXMFLOCALDIR}/${dir}
-	(cd ${WRKDIR}/${dir} && \
-	${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${TEXMFLOCALDIR}/${dir})
-.endfor
+	(cd ${WRKDIR} && ${COPYTREE_SHARE} "fonts tex" \
+		${STAGEDIR}${PREFIX}/${TEXMFLOCALDIR})
+
+do-install-DOCS-on:
+	(cd ${WRKDIR} && ${COPYTREE_SHARE} doc \
+		${STAGEDIR}${PREFIX}/${TEXMFLOCALDIR})
 
 .include <bsd.port.mk>
