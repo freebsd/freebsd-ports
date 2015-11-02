@@ -23,7 +23,8 @@ CONFLICTS_INSTALL+=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-1.[^8].[0-9]*
 
 LIB_DEPENDS+=		libapr-1.so:${PORTSDIR}/devel/apr1 \
 			libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
-			libexpat.so:${PORTSDIR}/textproc/expat2
+			libexpat.so:${PORTSDIR}/textproc/expat2 \
+			${LOCALBASE}/lib/libz.a:${PORTSDIR}/archivers/lzlib
 
 CONFIGURE_ARGS+=	--without-swig \
 			--with-sqlite=${LOCALBASE} \
