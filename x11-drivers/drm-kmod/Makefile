@@ -12,7 +12,7 @@ COMMENT=	FreeBSD 9.3 Kernel DRM driver
 
 LICENSE=	MIT
 
-USES=		tar:xz kmod
+USES=		kmod uidfix tar:xz
 ONLY_FOR_ARCHS=	i386 amd64
 
 PLIST_FILES=	${KMODDIR}/drm2_port.ko \
