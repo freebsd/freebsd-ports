@@ -33,7 +33,7 @@ bin/opt37
 %%EXTRAS%%bin/clang-apply-replacements37
 %%EXTRAS%%bin/clang-modernize37
 %%EXTRAS%%bin/clang-rename37
-%%CLANG%%bin/clang-tidy37
+%%EXTRAS%%bin/clang-tidy37
 %%LLD%%bin/lld37
 %%LLDB%%bin/argdumper37
 %%LLDB%%bin/lldb37
@@ -57,7 +57,7 @@ llvm37/bin/bugpoint
 %%CLANG%%llvm37/bin/clang-format
 %%EXTRAS%%llvm37/bin/clang-modernize
 %%EXTRAS%%llvm37/bin/clang-rename
-%%CLANG%%llvm37/bin/clang-tidy
+%%EXTRAS%%llvm37/bin/clang-tidy
 %%CLANG%%llvm37/bin/git-clang-format
 llvm37/bin/llc
 %%LLD%%llvm37/bin/lld
@@ -2207,9 +2207,9 @@ llvm37/lib/libLTO.so.3.7
 %%CLANG%%llvm37/lib/libclangAnalysis.so
 %%CLANG%%llvm37/lib/libclangAnalysis.so.%%LLVM_RELEASE%%
 %%CLANG%%llvm37/lib/libclangAnalysis.so.3.7
-%%CLANG%%llvm37/lib/libclangApplyReplacements.so
-%%CLANG%%llvm37/lib/libclangApplyReplacements.so.%%LLVM_RELEASE%%
-%%CLANG%%llvm37/lib/libclangApplyReplacements.so.3.7
+%%EXTRAS%%llvm37/lib/libclangApplyReplacements.so
+%%EXTRAS%%llvm37/lib/libclangApplyReplacements.so.%%LLVM_RELEASE%%
+%%EXTRAS%%llvm37/lib/libclangApplyReplacements.so.3.7
 %%CLANG%%llvm37/lib/libclangBasic.so
 %%CLANG%%llvm37/lib/libclangBasic.so.%%LLVM_RELEASE%%
 %%CLANG%%llvm37/lib/libclangBasic.so.3.7
