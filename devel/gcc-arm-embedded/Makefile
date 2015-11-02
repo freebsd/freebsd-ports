@@ -20,7 +20,6 @@ HTML_DESC=	Install HTML documentation
 PDF_DESC=	Install PDF documentation (requires TeX, it is huge)
 PYGDB_DESC=	Build and install pyhon-enabled gdb in addition to standard one
 
-
 PURE_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-gcc-isl-0.15-compatibility
 PURE_LIB_DEPENDS_OFF=	\
 			libexpat.so:${PORTSDIR}/textproc/expat2 \
@@ -35,6 +34,10 @@ PDF_USE=		TEX=base:build,tex:build,dvipsk:build
 PDF_BUILD_DEPENDS=	texi2dvi:${PORTSDIR}/print/texinfo
 OPTIONS_SUB=		yes
 PYGDB_USES=		python:2
+
+NOT_FOR_ARCHS=		aarch64 arm armeb armv6 armv6hf \
+			mips mips64 mips64el mipsel mipsn32
+NOT_FOR_ARCHS_REASON=	Very slow to build on emulator
 
 USES=			bison compiler cpe gmake iconv makeinfo tar:bzip2
 
@@ -80,7 +83,6 @@ BUNDLED_VERSION_MPFR=		2.4.2
 BUNDLED_VERSION_MPC=		0.8.1
 BUNDLED_VERSION_ISL=		0.11.1
 BUNDLED_VERSION_CLOOG=		0.18.0
-
 
 VAR_TO_SUBMAKE=	BUILD_DIR CC CFLAGS CHOSEN_COMPILER_TYPE CONFIG_SITE \
 		CONFIGURE_MAX_CMD_LEN CONFIGURE_SHELL CP CPP CPPFLAGS CXX \
