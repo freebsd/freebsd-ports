@@ -1400,6 +1400,7 @@
     SUBDIR += rubygem-jekyll-gist
     SUBDIR += rubygem-jekyll-paginate
     SUBDIR += rubygem-jekyll-sass-converter
+    SUBDIR += rubygem-jemoji
     SUBDIR += rubygem-jsmin
     SUBDIR += rubygem-kramdown
     SUBDIR += rubygem-kwalify
