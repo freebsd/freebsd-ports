@@ -1,0 +1,4 @@
+The srv2pf utility creates and updates PF tables based on SRV, A or
+AAAA records.
+
+WWW: https://github.com/dag-erling/srv2pf
