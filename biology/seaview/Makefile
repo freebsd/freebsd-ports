@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Multiple DNA/protein sequence alignment editor
 
+BROKEN=		checksum mismatch
+
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
