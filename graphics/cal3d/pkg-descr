@@ -16,4 +16,4 @@ whether it's a game or a VR application. The library provides methods to
 load your exported files, build characters, run animations, and access
 the data necessary to render them with 3D graphics. 
 
-WWW:	http://cal3d.sourceforge.net/
+WWW: http://gna.org/projects/cal3d/

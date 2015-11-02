@@ -77,7 +77,6 @@
     SUBDIR += cairo-reference
     SUBDIR += cairomm
     SUBDIR += cal3d
-    SUBDIR += cal3d-devel
     SUBDIR += camera
     SUBDIR += camerakit
     SUBDIR += cbrpager
