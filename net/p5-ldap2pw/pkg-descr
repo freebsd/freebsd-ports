@@ -1,0 +1,5 @@
+The ldap2pw utility synchronizes a local user database with an LDAP
+directory.  It is intended for systems where NSS modules cannot be
+used or access to the LDAP server is intermittent.
+
+WWW: https://github.com/dag-erling/ldap2pw
