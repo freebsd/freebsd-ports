@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Object Oriented Input System
 
+LICENSE=	ZLIB
+
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		autoreconf gmake libtool pathfix
