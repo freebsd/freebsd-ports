@@ -3,6 +3,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	5.2.1.s20151027
+PORTREVISION=	1
 CATEGORIES=	lang java
 MASTER_SITES=	GCC/snapshots/${DISTVERSION}
 PKGNAMESUFFIX=	${SUFFIX}-devel
@@ -50,6 +51,15 @@ OPTIONS_DEFAULT_i386=	JAVA
 OPTIONS_DEFAULT_amd64=	JAVA
 OPTIONS_EXCLUDE_DragonFly=	JAVA
 BOOTSTRAP_DESC=		Build using a full bootstrap
+
+.if exists(/usr/lib32/libc.so)
+OPTIONS_DEFINE_powerpc64=	MULTILIB
+OPTIONS_DEFAULT_powerpc64=	MULTILIB
+MULTILIB_DESC=		Build support for 32-bit and 64-bit targets
+MULTILIB_CONFIGURE_ENABLE=	multilib
+.else
+CONFIGURE_ARGS+=	--disable-multilib
+.endif
 
 .include <bsd.port.pre.mk>
 
