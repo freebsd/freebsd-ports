@@ -4219,6 +4219,8 @@
     SUBDIR += py-pytrie
     SUBDIR += py-pytz
     SUBDIR += py-pyutil
+    SUBDIR += py-pyvisa
+    SUBDIR += py-pyvisa-py
     SUBDIR += py-pyxml2obj
     SUBDIR += py-qpid
     SUBDIR += py-qserve
@@ -4477,8 +4479,6 @@
     SUBDIR += pysvn
     SUBDIR += pythk
     SUBDIR += pythontidy
-    SUBDIR += pyvisa
-    SUBDIR += pyvisa-py
     SUBDIR += qbzr
     SUBDIR += qca
     SUBDIR += qca-qt5

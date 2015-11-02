@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Python VISA bindings for GPIB, RS232, and USB instruments
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyvisa-py>0:${PORTSDIR}/devel/pyvisa-py
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyvisa-py>0:${PORTSDIR}/devel/py-pyvisa-py
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hgrecco
