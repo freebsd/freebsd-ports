@@ -1,11 +1,17 @@
---- rebar.config.script.orig	2015-10-27 13:33:15 UTC
+--- rebar.config.script.orig	2015-11-03 08:42:20 UTC
 +++ rebar.config.script
-@@ -1,7 +1,4 @@
--{ok, VSN} = application:get_key(rebar, vsn),
--[VSN1 | _] = string:tokens(VSN, "-"),
--[Maj, Min, Patch] = string:tokens(VSN1, "."),
--IsRebar3 = (list_to_integer(Maj) >= 3),
-+IsRebar3 = true.
- 
+@@ -1,13 +1,4 @@
+-IsRebar3 = case application:get_env(rebar, vsn) of
+-               {ok, VSN} ->
+-                   [VSN1 | _] = string:tokens(VSN, "-"),
+-                   [Maj, Min, Patch] = string:tokens(VSN1, "."),
+-                   (list_to_integer(Maj) >= 3);
+-               undefined ->
+-                   %% is mix is used
+-                   lists:keymember(mix, 1, application:loaded_applications())
+-            end,
+-
++IsRebar3 = true,
  
  Rebar2Deps = [
+               {idna, ".*",
