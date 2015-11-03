@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	renpy
-PORTVERSION=	6.99.6
+PORTVERSION=	6.99.7
 DISTVERSIONSUFFIX=-sdk
 CATEGORIES=	devel games
 MASTER_SITES=	http://www.renpy.org/dl/${PORTVERSION}/
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
 		libfreetype.so:${PORTSDIR}/print/freetype2
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game_sdl2>=6.99.6:${PORTSDIR}/devel/py-game_sdl2
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game_sdl2>=${PORTVERSION}:${PORTSDIR}/devel/py-game_sdl2
 
 # Upstream tends to reroll distfiles before moving under /release/
 PORTSCOUT=	site:http://www.renpy.org/dl/release/
