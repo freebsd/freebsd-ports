@@ -24,7 +24,7 @@ USES=		bison charsetfix gmake libtool localbase pathfix
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 1100000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100000
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-dds.yy
 .endif
 
