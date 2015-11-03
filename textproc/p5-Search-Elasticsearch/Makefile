@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Search-Elasticsearch
-PORTVERSION=	1.20
-PORTREVISION=	1
+PORTVERSION=	2.00
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DRTECH
@@ -15,8 +14,10 @@ COMMENT=	ElasticSearch API
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	p5-Any-URI-Escape>=0:${PORTSDIR}/www/p5-Any-URI-Escape \
+		p5-Devel-GlobalDestruction>=0:${PORTSDIR}/devel/p5-Devel-GlobalDestruction \
 		p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
 		p5-HTTP-Tiny>=0.043:${PORTSDIR}/www/p5-HTTP-Tiny \
+		p5-Hijk>=0.20:${PORTSDIR}/www/p5-Hijk \
 		p5-JSON-MaybeXS>=1.002002:${PORTSDIR}/converters/p5-JSON-MaybeXS \
 		p5-Log-Any>=1.02:${PORTSDIR}/devel/p5-Log-Any \
 		p5-Module-Runtime>=0:${PORTSDIR}/devel/p5-Module-Runtime \
