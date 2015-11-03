@@ -7924,4 +7924,5 @@ devel/pyvisa|devel/py-pyvisa|2015-11-02|Renamed to comply with Python ports poli
 devel/pyvisa-py|devel/py-pyvisa-py|2015-11-02|Renamed to comply with Python ports policy
 science/pyteomics.biolccc|science/py-pyteomics.biolccc|2015-11-02|Renamed to comply with Python ports policy
 science/pyteomics|science/py-pyteomics|2015-11-02|Renamed to comply with Python ports policy
-graphics/cal3d-devel|graphics/cal3d|2015-11-02|Dvelopment ceased in 2006 so set last devel version as stable
+graphics/cal3d-devel|graphics/cal3d|2015-11-02|Development ceased in 2006 so set last devel version as stable
+www/joomla31|www/joomla3|2015-11-03|Renamed to match upstream only supporting the latest 3.x release at a time
