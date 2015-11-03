@@ -1,0 +1,10 @@
+--- Makefile.orig	2014-10-10 13:11:38 UTC
++++ Makefile
+@@ -3,6 +3,7 @@
+ LIB=		distance
+ SRCS=		levenshtein.c hamming.c bloom.c needleman_wunsch.c jaccard.c
+ SRCS+=		minkowski.c damerau.c
++INCS=		distance.h
+ MAN=		distance.3
+ CFLAGS+=	-g -Wall -Wunused
+ LDADD+=		-g

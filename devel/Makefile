@@ -1142,6 +1142,7 @@
     SUBDIR += libdisasm
     SUBDIR += libdisorder
     SUBDIR += libdispatch
+    SUBDIR += libdistance
     SUBDIR += libdlmalloc
     SUBDIR += libdlna
     SUBDIR += libdnsres
