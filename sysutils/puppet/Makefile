@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	puppet
-PORTVERSION=	3.8.2
-PORTREVISION=	1
+PORTVERSION=	3.8.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	mmoll@FreeBSD.org
 COMMENT=	Configuration management framework written in Ruby
 
 LICENSE=	APACHE20
