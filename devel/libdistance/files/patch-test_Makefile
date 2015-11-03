@@ -1,0 +1,14 @@
+--- test/Makefile.orig	2014-10-10 13:11:38 UTC
++++ test/Makefile
+@@ -3,8 +3,10 @@
+ PROG=		test
+ CFLAGS+= 	-I.. -g
+ LDADD=		-L.. -ldistance -lm
+-NOMAN=		Yes
++MAN=		
+ 
+ CLEANFILES+=	test 
+ 
++BINDIR=		${PREFIX}/tests/libdistance
++
+ .include <bsd.prog.mk>
