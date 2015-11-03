@@ -2,6 +2,7 @@
 
 PORTNAME=	msp430-debug-stack
 PORTVERSION=	3.05.01.01
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ti.com/lit/sw/slac460n/ \
 		http://www.ti.com/lit/ug/slau320u/:doc1 \
@@ -20,7 +21,7 @@ LICENSE=	BSD3CLAUSE
 LIB_DEPENDS=	libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
 		libhidapi.so:${PORTSDIR}/comms/hidapi
 
-USES=		compiler:c++0x gmake zip:infozip
+USES=		compiler:c++11-lib gmake zip:infozip
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/MSPDebugStack_OS_Package
