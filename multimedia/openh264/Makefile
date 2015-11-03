@@ -3,7 +3,7 @@
 PORTNAME=	openh264
 PORTVERSION=	1.4.0
 DISTVERSIONPREFIX=v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 
 MAINTAINER=	gecko@FreeBSD.org
@@ -14,10 +14,14 @@ LICENSE=	BSD2CLAUSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	cisco
 
-USES=		cpe gmake
+USES=		compiler cpe gmake
 CPE_VENDOR=	cisco
 USE_LDCONFIG=	yes
+ASFLAGS+=	${ASFLAGS_${MACHINE}_${CHOSEN_COMPILER_TYPE}}
+ASFLAGS_arm_clang=	-no-integrated-as
+ASFLAGS_arm64_clang=	-no-integrated-as
 MAKE_ARGS=	OS=freebsd ARCH="${ARCH:S/amd64/x86_64/}" \
+		CCASFLAGS='$$(CFLAGS) ${ASFLAGS}' \
 		CFLAGS_OPT="" CFLAGS_DEBUG=""
 ALL_TARGET=	all
 
