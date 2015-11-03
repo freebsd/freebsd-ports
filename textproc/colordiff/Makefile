@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	colordiff
-PORTVERSION=	1.0.15
+PORTVERSION=	1.0.16
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.colordiff.org/ LOCAL/ehaupt
 
