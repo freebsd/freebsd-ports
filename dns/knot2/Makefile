@@ -50,6 +50,12 @@ OPTIONS_DEFINE=			DNSTAP FASTPARSER IDN
 DNSTAP_DESC=			dnstap support (see dnstap.info)
 DNSTAP_CONFIGURE_ENABLE=	dnstap
 DNSTAP_LIB_DEPENDS=		libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c
+# XXX: because `kdig_CPPFLAGS += $(DNSTAP_CFLAGS)' line is missing from
+# `src/Makefile.am' file (and thus pre-generated `src/Makefile.in') which
+# should contain "$libfstrm_CFLAGS $libprotobuf_c_CFLAGS" set by configure
+# script, provide it here explicitly as patching those files would result
+# in higher line count.  Ideally this bug should be fixed upstream.
+DNSTAP_CPPFLAGS=		-I${LOCALBASE}/include
 
 FASTPARSER_DESC=		Fast zone parser (demanding compilation)
 FASTPARSER_CONFIGURE_ENABLE=	fastparser

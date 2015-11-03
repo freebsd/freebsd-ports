@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	stanchion
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://s3.amazonaws.com/downloads.basho.com/stanchion/${PORTVERSION:R}/${PORTVERSION}/ \
 	http://downloads.basho.com.s3.amazonaws.com/stanchion/${PORTVERSION:R}/${PORTVERSION}/
@@ -15,7 +15,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/riak-erlang/bin/erlc:${PORTSDIR}/lang/erlang-ria
 
 USES=		gmake readline
 USE_RC_SUBR=	stanchion
-USE_GCC=	yes
 
 USERS=		stanchion
 GROUPS=		riak

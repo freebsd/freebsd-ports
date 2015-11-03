@@ -33,7 +33,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		Djblets-0.6.14.tar.gz:Djblets
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	yan_jingfeng@yahoo.com
+MAINTAINER=	ultima1252@gmail.com
 COMMENT=	Web frontend for Seafile
 
 LICENSE=	APACHE20

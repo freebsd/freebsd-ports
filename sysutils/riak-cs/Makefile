@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	riak-cs
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://s3.amazonaws.com/downloads.basho.com/riak-cs/${PORTVERSION:R}/${PORTVERSION}/ \
 	http://downloads.basho.com.s3.amazonaws.com/riak-cs/${PORTVERSION:R}/${PORTVERSION}/
@@ -15,7 +15,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/riak-erlang/bin/erlc:${PORTSDIR}/lang/erlang-ria
 
 USES=		gmake readline
 USE_RC_SUBR=	riak-cs
-USE_GCC=	yes
 
 USERS=		riakcs
 GROUPS=		riak

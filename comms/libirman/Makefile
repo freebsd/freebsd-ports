@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	libirman
-PORTVERSION=	0.4.5
-PORTREVISION=	2
+PORTVERSION=	0.4.6
 CATEGORIES=	comms
 MASTER_SITES=	SF/lirc/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	rand@meridian-enviro.com
+MAINTAINER=	rand@iteris.com
 COMMENT=	Library for Evation's Irman infrared receiver
 
 LICENSE=	LGPL20
@@ -17,5 +16,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	install-strip
+
+PORTDOCS=	README TECHNICAL
 
 .include <bsd.port.mk>

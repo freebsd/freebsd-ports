@@ -9,6 +9,7 @@ MASTER_SITES=	http://www.falvotech.com/content/cut/${PORTVERSION}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unit Testing Framework for C, C++, and Objective-C
 
+BROKEN=		Does not fetch
 USES=		python:run shebangfix
 SHEBANG_FILES=	*.py
 ALL_TARGET=	build

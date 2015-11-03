@@ -12,6 +12,7 @@ EXTRACT_SUFX=	.jar
 MAINTAINER=	m.sund@arcor.de
 COMMENT=	The ANTLR GUI Development Environment
 
+BROKEN=		Does not fetch
 NO_BUILD=	yes
 
 USE_JAVA=	yes

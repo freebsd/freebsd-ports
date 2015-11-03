@@ -1,0 +1,7 @@
+NOTE:
+
+The default configuration for the gmap port disables all optimizations
+to maintain compatibility with the widest range of systems.
+
+To get a binary optimized for your system please deinstall gmap and
+build from ports using "make config" to enable the SIMD option.

@@ -5,8 +5,8 @@
  ## Defaults specification
  ##
 +## Uncomment if needed to preserve environmental variables related to the
-+## FreeBSD pkg_* utilities and fetch.
-+# Defaults     env_keep += "PKG_PATH PKG_DBDIR PKG_TMPDIR TMPDIR PACKAGEROOT PACKAGESITE PKGDIR FTP_PASSIVE_MODE"
++## FreeBSD pkg utility and fetch.
++# Defaults     env_keep += "PKG_CACHEDIR PKG_DBDIR FTP_PASSIVE_MODE"
 +##
 +## Additionally uncomment if needed to preserve environmental variables
 +## related to portupgrade

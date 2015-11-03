@@ -92,7 +92,8 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/vsftpd.conf.5 ${STAGEDIR}${PREFIX}/man/man5/
 	${INSTALL_MAN} ${WRKSRC}/vsftpd.8 ${STAGEDIR}${PREFIX}/man/man8/
 	${MKDIR} ${STAGEDIR}/var/ftp ${STAGEDIR}${PREFIX}/share/vsftpd/empty
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCFILES:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 .for i in EXAMPLE SECURITY
@@ -100,6 +101,5 @@ do-install:
 	${CP} -p -R -L ${WRKSRC}/${i}/./ ${STAGEDIR}${DOCSDIR}/${i}/
 	${CHMOD} -R -L a+rX,go-w ${STAGEDIR}${DOCSDIR}/${i}/
 .endfor
-.endif
 
 .include <bsd.port.mk>

@@ -13,6 +13,8 @@ COMMENT=	GNOME applet to tile the opened windows
 LICENSE=	GPLv2
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 USE_GNOME=	pygtk2
 USES=		python
 USE_PYTHON=	distutils

@@ -58,6 +58,633 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="698403a7-803d-11e5-ab94-002590263bf5">
+    <topic>codeigniter -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>codeigniter</name>
+	<range><lt>2.2.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The CodeIgniter changelog reports:</p>
+	<blockquote cite="https://codeigniter.com/userguide2/changelog.html">
+	  <p>Fixed an XSS attack vector in Security Library method
+	    xss_clean().</p>
+	  <p>Changed Config Library method base_url() to fallback to
+	    ``$_SERVER['SERVER_ADDR']`` in order to avoid Host header
+	    injections.</p>
+	  <p>Changed CAPTCHA Helper to try to use the operating system's PRNG
+	    first.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/203403</freebsdpr>
+      <url>https://codeigniter.com/userguide2/changelog.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-31</discovery>
+      <entry>2015-11-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="017a493f-7db6-11e5-a762-14dae9d210b8">
+    <topic>openafs -- information disclosure</topic>
+    <affects>
+      <package>
+	<name>openafs</name>
+	<range><lt>1.6.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenAFS development team reports:</p>
+	<blockquote cite="http://openafs.org/pages/security/OPENAFS-SA-2015-007.txt">
+	  <p>When constructing an Rx acknowledgment (ACK) packet, Andrew-derived Rx
+	    implementations do not initialize three octets of data that are padding
+	    in the C language structure and were inadvertently included in the wire
+	    protocol (CVE-2015-7762).  Additionally, OpenAFS Rx in versions 1.5.75
+	    through 1.5.78, 1.6.0 through 1.6.14, and 1.7.0 through 1.7.32 include
+	    a variable-length padding at the end of the ACK packet, in an attempt to
+	    detect the path MTU, but only four octets of the additional padding are
+	    initialized (CVE-2015-7763).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://openafs.org/pages/security/OPENAFS-SA-2015-007.txt</url>
+      <cvename>CVE-2015-7762</cvename>
+      <cvename>CVE-2015-7763</cvename>
+    </references>
+    <dates>
+      <discovery>2015-10-28</discovery>
+      <entry>2015-10-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4b9393b8-7c0c-11e5-a010-080027ddead3">
+    <topic>xscreensaver - lock bypass</topic>
+    <affects>
+      <package>
+	<name>xscreensaver</name>
+	<name>xscreensaver-gnome</name>
+	<name>xscreensaver-gnome-hacks</name>
+	<range><lt>5.34</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>RedHat bugzilla reports:</p>
+	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=1274452">
+	  <p>In dual screen configurations, unplugging one screen will cause
+	    xscreensaver to crash, leaving the screen unlocked.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.jwz.org/xscreensaver/changelog.html</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=1274452</url>
+    </references>
+    <dates>
+      <discovery>2015-10-24</discovery>
+      <entry>2015-10-27</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2a4a112a-7c1b-11e5-bd77-0800275369e2">
+    <topic>lldpd -- Buffer overflow</topic>
+    <affects>
+      <package>
+	<name>lldpd</name>
+	<range><ge>0.5.6</ge><lt>0.7.19</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The lldpd developer Vincent Bernat reports:</p>
+	<blockquote cite="https://github.com/vincentbernat/lldpd/raw/0.7.19/NEWS">
+	  <p>A buffer overflow may allow arbitrary code execution
+	    only if hardening was disabled.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/vincentbernat/lldpd/raw/0.7.19/NEWS</url>
+    </references>
+    <dates>
+      <discovery>2015-10-04</discovery>
+      <entry>2015-10-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="24e4d383-7b3e-11e5-a250-68b599b52a02">
+    <topic>wireshark -- Pcapng file parser crash</topic>
+    <affects>
+      <package>
+	<name>wireshark</name>
+	<name>wireshark-lite</name>
+	<name>wireshark-qt5</name>
+	<name>tshark</name>
+	<name>tshark-lite</name>
+	<range><lt>1.12.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Wireshark development team reports:</p>
+	<blockquote cite="https://www.wireshark.org/docs/relnotes/wireshark-1.12.8.html">
+	  <p>The following vulnerability has been fixed.</p>
+	  <ul>
+	    <li><p>wnpa-sec-2015-30</p>
+	      <p>Pcapng file parser crash. (Bug 11455)</p></li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.wireshark.org/docs/relnotes/wireshark-1.12.8.html</url>
+      <cvename>CVE-2015-7830</cvename>
+    </references>
+    <dates>
+      <discovery>2015-10-14</discovery>
+      <entry>2015-10-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0ebc6e78-7ac6-11e5-b35a-002590263bf5">
+    <topic>Joomla! -- Core - SQL Injection/ACL Violation vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>joomla3</name>
+	<range><ge>3.2.0</ge><lt>3.4.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The JSST and the Joomla! Security Center report:</p>
+	<blockquote cite="http://developer.joomla.org/security-centre/628-20151001-core-sql-injection.html">
+	  <h2>[20151001] - Core - SQL Injection</h2>
+	  <p>Inadequate filtering of request data leads to a SQL Injection
+	    vulnerability.</p>
+	</blockquote>
+	<blockquote cite="http://developer.joomla.org/security-centre/629-20151002-core-acl-violations.html">
+	  <h2>[20151002] - Core - ACL Violations</h2>
+	  <p>Inadequate ACL checks in com_contenthistory provide potential read
+	    access to data which should be access restricted.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7297</cvename>
+      <cvename>CVE-2015-7857</cvename>
+      <cvename>CVE-2015-7858</cvename>
+      <cvename>CVE-2015-7859</cvename>
+      <url>http://developer.joomla.org/security-centre/628-20151001-core-sql-injection.html</url>
+      <url>http://developer.joomla.org/security-centre/629-20151002-core-acl-violations.html</url>
+      <url>https://www.joomla.org/announcements/release-news/5634-joomla-3-4-5-released.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-22</discovery>
+      <entry>2015-10-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="03e54e42-7ac6-11e5-b35a-002590263bf5">
+    <topic>Joomla! -- Core - ACL Violation vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>joomla3</name>
+	<range><ge>3.0.0</ge><lt>3.4.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The JSST and the Joomla! Security Center report:</p>
+	<blockquote cite="http://developer.joomla.org/security-centre/630-20151003-core-acl-violations.html">
+	  <h2>[20151003] - Core - ACL Violations</h2>
+	  <p>Inadequate ACL checks in com_content provide potential read access
+	    to data which should be access restricted.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7899</cvename>
+      <url>http://developer.joomla.org/security-centre/630-20151003-core-acl-violations.html</url>
+      <url>https://www.joomla.org/announcements/release-news/5634-joomla-3-4-5-released.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-22</discovery>
+      <entry>2015-10-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f8c37915-7ac5-11e5-b35a-002590263bf5">
+    <topic>Joomla! -- Core - XSS Vulnerability</topic>
+    <affects>
+      <package>
+	<name>joomla3</name>
+	<range><ge>3.4.0</ge><lt>3.4.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The JSST and the Joomla! Security Center report:</p>
+	<blockquote cite="http://developer.joomla.org/security-centre/626-20150908-core-xss-vulnerability.html">
+	  <h2>[20150908] - Core - XSS Vulnerability</h2>
+	  <p>Inadequate escaping leads to XSS vulnerability in login module.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-6939</cvename>
+      <url>http://developer.joomla.org/security-centre/626-20150908-core-xss-vulnerability.html</url>
+      <url>https://www.joomla.org/announcements/release-news/5628-joomla-3-4-4-released.html</url>
+    </references>
+    <dates>
+      <discovery>2015-09-08</discovery>
+      <entry>2015-10-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ec2d1cfd-7ac5-11e5-b35a-002590263bf5">
+    <topic>Joomla! -- Core - CSRF Protection vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>joomla3</name>
+	<range><ge>3.2.0</ge><lt>3.4.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The JSST and the Joomla! Security Center report:</p>
+	<blockquote cite="http://developer.joomla.org/security-centre/618-20150602-core-remote-code-execution.html">
+	  <h2>[20150602] - Core - CSRF Protection</h2>
+	  <p>Lack of CSRF checks potentially enabled uploading malicious code.
+	    </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5397</cvename>
+      <url>http://developer.joomla.org/security-centre/618-20150602-core-remote-code-execution.html</url>
+      <url>https://www.joomla.org/announcements/release-news/5589-joomla-3-4-2-released.html</url>
+    </references>
+    <dates>
+      <discovery>2015-06-30</discovery>
+      <entry>2015-10-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="deaba148-7ac5-11e5-b35a-002590263bf5">
+    <topic>Joomla! -- Core - Open Redirect vulnerability</topic>
+    <affects>
+      <package>
+	<name>joomla3</name>
+	<range><ge>3.0.0</ge><lt>3.4.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The JSST and the Joomla! Security Center report:</p>
+	<blockquote cite="http://developer.joomla.org/security-centre/617-20150601-core-open-redirect.html">
+	  <h2>[20150601] - Core - Open Redirect</h2>
+	  <p>Inadequate checking of the return value allowed to redirect to an
+	    external page.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5608</cvename>
+      <url>http://developer.joomla.org/security-centre/617-20150601-core-open-redirect.html</url>
+      <url>https://www.joomla.org/announcements/release-news/5589-joomla-3-4-2-released.html</url>
+    </references>
+    <dates>
+      <discovery>2015-06-30</discovery>
+      <entry>2015-10-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="cec4d01a-7ac5-11e5-b35a-002590263bf5">
+    <topic>Joomla! -- Core - Remote File Execution/Denial of Service vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>joomla3</name>
+	<range><lt>3.2.6</lt></range>
+	<range><ge>3.3.0</ge><lt>3.3.5</lt></range>
+      </package>
+      <package>
+	<name>joomla2</name>
+	<range><ge>2.5.4</ge><lt>2.5.26</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The JSST and the Joomla! Security Center report:</p>
+	<blockquote cite="http://developer.joomla.org/security-centre/595-20140903-core-remote-file-inclusion.html">
+	  <h2>[20140903] - Core - Remote File Inclusion</h2>
+	  <p>Inadequate checking allowed the potential for remote files to be
+	    executed.</p>
+	</blockquote>
+	<blockquote cite="http://developer.joomla.org/security-centre/596-20140904-core-denial-of-service.html">
+	  <h2>[20140904] - Core - Denial of Service</h2>
+	  <p>Inadequate checking allowed the potential for a denial of service
+	    attack.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-7228</cvename>
+      <cvename>CVE-2014-7229</cvename>
+      <url>http://developer.joomla.org/security-centre/595-20140903-core-remote-file-inclusion.html</url>
+      <url>http://developer.joomla.org/security-centre/596-20140904-core-denial-of-service.html</url>
+      <url>https://www.joomla.org/announcements/release-news/5567-joomla-3-3-5-released.html</url>
+      <url>https://www.joomla.org/announcements/release-news/5566-joomla-2-5-26-released.html</url>
+    </references>
+    <dates>
+      <discovery>2014-09-30</discovery>
+      <entry>2015-10-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="beb3d5fc-7ac5-11e5-b35a-002590263bf5">
+    <topic>Joomla! -- Core - Unauthorised Login vulnerability</topic>
+    <affects>
+      <package>
+	<name>joomla3</name>
+	<range><lt>3.2.5</lt></range>
+	<range><ge>3.3.0</ge><lt>3.3.4</lt></range>
+      </package>
+      <package>
+	<name>joomla2</name>
+	<range><lt>2.5.25</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The JSST and the Joomla! Security Center report:</p>
+	<blockquote cite="http://developer.joomla.org/security-centre/594-20140902-core-unauthorised-logins.html">
+	  <h2>[20140902] - Core - Unauthorised Logins</h2>
+	  <p>Inadequate checking allowed unauthorised logins via LDAP
+	    authentication.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-6632</cvename>
+      <url>http://developer.joomla.org/security-centre/594-20140902-core-unauthorised-logins.html</url>
+      <url>https://www.joomla.org/announcements/release-news/5564-joomla-3-3-4-released.html</url>
+      <url>https://www.joomla.org/announcements/release-news/5563-joomla-2-5-25-released.html</url>
+    </references>
+    <dates>
+      <discovery>2014-09-23</discovery>
+      <entry>2015-10-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="adbb32d9-7ac5-11e5-b35a-002590263bf5">
+    <topic>Joomla! -- Core - XSS Vulnerability</topic>
+    <affects>
+      <package>
+	<name>joomla3</name>
+	<range><ge>3.2.0</ge><lt>3.2.5</lt></range>
+	<range><ge>3.3.0</ge><lt>3.3.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The JSST and the Joomla! Security Center report:</p>
+	<blockquote cite="http://developer.joomla.org/security-centre/593-20140901-core-xss-vulnerability.html">
+	  <h2>[20140901] - Core - XSS Vulnerability</h2>
+	  <p>Inadequate escaping leads to XSS vulnerability in com_media.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-6631</cvename>
+      <url>http://developer.joomla.org/security-centre/593-20140901-core-xss-vulnerability.html</url>
+      <url>https://www.joomla.org/announcements/release-news/5564-joomla-3-3-4-released.html</url>
+    </references>
+    <dates>
+      <discovery>2014-09-23</discovery>
+      <entry>2015-10-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="75f39413-7a00-11e5-a2a1-002590263bf5">
+    <topic>drupal -- open redirect vulnerability</topic>
+    <affects>
+      <package>
+	<name>drupal7</name>
+	<range><lt>7.41</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Drupal development team reports:</p>
+	<blockquote cite="https://www.drupal.org/SA-CORE-2015-004">
+	  <p>The Overlay module in Drupal core displays administrative pages
+	    as a layer over the current page (using JavaScript), rather than
+	    replacing the page in the browser window. The Overlay module does
+	    not sufficiently validate URLs prior to displaying their contents,
+	    leading to an open redirect vulnerability.</p>
+	  <p>This vulnerability is mitigated by the fact that it can only be
+	    used against site users who have the "Access the administrative
+	    overlay" permission, and that the Overlay module must be enabled.
+	    </p>
+	  <p>An incomplete fix for this issue was released as part of
+	    SA-CORE-2015-002.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7943</cvename>
+      <url>https://www.drupal.org/SA-CORE-2015-004</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/10/23/6</url>
+    </references>
+    <dates>
+      <discovery>2015-10-21</discovery>
+      <entry>2015-10-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="08d11134-79c5-11e5-8987-6805ca0b3d42">
+    <topic>phpMyAdmin -- Content spoofing vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><ge>4.4.0</ge><lt>4.4.15.1</lt></range>
+	<range><ge>4.5.0</ge><lt>4.5.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="https://www.phpmyadmin.net/security/PMASA-2015-5/">
+	  <p>This vulnerability allows an attacker to perform a
+	    content spoofing attack using the phpMyAdmin's redirection
+	    mechanism to external sites.</p>
+	  <p>We consider this vulnerability to be non critical since
+	    the spoofed content is escaped and no HTML injection is
+	    possible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.phpmyadmin.net/security/PMASA-2015-5/</url>
+      <cvename>CVE-2015-7873</cvename>
+    </references>
+    <dates>
+      <discovery>2015-10-23</discovery>
+      <entry>2015-10-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b973a763-7936-11e5-a2a1-002590263bf5">
+    <topic>mediawiki -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mediawiki123</name>
+	<range><lt>1.23.11</lt></range>
+      </package>
+      <package>
+	<name>mediawiki124</name>
+	<range><lt>1.24.4</lt></range>
+      </package>
+      <package>
+	<name>mediawiki125</name>
+	<range><lt>1.25.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MediaWiki reports:</p>
+	<blockquote cite="https://lists.wikimedia.org/pipermail/mediawiki-announce/2015-October/000181.html">
+	  <p>Wikipedia user RobinHood70 reported two issues in the chunked
+	    upload API. The API failed to correctly stop adding new chunks to
+	    the upload when the reported size was exceeded (T91203), allowing
+	    a malicious users to upload add an infinite number of chunks for a
+	    single file upload. Additionally, a malicious user could upload
+	    chunks of 1 byte for very large files, potentially creating a very
+	    large number of files on the server's filesystem (T91205).</p>
+	  <p>Internal review discovered that it is not possible to throttle file
+	    uploads.</p>
+	  <p>Internal review discovered a missing authorization check when
+	    removing suppression from a revision. This allowed users with the
+	    'viewsuppressed' user right but not the appropriate
+	    'suppressrevision' user right to unsuppress revisions.</p>
+	  <p>Richard Stanway from teamliquid.net reported that thumbnails of PNG
+	    files generated with ImageMagick contained the local file path in
+	    the image metadata.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://lists.wikimedia.org/pipermail/mediawiki-announce/2015-October/000181.html</url>
+      <url>https://phabricator.wikimedia.org/T91203</url>
+      <url>https://phabricator.wikimedia.org/T91205</url>
+      <url>https://phabricator.wikimedia.org/T91850</url>
+      <url>https://phabricator.wikimedia.org/T95589</url>
+      <url>https://phabricator.wikimedia.org/T108616</url>
+    </references>
+    <dates>
+      <discovery>2015-10-16</discovery>
+      <entry>2015-10-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c4a18a12-77fc-11e5-a687-206a8a720317">
+    <topic>ntp -- 13 low- and medium-severity vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ntp</name>
+	<range><lt>4.2.8p4</lt></range>
+      </package>
+      <package>
+	<name>ntp-devel</name>
+	<range><lt>4.3.76</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ntp.org reports:</p>
+	<blockquote cite="http://support.ntp.org/bin/view/Main/SecurityNotice#Recent_Vulnerabilities">
+	  <p>NTF's NTP Project has been notified of the following 13 low-
+	     and medium-severity vulnerabilities that are fixed in
+	     ntp-4.2.8p4, released on Wednesday, 21 October 2015:</p>
+	  <ul>
+	    <li>Bug 2941 CVE-2015-7871 NAK to the Future: Symmetric
+		association authentication bypass via crypto-NAK
+		(Cisco ASIG)</li>
+	    <li>Bug 2922 CVE-2015-7855 decodenetnum() will ASSERT botch
+		instead of returning FAIL on some bogus values (IDA)</li>
+	    <li>Bug 2921 CVE-2015-7854 Password Length Memory Corruption
+		Vulnerability. (Cisco TALOS)</li>
+	    <li>Bug 2920 CVE-2015-7853 Invalid length data provided by a
+		custom refclock driver could cause a buffer overflow.
+		(Cisco TALOS)</li>
+	    <li>Bug 2919 CVE-2015-7852 ntpq atoascii() Memory Corruption
+		Vulnerability. (Cisco TALOS)</li>
+	    <li>Bug 2918 CVE-2015-7851 saveconfig Directory Traversal
+		Vulnerability. (OpenVMS) (Cisco TALOS)</li>
+	    <li>Bug 2917 CVE-2015-7850 remote config logfile-keyfile.
+		(Cisco TALOS)</li>
+	    <li>Bug 2916 CVE-2015-7849 trusted key use-after-free.
+		(Cisco TALOS)</li>
+	    <li>Bug 2913 CVE-2015-7848 mode 7 loop counter underrun.
+		(Cisco TALOS)</li>
+	    <li>Bug 2909 CVE-2015-7701 Slow memory leak in CRYPTO_ASSOC.
+		(Tenable)</li>
+	    <li>Bug 2902 : CVE-2015-7703 configuration directives "pidfile"
+		and "driftfile" should only be allowed locally. (RedHat)</li>
+	    <li>Bug 2901 : CVE-2015-7704, CVE-2015-7705 Clients that
+		receive a KoD should validate the origin timestamp field.
+		(Boston University)</li>
+	    <li>Bug 2899 : CVE-2015-7691, CVE-2015-7692, CVE-2015-7702
+		Incomplete autokey data packet length checks. (Tenable)</li>
+	  </ul>
+	  <p>The only generally-exploitable bug in the above list is the
+	     crypto-NAK bug, which has a CVSS2 score of 6.4.</p>
+	  <p>Additionally, three bugs that have already been fixed in
+	     ntp-4.2.8 but were not fixed in ntp-4.2.6 as it was EOL'd
+	     have a security component, but are all below 1.8 CVSS score,
+	     so we're reporting them here:</p>
+	  <ul>
+	    <li>Bug 2382 : Peer precision &lt; -31 gives division by zero</li>
+	    <li>Bug 1774 : Segfaults if cryptostats enabled when built
+		without OpenSSL</li>
+	    <li>Bug 1593 : ntpd abort in free() with logconfig syntax error</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7691</cvename>
+      <cvename>CVE-2015-7692</cvename>
+      <cvename>CVE-2015-7701</cvename>
+      <cvename>CVE-2015-7702</cvename>
+      <cvename>CVE-2015-7703</cvename>
+      <cvename>CVE-2015-7704</cvename>
+      <cvename>CVE-2015-7705</cvename>
+      <cvename>CVE-2015-7848</cvename>
+      <cvename>CVE-2015-7849</cvename>
+      <cvename>CVE-2015-7850</cvename>
+      <cvename>CVE-2015-7851</cvename>
+      <cvename>CVE-2015-7852</cvename>
+      <cvename>CVE-2015-7853</cvename>
+      <cvename>CVE-2015-7854</cvename>
+      <cvename>CVE-2015-7855</cvename>
+      <cvename>CVE-2015-7871</cvename>
+      <url>http://support.ntp.org/bin/view/Main/SecurityNotice#Recent_Vulnerabilities</url>
+    </references>
+    <dates>
+      <discovery>2015-10-21</discovery>
+      <entry>2015-10-21</entry>
+      <modified>2015-10-23</modified>
+    </dates>
+  </vuln>
+
   <vuln vid="95602550-76cf-11e5-a2a1-002590263bf5">
     <topic>codeigniter -- multiple XSS vulnerabilities</topic>
     <affects>
@@ -238,7 +865,7 @@ Notes:
     <affects>
       <package>
 	<name>libressl</name>
-	<range><lt>2.2.3</lt></range>
+	<range><lt>2.2.4</lt></range>
       </package>
     </affects>
     <description>
@@ -261,6 +888,7 @@ Notes:
     <dates>
       <discovery>2015-10-15</discovery>
       <entry>2015-10-16</entry>
+      <modified>2015-10-26</modified>
     </dates>
   </vuln>
 
@@ -1998,12 +2626,14 @@ Notes:
     <references>
       <cvename>CVE-2015-5714</cvename>
       <cvename>CVE-2015-5715</cvename>
+      <cvename>CVE-2015-7989</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/10/28/1</url>
       <url>https://wordpress.org/news/2015/09/wordpress-4-3-1/</url>
     </references>
     <dates>
       <discovery>2015-09-15</discovery>
       <entry>2015-09-15</entry>
-      <modified>2015-09-15</modified>
+      <modified>2015-10-29</modified>
     </dates>
   </vuln>
 

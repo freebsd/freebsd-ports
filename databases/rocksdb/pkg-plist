@@ -31,6 +31,7 @@ include/rocksdb/perf_level.h
 include/rocksdb/rate_limiter.h
 include/rocksdb/slice.h
 include/rocksdb/slice_transform.h
+include/rocksdb/snapshot.h
 include/rocksdb/sst_dump_tool.h
 include/rocksdb/statistics.h
 include/rocksdb/status.h
@@ -50,11 +51,13 @@ include/rocksdb/utilities/geo_db.h
 include/rocksdb/utilities/info_log_finder.h
 include/rocksdb/utilities/json_document.h
 include/rocksdb/utilities/leveldb_options.h
-include/rocksdb/utilities/optimistic_transaction.h
 include/rocksdb/utilities/optimistic_transaction_db.h
 include/rocksdb/utilities/spatial_db.h
 include/rocksdb/utilities/stackable_db.h
 include/rocksdb/utilities/table_properties_collectors.h
+include/rocksdb/utilities/transaction.h
+include/rocksdb/utilities/transaction_db.h
+include/rocksdb/utilities/transaction_db_mutex.h
 include/rocksdb/utilities/utility_db.h
 include/rocksdb/utilities/write_batch_with_index.h
 include/rocksdb/version.h

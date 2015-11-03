@@ -59,11 +59,11 @@ CAPIDOCS_BUILD_DEPENDS=	doxygen>0:${PORTSDIR}/devel/doxygen \
 			dot:${PORTSDIR}/graphics/graphviz
 CAPIDOCS_CONFIGURE_ENABLE=	install-capi
 LIBEDIT_BUILD_DEPENDS=	libedit>=0:${PORTSDIR}/devel/libedit
-LIBEDIT_CONFIGURE_ON=	--enable-libedit --with-libedit-prefix=${LOCALBASE}
+LIBEDIT_CONFIGURE_ON=	--enable-libedit --with-libedit-dir=${LIBEDITPREFIX}
 LIBEDIT_RUN_DEPENDS=	libedit>=0:${PORTSDIR}/devel/libedit
 RDOC_CONFIGURE_ENABLE=	install-rdoc
 READLINE_BUILD_DEPENDS=	readline>=0:${PORTSDIR}/devel/readline
-READLINE_CONFIGURE_ON=	--disable-libedit --with-readline-prefix=${LOCALBASE}
+READLINE_CONFIGURE_ON=	--disable-libedit --with-readline-dir=${READLINEPREFIX}
 READLINE_RUN_DEPENDS=	readline>=0:${PORTSDIR}/devel/readline
 
 CPE_VENDOR=	ruby-lang

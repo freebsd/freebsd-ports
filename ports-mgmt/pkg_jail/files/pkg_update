@@ -1,5 +1,5 @@
 #!/bin/sh
-#	$Id: pkg_update,v 1.87 2015/09/26 21:31:24 cvs Exp $
+#	$Id: pkg_update,v 1.88 2015/10/23 07:52:22 cvs Exp $
 #	$FreeBSD$
 #
 # Copyright (c) 2001-2006
@@ -419,7 +419,10 @@ port_uptodate() {
 	fi
 	#
 	for fulldir in `
-	env ${pkg_env} make all-depends-list |
+	(
+		env ${pkg_env} make build-depends-list
+		env ${pkg_env} make package-depends-list | cut -d " " -f2
+	) |
 	sed -f "${depends}"`
 	do
 		dir="${fulldir##${portsdir}/}"
@@ -1489,7 +1492,7 @@ make_version_list() {
 		then
 			pkg_version -v -L = /dev/null | grep -v bsdpan- > "${cache}"
 		else
-			${pkg} version -v -L = /dev/null | grep -v bsdpan- > "${cache}"
+			${pkg} version -v -L = | grep -v bsdpan- > "${cache}"
 		fi
 	fi
 }

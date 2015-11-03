@@ -12,6 +12,8 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Stani's Python Editor
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 NO_BUILD=	yes
 
 USES=		python

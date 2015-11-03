@@ -25,9 +25,18 @@
 %%WWWDIR%%/controller/ReminderController.php
 %%WWWDIR%%/controller/SearchController.php
 %%WWWDIR%%/controller/SettingsController.php
+%%WWWDIR%%/controls/win32/libwbxml/LICENSE.GPL
+%%WWWDIR%%/controls/win32/libwbxml/libexpat.dll
+%%WWWDIR%%/controls/win32/libwbxml/libwbxml2.dll
+%%WWWDIR%%/controls/win32/libwbxml/wbxml2xml.exe
+%%WWWDIR%%/controls/win32/libwbxml/xml2wbxml.exe
+%%WWWDIR%%/controls/win32/unzip.exe
+%%WWWDIR%%/controls/win32/zip.exe
 %%WWWDIR%%/favicon.ico
 %%WWWDIR%%/go/GO.php
 %%WWWDIR%%/go/base/Config.php
+%%WWWDIR%%/go/base/Config.php.bak
+%%WWWDIR%%/go/base/Config.php.orig
 %%WWWDIR%%/go/base/Language.php
 %%WWWDIR%%/go/base/Model.php
 %%WWWDIR%%/go/base/Module.php
@@ -464,6 +473,7 @@
 %%WWWDIR%%/go/vendor/SabreDAV/ChangeLog
 %%WWWDIR%%/go/vendor/SabreDAV/LICENSE
 %%WWWDIR%%/go/vendor/SabreDAV/README.md
+%%WWWDIR%%/go/vendor/SabreDAV/bin/build.php
 %%WWWDIR%%/go/vendor/SabreDAV/bin/googlecode_upload.py
 %%WWWDIR%%/go/vendor/SabreDAV/bin/migrateto17.php
 %%WWWDIR%%/go/vendor/SabreDAV/bin/naturalselection.py
@@ -620,6 +630,7 @@
 %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAV/Exception/Forbidden.php
 %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAV/Exception/InsufficientStorage.php
 %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAV/Exception/InvalidResourceType.php
+%%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAV/Exception/LengthRequired.php
 %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAV/Exception/LockTokenMatchesRequestUri.php
 %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAV/Exception/Locked.php
 %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAV/Exception/MethodNotAllowed.php
@@ -656,6 +667,7 @@
 %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAV/Node.php
 %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAV/ObjectTree.php
 %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAV/PartialUpdate/IFile.php
+%%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAV/PartialUpdate/IPatchSupport.php
 %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAV/PartialUpdate/Plugin.php
 %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAV/Property.php
 %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAV/Property/GetLastModified.php
@@ -807,6 +819,8 @@
 %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV/FSExt/NodeTest.php
 %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV/FSExt/ServerTest.php
 %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV/HTTPPreferParsingTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV/HttpDeleteTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV/HttpPutTest.php
 %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV/Issue33Test.php
 %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV/Locks/Backend/AbstractTest.php
 %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV/Locks/Backend/FSTest.php
@@ -816,10 +830,13 @@
 %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV/Locks/GetIfConditionsTest.php
 %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV/Locks/MSWordTest.php
 %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV/Locks/PluginTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV/Mock/Collection.php
+%%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV/Mock/File.php
 %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV/Mount/PluginTest.php
 %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV/ObjectTreeTest.php
 %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV/PartialUpdate/FileMock.php
 %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV/PartialUpdate/PluginTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV/PartialUpdate/SpecificationTest.php
 %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV/Property/GetLastModifiedTest.php
 %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV/Property/HrefListTest.php
 %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV/Property/HrefTest.php
@@ -896,6 +913,87 @@
 %%WWWDIR%%/go/vendor/SabreDAV/tests/bootstrap.php
 %%WWWDIR%%/go/vendor/SabreDAV/tests/composer.vobject3.json
 %%WWWDIR%%/go/vendor/SabreDAV/tests/phpunit.xml
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/autoload.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/composer/ClassLoader.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/composer/autoload_classmap.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/composer/autoload_namespaces.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/composer/autoload_psr4.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/composer/autoload_real.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/composer/installed.json
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/.gitignore
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/ChangeLog
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/LICENSE
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/README.md
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/bin/bench.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/bin/generateicalendardata.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/bin/vobjectvalidate.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/composer.json
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Component.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Component/VAlarm.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Component/VCalendar.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Component/VCard.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Component/VEvent.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Component/VFreeBusy.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Component/VJournal.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Component/VTodo.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/DateTimeParser.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Document.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/ElementList.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/FreeBusyGenerator.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Node.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Parameter.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/ParseException.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Property.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Property/Compound.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Property/DateTime.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Property/MultiDateTime.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Reader.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/RecurrenceIterator.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Splitter/ICalendar.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Splitter/SplitterInterface.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Splitter/VCard.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/StringUtil.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/TimeZoneUtil.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/Version.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/lib/Sabre/VObject/includes.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Component/VAlarmTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Component/VCalendarTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Component/VCardTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Component/VEventTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Component/VFreeBusyTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Component/VJournalTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Component/VTodoTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/ComponentTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/DateTimeParserTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/DocumentTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/ElementListTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/EmClientTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/FreeBusyGeneratorTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Issue153Test.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Issue154Test.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Issue48Test.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Issue50Test.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/ParameterTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Property/CompoundTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Property/DateTimeTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Property/MultiDateTimeTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/PropertyTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/ReaderTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/RecurrenceIteratorFifthTuesdayProblemTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/RecurrenceIteratorIncorrectExpandTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/RecurrenceIteratorInfiniteLoopProblemTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/RecurrenceIteratorMinusOneProblemTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/RecurrenceIteratorMissingOverriddenTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/RecurrenceIteratorTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/SlashRTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Splitter/ICalendarTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/Splitter/VCardTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/StringUtilTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/TimeZoneUtilTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/VersionTest.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/Sabre/VObject/issue153.vcf
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/bootstrap.php
+%%WWWDIR%%/go/vendor/SabreDAV/vendor/sabre/vobject/tests/phpunit.xml
 %%WWWDIR%%/go/vendor/VObject/.gitignore
 %%WWWDIR%%/go/vendor/VObject/.travis.yml
 %%WWWDIR%%/go/vendor/VObject/ChangeLog
@@ -911,18 +1009,25 @@
 %%WWWDIR%%/go/vendor/VObject/doc/usage_3.md
 %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/Cli.php
 %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/Component.php
+%%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/Component/Available.php
 %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/Component/VAlarm.php
+%%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/Component/VAvailability.php
 %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/Component/VCalendar.php
 %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/Component/VCard.php
 %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/Component/VEvent.php
 %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/Component/VFreeBusy.php
 %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/Component/VJournal.php
+%%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/Component/VTimeZone.php
 %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/Component/VTodo.php
 %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/DateTimeParser.php
 %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/Document.php
 %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/ElementList.php
 %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/EofException.php
 %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/FreeBusyGenerator.php
+%%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/ITip/Broker.php
+%%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/ITip/ITipException.php
+%%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/ITip/Message.php
+%%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/ITip/SameOrganizerForAllComponentsException.php
 %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/Node.php
 %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/Parameter.php
 %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/ParseException.php
@@ -952,15 +1057,25 @@
 %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/Property/VCard/LanguageTag.php
 %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/Property/VCard/TimeStamp.php
 %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/Reader.php
+%%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/Recur/EventIterator.php
+%%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/Recur/NoInstancesException.php
+%%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/Recur/RDateIterator.php
+%%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/Recur/RRuleIterator.php
 %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/RecurrenceIterator.php
 %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/Splitter/ICalendar.php
 %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/Splitter/SplitterInterface.php
 %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/Splitter/VCard.php
 %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/StringUtil.php
 %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/TimeZoneUtil.php
+%%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/UUIDUtil.php
 %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/VCardConverter.php
 %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/Version.php
 %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/includes.php
+%%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/timezonedata/exchangezones.php
+%%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/timezonedata/lotuszones.php
+%%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/timezonedata/php-bc.php
+%%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/timezonedata/php-workaround.php
+%%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/timezonedata/windowszones.php
 %%WWWDIR%%/go/vendor/VObject/tests/Sabre/VObject/AttachIssueTest.php
 %%WWWDIR%%/go/vendor/VObject/tests/Sabre/VObject/CliTest.php
 %%WWWDIR%%/go/vendor/VObject/tests/Sabre/VObject/Component/VAlarmTest.php
@@ -1452,11 +1567,11 @@
 %%WWWDIR%%/go/vendor/tcpdf/unicode_data.php
 %%WWWDIR%%/go/vendor/wsdl/checkVatService.wsdl
 %%WWWDIR%%/groupoffice
-%%WWWDIR%%/groupoffice-license.txt
 %%WWWDIR%%/groupofficecli.php
 %%WWWDIR%%/index.php
 %%WWWDIR%%/install/autoinstall.php
 %%WWWDIR%%/install/configFile.php
+%%WWWDIR%%/install/configFile.php.bak
 %%WWWDIR%%/install/database.php
 %%WWWDIR%%/install/finished.php
 %%WWWDIR%%/install/footer.php
@@ -1493,6 +1608,8 @@
 %%WWWDIR%%/language/common/fi.php
 %%WWWDIR%%/language/common/fr.php
 %%WWWDIR%%/language/common/hr.php
+%%WWWDIR%%/language/common/hu.inc.php
+%%WWWDIR%%/language/common/hu.js
 %%WWWDIR%%/language/common/hu.php
 %%WWWDIR%%/language/common/it.php
 %%WWWDIR%%/language/common/ko.php
@@ -1577,6 +1694,7 @@
 %%WWWDIR%%/language/holidays/en-au.php
 %%WWWDIR%%/language/holidays/en.php
 %%WWWDIR%%/language/holidays/en_UK.php
+%%WWWDIR%%/language/holidays/es.php
 %%WWWDIR%%/language/holidays/fr.php
 %%WWWDIR%%/language/holidays/hr.php
 %%WWWDIR%%/language/holidays/hu.php
@@ -1777,6 +1895,7 @@
 %%WWWDIR%%/modules/addressbook/themes/Group-Office/style.css
 %%WWWDIR%%/modules/addressbook/views/Extjs3/AddresslistsSettingspanel.js
 %%WWWDIR%%/modules/addressbook/views/Extjs3/BirthdaysPortlet.js
+%%WWWDIR%%/modules/addressbook/views/Extjs3/PhotoPanel.js
 %%WWWDIR%%/modules/addressbook/views/Extjs3/Settings.js
 %%WWWDIR%%/modules/addressbook/views/Extjs3/unsubscribe.php
 %%WWWDIR%%/modules/addressbook/views/Extjs3/unsubscribed.php
@@ -1789,6 +1908,7 @@
 %%WWWDIR%%/modules/admin2userlogin/language/cs.php
 %%WWWDIR%%/modules/admin2userlogin/language/de.php
 %%WWWDIR%%/modules/admin2userlogin/language/en.php
+%%WWWDIR%%/modules/admin2userlogin/language/es.php
 %%WWWDIR%%/modules/admin2userlogin/language/fr.php
 %%WWWDIR%%/modules/admin2userlogin/language/nb.php
 %%WWWDIR%%/modules/admin2userlogin/language/nl.php
@@ -1808,6 +1928,7 @@
 %%WWWDIR%%/modules/billing/CategoriesTree.js
 %%WWWDIR%%/modules/billing/CategoryDialog.js
 %%WWWDIR%%/modules/billing/ContextMenus.js
+%%WWWDIR%%/modules/billing/CostCodeDialog.js
 %%WWWDIR%%/modules/billing/CostCodesGrid.js
 %%WWWDIR%%/modules/billing/CustomerReportGrid.js
 %%WWWDIR%%/modules/billing/DeliveriesGrid.js
@@ -1841,11 +1962,14 @@
 %%WWWDIR%%/modules/billing/MainPanel.js
 %%WWWDIR%%/modules/billing/OrderDialog.js
 %%WWWDIR%%/modules/billing/OrderPanel.js
+%%WWWDIR%%/modules/billing/OrderShippingPanel.js
 %%WWWDIR%%/modules/billing/OrderStatusDialog.js
 %%WWWDIR%%/modules/billing/OrderStatusHistoryDialog.js
 %%WWWDIR%%/modules/billing/OrderStatusHistoryGrid.js
 %%WWWDIR%%/modules/billing/OrderStatusesGrid.js
 %%WWWDIR%%/modules/billing/OrdersGrid.js
+%%WWWDIR%%/modules/billing/PaymentDialog.js
+%%WWWDIR%%/modules/billing/PaymentsGrid.js
 %%WWWDIR%%/modules/billing/Pdf.php
 %%WWWDIR%%/modules/billing/ProductDialog.js
 %%WWWDIR%%/modules/billing/ProductOptionDialog.js
@@ -1856,22 +1980,29 @@
 %%WWWDIR%%/modules/billing/ReportDialog.js
 %%WWWDIR%%/modules/billing/ReportGrid.js
 %%WWWDIR%%/modules/billing/SelectBook.js
+%%WWWDIR%%/modules/billing/SelectCostCode.js
 %%WWWDIR%%/modules/billing/SelectProduct.js
 %%WWWDIR%%/modules/billing/SelectProductDialog.js
 %%WWWDIR%%/modules/billing/SelectProject.js
+%%WWWDIR%%/modules/billing/SelectTaxRate.js
+%%WWWDIR%%/modules/billing/SelectTrackingCode.js
 %%WWWDIR%%/modules/billing/SettingsBooksGrid.js
+%%WWWDIR%%/modules/billing/SettingsCostCodeGrid.js
 %%WWWDIR%%/modules/billing/SettingsDialog.js
 %%WWWDIR%%/modules/billing/SettingsExpenseBooksGrid.js
+%%WWWDIR%%/modules/billing/SettingsTaxRateGrid.js
 %%WWWDIR%%/modules/billing/SpecialStatusesPanel.js
 %%WWWDIR%%/modules/billing/StatusPanel.js
 %%WWWDIR%%/modules/billing/StatusSelectWindow.js
 %%WWWDIR%%/modules/billing/StockDialog.js
 %%WWWDIR%%/modules/billing/Stores.js
+%%WWWDIR%%/modules/billing/TaxRateDialog.js
 %%WWWDIR%%/modules/billing/TemplateDialog.js
 %%WWWDIR%%/modules/billing/TemplatesGrid.js
+%%WWWDIR%%/modules/billing/TrackingCodeDialog.js
+%%WWWDIR%%/modules/billing/TrackingCodeGrid.js
 %%WWWDIR%%/modules/billing/controller/BookController.php
 %%WWWDIR%%/modules/billing/controller/CatalogImportController.php
-%%WWWDIR%%/modules/billing/controller/CostCodeController.php
 %%WWWDIR%%/modules/billing/controller/CostcodeController.php
 %%WWWDIR%%/modules/billing/controller/DocTemplateController.php
 %%WWWDIR%%/modules/billing/controller/ExpenseBookController.php
@@ -1889,6 +2020,7 @@
 %%WWWDIR%%/modules/billing/controller/LanguageController.php
 %%WWWDIR%%/modules/billing/controller/OrderController.php
 %%WWWDIR%%/modules/billing/controller/OrderJsonController.php
+%%WWWDIR%%/modules/billing/controller/PaymentController.php
 %%WWWDIR%%/modules/billing/controller/ProductCategoryController.php
 %%WWWDIR%%/modules/billing/controller/ProductController.php
 %%WWWDIR%%/modules/billing/controller/ProductOptionController.php
@@ -1897,7 +2029,9 @@
 %%WWWDIR%%/modules/billing/controller/SiteController.php
 %%WWWDIR%%/modules/billing/controller/StatusController.php
 %%WWWDIR%%/modules/billing/controller/StatusHistoryController.php
+%%WWWDIR%%/modules/billing/controller/TaxRateController.php
 %%WWWDIR%%/modules/billing/controller/TemplateController.php
+%%WWWDIR%%/modules/billing/controller/TrackingCodeController.php
 %%WWWDIR%%/modules/billing/customfields/model/Order.php
 %%WWWDIR%%/modules/billing/customfields/model/Product.php
 %%WWWDIR%%/modules/billing/export/CurrentGrid.php
@@ -1907,6 +2041,8 @@
 %%WWWDIR%%/modules/billing/install/uninstall.sql
 %%WWWDIR%%/modules/billing/install/updates.inc.php
 %%WWWDIR%%/modules/billing/install/updatescripts/7_add_status_acl.inc.php
+%%WWWDIR%%/modules/billing/install/updatescripts/8_fill_payments_table_for_existing_orders.php
+%%WWWDIR%%/modules/billing/install/updatescripts/9_move_bcc_from_books_to_statuses.php
 %%WWWDIR%%/modules/billing/install/updatescripts/manual_sync_order_totals.php
 %%WWWDIR%%/modules/billing/language/cs.php
 %%WWWDIR%%/modules/billing/language/de.php
@@ -1935,6 +2071,7 @@
 %%WWWDIR%%/modules/billing/model/OrderStatusHistory.php
 %%WWWDIR%%/modules/billing/model/OrderStatusLanguage.php
 %%WWWDIR%%/modules/billing/model/OrderStatusTemplate.php
+%%WWWDIR%%/modules/billing/model/Payment.php
 %%WWWDIR%%/modules/billing/model/PdfTemplate.php
 %%WWWDIR%%/modules/billing/model/Product.php
 %%WWWDIR%%/modules/billing/model/ProductCategory.php
@@ -1944,7 +2081,9 @@
 %%WWWDIR%%/modules/billing/model/ProductOptionLanguage.php
 %%WWWDIR%%/modules/billing/model/ProductOptionValue.php
 %%WWWDIR%%/modules/billing/model/ProductOptionValueLanguage.php
+%%WWWDIR%%/modules/billing/model/TaxRate.php
 %%WWWDIR%%/modules/billing/model/Template.php
+%%WWWDIR%%/modules/billing/model/TrackingCode.php
 %%WWWDIR%%/modules/billing/mt940/Reader.php
 %%WWWDIR%%/modules/billing/scripts.inc.php
 %%WWWDIR%%/modules/billing/scripts.txt
@@ -1991,19 +2130,14 @@
 %%WWWDIR%%/modules/billing/vendor/jejik-mt940-master/lib/Jejik/MT940/Reader.php
 %%WWWDIR%%/modules/billing/vendor/jejik-mt940-master/lib/Jejik/MT940/Statement.php
 %%WWWDIR%%/modules/billing/vendor/jejik-mt940-master/lib/Jejik/MT940/Transaction.php
-%%WWWDIR%%/modules/billingtwinfield/BillingtwinfieldModule.php
-%%WWWDIR%%/modules/billingtwinfield/controller/ContactsExportController.php
-%%WWWDIR%%/modules/billingtwinfield/controller/ItemsExportController.php
-%%WWWDIR%%/modules/billingtwinfield/language/en.php
-%%WWWDIR%%/modules/billingtwinfield/language/nl.php
-%%WWWDIR%%/modules/billingtwinfield/scripts.txt
-%%WWWDIR%%/modules/billingtwinfield/views/Extjs3/PluginBilling.js
+%%WWWDIR%%/modules/bookmarks/BookmarkColumnView.js
 %%WWWDIR%%/modules/bookmarks/BookmarksDialog.js
 %%WWWDIR%%/modules/bookmarks/BookmarksGrid.js
 %%WWWDIR%%/modules/bookmarks/BookmarksModule.php
 %%WWWDIR%%/modules/bookmarks/BookmarksView.js
 %%WWWDIR%%/modules/bookmarks/CategoryDialog.js
 %%WWWDIR%%/modules/bookmarks/CloseButton.js
+%%WWWDIR%%/modules/bookmarks/ContextMenu.js
 %%WWWDIR%%/modules/bookmarks/MainPanel.js
 %%WWWDIR%%/modules/bookmarks/ManageCategoriesGrid.js
 %%WWWDIR%%/modules/bookmarks/ManageCategoryDialog.js
@@ -2125,12 +2259,14 @@
 %%WWWDIR%%/modules/caldav/language/cs.php
 %%WWWDIR%%/modules/caldav/language/de.php
 %%WWWDIR%%/modules/caldav/language/en.php
+%%WWWDIR%%/modules/caldav/language/es.php
 %%WWWDIR%%/modules/caldav/language/fr.php
 %%WWWDIR%%/modules/caldav/language/ko.php
 %%WWWDIR%%/modules/caldav/language/nb.php
 %%WWWDIR%%/modules/caldav/language/pt_BR.php
 %%WWWDIR%%/modules/caldav/language/sv.php
 %%WWWDIR%%/modules/caldav/language/th.php
+%%WWWDIR%%/modules/caldav/model/CalendarChange.php
 %%WWWDIR%%/modules/caldav/model/DavEvent.php
 %%WWWDIR%%/modules/caldav/model/DavTask.php
 %%WWWDIR%%/modules/caldav/schedule/IMip.php
@@ -2163,6 +2299,7 @@
 %%WWWDIR%%/modules/calendar/SelectCalendarWindow.js
 %%WWWDIR%%/modules/calendar/SelectDateDialog.js
 %%WWWDIR%%/modules/calendar/Settings.js
+%%WWWDIR%%/modules/calendar/TaskContextMenu.js
 %%WWWDIR%%/modules/calendar/ViewDialog.js
 %%WWWDIR%%/modules/calendar/ViewGrid.js
 %%WWWDIR%%/modules/calendar/ViewGroupGrid.js
@@ -2275,6 +2412,7 @@
 %%WWWDIR%%/modules/calendar/themes/Default/images/pdf/exception2.png
 %%WWWDIR%%/modules/calendar/themes/Default/images/pdf/paperclip.png
 %%WWWDIR%%/modules/calendar/themes/Default/images/pdf/recuring.png
+%%WWWDIR%%/modules/calendar/themes/Default/images/pdf/reminder.png
 %%WWWDIR%%/modules/calendar/themes/Default/style.css
 %%WWWDIR%%/modules/calendar/themes/ExtJS/images/16x16/5days.png
 %%WWWDIR%%/modules/calendar/themes/ExtJS/images/16x16/7days.png
@@ -2327,7 +2465,9 @@
 %%WWWDIR%%/modules/calendarexport/CalendarPlugin.js
 %%WWWDIR%%/modules/calendarexport/CalendarexportModule.php
 %%WWWDIR%%/modules/calendarexport/export/CurrentView.php
+%%WWWDIR%%/modules/calendarexport/language/de.php
 %%WWWDIR%%/modules/calendarexport/language/en.php
+%%WWWDIR%%/modules/calendarexport/language/fr.php
 %%WWWDIR%%/modules/calendarexport/language/nl.php
 %%WWWDIR%%/modules/calendarexport/scripts.txt
 %%WWWDIR%%/modules/carddav/AddressbooksBackend.php
@@ -2339,286 +2479,228 @@
 %%WWWDIR%%/modules/carddav/language/cs.php
 %%WWWDIR%%/modules/carddav/language/de.php
 %%WWWDIR%%/modules/carddav/language/en.php
+%%WWWDIR%%/modules/carddav/language/es.php
+%%WWWDIR%%/modules/carddav/language/fr.php
 %%WWWDIR%%/modules/carddav/language/pt_BR.php
 %%WWWDIR%%/modules/carddav/language/sv.php
 %%WWWDIR%%/modules/carddav/model/DavContact.php
 %%WWWDIR%%/modules/carddav/views/Extjs3/themes/Default/images/carddav.png
 %%WWWDIR%%/modules/chat/ChatModule.php
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/.bowerrc
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/builds/converse-no-locales-no-otr.min.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/builds/converse-no-otr.min.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/builds/converse.min.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/converse.css
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/converse.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/converse.min.css
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/fonticons/Read Me.txt
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/fonticons/fonts/Converse-js.dev.svg
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/fonticons/fonts/Converse-js.eot
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/fonticons/fonts/Converse-js.svg
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/fonticons/fonts/Converse-js.ttf
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/fonticons/fonts/Converse-js.woff
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/fonticons/index.html
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/fonticons/license.txt
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/fonticons/lte-ie7.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/fonticons/style.css
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/images/bg.png
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/images/bg_hr.png
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/images/blacktocat.png
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/images/icon_download.png
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/images/spinner.gif
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/images/sprite_download.png
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/af/LC_MESSAGES/af.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/af/LC_MESSAGES/converse.json
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/af/LC_MESSAGES/converse.po
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/converse.pot
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/de/LC_MESSAGES/converse.json
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/de/LC_MESSAGES/converse.po
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/de/LC_MESSAGES/de.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/en/LC_MESSAGES/converse.json
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/en/LC_MESSAGES/converse.po
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/en/LC_MESSAGES/en.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/es/LC_MESSAGES/converse.json
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/es/LC_MESSAGES/converse.po
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/es/LC_MESSAGES/es.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/fr/LC_MESSAGES/converse.json
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/fr/LC_MESSAGES/converse.po
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/fr/LC_MESSAGES/fr.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/he/LC_MESSAGES/converse.json
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/he/LC_MESSAGES/converse.po
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/he/LC_MESSAGES/he.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/hu/LC_MESSAGES/converse.json
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/hu/LC_MESSAGES/converse.po
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/hu/LC_MESSAGES/hu.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/id/LC_MESSAGES/converse.json
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/id/LC_MESSAGES/converse.po
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/id/LC_MESSAGES/id.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/it/LC_MESSAGES/converse.json
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/it/LC_MESSAGES/converse.po
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/it/LC_MESSAGES/it.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/ja/LC_MESSAGES/converse.json
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/ja/LC_MESSAGES/converse.po
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/ja/LC_MESSAGES/ja.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/locales.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/nl/LC_MESSAGES/converse.json
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/nl/LC_MESSAGES/converse.po
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/nl/LC_MESSAGES/nl.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/nolocales.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/pt_BR/LC_MESSAGES/converse.json
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/pt_BR/LC_MESSAGES/converse.po
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/pt_BR/LC_MESSAGES/pt_BR.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/ru/LC_MESSAGES/converse.json
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/ru/LC_MESSAGES/converse.po
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/ru/LC_MESSAGES/ru.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/single_locale.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/spec/chatbox.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/spec/chatroom.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/spec/controlbox.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/spec/converse.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/spec/eventemitter.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/spec/otr.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/src/bigint.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/src/build-no-locales-no-otr.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/src/build-no-otr.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/src/build.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/src/crypto.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/src/deps-full.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/src/deps-no-otr.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/src/jquery.eventemitter.js
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/stylesheets/pygment_trac.css
-%%WWWDIR%%/modules/chat/converse.js-0.7.4/stylesheets/stylesheet.css
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/.gitignore
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/.gitmodules
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/CONTRIBUTING.rst
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/Gruntfile.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/Makefile
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/README.rst
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/activate
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/bower.json
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/builds/converse-no-locales-no-otr.min.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/builds/converse-no-otr.min.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/builds/converse.min.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/builds/converse.website.min.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/builds/templates.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/converse.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/css/converse.css
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/css/converse.min.css
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/css/images/arrow.svg
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/css/images/bgbl.svg
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/css/images/bgtr.svg
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/css/images/bitcoin_qr_code.png
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/css/images/dark-arrow.svg
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/css/images/header.jpg
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/css/images/overlay.png
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/css/theme.css
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/API.rst
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/CHANGES.rst
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/DEVELOPER.rst
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/LICENSE.txt
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/RELEASE_CHECKLIST.txt
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/doctrees/index.doctree
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/html/_sources/index.txt
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/html/_static/ajax-loader.gif
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/html/_static/basic.css
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/html/_static/comment-bright.png
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/html/_static/comment-close.png
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/html/_static/comment.png
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/html/_static/default.css
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/html/_static/doctools.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/html/_static/down-pressed.png
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/html/_static/down.png
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/html/_static/file.png
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/html/_static/jquery.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/html/_static/minus.png
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/html/_static/plus.png
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/html/_static/pygments.css
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/html/_static/searchtools.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/html/_static/sidebar.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/html/_static/stylesheet.css
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/html/_static/underscore.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/html/_static/up-pressed.png
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/html/_static/up.png
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/html/_static/websupport.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/html/genindex.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/html/index.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/html/objects.inv
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/html/search.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/html/searchindex.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/html/static/stylesheet.css
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/source/_templates/layout.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/source/conf.py
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/source/index.rst
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/source/theme/static/stylesheet.css_t
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/source/theme/theme.conf
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/fonticons/Read Me.txt
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/fonticons/demo-files/demo.css
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/fonticons/demo-files/demo.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/fonticons/demo.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/fonticons/fonts/icomoon.eot
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/fonticons/fonts/icomoon.svg
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/fonticons/fonts/icomoon.ttf
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/fonticons/fonts/icomoon.woff
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/fonticons/selection.json
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/fonticons/style.css
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/index.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/less/converse.less
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/less/styles.less
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/less/theme.less
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/less/variables.less
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/af/LC_MESSAGES/af.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/af/LC_MESSAGES/converse.json
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/af/LC_MESSAGES/converse.po
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/converse.pot
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/de/LC_MESSAGES/converse.json
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/de/LC_MESSAGES/converse.po
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/de/LC_MESSAGES/de.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/en/LC_MESSAGES/converse.json
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/en/LC_MESSAGES/converse.po
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/en/LC_MESSAGES/en.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/es/LC_MESSAGES/converse.json
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/es/LC_MESSAGES/converse.po
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/es/LC_MESSAGES/es.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/fr/LC_MESSAGES/converse.json
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/fr/LC_MESSAGES/converse.po
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/fr/LC_MESSAGES/fr.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/he/LC_MESSAGES/converse.json
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/he/LC_MESSAGES/converse.po
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/he/LC_MESSAGES/he.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/hu/LC_MESSAGES/converse.json
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/hu/LC_MESSAGES/converse.po
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/hu/LC_MESSAGES/hu.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/id/LC_MESSAGES/converse.json
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/id/LC_MESSAGES/converse.po
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/id/LC_MESSAGES/id.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/it/LC_MESSAGES/converse.json
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/it/LC_MESSAGES/converse.po
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/it/LC_MESSAGES/it.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/ja/LC_MESSAGES/converse.json
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/ja/LC_MESSAGES/converse.po
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/ja/LC_MESSAGES/ja.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/locales.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/nl/LC_MESSAGES/converse.json
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/nl/LC_MESSAGES/converse.po
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/nl/LC_MESSAGES/nl.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/nolocales.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/pt_BR/LC_MESSAGES/converse.json
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/pt_BR/LC_MESSAGES/converse.po
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/pt_BR/LC_MESSAGES/pt_BR.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/ru/LC_MESSAGES/converse.json
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/ru/LC_MESSAGES/converse.po
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/ru/LC_MESSAGES/ru.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/single_locale.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/zh/LC_MESSAGES/converse.json
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/zh/LC_MESSAGES/converse.po
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/zh/LC_MESSAGES/zh.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/main.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/mockup/controlbox.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/mockup/index.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/mockup/minimal.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/non_amd.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/package.json
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/spec/chatbox.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/spec/chatroom.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/spec/controlbox.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/spec/converse.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/spec/eventemitter.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/spec/minchats.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/spec/otr.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/bigint.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/build-no-locales-no-otr.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/build-no-otr.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/build-website.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/build.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/crypto.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/deps-full.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/deps-no-otr.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/deps-website.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/jquery.eventemitter.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/action.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/add_contact_dropdown.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/add_contact_form.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/change_status_message.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/chat_status.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/chatarea.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/chatbox.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/chatroom.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/chatrooms_tab.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/chats_panel.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/choose_status.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/contacts_panel.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/contacts_tab.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/controlbox.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/controlbox_toggle.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/field.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/form_checkbox.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/form_input.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/form_select.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/group_header.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/info.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/login_panel.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/login_tab.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/message.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/new_day.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/occupant.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/pending_contact.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/pending_contacts.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/requesting_contact.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/requesting_contacts.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/room_description.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/room_item.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/room_panel.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/roster_item.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/search_contact.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/select_option.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/status_option.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/toggle_chats.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/toolbar.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates/trimmed_chat.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/tests.html
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/tests/main.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/tests/mock.js
-%%WWWDIR%%/modules/chat/converse.js-0.8.0/tests/utils.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/.bowerrc
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/.gitignore
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/.gitmodules
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/.travis.yml
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/CONTRIBUTING.rst
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/Gruntfile.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/Makefile
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/README.rst
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/activate
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/bootstrap.py
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/bower.json
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/buildout.cfg
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/builds/converse-no-locales-no-otr.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/builds/converse-no-locales-no-otr.min.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/builds/converse-no-otr.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/builds/converse-no-otr.min.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/builds/converse.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/builds/converse.min.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/builds/converse.nojquery.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/builds/converse.nojquery.min.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/builds/converse.website-no-otr.min.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/builds/converse.website.min.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/builds/templates.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/converse.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/css/converse.css
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/css/converse.min.css
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/css/images/arrow.svg
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/css/images/bgbl.svg
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/css/images/bgtr.svg
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/css/images/bitcoin_qr_code.png
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/css/images/dark-arrow.svg
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/css/images/favicon.ico
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/css/images/header.jpg
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/css/images/overlay.png
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/css/theme.css
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/docs/API.rst
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/docs/CHANGES.rst
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/docs/DEVELOPER.rst
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/docs/LICENSE.txt
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/docs/RELEASE_CHECKLIST.txt
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/docs/source/_static/conversejs_small.png
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/docs/source/_static/favicon.ico
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/docs/source/_static/style.css
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/docs/source/_templates/layout.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/docs/source/builds.rst
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/docs/source/conf.py
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/docs/source/configuration.rst
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/docs/source/development.rst
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/docs/source/documentation.rst
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/docs/source/features.rst
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/docs/source/index.rst
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/docs/source/quickstart.rst
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/docs/source/setup.rst
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/docs/source/translations.rst
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/fonticons/Read Me.txt
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/fonticons/demo-files/demo.css
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/fonticons/demo-files/demo.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/fonticons/demo.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/fonticons/fonts/icomoon.eot
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/fonticons/fonts/icomoon.svg
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/fonticons/fonts/icomoon.ttf
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/fonticons/fonts/icomoon.woff
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/fonticons/selection.json
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/fonticons/style.css
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/index.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/less/converse.less
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/less/styles.less
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/less/theme.less
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/less/variables.less
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/af/LC_MESSAGES/af.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/af/LC_MESSAGES/converse.json
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/af/LC_MESSAGES/converse.po
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/converse.pot
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/de/LC_MESSAGES/converse.json
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/de/LC_MESSAGES/converse.po
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/de/LC_MESSAGES/de.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/en/LC_MESSAGES/converse.json
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/en/LC_MESSAGES/converse.po
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/en/LC_MESSAGES/en.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/es/LC_MESSAGES/converse.json
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/es/LC_MESSAGES/converse.po
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/es/LC_MESSAGES/es.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/fr/LC_MESSAGES/converse.json
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/fr/LC_MESSAGES/converse.po
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/fr/LC_MESSAGES/fr.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/he/LC_MESSAGES/converse.json
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/he/LC_MESSAGES/converse.po
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/he/LC_MESSAGES/he.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/hu/LC_MESSAGES/converse.json
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/hu/LC_MESSAGES/converse.po
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/hu/LC_MESSAGES/hu.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/id/LC_MESSAGES/converse.json
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/id/LC_MESSAGES/converse.po
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/id/LC_MESSAGES/id.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/it/LC_MESSAGES/converse.json
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/it/LC_MESSAGES/converse.po
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/it/LC_MESSAGES/it.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/ja/LC_MESSAGES/converse.json
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/ja/LC_MESSAGES/converse.po
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/ja/LC_MESSAGES/ja.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/locales.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/nl/LC_MESSAGES/converse.json
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/nl/LC_MESSAGES/converse.po
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/nl/LC_MESSAGES/nl.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/nolocales.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/pl/LC_MESSAGES/converse.po
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/pt_BR/LC_MESSAGES/converse.json
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/pt_BR/LC_MESSAGES/converse.po
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/pt_BR/LC_MESSAGES/pt_BR.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/ru/LC_MESSAGES/converse.json
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/ru/LC_MESSAGES/converse.po
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/ru/LC_MESSAGES/ru.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/single_locale.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/zh/LC_MESSAGES/converse.json
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/zh/LC_MESSAGES/converse.po
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/locale/zh/LC_MESSAGES/zh.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/logo/conversejs.png
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/logo/conversejs.svg
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/main.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/mockup/chatroom.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/mockup/controlbox.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/mockup/index.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/mockup/minimal.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/non_amd.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/package.json
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/sounds/README
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/sounds/msg_received.mp3
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/sounds/msg_received.ogg
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/spec/chatbox.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/spec/chatroom.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/spec/controlbox.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/spec/converse.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/spec/eventemitter.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/spec/minchats.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/spec/otr.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/spec/profiling.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/spec/register.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/bigint.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/build-no-jquery.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/build-no-locales-no-otr.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/build-no-otr.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/build-website-no-otr.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/build-website.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/build.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/crypto.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/deps-full.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/deps-no-otr.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/deps-website-no-otr.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/deps-website.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/jquery-external.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/jquery-private-external.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/jquery-private.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/jquery.eventemitter.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/otr.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/strophe.roster.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/action.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/add_contact_dropdown.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/add_contact_form.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/change_status_message.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/chat_status.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/chatarea.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/chatbox.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/chatroom.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/chatroom_password_form.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/chatroom_sidebar.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/chatrooms_tab.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/chats_panel.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/choose_status.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/contacts_panel.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/contacts_tab.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/controlbox.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/controlbox_toggle.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/field.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/form_captcha.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/form_checkbox.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/form_input.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/form_select.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/form_textarea.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/form_username.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/group_header.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/info.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/login_panel.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/login_tab.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/message.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/new_day.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/occupant.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/pending_contact.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/pending_contacts.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/register_panel.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/register_tab.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/registration_form.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/registration_request.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/requesting_contact.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/requesting_contacts.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/room_description.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/room_item.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/room_panel.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/roster.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/roster_item.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/search_contact.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/select_option.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/status_option.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/toggle_chats.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/toolbar.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/templates/trimmed_chat.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/src/utils.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/tests.html
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/tests/main.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/tests/mock.js
+%%WWWDIR%%/modules/chat/converse.js-0.8.6/tests/utils.js
+%%WWWDIR%%/modules/chat/language/de.php
 %%WWWDIR%%/modules/chat/language/en.php
+%%WWWDIR%%/modules/chat/language/es.php
+%%WWWDIR%%/modules/chat/language/fr.php
 %%WWWDIR%%/modules/chat/scripts.inc.php
 %%WWWDIR%%/modules/chat/views/Extjs3/start.php
 %%WWWDIR%%/modules/chat/views/Extjs3/themes/Default/style.css
@@ -2642,6 +2724,7 @@
 %%WWWDIR%%/modules/comments/CategoriesComboBox.js
 %%WWWDIR%%/modules/comments/CategoryDialog.js
 %%WWWDIR%%/modules/comments/CommentDialog.js
+%%WWWDIR%%/modules/comments/CommentPanel.js
 %%WWWDIR%%/modules/comments/CommentsBrowser.js
 %%WWWDIR%%/modules/comments/CommentsGrid.js
 %%WWWDIR%%/modules/comments/CommentsModule.php
@@ -2689,6 +2772,7 @@
 %%WWWDIR%%/modules/cron/language/cs.php
 %%WWWDIR%%/modules/cron/language/de.php
 %%WWWDIR%%/modules/cron/language/en.php
+%%WWWDIR%%/modules/cron/language/es.php
 %%WWWDIR%%/modules/cron/language/fr.php
 %%WWWDIR%%/modules/cron/language/nb.php
 %%WWWDIR%%/modules/cron/language/nl.php
@@ -2716,6 +2800,7 @@
 %%WWWDIR%%/modules/customcss/language/cs.php
 %%WWWDIR%%/modules/customcss/language/de.php
 %%WWWDIR%%/modules/customcss/language/en.php
+%%WWWDIR%%/modules/customcss/language/es.php
 %%WWWDIR%%/modules/customcss/language/fr.php
 %%WWWDIR%%/modules/customcss/language/ko.php
 %%WWWDIR%%/modules/customcss/language/nb.php
@@ -2761,13 +2846,14 @@
 %%WWWDIR%%/modules/customfields/customfieldtype/Html.php
 %%WWWDIR%%/modules/customfields/customfieldtype/Infotext.php
 %%WWWDIR%%/modules/customfields/customfieldtype/Number.php
-%%WWWDIR%%/modules/customfields/customfieldtype/Php.php
+%%WWWDIR%%/modules/customfields/customfieldtype/ReadonlyText.php
 %%WWWDIR%%/modules/customfields/customfieldtype/Select.php
 %%WWWDIR%%/modules/customfields/customfieldtype/Text.php
 %%WWWDIR%%/modules/customfields/customfieldtype/Textarea.php
 %%WWWDIR%%/modules/customfields/customfieldtype/Treeselect.php
 %%WWWDIR%%/modules/customfields/customfieldtype/TreeselectSlave.php
 %%WWWDIR%%/modules/customfields/customfieldtype/User.php
+%%WWWDIR%%/modules/customfields/customfieldtype/UserGroup.php
 %%WWWDIR%%/modules/customfields/html/Field.php
 %%WWWDIR%%/modules/customfields/install/install.sql
 %%WWWDIR%%/modules/customfields/install/uninstall.sql
@@ -2814,12 +2900,16 @@
 %%WWWDIR%%/modules/dav/fs/File.php
 %%WWWDIR%%/modules/dav/fs/RootDirectory.php
 %%WWWDIR%%/modules/dav/fs/SharedDirectory.php
+%%WWWDIR%%/modules/dav/install/install.sql
+%%WWWDIR%%/modules/dav/install/uninstall.sql
+%%WWWDIR%%/modules/dav/install/updates.php
 %%WWWDIR%%/modules/dav/language/bg.php
 %%WWWDIR%%/modules/dav/language/bn_BD.php
 %%WWWDIR%%/modules/dav/language/ca.php
 %%WWWDIR%%/modules/dav/language/cs.php
 %%WWWDIR%%/modules/dav/language/de.php
 %%WWWDIR%%/modules/dav/language/en.php
+%%WWWDIR%%/modules/dav/language/es.php
 %%WWWDIR%%/modules/dav/language/fr.php
 %%WWWDIR%%/modules/dav/language/it.php
 %%WWWDIR%%/modules/dav/language/ko.php
@@ -2835,7 +2925,9 @@
 %%WWWDIR%%/modules/defaultsite/language/de.php
 %%WWWDIR%%/modules/defaultsite/language/en.php
 %%WWWDIR%%/modules/defaultsite/language/fr.php
+%%WWWDIR%%/modules/defaultsite/language/nb.php
 %%WWWDIR%%/modules/defaultsite/language/nl.php
+%%WWWDIR%%/modules/defaultsite/language/sv.php
 %%WWWDIR%%/modules/defaultsite/siteconfig.php
 %%WWWDIR%%/modules/defaultsite/views/site/addressbook/contactform.php
 %%WWWDIR%%/modules/defaultsite/views/site/addressbook/contactform_done.php
@@ -2863,14 +2955,17 @@
 %%WWWDIR%%/modules/demodata/controller/DemodataController.php
 %%WWWDIR%%/modules/demodata/language/bn_BD.php
 %%WWWDIR%%/modules/demodata/language/en.php
+%%WWWDIR%%/modules/demodata/language/fr.php
 %%WWWDIR%%/modules/demodata/scripts.txt
 %%WWWDIR%%/modules/documenttemplates/DocumenttemplatesModule.php
+%%WWWDIR%%/modules/documenttemplates/EmailTemplateDialog.js
 %%WWWDIR%%/modules/documenttemplates/NewOODocumentMenuItem.js
 %%WWWDIR%%/modules/documenttemplates/OOTemplateDialog.js
 %%WWWDIR%%/modules/documenttemplates/Stores.js
 %%WWWDIR%%/modules/documenttemplates/TemplateDocumentDialog.js
 %%WWWDIR%%/modules/documenttemplates/controller/DocumentController.php
 %%WWWDIR%%/modules/documenttemplates/controller/DocumentTemplateController.php
+%%WWWDIR%%/modules/documenttemplates/controller/EmailTemplateController.php
 %%WWWDIR%%/modules/documenttemplates/language/cs.php
 %%WWWDIR%%/modules/documenttemplates/language/de.php
 %%WWWDIR%%/modules/documenttemplates/language/en.php
@@ -2882,6 +2977,8 @@
 %%WWWDIR%%/modules/documenttemplates/language/pt_BR.php
 %%WWWDIR%%/modules/documenttemplates/language/sv.php
 %%WWWDIR%%/modules/documenttemplates/language/th.php
+%%WWWDIR%%/modules/documenttemplates/model/Parser.php
+%%WWWDIR%%/modules/documenttemplates/module.js
 %%WWWDIR%%/modules/documenttemplates/scripts.txt
 %%WWWDIR%%/modules/documenttemplates/themes/Default/images/documenttemplates.png
 %%WWWDIR%%/modules/dropbox/DropboxModule.php
@@ -2891,40 +2988,13 @@
 %%WWWDIR%%/modules/dropbox/install/install.sql
 %%WWWDIR%%/modules/dropbox/install/uninstall.sql
 %%WWWDIR%%/modules/dropbox/install/updates.php
+%%WWWDIR%%/modules/dropbox/language/de.php
 %%WWWDIR%%/modules/dropbox/language/en.php
+%%WWWDIR%%/modules/dropbox/language/fr.php
 %%WWWDIR%%/modules/dropbox/language/nb.php
-%%WWWDIR%%/modules/dropbox/lib/Dropbox/AccessToken.php
-%%WWWDIR%%/modules/dropbox/lib/Dropbox/AccessType.php
-%%WWWDIR%%/modules/dropbox/lib/Dropbox/AppInfo.php
-%%WWWDIR%%/modules/dropbox/lib/Dropbox/AppInfoLoadException.php
-%%WWWDIR%%/modules/dropbox/lib/Dropbox/AuthInfo.php
-%%WWWDIR%%/modules/dropbox/lib/Dropbox/AuthInfoLoadException.php
-%%WWWDIR%%/modules/dropbox/lib/Dropbox/Checker.php
-%%WWWDIR%%/modules/dropbox/lib/Dropbox/Client.php
-%%WWWDIR%%/modules/dropbox/lib/Dropbox/Config.php
-%%WWWDIR%%/modules/dropbox/lib/Dropbox/Curl.php
-%%WWWDIR%%/modules/dropbox/lib/Dropbox/CurlStreamRelay.php
-%%WWWDIR%%/modules/dropbox/lib/Dropbox/DeserializeException.php
-%%WWWDIR%%/modules/dropbox/lib/Dropbox/DropboxMetadataHeaderCatcher.php
-%%WWWDIR%%/modules/dropbox/lib/Dropbox/Exception.php
-%%WWWDIR%%/modules/dropbox/lib/Dropbox/Exception/BadRequest.php
-%%WWWDIR%%/modules/dropbox/lib/Dropbox/Exception/BadResponse.php
-%%WWWDIR%%/modules/dropbox/lib/Dropbox/Exception/BadResponseCode.php
-%%WWWDIR%%/modules/dropbox/lib/Dropbox/Exception/InvalidAccessToken.php
-%%WWWDIR%%/modules/dropbox/lib/Dropbox/Exception/NetworkIO.php
-%%WWWDIR%%/modules/dropbox/lib/Dropbox/Exception/ProtocolError.php
-%%WWWDIR%%/modules/dropbox/lib/Dropbox/Exception/RetryLater.php
-%%WWWDIR%%/modules/dropbox/lib/Dropbox/Exception/ServerError.php
-%%WWWDIR%%/modules/dropbox/lib/Dropbox/Host.php
-%%WWWDIR%%/modules/dropbox/lib/Dropbox/HttpResponse.php
-%%WWWDIR%%/modules/dropbox/lib/Dropbox/Path.php
-%%WWWDIR%%/modules/dropbox/lib/Dropbox/RequestToken.php
-%%WWWDIR%%/modules/dropbox/lib/Dropbox/RequestUtil.php
-%%WWWDIR%%/modules/dropbox/lib/Dropbox/Token.php
-%%WWWDIR%%/modules/dropbox/lib/Dropbox/WebAuth.php
-%%WWWDIR%%/modules/dropbox/lib/Dropbox/WriteMode.php
-%%WWWDIR%%/modules/dropbox/lib/Dropbox/autoload.php
-%%WWWDIR%%/modules/dropbox/lib/Dropbox/trusted-certs.crt
+%%WWWDIR%%/modules/dropbox/model/DropboxClient.php
+%%WWWDIR%%/modules/dropbox/model/OAuthSimple.php
+%%WWWDIR%%/modules/dropbox/model/Sync.php
 %%WWWDIR%%/modules/dropbox/model/User.php
 %%WWWDIR%%/modules/dropbox/views/Extjs3/Settings.js
 %%WWWDIR%%/modules/dropbox/views/Extjs3/scripts.txt
@@ -2952,6 +3022,7 @@
 %%WWWDIR%%/modules/email/FoldersDialog.js
 %%WWWDIR%%/modules/email/ImapAclDialog.js
 %%WWWDIR%%/modules/email/ImapAclUserDialog.js
+%%WWWDIR%%/modules/email/LabelsGrid.js
 %%WWWDIR%%/modules/email/LinkAttachmentDialog.js
 %%WWWDIR%%/modules/email/LinkedMessagePanel.js
 %%WWWDIR%%/modules/email/MailboxContextMenu.js
@@ -3119,16 +3190,20 @@
 %%WWWDIR%%/modules/email/themes/Group-Office/images/email.png
 %%WWWDIR%%/modules/email/themes/Group-Office/style.css
 %%WWWDIR%%/modules/email/views/Extjs3/LabelDialog.js
-%%WWWDIR%%/modules/email/views/Extjs3/ManageLabelsDialog.js
-%%WWWDIR%%/modules/email/views/Extjs3/ManageLabelsGrid.js
-%%WWWDIR%%/modules/email/views/Extjs3/Stores.js
 %%WWWDIR%%/modules/email/views/Responsive/load.php
 %%WWWDIR%%/modules/exactonline/ExactonlineModule.php
 %%WWWDIR%%/modules/exactonline/controller/ExactExportController.php
 %%WWWDIR%%/modules/exactonline/controller/OauthController.php
+%%WWWDIR%%/modules/exactonline/extension/ExactLocalStorage.php
+%%WWWDIR%%/modules/exactonline/install/install.sql
+%%WWWDIR%%/modules/exactonline/install/updates.inc.php
 %%WWWDIR%%/modules/exactonline/language/en.php
+%%WWWDIR%%/modules/exactonline/language/fr.php
+%%WWWDIR%%/modules/exactonline/language/nl.php
+%%WWWDIR%%/modules/exactonline/model/ProjectTemplateExtension.php
 %%WWWDIR%%/modules/exactonline/scripts.txt
 %%WWWDIR%%/modules/exactonline/views/Extjs3/PluginBilling.js
+%%WWWDIR%%/modules/exactonline/views/Extjs3/PluginProjects2.js
 %%WWWDIR%%/modules/favorites/FavoritesModule.php
 %%WWWDIR%%/modules/favorites/controller/AddressbookFavoritesController.php
 %%WWWDIR%%/modules/favorites/controller/CalendarFavoritesController.php
@@ -3191,6 +3266,7 @@
 %%WWWDIR%%/modules/files/controller/NotificationController.php
 %%WWWDIR%%/modules/files/controller/TemplateController.php
 %%WWWDIR%%/modules/files/controller/VersionController.php
+%%WWWDIR%%/modules/files/cron/CorrectQuotaUser.php
 %%WWWDIR%%/modules/files/cron/DeleteExpiredLinks.php
 %%WWWDIR%%/modules/files/cron/RecalculateDiskUsage.php
 %%WWWDIR%%/modules/files/customfields/model/File.php
@@ -3211,6 +3287,7 @@
 %%WWWDIR%%/modules/files/install/updatescripts/1_set_log_dir.php
 %%WWWDIR%%/modules/files/install/updatescripts/2_calculate_user_quota.php
 %%WWWDIR%%/modules/files/install/updatescripts/3_install_cron.php
+%%WWWDIR%%/modules/files/install/updatescripts/4_install_quota_cron.php
 %%WWWDIR%%/modules/files/language/bg.php
 %%WWWDIR%%/modules/files/language/bn_BD.php
 %%WWWDIR%%/modules/files/language/ca.php
@@ -3370,6 +3447,7 @@
 %%WWWDIR%%/modules/filesearch/themes/Default/style.css
 %%WWWDIR%%/modules/filesearch/xsl/docxtohtml.xsl
 %%WWWDIR%%/modules/filesearch/xsl/odttohtml.xsl
+%%WWWDIR%%/modules/formprocessor/classes/formprocessor.class.inc.php
 %%WWWDIR%%/modules/formprocessor/confirm.eml
 %%WWWDIR%%/modules/formprocessor/install/noautoinstall
 %%WWWDIR%%/modules/formprocessor/language/bn_BD.php
@@ -3471,7 +3549,9 @@
 %%WWWDIR%%/modules/googledrive/google-api-php-client/src/service/Google_Service.php
 %%WWWDIR%%/modules/googledrive/google-api-php-client/src/service/Google_ServiceResource.php
 %%WWWDIR%%/modules/googledrive/google-api-php-client/src/service/Google_Utils.php
+%%WWWDIR%%/modules/googledrive/language/de.php
 %%WWWDIR%%/modules/googledrive/language/en.php
+%%WWWDIR%%/modules/googledrive/language/fr.php
 %%WWWDIR%%/modules/googledrive/language/nb.php
 %%WWWDIR%%/modules/googledrive/language/nl.php
 %%WWWDIR%%/modules/googledrive/scripts.txt
@@ -3586,6 +3666,7 @@
 %%WWWDIR%%/modules/ipwhitelist/install/install.sql
 %%WWWDIR%%/modules/ipwhitelist/language/bn_BD.php
 %%WWWDIR%%/modules/ipwhitelist/language/en.php
+%%WWWDIR%%/modules/ipwhitelist/language/fr.php
 %%WWWDIR%%/modules/ipwhitelist/language/nl.php
 %%WWWDIR%%/modules/ipwhitelist/model/EnableWhitelist.php
 %%WWWDIR%%/modules/ipwhitelist/model/IpAddress.php
@@ -3608,13 +3689,14 @@
 %%WWWDIR%%/modules/ldapauth/language/nl.php
 %%WWWDIR%%/modules/ldapauth/language/sv.php
 %%WWWDIR%%/modules/ldapauth/mapping/Constant.php
-%%WWWDIR%%/modules/ldapauth/mapping/Function.php
+%%WWWDIR%%/modules/ldapauth/mapping/FunctionMapping.php
 %%WWWDIR%%/modules/ldapauth/model/Person.php
 %%WWWDIR%%/modules/ldapauth/themes/Default/images/ldapauth.png
 %%WWWDIR%%/modules/ldapauth/views/Extjs3/SettingsTab.js
 %%WWWDIR%%/modules/ldapauth/views/Extjs3/scripts.txt
 %%WWWDIR%%/modules/leavedays/LeavedaysModule.php
 %%WWWDIR%%/modules/leavedays/controller/LeavedayController.php
+%%WWWDIR%%/modules/leavedays/controller/ReportController.php
 %%WWWDIR%%/modules/leavedays/controller/UserController.php
 %%WWWDIR%%/modules/leavedays/controller/YearCreditController.php
 %%WWWDIR%%/modules/leavedays/install/install.sql
@@ -3623,13 +3705,16 @@
 %%WWWDIR%%/modules/leavedays/install/updatescripts/1_store_national_holiday_hours.php
 %%WWWDIR%%/modules/leavedays/language/de.php
 %%WWWDIR%%/modules/leavedays/language/en.php
+%%WWWDIR%%/modules/leavedays/language/fr.php
 %%WWWDIR%%/modules/leavedays/language/nl.php
 %%WWWDIR%%/modules/leavedays/model/Leaveday.php
 %%WWWDIR%%/modules/leavedays/model/YearCredit.php
+%%WWWDIR%%/modules/leavedays/scripts.inc.php
 %%WWWDIR%%/modules/leavedays/themes/Default/images/leavedays.png
 %%WWWDIR%%/modules/leavedays/themes/Default/style.css
 %%WWWDIR%%/modules/leavedays/views/Extjs3/LeavedayDialog.js
 %%WWWDIR%%/modules/leavedays/views/Extjs3/MainPanel.js
+%%WWWDIR%%/modules/leavedays/views/Extjs3/MonthWindow.js
 %%WWWDIR%%/modules/leavedays/views/Extjs3/Plugins.js
 %%WWWDIR%%/modules/leavedays/views/Extjs3/UserPanel.js
 %%WWWDIR%%/modules/leavedays/views/Extjs3/YearCreditDialog.js
@@ -3638,6 +3723,7 @@
 %%WWWDIR%%/modules/log/MainPanel.js
 %%WWWDIR%%/modules/log/README.TXT
 %%WWWDIR%%/modules/log/controller/LogController.php
+%%WWWDIR%%/modules/log/export/CurrentGrid.php
 %%WWWDIR%%/modules/log/language/bg.php
 %%WWWDIR%%/modules/log/language/bn_BD.php
 %%WWWDIR%%/modules/log/language/cs.php
@@ -3659,6 +3745,7 @@
 %%WWWDIR%%/modules/log/themes/ExtJS/style.css
 %%WWWDIR%%/modules/manualsite/ManualsiteModule.php
 %%WWWDIR%%/modules/manualsite/language/en.php
+%%WWWDIR%%/modules/manualsite/language/fr.php
 %%WWWDIR%%/modules/manualsite/siteconfig.php
 %%WWWDIR%%/modules/manualsite/views/site/assets/css/site.css
 %%WWWDIR%%/modules/manualsite/views/site/assets/favicon.ico
@@ -3710,6 +3797,7 @@
 %%WWWDIR%%/modules/mediawiki/language/en.php
 %%WWWDIR%%/modules/mediawiki/language/fr.inc.php
 %%WWWDIR%%/modules/mediawiki/language/fr.js
+%%WWWDIR%%/modules/mediawiki/language/fr.php
 %%WWWDIR%%/modules/mediawiki/language/ko.inc.php
 %%WWWDIR%%/modules/mediawiki/language/ko.js
 %%WWWDIR%%/modules/mediawiki/language/nb.inc.php
@@ -3831,6 +3919,7 @@
 %%WWWDIR%%/modules/phpbb3/install/noautoinstall
 %%WWWDIR%%/modules/phpbb3/language/bn_BD.php
 %%WWWDIR%%/modules/phpbb3/language/en.php
+%%WWWDIR%%/modules/phpbb3/language/fr.php
 %%WWWDIR%%/modules/phpbb3/scripts.txt
 %%WWWDIR%%/modules/phpbb3/themes/Default/images/phpbb3.png
 %%WWWDIR%%/modules/phpbb3/themes/Default/style.css
@@ -3840,6 +3929,7 @@
 %%WWWDIR%%/modules/phpcustomfield/PhpcustomfieldModule.php
 %%WWWDIR%%/modules/phpcustomfield/customfieldtype/Php.php
 %%WWWDIR%%/modules/phpcustomfield/language/en.php
+%%WWWDIR%%/modules/phpcustomfield/language/fr.php
 %%WWWDIR%%/modules/phpcustomfield/scripts.txt
 %%WWWDIR%%/modules/postfixadmin/AliasDialog.js
 %%WWWDIR%%/modules/postfixadmin/AliasesGrid.js
@@ -3885,7 +3975,9 @@
 %%WWWDIR%%/modules/postfixadmin/themes/ExtJS/style.css
 %%WWWDIR%%/modules/pr2analyzer/Pr2analyzerModule.php
 %%WWWDIR%%/modules/pr2analyzer/controller/TimeController.php
+%%WWWDIR%%/modules/pr2analyzer/language/de.php
 %%WWWDIR%%/modules/pr2analyzer/language/en.php
+%%WWWDIR%%/modules/pr2analyzer/language/fr.php
 %%WWWDIR%%/modules/pr2analyzer/language/nl.php
 %%WWWDIR%%/modules/pr2analyzer/themes/Default/images/pr2analizer.png
 %%WWWDIR%%/modules/pr2analyzer/themes/Default/images/reports.png
@@ -3902,6 +3994,7 @@
 %%WWWDIR%%/modules/presidents/install/uninstall.sql
 %%WWWDIR%%/modules/presidents/language/bn_BD.php
 %%WWWDIR%%/modules/presidents/language/en.php
+%%WWWDIR%%/modules/presidents/language/fr.php
 %%WWWDIR%%/modules/presidents/model/Party.php
 %%WWWDIR%%/modules/presidents/model/President.php
 %%WWWDIR%%/modules/presidents/views/Extjs3/MainPanel.js
@@ -3912,6 +4005,8 @@
 %%WWWDIR%%/modules/presidents/views/Extjs3/scripts.txt
 %%WWWDIR%%/modules/presidents/views/Extjs3/themes/Default/style.css
 %%WWWDIR%%/modules/professional/License.php
+%%WWWDIR%%/modules/professional/LicenseBilling.php
+%%WWWDIR%%/modules/professional/LicenseDocuments.php
 %%WWWDIR%%/modules/professional/Module.php
 %%WWWDIR%%/modules/professional/controller/AbstractController.php
 %%WWWDIR%%/modules/professional/controller/AbstractJsonController.php
@@ -3936,12 +4031,13 @@
 %%WWWDIR%%/modules/projects2/SelectTemplateWindow.js
 %%WWWDIR%%/modules/projects2/SelectType.js
 %%WWWDIR%%/modules/projects2/SettingsDialog.js
-%%WWWDIR%%/modules/projects2/StatusDialog.js
 %%WWWDIR%%/modules/projects2/StatusesGrid.js
 %%WWWDIR%%/modules/projects2/Stores.js
 %%WWWDIR%%/modules/projects2/TemplateEventDialog.js
 %%WWWDIR%%/modules/projects2/TemplateEventsGrid.js
 %%WWWDIR%%/modules/projects2/TemplatesGrid.js
+%%WWWDIR%%/modules/projects2/TreeContextMenu.js
+%%WWWDIR%%/modules/projects2/controller/DefaultResourceController.php
 %%WWWDIR%%/modules/projects2/controller/EmployeeController.php
 %%WWWDIR%%/modules/projects2/controller/ExpenseBudgetController.php
 %%WWWDIR%%/modules/projects2/controller/ExpenseController.php
@@ -3964,18 +4060,22 @@
 %%WWWDIR%%/modules/projects2/controller/TimerController.php
 %%WWWDIR%%/modules/projects2/controller/TypeController.php
 %%WWWDIR%%/modules/projects2/controller/WeekController.php
+%%WWWDIR%%/modules/projects2/cron/IncomeNotification.php
 %%WWWDIR%%/modules/projects2/customfields/model/Project.php
 %%WWWDIR%%/modules/projects2/customfields/model/TimeEntry.php
+%%WWWDIR%%/modules/projects2/export/CurrentGrid.php
 %%WWWDIR%%/modules/projects2/export/GridAllIncome.php
 %%WWWDIR%%/modules/projects2/install/images/folder.png
 %%WWWDIR%%/modules/projects2/install/images/project.png
 %%WWWDIR%%/modules/projects2/install/install.sql
+%%WWWDIR%%/modules/projects2/install/migrate/models.php
 %%WWWDIR%%/modules/projects2/install/uninstall.sql
 %%WWWDIR%%/modules/projects2/install/updates.inc.php
 %%WWWDIR%%/modules/projects2/install/updatescripts/1_convert_report_templates.inc.php
 %%WWWDIR%%/modules/projects2/install/updatescripts/2_enable_income_in_project_templates.php
 %%WWWDIR%%/modules/projects2/install/updatescripts/3_enable_tasks_panel_in_project_templates.php
 %%WWWDIR%%/modules/projects2/install/updatescripts/4_enable_reference_no_in_project_templates.php
+%%WWWDIR%%/modules/projects2/install/updatescripts/5_install_income_notification_cron.php
 %%WWWDIR%%/modules/projects2/install/updatescripts/budget_to_income.php
 %%WWWDIR%%/modules/projects2/install/updatescripts/share_existing_statuses.php
 %%WWWDIR%%/modules/projects2/language/cs.php
@@ -3993,6 +4093,7 @@
 %%WWWDIR%%/modules/projects2/language/ru.php
 %%WWWDIR%%/modules/projects2/language/sv.php
 %%WWWDIR%%/modules/projects2/language/th.php
+%%WWWDIR%%/modules/projects2/model/DefaultResource.php
 %%WWWDIR%%/modules/projects2/model/Employee.php
 %%WWWDIR%%/modules/projects2/model/Expense.php
 %%WWWDIR%%/modules/projects2/model/ExpenseBudget.php
@@ -4016,6 +4117,7 @@
 %%WWWDIR%%/modules/projects2/report/Planning.php
 %%WWWDIR%%/modules/projects2/report/ProjectReport.php
 %%WWWDIR%%/modules/projects2/report/ProjectsReport.php
+%%WWWDIR%%/modules/projects2/report/ProjectsReportLarge.php
 %%WWWDIR%%/modules/projects2/report/TimeTrackingCsv.php
 %%WWWDIR%%/modules/projects2/scripts.inc.php
 %%WWWDIR%%/modules/projects2/scripts.txt
@@ -4033,9 +4135,13 @@
 %%WWWDIR%%/modules/projects2/themes/ExtJS/images/start_timer.png
 %%WWWDIR%%/modules/projects2/themes/ExtJS/images/stop_timer.png
 %%WWWDIR%%/modules/projects2/themes/ExtJS/style.css
+%%WWWDIR%%/modules/projects2/views/Extjs3/AddressbookOverrides.js
 %%WWWDIR%%/modules/projects2/views/Extjs3/AllIncomeGrid.js
 %%WWWDIR%%/modules/projects2/views/Extjs3/AllIncomePanel.js
 %%WWWDIR%%/modules/projects2/views/Extjs3/BillingInvoiceDialog.js
+%%WWWDIR%%/modules/projects2/views/Extjs3/CompanyIncomeContractGrid.js
+%%WWWDIR%%/modules/projects2/views/Extjs3/ContractIncomeGrid.js
+%%WWWDIR%%/modules/projects2/views/Extjs3/ContractIncomePanel.js
 %%WWWDIR%%/modules/projects2/views/Extjs3/EmployeeDialog.js
 %%WWWDIR%%/modules/projects2/views/Extjs3/EmployeeGrid.js
 %%WWWDIR%%/modules/projects2/views/Extjs3/ExpenseBudgetDialog.js
@@ -4073,6 +4179,7 @@
 %%WWWDIR%%/modules/reminders/language/bg.php
 %%WWWDIR%%/modules/reminders/language/bn_BD.php
 %%WWWDIR%%/modules/reminders/language/ca.php
+%%WWWDIR%%/modules/reminders/language/cs.php
 %%WWWDIR%%/modules/reminders/language/de.php
 %%WWWDIR%%/modules/reminders/language/en.php
 %%WWWDIR%%/modules/reminders/language/et.php
@@ -4113,6 +4220,7 @@
 %%WWWDIR%%/modules/scanbox/controller/ScanboxController.php
 %%WWWDIR%%/modules/scanbox/language/de.php
 %%WWWDIR%%/modules/scanbox/language/en.php
+%%WWWDIR%%/modules/scanbox/language/es.php
 %%WWWDIR%%/modules/scanbox/language/fr.php
 %%WWWDIR%%/modules/scanbox/language/nb.php
 %%WWWDIR%%/modules/scanbox/language/nl.php
@@ -4132,6 +4240,7 @@
 %%WWWDIR%%/modules/search/language/cs.php
 %%WWWDIR%%/modules/search/language/de.php
 %%WWWDIR%%/modules/search/language/en.php
+%%WWWDIR%%/modules/search/language/es.php
 %%WWWDIR%%/modules/search/language/et.php
 %%WWWDIR%%/modules/search/language/fr.php
 %%WWWDIR%%/modules/search/language/hr.php
@@ -4147,7 +4256,9 @@
 %%WWWDIR%%/modules/search/themes/Default/images/search.png
 %%WWWDIR%%/modules/search/themes/Default/style.css
 %%WWWDIR%%/modules/serverclient/HttpClient.php
+%%WWWDIR%%/modules/serverclient/HttpClient.php.bak
 %%WWWDIR%%/modules/serverclient/ServerclientModule.php
+%%WWWDIR%%/modules/serverclient/ServerclientModule.php.bak
 %%WWWDIR%%/modules/serverclient/install/install.txt
 %%WWWDIR%%/modules/serverclient/install/noautoinstall
 %%WWWDIR%%/modules/serverclient/language/bg.php
@@ -4199,6 +4310,7 @@
 %%WWWDIR%%/modules/sieve/CriteriumCreatorDialog.js
 %%WWWDIR%%/modules/sieve/CriteriumGrid.js
 %%WWWDIR%%/modules/sieve/INSTALL.TXT
+%%WWWDIR%%/modules/sieve/OutOfOfficePanel.js
 %%WWWDIR%%/modules/sieve/Overrides.js
 %%WWWDIR%%/modules/sieve/SieveDialog.js
 %%WWWDIR%%/modules/sieve/SieveGrid.js
@@ -4217,6 +4329,7 @@
 %%WWWDIR%%/modules/sieve/language/de.php
 %%WWWDIR%%/modules/sieve/language/en.php
 %%WWWDIR%%/modules/sieve/language/es.php
+%%WWWDIR%%/modules/sieve/language/fr.php
 %%WWWDIR%%/modules/sieve/language/hr.php
 %%WWWDIR%%/modules/sieve/language/it.php
 %%WWWDIR%%/modules/sieve/language/ko.php
@@ -4254,12 +4367,15 @@
 %%WWWDIR%%/modules/site/customfieldtype/Sitefile.php
 %%WWWDIR%%/modules/site/customfieldtype/Sitemultifile.php
 %%WWWDIR%%/modules/site/index.php
+%%WWWDIR%%/modules/site/index.php.bak
 %%WWWDIR%%/modules/site/install/install.sql
 %%WWWDIR%%/modules/site/install/uninstall.sql
 %%WWWDIR%%/modules/site/install/updates.inc.php
 %%WWWDIR%%/modules/site/language/bn_BD.php
 %%WWWDIR%%/modules/site/language/cs.php
 %%WWWDIR%%/modules/site/language/en.php
+%%WWWDIR%%/modules/site/language/fr.php
+%%WWWDIR%%/modules/site/language/nb.php
 %%WWWDIR%%/modules/site/language/nl.php
 %%WWWDIR%%/modules/site/model/Content.php
 %%WWWDIR%%/modules/site/model/FormModel.php
@@ -4407,6 +4523,7 @@
 %%WWWDIR%%/modules/smime/language/de.php
 %%WWWDIR%%/modules/smime/language/en.php
 %%WWWDIR%%/modules/smime/language/es.php
+%%WWWDIR%%/modules/smime/language/fr.php
 %%WWWDIR%%/modules/smime/language/ko.php
 %%WWWDIR%%/modules/smime/language/nb.php
 %%WWWDIR%%/modules/smime/language/nl.php
@@ -4515,21 +4632,21 @@
 %%WWWDIR%%/modules/sync/themes/Default/style.css
 %%WWWDIR%%/modules/sync/themes/ExtJS/images/sync.png
 %%WWWDIR%%/modules/sync/themes/ExtJS/style.css
-%%WWWDIR%%/modules/sync/z-push21/INSTALL.TXT
-%%WWWDIR%%/modules/sync/z-push21/backend/go/GoImapStreamWrapper.php
-%%WWWDIR%%/modules/sync/z-push21/backend/go/config.php
-%%WWWDIR%%/modules/sync/z-push21/backend/go/go.php
-%%WWWDIR%%/modules/sync/z-push21/backend/go/goBaseBackendDiff.php
-%%WWWDIR%%/modules/sync/z-push21/backend/go/goCalendar.php
-%%WWWDIR%%/modules/sync/z-push21/backend/go/goContact.php
-%%WWWDIR%%/modules/sync/z-push21/backend/go/goExporter.php
-%%WWWDIR%%/modules/sync/z-push21/backend/go/goImporter.php
-%%WWWDIR%%/modules/sync/z-push21/backend/go/goMail.php
-%%WWWDIR%%/modules/sync/z-push21/backend/go/goNote.php
-%%WWWDIR%%/modules/sync/z-push21/backend/go/goSyncUtils.php
-%%WWWDIR%%/modules/sync/z-push21/backend/go/goTask.php
-%%WWWDIR%%/modules/sync/z-push21/config.php
-%%WWWDIR%%/modules/sync/z-push21/install.sh
+%%WWWDIR%%/modules/sync/z-push/INSTALL.TXT
+%%WWWDIR%%/modules/sync/z-push/backend/go/GoImapStreamWrapper.php
+%%WWWDIR%%/modules/sync/z-push/backend/go/config.php
+%%WWWDIR%%/modules/sync/z-push/backend/go/go.php
+%%WWWDIR%%/modules/sync/z-push/backend/go/goBaseBackendDiff.php
+%%WWWDIR%%/modules/sync/z-push/backend/go/goCalendar.php
+%%WWWDIR%%/modules/sync/z-push/backend/go/goContact.php
+%%WWWDIR%%/modules/sync/z-push/backend/go/goExporter.php
+%%WWWDIR%%/modules/sync/z-push/backend/go/goImporter.php
+%%WWWDIR%%/modules/sync/z-push/backend/go/goMail.php
+%%WWWDIR%%/modules/sync/z-push/backend/go/goNote.php
+%%WWWDIR%%/modules/sync/z-push/backend/go/goSyncUtils.php
+%%WWWDIR%%/modules/sync/z-push/backend/go/goTask.php
+%%WWWDIR%%/modules/sync/z-push/config.php
+%%WWWDIR%%/modules/sync/z-push/install.sh
 %%WWWDIR%%/modules/syncml/Response.php
 %%WWWDIR%%/modules/syncml/Server.php
 %%WWWDIR%%/modules/syncml/SyncmlModule.php
@@ -4547,6 +4664,7 @@
 %%WWWDIR%%/modules/syncml/install/updates.php
 %%WWWDIR%%/modules/syncml/language/de.php
 %%WWWDIR%%/modules/syncml/language/en.php
+%%WWWDIR%%/modules/syncml/language/es.php
 %%WWWDIR%%/modules/syncml/language/fr.php
 %%WWWDIR%%/modules/syncml/language/nl.php
 %%WWWDIR%%/modules/syncml/language/pt_BR.php
@@ -4626,6 +4744,7 @@
 %%WWWDIR%%/modules/tasks/model/Tasklist.php
 %%WWWDIR%%/modules/tasks/scripts.inc.php
 %%WWWDIR%%/modules/tasks/scripts.txt
+%%WWWDIR%%/modules/tasks/views/Extjs3/StatusProgressField.js
 %%WWWDIR%%/modules/tasks/views/Extjs3/themes/Default/images/call.png
 %%WWWDIR%%/modules/tasks/views/Extjs3/themes/Default/images/complete.png
 %%WWWDIR%%/modules/tasks/views/Extjs3/themes/Default/images/newtask.png
@@ -4692,9 +4811,11 @@
 %%WWWDIR%%/modules/tickets/install/updatescripts/3_install_agent_email_template.php
 %%WWWDIR%%/modules/tickets/install/updatescripts/4_install_agent_claim_template.php
 %%WWWDIR%%/modules/tickets/install/updatescripts/5_move_email_account_to_first_tickettype.php
+%%WWWDIR%%/modules/tickets/install/updatescripts/6_remove_ticket_identifier_from_email_subject.php
 %%WWWDIR%%/modules/tickets/language/cs.php
 %%WWWDIR%%/modules/tickets/language/de.php
 %%WWWDIR%%/modules/tickets/language/en.php
+%%WWWDIR%%/modules/tickets/language/es.php
 %%WWWDIR%%/modules/tickets/language/fr.php
 %%WWWDIR%%/modules/tickets/language/ko.php
 %%WWWDIR%%/modules/tickets/language/nb.php
@@ -4834,6 +4955,7 @@
 %%WWWDIR%%/modules/users/RegionalSettingsPanel.js
 %%WWWDIR%%/modules/users/Settings.js
 %%WWWDIR%%/modules/users/TimeZones.js
+%%WWWDIR%%/modules/users/TransferDialog.js
 %%WWWDIR%%/modules/users/UserDialog.js
 %%WWWDIR%%/modules/users/UserPanel.js
 %%WWWDIR%%/modules/users/UserSettingsTab.js
@@ -4876,6 +4998,7 @@
 %%WWWDIR%%/modules/users/language/zh-tw.php
 %%WWWDIR%%/modules/users/model/CfSettingTab.php
 %%WWWDIR%%/modules/users/model/Settings.php
+%%WWWDIR%%/modules/users/model/Transporter.php
 %%WWWDIR%%/modules/users/scripts.txt
 %%WWWDIR%%/modules/users/themes/Default/images/users.png
 %%WWWDIR%%/modules/users/themes/Default/style.css
@@ -4890,7 +5013,9 @@
 %%WWWDIR%%/modules/webodf/WebodfModule.php
 %%WWWDIR%%/modules/webodf/controller/FileController.php
 %%WWWDIR%%/modules/webodf/filehandler/Webodf.php
+%%WWWDIR%%/modules/webodf/language/de.php
 %%WWWDIR%%/modules/webodf/language/en.php
+%%WWWDIR%%/modules/webodf/language/fr.php
 %%WWWDIR%%/modules/webodf/themes/Default/images/webodf.png
 %%WWWDIR%%/modules/webodf/themes/Default/style.css
 %%WWWDIR%%/modules/webodf/wodotexteditor/EditorSession.js
@@ -5197,6 +5322,14 @@
 %%WWWDIR%%/modules/zpushadmin/views/Extjs3/themes/Extjs/style.css
 %%WWWDIR%%/robots.txt
 %%WWWDIR%%/rpc.php
+%%WWWDIR%%/sounds/desktop-login.mp3
+%%WWWDIR%%/sounds/desktop-login.ogg
+%%WWWDIR%%/sounds/desktop-logout.mp3
+%%WWWDIR%%/sounds/desktop-logout.ogg
+%%WWWDIR%%/sounds/dialog-question.mp3
+%%WWWDIR%%/sounds/dialog-question.ogg
+%%WWWDIR%%/sounds/message-new-email.mp3
+%%WWWDIR%%/sounds/message-new-email.ogg
 %%WWWDIR%%/vendor/autoload.php
 %%WWWDIR%%/vendor/composer/ClassLoader.php
 %%WWWDIR%%/vendor/composer/autoload_classmap.php
@@ -5799,7 +5932,7 @@
 %%WWWDIR%%/views/Extjs3/Disabled.php
 %%WWWDIR%%/views/Extjs3/Exception.php
 %%WWWDIR%%/views/Extjs3/Init.php
-%%WWWDIR%%/views/Extjs3/Login.php
+%%WWWDIR%%/views/Extjs3/LoginHtml.php
 %%WWWDIR%%/views/Extjs3/Plain.php
 %%WWWDIR%%/views/Extjs3/Reminder.php
 %%WWWDIR%%/views/Extjs3/default_scripts.inc.php
@@ -6786,6 +6919,7 @@
 %%WWWDIR%%/views/Extjs3/ext/src/locale/ext-lang-en.js
 %%WWWDIR%%/views/Extjs3/ext/src/locale/ext-lang-en_GB.js
 %%WWWDIR%%/views/Extjs3/ext/src/locale/ext-lang-es.js
+%%WWWDIR%%/views/Extjs3/ext/src/locale/ext-lang-et.js
 %%WWWDIR%%/views/Extjs3/ext/src/locale/ext-lang-fa.js
 %%WWWDIR%%/views/Extjs3/ext/src/locale/ext-lang-fi.js
 %%WWWDIR%%/views/Extjs3/ext/src/locale/ext-lang-fr.js
@@ -7004,6 +7138,7 @@
 %%WWWDIR%%/views/Extjs3/javascript/advancedquery/AdvancedQueryPanel.js
 %%WWWDIR%%/views/Extjs3/javascript/advancedquery/QueryPanel.js
 %%WWWDIR%%/views/Extjs3/javascript/advancedquery/SavedQueriesGrid.js
+%%WWWDIR%%/views/Extjs3/javascript/base/ColumnSelectPanel.js
 %%WWWDIR%%/views/Extjs3/javascript/base/ContextMenu.js
 %%WWWDIR%%/views/Extjs3/javascript/base/CurrentGridExportDialog.js
 %%WWWDIR%%/views/Extjs3/javascript/base/ExportMenu.js
@@ -7078,6 +7213,7 @@
 %%WWWDIR%%/views/Extjs3/javascript/grids/RowExpander.js
 %%WWWDIR%%/views/Extjs3/javascript/grids/SimpleSelectList.js
 %%WWWDIR%%/views/Extjs3/javascript/grids/TreeGrid.js
+%%WWWDIR%%/views/Extjs3/javascript/links/ExternalLinkHandler.js
 %%WWWDIR%%/views/Extjs3/javascript/links/LinkBrowser.js
 %%WWWDIR%%/views/Extjs3/javascript/links/LinkDescriptionField.js
 %%WWWDIR%%/views/Extjs3/javascript/links/LinkFolderWindow.js
@@ -8553,1530 +8689,23 @@
 %%WWWDIR%%/views/Responsive/resources/GO.js
 %%WWWDIR%%/views/Responsive/resources/message.js
 %%WWWDIR%%/views/Responsive/resources/template.js
-@dir %%WWWDIR%%/controller
-@dir %%WWWDIR%%/go/base/authorized
-@dir %%WWWDIR%%/go/base/cache
-@dir %%WWWDIR%%/go/base/component
-@dir %%WWWDIR%%/go/base/controller
-@dir %%WWWDIR%%/go/base/cron
-@dir %%WWWDIR%%/go/base/csv
-@dir %%WWWDIR%%/go/base/data
-@dir %%WWWDIR%%/go/base/db
-@dir %%WWWDIR%%/go/base/exception
-@dir %%WWWDIR%%/go/base/export
-@dir %%WWWDIR%%/go/base/fs
-@dir %%WWWDIR%%/go/base/html
-@dir %%WWWDIR%%/go/base/ldap
-@dir %%WWWDIR%%/go/base/mail/exception
-@dir %%WWWDIR%%/go/base/mail
-@dir %%WWWDIR%%/go/base/model
-@dir %%WWWDIR%%/go/base/rpc
-@dir %%WWWDIR%%/go/base/storeexport
-@dir %%WWWDIR%%/go/base/util/charset
-@dir %%WWWDIR%%/go/base/util/date
-@dir %%WWWDIR%%/go/base/util/icalendar
-@dir %%WWWDIR%%/go/base/util/minify
-@dir %%WWWDIR%%/go/base/util
-@dir %%WWWDIR%%/go/base/view
-@dir %%WWWDIR%%/go/base/vobject
-@dir %%WWWDIR%%/go/base/wbxml
-@dir %%WWWDIR%%/go/base
-@dir %%WWWDIR%%/go/vendor/Cron
-@dir %%WWWDIR%%/go/vendor/Markdown/Michelf
-@dir %%WWWDIR%%/go/vendor/Markdown
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/CachedObjectStorage
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/CalcEngine
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/Calculation/Token
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/Calculation
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/Cell
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/Chart/Renderer
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/Chart
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/Reader/Excel2007
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/Reader/Excel5
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/Reader
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/RichText
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/Shared/Escher/DgContainer/SpgrContainer
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/Shared/Escher/DgContainer
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/Shared/Escher/DggContainer/BstoreContainer/BSE
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/Shared/Escher/DggContainer/BstoreContainer
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/Shared/Escher/DggContainer
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/Shared/Escher
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/Shared/JAMA/utils
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/Shared/JAMA
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/Shared/OLE/PPS
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/Shared/OLE
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/Shared/PCLZip
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/Shared/trend
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/Shared
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/Style
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/Worksheet/AutoFilter/Column
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/Worksheet/AutoFilter
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/Worksheet/Drawing
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/Worksheet
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/Writer/Excel2007
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/Writer/Excel5
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/Writer/PDF
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/Writer
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/locale/cs
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/locale/da
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/locale/de
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/locale/en/uk
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/locale/en
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/locale/es
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/locale/fi
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/locale/fr
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/locale/hu
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/locale/it
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/locale/nl
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/locale/no
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/locale/pl
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/locale/pt/br
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/locale/pt
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/locale/ru
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/locale/sv
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/locale/tr
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel/locale
-@dir %%WWWDIR%%/go/vendor/PHPExcel/PHPExcel
-@dir %%WWWDIR%%/go/vendor/PHPExcel
-@dir %%WWWDIR%%/go/vendor/SabreDAV/bin
-@dir %%WWWDIR%%/go/vendor/SabreDAV/docs
-@dir %%WWWDIR%%/go/vendor/SabreDAV/examples/sql
-@dir %%WWWDIR%%/go/vendor/SabreDAV/examples/webserver
-@dir %%WWWDIR%%/go/vendor/SabreDAV/examples
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/CalDAV/Backend
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/CalDAV/Exception
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/CalDAV/Notifications/Notification
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/CalDAV/Notifications
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/CalDAV/Principal
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/CalDAV/Property
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/CalDAV/Schedule
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/CalDAV
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/CardDAV/Backend
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/CardDAV/Property
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/CardDAV
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAV/Auth/Backend
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAV/Auth
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAV/Browser/assets/icons
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAV/Browser/assets
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAV/Browser
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAV/Exception
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAV/FS
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAV/FSExt
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAV/Locks/Backend
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAV/Locks
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAV/Mount
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAV/PartialUpdate
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAV/Property
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAV/Tree
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAV
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAVACL/Exception
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAVACL/PrincipalBackend
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAVACL/Property
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/DAVACL
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre/HTTP
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib/Sabre
-@dir %%WWWDIR%%/go/vendor/SabreDAV/lib
-@dir %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/CalDAV/Backend
-@dir %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/CalDAV/Notifications/Notification
-@dir %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/CalDAV/Notifications
-@dir %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/CalDAV/Principal
-@dir %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/CalDAV/Property
-@dir %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/CalDAV/Schedule/IMip
-@dir %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/CalDAV/Schedule
-@dir %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/CalDAV
-@dir %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/CardDAV/Backend
-@dir %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/CardDAV/Property
-@dir %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/CardDAV
-@dir %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV/Auth/Backend
-@dir %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV/Auth
-@dir %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV/Browser
-@dir %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV/Exception
-@dir %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV/FSExt
-@dir %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV/Locks/Backend
-@dir %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV/Locks
-@dir %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV/Mount
-@dir %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV/PartialUpdate
-@dir %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV/Property
-@dir %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV/Tree
-@dir %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAV
-@dir %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAVACL/Exception
-@dir %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAVACL/PrincipalBackend
-@dir %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAVACL/Property
-@dir %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/DAVACL
-@dir %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre/HTTP
-@dir %%WWWDIR%%/go/vendor/SabreDAV/tests/Sabre
-@dir %%WWWDIR%%/go/vendor/SabreDAV/tests
-@dir %%WWWDIR%%/go/vendor/SabreDAV
-@dir %%WWWDIR%%/go/vendor/VObject/bin
-@dir %%WWWDIR%%/go/vendor/VObject/doc
-@dir %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/Component
-@dir %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/Parser
-@dir %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/Property/ICalendar
-@dir %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/Property/VCard
-@dir %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/Property
-@dir %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject/Splitter
-@dir %%WWWDIR%%/go/vendor/VObject/lib/Sabre/VObject
-@dir %%WWWDIR%%/go/vendor/VObject/lib/Sabre
-@dir %%WWWDIR%%/go/vendor/VObject/lib
-@dir %%WWWDIR%%/go/vendor/VObject/tests/Sabre/VObject/Component
-@dir %%WWWDIR%%/go/vendor/VObject/tests/Sabre/VObject/Parser
-@dir %%WWWDIR%%/go/vendor/VObject/tests/Sabre/VObject/Property/ICalendar
-@dir %%WWWDIR%%/go/vendor/VObject/tests/Sabre/VObject/Property/VCard
-@dir %%WWWDIR%%/go/vendor/VObject/tests/Sabre/VObject/Property
-@dir %%WWWDIR%%/go/vendor/VObject/tests/Sabre/VObject/Splitter
-@dir %%WWWDIR%%/go/vendor/VObject/tests/Sabre/VObject
-@dir %%WWWDIR%%/go/vendor/VObject/tests/Sabre
-@dir %%WWWDIR%%/go/vendor/VObject/tests
-@dir %%WWWDIR%%/go/vendor/VObject
-@dir %%WWWDIR%%/go/vendor/fpdi/filters
-@dir %%WWWDIR%%/go/vendor/fpdi
-@dir %%WWWDIR%%/go/vendor/jupload
-@dir %%WWWDIR%%/go/vendor/odtphp/library/zip/pclzip
-@dir %%WWWDIR%%/go/vendor/odtphp/library/zip
-@dir %%WWWDIR%%/go/vendor/odtphp/library
-@dir %%WWWDIR%%/go/vendor/odtphp
-@dir %%WWWDIR%%/go/vendor/pear/Mail
-@dir %%WWWDIR%%/go/vendor/pear/Net
-@dir %%WWWDIR%%/go/vendor/pear
-@dir %%WWWDIR%%/go/vendor/swift/lib/classes/Swift/ByteStream
-@dir %%WWWDIR%%/go/vendor/swift/lib/classes/Swift/CharacterReader
-@dir %%WWWDIR%%/go/vendor/swift/lib/classes/Swift/CharacterReaderFactory
-@dir %%WWWDIR%%/go/vendor/swift/lib/classes/Swift/CharacterStream
-@dir %%WWWDIR%%/go/vendor/swift/lib/classes/Swift/Encoder
-@dir %%WWWDIR%%/go/vendor/swift/lib/classes/Swift/Events
-@dir %%WWWDIR%%/go/vendor/swift/lib/classes/Swift/KeyCache
-@dir %%WWWDIR%%/go/vendor/swift/lib/classes/Swift/Mailer
-@dir %%WWWDIR%%/go/vendor/swift/lib/classes/Swift/Mime/ContentEncoder
-@dir %%WWWDIR%%/go/vendor/swift/lib/classes/Swift/Mime/HeaderEncoder
-@dir %%WWWDIR%%/go/vendor/swift/lib/classes/Swift/Mime/Headers
-@dir %%WWWDIR%%/go/vendor/swift/lib/classes/Swift/Mime
-@dir %%WWWDIR%%/go/vendor/swift/lib/classes/Swift/Plugins/Decorator
-@dir %%WWWDIR%%/go/vendor/swift/lib/classes/Swift/Plugins/Loggers
-@dir %%WWWDIR%%/go/vendor/swift/lib/classes/Swift/Plugins/Pop
-@dir %%WWWDIR%%/go/vendor/swift/lib/classes/Swift/Plugins/Reporters
-@dir %%WWWDIR%%/go/vendor/swift/lib/classes/Swift/Plugins
-@dir %%WWWDIR%%/go/vendor/swift/lib/classes/Swift/Signers
-@dir %%WWWDIR%%/go/vendor/swift/lib/classes/Swift/StreamFilters
-@dir %%WWWDIR%%/go/vendor/swift/lib/classes/Swift/Transport/Esmtp/Auth
-@dir %%WWWDIR%%/go/vendor/swift/lib/classes/Swift/Transport/Esmtp
-@dir %%WWWDIR%%/go/vendor/swift/lib/classes/Swift/Transport
-@dir %%WWWDIR%%/go/vendor/swift/lib/classes/Swift
-@dir %%WWWDIR%%/go/vendor/swift/lib/classes
-@dir %%WWWDIR%%/go/vendor/swift/lib/dependency_maps
-@dir %%WWWDIR%%/go/vendor/swift/lib
-@dir %%WWWDIR%%/go/vendor/swift
-@dir %%WWWDIR%%/go/vendor/tcpdf/config/lang
-@dir %%WWWDIR%%/go/vendor/tcpdf/config
-@dir %%WWWDIR%%/go/vendor/tcpdf/fonts
-@dir %%WWWDIR%%/go/vendor/tcpdf/include/barcodes
-@dir %%WWWDIR%%/go/vendor/tcpdf/include
-@dir %%WWWDIR%%/go/vendor/tcpdf/tools
-@dir %%WWWDIR%%/go/vendor/tcpdf
-@dir %%WWWDIR%%/go/vendor/wsdl
-@dir %%WWWDIR%%/go/vendor
-@dir %%WWWDIR%%/go
-@dir %%WWWDIR%%/install/updatescripts
-@dir %%WWWDIR%%/install
-@dir %%WWWDIR%%/language/common
-@dir %%WWWDIR%%/language/countries
-@dir %%WWWDIR%%/language/filetypes
-@dir %%WWWDIR%%/language/holidays
-@dir %%WWWDIR%%/language/lostpassword
-@dir %%WWWDIR%%/language
-@dir %%WWWDIR%%/modules/addressbook/controller
-@dir %%WWWDIR%%/modules/addressbook/customfields/model
-@dir %%WWWDIR%%/modules/addressbook/customfields
-@dir %%WWWDIR%%/modules/addressbook/customfieldtype
-@dir %%WWWDIR%%/modules/addressbook/export
-@dir %%WWWDIR%%/modules/addressbook/install/updatescripts
-@dir %%WWWDIR%%/modules/addressbook/install
-@dir %%WWWDIR%%/modules/addressbook/language
-@dir %%WWWDIR%%/modules/addressbook/model
-@dir %%WWWDIR%%/modules/addressbook/themes/Default/images/16x16
-@dir %%WWWDIR%%/modules/addressbook/themes/Default/images
-@dir %%WWWDIR%%/modules/addressbook/themes/Default
-@dir %%WWWDIR%%/modules/addressbook/themes/ExtJS/images/16x16
-@dir %%WWWDIR%%/modules/addressbook/themes/ExtJS/images
-@dir %%WWWDIR%%/modules/addressbook/themes/ExtJS
-@dir %%WWWDIR%%/modules/addressbook/themes/Group-Office/images/16x16
-@dir %%WWWDIR%%/modules/addressbook/themes/Group-Office/images
-@dir %%WWWDIR%%/modules/addressbook/themes/Group-Office
-@dir %%WWWDIR%%/modules/addressbook/themes
-@dir %%WWWDIR%%/modules/addressbook/views/Extjs3
-@dir %%WWWDIR%%/modules/addressbook/views
-@dir %%WWWDIR%%/modules/addressbook
-@dir %%WWWDIR%%/modules/admin2userlogin/controller
-@dir %%WWWDIR%%/modules/admin2userlogin/language
-@dir %%WWWDIR%%/modules/admin2userlogin/themes/Default/images
-@dir %%WWWDIR%%/modules/admin2userlogin/themes/Default
-@dir %%WWWDIR%%/modules/admin2userlogin/themes
-@dir %%WWWDIR%%/modules/admin2userlogin
-@dir %%WWWDIR%%/modules/billing/controller
-@dir %%WWWDIR%%/modules/billing/customfields/model
-@dir %%WWWDIR%%/modules/billing/customfields
-@dir %%WWWDIR%%/modules/billing/export
-@dir %%WWWDIR%%/modules/billing/install/updatescripts
-@dir %%WWWDIR%%/modules/billing/install
-@dir %%WWWDIR%%/modules/billing/language
-@dir %%WWWDIR%%/modules/billing/model
-@dir %%WWWDIR%%/modules/billing/mt940
-@dir %%WWWDIR%%/modules/billing/themes/Default/images
-@dir %%WWWDIR%%/modules/billing/themes/Default
-@dir %%WWWDIR%%/modules/billing/themes/ExtJS/images
-@dir %%WWWDIR%%/modules/billing/themes/ExtJS
-@dir %%WWWDIR%%/modules/billing/themes/Group-Office/images
-@dir %%WWWDIR%%/modules/billing/themes/Group-Office
-@dir %%WWWDIR%%/modules/billing/themes
-@dir %%WWWDIR%%/modules/billing/vendor/jejik-mt940-master/lib/Jejik/MT940/Parser
-@dir %%WWWDIR%%/modules/billing/vendor/jejik-mt940-master/lib/Jejik/MT940
-@dir %%WWWDIR%%/modules/billing/vendor/jejik-mt940-master/lib/Jejik
-@dir %%WWWDIR%%/modules/billing/vendor/jejik-mt940-master/lib
-@dir %%WWWDIR%%/modules/billing/vendor/jejik-mt940-master
-@dir %%WWWDIR%%/modules/billing/vendor
-@dir %%WWWDIR%%/modules/billing
-@dir %%WWWDIR%%/modules/billingtwinfield/controller
-@dir %%WWWDIR%%/modules/billingtwinfield/language
-@dir %%WWWDIR%%/modules/billingtwinfield/views/Extjs3
-@dir %%WWWDIR%%/modules/billingtwinfield/views
-@dir %%WWWDIR%%/modules/billingtwinfield
-@dir %%WWWDIR%%/modules/bookmarks/controller
-@dir %%WWWDIR%%/modules/bookmarks/icons
-@dir %%WWWDIR%%/modules/bookmarks/install/updatescripts
-@dir %%WWWDIR%%/modules/bookmarks/install
-@dir %%WWWDIR%%/modules/bookmarks/language
-@dir %%WWWDIR%%/modules/bookmarks/model
-@dir %%WWWDIR%%/modules/bookmarks/themes/Default/images
-@dir %%WWWDIR%%/modules/bookmarks/themes/Default
-@dir %%WWWDIR%%/modules/bookmarks/themes/Group-Office/images
-@dir %%WWWDIR%%/modules/bookmarks/themes/Group-Office
-@dir %%WWWDIR%%/modules/bookmarks/themes
-@dir %%WWWDIR%%/modules/bookmarks
-@dir %%WWWDIR%%/modules/caldav/install
-@dir %%WWWDIR%%/modules/caldav/language
-@dir %%WWWDIR%%/modules/caldav/model
-@dir %%WWWDIR%%/modules/caldav/schedule
-@dir %%WWWDIR%%/modules/caldav/themes/Default/images
-@dir %%WWWDIR%%/modules/caldav/themes/Default
-@dir %%WWWDIR%%/modules/caldav/themes
-@dir %%WWWDIR%%/modules/caldav
-@dir %%WWWDIR%%/modules/calendar/controller
-@dir %%WWWDIR%%/modules/calendar/cron
-@dir %%WWWDIR%%/modules/calendar/customfields/model
-@dir %%WWWDIR%%/modules/calendar/customfields
-@dir %%WWWDIR%%/modules/calendar/install/updatescripts
-@dir %%WWWDIR%%/modules/calendar/install
-@dir %%WWWDIR%%/modules/calendar/language
-@dir %%WWWDIR%%/modules/calendar/model
-@dir %%WWWDIR%%/modules/calendar/reports
-@dir %%WWWDIR%%/modules/calendar/test
-@dir %%WWWDIR%%/modules/calendar/themes/Default/images/16x16
-@dir %%WWWDIR%%/modules/calendar/themes/Default/images/22x22
-@dir %%WWWDIR%%/modules/calendar/themes/Default/images/pdf
-@dir %%WWWDIR%%/modules/calendar/themes/Default/images
-@dir %%WWWDIR%%/modules/calendar/themes/Default
-@dir %%WWWDIR%%/modules/calendar/themes/ExtJS/images/16x16
-@dir %%WWWDIR%%/modules/calendar/themes/ExtJS/images/22x22
-@dir %%WWWDIR%%/modules/calendar/themes/ExtJS/images
-@dir %%WWWDIR%%/modules/calendar/themes/ExtJS
-@dir %%WWWDIR%%/modules/calendar/themes/Group-Office/images/16x16
-@dir %%WWWDIR%%/modules/calendar/themes/Group-Office/images/22x22
-@dir %%WWWDIR%%/modules/calendar/themes/Group-Office/images
-@dir %%WWWDIR%%/modules/calendar/themes/Group-Office
-@dir %%WWWDIR%%/modules/calendar/themes
-@dir %%WWWDIR%%/modules/calendar/util
-@dir %%WWWDIR%%/modules/calendar/views/Extjs3
-@dir %%WWWDIR%%/modules/calendar/views/pdf
-@dir %%WWWDIR%%/modules/calendar/views
-@dir %%WWWDIR%%/modules/calendar
-@dir %%WWWDIR%%/modules/calendarexport/export
-@dir %%WWWDIR%%/modules/calendarexport/language
-@dir %%WWWDIR%%/modules/calendarexport
-@dir %%WWWDIR%%/modules/carddav/install
-@dir %%WWWDIR%%/modules/carddav/language
-@dir %%WWWDIR%%/modules/carddav/model
-@dir %%WWWDIR%%/modules/carddav/views/Extjs3/themes/Default/images
-@dir %%WWWDIR%%/modules/carddav/views/Extjs3/themes/Default
-@dir %%WWWDIR%%/modules/carddav/views/Extjs3/themes
-@dir %%WWWDIR%%/modules/carddav/views/Extjs3
-@dir %%WWWDIR%%/modules/carddav/views
-@dir %%WWWDIR%%/modules/carddav
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/builds
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/fonticons/fonts
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/fonticons
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/images
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/af/LC_MESSAGES
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/af
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/de/LC_MESSAGES
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/de
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/en/LC_MESSAGES
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/en
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/es/LC_MESSAGES
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/es
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/fr/LC_MESSAGES
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/fr
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/he/LC_MESSAGES
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/he
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/hu/LC_MESSAGES
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/hu
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/id/LC_MESSAGES
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/id
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/it/LC_MESSAGES
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/it
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/ja/LC_MESSAGES
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/ja
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/nl/LC_MESSAGES
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/nl
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/pt_BR/LC_MESSAGES
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/pt_BR
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/ru/LC_MESSAGES
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/locale/ru
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/locale
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/spec
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/src
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4/stylesheets
-@dir %%WWWDIR%%/modules/chat/converse.js-0.7.4
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/builds
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/css/images
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/css
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/doctrees
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/html/_sources
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/html/_static
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/html/static
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/html
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/source/_templates
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/source/theme/static
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/source/theme
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/docs/source
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/docs
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/fonticons/demo-files
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/fonticons/fonts
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/fonticons
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/less
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/af/LC_MESSAGES
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/af
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/de/LC_MESSAGES
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/de
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/en/LC_MESSAGES
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/en
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/es/LC_MESSAGES
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/es
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/fr/LC_MESSAGES
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/fr
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/he/LC_MESSAGES
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/he
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/hu/LC_MESSAGES
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/hu
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/id/LC_MESSAGES
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/id
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/it/LC_MESSAGES
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/it
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/ja/LC_MESSAGES
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/ja
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/nl/LC_MESSAGES
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/nl
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/pt_BR/LC_MESSAGES
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/pt_BR
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/ru/LC_MESSAGES
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/ru
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/zh/LC_MESSAGES
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/locale/zh
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/locale
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/mockup
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/spec
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/src/templates
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/src
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0/tests
-@dir %%WWWDIR%%/modules/chat/converse.js-0.8.0
-@dir %%WWWDIR%%/modules/chat/language
-@dir %%WWWDIR%%/modules/chat/views/Extjs3/themes/Default
-@dir %%WWWDIR%%/modules/chat/views/Extjs3/themes/Group-Office
-@dir %%WWWDIR%%/modules/chat/views/Extjs3/themes
-@dir %%WWWDIR%%/modules/chat/views/Extjs3
-@dir %%WWWDIR%%/modules/chat/views
-@dir %%WWWDIR%%/modules/chat/xmpp-prebind-php/lib/Auth/SASL
-@dir %%WWWDIR%%/modules/chat/xmpp-prebind-php/lib/Auth
-@dir %%WWWDIR%%/modules/chat/xmpp-prebind-php/lib/FirePHP
-@dir %%WWWDIR%%/modules/chat/xmpp-prebind-php/lib
-@dir %%WWWDIR%%/modules/chat/xmpp-prebind-php
-@dir %%WWWDIR%%/modules/chat
-@dir %%WWWDIR%%/modules/comments/controller
-@dir %%WWWDIR%%/modules/comments/install
-@dir %%WWWDIR%%/modules/comments/language
-@dir %%WWWDIR%%/modules/comments/model
-@dir %%WWWDIR%%/modules/comments/themes/Default/images
-@dir %%WWWDIR%%/modules/comments/themes/Default
-@dir %%WWWDIR%%/modules/comments/themes
-@dir %%WWWDIR%%/modules/comments
-@dir %%WWWDIR%%/modules/cron/controller
-@dir %%WWWDIR%%/modules/cron/language
 @dir %%WWWDIR%%/modules/cron/model
-@dir %%WWWDIR%%/modules/cron/views/Extjs3/themes/Default/images
-@dir %%WWWDIR%%/modules/cron/views/Extjs3/themes/Default
-@dir %%WWWDIR%%/modules/cron/views/Extjs3/themes/ExtJS/images
-@dir %%WWWDIR%%/modules/cron/views/Extjs3/themes/ExtJS
-@dir %%WWWDIR%%/modules/cron/views/Extjs3/themes
-@dir %%WWWDIR%%/modules/cron/views/Extjs3
-@dir %%WWWDIR%%/modules/cron/views
-@dir %%WWWDIR%%/modules/cron
-@dir %%WWWDIR%%/modules/customcss/controller
-@dir %%WWWDIR%%/modules/customcss/install
-@dir %%WWWDIR%%/modules/customcss/language
-@dir %%WWWDIR%%/modules/customcss/themes/Default/images
-@dir %%WWWDIR%%/modules/customcss/themes/Default
-@dir %%WWWDIR%%/modules/customcss/themes
-@dir %%WWWDIR%%/modules/customcss
-@dir %%WWWDIR%%/modules/customfields/controller
-@dir %%WWWDIR%%/modules/customfields/customfieldtype
-@dir %%WWWDIR%%/modules/customfields/html
-@dir %%WWWDIR%%/modules/customfields/install
-@dir %%WWWDIR%%/modules/customfields/language
-@dir %%WWWDIR%%/modules/customfields/model
-@dir %%WWWDIR%%/modules/customfields/themes/Default/images
-@dir %%WWWDIR%%/modules/customfields/themes/Default
-@dir %%WWWDIR%%/modules/customfields/themes/ExtJS/images
-@dir %%WWWDIR%%/modules/customfields/themes/ExtJS
-@dir %%WWWDIR%%/modules/customfields/themes
-@dir %%WWWDIR%%/modules/customfields
-@dir %%WWWDIR%%/modules/dav/auth
-@dir %%WWWDIR%%/modules/dav/davacl
-@dir %%WWWDIR%%/modules/dav/fs
-@dir %%WWWDIR%%/modules/dav/language
-@dir %%WWWDIR%%/modules/dav/themes/Default/images
-@dir %%WWWDIR%%/modules/dav/themes/Default
-@dir %%WWWDIR%%/modules/dav/themes
-@dir %%WWWDIR%%/modules/dav
-@dir %%WWWDIR%%/modules/defaultsite/controller
-@dir %%WWWDIR%%/modules/defaultsite/language
-@dir %%WWWDIR%%/modules/defaultsite/views/site/addressbook
-@dir %%WWWDIR%%/modules/defaultsite/views/site/assets/css
-@dir %%WWWDIR%%/modules/defaultsite/views/site/assets
-@dir %%WWWDIR%%/modules/defaultsite/views/site/layouts
-@dir %%WWWDIR%%/modules/defaultsite/views/site/servermanager/emails
-@dir %%WWWDIR%%/modules/defaultsite/views/site/servermanager
-@dir %%WWWDIR%%/modules/defaultsite/views/site/site
-@dir %%WWWDIR%%/modules/defaultsite/views/site/tickets
-@dir %%WWWDIR%%/modules/defaultsite/views/site
-@dir %%WWWDIR%%/modules/defaultsite/views
-@dir %%WWWDIR%%/modules/defaultsite
-@dir %%WWWDIR%%/modules/demodata/controller
-@dir %%WWWDIR%%/modules/demodata/language
-@dir %%WWWDIR%%/modules/demodata
-@dir %%WWWDIR%%/modules/documenttemplates/controller
-@dir %%WWWDIR%%/modules/documenttemplates/language
-@dir %%WWWDIR%%/modules/documenttemplates/model
-@dir %%WWWDIR%%/modules/documenttemplates/themes/Default/images
-@dir %%WWWDIR%%/modules/documenttemplates/themes/Default
-@dir %%WWWDIR%%/modules/documenttemplates/themes
-@dir %%WWWDIR%%/modules/documenttemplates
-@dir %%WWWDIR%%/modules/dropbox/controller
-@dir %%WWWDIR%%/modules/dropbox/cron
-@dir %%WWWDIR%%/modules/dropbox/install
-@dir %%WWWDIR%%/modules/dropbox/language
-@dir %%WWWDIR%%/modules/dropbox/lib/Dropbox/Exception
-@dir %%WWWDIR%%/modules/dropbox/lib/Dropbox
-@dir %%WWWDIR%%/modules/dropbox/lib
-@dir %%WWWDIR%%/modules/dropbox/model
-@dir %%WWWDIR%%/modules/dropbox/views/Extjs3/themes/Default/images
-@dir %%WWWDIR%%/modules/dropbox/views/Extjs3/themes/Default
-@dir %%WWWDIR%%/modules/dropbox/views/Extjs3/themes
-@dir %%WWWDIR%%/modules/dropbox/views/Extjs3
-@dir %%WWWDIR%%/modules/dropbox/views
-@dir %%WWWDIR%%/modules/dropbox
-@dir %%WWWDIR%%/modules/email/controller
-@dir %%WWWDIR%%/modules/email/install/updatescripts
-@dir %%WWWDIR%%/modules/email/install
-@dir %%WWWDIR%%/modules/email/language
-@dir %%WWWDIR%%/modules/email/model
-@dir %%WWWDIR%%/modules/email/themes/Default/images/16x16
-@dir %%WWWDIR%%/modules/email/themes/Default/images/22x22
-@dir %%WWWDIR%%/modules/email/themes/Default/images
-@dir %%WWWDIR%%/modules/email/themes/Default
-@dir %%WWWDIR%%/modules/email/themes/ExtJS/images/16x16
-@dir %%WWWDIR%%/modules/email/themes/ExtJS/images/22x22
-@dir %%WWWDIR%%/modules/email/themes/ExtJS/images
-@dir %%WWWDIR%%/modules/email/themes/ExtJS
-@dir %%WWWDIR%%/modules/email/themes/Group-Office/images/16x16
-@dir %%WWWDIR%%/modules/email/themes/Group-Office/images/22x22
-@dir %%WWWDIR%%/modules/email/themes/Group-Office/images
-@dir %%WWWDIR%%/modules/email/themes/Group-Office
-@dir %%WWWDIR%%/modules/email/themes
-@dir %%WWWDIR%%/modules/email/views/Extjs3
-@dir %%WWWDIR%%/modules/email/views/Responsive
-@dir %%WWWDIR%%/modules/email/views
-@dir %%WWWDIR%%/modules/email
-@dir %%WWWDIR%%/modules/exactonline/controller
-@dir %%WWWDIR%%/modules/exactonline/language
-@dir %%WWWDIR%%/modules/exactonline/views/Extjs3
-@dir %%WWWDIR%%/modules/exactonline/views
-@dir %%WWWDIR%%/modules/exactonline
-@dir %%WWWDIR%%/modules/favorites/controller
-@dir %%WWWDIR%%/modules/favorites/install
-@dir %%WWWDIR%%/modules/favorites/language
-@dir %%WWWDIR%%/modules/favorites/model
-@dir %%WWWDIR%%/modules/favorites/views/Extjs3/themes/Default/images
-@dir %%WWWDIR%%/modules/favorites/views/Extjs3/themes/Default
-@dir %%WWWDIR%%/modules/favorites/views/Extjs3/themes
-@dir %%WWWDIR%%/modules/favorites/views/Extjs3
-@dir %%WWWDIR%%/modules/favorites/views
-@dir %%WWWDIR%%/modules/favorites
-@dir %%WWWDIR%%/modules/files/controller
-@dir %%WWWDIR%%/modules/files/cron
-@dir %%WWWDIR%%/modules/files/customfields/model
-@dir %%WWWDIR%%/modules/files/customfields
-@dir %%WWWDIR%%/modules/files/customfieldtype
-@dir %%WWWDIR%%/modules/files/exception
-@dir %%WWWDIR%%/modules/files/filehandler
-@dir %%WWWDIR%%/modules/files/fs
-@dir %%WWWDIR%%/modules/files/install/templates
-@dir %%WWWDIR%%/modules/files/install/updatescripts
-@dir %%WWWDIR%%/modules/files/install
-@dir %%WWWDIR%%/modules/files/language
-@dir %%WWWDIR%%/modules/files/model
-@dir %%WWWDIR%%/modules/files/themes/Default/images
-@dir %%WWWDIR%%/modules/files/themes/Default
-@dir %%WWWDIR%%/modules/files/themes/ExtJS/images
-@dir %%WWWDIR%%/modules/files/themes/ExtJS
-@dir %%WWWDIR%%/modules/files/themes/Group-Office/images
-@dir %%WWWDIR%%/modules/files/themes/Group-Office
-@dir %%WWWDIR%%/modules/files/themes
-@dir %%WWWDIR%%/modules/files/views/Extjs3
-@dir %%WWWDIR%%/modules/files/views
-@dir %%WWWDIR%%/modules/files
-@dir %%WWWDIR%%/modules/filesearch/controller
-@dir %%WWWDIR%%/modules/filesearch/cron
-@dir %%WWWDIR%%/modules/filesearch/export
-@dir %%WWWDIR%%/modules/filesearch/install/updatescripts
-@dir %%WWWDIR%%/modules/filesearch/install
-@dir %%WWWDIR%%/modules/filesearch/language
-@dir %%WWWDIR%%/modules/filesearch/model
-@dir %%WWWDIR%%/modules/filesearch/themes/Default/images
-@dir %%WWWDIR%%/modules/filesearch/themes/Default
-@dir %%WWWDIR%%/modules/filesearch/themes
-@dir %%WWWDIR%%/modules/filesearch/xsl
-@dir %%WWWDIR%%/modules/filesearch
-@dir %%WWWDIR%%/modules/formprocessor/install
-@dir %%WWWDIR%%/modules/formprocessor/language
-@dir %%WWWDIR%%/modules/formprocessor/themes/Default/images
-@dir %%WWWDIR%%/modules/formprocessor/themes/Default
-@dir %%WWWDIR%%/modules/formprocessor/themes
-@dir %%WWWDIR%%/modules/formprocessor
-@dir %%WWWDIR%%/modules/freebusypermissions/install
-@dir %%WWWDIR%%/modules/freebusypermissions/language
-@dir %%WWWDIR%%/modules/freebusypermissions/model
-@dir %%WWWDIR%%/modules/freebusypermissions/themes/Default/images
-@dir %%WWWDIR%%/modules/freebusypermissions/themes/Default
-@dir %%WWWDIR%%/modules/freebusypermissions/themes
-@dir %%WWWDIR%%/modules/freebusypermissions
-@dir %%WWWDIR%%/modules/googledrive/controller
-@dir %%WWWDIR%%/modules/googledrive/filehandler
-@dir %%WWWDIR%%/modules/googledrive/google-api-php-client/src/auth
-@dir %%WWWDIR%%/modules/googledrive/google-api-php-client/src/cache
-@dir %%WWWDIR%%/modules/googledrive/google-api-php-client/src/contrib
-@dir %%WWWDIR%%/modules/googledrive/google-api-php-client/src/external
-@dir %%WWWDIR%%/modules/googledrive/google-api-php-client/src/io
-@dir %%WWWDIR%%/modules/googledrive/google-api-php-client/src/service
-@dir %%WWWDIR%%/modules/googledrive/google-api-php-client/src
-@dir %%WWWDIR%%/modules/googledrive/google-api-php-client
-@dir %%WWWDIR%%/modules/googledrive/language
-@dir %%WWWDIR%%/modules/googledrive/themes/Default/images
-@dir %%WWWDIR%%/modules/googledrive/themes/Default
-@dir %%WWWDIR%%/modules/googledrive/themes
-@dir %%WWWDIR%%/modules/googledrive/views/Extjs3
-@dir %%WWWDIR%%/modules/googledrive/views
-@dir %%WWWDIR%%/modules/googledrive
-@dir %%WWWDIR%%/modules/gota/controller
-@dir %%WWWDIR%%/modules/gota/filehandler
-@dir %%WWWDIR%%/modules/gota/language
-@dir %%WWWDIR%%/modules/gota/lib
-@dir %%WWWDIR%%/modules/gota/themes/Default/images
-@dir %%WWWDIR%%/modules/gota/themes/Default
-@dir %%WWWDIR%%/modules/gota/themes
-@dir %%WWWDIR%%/modules/gota
-@dir %%WWWDIR%%/modules/groups/controller
-@dir %%WWWDIR%%/modules/groups/language
 @dir %%WWWDIR%%/modules/groups/model
-@dir %%WWWDIR%%/modules/groups/themes/Default/images
-@dir %%WWWDIR%%/modules/groups/themes/Default
-@dir %%WWWDIR%%/modules/groups/themes/ExtJS/images/16x16
-@dir %%WWWDIR%%/modules/groups/themes/ExtJS/images
-@dir %%WWWDIR%%/modules/groups/themes/ExtJS
-@dir %%WWWDIR%%/modules/groups/themes
-@dir %%WWWDIR%%/modules/groups
-@dir %%WWWDIR%%/modules/hoursapproval2/controller
-@dir %%WWWDIR%%/modules/hoursapproval2/language
-@dir %%WWWDIR%%/modules/hoursapproval2/themes/Default/images
-@dir %%WWWDIR%%/modules/hoursapproval2/themes/Default
-@dir %%WWWDIR%%/modules/hoursapproval2/themes/ExtJS
-@dir %%WWWDIR%%/modules/hoursapproval2/themes
-@dir %%WWWDIR%%/modules/hoursapproval2/views/Extjs3
-@dir %%WWWDIR%%/modules/hoursapproval2/views
-@dir %%WWWDIR%%/modules/hoursapproval2
-@dir %%WWWDIR%%/modules/imapauth/install
-@dir %%WWWDIR%%/modules/imapauth/language
-@dir %%WWWDIR%%/modules/imapauth/themes/Default/images
-@dir %%WWWDIR%%/modules/imapauth/themes/Default
-@dir %%WWWDIR%%/modules/imapauth/themes
-@dir %%WWWDIR%%/modules/imapauth
-@dir %%WWWDIR%%/modules/ipwhitelist/controller
-@dir %%WWWDIR%%/modules/ipwhitelist/install
-@dir %%WWWDIR%%/modules/ipwhitelist/language
-@dir %%WWWDIR%%/modules/ipwhitelist/model
-@dir %%WWWDIR%%/modules/ipwhitelist/views/Extjs3
-@dir %%WWWDIR%%/modules/ipwhitelist/views
-@dir %%WWWDIR%%/modules/ipwhitelist
-@dir %%WWWDIR%%/modules/ldapauth/controller
-@dir %%WWWDIR%%/modules/ldapauth/language
-@dir %%WWWDIR%%/modules/ldapauth/mapping
-@dir %%WWWDIR%%/modules/ldapauth/model
-@dir %%WWWDIR%%/modules/ldapauth/themes/Default/images
-@dir %%WWWDIR%%/modules/ldapauth/themes/Default
-@dir %%WWWDIR%%/modules/ldapauth/themes
-@dir %%WWWDIR%%/modules/ldapauth/views/Extjs3
-@dir %%WWWDIR%%/modules/ldapauth/views
-@dir %%WWWDIR%%/modules/ldapauth
-@dir %%WWWDIR%%/modules/leavedays/controller
-@dir %%WWWDIR%%/modules/leavedays/install/updatescripts
-@dir %%WWWDIR%%/modules/leavedays/install
-@dir %%WWWDIR%%/modules/leavedays/language
-@dir %%WWWDIR%%/modules/leavedays/model
-@dir %%WWWDIR%%/modules/leavedays/themes/Default/images
-@dir %%WWWDIR%%/modules/leavedays/themes/Default
-@dir %%WWWDIR%%/modules/leavedays/themes
-@dir %%WWWDIR%%/modules/leavedays/views/Extjs3
-@dir %%WWWDIR%%/modules/leavedays/views
-@dir %%WWWDIR%%/modules/leavedays
-@dir %%WWWDIR%%/modules/log/controller
-@dir %%WWWDIR%%/modules/log/language
-@dir %%WWWDIR%%/modules/log/model
-@dir %%WWWDIR%%/modules/log/themes/Default/images
-@dir %%WWWDIR%%/modules/log/themes/Default
-@dir %%WWWDIR%%/modules/log/themes/ExtJS/images
-@dir %%WWWDIR%%/modules/log/themes/ExtJS
-@dir %%WWWDIR%%/modules/log/themes
-@dir %%WWWDIR%%/modules/log
-@dir %%WWWDIR%%/modules/manualsite/language
-@dir %%WWWDIR%%/modules/manualsite/views/site/assets/css
-@dir %%WWWDIR%%/modules/manualsite/views/site/assets/images
 @dir %%WWWDIR%%/modules/manualsite/views/site/assets/js
-@dir %%WWWDIR%%/modules/manualsite/views/site/assets/lightbox/css
-@dir %%WWWDIR%%/modules/manualsite/views/site/assets/lightbox/img/demopage
-@dir %%WWWDIR%%/modules/manualsite/views/site/assets/lightbox/img
-@dir %%WWWDIR%%/modules/manualsite/views/site/assets/lightbox/js
-@dir %%WWWDIR%%/modules/manualsite/views/site/assets/lightbox
-@dir %%WWWDIR%%/modules/manualsite/views/site/assets
-@dir %%WWWDIR%%/modules/manualsite/views/site/layouts
-@dir %%WWWDIR%%/modules/manualsite/views/site/manualsite
-@dir %%WWWDIR%%/modules/manualsite/views/site/site
-@dir %%WWWDIR%%/modules/manualsite/views/site
-@dir %%WWWDIR%%/modules/manualsite/views
-@dir %%WWWDIR%%/modules/manualsite
-@dir %%WWWDIR%%/modules/mediawiki/controller
-@dir %%WWWDIR%%/modules/mediawiki/extensions
-@dir %%WWWDIR%%/modules/mediawiki/install
-@dir %%WWWDIR%%/modules/mediawiki/language
-@dir %%WWWDIR%%/modules/mediawiki/views/Extjs3/themes/Default/images
-@dir %%WWWDIR%%/modules/mediawiki/views/Extjs3/themes/Default
-@dir %%WWWDIR%%/modules/mediawiki/views/Extjs3/themes
-@dir %%WWWDIR%%/modules/mediawiki/views/Extjs3
-@dir %%WWWDIR%%/modules/mediawiki/views
-@dir %%WWWDIR%%/modules/mediawiki
-@dir %%WWWDIR%%/modules/modules/controller
-@dir %%WWWDIR%%/modules/modules/cron
-@dir %%WWWDIR%%/modules/modules/language
 @dir %%WWWDIR%%/modules/modules/themes/Default/images/16x16
-@dir %%WWWDIR%%/modules/modules/themes/Default/images
-@dir %%WWWDIR%%/modules/modules/themes/Default
-@dir %%WWWDIR%%/modules/modules/themes/ExtJS/images/16x16
-@dir %%WWWDIR%%/modules/modules/themes/ExtJS/images
-@dir %%WWWDIR%%/modules/modules/themes/ExtJS
-@dir %%WWWDIR%%/modules/modules/themes
-@dir %%WWWDIR%%/modules/modules
-@dir %%WWWDIR%%/modules/notes/controller
-@dir %%WWWDIR%%/modules/notes/customfields/model
-@dir %%WWWDIR%%/modules/notes/customfields
-@dir %%WWWDIR%%/modules/notes/export
-@dir %%WWWDIR%%/modules/notes/install
-@dir %%WWWDIR%%/modules/notes/language
-@dir %%WWWDIR%%/modules/notes/model
-@dir %%WWWDIR%%/modules/notes/views/Extjs3/themes/Default/images
-@dir %%WWWDIR%%/modules/notes/views/Extjs3/themes/Default
-@dir %%WWWDIR%%/modules/notes/views/Extjs3/themes/ExtJS/images
-@dir %%WWWDIR%%/modules/notes/views/Extjs3/themes/ExtJS
-@dir %%WWWDIR%%/modules/notes/views/Extjs3/themes/Group-Office/images
-@dir %%WWWDIR%%/modules/notes/views/Extjs3/themes/Group-Office
-@dir %%WWWDIR%%/modules/notes/views/Extjs3/themes
-@dir %%WWWDIR%%/modules/notes/views/Extjs3
-@dir %%WWWDIR%%/modules/notes/views
-@dir %%WWWDIR%%/modules/notes
-@dir %%WWWDIR%%/modules/phpbb3/controller
-@dir %%WWWDIR%%/modules/phpbb3/install
-@dir %%WWWDIR%%/modules/phpbb3/language
-@dir %%WWWDIR%%/modules/phpbb3/themes/Default/images
-@dir %%WWWDIR%%/modules/phpbb3/themes/Default
-@dir %%WWWDIR%%/modules/phpbb3/themes/ExtJS/images
-@dir %%WWWDIR%%/modules/phpbb3/themes/ExtJS
-@dir %%WWWDIR%%/modules/phpbb3/themes
-@dir %%WWWDIR%%/modules/phpbb3
-@dir %%WWWDIR%%/modules/phpcustomfield/customfieldtype
-@dir %%WWWDIR%%/modules/phpcustomfield/language
-@dir %%WWWDIR%%/modules/phpcustomfield
-@dir %%WWWDIR%%/modules/postfixadmin/controller
-@dir %%WWWDIR%%/modules/postfixadmin/install/updatescripts
-@dir %%WWWDIR%%/modules/postfixadmin/install
-@dir %%WWWDIR%%/modules/postfixadmin/language
-@dir %%WWWDIR%%/modules/postfixadmin/model
-@dir %%WWWDIR%%/modules/postfixadmin/scripts
-@dir %%WWWDIR%%/modules/postfixadmin/themes/Default/images
-@dir %%WWWDIR%%/modules/postfixadmin/themes/Default
-@dir %%WWWDIR%%/modules/postfixadmin/themes/ExtJS/images
-@dir %%WWWDIR%%/modules/postfixadmin/themes/ExtJS
-@dir %%WWWDIR%%/modules/postfixadmin/themes
-@dir %%WWWDIR%%/modules/postfixadmin
-@dir %%WWWDIR%%/modules/pr2analyzer/controller
 @dir %%WWWDIR%%/modules/pr2analyzer/install
-@dir %%WWWDIR%%/modules/pr2analyzer/language
 @dir %%WWWDIR%%/modules/pr2analyzer/model
-@dir %%WWWDIR%%/modules/pr2analyzer/themes/Default/images
-@dir %%WWWDIR%%/modules/pr2analyzer/themes/Default
-@dir %%WWWDIR%%/modules/pr2analyzer/themes
-@dir %%WWWDIR%%/modules/pr2analyzer/views/Extjs3
-@dir %%WWWDIR%%/modules/pr2analyzer/views
-@dir %%WWWDIR%%/modules/pr2analyzer
-@dir %%WWWDIR%%/modules/presidents/controller
-@dir %%WWWDIR%%/modules/presidents/customfields/model
-@dir %%WWWDIR%%/modules/presidents/customfields
-@dir %%WWWDIR%%/modules/presidents/install
-@dir %%WWWDIR%%/modules/presidents/language
-@dir %%WWWDIR%%/modules/presidents/model
-@dir %%WWWDIR%%/modules/presidents/views/Extjs3/themes/Default
-@dir %%WWWDIR%%/modules/presidents/views/Extjs3/themes
-@dir %%WWWDIR%%/modules/presidents/views/Extjs3
-@dir %%WWWDIR%%/modules/presidents/views
-@dir %%WWWDIR%%/modules/presidents
-@dir %%WWWDIR%%/modules/professional/controller
-@dir %%WWWDIR%%/modules/professional
-@dir %%WWWDIR%%/modules/projects2/controller
-@dir %%WWWDIR%%/modules/projects2/customfields/model
-@dir %%WWWDIR%%/modules/projects2/customfields
-@dir %%WWWDIR%%/modules/projects2/export
-@dir %%WWWDIR%%/modules/projects2/install/images
-@dir %%WWWDIR%%/modules/projects2/install/updatescripts
-@dir %%WWWDIR%%/modules/projects2/install
-@dir %%WWWDIR%%/modules/projects2/language
-@dir %%WWWDIR%%/modules/projects2/model
-@dir %%WWWDIR%%/modules/projects2/report
-@dir %%WWWDIR%%/modules/projects2/themes/Default/images
-@dir %%WWWDIR%%/modules/projects2/themes/Default
-@dir %%WWWDIR%%/modules/projects2/themes/ExtJS/images
-@dir %%WWWDIR%%/modules/projects2/themes/ExtJS
-@dir %%WWWDIR%%/modules/projects2/themes
-@dir %%WWWDIR%%/modules/projects2/views/Extjs3
-@dir %%WWWDIR%%/modules/projects2/views
-@dir %%WWWDIR%%/modules/projects2
-@dir %%WWWDIR%%/modules/reminders/controller
-@dir %%WWWDIR%%/modules/reminders/language
-@dir %%WWWDIR%%/modules/reminders/themes/Default/images
-@dir %%WWWDIR%%/modules/reminders/themes/Default
-@dir %%WWWDIR%%/modules/reminders/themes
-@dir %%WWWDIR%%/modules/reminders
-@dir %%WWWDIR%%/modules/savemailas/controller
-@dir %%WWWDIR%%/modules/savemailas/filehandler
-@dir %%WWWDIR%%/modules/savemailas/install
-@dir %%WWWDIR%%/modules/savemailas/language
-@dir %%WWWDIR%%/modules/savemailas/model
-@dir %%WWWDIR%%/modules/savemailas/themes/Default/images
-@dir %%WWWDIR%%/modules/savemailas/themes/Default
-@dir %%WWWDIR%%/modules/savemailas/themes
-@dir %%WWWDIR%%/modules/savemailas
-@dir %%WWWDIR%%/modules/scanbox/controller
 @dir %%WWWDIR%%/modules/scanbox/install
-@dir %%WWWDIR%%/modules/scanbox/language
-@dir %%WWWDIR%%/modules/scanbox/model
-@dir %%WWWDIR%%/modules/scanbox/views/Extjs3/themes/Default/images
-@dir %%WWWDIR%%/modules/scanbox/views/Extjs3/themes/Default
-@dir %%WWWDIR%%/modules/scanbox/views/Extjs3/themes/ExtJS/images
-@dir %%WWWDIR%%/modules/scanbox/views/Extjs3/themes/ExtJS
-@dir %%WWWDIR%%/modules/scanbox/views/Extjs3/themes
-@dir %%WWWDIR%%/modules/scanbox/views/Extjs3
-@dir %%WWWDIR%%/modules/scanbox/views
-@dir %%WWWDIR%%/modules/scanbox
-@dir %%WWWDIR%%/modules/search/language
-@dir %%WWWDIR%%/modules/search/themes/Default/images
-@dir %%WWWDIR%%/modules/search/themes/Default
-@dir %%WWWDIR%%/modules/search/themes
-@dir %%WWWDIR%%/modules/search
-@dir %%WWWDIR%%/modules/serverclient/install
-@dir %%WWWDIR%%/modules/serverclient/language
-@dir %%WWWDIR%%/modules/serverclient/themes/Default/images
-@dir %%WWWDIR%%/modules/serverclient/themes/Default
-@dir %%WWWDIR%%/modules/serverclient/themes/ExtJS/images
-@dir %%WWWDIR%%/modules/serverclient/themes/ExtJS
-@dir %%WWWDIR%%/modules/serverclient/themes
-@dir %%WWWDIR%%/modules/serverclient
-@dir %%WWWDIR%%/modules/settings/controller
-@dir %%WWWDIR%%/modules/settings/install
-@dir %%WWWDIR%%/modules/settings/language
-@dir %%WWWDIR%%/modules/settings/themes/Default/images
-@dir %%WWWDIR%%/modules/settings/themes/Default
-@dir %%WWWDIR%%/modules/settings/themes
-@dir %%WWWDIR%%/modules/settings
-@dir %%WWWDIR%%/modules/sieve/controller
 @dir %%WWWDIR%%/modules/sieve/install/updatescripts
-@dir %%WWWDIR%%/modules/sieve/install
-@dir %%WWWDIR%%/modules/sieve/language
-@dir %%WWWDIR%%/modules/sieve/themes/Default/images
-@dir %%WWWDIR%%/modules/sieve/themes/Default
-@dir %%WWWDIR%%/modules/sieve/themes
-@dir %%WWWDIR%%/modules/sieve/util
-@dir %%WWWDIR%%/modules/sieve
-@dir %%WWWDIR%%/modules/site/components
-@dir %%WWWDIR%%/modules/site/controller
-@dir %%WWWDIR%%/modules/site/customfields/model
-@dir %%WWWDIR%%/modules/site/customfields
-@dir %%WWWDIR%%/modules/site/customfieldtype
-@dir %%WWWDIR%%/modules/site/install
-@dir %%WWWDIR%%/modules/site/language
-@dir %%WWWDIR%%/modules/site/model
-@dir %%WWWDIR%%/modules/site/tag
-@dir %%WWWDIR%%/modules/site/views/Extjs3/themes/Default/images
-@dir %%WWWDIR%%/modules/site/views/Extjs3/themes/Default
-@dir %%WWWDIR%%/modules/site/views/Extjs3/themes
-@dir %%WWWDIR%%/modules/site/views/Extjs3/treenodes
-@dir %%WWWDIR%%/modules/site/views/Extjs3
-@dir %%WWWDIR%%/modules/site/views
-@dir %%WWWDIR%%/modules/site/widget/contactform
-@dir %%WWWDIR%%/modules/site/widget/plupload/assets/js/i18n
-@dir %%WWWDIR%%/modules/site/widget/plupload/assets/js/jquery.plupload.queue/css
-@dir %%WWWDIR%%/modules/site/widget/plupload/assets/js/jquery.plupload.queue/img
-@dir %%WWWDIR%%/modules/site/widget/plupload/assets/js/jquery.plupload.queue
-@dir %%WWWDIR%%/modules/site/widget/plupload/assets/js/jquery.ui.plupload/css
-@dir %%WWWDIR%%/modules/site/widget/plupload/assets/js/jquery.ui.plupload/img
-@dir %%WWWDIR%%/modules/site/widget/plupload/assets/js/jquery.ui.plupload
-@dir %%WWWDIR%%/modules/site/widget/plupload/assets/js
-@dir %%WWWDIR%%/modules/site/widget/plupload/assets
-@dir %%WWWDIR%%/modules/site/widget/plupload
-@dir %%WWWDIR%%/modules/site/widget/secureimage/assets/backgrounds
-@dir %%WWWDIR%%/modules/site/widget/secureimage/assets/database
-@dir %%WWWDIR%%/modules/site/widget/secureimage/assets/words
-@dir %%WWWDIR%%/modules/site/widget/secureimage/assets
-@dir %%WWWDIR%%/modules/site/widget/secureimage
-@dir %%WWWDIR%%/modules/site/widget/twitter
-@dir %%WWWDIR%%/modules/site/widget
-@dir %%WWWDIR%%/modules/site
-@dir %%WWWDIR%%/modules/smime/controller
-@dir %%WWWDIR%%/modules/smime/install
-@dir %%WWWDIR%%/modules/smime/language
-@dir %%WWWDIR%%/modules/smime/model
-@dir %%WWWDIR%%/modules/smime/themes/Default/images
-@dir %%WWWDIR%%/modules/smime/themes/Default
-@dir %%WWWDIR%%/modules/smime/themes
-@dir %%WWWDIR%%/modules/smime
-@dir %%WWWDIR%%/modules/summary/controller
-@dir %%WWWDIR%%/modules/summary/install/updatescripts
-@dir %%WWWDIR%%/modules/summary/install
-@dir %%WWWDIR%%/modules/summary/language
-@dir %%WWWDIR%%/modules/summary/model
-@dir %%WWWDIR%%/modules/summary/themes/Default/images
-@dir %%WWWDIR%%/modules/summary/themes/Default
-@dir %%WWWDIR%%/modules/summary/themes/ExtJS/images
-@dir %%WWWDIR%%/modules/summary/themes/ExtJS
-@dir %%WWWDIR%%/modules/summary/themes
-@dir %%WWWDIR%%/modules/summary
-@dir %%WWWDIR%%/modules/sync/controller
-@dir %%WWWDIR%%/modules/sync/install
-@dir %%WWWDIR%%/modules/sync/language
-@dir %%WWWDIR%%/modules/sync/model
-@dir %%WWWDIR%%/modules/sync/themes/Default/images
-@dir %%WWWDIR%%/modules/sync/themes/Default
-@dir %%WWWDIR%%/modules/sync/themes/ExtJS/images
-@dir %%WWWDIR%%/modules/sync/themes/ExtJS
-@dir %%WWWDIR%%/modules/sync/themes
-@dir %%WWWDIR%%/modules/sync/z-push21/backend/go
-@dir %%WWWDIR%%/modules/sync/z-push21/backend
-@dir %%WWWDIR%%/modules/sync/z-push21
-@dir %%WWWDIR%%/modules/sync
-@dir %%WWWDIR%%/modules/syncml/backend/go/store
-@dir %%WWWDIR%%/modules/syncml/backend/go
-@dir %%WWWDIR%%/modules/syncml/backend
-@dir %%WWWDIR%%/modules/syncml/controller
-@dir %%WWWDIR%%/modules/syncml/exception
-@dir %%WWWDIR%%/modules/syncml/install
-@dir %%WWWDIR%%/modules/syncml/language
-@dir %%WWWDIR%%/modules/syncml/model
-@dir %%WWWDIR%%/modules/syncml/store
-@dir %%WWWDIR%%/modules/syncml/views/Extjs3/themes/Default/images
-@dir %%WWWDIR%%/modules/syncml/views/Extjs3/themes/Default
-@dir %%WWWDIR%%/modules/syncml/views/Extjs3/themes
-@dir %%WWWDIR%%/modules/syncml/views/Extjs3
-@dir %%WWWDIR%%/modules/syncml/views
-@dir %%WWWDIR%%/modules/syncml/xml
-@dir %%WWWDIR%%/modules/syncml
-@dir %%WWWDIR%%/modules/tasks/controller
-@dir %%WWWDIR%%/modules/tasks/customfields/model
-@dir %%WWWDIR%%/modules/tasks/customfields
-@dir %%WWWDIR%%/modules/tasks/export
 @dir %%WWWDIR%%/modules/tasks/install/updatescripts
-@dir %%WWWDIR%%/modules/tasks/install
-@dir %%WWWDIR%%/modules/tasks/language
-@dir %%WWWDIR%%/modules/tasks/model
-@dir %%WWWDIR%%/modules/tasks/views/Extjs3/themes/Default/images
-@dir %%WWWDIR%%/modules/tasks/views/Extjs3/themes/Default
-@dir %%WWWDIR%%/modules/tasks/views/Extjs3/themes/ExtJS/images
-@dir %%WWWDIR%%/modules/tasks/views/Extjs3/themes/ExtJS
-@dir %%WWWDIR%%/modules/tasks/views/Extjs3/themes/Group-Office/images
-@dir %%WWWDIR%%/modules/tasks/views/Extjs3/themes/Group-Office
-@dir %%WWWDIR%%/modules/tasks/views/Extjs3/themes
-@dir %%WWWDIR%%/modules/tasks/views/Extjs3
-@dir %%WWWDIR%%/modules/tasks/views
-@dir %%WWWDIR%%/modules/tasks
-@dir %%WWWDIR%%/modules/tickets/controller
-@dir %%WWWDIR%%/modules/tickets/cron
-@dir %%WWWDIR%%/modules/tickets/customfields/model
-@dir %%WWWDIR%%/modules/tickets/customfields
-@dir %%WWWDIR%%/modules/tickets/export
 @dir %%WWWDIR%%/modules/tickets/extern
-@dir %%WWWDIR%%/modules/tickets/install/updatescripts
-@dir %%WWWDIR%%/modules/tickets/install
-@dir %%WWWDIR%%/modules/tickets/language
-@dir %%WWWDIR%%/modules/tickets/model
-@dir %%WWWDIR%%/modules/tickets/themes/Default/images/16x16
-@dir %%WWWDIR%%/modules/tickets/themes/Default/images
-@dir %%WWWDIR%%/modules/tickets/themes/Default
-@dir %%WWWDIR%%/modules/tickets/themes/ExtJS
-@dir %%WWWDIR%%/modules/tickets/themes/Group-Office/images/16x16
-@dir %%WWWDIR%%/modules/tickets/themes/Group-Office/images
-@dir %%WWWDIR%%/modules/tickets/themes/Group-Office
-@dir %%WWWDIR%%/modules/tickets/themes
-@dir %%WWWDIR%%/modules/tickets/views/Extjs3
-@dir %%WWWDIR%%/modules/tickets/views
-@dir %%WWWDIR%%/modules/tickets
-@dir %%WWWDIR%%/modules/timeregistration2/controller
-@dir %%WWWDIR%%/modules/timeregistration2/export
-@dir %%WWWDIR%%/modules/timeregistration2/install
-@dir %%WWWDIR%%/modules/timeregistration2/language
-@dir %%WWWDIR%%/modules/timeregistration2/model
-@dir %%WWWDIR%%/modules/timeregistration2/report
-@dir %%WWWDIR%%/modules/timeregistration2/themes/Default/images
-@dir %%WWWDIR%%/modules/timeregistration2/themes/Default
-@dir %%WWWDIR%%/modules/timeregistration2/themes/ExtJS
-@dir %%WWWDIR%%/modules/timeregistration2/themes
-@dir %%WWWDIR%%/modules/timeregistration2/views/Extjs3
-@dir %%WWWDIR%%/modules/timeregistration2/views
-@dir %%WWWDIR%%/modules/timeregistration2
-@dir %%WWWDIR%%/modules/tools/controller
-@dir %%WWWDIR%%/modules/tools/language
-@dir %%WWWDIR%%/modules/tools/themes/Default/images
-@dir %%WWWDIR%%/modules/tools/themes/Default
-@dir %%WWWDIR%%/modules/tools/themes/ExtJS/images
-@dir %%WWWDIR%%/modules/tools/themes/ExtJS
-@dir %%WWWDIR%%/modules/tools/themes
-@dir %%WWWDIR%%/modules/tools
-@dir %%WWWDIR%%/modules/users/controller
-@dir %%WWWDIR%%/modules/users/customfields/model
-@dir %%WWWDIR%%/modules/users/customfields
-@dir %%WWWDIR%%/modules/users/export
 @dir %%WWWDIR%%/modules/users/install/updatescripts
-@dir %%WWWDIR%%/modules/users/install
-@dir %%WWWDIR%%/modules/users/language
-@dir %%WWWDIR%%/modules/users/model
-@dir %%WWWDIR%%/modules/users/themes/Default/images
-@dir %%WWWDIR%%/modules/users/themes/Default
-@dir %%WWWDIR%%/modules/users/themes/ExtJS/images/16x16
-@dir %%WWWDIR%%/modules/users/themes/ExtJS/images/22x22
-@dir %%WWWDIR%%/modules/users/themes/ExtJS/images
-@dir %%WWWDIR%%/modules/users/themes/ExtJS
-@dir %%WWWDIR%%/modules/users/themes
-@dir %%WWWDIR%%/modules/users/views/Extjs3
-@dir %%WWWDIR%%/modules/users/views
-@dir %%WWWDIR%%/modules/users
-@dir %%WWWDIR%%/modules/webodf/controller
-@dir %%WWWDIR%%/modules/webodf/filehandler
-@dir %%WWWDIR%%/modules/webodf/language
-@dir %%WWWDIR%%/modules/webodf/themes/Default/images
-@dir %%WWWDIR%%/modules/webodf/themes/Default
-@dir %%WWWDIR%%/modules/webodf/themes
-@dir %%WWWDIR%%/modules/webodf/wodotexteditor/app/resources
-@dir %%WWWDIR%%/modules/webodf/wodotexteditor/app
-@dir %%WWWDIR%%/modules/webodf/wodotexteditor/dijit/icons/images
-@dir %%WWWDIR%%/modules/webodf/wodotexteditor/dijit/icons
-@dir %%WWWDIR%%/modules/webodf/wodotexteditor/dijit/themes/a11y
-@dir %%WWWDIR%%/modules/webodf/wodotexteditor/dijit/themes/claro/form/images
-@dir %%WWWDIR%%/modules/webodf/wodotexteditor/dijit/themes/claro/form
-@dir %%WWWDIR%%/modules/webodf/wodotexteditor/dijit/themes/claro/images
-@dir %%WWWDIR%%/modules/webodf/wodotexteditor/dijit/themes/claro/layout/images
-@dir %%WWWDIR%%/modules/webodf/wodotexteditor/dijit/themes/claro/layout
-@dir %%WWWDIR%%/modules/webodf/wodotexteditor/dijit/themes/claro
-@dir %%WWWDIR%%/modules/webodf/wodotexteditor/dijit/themes
-@dir %%WWWDIR%%/modules/webodf/wodotexteditor/dijit
-@dir %%WWWDIR%%/modules/webodf/wodotexteditor/dojo/resources/images
-@dir %%WWWDIR%%/modules/webodf/wodotexteditor/dojo/resources
-@dir %%WWWDIR%%/modules/webodf/wodotexteditor/dojo
-@dir %%WWWDIR%%/modules/webodf/wodotexteditor/dojox/layout/resources/icons
-@dir %%WWWDIR%%/modules/webodf/wodotexteditor/dojox/layout/resources
-@dir %%WWWDIR%%/modules/webodf/wodotexteditor/dojox/layout
-@dir %%WWWDIR%%/modules/webodf/wodotexteditor/dojox/widget/ColorPicker/images
-@dir %%WWWDIR%%/modules/webodf/wodotexteditor/dojox/widget/ColorPicker
-@dir %%WWWDIR%%/modules/webodf/wodotexteditor/dojox/widget
-@dir %%WWWDIR%%/modules/webodf/wodotexteditor/dojox
-@dir %%WWWDIR%%/modules/webodf/wodotexteditor/images
-@dir %%WWWDIR%%/modules/webodf/wodotexteditor/resources/fonts
-@dir %%WWWDIR%%/modules/webodf/wodotexteditor/resources
-@dir %%WWWDIR%%/modules/webodf/wodotexteditor/translations
-@dir %%WWWDIR%%/modules/webodf/wodotexteditor/widgets/dialogWidgets
-@dir %%WWWDIR%%/modules/webodf/wodotexteditor/widgets/toolbarWidgets
-@dir %%WWWDIR%%/modules/webodf/wodotexteditor/widgets
-@dir %%WWWDIR%%/modules/webodf/wodotexteditor
-@dir %%WWWDIR%%/modules/webodf
-@dir %%WWWDIR%%/modules/workflow/action
-@dir %%WWWDIR%%/modules/workflow/controller
-@dir %%WWWDIR%%/modules/workflow/install
-@dir %%WWWDIR%%/modules/workflow/language
-@dir %%WWWDIR%%/modules/workflow/model
-@dir %%WWWDIR%%/modules/workflow/views/Extjs3/themes/Default/images
-@dir %%WWWDIR%%/modules/workflow/views/Extjs3/themes/Default
-@dir %%WWWDIR%%/modules/workflow/views/Extjs3/themes/Extjs/images
-@dir %%WWWDIR%%/modules/workflow/views/Extjs3/themes/Extjs
-@dir %%WWWDIR%%/modules/workflow/views/Extjs3/themes
-@dir %%WWWDIR%%/modules/workflow/views/Extjs3
-@dir %%WWWDIR%%/modules/workflow/views
-@dir %%WWWDIR%%/modules/workflow
-@dir %%WWWDIR%%/modules/zpushadmin/controller
-@dir %%WWWDIR%%/modules/zpushadmin/install
-@dir %%WWWDIR%%/modules/zpushadmin/language
-@dir %%WWWDIR%%/modules/zpushadmin/model
-@dir %%WWWDIR%%/modules/zpushadmin/views/Extjs3/themes/Default/images
-@dir %%WWWDIR%%/modules/zpushadmin/views/Extjs3/themes/Default
-@dir %%WWWDIR%%/modules/zpushadmin/views/Extjs3/themes/Extjs/images
-@dir %%WWWDIR%%/modules/zpushadmin/views/Extjs3/themes/Extjs
-@dir %%WWWDIR%%/modules/zpushadmin/views/Extjs3/themes
-@dir %%WWWDIR%%/modules/zpushadmin/views/Extjs3
-@dir %%WWWDIR%%/modules/zpushadmin/views
-@dir %%WWWDIR%%/modules/zpushadmin
-@dir %%WWWDIR%%/modules
-@dir %%WWWDIR%%/vendor/composer
-@dir %%WWWDIR%%/vendor/fkooman/guzzle-bearer-auth-plugin/src/fkooman/Guzzle/Plugin/BearerAuth/Exception
-@dir %%WWWDIR%%/vendor/fkooman/guzzle-bearer-auth-plugin/src/fkooman/Guzzle/Plugin/BearerAuth
-@dir %%WWWDIR%%/vendor/fkooman/guzzle-bearer-auth-plugin/src/fkooman/Guzzle/Plugin
-@dir %%WWWDIR%%/vendor/fkooman/guzzle-bearer-auth-plugin/src/fkooman/Guzzle
-@dir %%WWWDIR%%/vendor/fkooman/guzzle-bearer-auth-plugin/src/fkooman
-@dir %%WWWDIR%%/vendor/fkooman/guzzle-bearer-auth-plugin/src
-@dir %%WWWDIR%%/vendor/fkooman/guzzle-bearer-auth-plugin
-@dir %%WWWDIR%%/vendor/fkooman/oauth-common/docs
-@dir %%WWWDIR%%/vendor/fkooman/oauth-common/src/fkooman/OAuth/Common/Exception
-@dir %%WWWDIR%%/vendor/fkooman/oauth-common/src/fkooman/OAuth/Common
-@dir %%WWWDIR%%/vendor/fkooman/oauth-common/src/fkooman/OAuth
-@dir %%WWWDIR%%/vendor/fkooman/oauth-common/src/fkooman
-@dir %%WWWDIR%%/vendor/fkooman/oauth-common/src
-@dir %%WWWDIR%%/vendor/fkooman/oauth-common/tests/fkooman/OAuth/Common
-@dir %%WWWDIR%%/vendor/fkooman/oauth-common/tests/fkooman/OAuth
-@dir %%WWWDIR%%/vendor/fkooman/oauth-common/tests/fkooman
-@dir %%WWWDIR%%/vendor/fkooman/oauth-common/tests
-@dir %%WWWDIR%%/vendor/fkooman/oauth-common
-@dir %%WWWDIR%%/vendor/fkooman/php-oauth-client/bin
-@dir %%WWWDIR%%/vendor/fkooman/php-oauth-client/docs
-@dir %%WWWDIR%%/vendor/fkooman/php-oauth-client/example/gdrive
-@dir %%WWWDIR%%/vendor/fkooman/php-oauth-client/example/simple
-@dir %%WWWDIR%%/vendor/fkooman/php-oauth-client/example
-@dir %%WWWDIR%%/vendor/fkooman/php-oauth-client/rpm
-@dir %%WWWDIR%%/vendor/fkooman/php-oauth-client/src/fkooman/OAuth/Client/Exception
-@dir %%WWWDIR%%/vendor/fkooman/php-oauth-client/src/fkooman/OAuth/Client
-@dir %%WWWDIR%%/vendor/fkooman/php-oauth-client/src/fkooman/OAuth
-@dir %%WWWDIR%%/vendor/fkooman/php-oauth-client/src/fkooman
-@dir %%WWWDIR%%/vendor/fkooman/php-oauth-client/src
-@dir %%WWWDIR%%/vendor/fkooman/php-oauth-client/tests/fkooman/OAuth/Client
-@dir %%WWWDIR%%/vendor/fkooman/php-oauth-client/tests/fkooman/OAuth
-@dir %%WWWDIR%%/vendor/fkooman/php-oauth-client/tests/fkooman
-@dir %%WWWDIR%%/vendor/fkooman/php-oauth-client/tests
-@dir %%WWWDIR%%/vendor/fkooman/php-oauth-client
-@dir %%WWWDIR%%/vendor/fkooman
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/docs/_downloads
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/docs/_static
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/docs/_templates
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/docs/batching
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/docs/getting-started
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/docs/http-client
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/docs/iterators
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/docs/plugins
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/docs/testing
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/docs/webservice-client
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/docs
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/phing/imports
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/phing/tasks
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/phing
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Batch/Exception
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Batch
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Cache
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Common/Exception
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Common
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Http/Curl
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Http/Exception
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Http/Message/Header
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Http/Message
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Http/QueryAggregator
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Http/Resources
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Http
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Inflection
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Iterator
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Log
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Parser/Cookie
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Parser/Message
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Parser/UriTemplate
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Parser/Url
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Parser
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Plugin/Async
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Plugin/Backoff
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Plugin/Cache
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Plugin/Cookie/CookieJar
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Plugin/Cookie/Exception
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Plugin/Cookie
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Plugin/CurlAuth
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Plugin/ErrorResponse/Exception
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Plugin/ErrorResponse
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Plugin/History
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Plugin/Log
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Plugin/Md5
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Plugin/Mock
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Plugin/Oauth
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Plugin
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Service/Builder
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Service/Command/Factory
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Service/Command/LocationVisitor/Request
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Service/Command/LocationVisitor/Response
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Service/Command/LocationVisitor
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Service/Command
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Service/Description
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Service/Exception
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Service/Resource
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Service
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle/Stream
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src/Guzzle
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/src
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Batch
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Cache
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Common/Exception
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Common
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Http/Curl
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Http/Exception
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Http/Message/Header
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Http/Message
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Http/QueryAggregator
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Http
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Inflection
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Iterator
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Log
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Mock
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Parser/Cookie
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Parser/Message
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Parser/UriTemplate
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Parser
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Plugin/Async
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Plugin/Backoff
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Plugin/Cache
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Plugin/Cookie/CookieJar
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Plugin/Cookie
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Plugin/CurlAuth
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Plugin/ErrorResponse
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Plugin/History
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Plugin/Log
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Plugin/Md5
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Plugin/Mock
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Plugin/Oauth
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Plugin
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Service/Builder
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Service/Command/Factory
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Service/Command/LocationVisitor/Request
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Service/Command/LocationVisitor/Response
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Service/Command/LocationVisitor
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Service/Command
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Service/Description
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Service/Exception
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Service/Mock/Command/Sub
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Service/Mock/Command
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Service/Mock/Model
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Service/Mock
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Service/Resource
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Service
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/Stream
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/TestData/description
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/TestData/services
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests/TestData
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle/Tests
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests/Guzzle
-@dir %%WWWDIR%%/vendor/guzzle/guzzle/tests
-@dir %%WWWDIR%%/vendor/guzzle/guzzle
-@dir %%WWWDIR%%/vendor/guzzle
-@dir %%WWWDIR%%/vendor/symfony/event-dispatcher/Symfony/Component/EventDispatcher/Debug
-@dir %%WWWDIR%%/vendor/symfony/event-dispatcher/Symfony/Component/EventDispatcher/DependencyInjection
-@dir %%WWWDIR%%/vendor/symfony/event-dispatcher/Symfony/Component/EventDispatcher/Tests/Debug
-@dir %%WWWDIR%%/vendor/symfony/event-dispatcher/Symfony/Component/EventDispatcher/Tests/DependencyInjection
-@dir %%WWWDIR%%/vendor/symfony/event-dispatcher/Symfony/Component/EventDispatcher/Tests
-@dir %%WWWDIR%%/vendor/symfony/event-dispatcher/Symfony/Component/EventDispatcher
-@dir %%WWWDIR%%/vendor/symfony/event-dispatcher/Symfony/Component
-@dir %%WWWDIR%%/vendor/symfony/event-dispatcher/Symfony
-@dir %%WWWDIR%%/vendor/symfony/event-dispatcher
-@dir %%WWWDIR%%/vendor/symfony
-@dir %%WWWDIR%%/vendor
-@dir %%WWWDIR%%/views/Extjs3/ext/adapter/ext
-@dir %%WWWDIR%%/views/Extjs3/ext/adapter/jquery
-@dir %%WWWDIR%%/views/Extjs3/ext/adapter/prototype
-@dir %%WWWDIR%%/views/Extjs3/ext/adapter/yui
-@dir %%WWWDIR%%/views/Extjs3/ext/adapter
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/css/structure
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/css/theme-access
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/css/theme-gray
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/css/visual
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/css
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/access/box
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/access/button
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/access/editor
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/access/form
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/access/grid
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/access/menu
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/access/panel
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/access/progress
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/access/qtip
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/access/shared
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/access/sizer
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/access/slider
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/access/tabs
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/access/toolbar
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/access/tree
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/access/window
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/access
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/default/box
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/default/button
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/default/dd
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/default/editor
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/default/form
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/default/grid
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/default/layout
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/default/menu
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/default/panel
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/default/progress
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/default/qtip
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/default/shared
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/default/sizer
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/default/slider
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/default/tabs
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/default/toolbar
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/default/tree
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/default/window
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/default
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/gray/button
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/gray/form
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/gray/grid
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/gray/menu
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/gray/panel
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/gray/progress
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/gray/qtip
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/gray/shared
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/gray/sizer
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/gray/slider
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/gray/tabs
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/gray/toolbar
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/gray/tree
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/gray/window
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/gray
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/vista/basic-dialog
 @dir %%WWWDIR%%/views/Extjs3/ext/resources/images/vista/dd
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/vista/grid
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/vista/layout
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/vista/qtip
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/vista/sizer
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/vista/tabs
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/vista/toolbar
 @dir %%WWWDIR%%/views/Extjs3/ext/resources/images/vista/tree
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/vista
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/yourtheme/box
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/yourtheme/button
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/yourtheme/dd
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/yourtheme/editor
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/yourtheme/form
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/yourtheme/grid
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/yourtheme/layout
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/yourtheme/menu
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/yourtheme/panel
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/yourtheme/progress
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/yourtheme/qtip
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/yourtheme/shared
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/yourtheme/sizer
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/yourtheme/slider
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/yourtheme/tabs
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/yourtheme/toolbar
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/yourtheme/tree
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/yourtheme/window
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images/yourtheme
-@dir %%WWWDIR%%/views/Extjs3/ext/resources/images
-@dir %%WWWDIR%%/views/Extjs3/ext/resources
-@dir %%WWWDIR%%/views/Extjs3/ext/src/adapter
-@dir %%WWWDIR%%/views/Extjs3/ext/src/core
-@dir %%WWWDIR%%/views/Extjs3/ext/src/data
-@dir %%WWWDIR%%/views/Extjs3/ext/src/dd
-@dir %%WWWDIR%%/views/Extjs3/ext/src/direct
-@dir %%WWWDIR%%/views/Extjs3/ext/src/locale
-@dir %%WWWDIR%%/views/Extjs3/ext/src/state
-@dir %%WWWDIR%%/views/Extjs3/ext/src/util
-@dir %%WWWDIR%%/views/Extjs3/ext/src/widgets/chart
-@dir %%WWWDIR%%/views/Extjs3/ext/src/widgets/form
-@dir %%WWWDIR%%/views/Extjs3/ext/src/widgets/grid
-@dir %%WWWDIR%%/views/Extjs3/ext/src/widgets/layout/box
-@dir %%WWWDIR%%/views/Extjs3/ext/src/widgets/layout
-@dir %%WWWDIR%%/views/Extjs3/ext/src/widgets/list
-@dir %%WWWDIR%%/views/Extjs3/ext/src/widgets/menu
-@dir %%WWWDIR%%/views/Extjs3/ext/src/widgets/tips
-@dir %%WWWDIR%%/views/Extjs3/ext/src/widgets/tree
-@dir %%WWWDIR%%/views/Extjs3/ext/src/widgets
-@dir %%WWWDIR%%/views/Extjs3/ext/src
-@dir %%WWWDIR%%/views/Extjs3/ext
-@dir %%WWWDIR%%/views/Extjs3/javascript/SWFObject/source/com/deconcept/expressinstall
-@dir %%WWWDIR%%/views/Extjs3/javascript/SWFObject/source/com/deconcept
-@dir %%WWWDIR%%/views/Extjs3/javascript/SWFObject/source/com
-@dir %%WWWDIR%%/views/Extjs3/javascript/SWFObject/source
-@dir %%WWWDIR%%/views/Extjs3/javascript/SWFObject
-@dir %%WWWDIR%%/views/Extjs3/javascript/SWFUpload
-@dir %%WWWDIR%%/views/Extjs3/javascript/advancedquery
-@dir %%WWWDIR%%/views/Extjs3/javascript/base/email
-@dir %%WWWDIR%%/views/Extjs3/javascript/base/model/multiselect
-@dir %%WWWDIR%%/views/Extjs3/javascript/base/model
-@dir %%WWWDIR%%/views/Extjs3/javascript/base/tree
-@dir %%WWWDIR%%/views/Extjs3/javascript/base/upload
-@dir %%WWWDIR%%/views/Extjs3/javascript/base/util
-@dir %%WWWDIR%%/views/Extjs3/javascript/base
-@dir %%WWWDIR%%/views/Extjs3/javascript/buttons
-@dir %%WWWDIR%%/views/Extjs3/javascript/data
-@dir %%WWWDIR%%/views/Extjs3/javascript/form
-@dir %%WWWDIR%%/views/Extjs3/javascript/grids
-@dir %%WWWDIR%%/views/Extjs3/javascript/links
-@dir %%WWWDIR%%/views/Extjs3/javascript/panels
-@dir %%WWWDIR%%/views/Extjs3/javascript/plugins
-@dir %%WWWDIR%%/views/Extjs3/javascript/plupload/plupload/js/i18n
-@dir %%WWWDIR%%/views/Extjs3/javascript/plupload/plupload/js/jquery.plupload.queue/css
-@dir %%WWWDIR%%/views/Extjs3/javascript/plupload/plupload/js/jquery.plupload.queue/img
-@dir %%WWWDIR%%/views/Extjs3/javascript/plupload/plupload/js/jquery.plupload.queue
-@dir %%WWWDIR%%/views/Extjs3/javascript/plupload/plupload/js/jquery.ui.plupload/css
-@dir %%WWWDIR%%/views/Extjs3/javascript/plupload/plupload/js/jquery.ui.plupload/img
-@dir %%WWWDIR%%/views/Extjs3/javascript/plupload/plupload/js/jquery.ui.plupload
-@dir %%WWWDIR%%/views/Extjs3/javascript/plupload/plupload/js
-@dir %%WWWDIR%%/views/Extjs3/javascript/plupload/plupload
-@dir %%WWWDIR%%/views/Extjs3/javascript/plupload
-@dir %%WWWDIR%%/views/Extjs3/javascript/query
-@dir %%WWWDIR%%/views/Extjs3/javascript/state
-@dir %%WWWDIR%%/views/Extjs3/javascript/windows
-@dir %%WWWDIR%%/views/Extjs3/javascript
 @dir %%WWWDIR%%/views/Extjs3/language
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/128x128/filetypes
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/128x128
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/16x16/filetypes
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/16x16/fileupload
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/16x16
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/22x22
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/32x32
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/buttons
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/emoticons/normal
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/emoticons
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/extjs/basic-dialog
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/extjs/box
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/extjs/button
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/extjs/dd
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/extjs/editor
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/extjs/form
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/extjs/grid
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/extjs/layout
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/extjs/menu
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/extjs/panel
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/extjs/progress
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/extjs/qtip
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/extjs/shared
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/extjs/sizer
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/extjs/slider
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/extjs/tabs
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/extjs/toolbar
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/extjs/tree
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/extjs/window
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/extjs
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/superboxselect
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/swfupload
 @dir %%WWWDIR%%/views/Extjs3/themes/Default/images/treeview
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images/triggers
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/images
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/smarty/css
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/smarty/images/btn_blue
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/smarty/images/btn_green
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/smarty/images/header_btn
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/smarty/images/icons
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/smarty/images/kader
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/smarty/images/tab
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/smarty/images
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/smarty
-@dir %%WWWDIR%%/views/Extjs3/themes/Default/sounds
-@dir %%WWWDIR%%/views/Extjs3/themes/Default
-@dir %%WWWDIR%%/views/Extjs3/themes/ExtJS/images/128x128/filetypes
-@dir %%WWWDIR%%/views/Extjs3/themes/ExtJS/images/128x128
-@dir %%WWWDIR%%/views/Extjs3/themes/ExtJS/images/16x16/filetypes
-@dir %%WWWDIR%%/views/Extjs3/themes/ExtJS/images/16x16/fileupload
-@dir %%WWWDIR%%/views/Extjs3/themes/ExtJS/images/16x16
-@dir %%WWWDIR%%/views/Extjs3/themes/ExtJS/images/22x22
 @dir %%WWWDIR%%/views/Extjs3/themes/ExtJS/images/buttons
-@dir %%WWWDIR%%/views/Extjs3/themes/ExtJS/images/emoticons/normal
-@dir %%WWWDIR%%/views/Extjs3/themes/ExtJS/images/emoticons
 @dir %%WWWDIR%%/views/Extjs3/themes/ExtJS/images/treeview
-@dir %%WWWDIR%%/views/Extjs3/themes/ExtJS/images
-@dir %%WWWDIR%%/views/Extjs3/themes/ExtJS/sounds
-@dir %%WWWDIR%%/views/Extjs3/themes/ExtJS
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/128x128/filetypes
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/128x128
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/16x16/filetypes
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/16x16/fileupload
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/16x16
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/22x22
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/32x32
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/button
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/buttons
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/emoticons/normal
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/emoticons
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/extjs/basic-dialog
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/extjs/box
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/extjs/button
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/extjs/dd
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/extjs/editor
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/extjs/form
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/extjs/grid
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/extjs/layout
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/extjs/menu
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/extjs/panel
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/extjs/progress
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/extjs/qtip
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/extjs/shared
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/extjs/sizer
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/extjs/slider
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/extjs/tabs
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/extjs/toolbar
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/extjs/tree
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/extjs/window
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/extjs
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/grid
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/superboxselect
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/swfupload
 @dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/treeview
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/triggers
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/images
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/smarty/css
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/smarty/images/btn_blue
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/smarty/images/btn_green
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/smarty/images/header_btn
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/smarty/images/icons
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/smarty/images/kader
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/smarty/images/tab
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/smarty/images
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/smarty
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office/sounds
-@dir %%WWWDIR%%/views/Extjs3/themes/Group-Office
-@dir %%WWWDIR%%/views/Extjs3/themes
-@dir %%WWWDIR%%/views/Extjs3
-@dir %%WWWDIR%%/views/Responsive/layout
-@dir %%WWWDIR%%/views/Responsive/resources
-@dir %%WWWDIR%%/views/Responsive
-@dir %%WWWDIR%%/views
-@dir %%WWWDIR%%
 @owner
 @group

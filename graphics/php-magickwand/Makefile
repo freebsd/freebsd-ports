@@ -13,6 +13,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP extension to manipulate images
 
 BROKEN=		No public distfiles
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 
 LIB_DEPENDS=	libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick
 

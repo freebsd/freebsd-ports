@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}-dvd-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DVD authoring program
 
+DEPRECATED=	depends on expiring audio/dvda-author
+EXPIRATION_DATE=	2015-11-26
+
 BUILD_DEPENDS=	gm:${PORTSDIR}/graphics/GraphicsMagick
 LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		libxml++-2.6.so:${PORTSDIR}/textproc/libxml++26 \

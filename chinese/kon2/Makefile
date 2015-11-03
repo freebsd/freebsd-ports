@@ -8,6 +8,9 @@ CATEGORIES=	chinese
 
 MAINTAINER=	ports@FreeBSD.org
 
+DEPRECATED=	Depends on expiring chinese/cce
+EXPIRATION_DATE=	2015-11-26
+
 BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/chinese/kcfonts:patch \
 		${NONEXISTENT}:${PORTSDIR}/chinese/cce:extract
 

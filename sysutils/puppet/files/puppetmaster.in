@@ -28,13 +28,13 @@ command_args="master ${puppetmaster_flags}"
 unset puppetmaster_flags
 
 pidfile="${puppetmaster_rundir}/master.pid"
-puppet_manifestdir="$($command config print manifestdir)"
+puppet_manifest="$($command config print manifest)"
 
 start_precmd="puppetmaster_checkconfig"
 restart_precmd="puppetmaster_checkconfig"
 puppetmaster_checkconfig() {
 	echo -n "Performing sanity check of ${name} configuration: "
-	if ! ${command} parser validate "${puppet_manifestdir}/site.pp"
+	if ! ${command} parser validate "${puppet_manifest}"
 	then
 		echo "FAILED"
 		return 1

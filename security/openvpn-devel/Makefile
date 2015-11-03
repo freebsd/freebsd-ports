@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openvpn
-DISTVERSION=	201523
-PORTREVISION=	1
+DISTVERSION=	201541
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.secure-computing.net/pub/FreeBSD/ports/openvpn-devel/ \
 		ftp://ftp2.secure-computing.net/pub/FreeBSD/ports/openvpn-devel/
@@ -15,7 +14,6 @@ COMMENT=	Secure IP/Ethernet tunnel daemon
 LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}
-
 
 CONFLICTS_INSTALL=	openvpn-[0-9]* openvpn-beta-[0-9]*
 GNU_CONFIGURE=		yes
@@ -46,15 +44,16 @@ PKCS11_CONFIGURE_ENABLE=	pkcs11
 
 PW_SAVE_CONFIGURE_ENABLE=	password-save
 
-.include <bsd.port.options.mk>
+POLARSSL_LIB_DEPENDS=	libmbedtls.so.9:${PORTSDIR}/security/polarssl13
+POLARSSL_CONFIGURE_ON=	--with-crypto-library=polarssl
+POLARSSL_USE_OFF=	openssl=yes
+POLARSSL_CONFIGURE_OFF+=--with-crypto-library=openssl
 
-.if ${PORT_OPTIONS:MPOLARSSL}
-LIB_DEPENDS+=	libmbedtls.so.9:${PORTSDIR}/security/polarssl13
-CONFIGURE_ARGS+=--with-crypto-library=polarssl
-.else
-USE_OPENSSL=	yes
-CONFIGURE_ARGS+=--with-crypto-library=openssl
-.endif
+LZO_LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2
+LZO_CONFIGURE_ENABLE=	lzo
+
+SNAPPY_LIB_DEPENDS=	libsnappy.so:${PORTSDIR}/archivers/snappy
+SNAPPY_CONFIGURE_ENABLE=	snappy
 
 USE_RC_SUBR=	openvpn
 USE_LDCONFIG=	${PREFIX}/lib
@@ -63,18 +62,6 @@ SUB_FILES=	pkg-message
 
 .ifdef (LOG_OPENVPN)
 CFLAGS+=	-DLOG_OPENVPN=${LOG_OPENVPN}
-.endif
-
-.if ${PORT_OPTIONS:MLZO}
-LIB_DEPENDS+=	liblzo2.so:${PORTSDIR}/archivers/lzo2
-.else
-CONFIGURE_ARGS+=--disable-lzo
-.endif
-
-.if ${PORT_OPTIONS:MSNAPPY}
-LIB_DEPENDS+=	libsnappy.so:${PORTSDIR}/archivers/snappy
-.else
-CONFIGURE_ARGS+=--disable-snappy
 .endif
 
 PORTDOCS=	*
@@ -103,15 +90,15 @@ post-install:
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/openvpn/plugins/openvpn-plugin-auth-pam.so
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/openvpn/plugins/openvpn-plugin-down-root.so
 		${MKDIR} ${STAGEDIR}${PREFIX}/include
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 		${MKDIR} ${STAGEDIR}${DOCSDIR}/
 .for i in AUTHORS ChangeLog PORTS
 		${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
 .endfor
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+
+post-install-EXAMPLES-on:
 		(cd ${WRKSRC}/sample && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}/)
 		${CHMOD} ${BINMODE} ${STAGEDIR}${EXAMPLESDIR}/sample-scripts/*
-.endif
 
 .include <bsd.port.mk>

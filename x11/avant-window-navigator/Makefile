@@ -15,6 +15,8 @@ LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		Fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg

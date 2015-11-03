@@ -56,6 +56,7 @@ include/radius/radutmp.h
 include/radius/sha1.h
 include/radius/symtab.h
 include/radius/types.h
+@comment lib/charset.alias
 lib/libgnuradius.a
 lib/libgnuradius.so
 lib/libgnuradius.so.0
@@ -107,18 +108,8 @@ share/aclocal/radius.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nt.rw
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pam.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/radius.php
-@dirrm etc/raddb/dict
-@dirrmtry etc/raddb
-@dirrm include/radius
-@dirrm %%DATADIR%%/%%PORTVERSION%%/scheme
-@dirrm %%DATADIR%%/%%PORTVERSION%%/rewrite
-@dirrm %%DATADIR%%/%%PORTVERSION%%
-@dirrm %%DATADIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm lib/radius/%%PORTVERSION%%/modules
-@dirrm lib/radius/%%PORTVERSION%%
-@dirrm lib/radius
-@dirrm lib/security
+@dir %%DATADIR%%/%%PORTVERSION%%/scheme
+@dir lib/security
 @unexec rm -f %B/run/radiusd.pid
 @unexec rm -rf %B/log/radius 2>&1 >/dev/null || true
 @unexec echo "Leaving /var/run/radutmp, /var/log/radwtmp and /var/log/radstat alone."

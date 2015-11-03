@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mame
-PORTVERSION=	0.161
+PORTVERSION=	0.166
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
@@ -21,33 +21,31 @@ GH_ACCOUNT=	mamedev
 GH_PROJECT=	mame 				# explicit (master port)
 GH_TAGNAME=	mame${PORTVERSION:S/.//}
 
-# base clang fails with signal during build (!)
-USE_GCC=	yes
-
-USES=		gmake jpeg pkgconfig python:2,build shebangfix
-SHEBANG_FILES=	src/emu/cpu/m6502/m6502make.py \
-		src/emu/cpu/m6809/m6809make.py \
-		src/emu/cpu/mcs96/mcs96make.py \
-		src/emu/cpu/tms57002/tmsmake.py \
+USES=		compiler:c11 gmake jpeg pkgconfig python:2,build shebangfix
+SHEBANG_FILES=	src/devices/cpu/m6502/m6502make.py \
+		src/devices/cpu/m6809/m6809make.py \
+		src/devices/cpu/mcs96/mcs96make.py \
+		src/devices/cpu/tms57002/tmsmake.py \
 		src/build/*.py
-USE_XORG=	xext xi xinerama xrender x11
+USE_XORG=	x11 xext xi xinerama xrender
 USE_GL=		gl
 USE_SDL=	sdl2 ttf2
 USE_QT4=	gui moc_build qmake_build
 MTARGET?=	mame
+MSUBTARGET?=	mame
 CFLAGS+=	-I${LOCALBASE}/include
 MAKE_ENV=	NOWERROR=1 USE_NETWORK=1 \
 		LD="${CXX}" PYTHON="${PYTHON_CMD}" SDL_LIBVER="sdl2" \
 		OPT_FLAGS="${CXXFLAGS}" GCC_LDFLAGS="${LDFLAGS}" \
-		TARGET="${MTARGET}" FULLNAME="mame" SDL_NETWORK="pcap"
+		TARGET="${MTARGET}" SUBTARGET="${MSUBTARGET}" FULLNAME="mame" SDL_NETWORK="pcap"
 MAKE_ARGS=	TARGETOS=freebsd VERBOSE=1 TOOLS=1
 MAKEFILE=	makefile
 GENIE=		${WRKSRC}/3rdparty/genie
 PORTDOCS=	*
-PORTEXAMPLES=	${MTARGET}.ini
+PORTEXAMPLES=	${MSUBTARGET}.ini
 
 SUB_FILES=	pkg-message target.ini
-SUB_LIST=	MTARGET=${MTARGET}
+SUB_LIST=	MTARGET=${MTARGET} MSUBTARGET=${MSUBTARGET}
 
 OPTIONS_DEFINE=		DEBUG DOCS EXAMPLES
 DEBUG_MAKE_ENV=		DEBUG=1
@@ -56,9 +54,9 @@ DEBUG_MAKE_ENV=		DEBUG=1
 
 .if ${ARCH} == amd64
 MAKE_ARGS+=	PTR64=1
-EMULATOR=	${MTARGET}64
+EMULATOR=	${MSUBTARGET}64
 .else
-EMULATOR=	${MTARGET}
+EMULATOR=	${MSUBTARGET}
 .endif
 PLIST_SUB=	EMULATOR=${EMULATOR}
 
@@ -97,15 +95,15 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR} \
 		${STAGEDIR}${DOCSDIR} \
 		${STAGEDIR}${EXAMPLESDIR} \
-		${STAGEDIR}${PREFIX}/libexec/${MTARGET}
+		${STAGEDIR}${PREFIX}/libexec/${MSUBTARGET}
 	${INSTALL_PROGRAM} ${WRKSRC}/${EMULATOR} ${STAGEDIR}${PREFIX}/bin
-.if ${MTARGET:Mmame}
+.if ${MSUBTARGET:Mmame}
 	(cd ${WRKSRC} && \
 		${INSTALL_PROGRAM} chdman jedutil ldresample ldverify \
 		romcmp testkeys unidasm \
 		${STAGEDIR}${PREFIX}/libexec/mame)
 .endif
-.if ${MTARGET:Mmess}
+.if ${MSUBTARGET:Mmess}
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} castool chdman imgtool jedutil \
 		ldresample ldverify romcmp testkeys unidasm \
 		${STAGEDIR}${PREFIX}/libexec/mess)
@@ -116,6 +114,6 @@ do-install:
 		${COPYTREE_SHARE} keymaps ${STAGEDIR}${DATADIR})
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${STAGEDIR}${DOCSDIR})
 	${INSTALL_DATA} ${WRKDIR}/target.ini \
-		${STAGEDIR}${EXAMPLESDIR}/${MTARGET}.ini
+		${STAGEDIR}${EXAMPLESDIR}/${MSUBTARGET}.ini
 
 .include <bsd.port.mk>

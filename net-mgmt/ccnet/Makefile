@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-server
 PORTREVISION=	6
 CATEGORIES=	net-mgmt devel
 
-MAINTAINER=	yan_jingfeng@yahoo.com
+MAINTAINER=	ultima1252@gmail.com
 COMMENT=	Framework for writing networked applications
 
 LICENSE=	GPLv3

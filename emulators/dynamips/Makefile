@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.ipflow.utc.fr/dynamips/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cisco 3600/7200 Simulator
 
+BROKEN=		Does not fetch
+
 LIB_DEPENDS=	libelf.so:${PORTSDIR}/devel/libelf
 
 USES=		gmake

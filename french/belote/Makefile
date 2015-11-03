@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Un jeu de belote coinchée contre l'ordinateur ou en réseau
 
 BROKEN=		Checksum and size mismatch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 
 USES=		zip:infozip
 USE_JAVA=	yes

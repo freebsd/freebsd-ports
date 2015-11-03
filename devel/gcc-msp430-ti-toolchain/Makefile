@@ -41,6 +41,10 @@ PURE_LIB_DEPENDS_OFF=	libgmp.so:${PORTSDIR}/math/gmp \
 PURE_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-libgui_configure \
 			${PATCHDIR}/extra-patch-gdb_configure
 
+NOT_FOR_ARCHS=		aarch64 arm armeb armv6 armv6hf \
+			mips mips64 mips64el mipsel mipsn32
+NOT_FOR_ARCHS_REASON=	Very slow to build on emulator
+
 USES=		bison compiler cpe gmake libtool makeinfo tar:bzip2
 USE_CSTD=	gnu89
 

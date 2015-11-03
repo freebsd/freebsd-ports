@@ -11,6 +11,8 @@ MAINTAINER=	gugod@gugod.org
 COMMENT=	Pretty font modifyed from X11 schumacher-clean that match kcfonts
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 USES=		fonts
 RUN_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 

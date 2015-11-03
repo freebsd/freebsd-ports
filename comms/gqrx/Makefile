@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gqrx
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.2
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	comms hamradio
@@ -43,4 +43,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/gqrx.desktop \
 		${STAGEDIR}${PREFIX}/share/applications
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# Chase comms/gnuradio compiler choice
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+USE_GCC=	yes
+.endif
+
+.include <bsd.port.post.mk>

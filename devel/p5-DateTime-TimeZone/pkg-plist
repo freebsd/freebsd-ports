@@ -64,6 +64,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Eirunepe.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/El_Salvador.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Fortaleza.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/Fort_Nelson.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Glace_Bay.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Godthab.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Goose_Bay.pm

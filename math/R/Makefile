@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	R
-PORTVERSION=	3.0.2
-PORTREVISION=	7
+PORTVERSION=	3.2.2
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/%SUBDIR%/ \
 		ftp://cran.r-project.org/pub/R/%SUBDIR%/ \
@@ -22,15 +21,13 @@ MASTER_SITES=	http://cran.r-project.org/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	src/base/R-${PORTVERSION:C|\..*||}
 DISTNAME=	R-${PORTVERSION}
 
-PATCH_SITES=		LOCAL/bf
-PATCHFILES=		R-patched-20131112-r64207.diff.bz2
-
 MAINTAINER=	bf@FreeBSD.org
-COMMENT?=	A language for statistical computing and graphics
+COMMENT?=	Language for statistical computing and graphics
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=		${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
+BUILD_DEPENDS=		${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed \
+			texi2dvi:${PORTSDIR}/print/texinfo
 
 CONFIGURE_ENV=		LIBR_LDFLAGS="${LDFLAGS}" OBJC="${CC}" \
 			SED="${LOCALBASE}/bin/gsed" \
@@ -51,7 +48,7 @@ PLIST_SUB=		RMATH_SOVERSION="${RMATH_SOVERSION}"
 USE_LDCONFIG=		yes
 .else # LIBRMATH_SLAVEPORT
 ALL_TARGET=		all
-INSTALL_TARGET=		install
+INSTALL_TARGET=		install-strip
 CONFIGURE_ARGS=		--enable-memory-profiling rdocdir=${DOCSDIR} \
 			--with-system-bzlib --with-system-zlib
 CONFIGURE_ENV+=		FCFLAGS="${FFLAGS}" \
@@ -70,7 +67,7 @@ OPTIONS_DEFAULT+=	ICU PCRE_PORT THREADS
 RUN_DEPENDS+=		${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
 USE_LDCONFIG=		${PREFIX}/lib/R/lib
 #now only used to build the R.1 manpage:
-USES+=			makeinfo perl5
+USES+=			perl5
 USE_PERL5=		build
 
 OPTIONS_DEFINE+=	GHOSTSCRIPT INFO_MANUALS JPEG LETTER_PAPER LIBR \
@@ -263,12 +260,14 @@ PLIST_SUB+=		X11="@comment "
 
 .if ${PORT_OPTIONS:MINFO_MANUALS} && ${PORT_OPTIONS:MDOCS}
 ALL_TARGET+=	info
+CONFIGURE_ENV+=	INSTALL_INFO="${LOCALBASE}/bin/install-info" \
+		MAKEINFO="${LOCALBASE}/bin/makeinfo"
 INFO=		R-FAQ R-admin R-data R-exts R-intro R-lang
 .endif
 
 .if ${PORT_OPTIONS:MPDF_MANUALS} && ${PORT_OPTIONS:MDOCS}
 USE_TEX=		texlive dvipsk kpathsea pdftex
-BUILD_DEPENDS +=	texi2dvi:${PORTSDIR}/print/texinfo
+#BUILD_DEPENDS +=	texi2dvi:${PORTSDIR}/print/texinfo
 ALL_TARGET+=		pdf
 CONFIGURE_ENV +=	INSTALL_INFO="${LOCALBASE}/bin/install-info" \
 			MAKEINFO="${LOCALBASE}/bin/makeinfo"
@@ -327,7 +326,7 @@ post-patch:
 	${TAR} -czf temptgz --exclude='*/po/*' @$$tarfile ; \
 	${MV} temptgz $$tarfile ; \
 	done)
-	@${REINPLACE_CMD} -e '/ls -d $$(srcdir)\/inst/d' \
+	@${REINPLACE_CMD} -e '/ls -d $$srcdir\/inst/d' \
 		${WRKSRC}/src/library/translations/Makefile.in
 .endif
 
@@ -350,7 +349,7 @@ do-build:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/R/lib
-	@${INSTALL_DATA} ${WRKSRC}/src/main/libR.a ${STAGEDIR}${PREFIX}/lib/R/lib
+	${INSTALL_DATA} ${WRKSRC}/src/main/libR.a ${STAGEDIR}${PREFIX}/lib/R/lib
 
 .else # LIBR_SLAVEPORT
 
@@ -382,9 +381,9 @@ post-install:
 .endif # LIBR_SLAVEPORT
 .else # !LIBRMATH_SLAVEPORT
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/src/include/Rmath.h ${STAGEDIR}${PREFIX}/include
-	@${INSTALL_DATA} ${BUILD_WRKSRC}/libRmath.a ${STAGEDIR}${PREFIX}/lib
-	@${INSTALL_LIB} ${BUILD_WRKSRC}/libRmath.so \
+	${INSTALL_DATA} ${WRKSRC}/src/include/Rmath.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${BUILD_WRKSRC}/libRmath.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${BUILD_WRKSRC}/libRmath.so \
 	${STAGEDIR}${PREFIX}/lib/libRmath.so.${RMATH_SOVERSION}
 	@(cd ${STAGEDIR}${PREFIX}/lib; ${LN} -sf libRmath.so.${RMATH_SOVERSION} libRmath.so)
 

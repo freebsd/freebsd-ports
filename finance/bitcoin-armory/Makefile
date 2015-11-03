@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	BitcoinArmory
-PORTVERSION=	0.92.3
-PORTREVISION=	1
+PORTVERSION=	0.93.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	finance
 
 MAINTAINER=	yuri@rawbw.com
-COMMENT=	Implementation of desktop bitcoin management system
+COMMENT=	Desktop bitcoin management system
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -19,27 +18,42 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/swig3.0:${PORTSDIR}/devel/swig30 \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-core>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-core \
 		${PYTHON_PKGNAMEPREFIX}qt4-gui>=${PYQT4_VERSION}:${PORTSDIR}/x11-toolkits/py-qt4-gui \
 		${PYTHON_PKGNAMEPREFIX}twistedCore>=14.0.0:${PORTSDIR}/devel/py-twistedCore \
-		${PYTHON_PKGNAMEPREFIX}psutil>1.2.1:${PORTSDIR}/sysutils/py-psutil
+		${PYTHON_PKGNAMEPREFIX}psutil>1.2.1:${PORTSDIR}/sysutils/py-psutil \
+		${LOCALBASE}/bin/bitcoind:${PORTSDIR}/net-p2p/bitcoin-daemon
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	etotheipi
 
-USES=		gmake python shebangfix
+USES=		compiler:c++11-lang compiler:c++11-lib gmake python:2 shebangfix
 SHEBANG_FILES=	extras/extractKeysFromWallet.py
-USE_GCC=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+CXXFLAGS+=	-DCRYPTOPP_DISABLE_ASM -fPIC
 MAKE_ENV+=	PYTHON_CONFIG=${PYTHON_CMD}-config
 
-ONLY_FOR_ARCHS=	i386 amd64
-ONLY_FOR_ARCHS_REASON=	low-level code available only for i386 and amd64
+BROKEN_FreeBSD_9=	cannot find atomic header
+
+MAKE_ARGS+=	CXXFLAGS="${CXXFLAGS}"
+INSTALLS_ICONS=	yes
+ICON_SIZES=	24x24 32x32 64x64
+
+# When CRYPTOPP_DISABLE_ASM isn't needed any more, i386 amd64 should
+# be made work through ASM code, and the other archs will still
+# have CRYPTOPP_DISABLE_ASM
 
 post-patch:
 	@${REINPLACE_CMD} 's/python-config/$${PYTHON_CONFIG}/' ${WRKSRC}/cppForSwig/Makefile
+	@${REINPLACE_CMD} 's/O_DSYNC/O_SYNC/' ${WRKSRC}/cppForSwig/mdb/mdb.c
 
 post-stage:
 	@${SED} -i.bak -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${STAGEDIR}/${LOCALBASE}/bin/armory && \
 		${RM} -f ${STAGEDIR}/${LOCALBASE}/bin/armory.bak
+	@${REINPLACE_CMD} 's|Exec=/usr/bin/armory|Exec=${LOCALBASE}/bin/armory|' ${STAGEDIR}/${LOCALBASE}/share/applications/*.desktop
+.for s in ${ICON_SIZES}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/
+	${MV} ${STAGEDIR}/${PREFIX}/share/armory/img/armory_icon_${s}.png \
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/armoryicon.png
+.endfor
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/armory/_CppBlockUtils.so

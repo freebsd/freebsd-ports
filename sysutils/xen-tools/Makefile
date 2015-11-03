@@ -2,7 +2,7 @@
 
 PORTNAME=	xen
 PORTVERSION=	4.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/ \
 		http://code.coreboot.org/p/seabios/downloads/get/:seabios
@@ -50,6 +50,7 @@ QEMU_ARGS=	--disable-gtk \
 
 EXTRA_PATCHES=	${FILESDIR}/xsa137.patch:-p1 \
 		${FILESDIR}/xsa142-4.5.patch:-p1 \
+		${FILESDIR}/xsa153-libxl.patch:-p1 \
 		${FILESDIR}/0002-libxc-fix-xc_dom_load_elf_symtab.patch:-p1
 
 CONFIGURE_ARGS+=	--with-extra-qemuu-configure-args="${QEMU_ARGS}"

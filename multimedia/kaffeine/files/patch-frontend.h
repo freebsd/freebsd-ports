@@ -1,5 +1,5 @@
---- include/frontend.h.orig	2009-10-06 18:33:10.000000000 +0200
-+++ include/frontend.h	2009-10-06 18:33:33.000000000 +0200
+--- include/frontend.h.orig	2015-08-07 15:43:59 UTC
++++ include/frontend.h
 @@ -26,7 +26,14 @@
  #ifndef _DVBFRONTEND_H_
  #define _DVBFRONTEND_H_

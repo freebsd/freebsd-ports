@@ -1,24 +1,35 @@
---- configure.ac.orig	2015-08-21 11:53:00.000000000 +0900
-+++ configure.ac	2015-09-22 21:45:18.055998000 +0900
-@@ -58,7 +58,7 @@
+--- configure.ac.orig	2015-08-31 23:48:56 UTC
++++ configure.ac
+@@ -58,9 +58,9 @@ AC_ARG_WITH([cupsfilterdir],
  if test "xno" = "x${with_cupsfilterdir}"; then
     if test "xyes" = "x$have_cups_config" ; then
        dnl `@<:@' , `@:>@' are replaced with  `[' , `]'
 -      CUPS_FILTER_DIR="${cups_default_prefix}`cups-config --serverbin | sed -e 's,^/@<:@^/@:>@@<:@^/@:>@*,,'`/filter"
 +      CUPS_FILTER_DIR="`cups-config --serverbin`/filter"
     else
-       CUPS_FILTER_DIR="${cups_default_prefix}/lib/cups/filter"
+-      CUPS_FILTER_DIR="${cups_default_prefix}/lib/cups/filter"
++      AC_MSG_ERROR([CUPS_FILTER_DIR could not be found.])
     fi
-@@ -76,7 +76,7 @@
-       CUPS_PPD_DIR="${cups_default_prefix}/share/ppd"
-    elif test "xyes" = "x$have_cups_config" ; then
+ else
+    CUPS_FILTER_DIR="${with_cupsfilterdir}"
+@@ -72,13 +72,11 @@ AC_ARG_WITH([cupsppddir],
+   [],
+   [with_cupsppddir=no])
+ if test "xno" = "x${with_cupsppddir}"; then
+-   if test -d "${cups_default_prefix}/share/ppd" ; then
+-      CUPS_PPD_DIR="${cups_default_prefix}/share/ppd"
+-   elif test "xyes" = "x$have_cups_config" ; then
++   if test "xyes" = "x$have_cups_config" ; then
        dnl `@<:@' , `@:>@' are replaced with  `[' , `]'
 -      CUPS_PPD_DIR="${cups_default_prefix}/`cups-config --datadir | sed -e 's,^/@<:@^/@:>@@<:@^/@:>@*,,'`/model"
 +      CUPS_PPD_DIR="`cups-config --datadir`/model"
     else
-       CUPS_PPD_DIR="${cups_default_prefix}/share/cups/model"
+-      CUPS_PPD_DIR="${cups_default_prefix}/share/cups/model"
++      AC_MSG_ERROR([CUPS_PPD_DIR could not be found.])
     fi
-@@ -87,6 +87,13 @@
+ else
+    CUPS_PPD_DIR="${with_cupsppddir}"
+@@ -87,6 +85,13 @@ fi
  AC_SUBST(CUPS_FILTER_DIR)
  AC_SUBST(CUPS_PPD_DIR)
  
@@ -32,7 +43,7 @@
  
  dnl Checks for header files.
  AC_HEADER_STDC
-@@ -96,11 +103,14 @@
+@@ -96,11 +101,14 @@ AC_STRUCT_TM
  AC_TYPE_PID_T
  AC_TYPE_SIZE_T
  
@@ -47,7 +58,7 @@
  AC_CHECK_HEADERS([\
          ctype.h \
          errno.h \
-@@ -117,10 +127,6 @@
+@@ -117,10 +125,6 @@ AC_CHECK_HEADERS([\
          unistd.h \
          ])
  
@@ -58,7 +69,7 @@
  # Checks for library functions.
  AC_FUNC_MALLOC
  AC_FUNC_MEMCMP
-@@ -132,6 +138,16 @@
+@@ -132,6 +136,16 @@ AC_CHECK_FUNCS([\
          strrchr \
          ])
  

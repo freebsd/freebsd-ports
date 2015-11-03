@@ -1,4 +1,4 @@
 SHA256 (android-platform_system_core-android-6.0.0_r1_GH0.tar.gz) = 3027e73c8f23d8348c76bc558987ecd10c07ed7c89b60a2a76be9e0ef7c84dd5
 SIZE (android-platform_system_core-android-6.0.0_r1_GH0.tar.gz) = 1186291
-SHA256 (bash_completion.d/adb?id=2b8cfec) = 0d7989596a3e4937834d582eb0ddc88b8186505570772304fe51870d473916a7
-SIZE (bash_completion.d/adb?id=2b8cfec) = 5198
+SHA256 (mbrubeck-android-completion-3b0fabe_GH0.tar.gz) = dc774f101acd9514baf3e7a0ac610068116f2c093b94987ba59203a39a6439dc
+SIZE (mbrubeck-android-completion-3b0fabe_GH0.tar.gz) = 5948

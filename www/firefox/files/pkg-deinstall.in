@@ -24,5 +24,7 @@ rm -f ${MOZDIR}/chrome/app-chrome.manifest
 rm -rf ${MOZDIR}/updates
 find %%MOZDIR%%/plugins/ -depth 1 -type l -delete > /dev/null 2>&1
 find %%MOZDIR%%/extensions/ -depth 1 -type l -delete > /dev/null 2>&1
+rmdir ${MOZDIR}/chrome
+rmdir ${MOZDIR}
 
 exit 0

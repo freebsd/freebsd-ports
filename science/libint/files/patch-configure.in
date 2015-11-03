@@ -1,0 +1,29 @@
+--- configure.in.orig	2014-03-05 18:27:30 UTC
++++ configure.in
+@@ -17,6 +17,26 @@ AC_SET_MAKE
+ AC_DEFINE_UNQUOTED(HOST_ARCH, "$host")
+ AC_DEFINE_UNQUOTED(TARGET_ARCH, "$target")
+ 
++AC_DEFINE([HOST_ARCH], [], [Description])
++AC_DEFINE([INCLUDE_DERIV], [], [Description])
++AC_DEFINE([INCLUDE_R12], [], [Description])
++AC_DEFINE([LIBDERIV_MAX_AM1], [], [Description])
++AC_DEFINE([LIBDERIV_MAX_AM12], [], [Description])
++AC_DEFINE([LIBDERIV_MAX_AM2], [], [Description])
++AC_DEFINE([LIBINT_BUILDID], [], [Description])
++AC_DEFINE([LIBINT_MAJOR_VERSION], [], [Description])
++AC_DEFINE([LIBINT_MAX_AM], [], [Description])
++AC_DEFINE([LIBINT_MAX_CLASS_SIZE], [], [Description])
++AC_DEFINE([LIBINT_MICRO_VERSION], [], [Description])
++AC_DEFINE([LIBINT_MINOR_VERSION], [], [Description])
++AC_DEFINE([LIBINT_OPT_AM], [], [Description])
++AC_DEFINE([LIBINT_VERSION], [], [Description])
++AC_DEFINE([LIBR12_MAX_AM], [], [Description])
++AC_DEFINE([LIBR12_MAX_CLASS_SIZE], [], [Description])
++AC_DEFINE([LIBR12_OPT_AM], [], [Description])
++AC_DEFINE([LONG_DOUBLE], [], [Description])
++AC_DEFINE([TARGET_ARCH], [], [Description])
++
+ define([default_prefix_dash],ifelse(libint_buildid, ,[],[-]))
+ define([default_prefix],"/usr/local")
+ 

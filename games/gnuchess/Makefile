@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnuchess
-PORTVERSION=	6.2.1
+PORTVERSION=	6.2.2
 CATEGORIES=	games
 MASTER_SITES=	GNU/chess
 # The DISTFILES here is explicitly needed because it can be extended later.
@@ -36,15 +36,13 @@ EXTRACT_ONLY+=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 post-build:
 .if ${PORT_OPTIONS:MOPENING_BOOK}
 	zcat ${DISTDIR}/book_1.02.pgn.gz > ${WRKSRC}/src/book.pgn
-	cd ${WRKSRC}/src && ./gnuchess --addbook book.pgn
+	cd ${WRKSRC}/src && ${PRINTF} "book add book.pgn\nquit\n" | ./gnuchess
 	@${REINPLACE_CMD} -e '/Book =/s/false/true/' ${WRKSRC}/src/gnuchess.ini
 .endif
 
 post-install:
 	cd ${STAGEDIR}${PREFIX}/bin && ${LN} -f gnuchess gnuchessx
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/NEWS ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

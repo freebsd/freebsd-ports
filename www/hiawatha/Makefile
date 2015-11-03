@@ -70,14 +70,15 @@ post-patch:
 	${WRKSRC}/man/hiawatha.1.in ${WRKSRC}/man/cgi-wrapper.1.in
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
-
 .for FILE in ${CONFIG_FILES}
 	${INSTALL_DATA} ${WRKSRC}/config/${FILE} ${STAGEDIR}${PREFIX}/etc/hiawatha/${FILE}.sample
 .endfor
 
 	@${MKDIR} ${STAGEDIR}${WWWDIR} ; \
 	${INSTALL_DATA} ${WRKSRC}/extra/index.html ${STAGEDIR}${WWWDIR}/index.html.sample
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

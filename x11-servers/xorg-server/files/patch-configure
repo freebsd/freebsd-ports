@@ -1,6 +1,18 @@
---- configure.orig	2015-03-05 13:53:47.431303000 +0100
-+++ configure	2015-03-05 13:54:06.598309000 +0100
-@@ -25560,7 +25560,7 @@
+--- configure.orig	2015-06-16 17:43:10.000000000 +0200
++++ configure	2015-10-21 23:07:22.017310000 +0200
+@@ -22640,6 +22640,11 @@
+   arm*)
+ 	ARM_VIDEO=yes
+ 	DEFAULT_INT10="stub"
++	case $host_os in
++		*freebsd*)
++			$as_echo "#define USE_DEV_IO 1" >>confdefs.h
++		 ;;
++	esac
+ 	;;
+   i*86)
+ 	I386_VIDEO=yes
+@@ -25559,7 +25564,7 @@
  case "x$XTRANS_SEND_FDS" in
  xauto)
  	case "$host_os" in

@@ -59,8 +59,6 @@ DOCS_PLIST_FILES=	${MAN1SRCS:S|^|man/man1/|:S|.1$|${LLVM_SUFFIX}.1.gz|}
 EXTRAS_DESC=		Extra clang tools
 EXTRAS_IMPLIES=		CLANG
 EXTRAS_DISTFILES= clang-tools-extra-${DISTVERSION}.src${EXTRACT_SUFX}
-EXTRAS_EXTRA_PATCHES= \
-	${PATCHDIR}/extras-patch-cmake_include_hack.diff
 LIT_DESC=		Install lit and FileCheck test tools
 LLD_DESC=		Install lld, the LLVM linker
 LLD_DISTFILES=		lld-${DISTVERSION}.src${EXTRACT_SUFX}
@@ -133,7 +131,7 @@ EXTRAS_LIBS=	libclangApplyReplacements \
 		libclangTidyReadabilityModule \
 		libclangTidyUtils \
 		libmodernizeCore
-EXTRAS_PATTERN=	${EXTRAS_COMMANDS:tW:C/  */|/g}${EXTRAS_LIBS:tW:C/  */|/g}
+EXTRAS_PATTERN=	${EXTRAS_COMMANDS:tW:C/  */|/g}|${EXTRAS_LIBS:tW:C/  */|/g}
 
 .include <bsd.port.options.mk>
 
@@ -240,11 +238,15 @@ LLDB_BUILD_DEPENDS+= \
 	${PYTHON_PKGNAMEPREFIX}enum34>0:${PORTSDIR}/devel/py-enum34
 .endif
 
+.if ${PORT_OPTIONS:MLLDB} && ${PYTHON_REL} >= 3000
+BROKEN=	LLDB does not build with Python 3
+.endif
+
 .if ${OPSYS} == "FreeBSD" && ${COMPILER_TYPE} != clang
 # Evil hack around gcc48 not providing a usable c++11 environment on 9.x
 PLIST_SUB:=	${PLIST_SUB:NLLDB=*} LLDB="@comment "
 .else
-.if ${PORT_OPTIONS:MLLD}
+.if ${PORT_OPTIONS:MLLDB}
 EXTRA_PATCHES+= \
 	${PATCHDIR}/lldb-patch-svn-247116 \
 	${PATCHDIR}/lldb-patch-svn-249467
@@ -255,7 +257,7 @@ post-extract-CLANG-on:
 	${MV} ${WRKSRC_clang} ${PATCH_WRKSRC}/tools/clang
 
 post-extract-EXTRAS-on:
-	${MV} ${WRKSRC_extras} ${PATCH_WRKSRC}/tools/clang-tools-extra
+	${MV} ${WRKSRC_extras} ${PATCH_WRKSRC}/tools/clang/tools/extra
 
 post-extract-COMPILER_RT-on:
 	${MV} ${WRKSRC_compiler_rt} ${PATCH_WRKSRC}/tools/compiler-rt
@@ -367,7 +369,7 @@ build-plist:
 	    if ($$0 ~ /(argdumper|lldb)/) {printf "%%%%LLDB%%%%"} \
 	    if ($$0 ~ /lib.*omp/) {printf "%%%%OPENMP%%%%"} \
 	    if ($$0 ~ /LLVMgold/) {printf "%%%%GOLD%%%%"} \
-		if ($$0 !~ /libclang_rt/) {print}}' ${PLIST}.tmp >> ${PLIST}
+	    if ($$0 !~ /libclang_rt/) {print}}' ${PLIST}.tmp >> ${PLIST}
 	${RM} -f ${PLIST}.tmp
 
 check-commands:

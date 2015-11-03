@@ -11,6 +11,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Action Controller and Action View of Rails MVC Framework
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-actionview41>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-actionview41 \
 		rubygem-activesupport41>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport41 \

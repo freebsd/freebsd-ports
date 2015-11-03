@@ -15,9 +15,11 @@ LICENSE_COMB=	dual
 
 USE_PERL5=	configure
 USES=		perl5
+NO_ARCH=	yes
 
 post-install:
 # Do not conflict with lang/perl5.*
-	${RM} ${STAGEDIR}${PREFIX}/bin/pod2usage ${STAGEDIR}${PREFIX}/man/man1/pod2usage.1
+	@${RM} ${STAGEDIR}${PREFIX}/bin/pod2usage ${STAGEDIR}${SITE_MAN1}/pod2usage.1
+	@${RMDIR} ${STAGEDIR}${SITE_MAN1}
 
 .include <bsd.port.mk>

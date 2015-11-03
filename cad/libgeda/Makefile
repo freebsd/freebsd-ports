@@ -13,6 +13,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The gEDA's tools base utility library
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 
 LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile
 

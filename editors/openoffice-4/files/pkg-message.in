@@ -34,8 +34,8 @@ OpenOffice does need $LANG to be set to a suitable value.
 
 4. Wiki Publisher Extension
 ---------------------------
-The Wiki Publisher extension can be installed from
-%%PRINSTALLATION_BASEDIR%%/extensions/
+The Wiki Publisher extension is now an integrated extension and manual
+installation with the extension manager is no longer needed.
 
 5. If you run into problems
 ---------------------------

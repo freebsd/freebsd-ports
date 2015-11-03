@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 OPTIONS_DEFINE=	IDN
 OPTIONS_DEFAULT=IDN
 
+BROKEN=		Does not fetch
 USES=		libtool pathfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules

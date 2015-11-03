@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	thrift
-PORTVERSION=	${THRIFT_PORTVERSION} # to keep in sync with ../thrift
+PORTVERSION=	${THRIFT_PORTVERSION}.0 # to keep in sync with ../thrift
 PORTEPOCH=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
@@ -12,11 +12,13 @@ COMMENT=	Ruby interface to thrift
 
 LICENSE=	APACHE20
 
-BROKEN_RUBY22=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+
+# Workaround for stage-qa:
+post-install:
+	${FIND} ${STAGEDIR}${PREFIX}/${GEMS_BASE_DIR}/ -name '*.o' -o -name '*.so' | ${XARGS} ${STRIP_CMD}
 
 .include "../thrift/bsd.thrift.mk"
 .include <bsd.port.mk>

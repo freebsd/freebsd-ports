@@ -24,11 +24,11 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
 
 USES=		python
 USE_GITHUB=	yes
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 GH_ACCOUNT=	getpelican
 
-OPTIONS_DEFINE=		MARKDOWN SYNTAX TESTS
+OPTIONS_DEFINE=		MARKDOWN SYNTAX
 OPTIONS_DEFAULT=	MARKDOWN SYNTAX
 
 MARKDOWN_DESC=		Markdown markup language format support
@@ -37,11 +37,7 @@ MARKDOWN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown>0:${PORTSDIR}/textproc/py-
 SYNTAX_DESC=		Syntax Highlighting (via pygments)
 SYNTAX_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=1.4:${PORTSDIR}/textproc/py-pygments
 
-TESTS_DESC=		Install test suite requirements
-TESTS_BUILD_DEPENDS=	${TEST_DEPENDS} \
-			${RUN_DEPENDS}
-
-regression-test: build
+do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>

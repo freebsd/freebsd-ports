@@ -91,6 +91,17 @@
 %%ED2K%%man/man1/ed2k.1.gz
 %%WXCAS%%man/man1/wxcas.1.gz
 %%XAS%%man/man1/xas.1.gz
+%%NLS%%%%ALC%%man/ro/man1/alc.1.gz
+%%NLS%%%%ALCC%%man/ro/man1/alcc.1.gz
+%%NLS%%%%MONOLITHIC%%man/ro/man1/amule.1.gz
+%%NLS%%%%AMULECMD%%man/ro/man1/amulecmd.1.gz
+%%NLS%%%%AMULEDAEMON%%man/ro/man1/amuled.1.gz
+%%NLS%%%%AMULEGUI%%man/ro/man1/amulegui.1.gz
+%%NLS%%%%WEBSERVER%%man/ro/man1/amuleweb.1.gz
+%%NLS%%%%CAS%%man/ro/man1/cas.1.gz
+%%NLS%%%%ED2K%%man/ro/man1/ed2k.1.gz
+%%NLS%%%%WXCAS%%man/ro/man1/wxcas.1.gz
+%%NLS%%%%XAS%%man/ro/man1/xas.1.gz
 %%NLS%%%%ALC%%man/ru/man1/alc.1.gz
 %%NLS%%%%ALCC%%man/ru/man1/alcc.1.gz
 %%NLS%%%%MONOLITHIC%%man/ru/man1/amule.1.gz
@@ -240,6 +251,7 @@
 %%NLS%%share/locale/pl/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/pt_PT/LC_MESSAGES/amule.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/amule.mo

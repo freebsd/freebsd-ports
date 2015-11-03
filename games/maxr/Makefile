@@ -11,11 +11,12 @@ MASTER_SITES=	http://www.maxr.org/downloads/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Mechanized Assault and Exploration Reloaded
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		localbase
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl mixer net
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*
@@ -25,7 +26,7 @@ PLIST_DIRS=	%%DATADIR%%/voices \
 		%%DATADIR%%/mve
 
 DESKTOP_ENTRIES="M.A.X.R." \
-		"Mechanized Assault and Exploration Reloaded" \
+		"" \
 		"${DATADIR}/maxr.png" \
 		"maxr" \
 		"Game;StrategyGame;" \

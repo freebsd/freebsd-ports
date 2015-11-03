@@ -14,6 +14,8 @@ LIB_DEPENDS=	libopensync.so:${PORTSDIR}/devel/libopensync022 \
 		libneon.so:${PORTSDIR}/www/neon
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 USES=		libtool pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 libxml2

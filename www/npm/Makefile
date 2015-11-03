@@ -3,6 +3,7 @@
 
 PORTNAME=	npm
 PORTVERSION=	2.14.7
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -28,6 +29,7 @@ CPE_VENDOR=	npmjs
 CPE_PRODUCT=	node_packaged_modules
 
 SHEBANG_FILES=	lib/utils/completion.sh \
+		node_modules/node-gyp/test/docker.sh \
 		node_modules/request/node_modules/node-uuid/benchmark/bench.sh \
 		scripts/clean-old.sh \
 		scripts/release.sh \

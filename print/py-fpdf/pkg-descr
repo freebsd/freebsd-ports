@@ -1,0 +1,17 @@
+PyFPDF is a library for PDF document generation under Python, ported from
+PHP (see FPDF "Free"-PDF, a well-known PDFlib-extension replacement with
+many examples, scripts and derivatives).
+
+Compared with other PDF libraries, PyFPDF is simple, small and versatile,
+with advanced capabilities and easy to learn, extend and maintain.
+
+Features
+    * Python 2.5 to 2.7 support (with experimental Python3 support)
+    * Unicode (UTF-8) TrueType font subset embedding
+    * Barcode I2of5 and code39, QR code coming soon ...
+    * PNG, GIF and JPG support (including transparency and alpha channel)
+	* Templates with a visual designer & basic html2pdf
+    * Exceptions support, other minor fixes, improvements and PEP8 code
+	  cleanups
+
+WWW: https://code.google.com/p/pyfpdf/

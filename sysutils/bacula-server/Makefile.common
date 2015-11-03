@@ -1,3 +1,5 @@
+.include <bsd.port.pre.mk>
+
 post-build:
 .if ${PKGNAMEPREFIX} == "nagios-check_"
 	${MAKE_CMD} -C ${WRKSRC}/examples/nagios/check_bacula

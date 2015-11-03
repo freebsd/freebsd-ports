@@ -2,6 +2,7 @@ bin/jedit
 man/man1/jedit.1.gz
 share/java/jedit/jars/QuickNotepad.jar
 share/java/jedit/jedit.jar
+share/java/jedit/keymaps/Alan_keys.props
 share/java/jedit/keymaps/Emacs_keys.props
 share/java/jedit/keymaps/German_Keyboard_keys.props
 share/java/jedit/keymaps/IntelliJ_IDEA_keys.props
@@ -119,8 +120,10 @@ share/java/jedit/keymaps/jEdit_keys.props
 share/java/jedit/modes/actionscript.xml
 share/java/jedit/modes/ada.xml
 share/java/jedit/modes/ada95.xml
+share/java/jedit/modes/ans-forth94.xml
 share/java/jedit/modes/ant.xml
 share/java/jedit/modes/antlr.xml
+share/java/jedit/modes/antlr4.xml
 share/java/jedit/modes/apacheconf.xml
 share/java/jedit/modes/apdl.xml
 share/java/jedit/modes/applescript.xml
@@ -209,6 +212,7 @@ share/java/jedit/modes/jhtml.xml
 share/java/jedit/modes/jmk.xml
 share/java/jedit/modes/json.xml
 share/java/jedit/modes/jsp.xml
+share/java/jedit/modes/kotlin.xml
 share/java/jedit/modes/latex.xml
 share/java/jedit/modes/lex.xml
 share/java/jedit/modes/lilypond.xml
@@ -222,12 +226,14 @@ share/java/jedit/modes/macroscheduler.xml
 share/java/jedit/modes/mail.xml
 share/java/jedit/modes/makefile.xml
 share/java/jedit/modes/maple.xml
+share/java/jedit/modes/markdown.xml
 share/java/jedit/modes/maven.xml
 share/java/jedit/modes/ml.xml
 share/java/jedit/modes/modula3.xml
 share/java/jedit/modes/moin.xml
 share/java/jedit/modes/mpost.xml
 share/java/jedit/modes/mqsc.xml
+share/java/jedit/modes/mustache.xml
 share/java/jedit/modes/mxml.xml
 share/java/jedit/modes/myghty.xml
 share/java/jedit/modes/mysql.xml
@@ -279,6 +285,7 @@ share/java/jedit/modes/rib.xml
 share/java/jedit/modes/roff.xml
 share/java/jedit/modes/rpmspec.xml
 share/java/jedit/modes/rtf.xml
+share/java/jedit/modes/rust.xml
 share/java/jedit/modes/ruby.xml
 share/java/jedit/modes/rview.xml
 share/java/jedit/modes/sas.xml

@@ -12,6 +12,8 @@ COMMENT=	PDO driver for Apache Cassandra
 
 LICENSE=	APACHE20
 
+BROKEN=		fails to compile
+
 LIB_DEPENDS=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs
 
 USE_GITHUB=	yes

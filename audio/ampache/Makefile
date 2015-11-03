@@ -11,6 +11,8 @@ MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Web-based Audio file manager
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 USE_PHP=	mysql pcre session iconv hash gettext mbstring
 WANT_PHP_WEB=	yes
 

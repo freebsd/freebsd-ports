@@ -27,6 +27,7 @@ bin/scot
 bin/scsort
 bin/sdif2ad
 bin/sndinfo
+bin/src_conv
 bin/srconv
 %%FLTK%%bin/winsound
 include/csound/CppSound.hpp
@@ -70,6 +71,7 @@ lib/csound/plugins-6.0/libexciter.so
 lib/csound/plugins-6.0/libfareygen.so
 %%FLUIDSYNTH%%lib/csound/plugins-6.0/libfluidOpcodes.so
 lib/csound/plugins-6.0/libfractalnoise.so
+lib/csound/plugins-6.0/libframebuffer.so
 %%HDF5%%lib/csound/plugins-6.0/libhdf5.so
 %%PNG%%lib/csound/plugins-6.0/libimage.so
 lib/csound/plugins-6.0/libipmidi.so

@@ -1,4 +1,4 @@
---- setup.py.orig	2014-08-03 18:09:32 UTC
+--- setup.py.orig	2015-10-21 20:39:22 UTC
 +++ setup.py
 @@ -44,7 +44,10 @@ def find_files(topdirs, py = False):
      ret = []

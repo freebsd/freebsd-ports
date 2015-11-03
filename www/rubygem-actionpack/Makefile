@@ -10,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Action Controller and Action View of Rails MVC Framework
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-activemodel>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-activemodel \
 		rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport \
@@ -22,7 +23,6 @@ RUN_DEPENDS=	rubygem-activemodel>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-a
 		rubygem-sprockets22>=2.2.1:${PORTSDIR}/devel/rubygem-sprockets22
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

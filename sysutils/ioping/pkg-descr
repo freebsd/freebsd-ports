@@ -1,3 +1,4 @@
-This tool lets you monitor I/O latency in real time
+This tool allows one to monitor I/O latency in real time.  It shows disk
+latency in the same way as ping(8) shows network latency.
 
-WWW: http://code.google.com/p/ioping/
+WWW: https://github.com/koct9i/ioping

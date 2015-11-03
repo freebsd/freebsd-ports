@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	komarov@valerka.net
 COMMENT=	Python interface to Thrift
 
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/../../LICENSE
+
 DISTINFO_FILE=	${PORTSDIR}/devel/thrift/distinfo
 
 USES=		python

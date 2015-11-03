@@ -2,4 +2,4 @@ The validatable library can be included with any Ruby class and provide
 validations similar to ActiveRecord's. The library follows ActiveRecord's
 lead for features that are similar and introduces new features.
 
-WWW: http://rubygems.org/gems/validatable/
+WWW: http://validatable.rubyforge.org/

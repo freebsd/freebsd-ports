@@ -1,0 +1,4 @@
+lib/varnish/vmods/libvmod_saintmode.so
+man/man3/vmod_saintmode.3.gz
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README.rst

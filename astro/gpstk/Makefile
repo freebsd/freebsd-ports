@@ -12,12 +12,12 @@ COMMENT=	Toolkit for developing GPS applications
 
 LICENSE=	LGPL3
 
-USES=		cmake python:run
+USES=		cmake:outsource python:run
 USE_GCC=	yes
 USE_LDCONFIG=	yes
 
-EXTRACT_AFTER_ARGS=	--exclude .git
+CMAKE_SOURCE_PATH=	${WRKSRC}/dev
 
-WRKSRC=		${WRKDIR}/dev
+EXTRACT_AFTER_ARGS=	--exclude .git
 
 .include <bsd.port.mk>

@@ -12,6 +12,8 @@ MAINTAINER=	sixxgate@hotmail.com
 COMMENT=	Application / program launcher for Motif
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 USES=		imake motif tar:bzip2
 USE_XORG=	x11 xmu xt
 
