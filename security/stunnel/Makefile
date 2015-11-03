@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	stunnel
-PORTVERSION=	5.24
+PORTVERSION=	5.26b1
 CATEGORIES=	security
 MASTER_SITES=	https://www.stunnel.org/downloads/%SUBDIR%/ \
+		https://www.stunnel.org/downloads/beta/ \
 		http://mirrors.zerg.biz/stunnel/%SUBDIR%/ \
 		http://mirrors.go-part.com/stunnel/%SUBDIR%/ \
 		http://ftp.nluug.nl/pub/networking/stunnel/%SUBDIR%/ \
@@ -30,6 +31,7 @@ USE_PERL5=	build
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 USE_RC_SUBR=	stunnel
+WRKSRC=		${WRKDIR}/${PORTNAME}-5.26
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var/tmp --enable-static --disable-systemd \
