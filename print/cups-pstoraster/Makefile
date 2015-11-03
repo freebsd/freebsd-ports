@@ -40,6 +40,8 @@ CJK_RUN_DEPENDS=	${LOCALBASE}/share/fonts/std.ja_JP/Ryumin-Light:${PORTSDIR}/jap
 			${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 CJK_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-lib_cidfmap
 
+MAKE_JOBS_UNSAFE=	yes
+
 pre-configure:
 	${RM} -f ${WRKSRC}/ijs/config.guess ${WRKSRC}/ijs/missing ${WRKSRC}/ijs/config.sub ${WRKSRC}/ijs/install-sh ${WRKSRC}/ijs/ltmain.sh
 	${RM} -f ${WRKSRC}/trunk/ijs/config.guess ${WRKSRC}/trunk/ijs/missing ${WRKSRC}/trunk/ijs/config.sub ${WRKSRC}/trunk/ijs/install-sh ${WRKSRC}/trunk/ijs/ltmain.sh
