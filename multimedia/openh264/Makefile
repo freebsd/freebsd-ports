@@ -17,7 +17,9 @@ GH_ACCOUNT=	cisco
 USES=		compiler cpe gmake
 CPE_VENDOR=	cisco
 USE_LDCONFIG=	yes
-ASFLAGS+=	${ASFLAGS_${CHOSEN_COMPILER_TYPE}}
+ASFLAGS+=	${ASFLAGS_${MACHINE}_${CHOSEN_COMPILER_TYPE}}
+ASFLAGS_arm_clang=	-no-integrated-as
+ASFLAGS_arm64_clang=	-no-integrated-as
 MAKE_ARGS=	OS=bsd ARCH="${ARCH:S/amd64/x86_64/}" \
 		CCASFLAGS='$$(CFLAGS) ${ASFLAGS}' \
 		CFLAGS_OPT="" CFLAGS_DEBUG=""
@@ -46,13 +48,6 @@ TEST_BUILD_DEPENDS=googletest>=1.6.0:${PORTSDIR}/devel/googletest
 TEST_CFLAGS=	-I${LOCALBASE}/include
 TEST_MAKE_ARGS=	HAVE_GTEST=Yes
 TEST_ALL_TARGET=test
-
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MDEBUG} && (${ARCH:Maarch*} || ${ARCH:Marm*} )
-USE_BINUTILS=	yes
-ASFLAGS_clang=	-no-integrated-as
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e '/gtest-targets\.mk/d' \
