@@ -14,6 +14,7 @@ RUN_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL \
 		p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
 		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dag-erling
