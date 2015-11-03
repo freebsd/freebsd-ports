@@ -50,9 +50,9 @@ DEBUG_DESC=	Enable debug
 NOT_FOR_ARCHS=	sparc64
 NOT_FOR_ARCHS_REASON=	not yet ported to this architecture
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-# XXX we rely on USES=perl5 to load bsd.default-versions.mk
+.include "${.CURDIR}/../../Mk/bsd.default-versions.mk"
 .if defined(USE_GCC) && ${USE_GCC} == yes && ${GCC_DEFAULT} == 4.8
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-src_trivia_config.h.cmake
 .endif
@@ -71,4 +71,4 @@ post-install:
 		${STAGEDIR}${TT_RUNDIR} \
 		${STAGEDIR}${ETCDIR}/instances.enabled
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
