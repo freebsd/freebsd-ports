@@ -21,7 +21,7 @@
 #	default: "/var/log/varnishncsa.log"
 #
 # varnishncsa_flags - command line arguments.
-#	default: "-D -P ${varnishncsa_pidfile} -a -w ${varnishncsa_file}${varnishncsa_logformat:+ -P \"$varnishncsa_logformat\""
+#	default: "-t off -P ${varnishncsa_pidfile} -D -a -w ${varnishncsa_file}${varnishncsa_logformat:+ -F \"$varnishncsa_logformat\"}"
 #
 # varnishncsa_logformat - log file format.
 #       default: "" (uses varnishncsa's default format)
@@ -30,7 +30,7 @@
 # Add the following line to /etc/newsyslog.conf to rotate the log file
 # once a day:
 #
-# /var/log/varnishncsa.log 640 7 * @T00 JB /var/run/varnishncsa.pid
+# /var/log/varnishncsa.log varnishlog:varnish 640 7 * @T00 JB /var/run/varnishncsa.pid
 #
 # See varnishncsa(1) for a detailed overview of command-line options.
 #
@@ -45,43 +45,26 @@ load_rc_config ${name}
 : ${varnishncsa_enable:=NO}
 : ${varnishncsa_pidfile=/var/run/${name}.pid}
 : ${varnishncsa_file=/var/log/${name}.log}
-: ${varnishncsa_flags="-P ${varnishncsa_pidfile} -D -a -w ${varnishncsa_file}${varnishncsa_logformat:+ -F \"$varnishncsa_logformat\"}"}
-: ${varnishncsa_user=varnishlog}
+: ${varnishncsa_flags="-t off -P ${varnishncsa_pidfile} -D -a -w ${varnishncsa_file} ${varnishncsa_logformat:+-F \"$varnishncsa_logformat\"}"}
 
-command="%%PREFIX%%/bin/${name}"
+procname="%%PREFIX%%/bin/${name}"
+command="/usr/sbin/daemon"
+command_args="-f -u varnishlog ${procname} ${varnishncsa_flags}"
 pidfile=${varnishncsa_pidfile}
 start_precmd=precmd
 
 precmd()
 {
+        # $varnishncsa_flags gets applied too early if we don't do this.
+        rc_flags=""
+
 	if [ ! -e ${pidfile} ]; then
-		install -o ${varnishncsa_user} -g varnish /dev/null ${pidfile};
+		install -o varnishlog -g varnish -m 644 /dev/null ${pidfile};
 	fi
 
 	if [ ! -e ${varnishncsa_file} ]; then
-		install -o ${varnishncsa_user} -g varnish /dev/null ${varnishncsa_file};
+		install -o varnishlog -g varnish -m 640 /dev/null ${varnishncsa_file};
 	fi
-
-	waitcount=0
-	vsm=%%PREFIX%%/varnish/$(hostname)/_.vsm
-	
-        # wait no longer than 5s for  _.vsm file to arrive from varnishd
-	while :
-	do
-		if [ -f ${vsm} ] ; then
-			break
-		else
-			case "${waitcount}" in
-				5)	echo "${name}: Failed to start. Missing ${vsm} ?"
-					break
-					;;
-				*)	echo "${name}: waiting for ${vsm}"
-					waitcount=$((waitcount+1))
-					sleep 1
-					;;
-			esac
-		fi
-	done
 }
 
 run_rc_command "$1"
