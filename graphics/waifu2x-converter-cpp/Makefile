@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	waifu2x-converter-cpp
-DISTVERSION=	1.0.0-318
-DISTVERSIONSUFFIX=	-gddb865a
+DISTVERSION=	1.0.0-377
+DISTVERSIONSUFFIX=	-g007e7b1
 CATEGORIES=	graphics
 MASTER_SITES=	https://aur.archlinux.org/cgit/aur.git/plain/:manpage
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
