@@ -2064,8 +2064,10 @@
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_explosm.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_gocomics.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_pa.php
+%%WWWDIR%%/plugins/af_comics/filters/af_comics_pvp.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_tfd.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_twp.php
+%%WWWDIR%%/plugins/af_comics/filters/af_comics_whomp.php
 %%WWWDIR%%/plugins/af_comics/init.php
 %%WWWDIR%%/plugins/af_fsckportal/init.php
 %%WWWDIR%%/plugins/af_lang_detect/init.php
@@ -2097,6 +2099,8 @@
 %%WWWDIR%%/plugins/af_unburn/init.php
 %%WWWDIR%%/plugins/af_youtube_embed/init.php
 %%WWWDIR%%/plugins/af_zz_imgsetsizes/init.php
+%%WWWDIR%%/plugins/af_zz_noautoplay/init.js
+%%WWWDIR%%/plugins/af_zz_noautoplay/init.php
 %%WWWDIR%%/plugins/auth_internal/init.php
 %%WWWDIR%%/plugins/auth_remote/init.php
 %%WWWDIR%%/plugins/auto_assign_labels/init.php
@@ -2183,6 +2187,8 @@
 %%WWWDIR%%/schema/versions/mysql/125.sql
 %%WWWDIR%%/schema/versions/mysql/126.sql
 %%WWWDIR%%/schema/versions/mysql/127.sql
+%%WWWDIR%%/schema/versions/mysql/128.sql
+%%WWWDIR%%/schema/versions/mysql/129.sql
 %%WWWDIR%%/schema/versions/mysql/13.sql
 %%WWWDIR%%/schema/versions/mysql/14.sql
 %%WWWDIR%%/schema/versions/mysql/15.sql
@@ -2308,6 +2314,8 @@
 %%WWWDIR%%/schema/versions/pgsql/125.sql
 %%WWWDIR%%/schema/versions/pgsql/126.sql
 %%WWWDIR%%/schema/versions/pgsql/127.sql
+%%WWWDIR%%/schema/versions/pgsql/128.sql
+%%WWWDIR%%/schema/versions/pgsql/129.sql
 %%WWWDIR%%/schema/versions/pgsql/13.sql
 %%WWWDIR%%/schema/versions/pgsql/14.sql
 %%WWWDIR%%/schema/versions/pgsql/15.sql
@@ -2475,6 +2483,7 @@
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_fsckportal
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_comics/filters
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_comics
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_zz_noautoplay
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins.local
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/lock

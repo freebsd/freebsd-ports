@@ -2,18 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	tt-rss
-PORTVERSION=	1.15.3.150720
+PORTVERSION=	15.7.2015.11.02
 CATEGORIES=	www
+MASTER_SITES=	https://tt-rss.org/gitlab/fox/tt-rss/repository/archive${EXTRACT_SUFX}?ref=${GL_TAGNAME}&num;/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Tiny Tiny RSS: web-based news feed (RSS/Atom) aggregator
 
 LICENSE=	GPLv2
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	gothfox
-GH_PROJECT=	Tiny-Tiny-RSS
-GH_TAGNAME=	2caeb0f
+GL_TAGNAME=		ee4c4602
 
 NO_BUILD=	yes
 NO_ARCH=	yes
@@ -22,8 +20,9 @@ USE_PHP=	ctype dom hash json mbstring pcntl posix session xmlrpc
 WANT_PHP_WEB=	yes
 WANT_PHP_CLI=	yes
 REINPLACE_ARGS=	-i ""
-USES=		shebangfix
+USES=		shebangfix tar:bz2
 SHEBANG_FILES=	lib/dojo-src/rebuild-dojo.sh utils/extract-i18n-js.pl
+WRKSRC=		${WRKDIR}/tt-rss.git
 
 USE_RC_SUBR=	ttrssd
 
@@ -42,7 +41,9 @@ USE_PHP+=	pgsql
 DB=		pgsql
 MYSQL=		"\#"
 PGSQL=
-.else
+.endif
+
+.if ${PORT_OPTIONS:MMYSQL}
 USE_PHP+=	mysqli
 DB=		mysql
 MYSQL=
