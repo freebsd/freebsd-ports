@@ -161,6 +161,16 @@ share/augeas/lenses/tests/test_virtlockd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/migration-native.png
 %%DOCSDIR%%%%PORTVERSION%%/html/migration-tunnel.png
 %%DOCSDIR%%%%PORTVERSION%%/html/migration-unmanaged-direct.png
+%%DOCSDIR%%%%PORTVERSION%%/html/news-2005.html
+%%DOCSDIR%%%%PORTVERSION%%/html/news-2006.html
+%%DOCSDIR%%%%PORTVERSION%%/html/news-2007.html
+%%DOCSDIR%%%%PORTVERSION%%/html/news-2008.html
+%%DOCSDIR%%%%PORTVERSION%%/html/news-2009.html
+%%DOCSDIR%%%%PORTVERSION%%/html/news-2010.html
+%%DOCSDIR%%%%PORTVERSION%%/html/news-2011.html
+%%DOCSDIR%%%%PORTVERSION%%/html/news-2012.html
+%%DOCSDIR%%%%PORTVERSION%%/html/news-2013.html
+%%DOCSDIR%%%%PORTVERSION%%/html/news-2014.html
 %%DOCSDIR%%%%PORTVERSION%%/html/news.html
 %%DOCSDIR%%%%PORTVERSION%%/html/node.gif
 %%DOCSDIR%%%%PORTVERSION%%/html/pending.html
