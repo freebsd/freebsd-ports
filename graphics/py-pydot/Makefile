@@ -3,6 +3,7 @@
 
 PORTNAME=	pydot
 PORTVERSION=	1.0.28
+PORTREVISION=	1
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,8 +13,8 @@ COMMENT=	Python interface to the Graphviz Dot language
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}parsing>=0:${PORTSDIR}/devel/py-parsing
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}parsing>=0:${PORTSDIR}/devel/py-parsing \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyparsing>=0:${PORTSDIR}/devel/py-pyparsing
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyparsing>=0:${PORTSDIR}/devel/py-pyparsing \
 		dot:${PORTSDIR}/graphics/graphviz
 
 NO_ARCH=	yes

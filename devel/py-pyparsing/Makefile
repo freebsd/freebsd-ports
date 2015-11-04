@@ -1,12 +1,11 @@
 # Created by: Hye-Shik Chang
 # $FreeBSD$
 
-PORTNAME=	parsing
+PORTNAME=	pyparsing
 PORTVERSION=	2.0.4
 CATEGORIES=	devel python
-MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}/py${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	pyparsing-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	General parsing module for Python
