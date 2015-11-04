@@ -396,6 +396,7 @@
     SUBDIR += dragon
     SUBDIR += dreampie
     SUBDIR += drpython
+    SUBDIR += ds2
     SUBDIR += dulwich
     SUBDIR += duplo
     SUBDIR += dwarfdump
