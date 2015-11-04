@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualenvwrapper
-PORTVERSION=	4.3.2
+PORTVERSION=	4.7.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,10 +13,10 @@ COMMENT=	Set of extensions to virtualenv
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=0.5.19:${PORTSDIR}/devel/py-pbr
-RUN_DEPENDS=	${PKGNAMEPREFIX}stevedore>=0.3:${PORTSDIR}/devel/py-stevedore \
-		${PKGNAMEPREFIX}virtualenv>=1.4.8:${PORTSDIR}/devel/py-virtualenv \
-		${PKGNAMEPREFIX}virtualenv-clone>=0.2.4:${PORTSDIR}/devel/py-virtualenv-clone
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>0:${PORTSDIR}/devel/py-pbr
+RUN_DEPENDS=	${PKGNAMEPREFIX}stevedore>0:${PORTSDIR}/devel/py-stevedore \
+		${PKGNAMEPREFIX}virtualenv>0:${PORTSDIR}/devel/py-virtualenv \
+		${PKGNAMEPREFIX}virtualenv-clone>0:${PORTSDIR}/devel/py-virtualenv-clone
 
 OPTIONS_DEFINE=	DOCS
 
@@ -24,21 +24,18 @@ DOCS_BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx \
 			${PYTHON_PKGNAMEPREFIX}sphinxcontrib-bitbucket>=1.0:${PORTSDIR}/textproc/py-sphinxcontrib-bitbucket
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist concurrent distutils
 
-.include <bsd.port.pre.mk>
+DOCS_VARS=	DOCSDIR=${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME} \
+		PYDISTUTILS_BUILD_TARGET+=build_sphinx \
+		PYDISTUTILS_BUILDARGS="-a -E"
 
-.if ${PORT_OPTIONS:MDOCS}
-DOCSDIR=			${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-PYDISTUTILS_BUILD_TARGET+=	build_sphinx -a -E
-
-post-patch:
+post-patch-DOCS-on:
 	@${REINPLACE_CMD} -e 's|python setup.py|${PYTHON_CMD} setup.py|' \
 		${WRKSRC}/docs/source/conf.py
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC}/build/sphinx/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
-.endif
+	@cd ${WRKSRC}/docs/build/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
