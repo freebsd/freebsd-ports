@@ -29,12 +29,10 @@ TEST_TARGET=	check
 USE_LDCONFIG=	yes
 USES=		libtool localbase pathfix
 
-DAP_CONFIGURE_OFF=	--disable-dap
-DAP_CONFIGURE_ON=	--enable-dap
+DAP_CONFIGURE_ENABLE=	dap
 DAP_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
-DOXYGEN_BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
-DOXYGEN_CONFIGURE_OFF=	--disable-doxygen
-DOXYGEN_CONFIGURE_ON=	--enable-doxygen
+DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOXYGEN_CONFIGURE_ENABLE=	doxygen
 DOXYGEN_IMPLIES=	DOCS
 DOXYGEN_PORTDOCS=	*
 SZIP_LIB_DEPENDS=	libsz.so:${PORTSDIR}/science/szip
