@@ -12,8 +12,9 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python bindings for library for handling compressed RTF documents
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LICENCE
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/pyrexc:${PORTSDIR}/devel/pyrex
+BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex
 LIB_DEPENDS=	librtfcomp.so:${PORTSDIR}/archivers/librtfcomp
 
 CONFIGURE_ARGS=	--enable-python-bindings
