@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ev
-PORTVERSION=	0.2.13
+PORTVERSION=	0.2.15
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
