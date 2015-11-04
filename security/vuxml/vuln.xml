@@ -146,10 +146,12 @@ Notes:
     <references>
       <url>https://www.jwz.org/xscreensaver/changelog.html</url>
       <url>https://bugzilla.redhat.com/show_bug.cgi?id=1274452</url>
+      <cvename>CVE-2015-8025</cvename>
     </references>
     <dates>
       <discovery>2015-10-24</discovery>
       <entry>2015-10-27</entry>
+      <modified>2015-11-04</modified>
     </dates>
   </vuln>
 
