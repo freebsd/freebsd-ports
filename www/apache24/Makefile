@@ -59,6 +59,7 @@ IPV4_MAPPED_CONFIGURE_ENABLE=	v4-mapped
 
 LDAP_CONFIGURE_ON=		--enable-ldap=shared
 
+HTTP2_CONFIGURE_ON=		--with-nghttp2=${LOCALBASE}
 HTTP2_LIB_DEPENDS=		libnghttp2.so:${PORTSDIR}/www/nghttp2
 LUAJIT_LIB_DEPENDS=		libluajit-5.1.so:${PORTSDIR}/lang/luajit
 LUA_CONFIGURE_WITH=		lua
