@@ -1,17 +1,15 @@
---- rebar.config.script.orig	2015-11-03 08:42:20 UTC
+--- rebar.config.script.orig	2015-11-04 10:56:56 UTC
 +++ rebar.config.script
-@@ -1,13 +1,4 @@
--IsRebar3 = case application:get_env(rebar, vsn) of
--               {ok, VSN} ->
+@@ -1,11 +1,4 @@
+-IsRebar3 = case application:get_key(rebar, vsn) of
+-               {ok, VSN} ->
 -                   [VSN1 | _] = string:tokens(VSN, "-"),
 -                   [Maj, Min, Patch] = string:tokens(VSN1, "."),
 -                   (list_to_integer(Maj) >= 3);
 -               undefined ->
--                   %% is mix is used
 -                   lists:keymember(mix, 1, application:loaded_applications())
--            end,
--
+-           end,
 +IsRebar3 = true,
  
- Rebar2Deps = [
-               {idna, ".*",
+ Rebar2Deps = [{idna, ".*",
+                {git, "https://github.com/benoitc/erlang-idna",
