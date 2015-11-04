@@ -3,6 +3,7 @@
 
 PORTNAME=	haproxy
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	net www
 MASTER_SITES=	http://www.haproxy.org/download/1.6/src/
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
@@ -20,7 +21,7 @@ USE_RC_SUBR=	haproxy
 
 DEVICEATLAS_VERSION=	2.1
 DEVICEATLAS_DISTFILE=	deviceatlas-enterprise-c-${DEVICEATLAS_VERSION}
-DEVICEATLAS_REGISTRATION_URL= https://deviceatlas.com/deviceatlas-haproxy-module
+DEVICEATLAS_REGISTRATION_URL=	https://deviceatlas.com/deviceatlas-haproxy-module
 
 OPTIONS_DEFINE=		DOCS EXAMPLES LUA OPENSSL DEVICEATLAS
 OPTIONS_RADIO=		PCRE
@@ -33,7 +34,7 @@ OPTIONS_DEFAULT=	SPCRE OPENSSL
 .include <bsd.port.options.mk>
 
 MAKE_ARGS=	TARGET=freebsd DEFINE=-DFREEBSD_PORTS USE_GETADDRINFO=1 \
-		USE_ZLIB=1 CC="${CC}" CFLAGS="${CFLAGS}"
+		USE_ZLIB=1 USE_CPU_AFFINITY=1 CC="${CC}" CFLAGS="${CFLAGS}"
 
 .if ${PORT_OPTIONS:MDPCRE}
 LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
@@ -47,14 +48,14 @@ MAKE_ARGS+=	USE_STATIC_PCRE=1 USE_PCRE_JIT=1
 
 .if ${PORT_OPTIONS:MDEVICEATLAS}
 .if !exists(${DISTDIR}/${DEVICEATLAS_DISTFILE}.zip)
-IGNORE?=	You must manually fetch the DeviceAtlas Device Detection C API from ${DEVICEATLAS_REGISTRATION_URL} and place it in ${DISTDIR} and then run make again
+IGNORE?=	you must manually fetch the DeviceAtlas Device Detection C API from ${DEVICEATLAS_REGISTRATION_URL} and place it in ${DISTDIR} and then run make again
 .else
 RESTRICTED=	The redistribution of the DeviceAtlas Device Detection C API is not permitted
 DISTFILES+=	${DEVICEATLAS_DISTFILE}.zip
 MAKE_ARGS+=	USE_DEVICEATLAS=1 DEVICEATLAS_SRC=${WRKDIR}/deviceatlas-enterprise-c-${DEVICEATLAS_VERSION}
 .endif
 .if ! ${PORT_OPTIONS:MDPCRE} && ! ${PORT_OPTIONS:MSPCRE}
-IGNORE?=	Enable PCRE support to use DeviceAtlas
+IGNORE?=	enable PCRE support to use DeviceAtlas
 .endif
 .endif
 
