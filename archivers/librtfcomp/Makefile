@@ -11,6 +11,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for handling compressed RTF documents
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LICENCE
 
 CONFIGURE_ARGS=	--disable-python-bindings
 GNU_CONFIGURE=	yes
