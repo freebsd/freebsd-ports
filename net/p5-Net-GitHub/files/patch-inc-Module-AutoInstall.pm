@@ -1,5 +1,5 @@
---- inc/Module/AutoInstall.pm.orig	2012-04-26 12:38:21.028164683 -0400
-+++ inc/Module/AutoInstall.pm	2012-04-26 12:38:39.733163954 -0400
+--- inc/Module/AutoInstall.pm.orig	2012-04-26 16:38:21 UTC
++++ inc/Module/AutoInstall.pm
 @@ -138,7 +138,7 @@
      # check entirely since we don't want to have to load (and configure)
      # an old CPAN just for a cosmetic message
