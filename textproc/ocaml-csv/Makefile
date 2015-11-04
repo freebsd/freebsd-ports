@@ -19,4 +19,6 @@ USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes
 OCAML_PKGDIRS=	csv
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.mk>
