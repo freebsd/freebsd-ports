@@ -16,10 +16,9 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
 		libavutil.so:${PORTSDIR}/multimedia/ffmpeg
 
-CFLAGS+=	-I${LOCALBASE}/include
 USE_PHP=	yes
 USE_PHPEXT=	yes
 USE_PHPIZE=	yes
-USES=		tar:xz
+USES=		localbase tar:xz
 
 .include <bsd.port.mk>
