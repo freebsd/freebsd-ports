@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Catalyst-Action-REST
-PORTVERSION=	1.19
+PORTVERSION=	1.20
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,6 +25,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-libwww>=5:${PORTSDIR}/www/p5-libwww \
 		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 
+NO_ARCH=	yes
 CONFIGURE_ARGS=	--default
 USES=		perl5
 USE_PERL5=	configure
