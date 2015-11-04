@@ -51,6 +51,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/nselib/cvs.lua
 %%DATADIR%%/nselib/data/dns-srv-names
 %%DATADIR%%/nselib/data/drupal-modules.lst
+%%DATADIR%%/nselib/data/drupal-themes.lst
 %%DATADIR%%/nselib/data/enterprise_numbers.txt
 %%DATADIR%%/nselib/data/favicon-db
 %%DATADIR%%/nselib/data/http-default-accounts-fingerprints.lua
@@ -121,6 +122,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/nselib/lfs.luadoc
 %%DATADIR%%/nselib/listop.lua
 %%DATADIR%%/nselib/lpeg-utility.lua
+%%DATADIR%%/nselib/ls.lua
 %%DATADIR%%/nselib/match.lua
 %%DATADIR%%/nselib/membase.lua
 %%DATADIR%%/nselib/mobileme.lua
@@ -157,6 +159,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/nselib/sasl.lua
 %%DATADIR%%/nselib/shortport.lua
 %%DATADIR%%/nselib/sip.lua
+%%DATADIR%%/nselib/slaxml.lua
 %%DATADIR%%/nselib/smb.lua
 %%DATADIR%%/nselib/smbauth.lua
 %%DATADIR%%/nselib/smtp.lua
@@ -320,6 +323,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/hbase-master-info.nse
 %%DATADIR%%/scripts/hbase-region-info.nse
 %%DATADIR%%/scripts/hddtemp-info.nse
+%%DATADIR%%/scripts/hnap-info.nse
 %%DATADIR%%/scripts/hostmap-bfk.nse
 %%DATADIR%%/scripts/hostmap-ip2hosts.nse
 %%DATADIR%%/scripts/hostmap-robtex.nse
@@ -341,7 +345,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/http-comments-displayer.nse
 %%DATADIR%%/scripts/http-config-backup.nse
 %%DATADIR%%/scripts/http-cors.nse
-%%DATADIR%%/scripts/http-crossdomainxml.nse
+%%DATADIR%%/scripts/http-cross-domain-policy.nse
 %%DATADIR%%/scripts/http-csrf.nse
 %%DATADIR%%/scripts/http-date.nse
 %%DATADIR%%/scripts/http-default-accounts.nse
@@ -350,13 +354,13 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/http-dombased-xss.nse
 %%DATADIR%%/scripts/http-domino-enum-passwords.nse
 %%DATADIR%%/scripts/http-drupal-enum-users.nse
-%%DATADIR%%/scripts/http-drupal-modules.nse
-%%DATADIR%%/scripts/http-email-harvest.nse
+%%DATADIR%%/scripts/http-drupal-enum.nse
 %%DATADIR%%/scripts/http-enum.nse
 %%DATADIR%%/scripts/http-errors.nse
 %%DATADIR%%/scripts/http-exif-spider.nse
 %%DATADIR%%/scripts/http-favicon.nse
 %%DATADIR%%/scripts/http-feed.nse
+%%DATADIR%%/scripts/http-fetch.nse
 %%DATADIR%%/scripts/http-fileupload-exploiter.nse
 %%DATADIR%%/scripts/http-form-brute.nse
 %%DATADIR%%/scripts/http-form-fuzzer.nse
@@ -374,6 +378,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/http-iis-webdav-vuln.nse
 %%DATADIR%%/scripts/http-joomla-brute.nse
 %%DATADIR%%/scripts/http-litespeed-sourcecode-download.nse
+%%DATADIR%%/scripts/http-ls.nse
 %%DATADIR%%/scripts/http-majordomo2-dir-traversal.nse
 %%DATADIR%%/scripts/http-malware-host.nse
 %%DATADIR%%/scripts/http-method-tamper.nse
@@ -401,6 +406,8 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/http-slowloris.nse
 %%DATADIR%%/scripts/http-sql-injection.nse
 %%DATADIR%%/scripts/http-stored-xss.nse
+%%DATADIR%%/scripts/http-svn-enum.nse
+%%DATADIR%%/scripts/http-svn-info.nse
 %%DATADIR%%/scripts/http-title.nse
 %%DATADIR%%/scripts/http-tplink-dir-traversal.nse
 %%DATADIR%%/scripts/http-trace.nse
@@ -431,6 +438,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/http-vuln-wnr1000-creds.nse
 %%DATADIR%%/scripts/http-waf-detect.nse
 %%DATADIR%%/scripts/http-waf-fingerprint.nse
+%%DATADIR%%/scripts/http-webdav-scan.nse
 %%DATADIR%%/scripts/http-wordpress-brute.nse
 %%DATADIR%%/scripts/http-wordpress-enum.nse
 %%DATADIR%%/scripts/http-wordpress-users.nse
@@ -464,6 +472,8 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/jdwp-info.nse
 %%DATADIR%%/scripts/jdwp-inject.nse
 %%DATADIR%%/scripts/jdwp-version.nse
+%%DATADIR%%/scripts/knx-gateway-discover.nse
+%%DATADIR%%/scripts/knx-gateway-info.nse
 %%DATADIR%%/scripts/krb5-enum-users.nse
 %%DATADIR%%/scripts/ldap-brute.nse
 %%DATADIR%%/scripts/ldap-novell-getpass.nse
@@ -587,7 +597,6 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/sip-methods.nse
 %%DATADIR%%/scripts/skypev2-version.nse
 %%DATADIR%%/scripts/smb-brute.nse
-%%DATADIR%%/scripts/smb-check-vulns.nse
 %%DATADIR%%/scripts/smb-enum-domains.nse
 %%DATADIR%%/scripts/smb-enum-groups.nse
 %%DATADIR%%/scripts/smb-enum-processes.nse
@@ -603,8 +612,14 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/smb-security-mode.nse
 %%DATADIR%%/scripts/smb-server-stats.nse
 %%DATADIR%%/scripts/smb-system-info.nse
+%%DATADIR%%/scripts/smb-vuln-conficker.nse
+%%DATADIR%%/scripts/smb-vuln-cve2009-3103.nse
+%%DATADIR%%/scripts/smb-vuln-ms06-025.nse
+%%DATADIR%%/scripts/smb-vuln-ms07-029.nse
+%%DATADIR%%/scripts/smb-vuln-ms08-067.nse
 %%DATADIR%%/scripts/smb-vuln-ms10-054.nse
 %%DATADIR%%/scripts/smb-vuln-ms10-061.nse
+%%DATADIR%%/scripts/smb-vuln-regsvc-dos.nse
 %%DATADIR%%/scripts/smbv2-enabled.nse
 %%DATADIR%%/scripts/smtp-brute.nse
 %%DATADIR%%/scripts/smtp-commands.nse
@@ -662,6 +677,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/telnet-encryption.nse
 %%DATADIR%%/scripts/tftp-enum.nse
 %%DATADIR%%/scripts/tls-nextprotoneg.nse
+%%DATADIR%%/scripts/tor-consensus-checker.nse
 %%DATADIR%%/scripts/traceroute-geolocation.nse
 %%DATADIR%%/scripts/unittest.nse
 %%DATADIR%%/scripts/unusual-port.nse
@@ -681,5 +697,6 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/wsdd-discover.nse
 %%DATADIR%%/scripts/x11-access.nse
 %%DATADIR%%/scripts/xdmcp-discover.nse
+%%DATADIR%%/scripts/xmlrpc-methods.nse
 %%DATADIR%%/scripts/xmpp-brute.nse
 %%DATADIR%%/scripts/xmpp-info.nse
